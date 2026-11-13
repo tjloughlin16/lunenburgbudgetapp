@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-10-15",
  "docid": "4862",
@@ -12,65 +12,589 @@
  },
  "votes": [
   {
-   "motion": "Approve the Wine & Malt Beverage license for Honey Farms Inc. located at 134 Leominster Shirley Rd contingent upon receipt of clean CORI for outstanding items and CORI for the Manager",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
+   "motion": "Approve the Wine & Malt Beverage license for Honey Farms Inc., 134 Leominster Shirley Rd, contingent on receipt of clean CORI results for the outstanding applicant and the Manager.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the wine & malt beverage license for honey farms inc., located at 134 leominster shirley rd contingent upon the receipt of a clean cori for the one that is outstanding and upon receipt of a clean cori for the manager. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to approve the wine & malt beverage license for honey farms inc., located at 134 leominster shirley rd contingent upon the receipt of a clean cori"
   },
   {
-   "motion": "Approve the recommendation to ratify Peter Lakaditis and Bradley McNamara to positions of full time Police Officers",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
+   "motion": "Ratify Peter Lakaditis and Bradley McNamara as full time Police Officers.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the recommendation to ratify peter lakaditis and bradley mcnamara to positions of full time police officers. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to approve the recommendation to ratify peter lakaditis and bradley mcnamara to positions of full time police officers."
   },
   {
-   "motion": "Recommend approval of a one day Liquor License for North Leominster Rod & Gun Club on 11/15/2013",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
+   "motion": "Recommend approval of a one day Liquor License for North Leominster Rod & Gun Club on 11/15/2013.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to recommend approval of a one day liquor license for north leominster rod & gun club on 11/15/2013. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to recommend approval of a one day liquor license for north leominster rod & gun club"
   },
   {
-   "motion": "Approve the Turkey Hill Lions Club request for a Voluntary Toll on 11/16/2013 from 8AM-2PM at town center and Whalom location",
-   "moved_by": "Dave Matthews",
-   "seconded_by": "Robert Ebersole",
+   "motion": "Approve the Turkey Hill Lions Club request for a Voluntary Toll on 11/16/2013 from 8AM-2PM at the town center and Whalom location.",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Mr. Ebersole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the turkey hill lions club request for a voluntary toll on 11/16/2013 from 8am-2pm at the town center and whalom location. mr. ebersole seconded. discussion: mr. toale spoke to say that he supp",
-   "quote_taken_from_text": true
+   "quote": "mr. matthews moved to approve the turkey hill lions club request for a voluntary toll on 11/16/2013 from"
   },
   {
-   "motion": "Set a deadline of 12 Noon on October 16, 2013 to receive confirmation that the appeal filed by B&H Corporation d/b/a Mickey Shea's has been received; if confirmed, stay suspension for 10/18/2013 and 10/19/2013 until after appeal; if not confirmed, suspension will stand",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
+   "motion": "Set a deadline of 12 Noon on October 16, 2013 to receive confirmation from the ABCC that the B&H Corporation d/b/a Mickey Shea's appeal was received; if confirmed, the 10/18 and 10/19/2013 suspension is stayed pending appeal.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to set a deadline of 12 noon on october 16, 2013 to receive confirmation from the abco that the appeal filed by b&h corporation d/b/a mickey shea's has been received. if it is confirmed that the appeal has been received, then the suspension for 10/18/2013 and 10/19/2013 will be stayed until after the appeal. if we are not able to confirm that the appeal was timely filed then the suspension will stand. mr. matthews seconded. discussion: mr. toale questioned the letter fro",
-   "quote_taken_from_text": true
+   "quote": "ms. bertram moved to set a deadline of 12 noon on october 16, 2013 to receive confirmation from the abco"
   },
   {
-   "motion": "Adjourn the Board of Selectmen meeting",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Dave Matthews",
+   "motion": "Adjourn the BOS meeting.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. ebersole moved to adjourn the bos meeting. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business mr. ebersole moved to adjourn the bos meeting."
   },
   {
-   "motion": "Close the Public Access Cable Committee meeting",
-   "moved_by": "Fred Crellin",
-   "seconded_by": "Rhonda Lisio",
+   "motion": "Close the Public Access Cable Committee (PACC) meeting.",
+   "moved_by": "Mr. Crellin",
+   "seconded_by": "Ms. Lisio",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "mr. crellin moved to close the meeting. ms. lisio seconded. on vote, motion carried, 4 in favor 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of scanned minutes. All votes found and verified. Note: The last vote (close PACC meeting) is for the Public Access Cable Committee meeting, which held its meeting within these Select Board minutes. Spelling in motion 2 shows \"Lakaditis\" per OCR; earlier header shows \"Lekaditis\" — likely OCR error but quoted as recorded in motion.",
- "cost_usd": 0.1701065
+ "note": "OCR text from a scanned original; several names and figures are garbled (e.g., Susan Doherty's name is truncated in the source, Peter Lekaditis/Lakaditis spelled both ways, 'Mr. Mathews' for Matthews). The 8:00 PM executive session header appears before the 7:12 PM opening, and no motion to enter executive session is recorded. The PACC section begins mid-discussion; the start of PACC item 1 is missing. Attachments (progress report, PEG account sheets, purchase forms, schedules) are OCR-garbled, so attachment figures are partial. The warrant #20-14 total is recorded with no vote. The transfer form shows department head approval only, not a board vote.",
+ "cost_usd": 0.020363020000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair Person",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and"
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and"
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and"
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager kerry speidel."
+  },
+  {
+   "name": "Vern Johnson",
+   "role": "Vice President of Operations for Honey Farms",
+   "status": "present",
+   "quote": "vern johnson, vice president of operations for honey farms, wilfred landoli, president/ceo of honey farms, and tracy epstein, manager of honey farms located at 134 leominster shirley rd"
+  },
+  {
+   "name": "Wilfred landoli",
+   "role": "President/CEO of Honey Farms",
+   "status": "present",
+   "quote": "vern johnson, vice president of operations for honey farms, wilfred landoli, president/ceo of honey farms, and tracy epstein, manager of honey farms located at 134 leominster shirley rd"
+  },
+  {
+   "name": "Tracy Epstein",
+   "role": "Manager of Honey Farms",
+   "status": "present",
+   "quote": "vern johnson, vice president of operations for honey farms, wilfred landoli, president/ceo of honey farms, and tracy epstein, manager of honey farms located at 134 leominster shirley rd"
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino came before the bos to recommend appointment of peter lekaditis and bradley"
+  },
+  {
+   "name": "Lance May",
+   "role": "Chairperson (PACC)",
+   "status": "present",
+   "quote": "in attendance: chairperson lance may, vice chairperson rhonda lisio, secretary fred crellin, troy daniels,"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Vice Chairperson (PACC)",
+   "status": "present",
+   "quote": "in attendance: chairperson lance may, vice chairperson rhonda lisio, secretary fred crellin, troy daniels,"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Secretary (PACC)",
+   "status": "present",
+   "quote": "in attendance: chairperson lance may, vice chairperson rhonda lisio, secretary fred crellin, troy daniels,"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "in attendance: chairperson lance may, vice chairperson rhonda lisio, secretary fred crellin, troy daniels,"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Program Coordinator (PACC)",
+   "status": "present",
+   "quote": "& program coordinator jo mclaughlin."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "usan doherty, recording secreta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed there would be no BOS concerns regarding the Keno to Go location at Honey Farms #93, after discussing the locations of Keno sites in town.",
+   "quote": "were all in agreement that there would be no concerns from the bos regarding this matter."
+  },
+  {
+   "decision": "Chair directed that the Executive Session minutes of 10/8/2013 be corrected from collective bargaining to negotiation with non-union personnel; Mr. Ebersole to make the note and the board to initial it.",
+   "quote": "mr. alonzo asked mr. ebersole to make the note, and they will initial it on the way back."
+  },
+  {
+   "decision": "Town Manager to put in a request to Town Counsel on the Town Election complaint in the action file.",
+   "quote": "ms. speidel replied no and that she would put in a request tomorrow."
+  },
+  {
+   "decision": "Town Manager asked Town Counsel to check into the ABCC appeal status for B&H Corporation d/b/a Mickey Shea's.",
+   "quote": "ms. speidel requested that town counsel check into this matter"
+  },
+  {
+   "decision": "Board announced it had successfully negotiated a three-year renewal contract with the Town Manager (announced; no vote recorded).",
+   "quote": "the board has successfully negotiated a renewal contract with the town manager."
+  },
+  {
+   "decision": "Ms. Bertram offered to serve on a team to look at Open Space issues requested by the Open Space Committee; Chair to attend meetings she cannot.",
+   "quote": "ms. bertram spoke and offered her services to serve on that team."
+  },
+  {
+   "decision": "Town Manager to prepare a request to explore another financing option for the School Building project (interest only or reduced payment); Ms. Speidel said she could put that request together.",
+   "quote": "he would like the town manager to explore looking at another option to finance the school"
+  },
+  {
+   "decision": "BOS recommended that the PACC obtain a recommendation from the Town Manager on how to receive its budget (options raised: budget article at Town Meeting, Town Report budget, or Enterprise Fund).",
+   "quote": "the bos recommended that the pacc get a recommendation from the town manager on how to receive their"
+  },
+  {
+   "decision": "BOS suggested the PACC develop a policy for setting permanent board meeting dates and times.",
+   "quote": "the bos suggested that the pacc develop a policy for setting permanent board meeting dates and times for"
+  },
+  {
+   "decision": "BOS suggested a short job description be developed for PACC board member responsibilities to aid recruitment.",
+   "quote": "the bos suggested that a short job description be developed of what a pacc board member's responsibilities"
+  },
+  {
+   "decision": "Town boards and commissions will be surveyed on their thoughts on televising their meetings; policies to be developed on equipment use by Town departments.",
+   "quote": "town boards/commissions will be surveyed on their thoughts on televising their meetings."
+  },
+  {
+   "decision": "Mr. Ebersole suggested the Town Clerk be contacted for agenda examples that comply with the Open Meeting Law.",
+   "quote": "mr. ebersole suggested that the town clerk be contacted for \"agenda examples\" that"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant #20-14",
+   "what_was_recorded": "Warrant #20-14 dated 10/15/2013 was listed with a total; no vote on the warrant is recorded.",
+   "figures_as_printed": [
+    "$240,953.74"
+   ],
+   "quote": "#20-14 10/15/2013 $240,953.74"
+  },
+  {
+   "topic": "Town Manager renewal contract salary",
+   "what_was_recorded": "Announced that the Town Manager's salary will increase to $125,000 per year from the current $122,039 per year for all 3 years of the contract.",
+   "figures_as_printed": [
+    "$125,000",
+    "$122,039"
+   ],
+   "quote": "the salary of the town manager will increase to $125,000 per year from the current $122,039 per year."
+  },
+  {
+   "topic": "Town Manager deferred compensation",
+   "what_was_recorded": "Renewal contract provides $2500 each December 1 paid into a deferred compensation plan for the Town Manager.",
+   "figures_as_printed": [
+    "$2500"
+   ],
+   "quote": "there will be $2500 paid in a deferred compensation plan to the town manager"
+  },
+  {
+   "topic": "Town Manager performance bonus",
+   "what_was_recorded": "Renewal contract sets a performance bonus of 1.5% for a commendable rating and 2.5% of base salary for an outstanding rating; no severance if not renewed.",
+   "figures_as_printed": [
+    "1.5%",
+    "2.5%"
+   ],
+   "quote": "it would be a 2.5% performance bonus of base salary."
+  },
+  {
+   "topic": "PACC budget and funding",
+   "what_was_recorded": "Town Manager noted the PACC has a $250,000 budget and questioned why it is uncertain about spending for extra staffing and equipment.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "ms. speidel stated that the pacc has $250,000 in their budget"
+  },
+  {
+   "topic": "School Building Committee cost reductions",
+   "what_was_recorded": "A sub-committee was set up to look at design/finishes to reduce costs in areas not reimbursed by the MSBA; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "to see if they could reduce costs in some of the areas that will not be reimbursed by the msba"
+  },
+  {
+   "topic": "MSBA maintenance reimbursement",
+   "what_was_recorded": "Mr. Matthews said the School Building project receives 1.72 points out of 2 for building maintenance, compared with an average MSBA maintenance reimbursement of 1%.",
+   "figures_as_printed": [
+    "1%",
+    "1.72"
+   ],
+   "quote": "reimbursement for maintenance is 1% and we are at 1.72"
+  },
+  {
+   "topic": "School Building project financing",
+   "what_was_recorded": "Mr. Ebersole suggested interest-only or reduced payments on School Building debt while other exempt debt is on the books; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "suggested perhaps doing interest only or reduced payment during the time period when other exempt debt is"
+  },
+  {
+   "topic": "B&H fax order request (attachment)",
+   "what_was_recorded": "Order request faxed 09/09/13 to B&H under PO 13000666-00 for DV cassettes, DVD-R, CD sleeves and a card reader, total before shipping.",
+   "figures_as_printed": [
+    "$132.16",
+    "$1.70/ea",
+    "$16.99/ea",
+    "$1.39/ea",
+    "$12.95/ea"
+   ],
+   "quote": "total: $132.16 + shipping"
+  },
+  {
+   "topic": "Bytespeed desktop computer purchase (attachment)",
+   "what_was_recorded": "Purchase requisition for a Bytespeed desktop computer for the PEG Access Committee, with three competing quotes (Dell, IBM, HP).",
+   "figures_as_printed": [
+    "$1,024.00",
+    "$1,080.00",
+    "$1,156.00",
+    "$1,178.00"
+   ],
+   "quote": "bytespeed desktop computer 512 $1,024.00"
+  },
+  {
+   "topic": "PEG Access August 2013 account balances (attachment)",
+   "what_was_recorded": "August 2013 FY14 account sheet shows starting balance, expenses and ending balance figures.",
+   "figures_as_printed": [
+    "$241,326.82",
+    "$3,104.64",
+    "$238,222.18"
+   ],
+   "quote": "$241,326.82 $3,104.64 $238,222.18"
+  },
+  {
+   "topic": "Line-item transfer for school facilities rent",
+   "what_was_recorded": "Request for transfer of $3,000 from the PEG line item to the school facilities use line, 16 months at $500 per month.",
+   "figures_as_printed": [
+    "$3,000",
+    "$500/mo"
+   ],
+   "quote": "reason for surplus june 10-dec 9, 2013"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Request for transfer from PEG line item 15102-525012 (surplus, June 10-Dec 9, 2013) to line item 13064-422000 (school facilities use, 16 months at $500/mo) for rent payment to school; department head approval Kerry Speidel, Town Manager, September 11, 2013.",
+   "outcome": "not stated; form shows department head approval only, no board vote recorded",
+   "amount_as_printed": "$3,000",
+   "quote": "reason for surplus june 10-dec 9, 2013"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session (O'Brien Homes litigation)",
+   "resolution": "no action recorded; executive session header only",
+   "tags": [
+    "executive session",
+    "litigation"
+   ],
+   "quote": "discussion of o'brien homes litigation."
+  },
+  {
+   "topic": "Opening, announcements and public comment",
+   "resolution": "no action; public comment none",
+   "tags": [
+    "announcements",
+    "public comment"
+   ],
+   "quote": "7:00pm public comment: none"
+  },
+  {
+   "topic": "Honey Farms Wine & Malt Beverage license",
+   "resolution": "approved contingent on clean CORI, 5-0",
+   "tags": [
+    "liquor license",
+    "alcohol"
+   ],
+   "quote": "ms. bertram moved to approve the wine & malt beverage license for honey farms inc., located at 134 leominster shirley rd contingent upon the receipt of a clean cori"
+  },
+  {
+   "topic": "Keno to Go notification, Honey Farms #93",
+   "resolution": "discussed; no concerns from BOS",
+   "tags": [
+    "keno",
+    "lottery"
+   ],
+   "quote": "were all in agreement that there would be no concerns from the bos regarding this matter."
+  },
+  {
+   "topic": "Police Officer appointments (ratification)",
+   "resolution": "ratified, 5-0",
+   "tags": [
+    "police",
+    "appointments"
+   ],
+   "quote": "ms. bertram moved to approve the recommendation to ratify peter lakaditis and bradley mcnamara to positions of full time police officers."
+  },
+  {
+   "topic": "One Day Liquor License, North Leominster Rod & Gun Club",
+   "resolution": "recommended for approval, 5-0",
+   "tags": [
+    "liquor license",
+    "alcohol"
+   ],
+   "quote": "ms. bertram moved to recommend approval of a one day liquor license for north leominster rod & gun club"
+  },
+  {
+   "topic": "Voluntary toll, Turkey Hill Lions Club",
+   "resolution": "approved 4-0; Ms. Bertram recused",
+   "tags": [
+    "tolls",
+    "events"
+   ],
+   "quote": "mr. matthews moved to approve the turkey hill lions club request for a voluntary toll on 11/16/2013 from"
+  },
+  {
+   "topic": "B&H Corporation stay of suspension (Mickey Shea's)",
+   "resolution": "approved 5-0, deadline noon 10/16/2013 for ABCC confirmation",
+   "tags": [
+    "liquor license",
+    "appeal",
+    "ABCC"
+   ],
+   "quote": "ms. bertram moved to set a deadline of 12 noon on october 16, 2013 to receive confirmation from the abco"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes correction noted; warrant #20-14 listed; Town Counsel follow-up",
+   "tags": [
+    "minutes",
+    "warrants",
+    "town counsel"
+   ],
+   "quote": "mr. ebersole requested a correction on the executive session minutes dated 10/8/2013."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports only",
+   "tags": [
+    "committees"
+   ],
+   "quote": "school building committee; sewer commission; ma broadband:"
+  },
+  {
+   "topic": "Proclamations",
+   "resolution": "United Nations Day 2013 read into record; Women's Club not discussed",
+   "tags": [
+    "proclamations"
+   ],
+   "quote": "mr. alonzo read into record the united nations day proclamation"
+  },
+  {
+   "topic": "Town Manager renewal contract",
+   "resolution": "announced negotiated 3-year renewal; no vote recorded",
+   "tags": [
+    "town manager",
+    "contract",
+    "salary"
+   ],
+   "quote": "the board has successfully negotiated a renewal contract with the town manager."
+  },
+  {
+   "topic": "Town Manager and department reports (Open Space team)",
+   "resolution": "Ms. Bertram offered to serve on Open Space team",
+   "tags": [
+    "open space",
+    "committees"
+   ],
+   "quote": "mr. alonzo mentioned that the open space committee requested that a team be assembled to look at open space issues"
+  },
+  {
+   "topic": "Joint meeting with Public Access Cable Committee (non-televised), debt service request",
+   "resolution": "BOS round-table format; Ebersole debt financing request",
+   "tags": [
+    "PACC",
+    "public access tv",
+    "school building",
+    "debt"
+   ],
+   "quote": "continue the regularly scheduled meeting in a \"round table\" setting not to be televise",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "PACC financials and budget",
+   "resolution": "discussed; BOS recommendations, no vote",
+   "tags": [
+    "PACC",
+    "budget",
+    "procurement"
+   ],
+   "quote": "pacc makes purchases by going out to bid and by following the procurement procedure."
+  },
+  {
+   "topic": "PACC Open Meeting Law and quorum",
+   "resolution": "discussed; suggestions to PACC, no vote",
+   "tags": [
+    "open meeting law",
+    "quorum",
+    "PACC"
+   ],
+   "quote": "pacc & the bos discussed the definition of quorum and the confusion of what the legal definition"
+  },
+  {
+   "topic": "PACC meeting close and BOS adjournment",
+   "resolution": "PACC closed 4-0; BOS adjourned 5-0 at 9:38PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "being no further business mr. ebersole moved to adjourn the bos meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PAC Overview report (prepared by Jo McLaughlin)",
+   "where": "list",
+   "quote": "she presented the bos with a pac overview report that she had prepared, which has not been officially adopted by the pacc."
+  },
+  {
+   "name": "Proclamation: United Nations Day 2013 (The United Nations: In Everyone's Interest)",
+   "where": "text",
+   "quote": "mr. alonzo read into record the united nations day proclamation"
+  },
+  {
+   "name": "Notification from MA State Lottery Commission regarding offering Keno to Go at Honey Farms #93",
+   "where": "text",
+   "quote": "notification from ma state lottery commission regarding offering keno to go at honey farms #93,"
+  },
+  {
+   "name": "Letter from Mr. Herrick requesting items for appeal (public records request)",
+   "where": "text",
+   "quote": "questioned the letter from mr. herrick which requested various items which would aid in"
+  },
+  {
+   "name": "Letter from B&H Corporation to the ABCC requesting appeal",
+   "where": "text",
+   "quote": "board with a copy of the letter that he sent to the abcc requesting an appeal"
+  },
+  {
+   "name": "Executive Session minutes dated 10/8/2013",
+   "where": "text",
+   "quote": "mr. ebersole requested a correction on the executive session minutes dated 10/8/2013."
+  },
+  {
+   "name": "Warrant #20-14 (10/15/2013)",
+   "where": "text",
+   "quote": "#20-14 10/15/2013 $240,953.74"
+  },
+  {
+   "name": "PROGRESS REPORT - SEPTEMBER 2013 (Jo McLaughlin, 09/17/13)",
+   "where": "text",
+   "quote": "progress report - september 2013"
+  },
+  {
+   "name": "Gmail - Candlepin Bowling Show (email from travis@fatv.org)",
+   "where": "text",
+   "quote": "gmail - candlepin bowling show"
+  },
+  {
+   "name": "Lunenburg Public Access FY14 - AUGUST 2013 account sheet",
+   "where": "text",
+   "quote": "lunenburg public access fy14 - august 2013"
+  },
+  {
+   "name": "OPEN ACCOUNT Purchase Order # 13000666-00 (fax order to B&H, 09/09/13)",
+   "where": "text",
+   "quote": "open account: purchase order # 13000666-00"
+  },
+  {
+   "name": "Purchase Requisition, Bytespeed Desktop Computer (order date 9/5/2013)",
+   "where": "text",
+   "quote": "purchase reason: best business practice"
+  },
+  {
+   "name": "Request for Transfer (September 11, 2013)",
+   "where": "text",
+   "quote": "reason for surplus june 10-dec 9, 2013"
+  },
+  {
+   "name": "August 2013 - FY14 Q1 Program Analysis (revised 9/16/13)",
+   "where": "text",
+   "quote": "august 2013 - fy14 q1 program analysis (revised 9/16/13)"
+  },
+  {
+   "name": "FY14 - August 2013 Facebook Stats (Revised 9/3/13)",
+   "where": "text",
+   "quote": "facebook stats (revised 9/3/13)"
+  },
+  {
+   "name": "Ch 9 - September/October 2013 Schedule (09/17/13)",
+   "where": "text",
+   "quote": "ch 9 - september/october 2013 schedule (09/17/13)"
+  },
+  {
+   "name": "Ch 8 Re-broadcast schedule",
+   "where": "text",
+   "quote": "ch 8 re-broadcast schedule"
+  }
+ ],
+ "tags": [
+  "liquor licensing",
+  "Town Manager contract",
+  "police appointments",
+  "Public Access TV (PACC)",
+  "tolls",
+  "school building project",
+  "open meeting law",
+  "warrants",
+  "executive session",
+  "budget figures"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "she presented the bos with a pac overview report that she had prepared"
+ },
+ "dropped_unquoted_by_field": {}
 }

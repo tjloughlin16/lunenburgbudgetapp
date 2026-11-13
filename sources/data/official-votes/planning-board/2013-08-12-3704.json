@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-08-12",
  "docid": "3704",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the July 22, 2013 minutes",
+   "motion": "Approve the minutes of 7-22-13.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to approve, mr. lockwood, second, mr. mcquaid. minutes signed."
+   "quote": "minutes approval: 7-22-13, motion to approve, mr. lockwood, second, mr. mcquaid. minutes signed."
   },
   {
-   "motion": "Grant an extension to October 22, 2013 for Highfield Village project",
+   "motion": "Grant the Highfield Village extension to October 22, 2013.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "the board voted to grant an extension to october 22, 2013. motion, mr. lockwood, second, mr. mcquaid, all aye."
   },
   {
-   "motion": "Approve ANR for 1401 & 1417 Massachusetts Avenue",
+   "motion": "Approve the ANR for 1401 & 1417 Massachusetts Avenue.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
    "outcome": "passed",
@@ -36,15 +36,613 @@
    "quote": "motion, mr. lockwood to approve anr, second, mr. mcquaid, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Turn the Town land acquisition proposal (Prospect Street parcels abutting Whalom Lake) over to the Open Space and Recreation Committee and/or Select Board for investigation.",
+   "moved_by": "Mr. Lockwood",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion, mr. lockwood to turn proposal over to open space and recreation committee and/or select board for investigation."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. McQuaid",
-   "seconded_by": "Mr. Lockwood",
+   "seconded_by": "Mir. Lockwood",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn, mr. mcquaid, second, mir. lockwood, adjourned 9:28 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR output from macOS Vision. One minor OCR artifact noted: \"Mir. Lockwood\" in the adjournment vote appears to be \"Mr. Lockwood\" (OCR misread).",
- "cost_usd": 0.1096605
+ "note": "OCR text of scanned minutes (macOS Vision); some words are garbled (e.g., 'Mir. Lockwood', 'MRPG', 'Passios' school reuse options, 'AN once' for ANR). Most motions record only 'all aye' or no vote count, so outcomes are 'passed' or 'not stated' as printed. The Planning Director's telecom rules item has no recorded discussion. Public comment is recorded as none. A video recording is noted on file.",
+ "cost_usd": 0.013603120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa"
+  },
+  {
+   "name": "Mr. Oldfield",
+   "role": "Project Engineer",
+   "status": "present",
+   "quote": "presentation by mr. oldfield, project engineer, and mr. godfrey, developer."
+  },
+  {
+   "name": "Mr. Godfrey",
+   "role": "Developer",
+   "status": "present",
+   "quote": "presentation by mr. oldfield, project engineer, and mr. godfrey, developer."
+  },
+  {
+   "name": "Ms. Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "anr- 1401 & 1417 massachusetts avenue- presented by ms. speidel, town manager."
+  },
+  {
+   "name": "Ryan & Amy Lazaro",
+   "role": "Applicants",
+   "status": "not stated",
+   "quote": "ryan & amy lazaro, 617 leominster road- applicants requesting a driveway permit."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Lockwood requested the Sewer Commission be invited to the October 21st Board meeting for any input.",
+   "quote": "mr. lockwood requested the sewer commission be invited to the october 21st board meeting for any input they may wish to provide."
+  },
+  {
+   "decision": "Mylar for the ANR to be obtained from Whitman & Bingham Associates and kept in the Planning Office for Board signatures.",
+   "quote": "mylar will be obtained from whitman & bingham associates and be available in the planning office for board signatures."
+  },
+  {
+   "decision": "Board will hold a workshop on Goals; per the meeting-end correction, the workshop is the August 26, 2013 meeting at 5:30 PM at Town Hall.",
+   "quote": "(it was noted at the meeting conclusion that it will be the meeting of august 26, 2013 which will begin at 5:30 pm at town hall.)"
+  },
+  {
+   "decision": "Ms. Benson to move ahead with the public document access process; files to be set read-only for public access without username/password.",
+   "quote": "ms. benson to move ahead with process."
+  },
+  {
+   "decision": "300 W. Holman & 300 Holman St item to be placed on the September 23rd agenda for discussion.",
+   "quote": "item will be placed on the september 23rd agenda for discussion."
+  },
+  {
+   "decision": "MRPC response to Board questions distributed; to be discussed at the next Board meeting.",
+   "quote": "distributed additional response to their questions and discuss at the next board meeting."
+  },
+  {
+   "decision": "Lazaro driveway permit on a Scenic Road: a public hearing must be held; additional information requested from applicant before hearing can be scheduled.",
+   "quote": "as property is located on a scenic road, a public hearing must be held."
+  },
+  {
+   "decision": "Continue the Citizen Survey as presented, adding a definition of the CPA and a question on medical marijuana.",
+   "quote": "it was recommended to continue with the survey as presented to include a definition of the cpa and a question on medical marijuana as noted below."
+  },
+  {
+   "decision": "Emerald Place developer to add a crosswalk from the development to the beach area; developer to appear before the Board on September 23rd to discuss lease-to-own.",
+   "quote": "developer will put an additional crosswalk in place, which will be from the development to the beach area."
+  },
+  {
+   "decision": "Whalom Road LLC/Lunenburg Village: Board input on development name; Ms. Bilotta-Simeone to research with Town Counsel.",
+   "quote": "ms. bilotta-simeone to research with town counsel."
+  },
+  {
+   "decision": "Ms. Benson and Mr. Lockwood to coordinate on a draft letter to the Select Board regarding Town land acquisition.",
+   "quote": "ms. benson and mr. lockwood will coordinate on a draft letter to the select board."
+  },
+  {
+   "decision": "Mr. Allison's town center documents to be sent to MRPC.",
+   "quote": "documents will be sent to mrpc"
+  },
+  {
+   "decision": "Ms. Benson to pass the Lancaster Avenue speed-limit sign concern to the DPW Director.",
+   "quote": "ms. benson will pass comment on to dpw director."
+  },
+  {
+   "decision": "Ms. Benson to confer with Town Counsel for clarity in Section 5.6 of the Zoning Bylaw (25-acre provision).",
+   "quote": "ms. benson to confer with town counsel for clarity in section 5.6."
+  },
+  {
+   "decision": "Ms. Benson to provide the Board with a reviewing-engineer checklist, including easement review, for possible additions and/or changes.",
+   "quote": "ms. benson to provide the board with the checklist for any possible additions and/or changes."
+  },
+  {
+   "decision": "Ms. Benson will confer with the Town Manager regarding funding for the two Planning Director items needing update.",
+   "quote": "will confer with the town manager regarding funding."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Reuse Committee - Passios options",
+   "what_was_recorded": "Committee options include determining the cost of Passios demolition and the cost to renovate Passios; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "1) determine cost of passios demolition with intent to leave property vacant"
+  },
+  {
+   "topic": "Planning Director items funding",
+   "what_was_recorded": "Ms. Benson will confer with the Town Manager regarding funding for updating two regulations; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "will confer with the town manager regarding funding."
+  },
+  {
+   "topic": "Public document access - PCs for Board members",
+   "what_was_recorded": "Select Board PCs were previously considered and found not to be a cost benefit over paper copies; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "it was determined at that time there was not a cost benefit over paper copies for the select board."
+  },
+  {
+   "topic": "Fee for project extensions",
+   "what_was_recorded": "Discussion that a new extension fee must be justifiable and cover administrative staff time; Mr. Allison felt it should be excessive; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "if a fee is put in place, ms. bilotta-simeone opined that the amount must be justifiable, i.e., it must cover the administrative staff costs of time involved to process same."
+  },
+  {
+   "topic": "Tri Town Landing student reimbursement",
+   "what_was_recorded": "State student reimbursement criteria checked; the Town does not qualify this year; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town assessor worked with the state to determine if the development meets state criteria for student reimbursement."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (7-22-13)",
+   "resolution": "approved; minutes signed",
+   "quote": "minutes approval: 7-22-13, motion to approve, mr. lockwood, second, mr. mcquaid. minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointment: Highfield Village",
+   "resolution": "extension granted to October 22, 2013",
+   "quote": "the board voted to grant an extension to october 22, 2013.",
+   "tags": [
+    "subdivision",
+    "extension",
+    "sewer",
+    "MEPA"
+   ]
+  },
+  {
+   "topic": "ANR: 1401 & 1417 Massachusetts Avenue",
+   "resolution": "approved",
+   "quote": "motion, mr. lockwood to approve anr, second, mr. mcquaid, all aye.",
+   "tags": [
+    "ANR",
+    "land swap"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "mjtc, mr. allison- no august meeting.",
+   "tags": [
+    "committees",
+    "school building",
+    "school reuse",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Old business: Planning Board Goals",
+   "resolution": "workshop to fine-tune Goals; date corrected to August 26 at 5:30 PM",
+   "quote": "board will begin its september 23rd meeting at 5:30 pm for a workshop to discuss goals.",
+   "tags": [
+    "goals",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Public document access",
+   "resolution": "Ms. Benson to proceed; public files read-only",
+   "quote": "ms. benson to move ahead with process.",
+   "tags": [
+    "public access",
+    "IT",
+    "documents"
+   ]
+  },
+  {
+   "topic": "300 W. Holman & 300 Holman St",
+   "resolution": "placed on September 23 agenda",
+   "quote": "item will be placed on the september 23rd agenda for discussion.",
+   "tags": [
+    "Chapter 61B",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "MRPC response",
+   "resolution": "distributed; to be discussed at next meeting",
+   "quote": "distributed additional response to their questions and discuss at the next board meeting.",
+   "tags": [
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Force Corp., 305 Leominster Shirley Rd",
+   "resolution": "noted; application incomplete",
+   "quote": "application submittal not complete at this time.",
+   "tags": [
+    "development plan review"
+   ]
+  },
+  {
+   "topic": "Ryan & Amy Lazaro driveway permit, 617 Leominster Road",
+   "resolution": "public hearing required; more information requested",
+   "quote": "as property is located on a scenic road, a public hearing must be held.",
+   "tags": [
+    "scenic road",
+    "driveway permit"
+   ]
+  },
+  {
+   "topic": "Citizen Survey",
+   "resolution": "continue survey with CPA definition and medical marijuana question",
+   "quote": "it was recommended to continue with the survey as presented to include a definition of the cpa and a question on medical marijuana as noted below.",
+   "tags": [
+    "citizen survey",
+    "CPA",
+    "medical marijuana"
+   ]
+  },
+  {
+   "topic": "White Tail Crossing",
+   "resolution": "noted; developer complying with review",
+   "quote": "developer in the process of complying with engineering review letter of march 2013.",
+   "tags": [
+    "road acceptance",
+    "engineering review"
+   ]
+  },
+  {
+   "topic": "Mobil Station, Leominster Shirley Road",
+   "resolution": "noted; construction begun",
+   "quote": "mobil station, leominster shirley road- construction has begun.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom",
+   "resolution": "additional crosswalk; developer to appear September 23",
+   "quote": "developer will put an additional crosswalk in place, which will be from the development to the beach area.",
+   "tags": [
+    "crosswalk",
+    "lease-to-own"
+   ]
+  },
+  {
+   "topic": "Tri Town Landing, Youngs Road",
+   "resolution": "yearly update noted; no student reimbursement this year",
+   "quote": "it was determined that the town does not qualify for this year.",
+   "tags": [
+    "Tri Town Landing",
+    "housing",
+    "state reimbursement"
+   ]
+  },
+  {
+   "topic": "Asian Imperial, Electric Avenue",
+   "resolution": "noted; right-of-way question",
+   "quote": "asian imperial, electric avenue- chain replaced and reflector added.",
+   "tags": [
+    "MA Highway right-of-way"
+   ]
+  },
+  {
+   "topic": "Medical marijuana",
+   "resolution": "noted; bylaw and survey question in progress",
+   "quote": "board voted at its july 22, 2013 meeting to create a bylaw for the fall town meeting to put a year moratorium",
+   "tags": [
+    "medical marijuana",
+    "moratorium",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "posting of meetings- noted",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "items scanned to members; fee question awaiting Town Clerk; Whalom Road name to be researched",
+   "quote": "fee schedule- question arose if select board approval was required to levy a new fee for project extensions.",
+   "tags": [
+    "fee schedule",
+    "301 CMR 11.00",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "Whalom Road LLC/Lunenburg Village",
+   "resolution": "ZBA continuance scanned; name input to research with Town Counsel",
+   "quote": "whalom road llc/lunenburg village. zba continuance scanned to members.",
+   "tags": [
+    "ZBA",
+    "naming"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "august 26 - 5:30 workshop, 6:30 pm board meeting, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues: Town land acquisition",
+   "resolution": "turned over to Open Space and Recreation Committee and/or Select Board",
+   "quote": "motion, mr. lockwood to turn proposal over to open space and recreation committee and/or select board for investigation.",
+   "tags": [
+    "town land",
+    "Whalom Lake",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Member issues: Town Center",
+   "resolution": "documents to be sent to MRPC",
+   "quote": "documents will be sent to mrpc",
+   "tags": [
+    "town center"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "speed sign concern passed to DPW; easement review on Tri Town plans discussed",
+   "quote": "ms. benson will pass comment on to dpw director.",
+   "tags": [
+    "traffic",
+    "easements",
+    "Tri Town"
+   ]
+  },
+  {
+   "topic": "Planning Director comment: subdivision rules and telecom towers",
+   "resolution": "Town Counsel review of Section 5.6; checklist to be provided; telecom rules listed with no action recorded",
+   "quote": "ms. benson to confer with town counsel for clarity in section 5.6.",
+   "tags": [
+    "subdivision rules",
+    "zoning bylaw",
+    "telecommunications"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment: none executive session: board did not go into executive session",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "not entered",
+   "quote": "executive session: board did not go into executive session",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:28 PM",
+   "quote": "motion to adjourn, mr. mcquaid, second, mir. lockwood, adjourned 9:28 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Highfield Village Chronological Order",
+   "where": "list",
+   "quote": "documents used at meeting: highfield village chronological order"
+  },
+  {
+   "name": "Planning Board Goals",
+   "where": "list",
+   "quote": "planning board goals board questions to mrpc"
+  },
+  {
+   "name": "Board Questions to MRPC",
+   "where": "list",
+   "quote": "board questions to mrpc application for dpr, 305 leominster shirley road"
+  },
+  {
+   "name": "Application for DPR, 305 Leominster Shirley Road",
+   "where": "list",
+   "quote": "application for dpr, 305 leominster shirley road mgl ch 40, section 15c"
+  },
+  {
+   "name": "MGL Ch 40, Section 15c",
+   "where": "list",
+   "quote": "mgl ch 40, section 15c scenic road driveway permit application, 617 leominster road"
+  },
+  {
+   "name": "Scenic Road Driveway Permit Application, 617 Leominster Road",
+   "where": "list",
+   "quote": "scenic road driveway permit application, 617 leominster road citizen survey"
+  },
+  {
+   "name": "Citizen Survey",
+   "where": "list",
+   "quote": "citizen survey white tail crossing review"
+  },
+  {
+   "name": "White Tail Crossing Review",
+   "where": "list",
+   "quote": "white tail crossing review emerald place at lake whalom street number change"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom Street Number Change",
+   "where": "list",
+   "quote": "emerald place at lake whalom street number change emerald place at lake whalom weekly update"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom Weekly Update",
+   "where": "list",
+   "quote": "emerald place at lake whalom weekly update medical marijuana news article"
+  },
+  {
+   "name": "Medical Marijuana News Article",
+   "where": "list",
+   "quote": "medical marijuana news article medical marijuana draft bylaw"
+  },
+  {
+   "name": "Medical Marijuana Draft Bylaw",
+   "where": "list",
+   "quote": "medical marijuana draft bylaw town clerk meeting memo"
+  },
+  {
+   "name": "Town Clerk Meeting Memo",
+   "where": "list",
+   "quote": "town clerk meeting memo zba special permits- 321 whalom road, 5 spring street, 178 peninsula drive"
+  },
+  {
+   "name": "ZBA Special Permits- 321 Whalom Road, 5 Spring Street, 178 Peninsula Drive",
+   "where": "list",
+   "quote": "zba special permits- 321 whalom road, 5 spring street, 178 peninsula drive zba hearing- 29 pine acres road"
+  },
+  {
+   "name": "ZBA Hearing- 29 Pine Acres Road",
+   "where": "list",
+   "quote": "zba hearing- 29 pine acres road 301 cmr 11.00"
+  },
+  {
+   "name": "301 CMR 11.00",
+   "where": "list",
+   "quote": "301 cmr 11.00 fee schedule research fincom liaisons"
+  },
+  {
+   "name": "Fee Schedule Research",
+   "where": "list",
+   "quote": "fee schedule research fincom liaisons whalom road llc hearing continuance"
+  },
+  {
+   "name": "FinCom Liaisons",
+   "where": "list",
+   "quote": "fincom liaisons whalom road llc hearing continuance hazard mitigation plan update"
+  },
+  {
+   "name": "Whalom Road LLC Hearing Continuance",
+   "where": "list",
+   "quote": "whalom road llc hearing continuance hazard mitigation plan update"
+  },
+  {
+   "name": "Hazard Mitigation Plan Update",
+   "where": "list",
+   "quote": "hazard mitigation plan update town land acquisition information"
+  },
+  {
+   "name": "Town Land Acquisition Information",
+   "where": "list",
+   "quote": "hazard mitigation plan update town land acquisition information video recording on file."
+  },
+  {
+   "name": "Engineering review letter of March 2013",
+   "where": "text",
+   "quote": "developer in the process of complying with engineering review letter of march 2013."
+  },
+  {
+   "name": "Article 45, May 2006 Town Meeting",
+   "where": "text",
+   "quote": "article 45, at the may 2006 town meeting gave the board of selectmen permission to petition the legislature for the land swap."
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land (update)",
+   "where": "text",
+   "quote": "update of rules and regulations governing the subdivision of land."
+  },
+  {
+   "name": "Rules and Regulations for Telecommunication and Cellular Towers (update)",
+   "where": "text",
+   "quote": "update of rules and regulations for telecommunication and cellular towers-"
+  },
+  {
+   "name": "e-mail from the School Superintendent",
+   "where": "text",
+   "quote": "mr. lockwood noted e-mail from the school superintendent which contains links to updates."
+  },
+  {
+   "name": "Mr. Allison's documents on town center",
+   "where": "text",
+   "quote": "noted mr. allison's documents suggesting the board investigate the potential of creating a wide spread and well- connected town center",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Lunenburg School Plan news article",
+   "where": "text",
+   "quote": "lunenburg school plan- news article scanned to members"
+  },
+  {
+   "name": "IT Director recommendations and Board responses",
+   "where": "text",
+   "quote": "noted recommendations of it director and board responses."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "Highfield Village",
+  "ANR",
+  "subdivision",
+  "sewer",
+  "MEPA",
+  "citizen survey",
+  "medical marijuana",
+  "public document access",
+  "planning goals",
+  "school reuse",
+  "Chapter 61B",
+  "scenic road",
+  "zoning bylaw",
+  "town land acquisition",
+  "town center"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

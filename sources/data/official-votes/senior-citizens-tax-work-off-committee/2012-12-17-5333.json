@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2012-12-17",
  "docid": "5333",
@@ -12,6 +12,86 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes document the meeting being called to order, a general discussion about hours and exemptions, assignments of contact tasks to members, and the meeting adjourning at 2:15 P.M. No motions, seconds, or votes are stated.",
- "cost_usd": 0.0819635
+ "note": "OCR text from a scan (macOS Vision). No votes, motions, or dollar figures are recorded; the adjournment at 2:15 P.M. has no recorded motion. The minutes' heading reads 'Senior Citizen Property Tax Work-off Program & Taxation Aid Committee', while the requested board name is 'Senior Citizens Tax Work Off Committee'. The received-and-filed stamp reads FEB 19.2015, which is later than the meeting date. The OCR reads 'Ms Herrick' and 'Ms Noble' as printed; no minutes approval is recorded.",
+ "cost_usd": 0.00214902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Doreen Noble",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order by chair doreen noble at 2:00 p.m. town hall."
+  },
+  {
+   "name": "Kathryn Herrick",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: doreen noble, kathryn herrick and david manzello."
+  },
+  {
+   "name": "David Manzello",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: doreen noble, kathryn herrick and david manzello."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms Herrick to contact Ms Larkin, let her know about the meeting, and call the Library and Public Safety regarding participation.",
+   "quote": "ms herrick to contact ms larkin let her know about meeting and call library and public safety re participation"
+  },
+  {
+   "decision": "Ms Noble to contact Schools regarding the outreach.",
+   "quote": "ms noble to contact schools and mr manzello to contact all other town departments."
+  },
+  {
+   "decision": "Mr Manzello to contact all other Town Departments.",
+   "quote": "ms noble to contact schools and mr manzello to contact all other town departments."
+  },
+  {
+   "decision": "Next meeting set for January 7, 2013.",
+   "quote": "next meeting -january 7, 2013"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "General discussion on hours submitted and missed exemptions",
+   "resolution": "discussed; noted missed exemptions will be treated as abatements by Assessors",
+   "quote": "general discussion regarding hours submitted any missed exemptions will be treated as abatements"
+  },
+  {
+   "topic": "Outreach to departments and town groups",
+   "resolution": "assignments made to Herrick, Noble and Manzello",
+   "quote": "ms herrick to contact ms larkin let her know about meeting and call library and public safety re participation"
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for January 7, 2013",
+   "quote": "next meeting -january 7, 2013"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:15 P.M. (no motion recorded)",
+   "quote": "meeting adjourned at 2:15 p.m."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "senior property tax work-off",
+  "taxation aid",
+  "volunteer hours",
+  "exemptions",
+  "abatements",
+  "outreach",
+  "town departments"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

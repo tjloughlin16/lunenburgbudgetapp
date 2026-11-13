@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-05-03",
  "docid": "2297",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to recommend approval of Article 8 regarding using free cash to pay a prior year expense",
+   "motion": "Recommend approval of Article 8 regarding using free cash to pay a prior year expense.",
    "moved_by": "BL",
    "seconded_by": "KM",
    "outcome": "passed 6-0",
@@ -20,7 +20,7 @@
    "quote": "bl motioned to recommend approval of article 8 regarding using free cash to pay a prior year expense. km seconded, motion carried 6-0."
   },
   {
-   "motion": "to recommend approval of Article 9 regarding transfers and amendments to reconcile the FY14 budget",
+   "motion": "Recommend approval of Article 9 regarding transfers and amendments to reconcile the FY14 budget.",
    "moved_by": "KM",
    "seconded_by": "BL",
    "outcome": "passed 6-0",
@@ -28,15 +28,160 @@
    "quote": "km motioned to recommend approval of article 9 regarding transfers and amendments to reconcile the fy14 budget. bl seconded, motion carried 6-0."
   },
   {
-   "motion": "to adjourn the Finance Committee meeting",
+   "motion": "Adjourn the Finance Committee meeting after Town Meeting.",
    "moved_by": "KM",
    "seconded_by": "BL",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "km motioned to adjourn the finance committee meeting. bl seconded, meeting adjourned at"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source; adjournment time appears truncated (text ends with \"adjourned at\" without time recorded)",
- "cost_usd": 0.1104235
+ "note": "OCR text of a scanned page. The adjournment time is cut off (\"meeting adjourned at\") and the adjournment outcome is not printed, so it is recorded as not stated. Agenda numbering skips from 1 to 4 in the OCR. Attendance is read from a \"Present:\" / \"Absent:\" block that the OCR scrambled. Roles are printed only for the Chairman, Vice-Chairman and Secretary. Article 9 is a warrant article to reconcile the FY14 budget with no dollar figure printed, so it is not recorded as a transfer. Kibbe's role is not printed.",
+ "cost_usd": 0.00386512,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "high school m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard j. smith"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "",
+   "status": "absent",
+   "quote": "high school m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard j. smith"
+  },
+  {
+   "name": "B. Kibbe",
+   "role": "",
+   "status": "not stated",
+   "quote": "b. kibbe advised the committee that the appraisal was completed on the lane property."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Lane property land purchase and state grant bond",
+   "what_was_recorded": "B. Kibbe reported the Lane property appraisal was complete, the purchase price will be significantly less than anticipated, and the bond for the purchase would be about $225,000 if the state grant comes through.",
+   "figures_as_printed": [
+    "$225,000"
+   ],
+   "quote": "if the state grant comes through, then the amount of the bond for the purchase will end up at about $225,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "B. Kibbe",
+   "stated_role": "",
+   "topic": "Lane property appraisal and land purchase",
+   "quote": "b. kibbe advised the committee that the appraisal was completed on the lane property. pending review by the owner, the land purchase price will be significantly less than anticipated"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 8:15 am",
+   "quote": "1. meeting called to order at 8:15 am.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment: Lane property appraisal",
+   "resolution": "no action; update received",
+   "quote": "b. kibbe advised the committee that the appraisal was completed on the lane property.",
+   "tags": [
+    "land purchase",
+    "appraisal",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Warrant article review",
+   "resolution": "Articles 8 and 9 recommended for approval",
+   "quote": "the review of warrant articles continued",
+   "tags": [
+    "warrant articles",
+    "free cash",
+    "FY14 budget"
+   ]
+  },
+  {
+   "topic": "Town Meeting recess",
+   "resolution": "recessed to Town Meeting",
+   "quote": "the committee recessed to town meeting at 8:35 am.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned after Town Meeting; time not printed",
+   "quote": "km motioned to adjourn the finance committee meeting. bl seconded, meeting adjourned at",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 8 (using free cash to pay a prior year expense)",
+   "where": "text",
+   "quote": "bl motioned to recommend approval of article 8 regarding using free cash to pay a prior year expense. km seconded, motion carried 6-0."
+  },
+  {
+   "name": "Article 9 (transfers and amendments to reconcile the FY14 budget)",
+   "where": "text",
+   "quote": "km motioned to recommend approval of article 9 regarding transfers and amendments to reconcile the fy14 budget. bl seconded, motion carried 6-0."
+  }
+ ],
+ "tags": [
+  "warrant articles",
+  "free cash",
+  "FY14 budget",
+  "land purchase",
+  "state grant",
+  "bond",
+  "town meeting",
+  "appraisal"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

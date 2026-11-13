@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-05-11",
  "docid": "3809",
@@ -12,15 +12,121 @@
  },
  "votes": [
   {
-   "motion": "continue the Hearing to June 8, 2015, 6:35 PM",
+   "motion": "Continue the public hearing on 270 Electric Avenue to June 8, 2015, 6:35 PM.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, all aye",
+   "procedural": false,
    "quote": "motion to continue hearing to june 8, 2015, 6:35 pm, j. bilotta-simeone, second, d. mcquaid, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0816735
+ "note": "Hearing minutes; no dollar figures appear. The only recorded vote is the motion to continue. The hearing was recessed at 7:20 PM, not closed. J. Rodriquenz (DPW Director) and Whitman & Bingham Associates were mentioned but not recorded as taking part, so they are not listed as attendees. No public comment was recorded.",
+ "cost_usd": 0.0041971199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Applicant/owner",
+   "status": "present",
+   "quote": "applicant/owner richard bursch gave an overview of the project."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant R. Bursch is to provide street view drawings from the front and side for the continued hearing; discussed, not separately voted.",
+   "quote": "for r. bursch to provide street view drawings from the front and side"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Development plan review, self-service storage facility, 270 Electric Avenue (Map 93, Parcel 72)",
+   "resolution": "public hearing opened; continued to June 8, 2015",
+   "quote": "the hearing is to hear and discuss an application for a development plan review under section 8.4.",
+   "tags": [
+    "public hearing",
+    "development plan review",
+    "self-storage",
+    "zoning",
+    "Electric Avenue"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Statutory notice published in the Sentinel and Enterprise on April 27 and May 4, 2015",
+   "where": "text",
+   "quote": "reading of the statutory notice published in the sentinel and enterprise on april 27 and may 4, 2015."
+  },
+  {
+   "name": "Sight line study by Whitman & Bingham Associates (WBA)",
+   "where": "text",
+   "quote": "project engineer whitman & bingham associates (wba) did a sight line study."
+  },
+  {
+   "name": "Peer review",
+   "where": "text",
+   "quote": "to allow for receipt of the peer rev iew"
+  },
+  {
+   "name": "Street view drawings from the front and side",
+   "where": "text",
+   "quote": "for r. bursch to provide street view drawings from the front and side"
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "self-storage facility",
+  "development plan review",
+  "270 Electric Avenue",
+  "continued hearing",
+  "traffic",
+  "snow storage",
+  "water and sewer"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

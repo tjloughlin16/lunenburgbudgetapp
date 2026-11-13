@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2016-03-23",
  "docid": "4556",
@@ -12,55 +12,411 @@
  },
  "votes": [
   {
-   "motion": "approve the meeting minutes from February 10, 2016 upon submission of amended content",
+   "motion": "Approve the February 10, 2016 meeting minutes upon submission of amended content (NV5 to amend and resubmit).",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "lunenburg school building committee voted to approve the meeting minutes from february 10, 2016 upon submission of amended content."
+   "quote": "lunenburg school building committee voted to approve the meeting minutes from february 10, 2016"
   },
   {
-   "motion": "approve Change Order No. 9 as presented",
+   "motion": "Approve Change Order No.9 as presented.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "the lunenburg school building committee voted to approve change order no.9 as presented. the motion was unanimously approved."
   },
   {
-   "motion": "remove the artificial turf contingency item from the list",
+   "motion": "Remove the contingency item to change sod to artificial turf at the new athletic fields from the list (fields to remain sod).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "the lunenburg school building committee voted to approve to remove the above mentioned contingency item from the list. the motion was unanimously approved."
   },
   {
-   "motion": "remove the parking lot reconfiguration contingency item from the list",
+   "motion": "Remove the contingency item for reconfiguration of the parking lot to add more parking spaces from the list.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "the lunenburg school building committee voted to approve to remove the above mentioned contingency item from the list. the motion was unanimously approved."
   },
   {
-   "motion": "approve construction of maintenance garage at a not to exceed amount as presented",
+   "motion": "Approve construction of a maintenance garage at a not to exceed amount as presented, with Shawmut to proceed and include it in a Change Order package at the April meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 6-1",
    "procedural": false,
-   "quote": "the lunenburg school building committee voted to approve a construction of maintenance garage at a not to exceed amount as presented. shawmut will proceed with this work and include this item in a change order package during april meeting. the motion was approved with 1 opposing vote and 6 supporting votes."
+   "quote": "the motion was approved with 1 opposing vote and 6 supporting votes."
   },
   {
-   "motion": "approve construction of Digital Sign at a not to exceed amount as presented",
+   "motion": "Approve construction of a Digital Sign at a not to exceed amount as presented, with Shawmut to proceed and include it in a Change Order package at the April meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 5-2",
    "procedural": false,
-   "quote": "the lunenburg school building committee voted to approve a construction of digital sign at a not to exceed amount as presented. shawmut will proceed with this work and include this item in a change order package during april meeting. the motion was approved with 2 opposing votes and 5 supporting votes."
+   "quote": "the motion was approved with 2 opposing votes and 5 supporting votes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; all votes recorded with clear outcomes and vote counts where provided.",
- "cost_usd": 0.1383205
+ "note": "OCR text of a scanned, multi-page set with column and page order scrambled. Attendee roles were matched to names by list order, so the name-to-role pairing is inferred and should be checked against the source. Attendance status is printed only for the chair and one member; the rest are roster entries and marked not stated. No mover or seconder is printed for any motion. The digital sign motion appears twice (pages 4 and 5) and is recorded once. The Feb 10 minutes motion is recorded as passed without a count. No roll call and no adjournment motion are printed. Page 2 opens mid-sentence, so the cooling and contingency comments are a summary that does not clearly sit under a heading.",
+ "cost_usd": 0.00909692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Planning Board, LSBC Member",
+   "status": "present",
+   "quote": "motion: mr. bittner commented on content revision change order no.8 vote."
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Jen Littlefield",
+   "role": "Tappe Architects",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Stuart Lesser",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Robert Alger",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "rob alger is available to set up time for site visit."
+  },
+  {
+   "name": "Rob Juusola",
+   "role": "NVS",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Philip Conroy",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Mr. Luck",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "the request from mr. luck to provide record information on value engineering process"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee mutually agreed to revise the 02/10/2016 minutes to include a correction, and to put those minutes forward for approval at the next meeting.",
+   "quote": "it was mutually agreed upon by the committee to revise the 02/10/2016 minutes"
+  },
+  {
+   "decision": "Shawmut will review the concrete cost further, with efforts to bring the concrete value down.",
+   "quote": "shawmut will review the cost further with efforts to bring concrete value down."
+  },
+  {
+   "decision": "All available Value Engineering documents were forwarded to Mr. Luck for his use.",
+   "quote": "all available documents were forwarded to mr. luck to his use."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Change Order No.9 (previously authorized work)",
+   "what_was_recorded": "Change Order No.9 adds $7,127.00 for work previously authorized to proceed as a not to exceed amount of $10,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$7,127.00"
+   ],
+   "quote": "this work was previously authorized to proceed on by the lsbc as a not to exceed amount of $10,000. (add $7,127.00)"
+  },
+  {
+   "topic": "Maintenance garage / utility storage structure cost",
+   "what_was_recorded": "Concerns were raised about the high cost of the utility storage structure; discussion said it is more advanced than a storage unit and benefits maintenance staff. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there were concerns about high cost for a storage unit for utilities."
+  },
+  {
+   "topic": "Concrete cost allowance",
+   "what_was_recorded": "Concerns were raised about the high concrete cost allowance; Shawmut will review it. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "additional concerns were regarding high concrete cost allowance."
+  },
+  {
+   "topic": "Site digital sign cost",
+   "what_was_recorded": "Cost of the digital sign was presented; advertising was suggested as a way to finance sign maintenance. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "cost for this item was presented to the committee."
+  },
+  {
+   "topic": "Project budget status",
+   "what_was_recorded": "Chair reported the project is on time and on budget.",
+   "figures_as_printed": [
+    "82%"
+   ],
+   "quote": "the project is on time and on budget with minimal unforeseen construction changes as the building is nearing completions at 82% completion."
+  },
+  {
+   "topic": "Contingency spending and town funding (public comment)",
+   "what_was_recorded": "Citizens opposed contingency spending beyond unforeseen conditions, citing the town's struggle to fund requirements; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "several citizens spoke to oppose the expenditures associated with"
+  },
+  {
+   "topic": "Added cooling funded from project funds",
+   "what_was_recorded": "Comments supported adding cooling now using project funds, since a later addition may be unfunded. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "therefore preforming this work at present through the project using project funds available for such work was supported by several who attended."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "several citizens",
+   "stated_role": "citizens",
+   "topic": "Contingency spending and town funding",
+   "quote": "several citizens spoke to oppose the expenditures associated with"
+  },
+  {
+   "speaker": "several attendees",
+   "stated_role": "",
+   "topic": "Added cooling as project work",
+   "quote": "therefore preforming this work at present through the project using project funds available for such work was supported by several who attended."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "Formal public comment period",
+   "quote": "public comment no public comment. adjournment"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:34 PM",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Business: next meeting",
+   "resolution": "noted next meeting April 13, 2016",
+   "quote": "next meeting will be held on april 13, 2016 at 6:30pm at thomas c. passios",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment on cooling and contingency spending",
+   "resolution": "no action recorded",
+   "quote": "several citizens spoke to oppose the expenditures associated with",
+   "tags": [
+    "public comment",
+    "contingency",
+    "cooling"
+   ]
+  },
+  {
+   "topic": "Chair's Report: project status",
+   "resolution": "reported on time and on budget, 82% complete",
+   "quote": "the project is on time and on budget with minimal unforeseen construction changes as the building is nearing completions at 82% completion.",
+   "tags": [
+    "project status"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee minutes",
+   "resolution": "approved February 10, 2016 minutes upon amended content",
+   "quote": "lunenburg school building committee voted to approve the meeting minutes from february 10, 2016",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Change Order No.9",
+   "resolution": "approved as presented",
+   "quote": "the lunenburg school building committee voted to approve change order no.9 as presented. the motion was unanimously approved.",
+   "tags": [
+    "change orders"
+   ]
+  },
+  {
+   "topic": "Contingency for Action",
+   "resolution": "turf and parking items removed; maintenance garage and digital sign approved",
+   "quote": "further conversation and review of contingency scope adds took place during this",
+   "tags": [
+    "contingency",
+    "athletic fields",
+    "parking",
+    "maintenance garage",
+    "digital sign"
+   ]
+  },
+  {
+   "topic": "Construction Activity Update",
+   "resolution": "information only; slideshow presented",
+   "quote": "a construction update image slideshow was presented at the meeting.",
+   "tags": [
+    "construction"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment no public comment. adjournment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 8:05 pm; no vote recorded",
+   "quote": "the meeting was adjourned at approximately 8:05 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Potential Change Order Log",
+   "where": "list",
+   "quote": "all items presented were previously listed in a potential change order log which is distributed during committee meeting."
+  },
+  {
+   "name": "Memo from Lunenburg Public Schools (recommending to forgo contingency items)",
+   "where": "list",
+   "quote": "a memo was presented and issued prior to the meeting from lunenburg public schools"
+  },
+  {
+   "name": "Construction update image slideshow",
+   "where": "list",
+   "quote": "a construction update image slideshow was presented at the meeting."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "Lunenburg",
+  "change orders",
+  "contingency",
+  "construction",
+  "cooling",
+  "digital sign",
+  "maintenance garage",
+  "athletic fields",
+  "parking",
+  "Shawmut",
+  "NV5"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "all items presented were previously listed in a potential change order log"
+ },
+ "dropped_unquoted_by_field": {}
 }

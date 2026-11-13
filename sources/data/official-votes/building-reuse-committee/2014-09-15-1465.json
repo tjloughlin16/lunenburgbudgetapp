@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2014-09-15",
  "docid": "1465",
@@ -12,6 +12,255 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes describe discussions, committee updates, and assignments of volunteers, but no motions or voting outcomes are stated. OCR quality is poor in the Old Business section, but legible portions contain no recorded votes.",
- "cost_usd": 0.08346150000000001
+ "note": "OCR scan of a handwritten-era typed minutes page, with a garbled Old Business section and an 'APPROVED 10/6/24' stamp plus a 'RECEIVED & FILED OCT 14 2014' stamp. No motions or votes appear in the text, so the votes list is empty. The Old Business text is largely unreadable. Attachments referred to (MSBA email, diagram) are not included in the text.",
+ "cost_usd": 0.005538619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mark erickson, deb seeley, mike mackin, rebecca lantry and dave matthews."
+  },
+  {
+   "name": "Ron Albert",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mark erickson, deb seeley, mike mackin, rebecca lantry and dave matthews."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mark erickson, deb seeley, mike mackin, rebecca lantry and dave matthews."
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "representing the Finance Committee",
+   "status": "present",
+   "quote": "mark erickson representing the finance committee and rebecca lantry representing the historical commission."
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mark erickson, deb seeley, mike mackin, rebecca lantry and dave matthews."
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin gave an update on the school committee's work regarding the site plan, property lines"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "representing the Historical Commission",
+   "status": "present",
+   "quote": "mark erickson representing the finance committee and rebecca lantry representing the historical commission."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mark erickson, deb seeley, mike mackin, rebecca lantry and dave matthews."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "committee member",
+   "status": "absent",
+   "quote": "member damon mcquaid was excused."
+  },
+  {
+   "name": "Jay Lord",
+   "role": "advisor",
+   "status": "present",
+   "quote": "also present were advisors, jay lord and john londa."
+  },
+  {
+   "name": "John Londa",
+   "role": "advisor",
+   "status": "present",
+   "quote": "also present were advisors, jay lord and john londa."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Task Team formed to begin developing preliminary cost/revenue assumptions, with Mr. Erickson and Mr. Toale volunteering.",
+   "quote": "mr erickson and mr. toale volunteered."
+  },
+  {
+   "decision": "The TCP property remains on Building Re-Use Committee agendas for future discussion, while the committee focuses on other buildings under its charge (MacDonald suggestion).",
+   "quote": "the tcp will remain on building re-use agendas for future discussion."
+  },
+  {
+   "decision": "Chairman Toale to schedule a tour of the Ashland Town Hall for the committee and to walk through the Primary School on the committee's behalf.",
+   "quote": "chairman toale will be scheduling a tour for the building re-use committee of the ashland town"
+  },
+  {
+   "decision": "Next meeting set for Monday, October 6, 2014 at Town Hall; committee to continue on a 1st and 3rd Monday schedule.",
+   "quote": "the next meeting of the building re-use committee will be held on monday october 6, 2014 in the"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Preliminary cost/revenue assumptions (Task Team)",
+   "what_was_recorded": "The chair asked for a Task Team to begin developing preliminary cost and revenue assumptions; no dollar figures printed.",
+   "quote": "chairman toale asked for a task team to begin the process of developing preliminary cost/revenue",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sale of portable classrooms",
+   "what_was_recorded": "The School Department will release two portable classrooms so they can be sold and removed from the building site; no dollar figures printed.",
+   "quote": "mr. londa told the committee that 2 portable classrooms will be released by the school department",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "TCP property marketability",
+   "what_was_recorded": "The committee discussed how the site plan, setback and parking changes would affect the marketability of the TCP property; no dollar figures printed.",
+   "quote": "the committee discussed the impact of these changes on the marketability of the tcp along with changes needed to",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Londa",
+   "stated_role": "advisor",
+   "topic": "Portable classrooms release for sale",
+   "quote": "mr. londa told the committee that 2 portable classrooms will be released by the school department"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Introduction of new members",
+   "resolution": "no action",
+   "quote": "chairman toale introduced and welcomed new members, mark erickson representing the finance",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Planning Board and Historical Commission update (Village Zoning By-Law, Charette)",
+   "resolution": "received update; no action",
+   "quote": "chairman toale gave an update on planning board and historical commission activities that have",
+   "tags": [
+    "village zoning",
+    "planning board",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "TC Passios (TCP) building and school property update",
+   "resolution": "remains on agenda; no action",
+   "quote": "the tcp will remain on building re-use agendas for future discussion.",
+   "tags": [
+    "TCP",
+    "school committee",
+    "MSBA",
+    "setback"
+   ]
+  },
+  {
+   "topic": "Task Team for preliminary cost/revenue assumptions",
+   "resolution": "task team formed",
+   "quote": "chairman toale asked for a task team to begin the process of developing preliminary cost/revenue",
+   "tags": [
+    "cost",
+    "revenue",
+    "task team"
+   ]
+  },
+  {
+   "topic": "Town Hall renovation building design",
+   "resolution": "no action; more information at next meeting",
+   "quote": "begun preliminary discussions on the building design of the town hall renovation",
+   "tags": [
+    "town hall",
+    "renovation",
+    "design"
+   ]
+  },
+  {
+   "topic": "Tours of Ashland Town Hall and Primary School",
+   "resolution": "chair to schedule tour and walk-through",
+   "quote": "chairman toale will be scheduling a tour for the building re-use committee of the ashland town",
+   "tags": [
+    "tours",
+    "primary school"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "no action recorded; text unreadable in scan",
+   "quote": "i ming re-use commit the circus on. me heale wil elopery noiore haformaid be part of the",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for October 6, 2014",
+   "quote": "the next meeting of the building re-use committee will be held on monday october 6, 2014 in the",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comment: Worcester Telegram article on surplus Dudley library",
+   "resolution": "received; no action",
+   "quote": "ms. lantry presented an article from the worcester telegram re: marketing of the surplus public",
+   "tags": [
+    "surplus property",
+    "marketing"
+   ]
+  },
+  {
+   "topic": "Public comment: portable classrooms",
+   "resolution": "no action",
+   "quote": "mr. londa told the committee that 2 portable classrooms will be released by the school department",
+   "tags": [
+    "portable classrooms",
+    "surplus"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Ms. Calmes to the MSBA (attached)",
+   "where": "text",
+   "quote": "see attached email from ms. calmes to the msba"
+  },
+  {
+   "name": "Diagram of school property showing a 40' setback and 30 parking spaces (attached)",
+   "where": "text",
+   "quote": "mr. mackin also distributed a diagram of the school property showing a 40' setback"
+  },
+  {
+   "name": "Final Village Zoning By-Law",
+   "where": "text",
+   "quote": "the final village zoning by-law to be presented by the planning board at the fall town meeting"
+  },
+  {
+   "name": "Worcester Telegram article re: marketing of surplus Public Library in Dudley",
+   "where": "text",
+   "quote": "ms. lantry presented an article from the worcester telegram re: marketing of the surplus public"
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "town hall",
+  "TC Passios school property",
+  "village zoning by-law",
+  "school committee",
+  "MSBA",
+  "portable classrooms",
+  "task team",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

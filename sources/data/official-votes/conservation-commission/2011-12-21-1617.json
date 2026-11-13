@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-12-21",
  "docid": "1617",
@@ -10,8 +10,180 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12212011-1617",
   "doc_url": "/docs/meetings/conservation-commission/2011-12-21-minutes-1617.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Approve the minutes of 7/20, 8/17, 9/7 and 21, 10/5 and 9, 11/16, and 12/7.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes approved: 7/20, 8/17, 9/7,21, 10/5, 9, 11/16, 12/7"
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "OCR scan of Conservation Commission minutes (2011-12-21). No votes recorded. The text lists three property violation cases with actions taken, discussion of forest cutting grants, and a line stating \"Minutes approved: 7/20, 8/17, 9/7,21, 10/5, 9, 11/16, 12/7\" (referring to prior meeting minutes), but contains no motion language, no \"seconded by\" attribution, no vote counts, or any recorded outcomes of votes.",
- "cost_usd": 0.0817985
+ "note": "Single-page OCR scan of the minutes. The attendance roster is an unlabeled list of names under the header, so member status is coded present on that basis. The minutes approval line has no mover, seconder or stated tally; it is recorded as a procedural vote with outcome passed because the text says approved. Hearing outcomes are described with no recorded motions. A handwritten \"appsoved 5-16-12\" appears near the header. No adjournment or call to order is captured.",
+ "cost_usd": 0.0036625200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Christopher M Comeau",
+   "status": "absent",
+   "quote": "7:00 pm ~ 819 west street ~ christopher m/julie h comeau ~ possible violation ~ no show"
+  },
+  {
+   "name": "Julie H Comeau",
+   "status": "absent",
+   "quote": "7:00 pm ~ 819 west street ~ christopher m/julie h comeau ~ possible violation ~ no show"
+  },
+  {
+   "name": "Chuck Letarte",
+   "status": "present",
+   "quote": "chuck letarte was in attendance and stated that he will take care of all of the debris on the noted property and discard properly."
+  },
+  {
+   "name": "Cynthia Letarte",
+   "status": "not stated",
+   "quote": "7:15 pm ~ 24 west townsend road ~ charles r/cynthia letarte ~"
+  },
+  {
+   "name": "Andrzej Babinski",
+   "status": "not stated",
+   "quote": "7:30 pm ~ 98 whiting street ~ andrzej/tricia babinski ~ possible violation ~ andrzej will file and rda"
+  },
+  {
+   "name": "Tricia Babinski",
+   "status": "not stated",
+   "quote": "7:30 pm ~ 98 whiting street ~ andrzej/tricia babinski ~ possible violation ~ andrzej will file and rda"
+  },
+  {
+   "name": "Chuck Caron",
+   "status": "present",
+   "quote": "chuck caron was in attendance to talk about forest cutting. he explained that you should look at the whole picture first and then break it down into workable areas."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Forest cutting grants",
+   "what_was_recorded": "Chuck Caron said the DCR and the Federal Government have Stewardship and Forest Cutting grants available; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "the dcr and federal government have stewardship and forest cutting grants available."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chuck Letarte",
+   "stated_role": "",
+   "topic": "debris at 24 West Townsend Road",
+   "quote": "chuck letarte was in attendance and stated that he will take care of all of the debris on the noted property and discard properly."
+  },
+  {
+   "speaker": "Chuck Caron",
+   "stated_role": "",
+   "topic": "forest cutting",
+   "quote": "chuck caron was in attendance to talk about forest cutting. he explained that you should look at the whole picture first and then break it down into workable areas."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Possible violation: 819 West Street (Christopher M/Julie H Comeau)",
+   "resolution": "no action; owners did not appear",
+   "quote": "7:00 pm ~ 819 west street ~ christopher m/julie h comeau ~ possible violation ~ no show",
+   "tags": [
+    "enforcement",
+    "violation",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Possible violation: 24 West Townsend Road (Charles R/Cynthia Letarte)",
+   "resolution": "owner to remove debris; no vote recorded",
+   "quote": "chuck letarte was in attendance and stated that he will take care of all of the debris on the noted property and discard properly.",
+   "tags": [
+    "enforcement",
+    "violation",
+    "debris"
+   ]
+  },
+  {
+   "topic": "Possible violation: 98 Whiting Street (Andrzej/Tricia Babinski)",
+   "resolution": "owner to file an RDA; no vote recorded",
+   "quote": "7:30 pm ~ 98 whiting street ~ andrzej/tricia babinski ~ possible violation ~ andrzej will file and rda",
+   "tags": [
+    "enforcement",
+    "violation",
+    "filing"
+   ]
+  },
+  {
+   "topic": "Forest cutting presentation by Chuck Caron",
+   "resolution": "presentation; no action",
+   "quote": "chuck caron was in attendance to talk about forest cutting. he explained that you should look at the whole picture first and then break it down into workable areas.",
+   "tags": [
+    "forest cutting",
+    "grants",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "quote": "minutes approved: 7/20, 8/17, 9/7,21, 10/5, 9, 11/16, 12/7",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "RDA",
+   "where": "text",
+   "quote": "7:30 pm ~ 98 whiting street ~ andrzej/tricia babinski ~ possible violation ~ andrzej will file and rda"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "violations",
+  "forest cutting",
+  "grants",
+  "minutes approval",
+  "debris"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

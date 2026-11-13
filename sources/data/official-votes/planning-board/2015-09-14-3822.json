@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-09-14",
  "docid": "3822",
@@ -12,15 +12,213 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing to November 9, 2015, at 6:35 PM",
+   "motion": "Continue the Highfield Village hearing to November 9, 2015, 6:35 PM.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, all aye",
+   "procedural": false,
    "quote": "motion to continue hearing to november 9, 2015, 6:35 pm, m. allison, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Public hearing minutes for Highfield Village development proposal. One procedural motion to continue the hearing; text is clear and readable.",
- "cost_usd": 0.0807755
+ "note": "Text is a complete extraction of a 2-page minutes document. Only one motion (continuance) is recorded; no other votes. No dollar figures appear. Some words are split by extraction (e.g., 'Davi d', 'Northfiel d', 'lim it'); quotes copy the text as printed. The attorney-noticed statement and recess are recorded as decisions without a vote.",
+ "cost_usd": 0.00497602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "John Godfrey",
+   "role": "Developer",
+   "status": "present",
+   "quote": "developer john godfrey noted to the board the change in engineering firm."
+  },
+  {
+   "name": "Attorney Haverty",
+   "role": "Attorney, Blatman, Bobrowski, Mead and Talerman",
+   "status": "present",
+   "quote": "attorney haverty of blatman, bobrowski, mead and talerman noted to the board"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Project engineer, Whitman & Bingham Associates (WBA)",
+   "status": "present",
+   "quote": "project engineer jamie rheault, whitman & bingham associates"
+  },
+  {
+   "name": "Amy Archer",
+   "role": "Pare Corporation",
+   "status": "present",
+   "quote": "amy archer, pare corporation."
+  },
+  {
+   "name": "Ronald Smith",
+   "role": "110 Old Farm Road",
+   "status": "present",
+   "quote": "ronald smith, 110 old farm road-"
+  },
+  {
+   "name": "Robin Brideau",
+   "role": "897 Northfield Road",
+   "status": "present",
+   "quote": "robin brideau, 897 northfield road - concerned with possible future houses being built"
+  },
+  {
+   "name": "Bill Gustus",
+   "role": "owner of abutting golf course",
+   "status": "present",
+   "quote": "bill gustus (owner of abutting golf course), 19 burke street-"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The hearing was re-noticed and will be treated as a new submittal, so all Board members may vote (as stated by the attorney).",
+   "quote": "the hearing had been re -noticed and will be presented as a new submittal, thereby allowing all board members to vote."
+  },
+  {
+   "decision": "The hearing was recessed at 8:10 PM.",
+   "quote": "hearing recessed 8:10 pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ronald Smith",
+   "stated_role": "110 Old Farm Road",
+   "topic": "high water table; street cleaning/sweeping",
+   "quote": "noted high water table area and requested the board include street cleaning/sweeping in its"
+  },
+  {
+   "speaker": "Robin Brideau",
+   "stated_role": "897 Northfield Road",
+   "topic": "possible future houses near Northfield Road end",
+   "quote": "robin brideau, 897 northfield road - concerned with possible future houses being built towards the northfield road end of the"
+  },
+  {
+   "speaker": "Bill Gustus",
+   "stated_role": "owner of abutting golf course",
+   "topic": "continue hearing for more public input",
+   "quote": "bill gustus (owner of abutting golf course), 19 burke street- please continue hearing for additional public input."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Highfield Village definitive plan public hearing (66-unit cluster development, Northfield Road)",
+   "resolution": "continued to November 9, 2015",
+   "quote": "hearing is to hear and discuss a definitive plan per the rules and regulations governing the subdivision of land",
+   "tags": [
+    "subdivision",
+    "cluster development",
+    "public hearing",
+    "Highfield Village"
+   ]
+  },
+  {
+   "topic": "Engineer's presentation of plans and revisions to review letter",
+   "resolution": "no action",
+   "quote": "wba will be meeting with david ross associates on september 18",
+   "tags": [
+    "engineering",
+    "stormwater",
+    "sewer",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Traffic, access and accident study (Pare Corporation)",
+   "resolution": "no action",
+   "quote": "assessed the development with regards to access, traffic capacity, and accidents",
+   "tags": [
+    "traffic",
+    "Northfield Road",
+    "speed limit"
+   ]
+  },
+  {
+   "topic": "Responsibility for traffic signals at Northfield and Chase Roads",
+   "resolution": "no action",
+   "quote": "it would be the town's responsibility for the signaling.",
+   "tags": [
+    "traffic signals",
+    "Northfield Road",
+    "Chase Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Review letter dated April 6, 2015 from David Ross Associates",
+   "where": "text",
+   "quote": "went through the april 6, 2015 review letter from davi d ross associates and made changes to the plan"
+  },
+  {
+   "name": "Notice of the hearing published in the Sentinel and Enterprise on August 31 and September 7, 2015",
+   "where": "text",
+   "quote": "reading of the notice published in the sentinel and enterprise on"
+  },
+  {
+   "name": "Drainage and traffic reports (to be submitted)",
+   "where": "text",
+   "quote": "drainage and traffic reports will also be submitted."
+  },
+  {
+   "name": "Notice of Intent (NOI) to be filed with the Conservation Commission",
+   "where": "text",
+   "quote": "a notice of intent (noi) will be filed with the conservation commission."
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "public hearing",
+  "Highfield Village",
+  "subdivision",
+  "cluster development",
+  "Northfield Road",
+  "traffic",
+  "sewer",
+  "wetlands",
+  "open space",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

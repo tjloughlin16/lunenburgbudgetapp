@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-02-27",
  "docid": "3725",
@@ -12,15 +12,268 @@
  },
  "votes": [
   {
-   "motion": "adjourn the Hearing to March 4th",
+   "motion": "Adjourn the public hearing continuation for Aro Estates, Howard Street, to March 4, 2013.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion, ms. bilotta-simeone to adjourn the hearing to march 4 th, second, mr. bodkin jr., roll call vote, mr. lockwood, aye; mr. bodkin jr., aye; ms. bilotta-simeone, aye; mr. bakaysa, aye."
+   "quote": "motion, ms. bilotta-simeone to adjourn the hearing to march 4 th, second, mr. bodkin jr., roll call vote, mr. lockwood, aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "One procedural vote recorded: adjournment to March 4th with unanimous approval.",
- "cost_usd": 0.08989449999999999
+ "dropped_unquoted": 1,
+ "note": "Text is a readable 4-page minutes document; no scan problem. Only one recorded motion (adjournment to March 4, 2013), which is procedural. The Present line names 'Joanna L. Bilotta' while later references use 'Ms. Bilotta-Simeone'; treated as the same person. The minutes use both 'Attorney Johnson' (Mark Johnson, applicant's counsel) and 'J. Johnson' (the reviewer whose letters are discussed); the text does not clearly separate them, so 'J. Johnson' is not listed as a separate attendee. Dollar figures: none printed. Adjournment time 9:30 PM printed.",
+ "cost_usd": 0.0068349199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair joanna l. bilotta, vice chair, thomas w. bodkin, jr., nathan j. lockwood"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice Chair (also printed as Ms. Bilotta-Simeone)",
+   "status": "present",
+   "quote": "joanna l. bilotta, vice chair, thomas w. bodkin, jr., nathan j. lockwood"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., nathan j. lockwood , marion m."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., nathan j. lockwood , marion m."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "nathan j. lockwood , marion m. benson, planning director"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel, joel bard"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "representing the applicant (O'Brien Homes)",
+   "status": "present",
+   "quote": "representing the applicant, kevin o'brien, o'brien homes was attorney mark johnson, johnson and borenstein."
+  },
+  {
+   "name": "Mark Johnson",
+   "role": "Attorney, Johnson and Borenstein, representing the applicant",
+   "status": "present",
+   "quote": "representing the applicant, kevin o'brien, o'brien homes was attorney mark johnson, johnson and borenstein."
+  },
+  {
+   "name": "Donald Borenstein",
+   "role": "Attorney, addressed the zoning issues for the applicant",
+   "status": "present",
+   "quote": "the zoning iss ues were addressed by attorney donald borenstein."
+  },
+  {
+   "name": "Mr. Flis",
+   "role": "Whitman & Bingham Associates, on behalf of the Applicant",
+   "status": "present",
+   "quote": "mr. flis, whitman & bingham associates, on behalf of the applicant, supplied the board with a memorandum"
+  },
+  {
+   "name": "Mr. O’Brien",
+   "role": "Applicant (O'Brien Homes)",
+   "status": "present",
+   "quote": "mr. o'brien noted that in meeting with the fire department, chief sullivan stated he did not have a problem"
+  },
+  {
+   "name": "Attorney Bowen",
+   "role": "1686 Massachusetts Avenue, public speaker",
+   "status": "present",
+   "quote": "attorney bowen, 1686 massachusetts avenue- noted on-going discussions with water department about bringing water to the site."
+  },
+  {
+   "name": "Walter Paquette",
+   "role": "President of Hickory Hills Land Owners Incorporated",
+   "status": "present",
+   "quote": "walter paquette, 10 iris court - speaking as president of hickory hills land owners incorporated"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "312 Townsend Harbor Road, opponent",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road - concerned with the hickory hills lake eco -system."
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "Island Road, opponent",
+   "status": "present",
+   "quote": "dave mcdonald, island road- echoed ms. bertram's concerns."
+  },
+  {
+   "name": "Rennie Shattuck",
+   "role": "396 Howard Street, opponent",
+   "status": "present",
+   "quote": "rennie shattuck, 396 howard street - access road into development too close to his home."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Benson will request written confirmation from the Fire Chief on the 650-foot dead-end street waiver.",
+   "quote": "ms. benson will request written confirmation from the fire chief."
+  },
+  {
+   "decision": "One of the agenda items for March 4, 2013 will be a hearing continuation to review the 650 foot waiver.",
+   "quote": "one of the agenda items for march 4, 2013 will be a hearing continuation to review the 650 foot waiver."
+  },
+  {
+   "decision": "The Board will review its meeting schedule at the March 4th meeting.",
+   "quote": "the board will review its meeting schedule at the march 4 th meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW stormwater maintenance program resources",
+   "what_was_recorded": "The DPW Director's email said the proposed stormwater maintenance program would need personnel, equipment and funds the department does not have, and asked the Board and Commission to look unfavorably on it; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "would require resources in the form of personnel, equipment, and funds not currently available within the department"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Attorney Bowen",
+   "stated_role": "1686 Massachusetts Avenue",
+   "topic": "water service to the site",
+   "quote": "attorney bowen, 1686 massachusetts avenue- noted on-going discussions with water department about bringing water to the site."
+  },
+  {
+   "speaker": "Walter Paquette",
+   "stated_role": "President of Hickory Hills Land Owners Incorporated, 10 Iris Court",
+   "topic": "Hickory Hills Lake and Mulpus Brook impacts",
+   "quote": "walter paquette, 10 iris court - speaking as president of hickory hills land owners incorporated"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "312 Townsend Harbor Road",
+   "topic": "lake ecosystem, sedimentation, wetlands waiver, stormwater maintenance",
+   "quote": "paula bertram, 312 townsend harbor road - concerned with the hickory hills lake eco -system."
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "Island Road",
+   "topic": "agreed with Ms. Bertram",
+   "quote": "dave mcdonald, island road- echoed ms. bertram's concerns."
+  },
+  {
+   "speaker": "Rennie Shattuck",
+   "stated_role": "396 Howard Street",
+   "topic": "access road too close to home, equipment damage, wall",
+   "quote": "rennie shattuck, 396 howard street - access road into development too close to his home."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing continuation, Aro Estates, Howard Street",
+   "resolution": "continued to March 4, 2013",
+   "quote": "chair opened the hearing continuation",
+   "tags": [
+    "subdivision",
+    "public hearing",
+    "Howard Street",
+    "continuation"
+   ]
+  },
+  {
+   "topic": "Zoning freeze and Section 5.6 cluster questions",
+   "resolution": "discussed; Board to decide whether plan is one subdivision or ten; no vote",
+   "quote": "attorney bard noted t he board will have to decide if this is one of the options under the bylaw",
+   "tags": [
+    "zoning freeze",
+    "cluster development",
+    "legal"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Waiver requests",
+   "resolution": "discussed; 650-foot dead-end waiver continued to March 4",
+   "quote": "attorney johnson moved on to waiver requests.",
+   "tags": [
+    "waivers",
+    "cul-de-sac",
+    "subdivision rules"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Johnson & Borenstein, LLC letter dated February 27, 2013, subject: Aro Estates – 1-10 Subdivision Plans (attached), containing the Land Court Decision, partial copy of the transcript of the oral arguments, and the Motion for Summary Judgment",
+   "where": "list",
+   "quote": "johnson & borenstein, llc letter dated february 27, 2013, subject: aro estates - 1-10 subdivision plans (attached)"
+  },
+  {
+   "name": "David Ross Associates Review letter dated February 25, 2013 (attached)",
+   "where": "list",
+   "quote": "david ross associates review letter dated february 25, 2013 (attached)"
+  },
+  {
+   "name": "Whitman & Bingham Associates letter dated February 13, 2013, subject: Waiver Requests",
+   "where": "list",
+   "quote": "whitman & bingham associates letter dated february 13, 2013, subject: waiver requests"
+  },
+  {
+   "name": "Kopelman and Paige P.C. response letter dated February 27, 2013 (attached)",
+   "where": "text",
+   "quote": "kopelman and paige p.c. response letter dated"
+  },
+  {
+   "name": "Whitman & Bingham Associates Memorandum dated February 27, 2013, listing square footage wetland area for all ten subdivisions (on file in Planning Office)",
+   "where": "text",
+   "quote": "supplied the board with a memorandum dated february 27, 2013, listing the square footage wetland area"
+  },
+  {
+   "name": "Abend Associates Memorandum dated February 13, 2013, subject: Roadway Grading Regulation - Opinion (on file in Planning Office)",
+   "where": "text",
+   "quote": "abend associates memorandum dated february 1 3, 2013, subject: roadway grading regulation - opinion"
+  },
+  {
+   "name": "February 27, 2013 electronic mail from Mr. Rodriquenz, DPW Director",
+   "where": "text",
+   "quote": "mr. bakaysa noted february 27, 2013 electronic mail from mr. rodriquenz, dpw director"
+  },
+  {
+   "name": "Photographs submitted by Rennie Shattuck (on file in Planning Office)",
+   "where": "text",
+   "quote": "(submitted photographs to the board - on file in planning office.)"
+  }
+ ],
+ "tags": [
+  "Aro Estates",
+  "Howard Street",
+  "subdivision",
+  "public hearing",
+  "zoning freeze",
+  "cluster development",
+  "waivers",
+  "wetlands",
+  "stormwater",
+  "Hickory Hills Lake",
+  "DPW",
+  "water supply",
+  "continuation to March 4"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he referenced the following documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

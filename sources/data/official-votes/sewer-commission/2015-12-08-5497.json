@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-12-08",
  "docid": "5497",
@@ -12,47 +12,429 @@
  },
  "votes": [
   {
-   "motion": "To authorize Small Water System Services for scope of work not to exceed 36 hours or $2,500",
+   "motion": "Authorize Small Water System Services (SWSS) for a scope of work not to exceed 36 hours or 2500 (grease trap interceptor inspections and training).",
    "moved_by": "Troy D.",
-   "seconded_by": "Sue B",
-   "outcome": "passed unanimously",
+   "seconded_by": "Sue B.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: troy d. second: sue b to authorize swss for scope of work not to exceed 36 hours or 2500 vote unanimous"
   },
   {
-   "motion": "To authorize Barb to initiate hiring of a person for assistance with minutes and other duties for up to $200 per month as administrative assistant",
+   "motion": "Authorize Barb to initiate hiring of a person for assistance with minutes.",
    "moved_by": "Troy D",
    "seconded_by": "Sue B",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: troy d to authorize barb to initiate hiring of a person for assistance with minutes second: sue b vote unanimous and other duties for up to $200 per month as administrative assistant."
+   "quote": "motion: troy d to authorize barb to initiate hiring of a person for assistance with minutes second: sue b vote unanimous"
   },
   {
-   "motion": "To approve the Wright Pierce contract for $19,800 for 198 hours for CWMP as proposed 12/7/15",
+   "motion": "Approve the Wright Pierce contract for $19,800 for 198 hours as proposed 12/7/15, to be signed by town.",
    "moved_by": "Troy D",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion - troy d to approve the wright pierce contract for $19,800 for 198 hours as proposed 12/7/15 to be signed by town vote unanimous"
+   "quote": "to approve the wright pierce contract for $19,800 for 198 hours as proposed 12/7/15 to be signed by town vote unanimous"
   },
   {
-   "motion": "To approve the Wright Pierce contract of $35,600 subject to the $30,000 technical assistant grant from Massachusetts, obligating the sewer commission to $7,500 as proposed 9/25/15",
+   "motion": "Approve the Wright Pierce manhole inspection contract of $35,600, subject to the 30k technical assistant grant from MA, obligating the sewer commission to $7,500 as proposed 9/25/15.",
    "moved_by": "Troy D.",
    "seconded_by": "Sue B.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion - troy d. second -sue b. to approve the wright pierce contract of $35,600 subject to the 30k technical assistant grant from ma, obligating the sewer commission to $7,500 as proposed 9/25/15 vote unanimous"
+   "quote": "to approve the wright pierce contract of $35,600 subject to the 30k technical assistant grant from ma, obligating the sewer commission to $7,500 as proposed 9/25/15"
   },
   {
-   "motion": "To adjourn at 10:00pm",
+   "motion": "Adjourn the meeting at 10:00pm.",
    "moved_by": "Troy D.",
    "seconded_by": "Mike N.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: troy d. to adjourn at 10:00pm second: mike n. vote unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of scanned minutes; all votes recorded and legible. The second vote's motion language is split across the vote record and the line following the vote outcome.",
- "cost_usd": 0.09446550000000001
+ "note": "OCR text (macOS Vision) with layout damage: stray fragments (e.g. 's sent to the Board' on page 2) and a misplaced sentence ('and other duties for up to $200 per month as administrative assistant.') appearing after a vote. Page 2 begins mid-sentence. The minutes record no roll call or attendance list, so member status is 'not stated'. The grease trap cap is printed as '2500' without a dollar sign. The signature reads 'Til Lelto' in OCR but the printed name is Emily Lehto. No public comment section is printed. The Wright Pierce $19,800 and $35,600 votes give no seconder for the first. Outcomes are recorded as 'Vote Unanimous' with no count.",
+ "cost_usd": 0.00728452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Troy D.",
+   "role": "",
+   "status": "not stated",
+   "quote": "troy d. stated that he could not remember anything that would link the"
+  },
+  {
+   "name": "Sue B.",
+   "role": "",
+   "status": "not stated",
+   "quote": "second: sue b to authorize swss for scope of work not to exceed 36 hours or 2500"
+  },
+  {
+   "name": "Carl L.",
+   "role": "",
+   "status": "not stated",
+   "quote": "carl l. and troy d. would draft a request for counsel review."
+  },
+  {
+   "name": "Barb L.",
+   "role": "",
+   "status": "not stated",
+   "quote": "carl l. and barb l. will negotiate with deb from swss"
+  },
+  {
+   "name": "Mike N.",
+   "role": "",
+   "status": "not stated",
+   "quote": "second: mike n. vote unanimous"
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "not stated",
+   "quote": "sue b. and john r. will be unable to attend."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission will take the Highfield Village allocation agreement to counsel to review it and get a reading on whether Highfield will need to pay privilege fees; Carl L. and Troy D. to draft the request for counsel review.",
+   "quote": "it was determined that the commission will go to counsel to look at the agreement and get a reading on whether or not highfield will need to pay privilege fees."
+  },
+  {
+   "decision": "Grease trap posting tabled for now, to be edited once the procedure is changed.",
+   "quote": "the proposed posting is being tabled for now as it may be edited further once the procedure is changed."
+  },
+  {
+   "decision": "Carl L. and Barb L. to negotiate the cost with Deb from SWSS.",
+   "quote": "it was decided that carl l. and barb l. will negotiate with deb from swss"
+  },
+  {
+   "decision": "Barb to check with Matt on the missing substantial completion submittal for the Pleasantview project.",
+   "quote": "barb will check with matt on this."
+  },
+  {
+   "decision": "Private extension: paragraph 3 in Section 10 (privilege fees) to be omitted and discussed later; surety bond to cover performance or be replaced with post bonds; clean copy to be presented at a later meeting.",
+   "quote": "a clean copy that strikes the paragraph and surety will be presented for approval at a later meeting."
+  },
+  {
+   "decision": "Debbie to look into an updated SCADA quote.",
+   "quote": "debbie will look into an update of the quote again."
+  },
+  {
+   "decision": "Commission wants to leave the selection of the minutes assistant up to Barb.",
+   "quote": "commission wants to leave it up to barb to select."
+  },
+  {
+   "decision": "Barb to check with Kerry on whether the minutes assistant must be paid the same rate as their day job.",
+   "quote": "barb will check with kerry."
+  },
+  {
+   "decision": "Wright Pierce to be contacted about where the work stands on the contract, given jobs coming in under on three invoices.",
+   "quote": "they will be contacted on where we are on the contract."
+  },
+  {
+   "decision": "No regular Sewer Commission meeting on December 29, 2015.",
+   "quote": "there will be no regular sewer commission meeting on december 29, 2015."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Highfield Village privilege fees",
+   "what_was_recorded": "Concern raised about whether privilege fees were appropriate under the Highfield Village allocation agreement; referred to counsel.",
+   "figures_as_printed": [],
+   "quote": "whether privilege fees were appropriate."
+  },
+  {
+   "topic": "Grease trap inspections (SWSS)",
+   "what_was_recorded": "SWSS authorized for a scope of work capped at 36 hours or 2500; cost discussed and left to Carl L. and Barb L. to negotiate.",
+   "figures_as_printed": [
+    "36 hours",
+    "2500"
+   ],
+   "quote": "to authorize swss for scope of work not to exceed 36 hours or 2500"
+  },
+  {
+   "topic": "Minutes assistant pay",
+   "what_was_recorded": "Two candidates, both school employees, with hourly pay discussed; overtime question raised.",
+   "figures_as_printed": [
+    "$21.87/hour",
+    "$15",
+    "$30/hour"
+   ],
+   "quote": "one appears to be full-time and is paid $21.87/hour, the other part-time and paid $15."
+  },
+  {
+   "topic": "Minutes assistant spending cap",
+   "what_was_recorded": "Administrative assistant duties authorized up to a monthly cap as printed in the minutes.",
+   "figures_as_printed": [
+    "$200 per month"
+   ],
+   "quote": "and other duties for up to $200 per month as administrative assistant."
+  },
+  {
+   "topic": "Pump station costs",
+   "what_was_recorded": "Costs for DPW were discussed, along with whether SWSS could help with raking and cleaning; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the costs for dpw were discussed and whether small water system services could help with jobs"
+  },
+  {
+   "topic": "SCADA system quote",
+   "what_was_recorded": "Wright Pierce returned a low estimate for Leominster Road and Dana Street; quantity, discounts and timing discussed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "wright pierce came and looked at leominster road and dana street and came back with a low estimate."
+  },
+  {
+   "topic": "Q2 billing commitment",
+   "what_was_recorded": "Business Manager reported the Q2 commitment.",
+   "figures_as_printed": [
+    "$189,483.42"
+   ],
+   "quote": "commitment for q2 billing - q2 is currently $189,483.42."
+  },
+  {
+   "topic": "CWMP Wright Pierce contract",
+   "what_was_recorded": "Wright Pierce contract approved for CWMP strategy changes and cost estimates review.",
+   "figures_as_printed": [
+    "$19,800",
+    "198 hours"
+   ],
+   "quote": "to approve the wright pierce contract for $19,800 for 198 hours as proposed 12/7/15 to be signed by town"
+  },
+  {
+   "topic": "Manhole inspections Wright Pierce contract",
+   "what_was_recorded": "Wright Pierce manhole contract approved, subject to a state technical assistance grant, with the commission obligated to a stated amount.",
+   "figures_as_printed": [
+    "$35,600",
+    "30k",
+    "$7,500"
+   ],
+   "quote": "to approve the wright pierce contract of $35,600 subject to the 30k technical assistant grant from ma, obligating the sewer commission to $7,500 as proposed 9/25/15 ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Invoices",
+   "what_was_recorded": "Six invoices presented; invoices from Koppelman and Paige, Fitchburg and Leominster approved for payment; question raised on jobs coming in under on three Wright Pierce invoices. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "there was a question on jobs coming in under with the three invoices from"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Pleasantview project status",
+   "resolution": "no action; Barb to check on submittal",
+   "quote": "the project was completed on december 1st. a substantial completion submittal has not been received.",
+   "tags": [
+    "Pleasantview",
+    "project status"
+   ]
+  },
+  {
+   "topic": "Highfield Village allocation agreement",
+   "resolution": "referred to counsel; Carl L. and Troy D. to draft request",
+   "quote": "it was determined that the commission will go to counsel to look at the agreement",
+   "tags": [
+    "Highfield Village",
+    "allocation agreement",
+    "privilege fees",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Grease traps",
+   "resolution": "posting tabled; SWSS authorized for inspections and training (vote)",
+   "quote": "the proposed posting is being tabled for now as it may be edited further once the procedure is changed.",
+   "tags": [
+    "grease traps",
+    "SWSS",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Minutes assistant hiring",
+   "resolution": "approved hiring initiation (vote)",
+   "quote": "to authorize barb to initiate hiring of a person for assistance with minutes",
+   "tags": [
+    "personnel",
+    "minutes",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Private extension",
+   "resolution": "clean copy to later meeting",
+   "quote": "a clean copy that strikes the paragraph and surety will be presented for approval at a later meeting.",
+   "tags": [
+    "private extension",
+    "surety bond",
+    "privilege fees"
+   ]
+  },
+  {
+   "topic": "SCADA system",
+   "resolution": "continued; Debbie to update quote",
+   "quote": "debbie will look into an update of the quote again.",
+   "tags": [
+    "SCADA",
+    "Wright Pierce",
+    "quote"
+   ]
+  },
+  {
+   "topic": "Pump stations",
+   "resolution": "discussed; no action",
+   "quote": "pump stations -the costs for dpw were discussed and whether small water system services could help with jobs",
+   "tags": [
+    "pump stations",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Business Manager report - Q2 commitment",
+   "resolution": "reported; no action",
+   "quote": "commitment for q2 billing - q2 is currently $189,483.42.",
+   "tags": [
+    "billing",
+    "finance"
+   ]
+  },
+  {
+   "topic": "CWMP Wright Pierce contract",
+   "resolution": "approved $19,800 contract (vote)",
+   "quote": "cwmp - the proposed updates were discussed.",
+   "tags": [
+    "CWMP",
+    "Wright Pierce",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Manhole inspections",
+   "resolution": "approved Wright Pierce contract subject to state grant (vote)",
+   "quote": "the manhole agreement with wright pierce was discussed.",
+   "tags": [
+    "manholes",
+    "Wright Pierce",
+    "state grant"
+   ]
+  },
+  {
+   "topic": "Public hearing notices",
+   "resolution": "noted; no action",
+   "quote": "public hearing notices 1) zba 12/9/15-321 electric ave- central mass motorcycles is opening",
+   "tags": [
+    "ZBA",
+    "Planning Board",
+    "Electric Ave"
+   ]
+  },
+  {
+   "topic": "Permit to Connect form",
+   "resolution": "noted; form updated",
+   "quote": "the form has been updated to reflect the addition of asking which grinder pump is going to be used.",
+   "tags": [
+    "permit",
+    "grinder pump"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "approved for payment",
+   "quote": "an invoice from koppelman and paige, fitchburg and leominster were approved for payment.",
+   "tags": [
+    "invoices",
+    "payment"
+   ]
+  },
+  {
+   "topic": "Website updates",
+   "resolution": "no update",
+   "quote": "website updates - no update.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "License renewal (food service noncompliance)",
+   "resolution": "noted; list sent to Board of Selectmen",
+   "quote": "a list of the outstanding accounts was sent to the board of selectman on november 20t.",
+   "tags": [
+    "license renewal",
+    "food service",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted; joint executive session Dec 15, 2015",
+   "quote": "the next meeting will be on december 15, 2015 and will be a joint executive session with the board of selectmen",
+   "tags": [
+    "schedule",
+    "Hollis Hills"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:00pm (vote)",
+   "quote": "motion: troy d. to adjourn at 10:00pm second: mike n. vote unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Allocation Agreement (Highfield Village)",
+   "where": "text",
+   "quote": "there are concerns with the allocation agreement and whether it is at the capacity that is needed"
+  },
+  {
+   "name": "Original draft of scope (grease trap / SWSS)",
+   "where": "text",
+   "quote": "the original draft of scope was reviewed."
+  },
+  {
+   "name": "Permit to Connect form",
+   "where": "text",
+   "quote": "the form has been updated to reflect the addition of asking which grinder pump is going to be used."
+  },
+  {
+   "name": "Wright Pierce contract proposed 12/7/15 (CWMP)",
+   "where": "text",
+   "quote": "to approve the wright pierce contract for $19,800 for 198 hours as proposed 12/7/15 to be signed by town"
+  },
+  {
+   "name": "Manhole agreement with Wright Pierce",
+   "where": "text",
+   "quote": "the manhole agreement with wright pierce was discussed."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease traps",
+  "Wright Pierce",
+  "contracts",
+  "minutes assistant",
+  "personnel",
+  "CWMP",
+  "SCADA",
+  "Highfield Village",
+  "privilege fees",
+  "invoices",
+  "license renewal",
+  "pump stations",
+  "Q2 billing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

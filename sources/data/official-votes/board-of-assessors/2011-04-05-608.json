@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2011-04-05",
  "docid": "608",
@@ -12,25 +12,255 @@
  },
  "votes": [
   {
-   "motion": "To approve abatement applications for 292 Chase Road and 357 Electric Avenue",
+   "motion": "Approve the real estate abatement applications for 292 Chase Road and 357 Electric Avenue.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board reviewed and voted on the following abatement applications: real estate - 2 approved 292 chase road 357 electric avenue"
+   "quote": "real estate - 2 approved"
   },
   {
-   "motion": "To approve abatement application for 697 Massachusetts Avenue",
-   "outcome": "failed",
-   "procedural": false,
-   "quote": "real estate - 1 denied 697 massachusetts avenue"
-  },
-  {
-   "motion": "To table action on ABC charitable applications",
+   "motion": "Deny the real estate abatement application for 697 Massachusetts Avenue.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "voted to table the approvals of the applications"
+   "quote": "real estate - 1 denied"
+  },
+  {
+   "motion": "Approve the release of FY 2008 overlay ($4,958.15) and FY 2010 overlay ($10,472.22) as set out in the Overlay memorandum.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board reviewed and approved the following:"
+  },
+  {
+   "motion": "Table the approvals of the ABC charitable exemption applications.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "voted to table the approvals of the applications."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned via macOS Vision. No moved_by or seconded_by attributions provided in original minutes.",
- "cost_usd": 0.13421850000000002
+ "note": "OCR text, partly garbled: the sentence describing the 292 Chase Road double assessment is broken (\"ate real a 20 a on the stuture\"), the minutes' signature block reads \"Lami Vaquette\", and dates such as \"May 7'\" and \"May 2151\" are uncertain. Votes are recorded only as list headings or narrative (\"reviewed and voted on\", \"reviewed and approved\"); no motion wording, mover, seconder, or vote count is printed, so mover fields are blank. Adjournment at 7:05pm is stated without a motion. No public comment is recorded. The minutes were received and filed July 25, 2011.",
+ "cost_usd": 0.00687862,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board members: chris comeau, chairman, members: louis j. franco & matthew j. papini, sr.,"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: louis j. franco & matthew j. papini, sr.,"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: louis j. franco & matthew j. papini, sr.,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "harald scheid, regional assessor, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "harald scheid, regional assessor, and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "One additional V1, Clause 22 exemption application was reviewed and approved at $400.00 (no separate motion recorded).",
+   "quote": "one additional exemption application for a v1, clause 22 was reviewed and approved in the amount of $400.00."
+  },
+  {
+   "decision": "The Board asked for time to review the Taxpayers Guide to Local Property Exemptions for Religious & Charitable Organizations before acting on the ABC applications.",
+   "quote": "the board requested that they would like some time to review this"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "V1, Clause 22 exemption",
+   "what_was_recorded": "One additional V1, Clause 22 exemption was reviewed and approved in the amount of $400.00.",
+   "figures_as_printed": [
+    "$400.00"
+   ],
+   "quote": "one additional exemption application for a v1, clause 22 was reviewed and approved in the amount of $400.00."
+  },
+  {
+   "topic": "Statutory exemptions granted",
+   "what_was_recorded": "Louise reported that 153 statutory exemptions have been granted, totaling $89,428.63.",
+   "figures_as_printed": [
+    "$89,428.63"
+   ],
+   "quote": "louise reported that 153 statutory exemptions have been granted totally $89,428.63."
+  },
+  {
+   "topic": "FY11 overlay balance",
+   "what_was_recorded": "The total FY11 overlay was reported as presently $119,987.37, and the opening balance from the recap as $124,378.48.",
+   "figures_as_printed": [
+    "$119,987.37",
+    "$124,378.48"
+   ],
+   "quote": "louise reported that the total overlay for fy11 is presently $119,987.37. the opening balance from recap is $124,378.48."
+  },
+  {
+   "topic": "Overlay surplus releases for JCJ / Stone Farm abatements",
+   "what_was_recorded": "Overlay surpluses of $4,958.15 (FY 2008) and $10,472.22 (FY 2010) were released to cover GL 58, Sect 8 abatements for JCJ / Stone Farm for fiscal years 2008 and 2009, mandated by the DOR on 5/04/2010.",
+   "figures_as_printed": [
+    "$4,958.15",
+    "$10,472.22",
+    "5/04/2010"
+   ],
+   "quote": "the funds released are to cover the gl 58, sect 8 abatements for jcj / stone farm for fiscal years 2008"
+  },
+  {
+   "topic": "292 Chase Road FY 10 abatement",
+   "what_was_recorded": "The FY 10 abatement request for 292 Chase Road was described as amounting to $2,171.18 on an assessed valuation of $152,900.00.",
+   "figures_as_printed": [
+    "$2,171.18",
+    "$152,900.00"
+   ],
+   "quote": "amounting to $2,171.18 on an assessed valuation of $152,900.00."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Release of FY 2008 overlay surplus to cover GL 58, Sect 8 abatements for JCJ / Stone Farm.",
+   "amount_as_printed": "$4,958.15",
+   "outcome": "approved",
+   "quote": "(1) fy 2008 overlay released in the amount of $4,958.15"
+  },
+  {
+   "description": "Release of FY 2010 overlay surplus to cover GL 58, Sect 8 abatements for JCJ / Stone Farm.",
+   "amount_as_printed": "$10,472.22",
+   "outcome": "approved",
+   "quote": "(2) fy 2010 overlay released in the amount of $10,472.22"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Real estate abatement applications",
+   "resolution": "approved two, denied one",
+   "quote": "real estate - 2 approved",
+   "tags": [
+    "abatements",
+    "real estate"
+   ]
+  },
+  {
+   "topic": "FY 10 abatement request to Bureau of Municipal Finance Law (292 Chase Road)",
+   "resolution": "presented; no action recorded",
+   "quote": "harald presented to the board a request in writing to be sent to the bureau of municipal finance law",
+   "tags": [
+    "abatements",
+    "Chapter 58 Section 8",
+    "double assessment"
+   ]
+  },
+  {
+   "topic": "Exemptions (V1 Clause 22 and statutory)",
+   "resolution": "V1 exemption approved; statutory count reported",
+   "quote": "one additional exemption application for a v1, clause 22 was reviewed and approved in the amount of $400.00.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Overlay surplus releases",
+   "resolution": "approved",
+   "quote": "(1) fy 2008 overlay released in the amount of $4,958.15",
+   "tags": [
+    "overlay",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Town Meeting and Town Election reminder",
+   "resolution": "noted",
+   "quote": "board was reminded that the town meeting will be held may 7' at 9am",
+   "tags": [
+    "town meeting",
+    "election"
+   ]
+  },
+  {
+   "topic": "ABC charitable exemption applications",
+   "resolution": "tabled",
+   "quote": "voted to table the approvals of the applications.",
+   "tags": [
+    "charitable exemptions",
+    "ABC"
+   ]
+  },
+  {
+   "topic": "Billing calendar and Munis software",
+   "resolution": "reported; software change on hold",
+   "quote": "the move to change software from munis to vadar is now on hold.",
+   "tags": [
+    "billing",
+    "software",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "FY12 outlook and revaluation",
+   "resolution": "reported; no new development",
+   "quote": "he stated that it is a full revaluation certification year in real estate.",
+   "tags": [
+    "revaluation",
+    "FY12",
+    "DOR"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "adjourned 7:05pm; no adjournment motion recorded",
+   "quote": "next meeting is slated for tuesday, may 3d at 6:00 pm. meeting adjourned at 7:05pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum from Karen Brochu, Town Accountant, regarding the transfer of Overlay surpluses",
+   "where": "list",
+   "quote": "a memorandum from karen brochu, town accountant regarding the transfer of overlay surpluses was received and reviewed."
+  },
+  {
+   "name": "The Taxpayers Guide to Local Property Exemptions for Religious & Charitable Organizations",
+   "where": "list",
+   "quote": "louise presented to the board the taxpayers guide to local property exemptions for religious & charitable organizations."
+  }
+ ],
+ "tags": [
+  "abatements",
+  "exemptions",
+  "overlay",
+  "ABC charitable exemptions",
+  "Munis software",
+  "revaluation",
+  "town meeting",
+  "board of assessors"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a memorandum from karen brochu, town accountant"
+ },
+ "dropped_unquoted_by_field": {}
 }

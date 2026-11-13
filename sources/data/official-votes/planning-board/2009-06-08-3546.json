@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-06-08",
  "docid": "3546",
@@ -12,41 +12,298 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the April 27, 2009 meeting",
+   "motion": "Approve minutes signed 4-27-09.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Halloran",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "signed 4-27-09, motion, ms. bilotta, second, mr. ha lloran, vote 5-0",
-   "quote_taken_from_text": true
+   "quote": "signed 4-27-09, motion, ms. bilotta, second"
   },
   {
-   "motion": "Approve the minutes from the May 25, 2009 meeting",
+   "motion": "Approve minutes signed 5-25-09.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Halloran",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "signed 5-25-09, motion, mr. saiia, second, mr. halloran, vote 5-0."
+   "quote": "second, mr. halloran, vote 5-0"
   },
   {
-   "motion": "Enter executive session for discussion of pending litigation",
+   "motion": "Enter executive session for discussion of pending litigation, not returning to regular session.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. bodkin jr., roll call vote, ms. bilotta, aye; mr. bodkin jr., aye; mr. saiia, aye; mr. halloran, aye; mr. bakaysa, aye."
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Ms. Bilotta",
-   "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. saiia, adjourned 9 :30 pm",
-   "quote_taken_from_text": true
+   "quote": "motion, ms. bilotta, second, mr. bodkin jr., roll call vote, ms. bilotta, aye;"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:30 PM.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion, ms. bilotta, second, mr. saiia, adjourned 9 :30 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Text is clear and readable. Four votes recorded: two for approval of prior minutes, one to enter executive session, and one to adjourn.",
- "cost_usd": 0.0980115
+ "dropped_unquoted": 1,
+ "note": "Text is machine-extracted with per-character codes in the header and many split words and doubled spaces (e.g., 'Ha lloran', 'Jo anna'); names and quotes were normalized where the extraction split them. The executive session outcome is taken from the printed roll call (all five aye) without a printed count. The adjournment motion has no printed vote count. No public comment section is printed.",
+ "cost_usd": 0.00731812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, chair, james a. halloran"
+  },
+  {
+   "name": "James A. Halloran",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, chair, james a. halloran"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "status": "present",
+   "quote": "jo anna l. bilotta, robert j. saiia"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "status": "present",
+   "quote": "jo anna l. bilotta, robert j. saiia"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "status": "present",
+   "quote": "robert j. saiia, thomas w. bodkin"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "m. benson, planning director"
+  },
+  {
+   "name": "Mardsen Engineering",
+   "role": "presenter, representing the applicant",
+   "status": "present",
+   "quote": "anr, 100 pleasant street- mardsen engineering presented an anr plan"
+  },
+  {
+   "name": "Joseph Livergood",
+   "role": "applicant (ANR plan)",
+   "status": "not stated",
+   "quote": "for joseph livergood and stephen turner."
+  },
+  {
+   "name": "Stephen Turner",
+   "role": "applicant (ANR plan)",
+   "status": "not stated",
+   "quote": "for joseph livergood and stephen turner."
+  },
+  {
+   "name": "George Burden",
+   "role": "requester (sheds at Village at Flat Hill)",
+   "status": "not stated",
+   "quote": "director presented request from george burden"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "Commission Chair, Lunenburg Water District",
+   "status": "present",
+   "quote": "commission chair david rodgers and superintendent fran mcnamara requested a meeting"
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "Superintendent, Lunenburg Water District",
+   "status": "not stated",
+   "quote": "commission chair david rodgers and superintendent fran mcnamara requested a meeting"
+  },
+  {
+   "name": "John Hume",
+   "role": "MRPC",
+   "status": "not stated",
+   "quote": "assisted by mr. john hume from mrpc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board accepted the ANR plan for 100 & 104 Rear Pleasant Street, to be corrected for two minor errors and presented to the office on June 9, 2009.",
+   "quote": "the board accepted the plan as will be corrected"
+  },
+  {
+   "decision": "Planning Director to recommend sheds under a criterion with a building permit; Chair requested a formal request including approval from all residents of Village at Flat Hill.",
+   "quote": "chair requested a formal request"
+  },
+  {
+   "decision": "Mr. Bodkin Jr. will forward wind energy data to the Green Community Task Force.",
+   "quote": "will forward data to the green community task force"
+  },
+  {
+   "decision": "The Board's consensus was to support the Lunenburg Water District with a letter; the Director will write the letter.",
+   "quote": "director will write letter (letter will be"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Water District new well site (Old Castle/P. J. Keating property)",
+   "what_was_recorded": "The District received stimulus money for the proposed new well site development.",
+   "figures_as_printed": [
+    "$600,000.00"
+   ],
+   "quote": "district received $600,000.00 in stimulus monies."
+  },
+  {
+   "topic": "School regionalization draft report",
+   "what_was_recorded": "Discussion of the draft report covered location and cost, with no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued on location and cost."
+  },
+  {
+   "topic": "Stone Farm project",
+   "what_was_recorded": "Monies are owed to the Reviewing Engineer on this project; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "monies are owed to reviewing engineer."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments: ANR, 100 Pleasant Street",
+   "resolution": "accepted with corrections",
+   "quote": "anr, 100 pleasant street- mardsen engineering presented an anr plan",
+   "tags": [
+    "ANR plan",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved signed minutes of 4-27-09 and 5-25-09",
+   "quote": "second, mr. halloran, vote 5-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted Board of Selectmen memorandum",
+   "quote": "noted board of selectmen memorandum requesting not ificatio",
+   "tags": [
+    "correspondence",
+    "appointments"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, School Regionalization Planning Committee)",
+   "resolution": "received reports; discussed draft regionalization report",
+   "quote": "vice chair halloran discussed the draft report from",
+   "tags": [
+    "committees",
+    "regionalization",
+    "wind energy"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business",
+   "resolution": "Flat Hill shed request discussed; Board directed formal request; Green Community, Master Planning, 43D updates",
+   "quote": "director presented request from george burden",
+   "tags": [
+    "sheds",
+    "Flat Hill",
+    "Green Community",
+    "master plan",
+    "43D"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "status noted for CVS, Emerald Place, Highfield Village, Stone Farm, Tri Town Landing; Water District support letter",
+   "quote": "director will write letter (letter will be",
+   "tags": [
+    "development",
+    "CVS",
+    "Highfield Village",
+    "Tri Town Landing",
+    "Stone Farm",
+    "Emerald Place",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Executive session: pending litigation",
+   "resolution": "entered executive session; did not return to regular session",
+   "quote": "motion, ms. bilotta, second, mr. bodkin jr., roll call vote",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:30 PM",
+   "quote": "motion, ms. bilotta, second, mr. saiia, adjourned 9 :30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan for 100 & 104 Rear Pleasant Street (creating Parcels A and B), presented by Mardsen Engineering",
+   "where": "text",
+   "quote": "mardsen engineering presented an anr plan for 100 &"
+  },
+  {
+   "name": "Board of Selectmen memorandum requesting notification of members not wishing to be reappointed for FY10",
+   "where": "text",
+   "quote": "noted board of selectmen memorandum requesting not ificatio",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "MJTC written report (on file in Planning Office)",
+   "where": "text",
+   "quote": "mjtc- mr. saiia presented written report"
+  },
+  {
+   "name": "MRPC report on wind energy implementation (on file in Planning Office)",
+   "where": "text",
+   "quote": "presented report on wind energy impl ementation"
+  },
+  {
+   "name": "Criteria for sheds within Village at Flat Hill exclusive use areas",
+   "where": "text",
+   "quote": "criteria were presented."
+  },
+  {
+   "name": "Letter of support to Lunenburg Water District (on file in Planning Office)",
+   "where": "text",
+   "quote": "director will write letter (letter will be"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "sheds",
+  "Flat Hill",
+  "green energy",
+  "wind energy",
+  "water district",
+  "well site",
+  "school regionalization",
+  "development status",
+  "43D",
+  "master plan",
+  "executive session",
+  "litigation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

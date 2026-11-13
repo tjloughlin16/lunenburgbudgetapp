@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-11-19",
  "docid": "886",
@@ -12,23 +12,159 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior meeting minutes from August 20, September 21, October 1, October 15, and November 5, 2012",
+   "motion": "Approve the minutes of August 20, 2012, September 21, 2012, October 1, 2012, October 15, 2012 and November 5, 2012.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "minutes approved: august 20, 2012, september 21, 2012 october 1, 2012, october 15, 2012 and november 5, 2012",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Approve the new enforceable agreement release prepared by Attorney Peter CampoBasso for Bruce St. Jean",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "the board agreed to approve the new agreement to be used as the release and directed administrative assistant to prepare the new release, in recordable form",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "minutes approved: august 20, 2012, september 21, 2012 october 1, 2012, october 15, 2012 and november 5, 2012"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision. Two votes identified; neither records mover, seconder, or vote count. Minutes approval states no count. Enforceable agreement approval states \"the board agreed\" with no formal vote count or \"so voted\" language recorded.",
- "cost_usd": 0.0941085
+ "note": "Text is OCR output (macOS Vision) from a scanned two-page document with some errors (e.g., \"ENFORCABLE\"). No vote tallies are printed. The minutes-approval line records no motion, mover or count, so it is entered as a procedural vote with outcome \"passed\" based on the heading. The adjournment at 8:10 PM has no recorded motion and is not entered as a vote. No dollar figures appear.",
+ "cost_usd": 0.00354872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "David Shea",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "Sean Quinn",
+   "role": "Owner",
+   "status": "present",
+   "quote": "owner sean quinn met with the board to discuss the installation of an outdoor wood fired boiler."
+  },
+  {
+   "name": "Bruce St. Jean",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bruce st. jean came before the board to present an alternative release for enforceable agreement"
+  },
+  {
+   "name": "Peter CampoBasso",
+   "role": "Attorney",
+   "status": "not stated",
+   "quote": "the board review the agreement prepared by attorney peter campobasso."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for six properties were acknowledged by the board.",
+   "quote": "title 5 inspection reports acknowledged: 3 windemere drive 137 leominster-shirley road"
+  },
+  {
+   "decision": "Septic permits for 16 Ruth Street and 56 Woodland Drive were signed.",
+   "quote": "septic permits signed: 16 ruth street 56 woodland drive"
+  },
+  {
+   "decision": "The board agreed to approve the alternative Release for Enforceable Agreement prepared by Bruce St. Jean's attorney, and directed the Administrative Assistant to prepare the new release in recordable form, to be recorded by Mr. St. Jean.",
+   "quote": "the board agreed to approve the new agreement to be used as the release and directed administrative assistant to prepare the new release, in recordable form"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "minutes approved: august 20, 2012, september 21, 2012 october 1, 2012, october 15, 2012 and november 5, 2012",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 3 windemere drive 137 leominster-shirley road",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed: 16 ruth street 56 woodland drive",
+   "tags": [
+    "septic"
+   ]
+  },
+  {
+   "topic": "Sean Quinn - outdoor wood fired boiler",
+   "resolution": "no action; chair advised applicant that indoor installation would fall under Building Department rules",
+   "quote": "owner sean quinn met with the board to discuss the installation of an outdoor wood fired boiler.",
+   "tags": [
+    "wood boiler",
+    "DEP",
+    "air quality"
+   ]
+  },
+  {
+   "topic": "Bruce St. Jean - enforceable agreement",
+   "resolution": "approved alternative release; administrative assistant directed to prepare recordable release",
+   "quote": "the board agreed to approve the new agreement to be used as the release and directed administrative assistant",
+   "tags": [
+    "enforceable agreement",
+    "release"
+   ]
+  },
+  {
+   "topic": "241 Reservoir Road - repair of well",
+   "resolution": "withdrawn",
+   "quote": "withdrawn. new plan drawn that does not require variances.",
+   "tags": [
+    "well",
+    "variances"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Specification sheets and information on the outdoor wood fired boiler",
+   "where": "text",
+   "quote": "mr. quinn provided the board with specification sheets and information on the boiler he is"
+  },
+  {
+   "name": "Alternative Release for Enforceable Agreement prepared by Bruce St. Jean's attorney",
+   "where": "text",
+   "quote": "present an alternative release for enforceable agreement that has been prepared by his attorney"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "Title 5",
+  "septic permits",
+  "wood boiler",
+  "enforceable agreement",
+  "well repair",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

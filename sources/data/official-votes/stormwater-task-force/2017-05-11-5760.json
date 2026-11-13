@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2017-05-11",
  "docid": "5760",
@@ -12,31 +12,201 @@
  },
  "votes": [
   {
-   "motion": "approve the document for submission to the Community Compact for stormwater management measures",
+   "motion": "Approve the Community Compact stormwater document (based on the 4/27/17 discussion, with two changes to Item 7) for submission to the Community Compact.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "the swtf then voted unanimously to approve the document for submission to the community compact folks, which adam burney will accomplish."
   },
   {
-   "motion": "petition the Board of Selectmen to offer the rain barrel and compost bin when purchased as a pair at the lower cost of $80",
+   "motion": "Petition the Board of Selectmen to offer the rain barrel/compost bin, when purchased as a pair, at the lower cost of $80.",
    "moved_by": "Matt Allison",
    "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "matt allison made a motion that the swtf petition the board of selectmen to offer the rain barrel/compost bin, when purchased as a pair, at the lower cost of $80. the motion was seconded by jack rabbitt, all voted in favor."
+   "quote": "matt allison made a motion that the swtf petition the board of selectmen to offer the rain barrel/compost bin, when purchased as a pair, at the lower cost of $80."
   },
   {
-   "motion": "adjourn at 7:45 p.m.",
+   "motion": "Adjourn the meeting at 7:45 p.m.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Matt Allison",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "jack rabbitt made a motion to adjourn at 7:45 p.m., it was seconded by matt allison, all voted in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan of meeting minutes dated May 11, 2017. Minutes state that earlier minutes (April 27, 2017) were accepted but do not record an explicit motion or vote for that acceptance.",
- "cost_usd": 0.0889495
+ "dropped_unquoted": 2,
+ "note": "Text is OCR of a two-page scan. Typos in the OCR/minutes are kept as printed (NDES for NPDES, SWIF for SWTF, 3'd quarter). The minutes name the meeting location as the Ritter Building first floor conference room at the start but the upper conference room in the schedule paragraph. The Community Compact approval vote records no mover or seconder. No public comment section is printed. Received-and-filed stamp dated MAY 2 6 2017 is partly garbled in OCR.",
+ "cost_usd": 0.00478362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "Board member (Stormwater Task Force)",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Board member (Stormwater Task Force)",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board member (Stormwater Task Force)",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Lunenburg Land Use Director",
+   "status": "present",
+   "quote": "also in attendance was lunenburg land use director, adam burney."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the April 27, 2017, meeting were accepted.",
+   "quote": "minutes of the april 27, 2017, meeting were accepted."
+  },
+  {
+   "decision": "Two changes were made to Item 7 of the Community Compact document: evaluate the Public Library detention basin as a rain garden or propose an alternate highly visible location; and work with the DPW Director and Stormwater Task Force to recommend a rain garden design.",
+   "quote": "there were two changes made to item 7:"
+  },
+  {
+   "decision": "Items B and C of the agenda were deferred to the 5/25 meeting, when DCI will present information from the NPDES NOI workshop held on 5/9/17.",
+   "quote": "with regard to items b and c of the agenda, the swtf agreed to wait until the next"
+  },
+  {
+   "decision": "The SWTF agreed to seek Selectboard approval to offer the barrels/bins, when purchased as a pair, at the reduced cost of $80.",
+   "quote": "the swtf agreed to seek selectboard approval to offer the barrels/bins, when purchased as a pair, at the reduced cost of $80 (a $19 savings)."
+  },
+  {
+   "decision": "The SWTF will seek opportunities to continue offering barrels/bins at community events, such as the Stillman Fair, as silent auction or raffle items.",
+   "quote": "the swif will also seek opportunities to continue to offer the barrels/bins at community events"
+  },
+  {
+   "decision": "Adam Burney will research educational materials on stormwater runoff mitigation related to automobiles and have flyers available on or before the June 8 meeting for distribution at Cruise Night.",
+   "quote": "adam burney will research educational materials for stormwater runoff mitigation related to automobiles for this event."
+  },
+  {
+   "decision": "Meeting schedule set: May 25 (6 pm start) with DCI Consultants, June 8, June 22 with DCI Consultants; Q3 meetings July 27, August 24, September 14 and 28; at the Ritter building at 6:30 pm unless noted.",
+   "quote": "the schedule of meetings will be may 25(6 pm start) with dci consultants, june 8, and"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Compact award",
+   "what_was_recorded": "The board discussed the $25,000 Community Compact award to implement stormwater management measures.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "the swtf discussed the community compact award of $25,000 to implement stormwater management measures"
+  },
+  {
+   "topic": "Annual grant for rain barrels and compost bins",
+   "what_was_recorded": "Barrels and bins are currently purchased through an annual grant in the amount of $5400.",
+   "figures_as_printed": [
+    "$5400"
+   ],
+   "quote": "the barrels and bins are currently purchased through an annual grant in the amount of $5400."
+  },
+  {
+   "topic": "Rain barrel and compost bin purchase and sale prices",
+   "what_was_recorded": "Barrels and bins were purchased for $56 and $43 respectively and are currently sold at cost.",
+   "figures_as_printed": [
+    "$56",
+    "$43"
+   ],
+   "quote": "barrels and bins, purchased for $56 and $43, respectively, are currently sold at cost."
+  },
+  {
+   "topic": "Reduced price for barrel and bin pair",
+   "what_was_recorded": "The reduced pair price of $80 was set, a $19 savings.",
+   "figures_as_printed": [
+    "$80",
+    "$19"
+   ],
+   "quote": "at the reduced cost of $80 (a $19 savings)"
+  },
+  {
+   "topic": "Stormwater Task Force Revolving Fund",
+   "what_was_recorded": "The revolving fund is to be credited with proceeds from sales of rain barrels and composting bins, rather than going to the Town's coffers.",
+   "figures_as_printed": [],
+   "quote": "such fund to be credited with the proceeds of the sale of rain barrels and composting bins."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Community Compact stormwater measures",
+   "resolution": "approved document for submission",
+   "quote": "the swtf then voted unanimously to approve the document for submission to the community compact folks",
+   "tags": [
+    "community compact",
+    "stormwater",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Agenda items B and C (DCI NOI workshop)",
+   "resolution": "continued to 5/25 meeting",
+   "quote": "with regard to items b and c of the agenda, the swtf agreed to wait until the next",
+   "tags": [
+    "NPDES",
+    "MS4 permit",
+    "DCI"
+   ]
+  },
+  {
+   "topic": "Revolving fund and rain barrel/compost bin pricing",
+   "resolution": "petition Selectboard for $80 pair price",
+   "quote": "the swtf agreed to seek selectboard approval to offer the barrels/bins, when purchased as a pair, at the reduced cost of $80",
+   "tags": [
+    "rain barrels",
+    "revolving fund",
+    "pricing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule set",
+   "quote": "the schedule of meetings will be may 25(6 pm start) with dci consultants, june 8, and",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Document (attached) based on the SWTF discussion on this topic at the 4/27/17 meeting, presented by Adam Burney",
+   "where": "list",
+   "quote": "adam burney presented a document (attached) based on the swtf discussion on this topic at the 4/27/17 meeting."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "community compact",
+  "rain barrels",
+  "compost bins",
+  "revolving fund",
+  "silent auction",
+  "cruise night",
+  "MS4 permit",
+  "NPDES",
+  "DCI consultants",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "adam burney presented a document (attached)"
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1,
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-12-18",
  "docid": "1200",
@@ -12,13 +12,309 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of December 11, 2013",
+   "motion": "Approve the minutes of 12-11-13.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "12-11-13 minutes approved."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "12-11-13 minutes approved. adjourned 11:15 am."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes state actions and prioritization decisions by the committee but record no formal votes on those items (no 'motion by', 'seconded', 'voted', or outcome language beyond the one approval of prior minutes).",
- "cost_usd": 0.0903505
+ "note": "The minutes record no vote counts or mover/seconder for the minutes approval or adjournment; the text reads only 'minutes approved' and 'Adjourned'. No public comment section appears in the text. The minutes print no document list. Several figures are approximate or mixed in a few places (e.g., the 'save $166,666' and option totals), recorded as printed.",
+ "cost_usd": 0.005822719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr., kerry speidel"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr., kerry speidel"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr., kerry speidel"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr., kerry speidel"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr., kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel, town manager presented the final budget."
+  },
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "not stated",
+   "quote": "discussion ensued concerning an email from david matthews, board of selectmen, with inquiries of various items in the fy15"
+  },
+  {
+   "name": "J. Breault",
+   "role": "Town Facilities Director",
+   "status": "not stated",
+   "quote": "k. speidel noted that j. breault, town facilities director stated out of the three senior center requests"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee felt the Board of Selectmen's inquiries about the FY15 Capital Plan were premature because the Plan is not yet finalized and the Town Manager has not presented the final budget.",
+   "quote": "the committee felt his inquiries were premature as the plan is not yet finalized"
+  },
+  {
+   "decision": "Senior Center Sprinkler reprioritized from #18 to #11.",
+   "quote": "senior center sprinkler reprioritized from #18 to #11."
+  },
+  {
+   "decision": "Fire Dept. Car 2 reprioritized from #11 to #17.",
+   "quote": "fire dept. car 2 will be reprioritized from #11 to #17."
+  },
+  {
+   "decision": "Priority groups set: Priority 1 is #1 through #10, Priority 2 is #11 through #16, Priority 3 is #17 through #23.",
+   "quote": "priority 1 includes #1 through #10."
+  },
+  {
+   "decision": "The Committee supported the Marshall Park parking lot from a safety point of view.",
+   "quote": "the committee supported the parking lot from a safety point of view."
+  },
+  {
+   "decision": "M. Benson is to send an email to K. Speidel noting the Committee needs an analysis for outsourcing the Sweeper.",
+   "quote": "m. benson to send email to k. speidel noting committee needs an analysis for outsourcing the sweeper."
+  },
+  {
+   "decision": "Committee wants a firm quote on the Sweeper and the cost of privatization, with the DPW Director to provide analysis over the ensuing year; the Sweeper stays as is this year.",
+   "quote": "committee wants a firm quote on sweeper and also cost of privatization."
+  },
+  {
+   "decision": "K. Speidel to check with the Police and Fire Chiefs about Marshall Park from a safety standpoint.",
+   "quote": "k. speidel to check with police and fire chief re marshall park from a safety standpoint."
+  },
+  {
+   "decision": "The Committee asked that the Plan note why road paving is not on the FY15 prioritization, acknowledging it is a high priority with no way to fund it under current constraints.",
+   "quote": "k. speidel requests the committee note on the prioritization why the pavement was not on fy15 plan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Street Sweeper outsourcing cost",
+   "what_was_recorded": "K. Speidel gave the cost of outsourcing the sweeper work, noting in-house or outsourced cost would be the same.",
+   "figures_as_printed": [
+    "$20,000 - $25,000"
+   ],
+   "quote": "outsourcing is $20,000 - $25,000."
+  },
+  {
+   "topic": "Capital funding level and Fire Dept. Engine 1 financing",
+   "what_was_recorded": "Discussion of funding $750,000 in the operating budget for capital instead of $500,000, and financing the fire truck over 5 years.",
+   "figures_as_printed": [
+    "$750,000",
+    "$500,000",
+    "$125,000/yr"
+   ],
+   "quote": "if the truck is financed over 5 years, it would be approximately $125,000/yr."
+  },
+  {
+   "topic": "Sweeper and Engine 1 borrowing",
+   "what_was_recorded": "K. Speidel contemplated removing the Sweeper and Engine 1 from the Capital Plan and borrowing for both together.",
+   "figures_as_printed": [
+    "$165,000"
+   ],
+   "quote": "k. speidel contemplated taking both the sweeper and engine 1 out of the capital plan and borrowing at $165,000 together."
+  },
+  {
+   "topic": "Town Technology request",
+   "what_was_recorded": "The Town Tech request at priority #15 would be deferred if not funded, and the IT Director felt he could manage for one year.",
+   "figures_as_printed": [
+    "$14,400"
+   ],
+   "quote": "if the $14,400 in town tech, priority #15, is not funded"
+  },
+  {
+   "topic": "Town Hall remaining placeholder",
+   "what_was_recorded": "The remaining Town Hall amount on the Plan is half of a two-year request and would go away if significant renovations are done.",
+   "figures_as_printed": [
+    "$40,000",
+    "40-40"
+   ],
+   "quote": "the $40,000 left on the plan is ½ of a two -year 40-40 request."
+  },
+  {
+   "topic": "Savings from removing items from the Plan",
+   "what_was_recorded": "Removing Car 2, Marshall Park, Town Hall, THMS Shade Structure and Police Dept. Speed Sign from the Plan would save a stated amount.",
+   "figures_as_printed": [
+    "$166,666"
+   ],
+   "quote": "it would save $166,666."
+  },
+  {
+   "topic": "Total under the alternative options",
+   "what_was_recorded": "Committee reviewed option totals, including the total if Car 2 and Marshall Park were put back in.",
+   "figures_as_printed": [
+    "$680,000",
+    "$747,000",
+    "$165,000"
+   ],
+   "quote": "if car 2 and marshall park put back in would total $747,000."
+  },
+  {
+   "topic": "Total capital with cash and debt service",
+   "what_was_recorded": "K. Speidel noted the $750,000 figure would include both cash and debt service.",
+   "figures_as_printed": [
+    "$750,000"
+   ],
+   "quote": "k. speidel noted the $750,000 would include both cash and debt service."
+  },
+  {
+   "topic": "Road paving funding",
+   "what_was_recorded": "Suggestion to note on the Plan that $125,000 comes out of the operating budget for roads.",
+   "figures_as_printed": [
+    "$125,000"
+   ],
+   "quote": "possibly note on the plan that $125,000 comes out of operating budget for roads?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Email from David Matthews on FY15 Capital Plan",
+   "resolution": "no action; inquiries deemed premature",
+   "quote": "discussion ensued concerning an email from david matthews, board of selectmen, with inquiries of various items in the fy15",
+   "tags": [
+    "FY15",
+    "board of selectmen",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Prioritization review with Town Manager",
+   "resolution": "reprioritized several items; follow-up assigned",
+   "quote": "committee reviewed prioritization with k. speidel.",
+   "tags": [
+    "prioritization",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Fire Dept. Car 2",
+   "resolution": "reprioritized from #11 to #17",
+   "quote": "there was discussion surrounding fire dept. car 2.",
+   "tags": [
+    "fire",
+    "vehicle",
+    "training"
+   ]
+  },
+  {
+   "topic": "Town Technology request",
+   "resolution": "discussed; no action",
+   "quote": "technology- if the $14,400 in town tech, priority #15, is not funded",
+   "tags": [
+    "technology",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Marshall Park parking lot and Town Hall painting",
+   "resolution": "parking lot supported on safety grounds; Town Manager to check with Police and Fire Chiefs",
+   "quote": "discussion on the marshall park parking lot and town hall painting.",
+   "tags": [
+    "marshall park",
+    "town hall",
+    "parking",
+    "safety"
+   ]
+  },
+  {
+   "topic": "Street sweeper and funding options",
+   "resolution": "analysis of outsourcing requested; no decision",
+   "quote": "committee looking for firm quote for a sweeper.",
+   "tags": [
+    "street sweeper",
+    "DPW",
+    "outsourcing"
+   ]
+  },
+  {
+   "topic": "Road paving not on prioritization",
+   "resolution": "Committee to note the omission on the Plan",
+   "quote": "the road paving was submitted as an item, but was not on the prioritization.",
+   "tags": [
+    "roads",
+    "paving"
+   ]
+  },
+  {
+   "topic": "Minutes approval and adjournment",
+   "resolution": "approved 12-11-13 minutes; adjourned 11:15 AM",
+   "quote": "12-11-13 minutes approved. adjourned 11:15 am.",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from David Matthews, Board of Selectmen, with inquiries on FY15 Capital Plan items",
+   "where": "text",
+   "quote": "discussion ensued concerning an email from david matthews, board of selectmen, with inquiries of various items in the fy15"
+  },
+  {
+   "name": "Five Year Plan",
+   "where": "text",
+   "quote": "five year plan had been viewed to see how things would pile up if the engine was pushed off a year."
+  },
+  {
+   "name": "Form B for Marshall Park parking lot",
+   "where": "text",
+   "quote": "this was the first time a form b was submitted for the parking lot."
+  }
+ ],
+ "tags": [
+  "capital plan",
+  "FY15",
+  "prioritization",
+  "street sweeper",
+  "fire engine",
+  "fire car",
+  "town hall",
+  "senior center",
+  "marshall park",
+  "school asbestos",
+  "budget",
+  "borrowing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

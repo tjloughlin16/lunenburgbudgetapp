@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-01-12",
  "docid": "3832",
@@ -12,55 +12,55 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from December 22, 2014",
+   "motion": "Approve the minutes of 12/22/14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "12/22/14, motion, d. mcquaid, second, k. chenis"
   },
   {
-   "motion": "Approve executive minutes from December 9, 2013",
+   "motion": "Approve the executive session minutes of 12/09/13.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "executive 12/09/13, motion, d. mcquaid, second, n. lockwood"
   },
   {
-   "motion": "Approve executive minutes from January 27, 2014",
+   "motion": "Approve the executive session minutes of 01/27/14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "executive 01/27/14, motion, d. mcquaid, second, m. allison"
   },
   {
-   "motion": "Approve executive minutes from March 10, 2014",
+   "motion": "Approve the executive session minutes of 03/10/14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "executive 03/10/14, motion, d. mcquaid, second, m. allison"
   },
   {
-   "motion": "Approve executive minutes from July 14, 2014",
+   "motion": "Approve the executive session minutes of 07/14/14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "executive 07/14/14, motion, d. mcquaid, second, k. chenis"
   },
   {
-   "motion": "Approve executive minutes from August 11, 2014",
+   "motion": "Approve the executive session minutes of 08/11/14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "executive 08/11/14, motion, d. mcquaid, second, m. allison"
   },
   {
-   "motion": "Approve final Housing Production Plan",
+   "motion": "Approve the final Housing Production Plan (HPP).",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
@@ -69,6 +69,369 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.13038450000000001
+ "note": "Text is a plain extraction with some broken words (for example \"w ill\", \"deve lopment\", \"anticipate s\"); quotes were copied as printed. The six minutes-approval entries record a motion and second but no result, so outcome is \"not stated\". The HPP vote is recorded as \"all aye\" with no count. The adjournment has no recorded motion. ANR endorsements are recorded as \"Plan endorsed by Board\" without a vote. Executive minutes are listed with dates as printed (12/09/13 may be a typo for 2013; left as printed).",
+ "cost_usd": 0.00920972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "p. bertram inquired as to process for white tail crossing."
+  },
+  {
+   "name": "Maryellen Ramstack",
+   "role": "",
+   "status": "present",
+   "quote": "voiced her concern at the lack of public attendance at the meetings."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board endorsed the ANR plan for 11 Beachview Road (lot consolidation for tax purposes); applicant to file at Registry.",
+   "quote": "plan endorsed by board. applicant to file at registry."
+  },
+  {
+   "decision": "Board endorsed the ANR plan for 26/30/32 Laurel Lane; M. Allison declined to sign.",
+   "quote": "m. allison declined to sign."
+  },
+  {
+   "decision": "Public discussions of the Village Center District Bylaw to take place at the January 26, February 9 and February 23 Board meetings, to allow dissemination of information before May Town Meeting.",
+   "quote": "public discussions of the bylaw will take place at the january 26 th, february 9th and february 23rd board meetings"
+  },
+  {
+   "decision": "Special permit purpose wording: an F will be added to Purpose encouraging mixed use development that facilitates community and civic use.",
+   "quote": "will be added to purpose stating encouragement of mixed use"
+  },
+  {
+   "decision": "Retention of trees to be encouraged, to be addressed through the development plan review process and design guidelines.",
+   "quote": "retention of trees will be encouraged; this can be addressed through the development plan review process."
+  },
+  {
+   "decision": "Wording of the 60% transparency requirement to be clarified for mixed use building facades.",
+   "quote": "wording to be clarified noting if a mixed use building façade"
+  },
+  {
+   "decision": "D. McQuaid to work on an architectural sketch of what a Town Center would look like under the Village Center District.",
+   "quote": "d. mcquaid will work on an architectural sketch of what a town center would look like"
+  },
+  {
+   "decision": "Meetings on the Village Center District Bylaw to be publicized via the Town Scroll and by mailers to addresses within the District.",
+   "quote": "the meetings will also be publicized via the town scroll."
+  },
+  {
+   "decision": "A. Burney to follow up on a possible joint meeting with the Building Reuse Committee.",
+   "quote": "a. burney to follow up on possible joint meeting."
+  },
+  {
+   "decision": "A. Burney to attend the Library Board of Trustees meeting on January 15.",
+   "quote": "noted library board of trustees meeting january 15th - a. burney to attend."
+  },
+  {
+   "decision": "A. Burney to work on the Economic Development element of Master Planning in February; N. Lockwood wants a committee in place as soon as possible.",
+   "quote": "a. burney anticipate s working on this in february."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lane property parking (Open Space Ad Hoc Committee)",
+   "what_was_recorded": "Parking tied to the Lane property grant requirements must be established before May 15th, reported as over $27,000.",
+   "figures_as_printed": [
+    "$27,000"
+   ],
+   "quote": "parking (over $27,000) has to be established prior to may 15th."
+  },
+  {
+   "topic": "Village Center District Bylaw mailers",
+   "what_was_recorded": "Mailers to all Lunenburg residents were ruled out as cost prohibitive; mailers go only to addresses within the District.",
+   "figures_as_printed": [],
+   "quote": "it is cost prohibitive to send mailers to all lunenburg residents."
+  },
+  {
+   "topic": "Lane property grant opportunities (SnowRiders)",
+   "what_was_recorded": "The AAT is pursuing potential grant opportunities through the SnowRiders to help fund the parking, with no amount stated.",
+   "figures_as_printed": [],
+   "quote": "p. bertram of the aat noted they are looking at getting potential grant opportunities through the snowriders to help fund."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Maryellen Ramstack",
+   "stated_role": "",
+   "topic": "lack of public attendance at meetings",
+   "quote": "voiced her concern at the lack of public attendance at the meetings."
+  },
+  {
+   "speaker": "P. Bertram",
+   "stated_role": "",
+   "topic": "process for White Tail Crossing",
+   "quote": "p. bertram inquired as to process for white tail crossing."
+  },
+  {
+   "speaker": "M. Ramstack",
+   "stated_role": "",
+   "topic": "whether scenic roads will go on the warrant",
+   "quote": "m. ramstack asked if the scenic roads will go on the warrant."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "ANRs (11 Beachview Road; 26/30/32 Laurel Lane)",
+   "resolution": "plans endorsed",
+   "tags": [
+    "ANR",
+    "land division"
+   ],
+   "quote": "plan endorsed by board. applicant to file at registry."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made on six sets of minutes; no result recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: all minutes signed."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "tags": [
+    "committees",
+    "School Building Committee",
+    "Open Space"
+   ],
+   "quote": "school building committee, n. lockwood - no meeting since last board meeting."
+  },
+  {
+   "topic": "New business / development status reports",
+   "resolution": "status reports received",
+   "tags": [
+    "development status",
+    "White Tail Crossing"
+   ],
+   "quote": "white tail crossing- layout hearing for roadway in front of board of selectmen january 13, 2015."
+  },
+  {
+   "topic": "Housing Production Plan (action file)",
+   "resolution": "approved final HPP",
+   "tags": [
+    "housing",
+    "HPP"
+   ],
+   "quote": "motion d. mcquaid, second, k. chenis to approve final hpp; all aye."
+  },
+  {
+   "topic": "Village Center District Bylaw (action file)",
+   "resolution": "continued; public hearing anticipated March 9",
+   "tags": [
+    "zoning",
+    "Village Center District",
+    "bylaw"
+   ],
+   "quote": "continued discussion. minor edits made."
+  },
+  {
+   "topic": "Public comment (Ramstack, during Village Center item)",
+   "resolution": "noted",
+   "tags": [
+    "public comment",
+    "attendance"
+   ],
+   "quote": "voiced her concern at the lack of public attendance at the meetings."
+  },
+  {
+   "topic": "322 Flat Hill Community Solar",
+   "resolution": "no action; decision to be filed with Registry",
+   "tags": [
+    "solar",
+    "decision"
+   ],
+   "quote": "decision needs to filed with registry."
+  },
+  {
+   "topic": "Scenic Road",
+   "resolution": "no report",
+   "tags": [
+    "scenic roads"
+   ],
+   "quote": "scenic road- no report"
+  },
+  {
+   "topic": "250 Whalom Road, Whalom Luxury Apartments",
+   "resolution": "no report",
+   "tags": [
+    "development status"
+   ],
+   "quote": "250 whalom road, whalom luxury apartments- no report"
+  },
+  {
+   "topic": "Master Planning - Economic Development Element",
+   "resolution": "no report; staff to work on it in February",
+   "tags": [
+    "master plan",
+    "economic development"
+   ],
+   "quote": "master planning - economic development element - no report"
+  },
+  {
+   "topic": "Historical Commission - Architectural Preservation District",
+   "resolution": "draft received; Commission to attend January 26 meeting",
+   "tags": [
+    "historic preservation",
+    "bylaw"
+   ],
+   "quote": "a. burney has received draft from the historical commission."
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "tags": [
+    "notices",
+    "ZBA"
+   ],
+   "quote": "noted zoning board of appeals denial for 790 massachusetts ave."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "dates listed",
+   "tags": [
+    "schedule",
+    "hearings"
+   ],
+   "quote": "january 26, 6:30 pm, town hall- regular meeting will include public discussion"
+  },
+  {
+   "topic": "Public comment (Bertram, Ramstack)",
+   "resolution": "questions answered by staff",
+   "tags": [
+    "public comment",
+    "White Tail Crossing",
+    "scenic roads"
+   ],
+   "quote": "p. bertram inquired as to process for white tail crossing."
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "discussed; no action",
+   "tags": [
+    "town calendar"
+   ],
+   "quote": "m. allison felt that future meeting dates of boards/commissions/committees, etc. should be extended out"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:28 PM; no motion recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "regardless of whether or not an agenda has been submitted. adjourned: 8:28 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR, 26/30/32 Laurel Lane",
+   "where": "list",
+   "quote": "documents used at meeting: anr, 26/30/32 laurel lane anr, 11 beachview road"
+  },
+  {
+   "name": "ANR, 11 Beachview Road",
+   "where": "list",
+   "quote": "anr, 26/30/32 laurel lane anr, 11 beachview road minutes 12-22-14"
+  },
+  {
+   "name": "Minutes 12-22-14",
+   "where": "list",
+   "quote": "anr, 11 beachview road minutes 12-22-14 executive minutes 12/09/13"
+  },
+  {
+   "name": "Executive Minutes 12/09/13, 01/27/14, 03/10/14, 07/14/14, 08/11/14",
+   "where": "list",
+   "quote": "executive minutes 12/09/13, 01/27/14, 03/10/14, 07/14/14, 08/11/14"
+  },
+  {
+   "name": "Draft Housing Production Plan",
+   "where": "list",
+   "quote": "draft housing production plan draft village district bylaw"
+  },
+  {
+   "name": "Draft Village District Bylaw",
+   "where": "list",
+   "quote": "draft village district bylaw 50 elmwood rd updates"
+  },
+  {
+   "name": "50 Elmwood Rd Updates",
+   "where": "list",
+   "quote": "draft village district bylaw 50 elmwood rd updates"
+  },
+  {
+   "name": "Architectural Preservation District draft (from the Historical Commission)",
+   "where": "text",
+   "quote": "a. burney has received draft from the historical commission."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "housing production plan",
+  "village center district bylaw",
+  "special permits",
+  "White Tail Crossing",
+  "scenic roads",
+  "open space",
+  "Lane property",
+  "public comment",
+  "zoning",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

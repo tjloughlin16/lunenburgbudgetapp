@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-05-17",
  "docid": "2764",
@@ -12,15 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve April 26, 2012 minutes as amended",
-   "moved_by": "Dick Maillou x",
+   "motion": "Approve the April 26, 2012 minutes as amended.",
+   "moved_by": "Dick Mailloux",
    "seconded_by": "Kathy Murray",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion made by dick maillou x and seconded by kathy murray to approve minutes a s amended, unanimous approval."
   },
   {
-   "motion": "Approve May 10, 2012 minutes as amended",
+   "motion": "Approve the April 25, 2012 Personnel Subcommittee minutes as amended; in favor were Dick Mailloux, Jeanne Raboin, Len Smetana and Lisa Krowitz, those who attended the subcommittee meeting.",
+   "moved_by": "Dick Mailloux",
+   "seconded_by": "Len Smetana",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "moti on made by dick mailloux and seconded by len smetan a to approve minutes as amended; in favor"
+  },
+  {
+   "motion": "Approve the May 10, 2012 minutes as amended.",
    "moved_by": "John Mara",
    "seconded_by": "Dick Mailloux",
    "outcome": "passed unanimously",
@@ -28,25 +36,23 @@
    "quote": "motion made by john mara and seconded by dick mailloux to approve minutes as ame nded, unanimous approval."
   },
   {
-   "motion": "Accept Library Director Job Description as amended",
+   "motion": "Accept the Library Director Job Description as amended.",
    "moved_by": "Len Smetana",
    "seconded_by": "Dick Mailloux",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by len smetana to accept library direct or job description as amended. seconded by dick mailloux, unanimous approval",
-   "quote_taken_from_text": true
+   "quote": "motion made by len smetana to accept library direct or job description as amended."
   },
   {
-   "motion": "Table FY12 Director's Evaluation indefinitely and conduct an exit interview prior to Director's June 1, 2012 departure",
+   "motion": "Table the FY12 Director's Evaluation indefinitely and instead conduct an exit interview prior to the Director's June 1, 2012 departure.",
    "moved_by": "Len Smetana",
    "seconded_by": "Kathy Murray",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by len smetana to table the fy12 direct or's evaluation indefinitely and instead conduct an exit interview prior to the director's june 1, 2012 depa rture. seconded by kathy murray, unanimous approva ",
-   "quote_taken_from_text": true
+   "quote": "motion made by len smetana to table the fy12 direct or's evaluation indefinitely"
   },
   {
-   "motion": "Adjourn at 8:50 pm",
+   "motion": "Adjourn the meeting at 8:50 pm.",
    "moved_by": "Lisa Krowitz",
    "seconded_by": "Noelle Bodkin",
    "outcome": "passed unanimously",
@@ -54,7 +60,257 @@
    "quote": "motion made by lisa krowitz and seconded by noelle bodkin to adjourn at 8:50 pm; passed unanimously."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Document is OCR'd with spacing artifacts in names and words (e.g., \"Maillou x\", \"Smetan a\", \"ame nded\", \"depa rture\", \"approva l\"), but content is clearly readable and all votes are recorded.",
- "cost_usd": 0.12394750000000002
+ "dropped_unquoted": 0,
+ "note": "Text is a messy extraction: words are split or misspelled (e.g. 'Dick Maillou x', 'Len Sm etana', 'Mar y 18 th' which most likely means May 18, the day after this meeting; the minutes print it as 'Mar y'). Quotes were copied as extracted, spacing included. The minutes list John Mara as absent, yet record him as mmover of the May 10, 2012 minutes motion; this is recorded as printed. Amy Sadkin's role is not printed in the minutes (she reports as the Director). No dollar vote counts are printed for the Personnel Subcommittee motion; its outcome is recorded as 'passed' from the in-favor list. No documents list heading is printed.",
+ "cost_usd": 0.00867312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, kathy murray, jeanne raboin, amy sadkin, len sm etana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "lisa krowitz secretary, trustees of lunenburg public library",
+   "role": "Secretary, Trustees of Lunenburg Public Library"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, kathy murray, jeanne raboin, amy sadkin, len sm etana"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, kathy murray, jeanne raboin, amy sadkin, len sm etana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, kathy murray, jeanne raboin, amy sadkin, len sm etana"
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, kathy murray, jeanne raboin, amy sadkin, len sm etana"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, kathy murray, jeanne raboin, amy sadkin, len sm etana"
+  },
+  {
+   "name": "John Mara",
+   "status": "absent",
+   "quote": "absent: john mara public comment: none"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustees may send ideas on the proposed FY13 budget to the subcommittee, which will set up a meeting after the Town Elections to revisit it.",
+   "quote": "trustees can send ideas to the subcommitte e for consideration."
+  },
+  {
+   "decision": "Jeanne will contact the BiblioTemps representative to set up a time to meet with the two candidates for Interim Director.",
+   "quote": "to setup a time to meet with the candidates."
+  },
+  {
+   "decision": "Jeanne will make the modifications to the Library Director Job Description as amended and approved by the Board.",
+   "quote": "as amended and approved by the board."
+  },
+  {
+   "decision": "Jeanne and Amy will create an advertisement for the Library Director position.",
+   "quote": "jeanne and amy will create an advertisement for the"
+  },
+  {
+   "decision": "Amy will check the cost to update the Freegal contract to unlimited for the rest of the year, whether the new contract can start on the library's fiscal year, and whether she can negotiate a price.",
+   "quote": "amy will check in to the cost to update the current contract to unlim ited for the remainder of the year"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Donations in Helen Walker's name",
+   "what_was_recorded": "Donations totaling $1000 were given to the library in Helen Walker's name; the family has not specified a use.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "donations totaling $1000 have been given to the lib rary"
+  },
+  {
+   "topic": "Salary line item overrun",
+   "what_was_recorded": "The FY12 budget is over on the Salary line item; Amy indicated the trash and electricity line items would cover the salary overruns for FY12.",
+   "figures_as_printed": [],
+   "quote": "the fy12 budget is over on the salary li ne item"
+  },
+  {
+   "topic": "Library materials and 16% State Aid requirement",
+   "what_was_recorded": "Library materials spending is under the 16% State Aid requirement; Amy has orders that will meet it, but no new materials order until after the Evergreen transition.",
+   "figures_as_printed": [
+    "16%"
+   ],
+   "quote": "library materials under the 16% state aid"
+  },
+  {
+   "topic": "Freegal account",
+   "what_was_recorded": "The Freegal account is running low with 111 songs left; the board weighed three options: let songs run out, purchase new songs at $1.29/song, or increase to unlimited service.",
+   "figures_as_printed": [
+    "$1.29/song"
+   ],
+   "quote": "purchase new songs a t $1.29/song"
+  },
+  {
+   "topic": "Freegal funding source",
+   "what_was_recorded": "The Friends of the Lunenburg Library paid for the first 1000 songs; the service can be included under the library materials line item.",
+   "figures_as_printed": [
+    "1000 songs"
+   ],
+   "quote": "the friends of the lunenburg library paid for the"
+  },
+  {
+   "topic": "Staff pay increases",
+   "what_was_recorded": "Amy submitted pay increases for 4 staff members under the SalAdmin Plan.",
+   "figures_as_printed": [],
+   "quote": "amy submitted pay increases for 4 staff members und er the saladmin plan",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FY13 budget",
+   "what_was_recorded": "The subcommittee will set up a meeting after the Town Elections to revisit the proposed FY13 budget; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "trustees can send ideas to the subcommitte e for consideration."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of April 26, 2012 minutes",
+   "resolution": "approved as amended",
+   "quote": "motion made by dick maillou x and seconded by kathy murray to approve minutes a s",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Approval of April 25, 2012 Personnel Subcommittee minutes",
+   "resolution": "approved as amended",
+   "quote": "april 25, 2012 personnel subcommittee minutes: moti on made by dick mailloux",
+   "tags": [
+    "minutes",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Approval of May 10, 2012 minutes",
+   "resolution": "approved as amended",
+   "quote": "may 10, 2012 minutes: motion made by john mara and seconded by dick mailloux",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; no action recorded",
+   "quote": "donations totaling $1000 have been given to the lib rary",
+   "tags": [
+    "director report",
+    "donations",
+    "circulation",
+    "staff",
+    "facilities",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Freegal service",
+   "resolution": "options discussed; Amy to check cost of unlimited contract",
+   "quote": "amy received email that the account is running low with only 111 songs left.",
+   "tags": [
+    "freegal",
+    "library materials"
+   ]
+  },
+  {
+   "topic": "FY13 Budget",
+   "resolution": "subcommittee to schedule meeting after Town Elections; trustees to send ideas",
+   "quote": "trustees can send ideas to the subcommitte e for consideration.",
+   "tags": [
+    "budget",
+    "FY13"
+   ]
+  },
+  {
+   "topic": "Interim Director Search",
+   "resolution": "Jeanne to contact BiblioTemps representative to arrange candidate meetings",
+   "quote": "jeanne was in contact with bibliotemps",
+   "tags": [
+    "interim director",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Director Search: Job Description",
+   "resolution": "accepted as amended; Jeanne to modify and Jeanne and Amy to advertise",
+   "quote": "motion made by len smetana to accept library direct or job description as amended.",
+   "tags": [
+    "director search",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "tabled indefinitely; exit interview instead before June 1, 2012 departure",
+   "quote": "since amy gave her resignation at the",
+   "tags": [
+    "personnel",
+    "director evaluation",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50 pm",
+   "quote": "motion made by lisa krowitz and seconded by noelle bodkin to adjourn at 8:50 pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Library Director Job Description",
+   "where": "text",
+   "quote": "the board discussed changes to the director's job d escription."
+  },
+  {
+   "name": "FY12 Director's Evaluation",
+   "where": "text",
+   "quote": "motion made by len smetana to table the fy12 direct or's evaluation indefinitely"
+  },
+  {
+   "name": "Handouts on the Evergreen transition for patrons",
+   "where": "text",
+   "quote": "the staff created handouts on the evergreen transit ion for the patrons."
+  }
+ ],
+ "tags": [
+  "library",
+  "director search",
+  "interim director",
+  "personnel",
+  "budget",
+  "freegal",
+  "staffing",
+  "facilities",
+  "technology",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

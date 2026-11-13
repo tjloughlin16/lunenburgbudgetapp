@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-05-16",
  "docid": "1183",
@@ -12,6 +12,205 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No formal votes were recorded in these minutes. The document contains discussions, suggestions, and procedural notes (e.g., \"It was suggested...\", \"Committee reviewed...\", \"There was discussion...\"), and a tentative meeting schedule was set, but no motions or voting outcomes are explicitly stated.",
- "cost_usd": 0.08219749999999999
+ "note": "No motions or votes are recorded in these minutes, so the votes list is empty; adjournment and the meeting schedule were noted without a motion. No public comment section and no documents list appear. The attendance line is split across lines and was collapsed to one string for the quote. Form B and Form C are the only named documents, mentioned in text only.",
+ "cost_usd": 0.00436222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, colleen shapiro, steve raboin, dennis mannone, jr., town manager kerry"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, colleen shapiro, steve raboin, dennis mannone, jr., town manager kerry"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, colleen shapiro, steve raboin, dennis mannone, jr., town manager kerry"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, colleen shapiro, steve raboin, dennis mannone, jr., town manager kerry"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, colleen shapiro, steve raboin, dennis mannone, jr., town manager kerry"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, colleen shapiro, steve raboin, dennis mannone, jr., town manager kerry"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The tentative meeting schedule was set through end-September: June 6, June 19, July 10, August 8, and two dates in September (18 and 25).",
+   "quote": "tentative meeting schedule set through end-september as follows:"
+  },
+  {
+   "decision": "Facility requests are to be generated through DPW.",
+   "quote": "facility requests need to be generated through dpw."
+  },
+  {
+   "decision": "Form Bs requesting technology and/or facility needs are to be double-filed, with the requesting department, technology and/or DPW coordinating.",
+   "quote": "form bs requesting technology and/or facility needs to be double -filed."
+  },
+  {
+   "decision": "Cross-department jurisdiction is to be noted in the initial cover letter to departments, and Form B is to reference items listed on another department's Form B.",
+   "quote": "note this in initial cover letter to departments."
+  },
+  {
+   "decision": "An item submitted but not included in the final recommended Plan is carried forward to the next year rather than dropped.",
+   "quote": "town manager noted that if item is submitted"
+  },
+  {
+   "decision": "The Plan is to be presented to the Town Manager by December 31 of each year, and mid-January at the latest.",
+   "quote": "the plan should be presented to her by december 31 of each year;"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual cash placeholder for FY Capital Plan warrant article",
+   "what_was_recorded": "The Town Manager said she places a set amount of cash into the budget each year as the placeholder for the FY Capital Plan warrant article.",
+   "figures_as_printed": [
+    "$500K"
+   ],
+   "quote": "the town manager noted she places $500k of cash into the budget each"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Committee process under the Town Charter and member representation",
+   "resolution": "no action",
+   "tags": [
+    "charter",
+    "process"
+   ],
+   "quote": "ms. benson noted the process under the town charter."
+  },
+  {
+   "topic": "Prioritizing requests beyond the recommended Plan; meeting with Town Manager",
+   "resolution": "suggestions noted, no action",
+   "tags": [
+    "prioritization",
+    "town manager"
+   ],
+   "quote": "it was suggested to prioritize remaining capital requests beyond the recommended plan in case more funds become available."
+  },
+  {
+   "topic": "Traffic count request and 4-way flasher, Lancaster Avenue and Goodrich Street",
+   "resolution": "noted",
+   "tags": [
+    "traffic",
+    "intersection"
+   ],
+   "quote": "a 4 -way flasher was requested for the fy2014 plan, but did not make the final submitted plan."
+  },
+  {
+   "topic": "Review of Form B and Form C",
+   "resolution": "discussed; Form B to require more in-depth information",
+   "tags": [
+    "forms",
+    "form b",
+    "form c"
+   ],
+   "quote": "they felt the form b needs to require more in -depth information."
+  },
+  {
+   "topic": "Facility and technology requests routing",
+   "resolution": "procedure noted",
+   "tags": [
+    "facilities",
+    "technology",
+    "dpw"
+   ],
+   "quote": "facility requests need to be generated through dpw."
+  },
+  {
+   "topic": "Financial forecast and cash placeholder",
+   "resolution": "discussed, no action",
+   "tags": [
+    "financial forecast",
+    "budget"
+   ],
+   "quote": "there was discussion regarding the financial forecast."
+  },
+  {
+   "topic": "Status of funds for unpurchased items at fiscal year end",
+   "resolution": "explained, no action",
+   "tags": [
+    "warrant article",
+    "carry forward"
+   ],
+   "quote": "ms. shapiro inquired as to status of funds if an item on the plan is not purchased by the end of the fiscal year."
+  },
+  {
+   "topic": "Reviewing Form B on receipt and checklist for departments",
+   "resolution": "discussed, no action",
+   "tags": [
+    "form b",
+    "process"
+   ],
+   "quote": "committee discussed reviewing the form b as soon as it comes in"
+  },
+  {
+   "topic": "Tentative meeting schedule through September",
+   "resolution": "set",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "tentative meeting schedule set through end-september as follows:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:10 AM; no motion recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "september 25, 10:00 am adjourned 11:10 am."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form B",
+   "where": "text",
+   "quote": "they felt the form b needs to require more in -depth information."
+  },
+  {
+   "name": "Form C",
+   "where": "text",
+   "quote": "it was noted that many departments neglect to complete form c."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "capital plan",
+  "Form B",
+  "Form C",
+  "town manager",
+  "warrant article",
+  "meeting schedule",
+  "DPW",
+  "traffic",
+  "financial forecast"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,65 @@
+{
+ "board": "Selectmen Meeting",
+ "board_slug": "select-board",
+ "meeting_date": "2015-03-03",
+ "source": {
+  "sha256": "7f1264f40dc0c18613dd465917fb159379131197ccf06926d4a6d2869c305193",
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-03-03-Tcwp7rob3tE.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "forty thousand dollars",
+    "fiscal_year": 2016,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Governor proposes a Chapter 70 increase above the preliminary two percent assumption.",
+    "status": "announced",
+    "t": 6264,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "thirty five thousand dollars",
+    "fiscal_year": 2016,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Governor proposes a unrestricted aid increase; none was included in the preliminary budget.",
+    "status": "announced",
+    "t": 6264,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "override",
+    "condition": null,
+    "fiscal_year": 2016,
+    "prediction": "An override is not politically feasible this year because taxes rise from the new school debt.",
+    "scope": "town",
+    "t": 2027,
+    "who": "a member"
+   },
+   {
+    "about": "service levels",
+    "condition": "unless an override or change in priorities",
+    "fiscal_year": 2016,
+    "prediction": "Without money for them, 24-hour ambulance service and other service levels will not improve.",
+    "scope": "town",
+    "t": 1775,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "Tcwp7rob3tE",
+ "video_url": "https://www.youtube.com/watch?v=Tcwp7rob3tE",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-12T17:57:14Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

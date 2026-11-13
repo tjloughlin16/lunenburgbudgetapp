@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-12-22",
  "docid": "663",
@@ -12,39 +12,184 @@
  },
  "votes": [
   {
-   "motion": "Approve variance for 119 Rolling Acres septic system with monolithic pump chamber",
+   "motion": "Variance approved for 119 Rolling Acres (septic system in failure, offset to groundwater requested).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "after discussion and on motion by jewell and second by passios, the variance was approved."
   },
   {
-   "motion": "Approve variance for 123 Rolling Acres septic system",
+   "motion": "Variance approved for 123 Rolling Acres (septic system in failure, offset to groundwater requested).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "after discussion and on motion by jewell and second by passios, the variance was approved."
   },
   {
-   "motion": "Approve variance for 239 Highland Street septic system",
+   "motion": "Variance approved for 239 Highland Street (septic system in failure, offset to groundwater requested).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "after discussion and on motion by jewell and second by passios, the variance was approved."
   },
   {
-   "motion": "Approve FY 2016 Budget as presented",
+   "motion": "Approve the FY2016 Budget as presented.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
-   "outcome": "approved",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "on motion by jewell and second by passios, the budget as presented was approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document header identifies this as Board of Assessors meeting, but the document is actually Board of Health minutes, December 22, 2014. All votes are readable.",
- "cost_usd": 0.0925005
+ "note": "Board mismatch: the request names the Board of Assessors, but the minutes are headed \"LUNENBURG BOARD OF HEALTH\" and cover Title 5 and septic matters. Recorded as the minutes print them. Single-page text with no signature block. The minutes approval and adjournment have no recorded motion or vote count, so they are not recorded as votes. The three variance votes and the budget vote carry no vote count, so outcome is \"passed\". Name \"Dave Passios\" is taken from later references because the attendance line is split as \"Passio s\". No public comment section is printed. Kerry Speidel is named but took no part, so is not listed as an attendee.",
+ "cost_usd": 0.004264820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and dave passio s"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and dave passio s"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and dave passio s"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner (119 Rolling Acres, 123 Rolling Acres, 239 Highland Street, 60 South Row Road)",
+   "status": "present",
+   "quote": "chris mackenzie met with the board of behalf of the owner. this system is in failure."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "representing the owner (60 South Row Road)",
+   "status": "present",
+   "quote": "chris mackenzie and bob proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi has advised that he would like the contractor to use a monolithic pump chamber"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "administrative assistant andrea schnepf provided the board with the fy2016 budget as prepared by town administrator kerry speidel."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of December 1, 2014 listed as approved; the minutes record no motion or vote count for this.",
+   "quote": "minutes approved: december 1, 2014"
+  },
+  {
+   "decision": "Title 5 inspection reports for 445 Mulpus Road and 103 Island Road acknowledged by the board.",
+   "quote": "title 5 inspection reports acknowledged : 445 mulpus road 103 island road"
+  },
+  {
+   "decision": "Hearing for 60 South Row Road continued to January 5, 2015 at 7:00 pm because abutters were not properly notified.",
+   "quote": "this hearing is continued to january 5, 2015 at 7:00 pm due to the lack of notification."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2016 Budget",
+   "what_was_recorded": "Administrative Assistant Andrea Schnepf presented the FY2016 Budget prepared by Town Administrator Kerry Speidel; no changes were required and the budget was approved as presented. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "administrative assistant andrea schnepf provided the board with the fy2016 budget as prepared by town administrator kerry speidel."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes of December 1, 2014 approved (no motion recorded)",
+   "quote": "minutes approved: december 1, 2014",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged : 445 mulpus road 103 island road",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits and variances",
+   "resolution": "119 Rolling Acres, 123 Rolling Acres and 239 Highland Street variances approved; 60 South Row Road continued to January 5, 2015",
+   "quote": "this hearing is continued to january 5, 2015 at 7:00 pm due to the lack of notification.",
+   "tags": [
+    "septic",
+    "variance",
+    "title 5"
+   ]
+  },
+  {
+   "topic": "FY 2016 Budget",
+   "resolution": "approved as presented",
+   "quote": "on motion by jewell and second by passios, the budget as presented was approved.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:40 pm (no motion recorded)",
+   "quote": "meeting was adjourned at 7:40 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 445 Mulpus Road",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged : 445 mulpus road 103 island road"
+  },
+  {
+   "name": "Title 5 inspection report, 103 Island Road",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged : 445 mulpus road 103 island road"
+  },
+  {
+   "name": "FY2016 Budget (as prepared by Town Administrator Kerry Speidel)",
+   "where": "text",
+   "quote": "administrative assistant andrea schnepf provided the board with the fy2016 budget as prepared by town administrator kerry speidel."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic permits",
+  "variances",
+  "FY2016 budget",
+  "2014"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

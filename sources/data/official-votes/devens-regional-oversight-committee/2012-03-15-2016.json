@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "devens-regional-oversight-committee",
  "meeting_date": "2012-03-15",
  "docid": "2016",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the January 24, 2012 meeting",
+   "motion": "Accept the minutes of the January 24, 2012 meeting.",
    "moved_by": "Don Lowe",
    "seconded_by": "Donald Klein",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "don lowe made the motion to accept the minutes from the january. 24, 2012 meeting, donald klein seconded the motion and it passed unanimously."
   },
   {
-   "motion": "Accept Program Manager's agreement amendment to include 10 hours per month for administrative time",
+   "motion": "Accept the Program Manager's agreement amendment to include 10 hours per month for administrative time.",
    "moved_by": "Don Lowe",
    "seconded_by": "Rich",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "don lowe made a motion to accept program manager's agreement amendment to include 10 hours per month for administrative time, rich seconded the motion and it passed unanimously."
   },
   {
-   "motion": "Accept Load Estimator position",
+   "motion": "Accept the Load Estimator position.",
    "moved_by": "Rich",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "rich made a motion to accept load estimator position, laura seconded the motion and it passed unanimously."
   },
   {
-   "motion": "Promote a minimum load of $20 for up to 5 gallons/pounds",
+   "motion": "Promote a minimum load of $20 for up to 5 gallons/pounds.",
    "moved_by": "Rich",
    "seconded_by": "Don Lowe",
    "outcome": "passed unanimously",
@@ -45,6 +45,293 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes (macOS Vision). Four votes recorded, all passed unanimously. First names only for \"Rich\" and \"Laura\" in the motions; attendee list identifies these as Rich Nota and Laura Caron-Gustus.",
- "cost_usd": 0.0874865
+ "note": "Text is OCR of a scanned page (macOS Vision) with some typos (e.g., 'incréased', 'January. 24'). Votes were recorded as unanimous passes with no counts printed. Header reads 'Approved 5/a4112' (unclear). Public present Dona Neely recorded with no comment. Ayer and Lancaster listed as not represented. Next-meeting date is printed with a question mark.",
+ "cost_usd": 0.005734419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blazon",
+   "role": "Devens; chaired the meeting",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Lunenburg",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Jim Clyde",
+   "role": "Littleton",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Tessa David",
+   "role": "Program Manager",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Tom Delaney",
+   "role": "Groton",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Rich Nota",
+   "role": "Harvard",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Don Lowe",
+   "role": "Bolton",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Donald Klein",
+   "role": "Townsend",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), don lowe (bolton), and donald klein"
+  },
+  {
+   "name": "Dona Neely",
+   "role": "Public",
+   "status": "present",
+   "quote": "public present: dona neely"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Roof to be delayed until funding can be assured.",
+   "quote": "it was determined that the roof should be delayed until funding can be assured."
+  },
+  {
+   "decision": "DEP to be requested to extend the expenditure deadline for the $7877 fund balance earmarked for the roof.",
+   "quote": "dep will be requested to extend the expenditure deadline for fund balance of $7877 which was earmarked for the roof."
+  },
+  {
+   "decision": "Covanta to pay for ad, signs and banners provided Mercury products are on the list and www.keepmercuryfromrising.org is included; banner sizes to be determined.",
+   "quote": "covanta will pay for ad, signs & banners as long as mercury products are on the list and include"
+  },
+  {
+   "decision": "Roof not to be pursued until operating costs are balanced.",
+   "quote": "roof should not be pursued until operating costs are balanced"
+  },
+  {
+   "decision": "Roof fund reserves to be used to buffer operating costs.",
+   "quote": "roof fund reserves should be used to buffer operating costs"
+  },
+  {
+   "decision": "Extension of the DEP grant (end date June 30) to be requested to maintain the $7877 fund balance.",
+   "quote": "an extension of dep grant which has an end date of june 30 should be requested to maintain fund balance of $7877."
+  },
+  {
+   "decision": "Lower price points ($10 and $20) to be promoted to encourage participation.",
+   "quote": "lower price points ($10 for up to 2.5 gallons/pound and $20 for up to 5 gallons/pounds) should be promoted to encourage participation."
+  },
+  {
+   "decision": "Participation and revenue to be reviewed after first quarter of second year to decide on fee increases and roof feasibility; if roof not feasible, identify alternative use of DEP grant fund balance.",
+   "quote": "participation and revenue should be reviewed after first quarter of second year to determine if fees"
+  },
+  {
+   "decision": "Offer to be made to Lee Davy, a candidate who has regularly volunteered at collections, for the Load Estimator position on the same terms as Program Manager without the insurance requirement; Legal to be asked whether a hold harmless waiver is needed.",
+   "quote": "offer will be made to candidate that has regularly volunteered at collections, lee davy."
+  },
+  {
+   "decision": "Legal to be asked whether a hold harmless waiver is needed for the Load Estimator position.",
+   "quote": "legal to be asked if a hold harmless waiver is needed."
+  },
+  {
+   "decision": "Committee goal is to meet quarterly with subcommittees meeting in between.",
+   "quote": "the committee also discussed that the goal is to meet quarterly and have subcommittees meeting in between."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Roof fund balance (DEP grant)",
+   "what_was_recorded": "A fund balance earmarked for the roof is to be protected by requesting a DEP deadline extension.",
+   "figures_as_printed": [
+    "$7877"
+   ],
+   "quote": "dep will be requested to extend the expenditure deadline for fund balance of $7877 which was earmarked for the roof."
+  },
+  {
+   "topic": "Waste oil handling cost",
+   "what_was_recorded": "Mixing waste oil with other flammables can raise costs by a stated amount per drum, so waste oil is to be isolated.",
+   "figures_as_printed": [
+    "$650-900"
+   ],
+   "quote": "isolate waste oil from other flammables because it can contain pcbs which increase costs $650-900 per drum."
+  },
+  {
+   "topic": "Covanta sponsorship of ads, signs and banners",
+   "what_was_recorded": "Covanta agreed to pay for the ad, signs and banners under stated conditions; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "covanta will pay for ad, signs & banners as long as mercury products are on the list and include"
+  },
+  {
+   "topic": "Participation price points",
+   "what_was_recorded": "Lower price points were set for promotion, and a minimum load of $20 was promoted.",
+   "figures_as_printed": [
+    "$10",
+    "$20",
+    "2.5 gallons/pound",
+    "5 gallons/pounds"
+   ],
+   "quote": "lower price points ($10 for up to 2.5 gallons/pound and $20 for up to 5 gallons/pounds) should be"
+  },
+  {
+   "topic": "Minimum load fee",
+   "what_was_recorded": "A motion to promote a minimum load of $20 for up to 5 gallons/pounds passed.",
+   "figures_as_printed": [
+    "$20"
+   ],
+   "quote": "rich made a motion to promote a minimum load of $20 for up to 5 gallons/pounds, don lowe seconded the motion and it passed unanimously."
+  },
+  {
+   "topic": "Roof fund reserves and operating costs",
+   "what_was_recorded": "Roof fund reserves are to buffer operating costs; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "roof fund reserves should be used to buffer operating costs"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and minutes approval",
+   "resolution": "approved January 24, 2012 minutes",
+   "quote": "don lowe made the motion to accept the minutes from the january. 24, 2012 meeting, donald klein seconded the motion and it passed unanimously.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Operations sub-committee report: outreach and promotion",
+   "resolution": "no action; communities encouraged to renew local promotion",
+   "quote": "communities are encouraged to renew promotional efforts through current local channels.",
+   "tags": [
+    "outreach",
+    "promotion"
+   ]
+  },
+  {
+   "topic": "Program Manager administrative time",
+   "resolution": "approved 10 hours per month amendment",
+   "quote": "don lowe made a motion to accept program manager's agreement amendment to include 10 hours per month for administrative time, rich seconded the motion and it passed unanimously.",
+   "tags": [
+    "staffing",
+    "program manager"
+   ]
+  },
+  {
+   "topic": "Load Estimator position",
+   "resolution": "approved position; offer to candidate; Legal to advise on waiver",
+   "quote": "rich made a motion to accept load estimator position, laura seconded the motion and it passed unanimously.",
+   "tags": [
+    "staffing",
+    "load estimator"
+   ]
+  },
+  {
+   "topic": "Operations cost containment",
+   "resolution": "discussed; no action",
+   "quote": "cost containment strategies were discussed for operation procedures.",
+   "tags": [
+    "costs",
+    "waste segregation",
+    "operations"
+   ]
+  },
+  {
+   "topic": "Capital: roof",
+   "resolution": "roof delayed; DEP extension to be requested",
+   "quote": "it was determined that the roof should be delayed until funding can be assured.",
+   "tags": [
+    "roof",
+    "capital",
+    "DEP grant"
+   ]
+  },
+  {
+   "topic": "Plan promotion: Covanta sponsorship",
+   "resolution": "Covanta sponsorship accepted under conditions; banner sizes to be determined",
+   "quote": "covanta will pay for ad, signs & banners as long as mercury products are on the list and include",
+   "tags": [
+    "outreach",
+    "Covanta",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "Presentations and potential new members",
+   "resolution": "no action; updates on Shirley and Boxboro",
+   "quote": "potential new member boxboro. lelwd not currently supporting funding",
+   "tags": [
+    "membership",
+    "presentations"
+   ]
+  },
+  {
+   "topic": "Administrative: Tier 2 reporting",
+   "resolution": "noted as submitted 3/1",
+   "quote": "tier 2 reporting submitted 3/1",
+   "tags": [
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Finance sub-committee report",
+   "resolution": "approved minimum load promotion; roof deferred; fee review set",
+   "quote": "rich made a motion to promote a minimum load of $20 for up to 5 gallons/pounds, don lowe seconded the motion and it passed unanimously.",
+   "tags": [
+    "finance",
+    "fees",
+    "roof"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "tentatively set",
+   "quote": "oversight committee may 10, 8:30am?",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Program Manager's agreement amendment",
+   "where": "text",
+   "quote": "don lowe made a motion to accept program manager's agreement amendment to include 10 hours per month for administrative time"
+  },
+  {
+   "name": "Tier 2 Reporting",
+   "where": "text",
+   "quote": "tier 2 reporting submitted 3/1"
+  }
+ ],
+ "tags": [
+  "household hazardous waste",
+  "regional collection",
+  "roof",
+  "DEP grant",
+  "Covanta",
+  "staffing",
+  "fees",
+  "budget",
+  "outreach",
+  "Devens"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

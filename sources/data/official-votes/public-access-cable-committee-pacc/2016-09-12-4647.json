@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-09-12",
  "docid": "4647",
@@ -12,23 +12,153 @@
  },
  "votes": [
   {
-   "motion": "to approve meeting minutes from 7.11.16, 7.25.16, and 8.1.16",
-   "outcome": "approved",
-   "procedural": true,
+   "motion": "Approve the minutes of 7.11.16, 7.25.16 and 8.1.16.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "review and approve meeting minutes from 7.11.16 and 7.25.16 and 8.1.16: committee reviewed and approved the minutes."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "committee reviewed and approved the minutes."
   },
   {
-   "motion": "to approve the changes to the FY17 budget",
-   "outcome": "passed 2-1",
-   "procedural": false,
+   "motion": "Approve the changes to the FY17 budget recommended by the PAC coordinator and John Henshaw.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 2-1",
+   "procedural": false,
    "quote": "there was a split vote of 2 to 1 to approve the changes to the fy17 budget."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0807215
+ "note": "The minutes are a summary with no attendance list, no movers or seconders named, and no recorded vote on adjournment. Public comment is not recorded. The FY17 split vote does not name the members who voted. Attendee status is 'not stated' throughout because the text does not say who was present.",
+ "cost_usd": 0.0033231199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jo",
+   "role": "PAC coordinator",
+   "status": "not stated",
+   "quote": "jo received no response to volunteers for recording high school sports."
+  },
+  {
+   "name": "Steve",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "steve met with jo and the town's accountant."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "faith beall volunteered to contact local colleges to see about getting volunteers for recording sports."
+  },
+  {
+   "name": "Emily",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "emily recorded stillman's farm and will be broadcasting shortly."
+  },
+  {
+   "name": "Jennifer Gorden",
+   "role": "student volunteer",
+   "status": "not stated",
+   "quote": "jennifer gorden, a student from fitchburg state, has been volunteering to help record meetings."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "a member of the finance committees",
+   "status": "not stated",
+   "quote": "john henshaw, a member of the finance committees."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The PACC must resubmit the FY17 budget to the finance committee at the Sept 22nd meeting, due to state regulations.",
+   "quote": "due to state regulations, the pacc needs to resubmit the fy17 budget to the finance committee"
+  },
+  {
+   "decision": "Discussion of the CAC and Budget update was tabled until the next meeting.",
+   "quote": "table the discussion until next meeting."
+  },
+  {
+   "decision": "Jo will contact the athletic director about getting parents, coaches or trainers to record high school sports games.",
+   "quote": "jo will contact the athletic director about getting parents or coaches or trainers to record high school"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Year ending budget",
+   "what_was_recorded": "The minutes report the year ending budget figure.",
+   "figures_as_printed": [
+    "$270,235.70"
+   ],
+   "quote": "year ending budget was $270,235.70."
+  },
+  {
+   "topic": "Ending balance",
+   "what_was_recorded": "The minutes report the ending balance as of July.",
+   "figures_as_printed": [
+    "$267,798.93"
+   ],
+   "quote": "ending balance of july was $267,798.93."
+  },
+  {
+   "topic": "Final budget numbers and town cash funding account",
+   "what_was_recorded": "The minutes say final budget numbers will not match because of issues with the town's cash funding account; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the final budget numbers will not match due to issues with the town's cash funding account."
+  },
+  {
+   "topic": "FY17 budget review",
+   "what_was_recorded": "The committee reviewed the FY17 budget, made recommended changes, and the budget must be resubmitted to the finance committee; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the committee reviewed the fy17 budget and made recommended changes by the pac coordinator and john henshaw"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "approved",
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "received, no action recorded",
+   "quote": "coordinator's monthly report:"
+  },
+  {
+   "topic": "FY17 Budget Review",
+   "resolution": "changes approved 2-1; resubmission to finance committee required",
+   "quote": "there was a split vote of 2 to 1 to approve the changes to the fy17 budget."
+  },
+  {
+   "topic": "CAC and Budget update",
+   "resolution": "tabled until next meeting",
+   "quote": "table the discussion until next meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 8:45pm; next meeting Oct 3rd",
+   "quote": "meeting adjourned at 8:45pm."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "PACC",
+  "public access cable",
+  "FY17 budget",
+  "budget vote",
+  "volunteers",
+  "local programming",
+  "minutes approval",
+  "Ch. 9",
+  "finance committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

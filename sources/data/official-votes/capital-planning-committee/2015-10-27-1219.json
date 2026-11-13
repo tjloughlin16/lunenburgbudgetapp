@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2015-10-27",
  "docid": "1219",
@@ -12,15 +12,210 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "moved_by": "Dennis",
-   "seconded_by": "John",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dennis Mannone, Jr.",
+   "seconded_by": "John Henshaw",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "dennis made a motion to adjourn; john seconded the motion. the cpc approved the motion 3-0"
+   "quote": "dennis made a motion to adjourn; john seconded the motion. the cpc approved the motion 3-0 and the meeting adjourned at 5:55."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision, readable. One procedural vote recorded: adjournment.",
- "cost_usd": 0.0926755
+ "note": "OCR text from a scanned page with some errors (e.g., '2id Floor', 'bailast', 'Rodriquenz'). Lettered item 4 jumps from a. and b. to d.; there is no item c. The vehicle matrix table and the DPW plan referenced in the text are not included in the text. The minutes are dated 10/27/15 but were submitted December 28, 2015. One vote recorded (adjournment, 3-0). The postponement and John's action item are recorded without a vote.",
+ "cost_usd": 0.00516332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman dennis mannone, jr., vice-chairman john henshaw, clerk"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., jamie toale, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dennis mannone, jr., jamie toale, john henshaw"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "absent",
+   "quote": "matthew allison, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "absent",
+   "quote": "matthew allison, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "citizen and is also a member of the Finance Committee",
+   "status": "present",
+   "quote": "jay simeone--citizen and is also a member of the finance committee."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "",
+   "status": "present",
+   "quote": "dpw capital requests, initial cut by jack rodriquenz"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee decided to postpone scheduling the next meeting until more information on the FY17 budget process is available.",
+   "quote": "we decided to postpone scheduling the next meeting until we have more information on the fy17 budget process."
+  },
+  {
+   "decision": "John Henshaw will work on a draft of the DPW vehicle matrix and bring it to the next meeting for discussion and review.",
+   "quote": "action: john will work on a draft of the vehicle matrix (see the vehicle section in the table above) and will bring it to the next meeting for discussion and review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf Field major maintenance",
+   "what_was_recorded": "The Turf Field project is listed at a cost of $800,000; the minutes say it is an FY18 project at the earliest and the actual work cost is premature to estimate.",
+   "figures_as_printed": [
+    "$800,000"
+   ],
+   "quote": "turf field: $800,000. five intersections"
+  },
+  {
+   "topic": "Turf Field funding",
+   "what_was_recorded": "The Town has the money to study and do the concept work, but it has not accrued funds for the actual reconstruction.",
+   "figures_as_printed": [],
+   "quote": "the town has the money to study and do the concept work"
+  },
+  {
+   "topic": "DPW vehicle price escalation",
+   "what_was_recorded": "Vehicle prices are estimated to increase at a compounded annual rate of 2.5%.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "vehicle prices are estimated to increase at a compounded rate of 2.5% per year."
+  },
+  {
+   "topic": "DPW fuel tank replacement",
+   "what_was_recorded": "The minutes say the estimated cost of replacing the underground fuel tanks would cover removing the old tanks and installing new ones, but no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the estimated cost would cover taking care of the old tanks and installing the new tanks."
+  },
+  {
+   "topic": "Pavement management investment",
+   "what_was_recorded": "The chart shows the investment required over a fifteen-year period to reach a specific pavement condition index; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "jack directed attention to the chart on the investment required over a fifteen-year period to end up with a specific pavement condition index."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jay Simeone",
+   "stated_role": "citizen and is also a member of the Finance Committee",
+   "topic": "lowering maintenance costs of Town buildings",
+   "quote": "jay suggested that we explore options to lower maintenance costs of the town's buildings."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order by jamie toale at 4:34 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "DPW capital requests, initial cut (FY17 and FY18)",
+   "resolution": "reviewed; no action",
+   "quote": "dpw capital requests, initial cut by jack rodriquenz",
+   "tags": [
+    "DPW",
+    "facilities",
+    "vehicles",
+    "turf field",
+    "stormwater",
+    "pavement",
+    "capital requests"
+   ]
+  },
+  {
+   "topic": "Minutes of October 13 meeting",
+   "resolution": "not ready for review; deferred",
+   "quote": "the minutes of the october 13 meeting were not ready for review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee discussion",
+   "resolution": "next meeting postponed; vehicle matrix assigned to John Henshaw",
+   "quote": "concerns and questions centered on the gas tank maintenance",
+   "tags": [
+    "fuel tank",
+    "FY17 budget",
+    "vehicle matrix",
+    "planning horizon"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "jay suggested that we explore options to lower maintenance costs of the town's buildings.",
+   "tags": [
+    "public comment",
+    "building maintenance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 5:55",
+   "quote": "dennis made a motion to adjourn; john seconded the motion.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DPW plan",
+   "where": "text",
+   "quote": "see the dpw plan for details."
+  },
+  {
+   "name": "Matrix of DPW vehicle requests (template; draft vehicle matrix to be prepared by John Henshaw)",
+   "where": "text",
+   "quote": "jack has provided a matrix of dpw vehicle requests that can serve as a template"
+  },
+  {
+   "name": "Chart on investment required over a fifteen-year period (pavement condition index)",
+   "where": "text",
+   "quote": "jack directed attention to the chart on the investment required over a fifteen-year period"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "DPW",
+  "facilities",
+  "vehicles",
+  "turf field",
+  "stormwater",
+  "pavement management",
+  "fuel tank",
+  "FY17 budget",
+  "FY18"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "note: this overview of dpw requests focuses on fy17 and fy18."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-03-05",
  "docid": "1661",
@@ -12,23 +12,208 @@
  },
  "votes": [
   {
-   "motion": "Approve Negative Determination of Applicability for 129 Peninsula Drive",
-   "outcome": "unanimously approved",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve a negative 3 determination on the Request for Determination of Applicability for 129 Peninsula Drive filed by Danielle Reynolds.",
+   "outcome": "passed unanimous",
    "procedural": false,
    "quote": "the commission had no problem with this request. negative 3 approved ~ unanimous."
   },
   {
-   "motion": "Approve conservation commission regulations with fee additions",
-   "outcome": "unanimously approved",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": true,
+   "motion": "Approve the review of the regulations, with the minor changes and the added fees.",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "sharon went over minor changes and noted that fees had been added to regulations. unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09647049999999999
+ "note": "Text is OCR-like with broken words and collapsed spacing; quotes were normalized to single spaces. The text ends after the 8:15 PM license agreement item, so later items, if any, are not in the extract. No motion is printed for the license agreement. The 129 Peninsula vote has no printed mover or seconder. Attendance is taken from the header list, which does not explicitly say present. The minutes are headed APPROVED 3-19-2014, which is not a vote recorded in this text.",
+ "cost_usd": 0.00450722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrie r"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrie r"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrie r"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "present",
+   "quote": "sharon went over minor changes and noted that fees had been added to regulations."
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrie r"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrie r"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrie r"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrie r"
+  },
+  {
+   "name": "Joanna Bilott",
+   "role": "",
+   "status": "present",
+   "quote": "joanna presented information from their meeting with shirley conservation."
+  },
+  {
+   "name": "Rob MacMillan",
+   "role": "",
+   "status": "present",
+   "quote": "rob is interested in the hollis road property and just came in to introduce himself to the commission."
+  },
+  {
+   "name": "Danielle Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "danielle presented plans and stated the corner of the addition will be 81 feet from the high water mark."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Regulation fees",
+   "what_was_recorded": "Sharon Jordan noted that fees had been added to the regulations during the review; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "noted that fees had been added to regulations."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Shirley Village Reservoir drawdown and chemical treatment order of conditions",
+   "resolution": "no action; reported on meeting with Shirley Conservation and a chemical request",
+   "quote": "joanna presented information from their meeting with shirley conservation. lsic would like to modify the draw down, monitoring of wells.",
+   "tags": [
+    "reservoir",
+    "order of conditions",
+    "herbicide",
+    "fanwort"
+   ]
+  },
+  {
+   "topic": "123 Hollis Road introduction (Rob MacMillan)",
+   "resolution": "no action; introduction only",
+   "quote": "rob is interested in the hollis road property and just came in to introduce himself to the commission.",
+   "tags": [
+    "123 Hollis Road",
+    "introduction"
+   ]
+  },
+  {
+   "topic": "129 Peninsula Drive Request for Determination of Applicability",
+   "resolution": "approved negative 3 determination, unanimous",
+   "quote": "the commission had no problem with this request. negative 3 approved ~ unanimous.",
+   "tags": [
+    "wetlands",
+    "100 foot buffer",
+    "addition",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "50 Elmwood Road plan updates",
+   "resolution": "no action; updated plans received",
+   "quote": "updated plans received, changes made as requested.",
+   "tags": [
+    "50 Elmwood Road",
+    "plans"
+   ]
+  },
+  {
+   "topic": "Review regulations",
+   "resolution": "approved",
+   "quote": "copies of regulations given to commissioners, sharon went over minor changes and noted that fees had been added to regulations.",
+   "tags": [
+    "regulations",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Review license agreement, 123 Hollis Road",
+   "resolution": "no action; copies given to members to review",
+   "quote": "copies of resident caretake/custodian license agreement given to members to review.",
+   "tags": [
+    "123 Hollis Road",
+    "license agreement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request from Aquatic Control (Dominic Meringolo) to use specific chemicals for fanwort",
+   "where": "text",
+   "quote": "a request from aquatic control (dominic meringolo) to use specific chemicals to try to control it was received (see file)."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Danielle Reynolds, 129 Peninsula Drive",
+   "where": "text",
+   "quote": "on a request for determination of applicability filed by danielle reynolds."
+  },
+  {
+   "name": "Plans for 129 Peninsula Drive two story addition",
+   "where": "text",
+   "quote": "danielle presented plans and stated the corner of the addition will be 81 feet from the high water mark."
+  },
+  {
+   "name": "Updated plans for 50 Elmwood Road (plan updates received 2/24)",
+   "where": "text",
+   "quote": "updated plans received, changes made as requested."
+  },
+  {
+   "name": "Regulations (copies given to Commissioners)",
+   "where": "text",
+   "quote": "copies of regulations given to commissioners, sharon went over minor changes and noted that fees had been added to regulations."
+  },
+  {
+   "name": "Resident Caretake/Custodian License Agreement, 123 Hollis Road",
+   "where": "text",
+   "quote": "copies of resident caretake/custodian license agreement given to members to review."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "Shirley Village Reservoir",
+  "aquatic herbicide",
+  "Request for Determination",
+  "123 Hollis Road",
+  "50 Elmwood Road",
+  "regulations",
+  "license agreement"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

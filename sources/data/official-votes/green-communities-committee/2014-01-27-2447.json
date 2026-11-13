@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2014-01-27",
  "docid": "2447",
@@ -12,13 +12,138 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes from January 14, 2013",
+   "motion": "Approve the minutes of 1/14/13 (as printed; no mover or seconder recorded).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 1/14/13 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of meeting minutes. One procedural vote recorded: approval of prior minutes. No other votes were recorded; subsequent items (grant application review, presentation planning, policy development) were discussed and decisions made, but no formal votes are recorded in the minutes.",
- "cost_usd": 0.1064455
+ "note": "Text is OCR of a single page. The minutes approve the 1/14/13 minutes with no motion, mover, seconder or vote count printed; recorded as a procedural vote with outcome 'passed' only. The 1/14/13 date may be a typo for 2014 and is printed as-is. No adjournment motion is recorded (adjournment at 8:30 P.M. is stated without a vote). No dollar figures appear in the text. N. Sullivan is named as preparing narrative sections but is not recorded as attending. No public comment is recorded.",
+ "cost_usd": 0.0029638200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "presiding (called meeting to order)",
+   "status": "present",
+   "quote": "present: d. blatt, j. breault, z. cutting, j mcquaid, j.londa"
+  },
+  {
+   "name": "J. Breault",
+   "status": "present",
+   "quote": "present: d. blatt, j. breault, z. cutting, j mcquaid, j.londa"
+  },
+  {
+   "name": "Z. Cutting",
+   "status": "present",
+   "quote": "present: d. blatt, j. breault, z. cutting, j mcquaid, j.londa"
+  },
+  {
+   "name": "J McQuaid",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: d. blatt, j. breault, z. cutting, j mcquaid, j.londa"
+  },
+  {
+   "name": "J.Londa",
+   "status": "present",
+   "quote": "present: d. blatt, j. breault, z. cutting, j mcquaid, j.londa"
+  },
+  {
+   "name": "Michael Conway",
+   "role": "visitor",
+   "status": "present",
+   "quote": "michael conway (visitor)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Allocation chart to be reviewed to confirm and modify numbers as necessary before the Green Community Grant is submitted.",
+   "quote": "allocation chart was reviewed to confirm and modify numbers as necessary before submitting."
+  },
+  {
+   "decision": "A data logger was added to the Grant for monitoring purposes.",
+   "quote": "added to the grant was a data logger for monitoring purposes."
+  },
+  {
+   "decision": "D. Blatt will obtain the Town Manager's signature and upload all the documents.",
+   "quote": "d. blatt will obtain the town manager's signature and upload all the documents."
+  },
+  {
+   "decision": "J. McQuaid will organize an educational display at the Town Library.",
+   "quote": "j. mcquaid will work on organizing an educational display at the town library."
+  },
+  {
+   "decision": "Building-specific energy conservation policy to be developed at a departmental level; next meeting date TBD to work on writing it.",
+   "quote": "j.londa recommended that it be developed at a departmental level."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community Grant application",
+   "what_was_recorded": "The Green Community Grant application allocation chart was reviewed and numbers were to be confirmed or modified; a data logger was added to the Grant, and an infrared camera was noted as a useful diagnostic tool, with no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "review of green community grant application - allocation chart was reviewed to confirm"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Green Community Grant Application",
+   "resolution": "reviewed; numbers to be confirmed and documents uploaded before submission",
+   "quote": "review of green community grant application - allocation chart was reviewed to confirm",
+   "tags": [
+    "grant",
+    "green communities",
+    "application"
+   ]
+  },
+  {
+   "topic": "Official Green Community status presentation and library display",
+   "resolution": "presentation scheduled for February 10, 2014; display to be organized",
+   "quote": "an official presentation of the town's green community status will be on february 10, 2014.",
+   "tags": [
+    "green communities",
+    "public outreach"
+   ]
+  },
+  {
+   "topic": "Building-specific energy conservation policy",
+   "resolution": "continued; next meeting TBD",
+   "quote": "next meeting tbd to work on writing building specific energy conservation policy.",
+   "tags": [
+    "energy",
+    "policy"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Green Community Grant Application (allocation chart)",
+   "where": "text",
+   "quote": "allocation chart was reviewed to confirm and modify numbers as necessary before submitting."
+  },
+  {
+   "name": "Narrative sections prepared by Z. Cutting and N. Sullivan",
+   "where": "text",
+   "quote": "narrative sections prepared by z. cutting and n. sullivan were as reviewed and amended as necessary."
+  }
+ ],
+ "tags": [
+  "green communities",
+  "grant",
+  "energy conservation",
+  "policy",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

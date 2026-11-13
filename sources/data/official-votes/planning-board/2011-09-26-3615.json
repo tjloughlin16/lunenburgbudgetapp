@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-09-26",
  "docid": "3615",
@@ -12,23 +12,318 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from September 12, 2011",
+   "motion": "Approve the minutes signed 9-12-11.",
    "moved_by": "Nathan Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, nathan lockwood, second, mr. saiia, motion passed."
+   "quote": "minutes - approval: signed 9-12-11, motion, nathan lockwood, second, mr. saiia, motion passed."
   },
   {
-   "motion": "Adjourn regular session and enter executive session, not to return to regular session",
+   "motion": "Adjourn the regular session and enter executive session, not to return to regular session.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn regular session and enter executive session, not to return to regular session, mr. lockwood, second, mr. saiia, roll call vote, mr. saiia, aye, mr. lockwood, aye, ms. bilotta, aye , motion passed."
+   "quote": "motion to adjourn regular session and enter executive session, not to return to regular session, mr. lockwood, second, mr. saiia, roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0987615
+ "note": "Text is a clean extraction with no scan issues; no public comment section is printed. Chair Emerick Bakaysa is listed absent, yet the minutes refer once to 'Chair Bowen' in the Board of Appeals bylaw item; the minutes do not identify Bowen, so this is recorded as printed. The Executive Session minutes are separate and are not in this text. The ADJOURNMENT entry says 'Adjourned 8:45 PM.' Dollar figures appear only in the school, ANR fee and capital items; no transfers are recorded.",
+ "cost_usd": 0.006612519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair (header prints Joanna L. Bilotta-Simeone, Vice-Chair)",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Emerick Bakaysa",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: emerick bakaysa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the ANR plans for 146 Elmwood Road, 291 West Street and 168 Goodrich Street as approved.",
+   "quote": "the following plans were approved and signed by the board."
+  },
+  {
+   "decision": "The Board requests more information and examples on the Section 4.1.5.1 bylaw issue and suggests the Zoning Board of Appeals provide data on size and types of vehicles.",
+   "quote": "the board requests more information and examples and suggest the zoning board of appeals provide data of size and types."
+  },
+  {
+   "decision": "The next Summer Street Task Force meeting was rescheduled from September 27th to November 1st.",
+   "quote": "rescheduling of next summer street task force meeting from september 27 th to november 1st",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Director to try to set up the October 24th regular Planning Board meeting on the local access channel.",
+   "quote": "director to try to set up this meeting on local access channel"
+  },
+  {
+   "decision": "The Open Space Committee asked Mr. Kibbe to speak to the Committee on Fish and Game's goals and plans.",
+   "quote": "open space committee has requested mr. kibbe to speak to the committee on fish and game"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School reconfiguration plan cost",
+   "what_was_recorded": "The School Reconfiguration Committee reported that the State requires a reconfiguration plan before reimbursement consideration, and the plan cost is approximately $750 K.",
+   "figures_as_printed": [
+    "$750 K"
+   ],
+   "quote": "plan cost can be approximately $750 k."
+  },
+  {
+   "topic": "ANR administrative fee schedule",
+   "what_was_recorded": "The Board of Health's ANR issue was discussed and the fee schedule was noted: a basic administrative fee plus a charge per additional lot created.",
+   "figures_as_printed": [
+    "$100.00",
+    "$75.00"
+   ],
+   "quote": "noted fee schedule of $100.00 basic administrative fee plus $75.00 for each additional lot created."
+  },
+  {
+   "topic": "Capital Planning inventory threshold",
+   "what_was_recorded": "The Director reported that inventory over $10,000 and other capital requests are due September 30th.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "director reported that inventory over $10,000, fy13 plan requests, and 5 year plan are due on september 30th."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (signed 9-12-11)",
+   "quote": "signed 9-12-11, motion, nathan lockwood, second, mr. saiia, motion passed.",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "zoning board of appeals - 50 massachusetts avenue seeking special permit for covered walkway",
+   "tags": [
+    "zoning",
+    "conservation",
+    "permits"
+   ]
+  },
+  {
+   "topic": "ANR approvals",
+   "resolution": "approved and signed (three plans)",
+   "quote": "the following plans were approved and signed by the board.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "mr. saiia submitted the 1) montachusett regional transportation plan",
+   "tags": [
+    "committees",
+    "regional planning",
+    "schools",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business: Mass PV1 solar farm, 651 Chase Road",
+   "resolution": "noted (status)",
+   "quote": "mass pv1, llc, 651 chase road -solar farm-",
+   "tags": [
+    "solar",
+    "environmental review"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports: Eagle House parking lot",
+   "resolution": "noted",
+   "quote": "eagle house parking lot- director called to meeting on september 27th.",
+   "tags": [
+    "parking"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports: Open Space, Lake Shirley entrance",
+   "resolution": "noted; Open Space Committee to hear from Fish and Game",
+   "quote": "open space plans for consideration for recreational options on town lakes.",
+   "tags": [
+    "open space",
+    "lakes",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports: Summer Street",
+   "resolution": "status noted; task force meeting rescheduled to November 1st",
+   "quote": "noted status report and rescheduling of next summer street task force meeting",
+   "tags": [
+    "Summer Street",
+    "bylaw overlay"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports: Green Community Task Force",
+   "resolution": "noted",
+   "quote": "the board of selectmen has asked the task force to present workshops, etc. for the public prior to fall town meeting.",
+   "tags": [
+    "green community",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports: ANR issue with Board of Health",
+   "resolution": "noted; Director to confer with Town Manager",
+   "quote": "director described the process.",
+   "tags": [
+    "ANR",
+    "fees",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports: Board of Appeals bylaw request",
+   "resolution": "Board requests more information from ZBA",
+   "quote": "requested that bylaw section 4.1.5.1.",
+   "tags": [
+    "zoning bylaw",
+    "vehicle parking",
+    "residential"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "asian imperial, 332 massachusetts avenue- all permits are granted.",
+   "tags": [
+    "development",
+    "permits",
+    "MEPA"
+   ]
+  },
+  {
+   "topic": "Unfinished/old business: 925 Massachusetts Avenue",
+   "resolution": "noted",
+   "quote": "clean harbors pumped 537 gallons of waste gasoline from the station.",
+   "tags": [
+    "fire department",
+    "underground tanks"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "no meeting on october 10th due to columbus day.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "see separate minutes",
+   "quote": "executive session: see separate minutes",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "entered executive session; adjourned regular session at 8:45 PM",
+   "quote": "adjournment: motion to adjourn regular session and enter executive session",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Montachusett Regional Transportation Plan",
+   "where": "text",
+   "quote": "mjtc- mr. saiia submitted the 1) montachusett regional transportation plan"
+  },
+  {
+   "name": "“The Project Development Process” booklet (9-21-11)",
+   "where": "text",
+   "quote": "3) \"the project development process\" booklet (9-21-11)."
+  },
+  {
+   "name": "Montachusett Region Energy Plan (draft), copy on file in Planning Office",
+   "where": "text",
+   "quote": "montachusett region energy plan distributed to members."
+  },
+  {
+   "name": "Draft Environmental Impact Statement, Mass PV1, LLC solar farm, 651 Chase Road (submitted by Stantec)",
+   "where": "text",
+   "quote": "a draft environmental impact statement was submitted by"
+  },
+  {
+   "name": "Application to Massachusetts Environmental Policy Act (MEPA) Office, Highfield Village",
+   "where": "text",
+   "quote": "a copy of the application to massachusetts environmental policy act"
+  },
+  {
+   "name": "Zoning Bylaw Section 4.1.5.1, Uses Prohibited in all Districts",
+   "where": "text",
+   "quote": "requested that bylaw section 4.1.5.1."
+  },
+  {
+   "name": "ANR fee schedule ($100.00 basic administrative fee plus $75.00 for each additional lot)",
+   "where": "text",
+   "quote": "noted fee schedule of $100.00 basic administrative fee plus $75.00 for each additional lot created."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar farm",
+  "ANR",
+  "school reconfiguration",
+  "open space",
+  "zoning bylaw",
+  "Summer Street",
+  "green community",
+  "executive session",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

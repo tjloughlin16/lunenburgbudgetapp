@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-01-07",
  "docid": "1676",
@@ -12,13 +12,259 @@
  },
  "votes": [
   {
-   "motion": "Approve Request for Determination of Applicability for 455 Townsend Harbor Road for removal of two trees within buffer zone",
-   "outcome": "Approved",
+   "motion": "Negative determination on the Request for Determination of Applicability filed by James A Shearer for removal of two trees within the buffer zone at 455 Townsend Harbor Road.",
+   "moved_by": "",
+   "outcome": "Negative 3 Approved",
    "procedural": false,
+   "quote": "negative 3 approved emergency certification was issued in early december",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Negative determination on the Request for Determination of Applicability filed by Dan Proctor for grading and fill within the buffer zone at 30-32 Goodrich Street.",
+   "moved_by": "",
+   "outcome": "Negative 3 Approved",
+   "procedural": false,
+   "quote": "constraints. negative 3 approved",
+   "seconded_by": ""
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "The minutes are headed APPROVED 1/21/2015. Text is extracted with spacing artifacts (e.g. 'approximate ly', 'proje cts'); quotes are collapsed to single spaces. The two hearing results ('Negative 3 Approved') are recorded as votes, though no motion wording, mover or seconder is printed; outcome is as printed. No motion is recorded for approving the 12-17-2014 minutes, for the Northfield item beyond 'continued', or for adjournment, so none are listed. Member roles are not printed except Rich Bursch's remote observer status; no absences are listed.",
+ "cost_usd": 0.00632042,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Rich Bursch",
+   "role": "observer by remote access",
+   "status": "remote",
+   "quote": "rich is participating as an observer by remote access"
+  },
+  {
+   "name": "Matt Charpentier",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Sheila Holt",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Rabbit t",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "tom bertram, rich bursch(remote), matt charpentier, todd dwyer, sheila holt, brad kennedy, jack rabbit t, matt marro, jan carrier"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Open Space Acquisition Committee",
+   "status": "present",
+   "quote": "open space acquisition committee ~ lane property ~brandon kibbe ~ informational only"
+  },
+  {
+   "name": "James A Shearer",
+   "role": "applicant, Request for Determination of Applicability",
+   "status": "not stated",
+   "quote": "filed by james a shearer."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant, Request for Determination of Applicability",
+   "status": "not stated",
+   "quote": "dan proctor (jack maloney of ducharme & dillis civi l design group",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "of Ducharme & Dillis Civil Design Group",
+   "status": "not stated",
+   "quote": "dan proctor (jack maloney of ducharme & dillis civi l design group",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Lane property was made an ongoing agenda item, with Brandon Kibbe to develop a timeline for the needed projects.",
+   "quote": "the lane property and brandon will be made an ongoing agenda item with brandon developing a time line for the needed proje cts."
+  },
+  {
+   "decision": "The Snowriders trail list and permission request will be discussed further at the next meeting.",
+   "quote": "will discuss further at next meeting."
+  },
+  {
+   "decision": "The Northfield Road Conservation Restriction item (vote to accept and sign) was continued to the next meeting.",
+   "quote": "vote to accept and sign ~ continued to next meeting"
+  },
+  {
+   "decision": "The next meeting was set for 2-4-2015.",
+   "quote": "next meeting ~ 2-4-2015"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lane property grant requirements",
+   "what_was_recorded": "Brandon Kibbe spoke of grant requirements that must be met on the Lane property as soon as possible, including parking, trail head, forestry plan, land use, open space and a compromised culvert.",
+   "figures_as_printed": [],
+   "quote": "brandon spoke of the grant requirements that are needed on the lane property asap."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment recorded; remote observer noted",
+   "quote": "public comment ~ rich is participating as an observer by remote access",
+   "tags": [
+    "public comment",
+    "remote access"
+   ]
+  },
+  {
+   "topic": "Hearing: 455 Townsend Harbor Road (Request for Determination of Applicability, James A Shearer)",
+   "resolution": "negative determination, approved",
+   "quote": "negative 3 approved emergency certification was issued in early december",
+   "tags": [
+    "wetlands",
+    "tree removal",
+    "buffer zone",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Hearing: 30-32 Goodrich Street (Request for Determination of Applicability, Dan Proctor)",
+   "resolution": "negative determination, approved",
+   "quote": "constraints. negative 3 approved",
+   "tags": [
+    "wetlands",
+    "septic",
+    "buffer zone",
+    "fill and grading"
+   ]
+  },
+  {
+   "topic": "Lunenburg Snowriders trail list and permission",
+   "resolution": "continued to next meeting",
+   "quote": "will discuss further at next meeting.",
+   "tags": [
+    "trails",
+    "snowmobile",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Open Space Acquisition Committee: Lane Property",
+   "resolution": "informational; made an ongoing agenda item",
+   "quote": "open space acquisition committee ~ lane property ~brandon kibbe ~ informational only",
+   "tags": [
+    "open space",
+    "grant",
+    "forest stewardship plan",
+    "Lane property"
+   ]
+  },
+  {
+   "topic": "Minutes approval 12-17-2014",
+   "resolution": "no action recorded",
+   "quote": "minutes approval ~ 12-17-2014",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Unfinished business: Northfield Road Conservation Restriction",
+   "resolution": "continued to next meeting",
+   "quote": "vote to accept and sign ~ continued to next meeting",
+   "tags": [
+    "conservation restriction",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for 2-4-2015",
+   "quote": "next meeting ~ 2-4-2015",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Commission comment: orange vests",
+   "resolution": "suggestion only, no action recorded",
+   "quote": "jack made the suggestion that the commissioners get orange vests",
+   "tags": [
+    "commission",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:23 pm; no motion recorded",
+   "quote": "orange vests adjournment 9:23 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter and maps received noting trails used by the Snow Riders",
+   "where": "list",
+   "quote": "letter and maps received noting trails used by the snow riders."
+  },
+  {
+   "name": "Emergency Certification (issued early December, 455 Townsend Harbor Road)",
+   "where": "text",
    "quote": "negative 3 approved emergency certification was issued in early december"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes use informal, abbreviated vote language without explicit 'motion by', 'seconded by', or vote counts. 'Negative 3' likely refers to a Negative Determination in Massachusetts wetlands law. Northfield Road Conservation Restriction lists 'Vote to accept and sign' but explicitly states 'continued to next meeting' — vote was not taken. No approval of prior minutes or adjournment votes are explicitly recorded.",
- "cost_usd": 0.1262415
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "request for determination",
+  "buffer zone",
+  "open space",
+  "Lane property",
+  "trails",
+  "conservation restriction",
+  "grants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "letter and maps received noting trails used by the snow riders"
+ },
+ "dropped_unquoted_by_field": {}
 }

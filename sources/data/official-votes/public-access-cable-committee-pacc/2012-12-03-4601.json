@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2012-12-03",
  "docid": "4601",
@@ -12,25 +12,239 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for October and November as amended",
+   "motion": "Approve the October and November minutes as amended.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes for october and november were read and approved as amended."
   },
   {
-   "motion": "Appropriate $400 for additional electrical work",
+   "motion": "Appropriate $400 for additional electrical work for the studio.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and passed to appropriate $400 for additional electrical work."
   },
   {
-   "motion": "Appropriate an amount not more than $350 for the purchase of two inexpensive handheld cameras and any necessary peripherals",
+   "motion": "Appropriate an amount not more than $350 for the purchase of two inexpensive handheld cameras and any necessary peripherals.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and passed to appropriate an amount not more than $350 for the purchase of two inexpensive handheld cameras and any necessary peripherals."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text extracted from macOS Vision. Document shows \"RECEIVED & FILED JAN 0 8 2013 LUNENBURG TOWN CLERK OFFICE\" stamp indicating archival receipt but does not affect vote record. No votes recorded as failed. All three votes recorded as \"passed\" or \"approved\" with no numerical counts given.",
- "cost_usd": 0.08278049999999999
+ "note": "OCR of a scanned page set (macOS Vision). Page 1 header is garbled (\"Has at se\") and a \"RECEIVED & FILED\" clerk stamp runs through the text. Some words are misread or inconsistent: \"John Dextraze\" in the body vs \"John Destraze\" in the attendance list; \"operationg\", \"Febuary\", \"Tth\" (likely a January date, unreadable). No mover, seconder or vote tally is printed for any motion, so moved_by, seconded_by and outcome counts are not recorded; the minutes-approval wording has no explicit motion. Adjournment at 9:25 pm is recorded without a motion. No documents list is printed.",
+ "cost_usd": 0.00418902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: rhonda lisio, lance may, fred crellin"
+  },
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: rhonda lisio, lance may, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: rhonda lisio, lance may, fred crellin"
+  },
+  {
+   "name": "John Destraze",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john destraze, jomclaughlin, ernie sund"
+  },
+  {
+   "name": "JoMcLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john destraze, jomclaughlin, ernie sund"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john destraze, jomclaughlin, ernie sund"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Dextraze (printed in the minutes body; listed as John Destraze in attendance) will look at a studio light package and report back.",
+   "quote": "john dextraze will look at a studio light package and report back."
+  },
+  {
+   "decision": "Furniture, partitions and other items that Jo and John cannot get through use or donations are to be ordered by Jo from the November $2,000 appropriation.",
+   "quote": "whatever furniture/partitions etc. that jo and john can't get used or through donations, jo should order (from the november $2,000"
+  },
+  {
+   "decision": "Posting of office hours will begin after studio hours are established.",
+   "quote": "the posting of office hours will begin after we establish studio hours."
+  },
+  {
+   "decision": "The process to approve next year's operating budget before May's Town Meeting should start at the beginning of February.",
+   "quote": "there is a need to approve next year's operationg budget prior to may's town meeting. that process should start at the beginning of febuary."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Studio desk and office partitions",
+   "what_was_recorded": "Money for desk and office partitions is available from a November appropriation; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "(money is available from a november appropriation.)"
+  },
+  {
+   "topic": "Studio backdrop",
+   "what_was_recorded": "The cost of a studio backdrop is stated.",
+   "figures_as_printed": [
+    "$249.95"
+   ],
+   "quote": "the cost of a backdrop is $249.95."
+  },
+  {
+   "topic": "Additional electrical work for studio",
+   "what_was_recorded": "A motion passed to appropriate $400 for additional electrical work.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "a motion was made and passed to appropriate $400 for additional electrical work."
+  },
+  {
+   "topic": "Studio furniture and partitions from November appropriation",
+   "what_was_recorded": "Items not obtained through use or donations are to be ordered from the November $2,000 appropriation.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "whatever furniture/partitions etc. that jo and john can't get used or through donations, jo should order (from the november $2,000"
+  },
+  {
+   "topic": "Inexpensive handheld cameras for loaners",
+   "what_was_recorded": "A motion passed to appropriate not more than $350 for two inexpensive handheld cameras and peripherals.",
+   "figures_as_printed": [
+    "$350"
+   ],
+   "quote": "a motion was made and passed to appropriate an amount not more than $350 for the purchase of two inexpensive handheld cameras and any necessary peripherals."
+  },
+  {
+   "topic": "Next year's operating budget",
+   "what_was_recorded": "The board noted next year's operating budget must be approved before May's Town Meeting; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there is a need to approve next year's operationg budget prior to may's town meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Secretary's Report",
+   "resolution": "minutes for October and November approved as amended",
+   "quote": "the minutes for october and november were read and approved as amended.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "none",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: Studio update",
+   "resolution": "$400 electrical appropriation approved; light package to be reviewed; equipment delivery expected about Dec. 19",
+   "quote": "there was a discussion of desk and office partitions for the studio.",
+   "tags": [
+    "studio",
+    "equipment",
+    "electrical"
+   ]
+  },
+  {
+   "topic": "Lease/Access update",
+   "resolution": "no report",
+   "quote": "there is nothing official to report yet.",
+   "tags": [
+    "lease",
+    "access"
+   ]
+  },
+  {
+   "topic": "Programming update",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion of the tree lighting ceremony and a potential interview with the boston cane recipient.",
+   "tags": [
+    "programming"
+   ]
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "discussed; budget process to start early February",
+   "quote": "there is a need to approve next year's operationg budget prior to may's town meeting.",
+   "tags": [
+    "budget",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Inexpensive cameras for loaners",
+   "resolution": "approved up to $350",
+   "quote": "a motion was made and passed to appropriate an amount not more than $350 for the purchase of two inexpensive handheld cameras and any necessary peripherals.",
+   "tags": [
+    "cameras",
+    "equipment",
+    "budget"
+   ]
+  },
+  {
+   "topic": "New business: inventory and office hours",
+   "resolution": "inventory reported complete except serial numbers; office hours posting deferred",
+   "quote": "an inventory list has been completed except for serial numbers.",
+   "tags": [
+    "inventory",
+    "office hours"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Inventory list",
+   "where": "text",
+   "quote": "an inventory list has been completed except for serial numbers."
+  },
+  {
+   "name": "Jo's January calendar",
+   "where": "text",
+   "quote": "other potential projects for brian are listed on jo's january calendar."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "studio",
+  "equipment",
+  "cameras",
+  "budget",
+  "appropriations",
+  "minutes approval",
+  "town meeting",
+  "programming"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

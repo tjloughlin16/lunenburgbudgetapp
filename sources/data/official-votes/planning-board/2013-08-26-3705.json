@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-08-26",
  "docid": "3705",
@@ -12,15 +12,335 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Approve the 8-12-13 meeting minutes as amended.",
+   "moved_by": "Mr. Lockwood",
+   "seconded_by": "Mr. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion to approve minutes as amended , mr. lockwood, second, mr. mcquaid"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Allison",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn, mr. allison, second, mr. lockwood, adjourned 7:45 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0969545
+ "dropped_unquoted": 0,
+ "note": "Scanned-free extracted text. No dollar figures appear in the minutes; budget items record money discussed without amounts. Vote counts are not printed for the minutes approval or adjournment motions, so both are recorded as not stated. Mr. Bakaysa arrived late, and the minutes do not say when. The public comment section is absent. Mr. Londa's name is printed with a space (\"Mr. L onda\"), recorded as printed.",
+ "cost_usd": 0.00863722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa (arrived late), nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa (arrived late), nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa (arrived late), nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa (arrived late), nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa (arrived late), nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa (arrived late), nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "powerpoint presentation by michael mackin, school committee as follows:"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Architect for Tappe Associates",
+   "status": "present",
+   "quote": "charles hay, architect for tappe associates gave an overview of the schematic design perspective."
+  },
+  {
+   "name": "Mr. Londa",
+   "role": "Building Reuse Committee report",
+   "status": "not stated",
+   "quote": "committee has toured passios. mr. l onda noted current uses"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Benson is to type up the Board goal assignments for the next Board meeting for approval.",
+   "quote": "ms. benson to type up assignments as follows for next board meeting for approval."
+  },
+  {
+   "decision": "Ms. Benson will work on updating sections of the Rules and Regulations Governing the Subdivision of Land for Board members to review between meetings.",
+   "quote": "ms. benson will work on updating sections of the r&r for board members to review between meetings."
+  },
+  {
+   "decision": "The Board can obtain a copy of the Planning Director job description for Mr. Allison, as it is public record.",
+   "quote": "noted that is public record and the board can get that for him."
+  },
+  {
+   "decision": "Ms. Benson will conduct seminars with seniors at the Eagle House.",
+   "quote": "ms. benson will conduct seminars with seniors at the eagle house."
+  },
+  {
+   "decision": "Ms. Benson will provide Mr. Allison with the Order of Conditions approval for the mobil station.",
+   "quote": "ms. benson will provide him with the approval."
+  },
+  {
+   "decision": "The Board will discuss the Lunenburg Hazard Mitigation Plan Update at its September 9th meeting.",
+   "quote": "board to discuss at its september 9th meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School building project total cost",
+   "what_was_recorded": "The committees hope to bring a total cost estimate to a December 2013 or January 2014 special town meeting; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the committees hope t o come to either a december 2013 or january 2014 special town meeting with a total cost estimate",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "MSBA reimbursement for school project",
+   "what_was_recorded": "The MSBA will reimburse the Town over 50% of school project costs but does not reimburse off-site improvements.",
+   "figures_as_printed": [
+    "over 50%"
+   ],
+   "quote": "the msba will reimburse the town over 50% of the project costs"
+  },
+  {
+   "topic": "Cost of updating the Subdivision Rules and Regulations",
+   "what_was_recorded": "Ms. Benson said updating the R&R is quite costly, so area engineers recommended internal updates by the Board; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "as it is quite costly to update the r&r, the area engineers recommend that they be updated"
+  },
+  {
+   "topic": "Tri Town Landing 40S reimbursement",
+   "what_was_recorded": "The Town does not qualify for 40S reimbursement; Mr. Bakaysa requested the qualification formula.",
+   "figures_as_printed": [],
+   "quote": "town does not qualify for 40s reimbursement"
+  },
+  {
+   "topic": "MRPC DLTA funding",
+   "what_was_recorded": "The Town is not paying MRPC for the DLTA; MRPC is paid by the State.",
+   "figures_as_printed": [],
+   "quote": "the town is not paying mrpc to do the dlta; mrpc is paid by the state."
+  },
+  {
+   "topic": "Fee schedule update",
+   "what_was_recorded": "The Board asked about the annual fees of Shirley and Harvard; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "board inquired as to annual fees of both shirley and harvard."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Workshop: Planning Board Goals",
+   "resolution": "Goals discussed; Benson to type goal assignments for approval at next meeting",
+   "quote": "workshop- planning board goals - mr. allison stated he is not satisfied with the level of disclosure",
+   "tags": [
+    "goals",
+    "planning director",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Presentation: School Building Committee",
+   "resolution": "Board briefed; no action recorded",
+   "quote": "board briefed by school building committee in conjunction with",
+   "tags": [
+    "school building",
+    "MSBA",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval 8-12-13",
+   "resolution": "Approved as amended; minutes signed",
+   "quote": "8-12-13, motion to approve minutes as amended , mr. lockwood, second, mr. mcquaid",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "Reports received",
+   "quote": "mjtc, mr. allison- no august meeting.",
+   "tags": [
+    "committees",
+    "MRPC",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and development status",
+   "resolution": "Status reports received; no action recorded",
+   "quote": "300 w. holman & 300 holman st- no present action.",
+   "tags": [
+    "development",
+    "permits",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "Items noted; survey, hazard plan and others to be discussed or continued",
+   "quote": "citizen survey- survey revised to include question on a marijuana clinic",
+   "tags": [
+    "citizen survey",
+    "hazard mitigation",
+    "medical marijuana",
+    "town center"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "September meeting dates listed",
+   "quote": "september 23 - 6:30 pm, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "Discussed; Benson to provide approval document; no vote",
+   "quote": "mr. allison inquired if an order of conditions was issued for the mobil station",
+   "tags": [
+    "order of conditions",
+    "board procedure"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "Not held",
+   "quote": "board did not go into executive session",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned 7:45 PM",
+   "quote": "motion to adjourn, mr. allison, second, mr. lockwood, adjourned 7:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Planning Board Goals",
+   "where": "list",
+   "quote": "documents used at meeting: planning board goals mrpc documents citizen survey dpw request for service form permit extension act emerald place at lake whalom weekly update fee schedule research"
+  },
+  {
+   "name": "MRPC Documents",
+   "where": "list",
+   "quote": "documents used at meeting: planning board goals mrpc documents citizen survey dpw request for service form permit extension act emerald place at lake whalom weekly update fee schedule research"
+  },
+  {
+   "name": "Citizen Survey",
+   "where": "list",
+   "quote": "documents used at meeting: planning board goals mrpc documents citizen survey dpw request for service form permit extension act emerald place at lake whalom weekly update fee schedule research"
+  },
+  {
+   "name": "DPW Request for Service Form",
+   "where": "list",
+   "quote": "documents used at meeting: planning board goals mrpc documents citizen survey dpw request for service form permit extension act emerald place at lake whalom weekly update fee schedule research"
+  },
+  {
+   "name": "Permit Extension Act",
+   "where": "list",
+   "quote": "documents used at meeting: planning board goals mrpc documents citizen survey dpw request for service form permit extension act emerald place at lake whalom weekly update fee schedule research"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom Weekly Update",
+   "where": "list",
+   "quote": "documents used at meeting: planning board goals mrpc documents citizen survey dpw request for service form permit extension act emerald place at lake whalom weekly update fee schedule research"
+  },
+  {
+   "name": "Fee Schedule Research",
+   "where": "list",
+   "quote": "documents used at meeting: planning board goals mrpc documents citizen survey dpw request for service form permit extension act emerald place at lake whalom weekly update fee schedule research"
+  },
+  {
+   "name": "Lunenburg Hazard Mitigation Plan Update",
+   "where": "text",
+   "quote": "lunenburg hazard mitigation plan update- previously submitted to board members."
+  },
+  {
+   "name": "Town Land Acquisition for Town Beach",
+   "where": "text",
+   "quote": "town land acquisition for town beach- previously submitted to board members."
+  },
+  {
+   "name": "Town Center",
+   "where": "text",
+   "quote": "town center- previously submitted to board members."
+  },
+  {
+   "name": "Medical marijuana sample bylaw",
+   "where": "text",
+   "quote": "sample bylaw provided to board members previously."
+  },
+  {
+   "name": "Packets on Village Area Study and Downtown Zoning Repair",
+   "where": "text",
+   "quote": "packets distributed to members on village area study and downtown zo ning repair",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "PowerPoint presentation on school building",
+   "where": "text",
+   "quote": "powerpoint presentation by michael mackin, school committee as follows:"
+  },
+  {
+   "name": "Order of Conditions for mobil station, 134 Leominster Shirley Road",
+   "where": "text",
+   "quote": "mr. allison inquired if an order of conditions was issued for the mobil station at 134 leominster shirley road."
+  }
+ ],
+ "tags": [
+  "planning board goals",
+  "school building",
+  "medical marijuana",
+  "subdivision regulations",
+  "zoning",
+  "hazard mitigation",
+  "fee schedule",
+  "MRPC",
+  "town land",
+  "committees",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2014-11-20",
  "docid": "2955",
@@ -12,59 +12,288 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of October 23rd",
+   "motion": "Accept the minutes of October 23.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Caroline Fortin",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "paul doherty made a motion and caroline fortin seco nded, to accept the minutes of october 23 rd . all in favor, motions passed unanimously."
+   "quote": "paul doherty made a motion and caroline fortin seco nded, to accept the minutes of october 23"
   },
   {
-   "motion": "accept the financial report",
+   "motion": "Accept the financial report.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "elizabeth murphy made a motion to accept the financ ial report, paul doherty seconded and all were in favor, motion passed unanimously."
   },
   {
-   "motion": "approve the net metering contract with Lodestar",
+   "motion": "Approve the net metering contract with Lodestar.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "paul doherty made a motion to approve the net metering contract with lodestar. deborah christen seconded the motion; all were in f avor and the motion passed unanimously",
    "quote_taken_from_text": true
   },
   {
-   "motion": "authorize the awarding and signing of any and all appropriate documents in connection with the snow and ice removal contract for the 2014/2015, 2015/2016 and 2016/2017 seasons",
+   "motion": "Authorize the awarding and signing of any and all appropriate documents in connection with the snow and ice removal contract for the 2014/2015, 2015/2016 and 2016/2017 seasons (Resolution 201407).",
    "moved_by": "Caroline Fortin",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by caroline fortin to authorize the awarding and signing of any and all appropriate documents in con nection with the snow and ice removal contract or the 2014/ 2015, 2015/2016 and 2016/2017 seasons. seconded, motion was seconded by paul doherty and all wer",
-   "quote_taken_from_text": true
+   "quote": "motion made by caroline fortin to authorize the awarding and signing of any and all appropriate documents in con nection with the snow and ice removal contract"
   },
   {
-   "motion": "submit the 2015 Operating Budget for State-Aided Housing of the Lunenburg Housing Authority to the Department of Housing and Community Development",
+   "motion": "Submit the 2015 Operating Budget for State-Aided Housing to the Department of Housing and Community Development (Resolution 201408).",
    "moved_by": "Amaryllis Leet",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed by a unanimous vote",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by amaryllis leet to submit t he 2015 operating budget for state-aided housing of the lunenburg hou sing authority to the department of housing and communit y development. seconded, paul doherty seconded the motion, and the motion was passed by a un",
-   "quote_taken_from_text": true
+   "quote": "motion made by amaryllis leet to submit t he 2015 operating budget for state-aided housing"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:15 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meetin g at 7:15 p.m. caroline fortin seconded and the meeting was adjourned",
-   "quote_taken_from_text": true
+   "quote": "deborah christen made a motion to adjourn the meetin g at 7:15 p.m. caroline fortin seconded and the meeting was adjourned."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd with minor spacing artifacts (e.g., \"seco nded\", \"financ ial\"); preserved as they appear. All votes located and quoted verbatim.",
- "cost_usd": 0.0968855
+ "note": "Text is a plain extraction with broken words and stray spacing; quotes are collapsed to single spaces. Motions were recorded as passed or unanimous without a numeric count. The Executive Director is referred to but never named. Keith is mentioned but is not an attendee. No dollar amounts appear beyond the reserve figure; the snow-removal contract value is not printed. The minutes note 'see attached list of vendors' for Resolution 201407, but no attachment is printed in the text.",
+ "cost_usd": 0.00583592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member paul doherty, member amaryllis leet, member"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member paul doherty, member amaryllis leet, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member paul doherty, member amaryllis leet, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member paul doherty, member amaryllis leet, member"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member paul doherty, member amaryllis leet, member"
+  },
+  {
+   "name": "Eugene Capoccia",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary peter proulx, recording secretary"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary peter proulx, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Community Room will be kept locked at all times if residents would like; Keith will unlock the door and lock it when he leaves.",
+   "quote": "we will have keith unlock the door and lock it when he leaves."
+  },
+  {
+   "decision": "Elizabeth Murphy was appointed to the Executive Director Screening Committee.",
+   "quote": "elizabeth murphy was appointed to the committee."
+  },
+  {
+   "decision": "The next meeting will be held in January 2015.",
+   "quote": "the next meeting will be held in january 2015."
+  },
+  {
+   "decision": "Signatures for the FY15 budget will be garnered at a future date, since the signature page is not yet available.",
+   "quote": "so signatures will be garnered at a future date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves were just over $66,000, a 71.53% reserve.",
+   "figures_as_printed": [
+    "$66,000",
+    "71.53%"
+   ],
+   "quote": "reserves are just over $66,000 which is a 71.53% reserve."
+  },
+  {
+   "topic": "FY15 budget comparison and DHCD guidelines",
+   "what_was_recorded": "The Executive Director compared the ten month statement to the projected FY15 budget; board discussed items budgeted more or less than the approved 3%, including Employee Benefits, Insurance, salary and facilities lines.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "areas that were budgeted more or less than the approved 3%"
+  },
+  {
+   "topic": "Net metering contract with Lodestar",
+   "what_was_recorded": "The Executive Director recommended the net metering contract not exceed 70% of annual electric usage, and the Housing Authority would retain 25% of the savings.",
+   "figures_as_printed": [
+    "70%",
+    "25%"
+   ],
+   "quote": "recommended that the net metering contract does not go over 70% of the annual electric usage."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "stated_role": "Resident",
+   "topic": "Locking the Community Room",
+   "quote": "should the community room be locked."
+  },
+  {
+   "stated_role": "Resident",
+   "topic": "Parking at back lot",
+   "quote": "parking at back lot - two cars do not pull in all t he way because of pine needles"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "discussed; Community Room to be locked on resident request",
+   "quote": "the executive director said that if the residents would like, we can keep it locked at all times.",
+   "tags": [
+    "residents",
+    "community room",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Minutes of October 23",
+   "resolution": "approved",
+   "quote": "paul doherty made a motion and caroline fortin seco nded, to accept the minutes of october 23",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "no action",
+   "quote": "update of a resident that moved to the leominster summit program.",
+   "tags": [
+    "vacancies",
+    "rent collection"
+   ]
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "accepted",
+   "quote": "elizabeth murphy made a motion to accept the financ ial report, paul doherty seconded and all were in favor, motion passed unanimously.",
+   "tags": [
+    "budget",
+    "reserves",
+    "FY15"
+   ]
+  },
+  {
+   "topic": "Net metering contract with Lodestar",
+   "resolution": "approved",
+   "quote": "paul doherty made a motion to approve the net metering contract with lodestar.",
+   "tags": [
+    "net metering",
+    "energy",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Snow and ice removal contract (Resolution 201407)",
+   "resolution": "authorized",
+   "quote": "motion made by caroline fortin to authorize the awarding and signing of any and all appropriate documents in con nection with the snow and ice removal contract",
+   "tags": [
+    "contract",
+    "snow removal",
+    "bids"
+   ]
+  },
+  {
+   "topic": "2015 4001 Operating Budget for State-Aided Housing (Resolution 201408)",
+   "resolution": "submission authorized",
+   "quote": "motion made by amaryllis leet to submit t he 2015 operating budget for state-aided housing",
+   "tags": [
+    "DHCD",
+    "state-aided housing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Executive Director Screening Committee",
+   "resolution": "Elizabeth Murphy appointed",
+   "quote": "elizabeth murphy was appointed to the committee.",
+   "tags": [
+    "personnel",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:15 p.m.",
+   "quote": "deborah christen made a motion to adjourn the meetin g at 7:15 p.m. caroline fortin seconded and the meeting was adjourned.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "List of vendors (attached to Resolution Number 201407, snow and ice removal bids)",
+   "where": "text",
+   "quote": "(see attached list of vendors)"
+  },
+  {
+   "name": "Lodestar proposal (net metering)",
+   "where": "text",
+   "quote": "the lodestar proposal was explained and the board discussed it."
+  },
+  {
+   "name": "FY15 proposed budget",
+   "where": "text",
+   "quote": "compared the ten mo nth revenue and expenses to the fy15 proposed budget.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "2015 4001 Operating Budget for State-Aided Housing (Resolution 201408)",
+   "where": "text",
+   "quote": "submit an approved 4001 operating budget for state- aided housing for fiscal year 201",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "budget",
+  "FY15",
+  "net metering",
+  "snow removal",
+  "contracts",
+  "residents",
+  "state-aided housing",
+  "personnel",
+  "DHCD"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

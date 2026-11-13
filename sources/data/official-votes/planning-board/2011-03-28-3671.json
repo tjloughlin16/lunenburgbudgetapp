@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-03-28",
  "docid": "3671",
@@ -12,23 +12,111 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to discuss litigation",
+   "motion": "Enter Executive Session at 7:45 PM for purpose of litigation discussion.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. bodkin jr., roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye."
+   "quote": "chair called for motion to enter executive session at 7:45 pm for purpose of litigation discussion."
   },
   {
-   "motion": "Adjourn Executive Session",
+   "motion": "Adjourn Executive Session (adjourned 8:30 PM).",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. lockwood, roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye."
+   "quote": "chair called for adjournment of executive session. motion, ms. bilotta, second, mr. lockwood, roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. Two procedural votes recorded with full roll-call results.",
- "cost_usd": 0.0915995
+ "note": "OCR of a scanned executive session minute page; header text has OCR artifacts (e.g., \"BURG\", \"ЯРОВА\", \"ERB\") and was not used. Attendance is inferred from the roll call votes; no explicit attendance line is printed. Bodkin is listed as \"Clk\" in the header but referred to as \"Board member Attorney Bodkin\" in the text. Bodkin's suggestions (seek spending record, seek estimate, consider a different attorney) are recorded as suggestions, not as board decisions. No public comment is recorded.",
+ "cost_usd": 0.00327362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye."
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "motion, ms. bilotta, second, mr. bodkin jr., roll call vote"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk",
+   "status": "present",
+   "quote": "board member attorney bodkin suggested that the board might want to entertain using the services of a different attorney"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "motion, ms. bilotta, second, mr. lockwood, roll call vote"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "not stated",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel Attorney",
+   "status": "not stated",
+   "quote": "chair reviewed correspondence from town counsel attorney joel bard."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Litigation legal costs: spending record and cost estimate",
+   "what_was_recorded": "Board member Bodkin suggested seeking the record of spending on the case and an estimate for the cost of the remaining litigation preparation; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "further, an estimate should be sought for the cost of the service"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: litigation status and Town Counsel correspondence",
+   "resolution": "entered and adjourned executive session; no action recorded",
+   "tags": [
+    "litigation",
+    "executive session",
+    "town counsel"
+   ],
+   "quote": "chair reviewed correspondence from town counsel attorney joel bard."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Electronic mail dated March 24, 2011 concerning status (from Town Counsel Attorney Joel Bard)",
+   "where": "text",
+   "quote": "noted was an electronic mail dated march 24, 2011 concerning status."
+  }
+ ],
+ "tags": [
+  "litigation",
+  "executive session",
+  "town counsel",
+  "legal costs",
+  "judgment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

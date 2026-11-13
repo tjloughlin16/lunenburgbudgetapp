@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-10-16",
  "docid": "2795",
@@ -12,51 +12,294 @@
  },
  "votes": [
   {
-   "motion": "Accept September 18 minutes as revised",
+   "motion": "Approve the September 18 minutes as revised.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to accept minutes as revised , by gare, second by harry. voted all in favor."
+   "quote": "september 18 minutes, motion to accept minutes as revised , by gare, second by harry. voted all in favor."
   },
   {
-   "motion": "Get Trustees permission to contact BiblioTemps to hire an Interim Director",
+   "motion": "Get the Trustees' permission to contact BiblioTemps to hire an Interim Director.",
    "moved_by": "Jean",
    "seconded_by": "Dick",
    "outcome": "passed",
    "procedural": false,
-   "quote": "jean made a motion to get the trustees permission t o contact bibliotemps to hire an interim director. dick second. voted all in favor",
-   "quote_taken_from_text": true
+   "quote": "jean made a motion to get the trustees permission t o contact bibliotemps to hire an interim director. dick second. voted all in favor."
   },
   {
-   "motion": "Give Patricia Dupont authority to sign bills, payment vouchers, purchase orders, and requisitions during Martha's absence",
+   "motion": "Give Assistant Director Patricia Dupont authority to sign bills, payment vouchers, P.O.'s, requisitions, etc. during the Director's absence.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
    "procedural": false,
-   "quote": "gare made a motion to give assistant director patri cia dupont the authority to sign bill, payment vouc hers, p.o.'s, requisitions, etc. during martha's absence. dick second. voted all in favo",
-   "quote_taken_from_text": true
+   "quote": "gare made a motion to give assistant director patri cia dupont the authority to sign bill, payment vouc hers, p.o.'s, requisitions, etc."
   },
   {
-   "motion": "Give Jean authority to sign payroll during Martha's absence",
+   "motion": "Give Jean authority to sign payroll during the Director's absence.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
    "procedural": false,
-   "quote": "gare mades a motion to give jean authority to sign payroll in martha's absence. dick second. voted al l in favor",
-   "quote_taken_from_text": true
+   "quote": "gare mades a motion to give jean authority to sign payroll in martha's absence. dick second. voted al l in favor."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Postpone the LPL vision discussion until the November meeting.",
+   "moved_by": "Susan",
+   "seconded_by": "Gare",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion by susan to postpone this discu ssion until november meeting. second by gare. voted all in favor."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:50 p.m.",
    "moved_by": "Gare",
    "seconded_by": "Robin",
    "outcome": "passed",
    "procedural": true,
-   "quote": "gare moved adjourn; robin second, voted all in favo r @ 7:50 p.m",
-   "quote_taken_from_text": true
+   "quote": "gare moved adjourn; robin second, voted all in favo r @ 7:50 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0886765
+ "dropped_unquoted": 0,
+ "note": "Text is a clean extraction with some broken spacing inside words (e.g. \"Jea n\", \"Patri cia\"), copied as printed. Public comment was \"None\". The Interim Director and endowment items are discussion with no amounts printed. The \"Decided\" item on Harry Kubetz and Susan Wisser carries no recorded vote. The minutes name \"Susan Wisser\" in one place and \"Susan Visser\" in the attendance list; both are kept as printed. The minutes do not print a vote count, only \"Voted all in favor\", so outcomes are recorded as \"passed\". The attached authorization is referenced but not in the text.",
+ "cost_usd": 0.0069408199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jean Raboin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "robin venezia, susan visser, lars widstrand, patricia dupont"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "not stated",
+   "status": "present",
+   "quote": "robin venezia, susan visser, lars widstrand, patricia dupont"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "robin venezia, susan visser, lars widstrand, patricia dupont"
+  },
+  {
+   "name": "Patricia Dupont",
+   "role": "Assistant Director; presented the Director's report",
+   "status": "present",
+   "quote": "robin venezia, susan visser, lars widstrand, patricia dupont"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director",
+   "status": "absent",
+   "quote": "absent: martha moore, due to illness; bob ebersole, other commitment; john henshaw, fincom meeting"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: martha moore, due to illness; bob ebersole, other commitment; john henshaw, fincom meeting"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: martha moore, due to illness; bob ebersole, other commitment; john henshaw, fincom meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry Kubetz and Susan Wisser will represent the Trustees (on the capital items working with the Budget/Finance committee and Jim Breault).",
+   "quote": "decided: harry kubetz and susan wisser will represe nt the trustee",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Pat (Dupont) will request another week's extension to submit the ARIS report by the 27th.",
+   "quote": "pat will request another week extension to submit the aris report by the 27th."
+  },
+  {
+   "decision": "Interior painting, interior lights and interior carpeting deferred to the capital plan; Budget/Finance committee to work with Jim Breault on these.",
+   "quote": "painting interior of library, interior lights, inte rior carpeting - all deferred to capital plan."
+  },
+  {
+   "decision": "Karen Kemp will organize the Small Works (art) Exhibit in the Director's absence.",
+   "quote": "karen kemp will organize in martha's absence."
+  },
+  {
+   "decision": "Next meeting set for November 20 at 6:45 p.m. in the Sudolnik room.",
+   "quote": "november 20, at 6:45 p.m. in the sudolnik room."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friends of LPL Book and Bake sale",
+   "what_was_recorded": "Friends reported the Book and Bake sale went very well, with over $3,000 raised, of which $700 came from the bake sale.",
+   "figures_as_printed": [
+    ">$3,000.00",
+    "$ 700.00"
+   ],
+   "quote": "book and bake sell went real ly well: >$3,000.00 of which was $ 700.00 was the bake sale."
+  },
+  {
+   "topic": "Interim Director compensation",
+   "what_was_recorded": "Discussion of compensation for the Interim Director and hours per week ensued; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about compensation for interim director, number of hours/ days per week, etc. ensued."
+  },
+  {
+   "topic": "Study room painting paid from Library Endowment Fund",
+   "what_was_recorded": "Paint and materials for painting the study rooms are paid for with funds from the Library Endowment Fund; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "paint/material is paid for wi th funds from the library endowment fund."
+  },
+  {
+   "topic": "Interior painting, lights and carpeting",
+   "what_was_recorded": "Interior painting, interior lights and interior carpeting were deferred to the capital plan; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "painting interior of library, interior lights, inte rior carpeting - all deferred to capital plan."
+  },
+  {
+   "topic": "LPL Endowment maturing CDs",
+   "what_was_recorded": "A committee is to meet to discuss reinvesting or renewing maturing CDs in the Endowment; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "discuss maturing cds that need to be reinvested/renewed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved September 18 minutes as revised",
+   "quote": "september 18 minutes, motion to accept minutes as revised , by gare, second by harry. voted all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Administrative responsibilities during Director's absence",
+   "resolution": "approved interim director search and signing authority",
+   "quote": "administrative responsibilities during director mar tha moore's absence:",
+   "tags": [
+    "interim director",
+    "signing authority",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; ARIS extension to be requested",
+   "quote": "director's report: presented by pat dupont.",
+   "tags": [
+    "director report",
+    "ARIS report",
+    "art exhibit",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "LPL vision",
+   "resolution": "postponed to November meeting",
+   "quote": "motion by susan to postpone this discu ssion until november meeting.",
+   "tags": [
+    "vision"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "received",
+   "quote": "friends of lpl update: book and bake sell went real ly well:",
+   "tags": [
+    "friends",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "LPL Endowment",
+   "resolution": "committee to be convened on maturing CDs",
+   "quote": "lpl endowment: lydia henshaw wants to get the commi ttee together",
+   "tags": [
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for November 20",
+   "quote": "november 20, at 6:45 p.m. in the sudolnik room.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:50 p.m.",
+   "quote": "gare moved adjourn; robin second, voted all in favo r @ 7:50 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for October 16, 2014",
+   "where": "list",
+   "quote": "lplbot agenda for october 16, 2014"
+  },
+  {
+   "name": "Scanned copy of Authorization for Patricia Dupont signing purchase requisitions and vouchers for the Director during her absence",
+   "where": "list",
+   "quote": "scanned copy of authorization for patricia dupont s igning purchase requisitions and vouchers for the d irector during her"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "interim director",
+  "signing authority",
+  "director absence",
+  "capital plan",
+  "endowment",
+  "friends of library",
+  "ARIS report",
+  "meeting minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

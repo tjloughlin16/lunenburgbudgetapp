@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2015-03-03",
  "docid": "2568",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of February 3, 2015",
+   "motion": "Approve the February 3, 2015 minutes.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -21,6 +21,121 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision with some garbled words (e.g., \"Architectus estation price Byly dratune\"). Only one vote explicitly recorded: approval of prior minutes. No votes counted, no adjournment vote stated.",
- "cost_usd": 0.0828945
+ "note": "Scanned minutes read by OCR. One paragraph in New Business is garbled and unreadable (it appears to name Architectus and the village center bylaw with the Planning Board, March 2, 2015); its content is not recorded beyond the legible fragments. The attendance block has no printed heading in the OCR text, so present status is inferred from the list and 'Members Absent: None.' The minutes approval has no printed mover, seconder or tally, so it is recorded with outcome 'passed' and no names. Adjournment is recorded as a topic but not as a vote because no motion is printed.",
+ "cost_usd": 0.0024544199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Brian Cochran",
+   "role": "a resident of Lunenburg",
+   "status": "present",
+   "quote": "brian cochran, a resident of lunenburg, attended this meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Becky Lantry will make a final draft for submission at the joint meeting with the Planning Board and the Historical Commission on March 9, 2015.",
+   "quote": "becky will make a final draft for submission at the joint meeting with the planning board"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:40 p.m.",
+   "quote": "meeting called to order at 6:40 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "February 3, 2015 minutes approved",
+   "quote": "february 3, 2015 minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action",
+   "quote": "correspondence and communications: none.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition delay requests",
+   "resolution": "no action; none received",
+   "quote": "richard reported there were no demolition delay requests.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Village center item with the Planning Board (text garbled in scan)",
+   "resolution": "final draft to be prepared for joint meeting March 9, 2015",
+   "quote": "becky will make a final draft for submission at the joint meeting with the planning board",
+   "tags": [
+    "village center",
+    "planning board",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:35 p.m.",
+   "quote": "meeting adjourned at 8:35 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "village center",
+  "planning board",
+  "joint meeting",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

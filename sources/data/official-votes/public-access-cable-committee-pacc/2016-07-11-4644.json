@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-07-11",
  "docid": "4644",
@@ -12,13 +12,140 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from June 6, 2016",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 6.6.16.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "committee reviewed and approved minutes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10046749999999999
+ "note": "Text is a plain-text extraction, not a scan; it is short and readable. The approval of the 6.6.16 minutes is recorded only as \"Committee reviewed and approved minutes.\" with no motion, mover, seconder, or count, so it is entered as a procedural vote with outcome \"passed\" and no names. Adjournment is recorded without a motion, so it is not entered as a vote. Public comment reads \"No public comments,\" so no speaker entries. The July ending balance is printed as \"$271,798.93.51,\" which is kept as printed and may be a typo. The minutes contain typos (\"Cactus\" for Castus, \"which his great\"). No documents list or exhibits are printed. The clerk signature is dated 9/15/16, two months after the meeting.",
+ "cost_usd": 0.00297302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member (Clerk, per signature block)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting is scheduled for August 1 (written as Aug 1st).",
+   "quote": "next meeting is scheduled for aug 1st."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Coordinator's monthly report: ending balance",
+   "what_was_recorded": "The coordinator reported the ending balance for July, printed with an extra decimal group.",
+   "figures_as_printed": [
+    "$271,798.93.51"
+   ],
+   "quote": "ending balance of july is $271,798.93.51."
+  },
+  {
+   "topic": "CAC new budget and business plan",
+   "what_was_recorded": "CAC is still working on the new budget and business plan to present to Comcast; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "cac is still working out the kinks for the new budget and business plan to present to comcast."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and call to order",
+   "resolution": "no action",
+   "tags": [
+    "roll call",
+    "quorum"
+   ],
+   "quote": "meeting called to order at 6:05pm."
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no public comments received",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comments: 1. no public comments"
+  },
+  {
+   "topic": "Review and approve meeting minutes from 6.6.16",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "committee reviewed and approved minutes."
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "no action",
+   "tags": [
+    "coordinator report",
+    "Castus system",
+    "studio",
+    "budget"
+   ],
+   "quote": "cactus will hopefully go live by the middle of july."
+  },
+  {
+   "topic": "CAC update",
+   "resolution": "no action",
+   "tags": [
+    "CAC",
+    "Comcast",
+    "budget"
+   ],
+   "quote": "cac is still working out the kinks for the new budget and business plan to present to comcast."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:15pm; next meeting Aug 1st",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 7:15pm."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "Comcast",
+  "CAC",
+  "Castus system",
+  "coordinator report",
+  "budget",
+  "minutes approval",
+  "studio use"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2013-08-20",
  "docid": "4616",
@@ -12,37 +12,264 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from July 16 as amended",
+   "motion": "Approve the minutes of July 16 as amended.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes for july 16th were read and approved as amended."
   },
   {
-   "motion": "purchase two compatible desktop PCs for an amount not to exceed $1,200",
+   "motion": "Purchase two compatible desktop PCs for an amount not to exceed $1,200.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and was passed to purchase two compatible desk top pcs for an amount not to exceed $1,200."
   },
   {
-   "motion": "add $1200 to the Advertising line item (bringing it to $3,000) and reduce the Equipment Maintenance and Supplies line item by $1,200 (bringing that line item to $8,800)",
+   "motion": "Add $1200 to the Advertising line item (bringing it to $3,000) and reduce the Equipment Maintenance and Supplies line item by $1,200 (to $8,800).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and passed to add $1200 to the advertising line item (bringing it to $3,000) and to reduce the line item for equipment maintenance and supplies by $1,200 (bringing that line item to $8,800)."
+   "quote": "a motion was made and passed to add $1200 to the advertising line item (bringing it to $3,000)"
   },
   {
-   "motion": "accept the FY14 budget as recommended (with the above mentioned changes)",
+   "motion": "Raise a line item budget (wording illegible in the scanned text).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "made and passed to raise the ging item bustet for"
+  },
+  {
+   "motion": "Accept the FY14 budget as recommended, with the above mentioned changes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and passed to accept the fy14 budget as recommended (with the above mentioned changes)."
   },
   {
-   "motion": "pay the purchase orders presented from the line items voted on in the FY14 budget",
+   "motion": "Pay the purchase orders presented from the line items voted on in the FY14 budget.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and passed to pay the purchase orders presented from the line items voted on in the fy14 budget."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with one garbled line (\"Aurorise oft made and passed to raise the ging item busket for\") that cannot be deciphered into a clear motion.",
- "cost_usd": 0.0926805
+ "note": "Scanned page run through OCR with garbled text in places: the header is unreadable, and the motion line beginning 'Aurorise oft made and passed to raise the ging item bustet for' is illegible, so that vote is recorded only as passed with an unreadable subject. No mover or seconder is printed for any motion. The adjournment at 9:33 pm is recorded without a motion, so it is not listed as a vote. The Public Comments section has no named public speaker, so public_comment is empty.",
+ "cost_usd": 0.0071863199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio"
+  },
+  {
+   "name": "JoMcLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jomclaughlin, john henshaw, john dextraze"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "liaison from the FinCom",
+   "status": "present",
+   "quote": "lance introduced and welcomed john henshaw as a liaison from the"
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jomclaughlin, john henshaw, john dextraze"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No final action was taken on the proposed underwriting program; it was discussed favorably.",
+   "quote": "it was discussed favorably, but no final action was taken."
+  },
+  {
+   "decision": "The job description evaluation instrument and process will be discussed further at the next meeting, with a follow-up budget discussion including projected equipment costs.",
+   "quote": "the instrument and process will be discussed further at our next meeting."
+  },
+  {
+   "decision": "Homecoming Game (Oct 26) preparation to be discussed further at the September meeting.",
+   "quote": "further discussion will take place at the september meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pricing for PCs",
+   "what_was_recorded": "Jo reported on the price of Dell PCs for two units.",
+   "figures_as_printed": [
+    "$1,024"
+   ],
+   "quote": "jo reported on the price of dell pcs ($1,024 for two)"
+  },
+  {
+   "topic": "PC purchase cap",
+   "what_was_recorded": "Motion to buy two desktop PCs not to exceed a stated amount.",
+   "figures_as_printed": [
+    "$1,200"
+   ],
+   "quote": "purchase two compatible desk top pcs for an amount not to exceed $1,200."
+  },
+  {
+   "topic": "FY14 budget line-item changes",
+   "what_was_recorded": "Advertising line raised by $1200 to $3,000 and Equipment Maintenance and Supplies reduced by $1,200 to $8,800.",
+   "figures_as_printed": [
+    "$1200",
+    "$3,000",
+    "$1,200",
+    "$8,800"
+   ],
+   "quote": "a motion was made and passed to add $1200 to the advertising line item (bringing it to $3,000) and to reduce the line item for equipment maintenance and supplies by $1,200 (bringing that line item to $8,800)."
+  },
+  {
+   "topic": "FY14 budget adoption",
+   "what_was_recorded": "The FY14 budget was accepted as recommended with the changes above.",
+   "figures_as_printed": [],
+   "quote": "a motion was made and passed to accept the fy14 budget as recommended (with the above mentioned changes)."
+  },
+  {
+   "topic": "Purchase orders",
+   "what_was_recorded": "Motion to pay purchase orders from the FY14 line items voted on.",
+   "figures_as_printed": [],
+   "quote": "a motion was made and passed to pay the purchase orders presented from the line items voted on in the fy14 budget."
+  },
+  {
+   "topic": "Underwriting proposal",
+   "what_was_recorded": "Potential underwriting program presented as a revenue idea; discussed favorably, no final action.",
+   "figures_as_printed": [],
+   "quote": "proposal for underwriting - jo presented a potential underwriting program (see her july/august progress report)."
+  },
+  {
+   "topic": "Projected equipment costs",
+   "what_was_recorded": "Follow-up budget discussion, including projected equipment costs, planned for next meeting.",
+   "figures_as_printed": [],
+   "quote": "a follow-up discussion of the budget, including projected costs for equipment."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Move funds from Equipment Maintenance and Supplies to the Advertising line item in the FY14 budget.",
+   "amount_as_printed": "$1200",
+   "outcome": "passed",
+   "quote": "a motion was made and passed to add $1200 to the advertising line item (bringing it to $3,000) and to reduce the line item for equipment maintenance and supplies by $1,200 (bringing that line item to $8,800)."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comments",
+   "resolution": "no action; FinCom liaison introduced",
+   "quote": "lance introduced and welcomed john henshaw as a liaison from the",
+   "tags": [
+    "public comment",
+    "FinCom liaison",
+    "School Committee coverage"
+   ]
+  },
+  {
+   "topic": "Secretary's Report",
+   "resolution": "approved as amended",
+   "quote": "the minutes for july 16th were read and approved as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Studio and Equipment Update",
+   "resolution": "two PCs purchase approved",
+   "quote": "studio and equipment update:",
+   "tags": [
+    "equipment",
+    "PCs"
+   ]
+  },
+  {
+   "topic": "FY14 Budget",
+   "resolution": "approved as recommended with changes",
+   "quote": "a motion was made and passed to accept the fy14 budget as recommended (with the above mentioned changes).",
+   "tags": [
+    "budget",
+    "FY14"
+   ]
+  },
+  {
+   "topic": "Proposal for Underwriting",
+   "resolution": "discussed; no final action",
+   "quote": "it was discussed favorably, but no final action was taken.",
+   "tags": [
+    "underwriting",
+    "revenue"
+   ]
+  },
+  {
+   "topic": "Job Description/Evaluation Instrument",
+   "resolution": "continued to next meeting",
+   "quote": "the instrument and process will be discussed further at our next meeting.",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "New Business - Homecoming Game",
+   "resolution": "discussed; continued to September meeting",
+   "quote": "lance reminded us on the upcoming homecoming game (oct, 26).",
+   "tags": [
+    "Homecoming Game",
+    "equipment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "July/August Progress Report (Jo)",
+   "where": "text",
+   "quote": "proposal for underwriting - jo presented a potential underwriting program (see her july/august progress report)."
+  },
+  {
+   "name": "Evaluation instrument tied to the job description of the PACC Administrative Coordinator (presented by Fred)",
+   "where": "text",
+   "quote": "fred presented an evaluation instrument tied to the job description of the pacc administrative coordinator."
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access TV",
+  "FY14 budget",
+  "equipment",
+  "PCs",
+  "underwriting",
+  "evaluation instrument",
+  "Homecoming Game",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

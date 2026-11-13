@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-04-26",
  "docid": "2348",
@@ -12,14 +12,15 @@
  },
  "votes": [
   {
-   "motion": "recommend approval of STM Article 1 Prior Year Expense from reserve fund",
+   "motion": "Recommend approval of STM Article 1 (prior year expense for FY10 and FY11 of $5,605.98) from reserve fund.",
+   "moved_by": "",
    "seconded_by": "BR",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "motion to recommend approval from reserve fund, br seconded, all approved 5-0"
   },
   {
-   "motion": "pass over STM Article 2",
+   "motion": "Pass over STM Article 2.",
    "moved_by": "BR",
    "seconded_by": "BL",
    "outcome": "passed 5-0",
@@ -27,7 +28,7 @@
    "quote": "br made motion to pass over, bl seconded, all in favor 5-0"
   },
   {
-   "motion": "Finance Committee agrees to pass over STM Article 3",
+   "motion": "Agree that Fin Com passes over STM Article 3.",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed 5-0",
@@ -35,7 +36,7 @@
    "quote": "bl moved that fin com agrees to pass over article 3, br seconded, all in favor 5-0"
   },
   {
-   "motion": "recommend moving $39K from free cash to fund extraordinary unemployment benefits",
+   "motion": "Recommend moving $39K from free cash to fund extraordinary unemployment benefits (STM Article 7).",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -43,7 +44,7 @@
    "quote": "bl made the motion to recommend moving $39k from free cash to fund extraordinary unemployment benefits, br seconded, all in favor"
   },
   {
-   "motion": "approve ATM Article 10 using same language as approved by Board of Selectmen",
+   "motion": "Approve the same language as approved by the BOS for ATM Article 10.",
    "moved_by": "BR",
    "seconded_by": "SG",
    "outcome": "passed 5-0",
@@ -51,7 +52,7 @@
    "quote": "br made motion to approve same language as approved by bos, sg seconded, all approved 5-0"
   },
   {
-   "motion": "recommend transfer of $138,700 from Zoning Incentive Stabilization Fund to Summer Street project",
+   "motion": "Recommend transfer of $138,700 from Zoning Incentive Stabilization Fund to Summer Street project (ATM Article 21).",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -59,23 +60,23 @@
    "quote": "bl made motion to recommend transfer $138,700 from zoning incentive stabilization fund to summer street project, br seconded, all approved"
   },
   {
-   "motion": "approve minutes from December 5, 2011",
+   "motion": "Accept the revised minutes of 12/5/11.",
    "moved_by": "SG",
    "seconded_by": "BR",
    "outcome": "passed",
    "procedural": true,
-   "quote": "sg made motion to accept, br seconded, all approved"
+   "quote": "revised minutes from 12/5/11 reviewed; sg made motion to accept, br seconded, all approved"
   },
   {
-   "motion": "approve minutes from March 22, 2012",
+   "motion": "Accept the minutes of 3/22/12.",
    "moved_by": "BL",
    "seconded_by": "SG",
    "outcome": "passed",
    "procedural": true,
-   "quote": "bl made motion to accept, sg seconded, all approved"
+   "quote": "minutes from 3/22/12 reviewed; bl made motion to accept, sg seconded, all approved"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 9:57 pm.",
    "moved_by": "BR",
    "seconded_by": "SG",
    "outcome": "passed",
@@ -84,6 +85,254 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision; meeting had 5 members present (Mark Erickson, Barbara Reynolds, Scott Gile, Brian Laffond, Martha McDonald). John Male was absent.",
- "cost_usd": 0.1196475
+ "note": "Source is an OCR of a received-and-filed page; the trailing 'n... 1.1' is OCR noise. Attendance labels and values are out of order in the OCR; John Male is read as Absent and Kerry Speidel as Also Present by position. Motions are given with initials (BR, BL, SG) as printed, not expanded. STM Article 1 has no named mover. Article 7 and ATM Article 21 record 'all in favor'/'all approved' with no count. Article 7's title says Stabilization Fund but its motion says free cash; both are recorded as printed. No public comment section is printed.",
+ "cost_usd": 0.00857682,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, brian laffond, martha mcdonald"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, brian laffond, martha mcdonald"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, brian laffond, martha mcdonald"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, brian laffond, martha mcdonald"
+  },
+  {
+   "name": "Scott Gile",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, brian laffond, martha mcdonald"
+  },
+  {
+   "name": "John Male",
+   "status": "absent",
+   "quote": "absent: also present: town hall john male kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "absent: also present: town hall john male kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ATM Article 20 is held for more information.",
+   "quote": "atm article 20 - hold for more information"
+  },
+  {
+   "decision": "Discussed STM Article 3 and it will now be passed over at Town Meeting.",
+   "quote": "stm article 3 - discussed but will now be passed over at town meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "STM Article 1 - prior year expense (injured-on-duty claims)",
+   "what_was_recorded": "Prior year expense for FY10 and FY11 is $5,605.98 for injured-on-duty claims over $50K; a $990 difference is a claim to the Town that the Town will not pay.",
+   "figures_as_printed": [
+    "$5,605.98",
+    "$50K",
+    "$990"
+   ],
+   "quote": "stm article 1 - prior year expense for fy 10 and fy11 of $5,605.98 represents injured-on-duty claims over $50k"
+  },
+  {
+   "topic": "STM Article 5 - Police contract",
+   "what_was_recorded": "Police contract cost-of-living (0/2.5/2.5) estimated to cost approximately $40K for FY 10/11/12, to come out of the salary reserve account.",
+   "figures_as_printed": [
+    "$40K"
+   ],
+   "quote": "police contract - 0/2.5/2.5 cost-of-living estimated to cost approximately $40k for fy 10/11/12"
+  },
+  {
+   "topic": "STM Article 6 - Firefighters contract",
+   "what_was_recorded": "Firefighters contract for years FY12/13/14 at estimated costs of $2,196, with an impact in FY12 of zero.",
+   "figures_as_printed": [
+    "$2,196"
+   ],
+   "quote": "firefighters contract years fy12/13/14 at estimated costs of $2,196 with an impact in fy12 of zero"
+  },
+  {
+   "topic": "STM Article 7 - unemployment fund",
+   "what_was_recorded": "Recommendation to move $39K from free cash to fund extraordinary unemployment benefits for the self-insured unemployment fund.",
+   "figures_as_printed": [
+    "$39K"
+   ],
+   "quote": "bl made the motion to recommend moving $39k from free cash to fund extraordinary unemployment benefits, br seconded, all in favor"
+  },
+  {
+   "topic": "ATM Article 21 - Summer Street project design funds",
+   "what_was_recorded": "Request to use $138,700 from the Zoning Incentive Stabilization Fund for Summer Street project design funds; committee recommended the transfer.",
+   "figures_as_printed": [
+    "$138,700"
+   ],
+   "quote": "summer street project design funds - requesting we use $138,700 from zoning incentive stabilization fund"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "STM Article 1: prior year expense for FY10 and FY11 recommended for approval from reserve fund.",
+   "amount_as_printed": "$5,605.98",
+   "outcome": "recommended, passed 5-0",
+   "quote": "motion to recommend approval from reserve fund, br seconded, all approved 5-0"
+  },
+  {
+   "description": "STM Article 7: move from free cash to fund extraordinary unemployment benefits.",
+   "amount_as_printed": "$39K",
+   "outcome": "recommended, all in favor (passed)",
+   "quote": "bl made the motion to recommend moving $39k from free cash to fund extraordinary unemployment benefits, br seconded, all in favor"
+  },
+  {
+   "description": "ATM Article 21: transfer from Zoning Incentive Stabilization Fund to Summer Street project.",
+   "amount_as_printed": "$138,700",
+   "outcome": "recommended, all approved (passed)",
+   "quote": "bl made motion to recommend transfer $138,700 from zoning incentive stabilization fund to summer street project, br seconded, all approved"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:05 PM",
+   "quote": "1) meeting called to order by the chairman at 7:05 pm",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "received, no action recorded",
+   "quote": "2) communications - public access television interview of town manager by tim murphy",
+   "tags": [
+    "correspondence",
+    "kindergarten",
+    "solar energy"
+   ]
+  },
+  {
+   "topic": "Review Warrant Articles",
+   "resolution": "recommendations made on several articles; ATM Article 20 held; STM Article 2 and 3 passed over; STM Article 5 and 6 discussed",
+   "quote": "3) review warrant articles",
+   "tags": [
+    "warrant articles",
+    "town meeting",
+    "reserve fund",
+    "free cash",
+    "stabilization fund",
+    "police contract",
+    "firefighters contract"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved revised minutes of 12/5/11 and minutes of 3/22/12",
+   "quote": "revised minutes from 12/5/11 reviewed; sg made motion to accept, br seconded, all approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:57 pm",
+   "quote": "5) adjournment-br made motion to adjourn at 9:57 pm, sg seconded, all in favor",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public Access Television interview of Town Manager by Tim Murphy",
+   "where": "list",
+   "quote": "communications - public access television interview of town manager by tim murphy"
+  },
+  {
+   "name": "Letter from 17 year resident on full day kindergarten",
+   "where": "list",
+   "quote": "letter received from 17 year resident stating full day kindergarten is not mandated"
+  },
+  {
+   "name": "Powers & Sullivan Financial Briefs",
+   "where": "list",
+   "quote": "powers & sullivan financial briefs"
+  },
+  {
+   "name": "STM Article 1 (prior year expense FY10 and FY11)",
+   "where": "text",
+   "quote": "stm article 1 - prior year expense for fy 10 and fy11 of $5,605.98 represents injured-on-duty claims over $50k"
+  },
+  {
+   "name": "STM Article 2",
+   "where": "text",
+   "quote": "stm article 2 - br made motion to pass over, bl seconded, all in favor 5-0"
+  },
+  {
+   "name": "STM Article 3",
+   "where": "text",
+   "quote": "stm article 3 - discussed but will now be passed over at town meeting"
+  },
+  {
+   "name": "STM Article 5 (police contract)",
+   "where": "text",
+   "quote": "stm article 5 - police contract - 0/2.5/2.5 cost-of-living estimated to cost approximately $40k"
+  },
+  {
+   "name": "STM Article 6 (firefighters contract)",
+   "where": "text",
+   "quote": "stm article 6 - firefighters contract years fy12/13/14 at estimated costs of $2,196"
+  },
+  {
+   "name": "STM Article 7 (appropriation for self-insured unemployment fund)",
+   "where": "text",
+   "quote": "stm article 7 - appropriation from stabilization fund to cover self-insured unemployment fund"
+  },
+  {
+   "name": "ATM Article 10",
+   "where": "text",
+   "quote": "atm article 10 - br made motion to approve same language as approved by bos"
+  },
+  {
+   "name": "ATM Article 20",
+   "where": "text",
+   "quote": "atm article 20 - hold for more information"
+  },
+  {
+   "name": "ATM Article 21 (Summer Street project design funds)",
+   "where": "text",
+   "quote": "atm article 21 - summer street project design funds - requesting we use $138,700"
+  }
+ ],
+ "tags": [
+  "warrant articles",
+  "town meeting",
+  "reserve fund",
+  "free cash",
+  "zoning incentive stabilization fund",
+  "police contract",
+  "firefighters contract",
+  "unemployment",
+  "Summer Street project",
+  "minutes",
+  "communications"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "communications"
+ },
+ "dropped_unquoted_by_field": {}
 }

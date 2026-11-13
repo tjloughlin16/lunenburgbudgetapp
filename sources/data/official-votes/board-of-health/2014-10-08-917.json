@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-10-08",
  "docid": "917",
@@ -10,17 +10,119 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10082014-917",
   "doc_url": "/docs/meetings/board-of-health/2014-10-08-minutes-917.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR scan of a short minutes page (page 1 only) with garbled text: several street addresses and the heading wording are uncertain (e.g. \"TITLE'S\" likely \"TITLE 5\", \"Reservoir\" OCR'd as \"Referyoir\"/\"Keseroir\"). No motions, votes or result language appear anywhere: the minutes approval and the adjournment are stated without a motion, so no votes are recorded. Only the owner's representative appeared before the board; no public comment section is printed.",
+ "cost_usd": 0.00297812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve minutes from September 15, 2014",
-   "outcome": "passed",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes approved: september 15, 2014"
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting was opened at 7:00 pm by chairman george emond at the ritter memorial building"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Steve Sears",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "steve sears met with the board on behalf of the owner. this system is in failure."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. No other explicit motions or votes recorded beyond the approval of prior minutes.",
- "cost_usd": 0.08649649999999999
+ "decisions": [
+  {
+   "decision": "Septic permits were signed for the listed properties (39 South Row Road, 1064 Northfield Road, 71 Stone Fence Road, 524 New West Townsend Road, 629 Reservoir Road) without a recorded vote.",
+   "quote": "septic permits signed: 39 south row road"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of September 15, 2014",
+   "resolution": "shown as approved; no motion or vote recorded",
+   "quote": "minutes approved: september 15, 2014",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged (list of properties; no vote recorded)",
+   "quote": "title's inspection reports acknowledged 71 pratt street* 1249 mass avenue",
+   "tags": [
+    "title 5",
+    "inspection reports",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed for five listed properties plus 39 South Row Road",
+   "quote": "septic permits signed: 39 south row road",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "39 South Row Road failing septic system",
+   "resolution": "owner's representative appeared; system noted as in failure; no action recorded",
+   "quote": "steve sears met with the board on behalf of the owner. this system is in failure.",
+   "tags": [
+    "septic",
+    "failure",
+    "lakefront"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 pm; no motion recorded",
+   "quote": "having no other business before the board, meeting adjourned at 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports (list of properties, heading printed as TITLE'S INSPECTION REPORTS ACKNOWLEDGED)",
+   "where": "list",
+   "quote": "title's inspection reports acknowledged 71 pratt street* 1249 mass avenue"
+  },
+  {
+   "name": "Septic permits signed (list of properties)",
+   "where": "list",
+   "quote": "septic permits signed: 39 south row road"
+  }
+ ],
+ "tags": [
+  "septic",
+  "title 5",
+  "inspection reports",
+  "septic permits",
+  "board of health",
+  "lakefront",
+  "failing system"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title's inspection reports acknowledged"
+ },
+ "dropped_unquoted_by_field": {}
 }

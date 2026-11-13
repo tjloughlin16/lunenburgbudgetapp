@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-02-19",
  "docid": "1660",
@@ -12,23 +12,240 @@
  },
  "votes": [
   {
-   "motion": "Approval of Notice of Intent for 750-foot roadway construction with revised plans at 50 Elmwood Road (Michael Crowley)",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "closed & approved unanimous",
+   "motion": "Close the public hearing on the Notice of Intent filed by Michael Crowley for 50 Elmwood Road and approve it.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "closed & approved unanimous"
   },
   {
-   "motion": "Approval of Request for Determination of Applicability for replacement septic system at 10 Tilton Avenue (Robert Proctor)",
-   "outcome": "passed 3-0 with negative determination",
-   "procedural": false,
-   "quote": "plan accepted and approved negative 3 unanimous",
+   "motion": "Accept and approve the plan for the Request for Determination of Applicability filed by Bob (Robert) Proctor at 10 Tilton Avenue.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "plan accepted and approved negative 3 unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes are sparse on motion details. No mover or seconder names recorded. The entry for 129 Peninsula Drive was tabled (no applicant present), not voted on. The top-line date \"3-19-2014\" indicates when these minutes were approved by the commission.",
- "cost_usd": 0.0949185
+ "dropped_unquoted": 0,
+ "note": "Extracted text; the header line contains font garbage (\"gÉãÇ Éy _âÇxÇuâÜz\") and some words are split by stray spaces (e.g. \"Commis sion\", \"Inten t\"). Two votes are recorded only as result words (\"Unanimous\") with no mover, seconder or roll call printed, so moved_by/seconded_by are blank and the 10 Tilton entry's \"Negative 3\" is copied as printed and not interpreted. No dollar figures appear. No procedural votes (minutes approval, adjournment) are recorded. Minutes are marked APPROVED 3-19-2014.",
+ "cost_usd": 0.005939719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "member",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "member",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "member",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "member",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "member",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "member",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Scott Robinson",
+   "role": "applicant, interested in purchasing the property at 174 Northfield Road",
+   "status": "present",
+   "quote": "informational discussion with scott robinson. interested in purchasing the"
+  },
+  {
+   "name": "Michael Crowley",
+   "role": "applicant, filed Notice of Intent for 50 Elmwood Road",
+   "status": "not stated",
+   "quote": "notice of inten t filed by michael crowley"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "presented revised plans for 50 Elmwood Road",
+   "status": "present",
+   "quote": "anthony cleaves presented revised plans."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "presenter for 10 Tilton Avenue (filed as Robert Proctor)",
+   "status": "present",
+   "quote": "bob proctor presented."
+  },
+  {
+   "name": "Danielle Reynolds",
+   "role": "applicant, 129 Peninsula Drive",
+   "status": "absent",
+   "quote": "no show moved to march 5, 2014"
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "appeared at 8:00 PM slot",
+   "status": "present",
+   "quote": "wanted to make sure the ooc got signed and when he could pick them up after march 3, 2014."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission would prefer waddles/socks instead of hay bales for erosion control at 50 Elmwood Road.",
+   "quote": "the commission would prefer waddles/socks instead of hay bales."
+  },
+  {
+   "decision": "The 129 Peninsula Drive Request for Determination (Danielle Reynolds) was moved to March 5, 2014 after a no-show.",
+   "quote": "no show moved to march 5, 2014"
+  },
+  {
+   "decision": "The Commission will advertise and interview for a potential caretaker for 123 Hollis Road.",
+   "quote": "the commission will advertise and interview for a potential caretaker."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kevin O'Brien",
+   "stated_role": "",
+   "topic": "Order of Conditions signing and pickup",
+   "quote": "wanted to make sure the ooc got signed and when he could pick them up after march 3, 2014."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "174 Northfield Road – informational discussion (Scott Robinson)",
+   "resolution": "no action; commission reviewed regulations and made suggestions",
+   "quote": "informational discussion with scott robinson. interested in purchasing the",
+   "tags": [
+    "informational",
+    "lake",
+    "gravel trail"
+   ]
+  },
+  {
+   "topic": "50 Elmwood Road – continued public hearing, Notice of Intent (Michael Crowley)",
+   "resolution": "closed; approved unanimously",
+   "quote": "the developer will be removing approximately 50,000 cubic yards",
+   "tags": [
+    "notice of intent",
+    "roadway",
+    "buffer zone",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "10 Tilton Avenue – public hearing, Request for Determination of Applicability (Robert Proctor)",
+   "resolution": "plan accepted and approved, unanimous",
+   "quote": "bob proctor presented.",
+   "tags": [
+    "septic system",
+    "RDA",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "129 Peninsula Drive – Request for Determination of Applicability (Danielle Reynolds)",
+   "resolution": "no show; moved to March 5, 2014",
+   "quote": "no show moved to march 5, 2014",
+   "tags": [
+    "addition",
+    "RDA",
+    "continuation"
+   ]
+  },
+  {
+   "topic": "Kevin O'Brien – Order of Conditions signing and pickup",
+   "resolution": "no action noted",
+   "quote": "wanted to make sure the ooc got signed and when he could pick them up after march 3, 2014.",
+   "tags": [
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Handout from presentation to Selectmen",
+   "resolution": "noted; no action",
+   "quote": "sharon had a handout of the information she presented to the selectmen on february 4, 2014.",
+   "tags": [
+    "selectmen",
+    "handout"
+   ]
+  },
+  {
+   "topic": "Caretaker at 123 Hollis Road",
+   "resolution": "to advertise and interview for a potential caretaker",
+   "quote": "the commission will advertise and interview for a potential caretaker.",
+   "tags": [
+    "caretaker",
+    "123 Hollis Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout of the information presented to the Selectmen on February 4, 2014 (Sharon Jordan)",
+   "where": "list",
+   "quote": "sharon had a handout of the information she presented to the selectmen on february 4, 2014."
+  },
+  {
+   "name": "Revised plans for 50 Elmwood Road (presented by Anthony Cleaves)",
+   "where": "text",
+   "quote": "anthony cleaves presented revised plans."
+  },
+  {
+   "name": "Notice of Intent filed by Michael Crowley (50 Elmwood Road)",
+   "where": "text",
+   "quote": "notice of inten t filed by michael crowley"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Robert Proctor (10 Tilton Avenue)",
+   "where": "text",
+   "quote": "applicability filed by robert proctor."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Danielle Reynolds (129 Peninsula Drive)",
+   "where": "text",
+   "quote": "applicability filed by danielle reynolds."
+  },
+  {
+   "name": "Order of Conditions (OoC) for Kevin O'Brien",
+   "where": "text",
+   "quote": "wanted to make sure the ooc got signed and when he could pick them up after march 3, 2014."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "public hearing",
+  "notice of intent",
+  "request for determination",
+  "continuation",
+  "order of conditions",
+  "caretaker",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "sharon had a handout of the information she presented to the selectmen on february 4, 2014."
+ },
+ "dropped_unquoted_by_field": {}
 }

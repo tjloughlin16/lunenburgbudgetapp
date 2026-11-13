@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-04-17",
  "docid": "2788",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve February minutes as amended",
+   "motion": "Approve the February minutes as amended.",
    "moved_by": "Dick",
    "seconded_by": "Lisa",
-   "outcome": "passed",
+   "outcome": "passed (Murray abstained)",
    "procedural": true,
    "quote": "jeanne entertained a motion to approve minutes as amended, moved by dick second by lisa, all approve - kathy abstained not having been at that meeting."
   },
   {
-   "motion": "approve March minutes",
+   "motion": "Approve the March minutes.",
    "moved_by": "Dick",
    "seconded_by": "Kathy",
    "outcome": "passed",
@@ -28,30 +28,30 @@
    "quote": "march, jeanne entertained, etc. moved by dick, second by kathy, all approve."
   },
   {
-   "motion": "accept with regret Joanne's letter of resignation",
-   "moved_by": "Dick",
-   "seconded_by": "Kathy",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "dick moved kathy second motion to accept with regret joanne's letter of resignation."
-  },
-  {
-   "motion": "move to the 'Other' section of the agenda",
-   "moved_by": "Jeanne",
-   "seconded_by": "Kathy",
+   "motion": "Move to the \"Other\" section of the agenda.",
+   "moved_by": "Kathy",
+   "seconded_by": "Dick",
    "outcome": "not stated",
    "procedural": true,
    "quote": "motion to move to \"other\" by jeanne moved by kathy, dick second."
   },
   {
-   "motion": "move the meeting from May 15 to May 22",
+   "motion": "Accept with regret Joanne McQuaid's letter of resignation.",
+   "moved_by": "Dick",
+   "seconded_by": "Kathy",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "dick moved kathy second motion to accept with regret"
+  },
+  {
+   "motion": "Move the May 15 meeting to Thursday, May 22, due to the lateness in the month of the town election.",
    "seconded_by": "Dick",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion move 15th, to 22nd due to lateness in month town election second dick, all in favor, to make the new trustees be on board."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lisa",
    "seconded_by": "Kathy",
    "outcome": "not stated",
@@ -60,6 +60,183 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The text contains some formatting irregularities, particularly in the \"Motion to move to Other\" line, where the mover and seconder are ambiguous due to compressed phrasing. The interpretation reflects the most reasonable reading of standard parliamentary procedure language.",
- "cost_usd": 0.14716649999999998
+ "note": "Text extract is readable but contains garbled or incomplete lines: the date-change motion does not name a mover; the resignation motion and the adjournment record no result or count; the 'Jeanne april 15 2014' line and the Director's Report sub-items are run together. Mover of the date-change motion is omitted because it is not printed. No dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.00628072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order at 6:45 pm by chairman jeanne raboin."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, kathy murray, lars widstrand"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, kathy murray, lars widstrand"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, kathy murray, lars widstrand"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, kathy murray, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "status": "absent",
+   "quote": "absent: joanne mcquaid, robin venezia,"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "absent",
+   "quote": "absent: joanne mcquaid, robin venezia,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Gare Thompson will fill the vacancy left by Joanne McQuaid's resignation.",
+   "quote": "gare thompson will fill the vacancy."
+  },
+  {
+   "decision": "Trustees are to attend the selectmen meeting to present a fill-in person for the remainder of the resigned trustee's term.",
+   "quote": "trustees needs to be at selectmen to present fill-in person for the remainder of her term."
+  },
+  {
+   "decision": "Ask Martha Moore for her own goals for next year to be merged with what the Trustees believe, and consolidate external evaluations into the finalized evaluation with external as appendices.",
+   "quote": "ask martha for her own goals for next year to be merged in with what the trustees believe."
+  },
+  {
+   "decision": "Trustees will vote on the director evaluation after its May 15 completion, followed by a one-on-one with Martha.",
+   "quote": "may 15th completion of director evaluation, we will vote on the evaluation, following that there will be a 1-on-1 with martha"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financials (salary)",
+   "what_was_recorded": "Financials were reported as on target for salaries; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "on target salary wise"
+  },
+  {
+   "topic": "Collections: NewsBank e-subscription",
+   "what_was_recorded": "A new e-subscription to NewsBank for historical newspapers and genealogy bank was highlighted; no price printed.",
+   "figures_as_printed": [],
+   "quote": "highlight is new e-subscription to newsbank for historical newspapers and genealogy bank."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comments",
+   "resolution": "no public comments",
+   "quote": "public comments o no public comments",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (February and March)",
+   "resolution": "approved; February as amended, Murray abstaining",
+   "quote": "feb jeanne entertained a motion to approve minutes as amended, moved by dick second by lisa, all approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report (March 20, 2014)",
+   "resolution": "reviewed and discussed; no vote; covered staffing, financials, collections, facilities, programs, technology",
+   "quote": "director's report for march 20, 2014, director's handout reviewed and discussed.",
+   "tags": [
+    "director report",
+    "staffing",
+    "facilities",
+    "technology",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Resignation of Joanne McQuaid",
+   "resolution": "letter accepted with regret; Gare Thompson to fill vacancy; no result recorded",
+   "quote": "joanne has sent in a letter of resignation, which the trustees need to approve.",
+   "tags": [
+    "resignation",
+    "trustee vacancy"
+   ]
+  },
+  {
+   "topic": "Other: meeting date change",
+   "resolution": "May 15 meeting moved to May 22; passed",
+   "quote": "motion move 15th, to 22nd due to lateness in month town election",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Director's evaluation (Martha Moore)",
+   "resolution": "discussed; subcommittee reported; evaluation vote set for May 15",
+   "quote": "subcommittee meeting of april 15 dick and jeanne for martha's evaluation.",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:30 p.m.",
+   "quote": "motion to adjourn made by lisa, second by kathy at 8:30 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for April 17, 2014",
+   "where": "list",
+   "quote": "lplbot agenda for april 17, 2014"
+  },
+  {
+   "name": "Lunenburg Public Library, Director’s Report of April 17, 2014",
+   "where": "list",
+   "quote": "lunenburg public library, director's report of april 17, 2014."
+  },
+  {
+   "name": "Director’s Report for March 20, 2014 (director's handout)",
+   "where": "text",
+   "quote": "director's report for march 20, 2014, director's handout reviewed and discussed."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "director evaluation",
+  "resignation",
+  "trustee vacancy",
+  "meeting schedule",
+  "staffing",
+  "facilities",
+  "technology",
+  "collections"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

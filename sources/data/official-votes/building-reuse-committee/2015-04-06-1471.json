@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-04-06",
  "docid": "1471",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve prior minutes from 1/5/2015 as amended",
+   "motion": "Approve the minutes of 1/5/2015 as amended.",
    "moved_by": "Dave MacDonald",
    "seconded_by": "Mike Makin",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "minutes from 1/5/2015. motion to approve as amended by dave macdonald, mike makin second, all in favor."
+   "quote": "motion to approve as amended by dave macdonald, mike makin second, all in favor."
   },
   {
-   "motion": "Committee recommend approval of both Article 26 and Article 27, each heard separately",
+   "motion": "Recommend approval of both Article 26 and Article 27, with each Article heard separately.",
    "moved_by": "Dave MacDonald",
    "seconded_by": "Mark Erickson",
    "outcome": "passed 6-1",
@@ -28,23 +28,203 @@
    "quote": "dave macdonald made a motion that the committee recommend approval of both article 26 and article 27 and that each article should be heard separately. second, mark erickson. 6 in favor, 1 nay."
   },
   {
-   "motion": "Use the Passios property site study as a conversation point in discussion with the school committee",
+   "motion": "Use the preliminary site study of the Passios property as a conversation point in the discussion with the school committee.",
    "moved_by": "Ron Albert",
    "seconded_by": "Dave MacDonald",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ron albert made a motion to use that site study as a conversation point in the discussion with the school committee. second, dave macdonald, all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Damon McQuaid",
    "seconded_by": "Mike Makin",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by damon mcquaid, second mike makin, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. All votes recorded and legible.",
- "cost_usd": 0.0870425
+ "note": "OCR text from a macOS Vision scan of a single page. The attendance header is partly garbled (\"RL IM\"); present members are read from the printed names line. Dave MacDonald, Mike Makin, Damon McQuaid and Ron Albert are recorded as present because they moved or seconded motions; the minutes do not state their attendance directly. The minutes show no vote count for the minutes approval, the site-study motion or the adjournment beyond \"all in favor\". The OCR \"April 30*\" and \"April 30\\\"\" marks are read as the same date. No public comment section is printed.",
+ "cost_usd": 0.0037830200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rebecca Lantry",
+   "role": "",
+   "status": "present",
+   "quote": "rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "",
+   "status": "present",
+   "quote": "rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "absent",
+   "quote": "members absent: deb seeley"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "",
+   "status": "present",
+   "quote": "dave macdonald made a motion that the committee recommend approval of both article 26"
+  },
+  {
+   "name": "Mike Makin",
+   "role": "",
+   "status": "present",
+   "quote": "motion to approve as amended by dave macdonald, mike makin second, all in favor."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid submitted a preliminary site study of the passios property."
+  },
+  {
+   "name": "Ron Albert",
+   "role": "",
+   "status": "present",
+   "quote": "ron albert made a motion to use that site study as a conversation point in the discussion with the school committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A joint meeting with the school committee is scheduled for April 30, 6:30pm at Town Hall.",
+   "quote": "joint meeting with the school committee scheduled for april 30*, 6:30pm at town hall"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "RFQ for feasibility study funding",
+   "what_was_recorded": "Capital Planning approved the RFQ for feasibility study funding to be heard at town meeting; results are pending. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the rfq for feasibility study funding was approved by capital planning to be heard at town meeting, results pending"
+  },
+  {
+   "topic": "Town Hall façade painting funding",
+   "what_was_recorded": "The Capital Planning Committee did not approve funding for Town Hall façade painting. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town hall façade painting funding was not approved by the capital planning committee"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action; no announcements",
+   "quote": "meeting called to order april 6, 2015 @ 6:32pn",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval (1/5/2015)",
+   "resolution": "approved as amended",
+   "quote": "motion to approve as amended by dave macdonald, mike makin second, all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Village Center District and Architectural Preservation District bylaw work",
+   "resolution": "recommended approval of Articles 26 and 27, heard separately; APDC citizen-at-large suggestion raised",
+   "quote": "discussion-village center district and architectural preservation district bylaw work..",
+   "tags": [
+    "bylaws",
+    "zoning",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "TCP and Brooks Property line",
+   "resolution": "site study adopted as a discussion point for school committee talks; joint meeting set",
+   "quote": "discuss tcp and brooks property line",
+   "tags": [
+    "site study",
+    "school committee",
+    "property line"
+   ]
+  },
+  {
+   "topic": "Capital Planning update",
+   "resolution": "no action; informational",
+   "quote": "the rfq for feasibility study funding was approved by capital planning to be heard at town meeting, results pending",
+   "tags": [
+    "capital planning",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "New business: PAC space",
+   "resolution": "no action; reminder noted",
+   "quote": "pac would like to remind the committee that they are also in need of space and that should be kept in mind moving forward.",
+   "tags": [
+    "space needs"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for April 30 joint session",
+   "quote": "april 30\", 6:30pm at town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:55pm",
+   "quote": "meeting adjourned @ 8:55pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Preliminary site study of the Passios property (submitted by Damon McQuaid)",
+   "where": "text",
+   "quote": "damon mcquaid submitted a preliminary site study of the passios property."
+  },
+  {
+   "name": "Article 26 (bylaw article, Village Center District and Architectural Preservation District)",
+   "where": "text",
+   "quote": "dave macdonald made a motion that the committee recommend approval of both article 26 and article 27"
+  },
+  {
+   "name": "Article 27 (bylaw article, Village Center District and Architectural Preservation District)",
+   "where": "text",
+   "quote": "dave macdonald made a motion that the committee recommend approval of both article 26 and article 27"
+  },
+  {
+   "name": "RFQ for feasibility study funding",
+   "where": "text",
+   "quote": "the rfq for feasibility study funding was approved by capital planning to be heard at town meeting, results pending"
+  }
+ ],
+ "tags": [
+  "Building Re-Use Committee",
+  "bylaws",
+  "Article 26",
+  "Article 27",
+  "Village Center District",
+  "Architectural Preservation District",
+  "school committee",
+  "site study",
+  "Capital Planning",
+  "Town Hall",
+  "feasibility study",
+  "PAC space"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

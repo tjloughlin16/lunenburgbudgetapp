@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-03-16",
  "docid": "1601",
@@ -12,15 +12,219 @@
  },
  "votes": [
   {
-   "motion": "Approve the Notice of Intent for construction of a garage at 80 Ruth Street",
+   "motion": "Approve the 80 Ruth Street garage project (Notice of Intent, Blue Heron Trust), as the minutes record that plans were acceptable to the commission.",
    "moved_by": "JJ",
    "seconded_by": "Jack",
-   "outcome": "Unanimous",
+   "outcome": "passed",
    "procedural": false,
    "quote": "plans were acceptable to the commission. jj/jack unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted from OCR. One vote recorded: approval of a wetlands Notice of Intent. No procedural votes (approve minutes, adjourn, etc.) were recorded in these minutes.",
- "cost_usd": 0.0875505
+ "note": "OCR text of a short minutes page with typos (e.g., 'dicussed'); the 80 Ruth Street motion is recorded only as 'JJ/Jack Unanimous' with no explicit motion wording, so mover and seconder are read from that slash notation and the motion is paraphrased from 'Plans were acceptable to the commission'. No dollar figures appear. No public speakers are identified under Public Comment, which records only commission discussion.",
+ "cost_usd": 0.0048977199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Steven Sears",
+   "role": "of David E. Ross Associates (filed the Notice of Intent)",
+   "status": "not stated",
+   "quote": "notice of intent filed by steven sears of david e. ross associates for marcia furtado of blue heron trust."
+  },
+  {
+   "name": "Marcia Furtado",
+   "role": "of Blue Heron Trust (applicant)",
+   "status": "not stated",
+   "quote": "notice of intent filed by steven sears of david e. ross associates for marcia furtado of blue heron trust."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Distribute up-to-date copies of the Land Use Regulations.",
+   "quote": "land use regulations ~ distribute up to date copies"
+  },
+  {
+   "decision": "Signature items listed: 2 Violations and 1 Extension (old).",
+   "quote": "signatures ~ 2 violations, 1 extension (old)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Forest cuttings and grants",
+   "what_was_recorded": "The commission discussed forest cuttings and grants available to towns for that purpose; no dollar figure was printed.",
+   "quote": "forest cuttings and the grants available to towns for that purpose",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Commission discussion (labelled Public Comment)",
+   "resolution": "discussed; no action",
+   "quote": "public comment ~ the commission discussed various items",
+   "tags": [
+    "forestry",
+    "trails",
+    "grants",
+    "discussion"
+   ]
+  },
+  {
+   "topic": "80 Ruth Street Notice of Intent public hearing (7:15 PM)",
+   "resolution": "plans accepted; approved unanimously",
+   "quote": "plans were acceptable to the commission. jj/jack unanimous",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "public hearing",
+    "garage"
+   ]
+  },
+  {
+   "topic": "Approve Minutes",
+   "resolution": "no action (none)",
+   "quote": "approve minutes ~ none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Land Use Regulations",
+   "resolution": "copies to be distributed",
+   "quote": "land use regulations ~ distribute up to date copies",
+   "tags": [
+    "land use regulations"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "2 violations and 1 extension (old) listed",
+   "quote": "signatures ~ 2 violations, 1 extension (old)",
+   "tags": [
+    "signatures",
+    "violations",
+    "extension"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "no action (none)",
+   "quote": "new business ~ none action file items ~ none unfinished business ~ none",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Action File Items",
+   "resolution": "no action (none)",
+   "quote": "action file items ~ none",
+   "tags": [
+    "action file"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "no action (none)",
+   "quote": "unfinished business ~ none",
+   "tags": [
+    "unfinished business"
+   ]
+  },
+  {
+   "topic": "Meeting Reminder",
+   "resolution": "next meeting April 6th; Selectmen's Meeting March 22nd at 7:15 PM",
+   "quote": "meeting reminder ~our next meeting will be april 6th, selectmen's meeting, tuesday, march 22nd at 7:15 pm",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article from the DCR on Forestry Stewardship Program",
+   "where": "list",
+   "quote": "sharon brought in an article from the dcr on forestry stewardship program"
+  },
+  {
+   "name": "Poster stating sections of trails are closed to mountain bikes and horses due to mud season",
+   "where": "list",
+   "quote": "a copy of the poster stating sections of trails are closed to mountain bikes and horses due to mud season"
+  },
+  {
+   "name": "Land Use Regulations",
+   "where": "list",
+   "quote": "jan passed out final copies of the land use regulations and pleasant street enhancement rfp."
+  },
+  {
+   "name": "Pleasant Street Enhancement RFP",
+   "where": "list",
+   "quote": "jan passed out final copies of the land use regulations and pleasant street enhancement rfp."
+  },
+  {
+   "name": "Notice of Intent for 80 Ruth Street (Blue Heron Trust)",
+   "where": "text",
+   "quote": "notice of intent filed by steven sears of david e. ross associates for marcia furtado of blue heron trust."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "public hearing",
+  "land use regulations",
+  "forestry",
+  "trails",
+  "grants",
+  "Shirley Village Reservoir",
+  "Whalom Lake"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jan passed out final copies of the land use regulations and pleasant street enhancement rfp."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2012-05-17",
  "docid": "4607",
@@ -12,23 +12,188 @@
  },
  "votes": [
   {
-   "motion": "approve the prior minutes",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes read and approved.",
+   "motion": "Approve the Secretary's Report, minutes read and approved.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "secretary's report: minutes read and approved."
   },
   {
-   "motion": "hire Jamie Rowe for up to 10 hours per week at $10 per hour for summer work",
-   "outcome": "unanimously approved",
-   "procedural": false,
-   "quote": "it was moved and approved unanimously that we hire jamie for up to 10/hours/week at $10/hr.",
+   "motion": "Hire Jamie Rowe for up to 10 hours per week at $10 per hour for the summer programming work.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "it was moved and approved unanimously that we hire jamie for up to 10/hours/week at $10/hr."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract; two votes recorded: prior minutes approved and summer hire approved unanimously. Additional motions on encoder, MacBook, and Nexus were postponed or tabled (no vote recorded).",
- "cost_usd": 0.0889485
+ "note": "Text is OCR of a single page with artifacts: the header reads \"May 174, 2012\" (read as May 17, the stated meeting date), \"June 11#\" in the next-meeting line, and a stray \"XW.M\" at the top. No public comment section, no adjournment motion, and no mover or seconder is printed for any motion. Only one substantive motion (hiring Jamie Rowe) has a recorded result; the mobile studio and MacBook items were postponed or tabled, not voted. The minutes were stamped received and filed June 12, 2012.",
+ "cost_usd": 0.003996120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: jo mclaughlin, john dextraze, robert haigh"
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: jo mclaughlin, john dextraze, robert haigh"
+  },
+  {
+   "name": "Robert Haigh",
+   "role": "sales tech at Access TV",
+   "status": "present",
+   "quote": "presentation by robert haigh, sales tech at access tv."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The vote on the mobile studio package was postponed until the June meeting.",
+   "quote": "any vote was postponed until the june meeting"
+  },
+  {
+   "decision": "The vote on a MacBook was tabled until the June meeting.",
+   "quote": "a vote on a macbook was also tabled until the june meeting."
+  },
+  {
+   "decision": "No decision was taken on the Nexus upgrade at Town Hall.",
+   "quote": "no decision was taken."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mobile studio package",
+   "what_was_recorded": "Robert Haigh described a mobile studio package with training, tech support and warranties; a vote was postponed to June.",
+   "figures_as_printed": [
+    "$31,783"
+   ],
+   "quote": "mobile studio package (cost $31,783) that would include training, tech support and warranties"
+  },
+  {
+   "topic": "Encoder (Q-Vidium) for live streaming",
+   "what_was_recorded": "A discussion of an encoder to enable live streaming, with an approximate cost given; no decision recorded.",
+   "figures_as_printed": [
+    "$4,500"
+   ],
+   "quote": "encoder, (q-vidium) that would enable us to stream live (cost approx. $4,500)"
+  },
+  {
+   "topic": "Nexus upgrade at Town Hall",
+   "what_was_recorded": "A discussion of the need for a Nexus upgrade at the Town Hall; no decision was taken.",
+   "figures_as_printed": [
+    "$13,000"
+   ],
+   "quote": "need for a nexus upgrade at the town hall ($13,000). no decision was taken."
+  },
+  {
+   "topic": "Hiring Jamie Rowe for summer part-time work",
+   "what_was_recorded": "Board approved unanimously hiring Jamie for up to 10 hours per week at $10 per hour.",
+   "figures_as_printed": [
+    "$10/hr"
+   ],
+   "quote": "it was moved and approved unanimously that we hire jamie for up to 10/hours/week at $10/hr."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "minutes approved",
+   "quote": "secretary's report: minutes read and approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Old Business: mobile studio package and encoder (Robert Haigh presentation)",
+   "resolution": "vote postponed to June meeting",
+   "quote": "any vote was postponed until the june meeting",
+   "tags": [
+    "mobile studio",
+    "encoder",
+    "live streaming",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Old Business: MacBook",
+   "resolution": "tabled to June meeting",
+   "quote": "a vote on a macbook was also tabled until the june meeting.",
+   "tags": [
+    "equipment",
+    "MacBook"
+   ]
+  },
+  {
+   "topic": "Old Business: Nexus upgrade at Town Hall",
+   "resolution": "no decision",
+   "quote": "there was also a discussion about the need for a nexus upgrade at the town hall ($13,000). no decision was taken.",
+   "tags": [
+    "Town Hall",
+    "Nexus",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Programming Update: hire Jamie Rowe",
+   "resolution": "approved unanimously",
+   "quote": "it was moved and approved unanimously that we hire jamie for up to 10/hours/week at $10/hr.",
+   "tags": [
+    "staffing",
+    "programming",
+    "summer"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Program Update",
+   "where": "text",
+   "quote": "proposal to hire jamie rowe to work this summer part-time (see program update)"
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "mobile studio",
+  "encoder",
+  "live streaming",
+  "MacBook",
+  "Town Hall Nexus",
+  "programming staff",
+  "hiring",
+  "equipment purchase"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

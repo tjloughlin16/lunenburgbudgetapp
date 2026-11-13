@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2015-03-31",
  "docid": "1214",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "take funding for painting the Town Hall out of the recommended FY16 Capital Plan",
+   "motion": "Take funding for painting the Town Hall out of the recommended FY16 Capital Plan.",
    "moved_by": "John",
    "seconded_by": "Heather",
    "outcome": "passed 4-0",
@@ -20,23 +20,23 @@
    "quote": "john moved to take funding for painting the town hall out of the recommended fy16 capital plan. heather seconded the motion. the cpc voted 4-0 to approve this motion."
   },
   {
-   "motion": "reallocate the $40,000 that had been allocated to paint the Town Hall to fund upgrading the network for the schools and the speed sign for the police department",
+   "motion": "Reallocate the $40,000 allocated to paint the Town Hall to fund upgrading the schools' network and the police speed sign.",
    "moved_by": "Heather",
    "seconded_by": "John",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "heather made a motion to reallocate the $40,000 that had been allocated to paint the town hail to fund upgrading the network for the schools and the speed sign for the police department. john seconded the motion and the committee approved the motion 4-0."
+   "quote": "john seconded the motion and the committee approved the motion 4-0."
   },
   {
-   "motion": "apply any unspent monies to the street sweeper and/or dump truck to reduce debt service costs",
+   "motion": "Apply any unspent monies to the street sweeper and/or dump truck to reduce debt service costs.",
    "moved_by": "Heather",
    "seconded_by": "Dennis",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "heather made a motion to apply any unspent monies to the street sweeper and/or dump truck to reduce debt service costs. dennis seconded the motion and the committee voted 4-0 to approve the motion."
+   "quote": "dennis seconded the motion and the committee voted 4-0 to approve the motion."
   },
   {
-   "motion": "approve the minutes of the January 13 meeting",
+   "motion": "Approve the minutes of the January 13 meeting.",
    "moved_by": "Dennis",
    "seconded_by": "Heather",
    "outcome": "passed 4-0",
@@ -44,7 +44,7 @@
    "quote": "dennis made a motion to approve the minutes of the january 13 meeting. heather seconded his motion and the committee approved the motion 4-0."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John",
    "seconded_by": "Heather",
    "outcome": "passed 4-0",
@@ -53,6 +53,233 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision. All votes recorded.",
- "cost_usd": 0.09031349999999999
+ "note": "OCR text from a scan with a garbled attendance block: the \"Present:\" and \"Absent:\" labels are separated from the names, so the attendance quotes are taken from the names line; Kerry Speidel's role is not printed. Typos in the source (\"Town Hail\", \"capital pian\") are left as printed. The minutes were submitted May 5, 2015, and approval status is not stated. Item 8 is discussion only. The minutes name no documents list; the only document mentioned is a spreadsheet described in passing.",
+ "cost_usd": 0.005747519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "kerry speidel, dennis mannone, jr., heather sroka, jamie toale, john henshaw"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "kerry speidel, dennis mannone, jr., heather sroka, jamie toale, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "kerry speidel, dennis mannone, jr., heather sroka, jamie toale, john henshaw"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "kerry speidel, dennis mannone, jr., heather sroka, jamie toale, john henshaw"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry speidel, dennis mannone, jr., heather sroka, jamie toale, john henshaw"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "absent",
+   "quote": "joanna bilotta-simeone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jamie Toale will advise the Library Board of Trustees of the CPC recommendation to apply the Town Meeting funds to a new boiler and energy controller instead of replacing the carpet, and request their concurrence.",
+   "quote": "jamie will advise the library board of trustees of the cpc recommendation to apply the funds that were"
+  },
+  {
+   "decision": "The CPC agreed to meet on May 5 at 4:00 in the Bilotta Meeting Room at Town Hall.",
+   "quote": "the cpc agreed to meet on may 5 at 4:00 in the bilotta meeting room at town hall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall painting",
+   "what_was_recorded": "The old bid was outdated, so actual costs would be higher than the $40,000 requested for painting the Town Hall.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "this was an old bid-actual costs would be higher than the $40,000 requested."
+  },
+  {
+   "topic": "Library carpet",
+   "what_was_recorded": "The $36,500 allocated in FY15 for the library carpet did not include the cost of moving the books, so the work could not be done without additional funding.",
+   "figures_as_printed": [
+    "$36,500"
+   ],
+   "quote": "$36,500 allocated in fy15 did not include the cost of moving the books so it could not be done without additional funding."
+  },
+  {
+   "topic": "Library boiler and energy controller",
+   "what_was_recorded": "The library boiler would cost $15,000 and the energy management controller would cost $12,000.",
+   "figures_as_printed": [
+    "$15,000",
+    "$12,000"
+   ],
+   "quote": "the boiler would cost $15,000 and the controller would cost $12,000."
+  },
+  {
+   "topic": "Schools network upgrade",
+   "what_was_recorded": "Funding $30,000 to upgrade network technology for the schools is necessary, and the upgrade would support the new Junior-Senior High School under construction.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "funding $30,000 to upgrade network technology for the schools is necessary to keep pace"
+  },
+  {
+   "topic": "Police speed monitoring and recording sign",
+   "what_was_recorded": "The speed monitoring and recording sign costs $12,000 and is the next highest priority item for the Police Department.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "the speed monitoring and recording sign which costs $12,000."
+  },
+  {
+   "topic": "Combined network and speed sign costs versus available funds",
+   "what_was_recorded": "The combined costs of the network upgrade and speed sign would be lower than the $40,000 available, so any unspent monies would go to the street sweeper and/or dump truck.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "because the combined costs of the network upgrade and the speed sign will be lower than the $40,000 that"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reallocation of the Town Hall painting funds to the schools network upgrade and the police speed sign.",
+   "amount_as_printed": "$40,000",
+   "outcome": "passed 4-0",
+   "quote": "john seconded the motion and the committee approved the motion 4-0."
+  },
+  {
+   "description": "Recommendation to re-apply the library carpet funds voted at Town Meeting to a new boiler and energy controller instead of the carpet; requires Library Board of Trustees concurrence.",
+   "amount_as_printed": "$36,500",
+   "outcome": "recommended, pending Library Board of Trustees concurrence",
+   "quote": "jamie will advise the library board of trustees of the cpc recommendation to apply the funds that were"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action; no public comment",
+   "quote": "meeting called to order by jamie toale at 4:03 pm.",
+   "tags": [
+    "call to order",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Freeing up FY16 capital plan funds: Town Hall painting and library carpet",
+   "resolution": "approved removing Town Hall painting from FY16 plan (4-0)",
+   "quote": "john moved to take funding for painting the town hall out of the recommended fy16 capital plan.",
+   "tags": [
+    "FY16 capital plan",
+    "Town Hall",
+    "library",
+    "carpet"
+   ]
+  },
+  {
+   "topic": "Reallocating the freed funds: library boiler, schools network, police speed sign",
+   "resolution": "approved reallocation (4-0); library item to go to Trustees for concurrence",
+   "quote": "jamie will advise the library board of trustees of the cpc recommendation to apply the funds that were",
+   "tags": [
+    "reallocation",
+    "library boiler",
+    "schools network",
+    "police speed sign"
+   ]
+  },
+  {
+   "topic": "Applying unspent monies to street sweeper and/or dump truck",
+   "resolution": "approved 4-0",
+   "quote": "dennis seconded the motion and the committee voted 4-0 to approve the motion.",
+   "tags": [
+    "debt service",
+    "street sweeper",
+    "dump truck"
+   ]
+  },
+  {
+   "topic": "Financing large capital items (spreadsheet model)",
+   "resolution": "discussion only; no action",
+   "quote": "john briefly described an excel spreadsheet that would let the committee model financing",
+   "tags": [
+    "financing",
+    "borrowing",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Very large multi-year projects (e.g. THMS asbestos removal)",
+   "resolution": "discussion only; no action",
+   "quote": "projects like these have the potential to displace other capital requests over time.",
+   "tags": [
+    "multi-year projects",
+    "THMS asbestos removal",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Approval of January 13 minutes",
+   "resolution": "approved 4-0",
+   "quote": "dennis made a motion to approve the minutes of the january 13 meeting. heather seconded his motion and the committee approved the motion 4-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for May 5 at 4:00 pm",
+   "quote": "the cpc agreed to meet on may 5 at 4:00 in the bilotta meeting room at town hall.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:25, 4-0",
+   "quote": "john made a motion to adjourn the meeting; heather seconded the motion and the committee approved the motion 4-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Excel spreadsheet for modeling financing of large capital items",
+   "where": "text",
+   "quote": "john briefly described an excel spreadsheet that would let the committee model financing"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY16 capital plan",
+  "Town Hall painting",
+  "library carpet",
+  "library boiler",
+  "schools network",
+  "police speed sign",
+  "debt service",
+  "financing",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

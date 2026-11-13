@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-02-25",
  "docid": "3687",
@@ -12,24 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Accept three additional antennas for 9 Chase Road",
+   "motion": "Accept the three additional antennas for 9 Chase Road (AT&T).",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bilotta-simeone made motion to accept the three additional antennas for 9 chase road, second, mr. bodkin jr. roll call vote - mr. bakaysa, aye; ms. bilotta-simeone, aye; mr. bodkin jr., aye; mr. lockwood, aye."
+   "quote": "ms. bilotta-simeone made motion to accept the three additional antennas for 9 chase road, second, mr. bodkin jr."
   },
   {
-   "motion": "Accept three additional antennas for 2005 Massachusetts Avenue",
-   "moved_by": "Ms. Bilotta-Simeone",
+   "motion": "Accept the three additional antennas for 2005 Massachusetts Avenue (AT&T).",
+   "moved_by": "Ms. Bilotta -Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bilotta-simeone made motion to accept the three additional antennas for 9 chase road, second, mr. bodkin jr. roll call vote - mr. bakaysa, aye; ms. bilotta-simeone, aye; mr. bodkin jr., aye; mr. lockwood, aye. at&t, 2005 ",
-   "quote_taken_from_text": true
+   "quote": "ms. bilotta -simeone made motion to accept the three additional antennas for 2005 m assachusetts avenue, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 1-14-13",
+   "motion": "Endorse the ANR Plan for Norman & Pamela Vincent, 20 Fire Road #19.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion, ms. bilot ta-simeone to endorse anr plan, second, mr. bodkin jr."
+  },
+  {
+   "motion": "Approve the minutes of 1-14-13.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -37,7 +44,7 @@
    "quote": "1-14-13, motion to approve, ms. bilotta-simeone, second, mr. lockwood."
   },
   {
-   "motion": "Approve minutes of 1-17-13",
+   "motion": "Approve the minutes of 1-17-13.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
@@ -45,7 +52,7 @@
    "quote": "1-17-13, motion to approve, ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 1-30-13 Aro Estates Public Hearing",
+   "motion": "Approve the minutes of 1-30-13 Aro Estates Public Hearing.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
@@ -53,16 +60,15 @@
    "quote": "1-30-13 aro estates public hearing, motion to approve, ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 2-13-13 Aro Estates Public Hearing Continuation",
-   "moved_by": "Ms. Bilotta-Simeone",
+   "motion": "Approve the minutes of 2-13-13 Aro Estates Public Hearing Continuation.",
+   "moved_by": "Ms. Bilotta -Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "2-13-13 aro estates public hearing continuation, motion to approve, ms. bilotta -simeone, second, mr. lockwood",
-   "quote_taken_from_text": true
+   "quote": "motion to approve, ms. bilotta -simeone, second, mr. lockwood."
   },
   {
-   "motion": "Approve minutes of 10-15-12 Executive session",
+   "motion": "Approve the minutes of 10-15-12 Executive session.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
@@ -70,7 +76,7 @@
    "quote": "10-15-12 executive, motion to approve, ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 1-17-13 Executive session",
+   "motion": "Approve the minutes of 1-17-13 Executive session.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
@@ -78,15 +84,217 @@
    "quote": "1-17-13 executive, motion to approve, ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn, ms. bilotta-simeone, second, mr. lockwood, adjourned 9:30 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Clean OCR. All votes recorded with clear motion language and outcomes stated for substantive votes (AT&T antennas and ANR) and for adjournment; minutes approval votes do not state explicit outcomes.",
- "cost_usd": 0.0433403
+ "dropped_unquoted": 0,
+ "note": "Text extract with broken spacing and line breaks; quotes were copied with those spaces as printed where needed. Minutes-approval and adjournment motions have no recorded result, so outcome is 'not stated'. The Vincent ANR vote is recorded as 'All aye' with no count, so outcome is 'passed'. Several items are tabled with no content. No public comment is recorded. The 'Moved_by' for the Vincent ANR is given as Ms. Bilotta-Simeone, correcting the printed 'Bilot ta-Simeone' spacing.",
+ "cost_usd": 0.00526032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Kokk Family Realty Trust (552 West Townsend Road) replacement plan will follow the normal process.",
+   "quote": "plan will follow normal process."
+  },
+  {
+   "decision": "Ms. Benson will send MRPC information to Board members via electronic mail.",
+   "quote": "mrpc- ms. benson will send information to board members via electronic mail."
+  },
+  {
+   "decision": "Agenda items under Old Business and Planning Director's Reports were tabled due to the late hour.",
+   "quote": "below agenda items were tabled due to the late hour."
+  },
+  {
+   "decision": "The minutes listed for approval were signed, including the 2-13-13 minutes signed by Mr. Bakaysa under G.L. c39, Section 23D, Mullin Rule Certification.",
+   "quote": "mr. bakaysa was absent at the 2-13-13 continuation, but signed the minutes under g.l. c39, section 23d, mullin rule certification."
+  },
+  {
+   "decision": "Meeting schedule: Aro Estates Public Hearing Continuation February 27 at Town Hall; Board meetings March 11 at Town Hall and March 25 at Ritter Memorial Building.",
+   "quote": "february 27 - aro estates public hearing continuation, town hall"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2014 Capital Plan recommended by the Capital Planning Committee",
+   "what_was_recorded": "Ms. Benson, as Capital Planning Committee Chair, reported the FY2014 Capital Plan recommended at a set amount, with the breakdown on file in the Planning Office.",
+   "figures_as_printed": [
+    "$523,483.00"
+   ],
+   "quote": "ms. benson, as capital planning committee chair, noted the fy2014 capital plan recommended by the capital planning committee at $523,483.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: AT&T, 9 Chase Road",
+   "resolution": "approved three additional antennas; see separate minutes",
+   "quote": "at&t, 9 chase road - see separate minutes . ms. bilotta-simeone made motion to accept the three additional antennas for 9",
+   "tags": [
+    "telecom",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public hearing: AT&T, 2005 Massachusetts Avenue",
+   "resolution": "approved three additional antennas; see separate minutes",
+   "quote": "at&t, 2005 massachusetts avenue - see separate minutes .",
+   "tags": [
+    "telecom",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public hearing: 35 Leominster Road",
+   "resolution": "see separate minutes; no action recorded here",
+   "quote": "35 leominster road- see separate minutes.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "ANRs",
+   "resolution": "Vincent ANR plan endorsed; Kokk plan to follow normal process",
+   "quote": "plan endorsed by planning board.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved and signed",
+   "quote": "minutes approval: the following minutes were signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; FY2014 Capital Plan figure reported",
+   "quote": "capital planning committee - ms. benson, as capital planning committee chair, noted the fy2014 capital plan",
+   "tags": [
+    "capital plan",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Old business: APR application status",
+   "resolution": "tabled",
+   "quote": "old business: apr (agricultural preservation restriction) application status- tabled",
+   "tags": [
+    "APR",
+    "old business"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business / development status",
+   "resolution": "tabled, except MRPC information to be emailed",
+   "quote": "planning director's reports/new business/development status reports:",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "tabled",
+   "quote": "notices & communications: tabled",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "tabled; dates listed",
+   "quote": "meeting schedule: tabled",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "tabled",
+   "quote": "member issues: tabled",
+   "tags": [
+    "members"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:30 PM",
+   "quote": "motion to adjourn, ms. bilotta-simeone, second, mr. lockwood, adjourned 9:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, Norman & Pamela Vincent, 20 Fire Road #19",
+   "where": "text",
+   "quote": "norman & pamela vincent, 20 fire road #19 - motion, ms. bilot ta-simeone to endorse anr plan"
+  },
+  {
+   "name": "New plan submitted by Heli Kokk, Trustee of Kokk Family Realty Trust, 552 West Townsend Road",
+   "where": "text",
+   "quote": "new p lan submitted to replace previous submittal that was in non-compliance of lot size under the zoning bylaw for outlying district."
+  },
+  {
+   "name": "FY2014 Capital Plan breakdown (on file in Planning Office)",
+   "where": "text",
+   "quote": "plan breakdown on file in planning office."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "telecom antennas",
+  "ANR",
+  "public hearings",
+  "capital plan",
+  "minutes approval",
+  "tabled items"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

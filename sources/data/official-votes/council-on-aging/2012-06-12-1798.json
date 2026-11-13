@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-06-12",
  "docid": "1798",
@@ -12,43 +12,441 @@
  },
  "votes": [
   {
-   "motion": "Approve COA minutes from May 8, 2012",
+   "motion": "Approve the COA minutes of the meeting of May 8, 2012.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to approve the coa minutes of the meeting of may 8, 2012. all approved, motion carried."
   },
   {
-   "motion": "Approve By-Law Committee Minutes from March 8, 2012",
+   "motion": "Approve the By-Law Committee Minutes dated March 8, 2012.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to approve the by-law committee minutes dated march 8, 2012. all approved, motion carried"
   },
   {
-   "motion": "Close Eagle House Senior Center on Fridays due to budget cuts",
+   "motion": "Close the Eagle House Senior Center on Fridays due to budget cuts as per the recommendation of the Director.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and seconded to close the eagle house senior center on fridays due to budget cuts as per the recommendation of the director. all approved, motion carried."
   },
   {
-   "motion": "Elect Mary Lynn Conrad as Chairperson and Pete Lincoln as Vice-Chairperson for FY13",
+   "motion": "Elect Mary Lynn Conrad as Chairperson and Pete Lincoln as Vice-Chairperson of the Council on Aging for FY13.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and seconded to elect mary lynn conrad as chairperson and pete lincoln as vice-chairperson to the council on aging for fy13. all approved, motion carried."
+   "quote": "a motion was made and seconded to elect mary lynn conrad as chairperson and pete lincoln as vice-chairperson to the council on aging for fy13."
   },
   {
-   "motion": "Accept all COA Sub-Committee reports as presented",
+   "motion": "Accept all COA Sub-Committee reports as presented.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "a motion was made and seconded to accept all coa sub-committee reports as presented. all approved,"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion was made and seconded to adjourn the meeting. all approved, motion carried"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. All votes clearly recorded with outcomes stated as \"all approved\" or \"motion carried\"; no movers or seconders named in any vote.",
- "cost_usd": 0.1149015
+ "note": "Text is OCR of a scanned minutes packet. Pages 4-5 (FY12 COA accounts table) are OCR of a scanned table; column alignment and some labels (e.g., month headers, vendor names) are garbled, so figures are listed as OCR printed them and their mapping to accounts is not reliable. Minutes carry an \"approved at 8/14/12 COA Meeting\" note. Votes record no mover or seconder names. Sub-committee vote reads \"All approved,\" with no explicit carried/failed phrase; outcome taken as passed. No public comment section appears in the minutes.",
+ "cost_usd": 0.010681920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: peter lincoln, (chairperson), mary lynn conrad, (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: peter lincoln, (chairperson), mary lynn conrad, (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: peter lincoln, (chairperson), mary lynn conrad, (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Fred Crellin",
+   "status": "present",
+   "quote": "fred crellin, sis montuori, barbara brown, deb seeley, jim hays, susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "status": "present",
+   "quote": "fred crellin, sis montuori, barbara brown, deb seeley, jim hays, susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "fred crellin, sis montuori, barbara brown, deb seeley, jim hays, susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "present",
+   "quote": "fred crellin, sis montuori, barbara brown, deb seeley, jim hays, susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "status": "present",
+   "quote": "fred crellin, sis montuori, barbara brown, deb seeley, jim hays, susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "fred crellin, sis montuori, barbara brown, deb seeley, jim hays, susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "absent",
+   "quote": "excused: jane doyle"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: lloyd carlson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The COA granted the request for Eagle House building use for the Lunenburg Friendly Seniors Fall Fair (October 12 set-up, October 13, 2012, 8-4PM).",
+   "quote": "a request for eagle house building use for the lunenburg friendly seniors fall fair being held on october 13, 2012 from 8-4pm with set up on october 12, 2012 was read. request was granted."
+  },
+  {
+   "decision": "A memo will be sent to the Selectmen's office requesting re-appointment of Jim Hays and Joyce Wass for another 3-year term.",
+   "quote": "a memo will be sent to the selectmen's office requesting that jim hays & joyce wass be re-appointed for another 3 year term."
+  },
+  {
+   "decision": "Sis Montuori will actively seek new members for the COA board.",
+   "quote": "sis montuori will be actively seeking new members for the coa board."
+  },
+  {
+   "decision": "Director's Evaluation minutes from past sub-committee meetings deferred to be voted on at the August meeting.",
+   "quote": "deb seeley distributed minutes from past director evaluation meetings for the board to review. they will be voted on at the august meeting."
+  },
+  {
+   "decision": "The completed Director's Evaluation was given to the Chairperson and will be distributed to the Director and the Town Manager.",
+   "quote": "ms. seeley also gave the completed director's evaluation to the chairperson which will also be distributed to the director and the town manager"
+  },
+  {
+   "decision": "The Director's Evaluation Subcommittee annual report will be distributed in hard copy at the August meeting.",
+   "quote": "the director's evaluation subcommittee annual report will be distributed in hard copy at the august meeting"
+  },
+  {
+   "decision": "All COA Sub-Committees will be restructured at the August meeting.",
+   "quote": "pete lincoln informed the coa board that all coa sub-committees will be restructured at the august meeting."
+  },
+  {
+   "decision": "Meals on Wheels clients will be offered a frozen meal on Thursday to make up for the Friday meal, per the Director's plan.",
+   "quote": "meals on wheels clients will be offered the option of receiving a frozen meal on thursday to make up for the friday meal."
+  },
+  {
+   "decision": "The Director will send the Meal Site Manager to a Serve Safe course in September.",
+   "quote": "will be sending the meal site manager to attend this course in september."
+  },
+  {
+   "decision": "The Director will work directly with the Town Manager on revising job descriptions in the Salary Administration Plan.",
+   "quote": "she will also be working directly with the town manager on revising job descriptions in the salary administration plan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Relief Day contributions",
+   "what_was_recorded": "Pete Lincoln and his wife Deb will contribute $500 each, designated to the Council on Aging.",
+   "figures_as_printed": [
+    "$500."
+   ],
+   "quote": "pete lincoln and his wife deb will be contributing $500. each to be designated to go to the council on aging."
+  },
+  {
+   "topic": "Restoring COA budget funding",
+   "what_was_recorded": "Pete Lincoln hopes $12K will be restored to the COA budget so the senior center can reopen on Fridays.",
+   "figures_as_printed": [
+    "$12K"
+   ],
+   "quote": "his hope is that funding of $12k will be restored to the coa budget so that the senior center can be opened on"
+  },
+  {
+   "topic": "Kitchen refrigerator, steam table and oven in FY13 Capital Plan",
+   "what_was_recorded": "A new refrigerator, steam table and oven were included in the FY13 Capital Plan; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a new refrigerator, along with a steam table & oven, was included in the fy13 capital plan."
+  },
+  {
+   "topic": "Friday closure savings and staff hour cuts",
+   "what_was_recorded": "Closing Fridays reduces utility bills, cuts one day of Meal Site Manager payroll, and cuts the Outreach Coordinator one hour a week; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "cut 1 day ot payroll from the meal site manager."
+  },
+  {
+   "topic": "COA financial report, 541 accounts",
+   "what_was_recorded": "A COA financial report for the 541 accounts was distributed to members; no figures printed in the minutes text.",
+   "figures_as_printed": [],
+   "quote": "a coa financial report for the 541 accounts was distributed for members"
+  },
+  {
+   "topic": "FY12 COA accounts table (attached pages)",
+   "what_was_recorded": "An attached FY12 COA accounts table lists petty cash, supplies, gas, electric, water, sewer and monthly utility bills with dollar amounts; OCR column alignment is unreliable.",
+   "figures_as_printed": [
+    "$100.00",
+    "$260.00",
+    "$4400.00",
+    "$6600.00",
+    "$800.00",
+    "$1300.00",
+    "$600.00",
+    "$12.00",
+    "$40.00",
+    "$230.00"
+   ],
+   "quote": "fy12 coa accounts electric $6600.00 $432.94 $209.10 water $800.00 sewer $1300.00"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer out of the Gas line into the Electric line, recorded on the FY12 COA accounts table.",
+   "amount_as_printed": "$600.00",
+   "outcome": "recorded as transferred (per the printed accounts table; no board vote recorded)",
+   "quote": "total $600.00 transferred out of gas line & put into electric line"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved COA minutes of May 8, 2012 and By-Law Committee minutes of March 8, 2012",
+   "quote": "a motion was made and seconded to approve the coa minutes of the meeting of may 8, 2012.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Lunenburg Relief Day (taken out of order)",
+   "resolution": "discussed; no action",
+   "quote": "lunenburg relief day: (taken out of order) pete lincoln reported on the upcoming lunenburg relief",
+   "tags": [
+    "relief day",
+    "budget",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action recorded",
+   "quote": "the director reported that the kitchen refrigerator is leaking water",
+   "tags": [
+    "director",
+    "facilities",
+    "staff training"
+   ]
+  },
+  {
+   "topic": "Finance/Informational Report",
+   "resolution": "financial report distributed",
+   "quote": "finance/informational report: a coa financial report for the 541 accounts was distributed for members",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Budget Cuts/New Hours at Eagle House",
+   "resolution": "approved closing Eagle House Senior Center on Fridays",
+   "quote": "budget cuts/new hours at eagle house: the director informed the board that due to budget cuts the",
+   "tags": [
+    "budget cuts",
+    "eagle house",
+    "hours"
+   ]
+  },
+  {
+   "topic": "Election of Officers FY13",
+   "resolution": "elected Mary Lynn Conrad Chairperson and Pete Lincoln Vice-Chairperson",
+   "quote": "election of officers chairman/vice chairman fy13",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "COA BBQ/Volunteer Recognition Ceremony",
+   "resolution": "scheduled for August; no vote",
+   "quote": "the annual coa bbq/volunteer recognition ceremony will be held on august 22",
+   "tags": [
+    "events",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Recreation Area Behind Eagle House",
+   "resolution": "discussed; no action",
+   "quote": "recreation area behind eagle house: due to the property lines between the jones house and the",
+   "tags": [
+    "property",
+    "bocce court"
+   ]
+  },
+  {
+   "topic": "Sub-committee reports and Director's Evaluation",
+   "resolution": "reports given; Director's Evaluation minutes deferred to August",
+   "quote": "sub-committee reports: finance, board development, advocacy, bylaw, director's evaluation:",
+   "tags": [
+    "sub-committees",
+    "director evaluation",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Vote to Accept End of Year Reports",
+   "resolution": "accepted all sub-committee reports as presented",
+   "quote": "vote to accept end of year reports: the director's evaluation subcommittee annual report will be",
+   "tags": [
+    "reports",
+    "sub-committees"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "Fall Fair building use request granted",
+   "quote": "correspondence: a request for eagle house building use for the lunenburg friendly seniors fall fair",
+   "tags": [
+    "correspondence",
+    "eagle house",
+    "events"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "no action; chair remarks",
+   "quote": "general discussion: pete lincoln spoke and said that serving as the chairperson",
+   "tags": [
+    "chair",
+    "remarks"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:05 a.m.",
+   "quote": "meeting adjourned at 11:05 a.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA financial report for the 541 accounts",
+   "where": "list",
+   "quote": "a coa financial report for the 541 accounts was distributed for members"
+  },
+  {
+   "name": "Bylaw change forms (Bylaw Committee)",
+   "where": "list",
+   "quote": "barbara brown distributed bylaw change forms which the bylaw committee are requesting be used in the future"
+  },
+  {
+   "name": "Minutes from past Director Evaluation meetings",
+   "where": "list",
+   "quote": "deb seeley distributed minutes from past director evaluation meetings for the board to review."
+  },
+  {
+   "name": "COA Sub-Committee annual reports",
+   "where": "list",
+   "quote": "all sub-committee annual reports were distributed to board members for review."
+  },
+  {
+   "name": "Request for Eagle House building use, Lunenburg Friendly Seniors Fall Fair",
+   "where": "list",
+   "quote": "a request for eagle house building use for the lunenburg friendly seniors fall fair being held on october 13, 2012"
+  },
+  {
+   "name": "FY12 COA ACCOUNTS table (attached page)",
+   "where": "list",
+   "quote": "fy12 coa accounts electric $6600.00 $432.94 $209.10 water $800.00 sewer $1300.00"
+  },
+  {
+   "name": "Lunenburg Council on Aging Bylaw Committee Annual Report 5/8/2012",
+   "where": "list",
+   "quote": "lunenburg council on aging bylaw committee annual report 5/8/2012"
+  },
+  {
+   "name": "Council on Aging Board Development Subcommittee End of Year Report",
+   "where": "list",
+   "quote": "council on aging board development subcommittee end of year report"
+  },
+  {
+   "name": "Council on Aging Advocacy Subcommittee End of Year Report 2012",
+   "where": "list",
+   "quote": "council on aging advocacy subcommittee end of year report"
+  },
+  {
+   "name": "Council on Aging Director's Evaluation Sub-Committee Annual Report 2012",
+   "where": "list",
+   "quote": "council on aging director's evaluation sub-committee annual report 2012"
+  },
+  {
+   "name": "Director's Evaluation Subcommittee Annual report (to be distributed in August)",
+   "where": "text",
+   "quote": "the director's evaluation subcommittee annual report will be distributed in hard copy at the august meeting"
+  },
+  {
+   "name": "Final Job Description and Job Evaluation Tool (Director's Evaluation)",
+   "where": "text",
+   "quote": "after several drafts and changes, a final job description and job evaluation tool were approved and"
+  },
+  {
+   "name": "Memo to Selectmen's office re: Jim Hays and Joyce Wass re-appointment",
+   "where": "text",
+   "quote": "a memo will be sent to the selectmen's office requesting that jim hays & joyce wass be re-appointed for another 3 year term."
+  },
+  {
+   "name": "By-Law Committee Minutes dated March 8, 2012",
+   "where": "text",
+   "quote": "a motion was made and seconded to approve the by-law committee minutes dated march 8, 2012."
+  },
+  {
+   "name": "FY13 Capital Plan",
+   "where": "text",
+   "quote": "a new refrigerator, along with a steam table & oven, was included in the fy13 capital plan."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "budget cuts",
+  "senior center hours",
+  "officers election",
+  "relief day",
+  "sub-committees",
+  "director evaluation",
+  "bylaws",
+  "accounts table",
+  "transfer",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "finance/informational report: a coa financial report for the 541 accounts was distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

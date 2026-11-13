@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-10-15",
  "docid": "2810",
@@ -12,31 +12,368 @@
  },
  "votes": [
   {
-   "motion": "Accept the amended minutes from September 17, 2015",
+   "motion": "Accept the amended minutes of 9-17-15.",
    "moved_by": "Dick",
    "seconded_by": "Gare",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion from dick, second by gare to accept amended minutes. vote by roll call: richard (aye), donna (aye), gare (aye), kiirja (aye), lars (aye), harry (aye, via internet)."
   },
   {
-   "motion": "Approve the solicitation policy revision process with K&P recommendations for adoption at next meeting",
+   "motion": "Take the solicitation policy draft home for review, with Lars to bring a fresh copy incorporating the K&P recommendations to the next meeting.",
    "moved_by": "Gare",
    "seconded_by": "Donna",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "gare moved that take the draft home to review and that lars will bring a \"fresh\" copy of the policy with the recommendations by k&p amended into the policy for next meeting; the \"fresh\" copy, if accepted, will be added to general policies of the library; donna seconded, no further discussion. vote by roll call: richard (aye), donna (aye), gare (aye), kiirja (aye), lars (aye), harry (aye, via internet)."
+   "quote": "gare moved that take the draft home to review and that lars will bring a \"fresh\" copy of the policy with the recommendations by k&p amended"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Kiirja",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "gare moved to adjourn second by kiirja vote by roll call: richard (aye), donna (aye), gare (aye), kiirja (aye), lars (aye), harry (aye, via internet) in favor at 8:14 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.14024550000000002
+ "note": "Text extraction, not a scan. Vote outcomes are recorded as \"passed\" because the minutes list roll-call ayes without a printed tally. Minutes print the call-to-order time as \"6:475p.m.\" (typo kept in quote). Trustee roles other than Chairperson and Secretary are not printed. Only one dollar figure appears ($ 3,338.21).",
+ "cost_usd": 0.00944582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: richard mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "remote",
+   "quote": "noted: harry kubetz is participating via internet; he is geographically distant."
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "",
+   "status": "present",
+   "quote": "attending: richard mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: richard mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "present",
+   "quote": "attending: richard mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "respectfully submitted, lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "attending: richard mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: susan visser"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Library website walk-through and demonstration by Martha postponed to a later date because of a scheduling conflict with the Wallace community room.",
+   "quote": "library website \"walk through\" and demonstration by martha: it will take place at later date"
+  },
+  {
+   "decision": "Martha Moore to send the MAR number report before the next meeting.",
+   "quote": "mar number report to be sent out by martha moore before next meeting."
+  },
+  {
+   "decision": "Trustees encouraged to use only the official town-assigned email address for trustee business.",
+   "quote": "we are encouraged to use only this mail for trustee business."
+  },
+  {
+   "decision": "Trustees must approve any posting of signs for the skateboard ban / off-limits area; Martha Moore to check wording with other libraries and towns for the sign.",
+   "quote": "martha moore will check with other libraries and towns on wording for the sign."
+  },
+  {
+   "decision": "Richard to email the trustees the director evaluation form used at previous evaluations, for discussion at the next trustee meeting.",
+   "quote": "richard will email form to the trustees used at previous evaluations to be discussed during the next trustee meeting."
+  },
+  {
+   "decision": "Martha to do another survey of area libraries on hours and usage.",
+   "quote": "martha will do another survey of area libraries on hours, usage etc."
+  },
+  {
+   "decision": "Agenda items for the upcoming meeting set: website demonstration, room use policy, solicitation and skateboard policy, director's evaluation form, library trust funds, re-establish policy subcommittee, BOS energy policy.",
+   "quote": "agenda items for upcoming meeting"
+  },
+  {
+   "decision": "Next trustee meeting set for Wallace community center room, November 19, 2015 at 6:45 p.m.",
+   "quote": "wallace community center room, november 19, 2015 at 6:45 p.m."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget status",
+   "what_was_recorded": "Director reported the budget is on target; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "director's report - as per handout o budget - on target"
+  },
+  {
+   "topic": "Friends of LPL book and bake sale",
+   "what_was_recorded": "Friends reported total sales of baked goods and books for the book and bake sale.",
+   "figures_as_printed": [
+    "$ 3,338.21"
+   ],
+   "quote": "$ 3,338.21 total in sales of baked goods and books."
+  },
+  {
+   "topic": "Upcoming budget discussion talking points",
+   "what_was_recorded": "Board comments on talking points for the upcoming budget discussion, including the library as a bargain for the town and possible extended opening hours; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "comments on upcoming budget discussion - talking points: \"what a bargain for the town the library is\""
+  },
+  {
+   "topic": "ARIS financial report",
+   "what_was_recorded": "Financial report due second week of October, which the state requires of the town for spending; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "next report (financial) due second week of october, which is what the state requires of the town to spend"
+  },
+  {
+   "topic": "State Library funding formula",
+   "what_was_recorded": "Martha to attend a meeting on proposed changes to the State Library funding formula; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "martha to attend meeting to discuss proposed changes to the state library funding formula on monday"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and remote participation",
+   "resolution": "noted; all votes by roll call because one member participates by internet",
+   "quote": "the lplbot meeting was called to order at 6:475p.m. by chairperson richard mailloux.",
+   "tags": [
+    "procedure",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "o public comment o no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of 9-17-15",
+   "resolution": "accepted as amended",
+   "quote": "motion from dick, second by gare to accept amended minutes. vote by roll call",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; budget, staffing, MLS training, website, browser issue noted",
+   "quote": "director's report - as per handout",
+   "tags": [
+    "director",
+    "staffing",
+    "website"
+   ]
+  },
+  {
+   "topic": "YA and children's librarian reports",
+   "resolution": "received as separate handouts",
+   "quote": "ya librarian's report - per separate hand out",
+   "tags": [
+    "programs"
+   ]
+  },
+  {
+   "topic": "Programs",
+   "resolution": "noted",
+   "quote": "zombie night on friday night (for ya) in entire library 10/23",
+   "tags": [
+    "programs"
+   ]
+  },
+  {
+   "topic": "Building and maintenance",
+   "resolution": "noted",
+   "quote": "preparing for new burner and management system to be installed",
+   "tags": [
+    "building maintenance"
+   ]
+  },
+  {
+   "topic": "ARIS report",
+   "resolution": "noted; MAR number report to follow",
+   "quote": "annual report information survey (usage of library data - hard copy distributed today)",
+   "tags": [
+    "ARIS",
+    "statistics"
+   ]
+  },
+  {
+   "topic": "Trustee email addresses and OML training",
+   "resolution": "discussed; trustees encouraged to use town address",
+   "quote": "tying in to oml discussion and preservation of email and documentation history",
+   "tags": [
+    "OML",
+    "email",
+    "training"
+   ]
+  },
+  {
+   "topic": "Policy for solicitation",
+   "resolution": "draft taken home; fresh copy with K&P recommendations for next meeting",
+   "quote": "policy for solicitation - lars presented the response and recommendations from k&p on the subject",
+   "tags": [
+    "policy",
+    "solicitation"
+   ]
+  },
+  {
+   "topic": "Skateboard ban and area in front of library",
+   "resolution": "sign wording to be checked; trustees must approve sign postings",
+   "quote": "policy on using the area in front of library property including parking lot to be off limits",
+   "tags": [
+    "policy",
+    "skateboard"
+   ]
+  },
+  {
+   "topic": "Plans for Director's evaluation",
+   "resolution": "evaluation form to be emailed for discussion at next meeting",
+   "quote": "plans for director's evaluation",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "noted",
+   "quote": "friends of lpl update - kiirja went to their meeting and presented a summary of their discussions",
+   "tags": [
+    "Friends of LPL",
+    "book sale"
+   ]
+  },
+  {
+   "topic": "Board comments on budget and hours",
+   "resolution": "discussed; director to survey area libraries on hours",
+   "quote": "comments on upcoming budget discussion - talking points",
+   "tags": [
+    "budget",
+    "hours"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meeting",
+   "resolution": "listed",
+   "quote": "agenda items for upcoming meeting",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Next trustee meeting",
+   "resolution": "scheduled November 19, 2015",
+   "quote": "wallace community center room, november 19, 2015 at 6:45 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:14 p.m. on roll-call vote",
+   "quote": "gare moved to adjourn second by kiirja",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for October 15, 2015",
+   "where": "list",
+   "quote": "lplbot agenda for october 15, 2015"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "director's report ya librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "director's report ya librarian's report"
+  },
+  {
+   "name": "Children librarian’s report",
+   "where": "list",
+   "quote": "children librarian's report aris statistics"
+  },
+  {
+   "name": "ARIS statistics",
+   "where": "list",
+   "quote": "aris statistics community outreach log"
+  },
+  {
+   "name": "Community Outreach Log",
+   "where": "list",
+   "quote": "community outreach log"
+  },
+  {
+   "name": "K&P email and Solicitation Policy recommendations",
+   "where": "list",
+   "quote": "k&p email and solicitation policy recommendations"
+  },
+  {
+   "name": "Annual report information survey (usage of library data), hard copy distributed at meeting",
+   "where": "text",
+   "quote": "annual report information survey (usage of library data - hard copy distributed today)"
+  },
+  {
+   "name": "MAR number report",
+   "where": "text",
+   "quote": "mar number report to be sent out by martha moore before next meeting."
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "policy",
+  "solicitation policy",
+  "skateboard ban",
+  "director evaluation",
+  "OML training",
+  "budget",
+  "programs",
+  "building maintenance",
+  "Friends of LPL",
+  "staffing",
+  "remote participation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

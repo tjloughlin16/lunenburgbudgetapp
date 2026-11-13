@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-08-22",
  "docid": "4477",
@@ -12,15 +12,177 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mark Erickson",
    "seconded_by": "Dave Matthews",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "mark erickson moved and dave matthews seconded a motion to adjourn."
+   "quote": "at 7:25 mark erickson moved and dave matthews seconded a motion to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09311950000000001
+ "note": "OCR text of a single page; no vote tallies printed. Item 2 records approval of prior minutes with no motion or vote recorded. Attendance is printed only for absent members; others are marked not stated, except where the minutes show action (Mackin called to order; Erickson and Matthews moved and seconded adjournment). The agenda says \"Mike Mackin\" while the roster says \"Michael Mackin\". No dollar figures, transfers, or public comment appear.",
+ "cost_usd": 0.0036598200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "loxi jo calmes, superintendent"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative",
+   "status": "not stated",
+   "quote": "colleen shapiro, sc representative"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative, Chair",
+   "status": "present",
+   "quote": "7:00 pm called to order by mike mackin, chair"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "present",
+   "quote": "at 7:25 mark erickson moved and dave matthews seconded a motion to adjourn."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "absent",
+   "quote": "nathan lockwood, planning board representative - absent"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative, Vice Chair",
+   "status": "present",
+   "quote": "at 7:25 mark erickson moved and dave matthews seconded a motion to adjourn."
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "absent",
+   "quote": "mike barney, citizen-at-large - absent"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen-at-large",
+   "status": "absent",
+   "quote": "brian frank, citizen-at-large - absent"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "absent",
+   "quote": "richard cohen, citizen-at-large - absent"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry speidel, town manager - absent"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "not stated",
+   "quote": "john londa, director of facilities"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal",
+   "status": "not stated",
+   "quote": "brian spadafino, lhs principal"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meeting minutes of July 9 and July 25, 2012 approved, with one date error noted and changed (no motion or tally recorded).",
+   "quote": "approved meeting minutes from july 9 and july 25, 2012 (one error in date was noted and changed)."
+  },
+  {
+   "decision": "An onsite briefing tour on August 30, 2012 will be held, with John Londa giving background and a tour of facilities.",
+   "quote": "an onsite briefing tour is scheduled for august 30."
+  },
+  {
+   "decision": "Packets to be made available to all committee members by 5 pm on September 14; September 12 meeting to cover pickup location and review of score sheets; completed score sheets due by evening of September 24, 2012; short list of 3-7 candidates to be determined.",
+   "quote": "packets will be made available to all committee members by 5 pm on september 14."
+  },
+  {
+   "decision": "October 2 and 4 (6-9 pm) held for interviews to be scheduled.",
+   "quote": "october 2 and 4 are to be held for interviews to be scheduled (6-9 pm)."
+  },
+  {
+   "decision": "Interview candidates to prepare a 45 minute presentation with an additional 15 minutes for committee questions.",
+   "quote": "interview candidates will be asked to prepare a 45 minute presentation with an additional 15 minutes allowed for questions from the committee."
+  },
+  {
+   "decision": "Meetings set for September 12 and 26 and October 10 and 24; future meetings to be planned for the second and fourth Wednesday of every month.",
+   "quote": "future meetings will be planned for the second and fourth wednesday of every month."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "7:00 pm called to order by mike mackin, chair"
+  },
+  {
+   "topic": "Approval of meeting minutes (July 9 and July 25, 2012)",
+   "resolution": "approved (no recorded vote)",
+   "quote": "approved meeting minutes from july 9 and july 25, 2012 (one error in date was noted and changed)."
+  },
+  {
+   "topic": "Update on RFS",
+   "resolution": "no action",
+   "quote": "several requests for rfs have come in. bos has signed agreement with msba so things are moving along."
+  },
+  {
+   "topic": "Interview preparation and updated timeline",
+   "resolution": "timeline set; no vote recorded",
+   "quote": "an onsite briefing tour is scheduled for august 30."
+  },
+  {
+   "topic": "Future meetings",
+   "resolution": "dates set; no vote recorded",
+   "quote": "next meetings scheduled for september 12 and 26."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn made; result not stated",
+   "quote": "at 7:25 mark erickson moved and dave matthews seconded a motion to adjourn."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Packets (interview candidate packets for committee members)",
+   "where": "text",
+   "quote": "packets will be made available to all committee members by 5 pm on september 14."
+  },
+  {
+   "name": "Score sheets",
+   "where": "text",
+   "quote": "completed score sheets will be due by the evening of september 24, 2012."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "RFS",
+  "interviews",
+  "timeline",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

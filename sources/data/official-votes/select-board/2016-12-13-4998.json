@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-12-13",
  "docid": "4998",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the pole petition as detailed in the public notice and attached diagram",
+   "motion": "Approve the pole petition as detailed in the public notice and attached diagram (National Grid, Sunset Lane).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: t. alonzo to approve the pole petition as detailed in the public notice and attached diagram 2nd: p. bertram vote: all in favor"
   },
   {
-   "motion": "Approve the 2017 Common Victualer license renewals",
+   "motion": "Approve the 2017 license renewals as presented (Common Victualer and related renewals).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,22 +28,20 @@
    "quote": "motion: t. alonzo to approve the license renewals as presented 2nd.p. bertram vote: all in favor"
   },
   {
-   "motion": "Approve the Class I auto dealer license for Recreational Dimensions, Inc. d/b/a Central Mass Power Sports",
+   "motion": "Approve the Class I auto dealer license for Recreational Dimensions, Inc. d/b/a Central Mass Power Sports.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2nd: t. alonzo to approve the class i auto dealer license for recreational dimensions, inc. d/b/a central mass power vote: all in favor sports",
-   "quote_taken_from_text": true
+   "quote": "motion: p. bertram 2nd: t. alonzo to approve the class i auto dealer license for recreational dimensions, inc. d/b/a central mass power"
   },
   {
-   "motion": "Approve the retail alcohol license transfer for Hadwen Market",
+   "motion": "Approve the retail alcohol license transfer request for Hadwen Market as presented by the applicant through their attorney (vote recorded; the pledge of the license was not acted on).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: p. bertram to approve the retail alcohol license transfer request as presented by the applicant through their attorney attorney porter as",
-   "quote_taken_from_text": true
+   "quote": "motion: t. alonzo 2\"d: p. bertram to approve the retail alcohol license transfer request as presented by the applicant through their attorney"
   },
   {
    "motion": "Adjourn the meeting at 8:21 p.m.",
@@ -55,6 +53,336 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; names and characters transcribed as they appear in the scanned minutes.",
- "cost_usd": 0.1380385
+ "note": "OCR text with some garbled characters (for example 'tw urrent', 'recieved', 'Mi. Alonzo'); quotes copied as printed. Votes are recorded only as 'All in Favor' with no vote counts or roll call. The alcohol license transfer vote is recorded in the minutes as a motion, but the pledge of the license was expressly not acted on. Some committee report and public comment passages are long and partly garbled in OCR.",
+ "cost_usd": 0.00888682,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Acting Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman"
+  },
+  {
+   "name": "Rich Nalesky",
+   "role": "National Grid representative",
+   "status": "present",
+   "quote": "national grid representative rich nalesky presented for the pole petition."
+  },
+  {
+   "name": "Matthew Porter",
+   "role": "Attorney, representing the applicant",
+   "status": "present",
+   "quote": "attorney matthew porter presented for the license transfer request, stating it was a very straightforward transaction."
+  },
+  {
+   "name": "Anjuben Patel",
+   "role": "proposed licensee",
+   "status": "present",
+   "quote": "anjuben patel who is present tonight has many years of liquor store experience."
+  },
+  {
+   "name": "Joseph Vargeletis",
+   "role": "proposed store manager",
+   "status": "present",
+   "quote": "joseph vargeletis, also present will be the manager and has convenience store experience."
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel, KP Law",
+   "status": "present",
+   "quote": "attorney bard reviewed some past cases and how they were handled."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board took no action on the pledge of the Hadwen Market alcohol license to the lender.",
+   "quote": "the board took no action on the request to approve the pledge."
+  },
+  {
+   "decision": "Mr. Alonzo requested that the larger Pay As You Throw trash bags be ordered (a request; no vote recorded).",
+   "quote": "mr. alonzo requested the larger pay as you throw trash bags be ordered."
+  },
+  {
+   "decision": "Acting Town Manager Burney said future bylaws would be sent to Town Counsel for review.",
+   "quote": "mr. burney apologized and stated he would make sure future bylaws would be sent for review."
+  },
+  {
+   "decision": "The Board will review the legal services RFP responses once the new Town Manager begins (no vote recorded).",
+   "quote": "this board will go over them once the new town manager begins here."
+  },
+  {
+   "decision": "Mr. Alonzo suggested Town Counsel attend the Board three or four times annually; Ms. Bertram agreed (no vote recorded).",
+   "quote": "mi. alonzo suggested mr. bard coming into the board three or four times annually. ms. bertram agreed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable and payroll warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant and three payroll warrants.",
+   "figures_as_printed": [
+    "$1,746,634.34",
+    "$778,243.30",
+    "$560.04",
+    "$492,481.68"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $1,746,634.34; a payroll warrant in the amount of $778,243.30, another payroll warrant in the amount of $560.04, and a payroll deductions warrant in the amount of $492,481.68."
+  },
+  {
+   "topic": "2017 common victualer license renewal fee",
+   "what_was_recorded": "Acting Town Manager Burney read the remaining 2017 renewals, with the common victualer fee printed as $25.00.",
+   "figures_as_printed": [
+    "$25.00"
+   ],
+   "quote": "mr. burney stated these are some remaining renewals for 2017. he read the list aloud: common victualer $25.00"
+  },
+  {
+   "topic": "Class I auto dealer license renewal fee",
+   "what_was_recorded": "The Class I auto dealer license renewal fee was read aloud.",
+   "figures_as_printed": [
+    "$100.00"
+   ],
+   "quote": "mr. burney read the auto dealer license renewal: class l auto dealer $100.00"
+  },
+  {
+   "topic": "Pancake breakfast fundraiser price",
+   "what_was_recorded": "Ms. Luck announced the pancake breakfast price of $2.00 per person, with take-out available.",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "ms. luck reminded everyone about the pancake breakfast tomorrow morning from 8:00 to 11:00 a.m. at eagle house senior center. $2.00 per person, take out is available."
+  },
+  {
+   "topic": "Salvation Army toll booth fundraiser proceeds",
+   "what_was_recorded": "Public comment described the Salvation Army toll booth fundraiser's record collections and stated that 83% of the money collected stays in the local community.",
+   "figures_as_printed": [
+    "83%"
+   ],
+   "quote": "83% of the money collected stays in the local community to go to hundreds of families."
+  },
+  {
+   "topic": "School budget requests",
+   "what_was_recorded": "Ms. Luck reported that school principals presented 2018 budget requests, with an increase in requests to hire new personnel.",
+   "figures_as_printed": [],
+   "quote": "ms. luck reported the school committee met last week and school principals presented their 2018 budget requests."
+  },
+  {
+   "topic": "Forest stewardship plan grant",
+   "what_was_recorded": "The Conservation Commission received a grant for a forest stewardship plan; RFPs went to three foresters and one bid was returned.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the commission received a $20,000 grant for a forest stewardship plan."
+  },
+  {
+   "topic": "Legal services budget and RFP",
+   "what_was_recorded": "Ms. Bertram stated legal services is a significant portion of the budget, and the Board discussed going out for legal services proposals.",
+   "figures_as_printed": [],
+   "quote": "ms. bertram stated legal services is a significant portion of the budget."
+  },
+  {
+   "topic": "Complete Streets free bike rack program",
+   "what_was_recorded": "A free bike rack program was described; the minutes say it is a reimbursable program.",
+   "figures_as_printed": [],
+   "quote": "there is a free bike rack program that mrpc is looking into."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "topic": "Salvation Army toll booth fundraiser and public concern",
+   "quote": "mr. toale stated at the november 22, 2016 meeting the board approved a toll booth fundraiser request by the salvation army"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "topic": "Salvation Army record and community support",
+   "quote": "ms. bertram stated she did research it as well, there were a couple of isolated incidents and none locally a few"
+  },
+  {
+   "speaker": "Ms. Luck",
+   "topic": "Toll booth experience and pancake breakfast reminder",
+   "quote": "ms. luck concurred. she worked the toll booth by the intersection of whalom road and electric ave"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Toll booth collections thanks",
+   "quote": "mr. alonzo stated he collected in the town center and was very happy to do so."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "topic": "Pancake breakfast announcement",
+   "quote": "ms. luck reminded everyone about the pancake breakfast tomorrow morning from 8:00 to 11:00 a.m. at eagle house senior center."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (Salvation Army toll booth fundraiser; pancake breakfast)",
+   "resolution": "discussed; no action",
+   "quote": "mr. toale stated at the november 22, 2016 meeting the board approved a toll booth fundraiser request by the salvation army",
+   "tags": [
+    "public comment",
+    "Salvation Army",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Pole petition for Sunset Lane (National Grid)",
+   "resolution": "approved",
+   "quote": "7:05 p.m. pole petition for sunset lane",
+   "tags": [
+    "pole petition",
+    "National Grid",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "2017 license renewals",
+   "resolution": "approved",
+   "quote": "2017 license renewals (continued)",
+   "tags": [
+    "licenses",
+    "common victualer"
+   ]
+  },
+  {
+   "topic": "Class I auto dealer license renewal",
+   "resolution": "approved",
+   "quote": "mr. burney read the auto dealer license renewal:",
+   "tags": [
+    "licenses",
+    "auto dealer"
+   ]
+  },
+  {
+   "topic": "Petition for transfer of alcohol license for Hadwen Market",
+   "resolution": "transfer approved; pledge no action",
+   "quote": "7:15 pm petition for transfer of alcohol license for hadwen market",
+   "tags": [
+    "alcohol license",
+    "transfer",
+    "Hadwen Market"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrants signed",
+   "quote": "minutes/ warrants/action file issues the board signed an accounts payable warrant in the amount of",
+   "tags": [
+    "warrants",
+    "accounts payable",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "ms. luck reported the school committee met last week and school principals presented their 2018 budget",
+   "tags": [
+    "committee reports",
+    "school",
+    "conservation",
+    "planning",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Joel Bard of KP Law - Town Counsel review",
+   "resolution": "discussed; no action; Board to review legal RFP later",
+   "quote": "joel bard of kp law - town counsel review",
+   "tags": [
+    "town counsel",
+    "legal services",
+    "RFP",
+    "KP Law"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:21 p.m.",
+   "quote": "to adjourn the meeting at 8:21 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sunset Lane pole petition public notice and attached plan/diagram (National Grid)",
+   "where": "text",
+   "quote": "location approximately as shown on plan attached."
+  },
+  {
+   "name": "Request for Proposal (RFP) for legal services",
+   "where": "text",
+   "quote": "he was surprised to see the request for proposal (rfp) for legal services."
+  },
+  {
+   "name": "Letter from the Sewer Commission",
+   "where": "text",
+   "quote": "board recieved a letter from the sewer commission who is very pleased with your work."
+  },
+  {
+   "name": "Opinion letters from the Zoning Enforcement Officer",
+   "where": "text",
+   "quote": "they have at least two opinion letters from the zoning enforcement officer."
+  },
+  {
+   "name": "Article 5 from the November 28, 2016 Special Town Meeting",
+   "where": "text",
+   "quote": "mr. burney reported there was discussion on article 5 from the november 28, 2016 special town meeting."
+  }
+ ],
+ "tags": [
+  "select board",
+  "toll booth fundraiser",
+  "Salvation Army",
+  "pole petition",
+  "National Grid",
+  "license renewals",
+  "alcohol license transfer",
+  "warrants",
+  "committee reports",
+  "town counsel",
+  "legal services RFP",
+  "zoning and planning",
+  "Complete Streets",
+  "Acting Town Manager"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "location approximately as shown on plan attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-01-18",
  "docid": "1785",
@@ -12,6 +12,76 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR text. No formal votes recorded. The minutes describe a discussion and an agreement to invite the Town Manager to the next meeting, but no motions, seconds, or vote outcomes are stated. A meeting adjournment and prior approval are mentioned but not recorded as formal votes here.",
- "cost_usd": 0.0824415
+ "note": "OCR scan of a typed minutes page with garbled words (e.g., 'ctear', 'rote', 'Evatuation', 'thei', 'participatio'); the meeting date is printed as 'Friday, January ls, 2012' and the metadata gives 2012-01-18. No motions or votes are recorded, and the closing line 'The meeting adjourned at 9:35 a.m.' records no vote. The header 'Minutes Approved at 9/11/12 COA Meeting' is printed on the page. No budget figures or documents are listed.",
+ "cost_usd": 0.00232732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Seeley",
+   "role": "committee member; Chair, Director's Evaluation Sub-Committee",
+   "status": "present",
+   "quote": "present were committee members deb seeley, fred crellin, jane doyle, jim hays and invited guest, doreen noble, council on aging director."
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, fred crellin, jane doyle, jim hays and invited guest, doreen noble, council on aging director."
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, fred crellin, jane doyle, jim hays and invited guest, doreen noble, council on aging director."
+  },
+  {
+   "name": "Jim Hays",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, fred crellin, jane doyle, jim hays and invited guest, doreen noble, council on aging director."
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "invited guest, Council on Aging Director",
+   "status": "present",
+   "quote": "present were committee members deb seeley, fred crellin, jane doyle, jim hays and invited guest, doreen noble, council on aging director."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Sub-Committee agreed to invite Town Manager Kerry Speidel to its next meeting to clarify responsibilities and get direction on how to proceed.",
+   "quote": "to clarify responsibilities and get direction on how they should proceed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "COA Director's job description and evaluation; role of the COA under the new Charter",
+   "resolution": "continued; Town Manager to be invited to next meeting",
+   "quote": "the purpose of the meeting was to begin the process for completing the coa director's job description and evaluation.",
+   "tags": [
+    "director evaluation",
+    "job description",
+    "charter government",
+    "town manager"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Council on Aging",
+  "director evaluation",
+  "job description",
+  "sub-committee",
+  "Charter government",
+  "town manager"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

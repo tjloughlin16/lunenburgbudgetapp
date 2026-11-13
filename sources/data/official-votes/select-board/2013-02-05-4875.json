@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-02-05",
  "docid": "4875",
@@ -12,47 +12,431 @@
  },
  "votes": [
   {
-   "motion": "Approve the application for in-ground gasoline storage with a bond requirement stipulation",
+   "motion": "Approve the in-ground gasoline storage permit application for 134 Leominster/Shirley Road, with a bond requirement added as a stipulation.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved that with the added stipulation of a bond requirement the application for in ground gasoline storage be approved. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo moved that with the added stipulation of a bond requirement the application for in ground gasoline storage be approved. ms. bertram seconded."
   },
   {
-   "motion": "Move forward with putting the debt exclusion ballot question before the people to decide whether to purchase the Aro Farm property",
+   "motion": "Place the Aro Farm debt exclusion question on the Special Election ballot of 03/16/13 as worded.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Tom Alonzo",
    "outcome": "failed 3-2",
    "procedural": false,
-   "quote": "ms. bertram made the motion to move forward with putting this ballot question before the people of lunenburg to make the decision as to whether or not to purchase this property. mr. alonzo seconded."
+   "quote": "ms. bertram made the motion to move forward with putting this ballot question before the people of lunenburg to make the decision as to whether or not to purchase this property."
   },
   {
-   "motion": "Rescind holding the Special Town Meeting",
+   "motion": "Rescind holding the Special Town Meeting.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to rescind holding the special town meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo moved to rescind holding the special town meeting. ms. bertram seconded."
   },
   {
-   "motion": "Open the Warrant for the Annual Town Meeting to be held on 05/04/13",
+   "motion": "Open the Warrant for the Annual Town Meeting to be held on 05/04/13.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved to open the warrant for the annual town meeting to be held on 05/04/13. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. alonzo moved to open the warrant for the annual town meeting to be held on 05/04/13. ms. bertram seconded."
   },
   {
-   "motion": "End the meeting",
+   "motion": "End the meeting.",
    "moved_by": "Paula Bertram",
-   "seconded_by": "Steven M. deBettencourt",
+   "seconded_by": "Steven M. deBettereourt",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "being no further business ms. bertram motioned to end the meeting. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business ms. bertram motioned to end the meeting. mr. debettencourt seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Scanned document; OCR'd via macOS Vision. All five votes are clearly recorded and readable.",
- "cost_usd": 0.15507949999999998
+ "dropped_unquoted": 1,
+ "note": "OCR text, with errors. The Selectman's name appears as \"Steven M. deBettereourt\" in the roll and \"Mr. deBettencourt\" in the body; the roll form is used. Chair is not named in the minutes. The FY14-18 forecast tables are garbled, so their figures are recorded only where legible; some figures are printed with OCR errors (e.g., \"5484,457\", \"S2,069,277\"). Votes are recorded with results as printed; the votes are not assigned a named mover in the text for the gasoline permit beyond the motion sentence. No public comment speakers are recorded. Minutes approval, executive session and other procedural votes are not recorded in this text.",
+ "cost_usd": 0.014880820000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Member, Board of Selectmen (listed in roll; Chair not named in minutes)",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting roon at town hall as scheduled with david matthews,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, cari (ernie) sund, paula bertram, steven m. debettereourt and town manager kerry speide"
+  },
+  {
+   "name": "Cari (Ernie) Sund",
+   "role": "Member, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, cari (ernie) sund, paula bertram, steven m. debettereourt and town manager kerry speide"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, cari (ernie) sund, paula bertram, steven m. debettereourt and town manager kerry speide"
+  },
+  {
+   "name": "Steven M. deBettereourt",
+   "role": "Member, Board of Selectmen (called Mr. deBettencourt in the body)",
+   "status": "present",
+   "quote": "steven m. debettereourt and town manager kerry speide"
+  },
+  {
+   "name": "Kerry Speide",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "steven m. debettereourt and town manager kerry speide"
+  },
+  {
+   "name": "Carolynn Parker",
+   "role": "representing SMD Development, LLC",
+   "status": "present",
+   "quote": "carolynn parker, representing smd development, llc came before the bos to make the request for a gasoline storage"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Matthews requested that a Planning Board interview scheduling begin and be placed on the BOS agenda for next week; Ms. Speidel to check with the Planning Board Director on the status.",
+   "quote": "mr. matthews requested that scheduling of interviews for candidates for the planning board begin and should be on the bos agenda for next week."
+  },
+  {
+   "decision": "The Revenue & Expenditure Assumptions item (FY14-18 forecast) was carried to the next week's meeting for further discussion.",
+   "quote": "after due and diligent discussion mr. matthews stated that we would talk about this item at next weeks meeting."
+  },
+  {
+   "decision": "Ms. Bertram will forward information from the Montachusett Regional Trails Coalition to the Planning Board, Conservation Commission and Open Space Committee.",
+   "quote": "ms. bertram will forward all information to the planning board, conservation commission and open space committee."
+  },
+  {
+   "decision": "Ms. Bertram requested that the IMA draft be circulated to the entire BOS.",
+   "quote": "she requested that it be circulated to the entire bos"
+  },
+  {
+   "decision": "Mr. Matthews asked that it be mentioned that the State housing funding be restricted to Senior Housing.",
+   "quote": "mr. matthews requested that it be mentioned that this state funding be restricted to only senior housing."
+  },
+  {
+   "decision": "Ms. Speidel asked Mass PV1 to file an application to enter the DPU Queue.",
+   "quote": "mass pv1 has yet to file an application to get into the dpu queue, which ms. speidel has asked them to do."
+  },
+  {
+   "decision": "The Town Engineer is to attend the 2/19/13 BOS meeting to give more detailed information on Summer Street.",
+   "quote": "our engineer will be at the 2/19/13 bos meeting to give more detailed information on this project"
+  },
+  {
+   "decision": "Ms. Speidel will meet with the Eagle Heights group the week after next to determine how to proceed.",
+   "quote": "ms. speidel will be meeting with them the week after next to figure out how to proceed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Aro Farm purchase via debt exclusion",
+   "what_was_recorded": "Board members discussed whether the Town can afford the purchase; no purchase price is printed.",
+   "figures_as_printed": [],
+   "quote": "he does not think it is a good use of our funds, the town can't afford it, and he has not changed his mind on that."
+  },
+  {
+   "topic": "Property tax revenue projections FY14-FY18",
+   "what_was_recorded": "Revenue assumption shows property tax increase of 2.5% per year with yearly dollar figures; OCR of the table is partly garbled.",
+   "figures_as_printed": [
+    "$466,543",
+    "5484,457",
+    "$502,818",
+    "$521,639",
+    "$540,930"
+   ],
+   "quote": "property tax increases 2.5% per year $466,543"
+  },
+  {
+   "topic": "Free Cash draw to bring Stabilization Fund to policy minimum",
+   "what_was_recorded": "Revenue increased by an additional amount to reflect increased draw on Free Cash for the Stabilization Fund.",
+   "figures_as_printed": [
+    "$31,790"
+   ],
+   "quote": "note in needs forecast summary, revenue has been increased by an additional $31,790 to reflect increased draw on free cash to bring stabilization fund up to required policy minimum"
+  },
+  {
+   "topic": "DPW crack seal program",
+   "what_was_recorded": "Assumption to include funding for a Crack Seal Program.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "include funding for crack seal program to prolong road life, $50k"
+  },
+  {
+   "topic": "Veterans' benefits",
+   "what_was_recorded": "Assumption to increase Veterans' Benefits to reflect benefits granted.",
+   "figures_as_printed": [
+    "$5k",
+    "$10k"
+   ],
+   "quote": "increase veteran's benefits from $5k to $10k to reflect benefits granted"
+  },
+  {
+   "topic": "Unemployment funding",
+   "what_was_recorded": "Assumption to reduce Unemployment funding to the historic level.",
+   "figures_as_printed": [
+    "$25k"
+   ],
+   "quote": "unclassified- reduce unemployment to $25k, which has been historic funding level."
+  },
+  {
+   "topic": "General Reserve Fund",
+   "what_was_recorded": "Assumption to increase the General Reserve Fund.",
+   "figures_as_printed": [
+    "$50k",
+    "$75k"
+   ],
+   "quote": "unclassified - general reserve fund, increase from $50k to $75k, represents 0.25%"
+  },
+  {
+   "topic": "Capital Improvement Plan (CIP) funding",
+   "what_was_recorded": "Assumption to fund CIP at a level that will be impossible to maintain as Fire Trucks come up for replacement.",
+   "figures_as_printed": [
+    "$500k"
+   ],
+   "quote": "other - fund cip at $500k, will be impossible to maintain that reduced level going"
+  },
+  {
+   "topic": "Fire per diem coverage",
+   "what_was_recorded": "Needs-forecast assumption to add per diem coverage funding in increments.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "fire: add funding for per diem coverage in $50k increments"
+  },
+  {
+   "topic": "Road Management Program / road funding",
+   "what_was_recorded": "Board discussed the Road Management Program figure and proposed phasing in funding in increments; no vote.",
+   "figures_as_printed": [
+    "$880k",
+    "$800k",
+    "$50k",
+    "$100k"
+   ],
+   "quote": "a road management program which came up with a figure of $880k per year"
+  },
+  {
+   "topic": "Road cost per taxpayer example",
+   "what_was_recorded": "Town Manager example of a per-year cost to fix roads.",
+   "figures_as_printed": [
+    "$50 per year"
+   ],
+   "quote": "it's going to cost you another $50 per year to fix your roads"
+  },
+  {
+   "topic": "Eagle Heights fee waivers / donation of building",
+   "what_was_recorded": "Discussion of fee waivers and donating the building to save the developer money; Ms. Bertram objected given the Sewer Enterprise fund.",
+   "figures_as_printed": [
+    "$100k"
+   ],
+   "quote": "because it would save them $100k and they would be able to count the full value of the building"
+  },
+  {
+   "topic": "State housing bond funding",
+   "what_was_recorded": "DHCD reported an additional amount of funding from the Legislature.",
+   "figures_as_printed": [
+    "$10m"
+   ],
+   "quote": "dhcd recently received an additional $10m in funding"
+  },
+  {
+   "topic": "State Housing Program replenishment bill",
+   "what_was_recorded": "A House bill would replenish the State Housing Program; Ms. Speidel contacted representatives asking for support.",
+   "figures_as_printed": [
+    "$1.4b"
+   ],
+   "quote": "which would replenish $1.4b in the state housing program"
+  },
+  {
+   "topic": "Unitil basic service rate vs market (municipal aggregation)",
+   "what_was_recorded": "Unitil's basic service rate increased; current market rate is higher; Town to return to the matter when market rates improve.",
+   "figures_as_printed": [
+    "7.23 cents per kw",
+    "7.5 cents per kw"
+   ],
+   "quote": "currently unitil's rates are 7.23 cents per kw and currently the market is at 7.5 cents per kw."
+  },
+  {
+   "topic": "Warrant amounts",
+   "what_was_recorded": "Three warrant totals listed under the 1/30, 1/28 and 2/5 warrant dates.",
+   "figures_as_printed": [
+    "$557,942.99",
+    "$612,164.05",
+    "$511,253.35"
+   ],
+   "quote": "w41-13 w16 p13 w42-13 $557,942.99 $612,164.05 $511,253.35"
+  },
+  {
+   "topic": "Projected deficit tables FY14-FY18",
+   "what_was_recorded": "Five-year needs forecast tables with projected deficits printed; OCR of the tables is too garbled to itemize figures reliably.",
+   "figures_as_printed": [],
+   "quote": "total: projected deficit from needs forecast"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Free Cash draw to fund the Stabilization Fund deposit, per the Town Manager's revenue assumptions.",
+   "outcome": "Proposed in the Town Manager's assumptions; no vote recorded.",
+   "amount_as_printed": "$31,790",
+   "quote": "note in needs forecast summary, revenue has been increased by an additional $31,790 to reflect increased draw on free cash to bring stabilization fund up to required policy minimum"
+  },
+  {
+   "description": "Fund Stabilization Fund at 5% minimum as required by policy, by transfer from Free Cash.",
+   "outcome": "Listed as an assumption; no vote recorded.",
+   "amount_as_printed": "not stated",
+   "quote": "other - fund stabilization fund at 5% minimum as required by policy. transfer from free cash."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no comments recorded",
+   "quote": "7:00pm public comment announcements"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; fundraiser announced",
+   "quote": "tom alonzo announced that the boys & girls club of lunenburg will be holding a fundraiser at lunenburg high school"
+  },
+  {
+   "topic": "Gasoline storage permit, 134 Leominster/Shirley Road (SMD Development LLC)",
+   "resolution": "approved with bond stipulation",
+   "quote": "mr. alonzo moved that with the added stipulation of a bond requirement the application for in ground gasoline storage be approved."
+  },
+  {
+   "topic": "Solar PPA and PILOT (Mass PV1, EPG Solar, Borrego)",
+   "resolution": "discussed; no action",
+   "quote": "review and/or execute power purchase agreement and pilot agreement for solar for mass pv1 and/or pilot for epg solar"
+  },
+  {
+   "topic": "Debt exclusion ballot question, Aro Farm, Special Town Meeting",
+   "resolution": "ballot question failed 3-2; Special Town Meeting rescinded 5-0",
+   "quote": "ms. bertram made the motion to move forward with putting this ballot question before the people of lunenburg to make the decision as to whether or not to purchase this property."
+  },
+  {
+   "topic": "Revenue & Expenditure Assumptions, 5-year forecast FY14-18",
+   "resolution": "continued to next week",
+   "quote": "review revenue & expenditure assumptions for 5 year forecast, fy14-18"
+  },
+  {
+   "topic": "Open warrant for Annual Town Meeting, 05/04/13",
+   "resolution": "approved (warrant opened, open until 3/25/13)",
+   "quote": "open warrant for annual town meeting, 05/04/13"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "listed; no action recorded",
+   "quote": "5. minutes/warrants/action file issues"
+  },
+  {
+   "topic": "Committee reports (Planning Board, MPO, Capital Planning, Cable, Trails, Sewer, IMA)",
+   "resolution": "reports only; no action",
+   "quote": "ms. bertram attended the planning board public hearing last thursday for aro estates"
+  },
+  {
+   "topic": "Town Manager reports: Eagle Heights, Summer Street, Municipal Aggregation",
+   "resolution": "reports; no action",
+   "quote": "eagle heights project - ms. speidel has been in communication with jon juhl"
+  },
+  {
+   "topic": "Appointments, re-appointments, resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none"
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:50 PM",
+   "quote": "meeting ended at 9:50pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public Hearing Notice to Abutters (application of SMD Development, LLC)",
+   "where": "text",
+   "quote": "mr. matthews read into record the public hearing notice to abutters on the application of smd development,"
+  },
+  {
+   "name": "Fire Suppression plan (134 Leominster/Shirley Road)",
+   "where": "text",
+   "quote": "a fire suppression plan has been submitted to the fire department which has been signed off on by the fire department"
+  },
+  {
+   "name": "Revenue & Expenditure Assumptions for 5 Year Forecast, FY14-18",
+   "where": "text",
+   "quote": "ms. speidel reviewed her revenue & expenditure assumptions for 5 year forecast, fy14-18 which included the following:"
+  },
+  {
+   "name": "Needs Forecast Summary",
+   "where": "text",
+   "quote": "note in needs forecast summary, revenue has been increased by an additional $31,790"
+  },
+  {
+   "name": "Warrant for the Annual Town Meeting, 05/04/13",
+   "where": "text",
+   "quote": "mr. alonzo moved to open the warrant for the annual town meeting to be held on 05/04/13."
+  },
+  {
+   "name": "Schedule Z",
+   "where": "text",
+   "quote": "the town would need to file a schedule z and unitil will decide whether they will be issuing a check or credits."
+  },
+  {
+   "name": "Draft IMA",
+   "where": "text",
+   "quote": "ms. bertram mentioned that both she and mr. alonzo were given a draft of the ima back in december"
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "it completely throws out the whole pavement management plan"
+  },
+  {
+   "name": "Road Management Program",
+   "where": "text",
+   "quote": "a road management program which came up with a figure of $880k per year"
+  }
+ ],
+ "tags": [
+  "gasoline storage",
+  "solar net metering",
+  "debt exclusion",
+  "Aro Farm conservation purchase",
+  "special town meeting",
+  "five-year forecast FY14-18",
+  "annual town meeting warrant",
+  "road management",
+  "housing",
+  "Eagle Heights",
+  "Summer Street",
+  "municipal aggregation",
+  "planning board",
+  "sewer"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-04-25",
  "docid": "5561",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Authorize operations pending Chief Procurement Officer confirmation, with total funding of $8,000, with two I/I reduction activities including meter on stick investigation and TV cameraing of up to 1,000 linear feet in Whalom area",
+   "motion": "Authorize operations, pending Chief Procurement Officer confirmation that it does not violate procurement rules, to proceed with vendor(s) of choice with total funding of $8,000 for two I/I reduction activities (meter-on-a-stick investigation north of Whalom Road; TV cameraing of up to 1,000 linear feet south of Whalom Road).",
    "moved_by": "Joan Pease",
    "seconded_by": "John Reynolds",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "a motion was made by joan pease, seconded by john reynolds i move that the commission authorize operations, pending"
   },
   {
-   "motion": "Approve a waiver for Conrad's Drive-in seafood pending logs from last date of cleaning after closing and notification when opens",
+   "motion": "Approve a waiver for the seasonal drive-in seafood restaurant when closed, pending logs from the last date of cleaning after closing, and that the restaurant notify the Commission when it opens.",
    "moved_by": "Joe Anderson",
    "seconded_by": "John Reynolds",
    "outcome": "passed",
@@ -29,6 +29,196 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; page 2 is blank (===PAGE 2===). First motion's outcome is not recorded in the minutes provided.",
- "cost_usd": 0.08927750000000001
+ "note": "Text is partial: page 1 begins mid-announcements, and page 2 has no readable text. No call to order, roll call, approval of prior minutes, or adjournment appears in this extract. The $8,000 motion has no recorded result. 'Joe' is named once without a surname and may or may not be Joe Anderson. The Town Manager is recorded as unable to attend, yet 'She said' is attributed to her, so her status is ambiguous. The drive-in restaurant name is garbled in OCR and is not reproduced. The vote on the waiver is recorded as 'all voted in favor' with no count.",
+ "cost_usd": 0.00740352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl said they are working hard to try and firm up the inflow/infiltration reduction plan.",
+   "role": "not stated"
+  },
+  {
+   "name": "Joan Pease",
+   "status": "present",
+   "quote": "a motion was made by joan pease, seconded by john reynolds",
+   "role": "not stated"
+  },
+  {
+   "name": "John Reynolds",
+   "status": "present",
+   "quote": "a motion was made by joan pease, seconded by john reynolds",
+   "role": "not stated"
+  },
+  {
+   "name": "Joe Anderson",
+   "status": "present",
+   "quote": "joe anderson made a motion that we approve a waiver pending the logs",
+   "role": "not stated"
+  },
+  {
+   "name": "Joe",
+   "status": "not stated",
+   "quote": "joe asked if jack is asking them to get to the root of the cause",
+   "role": "not stated; minutes do not say whether this is Joe Anderson"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "absent",
+   "quote": "but jack rodriquenz and the town manager were unable to attend.",
+   "role": "not stated (DPW contact referred to as Jack)"
+  },
+  {
+   "name": "Town Manager",
+   "status": "absent",
+   "quote": "but jack rodriquenz and the town manager were unable to attend.",
+   "role": "Town Manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Carl will email Jack, with the consensus of the Commissioners, questions on pump station reports (meaning of 'cleaned up', ETA for resuming reports, rationale, and Leominster Road runtime units).",
+   "quote": "carl will email jack (with the consensus of the commissioners) any questions/answers the commission is looking for."
+  },
+  {
+   "decision": "Carl will ask Jack whether a manhole maintenance record exists and discuss a manhole maintenance plan with Jack.",
+   "quote": "carl agreed that we should ask if there is a maintenance record/document and discuss a plan with jack for manhole maintenance."
+  },
+  {
+   "decision": "The Commission asked the Town Manager to give guidance on the procurement process.",
+   "quote": "the commission asked that the town manager give us guidance on the procurement process."
+  },
+  {
+   "decision": "The removal project will not be done this spring because it would go through the bid process.",
+   "quote": "would have to go through the bid process; because of that it will not be done this spring."
+  },
+  {
+   "decision": "Carl would like 'documentation' (how maintenance is documented in the field) added as a future agenda item.",
+   "quote": "carl would like as a future agenda item \"documentation\"."
+  },
+  {
+   "decision": "Clarified that the Chair or any member may send an email without checking with other members unless representing the group.",
+   "quote": "they do not have to check with the other members unless they are representing the group."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Removal project cost estimate",
+   "what_was_recorded": "The Town Manager said the value of the removal project is approximately $50K and must go through the bid process.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "the value of what we are trying to do will be approximately $50k and would have to go through the bid process"
+  },
+  {
+   "topic": "Funding for two I/I reduction tasks",
+   "what_was_recorded": "The proposed motion authorizes a total funding of $8,000 for the meter-on-a-stick investigation and TV cameraing.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "with a total funding of $8,000, with two i/1 reduction"
+  },
+  {
+   "topic": "Lion's Club meat bingo entry fee",
+   "what_was_recorded": "Announcement that the Lion's Club meat bingo entry fee is $20.",
+   "figures_as_printed": [
+    "$20"
+   ],
+   "quote": "the entry fee is $20."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "vacancy"
+   ],
+   "quote": "there is a one-year term open with no candidates."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment received",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment - none tonight."
+  },
+  {
+   "topic": "Removal Planning (scope of work FY17/18, timing, bid process)",
+   "resolution": "motion to authorize two I/I tasks ($8,000) made; result not recorded; procurement guidance requested from Town Manager",
+   "tags": [
+    "inflow and infiltration",
+    "procurement",
+    "budget",
+    "bid process"
+   ],
+   "quote": "removal planning (scope of work fy17/18, timing, bid process) - carl said they are working hard to try and"
+  },
+  {
+   "topic": "DPW Operations Issues (food establishment visits, pump station report)",
+   "resolution": "no action; Carl to email Jack with questions",
+   "tags": [
+    "food establishments",
+    "pump stations",
+    "DPW"
+   ],
+   "quote": "dpw operations issues - food establishment visits-no updates on jack's visits."
+  },
+  {
+   "topic": "Manhole Rehab Project",
+   "resolution": "no action; work reported as in progress",
+   "tags": [
+    "manholes",
+    "contractor"
+   ],
+   "quote": "john said he saw the weston & sampson vehicle and believes they are in the process."
+  },
+  {
+   "topic": "System Maintenance Plan",
+   "resolution": "future agenda item requested; Carl to include question in request to Jack",
+   "tags": [
+    "maintenance",
+    "documentation",
+    "manholes"
+   ],
+   "quote": "system maintenance plan (existing and future planning actions, manhole dishes)"
+  },
+  {
+   "topic": "Drive-in seafood restaurant waiver request",
+   "resolution": "approved, pending conditions",
+   "tags": [
+    "waiver",
+    "food establishment"
+   ],
+   "quote": "joe anderson made a motion that we approve a waiver pending the logs"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pump Station Report",
+   "where": "text",
+   "quote": "pump station report- we are not receiving them."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "inflow and infiltration",
+  "procurement",
+  "manhole rehabilitation",
+  "pump station",
+  "food establishment waiver",
+  "budget authorization",
+  "partial minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-04-08",
  "docid": "4881",
@@ -12,92 +12,588 @@
  },
  "votes": [
   {
-   "motion": "Approve the request for use of public grounds for a fundraising event for the Lunenburg Boys & Girls Club on 5/17/2014",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Toale",
+   "motion": "Approve use of the public grounds for a fundraising event for the Lunenburg Boys & Girls Club on 5/17/2014.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve the request for the use of the public grounds for a fundraising event for the lunenburg boys & girls club on 5/17/2014. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to approve the request for the use of the public grounds for a fundraising event for the lunenburg boys & girls club on 5/17/2014. mr. toale seconded."
   },
   {
-   "motion": "Approve the Pedlar's License for Wesley Falk, d/b/a Solar City",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Toale",
+   "motion": "Approve the Pedlar's License for Wesley Falk, d/b/a Solar City.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the pedlar's license for wesley falk, d/b/a solar city. mr. toale seconded on vote, motion carried, 4 in favor, 0 opposed. ",
-   "quote_taken_from_text": true
+   "quote": "mr. matthews moved to approve the pedlar's license for wesley falk, d/b/a solar city. mr. toale seconded"
   },
   {
-   "motion": "Recommend BOS approval of Article 25, Sewer Commission warrant article to authorize borrowing up to $2.2M for sewer extensions",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Recommend BOS approval of Sewer Commission Warrant Article 25.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to recommend bos approval of article 25. mr. matthews seconded. on vote, motion carried, 4 in favor, o opposed.",
-   "quote_taken_from_text": true
+   "quote": "mr. ebersole moved to recommend bos approval of article 25. mr. matthews seconded."
   },
   {
-   "motion": "Recommend BOS approval of Article 22, Sewer Commission FY2015 Budget Summary",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Recommend BOS approval of Warrant Article 22 (Sewer Commission FY2015 Budget).",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
+   "outcome": "passed, 4 in favor (opposed count cut off in text)",
+   "procedural": false,
+   "quote": "mr. ebersole moved to recommend bos approval of article 22. mr. matthews seconded."
+  },
+  {
+   "motion": "Set the public hearing date of 4/29/2014 to lay out a public way for White Tail Crossing.",
+   "moved_by": "Vir. Matthews",
+   "seconded_by": "Mr. Ebersol",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to recommend bos approval of article 25. mr. matthews seconded. on vote, motion carried, 4 in favor, o opposed",
-   "quote_taken_from_text": true
+   "quote": "vir. matthews moved to set the public hearing date to lay out a public way for white tail crossing on 4/29/2014."
   },
   {
-   "motion": "Recommend approval of Article 18, the FY2015 Town Manager's Budget for the amount of $29,079,384",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Recommend approval of Article 18, the FY2015 Town Manager's Budget, for $29,079,384.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to recommend approval of article 18 the fy2015 town manager's budget for the amount of $29,079,384. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to recommend approval of article 18 the fy2015 town manager's budget for the amount of $29,079,384."
   },
   {
-   "motion": "Recommend BOS approval of Article 14, the FY2015 Capital Plan for $1,114,152.60",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Toale",
+   "motion": "Recommend BOS approval of Warrant Article 14 (FY2015 Capital Plan).",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to recommend bos approval of article 14. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed"
+   "quote": "mr. ebersole moved to recommend bos approval of article 14. mr. toale seconded."
   },
   {
-   "motion": "Recommend BOS approval of Article 16, to authorize a Student Transportation Offset Receipt Fund to receive funds up to $31,000",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Recommend BOS approval of Warrant Article 16 (Student Transportation Offset Receipt Fund).",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 3-0-1",
    "procedural": false,
-   "quote": "mr. ebersole moved to recommend bos approval of article 16. mr. matthews seconded. on vote, motion carried, 3 in favor, 0 opposed, 1 abstain (alonzo)"
+   "quote": "mr. ebersole moved to recommend bos approval of article 16. mr. matthews seconded."
   },
   {
-   "motion": "Recommend BOS approval of Article 23, to appropriate $25,000 from the Sale of Cemetery Lots account for cemetery care and improvement",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Ebersole",
+   "motion": "Recommend BOS approval of Warrant Article 23 (cemetery care from Sale of Cemetery Lots account).",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Robert Ebersole",
+   "outcome": "passed, 4 in favor (opposed count cut off in text)",
+   "procedural": false,
+   "quote": "mr. matthews moved to recommend bos approval of article 23. mr. ebersole seconded."
+  },
+  {
+   "motion": "That the BOS sign the Warrant with the changes made this evening.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. matthews moved to recommend bos approval of article 23. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 mr. ebe",
-   "quote_taken_from_text": true
+   "quote": "mr. ebersole moved that the bos sign the warrant with the changes that were made this evening. mr. matthews seconded."
   },
   {
-   "motion": "Sign the Warrant with the changes made this evening",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Jamie Toale",
+   "outcome": "passed (roll call: 4 Aye)",
    "procedural": true,
-   "quote": "mr. ebersole moved that the bos sign the warrant with the changes that were made this evening. mr. matthews seconded. discussion: mr. toale mentioned that he had rec",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Toale",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. matthews moved to adjourn the meeting. mr. toale seconded. roll call vote: ebersole - aye, toale - aye, matthews - aye, alonzo - aye."
+   "quote": "mr. matthews moved to adjourn the meeting. mr. toale seconded."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-scanned document. All votes recorded; one vote (Article 16) had an abstention by Mr. Alonzo.",
- "cost_usd": 0.1101085
+ "dropped_unquoted": 0,
+ "note": "Text is OCR (macOS Vision) with many garbled words; names are as the OCR prints them (e.g., 'Vir. Matthews', 'Mr. Ebersol', 'Ms. Spiedel', 'Recording Secreta', 'Pediars'). Several vote tallies are cut off mid-line (Articles 22 and 23 show '4 in favor' with the opposed count truncated), so outcomes are recorded as printed. The Article 16 vote shows 3 in favor, 0 opposed, 1 abstain (Alonzo). Article 26 recusal by Mr. Toale is noted but no vote is recorded on it. The Warrants list under item 4 has three warrant numbers and three amounts that the text does not clearly pair. Motions on the Voluntary Toll request and Article 26 are not recorded as votes. Quotes were checked against the OCR text, with line breaks collapsed.",
+ "cost_usd": 0.01394822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, dave"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board member",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, dave"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board member",
+   "status": "present",
+   "quote": "matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "absent",
+   "quote": "absent was vice chairperson paula bertram"
+  },
+  {
+   "name": "Mary Ellen Letarte",
+   "role": "Lancaster Ave. resident (public comment)",
+   "status": "present",
+   "quote": "mary ellen letarte, lancaster ave., spoke to the bos to announce that it is national poem month."
+  },
+  {
+   "name": "Jack Meilleur",
+   "role": "8** Grade Student",
+   "status": "present",
+   "quote": "jack meilleur, 153 highland st., spoke to the bos and asked for their support with his community service project entitled project 351."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "introduced Jack Meilleur",
+   "status": "present",
+   "quote": "dave macdonald, island rd."
+  },
+  {
+   "name": "Marcy Forman",
+   "role": "representing the Boys & Girls Club",
+   "status": "present",
+   "quote": "representing the boys & girls club came before the bos to request permission to use both public parking lots at the boys & girls club"
+  },
+  {
+   "name": "Beverly: Guerin",
+   "role": "representing the Boys & Girls Club",
+   "status": "present",
+   "quote": "marcy forman and beverly: guerin"
+  },
+  {
+   "name": "Wesley Falk",
+   "role": "d/b/a Solar City",
+   "status": "present",
+   "quote": "wesley falk came before the bos to request a pediars license to sell"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Chairperson of the Sewer Commission",
+   "status": "present",
+   "quote": "carl luck, chairperson of the sewer commission presented the fy2015 budget summary along with the lakeview ave/pratt st. area sewer extensions to the bos"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "karen brochu, town accountant explained how the offset receipt fund works as follows:"
+  },
+  {
+   "name": "Isan Doherty",
+   "role": "Recording Secreta",
+   "status": "not stated",
+   "quote": "isan doherty, recording secreta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOS agreed to support Jack Meilleur's Project 351 and any future projects of this nature he brings forward.",
+   "quote": "the bos congratulated mr. meilleur on his presentation and agreed to support this project along with any future projects of this nature"
+  },
+  {
+   "decision": "The Boys & Girls Club voluntary toll request could not be voted on that night because it was not on the agenda; it was to be placed on the BOS agenda the following week.",
+   "quote": "mr. alonzo informed that they could not vote on the voluntary toll request because it was not on the agenda this evening."
+  },
+  {
+   "decision": "BOS recommended adding language to authorize the BOS to take easements by eminent domain in case of a title issue (Sewer Article 25).",
+   "quote": "language to be added to authorize the bos the ability to take easements by eminent domain incase there was a title issue"
+  },
+  {
+   "decision": "BOS recommended the Sewer Commission coordinate with the DPW on any drainage issues.",
+   "quote": "sewer commission coordinate with the dpw on any drainage issues"
+  },
+  {
+   "decision": "The BOS and FinCom agreed to hold their recommendation on the FY2014 Budget Adjustment Article until Annual Town Meeting.",
+   "quote": "requested that the bos along with the fincom hold their recommendation for this article until annual town meeting"
+  },
+  {
+   "decision": "Town will authorize VHB to attend the MassDOT Utilities Meeting on the Summer St. project to keep the project moving.",
+   "quote": "we are going to authorize vhb to attend the utilities meeting to keep the project moving which will cost the town approximately $2000."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer Article 25 borrowing",
+   "what_was_recorded": "Sewer Commission's Article 25 would authorize borrowing up to $2.2M for two sewer extensions, with SRF loans expected to fund most of it and betterments covering all costs.",
+   "figures_as_printed": [
+    "$2.2M"
+   ],
+   "quote": "mr. luck began with sewer commission's warrant article 25 for annual town meeting to authorize borrowing up to $2.2m for two"
+  },
+  {
+   "topic": "Sewer FY2015 budget and Fitchburg rates",
+   "what_was_recorded": "Sewer budget presented as balanced with no rate increase; rates to Fitchburg were reported down.",
+   "figures_as_printed": [
+    "$1.65"
+   ],
+   "quote": "rates to fitchburg have gone down $1.65"
+  },
+  {
+   "topic": "FY2014 Budget Adjustment remaining deficit",
+   "what_was_recorded": "Remaining deficit in the FY2014 Budget Adjustment, to be held until Annual Town Meeting.",
+   "figures_as_printed": [
+    "$17,323.00"
+   ],
+   "quote": "currently the remaining deficit in the fy2014 budget adjustment is $17,323.00"
+  },
+  {
+   "topic": "Unallocated money for Above Target Requests",
+   "what_was_recorded": "About $116,097 is available to fund Above Target Requests; the chair said it is unallocated, not surplus.",
+   "figures_as_printed": [
+    "$116,097"
+   ],
+   "quote": "there is approximately $116,097 available to fund above target requests"
+  },
+  {
+   "topic": "Pavement Management Plan allocation",
+   "what_was_recorded": "FinCom recommended allocating $113,597 to the Pavement Management Plan rather than the Reserve Fund.",
+   "figures_as_printed": [
+    "$113,597"
+   ],
+   "quote": "fincom recommended approval of allocating $113,597 to the pavement management plan rather than the reserve fund"
+  },
+  {
+   "topic": "Legal Expenses to Land Use Director's Salary",
+   "what_was_recorded": "FinCom moved $12,500 from Legal Expenses to the Land Use Director's Salary.",
+   "figures_as_printed": [
+    "$12,500"
+   ],
+   "quote": "fincom moved $12,500 from legal expenses to the land use director's salary"
+  },
+  {
+   "topic": "Monty Tech Assessment",
+   "what_was_recorded": "FinCom did not vote on the Monty Tech Assessment, which would become available if paid in FY2014; the Town Manager recommends it stay with Education.",
+   "figures_as_printed": [
+    "$49,244"
+   ],
+   "quote": "fincom did not vote on the monty tech assessment of $49,244"
+  },
+  {
+   "topic": "FY2015 Town Manager's Budget (Article 18)",
+   "what_was_recorded": "BOS recommended approval of the FY2015 Town Manager's Budget at the stated amount.",
+   "figures_as_printed": [
+    "$29,079,384"
+   ],
+   "quote": "mr. ebersole moved to recommend approval of article 18 the fy2015 town manager's budget for the amount of $29,079,384."
+  },
+  {
+   "topic": "FY2015 Capital Plan (Article 14)",
+   "what_was_recorded": "FinCom recommended approval of the FY2015 Capital Plan at the stated amount, 6-0.",
+   "figures_as_printed": [
+    "$1,114,152"
+   ],
+   "quote": "fincom recommends approval of $1,114,152. 6-0."
+  },
+  {
+   "topic": "Student Transportation Offset Receipt Fund (Article 16)",
+   "what_was_recorded": "Article 16 would authorize a fund to receive student transportation fees up to $31,000 for bus costs.",
+   "figures_as_printed": [
+    "$31,000"
+   ],
+   "quote": "to receive funds for student transportation fees up to $31,000, said funds to be used by the school department"
+  },
+  {
+   "topic": "Student transportation fees actual",
+   "what_was_recorded": "FY14 student transportation fees actual to date were reported.",
+   "figures_as_printed": [
+    "$31,604.75"
+   ],
+   "quote": "student transportation fees: • fy14 $31,604.75"
+  },
+  {
+   "topic": "Cemetery care from Sale of Cemetery Lots (Article 23)",
+   "what_was_recorded": "Article 23 would appropriate $25,000 from the Sale of Cemetery Lots account for cemetery care and improvements.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "appropriate the sum of $25,000 from the sale of cemetery lots account"
+  },
+  {
+   "topic": "Summer St. utilities meeting cost",
+   "what_was_recorded": "Authorizing VHB to attend the MassDOT Utilities Meeting on Summer St. will cost the Town approximately $2000.",
+   "figures_as_printed": [
+    "$2000"
+   ],
+   "quote": "we are going to authorize vhb to attend the utilities meeting to keep the project moving which will cost the town approximately $2000."
+  },
+  {
+   "topic": "Warrant totals signed",
+   "what_was_recorded": "Warrant totals listed for signing under the Minutes/Warrants/Action File item; the minutes do not state which total belongs to which warrant.",
+   "figures_as_printed": [
+    "$292,178.46",
+    "$343,314.65",
+    "$632,035.35"
+   ],
+   "quote": "w#21p-14 $292,178.46 $343,314.65 $632,035.35"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Student transportation fees moved into Available Funds, instead of raising the school appropriation (Article 16).",
+   "amount_as_printed": "$31,000",
+   "outcome": "Stated as done: the $31,000 has been moved into Available Funds.",
+   "quote": "the $31,000 has been moved into available funds."
+  },
+  {
+   "description": "FinCom recommendation to allocate money to the Pavement Management Plan rather than the Reserve Fund.",
+   "amount_as_printed": "$113,597",
+   "outcome": "FinCom recommendation discussed; no BOS vote recorded on it.",
+   "quote": "fincom recommended approval of allocating $113,597 to the pavement management plan rather than the reserve fund"
+  },
+  {
+   "description": "FinCom move of funds from Legal Expenses to the Land Use Director's Salary.",
+   "amount_as_printed": "$12,500",
+   "outcome": "Reported as a FinCom move; no BOS vote recorded on it.",
+   "quote": "fincom moved $12,500 from legal expenses to the land use director's salary"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mary Ellen Letarte",
+   "stated_role": "Lancaster Ave.",
+   "topic": "National Poem Month and teen poetry contest",
+   "quote": "mary ellen letarte, lancaster ave., spoke to the bos to announce that it is national poem month."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "Planning Board marijuana dispensary hearing reminder",
+   "quote": "mr. ebersole reminded all that the planning board will be holding a continuation of their hearing regarding"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Zoning Board of Appeals Whalom 40B hearing reminder",
+   "quote": "mr. alonzo reminded all that the zoning board of appeals will be have a public hearing tomorrow evening regarding the whalom 40b"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; memo read on voter registration deadline",
+   "quote": "mr. alonzo read a memo from the town clerk's office reminding the public that the last day to register to vote",
+   "tags": [
+    "elections",
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Public comment: National Poem Month",
+   "resolution": "no action",
+   "quote": "mary ellen letarte, lancaster ave., spoke to the bos to announce that it is national poem month.",
+   "tags": [
+    "public comment",
+    "library"
+   ]
+  },
+  {
+   "topic": "Appointment: Jack Meilleur, Project 351",
+   "resolution": "BOS agreed to support project",
+   "quote": "the bos congratulated mr. meilleur on his presentation and agreed to support this project along with any future projects of this nature",
+   "tags": [
+    "community service",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club request to use public grounds",
+   "resolution": "approved",
+   "quote": "mr. ebersole moved to approve the request for the use of the public grounds for a fundraising event for the lunenburg boys & girls club on 5/17/2014. mr. toale seconded.",
+   "tags": [
+    "public grounds",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Pedlar's License: Wesley Falk, Solar City",
+   "resolution": "approved",
+   "quote": "mr. matthews moved to approve the pedlar's license for wesley falk, d/b/a solar city. mr. toale seconded",
+   "tags": [
+    "license",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Sewer Commission warrant articles and FY2015 budget",
+   "resolution": "recommended approval of Articles 25 and 22",
+   "quote": "carl luck, chairperson of the sewer commission presented the fy2015 budget summary along with the lakeview ave/pratt st. area sewer extensions to the bos",
+   "tags": [
+    "sewer",
+    "warrant articles",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Current business 1: White Tail Crossing public hearing date",
+   "resolution": "set hearing for 4/29/2014",
+   "quote": "vir. matthews moved to set the public hearing date to lay out a public way for white tail crossing on 4/29/2014.",
+   "tags": [
+    "public way",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Current business 2: FY2015 Town Manager's Recommended Budget",
+   "resolution": "recommended approval of Article 18 budget",
+   "quote": "ms. speidel reviewed the changes that the finance",
+   "tags": [
+    "budget",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "Current business 3: Warrant Articles for Annual Town Meeting",
+   "resolution": "recommended approval of Articles 14, 16, 23; signed warrant",
+   "quote": "review/discussion/recommendations of warrant articles for annual town meeting: ms. speidel reviewed the remaining",
+   "tags": [
+    "warrant articles",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Current business 4: Minutes, warrants and action file",
+   "resolution": "no action recorded; Park Dept. building update given",
+   "quote": "minutes: 3/18/2014 4/1/2014",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "board of health - no report",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager reports: Summer St. project",
+   "resolution": "authorize VHB to attend Utilities Meeting; reported",
+   "quote": "ms. speidel reported that massdot has requested a utilities meeting on the",
+   "tags": [
+    "Summer St.",
+    "MassDOT",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations: none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment (closing reminders)",
+   "resolution": "no action",
+   "quote": "mr. ebersole reminded all that the planning board will be holding a continuation of their hearing regarding",
+   "tags": [
+    "public comment",
+    "planning board",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:44PM",
+   "quote": "meeting adjourned at 8:44pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo from the Town Clerk's Office (voter registration deadline)",
+   "where": "text",
+   "quote": "mr. alonzo read a memo from the town clerk's office reminding the public that the last day to register to vote"
+  },
+  {
+   "name": "Sewer Commission FY2015 Budget Summary",
+   "where": "text",
+   "quote": "carl luck, chairperson of the sewer commission presented the fy2015 budget summary along with the lakeview ave/pratt st. area sewer extensions to the bos"
+  },
+  {
+   "name": "Warrant Article 25 (Sewer Extensions borrowing)",
+   "where": "text",
+   "quote": "mr. luck began with sewer commission's warrant article 25 for annual town meeting to authorize borrowing up to $2.2m for two"
+  },
+  {
+   "name": "Warrant Article 22 (Sewer Commission FY2015 Budget)",
+   "where": "text",
+   "quote": "mr. ebersole moved to recommend bos approval of article 22. mr. matthews seconded."
+  },
+  {
+   "name": "Warrant Article 14 (FY2015 Capital Plan)",
+   "where": "text",
+   "quote": "article 14. to see if the town will vote to raise and appropriate or transfer from available funds a sum of money for the fy2015 capital"
+  },
+  {
+   "name": "Capital Planning Committee Report",
+   "where": "text",
+   "quote": "as appearing in the capital planning committee report, or take any action relative there to."
+  },
+  {
+   "name": "Warrant Article 16 (Student Transportation Offset Receipt Fund)",
+   "where": "text",
+   "quote": "article 16. to see if the town will vote to authorize in accordance with mgl chapter 44, section 53e, a student transportation offset"
+  },
+  {
+   "name": "Warrant Article 18 (FY2015 Town Manager's Budget)",
+   "where": "text",
+   "quote": "mr. ebersole moved to recommend approval of article 18 the fy2015 town manager's budget for the amount of $29,079,384."
+  },
+  {
+   "name": "Warrant Article 23 (Cemetery care)",
+   "where": "text",
+   "quote": "article 23. to see if the town will vote to appropriate the sum of $25,000 from the sale of cemetery lots account"
+  },
+  {
+   "name": "Warrant Article 26",
+   "where": "text",
+   "quote": "mr. toale mentioned that he had recused himself from voting/discussion on article 26 and the vote should be changed"
+  },
+  {
+   "name": "Minutes of 3/18/2014 and 4/1/2014",
+   "where": "list",
+   "quote": "minutes: 3/18/2014 4/1/2014"
+  },
+  {
+   "name": "Election Warrant, W#52-14, W#53-14, W#21P-14 (dated 4/8/2014, 4/9/2014, 4/7/2014)",
+   "where": "list",
+   "quote": "warrants: election warrant 4/8/2014 4/9/2014 4/7/2014 w#52-14 w#53-14 w#21p-14"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "warrant articles",
+  "FY2015 budget",
+  "sewer",
+  "FinCom",
+  "cemetery",
+  "student transportation",
+  "Summer St.",
+  "public hearing",
+  "2014 Annual Town Meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "warrants:"
+ },
+ "dropped_unquoted_by_field": {}
 }

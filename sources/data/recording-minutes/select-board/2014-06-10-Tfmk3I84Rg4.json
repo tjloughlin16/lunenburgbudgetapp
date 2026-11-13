@@ -1,0 +1,282 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-06-10",
+ "video_id": "Tfmk3I84Rg4",
+ "video_url": "https://www.youtube.com/watch?v=Tfmk3I84Rg4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-06-10-Tfmk3I84Rg4.json",
+  "sha256": "00bc727e7c764582ed269f821c7fa87b3a07b5602ceb8f595f02f389c4ed3a77",
+  "caption_lines": 252,
+  "segments": 2466
+ },
+ "recording": {
+  "duration_s": 5263,
+  "duration": "1:27",
+  "spoken_chars": 76154,
+  "words_approx": 12692
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06102014-4891",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-06-10-agenda-4891.txt",
+   "path": "sources/meetings/select-board/2014-06-10-agenda-4891.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:28:33Z",
+  "cost_usd": 0.22776100000000002
+ },
+ "minutes": {
+  "headline": "Select Board held off on an ambulance fee increase and asked the fire chief for a fuller cost analysis first.",
+  "summary": "The board heard the fire chief's request to raise ambulance rates. Members split between covering costs and avoiding a large one-step jump. The chief will revise the spreadsheet before the board decides. The board also approved a common victualler license and a letter supporting the Summer Street project, and discussed the town manager's self-evaluation.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Abrasil",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "fire chief",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Karen Weller",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "fees",
+   "personnel",
+   "public-safety",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 165,
+    "motion": "Approve the common victualler license for Amber's Pizzeria",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2786,
+    "motion": "Support and send the letter to the regional planning commission supporting reconstruction of Summer and North Streets",
+    "outcome": "passed",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 208,
+    "topic": "Ambulance rate increase",
+    "what_was_said": "The fire chief proposed raising ambulance rates, last changed years ago, to offset department costs.",
+    "figures_as_heard": [
+     "30 increase",
+     "medicare plus 200 percent"
+    ]
+   },
+   {
+    "t": 763,
+    "topic": "Expected added ambulance revenue",
+    "what_was_said": "The billing company estimated added annual revenue, with part requested to cover salary and supply overruns.",
+    "figures_as_heard": [
+     "60 thousand dollars"
+    ]
+   },
+   {
+    "t": 500,
+    "topic": "EMS supplies line",
+    "what_was_said": "The supplies line has been level funded while expenses creep up.",
+    "figures_as_heard": [
+     "six thousand dollars",
+     "9000"
+    ]
+   },
+   {
+    "t": 886,
+    "topic": "New ambulance cost",
+    "what_was_said": "The cost of the new ambulance was given from memory.",
+    "figures_as_heard": [
+     "215-220"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2700,
+    "decision": "Fire chief and town manager to revise the ambulance cost spreadsheet and return before the board decides."
+   },
+   {
+    "t": 5095,
+    "decision": "Board to go off air for a policies and procedures workshop; next meeting June 17."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 43,
+    "t_end": 208,
+    "topic": "Opening and common victualler license",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 208,
+    "t_end": 2743,
+    "topic": "Ambulance fee increase",
+    "resolution": "no resolution; analysis requested",
+    "tags": [
+     "fees",
+     "public-safety",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2743,
+    "t_end": 2828,
+    "topic": "Summer Street MPO letter",
+    "resolution": "voted",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 2828,
+    "t_end": 3940,
+    "topic": "Town manager self-evaluation",
+    "resolution": "informational; workshop proposed",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3983,
+    "t_end": 4520,
+    "topic": "Warrants and action file: pipeline, stormwater, economic development",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 4513,
+    "t_end": 5240,
+    "topic": "Committee reports and closing",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote count on the letter and license not stated beyond aye/opposed none."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1050,
+    "about": "Members disagreed over whether the ambulance fee increase is too large.",
+    "sides": "A member against a 30 percent increase; the fire chief and town manager in favor",
+    "words_as_heard": "i'm having a hard time with a 30 percent increase",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2329,
+    "kind": "condition",
+    "about": "A member would need fuller cost analysis before supporting the increase.",
+    "who": "a member",
+    "words_as_heard": "i think that i would need more analysis"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 293,
+    "name_as_heard": "ambulance spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "if you look at the spreadsheet that i gave you"
+   },
+   {
+    "t": 561,
+    "name_as_heard": "regional survey",
+    "kind": "report",
+    "words_as_heard": "the regional uh survey that was done it's dated 2011"
+   },
+   {
+    "t": 2743,
+    "name_as_heard": "MPO letter",
+    "kind": "letter or email",
+    "words_as_heard": "that letter uh that was written by paula"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "ambulance-fees",
+    "title": "Ambulance fees",
+    "question": "What does the ambulance cost versus what it brings in, and what would new rates raise?",
+    "t": 208,
+    "words_as_heard": "increase our ambulance rates",
+    "data_in_play": [
+     "30 increase",
+     "60 thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board took no vote on an ambulance rate increase and asked the fire chief and town manager to revise the cost spreadsheet and return.",
+    "t": 2700
+   },
+   {
+    "line": "The fire chief proposed raising ambulance rates, last changed years ago, to offset department costs; members split between covering costs and avoiding one large step.",
+    "t": 208
+   },
+   {
+    "line": "The billing company's estimate of added annual revenue was discussed, with part requested to cover salary and supply overruns.",
+    "t": 763
+   },
+   {
+    "line": "The board approved a common victualler license for Amber's Pizzeria.",
+    "t": 165
+   },
+   {
+    "line": "The board voted to send a letter supporting reconstruction of Summer and North Streets to the regional planning commission.",
+    "t": 2786
+   }
+  ],
+  "why_it_matters": [
+   "Ambulance rates are paid by patients and their insurers, and the revenue offsets department costs that would otherwise fall on the town budget, mostly taxes, so the size and timing of any increase affects both.",
+   "The Summer and North Streets letter is a step toward regional planning commission funding for road reconstruction, not a commitment of money."
+  ],
+  "watch_next": [
+   "A revised ambulance cost spreadsheet from the fire chief and town manager, to come back before the board decides on rates.",
+   "The next Select Board meeting on June 17, after a policies and procedures workshop."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:28:40Z",
+   "cost_usd": 0.0219691
+  }
+ }
+}

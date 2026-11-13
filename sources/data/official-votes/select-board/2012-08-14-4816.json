@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-08-14",
  "docid": "4816",
@@ -12,48 +12,431 @@
  },
  "votes": [
   {
-   "motion": "Grant Chapter 100 Auctioneer License to Petrowsky Auctioneers Inc.",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Mr. Alonzo",
+   "motion": "Grant the Chapter 100 Auctioneer License to Petrowsky Auctioneers Inc.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Tom Alonzo",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. debettencourt motioned to grant the chapter 100 auctioneer license to petrowsky auctioneers inc. mr. alonzo seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve authorization for Board Chair to sign the MSBA Contract for Feasibility Study",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Authorize Chair David Matthews to sign the MSBA contract for the BOS (feasibility study).",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bertram motioned to approve the vote. mr. debettencourt seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. matthews asked for a vote from the board to authorize his signing of the contract for the bos. ms. bertram motioned to approve the vote. mr. debettencourt seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve Earth Removal Permit renewals contingent on meeting all stated requirements",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Approve the Earth Removal Permit renewals, with the caveat that all requirements detailed by the Town Manager are met.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to approve the barth removal permits with the caveat that all of the requirements for the permits, as detailed by the town manager, are met. mir. debettencourt seconded. on vote, motion carried, 4 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "mr. alonzo moved to approve the barth removal permits with the caveat that all of the requirements for the permits, as detailed by the town manager, are met."
   },
   {
-   "motion": "Continue appointment of Myleen Mallari as acting Treasurer/Collector through September 4, 2012",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Continue the appointment of Myleen Mallari as acting Treasurer/Collector through September 4, 2012.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. alonzo moved to continue the appointment of myleen mallari as acting treasurer/collector through september 4, 2012. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the regular session at 8:15PM.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Paula Bertram",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. the board voted unanimously to adjourn regular session at 8:15pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. One likely OCR error: \"Barth Removal Permits\" should be \"Earth Removal Permits\" (context confirms earth removal permits were the subject). All five votes are clearly recorded and readable.",
- "cost_usd": 0.11070250000000001
+ "note": "OCR text of a typed minutes page (macOS Vision). Some words are garbled in extraction (e.g., 'Barth', 'Mir.', 'Satety'); quotes reproduce the text as printed. The warrant table and the relief-donation table are scrambled in extraction, so their figures are read in OCR order and may not align to their labels. Board members' roles are not printed in the minutes. Items run out of order (item 7 appears before items 2-6). Votes are recorded as 4-0 on each motion. No documents list heading is printed; documents are referenced in the text only.",
+ "cost_usd": 0.010175920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "",
+   "status": "absent",
+   "quote": "carl \"ernie\" sund was absent from the meeting."
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "loxi calmes, school superintendent spoke and explained what the upcoming steps in the process were going to be."
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities & Grounds",
+   "status": "present",
+   "quote": "john londa, director of facilities & grounds, explained"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "members of the DPW Building Committee",
+   "status": "present",
+   "quote": "dave macdonald and joanna bilotta simeone, members of the dpw building committee, spoke to announce the"
+  },
+  {
+   "name": "Joanna Bilotta Simeone",
+   "role": "members of the DPW Building Committee",
+   "status": "present",
+   "quote": "dave macdonald and joanna bilotta simeone, members of the dpw building committee, spoke to announce the"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Open the warrant for the Special Town Meeting on 8/24/12 with a close date of 9/4/12; STM scheduled for 9/25/12.",
+   "quote": "after due and diligent discussion the bos decided to open the warrant for stm on 8/24/12 with a close date of 9/4/12. stm has been scheduled for 9/25/12."
+  },
+  {
+   "decision": "Hold a BOS meeting on Tuesday August 28 at 7PM at a location TBA, to meet on the EPG Solar PILOT/tax issue and the Special Town Meeting timeline.",
+   "quote": "it was decided to hold a bos meeting on tuesday august 28 at 7pm at a location tba."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Average property tax bill comparison (public comment)",
+   "what_was_recorded": "Mr. Matthews read FY11 and FY12 average property tax bills for Lunenburg and the State, with the resulting percentage gap and town rank.",
+   "figures_as_printed": [
+    "$4,064",
+    "$4,537",
+    "$4,174",
+    "$4,711",
+    "10%",
+    "11%"
+   ],
+   "quote": "fy11 the average property tax bill in lunenburg was $4,064. average property tax bill for the state was $4,537."
+  },
+  {
+   "topic": "EPG Solar net metering credits: rate and savings",
+   "what_was_recorded": "Londa explained the supply and distribution components of the credit value; the first-year savings from EPG's proposal were estimated at about $78K, and EPG later revised its rate to produce $84K annually.",
+   "figures_as_printed": [
+    ".062 cents per KWH",
+    "7 cents per KWH",
+    "11.9 cents per KWH",
+    "$78K",
+    "2% escalator",
+    "12.88 cents",
+    "6.6 cents",
+    "$84K annually"
+   ],
+   "quote": "based upon what epg solar had proposed, the savings for the first year look to be about $78k."
+  },
+  {
+   "topic": "EPG Solar net metering credits: current rate",
+   "what_was_recorded": "Londa said the rate EPG had submitted, 7 cents per KWH, was a little high against the current supply rate.",
+   "figures_as_printed": [
+    ".062 cents per KWH",
+    "7 cents per KWH"
+   ],
+   "quote": "the current rate is .062 cents per kwh and epg was using 7 cents per kwh."
+  },
+  {
+   "topic": "EPG Solar revised rate and savings",
+   "what_was_recorded": "Speidel told Londa that EPG had revised the cost of the KWH to 6.6 cents, a savings of $84K annually.",
+   "figures_as_printed": [
+    "6.6 cents",
+    "$84K annually"
+   ],
+   "quote": "epg had revised the cost of the kwh to 6.6 cents which will be a savings of $84k annually."
+  },
+  {
+   "topic": "PILOT value and tax estimate for solar project",
+   "what_was_recorded": "Speidel reported the Regional Assessor's view that the $14,207 in taxes is good, against a stated $45K-$55K per MW value range and a highest-seen PILOT of $12K; Ms. Bertram said the gap between $45K-$55K and $14K concerned her.",
+   "figures_as_printed": [
+    "$45K-$55K per MW",
+    "$14,207",
+    "$12K",
+    "$14K"
+   ],
+   "quote": "the assessor thinks that the $14,207 in taxes is good because the highest he has seen moving forward is $12k."
+  },
+  {
+   "topic": "Lunenburg Relief Project 2012 donations",
+   "what_was_recorded": "Speidel reported 100 donations totaling $27,328 from the July 14, 2012 relief project, broken out by department in a table.",
+   "figures_as_printed": [
+    "$$27,328",
+    "$20 - $500",
+    "$10 - $500",
+    "$10 - $1000",
+    "$10 - $5000",
+    "$3580",
+    "$3330",
+    "$1110",
+    "$2200",
+    "$12,110",
+    "$4998"
+   ],
+   "quote": "which totaled to $$27,328."
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant totals were listed for the 8/13/12, 8/14/12 and 8/15/12 warrants; no vote is recorded on them.",
+   "figures_as_printed": [
+    "$467,427.77",
+    "$174,959.87",
+    "$344,482.66"
+   ],
+   "quote": "$467,427.77 $174,959.87 $344,482.66"
+  },
+  {
+   "topic": "Telephone services review",
+   "what_was_recorded": "Speidel reported a volunteer's review of town and school phone services; the per-line rate dropped from $33 to $13 under the 2010 consultant work, a significant savings.",
+   "figures_as_printed": [
+    "$33",
+    "$13"
+   ],
+   "quote": "the rate per line dropped from $33 - $13 per line which is a significant savings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Matthews",
+   "stated_role": "",
+   "topic": "Tax rate and average tax bill figures",
+   "quote": "mr. matthews commented that it was noted at last week's meeting that lunenburg was ranked 56 out of 351 towns in"
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "members of the DPW Building Committee",
+   "topic": "DPW open house and Big Truck Night",
+   "quote": "dave macdonald and joanna bilotta simeone, members of the dpw building committee, spoke to announce the"
+  },
+  {
+   "speaker": "Joanna Bilotta Simeone",
+   "stated_role": "members of the DPW Building Committee",
+   "topic": "DPW open house and Big Truck Night",
+   "quote": "dave macdonald and joanna bilotta simeone, members of the dpw building committee, spoke to announce the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "tax rate",
+    "DPW event"
+   ],
+   "quote": "mr. matthews commented that it was noted at last week's meeting that lunenburg was ranked 56 out of 351 towns in"
+  },
+  {
+   "topic": "Chapter 100 Auctioneer License, Petrowsky Auctioneers Inc.",
+   "resolution": "approved 4-0",
+   "tags": [
+    "licensing",
+    "auctioneer"
+   ],
+   "quote": "1. chapter 100 auctioneer license, 133 leominster-shirley road, 09/15/12 - ms. speidel presented the"
+  },
+  {
+   "topic": "MSBA contract, feasibility study (taken out of order)",
+   "resolution": "approved 4-0; Matthews authorized to sign",
+   "tags": [
+    "school building",
+    "MSBA"
+   ],
+   "quote": "7. msba contract, feasibility study (taken out of order) - mr. matthews stated that the msba"
+  },
+  {
+   "topic": "EPG Solar offer to purchase net metering credits",
+   "resolution": "discussed; no action; further PILOT review with Assessor",
+   "tags": [
+    "solar",
+    "net metering",
+    "PILOT",
+    "taxes"
+   ],
+   "quote": "2. epg solar, offer to purchase net metering credits - john londa, director of facilities & grounds, explained"
+  },
+  {
+   "topic": "Set date for Special Town Meeting",
+   "resolution": "warrant opened 8/24/12, closes 9/4/12; STM 9/25/12",
+   "tags": [
+    "Special Town Meeting",
+    "warrant"
+   ],
+   "quote": "after due and diligent discussion the bos decided to open the warrant for stm on 8/24/12 with a close date of 9/4/12."
+  },
+  {
+   "topic": "Special One Day Liquor License, Michael J. Laughlin",
+   "resolution": "withdrawn",
+   "tags": [
+    "liquor license"
+   ],
+   "quote": "4. special \"one day\" liquor license, michael j. laughlin, 322 northfield road - withdrawn"
+  },
+  {
+   "topic": "Earth Removal Permit renewals",
+   "resolution": "approved 4-0 with caveat",
+   "tags": [
+    "earth removal",
+    "permits"
+   ],
+   "quote": "5. earth removal permit renewals, list of locations attached - ms. speidel presented a review of all of the"
+  },
+  {
+   "topic": "Report on Lunenburg Relief Project 2012",
+   "resolution": "reported; no action",
+   "tags": [
+    "donations",
+    "relief project"
+   ],
+   "quote": "6. report on lunenburg relief project 2012 - ms. speidel presented an overview report on the lunenburg relief"
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "no minutes; warrants listed; no action file issues",
+   "tags": [
+    "warrants",
+    "minutes"
+   ],
+   "quote": "action file issues: none"
+  },
+  {
+   "topic": "Committee reports (Finance Committee)",
+   "resolution": "reported; no action",
+   "tags": [
+    "Finance Committee",
+    "FY12 budget"
+   ],
+   "quote": "9. committee reports - mr. alonzo reported that the finance committee met last thursday and discussed the"
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "tags": [
+    "departments"
+   ],
+   "quote": "10. department reports - none"
+  },
+  {
+   "topic": "Town Manager reports (telephone services)",
+   "resolution": "reported; no action",
+   "tags": [
+    "telephone contracts",
+    "VoIP",
+    "fiber"
+   ],
+   "quote": "11. town manager reports - ms. speidel reported that a resident of lunenburg with expertise in telephone contracts"
+  },
+  {
+   "topic": "Old business: Town Manager goals",
+   "resolution": "distributed for review",
+   "tags": [
+    "town manager goals"
+   ],
+   "quote": "old business - mr. matthews distributed the town managers goals to the board which had been discussed in a"
+  },
+  {
+   "topic": "Extend acting Treasurer/Collector appointment, Myleen Mallari",
+   "resolution": "continued through 9/4/12 (approved 4-0)",
+   "tags": [
+    "appointment",
+    "treasurer"
+   ],
+   "quote": "1. extend appointment of myleen mallari, as acting treasurer-collector from august 21, 2012 to"
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "executive session - none"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MSBA Contract / Feasibility Study",
+   "where": "text",
+   "quote": "contract/feasibility study was distributed to the bos yesterday via email."
+  },
+  {
+   "name": "Copy of the Auctioneers license (in BOS packet) for Petrowsky Auctioneers Inc.",
+   "where": "text",
+   "quote": "and a copy of the auctioneers license is included in the bos packet."
+  },
+  {
+   "name": "EPG Solar, Offer to Purchase Net Metering Credits",
+   "where": "text",
+   "quote": "2. epg solar, offer to purchase net metering credits - john londa, director of facilities & grounds, explained"
+  },
+  {
+   "name": "Earth Removal Permit Renewals, List of Locations",
+   "where": "text",
+   "quote": "5. earth removal permit renewals, list of locations attached - ms. speidel presented a review of all of the"
+  },
+  {
+   "name": "Warrants dated 8/13/12, 8/14/12, 8/15/12",
+   "where": "text",
+   "quote": "warrants: 8/13/12 8/14/12 8/15/12"
+  },
+  {
+   "name": "Town Managers Goals",
+   "where": "text",
+   "quote": "mr. matthews distributed the town managers goals to the board which had been discussed in a"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "tax rate",
+  "net metering solar",
+  "MSBA school building",
+  "Special Town Meeting",
+  "earth removal permits",
+  "liquor license",
+  "auctioneer license",
+  "treasurer appointment",
+  "telephone contracts",
+  "relief project donations",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-05-21",
  "docid": "4846",
@@ -12,31 +12,330 @@
  },
  "votes": [
   {
-   "motion": "approve the request by the Boys and Girls Club of Lunenburg to hold a Voluntary Toll on June 1st",
+   "motion": "Approve the Boys and Girls Club of Lunenburg request to hold a Voluntary Toll on June 1st.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5 in favor, 0 opposed",
    "procedural": false,
    "quote": "ms. bertram moved to approve the request by the boys and girls club of lunenburg to hold a voluntary toll on june 1st. mr. matthews seconded. on vote motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "approve the One Day Wine & Malt Beverages License for St. Boniface Church on June 14th",
+   "motion": "Approve the One Day Wine & Malt Beverages License for St. Boniface Church on June 14th.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Mr. Matthews",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5 in favor, 0 opposed",
    "procedural": false,
    "quote": "mr. ebersole moved to approve the one day wine & malt beverages license for st. boniface church on june 14th. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
-   "outcome": "passed 5-0",
+   "outcome": "passed 5 in favor, 0 opposed",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business ms. bertram moved to adjourn the meeting. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision; all votes legible and recorded with outcomes.",
- "cost_usd": 0.0955955
+ "note": "OCR text (macOS Vision) with several garbled words (e.g. \"Mir. Alonzo\", \"Ms. Toale\", \"Byaws\"); quotes are taken as printed. The warrant amounts are printed in a column with the dates and warrant numbers, so the mapping of each amount to a warrant date is not clear. No vote is recorded on approving the 5/14/2013 minutes or on the warrants. The public comment sections contain only board-member remarks and questions; no member of the public is recorded speaking. The Town Manager's acceptance of the aggregation bid is reported as her action, not a Board vote. The \"Documents list\" entry below reflects attachments referred to in the text (\"See attached Proclamation\", \"Please see attached letter\"); no list heading is printed.",
+ "cost_usd": 0.01033962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, dave matthews, robert ebersole, jaime toale and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, dave matthews, robert ebersole, jaime toale and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, dave matthews, robert ebersole, jaime toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, dave matthews, robert ebersole, jaime toale and town manager kerry speidel."
+  },
+  {
+   "name": "Jaime Toale",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, dave matthews, robert ebersole, jaime toale and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, dave matthews, robert ebersole, jaime toale and town manager kerry speidel."
+  },
+  {
+   "name": "Patrick A. Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "chief sullivan spoke and explained that the credentialing process involved extensive training,"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed to narrow the list of suggested goals down to 10 specific goals and objectives.",
+   "quote": "recommended that they try to narrow down what was suggested to 10 specific goals and objectives."
+  },
+  {
+   "decision": "Chair stated IT goals would be included as a sub goal under the Town Manager's goals, given the overlap with the IT Director.",
+   "quote": "mr. alonzo stated that he would include it goals as a sub goal for the town manger since there was overlap between the goals of the town manger and the it director."
+  },
+  {
+   "decision": "Mr. Matthews requested that the Open Space Committee appear before the BOS for an update.",
+   "quote": "mr. matthews requested that the open space committee appear before the bos for an update."
+  },
+  {
+   "decision": "Town Manager accepted an electrical aggregation bid just below the basic service rate; a press release will announce enrollment (Town Manager action, not a Board vote).",
+   "quote": "was able to secure a bid just below the basic service rate and she did accept that bid."
+  },
+  {
+   "decision": "Town Manager to include an update on the Tax Title Liens on a future meeting agenda.",
+   "quote": "ms. speidel stated that that would be a good thing for the town account to provide, but that she could"
+  },
+  {
+   "decision": "Town Manager to meet with an LSP who offered services to look at 950 Mass. Ave. and combine a report with other Town issues.",
+   "quote": "ms. speidel stated she was going to meet with an lsp who has offered his services to the town, he"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Codification of General Bylaws",
+   "what_was_recorded": "Town Manager said codifying the Bylaws could cost as much as $10,000.00 and might be funded before the end of the fiscal year; it is not currently programmed into the budget.",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "ms. speidel stated that it was extremely important for the bylaws to be codified and could cost as much as $10,000.00."
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant amounts were listed under Minutes/Warrants/Action File Issues; the minutes do not clearly map each amount to a warrant date.",
+   "figures_as_printed": [
+    "$513,220.63",
+    "$613,048.49",
+    "$248,760.60"
+   ],
+   "quote": "warrants: 5/21/13 5/20/13 5/22/13 62-13 24-p13 63-13 $513,220.63 $613,048.49 $248,760.60"
+  },
+  {
+   "topic": "Municipal Electrical Aggregation bid",
+   "what_was_recorded": "A bid was secured just below the basic service rate; the rate is to be held for at least 6 or 12 months. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "was able to secure a bid just below the basic service rate and she did accept that bid."
+  },
+  {
+   "topic": "PACC donation",
+   "what_was_recorded": "A donation to the PACC was discussed; the donation letter was received too late to be placed on the agenda. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. toale questioned why the pacc donation was not included on the agenda."
+  },
+  {
+   "topic": "Tax Title Liens",
+   "what_was_recorded": "Board asked for an update on Tax Title Liens; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. matthews asked if an update could be provided on the tax title liens"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment from the board",
+   "resolution": "no action",
+   "quote": "mr. matthews started public comment from the board by thanking the fire department for the ems",
+   "tags": [
+    "public comment",
+    "EMS"
+   ]
+  },
+  {
+   "topic": "Announcements: committee vacancies",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced a number of vacancies that need to be filled on various boards.",
+   "tags": [
+    "vacancies",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Proclamation: National Emergency Medical Services Week, May 19-25, 2013",
+   "resolution": "proclamation read",
+   "quote": "mr. alonzo read a proclamation that made the week of may 19th-25th national emergency medical",
+   "tags": [
+    "proclamation",
+    "EMS"
+   ]
+  },
+  {
+   "topic": "Achievement of Fire Chief Credentialing Status, Patrick A. Sullivan",
+   "resolution": "recognized",
+   "quote": "ms. speidel read a letter from the massachusetts executive office of public safety and security, fire service",
+   "tags": [
+    "fire department",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Request for Voluntary Toll by Boys & Girls Club of Lunenburg, 6/1/2013",
+   "resolution": "approved",
+   "quote": "mr. alonzo explained that the boys & girls club of lunenburg holds an annual voluntary toll at the intersections",
+   "tags": [
+    "voluntary toll",
+    "licenses and permits"
+   ]
+  },
+  {
+   "topic": "One Day Wine & Malt Beverages License, St. Boniface Church 6/14/13",
+   "resolution": "approved",
+   "quote": "ms. speidel explained that this request is sent in annually to support the italian festival the church holds.",
+   "tags": [
+    "liquor license",
+    "licenses and permits"
+   ]
+  },
+  {
+   "topic": "BOS Goals & Objectives",
+   "resolution": "discussed; narrowed to 10 goals",
+   "quote": "the members of the bos exchanged their individual lists of goals and objectives for the bos.",
+   "tags": [
+    "goals",
+    "policy",
+    "town manager evaluation",
+    "website",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no action recorded",
+   "quote": "action file issues: none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "board of health- mr. ebersole reported that the boh is having a number of lots coming to them that",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Town Manager reports: Municipal Electrical Aggregation",
+   "resolution": "reported",
+   "quote": "ms. speidel stated that she sent out information on the municipal electrical aggregation plan to the bos",
+   "tags": [
+    "electrical aggregation",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "no action",
+   "quote": "old business - none public comment -",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Public comment (board questions to Town Manager)",
+   "resolution": "no action",
+   "quote": "mr. alonzo stated that the finance committee review committee will be meeting the following",
+   "tags": [
+    "finance committee",
+    "tax title liens",
+    "950 Mass Ave",
+    "PACC"
+   ]
+  },
+  {
+   "topic": "Appointments/Re-appointments/Resignations",
+   "resolution": "no action",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:04PM",
+   "quote": "meeting adjourned at 9:04pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proclamation: National Emergency Medical Services Week, May 19-25, 2013",
+   "where": "text",
+   "quote": "mr. alonzo read a proclamation that made the week of may 19th-25th national emergency medical services week. see attached proclamation."
+  },
+  {
+   "name": "Letter from the Massachusetts Executive Office of Public Safety and Security, Fire Service Commission (Fire Chief credentialing)",
+   "where": "text",
+   "quote": "ms. speidel read a letter from the massachusetts executive office of public safety and security, fire service"
+  },
+  {
+   "name": "PACC donation letter",
+   "where": "text",
+   "quote": "ms. speidel stated she received the donation letter, but that she did not receive it in enough time to include it on the meeting agenda."
+  },
+  {
+   "name": "Municipal Electrical Aggregation plan information",
+   "where": "text",
+   "quote": "she sent out information on the municipal electrical aggregation plan to the bos"
+  },
+  {
+   "name": "Warrants 5/21/13, 5/20/13, 5/22/13",
+   "where": "text",
+   "quote": "warrants: 5/21/13 5/20/13 5/22/13"
+  },
+  {
+   "name": "Minutes of 5/14/2013",
+   "where": "text",
+   "quote": "minutes/warrants/action file issues- minutes: 5/14/2013"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "goals and objectives",
+  "warrants",
+  "liquor license",
+  "voluntary toll",
+  "proclamation",
+  "fire chief credentialing",
+  "bylaw codification",
+  "electrical aggregation",
+  "website",
+  "950 Mass Ave",
+  "committee reports",
+  "Town Manager"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached proclamation."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-09-13",
  "docid": "4987",
@@ -12,34 +12,457 @@
  },
  "votes": [
   {
-   "motion": "Appoint Liz Murphy to the Green Community Task Force",
+   "motion": "Appoint Liz Murphy to the Green Community Task Force.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole to appoint liz murphy to the green community task force 2\"': t. alonzo vote: all in favor"
+  },
+  {
+   "motion": "Open the public hearing for Kabob-e-licious.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "R. Ebersole",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: r. ebersole to appoint liz murphy to the green community task force 2\"': t. alonzo vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "motion:t. alonzo 2\"°: r. ebersole to open the public hearing for kabob-e-licious vote: ms. bertram-aye, mr. alonzo-aye, mr. ebersole- aye, mr. toale- aye"
   },
   {
-   "motion": "Approve the September 8 request for Chapter 44, section 33B transfers as presented",
+   "motion": "That there was a violation for failure to provide server training certification for staff at Kabob-e-licious.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: t. alonzo to approve the september 8\"\" request for chapter 44, section 33b transfers as presented vote: all in fav",
+   "quote": "motion: r. ebersole 2\"°: t. alonzo that ms. williams provide the server listing and certification documentation by october 13\". vote: all in fa",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "That Ms. Williams provide the server listing and certification documentation by October 13.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole 2\"°: t. alonzo that ms. williams provide the server listing and certification documentation by october 13"
+  },
+  {
+   "motion": "Approve the employment agreement with David Marciello and The Town of Lunenburg; compensation $2050.00 per week, commencing September 12, for three months with option to renew for three months.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the employment agreement with david marciello and the town of lunenburg; compensation is $2050.00 per week"
+  },
+  {
+   "motion": "Approve amendment #5 to the Devens Regional Hazardous Household Waste Intermunicipal agreement to add the Town of Pepperell.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve amendment #5 to the devens regional hazardous household waste intermunicipal agreement to add the town of pepperell"
+  },
+  {
+   "motion": "Approve the September 8 request for Chapter 44, section 33B transfers as presented.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the september 8\"\" request for chapter 44, section 33b transfers as presented"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting 2'd:t. alonzo vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "motion: p. bertram to adjourn the meeting 2'd:t. alonzo vote: all in favor"
   }
  ],
- "dropped_unquoted": 5,
- "note": "Text is OCR from macOS Vision. Minutes are legible for vote recording. Some sections of minutes contain OCR artifacts (e.g., post-meeting notes, discussion transcript) but all eight formal votes are clearly recorded with motion, seconder, and outcome. Board membership: 4 members present (Toale, Ebersole, Alonzo, Bertram); Phyllis Luck absent. All votes passed unanimously.\"",
- "cost_usd": 0.16812760000000002
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) with garbling. A passage after the Devens item ('Post meting of seal her act...') and a paragraph beginning 'Before new members were approved...' are unreadable and were not used. Minutes of February 4, 2016 are recorded as approved without any motion, second or vote, so they are a decision, not a vote. Several second-motion labels are OCR-garbled (for example '2^°. P. Bertram'); names are copied as printed. Post-meeting notes appear in the text. Vote outcomes are recorded as printed ('All in Favor' is recorded as 'passed' since no count is given).",
+ "cost_usd": 0.011141620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: phyllis luck, member"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "interim town manager david marciello"
+  },
+  {
+   "name": "Liz Murphy",
+   "status": "present",
+   "quote": "liz murphy, 219 rolling acres road, introduced herself."
+  },
+  {
+   "name": "Tarrnum Williams",
+   "role": "Owner",
+   "status": "present",
+   "quote": "owner tarrnum williams was sworn in by mr. marciello."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney provided an update on the enforcement order on town property located at 225"
+  },
+  {
+   "name": "Mr. Rowe",
+   "role": "alleged violator's representative, Whitman and Bingham",
+   "status": "not stated",
+   "quote": "mr. burney was contacted within 48 hours after that meeting by the alleged violator's representative, mr. rowe from whitman and bingham."
+  },
+  {
+   "name": "Bursch",
+   "role": "Conservation Chair",
+   "status": "not stated",
+   "quote": "mr. rowe, conservation chair bursch, conservation administrator marro and three contractors met on the site."
+  },
+  {
+   "name": "Marro",
+   "role": "Conservation Administrator",
+   "status": "not stated",
+   "quote": "mr. rowe, conservation chair bursch, conservation administrator marro and three contractors met on the site."
+  },
+  {
+   "name": "David MacDonald",
+   "role": "Building Reuse Committee member",
+   "status": "present",
+   "quote": "mr. toale noted committee members present this evening were david macdonald, mark erickson, damon mcquaid and himself."
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Building Reuse Committee member",
+   "status": "present",
+   "quote": "mr. toale noted committee members present this evening were david macdonald, mark erickson, damon mcquaid and himself."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Building Reuse Committee member",
+   "status": "present",
+   "quote": "mr. toale noted committee members present this evening were david macdonald, mark erickson, damon mcquaid and himself."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of February 4, 2016 were approved (no motion or vote recorded in the text).",
+   "quote": "minutes of february 4, 2016, were approved."
+  },
+  {
+   "decision": "Mr. Burney agreed to submit an outline of his 225 Pleasant Street report to the Conservation Commission at its next meeting on the 21st.",
+   "quote": "she requested mr. burney submit an outline of what he just reported to this board to the conservation commission at their next meeting on the 21st"
+  },
+  {
+   "decision": "Mr. Burney told the alleged violator the Board was not going to let him do the reclamation work on town property, but the Board would let him pay for it.",
+   "quote": "mr. burney informed him that the board was not going that way but would be happy to let him pay for it."
+  },
+  {
+   "decision": "Discussion of who is responsible for the various town properties was deferred to a future meeting.",
+   "quote": "it was decided to discuss further at a future meeting."
+  },
+  {
+   "decision": "Mr. Marciello to check with Accountant Brochu for clarification on the top two transfer items.",
+   "quote": "mr. marciello will check with accountant brochu for clarification."
+  },
+  {
+   "decision": "Building Reuse Committee does not go forward with the market analysis and will pursue two other alternatives.",
+   "quote": "at this point in time the committee doesn't believe they should go forward with the market analysis."
+  },
+  {
+   "decision": "Mr. Toale said a letter would be sent to Ms. Williams, with one month to provide the requested documents.",
+   "quote": "mr. toale stated a letter would be sent to her but noted she had one month to provide the requested documents."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pancake breakfast price (Lions Club, public announcement)",
+   "what_was_recorded": "The Lunenburg Turkey Hill Family Lions Club pancake breakfast is priced at a set cost to attendees.",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "the cost is $2.00. take-out is available."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "An accounts payable warrant and a single payroll warrant were signed.",
+   "figures_as_printed": [
+    "$279,708.70",
+    "$1678.54"
+   ],
+   "quote": "an accounts payable warrant in the amount of $279,708.70 and a single payroll warrant in the amount of $1678.54 were signed."
+  },
+  {
+   "topic": "DEP Sustainable Materials Recovery Program grant",
+   "what_was_recorded": "The Town received a grant from DEP through the Sustainable Materials Recovery Program.",
+   "figures_as_printed": [
+    "$5,400"
+   ],
+   "quote": "the town has received a $5,400 grant from dep through the sustainable materials recovery program"
+  },
+  {
+   "topic": "Interim Town Manager compensation and recertification cost",
+   "what_was_recorded": "Interim Town Manager compensation is set at a weekly rate; recertification as a certified procurement officer would cost a stated amount for three courses if needed in future.",
+   "figures_as_printed": [
+    "$2050.00",
+    "$1885.00"
+   ],
+   "quote": "amounting to $1885.00 and they are offered through the inspector general's office"
+  },
+  {
+   "topic": "Building Reuse Committee market analysis",
+   "what_was_recorded": "Town Meeting appropriated an amount for a market analysis; bids received were higher than the appropriation.",
+   "figures_as_printed": [
+    "$10,000",
+    "$12,500",
+    "$20,000- $25,000"
+   ],
+   "quote": "town meeting had approved $10,000 for the committee to obtain a market analysis on properties other than t.c. passios"
+  },
+  {
+   "topic": "Lanni Orchards transfer and legal expense appropriation",
+   "what_was_recorded": "The balance of the Lanni Orchards APR was to be covered within the existing legal expense appropriation.",
+   "figures_as_printed": [
+    "$58,000"
+   ],
+   "quote": "we were able to cover the balance within the existing legal expense appropriation, which is where the $58,000 will be charged."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Chapter 44, section 33B end-of-year transfers, September 8 request (top line was a portion of the Lanni Orchards APR; balance covered within the existing legal expense appropriation).",
+   "amount_as_printed": "$58,000",
+   "outcome": "approved as presented (passed, All in Favor)",
+   "quote": "to approve the september 8\"\" request for chapter 44, section 33b transfers as presented"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "Chairman",
+   "topic": "Lions Club pancake breakfast announcement",
+   "quote": "mr. toale announced the lunenburg turkey hill family lions club will be hosting a pancake breakfast"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Clerk",
+   "topic": "thanks for Stillman Country Fair",
+   "quote": "mr. alonzo thanked everyone involved with the stillman country fair that occurred last saturday."
+  },
+  {
+   "speaker": "Mr. Marciello",
+   "stated_role": "Interim Town Manager",
+   "topic": "thanks to community",
+   "quote": "mr. marciello thanked the community for being welcoming and is looking forward to working for the town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment to Green Community Task Force",
+   "resolution": "appointed Liz Murphy",
+   "quote": "to appoint liz murphy to the green community task force",
+   "tags": [
+    "appointment",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes approved; warrants signed; follow-ups requested",
+   "quote": "minutes of february 4, 2016, were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "historical society",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Committee reports (Planning Board, Conservation Commission)",
+   "resolution": "reported; no action",
+   "quote": "ms. bertram reported the planning board examined site plan approval for an auto detailing shop at 8",
+   "tags": [
+    "planning board",
+    "conservation",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Hearing: Kabob-e-Licious alcohol license",
+   "resolution": "violation found; owner to provide server listing and certification by October 13",
+   "quote": "mr. toale opened the hearing and read the letter sent to kabob-e-licious, 165 massachusetts avenue",
+   "tags": [
+    "liquor license",
+    "hearing",
+    "tips certification"
+   ]
+  },
+  {
+   "topic": "Appointment of Interim Town Manager",
+   "resolution": "employment agreement approved",
+   "quote": "to approve the employment agreement with david marciello and the town of lunenburg; compensation is $2050.00 per week",
+   "tags": [
+    "town manager",
+    "appointment",
+    "employment agreement"
+   ]
+  },
+  {
+   "topic": "Building Reuse Committee update",
+   "resolution": "reported; market analysis not pursued",
+   "quote": "mr. toale noted committee members present this evening were david macdonald, mark erickson, damon mcquaid and himself.",
+   "tags": [
+    "building reuse",
+    "town hall",
+    "market analysis"
+   ]
+  },
+  {
+   "topic": "Update on 225 Pleasant Street",
+   "resolution": "update received; outline to Conservation Commission; further discussion deferred",
+   "quote": "land use director adam burney provided an update on the enforcement order on town property located at 225",
+   "tags": [
+    "225 pleasant street",
+    "enforcement order",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Devens Regional Hazardous Household Waste Agreement, Amendment #5 (Town of Pepperell)",
+   "resolution": "approved",
+   "quote": "to approve amendment #5 to the devens regional hazardous household waste intermunicipal agreement to add the town of pepperell",
+   "tags": [
+    "devens",
+    "intermunicipal agreement",
+    "hazardous waste"
+   ]
+  },
+  {
+   "topic": "Chapter 44, section 33B transfers (continued)",
+   "resolution": "approved as presented",
+   "quote": "the board reviewed the end of year transfer requests.",
+   "tags": [
+    "transfers",
+    "chapter 44 33B",
+    "lanni orchards",
+    "legal expense"
+   ]
+  },
+  {
+   "topic": "Committee reports (continued)",
+   "resolution": "reported; no action",
+   "quote": "mr. alonzo reported cable advisory committee has not met since the last board meeting.",
+   "tags": [
+    "committee reports",
+    "school building committee",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20 p.m.",
+   "quote": "the meeting adjourned at 8:20 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Employment agreement draft (in Board packet)",
+   "where": "text",
+   "quote": "he referred the board to the employment agreement draft in their packet."
+  },
+  {
+   "name": "Letter sent to Kabob-e-Licious, 165 Massachusetts Avenue (license hearing)",
+   "where": "text",
+   "quote": "mr. toale opened the hearing and read the letter sent to kabob-e-licious, 165 massachusetts avenue"
+  },
+  {
+   "name": "Letter from Lunenburg Historical Society (parking space affected by sale of former primary school building)",
+   "where": "text",
+   "quote": "ms. bertram requested meeting with the lunenburg historical society in response to a letter sent from them"
+  },
+  {
+   "name": "Devens Regional Hazardous Household Waste Intermunicipal agreement, Amendment #5",
+   "where": "text",
+   "quote": "to approve amendment #5 to the devens regional hazardous household waste intermunicipal agreement to add the town of pepperell"
+  },
+  {
+   "name": "September 8 request for Chapter 44, section 33B transfers",
+   "where": "text",
+   "quote": "to approve the september 8\"\" request for chapter 44, section 33b transfers as presented"
+  },
+  {
+   "name": "Notice of Intent for 101 Pleasant Street (Conservation Commission, September 7)",
+   "where": "text",
+   "quote": "presented a notice of intent that entails the construction of a temporary logging road, wetland restoration and installation of a culvert on a perennial"
+  },
+  {
+   "name": "Enforcement order on town property at 225 Pleasant Street",
+   "where": "text",
+   "quote": "land use director adam burney provided an update on the enforcement order on town property located at 225"
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "town manager appointment",
+  "building reuse",
+  "225 Pleasant Street",
+  "Devens",
+  "chapter 44 transfers",
+  "green community",
+  "conservation",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he referred the board to the employment agreement draft in their packet"
+ },
+ "dropped_unquoted_by_field": {}
 }

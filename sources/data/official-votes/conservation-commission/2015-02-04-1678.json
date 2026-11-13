@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-02-04",
  "docid": "1678",
@@ -12,6 +12,161 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes list \"MINUTES APPROVAL ~\" but provide no motion, seconder, or voting outcome. Discussions of budget, reports, and property improvements are noted, but no motions or votes are stated or recorded.",
- "cost_usd": 0.0809075
+ "note": "No motions or votes are recorded in this text, so the votes list is empty; the minutes do not show approval of prior minutes or adjournment by vote. The header reads 'Approved 2/18/2015', so the minutes were approved at a later meeting, not in this text. The page has a garbled header line and some names are printed with stray spaces ('Todd Dw yer', 'Jan Ca rrier'), kept as printed. Attendance is taken from the unlabelled name list at the top; no absences are stated. Public comment headings appear but no speakers are recorded.",
+ "cost_usd": 0.00400312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rich Bursch",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Matt Charpentier",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Todd Dw yer",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Jan Ca rrier",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, jack rabbitt, brad kennedy, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "presenter, Lane Property grant requirements",
+   "status": "present",
+   "quote": "paula bertram went over and explained in detail the immediate grant requirements"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "subject of joint meeting item, working on Recreational Trails Program Grant",
+   "status": "not stated",
+   "quote": "brandon is looking into and working on the recreational trails program grant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission requested to find out when Adam would be meeting with the Finance Committee.",
+   "quote": "commission requested to find out when adam will be meeting with finance committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Commission budget review",
+   "what_was_recorded": "The Commission reviewed its budget, which is to be presented to the Finance Committee; no dollar figures are printed.",
+   "quote": "budget-reviewed budget that will be presented to finance committee.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Lane Property Recreational Trails Program Grant",
+   "what_was_recorded": "Brandon Kibbe was looking into and working on the Recreational Trails Program Grant for the Lane Property; no amount is printed.",
+   "quote": "brandon is looking into and working on the recreational trails program grant.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open Space Acquisition Team joint meeting on Lane Property grant requirements",
+   "resolution": "discussed, no action recorded",
+   "quote": "7:00 pm ~ open space acquisition team ~joint meeting for discussion of lane property improvements to meet grant requirements",
+   "tags": [
+    "Lane Property",
+    "grants",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "signatures recorded: CoC (1), OoC (1)",
+   "quote": "signatures ~ coc (1), ooc (1)",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced NCLT meeting on 2/18 at 7:15 PM",
+   "quote": "announcements ~ janet morrison - nclt - 2/18 @ 7:15 pm",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Commission comment: learning and review session",
+   "resolution": "reviewed budget, reports, RDA and NOI forms; no action recorded",
+   "quote": "commission comment~ commission learning & review session",
+   "tags": [
+    "budget",
+    "reports",
+    "forms",
+    "training"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:23 PM; no vote recorded",
+   "quote": "adjournment ~ 10:23 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "RDA's and NOI's forms",
+   "where": "text",
+   "quote": "rda's & noi's-reviewed the two most common forms applicants have to fill out."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "Lane Property",
+  "open space",
+  "grants",
+  "budget",
+  "Finance Committee",
+  "forms",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

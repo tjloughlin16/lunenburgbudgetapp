@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-06-13",
  "docid": "3885",
@@ -12,15 +12,128 @@
  },
  "votes": [
   {
-   "motion": "Grant Site Plan Approval with Conditions as noted",
+   "motion": "Grant the Site Plan Approval with Conditions as noted for 234 Summer Street.",
    "moved_by": "D. McQuaid",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "passed (all aye; no count printed)",
    "procedural": false,
    "quote": "motion, d. mcquaid, to grant the site plan approval with conditions as noted, second, g. bittner, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0797115
+ "note": "Single-page OCR scan of the minutes. Some OCR errors are visible (e.g., 'Town Hail' for Town Hall, 'Prokowiew' appears as printed). The vote is recorded only as 'all aye' with no numeric count. The minutes do not state whether Stanley Miller personally attended. Board members' remark that they want more clarity on ZBA decisions is discussion, not a motion, and is not recorded as a decision.",
+ "cost_usd": 0.00314532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gary Shepard",
+   "role": "Project engineer, David E. Ross Associates (DER), representing the applicant",
+   "status": "present",
+   "quote": "project engineer gary shepard, david e. ross associates (der), represented the applicant stanley miller, 233 summer street."
+  },
+  {
+   "name": "Stanley Miller",
+   "role": "applicant, 233 Summer Street",
+   "status": "not stated",
+   "quote": "project engineer gary shepard, david e. ross associates (der), represented the applicant stanley miller, 233 summer street."
+  },
+  {
+   "name": "Dino Piermarini",
+   "role": "236 Summer Street",
+   "status": "present",
+   "quote": "dino piermarini, 236 summer street- inquired if a survey would be required for fence placement."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Conditions attached to the site plan approval: a temporary chain link fence during construction, that the Applicant build to the approved Plan, and that the Applicant abide by all Boards'/Commissions' Decisions.",
+   "quote": "conditions will be for a temporary chain link fence during construction, that the applicant build to the approved plan, that the applicant abide by all boards'/commissions' decisions."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dino Piermarini",
+   "stated_role": "236 Summer Street",
+   "topic": "whether a survey is required for fence placement",
+   "quote": "dino piermarini, 236 summer street- inquired if a survey would be required for fence placement."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Hearing (cont'd): site plan approval, 234 Summer Street (replace retail facility with single family home, Section 8.4.)",
+   "resolution": "approved with conditions",
+   "quote": "the public hearing, continued from may 23, 2016, was to hear and discuss a site plan approval under section 8.4. of the",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "zoning",
+    "single family home",
+    "fence"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised Site Plan, 234 Summer Street",
+   "where": "list",
+   "quote": "revised site plan, 234 summer street"
+  },
+  {
+   "name": "Zoning Board of Appeals' Certificate of Granting a Special Permit",
+   "where": "list",
+   "quote": "zoning board of appeals' certificate of granting a special permit"
+  }
+ ],
+ "tags": [
+  "site plan",
+  "public hearing",
+  "zoning",
+  "special permit",
+  "fence",
+  "234 Summer Street"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

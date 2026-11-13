@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-10-03",
  "docid": "4648",
@@ -12,15 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from September 12, 2016",
+   "motion": "Approve the meeting minutes of 9.12.16.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "committee reviewed and approved the minutes."
+   "quote": "committee reviewed and approved the minutes.",
+   "seconded_by": ""
   }
  ],
- "dropped_unquoted": 0,
- "note": "Single vote recorded: approval of prior meeting minutes. No mover or seconder identified in the minutes. No vote count stated; outcome inferred from \"approved\" language.",
- "cost_usd": 0.07936349999999999
+ "dropped_unquoted": 1,
+ "note": "Minutes give no motion, mover, seconder or tally for the minutes approval; the approval is recorded only as 'Committee reviewed and approved the minutes.' Adjournment is stated without a motion, so no vote is recorded for it. Minutes are signed 11/11/16. Jo McLaughlin is listed as a non-member; the minutes do not state a role for Jo.",
+ "cost_usd": 0.0029935200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member; signed as PACC Clerk",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin and john henshaw."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin and john henshaw."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The PACC went over the budget and refined line items based on finance committee recommendations, without a recorded vote.",
+   "quote": "the pacc went over the budget and refined line items based on recommendations by the finance committee which steve presented at the last meeting."
+  },
+  {
+   "decision": "The PACC reviewed the business plan and made simple changes, without a recorded vote.",
+   "quote": "the pacc reviewed the business plan and made simple changes."
+  },
+  {
+   "decision": "If a catastrophic event occurs, the PACC will appeal to the finance committee for more money so the PAC can operate.",
+   "quote": "if there is a catastrophic event, the pacc will appeal to the finance committee for more money so the pac can operate sufficiently."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Coordinator's monthly report: September ending balance",
+   "what_was_recorded": "The September ending balance was reported, and September's only expense was salaries (no figure printed for that).",
+   "figures_as_printed": [
+    "$287,743.55"
+   ],
+   "quote": "sept. ending balance was $287,743.55."
+  },
+  {
+   "topic": "Budget line-item refinement",
+   "what_was_recorded": "The PACC refined budget line items based on finance committee recommendations; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the pacc went over the budget and refined line items based on recommendations by the finance committee which steve presented at the last meeting."
+  },
+  {
+   "topic": "Coordinator job title pay increase",
+   "what_was_recorded": "A pay increase tied to a new job title is pending classification committee approval; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "so the committee is not able to meet to approve jo's new job title which results in a pay increase."
+  },
+  {
+   "topic": "Finance committee appeal after catastrophic event",
+   "what_was_recorded": "The PACC would appeal to the finance committee for more money in a catastrophic event; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "if there is a catastrophic event, the pacc will appeal to the finance committee for more money so the pac can operate sufficiently."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and call to order",
+   "resolution": "called to order at 6:10pm",
+   "quote": "meeting called to order at 6:10pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes of 9.12.16",
+   "resolution": "approved",
+   "quote": "committee reviewed and approved the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "received; no action recorded",
+   "quote": "coordinator's monthly report:",
+   "tags": [
+    "coordinator",
+    "budget",
+    "programming",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "CAC and Budget update",
+   "resolution": "business plan reviewed with simple changes",
+   "quote": "the pacc reviewed the business plan and made simple changes.",
+   "tags": [
+    "budget",
+    "business plan",
+    "CAC"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "next meetings set for Nov 7 and Dec 5; adjourned at 7:30pm",
+   "quote": "next meeting is scheduled for nov 7 th and dec 5 th .",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Business plan",
+   "where": "text",
+   "quote": "the pacc reviewed the business plan and made simple changes."
+  }
+ ],
+ "tags": [
+  "public access",
+  "cable committee",
+  "PAC",
+  "budget",
+  "coordinator report",
+  "finance committee",
+  "minutes",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

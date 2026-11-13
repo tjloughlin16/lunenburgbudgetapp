@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2016-10-04",
  "docid": "1227",
@@ -12,15 +12,213 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John H.",
    "seconded_by": "Damon M.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "john h. made a motion to adjourn; damon m. seconded the motion. the committee approved the motion 4-0."
+   "quote": "john h. made a motion to adjourn; damon m. seconded the motion. the committee approved the motion 4-0. the meeting adjourned at 6:00."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes mention January 16 and September 20 prior minutes being \"Approved and signed off by Jamie T.\" but without explicit motion/seconded/voted language. Only the adjournment vote is recorded with full motion language and a vote count.",
- "cost_usd": 0.08439150000000001
+ "note": "OCR text from a two-page scan. Stamps read 'OCT 2 5 2018' on page 2 (likely a 2016 stamp misread). Attendance layout is jumbled, so the absent/present assignments rely on the 'Present:' and 'Absent:' labels. Minutes approvals are recorded as statements, not motions, so they are listed as decisions. Only one motion (adjournment) is recorded with a vote. The fire capital request table is presented with no recorded board action on the requests. The 'Also Present' line lists David Marciello without a stated attendance mode; treated as present.",
+ "cost_usd": 0.00400482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, john henshaw"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, john henshaw"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, john henshaw"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "dennis mannone david marciello, town manager, interim"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Town Manager, Interim",
+   "status": "present",
+   "quote": "dennis mannone david marciello, town manager, interim"
+  },
+  {
+   "name": "Pat Sullivan",
+   "role": "Chief",
+   "status": "present",
+   "quote": "fire department capital requests-presented by chief pat sullivan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee reorganization was postponed due to lack of a full committee.",
+   "quote": "committee reorganization: postponed due to lack of a full committee."
+  },
+  {
+   "decision": "Minutes of the January 16, 2016 meeting were approved and signed off by the Chairman (no motion recorded).",
+   "quote": "january 16, 2016 meeting: approved and signed off by jamie t."
+  },
+  {
+   "decision": "Minutes of the September 20, 2016 meeting were approved and signed off by the Chairman (no motion recorded).",
+   "quote": "september 20, 2016 meeting: approved and signed off by jamie t."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire apparatus cost escalation",
+   "what_was_recorded": "Chief Sullivan said expected costs of fire trucks will rise 5% each year, confirmed with other fire departments.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "expected costs of fire trucks will increase by 5% each year; the chief confirmed this"
+  },
+  {
+   "topic": "Trade-in value of replaced fire equipment",
+   "what_was_recorded": "The trade-in value of the fire equipment to be replaced is about $5,000 each.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "the trade-in value of the fire equipment that would be replaced is about $5,000 each."
+  },
+  {
+   "topic": "Engine 4 purchase price",
+   "what_was_recorded": "Engine 4 (acquired 1995) has a purchase price of $615,000 as listed in the request.",
+   "figures_as_printed": [
+    "$615,000"
+   ],
+   "quote": "purchase price: $615,000"
+  },
+  {
+   "topic": "Engine 4 cost to keep in service",
+   "what_was_recorded": "Since FY12 it has cost about $50,000 to keep Engine 4 in service.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "since fy12, it has cost about $50,000 to keep this unit in years ol",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Engine 4 pump repair estimate",
+   "what_was_recorded": "Chief estimates repair of Engine 4's pump, which failed its September 2016 test, would cost $5,000-$7,000.",
+   "figures_as_printed": [
+    "$5,000-$7,000"
+   ],
+   "quote": "the chief estimates repair would cost $5,000-$7,000."
+  },
+  {
+   "topic": "Command Car purchase price",
+   "what_was_recorded": "The Command Car (acquired 2007) has a purchase price of $60,000 as listed in the request.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "purchase price: $60,000"
+  },
+  {
+   "topic": "Ladder 1 purchase price",
+   "what_was_recorded": "Ladder 1 (acquired 1988) has a purchase price of $850,000 as listed in the request.",
+   "figures_as_printed": [
+    "$850,000"
+   ],
+   "quote": "purchase price: $850,000"
+  },
+  {
+   "topic": "Ladder 1 repair cost this year",
+   "what_was_recorded": "This year it cost $12,000 to replace worn components on Ladder 1, which is at or near the end of its useful life.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "this year it cost $12,000 to replace worn components"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 5:30 pm",
+   "quote": "jamie t. called the capital planning committee to order at 5:30 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee reorganization",
+   "resolution": "postponed",
+   "quote": "committee reorganization: postponed due to lack of a full committee.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Minutes review",
+   "resolution": "approved January 16 and September 20, 2016 minutes",
+   "quote": "january 16, 2016 meeting: approved and signed off by jamie t.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Fire Department capital requests",
+   "resolution": "presented; no action recorded",
+   "quote": "fire department capital requests-presented by chief pat sullivan",
+   "tags": [
+    "fire department",
+    "capital requests",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:00 pm, 4-0",
+   "quote": "john h. made a motion to adjourn; damon m. seconded the motion. the committee approved the motion 4-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital planning",
+  "fire department",
+  "fire apparatus",
+  "Engine 4",
+  "Ladder 1",
+  "command car",
+  "capital requests",
+  "minutes approval",
+  "FY17"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

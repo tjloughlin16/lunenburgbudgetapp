@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2016-08-04",
  "docid": "1495",
@@ -12,32 +12,173 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from May 12th meeting",
-   "moved_by": "K. Herrick",
-   "seconded_by": "N. Gray",
+   "motion": "Approve the minutes of the May 12 meeting.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "k. herrick entertained motion to approve minutes. second by n. gray. all attending voted to approve minutes."
+   "quote": "k. herrick entertained motion to approve minutes. second by n. gray. all attending voted to approve minutes.",
+   "seconded_by": "N. Gray"
   },
   {
-   "motion": "Not adopt the Adoption of Regulations proposed by Conservation Commission",
+   "motion": "Not adopt the new regulation proposed by the Conservation Commission.",
    "moved_by": "K. Herrick",
-   "seconded_by": "C. Hennessey",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion to \"not adopt this new regulation\" called by k. herrick. second by c. hennessey. c. all attending voted unanimously in favor of not adopting regulation propos",
-   "quote_taken_from_text": true
+   "quote": "a motion to \"not adopt this new regulation\" called by k. herrick. second by c. hennessey.",
+   "seconded_by": "C. Hennessey"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chair",
-   "seconded_by": "M. Smith",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn ly chair at 7:05pm. second by m. smith. all attending voted to adjourn."
+   "quote": "motion to adjourn ly chair at 7:05pm. second by m. smith. all attending voted to adjourn.",
+   "seconded_by": "M. Smith"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision",
- "cost_usd": 0.1011395
+ "note": "Minutes are OCR text with artifacts (e.g., 'рm' for 'pm', 'ly' for 'by', 'Selectment', 'May 12*''). Quotes keep the text as printed. Votes are recorded only as 'all attending voted', with no counts or roll call. The request mentions a 'By Law Committee' board, while the minutes header reads 'Bylaw Review Committee'. The chair is not named. No dollar figures appear. Mention of the May 12 minutes is treated as a vote subject, not a listed document.",
+ "cost_usd": 0.00689185,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Bowen",
+   "role": "committee member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "committee member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Cathy Hennessy",
+   "role": "committee member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Michelle Smith",
+   "role": "committee member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "committee member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectment",
+   "status": "not stated",
+   "quote": "chair shared request from board of selectment bob ebersole to have bylaw review committee review the adoption of regulations proposed by conservation commission."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting scheduled in one week to finalize Bylaw recommendations, on August 10 at 6:30pm.",
+   "quote": "next meeting scheduled in one week to finalize bylaw recommendations. august 10 at 6:30pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:10pm",
+   "quote": "1. call to order: meeting called to order 6:10pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "3. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review of minutes from May 12 meeting",
+   "resolution": "approved",
+   "quote": "k. herrick entertained motion to approve minutes. second by n. gray. all attending voted to approve minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Revised cover letter for Bylaw Review Committee recommendations",
+   "resolution": "presented, no action",
+   "quote": "chair presented revised letter to accompany bylaw review committee recommendations.",
+   "tags": [
+    "bylaw",
+    "letter"
+   ]
+  },
+  {
+   "topic": "Consistency of final Bylaw recommendations",
+   "resolution": "discussed, no action",
+   "quote": "committee discussion followed on making the final bylaw recommendations flow consistently and allow each article recommendation to stand alone in form and format.",
+   "tags": [
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Conservation Commission proposed adoption of regulations",
+   "resolution": "not adopted",
+   "quote": "all attending voted unanimously in favor of not adopting regulation proposed.",
+   "tags": [
+    "conservation commission",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for August 10, 2016 at 6:30pm",
+   "quote": "next meeting scheduled in one week to finalize bylaw recommendations. august 10 at 6:30pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:05pm",
+   "quote": "motion to adjourn ly chair at 7:05pm. second by m. smith. all attending voted to adjourn.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised letter to accompany ByLaw Review Committee recommendations",
+   "where": "text",
+   "quote": "chair presented revised letter to accompany bylaw review committee recommendations."
+  },
+  {
+   "name": "Adoption of Regulations proposed by Conservation Commission",
+   "where": "text",
+   "quote": "chair shared request from board of selectment bob ebersole to have bylaw review committee review the adoption of regulations proposed by conservation commission."
+  }
+ ],
+ "tags": [
+  "bylaw review",
+  "conservation commission",
+  "regulations",
+  "minutes approval",
+  "scheduling",
+  "no public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

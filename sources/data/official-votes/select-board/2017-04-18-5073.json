@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-04-18",
  "docid": "5073",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To enter into negotiations with Mead, Talerman and Costa to serve as Town Counsel",
+   "motion": "To enter into negotiations with Mead, Talerman and Costa to serve as Town Counsel.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
@@ -20,39 +20,305 @@
    "quote": "motion: p. bertram 2\": r. ebersole to enter into negotiations with mead, talerman and costa to serve as town counsel vote: all in favor"
   },
   {
-   "motion": "To adopt the Complete Streets Policy as submitted with the typographical corrections incorporated",
-   "moved_by": "R. Ebersole",
+   "motion": "To adopt the Complete Streets Policy as submitted with the typographical corrections incorporated.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion: r.ebersole 2°°: t. alonzo to adopt the complete streets policy as submitted with the typographical corrections incorporated vote: all in favor"
   },
   {
-   "motion": "To approve the hearing date of May 18 at 7:00 p.m. at Town Hall",
+   "motion": "To approve the cable license renewal public hearing date of May 18 at 7:00 p.m. at Town Hall.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: r. ebersole 2nd. p. luck to approve the hearing date of may 18 at 7:00 p.m.at town hall vote: all in favor"
   },
   {
-   "motion": "To accept Mr. Kehrer's resignation",
+   "motion": "To accept Mr. Kehrer's resignation from the Architectural Preservation District Commission.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: r. ebersole to accept mr.kehrer's resignation 2'°: t. alonzo vote: all in favor"
   },
   {
-   "motion": "To enter Executive Session and adjourn immediately afterwards",
+   "motion": "To enter Executive Session under MGL c.30A, §21 (Finance Director Contract) and adjourn immediately afterwards.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed 5-0",
    "procedural": true,
    "quote": "motion: t. alonzo 2nd: p. bertram to enter executive session and adjourn immediately afterwards vote: ms. luck-aye, ms. bertram- aye, mr. alonzo-aye, mr. ebersole-aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision, readable. Five votes recorded, including three procedural votes (cable hearing approval, resignation acceptance, executive session entry).",
- "cost_usd": 0.0936895
+ "note": "Text is OCR (macOS Vision) and has errors: the seconder markers appear as '2\"', '2°°', '2nd', and \"2'°\", and the clerk's signature is garbled ('laine M. Peterson'). Votes are recorded only as 'All in Favor' with no count except the executive session (5-0 from listed ayes). The minutes include the Received & Filed stamp dated May 17 2017. No amounts were recorded for the Deutsch Williams, Mead, Talerman & Costa or Murphy Hess fees beyond those listed. The adjournment at 8:26 p.m. is printed but has no separate motion.",
+ "cost_usd": 0.006554719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager heather lemieux. the meeting commenced at 6:00 p.m."
+  },
+  {
+   "name": "Paul Derensis",
+   "role": "Attorney, Deutsch Williams",
+   "status": "present",
+   "quote": "attorneys paul derensis presented with attorney kimberly a. saillant, a litigator with the firm."
+  },
+  {
+   "name": "Kimberly A. Saillant",
+   "role": "Attorney, Deutsch Williams",
+   "status": "present",
+   "quote": "attorneys paul derensis presented with attorney kimberly a. saillant, a litigator with the firm."
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Attorney, Mead, Talerman & Costa, LLC",
+   "status": "present",
+   "quote": "attorneys adam costa & jay talerman appeared this evening."
+  },
+  {
+   "name": "Jay Talerman",
+   "role": "Attorney, Mead, Talerman & Costa, LLC",
+   "status": "present",
+   "quote": "attorneys adam costa & jay talerman appeared this evening."
+  },
+  {
+   "name": "David Deluca",
+   "role": "Attorney, Murphy Hess Toomey & Lehane LLP",
+   "status": "present",
+   "quote": "attorney david deluca thanked the board for asking them back tonight."
+  },
+  {
+   "name": "Brandon Moss",
+   "role": "Attorney, Murphy Hess Toomey & Lehane LLP",
+   "status": "present",
+   "quote": "he also acknowledged attorneys brandon moss and kerry jenness present tonight."
+  },
+  {
+   "name": "Kerry Jenness",
+   "role": "Attorney, Murphy Hess Toomey & Lehane LLP",
+   "status": "present",
+   "quote": "he also acknowledged attorneys brandon moss and kerry jenness present tonight."
+  },
+  {
+   "name": "Tom Harrington",
+   "role": "Attorney, Miyares & Harrington LLP",
+   "status": "present",
+   "quote": "attorneys tom harrington and christopher heep returned this evening."
+  },
+  {
+   "name": "Christopher Heep",
+   "role": "Attorney, Miyares & Harrington LLP",
+   "status": "present",
+   "quote": "attorneys tom harrington and christopher heep returned this evening."
+  },
+  {
+   "name": "Mr. Burney",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "the board, ms. lemieux and mr. burney discussed all the firms and their"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux will conduct the negotiations with Mead, Talerman and Costa and bring the result back to the Board, including the question of the new firm taking on current litigation.",
+   "quote": "further discussion ensued about the new firm taking on current litigation. ms. lemieux will conduct the negotiations and bring it back to the board."
+  },
+  {
+   "decision": "Ms. Lemieux will look into the larger and thicker Pay as You Throw trash bags option and whether progress has been made on ordering them.",
+   "quote": "mr. alonzo inquired about the larger and thicker \"pay as you throw\" trash bags option and if any progress had been made on ordering them. ms. lemieux will look in to it."
+  },
+  {
+   "decision": "Storm Water Task Force to schedule itself on a future Board agenda for whenever is more practicable.",
+   "quote": "mr. toale suggested the storm water task force schedule themselves on this board agenda for whenever is more practicable."
+  },
+  {
+   "decision": "Mr. Ebersole suggested scheduling a Board goal-setting session following the election with a new Selectman. Board to receive draft stormwater materials in advance, per discussion.",
+   "quote": "mr. ebersole suggested scheduling a board goal-setting session following the election with a new selectman."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Legal counsel hourly rates (Miyares & Harrington)",
+   "what_was_recorded": "The firm's principal price proposal was a straight hourly rate for partners, associates, paralegals and travel time, with out-of-pocket expenses reimbursed.",
+   "figures_as_printed": [
+    "$205 per hour",
+    "$185 per hour",
+    "$90 per hour",
+    "$80"
+   ],
+   "quote": "the principal price proposal is a straight hourly rate of $205 per hour for firm partners and their counsel and $185 per hour for associates; $90 per hour for paralegals and $80 for travel time."
+  },
+  {
+   "topic": "Legal counsel estimated cost comparison",
+   "what_was_recorded": "Ms. Lemieux reviewed the estimated cost for legal services for each firm, based on general legal services and litigation fees on 217.6 hours; no dollar total printed.",
+   "figures_as_printed": [
+    "217.6 hours"
+   ],
+   "quote": "ms. lemieux reviewed the estimated cost for legal services for each firm based on general legal services and litigation fees based on 217.6 hours."
+  },
+  {
+   "topic": "Host community agreement value (Murphy Hess)",
+   "what_was_recorded": "A Murphy Hess attorney said a host agreement they wrote for Longmeadow resulted in $5 million for that town from a casino in Springfield.",
+   "figures_as_printed": [
+    "$5 million dollars"
+   ],
+   "quote": "they wrote one for longmeadow that resulted in $5 million dollars for the town as a result of a casino going into"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$160,317.85",
+    "$730,649.79",
+    "$159,760.77"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $160,317.85, a payroll warrant in the amount of"
+  },
+  {
+   "topic": "Stormwater utility fee",
+   "what_was_recorded": "Ms. Bertram said a stormwater utility fee has been discussed and is a big part of the financial component of stormwater compliance; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we have talked about a stormwater utility fee; that's a big part of it when we move in that direction."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Legal Counsel Request For Proposal Interviews",
+   "resolution": "approved negotiations with Mead, Talerman and Costa as Town Counsel",
+   "quote": "ms. lemieux reported the four finalist firms were here for their second round of interviews",
+   "tags": [
+    "town counsel",
+    "procurement",
+    "legal services"
+   ]
+  },
+  {
+   "topic": "Complete Streets Policy Review and Possible Vote to Adopt (cont.)",
+   "resolution": "adopted with typographical corrections",
+   "quote": "to adopt the complete streets policy as submitted with the typographical corrections incorporated",
+   "tags": [
+    "complete streets",
+    "policy",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Discussion on Cable License Renewal Hearing",
+   "resolution": "approved hearing date of May 18 at 7:00 p.m.",
+   "quote": "to approve the hearing date of may 18 at 7:00 p.m.at town hall",
+   "tags": [
+    "cable",
+    "license renewal",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Minutes/ Warrants/Action File Issues",
+   "resolution": "warrants signed; action file items noted, no vote",
+   "quote": "the board signed an accounts payable warrant in the amount of $160,317.85",
+   "tags": [
+    "warrants",
+    "trash bags",
+    "goal setting"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action; reports and questions noted",
+   "quote": "ms. luck reported school committee meets next week.",
+   "tags": [
+    "stormwater",
+    "committee reports",
+    "sewer",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Interviews/Appointments/Re-appointments/Resignations",
+   "resolution": "accepted resignation of Matthew Kehrer",
+   "quote": "matthew kehrer submitted his resignation from the architectural preservation district commission",
+   "tags": [
+    "appointments",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered executive session and adjourned",
+   "quote": "to enter executive session and adjourn immediately afterwards",
+   "tags": [
+    "executive session",
+    "finance director contract"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Complete Streets Policy (draft)",
+   "where": "text",
+   "quote": "ms. lemieux stated this is follow up to the last meeting's discussion. the board had discussed the draft policy."
+  },
+  {
+   "name": "Notice of Intent (stormwater)",
+   "where": "text",
+   "quote": "the notice of intent will be reviewed on june 22^d"
+  }
+ ],
+ "tags": [
+  "town counsel",
+  "legal services",
+  "complete streets",
+  "cable license renewal",
+  "stormwater",
+  "warrants",
+  "appointments",
+  "resignation",
+  "executive session",
+  "sewer",
+  "tax title"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

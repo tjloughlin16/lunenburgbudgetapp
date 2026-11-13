@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2012-01-05",
  "docid": "3222",
@@ -12,23 +12,99 @@
  },
  "votes": [
   {
-   "motion": "make the Beach and Park Expenses line the priority with a level funded budget and a full time Park person if the override passes",
+   "motion": "Make the Beach and Park Expenses line the priority, with a level funded budget and a full time Park person if the override passes.",
+   "moved_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "voted 3-0 to make the beach and park expenses line our priority with a level funded budget and a full time park person if the override passes."
+   "quote": "voted 3-0 to make the beach and park expenses line our priority with a level funded budget and a full time park person if the override passes.",
+   "seconded_by": ""
   },
   {
-   "motion": "accept the minutes from our last meeting",
+   "motion": "Accept the minutes from the last meeting.",
+   "moved_by": "",
    "outcome": "passed 3-0",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "voted 3-0 to accept the minutes from our last meeting."
+   "quote": "voted 3-0 to accept the minutes from our last meeting.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scan via macOS Vision. Two votes recorded; no moved_by or seconded_by names printed.",
- "cost_usd": 0.0827375
+ "note": "OCR text of a single scanned page (macOS Vision); some spelling may be OCR-altered (e.g., \"could'nt\"). Motions record no mover or seconder. The minutes do not state any roles, including Jack Rodriquenz's (he is listed among those present and is described as the person the meeting was called for). No public comment, documents list, or dollar figures appear in the text. A \"RECEIVED & FILED APR 25 2012\" clerk stamp is printed.",
+ "cost_usd": 0.00242552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Johnson",
+   "status": "present",
+   "quote": "present: jeff johnson, tom leppala, bob robuccio, jack rodriquenz"
+  },
+  {
+   "name": "Tom Leppala",
+   "status": "present",
+   "quote": "present: jeff johnson, tom leppala, bob robuccio, jack rodriquenz"
+  },
+  {
+   "name": "Bob Robuccio",
+   "status": "present",
+   "quote": "present: jeff johnson, tom leppala, bob robuccio, jack rodriquenz"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "present: jeff johnson, tom leppala, bob robuccio, jack rodriquenz"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Town Beach and Park Expenses line",
+   "what_was_recorded": "The commission's priority is to fully fund the Town Beach and Park Expenses line at its present level, which covers Jr Basketball custodians for about 400 kids; no dollar figure is printed.",
+   "quote": "our priorities are fully funding the town beach and park expenses line at their present level.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Full time Park person",
+   "what_was_recorded": "The commission asked for a full time Park person if the override passes and the budget can be fully funded; Jack said he could not guarantee anything. No dollar figure is printed.",
+   "quote": "we would like to see a full time park person if it would work with a fully funded budget",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Next year's budget priorities",
+   "resolution": "priorities set by vote: level-funded Beach and Park Expenses line; full time Park person if override passes",
+   "quote": "the meeting was called by jack to find out what our priorities for next years budget would be",
+   "tags": [
+    "budget",
+    "priorities",
+    "override",
+    "beach"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved 3-0",
+   "quote": "voted 3-0 to accept the minutes from our last meeting.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks commission",
+  "budget priorities",
+  "beach",
+  "override",
+  "full time park person",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

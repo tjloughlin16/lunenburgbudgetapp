@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-07-02",
  "docid": "639",
@@ -12,31 +12,270 @@
  },
  "votes": [
   {
-   "motion": "to allow $18,900 to be added to the bid tonight",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
+   "motion": "Allow the figure of $18, 900 to be added to the bid for the Measure & List project.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the board determined and voted to allow the figure of $18, 900 to be added tonight to the bid."
   },
   {
-   "motion": "to accept the bid proposal/contract",
+   "motion": "Accept the bid proposal / contract (RRG).",
    "moved_by": "Louis",
    "seconded_by": "Chris",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "louis motioned to accept the bid proposal / contract and chris seconded. the board signed the contract."
+   "quote": "louis motioned to accept the bid proposal / contract and chris seconded."
   },
   {
-   "motion": "to meet on Tuesday, August 6 at 6 pm",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Meet on Tuesday, August 6 at 6 pm.",
    "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on tuesday, august 6* at 6 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Extracted by OCR (macOS Vision).",
- "cost_usd": 0.1335625
+ "note": "OCR of scanned pages; several words are garbled (e.g., 'July 1yt%', 'vaterfront', 'Evaluatio', 'Lavie Paquette' in the signature, and '6*' for the August date). Page 2 is partly cut off mid-sentence. No vote tallies are recorded anywhere; the bid and meeting-date motions are recorded only as 'voted' or 'motioned'. The Aros appeared before the board but the minutes do not label any segment as public comment, so public_comment is empty.",
+ "cost_usd": 0.00701512,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis J. Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board member, christopher comeau"
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board member, christopher comeau"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew J. Papini, Sr",
+   "role": "Member",
+   "status": "absent",
+   "quote": "(member, matthew j. papini, sr not present)."
+  },
+  {
+   "name": "Judith Aro",
+   "role": "Property owners",
+   "status": "present",
+   "quote": "also present: judith and john aro of 400 howard st."
+  },
+  {
+   "name": "John Aro",
+   "role": "Property owners",
+   "status": "present",
+   "quote": "also present: judith and john aro of 400 howard st."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board reviewed and approved current expense vouchers, abatements, warrants, FY 13 Omitted & Revised Assessment Report, payroll and minutes (no recorded motion or tally).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, fy 13 omitted & revised assessment report, payroll and minutes."
+  },
+  {
+   "decision": "The Board signed the bid contract; the contract goes to the Town Manager for review and approval.",
+   "quote": "the board signed the contract. the contract will be given to the town manager for review and approval."
+  },
+  {
+   "decision": "Commitment / Warrant to be prepared for the Aro rollback tax; a Chapter release to be prepared for filing once the rollback tax is paid.",
+   "quote": "commitment / warrant will be prepared."
+  },
+  {
+   "decision": "The Board suggested a second letter be sent to Mr. Conway within the next two weeks.",
+   "quote": "the board suggested that a second letter be sent within the next two weeks to mr. conway."
+  },
+  {
+   "decision": "Chris will follow up on the outstanding Chapter Lien application for 994 Northfield Rd (Settlers Crossing Golf Course).",
+   "quote": "chris stated that he will follow up on this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Aro property rollback tax (Chapter 61A)",
+   "what_was_recorded": "Roll-back tax figure quoted to the Aros for years 2009 through 2013, good through July; the Aros intend to pay within the next week.",
+   "figures_as_printed": [
+    "$74,993.09"
+   ],
+   "quote": "the figure quoted ($74,993.09) is good through july"
+  },
+  {
+   "topic": "RFP bid from RRG",
+   "what_was_recorded": "The Board reviewed the single bid received for the Request for Proposals.",
+   "figures_as_printed": [
+    "$60,500"
+   ],
+   "quote": "the boa reviewed the bid of $60,500."
+  },
+  {
+   "topic": "Measure & List project added to bid",
+   "what_was_recorded": "Measure & List project was inadvertently omitted from the original bid; the Board allowed $18, 900 to be added to the bid.",
+   "figures_as_printed": [
+    "$18, 900"
+   ],
+   "quote": "the board determined and voted to allow the figure of $18, 900 to be added tonight to the bid."
+  },
+  {
+   "topic": "FY14 Assessors Budget",
+   "what_was_recorded": "Both quotes are within the accepted Assessors Budget for FY14.",
+   "figures_as_printed": [],
+   "quote": "(both quotes are within the accepted assessors budget for fy14)."
+  },
+  {
+   "topic": "FY14 final bills",
+   "what_was_recorded": "Final bill count for FY14 was 4874, totaling the amount shown.",
+   "figures_as_printed": [
+    "$9,871,078.34"
+   ],
+   "quote": "the final bill count was 4874 totaling $9,871,078.34."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, fy 13 omitted & revised assessment report, payroll and minutes.",
+   "tags": [
+    "vouchers",
+    "abatements",
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Aro property sale and Chapter 61A rollback tax",
+   "resolution": "rollback figure given; commitment and chapter release to follow after payment",
+   "quote": "property owners judith & john aro of 400 howard street attended the meeting to discuss their plans of selling",
+   "tags": [
+    "chapter 61A",
+    "rollback tax",
+    "property sale"
+   ]
+  },
+  {
+   "topic": "Request for Proposals bid (RRG) and Measure & List addition",
+   "resolution": "bid accepted with $18, 900 added; contract signed and sent to Town Manager",
+   "quote": "the bids for the request for proposals were given to the office from the town manager.",
+   "tags": [
+    "RFP",
+    "bid",
+    "contract",
+    "measure and list"
+   ]
+  },
+  {
+   "topic": "FY14 preliminary bills",
+   "resolution": "reported; no action",
+   "quote": "louise reported that the fy 14 preliminary bills were mailed on june 28",
+   "tags": [
+    "tax bills",
+    "FY14"
+   ]
+  },
+  {
+   "topic": "Chapter 61B sale to Michael Conway",
+   "resolution": "letter sent; second letter suggested",
+   "quote": "harald reported there was a recent sale 6/7/2013 of chapter 61b recreation property",
+   "tags": [
+    "chapter 61B",
+    "recreation land",
+    "lien"
+   ]
+  },
+  {
+   "topic": "Chapter Lien application, 994 Northfield Rd (Settlers Crossing Golf Course)",
+   "resolution": "outstanding; Chris to follow up",
+   "quote": "still not in receipt of the chapter lien application and acknowledgement of rights and obligations for 994 northfield rd",
+   "tags": [
+    "chapter lien",
+    "golf course"
+   ]
+  },
+  {
+   "topic": "FY14 Interim Revaluation statistical ratio report",
+   "resolution": "presented; 2013 values to be extended into 2014",
+   "quote": "harald prepared and shared with the board a fy14 interim revaluation statistical ratio report of single family",
+   "tags": [
+    "revaluation",
+    "ratio study",
+    "single family homes"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for August 6 at 6 pm",
+   "quote": "board voted to meet on tuesday, august 6* at 6 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY14 Interim Revaluation statistical ratio report of single family homes",
+   "where": "list",
+   "quote": "harald prepared and shared with the board a fy14 interim revaluation statistical ratio report of single family"
+  },
+  {
+   "name": "Letter to Michael Conway dated June 18, 2013",
+   "where": "text",
+   "quote": "harald stated that he sent a letter on june 18, 2013 to the new owner michael conway informing him of"
+  },
+  {
+   "name": "Chapter application and Acknowledgement of the Rights and Obligations under Chapter 61B (enclosed with letter)",
+   "where": "text",
+   "quote": "also enclosed with the letter was a chapter application and acknowledgement of the rights and obligations under chapter 61b."
+  },
+  {
+   "name": "Chapter Lien application and Acknowledgement of Rights and Obligations for 994 Northfield Rd",
+   "where": "text",
+   "quote": "still not in receipt of the chapter lien application and acknowledgement of rights and obligations for 994 northfield rd"
+  },
+  {
+   "name": "Request for Proposals (bids, closing date 7/2/2013)",
+   "where": "text",
+   "quote": "the bids for the request for proposals were given to the office from the town manager."
+  },
+  {
+   "name": "Commitment / Warrant",
+   "where": "text",
+   "quote": "commitment / warrant will be prepared."
+  },
+  {
+   "name": "Master Evaluation spreadsheet (available January 1, 2014)",
+   "where": "text",
+   "quote": "spreadsheet will be available for january 1, 2014."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "chapter 61A",
+  "chapter 61B",
+  "rollback tax",
+  "chapter lien",
+  "RFP bid",
+  "revaluation",
+  "FY14 bills",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald prepared and shared with the board a fy14 interim revaluation statistical ratio report of single family"
+ },
+ "dropped_unquoted_by_field": {}
 }

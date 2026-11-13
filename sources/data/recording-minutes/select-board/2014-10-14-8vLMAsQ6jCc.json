@@ -1,0 +1,703 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-10-14",
+ "video_id": "8vLMAsQ6jCc",
+ "video_url": "https://www.youtube.com/watch?v=8vLMAsQ6jCc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-10-14-8vLMAsQ6jCc.json",
+  "sha256": "95552451ed6addcb5688526344e28e9fa89667a6d96bee9d80ea7f8aaf02492a",
+  "caption_lines": 323,
+  "segments": 2814
+ },
+ "recording": {
+  "duration_s": 6804,
+  "duration": "1:53",
+  "spoken_chars": 92325,
+  "words_approx": 15387
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10142014-4905",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-10-14-agenda-4905.txt",
+   "path": "sources/meetings/select-board/2014-10-14-agenda-4905.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142014-4905",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-10-14-minutes-4905.txt",
+   "path": "sources/meetings/select-board/2014-10-14-minutes-4905.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:12:33Z",
+  "cost_usd": 0.23467860000000001
+ },
+ "minutes": {
+  "headline": "Board agreed to pay Summer Street design from Chapter 90 and debated fixing the appointment process",
+  "summary": "The Select Board approved a liquor license transfer, a peddler's license, a one-day license, Sunday 10 a.m. hours for two lakefront restaurants, a roadblock and a state revolving fund resolution. They discussed FY15 board and town manager goals, with the appointment process debated at length and a resident sharply criticizing it. The town manager got the board's agreement to fund the Summer Street design amendment from Chapter 90, and the chair accepted five Conservation Commission resignations.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mrs Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Ebersole",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Toll",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 4812,
+    "speaker_as_heard": "Celeste McCain Stover, 275 Pleasant Street",
+    "stated_role": "resident",
+    "topic": "Criticized the planning board appointment process as an old boys club and nepotism; said she felt disregarded and discouraged from applying again."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "elections",
+   "grants",
+   "legal",
+   "msba",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "roads-and-dpw",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 425,
+    "motion": "Approve transfer of liquor license from Victory Distributors Inc to LLC and change of manager (Hannaford)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 641,
+    "motion": "Approve Peddler's license for Daniel Patton, Solar City Corporation",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 793,
+    "motion": "Approve one-day wine and malt license for North Leominster Rod and Gun Club on November 14",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1318,
+    "motion": "Approve Sunday 10 a.m. hours for JK Waterfront Inc (On the Rocks)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1360,
+    "motion": "Approve Sunday 10 a.m. hours for KJ Waterfront Inc (Embers Pizzeria)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1557,
+    "motion": "Approve roadblock for Turkey Hill Lions Club November 15, 8 a.m. to 2 p.m.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1765,
+    "motion": "Adopt resolution authorizing town manager to sign SRF grant application for the Pratt Street and Rennie Street sewer work",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6778,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 5191,
+    "topic": "Summer Street design contract amendment",
+    "what_was_said": "Amendment is split among three communities, and Lunenburg proposes funding its share from Chapter 90 because state bond bill money is unavailable.",
+    "figures_as_heard": [
+     "287 550",
+     "two hundred thirty thousand three hundred fifty one dollars and 57 cents"
+    ]
+   },
+   {
+    "t": 5277,
+    "topic": "Road repair funding / Chapter 90",
+    "what_was_said": "Chapter 90 plus budgetary allocation available this year, with most planned for pavement management and crack sealing.",
+    "figures_as_heard": [
+     "887 almost 888 thousand dollars",
+     "660 000",
+     "333 thousand dollars"
+    ]
+   },
+   {
+    "t": 5489,
+    "topic": "Summer Street TIP funding at risk",
+    "what_was_said": "A member said the town risks losing grant funding if design does not move forward.",
+    "figures_as_heard": [
+     "over seven million dollars"
+    ]
+   },
+   {
+    "t": 1602,
+    "topic": "State revolving fund application for sewer extensions",
+    "what_was_said": "Resolution authorizes the town manager to submit the Sewer Commission's SRF application; applicant agrees to pay its required share.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2694,
+    "topic": "Stabilization fund and tri-town funds",
+    "what_was_said": "A member wants a five percent stabilization fund without counting tri-town funds; others said the financial policy does not make that distinction.",
+    "figures_as_heard": [
+     "five percent"
+    ]
+   },
+   {
+    "t": 6093,
+    "topic": "Passios building asbestos abatement",
+    "what_was_said": "Abatement and demolition costs for the old building were cited.",
+    "figures_as_heard": [
+     "five hundred thousand dollars",
+     "seven to eight hundred thousand"
+    ]
+   },
+   {
+    "t": 5718,
+    "topic": "Accounts payable for new school construction",
+    "what_was_said": "Warrant amounts were read.",
+    "figures_as_heard": [
+     "82 564.21 cents",
+     "2 million ninety four thousand four hundred fifty nine dollars and fifty two cents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5359,
+    "decision": "Board consensus to fund the Summer Street design amendment from Chapter 90, with no formal vote needed."
+   },
+   {
+    "t": 6379,
+    "decision": "Chair accepted the five Conservation Commission resignations and one Council on Aging resignation without a vote."
+   },
+   {
+    "t": 4033,
+    "decision": "Board favored a cutoff date for talent bank applications and asking the Personnel committee to develop a fuller appointment and recruitment process."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 26,
+    "t_end": 234,
+    "topic": "Opening comments: ballot question one, Passios property",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 234,
+    "t_end": 467,
+    "topic": "Hannaford liquor license transfer",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 467,
+    "t_end": 681,
+    "topic": "Peddler's license for Solar City",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 681,
+    "t_end": 816,
+    "topic": "Rod and Gun Club one-day license",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 816,
+    "t_end": 1486,
+    "topic": "Sunday 10 a.m. hours for On the Rocks and Embers",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1486,
+    "t_end": 1602,
+    "topic": "Lions Club roadblock",
+    "resolution": "voted",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1602,
+    "t_end": 1790,
+    "topic": "SRF grant resolution for sewer",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 1790,
+    "t_end": 3452,
+    "topic": "FY2015 board and town manager goals",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3452,
+    "t_end": 5150,
+    "topic": "Appointment and reappointment process, public comment",
+    "resolution": "no resolution",
+    "tags": [
+     "policy",
+     "personnel",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 5150,
+    "t_end": 5656,
+    "topic": "Summer Street design amendment and Chapter 90",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5656,
+    "t_end": 5760,
+    "topic": "Warrants and accounts payable",
+    "resolution": "informational",
+    "tags": [
+     "msba"
+    ]
+   },
+   {
+    "t_start": 5760,
+    "t_end": 6280,
+    "topic": "Committee reports, school building committee, Passios",
+    "resolution": "informational",
+    "tags": [
+     "msba",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6280,
+    "t_end": 6660,
+    "topic": "Resignations and Conservation Commission vacancies",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6660,
+    "t_end": 6798,
+    "topic": "Announcements, charter school, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Some stretches of the warrant and accounts payable reading are garbled.",
+   "Vote counts were not given."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1870,
+    "about": "Members disagreed on whether the appointment process needs a total revamp.",
+    "sides": "One member against a total revamp; another member for a revamp",
+    "words_as_heard": "I don't think that a total revamp is warranted",
+    "kind": "members disagree"
+   },
+   {
+    "t": 4852,
+    "about": "A resident accused the board of an old boys club and nepotism in planning board appointments.",
+    "sides": "a resident against the board",
+    "words_as_heard": "it did feel like an old boys club I mean it feels like there's nepotism Going On Here",
+    "kind": "public criticism"
+   },
+   {
+    "t": 1092,
+    "about": "Members differed over opening alcohol establishments at 10 a.m. on Sundays.",
+    "sides": "One member opposed; others in favor",
+    "words_as_heard": "I don't believe that you know establishments that sell alcohol should be open at 10 A.M",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 5489,
+    "kind": "condition",
+    "about": "Summer Street funding is lost without moving design forward.",
+    "who": "a member",
+    "words_as_heard": "we will not be funded if we do not move this design forward"
+   },
+   {
+    "t": 6093,
+    "kind": "safety",
+    "about": "Asbestos abatement cost at the Passios building.",
+    "who": "a member",
+    "words_as_heard": "five hundred thousand dollars to get rid of the asbestos in paseos"
+   },
+   {
+    "t": 6524,
+    "kind": "liability or legal",
+    "about": "Conservation Commission lacks members and statutory 21-day deadlines apply.",
+    "who": "town manager",
+    "words_as_heard": "we have a problem if we aren't able to start that process within 21 days"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1642,
+    "name_as_heard": "the resolution",
+    "kind": "warrant article",
+    "words_as_heard": "There is a resolution that is in the packet"
+   },
+   {
+    "t": 5277,
+    "name_as_heard": "Road repair funding sheet",
+    "kind": "memo",
+    "words_as_heard": "I handed out a sheet of paper to you this evening"
+   },
+   {
+    "t": 3010,
+    "name_as_heard": "letter dated July 22nd",
+    "kind": "letter or email",
+    "words_as_heard": "the letter dated July 22nd"
+   },
+   {
+    "t": 6441,
+    "name_as_heard": "Council on Aging resignation letter",
+    "kind": "letter or email",
+    "words_as_heard": "letters inform you that I must regretfully decline my appointment"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "chapter-90-spending",
+    "title": "Chapter 90 spending",
+    "question": "How much Chapter 90 and local road money is available and what is planned for Summer Street design?",
+    "t": 5191,
+    "words_as_heard": "we would like to allocate chapter 90. funding to this project",
+    "data_in_play": [
+     "287 550",
+     "887 almost 888 thousand dollars",
+     "660 000"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "old-primary-school-demolition",
+    "title": "Passios asbestos abatement",
+    "question": "What would asbestos abatement or demolition of the Passios building cost?",
+    "t": 6093,
+    "words_as_heard": "five hundred thousand dollars to get rid of the asbestos in paseos",
+    "data_in_play": [
+     "five hundred thousand dollars",
+     "seven to eight hundred thousand"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "Board members agreed, without a formal vote, to fund the Summer Street design contract amendment from Chapter 90 because state bond bill money is unavailable.",
+    "t": 5359
+   },
+   {
+    "line": "The board favored a cutoff date for talent bank applications and asking the Personnel committee to develop a fuller appointment and recruitment process; nothing was settled.",
+    "t": 4033
+   },
+   {
+    "line": "A resident criticized the planning board appointment process and said she felt disregarded and discouraged from applying again.",
+    "t": 4812
+   },
+   {
+    "line": "The board passed a resolution authorizing the town manager to sign the state revolving fund application for the Pratt Street and Rennie Street sewer work.",
+    "t": 1765
+   },
+   {
+    "line": "The board approved a liquor license transfer, a peddler's license, a one-day license, Sunday 10 a.m. hours for two lakefront restaurants, and a roadblock.",
+    "t": 425
+   }
+  ],
+  "why_it_matters": [
+   "Chapter 90 is state road money, so paying the Summer Street design share from it leaves less for other road repairs, and the design is tied to grant funding a member said the town could lose if it stalls.",
+   "Who is appointed to town boards, and how openings are advertised, may change if the Personnel committee drafts a fuller process, which affects any resident who wants to serve.",
+   "The sewer resolution has the applicant agreeing to pay its required share, so the sewer extensions carry a local cost to be settled later."
+  ],
+  "watch_next": [
+   "A Personnel committee recommendation on a talent bank cutoff date and a fuller appointment and recruitment process.",
+   "Filling the five Conservation Commission vacancies after the accepted resignations."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:12:42Z",
+   "cost_usd": 0.0263491
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142014-4905",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-10-14-minutes-4905.txt",
+   "path": "sources/meetings/select-board/2014-10-14-minutes-4905.pdf"
+  },
+  "official_sha256": "93a805fae4d2b823b7b758a2c68416b32ee5047c42a0405ca94d180166e750a9",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all seven votes' outcomes and on most figures and attendees. The main difference is that the official minutes record 4-1 splits (Alonzo opposed) on both Sunday-hours votes, which ours records only as passed, and ours includes budget items and a talent bank discussion the official minutes do not.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Victory Distributors liquor license transfer",
+    "ours": "Approve transfer of liquor license from Victory Distributors Inc to LLC and change of manager (Hannaford) — passed",
+    "official": "to approve the transfer of license request by victory distributors, inc. d/b/a hannaford food and drug to victory distributors, llc",
+    "note": "Both record the transfer as passed.",
+    "t": 425
+   },
+   {
+    "kind": "agree",
+    "about": "Peddler's license Daniel Patton",
+    "ours": "Approve Peddler's license for Daniel Patton, Solar City Corporation — passed",
+    "official": "to approve a peddler's license for daniel e. patton for solar city corporation",
+    "note": "Same vote and outcome.",
+    "t": 641
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Rod and Gun Club one-day license",
+    "ours": "Approve one-day wine and malt license for North Leominster Rod and Gun Club on November 14 — passed",
+    "official": "to approve the one day wine and malt license to the north leominster rod and gun club at 1501",
+    "note": "Both passed; official gives hours 6:00 to 11:00 p.m. and address, which ours omits. Not a conflict, so check only if hours matter.",
+    "t": 793
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sunday 10 a.m. hours JK Waterfront (On the Rocks)",
+    "ours": "Approve Sunday 10 a.m. hours for JK Waterfront Inc (On the Rocks) — passed",
+    "official": "to approve the request to change the hours to 10:00 a.m. on sundays for jk waterfront, inc. d/b/a on the rocks vote: 4 in favor, 1 opposed (alonzo)",
+    "note": "Official records a 4-1 split with Alonzo opposed; ours records only 'passed'. Check the recording for the vote count.",
+    "t": 1318
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Sunday 10 a.m. hours KJ Waterfront (Embers Pizzeria)",
+    "ours": "Approve Sunday 10 a.m. hours for KJ Waterfront Inc (Embers Pizzeria) — passed",
+    "official": "to approve the request to change the hours to 10:00 a.m, on sundays for kj waterfront, inc. d/b/a embers pizzeria vote: 4 in favor, 1 opposed (alonzo)",
+    "note": "Official records a 4-1 split with Alonzo opposed; ours records only 'passed'. Check the recording for the vote count.",
+    "t": 1360
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill Lions Club roadblock",
+    "ours": "Approve roadblock for Turkey Hill Lions Club November 15, 8 a.m. to 2 p.m. — passed",
+    "official": "to approve the turkey hill lions club road block request for november",
+    "note": "Same vote; date and times match the official summary.",
+    "t": 1557
+   },
+   {
+    "kind": "agree",
+    "about": "SRF grant application resolution",
+    "ours": "Adopt resolution authorizing town manager to sign SRF grant application for the Pratt Street and Rennie Street sewer work — passed",
+    "official": "to adopt a resolution to authorize town manager to sign the srf application for the work as read",
+    "note": "Same vote; official does not name the streets.",
+    "t": 1765
+   },
+   {
+    "kind": "caption_error",
+    "about": "Summer Street design contract amendment, Lunenburg share",
+    "ours": "287 550, two hundred thirty thousand three hundred fifty one dollars and 57 cents",
+    "official": "the amendment is in the amount of $287,550; lunenburg's amount is $230,251.57.",
+    "note": "Ours says $230,351.57, which matches the agenda heading. The official body text prints $230,251.57. Check which is correct.",
+    "official_reading": "$230,251.57",
+    "t": 5191
+   },
+   {
+    "kind": "agree",
+    "about": "Summer Street design amendment funded from Chapter 90, Board concurred",
+    "ours": "Board consensus to fund the Summer Street design amendment from Chapter 90, with no formal vote needed.",
+    "official": "she wanted to ensure the board wants to move forward. the board concurred.",
+    "note": "Both record consensus without a formal vote.",
+    "t": 5359
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chapter 90 road repair funding figures",
+    "ours": "887 almost 888 thousand dollars, 660 000, 333 thousand dollars",
+    "official": "",
+    "note": "The official minutes print no Chapter 90 balance figures.",
+    "t": 5277
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Summer Street TIP funding at risk",
+    "ours": "over seven million dollars",
+    "official": "",
+    "note": "The official minutes give no TIP funding figure.",
+    "t": 5489
+   },
+   {
+    "kind": "agree",
+    "about": "Stabilization fund 5%",
+    "ours": "Stabilization fund and tri-town funds: five percent",
+    "official": "ms. bertram suggested working towards achieving a 5% stabilization fund without using tri-town funds.",
+    "note": "Same figure and topic.",
+    "t": 2694
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Passios building asbestos abatement",
+    "ours": "five hundred thousand dollars, seven to eight hundred thousand",
+    "official": "",
+    "note": "The official minutes do not mention the asbestos abatement estimates.",
+    "t": 6093
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrants",
+    "ours": "82 564.21 cents, 2 million ninety four thousand four hundred fifty nine dollars and fifty two cents",
+    "official": "an accounts payable warrant in the amount of $82,564.21 and an accounts payable warrant for the new school in the amount of $2,094,459.52 was signed",
+    "note": "Amounts match once the caption garbling is read as words.",
+    "t": 5718
+   },
+   {
+    "kind": "agree",
+    "about": "Resignations accepted without a vote",
+    "ours": "Chair accepted the five Conservation Commission resignations and one Council on Aging resignation without a vote.",
+    "official": "as chair, mr. alonzo accepted their resignations with regret.",
+    "note": "Both record the chair accepting the resignations. Official also names the Council on Aging resignation separately.",
+    "t": 6379
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Talent bank cutoff and Personnel committee process",
+    "ours": "Board favored a cutoff date for talent bank applications and asking the Personnel committee to develop a fuller appointment and recruitment process.",
+    "official": "should fill out a talent bank form and submit it to town hall.",
+    "note": "Official records only a direction to submit talent bank forms. Ours records a Board preference for a cutoff date and a Personnel committee referral. Check the recording.",
+    "t": 4033
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mr. Alonzo's suggestion to contact Police on Patton's daily locations",
+    "ours": "",
+    "official": "mr. alonzo recommended contacting the police on his daily locations.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MRTA letter action item",
+    "ours": "",
+    "official": "the action item is that clinton bench will take that mrta letter back to mbta to look at and try to gather usage data.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "November election warrant signed",
+    "ours": "",
+    "official": "the november election warrant was signed.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Mr chairman (chair)",
+    "official": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present.",
+    "note": "Chair is Thomas Alonzo; ours gives only a title.",
+    "official_reading": "Thomas Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Toll",
+    "ours": "Mr Toll (member)",
+    "official": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present.",
+    "note": "Misheard name; official is Jamie Toale, clerk.",
+    "official_reading": "Jamie Toale"
+   },
+   {
+    "kind": "agree",
+    "about": "Other board members and town manager",
+    "ours": "Mrs Bertram, Mr Ebersole, Mrs luck, town manager",
+    "official": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present.",
+    "note": "All present in both.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:13:53Z",
+   "cost_usd": 0.0601491
+  }
+ }
+}

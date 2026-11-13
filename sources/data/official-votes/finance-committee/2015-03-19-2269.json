@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-03-19",
  "docid": "2269",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes as submitted",
+   "motion": "Approve the minutes of the March 19 meeting as submitted.",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Karin Menard",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "terri made a motion to approve the minutes, karin seconded her motion and the committee approved the minutes as submitted 4-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 4-0",
@@ -29,6 +29,244 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0874745
+ "note": "Text is OCR (macOS Vision) of a 3-page minutes document; some characters are garbled (e.g., 'ili.', 'Terry' for Terri in the liaison list). Attendance is read from column-style OCR: the Absent line reads 'Mark Ericson, Caroline Griffis' while the header spells the chairman 'Mark Erickson'; the name is recorded as printed in the absent line. The Sewer Enterprise Fund projection sentence is cut off in the text after 'about $100,000 in'. The minutes approved are dated March 19, the same meeting. No public comment was recorded ('Public: None.'). Only two motions were recorded, both procedural; the liaison reports, future agenda items and next meetings have no recorded votes.",
+ "cost_usd": 0.006146819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "status": "present",
+   "role": "Vice-Chairman",
+   "quote": "terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "role": "",
+   "quote": "terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "role": "",
+   "quote": "terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "role": "Secretary",
+   "quote": "terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Mark Ericson",
+   "status": "absent",
+   "role": "Chairman",
+   "quote": "mark ericson, caroline griffis"
+  },
+  {
+   "name": "Caroline Griffis",
+   "status": "absent",
+   "role": "Finance Committee member",
+   "quote": "mark ericson, caroline griffis"
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "role": "BOS Liaison",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "present",
+   "role": "Town Manager",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Steve Walker",
+   "status": "present",
+   "role": "presenter, PACC FY16 budget",
+   "quote": "public access cable committee (pacc) fy16 budget presentation by steve walker"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "role": "presenter, Sewer Commission FY16 budget",
+   "quote": "sewer commission and enterprise fund fy16 budget presentation by carl luck"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "PACC revenue from Comcast fee; no taxpayer funds",
+   "what_was_recorded": "PACC's sole revenue is a Comcast fee of about $92,000 per year, paid quarterly; no taxpayer funds are provided for its operation or equipment.",
+   "figures_as_printed": [
+    "$92,000"
+   ],
+   "quote": "this fee totals about $92,000 per year and is paid quarterly."
+  },
+  {
+   "topic": "PACC projected accumulated Comcast balance at end of FY15",
+   "what_was_recorded": "The projected balance of accumulated Comcast payments at the end of FY15 is stated, for paying operating expenses and capital investments.",
+   "figures_as_printed": [
+    "$301,292"
+   ],
+   "quote": "the projected balance of accumulated comcast payments at the end of fy15 is $301,292."
+  },
+  {
+   "topic": "PACC FY16 projected operating budget",
+   "what_was_recorded": "The FY16 projected operating budget is stated, with payroll and consulting services as the largest expense.",
+   "figures_as_printed": [
+    "$147,500",
+    "$75,000"
+   ],
+   "quote": "fy16 projected operating budget is $147,500. the largest expense--payroll and consulting services--is $75,000 of that total."
+  },
+  {
+   "topic": "Sewer FY16 revenue and expense change; no taxpayer funds",
+   "what_was_recorded": "FY16 revenues are budgeted to increase about 12.8% and expenses about 4.2%; sewer revenues are user fees and betterments, so no taxpayer funds are used.",
+   "figures_as_printed": [
+    "$104.000",
+    "12.8%",
+    "$34,000",
+    "4.2%"
+   ],
+   "quote": "the fy16 budget is for revenues to increase by about $104.000-12.8%, and expenses increase by $34,000-4.2%."
+  },
+  {
+   "topic": "Sewer retained earnings change in FY16",
+   "what_was_recorded": "Retained earnings would increase by nearly $70,000 in FY16.",
+   "figures_as_printed": [
+    "$70,000"
+   ],
+   "quote": "retained earnings would increase by nearly $70,000."
+  },
+  {
+   "topic": "Sewer Enterprise Fund projected decline",
+   "what_was_recorded": "The Sewer Enterprise Fund is projected to decline from $1,200,000 in FY15 to about $100,000, based on baseline betterment and related revenue projections, which the Sewer Commission is still refining.",
+   "figures_as_printed": [
+    "$1,200,000",
+    "$100,000"
+   ],
+   "quote": "the sewer enterprise fund would decline from $1,200,000 in fy15 to about $100,000 in"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "no action (none reported)",
+   "quote": "public: none. b. committee: none",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "no action (none reported)",
+   "quote": "3. town manager updates: none.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "PACC FY16 budget presentation",
+   "resolution": "presented",
+   "quote": "public access cable committee (pacc) fy16 budget presentation by steve walker",
+   "tags": [
+    "public access cable",
+    "FY16 budget"
+   ]
+  },
+  {
+   "topic": "Sewer Commission and Enterprise Fund FY16 budget presentation",
+   "resolution": "presented",
+   "quote": "sewer commission and enterprise fund fy16 budget presentation by carl luck",
+   "tags": [
+    "sewer",
+    "enterprise fund",
+    "FY16 budget"
+   ]
+  },
+  {
+   "topic": "Minutes of the March 19 meeting",
+   "resolution": "approved 4-0",
+   "quote": "terri made a motion to approve the minutes, karin seconded her motion and the committee approved the minutes as submitted 4-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee/Department liaison updates",
+   "resolution": "reports received; mostly no report, Green Community update given",
+   "quote": "7. committee/department liaison updates:",
+   "tags": [
+    "liaison reports",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed (budget goals, pavement management, contract commitments)",
+   "quote": "8. future agenda items: a. budget goals and opportunities",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted (March 26 special meeting)",
+   "quote": "march 26, special meeting: official public hearing, summary of the budget and review of the money articles in the town warrant.",
+   "tags": [
+    "meeting schedule",
+    "town warrant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:32 PM",
+   "quote": "karin moved to adjourn the meeting, her motion was seconded by jay and approved 4-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Slides of the PACC presentation (FY16 budget)",
+   "where": "text",
+   "quote": "note: click for slides of the pacc presentation that provide more detail than is included in these minutes."
+  },
+  {
+   "name": "Slides of the Sewer Commission presentation (FY16 budget)",
+   "where": "text",
+   "quote": "click for slides of the sewer commission presentation that provide more detail than is included in"
+  },
+  {
+   "name": "Town Warrant money articles",
+   "where": "text",
+   "quote": "review of the money articles in the town warrant"
+  },
+  {
+   "name": "Comprehensive Wastewater Management Plan (CWMP)",
+   "where": "text",
+   "quote": "town's comprehensive wastewater management plan (cwmp)"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY16 budget",
+  "public access cable",
+  "sewer enterprise fund",
+  "minutes approval",
+  "liaison reports",
+  "town warrant",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "note: click for slides of the pacc presentation"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-04-23",
  "docid": "4842",
@@ -12,31 +12,467 @@
  },
  "votes": [
   {
-   "motion": "Approve All Alcohol License for Donald E. Lyons d/b/a Settlers Pub, 994 Northfield Road",
+   "motion": "Recommend approval of the All Alcohol License for Donald E. Lyons d/b/a Settlers Pub, 994 Northfield Road.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to recommend approve the all alcohol license for donald e. lyons d/b/a settlers pub, 994 northfield road mr. alonzo seconded the motion. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to recommend approve the all alcohol license for donald e. lyons d/b/a settlers pub, 994 northfield road mr. alonzo seconded the motion."
   },
   {
-   "motion": "Approve Common Victualer's License for Donald E. Lyons d/b/a Settlers Pub, 994 Northfield Road",
+   "motion": "Recommend approval of the Common Victualer's License for Donald E. Lyons d/b/a Settlers Pub, 994 Northfield Road.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to recommend approve the common victualer's license for donald e. lyons d/b/a settlers pub, 994 northfield road. mr. alonzo seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to recommend approve the common victualer's license for donald e. lyons d/b/a settlers pub, 994 northfield road. mr. alonzo seconded."
   },
   {
-   "motion": "Enter executive session to discuss strategy with respect to collective bargaining or litigation",
+   "motion": "Go into executive session under M.G.L. Chapter 30A, Section 2, 1A(9) to discuss strategy on collective bargaining or litigation.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. matthews moved to go to executive session citing m.g.l. chapter 30a, section 2,1a (9), to discuss strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigating position, and the chair so declares roll call vote to go into executive session: alonzo - aye, bertram - aye, debettencourt - aye, sund - aye, matthews - aye"
+   "quote": "mr. matthews moved to go to executive session citing m.g.l. chapter 30a, section 2,1a (9), to discuss strategy with respect to collective bargaining"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable. Three votes total: two license approvals for Settlers Pub (both procedural business), one entry into executive session.",
- "cost_usd": 0.1090845
+ "note": "OCR scan (macOS Vision) of typed minutes. Some words are garbled (for example 'Mi. Lyons', and a garbled line in the Town Manager evaluation essay section). The Chairman's first name does not appear in the attendance line, so he is recorded as 'Matthews'. The three warrant figures are printed without labels tying each to a warrant date, so no pairing is recorded. No vote is recorded on approving the 4/16/2013 minutes or on the warrants. No adjournment motion is recorded; the minutes say the meeting ended at 8:30 pm. The executive session roll call is printed as all Aye (5 of 5), and no return from executive session is recorded. The spreadsheet is mentioned only in passing, not as a list, so documents_list is marked not printed.",
+ "cost_usd": 0.013175220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthews",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager kerry speidel."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager kerry speidel."
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager kerry speidel."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager kerry speidel."
+  },
+  {
+   "name": "Donald E. Lyons",
+   "role": "representing Settlers Pub",
+   "status": "present",
+   "quote": "donald e. lyons representing settlers pub stated that he had purchased the old maple"
+  },
+  {
+   "name": "Dennis Stewart",
+   "role": "",
+   "status": "present",
+   "quote": "dennis stewart, 252 new west townsend road, stated that he has lived in lunenburg since 1962 and he"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "joanna bilotta-simeone, 362 sunset lane, told the bos that it would be former selectman joseph f. biolotta's"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to provide additional copies of her response to the Board's evaluations to the members of the BOS.",
+   "quote": "she would provide additional copies to the members of the bos."
+  },
+  {
+   "decision": "Town Manager to provide additional information to the BOS on projected costs of veterans in town.",
+   "quote": "ms. speidel replied that she has some additional information on this that she will provide to the bos."
+  },
+  {
+   "decision": "Town Manager to present all information on the FY2013 Budget Adjustments to the Finance Committee before Town Meeting.",
+   "quote": "she was going to present all information to the finance committee before town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Maturing Debt (FY2013 budget adjustment)",
+   "what_was_recorded": "A projected debt of $16,849.00 in Maturing Debt, caused by a refinanced bond issue that saved the Town over $100,000.00.",
+   "figures_as_printed": [
+    "$16,849.00",
+    "$100,000.00"
+   ],
+   "quote": "the first is in maturing debt where there is a projected debt of $16,849.00. the reason for this debt is due to a"
+  },
+  {
+   "topic": "Unclassified section surplus",
+   "what_was_recorded": "The Unclassified section of the budget has a total surplus of $234,550.00.",
+   "figures_as_printed": [
+    "$234,550.00"
+   ],
+   "quote": "in the unclassified section of the budget there is a total surplus of $234,550.00."
+  },
+  {
+   "topic": "Liability Insurance",
+   "what_was_recorded": "An additional payment of $21,000.00 in Liability Insurance due to an additional assessment by the State Insurance Commission.",
+   "figures_as_printed": [
+    "$21,000.00"
+   ],
+   "quote": "including an additional payment of $21,000.00 in liability insurance due to an additional assessment"
+  },
+  {
+   "topic": "Health Insurance",
+   "what_was_recorded": "A surplus of $177,000.00 in Health Insurance from consistently lower enrollment and a lower Medicare Part B penalty.",
+   "figures_as_printed": [
+    "$177,000.00"
+   ],
+   "quote": "a surplus of $177,000.00 in health insurance due to a consistent lower enrollment in the town's health care"
+  },
+  {
+   "topic": "Finance Committee Reserve Fund / Vehicle Maintenance",
+   "what_was_recorded": "A request to cover vehicle maintenance from the Finance Committee Reserve Fund, which the Vehicle Maintenance budget can cover; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there is enough money in the vehicle maintenance budget to cover this request."
+  },
+  {
+   "topic": "Retirement buy back",
+   "what_was_recorded": "A deficit of $21,163.00 in the retirement buy back line from four retirements, three with significant sick leave buy backs.",
+   "figures_as_printed": [
+    "$21,163.00"
+   ],
+   "quote": "a $21,163.00 deficit in the retirement buy back line due to four retirements, (3 employees had three significant"
+  },
+  {
+   "topic": "Unemployment and Medicare",
+   "what_was_recorded": "Unemployment has a surplus of $28,000.00 and an additional $9,000.00 in Medicare surplus.",
+   "figures_as_printed": [
+    "$28,000.00",
+    "$9,000.00"
+   ],
+   "quote": "unemployment has a surplus of $28,000.00 with an additional $9,000.00 in medicare surplus."
+  },
+  {
+   "topic": "General Government and legal expenses",
+   "what_was_recorded": "General Government has a surplus of $3,587.00 and a $15,000.00 deficit in legal expenses.",
+   "figures_as_printed": [
+    "$3,587.00",
+    "$15,000.00"
+   ],
+   "quote": "general government has a surplus of $3,587.00, and there is a deficit of $15,000.00 in legal expenses."
+  },
+  {
+   "topic": "Central Purchasing (solid waste)",
+   "what_was_recorded": "A deficit of $6,000.00 in Central Purchasing due to the solid waste cost.",
+   "figures_as_printed": [
+    "$6,000.00"
+   ],
+   "quote": "in central purchasing there is a deficit of $6,000.00 due to the solid waste cost."
+  },
+  {
+   "topic": "Protection (non-bondable detainees)",
+   "what_was_recorded": "An overage of $23,500.00 in Protection due to an increase in non-bondable detainees.",
+   "figures_as_printed": [
+    "$23,500.00"
+   ],
+   "quote": "in protection there is an overage of $23,500.00 due to an increase in non-bondable detainees."
+  },
+  {
+   "topic": "Fire Department and Emergency Management (Blackboard Connect)",
+   "what_was_recorded": "A $10,000.00 deficit in the Fire Department and a projected $8,750.00 deficit in Emergency Management due to Blackboard Connect, which the Public Access Committee did not agree to fund.",
+   "figures_as_printed": [
+    "$10,000.00",
+    "$8,750.00"
+   ],
+   "quote": "within the fire department there is a deficit of $10,000.00 and a projected deficit in emergency management of"
+  },
+  {
+   "topic": "Wiring Inspector",
+   "what_was_recorded": "A deficit of $7,500.00 in the Wiring Inspector line.",
+   "figures_as_printed": [
+    "$7,500.00"
+   ],
+   "quote": "wiring inspector at a deficit of $7,500.00, health and sanitation at a deficit of $7,020.00, public safety at a surplus of $10,000.00"
+  },
+  {
+   "topic": "Health and Sanitation",
+   "what_was_recorded": "A deficit of $7,020.00 in Health and Sanitation.",
+   "figures_as_printed": [
+    "$7,020.00"
+   ],
+   "quote": "health and sanitation at a deficit of $7,020.00, public safety at a surplus of $10,000.00"
+  },
+  {
+   "topic": "Public Safety",
+   "what_was_recorded": "A surplus of $10,000.00 in Public Safety.",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "public safety at a surplus of $10,000.00, general highway maintenance with a deficit of $7,000.00"
+  },
+  {
+   "topic": "General Highway Maintenance",
+   "what_was_recorded": "A deficit of $7,000.00 in General Highway Maintenance.",
+   "figures_as_printed": [
+    "$7,000.00"
+   ],
+   "quote": "general highway maintenance with a deficit of $7,000.00, snow and ice at a deficit of $100,500.00"
+  },
+  {
+   "topic": "Snow and Ice",
+   "what_was_recorded": "A deficit of $100,500.00 in Snow and Ice.",
+   "figures_as_printed": [
+    "$100,500.00"
+   ],
+   "quote": "snow and ice at a deficit of $100,500.00, and with the assistance portion of the budget a deficit in veterans benefits of $32,035.00."
+  },
+  {
+   "topic": "Veterans Benefits",
+   "what_was_recorded": "A deficit of $32,035.00 in Veterans Benefits under the Assistance portion of the budget.",
+   "figures_as_printed": [
+    "$32,035.00"
+   ],
+   "quote": "with the assistance portion of the budget a deficit in veterans benefits of $32,035.00."
+  },
+  {
+   "topic": "Overall FY2013 budget adjustments",
+   "what_was_recorded": "With all budget items considered, the FY2013 budget adjustments show a surplus of $13,596.00.",
+   "figures_as_printed": [
+    "$13,596.00"
+   ],
+   "quote": "with all of the budgetary items taken into consideration there is a surplus of $13,596.00."
+  },
+  {
+   "topic": "Verizon abatement (Non-Appropriate section)",
+   "what_was_recorded": "A Verizon abatement granted by the Courts cost the Town $44,154.74, with an estimated interest payment of $12,968.19.",
+   "figures_as_printed": [
+    "$44,154.74",
+    "$12,968.19"
+   ],
+   "quote": "where verizon filed an abatement, which the courts granted, that cost the town $44,154.74 with an estimated interest payment of $12,968.19."
+  },
+  {
+   "topic": "Verizon abatement, Assessors funding and remaining deficit",
+   "what_was_recorded": "The Assessors covered part of the abatement, but the Town remains responsible for $17,000 of it, leaving a deficit of $3,400.00.",
+   "figures_as_printed": [
+    "$17,000",
+    "$3,400.00"
+   ],
+   "quote": "the town is still responsible for paying $17,000 of the abatement. this would leave a deficit of $3,400.00."
+  },
+  {
+   "topic": "Free Cash request",
+   "what_was_recorded": "The Town Manager requested an additional $25,000.00 from Free Cash to cover the costs and provide a buffer for the fiscal year.",
+   "figures_as_printed": [
+    "$25,000.00"
+   ],
+   "quote": "as such she would request that an additional $25,000.00 from free cash be approved to cover the costs"
+  },
+  {
+   "topic": "Trust Fund for retirements",
+   "what_was_recorded": "Discussion that a Trust Fund with Free Cash may have merit for future retirements; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "there may be merit in setting up a trust fund with free cash to prepare for retirements."
+  },
+  {
+   "topic": "Warrants (Minutes/Warrants/Action File Issues)",
+   "what_was_recorded": "Warrant totals printed as $288,656.92, $405,485.78 and $575,529.43; the minutes do not clearly pair each figure with a warrant date.",
+   "figures_as_printed": [
+    "$288,656.92",
+    "$405,485.78",
+    "$575,529.43"
+   ],
+   "quote": "warrants: 4/23/13 4/24/13 4/23/13 57-13 58-13 22p-13 $288,656.92 $405,485.78 $575,529.43"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Additional $25,000.00 from Free Cash requested by the Town Manager to cover FY2013 costs and provide a buffer.",
+   "amount_as_printed": "$25,000.00",
+   "outcome": "requested; no vote recorded",
+   "quote": "as such she would request that an additional $25,000.00 from free cash be approved to cover the costs"
+  },
+  {
+   "description": "Move money between FY2013 budget lines, to be approved at Town Meeting, to close projected deficits.",
+   "amount_as_printed": "not stated",
+   "outcome": "to be sought at Town Meeting; no vote recorded",
+   "quote": "ms. speidel and the town accountant are looking to gain approval at town meeting to move some money"
+  },
+  {
+   "description": "Cover a vehicle maintenance request from the Vehicle Maintenance budget rather than the Finance Committee Reserve Fund.",
+   "amount_as_printed": "not stated",
+   "outcome": "not stated",
+   "quote": "there is enough money in the vehicle maintenance budget to cover this request."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Joanna Bilotta-Simeone",
+   "stated_role": "",
+   "topic": "birthday of former selectman Joseph F. Biolotta",
+   "quote": "joanna bilotta-simeone, 362 sunset lane, told the bos that it would be former selectman joseph f. biolotta's"
+  },
+  {
+   "speaker": "Dennis Stewart",
+   "stated_role": "",
+   "topic": "welcoming new owners of the golf club",
+   "quote": "dennis stewart, 252 new west townsend road, stated that he has lived in lunenburg since 1962 and he"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and farewell to departing selectmen",
+   "resolution": "no action",
+   "quote": "mr. matthews began the meeting by acknowledging that it was the last meeting for selectman sund and",
+   "tags": [
+    "farewell",
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing: All Alcohol License, Settlers Pub",
+   "resolution": "recommended approval 5-0",
+   "quote": "7:00 p.m. - public hearing on general on premises all alcohol license for donald e. lyons",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "golf course"
+   ]
+  },
+  {
+   "topic": "Common Victualer's License, Settlers Pub",
+   "resolution": "recommended approval 5-0",
+   "quote": "1. common victualer's license for donald e. lyons d/b/a settlers pub, 994 northfield road:",
+   "tags": [
+    "common victualer license",
+    "restaurant"
+   ]
+  },
+  {
+   "topic": "Town Manager's Annual Evaluation",
+   "resolution": "discussed; no action recorded",
+   "quote": "2. town manager's annual evaluation: mr. matthews explained to the public that all five members of the",
+   "tags": [
+    "town manager evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "2013 Annual Town Meeting warrant articles and FY2013 Budget Adjustments",
+   "resolution": "discussed; no vote recorded",
+   "quote": "3. 2013 annual town meeting, vote on warrant articles: ms. speidel said that one of the remaining",
+   "tags": [
+    "town meeting",
+    "FY2013 budget",
+    "free cash",
+    "Blackboard Connect",
+    "Verizon abatement"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "listed; no vote recorded",
+   "quote": "action file issues: none.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "5. committee reports. ms. bertram said that the planning committee met the previous night",
+   "tags": [
+    "planning committee",
+    "Summer Street",
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "none",
+   "quote": "6. town manger reports-none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, 5-0 roll call",
+   "quote": "mr. matthews moved to go to executive session citing m.g.l. chapter 30a, section 2,1a (9), to discuss strategy",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY2013 Budget Adjustments spread sheet (prepared by Town Manager for the BOS)",
+   "where": "text",
+   "quote": "she put together a spread sheet for the bos to explain how the budget will be put together at town meeting."
+  },
+  {
+   "name": "Town Manger evaluation form (outline of criteria)",
+   "where": "text",
+   "quote": "he then read an outline of the criteria for the town manger evaluation formn which includes five"
+  },
+  {
+   "name": "Fiscal Year 2013 Budget Adjustments (remaining warrant article)",
+   "where": "text",
+   "quote": "one of the remaining warrant articles needed for the bos to review is the fiscal year 2013 budget adjustments."
+  },
+  {
+   "name": "Warrants 4/23/13 and 4/24/13 (57-13, 58-13, 22P-13)",
+   "where": "text",
+   "quote": "warrants: 4/23/13 4/24/13 4/23/13 57-13 58-13 22p-13 $288,656.92 $405,485.78 $575,529.43"
+  },
+  {
+   "name": "Minutes of 4/16/2013",
+   "where": "text",
+   "quote": "4. minutes/warrants/action file issues minutes: 4/16/2013"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "common victualer license",
+  "town manager evaluation",
+  "FY2013 budget adjustments",
+  "town meeting",
+  "free cash",
+  "Verizon abatement",
+  "Blackboard Connect",
+  "executive session",
+  "board farewell",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

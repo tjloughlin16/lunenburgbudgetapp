@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-02-05",
  "docid": "2800",
@@ -12,23 +12,227 @@
  },
  "votes": [
   {
-   "motion": "accept the exterior lighting plan to Green Initiative Committee; copy John Londa",
-   "moved_by": "Gare",
-   "seconded_by": "",
+   "motion": "Accept the exterior lighting plan to the Green Initiative Committee, with a copy to John Londa.",
+   "moved_by": "Gare Thompson",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion made by gare to accept the exterior lighting plan to green initiative committee; copy john londa. voted all in favor."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Gare",
-   "seconded_by": "Susan",
+   "motion": "Adjourn the meeting at 7:06 p.m.",
+   "moved_by": "Gare Thompson",
+   "seconded_by": "Susan Visser",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by gare at 7:06 p.m., susan second, voted all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0822875
+ "note": "Header reads \"Green Community Committee\" but the body is the Trustees of Lunenburg Public Library; the meeting was an extra meeting. No roll call; attendance taken from the \"Attending\" line. The lighting motion records \"Voted all in favor\" with no tally, so outcome is recorded as passed. Only one motion has a stated mover and no seconder. Kit and John Londa are named but their attendance is not stated (John Londa appears only as a copy recipient). Minutes are a summary, with no vote on the LED grant or building management system.",
+ "cost_usd": 0.00482272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Teresa Hathaway",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore, teresa hathaway"
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "reporter, Lunenburg Ledger",
+   "status": "present",
+   "quote": "amanda koeck - reporter, lunenburg ledger; gary burton - visitor"
+  },
+  {
+   "name": "Gary Burton",
+   "role": "visitor",
+   "status": "present",
+   "quote": "amanda koeck - reporter, lunenburg ledger; gary burton - visitor"
+  },
+  {
+   "name": "Kit",
+   "role": "",
+   "status": "not stated",
+   "quote": "martha asked kit how other municipal buildings are controlled"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lights over the public entrance (side door) will be treated as emergency lighting, on at all times and not turned off at midnight.",
+   "quote": "lights over public entrance (side door), will be treated as emergency lighting, \"on at all times\" and not turned off at midnight."
+  },
+  {
+   "decision": "The burner repair goes under the maintenance budget, since the estimate is under $10k and not a capital expenditure.",
+   "quote": "the burner [repair/replacement] will go under the maintenance budget."
+  },
+  {
+   "decision": "Kit is to ask the boiler representative for any documented savings data on the management system compared with an unmanaged system.",
+   "quote": "for kit to ask the on boiler representative: any [documented] savings data on the management system vis-à-vis an unmanaged"
+  },
+  {
+   "decision": "Action items: clean up documents for the February 19 meeting; Kit to obtain the savings information; light demo on or before February 19.",
+   "quote": "clean up documents for the meeting of february 19."
+  },
+  {
+   "decision": "Dick asked for bulleted numbers of the services and repairs performed (with dates), to present what has been done and support the position that further repairs are not desirable.",
+   "quote": "dick asks for bulleted numbers for the services/repairs that have been performed (dates etc.)"
+  },
+  {
+   "decision": "Teresa believes the boiler and the management system requests can be bundled together.",
+   "quote": "teresa believes that we can bundle the two."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Burner repair",
+   "what_was_recorded": "Harry reported the burner repair is estimated below $10k, so it is not a capital expenditure and goes under maintenance.",
+   "figures_as_printed": [
+    "<$10k"
+   ],
+   "quote": "harry reported that the burner repair is estimated at <$10k, thereby not considered capital expenditure"
+  },
+  {
+   "topic": "Building management system",
+   "what_was_recorded": "The building management system will run over $10k and is a capital expenditure item; Harry's report estimates it at $12k for software and hardware.",
+   "figures_as_printed": [
+    ">$10k",
+    "$12k"
+   ],
+   "quote": "the building management system will run >$10k and will be a capital expenditure item. estimated at $12k by harry's report"
+  },
+  {
+   "topic": "Electrical cost increase",
+   "what_was_recorded": "Teresa mentioned the electrical cost increase is not quite 100% but almost doubled.",
+   "figures_as_printed": [],
+   "quote": "teresa mentioned that the electrical cost increase is not quite 100%, but almost doubled…"
+  },
+  {
+   "topic": "Green Communities Task Force grant / LED funding",
+   "what_was_recorded": "Funding described as available for the lighting proposal, with the question of how trustees approach control of the lights.",
+   "figures_as_printed": [],
+   "quote": "\"green light to go\" funding available, how do we [trustees] approach the control of the lights?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public speakers recorded",
+   "quote": "jeanne thanked all for coming to this extra meeting",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Green initiative committee proposal: exterior lighting plan",
+   "resolution": "approved to forward to Green Initiative Committee",
+   "quote": "green initiative committee proposal; martha walk-through",
+   "tags": [
+    "lighting",
+    "green initiative",
+    "exterior"
+   ]
+  },
+  {
+   "topic": "Green Communities Task Force grant proposal: interior LED lights",
+   "resolution": "no action; samples due by 19 February",
+   "quote": "next step is to get the samples, by the 19th of feb",
+   "tags": [
+    "LED",
+    "grant",
+    "interior lighting"
+   ]
+  },
+  {
+   "topic": "Building management system and boiler",
+   "resolution": "no action; further information requested for 19 February",
+   "quote": "harry reported that the burner repair is estimated at <$10k",
+   "tags": [
+    "building management system",
+    "boiler",
+    "capital expenditure"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "follow-up tasks assigned",
+   "quote": "clean up documents for the meeting of february 19.",
+   "tags": [
+    "action items"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for February 05, 2015",
+   "where": "list",
+   "quote": "lplbot agenda for february 05, 2015"
+  }
+ ],
+ "tags": [
+  "library",
+  "green initiative",
+  "exterior lighting",
+  "LED grant",
+  "building management system",
+  "boiler",
+  "capital expenditure",
+  "extra meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

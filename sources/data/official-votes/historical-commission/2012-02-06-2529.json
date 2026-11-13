@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-02-06",
  "docid": "2529",
@@ -12,13 +12,142 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 1/7/17 as amended",
-   "outcome": "not stated",
+   "motion": "Approve the minutes of 1/7/17 as amended.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "minutes from 1/7/17 approved as amended"
+   "quote": "minutes from 1/7/17 approved as amended",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor quality issues (fantana 12, 20126 in lead paragraph; aP Ri in header). The minutes record one approval (prior minutes) and two decisions (Jones House proposal support, meeting schedule) but only the minutes approval uses explicit voting language. The other two use \"decided\" without recording a motion, seconder, or vote outcome.",
- "cost_usd": 0.0860325
+ "note": "OCR text from a scanned page; some noise (call-to-order line garbled, stray characters 'aP' and 'Ri'). Prior-minutes date reads '1/7/17' and may be a typo for 1/7/12. 'Becly' is likely Becky (Lantry), but I did not assume it. No motions, movers, seconders or vote counts are recorded for any item; the only approval (prior minutes) is printed as an outcome without a motion. The Jones House support and meeting-time change are recorded as Commission decisions with no vote. Adjournment at 7:30pm is printed with no motion. No public comment section appears. 'Other old business' is printed with nothing under it. No dollar figures appear.",
+ "cost_usd": 0.00305822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pat Slattery",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, damon mcquaid, amory phelps"
+  },
+  {
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, damon mcquaid, amory phelps"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, damon mcquaid, amory phelps"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, damon mcquaid, amory phelps"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission decided to support the submitted proposal for restoration of the Jones House, at the Board of Selectmen's request for its input.",
+   "quote": "the commission has decided to support the submitted proposal."
+  },
+  {
+   "decision": "The Commission decided to hold all future meetings on the first Tuesday of the month at the Ritter Building.",
+   "quote": "the commission has decided to hold all future meetings on the first tuesday of the month at the ritter building"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended",
+   "quote": "minutes from 1/7/17 approved as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "listed, no action recorded",
+   "quote": "correspondence: - request for year book info - notification of solar panel by-law meeting",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Wide Survey",
+   "resolution": "upload accepted to MACRIS, not yet posted",
+   "quote": "the commission attempted to electronically upload information to the macris database, the",
+   "tags": [
+    "town-wide survey",
+    "MACRIS"
+   ]
+  },
+  {
+   "topic": "Old Business: Newspaper Articles",
+   "resolution": "in progress, no action recorded",
+   "quote": "becly is currently in the process of writing a new article",
+   "tags": [
+    "newspaper articles",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "New Business: Discussion of Jones House Proposal",
+   "resolution": "supported the submitted proposal",
+   "quote": "the board of selectmen has requested the input of the commission on the single proposal received",
+   "tags": [
+    "Jones House",
+    "restoration"
+   ]
+  },
+  {
+   "topic": "New Business: Meeting Time",
+   "resolution": "decided first Tuesday of the month at Ritter Building",
+   "quote": "the commission has decided to hold all future meetings on the first tuesday of the month at the",
+   "tags": [
+    "meeting schedule",
+    "location"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for year book info",
+   "where": "list",
+   "quote": "correspondence: - request for year book info - notification of solar panel by-law meeting"
+  },
+  {
+   "name": "Notification of solar panel by-law meeting",
+   "where": "list",
+   "quote": "correspondence: - request for year book info - notification of solar panel by-law meeting"
+  },
+  {
+   "name": "Response to the RFP for the Jones House",
+   "where": "list",
+   "quote": "response to the rfp for the jones house"
+  }
+ ],
+ "tags": [
+  "Historical Commission",
+  "Jones House",
+  "MACRIS",
+  "town-wide survey",
+  "newspaper articles",
+  "correspondence",
+  "meeting schedule",
+  "Ritter Building"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

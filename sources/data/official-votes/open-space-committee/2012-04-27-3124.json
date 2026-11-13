@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2012-04-27",
  "docid": "3124",
@@ -12,6 +12,113 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are recorded in this meeting minutes. The text describes agreements reached by the committee (to provide samples, draft a flyer, extend an invitation) but contains no motions, seconded statements, vote counts, or language indicating formal votes were taken.",
- "cost_usd": 0.0808915
+ "note": "No motions or votes are recorded in the minutes; all actions are recorded as agreements, so they are listed under decisions. Text extraction has split words and stray spaces (e.g. \"B. Ki bbe\", \"a greed\", \"fro m\"); quotes avoid the broken words, and \"B. Ki bbe\" is normalized to \"B. Kibbe\" in the name field. No roles or dollar figures are printed. The minutes list no public comment and no vote results.",
+ "cost_usd": 0.0033493200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Benson",
+   "status": "present",
+   "quote": "attendees: m. benson, r. verge, j. carrier, b. ki bbe, r. brockelman, s. jordan"
+  },
+  {
+   "name": "R. Verge",
+   "status": "present",
+   "quote": "attendees: m. benson, r. verge, j. carrier, b. ki bbe, r. brockelman, s. jordan"
+  },
+  {
+   "name": "J. Carrier",
+   "status": "present",
+   "quote": "attendees: m. benson, r. verge, j. carrier, b. ki bbe, r. brockelman, s. jordan"
+  },
+  {
+   "name": "B. Kibbe",
+   "status": "present",
+   "quote": "attendees: m. benson, r. verge, j. carrier, b. ki bbe, r. brockelman, s. jordan"
+  },
+  {
+   "name": "R. Brockelman",
+   "status": "present",
+   "quote": "attendees: m. benson, r. verge, j. carrier, b. ki bbe, r. brockelman, s. jordan"
+  },
+  {
+   "name": "S. Jordan",
+   "status": "present",
+   "quote": "attendees: m. benson, r. verge, j. carrier, b. ki bbe, r. brockelman, s. jordan"
+  },
+  {
+   "name": "Jim Lattannzi",
+   "status": "present",
+   "quote": "also in attendance: jim lattannzi"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The OS Committee agreed to provide the new Agricultural Commission/RTF group with samples of documents from other towns' right to farm bylaws.",
+   "quote": "provide the new group with samples of documents"
+  },
+  {
+   "decision": "The OS Committee agreed to facilitate initial communications for those who signed up to join the working committee.",
+   "quote": "to facilita te initial communications for those who signed up to join the working committee",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The OS Committee agreed to draft a flyer announcing the initiative for the Annual Town Meeting; the minutes say it was completed by S. Jordan and distributed at Town Meeting.",
+   "quote": "the os committee also agreed to draft a flyer announcing the initiative for the annual town meeting"
+  },
+  {
+   "decision": "The OS Committee will extend an invitation to Gary Howland of the NWRA to advise the working committee.",
+   "quote": "invitation to gary howland of the nwra to advise the working committee"
+  },
+  {
+   "decision": "The working committee is responsible for recommendations on how to establish the Agricultural Commission and a proposed RTF bylaw, for OS Committee review and approval, then submission to the Town Meeting warrant.",
+   "quote": "the working committee will be responsible for recommendations on how to establish the ag comm"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Agricultural Commission and RTF initiative follow-up",
+   "resolution": "agreed to support new group; working committee tasked",
+   "quote": "following the successful kickoff of the agricultural commission and rtf initiative"
+  },
+  {
+   "topic": "Town Meeting flyer",
+   "resolution": "flyer drafted by S. Jordan and distributed at Town Meeting",
+   "quote": "wording of the town meeting flyer:"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Meeting flyer (wording as drafted)",
+   "where": "text",
+   "quote": "wording of the town meeting flyer:"
+  },
+  {
+   "name": "Proposed RTF bylaw",
+   "where": "text",
+   "quote": "for review and approval by the os committee, and then submission to the town meeting"
+  },
+  {
+   "name": "Samples of other towns' right to farm bylaws",
+   "where": "text",
+   "quote": "provide the new group with samples of documents"
+  }
+ ],
+ "tags": [
+  "open space",
+  "agricultural commission",
+  "right to farm",
+  "town meeting",
+  "flyer",
+  "working committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

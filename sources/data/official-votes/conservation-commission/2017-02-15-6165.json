@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-02-15",
  "docid": "6165",
@@ -12,42 +12,375 @@
  },
  "votes": [
   {
-   "motion": "Issue a standard Order of Conditions for the Notice of Intent by Dan Proctor at 140 Peninsula Drive for septic system and water service line installation",
-   "moved_by": "Tom Bertram",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Issue a standard Order on the Notice of Intent by Dan Proctor for work at 140 Peninsula Drive.",
+   "moved_by": "TB",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "tb moved to issue a standard order kj seconded and the commission voted unanimously."
   },
   {
-   "motion": "Issue a negative #3 determination for the Request for Determination by La Mountain Bros Inc. at 453 Mass Ave for septic system installation",
-   "moved_by": "Tom Bertram",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Issue a negative 3 determination on the La Mountain Bros Inc. Request for a determination at 453 Mass Ave.",
+   "moved_by": "TB",
+   "seconded_by": "JR",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "tb moved for a negative 3 determination. jr seconde d and the commission unanimously approved",
-   "quote_taken_from_text": true
+   "quote": "tb moved for a negative 3 determination. jr seconde d and the commission unanimously approved."
   },
   {
-   "motion": "Continue the hearing on the Notice of Intent by Gougen Construction at 675 Reservoir Road to March 1, 2017, with revised plans to be submitted by February 25, 2017",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Tom Bertram",
+   "motion": "Continue the 675 Reservoir Road (Gougen Construction) hearing to March 1, 2017, with new plans due 2/25/17. The minutes do not print the motion text.",
+   "moved_by": "KJ",
+   "seconded_by": "TB",
    "outcome": "not stated",
-   "procedural": true,
-   "quote": "the meeting will reconvene march 1, 2017 with new plans submitted no later tha n 2/25/17. motion by kj and a second by tb",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "motion by kj and a second by tb."
   },
   {
-   "motion": "Forward the fine issue regarding 101/190 Pleasant to town counsel and the land use director regarding the ability to lien the property",
-   "moved_by": "Kenneth Jones",
+   "motion": "Forward the fine issue to town counsel and the land use director on the ability to lien the property at 101/190 Pleasant.",
+   "moved_by": "KJ",
    "seconded_by": "",
    "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "kj moved to forward the fine issue to town counsel and the land use director on the abil ities to lien this property. vote was unanimous."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "BP",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "kj moved to forward the fine issue to town counsel and the land use director on the abil ities to lien this property. vote was unanimous",
-   "quote_taken_from_text": true
+   "quote": "bp moved to adjourn kj seconded and t he commission voted unanimously at 9:22 pm"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All votes extracted. The 2/1/17 minutes approval was noted as \"no action taken\" so no vote recorded on that item.",
- "cost_usd": 0.1005685
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with broken words and split spacing (for example 'w ho', 'seconde d'); quotes are copied as printed with line breaks collapsed. Three of the four recorded votes are clear; the 675 Reservoir Road continuance records only 'Motion by KJ and a second by TB' with no result, so its outcome is 'not stated'. Several items (continuances, the restoration agreement, the bridge item) are recorded without a vote. Members' roles are not printed beyond the header list. Dan Proctor is named only in the hearing notice and is not shown speaking.",
+ "cost_usd": 0.008276219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "chairman bursch participated remotely by speaker ph one."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "except for mr. dwyer w ho was absent."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "acting chair (CL presiding)",
+   "status": "present",
+   "quote": "call to order - cl presiding as acting chair."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "all m embers attending the meeting except for mr. dwyer w ho was absent."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "all m embers attending the meeting except for mr. dwyer w ho was absent."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "all m embers attending the meeting except for mr. dwyer w ho was absent."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "all m embers attending the meeting except for mr. dwyer w ho was absent."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted that he felt a standard order is all that"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "jack maloney representing the applicant."
+  },
+  {
+   "name": "Jack O’Leary",
+   "role": "represented the applicant",
+   "status": "present",
+   "quote": "jack o'leary represented the applicant."
+  },
+  {
+   "name": "Chris Hanson",
+   "role": "represented the applicant",
+   "status": "present",
+   "quote": "chris hanson represented the applicant and examined"
+  },
+  {
+   "name": "Chuck Caron",
+   "role": "",
+   "status": "present",
+   "quote": "chuck caron noted that he left with the understandi ng"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant (Notice of Intent, 140 Peninsula Drive)",
+   "status": "not stated",
+   "quote": "a notice of intent by dan proctor for wo rk at 140 peninsula drive"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 554 Lancaster Avenue insignificant change hearing was continued to 3/1/17, and MM will contact Alton Stone to add outflow rates for all storms to the original print.",
+   "quote": "mm will contact alton stone to have the information added. the hearing was continued t o 3/1/17."
+  },
+  {
+   "decision": "The applicant agreed to put 4-6 inch deciduous trees in the area of interest instead of 1-1 ½ inch trees, and the final plan including all revegetation and landscaping will be submitted; the applicant may not assume anything is agreed until the entire plan is provided.",
+   "quote": "the applicant agreed to put 4-6 inch deciduous tre es in"
+  },
+  {
+   "decision": "MM will have a more specific report from Gary for the next meeting on the Forest Stewardship Grant implementation.",
+   "quote": "mm will have a more specific report from gary for the next meeting."
+  },
+  {
+   "decision": "MM will add goals to the budget based on individual commissioner suggestions.",
+   "quote": "mm will add goals based on suggestions he h as been given by the commission individually."
+  },
+  {
+   "decision": "MM will complete and submit the annual report by the next day.",
+   "quote": "annual report - mm will complete and submit for tom orrow."
+  },
+  {
+   "decision": "MM to send out MACC conference forms via email to commissioners who want to attend the annual MACC conference.",
+   "quote": "mm to send out forms via email."
+  },
+  {
+   "decision": "The commission agreed there should be a 3000  dollar item for bridge work, and MM will send the request to the land use director.",
+   "quote": "mm to send request to land use dir ector."
+  },
+  {
+   "decision": "183 Hemlock Dr continued until April 19, 2017.",
+   "quote": "183 hemlock dr continued until april 19, 2017"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bridge work item above level service",
+   "what_was_recorded": "After a Board of Selectmen meeting review of items added above level service, the commission agreed there should be a 3000 dollar item for bridge work.",
+   "quote": "the commission agreed that there should be a 3000 dollar item for bridge work.",
+   "figures_as_printed": [
+    "3000  dollar"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Bertram",
+   "stated_role": "",
+   "topic": "lake ice safety and Cowdrey lot",
+   "quote": "public comment- tom bertram noted that the lakes ar e not safe still with the snow the cowdrey lot is g roomed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action",
+   "tags": [
+    "call to order",
+    "announcements"
+   ],
+   "quote": "call to order - cl presiding as acting chair."
+  },
+  {
+   "topic": "Public comment on lake safety",
+   "resolution": "noted, no action",
+   "tags": [
+    "public comment",
+    "lakes",
+    "ice safety"
+   ],
+   "quote": "public comment- tom bertram noted that the lakes ar e not safe still with the snow"
+  },
+  {
+   "topic": "Notice of Intent, 140 Peninsula Drive (Dan Proctor), septic and water line in buffer zone",
+   "resolution": "standard Order issued",
+   "tags": [
+    "notice of intent",
+    "septic",
+    "buffer zone",
+    "Order"
+   ],
+   "quote": "tb moved to issue a standard order kj seconded and the commission voted unanimously."
+  },
+  {
+   "topic": "Request for determination, 453 Mass Ave (La Mountain Bros Inc.), septic system",
+   "resolution": "negative 3 determination",
+   "tags": [
+    "request for determination",
+    "septic",
+    "buffer zone"
+   ],
+   "quote": "tb moved for a negative 3 determination. jr seconde d and the commission unanimously approved."
+  },
+  {
+   "topic": "Insignificant change, 554 Lancaster Avenue (Sunshine Nominee Trust), detention basin",
+   "resolution": "continued to 3/1/17",
+   "tags": [
+    "insignificant change",
+    "detention basin",
+    "stormwater"
+   ],
+   "quote": "the hearing was continued t o 3/1/17."
+  },
+  {
+   "topic": "Continued Notice of Intent, 675 Reservoir Road (Gougen Construction), restoration and tree planting",
+   "resolution": "continued to March 1, 2017",
+   "tags": [
+    "notice of intent",
+    "restoration",
+    "tree planting",
+    "shoreline"
+   ],
+   "quote": "the meeting will reconvene march 1, 2017 with new plans submitted no later tha n 2/25/17."
+  },
+  {
+   "topic": "Administrative hearings, 43 Island Road and 338 Sunset",
+   "resolution": "no action, continued",
+   "tags": [
+    "enforcement",
+    "as-built",
+    "remediation"
+   ],
+   "quote": "administrative hearing - 43 island road"
+  },
+  {
+   "topic": "Current business: signatures, certificates of compliance, enforcement",
+   "resolution": "continued items noted (121 Peninsula, 183 Hemlock, Emerald Place Beach Erosion)",
+   "tags": [
+    "certificates of compliance",
+    "enforcement",
+    "continuances"
+   ],
+   "quote": "183 hemlock dr continued until april 19, 2017"
+  },
+  {
+   "topic": "Forest Stewardship Grant implementation",
+   "resolution": "MM to report at next meeting",
+   "tags": [
+    "grant",
+    "forest stewardship",
+    "goals"
+   ],
+   "quote": "discussion of goals and other items related to grant"
+  },
+  {
+   "topic": "Approval of 2/1/17 minutes",
+   "resolution": "no action; for commission to review",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "approval of 2/1/17 minutes no action taken for the commission to review"
+  },
+  {
+   "topic": "Committee reports (Holman St property, stormwater committee)",
+   "resolution": "noted",
+   "tags": [
+    "committee reports",
+    "stormwater",
+    "Holman Street"
+   ],
+   "quote": "holman st property program - parking lot has been p lowed."
+  },
+  {
+   "topic": "Agent's report and action items (Woodlands, annual report, budget, forest cutting plan, 120 West Street appeal)",
+   "resolution": "noted; MM to act on items",
+   "tags": [
+    "agent report",
+    "woodlands",
+    "annual report",
+    "budget",
+    "appeal"
+   ],
+   "quote": "woodlands- will be on the agenda for march 1."
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for March 1, 2017",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meeting for march 1, 2017 at 7:00 pm"
+  },
+  {
+   "topic": "Public comment at close: fines and budget item",
+   "resolution": "forward fines to counsel and land use director; bridge work item",
+   "tags": [
+    "fines",
+    "lien",
+    "bridge",
+    "budget"
+   ],
+   "quote": "rb wanted a motio n to forward the fines to the land use director to go forward with",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:22 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "bp moved to adjourn kj seconded and t he commission voted unanimously at 9:22 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Woodlands application",
+   "where": "text",
+   "quote": "mm ha nded out copies of the application.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Restoration plan presented by Chris Hanson for 675 Reservoir Road",
+   "where": "text",
+   "quote": "he presented the commission with a plan showing restor ation."
+  },
+  {
+   "name": "Pre and post photos from the alteration",
+   "where": "text",
+   "quote": "mm reviewed with the commis sion pre and post photos from the alteration"
+  },
+  {
+   "name": "Power point presentation shown by CL",
+   "where": "text",
+   "quote": "based on the powe r point presentation that cl showed to the commission"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "septic",
+  "buffer zone",
+  "tree restoration",
+  "enforcement",
+  "fines",
+  "lien",
+  "bridge budget",
+  "grant",
+  "lake safety"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mm ha nded out copies of the application."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-06-11",
  "docid": "1817",
@@ -12,57 +12,421 @@
  },
  "votes": [
   {
-   "motion": "approve the May 13, 2013 COA minutes",
+   "motion": "Approve the May 13, 2013 COA minutes.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. Brown",
-   "outcome": "passed 8-0",
+   "outcome": "passed 8 in favor, 0 opposed",
    "procedural": true,
    "quote": "ms. doyle moved to approve the may 13, 2013 coa minutes. ms. brown seconded. on vote, motion carried, 8 in favor, 0 opposed."
   },
   {
-   "motion": "recommend Ms. Seeley as the COA representative to the Lunenburg Building Re-Use Committee",
+   "motion": "Recommend Ms. Seeley as the COA representative to the Lunenburg Building Re-Use Committee.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. O'dea",
-   "outcome": "passed 8-0",
+   "outcome": "passed 8 in favor, 0 opposed",
    "procedural": false,
-   "quote": "ms. doyle moved to recommend ms. seeley as the coa representative to the lunenburg building re- use committee. ms. o'dea seconded. on vote, motion carried, 8 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to recommend ms. seeley as the coa representative to the lunenburg building re- use committee. ms. o'dea seconded. on vote, motion carried, 8 in favor, 0 opposed."
   },
   {
-   "motion": "elect Mary Lynn Conrad as COA Chairman and Barbara Brown as COA Vice Chairman for a 1 year term beginning on July 1, 2013",
+   "motion": "Elect Mary Lynn Conrad as COA Chairman and Barbara Brown as COA Vice Chairman for a 1 year term beginning July 1, 2013.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Doyle",
-   "outcome": "passed 8-0",
+   "outcome": "passed 8 in favor, 0 opposed",
    "procedural": false,
-   "quote": "mr. lincoln moved to elect mary lynn conrad as coa chairman and barbara brown as coa vice chairman for a 1 year term beginning on july 1, 2013. ms. doyle seconded. on vote, motion carried 8 in favor, 0 opposed."
+   "quote": "mr. lincoln moved to elect mary lynn conrad as coa chairman and barbara brown as coa vice chairman for a 1 year term beginning on july 1, 2013. ms. doyle seconded."
   },
   {
-   "motion": "accept the end of year reports from the Board Development, Finance, & ByLaw Committees",
+   "motion": "Accept the end of year reports from the Board Development, Finance, & ByLaw Committees.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. Brown",
-   "outcome": "passed 8-0",
-   "procedural": true,
+   "outcome": "passed 8 in favor, 0 opposed",
+   "procedural": false,
    "quote": "ms. doyle moved to accept the end of year reports from the board development, finance, & bylaw committees. ms. brown seconded. on vote, motion carried, 8 in favor, 0 opposed."
   },
   {
-   "motion": "approve the request of the Lunenburg Friendly Seniors building use on October 19, 2013 from 8AM-4PM",
+   "motion": "Approve the request of the Lunenburg Friendly Seniors for building use on October 19, 2013 from 8AM-4PM.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Seeley",
-   "outcome": "passed 8-0",
+   "outcome": "passed 8 in favor, 0 opposed",
    "procedural": false,
    "quote": "mr. lincoln moved to approve the request of the lunenburg friendly seniors building use on october 19, 2013 from 8am-4pm. ms. seeley seconded. on vote, motion carried, 8 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn the COA meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. Brown",
-   "outcome": "passed 8-0",
+   "outcome": "passed 8 in favor, 0 opposed",
    "procedural": true,
-   "quote": "ms. doyle moved to adjourn the coa meeting. favor 0 opposed. meeting adjourned at 10:50am ms. brown seconded.",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to adjourn the coa meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, one small artifact on page 3 (\"MIS. seconded...\") where the motion is unreadable; not included above.",
- "cost_usd": 0.1033795
+ "note": "OCR scan with noise and out-of-order text. The adjournment vote's result is split and jumbled across lines (\"favor 0 opposed\", \"On vote motion carried, 8 in\"); the outcome is taken from those fragments and the quote is only the motion sentence. Pages 4-15 are attached reports and by-laws, partly garbled; the Board Development, Finance and By-Law reports and the 5/2013 by-laws are attachments. The 3-12-13 by-law approval is referenced as a prior vote and is not recorded as a vote here. No roll call is printed; the 8-0 counts do not name who voted. No public comment section appears in the text. Ms. Brown's role is not printed at this meeting (she is later elected Vice Chairman). Page 4 includes fragments naming Whitney Lacka and Connie O'Dea without a clear role at the meeting; they are not listed as attendees.",
+ "cost_usd": 0.013959520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ms. Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "ms. conrad (chairperson) opened the meeting at 9:30am and welcomed all in attendance."
+  },
+  {
+   "name": "Sis Montouri",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: sis montouri & fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: sis montouri & fred crellin"
+  },
+  {
+   "name": "Stephen Raboin",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "guest: stephen raboin (lunenburg finance committee)"
+  },
+  {
+   "name": "Mr. Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "mr. lincoln replied that due to a lack of funding, they were unable to do this."
+  },
+  {
+   "name": "Ms. Noble",
+   "role": "",
+   "status": "present",
+   "quote": "ms. noble replied that she had spoken to the director of the clinton coa and the students could come"
+  },
+  {
+   "name": "Ms. Doyle",
+   "role": "",
+   "status": "present",
+   "quote": "ms. doyle moved to approve the may 13, 2013 coa minutes."
+  },
+  {
+   "name": "Ms. Brown",
+   "role": "",
+   "status": "present",
+   "quote": "ms. doyle moved to approve the may 13, 2013 coa minutes. ms. brown seconded."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "ms. doherty replied that she has been the selectmen's minute recorder since march of last year"
+  },
+  {
+   "name": "Ms. O'dea",
+   "role": "",
+   "status": "present",
+   "quote": "ms. doyle moved to recommend ms. seeley as the coa representative to the lunenburg building re- use committee. ms. o'dea seconded."
+  },
+  {
+   "name": "Ms. Seeley",
+   "role": "",
+   "status": "present",
+   "quote": "ms. seeley stated that she formerly served on the planning board, finance committee and the center reuse commission."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Noble will increase the Meal Site workers' hours by 1 hour each day next fiscal year.",
+   "quote": "ms. noble will be increasing the meal site workers hours by 1 hour each day next fiscal year."
+  },
+  {
+   "decision": "COA board members were asked to review the Code of Conduct and make changes to be voted on at the next COA meeting.",
+   "quote": "and make changes to be voted on at the next coa meeting."
+  },
+  {
+   "decision": "The MART representative question will be discussed again at the August COA meeting.",
+   "quote": "this will be discussed again at the august coa meeting."
+  },
+  {
+   "decision": "The COA BBQ/Volunteer Recognition Ceremony is set for the first Tuesday in August, 8/6/13; COA members were asked to volunteer.",
+   "quote": "the date for the coa bbq/volunteer recognition ceremony will be held on the first tuesday in august which will be 8/6/13."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY14 Target budget suggestions (Finance Committee)",
+   "what_was_recorded": "Finance Committee members suggested adding $100 to office equipment maintenance in the Target budget and subtracting $100 from the sewer line item.",
+   "quote": "members of the committee suggested that the target budget add $100 to the line item for office equipment maintenance, and that $100 be subtracted from the sewer line item.",
+   "figures_as_printed": [
+    "$100",
+    "$100"
+   ]
+  },
+  {
+   "topic": "FY14 Above Target budget suggestions (Finance Committee)",
+   "what_was_recorded": "Finance Committee suggested adding $250 for programs, $400 for training and $180 for office equipment maintenance in the Above Target budget.",
+   "quote": "it was also suggested that the above target budget add $250 for programs, $400 for training and $180 for office equipment maintenance.",
+   "figures_as_printed": [
+    "$250",
+    "$400",
+    "$180"
+   ]
+  },
+  {
+   "topic": "FY14 budget instructions: Target and Above Target budgets",
+   "what_was_recorded": "The Director was asked to prepare a Target budget and an Above Target budget under the FY14 Budget Instructions; no dollar figures printed for the two budgets themselves.",
+   "quote": "she had been asked to prepare two budgets: a target budget (level funded plus contractual salary increases) and an above target budget (level service).",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Senior center Friday funding",
+   "what_was_recorded": "Mr. Lincoln said he and his wife contributed funds last year to keep the senior center open on Fridays, and that it did not happen.",
+   "quote": "he mentioned that he and his wife had contributed funds last year to help keep the senior center open on fridays, and that it did not happen.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Eagle Heights project funding",
+   "what_was_recorded": "Federal funding for the Eagle Heights project is no longer available and the project is now seeking State funding.",
+   "quote": "federal funding is no longer available for this project and they are now looking for state funding for the project.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "COA BBQ food cost",
+   "what_was_recorded": "The Eagle House Supporters Inc. will pay for the food at the COA BBQ/Volunteer Recognition Ceremony; the Fire Department will cook.",
+   "quote": "the fire department has agreed to cook the food and the eagle house supporters inc. will pay for the food.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening and resignation of Jim Hays",
+   "resolution": "opened; resignation reported",
+   "quote": "ms. conrad informed the board that coa member jim hays had tendered his resignation and read his resignation letter to the members.",
+   "tags": [
+    "resignation",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Recreation area behind senior center",
+   "resolution": "no action; not funded",
+   "quote": "mr. lincoln replied that due to a lack of funding, they were unable to do this.",
+   "tags": [
+    "senior center",
+    "funding"
+   ]
+  },
+  {
+   "topic": "FY13 events review",
+   "resolution": "reviewed",
+   "quote": "ms. conrad went on to review the fy13 events of the coa which included kitchen equipment",
+   "tags": [
+    "FY13",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Clinton Youth COA group",
+   "resolution": "update received; possible presentation September or October",
+   "quote": "ms. noble replied that she had spoken to the director of the clinton coa and the students could come",
+   "tags": [
+    "youth",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Approval of May 13, 2013 minutes",
+   "resolution": "approved 8 in favor, 0 opposed",
+   "quote": "ms. doyle moved to approve the may 13, 2013 coa minutes. ms. brown seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Change of minutes protocol",
+   "resolution": "explained by recorder; no action",
+   "quote": "mr. lincoln questioned ms. doherty on the change of protocol with the minutes, especially the use of proper titles and surnames.",
+   "tags": [
+    "minutes",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported",
+   "quote": "meal site worker joanne brazell has passed her serve safe certification course",
+   "tags": [
+    "meal site",
+    "staff",
+    "director"
+   ]
+  },
+  {
+   "topic": "Code of Conduct for program participants",
+   "resolution": "board to review; changes to be voted at next meeting",
+   "quote": "all program participants were asked to review, sign, and return the code of conduct to the office",
+   "tags": [
+    "code of conduct",
+    "participants"
+   ]
+  },
+  {
+   "topic": "Memorial Day Committee",
+   "resolution": "reported",
+   "quote": "ms. noble was appointed by the selectmen to serve on the memorial day committee.",
+   "tags": [
+    "memorial day",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Building Reuse Committee representative",
+   "resolution": "Seeley recommended; approved 8 in favor, 0 opposed",
+   "quote": "ms. noble recommended that deb seeley be the coa representative to",
+   "tags": [
+    "building reuse",
+    "committees",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Eagle Heights project",
+   "resolution": "reported",
+   "quote": "the eagle heights project at the old primary school is still looking for funding.",
+   "tags": [
+    "eagle heights",
+    "funding"
+   ]
+  },
+  {
+   "topic": "MART representative",
+   "resolution": "tabled to August meeting",
+   "quote": "this will be discussed again at the august coa meeting.",
+   "tags": [
+    "MART",
+    "transit"
+   ]
+  },
+  {
+   "topic": "COA BBQ/Volunteer Recognition Ceremony",
+   "resolution": "date set; volunteers requested",
+   "quote": "the date for the coa bbq/volunteer recognition ceremony will be held on the first tuesday in august which will be 8/6/13.",
+   "tags": [
+    "bbq",
+    "volunteers",
+    "events"
+   ]
+  },
+  {
+   "topic": "Election of officers for FY14",
+   "resolution": "elected Mary Lynn Conrad Chairman and Barbara Brown Vice Chairman, 8-0",
+   "quote": "mr. lincoln moved to elect mary lynn conrad as coa chairman and barbara brown as coa vice chairman",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "End of year sub-committee reports",
+   "resolution": "accepted 8 in favor, 0 opposed",
+   "quote": "end of year reports were submitted & read to the board by the board development, finance, and bylaw committees.",
+   "tags": [
+    "committees",
+    "reports",
+    "finance"
+   ]
+  },
+  {
+   "topic": "By-Laws revisions",
+   "resolution": "changes presented; no vote recorded at this meeting",
+   "quote": "the administrative assistant made all necessary changes and presented a new set of by-laws to all board members on 5-14-13.",
+   "tags": [
+    "by-laws",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Correspondence: Lunenburg Friendly Seniors Fall Fair",
+   "resolution": "building use approved 8 in favor, 0 opposed",
+   "quote": "a letter from the lunenburg friendly seniors was read requesting the use of the eagle house for their",
+   "tags": [
+    "correspondence",
+    "eagle house",
+    "building use"
+   ]
+  },
+  {
+   "topic": "General discussion: thanks to departing members",
+   "resolution": "no action",
+   "quote": "ms. conrad spoke to thank the coa members who were leaving; pete lincoln, fred crellin, & sis",
+   "tags": [
+    "thanks",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:50AM",
+   "quote": "ms. doyle moved to adjourn the coa meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "End of year reports from the Board Development, Finance, and ByLaw Committees",
+   "where": "list",
+   "quote": "end of year reports were submitted & read to the board by the board development, finance, and bylaw committees. (see attached)"
+  },
+  {
+   "name": "By-Laws Revised 5/2013",
+   "where": "list",
+   "quote": "the administrative assistant made all necessary changes and presented a new set of by-laws to all board members on 5-14-13. see attached copy."
+  },
+  {
+   "name": "Jim Hays resignation letter",
+   "where": "text",
+   "quote": "ms. conrad informed the board that coa member jim hays had tendered his resignation and read his resignation letter to the members."
+  },
+  {
+   "name": "FY14 Budget Instructions",
+   "where": "text",
+   "quote": "doreen noble presented the committee with a copy of the fy14 budget instructions."
+  },
+  {
+   "name": "Open Meeting Law Guide Version 2-10-12",
+   "where": "text",
+   "quote": "information obtained from open meeting law guide version 2-10-12."
+  },
+  {
+   "name": "Lunenburg Friendly Seniors letter requesting Eagle House use for Fall Fair",
+   "where": "text",
+   "quote": "a letter from the lunenburg friendly seniors was read requesting the use of the eagle house for their"
+  },
+  {
+   "name": "Code of Conduct",
+   "where": "text",
+   "quote": "all program participants were asked to review, sign, and return the code of conduct to the office"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "officers election",
+  "by-laws",
+  "budget FY14",
+  "Eagle House",
+  "committees",
+  "minutes approval",
+  "meal site",
+  "building reuse",
+  "code of conduct"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "end of year reports were submitted & read to the board"
+ },
+ "dropped_unquoted_by_field": {}
 }

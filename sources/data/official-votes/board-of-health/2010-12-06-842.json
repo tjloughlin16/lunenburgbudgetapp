@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-12-06",
  "docid": "842",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Variance requests for the well and septic system at 48 New West Townsend Road were approved.",
+   "motion": "Approve the variance requests for 48 New West Townsend Road.",
    "moved_by": "Shea",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "after discussion and on motion of shea and second by rabbitt, the variance requests were approved. all in favor."
   },
   {
-   "motion": "Request for a letter of support for the Eagle House grant was granted.",
+   "motion": "Grant Doreen Noble's request for a letter of support for the Eagle House grant application.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
    "outcome": "passed",
@@ -29,6 +29,141 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text, one missing vote recorded on approval of prior minutes (heading only, no vote outcome stated).",
- "cost_usd": 0.08461250000000001
+ "note": "Text is a macOS Vision OCR of a scanned page; some words may be misread. The minutes print 'Minutes Approved:' at the top with no motion or vote recorded. The Noble motion reads 'on Motion my Jewell' as printed (likely 'by Jewell'); moved_by is recorded as 'Jewell'. Votes are recorded only as 'All in favor' with no count. No motion to adjourn is recorded; the minutes state the meeting was adjourned at 8:15 pm. Cheryl Porier (DEP) is mentioned only as someone the chair spoke with, not as an attendee. The minutes name no documents, exhibits, or public comment.",
+ "cost_usd": 0.00366922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry jewell and jack rabbitt"
+  },
+  {
+   "name": "Hunter Gelinas",
+   "status": "present",
+   "quote": "hunter gelinas met with the board with regarding the above property."
+  },
+  {
+   "name": "Jim Talvy",
+   "status": "present",
+   "quote": "jim talvy met with the board to discuss spreading class b sludge on agricultural land,"
+  },
+  {
+   "name": "Rob MacMillian",
+   "status": "present",
+   "quote": "also present were rob macmillian and jim lattanzi."
+  },
+  {
+   "name": "Jim Lattanzi",
+   "status": "present",
+   "quote": "also present were rob macmillian and jim lattanzi."
+  },
+  {
+   "name": "Doreen Noble",
+   "status": "present",
+   "quote": "doreen noble met with the board to request a letter of support for a grant application being prepared."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board advised it had no ability to approve or disapprove the spreading of the Class B sludge material, and the MacMillians could move forward with DEP.",
+   "quote": "the board advised that they had now ability to approve or disapprove the use of this material and that the macmillians could move forward with dep."
+  },
+  {
+   "decision": "A letter of support will be prepared and forwarded to Doreen Noble for the grant application.",
+   "quote": "a letter of support will be prepared and forwarded to ms. noble."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House grant - removal of septic mound behind senior center",
+   "what_was_recorded": "Doreen Noble sought a letter of support for a grant application being prepared to remove the septic mound; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "doreen noble met with the board to request a letter of support for a grant application being prepared."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed - 42 Pearl Brook Road",
+   "resolution": "reviewed, no action",
+   "quote": "title 5 inspection reports reviewed: 42 pearl brook road",
+   "tags": [
+    "Title 5",
+    "septic",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "none signed",
+   "quote": "septic permits signed: none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "48 New West Townsend Road - variance requests",
+   "resolution": "approved",
+   "quote": "after discussion and on motion of shea and second by rabbitt, the variance requests were approved. all in favor.",
+   "tags": [
+    "variance",
+    "well",
+    "septic"
+   ]
+  },
+  {
+   "topic": "New England Organics (Jim Talvy) - Class B sludge on agricultural land",
+   "resolution": "no action; board has no approval authority, referred to DEP",
+   "quote": "the board advised that they had now ability to approve or disapprove the use of this material and that the macmillians could move forward with dep.",
+   "tags": [
+    "sludge",
+    "agriculture",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Doreen Noble - grant for Eagle House",
+   "resolution": "approved letter of support",
+   "quote": "after discussion and on motion my jewell and second by shea, the request was granted. all in favor.",
+   "tags": [
+    "grant",
+    "Eagle House",
+    "senior center"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of health",
+  "septic",
+  "Title 5",
+  "variance",
+  "sludge land application",
+  "grant support",
+  "senior center"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

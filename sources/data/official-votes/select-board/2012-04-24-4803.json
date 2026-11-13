@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-04-24",
  "docid": "4803",
@@ -12,15 +12,253 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "deBettencourt",
-   "seconded_by": "Sund",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 6:41 p.m.",
+   "moved_by": "Mr. deBettencourt",
+   "seconded_by": "Mr. Sund",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. debettencourt made a motion to adjourn. unanimously to adjourn the meeting at 6:41 p.m. mr. sund seconded. the board voted"
+   "quote": "being no further business mr. debettencourt made a motion to adjourn. unanimously to adjourn the meeting at 6:41 p.m. mr. sund seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text shows these lines in scattered order (lines rearranged by OCR). Quote preserves the order as text appears; sensible reading: deBettencourt moved to adjourn, Sund seconded, board voted unanimously at 6:41 PM. Warrants were listed as \"presented for approval\" but no explicit vote language recorded for them. No votes recorded on other agenda items (Budget discussion, Memorial Day Committee marked \"Not discussed\"). No Executive Session held.",
- "cost_usd": 0.11293249999999999
+ "note": "OCR of a scanned page; the Corine Scouten Spees passage is badly garbled, so her role and remarks are not readable. Public comment is recorded as None, though speakers appear under item 1. The minutes refer to FY13 Budget & Override and Memorial Day Committee votes taken at an earlier meeting (April 17); those votes are not recorded in this text. The warrants and minutes were presented, but no motion or vote on approving them is printed. Only one vote (adjournment) is recorded. Upcoming meeting schedule list is in scrambled order in the OCR.",
+ "cost_usd": 0.00732482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "role": "Board of Selectmen",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "role": "Board of Selectmen",
+   "quote": "steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "role": "Board of Selectmen",
+   "quote": "steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "role": "Board of Selectmen",
+   "quote": "steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "present",
+   "role": "Town Manager",
+   "quote": "steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "absent",
+   "role": "Board of Selectmen",
+   "quote": "absent was paula bertram"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "role": "BOH member",
+   "quote": "boh member dave passios voiced his concern about all the positions being over-taxed."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "role": "DPW Director",
+   "quote": "jack rodriquenz, dpw director, spoke and said that as a department head he feels"
+  },
+  {
+   "name": "Corine Scouten Spees",
+   "status": "not stated",
+   "role": "",
+   "quote": "corine scouten spees repe had why auly on inpatient was being reuced"
+  },
+  {
+   "name": "Susan Doherty",
+   "status": "not stated",
+   "role": "Recording Secretary",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Manager will discuss the Land Use staffing scenarios further with all of the Land Use Departments (no vote recorded).",
+   "quote": "the town manager will discuss this matter further with all of the land use departments."
+  },
+  {
+   "decision": "Town Manager to bring more information on the Municipal Aggregation Program rates to the next BOS meeting (no vote recorded).",
+   "quote": "ms. speidel will have more information at the next bos meeting."
+  },
+  {
+   "decision": "The FY13 Budget & Override and Memorial Day Committee votes taken at the prior evening meeting will be re-added to the agenda for confirmation at the next BOS meeting (no vote recorded).",
+   "quote": "then those items will be added again to the agenda for confirmation at the next bos meeting."
+  },
+  {
+   "decision": "Board position, stated in Mr. Matthews's drafted letter to Representative Jen Benson: the Town is opposed to the solar farm taxation legislation and to any Quinn Bill legislation overriding the SJC decision (no vote recorded).",
+   "quote": "the town is opposed to approval of this legislation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY13 Land Use administrative assistant scenarios",
+   "what_was_recorded": "Town Manager presented three alternative hour scenarios to the Land Use administrative assistant cut, stated to save the same as the originally proposed balanced budget; hours (not dollars) were printed.",
+   "quote": "all three scenarios would amount to the same in savings as in the originally proposed balanced budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town finances and operating efficiency",
+   "what_was_recorded": "DPW Director Jack Rodriquenz said there is not enough money.",
+   "quote": "he feels that the town in not operating efficiently and that there is not enough money",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Warrants approved for payment",
+   "what_was_recorded": "Two warrants were listed as presented for approval, with totals printed.",
+   "quote": "2. warrants - 62-12, 4/25/12, $654.909.86 22p-12, 4/26/12, $589,887.73",
+   "figures_as_printed": [
+    "$654.909.86",
+    "$589,887.73"
+   ]
+  },
+  {
+   "topic": "Senior Citizen Circuit Breaker rebate",
+   "what_was_recorded": "Town Manager reported on the rebate application process and that prior-year rebates (2010, 2009) can also be applied for; no dollar amount printed.",
+   "quote": "town manager reports- ms. speidel said that she had received more detail on the senior citizen circuit breaker",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Municipal Aggregation Program electricity rates",
+   "what_was_recorded": "Reduced electricity rates from June 1, 2012, described as a 25% reduction giving Lunenburg the lowest rates in the state.",
+   "quote": "from 7.77 cents per kw to 5.85 cents per kw which amounts to a 25% reduction",
+   "figures_as_printed": [
+    "7.77 cents per KW",
+    "5.85 cents per KW",
+    "25%"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FX2013 Budget & Override; Review & Recommendations on Town Meeting Warrant Articles",
+   "resolution": "discussed; Town Manager to continue with Land Use departments; no vote recorded",
+   "quote": "fx2013 budget & override; review & recommendations on town meeting warrant articles -",
+   "tags": [
+    "budget",
+    "override",
+    "Town Meeting",
+    "Land Use staffing"
+   ]
+  },
+  {
+   "topic": "Establishment of Memorial Day Committee",
+   "resolution": "not discussed",
+   "quote": "2. establishment of memorial day committee - not discussed",
+   "tags": [
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants presented for approval; no vote recorded",
+   "quote": "3. minutes/warrants/action file issues - the following minutes and warrants were presented for approval.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports",
+   "resolution": "informational; no action",
+   "quote": "town manager reports- ms. speidel said that she had received more detail on the senior citizen circuit breaker",
+   "tags": [
+    "circuit breaker",
+    "municipal aggregation",
+    "electricity rates"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law complaint",
+   "resolution": "reported; no action recorded",
+   "quote": "an open meeting law complaint was filed against the town clerk's office and the board by the fitchburg sentinel and",
+   "tags": [
+    "open meeting law",
+    "agenda posting"
+   ]
+  },
+  {
+   "topic": "Old Business: letters to Representative Jen Benson",
+   "resolution": "letter drafted; Town position stated; no vote recorded",
+   "quote": "mr. matthews informed the bos that he had drafted a letter to representative jen benson, identifying two",
+   "tags": [
+    "state legislation",
+    "solar farm taxation",
+    "Quinn Bill"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:41 p.m.",
+   "quote": "unanimously to adjourn the meeting at 6:41 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrants 62-12, 4/25/12, $654.909.86",
+   "where": "list",
+   "quote": "2. warrants - 62-12, 4/25/12, $654.909.86 22p-12, 4/26/12, $589,887.73"
+  },
+  {
+   "name": "Warrant 22P-12, 4/26/12, $589,887.73",
+   "where": "list",
+   "quote": "2. warrants - 62-12, 4/25/12, $654.909.86 22p-12, 4/26/12, $589,887.73"
+  },
+  {
+   "name": "Agenda for the April 17 BOS meeting (submitted April 12)",
+   "where": "text",
+   "quote": "ms. speidel said that she had submitted the agenda on april"
+  },
+  {
+   "name": "Letter to Representative Jen Benson (drafted by Mr. Matthews)",
+   "where": "text",
+   "quote": "mr. matthews informed the bos that he had drafted a letter to representative jen benson, identifying two"
+  },
+  {
+   "name": "Informational packets on the Senior Citizen Circuit Breaker",
+   "where": "text",
+   "quote": "informational packets on the circuit breaker can be picked up at the eagle"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "FY2013 budget",
+  "override",
+  "Land Use staffing",
+  "Town Meeting warrant articles",
+  "warrants",
+  "minutes",
+  "municipal aggregation",
+  "circuit breaker",
+  "open meeting law",
+  "state legislation",
+  "solar farm taxation",
+  "Quinn Bill",
+  "Memorial Day Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following minutes and warrants were presented for approval."
+ },
+ "dropped_unquoted_by_field": {}
 }

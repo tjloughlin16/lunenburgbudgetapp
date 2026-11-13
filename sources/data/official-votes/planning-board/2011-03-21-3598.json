@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-03-21",
  "docid": "3598",
@@ -12,23 +12,123 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session to confer with Attorney Joel Bard regarding O'Brien Homes Inc. litigation",
+   "motion": "Enter Executive Session at 8:15 PM for telephone conference with Attorney Joel Bard, Town Counsel, regarding litigation of O'Brien Homes Inc. v. Planning Board and Town of Lunenburg.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Salia",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion made, ms. bilotta, second, mr. salia, roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye."
+   "quote": "chair called for motion to enter executive session at 8:15 pm for purpose of telephone conference with attorney joel bard,"
   },
   {
-   "motion": "Adjourn executive session",
+   "motion": "Adjourn Executive Session (adjourned 9:20 PM).",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion, ms. bilotta, second, mr. lockwood, roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Spelling inconsistency in member name: motion line reads \"Mr. Salia\" (second vote shows \"Mr. Saiia\" in roll call); header identifies this member as \"Robert J. Saiia\"—same person, likely OCR variant.",
- "cost_usd": 0.1123405
+ "note": "OCR text from a scanned page with artifacts (header 'R$S.', stray 'i.!'). The motion-to-enter second is printed as 'Mr. Salia' while the roll call says 'Mr. Saiia'; recorded as printed. Votes are recorded as roll calls with all ayes; the minutes print no numeric count, so outcome is 'passed'. Minutes are a single page; no public comment or budget figures appear.",
+ "cost_usd": 0.0035482200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye;"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "motion made, ms. bilotta, second, mr. salia, roll call vote, mr. bakaysa, aye; ms. bilotta, aye;"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "mr. bodkin jr., aye. adjourned 9:20 pm."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye;"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "motion, ms. bilotta, second, mr. lockwood, roll call vote, mr. bakaysa, aye;"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "not stated",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel (Attorney)",
+   "status": "remote",
+   "quote": "a conference call was made to attorney bard."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board's conclusion was to proceed to final judgment in the O'Brien litigation and give no direct response to the conceptual plan, while expecting Town Counsel to point out the plan's deficiencies and make clear the Board has waited long enough for a reasonable submittal.",
+   "quote": "the conclusion of the conference was that the lunenburg planning board vote was to proceed for final judgment and give no direct response to the conceptual plan"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Litigation expense of continuing the O'Brien appeal risk",
+   "what_was_recorded": "The minutes note an additional expense if the matter continues, with no figure printed.",
+   "figures_as_printed": [],
+   "quote": "it was noted that the board could lose on appeal. the additional expense was noted."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: O'Brien Homes Inc. v. Planning Board and Town of Lunenburg litigation",
+   "resolution": "held executive session with Town Counsel by phone; Board agreed to proceed to final judgment and not respond directly to conceptual plan",
+   "quote": "chair called for motion to enter executive session at 8:15 pm for purpose of telephone conference with attorney joel bard,",
+   "tags": [
+    "executive session",
+    "litigation",
+    "O'Brien Homes",
+    "Town Counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "\"conceptual\" plan presented on behalf of Mr. O'Brien",
+   "where": "text",
+   "quote": "\"conceptual\" plan presented on behalf of mr. o'brien."
+  },
+  {
+   "name": "Section 5.6 (zoning bylaw section)",
+   "where": "text",
+   "quote": "that would not meet section 5.6. such as no scale, not enough acreage"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "O'Brien Homes",
+  "subdivision",
+  "zoning Section 5.6",
+  "Town Counsel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

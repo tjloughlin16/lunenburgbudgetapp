@@ -1,0 +1,278 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "town-meeting",
+ "board": "Town Meeting",
+ "video_title": "Town Meeting - Part 3",
+ "meeting_date": "2015-05-02",
+ "video_id": "sb7Q1Jr3WFo",
+ "video_url": "https://www.youtube.com/watch?v=sb7Q1Jr3WFo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/town-meeting/2015-05-02-sb7Q1Jr3WFo.json",
+  "sha256": "acee8b347a58ece1135d2c1d76c976f91c22cb5bae7a775f5997f2f3bbaf2eee",
+  "caption_lines": 40,
+  "segments": 274
+ },
+ "recording": {
+  "duration_s": 889,
+  "duration": "0:14",
+  "spoken_chars": 8863,
+  "words_approx": 1477
+ },
+ "town_published": [],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:47:45Z",
+  "cost_usd": 0.1163357
+ },
+ "minutes": {
+  "headline": "Town Meeting was dissolved for lack of a quorum after Article 38, a sewer betterment, passed; later articles go to a special meeting.",
+  "summary": "The excerpt opens with a discussion of rezoning a family property and the special permit process. Article 37 passed by more than two-thirds, and Article 38 (a sewer extension funded by a betterment on residents) passed. Repeated head counts then showed no quorum, so the moderator dissolved the meeting. The selectmen said the remaining articles would go to a special town meeting.",
+  "attendees": [
+   {
+    "name_as_heard": "Moderator",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mrs. Hatch",
+    "role": "counter"
+   },
+   {
+    "name_as_heard": "Mr. Chennis",
+    "role": "counter"
+   },
+   {
+    "name_as_heard": "Mr. Marshall",
+    "role": "counter"
+   },
+   {
+    "name_as_heard": "Mrs. Ravoy",
+    "role": "counter"
+   },
+   {
+    "name_as_heard": "Mr. L",
+    "role": "counter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 8,
+    "topic": "A property owner's family spoke about rezoning the property, keeping it commercial or limited business residential, and a disputed driveway line on the map."
+   },
+   {
+    "t": 217,
+    "topic": "The owner said he would look for a builder or buyer. If none came, he would propose taking the building down after six months because carrying costs are high."
+   }
+  ],
+  "tags": [
+   "debt",
+   "planning-and-zoning",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 240,
+    "motion": "Article 37 vote",
+    "outcome": "passed by more than two-thirds",
+    "procedural": false
+   },
+   {
+    "t": 281,
+    "motion": "Move that the town appropriate $300,000 for the sewer extension purposes in Article 38",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 690,
+    "motion": "Recess the town meeting for 15 minutes to gather a quorum",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 824,
+    "motion": "Meeting declared dissolved by the moderator for lack of a quorum",
+    "outcome": "declared dissolved",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 281,
+    "topic": "Article 38 sewer extension appropriation",
+    "what_was_said": "A motion to appropriate a sum for a sewer extension was made.",
+    "figures_as_heard": [
+     "$300,000"
+    ]
+   },
+   {
+    "t": 438,
+    "topic": "Sewer betterment share",
+    "what_was_said": "The project is funded by the residents through a betterment, with a per-resident share cited.",
+    "figures_as_heard": [
+     "$300,000",
+     "11 residents",
+     "$27,000"
+    ]
+   },
+   {
+    "t": 238,
+    "topic": "Carrying cost of vacant property",
+    "what_was_said": "The owner said taxes and insurance on the property cost him monthly.",
+    "figures_as_heard": [
+     "$1,000 a month"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 845,
+    "decision": "The moderator dissolved the meeting for lack of a quorum."
+   },
+   {
+    "t": 867,
+    "decision": "Selectmen said the remaining articles will be moved to a special town meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 8,
+    "t_end": 260,
+    "topic": "Rezoning of a family property and special permit questions",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 261,
+    "t_end": 261,
+    "topic": "Article 37 vote",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 281,
+    "t_end": 482,
+    "topic": "Article 38 sewer extension and betterment",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "warrant-article",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 483,
+    "t_end": 823,
+    "topic": "Quorum counts and recess",
+    "resolution": "no quorum",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 824,
+    "t_end": 900,
+    "topic": "Meeting dissolved; remaining articles to a special town meeting",
+    "resolution": "dissolved",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Article 37's subject and its exact vote are not stated in these captions",
+   "The count on Article 38 is not given",
+   "Final head counts were garbled and varied between rounds"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 824,
+    "kind": "liability or legal",
+    "about": "The meeting could not continue without a quorum.",
+    "who": "the moderator",
+    "words_as_heard": "there's nothing more that the meeting can do but adjourn to a fixed time or in the discretion of the moderator, if not permitted by bylaw, dissolve"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 304,
+    "name_as_heard": "the warrant",
+    "kind": "warrant article",
+    "words_as_heard": "for the purposes as outlined the warrant and portrayed on the wall here",
+    "shown": true
+   },
+   {
+    "t": 324,
+    "name_as_heard": "two slides",
+    "kind": "presentation",
+    "words_as_heard": "Just two slides. One is to show you where the uh activity is",
+    "shown": true
+   },
+   {
+    "t": 350,
+    "name_as_heard": "CWMP",
+    "kind": "plan or drawing",
+    "words_as_heard": "it fits within our with our charter from CWMP which is sort of our bible",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "sewer-extension-betterment",
+    "title": "Sewer extension betterment",
+    "question": "How is the cost of a sewer extension split between the residents served and the town?",
+    "t": 438,
+    "words_as_heard": "it is a betterment. So, it is totally funded as I said earlier by the residents",
+    "data_in_play": [
+     "$300,000",
+     "$27,000",
+     "11 residents"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "A special town meeting, which selectmen said would take up the articles left unheard when the meeting was dissolved; the minutes give no date."
+  ],
+  "what_happened": [
+   {
+    "line": "The moderator dissolved Town Meeting for lack of a quorum after repeated head counts, leaving the remaining articles unheard.",
+    "t": 845
+   },
+   {
+    "line": "Article 38, an appropriation for a sewer extension, passed; the project is funded by residents through a betterment.",
+    "t": 281
+   },
+   {
+    "line": "Article 37 passed by more than two-thirds, following discussion of rezoning a family property.",
+    "t": 240
+   },
+   {
+    "line": "Selectmen said the remaining articles will be moved to a special town meeting.",
+    "t": 867
+   }
+  ],
+  "why_it_matters": [
+   "Abutting residents on the sewer extension are assessed a betterment, a charge on their property, so Article 38 reaches individual bills as well as the town appropriation.",
+   "Articles not reached before the meeting was dissolved stay undecided until a special town meeting, where voters will again need enough present to make a quorum."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:47:51Z",
+   "cost_usd": 0.0211211
+  }
+ }
+}

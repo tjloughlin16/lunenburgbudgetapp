@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-01-19",
  "docid": "5003",
@@ -12,63 +12,563 @@
  },
  "votes": [
   {
-   "motion": "Appoint Sarah Cammer to the Storm Water Task Force as a member-at-large",
+   "motion": "Appoint Sarah Cammer to the Storm Water Task Force as a member-at-large.",
    "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: p. bertram to appoint sarah cammer to the storm water task force as a member-at-large vote: all in favor"
+   "quote": "motion: r. ebersole 2nd: p. bertram to appoint sarah cammer to the storm water task force as a member-at-large vote: all in favor",
+   "seconded_by": "P. Bertram"
   },
   {
-   "motion": "Invoke the Rule of Necessity to discuss the disclosures of conflict of interest for the Conservation Commission members",
+   "motion": "Invoke the Rule of Necessity to discuss the disclosures of conflict of interest for the Conservation Commission members.",
    "moved_by": "J. Toale",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: j. toale 2\": r. ebersole to invoke the rule of necessity to discuss the disclosures of conflict of interest for the conservation commission members vote: all in favor"
-  },
-  {
-   "motion": "Approve the financing of the bond in the amount of $1,521,653",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd. p. bertram to approve the financing of the bond in the amount of $1,521,653 vote: all in favor"
+   "quote": "motion: j. toale 2\": r. ebersole to invoke the rule of necessity to discuss the disclosures of conflict of interest for the conservation commission members vote: all in favor",
+   "seconded_by": "R. Ebersole"
   },
   {
-   "motion": "Approve the bond anticipation note",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "T. Alonzo",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: r. ebersole 2'd: t. alonzo to approve the bond anticipation note vote: all in favor"
-  },
-  {
-   "motion": "Approve the minutes of November 10, 2015",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the minutes of november 10, 2015 were approved."
-  },
-  {
-   "motion": "Nominate Ms. Bertram for the MPO appointment",
+   "motion": "Approve the presented outline for Conservation Commission discussion.",
    "moved_by": "T. Alonzo",
-   "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to nominate ms. bertram for the mpo appointment 2\"d: p. luck vote: all in favor"
+   "quote": "to approve the presented outline for cc discussion",
+   "seconded_by": "R. Ebersole"
+  },
+  {
+   "motion": "Approve the financing of the bond in the amount of $1,521,653.",
+   "moved_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole 2nd. p. bertram to approve the financing of the bond in the amount of $1,521,653",
+   "seconded_by": "P. Bertram"
+  },
+  {
+   "motion": "Approve the bond anticipation note.",
+   "moved_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole 2'd: t. alonzo to approve the bond anticipation note",
+   "seconded_by": "T. Alonzo"
+  },
+  {
+   "motion": "Nominate Ms. Bertram for the MPO appointment.",
+   "moved_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: t. alonzo to nominate ms. bertram for the mpo appointment 2\"d: p. luck vote: all in favor",
+   "seconded_by": "P. Luck"
   },
   {
    "motion": "Adjourn the meeting at 9:10 p.m.",
    "moved_by": "P. Bertram",
-   "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:10 p.m. 2\"°: p. luck vote: all in favor"
+   "quote": "motion: p. bertram to adjourn the meeting at 9:10 p.m. 2\"°: p. luck vote: all in favor",
+   "seconded_by": "P. Luck"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR text via macOS Vision from pages 1-5. All votes passed. OCR artifacts in second abbreviations (2\":, 2n°:, 2'd:, 2\\\"d:, 2\\\"°:) preserved as they appear in the original.",
- "cost_usd": 0.1498935
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) with errors: seconders appear as '2\\\"', '2'd', '2n°'; 'SCB' for SBC; the signature line is garbled. The minutes print no vote counts, only 'All in Favor', so outcomes are recorded as 'passed'. The minutes print no motion for approving the November 10, 2015 minutes. The CC outline motion's quote is the motion sentence, since a page break separates the motion header from it. Carl Luck is named both as Sewer Commission chair and as a Conservation Commission member; recorded once as an attendee. Several attendee statuses are 'not stated' because the minutes only name them.",
+ "cost_usd": 0.011625220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "SBC Chair",
+   "status": "present",
+   "quote": "sbc chair mike mackin reported on the history of the committee."
+  },
+  {
+   "name": "Tom Shapiro",
+   "role": "School Committee member",
+   "status": "not stated",
+   "quote": "he introduced tom shapiro, school committee member; greg bittner, planning board member; greg roy, citizen at large, and school supt. calmes."
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Planning Board member",
+   "status": "not stated",
+   "quote": "he introduced tom shapiro, school committee member; greg bittner, planning board member; greg roy, citizen at large, and school supt. calmes."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "citizen at large",
+   "status": "not stated",
+   "quote": "he introduced tom shapiro, school committee member; greg bittner, planning board member; greg roy, citizen at large, and school supt. calmes."
+  },
+  {
+   "name": "Calmes",
+   "role": "School Supt.",
+   "status": "not stated",
+   "quote": "he introduced tom shapiro, school committee member; greg bittner, planning board member; greg roy, citizen at large, and school supt. calmes."
+  },
+  {
+   "name": "Mike Barney",
+   "role": "citizen at large",
+   "status": "absent",
+   "quote": "mike barney and brian frank, citizens at large, were not able to attend this evening's meeting."
+  },
+  {
+   "name": "Brian Frank",
+   "role": "citizen at large",
+   "status": "absent",
+   "quote": "mike barney and brian frank, citizens at large, were not able to attend this evening's meeting."
+  },
+  {
+   "name": "Jeff Luxemburg",
+   "role": "Owner's Project Manager, Joslin Lesser & Associates Inc.",
+   "status": "present",
+   "quote": "mr. mackin introduced jeff luxemburg, owner's project manager, joslin lesser & associates inc."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "resident, 82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, reported on the progress of transportation assistance for retired veteran, jim bellefiore"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Chairman of the Sewer Commission",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, and chairman of the sewer commission, reported the resignation of commissioner troy daniels effective immediately."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "applicant, member at large, Storm Water Task Force",
+   "status": "not stated",
+   "quote": "sarah cammer has requested to be appointed as the member at large to the storm water task force."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "mr. rabbitt opened the meeting for the conservation commission members."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "tom bertram requested an exemption on the entire document not just the outline in order to do the job they were appointed to do."
+  },
+  {
+   "name": "Bradford Kennedy",
+   "role": "Conservation Commission member",
+   "status": "not stated",
+   "quote": "(for conservation commission members: john rabbitt, carl luck, tom bertram, bradford kennedy)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of November 10, 2015 were approved (no motion or vote recorded).",
+   "quote": "the minutes of november 10, 2015 were approved."
+  },
+  {
+   "decision": "After discussion, Ms. Luck was determined able to participate in the Conservation Commission item under the Rule of Necessity guidelines.",
+   "quote": "after some discussion it was determined she could participate under the rule of necessity guidelines."
+  },
+  {
+   "decision": "Conservation Commission must return to the Board for any changes not listed on the outline.",
+   "quote": "mr. ebersole clarified the cc should bring in any changes not listed on the outline."
+  },
+  {
+   "decision": "Ms. Luck's request that the Storm Water Task Force funding availability question be placed on a future agenda was made; no vote recorded.",
+   "quote": "she requested this be placed on a future agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School project contingency funding",
+   "what_was_recorded": "A little over $211,000 of the $4 million contingency funding has been expended.",
+   "quote": "a little over $211,000 of the $4 million contingency funding has been expended.",
+   "figures_as_printed": [
+    "$211,000",
+    "$4 million"
+   ]
+  },
+  {
+   "topic": "Contingency items ruled ineligible by bond counsel",
+   "what_was_recorded": "Three items judged ineligible by bond counsel, totalling roughly $2 million, were removed from the contingency list.",
+   "quote": "these items, totalling roughly $2 million, have been removed from the contingency list.",
+   "figures_as_printed": [
+    "roughly $2 million"
+   ]
+  },
+  {
+   "topic": "Outdoor study area",
+   "what_was_recorded": "Powell Stone and Gravel would donate labor and materials, reducing the cost of the outdoor study area from $48,000 to $10,800 if approved by the SBC.",
+   "quote": "reducing the cost from $48,000 to $10,800.",
+   "figures_as_printed": [
+    "$48,000",
+    "$10,800"
+   ]
+  },
+  {
+   "topic": "Mural relocation and digital reproductions",
+   "what_was_recorded": "Relocating and digitally reproducing existing murals is an item costing approximately $15,000.",
+   "quote": "this item costs approximately $15,000.",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Maintenance garage",
+   "what_was_recorded": "Construction of a maintenance garage was originally in project scope at $185,000 and was removed in value engineering; it may be assumed within contingency.",
+   "quote": "construction of a maintenance garage ($185,000) was originally planned within the project scope.",
+   "figures_as_printed": [
+    "$185,000"
+   ]
+  },
+  {
+   "topic": "Athletic archives touchscreen monitor",
+   "what_was_recorded": "A touchscreen monitor for athletic archives is an item costing about $24,000.",
+   "quote": "this item costs about $24,000.",
+   "figures_as_printed": [
+    "$24,000"
+   ]
+  },
+  {
+   "topic": "Digital exterior sign",
+   "what_was_recorded": "A digital exterior sign for school and town news and emergency updates is a placeholder on the contingency list at $58,000.",
+   "quote": "a digital exterior sign costing $58,000, for school and town news and emergency updates",
+   "figures_as_printed": [
+    "$58,000"
+   ]
+  },
+  {
+   "topic": "Additional classroom cooling",
+   "what_was_recorded": "Additional cooling to classroom wings was removed in value engineering; its cost was stated as $500,000.",
+   "quote": "modifying the air at the cost of $500,000.",
+   "figures_as_printed": [
+    "$500,000"
+   ]
+  },
+  {
+   "topic": "Artificial turf for two new athletic fields",
+   "what_was_recorded": "Artificial turf for the new stadium field and practice field was listed at $1 million; Ms. Bertram raised concern about turf maintenance cost.",
+   "quote": "artificial turf for 2 new athletic fields; the new stadium field and the new practice field ($1 million).",
+   "figures_as_printed": [
+    "$1 million"
+   ]
+  },
+  {
+   "topic": "Parking lot reconfiguration",
+   "what_was_recorded": "Reconfiguration of the parking lot is requested at $250,000 and has not been designed yet.",
+   "quote": "reconfiguration of the parking lot is also requested ($250,000), but it hasn't been designed yet.",
+   "figures_as_printed": [
+    "$250,000"
+   ]
+  },
+  {
+   "topic": "Existing turf field replacement",
+   "what_was_recorded": "The existing turf field must be replaced at a cost of over $1 million.",
+   "quote": "the existing turf field has to be replaced at the cost of over $1 million.",
+   "figures_as_printed": [
+    "over $1 million"
+   ]
+  },
+  {
+   "topic": "MSBA reimbursement cap",
+   "what_was_recorded": "The MSBA set a cap of $275/square foot or an 8% site cap, which the project was already over.",
+   "quote": "the msba set a cap of $275/square foot or an 8% site cap.",
+   "figures_as_printed": [
+    "$275/square foot",
+    "8%"
+   ]
+  },
+  {
+   "topic": "Local share change",
+   "what_was_recorded": "The local share moved from $36,784,451 in January 2014 to $38,192,941 in November 2015; the project funding agreement set the higher figure.",
+   "quote": "ms. luck asked about the local share listed in january 2014, it was $36,784,451. when she looked at the november 2015 share, it is $38,192,941.",
+   "figures_as_printed": [
+    "$36,784,451",
+    "$38,192,941"
+   ]
+  },
+  {
+   "topic": "Full project appropriation",
+   "what_was_recorded": "The MSBA requires the full project amount of $72 million to be appropriated before reimbursement.",
+   "quote": "the msba requires you to appropriate the full project amount, $72 million and then be reimbursed for expenses.",
+   "figures_as_printed": [
+    "$72 million"
+   ]
+  },
+  {
+   "topic": "Contingency percentages",
+   "what_was_recorded": "The project has a construction contingency of 5% and a project contingency of 1%.",
+   "quote": "there is a construction contingency (5%) and a project contingency (1%).",
+   "figures_as_printed": [
+    "5%",
+    "1%"
+   ]
+  },
+  {
+   "topic": "Turf versus sod cost",
+   "what_was_recorded": "Mr. Ebersole asked for a cost comparison of turf versus sod; no figure was printed.",
+   "quote": "mr. ebersole stated he would like to see a cost comparison of turf versus sod.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer project bond financing",
+   "what_was_recorded": "Bond financing of the sewer project through the Massachusetts Clean Water Trust was approved in the amount of $1,521,653.",
+   "quote": "in the amount of $1,521,653 on a water pollution abatement bond.",
+   "figures_as_printed": [
+    "$1,521,653"
+   ]
+  },
+  {
+   "topic": "Bond anticipation note",
+   "what_was_recorded": "A one-year BAN of $841,518 at 0.75 percent covers the Lane Property, a fire truck, and DPW equipment.",
+   "quote": "the bond anticipation note (ban) in the amount of $841,518.",
+   "figures_as_printed": [
+    "$841,518",
+    "0.75 percent"
+   ]
+  },
+  {
+   "topic": "Storm water funding",
+   "what_was_recorded": "The Town Manager set aside $40,000 for storm water projects and hopes to set aside another $40,000 for FY 2017.",
+   "quote": "the town manager has set aside $40,000 for storm water projects and will hopefully set aside another $40,000 for fy 2017.",
+   "figures_as_printed": [
+    "$40,000",
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Accounts payable warrants",
+   "what_was_recorded": "The Board signed accounts payable warrants of $165,616.18 and $2,116,766.41.",
+   "quote": "the board signed an accounts payable in the amount of $165,616.18 and another in the amount of $2,116,766.41.",
+   "figures_as_printed": [
+    "$165,616.18",
+    "$2,116,766.41"
+   ]
+  },
+  {
+   "topic": "School project contingency return",
+   "what_was_recorded": "Mr. Mackin believed the project would end by returning some of the funding.",
+   "quote": "at the end of the day he believed they would be returning some of the funding.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Boys & Girls Club event announcement",
+   "quote": "mr. alonzo announced the upcoming lunenburg boys & girls club event"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "transportation assistance for veteran Jim Bellefiore",
+   "quote": "dave rodgers, 82 highland street, reported on the progress of transportation assistance for retired veteran, jim bellefiore"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "Chairman of the Sewer Commission",
+   "topic": "resignation of Sewer Commissioner Troy Daniels",
+   "quote": "carl luck, 50 sunset lane, and chairman of the sewer commission, reported the resignation of commissioner troy daniels effective immediately."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "School Building Committee project and saving money",
+   "quote": "carl luck, 50 sunset lane, returned to the podium. he congratulated the school building committee"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland St.",
+   "topic": "number of contingency funds and Board role",
+   "quote": "dave rodgers, 82 highland st., asked how many contingency funds there were."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, announcements and public comment",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced the upcoming lunenburg boys & girls club event",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Discussion with School Building Committee",
+   "resolution": "discussion only, no action",
+   "quote": "sbc chair mike mackin reported on the history of the committee.",
+   "tags": [
+    "school building committee",
+    "school project",
+    "contingency"
+   ]
+  },
+  {
+   "topic": "Appointment to Storm Water Task Force",
+   "resolution": "appointed Sarah Cammer as member at large",
+   "quote": "sarah cammer has requested to be appointed as the member at large to the storm water task force.",
+   "tags": [
+    "storm water",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Conflict of Interest Disclosure Outline, Conservation Commission (continued)",
+   "resolution": "Rule of Necessity invoked; outline approved",
+   "quote": "mr. toale stated this was a continuation of determining whether there was financial interest",
+   "tags": [
+    "conservation commission",
+    "conflict of interest",
+    "rule of necessity"
+   ]
+  },
+  {
+   "topic": "Award and execute bonds and bans",
+   "resolution": "bond and BAN approved",
+   "quote": "ms. lafleur stated the first item is a request for signatures on the bond financing of the sewer project",
+   "tags": [
+    "bonds",
+    "sewer",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Tennessee Gas Pipeline update",
+   "resolution": "information only",
+   "quote": "ms. lafleur reported the town finally has a map showing the proposed lateral for the pipeline",
+   "tags": [
+    "tennessee gas pipeline",
+    "easements"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes approved; accounts payable signed",
+   "quote": "the board signed an accounts payable in the amount of $165,616.18 and another in the amount of $2,116,766.41.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action file: storm water task force funding",
+   "resolution": "referred to a future agenda",
+   "quote": "ms. luck stated the storm water task force recently began meeting.",
+   "tags": [
+    "storm water",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; MPO nomination made",
+   "quote": "ms. bertram reported mpo met last week.",
+   "tags": [
+    "MPO",
+    "committee reports",
+    "complete streets",
+    "MART"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:10 p.m.",
+   "quote": "motion: p. bertram to adjourn the meeting at 9:10 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Conservation Commission outline of areas to revise in the town wetlands regulations",
+   "where": "text",
+   "quote": "an outline had been provided to the board of selectmen that provided a listing of areas in the town wetlands regulations"
+  },
+  {
+   "name": "Project funding agreement (signed by the Board of Selectmen and the School Committee)",
+   "where": "text",
+   "quote": "comes from the project funding agreement which was signed by the board of selectmen and the school committee."
+  },
+  {
+   "name": "Town meeting article on the project total",
+   "where": "text",
+   "quote": "mr. alonzo stated the town meeting article was approved on the project total."
+  },
+  {
+   "name": "Statement on contingency versus nice-to-have items, read by Ms. Bertram",
+   "where": "text",
+   "quote": "ms. bertram read aloud a statement expressing what constitutes a contingency versus what would be nice to have."
+  },
+  {
+   "name": "Map showing the proposed Tennessee Gas Pipeline lateral",
+   "where": "text",
+   "quote": "the town finally has a map showing the proposed lateral for the pipeline at a scale that enables one to identify parcels"
+  },
+  {
+   "name": "Kinder Morgan notice received by a residential property owner",
+   "where": "text",
+   "quote": "she received a copy of a notice that a residential property owner received from kinder morgan"
+  },
+  {
+   "name": "Accounts payable warrants",
+   "where": "text",
+   "quote": "the board signed an accounts payable in the amount of $165,616.18 and another in the amount of $2,116,766.41."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "conservation commission",
+  "rule of necessity",
+  "storm water",
+  "bonds",
+  "sewer",
+  "tennessee gas pipeline",
+  "MPO",
+  "budget",
+  "contingency",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-03-26",
  "docid": "4838",
@@ -12,31 +12,374 @@
  },
  "votes": [
   {
-   "motion": "Approve the nomination of Whitney Lacka and Connie Odea to the Council on Aging",
-   "moved_by": "Alonzo",
-   "seconded_by": "Sund",
-   "outcome": "passed 4-0",
+   "motion": "Approve the nomination of Whitney Lacka and Connie Odea to the Council on Aging.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
+   "outcome": "passed, 4 in favor, O opposed",
    "procedural": false,
    "quote": "mr. alonzo motioned to approve the nomination of ms. lacka and ms. odea to the council on aging. mr. sund seconded the motion. on vote motion carried, 4 in favor, o opposed."
   },
   {
-   "motion": "Approve the nomination of Jonathan J. Broc to the position of Patrol Officer",
-   "moved_by": "Alonzo",
-   "seconded_by": "Sund",
-   "outcome": "passed 4-0",
+   "motion": "Approve the nomination of Jonathan J. Broc to the position of Patrol Officer.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
+   "outcome": "passed, 4 in favor, O opposed",
    "procedural": false,
    "quote": "mr. alonzo motioned to approve the nomination of mr. jonathan j. broc to the position of patrol officer. mr. sund seconded the motion. on vote motion carried, 4 in favor, o opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "deBettencourt",
-   "seconded_by": "Sund",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. deBettencourt",
+   "seconded_by": "Ms. Sund",
+   "outcome": "passed, 4 in favor, 0 opposed",
    "procedural": true,
-   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. sund seconded. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. debettencourt moved to adjourn the meeting. ms. sund seconded. on vote motion carried, 4 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted text from macOS Vision. Third vote shows \"Ms. Sund\" seconding, but the board member listed in header is \"Steven M. Sund\"; this is likely an OCR error for \"Mr. Sund\". Vote outcomes show inconsistent OCR of zero (O vs 0).",
- "cost_usd": 0.165881
+ "note": "OCR scan of a typed page; some text garbled (e.g., 'Fown Manager', 'Mir. Lattanzi', 'ALonzo'). 'Ms. Sund' is printed where 'Mr. Sund' is likely meant; 'O opposed' is likely '0'. The first line of attendance is cut off at the top of page 1. Warrant amounts are listed without clear mapping to warrant numbers. Upcoming schedule prints 'April 23, 2016', likely a typo. Votes recorded: three (two appointments, adjournment). The 'Received & Filed' stamp is dated APR 0 3 2013.",
+ "cost_usd": 0.016028610000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthews, Tom",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt and fown manager kerry speidel"
+  },
+  {
+   "name": "Alonzo, Carl (Ernie)",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt and fown manager kerry speidel"
+  },
+  {
+   "name": "Sund",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt and fown manager kerry speidel"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt and fown manager kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt and fown manager kerry speidel"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "absent",
+   "quote": "absent was paula bertram."
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Director of the Boys and Girls Club of Lunenburg",
+   "status": "present",
+   "quote": "michelle belleza, director of the boys and girls club of lunenburg, thanked the bos for their support for the"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Representative from the COA Board",
+   "status": "present",
+   "quote": "representatives from the coa board, mary lynn conrad and peter lincoln presented ms. whitney lacka of"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "Representative from the COA Board",
+   "status": "present",
+   "quote": "representatives from the coa board, mary lynn conrad and peter lincoln presented ms. whitney lacka of"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "COA nominee, Reservoir Road",
+   "status": "present",
+   "quote": "ms. lacka stated her recruitment to the council was similar and that she also was interested in working on the"
+  },
+  {
+   "name": "Connie Odea",
+   "role": "COA nominee, Pratt Street",
+   "status": "present",
+   "quote": "ms. odea introduced herself as a citizen of the town of lunenburg for 41 years"
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino introduced mr. broc to the bos and stated that since the retirement of officer stan barney"
+  },
+  {
+   "name": "Jonathan J. Broc",
+   "role": "Patrol Officer nominee",
+   "status": "present",
+   "quote": "police chief marino introduced mr. broc to the bos and stated that since the retirement of officer stan barney"
+  },
+  {
+   "name": "Marion Benson",
+   "role": "Planning Director for the Town of Lunenburg",
+   "status": "present",
+   "quote": "marion benson, planning director for the town of lunenburg, spoke to the bos and stated that this was a part of the town's master plan"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "Conservation Committee",
+   "status": "not stated",
+   "quote": "ms. benson and ms. jan carrier from the conservation committee held a meeting, with"
+  },
+  {
+   "name": "Jim Lattanzi",
+   "role": "Hollis Hills Farm; spoke on behalf of the farmers in Town",
+   "status": "present",
+   "quote": "jim lattanzi, hollis hills farm, spoke on behalf of the farmers in town."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board re-ordered the 2013 Annual Town Meeting articles (Article 18 to #1, Article 12 to #2, and so on through Article 20 to #19; Article 6 not re-ordered).",
+   "quote": "articles after the consent calender were re-ordered as follows:"
+  },
+  {
+   "decision": "Board deferred its position on the Central Massachusetts Mosquito Control budget until it hears more detail about the activity.",
+   "quote": "mr. matthews stated the bos would like to hear more detail about the activity before voting."
+  },
+  {
+   "decision": "Board stated support for the farmers and the proposed Agricultural Commission petition (Article 4).",
+   "quote": "mr. matthews stated that mr. latanzi and the farmer's had the support of the bos."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Meals tax revenue (Article 13)",
+   "what_was_recorded": "Mr. Sund said the local meals tax brings in a stated annual amount and that repealing it would require finding that money elsewhere.",
+   "figures_as_printed": [
+    "$66,000-$67,000"
+   ],
+   "quote": "the tax brings in $66,000-$67,000 per year and that if the tax is repealed that money would have to be found somewhere else."
+  },
+  {
+   "topic": "Green energy community grants",
+   "what_was_recorded": "Mr. Sund asked about $100,000.00 in grants for a Green Energy community; Ms. Speidel said the money is earmarked for specific issues.",
+   "figures_as_printed": [
+    "$100,000.00"
+   ],
+   "quote": "mr. sund asked if the town became a green energy community the town should received $100,000.00 in grants."
+  },
+  {
+   "topic": "Central Massachusetts Mosquito Control assessment, FY2014",
+   "what_was_recorded": "Ms. Speidel reported the town's assessment from the mosquito control agency, described as a slight increase from prior years.",
+   "figures_as_printed": [
+    "$59,934.00"
+   ],
+   "quote": "in the amount of $59,934.00 was a slight increase from previous years"
+  },
+  {
+   "topic": "Warrants (3/19 payment warrant)",
+   "what_was_recorded": "A warrant dated 3/19 was listed in the minutes with an amount.",
+   "figures_as_printed": [
+    "$274,871.23"
+   ],
+   "quote": "warrants: 3/19 w#50-13 $274,871.23"
+  },
+  {
+   "topic": "Warrants (action file warrants)",
+   "what_was_recorded": "Warrants W#20-P13, W#51-14 and W#52-13 were listed with amounts; the minutes do not state which amount belongs to which warrant.",
+   "figures_as_printed": [
+    "$593,357.86",
+    "$355,699.89",
+    "$249,407.49"
+   ],
+   "quote": "action file issues: none w#20-p13 w#51-14 w#52-13 $593,357.86 $355,699.89 $249,407.49"
+  },
+  {
+   "topic": "Street light costs paid to Unitil",
+   "what_was_recorded": "Ms. Speidel reported the town pays a set annual amount for street lights billed by Unitil.",
+   "figures_as_printed": [
+    "$56,000.00"
+   ],
+   "quote": "the town pays $56,000.00 per year for street lights."
+  },
+  {
+   "topic": "Street light purchase prices and savings",
+   "what_was_recorded": "Ms. Speidel reported purchase prices for street lights elsewhere in the Commonwealth and estimated savings from municipal ownership.",
+   "figures_as_printed": [
+    "$1",
+    "$100",
+    "40-75%"
+   ],
+   "quote": "street lights have been purchased in the commonwealth for as low as $1 per fixture and as much as about $100 per fixture"
+  },
+  {
+   "topic": "Chapter 70 estimate (FY2014 budget)",
+   "what_was_recorded": "Ms. Speidel said she could amend her Chapter 70 estimate to the School Committee if needed; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel stated she would be able to amend her chapter 70 estimate to the school committee if needed."
+  },
+  {
+   "topic": "Solar projects savings",
+   "what_was_recorded": "Ms. Speidel said the EPG and Chase Road solar projects will bring savings to the budget once completed; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "once completed the chase road and epg project will bring savings to the budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michelle Belleza",
+   "stated_role": "Director of the Boys and Girls Club of Lunenburg",
+   "topic": "Boys and Girls Club Week proclamation",
+   "quote": "ms. belleza asked the bos to officially proclaim the week of april 8-12 boys and girls club week in lunenburg."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "Boys and Girls Club Week proclamation requested; Mr. Matthews said a proclamation would be made",
+   "quote": "mr. matthews has a proclamation in hand which will be officially made the week of april 8-12.",
+   "tags": [
+    "public comment",
+    "proclamation"
+   ]
+  },
+  {
+   "topic": "Appointment: Council on Aging (Whitney Lacka, Connie Odea)",
+   "resolution": "approved nominations",
+   "quote": "mr. alonzo motioned to approve the nomination of ms. lacka and ms. odea to the council on aging.",
+   "tags": [
+    "appointments",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Appointment: Patrol Officer (Jonathan J. Broc)",
+   "resolution": "approved nomination",
+   "quote": "mr. alonzo motioned to approve the nomination of mr. jonathan j. broc to the position of patrol officer.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Open Space Committee, Right-to-Farm bylaw / Agricultural Commission petition",
+   "resolution": "no vote; board expressed support and farmers to fix Article 4 language",
+   "quote": "mr. matthews stated that mr. latanzi and the farmer's had the support of the bos.",
+   "tags": [
+    "agriculture",
+    "agricultural commission",
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Order Warrant for 2013 Annual Town Meeting",
+   "resolution": "articles reviewed and re-ordered; no vote recorded",
+   "quote": "ms. speidel stated that there were 22 articles submitted with",
+   "tags": [
+    "town meeting warrant",
+    "meals tax",
+    "articles"
+   ]
+  },
+  {
+   "topic": "Declaration of Support for FY2014 Mosquito Control Budget",
+   "resolution": "deferred for more information",
+   "quote": "mr. matthews stated the bos would like to hear more detail about the activity before voting.",
+   "tags": [
+    "mosquito control",
+    "budget"
+   ]
+  },
+  {
+   "topic": "FY2014 Budget",
+   "resolution": "informational; no action",
+   "quote": "ms. speidel noted that the finance committee will be holding their public hearing on",
+   "tags": [
+    "FY2014 budget",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "listed; no vote recorded",
+   "quote": "action file issues: none w#20-p13 w#51-14 w#52-13",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "informational; school building and Planning Board updates",
+   "quote": "mr. alonzo noted that he attended the planning board meeting on saturday",
+   "tags": [
+    "planning board",
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "informational; street light purchase analysis discussed",
+   "quote": "ms. speidel discussed health insurance and the potential to make some adjustments",
+   "tags": [
+    "health insurance",
+    "solar",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Old business, public comment, executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2013 Annual Town Meeting articles (22 articles plus 6 consent calendar articles)",
+   "where": "list",
+   "quote": "ms speidel reviewed the articles with the bos (see attached)"
+  },
+  {
+   "name": "Article 4 of the Town Warrant (petition to form an Agricultural Commission)",
+   "where": "text",
+   "quote": "submitted to article 4 of the town warrant to officially form an agricultural commission"
+  },
+  {
+   "name": "Article 13 (local meals tax repeal)",
+   "where": "text",
+   "quote": "mr. alonzo stated that article 13 was listed as the last article of the stm in december 2009"
+  },
+  {
+   "name": "Central Massachusetts Mosquito Control Project FY2014 assessment",
+   "where": "text",
+   "quote": "the town receives an assessment on an annual basis from the central massachusetts mosquito control project"
+  }
+ ],
+ "tags": [
+  "town meeting warrant",
+  "appointments",
+  "council on aging",
+  "police",
+  "agricultural commission",
+  "meals tax",
+  "mosquito control",
+  "FY2014 budget",
+  "street lights",
+  "solar",
+  "health insurance",
+  "school building committee",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms speidel reviewed the articles with the bos (see attached)"
+ },
+ "dropped_unquoted_by_field": {}
 }

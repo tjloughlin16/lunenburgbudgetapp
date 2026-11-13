@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-09-02",
  "docid": "4901",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Adopt and approve the Financial Policies recommended by the Finance Committee",
+   "motion": "Adopt and approve the Financial Policies recommended by the Finance Committee.",
    "moved_by": "Jamie Toale",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. toale moved to adopt and approve the financial policies recommended by the finance committee. ms. bertram seconded"
   },
   {
-   "motion": "Appoint Jacquelyn Dwyer, Sarah Grant, Cheryl Moisan, and Diane Nowd to the Council on Aging",
+   "motion": "Appoint Jacquelyn Dwyer, Sarah Grant, Cheryl Moisan, and Diane Nowd to the Council on Aging.",
    "moved_by": "Robert Ebersole",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. ebersole moved to appoint jacquelyn dwyer, sarah grant, cheryl moisan, and diane nowd to the council on aging. ms. bertram seconded"
+   "procedural": false,
+   "quote": "mr. ebersole moved to appoint jacquelyn dwyer, sarah grant, cheryl moisan, and diane nowd to the council on aging."
   },
   {
-   "motion": "Approve the voluntary toll for Boys & Girls Club on October 4, 2014",
+   "motion": "Approve the voluntary toll requested by the Boys & Girls Club for October 4, 2014.",
    "moved_by": "Robert Ebersole",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
@@ -36,23 +36,465 @@
    "quote": "mr. ebersole moved to approve the voluntary toll as requested. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Ratify Vernon P. Beauvais and Jacob A. LaChance as Reserve Police Officers",
+   "motion": "Ratify the positions of Vernon P. Beauvais and Jacob A. LaChance to Reserve Police Officer.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Jamie Toale",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "ms. bertram moved to ratify the positions of vernon p. beauvais and jacob a. lachance to reserve police officer. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "ms. bertram moved to ratify the positions of vernon p. beauvais and jacob a. lachance to reserve police officer."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Jamie Toale",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "being no further business ms. bertram moved to adjourn the meeting. mr. toale seconded. on vote, motion carried 5 in favor, 0 opposed."
+   "quote": "adjournment: being no further business ms. bertram moved to adjourn the meeting. mr. toale seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned minutes. All five votes recorded clearly with motion, mover, seconder, and outcome stated.",
- "cost_usd": 0.12238550000000001
+ "note": "OCR of a scanned minutes page (macOS Vision). Several words are garbled (e.g., 'oth candidates', 'Ar. Alonzo', 'Mis. Luck'); the FinCom chair is spelled 'Erickson' in the agenda heading and 'Ericson' in the body, recorded here as 'Ericson'. The MART cost scenario table is scrambled by OCR, so its figures are recorded as printed without reconstructing the table. Minutes of 7/1/2014 and warrants dated 9/2/2014, 9/3/2014 and W#15-15 are listed with no recorded motion or vote. Five votes are recorded, all with clear tallies.",
+ "cost_usd": 0.012814820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino thanked the lake shirley association and shady point for their help with funding the lake patrol this year."
+  },
+  {
+   "name": "Officer Tocci",
+   "status": "present",
+   "quote": "chief marino introduced officer tocci along with the new k-9 dog \"jerry\" to the bos."
+  },
+  {
+   "name": "Mark Ericson",
+   "role": "Chairperson of the Finance Committee (FinCom)",
+   "status": "present",
+   "quote": "mark ericson, chairperson of the finance committee (fincom) came before the board and gave a brief synopsis"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "FinCom member",
+   "status": "present",
+   "quote": "john henshaw, fincom member, spoke to say that the fincom revisits each year policies/guidelines which change every time"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "applicant for Council on Aging appointment",
+   "status": "present",
+   "quote": "caroline griffis, 31 spring st., came before the board to be interviewed for appointment to the council on aging."
+  },
+  {
+   "name": "Marcy Foreman",
+   "role": "representing the Lunenburg Boys and Girls Club",
+   "status": "present",
+   "quote": "marcy foreman, representing the lunenburg boys and girls club came before the board to request permission to conduct a voluntary toll"
+  },
+  {
+   "name": "Vernon P. Beauvais",
+   "role": "candidate for Reserve Police Officer",
+   "status": "present",
+   "quote": "chief marino introduced both candidates, vernon p. beauvais & jacob a. lachance, for reserve police officers and gave a brief"
+  },
+  {
+   "name": "Jacob A. LaChance",
+   "role": "candidate for Reserve Police Officer",
+   "status": "present",
+   "quote": "chief marino introduced both candidates, vernon p. beauvais & jacob a. lachance, for reserve police officers and gave a brief"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board postponed appointments to the PACC until talent bank candidates are contacted to confirm they are still interested.",
+   "quote": "after due diligent discussion the bos decided to postpone appointments to the pacc until such time that talent bank candidates have"
+  },
+  {
+   "decision": "Chair asked the Town Manager to contact the Town Moderator to begin a screening committee process for the FinCom.",
+   "quote": "mr. alonzo requested that the town manager contact the town moderator to begin the process of a screening committee for the fincom."
+  },
+  {
+   "decision": "Board will put Caroline Griffis's name forward to the FinCom screening committee; board members agreed to consider her for FinCom.",
+   "quote": "mr. alonzo mentioned that there is a different screening committee for the fincom and the bos will put ms. griffis name forward to"
+  },
+  {
+   "decision": "Board members agreed with Mr. Ebersole's suggestion that Ms. Griffis be considered for a FinCom position.",
+   "quote": "board members were in favor of mr. ebersole's suggestion."
+  },
+  {
+   "decision": "Town Manager to check into the Registrar of Voters appointment process; item to be taken up at next week's BOS meeting.",
+   "quote": "ms. speidel will check into this further and this appointment can be taken up at next week's bos meeting."
+  },
+  {
+   "decision": "Conservation Commission interviews to be held at next week's BOS meeting.",
+   "quote": "conservation commission - interviews to be done at next week's bos meeting."
+  },
+  {
+   "decision": "Request for Ambulance Fee increase deferred to a future BOS meeting.",
+   "quote": "3. request to increase ambulance fees: to be discussed at a future bos meeting"
+  },
+  {
+   "decision": "BOS will not vote on a MART quote of support until more information has been gathered.",
+   "quote": "bos will not vote on a quote of support until more information has been gathered."
+  },
+  {
+   "decision": "Town Manager to have the electric aggregation consultants report at the next BOS meeting.",
+   "quote": "ms.speidel would like to have the consultants come to the next bos meeting to report on this issue."
+  },
+  {
+   "decision": "Chair recommended that either Ms. Luck or Ms. Speidel contact the disabled citizens who emailed about transit to ask whether the service would help them.",
+   "quote": "he recommended that either ms. luck or ms. speidel contact them to ask if this service would be beneficial to them"
+  },
+  {
+   "decision": "Chair will research Ms. Bertram's public concern about the Passios Building property transfer with the School Building Committee.",
+   "quote": "mr. alonzo will research this with the school building committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lake patrol funding",
+   "what_was_recorded": "Lake Shirley Association and Shady Point helped fund the lake patrol this year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "police chief marino thanked the lake shirley association and shady point for their help with funding the lake patrol this year."
+  },
+  {
+   "topic": "K-9 dog funding",
+   "what_was_recorded": "Funding for the new K-9 dog comes from local businesses and agencies outside the Police Dept.; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "funding for the dog comes from local businesses/agencies outside of the police dept. and the dog will be kenneled at officer tocci's home."
+  },
+  {
+   "topic": "Financial Policies capital project threshold",
+   "what_was_recorded": "Chair questioned how the FinCom arrived at the $10,000 capital projects figure; Mr. Ericson said research showed limits as low as $5,000 at some multimillion dollar private companies.",
+   "figures_as_printed": [
+    "$10,000",
+    "$5,000"
+   ],
+   "quote": "he also questioned how the fincom came to the $10,000 figure regarding capital projects."
+  },
+  {
+   "topic": "Free Cash",
+   "what_was_recorded": "Free Cash is non-recurring revenue and should not fund recurring personnel, programs or initiatives; Mr. Ebersole said he would vote against any Town Meeting use of Free Cash to supplement a budget.",
+   "figures_as_printed": [],
+   "quote": "because free cash is non-recurring revenue, it should not be used to fund any personnel, program, or initiative that"
+  },
+  {
+   "topic": "Municipal electric aggregation contract",
+   "what_was_recorded": "Town is under contract through 11/30/2014 at 7.7 cents per KW hr, below Unitil basic service; next six-month rates expected significantly higher, possibly doubled; option to bid for a 12-month blended rate.",
+   "figures_as_printed": [
+    "7.7 cents per KW hr",
+    "11/30/2014"
+   ],
+   "quote": "the town is in a contract now through 11/30/2014 at the rate of 7.7 cents per kw hr which is lower than the basic service"
+  },
+  {
+   "topic": "Municipal electric aggregation rates",
+   "what_was_recorded": "Consultants advised that the next six-month rates are expected to be significantly higher, possibly doubled.",
+   "figures_as_printed": [],
+   "quote": "rates are expected to be significantly higher, possibly doubled."
+  },
+  {
+   "topic": "HSIP funds for Summer St. project (MPO)",
+   "what_was_recorded": "MassDOT questioned eligibility of the Summer St. project for HSIP funds, which currently stand at the printed figure; project may need partial drop if not eligible.",
+   "figures_as_printed": [
+    "$445,955.00"
+   ],
+   "quote": "project's eligibility for the hsip (highway safety improvement program) funds which currently stand at $445,955.00."
+  },
+  {
+   "topic": "MART transportation fund charges",
+   "what_was_recorded": "Town is charged about $66K through the transportation fund: $33K goes to MART and $32K to the MBTA; MART stated that keeping expenses under $33K should not cost the Town extra.",
+   "figures_as_printed": [
+    "$66K",
+    "$33K",
+    "$32K"
+   ],
+   "quote": "mart mentioned that the town is charged approximately $66k through the transportation fund, $33k of that goes to mart & another"
+  },
+  {
+   "topic": "MART threshold",
+   "what_was_recorded": "If the Town keeps MART expenses under $33K it should not cost the Town any extra money.",
+   "figures_as_printed": [
+    "$33K"
+   ],
+   "quote": "if we can keep our expenses with mart under $33k it should not cost the town any extra money."
+  },
+  {
+   "topic": "MART route cost scenario",
+   "what_was_recorded": "Scenario table of estimated transportation authority charges and added Lunenburg Center route costs at $80/hour; the table is partly garbled in the OCR.",
+   "figures_as_printed": [
+    "$32,028",
+    "$33,985",
+    "$66,013",
+    "$28",
+    "$65,985 ($33,985 + $32,000)",
+    "$80/hour",
+    "$30,000",
+    "$2,000",
+    "$32,000",
+    "$120",
+    "$40"
+   ],
+   "quote": "mbta $32,028 mart $33,985 total $66,013"
+  },
+  {
+   "topic": "State/federal grants for MART route",
+   "what_was_recorded": "MART representative Mr. Kahn said state/federal grants could reduce the $80 figure once the Town asks for an official quote.",
+   "figures_as_printed": [
+    "$80"
+   ],
+   "quote": "according to mr. kahn, mart representative, state/federal grants could be obtained to reduce the figure of $80 once the town asks"
+  },
+  {
+   "topic": "Ambulance fees",
+   "what_was_recorded": "Request to increase ambulance fees deferred to a future meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "3. request to increase ambulance fees: to be discussed at a future bos meeting"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "topic": "Lake Shirley water ban news and Stop the Pipeline meeting",
+   "quote": "public comment: ms. luck thanked the lunenburg ledger & the fitchburg sentinel for publishing stories issued by the"
+  },
+  {
+   "speaker": "Police Chief Marino",
+   "stated_role": "Police Chief",
+   "topic": "Lake Whalom police jurisdiction and lake patrol",
+   "quote": "he also mentioned that he had heard that some people who live on lake whalom believe that the lunenburg police do not have any"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "topic": "Concern over School Department Passios Building property transfer",
+   "quote": "public comment: ms. bertram stated that she is concerned with the actions of the school department concerning the property"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and Lake Shirley/Stop the Pipeline remarks",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "lake"
+   ],
+   "quote": "7:00pm public comment: ms. luck thanked the lunenburg ledger & the fitchburg sentinel for publishing stories issued by the"
+  },
+  {
+   "topic": "Police lake patrol and K-9 dog introduction",
+   "resolution": "presented; no action",
+   "tags": [
+    "police",
+    "K-9",
+    "lake"
+   ],
+   "quote": "chief marino introduced officer tocci along with the new k-9 dog"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "zoning"
+   ],
+   "quote": "zoning board of appeals will be holding a public hearing concerning the stone farm property on 9/20/2014 @7pm"
+  },
+  {
+   "topic": "Review Financial Policies (FinCom)",
+   "resolution": "adopted 5-0",
+   "tags": [
+    "financial policies",
+    "FinCom",
+    "reserves",
+    "free cash",
+    "capital planning"
+   ],
+   "quote": "fincom voted at their 8/22/2014 meeting to approve the financial policies for presentation to the"
+  },
+  {
+   "topic": "FY2015 Board and Committee Appointments and Reappointments",
+   "resolution": "COA appointments made; PACC postponed; other appointments continued",
+   "tags": [
+    "appointments",
+    "Council on Aging",
+    "PACC",
+    "FinCom",
+    "conservation"
+   ],
+   "quote": "1. fy2015 board & committee appointments & reappointments-interview candidates & review: caroline griffis, 31 spring st.,"
+  },
+  {
+   "topic": "Request to approve Voluntary Toll, Boys & Girls Club",
+   "resolution": "approved 5-0",
+   "tags": [
+    "voluntary toll",
+    "Boys & Girls Club"
+   ],
+   "quote": "2. request to approve voluntary toll, boys & girls club, october 4, 2014: marcy foreman, representing the lunenburg boys and"
+  },
+  {
+   "topic": "Request to increase Ambulance Fees",
+   "resolution": "deferred to future meeting",
+   "tags": [
+    "ambulance fees"
+   ],
+   "quote": "3. request to increase ambulance fees: to be discussed at a future bos meeting"
+  },
+  {
+   "topic": "Request for vote of support to increase MART service",
+   "resolution": "no vote; more information needed",
+   "tags": [
+    "MART",
+    "transit",
+    "MBTA",
+    "transportation fund"
+   ],
+   "quote": "4. request vote of support to increase mart service in lunenburg: ms. luck reported that she had become the mart"
+  },
+  {
+   "topic": "Minutes, warrants and contracts",
+   "resolution": "listed; no motion recorded",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "5. minutes/warrants/contracts minutes: 7/1/2014 warrants: 9/2/2014"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; MPO and School Committee reports included",
+   "tags": [
+    "committees",
+    "MPO",
+    "school building",
+    "sewer"
+   ],
+   "quote": "6. committee report: board of health; building reuse committee; capital planning committee; finance committee; library"
+  },
+  {
+   "topic": "Town Manager reports (electric aggregation, ABCC Form 43)",
+   "resolution": "reported; consultants to next meeting",
+   "tags": [
+    "electric aggregation",
+    "ABCC",
+    "liquor license"
+   ],
+   "quote": "7. town manager reports or department reports: ms. speidel updated the board concerning the municipal electric aggregation"
+  },
+  {
+   "topic": "Appointments: Reserve Police Officers",
+   "resolution": "ratified 5-0",
+   "tags": [
+    "police",
+    "appointments"
+   ],
+   "quote": "ms. bertram moved to ratify the positions of vernon p. beauvais and jacob a. lachance to reserve police officer."
+  },
+  {
+   "topic": "Public comment on Passios Building transfer",
+   "resolution": "concern noted; Chair to research",
+   "tags": [
+    "Passios Building",
+    "school building committee"
+   ],
+   "quote": "public comment: ms. bertram stated that she is concerned with the actions of the school department concerning the property"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:35PM, 5-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: being no further business ms. bertram moved to adjourn the meeting. mr. toale seconded."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Policies (Finance Committee, approved by FinCom 8/22/2014)",
+   "where": "text",
+   "quote": "fincom voted at their 8/22/2014 meeting to approve the financial policies for presentation to the"
+  },
+  {
+   "name": "Form 43 from the ABCC for signage for Ka-Bob-Elicious",
+   "where": "text",
+   "quote": "ms. speidel presented the board with another form 43 from the abcc (alcohol beverage control commission) for signage for"
+  },
+  {
+   "name": "Warrants dated 9/2/2014, 9/3/2014 and W#15-15",
+   "where": "text",
+   "quote": "5. minutes/warrants/contracts minutes: 7/1/2014 warrants: 9/2/2014"
+  },
+  {
+   "name": "MART route cost scenario prepared by Ms. Luck",
+   "where": "text",
+   "quote": "ms. luck had developed a scenario of what the approximate costs would be as follows:"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "FY2015 appointments",
+  "financial policies",
+  "FinCom",
+  "free cash",
+  "voluntary toll",
+  "ambulance fees",
+  "MART transit",
+  "electric aggregation",
+  "police",
+  "lake patrol",
+  "K-9",
+  "Passios Building",
+  "school building committee",
+  "MPO HSIP",
+  "minutes and warrants",
+  "Council on Aging",
+  "PACC"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

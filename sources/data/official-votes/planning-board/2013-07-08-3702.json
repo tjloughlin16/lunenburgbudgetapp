@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-07-08",
  "docid": "3702",
@@ -12,23 +12,307 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from June 24, 2013",
+   "motion": "Approve the minutes of 6-24-13.",
    "moved_by": "Mr. Bakaysa",
    "seconded_by": "Mr. Allison",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to approve, mr. bakaysa, second, mr. allison. minutes signed."
+   "quote": "6-24-13, motion to approve, mr. bakaysa, second, mr. allison. minutes signed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Allison",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn, mr. allison, second, mr. mcquaid, adjourned 8:00 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0973575
+ "note": "Text is clean and readable. No vote counts or results are printed for the two procedural motions (minutes approval, adjournment), so outcome is not stated. No public comment section is recorded. Mr. Luck's attendance mode is not stated; he gave input at the meeting. Presence is taken from the 'Present:' line.",
+ "cost_usd": 0.00764722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, chair"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood, vice-chair"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "lockwood , damon mcquaid, emerick r. bakaysa , matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, mbr."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Mr. Luck",
+   "role": "Sewer Commission Chair",
+   "status": "not stated",
+   "quote": "ms. bilotta-simeone requested input from mr. luck, sewer commission chair."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board will approve the Highfield Village extension at its July 22 meeting, and asks Mr. Oldfield, Project Engineer, to appear for discussion; applicant to provide chronological order of past extensions and anticipated milestones.",
+   "quote": "board will approve extension to its july 22 nd board meeting"
+  },
+  {
+   "decision": "Ms. Benson is scheduling a meeting with the Asian Imperial applicant, project engineer, and reviewing engineer on the emergency access gating.",
+   "quote": "ms. benson is scheduling a meeting with the applicant, project engineer, and reviewing engineer."
+  },
+  {
+   "decision": "Ms. Benson is following up with the Emerald Place applicant on the condition of interior roads.",
+   "quote": "ms. benson is following up with applicant on condition of interior roads."
+  },
+  {
+   "decision": "Agenda will be revised to include an \"Action File\" item.",
+   "quote": "agenda will be revised to include"
+  },
+  {
+   "decision": "Revision of Planning Board Goals to be distributed at the next meeting for discussion at the August 12 meeting.",
+   "quote": "revision of planning board goals will be distributed at next meeting"
+  },
+  {
+   "decision": "Ms. Benson to investigate the request for an IT Director appearance on Board document access.",
+   "quote": "ms. benson to investigate."
+  },
+  {
+   "decision": "Ms. Benson to start investigating what is and is not allowed for medical marijuana dispensary applicants.",
+   "quote": "ms. benson to start investigating what is/is not allowed if an applicant comes before the board."
+  },
+  {
+   "decision": "Ms. Benson will provide the Fee Schedule to the Board (re: fee for extension requests).",
+   "quote": "ms. benson will provide fee schedule to board."
+  },
+  {
+   "decision": "Summer meeting schedule set: July 22 at Town Hall (MRPC and Highfield Village to be scheduled), August 12 at Town Hall, August 26 at Ritter Memorial Building.",
+   "quote": "august 26 - 6:30 pm, ritter memorial building"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 90 highway funds",
+   "what_was_recorded": "Town is receiving only 50% of Chapter 90 funds from the State, approximately $316,000.",
+   "figures_as_printed": [
+    "50%",
+    "$316,000"
+   ],
+   "quote": "town only receiving 50% of ch . 90 funds from state; approximately $316,000."
+  },
+  {
+   "topic": "MRPC 2013-2014 budget",
+   "what_was_recorded": "The MRPC 2013-2014 budget was reviewed; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "2013 -2014 budget was reviewed."
+  },
+  {
+   "topic": "Tri Town Landing 40S (school) reimbursement",
+   "what_was_recorded": "Planning Director working with the State on 40S school reimbursement; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. benson working with state on 40s"
+  },
+  {
+   "topic": "651 Chase Road net metering credits sale to Townsend",
+   "what_was_recorded": "Townsend Town Administrator said Lunenburg will sell net metering credits to Townsend; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "lunenburg will sell net metering credits to townsend."
+  },
+  {
+   "topic": "Fee for extension requests",
+   "what_was_recorded": "Mr. Allison asked if the Board could put a fee in place for extension requests; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. allison inquired if board could put a fee in place for extension requests."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (6-24-13)",
+   "resolution": "motion to approve made; result not recorded; minutes signed",
+   "quote": "6-24-13, motion to approve, mr. bakaysa, second, mr. allison. minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; no action",
+   "quote": "mjtc, mr. allison- noted there will be mbta track closures due to track work",
+   "tags": [
+    "committees",
+    "trails",
+    "MBTA",
+    "Chapter 90",
+    "MRPC",
+    "School Building Committee",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and development status",
+   "resolution": "Highfield Village extension deferred to July 22; other projects noted",
+   "quote": "applicant requesting extension to september 30, 2013",
+   "tags": [
+    "Highfield Village",
+    "New England Farms",
+    "Emerald Place",
+    "Tri Town Landing",
+    "Asian Imperial",
+    "sewer",
+    "extension",
+    "MEPA"
+   ]
+  },
+  {
+   "topic": "Other news items (651 Chase Road, marijuana clinic)",
+   "resolution": "noted; staff to investigate marijuana rules",
+   "quote": "ms. benson to start investigating what is/is not allowed if an applicant comes before the board.",
+   "tags": [
+    "solar net metering",
+    "marijuana dispensary",
+    "Townsend",
+    "Ayer"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted Conservation Commission agenda",
+   "quote": "noted conservation commission agenda.",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Summer meeting schedule",
+   "resolution": "schedule set",
+   "quote": "august 26 - 6:30 pm, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "agenda revision, goals revision, fee schedule, IT access, news items referred",
+   "quote": "agenda will be revised to include",
+   "tags": [
+    "agenda",
+    "goals",
+    "fees",
+    "document access",
+    "IT",
+    "Whalom Road"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "no executive session held",
+   "quote": "board did not go into executive session",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:00 PM",
+   "quote": "motion to adjourn, mr. allison, second, mr. mcquaid, adjourned 8:00 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Highfield Village Extension Request",
+   "where": "list",
+   "quote": "documents used at meeting: highfield village extension request new england farms building permit"
+  },
+  {
+   "name": "New England Farms Building Permit",
+   "where": "list",
+   "quote": "documents used at meeting: highfield village extension request new england farms building permit"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom Weekly Update",
+   "where": "list",
+   "quote": "emerald place at lake whalom weekly update tri town landing weekly update"
+  },
+  {
+   "name": "Tri Town Landing Weekly Update",
+   "where": "list",
+   "quote": "emerald place at lake whalom weekly update tri town landing weekly update"
+  },
+  {
+   "name": "651 Chase Road Solar News Article",
+   "where": "list",
+   "quote": "651 chase road solar news article marijuana clinic news article"
+  },
+  {
+   "name": "Marijuana Clinic News Article",
+   "where": "list",
+   "quote": "651 chase road solar news article marijuana clinic news article"
+  },
+  {
+   "name": "Conservation Commission Agenda",
+   "where": "list",
+   "quote": "marijuana clinic news article conservation commission agenda"
+  },
+  {
+   "name": "News article regarding Mr. Lorden's request for increase in number of units (Whalom Road)",
+   "where": "text",
+   "quote": "mr. bakaysa noted news article regarding"
+  },
+  {
+   "name": "Ayer Selectmen letter of support to the state (medical marijuana)",
+   "where": "text",
+   "quote": "noted news article in which ayer selectmen sending a letter of support to the state"
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "development status",
+  "Highfield Village",
+  "extensions",
+  "sewer allocation",
+  "Emerald Place",
+  "Tri Town Landing",
+  "Asian Imperial",
+  "solar net metering",
+  "marijuana dispensary",
+  "summer schedule",
+  "document access",
+  "committee reports",
+  "school building committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

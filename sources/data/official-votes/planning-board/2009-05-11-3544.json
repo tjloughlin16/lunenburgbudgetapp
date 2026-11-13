@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-05-11",
  "docid": "3544",
@@ -12,24 +12,197 @@
  },
  "votes": [
   {
-   "motion": "Postpone the public hearing on Aro Estates",
-   "moved_by": "Joanna L. Bilotta",
-   "seconded_by": "Thomas W. Bodkin, Jr.",
+   "motion": "Postpone the hearing on Aro Estates.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Bodkin",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. bilotta made motion to postpone the hearing on aro estates. mr. bodkin, second. all aye."
   },
   {
-   "motion": "Close the Public Hearing for Aro Estates",
-   "moved_by": "Joanna L. Bilotta",
-   "seconded_by": "Robert J. Saiia",
+   "motion": "End the public discussion on Aro Estates, clarified as closing the Public Hearing.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ms. bilotta made motion to end the public disc ussion for aro estates. second, mr. saiia. chair asked for any discussio n. mr. bodkin noted this plan is not right for the tow n of lunenburg. mr. o'brien had the right to submi t this plan, which was judged solely on its merits. at some time in the f uture he may submit another plan, which will be rev iewed on its own merits. town counsel, attorney mckertich asked if the motio n was to end the session on this hearing or to clos e the public hearing. ms. bilotta noted it was to close public hearing. no more comments. ",
-   "quote_taken_from_text": true
+   "quote": "ms. bilotta noted it was to close public hearing. no more comments. all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1431395
+ "note": "Text is extracted from a scan with garbled letterhead codes and many words split by stray spaces; quotes were copied with those splits avoided or collapsed. No board vote on approving or denying the Aro Estates plan is recorded; the minutes say the Board would take it up at the meeting immediately following the hearing, but no motion for that appears in this text. The minutes say the Sauvageau letter was cut across pages 2-4. The Recording Secretary is referenced but not named.",
+ "cost_usd": 0.00903672,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning director"
+  },
+  {
+   "name": "James A. Hallo ran",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning director"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning director"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning director"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning director"
+  },
+  {
+   "name": "McKertich",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "town counsel, attorney mckertich asked if the"
+  },
+  {
+   "name": "Brian Milisci",
+   "role": "representing the applicant (Whitman & Bingham Associates)",
+   "status": "present",
+   "quote": "mr. milisci responded yes."
+  },
+  {
+   "name": "Mr. O’Brien",
+   "role": "applicant (O’Brien Homes, Inc.), 18 Cassimere Street, Andover, MA",
+   "status": "present",
+   "quote": "mr. o'brien noted things would have been clearer if he was able to be at the meetings."
+  },
+  {
+   "name": "Mike Sauvageau",
+   "role": "Building Official and Zoning Officer",
+   "status": "present",
+   "quote": "mr. sauvageau referred to his review letter of march 23, 2009:"
+  },
+  {
+   "name": "Rennie Shattuck",
+   "role": "resident, 396 Howard Street",
+   "status": "present",
+   "quote": "rennie shattuck, 396 howard street- asked if there would be a speaking for/against session."
+  },
+  {
+   "name": "Gary Entwistle",
+   "role": "resident, 259 Howard Street",
+   "status": "present",
+   "quote": "gary entwistle, 259 howard street- he has lived in lunenburg for four years."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Tax burden of new development",
+   "what_was_recorded": "A resident asked whether the development would be the only place where taxes are raised to pay for new school and Town service needs.",
+   "figures_as_printed": [],
+   "quote": "will your development be the only place where taxes are raised to pay for these things?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike Sauvageau",
+   "stated_role": "Building Official and Zoning Officer",
+   "topic": "Aro Estates violates Section 5.6 cluster bylaw",
+   "quote": "mr. sauvageau referred to his review letter of march 23, 2009:"
+  },
+  {
+   "speaker": "Rennie Shattuck",
+   "stated_role": "396 Howard Street",
+   "topic": "Density, wells, septic, and neighborhood impacts",
+   "quote": "rennie shattuck, 396 howard street- asked if there would be a speaking for/against session."
+  },
+  {
+   "speaker": "Gary Entwistle",
+   "stated_role": "259 Howard Street; former Zoning Board of Appeals member in Townsend",
+   "topic": "Road capacity, construction traffic, and market for homes",
+   "quote": "gary entwistle, 259 howard street- he has lived in lunenburg for four years."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Aro Estates definitive subdivision public hearing continuation",
+   "resolution": "hearing postponed; public hearing closed at 7:06 PM",
+   "quote": "chair opened the public hearing continuation with",
+   "tags": [
+    "subdivision",
+    "public hearing",
+    "cluster development",
+    "Howard Street"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Technical Review letter (Whitman & Bingham Associates) dated May 8, 2009",
+   "where": "text",
+   "quote": "mr. milisci noted whitman & bingh am technical review letter dated may 8, 2009",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Directives for Preparation of a Definitive Plan of Aro Estates, received and filed with the Lunenburg Town Clerk August 12, 2008",
+   "where": "text",
+   "quote": "the applicant shall have a plan in the definitive"
+  },
+  {
+   "name": "Review letter of March 23, 2009 (Mike Sauvageau)",
+   "where": "text",
+   "quote": "mr. sauvageau referred to his review letter of march 23, 2009:"
+  },
+  {
+   "name": "Definitive Subdivision Plan “Aro Estates” dated February 19, 2009",
+   "where": "text",
+   "quote": "i have reviewed the definitive subdivision plan \"aro estates\" dated february 19, 2009."
+  },
+  {
+   "name": "Lunenburg Protective Bylaw, Section 5.6 Cluster Development",
+   "where": "text",
+   "quote": "lunenburg protective bylaw - cluster development."
+  },
+  {
+   "name": "Legal advertisement published in the Sentinel and Enterprise on May 4, 2009",
+   "where": "text",
+   "quote": "the legal advertisement published in the sentinel and enterprise on may 4, 2009"
+  },
+  {
+   "name": "Audio recording (on file in Planning Office)",
+   "where": "text",
+   "quote": "audio recording on file in planning office."
+  }
+ ],
+ "tags": [
+  "Aro Estates",
+  "subdivision",
+  "cluster development",
+  "Section 5.6",
+  "Howard Street",
+  "public hearing",
+  "wells and septic",
+  "traffic",
+  "rural character",
+  "zoning"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

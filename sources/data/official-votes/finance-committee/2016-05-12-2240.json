@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-05-12",
  "docid": "2240",
@@ -12,23 +12,191 @@
  },
  "votes": [
   {
-   "motion": "to accept the May 7, 2016 minutes",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Jay Simeone",
-   "outcome": "approved 4-0",
+   "motion": "Accept the minutes of May 7, 2016.",
+   "moved_by": "Karin",
+   "seconded_by": "Jay",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "karin moved to accept the minutes; jay seconded the motion, and the motion was approved 4-0."
   },
   {
-   "motion": "to adjourn",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Jay Simeone",
-   "outcome": "approved 4-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Karin",
+   "seconded_by": "Jay",
+   "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "karin made a motion to adjourn and jay seconded the motion. the committee approved the motion 4-0"
+   "quote": "karin made a motion to adjourn and jay seconded the motion. the committee approved the motion 4-0 at 7:46."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08265449999999999
+ "note": "OCR text (macOS Vision) with visible artifacts: meeting date reads \"May 26t\" and \"May 26*h\", read here as May 26. Receipt stamp (May 31, 2016) and signature (May 23, 2016) are OCR'd. The minutes include a file footer (\"Mn-FY16-160317 docx\") that is not a document list. No public comment was recorded (\"Public: None\"). Dollar figures are not printed anywhere in the minutes.",
+ "cost_usd": 0.0036319200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "present: terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "absent: mark erickson"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: karen brochu"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee decided to table any discussion of Budget Goals and Opportunities until its next meeting on Thursday, May 26.",
+   "quote": "the committee decided to table any discussion until our next meeting, which is on thursday, may 26t."
+  },
+  {
+   "decision": "Next meeting set for Thursday, May 26, at 7:00 PM at the Town Hall.",
+   "quote": "next meeting: thursday, may 26*h, at 7:00 pm at the town hall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Development of debt policy (excluded vs non-excluded debt)",
+   "what_was_recorded": "Debt policy on excluded versus non-excluded debt was listed as an agenda item; no figures or discussion are recorded.",
+   "figures_as_printed": [],
+   "quote": "development of debt policy-excluded vs non-excluded debt."
+  },
+  {
+   "topic": "Future expenditure and revenue projections",
+   "what_was_recorded": "John reported he will meet with Kerry Lafleur about projections of future expenditure and revenues; no figures given.",
+   "figures_as_printed": [],
+   "quote": "john reported that he will be meeting with kerry lafleur about projections of future expenditure and revenues at a time to be determined next week."
+  },
+  {
+   "topic": "Library interior lighting project",
+   "what_was_recorded": "The library has a quote for more cost-effective interior lights, but it is not from an approved vendor; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "regarding the project on getting the library more cost effective interior lights, the library now has a quote, but it isn't from an approved vendor."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Comments (public and new communications)",
+   "resolution": "no action; public comment none",
+   "quote": "terri announced she has received the latest issue of the beacon and passed it along to jay.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action; nothing to report since Town Meeting",
+   "quote": "town manager report-karen brochu reported that there was nothing further to report since town meeting.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Review of minutes May 7, 2016",
+   "resolution": "approved 4-0",
+   "quote": "karin moved to accept the minutes; jay seconded the motion, and the motion was approved 4-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Development of debt policy",
+   "resolution": "discussed; no action recorded",
+   "quote": "development of debt policy-excluded vs non-excluded debt.",
+   "tags": [
+    "debt policy"
+   ]
+  },
+  {
+   "topic": "Budget Goals and Opportunities",
+   "resolution": "tabled to next meeting",
+   "quote": "the committee decided to table any discussion until our next meeting, which is on thursday, may 26t.",
+   "tags": [
+    "budget goals"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports recorded; no action",
+   "quote": "pacc will meet on monday, june 6th.",
+   "tags": [
+    "committee updates",
+    "library",
+    "DPW",
+    "public access"
+   ]
+  },
+  {
+   "topic": "On-going business",
+   "resolution": "no discussion",
+   "quote": "there was no discussion on this at this meeting.",
+   "tags": [
+    "ongoing business"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled May 26",
+   "quote": "next meeting: thursday, may 26*h, at 7:00 pm at the town hall.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 7:46",
+   "quote": "karin made a motion to adjourn and jay seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Beacon (latest issue)",
+   "where": "text",
+   "quote": "terri announced she has received the latest issue of the beacon and passed it along to jay."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "debt policy",
+  "budget goals",
+  "library lighting",
+  "committee updates",
+  "minutes approval",
+  "town meeting follow-up"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

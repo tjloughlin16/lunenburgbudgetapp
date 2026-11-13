@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-11-07",
  "docid": "864",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the requested variances for the septic system at 176 Sunny Hill Road.",
+   "motion": "Approve the requested variances for 176 Sunny Hill Road.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Perry Jewell",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "after discussion and on motion by rabbit and second by jewell, the requested variances were approved. all in favor."
   },
   {
-   "motion": "Approve the variance for the septic system at 919 Chase Road.",
+   "motion": "Approve the requested variance for 919 Chase Road.",
    "moved_by": "Perry Jewell",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
@@ -28,16 +28,181 @@
    "quote": "after discussion and on motion by jewell and second by rabbitt, the variance was approved. all in favor."
   },
   {
-   "motion": "Resume meeting twice per month, on the first and third Mondays.",
+   "motion": "Return to meeting twice per month, on the first and third Mondays.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Perry Jewell",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "after discussion and on motion by rabbit and second by jewell, the requested variances were approved. all in favor. 919 chase road neil gorman met with the board on behalf",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "after discussion and on motion by rabbit and second by jewell, it was agreed that the board would agai n meet twice per month, on the first and third mondays."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. The opening section states \"MINUTES APPROVED: None\" indicating no prior minutes were voted on. The 43 West Street and continuation items describe decisions but record no formal motion or vote.",
- "cost_usd": 0.0879345
+ "note": "Text extraction, no scan. Minutes approved: 'None', so no approval vote. Votes are recorded as 'All in favor' with no numeric count, so outcome is 'passed'. No adjournment motion is recorded (only 'Meeting adjourned at 8:22 pm.'). Several names and words are split by extraction spacing (e.g., 'Perry Jewel l', 'owne r'); names are normalized where clear. The 'Continued' list (Nashoba Surety Bond, 33 Wallis Park, etc.) appears as bare headings with no further detail. Andrea Schnepf's attendance is not stated explicitly, only that she advised the board.",
+ "cost_usd": 0.005003619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "in the absence of chairman troy daniels and vice chairman david shea, george emond chaired the meeting."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt and perry jewel l"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt and perry jewel l"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "in the absence of chairman troy daniels and vice chairman david shea, george emond chaired the meeting."
+  },
+  {
+   "name": "David Shea",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "in the absence of chairman troy daniels and vice chairman david shea, george emond chaired the meeting."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owne r."
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "neil gorman met with the board on behalf of the own er."
+  },
+  {
+   "name": "Chris Munyon",
+   "status": "present",
+   "quote": "also present was chris munyon."
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "schnepf advised that for her, one meeting a month was not enough"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "43 West Street: the board decided a letter would go to the installer, accepting his certification that the septic system was destroyed, with all policies and procedures to be followed in future.",
+   "quote": "after discussion, it was decided that a letter woul d be sent to the installe",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "All other listed agenda matters (Nashoba Surety Bond, 33 Wallis Park, Central Dispatch, and others) were continued to the Board of Health meeting on November 21, 2011.",
+   "quote": "all of the above matters were continued until the n ext board of health meeting on monday, november 21,"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged : 208 whalom road 225 northfield road 393 arbor street",
+   "tags": [
+    "Title 5",
+    "septic",
+    "inspection reports"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed : 176 sunny hill road 919 chase road 275 leom/shirley rd",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "43 West Street - destruction of septic permit",
+   "resolution": "letter to installer; certification accepted in place of inspection",
+   "quote": "george emond gave the history on this issue.",
+   "tags": [
+    "septic",
+    "abandonment permit",
+    "sewer connection"
+   ]
+  },
+  {
+   "topic": "176 Sunny Hill Road - septic variances",
+   "resolution": "variances approved",
+   "quote": "this system is in failure.",
+   "tags": [
+    "septic",
+    "variance",
+    "groundwater offset"
+   ]
+  },
+  {
+   "topic": "919 Chase Road - septic variance",
+   "resolution": "variance approved",
+   "quote": "based on the s oil testing, this system would be in the water table.",
+   "tags": [
+    "septic",
+    "variance",
+    "Presby system"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "returned to two meetings per month (first and third Mondays)",
+   "quote": "it was agreed that the board would agai n meet twice per month, on the first and third mondays.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Continued agenda items",
+   "resolution": "continued to November 21, 2011",
+   "quote": "all of the above matters were continued until the n ext board of health meeting on monday, november 21,",
+   "tags": [
+    "continued",
+    "BOH applications",
+    "complaint log"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports: 208 Whalom Road, 225 Northfield Road, 393 Arbor Street, 30-32 Rolling Acres Drive, 107 Leominster Road, 302 West Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged : 208 whalom road 225 northfield road 393 arbor street"
+  },
+  {
+   "name": "Septic permits: 176 Sunny Hill Road, 919 Chase Road, 275 Leom/Shirley Rd, 55 Pine Street",
+   "where": "list",
+   "quote": "septic permits signed : 176 sunny hill road 919 chase road 275 leom/shirley rd"
+  },
+  {
+   "name": "Septic System Abandonment Permit (43 West Street)",
+   "where": "text",
+   "quote": "the f irst septic system abandonment permit was handed ou t in"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variances",
+  "septic permits",
+  "meeting schedule",
+  "Board of Health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged"
+ },
+ "dropped_unquoted_by_field": {}
 }

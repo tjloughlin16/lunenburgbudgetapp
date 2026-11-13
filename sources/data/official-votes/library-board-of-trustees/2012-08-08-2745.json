@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-08-08",
  "docid": "2745",
@@ -12,6 +12,135 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe actions taken (candidates selected, interview times chosen, Jeanne Raboin charged with contacting candidates, interview questions distributed) but contain no language indicating a formal motion or vote was taken on any item.",
- "cost_usd": 0.08077849999999999
+ "note": "No motions or votes are recorded in these minutes; selection of four candidates and interview arrangements are reported as taken without a recorded vote. The minutes do not record approval of prior minutes or adjournment, and no time of adjournment is given. Some words in the extracted text are split by stray spaces (e.g., \"Presiden t\", \"quest ions\", \"con tacting\"); roles and quotes are given as they appear in the text. Attendance lines contain a line break within the attendee list, collapsed to a single space here.",
+ "cost_usd": 0.0025104199999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lars Widstrand",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: lars widstrand, beverly guerin"
+  },
+  {
+   "name": "Beverly Guerin",
+   "role": "President, Friends of LPL",
+   "status": "present",
+   "quote": "attending: lars widstrand, beverly guerin"
+  },
+  {
+   "name": "Terry Hathaway",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "terry hathaway, dick mailloux, kate mccarron, robin"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "terry hathaway, dick mailloux, kate mccarron, robin"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "terry hathaway, dick mailloux, kate mccarron, robin"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "terry hathaway, dick mailloux, kate mccarron, robin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chair and Acting Secretary",
+   "status": "present",
+   "quote": "jeanne raboin, chair and acting secretary"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: lisa krowitz, john mara, kathy murray"
+  },
+  {
+   "name": "John Mara",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: lisa krowitz, john mara, kathy murray"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: lisa krowitz, john mara, kathy murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Four candidates for the library director position were selected from the applications reviewed.",
+   "quote": "four candidates were selected."
+  },
+  {
+   "decision": "Interview times were chosen, and Jeanne Raboin was charged with contacting candidates to arrange interviews.",
+   "quote": "trustees charged jeanne raboin with con tacting"
+  },
+  {
+   "decision": "The interview committee was encouraged to modify the suggested interview questions to reflect LPL's priorities.",
+   "quote": "encouraged interview committee t o modify"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there was no public comment"
+  },
+  {
+   "topic": "Lunenburg Public Library Director Position: review and selection of applications",
+   "resolution": "four candidates selected; interviews to be arranged",
+   "tags": [
+    "director hiring",
+    "personnel",
+    "applications"
+   ],
+   "quote": "four candidates were selected."
+  },
+  {
+   "topic": "Suggested interview questions for director candidates",
+   "resolution": "distributed; committee to modify",
+   "tags": [
+    "director hiring",
+    "interviews"
+   ],
+   "quote": "jeanne raboin distributed suggested interview quest ions."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Suggested interview questions (director position)",
+   "where": "text",
+   "quote": "jeanne raboin distributed suggested interview quest ions."
+  }
+ ],
+ "tags": [
+  "library director hiring",
+  "interviews",
+  "personnel",
+  "applications",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

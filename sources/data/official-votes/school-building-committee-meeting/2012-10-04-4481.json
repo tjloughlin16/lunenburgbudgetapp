@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-10-04",
  "docid": "4481",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Remove Dore & Whittier Architects, Inc. and Skanska USA Building from the list of finalists",
+   "motion": "Remove Dore & Whittier Architects, Inc. and Skanska USA Building off the list of finalists.",
    "moved_by": "Mr. Barney",
    "seconded_by": "Mr. Cohen",
    "outcome": "passed",
@@ -20,16 +20,193 @@
    "quote": "mr. barney made a motion to remove dore & whittier architects, inc. and skanska usa building off the list of finalists. mr. cohen seconded. all voted in favor."
   },
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Barney",
    "seconded_by": "Mr. Erickson",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "mr. barney made a motion to adjourn. mr. e rickson seconded",
-   "quote_taken_from_text": true
+   "quote": "mr. barney made a motion to adjourn. mr. e rickson seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0977475
+ "note": "Text extract of a one-page set of minutes with broken word spacing (e.g. 'Dire ctor', 'refere nce') and no separate vote tallies beyond 'All voted in favor'. The minutes are stamped 'APPROVED 10-10-12' but record no approval motion. The chair is printed as 'Mike Mackin' in item 1 and 'Michael Mackin' in the attendance block. No attendance status is printed for most members, so those are 'not stated'. The two presenting firms are recorded by organization name only; no individual presenters are named. No public comment section and no documents list appear in the text.",
+ "cost_usd": 0.00452112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "loxi jo calmes, superintendent kerry speidel, town manager- absent"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry speidel, town manager- absent"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative; Secretary",
+   "status": "not stated",
+   "quote": "colleen shapiro, secretary"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "not stated",
+   "quote": "john londa, dire ctor of facilities"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative, Chair",
+   "status": "present",
+   "quote": "6:05 pm called to order by mike mackin, chair."
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal",
+   "status": "not stated",
+   "quote": "brian spadafino, lhs principal"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "absent",
+   "quote": "dave matthews, bos representative - absent"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "not stated",
+   "quote": "nathan lockwood, planning board representative"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative, Vice Chair",
+   "status": "present",
+   "quote": "mr. barney made a motion to adjourn. mr. e rickson seconded."
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "mr. barney made a motion to adjourn."
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen-at-large",
+   "status": "not stated",
+   "quote": "brian frank, citizen-at-large"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "mr. cohen seconded. all voted in favor."
+  },
+  {
+   "name": "Joslin, Lesser & Associates Project Management",
+   "role": "presenter",
+   "status": "present",
+   "quote": "presentation by joslin, lesser & associate s project management."
+  },
+  {
+   "name": "Skanska USA Building",
+   "role": "presenter",
+   "status": "present",
+   "quote": "presentation by skanska usa building."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Londa is to complete reference checks and look into fee history for Collaborative Partners and Joslin, Lesser & Associates Project Management before the next meeting.",
+   "quote": "mr. londa will complete refere nce checks and look into fee history for collaborative partners and joslin, lesser & associa tes project management before next meeting"
+  },
+  {
+   "decision": "A finalist is to be chosen at the October 10, 2012 meeting.",
+   "quote": "on october 10, 2012, when a finalist will be chosen."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:05 PM",
+   "quote": "1. 6:05 pm called to order by mike mackin, chair.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Presentation by Joslin, Lesser & Associates Project Management",
+   "resolution": "presentation received, no action recorded",
+   "quote": "2. 6:10 presentation by joslin, lesser & associate s project management.",
+   "tags": [
+    "presentation",
+    "architect selection"
+   ]
+  },
+  {
+   "topic": "Discussion relative to first presentation",
+   "resolution": "discussion, no action recorded",
+   "quote": "3. 7:05 discussion relative to prior presentation.",
+   "tags": [
+    "discussion"
+   ]
+  },
+  {
+   "topic": "Presentation by Skanska USA Building",
+   "resolution": "presentation received, no action recorded",
+   "quote": "4. 7:30 presentation by skanska usa building.",
+   "tags": [
+    "presentation",
+    "contractor selection"
+   ]
+  },
+  {
+   "topic": "Discussion relative to prior presentations; removal of finalists",
+   "resolution": "removed Dore & Whittier Architects, Inc. and Skanska USA Building from finalists; reference checks and fee history assigned to Mr. Londa",
+   "quote": "mr. barney made a motion to remove dore & whittier architects, inc. and skanska usa building off the list of finalists.",
+   "tags": [
+    "finalists",
+    "reference checks",
+    "fee history"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for October 10, 2012, 7:00 pm, at T.C. Passios, Room 13",
+   "quote": "6. next meeting: october 10, 2012, 7:00 pm, t.c. p assios, room 13.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:56 PM",
+   "quote": "mr. barney made a motion to adjourn. mr. e rickson seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "school building committee",
+  "architect selection",
+  "construction manager selection",
+  "finalists",
+  "reference checks",
+  "T.C. Passios Elementary School",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

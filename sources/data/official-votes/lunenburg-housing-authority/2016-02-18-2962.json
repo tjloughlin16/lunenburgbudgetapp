@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2016-02-18",
  "docid": "2962",
@@ -12,70 +12,288 @@
  },
  "votes": [
   {
-   "motion": "to accept the minutes of the December 17, 2015 meeting",
+   "motion": "Accept the minutes of the December 17, 2015 meeting.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Deborah Christen",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "elizabeth murphy made a motion to accept the minutes; deborah christen seco nded. all were in favor, the motion passed unanimously",
    "quote_taken_from_text": true
   },
   {
-   "motion": "to approve the updated reasonable accommodation policy effective immediately",
+   "motion": "Approve the updated reasonable accommodation policy effective immediately (Resolution 201508).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Paul Doherty",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah christen to approv e the updated reasonable accommodation policy effective immediately. seconded, paul doherty seconded the motion, and the motion was passed by a unanimous vote",
+   "quote": "resolved, motion made by deborah christen to approv e the updated reasonable accommodation policy effective immediately",
    "quote_taken_from_text": true
   },
   {
-   "motion": "to authorize the signing of the Standard Contract Amendment Form for Capital Improvement Work Plan 5001 with the Department of Housing and Community Development",
+   "motion": "Authorize the Chair or Executive Director to sign the Standard Contract Amendment Form for Amendment #3, Capital Improvement Work Plan 5001 (Resolution 201601).",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Paul Doherty",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah a.h. christen to a uthorize the signing of the standard contract amendment form by the chair or executive d irector in conjunction with the projects listed on amendment #3 for capita l improvement work plan 5001 currently being undertaken by the lunenburg ho using authority and the department of housing and community development. seconded, paul doherty seconded the motion, and the motion was passed by a unanimous v",
+   "quote": "resolved, motion made by deborah a.h. christen to a uthorize the signing of the standard contract amendment form by the chair or executive d irector"
+  },
+  {
+   "motion": "Approve the revised personnel policy effective immediately (Resolution 201602).",
+   "moved_by": "Elizabeth Murphy",
+   "seconded_by": "Amaryllis",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "resolved, motion made by elizabeth murphy to approv e the revised personnel policy effective immediately",
    "quote_taken_from_text": true
   },
   {
-   "motion": "to approve the revised personnel policy effective immediately",
+   "motion": "Adopt/update the procurement policy effective immediately (Resolution 201603).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Amaryllis Leet",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by elizabeth murphy to approv e the revised personnel policy effective immediately. seconded, amaryllis seconded the motion, and the mo tion was passed by a unanimous vot",
-   "quote_taken_from_text": true
+   "quote": "resolved, motion made by elizabeth murphy to adopt/ update the procurement policy effective immediately."
   },
   {
-   "motion": "to adopt/update the procurement policy effective immediately",
-   "moved_by": "Elizabeth Murphy",
-   "seconded_by": "Amaryllis Leet",
-   "outcome": "unanimously",
-   "procedural": false,
-   "quote": "motion made by elizabeth murphy to adopt/ update the procurement policy effective immediately. seconded, amaryllis leet seconded the motion, and t he motion was passed by a unanimous vot",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "to authorize the Executive Director to execute the amended solar power and services agreement for net metering with Lodestar Energy",
+   "motion": "Authorize the Executive Director to execute the amended solar power and services agreement for net metering with Lodestar Energy (Resolution 201604).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Paul Doherty",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah christen to author ize the executive director to execute the amended solar power and services agreem ent for net metering with lodestar energy. seconded, paul doherty seconded the motion, and the motion was passed by a unanimous vot",
-   "quote_taken_from_text": true
+   "quote": "resolved, motion made by deborah christen to author ize the executive director to execute the amended solar power and services agreem ent for net metering with lodestar energy."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:10 p.m.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Amaryllis Leet",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "paul doherty made a motion to adjourn the meeting a t 7:10 p.m. amaryllis leet seconded, all were in favor, and the meeting was adjourned",
-   "quote_taken_from_text": true
+   "quote": "paul doherty made a motion to adjourn the meeting a t 7:10 p.m. amaryllis leet seconded, all were in favor, and the meeting was adjourned."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clean scan. Seven votes recorded, all passed unanimously.",
- "cost_usd": 0.1219995
+ "note": "Text is OCR-like with split words (e.g., \"wer e\", \"seco nded\", \"approv e\"); quotes copy the printed spacing. Vote results are printed only as \"unanimous\" or \"all were in favor\", so outcomes are recorded as \"passed\" with no count. Resolution 201601 names the \"Leominster Housing Authority\" and \"Board of Directors\", inconsistent with this Lunenburg board; recorded as printed. Keith, Tony Stanca and the unnamed E.D. are mentioned but did not take part, so they are not listed as attendees. Resident comments are unnamed. No transfers recorded.",
+ "cost_usd": 0.00652882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member paul doherty, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member paul doherty, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "also present: peter proulx, secretary benjamin gold, recording secretary"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "also present: peter proulx, secretary benjamin gold, recording secretary"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: caroline fortin, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The E.D. will look into replacing the sand box behind the building, probably with ice melt rather than sand.",
+   "quote": "the e.d. responded he will look into, probably with ice melt though, not sand."
+  },
+  {
+   "decision": "Peter Proulx will look into the tenants' request to buy furniture for the Community Room through a tenant organization.",
+   "quote": "the tenant then asked if they could purchase something if the tenants pitched in to pay. peter will look into."
+  },
+  {
+   "decision": "The E.D. said the apples falling to the ground will be resolved in the spring.",
+   "quote": "what is being done about the apples falling to the ground? the e.d. responded we will resolve that issue in the spring."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Improvement Work Plan 5001 (CFA Amendment #3) funding",
+   "what_was_recorded": "Amendment #3 funds a FY18 Formula Funding Award and a FY14 Health and Safety adjustment, increasing the contract by $47,688.00 to a total of $509,084.00.",
+   "figures_as_printed": [
+    "$53,088.00",
+    "-$5,400.00",
+    "$47,688.00",
+    "$509,084.00"
+   ],
+   "quote": "fish #162015 fy18 formula funding award - $53,088.00 fish #162018 fy14 health and safety adjustment per 10/3/14 letter-(-$5,400.00)"
+  },
+  {
+   "topic": "Contract increase under Amendment #3",
+   "what_was_recorded": "The contract for Work Plan 5001 was increased by $47,688.00, bringing the total contract amount to $509,084.00.",
+   "figures_as_printed": [
+    "$47,688.00",
+    "$509,084.00"
+   ],
+   "quote": "increased by $47,688.00 (total contract amount is now $509,084.00), and"
+  },
+  {
+   "topic": "Financial report",
+   "what_was_recorded": "No financial report was given because year-end financials were not yet ready; the January check register was included in board packets.",
+   "figures_as_printed": [],
+   "quote": "no report; year-end financials are not in yet. we should have them for the march meeting."
+  },
+  {
+   "topic": "Net metering electric costs",
+   "what_was_recorded": "The E.D. reminded the board it had approved having 70% of electric costs covered through net metering; the contract was revised for new dates and allocations.",
+   "figures_as_printed": [
+    "70%"
+   ],
+   "quote": "they approved having 70% of electric costs through net metering."
+  },
+  {
+   "topic": "Tenant purchase of Community Room furniture",
+   "what_was_recorded": "Tenants asked whether LHA could buy furniture for the Community Room; the E.D. said LHA could not but a tenant organization could, and tenants asked about paying in together. No dollar amount was given.",
+   "figures_as_printed": [],
+   "quote": "tenants asked if lha could purchase furniture? the e.d. responded lha could not, but they could through a tenant organization."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Community Room couch and furniture purchase",
+   "quote": "someone donated couch to the community room, then keith was told to remove it."
+  },
+  {
+   "topic": "Sand box removed from back lot",
+   "quote": "the box out back with sand is gone. when the snow melts, turns to ice (she parks there)."
+  },
+  {
+   "topic": "Apples falling to the ground",
+   "quote": "what is being done about the apples falling to the ground?"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "no action; E.D. and Secretary to follow up",
+   "quote": "resident participation prior to meeting: • someone donated couch to the community room"
+  },
+  {
+   "topic": "Minutes of December 17, 2015",
+   "resolution": "approved",
+   "quote": "the minutes of the december 17, 2015 meeting wer e presented. elizabeth murphy made a motion to accept the minutes"
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action",
+   "quote": "lha has been approved for the rcat by both the lha board and dhcd."
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "no action",
+   "quote": "no report; year-end financials are not in yet."
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "no action",
+   "quote": "we had one vacancy the end of january."
+  },
+  {
+   "topic": "Old business: Reasonable Accommodation Policy (Resolution 201508)",
+   "resolution": "approved",
+   "quote": "resolved, motion made by deborah christen to approv e the updated reasonable accommodation policy effective immediately",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "New business: CFA Amendment #3 and Work Plan 5001 (Resolution 201601)",
+   "resolution": "approved",
+   "quote": "resolved, motion made by deborah a.h. christen to a uthorize the signing of the standard contract amendment form"
+  },
+  {
+   "topic": "Personnel policy update (Resolution 201602)",
+   "resolution": "approved",
+   "quote": "resolution to update the existing personnel policy resolution 201602"
+  },
+  {
+   "topic": "Procurement policy adoption/update (Resolution 201603)",
+   "resolution": "approved",
+   "quote": "resolution to adopt/update the procurement policy resolution 201603"
+  },
+  {
+   "topic": "Amended solar power agreement with Lodestar Energy (Resolution 201604)",
+   "resolution": "approved",
+   "quote": "resolution authorizing the executive director to execute an amended solar power and services agreement with lodestar energy"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:10 p.m.",
+   "quote": "paul doherty made a motion to adjourn the meeting a t 7:10 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "January check register",
+   "where": "list",
+   "quote": "the january check register was included in board packets."
+  },
+  {
+   "name": "Proposed changes to the reasonable accommodation policy",
+   "where": "text",
+   "quote": "approve the updated reasonable accommodation policy to be e ffective immediately (see attached proposed changes)."
+  },
+  {
+   "name": "Standard Contract Amendment Form (Amendment #3, Capital Improvement Work Plan 5001)",
+   "where": "text",
+   "quote": "authorizes the chair or the executive director to sign the standard contrac t amendment for",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Contract for Financial Assistance (Master CFA, formula funding)",
+   "where": "text",
+   "quote": "to amend the contract for financial assistance between the leominster housing authority and the department of housing and community development"
+  },
+  {
+   "name": "Solar power and services agreement with LODESTAR Energy dated February 7, 2015",
+   "where": "text",
+   "quote": "currently has a service agreement for net metering with lodestar energy entered into on f ebruary 7, 2015"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "policies",
+  "reasonable accommodation",
+  "personnel policy",
+  "procurement",
+  "DHCD funding",
+  "capital improvement",
+  "solar net metering",
+  "Lodestar Energy",
+  "tenant concerns",
+  "RCAT",
+  "financial report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the january check register was included in board packets."
+ },
+ "dropped_unquoted_by_field": {}
 }

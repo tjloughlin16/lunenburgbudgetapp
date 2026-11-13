@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-01-08",
  "docid": "1618",
@@ -12,15 +12,189 @@
  },
  "votes": [
   {
-   "motion": "negative determination of applicability for Babinski property, 98 Whiting Street",
+   "motion": "Negative 3 determination on the Request for Determination of Applicability filed by Andrzej/Tricia Babinski, as recorded in the minutes ('Negative 3').",
    "moved_by": "JJ",
    "seconded_by": "Sharon",
-   "outcome": "Negative 3 Unanimous",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "jj/sharon negative 3 unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text is readable. The vote notation uses abbreviated shorthand (JJ/Sharon for moved/seconded; Negative 3 Unanimous for the determination and vote count). The minutes meeting date is January 18, 2012.",
- "cost_usd": 0.1190065
+ "note": "The minutes are headed 'January 18, 2012', not the 2012-01-08 meeting date supplied; the record above follows the minutes text. The text is OCR and the Babinski vote line ('JJ/Sharon Negative 3 Unanimous') is garbled; the motion wording is inferred from 'Negative 3', and the moved-by/seconded-by names come from that line. The Comeau 'JJ/Sharon Unanimous' line is not recorded as a vote because the minutes say 'No motion was necessary'. The attendance list is a header with no explicit present/absent marking; members are marked present on that basis. No adjournment, minutes approval, or executive session is recorded. The minutes print no dollar figures. The 'Matt' in the Hickory Hills discussion is taken to be Matt Marro, which the text does not state outright.",
+ "cost_usd": 0.00595252,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "not stated",
+   "quote": "mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "matt stated that an amendment to the current order of conditions would be all that is necessary"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Chris",
+   "status": "present",
+   "quote": "chris explained layout of the land and paddocks, along with the culvert coming on to his property."
+  },
+  {
+   "name": "Andrzej",
+   "status": "present",
+   "quote": "andrzej presented pictures of before and after of the yard, basically it was a junk dump."
+  },
+  {
+   "name": "Tom & Paula Bertram",
+   "status": "present",
+   "quote": "tom & paula bertram, dave & betty macdonald. representing hickory hills lake association"
+  },
+  {
+   "name": "Dave & Betty MacDonald",
+   "status": "present",
+   "quote": "tom & paula bertram, dave & betty macdonald. representing hickory hills lake association"
+  },
+  {
+   "name": "John Martin",
+   "status": "present",
+   "quote": "john martin and jay haueisen inquired as whether they could cut deadwood on conservation land."
+  },
+  {
+   "name": "Jay Haueisen",
+   "status": "present",
+   "quote": "john martin and jay haueisen inquired as whether they could cut deadwood on conservation land."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission expressed unanimous support for Christopher M/Julie H Comeau to keep up the good work on manure removal; the minutes say no motion was necessary.",
+   "quote": "manure is removed periodically: jj/sharon unanimous to keep up the good work."
+  },
+  {
+   "decision": "Matt advised that an amendment to the current Order of Conditions would be all that is necessary for the Hickory Hills Lake level drop, as it would fall under the lake management project.",
+   "quote": "an amendment to the current order of conditions would be all that is necessary"
+  },
+  {
+   "decision": "Commission told residents that cutting deadwood on Conservation land is not allowed; it would notify them of any change in process.",
+   "quote": "the concom emphatically stated no. if there was any change in the process we would let them know."
+  },
+  {
+   "decision": "The 1:30 PM Pleasant & West Streets solar hearing was cancelled and the hearing is to be held at 7:30 PM.",
+   "quote": "the hearing will be held at 7:30 pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom & Paula Bertram, Dave & Betty MacDonald",
+   "stated_role": "Representing Hickory Hills Lake Association",
+   "topic": "lake level drop and fanwort problem at Hickory Hills",
+   "quote": "representing hickory hills lake association they were inquiring as to the steps necessary if they proceeded to drop the level of the lake."
+  },
+  {
+   "speaker": "John Martin and Jay Haueisen",
+   "stated_role": "",
+   "topic": "cutting deadwood on Conservation land",
+   "quote": "john martin and jay haueisen inquired as whether they could cut deadwood on conservation land."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "7:00 PM ~ 819 West Street ~ Christopher M/Julie H Comeau ~ Possible Violation",
+   "resolution": "informational; no motion; board praised continued manure removal",
+   "quote": "chris explained layout of the land and paddocks, along with the culvert coming on to his property."
+  },
+  {
+   "topic": "7:15 PM ~ 98 Whiting Street ~ Request for Determination of Applicability, Andrzej/Tricia Babinski",
+   "resolution": "Negative 3 determination, passed unanimously",
+   "quote": "the proposed project is for expansion of back & side yards next to a wetlands resource."
+  },
+  {
+   "topic": "1:30 PM ~ Pleasant & West Streets ~ Request for Determination of Applicability, Michael Borkowski of EPG Solar LLC",
+   "resolution": "cancelled; hearing held at 7:30 PM",
+   "quote": "1:30 pm ~ pleasant & west streets ~ cancelled ~ pursuant to mgl ch 131, s 40 as amended and the"
+  },
+  {
+   "topic": "Public participation: Hickory Hills Lake level and deadwood cutting",
+   "resolution": "informational; no action",
+   "quote": "representing hickory hills lake association they were inquiring as to the steps necessary if they proceeded to drop the level of the lake."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Andrzej/Tricia Babinski (98 Whiting Street)",
+   "where": "text",
+   "quote": "a public meeting on a request for determination of applicability filed by andrzej/tricia babinski"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Michael Borkowski of EPG Solar LLC (Pleasant & West Streets solar array)",
+   "where": "text",
+   "quote": "public meeting on a request for determination of applicability filed by michael borkowski of epg solar llc"
+  },
+  {
+   "name": "Handout outlining directions the Hickory Hills Lake Association could take on lake level",
+   "where": "text",
+   "quote": "a handout was given to everyone outlining the different directions that they could go to alleviate this problem."
+  },
+  {
+   "name": "Before and after pictures of the Babinski yard",
+   "where": "text",
+   "quote": "andrzej presented pictures of before and after of the yard"
+  },
+  {
+   "name": "Current Order of Conditions (Hickory Hills Lake)",
+   "where": "text",
+   "quote": "an amendment to the current order of conditions would be all that is necessary"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "request for determination of applicability",
+  "negative 3 determination",
+  "solar array",
+  "lake management",
+  "Hickory Hills Lake",
+  "deadwood cutting",
+  "possible violation",
+  "public participation",
+  "Conservation Commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

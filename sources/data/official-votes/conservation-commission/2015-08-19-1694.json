@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-08-19",
  "docid": "1694",
@@ -12,48 +12,369 @@
  },
  "votes": [
   {
-   "motion": "Approve Negative Determination of Applicability for seasonal aluminum floating dock at 451 Townsend Harbor Road",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "approved negative 3 unanimous",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Approve Notice of Intent with conditions for construction of 22 townhouse units at 274 Prospect Street",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "approved with conditions. unanimous",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Approve Negative Determination of Applicability for fence installation at 54 Pine Acre Road",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "approved negative 3 unanimous",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Close the public hearing and all comments on the Shirley Village Reservoir aquatic management program",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "unanimous vote to close public hearing and all com ments",
+   "motion": "Approve the Request for Determination of Applicability for a seasonal aluminum floating dock and free-standing deck at 451 Townsend Harbor Road (James S. Sylvester).",
    "moved_by": "",
    "seconded_by": "",
-   "quote_taken_from_text": true
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "free standing/re movable and sectional. approved negative 3 unanimous"
   },
   {
-   "motion": "Approve minutes of August 5, 2015 meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes approval ~8/5 ~ ok",
+   "motion": "Approve the Notice of Intent for 22 townhouse units at 274 Prospect Street, with conditions (no dock and no work on lake side of Prospect Street).",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "absolutely no dock and no work on lake side of prospect street. approved with conditions. unanimous"
+  },
+  {
+   "motion": "Approve the Request for Determination of Applicability to install fences, boulders and posts at 54 Pine Acre Road (Micke Dutton).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "filter fabric with greenery and other vegetation will be placed in other disturbed areas. approved negative 3 unanimous"
+  },
+  {
+   "motion": "Close the public hearing and all comments on the Shirley Village Reservoir Notice of Intent; deliberations to take place at the September 2 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "unanimous vote to close public hearing and all com ments",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "Header text contains OCR artifacts but votes are clearly legible. No material limitations on reading votes.",
- "cost_usd": 0.0962445
+ "note": "Scanned-style text with garbled header glyphs and split words (e.g. 'anch ored', 'Brad Kenn edy', 'Daniel G ardner'); names are quoted as extracted and may carry spacing artifacts. Votes are recorded only as tallies ('Approved Negative 3 Unanimous', 'Unanimous vote to close public hearing'); no motion or second is printed, so moved_by and seconded_by are blank. The minutes-approval line 'MINUTES APPROVAL ~8/5 ~ OK' is not recorded as a vote. Attendee status is inferred from the roster line at the top of the minutes; the text does not say 'present'. Minutes are marked APPROVED 9/16/2015.",
+ "cost_usd": 0.00828752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "richard bursch, todd dwyer, jack rabbitt, brad kenn edy, carl luck, ken jones, jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "richard bursch, todd dwyer, jack rabbitt, brad kenn edy, carl luck, ken jones, jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "richard bursch, todd dwyer, jack rabbitt, brad kenn edy, carl luck, ken jones, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "status": "present",
+   "quote": "richard bursch, todd dwyer, jack rabbitt, brad kenn edy, carl luck, ken jones, jan carrier"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "richard bursch, todd dwyer, jack rabbitt, brad kenn edy, carl luck, ken jones, jan carrier"
+  },
+  {
+   "name": "Ken Jones",
+   "status": "present",
+   "quote": "richard bursch, todd dwyer, jack rabbitt, brad kenn edy, carl luck, ken jones, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "richard bursch, todd dwyer, jack rabbitt, brad kenn edy, carl luck, ken jones, jan carrier"
+  },
+  {
+   "name": "Dan Procter",
+   "status": "present",
+   "quote": "dan procter explained this project. large boulders and posts will be placed where the atv's are crossing."
+  },
+  {
+   "name": "Daniel Gardner",
+   "status": "not stated",
+   "quote": "daniel g ardner of greener living luxury homes (mark piermarini whitman & bingham)"
+  },
+  {
+   "name": "Mark Piermarini",
+   "status": "not stated",
+   "quote": "daniel g ardner of greener living luxury homes (mark piermarini whitman & bingham)"
+  },
+  {
+   "name": "James S. Sylvester",
+   "status": "not stated",
+   "quote": "filed by james s. sylvester."
+  },
+  {
+   "name": "Micke Dutton",
+   "status": "not stated",
+   "quote": "filed by micke dutton."
+  },
+  {
+   "name": "Frank Novak",
+   "status": "not stated",
+   "quote": "380 sunset lane ~ continuation ~ frank novak ~ enforcement order"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "status": "present",
+   "quote": "anthony cleaves of whitman & bingham presented plan for remediation."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "status": "not stated",
+   "quote": "joanna b ilotta-simeone of lake shirley"
+  },
+  {
+   "name": "Dominic Meringlo",
+   "status": "not stated",
+   "quote": "dominic meringlo of aquati c control technology llc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission suggested to request an Amended OoC for 380 Sunset Lane; enforcement matter continued until September 2.",
+   "quote": "commission suggested to request an amended ooc."
+  },
+  {
+   "decision": "Continue the 380 Sunset Lane enforcement order until September 2.",
+   "quote": "will continue until september 2."
+  },
+  {
+   "decision": "Send a letter to Renee regarding the Sunrise Stables Pony Express Harvest Ride approval.",
+   "quote": "sunrise stables~pony express harvest ride approval ~ ok will send letter to renee"
+  },
+  {
+   "decision": "Commission would like to see a Lake Management Plan (like HH) in the near future for Shirley Village Reservoir.",
+   "quote": "commission would like to see a lake management plan (like hh) in the near future."
+  },
+  {
+   "decision": "No changes to drawdown at Lake Shirley.",
+   "quote": "no changes to drawdown ."
+  },
+  {
+   "decision": "Deliberations on the Shirley Village Reservoir Notice of Intent to take place at the September 2 meeting.",
+   "quote": "deliberations will take place at september 2 meeting."
+  },
+  {
+   "decision": "Matt will contact Neal Gorman (engineer) regarding the 192 Peninsula Drive plan.",
+   "quote": "received updated plan~plan not correct~matt will contact neal gorman (engineer)"
+  },
+  {
+   "decision": "Matt to do measurements at 701 Reservoir Road.",
+   "quote": "701 reservoir road ~ see above ~ 7:45 ~ have not heard from mr. wilson ~ matt to do measurements"
+  },
+  {
+   "decision": "Letters to be sent regarding dumping and motorized vehicles at 123/145 Hollis Road.",
+   "quote": "letters need to be sent~on to do list"
+  },
+  {
+   "decision": "Owners of 324 Mulpus Road told to contact Tom Christopher for help filing an NOI.",
+   "quote": "told them to contact tom christopher to help them"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Shirley Village Reservoir well testing",
+   "what_was_recorded": "Commission discussed whether well testing should be continued because of its cost.",
+   "quote": "discussion on well testing and whether it should be continued because of cost.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jack",
+   "topic": "pipeline update",
+   "quote": "public comment ~ jack updated on the pipeline. meeting was at the high school on august 6."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "discussed; no action",
+   "quote": "public comment ~ jack updated on the pipeline. meeting was at the high school on august 6.",
+   "tags": [
+    "pipeline",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "451 Townsend Harbor Road RDA (James S. Sylvester)",
+   "resolution": "approved, negative determination, unanimous",
+   "quote": "free standing/re movable and sectional. approved negative 3 unanimous",
+   "tags": [
+    "RDA",
+    "dock",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "274 Prospect Street NOI continuation (Daniel Gardner)",
+   "resolution": "approved with conditions",
+   "quote": "absolutely no dock and no work on lake side of prospect street. approved with conditions.",
+   "tags": [
+    "NOI",
+    "townhouses",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "54 Pine Acre Road RDA continuation (Micke Dutton)",
+   "resolution": "approved, unanimous",
+   "quote": "filter fabric with greenery and other vegetation will be placed in other disturbed areas. approved",
+   "tags": [
+    "RDA",
+    "fence",
+    "ATV",
+    "embankment"
+   ]
+  },
+  {
+   "topic": "380 Sunset Lane enforcement order continuation (Frank Novak)",
+   "resolution": "continued to September 2",
+   "quote": "will continue until september 2.",
+   "tags": [
+    "enforcement",
+    "storm damage",
+    "remediation"
+   ]
+  },
+  {
+   "topic": "Shirley Village Reservoir NOI continuation (Lake Shirley Improvement Corporation)",
+   "resolution": "hearing closed; deliberations September 2",
+   "quote": "deliberations will take place at september 2 meeting.",
+   "tags": [
+    "NOI",
+    "aquatic vegetation",
+    "lake management",
+    "herbicides"
+   ]
+  },
+  {
+   "topic": "Minutes approval 8/5",
+   "resolution": "marked OK; no vote recorded",
+   "quote": "minutes approval ~8/5 ~ ok",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: Sunrise Stables and NRWA presentation",
+   "resolution": "letter to be sent; presentation scheduled October 7",
+   "quote": "al futterman from nrwa~october 7",
+   "tags": [
+    "new business",
+    "NRWA",
+    "Mulpus Brook"
+   ]
+  },
+  {
+   "topic": "Updates on open files",
+   "resolution": "noted; letters, filings and site checks assigned",
+   "quote": "woodlands kayak cove ~ tree removal ~ letter sent ~need to file rda",
+   "tags": [
+    "enforcement",
+    "violations",
+    "NOI",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "noted; Ken looking into stewardship process",
+   "quote": "forest cutting plans ~ ken is looking into stewardship process for town owned land.",
+   "tags": [
+    "forest cutting",
+    "stewardship",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "noted; OoC(1) and CoC(2) done",
+   "quote": "signatures ~ ooc(1), coc(2) done",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Announcements and meeting schedule",
+   "resolution": "noted; next meetings September 2 and 16",
+   "quote": "meeting schedule ~ september 2 & 16",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:50 PM",
+   "quote": "adjournment ~ 10:50 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by James S. Sylvester (451 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "filed by james s. sylvester. the proposed project is for seasonal aluminum floating dock"
+  },
+  {
+   "name": "Notice of Intent filed by Daniel Gardner of Greener Living Luxury Homes (274 Prospect Street)",
+   "where": "text",
+   "quote": "pub lic hearing on a notice of intent filed by daniel g ardner of greener living luxury homes",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Micke Dutton (54 Pine Acre Road)",
+   "where": "text",
+   "quote": "filed by micke dutton. the"
+  },
+  {
+   "name": "Question and answers (submitted for Shirley Village Reservoir NOI)",
+   "where": "text",
+   "quote": "question and answer s submitted will be filed.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Lake Management Plan (like HH)",
+   "where": "text",
+   "quote": "commission would like to see a lake management plan (like hh) in the near future."
+  },
+  {
+   "name": "Talent Bank Form (Cullen Dwyer)",
+   "where": "text",
+   "quote": "talent bank form ~ cullen dwyer~filed"
+  },
+  {
+   "name": "Amended OoC (380 Sunset Lane)",
+   "where": "text",
+   "quote": "commission suggested to request an amended ooc."
+  },
+  {
+   "name": "Updated plan (192 Peninsula Drive)",
+   "where": "text",
+   "quote": "received updated plan~plan not correct"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "public hearings",
+  "RDA",
+  "notice of intent",
+  "enforcement",
+  "lake management",
+  "aquatic vegetation",
+  "docks",
+  "stormwater"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

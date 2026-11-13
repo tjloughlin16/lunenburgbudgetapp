@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2017-02-17",
  "docid": "532",
@@ -12,15 +12,167 @@
  },
  "votes": [
   {
-   "motion": "to investigate the condition of the house at 53 Lancaster on the corner of Whiting",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Investigate the condition of the house at 53 Lancaster (corner of Whiting), which may be in demolition by neglect.",
    "moved_by": "McGrath",
    "seconded_by": "LaVeck",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "mcgrath motioned to investigate, laveck seconded and the motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text of February 2017 meeting minutes. Only one vote recorded: the motion to investigate 53 Lancaster. Minutes appear incomplete (page 2 is blank); no votes recorded there.",
- "cost_usd": 0.07940749999999999
+ "note": "The minutes print \"Tuesday February 13th, 2017\", which differs from the meeting date given (2017-02-17); the record reflects the printed text. The text is OCR of a single page, and page 2 is blank in the extraction; the 53 Lancaster and solar paragraphs end mid-sentence. The clerk stamp reads MAR 2 0 2018. No dollar figures are printed. Rogers, Skelly, Rodriquenz and Hudson are mentioned but did not appear at this meeting, so they are not listed as attendees.",
+ "cost_usd": 0.00385332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Corcoran",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "LaVeck",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Dwyer",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Gary Burton",
+   "role": "applicant",
+   "status": "present",
+   "quote": "gary burton appeared to discuss alterations to his property at 944 massachusetts ave"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dwyer will begin the process on 53 Lancaster by sending a letter to the owner asking to inspect the property.",
+   "quote": "it was decided that dwyer would begin the process by sending a letter to the owner asking to inspect the"
+  },
+  {
+   "decision": "McGrath will ask building inspector Andrew Hudson for clarification on the law regarding APD regulation of solar panels versus green energy law.",
+   "quote": "mcgrath will ask building inspector andrew hudson for clarification on the law."
+  },
+  {
+   "decision": "McGrath will approach the BoS and town manager to request funding for APD signage, and will seek state permission for signs on route 2A.",
+   "quote": "mcgrath will need to approach the bos and town manager to request funding"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "APD signage installation and materials",
+   "what_was_recorded": "Public Works director Rodriquenz said he might install the signs for free and advised on material costs; no figure was printed.",
+   "quote": "might provide installation for free, advised on the cost of materials and best locations.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Funding request for APD signage",
+   "what_was_recorded": "McGrath will need to request funding from the BoS and town manager for the signs; no amount was printed.",
+   "quote": "mcgrath will need to approach the bos and town manager to request funding",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cost of bringing downtown town-owned buildings up to code",
+   "what_was_recorded": "Public comment to the town manager held that the cost of bringing the Brooks house and primary school up to code is prohibitive; no figure was printed.",
+   "quote": "many have said that the cost of bringing these buildings up to code is prohibitive, and that they should be torn down.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Administrative Review: 944 Massachusetts Ave (Franklin S. Rancis house)",
+   "resolution": "discussed; no vote; commission encouraged preserving interior features and windows",
+   "quote": "gary burton appeared to discuss alterations to his property at 944 massachusetts ave",
+   "tags": [
+    "administrative review",
+    "windows",
+    "CTA"
+   ]
+  },
+  {
+   "topic": "Communications: Attorney General complaint and Brooks house / primary school",
+   "resolution": "received; AG case closed; McGrath to seek remedy with Mass Historic",
+   "quote": "chairman mcgrath received notice from the office of the attorney general regarding mr. rogers' complaint.",
+   "tags": [
+    "AG complaint",
+    "demolition risk",
+    "Mass Historic"
+   ]
+  },
+  {
+   "topic": "Old Business: APD signage",
+   "resolution": "no action; McGrath to request funding and state permission",
+   "quote": "mcgrath met with public works director rodriquenz regarding signage for the apd.",
+   "tags": [
+    "signage",
+    "route 2A",
+    "funding"
+   ]
+  },
+  {
+   "topic": "New Business: 53 Lancaster, demolition by neglect",
+   "resolution": "motion to investigate passed unanimously; Dwyer to send owner a letter",
+   "quote": "laveck and corcoran expressed concern regarding the condition of the house at 53 lancaster on the corner of",
+   "tags": [
+    "demolition by neglect",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "New Business: solar panels and green energy law",
+   "resolution": "discussed; McGrath to ask building inspector for clarification",
+   "quote": "concern was raised regarding a possible conflict of the apd bylaw with another law encouraging green energy.",
+   "tags": [
+    "solar panels",
+    "green energy",
+    "bylaw conflict"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for a CTA (944 Massachusetts Ave)",
+   "where": "text",
+   "quote": "replacement windows would need to be presented and reviewed on the application for a cta."
+  },
+  {
+   "name": "APD bylaw",
+   "where": "text",
+   "quote": "pose no problems of compliance with the apd bylaw."
+  },
+  {
+   "name": "Notice from the Office of the Attorney General regarding Mr. Rogers' complaint",
+   "where": "text",
+   "quote": "chairman mcgrath received notice from the office of the attorney general regarding mr. rogers' complaint."
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "historic district",
+  "demolition by neglect",
+  "signage",
+  "solar panels",
+  "administrative review",
+  "funding"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

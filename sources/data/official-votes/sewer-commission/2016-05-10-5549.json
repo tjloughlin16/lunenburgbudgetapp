@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-05-10",
  "docid": "5549",
@@ -12,39 +12,442 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes for 3/29/2016",
+   "motion": "To accept the minutes for 3/29/2016.",
    "moved_by": "Sue B.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion - sue b. to accept the minutes for 3/29/2016 second - john r. vote - unanimous"
   },
   {
-   "motion": "Accept the minutes for 3/7/2016 workshop",
+   "motion": "To accept the minutes for 3/7/2016 workshop.",
    "moved_by": "John R.",
    "seconded_by": "Sue B.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion - john r. to accept the minutes for 3/7/2016 workshop second - sue b. vote - unanimous"
   },
   {
-   "motion": "Accept the minutes of 4/12/2016 as amended",
+   "motion": "To accept the minutes of 4/12/2016 as amended.",
    "moved_by": "John R.",
    "seconded_by": "Sue B.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion - john r. to accept the minutes of 4/12/2016 as amended second - sue b. vote - unanimous"
   },
   {
-   "motion": "Adjourn at 8:50pm",
+   "motion": "To adjourn at 8:50pm.",
    "moved_by": "John R.",
-   "seconded_by": "Sue B.",
-   "outcome": "passed",
+   "seconded_by": "Sue B",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion - john r. to adjourn at 8:50pm second - sue b vote - unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of meeting minutes; four votes recorded, all procedural and unanimous.",
- "cost_usd": 0.0841625
+ "note": "OCR text from a scan (macOS Vision); some words garbled, e.g., page 2 header and the 'I/l' vs 'I/I' spelling. Page 1 ends mid-sentence at the Deb/SCADA item and the Centre Pizza item. No attendance roll call; attendance statuses are not stated. No public comment section. Four votes recorded (three minute approvals and adjournment), all unanimous; no non-procedural votes recorded.",
+ "cost_usd": 0.011530820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John R.",
+   "status": "not stated",
+   "quote": "motion - john r. to accept the minutes for 3/7/2016 workshop"
+  },
+  {
+   "name": "Sue B.",
+   "status": "not stated",
+   "quote": "motion - sue b. to accept the minutes for 3/29/2016"
+  },
+  {
+   "name": "Carl",
+   "status": "not stated",
+   "quote": "carl noted that for the remainder of the fiscal year and with the money left on the swss t&m po"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "carl luck, jaime toale, mike sauvageau and ray beal attended"
+  },
+  {
+   "name": "Jaime Toale",
+   "status": "not stated",
+   "quote": "carl luck, jaime toale, mike sauvageau and ray beal attended"
+  },
+  {
+   "name": "Mike Sauvageau",
+   "status": "not stated",
+   "quote": "carl luck, jaime toale, mike sauvageau and ray beal attended"
+  },
+  {
+   "name": "Ray Beal",
+   "status": "not stated",
+   "quote": "carl luck, jaime toale, mike sauvageau and ray beal attended"
+  },
+  {
+   "name": "Dan McCarty",
+   "role": "representing Brogna",
+   "status": "not stated",
+   "quote": "dan mccarty, who represents brogna, requested a meeting with the town."
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "not stated",
+   "quote": "business manager report - barb noted that she had provided the ytd figures for fy17"
+  },
+  {
+   "name": "Deb",
+   "role": "Small Water",
+   "status": "not stated",
+   "quote": "deb will be contacted and asked if she would be willing to do the program for four months"
+  },
+  {
+   "name": "Jack",
+   "status": "not stated",
+   "quote": "she has spoken with jack about line jetting and he may have other ideas for spending through year-end"
+  },
+  {
+   "name": "Steve P.",
+   "role": "Weston and Sampson",
+   "status": "not stated",
+   "quote": "inviting steve p. from weston and sampson, who had done it previously"
+  },
+  {
+   "name": "Laurie Kunz",
+   "role": "Rennie Street resident",
+   "status": "not stated",
+   "quote": "laurie kunz from rennie street sent an email that was received may 10"
+  },
+  {
+   "name": "Colleen",
+   "role": "of Sean Patricks",
+   "status": "not stated",
+   "quote": "the ledger recount of the meeting with colleen of sean patricks and how his comment"
+  },
+  {
+   "name": "Dana",
+   "role": "Wright Pierce",
+   "status": "not stated",
+   "quote": "dana from wright pierce had also previously stated that it would not save money in operations."
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "Weston and Sampson",
+   "status": "not stated",
+   "quote": "pat cotton of weston and sampson had sent suggested actions on i/l and the dep plan"
+  },
+  {
+   "name": "Mike Nault",
+   "status": "not stated",
+   "quote": "this was mike nault's last meeting but he never came to get his plaque honoring his service."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dan McCarty (Brogna) was advised to proceed with the Hollis Hills development after the meeting with Carl Luck, Jaime Toale, Mike Sauvageau and Ray Beal.",
+   "quote": "the development was discussed and dan was advised to proceed"
+  },
+  {
+   "decision": "Deb (Small Water) is to be contacted and asked whether she will run the FOG program for four months for $10,000 starting July 1.",
+   "quote": "deb will be contacted and asked if she would be willing to do the program for four months"
+  },
+  {
+   "decision": "Small Water to be asked to inspect interceptors and set up a going-forward inspection schedule timed with cleanouts.",
+   "quote": "they will also be asked to inspect interceptors and set up a schedule going forward"
+  },
+  {
+   "decision": "Centre Pizza will be asked to submit a waiver request.",
+   "quote": "centre pizza will be asked to submit a waiver request or they will"
+  },
+  {
+   "decision": "Barb and Sue will review all accounts to confirm that all are non-compliant.",
+   "quote": "barb and sue will review all accounts to confirm that all are non-compliant."
+  },
+  {
+   "decision": "The fats, oil and grease letter will state that the fee is due by June 1st; the logs and measurement method will be reviewed first.",
+   "quote": "the letter will state that fee is due by june 1st"
+  },
+  {
+   "decision": "Deb from Small Water is to be contacted about having a matrix of the SCADA alarms and required responses prepared for the three big stations.",
+   "quote": "deb from small water will be contacted about having"
+  },
+  {
+   "decision": "The I/I DEP Plan & Analysis is to go on the May 31 agenda for discussion.",
+   "quote": "this will be put on the may 31s agenda for discussion."
+  },
+  {
+   "decision": "Information on the 39 Mass Ave oil/water separator is to go on the May 31 agenda.",
+   "quote": "information on the oil/water separator was received today and will put it on the may 31st agenda."
+  },
+  {
+   "decision": "Barb will bring Mike Nault his plaque and cake at his place of business the next day.",
+   "quote": "barb will bring him the plaque and the cake to his place of business tomorrow."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Small Water FOG (fats, oil, grease) proposal cost",
+   "what_was_recorded": "The FOG proposal is now priced at $19,500, reviewed task by task.",
+   "figures_as_printed": [
+    "$19,500"
+   ],
+   "quote": "small water systems fog (fats, oil, grease) proposal - the proposal is now for $19,500."
+  },
+  {
+   "topic": "FOG program request to Small Water",
+   "what_was_recorded": "The Commission intends to ask for $10,000 for the program, to be closer to self-funding, for four months starting July 1, with half the contract price expected up front.",
+   "figures_as_printed": [
+    "$10,000",
+    "July 1st"
+   ],
+   "quote": "deb will be contacted and asked if she would be willing to do the program for four months for $10,000 starting july"
+  },
+  {
+   "topic": "Annual letters and permit costs",
+   "what_was_recorded": "The Commission discussed the annual letters and permit costs; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the annual letters and permit costs."
+  },
+  {
+   "topic": "Koppelan and Paige invoice",
+   "what_was_recorded": "One invoice from Koppelan and Paige was received.",
+   "figures_as_printed": [
+    "$357"
+   ],
+   "quote": "there was one invoice from koppelan and paige for $357."
+  },
+  {
+   "topic": "SCADA proposal from Wright Pierce",
+   "what_was_recorded": "The Wright Pierce SCADA proposal would cost over $25,000 and was discussed.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "the one from wright pierce would cost over $25,000."
+  },
+  {
+   "topic": "Woodward and Curran SCADA study",
+   "what_was_recorded": "The Woodward and Curran proposal was a study of the ten stations; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the proposal from woodward and curran was to do a study of the ten stations"
+  },
+  {
+   "topic": "Stabilization account for I/I",
+   "what_was_recorded": "Taking money out of the I/I stabilization account would need a Town Meeting vote; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "at the next town meeting, there will have to be a vote if the commission wants to take money out of the i/l stabilization account."
+  },
+  {
+   "topic": "Pratt/Lakeview/Pleasantview debt exclusion and betterment",
+   "what_was_recorded": "The pavement plan and debt exclusion passed at Town Meeting and still need a ballot vote; the betterment assessment was discussed with an August deadline; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the pavement plan and debt exclusion passed at town meeting"
+  },
+  {
+   "topic": "Grease trap fee",
+   "what_was_recorded": "The letter to businesses will state the fee is due by June 1st; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the letter will state that fee is due by june 1st"
+  },
+  {
+   "topic": "Remaining FY17 money on the SWSS T&M PO",
+   "what_was_recorded": "Carl proposed using the money left on the SWSS T&M PO for the rest of the fiscal year to have six interceptors looked at; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "and with the money left on the swss t&m po he'd like to have the 6 interceptors looked at"
+  },
+  {
+   "topic": "Year-end purchase orders and line jetting spending",
+   "what_was_recorded": "All current-year PO spending must be in by May 27; Barb discussed line jetting and other year-end spending ideas with Jack; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "all po's for current year spending must be in by may 27"
+  },
+  {
+   "topic": "FY17 year-to-date figures",
+   "what_was_recorded": "Barb provided the YTD figures for FY17; the figures are not printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "barb noted that she had provided the ytd figures for fy17"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Town Meeting results",
+   "resolution": "noted; bylaw to AG, web page update needed",
+   "quote": "town meeting results - all passed."
+  },
+  {
+   "topic": "Pump stations FY17 O&M invitation for bid",
+   "resolution": "noted; five bids requested, pre-bid May 12, bids due May 20",
+   "quote": "to date, there are five requests for bid."
+  },
+  {
+   "topic": "Weekly reports",
+   "resolution": "noted as not received",
+   "quote": "weekly reports 4/23, 4/30 - they were not received"
+  },
+  {
+   "topic": "Pratt/Lakeview/Pleasantview project",
+   "resolution": "discussed; betterment assessment and neighbor outreach",
+   "quote": "pratt/lakeview/pleasantview project - the pavement plan and debt exclusion passed at town meeting"
+  },
+  {
+   "topic": "Grease trap/interceptor program",
+   "resolution": "Centre Pizza asked for waiver request",
+   "quote": "grease trap/interceptor program - centre pizza will be asked to submit a waiver request"
+  },
+  {
+   "topic": "Small Water FOG proposal",
+   "resolution": "discussed; Deb to be asked about four-month program at $10,000",
+   "quote": "small water systems fog (fats, oil, grease) proposal - the proposal is now for $19,500."
+  },
+  {
+   "topic": "SCADA proposals",
+   "resolution": "discussed; Small Water to provide alarm matrix",
+   "quote": "scada proposals - two proposals were discussed."
+  },
+  {
+   "topic": "Minutes approval (3/29, 3/7 workshop, 4/12)",
+   "resolution": "approved",
+   "quote": "the minutes from the 3/7/2016 workshop were reviewed."
+  },
+  {
+   "topic": "Action file: invoices and Hollis Hills",
+   "resolution": "Dan McCarty advised to proceed",
+   "quote": "hollis hills - dan mccarty, who represents brogna, requested a meeting with the town."
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "noted; YTD figures provided; PO deadline May 27",
+   "quote": "business manager report - barb noted that she had provided the ytd figures for fy17"
+  },
+  {
+   "topic": "Permits to connect",
+   "resolution": "noted; nine permits",
+   "quote": "permits to connect - there are nine permits to connect"
+  },
+  {
+   "topic": "Grease trap regulations",
+   "resolution": "noted; in effect as of May 6, 2016",
+   "quote": "grease trap regulations - they were posted in the ledger on may 6, 2016."
+  },
+  {
+   "topic": "ZBA issues",
+   "resolution": "noted; two hearings on 5/11/2016",
+   "quote": "zba issues: there will be two hearings on 5/11/2016."
+  },
+  {
+   "topic": "39 Mass Ave oil/water separator",
+   "resolution": "to May 31 agenda",
+   "quote": "information on the oil/water separator was received today and will put it on the may 31st agenda."
+  },
+  {
+   "topic": "Mike Nault farewell",
+   "resolution": "Barb to deliver plaque and cake",
+   "quote": "this was mike nault's last meeting but he never came to get his plaque honoring his service."
+  },
+  {
+   "topic": "Upcoming activities",
+   "resolution": "noted",
+   "quote": "there will be a pre-bid conference at the dpw on may 12, 2016."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50pm",
+   "quote": "motion - john r. to adjourn at 8:50pm second - sue b vote - unanimous"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Laurie Kunz, Rennie Street (received May 10, 2016)",
+   "where": "text",
+   "quote": "laurie kunz from rennie street sent an email that was received may 10"
+  },
+  {
+   "name": "Pump Stations - Invitation for Bid FY17 Operations & Maintenance",
+   "where": "text",
+   "quote": "pump stations - invitation for bid fy17 operations & maintenance"
+  },
+  {
+   "name": "Weekly reports 4/23 and 4/30",
+   "where": "text",
+   "quote": "weekly reports 4/23, 4/30 - they were not received"
+  },
+  {
+   "name": "Bylaw (grease trap / sewer bylaw) to the Attorney General's Office",
+   "where": "text",
+   "quote": "the bylaw still needs to go to the attorney general's office but is effective."
+  },
+  {
+   "name": "Grease Trap Regulations (posted in the Ledger May 6, 2016)",
+   "where": "text",
+   "quote": "grease trap regulations - they were posted in the ledger on may 6, 2016."
+  },
+  {
+   "name": "Small Water Systems FOG (Fats, Oil, Grease) Proposal",
+   "where": "text",
+   "quote": "small water systems fog (fats, oil, grease) proposal - the proposal is now for $19,500."
+  },
+  {
+   "name": "Wright Pierce SCADA proposal",
+   "where": "text",
+   "quote": "the one from wright pierce would cost over $25,000."
+  },
+  {
+   "name": "Woodward and Curran SCADA proposal",
+   "where": "text",
+   "quote": "the proposal from woodward and curran was to do a study of the ten stations"
+  },
+  {
+   "name": "Koppelan and Paige invoice",
+   "where": "text",
+   "quote": "there was one invoice from koppelan and paige for $357."
+  },
+  {
+   "name": "Pat Cotton (Weston and Sampson) suggested actions on I/I and DEP plan, sent February",
+   "where": "text",
+   "quote": "pat cotton of weston and sampson had sent suggested actions on i/l and the dep plan"
+  },
+  {
+   "name": "I/I DEP Plan & Analysis",
+   "where": "text",
+   "quote": "the i/i dep plan & analysis was discussed"
+  },
+  {
+   "name": "Permits to connect list (nine permits)",
+   "where": "text",
+   "quote": "permits to connect - there are nine permits to connect"
+  },
+  {
+   "name": "FY17 YTD figures",
+   "where": "text",
+   "quote": "barb noted that she had provided the ytd figures for fy17"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "town meeting",
+  "pump stations",
+  "grease trap",
+  "FOG",
+  "SCADA",
+  "I/I",
+  "road betterment",
+  "budget",
+  "permits",
+  "ZBA",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "laurie kunz from rennie street sent an email that was received may 10"
+ },
+ "dropped_unquoted_by_field": {}
 }

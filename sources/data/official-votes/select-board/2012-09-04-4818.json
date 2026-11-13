@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-09-04",
  "docid": "4818",
@@ -12,47 +12,313 @@
  },
  "votes": [
   {
-   "motion": "Approve the warrant for the Special Town Meeting of 09/25/12 with removal of the errant recommendation line from Article 4",
+   "motion": "Approve the Special Town Meeting warrant with the caveat that the errant recommendation line be removed from ARTICLE 4.",
    "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to approve the warrant with the caveat that the errant recommendation line be removed from article 4. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. alonzo moved to approve the warrant with the caveat that the errant recommendation line be removed from article 4. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+   "seconded_by": "Ms. Bertram"
   },
   {
-   "motion": "Appoint Brian LeBlanc as the RACES Operator",
+   "motion": "Appoint Brian LeBlanc as the RACES Operator.",
    "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "ms. bertram moved to appoint brian leblanc as the races operator. mr. alonzo seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "ms. bertram moved to appoint brian leblanc as the races operator. mr. alonzo seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+   "seconded_by": "Mr. Alonzo"
   },
   {
-   "motion": "Appoint Dave Matthews as Representative to the School Negotiating Sub-Committee",
+   "motion": "Appoint Dave Matthews as the Representative to the School Negotiating Sub-Committee.",
    "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "ms. bertram moved to appoint dave matthews as the representative to the school negotiating sub-committee. mr. alonzo seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "ms. bertram moved to appoint dave matthews as the representative to the school negotiating sub-committee. mr. alonzo seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+   "seconded_by": "Mr. Alonzo"
   },
   {
-   "motion": "Extend the appointment of Myleen Mallari as acting Treasurer/Collector through 09/11/12",
+   "motion": "Extend the appointment of Myleen Mallari as acting Treasurer/Collector through 09/11/12.",
    "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved to extend the appointment of myleen mallari, as acting treasurer/collector through 09/11/12. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. alonzo moved to extend the appointment of myleen mallari, as acting treasurer/collector through 09/11/12. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+   "seconded_by": "Ms. Bertram"
   },
   {
-   "motion": "Enter Executive Session to negotiate or strategize for negotiations, not to return",
+   "motion": "Enter Executive Session, not to return, per MGL to negotiate or strategize for negotiations.",
    "moved_by": "Mr. Matthews",
-   "seconded_by": "Ms. Bertram",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "executive session - mr. matthews moved to go into executive session, not to return, per mgl to negotiate or strategize for negotiations. ms. bertram seconded.",
+   "seconded_by": "Ms. Bertram"
+  },
+  {
+   "motion": "Adjourn regular session at 7:27PM.",
+   "moved_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. matthews moved to go into executive session, not to return, per mgl to negotiate or strategize for negotiations. ms. bertram seconded. the board voted unanimously to adjourn regular session at 7:27pm."
+   "quote": "the board voted unanimously to adjourn regular session at 7:27pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd document from macOS Vision. All votes are clearly recorded with vote counts or unanimous approval stated. No illegible votes detected.",
- "cost_usd": 0.0977305
+ "note": "OCR scan of typed minutes. Header partly garbled (\\\"Saus\\\", \\\"1449 -\\\"). Board member name printed as \\\"Tor lonzo\\\" (OCR-split; later referred to as \\\"Mr. Alonzo\\\"); recorded as printed. Board member roles are not printed except the Chairman reference. The motion to enter Executive Session has no printed result; the adjournment result is taken from the sentence that follows it. No public comment entries are recorded under the 7:00PM PUBLIC COMMENT heading; Scott Fenton's remarks appear under Current Business item 2. Minutes and warrant amounts are as printed; the $312,527.82 figure is not explained in the text. Attachments referred to as \\\"(See attached)\\\" are not included in the text.",
+ "cost_usd": 0.00879842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Chairman (referred to as 'the Chairman' in the minutes)",
+   "status": "present",
+   "quote": "with david matthews, tor lonzo, steven m. debettencourt, and paula bertram present."
+  },
+  {
+   "name": "Tor lonzo",
+   "role": "board member (role not printed; later referred to as 'Mr. Alonzo')",
+   "status": "present",
+   "quote": "with david matthews, tor lonzo, steven m. debettencourt, and paula bertram present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "board member (role not printed)",
+   "status": "present",
+   "quote": "with david matthews, tor lonzo, steven m. debettencourt, and paula bertram present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "board member (role not printed)",
+   "status": "present",
+   "quote": "with david matthews, tor lonzo, steven m. debettencourt, and paula bertram present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "board member (role not printed)",
+   "status": "absent",
+   "quote": "not present were carl \"ernie\" sund, & town manager kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present were carl \"ernie\" sund, & town manager kerry speidel"
+  },
+  {
+   "name": "Scott Fenton",
+   "role": "representing MASS PV",
+   "status": "present",
+   "quote": "scott fenton, representing mass pv spoke and said that he was there this evening"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Further discussions on PILOT Agreements are to be held in Executive Session.",
+   "quote": "mr. matthews stated that any further discussions concerning pilot agreements need to be discussed in executive session."
+  },
+  {
+   "decision": "Stated approach: the town is not laying out a number for Mass PV in either a PPA or a PILOT; it is up to Mass PV to come to the BOS with a proposal.",
+   "quote": "they are not looking to lay out a number for mass pv in either a ppa or a pilot and that it was entirely up to mr. fenton to come"
+  },
+  {
+   "decision": "Mr. Matthews suggested that Mass PV restart conversations with the Assessors.",
+   "quote": "mr. matthews suggested that mass pv restart conversations with the assessors"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mass PV net metering / PPA rates",
+   "what_was_recorded": "Mass PV's representative said Net Metering/PPA rates are generally set at about 9-10 cents per kWh and the company would meet any town requirements.",
+   "figures_as_printed": [
+    "9-10 cents per KWH"
+   ],
+   "quote": "the net metering/ppa rates are pretty much set at anywhere from 9-10 cents per kwh and they would be willing"
+  },
+  {
+   "topic": "Warrant total, W 13-13",
+   "what_was_recorded": "A dollar figure is printed beneath the warrant listing dated 9/4/12 (W 13-13); the minutes do not describe it further.",
+   "figures_as_printed": [
+    "$312,527.82"
+   ],
+   "quote": "warrants: 9/4/12 w 13-13 action file issues: none $312,527.82"
+  },
+  {
+   "topic": "Assessed valuation of Mass PV project",
+   "what_was_recorded": "Mr. Matthews asked whether Mass PV had met with the Assessors about the value they would place on the project; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "mr. matthews asked mr. fenton if they had met with the assessor's to understand what they would value their project at."
+  },
+  {
+   "topic": "Cash payment to school district in lieu of PPA",
+   "what_was_recorded": "Mass PV's representative offered a cash sum payment to the school district in lieu of a PPA as another cost-savings option; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "gave an example of a cash sum payment to the school district in lieu of the ppa"
+  },
+  {
+   "topic": "Consultant review of PILOT assessments",
+   "what_was_recorded": "Mass PV said it would assist in paying for a review by a consultant (Christopher Reidy); no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "said that mass pv would assist in paying for a review by that consultant."
+  },
+  {
+   "topic": "PILOT numbers for Special Town Meeting",
+   "what_was_recorded": "The chair said numbers for taxpayers on the PILOT Articles for Special Town Meeting were not yet available and were expected in a week or two; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "have not been able to put together numbers for the taxpayers to see concerning the pilot articles for special town meeting"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no entries recorded",
+   "quote": "7:00pm public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "EPG Solar: review of Power Purchase Agreement and PILOT Agreement",
+   "resolution": "discussed; PILOT talks moved to Executive Session",
+   "quote": "mr. matthews stated that any further discussions concerning pilot agreements need to be discussed in executive session.",
+   "tags": [
+    "solar",
+    "PPA",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "Mass PV1: review Power Purchase Agreement and PILOT Agreement",
+   "resolution": "public presentation by applicant; no action",
+   "quote": "scott fenton, representing mass pv spoke and said that he was there this evening to answer any questions",
+   "tags": [
+    "solar",
+    "PPA",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "Review Warrant, Special Town Meeting 09/25/12",
+   "resolution": "approved warrant with edit (passed 4-0)",
+   "quote": "mr. matthews reviewed the 5 articles which will be brought to special town meeting. (see attached)",
+   "tags": [
+    "warrant",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Minutes, Warrants and Action File Issues",
+   "resolution": "no minutes; warrant listed; no action file issues",
+   "quote": "action file issues: none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee, Department and Town Manager reports",
+   "resolution": "none",
+   "quote": "5. committee reports - none",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Reserve Police Officer candidates",
+   "resolution": "on hold until list finalized",
+   "quote": "candidates for reserve police officer- on hold till the list is finalized.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "RACES Operator appointment",
+   "resolution": "approved (passed 4-0)",
+   "quote": "ms. bertram moved to appoint brian leblanc as the races operator.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Representative to School Negotiating Sub-Committee",
+   "resolution": "approved Dave Matthews (passed 4-0)",
+   "quote": "ms. bertram moved to appoint dave matthews as the representative to the school negotiating sub-committee.",
+   "tags": [
+    "appointments",
+    "school"
+   ]
+  },
+  {
+   "topic": "Extend acting Treasurer-Collector appointment",
+   "resolution": "approved through 09/11/12 (passed 4-0)",
+   "quote": "mr. alonzo moved to extend the appointment of myleen mallari, as acting treasurer/collector through 09/11/12.",
+   "tags": [
+    "appointments",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Resignation: Robert Ebersole, Sewer Commission",
+   "resolution": "announced; no action",
+   "quote": "resignation: robert ebersole, sewer commission",
+   "tags": [
+    "resignation",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Resignation: Elaine Murphy, Capital Planning Commission",
+   "resolution": "announced; no action",
+   "quote": "resignation: elaine murphy, capital planning commission",
+   "tags": [
+    "resignation",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Executive Session and adjournment",
+   "resolution": "entered Executive Session; regular session adjourned at 7:27PM",
+   "quote": "executive session - mr. matthews moved to go into executive session, not to return, per mgl to negotiate or strategize for negotiations.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant, 5 Articles, 09/25/12 (attached)",
+   "where": "list",
+   "quote": "mr. matthews reviewed the 5 articles which will be brought to special town meeting. (see attached)"
+  },
+  {
+   "name": "ARTICLE 4 (submitted by the Library Board of Trustees)",
+   "where": "text",
+   "quote": "article 4 which was submitted by the library board of trustees reads that the board of selectmen"
+  },
+  {
+   "name": "Warrant W 13-13, 9/4/12",
+   "where": "text",
+   "quote": "warrants: 9/4/12 w 13-13 action file issues: none $312,527.82"
+  }
+ ],
+ "tags": [
+  "solar power purchase agreement",
+  "PILOT agreements",
+  "Special Town Meeting warrant",
+  "appointments",
+  "resignations",
+  "executive session",
+  "Mass PV",
+  "EPG Solar"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached)"
+ },
+ "dropped_unquoted_by_field": {}
 }

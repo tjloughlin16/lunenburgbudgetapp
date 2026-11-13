@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2016-04-05",
  "docid": "703",
@@ -12,6 +12,109 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This is an agenda notice, not minutes recording actual meeting proceedings. No votes are documented.",
- "cost_usd": 0.07817049999999999
+ "note": "This text is the meeting agenda notice only (April 5, 2016, 5:45 PM, Assessors' Office). It contains no record of proceedings: no attendance, no motions or votes, no decisions, no dollar figures, no public comment, and no documents list. Topics are recorded as agenda items with no outcome; resolution is therefore 'no action recorded'. Nothing was invented beyond the printed agenda.",
+ "cost_usd": 0.00298452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approval of expense vouchers, abatements, payroll, commitments and March 8, 2016 minutes",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "review and approval of expense vouchers, abatements, payroll, commitments and march 8, 2016 minutes",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY 16 Final RE Abatement Applications",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "fy 16 final re abatement applications",
+   "tags": [
+    "abatements",
+    "real estate"
+   ]
+  },
+  {
+   "topic": "Uncollectable Taxes",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "• uncollectable taxes",
+   "tags": [
+    "uncollectable taxes"
+   ]
+  },
+  {
+   "topic": "FY16 RE Supplemental Billing",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "• fy16 re supplemental billing",
+   "tags": [
+    "supplemental billing",
+    "real estate"
+   ]
+  },
+  {
+   "topic": "Fy16 Special Assessment Commitment",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "fy16 special assessment commitment",
+   "tags": [
+    "special assessment",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Omitted PP Bills",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "omitted pp bills • town meeting",
+   "tags": [
+    "personal property",
+    "omitted bills"
+   ]
+  },
+  {
+   "topic": "Town Meeting - May 6 / Town Election - May 21",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "• town meeting - may 6",
+   "tags": [
+    "town meeting",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Any other Business As Needed",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "any other business as needed*",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Work in Progress: Report by Assessor",
+   "resolution": "no action recorded (agenda only)",
+   "quote": "work in progress • report by assessor",
+   "tags": [
+    "report",
+    "assessor"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "tax commitments",
+  "town meeting",
+  "town election",
+  "agenda only"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

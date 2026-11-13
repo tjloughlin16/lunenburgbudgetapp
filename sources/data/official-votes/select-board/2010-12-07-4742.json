@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-12-07",
  "docid": "4742",
@@ -12,71 +12,574 @@
  },
  "votes": [
   {
-   "motion": "Approve CDBG grant application and authorize Chair to sign required forms for submittal by December 10, 2010",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Approve the CDBG grant application and that the Chair sign the requisite forms for submittal by December 10, 2010.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "David Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved that the board approve this grant application and approve that the chair sign the requisite forms for submittal by december 10, 2010. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo moved that the board approve this grant application and approve that the chair sign the requisite forms for submittal by december 10, 2010."
   },
   {
-   "motion": "Approve the recommendation to hire Boucher Construction Corporation to construct the parking lot at Eagle House Senior Center",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Sund",
+   "motion": "Approve the recommendation of Hudson Design Group and MRPC to hire Boucher Construction Corporation to construct the Eagle House Senior Center parking lot.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Carl \"Ernie\" Sund",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved to approve the recommendation. mr. sund seconded. on vote, motion passed, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adopt the Lunenburg Community Development Strategy dated December 2010",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Adopt the Lunenburg Community Development Strategy dated December 2010.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "David Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to adopt the lunenburg community development strategy dated december 2010. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo moved to adopt the lunenburg community development strategy dated december 2010."
   },
   {
-   "motion": "Appoint Ms. Speidel as Environmental Certifying Officer",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Mi. Matthews",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. debettencourt moved to appoint ms. speidel as the environmental officer. mi. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
-  },
-  {
-   "motion": "Close the public hearing",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. deBettencourt",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved to close the public hearing. mr. debettencourt seconded. on vote, motion carried, 5 in favor, o opposed."
-  },
-  {
-   "motion": "Close the Truax Dog Complaint matter",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Mr. Sund",
+   "motion": "Appoint Kerry Speidel as the Environmental Officer.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "David Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. debettencourt moved to close this matter. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. debettencourt moved to appoint ms. speidel as the environmental officer."
   },
   {
-   "motion": "Recommend that Town Manager move forward with Oscend Technologies contract for Town Website",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Sund",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "mr. alonzo motioned to recommend that the town manager move forward with this contract. mr. sund seconded. on vote, motion carried, 5 in favor, o opposed."
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Mr. Sund",
+   "motion": "Close the public hearing on the CDBG application.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. debettencourt motioned to adjourn the meeting. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed"
+   "quote": "mr. alonzo moved to close the public hearing. mr. debettencourt seconded."
+  },
+  {
+   "motion": "Close the Truax dog complaint status hearing matter.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Carl \"Ernie\" Sund",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mr. debettencourt moved to close this matter. mr. sund seconded."
+  },
+  {
+   "motion": "Recommend that the Town Manager move forward with the contract with Oscend Technologies for the town website.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Carl \"Ernie\" Sund",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mr. alonzo motioned to recommend that the town manager move forward with this contract."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Carl \"Ernie\" Sund",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "mr. debettencourt motioned to adjourn the meeting. mr. sund seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Two minor OCR artifacts in the votes: \"Mi.\" (vote 4) and \"O\" (votes 5, 7) appear to be OCR errors for \"Mr.\" and \"0\" respectively, but quoted verbatim as they appear in the OCR output.",
- "cost_usd": 0.1235835
+ "dropped_unquoted": 1,
+ "note": "Text is OCR (macOS Vision) of a scanned minutes document, so some words may be OCR errors (for example \"Mis. Carabba\", \"Mi. Matthews\", \"Sauvageu\" vs \"Sauvageau\", \"215l\" and \"O opposed\" read as 0 opposed). Quotes were copied as OCR printed them. Most votes are recorded as 5 in favor, 0 opposed. The Warrants list has no vote recorded. Ms. Carabba returned at 8:23 p.m. per the minutes; her report of a call with Shelly Hatch of MRPC was secondhand and Hatch did not appear. Ms. Bertram is referred to as the Chair in some passages but is not labeled as such where first named. The Documents list is marked printed based on the inline \"(See Attached)\" reference to the FY12 forecast; no formal documents list is printed.",
+ "cost_usd": 0.01357092,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen (referred to as 'the Chair' in the minutes)",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund, david matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund, david matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund, david matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund, david matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund, david matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund, david matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ann Carabba",
+   "role": "representing MRPC",
+   "status": "present",
+   "quote": "ann carabba, representing mrpc, introduced herself and read an overview about the grant."
+  },
+  {
+   "name": "Mike Sauvageu",
+   "role": "Building Official",
+   "status": "present",
+   "quote": "mike sauvageu, building official spoke of the temporary signs that are placed on"
+  },
+  {
+   "name": "Gerry Hyde",
+   "role": "public, 912 Mass Avenue",
+   "status": "present",
+   "quote": "gerry hyde, 912 mass avenue, thanked kathy herrick, pat slattery and the historical commission for getting a grant"
+  },
+  {
+   "name": "Chris Lattanzi",
+   "role": "public, Lancaster Ave.",
+   "status": "present",
+   "quote": "chris lattanzi, lancaster ave. asked if this is a grant application, then why is it being taken apart in little pieces."
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "member of the Historical Commission",
+   "status": "present",
+   "quote": "pat slattery, member of the historical commission spoke and said that he had copies of the revised rfp"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed that the handling of the Eagle House parking lot project (late cost breakdown and bid process) is not the way to do a project.",
+   "quote": "the bos were in agreement that this is not the way to do a project."
+  },
+  {
+   "decision": "The Chair asked that Ann Carabba relay to MRPC that future information needing a vote be given to the board before the meeting.",
+   "quote": "ms. bertram requested that mis. carabba relay a message to mrpc that in the future, the bos would like information that"
+  },
+  {
+   "decision": "Kerry Speidel will check with Shelly Hatch of MRPC the next day on the administration fees and what the grant application includes; Mr. Sund asked her to also request the total number of housing rehab applicants approved and expenditures per unit.",
+   "quote": "ms. speidel believes there may have been a typo in the administration fees and will check with shelly hatch from mrpc"
+  },
+  {
+   "decision": "The temporary sign by-law matter was referred to the Planning Board for review.",
+   "quote": "this matter will be given to the planning board for their review"
+  },
+  {
+   "decision": "Mr. Alonzo asked for the cost of each Special Expenditure Assumption over time, and the cost of fully equipping a new patrol officer each year.",
+   "quote": "mr. alonzo requested that for the special expenditure assumptions alone, he would like to see how much each of these assumptions would cost the town over time."
+  },
+  {
+   "decision": "Kerry Speidel will circulate the Superintendent's School Committee presentation to the board.",
+   "quote": "and she will circulate those to the bos."
+  },
+  {
+   "decision": "Ms. Bertram will draft a letter to Representative Benson and Senator Flanagan on the proposed state aid reduction.",
+   "quote": "ms. bertram will draft a letter on this matter to be sent to representative benson and senator flanagan."
+  },
+  {
+   "decision": "Kerry Speidel will double-check the facts on the reported library hours cut.",
+   "quote": "there was confusion about the library hours being cut and ms. speidel will double check those facts."
+  },
+  {
+   "decision": "Jones House: the board will walk through the property next Tuesday at 6:00 p.m. and the RFP will be forwarded to Town Counsel; the board would like to look at the property price again in Executive Session.",
+   "quote": "there will also be a walk through scheduled of the property for next tuesday at 6:00 p.m. and the rfp will be forwarded to town counsel."
+  },
+  {
+   "decision": "The Chair recommended that there be no meeting on December 21; the December 14 meeting times were readjusted for appointments, the Jones House walk-through and an Executive Session.",
+   "quote": "the chair recommended that there be no meeting on december 215l"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House parking lot: removal of leach field and mounded system",
+   "what_was_recorded": "The engineer estimated removal of the leach field and mounded system at upwards of $160,000, and the board questioned the high cost of removal.",
+   "figures_as_printed": [
+    "$160,000"
+   ],
+   "quote": "estimated the removal of the leach field and mounded system to cost upwards ===page 2===",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Eagle House parking lot: lump sum bid",
+   "what_was_recorded": "Mr. Alonzo said he does not like the lump sum bid process and wonders if the contractor is expecting a windfall.",
+   "figures_as_printed": [],
+   "quote": "he does not like the \"lump sum\" bid process and wonders if the contractor is expecting a windfall."
+  },
+  {
+   "topic": "CDBG administration fees paid to MRPC",
+   "what_was_recorded": "Questions were raised about the percentage of added administration fees; the figures were not answered and may be a typo.",
+   "figures_as_printed": [],
+   "quote": "discussion and questions ensued regarding the percentage of the added administration fees."
+  },
+  {
+   "topic": "Warrants approved for payment",
+   "what_was_recorded": "Warrants were listed for payment: W31-11, 12P11, 12MB11 and 12M11.",
+   "figures_as_printed": [
+    "$138,995.40",
+    "$717,195.17",
+    "$1,693.13",
+    "$2,991.36"
+   ],
+   "quote": "warrants - w31-11, 12/7/10, $138,995.40"
+  },
+  {
+   "topic": "FY12 projected deficit",
+   "what_was_recorded": "Town Manager projected a $2.5M deficit in FY12 in the five year forecast.",
+   "figures_as_printed": [
+    "$2.5M"
+   ],
+   "quote": "she projected a $2.5m deficit in fy12 and would like the bos input"
+  },
+  {
+   "topic": "Special Expenditure Assumptions #23 and #24",
+   "what_was_recorded": "If eliminated, Special Expenditure Assumptions #23 and #24 would amount to half of the $2.5M deficit; the Town Manager does not advocate removing them.",
+   "figures_as_printed": [
+    "$2.5M"
+   ],
+   "quote": "ms. speidel said that under special expenditure assumptions, #23 & #24, if eliminated, would amount to half of the $2.5m."
+  },
+  {
+   "topic": "State aid reduction",
+   "what_was_recorded": "A 10% reduction in state aid was estimated; Mr. Alonzo told the public a 10% cut means $600,000.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "mr. alonzo indicated to the public that a 10% cut means $600,000.which is not inconsequential."
+  },
+  {
+   "topic": "Pavement Management Plan",
+   "what_was_recorded": "The $750K towards the Pavement Management Plan is in addition to the approximate $300K received annually from Chapter 70.",
+   "figures_as_printed": [
+    "$750K",
+    "$300K"
+   ],
+   "quote": "the $750k towards the pavement management plan is for making road improvements in accordance with the pavement management system."
+  },
+  {
+   "topic": "General utilities and expenses assumption",
+   "what_was_recorded": "A 5% increase in utilities and a 2% general increase for other expenses were assumed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel said that generally she is looking at a 5% increase in utilities"
+  },
+  {
+   "topic": "Town Clerk salary",
+   "what_was_recorded": "A 10% salary increase for the Town Clerk in 2012, then 2.5% through the forecast, was proposed.",
+   "figures_as_printed": [],
+   "quote": "she would like to increase the town clerks salary by 10% in 2012 and then by 2.5% through the life of the forecast."
+  },
+  {
+   "topic": "Legal expenses",
+   "what_was_recorded": "A 3% per year increase in the town's legal expenses was proposed.",
+   "figures_as_printed": [],
+   "quote": "under general government she would like to increase the towns legal expenses by 3% per year."
+  },
+  {
+   "topic": "Health insurance assumption",
+   "what_was_recorded": "The health insurance assumption in the forecast is 10%; Mr. Matthews wants changes to health insurance to save money.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel told him that the assumption on the health insurance is 10%."
+  },
+  {
+   "topic": "Retirement assessment",
+   "what_was_recorded": "A 10% increase in the retirement assessment covers the annual assessment including the unfunded liability contribution.",
+   "figures_as_printed": [],
+   "quote": "the 10% increase in the retirement assessment enables the town to meet the annual assessment"
+  },
+  {
+   "topic": "Workers compensation assumption",
+   "what_was_recorded": "The assumed 5% increase in workers compensation may be reduced to 2% based on an audit.",
+   "figures_as_printed": [],
+   "quote": "may be able to reduce the assumed increase of 5% to 2% based on the audits results."
+  },
+  {
+   "topic": "Stabilization fund contribution",
+   "what_was_recorded": "The contribution to the stabilization fund assumes a 5% increase, tied to growth in operating expenses.",
+   "figures_as_printed": [],
+   "quote": "the contribution to the stabilization fund assumption of 5% increase is due to the fact when operating expenses increase"
+  },
+  {
+   "topic": "CWMARS membership",
+   "what_was_recorded": "The Town Manager wants CWMARS membership paid from the town operating budget rather than state funds.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel is looking to have the cwmars membership being paid out of the town operating budget rather than rely on state funds."
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "The Monty Tech assessment is assumed based on the number of students attending.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel said that the monty tech assessment is assumed on how many students they have attending."
+  },
+  {
+   "topic": "Police patrol officer and sergeant positions",
+   "what_was_recorded": "One patrol officer per year in 2012 and 2013 and one sergeant in 2015 were proposed; the board asked the cost of fully equipping a new patrol officer.",
+   "figures_as_printed": [],
+   "quote": "the bos would also like to know the cost of how much it would be to completely equip a new patrol officer each year."
+  },
+  {
+   "topic": "Fire Department second shift",
+   "what_was_recorded": "A non-benefit second shift at the Fire Department was proposed for weekend coverage.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel would like to phase in a second shift at the fire dept. for additional coverage."
+  },
+  {
+   "topic": "DPW maintenance worker and workforce",
+   "what_was_recorded": "An additional DPW maintenance worker was proposed, possibly to save insurance premium costs; a shared school and town maintenance position was discussed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel would like to see an additional maintenance worker added to dpw."
+  },
+  {
+   "topic": "Solid waste and recycling program",
+   "what_was_recorded": "The solid waste assumption is the cost of disposal and recycling; a better number is expected after bidding before fiscal year end.",
+   "figures_as_printed": [],
+   "quote": "ms speidel spoke of the solid waste assumption and explained that this is the cost of the solid waste disposal and"
+  },
+  {
+   "topic": "Senior center outreach worker",
+   "what_was_recorded": "A non-benefit Outreach worker at the senior center was proposed.",
+   "figures_as_printed": [],
+   "quote": "ms speidel would like to add another non-benefit person to do outreach at the senior center."
+  },
+  {
+   "topic": "Sidewalks at High School",
+   "what_was_recorded": "Monty Tech students built new High School sidewalks and the town saved money by using them.",
+   "figures_as_printed": [],
+   "quote": "the town was able to save money by using the students to do the work."
+  },
+  {
+   "topic": "Jones House sale price",
+   "what_was_recorded": "The board wants to review the price of the Jones House property again in Executive Session.",
+   "figures_as_printed": [],
+   "quote": "would like to look at the price of the property again in executive session."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Gerry Hyde",
+   "stated_role": "912 Mass Avenue",
+   "topic": "thanks for Emerald Place grant for Lunenburg early records",
+   "quote": "gerry hyde, 912 mass avenue, thanked kathy herrick, pat slattery and the historical commission for getting a grant"
+  },
+  {
+   "speaker": "Chris Lattanzi",
+   "stated_role": "Lancaster Ave.",
+   "topic": "why CDBG grant is being taken apart in pieces",
+   "quote": "chris lattanzi, lancaster ave. asked if this is a grant application, then why is it being taken apart in little pieces."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "informational; Eagle House closure and tree trimming announced",
+   "quote": "ms. bertram informed the public that due to illness the eagle house senior center will not be open for business until",
+   "tags": [
+    "announcements",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Continuation of public hearing: CDBG application, Senior Center parking lot and housing rehabilitation",
+   "resolution": "grant application approved, strategy adopted, Environmental Officer appointed, Boucher contract recommendation approved, hearing closed",
+   "quote": "7:15 p.m. continuation of public hearing: cdbg application/senior center parking lot & housing",
+   "tags": [
+    "CDBG",
+    "grant",
+    "parking lot",
+    "septic",
+    "MRPC",
+    "housing rehab"
+   ]
+  },
+  {
+   "topic": "Temporary sign regulations",
+   "resolution": "referred to Planning Board",
+   "quote": "temporary sign regulations - mike sauvageu, building official spoke of the temporary signs that are placed on",
+   "tags": [
+    "signs",
+    "by-law",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants listed; no vote recorded; no minutes or action file issues",
+   "quote": "warrants - w31-11, 12/7/10, $138,995.40",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational only; no action",
+   "quote": "3. committee report - mr. matthews reported that the school committee met last wednesday and that they are still",
+   "tags": [
+    "school committee",
+    "MSBA",
+    "finance committee",
+    "cable committee",
+    "DPW building"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "quote": "4. department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "informational; December 21 meeting recommended off; December 14 times readjusted",
+   "quote": "5. town manager reports - ms. speidel reviewed the list of outstanding items beginning with next tuesdays meeting",
+   "tags": [
+    "sewer IMA",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Status hearing: Truax dog complaint",
+   "resolution": "closed",
+   "quote": "1. status hearing: truax dog complaint - ms. bertram reviewed the original complaint which the bos had",
+   "tags": [
+    "dog complaint",
+    "animal control"
+   ]
+  },
+  {
+   "topic": "Town website contract with Oscend Technologies",
+   "resolution": "recommended that the Town Manager proceed",
+   "quote": "2. town website - contract with oscend technologies - mr. alonzo motioned to recommend that the",
+   "tags": [
+    "website",
+    "contract"
+   ]
+  },
+  {
+   "topic": "FY12 budget and financial forecast assumptions",
+   "resolution": "discussed; Chair to draft letter to state representative and senator; forecast to Finance Committee",
+   "quote": "3. fy12 budget/financial forecast assumptions -ms. speidel discussed the five year forecast with the bos.",
+   "tags": [
+    "FY12 budget",
+    "forecast",
+    "state aid",
+    "deficit",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Review RFP for sale of Jones House",
+   "resolution": "reviewed; walk-through next Tuesday; RFP to Town Counsel; price to Executive Session",
+   "quote": "4. review rfp for sale of jones house - ms. speidel requested that the bos review the rfp for the sale of",
+   "tags": [
+    "Jones House",
+    "RFP",
+    "historical commission",
+    "reverter clause"
+   ]
+  },
+  {
+   "topic": "Appointments, re-appointments and resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": []
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:12 p.m.",
+   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY12 Budget/Financial Forecast Assumptions (five year forecast)",
+   "where": "list",
+   "quote": "3. fy12 budget/financial forecast assumptions -ms. speidel discussed the five year forecast with the bos."
+  },
+  {
+   "name": "Revised RFP for sale of Jones House",
+   "where": "text",
+   "quote": "pat slattery, member of the historical commission spoke and said that he had copies of the revised rfp"
+  },
+  {
+   "name": "Lunenburg Community Development Strategy dated December 2010",
+   "where": "text",
+   "quote": "mr. alonzo moved to adopt the lunenburg community development strategy dated december 2010."
+  },
+  {
+   "name": "Recommendation of Hudson Design Group and MRPC (Boucher Construction Corporation contract)",
+   "where": "text",
+   "quote": "accept the recommendation of hudson design group and mrpc that the bos hires boucher construction corporation"
+  },
+  {
+   "name": "OMNIBUS letter for the grant application",
+   "where": "text",
+   "quote": "ms. hatch informed her that there is an omnibus letter that needs to be submitted with the grant"
+  },
+  {
+   "name": "CDBG grant application forms",
+   "where": "text",
+   "quote": "she also had several other forms that needed to be signed by the bos, that will be used to apply for a"
+  },
+  {
+   "name": "Letter to Representative Benson and Senator Flanagan",
+   "where": "text",
+   "quote": "ms. bertram will draft a letter on this matter to be sent to representative benson and senator flanagan."
+  },
+  {
+   "name": "Superintendent's presentation to School Committee",
+   "where": "text",
+   "quote": "she had received copies of the presentation that the superintendent gave to the school committee"
+  },
+  {
+   "name": "MSBA letters of intent (Turkey Hill Middle School and T.C. Passios Elementary School)",
+   "where": "text",
+   "quote": "the school committee is in the process of getting together the msba letters of intent"
+  },
+  {
+   "name": "Animal Control Officer report on Truax dog",
+   "where": "text",
+   "quote": "the animal control officer compiled a report that said"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "CDBG grant",
+  "Eagle House Senior Center",
+  "parking lot contract",
+  "septic removal",
+  "MRPC",
+  "temporary signs",
+  "warrants",
+  "school building MSBA",
+  "FY12 budget",
+  "state aid cut",
+  "Jones House sale",
+  "dog complaint",
+  "website contract",
+  "town meeting follow-up"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached)"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

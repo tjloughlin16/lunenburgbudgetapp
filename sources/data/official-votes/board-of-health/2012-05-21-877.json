@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-05-21",
  "docid": "877",
@@ -12,6 +12,140 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes state \"MINUTES APPROVED: None\" and list agenda items as acknowledgments and continuations with no motions, seconding, or voting outcomes recorded. The meeting adjourned but no adjournment vote is documented.",
- "cost_usd": 0.08002150000000001
+ "note": "Single-page OCR (macOS Vision) of minutes for a May 21, 2012 Board of Health meeting, held at the Ritter Memorial Building. No motions, votes, or public comment are recorded, and no adjournment motion is printed. The minutes do not say explicitly whether the three listed items were continued or merely listed under that heading. The Title 5 reports are named only by address (780 West Street). 'Abandonded' is printed as-is.",
+ "cost_usd": 0.00246552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell dave shea and dave passios"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell dave shea and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell dave shea and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell dave shea and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell dave shea and dave passios"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Three items listed under the heading 'CONTINUED UNTIL NEXT MEETING' were carried over to the next meeting: Impact of Budget Changes, Abandonded house on Northfield Road, and Shady Point Beach and Camp.",
+   "quote": "continued until next meeting impact of budget changes abandonded house on northfield road shady point beach and camp"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Impact of Budget Changes",
+   "what_was_recorded": "Listed as an agenda item, continued until the next meeting; the minutes print no dollar figures and no discussion of money.",
+   "figures_as_printed": [],
+   "quote": "continued until next meeting impact of budget changes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "no action (none approved)",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 780 west street",
+   "tags": [
+    "title 5",
+    "septic",
+    "780 West Street"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "no action (none signed)",
+   "quote": "septic permits signed: none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Impact of Budget Changes",
+   "resolution": "continued",
+   "quote": "continued until next meeting impact of budget changes",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Abandoned house on Northfield Road",
+   "resolution": "continued",
+   "quote": "abandonded house on northfield road",
+   "tags": [
+    "abandoned property",
+    "northfield road"
+   ]
+  },
+  {
+   "topic": "Shady Point Beach and Camp",
+   "resolution": "continued",
+   "quote": "shady point beach and camp",
+   "tags": [
+    "beach",
+    "camp",
+    "shady point"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:15 pm (no motion recorded)",
+   "quote": "meeting adjourned 7:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 780 West Street",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 780 west street"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic",
+  "budget",
+  "abandoned property",
+  "beach and camp",
+  "continued items"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

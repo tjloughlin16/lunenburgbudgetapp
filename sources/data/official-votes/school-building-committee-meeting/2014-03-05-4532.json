@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-03-05",
  "docid": "4532",
@@ -12,6 +12,315 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. This is a regulatory working session document consisting entirely of discussions, departmental consultations, and design confirmations. No formal motions or voting language appear in the minutes.",
- "cost_usd": 0.0844655
+ "note": "OCR text of a three-to-five page set of minutes with garbled characters (e.g., 'Aprox', 'NEPDES', 'neets', 'beaçon'). The attendee block lists 17 names and a separate column of agencies and firms; names and roles do not pair cleanly, so every role is 'not stated'. Firms (Tappe Associates, TMP, Nitsch, Warner Larson) and unnamed officials (ZEO, Police, Fire, DPW) are not recorded as attendees. No motions, votes, dollar figures, transfers, or public comment appear in the text. The 'Documents' entry uses the opening sentence of the paragraph that names the application form and SEC8.4.pdf; there is no printed documents heading.",
+ "cost_usd": 0.00721242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Sauvageau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: mike sauvageau tim marini pat sullivan jan carrier dave matthews"
+  },
+  {
+   "name": "Tim Marini",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: mike sauvageau tim marini pat sullivan jan carrier dave matthews"
+  },
+  {
+   "name": "Pat Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: mike sauvageau tim marini pat sullivan jan carrier dave matthews"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: mike sauvageau tim marini pat sullivan jan carrier dave matthews"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: mike sauvageau tim marini pat sullivan jan carrier dave matthews"
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "not stated",
+   "status": "present",
+   "quote": "fran mcnamara joanna bilotta simeone jack rodriquenz loxi jo calmes john londa"
+  },
+  {
+   "name": "Joanna Bilotta Simeone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "fran mcnamara joanna bilotta simeone jack rodriquenz loxi jo calmes john londa"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "fran mcnamara joanna bilotta simeone jack rodriquenz loxi jo calmes john londa"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "not stated",
+   "status": "present",
+   "quote": "fran mcnamara joanna bilotta simeone jack rodriquenz loxi jo calmes john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "fran mcnamara joanna bilotta simeone jack rodriquenz loxi jo calmes john londa"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin david warner shawn smith paul finnerty kevin alles ashley lentz charles hay"
+  },
+  {
+   "name": "David Warner",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin david warner shawn smith paul finnerty kevin alles ashley lentz charles hay"
+  },
+  {
+   "name": "Shawn Smith",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin david warner shawn smith paul finnerty kevin alles ashley lentz charles hay"
+  },
+  {
+   "name": "Paul Finnerty",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin david warner shawn smith paul finnerty kevin alles ashley lentz charles hay"
+  },
+  {
+   "name": "Kevin Alles",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin david warner shawn smith paul finnerty kevin alles ashley lentz charles hay"
+  },
+  {
+   "name": "Ashley Lentz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin david warner shawn smith paul finnerty kevin alles ashley lentz charles hay"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin david warner shawn smith paul finnerty kevin alles ashley lentz charles hay"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Concrete filled bollards with eye bolts (no chain) will be installed at gate locations along the fire lane, with 'Authorized Vehicles Only' signage; chains can be added later if enforcement is a problem.",
+   "quote": "concrete filled bollards with eye bolts (no chain) will be installed at gate locations"
+  },
+  {
+   "decision": "The driveway between the Passios parking lot and the auto loop will be widened from 24 ft to 26 ft to remove a safety bottleneck.",
+   "quote": "the driveway will be widened from 24' to 26' within the short section between passios parking lot and the auto loop"
+  },
+  {
+   "decision": "Snow will be stored on lawn areas adjacent to parking lots.",
+   "quote": "areas of lawn adjacent to parking lots would be the location for storage of snow"
+  },
+  {
+   "decision": "Exterior lighting will be LED; no objections were raised; the existing pole light near the MA Ave entrance may be adequate without an added street light.",
+   "quote": "it was noted that exterior lighting would be led type"
+  },
+  {
+   "decision": "Desired speed tables in the access drive were confirmed as desirable.",
+   "quote": "desire for speed tables in access drive were confirmed as desirable."
+  },
+  {
+   "decision": "At existing transite pipes, slip lining with new piping is preferred over total replacement (new valves required).",
+   "quote": "at existing transite pipes, slip lining with new piping is preferred vs. total replacement."
+  },
+  {
+   "decision": "Fire department hose connection valves in egress stairs will be provided at floor landings rather than intermediate landings.",
+   "quote": "fire department hose connection valves in egress stairs to be provided at floor landings"
+  },
+  {
+   "decision": "A post indicator valve on the exterior fire protection service will not be required.",
+   "quote": "a post indicator valve on exterior fire protection service will not be required."
+  },
+  {
+   "decision": "Separate knox boxes will be mounted at entrances, one blue and one red at each location, as requested by Police and Fire.",
+   "quote": "police and fire requested separate knox boxes mounted at entrances, one blue and one red at each location."
+  },
+  {
+   "decision": "Sprinkler system zoning of 4 zones (High School, Middle School, Auditorium and Gymnasium) was presented; attendees had no objections.",
+   "quote": "sprinkler system zoning of 4 zones (high school, middle school, auditorium and gymnasium) was presented. attendees had no objections."
+  },
+  {
+   "decision": "Emergency generator will be diesel; agreed as acceptable.",
+   "quote": "emergency generator is to be diesel, it was agreed that this is acceptable."
+  },
+  {
+   "decision": "Faraday will not be included as a manufacturer for the fire alarm system, per the facilities director.",
+   "quote": "do not include faraday as a manufacturer for fire alarm system per facilities director."
+  },
+  {
+   "decision": "Remote drill switch not required; integral with the Fire Alarm Control Panel is acceptable.",
+   "quote": "remote drill switch not required, integral with fire alarm control panel is acceptable."
+  },
+  {
+   "decision": "Stopper covers on manual pull stations are not required, per the facilities director; Fire Department took no exceptions.",
+   "quote": "stoppers covers on manual pull stations are not required per facilities director, fire department took no exceptions."
+  },
+  {
+   "decision": "Kitchen exhaust fan may be on standby power, with TMP to verify the load; lavatories are hard wired and will be on standby power.",
+   "quote": "kitchen exhaust fan: possibly on standby power, tmp to verify load."
+  },
+  {
+   "decision": "Additional security cameras in gymnasium and cafeteria will be provided; TMP will review all camera locations and types to potentially reduce quantities.",
+   "quote": "additional security cameras in gymnasium and cafeteria will be provided."
+  },
+  {
+   "decision": "A separate meeting will be held with public safety and the school department on details of the school's security design.",
+   "quote": "it was noted that a separate meeting would be held with public safety and the school"
+  },
+  {
+   "decision": "Parking and pedestrian lighting pole heights are not restricted; heights similar to Turkey Hill Middle School (about 20'-25') to be used.",
+   "quote": "no pole height restrictions, use pole heights similar to"
+  },
+  {
+   "decision": "Sports lighting for basketball and tennis courts is not required.",
+   "quote": "sports lighting for basketball and tennis courts not required."
+  },
+  {
+   "decision": "A new football field will be provided with lighting and a sound system.",
+   "quote": "new football field to be provided with lighting and sound system."
+  },
+  {
+   "decision": "A new pressbox will be provided with an accessible lift.",
+   "quote": "new pressbox will be provided with an accessible lift."
+  },
+  {
+   "decision": "The pump house off Oak Ave. will be demolished.",
+   "quote": "pump house off of oak ave. to be demolished."
+  },
+  {
+   "decision": "Temporary feed to be provided for existing sports lighting and concession stand fed from Oak Ave.",
+   "quote": "existing sports lighting and concession stand fed from oak ave. temporary feed to be provided."
+  },
+  {
+   "decision": "Conduit provisions to be provided for future power at gates for road access behind the building.",
+   "quote": "conduit provisions to be provided for future power at gates for road access behind"
+  },
+  {
+   "decision": "TMP to provide power for school signage at the Mass Ave and Oak Ave entrances; a possible third location at the new high school main entrance is to be considered.",
+   "quote": "tmp to provide power for school signage located at mass ave entrance and oak ave"
+  },
+  {
+   "decision": "Police Department has no proprietary manufacturer/systems.",
+   "quote": "police department has no proprietary manufacturer/systems."
+  },
+  {
+   "decision": "Fire Department Captain will verify with the Chief the potential for a second exterior fire alarm beacon.",
+   "quote": "fire department captain will verify with chief the potential for a second exterior fire"
+  },
+  {
+   "decision": "Architect recommended low energy fire alarm wiring over armored cable if it is a cost savings; type of wiring to be reviewed.",
+   "quote": "architect recommended option of low energy if it is a cost savings."
+  },
+  {
+   "decision": "Zoning Enforcement Officer's understanding is that the educational facility is exempt from Zoning By-Law conformance and no variances are required; he will confirm with Town legal counsel.",
+   "quote": "zoning enforcement officer confirmed that his understanding is that this educational facility is exempt"
+  },
+  {
+   "decision": "Development Plan Review is required with the Planning Board (no formal hearing or public notice); the board will expedite the project when submitted; 7 copies of drawings required.",
+   "quote": "planning confirmed that development plan review is required with the planning board"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire alarm wiring type (armored cable vs. low energy)",
+   "what_was_recorded": "The architect recommended low energy wiring if it would be a cost savings; no dollar figure was printed.",
+   "quote": "architect recommended option of low energy if it is a cost savings.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Project overview and schedule",
+   "resolution": "no action (briefing)",
+   "quote": "a brief summary of project schedule and anticipated milestone submissions was provided."
+  },
+  {
+   "topic": "Regulatory requirements (zoning)",
+   "resolution": "no action; ZEO to confirm with town counsel",
+   "quote": "zoning enforcement officer confirmed that his understanding is that this educational facility is exempt"
+  },
+  {
+   "topic": "Permits and approvals (Planning Board, Conservation Commission, foundation, sewer/water, SWPPP/NPDES)",
+   "resolution": "discussed; no action recorded",
+   "quote": "planning confirmed that development plan review is required with the planning board"
+  },
+  {
+   "topic": "Review of the site plan (fire lane, traffic, driveway, snow storage, site lighting)",
+   "resolution": "discussed; decisions noted",
+   "quote": "review of the site plan"
+  },
+  {
+   "topic": "Utilities and drainage",
+   "resolution": "discussed; decisions noted",
+   "quote": "utilities and drainage"
+  },
+  {
+   "topic": "Fire protection and building configuration",
+   "resolution": "discussed; decisions noted",
+   "quote": "fire protection, building configuration"
+  },
+  {
+   "topic": "Electrical (generator, fire alarm, cameras, lighting, power)",
+   "resolution": "discussed; decisions noted",
+   "quote": "emergency generator is to be diesel, it was agreed that this is acceptable."
+  },
+  {
+   "topic": "Other site and electrical items (standby power, sports lighting, demolition, signage)",
+   "resolution": "discussed; decisions noted",
+   "quote": "kitchen exhaust fan: possibly on standby power, tmp to verify load."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application form (Planning Board Development Plan Review)",
+   "where": "list",
+   "quote": "an application form was provided at the meeting, and submission requirements (sec8.4.pdf) sent separately."
+  },
+  {
+   "name": "Submission requirements (SEC8.4.pdf)",
+   "where": "list",
+   "quote": "an application form was provided at the meeting, and submission requirements (sec8.4.pdf) sent separately."
+  }
+ ],
+ "tags": [
+  "school building",
+  "regulatory working session",
+  "site plan",
+  "permits",
+  "fire protection",
+  "electrical",
+  "traffic",
+  "drainage",
+  "security",
+  "Lunenburg Middle/High School"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "an application form was provided at the meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

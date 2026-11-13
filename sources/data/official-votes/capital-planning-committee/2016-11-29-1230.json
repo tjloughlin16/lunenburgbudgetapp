@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2016-11-29",
  "docid": "1230",
@@ -12,31 +12,194 @@
  },
  "votes": [
   {
-   "motion": "to elect Jamie Toale as Chairman",
-   "moved_by": "Heather Sroka",
-   "seconded_by": "Damon McQuaid",
+   "motion": "Elect Jamie Toale as Chairman of the Capital Planning Committee.",
+   "moved_by": "Heather S.",
+   "seconded_by": "Damon M.",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "heather s. nominated jamie; damon m. seconded. the cpc approved by a vote of 5-0."
   },
   {
-   "motion": "to elect Heather Sroka as Vice-Chair",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Karin Menard",
+   "motion": "Elect Heather Sroka as Vice-Chair.",
+   "moved_by": "John H.",
+   "seconded_by": "Karin M.",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "john h. nominated heather; karin m. seconded. the cpc approved by a vote of 5-0."
   },
   {
-   "motion": "to elect Karin Menard as Clerk",
-   "moved_by": "Heather Sroka",
-   "seconded_by": "Damon McQuaid",
+   "motion": "Elect Karin Menard as Clerk.",
+   "moved_by": "Heather",
+   "seconded_by": "Damon",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "heather nominated karin; damon seconded. the cpc approved by a vote of 5-0."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Karin",
+   "seconded_by": "Damon.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "heather nominated karin; damon seconded. the cpc approved by a vote of 5-0."
+   "quote": "karin made a motion to adjourn; damon. seconded the motion. the committee approved the motion 5-0."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR of scanned minutes. All four votes were procedural (committee organization and adjournment).",
- "cost_usd": 0.0876045
+ "dropped_unquoted": 0,
+ "note": "Text is OCR of a scanned page; column layout (attendance labels and values) was scrambled and attendance was read from the Present/Also Present lines. Votes in items 3 and 4 were recorded as 5-0 with a combined result sentence. Vote quotes are verbatim from the OCR text. Public comment was recorded as None.",
+ "cost_usd": 0.0041708199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, karin menard, john henshaw"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, karin menard, john henshaw"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, damon mcquaid, heather sroka, karin menard, john henshaw"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Dir. Municipal Finance",
+   "status": "present",
+   "quote": "karen brochu, dir. municipal finance"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "By general consent, the start time of subsequent CPC meetings was changed to 5:00.",
+   "quote": "on general consent the cpc changed the start time of subsequent meetings to 5:00."
+  },
+  {
+   "decision": "The CPC gave general consent to continuing the data consolidation work; departments should input their data.",
+   "quote": "the cpc gave general consent to continuing this work; departments should input their data."
+  },
+  {
+   "decision": "Jamie Toale will work to schedule Steve Malandrinos (Town Technology), perhaps December 13.",
+   "quote": "steve malandrinos--town technology. perhaps december 13."
+  },
+  {
+   "decision": "Jamie Toale will work to schedule John Londa and Loxi Calmes (Schools), perhaps December 13.",
+   "quote": "john londa, loxi calmes-schools. perhaps december 13."
+  },
+  {
+   "decision": "The December 6 DPW & Facilities presentation by Jack Rodriquenz was scheduled.",
+   "quote": "december 6-dpw & facilities-presented by jack rodriquenz."
+  },
+  {
+   "decision": "Jamie T. plans to attend the December 8 Fin Com meeting when John updates on the spreadsheet work.",
+   "quote": "jamie t. plans to attend the december 8 fin com meeting when john updates on this."
+  },
+  {
+   "decision": "The CPC will revisit the funds-set-aside discussion at later meetings.",
+   "quote": "the cpc will revisit this at later meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Setting funds aside for future large capital projects",
+   "what_was_recorded": "John updated the CPC on a Fin Com discussion about ways to put funds aside for future large capital projects, such as fire trucks; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "john updated the cpc a discussion he started at the last fin com meeting on ways to put funds aside to"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 5:30 pm; start time later changed to 5:00 by general consent",
+   "quote": "jamie t. called the capital planning committee (cpc) to order at 5:30 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee Reorganization",
+   "resolution": "approved Jamie Toale as Chairman, Heather Sroka as Vice-Chair, Karin Menard as Clerk, each 5-0",
+   "quote": "heather s. nominated jamie; damon m. seconded. the cpc approved by a vote of 5-0.",
+   "tags": [
+    "officers",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "December 6 DPW & Facilities scheduled; further presentations to be scheduled",
+   "quote": "december 6-dpw & facilities-presented by jack rodriquenz.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Committee Comments",
+   "resolution": "no action; general consent to continue data consolidation; funds-set-aside idea to be revisited",
+   "quote": "jamie reviewed the goal of the cpc to identify and organize capital requests in priority order.",
+   "tags": [
+    "capital improvement plan",
+    "data consolidation",
+    "reserve funds"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:13 pm, 5-0",
+   "quote": "the meeting adjourned at 6:13.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft spreadsheet incorporating B1, B2, C form data (undated)",
+   "where": "text",
+   "quote": "john showed the cpc a draft incorporation of b1, b2, c form data into a spreadsheet to streamline the"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "officer elections",
+  "reorganization",
+  "capital improvement plan",
+  "capital requests",
+  "data consolidation",
+  "reserve funds",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

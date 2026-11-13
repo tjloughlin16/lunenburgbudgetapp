@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-04-14",
  "docid": "1815",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the April 9, 2013 COA minutes",
+   "motion": "Approve the April 9, 2013 COA minutes.",
    "moved_by": "Ms. Montouri",
    "seconded_by": "Mr. Lincoln",
    "outcome": "passed 11-0",
@@ -20,7 +20,7 @@
    "quote": "ms. montouri moved to approve the april 9, 2013 coa minutes. mr. lincoln seconded. on vote, motion carried, 11 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn the COA meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Wass",
    "outcome": "passed 11-0",
@@ -29,6 +29,248 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09067549999999999
+ "note": "Header reads \"May 14, 2013\" and \"Minutes approved at 6/11/13 COA meeting\", but the requested meeting date is 2013-04-14; the minutes text is taken as the record of the meeting it describes. Minutes also spell the member \"Montouri\" in the motion and \"Montuori\" elsewhere, and the signature reads \"Susan Doherty\" while the roll reads \"Sue Doherty\"; names kept as printed. No public comment section is printed. Extraction artifacts (split words, stray spaces) were collapsed in quotes. The officer slate and bylaws were not voted on in this meeting.",
+ "cost_usd": 0.0066189199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Fred Crellin",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Jim Hays",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Sis Montuori",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Whitney Lacka",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Connie Odea",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "present",
+   "quote": "deb seeley, joyce wass, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "status": "present",
+   "quote": "deb seeley, joyce wass, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "deb seeley, joyce wass, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Stephen Raboin",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "guest: stephen raboin (lunenburg finance committee)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Eagle House Meal Site special needs student volunteer program is put on hold until the staff-per-student ratio is rectified.",
+   "quote": "until that can be rectif ied the program will be put on hold."
+  },
+  {
+   "decision": "The slate of new FY14 COA officers (Chairperson Mary Lynn Conrad, Vice Chair Barbara Brown) is to be voted on at the June meeting.",
+   "quote": "coa officers which will be voted on at the june meeting as follows:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA budget at May Town Meeting",
+   "what_was_recorded": "The COA budget passed at the May Town Meeting with no opposition; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the coa budget passed at the may town meeting with no opposition."
+  },
+  {
+   "topic": "Senior Center utilities",
+   "what_was_recorded": "Beginning in FY14, Senior Center utilities will be paid through a general fund at the DPW, ending separate COA 541 account reports at meetings.",
+   "figures_as_printed": [],
+   "quote": "beginning in fy14, all senior center utilities will be paid through a general fund at the dpw"
+  },
+  {
+   "topic": "FY13 finance report",
+   "what_was_recorded": "No finance report was given because it is the end of the fiscal year and funds are being shifted; a final FY13 finance report is expected at the August meeting.",
+   "figures_as_printed": [],
+   "quote": "ms. noble reported that due to it being the end of the fiscal year"
+  },
+  {
+   "topic": "FY14 vouchers and purchase orders",
+   "what_was_recorded": "Director is working on FY14 vouchers and purchase orders due for submission; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "ms. noble is currently working on fy14"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and welcome",
+   "resolution": "opened at 9:30AM",
+   "quote": "ms. conrad (chairperson) opened the meeting at 9:30am and welcomed all in attendance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of April 9, 2013 minutes",
+   "resolution": "approved 11-0",
+   "quote": "ms. montouri moved to approve the april 9, 2013 coa minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; no finance report; updates on staffing, programs, and Memorial Day ceremony",
+   "quote": "ms. noble reported that due to it being the end of the fiscal year",
+   "tags": [
+    "director",
+    "staffing",
+    "finance",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Old Business: MCOA Board Training and COA BBQ",
+   "resolution": "BBQ date set for 8/5/13; training discussed under Director's Report",
+   "quote": "the date for the coa bbq/volunteer recognition ceremony will be held on the first monday in august which will be 8/5/13.",
+   "tags": [
+    "events",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "New Business: annual meeting reminder and officer slate",
+   "resolution": "reminder given; officer slate presented for June vote",
+   "quote": "board members were reminded that all end of year sub-committee reports are due at the june meeting.",
+   "tags": [
+    "officers",
+    "annual meeting"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Report: revised bylaws",
+   "resolution": "revised bylaws presented for board signature",
+   "quote": "ms. brown presented the revised coa bylaws for board members to sign.",
+   "tags": [
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted; no action",
+   "quote": "saying that she is doing well.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "discussed; no motion; Youth COA visit offered",
+   "quote": "ms. noble mentioned that the town of clinton has a \"youth coa\" group which is part of their high school curriculum.",
+   "tags": [
+    "board recruitment",
+    "meeting time",
+    "youth outreach"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:26AM",
+   "quote": "meeting adjourned at 10:26am",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SHINE (Serving Health Insurance Needs of Elders) Memorandum of Understanding",
+   "where": "text",
+   "quote": "memorandum of understanding was received and signed by the director."
+  },
+  {
+   "name": "Revised COA Bylaws",
+   "where": "text",
+   "quote": "ms. brown presented the revised coa bylaws for board members to sign."
+  },
+  {
+   "name": "FY13 Board Development Committee end of year report",
+   "where": "text",
+   "quote": "mr. lincoln presented the board with the fy13 board development committee end of year report early."
+  },
+  {
+   "name": "Note from former COA board member Gloria O'Brien",
+   "where": "text",
+   "quote": "saying that she is doing well."
+  },
+  {
+   "name": "Talent bank forms (2) submitted to Town Hall",
+   "where": "text",
+   "quote": "town manager mentioned to her that there were 2 talent bank forms"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "meal site",
+  "budget",
+  "officers",
+  "bylaws",
+  "board membership",
+  "health insurance",
+  "volunteers",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

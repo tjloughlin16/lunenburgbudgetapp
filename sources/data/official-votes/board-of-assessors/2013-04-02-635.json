@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-04-02",
  "docid": "635",
@@ -12,31 +12,284 @@
  },
  "votes": [
   {
-   "motion": "Revisit ABC Charitable Organizations and Chapter 61 B Application at the next meeting",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Table the first two items (ABC Charitable Organizations and Chapter 61 B Application) and revisit them at the next meeting.",
    "outcome": "not stated",
    "procedural": true,
    "quote": "a motion to \"revisit\" this at the next meeting was made and seconded."
   },
   {
-   "motion": "Grant the abatement for the property at 196 Leominster Rd",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "unanimously approved",
-   "procedural": true,
+   "motion": "Grant the abatement for the property at 196 Leominster Rd. (demolished; no plans to rebuild).",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "a motion was made to grant the abatement and was approved unanimously."
   },
   {
-   "motion": "Approve the RFP for Property Tax Administrative Services for FY14–FY16, with scope of services including on-site and support service time details",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the Property Tax Administrative Services RFP provided the scope of services includes the on-site service time and support time descriptions.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board voted to approve the rfp as long as the scope of services entails the descriptions of on-site service time and support time as it has in prior rfp's."
+  },
+  {
+   "motion": "Meet on Tuesday, May 7 at 6 pm.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the board voted to approve the rfp as long as the scope of services entails the descriptions of on-site service time and support time as it has in prior rfp's."
+   "quote": "board voted to meet on tuesday, may 7\" at 6 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan from macOS Vision; two pages. No votes record mover or seconder by name. The first motion's outcome is not stated in the minutes.",
- "cost_usd": 0.09982650000000001
+ "dropped_unquoted": 0,
+ "note": "OCR scan (macOS Vision) of typed minutes; some dates and symbols are garbled (e.g., 'April g\"', 'May 44'h', 'April 30\"'), so dates are recorded as near as legible. The signature reads 'Faquette'. Votes are recorded only as 'approved unanimously' or 'voted' with no tallies. The general approvals of vouchers, abatements, warrants, payroll, minutes and the FY13 supplemental warrant state no motion, so they are recorded as decisions, not votes. The adjournment at 7:05 pm has no recorded motion. No public comment section is printed. The 196 Leominster Rd. abatement dollar amount is not printed.",
+ "cost_usd": 0.00661072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, matthew j. papini, sr., louis j. franco, regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, matthew j. papini, sr., louis j. franco, regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, matthew j. papini, sr., louis j. franco, regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, matthew j. papini, sr., louis j. franco, regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, matthew j. papini, sr., louis j. franco, regional assessor, harald scheid, and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes, with no motion recorded.",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes."
+  },
+  {
+   "decision": "Board reviewed and approved the FY13 Supplemental Bills warrant and commitment, with no motion recorded.",
+   "quote": "board reviewed and approved the warrant and commitment of the fy13 supplemental bills for new construction."
+  },
+  {
+   "decision": "The personal property abatement application received 3/26/2013 was deemed denied as untimely; the applicant will be notified that the Board cannot act on it.",
+   "quote": "the application was \"deemed denied\" due to the application not filed timely."
+  },
+  {
+   "decision": "Harald Scheid was directed to update the RFP to include the service-time and support-time descriptions and resubmit it to Louise Paquette.",
+   "quote": "suggested that harald work on updating this rfp and resubmit to louise."
+  },
+  {
+   "decision": "Once the RFP scope includes the omissions, Louise Paquette was instructed to submit it to the Town Manager for review.",
+   "quote": "once the rfp's scope of services includes the noted omissions, louise was instructed to submit it to the town manager for review."
+  },
+  {
+   "decision": "Lou Franco agreed to handle the minutes of the next meeting, which Louise Paquette will miss.",
+   "quote": "lou franco agreed to \"handle\" the meeting minutes."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY13 overlay abatements total",
+   "what_was_recorded": "Louise reported the FY13 overlay total after the approved RE abatement: 184 abatements granted totaling $129,426.09.",
+   "figures_as_printed": [
+    "$129,426.09",
+    "184"
+   ],
+   "quote": "after tonight's approved re abatement, there has been a total of 184 abatements granted totaling $129,426.09."
+  },
+  {
+   "topic": "FY12 overlay abatements total (comparison)",
+   "what_was_recorded": "Louise reported 203 abatements were granted in FY12, with an overall total of $112,691.50.",
+   "figures_as_printed": [
+    "$112,691.50",
+    "203"
+   ],
+   "quote": "louise reported that there were 203 abatements granted in fy12 and the overall total was $112,691.50."
+  },
+  {
+   "topic": "FY13 Supplemental Bills for new construction",
+   "what_was_recorded": "Louise reported the supplemental commitment is 26 bills totaling $60,090.75, to be mailed in April.",
+   "figures_as_printed": [
+    "$60,090.75",
+    "26"
+   ],
+   "quote": "the total count for the commitment is 26 bills totaling $60,090.75."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, payroll and minutes",
+   "resolution": "approved, no motion recorded",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes.",
+   "tags": [
+    "vouchers",
+    "abatements",
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "ABC Charitable Organizations and Chapter 61 B Application",
+   "resolution": "tabled to next meeting",
+   "quote": "harald requested that the first two items (abc charitable organizations and chapter 61 b application) be tabled for this evening.",
+   "tags": [
+    "tabled",
+    "chapter 61B",
+    "charitable"
+   ]
+  },
+  {
+   "topic": "196 Leominster Rd. real estate abatement",
+   "resolution": "abatement granted unanimously",
+   "quote": "a motion was made to grant the abatement and was approved unanimously.",
+   "tags": [
+    "abatement",
+    "real estate",
+    "demolition"
+   ]
+  },
+  {
+   "topic": "Late personal property abatement application",
+   "resolution": "deemed denied as untimely",
+   "quote": "the application was \"deemed denied\" due to the application not filed timely.",
+   "tags": [
+    "personal property",
+    "abatement",
+    "deadline"
+   ]
+  },
+  {
+   "topic": "FY13 overlay report",
+   "resolution": "no action",
+   "quote": "louise reported on the fy13 overlay.",
+   "tags": [
+    "overlay",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Town Election and Town Meeting dates",
+   "resolution": "no action",
+   "quote": "louise reminded the board that the town election will be held on april 30",
+   "tags": [
+    "town election",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "FY13 Supplemental Bills warrant and commitment",
+   "resolution": "approved, no motion recorded",
+   "quote": "board reviewed and approved the warrant and commitment of the fy13 supplemental bills for new construction.",
+   "tags": [
+    "supplemental bills",
+    "new construction",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Preliminary FY14 billing calendar",
+   "resolution": "no action",
+   "quote": "harald spoke regarding the preliminary billing calendar; the process will be underway shortly.",
+   "tags": [
+    "billing",
+    "FY14",
+    "certified plans"
+   ]
+  },
+  {
+   "topic": "Personal property project contract and software upgrade",
+   "resolution": "no action",
+   "quote": "harald reported that the personal property project contract is all set and rrg will begin the process soon.",
+   "tags": [
+    "personal property",
+    "software",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Property Tax Administrative Services RFP (FY14-FY16)",
+   "resolution": "approved conditionally; revise scope and resubmit",
+   "quote": "the board voted to approve the rfp as long as the scope of services entails the descriptions of on-site service time and support time as it has in prior rfp's.",
+   "tags": [
+    "RFP",
+    "property tax administrative services",
+    "scope of services"
+   ]
+  },
+  {
+   "topic": "Abatement and ATB status; Income & Expense forms",
+   "resolution": "no action",
+   "quote": "harald reported that we have no atb's pending and reported that the income & expense report forms are being received in the office.",
+   "tags": [
+    "ATB",
+    "income and expense"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for May 7 at 6 pm",
+   "quote": "board voted to meet on tuesday, may 7\" at 6 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY14, FY15 and FY16 Request For Proposal bid for Property Tax Administrative Services (sample)",
+   "where": "list",
+   "quote": "harald presented a sample of the fy14, fy15 and fy16 request for proposal bid for property tax administrative services for the boards' review and approval."
+  },
+  {
+   "name": "Sample PFP's from the neighboring communities of Ashby and Ashburnham",
+   "where": "list",
+   "quote": "louise provided samples of pfp's from the neighboring communities of ashby and ashburnham."
+  },
+  {
+   "name": "Version (7) FY 13 PP file",
+   "where": "text",
+   "quote": "reviewing the version (7) fy 13 pp file and hopes to be able to merge the data into the newer version (10) fy 14 pp file."
+  },
+  {
+   "name": "Preliminary FY14 billing file",
+   "where": "text",
+   "quote": "in preparation for the preliminary fy14 billing file."
+  },
+  {
+   "name": "Income & Expense report forms",
+   "where": "text",
+   "quote": "the income & expense report forms are being received in the office."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "tax overlay",
+  "personal property",
+  "RFP",
+  "supplemental bills",
+  "billing calendar",
+  "town election",
+  "town meeting",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald presented a sample of the fy14, fy15 and fy16 request for proposal bid"
+ },
+ "dropped_unquoted_by_field": {}
 }

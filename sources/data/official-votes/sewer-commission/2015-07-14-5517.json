@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-07-14",
  "docid": "5517",
@@ -12,31 +12,349 @@
  },
  "votes": [
   {
-   "motion": "Waive all but another $50 non-compliance fee",
+   "motion": "Waive all but another $50 non-compliance fee for Seema of Kabobelicous.",
    "moved_by": "Sue B.",
    "seconded_by": "Troy D.",
-   "outcome": "Unanimous",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: sue b. to waive all but another $50 non-compliance fee second: troy d. vote: unanimous"
+   "quote": "motion: sue b. to waive all but another $50 non-compliance fee"
   },
   {
-   "motion": "Approve the encumbrances for fiscal year 2015 year-end of $125,679.34 and the Emerald Place FY11 deferred revenue of $22,500 for a total of $148,179.34",
+   "motion": "Approve the FY15 year-end encumbrances of $125,679.34 and the Emerald Place FY11 deferred revenue of $22,500, total $148,179.34.",
    "moved_by": "Troy D.",
    "seconded_by": "Sue B.",
-   "outcome": "Unanimous",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: troy d. to approve the encumbrances for fiscal year 2015 year-end of $125,679.34 and the emerald place fy11 deferred revenue of $22,500 for a total of $148,179.34 second: sue b. vote: unanimous"
+   "quote": "motion: troy d. to approve the encumbrances for fiscal year 2015 year-end of $125,679.34 and the emerald place fy11 deferred revenue of $22,500"
   },
   {
-   "motion": "Accept the minutes from the meeting of July 7, 2015",
+   "motion": "Accept the minutes from the meeting of July 7, 2015.",
    "moved_by": "Sue B.",
    "seconded_by": "John R.",
-   "outcome": "Unanimous",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: sue b. to accept the minutes from the meeting of july 7, 2015 second: john r. vote: unanimous"
+   "quote": "motion: sue b. to accept the minutes from the meeting of july 7, 2015 second: john r."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text via macOS Vision; page 2 is blank.",
- "cost_usd": 0.09357750000000001
+ "note": "OCR text from macOS Vision; page 2 has no readable content. No roll call, so attendance for Commission members is inferred from motions and votes; Barb L. is named only as a task assignee. The phrase 'Spring I/l' may be an OCR error for 'Spring I/I'. Votes are printed as 'Unanimous' without a numeric count. No transfers are recorded.",
+ "cost_usd": 0.00752362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Seema",
+   "status": "present",
+   "role": "from Kabobelicous",
+   "quote": "seema from kabobelicous came before the commission regarding non-compliance to grease trap regulations."
+  },
+  {
+   "name": "Pat Cotton",
+   "status": "present",
+   "role": "from Weston & Sampson",
+   "quote": "pat cotton from weston & sampson came to review the spring i/l project with the commission."
+  },
+  {
+   "name": "Deb Trumbull",
+   "status": "absent",
+   "role": "from Small Water Systems Services",
+   "quote": "deb trumbull from small water systems services had to reschedule."
+  },
+  {
+   "name": "Sue B.",
+   "status": "present",
+   "role": "",
+   "quote": "motion: sue b. to waive all but another $50 non-compliance fee"
+  },
+  {
+   "name": "Troy D.",
+   "status": "present",
+   "role": "",
+   "quote": "motion: troy d. to approve the encumbrances for fiscal year 2015 year-end of $125,679.34"
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "role": "",
+   "quote": "motion: sue b. to accept the minutes from the meeting of july 7, 2015 second: john r."
+  },
+  {
+   "name": "Barb L.",
+   "status": "not stated",
+   "role": "",
+   "quote": "sue b. and barb l. will work on this together."
+  },
+  {
+   "name": "Bob Ebersole",
+   "status": "present",
+   "role": "",
+   "quote": "public comments - bob ebersole commented on the pratt/lakeview project and the plan for pavement management."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Wright Pierce will be asked for an adjustment on price and timing of the DEP-grant work.",
+   "quote": "the proposal by wright pierce was discussed and they will be asked for an adjustment on price and timing of work."
+  },
+  {
+   "decision": "Sue B. and Barb L. will work together on updating the grease trap master list before the annual permit mailing.",
+   "quote": "sue b. and barb l. will work on this together."
+  },
+  {
+   "decision": "Troy D. will work on the second-round non-compliance notice form.",
+   "quote": "troy d. will work on form."
+  },
+  {
+   "decision": "Sue B. will lead the new project on funding sources for public projects and individual costs.",
+   "quote": "the commission discussed this new project that sue b will lead."
+  },
+  {
+   "decision": "The FY15 year-end commitment was reviewed and signed by the Commission.",
+   "quote": "the end of year commitment for the bills that had gone out since the q4 commitment, totaling $1509.50 was reviewed and signed by the commission."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap non-compliance fee (Kabobelicous)",
+   "what_was_recorded": "Commission voted to waive all but another $50 non-compliance fee.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "motion: sue b. to waive all but another $50 non-compliance fee"
+  },
+  {
+   "topic": "FY15 year-end encumbrances",
+   "what_was_recorded": "Commission approved year-end encumbrances and Emerald Place FY11 deferred revenue for a combined total.",
+   "figures_as_printed": [
+    "$125,679.34",
+    "$22,500",
+    "$148,179.34"
+   ],
+   "quote": "to approve the encumbrances for fiscal year 2015 year-end of $125,679.34 and the emerald place fy11 deferred revenue of $22,500 for a total of $148,179.34"
+  },
+  {
+   "topic": "FY15 year-end commitment",
+   "what_was_recorded": "End-of-year commitment for bills issued since the Q4 Commitment was reviewed and signed.",
+   "figures_as_printed": [
+    "$1509.50"
+   ],
+   "quote": "totaling $1509.50 was reviewed and signed by the commission."
+  },
+  {
+   "topic": "DEP grant / Wright Pierce work",
+   "what_was_recorded": "Wright Pierce proposal discussed; the firm will be asked for an adjustment on price and timing of work.",
+   "figures_as_printed": [],
+   "quote": "the proposal by wright pierce was discussed and they will be asked for an adjustment on price and timing of work."
+  },
+  {
+   "topic": "Koppelman and Paige invoice",
+   "what_was_recorded": "One invoice from Koppelman and Paige was approved; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "there was one invoice from koppelman and paige which was approved."
+  },
+  {
+   "topic": "Tighe & Bond 2014 Sewer Rate Report",
+   "what_was_recorded": "Sewer rate report sent to the Commission for review; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the tighe & bond 2014 sewer rate report was sent to the commission for review."
+  },
+  {
+   "topic": "Privilege fee timing",
+   "what_was_recorded": "Commission discussed when it is fair to assess privilege fees; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed when it is fair to assess privilege fees."
+  },
+  {
+   "topic": "Funding sources for public projects",
+   "what_was_recorded": "Discussed possible funding sources and whether the Town has a grant writer; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "they also discussed possible sources and whether there was a grant writer for the town."
+  },
+  {
+   "topic": "Privately funded extension policy",
+   "what_was_recorded": "Discussed not quoting prices in emails; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "it was discussed not quoting prices in emails."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "",
+   "topic": "Pratt/Lakeview project and pavement management plan",
+   "quote": "public comments - bob ebersole commented on the pratt/lakeview project and the plan for pavement management."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointments - Seema (Kabobelicous) grease trap non-compliance",
+   "resolution": "fee waived except $50; passed unanimous",
+   "quote": "seema from kabobelicous came before the commission regarding non-compliance to grease trap regulations.",
+   "tags": [
+    "grease trap",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Appointments - Pat Cotton (Weston & Sampson) Spring I/I project",
+   "resolution": "reviewed; next steps discussed, no vote",
+   "quote": "pat cotton from weston & sampson came to review the spring i/l project with the commission.",
+   "tags": [
+    "inflow and infiltration",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Appointments - Deb Trumbull (Small Water Systems Services)",
+   "resolution": "rescheduled",
+   "quote": "deb trumbull from small water systems services had to reschedule.",
+   "tags": [
+    "water systems"
+   ]
+  },
+  {
+   "topic": "DEP grant award - Wright Pierce",
+   "resolution": "discussed; price and timing adjustment requested",
+   "quote": "dep grant award - the proposal by wright pierce was discussed and they will be asked for an adjustment on price and timing of work.",
+   "tags": [
+    "DEP grant",
+    "Wright Pierce",
+    "manholes"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects update",
+   "resolution": "discussed; assignments made, no vote",
+   "quote": "sewer commission projects update - grease trap compliance - it was discussed updating the master list",
+   "tags": [
+    "grease trap",
+    "metering",
+    "extension policy",
+    "privilege fees",
+    "funding sources"
+   ]
+  },
+  {
+   "topic": "FY15 encumbrances",
+   "resolution": "approved, unanimous",
+   "quote": "fy15 encumbrances - the proposed encumbrances were reviewed by the commission",
+   "tags": [
+    "budget",
+    "encumbrances"
+   ]
+  },
+  {
+   "topic": "FY15 year-end commitment",
+   "resolution": "reviewed and signed",
+   "quote": "fy15 year-end commitment - the end of year commitment for the bills that had gone out since the q4 commitment, totaling $1509.50 was reviewed and signed by the commission.",
+   "tags": [
+    "budget",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Minutes of July 7, 2015",
+   "resolution": "accepted, unanimous",
+   "quote": "the minutes from july 7, 2015 were presented for approval to the commission.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Pump station reports",
+   "resolution": "reviewed and discussed; pump station tour with Small Water Systems Services raised",
+   "quote": "pump station reports - the reports were reviewed and discussed.",
+   "tags": [
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "noted; invoice approved; website updated",
+   "quote": "business manager report - the tighe & bond 2014 sewer rate report was sent to the commission for review.",
+   "tags": [
+    "sewer rates",
+    "invoices",
+    "website"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "noted",
+   "quote": "july 28, 2015 regular sewer commission meeting, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "heard",
+   "quote": "public comments - bob ebersole commented on the pratt/lakeview project and the plan for pavement management.",
+   "tags": [
+    "public comment",
+    "pavement management"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Agenda (handed out by Pat Cotton)",
+   "where": "list",
+   "quote": "he handed out an agenda and a map of the area."
+  },
+  {
+   "name": "Map of the area (handed out by Pat Cotton)",
+   "where": "list",
+   "quote": "he handed out an agenda and a map of the area."
+  },
+  {
+   "name": "Updated checklist (Privately Funded Extension Policy)",
+   "where": "list",
+   "quote": "an updated checklist was passed out and discussed by the commission."
+  },
+  {
+   "name": "Proposed FY15 encumbrances",
+   "where": "list",
+   "quote": "the proposed encumbrances were reviewed by the commission"
+  },
+  {
+   "name": "Minutes from July 7, 2015",
+   "where": "list",
+   "quote": "the minutes from july 7, 2015 were presented for approval to the commission."
+  },
+  {
+   "name": "Tighe & Bond 2014 Sewer Rate Report",
+   "where": "list",
+   "quote": "the tighe & bond 2014 sewer rate report was sent to the commission for review."
+  },
+  {
+   "name": "E-one presentation",
+   "where": "text",
+   "quote": "updated with information from the 6/30/15 meeting and the e-one presentation."
+  },
+  {
+   "name": "Wright Pierce proposal (DEP grant)",
+   "where": "text",
+   "quote": "the proposal by wright pierce was discussed"
+  }
+ ],
+ "tags": [
+  "grease trap",
+  "encumbrances",
+  "budget",
+  "DEP grant",
+  "Wright Pierce",
+  "Weston & Sampson",
+  "Spring I/I",
+  "minutes",
+  "public comment",
+  "pump stations",
+  "sewer rates"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he handed out an agenda and a map of the area"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-06-21",
  "docid": "849",
@@ -12,39 +12,212 @@
  },
  "votes": [
   {
-   "motion": "Approve the requested variances for 452 Hollis Road",
+   "motion": "Approve the requested variances for 452 Hollis Road.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, and on motion by jewell and second by rabbitt, the board voted unanimously to approve the requested variances."
+   "quote": "on motion by jewell and second by rabbitt, the board voted unanimously to approve the requested variances."
   },
   {
-   "motion": "Create an Enforceable Agreement allowing retesting of the septic system one year after occupancy at 111 Rolling Acres Road",
+   "motion": "Create an Enforceable Agreement allowing retesting of the 111 Rolling Acres Road septic system one year after occupancy.",
    "moved_by": "Shea",
    "seconded_by": "Daniels",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, and on motion by shea and second by daniels, it was agreed that an enforceable agreement would be created allowing retesting of this system one year after occupancy. all in favor."
+   "quote": "on motion by shea and second by daniels, it was agreed that an enforceable agreement would be created allowing retesting of this system one year after occupancy."
   },
   {
-   "motion": "Approve variances for 6 Beachview Drive",
+   "motion": "Approve the variances as presented for 6 Beachview Drive.",
    "moved_by": "Shea",
    "seconded_by": "Daniels",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, and on motion by shea and second by daniels, variances as present were approved. all in favor"
+   "quote": "on motion by shea and second by daniels, variances as present were approved. all in favor"
   },
   {
-   "motion": "Approve the variance request for 59 Ramgren Road",
+   "motion": "Approve the variance request for 59 Ramgren Road.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by rabbitt, the request was unanimously approved."
+   "quote": "on motion by jewell and second by rabbitt, the request was unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08731150000000001
+ "note": "Text is a macOS Vision OCR extract with some OCR errors (e.g., 'a very smal.', 'met with the board of behalf'); quotes are taken as printed. The 'Minutes Approved:' heading at the top has no motion or vote recorded beside it. No public comment section is printed. The adjournment at 8:15 pm is stated without a recorded motion, so it is not recorded as a vote. No dollar figures appear in the text. The minutes name Mrs. Bruce St. Jean and later Mr. St. Jean for the same owner; both are kept as printed.",
+ "cost_usd": 0.005147819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman george emond, vice chairman david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "David Shea",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "chairman george emond, vice chairman david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chairman george emond, vice chairman david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chairman george emond, vice chairman david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chairman george emond, vice chairman david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Tim Beauchemin",
+   "role": "representing the owner of the property",
+   "status": "present",
+   "quote": "tim beauchemin met with the board representing the owner of the property."
+  },
+  {
+   "name": "Mrs. Page",
+   "role": "Abutter",
+   "status": "present",
+   "quote": "mrs. page was also present."
+  },
+  {
+   "name": "Mrs. Bruce St. Jean",
+   "role": "property owner",
+   "status": "present",
+   "quote": "mrs. bruce st. jean, property owner, together with dave perry, title 5 inspector, met"
+  },
+  {
+   "name": "Dave Perry",
+   "role": "Title 5 Inspector",
+   "status": "present",
+   "quote": "mrs. bruce st. jean, property owner, together with dave perry, title 5 inspector, met"
+  },
+  {
+   "name": "George Sullivan",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "george sullivan met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. St. Jean was asked to attend the next Board of Health meeting on July 21, 2010, when the Enforceable Agreement would be available.",
+   "quote": "mr. st. jean was asked to be present out the next board of health meeting on july 21,"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed, no action",
+   "quote": "title 5 inspection reports reviewed: 18 new west townsend road",
+   "tags": [
+    "title 5",
+    "inspection reports"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed: 452 hollis road 6 beachview 59 ramgren road reservoir road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "452 Hollis Road variance request",
+   "resolution": "variances approved",
+   "quote": "452 hollis road - variance request",
+   "tags": [
+    "variance",
+    "septic",
+    "high groundwater"
+   ]
+  },
+  {
+   "topic": "111 Rolling Acres Road (St. Jean) Title 5 reversal request",
+   "resolution": "Enforceable Agreement to retest after one year; owner to attend July 21, 2010 meeting",
+   "quote": "111 rolling acres road - st. jean",
+   "tags": [
+    "title 5",
+    "enforceable agreement",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "6 Beachview Drive variance request",
+   "resolution": "variances approved",
+   "quote": "6 beachview drive - variance request",
+   "tags": [
+    "variance",
+    "failed system",
+    "wetland"
+   ]
+  },
+  {
+   "topic": "59 Ramgren Road variance request",
+   "resolution": "variance approved",
+   "quote": "59 ramgren road - variance request",
+   "tags": [
+    "variance",
+    "short sale",
+    "town water"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports: 18 New West Townsend Road, 20 Fitch View, 611 West Street",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 18 new west townsend road 20 fitch view 611 west street"
+  },
+  {
+   "name": "Septic permits signed: 452 Hollis Road, 6 Beachview, 59 Ramgren Road, Reservoir Road, 26 Spring Street, 64 Maple Parkway",
+   "where": "list",
+   "quote": "septic permits signed: 452 hollis road 6 beachview 59 ramgren road reservoir road 26 spring street 64 maple parkway"
+  },
+  {
+   "name": "Failing Title 5 Inspection report, November 2005 (111 Rolling Acres Road)",
+   "where": "text",
+   "quote": "a failing title 5 inspection report was completed in november of 2005."
+  },
+  {
+   "name": "New Title 5 Inspection report by Dave Perry (111 Rolling Acres Road)",
+   "where": "text",
+   "quote": "mr. dave perry, a licensed title 5 inspector, completed a new title 5"
+  },
+  {
+   "name": "Enforceable Agreement (111 Rolling Acres Road)",
+   "where": "text",
+   "quote": "it was agreed that an enforceable agreement would be created allowing retesting"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic",
+  "variances",
+  "enforceable agreement",
+  "DEP",
+  "2010"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed:"
+ },
+ "dropped_unquoted_by_field": {}
 }

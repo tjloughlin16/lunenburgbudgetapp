@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-07-17",
  "docid": "625",
@@ -12,45 +12,299 @@
  },
  "votes": [
   {
-   "motion": "maintain the decision denying the ABC application for 67 West Street Terrace",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "the board voted to maintain their decision of denial because they do not meet the eligibility requirements in regards to the july 1s* qualification date determined by dor."
+   "motion": "Approve the minutes, current expense vouchers, abatements and payroll.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, & payroll."
   },
   {
-   "motion": "rescind the former 50% tax exemption for United Parish of Lunenburg",
-   "outcome": "passed",
+   "motion": "Maintain the Board's denial of the ABC application for 67 West St. Terrace, appealed by the Institute of Professional Practice, Inc.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "the board voted to rescind their former vote of 50% ===page 2=== exemption and voted to grant the full exempt",
-   "quote_taken_from_text": true
+   "quote": "the board voted to maintain their decision of denial because they do not"
   },
   {
-   "motion": "grant full tax exemption for FY13 to United Parish of Lunenburg",
-   "outcome": "passed",
+   "motion": "Rescind the former 50% exemption vote and grant the full exemption for FY13 (United Parish letter; tenant Bonjour School relocated).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "the board voted to rescind their former vote of 50% ===page 2=== exemption and voted to grant the full exempt",
-   "quote_taken_from_text": true
+   "quote": "voted to grant the full exemption for fy13."
   },
   {
-   "motion": "contact the Town Manager with concerns regarding the proposed increase in office hours",
-   "outcome": "passed",
+   "motion": "Contact the Town Manager with the Board's concerns about the change in Town Hall office hours.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "they voted to contact the town manager with their concerns."
+   "quote": "after this discussion, they voted to contact the town manager with their concerns."
   },
   {
-   "motion": "split Tuesday and Thursday evening office coverage between Louise Paquette and Sheila (Principal Clerk)",
-   "outcome": "passed",
+   "motion": "Split the Tuesday and Thursday evening office coverage between Louise Paquette and Principal Clerk Sheila (Louise Tuesday 8am-6pm; Sheila Thursday 1pm-6pm).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the board voted that the only fair way to cover the hours is to split tuesday and thursday's evenings between louise & and the principal clerk, sheila."
   },
   {
-   "motion": "meet on Tuesday, August 7, 2012 at 6pm",
-   "outcome": "passed",
+   "motion": "Meet on Tuesday, August 7, 2012 at 6pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "voted to meet on tuesday, august 7, 2012 at 6pm."
+   "quote": "the board reviewed the calendar for the next meeting and voted to meet on tuesday, august 7, 2012 at 6pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned document; some OCR artifacts in places (e.g., '1s*' likely '1st') but votes are all clearly legible.",
- "cost_usd": 0.1417015
+ "note": "OCR text from a scanned 2-page set. The paragraph on the ABC appeal (67 West St. Terrace) is garbled in the OCR, so the reasons given beyond the stated denial are unreadable. The signature line is also garbled. The approval of minutes, vouchers, abatements and payroll is recorded as approved with no motion, mover or count, so it is listed as a procedural vote with outcome not stated. None of the recorded votes show a mover, seconder or count. The minutes name Harald and Chris without stating their roles, and Sheila, Kerry, Lou and Matt are mentioned without being shown as present; they are not listed as attendees. No adjournment motion is recorded (the minutes only say 'Meeting adjourned at 7:15 pm.'). The minutes carry a RECEIVED & FILED stamp dated JAN 09 2013.",
+ "cost_usd": 0.00814772,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: board members, louis franco, matthew papini, sr. and"
+  },
+  {
+   "name": "Matthew Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: board members, louis franco, matthew papini, sr. and"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and signed the Omitted & Revised Assessment Report for FY12.",
+   "quote": "board reviewed and signed the omitted & revised assessment report for fy12."
+  },
+  {
+   "decision": "Forest land classification for 22 Harbor Terrace to take effect January 1, 2013 once the corrected plan and application is returned before 10/1/2012; application and lien to come back to the Board for review.",
+   "quote": "it was determined that once the corrected plan and application is returned (prior to 10/1/2012)"
+  },
+  {
+   "decision": "Louise to inform Harald that a letter must be prepared notifying the ABC applicant of the Board's denial decision.",
+   "quote": "louise will inform harald that a letter will need to be prepared to notify them of the boards' decision."
+  },
+  {
+   "decision": "Harald to follow up with a letter of approval for United Parish; Board asked to be informed if United Parish leases the space to another tenant during the year.",
+   "quote": "board would like harald to follow up with a letter of approval"
+  },
+  {
+   "decision": "Board to inform Chris, Harald, and Sheila of the office coverage decision.",
+   "quote": "the board will inform chris, harald, and sheila of their decision"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY13 tax commitment",
+   "what_was_recorded": "Louise reported the total commitment for FY13 after the preliminary RE bills were mailed.",
+   "figures_as_printed": [
+    "$9,525,410.46"
+   ],
+   "quote": "total amount of commitment for fy 13 is $9,525,410.46."
+  },
+  {
+   "topic": "Omitted assessments FY2012",
+   "what_was_recorded": "Omitted assessments added additional taxes committed for FY2012.",
+   "figures_as_printed": [
+    "$5,015.34"
+   ],
+   "quote": "the omitted assessments for fy2012 was a total of additional taxes committed in the amount of $5,015.34"
+  },
+  {
+   "topic": "Revised assessments FY2012",
+   "what_was_recorded": "Revised assessments added additional taxes committed.",
+   "figures_as_printed": [
+    "$1,459.16"
+   ],
+   "quote": "revised assessments total for additional taxes committed was $1,459.16"
+  },
+  {
+   "topic": "Roll back taxes collected",
+   "what_was_recorded": "Roll back taxes collected were reported.",
+   "figures_as_printed": [
+    "$11,207.59"
+   ],
+   "quote": "roll back taxes collected were in the amount of $11,207.59."
+  },
+  {
+   "topic": "Town Hall office hours cost",
+   "what_was_recorded": "Board discussed whether extending the Assessors' office by 1.5 hours per week would raise operating costs, against the Town Manager's cost-cutting aim; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "it would in fact increase the costs of operation for the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approvals: minutes, vouchers, abatements, payroll",
+   "resolution": "approved",
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, & payroll.",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "FY13 preliminary RE bills and commitment",
+   "resolution": "reported, no action",
+   "quote": "total amount of commitment for fy 13 is $9,525,410.46.",
+   "tags": [
+    "tax commitment",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Omitted and revised assessments report FY12",
+   "resolution": "report signed",
+   "quote": "board reviewed and signed the omitted & revised assessment report for fy12.",
+   "tags": [
+    "omitted assessments",
+    "revised assessments",
+    "DLS report"
+   ]
+  },
+  {
+   "topic": "Personal property project",
+   "resolution": "no action; awaiting bids",
+   "quote": "spoke briefly on the personal property project.",
+   "tags": [
+    "personal property",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Classified forest land lien, 22 Harbor Terrace",
+   "resolution": "corrected plan required; to return to Board",
+   "quote": "classified forest land tax lien for 22 harbor terrace, map 42, pg. 44",
+   "tags": [
+    "forest land",
+    "chapter 61 lien"
+   ]
+  },
+  {
+   "topic": "ABC application appeal, 67 West St. Terrace",
+   "resolution": "denial maintained",
+   "quote": "the board voted to maintain their decision of denial because they do not",
+   "tags": [
+    "abatement appeal",
+    "exemption eligibility"
+   ]
+  },
+  {
+   "topic": "United Parish exemption, 39 Main St.",
+   "resolution": "full exemption granted for FY13",
+   "quote": "voted to grant the full exemption for fy13.",
+   "tags": [
+    "tax exemption",
+    "nonprofit"
+   ]
+  },
+  {
+   "topic": "Town Hall office hours change",
+   "resolution": "Board to contact Town Manager",
+   "quote": "louise informed the board of the notification she received on june 14th from the town",
+   "tags": [
+    "office hours",
+    "Town Manager"
+   ]
+  },
+  {
+   "topic": "Office staffing coverage schedule",
+   "resolution": "Tuesday and Thursday evenings split between staff",
+   "quote": "the board voted that the only fair way to cover the hours is to split tuesday and thursday's evenings between louise & and the principal clerk, sheila.",
+   "tags": [
+    "staffing",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for August 7, 2012 at 6pm",
+   "quote": "the board reviewed the calendar for the next meeting and voted to meet on tuesday, august 7, 2012 at 6pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY13 Preliminary RE Bills (mailed by Billtrust 6/26/2012)",
+   "where": "text",
+   "quote": "louise reported that the fy13 preliminary re bills were mailed by billtrust on 6/26/2012."
+  },
+  {
+   "name": "Omitted & Revised Assessment Report for FY12",
+   "where": "text",
+   "quote": "board reviewed and signed the omitted & revised assessment report for fy12."
+  },
+  {
+   "name": "Report from the Bureau of Local Assessment / Division of Local Services (G.L. c.59, s.75)",
+   "where": "text",
+   "quote": "louise presented a report from the bureau of local assessment / division of local services which states"
+  },
+  {
+   "name": "Classified Forest Land Tax Lien for 22 Harbor Terrace, Map 42, Pg. 44",
+   "where": "text",
+   "quote": "classified forest land tax lien for 22 harbor terrace, map 42, pg. 44"
+  },
+  {
+   "name": "Forest Management Plan and Certificate for the Dept. of Conservation & Recreation",
+   "where": "text",
+   "quote": "there was an omission of a parcel on the forest management plan and on the certificate for the dept."
+  },
+  {
+   "name": "Letter of appeal from the Institute of Professional Practice, Inc. (ABC application denial, 67 West St. Terrace)",
+   "where": "text",
+   "quote": "the board reviewed the letter of appeal from the institute of professional practice, inc."
+  },
+  {
+   "name": "Letter from the United Parish of Lunenburg dated June 28, 2012",
+   "where": "text",
+   "quote": "louise presented a letter from the united parish of lunenburg dated june 28, 2012."
+  },
+  {
+   "name": "Notification from the Town Manager regarding the Change of Town Hall Office hours (received June 14th)",
+   "where": "text",
+   "quote": "louise informed the board of the notification she received on june 14th from the town"
+  },
+  {
+   "name": "Memorandum from the Town Manager dated 6/19/2012",
+   "where": "text",
+   "quote": "she received a memorandum on 6/19/2012 from town manager informing her"
+  }
+ ],
+ "tags": [
+  "assessors",
+  "tax commitment",
+  "omitted and revised assessments",
+  "abatements",
+  "tax exemptions",
+  "forest land",
+  "appeals",
+  "office hours",
+  "staffing",
+  "personal property",
+  "next meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-11-14",
  "docid": "4486",
@@ -12,23 +12,283 @@
  },
  "votes": [
   {
-   "motion": "Approve Kerry Speidel, Loxi Jo Calmes and Michael Mackin to serve as representatives on the MSBA Designer Selection Panel, and approve the Draft Request for Designer Services",
-   "moved_by": "not stated",
-   "seconded_by": "not stated",
+   "motion": "Approve Kerry Speidel, Loxi Jo Calmes and Michael Mackin as local representatives on the MSBA Designer Selection Panel, and approve the Draft RFS for Designer; committee voted to recommend approval.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "lsbc moved to approve kerry speidel, loxi jo calmes and michael mackin to serve as local representatives on the msba designer selection panel and approval of the draft rfs for designer. the committee voted to recommend approval."
+   "quote": "lsbc moved to approve kerry speidel, loxi jo calmes and michael mackin to serve as local representatives on the msba designer selection panel and approval of the draft rfs for designer."
   },
   {
-   "motion": "Recommend approval of the Project Coordination Group",
-   "moved_by": "not stated",
-   "seconded_by": "not stated",
+   "motion": "Recommend approval of the Project Coordination Group.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "lsbc moved to recommend approval of the project coordination group. the committee voted to recommend approval."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scanned pages via macOS Vision. No formal adjournment motion recorded. The minutes identify the voting body as LSBC (Lunenburg School Building Committee) but do not name individual movers or seconders.",
- "cost_usd": 0.0990675
+ "note": "OCR text, two pages. The attendee table is column-garbled: 15 names are matched to the 15 role entries in printed order after the stray 'Assoc.' fragment, so every role after the names is an inference and should be checked against the source. Neither vote records a mover, seconder or tally; the minutes say only 'The Committee voted to recommend approval.' Numbered item 3 is missing from the text. The 'Approved by SBC December 17, 2012' stamp is not a vote recorded in this meeting. No public comment section appears. Adjournment has no recorded motion.",
+ "cost_usd": 0.00671592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent, SBC (role inferred from column order; OCR garbled the attendee table)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair of SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative, SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, Vice Chair of SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen, SBC (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manger, SBC (non-voting member) (role inferred from column order; printed 'Manger')",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, SBC (non-voting member) (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, SBC (non-voting member) (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates (role inferred from column order); prepared the minutes",
+   "status": "present",
+   "quote": "these meeting minutes were prepared by greg cohan from joslin, lesser + associates, inc."
+  },
+  {
+   "name": "Margaret Howard",
+   "role": "Joslin, Lesser + Associates (role inferred from column order)",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The project name for the RFS will be Lunenburg School Project.",
+   "quote": "the name of the projects for the rfs will be lunenburg school project."
+  },
+  {
+   "decision": "The RFS will be advertised in the Central Register and a local newspaper rather than the Boston Globe; the local paper selected is the Worcester Telegram & Gazette.",
+   "quote": "the sbc requested the rfs be advertised in the central register and a local newspaper, rather than the boston globe."
+  },
+  {
+   "decision": "The pre-proposal onsite briefing is confirmed for 12/04/12 at 3:00 PM at LHS.",
+   "quote": "the pre-proposal onsite briefing was confirmed for 12/04/12 at 3:00 pm at lhs."
+  },
+  {
+   "decision": "The advertised milestones remain as listed in the milestone schedules.",
+   "quote": "the milestone schedules listed on page 5 & 6 were discussed with the advertised milestones remaining as listed."
+  },
+  {
+   "decision": "The RFS proposal will be issued from the JLA website with a link to the Lunenburg website.",
+   "quote": "the rfs proposal will be issued from jla website with link to lunenburg website."
+  },
+  {
+   "decision": "Eight members were appointed to the Project Coordination Group, which meets regularly during the school day, with an open invitation to anyone wishing to participate.",
+   "quote": "eight (8) members were appointed to the group with an open invitation to anyone else wishing to participate in any meeting."
+  },
+  {
+   "decision": "Comments or changes on the Site and Design Alternatives matrix are to be directed to JLA for correction and collection.",
+   "quote": "comments or changes should be directed to jla for correction and collection."
+  },
+  {
+   "decision": "Next LSBC meeting topics: construction delivery methods, set-up of public forum, and review criteria and options on the evaluation matrix.",
+   "quote": "jla recommend at the next lsbc meeting the following topics be discussed: construction delivery methods, set-up of public forum, and review criteria and options on the evaluation matrix."
+  },
+  {
+   "decision": "Next meeting set for Monday, December 17, 7:00 PM in the Thomas C. Passios School, Room 13.",
+   "quote": "the next meeting will be on monday, december 17, 7:00 pm in the thomas c. passios school, room 13"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "RFS design fee for basic services",
+   "what_was_recorded": "The RFS design fee for basic services will be listed at $400K.",
+   "figures_as_printed": [
+    "$400K"
+   ],
+   "quote": "the rfs design fee for basic services will be listed at $400k with $50k in contingency for additional services such as geotech, traffic study, etc."
+  },
+  {
+   "topic": "Contingency for additional services",
+   "what_was_recorded": "A $50K contingency for additional services such as geotech and traffic study will be listed in the RFS.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "the rfs design fee for basic services will be listed at $400k with $50k in contingency for additional services such as geotech, traffic study, etc."
+  },
+  {
+   "topic": "Estimated construction budget",
+   "what_was_recorded": "The estimated construction budget will be listed as a range of $25 million to $59 million.",
+   "figures_as_printed": [
+    "$25 million to $59 million"
+   ],
+   "quote": "the estimated construction budget will be listed at $25 million to $59 million."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Request for Designer Services (RFS)",
+   "resolution": "recommended approval of draft RFS and three MSBA panel representatives",
+   "quote": "jla reviewed the request for designer services (rfs) with the committee highlighting several items.",
+   "tags": [
+    "RFS",
+    "designer selection",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Meeting and Milestone Schedule",
+   "resolution": "advertised milestones kept; pre-proposal briefing confirmed",
+   "quote": "the milestone schedules listed on page 5 & 6 were discussed with the advertised milestones remaining as listed.",
+   "tags": [
+    "schedule",
+    "milestones"
+   ]
+  },
+  {
+   "topic": "Site and Design Alternatives matrix",
+   "resolution": "reviewed; comments to JLA (numbered item 3 is absent from the text)",
+   "quote": "jla distributed a copy of the proposed site and design alternatives matrix to the group tor review and comment.",
+   "tags": [
+    "site options",
+    "evaluation matrix"
+   ]
+  },
+  {
+   "topic": "Formation of Project Coordination Group",
+   "resolution": "recommended approval",
+   "quote": "jla discussed with the lsbc the formation of a project coordination group (pcg).",
+   "tags": [
+    "project coordination group"
+   ]
+  },
+  {
+   "topic": "Next Discussion Items",
+   "resolution": "no action; topics listed for next meeting",
+   "quote": "jla recommend at the next lsbc meeting the following topics be discussed: construction delivery methods, set-up of public forum, and review criteria and options on the evaluation matrix.",
+   "tags": [
+    "delivery methods",
+    "public forum"
+   ]
+  },
+  {
+   "topic": "Next Meeting Schedule",
+   "resolution": "scheduled for December 17",
+   "quote": "the next meeting will be on monday, december 17, 7:00 pm in the thomas c. passios school, room 13",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:18 p.m.",
+   "quote": "the meeting adjourned at 8:18 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Designer Services (RFS)",
+   "where": "text",
+   "quote": "jla reviewed the request for designer services (rfs) with the committee highlighting several items."
+  },
+  {
+   "name": "Draft RFS for Designer",
+   "where": "text",
+   "quote": "and approval of the draft rfs for designer."
+  },
+  {
+   "name": "Proposed Site and Design Alternatives matrix",
+   "where": "text",
+   "quote": "jla distributed a copy of the proposed site and design alternatives matrix to the group tor review and comment."
+  },
+  {
+   "name": "Milestone schedules (pages 5 & 6 of the RFS)",
+   "where": "text",
+   "quote": "the milestone schedules listed on page 5 & 6 were discussed with the advertised milestones remaining as listed."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "Lunenburg School Project",
+  "MSBA",
+  "designer selection",
+  "RFS",
+  "project coordination group",
+  "construction budget",
+  "Joslin Lesser + Associates"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

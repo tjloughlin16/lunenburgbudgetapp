@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-12-10",
  "docid": "1831",
@@ -12,24 +12,255 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the November 12, 2013 COA meeting with the correction",
-   "moved_by": "Jane Doyle",
-   "seconded_by": "Joyce Wass",
+   "motion": "Approve the minutes of the November 12, 2013 COA meeting, with the correction.",
+   "moved_by": "Ms. Doyle",
+   "seconded_by": "Ms. Wass",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. doyle moved to approve the minutes of the novem ber 12, 2013 coa meeting, with the correction. ms. wass seconded. motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to approve the minutes of the novem ber 12, 2013 coa meeting, with the correction. ms. wass seconded. motion carried unanimously."
   },
   {
-   "motion": "Adjourn the COA meeting",
-   "moved_by": "Connie O'Dea",
-   "seconded_by": "Whitney Lacka",
+   "motion": "Adjourn the COA meeting.",
+   "moved_by": "Ms. O’Dea",
+   "seconded_by": "Ms. Lacka",
    "outcome": "passed 9-0",
    "procedural": true,
    "quote": "ms. o'dea moved to adjourn the coa meeting. ms. lacka seconded. on vote motion carried, 9 in favor 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0848245
+ "note": "Text extraction splits some words (e.g., 'Novem ber', 'W hitney', 'Barbara B rown'); quotes copy the text as extracted. Page 3 is blank. No public comment section is printed. The minutes are headed as approved at the 1/14/14 COA meeting. Board members' roles beyond those printed are not stated.",
+ "cost_usd": 0.00616962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), barbara b rown (vice-chairperson)"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), barbara b rown (vice-chairperson)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle, joyce wass, connie o'dea, w hitney lacka"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, connie o'dea, w hitney lacka"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, connie o'dea, w hitney lacka"
+  },
+  {
+   "name": "Connie O’Dea",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, connie o'dea, w hitney lacka"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, connie o'dea, w hitney lacka"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "shirley bertone, tony bertone"
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "not stated",
+   "status": "present",
+   "quote": "shirley bertone, tony bertone"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "judy tarbell and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "judy tarbell and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: deb seeley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "It was determined that Marion Pepin will be the next recipient of the Boston Post Cane.",
+   "quote": "it has been determined that marion pepin"
+  },
+  {
+   "decision": "Ms. Noble will try to arrange for the awarding of the Boston Post Cane to be done at Ms. Pepin’s home at a future date to be determined.",
+   "quote": "ms. noble will try to arrange for the awarding of the cane to be done at ms. pepin's home at a future date to be determined."
+  },
+  {
+   "decision": "Consensus that most business previously discussed in subcommittee meetings should be held within the regularly scheduled monthly COA meeting, with exceptions as the nature and importance of an issue warrants.",
+   "quote": "the consensus was that it is probably best to have most business"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Center capital requests (flooring and carpeting)",
+   "what_was_recorded": "Capital Planning Committee requests for the Senior Center included new flooring in the Eagle House older section and new carpeting in the newer section; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "new flooring in the older section of the eagle house and new carpeting in the newer section of"
+  },
+  {
+   "topic": "Senior Citizen Property Tax Work-off payments",
+   "what_was_recorded": "Town Accountant reported payments to work-off participants are processed incorrectly; W-2 forms needed, and the Town could face fines; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "if this is not done, the town of lunenburg could be subject to fines."
+  },
+  {
+   "topic": "Food Stamp Enrollment grant funding",
+   "what_was_recorded": "Director is working to procure grant funding to aid in Food Stamp Enrollment for elders; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. noble is currently working to procure grant funding to aid in food stamp enrollment for elders."
+  },
+  {
+   "topic": "MCOA advocacy for FY2014 Formula Grant funding",
+   "what_was_recorded": "MCOA is advocating for more funding in the FY2014 Formula Grant; no amount printed.",
+   "figures_as_printed": [
+    "FY2014"
+   ],
+   "quote": "advocating for more funding to become available in the fy2014 formula grant."
+  },
+  {
+   "topic": "Staff hours increase (dispatch/van and kitchen)",
+   "what_was_recorded": "Director will try to increase dispatch/van transportation hours in FY15; kitchen staff hours to increase through the Formula Grant; no dollar figures printed.",
+   "figures_as_printed": [
+    "FY15"
+   ],
+   "quote": "also increased will be kitchen staff hours through the formula grant."
+  },
+  {
+   "topic": "COA FY15 budget",
+   "what_was_recorded": "Director presented a draft COA FY15 budget to the COA Finance Subcommittee and has not yet received the FY15 budget packet from the Town Manager; no dollar figures printed.",
+   "figures_as_printed": [
+    "FY15"
+   ],
+   "quote": "presented them with a draft of the coa fy15 budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "no action",
+   "quote": "ms. conrad (chairperson) opened the meeting at 10:31am."
+  },
+  {
+   "topic": "Minutes of November 12, 2013",
+   "resolution": "approved with correction",
+   "quote": "motion carried unanimously."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational, no action",
+   "quote": "no financial report was presented at this meeting."
+  },
+  {
+   "topic": "Old Business: Boston Post Cane",
+   "resolution": "Marion Pepin named next recipient; award date to be set",
+   "quote": "it has been determined that marion pepin"
+  },
+  {
+   "topic": "Old Business: COA Policies & Procedures",
+   "resolution": "no report",
+   "quote": "coa policies & procedures: no report"
+  },
+  {
+   "topic": "Old Business: Director's Goals",
+   "resolution": "presented, no action",
+   "quote": "ms. noble presented her director's goals to the coa board as follows:"
+  },
+  {
+   "topic": "New Business: Staff Hours",
+   "resolution": "informational, no action",
+   "quote": "ms. noble reported that she will be attempting to increase the hours for dispatch/van transportation in fy15."
+  },
+  {
+   "topic": "New Business: Budget FY15",
+   "resolution": "discussed; continue meeting with FinCom until budget process complete",
+   "quote": "she has not yet received the fy15 budget packet from the town manager"
+  },
+  {
+   "topic": "Sub-committee reports",
+   "resolution": "reported; Finance discussed under budget, others no report",
+   "quote": "director's evaluation - ms. doyle reported that the"
+  },
+  {
+   "topic": "Subcommittee minutes and agenda submittals",
+   "resolution": "not discussed",
+   "quote": "subcommittee minutes & agenda submittals: not discussed"
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "none",
+   "quote": "correspondence : none"
+  },
+  {
+   "topic": "General discussion: subcommittee redundancy",
+   "resolution": "consensus reached on handling business in monthly meeting",
+   "quote": "a discussion was held in regard to sub-committees"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:45AM",
+   "quote": "ms. o'dea moved to adjourn the coa meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft COA FY15 budget",
+   "where": "text",
+   "quote": "presented them with a draft of the coa fy15 budget."
+  },
+  {
+   "name": "Director’s Goals",
+   "where": "text",
+   "quote": "ms. noble presented her director's goals to the coa board as follows:"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "minutes",
+  "budget FY15",
+  "senior center",
+  "transportation",
+  "property tax work-off",
+  "grants",
+  "Boston Post Cane",
+  "subcommittees",
+  "formula grant"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-03-15",
  "docid": "6167",
@@ -12,48 +12,420 @@
  },
  "votes": [
   {
-   "motion": "Issue negative three determination for work at 339 Electric Ave by Leominster Monument Company",
-   "moved_by": "Mr. Pease",
-   "seconded_by": "Mr. Bertram",
+   "motion": "Negative three determination for Leominster Monument Company, 339 Electric Ave (sewer service within 100 foot buffer), with Chair recused and Vice Chair Dwyer presiding.",
+   "moved_by": "Bob Pease",
+   "seconded_by": "Tom Bertram",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "mr. pease motioned for a negative three determination mr. bertram seconded and the commission voted unanimously"
   },
   {
-   "motion": "Continue the public hearing on Notice of Intent for 121 Peninsula Drive to the next meeting",
-   "moved_by": "TB",
-   "seconded_by": "BP",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "continued to the next meeting by a motion of tb with a second by bp"
-  },
-  {
-   "motion": "Continue the hearing on Notice of Intent for 675 Reservoir Road to April 5, 2017",
-   "moved_by": "BP",
-   "seconded_by": "TB",
+   "motion": "Negative 3 determination for James Vogt, 88 Horizon Island Road (temporary dock within 100 foot buffer).",
+   "moved_by": "Bob Pease",
+   "seconded_by": "Tom Bertram",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "bp moved to continue to april 5, 2017, tb seconded and the commission voted unanimously."
+   "procedural": false,
+   "quote": "mr pease moved for a negative 3 determination. mr bertram seconded and the commission voted unanimously."
   },
   {
-   "motion": "Close out the Environmental Order for 338 Sunset Lane with findings regarding replanting and tree replacement",
+   "motion": "Continue the continued public hearing on the Notice of Intent by Jonathan Boyd, 121 Peninsula Drive, to the next meeting.",
    "moved_by": "TB",
    "seconded_by": "BP",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "there was a motion to close out the eo with a finding of : replanting the well area with plans submitted march 15 2017 and replacing trees removed without permission numbers 3-6 on plans submitted march 15, 2017 and require additional plantings to be ===page 3=== submitted as an amended order of conditions as shown in plans submitted march 15, 2017motion by tb ",
-   "quote_taken_from_text": true
+   "quote": "continued to the next meeting by a motion of tb with a second by bp"
   },
   {
-   "motion": "Adjourn the meeting at 9:35 PM",
-   "moved_by": "Mr. Pease",
-   "seconded_by": "Mr. Bertram",
-   "outcome": "passed",
+   "motion": "Continue the continued Notice of Intent hearing for Gougen Construction, 675 Reservoir Road, to April 5, 2017.",
+   "moved_by": "BP",
+   "seconded_by": "TB",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "bp moved to continue to april 5, 2017, tb seconded and the commission voted unanimously."
+  },
+  {
+   "motion": "Close out the enforcement order (EO) for 338 Sunset with the finding to replant the well area and replace removed trees per plans submitted March 15, 2017, and issue an amended Order of Conditions.",
+   "moved_by": "TB",
+   "seconded_by": "BP",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "there was a motion to close out the eo with a finding of :"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:35 PM.",
+   "moved_by": "Bob Pease",
+   "seconded_by": "Tom Bertram",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "the meeting was adjourned at 9:35 pm by motion of mr. pease and a second by mr. bertram."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1185045
+ "dropped_unquoted": 0,
+ "note": "Text is legible and readable throughout. Several members appear only by initials (TB, BP, MM, RB, JR, CL) which I did not expand. Vote tallies are recorded only as 'unanimously'. Some motions have no printed result, so their outcome is 'not stated'. No public comment speakers are recorded under the Public Comment headings. Woodlands at Hickory Hills was continued for lack of quorum and no individual is named for it.",
+ "cost_usd": 0.00956392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm with chairman bursch presiding with all members present except mr. luck and mr. jones."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "note: chair recused himself vice chair dwyer presided."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member",
+   "status": "present",
+   "quote": "mr. pease motioned for a negative three determination mr. bertram seconded and the commission voted unanimously"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "mr. pease motioned for a negative three determination mr. bertram seconded and the commission voted unanimously"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "with all members present except mr. luck and mr. jones."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "storm water committee report- jr meeting this past week reviewing with consultant on duties."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Member",
+   "status": "absent",
+   "quote": "with all members present except mr. luck and mr. jones."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mr marro explained the distance (41 feet) to the swale on the untitl property."
+  },
+  {
+   "name": "Kelly",
+   "role": "represented her self, from Leominster Monument (applicant)",
+   "status": "present",
+   "quote": "kelly from leominster monument represented her self."
+  },
+  {
+   "name": "James Vogt",
+   "role": "applicant",
+   "status": "present",
+   "quote": "mr. vogt explained the project to the commission."
+  },
+  {
+   "name": "Jonathan Boyd",
+   "role": "applicant (Notice of Intent, 121 Peninsula Drive)",
+   "status": "not stated",
+   "quote": "by jonathan boyd for work at 121 peninsula drive will be held."
+  },
+  {
+   "name": "Chris",
+   "role": "from Hanngian",
+   "status": "present",
+   "quote": "chris from hanngian appeared with paul gougen to present the commission with the changes outlined at the march 1, 2017 meeting."
+  },
+  {
+   "name": "Paul Gougen",
+   "role": "role not printed (Gougen Construction application, 675 Reservoir Road)",
+   "status": "present",
+   "quote": "chris from hanngian appeared with paul gougen to present the commission with the changes outlined at the march 1, 2017 meeting."
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "represented the applicant (Emerald Place Beach Erosion)",
+   "status": "present",
+   "quote": "anthony cleaves represented the applicant."
+  },
+  {
+   "name": "Gary Gouldrup",
+   "role": "presenter (Forest Stewardship Grant findings)",
+   "status": "present",
+   "quote": "gary gouldrup presented his findings to the conservation commission."
+  },
+  {
+   "name": "Tammy and Seth Hebert",
+   "role": "to be invited (goats for invasives)",
+   "status": "not stated",
+   "quote": "tammy and seth hebert will be invited to come in to discuss the use of goats for dealing with invasives."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Changes suggested for the Gougen Construction project will be added to plans for the April 5, 2017 meeting.",
+   "quote": "changes suggested will be added to plans for the meeting of april 5, 2017."
+  },
+  {
+   "decision": "No consensus reached on whether added plantings could replace the fine for 675 Reservoir Road; further discussion deferred to a future date.",
+   "quote": "no consensus was reached and further discussion deferred to a future date."
+  },
+  {
+   "decision": "Rain garden style plantings determined to be meaningful at the front of the 675 Reservoir Road property, where sheet flow is greatest.",
+   "quote": "uses of rain garden style plantings was examined and determined it would be meaning full in the front of the property"
+  },
+  {
+   "decision": "Front planting beds on the sloped area to be native plant material used as ground cover, without a retaining wall structure.",
+   "quote": "tb ensured that the planting beds on the front of the sloped area would be native plant material and used as ground cover without a retaining wall structure."
+  },
+  {
+   "decision": "208 Northfield Road (Woodlands at Hickory Hills) hearing continued due to lack of quorum.",
+   "quote": "continued due to lack of quorum."
+  },
+  {
+   "decision": "183 Hemlock Dr. continued until April 19, 2017.",
+   "quote": "183 hemlock dr. continued until april 19, 2017"
+  },
+  {
+   "decision": "Emerald Place Beach Erosion: applicant to file an amendment (rock lined or bio-swale) before the next meeting.",
+   "quote": "there will be an amendment filed prior to the 19 th meeting"
+  },
+  {
+   "decision": "Tammy and Seth Hebert to be invited to come in to discuss use of goats for dealing with invasives.",
+   "quote": "tammy and seth hebert will be invited to come in to discuss the use of goats for dealing with invasives."
+  },
+  {
+   "decision": "Approval of 2/15/17 minutes deferred; members still working on them.",
+   "quote": "approval of 2/15/17 minutes still working on them"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fines: collection of fines regulation",
+   "what_was_recorded": "New Business discussion of regulations and adoption of regulations relative to collection of fines; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion of regulation and adoptions of such regulations relative to collection of fines"
+  },
+  {
+   "topic": "675 Reservoir Road: remedial plantings in place of fine",
+   "what_was_recorded": "A suggestion that added remedial plantings could be done in place of the fine; one member objected that plantings were not commensurate with the fine amount. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "suggested it could be done in place of the fine."
+  },
+  {
+   "topic": "Revolving account for trail maintenance",
+   "what_was_recorded": "RB spoke about the revolving account and its use for trail maintenance; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "rb spoke about the revolving account and the use of it for trail maintenance."
+  },
+  {
+   "topic": "Forest Stewardship Grant implementation",
+   "what_was_recorded": "Discussion of goals and other items related to the Forest Stewardship Grant; Gary Gouldrup presented findings. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "forest stewardship grant implementation - discussion of goals and other items related to grant"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "called to order; Luck and Jones absent",
+   "quote": "meeting called to order at 7 pm with chairman bursch presiding with all members present except mr. luck and mr. jones.",
+   "tags": [
+    "quorum",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Leominster Monument Company, 339 Electric Ave, determination",
+   "resolution": "negative 3 determination voted unanimously",
+   "quote": "mr. pease motioned for a negative three determination mr. bertram seconded and the commission voted unanimously",
+   "tags": [
+    "wetlands",
+    "determination",
+    "sewer",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "James Vogt, 88 Horizon Island Road, determination",
+   "resolution": "negative 3 determination voted unanimously",
+   "quote": "mr pease moved for a negative 3 determination. mr bertram seconded and the commission voted unanimously.",
+   "tags": [
+    "wetlands",
+    "determination",
+    "dock",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Jonathan Boyd, 121 Peninsula Drive, Notice of Intent",
+   "resolution": "continued to next meeting",
+   "quote": "continued to the next meeting by a motion of tb with a second by bp",
+   "tags": [
+    "notice of intent",
+    "tree clearing",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Woodlands at Hickory Hills, 208 Northfield Road, determination",
+   "resolution": "continued due to lack of quorum",
+   "quote": "continued due to lack of quorum.",
+   "tags": [
+    "wetlands",
+    "dock",
+    "kayak rack",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Gougen Construction, 675 Reservoir Road, Notice of Intent",
+   "resolution": "continued to April 5, 2017",
+   "quote": "bp moved to continue to april 5, 2017, tb seconded and the commission voted unanimously.",
+   "tags": [
+    "notice of intent",
+    "septic",
+    "plantings",
+    "fine"
+   ]
+  },
+  {
+   "topic": "Administrative hearing, 338 Sunset (enforcement order)",
+   "resolution": "motion to close out the EO with findings and amended Order of Conditions",
+   "quote": "there was a motion to close out the eo with a finding of :",
+   "tags": [
+    "enforcement",
+    "replanting",
+    "trees removed"
+   ]
+  },
+  {
+   "topic": "Current business: signatures, certificates of compliance, enforcement",
+   "resolution": "43 Island Road continued; 338 Sunset closed; 183 Hemlock Dr continued; Emerald Place amendment pending",
+   "quote": "183 hemlock dr. continued until april 19, 2017",
+   "tags": [
+    "certificates of compliance",
+    "enforcement",
+    "beach erosion"
+   ]
+  },
+  {
+   "topic": "New business: fines regulation",
+   "resolution": "discussion only",
+   "quote": "discussion of regulation and adoptions of such regulations relative to collection of fines",
+   "tags": [
+    "fines",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Old business: Forest Stewardship Grant",
+   "resolution": "discussion; findings presented",
+   "quote": "gary gouldrup presented his findings to the conservation commission.",
+   "tags": [
+    "grant",
+    "forest stewardship"
+   ]
+  },
+  {
+   "topic": "Approval of 2/15/17 minutes",
+   "resolution": "not approved; still being prepared",
+   "quote": "approval of 2/15/17 minutes still working on them",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "storm water committee report- jr meeting this past week reviewing with consultant on duties.",
+   "tags": [
+    "stormwater",
+    "holman st"
+   ]
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "discussed; appeal update, goats, tax title list",
+   "quote": "the commission examined the list for potential tax title properties and ones we may be interested in.",
+   "tags": [
+    "budget",
+    "revolving account",
+    "appeal",
+    "invasives",
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "noted next meeting and March 29 workshop",
+   "quote": "next meeting for april 5, 2017 at 7:00 pm in the billotta meeting room",
+   "tags": [
+    "schedule",
+    "workshop",
+    "wetland regulations"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:35 PM",
+   "quote": "the meeting was adjourned at 9:35 pm by motion of mr. pease and a second by mr. bertram.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "WPA Form 1 and modified ortho photo by the applicant, dated March 1, 2017 (Leominster Monument Company, 339 Electric Ave)",
+   "where": "list",
+   "quote": "documents submitted for consideration was a wpa form 1 and a modified ortho photo by the applicant dated march 1, 2017."
+  },
+  {
+   "name": "WPA Form 1 and modified sketch plan with signed photos by the applicant, dated March 1, 2017 (James Vogt, 88 Horizon Island Road)",
+   "where": "list",
+   "quote": "documents submitted for consideration was a wpa form 1 and a modified sketch plan with signed photos by the applicant dated march 1, 2017."
+  },
+  {
+   "name": "Letter submitted by CL (Gougen Construction, 675 Reservoir Road)",
+   "where": "text",
+   "quote": "cl had submitted a letter and his comments were made part of the review."
+  },
+  {
+   "name": "Plans submitted March 15, 2017 (338 Sunset)",
+   "where": "text",
+   "quote": "replanting the well area with plans submitted march 15 2017 and replacing trees removed without permission"
+  },
+  {
+   "name": "MassDEP Superseding Order (appeal on 120 West Street)",
+   "where": "text",
+   "quote": "still awaiting massdep's decision of a superseding order."
+  },
+  {
+   "name": "List of potential tax title properties",
+   "where": "text",
+   "quote": "the commission examined the list for potential tax title properties and ones we may be interested in."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "determinations",
+  "enforcement",
+  "continued hearings",
+  "forest stewardship grant",
+  "fines regulation",
+  "tax title",
+  "quorum"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents submitted for consideration was a wpa form 1"
+ },
+ "dropped_unquoted_by_field": {}
 }

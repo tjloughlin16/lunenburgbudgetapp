@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-05-21",
  "docid": "1666",
@@ -12,43 +12,340 @@
  },
  "votes": [
   {
-   "motion": "To approve the Notice of Intent filed by Melvin Bertram of Hickory Hills Landowners, Inc. for installation of a filter blanket along the toe of the dam at 199 Townsend Harbor Road",
-   "outcome": "passed",
+   "motion": "Approve the continued Notice of Intent for 191 Elmwood Road, Lot 3 after the house footprint was moved out of the 50' no build zone.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "to direct and control flow the velocity of water. approved unanimous"
+   "quote": "footprint of house has been moved out of 50' no build zone. approved unanimous"
   },
   {
-   "motion": "To approve the Notice of Intent filed by John S. Giaimo for a single family home and associated structures at 191 Elmwood Road, Lot 3",
-   "outcome": "passed",
+   "motion": "Approve the amendment for 314 Townsend Harbor Road (screen gazebo enclosure).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed; Rich and JJ abstained",
    "procedural": false,
-   "quote": "house has been moved out of 50' no build zone. approved unanimous"
+   "quote": "will raise level in area about 6\". approved rich and jj abstained"
   },
   {
-   "motion": "To approve the amendment filed by John T. Rabbitt for a 12 x 14 screen gazebo enclosure at 314 Townsend Harbor Road",
-   "outcome": "passed",
+   "motion": "Determination for 423 Lancaster Avenue in-ground pool replacement (Request for Determination of Applicability), printed as Negative 3, Unanimous.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous (printed as 'Negative 3   Unanimous')",
    "procedural": false,
-   "quote": "6\". approved rich and jj abstained"
+   "quote": "no problem with replacement. negative 3"
   },
   {
-   "motion": "To issue a Negative Determination of Applicability for the Request for Determination of Applicability filed by Thomas/Faith Merchant for installation of an in-ground pool at 423 Lancaster Avenue",
-   "outcome": "passed",
+   "motion": "Close the hearing and conditionally approve the Notice of Intent for 739-777 Chase Road (Empire Management Corporation), contingent on receiving final plans on June 4.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "no problem with replacement. negative 3 unanimous"
+   "quote": "unanimously voted to close and conditionally approve contingent on receiving final plans on june 4"
   },
   {
-   "motion": "To close the public hearing and conditionally approve the Notice of Intent filed by Empire Management Corporation for construction of a gravel access drive, water supply well, and paved parking area at 739-777 Chase Road, contingent on receiving final plans on June 4th",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "unanimously voted to close and conditionally approve contingent on receiving final plans on june 4 th ."
-  },
-  {
-   "motion": "To approve the minutes from May 7, 2014",
+   "motion": "Approve the minutes of 5-7-2014.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval: 5-7-2014 ~ approved"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd document; header line corrupted but all votes are clearly readable. No missing pages. Votes have no recorded moved_by or seconded_by attribution in the minutes.",
- "cost_usd": 0.12281249999999999
+ "dropped_unquoted": 2,
+ "note": "Text is a rough extraction: words are split mid-word (e.g., 'pub lic', 'Melvin B ertram') and some line breaks fall inside items. Quotes reproduce the printed text as it appears. The 423 Lancaster Avenue entry reads 'Negative 3   Unanimous' with no clear count; the vote is recorded as printed and not interpreted. No motions, movers or seconders are printed; only results are. The 8:10 PM Chase Road outcome is stated as 'Unanimously voted'. Adjournment has no motion printed. No budget figures or documents are named.",
+ "cost_usd": 0.00826712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, rich bursch, jj cote, jack byrne"
+  },
+  {
+   "name": "Rich Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, rich bursch, jj cote, jack byrne"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, rich bursch, jj cote, jack byrne"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, rich bursch, jj cote, jack byrne"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "present",
+   "quote": "jack byrne, sharon jordan, john lattanzi"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "sharon jordan, john lattanzi, matt marro"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "john lattanzi, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "john lattanzi, matt marro, jan carrier"
+  },
+  {
+   "name": "Walt Parquet",
+   "role": "presenter",
+   "status": "present",
+   "quote": "walt parquet along with tom bertram presented."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "presenter",
+   "status": "present",
+   "quote": "walt parquet along with tom bertram presented."
+  },
+  {
+   "name": "Melvin Bertram",
+   "role": "applicant (Hickory Hills Landowners, Inc.)",
+   "status": "present",
+   "quote": "filed by melvin b ertram of hickory hills landowners, inc."
+  },
+  {
+   "name": "Janet Giaimo",
+   "role": "presenter",
+   "status": "present",
+   "quote": "janet giaimo presented new plan."
+  },
+  {
+   "name": "Jack Kutarnia",
+   "role": "",
+   "status": "present",
+   "quote": "jack kutarnia 192 townsend harbor road 978-582-61 39"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "applicant (314 Townsend Harbor Road)",
+   "status": "present",
+   "quote": "john rabbitt 314 townsend harbor road 978-582-949 1"
+  },
+  {
+   "name": "Tom Merchant",
+   "role": "",
+   "status": "present",
+   "quote": "tom merchant 423 lancaster avenue 978-582-9611"
+  },
+  {
+   "name": "Faith Merchant",
+   "role": "applicant (423 Lancaster Avenue)",
+   "status": "present",
+   "quote": "faith merchant 423 lancaster avenue 978-582-9611"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "presenter (peer review concerns)",
+   "status": "present",
+   "quote": "anthony cleaves presented peer review concerns."
+  },
+  {
+   "name": "Brian Lafferty",
+   "role": "",
+   "status": "present",
+   "quote": "brian lafferty 626 main street, concord 508-527-2 000"
+  },
+  {
+   "name": "Jim Almonte",
+   "role": "provided answers",
+   "status": "present",
+   "quote": "jim almonte provided answers."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 7:45 PM Brandon Kibbee grant application signing (Lane Property) was moved to June 4, 2014, 7:00 PM.",
+   "quote": "grant application signing ~ lane property ~ moved to june 4, 2014, 7:00 pm"
+  },
+  {
+   "decision": "Jan will issue an Emergency Permit so a new well can be put in immediately, with the NOI for an addition to be on the July 2 agenda.",
+   "quote": "jan brought up a noi to be on the july 2 agenda for an addition, but they need an emergency permit to put in a new well immediately. jan will issue ep."
+  },
+  {
+   "decision": "Sharon will present the NOI for the Dyer property at the July 16 meeting.",
+   "quote": "sharon will present noi for dyer property"
+  },
+  {
+   "decision": "Jack (DPW) directed to fix the drainage at 803/809 Leominster Road.",
+   "quote": "the area. jack (dpw) to fix."
+  },
+  {
+   "decision": "Stormwater (Sharon): more information to come in future meetings.",
+   "quote": "new business: stormwater ~ sharon ~ more information forthcoming in future meetings"
+  },
+  {
+   "decision": "Commission asked the 739-777 Chase Road applicant for a maintenance schedule; applicant to present an updated plan and wetland buffer markers are needed.",
+   "quote": "commission asked for a maintenance schedule."
+  },
+  {
+   "decision": "Matt to seek third party review of the bordering wetland area at 739-777 Chase Road; applicant to present updated plan.",
+   "quote": "will present updated plan."
+  },
+  {
+   "decision": "35 Leominster Road held pending Jack's reply with suggestions.",
+   "quote": "35 leominster road ~ waiting for jack's reply with suggestions"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Matt",
+   "stated_role": "",
+   "topic": "proposed gas line through conservation and protected lands",
+   "quote": "matt discussed the gas line that i s being proposed in the area"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: proposed gas line",
+   "resolution": "discussed; ongoing update",
+   "quote": "matt discussed the gas line that i s being proposed in the area",
+   "tags": [
+    "gas pipeline",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "191 Elmwood Road, Lot 3 continuation (7:15 PM)",
+   "resolution": "approved unanimously",
+   "quote": "footprint of house has been moved out of 50' no build zone. approved unanimous",
+   "tags": [
+    "single family home",
+    "buffer zone",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "314 Townsend Harbor Road amendment (7:30 PM)",
+   "resolution": "approved; Rich and JJ abstained",
+   "quote": "will raise level in area about 6\". approved rich and jj abstained",
+   "tags": [
+    "gazebo",
+    "retaining wall",
+    "amendment"
+   ]
+  },
+  {
+   "topic": "Brandon Kibbee grant application signing (7:45 PM)",
+   "resolution": "moved to June 4, 2014",
+   "quote": "grant application signing ~ lane property ~ moved to june 4, 2014, 7:00 pm",
+   "tags": [
+    "grant",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "423 Lancaster Avenue RDA (8:00 PM)",
+   "resolution": "unanimous; printed as Negative 3",
+   "quote": "no problem with replacement. negative 3",
+   "tags": [
+    "pool",
+    "request for determination"
+   ]
+  },
+  {
+   "topic": "739-777 Chase Road continuation (8:10 PM)",
+   "resolution": "closed and conditionally approved",
+   "quote": "unanimously voted to close and conditionally approve contingent on receiving final plans on june 4",
+   "tags": [
+    "water supply well",
+    "parking",
+    "stormwater",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Minutes approval 5-7-2014",
+   "resolution": "approved",
+   "quote": "minutes approval: 5-7-2014 ~ approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: Stormwater",
+   "resolution": "no action; more information later",
+   "quote": "new business: stormwater ~ sharon ~ more information forthcoming in future meetings",
+   "tags": [
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Old business: 35 Leominster Road, Lake Whalom Spillway, 803/809 Leominster Road",
+   "resolution": "35 Leominster Road waiting; spillway no action; drainage DPW to fix",
+   "quote": "lake whalom spillway ~ needs to be cleaned up ~ unable to find a contact person for wilder beach association",
+   "tags": [
+    "drainage",
+    "spillway",
+    "Leominster Road"
+   ]
+  },
+  {
+   "topic": "Announcements: meeting schedule",
+   "resolution": "no action",
+   "quote": "july 2 & 16 november 5 & 19",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Commission comment",
+   "resolution": "Emergency Permit to be issued; Dyer NOI to be presented July 16",
+   "quote": "jan brought up a noi to be on the july 2 agenda for an addition, but they need an emergency permit to put in a new well immediately. jan will issue ep.",
+   "tags": [
+    "emergency permit",
+    "well"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:20 PM",
+   "quote": "adjournment: 9:20 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "public hearing",
+  "dam",
+  "gas pipeline",
+  "water supply well",
+  "drainage",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 1,
+  "topics": 1
+ }
 }

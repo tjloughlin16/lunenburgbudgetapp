@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-03-27",
  "docid": "2346",
@@ -12,47 +12,262 @@
  },
  "votes": [
   {
-   "motion": "Accept revised minutes from January 26, 2012",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed unanimously",
+   "motion": "Accept the revised minutes of 1/26/12 as revised.",
+   "moved_by": "BR",
+   "seconded_by": "BL",
+   "outcome": "passed",
    "procedural": true,
    "quote": "br made motion to accept as revised, bl seconded, all in favor"
   },
   {
-   "motion": "Accept minutes from February 9, 2012",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Scott Gile",
-   "outcome": "passed unanimously",
+   "motion": "Accept the minutes of 2/9/12.",
+   "moved_by": "BR",
+   "seconded_by": "SG",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to accept, sg seconded, all in favor"
+   "quote": "reviewed minutes from 2/9/12; br made motion to accept, sg seconded, all in favor"
   },
   {
-   "motion": "Accept minutes from February 23, 2012",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed unanimously",
+   "motion": "Accept the minutes of 2/23/12.",
+   "moved_by": "BR",
+   "seconded_by": "BL",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to accept, bl seconded, all in favor"
+   "quote": "reviewed minutes from 2/23/12; br made motion to accept, bl seconded, all in favor"
   },
   {
-   "motion": "Accept minutes from March 15, 2012",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Scott Gile",
-   "outcome": "passed unanimously",
+   "motion": "Accept the minutes of 3/15/12.",
+   "moved_by": "BR",
+   "seconded_by": "SG",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to accept, sg seconded, all in favor"
+   "quote": "reviewed minutes from 3/15/12; br made motion to accept, sg seconded, all in favor"
   },
   {
-   "motion": "Adjourn at 9 pm",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Scott Gile",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 9 pm.",
+   "moved_by": "BL",
+   "seconded_by": "SG",
+   "outcome": "passed",
    "procedural": true,
    "quote": "bl made motion to adjourn at 9 pm, sg seconded, all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text. Minutes from March 8, 2012 were reviewed but no vote was taken, as revision was to be made. No substantive votes (non-procedural) are recorded in these minutes.",
- "cost_usd": 0.14043049999999999
+ "note": "OCR text of minutes is partly garbled. Vote results are recorded only as 'all in favor' with no numeric count, so outcomes are 'passed'. The text also includes appended packet pages (Town Manager FY2013 budget recommendation tables, DPW report, building condition surveys, APWA statement, road inventory) that the minutes do not name as used at the meeting, so they are not recorded as documents or budget items. The minutes print 7:00 PM call to order and 9 pm adjournment.",
+ "cost_usd": 0.01031092,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, chairman"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, vice-chairman"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "martha mcdonald, secretary"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "John Male",
+   "role": "",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "Jack Rodriguez",
+   "role": "DPW",
+   "status": "present",
+   "quote": "department budget meeting presentation by jack rodriguez, dpw - handout"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers made observations and comments regarding the proposed override"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of 3/8/12 will be revised; no vote recorded.",
+   "quote": "reviewed minutes from 3/8/12 and revision will be made"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Proposed override (public comment)",
+   "what_was_recorded": "Dave Rodgers said he expects a 17% increase from an override plus 2 ½%, and that no raises or perks can exceed 2 ½%.",
+   "figures_as_printed": [
+    "17%",
+    "2 ½%"
+   ],
+   "quote": "expects a 17% increase from an override plus 2 ½%"
+  },
+  {
+   "topic": "School Building Committee feasibility study",
+   "what_was_recorded": "Discussion of the timing of a warrant to fund a feasibility study.",
+   "figures_as_printed": [
+    "$750K"
+   ],
+   "quote": "timing of warrant to fund $750k feasibility study"
+  },
+  {
+   "topic": "Department budget meeting - DPW",
+   "what_was_recorded": "Jack Rodriguez of DPW presented at the department budget meeting using a handout; the minutes print no dollar figures.",
+   "figures_as_printed": [],
+   "quote": "department budget meeting presentation by jack rodriguez, dpw - handout"
+  },
+  {
+   "topic": "FY13 budget general discussion",
+   "what_was_recorded": "Draft version 3 of the FY13 budget reviewed; no warrant articles yet to review. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "fy13 budget general discussion - review draft version3 - handout"
+  },
+  {
+   "topic": "Proposed Sewer Committee budget",
+   "what_was_recorded": "The adjusted budget column was noted as containing information that should not be included. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "proposed sewer committee budget - adjusted budget column has some information that should not be included"
+  },
+  {
+   "topic": "Override history",
+   "what_was_recorded": "Discussed override history by community for the last three years. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "discussed override history by community for last three years"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Proposed override and spending limits",
+   "quote": "dave rodgers made observations and comments regarding the proposed override"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "no action",
+   "tags": [
+    "solar zoning",
+    "public hearing",
+    "override",
+    "public comment"
+   ],
+   "quote": "public hearing will be held april 9* by the planning board to review zoning of solar energy projects"
+  },
+  {
+   "topic": "Department budget meeting presentation (DPW)",
+   "resolution": "presented",
+   "tags": [
+    "DPW",
+    "budget",
+    "handout"
+   ],
+   "quote": "department budget meeting presentation by jack rodriguez, dpw - handout"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved four sets; 3/8/12 minutes to be revised",
+   "tags": [
+    "minutes approval"
+   ],
+   "quote": "reviewed minutes from 2/9/12; br made motion to accept, sg seconded, all in favor"
+  },
+  {
+   "topic": "Committee reports - School Building Committee",
+   "resolution": "no action",
+   "tags": [
+    "school building",
+    "feasibility study"
+   ],
+   "quote": "school building committee - meeting talked about the condition of the current buildings"
+  },
+  {
+   "topic": "Old business - FY13 budget, sewer budget, override history",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "FY13 budget",
+    "sewer",
+    "override"
+   ],
+   "quote": "fy13 budget general discussion - review draft version3 - handout"
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled",
+   "tags": [
+    "public hearing",
+    "regular meeting"
+   ],
+   "quote": "april 5 - public hearing"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "bl made motion to adjourn at 9 pm, sg seconded, all in favor"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Department Budget Meeting presentation by Jack Rodriguez, DPW - HANDOUT",
+   "where": "list",
+   "quote": "department budget meeting presentation by jack rodriguez, dpw - handout"
+  },
+  {
+   "name": "FY13 Budget General Discussion - draft version3 - HANDOUT",
+   "where": "list",
+   "quote": "fy13 budget general discussion - review draft version3 - handout"
+  },
+  {
+   "name": "Proposed Sewer Committee Budget",
+   "where": "text",
+   "quote": "proposed sewer committee budget - adjusted budget column has some information that should not be included"
+  },
+  {
+   "name": "The Beacon, March, 2012",
+   "where": "text",
+   "quote": "the beacon, march, 2012"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY13 budget",
+  "override",
+  "sewer budget",
+  "DPW",
+  "school building committee",
+  "public comment",
+  "minutes approval",
+  "2012"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-08-09",
  "docid": "2329",
@@ -12,23 +12,221 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 7/26/2012 as corrected",
-   "moved_by": "Scott Gile",
-   "seconded_by": "Terri Burchfield",
-   "outcome": "Approved 4-0",
+   "motion": "Approve the minutes of 7/26/2012 as corrected.",
+   "moved_by": "SG",
+   "seconded_by": "TB",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "sg motioned to approve the minutes as corrected. tb seconded. approved 4-0."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Scott Gile",
-   "seconded_by": "Terri Burchfield",
-   "outcome": "approved 4-0",
+   "motion": "Adjourn the meeting at 8:48 PM.",
+   "moved_by": "SG",
+   "seconded_by": "TB",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion to adjourn was made at 8:48 pm by sg and seconded by tb, approved 4-0."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes marked as OCR'd from macOS Vision. Page 2 is referenced but not provided in the text; both votes found are on page 1.",
- "cost_usd": 0.1036675
+ "dropped_unquoted": 1,
+ "note": "Text is OCR of a scanned page; this is page 1 of 2 and page 2 is not included. Attendance of Brian Laffond, John Male and Steven Raboin is not stated in the body (they appear only in the header list of members). Votes are recorded as printed; the minutes give initials (SG, TB) for movers and seconders. No public comment section is printed. Kerry Speidel's role is printed only as \"Also Present\"; the minutes do not say who KS refers to.",
+ "cost_usd": 0.00492962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. gile, t. burchfield, j.smith"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, s. gile, t. burchfield, j.smith"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "m. erickson, s. gile, t. burchfield, j.smith"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "m. erickson, s. gile, t. burchfield, j.smith"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "not stated",
+   "quote": "mark erickson, chairman brian laffond, vice-chairman terri burchfield, co-secretary jason smith, co-secretary john male scott gile steven raboin"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "not stated",
+   "quote": "mark erickson, chairman brian laffond, vice-chairman terri burchfield, co-secretary jason smith, co-secretary john male scott gile steven raboin"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "not stated",
+   "quote": "mark erickson, chairman brian laffond, vice-chairman terri burchfield, co-secretary jason smith, co-secretary john male scott gile steven raboin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The town manager's office will schedule Kevin Blanchett to meet with the FINCOM on September 13 regarding education on pension plans.",
+   "quote": "we will be scheduling kevin blanchett to meet with the fincom on september 13* regarding education on pension plans."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2012 Budget Close Report, remaining appropriations (leftover monies)",
+   "what_was_recorded": "Leftover appropriations on the FY2012 close report were discussed line by line, with explanations given; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "fy2012 budget close report- remaining appropriations (leftover monies) were discussed and questions pertaining"
+  },
+  {
+   "topic": "Transfer to recycling enterprise fund",
+   "what_was_recorded": "A transfer to the enterprise fund for recycling was discussed; the issue is separating the recycling stream from solid waste. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "there was a specific discussion regarding a transfer to the enterprise fund for recycling."
+  },
+  {
+   "topic": "Supplemental tax line difference",
+   "what_was_recorded": "A significant difference in the supplemental tax line was reported, mostly attributed to the change in valuation of Emerald Place; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "there was also a significant difference in the supplemental tax line"
+  },
+  {
+   "topic": "FEMA reimbursements for October 2011 snowstorm",
+   "what_was_recorded": "FEMA reimbursements have begun arriving and the approved balance is expected soon; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "fema reimbursements for the october snowstorm of 2011 have begun coming in and the balance that was approved will be"
+  },
+  {
+   "topic": "Hot-mix pothole machine purchased by Gardner, MA",
+   "what_was_recorded": "Reported that Gardner, MA bought a pothole-filling hot mix machine for around 7 thousand dollars in Minnesota.",
+   "figures_as_printed": [
+    "around 7 thousand dollars"
+   ],
+   "quote": "it was reportedly purchased for around 7 thousand dollars in minnesota and is working well for them."
+  },
+  {
+   "topic": "Public Safety budget concerns",
+   "what_was_recorded": "Police and fire departments shared budget-related concerns about staff levels and funding; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "budget related concerns were shared by both departments, predominantly regarding staff levels"
+  },
+  {
+   "topic": "Summer Street design cost share",
+   "what_was_recorded": "Town's portion of Summer Street design expenses was included in the Transportation Bond Bill; awaiting Governor's signature. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "were included in the transportation bond bill at the state house"
+  },
+  {
+   "topic": "Pleasant Street Solar Project net metering credits",
+   "what_was_recorded": "The solar developer seeks to sell net metering credits to the town under a twenty-year contract; special use permit approved; similar discussion for Chase Road. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they are looking to sell net metering credits to the town as the subject of a twenty (20) year contract."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to the enterprise fund for recycling (separating recycling from solid waste funds)",
+   "amount_as_printed": "",
+   "outcome": "discussed; no action recorded",
+   "quote": "there was a specific discussion regarding a transfer to the enterprise fund for recycling."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "no action; Beacon publication shared for members to read",
+   "quote": "m.e. shared a publication titled the beacon, which was received in the mail, for members of the fincom to read if",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Review minutes of 7/26/2012",
+   "resolution": "approved as corrected 4-0",
+   "quote": "sg motioned to approve the minutes as corrected. tb seconded. approved 4-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee/Department Updates",
+   "resolution": "no action; reports from School Committee, DPW, and Public Safety",
+   "quote": "school committee- me reported on the new timeline for the owners project manager hiring process.",
+   "tags": [
+    "school committee",
+    "DPW",
+    "public safety",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "no action; FY2012 close, recycling transfer, FEMA, Summer Street, solar, pension education",
+   "quote": "fy2012 budget close report- remaining appropriations (leftover monies) were discussed and questions pertaining",
+   "tags": [
+    "FY2012 close",
+    "recycling",
+    "FEMA",
+    "solar",
+    "pension",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:48 PM, 4-0",
+   "quote": "motion to adjourn was made at 8:48 pm by sg and seconded by tb, approved 4-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Beacon (publication)",
+   "where": "text",
+   "quote": "m.e. shared a publication titled the beacon, which was received in the mail, for members of the fincom to read if"
+  },
+  {
+   "name": "FY2012 Budget Close Report",
+   "where": "text",
+   "quote": "fy2012 budget close report- remaining appropriations (leftover monies) were discussed and questions pertaining"
+  },
+  {
+   "name": "Transportation Bond Bill",
+   "where": "text",
+   "quote": "were included in the transportation bond bill at the state house"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY2012 budget close",
+  "leftover appropriations",
+  "recycling enterprise fund",
+  "FEMA reimbursement",
+  "solar net metering",
+  "pension education",
+  "treasurer/collector search",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

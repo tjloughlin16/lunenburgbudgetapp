@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-01-21",
  "docid": "1677",
@@ -12,31 +12,256 @@
  },
  "votes": [
   {
-   "motion": "To approve the Notice of Intent filed by Robert Proctor for septic system upgrade and relocation of driveway at 60 South Row Road as presented",
-   "outcome": "Approved as presented unanimously",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the Notice of Intent for 60 South Row Road (septic system upgrade) as presented.",
+   "outcome": "unanimous",
    "procedural": false,
-   "quote": "approved as presented unanimous"
+   "quote": "boh approv ed pre-treatment system. approved as presented unanimous"
   },
   {
-   "motion": "To support the Lunenburg Snow Riders in their effort to acquire grant monies",
-   "outcome": "Passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Support the Lunenburg Snow Riders in their effort to acquire grant monies.",
+   "outcome": "unanimous",
    "procedural": false,
    "quote": "voted to support the lunenburg snow riders in their effort to acquire grant monies. unanimous."
   },
   {
-   "motion": "To approve the minutes of January 7, 2015",
-   "outcome": "Approved",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of 1/7/2015.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval ~ 1/7/2015 approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record votes clearly. Tom Bertram is mentioned in the section header but no mover or seconder is explicitly printed for any vote.",
- "cost_usd": 0.1151575
+ "note": "Scanned-style extraction with spacing artifacts (e.g. 'Brad Kenned y', 'Robert P roctor'); names recorded as they read most plausibly. The 60 South Row Road and Snow Riders items show 'Unanimous' with no motion text or mover/seconder printed, so outcomes are recorded as unanimous with no moved_by. No adjournment vote is recorded. Attendance roles are not printed. Public comment headings have no speakers under them. The header says 'Approved 2/18/2015'.",
+ "cost_usd": 0.00508812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rich Bursch",
+   "role": "Commission member (Remote)",
+   "status": "remote",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Charpentier",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Sheila Holt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rich bursch(remote), tom bertram, matt charpentier, todd dwyer, sheila holt, jack rabbitt, brad kenned y, matt marro, jan carrier"
+  },
+  {
+   "name": "Robert Proctor",
+   "role": "applicant (Robert Proctor Excavating, Inc.)",
+   "status": "not stated",
+   "quote": "on a notice of intent filed by robert p roctor of robert proctor excavating, inc."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "of Whitman & Bingham Associates, LLC",
+   "status": "not stated",
+   "quote": "(chris mackenzie of whitma n & bingham associates, llc)",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Rayellen Kishbach",
+   "role": "requested maps",
+   "status": "not stated",
+   "quote": "rayellen kishbach/daron massey requested maps of the lane property showing trails."
+  },
+  {
+   "name": "Daron Massey",
+   "role": "requested maps",
+   "status": "not stated",
+   "quote": "rayellen kishbach/daron massey requested maps of the lane property showing trails."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jan will send letters approving the trails and supporting the grant (Lunenburg Snow Riders).",
+   "quote": "jan will send letters approving the trails and supporting the grant."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY16 Budget",
+   "what_was_recorded": "FY16 budget was briefly discussed under New Business with no decision made.",
+   "figures_as_printed": [],
+   "quote": "new business ~ fy16 budget, accounting, revolving fund, goals & updates"
+  },
+  {
+   "topic": "Lunenburg Snow Riders grant",
+   "what_was_recorded": "Commission voted to support the Snow Riders' effort to acquire grant monies; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "voted to support the lunenburg snow riders in their effort to acquire grant monies."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: 60 South Row Road Notice of Intent",
+   "resolution": "approved as presented (unanimous)",
+   "quote": "7:00 pm ~ 60 south row road ~",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "septic",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Lunenburg Snow Riders grant support",
+   "resolution": "approved (unanimous)",
+   "quote": "7:15 pm ~ lunenburg snow riders ~ tom bertram ~ voted to support the lunenburg snow riders",
+   "tags": [
+    "snow riders",
+    "grant",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Minutes approval 1/7/2015",
+   "resolution": "approved",
+   "quote": "minutes approval ~ 1/7/2015 approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "briefly discussed; no decision needed",
+   "quote": "new business ~ fy16 budget, accounting, revolving fund, goals & updates, education, forest cutting plan ~ briefly discussed these items, no decision making necessary.",
+   "tags": [
+    "budget",
+    "revolving fund",
+    "forest cutting plan"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "listed; no action recorded",
+   "quote": "old business ~ lane property~open space acquisition team, requirements of grant (time line), rfp, parking, etc.",
+   "tags": [
+    "open space",
+    "lane property",
+    "grant",
+    "stormwater bylaw"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "no action recorded",
+   "quote": "signatures ~ 2 doa, 1 coc",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action recorded",
+   "quote": "announcements ~ macc conference, upcoming events",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting 2/4/2015 noted",
+   "quote": "meeting schedule ~ 2/4/2015",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no speakers recorded",
+   "quote": "public comment ~ hearings",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Commission comment and adjournment",
+   "resolution": "adjourned 9:18 PM; no adjournment vote recorded",
+   "quote": "commission comment adjournment ~ 9:18 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, 60 South Row Road (Robert Proctor Excavating, Inc.)",
+   "where": "text",
+   "quote": "on a notice of intent filed by robert p roctor of robert proctor excavating, inc."
+  },
+  {
+   "name": "Snow Riders update letter (received 1/7)",
+   "where": "text",
+   "quote": "snow riders-update letter received 1/7"
+  },
+  {
+   "name": "Maps of the Lane property showing trails",
+   "where": "text",
+   "quote": "requested maps of the lane property showing trails."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "septic",
+  "open space",
+  "grant",
+  "snow riders",
+  "trails",
+  "minutes",
+  "budget",
+  "stormwater bylaw"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

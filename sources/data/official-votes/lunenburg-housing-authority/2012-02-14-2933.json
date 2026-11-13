@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2012-02-14",
  "docid": "2933",
@@ -12,6 +12,26 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Text provided is the agenda/notice page only. It lists \"Motions\" and \"Resolution #201202 – Acceptance of Proposal (Reconstruction of the roadways and parking lots)\" as agenda items, but no voting record is present. No actual votes are documented in this excerpt.",
- "cost_usd": 0.0802685
+ "note": "The text is only the Notice of Meeting and agenda for the 14 Feb 2012 meeting. It contains no minutes body: no attendance, no motions or votes, no discussion, no outcomes, and no dollar figures. Agenda items are listed but the text does not show they were taken up, so topics is empty. Resolution #201202 (acceptance of a proposal for reconstruction of roadways and parking lots) and the Governor's correspondence appear only as agenda entries and are not recorded as documents used at the meeting.",
+ "cost_usd": 0.0013756200000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [],
+ "documents_and_exhibits": [],
+ "tags": [
+  "agenda",
+  "notice of meeting",
+  "housing authority",
+  "roadway reconstruction"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

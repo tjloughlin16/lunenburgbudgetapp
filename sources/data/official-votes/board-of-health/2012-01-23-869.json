@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-01-23",
  "docid": "869",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from January 11, 2011",
+   "motion": "Approve the minutes of January 11, 2011 (as printed; no motion or count recorded).",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -20,7 +20,15 @@
    "quote": "minutes approved: january 11, 2011"
   },
   {
-   "motion": "Approve the variance for 30 Eastern Avenue",
+   "motion": "Grant the variances for 920 Lancaster Road, allowing the current well to remain under the stated conditions and a groundwater offset to 3 feet and reduced property-line offset.",
+   "moved_by": "Jewell",
+   "seconded_by": "Shea",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "on motion by jewell an d second by shea, the variances were granted. all in favor."
+  },
+  {
+   "motion": "Approve the variance for 30 Eastern Avenue.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
@@ -28,7 +36,185 @@
    "quote": "on motion by jewell and second by passios, the variance was approved. all in favor."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Three votes recorded. Sections on Wallis Park and 64 Spring Street Extension discuss actions but record no formal votes.",
- "cost_usd": 0.11262449999999999
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-like with split words and odd spacing (e.g. 'an d', 'wel l'); quotes reproduce it as printed with whitespace collapsed. The minutes approval reads 'January 11, 2011' with no motion, mover, or count recorded; the year may be a typo. Variance votes are recorded only as 'All in favor' with no count. No adjournment motion is recorded ('Meeting adjourned at 8:10 pm.'). No dollar figures, public comment section, or document list appear in the text.",
+ "cost_usd": 0.00477722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "of Whitman and Bingham, on behalf of the owner",
+   "status": "present",
+   "quote": "chris mackenzie of whitman and bingham as well as b ob proctor met with the board on behalf of the"
+  },
+  {
+   "name": "B ob Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "chris mackenzie of whitman and bingham as well as b ob proctor met with the board on behalf of the"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi recommends drilling a new well."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "doug smith met with the board of behalf of the owne r."
+  },
+  {
+   "name": "Ed Scozik",
+   "role": "an abutter of the applicant",
+   "status": "present",
+   "quote": "ed scozik , an abutter of the applicant, was al so in attendance."
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "administrative assistant, andrea schnepf, will speak to the parties involved and report back to the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "For 920 Lancaster Road, it was agreed the current well would be allowed to remain, conditioned on the pump being located in the well and water tests being performed and passing.",
+   "quote": "after discussion it was agreed that the current wel l would be allowed to remain under the following"
+  },
+  {
+   "decision": "Administrative Assistant Andrea Schnepf will speak with the parties involved in the Wallis Park sewer connection question and report back to the board.",
+   "quote": "administrative assistant, andrea schnepf, will speak to the parties involved and report back to the board."
+  },
+  {
+   "decision": "For 64 Spring Street Extension, after review of the original minutes, the additional residence must be converted into storage space before a Certificate of Occupancy is issued.",
+   "quote": "it was dete rmined that the additional residence must be conver ted into storage space prior to a certificate of occupancy being issued."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of January 11, 2011",
+   "quote": "minutes approved: january 11, 2011",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (56 Cross Road, 202 West Street)",
+   "quote": "title 5 inspection reports acknowledged : 56 cross road",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed (Elmwood Road, Lot 3)",
+   "quote": "septic permits signed : elmwood road, lot 3",
+   "tags": [
+    "septic permit"
+   ]
+  },
+  {
+   "topic": "920 Lancaster Road variances",
+   "resolution": "variances granted with conditions on the existing well",
+   "quote": "on motion by jewell an d second by shea, the variances were granted. all in favor.",
+   "tags": [
+    "variance",
+    "well",
+    "groundwater offset",
+    "failed system"
+   ]
+  },
+  {
+   "topic": "30 Eastern Avenue variance",
+   "resolution": "variance approved",
+   "quote": "after discussion and on motion by jewell and second by passios, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic failure",
+    "ledge"
+   ]
+  },
+  {
+   "topic": "Wallis Park sewer connection",
+   "resolution": "no determination; Schnepf to report back",
+   "quote": "there is still no determination of whether or not t he wallis park properties have been connected to se wer.",
+   "tags": [
+    "sewer connection"
+   ]
+  },
+  {
+   "topic": "64 Spring Street Extension",
+   "resolution": "storage conversion required before Certificate of Occupancy",
+   "quote": "it was dete rmined that the additional residence must be conver ted into storage space prior to a certificate of occupancy being issued.",
+   "tags": [
+    "year-round conversion",
+    "certificate of occupancy"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 56 Cross Road",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged : 56 cross road"
+  },
+  {
+   "name": "Title 5 inspection report, 202 West Street",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged : 56 cross road 202 west street"
+  },
+  {
+   "name": "Septic permit, Elmwood Road, Lot 3",
+   "where": "text",
+   "quote": "septic permits signed : elmwood road, lot 3"
+  },
+  {
+   "name": "Original minutes (April 2010 approval for 64 Spring Street Extension)",
+   "where": "text",
+   "quote": "after a review of the original minutes, it was dete rmined that the additional residence must be conver ted"
+  }
+ ],
+ "tags": [
+  "variances",
+  "septic",
+  "Title 5",
+  "well",
+  "sewer connection",
+  "Certificate of Occupancy",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

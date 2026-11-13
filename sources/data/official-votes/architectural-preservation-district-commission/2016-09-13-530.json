@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-09-13",
  "docid": "530",
@@ -12,15 +12,132 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from August 23, 2016",
+   "motion": "Approve the minutes of 8-23-16.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 8-23-16 were read, voted on and approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One explicit vote recorded. Other actions described as \"approved\" or \"accepted\" lack the \"voted on\" language required to count as recorded votes.",
- "cost_usd": 0.0801255
+ "note": "Text is a clean extraction of a one-page minutes document. No motion, mover, seconder or vote count is recorded for the approval of the 8-23-16 minutes beyond \\\"voted on and approved\\\", and no votes are recorded for the other items. Adjournment at 7:53 PM is noted without a motion, so it is not recorded as a vote. The name Kherer is spelled \\\"Kehrer\\\" once in the Old Business text. No dollar figures, public comment or documents list heading appear in the minutes.",
+ "cost_usd": 0.00389262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "richard mcgrath -chair"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "mr. laveck presented the web content for the apdc website"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk; recording clerk",
+   "status": "not stated",
+   "quote": "cullen dwyer, recording clerk"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "with all members present, except for mr. kherer."
+  },
+  {
+   "name": "Matthew Kherer",
+   "role": "Member (spelled \"Kehrer\" once in the text)",
+   "status": "absent",
+   "quote": "with all members present, except for mr. kherer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The draft of the \"Application for Certificate to Alter\" was accepted into the guidelines.",
+   "quote": "was presented, reviewed and accepted into the guidelines."
+  },
+  {
+   "decision": "The commission approved all of the web content for the APDC website and had nothing to add at that time.",
+   "quote": "the commission approved of all content, and had nothing to add at that time."
+  },
+  {
+   "decision": "McGrath will contact Kherer to get the draft of the sheathing and trim section in the coming days.",
+   "quote": "that he would contact kherer to get the draft in the coming days."
+  },
+  {
+   "decision": "The commission intended to make the draft guidelines available to the public by Friday, September 23rd, so it could hold a public hearing at its next meeting on Tuesday, October 11th, 2016; the Board of Selectmen would then review and accept the guidelines.",
+   "quote": "intended to make the draft of the guidelines available to the public by friday, september 23rd"
+  },
+  {
+   "decision": "The next meeting was set for the second Tuesday of October, the 11th.",
+   "quote": "next meeting set for the second tuesday of october, the 11th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved minutes of 8-23-16",
+   "quote": "minutes from 8-23-16 were read, voted on and approved.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "draft application accepted into guidelines; website content approved; guidelines timeline set for public hearing October 11, 2016",
+   "quote": "intended to make the draft of the guidelines available to the public by friday, september 23rd",
+   "tags": [
+    "design guidelines",
+    "certificate to alter",
+    "website",
+    "public hearing",
+    "sheathing and trim"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft \"Application for Certificate to Alter\"",
+   "where": "text",
+   "quote": "was presented, reviewed and accepted into the guidelines."
+  },
+  {
+   "name": "Web content for the APDC website",
+   "where": "text",
+   "quote": "the commission approved of all content, and had nothing to add at that time."
+  },
+  {
+   "name": "Draft of the guidelines (for public availability by Friday, September 23rd)",
+   "where": "text",
+   "quote": "make the draft of the guidelines available to the public by friday, september 23rd"
+  },
+  {
+   "name": "Draft section on sheathing and trim for the guidelines (Kherer)",
+   "where": "text",
+   "quote": "that he would contact kherer to get the draft in the coming days."
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "design guidelines",
+  "certificate to alter",
+  "APDC website",
+  "public hearing",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

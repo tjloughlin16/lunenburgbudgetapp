@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-01-18",
  "docid": "1786",
@@ -12,15 +12,278 @@
  },
  "votes": [
   {
-   "motion": "Accept both the Level Funded and Override budgets for FY2013.",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "the committee voted to accept both the level funded and \"override\" budgets.",
+   "motion": "Accept both the Level Funded budget and the Director's \"Override\" budget for 2013.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the committee voted to accept both the level funded and \"override\" budgets."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document from macOS Vision. One vote recorded with no count or outcome stated; language is \"voted\" only.",
- "cost_usd": 0.0851025
+ "note": "OCR text. Budget table columns are scrambled in the extraction; figures were mapped to labels by sequence and checked (Level expenses sum to $22,857 and total $118,460; Override expenses sum to $24,543 and total $129,990). Header says minutes were approved at a 5/8/12 COA meeting. The vote is recorded without a mover, seconder or count. Jan 10 session has no motion to adjourn recorded. Nothing said about public comment.",
+ "cost_usd": 0.006220119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah Seeley",
+   "status": "present",
+   "quote": "present were deborah seeley, jane doyle, fred crellin, james hays and, the director, doreen noble."
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "present",
+   "quote": "present were deborah seeley, jane doyle, fred crellin, james hays and, the director, doreen noble."
+  },
+  {
+   "name": "Fred Crellin",
+   "status": "present",
+   "quote": "present were deborah seeley, jane doyle, fred crellin, james hays and, the director, doreen noble."
+  },
+  {
+   "name": "James Hays",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present were deborah seeley, jane doyle, fred crellin, james hays and, the director, doreen noble."
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present were deborah seeley, jane doyle, fred crellin, james hays and, the director, doreen noble."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee requested that \"To create a Director's Job Description\" be added to the Director's Goals.",
+   "quote": "the committee requested that \"to create a director's job description\" be added to goals."
+  },
+  {
+   "decision": "Changes to the Organization Chart were requested to show line and staff duties more accurately; the committee added lines to show open communication between all on the chart.",
+   "quote": "changes to the organization chart were requested to reflect a more accurate chart showing line and staff duties."
+  },
+  {
+   "decision": "The schedule of Departmental Programs was explained by the Director and embraced by the Committee.",
+   "quote": "the schedule of departmental programs was explained by the director and was embraced by the committee."
+  },
+  {
+   "decision": "The Budget and related forms will be presented by PowerPoint by the Director to the Town Finance Committee and Selectmen, with a courtesy to the COA.",
+   "quote": "the budget and related forms will be presented by \"power point\" by the director to the town finance committee and selectmen, and a courtesy to the coa."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Outreach worker reduction and new Custodian item",
+   "what_was_recorded": "The Level Funded budget reduced the outreach worker item and added a new Custodian item at 10 hours per week, with the same dollar figure.",
+   "figures_as_printed": [
+    "$5,204",
+    "$5,204"
+   ],
+   "quote": "the changes are reducing outreach worker item by $5,204 and including a new item - custodian for $5,204 (10 hours per week)."
+  },
+  {
+   "topic": "Override budget personnel subtotal",
+   "what_was_recorded": "The Override budget included contractual salary increases, most of the outreach worker item, and more custodial hours, bringing the personnel subtotal to the printed figure.",
+   "figures_as_printed": [
+    "$105,447"
+   ],
+   "quote": "thus the personnel subtotal to $105,447."
+  },
+  {
+   "topic": "Non-union planned increases",
+   "what_was_recorded": "Non-union items would have reflected planned increases of 3%.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "the non-union items would have reflected planned increases of 3%."
+  },
+  {
+   "topic": "Outreach formula grant funds",
+   "what_was_recorded": "The committee noted that Outreach also receives Formula Grant Funds to fulfill its function; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "it must be remembered that outreach also receives formula grant funds to fulfill this important function."
+  },
+  {
+   "topic": "Utility increases in Override budget",
+   "what_was_recorded": "Electricity, heating (natural gas) and sewer receive a 5% increase in the Override budget; water is increased by 25% because six months' costs already met the 2012 budgeted amount.",
+   "figures_as_printed": [
+    "5%",
+    "25%"
+   ],
+   "quote": "water charges are increased by 25%, as this year's 6 month's costs has already met the 2012 budgeted amount."
+  },
+  {
+   "topic": "10% increases in Override budget",
+   "what_was_recorded": "Postage, office supplies and mileage reimbursement receive a 10% increase; the committee found these reasonable.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "items receiving 10% are postage, office supplies, and mileage reimbursement."
+  },
+  {
+   "topic": "Training & Licenses item",
+   "what_was_recorded": "A Training & Licenses item of $500 was added to the Override budget for licenses and training such as ServeSafe for kitchen staff and supervision.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "an item for training & licenses was added for $500 that would cover costs of licenses and training needed for selected employees"
+  },
+  {
+   "topic": "Level Funded budget totals",
+   "what_was_recorded": "Level Funded budget totals as printed on the spreadsheet: total expenses and total budget (Total Salaries & Wages printed as $95,603.00; Electricity $9,352.00).",
+   "figures_as_printed": [
+    "$95,603.00",
+    "$9,352.00",
+    "$6,180.00",
+    "$800.00",
+    "$1,500.00",
+    "$3,500.00",
+    "$22,857.00",
+    "$118,460.00"
+   ],
+   "quote": "$22,857.00 $118,460.00"
+  },
+  {
+   "topic": "Override budget totals",
+   "what_was_recorded": "Override budget totals as printed on the spreadsheet: total expenses and total budget (Total Salaries & Wages printed as $105,447.00; Training & Licenses $500.00).",
+   "figures_as_printed": [
+    "$105,447.00",
+    "$9,539.00",
+    "$6,489.00",
+    "$1,000.00",
+    "$1,575.00",
+    "$3,850.00",
+    "$500.00",
+    "$24,543.00",
+    "$129,990.00"
+   ],
+   "quote": "$24,543.00 $129,990.00"
+  },
+  {
+   "topic": "Note on items not in the budget",
+   "what_was_recorded": "The spreadsheet notes that MART supplements office van clerical and drivers are not included, and grant funds supplement Outreach.",
+   "figures_as_printed": [],
+   "quote": "note - not included- mart supplements office van clerical & drivers"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Budget development, January 10, 2012 session",
+   "resolution": "reviewed contractual items; adjourned to January 18",
+   "quote": "due to time constraints the committee adjourned at 9:58 am to be resumed at 9 am on january 18, 2012.",
+   "tags": [
+    "budget",
+    "FY2013",
+    "union contracts"
+   ]
+  },
+  {
+   "topic": "Level Funded 2013 budget",
+   "resolution": "reviewed; accepted along with Override budget",
+   "quote": "a spreadsheet showing a level funded budget for 2013 with minor changes to the 2012 budget.",
+   "tags": [
+    "level funding",
+    "budget",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Director's Override 2013 budget",
+   "resolution": "reviewed; accepted along with Level Funded budget",
+   "quote": "the director's \"override\" 2013 budget was reviewed next.",
+   "tags": [
+    "override",
+    "budget",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Departmental goals",
+   "resolution": "job description goal added",
+   "quote": "the committee requested that \"to create a director's job description\" be added to goals.",
+   "tags": [
+    "goals",
+    "staffing",
+    "service levels"
+   ]
+  },
+  {
+   "topic": "Organization chart",
+   "resolution": "changes requested and lines added",
+   "quote": "changes to the organization chart were requested to reflect a more accurate chart showing line and staff duties.",
+   "tags": [
+    "organization chart",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Departmental programs schedule",
+   "resolution": "explained and embraced",
+   "quote": "the schedule of departmental programs was explained by the director and was embraced by the committee.",
+   "tags": [
+    "programs"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum from Town Manager, Kerry Speidel (Town Manager's Budget Memo)",
+   "where": "list",
+   "quote": "memorandum from town manager, kerry speidel that included:"
+  },
+  {
+   "name": "Form 1: Budget Detail Spreadsheet",
+   "where": "list",
+   "quote": "form 1: budget detail spreadsheet"
+  },
+  {
+   "name": "Form 2: Departmental Personnel Detail",
+   "where": "list",
+   "quote": "form 2: departmental personnel detail"
+  },
+  {
+   "name": "Form 3: Organization Chart",
+   "where": "list",
+   "quote": "form 3: organization chart"
+  },
+  {
+   "name": "Form 4: Departmental Programs & Performance Measures",
+   "where": "list",
+   "quote": "form 4: departmental programs & performance measures"
+  },
+  {
+   "name": "Form 5: Departmental Mission & Goals",
+   "where": "list",
+   "quote": "form 5: departmental mission & goals."
+  },
+  {
+   "name": "Level Funded Budget for 2013 spreadsheet",
+   "where": "text",
+   "quote": "a spreadsheet showing a level funded budget for 2013 with minor changes to the 2012 budget."
+  },
+  {
+   "name": "Power Point presentation of the budget and related forms",
+   "where": "text",
+   "quote": "the budget and related forms will be presented by \"power point\" by the director"
+  }
+ ],
+ "tags": [
+  "COA budget",
+  "FY2013 budget",
+  "level funding",
+  "override budget",
+  "personnel",
+  "utilities",
+  "organization chart",
+  "departmental goals",
+  "finance committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "budget information was distributed:"
+ },
+ "dropped_unquoted_by_field": {}
 }

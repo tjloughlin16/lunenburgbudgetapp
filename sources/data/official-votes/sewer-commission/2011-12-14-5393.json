@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2011-12-14",
  "docid": "5393",
@@ -12,39 +12,258 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to discuss strategy related to contract negotiations",
+   "motion": "Enter Executive Session by roll call to discuss strategy related to contract negotiations and return to the meeting afterward.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "by roll call vote each member voted to enter executive session to discuss strategy related to contract negotiations and to return after conclusion of executive session"
+   "quote": "by roll call vote each member voted to enter executive session to discuss strategy related to contract negotiations"
   },
   {
-   "motion": "Approve the grease trap fee and review policy",
+   "motion": "Adopt a Grease Trap Fee & Review policy allowing the Commission to hire a firm to review future grease traps, with the applicant paying for the review.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "it was unanimously approved by the commission"
   },
   {
-   "motion": "Increase the sewer rates by 20% effective January 1, 2012, keeping the current minimum usage charge",
+   "motion": "Increase sewer rates by 20% effective January 1, 2012, while keeping the current minimum usage charge.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously voted",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "it was unanimously voted to increase the rates by 20% effective january 1, 2012, but to keep the current minimum usage charge"
   },
   {
-   "motion": "Enter Executive Session to discuss litigation (Hollis Hills), and adjourn the regular meeting without returning at the end of the executive session",
+   "motion": "Enter Executive Session by unanimous roll call to discuss litigation (Hollis Hills), adjourn the regular meeting, and not return after the executive session.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "through a unanimous roll call the commission voted to enter executive session for the purposes of discussing litigation (hollis hills), adjourn the regular meeting and not return at the end of the executive session"
+   "quote": "through a unanimous roll call the commission voted to enter executive session for the purposes of discussing litigation (hollis hills)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of a macOS Vision scan. Four votes recorded. Mover and seconder names not printed for any vote.",
- "cost_usd": 0.0866315
+ "note": "OCR text (macOS Vision) of a two-page scan; several words are garbled (e.g., 'I/l', 'trom', 'us', 'camera-ing', '27h'). Page 2 begins mid-sentence. The minutes do not name the Commission members, record no attendance list, and give no movers, seconders or roll-call tallies for any vote. The opening executive session vote has no printed result beyond 'each member voted', recorded here as passed. No public comment is recorded.",
+ "cost_usd": 0.0072767199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Pedersen",
+   "role": "Weston & Sampson, reported out",
+   "status": "present",
+   "quote": "8:00 pm weston & sampson steve pedersen and pat cotton reported out as listed below"
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "Weston & Sampson, reported out",
+   "status": "present",
+   "quote": "8:00 pm weston & sampson steve pedersen and pat cotton reported out as listed below"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "not stated",
+   "quote": "respectfully submitted robert ebersole"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission plans to perform the corrective actions for the smoke and dye testing defects, including paying for cover seals on manholes outside the study area that are depressed and collecting water (about $200 per cover).",
+   "quote": "the commission plans to perform the corrective actions"
+  },
+  {
+   "decision": "Commission will pay for cover seals on any other depressed manholes outside the study area that collect water.",
+   "quote": "it was also decided that if there are any other manholes in the system outside of the study area that are also depressed and collecting water, we will pay for the cover seals for them"
+  },
+  {
+   "decision": "Weston and Sampson will draft a letter for the Commission to send to property owners of the 54 connected buildings that did not smoke.",
+   "quote": "weston and sampson will draft a letter for the commission to send to these property owners"
+  },
+  {
+   "decision": "Commission prefers that Corey perform internal building inspections over the winter and will proceed with owners who allow inspection, while Weston and Sampson research the Commission's authority.",
+   "quote": "the commission stated that we would prefer to have corey perform such inspections over the winter."
+  },
+  {
+   "decision": "Commission will proceed with internal inspections for property owners willing to allow them.",
+   "quote": "we will proceed for those property owners who are willing to allow the inspection"
+  },
+  {
+   "decision": "Rate increase to be communicated through a flyer in the January billing and a communication to the Lunenburg Ledger.",
+   "quote": "this will be communicated through a flyer in the january billing as well as a communication to the lunenburg ledger."
+  },
+  {
+   "decision": "Commission wants to explore other rate structures in the future and asked for information on how other communities set up their rates.",
+   "quote": "the commission wants to explore other rate structures in the future"
+  },
+  {
+   "decision": "Weston and Sampson will send a copy of the FY12 general-advice contract proposal; the Commission will review it at a January meeting.",
+   "quote": "they will send us a copy and we will review it at a meeting in january."
+  },
+  {
+   "decision": "Next regular Sewer meeting set for January 11, 2012 at the Ritter Building; the December 27 meeting was cancelled.",
+   "quote": "regular sewer meeting - january 11, 2012 at the ritter building."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Smoke and dye testing corrective action",
+   "what_was_recorded": "Most of the cost to correct the defects will fall on property owners or the school department; the Commission's own share is seals on manholes and repair of internal I/I in two manholes.",
+   "figures_as_printed": [
+    "$62,000"
+   ],
+   "quote": "most of the $62,000 cost for correcting the problems will be the responsibility of the property owners or school department"
+  },
+  {
+   "topic": "Manhole cover seals",
+   "what_was_recorded": "Commission will pay for cover seals on depressed manholes outside the study area, estimated at $200 per cover.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "we will pay for the cover seals for them - estimated to cost $200 per cover"
+  },
+  {
+   "topic": "Internal building inspections",
+   "what_was_recorded": "Weston and Sampson estimated internal inspections of 450 buildings would cost $61,000.",
+   "figures_as_printed": [
+    "$61,000",
+    "450"
+   ],
+   "quote": "their estimate of the cost for 450 buildings was $61,000."
+  },
+  {
+   "topic": "Rate increase 2012",
+   "what_was_recorded": "Rates raised 20% effective January 1, 2012, citing the Fitchburg increase of about 11% and expected draw on retained earnings.",
+   "figures_as_printed": [
+    "20%",
+    "11%"
+   ],
+   "quote": "the impact of the fitchburg increase was about 11%"
+  },
+  {
+   "topic": "Lateral pipe camera inspections",
+   "what_was_recorded": "Camera inspection of lateral pipes from the street to each property was estimated at $200 per property and recommended for spring; it may use remaining project funds.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "weston and sampson estimated that would cost $200 for each property"
+  },
+  {
+   "topic": "Remaining project funds",
+   "what_was_recorded": "Lateral camera work may qualify for use of the remaining project funds related to the system start-up; no amount stated.",
+   "figures_as_printed": [],
+   "quote": "may qualify for use of the remaining project funds as it relates to the start up of the system"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session on contract negotiations",
+   "resolution": "held; meeting resumed after executive session ended at 7:55 pm",
+   "quote": "this session ended at 7:55 pm, and the commission continued the meeting.",
+   "tags": [
+    "executive session",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Weston & Sampson report: smoke and dye testing, corrective action, internal inspections, pump station, rules review, FY12 contract",
+   "resolution": "reported; corrective actions and inspections directed; contract to be reviewed in January",
+   "quote": "8:00 pm weston & sampson steve pedersen and pat cotton reported out as listed below",
+   "tags": [
+    "inflow and infiltration",
+    "smoke testing",
+    "Weston & Sampson",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Grease Trap Fee & Review policy",
+   "resolution": "approved unanimously",
+   "quote": "it was unanimously approved by the commission",
+   "tags": [
+    "grease trap",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Budget FY13",
+   "resolution": "deferred to January meetings",
+   "quote": "budget fy13- the commission will cover this topic at our january meetings.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Rate increase 2012",
+   "resolution": "approved 20% increase effective January 1, 2012; minimum usage charge kept",
+   "quote": "it was unanimously voted to increase the rates by 20% effective january 1, 2012",
+   "tags": [
+    "sewer rates",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Leominster clay pipe issues, Wallis Park and Pierce Ave",
+   "resolution": "discussed; three of four owners addressing issues; Legal Counsel contacted on remaining property; camera inspection to be discussed further",
+   "quote": "legal counsel has been contacted about the remaining property, and it is expected that the board of health will need to be involved in the process.",
+   "tags": [
+    "inflow and infiltration",
+    "private property",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Administrative matters: next meeting and executive session",
+   "resolution": "next meeting set; executive session on litigation, then adjourn without returning",
+   "quote": "next meeting - regular sewer meeting - january 11, 2012 at the ritter building.",
+   "tags": [
+    "meeting schedule",
+    "litigation",
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Smoke & Dye Testing official printed report (Weston & Sampson)",
+   "where": "list",
+   "quote": "smoke & dye testing - the official printed report was distributed with the following highlights:"
+  },
+  {
+   "name": "Grease Trap Fee & Review policy",
+   "where": "text",
+   "quote": "grease trap fee & review policy - vote"
+  },
+  {
+   "name": "FY12 contract proposal",
+   "where": "text",
+   "quote": "fy12 contract proposal - it was noted at all their work detailed above"
+  },
+  {
+   "name": "Pump station analysis official report",
+   "where": "text",
+   "quote": "pump station analysis - the official report will be submitted early january"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "inflow and infiltration",
+  "smoke and dye testing",
+  "grease trap",
+  "sewer rates",
+  "contracts",
+  "Weston & Sampson",
+  "executive session",
+  "Leominster",
+  "Fitchburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the official printed report was distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

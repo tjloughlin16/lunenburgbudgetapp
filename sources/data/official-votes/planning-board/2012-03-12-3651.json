@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-03-12",
  "docid": "3651",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve amended minutes from 2-27-12 meeting",
+   "motion": "Approve the ANR plan for 551 Goodrich Street (Rolf Ketelaar); Mr. Bodkin Jr. recused himself.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Lockwood",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion to approve plan, ms. bilotta -simeone, second, mr. lockwood, motion passed."
+  },
+  {
+   "motion": "Approve the amended 2-27-12 minutes.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
@@ -20,15 +28,312 @@
    "quote": "motion, ms. bilotta-simeone, approve amended 2-27-12 minutes, second, mr. saiia, motion passed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Re-sign the EPG Solar ANR plan originally signed on February 13th, replacing the misplaced plan with the identical new Mylar.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion, ms. bilotta -simeone, to re-sign plan originally signed on february 13th, second, mr. saiia, motion passed."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, ms. bilotta-simeone, second, mr. lockwood, motion passed. adjourned"
+   "quote": "adjournment: motion, ms. bilotta-simeone, second, mr. lockwood, motion passed. adjourned 7:35 pm."
   }
  ],
- "dropped_unquoted": 2,
- "note": "Minutes are a clear digital document. Four motions recorded, all passed.",
- "cost_usd": 0.0891195
+ "dropped_unquoted": 0,
+ "note": "Text extraction only, no scan. Spacing is garbled in places (e.g. 'Bilotta -Simeone', 'signe d', 'wi ll', 'Arti cle'); quotes copied as printed. The owner name for 24 Leominster Road appears garbled ('Donald 7 Carroll Routh') and is not recorded as an attendee. Mr. Whalen's role is not stated. Plan signing after the ANR motions is treated as part of those votes, not a separate decision.",
+ "cost_usd": 0.007840719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. , robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. , robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. , robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. , robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. , robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. , robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Rolf Ketelaar",
+   "role": "applicant, ANR 551 Goodrich Street (as printed: 'ANR, 551 Goodrich Street, Rolf Ketelaar')",
+   "status": "not stated",
+   "quote": "anr, 551 goodrich street, rolf ketelaar -"
+  },
+  {
+   "name": "Robert Doolittle",
+   "role": "presenter of ANR plan, 24 Leominster Road (as printed: 'Plan presented by')",
+   "status": "present",
+   "quote": "plan presented by robert doolittle, 24 leom inster road",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Mr. Whalen",
+   "role": "member of the public (public comment)",
+   "status": "not stated",
+   "quote": "public comment: mr. whalen inquired as to date warrant closes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Benson to verify that School Street is a public way for the ANR at 24 Leominster Road.",
+   "quote": "ms. benson to verify that school street is a public way."
+  },
+  {
+   "decision": "The ANR plan for 24 Leominster Road was accepted for department review (no vote recorded).",
+   "quote": "plan accepted for department review."
+  },
+  {
+   "decision": "Ms. Benson to obtain a listing of Town-owned land from the Assessor's Office, at Mr. Bodkin Jr.'s request.",
+   "quote": "per request from mr. bodkin jr., ms. benson to obtain listing of town -owned land from assessor's office."
+  },
+  {
+   "decision": "Ms. Benson to acknowledge receipt of the letter from resident David Prokowiew.",
+   "quote": "ms. benson wi ll acknowledge receipt of letter to mr. prokowiew."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Effect on Planning Office without an Override",
+   "what_was_recorded": "Ms. Benson reported the Town Manager's request on the effect of no Override; a level-funded budget would leave the office unable to update statutory documents and lose 8 personnel hours per week.",
+   "figures_as_printed": [],
+   "quote": "ms. benson noted request from town manager as to effect on department without an override."
+  },
+  {
+   "topic": "Planning Office level-funded budget",
+   "what_was_recorded": "A level-funded budget would mean the office could not update statutory documents and would lose 8 personnel hours per week.",
+   "figures_as_printed": [],
+   "quote": "detriment to office would be a level-funded budget, therefore unable to update statutory documents."
+  },
+  {
+   "topic": "Green Community Task Force solar project, Town landfill",
+   "what_was_recorded": "The solar project for the Town landfill may be downsized due to cost; a report is to go to the GCTF.",
+   "figures_as_printed": [],
+   "quote": "solar project for the town landfill may be downsized due to cost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Whalen",
+   "topic": "date the Warrant closes",
+   "quote": "public comment: mr. whalen inquired as to date warrant closes."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Information meeting, New England Farms",
+   "resolution": "referred to separate minutes",
+   "quote": "information meeting, new england farms - see separate minutes",
+   "tags": [
+    "New England Farms",
+    "information meeting"
+   ]
+  },
+  {
+   "topic": "ANR, 551 Goodrich Street",
+   "resolution": "approved and plan signed",
+   "quote": "plan initially came before february 13 th board meeting, but lots had to be revised",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Goodrich Street"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved amended 2-27-12 minutes",
+   "quote": "minutes - approval: motion, ms. bilotta-simeone, approve amended 2-27-12 minutes, second, mr. saiia, motion passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; DPW close-out and GCTF solar report noted",
+   "quote": "committee reports: mjtc- no report mrpc- no report",
+   "tags": [
+    "committee reports",
+    "DPW building",
+    "solar",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "no action; Sprint and Verizon awaiting engineer reports; notices given",
+   "quote": "caucus- march 19th, 7 pm, turkey hill middle school.",
+   "tags": [
+    "telecom",
+    "open space",
+    "agriculture",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Development status: EPG Solar, 194 Electric Avenue",
+   "resolution": "ANR plan re-signed",
+   "quote": "motion, ms. bilotta -simeone, to re-sign plan originally signed on february 13th, second, mr. saiia, motion passed.",
+   "tags": [
+    "EPG Solar",
+    "ANR",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Development status: Asian Imperial, 332 Massachusetts Avenue",
+   "resolution": "no action; awaiting foundation plan",
+   "quote": "asian imperial, 332 massachusetts avenue- project engineer still waits on foundation plan from architect.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Development status: Emerald Place, Tri Town Landing, DPW Facility",
+   "resolution": "no action; status noted",
+   "quote": "tri town landing- license agreement currently with town counsel.",
+   "tags": [
+    "development status",
+    "Lake Whalom",
+    "Tri Town Landing",
+    "DPW facility"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "april 23 - planning board meeting, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member information and issues",
+   "resolution": "staff directed to obtain Town-owned land list and acknowledge letter",
+   "quote": "noted correspondence received this date from town resident david prokowiew.",
+   "tags": [
+    "town-owned land",
+    "correspondence",
+    "budget impact"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "question answered",
+   "quote": "public comment: mr. whalen inquired as to date warrant closes.",
+   "tags": [
+    "public comment",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Appointment: ANR, 24 Leominster Road",
+   "resolution": "accepted for department review",
+   "quote": "parcel of over 4 acres to be divided to form a second lot with frontage on school street.",
+   "tags": [
+    "ANR",
+    "School Street"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:35 PM",
+   "quote": "adjournment: motion, ms. bilotta-simeone, second, mr. lockwood, motion passed. adjourned 7:35 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR plan, 551 Goodrich Street (Rolf Ketelaar)",
+   "where": "text",
+   "quote": "anr, 551 goodrich street, rolf ketelaar -"
+  },
+  {
+   "name": "New Mylar plan, identical to ANR plan signed February 13th (EPG Solar, 194 Electric Avenue)",
+   "where": "text",
+   "quote": "new mylar, identical to one signe d february 13 th, presented this date."
+  },
+  {
+   "name": "Amended 2-27-12 minutes",
+   "where": "text",
+   "quote": "motion, ms. bilotta-simeone, approve amended 2-27-12 minutes, second, mr. saiia, motion passed."
+  },
+  {
+   "name": "Letter from Town resident David Prokowiew",
+   "where": "text",
+   "quote": "noted correspondence received this date from town resident david prokowiew."
+  },
+  {
+   "name": "Copies of data received from EPG Solar",
+   "where": "text",
+   "quote": "he has also requested from the planning office copies of data received from epg solar."
+  },
+  {
+   "name": "Solar Bylaw Article (place holder on the Warrant)",
+   "where": "text",
+   "quote": "ms. benson noted a place holder is on the warrant for the solar bylaw article."
+  },
+  {
+   "name": "Warrant Zoning Article (public hearing, April 9)",
+   "where": "text",
+   "quote": "followed by public hearing for warrant zoning arti cle and planning board meeting, town hall"
+  },
+  {
+   "name": "ANR plan, 24 Leominster Road (Robert Doolittle)",
+   "where": "text",
+   "quote": "parcel of over 4 acres to be divided to form a second lot with frontage on school street."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "solar",
+  "EPG Solar",
+  "Town Meeting",
+  "warrant",
+  "public comment",
+  "minutes approval",
+  "budget override",
+  "telecom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

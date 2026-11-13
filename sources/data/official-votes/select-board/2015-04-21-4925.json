@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-04-21",
  "docid": "4925",
@@ -12,55 +12,498 @@
  },
  "votes": [
   {
-   "motion": "To enter Executive Session for the reason as stated and upon adjournment to return to open session",
+   "motion": "Enter Executive Session for the reason stated (G.L. c. 30A, §21A(9)) and return to open session upon adjournment.",
    "moved_by": "P. Bertam",
    "seconded_by": "J. Toale",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: p. bertam 2°°: j. toale to enter executive session for the reason as stated and upon adjournment to return to open session. ms. luck- yes, mr. toale- yes, mr. alonzo-yes, ms. bertram-yes, mr. ebersole- yes"
+   "quote": "to enter executive session for the reason as stated and upon adjournment to return to open session."
   },
   {
-   "motion": "The Board finds that on December 7, 2014 there was a violation involving serving alcoholic beverages to an underage person",
+   "motion": "Find that on December 7, 2014 there was a violation involving serving alcoholic beverages to an underage person.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed 5-0",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'': p. luck the board finds that on december 7, 2014 there was a violation involving serving alcoholic beverages to an underage person vote: all in favor"
+   "quote": "the board finds that on december 7, 2014 there was a violation involving serving alcoholic beverages to an underage person"
   },
   {
-   "motion": "The Board finds that on March 14, 2015 there was a violation of patrons being on premises after closing",
+   "motion": "Find that on March 14, 2015 there was a violation of patrons being on premises after closing.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed 5-0",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d: p. luck the board finds that on march 14, 2015 there was a violation of patrons being on premises after closing vote: all in favor"
+   "quote": "the board finds that on march 14, 2015 there was a violation of patrons being on premises after closing"
   },
   {
-   "motion": "Set a five day suspension of the license from May 22 to May 26, 2015 which covers Memorial Day weekend",
+   "motion": "Set a five day suspension of the Mickey Shea's liquor license from May 22 to May 26, 2015, covering Memorial Day weekend.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-0-1",
+   "outcome": "4 in Favor, 1 abstain",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: p. luck mr. ebersole motioned to set a five day suspension of the license from may 22 to may 26, 2015 which covers memorial day weekend. ms. luck seconded. vote: 4 in favor, 1 abstain"
+   "quote": "mr. ebersole motioned to set a five day suspension of the license from may 22 to may 26, 2015 which covers memorial day weekend."
   },
   {
-   "motion": "Recommend the Board approve Article 9",
+   "motion": "Recommend the Board approve Article 9.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-1",
+   "outcome": "4 in Favor, 1 Against",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d:p. luck to recommend the board approve article 9 vote: 4 in favor, 1 against"
+   "quote": "to recommend the board approve article 9 vote: 4 in favor, 1 against"
   },
   {
-   "motion": "To adjourn the meeting at 8:59 PM",
+   "motion": "Adjourn the meeting at 8:59 PM.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
-   "outcome": "passed 5-0",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:59 pm 2': j. toale vote: all in favor"
+   "quote": "to adjourn the meeting at 8:59 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; transcribed by macOS Vision. One motion (two-day suspension by R. Ebersole, seconded P. Luck) was withdrawn before vote and is not recorded.",
- "cost_usd": 0.1397485
+ "note": "OCR text with garbled spots: the executive-session motion reads \"P. Bertam\" (likely Bertram) and the second is \"2°°\"; the 35° quarter heading is likely \"3rd\"; the adjournment second and the signature line are garbled, so the signing clerk is not recorded as an attendee. Ebersole's two-day suspension motion was withdrawn before a second and no vote was recorded, so it is not listed as a vote. The 5-day suspension abstainer is not named. The Article 9 vote is recorded as a recommendation; the minutes do not explicitly tie Article 9 to the 2015 budget adjustment article, so the two are linked only by context. Ms. Luck and Mr. Alonzo's opening announcements fall under the PUBLIC COMMENT heading but are board members, so they are not recorded as public speakers. The DPW settlement's 5-0 vote was taken at a prior meeting and is reported, not recorded as a vote here.",
+ "cost_usd": 0.015554220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present"
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present"
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present"
+  },
+  {
+   "name": "Brian Riley",
+   "role": "legal counsel for the Town, Kopelman & Paige",
+   "status": "present",
+   "quote": "brian riley of kopelman & paige, legal counsel for the town, noted for the record the first incident on"
+  },
+  {
+   "name": "Jack Hebert",
+   "role": "Sergeant",
+   "status": "present",
+   "quote": "sergeant jack hebert came forward and reported on december 7\" at approximately 1:41 a.m",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Robert Herrick",
+   "role": "owner of Mickey Shea's",
+   "status": "present",
+   "quote": "robert herrick, owner of mickey shea's, came forward and wanted to clarify a conversation his bar manager"
+  },
+  {
+   "name": "Lindsey Achilla",
+   "role": "bar manager",
+   "status": "present",
+   "quote": "the bar manager, lindsey achilla, who was the only bartender on that night."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Conservation Commission Chair",
+   "status": "present",
+   "quote": "richard bursch, conservation commission chair, stated member shelia holt has resigned."
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of School Facilities and Grounds",
+   "status": "present",
+   "quote": "john londa stated we went through a solar installation in 2010 on the landfill"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DP W Director",
+   "status": "not stated",
+   "quote": "jack rodriquenz, dp w director, met with a company called power management company, llc."
+  },
+  {
+   "name": "Nathan Panoke",
+   "role": "locksmith and former employee",
+   "status": "not stated",
+   "quote": "ms. achilla called nathan panoke, a locksmith and former employee, who was one of the persons there that"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Speidel to inquire into the status of the water leak remediation and report back to the Chair.",
+   "quote": "mr. alonzo requested the status of the water leak remediation, ms. speidel will inquire and report back"
+  },
+  {
+   "decision": "Ms. Speidel to check with MRC on a regional animal control process at her meeting with them that week.",
+   "quote": "ms. speidel replied no but she has a meeting with them this week and will check on it."
+  },
+  {
+   "decision": "Ms. Speidel asked to check on the possibility of incorporating a GIS for storm water.",
+   "quote": "ms. bertram asked ms. speidel to check on the possibility of incorporating a gis for storm water."
+  },
+  {
+   "decision": "A letter to Rep. DiNatale to be sent as well, regarding the proposed Water District expansion to Lancaster.",
+   "quote": "he requested a letter be sent to rep. dinatale also."
+  },
+  {
+   "decision": "Ms. Speidel to meet with the Superintendent the following week to keep the Water District process moving.",
+   "quote": "ms. speidel will be meeting with the superintendent next week to keep this process going."
+  },
+  {
+   "decision": "Licensee to receive a letter from the Board detailing the alcohol suspension, with five business days to appeal to the ABCC; suspension held if appealed until the hearing concludes.",
+   "quote": "mr. alonzo informed mr. herrick he would receive a letter from the board detailing the alcohol suspension and will have five business days to appeal to the abcc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snow and ice removal deficit",
+   "what_was_recorded": "The final snow and ice removal deficit is $9,300 higher than previously discussed.",
+   "figures_as_printed": [
+    "$259,300",
+    "$9,300"
+   ],
+   "quote": "she noted the final snow and ice removal deficit was $259,300 which is $9,300 higher than what we talked about previously."
+  },
+  {
+   "topic": "Veterans Benefits deficit",
+   "what_was_recorded": "The Veterans Benefits line is about $2,900 higher, for a total deficit of $60,376.",
+   "figures_as_printed": [
+    "$2,900",
+    "$60,376"
+   ],
+   "quote": "the veterans benefits line is about $2,900 higher coming to a total deficit of $60,376."
+  },
+  {
+   "topic": "MIIA participation credits",
+   "what_was_recorded": "Additional MIIA participation credits received, used to cover the two additional deficits and reduce the pavement cut.",
+   "figures_as_printed": [
+    "$18,490"
+   ],
+   "quote": "we did receive some additional participation credits in the amount of $18,490"
+  },
+  {
+   "topic": "Pavement management program cut",
+   "what_was_recorded": "The proposed cut to pavement management was reduced by about $10,000, to $42,000 rather than $52,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$42,000",
+    "$52,000"
+   ],
+   "quote": "reduce that proposed cut to the pavement management program by about $10,000 down to $42,000 rather than $52,000."
+  },
+  {
+   "topic": "Free Cash appropriation for budget adjustment",
+   "what_was_recorded": "The only additional appropriation in the budget adjustment article will be $250,000 from Free Cash.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "the only additional appropriation will be $250,000 from free cash."
+  },
+  {
+   "topic": "Free Cash remaining after appropriation",
+   "what_was_recorded": "About $50,000 would remain in Free Cash, proposed for the fiscal year 2016 budget toward the stabilization deposit.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "ms. speidel stated a little over $50,000 but that is proposed to be applied to the fiscal year 2016 budget"
+  },
+  {
+   "topic": "DPW collective bargaining agreement cost",
+   "what_was_recorded": "Overall cost of the three-year DPW contract is 5.9%, an average annual cost of 1.97%; the merit evaluation change was cost neutral.",
+   "figures_as_printed": [
+    "5.9%",
+    "1.97%"
+   ],
+   "quote": "the overall cost of this contract over the three year period is 5.9% with an average annual cost of 1.97%"
+  },
+  {
+   "topic": "Warrants presented",
+   "what_was_recorded": "Payroll and two Accounts Payable warrants were presented.",
+   "figures_as_printed": [
+    "$641,756.88",
+    "$143,362.86",
+    "$306,468.25"
+   ],
+   "quote": "warrants presented were for payroll in the amount of $641,756.88; accounts payable in the amount of $143,362.86 and accounts payable in the amount of $306,468.25."
+  },
+  {
+   "topic": "Local option meals tax collections",
+   "what_was_recorded": "Almost $75,000 of the $85,000 meals tax estimate was collected as of March 31, 2015.",
+   "figures_as_printed": [
+    "$75,000",
+    "$85,000"
+   ],
+   "quote": "with almost $75,000 of the $85,000 estimate collected as of march 31, 2015"
+  },
+  {
+   "topic": "Third quarter revenue and expenditure percentages",
+   "what_was_recorded": "At 75% of the fiscal year, 76.78% of estimated revenues were collected and 72.9% of appropriations expended or encumbered.",
+   "figures_as_printed": [
+    "76.78%",
+    "72.9%"
+   ],
+   "quote": "at that mark we had collected 76.78% of estimated revenues and expended and/or encumbered 72.9% of appropriations."
+  },
+  {
+   "topic": "Solar advisor services",
+   "what_was_recorded": "The solar advisor company would perform the work at no cost to the Town; its fees come through agreements.",
+   "figures_as_printed": [],
+   "quote": "this company would do that work for us at no cost for us."
+  },
+  {
+   "topic": "Medication drop box donation",
+   "what_was_recorded": "CVS donated a medication drop off box installed at the Police station at no cost to the Town.",
+   "figures_as_printed": [],
+   "quote": "she thanked the police department for installing it at no cost to the town."
+  },
+  {
+   "topic": "Fake ID cost (testimony)",
+   "what_was_recorded": "A licensee witness said fake IDs cost between $60 and $1000 (2009 seminar figure).",
+   "figures_as_printed": [
+    "$60",
+    "$1000"
+   ],
+   "quote": "fake ids were as inexpensive as $60 or as expensive as $1000"
+  },
+  {
+   "topic": "Door lock replacement cost (testimony)",
+   "what_was_recorded": "The licensee said the door could not be replaced because it is too expensive; locks were fixed.",
+   "figures_as_printed": [],
+   "quote": "we can't replace the door; it's too expensive"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Budget adjustment article: the only additional appropriation is $250,000 from Free Cash; all other items are to be transfers, with a lengthy motion at Annual Town Meeting.",
+   "amount_as_printed": "$250,000",
+   "outcome": "proposed for Annual Town Meeting",
+   "quote": "the only additional appropriation will be $250,000 from free cash. everything else will be a transfer and will involve a lengthy motion."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Richard Bursch",
+   "stated_role": "Conservation Commission Chair",
+   "topic": "Conservation Commission vacancy and recommended appointment of Carl Luck",
+   "quote": "the commission would like to recommend the board appoint mr. luck to the vacancy."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session entry",
+   "resolution": "entered executive session; minutes kept separate",
+   "quote": "chair alonzo announced the board would be entering executive session for the following reason:",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; Conservation Commission recommended Carl Luck for the vacancy, on May 5 agenda",
+   "quote": "richard bursch, conservation commission chair, stated member shelia holt has resigned.",
+   "tags": [
+    "public comment",
+    "conservation commission",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "B & H Corporation d.b.a. Mickey Shea's Liquor Violation Hearing",
+   "resolution": "violations found on Dec 7, 2014 and Mar 14, 2015; five-day suspension May 22 to May 26, 2015 (4 in favor, 1 abstain)",
+   "quote": "b & h corporation d.b.a. mickey shea's liquor violation hearing",
+   "tags": [
+    "liquor license",
+    "hearing",
+    "police",
+    "suspension"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles",
+   "resolution": "reviewed budget adjustment article; recommended Board approve Article 9 (4 in favor, 1 against)",
+   "quote": "discussion/review of annual town meeting warrant articles",
+   "tags": [
+    "town meeting",
+    "budget adjustment",
+    "free cash",
+    "pavement"
+   ]
+  },
+  {
+   "topic": "DPW collective bargaining settlement",
+   "resolution": "announced; Board approved agreement 5-0 at prior week's executive session",
+   "quote": "announce settlement of dpw employee collective bargaining agreement",
+   "tags": [
+    "collective bargaining",
+    "DPW",
+    "union contract"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "presented payroll and accounts payable warrants",
+   "quote": "warrants presented were for payroll in the amount of $641,756.88; accounts payable in the amount of $143,362.86 and accounts payable in the amount of $306,468.25.",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Action file issues",
+   "resolution": "follow-ups assigned: regional animal control with MRC, storm water GIS",
+   "quote": "ms. bertram asked ms. speidel to check on the possibility of incorporating a gis for storm water.",
+   "tags": [
+    "action items",
+    "animal control",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; water leak status follow-up assigned",
+   "quote": "board of health-no report; building reuse committee- has a joint meeting with the school committee on the 30th",
+   "tags": [
+    "committee reports",
+    "school building",
+    "water leak"
+   ]
+  },
+  {
+   "topic": "Town Manager report: solar and Unitil",
+   "resolution": "discussed solar advisor proposal and Unitil meeting; no action taken",
+   "quote": "town manager report- ms. speidel, john londa, director of school facilities and grounds and jack rodriquenz, dp w director, met with a company called power management company, llc.",
+   "tags": [
+    "solar",
+    "Unitil",
+    "net metering",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Third quarter financial reports",
+   "resolution": "presented; to Finance Committee Thursday",
+   "quote": "ms. speidel moved on to the 35° quarter financial reports.",
+   "tags": [
+    "financial reports",
+    "revenue",
+    "appropriations"
+   ]
+  },
+  {
+   "topic": "Water District expansion to Lancaster",
+   "resolution": "letters presented for signatures; letter to Rep. DiNatale requested; Water Commissioners meeting in May not yet set",
+   "quote": "mr. alonzo presented letters that ms. luck proposed to send to state representatives regarding the proposed water district expansion to lancaster for signatures",
+   "tags": [
+    "water district",
+    "Lancaster",
+    "state representatives"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:59 PM; next meeting Annual Town Meeting May 2",
+   "quote": "mr. alonzo stated the next meeting is at annual town meeting on saturday may 2nd",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of hearing sent by certified mail by the Town Manager on March 19th (G.L. c. 138, §23)",
+   "where": "text",
+   "quote": "mr. alonzo opened the hearing and read the notice sent by certified mail by the town manager on march 19th"
+  },
+  {
+   "name": "Lunenburg Police Department incident report received by the Board of Selectmen on December 8, 2014",
+   "where": "text",
+   "quote": "incident report filed by the lunenburg police department received by the board of selectmen on december 8,"
+  },
+  {
+   "name": "Lunenburg Police Department incident report received by the Board of Selectmen on March 16, 2015",
+   "where": "text",
+   "quote": "selectmen on march 16, 2015, a true copy of which is enclosed"
+  },
+  {
+   "name": "Police report (Sgt. Hebert incident reports)",
+   "where": "text",
+   "quote": "the police report states four people came in at the same time, two were refused service because they did not have identification"
+  },
+  {
+   "name": "Receipt for two Heinekens and a pitcher of beer",
+   "where": "text",
+   "quote": "the receipt which showed two heinekens and a pitcher of beer had been purchased"
+  },
+  {
+   "name": "Locksmith receipts brought in by Mr. Herrick",
+   "where": "text",
+   "quote": "ms. bertram asked to view the locksmith receipts mr. herrick stated he brought in this evening."
+  },
+  {
+   "name": "Lunenburg License Commission License Regulations (\"Regulations\")",
+   "where": "text",
+   "quote": "section 1.04(a) of the license regulations of the lunenburg license commission"
+  },
+  {
+   "name": "2015 budget adjustment article (Annual Town Meeting warrant; Article 9)",
+   "where": "text",
+   "quote": "ms. speidel stated the only article she wanted to review this evening was the 2015 budget adjustment article."
+  },
+  {
+   "name": "Quarter financial reports prepared by the Town Accountant",
+   "where": "text",
+   "quote": "the town accountant prepared the reports representing 75% of the fiscal year."
+  },
+  {
+   "name": "Payroll and Accounts Payable warrants",
+   "where": "text",
+   "quote": "warrants presented were for payroll in the amount of $641,756.88"
+  }
+ ],
+ "tags": [
+  "liquor license hearing",
+  "Mickey Shea's",
+  "police",
+  "executive session",
+  "collective bargaining",
+  "DPW",
+  "town meeting warrant",
+  "budget adjustment",
+  "free cash",
+  "solar energy",
+  "Unitil",
+  "water district",
+  "conservation commission",
+  "financial reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

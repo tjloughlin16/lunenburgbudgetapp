@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-02-04",
  "docid": "4915",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the Open Space Land Acquisition Criteria",
+   "motion": "Ratify the Grant Application from the Green Communities Task Force (Five Year Energy Reduction Plan).",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Matthews",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mr: ebersole moved to ratify the grant application from the green communities task force. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+  },
+  {
+   "motion": "Approve the Open Space Land Acquisition Criteria.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
@@ -20,7 +28,7 @@
    "quote": "ms. bertram moved to approve the open space land acquisition criteria. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed"
   },
   {
-   "motion": "Endorse the Conservation Land Valuation Criteria",
+   "motion": "Endorse the Conservation Land Valuation Criteria.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Ebersole",
    "outcome": "passed 5-0",
@@ -28,23 +36,23 @@
    "quote": "mr. matthews moved to endorse the conservation land valuation criteria. mr. ebersole seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Accept the donation of land located at 801 Northfield Road, 781 Page Street, and 30 Rennie Street for Conservation purposes",
+   "motion": "Accept the donation of land located at 801 Northfield Road, 781 Page Street, and 30 Rennie Street for Conservation purposes.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to accept the donation of land located at 801 northfield road, 781 page street, and 30 rennie street for conservation purposes. mr. matthews seconded. on vote, vote motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to accept the donation of land located at 801 northfield road, 781 page street, and 30 rennie street for conservation purposes. mr. matthews seconded."
   },
   {
-   "motion": "Open the warrant for Annual Town Meeting on 2/4/2014, and to close the warrant at 4PM on 3/24/2014",
+   "motion": "Open the warrant for Annual Town Meeting on 2/4/2014 and close it at 4PM on 3/24/2014.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "ms. bertram moved to open the warrant for annual town meeting on 2/4/2014, and to close the warrant at 4pm on 3/24/2014. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "End the regularly scheduled meeting",
+   "motion": "End the regularly scheduled meeting (adjourn).",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
@@ -52,7 +60,475 @@
    "quote": "being no further business ms. bertram moved to end the regularly scheduled meeting. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR document. All votes clearly recorded with verbatim quotes. No votes missing from text.",
- "cost_usd": 0.1001435
+ "dropped_unquoted": 0,
+ "note": "Text is OCR (macOS Vision) with noise; quotes were copied from the OCR text with line breaks collapsed. Only one name spelling differs: Sharon Jordan appears as \"Sharon Jordon\" in items 2 and 3; recorded once as printed in item 1. Mr. Ebersole's motion is printed \"Mr: Ebersole\" and recorded as \"Mr. Ebersole\". The 6:00PM joint executive session lists two items (O'Brien Homes litigation; Lane Property), but the minutes record no motion to enter, no vote, and no outcome. Warrants and the 1/21/2014 minutes are listed with no approval vote recorded. The second \"PUBLIC COMMENT\" section records remarks by board members Matthews and Alonzo, not outside speakers; they are listed under public_comment for completeness. Chief Marino and Senator Flanagan are mentioned but did not attend. No documents list heading is printed.",
+ "cost_usd": 0.013001020000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "fire chief patrick sullivan came before the board this evening to recognize ff austin flagg and david spadafore"
+  },
+  {
+   "name": "Austin Flagg",
+   "role": "FF",
+   "status": "present",
+   "quote": "ff. austin flagg & david spadafore came forward, were recognized, and then thanked by the fire chief and the bos."
+  },
+  {
+   "name": "David Spadafore",
+   "status": "present",
+   "quote": "ff. austin flagg & david spadafore came forward, were recognized, and then thanked by the fire chief and the bos."
+  },
+  {
+   "name": "David Blatt",
+   "role": "Chairperson of the Green Communities Task Force",
+   "status": "present",
+   "quote": "david blatt came before the board this evening to ask for approval and to review the completed grant application"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "Representative from the Open Space Advisory Committee & Conservation Commission",
+   "status": "present",
+   "quote": "sharon jordan, representative from the open space advisory committee & conservation commission came before the bos to review and seek approval"
+  },
+  {
+   "name": "Jonathan Juhl",
+   "role": "Representative from JNJUHL",
+   "status": "present",
+   "quote": "jonathan juhl representative from jnjuhl & paul teixeira representative from rcap solutions came before the board"
+  },
+  {
+   "name": "Paul Teixeira",
+   "role": "Representative from RCAP Solutions",
+   "status": "present",
+   "quote": "jonathan juhl representative from jnjuhl & paul teixeira representative from rcap solutions came before the board"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members determined that the current Eagle Heights agreement has expired and will not extend anything until more information is received.",
+   "quote": "board members determined that the current agreement has expired and will not extend anything until more information is received"
+  },
+  {
+   "decision": "Mr. Ebersole recommended that Mr. Juhl contact the Assessor for PILOT information as soon as possible.",
+   "quote": "mr. ebersole recommended that mr. juhl contact the assessor for pilot information as soon as possible"
+  },
+  {
+   "decision": "Mr. Ebersole requested that the Building Reuse Committee future be placed on a future BOS agenda.",
+   "quote": "requested that this be put on a future bos agenda."
+  },
+  {
+   "decision": "Mr. Alonzo requested that a placeholder be put on the Town Meeting warrant for PACC Bylaw revisions.",
+   "quote": "mr. alonzo requested that a place holder be put on the warrant for town meeting for pacc bylaw revisions."
+  },
+  {
+   "decision": "Mr. Ebersole requested that the process for choosing a broadband provider be included on a future BOS agenda.",
+   "quote": "he requested that the process, for which we would recommend our buildings choose to pick from, be included on a future bos agenda."
+  },
+  {
+   "decision": "Chair directed that the IT Director be consulted on how to house shared proposal information and that steps be taken toward this.",
+   "quote": "we should look to our it director on how to house this information and we should take steps towards this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Communities five-year energy grant application",
+   "what_was_recorded": "Total project cost and grant funding for the Five Year Energy Reduction Plan were stated.",
+   "figures_as_printed": [
+    "$175,750.00",
+    "$154,510.00"
+   ],
+   "quote": "total project cost will be $175,750.00 & grant funding will be $154,510.00"
+  },
+  {
+   "topic": "Tax abatements for donated parcels",
+   "what_was_recorded": "Approximate abatements needed to accept the donated parcels were described as not a problem for the Town Manager's budget.",
+   "figures_as_printed": [
+    "$2600"
+   ],
+   "quote": "the approximate $2600 in abatements does not pose a problem to the town manager's budget"
+  },
+  {
+   "topic": "Fines local receipts",
+   "what_was_recorded": "Fines collected were above the estimate, mostly from motor vehicle infractions.",
+   "figures_as_printed": [
+    "$6,590",
+    "$28,000"
+   ],
+   "quote": "we have collected $6,590 more than the estimate of $28,000 for fines, majority due to motor vehicle infractions"
+  },
+  {
+   "topic": "Local Option Meals Tax",
+   "what_was_recorded": "Meals tax is trending above estimate, expected to exceed it by about $13k.",
+   "figures_as_printed": [
+    "$66,625",
+    "$13k"
+   ],
+   "quote": "local option meals tax is trending higher than the estimate of $66,625."
+  },
+  {
+   "topic": "Building permits for solar farms",
+   "what_was_recorded": "Building permits issued for solar farms on Chase Rd. and Pleasant St.",
+   "figures_as_printed": [
+    "$77,862.55"
+   ],
+   "quote": "building permits were issued for the solar farms on chase rd. & pleasant st in the amount of $77,862.55"
+  },
+  {
+   "topic": "Miscellaneous non-recurring revenue",
+   "what_was_recorded": "Received a zoning incentive payment for Tri-Town development and a federal portion payment for the Feb. 2013 snow storm.",
+   "figures_as_printed": [
+    "$99,000",
+    "$47,742.56"
+   ],
+   "quote": "received was a $99,000 zoning incentive payment for tri-town development & a payment in the amount of $47,742.56"
+  },
+  {
+   "topic": "Injury Leave account",
+   "what_was_recorded": "Account over expended due to one officer on injury leave in FY14.",
+   "figures_as_printed": [
+    "$13k"
+   ],
+   "quote": "injury leave: this account is over expended by $13k due to one officer on injury leave in fy14."
+  },
+  {
+   "topic": "Radio Watch payroll",
+   "what_was_recorded": "Potential year-end deficit if spending continues at current level.",
+   "figures_as_printed": [
+    "$15k"
+   ],
+   "quote": "if spending continues at this level there is a potential for a deficit of approximately $15k."
+  },
+  {
+   "topic": "Weights & Measures",
+   "what_was_recorded": "Projected year-end deficit due to purchase of new weights.",
+   "figures_as_printed": [
+    "$1k"
+   ],
+   "quote": "based on expenditures to date there will be a deficit of approximated $1k at year end due to purchase of new weights etc."
+  },
+  {
+   "topic": "Highway overtime",
+   "what_was_recorded": "Remaining balance as of 12/31/13 and projected year-end deficit.",
+   "figures_as_printed": [
+    "$409.51",
+    "$2k"
+   ],
+   "quote": "as of 12/31/13 there is a balance of $409.51 remaining in the overtime line."
+  },
+  {
+   "topic": "Snow Removal",
+   "what_was_recorded": "Current deficit with open purchase orders.",
+   "figures_as_printed": [
+    "$24k"
+   ],
+   "quote": "the current deficit with open purchase orders is $24k"
+  },
+  {
+   "topic": "Veterans Benefits",
+   "what_was_recorded": "Account over expended; potential year-end deficit if open claims remain open.",
+   "figures_as_printed": [
+    "$14k",
+    "$42k"
+   ],
+   "quote": "veterans benefits: account is over expended by $14k."
+  },
+  {
+   "topic": "Workers Compensation",
+   "what_was_recorded": "Surplus in the account.",
+   "figures_as_printed": [
+    "$2,523"
+   ],
+   "quote": "workers compensation: there is a surplus in this account of $2,523."
+  },
+  {
+   "topic": "Liability Insurance",
+   "what_was_recorded": "Surplus in the account.",
+   "figures_as_printed": [
+    "$17,049"
+   ],
+   "quote": "liability insurance: there is a surplus in this account of $17,049."
+  },
+  {
+   "topic": "Health Insurance (retirees)",
+   "what_was_recorded": "Projected surplus from changes to retiree health insurance effective 1/1/14.",
+   "figures_as_printed": [
+    "$150k"
+   ],
+   "quote": "health insurance: due to changes in health insurance for retirees effective 1/1/14, there will be a surplus of approximately"
+  },
+  {
+   "topic": "Warrants listed under Minutes/Warrants/Action File Issues",
+   "what_was_recorded": "Four warrant amounts were listed; no approval vote is recorded.",
+   "figures_as_printed": [
+    "$1155.09",
+    "$532,341.60",
+    "$627,320.08",
+    "$432,836.13"
+   ],
+   "quote": "warrants: 3rd quarter water dept. bills 12/31 #33a14 $1155.09 1/29 #40-14 $532,341.60"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matthews",
+   "topic": "State aid and Senator Flanagan",
+   "quote": "mr. matthews commented to say that senator flanagan will be fighting to increase state aid to the towns."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Transportation Bond Bill",
+   "quote": "mr. alonzo added that the transportation bond bill had been added back into the state budget and hopes that this is dispersed to"
+  },
+  {
+   "speaker": "Mr. Matthews",
+   "topic": "Condolences on passing of Bob Meek-Laveck",
+   "quote": "mr. matthews acknowledged the sudden passing of bob meek-laveck"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Joint executive session (listed on agenda)",
+   "resolution": "listed in minutes; no motion or outcome recorded",
+   "quote": "6:00pm joint executive session: a. m.g.l. chapter 30a, section 21a (9)",
+   "tags": [
+    "executive session",
+    "litigation",
+    "real property"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "quote": "7:00pm public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo wished the city of fitchburg a happy 2504 anniversary.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Acknowledgement of heroic efforts of FF Austin Flagg",
+   "resolution": "recognized and thanked",
+   "quote": "ff. austin flagg & david spadafore came forward, were recognized, and then thanked by the fire chief and the bos.",
+   "tags": [
+    "fire department",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Report on Green Communities grant application",
+   "resolution": "grant application ratified",
+   "quote": "david blatt came before the board this evening to ask for approval and to review the completed grant application",
+   "tags": [
+    "energy",
+    "grant",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Open Space Land Acquisition Criteria",
+   "resolution": "approved",
+   "quote": "came before the bos to review and seek approval for the open space land acquisition criteria.",
+   "tags": [
+    "open space",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Conservation Land Valuation Criteria",
+   "resolution": "endorsed",
+   "quote": "came before the bos to review and seek approval for the conservation land valuation criteria.",
+   "tags": [
+    "conservation",
+    "land"
+   ]
+  },
+  {
+   "topic": "Accept donation of land for conservation",
+   "resolution": "donation accepted",
+   "quote": "to ask their acceptance of the following parcels of land for conservation purposes.",
+   "tags": [
+    "conservation",
+    "land donation",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Eagle Heights project status (JNJUHL, RCAP Solutions)",
+   "resolution": "no vote; board will not extend agreement until more information",
+   "quote": "jonathan juhl representative from jnjuhl & paul teixeira representative from rcap solutions came before the board",
+   "tags": [
+    "housing",
+    "financing",
+    "PILOT",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Open warrant for Annual Town Meeting and review schedule",
+   "resolution": "warrant opened; closes 4PM 3/24/2014",
+   "quote": "ms. speidel reviewed the proposed schedule for the 2014 annual town meeting with the board",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no vote recorded; shared-information discussion, follow-ups requested",
+   "quote": "minutes/warrants/action file issues",
+   "tags": [
+    "warrants",
+    "land use",
+    "information sharing",
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; follow-up items requested",
+   "quote": "committee report: board of health; building reuse committee; capital planning committee; finance",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager reports: Q2 financial reports",
+   "resolution": "reported, no action",
+   "quote": "q2 financial reports: ms. speidel reported that the town is in very good shape ending the second quarter",
+   "tags": [
+    "finance",
+    "budget",
+    "revenue",
+    "deficits"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations: none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) and board remarks",
+   "resolution": "remarks recorded, no action",
+   "quote": "mr. matthews commented to say that senator flanagan will be fighting to increase state aid to the towns.",
+   "tags": [
+    "state aid",
+    "condolences"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:41PM",
+   "quote": "regular scheduled meeting adjourned at 9:41pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Five Year Energy Reduction Plan grant application (Green Communities Task Force)",
+   "where": "text",
+   "quote": "to ask for approval and to review the completed grant application for a five year energy reduction plan."
+  },
+  {
+   "name": "Open Space Land Acquisition Criteria",
+   "where": "text",
+   "quote": "came before the bos to review and seek approval for the open space land acquisition criteria."
+  },
+  {
+   "name": "Conservation Land Valuation Criteria",
+   "where": "text",
+   "quote": "came before the bos to review and seek approval for the conservation land valuation criteria."
+  },
+  {
+   "name": "Annual Town Meeting warrant (opened 2/4/2014, closes 4PM 3/24/2014)",
+   "where": "text",
+   "quote": "ms. bertram moved to open the warrant for annual town meeting on 2/4/2014, and to close the warrant at 4pm on 3/24/2014."
+  },
+  {
+   "name": "3rd Quarter Water Dept. Bills warrant",
+   "where": "text",
+   "quote": "warrants: 3rd quarter water dept. bills 12/31 #33a14 $1155.09"
+  }
+ ],
+ "tags": [
+  "select board",
+  "open space",
+  "conservation",
+  "land donation",
+  "tax abatement",
+  "green communities",
+  "energy",
+  "grant",
+  "eagle heights",
+  "housing",
+  "town meeting warrant",
+  "financial report",
+  "budget deficits",
+  "land use",
+  "information sharing",
+  "fire department recognition",
+  "state aid"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

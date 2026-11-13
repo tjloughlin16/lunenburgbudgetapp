@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2011-11-17",
  "docid": "2742",
@@ -12,43 +12,266 @@
  },
  "votes": [
   {
-   "motion": "Open Main Hall for the Cultural Horizons event on Sunday, Feb. 12, 2012",
+   "motion": "Approve the secretary's minutes as amended.",
+   "moved_by": "LS",
+   "seconded_by": "LK",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion made by ls to approve s ecretary's minutes as amended, seconded by lk; appr oved unanimously."
+  },
+  {
+   "motion": "Open Main Hall for the Cultural Horizons event on Sunday, Feb. 12, 2012.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made and passed to open main hall f or the cultural horizons event on sunday, feb. 12, 2012",
-   "quote_taken_from_text": true
+   "quote": "motion made and passed to open main hall"
   },
   {
-   "motion": "Change meeting times to 6:45 pm starting December 15, 2011",
+   "motion": "Change meeting times to 6:45 pm starting December 15, 2011.",
    "moved_by": "KM",
    "seconded_by": "NB",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by km, seconded by nb and passed unanim ously to change meeting times to 6:45 pm starting december 15, 2011",
+   "quote": "motion made by km, seconded by nb and passed unanim ously to change meeting times to 6:45 pm starting december 15, 2011."
+  },
+  {
+   "motion": "Grant AS up to $ 1500 to attend the PLA Conference in Philadelphia PA, March 2012.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mot ion made and passed unanimously to grant as up to $ 1500",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Accept Executive Session minutes as amended",
+   "motion": "Accept Executive Session minutes as amended.",
    "moved_by": "KM",
    "seconded_by": "LS",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion made by km, seconded by ls and passed unanim ously to accept executive session minutes as amende ",
-   "quote_taken_from_text": true
+   "quote": "motion made by km, seconded by ls and passed unanim ously to accept executive session minutes as amende d."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:57 pm.",
    "moved_by": "KM",
    "seconded_by": "LS",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion made by km, seconded by ls, and passed unani mously to adjourn at 7:57 pm",
+   "quote": "motion made by km, seconded by ls, and passed unani mously to adjourn at 7:57 pm."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with broken word spacing (e.g., 'Mai lloux', 's ecretary', 'appr oved'); quotes are copied as printed. Attendance comes from the Attending and Absent lines only; no roll call. The absent member is given only as initials 'JM'. Votes are recorded as 'passed' or 'passed unanimously' with no tallies. Mover and seconder are not printed for the Friends motion and the PLA motion. 'AS' in the PLA motion is not expanded in the minutes. No public comment was recorded.",
+ "cost_usd": 0.006618219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, kathy murray, jeanne raboin"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, kathy murray, jeanne raboin"
+  },
+  {
+   "name": "Richard Mai lloux",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, kathy murray, jeanne raboin"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, kathy murray, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "respectfully submitted, jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, kathy murray, jeanne raboin, amy sadkin"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "JM",
+   "role": "Trustee (initials only)",
+   "status": "absent",
+   "quote": "absent: jm no public comment"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustees take no action on the lending policy for now, pending discussion of the Fitchburg PL certification.",
+   "quote": "at the moment trustees of lpl will take no action"
+  },
+  {
+   "decision": "Discussion of the preliminary FY 2013 budget is tabled until the December meeting.",
+   "quote": "discussion of preliminary fy 2013 budget is tabled until december"
+  },
+  {
+   "decision": "Amy is to meet with the Capital Planning Committee at the library on November 21, 2011.",
+   "quote": "amy to meet with capital planning committee at the library on november 21, 2011."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Early literacy station (AWE) research",
+   "what_was_recorded": "Karen is researching a stand-alone computer station for an early literacy station, described as costing about $1000.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "karen is researching an early literacy station (awe ): stand-alone =computer station, about $1000."
+  },
+  {
+   "topic": "Library account balances and trust funds",
+   "what_was_recorded": "Director reported on the gift account, state aid checks, the Public Libraries fund, and All Purpose Trust Funds; unrestricted funds were used for ALA for Amy and staff, and the town takes interest on the other funds. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "be aware that the town takes the interest on the other funds"
+  },
+  {
+   "topic": "State aid spending on software",
+   "what_was_recorded": "State Aid has been used for software expenditures, including Library Insight and CW Mars. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "state aid has been used for software expenditures, library insight, cw mars, etc."
+  },
+  {
+   "topic": "PLA Conference travel for AS (Amy Sadkin)",
+   "what_was_recorded": "Trustees voted to grant up to $ 1500 to attend the PLA Conference in Philadelphia PA, March 2012.",
+   "figures_as_printed": [
+    "$ 1500"
+   ],
+   "quote": "mot ion made and passed unanimously to grant as up to $ 1500",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.08795750000000001
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's minutes",
+   "resolution": "approved as amended",
+   "quote": "motion made by ls to approve s ecretary's minutes as amended, seconded by lk; appr oved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; budget, circulation, programs, account balances, staff, facilities, technology and other items reported",
+   "quote": "director's report: a. budget is on track",
+   "tags": [
+    "director report",
+    "budget",
+    "programs",
+    "technology",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Preliminary FY 2013 budget",
+   "resolution": "tabled until December meeting",
+   "quote": "discussion of preliminary fy 2013 budget is tabled until december",
+   "tags": [
+    "budget",
+    "FY 2013"
+   ]
+  },
+  {
+   "topic": "Friends: Main Hall for Cultural Horizons event",
+   "resolution": "approved",
+   "quote": "friends: motion made and passed to open main hall",
+   "tags": [
+    "Friends",
+    "events",
+    "Main Hall"
+   ]
+  },
+  {
+   "topic": "Meeting time change",
+   "resolution": "approved, 6:45 pm starting December 15, 2011",
+   "quote": "motion made by km, seconded by nb and passed unanim ously to change meeting times to 6:45 pm starting december 15, 2011.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Director's request: PLA Conference, March 2012",
+   "resolution": "approved up to $ 1500 for AS",
+   "quote": "director's request: pla conference, march 2012",
+   "tags": [
+    "travel",
+    "training",
+    "PLA"
+   ]
+  },
+  {
+   "topic": "Lending policy",
+   "resolution": "no action taken",
+   "quote": "lending policy: no decision yet",
+   "tags": [
+    "lending policy",
+    "Fitchburg PL certification"
+   ]
+  },
+  {
+   "topic": "Executive session minutes",
+   "resolution": "accepted as amended",
+   "quote": "motion made by km, seconded by ls and passed unanim ously to accept executive session minutes as amende d.",
+   "tags": [
+    "executive session",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:57 pm; next meeting December 15 at 6:45 pm",
+   "quote": "motion made by km, seconded by ls, and passed unani mously to adjourn at 7:57 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Library Program Spreadsheet for November 2011",
+   "where": "list",
+   "quote": "library program spreadsheet for november 2011 was p resented."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "director's report",
+  "programs",
+  "staff",
+  "technology",
+  "lending policy",
+  "Friends",
+  "meeting schedule",
+  "PLA conference",
+  "trust funds"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "library program spreadsheet for november 2011 was p resented"
+ },
+ "dropped_unquoted_by_field": {}
 }

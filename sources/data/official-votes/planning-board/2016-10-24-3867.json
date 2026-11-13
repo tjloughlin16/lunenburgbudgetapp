@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-10-24",
  "docid": "3867",
@@ -12,24 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of September 26, 2016",
-   "moved_by": "D. McQuaid",
-   "seconded_by": "K. Chenis",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes signed. motion, d. mcquaid, second, k. chenis, all aye."
-  },
-  {
-   "motion": "Grant a waiver from the site plan approval process for 493 Massachusetts Avenue",
+   "motion": "Grant Gatsby Grounds (493 Massachusetts Avenue) a waiver from the site plan approval process.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, k. chenis, to grant the waiver from the site plan approval proces s, second, m. allison, all aye",
-   "quote_taken_from_text": true
+   "quote": "motion, k. chenis, to grant the waiver from the site plan approval proces s, second, m. allison, all aye."
   },
   {
-   "motion": "Approve tree cuts as proposed in the scenic road proposal for 1034, 1048 & 1054 Northfield Road",
+   "motion": "Approve tree cuts at 1034, 1048 & 1054 Northfield Road as proposed in the scenic road proposal.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -37,23 +28,378 @@
    "quote": "motion, k. chenis, to approve tree cuts as proposed in the presented scenic road proposal, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Accept the extension request to January 23, 2017 for the 274 Prospect Street project",
+   "motion": "Accept the applicant's extension request and continue the 274 Prospect Street public hearing to January 23, 2017.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, d. prokowiew, to a ccept extension request to januar y 23, 2017, second, g. bittner, discussion- board members voiced frustration with the time that has lapsed with this project and asked a. burney what is a reasonable timeframe to allow projects to continue. a. burney responded that is usually dependent on the project and the time needed to move through iterations and f inalize a design. six months or longer is not unreasonable if there are concept changes; all aye."
+   "quote": "motion, d. prokowiew, to a ccept extension request to januar y 23, 2017, second, g. bittner"
   },
   {
-   "motion": "Adopt a quasi-policy for handling Monday holidays: defer the Board meeting before or after where practicable instead of canceling it",
+   "motion": "Approve the minutes of 9/26/16.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes approval, 9/26/16- minutes signed. motion, d. mcquaid, second, k. chenis, all aye."
+  },
+  {
+   "motion": "Adopt a quasi-policy that Monday holidays or other Monday events causing a skipped meeting defer the meeting a week and postpone to the next Monday the Board can meet, instead of cancelling.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "G. Bittner",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion, k. chenis that the board adopt a quasi-policy that in the event of monday holidays or other monday events that cause the board to skip a meeting"
+  },
+  {
+   "motion": "Amend the meeting-schedule quasi-policy so meetings are held before or after the Monday where practicable.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis made an amended motion to be before or after where practicable, second, g. bittner, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "ANR Plans for 925 Chase Road and 675 Reservoir Road were \"endorsed\" but no formal motion with vote is recorded in the minutes.",
- "cost_usd": 0.12757649999999998
+ "note": "Text extraction has split words and odd spacing (e.g., 'proces s', 'Januar y'); quotes copy the printed spacing. Several motions show 'all aye' with no numeric count, so outcome is recorded as 'passed'. The 1034/1048/1054 Northfield Road hearing refers to 'separate minutes' not included here. The 493 Massachusetts Avenue and Chase/Reservoir plans were not voted with a printed motion (endorsed only). Adjournment (9:05 PM) has no motion recorded and is not listed as a vote.",
+ "cost_usd": 0.00841282,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Ed Boucher",
+   "role": "PLS",
+   "status": "present",
+   "quote": "plan presented by ed boucher , pls."
+  },
+  {
+   "name": "Larry Sabean",
+   "role": "Hannigan Engineering",
+   "status": "present",
+   "quote": "plan presented by larry sabean, hannigan engineering."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Property and business owner, Gatsby Grounds Company, Inc.",
+   "status": "not stated",
+   "quote": "property and business owner tanner cole, gatsby grounds company, inc."
+  },
+  {
+   "name": "David Rodgers",
+   "role": "Citizen",
+   "status": "not stated",
+   "quote": "citizen david rodgers commented that he feels town boards/commissions/committees are looking over"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Plan for 925 Chase Road endorsed (creates Parcel A to create required frontage on Chase Road); no motion recorded.",
+   "quote": "this plan will create parcel a to deed to the property owner(s) to create the required frontage on chase road to make this lot buildable. plan endorsed."
+  },
+  {
+   "decision": "ANR Plan for 675 Reservoir Road endorsed; no motion recorded.",
+   "quote": "the area and property lines will change. plan endorsed."
+  },
+  {
+   "decision": "Board consensus to get the input of the Open Space Ad Hoc Committee before formulating its response to the Select Board on 200 Reservoir Road, Ch. 61B.",
+   "quote": "board consensus was to get the input of the open space ad hoc committee before formulating its response to the select board."
+  },
+  {
+   "decision": "Board stated it was in support of the 9 Electric Avenue petition (no vote recorded).",
+   "quote": "the board was in support of the petition."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community Task Force funds available",
+   "what_was_recorded": "The GCTF reported about $20,000 available to commit to funds.",
+   "figures_as_printed": [
+    "$20,000 ±"
+   ],
+   "quote": "had $20,000 ± available to commit funds."
+  },
+  {
+   "topic": "Green Community Task Force commitments (lighting audit, oil-to-gas study, THMS audit)",
+   "what_was_recorded": "Funds were committed for a lighting audit and an oil-to-gas conversion study at the public safety building, with an audit at THMS, at the stated cost.",
+   "figures_as_printed": [
+    "$9,000  - $10,000 ±"
+   ],
+   "quote": "at a cost of $9,000 - $10,000 ±, and audit at thms to tighten the building envelope"
+  },
+  {
+   "topic": "Building Reuse Committee redevelopment authority costs",
+   "what_was_recorded": "A. Burney was tasked to look at potential costs of a redevelopment authority to manage the funds and properties; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "a. burney has been tasked to look at potential costs of a redevelopment authority which would manage the funds and the properties."
+  },
+  {
+   "topic": "School Building Committee project cost",
+   "what_was_recorded": "The school building project was reported to have come in under budget; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "project came in under budget."
+  },
+  {
+   "topic": "200 Reservoir Road purchase value",
+   "what_was_recorded": "If the Town were interested in buying the land, it would have to hire an appraiser to set the monetary value; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "if interested, the town would have to hire an appraiser to determine the monetary value to use as a basis for the town"
+  },
+  {
+   "topic": "Complete Streets sidewalk fund",
+   "what_was_recorded": "Board members noted the possibility of a sidewalk fund receiving money in lieu of developer-built sidewalks; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "board members noted the possibility of creating a \"sidewalk fund\""
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "Citizen",
+   "topic": "Boards and committees overseeing residents",
+   "quote": "citizen david rodgers commented that he feels town boards/commissions/committees are looking over everyone"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plans (925 Chase Road; 675 Reservoir Road)",
+   "resolution": "endorsed",
+   "quote": "plan presented by ed boucher , pls.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "frontage"
+   ]
+  },
+  {
+   "topic": "493 Massachusetts Avenue site plan waiver request",
+   "resolution": "waiver granted",
+   "quote": "property and business owner tanner cole, gatsby grounds company, inc.",
+   "tags": [
+    "waiver",
+    "site plan",
+    "Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "1034, 1048 & 1054 Northfield Road tree cuts (scenic road)",
+   "resolution": "approved tree cuts",
+   "quote": "motion, k. chenis, to approve tree cuts as proposed in the presented scenic road proposal",
+   "tags": [
+    "scenic road",
+    "tree cuts",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "274 Prospect Street public hearing continuance",
+   "resolution": "continued to January 23, 2017",
+   "quote": "correspondence requested the board continue the public hearing to the",
+   "tags": [
+    "public hearing",
+    "continuance",
+    "Prospect Street"
+   ]
+  },
+  {
+   "topic": "Minutes approval 9/26/16",
+   "resolution": "approved",
+   "quote": "minutes approval, 9/26/16- minutes signed. motion, d. mcquaid, second, k. chenis, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action (informational)",
+   "quote": "had $20,000 ± available to commit funds.",
+   "tags": [
+    "committees",
+    "GCTF",
+    "Building Reuse",
+    "Capital Planning",
+    "School Building Committee"
+   ]
+  },
+  {
+   "topic": "Development status reports (357 and 270 Electric Avenue)",
+   "resolution": "no action",
+   "quote": "357 electric avenue (unitil)- area continuing to be cleared.",
+   "tags": [
+    "development",
+    "Electric Avenue"
+   ]
+  },
+  {
+   "topic": "Director's items: Special Town Meeting, public records session",
+   "resolution": "no action",
+   "quote": "noted november 28th special town meeting.",
+   "tags": [
+    "Special Town Meeting",
+    "public records"
+   ]
+  },
+  {
+   "topic": "200 Reservoir Road, Ch. 61B removal",
+   "resolution": "consensus to seek Open Space Ad Hoc Committee input",
+   "quote": "board consensus was to get the input of the open space ad hoc committee before formulating its response to the select board.",
+   "tags": [
+    "Chapter 61B",
+    "open space",
+    "Reservoir Road"
+   ]
+  },
+  {
+   "topic": "Complete Streets program (informational)",
+   "resolution": "no action (informational)",
+   "quote": "to see if the town should consider adopting a complete streets policy",
+   "tags": [
+    "complete streets",
+    "sidewalks",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "9 Electric Avenue ZBA hearing",
+   "resolution": "Board supportive of petition",
+   "quote": "the board was in support of the petition.",
+   "tags": [
+    "special permit",
+    "restaurant",
+    "Electric Avenue"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and Monday-holiday policy",
+   "resolution": "amended motion passed",
+   "quote": "k. chenis made an amended motion to be before or after where practicable, second, g. bittner, all aye.",
+   "tags": [
+    "meeting schedule",
+    "holidays"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "citizen david rodgers commented that he feels town boards/commissions/committees are looking over",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "g. bittner- brought up changing speed limits",
+   "tags": [
+    "speed limits",
+    "stormwater",
+    "pervious paving"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 925 Chase Road",
+   "where": "list",
+   "quote": "anr plan, 925 chase road"
+  },
+  {
+   "name": "ANR Plan, 667 & 675 Reservoir Road",
+   "where": "list",
+   "quote": "anr plan, 667 & 675 reservoir road minutes 9.26.16"
+  },
+  {
+   "name": "Minutes 9.26.16",
+   "where": "list",
+   "quote": "anr plan, 667 & 675 reservoir road minutes 9.26.16"
+  },
+  {
+   "name": "Letter, 493 Massachusetts Avenue, Tanner Cole, Request for Waiver",
+   "where": "list",
+   "quote": "letter, 493 massachusetts avenue, tanner cole, request for waiver"
+  },
+  {
+   "name": "Letter dtd 10.07.16, Bowmar & Larkin, re: 200 Reservoir Road, Ch. 61B",
+   "where": "list",
+   "quote": "letter dtd 10.07.16, bowmar & larkin, re: 200 reservoir road, ch. 61b"
+  },
+  {
+   "name": "Complete Streets handout",
+   "where": "list",
+   "quote": "complete streets handout"
+  },
+  {
+   "name": "Zoning Board of Appeals Notice of Public Hearing, 9 Electric Avenue",
+   "where": "list",
+   "quote": "zoning board of appeals notice of public hearing, 9 electric avenue"
+  },
+  {
+   "name": "ANR Plan endorsed in 1980 (22 Boucher Road frontage)",
+   "where": "text",
+   "quote": "an anr plan endorsed in 1980 shows 50.02 f eet of frontage for 22"
+  },
+  {
+   "name": "Correspondence from Whitman & Bingham Associates on behalf of Apple Tree Realty Trust",
+   "where": "text",
+   "quote": "correspondence received this date in the planning office from whitman & bingham associates"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "site plan waiver",
+  "public hearing",
+  "continuance",
+  "scenic road",
+  "tree cuts",
+  "minutes approval",
+  "committee reports",
+  "development status",
+  "Chapter 61B",
+  "complete streets",
+  "meeting schedule",
+  "public comment",
+  "special town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

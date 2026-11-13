@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2017-05-22",
  "docid": "3450",
@@ -10,41 +10,191 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05222017-3450",
   "doc_url": "/docs/meetings/personnel-committee/2017-05-22-minutes-3450.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text. No motions, votes or tallies are recorded anywhere; approvals appear only as outcome statements, so votes is empty and those approvals are listed under decisions. Absent line is blank, so no absences are recorded. Roles for Heather Lemieux, Karen Menard and Rhonda Lisio are not stated. Adjournment at 7:37 p.m. has no motion. The two job description pages are attached and their approval blocks are unsigned. Erik Arnold is named only as an appointee and is not listed as an attendee.",
+ "cost_usd": 0.00575312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the April 24, 2017 minutes",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "reviewed and approved april 24, 2017 minutes",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "lin vickery, scott chase, dave macdonald, nancy forest, heather lemieux, karen menard and rhonda lisio"
   },
   {
-   "motion": "Approve 2 interim firefighters appointments",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "personnel action forms - 2 interim firefighters appointments were approved",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "lin vickery, scott chase, dave macdonald, nancy forest, heather lemieux, karen menard and rhonda lisio"
   },
   {
-   "motion": "Approve local building inspector job",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "approved local building inspector job",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "lin vickery, scott chase, dave macdonald, nancy forest, heather lemieux, karen menard and rhonda lisio"
   },
   {
-   "motion": "Table review of job descriptions",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "tabled review of job descriptions due to pacc not having a quorum to finalize job descriptions.",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Nancy Forest",
+   "role": "Employee Representative (non-voting member)",
+   "status": "present",
+   "quote": "lin vickery, scott chase, dave macdonald, nancy forest, heather lemieux, karen menard and rhonda lisio"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lin vickery, scott chase, dave macdonald, nancy forest, heather lemieux, karen menard and rhonda lisio"
+  },
+  {
+   "name": "Karen Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karen menard presented life guard job and beach coordinator job descriptions."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lin vickery, scott chase, dave macdonald, nancy forest, heather lemieux, karen menard and rhonda lisio"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes record actions as \"approved\" or \"tabled\" but do not provide mover, seconder, or vote counts. Erik Arnold's appointment is stated as a fact (\"is appointed\") rather than as a recorded vote. The job description discussions and presentation are not recorded as votes—only as discussion and planning.",
- "cost_usd": 0.1075335
+ "decisions": [
+  {
+   "decision": "Approved the April 24, 2017 minutes (approval recorded without a motion or tally).",
+   "quote": "reviewed and approved april 24, 2017 minutes"
+  },
+  {
+   "decision": "Approved two interim firefighter appointments (via Personnel Action Forms; no motion or tally recorded).",
+   "quote": "personnel action forms - 2 interim firefighters appointments were approved"
+  },
+  {
+   "decision": "Approved the local building inspector job (no motion or tally recorded).",
+   "quote": "approved local building inspector job"
+  },
+  {
+   "decision": "Tabled review of job descriptions because PACC lacked a quorum to finalize them.",
+   "quote": "tabled review of job descriptions due to pacc not having a quorum to finalize job descriptions."
+  },
+  {
+   "decision": "Article to add the Life Guard and Beach Coordinator positions to the SAP to be prepared for fall 2017 Town Meeting.",
+   "quote": "article to add these positons to sap needs to be prepared for fall 2017 town meeting."
+  },
+  {
+   "decision": "Lin Vickery and Scott Chase decided not to renew their committee terms.",
+   "quote": "lin vickery and scott chase's terms are up for renewal. they both decided not to renew."
+  },
+  {
+   "decision": "Erik Arnold is recorded as appointed to the Personnel Committee (appointing authority not stated).",
+   "quote": "erik arnold is appointed to the personnel committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beach Coordinator job duties: swim lesson fees",
+   "what_was_recorded": "The Beach Coordinator job description says the coordinator organizes swim lessons and turns the lesson fees into the town clerk; no dollar amount is printed.",
+   "quote": "organizes and schedules swim lessons; turns swim lesson fees into town clerk.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of April 24, 2017 minutes",
+   "resolution": "approved",
+   "quote": "reviewed and approved april 24, 2017 minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Personnel Action Forms: interim firefighter appointments",
+   "resolution": "approved",
+   "quote": "personnel action forms - 2 interim firefighters appointments were approved",
+   "tags": [
+    "personnel",
+    "firefighters"
+   ]
+  },
+  {
+   "topic": "Writing job descriptions for SAP jobs",
+   "resolution": "discussed, no action",
+   "quote": "discussed need to write job descriptions for jobs listed in the sap. executive administrator is an",
+   "tags": [
+    "job descriptions",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Local building inspector job",
+   "resolution": "approved",
+   "quote": "approved local building inspector job",
+   "tags": [
+    "job descriptions",
+    "building inspector"
+   ]
+  },
+  {
+   "topic": "Review of job descriptions",
+   "resolution": "tabled",
+   "quote": "tabled review of job descriptions due to pacc not having a quorum to finalize job descriptions.",
+   "tags": [
+    "job descriptions",
+    "PACC"
+   ]
+  },
+  {
+   "topic": "Life Guard and Beach Coordinator job descriptions",
+   "resolution": "presented and discussed; article to be prepared for fall 2017 Town Meeting",
+   "quote": "karen menard presented life guard job and beach coordinator job descriptions.",
+   "tags": [
+    "beach",
+    "lifeguard",
+    "job descriptions",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Other business: committee terms and membership",
+   "resolution": "noted",
+   "quote": "lin vickery and scott chase's terms are up for renewal.",
+   "tags": [
+    "committee membership"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Seasonal Lifeguard job description (Job Title: Lifeguard, Grade 1, Department: DPW), attached",
+   "where": "list",
+   "quote": "karen menard presented life guard job and beach coordinator job descriptions."
+  },
+  {
+   "name": "Seasonal Beach Coordinator job description (Grade 7, Department: DPW), attached",
+   "where": "list",
+   "quote": "karen menard presented life guard job and beach coordinator job descriptions."
+  },
+  {
+   "name": "Personnel Action Forms",
+   "where": "text",
+   "quote": "personnel action forms - 2 interim firefighters appointments were approved"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "SAP",
+  "beach",
+  "lifeguard",
+  "firefighters",
+  "committee membership",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "karen menard presented life guard job and beach coordinator job descriptions"
+ },
+ "dropped_unquoted_by_field": {}
 }

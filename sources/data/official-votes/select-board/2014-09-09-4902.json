@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-09-09",
  "docid": "4902",
@@ -12,72 +12,451 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Adam R. Burney to the Land Use Director position",
-   "moved_by": "Jamie Toale",
-   "seconded_by": "Robert Ebersole",
-   "outcome": "passed 7-0",
-   "procedural": true,
-   "quote": "mr. toale moved to ratify the town manager's appointment of adam r. burney to the land use director position. mr. ebersole seconded. on vote, motion carried, 7 in favor, 0 opposed"
+   "motion": "Ratify the Town Manager's appointment of Adam R. Burney to the Land Use Director position.",
+   "moved_by": "Mr. Toale",
+   "seconded_by": "Mr. Ebersole",
+   "outcome": "passed, 7 in favor, 0 opposed",
+   "procedural": false,
+   "quote": "mr. toale moved to ratify the town manager's appointment of adam r. burney to the land use director position."
   },
   {
-   "motion": "Close the hearing on Alcoholic Beverages License #063600031",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Jamie Toale",
-   "outcome": "passed 4-0",
+   "motion": "Close the hearing on Alcoholic Beverages License #063600031 at 7:50PM.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Toale",
+   "outcome": "passed, 4 in favor, 0 opposed",
    "procedural": true,
    "quote": "mr. ebersole moved to close the hearing at 7:50pm. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Issue a warning to JK Waterfront, Inc., d/b/a On the Rocks and require employee training on license regulations",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Jamie Toale",
-   "outcome": "passed 4-0",
+   "motion": "Issue a warning to JK Waterfront, Inc., d/b/a \"On the Rocks\" and ask the license holder to provide training to the employees, then report back to the Board of Selectmen.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Toale",
+   "outcome": "passed, 4 in favor, 0 opposed",
    "procedural": false,
-   "quote": "mr. ebersole moved that the board of selectmen issue a warning to jk waterfront, inc., d/b/a \"on the rocks\" and ask that the license holder provide training to the employees, then report back to the board of selectmen when completed. mr. toale seconded. discussion: ms. bertram commented to say that s",
-   "quote_taken_from_text": true
+   "quote": "mr. ebersole moved that the board of selectmen issue a warning to jk waterfront, inc., d/b/a \"on the rocks\" and ask that the license holder provide training to the employees"
   },
   {
-   "motion": "Authorize the Town Manager to send a letter to all license holders reminding them of local regulations",
-   "moved_by": "Jamie Toale",
-   "seconded_by": "Phyllis Luck",
-   "outcome": "passed 4-0",
+   "motion": "Authorize the Town Manager's request to send a letter to all license holders reminding them of the local regulations.",
+   "moved_by": "Mr. Toale",
+   "seconded_by": "Ms. Luck",
+   "outcome": "passed, 4 in favor, 0 opposed",
    "procedural": false,
    "quote": "mr. toale moved to authorize the town manager's request. ms. luck seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Appoint Thomas Bertram to the Conservation Commission",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Phyllis Luck",
-   "outcome": "passed 2-1",
-   "procedural": true,
-   "quote": "mr. ebersole moved to appoint thomas bertram to the conservation commission. ms. luck seconded. on vote, motion carried, 2 in favor, 1 opposed (toale)."
-  },
-  {
-   "motion": "Appoint Jeffrey Bajko and Steven Walker to the Public Access Cable Committee",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Phyllis Luck",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. ebersole moved to appoint jeffrey bajko and steven walker to the public access cable committee. ms. luck seconded. on vote, motion carried, 4 in favor, 0 opposed"
-  },
-  {
-   "motion": "Approve change of hours for KJ Waterfront d/b/a Embers Pizzeria, 84 Lakefront Avenue to 8AM for Sunday September 14, 2014",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Phyllis Luck",
-   "outcome": "passed 4-0",
+   "motion": "Appoint Thomas Bertram to the Conservation Commission.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Ms. Luck",
+   "outcome": "passed, 2 in favor, 1 opposed (Toale)",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve the change of hours for kj waterfront d/b/a embers pizzeria, 84 lakefront avenue to 8am for sunday september 14, 2014. ms. luck seconded. on vote, motion carried, 4 in favor, 0 opposed"
+   "quote": "mr. ebersole moved to appoint thomas bertram to the conservation commission. ms. luck seconded."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jamie Toale",
-   "seconded_by": "Robert Ebersole",
-   "outcome": "passed 4-0",
+   "motion": "Appoint Jeffrey Bajko and Steven Walker to the Public Access Cable Committee.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Ms. Luck",
+   "outcome": "passed, 4 in favor, 0 opposed",
+   "procedural": false,
+   "quote": "mr. ebersole moved to appoint jeffrey bajko and steven walker to the public access cable committee. ms. luck seconded."
+  },
+  {
+   "motion": "Approve the change of hours for KJ Waterfront d/b/a Embers Pizzeria, 84 Lakefront Avenue, to 8AM for Sunday September 14, 2014 only.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Ms. Luck",
+   "outcome": "passed, 4 in favor, 0 opposed",
+   "procedural": false,
+   "quote": "mr. ebersole moved to approve the change of hours for kj waterfront d/b/a embers pizzeria, 84 lakefront avenue to 8am for sunday september 14, 2014."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Toale",
+   "seconded_by": "Mr. Ebersole",
+   "outcome": "passed, 4 in favor, 0 opposed",
    "procedural": true,
    "quote": "mr. toale moved to adjourn the meeting. mr. ebersole seconded. on vote, motion carried 4 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes, readable. The document notes warrant numbers and amounts (W#16-15 $400,009.61; W#17-15 $507,313.11; W#6P-15 $665,194.11) but no explicit vote is recorded for them.",
- "cost_usd": 0.1010145
+ "note": "OCR text from macOS Vision, with garbled passages: a block after the Colonial Power item and the \"Action File Issues\" line are unreadable, so some committee reports may be incomplete. Agenda item 4 (the ADA Committee heading) and item 6 (committee reports heading) are missing their headings. The Burney ratification is recorded as 7 in favor, which exceeds the four board members present; the joint Planning Board members likely account for the difference. No motion is recorded to approve minutes of 7/8/2014 or to approve warrants. Some attendee roles are inferred from context rather than printed.",
+ "cost_usd": 0.012490420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "with vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "with vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "absent",
+   "quote": "absent was chairperson tom alonzo"
+  },
+  {
+   "name": "Joanna Bilotta Simeone",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "present were joanna bilotta simeone, ken chenis, & nathan lockwood."
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "present were joanna bilotta simeone, ken chenis, & nathan lockwood."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "present were joanna bilotta simeone, ken chenis, & nathan lockwood."
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director appointee",
+   "status": "present",
+   "quote": "mr. burney spoke to thank everyone for the appointment and stated that he is thrilled to be here."
+  },
+  {
+   "name": "Officer Ayles",
+   "role": "Officer",
+   "status": "present",
+   "quote": "ms. bertram read the hearing notice into record and all parties, officer ayles, ken ricker, and sarah henry were duly sworn in."
+  },
+  {
+   "name": "Ken Ricker",
+   "role": "party to hearing",
+   "status": "present",
+   "quote": "ms. bertram read the hearing notice into record and all parties, officer ayles, ken ricker, and sarah henry were duly sworn in."
+  },
+  {
+   "name": "Sarah Henry",
+   "role": "party to hearing",
+   "status": "present",
+   "quote": "ms. bertram read the hearing notice into record and all parties, officer ayles, ken ricker, and sarah henry were duly sworn in."
+  },
+  {
+   "name": "Kevin Sullivan",
+   "role": "employee",
+   "status": "not stated",
+   "quote": "officer ayles questioned the person who identified himself as kevin sullivan and as an employee of the"
+  },
+  {
+   "name": "Brian Murphy",
+   "role": "representative from the Colonial Power Group",
+   "status": "present",
+   "quote": "brian murphy, representative from the colonial power group came before the board to give an update concerning the municipal aggregation plan."
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "candidate for Conservation Commission re-appointment",
+   "status": "present",
+   "quote": "mark murphy, candidate for conservation commission re-appointment, came before the board and gave a history"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "candidate for Conservation Commission appointment",
+   "status": "present",
+   "quote": "tom bertram, candidate for conservation commission appointment, came before the board and gave a history"
+  },
+  {
+   "name": "Sheila Holt",
+   "role": "candidate for the Conservation Commission",
+   "status": "present",
+   "quote": "sheila holt, candidate for the conservation commission came before the board and gave a history of her education"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "resident, 91 Main St.",
+   "status": "present",
+   "quote": "ana lockwood, 91 main st., came before the board to voice her concerns with the intersections/crosswalk at main st., oak ave, and"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Bertram recused herself from the Conservation Commission appointment and turned the meeting over to Jamie Toale, Clerk, to preside during her absence.",
+   "quote": "she then turned the meeting over to jamie toale, clerk, to preside over the meeting during her absence."
+  },
+  {
+   "decision": "Mr. Ricker was asked to submit a letter to the BOS stating what he is requesting at both establishments; the letter would serve as the application.",
+   "quote": "ms. bertram requested to mr. ricker that he submit a letter to the bos specifically stating what it is that he is looking for at both"
+  },
+  {
+   "decision": "The On the Rocks request for change of hours was tabled to a future BOS meeting while the board reviews the Mass General laws and rules and regulations.",
+   "quote": "the bos will be reviewing the mass general laws and rules & regulations concerning this issue further and this will be tabled to a future bos meeting."
+  },
+  {
+   "decision": "Mr. Ebersole will review the updated ADA act to prepare for Town Meeting and urged interested people to fill out a talent bank form.",
+   "quote": "mr. ebersole said that he will review the updated ada act to prepare for town meeting and urged anyone who is interested in working"
+  },
+  {
+   "decision": "Ms. Speidel will confirm with the Police Chief that the requested crash data will be sent to George Snow at MRC.",
+   "quote": "ms. speidel will confirm with the police chief that the requested crash"
+  },
+  {
+   "decision": "Ms. Bertram said she would like to put the Lockwood traffic and crosswalk concern on a future agenda and discuss it with the Chief of Police and Highway Director; Mr. Toale wanted the Town Manager to bring it to the board as a package.",
+   "quote": "ms. bertram concurred with ms. lockwood and would like to put this on a future agenda and discuss this with the chief of police and"
+  },
+  {
+   "decision": "Mr. Ebersole asked that when the ABCC takes action on the liquor license hearing, it be brought to the attention of the BOS.",
+   "quote": "mr. ebersole asked in regards to the liquor license hearing which was held earlier, when the abcc takes"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Electric Aggregation Plan rate increase",
+   "what_was_recorded": "Colonial Power's representative expects winter rate increases above a stated per-kilowatt-hour amount under a recommended 1 year contract.",
+   "figures_as_printed": [
+    ".13 cents per kilowatt hour"
+   ],
+   "quote": "mr. murphy expects the increases to be somewhere above .13 cents per kilowatt hour."
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Three warrants were listed for the meeting with their dollar totals.",
+   "figures_as_printed": [
+    "$400,009.61",
+    "$507,313.11",
+    "$665,194.11"
+   ],
+   "quote": "warrants: 9/9/2014 w#16-15 $400,009.61 9/9/2014 w#17-15 $507,313.11 9/11/2014 w#6p-15 $665,194.11"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lake Shirley water testing and bacteria count",
+   "quote": "ms. luck thanked the lsic (lake shirley improvement committee) for their continuous posting/updates regarding the water issues at"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "",
+   "topic": "Thanks to Mr. Rodgers and Mr. Berthiaume",
+   "quote": "ms. bertram thanked mr. rodgers and mr. berthiaume for all of their efforts with this cause."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "ABCC action on liquor license hearing",
+   "quote": "mr. ebersole asked in regards to the liquor license hearing which was held earlier, when the abcc takes action he would like it to be brought to the attention of the bos."
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "resident, 91 Main St.",
+   "topic": "Traffic and crosswalk safety at Main St., Oak Ave, and Highland St.",
+   "quote": "ana lockwood, 91 main st., came before the board to voice her concerns with the intersections/crosswalk at main st., oak ave, and"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00PM)",
+   "resolution": "no action; announcements from Ms. Luck and Ms. Bertram",
+   "tags": [
+    "announcements",
+    "lake shirley"
+   ],
+   "quote": "7:00pm public comment: ms. luck mentioned that there will be a meeting of \"stop the pipeline\" in bolton this coming"
+  },
+  {
+   "topic": "Joint meeting with Planning Board: ratify Land Use Director appointment",
+   "resolution": "ratified",
+   "tags": [
+    "appointments",
+    "land use",
+    "planning board"
+   ],
+   "quote": "mr. toale moved to ratify the town manager's appointment of adam r. burney to the land use director position."
+  },
+  {
+   "topic": "Alcoholic Beverages License hearing, JK Waterfront d/b/a On the Rocks",
+   "resolution": "warning and employee training; Town Manager letter to license holders authorized",
+   "tags": [
+    "liquor license",
+    "hearing",
+    "ABCC"
+   ],
+   "quote": "hearing on alcoholic beverages license #063600031, jk waterfront d/b/a on the rocks, 96 lakefront avenue, for"
+  },
+  {
+   "topic": "Municipal Electric Aggregation Plan, Colonial Power Group",
+   "resolution": "update only; no action recorded",
+   "tags": [
+    "electric aggregation",
+    "rates"
+   ],
+   "quote": "brian murphy, representative from the colonial power group came before the board to give an update concerning the municipal aggregation plan."
+  },
+  {
+   "topic": "FY2015 Board & Committee appointments and reappointments",
+   "resolution": "Thomas Bertram appointed to Conservation Commission; Jeffrey Bajko and Steven Walker appointed to PACC",
+   "tags": [
+    "appointments",
+    "conservation commission",
+    "public access cable committee"
+   ],
+   "quote": "2. fy2015 board & committee appointments & reappointments-interview candidates & review request for reappointment"
+  },
+  {
+   "topic": "Request to change hours, KJ Waterfront d/b/a Embers Pizzeria",
+   "resolution": "approved for Sunday September 14, 2014 only; On the Rocks request tabled",
+   "tags": [
+    "liquor license",
+    "hours of operation"
+   ],
+   "quote": "3. request to change hours of operation, kj waterfront d/b/a embers pizzeria, 84 lakefront avenue: mr. ricker spoke to say"
+  },
+  {
+   "topic": "ADA Committee reestablishment",
+   "resolution": "discussion; Ebersole to review ADA act for Town Meeting",
+   "tags": [
+    "ADA",
+    "town meeting",
+    "committees"
+   ],
+   "quote": "ms. speidel mentioned that the ada committee has not been in existence since she has been here"
+  },
+  {
+   "topic": "Minutes, warrants and contracts",
+   "resolution": "no action recorded",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "5. minutes/warrants/contracts minutes: 7/8/2014"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "tags": [
+    "committee reports",
+    "school building committee",
+    "planning board"
+   ],
+   "quote": "building reuse committee: next meeting will be held on 9/16/2014"
+  },
+  {
+   "topic": "Town Manager reports: ABCC Form 43",
+   "resolution": "Form 43 presented to be signed",
+   "tags": [
+    "liquor license",
+    "ABCC"
+   ],
+   "quote": "ms. speidel presented a form 43 from the abcc to be signed for ka bob a licious."
+  },
+  {
+   "topic": "Appointments/reappointments/resignations: ratify Land Use Director",
+   "resolution": "completed under 7PM item",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "1. ratify appointment: adam r. burney to position of land use director: completed under 7pm appointment"
+  },
+  {
+   "topic": "Public comment: Main St., Oak Ave and Highland St. traffic and crosswalk",
+   "resolution": "referred to a future agenda",
+   "tags": [
+    "traffic safety",
+    "crosswalk",
+    "police",
+    "highway"
+   ],
+   "quote": "ana lockwood, 91 main st., came before the board to voice her concerns with the intersections/crosswalk at main st., oak ave, and"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:05PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 9:05pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrants W#16-15, W#17-15, W#6P-15 (dated 9/9/2014, 9/9/2014, 9/11/2014)",
+   "where": "text",
+   "quote": "warrants: 9/9/2014 w#16-15 $400,009.61 9/9/2014 w#17-15 $507,313.11 9/11/2014 w#6p-15 $665,194.11"
+  },
+  {
+   "name": "Minutes of 7/8/2014",
+   "where": "text",
+   "quote": "5. minutes/warrants/contracts minutes: 7/8/2014"
+  },
+  {
+   "name": "Form 43 from the ABCC for Ka Bob A Licious",
+   "where": "text",
+   "quote": "ms. speidel presented a form 43 from the abcc to be signed for ka bob a licious."
+  },
+  {
+   "name": "Town's Regulations on sentencing guidelines for licensees",
+   "where": "text",
+   "quote": "ms. bertram reviewed the town's regulations recommendations of discipline which may be applied if the board so chooses as follows:"
+  },
+  {
+   "name": "Updated ADA act",
+   "where": "text",
+   "quote": "mr. ebersole said that he will review the updated ada act to prepare for town meeting"
+  },
+  {
+   "name": "Housing Production Plan (draft)",
+   "where": "text",
+   "quote": "the housing production plan is in draft format and is under review"
+  },
+  {
+   "name": "Glow Chiropractor Findings & Directives",
+   "where": "text",
+   "quote": "glow chiropractor findings & directives have been endorsed"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "hearing",
+  "ABCC",
+  "appointments",
+  "conservation commission",
+  "public access cable committee",
+  "electric aggregation",
+  "hours of operation",
+  "ADA",
+  "traffic safety",
+  "committee reports",
+  "warrants",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

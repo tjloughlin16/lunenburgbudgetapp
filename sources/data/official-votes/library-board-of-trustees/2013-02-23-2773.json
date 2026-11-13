@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2013-02-23",
  "docid": "2773",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 12:45 pm.",
    "moved_by": "Lars Widstrand",
    "seconded_by": "Robin Venezia",
    "outcome": "passed",
@@ -21,6 +21,92 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: motion to adjourn with unanimous approval.",
- "cost_usd": 0.0811005
+ "note": "Plain-text extraction with line-break artifacts: some words are split mid-word (e.g., 'Opera tional', 'obt ain', 'Chil d') and the attendance line prints 'Lars Widstr and', while the adjournment line prints 'Lars Widstrand'. Names are recorded as printed; quotes avoid split words. Meeting was called to order at 11:00 am. No dollar figures, public comment, or document lists appear in the minutes. The meeting was called to order at 11:00 am and adjourned at 12:45 pm.",
+ "cost_usd": 0.00311552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, lars widstr and, martha moore"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lisa krowitz secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Lars Widstr and",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, lars widstr and, martha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, lars widstr and, martha moore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Robin will update the Library Bill of Rights, Operational Safety Policy, and Reciprocal Borrowing policies.",
+   "quote": "robin will update the library bill of rights"
+  },
+  {
+   "decision": "The Art Exhibition policy was tabled so Martha could obtain information on consequences for not removing art in a timely manner; she will ask other library directors and art patrons.",
+   "quote": "the art exhibition policy was tabled"
+  },
+  {
+   "decision": "The Borrowing policy was tabled so Martha could obtain information from other library directors on borrowing.",
+   "quote": "the borrowing policy was tabled so martha could"
+  },
+  {
+   "decision": "The Bulletin Boards, Ticket Sales & Soliciting policy was tabled.",
+   "quote": "the bulletin boards, ticket sales & solicting"
+  },
+  {
+   "decision": "Lars will gather information on a potential Parking policy.",
+   "quote": "lars will gather information on a potential parking"
+  },
+  {
+   "decision": "Martha will check with the staff and other library directors on the appropriate age to use in the Child Safety policy.",
+   "quote": "martha will check with the staff and other library directors"
+  },
+  {
+   "decision": "Lisa will update the Closing policy.",
+   "quote": "lisa will update the closing policy."
+  },
+  {
+   "decision": "The Collection Development policy was tabled so Martha could gather information.",
+   "quote": "the collection development policy was tabled"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Policy subcommittee revisions",
+   "resolution": "Some policies assigned for update, several tabled for information gathering; no votes recorded except adjournment",
+   "quote": "the subcommittee is working on revising the current",
+   "tags": [
+    "policy review",
+    "library policies",
+    "revisions"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "library policy",
+  "policy review",
+  "subcommittee",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

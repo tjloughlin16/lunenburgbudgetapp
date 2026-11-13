@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-04-07",
  "docid": "691",
@@ -12,19 +12,255 @@
  },
  "votes": [
   {
-   "motion": "Approve current expense vouchers, abatements, warrants, commitments, payroll and March 3, 2015 minutes",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and march 3, 2015 minutes."
-  },
-  {
-   "motion": "Deny the abatement application for property at 131 Leominster-Shirley Road",
+   "motion": "Deny again the abatement application for 131 Leominster-Shirley Rd. (filed 1/20/15 by Michael Padula, Trustee of The Rental Equipment CO Realty Trust), after reviewing the inspection findings.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after reviewing the findings of the inspection, the boa voted to deny again the application for abatement."
+   "quote": "the boa voted to deny again the application for abatement."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scanned document using macOS Vision. The ABC exemption applications are presented with outcomes listed (Granted/Denied) but without explicit voting language (no motion, vote count, or voted language stated for individual applications), so they are not recorded as votes per the rule requiring explicit voting records.",
- "cost_usd": 0.10975249999999999
+ "note": "Scanned OCR text with garbled header and signature lines; some names and the signature block are unreadable or garbled, so attendee roles are as legible. The minutes record only one motion with a result (denying the 131 Leominster-Shirley Rd. abatement), with no mover, seconder or vote count. The approvals of vouchers, abatements, warrants, commitments, payroll, March 3 minutes, the Chapter 61A filing, and the ABC applications are recorded without motions and are listed as decisions. The text says 7 ABC applications, but 9 entries are listed (7 Granted, 2 Denied). No public comment section is printed. Adjournment at 6:20 pm has no recorded motion.",
+ "cost_usd": 0.006804319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: board members, matt papini, sr., christopher comeau, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: board members, matt papini, sr., christopher comeau, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: board members, matt papini, sr., christopher comeau, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: board members, matt papini, sr., christopher comeau, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "chairman, louis franco was not present."
+  },
+  {
+   "name": "George Bourgault",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "george bourgault did receive a call (after the last meeting) to inspect the property"
+  },
+  {
+   "name": "Michael Padula",
+   "role": "Trustee of The Rental Equipment CO Realty Trust",
+   "status": "not stated",
+   "quote": "re abatement application was filed on 1/20/15 by michael padula, trustee of the rental equipment co realty trust"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and March 3, 2015 minutes (no motion or vote count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and march 3, 2015 minutes."
+  },
+  {
+   "decision": "Board reviewed and signed, with signatures notarized, approval of the filing of a Chapter 61A (Classified Agricultural Land) Release for property previously owned by Richard W. Brown of 90 West Townsend Road (no motion or vote count recorded).",
+   "quote": "the board reviewed and signatures were notarized to approve the filing of a chapter 61a (classified agricultural land) release for property previously owned by richard w. brown of 90 west townsend road."
+  },
+  {
+   "decision": "Board acted on 9 listed FY16 ABC exemption applications: 7 Granted and 2 Denied (Twin City Baptist Temple vacant land at 190 Electric Ave. and 101 Pleasant St.). No motion or vote count recorded.",
+   "quote": "lunenburg historical society (history museum) - 10 school st. - granted"
+  },
+  {
+   "decision": "The applicant for 131 Leominster-Shirley Rd. will be sent notification of the Board's decision.",
+   "quote": "the applicant will be sent notification of their decision."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Roll-back tax collection (Chapter 61A release)",
+   "what_was_recorded": "Louise reported RE taxes were collected on February 15, 2015 for roll-back taxes for years 2011 through 2015.",
+   "figures_as_printed": [
+    "$4,712.38"
+   ],
+   "quote": "re taxes in the amount of $4,712.38 was collected on february 15, 2015 for roll-back taxes for years 2011 through 2015."
+  },
+  {
+   "topic": "FY15 Overlay",
+   "what_was_recorded": "Louise reported the FY15 overlay opening balance, total abatements processed, and ending balance.",
+   "figures_as_printed": [
+    "$207,330.39",
+    "$133,262.09",
+    "$74,068.30"
+   ],
+   "quote": "the opening balance (from recap) is $207,330.39. the overall total abatements processed are $133,262.09 with ending balance of $74,068.30."
+  },
+  {
+   "topic": "FY2016 New Growth Estimate",
+   "what_was_recorded": "Harald reported an estimated FY2016 new growth of $320,000.00 from approximately $17,500.00 in new taxable valuation, in a memorandum to the Town Manager.",
+   "figures_as_printed": [
+    "$17,500.00",
+    "$320,000.00"
+   ],
+   "quote": "he estimates that lunenburg will realize new taxable valuation of approximately $17,500.00 generating new growth of $320,000.00."
+  },
+  {
+   "topic": "FY15 Supplemental Bill notices",
+   "what_was_recorded": "Louise reported FY15 Supplemental Bill notification letters will go to about 29 taxpayers with new construction and Certificate of Occupancy issued by the Building Department. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she informed the board that fy 15 supplemental bill notification letters will be sent to approximately 29 taxpayers with new construction"
+  },
+  {
+   "topic": "Roll-back taxes at 400 Holman St.",
+   "what_was_recorded": "Harald stated the owner of 400 Holman St. contacted him about roll-back taxes on the property. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "he has been contacted by the property owner of 400 holman st. regarding roll-back taxes on this property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll and March 3, 2015 minutes",
+   "resolution": "approved (no motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and march 3, 2015 minutes.",
+   "tags": [
+    "approvals",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Chapter 61A release for 90 West Townsend Road",
+   "resolution": "approved filing (no motion recorded)",
+   "quote": "the board reviewed and signatures were notarized to approve the filing of a chapter 61a (classified agricultural land) release",
+   "tags": [
+    "chapter 61A",
+    "roll-back taxes"
+   ]
+  },
+  {
+   "topic": "Abatement reconsideration, 131 Leominster-Shirley Rd.",
+   "resolution": "denied again",
+   "quote": "the boa voted to deny again the application for abatement.",
+   "tags": [
+    "abatements",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "FY16 ABC exemption applications",
+   "resolution": "granted 7, denied 2",
+   "quote": "boa is in receipt of 7 abc applications (religious & charitable organizations) seeking fy16 property tax exemptions.",
+   "tags": [
+    "tax exemptions",
+    "religious and charitable"
+   ]
+  },
+  {
+   "topic": "Certificate of Occupancy taxation reminder and FY15 supplemental bills",
+   "resolution": "no action (information)",
+   "quote": "louise reminded the board that the commonwealth of massachusetts requires boards of assessors to immediately tax new structures at full valuation",
+   "tags": [
+    "new construction",
+    "supplemental tax",
+    "certificate of occupancy"
+   ]
+  },
+  {
+   "topic": "FY15 Overlay report",
+   "resolution": "received (no action)",
+   "quote": "louise reported on fy15 overlay.",
+   "tags": [
+    "overlay",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "FY2016 New Growth estimate",
+   "resolution": "reported (no action)",
+   "quote": "harald reported in a memorandum to the town manager an estimated fiscal year 2016 new growth",
+   "tags": [
+    "new growth",
+    "memorandum"
+   ]
+  },
+  {
+   "topic": "Lot splits, maps, FY16 test file, and 400 Holman St. roll-back inquiry",
+   "resolution": "reported (no action)",
+   "quote": "harald stated that he will be working on lot splits, maps and creating a fy16 test file for real estate billing.",
+   "tags": [
+    "lot splits",
+    "real estate billing",
+    "roll-back taxes"
+   ]
+  },
+  {
+   "topic": "Letter to Christopher Comeau recognizing 20-plus years of service",
+   "resolution": "presented (no action)",
+   "quote": "harald presented a letter to chris regarding his outstanding 20 plus years of service to the town and the board of assessors.",
+   "tags": [
+    "farewell",
+    "staff recognition"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for May 5, 2015; adjourned 6:20 pm (no motion recorded)",
+   "quote": "next meeting will be held on tuesday, may 5, 2015 at 5:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter to Christopher M. Comeau from the Board of Assessors, dated April 7, 2015 (RE: Your Outstanding Tenure - Our Illustrious Leader)",
+   "where": "list",
+   "quote": "harald presented a letter to chris regarding his outstanding 20 plus years of service to the town and the board of assessors. (see attached)"
+  },
+  {
+   "name": "Memorandum to the Town Manager (estimated Fiscal Year 2016 New Growth Estimate)",
+   "where": "text",
+   "quote": "harald reported in a memorandum to the town manager an estimated fiscal year 2016 new growth"
+  },
+  {
+   "name": "7 ABC applications (Religious & Charitable Organizations) seeking FY16 property tax exemptions",
+   "where": "text",
+   "quote": "boa is in receipt of 7 abc applications (religious & charitable organizations) seeking fy16 property tax exemptions."
+  },
+  {
+   "name": "Abatement application filed 1/20/15 by Michael Padula, Trustee of The Rental Equipment CO Realty Trust (131 Leominster-Shirley Rd.)",
+   "where": "text",
+   "quote": "re abatement application was filed on 1/20/15 by michael padula, trustee of the rental equipment co realty trust"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "tax exemptions",
+  "ABC applications",
+  "overlay",
+  "new growth",
+  "chapter 61A",
+  "roll-back taxes",
+  "supplemental tax",
+  "certificate of occupancy",
+  "staff recognition"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald presented a letter to chris"
+ },
+ "dropped_unquoted_by_field": {}
 }

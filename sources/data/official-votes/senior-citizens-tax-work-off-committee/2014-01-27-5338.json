@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2014-01-27",
  "docid": "5338",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Allow Doreen Noble to approve prior applicants without committee approval; new applicants reviewed by all committee members",
+   "motion": "Allow Doreen Noble to approve prior applicants without the approval of all committee members; new applicants would still be reviewed by all committee members.",
    "moved_by": "Jean Larkin",
    "seconded_by": "Kathy Herrick",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "jean larkin made a motion to allow doreen noble to approve prior applicants without the approval of' all committee members. new applicants would have to be reviewed by all committee members, kathy herrick seconded. on vote 5 in favor, 0 opposed."
+   "quote": "jean larkin made a motion to allow doreen noble to approve prior applicants without the approval of"
   },
   {
-   "motion": "Increase the tax work-off deduction from $750.00 to $1000.00 to be voted on at Town Meeting",
+   "motion": "Increase the tax work-off deduction from $750.00 to $1000.00, to be voted on at Town Meeting.",
    "moved_by": "Jean Larkin",
    "seconded_by": "Kathy Herrick",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "jean larkin made a motion to increase the tax work-off deduction from $750.00 to $1000.00 to be voted on at town meeting. kathy herrick seconded. doreen noble will prepare an a",
-   "quote_taken_from_text": true
+   "quote": "jean larkin made a motion to increase the tax work-off deduction from $750.00 to $1000.00 to be voted on at town meeting. kathy herrick seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kathy Herrick",
    "seconded_by": "Shelley McCaie",
    "outcome": "passed 5-0",
@@ -38,6 +37,148 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of town records, readable. One minor OCR artifact: \"O opposed\" appears twice (votes 2 and 3), clearly intended as \"0 opposed\" based on context (unanimous 5-0 votes).",
- "cost_usd": 0.0900705
+ "note": "OCR text, one page. Vote counts are printed as '5 in favor, O opposed'; the 'O' is read as the letter, recorded here as 0 opposed. The minutes' header name differs slightly from the board name supplied. The signature block role is OCR-garbled ('Cammittee Member'), recorded as Committee Member. The 'approved all 6 applications' line has no motion, so it is a decision, not a vote. Amanda (DPW/Sewer) is referenced but did not attend. The $ figures appear only in the deduction motion. A received-and-filed stamp reads FEB 19 2015, a year after the meeting. No public comment section is printed.",
+ "cost_usd": 0.0044467199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Doreen Noble",
+   "status": "present",
+   "quote": "present: doreen noble, jean larkin, kathy herrick, david manzello and shelley mccaie."
+  },
+  {
+   "name": "Jean Larkin",
+   "status": "present",
+   "quote": "present: doreen noble, jean larkin, kathy herrick, david manzello and shelley mccaie."
+  },
+  {
+   "name": "Kathy Herrick",
+   "status": "present",
+   "quote": "present: doreen noble, jean larkin, kathy herrick, david manzello and shelley mccaie."
+  },
+  {
+   "name": "David Manzello",
+   "status": "present",
+   "quote": "present: doreen noble, jean larkin, kathy herrick, david manzello and shelley mccaie."
+  },
+  {
+   "name": "Shelley McCaie",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "respectfully submitted shelley mccaie, cammittee member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee approved all 6 applications reviewed (no motion recorded); 9 program slots remain.",
+   "quote": "the committee approved all 6 applications."
+  },
+  {
+   "decision": "Kathy Herrick will email all departments asking them to submit requests for proposed jobs by 2/6/14.",
+   "quote": "kathy herrick will send an email to all departments requesting they submit their requests by 2/6/14."
+  },
+  {
+   "decision": "Doreen Noble will prepare an article for Town Meeting on the deduction increase.",
+   "quote": "doreen noble will prepare an article for town meeting."
+  },
+  {
+   "decision": "Doreen Noble will look into running an ad or getting a local access channel interview to promote the program.",
+   "quote": "doreen noble is going to look into running an ad or getting an interview."
+  },
+  {
+   "decision": "Next meeting set for Monday, March 3, 2014 at 2:00 p.m. at the Eagle House, 25 Memorial Dr., Lunenburg, MA.",
+   "quote": "the next meeting will be on monday, march 3, 2014 at 2:00 p.m. at the eagle house located at 25"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax work-off deduction amount",
+   "what_was_recorded": "Motion to raise the tax work-off deduction from $750.00 to $1000.00, to go to Town Meeting; passed 5-0.",
+   "figures_as_printed": [
+    "$750.00",
+    "$1000.00"
+   ],
+   "quote": "jean larkin made a motion to increase the tax work-off deduction from $750.00 to $1000.00 to be voted on at town meeting. kathy herrick seconded."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Applications review",
+   "resolution": "approved (6 applications, 9 slots remaining)",
+   "quote": "6 applications were reviewed. the committee approved all 6 applications.",
+   "tags": [
+    "applications",
+    "slots"
+   ]
+  },
+  {
+   "topic": "Department job requests",
+   "resolution": "email to departments assigned; requests due 2/6/14",
+   "quote": "kathy herrick will send an email to all departments requesting they submit their requests by 2/6/14.",
+   "tags": [
+    "departments",
+    "jobs"
+   ]
+  },
+  {
+   "topic": "Approval authority for prior applicants",
+   "resolution": "passed 5-0",
+   "quote": "jean larkin made a motion to allow doreen noble to approve prior applicants without the approval of",
+   "tags": [
+    "approvals",
+    "authority"
+   ]
+  },
+  {
+   "topic": "Deduction increase for Town Meeting",
+   "resolution": "passed 5-0; article to be prepared",
+   "quote": "jean larkin made a motion to increase the tax work-off deduction from $750.00 to $1000.00 to be voted on at town meeting. kathy herrick seconded.",
+   "tags": [
+    "deduction",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Program promotion",
+   "resolution": "discussed; follow-up assigned to Doreen Noble",
+   "quote": "the committee discussed how to better promote the program.",
+   "tags": [
+    "outreach",
+    "promotion"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled for March 3, 2014",
+   "quote": "the next meeting will be on monday, march 3, 2014 at 2:00 p.m. at the eagle house located at 25",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3:08 p.m.",
+   "quote": "meeting adjourned at 3:08 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "senior citizen property tax work-off",
+  "tax work-off deduction",
+  "applications",
+  "town meeting",
+  "outreach",
+  "committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

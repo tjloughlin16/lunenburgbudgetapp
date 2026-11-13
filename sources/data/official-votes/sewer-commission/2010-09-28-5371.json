@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2010-09-28",
  "docid": "5371",
@@ -12,15 +12,321 @@
  },
  "votes": [
   {
-   "motion": "to accept the pool policy",
+   "motion": "Accept the pool policy as reviewed.",
    "moved_by": "Butch Bilotta",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed (unanimous)",
+   "procedural": false,
    "quote": "a motion was made by butch bilotta to accept the policy, seconded by dave, vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One vote recorded.",
- "cost_usd": 0.0823395
+ "note": "OCR text of a two-page set of minutes. Page 1 begins mid-item (grease trap inspections, continued from an earlier item). No call to order, roll call, approval of prior minutes, or adjournment is recorded, and no attendance list is printed, so attendance status is 'not stated' for everyone. The only recorded vote is the pool policy motion. The signature line reads 'Lynenburg'. No dollar figures are printed; budget items are discussion of money only. The minutes contain no public comment section.",
+ "cost_usd": 0.008070919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jack",
+   "status": "not stated",
+   "quote": "jack thinks he can get all the inspections done in 6-7 days, putting in an hour or so a day."
+  },
+  {
+   "name": "Bob",
+   "status": "not stated",
+   "quote": "bob pointed out that the nashoba board of health is the local board's agent."
+  },
+  {
+   "name": "Barb Lelebre",
+   "role": "for the Lynenburg Sewer Commission",
+   "status": "not stated",
+   "quote": "barb lelebre for the lynenburg sewer commission"
+  },
+  {
+   "name": "Butch Bilotta",
+   "status": "not stated",
+   "quote": "a motion was made by butch bilotta to accept the policy, seconded by dave, vote taken was unanimous."
+  },
+  {
+   "name": "Dave",
+   "status": "not stated",
+   "quote": "a motion was made by butch bilotta to accept the policy, seconded by dave, vote taken was unanimous."
+  },
+  {
+   "name": "Jay",
+   "status": "not stated",
+   "quote": "jay asked jack specifics about what weston & sampson will be doing"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb & Bob will work together on determining the process for Tri-Party accounts; once determined, obtain a check from Kent to contract with Weston & Sampson for review of Highfields.",
+   "quote": "barb & bob will work together on determining the process for tri-party accounts. once determined, we will obtain a check from kent to contract with weston & sampson for their review."
+  },
+  {
+   "decision": "Commission to wait on Weston & Sampson on pump cycling and flow questions, since Corey must first send pump specifications to them.",
+   "quote": "as for cycling of pumps and understanding flow, barb asked to wait that the commission wait on weston & sampson"
+  },
+  {
+   "decision": "Bob and Barb to collaborate on the response for the Mission Statement.",
+   "quote": "it was determined that bob & barb would collaborate on a response."
+  },
+  {
+   "decision": "Invite Emerald Place to the next meeting to review the prior plan, the current plan and the impact of the change.",
+   "quote": "we want to invite them to come in to the next meeting, go over the prior plan, the current plan and the impact of the change."
+  },
+  {
+   "decision": "Barb to advise Marion Benson, Planning Director, of the Emerald Place change and the request for Emerald Place to attend a meeting.",
+   "quote": "barb to advise marion benson, planning director, of the change and the request for emerald place to attend a meeting."
+  },
+  {
+   "decision": "Future agenda item to hold a hearing on future sewer development and invite residents to come in.",
+   "quote": "item for a future agenda is to hold a hearing on future sewer development and invite residents to come in."
+  },
+  {
+   "decision": "Submit two warrant articles as placeholders for the Special Town Meeting (revising the Sewer District; authorization to place delinquencies on tax bills).",
+   "quote": "barb stated that we need to submit 2 warrant articles for placeholders - revising the sewer district and authorization to place"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Betterment Fund combined with Enterprise Fund",
+   "what_was_recorded": "Town Accountant said the Betterment Fund needs to be combined with the Enterprise Fund for FY12; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "per karen brochu, town accountant, the betterment fund needs to be combined with the enterprise fund for fy12."
+  },
+  {
+   "topic": "Fitchburg IMA projects and rate structure",
+   "what_was_recorded": "Fitchburg budget project headings were received and are being questioned as to whether they should be the Commission's cost; a possible consideration is Fitchburg giving up its administrative fee.",
+   "figures_as_printed": [],
+   "quote": "one possible consideration is that fitchburg give up the administrative fee for lunenburg to take on tri-town."
+  },
+  {
+   "topic": "Cost of betterments under CWMP",
+   "what_was_recorded": "Discussion on how the cost of betterments in the CWMP may scare off potential customers; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "discussion followed on the cost of betterments in cwmp scaring off potential customers."
+  },
+  {
+   "topic": "GIS computer infrastructure cost",
+   "what_was_recorded": "Information requested from Nancy Strom on the cost of computer infrastructure for a PeopleGIS undertaking; no response recorded and no figures printed.",
+   "figures_as_printed": [],
+   "quote": "she had also asked for information from nancy strom as to the cost of the computer infrastructure for such an undertaking"
+  },
+  {
+   "topic": "Septic System Repair Fund",
+   "what_was_recorded": "Fund comes from left-over cash from the Board of Health's grant and may be used for the Eagle House or grease traps in the schools; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "this fund, coming from left over cash from the board of health's grant, may be used to help the eagle house or target grease traps in the schools."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Grease trap inspections (continued from prior item)",
+   "resolution": "discussed; Jack to do inspections",
+   "quote": "jack thinks he can get all the inspections done in 6-7 days, putting in an hour or so a day.",
+   "tags": [
+    "grease traps",
+    "inspections",
+    "Nashoba Board of Health"
+   ]
+  },
+  {
+   "topic": "Consent agenda: Weston & Sampson, Highfields, Betterment Fund",
+   "resolution": "reviewed; Tri-Party process and Betterment Fund combination noted",
+   "quote": "we are still awaiting the scope of work for fy11 from steve pederson.",
+   "tags": [
+    "Weston & Sampson",
+    "Highfields",
+    "betterment fund",
+    "FY11 scope"
+   ]
+  },
+  {
+   "topic": "Flow meters status (DPW Director discussion)",
+   "resolution": "discussed; meter needs recalibration, awaiting Weston & Sampson",
+   "quote": "jack stated that steve pederson is planning to be in town on monday, 10/4 to install the temporary meters on graham street.",
+   "tags": [
+    "flow meters",
+    "Graham Street",
+    "sump pumps",
+    "pump cycling"
+   ]
+  },
+  {
+   "topic": "Master Plan and Mission Statement",
+   "resolution": "discussed; Bob and Barb to draft response",
+   "quote": "town's master plan - barb had provided clips from the town report & cwmp in order to help compile the mission statement for the commission.",
+   "tags": [
+    "master plan",
+    "mission statement",
+    "CWMP",
+    "zoning",
+    "Baker Station"
+   ]
+  },
+  {
+   "topic": "Emerald Place modification",
+   "resolution": "invite Emerald Place to next meeting",
+   "quote": "emerald place modification - jack reviewed the drawing submitted by whitman & bingham.",
+   "tags": [
+    "Emerald Place",
+    "new connection point",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "CWMP Notice of Project Change",
+   "resolution": "received and posted; no action",
+   "quote": "cwmp - notice of project change has been received and posted at 3 public depositories.",
+   "tags": [
+    "CWMP",
+    "Chase Rd",
+    "growth management district"
+   ]
+  },
+  {
+   "topic": "GIS (PeopleGIS vs ArcView)",
+   "resolution": "information gathering; no action",
+   "quote": "gis -barb reviewed that the commission had received information from jay on peoplegis for concord",
+   "tags": [
+    "GIS",
+    "PeopleGIS",
+    "ArcView",
+    "Cartographics"
+   ]
+  },
+  {
+   "topic": "Fitchburg IMA",
+   "resolution": "reviewing budget projects and rate structure",
+   "quote": "fitchburg ima - project headings from fitchburg's budget had been received and forwarded to bob",
+   "tags": [
+    "Fitchburg IMA",
+    "Tri-Town",
+    "rate structure",
+    "administrative fee"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "two placeholder articles to be submitted",
+   "quote": "special town meeting - barb stated that we need to submit 2 warrant articles for placeholders",
+   "tags": [
+    "warrant articles",
+    "sewer district",
+    "delinquencies",
+    "tax bills"
+   ]
+  },
+  {
+   "topic": "Pool policy",
+   "resolution": "accepted (unanimous)",
+   "quote": "a motion was made by butch bilotta to accept the policy, seconded by dave, vote taken was unanimous.",
+   "tags": [
+    "pool policy"
+   ]
+  },
+  {
+   "topic": "Septic System Repair Fund",
+   "resolution": "reviewed; no action",
+   "quote": "septic system repair fund - bob reviewed that this fund, coming from left over cash from the board of health's grant",
+   "tags": [
+    "septic repair fund",
+    "grease traps",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Subcommittee report",
+   "resolution": "no progress reported",
+   "quote": "subcommittee report - no progress",
+   "tags": [
+    "subcommittee"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scope of Work for FY11 (Weston & Sampson, from Steve Pederson)",
+   "where": "text",
+   "quote": "we are still awaiting the scope of work for fy11 from steve pederson."
+  },
+  {
+   "name": "Email from Barb to Fran Y of Weston & Sampson",
+   "where": "text",
+   "quote": "barb sent fran y of weston & sampson an email to confirm his prior statement"
+  },
+  {
+   "name": "Drawing submitted by Whitman & Bingham (Emerald Place modification)",
+   "where": "text",
+   "quote": "jack reviewed the drawing submitted by whitman & bingham."
+  },
+  {
+   "name": "CWMP Notice of Project Change",
+   "where": "text",
+   "quote": "cwmp - notice of project change has been received and posted at 3 public depositories."
+  },
+  {
+   "name": "Clips from the Town Report & CWMP",
+   "where": "text",
+   "quote": "barb had provided clips from the town report & cwmp in order to help compile the mission statement"
+  },
+  {
+   "name": "PeopleGIS information for Concord (from Jay)",
+   "where": "text",
+   "quote": "the commission had received information from jay on peoplegis for concord"
+  },
+  {
+   "name": "Cartographics comparison of People GIS vs ArcView",
+   "where": "text",
+   "quote": "she had asked for a comparison from cartographics as to the offerings of people gis vs cartographic's arcview."
+  },
+  {
+   "name": "Fitchburg budget project headings",
+   "where": "text",
+   "quote": "project headings from fitchburg's budget had been received and forwarded to bob"
+  },
+  {
+   "name": "Two warrant articles (placeholders) for Special Town Meeting",
+   "where": "text",
+   "quote": "we need to submit 2 warrant articles for placeholders"
+  },
+  {
+   "name": "Fat Free sewer brochure (NEWCC)",
+   "where": "text",
+   "quote": "we could check with newcc, producer of the fat free sewer brochure"
+  },
+  {
+   "name": "Pool policy",
+   "where": "text",
+   "quote": "a motion was made by butch bilotta to accept the policy"
+  },
+  {
+   "name": "Specifications on each pump (to Weston & Sampson)",
+   "where": "text",
+   "quote": "corey needs to get the specifications on each pump to weston & sampson"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease traps",
+  "flow meters",
+  "CWMP",
+  "Fitchburg IMA",
+  "GIS",
+  "betterment fund",
+  "warrant articles",
+  "pool policy",
+  "septic repair fund",
+  "master plan",
+  "Emerald Place",
+  "Weston & Sampson"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jack reviewed the drawing submitted by whitman & bingham"
+ },
+ "dropped_unquoted_by_field": {}
 }

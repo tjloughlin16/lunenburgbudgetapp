@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-01-13",
  "docid": "905",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to send this matter to housing court (regarding housing violations and lead paint at 912 Massachusetts Avenue)",
+   "motion": "Send the 912 Massachusetts Avenue housing violation matter to housing court.",
    "moved_by": "Rabbit",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by rabbit and second by shea, the board voted to send this matter to housing court. all in favor."
+   "quote": "on motion by rabbit and second by shea, the board voted to send this matter to housing court. all in favor."
   },
   {
-   "motion": "to approve the variance for the septic system at 100 Canterberry Lane (groundwater offset reduction from four feet to three feet)",
+   "motion": "Approve the variance for 100 Canterberry Lane to reduce the groundwater offset from four feet to three feet.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
@@ -29,6 +29,144 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. The \"MINUTES APPROVED: November 18, 2013\" section lists prior minutes but does not record explicit voting language (motion, second, or vote outcome), so it is not included as a recorded vote.",
- "cost_usd": 0.09102249999999999
+ "note": "OCR text from a scanned page with garbled characters (e.g., \"3'°\" for the continuation date, \".iS\" and stray marks). No roll-call votes; the two motions are recorded as 'All in favor' with no count. The minutes approval and adjournment show no motion. The continued matter is not labelled, so 40 Page Street is inferred from layout. The motion-maker is printed as 'Rabbit' on one motion and 'Rabbitt' on another, and Rabbit is not in the present list. No dollar figures or public comment section appear.",
+ "cost_usd": 0.00351642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi conducted a housing inspection at the above address in october, 2013."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of November 18, 2013 recorded as approved; the minutes print no motion or count for this.",
+   "quote": "minutes approved: november 18, 2013"
+  },
+  {
+   "decision": "Nine Title 5 inspection reports listed under the heading were acknowledged by the board, with no motion recorded.",
+   "quote": "title 5 inspection reports acknowledged: 174 northfield road 70 turkey hill road"
+  },
+  {
+   "decision": "Septic permits for 100 Canterberry Lane and 40 Page Street listed as signed; the minutes print a continuation to February 3 at 7:00 pm directly after the list, apparently for 40 Page Street.",
+   "quote": "septic permits signed: 100 canterberry lane 40 page street"
+  },
+  {
+   "decision": "Matter continued to February 3 at 7:00 pm.",
+   "quote": "continued to february 3'° at 7:00 pm"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved November 18, 2013 minutes (no motion recorded)",
+   "quote": "minutes approved: november 18, 2013",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (nine reports)",
+   "quote": "title 5 inspection reports acknowledged: 174 northfield road 70 turkey hill road",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "100 Canterberry Lane and 40 Page Street listed as signed; one matter continued to February 3",
+   "quote": "septic permits signed: 100 canterberry lane 40 page street",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "912 Massachusetts Avenue housing violations",
+   "resolution": "sent to housing court",
+   "quote": "on motion by rabbit and second by shea, the board voted to send this matter to housing court. all in favor.",
+   "tags": [
+    "housing",
+    "lead paint",
+    "housing court"
+   ]
+  },
+  {
+   "topic": "100 Canterberry Lane variance",
+   "resolution": "variance approved",
+   "quote": "on motion by jewell and second by rabbitt, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45 pm (no motion recorded)",
+   "quote": "meeting adjourned 7:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Agent Garreffi requesting an update on 912 Massachusetts Avenue (undated)",
+   "where": "text",
+   "quote": "agent garreffi send a letter requesting and update with no response."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic",
+  "variance",
+  "housing",
+  "housing court",
+  "lead paint"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

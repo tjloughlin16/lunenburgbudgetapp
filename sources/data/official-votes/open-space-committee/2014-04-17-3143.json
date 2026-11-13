@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2014-04-17",
  "docid": "3143",
@@ -12,13 +12,190 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the April 10, 2014 meeting",
+   "motion": "Approve the minutes of the April 10, 2014 meeting, with a minor edit to item #6 (Lunenburg Snowriders agreed to pay for the Lunenburg Ledger ad \"up to $100\").",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the committee reviewed and approved the minutes from the april 10, 2014 meeting"
+   "quote": "the committee reviewed and approved the minutes from the april 10, 2014 meeting, with a minor edit to item #6"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1022825
+ "note": "OCR text of a short set of minutes. Page 1 ends mid-item 5 and the text jumps from item 5 to item 7, so item 6 is absent and the item 5 decision is cut off. No motion, second, or vote count is printed for the minutes approval; it is recorded as passed because the minutes say the committee approved them, and moved_by/seconded_by are left blank. Adjournment at 8:30pm is recorded with no vote. No public comment section is printed. The documents_list flag is set true because item 1 and item 2 name documents presented (draft website front page, draft FAQ); no list heading is printed.",
+ "cost_usd": 0.004952819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "members present: paula bertram (board of selectmen), brandon kibbe (open space ad hoc committee), jean-joseph cote (conservation commission), emerick bakaysa (planning board)"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Open Space Ad Hoc Committee",
+   "status": "present",
+   "quote": "members present: paula bertram (board of selectmen), brandon kibbe (open space ad hoc committee), jean-joseph cote (conservation commission), emerick bakaysa (planning board)"
+  },
+  {
+   "name": "Jean-Joseph Cote",
+   "role": "Conservation Commission",
+   "status": "present",
+   "quote": "members present: paula bertram (board of selectmen), brandon kibbe (open space ad hoc committee), jean-joseph cote (conservation commission), emerick bakaysa (planning board)"
+  },
+  {
+   "name": "Emerick Bakaysa",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "members present: paula bertram (board of selectmen), brandon kibbe (open space ad hoc committee), jean-joseph cote (conservation commission), emerick bakaysa (planning board)"
+  },
+  {
+   "name": "Elizabeth Ainsley Campbell",
+   "role": "of the Nashua River Watershed Association",
+   "status": "present",
+   "quote": "elizabeth ainsley campbell of the nashua river watershed association presented copies of the draft front page"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee edited the content of the public information website so it could be prepared to go live over the weekend.",
+   "quote": "the committee reviewed and edited the content of the website so that it could be prepared to \"go live\" over the weekend."
+  },
+  {
+   "decision": "J-J Cote and Brandon Kibbe will lead attendees on a walk of the site similar to the one given to the joint boards in December, depending on turnout.",
+   "quote": "j-j cote and brandon kibbe will lead attendees on a similar walk to that given to the joint boards back in december"
+  },
+  {
+   "decision": "Brandon Kibbe will share the airing schedule for the public service announcement once LPA releases it.",
+   "quote": "brandon kibbe will share the airing schedule once released by lpa."
+  },
+  {
+   "decision": "Committee agreed to focus on a general description of the long-term cost of residential development.",
+   "quote": "committee agreed to focus on a general description of the long-term cost of residential development being a"
+  },
+  {
+   "decision": "The next meeting was set for 5:30pm, Thursday, April 24, 2014.",
+   "quote": "the next meeting of the open space acquisition advisory team was set for 5:30pm, thursday, april 24, 2014."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Ledger ad paid by Lunenburg Snowriders (item #6 edit to April 10 minutes)",
+   "what_was_recorded": "Lunenburg Snowriders agreed to pay for the Lunenburg Ledger ad up to a stated maximum.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "lunenburg snowriders agreed to pay for the lunenburg ledger ad \"up to $100\"."
+  },
+  {
+   "topic": "Financial explanation of fiscal impact of development vs. conservation",
+   "what_was_recorded": "Committee discussed the financial explanation of fiscal impact of development versus conservation, an area where citizens had questions; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "committee discussed the financial explanation of fiscal impact of development vs. conservation"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public information website (www.SaveTheLaneLand.org)",
+   "resolution": "reviewed and edited",
+   "quote": "the committee reviewed and edited the content of the website so that it could be prepared to \"go live\" over the weekend.",
+   "tags": [
+    "website",
+    "public outreach"
+   ]
+  },
+  {
+   "topic": "Frequently Asked Questions draft",
+   "resolution": "reviewed and edited",
+   "quote": "the committee reviewed and edited the content of the faq's.",
+   "tags": [
+    "FAQ",
+    "public outreach"
+   ]
+  },
+  {
+   "topic": "Saturday site visit plans",
+   "resolution": "discussed; walk to be led by J-J Cote and Brandon Kibbe",
+   "quote": "j-j cote and brandon kibbe will lead attendees on a similar walk to that given to the joint boards back in december",
+   "tags": [
+    "site visit",
+    "fliers"
+   ]
+  },
+  {
+   "topic": "Public service announcement",
+   "resolution": "reported; video screened, airing schedule to follow",
+   "quote": "brandon kibbe reported on the creation of the public service announcement",
+   "tags": [
+    "public service announcement",
+    "Lunenburg Public Access"
+   ]
+  },
+  {
+   "topic": "Citizen feedback and fiscal impact discussion",
+   "resolution": "discussed; agreed to focus on general description of long-term cost",
+   "quote": "the committee discussed the feedback they've heard from citizens to date.",
+   "tags": [
+    "citizen feedback",
+    "fiscal impact"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for April 24, 2014 at 5:30pm",
+   "quote": "the next meeting of the open space acquisition advisory team was set for 5:30pm, thursday, april 24, 2014.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Approval of April 10, 2014 minutes",
+   "resolution": "approved with minor edit",
+   "quote": "the committee reviewed and approved the minutes from the april 10, 2014 meeting, with a minor edit to item #6",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft front page of public information website www.SaveTheLaneLand.org",
+   "where": "text",
+   "quote": "presented copies of the draft front page of a public information website being developed for the project:"
+  },
+  {
+   "name": "Draft \"Frequently Asked Questions\"",
+   "where": "text",
+   "quote": "presented a draft \"frequently asked questions\" that would be available both in printed form and on the website"
+  },
+  {
+   "name": "Previously-prepared fliers for the site visit",
+   "where": "text",
+   "quote": "nrwa provided copies of the previously-"
+  },
+  {
+   "name": "Public service announcement video",
+   "where": "text",
+   "quote": "the final video was screened for the committee via lpa's youtube channel."
+  }
+ ],
+ "tags": [
+  "open space",
+  "land conservation",
+  "public outreach",
+  "website",
+  "FAQ",
+  "public service announcement",
+  "site visit",
+  "fiscal impact",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "presented copies of the draft front page of a public information website"
+ },
+ "dropped_unquoted_by_field": {}
 }

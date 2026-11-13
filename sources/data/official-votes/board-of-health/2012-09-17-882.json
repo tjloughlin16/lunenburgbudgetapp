@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-09-17",
  "docid": "882",
@@ -12,31 +12,256 @@
  },
  "votes": [
   {
-   "motion": "Approve variances and allow the septic system to be installed as a replacement system at 455 Mass Avenue",
+   "motion": "Approve the variances and allow the proposed system at 455 Mass Avenue to be installed as a replacement system.",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "on motion by shea and second by jewell, the board voted to approve the variances and allow this system to be installed as a replacement system."
   },
   {
-   "motion": "Reaffirm the variances approved in 2007 for the well permit at 46 Fire Road 12",
+   "motion": "Reaffirm the variances approved in 2007 for the well at 46 Fire Road.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on motion by jewell and second by shea, the board reaffired the variances approved in 2007. all in favor."
   },
   {
-   "motion": "Sign the letter of release of the Enforceable Agreement dated August 20, 2010 for 111 Rolling Acres Road",
+   "motion": "Sign the letter of release of the Enforceable Agreement for 111 Rolling Acres Road.",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on motion by shea and second by jewell, the letter of release was signed. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision; quality is good and all votes are clearly legible.",
- "cost_usd": 0.0997075
+ "note": "OCR text from a scanned page; some names are spelled inconsistently (O'Brien/O'Brian, Osoff/Mi. Osoff, Title S for Title 5). The first motion (455 Mass Avenue) records no tally. The meeting adjourned at 8:05 pm with no motion recorded. The minutes print no dollar figures and no public comment section.",
+ "cost_usd": 0.005058620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jack rabbitt, dave passios",
+   "role": "Chairman"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jack rabbitt, dave passios",
+   "role": "Board member"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jack rabbitt, dave passios",
+   "role": "Board member"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jack rabbitt, dave passios",
+   "role": "Board member"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jack rabbitt, dave passios",
+   "role": "Board member"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "status": "present",
+   "quote": "chris mackenzie and jamie rheault met with the board to present the upgraded system plan for",
+   "role": "not stated"
+  },
+  {
+   "name": "Jamie Rheault",
+   "status": "present",
+   "quote": "chris mackenzie and jamie rheault met with the board to present the upgraded system plan for",
+   "role": "not stated"
+  },
+  {
+   "name": "Jim Garreffi",
+   "status": "present",
+   "quote": "in his comments, agent jim garreffi stated that if the board considers this to be a change of use,",
+   "role": "Agent"
+  },
+  {
+   "name": "David Osoff",
+   "status": "present",
+   "quote": "david osoff met with the board to discuss a well permit issued and approved in 2007.",
+   "role": "not stated"
+  },
+  {
+   "name": "Kevin O'Brien",
+   "status": "present",
+   "quote": "owner kevin o'brien together with chris mackenzie and jamie rheault met with the board to",
+   "role": "Owner"
+  },
+  {
+   "name": "Mr. Patel",
+   "status": "present",
+   "quote": "mr. patel met with the board to discuss outstanding housing violations as the above address.",
+   "role": "not stated"
+  },
+  {
+   "name": "Bruce St. Jean",
+   "status": "present",
+   "quote": "mr. bruce st. jean, owner of the property, has requested a release of the enforceable agreement",
+   "role": "owner of the property"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board determined it would not require septic testing on each individual lot at the Aro Estates property until a septic system is to be installed; a lot not supporting a fully compliant septic system and variance-free well would be deemed unbuildable.",
+   "quote": "the board determined that they would not require testing on each individual lot until such time as a septic system was to be installed."
+  },
+  {
+   "decision": "For 6 Oakridge Road, Agent Garreffi will re-inspect and report back; the board will rehear the matter if issues remain unaddressed.",
+   "quote": "the board advised that since it was ready for re-inspection, agent garreffi would report back to the board."
+  },
+  {
+   "decision": "Chairman advised that when Aro Estates plans are formally filed with the Planning Board, they must also be filed with the Board of Health, which will respond directly to the applicant and notify the Planning Board.",
+   "quote": "chairman stated that when mr. o'brien formally files his plans with the planning board he is also required to file same with the board of health."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "46 Fire Road well permit",
+   "what_was_recorded": "The applicant said the well was put on hold for financial reasons and the property is now in a position to install it.",
+   "figures_as_printed": [],
+   "quote": "the well had to be put on \"hold\" due to financial reasons"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "no action (none approved)",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged (8 reports)",
+   "quote": "title 5 inspection reports acknowledged: 245 leominster road",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (3 permits)",
+   "quote": "septic permits signed: 455 mass avenue 820 reservoir road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "455 Mass Avenue system upgrade and donut shop change of use",
+   "resolution": "variances approved; replacement system allowed",
+   "quote": "this facility is to become a donut shop with drive-through and takeout service only.",
+   "tags": [
+    "septic",
+    "variances",
+    "change of use",
+    "replacement system"
+   ]
+  },
+  {
+   "topic": "46 Fire Road well permit",
+   "resolution": "variances reaffirmed",
+   "quote": "david osoff met with the board to discuss a well permit issued and approved in 2007.",
+   "tags": [
+    "well",
+    "variances"
+   ]
+  },
+  {
+   "topic": "Aro Estates subdivision",
+   "resolution": "no vote; board set lot-testing position and subdivision filing requirement",
+   "quote": "owner kevin o'brien together with chris mackenzie and jamie rheault met with the board to",
+   "tags": [
+    "subdivision",
+    "septic",
+    "wells",
+    "lot testing"
+   ]
+  },
+  {
+   "topic": "6 Oakridge Road housing violations",
+   "resolution": "no vote; awaiting re-inspection",
+   "quote": "mr. patel met with the board to discuss outstanding housing violations as the above address.",
+   "tags": [
+    "housing violations",
+    "re-inspection"
+   ]
+  },
+  {
+   "topic": "West Nile and EEE",
+   "resolution": "no action (informational)",
+   "quote": "chairman emond advised that since meeting last, west nile virus mosquitos had been found in",
+   "tags": [
+    "mosquito spraying",
+    "west nile",
+    "public health emergency"
+   ]
+  },
+  {
+   "topic": "111 Rolling Acres Road enforceable agreement release",
+   "resolution": "release letter signed",
+   "quote": "mr. bruce st. jean, owner of the property, has requested a release of the enforceable agreement",
+   "tags": [
+    "enforceable agreement",
+    "septic"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Enforceable Agreement dated August 20, 2010",
+   "where": "text",
+   "quote": "requested a release of the enforceable agreement dated august 20, 2010 with regard to the current septic system"
+  },
+  {
+   "name": "Notes provided by Agent Jim Garreffi (well permit variances)",
+   "where": "text",
+   "quote": "according to notes provided by agent jim garreffi, variances were approved for the installation"
+  },
+  {
+   "name": "Copies of proposed Aro Estates subdivision plans",
+   "where": "text",
+   "quote": "mr. o'brian provided the board of health members with copies of what is being proposed."
+  },
+  {
+   "name": "Letter of release (111 Rolling Acres Road)",
+   "where": "text",
+   "quote": "a letter of release was prepared by administrative assistant andrea schnepf."
+  }
+ ],
+ "tags": [
+  "septic",
+  "title 5",
+  "variances",
+  "subdivision",
+  "wells",
+  "housing violations",
+  "mosquito spraying",
+  "west nile",
+  "enforceable agreement",
+  "septic permits"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-04-07",
  "docid": "4923",
@@ -12,107 +12,730 @@
  },
  "votes": [
   {
-   "motion": "approve the Eagle Scout project by Logan Marshall as presented",
+   "motion": "Approve the Eagle Scout project by Logan Marshall as presented.",
+   "moved_by": "B. Ebersole",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the eagle scout project by logan marshall as presented vote: all in favor"
+  },
+  {
+   "motion": "Recommend approval of scenic road designation articles #34 and #35.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 20: p. bertram to approve the eagle scout project by logan marshall as presented vote: all in favor"
+   "quote": "that the board recommends approval of #34, #35 articles for scenic road designations"
   },
   {
-   "motion": "That the Board recommends approval of Articles 34 and 35 for scenic road designations",
-   "moved_by": "B. Ebersole",
-   "seconded_by": "P. Bertram",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: b. ebersole 2nd: p. bertram that the board recommends approval of #34, #35 articles for scenic road designations vote: all in favor"
-  },
-  {
-   "motion": "recommend approval of Article 37",
+   "motion": "Recommend approval of Article 37 (rezoning of 790 Massachusetts Avenue to limited business/residential).",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "motion: b. ebersole 2': p. luck to recommend approval of article 37 discussion: mr. alonzo stated the town did not choose to make that",
-   "quote_taken_from_text": true
+   "quote": "vote: p. luck, b. ebersole, t. alonzo-yes; p bertram, j. toale- no"
   },
   {
-   "motion": "recommend approval of Article 26",
+   "motion": "Recommend approval of Article 26 (Architectural Preservation District).",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2\": p. bertram to recommend approval of article 14 including the addi",
-   "quote_taken_from_text": true
+   "quote": "to recommend approval of article 26 vote: all in favor"
   },
   {
-   "motion": "recommend approval of Article 27",
+   "motion": "Recommend approval of Article 27 (Village Center District).",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to recommend approval of article 27 2n°: j. toale vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "to recommend approval of article 27"
   },
   {
-   "motion": "recommend approval of Articles 28 through 33",
+   "motion": "Recommend approval of Articles 28-33 (housekeeping zoning articles).",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to recommend approval of articles 28-33 2nd. j. toale vote: all in favor"
+   "quote": "to recommend approval of articles 28-33"
   },
   {
-   "motion": "recommend approval of Article 12",
+   "motion": "Recommend approval of Article 12 (Police Officers collective bargaining contract).",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2nd. p. bertram to recommend approval of article 12 vote: all in favor"
+   "quote": "to recommend approval of article 12 vote: all in favor"
   },
   {
-   "motion": "recommend approval of Article 13",
+   "motion": "Recommend approval of Article 13 (AFSCME collective bargaining contract).",
    "moved_by": "B. Ebersole",
-   "seconded_by": "J. Toale",
-   "outcome": "passed",
+   "seconded_by": "",
+   "outcome": "passed; all in favor except Ms. Bertram, who recused",
    "procedural": false,
-   "quote": "motion: b. ebersole to recommend approval of article 13 ms. bertram recused herself from the vote. vote: all in favor except ms. bertram"
+   "quote": "to recommend approval of article 13 ms. bertram recused herself from the vote. vote: all in favor except ms. bertram"
   },
   {
-   "motion": "recommend approval of Article 14 including the additional recommendation",
+   "motion": "Recommend approval of Article 14 including the Capital Planning Committee's additional recommendation.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2\": p. bertram to recommend approval of article 14 including the additional recommendation vote: all in favor"
+   "quote": "to recommend approval of article 14 including the additional recommendation"
   },
   {
-   "motion": "recommend approval of transferring $97,923 to the stabilization account",
+   "motion": "Recommend approval of the fiscal year 2016 operating budget (Article 16).",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2''': j. toale to recommend approval of transferring $97,923 to the stabilization account vote: all in favor"
+   "quote": "recommend approval of the fiscal year 2016 operating budget vote: all in favor"
   },
   {
-   "motion": "recommend approval of Article 25",
+   "motion": "Recommend approval of transferring $97,923 to the stabilization account (Article 15).",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2'': j. toale to recommend approval of article 25 vote: all in favor"
+   "quote": "to recommend approval of transferring $97,923 to the stabilization account"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Recommend approval of Articles 23 and 24 (perpetual easements across school property).",
+   "moved_by": "P. Bertram",
+   "seconded_by": "J. Toale",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to recommend approval of articles 23 and 24"
+  },
+  {
+   "motion": "Recommend approval of Article 25 (appropriation of bond premiums).",
+   "moved_by": "P. Bertram",
+   "seconded_by": "J. Toale",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to recommend approval of article 25"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:45 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:45 p.m. 2\"°: j. toale vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 9:45 p.m."
   }
  ],
- "dropped_unquoted": 2,
- "note": "OCR scan with typical character substitution artifacts in superscript seconding notations (\\\"2nd\\\" rendered as \\\"20:\\\", \\\"2':\\\", \\\"2\\\":\\\", etc.) but all votes clearly recorded with outcomes.",
- "cost_usd": 0.15456709999999999
+ "dropped_unquoted": 0,
+ "note": "Text is macOS Vision OCR of a scanned minutes document with garbled vote and seconder lines (e.g., '20:', '2\"°:', '2n°:'); quotes were checked against the OCR text with line breaks collapsed. Seconder not clearly printed for the Eagle Scout vote and Article 13. Attendance status for Mike Conway and Mr. Conroy is not stated clearly. Article 37 vote passed 3-2 per printed count. No formal documents-used list heading is printed; handouts are referenced inline.",
+ "cost_usd": 0.01719812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk; robert ebersole,"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk; robert ebersole,"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, vice chair; jamie toale, clerk; robert ebersole,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, clerk; robert ebersole,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Logan Marshall",
+   "role": "presenter, Eagle Scout project",
+   "status": "present",
+   "quote": "logan marshall, 42 main street, presented his project in order to obtain the rank of eagle scout."
+  },
+  {
+   "name": "Debbie Lincoln",
+   "status": "present",
+   "quote": "debbie lincoln, 46 hemlock drive, thanked the board for hosting the volunteer appreciation"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "damon mcquaid, planning board member, reported the scenic road designation protects trees and stone walls in the right of way."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, land use director, further explained that there are no other benefits other than keeping the roads"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair rebecca lantry explained this article would be to amend lunenburg's general bylaws"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "nathan lockwood, planning board member, stated in his view the penalty for withholding a building permit"
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "ken chenis, planning board member, stated the concern is the definition of an aggrieved party."
+  },
+  {
+   "name": "Cullin Dwyer",
+   "role": "Historical Commission member",
+   "status": "present",
+   "quote": "cullin dwyer, historical commission member, stated the purpose of this bylaw is to preserve historic homes"
+  },
+  {
+   "name": "Mike Conway",
+   "role": "Vice President of the Massachusetts Technical Standards Review Group (TSRG)",
+   "status": "not stated",
+   "quote": "mike conway, vice president of the massachusetts technical standards review group (tsrg),"
+  },
+  {
+   "name": "Mr. Conroy",
+   "status": "present",
+   "quote": "mr. conroy stated the upgrade that we are dealing with is necessitated by generation"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident greg bittner stated this issue upsets him greatly."
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Green Community Task Force member",
+   "status": "present",
+   "quote": "green community task force member dave blatt wanted to clarify that the charge of the gctf"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed warrants: Accounts Payable $500,419.67 and $1290.00, Payroll $670,778.71, and Payroll deductions $395,347.00.",
+   "quote": "the board signed the following warrants; accounts payable in the amount of $500,419.67;"
+  },
+  {
+   "decision": "Article 36 (Whitetail Crossing acceptance) given no recommendation; details still being worked out, to be addressed at town meeting.",
+   "quote": "article 36 proposes acceptance of whitetail crossing as a public way."
+  },
+  {
+   "decision": "Article 22 recommendation deferred to Annual Town Meeting while Town Counsel reviews it.",
+   "quote": "ms. speidel reported article 22 is still being reviewed by town counsel so a recommendation should be made at atm."
+  },
+  {
+   "decision": "Chair requested clear, concise maps from the Planning Board for the APD and VCD articles for town meeting.",
+   "quote": "mr. alonzo requested clear concise maps for town meeting for both articles from the planning board."
+  },
+  {
+   "decision": "Town Manager suggested reversing the order of articles 15 and 16 on the final warrant printing, since article 15 depends on article 16.",
+   "quote": "she also suggested changing reversing their order on the final printing of the warrant"
+  },
+  {
+   "decision": "Town Manager will invite the Lunenburg Water District board to a future meeting.",
+   "quote": "ms. speidel will invite the water district board to a future meeting."
+  },
+  {
+   "decision": "Chair stated the term for any ad hoc committee would be one year.",
+   "quote": "mr. alonzo stated the term for any ad hoc committee would be one year."
+  },
+  {
+   "decision": "Board is talking with Unitil representatives and has contacted Representative Benson about the solar capacity obstacle.",
+   "quote": "the board is talking with unitil representatives and has also contacted representative benson about how to address this obstacle."
+  },
+  {
+   "decision": "Remaining articles to be reviewed at the following week's meeting.",
+   "quote": "other articles will be reviewed next week."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed four warrants covering accounts payable and payroll.",
+   "figures_as_printed": [
+    "$500,419.67",
+    "$1290.00",
+    "$670,778.71",
+    "$395,347.00"
+   ],
+   "quote": "the board signed the following warrants; accounts payable in the amount of $500,419.67;"
+  },
+  {
+   "topic": "Eagle Scout project cost comparison",
+   "what_was_recorded": "A Capital Planning Committee member said a similar project had been estimated at $20,000 and passed over.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "stated it had been estimated at $20,000 and had been passed over"
+  },
+  {
+   "topic": "Unitil upgrade study price",
+   "what_was_recorded": "The $250,000 price for the Unitil upgrade study is generated by distributed generation on the circuit.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "this is what's generating the $250,000 price for the upgrade study"
+  },
+  {
+   "topic": "Available surplus for FY2016 budget",
+   "what_was_recorded": "Town Manager reported an available surplus, mostly from a new growth increase.",
+   "figures_as_printed": [
+    "$129,578",
+    "$145,000"
+   ],
+   "quote": "ms. speidel reported there is an available surplus of $129,578."
+  },
+  {
+   "topic": "New growth increase from Assessors",
+   "what_was_recorded": "A last-minute Assessors' update increased new growth by $145,000, the bulk of the surplus.",
+   "figures_as_printed": [
+    "$145,000"
+   ],
+   "quote": "from a last minute update from the assessors' office of an increase in new growth of $145,000."
+  },
+  {
+   "topic": "Capital Planning Committee Article 14 rescission and reappropriation",
+   "what_was_recorded": "CPC asked town meeting to rescind $36,524 from the May 2014 ATM Article 14 and appropriate $15,000 for the library gas burner and $12,000 for an HVAC management system.",
+   "figures_as_printed": [
+    "$36,524",
+    "$15,000",
+    "$12,000"
+   ],
+   "quote": "rescind $36,524 authorized under article 14 of the may 2014 atm, and in its place appropriate $15,000 for replacement of"
+  },
+  {
+   "topic": "Remaining Article 14 funds",
+   "what_was_recorded": "The remaining amount is to partially offset the FY2016 Capital Improvement Plan.",
+   "figures_as_printed": [
+    "$9,524"
+   ],
+   "quote": "the remaining $9,524 should be used to partially offset the fy'2016 capital improvement plan."
+  },
+  {
+   "topic": "Fire Department weekend coverage",
+   "what_was_recorded": "Finance Committee recommended funding the Fire Department for Saturday and Sunday coverage.",
+   "figures_as_printed": [
+    "$48,000"
+   ],
+   "quote": "recommended funding the fire department $48,000"
+  },
+  {
+   "topic": "Radio Watch desk officer coverage",
+   "what_was_recorded": "Finance Committee recommended funding Radio Watch for weekday afternoon desk officer coverage.",
+   "figures_as_printed": [
+    "$26,000"
+   ],
+   "quote": "fund $26,000 to radio watch for desk officer coverage from 3:00 pm to 7:00 pm monday through friday."
+  },
+  {
+   "topic": "Snow and ice account increase",
+   "what_was_recorded": "Snow and ice account increased by $15,000, bringing the appropriation to $275,000.",
+   "figures_as_printed": [
+    "$15,000",
+    "$275,000"
+   ],
+   "quote": "increase the snow and ice account by $15,000, bringing that appropriation up to $275,000."
+  },
+  {
+   "topic": "Library utility costs",
+   "what_was_recorded": "Finance Committee recommended funding the Library for additional utility costs.",
+   "figures_as_printed": [
+    "$14,251"
+   ],
+   "quote": "fund the library $14,251 to cover additional utility costs."
+  },
+  {
+   "topic": "Police lockup appropriation",
+   "what_was_recorded": "Recommended $10,000 added to police lockup, bringing the appropriation to $70,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$70,000"
+   ],
+   "quote": "fund $10,000 to police lockup bringing that appropriation up to $70,000"
+  },
+  {
+   "topic": "Vehicle maintenance",
+   "what_was_recorded": "$9,849 recommended to be added to vehicle maintenance, split between Police and Fire.",
+   "figures_as_printed": [
+    "$9,849"
+   ],
+   "quote": "$9,849 was recommended to be added to vehicle maintenance to be split between the police and fire departments."
+  },
+  {
+   "topic": "Stabilization increase to 5% minimum",
+   "what_was_recorded": "Stabilization increased by $6,478 to reach the 5% minimum requirement.",
+   "figures_as_printed": [
+    "$6,478"
+   ],
+   "quote": "increase stabilization by $6,478, which increases the amount to the 5% minimum requirement"
+  },
+  {
+   "topic": "Stabilization transfer (Article 15)",
+   "what_was_recorded": "Amount to transfer to the stabilization account is now $97,923.00.",
+   "figures_as_printed": [
+    "$97,923.00",
+    "$97,923"
+   ],
+   "quote": "the amount to transfer to the stabilization account would now be $97,923.00."
+  },
+  {
+   "topic": "School bond premiums",
+   "what_was_recorded": "Town has received bond premiums to date, appropriated under Article 25 to reduce school project debt.",
+   "figures_as_printed": [
+    "$105,975.36"
+   ],
+   "quote": "ms. speidel reported to date the town has received bond premiums in the amount of $105,975.36."
+  },
+  {
+   "topic": "School budget versus Town Manager recommendation",
+   "what_was_recorded": "School Committee's level service budget is still $100,000 over the Town Manager's recommended budget.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "they presented a level service budget, which is still $100,000 over the town manager's recommended budget"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to stabilization account (Article 15), recommended to town meeting.",
+   "amount_as_printed": "$97,923",
+   "outcome": "recommended; passed all in favor",
+   "quote": "to recommend approval of transferring $97,923 to the stabilization account"
+  },
+  {
+   "description": "Rescind $36,524 from May 2014 ATM Article 14 and reappropriate $15,000 (library gas burner) and $12,000 (HVAC management system), with $9,524 offsetting FY2016 capital plan.",
+   "amount_as_printed": "$36,524",
+   "outcome": "recommended; passed all in favor",
+   "quote": "rescind $36,524 authorized under article 14 of the may 2014 atm"
+  },
+  {
+   "description": "Bond premiums appropriated to reduce authorized debt for the school project (Article 25).",
+   "amount_as_printed": "$105,975.36",
+   "outcome": "recommended; passed all in favor",
+   "quote": "article 25 appropriates those funds in order to reduce the authorized debt for the school project."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Debbie Lincoln",
+   "stated_role": "",
+   "topic": "thanks for volunteer appreciation night",
+   "quote": "debbie lincoln, 46 hemlock drive, thanked the board for hosting the volunteer appreciation"
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "Resident",
+   "topic": "Unitil solar denial and possible response",
+   "quote": "resident greg bittner stated this issue upsets him greatly."
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "",
+   "topic": "playground ownership and recording public meetings",
+   "quote": "public comment: greg bittner asked if the playground is part of the passios grounds."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening announcements and public comment",
+   "resolution": "no action",
+   "quote": "ms. luck reminded all of the lion's club pancake breakfast at the senior center",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Eagle Scout project presentation (Logan Marshall)",
+   "resolution": "approved",
+   "quote": "logan marshall, 42 main street, presented his project in order to obtain the rank of eagle scout.",
+   "tags": [
+    "Eagle Scout",
+    "community project"
+   ]
+  },
+  {
+   "topic": "Warrant signing",
+   "resolution": "signed warrants",
+   "quote": "the board signed the following warrants;",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Review of May 2, 2015 Annual Town Meeting articles",
+   "resolution": "reviewed; recommendations made article by article",
+   "quote": "planning board, land use director and board of selectmen review of may 2, 2015 annual",
+   "tags": [
+    "town meeting",
+    "articles"
+   ]
+  },
+  {
+   "topic": "Scenic road designations (Flat Hill Road, Northfield Road; #34, #35)",
+   "resolution": "approved",
+   "quote": "that the board recommends approval of #34, #35 articles for scenic road designations",
+   "tags": [
+    "scenic roads",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Article 37, 790 Massachusetts Avenue rezoning",
+   "resolution": "approved 3-2",
+   "quote": "to recommend approval of article 37",
+   "tags": [
+    "zoning",
+    "rezoning"
+   ]
+  },
+  {
+   "topic": "Article 26, Architectural Preservation District",
+   "resolution": "approved",
+   "quote": "to recommend approval of article 26 vote: all in favor",
+   "tags": [
+    "zoning",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Article 27, Village Center District",
+   "resolution": "approved",
+   "quote": "the group moved on to the proposed village center district (vcd) article #27.",
+   "tags": [
+    "zoning",
+    "village center"
+   ]
+  },
+  {
+   "topic": "Articles 28-33, housekeeping zoning amendments",
+   "resolution": "approved",
+   "quote": "articles 28 through 33 are housekeeping articles to amend zoning bylaws",
+   "tags": [
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Article 36, Whitetail Crossing road acceptance",
+   "resolution": "no recommendation; to be decided at town meeting",
+   "quote": "article 36 proposes acceptance of whitetail crossing as a public way.",
+   "tags": [
+    "roads"
+   ]
+  },
+  {
+   "topic": "Unitil capacity for additional solar projects",
+   "resolution": "discussed; no action",
+   "quote": "a resident had received a denial for installation of solar panels from unitil",
+   "tags": [
+    "solar",
+    "Unitil",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force clarification",
+   "resolution": "no action",
+   "quote": "green community task force member dave blatt wanted to clarify that the charge of the gctf",
+   "tags": [
+    "green community",
+    "energy"
+   ]
+  },
+  {
+   "topic": "ATM Articles 12 and 13, collective bargaining contracts",
+   "resolution": "approved (Bertram recused on Article 13)",
+   "quote": "ms. speidel stated articles 12 and 13 are collective bargaining contracts for police officers and afscme",
+   "tags": [
+    "collective bargaining",
+    "labor"
+   ]
+  },
+  {
+   "topic": "Article 14, FY2016 Capital Plan",
+   "resolution": "approved with CPC additional recommendation",
+   "quote": "article 14 addresses the fy' 2016 capital plan.",
+   "tags": [
+    "capital plan",
+    "library",
+    "HVAC"
+   ]
+  },
+  {
+   "topic": "Articles 15 and 16, FY2016 budget and stabilization",
+   "resolution": "approved",
+   "quote": "ms. speidel recommended reviewing articles 15 and 16 next.",
+   "tags": [
+    "FY2016 budget",
+    "stabilization",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Articles 22 through 25",
+   "resolution": "Article 22 deferred to ATM; Articles 23, 24 and 25 approved",
+   "quote": "ms. speidel reported article 22 is still being reviewed by town counsel",
+   "tags": [
+    "easements",
+    "school",
+    "bond premiums"
+   ]
+  },
+  {
+   "topic": "Lunenburg Water District and North Lancaster connection",
+   "resolution": "Water District board to be invited",
+   "quote": "ms. luck reported the sentinel & enterprise had an article stating the lunenburg water district",
+   "tags": [
+    "water district",
+    "regional"
+   ]
+  },
+  {
+   "topic": "Committee appointment terms",
+   "resolution": "discussed; chair ruled ad hoc terms one year",
+   "quote": "mr. toale reported executive assistant peterson is issuing reappointment forms",
+   "tags": [
+    "committees",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Storm water utility seminar",
+   "resolution": "discussed; no action",
+   "quote": "ms. bertram reported she and ms. luck recently attended a seminar on how to form a storm",
+   "tags": [
+    "storm water",
+    "EPA"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "committee reports: board of health - no report;",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "no report",
+   "quote": "town manager reports/department reports- no report",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Closing public comment (playground; meeting recording)",
+   "resolution": "no action",
+   "quote": "public comment: greg bittner asked if the playground is part of the passios grounds.",
+   "tags": [
+    "public comment",
+    "cable"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:45 p.m.",
+   "quote": "to adjourn the meeting at 9:45 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout showing allowed uses for limited business/residential and commercial zoning (presented by Adam Burney)",
+   "where": "list",
+   "quote": "mr. burney presented a handout that showed the various allowed uses for limited business/residential and commercial"
+  },
+  {
+   "name": "Handout with the recommendations of the Capital Planning Committee (distributed by Jamie Toale)",
+   "where": "list",
+   "quote": "mr. toale distributed a handout with the recommendations of the capital planning committee."
+  },
+  {
+   "name": "Building Reuse Committee property line drawings",
+   "where": "list",
+   "quote": "reviewed property lines for the properties they are responsible for and these were distributed to the board this evening."
+  },
+  {
+   "name": "Letter sent out by Unitil",
+   "where": "text",
+   "quote": "a suggestion was made to post a link to the letter sent out by unitil on the town website."
+  },
+  {
+   "name": "May 2, 2015 Annual Town Meeting Articles",
+   "where": "text",
+   "quote": "planning board, land use director and board of selectmen review of may 2, 2015 annual"
+  },
+  {
+   "name": "Town of Ipswich architectural preservation bylaw (model for the APD bylaw)",
+   "where": "text",
+   "quote": "this bylaw was modeled after the town of ipswich's bylaw and provides a process for review of"
+  },
+  {
+   "name": "2007 storm water report",
+   "where": "text",
+   "quote": "she suggested revisiting a 2007 report in order to work on that plan."
+  },
+  {
+   "name": "Lunenburg Home Rule Petition (Water District / North Lancaster)",
+   "where": "text",
+   "quote": "the next step is for legislation to be passed based on lunenburg's home rule petition."
+  },
+  {
+   "name": "Sentinel & Enterprise article",
+   "where": "text",
+   "quote": "ms. luck reported the sentinel & enterprise had an article stating the lunenburg water district"
+  }
+ ],
+ "tags": [
+  "annual town meeting 2015",
+  "zoning",
+  "historic preservation",
+  "scenic roads",
+  "solar",
+  "Unitil",
+  "FY2016 budget",
+  "capital plan",
+  "stabilization",
+  "school bond premiums",
+  "warrants",
+  "water district",
+  "committee reports",
+  "Eagle Scout"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. burney presented a handout"
+ },
+ "dropped_unquoted_by_field": {}
 }

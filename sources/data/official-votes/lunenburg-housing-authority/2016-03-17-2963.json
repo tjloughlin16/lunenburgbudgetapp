@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2016-03-17",
  "docid": "2963",
@@ -12,48 +12,44 @@
  },
  "votes": [
   {
-   "motion": "Accept the February 18, 2016 minutes",
+   "motion": "Accept the minutes of the February 18, 2016 meeting.",
    "moved_by": "Amaryllis Leet",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "amaryllis leet made a motion to accept the minutes; deborah christen seconded. all were in favor, the motion passed unanimously."
   },
   {
-   "motion": "Accept the December 2015 year-end and January 2016 financial statements",
+   "motion": "Accept both the December 2015 year-end and January 2016 financial statements.",
    "moved_by": "Caroline Fortin",
    "seconded_by": "Paul Doherty",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "caroline fortin made a motion to accept both the de cember 2015 year-end and january 2016 financial statements. paul doherty seconded and all were in favor",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "caroline fortin made a motion to accept both the de cember 2015 year-end and january 2016 financial statements."
   },
   {
-   "motion": "Certify and execute the year-end financial statement certifications in compliance with DHCD requirements",
+   "motion": "Certify and execute the DHCD year-end financial statement certifications under Resolution 201605.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Caroline Fortin",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion made by paul doherty to certify an d execute the year-end financial statement certifications in compliance with the dhcd requirement. seconded, caroline fortin seconded the motion, and the motion was passed by a unanimous vote",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "resolved, motion made by paul doherty to certify an d execute the year-end financial statement certifications in compliance with the dhcd requirement."
   },
   {
-   "motion": "Award the kitchen upgrades bid for the 667-1 elderly development to Vareika Construction, Inc. in the amount of $120,000.00",
+   "motion": "Award the kitchen upgrade bid at the 667-1 elderly development to the lowest bidder, Vareika Construction, Inc., under Resolution 201606.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah a.h. christen to a ward the bid for the kitchen upgrades at the 667-1 elderly development to the lowest bidder. seconded, paul doherty seconded the motion and t he motion was passed by a unanimous vot",
-   "quote_taken_from_text": true
+   "quote": "resolved, motion made by deborah a.h. christen to a ward the bid for the kitchen upgrades at the 667-1 elderly development to the lowest bidder."
   },
   {
-   "motion": "Approve the Capitalization and Disposition policy effective immediately",
+   "motion": "Approve the Capitalization and Disposition policy effective immediately under Resolution 201607.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Caroline Fortin",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion made by paul doherty to approve th e capitalization and disposition policy effective immediately. seconded, caroline fortin seconded the motion, and the motion was passed by a unanimous vote",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "resolved, motion made by paul doherty to approve th e capitalization and disposition policy effective immediately."
   },
   {
    "motion": "Adjourn the meeting at 7:00 p.m.",
@@ -64,7 +60,225 @@
    "quote": "amaryllis leet made a motion to adjourn the meeting at 7:00 p.m. paul doherty seconded, all were in favor, and the meeting was adjourned."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0919755
+ "dropped_unquoted": 1,
+ "note": "Plain-text extract with split words and irregular spacing; quotes are copied as printed. Architect Raymond T. Guertin is named only as reviewer of bids and did not take part, so he is omitted from attendees. No attachments are included in the text (the bid list is referenced only).",
+ "cost_usd": 0.006353319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chai r"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "paul doherty, member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Asst. Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, asst. executive dir ector"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "Fenton & Ewald",
+   "status": "present",
+   "quote": "sue honeycutt, fenton & ewald"
+  },
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "elizabeth murphy, chair"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Asst. Executive Director will have a notice sent to all residents and others asking them to slow down and to pick up after their dogs.",
+   "quote": "the asst. executive director said he would have a notice sent out covering both issues."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves were reported as too high in the year-end statement review.",
+   "figures_as_printed": [
+    "$100,253"
+   ],
+   "quote": "reserves are at $100,253; too high is not good."
+  },
+  {
+   "topic": "Rental income",
+   "what_was_recorded": "Rental income was reported as better than projected.",
+   "figures_as_printed": [
+    "$26,000"
+   ],
+   "quote": "rental income i s better than projected by $26,000."
+  },
+  {
+   "topic": "Septic pumping and utilities",
+   "what_was_recorded": "Septic pumping was moved to utilities to get a subsidy, putting utilities slightly over for the first month.",
+   "figures_as_printed": [],
+   "quote": "septic pum ping was moved to utilities to get subsidy."
+  },
+  {
+   "topic": "Utilities overage",
+   "what_was_recorded": "Utilities were slightly over in the first month and expected to even out.",
+   "figures_as_printed": [],
+   "quote": "we are over a little in utilities for the first month; will even out."
+  },
+  {
+   "topic": "Kitchen upgrade construction contract",
+   "what_was_recorded": "Resolution 201606 authorizes award of the kitchen upgrade contract to Vareika Construction, Inc. at a stated amount.",
+   "figures_as_printed": [
+    "$120,000.00"
+   ],
+   "quote": "in the amount of $120,000.00 ."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Residents",
+   "stated_role": "",
+   "topic": "letters asking everyone to slow down and pick up dog waste",
+   "quote": "residents asked if letters could be sent to everyon e asking them to slow down"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened at 6:30 p.m.",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 6:30 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "notice to residents to be sent",
+   "quote": "the asst. executive director said he would have a notice sent out covering both issues.",
+   "tags": [
+    "resident concerns"
+   ]
+  },
+  {
+   "topic": "Minutes of February 18, 2016",
+   "resolution": "approved",
+   "quote": "the minutes of the february 18, 2016 meeting were presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Financial report (year-end and January 2016 statements)",
+   "resolution": "statements accepted",
+   "quote": "this was covered at the beginning of the meeting by sue honeycutt.",
+   "tags": [
+    "financial statements"
+   ]
+  },
+  {
+   "topic": "Executive Director report and recognition of Amaryllis Leet",
+   "resolution": "reported; no action; certificate presented",
+   "quote": "presented her with a certificate for her service to the lunenburg housing authority board",
+   "tags": [
+    "executive director",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "kitchen bid taken up later in meeting",
+   "quote": "we will be awarding the kitchen upgrade modernizat ion contract later in the meeting.",
+   "tags": [
+    "kitchen modernization"
+   ]
+  },
+  {
+   "topic": "New business: Resolutions 201605, 201606, 201607",
+   "resolution": "all three approved",
+   "quote": "the following resolutions were presented:",
+   "tags": [
+    "DHCD compliance",
+    "bid award",
+    "capitalization policy"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:00 p.m.",
+   "quote": "amaryllis leet made a motion to adjourn the meeting at 7:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution 201605 - Execution of DHCD Required Year-End Financial Statement Certifications",
+   "where": "list",
+   "quote": "the following resolutions were presented:"
+  },
+  {
+   "name": "Resolution 201606 - Authorizing the Acceptance of the Lowest Bid for the Kitchen Upgrades at the Pearl Brook 667-1 Elderly Development (DHCD Project No. 162019)",
+   "where": "list",
+   "quote": "the following resolutions were presented:"
+  },
+  {
+   "name": "Resolution 201607 - Adopt a Capitalization and Disposition Policy",
+   "where": "list",
+   "quote": "the following resolutions were presented:"
+  },
+  {
+   "name": "List of eight bids for kitchen upgrades at the 667-1 elderly development (attached, not reproduced)",
+   "where": "text",
+   "quote": "has received eight (8) bids to complete the work (see attached list)"
+  },
+  {
+   "name": "December 2015 year-end and January 2016 financial statements",
+   "where": "text",
+   "quote": "caroline fortin made a motion to accept both the de cember 2015 year-end and january 2016 financial statements."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "financial statements",
+  "kitchen modernization",
+  "bid award",
+  "DHCD compliance",
+  "capitalization policy",
+  "resident concerns",
+  "Pearl Brook elderly development"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following resolutions were presented:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-01-17",
  "docid": "4791",
@@ -12,55 +12,440 @@
  },
  "votes": [
   {
-   "motion": "Approve application for all Alcoholic license for Elena Christopher doing business as Elena's Gourmet Grocery",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed 5-0",
+   "motion": "Approve an all-alcoholic retail package store license for Elena Christopher d/b/a Elena's Gourmet Grocery.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
+   "outcome": "passed 5 in favor, O opposed",
    "procedural": false,
-   "quote": "mr. alonzo made a motion to approve the application for an all alcoholic license for elena christopher doing business as elena's gourmet grocery. ms. bertram seconded the motion. on vote, motion carried 5 in favor, o opposed."
+   "quote": "ms. bertram seconded the motion. on vote, motion carried 5 in favor, o opposed."
   },
   {
-   "motion": "Appoint Todd Blake, Richard Cohen and Mike Barney to the School Building Committee to serve as citizens-at-large",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Appoint Todd Blake, Richard Cohen and Mike Barney to the School Building Committee as citizens-at-large.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo made a motion to appoint todd blake, richard cohen and mike barney to the school building committee, to serve as citizens-at-large. discussion about the remaining applicants appointments ensued. it was decided to deal with that matter after this current appointment. ms. bertram seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
+   "quote": "it was decided to deal with that matter after this current appointment. ms. bertram seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the appointment of Nathan Lockwood, Mike Mackin, Dave Matthews, and Colleen Shapiro to the School Building Committee",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Approve the appointment of Nathan Lockwood (Planning Board), Mike Mackin (School Committee), Dave Matthews (Board of Selectmen) and Colleen Shapiro (School Committee) to the School Building Committee.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to approve the appointment of nathan lockwood, representing the planning board, mike mackin, representing the school committee, dave matthews, representing the board of selectmen, and colleen shapiro, representing the school committee to the school building committee. ms. bertram seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
+   "quote": "representing the school committee to the school building committee. ms. bertram seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Appoint David Passios to the Board of Health",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Appoint David Passios to the Board of Health.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram made a motion to appoint david passios to the board of health. mr. debettencourt seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adopt the State-wide Mutual Aid laws as written: Mass GL C40 S4J (Public Safety Mutual Aid) and Mass GL C40 S4K (Public Works Mutual Aid)",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Sund",
+   "motion": "Adopt the state-wide Public Safety Mutual Aid law (Mass GL c.40 s.4J) and the state-wide Public Works Mutual Aid law (Mass GL c.40 s.4K) as written.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Carl \"Ernie\" Sund",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo made a motion to adopt the state-wide mutual aid laws as written as mass gl. c40, s4j which is the state- wide public safety mutual aid agreement and mass gl. c 40, s4k which is the state-wide public works mutual aid agreement. mr. sund seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
+   "quote": "mutual aid agreement. mr. sund seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Paula Bertram",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. all board members were in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR quality good. One likely OCR artifact: \"O opposed\" in first vote (likely meant to be \"0 opposed\").",
- "cost_usd": 0.10967350000000001
+ "note": "OCR text from a 4-page scan. The vote count 'O opposed' appears as printed (likely a digit 0 misread). Page 3 storm-reimbursement paragraph ends mid-sentence in the text. Attendance statuses for appointees are not stated. No vote is recorded for warrants, minutes, or several reports. Attendance line for Board members appears to be the only attendance statement.",
+ "cost_usd": 0.011365120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "loxi jo calmes, superintendent of schools, 63 riley rd, invited the board and the people in the community to attend the"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "representing Elena's Gourmet Grocery",
+   "status": "present",
+   "quote": "elena christopher, representing elena's gourmet grocery, made a request to the board for an al alcohol license to"
+  },
+  {
+   "name": "Todd Blake",
+   "role": "candidate for School Building Committee",
+   "status": "present",
+   "quote": "todd blake, 6 robbs terrace, said that he was interested in serving on the school building committee."
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "candidate for School Building Committee",
+   "status": "present",
+   "quote": "richard cohen, 50 seaver rd, told the board that he is a general contractor and a former school teacher and he hopes that"
+  },
+  {
+   "name": "George Emond",
+   "role": "Chairperson Board of Health",
+   "status": "present",
+   "quote": "george emond, chairperson board of health spoke and said that mr. david passios has been interviewed by the boh and that they have"
+  },
+  {
+   "name": "David Passios",
+   "role": "appointee to Board of Health",
+   "status": "present",
+   "quote": "mr. passios approached the microphone to speak and gave some background information on himself to the bos."
+  },
+  {
+   "name": "Dan Bourgeois",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief dan bourgeois and fire chief scott glenny were on hand to answer any questions pertaining to this"
+  },
+  {
+   "name": "Scott Glenny",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "police chief dan bourgeois and fire chief scott glenny were on hand to answer any questions pertaining to this"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "appointee to School Building Committee, citizen-at-large",
+   "status": "not stated",
+   "quote": "mr. alonzo made a motion to appoint todd blake, richard cohen and mike barney to the school building committee, to"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "appointee to School Building Committee, representing the Planning Board",
+   "status": "not stated",
+   "quote": "mr. alonzo moved to approve the appointment of nathan lockwood, representing the planning board, mike mackin,"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "appointee to School Building Committee, representing the School Committee",
+   "status": "not stated",
+   "quote": "mr. alonzo moved to approve the appointment of nathan lockwood, representing the planning board, mike mackin,"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "appointee to School Building Committee, representing the School Committee",
+   "status": "not stated",
+   "quote": "dave matthews, representing the board of selectmen, and colleen shapiro, representing the school committee"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager said the beer and wine license Elena's had held will be re-advertised.",
+   "quote": "ms. speidel commented and said that they will re-advertise the beer and wine license which elena's had held."
+  },
+  {
+   "decision": "Per Town Counsel, Central Mass Power Sports (expired license) will be notified it is operating without a license; if it continues a criminal complaint will be filed. No revocation.",
+   "quote": "the procedure will be to notify them that they are operating without a license and if it continues there will be a criminal complaint filed."
+  },
+  {
+   "decision": "Chair David Matthews signed a request letter asking for a MassDOT hearing to be held in Fitchburg.",
+   "quote": "ms. speidel had a request letter prepared and mr. matthews signed it."
+  },
+  {
+   "decision": "Mr. Matthews requested that a different town-counsel attorney be assigned to handle matters like the Central Mass Power Sports license in future.",
+   "quote": "mr. matthews requested that they are assigned a different attorney, from town counsel, to handle matters such as this in the future."
+  },
+  {
+   "decision": "Ratification of the Police Sergeant appointment was continued to 01/24/12.",
+   "quote": "ratification of police sergeant appointment, continued to 01/24/12"
+  },
+  {
+   "decision": "Temporary fix to Mulpus Road/Townsend Harbor Road intersection carried to the February 7, 2012 BOS meeting pending the engineer's report.",
+   "quote": "this is scheduled for the february 7, 2012 bos meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants: payroll and payroll deductions",
+   "what_was_recorded": "Payroll and payroll-deduction warrants were listed with their amounts.",
+   "quote": "warrants - payroll w15 p 12 (1/19/12) $631,471.90 payroll deductions w 41-12 (1/18/12) $155,329.29",
+   "figures_as_printed": [
+    "$631,471.90",
+    "$155,329.29"
+   ]
+  },
+  {
+   "topic": "Warrants: accounts payable",
+   "what_was_recorded": "Accounts payable warrant w 42-12 was listed with its amount.",
+   "quote": "accounts payable w 42-12 (1/17/12) $ $109,308.64",
+   "figures_as_printed": [
+    "$ $109,308.64"
+   ]
+  },
+  {
+   "topic": "Capital Planning Committee financing",
+   "what_was_recorded": "CPC reported it is not looking at any financing, reviewing requests on need only; no figures given.",
+   "quote": "they have been following the town manager's instructions that they are not looking at any financing on this whatsoever, it is on a need basis only.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Proposed 2 1/2 override",
+   "what_was_recorded": "Budget Working Group discussed the proposed 2 1/2 override and reviewing the Town Manager's five-year projection to sustain level service.",
+   "quote": "mr. alonzo reported that the budget working group met last wednesday and they discussed what they will do as far as the proposed 2 ½ override.",
+   "figures_as_printed": [
+    "2 ½"
+   ]
+  },
+  {
+   "topic": "October storm reimbursement from MEMA",
+   "what_was_recorded": "Town applied for disaster relief reimbursement for the October storm; paperwork must be filed within 60 days.",
+   "quote": "this is the first step to request reimbursement for the october storm and an application was filed requesting disaster relief today.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Mutual aid equipment loan versus rent",
+   "what_was_recorded": "Public Works mutual aid law would allow the town to borrow equipment at any time rather than rent it; no figures given.",
+   "quote": "the town could request a particular piece of equipment to borrow, not rent.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Loxi Jo Calmes",
+   "stated_role": "Superintendent of Schools",
+   "topic": "School reconfiguration proposal meeting invitation",
+   "quote": "loxi jo calmes, superintendent of schools, 63 riley rd, invited the board and the people in the community to attend the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; invitation to school committee meeting",
+   "quote": "loxi jo calmes, superintendent of schools, 63 riley rd, invited the board and the people in the community to attend the",
+   "tags": [
+    "schools",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "announcements - none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing: all-alcohol package store license, Elena's Gourmet Grocery",
+   "resolution": "approved license",
+   "quote": "ms. bertram seconded the motion. on vote, motion carried 5 in favor, o opposed.",
+   "tags": [
+    "liquor license",
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Interviews and appointments: School Building Committee",
+   "resolution": "appointed Blake, Cohen, Barney and four representatives",
+   "quote": "brief questions were posed to both applicants by mr. alonzo on their building experience.",
+   "tags": [
+    "school building committee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Board of Health: BOH vacant seat",
+   "resolution": "appointed David Passios",
+   "quote": "ms. bertram made a motion to appoint david passios to the board of health.",
+   "tags": [
+    "board of health",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "State-wide mutual aid adoption",
+   "resolution": "adopted both state-wide mutual aid laws",
+   "quote": "mr. alonzo made a motion to adopt the state-wide mutual aid laws as written as mass gl. c40, s4j which is the",
+   "tags": [
+    "mutual aid",
+    "public safety",
+    "public works"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no minutes; warrants listed; Jones House bids noted",
+   "quote": "the town is taking sealed bids on the jones house until january 31, 2012.",
+   "tags": [
+    "warrants",
+    "jones house",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Committee reports: Capital Planning and Budget Working Group",
+   "resolution": "reported; no action",
+   "quote": "mr. sund reported that the capital planning committee met last thursday to review any requests",
+   "tags": [
+    "capital planning",
+    "budget",
+    "override"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "quote": "4. department reports - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "reported; MassDOT letter signed; Mulpus Road carried to Feb 7",
+   "quote": "ms. speidel had a request letter prepared and mr. matthews signed it.",
+   "tags": [
+    "massdot",
+    "mema",
+    "storm",
+    "mulpus road",
+    "whalom gas"
+   ]
+  },
+  {
+   "topic": "Old business: cell antenna lease for Town Hall",
+   "resolution": "not discussed",
+   "quote": "review request to extend cell antenna lease by t-mobile for town hall location - not discussed",
+   "tags": [
+    "cell antenna",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Old business: annual business licenses (Central Mass Power Sports)",
+   "resolution": "no vote; notice procedure described",
+   "quote": "ms. speidel reported that after last week's license discussion concerning central mass power sports she reviewed the issue with town counsel",
+   "tags": [
+    "licensing",
+    "enforcement",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Appointments, re-appointments and resignations",
+   "resolution": "Police Sergeant ratification continued to 01/24/12",
+   "quote": "ratification of police sergeant appointment, continued to 01/24/12",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:09 PM",
+   "quote": "meeting adjourned at 8:09 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Retail Package Store, All Alcohol License (Elena Christopher d/b/a Elena's Gourmet Grocery, 1 Main Street)",
+   "where": "list",
+   "quote": "mr. matthews read the application for retail package store, all alcohol license into record. (see attached)."
+  },
+  {
+   "name": "Email from Richard A. Davy, Secretary and Chief Executive Officer, Mass Department of Transportation, regarding fare and service schedule changes",
+   "where": "text",
+   "quote": "ms.speidel said that she had received an email request from richard a. davy, secretary and chief executive officer for",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Request letter to MassDOT for a hearing in Fitchburg",
+   "where": "text",
+   "quote": "ms. speidel had a request letter prepared and mr. matthews signed it."
+  },
+  {
+   "name": "Town Manager's five year budget projection",
+   "where": "text",
+   "quote": "they are looking at the town manager's five year budget projection and are investigating"
+  },
+  {
+   "name": "Engineer's report on Mulpus Road/Townsend Harbor Road temporary fix",
+   "where": "text",
+   "quote": "the report has been requested from the engineer but as of this meeting it has not been returned."
+  },
+  {
+   "name": "Corrected license for Whalom Gas",
+   "where": "text",
+   "quote": "ms. speidel informed the board that there was a typo on a license that was approved for whalom gas several meetings ago and the corrected version needed to be signed."
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "school building committee",
+  "appointments",
+  "mutual aid",
+  "public safety",
+  "budget",
+  "override",
+  "warrants",
+  "MEMA storm reimbursement",
+  "MassDOT",
+  "licensing",
+  "Board of Health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. matthews read the application for retail package store, all alcohol license into record."
+ },
+ "dropped_unquoted_by_field": {}
 }

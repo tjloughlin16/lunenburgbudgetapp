@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-12-09",
  "docid": "5476",
@@ -12,47 +12,452 @@
  },
  "votes": [
   {
-   "motion": "Pay invoice $9278.70 for SWSS work on generators",
+   "motion": "Pay the SWSS invoice for $9278.70.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "troy made the motion to pay the invoice for $9278.70 for the purposes of discussion, dave seconded. short discussion ensued regarding costs to come. they discovered the thermostat issue at dana st. when the weather turned. also, the expected costs for electric ave will be around $675, maybe a little more. carl asked for a vote. vote taken was unanimous to pay the invoice $9278.70."
+   "quote": "troy made the motion to pay the invoice for $9278.70 for the purposes of discussion, dave seconded."
   },
   {
-   "motion": "Accept Wright Pierce proposal for $4400 for easement work",
+   "motion": "Accept the Wright Pierce easement proposal for $4400 (Pratt St/Lakeview Ave SRF project).",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "dave made the motion that we accept the proposal for $4400. troy seconded. commission discussed that wright pierce's work is the work done prior to the town's attorneys taking it over. vote taken was unanimous."
+   "quote": "dave made the motion that we accept the proposal for $4400. troy seconded."
   },
   {
-   "motion": "Deny Drumm privilege fee abatement request",
+   "motion": "Respond to the Drumm privilege fee abatement request by denying it in accordance with town counsel.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "troy made the motion to respond, denying the abatement in accordance with town counsel, dave seconded. vote taken was unanimous."
+   "quote": "troy made the motion to respond, denying the abatement in accordance with town counsel, dave seconded."
   },
   {
-   "motion": "Assess privilege fee of $5,775.74 to 42 Highland Street",
+   "motion": "Assess the privilege fee to 42 Highland St.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "troy made the motion to assess the privilege fee to 42 highland st., dave seconded. vote taken was unanimous."
+   "quote": "troy made the motion to assess the privilege fee to 42 highland st., dave seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (9:38pm).",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "troy made the motion to adjourn, dave seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; all votes have clear outcomes recorded as unanimous.",
- "cost_usd": 0.1003735
+ "note": "Text is macOS Vision OCR and has errors (garbled first line, 'trom', 'SwSs', 'Respeetfully'). Start of the meeting on page 1 is unreadable, so earlier discussion may be missing. Chair, roles and roll call are not printed; attendance is inferred from participation. Votes are printed only as 'unanimous' or 'Vote taken was unanimous', so outcomes are recorded as 'passed'. No public comment section is printed. Adjourned 9:38pm.",
+ "cost_usd": 0.009805320000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl invited our 8pm appointment in, pat cotton from weston & sampson, and apologized for keeping him waiting."
+  },
+  {
+   "name": "Troy",
+   "role": "",
+   "status": "present",
+   "quote": "troy made the motion to pay the invoice for $9278.70 for the purposes of discussion, dave seconded."
+  },
+  {
+   "name": "Dave",
+   "role": "",
+   "status": "present",
+   "quote": "troy made the motion to pay the invoice for $9278.70 for the purposes of discussion, dave seconded."
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack stated again that they are our agent, and all bills should be"
+  },
+  {
+   "name": "Al",
+   "role": "",
+   "status": "present",
+   "quote": "al responded that mass 1 would be the best one, then"
+  },
+  {
+   "name": "Bruce",
+   "role": "",
+   "status": "present",
+   "quote": "bruce explained that the original estimate was from hall, didn't include swss labor"
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb will talk with flow assessment and al to schedule a detail for a coordinated inspection."
+  },
+  {
+   "name": "Susan",
+   "role": "",
+   "status": "present",
+   "quote": "susan asked if the prior monthly invoices that had been short-paid for the generator portion would be paid"
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "from Weston & Sampson",
+   "status": "present",
+   "quote": "pat said he did review the data, and compared it to the data from a similar storm in 2011"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "BOS liaison",
+   "status": "present",
+   "quote": "bob ebersole (bos liaison) suggested the old cross building that is"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "SWSS will provide a quote, the Commission approves it, and SWSS must get approval if the amount will exceed the quote; no more estimates.",
+   "quote": "swss will ensure they provide a quote, the commission approves, and that they must get approval if the amount will exceed the quote. no more estimates."
+  },
+  {
+   "decision": "Jack asked Al to call him when there is an issue such as Dana St. so he can approve it.",
+   "quote": "jack asked al to make the phone call to him when there is an issue such as dana st. for approval"
+  },
+  {
+   "decision": "Carl directed that SWSS provide a breakdown of labor from First Electric and start working on the next SCADA proposal for discussion.",
+   "quote": "carl asked that they provide the breakdown of labor from first electric and to start working on the next proposal for discussion."
+  },
+  {
+   "decision": "Bruce will come back with a hard number, not an estimate.",
+   "quote": "bruce stated he would come back with a hard number, no more 'estimates'."
+  },
+  {
+   "decision": "SWSS will check the level 0 reading at Mass 2 from the week ending 11/29 report.",
+   "quote": "there was a level 0 at mass 2 that swss will check"
+  },
+  {
+   "decision": "Barb will talk with Flow Assessment and Al to schedule a coordinated monthly meter inspection.",
+   "quote": "barb will talk with flow assessment and al to schedule a detail for a coordinated inspection."
+  },
+  {
+   "decision": "Carl asked Pat Cotton to work out the timing and email an updated Weston & Sampson proposal.",
+   "quote": "carl asked pat to figure out the timing, and email the updated proposal."
+  },
+  {
+   "decision": "Susan was assured that prior short-paid generator-portion invoices would now be put through for the balance.",
+   "quote": "was assured that they would now be put through for the balance."
+  },
+  {
+   "decision": "Troy recommended sending the Drumm denial letter quoting counsel rather than forwarding counsel's document itself.",
+   "quote": "troy recommended sending a letter, quoting counsel, and not forwarding the exact document from counsel."
+  },
+  {
+   "decision": "Commission re-signed the revised Q2 commitment.",
+   "quote": "reduction of $97.20. commission re-signed"
+  },
+  {
+   "decision": "Grease trap compliance issue placed on the next agenda for full discussion.",
+   "quote": "carl wanted that put on the next agenda to give it sufficient time for discussion."
+  },
+  {
+   "decision": "Privately Funded Extension Policy item placed on the agenda; Barb to re-send Troy's email for Commissioner review.",
+   "quote": "carl asked that it be put on the agenda, and barb will re-send troy's email."
+  },
+  {
+   "decision": "Minutes not approved; put on the next agenda because the parties were not present.",
+   "quote": "we did not have the parties present in order to approve the minutes, so they will be put on the next agenda."
+  },
+  {
+   "decision": "Commission agreed that project balances should be used before they go away.",
+   "quote": "there is agreement among the commission that these monies should be used before they go away."
+  },
+  {
+   "decision": "Commission agreed to look into options for generator maintenance (Dave proposed dealing directly with F&M; Jack said it must be turnkey).",
+   "quote": "commission agreed that we should look into our options."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SWSS invoice payment",
+   "what_was_recorded": "Commission voted to pay a SWSS invoice of $9278.70, with Jack stating SWSS work should be paid.",
+   "quote": "troy made the motion to pay the invoice for $9278.70 for the purposes of discussion, dave seconded.",
+   "figures_as_printed": [
+    "$9278.70"
+   ]
+  },
+  {
+   "topic": "Electric Ave generator work cost overrun",
+   "what_was_recorded": "Original estimate was $9500 but multiple invoices totaled over $12,000; expected remaining Electric Ave cost around $675.",
+   "quote": "at issue was the original estimate of $9500, and then multiple invoices received totaling over $12,000",
+   "figures_as_printed": [
+    "$9500",
+    "over $12,000",
+    "$675"
+   ]
+  },
+  {
+   "topic": "SCADA at Leominster Rd invoice",
+   "what_was_recorded": "An SCADA invoice came in $1000 over the estimate; the estimate from Hall did not include SWSS labor.",
+   "quote": "we received an invoice for $1000 over the estimate.",
+   "figures_as_printed": [
+    "$1000"
+   ]
+  },
+  {
+   "topic": "Pratt St/Lakeview Ave easement proposal (Wright Pierce)",
+   "what_was_recorded": "Wright Pierce easement proposal for 24 labor hours, approved at $4400.",
+   "quote": "there is an easement proposal for approval from wright pierce for $4400 for 24 labor hours.",
+   "figures_as_printed": [
+    "$4400",
+    "24 labor hours"
+   ]
+  },
+  {
+   "topic": "42 Highland St privilege fee",
+   "what_was_recorded": "Sewer line accepted 12/2/14; Commission assessed the privilege fee of $5,775.74.",
+   "quote": "we just need a vote to assess the privilege fee of $5,775.74.",
+   "figures_as_printed": [
+    "$5,775.74"
+   ]
+  },
+  {
+   "topic": "Revised Q2 commitment",
+   "what_was_recorded": "Revised Q2 commitment is $184,191.33, down from $184,288.53 after an item that should not have been on the worksheet was removed.",
+   "quote": "the revised amount is $184,191.33.",
+   "figures_as_printed": [
+    "$184,191.33",
+    "$184,288.53",
+    "$97.20"
+   ]
+  },
+  {
+   "topic": "Cellular versus hard-wired monitoring cost",
+   "what_was_recorded": "Using the hard-wired option for SCADA access would double the monthly cost, so cellular access is being pursued.",
+   "quote": "since using the hard-wired option would double the monthly cost.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Generator monthly invoices short-paid",
+   "what_was_recorded": "Prior monthly invoices that had been short-paid for the generator portion were to be paid the balance.",
+   "quote": "susan asked if the prior monthly invoices that had been short-paid for the generator portion would be paid",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Outstanding sewer fees and licenses",
+   "what_was_recorded": "Licenses can be withheld only for monies more than 30 days past due as of the prior January 1; two restaurants still had not paid this year's fee.",
+   "quote": "we can only withhold licenses for monies over 30 days past due as of the prior january 1st.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "YTD budget and l/l remediation account",
+   "what_was_recorded": "Commission reviewed updated YTD budget sheet; l/l remediation account is the sewer bank fee; l/l work by Weston & Sampson is under Purchase of Service-Engineering.",
+   "quote": "including the l/l remediation account, which is the sewer bank fee.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY16 budget DOR requirements",
+   "what_was_recorded": "DOR will require the betterment fund be included in income and debt service included as expense in the FY16 budget.",
+   "quote": "the dor will require that the betterment fund be included in income and debt service included as expense in the budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Project balances use",
+   "what_was_recorded": "Project balances must be used up before they disappear; uses discussed included stub installations and camera work on lines.",
+   "quote": "dave asked about the use of project balances, which needs to be used up before it disappears.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Generator maintenance and SWSS invoices",
+   "resolution": "approved payment of $9278.70; no more estimates, quotes required",
+   "quote": "troy made the motion to pay the invoice for $9278.70 for the purposes of discussion, dave seconded.",
+   "tags": [
+    "generators",
+    "SWSS",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "SCADA invoice at Leominster Rd",
+   "resolution": "breakdown of labor requested; next proposal to start",
+   "quote": "we received an invoice for $1000 over the estimate.",
+   "tags": [
+    "SCADA",
+    "Leominster Rd"
+   ]
+  },
+  {
+   "topic": "Weekly reports and meter inspection",
+   "resolution": "no vote; Mass 2 level 0 to be checked; inspection to be scheduled",
+   "quote": "weekly reports were reviewed.",
+   "tags": [
+    "weekly reports",
+    "meter inspection"
+   ]
+  },
+  {
+   "topic": "Weston & Sampson flow and storm review",
+   "resolution": "updated proposal requested from Pat Cotton",
+   "quote": "carl asked pat to figure out the timing, and email the updated proposal.",
+   "tags": [
+    "flow",
+    "Graham St",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Pratt St/Lakeview Ave SRF easement proposal",
+   "resolution": "approved $4400",
+   "quote": "dave made the motion that we accept the proposal for $4400. troy seconded.",
+   "tags": [
+    "Pratt St",
+    "Lakeview Ave",
+    "easement",
+    "SRF"
+   ]
+  },
+  {
+   "topic": "Drumm privilege fee abatement request",
+   "resolution": "denied per town counsel; letter to be sent",
+   "quote": "troy made the motion to respond, denying the abatement in accordance with town counsel, dave seconded.",
+   "tags": [
+    "abatement",
+    "privilege fee",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "42 Highland St sewer extension",
+   "resolution": "privilege fee assessed",
+   "quote": "troy made the motion to assess the privilege fee to 42 highland st., dave seconded.",
+   "tags": [
+    "privilege fee",
+    "sewer extension"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects update",
+   "resolution": "grease trap item moved to next agenda; extension policy item to agenda",
+   "quote": "carl wanted that put on the next agenda to give it sufficient time for discussion.",
+   "tags": [
+    "grease trap",
+    "fees",
+    "privately funded extension policy"
+   ]
+  },
+  {
+   "topic": "Revised Q2 commitment",
+   "resolution": "re-signed at $184,191.33",
+   "quote": "the revised amount is $184,191.33.",
+   "tags": [
+    "commitment",
+    "Q2"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "deferred to next agenda",
+   "quote": "we did not have the parties present in order to approve the minutes, so they will be put on the next agenda.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "YTD budget and FY16 budget preparation",
+   "resolution": "no vote; discussed budget accounts and project balances",
+   "quote": "barb handed out an updated sheet for commission review.",
+   "tags": [
+    "budget",
+    "FY16",
+    "I/I",
+    "project balances"
+   ]
+  },
+  {
+   "topic": "Mass Ave flooding and project balances",
+   "resolution": "agreed balances should be used before they lapse; no vote",
+   "quote": "there is agreement among the commission that these monies should be used before they go away.",
+   "tags": [
+    "Mass Ave",
+    "project balances",
+    "flooding"
+   ]
+  },
+  {
+   "topic": "Generator maintenance contract options",
+   "resolution": "agreed to look into options; no vote",
+   "quote": "commission agreed that we should look into our options.",
+   "tags": [
+    "generators",
+    "F&M",
+    "contract"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town counsel legal opinion on Drumm privilege fee abatement request",
+   "where": "text",
+   "quote": "town counsel had sent his legal opinion which the commission had reviewed."
+  },
+  {
+   "name": "Weston & Sampson proposal submitted (area and data)",
+   "where": "text",
+   "quote": "carl asked pat to review the proposal that was submitted, with details as to area and data."
+  },
+  {
+   "name": "Flow data from 11/23-24",
+   "where": "text",
+   "quote": "he had sent pat flow data from 11/23-24, when the pumps had twice the flow as usual."
+  },
+  {
+   "name": "Weekly reports (week ending 11/29 report)",
+   "where": "text",
+   "quote": "there was a level 0 at mass 2 that swss will check (from week ending 11/29 report)."
+  },
+  {
+   "name": "Updated YTD budget sheet",
+   "where": "text",
+   "quote": "barb handed out an updated sheet for commission review."
+  },
+  {
+   "name": "Revised Q2 commitment worksheet",
+   "where": "text",
+   "quote": "there was an item on worksheet that should not"
+  },
+  {
+   "name": "Troy's email on the Privately Funded Extension Policy",
+   "where": "text",
+   "quote": "on the privately funded extension policy update, troy had sent out an email"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "generators",
+  "SWSS",
+  "invoices",
+  "SCADA",
+  "Weston & Sampson",
+  "privilege fees",
+  "abatement",
+  "grease trap",
+  "budget",
+  "FY16",
+  "Pratt St",
+  "easement",
+  "Mass Ave"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

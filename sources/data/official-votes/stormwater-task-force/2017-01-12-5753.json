@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2017-01-12",
  "docid": "5753",
@@ -12,15 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the December 8, 2016 meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the december 8, 2016, meeting were accepted."
-  },
-  {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Alison",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
@@ -29,6 +21,223 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10269750000000001
+ "note": "Text is OCR-like with split words (e.g., 'sh e', 'questio ns', 'Lunen burg', 'te chniques') and line breaks inside some phrases; quotes were chosen from unbroken spans. The adjournment motion names the mover 'Matt Alison' while the attendance line says 'Matt Allison'; kept as printed. The minutes of December 8, 2016 are recorded as 'accepted' with no motion or vote. No dollar figures appear in the text. No public comment speaker is recorded. No documents list is printed.",
+ "cost_usd": 0.005812319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt, present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt, present."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt, present."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Lunenburg Land Use Director",
+   "status": "present",
+   "quote": "also in attendance was lunenburg land use director, adam burney."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "SWTF member and DPW Director",
+   "status": "not stated",
+   "quote": "adam burney suggested that swtf member and dpw director jack rodriquenz make a presentation to the swtf"
+  },
+  {
+   "name": "Jon O’Connor",
+   "status": "not stated",
+   "quote": "it was noted that jon o'connor has offered to help with the website"
+  },
+  {
+   "name": "Sarah Cammer",
+   "status": "not stated",
+   "quote": "phyllis luck shared that sarah cammer has resigned from the swtf, effective immediately, for personal reasons."
+  },
+  {
+   "name": "Brian Chartrand",
+   "role": "5th grade Math & Science teacher",
+   "status": "not stated",
+   "quote": "brian chartrand, who felt this grade level would be the perfect fit for educational outreach."
+  },
+  {
+   "name": "Mike Smith",
+   "role": "Baystate Roads Technical Training Specialist and the workshop presenter",
+   "status": "not stated",
+   "quote": "presenter mike smith had successfully"
+  },
+  {
+   "name": "Superintendent Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "jack rabbitt is planning to reach out to superintendent calmes for further discussion on educational outreach."
+  },
+  {
+   "name": "Ed Himlan",
+   "status": "not stated",
+   "quote": "phyllis luck will reach out to ed himlan to determine if he has knowledge of the stormwater educational outreach practices"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the December 8, 2016, meeting were accepted (no motion or vote recorded).",
+   "quote": "minutes of the december 8, 2016, meeting were accepted."
+  },
+  {
+   "decision": "SWTF members will reach out to find others interested in filling the vacancy left by Sarah Cammer's resignation.",
+   "quote": "swtf members will reach out to see if there are others interested in filling that void."
+  },
+  {
+   "decision": "Jack Rodriquenz to present Lunenburg's winter storm protocol to the SWTF; members forward questions to the Chair, who will compile them for the next meeting; presentation to be taped by Public Access.",
+   "quote": "it is intended that this presentation be taped by public access, either live or for future distribution."
+  },
+  {
+   "decision": "Tentative meeting set to explore winter-operations techniques with Mike Smith and the workshop presenter.",
+   "quote": "tentative meeting date is 1/24/17."
+  },
+  {
+   "decision": "Adam Burney requested to ensure lists of roads (for the 2/14/17 BOS meeting) are available for the 1/26/17 meeting.",
+   "quote": "it was requested that adam burney insure that lists of roads, as requested for the 2/14/17 board of selectmen (bos) meeting, be available for the 1/26/17 meeting."
+  },
+  {
+   "decision": "Jack Rabbitt to reach out to Superintendent Calmes on Educational Outreach.",
+   "quote": "jack rabbitt is planning to reach out to superintendent calmes for further discussion on educational outreach."
+  },
+  {
+   "decision": "Phyllis Luck to reach out to Ed Himlan about Stormwater educational outreach practices in Leominster and/or other towns.",
+   "quote": "phyllis luck will reach out to ed himlan to determine if he has knowledge of the stormwater educational outreach practices"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Winter storm operations techniques",
+   "what_was_recorded": "The minutes state that the newer snow and ice techniques result in improved safety and lower costs, without giving a dollar figure.",
+   "figures_as_printed": [],
+   "quote": "result in improved safety and lower costs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcement: 28th Annual Nonpoint Source Pollution Conference",
+   "resolution": "no action",
+   "tags": [
+    "conference",
+    "nonpoint source pollution"
+   ],
+   "quote": "will be held on april 12 - 13, 2017, at the hotel northampton in northampton, ma."
+  },
+  {
+   "topic": "Member resignation (Sarah Cammer)",
+   "resolution": "noted; members to seek replacements",
+   "tags": [
+    "membership",
+    "resignation"
+   ],
+   "quote": "phyllis luck shared that sarah cammer has resigned from the swtf, effective immediately, for personal reasons."
+  },
+  {
+   "topic": "Approval of December 8, 2016 minutes",
+   "resolution": "accepted",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of the december 8, 2016, meeting were accepted."
+  },
+  {
+   "topic": "Website, posters and rain barrel outreach (Jon O'Connor)",
+   "resolution": "continued to next meeting",
+   "tags": [
+    "website",
+    "outreach",
+    "library"
+   ],
+   "quote": "it was noted that jon o'connor has offered to help with the website"
+  },
+  {
+   "topic": "Bay State Roads snow and ice workshop report",
+   "resolution": "noted; follow-up meeting tentatively set",
+   "tags": [
+    "winter storm operations",
+    "DPW",
+    "training"
+   ],
+   "quote": "jack rodriquenz sent her armed with information on lunenburg's current winter storm protocol"
+  },
+  {
+   "topic": "Request for winter storm protocol presentation",
+   "resolution": "agreed to; questions to be forwarded to Chair",
+   "tags": [
+    "winter storm operations",
+    "public access"
+   ],
+   "quote": "adam burney suggested that swtf member and dpw director jack rodriquenz make a presentation to the swtf"
+  },
+  {
+   "topic": "Q1 2017 meeting schedule and DCI update",
+   "resolution": "reviewed; roads lists requested",
+   "tags": [
+    "schedule",
+    "consultants",
+    "roads",
+    "paving"
+   ],
+   "quote": "at the 1/26/17 meeting, the swtf will meet with design consultants, inc. (dci) for an update on their progress."
+  },
+  {
+   "topic": "Education workshop",
+   "resolution": "no action; outreach follow-ups assigned",
+   "tags": [
+    "education",
+    "outreach",
+    "schools"
+   ],
+   "quote": "she then introduced the enviroscape that was borrowed from the central mass regional stormwater coalition (cmrswc)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:54 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn was made at 7:54 pm by matt alison, seconded by jack rabbitt, all voted in favor."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Project Wet curriculum",
+   "where": "text",
+   "quote": "she also brought attention to the project wet curriculum that sarah cammer has contributed."
+  },
+  {
+   "name": "Lunenburg's current winter storm protocol",
+   "where": "text",
+   "quote": "jack rodriquenz sent her armed with information on lunenburg's current winter storm protocol"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "nonpoint source pollution",
+  "winter storm operations",
+  "education outreach",
+  "website",
+  "membership",
+  "road paving",
+  "conference"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

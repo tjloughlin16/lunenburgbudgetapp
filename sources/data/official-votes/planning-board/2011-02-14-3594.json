@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-02-14",
  "docid": "3594",
@@ -12,41 +12,55 @@
  },
  "votes": [
   {
-   "motion": "Not to grant a waiver from the requirement for an Environmental Impact Statement for the 1263 Reservoir Road, P.J. Keating Co. development plan.",
+   "motion": "Waiver #1 (EIS report): board voted on whether to approve or disapprove the waiver; the board voted not to grant it.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
-   "outcome": "passed 4-0",
+   "outcome": "4-0 (not to grant)",
    "procedural": false,
-   "quote": "motion, mr. lockwood, second, mr. saiia. discussion ensued. mr. lockwood commented that he was not comfortable allowing the waiver as it was customary procedure and the applicant did not offer any reason it would be det rimental to the project. he felt the items listed in the eis could be both on the plan and submitted as a separate document. board concurred . vote was 4-0 not to grant waiver ",
-   "quote_taken_from_text": true
+   "quote": "vote was 4-0 not to grant waiver #1 and the applicant was instructed to submit a written eis"
   },
   {
-   "motion": "To approve Waiver #2 (underground utilities) for 1263 Reservoir Road, P.J. Keating Co.",
+   "motion": "Waiver #2 (underground utilities): motion to approve the waiver.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "motion to approve, mr. bodkin jr., second, mr. lockwood. roll call vote- mr. saiia, nay; mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa, aye. the vote was 3-1."
+   "quote": "roll call vote- mr. saiia, nay; mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa, aye."
   },
   {
-   "motion": "To approve Waiver #3 (granting increased height) for 1263 Reservoir Road, P.J. Keating Co.",
+   "motion": "Waiver #3 (granting increased height): motion to approve the waiver.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion to approve, mr. bodkin jr., second, mr. lockwood. roll call vote- mr. saiia, nay; mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa, aye. the vote was 3-1. chair asked for",
-   "quote_taken_from_text": true
+   "quote": "the vote was 4-0 to grant waiver #3."
   },
   {
-   "motion": "To approve the Findings and Directives as amended for 1263 Reservoir Road, P.J. Keating Co.",
-   "moved_by": "Mr. Bodkin Jr.",
+   "motion": "Approve the Findings and Directives as amended.",
+   "moved_by": "Mr. Bodkin Jr",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion to approve, mr. bodkin jr, second, mr. saiia. roll call vote- mr. saiia, aye; mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa, aye. the vote was 4-0."
+   "quote": "chair asked for a motion to approve the findings and directive s as amended."
   },
   {
-   "motion": "To approve Regular Session minutes from January 24, 2011.",
+   "motion": "Approve the Regular Session... minutes signed Executive 1-10-11 (minutes approval).",
+   "moved_by": "Mr. Bodkin Jr.",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "signed executive 1 -10-11, motion, mr. bodkin jr., second, mr. saiia."
+  },
+  {
+   "motion": "Approve minutes signed Executive 1-24-11 (minutes approval).",
+   "moved_by": "Mr. Bodkin Jr.",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "signed executive 1 -24-11, motion mr. bodkin jr., second, mr. saiia."
+  },
+  {
+   "motion": "Approve minutes signed Regular Session 1-24-11 (minutes approval).",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
@@ -55,6 +69,346 @@
   }
  ],
  "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.1207355
+ "note": "Text is extracted from a scanned minutes PDF with broken spacing; quotes were copied as printed (single-spacing collapsed where noted). Bilotta is printed as 'Joanne' in the roll call and 'Joanna L.' on the letterhead. No public comment is recorded. The minutes approval motions have no recorded result. The adjournment to executive session shows no recorded motion and is not counted as a vote. Attached Findings and Directives are referenced but not reproduced in the text. Dollar figures are not printed in this text; budget items are money discussions without figures.",
+ "cost_usd": 0.013220220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanne Bilotta",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: joanne bilotta"
+  },
+  {
+   "name": "Mr. Marsden",
+   "role": "Peer Reviewing Engineer",
+   "status": "present",
+   "quote": "discussion on #1 of the directives included a reading of the content of the eis by the peer reviewing engineer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant instructed to submit a written EIS (noted as Schedule J) after Waiver #1 was not granted.",
+   "quote": "the applicant was instructed to submit a written eis"
+  },
+  {
+   "decision": "Recommended that the Directives be modified so the height item is placed as #3, following the other two waivers.",
+   "quote": "it was further recommended that since section 5.3"
+  },
+  {
+   "decision": "Chair asked members to bring forth concerns for the Board's February 28 meeting.",
+   "quote": "chair asked members to bring forth concerns for the board"
+  },
+  {
+   "decision": "Chair asked members to take a visual look at Summer Street.",
+   "quote": "chair asked member s to take a visual look at summer street.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Chair asked members to view the Tradex area; Director will try to reach Ecological Fibers about its long range plan.",
+   "quote": "director will try to reach ecological fibers to inquire as to"
+  },
+  {
+   "decision": "Board will do a quick review to see whether the new Highfield Village sewer design affects its review.",
+   "quote": "the board will have to do a quick review to ascertain whether the new design will affect the planning board"
+  },
+  {
+   "decision": "Director will let members know upon receipt of notice of the next Nashua River workshops.",
+   "quote": "director will let members know upon receipt of notice."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Committee prioritization and funding",
+   "what_was_recorded": "Director reported the Committee is ready to meet with the Town Manager on its prioritization list and funding process; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "director reported that the committee is ready to meet with the town manager"
+  },
+  {
+   "topic": "Summer Street reconstruction design cost share",
+   "what_was_recorded": "Board asked how the percentage of design cost for the three-town Summer Street proposal was set; answer was roadway length in each community. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "questioned was how the percentage of cost for the design was created."
+  },
+  {
+   "topic": "Green Community solar farm at old landfill",
+   "what_was_recorded": "Noted that a portion of the cost could be passed on to ratepayers; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "also noted was the portion of cost that could be"
+  },
+  {
+   "topic": "Tri Town Landing 40R funding",
+   "what_was_recorded": "Two towns have qualified under 40R but have not been funded; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "presently two towns have qualified, but have not been funded."
+  },
+  {
+   "topic": "Tax base from commercial developments",
+   "what_was_recorded": "Chair cited consideration of the tax base from commercial developments as part of Planning's goals; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "consideration of the tax base from commercial developments"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "1263 Reservoir Road, P.J. Keating Co. - Development Plan Review Findings and Directives",
+   "resolution": "Waiver #1 not granted 4-0; Waiver #2 approved 3-1; Waiver #3 approved 4-0; Findings and Directives approved as amended 4-0",
+   "quote": "vote was 4-0 not to grant waiver #1 and the applicant was instructed to submit a written eis",
+   "tags": [
+    "development plan review",
+    "waivers",
+    "EIS",
+    "zoning",
+    "height"
+   ]
+  },
+  {
+   "topic": "Chair - introduction to duties of the Planning Board",
+   "resolution": "no action (introductory remarks)",
+   "quote": "he stated that zoning is always fluid with changes and mandates",
+   "tags": [
+    "planning board duties",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made on three sets of minutes; no result recorded",
+   "quote": "signed regular session 1-24-11, motion, mr. saiia, second, mr. bodkin jr.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communication (IMA Devens HHW facility; Lunenburg Aggregation Plan)",
+   "resolution": "information only",
+   "quote": "request for proposal (rfp) will be sent out.",
+   "tags": [
+    "household hazardous waste",
+    "aggregation"
+   ]
+  },
+  {
+   "topic": "Bylaw changes / Annual Town Meeting warrant",
+   "resolution": "information; members asked to bring concerns to February 28 meeting",
+   "quote": "director informed the board that the warrant for town meeting",
+   "tags": [
+    "town meeting",
+    "bylaw changes",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "CHAPA - Lunenburg Estates 40B (1229 Massachusetts Avenue)",
+   "resolution": "informational; CHAPA letter read",
+   "quote": "director read chapa letter to zoning board of appeals",
+   "tags": [
+    "40B",
+    "affordable housing",
+    "CHAPA"
+   ]
+  },
+  {
+   "topic": "Summer Street reconstruction proposal (Fitchburg, Lunenburg, Leominster)",
+   "resolution": "discussion; members asked to view the street",
+   "quote": "a brief discussion was held on proposal for three towns",
+   "tags": [
+    "Summer Street",
+    "roads",
+    "regional project"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force - solar farm at old Town landfill",
+   "resolution": "informational; Task Force to meet February 15",
+   "quote": "director noted rfp has been prepared",
+   "tags": [
+    "solar",
+    "green community",
+    "landfill"
+   ]
+  },
+  {
+   "topic": "Open Space committee",
+   "resolution": "informational; report being prepared for submittal",
+   "quote": "open space- director reported all the work has been done.",
+   "tags": [
+    "open space"
+   ]
+  },
+  {
+   "topic": "134 Leominster Shirley Road, Tradex Corp. - zoning change request (Industrial to Commercial)",
+   "resolution": "no vote; members to view area; Director to contact Ecological Fibers",
+   "quote": "director notified the board that whitman & bingham",
+   "tags": [
+    "zoning change",
+    "industrial",
+    "commercial"
+   ]
+  },
+  {
+   "topic": "CLURPA",
+   "resolution": "tabled to next meeting",
+   "quote": "tabled until next meeting.",
+   "tags": [
+    "CLURPA"
+   ]
+  },
+  {
+   "topic": "Highfield Village, 361 Mass Ave - development status",
+   "resolution": "informational; Board to review new sewer design",
+   "quote": "the sewer manager has sent the design out for review",
+   "tags": [
+    "development status",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom - development status",
+   "resolution": "informational",
+   "quote": "there was one issue concerning snow.",
+   "tags": [
+    "development status",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Tri Town Landing, 37 Youngs Rd - development status and school children",
+   "resolution": "informational; 40R research continuing",
+   "quote": "director noted report on school children in the units rented presently",
+   "tags": [
+    "school children",
+    "40R",
+    "development status"
+   ]
+  },
+  {
+   "topic": "Lunenburg Crossing - unfinished business",
+   "resolution": "continued until weather permits",
+   "quote": "lunenburg crossing - work was not completed before the recent snow.",
+   "tags": [
+    "unfinished business",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "information only",
+   "quote": "february 28, planning board meeting, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Data information folder",
+   "resolution": "presented for member viewing",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing",
+   "tags": [
+    "data"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "regular session adjourned to enter executive session (separate minutes)",
+   "quote": "adjournment: adjourned regular session 8:20 pm to enter executive session.",
+   "tags": [
+    "executive session",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data folder containing items of interest not on agenda",
+   "where": "list",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing"
+  },
+  {
+   "name": "Findings (1263 Reservoir Road, P.J. Keating Co.)",
+   "where": "text",
+   "quote": "questions concerning #12 and #13 arose (see attached copy of findings)."
+  },
+  {
+   "name": "Directives (1263 Reservoir Road, P.J. Keating Co.)",
+   "where": "text",
+   "quote": "after the chair read the directives into record (see attached copy of directives)"
+  },
+  {
+   "name": "Written Environmental Impact Statement (EIS)",
+   "where": "text",
+   "quote": "without a formal written environmental impact statement (eis) the town records would not be complete"
+  },
+  {
+   "name": "CHAPA letter to ZBA Chair Donald Bowen",
+   "where": "text",
+   "quote": "director read chapa letter to zoning board of appeals"
+  },
+  {
+   "name": "CHAPA report on Lunenburg Estates",
+   "where": "text",
+   "quote": "report is available at the zba office in the ritter memorial building."
+  },
+  {
+   "name": "RFP for solar farm at old Town landfill",
+   "where": "text",
+   "quote": "director noted rfp has been prepared"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development plan review",
+  "waivers",
+  "EIS",
+  "zoning",
+  "height",
+  "minutes approval",
+  "40B",
+  "40R",
+  "solar",
+  "Summer Street",
+  "open space",
+  "town meeting warrant",
+  "CLURPA",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "data information:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

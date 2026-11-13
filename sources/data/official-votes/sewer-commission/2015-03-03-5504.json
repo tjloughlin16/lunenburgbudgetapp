@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-03-03",
  "docid": "5504",
@@ -12,48 +12,343 @@
  },
  "votes": [
   {
-   "motion": "to release the bid for the Pratt/Lakeview Betterment Project",
-   "moved_by": "Butch",
-   "seconded_by": "Troy",
-   "outcome": "unanimous",
-   "procedural": false,
-   "quote": "butch made the motion, troy seconded. vote taken was unanimous."
-  },
-  {
-   "motion": "to approve the minutes of 1/13 as corrected",
+   "motion": "Approve the minutes of 1/13 as corrected.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "dave made the motion, troy seconded. vote taken was unanimous."
+   "quote": "carl asked for a motion to approve the minutes as corrected of 1/13. dave made the motion, troy seconded. vote taken was unanimous."
   },
   {
-   "motion": "to approve the minutes of 2/3",
+   "motion": "Approve the minutes of 2/3.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "dave made the motion to approve the minutes, troy seconded. vote taken was unanimous."
   },
   {
-   "motion": "to accept the minutes of 2/10 with the amendment",
+   "motion": "Accept the minutes of 2/10 with the amendment Troy noted in the SRF section.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "dave made the motion to accept the minutes with the amendment. troy seconded. vote take was unanimous."
+   "quote": "dave made the motion to accept the minutes with the amendment. troy seconded."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Release the bid for the Pratt/Lakeview Betterment Project.",
+   "moved_by": "Butch",
+   "seconded_by": "Troy",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "butch made the motion, troy seconded. vote taken was unanimous."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "troy made the motion, dave seconded. vote taken was unanimous and the meeting was adjourned at 8 :50pm",
+   "quote": "troy made the motion, dave seconded. vote taken was unanimous"
+  }
+ ],
+ "dropped_unquoted": 2,
+ "note": "Text extraction splits many words mid-word (e.g. \"Thi s\", \"MacDo nald\", \"$25,0 00\", \"1 0 weeks\"); quotes copy the text as printed. Public comment period is not labeled; Sue Bunish joined for the Pleasantview item and is listed as an attendee only. Vote outcomes are recorded as \"unanimous\" without numeric counts. Motion wording is inferred for several votes where the minutes give only the motion-maker and seconder. Butch Bilotta is listed under \"Members\" with no separate role printed.",
+ "cost_usd": 0.00932822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, vice-chair,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair, dave macdo nald; members, mike nault, troy daniels."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Members",
+   "status": "present",
+   "quote": "members, mike nault, troy daniels."
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Members",
+   "status": "present",
+   "quote": "members, mike nault, troy daniels."
+  },
+  {
+   "name": "Butch Bilotta",
+   "role": "Members",
+   "status": "present",
+   "quote": "members, mike nault, troy daniels. butch bilot ta,"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager, barb lefebvre."
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "representing Weston & Sampson",
+   "status": "present",
+   "quote": "carl opened the meeting at 7:03pm, introducing pat cotton from weston & sampson."
+  },
+  {
+   "name": "Sue Bunish",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl introduced sue bunish who joined the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission to vote on the manhole plotting cost at its next meeting, after Pat emails the figure.",
+   "quote": "and the commission can vote on it at their next meeting."
+  },
+  {
+   "decision": "Carl will talk with SWSS about doing the drawdown test; if SWSS is not comfortable, Weston & Sampson will train SWSS.",
+   "quote": "carl confirmed that we'll talk to swss about doing it"
+  },
+  {
+   "decision": "Dave will go speak with Pleasantview residents who have not responded or responded no.",
+   "quote": "dave said he could go and speak to those who hadn't responded or responded as a 'no'."
+  },
+  {
+   "decision": "Kerry to follow up with Jack on the Leominster water situation.",
+   "quote": "carl said kerry was going to follow up with jack."
+  },
+  {
+   "decision": "Easement acceptance and authorization of counsel for eminent domain on the 'Town property' to be added to the next week's agenda.",
+   "quote": "carl said that that is fine, just add to the agenda for the meeting."
+  },
+  {
+   "decision": "Lien subordination request for 68 Elm St. not granted per counsel advice; lender withdrew request.",
+   "quote": "counsel wa s contacted and advised that no subordination shoul d occur. lender withdrew request.",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 0,
- "note": "Five votes recorded, all unanimously passed. One typographical error in the original minutes on vote 4: \"Vote take was unanimous\" instead of \"Vote taken was unanimous\" — quote preserved verbatim.",
- "cost_usd": 0.1061205
+ "budget_items": [
+  {
+   "topic": "Manhole plotting by Cartographics",
+   "what_was_recorded": "Pat said plotting all manholes and adding a layer to town maps would cost about $1000; Commission to get the cost by email and vote at next meeting.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "would cost about $1000."
+  },
+  {
+   "topic": "Town-wide manhole inspections",
+   "what_was_recorded": "Pat estimated inspections of 350 manholes, including rehabilitation recommendations, would run around $25,0 00.",
+   "figures_as_printed": [
+    "$25,0 00"
+   ],
+   "quote": "pat estimated that for 350 manholes the project would run around $25,0 00"
+  },
+  {
+   "topic": "Temporary flow meters on Graham St.",
+   "what_was_recorded": "Pat advised against temporary meters, estimating about $8000 for 1 0 weeks.",
+   "figures_as_printed": [
+    "$8000"
+   ],
+   "quote": "estimated it to be around $8000 for 1 0 weeks"
+  },
+  {
+   "topic": "Bladder sealing of broken pipe at 37 Graham",
+   "what_was_recorded": "Troy asked if the bladder sealing would cost more than $1000; Pat thought so but said the road would not need digging.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "troy asked if it would be more than $1000 and pat thought so"
+  },
+  {
+   "topic": "Sewer homeowner insurance plan",
+   "what_was_recorded": "Carl reported the sewer line coverage costs about $80-90 per year and that the town could get 8% of income returned or pass it on to homeowners.",
+   "figures_as_printed": [
+    "$80-90",
+    "8%"
+   ],
+   "quote": "for sewer it costs about $80-90 per ye ar."
+  },
+  {
+   "topic": "Betterment piece of the budget",
+   "what_was_recorded": "Carl is still working through the betterment piece of the budget; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "carl is still working through the betterment piece of the budget"
+  },
+  {
+   "topic": "Project monies and SCADA",
+   "what_was_recorded": "Brief discussion of project monies and SCADA; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "brief discussion of the project monies and scada."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Manhole mapping and inspection proposal (Weston & Sampson)",
+   "resolution": "discussed; Pat to get quote and cost email; no vote",
+   "quote": "advised of the plan to plot all the manholes",
+   "tags": [
+    "manholes",
+    "Weston & Sampson",
+    "mapping",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Graham St. I/I, broken pipe at 37 Graham, and flow metering",
+   "resolution": "discussed; Pat to get bladder quote; drawdown test via SWSS to be explored; no vote",
+   "quote": "pat will get the commission a quote and they can compare to the cost of",
+   "tags": [
+    "infiltration",
+    "inflow",
+    "Graham St.",
+    "metering",
+    "SWSS",
+    "storm drains"
+   ]
+  },
+  {
+   "topic": "Leominster Rd. notices",
+   "resolution": "discussed; package to be emailed to Commission for comment; no vote",
+   "quote": "to have the commission look at it and comment.",
+   "tags": [
+    "Leominster Rd.",
+    "notices",
+    "signoff"
+   ]
+  },
+  {
+   "topic": "Pleasantview Ave sewer extension request",
+   "resolution": "discussed; follow-up assigned to Dave, Sue, Barb and Kerry; no vote",
+   "quote": "dave said he could go and speak to those who hadn't responded or responded as a 'no'.",
+   "tags": [
+    "Pleasantview Ave",
+    "sewer extension",
+    "betterment",
+    "Leominster water",
+    "foreclosure"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview Betterment Project easements and bid",
+   "resolution": "bid released by unanimous vote; easements and eminent domain to next week's agenda",
+   "quote": "vote taken was unanimous. barb wanted to go",
+   "tags": [
+    "Pratt/Lakeview",
+    "betterment",
+    "bid",
+    "easements",
+    "eminent domain"
+   ]
+  },
+  {
+   "topic": "Town Caucus and board membership",
+   "resolution": "discussed; no action",
+   "quote": "town caucus is march 16 at 7pm.",
+   "tags": [
+    "town caucus",
+    "election",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 1/13, 2/3 and 2/10",
+   "resolution": "approved as corrected and amended",
+   "quote": "dave made the motion to approve the minutes, troy seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lien subordination request, 68 Elm St.",
+   "resolution": "no action; request withdrawn by lender",
+   "quote": "lender withdrew request.",
+   "tags": [
+    "lien",
+    "subordination",
+    "68 Elm St.",
+    "HARP"
+   ]
+  },
+  {
+   "topic": "Fincom meeting and budget",
+   "resolution": "discussed; no action",
+   "quote": "carl noted that the fincom meeting is next week.",
+   "tags": [
+    "budget",
+    "Fincom",
+    "SCADA"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50pm",
+   "quote": "troy made the motion, dave seconded. vote taken was unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout provided by Pat Cotton (Weston & Sampson)",
+   "where": "text",
+   "quote": "pat provided a handout, and advised of the plan to plot all the manholes"
+  },
+  {
+   "name": "Sample pamphlets on sewer homeowner insurance program",
+   "where": "text",
+   "quote": "carl handed out sample pamphlets that were sent to him."
+  },
+  {
+   "name": "Betterment bylaw (Sewer Service Area survey requirement)",
+   "where": "text",
+   "quote": "barb read from betterment bylaw"
+  },
+  {
+   "name": "Editorial in the Sentinel by a Fitchburg councilor",
+   "where": "text",
+   "quote": "he had seen an editorial in the sentinel by one of the councilors in fitchburg"
+  },
+  {
+   "name": "Email of potential bid dates from Wright Pierce",
+   "where": "text",
+   "quote": "the email of potential bid dates from wright"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "inflow and infiltration",
+  "manholes",
+  "Weston & Sampson",
+  "Graham St.",
+  "metering",
+  "Pleasantview Ave",
+  "betterment",
+  "Pratt/Lakeview",
+  "easements",
+  "eminent domain",
+  "homeowner insurance",
+  "town caucus",
+  "lien subordination",
+  "minutes",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1,
+  "topics": 1
+ }
 }

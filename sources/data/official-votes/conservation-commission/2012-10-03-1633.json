@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-10-03",
  "docid": "1633",
@@ -12,13 +12,174 @@
  },
  "votes": [
   {
-   "motion": "Approve the Notice of Intent at 820 Reservoir Road for construction of a driveway in the buffer zone",
-   "outcome": "passed unanimously",
+   "motion": "Approve and close the Notice of Intent filed by William Beaulac for a driveway in the buffer zone at 820 Reservoir Road, as presented on plans.",
+   "moved_by": "Rich",
+   "seconded_by": "Mark",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "approved and closed as presented on plans. rich/mark unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1101255
+ "note": "Excerpt of a single page; the minutes give no roll call, no approval of prior minutes, and no adjournment. The only recorded vote is the 820 Reservoir Road approval, which prints 'Unanimous' with no count. The 56 Brookview continuation and the Snow Riders action are not votes. The Enforcement Order discussion is mentioned but no motion is printed. Attendance is taken from the names listed at the top of the minutes, with no explicit present/absent marking.",
+ "cost_usd": 0.00432892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "Snow Riders",
+   "status": "present",
+   "quote": "snow riders ~ re: trail maintenance ~ tom bertram ~ snowmobile club spoke to us about"
+  },
+  {
+   "name": "William Beaulac",
+   "role": "applicant, Notice of Intent",
+   "status": "not stated",
+   "quote": "filed by william beaulac (gary shepard of david e. ross associates, inc.)"
+  },
+  {
+   "name": "Gary Shepard",
+   "role": "of David E. Ross Associates, Inc.",
+   "status": "not stated",
+   "quote": "filed by william beaulac (gary shepard of david e. ross associates, inc.)"
+  },
+  {
+   "name": "Michael Nault",
+   "role": "applicant, Request for Determination of Applicability",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by michael nault."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jan will issue Emergency Certification forms for the ConCom to take care of the Snow Riders' concerns about beaver dams.",
+   "quote": "jan will issue emergency certification forms for the concom to take care of those concerns."
+  },
+  {
+   "decision": "The Commission requested that optional scenarios be presented for 56 Brookview Terrace at the November 7th meeting.",
+   "quote": "continued ~ concom requested optional scenerios to be presented at november 7th meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Bertram",
+   "stated_role": "Snow Riders",
+   "topic": "trail maintenance and Cowdrey Nature Center cleanup",
+   "quote": "snowmobile club spoke to us about the intended cleanup of the cowdrey nature center."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "7:00 PM Little Hickory Hills",
+   "resolution": "cancelled; Permit Extension Act extended the OoC until March 7, 2014",
+   "quote": "7:00 pm ~ little hickory hills~cancelled~permit extension act extended the ooc",
+   "tags": [
+    "permit extension",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "7:15 PM Snow Riders trail maintenance",
+   "resolution": "no vote; Emergency Certification forms to be issued for beaver dam concerns",
+   "quote": "7:15 pm ~ snow riders ~ re: trail maintenance ~ tom bertram ~ snowmobile club spoke to us about",
+   "tags": [
+    "snowmobile",
+    "trail maintenance",
+    "beaver dams",
+    "Cowdrey Nature Center"
+   ]
+  },
+  {
+   "topic": "7:30 PM 820 Reservoir Road Notice of Intent",
+   "resolution": "approved and closed as presented on plans",
+   "quote": "approved and closed as presented on plans. rich/mark unanimous",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "buffer zone",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "7:45 PM 56 Brookview Terrace Request for Determination of Applicability (continuation)",
+   "resolution": "continued",
+   "quote": "continued ~ concom requested optional scenerios to be presented at november 7th meeting.",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "shed",
+    "enforcement order"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "enforcement",
+  "trail maintenance",
+  "snowmobile",
+  "beaver dams",
+  "permit extension"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

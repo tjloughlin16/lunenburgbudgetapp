@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-04-10",
  "docid": "4508",
@@ -12,32 +12,319 @@
  },
  "votes": [
   {
-   "motion": "approve meeting minutes from March 27, 2013",
-   "outcome": "passed",
+   "motion": "Approve the meeting minutes from the March 27, 2013 meeting.",
+   "moved_by": "",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "the lsbc moved to approve meeting minutes from the march 27, 2013. the motion passed project invo",
+   "quote": "motion: the lsbc moved to approve meeting minutes from the march 27, 2013. the motion passed project invo",
+   "seconded_by": "",
    "quote_taken_from_text": true
   },
   {
-   "motion": "approve the Joslin, Lesser + Associates and Tappe Associates March 2013 invoices",
-   "outcome": "passed",
+   "motion": "Approve the Joslin, Lesser + Associates and Tappe Associates March 2013 invoices.",
+   "moved_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the lsbc moved to approve the joslin, lesser + associates and tappe associates march 2013 invoices. the motion passed unanimously."
+   "quote": "motion: the lsbc moved to approve the joslin, lesser + associates and tappe associates march 2013 invoices. the motion passed unanimously.",
+   "seconded_by": ""
   },
   {
-   "motion": "select Option 5 as the preferred option",
-   "outcome": "passed",
+   "motion": "Select Option 5 as the committee's preferred option.",
+   "moved_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the sbc made a motion to select option 5 as its preferred option. the motion passed unanimously."
+   "quote": "motion: the sbc made a motion to select option 5 as its preferred option. the motion passed unanimously.",
+   "seconded_by": ""
   },
   {
-   "motion": "adopt CM at Risk as the construction delivery method for the project",
-   "outcome": "passed",
+   "motion": "Adopt CM at Risk as the construction delivery method for the project.",
+   "moved_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the lsbc made a motion to adopt cm at risk as the construction delivery method for the project. the motion passed unanimously."
+   "quote": "motion: the lsbc made a motion to adopt cm at risk as the construction delivery method for the project. the motion passed unanimously.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0969015
+ "note": "Two-page OCR scan. Page 2 begins mid-sentence, so the opening of the options discussion (and its heading) is missing. The roster lists 17 names but only 16 role lines, and the footer affiliations do not line up one-to-one with names, so roles are recorded as not stated except where the minutes give them in the text. Roster attendance is read as present. The Board of Selectmen's 4-1 vote on Option 5 is mentioned only as a reference and is not recorded as a vote of this committee. Mover and seconder are not printed for any motion. The minutes are marked \"Approved by SBC May 8, 2013\".",
+ "cost_usd": 0.007759319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chair-Person of the Lunenburg School Building Committee (LSBC)",
+   "status": "present",
+   "quote": "michael mackin, chair-person of the lunenburg school building committee (lsbc), called the meeting"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Cesar Dedios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "greg cohan summarized design-bid-build and construction manager (cm) at risk construction delivery"
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Superintendent Calmes",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "superintendent calmes mentioned that the school building committee's website includes up to date"
+  },
+  {
+   "name": "Joslin, Lesser + Associates",
+   "role": "Owner's Project Manager for the project",
+   "status": "present",
+   "quote": "joslin, lesser + associates, the owner's project manager for the project, reviewed an options matrix"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Brian Frank asked that Joslin, Lesser + Associates show the total contract amount and a subtotal billed to date on future invoices (request; no vote recorded).",
+   "quote": "brian frank requested that joslin, lesser + associates include the total amount of its contract on future invoices as well as a subtotal showing what has been billed to date."
+  },
+  {
+   "decision": "The Town will submit an application to the Office of the Inspector General to use CM at Risk for the project; approval is anticipated to take 60 days.",
+   "quote": "note: the town will now submit an application to use cm at risk for the project to the office of the inspector general (ig)."
+  },
+  {
+   "decision": "The School Building Committee plans a public forum on the project this fall and several informal briefings this summer.",
+   "quote": "the school building committee plans to have a public forum on the project this fall and will be scheduling several informal briefings on the project this"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Project invoices",
+   "what_was_recorded": "The committee discussed and approved the March 2013 invoices from Joslin, Lesser + Associates and Tappe Associates; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the lsbc discussed the joslin, lesser + associates and tappe associates march 2013 invoices presented"
+  },
+  {
+   "topic": "Contract total on invoices",
+   "what_was_recorded": "Brian Frank asked that future invoices show the total contract amount and a subtotal billed to date; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "brian frank requested that joslin, lesser + associates include the total amount of its contract on future invoices as well as a subtotal showing what has been billed to date."
+  },
+  {
+   "topic": "Option costs",
+   "what_was_recorded": "The committee discussed anticipated and preliminary order of magnitude costs for the options; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the sbc also discussed the anticipated and preliminary order of magnitude costs for the options and engaged in a"
+  },
+  {
+   "topic": "Potential future costs to the town",
+   "what_was_recorded": "The committee discussed possible future costs to the town, such as implications for Turkey Hill Middle School or the Thomas C. Passios Building; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "discussion on potential future costs to the town (for example, if a particular option was chosen are there"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:04 PM",
+   "quote": "called the meeting to order at 7:04 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "approved minutes of March 27, 2013",
+   "quote": "joslin, lesser + associates distributed the meeting minutes from the prior meeting held on march 27,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Project Invoices",
+   "resolution": "approved March 2013 invoices",
+   "quote": "the lsbc discussed the joslin, lesser + associates and tappe associates march 2013 invoices presented",
+   "tags": [
+    "invoices",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Options discussion and selection",
+   "resolution": "selected Option 5 as preferred option",
+   "quote": "reviewed an options matrix which was designed to evaluate the options according to how",
+   "tags": [
+    "options",
+    "project goals",
+    "Option 5"
+   ]
+  },
+  {
+   "topic": "Construction delivery methods discussion and vote",
+   "resolution": "adopted CM at Risk",
+   "quote": "greg cohan summarized design-bid-build and construction manager (cm) at risk construction delivery",
+   "tags": [
+    "construction delivery",
+    "CM at Risk"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and schedule milestones",
+   "resolution": "no action",
+   "quote": "april 18, 2013 - preferred schematic report submitted to the msba",
+   "tags": [
+    "schedule",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Community outreach efforts",
+   "resolution": "no action",
+   "quote": "superintendent calmes mentioned that the school building committee's website includes up to date",
+   "tags": [
+    "outreach",
+    "public forum"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no action",
+   "quote": "there was no other business.",
+   "tags": []
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50pm",
+   "quote": "the meeting was adjourned at 8:50pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Options Matrix",
+   "where": "text",
+   "quote": "reviewed an options matrix which was designed to evaluate the options according to how"
+  },
+  {
+   "name": "Materials on construction delivery methods shared with the ISBC prior to the meeting",
+   "where": "text",
+   "quote": "explaining the points listed in the materials that were shared with the isbc prior to the meeting."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "Option 5",
+  "CM at Risk",
+  "construction delivery",
+  "invoices",
+  "MSBA schedule",
+  "community outreach",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

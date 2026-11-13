@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-03-26",
  "docid": "2270",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve six articles on the consent calendar regarding annual reauthorization of revolving funds and related expenditures.",
+   "motion": "Recommend approval of the six consent calendar articles (1-6, annual reauthorization of revolving funds) and related expenditures.",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "terri made a motion to recommend approval of the six articles on the consent calendar and related expenditures. karin seconded. the committee approved the motion 5-0."
   },
   {
-   "motion": "Allocate $1,782 to pay prior year expenses.",
+   "motion": "Recommend approval to allocate $1,782 to pay prior year expenses (Article 8).",
    "moved_by": "Terri Burchfield",
    "seconded_by": "John Henshaw",
    "outcome": "passed 5-0",
@@ -28,15 +28,15 @@
    "quote": "terri made a motion to recommend approval to allocate $1,782 to pay prior year expenses, john seconded. the committee approved the motion 5-0."
   },
   {
-   "motion": "Approve $265,000 to operate the solid waste program enterprise fund in FY2016.",
+   "motion": "Recommend approval of $265,000 to operate the solid waste program enterprise fund in FY2016 (Article 18).",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "terri made a motion to recommend approval of $265,000 to operate the solid waste program enterprise fund in fy2016. karin seconded. the committee approved the motion 5-0."
+   "quote": "terri made a motion to recommend approval of $265,000 to operate the solid waste program enterprise fund in fy2016."
   },
   {
-   "motion": "Fund the Water Department Enterprise Fund account with $25,000.",
+   "motion": "Recommend approval to fund the Water Department Enterprise Fund account with $25,000 (Article 19).",
    "moved_by": "John Henshaw",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
@@ -44,7 +44,7 @@
    "quote": "john made a motion to recommend approval to fund the account with $25,000. terri seconded the motion. the committee approved 5-0."
   },
   {
-   "motion": "Approve transfer of $300,000 for sewer collection system betterment project on Pleasant View Street.",
+   "motion": "Recommend approval of a transfer of $300,000 for the Pleasant View St. sewer betterment project (Article 39).",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
@@ -52,16 +52,15 @@
    "quote": "terri made a motion that the committee recommend approval of a transfer of $300,000 for the betterment project, and karin seconded. the committee approved the motion 5-0."
   },
   {
-   "motion": "Approve $10,000 to be put in the Police Special Fund for off-duty detail salaries.",
+   "motion": "Recommend approval of $10,000 to be put in the Police Special Fund (Article 40).",
    "moved_by": "Terri Burchfield",
    "seconded_by": "John Henshaw",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "terri made a motion that the committee recommend approval of a transfer of $300,000 for the betterment project, and karin seconded. the committee approved the mo",
-   "quote_taken_from_text": true
+   "quote": "terri made a motion that the committee recommend approval for $10,000 to be put in the police special fund, john seconded."
   },
   {
-   "motion": "Establish the reserve capacity stabilization fund and set aside fees to fund it.",
+   "motion": "Recommend approval to establish a reserve capacity stabilization fund and set aside fees to fund it (Article 41).",
    "moved_by": "John Henshaw",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
@@ -69,7 +68,7 @@
    "quote": "john made a motion to recommend approval to establish this fund and set aside fees to fund it. terri seconded. the committee approved 5-0."
   },
   {
-   "motion": "Approve the minutes of the March 19 meeting.",
+   "motion": "Approve the minutes of the March 19 meeting as submitted.",
    "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 4-0",
@@ -86,6 +85,345 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes are clearly stated in the minutes. Mark Ericson was present but did not vote on the March 19 minutes approval (he had not attended that meeting), resulting in a 4-0 vote on that item rather than 5-0.",
- "cost_usd": 0.1018435
+ "note": "Readable text, not a scan. Minutes name the chair as both \"Mark Erickson\" (header) and \"Mark Ericson\" (attendance and body); recorded as printed in attendance. The minutes also refer to \"Terry\" (Public Safety liaison), which appears to be Terri Burchfield; not recorded as a separate person. Caroline Griffis is recorded absent. Several warrant articles are marked \"Pending\" or \"No vote necessary\" and have no vote recorded. Public comment heading is not used; Carl Luck's remarks appear within the budget discussion and are recorded as public comment. Stated role for Carl Luck is not printed.",
+ "cost_usd": 0.007968320000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Ericson",
+   "role": "Chairman (Finance Committee)",
+   "status": "present",
+   "quote": "present: mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman (Finance Committee)",
+   "status": "present",
+   "quote": "present: mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary (Finance Committee)",
+   "status": "present",
+   "quote": "present: mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: caroline griffis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "also present: jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "carl luck stated that if the public had had more time to look through all final department budgets"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark tabled the rest of the Public Review of the FY16 Budget until the following week.",
+   "quote": "mark tabled the rest of the public review of the fy16 budget until next week."
+  },
+  {
+   "decision": "Capital discussion postponed until the Capital Planning Committee has met (March 31).",
+   "quote": "in light of this meeting, mark would like to postpone capital discussion until capital planning committee meeting has taken place."
+  },
+  {
+   "decision": "Articles 14, 15, 16 and 17 deferred to the next week's meeting pending further information.",
+   "quote": "the committee will take this up next week after the capital planning committee has decided"
+  },
+  {
+   "decision": "Article 26 (bond premiums) left for the committee to decide after the premium amount is known.",
+   "quote": "committee to decide after the amount of the premium is known. pending."
+  },
+  {
+   "decision": "Article 37 (White Tail Crossing public road): committee wants the estimated cost to maintain the road before deciding on a recommendation.",
+   "quote": "the committee would like to know the estimated cost to care for and maintain this road before deciding"
+  },
+  {
+   "decision": "Articles 42-47 deferred to the April 2 meeting.",
+   "quote": "to be considered april 2 meeting."
+  },
+  {
+   "decision": "Next meeting set as a special meeting on April 2 to complete the FY16 budget review and resume articles.",
+   "quote": "next meeting: april 2, special meeting:"
+  },
+  {
+   "decision": "Mark to bring a copy of the Finance Committee budget letter to the Town for committee review.",
+   "quote": "mark plans to bring a copy of the finance committee budget letter to the town and the committee will review it."
+  },
+  {
+   "decision": "Future agenda items listed: Budget Goals and Opportunities, Pavement Management Program, and review of contract commitments.",
+   "quote": "future agenda items: a. budget goals and opportunities b. pavement management program c. review contract commitments"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "New revenue increase",
+   "what_was_recorded": "Net increase in new revenue is nearly $430,000, of which $145,000 comes from new growth calculated by the assessor.",
+   "figures_as_printed": [
+    "$430,000",
+    "$145,000"
+   ],
+   "quote": "net increase new revenue is nearly $430,000."
+  },
+  {
+   "topic": "State aid increase and Chapter 40S aid",
+   "what_was_recorded": "Net increase in state aid in the Governor's budget is nearly $225,000, including $116,000 Chapter 40S aid, a non-recurring revenue the Town cannot count on going forward.",
+   "figures_as_printed": [
+    "$225,000",
+    "$116,000"
+   ],
+   "quote": "net increase in state aid in the governor's new budget is nearly $225,000."
+  },
+  {
+   "topic": "Chapter 40S grant set to equal expenditures",
+   "what_was_recorded": "Superintendent Calmes identified $116,000 of non-recurring expenditures, so the 40S grant was set at $116,000.",
+   "figures_as_printed": [
+    "$116,000"
+   ],
+   "quote": "superintendent calmes identified $116,000 of these, so kerry set the 40s grant at $116,000 to equal the amount of expenditures."
+  },
+  {
+   "topic": "Available funds change",
+   "what_was_recorded": "Net changes in available funds account for the rest of the revenue increase.",
+   "figures_as_printed": [
+    "about $60,000"
+   ],
+   "quote": "net changes in available funds account for the rest of the increase-about $60,000."
+  },
+  {
+   "topic": "Expenditure adjustments and net surplus",
+   "what_was_recorded": "Net increases in expenditures are about $300,000, leaving a net surplus of nearly $130,000, slightly over 0.4% of the omnibus budget.",
+   "figures_as_printed": [
+    "$300,000",
+    "$130,000",
+    "0.4%"
+   ],
+   "quote": "the net surplus (increased revenues less increased expenditures) is nearly $130,000."
+  },
+  {
+   "topic": "Stormwater compliance cost",
+   "what_was_recorded": "Stormwater compliance, which is mandated at an unspecified date, may cost $250,000 to $500,000; proposed earmark of surplus funds.",
+   "figures_as_printed": [
+    "$250,000",
+    "$500,000"
+   ],
+   "quote": "compliance, which is mandated, may cost $250,000 to $500,000."
+  },
+  {
+   "topic": "Snow and ice removal account history",
+   "what_was_recorded": "Snow and ice removal exceeded $300,000 in eight of the last ten years, averaging $311,384; in the last five years it averaged $354,539 (excluding winter 2014-15).",
+   "figures_as_printed": [
+    "$300,000",
+    "$311,384",
+    "$354,539"
+   ],
+   "quote": "the average expenditure over that period was $311,384."
+  },
+  {
+   "topic": "Snow and ice removal five-year average",
+   "what_was_recorded": "In each of the last five years snow and ice removal cost over $300,000, averaging $354,539.",
+   "figures_as_printed": [
+    "$300,000",
+    "$354,539"
+   ],
+   "quote": "in each of the last five years snow and ice removal cost over $300,000, and the average was $354,539."
+  },
+  {
+   "topic": "Snow and ice overspending",
+   "what_was_recorded": "Actual snow and ice spending regularly exceeds budget by several tens of thousands of dollars.",
+   "figures_as_printed": [
+    "several tens of thousands of dollars"
+   ],
+   "quote": "actual spending for snow and ice removal regularly exceeds the budget by several tens of thousands of dollars"
+  },
+  {
+   "topic": "Article 8 prior year expenses",
+   "what_was_recorded": "Committee recommended $1,782 to pay prior year expenses.",
+   "figures_as_printed": [
+    "$1,782"
+   ],
+   "quote": "terri made a motion to recommend approval to allocate $1,782 to pay prior year expenses,"
+  },
+  {
+   "topic": "Article 18 solid waste enterprise fund",
+   "what_was_recorded": "Committee recommended $265,000 for the solid waste enterprise fund in FY2016; account is self-funded by bag sales with no bag fee increase.",
+   "figures_as_printed": [
+    "$265,000"
+   ],
+   "quote": "terri made a motion to recommend approval of $265,000 to operate the solid waste program enterprise fund in fy2016."
+  },
+  {
+   "topic": "Article 19 water enterprise reserve",
+   "what_was_recorded": "Committee recommended funding the Water Department Enterprise Fund reserve account with $25,000; typically none is spent.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "typically none of the $25,000 in this account is spent."
+  },
+  {
+   "topic": "Article 39 sewer betterment transfer",
+   "what_was_recorded": "Transfer of $300,000 for a Pleasant View St. sewer extension, funded entirely by betterment charges with no general levy money.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "terri made a motion that the committee recommend approval of a transfer of $300,000 for the betterment project"
+  },
+  {
+   "topic": "Article 40 police special detail fund",
+   "what_was_recorded": "Committee recommended $10,000 for the Police Special Fund for off-duty detail salaries.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "terri made a motion that the committee recommend approval for $10,000 to be put in the police special fund"
+  },
+  {
+   "topic": "Article 35/36 scenic roads",
+   "what_was_recorded": "Pending determination on whether scenic designation creates future financial obligation; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "await determination about whether having this designation would put the town in any future obligation."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 39: transfer for Pleasant View St. sewer extension betterment project (Sewer Collection System).",
+   "amount_as_printed": "$300,000",
+   "outcome": "Committee recommended approval, passed 5-0.",
+   "quote": "terri made a motion that the committee recommend approval of a transfer of $300,000 for the betterment project, and karin seconded."
+  },
+  {
+   "description": "Article 40: funds to be put in the Police Special Fund for off-duty detail salaries.",
+   "amount_as_printed": "$10,000",
+   "outcome": "Committee recommended approval, passed 5-0.",
+   "quote": "terri made a motion that the committee recommend approval for $10,000 to be put in the police special fund, john seconded."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "topic": "Budget review timeliness and use of non-recurring revenue",
+   "quote": "carl luck stated that if the public had had more time to look through all final department budgets before the public hearing they would have been better able to review and understand these budgets."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "no action",
+   "quote": "mark called the meeting to order at 7:00 pm."
+  },
+  {
+   "topic": "FY2016 Budget Public Hearing",
+   "resolution": "rest of public review tabled to next week",
+   "quote": "mark tabled the rest of the public review of the fy16 budget until next week."
+  },
+  {
+   "topic": "Review of Articles in the Warrant",
+   "resolution": "recommended approval of Articles 1-6, 8, 18, 19, 39, 40, 41; others pending or no vote necessary",
+   "quote": "terri made a motion to recommend approval of the six articles on the consent calendar and related expenditures."
+  },
+  {
+   "topic": "Minutes of the March 19 meeting",
+   "resolution": "approved 4-0",
+   "quote": "karin made a motion to approve the minutes, and terri seconded her motion and the committee approved the minutes as submitted 4-0."
+  },
+  {
+   "topic": "Committee/Department Liaison Updates",
+   "resolution": "no action",
+   "quote": "capital planning--john h. the cpc will meet on tuesday, march 31 at town hall"
+  },
+  {
+   "topic": "Future Agenda Items",
+   "resolution": "listed for future meetings",
+   "quote": "budget goals and opportunities"
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "special meeting set for April 2",
+   "quote": "next meeting: april 2, special meeting:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:11 pm, passed 5-0",
+   "quote": "terri moved to adjourn the meeting, terri's motion was seconded by karin and approved 5-0."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Preliminary budget dated February 15",
+   "where": "text",
+   "quote": "the town manager reported on changes in revenues and expenditures subsequent to the preliminary budget dated february 15."
+  },
+  {
+   "name": "Preliminary FY16 Budget Presentation (Ten-Year History of the Snow and Ice Removal Account chart)",
+   "where": "text",
+   "quote": "kerry referred the meeting to the chart of the ten-year history of the snow and ice removal account in the preliminary fy16 budget presentation."
+  },
+  {
+   "name": "The Beacon (latest issue)",
+   "where": "text",
+   "quote": "passed around the latest issue of the beacon"
+  },
+  {
+   "name": "Debt service spreadsheet tool (John Henshaw)",
+   "where": "text",
+   "quote": "john described a spreadsheet tool being worked on that would let the capital planning committee project future debt service costs"
+  },
+  {
+   "name": "Town's Financial Policy",
+   "where": "text",
+   "quote": "the town's financial policy-formally adopted earlier this fiscal year-explicitly proscribes funding on-going expenditures"
+  },
+  {
+   "name": "Finance Committee budget letter",
+   "where": "text",
+   "quote": "mark plans to bring a copy of the finance committee budget letter to the town and the committee will review it."
+  }
+ ],
+ "tags": [
+  "FY2016 budget",
+  "public hearing",
+  "warrant articles",
+  "snow and ice",
+  "stormwater",
+  "sewer betterment",
+  "enterprise funds",
+  "capital planning",
+  "non-recurring revenue",
+  "Chapter 40S aid",
+  "consent calendar",
+  "special meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

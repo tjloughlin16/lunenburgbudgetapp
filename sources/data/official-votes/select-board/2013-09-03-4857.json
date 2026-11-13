@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-09-03",
  "docid": "4857",
@@ -13,31 +13,325 @@
  "votes": [
   {
    "motion": "Appoint Gregory Roy to the open position on the School Building Committee",
-   "moved_by": "Dave Matthews",
-   "seconded_by": "Jamie Toale",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Toale",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved to appoint gregory roy to the open position on the school building committee. toale seconded. ===page 2=== discussion began again among the bos complimenting ms. mckenna's extensive public service record, but all were in agreement with mr. matthew's reasons for choosing mr. roy for this position. on vote, motion carried, 5 in favo",
-   "quote_taken_from_text": true
+   "quote": "mr. matthews moved to appoint gregory roy to the open position on the school building committee. toale seconded."
   },
   {
    "motion": "Accept and endorse the MSBA Design Enrollment Certification for the Town of Lunenburg, Lunenburg High School",
-   "moved_by": "Dave Matthews",
-   "seconded_by": "Robert Ebersole",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Mr. Ebersole",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved to accept and endorse the msba design enrollment certification for the town of lunenburg, lunenburg high school. mr. ebersole seconded for discussion. discussion: mr. ebersole stated that he appreciates the efforts of all those involved in the conference call but reiterated his disappointment that the msba did not want to meet with the bos at a public meeting. he believes that the enrollment process should be open and transparent. he has a greater comfort with the 85% utilization factor and for that reason he will be willing to vote for this. ms. bertram echoed mr. ebersole's statement and said that she tried to access the msba's website for the enrollment information and it was not available. although she appreciates the time, effort and information which was received with the conference call, she wished that it could have been shared in an open forum. being no further discussion, mr. alonzo called for a vote. on vote, motion carried, 5 in favor, o opposed."
+   "quote": "mr. matthews moved to accept and endorse the msba design enrollment certification for the town of lunenburg, lunenburg high school."
   },
   {
    "motion": "Adjourn the meeting",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business ms. bertram moved to adjourn the meeting. mr. matthews seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one vote outcome prints \"O opposed\" (letter O, likely OCR error for numeral 0). All three votes were unanimous.",
- "cost_usd": 0.1442965
+ "note": "Scanned page OCR with layout garbled. The Chair's first name is missing (printed only as 'Alonzo'), and the Chair's role is not printed. The second vote's count is printed as '5 in favor, O opposed' (letter O), recorded here as 5-0. The warrant table is scrambled; its four figures are recorded as printed and do not sum to the total. The 7:00PM 'PUBLIC COMMENT' heading holds only board-member remarks, so no public speakers are recorded. The recording secretary is named but not described as attending. The Mr. Ebersole minutes-letter request was not put to a vote.",
+ "cost_usd": 0.00875072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Maryellen McKenna",
+   "role": "candidate for School Building Committee",
+   "status": "present",
+   "quote": "maryellen mckenna came before the bos to be interviewed for the open position on the school building committee."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "candidate for School Building Committee",
+   "status": "present",
+   "quote": "greg roy came before the bos to be interviewed for the open position on the school building committee."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "school superintendent loxi jo calmes spoke and thanked the msba for the phone conference information"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "School Building Committee Chairperson",
+   "status": "present",
+   "quote": "mr. alonzo asked mike mackin, school building committee chairperson, if the school department and the"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Alonzo reminded Mr. Roy to visit the Town Clerks office as soon as possible to be sworn in.",
+   "quote": "mr. alonzo reminded mr. roy to visit the town clerks office as soon as possible to be sworn in."
+  },
+  {
+   "decision": "Town Manager Speidel will investigate with the Town Accountant where the annual town audit stands.",
+   "quote": "she will investigate further with the town accountant as to where they stand now."
+  },
+  {
+   "decision": "The Leominster Casino impact item will be placed as an agenda item at a future BOS meeting after Speidel discusses it with the Planning Director.",
+   "quote": "it will be placed as an agenda item at a future bos meeting."
+  },
+  {
+   "decision": "Mr. Alonzo will ask PACC how long the YouTube meeting coverage stays available for viewing.",
+   "quote": "stated that they will ask that question to pacc"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants listed in Minutes/Warrants/Action File Issues",
+   "what_was_recorded": "Warrant amounts are printed in a table with the warrant names and dates; the four figures do not map clearly to the three warrant lines and do not sum to the printed total.",
+   "figures_as_printed": [
+    "$5520.03",
+    "$230,147.15",
+    "$277,764.68",
+    "$569,723.08"
+   ],
+   "quote": "$5520.03 $230,147.15 $277,764.68 $569,723.08"
+  },
+  {
+   "topic": "School project schematic design and cost estimate submission",
+   "what_was_recorded": "Schematic designs and cost estimate to go to the MSBA in the last week of September; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they have a submission to the msba coming up of the schematic designs along with the cost estimate on the last week of this month."
+  },
+  {
+   "topic": "School project cost analysis",
+   "what_was_recorded": "The architect/designer firm and the Construction Manager at Risk will each do a cost analysis of the school building project; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the architect/designer firm will do a cost analysis of the school building project"
+  },
+  {
+   "topic": "Cost of an oversized school building",
+   "what_was_recorded": "Mackin said a building built too large would be paid for by taxpayers; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "if they build the building too large it is done so at the tax payer's expense."
+  },
+  {
+   "topic": "Sewer privilege fee and connection fees",
+   "what_was_recorded": "Discussed eliminating the privilege fee for low income units and the impact of connection fees; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "also discussed was the elimination of the privilege fee for the low income units in consideration of the sewer line and re-grading of pleasantview ave."
+  },
+  {
+   "topic": "Unitil rate increase public hearing",
+   "what_was_recorded": "Announced a Department of Public Utilities hearing on the Unitil rate increase; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "public hearing concerning the unitil rate increase on 9/23/2013 at 7pm"
+  },
+  {
+   "topic": "PACC budget report",
+   "what_was_recorded": "A PACC budget report was placed in the BOS action folder; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "in the bos action folder is their july/august update along with a budget report"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening) on late committee minutes",
+   "resolution": "discussed; letter to boards requested, no vote",
+   "quote": "he stated that it is not the duty of the town clerk to police these people and would like to have a letter sent",
+   "tags": [
+    "minutes",
+    "town bylaws"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "the department of public utilities will be holding a public hearing concerning the unitil rate increase on 9/23/2013",
+   "tags": [
+    "utilities",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Appointments: School Building Committee candidates",
+   "resolution": "Gregory Roy appointed, 5-0",
+   "quote": "mr. matthews moved to appoint gregory roy to the open position on the school building committee. toale seconded.",
+   "tags": [
+    "appointments",
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "MSBA design enrollment certification",
+   "resolution": "accepted and endorsed, 5-0",
+   "quote": "mr. matthews moved to accept and endorse the msba design enrollment certification for the town of lunenburg, lunenburg high school.",
+   "tags": [
+    "MSBA",
+    "school building",
+    "enrollment"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "discussed; audit status to be checked; no vote",
+   "quote": "action file issues: ms. bertram mentioned that at a previous planning board meeting a property on holman st.",
+   "tags": [
+    "warrants",
+    "minutes",
+    "action file",
+    "audit",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "planning board-ms. bertram stated that she was not at the meeting, although she did view it on youtube",
+   "tags": [
+    "committee reports",
+    "sewer",
+    "PACC",
+    "MPO"
+   ]
+  },
+  {
+   "topic": "Town Manager reports: Leominster Casino",
+   "resolution": "discussed; to be placed on a future agenda",
+   "quote": "leominster casino project appears to be moving forward and that the bos needs to discuss",
+   "tags": [
+    "casino",
+    "MRPC",
+    "regional impact"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations",
+   "resolution": "no action; discussed under appointments",
+   "quote": "candidate to school building committee: discussed under appointments.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) and executive session",
+   "resolution": "none",
+   "quote": "public comment - none executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:05PM, 5-0",
+   "quote": "regular scheduled meeting adjourned at 8:05pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MSBA Design Enrollment Certification",
+   "where": "list",
+   "quote": "mr. alonzo read the msba design enrollment certification document and asked for a motion from the board."
+  },
+  {
+   "name": "Minutes 8/20/2013",
+   "where": "list",
+   "quote": "minutes: 8/20/2013"
+  },
+  {
+   "name": "Water Billing Warrant 9/3/2013 #11-14",
+   "where": "list",
+   "quote": "warrants: water billing warrant 9/3/2013 #11-14"
+  },
+  {
+   "name": "Warrant 8/2/2013 #12-14",
+   "where": "list",
+   "quote": "8/2/2013 #12-14"
+  },
+  {
+   "name": "Warrant 8/27/2013 #5P14",
+   "where": "list",
+   "quote": "8/27/2013 #5p14"
+  },
+  {
+   "name": "PACC July/August update and budget report (BOS action folder)",
+   "where": "text",
+   "quote": "in the bos action folder is their july/august update along with a budget report"
+  },
+  {
+   "name": "Capital Planning packages",
+   "where": "text",
+   "quote": "the capital planning packages went out today to all department heads along with a schedule for their return"
+  },
+  {
+   "name": "Fitchburg IMA",
+   "where": "text",
+   "quote": "the fitchburg ima has been reviewed by their legal counsel and should be coming back to them fairly quickly"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "appointments",
+  "warrants",
+  "minutes compliance",
+  "sewer commission",
+  "committee reports",
+  "Leominster casino",
+  "town audit",
+  "Unitil",
+  "PACC"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "minutes/warrants/action file issues"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-01-04",
  "docid": "6162",
@@ -12,41 +12,521 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing for Chris from Hannigan to the 2/1/17 meeting",
+   "motion": "Continue the continued Notice of Intent hearing (Chris from Hanningan) to the 2/1/17 meeting.",
    "moved_by": "TB",
    "seconded_by": "KJ",
-   "outcome": "unanimously approved",
-   "procedural": false,
-   "quote": "tb moved to continue. kj seconded. cl indicated that he was concerned the separation of issues were not discuss ed. specifically, he was concerned about the specif ics of the fine timelines. the commission noted that a firm timeline has not b een determined. jr feels the public hearing should go forth and conclude first. tb clarified on the agreed procedure from hi s personal notes. the motion to continue was unanim ously approved."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "tb moved to continue. kj seconded."
   },
   {
-   "motion": "Issue fines at $100 per day for two violations (Failure to appear and Failure to produce supplemental information)",
+   "motion": "Issue a negative determination of applicability for Bob Proctor's 4 Sunset Ave work based on the revised plan.",
+   "moved_by": "BP",
+   "seconded_by": "TB",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "bp moved for a n egative determination based on revised plan."
+  },
+  {
+   "motion": "Issue fines against Viviano (338 Sunset Lane) at 100 dollars per day for two violations.",
    "moved_by": "KJ",
    "seconded_by": "BP",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "kj moved to issue fines based on those grounds at 100 dollars per day for two violations. bp seconded and the commission voted unanimously."
+   "quote": "kj moved to issue fines based on those grounds at 100 dollars per day for two violations."
   },
   {
-   "motion": "Issue a fine based on four counts of $300 per day per count for the six-day period between the issuing of the enforcement order and the filing of the notice of intent, for a total of $7,200",
+   "motion": "Rescind the fine for failure to appear issued to Viviano.",
+   "moved_by": "BP",
+   "seconded_by": "TB",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "bp move d to rescind the fine for failure to appear. tb seco nded and the commission voted unanimously."
+  },
+  {
+   "motion": "Remediate the wall at 338 Sunset Lane as defined by the 2/1 meeting, with a 100 dollar a day fine starting today, suspended if the wall work is completed; include an as-built by the design engineer.",
+   "moved_by": "TB",
+   "seconded_by": "BP",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "tb made a motion to remediate th e wall as defined by the 2/1 meeting with a 100 dolla r a day fine starting today"
+  },
+  {
+   "motion": "Set a fine of 300 dollars a day for 675 Reservoir Road until the hay is spread as ordered.",
+   "moved_by": "TB",
+   "seconded_by": "BP",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "this was approved by a motion from tb and a second from bp and a unanimous vote."
+  },
+  {
+   "motion": "Issue a fine for four counts of 300 dollars per day per count for the six-day period between the enforcement order and the notice of intent, total 7200 dollars, at 675 Reservoir Road.",
    "moved_by": "CL",
    "seconded_by": "TB",
    "outcome": "passed 4-2",
    "procedural": false,
-   "quote": "cl moved to issue a fine based on four counts of 300 d ollars per day per count for the six-day period bet ween the issuing of the enforcement order to the filing of the notice of intent for a total of 7200 dollars . tb seconded the vote was tb, td, jr, cl yes and kj and bp ",
+   "quote": "cl moved to issue a fine based on four counts of 300 d ollars per day per count for the six-day period"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Luck",
+   "seconded_by": "Mr Jones",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "the meeting adjourned at 11:05 pm with mr. luck mo ving to adjourn and mr jones seconding."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with broken words and stray spaces (e.g., 'move d', 'seco nded'); quotes reproduce them as printed. Chairman Bursch absent; Vice Chair Dwyer presided. The 675 Reservoir Road retroactive fine motion carried 4-2 per the printed tally (TB, TD, JR, CL yes; KJ and BP no). The adjournment motion has no recorded result. The 'Approval of Minutes 12/21/16' heading records no motion. The formal public comment sections read 'none', but named residents spoke during Old and New Business; they are recorded under public_comment. The hearing notice names Gougen Construction for 675 Reservoir Road while the discussion attributes the continued item to Hannigan Engineering; both are recorded as printed. A Gougen/Hannigan continuance motion is recorded.",
+ "cost_usd": 0.015015820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair; presiding",
+   "status": "present",
+   "quote": "vice chair todd dwyer presiding."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "exception of chairman bursch"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "bp moved for a n egative determination based on revised plan."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "tb moved to continue. kj seconded."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "cl indicated that he was concerned the separation of issues"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "jr feels the public hearing should go forth and conclude"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "kj moved to issue fines based on those grounds at 100 dollars per day for two violations."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "conservation administrator"
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "representing himself; applicant, 4 Sunset Ave",
+   "status": "present",
+   "quote": "mr. proctor representing himself."
+  },
+  {
+   "name": "Gary Gouldrup",
+   "role": "forest stewardship planning",
+   "status": "present",
+   "quote": "gary gouldrup came to the meeting to review the forest"
+  },
+  {
+   "name": "Viviano",
+   "role": "338 Sunset Lane, as printed in administrative hearing heading",
+   "status": "present",
+   "quote": "mr. vivano appeared to the commission"
+  },
+  {
+   "name": "Chris",
+   "role": "from Hanningan",
+   "status": "not stated",
+   "quote": "chris from hanningan continued to the 2/1/17"
+  },
+  {
+   "name": "Charles Caron",
+   "role": "with Hannigan Engineering, 675 Reservoir Road",
+   "status": "present",
+   "quote": "hannigan engineering appeared along with"
+  },
+  {
+   "name": "Diane Guneard",
+   "role": "public, 238 as printed",
+   "status": "present",
+   "quote": "diane guneard requested the cowdrey be no hunting"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "paula bertram agreed with cowdrey being off limits"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission signed off on the documents approved from the prior meeting.",
+   "quote": "the commission signed off on the documents approved"
+  },
+  {
+   "decision": "Mr. Dwyer asked that the wattles on the Proctor plan be moved closer to the limit of work; the plan was then hand modified and signed by Mr. Proctor.",
+   "quote": "requested the wattles be placed closer to the"
+  },
+  {
+   "decision": "Wall remediation at 338 Sunset Lane to be completed with hand placed stone at a 45-degree angle or flatter, by removing the top course and placing it backward behind the wall with no fill, targeted for February 1 weather permitting.",
+   "quote": "wall remediat ion is to be completed with hand placed stone at a",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Luck",
-   "seconded_by": "Mr. Jones",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the meeting adjourned at 11:05 pm with mr. luck mo ving to adjourn and mr jones seconding",
-   "quote_taken_from_text": true
+   "decision": "Chairman-directed site walk: MM to walk the 675 Reservoir Road site with any available commissioner and Mr. Caron before the next meeting.",
+   "quote": "mm to walk the site with a ny commissioner available and mr. caron prior to the n ext meeting"
+  },
+  {
+   "decision": "Signs at the Cowdrey that were not put up by the Commission are to be removed; no timeline set, and any Commissioner may take them down at any time.",
+   "quote": "it was agreed that this should happen to avoid confusion"
+  },
+  {
+   "decision": "No time line for removal of Cowdrey signs was set.",
+   "quote": "no time line for removal was determined but consensus was that"
+  },
+  {
+   "decision": "Hunting regulations discussion on Conservation Lands continued to another time.",
+   "quote": "this discussion was continued for another time."
+  },
+  {
+   "decision": "Forest stewardship goals sheet to be sent to MM by Mr. Gouldrup and discussed at the next meeting.",
+   "quote": "it can be discussed at the next meeting."
+  },
+  {
+   "decision": "Forest stewardship planning to be held at regular public meetings and advertised in the Ledger.",
+   "quote": "the commission noted that it would be at our regular"
   }
  ],
- "dropped_unquoted": 4,
- "note": "Minutes are clear and readable. One vote on approving minutes from 12/21/16 is listed under a section heading but no motion or vote outcome is recorded; not included above. All other votes are explicitly recorded with clear outcomes.\"",
- "cost_usd": 0.1284205
+ "budget_items": [
+  {
+   "topic": "Viviano fines, 338 Sunset Lane (failure to appear and failure to produce information)",
+   "what_was_recorded": "A fine of 100 dollars per day for two violations was recommended and then voted; the fine was later rescinded for failure to appear.",
+   "quote": "kj moved to issue fines based on those grounds at 100 dollars per day for two violations.",
+   "figures_as_printed": [
+    "1 00 dollars per day",
+    "100 dollars per day"
+   ]
+  },
+  {
+   "topic": "Viviano wall remediation fine",
+   "what_was_recorded": "A 100 dollar a day fine starting that day, suspended if the wall work is completed, and a 300 dollar per day fine if the work is not completed by the deadline.",
+   "quote": "tb made a motion to remediate th e wall as defined by the 2/1 meeting with a 100 dolla r a day fine starting today",
+   "figures_as_printed": [
+    "100 dolla r a day"
+   ]
+  },
+  {
+   "topic": "Viviano wall remediation fine if not completed",
+   "what_was_recorded": "The fine will be 300 dollars per day if the wall is not completed.",
+   "quote": "the fi ning will be 300 dollars per day if it is not completed.",
+   "figures_as_printed": [
+    "300 dollars per day"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Fine for failure to appear (Viviano)",
+   "what_was_recorded": "The fine for failure to appear was rescinded; no dollar figure restated in the rescind motion.",
+   "quote": "bp move d to rescind the fine for failure to appear.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "675 Reservoir Road enforcement fine until hay spread",
+   "what_was_recorded": "A fine of 300 dollars a day until the hay is spread as ordered was decided and approved.",
+   "quote": "the fine de cided on 300 dollars a day until the hay is spread as ordered.",
+   "figures_as_printed": [
+    "300 dollars a day"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "675 Reservoir Road retroactive fine",
+   "what_was_recorded": "A motion for four counts at 300 dollars per day per count for the six-day period, carried 4-2.",
+   "quote": "cl moved to issue a fine based on four counts of 300 d ollars per day per count for the six-day period",
+   "figures_as_printed": [
+    "300 d ollars per day per count"
+   ]
+  },
+  {
+   "topic": "675 Reservoir Road retroactive fine total",
+   "what_was_recorded": "The total retroactive fine under that motion was stated as 7200 dollars.",
+   "quote": "a total of 7200 dollars",
+   "figures_as_printed": [
+    "7200 dollars"
+   ]
+  },
+  {
+   "topic": "Bonding of remediation at 675 Reservoir Road",
+   "what_was_recorded": "Discussed that the remediation be quantified for bonding; no dollar figure printed.",
+   "quote": "td recommended the remediation be",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Diane Guneard",
+   "stated_role": "",
+   "topic": "Cowdrey no hunting zone",
+   "quote": "diane guneard requested the cowdrey be no hunting"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "",
+   "topic": "hunting signs at Cowdrey",
+   "quote": "paula bertram agreed with cowdrey being off limits"
+  },
+  {
+   "speaker": "Diane Guenard",
+   "stated_role": "238 as printed",
+   "topic": "public forum for forest stewardship planning",
+   "quote": "wanted to know if the planning can be in a"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting was called to order at 7pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements (work hours tally)",
+   "resolution": "no action",
+   "quote": "tb tallied work hours.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "none",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Continued NOI hearing, Gougen Construction, 675 Reservoir Road",
+   "resolution": "continued to 2/1/17",
+   "quote": "chris from hanningan continued to the 2/1/17",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Continued request for determination of applicability, Bob Proctor, 4 Sunset Ave",
+   "resolution": "negative determination approved",
+   "quote": "a request for a determination of applicability by bob proctor",
+   "tags": [
+    "determination of applicability",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Administrative hearing, Viviano, 338 Sunset Lane",
+   "resolution": "fines set; fine for failure to appear rescinded; wall remediation ordered",
+   "quote": "note carl luck recused himself",
+   "tags": [
+    "enforcement",
+    "fines",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Current business: signatures",
+   "resolution": "documents signed",
+   "quote": "the commission signed off on the documents approved",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Enforcement: 121 Peninsula (continued from 11/2/16)",
+   "resolution": "continued to February 1 meeting",
+   "quote": "121 peninsula continuation from 11/2/16",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Enforcement: 43 Island Road (continued from 11/2/16)",
+   "resolution": "no action; information requested",
+   "quote": "43 island road continuation from 11/2/1-6",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Enforcement: 338 Sunset Lane",
+   "resolution": "referred to administrative hearing",
+   "quote": "338 sunset lane continuation from 11/2/16",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Enforcement: 675 Reservoir Road",
+   "resolution": "fine set; site walk; two-phase order and bonding discussed",
+   "quote": "675 reservoir road - hannigan engineering appeared along with",
+   "tags": [
+    "enforcement",
+    "fines",
+    "riverfront",
+    "bonding"
+   ]
+  },
+  {
+   "topic": "Enforcement: 183 Hemlock Dr",
+   "resolution": "no action; site inspection list suggested",
+   "quote": "183 hemlock dr - mm noted that notice was sent to mr. thomas",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Emerald Place Beach Erosion",
+   "resolution": "no action; awaiting response",
+   "quote": "emerald place beach erosion - awaiting to hear from mr. cleaves",
+   "tags": [
+    "erosion"
+   ]
+  },
+  {
+   "topic": "New business: hunting regulations on Conservation Lands",
+   "resolution": "continued; Cowdrey signs to be removed",
+   "quote": "this discussion was continued for another time.",
+   "tags": [
+    "hunting",
+    "regulations",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Old business: Forest Stewardship Grant implementation",
+   "resolution": "goals sheet to be sent; discussed at next meeting",
+   "quote": "discussion of meeting with gary gouldrup",
+   "tags": [
+    "forest stewardship",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Approval of minutes 12/21/16",
+   "resolution": "no action recorded",
+   "quote": "approval of minutes 12/21/16",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Storm water Committee Report)",
+   "resolution": "no action recorded",
+   "quote": "storm water committee report",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Agent's report / action items",
+   "resolution": "no action recorded",
+   "quote": "agents report /action items",
+   "tags": [
+    "agent report"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for January 18, 2017",
+   "quote": "meeting schedule- next meeting for january 18",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment for meeting close",
+   "resolution": "no action recorded",
+   "quote": "public comment for meeting close.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:05 PM",
+   "quote": "the meeting adjourned at 11:05 pm with mr. luck mo ving to adjourn and mr jones seconding.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a determination by Bob Proctor (4 Sunset Ave)",
+   "where": "list",
+   "quote": "documents presented to the commission for considera tion was a request for ",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Modified sketch by the applicant, modified at the meeting January 4, 2017",
+   "where": "list",
+   "quote": "and a modified sketch by the applicant"
+  },
+  {
+   "name": "Application and supporting documents (notice of intent hearings)",
+   "where": "text",
+   "quote": "application and supporting documents are available"
+  },
+  {
+   "name": "Enforcement order (675 Reservoir Road)",
+   "where": "text",
+   "quote": "failure to comply with the enforcement order"
+  },
+  {
+   "name": "Goals sheet (forest stewardship strategies), to be sent by Mr. Gouldrup",
+   "where": "text",
+   "quote": "he noted he was going to send a goals"
+  },
+  {
+   "name": "Existing conditions plan presented by Mr. Viviano",
+   "where": "text",
+   "quote": "mr. viviano presented an existing conditions plan."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "enforcement",
+  "fines",
+  "notice of intent",
+  "determination of applicability",
+  "hunting regulations",
+  "forest stewardship",
+  "Sunset Lane",
+  "Reservoir Road"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented to the commission for considera tion was"
+ },
+ "dropped_unquoted_by_field": {}
 }

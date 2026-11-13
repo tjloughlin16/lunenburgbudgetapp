@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-03-03",
  "docid": "2365",
@@ -12,23 +12,251 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of the 2/17/11 meeting",
+   "motion": "Approve the minutes of the 2/17/11 meeting.",
    "moved_by": "MS",
    "seconded_by": "MMCD",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms motioned to approve; mmcd seconded; vote unanimous"
+   "quote": "review minutes of 2/17/11 meeting. ms motioned to approve; mmcd seconded; vote unanimous"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 9:28 PM.",
    "moved_by": "MM",
    "seconded_by": "MS",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mm made motion to adjourn at 9:28 pm and ms seconded; vote unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. Two votes recorded: approval of prior minutes and adjournment, both unanimous.",
- "cost_usd": 0.0912815
+ "note": "OCR scan of a typed minutes document with handwritten stamps (e.g., 'Appicored 3/24/11 B.P.L', '3124/4 BPL:') and some garbled words ('aditionat', 'superintendant'); the text was read as printed. Motions use initials (MS, MM, MMCD, ME, JM, BL) that are not expanded in the minutes, so mover names are recorded as printed. Only 'unanimous' is printed as the vote result. The Fire Chief section ends mid-sentence at a page break ('not practical for numerous'), so the fire discussion is incomplete. Martha McDonald departed early and Barbara Reynolds arrived late, so attendance varied during the meeting. The minutes say 'Public Discussion - None' and 'New Communications - None'.",
+ "cost_usd": 0.00562662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, chairman"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond, martha mcdonald (departed early), barbara reynolds (arrived late), mike mackin, john male"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond, martha mcdonald (departed early), barbara reynolds (arrived late), mike mackin, john male"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "",
+   "status": "present",
+   "quote": "minutes respectfully submitted by mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "barbara reynolds (arrived late), mike mackin, john male"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "",
+   "status": "present",
+   "quote": "barbara reynolds (arrived late), mike mackin, john male"
+  },
+  {
+   "name": "John Male",
+   "role": "",
+   "status": "present",
+   "quote": "barbara reynolds (arrived late), mike mackin, john male"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "library director - amy sadkin ms. sadkin presented the recommended library budget"
+  },
+  {
+   "name": "George Emond",
+   "role": "Board of Health",
+   "status": "present",
+   "quote": "board of health - george emond mr. emond reported that the doh budget is flat at 1 fte"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Sewer Commission",
+   "status": "present",
+   "quote": "sewer commission - bob ebersole mr. ebersole reported a flat budget, with no increase in fees."
+  },
+  {
+   "name": "Daniel Bourgeois",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief - daniel bourgeois chief bourgeois said his #1 issue is staffing"
+  },
+  {
+   "name": "Scott Glenny",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "fire chief - scott glenny chief glenny talked about the big difference between his recommendation and that of town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting dates were listed: March 10 (additional department reports), March 17 (Public Hearing), March 24 (tentative; may not have a quorum), and March 31 (tentative; review warrant articles).",
+   "quote": "march 17 - public hearing"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library budget",
+   "what_was_recorded": "The recommended library budget was presented; the delta from the Town Manager's recommendation was said to amount to 4 hours per week.",
+   "figures_as_printed": [
+    "4 hours per week"
+   ],
+   "quote": "me asked about the impact of the delta from the town managers recommendation: it amounts to 4 hours per week."
+  },
+  {
+   "topic": "Board of Health budget",
+   "what_was_recorded": "The DOH budget was reported as flat at 1 FTE, with a small budget increase to meet contract commitments.",
+   "figures_as_printed": [
+    "1 FTE"
+   ],
+   "quote": "mr. emond reported that the doh budget is flat at 1 fte, with small increase in budget to meet contract commitments."
+  },
+  {
+   "topic": "Sewer Commission budget and retained earnings draw",
+   "what_was_recorded": "A flat sewer budget with no fee increase was reported; the draw from retained earnings was compared with last year and the remaining balance noted.",
+   "figures_as_printed": [
+    "$85k",
+    "$92k",
+    "$617k"
+   ],
+   "quote": "me asked about the $85k draw from retained earnings: it compares with $92k last year and we have a balance of $617k."
+  },
+  {
+   "topic": "Sewer connection fee",
+   "what_was_recorded": "A member noted the connection fee is low and suggested it could be increased.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "bl commented on the low connect fee of $300 and suggested we could look to increase it."
+  },
+  {
+   "topic": "Police staffing cost",
+   "what_was_recorded": "A member said one added FTE costs more than salary alone, including health insurance, retirement benefits and automobile expense.",
+   "figures_as_printed": [
+    "$63,512"
+   ],
+   "quote": "jm commented that an fte is not just $63,512 in salary, but also carries health insurance, retirement benefits"
+  },
+  {
+   "topic": "Fire EMT recertification and staffing",
+   "what_was_recorded": "EMT recertification costs are combined on two lines (stipend and fee separate); the recommendation adds per diem staffing overnight and on weekends, not benefit eligible.",
+   "figures_as_printed": [],
+   "quote": "jm asked about the emt recertification: it is combined on two lines, the stipend and the fee being separate."
+  },
+  {
+   "topic": "School budget gap and possible override",
+   "what_was_recorded": "Budget cut options to close the gap between the superintendent's recommendation and the Town Manager's, and a possible override, were discussed; no decisions were reached.",
+   "figures_as_printed": [],
+   "quote": "various ways to make budget cuts to eliminate the gap between the superintendant's recommendation and that of the town manager were discussed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Discussion",
+   "resolution": "no action (none)",
+   "quote": "public discussion - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review minutes of 2/17/11 meeting",
+   "resolution": "approved unanimously",
+   "quote": "review minutes of 2/17/11 meeting. ms motioned to approve; mmcd seconded; vote unanimous",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Communications",
+   "resolution": "no action (none)",
+   "quote": "new communications - none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported, no decisions",
+   "quote": "school committee - mm reported on the school committee meeting from the night before.",
+   "tags": [
+    "school budget",
+    "override"
+   ]
+  },
+  {
+   "topic": "Appointments - Preliminary Budget Discussions",
+   "resolution": "department presentations heard; no votes",
+   "quote": "6) appointments - preliminary budget discussions",
+   "tags": [
+    "preliminary budget",
+    "library",
+    "health",
+    "sewer",
+    "police",
+    "fire"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "dates listed",
+   "quote": "march 10 - aditionat department reports",
+   "tags": [
+    "schedule",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:28 PM",
+   "quote": "8) adjournment - mm made motion to adjourn at 9:28 pm and ms seconded; vote unanimous",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Recommended library budget (posted to the town website)",
+   "where": "text",
+   "quote": "ms. sadkin presented the recommended library budget and mentioned it had"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "preliminary budget",
+  "library",
+  "sewer",
+  "board of health",
+  "police staffing",
+  "fire staffing",
+  "school budget override",
+  "warrant articles"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

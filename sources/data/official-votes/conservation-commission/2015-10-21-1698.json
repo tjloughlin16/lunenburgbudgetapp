@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-10-21",
  "docid": "1698",
@@ -12,19 +12,256 @@
  },
  "votes": [
   {
-   "motion": "Issue a Negative Determination for the Notice of Intent filed by JoAnne Hamberg to rebuild retaining walls at 42 Pearl Street",
-   "outcome": "passed",
+   "motion": "Approve the Notice of Intent filed by John M, Heather, John G. Dovale for 22 Oak Ridge Road (addition to single family home), with wattles at 50' No Build Zone and two trees removed.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "negative 3 unanimous"
+   "quote": "call for inspection when wattles are in place. approved unanimous"
   },
   {
-   "motion": "Continue the meeting until Saturday morning at 8:30 AM to walk and measure the area at 300 Holman Street",
-   "outcome": "passed",
+   "motion": "Approve the Notice of Intent filed by JoAnne Hamberg for 42 Pearl Street (rebuild lower retaining wall), with wattles at 30' No Touch Zone; minutes print the result as 'Negative 3'.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous (printed as 'Negative 3 Unanimous')",
+   "procedural": false,
+   "quote": "in place. negative 3 unanimous"
+  },
+  {
+   "motion": "Continue the 300 Holman Street hearing until Saturday morning at 8:30 AM so the area can be walked and measured for Todd's definitive plan.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion to continue the meeting until saturday morning at 8:30 am to walk and measure the area so todd can do a definitive plan. unanimous"
+   "quote": "a motion to continue the meeting until saturday morning at 8:30 am to walk and measure the area so todd can do a definitive plan. unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan of physical minutes. The text heading at top is corrupted (gÉãÇ Éy _âÇxÇuâÜz = \"Town of Lunenburg\"). No mover or seconder names recorded for any votes. \"Negative 3 Unanimous\" on the Pearl Street vote is unclear but recorded as printed; may refer to a Negative Determination.",
- "cost_usd": 0.1115805
+ "dropped_unquoted": 0,
+ "note": "Extracted text has garbled header characters and split words (e.g., 'file d', 'rebui ld', 'Bu rsch'); names and quotes are kept as printed. No mover or seconder is printed for any motion, and no roll call is recorded. The votes to approve minutes and to adjourn are not recorded as motions. The 'Negative 3' result for 42 Pearl Street is printed without explanation. The header stamp 'MINUTES~APPROVED 11-18-2015' is not a vote. Member attendance is listed in the header without a present/absent mark. Public comment speaker 'Matt' is not further identified and may be Matt Marro.",
+ "cost_usd": 0.00656732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Bertram",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Ken Jones",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "tom bertram, todd dwyer, jack rabbitt, brad kennedy , carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "John",
+   "role": "applicant (22 Oak Ridge Road); presented",
+   "status": "present",
+   "quote": "home, 3 bedrooms, 1 bath. john presented."
+  },
+  {
+   "name": "JoAnne Hamberg",
+   "role": "applicant (42 Pearl Street)",
+   "status": "not stated",
+   "quote": "notice of intent filed by joanne hamberg . the proposed project is to rebui ld retaining walls along lake and in front"
+  },
+  {
+   "name": "Richard Bu rsch",
+   "role": "Conservation Commission Chairman",
+   "status": "not stated",
+   "quote": "lunenburg conservation commission (richard bu rsch ~ conservation commission chairman)."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Matt",
+   "stated_role": "",
+   "topic": "natural plantings at Emerald Place",
+   "quote": "public comment ~ matt-will be doing natural plantings at emerald place near water"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "noted; natural plantings at Emerald Place",
+   "tags": [
+    "public comment",
+    "plantings"
+   ],
+   "quote": "public comment ~ matt-will be doing natural plantings at emerald place near water"
+  },
+  {
+   "topic": "Hearing: 22 Oak Ridge Road, Notice of Intent",
+   "resolution": "approved unanimously with conditions",
+   "tags": [
+    "wetlands",
+    "hearing",
+    "single family home"
+   ],
+   "quote": "call for inspection when wattles are in place. approved unanimous"
+  },
+  {
+   "topic": "Hearing: 42 Pearl Street, Notice of Intent",
+   "resolution": "approved unanimously (printed as Negative 3)",
+   "tags": [
+    "wetlands",
+    "hearing",
+    "retaining wall"
+   ],
+   "quote": "in place. negative 3 unanimous"
+  },
+  {
+   "topic": "Hearing: 300 Holman Street, Notice of Intent (Lunenburg Conservation Commission)",
+   "resolution": "continued to Saturday 8:30 AM for site walk and measurement",
+   "tags": [
+    "wetlands",
+    "hearing",
+    "parking area",
+    "culverts",
+    "bridges"
+   ],
+   "quote": "a motion to continue the meeting until saturday morning at 8:30 am to walk and measure the area so todd can do a definitive plan. unanimous"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "no action recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval new business"
+  },
+  {
+   "topic": "New business",
+   "resolution": "no action recorded",
+   "tags": [
+    "new business"
+   ],
+   "quote": "minutes approval new business"
+  },
+  {
+   "topic": "Ongoing business: Forest Cutting Plans",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "forest cutting"
+   ],
+   "quote": "ongoing business forest cutting plans"
+  },
+  {
+   "topic": "Violations",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "violations"
+   ],
+   "quote": "violations signatures ~ ooc(), coc()"
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "signatures"
+   ],
+   "quote": "violations signatures ~ ooc(), coc()"
+  },
+  {
+   "topic": "Announcements and meeting schedule",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "announcements",
+    "meeting schedule"
+   ],
+   "quote": "announcements meeting schedule ~"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "commission comment ~"
+  },
+  {
+   "topic": "Commission comment",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "commission comment"
+   ],
+   "quote": "commission comment ~"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:55 PM (no vote recorded)",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment ~ 8:55 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent filed by John M, Heather, John G. Dovale (22 Oak Ridge Road)",
+   "where": "text",
+   "quote": "notice of intent file d by john m, heather, john g. dovale."
+  },
+  {
+   "name": "Notice of Intent filed by JoAnne Hamberg (42 Pearl Street)",
+   "where": "text",
+   "quote": "notice of intent filed by joanne hamberg . the proposed project is to rebui ld retaining walls along lake and in front"
+  },
+  {
+   "name": "Notice of Intent filed by Lunenburg Conservation Commission (300 Holman Street)",
+   "where": "text",
+   "quote": "lunenburg conservation commission (richard bu rsch ~ conservation commission chairman)."
+  },
+  {
+   "name": "Definitive plan (Todd, 300 Holman Street)",
+   "where": "text",
+   "quote": "so todd can do a definitive plan."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "public hearing",
+  "wetlands protection bylaw",
+  "Ritter Memorial Building",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

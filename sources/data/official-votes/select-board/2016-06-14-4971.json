@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-06-14",
  "docid": "4971",
@@ -12,65 +12,393 @@
  },
  "votes": [
   {
-   "motion": "To adopt the Montachusett Regional Natural Hazard Mitigation Plan 2015 Update",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "T. Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2°°: t. alonzo to adopt the montachusett regional natural hazard mitigation plan 2015 update vote: all in favor"
-  },
-  {
-   "motion": "That a violation occurred on May 5, 2016",
+   "motion": "Adopt the Montachusett Regional Natural Hazard Mitigation Plan 2015 Update.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole that a violation occurred on may 5, 2016 2n': t. alonzo vote: all in favor"
+   "quote": "to adopt the montachusett regional natural hazard mitigation plan 2015 update vote: all in favor"
   },
   {
-   "motion": "To issue a five day suspension of the liquor license of Mickey Shea's from June 27 through July 1st",
+   "motion": "That a violation occurred on May 5, 2016 (Mickey Shea's liquor license hearing).",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "that a violation occurred on may 5, 2016"
+  },
+  {
+   "motion": "Issue a five day suspension of the liquor license of Mickey Shea's from June 27 through July 1st.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d r.ebersole to issue a five day suspension of the liquor license of mickey shea's from june 27 through july 1st vote: all in favor"
+   "quote": "to issue a five day suspension of the liquor license of mickey shea's from june 27 through july 1st"
   },
   {
-   "motion": "To hold a Special Town Meeting to present a power purchase agreement",
+   "motion": "Hold a Special Town Meeting to present a power purchase agreement.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\"': t. alonzo to hold a special town meeting to present a power purchase agreement mr. toale asked if there were any other items that might be presented at the special town meeting as well. ===page 6=== ms. lafleur did check and planning board has one minor item they could put on the warrant. the town does not have any budget items to present and it is too early to tell if we need anything for a fall town meeting. vote:",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to hold a special town meeting to present a power purchase agreement"
   },
   {
-   "motion": "To appoint the parties as read by the Town Manager",
+   "motion": "Appoint the FY 2017 reappointments to committees/boards as read by the Town Manager.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to appoint the parties as read by the town manager 2nd: t. alonzo vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint the parties as read by the town manager"
   },
   {
-   "motion": "To ratify all the Town Manager appointments as presented",
+   "motion": "Ratify all the Town Manager appointments as presented.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify all the town manager appointments as presented"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:22 p.m.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: r. ebersole to ratify all the town manager appointments as presented mr. ebersole asked",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "To adjourn the meeting at 8:22 p.m.",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion:t. alonzo to adjourn the meeting at 8:22 p.m. 2\": r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 8:22 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1666435
+ "note": "OCR text from a scanned, sometimes garbled, document; some quotes carry OCR errors as printed. Votes are recorded as \"All in Favor\" without numeric counts. The Power Purchase Agreement motion's \"Vote: All in Favor\" appears after intervening discussion, so its quote is the motion text only. The Public Comment heading is followed by speakers, but the minutes later state \"There was no public comment.\" (the end-of-meeting remark), which conflicts; both are recorded as printed. The Town Manager evaluation and hearing rulings are recorded as printed; no dollar figures were printed for the hearing.",
+ "cost_usd": 0.01028952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Lunenburg Water District Commission Chair",
+   "status": "present",
+   "quote": "mark bursch, lunenburg water district commission chair, presented an update on their work."
+  },
+  {
+   "name": "Police Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino wanted to remind the public that animal control falls under the auspices of the police"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief sullivan is here to answer any questions on the plan."
+  },
+  {
+   "name": "Brian Riley",
+   "role": "of Kopelman & Paige, assisting with the hearing",
+   "status": "present",
+   "quote": "brian riley of kopelman & paige stated he was here to assist with the hearing."
+  },
+  {
+   "name": "Sergeant Jack Hebert",
+   "role": "Sergeant",
+   "status": "present",
+   "quote": "sergeant jack hebert presented his incident narrative first."
+  },
+  {
+   "name": "Robert Herrick",
+   "role": "Owner (B & H Corporation d/b/a Mickey Shea's)",
+   "status": "present",
+   "quote": "owner robert herrick stated he did not have a statement to make because he was not there that night."
+  },
+  {
+   "name": "Lindsey Achilla",
+   "role": "Manager (Mickey Shea's)",
+   "status": "absent",
+   "quote": "he believed achilla submitted a letter to the board the day before because she could not be present this evening."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed to the clerk/treasurer's request to remain in her position for another year (Lunenburg Water District).",
+   "quote": "the board agreed with her request."
+  },
+  {
+   "decision": "The Board will work on a flag policy and procedure as an action file issue.",
+   "quote": "mr. toale stated he had one action file issue; to work on a flag policy and procedure."
+  },
+  {
+   "decision": "Ms. Lafleur will research why the Town does not appoint Special Officers from Leominster and Fitchburg and report back to the Board.",
+   "quote": "ms. lafleur will research that question and get back to the board."
+  },
+  {
+   "decision": "Items on the composite Town Manager evaluation (goals, what the Town Manager does well, etc.) will be addressed at a future workshop meeting with a full Board.",
+   "quote": "these items will be addressed in detail at a future workshop meeting with a full board."
+  },
+  {
+   "decision": "Nexamp's request for an amendment to the commercial operation date timetable will be placed on the next meeting agenda.",
+   "quote": "this will be on the next meeting agenda."
+  },
+  {
+   "decision": "The Board signed the warrants (accounts payable, MS/HS project, payroll, and deductions).",
+   "quote": "the board signed an accounts payable warrant in the amount of $347,080.85"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Water District financing for new garage",
+   "what_was_recorded": "The water district's consensus was to apply for a thirty-year note through the USDA loan program at a stated interest range.",
+   "figures_as_printed": [
+    "thirty year",
+    "2.185%",
+    "3.125%"
+   ],
+   "quote": "the consensus was to apply for a thirty year note with interest rate of between 2.185% and 3.125% through the usda loan program."
+  },
+  {
+   "topic": "Warrants signed by the Board",
+   "what_was_recorded": "The Board signed four warrants: accounts payable, MS/HS project, payroll, and deductions.",
+   "figures_as_printed": [
+    "$347,080.85",
+    "$1,117,316.51",
+    "$742,405.04",
+    "$23,339.99"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $347,080.85; a ms/hs project warrant in the amount of $1,117,316.51"
+  },
+  {
+   "topic": "Power purchase agreement discussion",
+   "what_was_recorded": "Members discussed leasing versus purchasing, use of the school contingency fund, and savings from the project; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "there were some questions about leasing versus purchasing, use of the contingency fund from the school to do it and concerns about aesthetics."
+  },
+  {
+   "topic": "School building project change orders",
+   "what_was_recorded": "The School Building Committee authorized change orders totaling $31,842.",
+   "figures_as_printed": [
+    "$31,842"
+   ],
+   "quote": "the committee authorized some change orders in the total amount of $31,842."
+  },
+  {
+   "topic": "School building project supplemental heating units",
+   "what_was_recorded": "Of the change orders, $15,834 provides supplemental heating units in one open space.",
+   "figures_as_printed": [
+    "$15,834"
+   ],
+   "quote": "$15,834 of that provides supplemental heating units in one of the open spaces."
+  },
+  {
+   "topic": "School building project locker room convectors relocation",
+   "what_was_recorded": "Relocating two convectors in the locker rooms to meet ADA compliance cost $3,680.",
+   "figures_as_printed": [
+    "$3,680"
+   ],
+   "quote": "two convectors in the locker rooms had to be relocated because they stuck out too far to be ada compliant, costing $3,680."
+  },
+  {
+   "topic": "School building project auditorium flooring change",
+   "what_was_recorded": "Changing the control booth flooring from carpeting to vinyl composite tile cost $1,401.",
+   "figures_as_printed": [
+    "$1,401"
+   ],
+   "quote": "there was a flooring change in the control booth in the auditorium electrical room from carpeting to vinyl composite tile flooring which reduces static electricity build up. this cost $1,401."
+  },
+  {
+   "topic": "School building project concessions boulder wall regrading",
+   "what_was_recorded": "The concessions-area boulder wall change and regrading cost $10,039.",
+   "figures_as_printed": [
+    "$10,039"
+   ],
+   "quote": "the area will be regraded at a cost of $10,039."
+  },
+  {
+   "topic": "School building project pending change requests",
+   "what_was_recorded": "Other change requests amounting to $95,000 are pending and not known whether they will go forward.",
+   "figures_as_printed": [
+    "$95,000"
+   ],
+   "quote": "there are some other change requests amounting to $95,000."
+  },
+  {
+   "topic": "School building project contingency fund",
+   "what_was_recorded": "A little less than $4 million remains in the contingency fund.",
+   "figures_as_printed": [
+    "$4 million"
+   ],
+   "quote": "right now there is a little less than $4 million remaining in the contingency fund."
+  },
+  {
+   "topic": "Asphalt purchase bids",
+   "what_was_recorded": "Bids for a three-year asphalt contract were received; the low bidder's price is lower than the current contract. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "bids for a three year contract were received for the purchase of asphalt. the low bidder was p.j. keating and the price is lower than the current contract."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mark Bursch",
+   "stated_role": "Lunenburg Water District Commission Chair",
+   "topic": "Water district work update",
+   "quote": "mark bursch, lunenburg water district commission chair, presented an update on their work."
+  },
+  {
+   "speaker": "Police Chief Marino",
+   "stated_role": "Police Chief",
+   "topic": "Animal Control reminders",
+   "quote": "police chief marino wanted to remind the public that animal control falls under the auspices of the police"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "heard; no action",
+   "quote": "mr. toale announced the town clerk office will be closed on thursday, june 16\" but will be open on friday,"
+  },
+  {
+   "topic": "Request to adopt Montachusett Regional Natural Hazard Mitigation Plan 2015 Update",
+   "resolution": "adopted",
+   "quote": "request to adopt montachusett regional natural hazard mitigation plan 2015 update (continued)"
+  },
+  {
+   "topic": "Hearing: Mickey Shea's liquor license violation (May 5, 2016)",
+   "resolution": "violation found; five day suspension June 27 through July 1",
+   "quote": "hearing for b & h corporation d/b/a mickey shea's pursuant to g.l. c. 138 § 23 for alcohol license"
+  },
+  {
+   "topic": "Town Manager review",
+   "resolution": "composite evaluation read into the record; no vote recorded",
+   "quote": "mr. toale reported as chair of the board he is charged with collecting performance reviews for the town"
+  },
+  {
+   "topic": "Power purchase agreement discussion (continued)",
+   "resolution": "voted to hold a Special Town Meeting",
+   "quote": "mr. ebersole reported he contacted several people who he believed commented during the discussion regarding"
+  },
+  {
+   "topic": "FY 2017 reappointments to committees/boards",
+   "resolution": "approved",
+   "quote": "fy 2017 reappointments to committees/boards"
+  },
+  {
+   "topic": "Town Manager appointments",
+   "resolution": "ratified",
+   "quote": "ms. lafleur moved on to the town manager appointments."
+  },
+  {
+   "topic": "Warrants and action file issues",
+   "resolution": "warrants signed; flag policy action item",
+   "quote": "the board signed an accounts payable warrant in the amount of $347,080.85"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "no report on finance committee."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "quote": "ms. lafleur reported unitil is working on the circuit upgrades"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:22 p.m.",
+   "quote": "to adjourn the meeting at 8:22 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Incident narrative (Sgt. Jack Hebert)",
+   "where": "list",
+   "quote": "sergeant jack hebert presented his incident narrative first."
+  },
+  {
+   "name": "Montachusett Regional Natural Hazard Mitigation Plan 2015 Update",
+   "where": "text",
+   "quote": "ms. lafleur reported mrpc has completed the 2015 update to the existing plan."
+  },
+  {
+   "name": "Letter from Lindsey Achilla to the Board",
+   "where": "text",
+   "quote": "he believed achilla submitted a letter to the board the day before because she could not be present this evening."
+  },
+  {
+   "name": "Police report",
+   "where": "text",
+   "quote": "mr. herrick was curious about the second vehicle in the parking lot that had occupants in it but was"
+  },
+  {
+   "name": "Memorandum of Understanding with the Town of Lancaster",
+   "where": "text",
+   "quote": "pending receipt of a memorandum of understanding with the town of lancaster"
+  },
+  {
+   "name": "Asphalt bids (three year contract)",
+   "where": "text",
+   "quote": "bids for a three year contract were received for the purchase of asphalt."
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license hearing",
+  "Mickey Shea's",
+  "natural hazard mitigation",
+  "Town Manager review",
+  "power purchase agreement",
+  "solar",
+  "town meeting",
+  "appointments",
+  "warrants",
+  "school building project",
+  "water district",
+  "paving",
+  "asphalt bids"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "sergeant jack hebert presented his incident narrative first."
+ },
+ "dropped_unquoted_by_field": {}
 }

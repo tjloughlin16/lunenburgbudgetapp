@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-06-10",
  "docid": "5461",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of 5/27/14",
+   "motion": "Approve the minutes of 5/27/14.",
    "moved_by": "Troy",
    "seconded_by": "Mike",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "troy made the motion, mike seconded. vote taken was unanimous."
   },
   {
-   "motion": "accept the 6/4/14 minutes as revised",
+   "motion": "Accept the 6/4/14 minutes as revised.",
    "moved_by": "Troy",
    "seconded_by": "Mike",
    "outcome": "passed",
@@ -28,15 +28,493 @@
    "quote": "troy made the motion, mike seconded, vote taken was unanimous."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Troy",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "butch made the motion, troy seconded bb, troy 2 nd - adjourned 8:58 pm"
+   "quote": "dave asked for a motion to adjourn. butch made the motion"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is readable. Three procedural votes recorded. The contract discussion with Small Water Systems Services mentions \"Dave asked for a motion to accept the $76,875 per year\" but Butch objected and no formal vote is recorded on this motion—the discussion continued instead. The invoice for Weston & Sampson ($15,814.31) is listed as \"approved\" but without a recorded motion or vote.\"",
- "cost_usd": 0.11950250000000001
+ "note": "The text is OCR-like: words are split and punctuation spaced (e.g. 'Danie ls', 'Chai rman'), so quotes keep those splits exactly. Pages 3-4 repeat pages 1-2 word for word; quotes come from pages 1-2. The adjournment motion has no printed result count, so its outcome is 'not stated'. The motion to accept the $76,875 price was asked but no motion was made; Butch asked to wait, so it is not recorded as a vote.",
+ "cost_usd": 0.014379720000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "meeting was opened by the dave macdonald, vice chai rman, at 7pm"
+  },
+  {
+   "name": "Butch Bilotta",
+   "status": "present",
+   "quote": "attendees: dave macdonald, butch bilotta, troy danie ls, mike nault."
+  },
+  {
+   "name": "Troy Danie ls",
+   "status": "present",
+   "quote": "attendees: dave macdonald, butch bilotta, troy danie ls, mike nault."
+  },
+  {
+   "name": "Mike Nault",
+   "status": "present",
+   "quote": "attendees: dave macdonald, butch bilotta, troy danie ls, mike nault."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: jack rodriquenz, dpw director, barb lefebvre, business manager."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "also present: jack rodriquenz, dpw director, barb lefebvre, business manager."
+  },
+  {
+   "name": "Carl Luck",
+   "status": "absent",
+   "quote": "absent: carl luck guests: debbie & bruce trumbull"
+  },
+  {
+   "name": "Debbie Trumbull",
+   "role": "Guest",
+   "status": "present",
+   "quote": "debbie & bruce trumbull and al packard of small water systems services arrived for their 7:00 appointment."
+  },
+  {
+   "name": "Bruce Trumbull",
+   "role": "Guest",
+   "status": "present",
+   "quote": "debbie & bruce trumbull and al packard of small water systems services arrived for their 7:00 appointment."
+  },
+  {
+   "name": "Al Packard",
+   "role": "of Small Water Systems",
+   "status": "present",
+   "quote": "debbie & bruce trumbull and al packard of small water systems services arrived for their 7:00 appointment."
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "Weston & Sampson",
+   "status": "present",
+   "quote": "pat cotton handed out a copy of the most recent report"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Use the old SWSS contract with updates and combine it with the new Part II on generators, using the format of the first-year contract. Butch asked that the contract not be accepted as a whole yet.",
+   "quote": "it wa s decided to basically use the old contract with up dates"
+  },
+  {
+   "decision": "Consequential damages language will be removed from the SWSS contract.",
+   "quote": "this will be removed from c ontract."
+  },
+  {
+   "decision": "Barb will draft a new version of the old contract showing the 2.5% cost increase and adding Part II.",
+   "quote": "do up a new draft of the old contract, indicating the cost incr ease of 2.5%"
+  },
+  {
+   "decision": "Jack will have his facilities staff review Part II of the SWSS contract.",
+   "quote": "jac k stated he'd like to have his facilities guy take a look at part ii of",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Payment goes to SWSS, not third-party checks; the markup is not to appear on the contract; SWSS invoices the Town and the rest is up to SWSS.",
+   "quote": "we get swss invoice. the rest is up to them."
+  },
+  {
+   "decision": "Dave wants the generator work done on time-and-materials this year, with the new contract starting in the new year as maintenance.",
+   "quote": "dave wants to get it done on t&m this year"
+  },
+  {
+   "decision": "SCADA project work and costs will not occur until after July 1.",
+   "quote": "work and costs will not occur until after july 1."
+  },
+  {
+   "decision": "Troy will help find owners' contact information and work with Barb to reach the remaining owners on the I/I list.",
+   "quote": "dave asked troy to help find owners contact in fo"
+  },
+  {
+   "decision": "If the final I/I inspection takes two days, Weston & Sampson is to give the cost; the program is not to be cut short.",
+   "quote": "jack added if it takes 2 days, give us the cost."
+  },
+  {
+   "decision": "Grease trap compliance is to be placed on the next agenda for discussion.",
+   "quote": "dave asked that this be on the next agenda to discuss."
+  },
+  {
+   "decision": "Dave will pass the Flow Assessment contract increase to Carl to call and discuss with Flow Assessment.",
+   "quote": "dave would like to pass this on to carl to call and discuss with flow assessment."
+  },
+  {
+   "decision": "Barb will verify whether the Town owns the flow meters or Flow Assessment does.",
+   "quote": "whether the town owns the meters or if flow assessment does. barb will verify."
+  },
+  {
+   "decision": "Weston & Sampson invoice approved (no recorded vote).",
+   "quote": "weston & sampson $15,814.31 approved"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY15 SWSS contract price",
+   "what_was_recorded": "A 2.5% price increase, noted and approved at a previous meeting, takes the SWSS contract from $75,000 per year to $76,875.",
+   "figures_as_printed": [
+    "2.5%",
+    "$75,000",
+    "$76,875"
+   ],
+   "quote": "going from a $75,000 per year amount to $76,875."
+  },
+  {
+   "topic": "Generator service fee (SWSS Part II)",
+   "what_was_recorded": "Generator service of a minor and major service twice a year for each of 10 stations is priced at $7500 per year.",
+   "figures_as_printed": [
+    "$7500/yr"
+   ],
+   "quote": "10 stations for $7500/yr."
+  },
+  {
+   "topic": "Value of the generators",
+   "what_was_recorded": "The generators' value was noted as ranging from $10,000 to $ 20,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$ 20,000"
+   ],
+   "quote": "ranging from $10,000 to $ 20,000."
+  },
+  {
+   "topic": "Generator repairs before year-end",
+   "what_was_recorded": "Jack needs a cost for repairs still to be done before year-end; no figure recorded.",
+   "figures_as_printed": [],
+   "quote": "jack stated he needs a cost for the repa irs that still need to be done before year-end."
+  },
+  {
+   "topic": "Callout costs",
+   "what_was_recorded": "Discussion of how to limit callout costs after high February and March callouts; no figure recorded.",
+   "figures_as_printed": [],
+   "quote": "discussion followed on how to limit callouts costs."
+  },
+  {
+   "topic": "SWSS markup",
+   "what_was_recorded": "Discussion of the markup, which should not appear on the contract; no figure recorded.",
+   "figures_as_printed": [],
+   "quote": "discussion of markup, and that it should not appear on contract."
+  },
+  {
+   "topic": "Flow Assessment contract increase",
+   "what_was_recorded": "The new Flow Assessment contract reflects an 8% increase, with no price increase since the 2011 start of the relationship.",
+   "figures_as_printed": [
+    "8%"
+   ],
+   "quote": "it reflects an increase of 8%, but that since"
+  },
+  {
+   "topic": "Flow Assessment proposed price",
+   "what_was_recorded": "The proposed price came in over $10,000 and may require three quotes.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "the proposed price came in over $10,000"
+  },
+  {
+   "topic": "Weston & Sampson invoice",
+   "what_was_recorded": "An invoice from Weston & Sampson was approved.",
+   "figures_as_printed": [
+    "$15,814.31"
+   ],
+   "quote": "weston & sampson $15,814.31 approved"
+  },
+  {
+   "topic": "Grease trap non-compliance fee",
+   "what_was_recorded": "Troy noted that a $250 non-compliance fee plus the cost of professional cleaning or pumping makes non-compliance cheaper.",
+   "figures_as_printed": [
+    "$250"
+   ],
+   "quote": "with a non-compliance fee of $250 and the cost for a professional cleaning/pumping"
+  },
+  {
+   "topic": "Whalom Luxury Apartments privilege fees",
+   "what_was_recorded": "New fees will apply to the project and privilege fees will not be forgiven; no figure recorded.",
+   "figures_as_printed": [],
+   "quote": "new fees will apply and there would be no forgiving of privilege fees"
+  },
+  {
+   "topic": "Generator maintenance billing",
+   "what_was_recorded": "Generator work this year to be done on time-and-materials (T&M) basis before the new maintenance contract starts.",
+   "figures_as_printed": [],
+   "quote": "dave wants to get it done on t&m this year"
+  },
+  {
+   "topic": "I/I extra inspection day cost",
+   "what_was_recorded": "If the remaining I/I inspections take two days, Weston & Sampson is to provide the cost; no figure recorded.",
+   "figures_as_printed": [],
+   "quote": "jack added if it takes 2 days, give us the cost."
+  },
+  {
+   "topic": "FY14 year-to-date budget",
+   "what_was_recorded": "Commission reviewed the YTD FY14 budget; income was greater than expenses as of 6/10; no figures recorded in the minutes.",
+   "figures_as_printed": [],
+   "quote": "commission reviewed. income greater than expense"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "none taken; the minutes say there was no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Planning Board ANR at 174 Northfield and Whalom Luxury Apartments",
+   "resolution": "noted; no action",
+   "quote": "barb explained that whalom luxury apartments (previously lunenburg village)",
+   "tags": [
+    "planning board",
+    "ANR",
+    "sewer service area",
+    "fees"
+   ]
+  },
+  {
+   "topic": "SWSS FY15 contract and generator Part II",
+   "resolution": "old contract to be redrafted with 2.5% increase and Part II; not accepted as a whole",
+   "quote": "the contract for fy15 was discussed.",
+   "tags": [
+    "SWSS",
+    "contract",
+    "generators",
+    "callouts"
+   ]
+  },
+  {
+   "topic": "SCADA proposal",
+   "resolution": "work to start after July 1",
+   "quote": "work and costs will not occur until after july 1.",
+   "tags": [
+    "SCADA"
+   ]
+  },
+  {
+   "topic": "I/I project update (Weston & Sampson)",
+   "resolution": "reviewed; follow-up inspection and owner outreach planned",
+   "quote": "pat cotton handed out a copy of the most recent report",
+   "tags": [
+    "I/I",
+    "inflow infiltration",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects list",
+   "resolution": "reviewed; Lakeview/Pratt RFP out with 6/20 response deadline",
+   "quote": "dave reviewed the sewer commission projects list.",
+   "tags": [
+    "projects",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Flow Assessment contract",
+   "resolution": "to be raised with Carl; meter ownership to be verified",
+   "quote": "barb noted we'd received the new flow assessment contract",
+   "tags": [
+    "flow meters",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Permits to connect",
+   "resolution": "noted",
+   "quote": "permits to connect issued since last meeting to 76 main st., 26,28,30, 32 riley rd.",
+   "tags": [
+    "permits"
+   ]
+  },
+  {
+   "topic": "Grease trap compliance",
+   "resolution": "letters sent 6/2; to next agenda",
+   "quote": "barb noted that the letters went out 6/2.",
+   "tags": [
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Capacity Fee Policy",
+   "resolution": "with counsel since 5/29; no action",
+   "quote": "barb noted that the capacity fee policy (carl) went to counsel 5/29 for review.",
+   "tags": [
+    "capacity fee"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 5/27/14 minutes; accepted 6/4/14 minutes as revised",
+   "quote": "barb noted the 4/29/14 minutes were on the agenda only to record their approval on 5/27/14 ",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "SWSS pump station reports",
+   "resolution": "reviewed",
+   "quote": "swss pump station reports for week ending 5/16, 5/23, 5/30 were reviewed.",
+   "tags": [
+    "pump stations",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "reviewed; Highfield Village hearing continued to 6/23; W&S invoice approved",
+   "quote": "business manager report- ytd budget fy14",
+   "tags": [
+    "budget",
+    "Highfield Village"
+   ]
+  },
+  {
+   "topic": "Commissioners comments",
+   "resolution": "no action",
+   "quote": "dave thanked jack for coming to the meeting and for",
+   "tags": [
+    "comments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:58 pm",
+   "quote": "dave asked for a motion to adjourn. butch made the motion",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft FY15 SWSS contract (new handout, SWSS)",
+   "where": "list",
+   "quote": "new handouts - swss - draft fy15 swss contract, callout review 6/10/14, swss generator report, prior fy14 contract"
+  },
+  {
+   "name": "Callout review 6/10/14 (new handout, SWSS)",
+   "where": "list",
+   "quote": "new handouts - swss - draft fy15 swss contract, callout review 6/10/14, swss generator report, prior fy14 contract"
+  },
+  {
+   "name": "SWSS Generator report",
+   "where": "list",
+   "quote": "new handouts - swss - draft fy15 swss contract, callout review 6/10/14, swss generator report, prior fy14 contract"
+  },
+  {
+   "name": "prior FY14 contract",
+   "where": "list",
+   "quote": "new handouts - swss - draft fy15 swss contract, callout review 6/10/14, swss generator report, prior fy14 contract"
+  },
+  {
+   "name": "I/I Building Inspection Summary 6/10/14 (Weston & Sampson)",
+   "where": "list",
+   "quote": "i/i building inspection summary 6/10/14, p.cotto n email 6/9/14"
+  },
+  {
+   "name": "P.Cotto n email 6/9/14",
+   "where": "list",
+   "quote": "i/i building inspection summary 6/10/14, p.cotto n email 6/9/14"
+  },
+  {
+   "name": "Revised 6/4/14 minutes",
+   "where": "list",
+   "quote": "revised 6/4/14 minutes, ytd fy14 budget sheet"
+  },
+  {
+   "name": "YTD FY14 Budget sheet",
+   "where": "list",
+   "quote": "revised 6/4/14 minutes, ytd fy14 budget sheet"
+  },
+  {
+   "name": "P. Cotton email 6/4/14",
+   "where": "list",
+   "quote": "p. cotton email 6/4/14, c. luck email re: lun v illage 5/29/14"
+  },
+  {
+   "name": "C. Luck email re: Lun V illage 5/29/14",
+   "where": "list",
+   "quote": "p. cotton email 6/4/14, c. luck email re: lun v illage 5/29/14"
+  },
+  {
+   "name": "Draft RFP of 6/5/14",
+   "where": "list",
+   "quote": "draft rfp of 6/5/14, flow meter email and report 4/26-5/25/14"
+  },
+  {
+   "name": "Flow Meter email and report 4/26-5/25/14",
+   "where": "list",
+   "quote": "draft rfp of 6/5/14, flow meter email and report 4/26-5/25/14"
+  },
+  {
+   "name": "sample Grease Trap letter sent 6/2/14",
+   "where": "list",
+   "quote": "sample grease trap le tter sent 6/2/14"
+  },
+  {
+   "name": "minutes of 5/27/14",
+   "where": "list",
+   "quote": "minutes of 5/27/14, 6/4/14"
+  },
+  {
+   "name": "minutes of 6/4/14",
+   "where": "list",
+   "quote": "minutes of 5/27/14, 6/4/14"
+  },
+  {
+   "name": "memo to Planning Board dated 6/9 (regarding 174 Northfield ANR)",
+   "where": "text",
+   "quote": "barb had sent a memo on 6/9"
+  },
+  {
+   "name": "RFP sent 6/9 for Lakeview/Pratt extension (Wright Pierce and Weston & Sampson)",
+   "where": "text",
+   "quote": "rfp was sent out 6/9 to wright pierce and weston & sampson"
+  },
+  {
+   "name": "Flow Assessment Contract (new)",
+   "where": "text",
+   "quote": "barb noted we'd received the new flow assessment contract"
+  },
+  {
+   "name": "Capacity Fee Policy",
+   "where": "text",
+   "quote": "barb noted that the capacity fee policy (carl) went to counsel 5/29 for review."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "SWSS contract FY15",
+  "generators",
+  "I/I inflow infiltration",
+  "Weston & Sampson",
+  "SCADA",
+  "grease trap",
+  "flow meters",
+  "Flow Assessment",
+  "budget FY14",
+  "minutes",
+  "Planning Board ANR",
+  "Whalom Luxury Apartments"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents in meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

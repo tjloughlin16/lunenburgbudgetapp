@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-06-29",
  "docid": "3547",
@@ -10,8 +10,216 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06292009-3547",
   "doc_url": "/docs/meetings/planning-board/2009-06-29-minutes-3547.pdf"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "PDF appears to have Unicode escape sequences in header (e.g., /U76 for 'v'); body text is readable. One procedural motion (hearing continuation) recorded and voted on. No vote count stated, but outcome marked as \"passed.\"",
- "cost_usd": 0.0176868
+ "votes": [
+  {
+   "motion": "Continue the Highfield Village public hearing to July 27, 2009, 7:00 PM.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mot ion was made to continue the hearing to july 27, 2009, 7::00 pm, mr. saiia, second, mr. bodkin, motion passed.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "The text is an extracted minutes page with garbled glyph codes (/U...) in the letterhead, so the letterhead is not recorded. Several words are split by extraction spaces (e.g. 'Marsde n'); quotes were chosen to avoid split words. No roll-call vote is recorded; the only vote is the motion to continue the hearing, passed with no count printed. No dollar figures appear in the minutes. The name 'James A. Hallo ran' is printed that way and the text also uses 'Mr. Halloran'. The minutes print the time as '7::00 PM'. Hearing recessed at 7:45 PM; audio recording is on file in the Planning Office.",
+ "cost_usd": 0.00397983,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "James A. Hallo ran",
+   "role": "Board member (as printed; also referred to as Mr. Halloran in the text)",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta"
+  },
+  {
+   "name": "Kent Oldfield",
+   "role": "representing the applicant (Boucher Construction, Leominster, MA)",
+   "status": "present",
+   "quote": "the applicant was represented by kent oldfield"
+  },
+  {
+   "name": "Steven Marsden",
+   "role": "Reviewing Engineer, Marsden Engineering",
+   "status": "present",
+   "quote": "reviewing engineer steven marsden, marsden"
+  },
+  {
+   "name": "Ann Marie Mead",
+   "role": "resident, 91 Maple Parkway (public)",
+   "status": "present",
+   "quote": "ann marie mead, 91 maple parkway, asked if, and"
+  },
+  {
+   "name": "David Colvin",
+   "role": "resident, 92 Maple Parkway (public)",
+   "status": "present",
+   "quote": "david colvin, 92 maple parkway asked if the sewer"
+  },
+  {
+   "name": "Pat Kelly",
+   "role": "resident, 117 Chase Road (public)",
+   "status": "present",
+   "quote": "pat kelly, 117 chase road asked if pope road was a walking trail."
+  },
+  {
+   "name": "Gary Kelly",
+   "role": "resident, 117 Chase Road (public)",
+   "status": "present",
+   "quote": "gary kelly asked if pope road would be used during construction."
+  },
+  {
+   "name": "Ronald Smith",
+   "role": "resident, 110 Old Farm Road (public)",
+   "status": "present",
+   "quote": "ronald smith, 110 old farm road noted"
+  },
+  {
+   "name": "Steve deBettencourt",
+   "role": "resident, 200 Pleasant Street (public)",
+   "status": "present",
+   "quote": "steve debettencourt inquired as to why another pump"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "resident, 50 Sunset Lane (public)",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane asked how pump station"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hearing to be continued because traffic plans are not finished; the Fire Chief and Police Chief are to review the intersections at a Tech Meeting before another hearing.",
+   "quote": "mr. marsde n noted both the fire chief and the police chief want to review the intersectio ns at a tech meeting prior to another hearing.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Chair asked for a motion to continue the hearing to the next Board meeting; the motion carried (see vote).",
+   "quote": "mr. bakaysa asked for a motion to continue hearing to the next board meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ann Marie Mead",
+   "stated_role": "91 Maple Parkway",
+   "topic": "sewer line along Maple Parkway",
+   "quote": "ann marie mead, 91 maple parkway, asked if, and"
+  },
+  {
+   "speaker": "David Colvin",
+   "stated_role": "92 Maple Parkway",
+   "topic": "sewer line distance from Maple Parkway",
+   "quote": "david colvin, 92 maple parkway asked if the sewer"
+  },
+  {
+   "speaker": "Pat Kelly",
+   "stated_role": "117 Chase Road",
+   "topic": "Pope Road walking trail, tower fall zone, emergency access",
+   "quote": "pat kelly, 117 chase road asked if pope road was a walking trail."
+  },
+  {
+   "speaker": "Gary Kelly",
+   "stated_role": "117 Chase Road",
+   "topic": "Pope Road use during construction, blasting near water tank",
+   "quote": "gary kelly asked if pope road would be used during construction."
+  },
+  {
+   "speaker": "Ronald Smith",
+   "stated_role": "110 Old Farm Road",
+   "topic": "Town strip and right of way to conservation land, signage on Northfield Road",
+   "quote": "ronald smith, 110 old farm road noted"
+  },
+  {
+   "speaker": "Steve deBettencourt",
+   "stated_role": "200 Pleasant Street",
+   "topic": "Wal-Mart access and reason for second pump station",
+   "quote": "steve debettencourt inquired as to why another pump"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "pump station location",
+   "quote": "carl luck, 50 sunset lane asked how pump station"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Highfield Village public hearing, Northfield Road/Massachusetts Avenue: revised plan under Section 5.6 Cluster Development and Development Plan Review under Section 8.4 for 66 dwelling units",
+   "resolution": "continued to July 27, 2009",
+   "quote": "the hearing was to hear and dis cuss a revised plan under section 5.6. cluster deve lopment",
+   "tags": [
+    "cluster development",
+    "subdivision",
+    "public hearing",
+    "continuance"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Legal advertisement published in the Sentinel and Enterprise on June 15 and June 22, 2009",
+   "where": "text",
+   "quote": "the legal advertisement published in the sentinel and enterprise on june 15"
+  },
+  {
+   "name": "Definitive Plan (Highfield Village, submitted under Section 5.6 Cluster Development)",
+   "where": "text",
+   "quote": "mr. oldfield noted this application is a definitive"
+  },
+  {
+   "name": "Traffic plans (MS Transportation System, Inc.)",
+   "where": "text",
+   "quote": "traffic plans are in-process with mr. scull y, ms transportation system, inc",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "public hearing",
+  "Highfield Village",
+  "cluster development",
+  "sewer",
+  "pump station",
+  "traffic",
+  "Pope Road",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

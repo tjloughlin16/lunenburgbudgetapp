@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2014-11-04",
  "docid": "1206",
@@ -12,31 +12,265 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the October 21, 2014 meeting",
-   "outcome": "approved",
-   "procedural": true,
+   "motion": "Approve the minutes of the October 21 CPC meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "the committee approved the minutes of the tuesday, october 21 cpc meeting."
   },
   {
-   "motion": "Include Dennis statement of goals followed by Joanna's description of procedures on the Capital Planning Committee website",
-   "outcome": "passed 5-0",
-   "procedural": false,
+   "motion": "That the Capital Planning Committee web site include Dennis's statement of goals, followed by Joanna's description of procedures.",
    "moved_by": "Heather",
    "seconded_by": "Dennis",
+   "outcome": "passed 5-0",
+   "procedural": false,
    "quote": "heather moved that the web site include dennis statement of goals, followed by joanna's description of procedures. dennis seconded her motion, and the committee approved the motion 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Joanna",
    "seconded_by": "Heather",
+   "outcome": "passed 5-0",
+   "procedural": true,
    "quote": "joanna moved to adjourn the meeting; heather seconded her motion, and the committee voted 5-0 to adjourn the meeting at 6:20 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR from macOS Vision. Three votes recorded: approval of prior minutes (outcome stated without vote count), website mission statement inclusion (5-0), and adjournment (5-0). Moved-by and seconded-by names are as printed in minutes (first names only where used).",
- "cost_usd": 0.0870395
+ "note": "OCR text. The Technology request table is scrambled in the extraction, so the item-to-cost alignment is uncertain; the printed total is $64,900. The Capital Planning Binder referenced for details was not provided. Votes were recorded without roll call. Joanna Bilotta-Simeone and Dennis Mannone, Jr. arrived late.",
+ "cost_usd": 0.00812912,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "joanna bilotta-simeone (late), john henshaw, dennis mannone, jr. (late), kerry speidel, heather sroka, jamie toale."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "joanna bilotta-simeone (late), john henshaw, dennis mannone, jr. (late), kerry speidel, heather sroka, jamie toale."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "joanna bilotta-simeone (late), john henshaw, dennis mannone, jr. (late), kerry speidel, heather sroka, jamie toale."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "joanna bilotta-simeone (late), john henshaw, dennis mannone, jr. (late), kerry speidel, heather sroka, jamie toale."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "joanna bilotta-simeone (late), john henshaw, dennis mannone, jr. (late), kerry speidel, heather sroka, jamie toale."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "",
+   "status": "present",
+   "quote": "joanna bilotta-simeone (late), john henshaw, dennis mannone, jr. (late), kerry speidel, heather sroka, jamie toale."
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "Presenter, Technology capital project requests",
+   "status": "present",
+   "quote": "technology capital project requests fy2016, an overview presented by steve malandrinos"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Chief, Fire Department (presenter)",
+   "status": "present",
+   "quote": "presented by chief patrick sullivan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to remove the link to the calendar on the Capital Planning Site; the town web site link goes to the CPC agendas instead.",
+   "quote": "the committee agreed remove the link. rather, this link on the town's web site goes to the cpc agendas."
+  },
+  {
+   "decision": "The CPC agreed to post the list of funded capital projects for FY2015 as approved at the Annual Town Meeting in early May 2014.",
+   "quote": "the cpc agreed to post the list of funded capital projects for fy2015 as approved at the annual town meeting early may, 2014."
+  },
+  {
+   "decision": "Jamie will ask Steve Malandrinos to make the mission statement additions to the CPC web site.",
+   "quote": "jamie will ask steve malandrinos to make these additions to the capital planning committee web site."
+  },
+  {
+   "decision": "Steve M. will correct the table listing future capital needs in Form B-2.",
+   "quote": "steve m. will correct the table"
+  },
+  {
+   "decision": "The CPC approved the suggestion that Jamie and John craft agendas for the November 18, December 2, and December 16 meetings; Jamie and John will send drafts to Dennis, Heather and Joanna before the November 18 meeting.",
+   "quote": "7. agendas through december 16. the cpc approved the suggestion that jamie and john craft"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2016 Technology capital requests",
+   "what_was_recorded": "Technology capital requests for FY2016 are totaled at $64,900, with individual figures printed for the items; one item has a four-year useful life and no change in operating costs.",
+   "figures_as_printed": [
+    "$30,000",
+    "$21,400",
+    "$13,500",
+    "$64,900"
+   ],
+   "quote": "to replace aging, outdated equipment. $21,400 | useful life: four years."
+  },
+  {
+   "topic": "Police capital request possibly eligible for grant",
+   "what_was_recorded": "The police department's $13,500 capital request was submitted to the Executive Director of Regional Dispatch because it may be eligible for a grant.",
+   "figures_as_printed": [
+    "$13,500"
+   ],
+   "quote": "kerry s. submitted the capital requests of the police department to the $13,500 executive director of regional dispatch as they may be eligible for a grant for this."
+  },
+  {
+   "topic": "Fire Department 4x4 pick-up truck replacement",
+   "what_was_recorded": "Request to replace a 12-year-old rusting snow-plowing truck, with a printed cost of $60,000 and no change in operating costs.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "to replace 12 year old, rusting truck used for snow plowing the public safety building, and for taking $60,000 equipment to emergency situations."
+  },
+  {
+   "topic": "Fire Department capital requests FY2017 to FY2020",
+   "what_was_recorded": "Fire Department capital requests from FY2017 to FY2020 total $1,860,000.",
+   "figures_as_printed": [
+    "$1,860,000"
+   ],
+   "quote": "fire department capital requests from fy2017 to fy2020 total $1,860,000."
+  },
+  {
+   "topic": "Town general capital spending",
+   "what_was_recorded": "As a general rule, the Town spends around $500,000 on capital projects each year.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "as a general rule, the town spends around $500,000 on capital projects each year."
+  },
+  {
+   "topic": "Fire Truck borrowing and annual payments",
+   "what_was_recorded": "The Town borrowed to buy the Fire Truck this fiscal year and will pay about $100,000 per year through FY2019.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the town borrowed to buy the fire truck this fiscal year and will be paying about $100,000 per year through fy2019."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 4:33 pm",
+   "quote": "1. meeting called to order by jamie toale at 4:33 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of October 21 minutes",
+   "resolution": "approved",
+   "quote": "the committee approved the minutes of the tuesday, october 21 cpc meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY2016 capital requests: Technology and Fire Departments",
+   "resolution": "reviewed as input for FY2016 Capital Improvement Plan",
+   "quote": "as input for the fy2016 capital improvement plan, the cpc reviewed capital project requests of",
+   "tags": [
+    "capital plan",
+    "technology",
+    "fire department",
+    "police"
+   ]
+  },
+  {
+   "topic": "Fire capital outlook and fire truck borrowing",
+   "resolution": "no action",
+   "quote": "fire department capital requests from fy2017 to fy2020 total $1,860,000.",
+   "tags": [
+    "capital plan",
+    "fire department",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Capital Planning Committee web site",
+   "resolution": "approved web site content order 5-0; link removed; FY2015 funded list to be posted",
+   "quote": "6. capital planning committee web site:",
+   "tags": [
+    "web site",
+    "mission statement"
+   ]
+  },
+  {
+   "topic": "Agendas through December 16",
+   "resolution": "approved suggestion; Jamie and John to draft agendas",
+   "quote": "7. agendas through december 16. the cpc approved the suggestion that jamie and john craft",
+   "tags": [
+    "agendas"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:20 pm, 5-0",
+   "quote": "adjournment: joanna moved to adjourn the meeting; heather seconded her motion, and the committee voted 5-0 to adjourn the meeting at 6:20 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Planning Binder",
+   "where": "list",
+   "quote": "(for details on the requests and for projected annual capital requirements from fy2017 through fy2021 refer to the capital planning binder.)"
+  },
+  {
+   "name": "Mission statements submitted by Dennis M. and Joanna",
+   "where": "text",
+   "quote": "dennis m. and joanna had submitted mission statements for the committee to consider for the web site."
+  },
+  {
+   "name": "Form B-2 (table of future capital needs)",
+   "where": "text",
+   "quote": "steve m. will correct the table"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY2016 capital improvement plan",
+  "technology",
+  "fire department",
+  "police",
+  "web site",
+  "agendas",
+  "minutes approval",
+  "grant"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "for details on the requests and for projected annual capital requirements"
+ },
+ "dropped_unquoted_by_field": {}
 }

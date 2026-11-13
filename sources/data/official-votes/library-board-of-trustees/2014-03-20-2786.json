@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-03-20",
  "docid": "2786",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Joanne",
    "seconded_by": "Robin",
    "outcome": "not stated",
@@ -21,6 +21,214 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote found. Approval of prior minutes not taken because February 20 minutes were not available.",
- "cost_usd": 0.0955405
+ "note": "Plain text, not a scan. No votes recorded except a motion to adjourn with no printed result. No dollar figures appear in the minutes. No public comment speakers (\"No public comments\"). The minutes are unsigned except for the secretary's typed name, and the February 20 minutes were not available for approval.",
+ "cost_usd": 0.00494502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Trustee, Secretary",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, joanne mcquaid, kathy murray, robin venezia, lars widstrand, kerry speidel (town manager)"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: lisa krowitz"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The February 20, 2014 minutes were not available and will be reviewed at the next meeting.",
+   "quote": "february 20 minutes were not available, will be reviewed next meeting."
+  },
+  {
+   "decision": "The next meeting is set for April 17 (Thursday).",
+   "quote": "next meeting in april 17th (thursday)"
+  },
+  {
+   "decision": "The chair asked that the Lunenburg Public Library Trustees be listed on the town website under the Boards and Committees tab.",
+   "quote": "jeanne asked to get the lunenburg public library trustees listed on the town website under the tab boards and committees."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2015 town budget and library share",
+   "what_was_recorded": "Town Manager discussed the FY2015 town budget and the library's share; minimum spending requirements likely to be met, but little wiggle room due to upcoming school projects.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel discussed the fy2015 town budget and the lunenburg public library's share of it."
+  },
+  {
+   "topic": "FY-2014 library budget status",
+   "what_was_recorded": "Budget is on track; some line items are high (heating) and others low (unbilled renewals), described as seasonal timing rather than discrepancies.",
+   "figures_as_printed": [],
+   "quote": "the budget is on track for fy-2014."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Town budget discussion with Town Manager",
+   "resolution": "discussed, no action",
+   "quote": "ms. speidel discussed the fy2015 town budget and the lunenburg public library's share of it.",
+   "tags": [
+    "town budget",
+    "FY2015",
+    "minimum spending"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "february 20 minutes were not available, will be reviewed next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed, no action",
+   "quote": "director's report for march 20, 2014, director's handout reviewed and discussed.",
+   "tags": [
+    "director's report",
+    "staffing",
+    "financials",
+    "collections",
+    "facilities",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Technology: network assessment",
+   "resolution": "noted as complete",
+   "quote": "re: network assessment complete",
+   "tags": [
+    "network",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Friends of LPL updates",
+   "resolution": "noted, no action",
+   "quote": "beverly guerin, president of friends is resigning, probably at annual meeting.",
+   "tags": [
+    "Friends of LPL",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Town Caucus report",
+   "resolution": "noted, no action",
+   "quote": "dick reported on the town caucus: two candidates (harry kubetz and susan visser) are on the ballot",
+   "tags": [
+    "trustee election",
+    "caucus"
+   ]
+  },
+  {
+   "topic": "Personnel subcommittee: Director's evaluation",
+   "resolution": "discussed, no action",
+   "quote": "two responses have been received by jeanne so far.",
+   "tags": [
+    "personnel",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Other: trustee resignation, lighting, new trustees, next meeting",
+   "resolution": "noted, no action",
+   "quote": "joanne mentioned that she would like to step down from the trustees due to work load and other engagements",
+   "tags": [
+    "trustee vacancy",
+    "LED lighting",
+    "next meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn made; result not printed",
+   "quote": "motion to adjourn made by joanne, second by robin at 8:36 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for March 20, 2014",
+   "where": "list",
+   "quote": "lplbot agenda for march 20, 2014"
+  },
+  {
+   "name": "Lunenburg Public Library, Director’s Report of March 20, 2014",
+   "where": "list",
+   "quote": "lunenburg public library, director's report of march 20, 2014."
+  }
+ ],
+ "tags": [
+  "library",
+  "town budget",
+  "FY2015",
+  "FY2014",
+  "trustees",
+  "trustee vacancy",
+  "trustee election",
+  "director's report",
+  "Friends of LPL",
+  "personnel evaluation",
+  "network",
+  "facilities",
+  "programs",
+  "LED lighting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

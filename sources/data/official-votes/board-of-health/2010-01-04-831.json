@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-01-04",
  "docid": "831",
@@ -12,23 +12,162 @@
  },
  "votes": [
   {
-   "motion": "Approve variances for well drilling at 25 May Street with conditions that the new well be drilled and casing advanced 50-70 feet into competent bedrock sealed with bentonite",
+   "motion": "Approve the variances for the new well at 25 May Street, with two conditions (drilled well; casing advanced 50-70 feet into bedrock and sealed with bentonite).",
    "moved_by": "Emond",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by emond and second by jewell, variances were approved with the following conditions: 1. the new well be a drilled well' 2. the new well casing shall be advanced 50-70 feet into competent bedrock and be sealed with bentonite. all in favor."
+   "quote": "after discussion and on motion by emond and second by jewell, variances were approved with the following conditions:"
   },
   {
-   "motion": "Approve variance requests for septic system at 64 Fire Road 12",
+   "motion": "Approve the variance requests for 64 Fire Road 12 (septic replacement and well replacement).",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by rabbitt, the variance requests were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the variance requests were approved. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; two substantive votes recorded.",
- "cost_usd": 0.0841345
+ "note": "Text is macOS Vision OCR and has errors: the first attendee line reads \"Emie San Dave Shea\" (it may be one or two names, so it is recorded as printed); \"Rabbit\" in attendance and \"Rabbitt\" in the Fire Road motion are both kept as printed; one sentence in the 64 Fire Road 12 paragraph is missing a word (\"The is a small\"). The \"Minutes Approved:\" header has no date or vote. Two adjournments appear (7:35 pm and 7:42 pm) with no motion recorded, so they are not listed as votes. Vote outcomes are \"passed\" because the minutes say \"All in favor\" or \"were approved\" with no count printed. The meeting header gives no roll-call vote counts.",
+ "cost_usd": 0.00393322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emie San Dave Shea",
+   "role": "",
+   "status": "present",
+   "quote": "present: emie san dave shea, george emond, perry jewell, jack rabbit and"
+  },
+  {
+   "name": "George Emond",
+   "role": "",
+   "status": "present",
+   "quote": "present: emie san dave shea, george emond, perry jewell, jack rabbit and"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: emie san dave shea, george emond, perry jewell, jack rabbit and"
+  },
+  {
+   "name": "Jack Rabbit",
+   "role": "",
+   "status": "present",
+   "quote": "present: emie san dave shea, george emond, perry jewell, jack rabbit and"
+  },
+  {
+   "name": "Louis Herman",
+   "role": "owner",
+   "status": "present",
+   "quote": "the owner, louis herman, met with the board to discuss drilling a new well at the above property."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "steve marsden met with the board on behalf of the owner. this system is in failure."
+  },
+  {
+   "name": "Lynn Klaft",
+   "role": "Assistant Town Clerk",
+   "status": "not stated",
+   "quote": "assistant town clerk lynn klaft send document to the board members via andrea schnepf."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed",
+   "quote": "title 5 inspection reports reviewed: 467 reservoir road 626 northfield road 233 new west townsend road",
+   "tags": [
+    "Title 5",
+    "septic inspections"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "no action (none signed)",
+   "quote": "septic permits signed: none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "25 May Street new well variance",
+   "resolution": "variances approved with conditions",
+   "quote": "the owner, louis herman, met with the board to discuss drilling a new well at the above property.",
+   "tags": [
+    "variance",
+    "well",
+    "lake front lot"
+   ]
+  },
+  {
+   "topic": "64 Fire Road 12 septic failure variance",
+   "resolution": "variances approved",
+   "quote": "steve marsden met with the board on behalf of the owner. this system is in failure.",
+   "tags": [
+    "variance",
+    "septic failure",
+    "well replacement"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law and conflict of interest acknowledgments",
+   "resolution": "signed, to be returned to Town Clerk",
+   "quote": "open meeting law acknowledgements as well of conflict of interest acknowledgments were signed and will be returned to ms. klaft.",
+   "tags": [
+    "open meeting law",
+    "conflict of interest"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 467 Reservoir Road",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 467 reservoir road 626 northfield road 233 new west townsend road"
+  },
+  {
+   "name": "Title 5 inspection report, 626 Northfield Road",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 467 reservoir road 626 northfield road 233 new west townsend road"
+  },
+  {
+   "name": "Title 5 inspection report, 233 New West Townsend Road",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 467 reservoir road 626 northfield road 233 new west townsend road"
+  },
+  {
+   "name": "Open Meeting Law Acknowledgements",
+   "where": "text",
+   "quote": "open meeting law acknowledgements as well of conflict of interest acknowledgments were signed and will be returned to ms. klaft."
+  },
+  {
+   "name": "Conflict of Interest Acknowledgments",
+   "where": "text",
+   "quote": "open meeting law acknowledgements as well of conflict of interest acknowledgments were signed and will be returned to ms. klaft."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "variance",
+  "well",
+  "septic",
+  "Title 5",
+  "open meeting law",
+  "conflict of interest"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

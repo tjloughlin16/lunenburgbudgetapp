@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2017-03-07",
  "docid": "718",
@@ -12,31 +12,243 @@
  },
  "votes": [
   {
-   "motion": "Approve two FY17 Personal Property abatements totaling $142.32",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "voted to approve both pp abatements totaling $142.32"
-  },
-  {
-   "motion": "Approve 14 FY17 Real Estate abatements totaling $13,905.13",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "voted to approve 14 re abatements totaling $13,905.13"
-  },
-  {
-   "motion": "Hold next meeting on April 4, 2017 at 5:45 pm",
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, the Jan. 10 2017 minutes and payroll (no mover or count printed).",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "board voted to meet on april 4, 2017 at 5:45 pm"
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, jan. 10 2017 minutes and payroll"
+  },
+  {
+   "motion": "Approve both PP abatements totaling $142.32 and 14 RE abatements totaling $13,905.13 (no mover or count printed).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "voted to approve both pp abatements totaling $142.32 and voted to approve 14 re abatements totaling $13,905.13"
+  },
+  {
+   "motion": "Approve the release of Chapter 61A for property at 108 Whiting St.; Map 61, Lot 50 (no mover or count printed).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "board reviewed and approved the release of chapter 61a for property located at 108 whiting st.; map 61, lot 50."
+  },
+  {
+   "motion": "Meet again on April 4, 2017 at 5:45 pm (no mover or count printed).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "board voted to meet on april 4, 2017 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes state approvals of various items (expense vouchers, warrants, commitments, minutes, payroll) but without explicit vote language in that opening statement. Only the three votes using explicit \"voted to approve\" or \"Board voted to\" language are recorded above.",
- "cost_usd": 0.10528749999999999
+ "note": "OCR text from a scanned page; some passages are garbled (the Chapter 61A paragraph, the date 'March 2*a', and the signature block reads 'Lauri Paguette' under '_ouIse Paquette', recorded here as Louise Paquette). No public comment is recorded. The meeting adjourned at 7:20 pm but no adjournment vote is printed, so none is recorded. The approval items have no mover, seconder or count printed. Heather Lemieux, Karen Brochu and Brian Pelletier appear only as participants in a March 2 meeting, not this one, so status is not stated. The Chapter 61B lien item has no printed dollar figure.",
+ "cost_usd": 0.00491602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey,"
+  },
+  {
+   "name": "Rebecca Boucher",
+   "role": "Regional Associate Assessor",
+   "status": "present",
+   "quote": "regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager, heather lemieux, lou franco and karen brochu met with brian pelletier of rrg regarding personal property services."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "town manager, heather lemieux, lou franco and karen brochu met with brian pelletier of rrg regarding personal property services."
+  },
+  {
+   "name": "Brian Pelletier",
+   "role": "RRG",
+   "status": "not stated",
+   "quote": "town manager, heather lemieux, lou franco and karen brochu met with brian pelletier of rrg regarding personal property services."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ten (10) residential RE abatement applications were denied.",
+   "quote": "ten (10) re abatement applications were denied."
+  },
+  {
+   "decision": "Louise to continue the 61B lien note: the Chapter 61B land tax lien will remain on the 200 Reservoir Road property while the owners wait to pay the rollback tax until the first lot sells.",
+   "quote": "the owners opted to wait on paying the rollback tax until selling the first lot. (the chapter 61b land tax lien will remain on the property)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY17 abatements (PP and RE)",
+   "what_was_recorded": "Board approved two FY17 personal property abatements totaling $142.32 and 14 FY17 real estate abatements totaling $13,905.13.",
+   "figures_as_printed": [
+    "$142.32",
+    "$13,905.13",
+    "$72.39",
+    "$69.93",
+    "$1,162.84"
+   ],
+   "quote": "voted to approve both pp abatements totaling $142.32 and voted to approve 14 re abatements totaling $13,905.13"
+  },
+  {
+   "topic": "MVE commitment",
+   "what_was_recorded": "Louise reported the MVE bills mailed 2/17/17: 11,620 bills for the 2017-01 commitment and 253 bills for the 2016-07 commitment.",
+   "figures_as_printed": [
+    "$1,352,748.75",
+    "$7,141.86"
+   ],
+   "quote": "total of 11620 bills = $1,352,748.75"
+  },
+  {
+   "topic": "200 Reservoir Road rollback tax",
+   "what_was_recorded": "Owners opted to wait on paying the rollback tax until the first of five certified building lots sells; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the owners opted to wait on paying the rollback tax until selling the first lot."
+  },
+  {
+   "topic": "FY18 personal property assessment services (RRG proposal)",
+   "what_was_recorded": "Town Manager plans to recommend $12,500+ above level service for the personal property assessment contract line item.",
+   "figures_as_printed": [
+    "$12,500+"
+   ],
+   "quote": "plans to recommend $12,500+ above level service for this line item."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approvals: vouchers, abatements, warrants, commitments, Jan. 10 2017 minutes, payroll",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, jan. 10 2017 minutes and payroll",
+   "tags": [
+    "approvals",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Abatement applications (FY17 PP and RE)",
+   "resolution": "approved 16 granted, 10 RE denied",
+   "quote": "voted to approve both pp abatements totaling $142.32 and voted to approve 14 re abatements totaling $13,905.13",
+   "tags": [
+    "abatements",
+    "personal property",
+    "real estate"
+   ]
+  },
+  {
+   "topic": "Release of Chapter 61A tax lien, 108 Whiting St.",
+   "resolution": "approved",
+   "quote": "board reviewed and approved the release of chapter 61a for property located at 108 whiting st.; map 61, lot 50.",
+   "tags": [
+    "chapter 61A",
+    "tax lien"
+   ]
+  },
+  {
+   "topic": "MVE commitment report",
+   "resolution": "no action",
+   "quote": "louise reported that the mve bills were mailed on 2/17/17 as follows:",
+   "tags": [
+    "motor vehicle excise"
+   ]
+  },
+  {
+   "topic": "200 Reservoir Road",
+   "resolution": "no action",
+   "quote": "becky reported that harald has been corresponding with the attorney handling communication with the owners regarding this property.",
+   "tags": [
+    "chapter 61B",
+    "rollback tax",
+    "land division"
+   ]
+  },
+  {
+   "topic": "Citizen Caucus and Board membership",
+   "resolution": "no action",
+   "quote": "louis franco's 3 year term is coming to an end in may and he stated that he wishes to continue to serve the board.",
+   "tags": [
+    "election",
+    "board membership"
+   ]
+  },
+  {
+   "topic": "FY18 budget: personal property assessment services",
+   "resolution": "no action",
+   "quote": "louise provided a copy of the rrc proposal for personal property assessment services to each board member.",
+   "tags": [
+    "FY18 budget",
+    "personal property",
+    "contract services"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "approved",
+   "quote": "board voted to meet on april 4, 2017 at 5:45 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "RRC Proposal for personal property assessment services",
+   "where": "text",
+   "quote": "louise provided a copy of the rrc proposal for personal property assessment services to each board member."
+  },
+  {
+   "name": "FY 17 RE ABATEMENTS GRANTED table",
+   "where": "text",
+   "quote": "fy 17 re abatements granted:"
+  },
+  {
+   "name": "FY17 PP ABATEMENTS GRANTED table",
+   "where": "text",
+   "quote": "fy17 pp abatements granted"
+  }
+ ],
+ "tags": [
+  "abatements",
+  "personal property",
+  "real estate",
+  "motor vehicle excise",
+  "chapter 61A",
+  "chapter 61B",
+  "tax lien",
+  "FY18 budget",
+  "assessment services",
+  "Board of Assessors"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "louise provided a copy of the rrc proposal"
+ },
+ "dropped_unquoted_by_field": {}
 }

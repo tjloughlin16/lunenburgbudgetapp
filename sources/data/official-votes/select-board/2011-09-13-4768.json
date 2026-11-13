@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-09-13",
  "docid": "4768",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to transfer the amounts as outlined by the Town Manager",
+   "motion": "Transfer the amounts as outlined by the Town Manager (Chapter 44 S 33B year-end transfers).",
    "moved_by": "Mr. Sund",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 3-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. sund motioned to transfer the amounts as outlined by the town manager. mr. debettencourt seconded. on vote, motion carried, 3 in favor, 0 opposed."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 3-0",
@@ -28,7 +28,217 @@
    "quote": "mr. debettencourt motioned to adjourn the meeting. mr. sund seconded. on vote, motion carried, 3 in favor, 0 opposed."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1152855
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned page set, with garbled characters (e.g. \"inspece\", \"20ü\") and a transfer table whose From and To columns do not align (eight From rows, seven To rows); amounts were recorded as printed. Stamped received/filed Aug 27 2012, though the meeting is dated 9/13/11. The minutes say \"(See Attached)\" for the FY11 close out report, but no attachment is in the text. Two votes recorded, both 3-0.",
+ "cost_usd": 0.0059389199999999994,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "absent",
+   "quote": "absent: paula bertram and tom alonzo."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "absent",
+   "quote": "absent: paula bertram and tom alonzo."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed the next regional dispatch meeting (Devens) should be held at Lunenburg Town Hall so it can be televised.",
+   "quote": "the board discussed and agreed that the next meeting should be held at lunenburg town hall so that it can be televised."
+  },
+  {
+   "decision": "Town Manager to research with Town Counsel whether the Town should take 925 Mass Ave through Tax Title.",
+   "quote": "she will research this further with town counsel."
+  },
+  {
+   "decision": "Town Manager to get clarification on whether the empty gas station tanks were filled with sand.",
+   "quote": "was not sure if they used sand or not and will get clarification."
+  },
+  {
+   "decision": "Missing BOS policies and procedures file to be forwarded to Mr. Sund when received; Town Manager to include the procedures in a document for the board to review.",
+   "quote": "they will be forwarded to mr. sund when they are received"
+  },
+  {
+   "decision": "No BOS meeting on September 20, 2011 (no quorum).",
+   "quote": "mr. matthews said that there will be no bos meeting on september 20"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY11 Budget Close Out Report and final year-end transfer request",
+   "what_was_recorded": "The Town Manager reviewed revenue and expenditure summaries in the FY11 close out report and requested Chapter 44 S 33B transfers; no totals are printed in the minutes beyond the transfer amounts.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel distributed and reviewed the fy11 budget close out report to the board, which included summaries of revenues and expenditures"
+  },
+  {
+   "topic": "Year-end Chapter 44 S 33B transfers",
+   "what_was_recorded": "Eight transfer amounts were listed for approval from several departmental accounts; the From and To columns as printed do not align (eight From rows, seven To rows).",
+   "figures_as_printed": [
+    "$4.28",
+    "$520.82",
+    "$4,436.20",
+    "$560.46",
+    "$1486.79",
+    "$2338.84",
+    "$1360.36",
+    "$152.00"
+   ],
+   "quote": "ms. speidel requested the bos approve chapter 44 s 33b transfers as follows:"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Three warrants were listed for approval with their totals.",
+   "figures_as_printed": [
+    "$356,574.23",
+    "$462,555.15",
+    "$647,201.09"
+   ],
+   "quote": "warrants - 9/13/11 w14-12 $356,574.23"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY11 year-end Chapter 44 S 33B transfers, from departmental accounts (Tax Collector's Administration, Town Accountant, Council on Aging, Lunenburg Public Library, Legal Expenses, Veterans Benefits) to accounts including Principal - Loans, Plumbing Inspector, Central Purchasing and Band Concerts.",
+   "amount_as_printed": "$4.28, $520.82, $4,436.20, $560.46, $1486.79, $2338.84, $1360.36, $152.00",
+   "outcome": "passed 3-0",
+   "quote": "ms. speidel requested the bos approve chapter 44 s 33b transfers as follows:"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ernie Sund",
+   "stated_role": "",
+   "topic": "Recognition of Caroline Porter's passing",
+   "quote": "ernie sund said that he would like to recognize the passing of caroline porter, wife of reserve officer paul porter"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, Pledge, public comment (condolence)",
+   "resolution": "no action; sympathy expressed",
+   "quote": "ernie sund said that he would like to recognize the passing of caroline porter"
+  },
+  {
+   "topic": "Review of FY11 Close Out; Final Year End Transfer Request",
+   "resolution": "approved transfers 3-0",
+   "quote": "ms. speidel distributed and reviewed the fy11 budget close out report to the board"
+  },
+  {
+   "topic": "BOS Policies & Procedures",
+   "resolution": "no action; missing file to be forwarded",
+   "quote": "they will be forwarded to mr. sund when they are received"
+  },
+  {
+   "topic": "Minutes, warrants, action file issues",
+   "resolution": "minutes none; warrants listed; action items discussed",
+   "quote": "warrants - 9/13/11 w14-12 $356,574.23"
+  },
+  {
+   "topic": "Action file: iPads and 925 Mass Ave gas station",
+   "resolution": "continued; Town Manager to research tax title and tank status",
+   "quote": "mr. sund would like the board to look into purchasing ipads for the board to use during meetings."
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reported; no action",
+   "quote": "mr. sund reported that there was a cable committee meeting last evening"
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "reported; no action",
+   "quote": "ms. speidel mentioned that the boy scouts held a flag raising ceremony at the center common"
+  },
+  {
+   "topic": "Town Manager updates (paving, pot holes)",
+   "resolution": "reported; no action",
+   "quote": "ms. speidel updated the board on the paving which has begun on lancaster avenue,"
+  },
+  {
+   "topic": "Regional dispatch at Devens meeting location",
+   "resolution": "agreed next meeting at Town Hall to be televised",
+   "quote": "the board discussed and agreed that the next meeting should be held at lunenburg town hall so that it can be televised."
+  },
+  {
+   "topic": "Server room relocation",
+   "resolution": "informational; no action",
+   "quote": "the \"server\" room has been moved down stairs to a more secure location at town hall."
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 7:50 p.m.",
+   "quote": "mr. debettencourt motioned to adjourn the meeting. mr. sund seconded. on vote, motion carried, 3 in favor, 0 opposed."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY11 Budget Close Out Report",
+   "where": "list",
+   "quote": "ms. speidel distributed and reviewed the fy11 budget close out report to the board, which included summaries of revenues and expenditures"
+  },
+  {
+   "name": "Warrants 9/13/11 W14-12, 9/14/11 W15-12, 9/15/11 6P-12",
+   "where": "text",
+   "quote": "warrants - 9/13/11 w14-12 $356,574.23"
+  },
+  {
+   "name": "BOS Policies & Procedures missing file (list of procedures)",
+   "where": "text",
+   "quote": "there was a missing file containing a list of procedures"
+  }
+ ],
+ "tags": [
+  "town budget",
+  "FY11 year-end",
+  "transfers",
+  "warrants",
+  "gas station 925 Mass Ave",
+  "tax title",
+  "regional dispatch",
+  "paving",
+  "committees",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. speidel distributed and reviewed"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

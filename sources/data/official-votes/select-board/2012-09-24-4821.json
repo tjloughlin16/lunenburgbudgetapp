@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-09-24",
  "docid": "4821",
@@ -12,58 +12,207 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of STM Article 1 regarding Board of Selectmen authority to enter alternative energy power purchase agreements",
+   "motion": "Recommend approval of STM Article 1 (alternative energy power purchase and net metering credit agreements).",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Alonzo",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bertram moved to recommend approval of stm article 1. mr. alonzo seconded. on vote motion carried, 4 in favor, o opposed.",
-   "quote_taken_from_text": true
+   "quote": "ms. bertram moved to recommend approval of stm article 1. mr. alonzo seconded. on vote motion carried, 4 in favor,"
   },
   {
-   "motion": "Recommend approval of STM Article 2 regarding PILOT agreement for renewable energy facility at 265 Pleasant Street",
+   "motion": "Recommend approval of STM Article 2 (PILOT agreement, 265 Pleasant Street).",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to recommend approval of stm article 2. ms. bertram seconded. on vote motion carried, 4 in favor, o opposed.",
-   "quote_taken_from_text": true
+   "quote": "mr. alonzo moved to recommend approval of stm article 2. ms. bertram seconded. on vote motion carried, 4 in favor,"
   },
   {
-   "motion": "Recommend approval of STM Article 3 regarding PILOT agreement for renewable energy facility at 651 Chase Road",
+   "motion": "Recommend approval of STM Article 3 (PILOT agreement, 651 Chase Road).",
    "moved_by": "Mr. Sund",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. sund moved to recommend approval of stm article 3. ms. bertram seconded. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. sund moved to recommend approval of stm article 3. ms. bertram seconded. on vote motion carried, 4 in favor, 0"
   },
   {
-   "motion": "Increase Lunenburg Public Library appropriation by $35,598 under Article 8",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
-   "procedural": false,
-   "quote": "i move that the town increase the appropriation for the operation of the lunenburg public library under line 82 of article 8 of the may 5, 2012 annual town meeting by $35,598"
-  },
-  {
-   "motion": "Recommend approval of STM Article 5 to grant permanent slope easement at 11 Rangeley Road",
+   "motion": "Recommend approval of STM Article 5 (permanent slope easement, 11 Rangeley Road).",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Alonzo",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bertram moved to recommend approval for stm article 5. mr. alonzo seconded. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "ms. bertram moved to recommend approval for stm article 5. mr. alonzo seconded. on vote motion carried, 4 in"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. alonzo moved to adjourn the meeting. unanimously to adjourn the meeting. meeting adjourned at 6:34pm. upcoming",
-   "quote_taken_from_text": true
+   "quote": "being no further business mr. alonzo moved to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision from scanned document; text is readable and complete.",
- "cost_usd": 0.11214849999999998
+ "note": "Meeting date supplied as 2012-09-24, but the minutes' date stamp reads 9/25/12 and the upcoming-schedule list names September 25, 2012 as the Special Town Meeting; the date is not reconciled here. The text is OCR and contains errors: 'O opposed' is read as zero, 'seheduled' and 'MGI' are misreads, and the absence line is out of order. The adjournment passage is garbled: the seconder is not clearly printed, and a stray line 'Ms. Bertram seconded. The board voted' sits near the end; no seconder is recorded for the adjournment. Article 4 was not voted on. The three Warrants figures are unlabeled and do not reconcile on their face. No public comment is recorded.",
+ "cost_usd": 0.005926919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "debettencourt. regular meeting opened 6:06 pm. absent was steven m."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board decided to strike the words \"no less than\" from the Article 2 and 3 wording, so the PILOT amount reads per MW for personal property plus an amount to be negotiated for real estate value.",
+   "quote": "the bos decided to strike the words \"no less than\" to read \"for $18,818.47 per mw, for personal property,"
+  },
+  {
+   "decision": "Board deferred its recommendation on STM Article 4 pending more information.",
+   "quote": "bos are waiting on more information before recommendation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "STM Article 2 PILOT, 265 Pleasant Street",
+   "what_was_recorded": "Article 2 proposes a 20-year PILOT at $18,818.47 per MW for personal property plus an amount to be negotiated for real estate value.",
+   "figures_as_printed": [
+    "$18,818.47 per MW",
+    "twenty (20) years"
+   ],
+   "quote": "for $18,818.47 per mw, for personal property plus an amount to be negotiated for real estate value, for a period of twenty"
+  },
+  {
+   "topic": "STM Article 3 PILOT, 651 Chase Road",
+   "what_was_recorded": "Article 3 proposes a 20-year PILOT at $18,818.47 per MW for personal property plus an amount to be negotiated for real estate value.",
+   "figures_as_printed": [
+    "$18,818.47 per MW",
+    "twenty (20) years"
+   ],
+   "quote": "for $18,818.47 per mw, for personal property plus an amount to be negotiated for real estate value, for a period of twenty"
+  },
+  {
+   "topic": "STM Article 4 Lunenburg Public Library appropriation",
+   "what_was_recorded": "Article 4 would increase the library operating appropriation under Line 82 of Article 8 of the May 5, 2012 Annual Town Meeting by $35,598; the board is awaiting more information.",
+   "figures_as_printed": [
+    "$35,598"
+   ],
+   "quote": "increase the appropriation for the operation of the lunenburg public library under line 82 of article 8 of the may 5, 2012 annual town meeting by $35,598"
+  },
+  {
+   "topic": "Warrants (agenda item 2)",
+   "what_was_recorded": "Three dollar figures are printed under the heading Warrants with no description of what they cover.",
+   "figures_as_printed": [
+    "$94,404.42",
+    "$662,646.12",
+    "$622,999.53"
+   ],
+   "quote": "2. warrants $94,404.42 $662,646.12 $622,999.53"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review Town Meeting Warrant Articles",
+   "resolution": "Recommendations voted on Articles 1, 2, 3 and 5 (4-0 each); wording of Articles 2 and 3 changed; Article 4 recommendation deferred",
+   "quote": "6:00pm review town meeting warrant articles:",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "PILOT",
+    "solar",
+    "easement",
+    "library"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "no action recorded; three figures printed",
+   "quote": "2. warrants $94,404.42 $662,646.12 $622,999.53",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:34PM",
+   "quote": "meeting adjourned at 6:34pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed Easement Plan (prepared for Tom and Mary Weisman, dated September 2012)",
+   "where": "text",
+   "quote": "\"proposed easement plan\", prepared for tom and mary weisman, dated september 2012, on file in the office of the town clerk"
+  },
+  {
+   "name": "Deed recorded at NWC Registry of Deeds Book 1732, Page 8",
+   "where": "text",
+   "quote": "described in a deed recorded at nwc registry of deeds book 1732, page 8"
+  },
+  {
+   "name": "Power Purchase Agreement for the facility",
+   "where": "text",
+   "quote": "the board of selectmen has entered into a power purchase agreement for the facility"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "PILOT",
+  "renewable energy",
+  "solar",
+  "library appropriation",
+  "easement",
+  "selectmen"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

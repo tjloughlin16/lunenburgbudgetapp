@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2017-02-06",
  "docid": "4667",
@@ -12,14 +12,21 @@
  },
  "votes": [
   {
-   "motion": "authorize the chairman of the committee to present a proposed PACC budget for FY18 to the town manager as discussed by the committee and report back at the next meeting",
+   "motion": "Approve the PACC section of the FY16 annual town report.",
+   "moved_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "went over the fy16 annual town report and a motion was made of the approvals of the pacc section of the town report."
+  },
+  {
+   "motion": "Authorize the chairman of the committee to present a proposed PACC budget for FY18 to the town manager as discussed and report back at the next meeting.",
    "moved_by": "Faith",
    "outcome": "passed",
    "procedural": false,
-   "quote": "faith made a motion to authorize the chairman of the committee to present a proposed pacc budget for fy18 to the town manager as discussed by the committee and report back at the next meeting."
+   "quote": "faith made a motion to authorize the chairman of the committee to present a proposed pacc budget for fy18"
   },
   {
-   "motion": "approve all forms for FY18 budget",
+   "motion": "Approve all forms for the FY18 budget.",
    "moved_by": "Faith",
    "outcome": "passed",
    "procedural": false,
@@ -27,6 +34,163 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11604850000000001
+ "note": "Text-only minutes, not a scan. The roll call records the meeting called to order at 7:06pm but no motion to open or adjourn is printed; adjournment at 8:25pm has no recorded motion. Item 13 records a motion on the FY16 town report with no mover and no result. The FY18 items say all motions were approved but give no vote counts. Minutes name no chair. Minutes are signed by the clerk, dated 3/29/2017.",
+ "cost_usd": 0.004804020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-members present",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee decided to review the January 9, 2017 minutes at the next meeting rather than approve them now.",
+   "quote": "committee decided to review the minutes to next meeting."
+  },
+  {
+   "decision": "Coordinator authorized a $1000 transfer into Emily’s PO from Equipment and Vendors.",
+   "quote": "authorized $1000 to transfer into emily's po from equipment and vendors."
+  },
+  {
+   "decision": "Jo will submit the FY16 town report PACC section to the town by Feb. 14.",
+   "quote": "jo will submit it to the town by feb."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly balance",
+   "what_was_recorded": "The report gives the current balance for January.",
+   "figures_as_printed": [
+    "$289,600.94"
+   ],
+   "quote": "current balance of jan is $289,600.94"
+  },
+  {
+   "topic": "Transfer into Emily’s PO",
+   "what_was_recorded": "The coordinator was authorized to transfer $1000 into Emily’s PO from Equipment and Vendors.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "authorized $1000 to transfer into emily's po from equipment and vendors."
+  },
+  {
+   "topic": "Tri caster 450 upgrade",
+   "what_was_recorded": "The tri caster 450 will no longer be supported and the upgrade is estimated at about $3000.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "upgrade will be about $3000."
+  },
+  {
+   "topic": "Fleece jackets",
+   "what_was_recorded": "A clothing supplier quoted fleece jackets at about $65 per jacket; the coordinator will look into t-shirts for spring and summer events.",
+   "figures_as_printed": [
+    "$65"
+   ],
+   "quote": "about $65 per jacket."
+  },
+  {
+   "topic": "FY18 PACC budget",
+   "what_was_recorded": "The committee authorized the chairman to present a proposed PACC FY18 budget to the town manager; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "faith made a motion to authorize the chairman of the committee to present a proposed pacc budget for fy18"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer into Emily’s PO from Equipment and Vendors",
+   "amount_as_printed": "$1000",
+   "outcome": "authorized",
+   "quote": "authorized $1000 to transfer into emily's po from equipment and vendors."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no action (no comments)",
+   "quote": "public comments: 1. no comments."
+  },
+  {
+   "topic": "Review and approve minutes of Jan 9, 2017",
+   "resolution": "continued to next meeting",
+   "quote": "committee decided to review the minutes to next meeting."
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "received; FY16 PACC town report section approved (no result recorded)",
+   "quote": "went over the fy16 annual town report and a motion was made of the approvals of the pacc section of the town report."
+  },
+  {
+   "topic": "FY18 Budget Review",
+   "resolution": "approved (chairman authorized to present budget; forms approved)",
+   "quote": "faith made a motion to approve all forms for fy18 budget."
+  },
+  {
+   "topic": "Cable Advisory Committee update",
+   "resolution": "no action; public encouraged to attend Comcast contract renewal meeting",
+   "quote": "they would like the public to attend the comcast contract renewal meeting and express their concerns."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:25pm",
+   "quote": "meeting adjourned at 8:25pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY16 annual town report (PACC section)",
+   "where": "text",
+   "quote": "went over the fy16 annual town report and a motion was made of the approvals of the pacc section of the town report."
+  },
+  {
+   "name": "FY18 budget forms",
+   "where": "text",
+   "quote": "faith made a motion to approve all forms for fy18 budget."
+  },
+  {
+   "name": "Meeting minutes from Jan 9, 2017",
+   "where": "text",
+   "quote": "review and approve meeting minutes from jan 9, 2017."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "budget",
+  "FY18 budget",
+  "FY16 town report",
+  "equipment",
+  "live broadcast",
+  "Comcast contract",
+  "transfer",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

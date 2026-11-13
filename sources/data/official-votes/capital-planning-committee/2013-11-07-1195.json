@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-11-07",
  "docid": "1195",
@@ -10,8 +10,190 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11072013-1195",
   "doc_url": "/docs/meetings/capital-planning-committee/2013-11-07-minutes-1195.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Approve the 10-30-13 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "10-30-13 minutes approved."
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "No votes formally recorded. The text states \"10-30-13 minutes approved\" but does not record it as a motion with a mover, seconder, or outcome. The remainder of the minutes describes discussion and planning activities with no formal motions voted upon.",
- "cost_usd": 0.0823385
+ "note": "Single-page extracted text. The approval of the 10-30-13 minutes is recorded with no mover, seconder, or tally, so it is recorded as passed without those fields. No adjournment motion is recorded (only 'Adjourned 11:05 AM.'), so it is not recorded as a vote. No public comment section appears. Figures do not fully agree: the breakdown lists laptops for PS at $21,000, while the narrative says replacing PS desktops with 40 laptops is $19,000. The Schools' Capital Plan is referred to in the text but is not set out as a document used, so no documents list is recorded.",
+ "cost_usd": 0.004758419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "representing the schools were superintendent loxi jo calmes, director of facilities and grounds john londa , and it director steve malandrinos."
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities and Grounds",
+   "status": "present",
+   "quote": "representing the schools were superintendent loxi jo calmes, director of facilities and grounds john londa , and it director steve malandrinos."
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "representing the schools were superintendent loxi jo calmes, director of facilities and grounds john londa , and it director steve malandrinos."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee requested a detailed spreadsheet from the IT Director.",
+   "quote": "committee requested detailed spreadsheet from it director."
+  },
+  {
+   "decision": "The Chair will request that the DPW Director also attend the next week's sessions.",
+   "quote": "ms. benson will request dpw director also be in attendance."
+  },
+  {
+   "decision": "The Library, Historical Commission, and Council on Aging were scheduled for the following week.",
+   "quote": "scheduled for next week are the library, historical commission, and the council on aging."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Schools technology request breakdown",
+   "what_was_recorded": "The Committee asked for a breakdown of the $65,000 technology request, which the minutes itemize as iPad carts, a netbook cart, laptops, and two media carts.",
+   "figures_as_printed": [
+    "$65,000",
+    "$12,000",
+    "$12,000",
+    "$17,000",
+    "$21,000",
+    "$3,000"
+   ],
+   "quote": "committee asked for breakdown of the $65,000."
+  },
+  {
+   "topic": "Mobile media carts and laptops",
+   "what_was_recorded": "The mobile media carts request is $65,000; two HS media carts at $1,500 each, and replacing PS desktops with 40 laptops at $19,000 are described.",
+   "figures_as_printed": [
+    "$65,000",
+    "$1,500 each",
+    "$19,000"
+   ],
+   "quote": "mobile media carts, $65,000 - see comments above."
+  },
+  {
+   "topic": "Windows-based front end controllers replacement, PS",
+   "what_was_recorded": "Replacement of Windows-based front end controllers at PS is listed as first priority at $14,000; the bulk of the cost is programming.",
+   "figures_as_printed": [
+    "$14,000"
+   ],
+   "quote": "for ps, $14,000- first priority."
+  },
+  {
+   "topic": "Asbestos replacement/abatement, THMS",
+   "what_was_recorded": "Phase I in FY15 at Turkey Hill Middle School is estimated at $138,000 to remove ceilings and abate friable asbestos on the first floor; Phase II in FY 16 would go to the second floor.",
+   "figures_as_printed": [
+    "$138,000"
+   ],
+   "quote": "asbestos replacement/abatement, thms, $138,000 - phase i in fy15"
+  },
+  {
+   "topic": "Shade structure",
+   "what_was_recorded": "A fixed shade structure on a concrete pad with three picnic tables is listed at $41,766; the Committee asked whether a canvas structure would be feasible and was told a fixed structure was proposed because canvas would need disassembly.",
+   "figures_as_printed": [
+    "$41,766"
+   ],
+   "quote": "shade structure, $41,766 - mounted on concrete pad with three picnic tables."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 10-30-13 minutes",
+   "resolution": "approved",
+   "quote": "10-30-13 minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Schools capital plan requests (technology, controllers, asbestos, shade structure)",
+   "resolution": "discussed; IT spreadsheet requested",
+   "quote": "representing the schools were superintendent loxi jo calmes, director of facilities and grounds john londa , and it director steve malandrinos.",
+   "tags": [
+    "schools",
+    "technology",
+    "asbestos",
+    "shade structure",
+    "FY15"
+   ]
+  },
+  {
+   "topic": "Upcoming schedule",
+   "resolution": "no action; next week's sessions set",
+   "quote": "scheduled for next week are the library, historical commission, and the council on aging.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Schools’ Capital Plan",
+   "where": "text",
+   "quote": "noting that the plan does not come before the committee until it has been approved by the school committee"
+  },
+  {
+   "name": "Detailed spreadsheet (requested from IT Director)",
+   "where": "text",
+   "quote": "committee requested detailed spreadsheet from it director."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "schools",
+  "technology",
+  "asbestos",
+  "shade structure",
+  "FY15",
+  "capital plan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

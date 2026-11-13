@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-01-10",
  "docid": "2303",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 12/13/2012",
+   "motion": "Accept the minutes of 12/13/2012.",
    "moved_by": "SG",
    "seconded_by": "BL",
    "outcome": "passed 7-0",
@@ -20,15 +20,275 @@
    "quote": "sg made a motion to accept the minutes of 12/13/2012. bl seconded, motion approved 7-0."
   },
   {
-   "motion": "Adjourn at 9:00",
+   "motion": "Adjourn the meeting at 9:00.",
    "moved_by": "BL",
    "seconded_by": "SR",
-   "outcome": "approved 7-0",
+   "outcome": "passed 7-0",
    "procedural": true,
    "quote": "bl motioned to adjourn at 9:00. sr seconded, approved 7-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision. Two procedural votes recorded: approval of prior minutes and adjournment.",
- "cost_usd": 0.0804035
+ "note": "OCR text of a typed minutes page; some characters are garbled (header line 'a11113', 'Mack tuchoo'). Minutes use initials for members and staff; names are recorded as printed. Mack tuchoo appears in the committee header but not in the Present list, so he is not recorded as attending. Kerry Speidel's and Karen Brochu's titles are not printed in these minutes. The minutes record no public comment. The 'Also Present' list has no roles printed.",
+ "cost_usd": 0.005201319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "B. Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "T. Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "J. Smith",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "J. Male",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "S. Gile",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "S. Raboin",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "K. Speidel",
+   "role": "",
+   "status": "present",
+   "quote": "k. speidel, k. brochu, s. mccaie, d. noble, m. moore"
+  },
+  {
+   "name": "K. Brochu",
+   "role": "",
+   "status": "present",
+   "quote": "k. speidel, k. brochu, s. mccaie, d. noble, m. moore"
+  },
+  {
+   "name": "S. McCaie",
+   "role": "",
+   "status": "present",
+   "quote": "k. speidel, k. brochu, s. mccaie, d. noble, m. moore"
+  },
+  {
+   "name": "D. Noble",
+   "role": "",
+   "status": "present",
+   "quote": "k. speidel, k. brochu, s. mccaie, d. noble, m. moore"
+  },
+  {
+   "name": "M. Moore",
+   "role": "",
+   "status": "present",
+   "quote": "k. speidel, k. brochu, s. mccaie, d. noble, m. moore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark will draft an outline of a possible FinCom submission to the Annual Town Report and run it by the Committee.",
+   "quote": "mark will draft an outline and run it by the committee."
+  },
+  {
+   "decision": "Committee members are asked to forward questions on the Tax Rate Recap and Budget Report to Mark for inclusion as future agenda items.",
+   "quote": "the committee is asked to forward any questions to mark for inclusion as future agenda items."
+  },
+  {
+   "decision": "SR will invite a speaker on energy audits.",
+   "quote": "sr will invite someone to speak about energy audits."
+  },
+  {
+   "decision": "Next meeting set for 1/24 at the Ritter building with land use departments.",
+   "quote": "1/24 meeting at the ritter building with land use departments"
+  },
+  {
+   "decision": "The 2/14 meeting was rescheduled to 2/7.",
+   "quote": "2/14 meeting was rescheduled to 2/7"
+  },
+  {
+   "decision": "The 2/28 meeting will be the first look at the new budget.",
+   "quote": "2/28 meeting will be first look at the new budget."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State mosquito project cost",
+   "what_was_recorded": "The cost to Lunenburg for the state mosquito project was reported as $58,003.",
+   "figures_as_printed": [
+    "$58,003"
+   ],
+   "quote": "the cost to lunenburg for the state mosquito project was $58,003."
+  },
+  {
+   "topic": "Legal expenses",
+   "what_was_recorded": "Legal expenses are running high due to active cases; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "legal expenses are running high due to active cases."
+  },
+  {
+   "topic": "Liability insurance and veterans retirement",
+   "what_was_recorded": "Ms Speidel noted some issues around liability insurance and veterans retirement; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "kerry speidel noted some issues around liability insurance and veterans retirement."
+  },
+  {
+   "topic": "State funding to towns",
+   "what_was_recorded": "Ms Speidel is expecting level state funding to towns; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms speidel is expecting level state funding to towns."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "1. meeting called to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Meet and greet with department heads",
+   "resolution": "informal discussion, no action",
+   "quote": "the treasurer/collector, eagle house director, and library director were present for an informal discussion of",
+   "tags": [
+    "departments",
+    "operations"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action; Annual Town Report, mosquito cost, publications circulated",
+   "quote": "the cost to lunenburg for the state mosquito project was $58,003.",
+   "tags": [
+    "annual town report",
+    "mosquito project",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 7-0",
+   "quote": "sg made a motion to accept the minutes of 12/13/2012. bl seconded, motion approved 7-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports only",
+   "quote": "sr reported that the capital planning committee has been meeting weekly and has met with all department heads at",
+   "tags": [
+    "capital planning",
+    "school building",
+    "police vehicle"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "reports; questions to be sent to Mark",
+   "quote": "karen brochu circulated copies of the tax rate recap and budget report for review.",
+   "tags": [
+    "tax rate",
+    "budget",
+    "legal expenses",
+    "state funding",
+    "forecast"
+   ]
+  },
+  {
+   "topic": "Budget opportunities",
+   "resolution": "no action; speaker to be invited on energy audits",
+   "quote": "sr will invite someone to speak about energy audits.",
+   "tags": [
+    "energy audits"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "dates set and one rescheduled",
+   "quote": "1/24 meeting at the ritter building with land use departments",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7-0",
+   "quote": "bl motioned to adjourn at 9:00. sr seconded, approved 7-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Municipal Financial Data booklet (current edition)",
+   "where": "list",
+   "quote": "the current editions of the municipal financial data booklet, municipal advocate, and the january beacon were circulated."
+  },
+  {
+   "name": "Municipal Advocate (current edition)",
+   "where": "list",
+   "quote": "the current editions of the municipal financial data booklet, municipal advocate, and the january beacon were circulated."
+  },
+  {
+   "name": "January Beacon (current edition)",
+   "where": "list",
+   "quote": "the current editions of the municipal financial data booklet, municipal advocate, and the january beacon were circulated."
+  },
+  {
+   "name": "Tax Rate Recap and Budget Report",
+   "where": "list",
+   "quote": "karen brochu circulated copies of the tax rate recap and budget report for review."
+  },
+  {
+   "name": "Annual Town Report",
+   "where": "text",
+   "quote": "the annual town report submissions are due february 25"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget",
+  "department heads",
+  "annual town report",
+  "capital planning",
+  "school building committee",
+  "legal expenses",
+  "state funding",
+  "energy audits",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the current editions of the municipal financial data booklet"
+ },
+ "dropped_unquoted_by_field": {}
 }

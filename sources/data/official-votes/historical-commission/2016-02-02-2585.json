@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-02-02",
  "docid": "2585",
@@ -12,13 +12,198 @@
  },
  "votes": [
   {
-   "motion": "Approve the January 6, 2016 and January 25, 2016 minutes",
-   "outcome": "approved",
+   "motion": "Approve the minutes of January 6, 2016 and January 25, 2016.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "january 6, 2016 and the january 25,2016 minutes were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One procedural vote recorded: approval of prior minutes. No other motions or votes appear in the minutes.",
- "cost_usd": 0.0896648
+ "note": "OCR text of two pages with received-and-filed stamps. The approval of the January minutes is recorded without a mover, seconder, or vote count. Adjournment is recorded without a motion. No public comment section is printed. No dollar figures appear in the text.",
+ "cost_usd": 0.004610019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, cullen dwyer and lois lewis"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, cullen dwyer and lois lewis"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, cullen dwyer and lois lewis"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, cullen dwyer and lois lewis"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, cullen dwyer and lois lewis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The demolition delay request for 203 West Townsend Road will be considered at the March 1, 2016 monthly scheduled meeting.",
+   "quote": "the request will be considered at the march 1, 2016 monthly scheduled meeting."
+  },
+  {
+   "decision": "Assigned the Historically Speaking articles for the Lunenburg Ledger by month, February through July, to named members.",
+   "quote": "the historically speaking articles for the lunenburg ledger are for:"
+  },
+  {
+   "decision": "Next meeting set for March 1, 2016 at 6:30 p.m. in the Ritter Building.",
+   "quote": "next meeting scheduled for march 1, 2016 @ 6:30 p.m. in the ritter building."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "North Cemetery town tomb restoration bond and insurance",
+   "what_was_recorded": "No bond is needed for the North Cemetery town tomb restoration, and town insurance coverage has been resolved with the town manager.",
+   "figures_as_printed": [],
+   "quote": "no bond is needed, and the town insurance coverage has been resolved with the town manager, kerry speidel."
+  },
+  {
+   "topic": "Community Preservation Act funding",
+   "what_was_recorded": "Described the Community Preservation Act as requiring residents to contribute to a fund based on a percentage of assessed property value, with some state support.",
+   "figures_as_printed": [],
+   "quote": "would require residents to contribute to a fund based on a certain percentage of the assessed value of the owner's real estate."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved January 6 and January 25, 2016 minutes",
+   "quote": "january 6, 2016 and the january 25,2016 minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action; no further information",
+   "quote": "kinder morgan letter on proposed pipe line. there was no further information.",
+   "tags": [
+    "correspondence",
+    "pipeline"
+   ]
+  },
+  {
+   "topic": "Demolition delay at 37 Burrage Street",
+   "resolution": "noted delay in effect",
+   "quote": "richard mcgrath said the demolition delay is in effect for the property at 37 burrage street.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "North Cemetery town tomb restoration",
+   "resolution": "discussed; no bond needed; insurance resolved; building condition still open",
+   "quote": "richard mcgrath has discussed the restoration of the north cemetery town tomb with the public works director of operations, jack rodriguenz.",
+   "tags": [
+    "North Cemetery",
+    "restoration"
+   ]
+  },
+  {
+   "topic": "Town Pound restoration",
+   "resolution": "discussed; Town offered assistance",
+   "quote": "the town pound is in need of some restoration especially for the stone walls.",
+   "tags": [
+    "town pound",
+    "restoration"
+   ]
+  },
+  {
+   "topic": "Historical markers",
+   "resolution": "suggested bronze circle plaque with year; notice in Ledger; missing markers reported",
+   "quote": "richard mcgrath reported some town markers are missing.",
+   "tags": [
+    "historical markers"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act",
+   "resolution": "information provided; discussed implications using Medford as example",
+   "quote": "amory phelps provided information about the community preservation act.",
+   "tags": [
+    "Community Preservation Act"
+   ]
+  },
+  {
+   "topic": "Walkabout within the District",
+   "resolution": "suggested to assist the Architectural Preservation District Commission",
+   "quote": "richard mcgrath suggested a \"walkabout\" within the district would be of assistance to the architectural preservation district commission.",
+   "tags": [
+    "architectural preservation district"
+   ]
+  },
+  {
+   "topic": "Demolition delay request at 203 West Townsend Road",
+   "resolution": "to be considered March 1, 2016",
+   "quote": "a demolition delay request has been received for the property at 203 west townsend road.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Historically Speaking articles",
+   "resolution": "monthly article assignments set February through July",
+   "quote": "the historically speaking articles for the lunenburg ledger are for:",
+   "tags": [
+    "Ledger",
+    "articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:10 p.m.",
+   "quote": "meeting adjourned at 8:10 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Kinder Morgan letter on proposed pipe line",
+   "where": "list",
+   "quote": "kinder morgan letter on proposed pipe line. there was no further information."
+  },
+  {
+   "name": "Demolition delay request for 203 West Townsend Road",
+   "where": "text",
+   "quote": "a demolition delay request has been received for the property at 203 west townsend road."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "North Cemetery",
+  "town pound",
+  "Community Preservation Act",
+  "historical markers",
+  "Ledger articles",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

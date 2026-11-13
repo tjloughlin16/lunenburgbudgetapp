@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-12-08",
  "docid": "699",
@@ -12,31 +12,348 @@
  },
  "votes": [
   {
-   "motion": "approve 10 Statutory Exemption applications totaling $5,750.00",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve the November 3, 2015 minutes, current expense vouchers, abatements, warrants, commitments and payroll.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "after reviewing the applications, the board voted to approve all 10 applications totaling $5,750.00."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "board reviewed and approved november 3, 2015 minutes, current expense vouchers, abatements, warrants, commitments & payroll."
   },
   {
-   "motion": "approve the recordings of the two liens",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve all 10 Statutory Exemption applications, totaling $5,750.00.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board voted to approve all 10 applications totaling $5,750.00."
+  },
+  {
+   "motion": "Approve the recordings of the lien releases for 1396 Mass Ave (partial release of the Chapter 61A Agricultural lien on 2.3 acres and release of the forestry land tax lien).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "the board reviewed the two liens and voted to approve the recordings."
   },
   {
-   "motion": "set the next meeting for Tuesday, January 5, 2016 at 5:45 pm",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the Personal Property and Real Estate tax bill warrants and commitments.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board reviewed and approved personal property and real estate tax bill warrants & commitments."
+  },
+  {
+   "motion": "Meet next on Tuesday, January 5, 2016 at 5:45 pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "the board voted to meet next on tuesday, january 5, 2016 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcription of meeting minutes. Three explicit votes recorded with \"voted to\" language.",
- "cost_usd": 0.1009585
+ "note": "OCR text from a scan. Pages 3-5 appear to be attachments (school project update, tax-impact insert, FY2017 Form of List letter) and contain OCR artifacts. No movers or seconders are printed for any motion, and no vote counts are printed. Adjournment at 7:25 pm is recorded without a vote. The Board is described as having reviewed the minutes and warrants 'approved' without a recorded motion; recorded as procedural votes. No public comment section is recorded. Harald Scheid's name appears as 'Harald' on page 1 and 'Haraid' on page 5 (OCR); recorded as 'Harald Scheid'.",
+ "cost_usd": 0.00719292,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board member, richard letarte,"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board member, richard letarte,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "regional assessor harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "board member, matt papini, sr., was not present."
+  },
+  {
+   "name": "Rebecca Boucher",
+   "role": "Associate Assessor",
+   "status": "not stated",
+   "quote": "associate assessor, rebecca boucher reviewed the property and stated that this parcel was split from"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOA signed all documentation regarding the tax rate recapitulation.",
+   "quote": "boa signed all documentation regarding tax rate recapitulation."
+  },
+  {
+   "decision": "The BOA reviewed and committed the Betterment and Special Assessments of $638,749.51 to be added to the annual FY16 taxes.",
+   "quote": "the boa reviewed and committed the betterment and special assessments in the amount of $638,749.51 to be added to the annual fy16 taxes."
+  },
+  {
+   "decision": "The BOA reviewed the Personal Property letter and suggested language to encourage property owners to be more accountable in returning the annual form.",
+   "quote": "the boa reviewed the personal property letter and suggested language that should encourage property owners to be more accountable in returning the annual form."
+  },
+  {
+   "decision": "Associate Assessor Rebecca Boucher will begin commercial property data verification inspections within the next couple of weeks.",
+   "quote": "associate rebecca boucher will begin commercial inspections within the next couple of weeks."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption applications",
+   "what_was_recorded": "Ten statutory exemption applications were approved, totaling the amount printed.",
+   "figures_as_printed": [
+    "$5,750.00"
+   ],
+   "quote": "the board voted to approve all 10 applications totaling $5,750.00."
+  },
+  {
+   "topic": "Veteran 22D exemption",
+   "what_was_recorded": "The Veteran 22D application approved last month, to be fully exempt from taxes, is the amount printed.",
+   "figures_as_printed": [
+    "$3,202.31"
+   ],
+   "quote": "louise reported that the veteran 22d application which was approved last month for taxes to be fully exempt is $3,202.31."
+  },
+  {
+   "topic": "Lien recording fees, 1396 Mass Ave",
+   "what_was_recorded": "Louise is waiting for recording fees in the amount printed.",
+   "figures_as_printed": [
+    "$150.00"
+   ],
+   "quote": "louise stated that she is waiting for the recording fees in the amount of $150.00."
+  },
+  {
+   "topic": "FY16 tax rate",
+   "what_was_recorded": "The tax rate was certified on 11/25/2015 at the rate printed per thousand.",
+   "figures_as_printed": [
+    "$19.61 per thousand"
+   ],
+   "quote": "louise reported that the tax rate of $19.61 per thousand was certified on 11/25/2015"
+  },
+  {
+   "topic": "FY16 personal property commitment",
+   "what_was_recorded": "Personal property bills commitment, with the FY15 comparison figure as printed.",
+   "figures_as_printed": [
+    "$687,884.12",
+    "$606,744.48"
+   ],
+   "quote": "personal property bills commitment is $687,884.12 (fy15 was $606,744.48)"
+  },
+  {
+   "topic": "FY16 real estate commitment",
+   "what_was_recorded": "FY16 actual real estate bills commitment, with the FY15 comparison and FY15 tax rate as printed.",
+   "figures_as_printed": [
+    "$22,836, 359.07",
+    "$20,397, 163.82",
+    "$18.32"
+   ],
+   "quote": "fy16 actual real estate bills commitment is $22,836, 359.07."
+  },
+  {
+   "topic": "FY15 real estate commitment and tax rate",
+   "what_was_recorded": "FY15 comparison figures for the real estate commitment and tax rate, as printed.",
+   "figures_as_printed": [
+    "$20,397, 163.82",
+    "$18.32"
+   ],
+   "quote": "(fy15 was $20,397, 163.82 - tax rate for fy15 was $18.32)"
+  },
+  {
+   "topic": "Betterment and special assessments",
+   "what_was_recorded": "Betterment and special assessments committed to be added to the FY16 annual taxes.",
+   "figures_as_printed": [
+    "$638,749.51"
+   ],
+   "quote": "the boa reviewed and committed the betterment and special assessments in the amount of $638,749.51 to be added to the annual fy16 taxes."
+  },
+  {
+   "topic": "Middle/High School project reimbursement from MSBA",
+   "what_was_recorded": "Total reimbursement the Town has received to date from the Massachusetts School Building Authority.",
+   "figures_as_printed": [
+    "$18,778,015"
+   ],
+   "quote": "the town has received reimbursement in the amount of $18,778,015 from the massachusetts school building"
+  },
+  {
+   "topic": "Middle/High School tax impact on average single family home",
+   "what_was_recorded": "The original FY2016 estimated tax increase for the average single family home was revised to the final amount printed.",
+   "figures_as_printed": [
+    "$351.26",
+    "$350.18"
+   ],
+   "quote": "the original estimate for tax increase for fy2016 for the average single family home for this project was $351.26."
+  },
+  {
+   "topic": "Average assessed valuation FY2016",
+   "what_was_recorded": "The average assessed valuation in Lunenburg for FY2016 is the amount printed.",
+   "figures_as_printed": [
+    "$256,969"
+   ],
+   "quote": "the average assessed valuation in lunenburg for fy2016 is $256,969."
+  },
+  {
+   "topic": "Remaining Middle/High School borrowing",
+   "what_was_recorded": "The Town expects to borrow about an additional amount in January 2016, with debt service to appear on the FY2017 tax bill.",
+   "figures_as_printed": [
+    "$5M"
+   ],
+   "quote": "the town expects to borrow the remainder of the town's share of the project costs, about an additional $5m, in january 2016."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes, vouchers, abatements, warrants, commitments and payroll",
+   "resolution": "approved",
+   "quote": "board reviewed and approved november 3, 2015 minutes, current expense vouchers, abatements, warrants, commitments & payroll.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Statutory exemption applications",
+   "resolution": "approved 10 applications",
+   "quote": "louise presented 10 statutory exemption applications to the boa to review.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Lien recordings for 1396 Mass Ave (Parcel 62-45)",
+   "resolution": "approved recordings",
+   "quote": "the board reviewed the two liens and voted to approve the recordings.",
+   "tags": [
+    "liens",
+    "property"
+   ]
+  },
+  {
+   "topic": "Tax rate recapitulation and FY16 bill warrants and commitments",
+   "resolution": "documents signed; warrants approved",
+   "quote": "boa signed all documentation regarding tax rate recapitulation.",
+   "tags": [
+    "tax rate",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Betterment and special assessments",
+   "resolution": "committed to FY16 taxes",
+   "quote": "the boa reviewed and committed the betterment and special assessments in the amount of $638,749.51 to be added to the annual fy16 taxes.",
+   "tags": [
+    "betterments"
+   ]
+  },
+  {
+   "topic": "FY17 Capital Five Year Plan",
+   "resolution": "no action; no capital requests proposed",
+   "quote": "harald reported receiving the fy17 capitol five year plan and stated that he submitted the completed",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "FY17 Personal Property Forms of List",
+   "resolution": "letter reviewed; language suggested",
+   "quote": "the boa reviewed the personal property letter and suggested language that should encourage",
+   "tags": [
+    "personal property"
+   ]
+  },
+  {
+   "topic": "FY2016 Valuation and Tax Summary pamphlet",
+   "resolution": "reviewed",
+   "quote": "harald reviewed with the boa the pamphlet, \"town of lunenburg valuation and tax summary\" for fiscal",
+   "tags": [
+    "valuation"
+   ]
+  },
+  {
+   "topic": "Commercial property inspections",
+   "resolution": "no vote; inspections to begin",
+   "quote": "associate rebecca boucher will begin commercial inspections within the next couple of weeks.",
+   "tags": [
+    "commercial",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Middle/High School project tax-impact insert (attached)",
+   "resolution": "no action",
+   "quote": "louise stated that kerry has added an insert to be mailed along with this year's 3° and 4* quarter",
+   "tags": [
+    "school building",
+    "tax impact"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for January 5, 2016",
+   "quote": "the board voted to meet next on tuesday, january 5, 2016 at 5:45 pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Middle/High School Building Project Update, December 2015",
+   "where": "list",
+   "quote": "middle/high school building project update, december 2015"
+  },
+  {
+   "name": "FY 2017 Form of List cover letter dated January 1, 2016 (Personal Property letter; file FOLletterLunenburgFY2017.docx)",
+   "where": "list",
+   "quote": "enclosed is a copy of a form of list that must be completed and returned to the board of assessors"
+  },
+  {
+   "name": "Town of Lunenburg Valuation and Tax Summary for Fiscal Year 2016 (pamphlet)",
+   "where": "text",
+   "quote": "harald reviewed with the boa the pamphlet, \"town of lunenburg valuation and tax summary\" for fiscal"
+  },
+  {
+   "name": "FY17 Capital Five Year Plan",
+   "where": "text",
+   "quote": "harald reported receiving the fy17 capitol five year plan and stated that he submitted the completed"
+  },
+  {
+   "name": "Plan 464/24",
+   "where": "text",
+   "quote": "\"mother\" parcel 62-50 in 2006 by plan 464/24."
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "tax rate",
+  "statutory exemptions",
+  "liens",
+  "personal property",
+  "betterments",
+  "school building project",
+  "commercial inspections",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached)"
+ },
+ "dropped_unquoted_by_field": {}
 }

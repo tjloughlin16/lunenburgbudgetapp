@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-05-03",
  "docid": "6171",
@@ -12,87 +12,471 @@
  },
  "votes": [
   {
-   "motion": "Issue a negative determination for septic system installation at 48 Oak Ridge Road",
+   "motion": "Issue a negative determination for the request for determination at 48 Oak Ridge Road (Bill Terrell).",
    "moved_by": "TD",
    "seconded_by": "KJ",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "td moved for a negative determination. kj seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the hearing to May 17th",
+   "motion": "Continue the Nancy Sullivan hearing at 28 Birch Island Way to May 17.",
    "moved_by": "KJ",
    "seconded_by": "CL",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "kj moved to continue to the 17th of may. cl seconded and the commission approved unanimously."
   },
   {
-   "motion": "Issue a negative determination for septic system upgrade at 894 Northfield Road",
+   "motion": "Issue a negative determination for the Paul Morin request at 894 Northfield Road.",
    "moved_by": "KJ",
    "seconded_by": "TD",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "kj moved to issue a negative determination. td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the hearing to May 17th",
+   "motion": "Continue the Jeffry Viviano amendment hearing at 338 Sunset Lane to May 17th.",
    "moved_by": "JR",
    "seconded_by": "TD",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "jr moved to continue to may 17th. td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Approve site plan starting with zone 5 with erosion protection at 121 Peninsula Drive",
+   "motion": "Approve the Jonathan Boyd Notice of Intent at 121 Peninsula Drive, starting with zone 5 with erosion protection.",
    "moved_by": "KJ",
    "seconded_by": "TD",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion to approve staring with zone 5 with erosion protection. by kj with a second by td and a unanimous vote to approve."
   },
   {
-   "motion": "Accept the amendment to previously approved driveway access at 667 Reservoir Road",
+   "motion": "Accept the amendment to the previously approved driveway access at 667 Reservoir Road (Paul Gougen).",
    "moved_by": "KJ",
    "seconded_by": "CL",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "kj moved to accept the amendment. cl seconded and the commission voted to unanimously approve."
   },
   {
-   "motion": "Approve an Order of Conditions for demolition and construction at 675 Reservoir Road",
+   "motion": "Approve an Order of Conditions for Gougen Construction at 675 Reservoir Road.",
    "moved_by": "KJ",
    "seconded_by": "CL",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "kj moved to approve an order of conditions. cl seconded and the commission voted unanimously."
   },
   {
-   "motion": "Refer wall construction at 183 Hemlock Drive to DEP for flood plain review",
+   "motion": "Refer the 183 Hemlock Dr wall construction in a flood plain to DEP.",
    "moved_by": "KJ",
    "seconded_by": "CL",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "referred to dep for the wall construction in a flood plain by motion of kj and a second by cl."
   },
   {
-   "motion": "Approve the forest stewardship management plans",
-   "moved_by": "KJ",
-   "seconded_by": "JR",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "after consideration kj moved to approve the stewardships plans. jr seconded and the commission voted unanimously."
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the forest stewardship plans presented by Gary Gouldrup.",
    "moved_by": "KJ",
    "seconded_by": "JR",
    "outcome": "passed",
+   "procedural": false,
+   "quote": "kj moved to approve the stewardships plans. jr seconded and the commission voted unanimously."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "KJ",
+   "seconded_by": "JR",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "the meeting was adjourned at 10pm : by motion of kj and a second by jr"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1023825
+ "note": "Extracted text, not a scan. Votes are recorded by motion and seconder with unanimous or unrecorded counts; no roll-call tallies are printed. The 183 Hemlock Dr referral has a motion but no printed result, so outcome is 'not stated'. Minutes approval for 3/1, 3/15, 3/29, 4/5 is listed as a heading with no motion. Internal inconsistencies: the Sullivan site walk is set for May 13 while continuance is to May 17; 'Jeff Vivano' appears in the discussion and 'Jeffry Viviano' in the hearing notice. Attendee roles for non-members are not printed. Several phrases are garbled in the text (e.g., '41467ext 431', 'EXISITING', 'staring'); quotes are copied as printed.",
+ "cost_usd": 0.010317720000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the meeting was called to order by chairman bursch with all members in attendance except mr. pease and mr. bertram."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "all members in attendance except mr. pease and mr. bertram."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "absent",
+   "quote": "except mr. pease and mr. bertram."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "member",
+   "status": "absent",
+   "quote": "except mr. pease and mr. bertram."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "present",
+   "quote": "all members in attendance except mr. pease and mr. bertram."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "all members in attendance except mr. pease and mr. bertram."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "present",
+   "quote": "all members in attendance except mr. pease and mr. bertram."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm recommended a site walk and that the meeting be continued."
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "not printed",
+   "status": "present",
+   "quote": "jack maloney oriented the commission as to the work and the relation to the wetland resource area."
+  },
+  {
+   "name": "Nancy Sullivan",
+   "role": "not printed",
+   "status": "present",
+   "quote": "nancy sullivan appeared to remove trees."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "not printed",
+   "status": "present",
+   "quote": "doug smith outlined the area in question, its relation to the wetland and the total scope of work"
+  },
+  {
+   "name": "Jeff Vivano",
+   "role": "not printed",
+   "status": "present",
+   "quote": "jeff vivano outlined his revised scope of work and his proposed tree, laurel and blue berry bushes"
+  },
+  {
+   "name": "Jonathan Boyd",
+   "role": "not printed",
+   "status": "present",
+   "quote": "jonathan boyd represented and he and mm narrated the areas that were cut with the areas that would be replanted."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "not printed",
+   "status": "present",
+   "quote": "chris anderson presented the commission a plan showing the previously approved house and driveway would be moved."
+  },
+  {
+   "name": "Gary Gouldrup",
+   "role": "not printed",
+   "status": "present",
+   "quote": "gary gouldrup did a final examination of all the wood stands and the management of them inclusive of cutting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Extension permit request for 250 Holman Street approved and signed.",
+   "quote": "extension permit request 250 holman street approved and signed."
+  },
+  {
+   "decision": "Lake Shirley Improvement Corporation appointment continued to allow further survey work.",
+   "quote": "appointment: lake shirley improvement corporation- continued to perform further survey work."
+  },
+  {
+   "decision": "Emerald Place Beach erosion item to stay open; Conservation Administrator to work with the engineer on alternatives, with a final proposal targeted for the next meeting.",
+   "quote": "mm working with engineer on alternative proposals. looking to have a final proposal for the next meeting."
+  },
+  {
+   "decision": "Wall request at 675 Reservoir Road removed from the plan and amendment; to be noted in both orders of condition, with phasing written into the Order.",
+   "quote": "it is noted that the request for the wall has been removed and is not valid on the plan or the amendment and will be noted in both orders of condition."
+  },
+  {
+   "decision": "Forestry action item to be added to the agent's report.",
+   "quote": "hearings/meetings/appointments scheduled for the 5/3/17 meeting- will add forestry action item to agents report."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Storm water planning grant",
+   "what_was_recorded": "The Storm water Committee reported that the Town received a grant for storm water planning.",
+   "figures_as_printed": [
+    "25000 dollar"
+   ],
+   "quote": "the town received a 25000 dollar improvement grant for storm water planning."
+  },
+  {
+   "topic": "Forest Stewardship Grant implementation",
+   "what_was_recorded": "Progress on Forest Stewardship Grant implementation was reported, with a forester's review of stands and a harvest rotation recommended over 20 years; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "forest stewardship grant implementation - progress- gary gouldrup did a final examination of all the wood stands"
+  },
+  {
+   "topic": "Budget update",
+   "what_was_recorded": "Budget update from the Treasurer was listed with no update given.",
+   "figures_as_printed": [],
+   "quote": "budget update/ treasurer comment- no update"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "JR",
+   "stated_role": "not printed",
+   "topic": "Hickory Hills EPA award and lake festival",
+   "quote": "jr noted that hickory hills won an award from epa for stewardship of the lake."
+  },
+  {
+   "speaker": "KJ",
+   "stated_role": "not printed",
+   "topic": "Pollinator habitat signage",
+   "quote": "kj noted that there is signage coming for the pollinator habitat."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "the meeting was called to order by chairman bursch with all members in attendance except mr. pease and mr. bertram.",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Announcements and public comment",
+   "resolution": "no action",
+   "quote": "jr noted that hickory hills won an award from epa for stewardship of the lake.",
+   "tags": [
+    "announcements",
+    "lake"
+   ]
+  },
+  {
+   "topic": "RFD, 48 Oak Ridge Road (Bill Terrell), septic upgrade",
+   "resolution": "negative determination",
+   "quote": "td moved for a negative determination. kj seconded and the commission voted unanimously.",
+   "tags": [
+    "septic",
+    "request for determination"
+   ]
+  },
+  {
+   "topic": "Hearing, 28 Birch Island Way (Nancy Sullivan), tree removal in buffer zone",
+   "resolution": "continued to May 17; site walk set for May 13",
+   "quote": "mm recommended a site walk and that the meeting be continued.",
+   "tags": [
+    "tree removal",
+    "buffer zone",
+    "continued"
+   ]
+  },
+  {
+   "topic": "RFD, 894 Northfield Road (Paul Morin), septic upgrade",
+   "resolution": "negative determination",
+   "quote": "kj moved to issue a negative determination. td seconded and the commission voted unanimously.",
+   "tags": [
+    "septic",
+    "erosion"
+   ]
+  },
+  {
+   "topic": "Continued hearing, 338 Sunset Lane (Jeffry Viviano), NOI amendment",
+   "resolution": "continued to May 17",
+   "quote": "jr moved to continue to may 17th. td seconded and the commission voted unanimously.",
+   "tags": [
+    "dock",
+    "tree house",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Continued hearing, 121 Peninsula Drive (Jonathan Boyd), tree clearing and landscaping",
+   "resolution": "approved",
+   "quote": "motion to approve staring with zone 5 with erosion protection.",
+   "tags": [
+    "tree clearing",
+    "landscaping",
+    "approved"
+   ]
+  },
+  {
+   "topic": "Amendment hearing, 667 Reservoir Road (Paul Gougen), driveway",
+   "resolution": "amendment accepted",
+   "quote": "kj moved to accept the amendment. cl seconded and the commission voted to unanimously approve.",
+   "tags": [
+    "driveway",
+    "amendment"
+   ]
+  },
+  {
+   "topic": "Continued hearing, 675 Reservoir Road (Gougen Construction), house demolition and rebuild",
+   "resolution": "Order of Conditions approved",
+   "quote": "kj moved to approve an order of conditions. cl seconded and the commission voted unanimously.",
+   "tags": [
+    "demolition",
+    "septic",
+    "driveway",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Appointment, Lake Shirley Improvement Corporation",
+   "resolution": "continued",
+   "quote": "appointment: lake shirley improvement corporation- continued to perform further survey work.",
+   "tags": [
+    "lake",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Current business, 43 Island Road as-built",
+   "resolution": "presented; no action recorded",
+   "quote": "hannigan engineering presented a draft as built for the commission to review.",
+   "tags": [
+    "as-built",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Current business, 183 Hemlock Dr wall in flood plain",
+   "resolution": "referred to DEP",
+   "quote": "referred to dep for the wall construction in a flood plain by motion of kj and a second by cl.",
+   "tags": [
+    "enforcement",
+    "flood plain",
+    "wall"
+   ]
+  },
+  {
+   "topic": "Current business, Emerald Place Beach erosion",
+   "resolution": "continued to next meeting",
+   "quote": "mm working with engineer on alternative proposals. looking to have a final proposal for the next meeting.",
+   "tags": [
+    "erosion",
+    "beach"
+   ]
+  },
+  {
+   "topic": "New business, 250 Holman Street extension and 70 Oak Ridge change request",
+   "resolution": "extension approved and signed; change request listed, no action recorded",
+   "quote": "extension permit request 250 holman street approved and signed.",
+   "tags": [
+    "extension permit",
+    "insignificant change"
+   ]
+  },
+  {
+   "topic": "Old business, Forest Stewardship Grant implementation",
+   "resolution": "stewardship plans approved",
+   "quote": "kj moved to approve the stewardships plans. jr seconded and the commission voted unanimously.",
+   "tags": [
+    "forestry",
+    "harvest",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, 3/1, 3/15, 3/29, 4/5",
+   "resolution": "listed; no action recorded",
+   "quote": "approval of 3/1,3/15,3/29, 4/5 minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports, Holman St property and storm water",
+   "resolution": "no report; storm water grant noted",
+   "quote": "the town received a 25000 dollar improvement grant for storm water planning.",
+   "tags": [
+    "stormwater",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "no budget update; forestry action item to be added",
+   "quote": "hearings/meetings/appointments scheduled for the 5/3/17 meeting- will add forestry action item to agents report.",
+   "tags": [
+    "agent report",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Communications and next meeting",
+   "resolution": "next meeting set for May 17, 2017",
+   "quote": "next meeting for may 17, 2017 at 7:00 pm in the billotta meeting room 2nd floor",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10 PM",
+   "quote": "the meeting was adjourned at 10pm : by motion of kj and a second by jr",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Amended narrative and sketch dated May 3, 2017 (338 Sunset Lane)",
+   "where": "list",
+   "quote": "document presented was an amended narrative and sketch dated may 3, 2017"
+  },
+  {
+   "name": "Plan by Hannigan Engineering entitled EXISITING CONDITIONS PLAN dated March 29, 2017, with corrected wording (675 Reservoir Road)",
+   "where": "list",
+   "quote": "document presented for consideration was a plan by hannigan engineering entitled exisiting conditions plan dated march 29, 2017"
+  },
+  {
+   "name": "Handout delineating proposed planting areas (338 Sunset Lane)",
+   "where": "text",
+   "quote": "coming for planting in the areas delineated on his handout."
+  },
+  {
+   "name": "Draft as-built plan presented by Hannigan Engineering (43 Island Road)",
+   "where": "text",
+   "quote": "hannigan engineering presented a draft as built for the commission to review."
+  },
+  {
+   "name": "Forest stewardship plans (Gary Gouldrup)",
+   "where": "text",
+   "quote": "kj moved to approve the stewardships plans. jr seconded and the commission voted unanimously."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "request for determination",
+  "notice of intent",
+  "order of conditions",
+  "public hearing",
+  "septic",
+  "tree removal",
+  "forest stewardship",
+  "stormwater grant",
+  "enforcement",
+  "continued hearings"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "document presented was an amended narrative and sketch dated may 3, 2017"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2015-08-20",
  "docid": "2959",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to accept the minutes with amendment",
+   "motion": "Accept the May 21, 2015 minutes as amended (amendment to Section 4 Financial Report wording).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed unanimously",
@@ -20,23 +20,299 @@
    "quote": "elizabeth murphy made a mo tion to accept the minutes with amendment; caroline fortin seconded. all were in favor, the motion passed unanimously."
   },
   {
-   "motion": "to accept the financials",
+   "motion": "Accept the financials (June/July financial report).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Elizabeth Murphy",
-   "outcome": "passed",
+   "outcome": "passed; all in favor",
    "procedural": false,
    "quote": "deborah christen made a motion to accept the financ ials. elizabeth murphy seconded; all were in favor."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:05 p.m.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Amaryllis Leet",
-   "outcome": "passed",
+   "outcome": "passed; all in favor",
    "procedural": true,
-   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:05 p.m. amaryllis leet seconded, all were in favor, and the meeting was adjourned."
+   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:05 p.m. amaryllis leet seconded, all were in favor, and the meeting was adjourned",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10491349999999999
+ "note": "Text is a layout extraction with split words (e.g. 'mo tion', 'financ ials', 'emerge ncy') and collapsed spacing; quotes preserve those splits as printed. Vote tallies are given only as 'all were in favor' or 'unanimously'; no numeric counts are printed. The Executive Director is referred to only as 'E.D.' and is not named. Resident participation speakers are mostly unnamed. No transfers recorded. The minutes contain no documents list heading.",
+ "cost_usd": 0.00659522,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "peter proulx, secretary"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "absent",
+   "quote": "paul doherty, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "E.D. to look into installing a power/automatic door to the community room.",
+   "quote": "the e.d. will look into this."
+  },
+  {
+   "decision": "Large window replacement to be placed in next year's Capital Improvement Plan; E.D. to ask DHCD to take a look.",
+   "quote": "this item will be in next year's capital improvement plan; he will ask dhcd to take a look."
+  },
+  {
+   "decision": "E.D. to send a copy of the current CIP to board members.",
+   "quote": "he will send a copy of the current cip to th e board members."
+  },
+  {
+   "decision": "E.D. to send the Chair a breakdown of the Administrative Other line.",
+   "quote": "he will send a list of breakdown to the chair, noted half way through the year we spent $6,000."
+  },
+  {
+   "decision": "E.D. to talk with Tony about having bushes trimmed as needed.",
+   "quote": "the e.d. will talk with tony to have bushes trimmed as needed."
+  },
+  {
+   "decision": "E.D. to discuss with Tony and Keith regular cleaning of the community room.",
+   "quote": "he will discuss with tony/keith about cleaning community room on regular basis."
+  },
+  {
+   "decision": "E.D. to look into the dumpster issues raised by residents.",
+   "quote": "side doors can't always be opened. the e.d. will look into."
+  },
+  {
+   "decision": "Tenant with vent behind stove to call the office for a work order; E.D. will send Keith.",
+   "quote": "the e.d. asked tenant call the office for a work order, will send keith."
+  },
+  {
+   "decision": "E.D. to check into whether snakes/reptiles are allowed.",
+   "quote": "snakes/reptiles allowed? the e.d. will check into this."
+  },
+  {
+   "decision": "E.D. to look into a resident parking both a car and a motorcycle on the property.",
+   "quote": "he will look into resident that parks both a car (#20) and a motorcycle"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves level",
+   "what_was_recorded": "Reserves reported at 67 percent, described as moving up quickly.",
+   "figures_as_printed": [
+    "67%"
+   ],
+   "quote": "reserves are at 67%. incredible, moving up quickly."
+  },
+  {
+   "topic": "Emergency generator purchase",
+   "what_was_recorded": "Board discussed possibly buying an emergency generator through reserves or year 3 of capital funding; no amount given.",
+   "figures_as_printed": [],
+   "quote": "we may want to think about purchasing an emerge ncy generator through reserves or year 3 of capital funding."
+  },
+  {
+   "topic": "Financial report bottom line and utilities",
+   "what_was_recorded": "Bottom line on page F3 reported, with utilities over budget by a stated amount.",
+   "figures_as_printed": [
+    "$10,222",
+    "$10,000"
+   ],
+   "quote": "page f3 - bottom line is $10,222. utilities ar e over by $10,000."
+  },
+  {
+   "topic": "Administrative Other spending",
+   "what_was_recorded": "Administrative Other described as miscellaneous supplies; about half way through the year $6,000 had been spent.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "noted half way through the year we spent $6,000."
+  },
+  {
+   "topic": "Ice melt bid",
+   "what_was_recorded": "E.D. reported the authority went out to bid for ice melt; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the e.d. noted we went out to bid for ice melt."
+  },
+  {
+   "topic": "Pet deposit",
+   "what_was_recorded": "Resident asked whether pets must be paid for; E.D. said there is a pet deposit and a 40 pound maximum for dogs.",
+   "figures_as_printed": [],
+   "quote": "do we have to pay for pets? the e.d. stated there was a pet deposit and 40 pound maximum for dogs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Community room power door",
+   "quote": "board member asked about possibility of installing a power/automatic door to the community room."
+  },
+  {
+   "topic": "Leaking windows and ice dams",
+   "quote": "when will windows be fixed so they don't leak, water coming in (lost curtains)."
+  },
+  {
+   "topic": "Replacing large windows",
+   "speaker": "Resident/Apt A-1",
+   "stated_role": "Resident",
+   "quote": "resident/apt a-1 asked about replacing the large windows."
+  },
+  {
+   "topic": "Pet fees and animal rules",
+   "quote": "do we have to pay for pets? the e.d. stated there was a pet deposit and 40 pound maximum for dogs."
+  },
+  {
+   "topic": "Parking spaces per unit",
+   "quote": "how many parking spaces per unit? one resident uses 3 spaces."
+  },
+  {
+   "topic": "Community room cleaning",
+   "quote": "who cleans community room? the e.d. replied maintenance cleans the day before the meeting"
+  },
+  {
+   "topic": "Carbon monoxide alarm",
+   "quote": "alarms went off - waited 15-20 minutes, then called 911. was carbon monoxide alarm, told to leave unit; needed new battery."
+  },
+  {
+   "topic": "Dumpster service and cleaning",
+   "quote": "keith said he would ask for new dumpster. didn't pick up for 4-5 days, smells."
+  },
+  {
+   "topic": "Vent behind stove",
+   "quote": "vent behind stove. took down to clean, can't clean it."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "discussed; E.D. follow-ups noted",
+   "quote": "resident participation prior to meeting:",
+   "tags": [
+    "residents",
+    "maintenance",
+    "pets",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened at 6:40 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:40 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of May 21, 2015 minutes",
+   "resolution": "approved as amended",
+   "quote": "elizabeth murphy made a mo tion to accept the minutes with amendment; caroline fortin seconded. all were in favor, the motion passed unanimously.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "informational; no action",
+   "quote": "3. the executive director report:",
+   "tags": [
+    "leasing",
+    "training",
+    "office space",
+    "smoke-free policy"
+   ]
+  },
+  {
+   "topic": "Financial Report (June/July)",
+   "resolution": "financials accepted",
+   "quote": "financial report (june/july):",
+   "tags": [
+    "finance",
+    "reserves",
+    "utilities",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Facilities Report",
+   "resolution": "no report",
+   "quote": "no report this month, the e.d. apologized.",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:05 p.m.",
+   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:05 p.m. amaryllis leet seconded, all were in favor, and the meeting was adjourned",
+   "tags": [
+    "procedure"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Current Capital Improvement Plan (CIP)",
+   "where": "text",
+   "quote": "he will send a copy of the current cip to th e board members."
+  },
+  {
+   "name": "Financial report, page F3",
+   "where": "text",
+   "quote": "page f3 - bottom line is $10,222."
+  },
+  {
+   "name": "Administrative Other breakdown list",
+   "where": "text",
+   "quote": "he will send a list of breakdown to the chair, noted half way through the year we spent $6,000."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "resident concerns",
+  "financial report",
+  "reserves",
+  "maintenance",
+  "capital improvement plan",
+  "board training",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

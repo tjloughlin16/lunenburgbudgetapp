@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-07-22",
  "docid": "3703",
@@ -12,41 +12,471 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from July 8, 2013",
+   "motion": "Approve the minutes of 7-8-13.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to approve, mr. lockwood, second, mr. mcquaid. minutes signed."
+   "quote": "minutes approval: 7-8-13, motion to approve, mr. lockwood, second, mr. mcquaid. minutes signed."
   },
   {
-   "motion": "Approve an extension for Highfield Village on Mass Avenue to August 13, 2013",
+   "motion": "Approve an extension of the Highfield Village, Mass Ave board extension to August 13, 2013.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Allison",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion to approve extension to august 13 th, mr. lockwood, second, mr. allison, roll call vote - mr. allison, aye; mr. bakaysa, aye; mr. mcquaid, aye; mr. lockwood, aye; ms. bilotta-simeone, aye. motion passed",
-   "quote_taken_from_text": true
+   "quote": "motion to approve extension to august 13 th, mr. lockwood, second, mr. allison, roll call vote"
   },
   {
-   "motion": "Create a bylaw for fall town meeting to place a one-year moratorium on marijuana clinics",
+   "motion": "Create a bylaw for the fall town meeting to put a one year moratorium on marijuana clinics.",
    "moved_by": "Mr. Allison",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion, mr. allison, to create a bylaw for the fall town meeting to put a year moratorium on marijuana clinics, second, mr. mcquaid, roll call vote - mr. allison, aye; mr. bakaysa, aye; mr. mcquaid, aye; mr . lockwood, aye; ms. bilotta -simeone, aye. motion passe",
-   "quote_taken_from_text": true
+   "quote": "motion, mr. allison, to create a bylaw for the fall town meeting to put a year moratorium on marijuana clinics, second, mr. mcquaid, roll call vote"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Bakaysa",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn, mr. bakaysa, second, mr. mcquaid, adjourned 9:05 pm"
+   "quote": "adjournment: motion to adjourn, mr. bakaysa, second, mr. mcquaid, adjourned 9:05 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0944765
+ "note": "Minutes are a text extraction with no dollar figures printed. The 7-8-13 minutes approval and the adjournment record a motion but no printed result, so outcome is 'not stated'. The Highfield extension roll call lists five ayes but the minutes print no count, so outcome is 'passed'. Executive session: no motion. The documents list is printed in two columns, so each entry quotes the joined line pair.",
+ "cost_usd": 0.010594220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood , damon mcquaid, emerick r. bakaysa , matthew allison, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood , damon mcquaid, emerick r. bakaysa , matthew allison, marion m. benson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood , damon mcquaid, emerick r. bakaysa , matthew allison, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood , damon mcquaid, emerick r. bakaysa , matthew allison, marion m. benson"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood , damon mcquaid, emerick r. bakaysa , matthew allison, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood , damon mcquaid, emerick r. bakaysa , matthew allison, marion m. benson"
+  },
+  {
+   "name": "John Hume",
+   "role": "Planning and Development Director",
+   "status": "present",
+   "quote": "presentation by john hume, planning and development director on the economic element of the master plan."
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "public comment: ms. bertram, 312 townsend harbor rod - noted gis is administered by the assessors' office"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Hume to research the question on the 40% of the workforce not covered by Table E-3 (workplaces other than the six listed).",
+   "quote": "are they from workplaces other than the six listed? mr. hume to research."
+  },
+  {
+   "decision": "Mr. Hume will check with the State on what made communities successful in getting 43D sites developed.",
+   "quote": "mr. hume will check with state."
+  },
+  {
+   "decision": "Board consensus was to approve the Highfield Village extension to August 13, with the applicant appearing at the August 12 meeting.",
+   "quote": "board consensus was to approve extension to august 13, 20 13 with the applicant appearing before the board at its august 12 th meeting."
+  },
+  {
+   "decision": "Planning Board Goals (revised per 6-24-13 discussion) to be reviewed and discussed at the 8-12-13 meeting.",
+   "quote": "planning board goals - revised per board discussion of 6-24-13. board to review and discuss at 8 -12-13 meeting."
+  },
+  {
+   "decision": "Ms. Benson to check with the Fire Chief on access to the rear of the Tri Town Landing buildings and whether access on three sides is sufficient.",
+   "quote": "ms. benson to check with fire chief to see if there is access to the rear of the buildings and/or if access on three sides is sufficient."
+  },
+  {
+   "decision": "A letter will be written to the Zoning Board of Appeals on the Whalom Road LLC/Lunenburg Village unit count.",
+   "quote": "letter will be written to zoning board of appeals as noted above under emerald place."
+  },
+  {
+   "decision": "Ms. Benson will set up a date for the Emerald Place developers to appear before the Board.",
+   "quote": "ms. benson will set up date for developers to appear before the board."
+  },
+  {
+   "decision": "Ms. Benson to find out the next School Reuse Committee meeting date and notify Mr. McQuaid.",
+   "quote": "ms. benson to find out when next meeting date is and notify mr. mcq uaid",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Ms. Benson is polling neighboring communities on whether they charge for extensions; more information at the next meeting.",
+   "quote": "ms. benson polling neighboring communities as to whether or not they charge for extensions."
+  },
+  {
+   "decision": "Mr. Lockwood will send Ms. Benson the Town Center Planning Discussion to forward to Mr. Hume, Mr. Allison and Mr. McQuaid.",
+   "quote": "the town center planning discussion previously compiled for her to forward to mr. hume, mr. allison and mr. mcquaid."
+  },
+  {
+   "decision": "The Board will proceed to put a one year moratorium bylaw in place while continuing to research.",
+   "quote": "board will proceed to put a one year moratorium bylaw in place while continuing to research."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax rates and utility costs compared with surrounding communities",
+   "what_was_recorded": "Board members asked how Lunenburg's tax levy rate and utility costs compare with other towns, and whether other towns use single or split commercial/industrial rates.",
+   "figures_as_printed": [],
+   "quote": "table e-13, lunenburg's tax levy 2009-2013 (with rate ) - is the rate per thousand of assessed value?"
+  },
+  {
+   "topic": "Reproduction cost of MJTC reports",
+   "what_was_recorded": "Board felt the MJTC was spending too much money reproducing reports in various languages.",
+   "figures_as_printed": [],
+   "quote": "felt mjtc was expending too much money in reproducing reports in various languages."
+  },
+  {
+   "topic": "Asbestos removal cost in school building renovations",
+   "what_was_recorded": "Board noted asbestos removal cost in building renovations and suggested a prisoner work crew if it would give a cost advantage; a qualified contractor is required for removal.",
+   "figures_as_printed": [],
+   "quote": "mr. lockwood noted asbestos removal cost in building renovations"
+  },
+  {
+   "topic": "Tri Town Landing 40S (school) reimbursement",
+   "what_was_recorded": "Ms. Benson is working with the Assessor and the State on 40S (school) reimbursement.",
+   "figures_as_printed": [],
+   "quote": "ms. benson working with mr. scheid, assessor, and the state on 40s (school) reimbursement."
+  },
+  {
+   "topic": "Fee schedule and extension charges",
+   "what_was_recorded": "Ms. Benson is polling neighboring communities on whether they charge fees for extensions for the Fee Schedule.",
+   "figures_as_printed": [],
+   "quote": "fee schedule- ms. benson polling neighboring communities as to whether or not they charge for extensions."
+  },
+  {
+   "topic": "Solar power purchase agreement at 651 Chase Road",
+   "what_was_recorded": "Board noted a news article reporting that the Board of Selectmen approved a power purchase agreement with NuGen Capital.",
+   "figures_as_printed": [],
+   "quote": "noted news article that states the board of selectmen approved a power purchase agreement with nugen capital."
+  },
+  {
+   "topic": "Brownfields grant options for L&M Service Center",
+   "what_was_recorded": "Ms. Bilotta-Simeone asked what could be done grant-wise for L&M Service Center at 925 Mass Ave; Brownfields Committee meets in September.",
+   "figures_as_printed": [],
+   "quote": "would like to know what could be done \"grant wise\" with l&m service center at 925 mass ave."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "",
+   "topic": "GIS administration and MEPA filing for Aro Estates",
+   "quote": "public comment: ms. bertram, 312 townsend harbor rod - noted gis is administered by the assessors' office and suggested mr. allison contact assessor harald scheid"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (7-8-13)",
+   "resolution": "approved and signed",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: 7-8-13, motion to approve, mr. lockwood, second, mr. mcquaid. minutes signed."
+  },
+  {
+   "topic": "MRPC Economic Element presentation",
+   "resolution": "presented; board questions; Hume to research items",
+   "tags": [
+    "master plan",
+    "economic development",
+    "MRPC"
+   ],
+   "quote": "presentation by john hume, planning and development director on the economic element of the master plan."
+  },
+  {
+   "topic": "Draft Citizen Survey",
+   "resolution": "discussed; suggestions made",
+   "tags": [
+    "citizen survey",
+    "outreach"
+   ],
+   "quote": "there was discussion of the draft citizen survey."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "tags": [
+    "committees"
+   ],
+   "quote": "mjtc, mr. allison - no august meeting. received gis data which office will forward to board."
+  },
+  {
+   "topic": "Planning Board Goals",
+   "resolution": "continued to 8-12-13 meeting",
+   "tags": [
+    "planning board goals"
+   ],
+   "quote": "planning board goals - revised per board discussion of 6-24-13. board to review and discuss at 8 -12-13 meeting."
+  },
+  {
+   "topic": "Planning Director's reports and development status",
+   "resolution": "reports received; Highfield Village extension approved",
+   "tags": [
+    "development",
+    "Highfield Village",
+    "Tri Town Landing",
+    "Emerald Place",
+    "Asian Imperial",
+    "Whalom Road"
+   ],
+   "quote": "stone farm estates- noted engineer review of administrative change for the development."
+  },
+  {
+   "topic": "Medical marijuana clinic moratorium",
+   "resolution": "motion passed; bylaw for fall town meeting",
+   "tags": [
+    "marijuana",
+    "moratorium",
+    "bylaw"
+   ],
+   "quote": "board will proceed to put a one year moratorium bylaw in place while continuing to research."
+  },
+  {
+   "topic": "Action file",
+   "resolution": "scanned to Board; no discussion",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "scanned to board; no discussion."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "dates listed",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "august 12 - 6:30 pm, town hall, will include appointment for highfield village"
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "no action; awaiting developer responses",
+   "tags": [
+    "PDFs",
+    "developers"
+   ],
+   "quote": "requested pdf's, current status- have been requested from developers; awaiting responses."
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action; GIS and town government questions",
+   "tags": [
+    "GIS",
+    "RFP",
+    "town government"
+   ],
+   "quote": "mr. allison inquired if the town has gis. yes, on the town web under the assessors."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received",
+   "tags": [
+    "GIS",
+    "MEPA",
+    "Aro Estates"
+   ],
+   "quote": "public comment: ms. bertram, 312 townsend harbor rod - noted gis is administered by the assessors' office"
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "not entered",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "executive session: board did not go into executive session"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:05 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: motion to adjourn, mr. bakaysa, second, mr. mcquaid, adjourned 9:05 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "North County Trust Newsletter",
+   "where": "list",
+   "quote": "north county trust newsletter mjtc handouts"
+  },
+  {
+   "name": "MJTC handouts",
+   "where": "list",
+   "quote": "north county trust newsletter mjtc handouts"
+  },
+  {
+   "name": "Planning Board Goals",
+   "where": "list",
+   "quote": "planning board goals school building cmte 6-18-13 meeting notes"
+  },
+  {
+   "name": "School Building Cmte 6-18-13 meeting notes",
+   "where": "list",
+   "quote": "planning board goals school building cmte 6-18-13 meeting notes"
+  },
+  {
+   "name": "Stone Farm Estates Engineer Review",
+   "where": "list",
+   "quote": "stone farm estates engineer review emerald place at lake whalom news article"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom news article",
+   "where": "list",
+   "quote": "stone farm estates engineer review emerald place at lake whalom news article"
+  },
+  {
+   "name": "Highfield Village Extension Request",
+   "where": "list",
+   "quote": "highfield village extension request epg solar news article"
+  },
+  {
+   "name": "EPG Solar news article",
+   "where": "list",
+   "quote": "highfield village extension request epg solar news article"
+  },
+  {
+   "name": "Highfield Village Chronological Order",
+   "where": "list",
+   "quote": "highfield village chronological order zba public hearing 305 leominster shirley rd"
+  },
+  {
+   "name": "ZBA Public Hearing 305 Leominster Shirley Rd",
+   "where": "list",
+   "quote": "highfield village chronological order zba public hearing 305 leominster shirley rd"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom Occupancy Certificates",
+   "where": "list",
+   "quote": "emerald place at lake whalom occupancy certificates sample rfp"
+  },
+  {
+   "name": "Sample RFP",
+   "where": "list",
+   "quote": "emerald place at lake whalom occupancy certificates sample rfp"
+  },
+  {
+   "name": "Whalom Road LLC Letter dated 6-27-13",
+   "where": "list",
+   "quote": "whalom road llc letter dated 6-27-13 harvard's gis tutorial"
+  },
+  {
+   "name": "Harvard's GIS Tutorial",
+   "where": "list",
+   "quote": "whalom road llc letter dated 6-27-13 harvard's gis tutorial"
+  },
+  {
+   "name": "651 Chase Rd news article",
+   "where": "list",
+   "quote": "651 chase rd news article 35 leominster road building official's status letter"
+  },
+  {
+   "name": "35 Leominster Road Building Official's status letter",
+   "where": "list",
+   "quote": "651 chase rd news article 35 leominster road building official's status letter"
+  },
+  {
+   "name": "Building Permits- 325 Sunnyhill Rd, 24, 22, 20, and 18 Riley Rd",
+   "where": "list",
+   "quote": "building permits- 325 sunnyhill rd, 24, 22, 20, and 18 riley rd school schematics"
+  },
+  {
+   "name": "School Schematics",
+   "where": "list",
+   "quote": "building permits- 325 sunnyhill rd, 24, 22, 20, and 18 riley rd school schematics"
+  },
+  {
+   "name": "ZBA Special Permits- 1501R Lancaster Avenue, 19, 27, and 39 Mass Ave",
+   "where": "list",
+   "quote": "zba special permits- 1501r lancaster avenue, 19, 27, and 39 mass ave economic development element draft inventory/analysis"
+  },
+  {
+   "name": "Economic Development Element Draft Inventory/Analysis",
+   "where": "list",
+   "quote": "zba special permits- 1501r lancaster avenue, 19, 27, and 39 mass ave economic development element draft inventory/analysis"
+  },
+  {
+   "name": "Draft Assessment of Lunenburg’s Current Economic Base – Economic Development Element",
+   "where": "list",
+   "quote": "draft assessment of lunenburg's current economic base - economic development element"
+  },
+  {
+   "name": "Video recording on file",
+   "where": "list",
+   "quote": "video recording on file. minutes/2013/07.22.13"
+  },
+  {
+   "name": "Draft Citizen Survey",
+   "where": "text",
+   "quote": "there was discussion of the draft citizen survey."
+  },
+  {
+   "name": "PowerPoint presentation (MRPC economic element)",
+   "where": "text",
+   "quote": "which were also in a powerpoint presentation"
+  },
+  {
+   "name": "Highfield Village extension request letter dated 7-19-13",
+   "where": "text",
+   "quote": "sent a letter dated 7-19-13 request"
+  },
+  {
+   "name": "Zoning Official's July 8, 2013 letter (35 Leominster Road)",
+   "where": "text",
+   "quote": "noted zoning official's july 8, 2013 letter stating he has conducted several inspections of the property"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "master plan",
+  "economic development",
+  "citizen survey",
+  "development status",
+  "Highfield Village",
+  "medical marijuana moratorium",
+  "Tri Town Landing",
+  "GIS",
+  "Brownfields",
+  "committee reports",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-11-07",
  "docid": "4650",
@@ -12,16 +12,143 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from September and October 2016",
-   "outcome": "approved",
+   "motion": "Approve the meeting minutes from September and October 2016.",
+   "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "review and approve meeting minutes from sept. and o ct. 2016. 1. committee reviewed and approved the minut",
-   "quote_taken_from_text": true
+   "quote": "committee reviewed and approved the minutes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09552550000000001
+ "note": "Text-only minutes, not a scan. The approval of the September and October 2016 minutes is recorded as \"Committee reviewed and approved the minutes\" with no mover, seconder or count. Adjournment at 7:30pm is recorded with no motion, so no vote is entered for it. The minutes are signed 12/14/16.",
+ "cost_usd": 0.00301392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall.",
+   "role": "PACC member"
+  },
+  {
+   "name": "Steve Walker",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall.",
+   "role": "PACC member"
+  },
+  {
+   "name": "Faith Beall",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall.",
+   "role": "PACC member"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin.",
+   "role": "Non-member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board will review the final changes to the business plan and send them to Steve before the next meeting.",
+   "quote": "the board will review and send the final changes to steve before the next meeting."
+  },
+  {
+   "decision": "The PACC would like to finalize the business plan.",
+   "quote": "the pacc would like to finalize the business plan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial report",
+   "what_was_recorded": "The coordinator reported the ending balance for October.",
+   "figures_as_printed": [
+    "$284,914.69"
+   ],
+   "quote": "financial report: ending balance in oct is $284,914.69"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comments: no comments."
+  },
+  {
+   "topic": "Approval of September and October 2016 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "noted",
+   "tags": [
+    "coordinator",
+    "equipment",
+    "storage",
+    "staffing",
+    "finance"
+   ],
+   "quote": "1. wireless microphones were installed in oct."
+  },
+  {
+   "topic": "Finance Committee and special town meeting",
+   "resolution": "no action",
+   "tags": [
+    "finance committee",
+    "special town meeting"
+   ],
+   "quote": "as of the moment, pacc does not have to meet with the finance committee to discuss our latest changes"
+  },
+  {
+   "topic": "CAC and budget update: business plan review",
+   "resolution": "continued",
+   "tags": [
+    "business plan",
+    "budget",
+    "CAC"
+   ],
+   "quote": "the pacc would like to finalize the business plan."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30pm; next meeting Dec 5th",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "next meeting is scheduled for dec 5 th ."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Business plan (draft)",
+   "where": "text",
+   "quote": "the pacc would like to finalize the business plan."
+  }
+ ],
+ "tags": [
+  "public access television",
+  "cable committee",
+  "coordinator report",
+  "equipment",
+  "video storage",
+  "business plan",
+  "budget",
+  "finance committee",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

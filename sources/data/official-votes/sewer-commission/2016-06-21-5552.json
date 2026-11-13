@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-06-21",
  "docid": "5552",
@@ -12,47 +12,313 @@
  },
  "votes": [
   {
-   "motion": "Elect Carl L. as Chair",
+   "motion": "Elect Carl L. as Chair.",
    "moved_by": "Sue B.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion: sue b. nominated carl l. as chair second: john r. vote: unanimous"
   },
   {
-   "motion": "Elect John R. as Vice Chair",
+   "motion": "Elect John R. as Vice-Chair.",
    "moved_by": "Sue B.",
    "seconded_by": "Carl L.",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion: sue b. nominated john r. as vice-chair second: carl l. vote: unanimous"
   },
   {
-   "motion": "Elect Sue B. as Clerk",
+   "motion": "Elect Sue B. as Clerk.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion: john r. nominated sue b. as clerk second: carl l. vote: unanimous"
   },
   {
-   "motion": "Grant waiver to pump once per year",
+   "motion": "Grant Jaxx Variety a waiver to pump once per year (owner's responsibilities).",
    "moved_by": "John R.",
    "seconded_by": "Sue B.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: john r. to grant waiver to pump once per year discussion: yes, owner's responsibilities second: sue b. vote: unanimous"
+   "quote": "motion: john r. to grant waiver to pump once per year discussion: yes, owner's responsibilities second: sue b."
   },
   {
-   "motion": "Accept the Betterment Assessment Proposal submitted by Weston and Sampson",
+   "motion": "Accept the Betterment Proposal submitted by Weston and Sampson.",
    "moved_by": "John R.",
-   "seconded_by": "Sue B.",
-   "outcome": "passed unanimously",
+   "seconded_by": "Sue B",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: john r. to accept the betterment proposal submitted by weston and sampson second: sue b vote: unanimous"
+  },
+  {
+   "motion": "Remove the paving from the Pratt, Rennie, Lakeview and Pleasantview contract, based on understanding that the Town will take up the cost of paving (Sue B. recused).",
+   "moved_by": "John R.",
+   "seconded_by": "Carl L.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: john r. up the cost of paving. to remove the paving from the pratt, rennie, lakeview and pleasantview based on understanding that town will take second: carl l. vote: unanimous"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:50pm.",
+   "moved_by": "John R.",
+   "seconded_by": "Sue B.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion: john r. to adjourn at 8:50pm respectfully submitted, enuly lehto emily lehto, minutes assistant second: sue b. vote: unanimous"
   }
  ],
- "dropped_unquoted": 2,
- "note": "OCR minutes. The paving removal motion had Sue B. recused from the vote; unanimous reflects all voting members in agreement.",
- "cost_usd": 0.1420925
+ "dropped_unquoted": 0,
+ "note": "Text is macOS Vision OCR of scanned pages with some lines out of order or garbled (e.g., the paving motion, and the adjournment motion split around the signature block). No roll call is printed, so commissioner attendance is inferred from their motions and votes. No public comment section is printed; the appearances were appointments. Pavement vote: Sue B. recused, and the vote is recorded as Unanimous. Outcome recorded as passed.",
+ "cost_usd": 0.00689182,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "role": "Chair",
+   "status": "present",
+   "quote": "nominated carl l. as chair"
+  },
+  {
+   "name": "John R.",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nominated john r. as vice-chair"
+  },
+  {
+   "name": "Sue B.",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "nominated sue b. as clerk"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  },
+  {
+   "name": "Alan Wernek",
+   "role": "representing Jaxx Variety",
+   "status": "present",
+   "quote": "alan wernek from jaxx variety had a waiver request."
+  },
+  {
+   "name": "Steve Pederson",
+   "role": "representing Weston and Sampson",
+   "status": "present",
+   "quote": "steve pederson from weston and sampson came to discuss the betterment assessment project."
+  },
+  {
+   "name": "Stan Dill",
+   "role": "representing Twin City Baptist",
+   "status": "present",
+   "quote": "stan dill from twin city baptist came before the commission to discuss the disconnection of a bay sink and a waiver request."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission requested a copy of the signed permit from the plumbing inspector (Twin City Baptist bay sink disconnection).",
+   "quote": "the commission requested a copy of the signed permit from the plumbing inspector."
+  },
+  {
+   "decision": "Clarification of the Small Water System Services pump station bid submittal will be requested.",
+   "quote": "clarification of the bid submittal will be requested and discussion followed on the bidding process."
+  },
+  {
+   "decision": "Crossroads (Brambila) was notified that the engineer must be certified.",
+   "quote": "they have been notified that the engineer must be certified."
+  },
+  {
+   "decision": "On SCADA, the Commission determined no action will be taken.",
+   "quote": "scada was discussed and it was determined no action will be taken."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pump stations FY17 Operations & Maintenance contract (Small Water System Services)",
+   "what_was_recorded": "The technical and price proposals were discussed and the Commission raised concerns; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the technical and price proposals from small water system services was discussed and some concerns were raised by the commission."
+  },
+  {
+   "topic": "Pavement plans - removal of paving from contract",
+   "what_was_recorded": "Paving was removed from the contract on the understanding that the Town will take up the cost of paving; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "to remove the paving from the pratt, rennie, lakeview and pleasantview based on understanding that town will take"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Election of officers (Chair, Vice-Chair, Clerk)",
+   "resolution": "elected Carl L. Chair, John R. Vice-Chair, Sue B. Clerk",
+   "tags": [
+    "governance",
+    "officers"
+   ],
+   "quote": "nominated carl l. as chair"
+  },
+  {
+   "topic": "Appointment - Jaxx Variety waiver request",
+   "resolution": "waiver granted to pump once per year",
+   "tags": [
+    "waiver",
+    "pumping",
+    "appointment"
+   ],
+   "quote": "alan wernek from jaxx variety had a waiver request. there is no longer cooking on the premise."
+  },
+  {
+   "topic": "Appointment - Weston and Sampson Betterment Assessment Project",
+   "resolution": "Betterment Proposal accepted",
+   "tags": [
+    "betterment assessment",
+    "engineering"
+   ],
+   "quote": "steve pederson from weston and sampson came to discuss the betterment assessment project."
+  },
+  {
+   "topic": "Appointment - Twin City Baptist bay sink disconnection and waiver",
+   "resolution": "requested copy of signed permit from plumbing inspector",
+   "tags": [
+    "disconnection",
+    "waiver",
+    "permit"
+   ],
+   "quote": "stan dill from twin city baptist came before the commission to discuss the disconnection of a bay sink and a waiver request."
+  },
+  {
+   "topic": "Unitil (357 Electric) concerns",
+   "resolution": "discussed briefly; no action recorded",
+   "tags": [
+    "utility",
+    "electric"
+   ],
+   "quote": "the commission briefly discussed unitil (357 electric) and some concerns they had."
+  },
+  {
+   "topic": "Pump stations - FY17 Operations & Maintenance contract",
+   "resolution": "concerns raised; clarification of bid to be requested",
+   "tags": [
+    "pump stations",
+    "contract",
+    "bidding"
+   ],
+   "quote": "pump stations - contract for fy17 operations & maintenance"
+  },
+  {
+   "topic": "Grease trap program - Small Water Systems proposal",
+   "resolution": "discussed; outstanding inspections and training noted",
+   "tags": [
+    "grease trap",
+    "contract"
+   ],
+   "quote": "grease trap program - small water systems, grease trap/interceptor proposal"
+  },
+  {
+   "topic": "Annual permit mailing",
+   "resolution": "reported; fourteen of twenty returned",
+   "tags": [
+    "permits",
+    "billing"
+   ],
+   "quote": "annual permit mailing - letters and invoices were sent on may 20t to all twenty accounts."
+  },
+  {
+   "topic": "Crossroads, Brambila non-compliance",
+   "resolution": "engineer must be certified; notified",
+   "tags": [
+    "compliance",
+    "engineering"
+   ],
+   "quote": "crossroads, brambila - the commission discussed their non-compliance"
+  },
+  {
+   "topic": "Manhole inspections",
+   "resolution": "final report reviewed; course of action discussed",
+   "tags": [
+    "manhole",
+    "inspection"
+   ],
+   "quote": "manhole inspections - the commission reviewed and discussed the final report that was received."
+  },
+  {
+   "topic": "Pavement plans",
+   "resolution": "paving removed from contract (Sue B. recused)",
+   "tags": [
+    "paving",
+    "contract"
+   ],
+   "quote": "pavement plans - the commission voted to remove paving portion from contract."
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "informational",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "june 28, 2016 7pm regular sewer commission meeting, town hall"
+  },
+  {
+   "topic": "Commissioners comments - SCADA",
+   "resolution": "no action",
+   "tags": [
+    "SCADA"
+   ],
+   "quote": "commissioners comments - scada was discussed and it was determined no action will be taken."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Twin City Baptist, signed by Gary Williams",
+   "where": "text",
+   "quote": "a letter that twin city baptist wrote and that gary williams signed was reviewed by the commission."
+  },
+  {
+   "name": "Betterment agreement (two copies)",
+   "where": "text",
+   "quote": "two copies of the agreement were provided to the commission."
+  },
+  {
+   "name": "Betterment Proposal submitted by Weston and Sampson",
+   "where": "text",
+   "quote": "to accept the betterment proposal submitted by weston and sampson"
+  },
+  {
+   "name": "Technical and price proposals from Small Water System Services",
+   "where": "text",
+   "quote": "the technical and price proposals from small water system services was discussed"
+  },
+  {
+   "name": "Final manhole inspection report",
+   "where": "text",
+   "quote": "the commission reviewed and discussed the final report that was received."
+  },
+  {
+   "name": "Weekly Reports (pump station)",
+   "where": "text",
+   "quote": "weekly reports were discussed next by the commission."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "officer elections",
+  "waiver",
+  "betterment assessment",
+  "pump stations",
+  "grease trap",
+  "permits",
+  "manhole inspection",
+  "paving",
+  "SCADA",
+  "Unitil"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

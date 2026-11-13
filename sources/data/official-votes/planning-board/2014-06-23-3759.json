@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-06-23",
  "docid": "3759",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to enter into public hearing for Highfield Village, Northfield Road",
+   "motion": "Enter into the Highfield Village public hearing (continued).",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "motion d. mcquaid, to enter into public hearing, second, n. lockwood. all aye."
   },
   {
-   "motion": "to endorse ANR Plan for 174 Northfield Road",
+   "motion": "Endorse the ANR Plan for 174 Northfield Road.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion to endorse anr plan, k. chenis, second, d. mcquaid, all aye. plan endorsed."
+   "quote": "motion to endorse anr plan, k. chenis, second, d. mcquaid, all aye."
   },
   {
-   "motion": "to approve minutes of June 9, 2014",
+   "motion": "Approve the minutes of 6-9-14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
    "outcome": "not stated",
@@ -36,23 +36,357 @@
    "quote": "motion, d. mcquaid, to approve 6-9-14, second, n. lockwood."
   },
   {
-   "motion": "to approve June 9, 2014 Highfield Village hearing minutes",
+   "motion": "Approve the 6-9-14 Highfield Village Hearing minutes.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, n. lockwood, to approve 6-9-14 highfield village hearing, second, d. mcquaid ."
+   "quote": "motion, n. lockwood, to approve 6-9-14 highfield village hearing, second, d. mcquaid"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, d. mcquaid to adjourn, second, n. lockwood, adjourned 9:15 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Five votes recorded. Two minutes-approval motions (second and third) have no stated outcome in the minutes; the record only shows the motion and second without an explicit vote result.",
- "cost_usd": 0.0264739
+ "note": "Text is clean extracted minutes with no scan issues. Vote results are not printed for the two minutes-approval motions or the adjournment motion, so they are recorded as 'not stated'. The separate Highfield Village hearing continuation minutes are referenced but not included in this text. The DPW Director is referenced but not named, so he is not listed as an attendee.",
+ "cost_usd": 0.00789252,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, chantell fleck, mrpc"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, chantell fleck, mrpc"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, chantell fleck, mrpc"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, chantell fleck, mrpc"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, chantell fleck, mrpc"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "Reviewing engineer, Whitman and Bingham Associates (WBA)",
+   "status": "present",
+   "quote": "reviewing engineer anthony cleaves, whitman and bingham associates (wba) went through a follow-up review"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident david rodgers noted his letter to the planning board regarding discrepancies on the new school"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Bilotta-Simeone and C. Fleck will meet with the DPW Director to get the DPW Director's input on school project waivers.",
+   "quote": "j. bilotta -simeone and c. fleck will meet with the dpw director to get his input."
+  },
+  {
+   "decision": "Consensus to send a letter to the Board of Selectmen saying the Board supports whatever the Conservation Commission and the Open Space Committee recommend on 145 Page Street (ROFR).",
+   "quote": "consensus is to send letter to board of selectmen noting the board supports whatever the conservation commission and the open space committee recommend."
+  },
+  {
+   "decision": "Year-end encumbrances were signed by the Board in the absence of a Planning Director.",
+   "quote": "year-end encumbrances- signed by board in the absence of a planning director."
+  },
+  {
+   "decision": "Board requested that C. Fleck forward a charrette sample to the Board.",
+   "quote": "board requested c. fleck forward them a charrette sample."
+  },
+  {
+   "decision": "C. Fleck will send the State Village model to the Board.",
+   "quote": "c. f leck will send the state village model to the board.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Schedule a meeting to create the agenda to vet some visions for the Town Center bylaw.",
+   "quote": "schedule meeting to create the agenda to vet some visions for the town center bylaw."
+  },
+  {
+   "decision": "The Open Space Committee representation issue will be brought up with the incoming member.",
+   "quote": "it will be brought up with the incoming member."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Year-end encumbrances",
+   "what_was_recorded": "The Board signed the year-end encumbrances in the absence of a Planning Director; no dollar figures are printed.",
+   "quote": "year-end encumbrances- signed by board in the absence of a planning director.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Resident David Rodgers",
+   "stated_role": "Resident",
+   "topic": "Letter on school plan discrepancies and Town Bylaws",
+   "quote": "resident david rodgers noted his letter to the planning board regarding discrepancies on the new school plan and the lunenburg town bylaws."
+  },
+  {
+   "speaker": "Mr. Rodgers",
+   "stated_role": "",
+   "topic": "Parking and drainage concerns on school project",
+   "quote": "mr. rodgers again expressed his concern over insufficient parking and drainage."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; letter noted",
+   "quote": "resident david rodgers noted his letter to the planning board regarding discrepancies on the new school",
+   "tags": [
+    "public comment",
+    "school plan",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Highfield Village public hearing (continued)",
+   "resolution": "entered hearing; see separate minutes",
+   "quote": "highfield village, northfield road - see separate minutes.",
+   "tags": [
+    "Highfield Village",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "MS/HS Project update",
+   "resolution": "follow-up review discussed; waivers to be reviewed with DPW Director",
+   "quote": "reviewing engineer anthony cleaves, whitman and bingham associates (wba) went through a follow-up review",
+   "tags": [
+    "MS/HS project",
+    "school",
+    "waivers",
+    "drainage",
+    "parking"
+   ]
+  },
+  {
+   "topic": "ANR, 174 Northfield Road",
+   "resolution": "endorsed",
+   "quote": "anr, 174 northfield road- motion to endorse anr plan",
+   "tags": [
+    "ANR",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made to approve 6-9-14 minutes; result not printed; 6-16-14 and 6-18-14 not available",
+   "quote": "motion, d. mcquaid, to approve 6-9-14, second, n. lockwood.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "a public meeting will be held with abutters on june 25th, 6:00 pm, passios.",
+   "tags": [
+    "committees",
+    "school building committee",
+    "building reuse",
+    "MJTC",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Board vacancy and Open Space Committee",
+   "resolution": "talent bank open until June 30; interviews July 14",
+   "quote": "talent bank forms being accepted for the board vacancy until june 30th.",
+   "tags": [
+    "board vacancy",
+    "open space committee"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "reports received",
+   "quote": "force corporation, 305 leominster shirley road- j. bilotta-simeone noted septic completed.",
+   "tags": [
+    "development status",
+    "Force Corporation",
+    "Definitive Subdivision",
+    "Whites Woods",
+    "Emerald Place",
+    "solar",
+    "White Tail Crossing"
+   ]
+  },
+  {
+   "topic": "145 Page Street, Right of First Refusal",
+   "resolution": "consensus to send letter to Board of Selectmen",
+   "quote": "consensus is to send letter to board of selectmen noting the board supports whatever the conservation commission and the open space committee recommend.",
+   "tags": [
+    "ROFR",
+    "145 Page Street",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Year-end encumbrances",
+   "resolution": "signed by Board",
+   "quote": "year-end encumbrances- signed by board in the absence of a planning director.",
+   "tags": [
+    "finance",
+    "encumbrances"
+   ]
+  },
+  {
+   "topic": "40 Leominster Shirley Road",
+   "resolution": "response noted",
+   "quote": "noted response from historical commission to ebi consulting.",
+   "tags": [
+    "Historical Commission",
+    "EBI Consulting"
+   ]
+  },
+  {
+   "topic": "Village District Draft Bylaw",
+   "resolution": "planning and public forum scheduling; charrette July 30; no bylaw vote",
+   "quote": "the board would like to have a village district bylaw for fall special town meeting.",
+   "tags": [
+    "village district",
+    "bylaw",
+    "charrette",
+    "town center"
+   ]
+  },
+  {
+   "topic": "Master Plan",
+   "resolution": "Economic Development Element sent to Town Boards for feedback; Town Center bylaw meetings scheduled",
+   "quote": "the board recommended approval of the economic development element and requested it be sent to town boards for feedback.",
+   "tags": [
+    "master plan",
+    "economic development",
+    "town center"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule listed",
+   "quote": "july 14, 6:30 pm, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:15 PM",
+   "quote": "motion, d. mcquaid to adjourn, second, n. lockwood, adjourned 9:15 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 6/9/14",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 6/9/14"
+  },
+  {
+   "name": "Minutes 6/9/14 Highfield Village Hearing Continuation",
+   "where": "list",
+   "quote": "minutes 6/9/14 highfield village hearing continuation"
+  },
+  {
+   "name": "ANR Plan, 174 Northfield Road",
+   "where": "list",
+   "quote": "anr plan, 174 northfield road"
+  },
+  {
+   "name": "145 Page Street, Right of First Refusal",
+   "where": "list",
+   "quote": "145 page street, right of first refusal"
+  },
+  {
+   "name": "40 Leominster Shirley Road, Historical Commission letter to EBI Consulting",
+   "where": "list",
+   "quote": "40 leominster shirley road, historical commission letter to ebi consulting"
+  },
+  {
+   "name": "Village District Draft Bylaw",
+   "where": "list",
+   "quote": "village district draft bylaw"
+  },
+  {
+   "name": "Follow-up review of responses and additional information (WBA), on file in the Planning Office",
+   "where": "text",
+   "quote": "follow-up review is on file in the planning office."
+  },
+  {
+   "name": "Letter from David Rodgers on discrepancies in new school plan and Lunenburg Town Bylaws",
+   "where": "text",
+   "quote": "resident david rodgers noted his letter to the planning board regarding discrepancies on the new school"
+  },
+  {
+   "name": "State Village model",
+   "where": "text",
+   "quote": "c. f leck will send the state village model to the board.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Charrette sample",
+   "where": "text",
+   "quote": "board requested c. fleck forward them a charrette sample."
+  },
+  {
+   "name": "Economic Development Element (Master Plan)",
+   "where": "text",
+   "quote": "the board recommended approval of the economic development element and requested it be sent to town boards for feedback."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "MS/HS school project",
+  "waivers",
+  "Highfield Village",
+  "ANR",
+  "minutes approval",
+  "ROFR",
+  "year-end encumbrances",
+  "village district bylaw",
+  "master plan",
+  "charrette",
+  "board vacancy",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

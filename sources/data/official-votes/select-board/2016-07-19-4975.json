@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-07-19",
  "docid": "4975",
@@ -12,73 +12,555 @@
  },
  "votes": [
   {
-   "motion": "Appoint Pete McCauliff to the vacant Parks Commission slot",
+   "motion": "Appoint Pete McCauliff to the vacant Parks Commission slot.",
    "moved_by": "K. Menard",
    "seconded_by": "R. Ebersole",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: k. menard 2\". r. ebersole to appoint pete mccauliff to the vacant parks commission slot mr. toale asked mr. mccauliff if he would be interested in running for election in 20",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint pete mccauliff to the vacant parks commission slot"
   },
   {
-   "motion": "Appoint Joan Pease to the Sewer Commission until the next election",
+   "motion": "Appoint Joan Pease to the Sewer Commission until the next election.",
    "moved_by": "C. Luck",
    "seconded_by": "R. Ebersole",
-   "outcome": "passed 6-0",
-   "procedural": true,
-   "quote": "motion: c. luck 2nd: r. ebersole to appoint joan pease to the sewer commission until the next election dave rodgers, 82 highland street, asked if ms. luck should recuse herself from the vote as she is marr",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Appoint Bob Pease to the Conservation Commission with a term to expire June 30, 2019",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\": p. luck to appoint bob pease to the conservation commission with a term to expire june 30, 2019 vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint joan pease to the sewer commission until the next election"
   },
   {
-   "motion": "Ratify the vote to change the Town Meeting date to August 22, 2016",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\": p. luck to ratify the vote to change the town meeting date to august 22'd vote: all in favor"
-  },
-  {
-   "motion": "Approve the lease agreement between Celleo Partnership d/b/a Verizon Wireless and the Town of Lunenburg as presented",
+   "motion": "Appoint Bob Pease to the Conservation Commission with a term to expire June 30, 2019.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d: p. luck to approve the lease agreement between celleo partnership d/b/a verizon wireless and the town of lunenburg as presented vote: all in favor"
+   "quote": "to appoint bob pease to the conservation commission with a term to expire june 30, 2019"
   },
   {
-   "motion": "Approve and execute the fourth amendment to the intermunicipal agreement regarding the Devens Regional Household Hazardous Products Collection Program adding the Town of Clinton",
+   "motion": "Ratify the vote to change the Town Meeting date to August 22, 2016.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\": p. luck to approve and execute the fourth amendment to the intermunicipal agreement regarding the devens regional household hazardous products collection program adding the town of clinton vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the vote to change the town meeting date to august 22'd"
   },
   {
-   "motion": "Approve minutes of July 12, 2016",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the lease agreement between Celleo Partnership d/b/a Verizon Wireless and the Town of Lunenburg as presented.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the lease agreement between celleo partnership d/b/a verizon wireless and the town of lunenburg as presented"
+  },
+  {
+   "motion": "Approve and execute the fourth amendment to the Devens Regional Household Hazardous Products Collection Program intermunicipal agreement, adding the Town of Clinton.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve and execute the fourth amendment to the intermunicipal agreement regarding the devens regional"
+  },
+  {
+   "motion": "Approve the minutes of July 12, 2016.",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes of july 12, 2016 were approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:22 p.m.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole to adjourn the meeting at 8:22 p.m. 2\": p. luck vote: all in favor"
+   "quote": "to adjourn the meeting at 8:22 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes were extracted via macOS Vision OCR. Two votes included joint appointments where both Select Board and commissions members voted, producing different vote counts (Parks: 5-0; Sewer: 6-0).",
- "cost_usd": 0.1247995
+ "note": "OCR text (macOS Vision) with garbled characters and names (e.g., 'Elainem Peterson', 'Mr: Toale', 'submittted', 'Mr. toale-'). The Sewer Commission appointment vote lists ayes by name with no printed count, so the outcome is recorded as 'passed'. The minutes approving the July 12, 2016 minutes name no mover or seconder. No formal documents list heading is printed; the documents_list entry rests on the sentence about the warrant presented for signatures. Mr. Reynolds and Mr. Anderson appear only in the sewer vote line. Ms. Phyllis Luck's comment falls under the PUBLIC COMMENT heading but she is a board member. No transfers were recorded.",
+ "cost_usd": 0.01481342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; phyllis luck, member and town manager kerry"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; phyllis luck, member and town manager kerry"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; phyllis luck, member and town manager kerry"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; phyllis luck, member and town manager kerry"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "absent",
+   "quote": "members not present: tom alonzo and paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "absent",
+   "quote": "members not present: tom alonzo and paula bertram"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Park Commissioner Chairman",
+   "status": "present",
+   "quote": "park commissioner chairman dennis mannone opened the parks commission's meeting."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioner karin menard was also present."
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "Athletic Director at the Lunenburg Schools; applicant",
+   "status": "present",
+   "quote": "mr. mccauliff, 610 west street, athletic director at the lunenburg schools, stated he has worked with the dpw"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Sewer Commission Chairman",
+   "status": "present",
+   "quote": "sewer commission chairman carl luck wanted to thank ms. bunish for her service and he wished her the best."
+  },
+  {
+   "name": "Joan Pease",
+   "role": "applicant",
+   "status": "present",
+   "quote": "joan pease, 11 wintergreen court, presented to request to be appointed to the sewer commission."
+  },
+  {
+   "name": "Mr. Reynolds",
+   "status": "present",
+   "quote": "vote: mr. luck-aye, mr. reynolds-aye, mr. anderson- aye"
+  },
+  {
+   "name": "Mr. Anderson",
+   "status": "present",
+   "quote": "vote: mr. luck-aye, mr. reynolds-aye, mr. anderson- aye"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, asked if ms. luck should recuse herself from the vote as she is married to"
+  },
+  {
+   "name": "Mark Reich",
+   "role": "Attorney, KP Law (Town Counsel)",
+   "status": "present",
+   "quote": "attorney mark reich of kp law (town counsel) stated conflict of"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "applicant, Conservation Commission",
+   "status": "present",
+   "quote": "bob pease, 11 wintergreen ct., presented to request to be appointed to the conservation commission."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney reported on the town's 225 pleasant street property."
+  },
+  {
+   "name": "Elaine Mroz",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident elaine mroz requested the board not change the date of the special town meeting from august 8th to"
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "pete and deb lincoln announced"
+  },
+  {
+   "name": "Deb Lincoln",
+   "status": "present",
+   "quote": "pete and deb lincoln announced"
+  },
+  {
+   "name": "Anita Scheipers",
+   "role": "63 Chestnut Street",
+   "status": "present",
+   "quote": "anita scheipers, 63 chestnut street, stated she was concerned that the vote that was just taken"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed to place the Mroz property boundary agreement (existing stone wall as boundary) on the next Town Meeting agenda.",
+   "quote": "the board agreed to place it on the next town meeting agenda."
+  },
+  {
+   "decision": "After Ms. Scheipers asked for a reconsideration, the Board did not reopen the ratification vote to revote.",
+   "quote": "he asked the board members and if they wanted to revote. they did not."
+  },
+  {
+   "decision": "Mr. Ebersole offered to make the motion at Town Meeting to take the property boundary article out of order.",
+   "quote": "he offered to make the motion at town meeting."
+  },
+  {
+   "decision": "The warrant for the August 22, 2016 Special Town Meeting was presented for signatures so it could be posted and mailed.",
+   "quote": "ms. lafleur presented the warrant for the august 22, 2016 special town meeting for signatures in order to post"
+  },
+  {
+   "decision": "Accounts payable warrants were signed; the minutes note there were no action file issues.",
+   "quote": "another in the amount of $321,330.07 were signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Verizon cell tower lease payment to the Town",
+   "what_was_recorded": "The lease pays the Town $30,000 a year, rising 3% on each anniversary through the first ten years.",
+   "figures_as_printed": [
+    "$30,000",
+    "3%"
+   ],
+   "quote": "the lease payment to the town is $30,000 annually and increases by 3% on each anniversary of the commencement date throughout the first ten years."
+  },
+  {
+   "topic": "Accounts payable warrants signed",
+   "what_was_recorded": "Two accounts payable warrants were signed at the meeting.",
+   "figures_as_printed": [
+    "$130,099.32",
+    "$321,330.07"
+   ],
+   "quote": "an accounts payable warrant in the amount of $130,099.32 and another in the amount of $321,330.07 were signed."
+  },
+  {
+   "topic": "Cell tower lease payments and turf field borrowing",
+   "what_was_recorded": "The cell tower lease annual payments will go toward the borrowing for the new turf field; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "it was also noted the cell tower lease annual payments would go towards the borrowing for the new turf field."
+  },
+  {
+   "topic": "Turf field and park maintenance costs and user fees",
+   "what_was_recorded": "A Board member asked how to plan for ongoing turf field maintenance costs; the applicant said user fees would pay for those expenses. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "for ongoing maintenance costs for the turf field and other expenses"
+  },
+  {
+   "topic": "Commonwealth proposed APR purchase, Lanni Orchards",
+   "what_was_recorded": "Boards were asked for feedback on the proposed purchase of the agricultural preservation restriction; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the proposed purchase of the apr on lanni orchards"
+  },
+  {
+   "topic": "225 Pleasant Street wetland violation fines and restitution",
+   "what_was_recorded": "The Conservation Commission has begun fining the alleged violator for both properties; restitution was recommended. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they have begun fining him for both properties for working within the wetland buffer zone without a permit."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "thanks Turkey Hill Lions Club",
+   "quote": "phyllis luck thanked the turkey hill lions club for providing refreshments at the band concert on monday"
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Chairman",
+   "topic": "Town Manager resignation announced",
+   "quote": "mr. toale announced ms. lafleur has submittted her resignation and will be leaving for another position"
+  },
+  {
+   "speaker": "Pete and Deb Lincoln",
+   "topic": "Historical Society 50th birthday party",
+   "quote": "pete and deb lincoln announced"
+  },
+  {
+   "speaker": "Elaine Mroz",
+   "stated_role": "Resident",
+   "topic": "opposed changing Special Town Meeting date",
+   "quote": "resident elaine mroz requested the board not change the date of the special town meeting from august 8th to"
+  },
+  {
+   "speaker": "Elaine Mroz",
+   "stated_role": "Resident",
+   "topic": "requested timetable and alternative date",
+   "quote": "ms. mroz requested a timetable of everything that is needed."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "recusal on Sewer Commission appointment",
+   "quote": "dave rodgers, 82 highland street, asked if ms. luck should recuse herself from the vote as she is married to"
+  },
+  {
+   "speaker": "Anita Scheipers",
+   "stated_role": "63 Chestnut Street",
+   "topic": "asked Board to reconsider ratification vote",
+   "quote": "anita scheipers, 63 chestnut street, stated she was concerned that the vote that was just taken"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "Pleasant Street enforcement order and Chestnut Street property",
+   "quote": "dave rodgers, 82 highland street, stated he did not understand how it becomes the problem of the town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no action",
+   "quote": "phyllis luck thanked the turkey hill lions club for providing refreshments at the band concert on monday",
+   "tags": [
+    "public comment",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Joint appointment to Parks Commission (Pete McCauliff)",
+   "resolution": "approved appointment",
+   "quote": "to appoint pete mccauliff to the vacant parks commission slot",
+   "tags": [
+    "appointments",
+    "parks commission"
+   ]
+  },
+  {
+   "topic": "Resignation from Sewer Commission (Sue Bunish)",
+   "resolution": "resignation received",
+   "quote": "sewer commissioner sue bunish submitted her resignation effective immediately with regret to focus on her",
+   "tags": [
+    "resignation",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Joint appointment to Sewer Commission (Joan Pease)",
+   "resolution": "approved appointment",
+   "quote": "to appoint joan pease to the sewer commission until the next election",
+   "tags": [
+    "appointments",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Conservation Commission appointment (Bob Pease)",
+   "resolution": "approved appointment",
+   "quote": "to appoint bob pease to the conservation commission with a term to expire june 30, 2019",
+   "tags": [
+    "appointments",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Ratify vote to change Special Town Meeting date to August 22, 2016",
+   "resolution": "ratified",
+   "quote": "to ratify the vote to change the town meeting date to august 22'd",
+   "tags": [
+    "special town meeting",
+    "town meeting date"
+   ]
+  },
+  {
+   "topic": "Warrant article on Mroz property boundary",
+   "resolution": "agreed to place on next Town Meeting agenda",
+   "quote": "the board agreed to place it on the next town meeting agenda.",
+   "tags": [
+    "boundary article",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Verizon cell tower lease, Lunenburg Public Schools",
+   "resolution": "approved lease",
+   "quote": "to approve the lease agreement between celleo partnership d/b/a verizon wireless and the town of lunenburg as presented",
+   "tags": [
+    "cell tower lease",
+    "verizon"
+   ]
+  },
+  {
+   "topic": "Update on 225 Pleasant Street replication plan",
+   "resolution": "no action",
+   "quote": "land use director adam burney reported on the town's 225 pleasant street property.",
+   "tags": [
+    "enforcement order",
+    "wetlands",
+    "pleasant street"
+   ]
+  },
+  {
+   "topic": "Commonwealth proposed APR acquisition, Lanni Orchards, 294 Chase Road (cont.)",
+   "resolution": "continued; Agricultural Commission update pending",
+   "quote": "ms. lafleur reported the conservation commission, planning board and agricultural commission were",
+   "tags": [
+    "apr",
+    "conservation",
+    "lanni orchards"
+   ]
+  },
+  {
+   "topic": "Devens Regional Household Hazardous Collection intermunicipal agreement amendment (Clinton)",
+   "resolution": "approved and executed",
+   "quote": "to approve and execute the fourth amendment to the intermunicipal agreement regarding the devens regional",
+   "tags": [
+    "intermunicipal agreement",
+    "household hazardous waste",
+    "clinton"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant signatures",
+   "resolution": "warrant signed for posting and mailing",
+   "quote": "ms. lafleur presented the warrant for the august 22, 2016 special town meeting for signatures in order to post",
+   "tags": [
+    "warrant",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes of July 12, 2016 and accounts payable warrants",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "minutes of july 12, 2016 were approved.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "ms. luck reported the school committee met for discussion of the superintendent's goals for fy 2017.",
+   "tags": [
+    "committee reports",
+    "storm water",
+    "zoning board"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "ms. lafleur reported that accountant karen brochu was still working on wrapping up fiscal year 2016",
+   "tags": [
+    "town manager report",
+    "paving",
+    "fy2016 close"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action",
+   "quote": "dave rodgers, 82 highland street, stated he did not understand how it becomes the problem of the town",
+   "tags": [
+    "public comment",
+    "pleasant street",
+    "chestnut street"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:22 p.m.",
+   "quote": "to adjourn the meeting at 8:22 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant for the August 22, 2016 Special Town Meeting",
+   "where": "list",
+   "quote": "ms. lafleur presented the warrant for the august 22, 2016 special town meeting for signatures in order to post"
+  },
+  {
+   "name": "Existing conditions plan (prepared by the engineer)",
+   "where": "text",
+   "quote": "the engineer prepared an existing conditions plan subsequently."
+  },
+  {
+   "name": "Boundary agreement identifying existing stone wall as property boundary",
+   "where": "text",
+   "quote": "creating a boundary agreement that identified an existing stone wall as the property boundary"
+  },
+  {
+   "name": "Warrant Article 15 (property boundary article)",
+   "where": "text",
+   "quote": "mr. toale stated it is article 15."
+  },
+  {
+   "name": "Lease agreement between Celleo Partnership d/b/a Verizon Wireless and the Town of Lunenburg",
+   "where": "text",
+   "quote": "to approve the lease agreement between celleo partnership d/b/a verizon wireless and the town of lunenburg as presented"
+  },
+  {
+   "name": "Fourth amendment to the intermunicipal agreement, Devens Regional Household Hazardous Products Collection Program",
+   "where": "text",
+   "quote": "to approve and execute the fourth amendment to the intermunicipal agreement regarding the devens regional"
+  },
+  {
+   "name": "Enforcement Order (225 Pleasant Street)",
+   "where": "text",
+   "quote": "he did request an additional 60 days for the town's enforcement order"
+  },
+  {
+   "name": "Memo to the Town Manager on remediation (from the alleged violator's side)",
+   "where": "text",
+   "quote": "he submitted a memo to the town manager"
+  },
+  {
+   "name": "Notice of Commonwealth's Proposed Acquisition of Agricultural Preservation Restriction (APR), Lanni Orchards, Project ID #16A01",
+   "where": "text",
+   "quote": "notice of commonwealth's proposed acquisition of agricultural preservation restriction (apr) on"
+  },
+  {
+   "name": "Invitation to Bid on Market Analysis of four town buildings",
+   "where": "text",
+   "quote": "the deadline for the invitation to bid on market analysis of four town buildings closed"
+  },
+  {
+   "name": "Special permit application to vary open space dimensional requirement, 961 Northfield Road",
+   "where": "text",
+   "quote": "the zoning board of appeals met on july 13 for a special permit application to vary the open space"
+  },
+  {
+   "name": "Accounts payable warrants",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $130,099.32 and"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "parks commission",
+  "sewer commission",
+  "conservation commission",
+  "special town meeting",
+  "town meeting date",
+  "boundary article",
+  "cell tower lease",
+  "verizon",
+  "devens household hazardous waste",
+  "apr",
+  "lanni orchards",
+  "pleasant street enforcement",
+  "warrants",
+  "minutes",
+  "town manager resignation",
+  "open meeting law"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lafleur presented the warrant for the august 22, 2016 special town meeting for signatures"
+ },
+ "dropped_unquoted_by_field": {}
 }

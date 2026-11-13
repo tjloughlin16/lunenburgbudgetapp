@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-03-02",
  "docid": "3836",
@@ -12,15 +12,172 @@
  },
  "votes": [
   {
-   "motion": "Write a letter to the Board of Selectmen asking that the May 2015 Town Meeting be dedicated to Marion Benson.",
-   "moved_by": "Nathan J. Lockwood",
-   "seconded_by": "Damon McQuaid",
+   "motion": "Direct A. Burney to write a letter to the Board of Selectmen asking that the May 2015 Town Meeting be dedicated to Marion Benson.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "D. McQuaid",
    "outcome": "passed 4-1",
    "procedural": false,
    "quote": "motion, n. lockwood, second, d. mcquaid, roll call vote- m. allison, nay; k. chenis, aye; d. mcquaid, aye; n. lockwood, aye; j. bilotta-simeone, aye. motion passed 4-1."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0863475
+ "note": "Minutes are plain extracted text; no dollar figures appear, so budget_items and transfers are empty. Only one motion is recorded (the Marion Benson letter, passed 4-1); there is no adjournment motion, only the printed time \"Adjourned 9:45 PM\". The minutes use \"APD\" for both the Architectural Preservation District (page 1 heading) and the Agricultural Preservation District (page 2 heading), and the documents list says \"Draft Village District Bylaw\" where the text says \"Village Center District\". The resignation of J. Bilotta-Simeone is reported, not voted on. Rebecca Lantry's attendance is inferred from her spoken remarks; she is not in the attendance line.",
+ "cost_usd": 0.005246819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison , adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison , adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison , adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison , adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison , adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison , adam r. burney"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "rebecca lantry, historical commission opined that this bylaw, by making commerc ial property out of residential"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to change glazing (transparency) in the Village Center District bylaw to at least 35% and no more than 60%.",
+   "quote": "board concensus was to change to transparency to at least 35% and no more than 60%."
+  },
+  {
+   "decision": "A new 8.B. 8) was added to the Village Center District draft: no more than 25% of the first floor of a mixed use building can be residential.",
+   "quote": "a new 8.b. 8) was added stating that no more than 25% of the first floor of a mixed use building can be residential."
+  },
+  {
+   "decision": "Enforcement options for the APD bylaw referred back to the Commission to discuss, including fines as an alternative to the two-year permit bar.",
+   "quote": "consider the possibility of other enforcement processes, e.g., fines. commission to discuss."
+  },
+  {
+   "decision": "Board to discuss the member request that the Board meet four times per month at the March 9th meeting.",
+   "quote": "m. allison requested the board meet four times/month. board to discuss at march 9th meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rebecca Lantry",
+   "stated_role": "Historical Commission",
+   "topic": "Village Center District bylaw and residential-to-commercial change",
+   "quote": "rebecca lantry, historical commission opined that this bylaw, by making commerc ial property out of residential, will push people out of the center of town."
+  },
+  {
+   "speaker": "Rebecca Lantry",
+   "stated_role": "Historical Commission",
+   "topic": "walkability and Rte. 2A",
+   "quote": "r. lantry noted that the walkability was adversely affected by the construction of rte. 2a through the center of town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public discussion: Village Center District Bylaw and Architectural Preservation District Bylaw",
+   "resolution": "discussed; glazing consensus reached; draft edits noted",
+   "quote": "public discussion: village center district bylaw & architectural preservation district bylaw-",
+   "tags": [
+    "village center district",
+    "architectural preservation district",
+    "bylaw",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Agricultural Preservation District (APD) Bylaw",
+   "resolution": "discussed; enforcement referred to Commission",
+   "quote": "r. lantry gave overview of the apd bylaw, noting that it is a response to the vcd.",
+   "tags": [
+    "agricultural preservation district",
+    "bylaw",
+    "enforcement",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Meeting schedule noted",
+   "resolution": "noted; March hearing dates listed",
+   "quote": "meeting scheduled noted.",
+   "tags": [
+    "meeting schedule",
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "meeting frequency deferred to March 9; letter motion passed 4-1; chair resignation tendered",
+   "quote": "m. allison requested the board meet four times/month. board to discuss at march 9th meeting.",
+   "tags": [
+    "member issues",
+    "town meeting",
+    "resignation",
+    "meeting frequency"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Village District Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: draft village district bylaw draft architectural preservation district bylaw"
+  },
+  {
+   "name": "Draft Architectural Preservation District Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: draft village district bylaw draft architectural preservation district bylaw"
+  },
+  {
+   "name": "Agricultural Preservation District (APD) Bylaw",
+   "where": "text",
+   "quote": "r. lantry gave overview of the apd bylaw, noting that it is a response to the vcd."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "village center district",
+  "architectural preservation district",
+  "agricultural preservation district",
+  "zoning bylaw",
+  "town meeting",
+  "member resignation",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

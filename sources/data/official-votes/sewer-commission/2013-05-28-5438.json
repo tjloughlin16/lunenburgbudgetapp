@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2013-05-28",
  "docid": "5438",
@@ -12,23 +12,335 @@
  },
  "votes": [
   {
-   "motion": "Keep the officers as they currently are (Carl Luck, Chairman, Jay Simeone, Vice-Chairman, Dave MacDonald, Clerk)",
+   "motion": "Keep the officers as they currently are: Carl Luck, Chairman; Jay Simeone, Vice-Chairman; Dave MacDonald, Clerk.",
    "moved_by": "Jay",
    "seconded_by": "Butch",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed (unanimous)",
+   "procedural": false,
    "quote": "jay made the motion to keep the officers as they currently are (carl luck, chairman, jay simeone, vice-chairman, dave macdonald, clerk), butch seconded the motion, vote taken was unanimous."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "butch made the motion, mike seconded. vote taken was unanimous."
+   "quote": "carl asked for a motion to adjourn, butch made the motion, mike seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; text is clean with only minor OCR artifacts (e.g., \"Higntields\" for Highfield). One fragment at end of page 2 is garbled but does not affect vote extraction.",
- "cost_usd": 0.0889955
+ "note": "OCR text (macOS Vision) with garbled passages: page 2 opens mid-sentence (Monday 6/17 / 6/20 award dates) and the closing administrative paragraph is partly unreadable (\"Cat pil hot be there\", \"2 Jandal Shai\"); \"Higntields\" appears to be Highfield. The start of the meeting (date, time called to order) is not printed. Attendance of Carl Luck, Jay Simeone, Dave MacDonald and Butch is inferred from their roles and actions; the minutes give no explicit roll call. Butch has no surname printed. Two votes recorded (officers, adjournment), both unanimous with no counts printed.",
+ "cost_usd": 0.010961720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "carl opened the general discussion and first on the agenda is the election of officers."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "jay made the motion to keep the officers as they currently are"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "(carl luck, chairman, jay simeone, vice-chairman, dave macdonald, clerk)"
+  },
+  {
+   "name": "Butch",
+   "role": "",
+   "status": "present",
+   "quote": "butch seconded the motion, vote taken was unanimous."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "",
+   "status": "present",
+   "quote": "mike nault in attendance."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "also present were barb lefebvre, business manager and bob ebersole, bos liaison."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "bob ebersole, who is present tonight, as liaison to the sc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair signed off on the three invoices presented (Fitchburg, Leominster, Koppelman & Paige).",
+   "quote": "carl signed off on all 3."
+  },
+  {
+   "decision": "Use of Project Funds placed on the June agenda; Commissioners asked to bring ideas.",
+   "quote": "asked barb to put it on the agenda for june"
+  },
+  {
+   "decision": "Highfield capacity issue of 30,000 gpd (not in the proposed IMA) to be placed on a future agenda.",
+   "quote": "another item that will need to be on a future agenda is the highfield capacity issue of 30,000 gpd that is not included"
+  },
+  {
+   "decision": "Commission to contact Highfield and request a formal written commitment to the up-front capacity payment.",
+   "quote": "we need a commitment, some formal document in the form of a commitment"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Meeting budget (Article 17)",
+   "what_was_recorded": "Commission reported a balanced budget passed with no Retained Earnings used, requiring a rate increase effective April 1, 2013 and reflected in the July billing; no dollar figures printed.",
+   "quote": "passed a balanced budget this year, not taking any monies from",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "CWMP cost to Town",
+   "what_was_recorded": "The Town spent about $200,000 on the Comprehensive Wastewater Management Plan, which provided the 2010 estimated sewer costs.",
+   "quote": "the town spent about $200,000 which provided",
+   "figures_as_printed": [
+    "$200,000"
+   ]
+  },
+  {
+   "topic": "Sunset Ave connection cost estimates",
+   "what_was_recorded": "Resident letter questioned the 2010-based cost-to-connect estimates; no dollar figures printed in the minutes.",
+   "quote": "get better numbers on the cost to connect after 3 years",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Use of original project funds",
+   "what_was_recorded": "Some funds remain from the original sewer project; use must follow the original Town Meeting purpose; no amount printed.",
+   "quote": "there are some funds available from the original sewer project",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Highfield capacity payment",
+   "what_was_recorded": "Highfield verbally agreed to provide money up front for capacity; no amount printed.",
+   "quote": "that they would provide $ up front for the capacity",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fitchburg usage invoice",
+   "what_was_recorded": "Fitchburg usage invoice received and signed off by the Chair.",
+   "quote": "fitchburg for $11,153.33 and leominster's",
+   "figures_as_printed": [
+    "$11,153.33"
+   ]
+  },
+  {
+   "topic": "Leominster usage invoice",
+   "what_was_recorded": "Leominster usage invoice received and signed off by the Chair.",
+   "quote": "for $44,513.55. in addition, she had koppelman & paige's invoice for legal services for april of $527.00.",
+   "figures_as_printed": [
+    "$44,513.55"
+   ]
+  },
+  {
+   "topic": "Koppelman & Paige legal invoice",
+   "what_was_recorded": "Legal services invoice for April received and signed off by the Chair.",
+   "quote": "she had koppelman & paige's invoice for legal services for april of $527.00.",
+   "figures_as_printed": [
+    "$527.00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jennifer & Gregg Stevens",
+   "stated_role": "29 Lakeview Ave.",
+   "topic": "Sunset Ave sewer extension letter (read aloud by Chair)",
+   "quote": "i would like to point out two things in regards to our vote."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Election of officers",
+   "resolution": "officers kept as they were",
+   "quote": "carl opened the general discussion and first on the agenda is the election of officers. jay made the motion to keep the officers",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Town Meeting results",
+   "resolution": "reported; both articles approved",
+   "quote": "carl noted that we had 2 items on the warrant at town meeting.",
+   "tags": [
+    "town meeting",
+    "budget",
+    "rates",
+    "sewer service area"
+   ]
+  },
+  {
+   "topic": "BOS liaison",
+   "resolution": "welcomed new liaison Bob Ebersole",
+   "quote": "bob ebersole, who is present tonight, as liaison to the sc",
+   "tags": [
+    "liaison",
+    "board of selectmen"
+   ]
+  },
+  {
+   "topic": "Sunset Ave extension",
+   "resolution": "discussed; Chair responded to resident letter; no action",
+   "quote": "barb noted that we had sent out the mailing on 5/20 and had received 30 responses to date",
+   "tags": [
+    "sunset avenue",
+    "sewer extension",
+    "petition",
+    "cost estimates"
+   ]
+  },
+  {
+   "topic": "RFP award timeline",
+   "resolution": "discussed; no action recorded",
+   "quote": "mike thanked barb, jack and kerry for their good work on the rfp.",
+   "tags": [
+    "RFP",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Sewer Rules & Regulations",
+   "resolution": "no action; awaiting counsel review",
+   "quote": "sewer rules & regulations - barb had finally heard back from counsel, that he should have something to us by",
+   "tags": [
+    "rules and regulations",
+    "illegal connections",
+    "non-payment"
+   ]
+  },
+  {
+   "topic": "Use of Project Funds",
+   "resolution": "to be placed on June agenda",
+   "quote": "use of project funds - carl noted that there are some funds available from the original sewer project",
+   "tags": [
+    "project funds",
+    "pump stations",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "Fitchburg MA",
+   "resolution": "update; no action",
+   "quote": "fitchburg ma - carl provided the update that he had spoken with joe jordan, and that it is still with his legal group.",
+   "tags": [
+    "Fitchburg",
+    "IMA",
+    "Highfield"
+   ]
+  },
+  {
+   "topic": "Administrative matters",
+   "resolution": "notices reviewed; three invoices signed; OT reports noted",
+   "quote": "barb had a couple notices from the planning board.",
+   "tags": [
+    "invoices",
+    "planning board",
+    "high school",
+    "overtime"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fitchburg usage invoice ($11,153.33)",
+   "where": "list",
+   "quote": "fitchburg for $11,153.33 and leominster's"
+  },
+  {
+   "name": "Leominster usage invoice ($44,513.55)",
+   "where": "list",
+   "quote": "for $44,513.55. in addition, she had koppelman & paige's invoice for legal services for april of $527.00."
+  },
+  {
+   "name": "Koppelman & Paige invoice for legal services, April ($527.00)",
+   "where": "list",
+   "quote": "she had koppelman & paige's invoice for legal services for april of $527.00."
+  },
+  {
+   "name": "OT reports for 4/30, 5/6, 5/21",
+   "where": "text",
+   "quote": "barb noted we had 3 ot reports for 4/30, 5/6, 5/21"
+  },
+  {
+   "name": "Planning Board public hearing notice (June 10, Development Plan review, RIW Realty / Janet Lane)",
+   "where": "text",
+   "quote": "one was for a public hearing on june 10 in town hall on a"
+  },
+  {
+   "name": "Planning Board Tech Meeting notice, new High School, 6/18/13",
+   "where": "text",
+   "quote": "the second notice was a tech meeting for the new high school with the architect on 6/18/13."
+  },
+  {
+   "name": "Sunset Ave mailing sent 5/20",
+   "where": "text",
+   "quote": "barb noted that we had sent out the mailing on 5/20"
+  },
+  {
+   "name": "Letter from Jennifer & Gregg Stevens, 29 Lakeview Ave.",
+   "where": "text",
+   "quote": "i would like to point out two things in regards to our vote."
+  },
+  {
+   "name": "Commission's Policies & Procedures",
+   "where": "text",
+   "quote": "in the commission's policies & procedures"
+  },
+  {
+   "name": "CWMP (Comprehensive Wastewater Management Plan)",
+   "where": "text",
+   "quote": "cwmp(comprehensive wastewater management plan)"
+  },
+  {
+   "name": "Town Meeting Article 17 (budget) and Article 24 (SSA map corrections)",
+   "where": "text",
+   "quote": "article 24 was for two (2) corrections to the ssa map."
+  },
+  {
+   "name": "Proposed IMA (Fitchburg)",
+   "where": "text",
+   "quote": "joe jordan is still trying to have the ima in place"
+  },
+  {
+   "name": "Sewer Rules & Regulations (with counsel)",
+   "where": "text",
+   "quote": "sewer rules & regulations - barb had finally heard back from counsel"
+  },
+  {
+   "name": "RFP (engineering, Sunset Ave area)",
+   "where": "text",
+   "quote": "mike thanked barb, jack and kerry for their good work on the rfp."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "officers",
+  "Town Meeting",
+  "Sunset Avenue extension",
+  "sewer rules and regulations",
+  "Fitchburg IMA",
+  "Highfield",
+  "project funds",
+  "invoices",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb added she had 3 invoices for their review."
+ },
+ "dropped_unquoted_by_field": {}
 }

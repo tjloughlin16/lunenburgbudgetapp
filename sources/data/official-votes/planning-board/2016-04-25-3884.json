@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-04-25",
  "docid": "3884",
@@ -12,63 +12,331 @@
  },
  "votes": [
   {
-   "motion": "continue the public hearing on 274 Prospect Street to May 9, 2016 at 6:35 PM",
+   "motion": "Continue the public hearing for 274 Prospect Street to May 9, 2016, 6:35 PM.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis, motion to continue to may 9, 2016, 6:35 pm, second, g. bittner, all aye."
   },
   {
-   "motion": "approve minutes from April 11, 2016",
+   "motion": "Approve the minutes of 4/11/16 (general set).",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "all minutes signed. 4/11/16- motion, k. chenis, second, g. bittner"
+   "quote": "4/11/16- motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "approve minutes from April 11, 2016 for 36 Summer Street",
+   "motion": "Approve the minutes of 4/11/16 for 36 Summer Street.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "36 summer street, 4/11/16- motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "approve Zoning Article minutes from April 11, 2016",
+   "motion": "Approve the minutes of 4/11/16 for the Zoning Article.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "zoning article 4/11/16- motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "approve minutes from April 11, 2016 for 203 West Townsend Road",
+   "motion": "Approve the minutes of 4/11/16 for 203 West Townsend Road.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "203 west townsend road, 4/11/16- motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "present motions to Town Meeting floor to strike 6.4.3c)2., modify 7.a. to include an exemption of single family homes outside of the first 12 feet, and add d)1. to e.10.",
+   "motion": "Make a motion on the Town Meeting floor to strike c)2., modify 7.a. to include an exemption of single family homes outside of the first 12 feet, and add d)1. to e.10.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "k. chenis, motion to be made on town meeting floor to strike c)2., modify 7.a. to include an exemption of single family homes outside of the first 12 feet, and add d)1. to e.10., second, g. bittner, all aye."
+   "procedural": false,
+   "quote": "k. chenis, motion to be made on town meeting floor to strike c)2., modify 7.a. to include an exemption of single family homes outside of the first 12 feet"
   },
   {
-   "motion": "present motions to Town Meeting floor for minor amendments to Section 8.4 Site Plan Approval",
+   "motion": "Make a motion on the Town Meeting floor for minor amendments.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis, motion to be made on town meeting floor for minor amendments, second, g. bittner, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1287115
+ "note": "Text is clean extracted minutes; votes are recorded as \"all aye\" or as motions with no result printed. The four 4/11/16 minutes-approval lines name a mover and seconder but no outcome, so they are recorded as \"not stated\". The Hannaford information meeting is in separate minutes and is not covered here. Committee and development reports have no motions.",
+ "cost_usd": 0.006981619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: matthew allison, david prokowiew"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: matthew allison, david prokowiew"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "resident, 82 Highland Street",
+   "status": "not stated",
+   "quote": "david rodgers, 82 highland street- concerned with putting time/ money hurdles in front of people."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes were signed.",
+   "quote": "minutes approval: all minutes signed."
+  },
+  {
+   "decision": "No change to the Rules and Regulations extension fee at this time; concern noted that reasonable extension requests should not be charged a fee.",
+   "quote": "no change will be made at this time."
+  },
+  {
+   "decision": "Site access permission will be added to Section 4.0; A. Burney to make the revisions.",
+   "quote": "site access permission will be added to section 4.0. a. burney to make revisions."
+  },
+  {
+   "decision": "Board Decision and Plan for 36 Summer Street signed (endorsement).",
+   "quote": "36 summer street- board endorsement- board decision and plan signed."
+  },
+  {
+   "decision": "Board Decision for 203 West Townsend Road signed (endorsement).",
+   "quote": "203 west townsend road- board endorsement- board decision signed."
+  },
+  {
+   "decision": "Board consensus to submit traffic count requests to the Town Manager for Whalom Rotary at Pond and Prospect, Northfield and Oak, and West Street east of Electric Avenue.",
+   "quote": "board consensus to submit count requests to the town manager for whalom rotary at pond and prospect"
+  },
+  {
+   "decision": "Board to consider, as a Board Rules and Regulations matter, waiver of site plan review for changes of use; A. Burney noted the Board has the authority to waive it.",
+   "quote": "a. burney noted that the planning board has the authority to waive this requirement"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street project cost estimate (MJTC report)",
+   "what_was_recorded": "The MJTC reported the planned estimate for the Summer Street project rose from $6.9M to $13M, an increase of $6M, so it will not fit its 2017 target.",
+   "figures_as_printed": [
+    "$6.9M",
+    "$13M",
+    "$6M"
+   ],
+   "quote": "the summer street project is at risk as the planned estimate went from $6.9m to $13m."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "time and money hurdles for applicants",
+   "quote": "david rodgers, 82 highland street- concerned with putting time/ money hurdles in front of people."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Information meeting: 301 Massachusetts Avenue, Hannaford",
+   "resolution": "referred to separate minutes",
+   "tags": [
+    "information meeting",
+    "Hannaford"
+   ],
+   "quote": "information meeting: 301 massachusetts avenue, hannaford- see separate minutes."
+  },
+  {
+   "topic": "Public hearing: 274 Prospect Street (continued)",
+   "resolution": "continued to May 9, 2016",
+   "tags": [
+    "public hearing",
+    "continuance"
+   ],
+   "quote": "274 prospect street (cont'd) - applicant requested a continuance via email"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes signed; approval motions recorded without result",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: all minutes signed."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; MJTC presented on complete streets",
+   "tags": [
+    "committee reports",
+    "complete streets",
+    "Summer Street"
+   ],
+   "quote": "mjtc- presentation given on complete streets program."
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "no report",
+   "tags": [
+    "development status"
+   ],
+   "quote": "development status reports: no report"
+  },
+  {
+   "topic": "Board endorsements: 36 Summer Street and 203 West Townsend Road",
+   "resolution": "signed",
+   "tags": [
+    "endorsement",
+    "site plan"
+   ],
+   "quote": "36 summer street- board endorsement- board decision and plan signed."
+  },
+  {
+   "topic": "Traffic counts",
+   "resolution": "consensus to request counts from Town Manager",
+   "tags": [
+    "traffic counts"
+   ],
+   "quote": "board consensus to submit count requests to the town manager for whalom rotary at pond and prospect"
+  },
+  {
+   "topic": "Site Plan Approval, Special Permit, Rules and Regulations (second draft)",
+   "resolution": "minor changes and site access added; A. Burney to revise; no extension fee change",
+   "tags": [
+    "rules and regulations",
+    "site plan",
+    "special permit",
+    "extension fee",
+    "abutter notification"
+   ],
+   "quote": "no change will be made at this time."
+  },
+  {
+   "topic": "Town Meeting May 7, 2016 zoning articles",
+   "resolution": "motions to be made on Town Meeting floor",
+   "tags": [
+    "town meeting",
+    "zoning articles",
+    "parking",
+    "driveways",
+    "site plan review"
+   ],
+   "quote": "k. chenis, motion to be made on town meeting floor to strike c)2., modify 7.a."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "may 9- public hearing- 39 massachusetts avenue"
+  },
+  {
+   "topic": "Board comments and concerns",
+   "resolution": "G. Bittner asked for status of Hollis Hills and O’Brien Homes",
+   "tags": [
+    "board comments"
+   ],
+   "quote": "g. bittner inquired as to statuses of hollis hills and o'brien homes."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:15 pm (no motion recorded)",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 9:15 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 04/11/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 04/11/16 minutes 04/11/16, 36 summer street"
+  },
+  {
+   "name": "Minutes 04/11/16, 36 Summer Street",
+   "where": "list",
+   "quote": "minutes 04/11/16, 36 summer street minutes 04/11/16, zoning article"
+  },
+  {
+   "name": "Minutes 04/11/16, Zoning Article",
+   "where": "list",
+   "quote": "minutes 04/11/16, zoning article minutes 04/11/16, 203 west townsend road"
+  },
+  {
+   "name": "Minutes 04/11/16, 203 West Townsend Road",
+   "where": "list",
+   "quote": "minutes 04/11/16, 203 west townsend road draft rules and regulations"
+  },
+  {
+   "name": "DRAFT Rules and Regulations",
+   "where": "list",
+   "quote": "draft rules and regulations town warrant"
+  },
+  {
+   "name": "Town Warrant",
+   "where": "list",
+   "quote": "draft rules and regulations town warrant"
+  },
+  {
+   "name": "Board Decision and Plan, 36 Summer Street",
+   "where": "text",
+   "quote": "36 summer street- board endorsement- board decision and plan signed."
+  },
+  {
+   "name": "Board Decision, 203 West Townsend Road",
+   "where": "text",
+   "quote": "203 west townsend road- board endorsement- board decision signed."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "town meeting",
+  "site plan",
+  "special permit",
+  "rules and regulations",
+  "public hearing",
+  "endorsements",
+  "traffic counts",
+  "Summer Street",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

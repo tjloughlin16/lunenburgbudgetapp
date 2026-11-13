@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-06-06",
  "docid": "1626",
@@ -12,23 +12,166 @@
  },
  "votes": [
   {
-   "motion": "Issue a Negative Determination of Applicability for the deck addition at 100 Laurel Lane by Gary V. Steeves",
+   "motion": "Negative determination on the Request for Determination of Applicability by Gary V. Steeves (addition of a deck to the back of the house).",
    "moved_by": "Rich",
    "seconded_by": "Sharon",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous (3)",
    "procedural": false,
    "quote": "rich/sharon negative 3 unanimous"
   },
   {
-   "motion": "Issue a Negative Determination of Applicability for deck repair, extension, and pool replacement at 634 West Street by Patrick P/Kristen Burns",
+   "motion": "Negative determination on the Request for Determination of Applicability by Patrick P/Kristen Burns (repair deck, add 6 feet, replace above ground pool).",
    "moved_by": "Sharon",
    "seconded_by": "Rich",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous (3)",
    "procedural": false,
    "quote": "sharon/rich negative 3 unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two substantive votes on Requests for Determination of Applicability. The third item about Town Manager discussion is informational with no vote recorded.",
- "cost_usd": 0.0994535
+ "note": "Single page of text; the page header is garbled by extraction and the minutes show no adjournment, public comment section, or closing votes. The attendance list at the top is not labeled as a roll call, so 'present' for members is inferred from that list. Names with stray spacing in the text ('Joh n Lattanzi', 'Jan Carrie r') are given in clean form as names; quotes keep the printed spacing. The two hearing votes are printed as 'Rich/Sharon Negative 3 Unanimous' with no full motion wording; mover and seconder are taken from the slash order. Kerry Speidel's hours changes are stated in hours only, with no dollar figures.",
+ "cost_usd": 0.00392732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, richard bursch, joh n lattanzi,"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, richard bursch, joh n lattanzi,"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, richard bursch, joh n lattanzi,"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, richard bursch, joh n lattanzi,"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, richard bursch, joh n lattanzi,"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "mark murphy, sharon jordan, matt marro, jan carrie r"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "present",
+   "quote": "mark murphy, sharon jordan, matt marro, jan carrie r"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "mark murphy, sharon jordan, matt marro, jan carrie r"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "mark murphy, sharon jordan, matt marro, jan carrie r"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel has requested to meet with the com mission."
+  },
+  {
+   "name": "Gary V. Steeves",
+   "role": "applicant, Request for Determination of Applicability",
+   "status": "not stated",
+   "quote": "public hearing on a request for determination of applicability by gary v. steeves."
+  },
+  {
+   "name": "Patrick P/Kristen Burns",
+   "role": "applicant, Request for Determination of Applicability",
+   "status": "not stated",
+   "quote": "request for determination of applicability by patrick p/kristen burns."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing, RDA by Gary V. Steeves, 100 Laurel Lane (deck addition)",
+   "resolution": "negative determination, unanimous",
+   "quote": "public hearing on a request for determination of applicability by gary v. steeves.",
+   "tags": [
+    "wetlands",
+    "public hearing",
+    "deck",
+    "Laurel Lane"
+   ]
+  },
+  {
+   "topic": "Public hearing, RDA by Patrick P/Kristen Burns, 634 West Street (deck repair, pool)",
+   "resolution": "negative determination, unanimous",
+   "quote": "request for determination of applicability by patrick p/kristen burns.",
+   "tags": [
+    "wetlands",
+    "public hearing",
+    "deck",
+    "pool",
+    "West Street"
+   ]
+  },
+  {
+   "topic": "Town Manager: office hours changes effective July 1 for FY2013",
+   "resolution": "informational, no action recorded",
+   "quote": "kerry speidel has requested to meet with the com mission.",
+   "tags": [
+    "office hours",
+    "staffing",
+    "Fiscal Year 2013",
+    "Town Manager"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability by Gary V. Steeves (100 Laurel Lane, deck addition)",
+   "where": "text",
+   "quote": "public hearing on a request for determination of applicability by gary v. steeves."
+  },
+  {
+   "name": "Request for Determination of Applicability by Patrick P/Kristen Burns (634 West Street)",
+   "where": "text",
+   "quote": "request for determination of applicability by patrick p/kristen burns."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "request for determination of applicability",
+  "public hearing",
+  "deck",
+  "pool",
+  "office hours",
+  "staffing",
+  "Fiscal Year 2013"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

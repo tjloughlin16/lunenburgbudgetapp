@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2017-01-26",
  "docid": "2824",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of December 15, 2016 as amended",
+   "motion": "Accept the minutes of December 15, 2016 as amended.",
    "moved_by": "Susan",
    "seconded_by": "Dick",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed (4 aye, Harry Kubetz abstained)",
    "procedural": true,
-   "quote": "susan moved to accept the minutes as amended, dick seconded; dick mailloux, donna saiia, susan visser, lars widstrand voted \"aye\"; harry abstained (not present at december meeting)"
+   "quote": "susan moved to accept the minutes as amended, dick seconded; dick mailloux, donna saiia, susan visser, lars widstrand voted \"aye\""
   },
   {
-   "motion": "Accept library FY-18 budget as presented",
+   "motion": "Accept library FY-18 budget as presented.",
    "moved_by": "Lars",
    "seconded_by": "Harry",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion to accept library fy-18 budget as presented, by lars, harry seconded, voted all \"aye\"."
   },
   {
-   "motion": "Accept policy as amended for access and use of Library Trust Funds",
+   "motion": "Accept the Policy for access and use of Library Trust Funds as amended.",
    "moved_by": "Harry",
    "seconded_by": "Donna",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion to accept policy as amended made by harry, donna seconded, all voted \"aye\"."
   },
   {
-   "motion": "Accept Child Safe Policy as amended",
+   "motion": "Accept the Child Safe Policy as amended.",
    "moved_by": "Lars",
    "seconded_by": "Harry",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion to accept policy as amended made by lars, harry seconded, all voted \"aye\"."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lars",
    "seconded_by": "Susan",
    "outcome": "passed",
@@ -53,6 +53,304 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Five votes recorded. Library Board of Trustees, January 26, 2017. One vote (Policy on Library Weather Closing) was tabled and is not included as a vote.",
- "cost_usd": 0.08758750000000001
+ "note": "Text is extracted from three pages with no scan problems. The minutes say a light color chart was added to the minutes, but the chart is not in the extracted text. Vote tallies are given by name; for the FY-18 budget, Child Safe Policy, and Trust Funds motions the minutes say 'all aye' without a count. The Chair is recorded as present in the attendance line and called the meeting to order.",
+ "cost_usd": 0.00801792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:46 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, donna saiia, susan visser, lars widstrand"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, donna saiia, susan visser, lars widstrand"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, donna saiia, susan visser, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, donna saiia, susan visser, lars widstrand"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "martha moore - director, lpl; bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "present",
+   "quote": "martha moore - director, lpl; bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: kiirja paananen, gare thompson; terri burchfield - fincom representative"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: kiirja paananen, gare thompson; terri burchfield - fincom representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: kiirja paananen, gare thompson; terri burchfield - fincom representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry will contact DPW to find out the status of the exhaust adjustment for the air handler noise and the eventual fix.",
+   "quote": "harry accepted to contact dpw and find out status and eventual fix to the problem."
+  },
+  {
+   "decision": "The vote on the Policy on Library Weather Closing is tabled until the February meeting.",
+   "quote": "vote on policy is tabled until february meeting."
+  },
+  {
+   "decision": "Martha will check with Town Hall on the policy used when Town Hall closes for emergencies, including whether staff are paid.",
+   "quote": "dick agrees with the suggestion that martha check with town hall, but the library closings are separate from"
+  },
+  {
+   "decision": "Donna will condense and rewrite the Room Use Policy to suit the library and submit the text to Town Counsel for a legal check.",
+   "quote": "donna will condense and rewrite the room use policy to suit our library and submit the text to town counsel"
+  },
+  {
+   "decision": "The Director's Evaluation starts Feb. 1 and the evaluation materials will be e-mailed to the Trustees.",
+   "quote": "will be e-mailed to the trustees to work with."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2017 budget spending",
+   "what_was_recorded": "The FY 2017 budget was reported about 55% spent at 58% into the fiscal year, with large bills coming up.",
+   "figures_as_printed": [
+    "55%",
+    "58%"
+   ],
+   "quote": "fy 2017 budget ~ 55% spent @ 58% into fiscal year, but large bills are coming up."
+  },
+  {
+   "topic": "FY-18 library materials spending",
+   "what_was_recorded": "The Town intends to spend 16% of the total library budget on library materials, which the minutes equate to $59,950.00; the Director explained the TAMI abbreviation.",
+   "figures_as_printed": [
+    "16%",
+    "$59,950.00"
+   ],
+   "quote": "town intends to spend 16% of total library budget (16% equates to $59,950.00) on library materials."
+  },
+  {
+   "topic": "FY-18 library budget walk-through",
+   "what_was_recorded": "The library budget was discussed in a walk-through of the Director's budget spread sheet before the board accepted the FY-18 budget as presented; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "library budget was discussed during a \"walk through\" of the director's budget spread sheet."
+  },
+  {
+   "topic": "Volunteers and real estate tax work-off",
+   "what_was_recorded": "Volunteers are working off elderly fixed-income real estate taxes by doing non-standard library duties, and the board discussed whether they should be used for paid duties such as cleaning; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about whether the volunteers should be \"used\" to perform duties that we actually pay for"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes of December 15, 2016",
+   "resolution": "approved as amended; Harry Kubetz abstained",
+   "quote": "approval of minutes of december 15, 2016",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "FY-18 budget accepted as presented; LED migration, building, and reports updates; air handler noise follow-up assigned",
+   "quote": "fy 2017 budget ~ 55% spent @ 58% into fiscal year, but large bills are coming up.",
+   "tags": [
+    "budget",
+    "LED lighting",
+    "building maintenance",
+    "staff",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Policy for access and use of Library Trust Funds",
+   "resolution": "approved as amended",
+   "quote": "policy for access and use of library trust funds",
+   "tags": [
+    "policy",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Policy on Library Weather Closing",
+   "resolution": "tabled until February meeting",
+   "quote": "policy on library weather closing",
+   "tags": [
+    "policy",
+    "closings"
+   ]
+  },
+  {
+   "topic": "Policy for Library Cards for Out of State Residents",
+   "resolution": "no action; decided at December meeting",
+   "quote": "decided / accepted at december meeting",
+   "tags": [
+    "policy",
+    "library cards"
+   ]
+  },
+  {
+   "topic": "Child Safe Policy",
+   "resolution": "approved as amended",
+   "quote": "motion to accept policy as amended made by lars, harry seconded, all voted \"aye\".",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Room Use Policy",
+   "resolution": "Donna to rewrite and send to Town Counsel",
+   "quote": "donna will condense and rewrite the room use policy to suit our library",
+   "tags": [
+    "policy",
+    "room use"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no update; meeting cancelled for lack of quorum",
+   "quote": "no update - last meeting did not have a quorum; meeting cancelled",
+   "tags": [
+    "friends group"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "discussed; no action",
+   "quote": "agenda items for upcoming meetings discussed",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "starts Feb. 1; materials to be e-mailed to Trustees",
+   "quote": "will be e-mailed to the trustees to work with.",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action; town email, heating schedule, and caucus comments",
+   "quote": "final comment from selectman bob -the annual town caucus is march 17",
+   "tags": [
+    "building management",
+    "town email",
+    "election"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9.00 p.m.",
+   "quote": "motion to adjourn by lars, seconded by susan, all voted \"aye\"; meeting closed at 9.00 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for January 26, 2017",
+   "where": "list",
+   "quote": "lplbot agenda for january 26, 2017"
+  },
+  {
+   "name": "Director's report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for january 26, 2017 director's report"
+  },
+  {
+   "name": "Children's librarian's report",
+   "where": "list",
+   "quote": "children's librarian's report"
+  },
+  {
+   "name": "YA librarian's report",
+   "where": "list",
+   "quote": "ya librarian's report"
+  },
+  {
+   "name": "Director's budget spread sheet",
+   "where": "text",
+   "quote": "library budget was discussed during a \"walk through\" of the director's budget spread sheet."
+  },
+  {
+   "name": "Approximate light color chart",
+   "where": "text",
+   "quote": "i have added an approximate light color chart to the minutes to illustrate color temperature of light sources."
+  },
+  {
+   "name": "Policy for access and use of Library Trust Funds",
+   "where": "text",
+   "quote": "policy for access and use of library trust funds"
+  },
+  {
+   "name": "Policy on Library Weather Closing",
+   "where": "text",
+   "quote": "policy on library weather closing"
+  },
+  {
+   "name": "Policy for Library Cards for Out of State Residents",
+   "where": "text",
+   "quote": "policy for library cards for out of state residents"
+  },
+  {
+   "name": "Room Use Policy",
+   "where": "text",
+   "quote": "donna will condense and rewrite the room use policy to suit our library"
+  }
+ ],
+ "tags": [
+  "library",
+  "FY-18 budget",
+  "policies",
+  "trust funds",
+  "room use policy",
+  "LED lighting",
+  "building maintenance",
+  "volunteers",
+  "director evaluation",
+  "town caucus"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

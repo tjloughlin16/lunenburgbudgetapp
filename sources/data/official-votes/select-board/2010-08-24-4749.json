@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-08-24",
  "docid": "4749",
@@ -12,15 +12,13 @@
  },
  "votes": [
   {
-   "motion": "Recess for Executive Session",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Recess into executive session under M.G.L. Chapter 39, §23B(3) to discuss collective bargaining or litigation strategy.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "meeting opened at 6:10 p.m. and recessed by roll call vote at this time for executive session"
+   "quote": "recessed by roll call vote at this time for executive session to discuss strategy with respect to collective bargaining or litigation"
   },
   {
-   "motion": "Approve Earth Removal Permit Renewals",
+   "motion": "Approve the Earth Removal Permit Renewals under Bylaw Article IX, Section 9, per the inspection report.",
    "moved_by": "Steve",
    "seconded_by": "Tom",
    "outcome": "passed unanimously",
@@ -28,7 +26,13 @@
    "quote": "steve motion to approve, tom seconded, voted unanimously."
   },
   {
-   "motion": "Accept the fee for general services at a cap of $36,000",
+   "motion": "Forward information on the MMA 6th grade essay contest to the school department so the town can participate.",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "board voted unimously to forward information to the school department so that the town could participate in the annual contest."
+  },
+  {
+   "motion": "Accept the Town Counsel fee for general services and cap it at $36,000.",
    "moved_by": "Tom",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -36,31 +40,409 @@
    "quote": "motion to accept the fee for general services and cap at $36,000 move by tom, seconded by steve voted unanimously."
   },
   {
-   "motion": "Forward information to the school department for the town to participate in the MMA 6th Grade Essay Contest",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "board voted unimously to forward information to the school department so that the town could participate in the annual contest."
-  },
-  {
-   "motion": "Issue a Proclamation declaring October 24, 2010 as United Nations Day",
+   "motion": "Issue a Proclamation declaring October 24, 2010 as United Nations Day.",
    "moved_by": "Steve",
    "seconded_by": "Tom",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "steve moved tom seconded, voted unanimously."
+   "quote": "entertain a motion that we issue a proclamation declaring october 24, 2010 as united nations day, steve moved tom seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn Regular Session",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Adjourn Regular Session at 8:43 P.M.",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 8:43 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:43 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1464959
+ "dropped_unquoted": 1,
+ "note": "OCR text from scanned pages with typos and garbled words as printed (e.g., 'unimously', 'reveiwed'); quotes copied as they appear. Pages 4-15 are attachments (inspection report, MOU, Town Counsel letter, MMA letter, Lowell home rule petition, UNA-GB letter and proclamation sample); the MOU signature block is blank in the text. The minutes record no vote on approving prior minutes. Attachments are referenced in the text but no heading for a documents list is printed.",
+ "cost_usd": 0.01364132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry asked jack rodriquenz in to present some information to the board which they requested on the pavement management plan"
+  },
+  {
+   "name": "Mrs Mead",
+   "role": "Resident of Maple Parkway",
+   "status": "present",
+   "quote": "resident of maple parkway, mrs mead questioned where her street stands in regards to sewer"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kerry to verify the fence matter with the developer and bring information back to the board at its September meeting.",
+   "quote": "kerry will bring back information to the board at their meeting in september."
+  },
+  {
+   "decision": "Mrs Mead was referred to the Sewer Commission and the Planning Board, as the board has no involvement in sewer questions.",
+   "quote": "per paula this board has no involvement and directed mrs. mee to the sewer commission and the planning board."
+  },
+  {
+   "decision": "Paula directed the warranty-period question for the Emerald Place permit to the Planning Board.",
+   "quote": "paula would direct that to the planning board as she is not aware what has been included in the permit."
+  },
+  {
+   "decision": "Board concurred that staff needs to find out exactly what the state's requirements are for the lakefront fence.",
+   "quote": "board concurred that we need to find out exactly what the state's requirements may be."
+  },
+  {
+   "decision": "Paula agreed with the suggested MOU revisions (defining the three-year completion, identifying Parcel D) and asked that a reference to the plan under item #1 be added and the item 3 parking language be stricken.",
+   "quote": "paula would agree with both suggestions and would like to see a reference to the plan that we are working on under item #1 as well."
+  },
+  {
+   "decision": "Kerry to get an answer from Town Counsel on whether adopting Section 19 would preclude a home rule petition on municipal health insurance.",
+   "quote": "kerry will get an answer from town counsel on whether the adoption of section 19 would preclude us from submitting a home rule petition."
+  },
+  {
+   "decision": "Board agreed to wait until mid-October for the town manager's report on sales tax revenue and state estimates.",
+   "quote": "makes sense to wait until mid-october for this report."
+  },
+  {
+   "decision": "Keno license notices to be placed in the board packets, and placed on the agenda only if a board member objects.",
+   "quote": "paula would request that they be placed in the packets and if there is some objection from any member of the board then it could be placed on the agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants were reviewed and signed in the amount printed.",
+   "figures_as_printed": [
+    "$366,805.35"
+   ],
+   "quote": "warrants - #10 11, 8/24/10 - $366,805.35 reviewed and signed."
+  },
+  {
+   "topic": "Chapter 90 road funding",
+   "what_was_recorded": "Jack Rodriquenz reported a Chapter 90 allocation and that paving and drainage were to fit within it.",
+   "figures_as_printed": [
+    "$320,000"
+   ],
+   "quote": "jack informed the board that there is some money, i.e.; $320,000 of chapter 90 allocation"
+  },
+  {
+   "topic": "Lancaster Ave paving cost",
+   "what_was_recorded": "Lancaster Ave to Kilburn paving was estimated at about $20,000 for the pavement, in a $130,000 to $135,000 neighborhood.",
+   "figures_as_printed": [
+    "$20,000",
+    "$130,000 to $135,000"
+   ],
+   "quote": "to kilburn rounded off to $20,000. only for the pavement, should be in the neighborhood of $130,000 to $135,000, have contractor"
+  },
+  {
+   "topic": "New West Townsend Road drainage cost",
+   "what_was_recorded": "The New West Townsend Road drainage and paving project was estimated in the vicinity of $190,000.",
+   "figures_as_printed": [
+    "$190,000"
+   ],
+   "quote": "should be able to do this in the vacinity of $190,000."
+  },
+  {
+   "topic": "Crack sealing",
+   "what_was_recorded": "Crack sealing was estimated at $30,000 to $40,000, paid from the general appropriation.",
+   "figures_as_printed": [
+    "$30,000 to $40,000"
+   ],
+   "quote": "crack sealing will also be addressed, approximately $30,000 to $40,000 out of the general appropriation"
+  },
+  {
+   "topic": "Salary range for PACC coordinator",
+   "what_was_recorded": "PACC identified a salary range to be funded through cable licensing fees.",
+   "figures_as_printed": [
+    "$12 - $18"
+   ],
+   "quote": "pacc has identified a salary range of $12 - $18; salary to be funded through the cable licensing fees, not a benefit eligible position."
+  },
+  {
+   "topic": "Town Counsel general services cap",
+   "what_was_recorded": "Town Counsel's general services fee was capped at $36,000 and billed up to that amount; the board approved the cap.",
+   "figures_as_printed": [
+    "36K",
+    "$36,000"
+   ],
+   "quote": "kerry noted that the 36k is a cap, and they will bill us up to the $36,000."
+  },
+  {
+   "topic": "Town Counsel June bill",
+   "what_was_recorded": "A June Town Counsel bill of $1,600 was received, described as a slow month.",
+   "figures_as_printed": [
+    "$1,600"
+   ],
+   "quote": "we received the june bill for $1,600 which is a slow month for us."
+  },
+  {
+   "topic": "Town Counsel historical average cost",
+   "what_was_recorded": "Town Counsel's letter cited a five-year average cost for the town.",
+   "figures_as_printed": [
+    "$61,320"
+   ],
+   "quote": "our average was $61,320. this fiscal year is high because of"
+  },
+  {
+   "topic": "Town Counsel hourly rate and cap",
+   "what_was_recorded": "Town Counsel letter said the hourly rate would be cut by $5.00 to $170.00 and general services capped at $36,000.",
+   "figures_as_printed": [
+    "$5.00",
+    "$170.00",
+    "$36,000"
+   ],
+   "quote": "our hourly rate by $5.00 to $170.00, and we will cap general town counsel services at $36,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "not stated",
+   "topic": "thanks for bonfire",
+   "quote": "dave expressed appreciation to the lunenburg family lions club and the fire department for the excellent job with the bonfire held"
+  },
+  {
+   "speaker": "Mrs Mead",
+   "stated_role": "Resident of Maple Parkway",
+   "topic": "sewer service question for Maple Parkway",
+   "quote": "resident of maple parkway, mrs mead questioned where her street stands in regards to sewer"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; referred resident to Sewer Commission and Planning Board",
+   "quote": "dave expressed appreciation to the lunenburg family lions club and the fire department for the excellent job with the bonfire held",
+   "tags": [
+    "bonfire",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational; water restrictions and voter registration noted",
+   "quote": "announcement from the lunenburg water district - the massachusetts drought management task force has issued a drought",
+   "tags": [
+    "water restrictions",
+    "voter registration"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Minutes, warrants, action file",
+   "resolution": "warrants reviewed and signed; no minutes vote recorded",
+   "quote": "warrants - #10 11, 8/24/10 - $366,805.35 reviewed and signed.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current Business 2: Committee reports",
+   "resolution": "reports only, no action",
+   "quote": "joint meeting on regionalization is scheduled for next monday, 8/30/10 @ 7:00 pm.",
+   "tags": [
+    "school committee",
+    "DPW building committee",
+    "PACC",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Current Business 3: Town Manager updates, Pavement Management Plan",
+   "resolution": "presented; board thanked Jack for the plan",
+   "quote": "kerry asked jack rodriquenz in to present some information to the board which they requested on the pavement management plan",
+   "tags": [
+    "roads",
+    "drainage",
+    "Chapter 90",
+    "flooding"
+   ]
+  },
+  {
+   "topic": "Current Business 4: Earth removal permit renewals",
+   "resolution": "approved",
+   "quote": "steve motion to approve, tom seconded, voted unanimously.",
+   "tags": [
+    "earth removal"
+   ]
+  },
+  {
+   "topic": "Current Business 5: MOU with Emerald Place LLC, Whalom Lake waterfront",
+   "resolution": "continued to September meeting; town manager to report back",
+   "quote": "reviewed the attached memorandum of understanding.",
+   "tags": [
+    "Emerald Place",
+    "lakefront",
+    "fence",
+    "warranty"
+   ]
+  },
+  {
+   "topic": "Current Business 6: Town Counsel fee proposal",
+   "resolution": "approved, general services capped at $36,000",
+   "quote": "motion to accept the fee for general services and cap at $36,000 move by tom, seconded by steve voted unanimously.",
+   "tags": [
+    "legal",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Current Business 7: Keno license, Vagas Lounge",
+   "resolution": "placed in board packets; no vote",
+   "quote": "kerry questioned if this is something that the board would like to see on the agenda or placed in the action file.",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Current Business 8: Mass Broadband Institute",
+   "resolution": "informational; board designee discussed, Tom voiced interest",
+   "quote": "kerry informed the board that this group has been given a significant amount of money to expand",
+   "tags": [
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Selectmen Requests a: MMA 6th grade essay contest",
+   "resolution": "approved, forwarded to school department",
+   "quote": "board voted unimously to forward information to the school department so that the town",
+   "tags": [
+    "essay contest",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Selectmen Requests b: Home rule petition, municipal health insurance",
+   "resolution": "discussed; no vote; Town Counsel answer requested",
+   "quote": "some communities in the area are submitting home rule petitions, sample attached.",
+   "tags": [
+    "health insurance",
+    "home rule",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Selectmen Requests c: United Nations Day",
+   "resolution": "proclamation approved",
+   "quote": "kerry request that united nations sends out and is questioning whether the board wants to act on this.",
+   "tags": [
+    "UN Day",
+    "proclamation"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "recessed to executive session at the opening, before regular session",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation if an open meeting may",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Earth removal inspection report by Michael Sauvageau, Zoning Inspector, dated August 23, 2010",
+   "where": "list",
+   "quote": "paula reveiwed the list, inspection report furnished by michael sauvageau, zoning inspector (attached)."
+  },
+  {
+   "name": "Memorandum of Understanding with Emerald Place Development Company LLC, dated August 24, 2010",
+   "where": "list",
+   "quote": "reviewed the attached memorandum of understanding."
+  },
+  {
+   "name": "Sample home rule petitions on municipal health insurance (attached)",
+   "where": "list",
+   "quote": "some communities in the area are submitting home rule petitions, sample attached."
+  },
+  {
+   "name": "Town Counsel letter from Leonard Kopelman, June 14, 2010, on general services",
+   "where": "text",
+   "quote": "a letter was previously distributed to the board from attorney leonard kopelman that described general services."
+  },
+  {
+   "name": "MMA 6th Grade Essay Contest information",
+   "where": "text",
+   "quote": "mma's 6t* grade essay contest - board voted unimously to forward information to the school department"
+  },
+  {
+   "name": "UNA-GB request to recognize United Nations Day, August 9, 2010",
+   "where": "text",
+   "quote": "kerry request that united nations sends out and is questioning whether the board wants to act on this."
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "kerry asked jack rodriquenz in to present some information to the board which they requested on the pavement management plan"
+  }
+ ],
+ "tags": [
+  "road paving",
+  "drainage",
+  "Pavement Management Plan",
+  "Emerald Place",
+  "Whalom Lake lakefront",
+  "town counsel fees",
+  "health insurance",
+  "home rule petition",
+  "earth removal",
+  "UN Day proclamation",
+  "broadband",
+  "executive session",
+  "water restrictions",
+  "warrants",
+  "liquor licensing",
+  "sewer"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "reviewed the attached memorandum of understanding"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

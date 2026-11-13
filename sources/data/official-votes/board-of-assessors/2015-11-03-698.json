@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-11-03",
  "docid": "698",
@@ -12,55 +12,364 @@
  },
  "votes": [
   {
-   "motion": "Approve 21 statutory exemption applications totaling $12,000.00",
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, the October 6, 2015 minutes and payroll.",
+   "moved_by": "",
    "outcome": "passed",
+   "procedural": true,
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, october 6, 2015 minutes & payroll.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Approve 21 statutory exemption applications totaling $12,000.00.",
+   "moved_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the board voted to approve 21 applications totaling $12,000.00",
-   "moved_by": "",
    "seconded_by": ""
   },
   {
-   "motion": "Deny Veteran 22D exemption application",
-   "outcome": "passed",
+   "motion": "Deny the Veteran 22D statutory exemption application (applicant no longer domiciled in Lunenburg).",
+   "moved_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "the boa voted to deny this application",
-   "moved_by": "",
+   "quote": "after much discussion the boa voted to deny this application and will send notification of the denial.",
    "seconded_by": ""
   },
   {
-   "motion": "Grant chapter classifications for all reviewed applications",
-   "outcome": "passed",
+   "motion": "Grant the annual Chapter 61/61A/61B classifications reviewed in the annual chapter applications.",
+   "moved_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "voted to grant the chapter classifications",
-   "moved_by": "",
+   "quote": "the boa reviewed all the applications and 61a financial supporting documentation received and voted to grant the chapter classifications.",
    "seconded_by": ""
   },
   {
-   "motion": "Discontinue 61A classification for property at 150E & 150 Holman Street for failure to return application",
-   "outcome": "passed",
+   "motion": "Discontinue the 61A classification for 150E & 150 Holman Street for failure to return an application.",
+   "moved_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "the board voted to discontinue the 61 a classification for property located at 150e & 150 holman street for failure to return an application",
-   "moved_by": "",
+   "quote": "however, the board voted to discontinue the 61 a classification for property located at 150e & 150 holman street for failure to return an application.",
    "seconded_by": ""
   },
   {
-   "motion": "Table investigation into 61A classification for property under Agricultural Preservation Restriction",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Investigate the reasons why the other Chapter 61A application was not returned.",
+   "moved_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the boa discussed the other chapter 61a classification property and voted to investigate the reasons why the application was not returned",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Table the other Chapter 61A classification matter at this time.",
+   "moved_by": "",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "they voted to table this at this time.",
-   "moved_by": "",
    "seconded_by": ""
   },
   {
-   "motion": "Schedule next meeting for Tuesday, December 8, 2015 at 5:45 pm",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the board voted to meet next on tuesday, december 8, 2015 at 5:45 pm.",
+   "motion": "Set the next Board of Assessors meeting for Tuesday, December 8, 2015 at 5:45 pm.",
    "moved_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the board voted to meet next on tuesday, december 8, 2015 at 5:45 pm.",
    "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; no names recorded for motions or seconds; all votes reported as passed without vote counts.",
- "cost_usd": 0.1282195
+ "note": "OCR text from macOS Vision. The minutes proper are pages 1-2; pages 3-7 are attachments (hearing slides, a public hearing notice, and an abatement FAQ) that the minutes do not name except for the 'report (see attachment)'. The approval of vouchers and minutes, the 21/Veteran 22D votes and the chapter votes record no motion, mover, seconder or tally, so outcomes are 'not stated' except where the minutes print 'approved'. The adjournment has no recorded motion. The average bill increase is printed as $526.65 on page 2 and $528.65 on page 5. The signature line reads 'Laure Taquette' above the printed name Louise Paquette. No public comment section appears in the text.",
+ "cost_usd": 0.01483477,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting opened at 5:45 pm. present: chairman, louis franco, board member, matt papini, sr.,"
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "the meeting opened at 5:45 pm. present: chairman, louis franco, board member, matt papini, sr.,"
+  },
+  {
+   "name": "Rebecca Boucher",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "associate assessor rebecca boucher and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "associate assessor rebecca boucher and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "board member, richard letarte was not present (attending course 101)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOA denied a Veteran 22 statutory exemption application because the applicant did not receive the service-connected disability as of July 1, 2015; notice of denial to be sent.",
+   "quote": "the boa also denied a veteran 22 application because the applicant did not receive the service-connected disability as of july 1, 2015; notification of denial will be sent."
+  },
+  {
+   "decision": "The Board will notify the taxpayer of 150E & 150 Holman Street that, from Fiscal Year 2017, the property will be reclassified, valued and taxed as residential land at full and fair cash value.",
+   "quote": "the board will be sending notification to the taxpayer informing them that commencing with fiscal year 2017,"
+  },
+  {
+   "decision": "Rebecca Boucher will present the classification hearing findings at the Board of Selectmen meeting, recommending maintaining the present single tax rate for commercial, industrial and residential properties.",
+   "quote": "she will be presenting the findings at the bos meeting recommending maintaining the present single tax rate for commercial, industrial and residential properties."
+  },
+  {
+   "decision": "The Hearing Notification for the November 17 classification hearing will be published in the Lunenburg Ledger.",
+   "quote": "louise stated that the hearing notification will be published in the lunenburg ledger."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemptions approved",
+   "what_was_recorded": "The Board approved 21 statutory exemption applications totaling $12,000.00.",
+   "figures_as_printed": [
+    "$12,000.00"
+   ],
+   "quote": "the board voted to approve 21 applications totaling $12,000.00"
+  },
+  {
+   "topic": "FY16 estimated tax rate",
+   "what_was_recorded": "Estimated tax rate expected to rise from $18.32 to $19.62 per thousand for FY16 under a maintained single rate.",
+   "figures_as_printed": [
+    "$18.32",
+    "$19.62"
+   ],
+   "quote": "the estimates of tax rates will most likely increase from $18.32 to $19.62 per thousand for fy 16"
+  },
+  {
+   "topic": "Average single family home value",
+   "what_was_recorded": "Average single family home value rose from $246,347 in FY15 to $256,969 in FY16.",
+   "figures_as_printed": [
+    "$246,347",
+    "$256,969"
+   ],
+   "quote": "the average single family home value increased from $246,347 in fy15 to $256,969 for fy16."
+  },
+  {
+   "topic": "Average tax bill increase",
+   "what_was_recorded": "Average tax bill increase of 11.7%, from $4,513.08 in FY15 to $5,041.73 in FY16.",
+   "figures_as_printed": [
+    "11.7%",
+    "$4,513.08",
+    "$5,041.73"
+   ],
+   "quote": "this equals to an average bill increase of 11.7%. (fy15 average tax bill of $4,513.08 to $5,041.73 in fy16)."
+  },
+  {
+   "topic": "Drivers of average bill increase",
+   "what_was_recorded": "Of the increase, 66% results from debt repayment for the Lunenburg Middle High School Project, amounting to $349.48 on the average tax bill. The minutes print the increase as $526.65 here and $528.65 in the attachment.",
+   "figures_as_printed": [
+    "$526.65",
+    "66%",
+    "$349.48"
+   ],
+   "quote": "she explained that of this $526.65 increase, 66% results from debt repayment for the lunenburg middle high school project, amounting to $349.48 on the average tax bill."
+  },
+  {
+   "topic": "Levy ceiling and aggregate valuation",
+   "what_was_recorded": "The levy ceiling is based on an aggregate valuation of $1,198,728,889; the town cannot levy above $29,990,108.",
+   "figures_as_printed": [
+    "$1,198,728,889",
+    "$29,990,108"
+   ],
+   "quote": "the town cannot levy taxes in excess of $29,990,108."
+  },
+  {
+   "topic": "New growth revenue",
+   "what_was_recorded": "Assessors tabulated new growth revenues of $360,856.",
+   "figures_as_printed": [
+    "$360,856"
+   ],
+   "quote": "the assessors have tabulated new growth revenues of $360,856."
+  },
+  {
+   "topic": "Excess levy capacity",
+   "what_was_recorded": "The town will have $790.18 in excess levy capacity.",
+   "figures_as_printed": [
+    "$790.18"
+   ],
+   "quote": "the town will have $790.18 in excess levy capacity."
+  },
+  {
+   "topic": "FY2016 levy limit calculation",
+   "what_was_recorded": "Levy limit build-up: FY2015 levy limit $20,173,974, Prop 2 1/2 increase $504,349, new growth $360,856, FY2015 overrides 0, debt exclusions $2,494,848, FY2016 levy limit $23,534,027; levy to be raised $23,536,236.82.",
+   "figures_as_printed": [
+    "$20,173,974",
+    "$504,349",
+    "$360,856",
+    "0",
+    "$2,494,848",
+    "$23,534,027",
+    "$29,990,108",
+    "$23,536,236.82",
+    "$790.18"
+   ],
+   "quote": "$20,173,974 $504,349 $360,856 0 $2,494,848 $23,534,027"
+  },
+  {
+   "topic": "Valuations by class before tax shift",
+   "what_was_recorded": "Total valuation by class before tax shift, residential through personal property.",
+   "figures_as_printed": [
+    "$1,079,768,102",
+    "$65,371,177",
+    "$19,994,000",
+    "$35,078,223",
+    "$1,199,604,323"
+   ],
+   "quote": "$1,079,768,102 $65,371,177 $19,994,000 $35,078,223 $1,199,604,323"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening, attendance and routine approvals",
+   "resolution": "approved vouchers, abatements, warrants, commitments, Oct 6 minutes and payroll",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, october 6, 2015 minutes & payroll.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Statutory exemption applications",
+   "resolution": "21 approved for $12,000.00; Veteran 22D and Veteran 22 applications denied",
+   "quote": "louise presented 24 statutory exemption applications to the boa to review.",
+   "tags": [
+    "statutory exemptions",
+    "veterans",
+    "denials"
+   ]
+  },
+  {
+   "topic": "Chapter classification releases (61B and 61A)",
+   "resolution": "reviewed; no vote recorded on the releases",
+   "quote": "released & revised chapter classification application reviews & approvals:",
+   "tags": [
+    "chapter 61B",
+    "chapter 61A"
+   ]
+  },
+  {
+   "topic": "Annual chapter applications",
+   "resolution": "classifications granted; 61A discontinued at 150E & 150 Holman Street; other 61A matter tabled",
+   "quote": "boa reviewed the annual chapter applications: louise stated that 66 applications were returned and two",
+   "tags": [
+    "chapter 61A",
+    "agricultural land",
+    "forest management"
+   ]
+  },
+  {
+   "topic": "Classification hearing November 17 and FY16 tax impacts",
+   "resolution": "discussed; findings to go to Board of Selectmen recommending a single tax rate",
+   "quote": "rebecca spoke with the board regarding the classification hearing which will be held on november 17",
+   "tags": [
+    "tax classification hearing",
+    "tax rate FY2016",
+    "single tax rate"
+   ]
+  },
+  {
+   "topic": "DOR-approved FY16 reports",
+   "resolution": "reported, no action",
+   "quote": "rebecca reported that the following reports were approved on october 25, 2015 approved by the dor:",
+   "tags": [
+    "DOR",
+    "levy growth"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for December 8, 2015 at 5:45 pm",
+   "quote": "the board voted to meet next on tuesday, december 8, 2015 at 5:45 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting reminder",
+   "resolution": "reminder only, no action",
+   "quote": "louise reminded the board that the special town meeting will be held at the high school on monday,",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:05 pm",
+   "quote": "meeting adjourned at 7:05 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Classification hearing report (see attachment)",
+   "where": "text",
+   "quote": "the report (see attachment) supports that on the average a $1.00 increase in commercial taxes"
+  },
+  {
+   "name": "DOR Taxpayers Guide to Local Property Exemptions",
+   "where": "text",
+   "quote": "the board reviewed the dor's taxpayers guide to local property exemptions regarding"
+  },
+  {
+   "name": "Hearing Notification (Lunenburg Ledger)",
+   "where": "text",
+   "quote": "louise stated that the hearing notification will be published in the lunenburg ledger."
+  },
+  {
+   "name": "FY16 Tax Base Levy Growth - LA-13",
+   "where": "text",
+   "quote": "fy16 tax base levy growth - la-13"
+  },
+  {
+   "name": "FY16 LA-3 Interim Year Adj. Rep",
+   "where": "text",
+   "quote": "fy16 la-3 interim year adj. rep"
+  },
+  {
+   "name": "FY16 Interim Year Adjustment Report",
+   "where": "text",
+   "quote": "fy16 interim year adjustment report"
+  },
+  {
+   "name": "FY16 LA-4 Assessment /Classification",
+   "where": "text",
+   "quote": "fy16 la-4 assessment /classification"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "statutory exemptions",
+  "veterans exemption",
+  "chapter 61A",
+  "chapter classification",
+  "tax rate FY2016",
+  "tax classification hearing",
+  "abatements",
+  "levy limit",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the report (see attachment) supports"
+ },
+ "dropped_unquoted_by_field": {}
 }

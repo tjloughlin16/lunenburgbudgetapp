@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-07-09",
  "docid": "4520",
@@ -12,31 +12,317 @@
  },
  "votes": [
   {
-   "motion": "Approve the May 2014 invoices as presented by Joslin, Lesser + Associates",
-   "outcome": "passed unanimously",
+   "motion": "Approve the May 2014 invoices as presented by Joslin, Lesser + Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "motion: the lunenburg school building committee voted to approve the may 2014 invoices as presented by joslin, lesser + associates. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the may 2014 invoices as presented by joslin, lesser + associates. the motion was unanimously approved."
   },
   {
-   "motion": "Approve the meeting minutes from June 11th and June 26th meetings",
-   "outcome": "not stated",
-   "procedural": true,
+   "motion": "Approve the meeting minutes from June 11th and June 26th, 2014.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from june 11th & june 26th meeting."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from june 11th & june 26th meeting."
   },
   {
-   "motion": "Confirm Michael Mackin as Chairperson, Mark Erickson as Vice-Chairperson, and Tim Sentry as Advisor",
-   "outcome": "not stated",
-   "procedural": true,
+   "motion": "Confirm positions: Michael Mackin as Chairperson; Mark Erickson as Vice-Chairperson; Tim Sentry as Advisor.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "the following positions were voted on: michael mackin as chairperson; mark erickson as vice-chairperson; tim sentry as advisor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.14012449999999999
+ "dropped_unquoted": 12,
+ "note": "Extracted text, not a scan. Attendance roles are not reliably matched to names in the extract, so roles are given as the affiliation printed in parentheses except where the minutes state a title. Absent status is read from the × marks in the attendance list. The May 2014 invoice motion is printed twice (once under Approval of minutes, again on page 2 under the positions item); it is recorded once. The header says 7:00 PM but the call to order says 6:36 PM. The date and time fields are blank. The adjournment at about 7:42 pm has no recorded motion. Public comment: none. The minutes print no dollar figures. Some garbled characters appear in the text (e.g., \"completion=g\", \"Shawmut=t\"). The \"Next Meeting\" header shows 8/13/14 6:30 PM; it is not recorded as a decision. Tim Sentry is named only in the positions vote and is not recorded as an attendee.",
+ "cost_usd": 0.0098057,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:36 pm by mr. micheal mackin, chairperson of the lunenburg school building committee."
+  },
+  {
+   "name": "John Londa",
+   "role": "(LSBC)",
+   "status": "absent",
+   "quote": "× john londa (lsbc) × brian spadafino (lsbc)"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "(LSBC)",
+   "status": "absent",
+   "quote": "× john londa (lsbc) × brian spadafino (lsbc)"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "(Tappé)",
+   "status": "present",
+   "quote": "charles hay (tappé) × damian liddiard (tappé)"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "(Tappé)",
+   "status": "absent",
+   "quote": "charles hay (tappé) × damian liddiard (tappé)"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "(JLA)",
+   "status": "present",
+   "quote": "greg cohan (jla) × jeffery luxenberg (jla)"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "(JLA)",
+   "status": "absent",
+   "quote": "greg cohan (jla) × jeffery luxenberg (jla)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Until the MSBA Project Funding agreement is signed, all invoices are reviewed for content, work scope and hours but not issued for payment.",
+   "quote": "until the msba project funding agreement is signed, all invoices will be reviewed for content, work scope and hours but not issued for payment."
+  },
+  {
+   "decision": "A letter from the District will be issued to the MSBA confirming the committee positions.",
+   "quote": "letter from the district will be issued to the msba confirming these positions."
+  },
+  {
+   "decision": "LSBC asked that other methods of advertising the next abutters meeting be explored (e.g., Lunenburg Tab, project website, postcards).",
+   "quote": "lsbc requested other methods of advertising the meeting be explored."
+  },
+  {
+   "decision": "Tappé recommended a Working Group be developed to review building palette choices; follow-up meetings to be scheduled.",
+   "quote": "tappe recommended a working group be developed to review building palette choices and selections."
+  },
+  {
+   "decision": "A committee will be selected to plan the Ground Breaking Ceremony, to be scheduled after school is in session.",
+   "quote": "a committee will be selected to plan the event."
+  },
+  {
+   "decision": "Project web-cam to be explored and discussed at the Construction Kick-off meeting, not yet scheduled.",
+   "quote": "project web-cam for the project will explored and discussed at the construction kick-off meeting yet to be scheduled."
+  },
+  {
+   "decision": "A separate meeting will be required to approve iGMP No. 1 for the Early Site Package.",
+   "quote": "separate meeting will be required to approve igmp no. 1 for the early site package."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly progress invoices (OPM, Designer, Preconstruction)",
+   "what_was_recorded": "Monthly progress invoices for work through June 2014 were presented by JLA, Tappé and Shawmut; the committee approved the May 2014 invoices.",
+   "figures_as_printed": [],
+   "quote": "the lunenburg school building committee voted to approve the may 2014 invoices as presented by joslin, lesser + associates."
+  },
+  {
+   "topic": "Invoice payment hold pending MSBA funding",
+   "what_was_recorded": "No invoices are to be issued for payment until the MSBA Project Funding agreement is signed; they are reviewed in the meantime.",
+   "figures_as_printed": [],
+   "quote": "until the msba project funding agreement is signed, all invoices will be reviewed for content, work scope and hours but not issued for payment."
+  },
+  {
+   "topic": "MSBA project funding",
+   "what_was_recorded": "The MSBA project funding letter had not yet been received; no MSBA submission schedule had been received.",
+   "figures_as_printed": [],
+   "quote": "the project funding letter from the msba had not yet been received."
+  },
+  {
+   "topic": "Early Release Construction Package No.1 bids and iGMP No. 1",
+   "what_was_recorded": "Best and final bid estimates were received for the Early Site Package; JLA is working with Shawmut on an iGMP No. 1 to be approved at a separate meeting.",
+   "figures_as_printed": [],
+   "quote": "best and final estimates were received with jla working with shawmut to develop an igmp no. 1 for this referenced work."
+  },
+  {
+   "topic": "90% construction document estimates",
+   "what_was_recorded": "Estimates from Tappé's estimator, PM & C and Shawmut are to be reconciled at an August 7 meeting; the process is on schedule.",
+   "figures_as_printed": [],
+   "quote": "the process is still on schedule to meet on august 7th to reconcile estimates from tappe's estimator, pm & c"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and reorganization",
+   "resolution": "called to order at 6:36 PM; officer positions voted",
+   "quote": "the meeting was called to order at 6:36 pm by mr. micheal mackin, chairperson of the lunenburg school building committee.",
+   "tags": [
+    "reorganization",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of invoices and minutes",
+   "resolution": "approved May 2014 invoices and June 11 and June 26 minutes",
+   "quote": "the lunenburg school building committee voted to approve the may 2014 invoices as presented by joslin, lesser + associates.",
+   "tags": [
+    "invoices",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Project funding status",
+   "resolution": "no action; MSBA funding letter still pending",
+   "quote": "lsbc were informed the project funding letter from the msba had not yet been received.",
+   "tags": [
+    "MSBA",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee roles and positions",
+   "resolution": "positions voted; letter to MSBA to confirm",
+   "quote": "the following positions were voted on: michael mackin as chairperson; mark erickson as vice-chairperson; tim sentry as advisor.",
+   "tags": [
+    "officers",
+    "roles"
+   ]
+  },
+  {
+   "topic": "Community outreach for abutters meeting",
+   "resolution": "discussed; other advertising methods to be explored",
+   "quote": "lsbc requested other methods of advertising the meeting be explored.",
+   "tags": [
+    "community outreach",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Interior design and color palettes",
+   "resolution": "briefed; working group recommended",
+   "quote": "tappe recommended a working group be developed to review building palette choices and selections.",
+   "tags": [
+    "interior design",
+    "palettes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at approximately 7:42 pm; no motion recorded",
+   "quote": "the meeting was adjourned at approximately 7:42 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Ground breaking ceremony",
+   "resolution": "discussed; committee to be selected",
+   "quote": "school building committee briefly discussed scheduling a ground breaking ceremony after school is in session.",
+   "tags": [
+    "ground breaking"
+   ]
+  },
+  {
+   "topic": "Project web-cam",
+   "resolution": "to be explored at construction kick-off meeting",
+   "quote": "project web-cam for the project will explored and discussed at the construction kick-off meeting yet to be scheduled.",
+   "tags": [
+    "web-cam"
+   ]
+  },
+  {
+   "topic": "Early Release Construction Package No.1",
+   "resolution": "briefed on bids; separate meeting for iGMP No. 1",
+   "quote": "separate meeting will be required to approve igmp no. 1 for the early site package.",
+   "tags": [
+    "early site package",
+    "bids",
+    "iGMP"
+   ]
+  },
+  {
+   "topic": "90% construction document schedule",
+   "resolution": "briefed; on schedule for August 7 meeting",
+   "quote": "the process is still on schedule to meet on august 7th to reconcile estimates from tappe's estimator, pm & c",
+   "tags": [
+    "construction documents",
+    "schedule",
+    "estimates"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LSBC meeting minutes, June 11, 2014",
+   "where": "list",
+   "quote": "june 11, 2014 lsbc meeting"
+  },
+  {
+   "name": "LSBC meeting minutes, June 26, 2014",
+   "where": "list",
+   "quote": "june 26, 2014 lsbc meeting"
+  },
+  {
+   "name": "May 2014 monthly progress invoices (Joslin, Lesser + Associates; Tappe Associates; Shawmut Design & Construction)",
+   "where": "text",
+   "quote": "the lunenburg school building committee voted to approve the may 2014 invoices as presented by joslin, lesser + associates."
+  },
+  {
+   "name": "Abutters Meeting notes, 06-25-14",
+   "where": "text",
+   "quote": "meeting minutes from the previously held abutters meeting on 06-25-14 will be listed as meeting notes and not meeting minutes."
+  },
+  {
+   "name": "MSBA Project funding letter",
+   "where": "text",
+   "quote": "the project funding letter from the msba had not yet been received."
+  },
+  {
+   "name": "Letter from the District to the MSBA confirming positions",
+   "where": "text",
+   "quote": "letter from the district will be issued to the msba confirming these positions."
+  },
+  {
+   "name": "Interior color palette slides",
+   "where": "text",
+   "quote": "several slides were shown to the lsbc"
+  },
+  {
+   "name": "Early Site Package bid results and iGMP No. 1",
+   "where": "text",
+   "quote": "best and final estimates were received"
+  },
+  {
+   "name": "90% Construction Documents",
+   "where": "text",
+   "quote": "the 90% construction documents"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA funding",
+  "invoices",
+  "minutes approval",
+  "officer positions",
+  "project design",
+  "interior design",
+  "community outreach",
+  "ground breaking",
+  "early site package",
+  "construction schedule",
+  "2014"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the lunenburg school building committee reviewed minutes from the following meetings"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 12
+ }
 }

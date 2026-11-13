@@ -1,0 +1,661 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2015-04-21",
+ "video_id": "qyhwgZHEDLQ",
+ "video_url": "https://www.youtube.com/watch?v=qyhwgZHEDLQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-04-21-qyhwgZHEDLQ.json",
+  "sha256": "6c7b117027f3691c9ba1d7002b055a67ce10e48d0aa415261d79df9cc2a1f219",
+  "caption_lines": 343,
+  "segments": 3338
+ },
+ "recording": {
+  "duration_s": 7167,
+  "duration": "1:59",
+  "spoken_chars": 98444,
+  "words_approx": 16407
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04212015-4925",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-04-21-agenda-4925.txt",
+   "path": "sources/meetings/select-board/2015-04-21-agenda-4925.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04212015-4925",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-04-21-minutes-4925.txt",
+   "path": "sources/meetings/select-board/2015-04-21-minutes-4925.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:49:09Z",
+  "cost_usd": 0.2446585
+ },
+ "minutes": {
+  "headline": "Board found Mickey Shay's violated liquor rules twice and imposed a five-day suspension, May 22-26.",
+  "summary": "Most of the meeting was a liquor license hearing for Mickey Shay's over a December underage-service incident and a March after-hours incident. The board found violations on both and set a suspension after debating its length. It also reviewed the FY15 budget adjustment article for Town Meeting, announced a DPW contract settlement, and discussed solar interconnection and the water district.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Bursch",
+    "role": "conservation commission chair (addressed the board)"
+   },
+   {
+    "name_as_heard": "Sergeant Hebert",
+    "role": "presenter, police"
+   },
+   {
+    "name_as_heard": "Brian Reilly",
+    "role": "presenter, town counsel"
+   },
+   {
+    "name_as_heard": "John Londa",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 166,
+    "speaker_as_heard": "Steven Bursch",
+    "stated_role": "chairman of Lunenburg Conservation Commission",
+    "topic": "Reported a member's resignation and asked the board to appoint Carl Luck to fill the vacancy."
+   }
+  ],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "free-cash",
+   "legal",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "superintendent-report",
+   "town-meeting",
+   "transfers",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 3986,
+    "motion": "Find that on December 7 there was serving of an underage patron and a violation.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4008,
+    "motion": "Find a violation on March 14 for patrons in the establishment after hours.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4071,
+    "motion": "Impose a two-day suspension covering both offenses.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 4352,
+    "motion": "Propose a five-day suspension of the alcoholic beverages license.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 4459,
+    "motion": "Impose a five-day suspension from May 22 through May 26.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4895,
+    "motion": "Recommend approval of Article 9, the fiscal 15 budget adjustment.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7120,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 4603,
+    "topic": "FY15 budget adjustment article (snow and ice deficit)",
+    "what_was_said": "The final snow and ice deficit was reported as higher than previously discussed.",
+    "figures_as_heard": [
+     "two hundred and fifty nine thousand three hundred dollars",
+     "ninety three hundred dollars"
+    ]
+   },
+   {
+    "t": 4623,
+    "topic": "Veterans benefits deficit",
+    "what_was_said": "The veterans benefits deficit rose slightly.",
+    "figures_as_heard": [
+     "twenty nine hundred dollars",
+     "sixty thousand dollars"
+    ]
+   },
+   {
+    "t": 4643,
+    "topic": "Insurance participation credits and pavement management cut",
+    "what_was_said": "Extra insurance trust credits cover the two deficits and reduce the proposed pavement management cut.",
+    "figures_as_heard": [
+     "18 490 dollars",
+     "42",
+     "52"
+    ]
+   },
+   {
+    "t": 4726,
+    "topic": "Free cash for Article 9",
+    "what_was_said": "The only additional appropriation is from free cash; everything else is transfers.",
+    "figures_as_heard": [
+     "two hundred and fifty thousand dollars"
+    ]
+   },
+   {
+    "t": 4811,
+    "topic": "Remaining free cash",
+    "what_was_said": "Remaining free cash would go to the FY16 stabilization deposit.",
+    "figures_as_heard": [
+     "just over 50 000"
+    ]
+   },
+   {
+    "t": 5019,
+    "topic": "DPW collective bargaining agreement",
+    "what_was_said": "Three-year contract with a new step grid, cost-neutral merit evaluation replacing personal leave.",
+    "figures_as_heard": [
+     "5.9 percent",
+     "1.97 percent"
+    ]
+   },
+   {
+    "t": 5125,
+    "topic": "Warrants",
+    "what_was_said": "Payroll and accounts payable warrants were read.",
+    "figures_as_heard": [
+     "641 756 dollars and 88 cents",
+     "143 362.86",
+     "306 468.25"
+    ]
+   },
+   {
+    "t": 6192,
+    "topic": "Third quarter financial statements",
+    "what_was_said": "Revenues collected and expenditures are on track at 75 percent of the year.",
+    "figures_as_heard": [
+     "76.78 percent",
+     "72.9 percent",
+     "172 thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4684,
+    "description": "Reduce the pavement management program transfer to help cover the FY15 deficits",
+    "amount_as_heard": "42 instead of 52",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 314,
+    "decision": "Conservation commission appointment of Carl Luck to be taken up at the May 5 meeting with an interview."
+   },
+   {
+    "t": 396,
+    "decision": "Agenda item for interviews and appointments to be dropped when nothing is under it."
+   },
+   {
+    "t": 4438,
+    "decision": "Written decision to be issued to the licensee promptly; five business days to appeal."
+   },
+   {
+    "t": 7078,
+    "decision": "No meeting next Tuesday; board to meet at 8 a.m. on Town Meeting day."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 314,
+    "topic": "Opening announcements and conservation commission vacancy",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 396,
+    "t_end": 3557,
+    "topic": "Mickey Shay's liquor license hearing",
+    "resolution": "hearing closed",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 3557,
+    "t_end": 4562,
+    "topic": "Deliberation, findings and suspension",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 4583,
+    "t_end": 4934,
+    "topic": "FY15 budget adjustment article for Town Meeting",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "transfers",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 4934,
+    "t_end": 5125,
+    "topic": "DPW collective bargaining settlement",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5125,
+    "t_end": 5400,
+    "topic": "Warrants, committee reports",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 5398,
+    "t_end": 6172,
+    "topic": "Solar and Unitil interconnection",
+    "resolution": "informational",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 6172,
+    "t_end": 6356,
+    "topic": "Third quarter financial statements",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6356,
+    "t_end": 7060,
+    "topic": "Water district expansion and meeting",
+    "resolution": "no resolution",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 7060,
+    "t_end": 7165,
+    "topic": "Scheduling and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The counts or voice results on the two-day and five-day suspension motions at 4071 and 4352 are unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4269,
+    "about": "Members disagreed over the length of the suspension and whether the board takes licensing seriously.",
+    "sides": "One member for a seven-day suspension against another who thought seven too much",
+    "words_as_heard": "are you going to be very lenient again so this doesn't happen again",
+    "kind": "members disagree"
+   },
+   {
+    "t": 4831,
+    "about": "A member objected to pavement management money being used as the go-to source for deficits.",
+    "sides": "A member against the transfer practice, and the town manager explaining timing",
+    "words_as_heard": "it can't be the go-to bucket",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 3664,
+    "kind": "condition",
+    "about": "A member wants the door to be staffed at all times.",
+    "who": "a member",
+    "words_as_heard": "someone should be at the door all of the time"
+   },
+   {
+    "t": 6504,
+    "kind": "condition",
+    "about": "Concern about the water district's hydrology, capacity and permit before expanding.",
+    "who": "a member",
+    "words_as_heard": "we should be doing the investigation before expanding the district"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 418,
+    "name_as_heard": "hearing notice dated March 19, 2015",
+    "kind": "letter or email",
+    "words_as_heard": "it was dated march 19 2015 send certified mail"
+   },
+   {
+    "t": 4603,
+    "name_as_heard": "FY15 budget adjustment information sheet and spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "you should have received a copy of some information i put together"
+   },
+   {
+    "t": 6172,
+    "name_as_heard": "third quarter revenue and expenditure report",
+    "kind": "report",
+    "words_as_heard": "there is a complete copy of the revenue and expenditure report"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "snow-and-ice-budget",
+    "title": "Snow and ice budget",
+    "question": "How large was the FY15 snow and ice deficit and how was it covered?",
+    "t": 4623,
+    "words_as_heard": "the final snow and ice deficit is two hundred and fifty nine thousand three hundred dollars",
+    "data_in_play": [
+     "two hundred and fifty nine thousand three hundred dollars",
+     "two hundred and fifty thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board found Mickey Shay's violated liquor rules twice and imposed a five-day license suspension, May 22 through May 26.",
+    "t": 4459
+   },
+   {
+    "line": "The board found a violation for serving an underage patron in December and a second for patrons present after hours in March.",
+    "t": 3986
+   },
+   {
+    "line": "A two-day and a five-day suspension were both proposed during deliberation before the five-day suspension passed; a written decision follows, with five business days to appeal.",
+    "t": 4352
+   },
+   {
+    "line": "The board recommended approval of Article 9, the fiscal 15 budget adjustment, which uses extra insurance credits to cover deficits and lessen a pavement management cut.",
+    "t": 4895
+   },
+   {
+    "line": "A three-year DPW contract settlement was announced, with a new step grid and a cost-neutral merit evaluation replacing personal leave.",
+    "t": 5019
+   }
+  ],
+  "why_it_matters": [
+   "The suspension means the licensed establishment cannot serve alcohol on the set dates, and it shows how the board handles underage-service and after-hours findings.",
+   "Article 9 goes to Town Meeting, where residents vote on it; it decides how snow and ice and veterans benefits deficits are covered, how much free cash is used, and how much goes to stabilization and road work."
+  ],
+  "watch_next": [
+   "Town Meeting vote on Article 9, the fiscal 15 budget adjustment; the board meets at 8 a.m. that day.",
+   "The written decision to the licensee, which starts the five-business-day appeal window."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:49:20Z",
+   "cost_usd": 0.024689100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04212015-4925",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-04-21-minutes-4925.txt",
+   "path": "sources/meetings/select-board/2015-04-21-minutes-4925.pdf"
+  },
+  "official_sha256": "f5a3f9d4b3a463515da4e9552f2d89e07ef81159f5e1778159e985669cfdaa3d",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the two violation findings, the suspension dates, the budget figures and the appeal decision. The one clear difference is the suspension: our minutes have a two-day suspension and a separate five-day proposal, and also lack the official vote tallies (4-1 on Article 9, 4 in favor with 1 abstaining on the suspension).",
+  "counts": {
+   "agree": 13,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Finding of Dec 7 underage service violation",
+    "ours": "Find that on December 7 there was serving of an underage patron and a violation. — passed",
+    "official": "the board finds that on december 7, 2014 there was a violation involving serving alcoholic beverages to an underage person",
+    "note": "Same finding, passed in both.",
+    "t": 3986
+   },
+   {
+    "kind": "agree",
+    "about": "Finding of March 14 after-hours violation",
+    "ours": "Find a violation on March 14 for patrons in the establishment after hours. — passed",
+    "official": "the board finds that on march 14, 2015 there was a violation of patrons being on premises after closing",
+    "note": "Same finding, passed in both.",
+    "t": 4008
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Two-day suspension / proposed five-day suspension votes",
+    "ours": "Impose a two-day suspension covering both offenses. — not audible; Propose a five-day suspension of the alcoholic beverages license. — not audible",
+    "official": "",
+    "note": "Our record has a two-day suspension and a separate five-day proposal; the official minutes show only the five-day suspension motion. Check the video and the official minutes for whether a two-day motion was made.",
+    "t": 4071
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Five-day suspension May 22 to May 26 vote",
+    "ours": "Impose a five-day suspension from May 22 through May 26. — passed",
+    "official": "mr. ebersole motioned to set a five day suspension of the license from may 22 to may 26, 2015 which covers memorial day weekend.",
+    "note": "Both record the same suspension, but the official count is 4 in favor, 1 abstain, while ours says only 'passed'. Check the tally in the video.",
+    "t": 4459
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article 9 recommendation vote",
+    "ours": "Recommend approval of Article 9, the fiscal 15 budget adjustment. — passed",
+    "official": "to recommend the board approve article 9 vote: 4 in favor, 1 against",
+    "note": "Outcome is the same, but the official record shows a 4-1 split that ours does not. Check who dissented.",
+    "t": 4895
+   },
+   {
+    "kind": "agree",
+    "about": "Snow and ice deficit figure",
+    "ours": "two hundred and fifty nine thousand three hundred dollars, ninety three hundred dollars",
+    "official": "she noted the final snow and ice removal deficit was $259,300 which is $9,300 higher than what we talked about previously.",
+    "note": "Same figures, $259,300 and $9,300.",
+    "t": 4603
+   },
+   {
+    "kind": "caption_error",
+    "about": "Veterans benefits deficit",
+    "ours": "twenty nine hundred dollars, sixty thousand dollars",
+    "official": "the veterans benefits line is about $2,900 higher coming to a total deficit of $60,376.",
+    "note": "Captions dropped the $376 from the total.",
+    "t": 4623,
+    "official_reading": "$60,376"
+   },
+   {
+    "kind": "agree",
+    "about": "Participation credits and pavement cut",
+    "ours": "18 490 dollars, 42, 52",
+    "official": "we did receive some additional participation credits in the amount of $18,490",
+    "note": "The $18,490, $42,000 and $52,000 figures match. The official minutes say the cut was reduced by about $10,000.",
+    "t": 4643
+   },
+   {
+    "kind": "agree",
+    "about": "Pavement management transfer reduced to 42 from 52",
+    "ours": "Reduce the pavement management program transfer to help cover the FY15 deficits — 42 instead of 52 (discussed only)",
+    "official": "reduce that proposed cut to the pavement management program by about $10,000 down to $42,000 rather than $52,000.",
+    "note": "Same item, discussed and not voted.",
+    "t": 4684
+   },
+   {
+    "kind": "agree",
+    "about": "Free cash for Article 9",
+    "ours": "two hundred and fifty thousand dollars",
+    "official": "the only additional appropriation will be $250,000 from free cash.",
+    "note": "Same $250,000.",
+    "t": 4726
+   },
+   {
+    "kind": "agree",
+    "about": "Remaining free cash",
+    "ours": "just over 50 000",
+    "official": "ms. speidel stated a little over $50,000 but that is proposed to be applied to the fiscal year 2016 budget",
+    "note": "Same figure.",
+    "t": 4811
+   },
+   {
+    "kind": "agree",
+    "about": "DPW contract cost",
+    "ours": "5.9 percent, 1.97 percent",
+    "official": "the overall cost of this contract over the three year period is 5.9% with an average annual cost of 1.97%",
+    "note": "Same figures.",
+    "t": 5019
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Payroll warrant amount",
+    "ours": "641 756 dollars and 88 cents, 143 362.86, 306 468.25",
+    "official": "warrants presented were for payroll in the amount of $641,756.88; accounts payable in the amount of $143,362.86 and accounts payable in the amount of $306,468.25.",
+    "note": "The amounts match except payroll: 88 cents in the official text, 88 cents in ours as well, so this is the same figure; treat as agreeing, but confirm in the warrant documents.",
+    "t": 5125
+   },
+   {
+    "kind": "agree",
+    "about": "Third quarter financial statements",
+    "ours": "76.78 percent, 72.9 percent, 172 thousand dollars",
+    "official": "at that mark we had collected 76.78% of estimated revenues and expended and/or encumbered 72.9% of appropriations.",
+    "note": "The percentages match. The official text has no $172 thousand figure.",
+    "t": 6192
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Carl Luck appointment to be taken up May 5",
+    "ours": "Conservation commission appointment of Carl Luck to be taken up at the May 5 meeting with an interview.",
+    "official": "the commission would like to recommend the board appoint mr. luck to the vacancy.",
+    "note": "The official minutes record the recommendation but not the May 5 interview scheduling.",
+    "t": 314
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Interviews and appointments agenda item dropped",
+    "ours": "Agenda item for interviews and appointments to be dropped when nothing is under it.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 396
+   },
+   {
+    "kind": "agree",
+    "about": "Written decision and five business days to appeal",
+    "ours": "Written decision to be issued to the licensee promptly; five business days to appeal.",
+    "official": "mr. alonzo informed mr. herrick he would receive a letter from the board detailing the alcohol suspension and will have five business days to appeal to the abcc.",
+    "note": "Same decision.",
+    "t": 4438
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "No meeting next Tuesday; 8 a.m. on Town Meeting day",
+    "ours": "No meeting next Tuesday; board to meet at 8 a.m. on Town Meeting day.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 7078
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meals tax collections",
+    "ours": "",
+    "official": "with almost $75,000 of the $85,000 estimate collected as of march 31, 2015",
+    "note": "Figure only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Water leak, animal control, GIS, DiNatale letter and Water District follow-ups",
+    "ours": "",
+    "official": "mr. alonzo requested the status of the water leak remediation, ms. speidel will inquire and report back",
+    "note": "Several follow-up decisions appear only in the official minutes. Others are the MRC animal control check, the GIS for storm water, the letter to Rep. DiNatale, and the meeting with the Superintendent.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town counsel name",
+    "ours": "Brian Reilly (presenter, town counsel)",
+    "official": "brian riley of kopelman & paige, legal counsel for the town, noted for the record the first incident on",
+    "note": "Spelling differs.",
+    "t": 0,
+    "official_reading": "Brian Riley"
+   },
+   {
+    "kind": "agree",
+    "about": "Sergeant Hebert",
+    "ours": "Sergeant Hebert (presenter, police)",
+    "official": "sergeant jack hebert came forward and reported on december 7\" at approximately 1:41 a.m",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Richard Bursch",
+    "ours": "Mr. Bursch (conservation commission chair (addressed the board))",
+    "official": "richard bursch, conservation commission chair, stated member shelia holt has resigned.",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "John Londa",
+    "ours": "John Londa (presenter)",
+    "official": "john londa stated we went through a solar installation in 2010 on the landfill",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board members and Town Manager present",
+    "ours": "",
+    "official": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present",
+    "note": "Our attendee list has no board members.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:51:14Z",
+   "cost_usd": 0.0629951
+  }
+ }
+}

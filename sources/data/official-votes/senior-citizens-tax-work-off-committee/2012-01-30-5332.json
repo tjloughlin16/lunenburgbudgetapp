@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2012-01-30",
  "docid": "5332",
@@ -12,6 +12,104 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR text is readable. No votes are explicitly recorded. The minutes describe applications being \"reviewed and approved\" and decisions being made (departments continuing to participate, applicants assigned), but contain no motion language, named movers/seconders, or stated voting outcomes. No formal votes are documented.",
- "cost_usd": 0.0821945
+ "note": "OCR text of a single page (macOS Vision). The minutes record no motions, votes, or roll-call results, so the votes list is empty; the approval of applications is stated without a recorded vote. No dollar figures or public comment appear. The stamp reads 'RECEIVED & FILED FEB 19 2015', years after the 2012 meeting date; it is recorded here as printed and not treated as the meeting date. Minutes give no mention of documents used.",
+ "cost_usd": 0.00226492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Doreen Noble",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: doreen noble, kathryn herrick and david manzello."
+  },
+  {
+   "name": "Kathryn Herrick",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: doreen noble, kathryn herrick and david manzello."
+  },
+  {
+   "name": "David Manzello",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: doreen noble, kathryn herrick and david manzello."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Three new applications were reviewed and approved (no motion or vote recorded).",
+   "quote": "three new applications reviewed and approved."
+  },
+  {
+   "decision": "All departments except Assessors will continue to participate this year.",
+   "quote": "all departments except assessors will continue to participate this year."
+  },
+  {
+   "decision": "All applicants were assigned to a department.",
+   "quote": "all applicants were assigned to a department."
+  },
+  {
+   "decision": "Ms Herrick to contact Ms Larkin regarding membership on the Committee; Ms Noble to type the list of placements; check with Ms Speidel re: Laura as potential member.",
+   "quote": "ms herrick to contact ms larkin regarding membership on the committee; ms noble to type the list of placements and check with ms speidel re: laura as potential member."
+  },
+  {
+   "decision": "Next meeting not yet set.",
+   "quote": "next meeting not set yet."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "meeting called to order by chair doreen noble at 10:00 a.m. eagle house."
+  },
+  {
+   "topic": "New applications",
+   "resolution": "approved (no vote recorded)",
+   "quote": "three new applications reviewed and approved."
+  },
+  {
+   "topic": "Department participation",
+   "resolution": "continued (all departments except Assessors)",
+   "quote": "all departments except assessors will continue to participate this year."
+  },
+  {
+   "topic": "Applicant assignment to departments",
+   "resolution": "recorded as complete",
+   "quote": "all applicants were assigned to a department."
+  },
+  {
+   "topic": "Committee membership",
+   "resolution": "discussed; follow-up assigned",
+   "quote": "general discussion regarding membership."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "not set",
+   "quote": "next meeting not set yet."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:03 A.M. (no motion recorded)",
+   "quote": "meeting adjourned at 11:03 a.m."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "senior tax work-off",
+  "property tax aid",
+  "applications",
+  "departments",
+  "committee membership",
+  "Eagle House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2013-02-07",
  "docid": "2456",
@@ -12,13 +12,193 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes from July 18, 2012",
+   "motion": "Approve the minutes of July 18, 2012.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes from july 18, 2012 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded (approval of prior minutes). Section 4 describes \"A decision was made to proceed\" with the Green Community Act, but the minutes do not explicitly record a motion, vote, or outcome count — this reads as a consensus decision without a formal vote. No other votes are stated.",
- "cost_usd": 0.0854975
+ "note": "The minutes are headed \"Green Community Task Force Minutes\" while the board is listed as Green Communities Committee; recorded as given. The approval of the July 18, 2012 minutes has no motion, mover, seconder or count printed, so the outcome is recorded only as approved. Adjournment at 7:40 P.M. has no recorded motion and is not listed as a vote. No public comment section appears in the text. No documents list is printed.",
+ "cost_usd": 0.0033326199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members d. blatt, z. cutting, j.mcquaid, e. sund"
+  },
+  {
+   "name": "Z. Cutting",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members d. blatt, z. cutting, j.mcquaid, e. sund"
+  },
+  {
+   "name": "J.McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members d. blatt, z. cutting, j.mcquaid, e. sund"
+  },
+  {
+   "name": "E. Sund",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members d. blatt, z. cutting, j.mcquaid, e. sund"
+  },
+  {
+   "name": "J. Londa",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "advisors j. londa"
+  },
+  {
+   "name": "M. Benson",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "topic passed over in absence of m. benson"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Secretary",
+   "status": "not stated",
+   "quote": "joanne mcquaid, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group decided to proceed with putting the Green Community Act item on the May Town Meeting agenda, and to generate a list of possible energy conservation projects to present at the same time.",
+   "quote": "a decision was made to proceed but we need to generate a list of possible energy conservation projects to present at the same time."
+  },
+  {
+   "decision": "D. Blatt asked members to bring more energy project ideas to the next meeting.",
+   "quote": "d.blatt asked the group to bring more ideas to the next meeting."
+  },
+  {
+   "decision": "J.McQuaid will arrange for the paper and cardboard recycling information to be posted in the Lunenburg Ledger.",
+   "quote": "j.mcquaid will get the information posted in the lunenburg ledger."
+  },
+  {
+   "decision": "The Site Seeker for Renewable Energy Projects topic was passed over because M. Benson was absent.",
+   "quote": "topic passed over in absence of m. benson"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Landfill solar project interconnect costs",
+   "what_was_recorded": "Unitil is requesting a payment from Borrego to proceed with interconnect and line upgrades for a 1 MW system; the project will most likely not go forward.",
+   "figures_as_printed": [
+    "$558,000.00"
+   ],
+   "quote": "unitil is requesting $558,000.00 from borrego to proceed"
+  },
+  {
+   "topic": "Green Community Act funding",
+   "what_was_recorded": "Funding currently available under the Green Community Act, which could disappear if the town waits longer.",
+   "figures_as_printed": [
+    "$150,000.00"
+   ],
+   "quote": "currently $150,000.00 is available but the funding could"
+  },
+  {
+   "topic": "PVI solar Power Purchase price",
+   "what_was_recorded": "PVI offered the Town a lower price on the Power Purchase; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "they say that they are proceeding but have offered the town a lower price on the power purchase."
+  },
+  {
+   "topic": "Recycling revenue",
+   "what_was_recorded": "Paper and cardboard recycling containers at school buildings are available to residents, with revenue going to the Town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "with the revenue going to the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "approved",
+   "quote": "the minutes from july 18, 2012 were approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Solar projects updates",
+   "resolution": "no action",
+   "quote": "landfill: j. londa reported that unitil is requesting $558,000.00 from borrego to proceed",
+   "tags": [
+    "solar",
+    "net metering",
+    "Unitil",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "Site Seeker for Renewable Energy Projects",
+   "resolution": "passed over",
+   "quote": "topic passed over in absence of m. benson",
+   "tags": [
+    "renewable energy",
+    "site seeker"
+   ]
+  },
+  {
+   "topic": "Green Community Act and Town Meeting agenda",
+   "resolution": "decided to proceed; members to bring project ideas",
+   "quote": "a decision was made to proceed but we need to generate a list of possible energy conservation projects to present at the same time.",
+   "tags": [
+    "green communities act",
+    "energy conservation",
+    "town meeting",
+    "stretch code",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Recycling containers",
+   "resolution": "no action; information to be posted",
+   "quote": "j. londa said paper and cardboard recycling containers are now located at all school buildings",
+   "tags": [
+    "recycling",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for March 7, 2013; adjourned 7:40 P.M.",
+   "quote": "next meeting set for thursday march 7, 2013 at 6:30 p.m.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Purchase Agreement with the Town (EPG solar project)",
+   "where": "text",
+   "quote": "they have signed a purchase agreement with the town to receive credits but no pilot is in place"
+  }
+ ],
+ "tags": [
+  "solar",
+  "renewable energy",
+  "green communities",
+  "net metering",
+  "recycling",
+  "energy conservation",
+  "Unitil",
+  "PILOT"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

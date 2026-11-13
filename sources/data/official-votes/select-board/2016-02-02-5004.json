@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-02-02",
  "docid": "5004",
@@ -12,63 +12,584 @@
  },
  "votes": [
   {
-   "motion": "Authorize the Treasurer to issue refunding bonds and approve the sale of General Obligation Municipal Purpose Loan Series A ($2,395,000) and General Obligation School Bond Series B ($3,215,000)",
+   "motion": "Authorize refunding bonds and approve the sale of the Series A ($2,395,000) and Series B ($3,215,000) general obligation bonds to Robert W. Baird and Co., Inc., with the associated bond terms, official statement and tax compliance authorizations.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "in order to remove interest costs, the treasurer is authorized to issue refunding bonds at one time or from time to time pursuant to chapter 44, § 21a of the general laws or pursuant to any other enabling authority to refund all of the town's $3,978,000 general obligation municipal purpose loan of 2004 loans dated september 1, 2004, maturing on or after september 1, 2016 collectively"
+   "quote": "motion: t. alonzo 2nd;r. ebersole in order to remove interest costs, the treasurer is authorized to issue refunding bonds at one time or"
   },
   {
-   "motion": "Accept the proposal of going forward with either Option 4 or Option 4A for the Building Reuse Committee",
+   "motion": "Accept the proposal of going forward with either Option 4 or Option 4A for the Building Reuse Committee's preferred option (TC Passios School).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to accept the proposal of going forward with either option 4 or option 4a"
+   "quote": "motion: t. alonzo 2\"': p. luck to accept the proposal of going forward with either option 4 or option 4a"
   },
   {
-   "motion": "Approve the $200.00 ambulance fee abatement request",
+   "motion": "Approve the $200.00 abatement request as submitted.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the $200.00 abatement request as submitted"
+   "quote": "motion: r. ebersole 2'': t. alonzo to approve the $200.00 abatement request as submitted vote: all in favor"
   },
   {
-   "motion": "Approve school construction budget revision requests #8 & #9",
+   "motion": "Approve school construction budget revision requests #8 & #9 as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the school construction budget revision requests #8 & #9 as presented"
+   "quote": "motion: r. ebersole 2\"ª:t. alonzo to approve the school construction budget revision requests #8 & #9 as presented"
   },
   {
-   "motion": "Nominate Paula Bertram as the primary representative for Lunenburg at MPO",
+   "motion": "Nominate Phyllis Luck as the alternate to MPO.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to nominate paula bertram to be the primary representative for lunenburg at mpo"
+   "quote": "to nominate phyllis luck as the alternate to mpo 2\": t. alonzo"
   },
   {
-   "motion": "Nominate Phyllis Luck as the alternate to MPO",
+   "motion": "Nominate Paula Bertram to be the primary representative for Lunenburg at MPO.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to nominate phyllis luck as the alternate to mpo"
+   "quote": "to nominate paula bertram to be the primary representative for lunenburg at mpo vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:15 p.m.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "to adjourn the meeting at 9:15 p.m."
+   "quote": "motion: r. ebersole to adjourn the meeting at 9:15 p.m. 2nd.t. alonzo vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes were OCR-extracted from a scanned document (macOS Vision). Minute approval and warrant signing mentioned in section 6 without formal motion language, so not counted as a recorded vote.",
- "cost_usd": 0.1049655
+ "note": "Scanned OCR text with garbled characters and typos (e.g., '$$235,000', '2037: $160,00', 'FY2107', 'Ymix' header); recorded as printed where legible. Bond amounts in the appointment (Series A $2,350,000, Series B $3,295,000) differ from the sale motion ($2,395,000, $3,215,000); both recorded as printed. Votes are recorded only as 'All in Favor' with no counts. The MPO item has a duplicated 'Motion: R. Ebersole' line and two separate nominations, each recorded as a vote. Two votes (accept Option 4/4A, bond sale) have a non-standard second line. Signature block names appear garbled. Attendance for Erickson, Albert and McQuaid is not stated.",
+ "cost_usd": 0.01682122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "paula bertram, member was not present."
+  },
+  {
+   "name": "David Eisenthal",
+   "role": "Vice President, Unibank Fiscal Advisory Services",
+   "status": "present",
+   "quote": "mr. eisenthal, vice president, unibank fiscal advisory services, reported the town took bids on january 28"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "dave macdonald stated it was discussed and the cafeteria seemed like a good place for community"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "mr. alonzo asked town manager lafleur and land use director burney for their thoughts on the proposal."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, asked if the present tenant situation might be a benefit to the town by saving"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee member mackin presented on behalf of supt. loxi calmes."
+  },
+  {
+   "name": "Mr. Erickson",
+   "status": "not stated",
+   "quote": "mr. erickson, mr. albert and mr. mcquaid also expressed they wanted to stay on and tie up any loose ends."
+  },
+  {
+   "name": "Mr. Albert",
+   "status": "not stated",
+   "quote": "mr. erickson, mr. albert and mr. mcquaid also expressed they wanted to stay on and tie up any loose ends."
+  },
+  {
+   "name": "Mr. McQuaid",
+   "status": "not stated",
+   "quote": "mr. erickson, mr. albert and mr. mcquaid also expressed they wanted to stay on and tie up any loose ends."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board decided to wait on any decision about the DPU public hearing (Unitil rate case) until closer to the April 5, 2016 date.",
+   "quote": "the board decided to wait on making any decision until they get closer to the date."
+  },
+  {
+   "decision": "The Board approved the minutes of December 8, 2015, December 15, 2015, January 5, 2016 and January 12, 2016 (no motion recorded).",
+   "quote": "the board approved minutes of december 8, 2015, december 15, 2015 and january 5, 2016 and january 12, 2016."
+  },
+  {
+   "decision": "The Board signed an Accounts Payable warrant in the amount of $436,994.92.",
+   "quote": "the board signed an accounts payable warrant in the amount of $436,994.92."
+  },
+  {
+   "decision": "Ms. Lafleur agreed to put together information on Community Compacts for the Board within the next couple of weeks.",
+   "quote": "ms. lafleur stated she could put something together for the board within the next couple of weeks."
+  },
+  {
+   "decision": "The Memorial Day Committee is to be placed on an upcoming Board agenda.",
+   "quote": "mr. toale stated he would like to have the memorial day committee placed on an upcoming agenda."
+  },
+  {
+   "decision": "The Building Reuse Committee will return to the Board with a request for funding for the real estate appraisal/market analysis.",
+   "quote": "he stated the next step is for the committee to return to the board with a request but he requested further direction from the board this evening."
+  },
+  {
+   "decision": "The Building Reuse Committee members agreed to stay on to answer additional questions during the process.",
+   "quote": "mr. macdonald stated he would like to see it through to the end."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Refunding and school bond sale bids",
+   "what_was_recorded": "Bond counsel's adviser reported bids on two series totaling $5.61 million, with $4.55 million for the school project and the remainder refunding 2004 bonds.",
+   "figures_as_printed": [
+    "$5.61 million",
+    "$4.55 million",
+    "$2,350,000",
+    "$3,295,000",
+    "$1.655 million"
+   ],
+   "quote": "on two series of bonds totaling $5.61 million. $4.55 million was for the school construction project and the"
+  },
+  {
+   "topic": "Refunding savings",
+   "what_was_recorded": "The refunding is said to save the Town $161,000, with average annual debt service savings of about $20,000.",
+   "figures_as_printed": [
+    "$161,000",
+    "about 10%",
+    "$20,000",
+    "$17,000",
+    "$3,000"
+   ],
+   "quote": "the town saved $161,000, which is about 10% of the paramount of the refunded bonds."
+  },
+  {
+   "topic": "Total school project financing",
+   "what_was_recorded": "Total amount now financed on the school project is $33.7 million, against a project budget of about $67 million less the maximum MSBA grant.",
+   "figures_as_printed": [
+    "$33.7 million",
+    "approximately $67 million"
+   ],
+   "quote": "the total amount now financed on the school project is $33.7 million, covering the project budget, approximately $67 million, less the maximum msba grant"
+  },
+  {
+   "topic": "School project tax rate impact",
+   "what_was_recorded": "Long-run school project impact is stated as $1.60 per thousand of assessed valuation, about $410 a year on a $257,000 single family house, peaking at $2.71 per thousand in FY2019 (about $700 on an average home).",
+   "figures_as_printed": [
+    "$1.60 per thousand",
+    "$1.2 billion",
+    "$257,000",
+    "$410",
+    "$2.71",
+    "$700"
+   ],
+   "quote": "the impact of the school project should be $1.60 per thousand of assessed valuation based on fy2016 assessed valuation of $1.2 billion dollars."
+  },
+  {
+   "topic": "Bond sale prices and refunded debt",
+   "what_was_recorded": "The motion approves sale of $2,395,000 Series A and $3,215,000 Series B bonds to Robert W. Baird and Co., Inc. at $2,524,693.19 and $3,260,926.98, and refunds $3,978,000 of 2004 loans.",
+   "figures_as_printed": [
+    "$3,978,000",
+    "$2,395,000",
+    "$2,524,693.19",
+    "$3,215,000",
+    "$3,260,926.98"
+   ],
+   "quote": "to refund all of the town's $3,978,000 general obligation municipal purpose loan of 2004 loans"
+  },
+  {
+   "topic": "Reserves and expenditures (S&P review)",
+   "what_was_recorded": "FY2015 audit showed available reserves of $2,538,910 and general fund expenditures of $32,109,269.",
+   "figures_as_printed": [
+    "$2,538,910",
+    "$32,109,269",
+    "7.9 %"
+   ],
+   "quote": "the fy2015 audit showed available reserves at $2,538,910 and general fund expenditures at $32,109,269 (7.9 %)."
+  },
+  {
+   "topic": "Building reuse Option 1 conceptual cost",
+   "what_was_recorded": "Conceptual cost of Option 1 (comprehensive renovation/addition to the Primary School) is stated.",
+   "figures_as_printed": [
+    "$8,340,000"
+   ],
+   "quote": "option 1 presents a comprehensive renovation/addition to the primary school for municipal use. the conceptual cost would be $8,340,000."
+  },
+  {
+   "topic": "Building reuse Option 1A conceptual cost",
+   "what_was_recorded": "Conceptual cost of Option 1A (demolish Primary School and build new Town Office building) is stated.",
+   "figures_as_printed": [
+    "$9,000,000"
+   ],
+   "quote": "option 1a would demolish the existing primary school and construct a new town office building. the conceptual cost would be $9,000,000."
+  },
+  {
+   "topic": "Building reuse Option 1B conceptual cost",
+   "what_was_recorded": "Conceptual cost of Option 1B (renovate Primary School and Town Hall) is stated.",
+   "figures_as_printed": [
+    "$7,100,000"
+   ],
+   "quote": "option 1b would be to renovate the existing primary school (12,300 sq. ft.) and town hall (6,500 sq. ft.) the conceptual cost for this is $7,100,000."
+  },
+  {
+   "topic": "Building reuse Option 2 conceptual cost",
+   "what_was_recorded": "Conceptual cost of Option 2 (renovate Ritter Building, add addition, renovate Town Hall) is stated.",
+   "figures_as_printed": [
+    "$7,475,000"
+   ],
+   "quote": "totaling 19,200 square feet in both buildings. the conceptual cost would be $7,475,000."
+  },
+  {
+   "topic": "Building reuse Option 3 conceptual cost",
+   "what_was_recorded": "Conceptual cost of Option 3 (comprehensive renovation of existing Town Hall, which the minutes say does not meet Town needs) is stated.",
+   "figures_as_printed": [
+    "$2,770,000"
+   ],
+   "quote": "option 3 which does not meet the needs of the town would be a comprehensive renovation of the existing town hall building (5,700 sq. ft.). the conceptual cost would be $2,770,000."
+  },
+  {
+   "topic": "Building reuse Option 4 conceptual cost",
+   "what_was_recorded": "Conceptual cost of Option 4 (use TC Passios School, selectively renovating and demolishing parts) is stated.",
+   "figures_as_printed": [
+    "$4,775,000"
+   ],
+   "quote": "this would provide 35,000 square feet which includes the gymnasium and cafeteria areas. the conceptual cost would be $4,775,000."
+  },
+  {
+   "topic": "Funding for real estate appraisal/market analysis",
+   "what_was_recorded": "No funding is available in the FY2016 budget; any appropriation would have to be made at Annual Town Meeting and would not be available until May. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lafleur reported there is no funding available in the fy2016 budget."
+  },
+  {
+   "topic": "Passios tenant savings on special education transportation",
+   "what_was_recorded": "Mr. Mackin reported some savings from a present tenant on special education transportation, though not a significant amount. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mike mackin, 26 cortland circle, reported there is some savings, not a significant amount, due to the cost of special education transportation."
+  },
+  {
+   "topic": "School BRR #8 construction change orders",
+   "what_was_recorded": "Transfer from Construction Contingency to Construction Change Orders for a domestic and tempered water return loop piping change.",
+   "figures_as_printed": [
+    "$6,613"
+   ],
+   "quote": "the first is brr is for a transfer from construction contingency to construction change orders in the amount of $6,613"
+  },
+  {
+   "topic": "School BRR #9 testing services",
+   "what_was_recorded": "Transfer from Owner's Contingency to Testing Services to pay for system testing during construction.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "the second is for a transfer from owner's contingency to testing services in the amount of $25,000."
+  },
+  {
+   "topic": "Ambulance fee abatement",
+   "what_was_recorded": "Board approved a $200.00 ambulance fee abatement request reviewed for eligibility by the Fire Chief.",
+   "figures_as_printed": [
+    "$200.00"
+   ],
+   "quote": "3. $200.00 ambulance fee abatement request: ms. lafleur stated this request follows the board's policy on requests"
+  },
+  {
+   "topic": "Wiring Inspector appropriation",
+   "what_was_recorded": "Wiring Inspector line has $16,331.70 (99%) expended; an additional appropriation of $6024 will be needed before fiscal year end.",
+   "figures_as_printed": [
+    "$16,331.70",
+    "99%",
+    "$6024"
+   ],
+   "quote": "we will need an additional appropriation of $6024 prior to the close of the fiscal year."
+  },
+  {
+   "topic": "Unemployment Compensation",
+   "what_was_recorded": "Full appropriation available with no open claims.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "unemployment compensation: the full appropriation of $10,000 is available at this time as there are no open"
+  },
+  {
+   "topic": "Liability Insurance balance",
+   "what_was_recorded": "Unexpended balance in the liability insurance line as of 12/31/2015.",
+   "figures_as_printed": [
+    "$10,404.88"
+   ],
+   "quote": "liability insurance: there is an unexpended balance of $10,404.88 in the line as of 12/31/2015."
+  },
+  {
+   "topic": "Quarterly financial report (second quarter FY2016)",
+   "what_was_recorded": "Revenue collections, taxes, state aid and expenditures reported as of 12/31/2015.",
+   "figures_as_printed": [
+    "$17,404,288.96",
+    "50.12%",
+    "$11,535,337.81",
+    "49.33%",
+    "$7,276,353",
+    "47.95%",
+    "$17,881,414.94",
+    "51.1%"
+   ],
+   "quote": "revenues: total collections to date are $17,404,288.96 or 50.12% of fy2016 estimates through 12/31/2015."
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "Board signed an Accounts Payable warrant.",
+   "figures_as_printed": [
+    "$436,994.92"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $436,994.92."
+  },
+  {
+   "topic": "School FY2017 projected budget",
+   "what_was_recorded": "School Committee voted to approve the Superintendent's FY2017 projected budget, which is over target.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "the school committee voted to approve the superintendent's fy2017 projected budget which is $300,000 over target."
+  },
+  {
+   "topic": "604B water quality grant program",
+   "what_was_recorded": "Mass DEP 604B grant program has funds to award to three or four applications.",
+   "figures_as_printed": [
+    "$180,000"
+   ],
+   "quote": "the 604b (water quality management) grant program has $180,000 to award to three or four applications."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Construction Contingency to Construction Change Orders for a domestic and tempered water return loop piping change (School BRR #8).",
+   "outcome": "approved (passed, All in Favor)",
+   "amount_as_printed": "$6,613",
+   "quote": "the first is brr is for a transfer from construction contingency to construction change orders in the amount of $6,613"
+  },
+  {
+   "description": "Transfer from Owner's Contingency to Testing Services for construction systems testing (School BRR #9).",
+   "outcome": "approved (passed, All in Favor)",
+   "amount_as_printed": "$25,000",
+   "quote": "the second is for a transfer from owner's contingency to testing services in the amount of $25,000."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "resident email on Middle/High School contingency fund",
+   "quote": "ms. luck stated she had received an email from a resident regarding the middle/high school project contingency fund."
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "Member",
+   "topic": "written comments read into record on Building Reuse study",
+   "quote": "mr. ebersole stated ms. bertram couldn't attend tonight but wanted to submit some comments sent via email:"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "tenant situation and special needs transportation savings",
+   "quote": "dave passios, 56 whiting street, asked if the present tenant situation might be a benefit to the town by saving"
+  },
+  {
+   "speaker": "Mike Mackin",
+   "stated_role": "26 Cortland Circle; School Committee member",
+   "topic": "transportation savings and compatible use of campus",
+   "quote": "mike mackin, 26 cortland circle, reported there is some savings, not a significant amount, due to the cost of special education transportation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "ms. luck stated she had received an email from a resident regarding the middle/high school project contingency fund."
+  },
+  {
+   "topic": "Member reports (Board of Health septic program, DEP grant, stormwater)",
+   "resolution": "no action",
+   "quote": "mr. ebersole reported the board of health voted last night to adopt the policies and procedures for the septic system repair program."
+  },
+  {
+   "topic": "Appointments: David Eisenthal, G.O. bond issue review and approval",
+   "resolution": "approved bond sale (passed)",
+   "quote": "mr. eisenthal, vice president, unibank fiscal advisory services, reported the town took bids on january 28"
+  },
+  {
+   "topic": "Building Reuse Committee report on Building Assessment and Space Needs Feasibility Study",
+   "resolution": "accepted direction to go forward with Option 4 or 4A",
+   "quote": "mr. toale stated he would be refering to the study done by tappe associates on lunenburg building"
+  },
+  {
+   "topic": "Current Business 1: Traffic rules and orders",
+   "resolution": "continued",
+   "quote": "town counsel is still in the process of reviewing the entire traffic rules and orders."
+  },
+  {
+   "topic": "Current Business 2: DPU public hearing (Unitil rate case)",
+   "resolution": "deferred",
+   "quote": "the board decided to wait on making any decision until they get closer to the date."
+  },
+  {
+   "topic": "Current Business 3: $200.00 ambulance fee abatement",
+   "resolution": "approved",
+   "quote": "3. $200.00 ambulance fee abatement request: ms. lafleur stated this request follows the board's policy on requests"
+  },
+  {
+   "topic": "Current Business 4: School Construction Budget Revision Requests #8 & #9",
+   "resolution": "approved",
+   "quote": "school committee member mackin presented on behalf of supt. loxi calmes."
+  },
+  {
+   "topic": "Current Business 5: MPO representative and alternate nomination",
+   "resolution": "approved nominations",
+   "quote": "ms. lafleur reported at their last meeting that ms. bertram volunteered to be the subregion 3 representative"
+  },
+  {
+   "topic": "Current Business 6: Minutes, warrants and action file issues (Community Compact)",
+   "resolution": "minutes approved, warrant signed; Community Compact discussed, Town Manager to report",
+   "quote": "the board approved minutes of december 8, 2015, december 15, 2015 and january 5, 2016 and january 12,"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "mr. ebersole reported on the board of health earlier."
+  },
+  {
+   "topic": "Town Manager report (FY2017 budget timing, Parks Commission field financing)",
+   "resolution": "no action",
+   "quote": "ms. lafleur reported her fy2107 recommended budget will be released on or before"
+  },
+  {
+   "topic": "Quarterly financial report, second quarter FY2016",
+   "resolution": "received, no action",
+   "quote": "ms. lafleur referred the board to the revenue and expenditure reports for the second quarter of fy2016 created"
+  },
+  {
+   "topic": "Resignations and vacancies",
+   "resolution": "acknowledged",
+   "quote": "mr. toale acknowledged the resignation of troy daniels from the sewer commission."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:15 p.m.",
+   "quote": "to adjourn the meeting at 9:15 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout showing tax rate impacts (bond issue)",
+   "where": "text",
+   "quote": "mr. eisenthal directed the board to the handout showing tax rate impacts."
+  },
+  {
+   "name": "Study by Tappe Associates on Lunenburg Building Assessment and Space Needs (Building Reuse Committee)",
+   "where": "text",
+   "quote": "mr. toale stated he would be refering to the study done by tappe associates on lunenburg building"
+  },
+  {
+   "name": "PowerPoint presentation (BOS_Feb 2 - draft version REV 3 - 1.25 16.pdf), Building Reuse Committee",
+   "where": "text",
+   "quote": "as well as the powerpoint presentation he was giving on behalf of the building reuse committee tonight."
+  },
+  {
+   "name": "Notice of sale and preliminary official statement dated January 20, 2016; final official statement dated January 28, 2016",
+   "where": "text",
+   "quote": "the preparation and distribution of the notice of sale and preliminary official statement dated january 20, 2016, and the final official statement dated january 28, 2016"
+  },
+  {
+   "name": "Revenue and expenditure reports for the second quarter of FY2016, created by Town Accountant Karen Brochu",
+   "where": "text",
+   "quote": "ms. lafleur referred the board to the revenue and expenditure reports for the second quarter of fy2016 created"
+  },
+  {
+   "name": "Accounts Payable warrant in the amount of $436,994.92",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $436,994.92."
+  },
+  {
+   "name": "$200.00 Ambulance Fee Abatement Request",
+   "where": "text",
+   "quote": "3. $200.00 ambulance fee abatement request: ms. lafleur stated this request follows the board's policy on requests"
+  },
+  {
+   "name": "Board of Health septic system repair policies and procedures",
+   "where": "text",
+   "quote": "mr. ebersole reported the board of health voted last night to adopt the policies and procedures for the septic system repair program."
+  },
+  {
+   "name": "Email comments from Paula Bertram on the Building Reuse study",
+   "where": "text",
+   "quote": "mr. ebersole stated ms. bertram couldn't attend tonight but wanted to submit some comments sent via email:"
+  },
+  {
+   "name": "FY2107 Recommended Budget (as printed)",
+   "where": "text",
+   "quote": "ms. lafleur reported her fy2107 recommended budget will be released on or before"
+  }
+ ],
+ "tags": [
+  "bond issue",
+  "school construction",
+  "building reuse",
+  "Passios School",
+  "Town Hall",
+  "town budget",
+  "quarterly financial report",
+  "appointments",
+  "MPO",
+  "resignations",
+  "ambulance abatement",
+  "Community Compact"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. eisenthal directed the board to the handout showing tax rate impacts."
+ },
+ "dropped_unquoted_by_field": {}
 }

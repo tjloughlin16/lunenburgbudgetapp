@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2010-11-09",
  "docid": "1758",
@@ -12,23 +12,290 @@
  },
  "votes": [
   {
-   "motion": "Accept the October 12, 2010 COA meeting minutes as amended",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Accept the October 12, 2010 COA meeting minutes as amended.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "a motion was made and seconded to accept the october 12, 2010 coa meeting minutes as amended. all approved, motion carried."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "a motion was made and seconded to accept the october 12, 2010 coa meeting minutes as amended."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "a motion was made and seconded to adjourn the meeting. all approved, and the motion was carried."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "a motion was made and seconded to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is clear and readable. Two votes recorded: approval of prior minutes and adjournment, both procedural and both unanimously passed. No specific mover or seconder names are stated for either vote.",
- "cost_usd": 0.0842725
+ "note": "Header reads 'Minutes Approved at the 12/14, 2010 COA Meeting'. Votes record no mover or seconder; both were 'All approved, motion carried' or 'the motion was carried', so the count is recorded as passed. Text is extracted from a scan-style PDF with broken words and spacing; quotes copy that text as printed. Public comment section absent.",
+ "cost_usd": 0.0056985199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "pete lincoln, chairperson, called the meeting to order at 9:33 a.m."
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": ": pete lincoln (chairperson), doreen noble (director) , mary lynn conrad, fred crellin, jane doyle,"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "member",
+   "status": "present",
+   "quote": ": pete lincoln (chairperson), doreen noble (director) , mary lynn conrad, fred crellin, jane doyle,"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "member",
+   "status": "present",
+   "quote": ": pete lincoln (chairperson), doreen noble (director) , mary lynn conrad, fred crellin, jane doyle,"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "member",
+   "status": "present",
+   "quote": ": pete lincoln (chairperson), doreen noble (director) , mary lynn conrad, fred crellin, jane doyle,"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "member",
+   "status": "present",
+   "quote": "joyce wass, barbara brown, sandy flanagan, sis montuori, jim hays and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "member",
+   "status": "present",
+   "quote": "joyce wass, barbara brown, sandy flanagan, sis montuori, jim hays and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Sandy Flanagan",
+   "role": "member",
+   "status": "present",
+   "quote": "joyce wass, barbara brown, sandy flanagan, sis montuori, jim hays and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "member",
+   "status": "present",
+   "quote": "joyce wass, barbara brown, sandy flanagan, sis montuori, jim hays and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "member",
+   "status": "present",
+   "quote": "joyce wass, barbara brown, sandy flanagan, sis montuori, jim hays and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "joyce wass, barbara brown, sandy flanagan, sis montuori, jim hays and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "member",
+   "status": "absent",
+   "quote": "excused: deb seeley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The COA board agreed that the meeting address should be added to the monthly agenda, but no other change to the agenda format would be made.",
+   "quote": "after a short discussion the coa board agreed that the address should be added"
+  },
+  {
+   "decision": "The COA Finance Sub-Committee meeting, cancelled for lack of a quorum, was rescheduled to December 14, 2010 at 9AM; Sue Doherty to post it with the Town Clerk's office.",
+   "quote": "there was no quorum for the coa finance sub-commi ttee which was scheduled to"
+  },
+  {
+   "decision": "Pete Lincoln suggested that the COA Board Development Committee begin looking for a new COA board member.",
+   "quote": "pete lincoln suggested that the coa board developme nt committee begin looking for a new coa board"
+  },
+  {
+   "decision": "The Director will request multiple applicants to choose from for a possible January student intern at the Eagle House.",
+   "quote": "will request that there be multiple applicants to choose from"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA budget sheet",
+   "what_was_recorded": "A COA budget sheet was given to all members to review; no figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "a coa budget sheet was given to all members to review."
+  },
+  {
+   "topic": "Town Manager 5-year budget projection",
+   "what_was_recorded": "The Town Manager was to present her 5 year budget projection to the Selectmen that evening; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager will be presenting her 5 year budget projection to the selectmen this evening."
+  },
+  {
+   "topic": "Van for special trips",
+   "what_was_recorded": "The Director was seeking to procure another van for the Town/Senior Center; maintenance responsibility was questioned, with MART service possibly difficult and the Highway Department possibly needed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she is hoping to p rocure another van for the town/senior center to"
+  },
+  {
+   "topic": "Parking lot grant",
+   "what_was_recorded": "The request amount for the parking lot grant is $333,000.00; a newspaper story was described as misleading about the project cost.",
+   "figures_as_printed": [
+    "$333,000.00"
+   ],
+   "quote": "the grant is $333,000.00 and according to shelly hatch from mrpc"
+  },
+  {
+   "topic": "Housing rehab loan",
+   "what_was_recorded": "The housing rehab grant consists of a 15 year, no interest loan to income eligible homeowners for repairs up to the stated amount, forgiven if the homeowner stays 15 years.",
+   "figures_as_printed": [
+    "$30,000.00"
+   ],
+   "quote": "interest loan, to income eligible homeowners for housing repairs up to $30,000.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "called to order at 9:33 a.m.",
+   "quote": "pete lincoln, chairperson, called the meeting to order at 9:33 a.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of October 12, 2010",
+   "resolution": "approved as amended",
+   "quote": "a motion was made and seconded to accept the october 12, 2010 coa meeting minutes as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational, no action",
+   "quote": "doreen reported that approximately 137 people attended the pancake breakfast in october.",
+   "tags": [
+    "director",
+    "pancake breakfast",
+    "van",
+    "intern",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Finance/Informational Report",
+   "resolution": "budget sheet distributed, no action",
+   "quote": "a coa budget sheet was given to all members to review.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Old Business: Parking Lot",
+   "resolution": "informational, no action",
+   "quote": "the grant is $333,000.00 and according to shelly hatch from mrpc",
+   "tags": [
+    "parking lot",
+    "grant",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Old Business: Housing Rehab project",
+   "resolution": "informational, no action",
+   "quote": "the housing rehab project is",
+   "tags": [
+    "housing rehab",
+    "loan"
+   ]
+  },
+  {
+   "topic": "New Business: COA agenda format",
+   "resolution": "agreed to add meeting address; no other change",
+   "quote": "she requested that the meeting address be added to the agenda",
+   "tags": [
+    "agenda format"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "Finance Sub-Committee rescheduled to December 14, 2010",
+   "quote": "there was no quorum for the coa finance sub-commi ttee which was scheduled to",
+   "tags": [
+    "committees",
+    "board development"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "none received",
+   "quote": "no new correspondence at this meeting.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "informational, no action",
+   "quote": "doreen informed the board that the town of templeton will finally be breaking ground on",
+   "tags": [
+    "Templeton",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Upcoming Events",
+   "resolution": "see attached agenda",
+   "quote": "see attached agenda.",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:45 a.m.",
+   "quote": "a motion was made and seconded to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA budget sheet",
+   "where": "list",
+   "quote": "a coa budget sheet was given to all members to review."
+  },
+  {
+   "name": "Monthly COA agenda (attached, Upcoming Events)",
+   "where": "text",
+   "quote": "see attached agenda."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "parking lot grant",
+  "housing rehab",
+  "budget",
+  "van",
+  "agenda format",
+  "committees",
+  "Eagle House"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a coa budget sheet was given to all members to review."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-01-12",
  "docid": "2528",
@@ -12,19 +12,154 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of December 12, 2011 as written",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 12/12/11 as written.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes of 12/12/11 approved as written."
-  },
-  {
-   "motion": "approve the demolition request for 332 Massachusetts Avenue",
-   "outcome": "approved",
-   "procedural": false,
-   "quote": "request for demolition is approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. No vote counts recorded; outcomes stated as approved without explicit vote language or counts.",
- "cost_usd": 0.0897755
+ "note": "OCR text (macOS Vision) of a single page. No chair is named and no mover, seconder or vote count is printed for any motion. The minutes approve the prior minutes and the demolition request without a recorded motion, so the demolition approval is recorded as a decision, not a vote. The call-to-order line says January 12, 2011, which conflicts with the 2012 meeting date; the OCR may have misread it or the minutes may contain the error. The Correspondence list is garbled by OCR (only 'al', 'RAM', 'DM' are legible) and may be initials rather than documents. No adjournment motion is recorded; only 'Meeting Adjourned @ 8:14pm' is printed.",
+ "cost_usd": 0.0032505200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pat Slattery",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, becky lantry, damon mcquaid, amory phelps"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, becky lantry, damon mcquaid, amory phelps"
+  },
+  {
+   "name": "Becky Lantry",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, becky lantry, damon mcquaid, amory phelps"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, becky lantry, damon mcquaid, amory phelps"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "member, sworn in to fill the vacant seat",
+   "status": "present",
+   "quote": "amory phelps has been sworn in and is present for this months meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission approved the demolition request for 332 Massachusetts Avenue, finding the structure does not fit the criteria of the by-law (no vote recorded in the minutes).",
+   "quote": "request for demolition is approved. the structure does not fit the criteria of the by-law."
+  },
+  {
+   "decision": "The Commission scheduled a working session on 1/24 at 6:30 for the town wide survey and uploading of information to the Macris database.",
+   "quote": "the commission has scheduled a working session for the town wide survey and the uploading of information to the macris database for 1/24 at 6:30."
+  },
+  {
+   "decision": "Pat is to bring Amory up to speed on the newspaper article topic, and Amory is to be the new point of contact with the newspaper.",
+   "quote": "pat to get amory up to speed on the topic and she is to be the new point of contact with the news"
+  },
+  {
+   "decision": "The next meeting was scheduled for Feb 6, 2012 at 6:30 in the Eagle House.",
+   "quote": "next meeting scheduled for feb 6, 2012 @ 6:30 in the eagle house"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "minutes of 12/12/11 approved as written",
+   "quote": "meeting called to order january 12, 2011 @ 6:30 pm",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Filling of vacant seat on the Commission",
+   "resolution": "Amory Phelps sworn in and seated",
+   "quote": "amory phelps has been sworn in and is present for this months meeting",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Other old business: file relocation and newspaper articles",
+   "resolution": "files moved to Ritter Building basement; Amory assigned newspaper contact",
+   "quote": "all historical commission files have been relocated to the basement of the ritter building.",
+   "tags": [
+    "records",
+    "public outreach",
+    "newspaper"
+   ]
+  },
+  {
+   "topic": "Demolition request for 332 Massachusetts Avenue",
+   "resolution": "approved",
+   "quote": "request for demolition is approved. the structure does not fit the criteria of the by-law.",
+   "tags": [
+    "demolition",
+    "by-law"
+   ]
+  },
+  {
+   "topic": "Town wide survey and Macris database working session",
+   "resolution": "working session scheduled for 1/24 at 6:30",
+   "quote": "the commission has scheduled a working session for the town wide survey and the uploading of information to the macris database for 1/24 at 6:30.",
+   "tags": [
+    "survey",
+    "Macris",
+    "working session"
+   ]
+  },
+  {
+   "topic": "Format of meeting agendas and public information",
+   "resolution": "discussion only, no action",
+   "quote": "there was a discussion about the format of meeting agendas and what can be done to better inform the public about the activity of the commission.",
+   "tags": [
+    "agenda",
+    "public outreach"
+   ]
+  },
+  {
+   "topic": "Homeowner maintenance of older structures",
+   "resolution": "discussion only; possible how-to handbook considered",
+   "quote": "there was a discussion about homeowner maintenance of older structures and perhaps looking into the publication of a how-to article / handbook",
+   "tags": [
+    "maintenance",
+    "handbook",
+    "public outreach"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "demolition",
+  "Macris database",
+  "town wide survey",
+  "membership",
+  "public outreach",
+  "newspaper",
+  "agenda format",
+  "homeowner handbook"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

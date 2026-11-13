@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2015-04-30",
  "docid": "930",
@@ -12,23 +12,149 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of April 6, 2015",
-   "moved_by": "Jewell",
-   "seconded_by": "Shea",
+   "motion": "Approve the minutes of April 6, 2015.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "minutes approved: april 6, 2015 jewell/shea"
+   "quote": "minutes approved: april 6, 2015 jewell/shea",
+   "seconded_by": ""
   },
   {
-   "motion": "Authorize Dave Passios to speak on behalf of the Board of Health at the Annual Town Meeting on Saturday, May 2, 2015",
+   "motion": "Authorize Dave Passios to speak on behalf of the Board of Health at the Annual Town Meeting to be held on Saturday, May 2, 2015.",
    "moved_by": "Jewell",
-   "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the board voted to authorize dave passios to speak on behalf of the board of health at the annual town meeting to be held on saturday, may 2, 2015. all were in favor."
+   "quote": "on motion by jewell and second by fortin, the board voted to authorize dave passios to speak on behalf of the board of health",
+   "seconded_by": "Fortin"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. Meeting minutes are clear and readable (not a scan).",
- "cost_usd": 0.0890375
+ "note": "Text is extracted with broken word spacing and split names (e.g., 'Dav e Passios', 'Perk o', 'Couns el'); quotes were copied with those artifacts where needed. The minutes-approval line lists 'Jewell/Shea' without saying which was mover and which seconder, so those fields are left blank. The minutes contain a date oddity: a reference to 'Tu esday May 24th' in an April 30 meeting. No documents list heading is printed; documents named in the text are recorded as 'text'. Adjournment at 7:51 pm is recorded without a motion, so it is not listed as a vote. The Article 22 warrant text is quoted in full under a 'WARRANT ARTICLES' heading but is not a documents list, so it is recorded as 'text'.",
+ "cost_usd": 0.00455832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "representative authorized to speak for the Board of Health at Annual Town Meeting",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The members of the Board agreed with the four major concerns Perry Jewell raised about Warrant Article 22 (process, need, whether the Select Board can take the grant funds, and Select Board involvement in town government).",
+   "quote": "the members of the board are in agreement with these four major concerns."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant Article 22 revolving loan funds held by the Board of Health",
+   "what_was_recorded": "The board discussed whether the Select Board could take control of grant funds held by the Board of Health and whether the article's transfer of Account 2575 funds was proper; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "they are grant funds given specifically to the board of health."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of April 6, 2015",
+   "quote": "minutes approved: april 6, 2015 jewell/shea",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "no action (none)",
+   "quote": "title 5 inspection reports acknowledged : none",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "no action (none)",
+   "quote": "septic permits signed : none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "2015 Town Meeting Warrant Article 22 (septic/sewer revolving loan program)",
+   "resolution": "discussed; authorized Dave Passios to speak for the board at Annual Town Meeting",
+   "quote": "chairman george emond stated that this article was placed on the warrant without any notification or consultation with the board of health.",
+   "tags": [
+    "warrant article",
+    "town meeting",
+    "revolving loan",
+    "septic",
+    "sewer",
+    "select board",
+    "grant funds"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2015 Town Meeting Warrant Article 22 (revolving loan program for septic systems/sewer connections, funds in Account 2575)",
+   "where": "text",
+   "quote": "article 22: \"to see if the town will vote to establish a revolv ing loan program under the jurisdiction of the boar d of"
+  },
+  {
+   "name": "Correspondence sent to Town Manager Kerry Speidel asking for an opinion from Town Counsel",
+   "where": "text",
+   "quote": "chairman em ond read correspondence sent to town manager",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Town Counsel response given orally to Ms. Speidel",
+   "where": "text",
+   "quote": "chairman emond read the response"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "Warrant Article 22",
+  "Annual Town Meeting 2015",
+  "revolving loan",
+  "septic systems",
+  "sewer",
+  "Select Board",
+  "grant funds",
+  "Title 5",
+  "septic permits"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

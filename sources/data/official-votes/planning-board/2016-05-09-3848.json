@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-05-09",
  "docid": "3848",
@@ -12,55 +12,278 @@
  },
  "votes": [
   {
-   "motion": "Accept withdrawal of application without prejudice for 274 Prospect Street",
+   "motion": "Accept the applicant's request to withdraw the 274 Prospect Street application without prejudice.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "motion, k. chenis, to accept withdrawal without prejudice, second, m. allison, all aye."
   },
   {
-   "motion": "Accept the application for the conceptual drive and removal of trees as cited for 233 Lancaster Avenue",
+   "motion": "Accept the application for the conceptual drive and removal of trees at 233 Lancaster Avenue, as cited.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "motion, k. chenis, to accept the application for the conceptual drive and removal of trees as cited, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Accept the application for site approval for Safelite as documented for 39 Massachusetts Avenue",
+   "motion": "Accept the application for site approval for Safelite at 39 Massachusetts Avenue, as documented.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "motion, k. chenis, to accept the application for site approval for safelite as documented, second, m. allison, all aye."
   },
   {
-   "motion": "Approve minutes of April 25, 2016",
+   "motion": "Approve the minutes of 4/25/16.",
    "moved_by": "G. Bittner",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "4/25/16- motion, g. bittner, second, k. chenis"
   },
   {
-   "motion": "Approve minutes of April 11, 2016 for 301 Massachusetts Avenue",
+   "motion": "Approve the minutes of 4/11/16 for 301 Massachusetts Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "301 massachusetts avenue, 4/11/16- motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "Administratively accept plans with stormceptor detail for 357 Electric Avenue Unitil Plan Amendment",
+   "motion": "Administratively accept the 357 Electric Avenue (Unitil plan amendment) plans with the stormceptor detail.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "motion, k. chenis to administratively accept plans with stormceptor detail, second, d. prokowiew, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Six votes recorded. All outcomes are stated as \"all aye\" or implied by \"All minutes signed.\"",
- "cost_usd": 0.11006750000000001
+ "note": "Text extract of minutes (not a scan). Votes are recorded as 'all aye' without numeric counts, so outcomes are given as printed. The 4/25/16 and 4/11/16 minute approval motions show no result. No public comment section and no dollar figures appear in the text. The 274 Prospect Street applicant appeared via electronic mail and is not named, so is not listed as an attendee. The adjournment has no recorded motion. Several 'Decision will be prepared' sentences are identical; only one was quoted.",
+ "cost_usd": 0.00542112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 233 Lancaster Avenue decision is to be prepared for Board signature.",
+   "quote": "decision will be prepared for board signature."
+  },
+  {
+   "decision": "The 301 Massachusetts Avenue (Hannaford) Board decision and plan were signed.",
+   "quote": "board decision and plan signed."
+  },
+  {
+   "decision": "A. Burney will forward the draft Rules and Regulations to the Board of Selectmen and to engineers who frequently work with the Board.",
+   "quote": "a. burney will forward the draft to both the board of selectmen and engineers that frequently work with the board."
+  },
+  {
+   "decision": "The Board did not wish to require a fixed corner for the signature block; it should be placed in the same location on each sheet, preferably lower right.",
+   "quote": "but that it should be placed in the same location"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Meeting funds for building reuse market analysis",
+   "what_was_recorded": "Building Reuse Committee reported that Town Meeting voted to approve funds for a market analysis of four town buildings; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "town meeting vote d to approve funds for a market analysis of brooks house, ritter memorial, town hall and old primary."
+  },
+  {
+   "topic": "Acton sidewalk fund as an alternative to sidewalks in subdivisions",
+   "what_was_recorded": "M. Allison noted Acton has a sidewalk fund developers may contribute to instead of building sidewalks; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "acton has a sidewalk fund which developers have the option to contribute to instead of installing sidewalks"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: 274 Prospect Street (continued)",
+   "resolution": "withdrawal accepted without prejudice",
+   "quote": "motion, k. chenis, to accept withdrawal without prejudice, second, m. allison, all aye.",
+   "tags": [
+    "special permit",
+    "withdrawal",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "233 Lancaster Avenue",
+   "resolution": "application accepted; decision to be prepared",
+   "quote": "motion, k. chenis, to accept the application for the conceptual drive and removal of trees as cited, second, d. prokowiew, all aye.",
+   "tags": [
+    "tree removal",
+    "driveway",
+    "decision"
+   ]
+  },
+  {
+   "topic": "39 Massachusetts Avenue (Safelite)",
+   "resolution": "site approval accepted; decision to be prepared",
+   "quote": "motion, k. chenis, to accept the application for site approval for safelite as documented, second, m. allison, all aye.",
+   "tags": [
+    "site plan",
+    "decision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes of 4/25/16 and 4/11/16 acted on; all minutes signed",
+   "quote": "minutes approval: all minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "green community task force (gctf) - four projects going out for bid .",
+   "tags": [
+    "committee reports",
+    "green community",
+    "agricultural commission",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "357 Electric Avenue plans administratively accepted; 301 Massachusetts Avenue decision signed",
+   "quote": "357 electric avenue- unitil plan amendment- motion, k. chenis to administratively accept plans with stormceptor detail",
+   "tags": [
+    "development status",
+    "stormwater",
+    "decision"
+   ]
+  },
+  {
+   "topic": "Site plan approval, special permit and rules and regulations",
+   "resolution": "draft to be finalized; public hearing to be scheduled; no vote",
+   "quote": "the board needs to move forward with scheduling a public hearing (possibly june 27 th)",
+   "tags": [
+    "rules and regulations",
+    "special permit",
+    "site plan",
+    "signature block",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Town Meeting May 7, 2016 follow-up",
+   "resolution": "noted; zoning articles passed",
+   "quote": "town meeting, may 7, 2016- follow-up- zoning articles passed.",
+   "tags": [
+    "town meeting",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "d. mcquaid noted may 19th mrpc presentation on economic impact of devens",
+   "tags": [
+    "notices",
+    "MRPC",
+    "Devens"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "may 23- public hearing- highfield village",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:35 PM (no motion recorded)",
+   "quote": "adjournment: 7:35 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for withdrawal, 274 Prospect Street",
+   "where": "list",
+   "quote": "request for withdrawal, 274 prospect street"
+  },
+  {
+   "name": "Minutes 04/25/16",
+   "where": "list",
+   "quote": "minutes 04/25/16 minutes 04/11/16, 301 massachusetts avenue"
+  },
+  {
+   "name": "Minutes 04/11/16, 301 Massachusetts Avenue",
+   "where": "list",
+   "quote": "minutes 04/25/16 minutes 04/11/16, 301 massachusetts avenue"
+  },
+  {
+   "name": "DRAFT 3 Rules and Regulations",
+   "where": "list",
+   "quote": "draft 3 rules and regulations"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "special permit",
+  "site plan",
+  "public hearing",
+  "withdrawal",
+  "rules and regulations",
+  "zoning",
+  "town meeting",
+  "minutes",
+  "signage and signature block",
+  "stormwater",
+  "tree removal"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

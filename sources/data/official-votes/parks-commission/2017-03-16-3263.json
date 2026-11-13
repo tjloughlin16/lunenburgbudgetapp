@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2017-03-16",
  "docid": "3263",
@@ -12,24 +12,213 @@
  },
  "votes": [
   {
-   "motion": "accept the February 16, 2017 minutes",
+   "motion": "Accept the minutes of February 16, 2017.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
    "outcome": "passed 2-0",
    "procedural": true,
-   "quote": "dennis mannone motioned to accept minutes and karin menard sec- onded. approval passed 2",
-   "quote_taken_from_text": true
+   "quote": "review minutes of february 16, 2017 - dennis mannone motioned to accept minutes"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
-   "outcome": "passed 3-0",
+   "outcome": "3-0",
    "procedural": true,
    "quote": "motion to adjourn by karin menard, seconded by pete mccauliff - 3-0 to adjourn at 8:55pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes; readable. Two procedural votes recorded, both with clear outcomes and movers.",
- "cost_usd": 0.08107249999999999
+ "note": "OCR scan of a two-page minutes sheet; line-end hyphenation is preserved in quotes where it occurs, so quotes were chosen from unbroken spans. Pete McCauliff arrived late at 7:40pm, so he did not vote on the first motion (passed 2-0). Only the three commissioners are recorded as attendees; Heather Lemieux, Bob Burke and Jack are mentioned but not shown as taking part. No dollar figures appear in the text. Minutes filed with the Town Clerk April 13, 2017.",
+ "cost_usd": 0.00482802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff"
+  },
+  {
+   "name": "Pete McCauliff",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to meet with the Town Manager to discuss the Park Commission's responsibilities, including its role in hiring the Town Beach summer staff position; Karin will contact Heather to set up the meeting next week.",
+   "quote": "commission agreed that we should meet with town manager to discuss the responsibilities of the park commission"
+  },
+  {
+   "decision": "Commission thought summer use of the turf field outside the normal school year should be addressed in the MoA with the school district, rather than a separate fee decision.",
+   "quote": "the commission thought we should tackle and address this type of usage in the moa with the school district"
+  },
+  {
+   "decision": "Memorandum of Agreement with Lunenburg Public Schools discussion tabled due to time constraints and DPW not in attendance.",
+   "quote": "memorandum of agreement with lunenburg public schools discussion - tabled"
+  },
+  {
+   "decision": "Karin will get the recently approved forms and field use policies uploaded to the Park Commission page on the website.",
+   "quote": "uploaded to the park commission page on the website."
+  },
+  {
+   "decision": "Karin will forward Board of Health contact information to those requesting to use fields that have Snack Shacks.",
+   "quote": "per the board of health, snack shacks need to obtain boh approval before operating."
+  },
+  {
+   "decision": "Pete will get information on the St. Boniface community service project and clear it with Jack.",
+   "quote": "will get info and clear with jack."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer use fee for turf field",
+   "what_was_recorded": "Commission discussed whether a fee should be charged to use the turf field for school summer programs held outside the normal school year; no figure was stated.",
+   "figures_as_printed": [],
+   "quote": "there was some discussion on whether or not there needed to be a fee to use the field since it is outside of the normal school"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review minutes of February 16, 2017",
+   "resolution": "approved 2-0",
+   "quote": "review minutes of february 16, 2017 - dennis mannone motioned to accept minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager updates",
+   "resolution": "no action (none)",
+   "quote": "dpw director / town manager updates - none",
+   "tags": [
+    "updates"
+   ]
+  },
+  {
+   "topic": "Leominster Lacrosse turf request",
+   "resolution": "informational, no action",
+   "quote": "she also said that lacrosse had not yet submitted a schedule but she expects that to happen soon.",
+   "tags": [
+    "lacrosse",
+    "turf",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Turf complex update and discussion",
+   "resolution": "discussed; fee question referred to MoA",
+   "quote": "dennis informed the commission that the school is looking to",
+   "tags": [
+    "turf",
+    "school",
+    "summer use",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Memorandum of Agreement with Lunenburg Public Schools",
+   "resolution": "tabled",
+   "quote": "memorandum of agreement with lunenburg public schools discussion - tabled",
+   "tags": [
+    "school",
+    "MoA"
+   ]
+  },
+  {
+   "topic": "Town Beach summer staff hiring",
+   "resolution": "agreed to meet Town Manager",
+   "quote": "commission agreed that we should meet with town manager to discuss the responsibilities",
+   "tags": [
+    "Town Beach",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Policy and procedure discussions for fields, courts and beaches",
+   "resolution": "forms to be posted to website; Board of Health approval noted",
+   "quote": "per the board of health, snack shacks need to obtain boh approval before operating.",
+   "tags": [
+    "field use policy",
+    "snack shacks",
+    "forms"
+   ]
+  },
+  {
+   "topic": "St. Boniface community service project",
+   "resolution": "follow-up assigned to Pete",
+   "quote": "will get info and clear with jack.",
+   "tags": [
+    "St. Boniface",
+    "community service"
+   ]
+  },
+  {
+   "topic": "Unanticipated items",
+   "resolution": "none",
+   "quote": "unanticipated items - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Correspondence, announcements and public comment",
+   "resolution": "none",
+   "quote": "correspondence, announcements and public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:55pm, 3-0",
+   "quote": "motion to adjourn by karin menard, seconded by pete mccauliff - 3-0 to adjourn at 8:55pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum of Agreement with Lunenburg Public Schools",
+   "where": "text",
+   "quote": "memorandum of agreement with lunenburg public schools discussion - tabled"
+  },
+  {
+   "name": "Recently approved forms and field use policies",
+   "where": "text",
+   "quote": "uploaded to the park commission page on the website."
+  },
+  {
+   "name": "Lacrosse insurance certificates",
+   "where": "text",
+   "quote": "that she forwarded to the town manager for approval."
+  }
+ ],
+ "tags": [
+  "Parks Commission",
+  "turf field",
+  "Leominster Lacrosse",
+  "school district MoA",
+  "Town Beach",
+  "snack shacks",
+  "field use policy",
+  "St. Boniface",
+  "summer use fees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-03-07",
  "docid": "853",
@@ -12,6 +12,114 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes explicitly recorded. The minutes show \"Minutes Approved:\" with blank signature lines but contain no language indicating a motion was made, seconded, or voted on. Other actions (licenses signed, budget given to administrator, adjournment) are noted but without explicit vote language (\"voted,\" \"so voted,\" \"passed,\" \"failed,\" \"seconded by,\" \"motion by\").",
- "cost_usd": 0.0809775
+ "note": "No motions, votes, or roll-call results are recorded, so the votes list is empty; the Minutes Approved line is blank and the 7:20 pm adjournment is stated without a motion. The budget section prints no dollar figures. Text has OCR spacing artifacts (e.g., 'Perry J ewell', 'A NNUAL RUBBISH PERMITS'), reproduced as printed in name fields and quotes.",
+ "cost_usd": 0.00264922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels",
+   "role": "Chairman"
+  },
+  {
+   "name": "David Shea",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry J ewell",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Kerry Spiedel",
+   "status": "not stated",
+   "quote": "the annual budget was given to town administrator, kerry spiedel.",
+   "role": "Town Administrator"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Annual rubbish licenses were signed.",
+   "quote": "annual rubbish licenses were signed"
+  },
+  {
+   "decision": "The Annual Board of Health budget was given to Town Administrator Kerry Spiedel.",
+   "quote": "the annual budget was given to town administrator, kerry spiedel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual Board of Health budget",
+   "what_was_recorded": "The annual budget was given to the Town Administrator; contracts with Nashoba Associated Boards of Health are unchanged, the salary line follows the Union Contract, and all other line items are unchanged. No dollar figures are printed.",
+   "quote": "contracts with nashoba associated boards of health are unchanged, salary line item is dictated by the union contract and all other line items remained unchanged.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "none to review",
+   "quote": "title 5 inspection reports reviewed : none",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "none signed",
+   "quote": "septic permits signed : none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Annual rubbish permits",
+   "resolution": "licenses signed",
+   "quote": "annual rubbish licenses were signed",
+   "tags": [
+    "rubbish licenses"
+   ]
+  },
+  {
+   "topic": "Annual Board of Health budget",
+   "resolution": "given to Town Administrator; only salary line changed per union contract",
+   "quote": "the annual budget was given to town administrator, kerry spiedel.",
+   "tags": [
+    "annual budget",
+    "nashoba",
+    "union contract"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic permits",
+  "rubbish licenses",
+  "annual budget",
+  "nashoba",
+  "2011"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

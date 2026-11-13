@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-03-12",
  "docid": "2268",
@@ -12,23 +12,318 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from the March 5 meeting",
-   "moved_by": "Terri",
-   "seconded_by": "Karin",
+   "motion": "Approve the minutes of the March 5 meeting as submitted.",
+   "moved_by": "Terri Burchfield",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "terri made a motion to approve the minutes, karin seconded her motion and the committee approved the minutes as submitted 5-0."
   },
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "Karin",
-   "seconded_by": "Terri",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "karin moved to adjourn the meeting, her motion was seconded by terri and approved 5-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. Both votes are procedural (minutes approval and adjournment).",
- "cost_usd": 0.08561350000000001
+ "note": "Text is OCR of a scanned document with some garbled passages (e.g., the tax bill sentence on page 1 and the 'Hiring/retaining' item, rendered 'Firing/retaining', on page 2). Quotes were taken from the OCR text as printed. Vote count 5-0 matches the five members listed as present. Minutes were signed by John Henshaw on March 16, 2015. The minutes do not print a title for Paula Bertram or a status line for her attendance beyond her speaking.",
+ "cost_usd": 0.007375519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "status": "absent",
+   "quote": "absent: caroline griffis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "jamie toale-bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale-bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Director",
+   "status": "present",
+   "quote": "dpw fy16 budget presentation by jack rodriquenz, director"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "paula bertram stated that there are federal grants the town may be able to"
+  },
+  {
+   "name": "Dr. Sheila Harrity",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "monty tech fy16 budget presentation by dr. sheila harrity, superintendent and ms. tammy lafalam, administrative assistant"
+  },
+  {
+   "name": "Tammy Lafalam",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "monty tech fy16 budget presentation by dr. sheila harrity, superintendent and ms. tammy lafalam, administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee listed three future agenda items: Budget Goals and Opportunities, Pavement Management Program, and review of contract commitments (e.g. sick leave buy-back).",
+   "quote": "8. future agenda items: a. budget goals and opportunities b. pavement management program c. review contract commitments"
+  },
+  {
+   "decision": "The committee noted the next meetings: a March 19 regularly scheduled meeting for the Public Access Cable Committee and Sewer Enterprise Fund budget presentations, and a March 26 special meeting for the official public hearing, FY16 budget summary, and votes on money articles.",
+   "quote": "march 19, regularly scheduled meeting: public access cable committee and sewer enterprise"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Projected snow and ice deficit",
+   "what_was_recorded": "The projected snow deficit as of March 12 stands at $245,889 before any possible NEMA adjustment, and the Town must assume it pays all costs of the four major storms unless aid is received.",
+   "quote": "the projected snow deficit as of today and march 12 stands at $245,889 before any",
+   "figures_as_printed": [
+    "$245,889"
+   ]
+  },
+  {
+   "topic": "Snow account risk to stabilization fund",
+   "what_was_recorded": "If the snow and ice account deficit exceeds $300,000, the Town may have to use the stabilization account, and would then have to replenish it to 5% of the omnibus budget, meaning lower funds for operating expenses.",
+   "quote": "exceeds $300,000 the town may have to use some of the stabilization account to pay off the deficit.",
+   "figures_as_printed": [
+    "$300,000",
+    "5%"
+   ]
+  },
+  {
+   "topic": "Average tax bill and DPW share",
+   "what_was_recorded": "The average Lunenburg homeowner tax bill is $4,414.75, of which the DPW share is $253.28; plowing costs are usually around $30.00 (text partly garbled in scan).",
+   "quote": "the average tax bill for home owners in lunenburg is $4,414.75. the dpw share of that tax bill is $253.28, and plowing costs are usually around $30.00",
+   "figures_as_printed": [
+    "$4,414.75",
+    "$253.28",
+    "$30.00"
+   ]
+  },
+  {
+   "topic": "DPW FY16 requested and recommended budgets",
+   "what_was_recorded": "The DPW requested a target FY16 budget that is a $152,000 increase (10.1%) over FY15; the town manager's recommended FY16 budget is $74,000 (5.4%) over FY 2015. The town manager said energy cost reallocation within the DPW budget may be needed without increasing the total.",
+   "quote": "the dpw's requested target fy16 budget is $1,506,711, a $152,000 increase or $10.1% over the fy15 appropriation.",
+   "figures_as_printed": [
+    "$1,506,711",
+    "$152,000",
+    "$10.1%",
+    "$1,428,970",
+    "$74,000",
+    "5.4%"
+   ]
+  },
+  {
+   "topic": "Pavement management annual investment",
+   "what_was_recorded": "Maintaining a pavement condition index of 70 across 89 miles of Town roads requires about $700,000 per year, financed from Town capital funds and Chapter 90 State Highway funds; the figure is not indexed for inflation.",
+   "quote": "to maintain a pci of 70 requires an annual investment for maintaining the 89 miles of town roads of $700,000.",
+   "figures_as_printed": [
+    "$700,000"
+   ]
+  },
+  {
+   "topic": "Drainage and stormwater system renovation",
+   "what_was_recorded": "Jack's estimate is that renovating the aging drainage and storm water system would cost between $300,000 and $500,000.",
+   "quote": "jack's current estimate is that this would cost between $300,000 and $500,000.",
+   "figures_as_printed": [
+    "$300,000",
+    "$500,000"
+   ]
+  },
+  {
+   "topic": "Revenue ideas for infrastructure",
+   "what_was_recorded": "Ideas listed for raising revenue for infrastructure included a special levy for the storm water system, neighborhood-funded road repair, and hiring or retaining a grant writer; no dollar figures were printed.",
+   "quote": "g. ideas for raising revenues to meet future costs and improve town infrastructure:",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Federal grants for intersection work",
+   "what_was_recorded": "Paula Bertram said Federal grants may be available to help pay for some costs of intersection redesign and engineering; no dollar figures were printed.",
+   "quote": "paula bertram stated that there are federal grants the town may be able to",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Monty Tech per pupil assessment",
+   "what_was_recorded": "Lunenburg will be assessed a per pupil cost of $10,275 for 2015-16, a reduction of $430 per student from 2014-15.",
+   "quote": "in school year 2015-16 lunenburg will be assessed a per pupil cost of $10,275. this is a per student reduction from school year 2014-15 of $430.",
+   "figures_as_printed": [
+    "$10,275",
+    "$430"
+   ]
+  },
+  {
+   "topic": "Monty Tech total increase from enrollment",
+   "what_was_recorded": "Because enrollment rises by seven students to 78, the Town will pay about $70,000 more than in 2014-15.",
+   "quote": "therefore, because of the seven student increase, the town will pay about $70,000",
+   "figures_as_printed": [
+    "$70,000"
+   ]
+  },
+  {
+   "topic": "Monty Tech cost per student",
+   "what_was_recorded": "Lunenburg is assessed at the statutory minimum, and the cost per student at Monty Tech exceeds $15,000 per year.",
+   "quote": "that the cost per student at monty tech exceeds $15,000 per year.",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "noted; no action",
+   "quote": "the citizens' caucus will take place on monday, march 16h at 7:00 at turkey hill",
+   "tags": [
+    "communications",
+    "caucus",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no report",
+   "quote": "3. town manager updates: none.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "DPW FY16 budget presentation",
+   "resolution": "presented; no action",
+   "quote": "dpw fy16 budget presentation by jack rodriquenz, director",
+   "tags": [
+    "DPW",
+    "FY16 budget",
+    "snow and ice",
+    "pavement",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Monty Tech FY16 budget presentation",
+   "resolution": "presented; no action",
+   "quote": "monty tech fy16 budget presentation by dr. sheila harrity, superintendent",
+   "tags": [
+    "Monty Tech",
+    "FY16 budget",
+    "tuition assessment"
+   ]
+  },
+  {
+   "topic": "Approval of March 5 minutes",
+   "resolution": "approved 5-0",
+   "quote": "the march 5 meeting--terri made a motion to approve the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department liaison updates",
+   "resolution": "reports received; PACC and capital reports noted",
+   "quote": "7. committee/department liaison updates:",
+   "tags": [
+    "liaison reports",
+    "PACC",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future agendas",
+   "quote": "8. future agenda items:",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted",
+   "quote": "march 19, regularly scheduled meeting: public access cable committee and sewer enterprise",
+   "tags": [
+    "meeting schedule",
+    "town warrant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 9:07 PM",
+   "quote": "karin moved to adjourn the meeting, her motion was seconded by terri and approved 5-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DPW FY16 budget presentation",
+   "where": "text",
+   "quote": "note: click here for the dpw presentation."
+  },
+  {
+   "name": "Town Warrant (money articles)",
+   "where": "text",
+   "quote": "recommendations and vote on all money articles in the town warrant."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY16 budget",
+  "DPW",
+  "snow and ice deficit",
+  "stabilization fund",
+  "pavement management",
+  "stormwater",
+  "Monty Tech",
+  "minutes approval",
+  "liaison reports",
+  "town warrant"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-08-06",
  "docid": "1669",
@@ -12,37 +12,405 @@
  },
  "votes": [
   {
-   "motion": "To issue a Negative Determination of Applicability for the proposed project at 63 Peninsula Drive",
-   "outcome": "unanimously approved",
-   "procedural": false,
-   "quote": "negative 3 unanimous"
-  },
-  {
-   "motion": "To issue a Positive Determination of Applicability for the new high school at 1079 Massachusetts Avenue",
+   "motion": "Continuation of the 63 Peninsula Drive Request for Determination of Applicability hearing; minutes record the vote as 'Negative 3 Unanimous' with no outcome stated.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "positive determination, no need for noi, out of buffer zone."
+   "quote": "mark would like to modify the plan to rebuild just the patio; the size would be 14' x 28' instead of 14' x 32.5'. negative 3 unanimous"
   },
   {
-   "motion": "To not fill the Associate Member position",
-   "outcome": "unanimously approved",
+   "motion": "Approve the 43 Hemlock Terrace Notice of Intent for an addition of a 3-season, unheated room, after the room was moved back.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "suggested that we will not fill the position at this time ~ approved unanimous"
+   "quote": "moved room back a few feet to move of the the 50' no-build zone. approved unanimous"
   },
   {
-   "motion": "To rescind non-compliance for 803 Leominster Road and accept the remedial work timeline",
-   "outcome": "approved",
+   "motion": "Approve the 33 Birch Island Way Notice of Intent for removal and replacement of enclosed porch and repair of patio.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "remove and repair patio where it is sinking. approved unanimous"
+  },
+  {
+   "motion": "Approve the 240-248 Townsend Harbor Road/1625 Massachusetts Avenue Notice of Intent filed by Conservation Commission for rehabilitation of the cart/walking path.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "not within the wetland re source area. approved unanim ous"
+  },
+  {
+   "motion": "Discontinue the Associate Member position, suggesting it will not be filled at this time.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "discontinuation of associate member ~ suggested that we will not fill the position at this time ~ approved unanimous"
+  },
+  {
+   "motion": "Rescind the non-compliance at 803 Leominster Road, given the remedial work timeline received from Tim Hillman.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "rescind non-compliance; have recieved time line for remedial work from tim hillman. approved"
   },
   {
-   "motion": "To not be interested in the Right of First Refusal for the property at 145 Page Street",
-   "outcome": "unanimously approved",
+   "motion": "Decline the Right of First Refusal on 145 Page Street (12.66 acres) at the $89,000 price.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "not interested unanimous"
+   "quote": "the price of $89,000 is way above the price we paid per acre for the lane property. not interested unanimous"
   }
  ],
- "dropped_unquoted": 3,
- "note": "Minutes text is clear and readable. No votes were recorded for Minutes Approval, adjournment, or other procedural meeting matters.",
- "cost_usd": 0.1508025
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with irregular spacing and split words (e.g. 'Tow n', 'f eet', 'recieved'); quotes collapse that spacing to single spaces. Several 'Approved Unanimous' entries record no motion, mover, or seconder, so moved_by/seconded_by are blank. The 63 Peninsula Drive entry reads 'Negative 3 Unanimous' and is ambiguous, so its outcome is 'not stated'. Public comment headings have no content. No minutes-approval, adjournment, or executive-session motion is recorded. The 803 Leominster Road 'Approved' is recorded without a count. Header marks the minutes as approved 8/20/2014.",
+ "cost_usd": 0.00871742,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "R. Bursch",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Tony Jordan",
+   "role": "inquirer, 30 Laurel Lane",
+   "status": "present",
+   "quote": "tony jordan re: information ~ inquired about what could be done on the lot which has an existing house."
+  },
+  {
+   "name": "Mark S. /Diane M. Erickson",
+   "role": "applicant, 63 Peninsula Drive",
+   "status": "present",
+   "quote": "mark would like to modify the plan to rebuild just the patio; the size would be 14' x 28' instead of 14' x 32.5'."
+  },
+  {
+   "name": "Eric/Stephanie Pettes",
+   "role": "applicant, 43 Hemlock Terrace",
+   "status": "not stated",
+   "quote": "a notice o f intent filed by eric/stephanie pettes."
+  },
+  {
+   "name": "Melissa J. Ribaudo",
+   "role": "applicant, 33 Birch Island Way",
+   "status": "not stated",
+   "quote": "a notice o f intent filed by melissa j. ribaudo."
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "representing School Building Committee",
+   "status": "not stated",
+   "quote": "filed by school building committee (michael mackin)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board issued a positive determination for the 1079 Massachusetts Avenue school project: no need for a Notice of Intent, and the work is out of the buffer zone.",
+   "quote": "positive determination, no need for noi, out of buffer zone."
+  },
+  {
+   "decision": "Board directed that the 63 Peninsula Drive matter continue, with more information requested on the pre-fab 3-season room and a site walk.",
+   "quote": "would like more info on pre-fab 3 season room and to do site walk."
+  },
+  {
+   "decision": "Sharon, Rob and Matt were to visit the 43 Hemlock Terrace site to measure the distance to water; measurements were then verified.",
+   "quote": "sharon, rob & matt will visit site to measure. measurements verified and approved."
+  },
+  {
+   "decision": "Jan Carrier will gather more information on the Lake Whalom complaint and notify the Environmental Police.",
+   "quote": "jan will gather more information and notify the environmental police."
+  },
+  {
+   "decision": "Jan will speak with Kerry and Town Counsel and handle the right of way to the boat ramp at 50 Sunset Lane.",
+   "quote": "need to speak with kerry and town counsel on this matter. jan will take care of."
+  },
+  {
+   "decision": "52 Hemlock Drive, with NOI filed, was scheduled for the August 20 meeting.",
+   "quote": "52 hemlock drive ~ have filed noi ~ scheduled for august 20"
+  },
+  {
+   "decision": "Hunting Hill field: Rob reported the field had been mowed; the commission noted the land is conservation land kept in its natural state, including animals. No further action recorded.",
+   "quote": "rob stated that the field has now been mowed."
+  },
+  {
+   "decision": "Commission noted the 30 Rennie Street tax form signed by the chair, for information only.",
+   "quote": "signed tax form ~ fyi - just to inform the commission that i signed this"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "145 Page Street right of first refusal, purchase price",
+   "what_was_recorded": "The asking price of $89,000 for the 12.66-acre parcel was judged well above the per-acre price paid for the Lane property; the commission was not interested.",
+   "figures_as_printed": [
+    "$89,000"
+   ],
+   "quote": "the price of $89,000 is way above the price we paid per acre for the lane property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "30 Laurel Lane, information request",
+   "resolution": "information only, no action recorded",
+   "quote": "inquired about what could be done on the lot which has an existing house. may demolish and rebuild in same footprint but cannot enlarge.",
+   "tags": [
+    "hearing",
+    "house lot",
+    "sewer and water"
+   ]
+  },
+  {
+   "topic": "63 Peninsula Drive, RDA hearing",
+   "resolution": "continued, site walk requested",
+   "quote": "would like more info on pre-fab 3 season room and to do site walk.",
+   "tags": [
+    "hearing",
+    "request for determination",
+    "patio",
+    "porch"
+   ]
+  },
+  {
+   "topic": "43 Hemlock Terrace, NOI hearing",
+   "resolution": "approved, unanimous",
+   "quote": "measurements verified and approved.",
+   "tags": [
+    "hearing",
+    "notice of intent",
+    "setbacks"
+   ]
+  },
+  {
+   "topic": "33 Birch Island Way, NOI hearing",
+   "resolution": "approved, unanimous",
+   "quote": "remove and repair patio where it is sinking. approved unanimous",
+   "tags": [
+    "hearing",
+    "notice of intent",
+    "porch"
+   ]
+  },
+  {
+   "topic": "1079 Massachusetts Avenue, RDA hearing (new high school)",
+   "resolution": "positive determination, no NOI needed",
+   "quote": "positive determination, no need for noi, out of buffer zone.",
+   "tags": [
+    "hearing",
+    "school",
+    "high school",
+    "determination"
+   ]
+  },
+  {
+   "topic": "240-248 Townsend Harbor Road/1625 Massachusetts Avenue, NOI hearing (trail)",
+   "resolution": "approved, unanimous",
+   "quote": "not within the wetland re source area. approved unanim ous",
+   "tags": [
+    "hearing",
+    "trail",
+    "recreational trail grant",
+    "ADA"
+   ]
+  },
+  {
+   "topic": "Discontinuation of Associate Member",
+   "resolution": "approved, unanimous",
+   "quote": "discontinuation of associate member ~ suggested that we will not fill the position at this time ~ approved unanimous",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Village at Flat Hill Solar Project",
+   "resolution": "presentation scheduled for August 20",
+   "quote": "village at flat hill solar project ~ presentation by eric holt on august 20th",
+   "tags": [
+    "solar",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Sunrise Stables Octoberfest Ride",
+   "resolution": "notification noted, no action recorded",
+   "quote": "sunrise stables ~ octoberfest ride ~ notification",
+   "tags": [
+    "notification",
+    "horse ride"
+   ]
+  },
+  {
+   "topic": "Hunting Hill complaint",
+   "resolution": "no action; complaint noted",
+   "quote": "rob stated that the field has now been mowed.",
+   "tags": [
+    "complaint",
+    "conservation land",
+    "mowing"
+   ]
+  },
+  {
+   "topic": "Lake Whalom complaint",
+   "resolution": "Jan to gather information and notify Environmental Police",
+   "quote": "jan will gather more information and notify the environmental police.",
+   "tags": [
+    "complaint",
+    "great pond",
+    "boating safety"
+   ]
+  },
+  {
+   "topic": "803 Leominster Road, violation and timeline",
+   "resolution": "non-compliance rescinded",
+   "quote": "rescind non-compliance; have recieved time line for remedial work from tim hillman. approved",
+   "tags": [
+    "enforcement",
+    "violation"
+   ]
+  },
+  {
+   "topic": "52 Hemlock Drive, NOI",
+   "resolution": "scheduled for August 20 meeting",
+   "quote": "52 hemlock drive ~ have filed noi ~ scheduled for august 20",
+   "tags": [
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "145 Page Street, right of first refusal",
+   "resolution": "not interested, unanimous",
+   "quote": "the price of $89,000 is way above the price we paid per acre for the lane property. not interested unanimous",
+   "tags": [
+    "land acquisition",
+    "right of first refusal",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Right of way to boat ramp at 50 Sunset Lane",
+   "resolution": "Jan to take care of, after talking with Kerry and Town Counsel",
+   "quote": "need to speak with kerry and town counsel on this matter.",
+   "tags": [
+    "right of way",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "30 Rennie Street tax form",
+   "resolution": "FYI, no action",
+   "quote": "signed tax form ~ fyi - just to inform the commission that i signed this",
+   "tags": [
+    "tax form"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule read into the record",
+   "quote": "august 20th, september 3rd & 17",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:45 PM, no motion recorded",
+   "quote": "adjournment: 9:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Mark S. /Diane M. Erickson (63 Peninsula Drive)",
+   "where": "text",
+   "quote": "a request for determination of applicability filed by mark s. /diane m. erickson."
+  },
+  {
+   "name": "Notice of Intent filed by Eric/Stephanie Pettes (43 Hemlock Terrace)",
+   "where": "text",
+   "quote": "a notice o f intent filed by eric/stephanie pettes."
+  },
+  {
+   "name": "Notice of Intent filed by Melissa J. Ribaudo (33 Birch Island Way)",
+   "where": "text",
+   "quote": "a notice o f intent filed by melissa j. ribaudo."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by School Building Committee (Michael Mackin) (1079 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "filed by school building committee (michael mackin)."
+  },
+  {
+   "name": "Notice of Intent filed by Conservation Commission (240-248 Townsend Harbor Road/1625 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "a notice of inten t file by conservation commission."
+  },
+  {
+   "name": "2013 Recreational Trails Grant, contract file # P14-2896-G12",
+   "where": "text",
+   "quote": "site d in the 2013 recreational trails grant, contract file # p14-2896-g12"
+  },
+  {
+   "name": "Signed tax form (30 Rennie Street)",
+   "where": "text",
+   "quote": "signed tax form ~ fyi - just to inform the commission that i signed this"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "public hearings",
+  "land acquisition",
+  "right of first refusal",
+  "complaints",
+  "enforcement",
+  "trail grant",
+  "solar",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-09-02",
  "docid": "2558",
@@ -12,6 +12,121 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision). No votes recorded. Minutes describe agenda items, officer assignments, and an adjournment, but contain no motions, seconding language, or voting outcomes.",
- "cost_usd": 0.0810295
+ "note": "Text is OCR from a macOS Vision extraction. The minutes record no motions or votes at all, including for officer positions and adjournment, so the votes list is empty. No dollar figures or public comment appear. The Old Business section does not name any outcome for the Planning Board date or the charrette beyond the listed facts. The next meeting, October 7, 2014 at 6:30 p.m. in the Ritter Building, is noted in the minutes but has no topic.",
+ "cost_usd": 0.00245112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Chairperson (as later listed under Offices)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Vice Chairperson (as later listed under Offices)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Secretary (as later listed under Offices)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "damon mcquaid was in attendance."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "absent",
+   "quote": "members absent: richard mcgrath."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Newspaper article writing assignments: Becky to write September, Lois to write October, Richard to write November, Becky to write December (assigned without a recorded vote).",
+   "quote": "newspaper articles becky to write september lois to write october richard to write november becky to write december"
+  },
+  {
+   "decision": "Officers listed as Chairperson Becky Lantry, Vice Chairperson Amory Phelps, Secretary Lois Lewis under New Business; no motion or vote is recorded.",
+   "quote": "offices: chairperson: becky lantry vice chairperson: amory phelps secretary: lois lewis"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 6:35 p.m.",
+   "quote": "meeting called to order september 2, 2014 @ 6:35 p.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Correspondence and Communications",
+   "resolution": "letter from Massachusetts Historical Commission noted",
+   "quote": "letter from massachusetts historical commission. land and property acquisition for 300 holman street",
+   "tags": [
+    "correspondence",
+    "Holman Street"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "no action recorded; newspaper article assignments, charrette attendance, membership discussion",
+   "quote": "planning board to meet september 15, 2014. newspaper articles becky to write september",
+   "tags": [
+    "planning board",
+    "newspaper articles",
+    "design charrette",
+    "membership"
+   ]
+  },
+  {
+   "topic": "New Business - Offices",
+   "resolution": "officers listed; no vote recorded",
+   "quote": "offices: chairperson: becky lantry vice chairperson: amory phelps secretary: lois lewis",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Meeting Adjournment",
+   "resolution": "adjourned 7:50 p.m.; no vote recorded",
+   "quote": "meeting adjourned at 7:50 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Massachusetts Historical Commission (regarding land and property acquisition for 300 Holman Street)",
+   "where": "list",
+   "quote": "letter from massachusetts historical commission. land and property acquisition for 300 holman street"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "officers",
+  "newspaper articles",
+  "correspondence",
+  "300 Holman Street",
+  "membership",
+  "design charrette"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence and communications"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2016-10-05",
  "docid": "2440",
@@ -12,23 +12,170 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 05/05/2016 and 7/28/2016",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "minutes for 05/05/2016 and 7/28/2016 were reviewed and approved unanimously.",
+   "motion": "Approve the minutes of 05/05/2016 and 7/28/2016.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes for 05/05/2016 and 7/28/2016 were reviewed and approved unanimously."
   },
   {
-   "motion": "Approve the request to modify the grant by including a request to fund an exterior envelope audit for Turkey Hill Elementary School",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the committee voted unanimously to approve the request.",
+   "motion": "Approve the request to modify the GC7 Repurpose Table to include an exterior envelope audit for Turkey Hill Elementary School.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the committee voted unanimously to approve the request."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Two votes recorded: approval of prior minutes and approval of GC7 Repurpose Table request. Neither vote names who moved or seconded.",
- "cost_usd": 0.0807195
+ "dropped_unquoted": 1,
+ "note": "OCR text of a single page with garbled letterhead; the stamp reads 12/20/16 but the minutes print the meeting as 10/05/2016. The minutes give 05/05/2016 as a prior meeting date, which may be a typo for another date, as printed. The header lists Adam Burney (Advisor) and Jim Breault (Liaison), but neither appears in the present line or the body, so they are not recorded as attendees. Minutes approval and GC7 votes carry no motion-maker, seconder or vote count. No vote was recorded on adjournment, so none is listed.",
+ "cost_usd": 0.00332052,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: d. blatt, greg bittner, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "present: d. blatt, greg bittner, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "present: d. blatt, greg bittner, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "present: d. blatt, greg bittner, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Liaison",
+   "status": "present",
+   "quote": "present: d. blatt, greg bittner, neal sullivan, liz murphy, john londa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee expressed a desire to have a vendor look at the cost of converting the public safety building to natural gas and to do a lighting survey of that building to support future grant requests.",
+   "quote": "the committee expressed a desire to identify a vendor to look at the cost of conversion to natural gas at the public safety building and to do a lighting survey of that building to support future grant requests."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turkey Hill School building envelope project",
+   "what_was_recorded": "Elements Management was asked for an estimated cost, which became the basis of the requested amount for the Turkey Hill School envelope project; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "elements management had been requested to provide an estimated cost and became the basis of the requested amount"
+  },
+  {
+   "topic": "GC7 Repurpose Table grant modification",
+   "what_was_recorded": "The GC7 Repurpose Table was modified to add a funded exterior envelope audit for Turkey Hill Elementary School; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a request to modify the grant by including a request to fund an exterior envelope audit for the turkey hill elementary school."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "minutes for 05/05/2016 and 7/28/2016 were reviewed and approved unanimously."
+  },
+  {
+   "topic": "Review of present projects (Teen Center, Public Library, Primary School lighting)",
+   "resolution": "no action",
+   "tags": [
+    "lighting",
+    "energy conservation",
+    "occupancy sensors"
+   ],
+   "quote": "the committee continued to support the installation of the sensors as a sound energy conservation measure."
+  },
+  {
+   "topic": "Review of new projects: Turkey Hill School building envelope",
+   "resolution": "no action",
+   "tags": [
+    "Turkey Hill School",
+    "building envelope",
+    "grants"
+   ],
+   "quote": "presented a proposal for a new project for turkey hill school which would be aimed at improving the building envelope."
+  },
+  {
+   "topic": "MS-HS and DPW solar projects",
+   "resolution": "no action",
+   "tags": [
+    "solar",
+    "Select Board",
+    "Town Counsel"
+   ],
+   "quote": "both projects are still pending approval by the select board and are being worked with town counsel and the interim town manager."
+  },
+  {
+   "topic": "Approval of the GC7 Repurpose Table modification",
+   "resolution": "approved",
+   "tags": [
+    "GC7",
+    "grants",
+    "Turkey Hill School"
+   ],
+   "quote": "the committee voted unanimously to approve the request."
+  },
+  {
+   "topic": "Set date for next meeting",
+   "resolution": "no date set",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "no meeting date was set for the next meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned at 7:45 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GC7 Repurpose Table",
+   "where": "text",
+   "quote": "j. londa present a request to modify the grant by"
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy conservation",
+  "grants",
+  "lighting",
+  "solar",
+  "school buildings",
+  "Turkey Hill School",
+  "GC7"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

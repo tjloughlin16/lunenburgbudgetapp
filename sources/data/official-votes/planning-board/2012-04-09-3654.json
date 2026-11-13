@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-04-09",
  "docid": "3654",
@@ -12,71 +12,254 @@
  },
  "votes": [
   {
-   "motion": "Close the portion of the meeting",
+   "motion": "Close the above portion of the meeting at 5:55 PM.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr."
+   "quote": "chair closed above portion of the meeting at 5:55 pm, motion, ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 3-8-12",
+   "motion": "Approve minutes of 3-8-12.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr."
+   "quote": "3-8-12 motion, ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 3-12-12",
+   "motion": "Approve minutes of 3-12-12.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion ms. bilotta-simeone, second, mr. bodkin jr."
+   "quote": "3-12-12 motion ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 3-12-12 New England Farms Information Meeting",
+   "motion": "Approve minutes of the 3-12-12 New England Farms Information Meeting.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr."
+   "quote": "3-12-12 new england farms information meeting, motion, ms. bilotta-simeone, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve minutes of 3-26-12 EPG Information Meeting",
+   "motion": "Approve minutes of the 3-26-12 EPG Information Meeting.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Saiia",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, mr. bodkin jr., second, mr. saiia"
+   "quote": "3-26-12 epg information meeting, motion, mr. bodkin jr., second, mr. saiia"
   },
   {
-   "motion": "Approve minutes of 3-26-12",
+   "motion": "Approve minutes of 3-26-12.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Saiia",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, mr. bodkin jr., second, mr. saiia"
+   "quote": "3-26-12, motion, mr. bodkin jr., second, mr. saiia"
   },
   {
-   "motion": "Approve minutes of 3-28-12",
+   "motion": "Approve minutes of 3-28-12.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, mr. bodkin jr., second, mr. lockwood"
+   "quote": "3-28-12, motion, mr. bodkin jr., second, mr. lockwood"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting, adjourned 9:00 PM.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, mr. saiia, second, ms. bilotta-simeone, motion passed"
+   "quote": "motion, mr. saiia, second, ms. bilotta-simeone, motion passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Eight votes recorded: one to close a meeting portion, six on approval of prior minutes, and one to adjourn. No explicit vote counts are recorded; four approval votes show no stated outcome.",
- "cost_usd": 0.1282755
+ "note": "Text extraction is clean, not a scan. The minutes record no dollar figures and no public comment section. The Solar Bylaw discussion records no motion or vote. The six minutes approvals and the 5:55 PM closing motion are recorded as motions with no printed result, so outcome is \"not stated\". Saiia and Lockwood are listed as arriving late, with no arrival times given.",
+ "cost_usd": 0.00605752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, vice-chair"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia (arrived late)"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood (arrived late), marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Bakaysa is to present the zoning article at the May 5, 2012 Town Meeting.",
+   "quote": "chair bakaysa to present zoning article."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Proposed Solar Bylaw for the May 5, 2012 Town Meeting warrant",
+   "resolution": "discussed, no vote; board had no major issues with the bylaw as written",
+   "quote": "mr. bakaysa opened meeting to discuss proposed solar bylaw that will be presented through the warrant for the may 5, 2012",
+   "tags": [
+    "solar bylaw",
+    "warrant",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "6:00 PM New England Farms information meeting",
+   "resolution": "held separately; see separate minutes",
+   "quote": "6:00 pm- information meeting, new england farms, 134 leominster shirley road- see separate minutes",
+   "tags": [
+    "information meeting",
+    "New England Farms"
+   ]
+  },
+  {
+   "topic": "7:15 PM public hearing on warrant zoning article",
+   "resolution": "held separately; see separate minutes",
+   "quote": "7:15 pm- public hearing, warrant zoning article for may 5th town meeting - see separate minutes",
+   "tags": [
+    "public hearing",
+    "zoning article"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "motions recorded for six sets of minutes; no result printed",
+   "quote": "3-8-12 motion, ms. bilotta-simeone, second, mr. bodkin jr.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communications: MRPC traffic count request",
+   "resolution": "noted; Benson submitted an added count request for Leominster-Shirley Road and Pioneer Drive",
+   "quote": "mrpc traffic count request- correspondence received from mrpc noting planned traffic",
+   "tags": [
+    "traffic counts",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports: Sprint Spectrum and Verizon Wireless",
+   "resolution": "noted; Sprint Spectrum incomplete, Verizon Wireless completed with Findings and Determination issued",
+   "quote": "verizon wireless, 621 chase road- completed - findings and determination issued.",
+   "tags": [
+    "wireless",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Old business: 263 Elmwood Road and May 5 Town Meeting zoning article",
+   "resolution": "noted; Chair to present zoning article",
+   "quote": "263 elmwood road- noted incident report issued by lunenburg fire department in 2010",
+   "tags": [
+    "263 Elmwood Road",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "tri town landing, youngs road- meeting held april 4th to discuss water supply issue for the 3rd building.",
+   "tags": [
+    "development status",
+    "Tri Town Landing",
+    "Emerald Place"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "april 23- planning board meeting, ritter memorial building",
+   "tags": [
+    "schedule",
+    "master planning workshop"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed; adjourned 9:00 PM",
+   "quote": "motion, mr. saiia, second, ms. bilotta-simeone, motion passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data book containing the proposed Solar Bylaw",
+   "where": "list",
+   "quote": "members were previously presented with a data book containing the proposed bylaw and a bylaw entered for the warrant by petitioners."
+  },
+  {
+   "name": "Bylaw entered for the warrant by petitioners",
+   "where": "list",
+   "quote": "members were previously presented with a data book containing the proposed bylaw and a bylaw entered for the warrant by petitioners."
+  },
+  {
+   "name": "Memorandums, letters and electronic mails from the abutters to the project entitled EPG Solar",
+   "where": "list",
+   "quote": "the notebook further contained memo randums, letters and e lectronic mails from the abutters to the project entitled epg solar."
+  },
+  {
+   "name": "Correspondence from MRPC noting planned traffic counts",
+   "where": "text",
+   "quote": "correspondence received from mrpc noting planned traffic"
+  },
+  {
+   "name": "Incident Report issued by Lunenburg Fire Department in 2010",
+   "where": "text",
+   "quote": "noted incident report issued by lunenburg fire department in 2010 in which they cleared the site."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar bylaw",
+  "warrant article",
+  "town meeting",
+  "zoning",
+  "minutes approval",
+  "development status",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "members were previously presented with a data book containing the proposed bylaw"
+ },
+ "dropped_unquoted_by_field": {}
 }

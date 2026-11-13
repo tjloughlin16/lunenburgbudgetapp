@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2016-11-17",
  "docid": "3260",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept September 22, 2016 minutes",
+   "motion": "Accept the September 22, 2016 minutes.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
@@ -20,16 +20,15 @@
    "quote": "dennis mannone motioned to accept minutes and karin menard seconded. approval passed 3-0."
   },
   {
-   "motion": "Accept October 20, 2016 minutes",
+   "motion": "Accept the October 20, 2016 minutes.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "dennis mannone motioned to accept minutes and karin menard seconded. approval passed 3-0. b",
-   "quote_taken_from_text": true
+   "quote": "dennis mannone motioned to accept minutes and pete mccauliff seconded."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:47 pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
@@ -38,6 +37,201 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; readable throughout.",
- "cost_usd": 0.0847485
+ "note": "OCR text of a two-page set of minutes; some words are split by line-end hyphens (e.g., \"repre-sent\", \"Ap-proval\") and the header contains OCR noise (\"RG\", \"MAST\", \"INCORPORA\"). Pete McCauliff appears in the header and attendance line without a printed title. The minutes print no dollar figure as an approved amount; the figures are proposals or estimates discussed. No documents list is printed.",
+ "cost_usd": 0.00457752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff"
+  },
+  {
+   "name": "Trent Larson",
+   "role": "representing Leominster Youth Lacrosse",
+   "status": "present",
+   "quote": "trent larson and chuck courtemarche were present"
+  },
+  {
+   "name": "Chuck Courtemarche",
+   "role": "representing Leominster Youth Lacrosse",
+   "status": "present",
+   "quote": "trent larson and chuck courtemarche were present"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trent Larson and Chuck Courtemarche will take the lacrosse turf information back to their group and get back to the commission.",
+   "quote": "trent and chuck would take this information back to their group and get back to us."
+  },
+  {
+   "decision": "Karin Menard will create an in-town youth group form for groups that pay per player or have a financial agreement with the town.",
+   "quote": "karin will work on creating an in-town youth group form for the groups that pay per player"
+  },
+  {
+   "decision": "Karin Menard will contact Amanda to get a cost schedule, requested by Dennis Mannone, to compare with the Lunenburg Little League per player fee, and report back.",
+   "quote": "dennis also would like to ask amanda to put together some sort of cost schedule"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Leominster Youth Lacrosse rate request for turf field",
+   "what_was_recorded": "The lacrosse group said the club's prior pricing was too steep and it hoped to get a deal at a lower hourly or daily rate.",
+   "figures_as_printed": [
+    "$100/hour",
+    "$600 a day"
+   ],
+   "quote": "they are hoping to work out a deal for $100/hour or $600 a day preferably less."
+  },
+  {
+   "topic": "Field monitor cost and proposed turf usage fee for 8 Sundays",
+   "what_was_recorded": "Pete estimated a field monitor at $28+ an hour and thought a package of $6300 for the 8 weeks could be worked out, based on 56 hours at $112.50/hr with a 3-hour minimum.",
+   "figures_as_printed": [
+    "$28+ an hour",
+    "$6300",
+    "56 hours",
+    "$112.50hr",
+    "minimum 3 hours"
+   ],
+   "quote": "pete said it would be $28+ an hour for a field monitor but that he thought we would be able to work out $6300 for the 8"
+  },
+  {
+   "topic": "Turf complex materials and installation payment",
+   "what_was_recorded": "Materials for the turf have been paid for, installation is outstanding, and track labor is included in a bill that will not be paid until that work is done; extra pellets and turf will be stored.",
+   "figures_as_printed": [],
+   "quote": "the materials have been paid for and the installation is outstanding as he is asking for clarification"
+  },
+  {
+   "topic": "Lunenburg Little League per player fee comparison",
+   "what_was_recorded": "A cost schedule is to be prepared to compare against the current per player fee Lunenburg Little League pays.",
+   "figures_as_printed": [],
+   "quote": "dennis also would like to ask amanda to put together some sort of cost schedule so we can compare it to the current"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 7pm",
+   "quote": "called to order by dennis at 7pm. attendance: karin menard, dennis mannone, pete mccauliff",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Review minutes",
+   "resolution": "approved September 22 and October 20, 2016 minutes",
+   "quote": "dennis mannone motioned to accept minutes and karin menard seconded. approval passed 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager Updates",
+   "resolution": "no action; not present",
+   "quote": "dpw director / town manager updates - not present",
+   "tags": [
+    "DPW",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Leominster Lacrosse turf request",
+   "resolution": "continued; lacrosse group to report back",
+   "quote": "trent and chuck would take this information back to their group and get back to us.",
+   "tags": [
+    "lacrosse",
+    "turf",
+    "field rental",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Turf complex update and discussion",
+   "resolution": "no action",
+   "quote": "pete advised the the turf is finished and that temporary lines are painted.",
+   "tags": [
+    "turf",
+    "track",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Policy and procedure on fees and scheduling of fields, courts and beaches",
+   "resolution": "continued; field usage form in progress; cost schedule to be requested",
+   "quote": "form is coming together for field usage.",
+   "tags": [
+    "policy",
+    "fees",
+    "scheduling",
+    "youth groups"
+   ]
+  },
+  {
+   "topic": "Unanticipated items",
+   "resolution": "no action; none",
+   "quote": "a. unanticipated items - none",
+   "tags": []
+  },
+  {
+   "topic": "Correspondence, announcements and public comment",
+   "resolution": "no action; none",
+   "quote": "correspondence, announcements and public comment - non",
+   "tags": []
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for January 19, 2017",
+   "quote": "next meeting january 19, 2017.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:47 pm, 3-0",
+   "quote": "motion to adjourn by karin menard at 8:47, seconded by dennis mannone - 3-0 to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pricing structure sent by Karin to Larry Cordio, club president",
+   "where": "text",
+   "quote": "the pricing structure that karin sent to larry cordio, club president, earlier in the fall was too steep for them"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "turf field",
+  "lacrosse",
+  "field rental fees",
+  "field scheduling",
+  "youth groups",
+  "little league",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

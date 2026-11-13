@@ -1,0 +1,233 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-12-16",
+ "video_id": "NyDVGVXI_FQ",
+ "video_url": "https://www.youtube.com/watch?v=NyDVGVXI_FQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-12-16-NyDVGVXI_FQ.json",
+  "sha256": "44246b1d926aec57e58d8fb5ce0ab31a8bda28ec7bb4d9f3830f08a7cab17298",
+  "caption_lines": 287,
+  "segments": 2195
+ },
+ "recording": {
+  "duration_s": 6082,
+  "duration": "1:41",
+  "spoken_chars": 75260,
+  "words_approx": 12543
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12162014-4912",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-12-16-agenda-4912.txt",
+   "path": "sources/meetings/select-board/2014-12-16-agenda-4912.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:05:28Z",
+  "cost_usd": 0.3059219
+ },
+ "minutes": {
+  "headline": "Select Board and FinCom heard a forecast of a near-$1M FY16 gap; board OK'd a liquor manager change",
+  "summary": "Public comment urged around-the-clock EMT coverage and Narcan for police. The board approved a change of manager for a licensed restaurant and reviewed MART transit survey results. In a joint meeting with the Finance Committee, the town manager presented the five-year forecast, with a projected FY16 deficit, a target budget, and unfunded needs; committee reports followed and the meeting adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Miss pel",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mr EOL",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "fire chief"
+   },
+   {
+    "name_as_heard": "Carl luck",
+    "role": "chair of Sewer Commission"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 86,
+    "topic": "Resident thanked responders after his heart attack and urged funding of around-the-clock EMT coverage."
+   },
+   {
+    "t": 610,
+    "speaker_as_heard": "Donna",
+    "topic": "Asked that police be trained and equipped with Narcan given rising overdoses."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "debt",
+   "free-cash",
+   "health-insurance",
+   "public-comment",
+   "public-safety",
+   "state-aid",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 917,
+    "motion": "Approve change of manager for the licensed business to Scott Sanford.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6057,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1095,
+    "topic": "MART transit expansion",
+    "what_was_said": "Cost could be up to a figure, offset by money already paid to the MBTA.",
+    "figures_as_heard": [
+     "40,000",
+     "10,000"
+    ]
+   },
+   {
+    "t": 2162,
+    "topic": "FY16 projected deficit",
+    "what_was_said": "Forecast deficit just under a million; target budgets cut it to about a quarter million.",
+    "figures_as_heard": [
+     "just under a million dollars",
+     "a quarter of a million dollars"
+    ]
+   },
+   {
+    "t": 2919,
+    "topic": "Chapter 40S smart growth aid",
+    "what_was_said": "Proposes a free cash appropriation matching the amount received this year.",
+    "figures_as_heard": [
+     "$183,600"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1384,
+    "decision": "MRPC transit plan comment to be put on the January 6 agenda."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 86,
+    "topic": "Pledge and board comments",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 86,
+    "t_end": 793,
+    "topic": "Public comment: EMT coverage and Narcan",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 793,
+    "t_end": 960,
+    "topic": "Change of manager for liquor license",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 960,
+    "t_end": 1404,
+    "topic": "MART transit survey",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1404,
+    "t_end": 5194,
+    "topic": "Joint meeting: five-year forecast",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5194,
+    "t_end": 6057,
+    "topic": "Committee reports and closing",
+    "resolution": "informational",
+    "tags": []
+   }
+  ],
+  "not_audible": [],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 1513,
+    "name_as_heard": "presentation and financial forecast document",
+    "kind": "presentation",
+    "words_as_heard": "there are two handouts this evening"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "watch_next": [
+   "MRPC transit plan comment is to be on the January 6 agenda."
+  ],
+  "what_happened": [
+   {
+    "line": "In a joint meeting, the Select Board and Finance Committee heard the town manager's five-year forecast, which projects an FY16 deficit just under a million dollars.",
+    "t": 2162
+   },
+   {
+    "line": "The forecast's target budgets would cut the projected FY16 deficit to roughly a quarter of that, with some needs left unfunded.",
+    "t": 2162
+   },
+   {
+    "line": "The board voted to approve a change of manager for a licensed restaurant's liquor license.",
+    "t": 917
+   },
+   {
+    "line": "The board reviewed MART transit survey results; expansion cost could be offset by money already paid to the MBTA, and MRPC plan comment was set for January 6.",
+    "t": 1384
+   },
+   {
+    "line": "During public comment, a resident urged funding of around-the-clock EMT coverage, and another asked that police be trained and equipped with Narcan.",
+    "t": 86
+   }
+  ],
+  "why_it_matters": [
+   "A projected FY16 gap means the budget the town is asked to adopt may require cuts, new revenue or use of reserves, which can affect taxes and services.",
+   "EMT coverage, police Narcan and transit expansion are requests that would compete for the same limited budget, and none was decided at this meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:05:34Z",
+   "cost_usd": 0.021605100000000002
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-10-20",
  "docid": "2821",
@@ -12,23 +12,246 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of September 15, 2016 as amended",
+   "motion": "Accept the minutes of September 15, 2016 as amended.",
    "moved_by": "Harry",
    "seconded_by": "Donna",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "harry moved to accept the minutes as amended, donna seconded; voted 'aye' unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lars",
    "seconded_by": "Harry",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn so moved by lars, seconded harry; voted 'aye' unanimously @ 8:13 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0809245
+ "dropped_unquoted": 1,
+ "note": "Text extracted from minutes with no signature approval or certification noted. The board recorded no vote on the Director's report, the room-use policy, trust funds, out-of-state cards, Friends update, or Director's evaluation. Minutes give the room as both 'Sudolnik meeting room' and 'Sudolnik Conference Room'. Some bracketed words appear to be inserted by the transcriber (e.g. '[pay for]', '[public]', '[their]'). 'BPL' is not expanded in the text. The FY 2017 budget and ARIS report appear as headings only, with no detail.",
+ "cost_usd": 0.00578042,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:46 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "gare thompson, lars widstrand, martha moore - director, lpl terri burchfield - fincom representative"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "respectfully submitted, lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "martha moore - director, lpl terri burchfield - fincom representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "present",
+   "quote": "martha moore - director, lpl terri burchfield - fincom representative"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: susan visser, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: susan visser, bob ebersole - board of selectmen representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The library cannot create a new budget line for program speakers; the 'contracted services' line will be used for this purpose.",
+   "quote": "cannot create a new budget line, but use the line \"contracted services\" for this purpose."
+  },
+  {
+   "decision": "Dick asked that trustees review the Library Trust Funds and their values at the next month's meeting to see whether any can be used, e.g. for speakers' fees.",
+   "quote": "dick requested that we peruse the funds and their values at next month's meeting to see if there is any possibility to use any of them"
+  },
+  {
+   "decision": "Donna will send out a 'safe-child policy' from BPL for the board to review.",
+   "quote": "donna will send out a \"safe-child policy\" from bpl for review."
+  },
+  {
+   "decision": "Harry asked that the library really investigate whether CORI checks on tutors using the library can be done, given possible liability questions.",
+   "quote": "harry would like for the library to really investigate whether this can be done, for the sake of possible liability"
+  },
+  {
+   "decision": "Donna will ask Martha for the existing room-use policy and related forms so the new policy can be written succinctly.",
+   "quote": "donna has a lot of questions - she is asking martha for what existing policy is, so the new policy can be"
+  },
+  {
+   "decision": "Policy for room use and Out of state Library cards placed on the agenda for upcoming meetings.",
+   "quote": "agenda items for upcoming meetings o policy for room use o out of state library cards"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2016 year-end budget",
+   "what_was_recorded": "The Director reported that the library expended 99.8% of the FY 2016 total budget.",
+   "figures_as_printed": [
+    "99.8%"
+   ],
+   "quote": "expended 99.8% of the total budget!"
+  },
+  {
+   "topic": "Program speaker funding",
+   "what_was_recorded": "The library currently depends solely on the Friends to pay for programs; speakers' fees are rising yearly, and the board wants access to town funds for speakers.",
+   "figures_as_printed": [],
+   "quote": "currently the library depends solely on the friends for paying for programs"
+  },
+  {
+   "topic": "Cultural council grant request",
+   "what_was_recorded": "Kiirja asked about grants from the cultural council; Martha confirmed the library has a request in with the council.",
+   "figures_as_printed": [],
+   "quote": "kiirja asked if the library has asked the cultural council for grants; martha confirmed that we have a request in with the council."
+  },
+  {
+   "topic": "Library Trust Funds",
+   "what_was_recorded": "Trust fund values were to be reviewed at the next meeting to see whether any could pay for items such as speakers' fees.",
+   "figures_as_printed": [],
+   "quote": "dick requested that we peruse the funds and their values at next month's meeting to see if there is any possibility to use any of them"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no public comment",
+   "quote": "public comment o no public comment"
+  },
+  {
+   "topic": "Approval of minutes of September 15, 2016",
+   "resolution": "approved as amended",
+   "quote": "harry moved to accept the minutes as amended, donna seconded; voted 'aye' unanimously."
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "discussed; no action",
+   "quote": "director's report, per distributed hand-out."
+  },
+  {
+   "topic": "Possible program line in budget and sources of funding",
+   "resolution": "discussed; use contracted services line",
+   "quote": "possible program line in budget/sources of funding"
+  },
+  {
+   "topic": "Policy for access and use of Library Trust Funds",
+   "resolution": "trust funds to be reviewed next meeting",
+   "quote": "policy for access and use of library trust funds"
+  },
+  {
+   "topic": "Room use by for-profit entities (BPL policies)",
+   "resolution": "discussed; policy research assigned",
+   "quote": "room use by for-profit entities (bpl policies)"
+  },
+  {
+   "topic": "Library cards for out of state residents",
+   "resolution": "discussed; placed on next agenda",
+   "quote": "library cards for out of state residents"
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "noted; no trustee attended",
+   "quote": "no trustee member attended last friends' meeting"
+  },
+  {
+   "topic": "Plans for Director's evaluation",
+   "resolution": "discussed; no action",
+   "quote": "plans for director's evaluation"
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "room use policy and out of state cards listed",
+   "quote": "agenda items for upcoming meetings o policy for room use o out of state library cards"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:13 p.m.",
+   "quote": "motion to adjourn so moved by lars, seconded harry; voted 'aye' unanimously @ 8:13 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for October 20, 2016",
+   "where": "list",
+   "quote": "lplbot agenda for october 20, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "lplbot agenda for october 20, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "lplbot agenda for october 20, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "lplbot agenda for october 20, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "safe-child policy (from BPL)",
+   "where": "text",
+   "quote": "donna will send out a \"safe-child policy\" from bpl for review."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "director report",
+  "budget",
+  "trust funds",
+  "room use policy",
+  "out-of-state library cards",
+  "program funding",
+  "director evaluation",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

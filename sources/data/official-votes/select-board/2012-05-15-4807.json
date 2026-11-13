@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-05-15",
  "docid": "4807",
@@ -12,15 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the Purchase and Sale Agreement for the Jones House for $10,150.00",
+   "motion": "Approve both ambulance bill abatements, LB121739 and LBM11539.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "mr. alonzo moved to approve both abatements, lb121739 & lbm11539. mr. sund"
+  },
+  {
+   "motion": "Approve the Purchase and Sale of the Jones House as listed before the BOS.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. alonzo motioned to approve the purchase and sale of the jones house as listed before the bos. mr. debettencourt seconded. discussion on the driveway easement agreement ensued. on vote, motion passed, 4 in favor, 0 opposed."
+   "quote": "mr. debettencourt seconded. discussion on the driveway easement agreement ensued. on vote, motion passed, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the License Agreement for Tri Town Landing fire lane",
+   "motion": "Approve the License for Tri Town as provided on the plan and as discussed.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 4-0",
@@ -28,7 +36,7 @@
    "quote": "mr. alonzo moved to approve the license for tri town as provided on the plan and as discussed. mr. sund seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 4-0",
@@ -37,6 +45,349 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. One motion on item 1 (ambulance bill abatements) was started (\"Mr. Alonzo moved to approve both abatements, LB121739 & LBM11539. Mr. Sund\") but the text is cut off at the page break and the outcome is not recorded in the provided text. Minutes and warrants (item 7) were \"presented for approval\" but no explicit motion and vote is recorded. Remote Participation Policy (item 4) explicitly deferred to next meeting with no vote taken.",
- "cost_usd": 0.1001335
+ "note": "OCR text, not a scan. The abatement motion is cut off at a page break: the minutes record the motion and the mover, but the seconder and result are not printed, so the outcome is recorded as not stated. The chair is not named in the text. The executive session heading has no content. Public comment includes remarks by board members (Mr. Alonzo, Mr. Matthews) printed under that heading. Quotes have been collapsed across line breaks. The text reads \"Llicense\" and \"then\" as printed.",
+ "cost_usd": 0.00938662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "absent",
+   "quote": "absent: paula bertram"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "public comment",
+   "status": "present",
+   "quote": "dave mcdonald, said he received a letter in his mailbox entitled \"lunenburg residents beware\"."
+  },
+  {
+   "name": "Jane DeNike",
+   "role": "resident, 347 Highland Street",
+   "status": "present",
+   "quote": "jane denike, 347 highland street, wanted clarification on what the override percentage actually was going to be."
+  },
+  {
+   "name": "Bill Caselden",
+   "role": "representing Great Bridges Properties",
+   "status": "present",
+   "quote": "bill caselden, representing great bridges properties, explained to the"
+  },
+  {
+   "name": "Marion Benson",
+   "role": "Planning Board Director",
+   "status": "present",
+   "quote": "marion benson, planning board director, said that there has not been a problem with this plan by the dpw and the fire"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Remote Participation Policy held over: the board decided to review it further and vote at the next BOS meeting.",
+   "quote": "after discussion among the bos it was decided to review this matter further and to vote on it at the next bos meeting."
+  },
+  {
+   "decision": "Town Manager's evaluation process set out by Mr. Matthews: goal sheets and format to go to the BOS within a week, each member to complete own evaluation after meeting the Town Manager, composite review to follow, about 3-4 weeks.",
+   "quote": "goal sheets and the format will be distributed to the bos within the next week."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ambulance bill abatements",
+   "what_was_recorded": "Two ambulance bill abatement requests were presented, each for the amount shown; Ms. Speidel said both applicants meet the guidelines.",
+   "figures_as_printed": [
+    "$990.00",
+    "$1056.00"
+   ],
+   "quote": "lb121739 for $990.00 & lbm11539 for $1056.00"
+  },
+  {
+   "topic": "Jones House sale price",
+   "what_was_recorded": "The Jones House will sell for the stated price, with historic restoration and other sale requirements; the low price was attributed to historic restrictions and building condition.",
+   "figures_as_printed": [
+    "$10,150.00"
+   ],
+   "quote": "the property will sell for $10,150.00 and"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Two warrants were presented for approval, each with the amount printed.",
+   "figures_as_printed": [
+    "$42,600.72",
+    "$636,650.08"
+   ],
+   "quote": "warrants - 05/15/2012 #66-12 $42,600.72 05/10/2012 #23p12 $636,650.08"
+  },
+  {
+   "topic": "Override property tax increase",
+   "what_was_recorded": "The override percentage was clarified as a 14.2% property tax increase for 2013 over 2012; a speaker said it could approach 25% by July 2016.",
+   "figures_as_printed": [
+    "14.2%",
+    "25%"
+   ],
+   "quote": "determined to be a 14.2% increase in property tax for the years 2013 over 2012."
+  },
+  {
+   "topic": "Lunenburg tax bill vs state average",
+   "what_was_recorded": "Mr. Matthews said the Lunenburg tax bill is lower than the state average by the stated percentage.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "the lunenburg tax bill is 10% lower then the state average."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Lunenburg Pops Concert",
+   "quote": "mr. alonzo congratulated the lunenburg pops concert and everyone who was involved in the event this year."
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "",
+   "topic": "override letter and vote",
+   "quote": "dave mcdonald, said he received a letter in his mailbox entitled \"lunenburg residents beware\"."
+  },
+  {
+   "speaker": "Jane DeNike",
+   "stated_role": "347 Highland Street",
+   "topic": "override percentage, Pops concert politicization, home sales",
+   "quote": "jane denike, 347 highland street, wanted clarification on what the override percentage actually was going to be."
+  },
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "home sales and override",
+   "quote": "mr. matthews said that 90 homes for sale is a consistent number and that this is a national situation."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "affordability of override",
+   "quote": "he suggested that if you cannot afford the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; board thanked speaker",
+   "quote": "mr. alonzo congratulated the lunenburg pops concert and everyone who was involved in the event this year.",
+   "tags": [
+    "public comment",
+    "override"
+   ]
+  },
+  {
+   "topic": "Request for Abatement of Ambulance Bills, LB121739 & LBM11539",
+   "resolution": "motion to approve made; result not recorded",
+   "quote": "1. request for abatement of ambulance bills, lb121739 & lbm11539 - ms. speidel presented two requests",
+   "tags": [
+    "abatement",
+    "ambulance",
+    "tax"
+   ]
+  },
+  {
+   "topic": "Purchase & Sales Agreement, Jones House",
+   "resolution": "approved 4-0",
+   "quote": "ms. speidel presented the bos with the request to sign the purchase and sales agreement for the jones house.",
+   "tags": [
+    "property sale",
+    "historic",
+    "Jones House"
+   ]
+  },
+  {
+   "topic": "License Agreement, Tri Town Landing",
+   "resolution": "approved 4-0",
+   "quote": "3. license agreement, tri town landing - bill caselden, representing great bridges properties, explained to the",
+   "tags": [
+    "license",
+    "fire lane",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Remote Participation Policy",
+   "resolution": "continued to next meeting",
+   "quote": "4. remote participation policy - ms. speidel stated that she had discussed the remote participation policy with the",
+   "tags": [
+    "remote participation",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Town Manager's Annual Evaluation",
+   "resolution": "timeline discussed; process set out, no vote",
+   "quote": "5. town manager's annual evaluation - mr. matthews stated that a timeline needed to be set on how the bos",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "BOS Policies & Procedures",
+   "resolution": "not discussed",
+   "quote": "6. bos policies & procedures - not discussed.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "presented for approval; no motion recorded",
+   "quote": "7. minutes/warrants/action file issues - the following minutes and warrants were presented for approval.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "tax assistance"
+   ]
+  },
+  {
+   "topic": "Committee Report",
+   "resolution": "no action; School Building Committee update",
+   "quote": "8. committee report - mr. matthews said that the school building committee met last wednesday and they have",
+   "tags": [
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "Department Reports",
+   "resolution": "none",
+   "quote": "9. department reports - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports",
+   "resolution": "re-sign of a license requested; no action recorded",
+   "quote": "10. town manager reports- ms. speidel said that there had been a typo on a license which had already been granted",
+   "tags": [
+    "license",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "discussion; no action",
+   "quote": "mr. matthews stated that he received an email from barbara reynolds informing him that she will be stepping down from",
+   "tags": [
+    "finance committee",
+    "appointments",
+    "override",
+    "election"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:16 p.m.",
+   "quote": "meeting adjourned at 8:16 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes: 05/1/2012 & 04/24/2012",
+   "where": "list",
+   "quote": "1. minutes: 05/1/2012 & 04/24/2012"
+  },
+  {
+   "name": "Warrants 05/15/2012 #66-12 $42,600.72 and 05/10/2012 #23P12 $636,650.08",
+   "where": "list",
+   "quote": "2. warrants - 05/15/2012 #66-12 $42,600.72"
+  },
+  {
+   "name": "List of tax assistance programs for senior citizens, provided by the Lunenburg Citizens for Fiscal Responsibility",
+   "where": "list",
+   "quote": "mr. alonzo read a list of tax assistance programs for senior citizens which was provided by"
+  },
+  {
+   "name": "Remote Participation Policy",
+   "where": "text",
+   "quote": "ms. speidel stated that she had discussed the remote participation policy with the"
+  },
+  {
+   "name": "Purchase and Sales agreement, Jones House",
+   "where": "text",
+   "quote": "ms. speidel presented the bos with the request to sign the purchase and sales agreement for the jones house."
+  },
+  {
+   "name": "License Agreement, Tri Town Landing",
+   "where": "text",
+   "quote": "this license agreement addresses the remainder of the fire lane behind tri town landing."
+  },
+  {
+   "name": "Goal sheets and evaluation format for the Town Manager's evaluation",
+   "where": "text",
+   "quote": "goal sheets and the format will be distributed to the bos within the next week."
+  },
+  {
+   "name": "Letter entitled \"Lunenburg Residents Beware\"",
+   "where": "text",
+   "quote": "said he received a letter in his mailbox entitled \"lunenburg residents beware\"."
+  },
+  {
+   "name": "Email from Barbara Reynolds",
+   "where": "text",
+   "quote": "mr. matthews stated that he received an email from barbara reynolds informing him that she will be stepping down from"
+  }
+ ],
+ "tags": [
+  "override",
+  "Jones House sale",
+  "ambulance abatements",
+  "warrants",
+  "Tri Town Landing license",
+  "remote participation policy",
+  "town manager evaluation",
+  "finance committee",
+  "public comment",
+  "2012"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following minutes and warrants were presented for approval."
+ },
+ "dropped_unquoted_by_field": {}
 }

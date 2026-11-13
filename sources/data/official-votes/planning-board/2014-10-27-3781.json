@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-10-27",
  "docid": "3781",
@@ -12,53 +12,343 @@
  },
  "votes": [
   {
-   "motion": "Approve prior meeting minutes",
+   "motion": "Approve the listed minutes (10-6-14, 9-22-14, the 9-22-14 hearing minutes, and 10-14-14 and its 322 Flat Hill Solar hearing minutes).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "all minutes approved"
+   "quote": "all minutes approved 10-6-14"
   },
   {
-   "motion": "Reopen the hearing for 322 Flat Hill Community Solar",
+   "motion": "Reopen the 322 Flat Hill Community Solar public hearing (continued).",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
-   "procedural": false,
+   "procedural": true,
    "quote": "motion to reopen hearing, n. lockwood, second, d. mcquaid."
   },
   {
-   "motion": "Reconsider the vote on Whites Woods, Massachusetts Avenue",
+   "motion": "Reconsider the prior vote endorsing approval of Whites Woods, Massachusetts Avenue.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "motion, n. lockwood, to reconsider vote, second, d. mcquaid, all aye."
+   "quote": "motion, n. lockwood, to reconsider vote, second, d. mcquaid, all a ye."
   },
   {
-   "motion": "Endorse approval for Whites Woods, Massachusetts Avenue",
+   "motion": "Endorse approval of Whites Woods, Massachusetts Avenue.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, n. lockwood, to endorse approval, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Reconsider the vote on 909 Massachusetts Avenue",
+   "motion": "Reconsider the prior vote endorsing approval of 909 Massachusetts Avenue.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "motion, n. lockwood, to reconsider vote, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Endorse approval for 909 Massachusetts Avenue",
+   "motion": "Endorse approval of 909 Massachusetts Avenue.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, n. lockwood, to endorse approval, second, d. mcquaid, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1332435
+ "note": "Clean extracted text of two pages, not a scan. The 'All minutes approved' line records approval of listed minutes with no mover, second, or count. No motion is recorded for the adjournment at 9:45 PM. The 909 Massachusetts Avenue item says K. Chenis was absent for that vote, though he appears in the Present list. The Whites Woods reconsider vote reads 'all a ye', presumably 'all aye'. The reopen-hearing motion has no recorded outcome. No dollar figures appear in the minutes.",
+ "cost_usd": 0.008121719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "M. Ramstack",
+   "role": "Citizen",
+   "status": "present",
+   "quote": "citizen m. ramstack noted the \"black history\" related to flat hill road."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney to inform the Board of Selectmen that the Board will support the recommendations of the Conservation Commission and the Open Space and Recreation Committee on 90 West Townsend Road, and recommends the Board of Selectmen speak with the DPW Director; memorandum to note the headwaters of Mulpus Brook.",
+   "quote": "a. burney to inform the board of selectmen that the board"
+  },
+  {
+   "decision": "A. Burney to meet with Chantell Fleck, MRPC Planner, on the Zoning Bylaw design standards.",
+   "quote": "a. burney to meet with chantell fleck, mrpc planner."
+  },
+  {
+   "decision": "Planning Board meetings to be held at Town Hall whenever possible; only the first meeting of the month (2nd Monday) to continue to be televised.",
+   "quote": "moving forward, planning board meetings will be held at town hall whenever possible."
+  },
+  {
+   "decision": "Members want to work on incorporating design standards into more sections of the Zoning Bylaw.",
+   "quote": "members want to work on incorporating design standards into more sections of the zoning bylaw."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "M. Ramstack",
+   "stated_role": "Citizen",
+   "topic": "Black history related to Flat Hill Road (scenic road discussion)",
+   "quote": "citizen m. ramstack noted the \"black history\" related to flat hill road."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "all minutes approved 10-6-14"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "tags": [
+    "committees",
+    "MRPC",
+    "school building",
+    "open space"
+   ],
+   "quote": "meeting held october 16th."
+  },
+  {
+   "topic": "Public hearing (cont'd): 322 Flat Hill Community Solar",
+   "resolution": "hearing reopened; see separate minutes",
+   "tags": [
+    "solar",
+    "public hearing"
+   ],
+   "quote": "322 flat hill community solar - see separate minutes."
+  },
+  {
+   "topic": "New business: Whites Woods and 909 Massachusetts Avenue approvals",
+   "resolution": "approvals endorsed after reconsideration",
+   "tags": [
+    "subdivision",
+    "approval",
+    "Whites Woods",
+    "909 Mass Ave"
+   ],
+   "quote": "a super majority was not available to endorse the approval at the september 22, 2014 meeting."
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "updates noted",
+   "tags": [
+    "development status",
+    "Highfield Village",
+    "MS/HS"
+   ],
+   "quote": "hearing scheduled for november 10, 2014, 6:35 pm, town hall."
+  },
+  {
+   "topic": "Action file: 90 West Townsend Road, Notice of Intent to Sell",
+   "resolution": "Board to support Conservation and OSRC recommendations; memo to Selectmen",
+   "tags": [
+    "land sale",
+    "DPW",
+    "conservation",
+    "Mulpus Brook"
+   ],
+   "quote": "as the site abuts the dpw facility, there was board discussion as to if the dpw would have any future interest"
+  },
+  {
+   "topic": "Scenic Road: Flat Hill Road and Northfield Road",
+   "resolution": "discussed; no action",
+   "tags": [
+    "scenic roads",
+    "Flat Hill Road",
+    "Northfield Road",
+    "warrant"
+   ],
+   "quote": "input received from historical commission for both flat hill road and northfield road."
+  },
+  {
+   "topic": "Zoning Bylaw design standards discussion",
+   "resolution": "A. Burney to meet with MRPC planner",
+   "tags": [
+    "zoning bylaw",
+    "design standards"
+   ],
+   "quote": "a. burney to meet with chantell fleck, mrpc planner."
+  },
+  {
+   "topic": "Master Plan: Economic Development Element",
+   "resolution": "process discussed; no action",
+   "tags": [
+    "master plan",
+    "economic development"
+   ],
+   "quote": "board discussed process for updating the master plan."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "tags": [
+    "ZBA",
+    "790 Massachusetts Avenue"
+   ],
+   "quote": "noted zba hearing continuance date of november 12, 2014 for 790 massachusetts avenue."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set; meetings at Town Hall",
+   "tags": [
+    "meeting schedule",
+    "televised"
+   ],
+   "quote": "moving forward, planning board meetings will be held at town hall whenever possible."
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "tags": [
+    "design standards",
+    "zoning bylaw"
+   ],
+   "quote": "members want to work on incorporating design standards into more sections of the zoning bylaw."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 9-22-14",
+   "where": "list",
+   "quote": "minutes- 9-22-14 9-22-14 whites woods hearing"
+  },
+  {
+   "name": "9-22-14 Whites Woods Hearing",
+   "where": "list",
+   "quote": "minutes- 9-22-14 9-22-14 whites woods hearing"
+  },
+  {
+   "name": "9-22-14 322 Flat Hill Solar Hearing",
+   "where": "list",
+   "quote": "9-22-14 322 flat hill solar hearing 9-22-14 909 mass ave hearing"
+  },
+  {
+   "name": "9-22-14 909 Mass Ave Hearing",
+   "where": "list",
+   "quote": "9-22-14 322 flat hill solar hearing 9-22-14 909 mass ave hearing"
+  },
+  {
+   "name": "Minutes 10-6-14",
+   "where": "list",
+   "quote": "9-22-14 909 mass ave hearing 10-6-14 10-14-14"
+  },
+  {
+   "name": "Minutes 10-14-14",
+   "where": "list",
+   "quote": "9-22-14 909 mass ave hearing 10-6-14 10-14-14"
+  },
+  {
+   "name": "10-14-14 322 Flat Hill Solar Hearing",
+   "where": "list",
+   "quote": "10-14-14 322 flat hill solar hearing"
+  },
+  {
+   "name": "MS/HS Update",
+   "where": "list",
+   "quote": "ms/hs update 909 mass ave approval 221 white street approval"
+  },
+  {
+   "name": "909 Mass Ave Approval",
+   "where": "list",
+   "quote": "ms/hs update 909 mass ave approval 221 white street approval"
+  },
+  {
+   "name": "221 White Street Approval",
+   "where": "list",
+   "quote": "221 white street approval 50 elmwood road progress form"
+  },
+  {
+   "name": "50 Elmwood Road Progress Form",
+   "where": "list",
+   "quote": "50 elmwood road progress form 90 west townsend road, intent to sell"
+  },
+  {
+   "name": "90 West Townsend Road, Intent to Sell",
+   "where": "list",
+   "quote": "50 elmwood road progress form 90 west townsend road, intent to sell"
+  },
+  {
+   "name": "Memorandum on 90 West Townsend Road (headwaters of Mulpus Brook)",
+   "where": "text",
+   "quote": "memorandum to also note that the headwaters of mulpus brook"
+  },
+  {
+   "name": "Mullin Rule form",
+   "where": "text",
+   "quote": "completed a mullin rule form to provide the required super majority"
+  },
+  {
+   "name": "Scenic road bylaw, Section 15C, M.G.L.",
+   "where": "text",
+   "quote": "the scenic road bylaw, section 15c, m.g.l., protects the character of a road."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "solar",
+  "development status",
+  "scenic roads",
+  "zoning bylaw",
+  "design standards",
+  "master plan",
+  "meeting schedule",
+  "Whites Woods",
+  "909 Massachusetts Avenue",
+  "90 West Townsend Road"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

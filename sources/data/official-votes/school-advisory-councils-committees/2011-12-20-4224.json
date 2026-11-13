@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2011-12-20",
  "docid": "4224",
@@ -12,6 +12,158 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes are a narrative summary of updates and discussions (RTI, curriculum, groupings, iPad training, Project 351, lockdown procedure). No motions were voted on, and no voting language (carried, approved, so voted, vote count) appears in the text.",
- "cost_usd": 0.08038150000000001
+ "note": "Two-page text with no recorded votes, no adjournment, no public comment section, and no attendee roles printed. The minutes do not state the body's formal name beyond the header 'THMS School Advisory Council'. The 'Next meeting January 24' line is a scheduling note, not a recorded decision. Amy Raboin is named only as the person filling the interventionist role, not as a participant, so she is excluded from attendees.",
+ "cost_usd": 0.00294992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Timothy Santry",
+   "status": "present",
+   "quote": "present: timothy santry, greg berthiaume, linda hallisey, kim thomas, and heidi champagne",
+   "role": ""
+  },
+  {
+   "name": "Greg Berthiaume",
+   "status": "present",
+   "quote": "present: timothy santry, greg berthiaume, linda hallisey, kim thomas, and heidi champagne",
+   "role": ""
+  },
+  {
+   "name": "Linda Hallisey",
+   "status": "present",
+   "quote": "present: timothy santry, greg berthiaume, linda hallisey, kim thomas, and heidi champagne",
+   "role": ""
+  },
+  {
+   "name": "Kim Thomas",
+   "status": "present",
+   "quote": "present: timothy santry, greg berthiaume, linda hallisey, kim thomas, and heidi champagne",
+   "role": ""
+  },
+  {
+   "name": "Heidi Champagne",
+   "status": "present",
+   "quote": "present: timothy santry, greg berthiaume, linda hallisey, kim thomas, and heidi champagne",
+   "role": ""
+  },
+  {
+   "name": "Josephine Bowen",
+   "status": "not stated",
+   "quote": "candidate josephine bowen, community volunteer",
+   "role": "candidate, community volunteer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The council is looking to establish data-based criteria for transition into high school honors or regular math classes instead of relying strictly on teacher recommendation.",
+   "quote": "we are looking to establish data based criteria for transition into high school honors or regular math classes instead of relying strictly on teacher recommendation."
+  },
+  {
+   "decision": "The math consultant will continue to align grade level maps with the new curriculum, with focus on standards that are possibly new responsibilities for different grade levels.",
+   "quote": "the math consultant will continue to align our grade level maps with the new curriculum. we will focus on identifying standards that are possibly new responsibilities for different grade levels."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "iPad training funding",
+   "what_was_recorded": "PTO funds of $1000 were noted, and Tim recommended using them to hire an Apple representative for professional development on the best use of iPads in the classroom; no vote is recorded.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "pto funds of $1000. tim recommends using this to hire an apple representative to provide professional development for the best use of the ipads in the classroom"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "RTI Update",
+   "resolution": "reported; no action recorded",
+   "quote": "amy raboin will fill that role, meeting with small groups once a week.",
+   "tags": [
+    "RTI",
+    "interventionist",
+    "math"
+   ]
+  },
+  {
+   "topic": "Math Curriculum",
+   "resolution": "clarified; no action recorded",
+   "quote": "math curriculum is aligned to the common core frameworks; however, the math consultant will continue to align our grade level maps",
+   "tags": [
+    "math",
+    "common core",
+    "curriculum"
+   ]
+  },
+  {
+   "topic": "Groupings and Vertical Teaming",
+   "resolution": "discussed; no action recorded",
+   "quote": "we are using student growth percentiles to review placements for students in math classes.",
+   "tags": [
+    "math",
+    "placement",
+    "vertical teaming",
+    "high school transition"
+   ]
+  },
+  {
+   "topic": "Results Teams",
+   "resolution": "reported; no action recorded",
+   "quote": "results faculty meetings are dedicated to the following issues:",
+   "tags": [
+    "results teams",
+    "faculty meetings",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "iPad training",
+   "resolution": "discussed; PTO funds recommendation noted, no vote recorded",
+   "quote": "pto funds of $1000. tim recommends using this to hire an apple representative to provide professional development for the best use of the ipads in the classroom",
+   "tags": [
+    "iPads",
+    "PTO funds",
+    "professional development"
+   ]
+  },
+  {
+   "topic": "Project 351",
+   "resolution": "candidate named; no action recorded",
+   "quote": "candidate josephine bowen, community volunteer",
+   "tags": [
+    "Project 351",
+    "volunteer"
+   ]
+  },
+  {
+   "topic": "Lockdown Procedure",
+   "resolution": "reported; no action recorded",
+   "quote": "last thursday, went smoothly, kids handled it well; notification went home to all parents via phone communication.",
+   "tags": [
+    "safety",
+    "lockdown",
+    "parent notification"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "school advisory council",
+  "RTI",
+  "math curriculum",
+  "vertical teaming",
+  "results teams",
+  "iPads",
+  "PTO funds",
+  "Project 351",
+  "lockdown",
+  "safety"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

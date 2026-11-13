@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-02-23",
  "docid": "2172",
@@ -12,31 +12,295 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 01-12-17",
-   "moved_by": "John",
-   "seconded_by": "Mark",
+   "motion": "Accept the minutes of 01-12-17.",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Mark Erickson",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "john made a motion to accept the minutes. mark seconded. all in favor 6-0"
   },
   {
-   "motion": "Accept the minutes of 02-02-17",
-   "moved_by": "John",
-   "seconded_by": "Mark",
+   "motion": "Accept the minutes of 02-02-17.",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Mark Erickson",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "john made a motion to accept the minutes, mark seconded. all in favor 6-0"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mark",
-   "seconded_by": "John",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mark Erickson",
+   "seconded_by": "John Henshaw",
    "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0"
+   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0 at 8:08 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes from macOS Vision. Minutes of 11-28-16 and 12-08-16 were held for review without a vote.",
- "cost_usd": 0.08959750000000001
+ "note": "OCR text from a scanned page with typos and no clean attendance block for absences; George Martin's attendance is not stated. Amanda Moore's title is ambiguous in the OCR ('DPW Administrative Assistant, Lunenburg Public Library'). Minutes of 11-28-16 and 12-08-16 were held, not voted. Public comment was 'None'. Dollar figures are as printed in the OCR text.",
+ "cost_usd": 0.00547312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, cindy testa"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, cindy testa"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, cindy testa"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, cindy testa"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, cindy testa"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, cindy testa"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "not stated",
+   "quote": "john henshaw hannah anderson george martin cindy testa"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Department of Public Works (DPW) Director",
+   "status": "present",
+   "quote": "jack rodriquenz - department of public works (dpw) director, amanda moore - dpw administrative assistant, lunenburg public library"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "DPW Administrative Assistant",
+   "status": "present",
+   "quote": "jack rodriquenz - department of public works (dpw) director, amanda moore - dpw administrative assistant, lunenburg public library"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of 11-28-16 and 12-08-16 were held for review (not approved at this meeting).",
+   "quote": "minutes of 11-28-16 and 12-08-16 held for review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW FY18 budget request",
+   "what_was_recorded": "Jack asked that the DPW budget be level funded, with increases only for contractual obligations and increased utility costs.",
+   "figures_as_printed": [],
+   "quote": "jack asked the dpw budget be level funded."
+  },
+  {
+   "topic": "Town Manager budget line increases",
+   "what_was_recorded": "The Town Manager increased certain budget line items by 4 percent.",
+   "figures_as_printed": [
+    "4%"
+   ],
+   "quote": "the town manger increased certain budget line items 4%."
+  },
+  {
+   "topic": "Pavement Management Plan funding",
+   "what_was_recorded": "$50K from the Motor Vehicle Excise tax is being added to the DPW budget for the Pavement Management Plan line item.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "$50k from the motor vehicle excise tax is being add to the dpw budget for the pavement management plan (pmp) line item."
+  },
+  {
+   "topic": "Pavement Management Plan prior year",
+   "what_was_recorded": "$120K was voted in at last year's town meeting for the Pavement Management Plan.",
+   "figures_as_printed": [
+    "$120K"
+   ],
+   "quote": "there was also $120k voted in at last years town meeting for the pmp."
+  },
+  {
+   "topic": "Chapter 90 funds",
+   "what_was_recorded": "Chapter 90 funds have remained steady and are estimated for FY17.",
+   "figures_as_printed": [
+    "$419K"
+   ],
+   "quote": "estimated at $419k for fy17."
+  },
+  {
+   "topic": "Mechanics Assistant request",
+   "what_was_recorded": "An above level service request for a Mechanics Assistant was made; it is not being funded for FY18.",
+   "figures_as_printed": [
+    "$35K"
+   ],
+   "quote": "there was an above level service request for mechanics assistant @ $35k."
+  },
+  {
+   "topic": "Snow removal deficit",
+   "what_was_recorded": "The snow deficit is estimated at $86K, with additional vehicle maintenance cost expected to increase it.",
+   "figures_as_printed": [
+    "$86K"
+   ],
+   "quote": "snow deficit is estimated at $86k."
+  },
+  {
+   "topic": "Snow budget",
+   "what_was_recorded": "The snow budget is $275K, of which $135K has been spent on materials, salt, sand, maintenance and fuel.",
+   "figures_as_printed": [
+    "$275K",
+    "$135K"
+   ],
+   "quote": "the snow budget is $275k. $135k of the $275k is spent on materials, salt, sand,"
+  },
+  {
+   "topic": "Utility budget lines",
+   "what_was_recorded": "The Town Manager increased some utility budget lines four percent; no changes from solar credits.",
+   "figures_as_printed": [
+    "four percent"
+   ],
+   "quote": "the town manager did increase some of the utility budget lines four percent."
+  },
+  {
+   "topic": "Building maintenance contracted services",
+   "what_was_recorded": "The Town Manager added a 3% increase for contracted services for building maintenance.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "the tm added a 3% increase for contracted services for building maintenance."
+  },
+  {
+   "topic": "TC Passios repairs",
+   "what_was_recorded": "The DPW has no money budgeted for repairs to the vacant TC Passios school, which needs repair.",
+   "figures_as_printed": [],
+   "quote": "the dpw does not have money budgeted for repairs to the tc passios"
+  },
+  {
+   "topic": "Library state aid",
+   "what_was_recorded": "State aid to the library was certified at $14k, based on State required minimum funding.",
+   "figures_as_printed": [
+    "$14k"
+   ],
+   "quote": "state aid certified at $14k."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "called to order 7:00 pm; no public comment or new communications",
+   "quote": "chairman called the meeting to order at 7:00 pm.",
+   "tags": [
+    "meeting open"
+   ]
+  },
+  {
+   "topic": "Department of Public Works FY18 budget presentation",
+   "resolution": "presented; no vote",
+   "quote": "department of public works fy18 budget presentation: jack greeted the committee",
+   "tags": [
+    "DPW",
+    "FY18 budget",
+    "snow",
+    "pavement"
+   ]
+  },
+  {
+   "topic": "Lunenburg Public Library FY18 budget presentation",
+   "resolution": "presented; no vote",
+   "quote": "lunenburg public library fy18 budget presentation: hired a new digital services person.",
+   "tags": [
+    "library",
+    "FY18 budget"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "discussed; no action recorded",
+   "quote": "financial policy for managing debt: sent out revisions. revising policy for next week.",
+   "tags": [
+    "debt policy",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "01-12-17 and 02-02-17 approved; 11-28-16 and 12-08-16 held",
+   "quote": "minutes of 01-12-17. john made a motion to accept the minutes. mark seconded. all in favor 6-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Financial Officers reports",
+   "resolution": "no report",
+   "quote": "6. town financial officers reports: none",
+   "tags": [
+    "town finance"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "listed by member; no details recorded",
+   "quote": "7. committee and department updates:",
+   "tags": [
+    "committee updates"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "listed; no details recorded",
+   "quote": "8. ongoing business pavement management plan",
+   "tags": [
+    "pavement",
+    "contracts",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:08 pm, 6-0",
+   "quote": "mark made a motion to adjourn. john seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Policy for managing debt (revisions)",
+   "where": "text",
+   "quote": "financial policy for managing debt: sent out revisions. revising policy for next week."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY18 budget",
+  "DPW",
+  "library",
+  "snow removal",
+  "pavement management",
+  "minutes",
+  "debt policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

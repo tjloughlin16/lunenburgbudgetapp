@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-12-13",
  "docid": "3581",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from November 22, 2010 and First Evangelical Congregational Church Information Meeting November 22, 2010",
+   "motion": "Approve the minutes signed 11-22-10 and the First Evangelical Congregational Church Information Meeting minutes of 11-22-10.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
@@ -20,15 +20,337 @@
    "quote": "motion, ms. bilotta, second, mr. lockwood, motion passed."
   },
   {
-   "motion": "Adjourn for purpose of going into Executive Session, not to return to General Session",
+   "motion": "Adjourn the general session to go into Executive Session, not to return to general session.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion, ms. bilotta, second, mr. saiia, roll call vote- mr. bodkin jr., aye, mr. lockwood, aye, ms. bilotta, aye, mr. saiia, aye, mr. bakaysa, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0892405
+ "note": "Plain extracted text with line breaks collapsed; quotes reflect that. The minutes-approval motion records no tally and does not say whether Mr. Bodkin Jr. (arrived 7:00 PM) voted on it. The adjournment roll call lists five ayes but prints no count. No public comment is recorded. The minutes say a 'Data folder' and a copy of the sign bylaw were presented to members, which is why documents_list is marked printed.",
+ "cost_usd": 0.00752272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. sa iia, thomas w. bodkin jr."
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. sa iia, thomas w. bodkin jr."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. sa iia, thomas w. bodkin jr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin jr. (arrived at 7:00 pm)"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "nathan j. lockwood, marion m. benson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The sign bylaw will be placed on the January 24, 2011 agenda, and members were given a copy of the bylaw for review.",
+   "quote": "the sign bylaw will be an item on the january 24, 2011 agenda."
+  },
+  {
+   "decision": "The Board's response to the NRWA request was for the Director to work with the NRWA and set up the Low Impact Development workshop.",
+   "quote": "the boa rd response was for the director to work with the nrwa and set up the workshop.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The Director will confer with the Town Manager for final approval of MMA workshop funding, register on December 14, and contact the Board.",
+   "quote": "she will confer with the town manager for final approval for funding the workshops and will contact the board."
+  },
+  {
+   "decision": "The Board wants a request from the Highfield Village applicant before acting on the extension; the Director suggested permitting the extension with a letter from the applicant.",
+   "quote": "the boar d wants a request from the applicant"
+  },
+  {
+   "decision": "The Director will research further about the value of extensions.",
+   "quote": "director will research further about the value of extensions."
+  },
+  {
+   "decision": "The Chair will research educational seminars for the Board and staff.",
+   "quote": "chair will research educational seminars for the board and staff."
+  },
+  {
+   "decision": "The Chair requested an inquiry as to hotel cost for the MMA Annual Meeting.",
+   "quote": "chair requested inquiry as to hotel cost."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MMA Annual Meeting registration fee",
+   "what_was_recorded": "The lower two-day registration fee deadline is December 14; the Board will be funded to attend via the entrance fees.",
+   "figures_as_printed": [
+    "$140.00"
+   ],
+   "quote": "the last day for the lower fee of $140.00 for the two days is december 14 th."
+  },
+  {
+   "topic": "MMA hotel accommodations",
+   "what_was_recorded": "There is no intent to fund hotel accommodations, and the Chair asked for inquiry into hotel cost.",
+   "figures_as_printed": [],
+   "quote": "there is no intent of funding for hotel accom modations."
+  },
+  {
+   "topic": "DPW Building Committee costs",
+   "what_was_recorded": "The committee is working to bring costs in line with the original estimate.",
+   "figures_as_printed": [],
+   "quote": "commi ttee is working to bring costs in line with the or iginal estimate.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Solar field grant request at Town Landfill",
+   "what_was_recorded": "A grant request for a solar field is being prepared by the Green Task Force Chair; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "preparing a grant request for a solar field at the town landfill"
+  },
+  {
+   "topic": "Capital Planning requests",
+   "what_was_recorded": "Requests were reviewed with the Library, Sewer Commission, and Council on Aging; prioritization begins January 6, 2011. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "a meeting regarding requests was held with the library, sewer commission, and council on aging"
+  },
+  {
+   "topic": "CVS Site Improvement Bond release",
+   "what_was_recorded": "The Director sent paperwork requesting release of the Site Improvement Bond to the Town Accountant; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "cvs- director has sent paperwork requesting release of site improvement bond to the town accountant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "motion, ms. bilotta, second, mr. lockwood, motion passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "conservation commission- noted certificates of compliance for 323 leominster road",
+   "tags": [
+    "conservation",
+    "zoning board"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "dpw building committee - ms. bilotta noted recent meeting.",
+   "tags": [
+    "committees",
+    "DPW building",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "discussed; no action",
+   "quote": "cvs- director has sent paperwork requesting release of site improvement bond to the town accountant.",
+   "tags": [
+    "solar",
+    "open space",
+    "technology",
+    "GIS",
+    "training"
+   ]
+  },
+  {
+   "topic": "Signs (temporary sign bylaw)",
+   "resolution": "continued to January 24, 2011 agenda",
+   "quote": "the sign bylaw will be an item on the january 24, 2011 agenda.",
+   "tags": [
+    "signs",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Lunenburg Scroll: Emerald Place public hearing",
+   "resolution": "removal from scroll requested",
+   "quote": "director has requested that the public hearing for the modification of emerald place be taken off the scroll.",
+   "tags": [
+    "Emerald Place",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "NRWA Low Impact Development workshops",
+   "resolution": "Director to set up workshop",
+   "quote": "the boa rd response was for the director to work with the nrwa and set up the workshop.",
+   "tags": [
+    "workshop",
+    "stormwater"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "MMA Annual Meeting attendance",
+   "resolution": "Director to confirm funding with Town Manager",
+   "quote": "she will confer with the town manager for final approval for funding the workshops and will contact the board.",
+   "tags": [
+    "training",
+    "MMA"
+   ]
+  },
+  {
+   "topic": "Highfield Village sewer extension",
+   "resolution": "discussed; Board wants applicant request",
+   "quote": "the boar d wants a request from the applicant",
+   "tags": [
+    "extension",
+    "Highfield Village",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "tri town landing is occupying building 1 and building 2 will be granted occupancy the week of december",
+   "tags": [
+    "Emerald Place",
+    "Tri Town Landing",
+    "First Evangelical",
+    "Lunenburg Crossing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action",
+   "quote": "see above planning director's reports and development status reports",
+   "tags": []
+  },
+  {
+   "topic": "Data information",
+   "resolution": "presented for viewing",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing",
+   "tags": [
+    "data"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "january meeting dates- january 10 board meeting, january 12 master planning workshop, and january 24, 2011 board meeting.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member data and issues",
+   "resolution": "noted",
+   "quote": "ms. bilotta noted concern over the eagle house being closed without a backup",
+   "tags": [
+    "Eagle House",
+    "Meals on Wheels",
+    "Jones House",
+    "televising"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "separate minutes",
+   "quote": "executive session: separate minutes.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned to executive session; general session adjourned 8:45 PM",
+   "quote": "adjourned general session at 8:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data folder of items of interest not on agenda",
+   "where": "text",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing"
+  },
+  {
+   "name": "Sign bylaw (copy given to members for review)",
+   "where": "text",
+   "quote": "members were given a copy of the bylaw for review."
+  },
+  {
+   "name": "Sewer Commission letter requesting extension for Highfield Village",
+   "where": "text",
+   "quote": "director presented a letter from the sewer commission seeking an extension for highfield village."
+  },
+  {
+   "name": "Conservation Commission notices: Certificates of Compliance, Orders of Condition, Determination of Applicability",
+   "where": "text",
+   "quote": "conservation commission- noted certificates of compliance for 323 leominster road"
+  },
+  {
+   "name": "Zoning Board of Appeals special permit for 125 Howard Street",
+   "where": "text",
+   "quote": "zoning board of appeals- granting of special permit for 125 howard street."
+  },
+  {
+   "name": "Energy Advisory Committee final Plan",
+   "where": "text",
+   "quote": "presentation of the final plan of the energy advisory committee will be december 14 th"
+  },
+  {
+   "name": "CVS Site Improvement Bond release paperwork",
+   "where": "text",
+   "quote": "cvs- director has sent paperwork requesting release of site improvement bond to the town accountant."
+  },
+  {
+   "name": "Open Space booklet",
+   "where": "text",
+   "quote": "the booklet will be prepared."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "signs bylaw",
+  "extensions",
+  "Highfield Village",
+  "Emerald Place",
+  "MMA training",
+  "NRWA workshop",
+  "solar grant",
+  "open space",
+  "capital planning",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "data information"
+ },
+ "dropped_unquoted_by_field": {}
 }

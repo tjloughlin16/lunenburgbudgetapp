@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2016-12-08",
  "docid": "1366",
@@ -12,31 +12,212 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the September 16, 2016 meeting",
+   "motion": "Accept the minutes of the September 16, 2016 meeting.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Commissioner May",
-   "outcome": "accepted",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made by commissioner mendoza and seconded by commissioner may to accept the minutes and upon no further discussion the minutes were accepted"
   },
   {
-   "motion": "Accept two changes to cemetery rules: allowing the Chairman and Superintendent of Cemeteries to open and close the cemeteries due to seasonal weather, and making the center gate a one-way entrance from Holman Street",
+   "motion": "Accept the two new cemetery rules: the Chairman and Supt of Cemetery's open and close the cemeteries for seasonal weather issues, and the center gate at North Cemetery becomes a one-way entrance.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Chair Schaff",
    "outcome": "passed",
    "procedural": false,
-   "quote": "commissioner mendoza made a motion to accept this two changes, chair schaff seconded her motion and upon no further discussion the motion carried to allow for the chairman and supt of cemetery's to open and close them due to seasonal weather related issues and to make the center gate a one-way entrance."
+   "quote": "commissioner mendoza made a motion to accept this two changes, chair schaff seconded her motion and upon no further discussion the motion carried"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Commissioner May",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "chair schaff asked for a motion to close the meeting and commissioner mendoza made that motion with commissioner may offering a second. there was no further discussion on the motion and it passed unanimously to adjourn the meeting."
+   "quote": "commissioner mendoza made that motion with commissioner may offering a second. there was no further discussion on the motion and it passed unanimously to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; three votes recorded. All quotes verified verbatim.",
- "cost_usd": 0.0850725
+ "note": "OCR text from a scan with garbled names (e.g., 'Korraine', 'Lance D. Map', 'Mi. Smith'); names above use the printed attendance and signature forms. Motions carry no tallies; outcomes are as printed ('accepted', 'carried', 'passed unanimously'). A received-and-filed stamp dated MAY 0 1 2017 appears, after the meeting date. Only the Smith public comment is attributed to a named speaker; Heather Lemieux, Katy Whitaker, and others were mentioned but did not appear.",
+ "cost_usd": 0.00597712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Schaff",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza, and steve schaff along with todd holman, supt. of cemetery's:"
+  },
+  {
+   "name": "Lance May",
+   "role": "Commissioner; clerk",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza, and steve schaff along with todd holman, supt. of cemetery's:"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice Chairman; Commissioner",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza, and steve schaff along with todd holman, supt. of cemetery's:"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Supt. of Cemeteries",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza, and steve schaff along with todd holman, supt. of cemetery's:"
+  },
+  {
+   "name": "Jeff Smith",
+   "status": "present",
+   "quote": "public discussion: jeff smith, 60 valley rd, lunenburg, asked for 15 minutes to speak and he was granted."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commissioners decided to discuss the rule changes later in the meeting.",
+   "quote": "under old business, the commissioners decided to discuss the rule changes later in the meeting."
+  },
+  {
+   "decision": "Chair Schaff asked Mr. Smith to send the commission a letter, including his offer of a donated veteran's gate.",
+   "quote": "asking him to send the commission a letter and put his offer of a donated \"veteran's gate\" into a letter."
+  },
+  {
+   "decision": "Todd Holman was asked to respond to Katy Whitaker, as the Commission needed more information about adding the Lunenburg Cemeteries to the Wreaths Across America program.",
+   "quote": "the commission asked todd holman to respond back to her -as they needed more information."
+  },
+  {
+   "decision": "Chair Schaff was to meet with Town Manager Heather Lemieux and request that Town Council review the present cemetery rules and make suggestions to update them.",
+   "quote": "it was determined that chair schaff was to. meet with the town mgr., heather lemieux, and request town council review the present rules"
+  },
+  {
+   "decision": "The next meeting date is set for January 10, 2017 at 7:00 p.m.",
+   "quote": "the next meeting date is set for january 10, 2017 at 7:00 p.m."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cemetery article to appropriate funds at November Special Town Meeting",
+   "what_was_recorded": "The minutes note that the Cemetery article to appropriate funds passed at the November Special Town Meeting; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the cemetery article to appropriate funds at the november special town meeting passed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jeff Smith",
+   "stated_role": "",
+   "topic": "Veteran's gate offer, winter burial policy, year-round access, North Cemetery center gate traffic",
+   "quote": "mr. smith wanted to discuss with the commission, 6 issues."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of September 16, 2016 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "a motion was made by commissioner mendoza and seconded by commissioner may to accept the minutes and upon no further discussion the minutes were accepted"
+  },
+  {
+   "topic": "Correspondence: Wreaths Across America site request",
+   "resolution": "Todd Holman to respond to requester",
+   "tags": [
+    "correspondence",
+    "wreaths"
+   ],
+   "quote": "chair schaff asked if any correspondence was received and commissioner may stated he had"
+  },
+  {
+   "topic": "Public discussion: Jeff Smith",
+   "resolution": "heard; asked to submit a letter",
+   "tags": [
+    "public comment",
+    "veterans",
+    "burials",
+    "traffic"
+   ],
+   "quote": "public discussion: jeff smith, 60 valley rd, lunenburg, asked for 15 minutes to speak and he was granted."
+  },
+  {
+   "topic": "Old Business: Monty Tech follow-up",
+   "resolution": "reported; no action",
+   "tags": [
+    "volunteers"
+   ],
+   "quote": "a follow-up with monty tech for the work that was done by the carpentry and masonry classes"
+  },
+  {
+   "topic": "Superintendent's report: fall maintenance and 2017 work",
+   "resolution": "reported",
+   "tags": [
+    "maintenance",
+    "grave markers"
+   ],
+   "quote": "todd holman, supt of cemeteries reported that the fall maintenance schedule went well"
+  },
+  {
+   "topic": "Columbarium plans, North Cemetery",
+   "resolution": "reported; no action",
+   "tags": [
+    "columbarium"
+   ],
+   "quote": "columbarium plans for the north cemetery were being put together to find two additional companies"
+  },
+  {
+   "topic": "Cemetery rules changes",
+   "resolution": "Chair to ask Town Council to review rules; two new rules accepted",
+   "tags": [
+    "rules"
+   ],
+   "quote": "changes to the cemetery rules were discussed and it was determined that chair schaff was to."
+  },
+  {
+   "topic": "North Cemetery center gate traffic",
+   "resolution": "center gate made one-way entrance by motion",
+   "tags": [
+    "traffic safety"
+   ],
+   "quote": "the vehicular traffic issue was discussed by commissioner may"
+  },
+  {
+   "topic": "New business: next meeting date",
+   "resolution": "set for January 10, 2017",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "the next meeting date is set for january 10, 2017 at 7:00 p.m."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:30 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "time of adjournment was 9:30 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Inquiry from Katy Whitaker seeking to add The Lunenburg Cemeteries as an approved site for the program 'Wreaths Across America'",
+   "where": "text",
+   "quote": "stated he had received an inquiry from katy whitaker seeking to add the lunenburg cemeteries-as an"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "rules",
+  "public comment",
+  "grave markers",
+  "columbarium",
+  "traffic safety",
+  "veterans",
+  "maintenance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

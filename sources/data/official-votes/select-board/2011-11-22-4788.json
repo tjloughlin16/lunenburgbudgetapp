@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-11-22",
  "docid": "4788",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve Bootlegger's request for extension of premises for an all alcohol license",
+   "motion": "Approve the request from Cosimi Corporation, d/b/a The Bootlegger, for a change of license/alteration of premises at 50 Massachusetts Avenue.",
    "moved_by": "Ernie",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -20,15 +20,15 @@
    "quote": "ernie motioned to approve the request, steve seconded, voted unanimously."
   },
   {
-   "motion": "reschedule Centre Pizza's beer and wine license transfer hearing to December 13, 2011 at request of applicant",
+   "motion": "Reschedule the Centre Pizza request to transfer its beer & wine license to a new lessee to December 13, 2011, at the request of the applicant.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "paula move to reschedule to december 13, 2011 at request of applicant, steve seconded, voted unanimously."
   },
   {
-   "motion": "appoint Brent Benson to the Cultural Council",
+   "motion": "Appoint Brent Benson to the Lunenburg Cultural Council.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "paula move to appoint mr. benson to cultural council, steve seconded, voted unanimously to approve."
   },
   {
-   "motion": "make the adjustments to the FY12 budget as recommended by the Town Manager",
+   "motion": "Make the FY12 budget adjustments as recommended by the Town Manager (including directing the $26,485 balance to the Salary Reserve Account).",
    "moved_by": "Paula",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -44,7 +44,7 @@
    "quote": "paula motion to make the adjustments as recommended by the town manager, steve seconded, voted unanimously."
   },
   {
-   "motion": "nominate Paula for MPO Sub-Region Representative",
+   "motion": "Nominate Paula to run for the Sub-Region Representative position on the Metropolitan Planning Organization (MPO).",
    "moved_by": "Dave",
    "seconded_by": "Ernie",
    "outcome": "passed unanimously",
@@ -53,6 +53,390 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned via macOS Vision. Some OCR errors present but all votes are clearly readable.",
- "cost_usd": 0.1266065
+ "note": "Text is OCR of a scanned document (macOS Vision) with garbled passages: the next-meeting date reads '5n' (likely a December date), the total revenue figure line reads 'increase of 33,02-', the court case name is partly garbled, and page 2 begins mid-sentence. The minutes contain no roll call, no adjournment vote, no HB1972 vote, and no public comment section. The HB1972 discussion is cut off mid-sentence. Pages 5-10 are attached documents (floor plans, a letter, a bill summary and a draft resolution). Quotes are taken from the OCR text with line breaks collapsed.",
+ "cost_usd": 0.012659120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "Chairman, Board of Selectmen",
+   "status": "present",
+   "quote": "dave read the following into the record to"
+  },
+  {
+   "name": "Ernie",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "ernie motioned to approve the request, steve seconded, voted unanimously."
+  },
+  {
+   "name": "Paula",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "paula motion to make the adjustments as recommended by the town manager"
+  },
+  {
+   "name": "Steve",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "steve requested that the board is provided with a list of what departments have"
+  },
+  {
+   "name": "Kerry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry informed the board that the vendor has the equipment to pick up the debris much more efficiently"
+  },
+  {
+   "name": "Alan Cosimi",
+   "role": "owner of Bootlegger",
+   "status": "present",
+   "quote": "alan cosimi, owner of bootlegger informed the board that they are changing the inside of the restaurant"
+  },
+  {
+   "name": "Brent Benson",
+   "role": "applicant for appointment to Cultural Council",
+   "status": "present",
+   "quote": "brent benson of 1010 flat hill road, is seeking appointment to the lunenburg cultural council."
+  },
+  {
+   "name": "Thomas Silver",
+   "role": "applicant for appointment to Historical Commission",
+   "status": "present",
+   "quote": "thomas informed the board that he has spoken with ms. foltz"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Town Clerk",
+   "status": "not stated",
+   "quote": "kathy herrick, town clerk, received the attached request from"
+  },
+  {
+   "name": "Bob",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "bob will provide to kerry so that it can be presented at town meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review and approval of LA-5, Options Form, Tax Classification was tabled to the next meeting (no vote recorded).",
+   "quote": "review & approval of la-5, options form, tax classification - tabled to next meeting."
+  },
+  {
+   "decision": "The board will schedule a meeting at 6:30 before the Special Town Meeting to take up further articles, including the Stretch Code; the date is garbled in the scan ('on the 5n').",
+   "quote": "paula would like to hear more on the stretch code before she makes a decision and as such the board will schedule their meeting for"
+  },
+  {
+   "decision": "Bob will provide Kerry a detailed map of the revised sewer service area bounds for presentation at town meeting; the board will review the maps before making recommendations (no vote recorded).",
+   "quote": "bob will provide to kerry so that it can be presented at town meeting."
+  },
+  {
+   "decision": "Members voiced support for proceeding with storm debris pickup with a clear start and end date, and suggested a Blackboard Connect notice to residents (no vote recorded).",
+   "quote": "paula does want to move ahead with this and we have to be very clear that there is a start date and an end date"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "HB1972 projected savings",
+   "what_was_recorded": "The board was told the proposed date change is projected to save the state about 8 million dollars.",
+   "figures_as_printed": [
+    "about 8 million dollars"
+   ],
+   "quote": "the change in the dates is also projected to save the state about 8 million"
+  },
+  {
+   "topic": "Storm debris pickup cost concern",
+   "what_was_recorded": "Steve raised concern about $150,000 being spent in a week to pick up storm debris.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "steve's concern is that we're talking about $150,000 expended in a week to pick up the debris."
+  },
+  {
+   "topic": "Storm debris funding source",
+   "what_was_recorded": "Kerry said the town expects to receive funds from the 2008 ice storm and could use them if needed; the stabilization fund was mentioned as a fallback if reimbursement is not received.",
+   "figures_as_printed": [],
+   "quote": "according to kerry we are going to be receiving the funds from the 2008 ice storm and if necessary will be able to"
+  },
+  {
+   "topic": "FY12 budget adjustment - New Growth revenue",
+   "what_was_recorded": "New Growth was certified at $448,111, which is $98,111 higher than the original $350,000 estimate, from the Tri-Town Landing and Emerald Place developments.",
+   "figures_as_printed": [
+    "$448,111",
+    "$98,111",
+    "$350,000"
+   ],
+   "quote": "new growth has been certified at $448,111, which is a total of $98,111"
+  },
+  {
+   "topic": "FY12 budget adjustment - Supplemental State Aid",
+   "what_was_recorded": "Supplemental State Aid of $64,672 was received; the state provision returns remaining FY11 appropriations up to a maximum of $65M in total.",
+   "figures_as_printed": [
+    "$64,672",
+    "$65M"
+   ],
+   "quote": "supplemental state aid in the amount of $64,672 has been received."
+  },
+  {
+   "topic": "FY12 budget adjustment - Cherry Sheet and tax levy revenue",
+   "what_was_recorded": "Other Cherry Sheet funding rose $29,108 on Choice and Charter tuitions, and the levy calculation adjustment adds $3,503.",
+   "figures_as_printed": [
+    "$29,108",
+    "$3,503"
+   ],
+   "quote": "other cherry sheet funding increased $29,108, due to increases in choice and charter tuitions."
+  },
+  {
+   "topic": "FY12 budget adjustment - total projected revenue change",
+   "what_was_recorded": "Projected revenues increased by a total of $195,394, about 0.65%; the scan garbles part of this sentence.",
+   "figures_as_printed": [
+    "$195,394",
+    "0.65%"
+   ],
+   "quote": "$195,394, or about 0.65%."
+  },
+  {
+   "topic": "FY12 budget adjustment - Choice & Charter assessments",
+   "what_was_recorded": "Choice & Charter assessments increased $71,386, based on FY11 actual tuition expenditures.",
+   "figures_as_printed": [
+    "$71,386"
+   ],
+   "quote": "an increase in choice & charter assessments in the amount of $71,386."
+  },
+  {
+   "topic": "FY12 budget adjustment - Balducci court settlement",
+   "what_was_recorded": "A court settlement of $90,000 in Balducci vs. Town of (name garbled in scan) was paid and must be accounted for in the FY12 tax rate certification.",
+   "figures_as_printed": [
+    "$90,000"
+   ],
+   "quote": "the need to fund a court settlement in the amount of $90,000 in the case of balducci vs. town of"
+  },
+  {
+   "topic": "FY12 budget adjustment - Cherry Sheet offsets",
+   "what_was_recorded": "Cherry Sheet Offsets increased $7,519 due to Choice tuition and State & County assessment adjustments.",
+   "figures_as_printed": [
+    "$7,519"
+   ],
+   "quote": "an increase in cherry sheet offsets in the amount of $7,519"
+  },
+  {
+   "topic": "FY12 budget adjustment - expenditure total and balance",
+   "what_was_recorded": "Expenditure changes total $168,909, leaving a balance of $26,485 that the Town Manager recommended directing to the Salary Reserve Account.",
+   "figures_as_printed": [
+    "$168,909",
+    "$26,485"
+   ],
+   "quote": "these expenditures total $168,909, which leaves a balance of $26,485."
+  },
+  {
+   "topic": "Salary Reserve Account",
+   "what_was_recorded": "The Salary Reserve Account, originally appropriated at $19,547.74, funds contract settlements, salary adjustments and sick leave buyback for retirees.",
+   "figures_as_printed": [
+    "$19,547.74"
+   ],
+   "quote": "the original appropriation for the salary reserve account was $19,547.74."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Direct the $26,485 balance remaining after FY12 budget adjustments to the Salary Reserve Account.",
+   "amount_as_printed": "$26,485",
+   "outcome": "passed unanimously (within the vote to make the FY12 budget adjustments as recommended by the Town Manager)",
+   "quote": "she recomends that this balance be directed to the salary reserve account"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Bootlegger request for change of license/alteration of premises (public hearing)",
+   "resolution": "approved unanimously",
+   "quote": "bootlegger's, request for extension of premises, all alcohol license",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "restaurant"
+   ]
+  },
+  {
+   "topic": "Centre Pizza request to transfer beer & wine license",
+   "resolution": "rescheduled to December 13, 2011",
+   "quote": "centre pizza, request to transfer beer & wine license to new lessee",
+   "tags": [
+    "liquor license",
+    "rescheduled"
+   ]
+  },
+  {
+   "topic": "Brent Benson, applicant for Cultural Council",
+   "resolution": "appointed unanimously",
+   "quote": "brent benson, applicant for appointment to cultural council - brent benson of 1010 flat hill road",
+   "tags": [
+    "appointments",
+    "cultural council"
+   ]
+  },
+  {
+   "topic": "Thomas Silver, applicant for Historical Commission",
+   "resolution": "continued; decision after second candidate's interview",
+   "quote": "thomas silver, applicant for appointment to historical commission - thomas silver of 131 white street",
+   "tags": [
+    "appointments",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "HB1972, An Act Regulating Election Primaries",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion of hb1972, an act regulating election primaries - kathy herrick, town clerk, received the attached request from",
+   "tags": [
+    "state legislation",
+    "elections",
+    "HB1972"
+   ]
+  },
+  {
+   "topic": "Pending items and board committee reports",
+   "resolution": "no action; reports only",
+   "quote": "paula would like to see listed on the pending items, that a meeting is scheduled in december on the summer street improvement",
+   "tags": [
+    "committee reports",
+    "summer street",
+    "solar farm",
+    "capital planning",
+    "DPW building"
+   ]
+  },
+  {
+   "topic": "Department Report",
+   "resolution": "none reported",
+   "quote": "4. department report - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager Report - storm debris and street lights",
+   "resolution": "discussed; no vote recorded",
+   "quote": "5. town manager report - worcester county has qualified for federal disaster and as such",
+   "tags": [
+    "storm debris",
+    "federal disaster",
+    "street lights",
+    "unitil"
+   ]
+  },
+  {
+   "topic": "Sewer service area map and Special Town Meeting articles",
+   "resolution": "maps to be provided; board to review and meet before STM",
+   "quote": "ernie would like to have a blow up of the specific area that would show the actual bounds for the revised sewer service area.",
+   "tags": [
+    "sewer",
+    "town meeting",
+    "stretch code",
+    "salary administration plan"
+   ]
+  },
+  {
+   "topic": "FY12 Budget Adjustment Article",
+   "resolution": "adjustments approved unanimously",
+   "quote": "fy12 budget adjustment article; kerry informed the board that it is necessary to make a few minor adjustments to the adopted fy12",
+   "tags": [
+    "budget",
+    "FY12",
+    "tax rate",
+    "salary reserve"
+   ]
+  },
+  {
+   "topic": "Review & Approval of LA-5, Options Form, Tax Classification",
+   "resolution": "tabled to next meeting",
+   "quote": "review & approval of la-5, options form, tax classification - tabled to next meeting.",
+   "tags": [
+    "tax classification"
+   ]
+  },
+  {
+   "topic": "Nomination for MPO Sub-Region representative",
+   "resolution": "Paula nominated and nomination approved unanimously",
+   "quote": "nomination of candidate to be considered for election to position of mpo sub-region",
+   "tags": [
+    "MPO",
+    "MRPC",
+    "appointments"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The BOOTLEGGER Restaurant main floor plan",
+   "where": "list",
+   "quote": "the bootlegger restaurant & main floor plan"
+  },
+  {
+   "name": "The BOOTLEGGER Restaurant second floor plan",
+   "where": "list",
+   "quote": "the bootlegger restaurant second floor plan"
+  },
+  {
+   "name": "Letter from William C. Campbell to Kathryn M. Herrick, Town Clerk, enclosing proposed resolution supporting H1972 (stamped OCT 17 2011)",
+   "where": "list",
+   "quote": "enclosed please find a proposed resolution in support of h1972 \"an act regulating election"
+  },
+  {
+   "name": "H1972 bill summary, prepared by William C. Campbell, Woburn City Clerk (Rev September 6, 2011)",
+   "where": "list",
+   "quote": "prepared by: william c. campbell, woburn city clerk"
+  },
+  {
+   "name": "Proposed resolution in support of HB1972 \"An Act Regulating Election Primaries\"",
+   "where": "list",
+   "quote": "whereas, for the november 2010 election, massachusetts requested a waiver from a requirement"
+  },
+  {
+   "name": "FVAP written testimony supporting H1972",
+   "where": "text",
+   "quote": "a bill summary and a copy of the fvap testimony are enclosed."
+  },
+  {
+   "name": "LA-5, Options Form, Tax Classification",
+   "where": "text",
+   "quote": "review & approval of la-5, options form, tax classification - tabled to next meeting."
+  },
+  {
+   "name": "Salary Administration Plan",
+   "where": "text",
+   "quote": "the salary administration plan has a couple of positions that weren't included"
+  },
+  {
+   "name": "MRPC presentation on the MPO Sub-Region Selection Process",
+   "where": "text",
+   "quote": "presentation by montachusett regional planning commission (mrpc) regarding the"
+  },
+  {
+   "name": "Map/blow-up of the revised sewer service area",
+   "where": "text",
+   "quote": "ernie would like to have a blow up of the specific area that would show the actual bounds for the revised sewer service area."
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "appointments",
+  "HB1972",
+  "elections",
+  "storm debris",
+  "FY12 budget",
+  "tax classification",
+  "MPO",
+  "sewer service area",
+  "town meeting",
+  "stretch code"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kathy herrick, town clerk, received the attached request"
+ },
+ "dropped_unquoted_by_field": {}
 }

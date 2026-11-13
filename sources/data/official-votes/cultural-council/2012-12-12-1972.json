@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2012-12-12",
  "docid": "1972",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes from 2011",
+   "motion": "Accept the minutes read from 2011.",
    "moved_by": "Robin Corbett",
    "seconded_by": "Brent Benson",
    "outcome": "passed",
@@ -20,13 +20,235 @@
    "quote": "robin corbett made a motion to accept the minutes and brent benson seconded the motion and all were in favor."
   },
   {
-   "motion": "accept $40.00 as administrative funds for 2013",
+   "motion": "Accept the $40.00 administrative funds deducted for 2013.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the amount of $40.00 was voted on and accepted by the group"
+   "quote": "** the amount of $40.00 was voted on and accepted by the group"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned minutes (macOS Vision).",
- "cost_usd": 0.1076965
+ "note": "OCR text of handwritten or typed meeting notes; some names are OCR-garbled (e.g., Kiirja Paanananen, Mary Ann Sudolnick vs. Sudolnik, Fitchburg, Turkey Hill). The treasurer figures are mapped to labels by order only, since the OCR lost the column alignment. The minutes record one motion with a count (all in favor) and one \"voted on and accepted\" item; the grant decisions and other agreements are recorded as group agreement without a motion. Attendance is taken from the \"Members attending\" list. Contact details in the list were not recorded.",
+ "cost_usd": 0.00504282,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robin Corbett",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by the chairman robin corbett."
+  },
+  {
+   "name": "Mary Ann Sudolnik",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes from 2011 were read by the secretary mary ann sudolnik"
+  },
+  {
+   "name": "Peter Mc Carron",
+   "status": "present",
+   "quote": "members attending: peter mc carron robin corbett"
+  },
+  {
+   "name": "Kiirja Paanananen",
+   "status": "present",
+   "quote": "kiirja paanananen 978-582-7848 maryanns@nctiplus.com 978-582-9248"
+  },
+  {
+   "name": "Caroline Griffis",
+   "status": "present",
+   "quote": "caroline griffis 978-505-1174 brent benson 978-582-7134"
+  },
+  {
+   "name": "Brent Benson",
+   "status": "present",
+   "quote": "brent benson 978-582-7134 ihcg@comcast.net bwbensonir/@gmail.com"
+  },
+  {
+   "name": "Sue Rowe",
+   "status": "present",
+   "quote": "sue rowe srowe579@nol.com"
+  },
+  {
+   "name": "Jim Ryan",
+   "role": "Treasurer (prepared the treasurer's report)",
+   "status": "not stated",
+   "quote": "the treasurer's report was prepared by jim ryan and presented by peter mc carron."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Elected the FY 2013 officers: Chair Brent Benson, Treasurer Jim Ryan, Secretary Caroline Griffis. The group thanked Robin Corbett and Mary Ann Sudolnick for their prior service.",
+   "quote": "elections were held for all of the council positions."
+  },
+  {
+   "decision": "Funds will be granted for events that take place in Lunenburg and for the Fitchburg Art Museum.",
+   "quote": "the group discussed and agreed that funds would be granted for events that take place in lunenburg and for the fitchburg art museum."
+  },
+  {
+   "decision": "Applications accepted and grants made in the amounts listed (total $4197.00).",
+   "quote": "applications accepted and amounts granted:"
+  },
+  {
+   "decision": "The denial letter will be revised to state a preference for activities in Lunenburg with a local sponsor.",
+   "quote": "the denial letter will be revised to state that we prefer activities that will take place in lunenburg and have a local sponsor."
+  },
+  {
+   "decision": "Accepted and denied letters to be ready on the system for the December meeting to streamline the process.",
+   "quote": "have the accepted and denied letters ready for the december meeting on the system to streamline the process."
+  },
+  {
+   "decision": "The Lunenburg Ledger will be used to solicit new members, publicize events and inform the public about the mission.",
+   "quote": "the lunenburg ledger is a good communication tool and will be used to solicit new members, events and inform the public about our mission."
+  },
+  {
+   "decision": "Brent Benson will assemble a schedule of FY 2013 events and notify Council members so they can attend some.",
+   "quote": "brent will get a schedule of events together for fy 2013 and notify council members so we can attend some of the events."
+  },
+  {
+   "decision": "The yearly meeting will be held on the second Wednesday of December, adjusted as needed each year; next year's meeting is December 11, 2013 at 7 PM.",
+   "quote": "the group agreed to schedule the yearly meeting on the second wednesday of december but make adjustments as needed each year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Treasurer's report balances",
+   "what_was_recorded": "The treasurer's report listed the account balance at 6/30/2012, expenditures, pending expenditures, the available remaining balance, the administrative deduction, the FY 2013 allocation and the total available for grants in FY2013; the printed figures follow the label order in the OCR text.",
+   "figures_as_printed": [
+    "$ 5306.51",
+    "$ 1854.00",
+    "$ 3085.00",
+    "$ 367.51",
+    "$40.00",
+    "$ 3870.00",
+    "$ 4197.00"
+   ],
+   "quote": "$ 5306.51 $ 1854.00 $ 3085.00 $ 367.51 $40.00 $ 3870.00 $ 4197.00"
+  },
+  {
+   "topic": "Pending expenditure deducted for Application #9",
+   "what_was_recorded": "A $300.00 amount was deducted because Application #9 (Council on Aging Acoustic Folk Rock) never took place; four events from FY 2012 remain outstanding.",
+   "figures_as_printed": [
+    "$300.00"
+   ],
+   "quote": "* an amount of $300.00 was deducted as application #9 (council on aging acoustic folk rock) never took place."
+  },
+  {
+   "topic": "Administrative funds for 2013",
+   "what_was_recorded": "$40.00 in administrative funds for 2013 was deducted and accepted by the group.",
+   "figures_as_printed": [
+    "$40.00"
+   ],
+   "quote": "** the amount of $40.00 was voted on and accepted by the group"
+  },
+  {
+   "topic": "FY2013 grants awarded",
+   "what_was_recorded": "Ten applications were accepted with the grant amounts listed, totaling $4197.00.",
+   "figures_as_printed": [
+    "$500.00",
+    "$ 932.00",
+    "$ 350.00",
+    "$ 550.00",
+    "$150.00",
+    "$445.00",
+    "$350.00",
+    "$150.00",
+    "$570.00",
+    "$200.00",
+    "$4197.00"
+   ],
+   "quote": "$500.00 $ 932.00 $ 350.00 $ 550.00 $150.00 $445.00 $350.00 $150.00 $570.00 $200.00 $4197.00"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and 2011 minutes",
+   "resolution": "minutes accepted",
+   "quote": "minutes from 2011 were read by the secretary mary ann sudolnik",
+   "tags": [
+    "minutes",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Treasurer's report",
+   "resolution": "presented; balances recorded",
+   "quote": "the treasurer's report was prepared by jim ryan and presented by peter mc carron.",
+   "tags": [
+    "treasurer",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Elections of Council officers",
+   "resolution": "officers elected for FY 2013",
+   "quote": "elections were held for all of the council positions.",
+   "tags": [
+    "elections",
+    "officers"
+   ]
+  },
+  {
+   "topic": "FY2013 applications and grants",
+   "resolution": "ten applications accepted, $4197.00 granted",
+   "quote": "applications accepted and amounts granted:",
+   "tags": [
+    "grants",
+    "applications"
+   ]
+  },
+  {
+   "topic": "FY2013 suggestions and process",
+   "resolution": "agreed suggestions for letters, outreach, events and meeting date",
+   "quote": "the group discussed and agreed to the following suggestions for fy2013:",
+   "tags": [
+    "outreach",
+    "process"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:10 PM",
+   "quote": "meeting was adjourned at 8:10 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Treasurer's report",
+   "where": "text",
+   "quote": "the treasurer's report was prepared by jim ryan and presented by peter mc carron."
+  },
+  {
+   "name": "Denial letter",
+   "where": "text",
+   "quote": "the denial letter will be revised to state that we prefer activities that will take place in lunenburg and have a local sponsor."
+  },
+  {
+   "name": "Accepted and denied letters",
+   "where": "text",
+   "quote": "have the accepted and denied letters ready for the december meeting on the system to streamline the process."
+  }
+ ],
+ "tags": [
+  "cultural council",
+  "grants",
+  "treasurer's report",
+  "elections",
+  "applications",
+  "budget",
+  "FY2013",
+  "outreach"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

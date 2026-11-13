@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-02-04",
  "docid": "5005",
@@ -12,34 +12,217 @@
  },
  "votes": [
   {
-   "motion": "To adopt the Chapter 70 funding resolution",
+   "motion": "Adopt the Chapter 70 funding resolution (the MMA-requested resolution calling for full funding of the foundation budget review commission's recommendations).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to adopt the chapter 70 funding resolution 2^°: p. luck vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "motion: t. alonzo to adopt the chapter 70 funding resolution"
   },
   {
-   "motion": "To postpone approving the resolution until next week's meeting in order to read the full recommendations report of the foundation budget review commission",
+   "motion": "Postpone approving the resolution until next week's meeting in order to read the full recommendations report of the foundation budget review commission.",
    "moved_by": "J. Henshaw",
    "seconded_by": "K. Menard",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: j. henshaw 2\"d: k. menard to postpone approving the resolution until next week's meeting in order to read the full recommendations report of the foundation budget review commission discussion ensued ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to postpone approving the resolution until next week's meeting in order to read the full recommendations report of the foundation budget review commission"
   },
   {
-   "motion": "To adjourn the meeting at 8:29 p.m.",
+   "motion": "Adjourn the meeting at 8:29 p.m.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting at 8:29 p.m. respectfully submitted, elaniem",
-   "quote_taken_from_text": true
+   "quote": "motion: t. alonzo to adjourn the meeting at 8:29 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Text has formatting artifacts (2°, 2\"d, 2nd. used for \"2nd:\" across different votes; signature block was removed from vote 3 quote as clearly extraneous metadata). J. Henshaw and K. Menard were School Committee members present at this joint meeting with the Board of Selectmen.",
- "cost_usd": 0.1343625
+ "note": "OCR text with noise (e.g., '2^°', '2\"d', 'Elaniem', garbled slide tables); figures were read from slide text and may be OCR-damaged. Votes are printed only as 'All in Favor' with no counts, so outcomes are recorded as 'passed'. The minutes record a vote to adopt the resolution and then a motion to postpone approval to next week; they do not say whether the resolution was ultimately adopted. The minutes also say 'The School Committee voted to adopt the resolution and adjourned.' That is another body's vote, so it is not recorded as a Board vote. No public comment section is printed. The PowerPoint is referenced as attached but is not separately available beyond the extracted slide text.",
+ "cost_usd": 0.00882962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "not present: jamie toale, chairman; paula bertram, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: jamie toale, chairman; paula bertram, member"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "finance committee chair mark erickson asked the two committees to call their meetings to order."
+  },
+  {
+   "name": "Mark Abrahams",
+   "role": "presenter, The Abrahams Group",
+   "status": "present",
+   "quote": "a presentation on chapter 70 and net school spending was given by mark abrahams of the abrahams group."
+  },
+  {
+   "name": "J. Henshaw",
+   "role": "not printed",
+   "status": "not stated",
+   "quote": "motion: j. henshaw"
+  },
+  {
+   "name": "K. Menard",
+   "role": "not printed",
+   "status": "not stated",
+   "quote": "k. menard"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY17 Chapter 70 aid and required district contribution (Lunenburg)",
+   "what_was_recorded": "The FY17 preliminary aid calculation shows Chapter 70 aid of 6,248,530, a required district contribution of 9,289,895, and an increase in aid over FY16 of 414,047.",
+   "figures_as_printed": [
+    "5,834,488",
+    "15,538,425",
+    "9,289,895",
+    "6,248,530",
+    "414,047"
+   ],
+   "quote": "5,834,488 15,538,425 9,289,895 6,248,530 414,047"
+  },
+  {
+   "topic": "FY16 Lunenburg foundation budget and required district contribution",
+   "what_was_recorded": "The FY16 slide shows foundation enrollment, the foundation budget, and the required contribution for the district.",
+   "figures_as_printed": [
+    "1,647",
+    "15,341,250",
+    "92.79%",
+    "9,506,767"
+   ],
+   "quote": "1,647 15,341,250 92.79% 9,506,767"
+  },
+  {
+   "topic": "Minimum aid per pupil",
+   "what_was_recorded": "Because foundation aid exceeds enrollment times the per-pupil increase, no minimum aid is awarded to Lunenburg.",
+   "figures_as_printed": [
+    "$20."
+   ],
+   "quote": "since the foundation aid amount is greater than the foundation enrollment times $20. per pupil increase, no minimum aid is awarded"
+  },
+  {
+   "topic": "Trend in foundation budget, required contribution and Chapter 70 aid",
+   "what_was_recorded": "Foundation budget grew slightly, the required district contribution was almost level, and Chapter 70 aid rose slightly over the five-year trend.",
+   "figures_as_printed": [],
+   "quote": "there has been a slight growth in foundation budget, almost a level in the required district contribution and a slight increase in chapter 70 aid."
+  },
+  {
+   "topic": "Statewide net school spending above foundation",
+   "what_was_recorded": "Statewide actual net school spending exceeded the foundation budget by about 21% for FY16.",
+   "figures_as_printed": [
+    "21%"
+   ],
+   "quote": "statewide, actual net school spending exceeded foundation by about 21% for fy16"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Chapter 70 and Net School Spending presentation",
+   "resolution": "presented; questions and discussion, no action",
+   "quote": "a presentation on chapter 70 and net school spending was given by mark abrahams of the abrahams group.",
+   "tags": [
+    "Chapter 70",
+    "net school spending",
+    "school budget",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "MMA resolution on full funding of foundation budget review commission recommendations",
+   "resolution": "motion to adopt recorded as all in favor; then postponed to next week's meeting",
+   "quote": "mr. ebersole stated the massachusetts municipal association (mma) has requested the board endorse a resolution",
+   "tags": [
+    "MMA",
+    "resolution",
+    "state aid",
+    "foundation budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:29 p.m.",
+   "quote": "to adjourn the meeting at 8:29 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint presentation: Chapter 70 and Net School Spending, Lunenburg School District, FY17 Preliminary Numbers (Mark D. Abrahams, CPA, February 2016)",
+   "where": "list",
+   "quote": "discussion ensued related to the powerpoint presentation which is attached"
+  },
+  {
+   "name": "MMA-requested resolution calling for full funding of the foundation budget review commission's recommendations",
+   "where": "text",
+   "quote": "mr. ebersole stated the massachusetts municipal association (mma) has requested the board endorse a resolution"
+  },
+  {
+   "name": "Full recommendations report of the foundation budget review commission",
+   "where": "text",
+   "quote": "in order to read the full recommendations report of the foundation budget review commission"
+  }
+ ],
+ "tags": [
+  "Chapter 70",
+  "net school spending",
+  "school budget",
+  "state aid",
+  "MMA resolution",
+  "foundation budget",
+  "Finance Committee",
+  "joint meeting",
+  "presentation",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. abrahams answered some questions and discussion ensued related to the powerpoint presentation which is attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

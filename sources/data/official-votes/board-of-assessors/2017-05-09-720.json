@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2017-05-09",
  "docid": "720",
@@ -12,13 +12,223 @@
  },
  "votes": [
   {
-   "motion": "To meet on June 6, 2017 at 5:45 pm",
-   "outcome": "not stated",
+   "motion": "Board voted to meet on June 6, 2017 at 5:45 pm.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "board voted to meet on june 6, 2017 at 5:45 pm."
+   "quote": "board voted to meet on june 6, 2017 at 5:45 pm. meeting adjourned 7:30pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scanned original. Minutes use summary language ('reviewed and approved') rather than formal voting statements for most items, so those do not meet the criteria for recorded votes.",
- "cost_usd": 0.10923549999999999
+ "note": "OCR text of a scanned page with a RECEIVED & FILED stamp; some words garbled (e.g., signature line 'Fastene aquette', '6*'). The approval of vouchers/minutes/payroll and the settlement agreement is recorded as 'reviewed and approved' with no motion, mover or count, so these are recorded as decisions, not votes. The only recorded vote is the scheduling vote, which gives no count. Richard Letarte's title is not printed; the 'Regional Assessor' label follows his name but is attached to Harald Scheid in the minutes' signature block context. No public comment section is printed.",
+ "cost_usd": 0.00468952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey,"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "richard letarte, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "richard letarte, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "richard letarte, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, April 4, 2017 minutes and payroll.",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, april 4, 2017 minutes and payroll."
+  },
+  {
+   "decision": "Board reviewed and approved the Settlement Agreement (FY10 & FY11 PP) between the Commissioner of the Commonwealth of MA, Verizon New England Inc. and the Board of Assessors.",
+   "quote": "the board reviewed and approved the settlement agreement (fy10 & fy11 pp) between the"
+  },
+  {
+   "decision": "Board requested to review an annual report on which properties are inspected annually.",
+   "quote": "the board requested that they would like to review an annual report on what properties are inspected"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Verizon settlement PP abatement FY10 (F301034)",
+   "what_was_recorded": "BOA signed the settlement agreement; a personal property abatement of $6891.40 with no interest must be granted by 06/30/2017.",
+   "figures_as_printed": [
+    "$6891.40",
+    "06/30/2017"
+   ],
+   "quote": "granted by 06/30/2017 in amount of $6891.40 and no interest."
+  },
+  {
+   "topic": "Verizon settlement PP abatement FY11 (F306624)",
+   "what_was_recorded": "BOA signed the settlement agreement; a personal property abatement of $7806.41 with no interest must be granted by 06/30/2017.",
+   "figures_as_printed": [
+    "$7806.41",
+    "06/30/2017"
+   ],
+   "quote": "granted by 06/30/2017 in amount of $7806.41 and no interest."
+  },
+  {
+   "topic": "FY17 statutory exemptions",
+   "what_was_recorded": "Statutory exemptions for FY17 totaling a stated amount were approved by BOA and DOR.",
+   "figures_as_printed": [
+    "$80,689.68"
+   ],
+   "quote": "fy17 statutory exemptions in the amount of $80,689.68 approved by boa & dor."
+  },
+  {
+   "topic": "FY18 Assessors Budget",
+   "what_was_recorded": "The FY18 Assessors Budget was approved at Town Meeting, including contracting for Personal Property Services; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the fy18 assessors budget was approved which includes contracting for personal property services."
+  },
+  {
+   "topic": "Chapter Land roll-back taxes",
+   "what_was_recorded": "Several roll-back tax amounts have been prepared for Chapter Land parcels, but owners have not followed through; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "several roll-back tax amounts have been prepared; however, property owners have yet to follow through with the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, abatements, warrants, commitments, minutes, payroll",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, april 4, 2017 minutes and payroll.",
+   "tags": [
+    "approvals",
+    "warrants",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Verizon settlement agreement FY10 and FY11 personal property",
+   "resolution": "approved",
+   "quote": "the board reviewed and approved the settlement agreement (fy10 & fy11 pp) between the",
+   "tags": [
+    "settlement",
+    "personal property",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "FY17 statutory exemptions",
+   "resolution": "reported as approved by BOA and DOR",
+   "quote": "fy17 statutory exemptions in the amount of $80,689.68 approved by boa & dor.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Chapter Land right of first refusal and roll-back taxes",
+   "resolution": "reported, no action",
+   "quote": "there have been many inquiries lately from property owners of",
+   "tags": [
+    "chapter land",
+    "roll-back taxes"
+   ]
+  },
+  {
+   "topic": "Town Meeting and FY18 Assessors Budget",
+   "resolution": "reported",
+   "quote": "the fy18 assessors budget was approved which includes contracting for personal property services.",
+   "tags": [
+    "town meeting",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Preliminary calendar and FY18 real estate bills",
+   "resolution": "reported, no action",
+   "quote": "louise reported that rebecca will be creating the fy18 real estate bill file within",
+   "tags": [
+    "tax bills",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Periodical property inspections",
+   "resolution": "reported; Board requested annual report",
+   "quote": "harald reported that inspectors are very busy working on periodical inspections.",
+   "tags": [
+    "inspections",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Solar projects and PILOT agreements",
+   "resolution": "reported, no action",
+   "quote": "he is currently working on solar projects which includes the activity",
+   "tags": [
+    "solar",
+    "pilot agreements"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "voted to meet June 6, 2017 at 5:45 pm",
+   "quote": "board voted to meet on june 6, 2017 at 5:45 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Settlement Agreement (FY10 & FY11 PP) between the Commissioner of the Commonwealth of MA, Verizon New England Inc. and the Board of Assessors of the Town of Lunenburg",
+   "where": "text",
+   "quote": "the board reviewed and approved the settlement agreement (fy10 & fy11 pp) between the"
+  },
+  {
+   "name": "Questionnaire sent to property owners for periodical inspections",
+   "where": "text",
+   "quote": "every property has received a questionnaire and they are being"
+  },
+  {
+   "name": "PILOT agreements",
+   "where": "text",
+   "quote": "has been reviewing pilot agreements and is"
+  }
+ ],
+ "tags": [
+  "assessors",
+  "abatements",
+  "settlement",
+  "Verizon",
+  "exemptions",
+  "Chapter Land",
+  "inspections",
+  "solar",
+  "PILOT",
+  "FY18 budget",
+  "tax bills"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-09-18",
  "docid": "1188",
@@ -10,17 +10,107 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09182013-1188",
   "doc_url": "/docs/meetings/capital-planning-committee/2013-09-18-minutes-1188.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "The minutes record no motions or votes. The August 14, 2013 minutes are listed as approved, but no motion, second, or vote is printed. The presentation slide titles are listed, but no slide content or figures are included. No dollar figures appear. The Superintendent of Schools and Tappe Associates are named only as participating bodies or firms, without individual names, so they are not listed as attendees.",
+ "cost_usd": 0.0022543199999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the minutes of August 14, 2013",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes approved- august 14, 2013"
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "absent: town manager kerry speidel"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0992905
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes of August 14, 2013 listed as approved; no motion recorded",
+   "quote": "minutes approved- august 14, 2013",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Presentation by School Building Committee",
+   "resolution": "briefed; no action recorded",
+   "quote": "capital planning committee briefed by school building committee in conjunction with lunenburg school committee",
+   "tags": [
+    "school building",
+    "high school",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Review of Timeline & Calendar",
+   "resolution": "prioritization draft format distributed for review; no action recorded",
+   "quote": "review of timeline & calendar- prioritization draft format distributed to committee for review.",
+   "tags": [
+    "timeline",
+    "prioritization"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Prioritization Form",
+   "where": "list",
+   "quote": "document used during meeting: prioritization form"
+  },
+  {
+   "name": "School Building Committee presentation (slide list: High School Existing Conditions Feedback from NEASC through Stay Connected to the Project)",
+   "where": "text",
+   "quote": "presentation as follows:"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "school building committee",
+  "high school",
+  "prioritization",
+  "timeline",
+  "presentation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "document used during meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

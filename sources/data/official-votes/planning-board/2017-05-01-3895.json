@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-05-01",
  "docid": "3895",
@@ -12,6 +12,111 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Document records a Board decision to favorably recommend Protective Bylaw changes, but no explicit motion, seconder, or vote count is stated. Future motioning of warrant articles is mentioned (\"will be Motioned by G. Bittner\") but not recorded as taken at this meeting.",
- "cost_usd": 0.0824405
+ "note": "OCR of a scanned minutes page; some words are garbled (e.g., 'by additions and additions', 'Adam R: Burney'). No motions or vote counts are printed, so no votes were recorded. No public comment is recorded. The separate minutes for the public hearing are referenced but not included. The 'Minutes/2017/05.01.17' line was not treated as a document used at the meeting. Final Draft (Red Line Version) is mentioned in the text only.",
+ "cost_usd": 0.00282142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r: burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r: burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r: burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r: burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r: burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board favorably recommended the changes to the text of the Protective Bylaw, as set forth in the Final Draft (Red Line Version), February 21, 2017 (no vote recorded in these minutes).",
+   "quote": "board favorably recommended the changes to the text of the protective bylaw"
+  },
+  {
+   "decision": "Three Board Warrant Articles to be moved at Town Meeting by G. Bittner.",
+   "quote": "the three board warrant articles will be motioned by g. bittner."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing on Board Warrant Article for ATM",
+   "resolution": "see separate minutes; no comment recorded here",
+   "quote": "public hearing: board warrant article for atm: see separate minutes"
+  },
+  {
+   "topic": "Board decision on warrant article (Protective Bylaw changes)",
+   "resolution": "favorable recommendation, no vote recorded",
+   "quote": "board favorably recommended the changes to the text of the protective bylaw"
+  },
+  {
+   "topic": "Town Meeting discussion",
+   "resolution": "G. Bittner to move the three Board warrant articles",
+   "quote": "the three board warrant articles will be motioned by g. bittner."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:52 PM (no motion recorded)",
+   "quote": "adjournment: 6:52 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Hearing Notice for Warrant Article",
+   "where": "list",
+   "quote": "hearing notice for warrant article"
+  },
+  {
+   "name": "Draft Handout for Marijuana Moratorium Article",
+   "where": "list",
+   "quote": "draft handout for marijuana moratorium article"
+  },
+  {
+   "name": "Final Draft (Red Line Version), February 21, 2017",
+   "where": "text",
+   "quote": "as set forth in the document entitled final draft (red line version), february 21, 2017."
+  }
+ ],
+ "tags": [
+  "zoning",
+  "protective bylaw",
+  "warrant article",
+  "annual town meeting",
+  "marijuana moratorium",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

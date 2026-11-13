@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-10-16",
  "docid": "1193",
@@ -12,15 +12,192 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from October 2, 2013",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "10-2-13 minutes approved.",
+   "motion": "Approve the 10-2-13 minutes.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "10-2-13 minutes approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote recorded: approval of prior minutes. No formal motions with moved/seconded information are recorded in these minutes. The remainder is discussion and consensus scheduling decisions with no votes.",
- "cost_usd": 0.0848415
+ "note": "Text is a plain extract with odd spacing; spacing collapsed in quotes. No motions, movers, seconders or vote counts are recorded; the only approval is the bare line '10-2-13 minutes approved.' (recorded as passed with no mover or count). Adjournment at 11:10 AM is stated without a motion, so no vote recorded for it. The DPW Director is referred to but not named. Public comment section is absent. Figures are as printed; the Engine 1 trade-in figure carries a question mark in the minutes.",
+ "cost_usd": 0.00410152,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Fire Department Chief (as named in minutes)",
+   "status": "not stated",
+   "quote": "chief sullivan's main priority is replacement of car 2 and engine 1."
+  },
+  {
+   "name": "Police Chief Marino",
+   "role": "Police Chief (as named in minutes)",
+   "status": "not stated",
+   "quote": "police chief marino went over this at the 10-09-13 capital planning committee meeting."
+  },
+  {
+   "name": "John Londa",
+   "role": "School Facility/Grounds Director",
+   "status": "not stated",
+   "quote": "will check with john londa, school facility/grounds director, to see what vehicle would qualify under green criteria"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee consensus to move the DPW presentation to October 30, the School presentation to November 7, and not to hold a meeting on October 23.",
+   "quote": "committee consensus was to move dpw to october 30, school to november 7, and not hold a meeting on october 23."
+  },
+  {
+   "decision": "Ms. Benson will notify the DPW Director that the ADA ramp request will be a topic of discussion at his appointment with the Committee, and that the Committee is looking at out-sourcing the Sweeper.",
+   "quote": "ms. benson will notify the dpw director that this will be a topic of discussion during his"
+  },
+  {
+   "decision": "The Committee will look for specifics to justify requests from all departments.",
+   "quote": "the committee will be looking for specifics to justify requests from all departments."
+  },
+  {
+   "decision": "Committee asked for quotes for both new and used Engine 1, plus photos of the current Engine 1.",
+   "quote": "committee would like to see quotes for both new"
+  },
+  {
+   "decision": "Committee asked the Fire Chief to narrow down the type of Car 2 wanted and provide quotes for both new and used; the Chief will check with John Londa on what vehicle would qualify under Green criteria.",
+   "quote": "will check with john londa, school facility/grounds director, to see what vehicle would qualify under green criteria"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ADA Ramp, Eagle House (submitted by DPW)",
+   "what_was_recorded": "The requested amount for the ADA ramp changed from $25,000 to $40,000, which concerned the Committee.",
+   "figures_as_printed": [
+    "$25,000",
+    "$40,000"
+   ],
+   "quote": "concerns with the requested amount changing from $25,000 to $40,000."
+  },
+  {
+   "topic": "Engine 1 replacement trade-in value",
+   "what_was_recorded": "Disposition of the current Engine 1 would be a trade-in, with a possible value noted with a question mark.",
+   "figures_as_printed": [
+    "$15,000-$20,000"
+   ],
+   "quote": "disposition of current truck would be trade-in (possibly $15,000-$20,000?)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 10-2-13 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "10-2-13 minutes approved."
+  },
+  {
+   "topic": "Meeting schedule and department presentation dates",
+   "resolution": "consensus: DPW Oct 30, School Nov 7, no Oct 23 meeting",
+   "tags": [
+    "scheduling",
+    "School Department",
+    "DPW"
+   ],
+   "quote": "committee consensus was to move dpw to october 30, school to november 7, and not hold a meeting on october 23."
+  },
+  {
+   "topic": "ADA Ramp, Eagle House (DPW)",
+   "resolution": "discussed; DPW Director to be notified; no vote",
+   "tags": [
+    "ADA",
+    "DPW",
+    "Eagle House"
+   ],
+   "quote": "concerns with the requested amount changing from $25,000 to $40,000."
+  },
+  {
+   "topic": "Fire Department vehicles: Engine 1 and Car 2",
+   "resolution": "discussed; quotes for new and used requested; no vote",
+   "tags": [
+    "fire department",
+    "vehicles",
+    "Engine 1",
+    "Car 2"
+   ],
+   "quote": "chief sullivan's main priority is replacement of car 2 and engine 1."
+  },
+  {
+   "topic": "Radio infrastructure (Fire and Police)",
+   "resolution": "referenced; no action recorded",
+   "tags": [
+    "radio",
+    "police",
+    "fire"
+   ],
+   "quote": "secondary to that is the radio infrastructure which was submitted in conjunction with the police department."
+  },
+  {
+   "topic": "Facilities: redo floors",
+   "resolution": "noted; no action recorded",
+   "tags": [
+    "facilities",
+    "floors"
+   ],
+   "quote": "redo floors- currently have epoxy with grit and floors are too rough to clean/sanitize."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "10-2-13 minutes",
+   "where": "text",
+   "quote": "10-2-13 minutes approved."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "fire department",
+  "vehicles",
+  "ADA ramp",
+  "scheduling",
+  "facilities",
+  "radio infrastructure",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

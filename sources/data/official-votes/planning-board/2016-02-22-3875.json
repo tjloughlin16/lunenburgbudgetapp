@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-02-22",
  "docid": "3875",
@@ -12,23 +12,220 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 1/25/16",
+   "motion": "Approve the minutes of January 25, 2016.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, k. chenis, second, m. allison, all aye"
+   "quote": "1/25/16- motion, k. chenis, second, m. allison, all aye"
   },
   {
-   "motion": "Approve the minutes of 1/25/16 from the 274 Prospect Street meeting",
+   "motion": "Approve the minutes of January 25, 2016 for 274 Prospect Street.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, k. chenis, second, m. allison, all aye."
+   "quote": "1/25/16, 274 prospect street- motion, k. chenis, second, m. allison, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0819595
+ "note": "Text is a clean extraction with no scan issues. No roll-call votes are recorded; the minutes approval motions state \"all aye\" with no numeric count. No motion to adjourn is recorded. Several items say \"see separate minutes\" and their content is not in this document. No public comment section is printed. Some committee report entries and the meeting schedule have no recorded action.",
+ "cost_usd": 0.00394932,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 274 Prospect Street public hearing was continued to the March 28, 2016 Planning Board meeting, at the applicant's request, to allow preparation of multiple renderings by the Landscape Architect (no vote recorded).",
+   "quote": "applicant requested continuance to march 28, 2016 planning board meeting to allow preparation of multiple renderings by the landscape architect."
+  },
+  {
+   "decision": "The citizen petition for rezoning of 1026 Northfield Road will be added to the zoning articles hearing on March 14, 2016, for May 7, 2016 Town Meeting (no vote recorded).",
+   "quote": "citizen petition for rezoning of 1026 northfield road will be added to the zoning articles hearing on march 14, 2016."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "General bylaw rewording for parcels of 2 or more acres (agricultural threshold)",
+   "what_was_recorded": "M. Allison suggested the general bylaw be reworded to include parcels of 2 or more acres making $1,000 or more per acre; A. Burney noted the Agricultural Commission could propose the change for May Town Meeting.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "with the caveat that they make $1,000 or more per acre."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR plans: 384 Howard Street; 390 & 400 Howard Street",
+   "resolution": "withdrawn at applicant's request",
+   "quote": "384 howard street- withdrawn at the applicant's request.",
+   "tags": [
+    "ANR",
+    "withdrawn"
+   ]
+  },
+  {
+   "topic": "Information meetings: 339 Electric Avenue; Unitil",
+   "resolution": "see separate minutes",
+   "quote": "339 electric avenue- see separate minutes",
+   "tags": [
+    "information meeting",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Public hearing: 274 Prospect Street",
+   "resolution": "continued to March 28, 2016",
+   "quote": "applicant requested continuance to march 28, 2016 planning board meeting to allow preparation of multiple renderings by the landscape architect.",
+   "tags": [
+    "public hearing",
+    "continuance",
+    "renderings"
+   ]
+  },
+  {
+   "topic": "Public hearing: Highfield Village",
+   "resolution": "continued; see separate minutes",
+   "quote": "highfield village (cont'd)- see separate minutes",
+   "tags": [
+    "public hearing",
+    "Highfield Village"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 1/25/16 and 1/25/16 274 Prospect Street",
+   "quote": "1/25/16- motion, k. chenis, second, m. allison, all aye",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "school building committee- construction 79% complete.",
+   "tags": [
+    "committee reports",
+    "Building Reuse",
+    "Farmers Market",
+    "Storm Water",
+    "MJTC",
+    "MRPC",
+    "School Building Committee"
+   ]
+  },
+  {
+   "topic": "Development status reports: Definitive Subdivision, 50 Elmwood Road",
+   "resolution": "no action; interior work underway",
+   "quote": "definitive subdivision, 50 elmwood road- interior work",
+   "tags": [
+    "subdivision",
+    "development status"
+   ]
+  },
+  {
+   "topic": "Director's items: Town Meeting May 7, 2016",
+   "resolution": "noted; petition added to March 14 zoning hearing",
+   "quote": "citizen petition for rezoning of 1026 northfield road will be added to the zoning articles hearing on march 14, 2016.",
+   "tags": [
+    "Town Meeting",
+    "zoning",
+    "rezoning petition"
+   ]
+  },
+  {
+   "topic": "Member comments: general bylaw wording",
+   "resolution": "discussed; no action recorded",
+   "quote": "m. allison noted the town's general bylaw should be reworded to include parcels of less than 5 acres",
+   "tags": [
+    "bylaw",
+    "M.G.L. Ch 40A",
+    "agricultural land"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "march 14- 238 fire road 16 zoning articles' public hearing unitil continuation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:07 PM (no motion recorded)",
+   "quote": "adjournment: 10:07 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 01/25/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 01/25/16"
+  },
+  {
+   "name": "Minutes 01/25/16 274 Prospect Street",
+   "where": "list",
+   "quote": "minutes 01/25/16 274 prospect street"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "public hearing",
+  "continuance",
+  "zoning",
+  "Town Meeting",
+  "bylaw",
+  "committee reports",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

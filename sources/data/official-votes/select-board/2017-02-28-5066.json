@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-02-28",
  "docid": "5066",
@@ -12,11 +12,11 @@
  },
  "votes": [
   {
-   "motion": "To ratify the Town Manager appointment of Erin Considine to Reserve Police Officer",
+   "motion": "To ratify the Town Manager appointment of Erin Considine to Reserve Police Officer.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: r. ebersole to ratify the town manager appointment of erin considine to reserve police officer 2\": t. alonzo vote: all in favor"
   },
   {
@@ -25,10 +25,319 @@
    "seconded_by": "R. Ebersole",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 10:30 p.m. 2nd: r. ebersole"
+   "quote": "motion: p. bertram to adjourn the meeting at 10:30 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scanned document.",
- "cost_usd": 0.11381449999999999
+ "note": "OCR text from macOS Vision with some misread names and typos (e.g., 'Mare Terry', 'MeGravey', 'Blaterman'); names are shown as printed. The reserve officer ratification records 'All in Favor' with no count. The adjournment motion records no result. No public comment section is printed; the nine firm interviews are presentations, not public comment.",
+ "cost_usd": 0.007593719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the board of selectmen met as scheduled with jamie toale, chairman; robert ebersole, vice chairman"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "the board of selectmen met as scheduled with jamie toale, chairman; robert ebersole, vice chairman"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others attending: adam burney, land use director"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "not stated",
+   "quote": "police chief jim marino presented erin considine"
+  },
+  {
+   "name": "Erin Considine",
+   "role": "Reserve Police Officer appointee",
+   "status": "not stated",
+   "quote": "police chief jim marino presented erin considine"
+  },
+  {
+   "name": "Tom Harrington",
+   "role": "representing Miyares & Harrington LLP",
+   "status": "present",
+   "quote": "miyares & harrington llp-tom harrington & christopher heep"
+  },
+  {
+   "name": "Christopher Heep",
+   "role": "representing Miyares & Harrington LLP",
+   "status": "present",
+   "quote": "attorney heep stated they are a nine attorney firm located in wellesley."
+  },
+  {
+   "name": "Brandon Moss",
+   "role": "representing Murphy Hess Toomey & Lehane LLP",
+   "status": "present",
+   "quote": "mr. moss stated their firm has thirty attorneys"
+  },
+  {
+   "name": "Dave Deluca",
+   "role": "representing Murphy Hess Toomey & Lehane LLP",
+   "status": "present",
+   "quote": "attorney deluca stated it's who you feel comfortable with"
+  },
+  {
+   "name": "Leonard Kopelman",
+   "role": "representing Kopelman and Associates",
+   "status": "present",
+   "quote": "attorney kopelman presented a fee schedule to the board"
+  },
+  {
+   "name": "Brian Winner",
+   "role": "representing Kopelman and Associates",
+   "status": "present",
+   "quote": "mr. winner stated it is the best of both worlds"
+  },
+  {
+   "name": "Lauren Goldberg",
+   "role": "representing KP Law PC",
+   "status": "present",
+   "quote": "attorney goldberg stated she was the lead attorney and introduced ms. marsh and ms. randazzo."
+  },
+  {
+   "name": "Michele Randazzo",
+   "role": "representing KP Law PC",
+   "status": "present",
+   "quote": "attorney goldberg stated she was the lead attorney and introduced ms. marsh and ms. randazzo."
+  },
+  {
+   "name": "Vicki Marsh",
+   "role": "representing KP Law PC",
+   "status": "present",
+   "quote": "ms. marsh has been with kp law for 17 years and her specialty is real estate law."
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Lunenburg town counsel (not present)",
+   "status": "absent",
+   "quote": "he had hoped to be here tonight to meet with you."
+  },
+  {
+   "name": "Mare Terry",
+   "role": "representing Mirick and O'Connell",
+   "status": "present",
+   "quote": "mr. terry thanked the board for the opportunity to work with their firm so far"
+  },
+  {
+   "name": "Brian Falk",
+   "role": "attorney proposed as town counsel by Mirick and O'Connell",
+   "status": "present",
+   "quote": "mr. falk stated the bulk of his practice is municipal law and land use."
+  },
+  {
+   "name": "John Barrett",
+   "role": "representing Law Office of John B. Barrett",
+   "status": "present",
+   "quote": "attorney barrett thanked the board and stated his office was based in townsend."
+  },
+  {
+   "name": "Paul DeRensis",
+   "role": "representing Deutsch Williams",
+   "status": "present",
+   "quote": "attorney derensis stated the one thing you should remember about us above all the people you are seeing"
+  },
+  {
+   "name": "Rich Hucksom",
+   "role": "representing Deutsch Williams",
+   "status": "present",
+   "quote": "attorney hucksom has a background in appellate tax board, open meeting law, public records"
+  },
+  {
+   "name": "Tom Urbelis",
+   "role": "representing Urbelis and Fieldsteel, LLP",
+   "status": "present",
+   "quote": "attorney urbelis stated for the last twenty five years he has been town counsel for andover"
+  },
+  {
+   "name": "Carol MeGravey",
+   "role": "representing Urbelis and Fieldsteel, LLP",
+   "status": "present",
+   "quote": "attorney mcgravey stated she started her career working in municipal law for the city of lawrence"
+  },
+  {
+   "name": "Lisa Mead",
+   "role": "representing Mead, Talerman & Costa, LLC",
+   "status": "present",
+   "quote": "attorney mead stated when they submitted their proposal, the firm was blaterman, bobrowski, mead and talerman"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "representing Mead, Talerman & Costa, LLC",
+   "status": "present",
+   "quote": "attorney costa stated his roots are in land use, planning and zoning law."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Four firms were selected for a second-round call back: Miyares and Harrington, Deutsch Williams, Murphy Hess Toomey and Lehane, and Mead Talerman and Costa.",
+   "quote": "firms that will be called back for a second round will be miyares and harrington, deutsch williams, murphy, hess, toomey and lehane, and mead, talerman and costa."
+  },
+  {
+   "decision": "References will be checked for the firms before they return for the second round.",
+   "quote": "references will be checked before they come back."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town counsel general legal work billing cap",
+   "what_was_recorded": "KP Law said it stops billing at a set amount for general municipal law work.",
+   "figures_as_printed": [
+    "$36,000"
+   ],
+   "quote": "in general municipal law work, we stop billing at $36,000."
+  },
+  {
+   "topic": "Town's five-year average general legal spending",
+   "what_was_recorded": "KP Law reported the average amount the town spent on general legal work over the past five years.",
+   "figures_as_printed": [
+    "$23,000"
+   ],
+   "quote": "the average amount the town has spent over the past five years for general legal work is $23,000."
+  },
+  {
+   "topic": "Kopelman fee schedule",
+   "what_was_recorded": "Kopelman and Associates presented a fee schedule to the Board; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "attorney kopelman presented a fee schedule to the board"
+  },
+  {
+   "topic": "Training workshops at no additional cost",
+   "what_was_recorded": "Miyares and Harrington offered a handful of annual training workshops at no additional cost; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "happy to do a handful of training workshops for the town annually at no additional cost."
+  },
+  {
+   "topic": "Limit on amount town counsel can earn",
+   "what_was_recorded": "Barrett said there would be limitations on the amount of money he could earn working for the town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. barrett stated there would some limitations on the amount of money he could earn working for the town."
+  },
+  {
+   "topic": "Funding for town counsel",
+   "what_was_recorded": "Barrett recommended the Board devote some funding toward contacting special counsel; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "he would also recommend the board devote some funding towards this."
+  },
+  {
+   "topic": "Host agreement payments in lieu of taxes",
+   "what_was_recorded": "Costa described host agreements with payment in lieu of taxes and flat fees; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "he has drafted host agreements that have provided payment in lieu of taxes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment - Reserve Police Officer - Erin K. Considine",
+   "resolution": "appointment ratified",
+   "quote": "to ratify the town manager appointment of erin considine to reserve police officer",
+   "tags": [
+    "appointment",
+    "police"
+   ]
+  },
+  {
+   "topic": "Request for Proposals for Town Counsel Services Interviews",
+   "resolution": "nine firms interviewed; four called back for second round",
+   "quote": "firms that will be called back for a second round will be miyares and harrington, deutsch williams, murphy, hess, toomey and lehane, and mead, talerman and costa.",
+   "tags": [
+    "town counsel",
+    "RFP",
+    "interviews",
+    "legal services"
+   ]
+  },
+  {
+   "topic": "Signing of 3rd Quarter Water Commitment and minutes",
+   "resolution": "signed",
+   "quote": "the board signed the 3'd quarter water commitment.",
+   "tags": [
+    "water",
+    "signing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Proposals for Town Counsel Services",
+   "where": "text",
+   "quote": "request for proposals for town counsel services interviews"
+  },
+  {
+   "name": "RFP ranking criteria",
+   "where": "text",
+   "quote": "mr. toale stated their objective was to choose finalists using the rfp ranking criteria."
+  },
+  {
+   "name": "Kopelman fee schedule",
+   "where": "text",
+   "quote": "attorney kopelman presented a fee schedule to the board"
+  },
+  {
+   "name": "Joel Bard written statement",
+   "where": "text",
+   "quote": "he did send a brief statement that he asked ms. goldberg to read aloud on his behalf."
+  },
+  {
+   "name": "3rd Quarter Water Commitment",
+   "where": "text",
+   "quote": "the board signed the 3'd quarter water commitment."
+  },
+  {
+   "name": "Minutes of February 7 and February 14, 2017",
+   "where": "text",
+   "quote": "they also signed minutes of february 7 and february 14,"
+  }
+ ],
+ "tags": [
+  "town counsel",
+  "RFP",
+  "legal services",
+  "interviews",
+  "police appointment",
+  "water commitment",
+  "selectmen"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

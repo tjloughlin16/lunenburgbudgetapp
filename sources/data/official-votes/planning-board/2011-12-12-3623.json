@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-12-12",
  "docid": "3623",
@@ -12,39 +12,423 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 12-5-11, 11-21-11, 11-21-11 Zoning Articles Public Hearing, and 11-21-11 Horizon Christian Fellowship Public Hearing",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the 12-5-11 minutes, 11-21-11 minutes, 11-21-11 Zoning Articles Public Hearing minutes, and 11-21-11 Horizon Christian Fellowship Public Hearing minutes.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion ms. bilotta-simeone, approve 12-5-11 minutes, 11-21-11 minutes, 11-21-11 zoning articles public hearing, and 11-21-11 horizon christian fellowship public hearing, second, mr. bodkin jr., motion passed."
+   "quote": "approve 12-5-11 minutes, 11-21-11 minutes, 11-21-11 zoning articles public hearing, and 11-21-11 horizon christian fellowship public hearing, second, mr. bodkin jr., motion passed."
   },
   {
-   "motion": "Approve Executive session minutes from 11-7-11",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
-   "outcome": "passed 4-0",
+   "motion": "Approve the Executive 11-7-11 minutes (roll call: Lockwood, Bodkin Jr., Bilotta-Simeone, Bakaysa, all aye).",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion ms. bilotta-simeone, approve executive 11-7-11, second, mr. bodkin jr., roll call vote, mr. lockwood, aye; mr. bodkin jr., aye; ms bilotta-simeone, aye; mr. bakaysa, aye."
+   "quote": "approve executive 11-7-11, second, mr. bodkin jr., roll call vote, mr. lockwood, aye; mr. bodkin jr., aye; ms bilotta-simeone, aye; mr. bakaysa, aye."
   },
   {
-   "motion": "Approve six-month extension for Highfield Village to June 30, 2012",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the Highfield Village extension to June 30, 2012.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion, ms. bilotta-simeone to approve extension to june 30, 2012, second, mr. bodkin jr., motion passed."
   },
   {
-   "motion": "To adjourn",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr., motion passed, adjourned 9:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision. All votes are clearly recorded with motions, seconds, and outcomes stated.",
- "cost_usd": 0.0911425
+ "note": "Text is OCR of a scanned minutes page with garbled spots (e.g., 'letter of December gh', 'Towr Administrator', 'Mr. Marden' where Marsden is likely meant). Three motions were recorded as 'Motion passed' with no vote count; the Executive 11-7-11 roll call shows four ayes but no printed count. No dollar figures appear in the text. No documents list is printed; documents are only mentioned in discussion.",
+ "cost_usd": 0.011617820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: robert j. saiia"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "Reviewing Engineer for the site, Marsden Engineering Inc.",
+   "status": "present",
+   "quote": "steve marsden (reviewing engineer for the site), marsden engineering inc., noted the proposal"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "town counsel, attorney joel bard, was present to go over his findings relative to"
+  },
+  {
+   "name": "David Matthews",
+   "role": "Select Board Chair",
+   "status": "present",
+   "quote": "david matthews (select board chair), 571 mulpus road- the chase road project is going into residential zoning"
+  },
+  {
+   "name": "Mr. Whalen",
+   "role": "526 West Townsend Road",
+   "status": "present",
+   "quote": "mr. whalen, 526 west townsend road- spoke strongly against the siting on 651 chase road."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "paula bertram (select board member), 309 townsend harbor road- urged the board to have an amended bylaw"
+  },
+  {
+   "name": "Steve Marden",
+   "role": "previous Chair of the Green Communities Task Force",
+   "status": "present",
+   "quote": "steve marden, 475 mulpus road-speaking as the previous chair of the green communities task force;"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "tom alonzo (select board member), 284 lancaster avenue- noted the existing solar bylaw needs to be reworked"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Benson will review the solar bylaws of surrounding communities and contact Attorney Bard for suggestions on exceptionally strong solar bylaws.",
+   "quote": "ms. benson will review the solar bylaws of surrounding communities and will contact attorney bard for any suggestions as to exceptionally strong solar bylaws."
+  },
+  {
+   "decision": "The EPG Solar applicant is to come before the Board prior to its Information Meeting.",
+   "quote": "mr. bakaysa wants the applicant to come before the board prior to its information meeting."
+  },
+  {
+   "decision": "Ms. Benson to check whether any state planners are skilled in the siting of solar farms.",
+   "quote": "mr. bakaysa requested ms. benson check to see if there are any state planners skilled in the siting of solar farms."
+  },
+  {
+   "decision": "Ms. Benson to contact the Town Manager about a workshop with the Board of Selectmen and Green Task Force on the impact on future zoning bylaws.",
+   "quote": "mr. bakaysa requested ms. benson contact the town manager regarding a workshop with the board of selectmen and"
+  },
+  {
+   "decision": "Ms. Benson will keep the Board informed on the Open Space Ad Hoc Committee's right to farm bylaw discussion.",
+   "quote": "committee to start discussion on a right to farm bylaw. ms. benson will keep the board informed."
+  },
+  {
+   "decision": "Mr. Bodkin Jr. suggested MRPC be contacted regarding the solar bylaw work.",
+   "quote": "mr. bodkin jr. suggested mrpc be contacted."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MMA attendance",
+   "what_was_recorded": "Funds for MMA were not available; Mr. Bodkin Jr. noted attendance is beneficial for peer interaction.",
+   "figures_as_printed": [],
+   "quote": "office- massachusetts municipal association (mma)- funds not available."
+  },
+  {
+   "topic": "Solar farm revenue at 651 Chase Road",
+   "what_was_recorded": "Mr. Whalen asked what revenue the solar project would generate; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "what is the revenue being generated by this project?"
+  },
+  {
+   "topic": "Solar farms as revenue source",
+   "what_was_recorded": "Mr. Bakaysa said solar farms may return revenue to the Town and improve its financial position; no figure given.",
+   "figures_as_printed": [],
+   "quote": "they are a viable option that may return revenue to the town to put the town in a better financial position."
+  },
+  {
+   "topic": "American Tower removal bond",
+   "what_was_recorded": "The removal bond and certificate of insurance for the 2005 Massachusetts Avenue facility were provided; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the removal bond and certificate of insurance for the facility were provided"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Matthews",
+   "stated_role": "Select Board Chair",
+   "topic": "Chase Road solar farm and bylaw siting",
+   "quote": "the chase road project is going into residential zoning, but negligibly impacting residents."
+  },
+  {
+   "speaker": "Mr. Whalen",
+   "stated_role": "526 West Townsend Road",
+   "topic": "Opposition to solar siting at 651 Chase Road",
+   "quote": "spoke strongly against the siting on 651 chase road."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Select Board member",
+   "topic": "Amended solar bylaw for Town Meeting",
+   "quote": "urged the board to have an amended bylaw to bring forth at town meeting."
+  },
+  {
+   "speaker": "Steve Marden",
+   "stated_role": "Speaking as the previous Chair of the Green Communities Task Force",
+   "topic": "Solar land set-aside and siting limits",
+   "quote": "in addition to siting of solar farms, land must also be set aside for research and development of solar."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Select Board member",
+   "topic": "Rework of Solar Bylaw",
+   "quote": "noted the existing solar bylaw needs to be reworked to provide more authority to the town in regulating solar farms."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 12-5-11, 11-21-11, Zoning and Horizon hearing minutes; approved Executive 11-7-11 minutes",
+   "quote": "minutes - approval: motion ms. bilotta-simeone, approve 12-5-11 minutes",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted conservation commission determinations of applicability for 11 beachview road,",
+   "tags": [
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted, no action",
+   "quote": "mrpc- meeting held 12-6-11. focus was on governor's task force for renewable energy.",
+   "tags": [
+    "MRPC",
+    "renewable energy",
+    "capital planning",
+    "school reconfiguration"
+   ]
+  },
+  {
+   "topic": "Planning Director reports: American Tower",
+   "resolution": "received and filed",
+   "quote": "american tower, 2005 massachusetts avenue- the removal bond and certificate of insurance for the facility were provided",
+   "tags": [
+    "telecom tower",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Sprint Nextel, 9 Chase Road",
+   "resolution": "noted; applicant asked for antenna emissions rating",
+   "quote": "sprint nextel, 9 chase road- steve marsden (reviewing engineer for the site), marsden engineering inc., noted the proposal",
+   "tags": [
+    "telecom",
+    "antennas"
+   ]
+  },
+  {
+   "topic": "Glenn's Auto Salon / Asian Imperial, 332 Massachusetts Ave.",
+   "resolution": "noted; old certificate closed out",
+   "quote": "the office is in receipt of certificate of compliance (coc) from",
+   "tags": [
+    "conservation",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Mass PV1, LLC, 651 Chase Road: solar bylaw legal opinion",
+   "resolution": "discussed; no vote; Board expected to look at amending the bylaw",
+   "quote": "mass pv1, llc, 651 chase road- town counsel, attorney joel bard, was present to go over his findings relative to",
+   "tags": [
+    "solar",
+    "zoning bylaw",
+    "town counsel",
+    "651 Chase Road"
+   ]
+  },
+  {
+   "topic": "EPG Solar, 194 Electric Avenue",
+   "resolution": "applicant to return before information meeting; no vote",
+   "quote": "epg solar, 194 electric avenue- applicant has met with ms. benson and reviewing engineer steve marsden",
+   "tags": [
+    "solar",
+    "EPG Solar",
+    "proximity to residences"
+   ]
+  },
+  {
+   "topic": "Summer Street Corridor",
+   "resolution": "received",
+   "quote": "summer street corridor-board in receipt of june 28, 2011 task force minutes along with three concepts",
+   "tags": [
+    "summer street",
+    "task force"
+   ]
+  },
+  {
+   "topic": "Open Space Ad Hoc Committee",
+   "resolution": "noted",
+   "quote": "open space ad hoc committee. committee to start discussion on a right to farm bylaw.",
+   "tags": [
+    "right to farm",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force",
+   "resolution": "noted; Task Force to continue work toward May 2012 Town Meeting",
+   "quote": "article to become a green community did not pass at special town meeting.",
+   "tags": [
+    "green community",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Development status: DPW Facility, Chase Road",
+   "resolution": "noted",
+   "quote": "dpw facility, chase road- progress reports indicate continuing work on renovation.",
+   "tags": [
+    "DPW facility"
+   ]
+  },
+  {
+   "topic": "Highfield Village extension",
+   "resolution": "extension approved to June 30, 2012",
+   "quote": "highfield village, mass ave/northfield road- in receipt of request for extension.",
+   "tags": [
+    "extension",
+    "highfield village"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "january 9- planning board meeting with epg solar and master planning workshop, town hall.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Office: MMA",
+   "resolution": "no action; funds not available",
+   "quote": "office- massachusetts municipal association (mma)- funds not available.",
+   "tags": [
+    "MMA",
+    "training"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 PM",
+   "quote": "adjournment: motion, ms. bilotta-simeone, second, mr. bodkin jr., motion passed, adjourned 9:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Opinion letter of Town Counsel Attorney Joel Bard (letter of December, OCR reads 'December gh')",
+   "where": "text",
+   "quote": "(opinion letter on file in the planning office.)"
+  },
+  {
+   "name": "Summer Street Task Force minutes of June 28, 2011 and three Summer Street improvement concepts",
+   "where": "text",
+   "quote": "board in receipt of june 28, 2011 task force minutes along with three concepts for summer street improvements."
+  },
+  {
+   "name": "Lunenburg Zoning Bylaw (Solar Bylaw)",
+   "where": "text",
+   "quote": "lunenburg's zoning bylaw prevents the town from prohibiting the facilities"
+  },
+  {
+   "name": "Conservation Commission Determinations of Applicability, Certificates of Compliance and Order of Conditions",
+   "where": "text",
+   "quote": "noted conservation commission determinations of applicability for 11 beachview road,"
+  },
+  {
+   "name": "American Tower Removal Bond and Certificate of Insurance, 2005 Massachusetts Avenue",
+   "where": "text",
+   "quote": "the removal bond and certificate of insurance for the facility were provided"
+  },
+  {
+   "name": "Highfield Village Request for Extension",
+   "where": "text",
+   "quote": "in receipt of request for extension. current extension expires december 31."
+  },
+  {
+   "name": "Article to become a Green Community (Special Town Meeting)",
+   "where": "text",
+   "quote": "article to become a green community did not pass at special town meeting."
+  },
+  {
+   "name": "Prior minutes: 12-5-11, 11-21-11, Executive 11-7-11, 11-21-11 Zoning Articles Public Hearing, 11-21-11 Horizon Christian Fellowship Public Hearing",
+   "where": "text",
+   "quote": "approve 12-5-11 minutes, 11-21-11 minutes, 11-21-11 zoning articles public hearing, and 11-21-11 horizon christian fellowship public hearing, second"
+  },
+  {
+   "name": "Conservation Commission Certificate of Compliance for Glenn's Auto Salon (CoC)",
+   "where": "text",
+   "quote": "the office is in receipt of certificate of compliance (coc) from"
+  },
+  {
+   "name": "Conservation Commission Determination of Applicability, removable floating deck, 10 Lakefront (Emerald Place)",
+   "where": "text",
+   "quote": "in receipt of determination of applicability from conservation commission for"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar bylaw",
+  "solar farm",
+  "651 Chase Road",
+  "EPG Solar",
+  "zoning",
+  "Green Community",
+  "Highfield Village",
+  "minutes approval",
+  "telecom tower",
+  "town counsel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

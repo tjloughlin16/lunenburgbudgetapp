@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-01-19",
  "docid": "2756",
@@ -12,51 +12,302 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes as amended",
+   "motion": "Accept the minutes as amended.",
    "moved_by": "Ms. Murray",
    "seconded_by": "LK",
-   "outcome": "Approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion made by ms. murray to accept as amended. seconded by lk. approved unanimously."
   },
   {
-   "motion": "Accept confidential letter from staff of 1/5/12",
-   "moved_by": "Ms. Raboin",
-   "seconded_by": "Mr. Mara",
-   "outcome": "approved unanimously",
-   "procedural": false,
-   "quote": "motion made by ms. raboin and seconded by mr. mara to accept confidential letter from staff (not all o f lpl staff signed) of 1/5/12 (received 1/12/12), with co ntents of said letter to be discussed at future tim e. motion approved unanimous",
-   "quote_taken_from_text": true
+   "motion": "Table agenda item #4 (delegation of authority to Town Manager) during the discussion.",
+   "moved_by": "Mr. Mailloux",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "moved to table agenda item #4, so moved."
   },
   {
-   "motion": "Table agenda item 4 to January 27 meeting at 6:45 pm",
+   "motion": "Accept confidential letter from staff dated 1/5/12 (received 1/12/12), with its contents to be discussed at a future time.",
+   "moved_by": "Ms. Raboin",
+   "seconded_by": "Mr. Mara",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "motion made by ms. raboin and seconded by mr. mara to accept confidential letter from staff"
+  },
+  {
+   "motion": "Table agenda item 4 to a meeting on Thursday, Jan. 27 at 6:45.",
    "moved_by": "Mr. Mara",
    "seconded_by": "Mr. Mailloux",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion made by mr. mara and seconded by mr. maillou x to table agenda item 4 to a week from tonight for a meeting on thursday, jan. 27 at 6:45. mr. mailloux w ill post session and contact town counsel for executive session policies regarding personnel acti ons and who can attend an executive session. motion passed unanimous",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to table agenda item 4 to a week from tonight for"
   },
   {
-   "motion": "Accept the Trustee approved FY13 budget with three budgets",
+   "motion": "Accept the Trustee approved FY13 budget with the three budgets.",
    "moved_by": "Mr. Mailloux",
    "seconded_by": "Mr. Mara",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by mr. mailloux and seconded mr. mara t o accept the trustee approved fy13 budget with the three budgets. motion passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "accept the trustee approved fy13 budget with the three budgets. motion passed unanimously."
   },
   {
-   "motion": "Adjourn meeting at 8:55 pm",
+   "motion": "Adjourn the meeting at 8:55 pm.",
    "moved_by": "Mr. Mailloux",
-   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion made by mr. mailloux to adjourn meeting at 8 :55 pm",
-   "quote_taken_from_text": true
+   "quote": "motion made by mr. mailloux to adjourn meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. One motion (adjourn) has no stated second or explicit vote outcome in the minutes, though the meeting adjourned as stated.",
- "cost_usd": 0.1197145
+ "note": "Text is extracted with broken word spacing in places, so some quotes were chosen to avoid split words. The minutes print the next meeting as \"Thursday, Feb. 16, 2007\", which conflicts with the 2012 meeting date; recorded as printed here. The motion to table item #4 in the public comment section has no recorded second or result. The motion to adjourn has no recorded result. Speakers' roles are not printed except those shown in the staff list.",
+ "cost_usd": 0.00843372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: john mara, jeanne raboin, noelle bodkin,"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jeanne raboin secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: john mara, jeanne raboin, noelle bodkin,"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "lisa krowitz, len smetana, dick mailloux"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "lisa krowitz, len smetana, dick mailloux"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "lisa krowitz, len smetana, dick mailloux"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "motion made by ms. murray to accept as amended."
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "ms. sadkin gave letter to board concerning personnel action of"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "LPL Staff",
+   "status": "present",
+   "quote": "lpl staff: kate mccarron, karen kemp"
+  },
+  {
+   "name": "Karen Kemp",
+   "role": "LPL Staff",
+   "status": "present",
+   "quote": "lpl staff: kate mccarron, karen kemp"
+  },
+  {
+   "name": "Sherri Freeman",
+   "role": "LPL Staff",
+   "status": "present",
+   "quote": "ms. freeman: asked for permission to address board"
+  },
+  {
+   "name": "Pat Dupont",
+   "role": "LPL Staff",
+   "status": "present",
+   "quote": "ms. dupont: commented about library being short"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Mara suggested Mr. Mailloux seek advice from Town Counsel on what information the Board can request, executive session rules, and Trustee obligations; Mr. Mailloux to post the session and contact Town Counsel.",
+   "quote": "mr. mara suggested mr. mailloux seek advice from"
+  },
+  {
+   "decision": "Ms. Sadkin to get information on an after-school teen consultant and bring it back to the Trustees.",
+   "quote": "ms. sadkin will get information"
+  },
+  {
+   "decision": "The preliminary budget will be sent to the Town Manager on Friday, Jan. 20, 2012.",
+   "quote": "preliminary budget will be sent to town manager on friday, jan. 20, 2012."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Exterior painting and small repairs quote",
+   "what_was_recorded": "Ms. Sadkin submitted a quote to the Capital Planning Committee; the entrance area and whole-building options were priced, with a second quote to follow in phase two.",
+   "figures_as_printed": [
+    "$15,000",
+    "$45,000"
+   ],
+   "quote": "whole building (power washing, wood surfaces, caulking, two coats; metal trim exterior paint) - $45,000."
+  },
+  {
+   "topic": "Library materials share of budget",
+   "what_was_recorded": "Library materials can now be 16% of the budget because the town reached 10,000 population.",
+   "figures_as_printed": [
+    "16%",
+    "10,000"
+   ],
+   "quote": "library materials can now be 16% of budget because of reaching 10,000"
+  },
+  {
+   "topic": "Preliminary budget scenarios",
+   "what_was_recorded": "The budget subcommittee prepared three budget scenarios, and an override calculation added 4 more staffing hours.",
+   "figures_as_printed": [
+    "3",
+    "4"
+   ],
+   "quote": "prepared 3 budget scenarios."
+  },
+  {
+   "topic": "FY13 budget acceptance",
+   "what_was_recorded": "The Trustees accepted the Trustee-approved FY13 budget with the three budgets; no dollar totals are printed.",
+   "figures_as_printed": [],
+   "quote": "accept the trustee approved fy13 budget with the three budgets. motion passed unanimously."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Kemp",
+   "topic": "dismissal of staff member",
+   "quote": "commented about dismissal of staff member"
+  },
+  {
+   "speaker": "Ms. Dupont",
+   "topic": "short staffing on a difficult day",
+   "quote": "ms. dupont: commented about library being short"
+  },
+  {
+   "speaker": "Ms. McCarron",
+   "topic": "activity level, staff support and communication",
+   "quote": "ms. mccarron: commented about activity level during"
+  },
+  {
+   "speaker": "Ms. Freeman",
+   "topic": "part-time staff issues and delegation to Town Manager",
+   "quote": "ms. freeman: asked for permission to address board"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved as amended",
+   "quote": "approval of minutes as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Letter from LPL staff",
+   "resolution": "letter accepted; contents deferred to a future meeting",
+   "quote": "board discussed possible options",
+   "tags": [
+    "staff letter",
+    "personnel",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, no action",
+   "quote": "jan 16 staff meeting: budget, staff meetings, (see report);",
+   "tags": [
+    "circulation",
+    "staffing",
+    "facilities",
+    "technology",
+    "friends"
+   ]
+  },
+  {
+   "topic": "Delegation of authority to Town Manager",
+   "resolution": "tabled to Jan. 27, 2012 at 6:45",
+   "quote": "delegation of authority to town manager: ms. sadkin gave letter to board",
+   "tags": [
+    "personnel",
+    "town manager",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Preliminary budget",
+   "resolution": "three budget scenarios accepted; sent to Town Manager Jan. 20",
+   "quote": "preliminary budget: budget subcommittee met tuesday",
+   "tags": [
+    "budget",
+    "FY13",
+    "override"
+   ]
+  },
+  {
+   "topic": "Subcommittee meetings",
+   "resolution": "noted: budget yes, policy no",
+   "quote": "subcommittee meetings: budget",
+   "tags": [
+    "subcommittees"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Confidential letter from LPL staff to the Trustees chair, sent Jan. 5, 2012 (received Jan. 12, 2012)",
+   "where": "text",
+   "quote": "accept confidential letter from staff"
+  },
+  {
+   "name": "Letter from Ms. Sadkin to the Board concerning the personnel action of Dec. 20, 2011",
+   "where": "text",
+   "quote": "ms. sadkin gave letter to board concerning personnel action of"
+  },
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report: see report for"
+  },
+  {
+   "name": "Budget memorandum sent to the Town Manager",
+   "where": "text",
+   "quote": "ms. sadkin also read the budget memorandum sent to town manager."
+  },
+  {
+   "name": "Quote for exterior painting and small repairs (whole building option)",
+   "where": "text",
+   "quote": "whole building (power washing, wood surfaces, caulking, two coats; metal trim exterior paint) - $45,000."
+  },
+  {
+   "name": "Three budget scenarios prepared by the budget subcommittee",
+   "where": "text",
+   "quote": "prepared 3 budget scenarios."
+  }
+ ],
+ "tags": [
+  "library board",
+  "staffing",
+  "personnel",
+  "staff letter",
+  "executive session",
+  "FY13 budget",
+  "town manager delegation",
+  "facilities",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

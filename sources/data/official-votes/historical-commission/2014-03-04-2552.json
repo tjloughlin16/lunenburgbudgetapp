@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-03-04",
  "docid": "2552",
@@ -12,15 +12,218 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from February 6, 2014 as submitted",
+   "motion": "Approve the minutes of 2/6/14 as submitted.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 2/6/14 approved as submitted"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0987825
+ "note": "Text is OCR of a single page with some stray header characters (\"RL RI4 OP ITM\") and line breaks mid-sentence. No vote counts or motion/second names are printed; the only approval is the minutes approval, and the commission's findings, assignments and the chair-authority policy are recorded without a stated vote. No dollar figures appear. Adjournment is recorded without a motion.",
+ "cost_usd": 0.00407682,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Juliano Fernandez",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the applicant juliano fernandez is present"
+  },
+  {
+   "name": "Steve Powell",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the applicant steve powell is present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission found that the by-law does not apply to the demolition determination request for 163 Island Road.",
+   "quote": "the commission finds that the by-law does not apply."
+  },
+  {
+   "decision": "Commission found that the house and shed at 305 Leominster/Shirley Rd. do not fall under demolition delay.",
+   "quote": "the commission finds that the house and shed in question do not fall under demolition delay."
+  },
+  {
+   "decision": "Commission found the applicant's plan to dismantle the Padula Barn and relocate it to a parcel on Goodrich St. acceptable.",
+   "quote": "the commission finds that this plan is acceptable and thanks mr. powell for his efforts to preserve a piece of"
+  },
+  {
+   "decision": "Newspaper article writing assignments: Amory for April, Becky for May, Damon for June, Richard for July.",
+   "quote": "amory to write for april"
+  },
+  {
+   "decision": "Commission will recommend the Jones House release from the land development agreement to the town manager, as the owners have met the commission's requirements.",
+   "quote": "the commission will recommend this release to the town manager as the owners have satisfied the requirements set forth by the commission."
+  },
+  {
+   "decision": "Becky to make edits to the Cemetery Commission Building draft letter.",
+   "quote": "becky to make edits to the draft."
+  },
+  {
+   "decision": "Adopted as Commission policy: upon receipt of a demolition delay determination application, the current chair-person will decide whether a demolition hearing is required under the demolition delay by-law.",
+   "quote": "from this point forward it will be the historic commissions policy that, upon receipt of a demolition delay determination application, the current chair-person will have the authority"
+  },
+  {
+   "decision": "Damon to produce a Demolition Delay Determination form.",
+   "quote": "damon will produce a demolition delay determination form."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 6:34 PM",
+   "quote": "meeting called to order march 4, 2014 @ 6:34 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval (2/6/14)",
+   "resolution": "approved as submitted",
+   "quote": "minutes from 2/6/14 approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence: Demolition Determination Request 163 Island Road",
+   "resolution": "found by-law does not apply",
+   "quote": "the commission finds that the by-law does not apply.",
+   "tags": [
+    "demolition delay",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Old Business: demolition request 305 Leominster/Shirley Rd.",
+   "resolution": "found not under demolition delay",
+   "quote": "the commission finds that the house and shed in question do not fall under demolition delay.",
+   "tags": [
+    "demolition delay",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Old Business: demolition request 123 Leominster/Shirley Rd. (Padula Barn)",
+   "resolution": "found relocation plan acceptable",
+   "quote": "the commission finds that this plan is acceptable and thanks mr. powell for his efforts to preserve a piece of",
+   "tags": [
+    "barn relocation",
+    "demolition"
+   ]
+  },
+  {
+   "topic": "Newspaper articles",
+   "resolution": "assignments made for April through July",
+   "quote": "amory to write for april",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Jones House release",
+   "resolution": "to recommend release to town manager",
+   "quote": "the commission will recommend this release to the town manager as the owners have satisfied the requirements set forth by the commission.",
+   "tags": [
+    "Jones House",
+    "land development agreement"
+   ]
+  },
+  {
+   "topic": "Cemetery Commission Building draft letter",
+   "resolution": "continued; Becky to edit draft",
+   "quote": "becky to make edits to the draft.",
+   "tags": [
+    "letter",
+    "Cemetery Commission"
+   ]
+  },
+  {
+   "topic": "New Business: Demolition Delay By-law discussion",
+   "resolution": "chair-person authority policy adopted; form to be produced",
+   "quote": "from this point forward it will be the historic commissions policy that, upon receipt of a demolition delay determination application, the current chair-person will have the authority",
+   "tags": [
+    "demolition delay",
+    "policy",
+    "by-law"
+   ]
+  },
+  {
+   "topic": "Meeting adjournment",
+   "resolution": "adjourned 7:50pm; next meeting April 8, 2014",
+   "quote": "meeting adjourned @ 7:50pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Determination Request 163 Island Road",
+   "where": "text",
+   "quote": "demolition determination request 163 island road"
+  },
+  {
+   "name": "Cemetery Commission Building draft letter",
+   "where": "text",
+   "quote": "cemetery commission building draft letter."
+  },
+  {
+   "name": "Demolition Delay Determination form",
+   "where": "text",
+   "quote": "damon will produce a demolition delay determination form."
+  },
+  {
+   "name": "Land development agreement (Jones House)",
+   "where": "text",
+   "quote": "the owners are seeking a release from the land development agreement."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "demolition determination",
+  "Padula Barn",
+  "Jones House",
+  "newspaper articles",
+  "by-law policy",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

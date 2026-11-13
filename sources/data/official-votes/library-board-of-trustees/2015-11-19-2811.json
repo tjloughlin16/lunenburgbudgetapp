@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-11-19",
  "docid": "2811",
@@ -12,23 +12,281 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of October 15, 2015",
+   "motion": "Approve the minutes of 10-15-15.",
    "moved_by": "Harry",
    "seconded_by": "Dick",
-   "outcome": "passed all in favor",
+   "outcome": "passed (all in favor; Susan Visser abstained)",
    "procedural": true,
    "quote": "motion by harry, second by dick to accept minutes; voted all in favor; susan abstained (not present at october meeting)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kiirja",
    "seconded_by": "Lars",
-   "outcome": "passed all in favor",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "motion to adjourn, so moved by kiirja, second by lars, all in favor at 8:43 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two votes recorded. On the first vote, Susan abstained (noted as not present at the October meeting). The adjourn motion lists the mover as \"Kiirja\" but attendees list \"Kirja Paananen\" — likely a typo in the minutes for the same person.",
- "cost_usd": 0.0826845
+ "dropped_unquoted": 1,
+ "note": "The minutes record only two motions (approval of minutes and adjournment), both with the outcome stated as all in favor; no tally counts are printed. Susan Visser abstained on the minutes. No public comment was recorded. The minutes state the chair and the Secretary's signature; the other trustees are not individually given a role. The Friends update was moved to the start of the meeting. Text is not a scan.",
+ "cost_usd": 0.00563462,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kirja paananen, donna saiia, susan visser, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kirja paananen, donna saiia, susan visser, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Kirja Paananen",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kirja paananen, donna saiia, susan visser, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kirja paananen, donna saiia, susan visser, lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "present",
+   "quote": "susan abstained (not present at october meeting)"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: gare thompson"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "martha moore - director, lpl, bob ebersole - bos representative and terri burchfield, fincom representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "BOS representative",
+   "status": "present",
+   "quote": "bob ebersole - bos representative and terri burchfield, fincom representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "present",
+   "quote": "bob ebersole - bos representative and terri burchfield, fincom representative"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "",
+   "status": "not stated",
+   "quote": "moving friends of lpl, jeanne raboin info to beginning of meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Trustees will continue the existing format for the Library Director's evaluation.",
+   "quote": "the trustees will continue existing evaluation format."
+  },
+  {
+   "decision": "Re-establishing the policy sub-committees is not necessary at this time; policies will be brought to trustees as needed for review, discussion and decision.",
+   "quote": "it was noted that it would not be necessary at this time to re-establish the sub-committees"
+  },
+  {
+   "decision": "The BOS Energy Policy item is held until spring 2016.",
+   "quote": "bos energy policy - hold off until spring 2016"
+  },
+  {
+   "decision": "Director Martha will hand out updated versions of the policies at the December meeting.",
+   "quote": "martha - will be handing out updated versions of policies at the december meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Educational outreach project - consultant grant",
+   "what_was_recorded": "A grant from the North Central Community foundation is to pay for a consultant to execute the educational outreach; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "grant from north central community foundation to pay for consultant to execute the outreach"
+  },
+  {
+   "topic": "FY16-17 draft budget",
+   "what_was_recorded": "The FY16-17 Draft Budget was listed in the Director's Report; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "fy16-17 draft budget"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Friends of LPL update (moved to start)",
+   "resolution": "informational; tenth anniversary open house planned for December 5",
+   "quote": "moving friends of lpl, jeanne raboin info to beginning of meeting",
+   "tags": [
+    "friends of lpl",
+    "anniversary",
+    "events"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment o no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 10-15-15",
+   "resolution": "approved",
+   "quote": "motion by harry, second by dick to accept minutes; voted all in favor; susan abstained (not present at october meeting)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed as per handout; no action",
+   "quote": "director's report - discussed as per handout",
+   "tags": [
+    "director",
+    "budget",
+    "staffing",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Educational outreach project",
+   "resolution": "discussed; consultant to be funded by grant",
+   "quote": "educational outreach project - outreach to all educational entities in town, not just public school systems",
+   "tags": [
+    "outreach",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Policies: solicitation, skateboard ban, room use",
+   "resolution": "solicitation and skateboard ban on December agenda; room-use discussed",
+   "quote": "skateboard ban - on december agenda; skateboarding \"not ok\" in front of the library",
+   "tags": [
+    "policies",
+    "room use",
+    "skateboarding"
+   ]
+  },
+  {
+   "topic": "Cable Advisory Committee questions",
+   "resolution": "determined not to affect the Library",
+   "quote": "determined that it does not affect library",
+   "tags": [
+    "cable advisory committee"
+   ]
+  },
+  {
+   "topic": "Policy sub-committee",
+   "resolution": "re-establishing sub-committee not necessary at this time",
+   "quote": "it was noted that it would not be necessary at this time to re-establish the sub-committees",
+   "tags": [
+    "policies",
+    "sub-committee"
+   ]
+  },
+  {
+   "topic": "Planning for LPL Director evaluation",
+   "resolution": "continue existing evaluation format; comments due for January personnel committee review",
+   "quote": "the trustees will continue existing evaluation format.",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no comments",
+   "quote": "no comments from the board",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "scheduled: Library Trust Funds in January; Marketing/Technology sub-committee discussed in December; BOS Energy Policy held to spring 2016",
+   "quote": "bos energy policy - hold off until spring 2016",
+   "tags": [
+    "agenda",
+    "trust funds",
+    "energy policy"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "congratulations noted; no action",
+   "quote": "7lbs 14 oz baby girl, grand-daughter to debbie laffond arrived tonight!",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:43 p.m.",
+   "quote": "motion to adjourn, so moved by kiirja, second by lars, all in favor at 8:43 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for November 19, 2015",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for november 19, 2015 director's report"
+  },
+  {
+   "name": "Director's Report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for november 19, 2015 director's report"
+  },
+  {
+   "name": "LPL program calendar",
+   "where": "text",
+   "quote": "see lpl program calendar for more details"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "friends of LPL",
+  "policies",
+  "director evaluation",
+  "budget",
+  "FY16-17 budget",
+  "staffing",
+  "outreach",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

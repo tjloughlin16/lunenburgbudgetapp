@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-09-06",
  "docid": "4766",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the Earth Removal Permits",
+   "motion": "Approve the Earth Removal Permit renewals as read, with all restrictions noted.",
    "moved_by": "Paula",
    "seconded_by": "Tom",
    "outcome": "passed unanimously",
@@ -20,13 +20,477 @@
    "quote": "paula motion to approve permits as read, tom seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn the Regular Session",
+   "motion": "Adjourn the Regular Session at 8:45 P.M.",
+   "moved_by": "not stated",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 8:45 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1230725
+ "note": "OCR text of a scanned minutes packet. Some items are cut off at page breaks (page 2 opens mid-sentence in the school/MSBA item; page 3 opens mid-item in the DPW building item, with its item number lost). Board roll call and attendance are not printed, so board members are marked present only because they spoke. Several figures are OCR-garbled (e.g. '$ 3.100.08', '3,044.75') and recorded as printed. Only two votes appear in the text (earth removal permits, adjournment). Page 9 is blank. The attachments (letters, memos, drawing) are included in the text and were recorded as documents.",
+ "cost_usd": 0.01645172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom",
+   "status": "present",
+   "quote": "tom agrees with their concerns and noted the congestion",
+   "role": "not stated"
+  },
+  {
+   "name": "Paula",
+   "status": "present",
+   "quote": "paula also agrees with these recommendations, suggested the possibility",
+   "role": "not stated"
+  },
+  {
+   "name": "Kerry",
+   "status": "present",
+   "quote": "kerry noted that the parking in the back of this building is not a public lot",
+   "role": "not stated"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "dave macdonald presented the attached information on the intersection of mulpus road and townsend harbor road.",
+   "role": "not stated"
+  },
+  {
+   "name": "Michael Nault",
+   "status": "present",
+   "quote": "michael nault, 56 brookview terrace noted that many houses on townsend harbor road are across the street from the waterfront",
+   "role": "not stated"
+  },
+  {
+   "name": "Bob Musack",
+   "status": "present",
+   "quote": "bob musack, 170 townsend harbor road agrees with the recommendations as submitted",
+   "role": "not stated"
+  },
+  {
+   "name": "Mario Angelo",
+   "status": "present",
+   "quote": "mario angelo, 199 island road, director of hickory hills landowners association, travels through this intersection several times a week",
+   "role": "Director of Hickory Hills Landowners Association"
+  },
+  {
+   "name": "Chair",
+   "status": "present",
+   "quote": "chair would like to have input from the dpw director and public safety",
+   "role": "Chair"
+  },
+  {
+   "name": "Steve",
+   "status": "present",
+   "quote": "steve would suggest that we use an engineer to determine the best alternative.",
+   "role": "not stated"
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "jack, dpw director concurred that this is a great idea",
+   "role": "DPW Director"
+  },
+  {
+   "name": "Janice Barney",
+   "status": "present",
+   "quote": "janice barney, representative of the national society of the daughters of the american revolution presented",
+   "role": "representative of the National Society of the Daughters of the American Revolution"
+  },
+  {
+   "name": "Chief Glenny",
+   "status": "present",
+   "quote": "chief glenny presented the attached update on the events leading",
+   "role": "Chief"
+  },
+  {
+   "name": "Brandon",
+   "status": "present",
+   "quote": "brandon noted that the other representatives on the committee worked in the best interest of this town",
+   "role": "not stated"
+  },
+  {
+   "name": "Dr. Berthiuame",
+   "status": "present",
+   "quote": "dr. berthiuame noted that the school committee will be meeting tomorrow night",
+   "role": "not stated"
+  },
+  {
+   "name": "Marion Benson",
+   "status": "present",
+   "quote": "upate on planned production/affordable housing - marion benson",
+   "role": "not stated"
+  },
+  {
+   "name": "Laura Williams",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant",
+   "role": "Chief Administrative Assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The parking concerns on Memorial Drive and Main Street are to be scheduled for the first meeting in October.",
+   "quote": "board will schedule for the first meeting in october."
+  },
+  {
+   "decision": "The Chair asked for input from the DPW Director and Public Safety on options and cost factors for the Mulpus Road and Townsend Harbor Road intersection.",
+   "quote": "chair would like to have input from the dpw director and public safety to include options and cost factors."
+  },
+  {
+   "decision": "The DPW Director will speak with an engineer to get a price and timeframe for a conceptual plan at the Mulpus Road intersection.",
+   "quote": "he will speak with an engineer to get a price and a timeframe."
+  },
+  {
+   "decision": "The Town Manager will meet with the DPW Director, look at the SMART grant, and return with a game plan; an update is due at the first October meeting.",
+   "quote": "kerry will provide an update to this at the board's first meeting in october."
+  },
+  {
+   "decision": "Review of FY11 Close Out and the Final Year End Transfer Request was tabled to the next week.",
+   "quote": "review of fy11 close out; final year end transfer request - tabled to next week."
+  },
+  {
+   "decision": "The board reviewed and signed the Board of Selectmen regular session minutes of 8/23/11.",
+   "quote": "minutes - board of selectmen regular session for 8/23/11 reviewed and signed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hurricane Irene expenditures by department",
+   "what_was_recorded": "The Hurricane Irene memo lists total expenditures for Fire, DPW and Police; the OCR text garbles the DPW figure and the figures are not clearly tied to departments.",
+   "figures_as_printed": [
+    "$ 4,472.42",
+    "$ 3.100.08",
+    "3,044.75",
+    "12,619.25"
+   ],
+   "quote": "total expenditures: fire $ 4,472.42 dpw $ 3.100.08 3,044.75 police 12,619.25"
+  },
+  {
+   "topic": "Hurricane Irene fire-side payroll",
+   "what_was_recorded": "Total payroll for the additional personnel assigned during the storm, as printed.",
+   "figures_as_printed": [
+    "$6,472.42"
+   ],
+   "quote": "total pavroll=$6,472.42"
+  },
+  {
+   "topic": "Hurricane Irene DPW overtime and equipment",
+   "what_was_recorded": "DPW overtime and the replacement of two chain saws during the storm response.",
+   "figures_as_printed": [
+    "$ 1,900.08",
+    "$1200.00"
+   ],
+   "quote": "dpw $ 1,900.08 overtime replacement of 2 chain saws $1200.00"
+  },
+  {
+   "topic": "Hurricane Irene police payroll",
+   "what_was_recorded": "Total police payroll for the operation, with no additional costs or expenses.",
+   "figures_as_printed": [
+    "$3,046.75"
+   ],
+   "quote": "total payroll=$3,046.75 (no additional costs or expenses)"
+  },
+  {
+   "topic": "Hurricane Irene reserve officers",
+   "what_was_recorded": "Two reserves in training assisted during the operation at no cost.",
+   "figures_as_printed": [],
+   "quote": "two reserves in training came in to assist during the operation at no cost."
+  },
+  {
+   "topic": "Mulpus Road intersection grant",
+   "what_was_recorded": "A SMART grant program may be available for the intersection project; no grant amount is given.",
+   "figures_as_printed": [],
+   "quote": "noted that there is a grant program that we may be able to access (smart)."
+  },
+  {
+   "topic": "Mulpus Road intersection conceptual plan cost",
+   "what_was_recorded": "Short money is to be spent on a conceptual plan for the board; no figure is printed and the cost was described as not exorbitant.",
+   "figures_as_printed": [],
+   "quote": "short money spent to have a conceptual plan in place to present to this board."
+  },
+  {
+   "topic": "DPW building project financials",
+   "what_was_recorded": "A DPW Building Committee member will document what has been spent so far, to be received by the Selectmen within about a week.",
+   "figures_as_printed": [],
+   "quote": "janice carrier, member of the dpw building committee will be documenting the financials on what's been expended"
+  },
+  {
+   "topic": "DPW building change order",
+   "what_was_recorded": "Change order #1 is to be prepared for signature at the 9/6/11 meeting; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "hka will prepare change order #1 for review and signature by all parties at the meeting on 9/6/11."
+  },
+  {
+   "topic": "Affordable housing funding",
+   "what_was_recorded": "A third building at Lunenburg Village is not expected to be built until funding (subsidy) is in place; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "until they are able to get their funding (subsidy's) in place, later in the fall."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY11 Final Year End Transfer Request",
+   "amount_as_printed": "not stated",
+   "outcome": "tabled to next week",
+   "quote": "review of fy11 close out; final year end transfer request - tabled to next week."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Michael Nault",
+   "stated_role": "56 Brookview Terrace",
+   "topic": "Townsend Harbor Road and Mulpus Road intersection",
+   "quote": "michael nault, 56 brookview terrace noted that many houses on townsend harbor road are across the street from the waterfront"
+  },
+  {
+   "speaker": "Bob Musack",
+   "stated_role": "170 Townsend Harbor Road",
+   "topic": "Townsend Harbor Road and Mulpus Road intersection",
+   "quote": "bob musack, 170 townsend harbor road agrees with the recommendations as submitted"
+  },
+  {
+   "speaker": "Mario Angelo",
+   "stated_role": "Director of Hickory Hills Landowners Association, 199 Island Road",
+   "topic": "Townsend Harbor Road and Mulpus Road intersection",
+   "quote": "mario angelo, 199 island road, director of hickory hills landowners association, travels through this intersection several times a week"
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "not stated",
+   "topic": "Mulpus Road and Townsend Harbor Road intersection presentation",
+   "quote": "dave macdonald presented the attached information on the intersection of mulpus road and townsend harbor road."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Memorial Drive and Main Street parking and congestion",
+   "resolution": "scheduled for first October meeting",
+   "quote": "concerns on memorial drive and main street and suggested recommendations.",
+   "tags": [
+    "parking",
+    "traffic",
+    "Main Street"
+   ]
+  },
+  {
+   "topic": "Mulpus Road and Townsend Harbor Road intersection",
+   "resolution": "input requested from DPW and Public Safety; update due October",
+   "quote": "dave macdonald presented the attached information on the intersection of mulpus road and townsend harbor road.",
+   "tags": [
+    "traffic safety",
+    "intersection",
+    "SMART grant",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements: asphalt plant opening",
+   "resolution": "no action",
+   "quote": "tom commented on the invitation that town officials received to attend the asphalt plant opening event",
+   "tags": [
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Appointment: DAR 9/11 banner presentation",
+   "resolution": "banner accepted",
+   "quote": "chair accepted and presented this banner to chief glenny.",
+   "tags": [
+    "ceremony",
+    "9/11",
+    "DAR"
+   ]
+  },
+  {
+   "topic": "School regionalization and MSBA next step (opening text cut off)",
+   "resolution": "no action recorded; Brandon to notify the State",
+   "quote": "make the next step with the msba.",
+   "tags": [
+    "schools",
+    "MSBA",
+    "regionalization"
+   ]
+  },
+  {
+   "topic": "Earth Removal Permits annual review",
+   "resolution": "approved as read, unanimous",
+   "quote": "paula motion to approve permits as read, tom seconded, voted unanimously.",
+   "tags": [
+    "earth removal",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Review of Hurricane Irene EOC activities; estimated cost",
+   "resolution": "reviewed; no action recorded",
+   "quote": "review of hurricane irene eoc activities; estimated cost",
+   "tags": [
+    "emergency management",
+    "storm",
+    "budget"
+   ]
+  },
+  {
+   "topic": "FY11 close out and final year-end transfer request",
+   "resolution": "tabled to next week",
+   "quote": "review of fy11 close out; final year end transfer request - tabled to next week.",
+   "tags": [
+    "budget",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "BOS policies and procedures",
+   "resolution": "continued; may be pushed out a couple of weeks",
+   "quote": "kerry forwarded packet to the board which is a compilation of the bos policies.",
+   "tags": [
+    "policy",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "Minutes of 8/23/11 regular session",
+   "resolution": "reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 8/23/11 reviewed and signed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and action file",
+   "resolution": "no action (none)",
+   "quote": "action file issues - none",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "DPW building project (opening text cut off)",
+   "resolution": "reported; financials to follow",
+   "quote": "janice carrier, member of the dpw building committee will be documenting the financials on what's been expended",
+   "tags": [
+    "DPW building",
+    "change orders"
+   ]
+  },
+  {
+   "topic": "Planned production and affordable housing (SHI)",
+   "resolution": "reported",
+   "quote": "marion provided an update on the towns' subsidized housing inventory (shi) report.",
+   "tags": [
+    "housing",
+    "40B",
+    "SHI"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no action recorded",
+   "quote": "9. town manager updates",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Committee appointments, reappointments and resignations",
+   "resolution": "no action recorded",
+   "quote": "committee appointments/reappointments/resignations",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session none",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Mulpus Road and Townsend Harbor Road intersection information (attached)",
+   "where": "list",
+   "quote": "dave macdonald presented the attached information on the intersection of mulpus road and townsend harbor road."
+  },
+  {
+   "name": "Earth Removal Permit renewal requests and permit list (attached)",
+   "where": "list",
+   "quote": "kerry presented the attached requests for earth removal permit renewals."
+  },
+  {
+   "name": "Hurricane Irene EOC update (Chief Glenny, attached)",
+   "where": "list",
+   "quote": "chief glenny presented the attached update on the events leading"
+  },
+  {
+   "name": "Hurricane Irene memo to Town Manager from Chief Glenny",
+   "where": "text",
+   "quote": "to: kerry speidel, town manager from: chief scott f. glenny re: hurricane irene"
+  },
+  {
+   "name": "Storm preparation, operation and recap memo for August 28, 2011 (Fire and Police, dated August 30, 2011)",
+   "where": "text",
+   "quote": "storm preparation, operation and recap for august 28, 2011"
+  },
+  {
+   "name": "Lt. James P. Marino letter, August 10, 2011, on Townsend Harbor Road and Mulpus Road",
+   "where": "text",
+   "quote": "mr. macdonald's concerns are legitimate and if the resources are"
+  },
+  {
+   "name": "MassDOT email from Joseph Frawley, August 16, 2011",
+   "where": "text",
+   "quote": "thank you for your email regarding the intersection of townsend harbor road and mulpus road in lunenburg."
+  },
+  {
+   "name": "Mario Angelo letter to DPW Director Jack Rodriquenz",
+   "where": "text",
+   "quote": "submitted letter that was sent to dpw director jack rodriquenz."
+  },
+  {
+   "name": "Lunenburg School Regionalization Committee letter to Katherine Craven, MSBA, August 2011",
+   "where": "text",
+   "quote": "the lunenburg school regionalization committee met in public session on tuesday, august 23, 2011."
+  },
+  {
+   "name": "Drawing SK-A1 dated 8/26/11 (roof support beam, DPW additions/renovations)",
+   "where": "text",
+   "quote": "proceed with the work in accordance with sk-a1 dated 8/26/11 for the subject project."
+  },
+  {
+   "name": "BOS policies and procedures packet",
+   "where": "text",
+   "quote": "kerry forwarded packet to the board which is a compilation of the bos policies."
+  },
+  {
+   "name": "Work session minutes of March 8, 2007",
+   "where": "text",
+   "quote": "notes from the march 8, 2007 work session minutes"
+  }
+ ],
+ "tags": [
+  "traffic safety",
+  "parking",
+  "Townsend Harbor Road",
+  "earth removal",
+  "Hurricane Irene",
+  "emergency management",
+  "schools regionalization",
+  "MSBA",
+  "affordable housing",
+  "DPW building",
+  "board policies",
+  "minutes 2011"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dave macdonald presented the attached information"
+ },
+ "dropped_unquoted_by_field": {}
 }

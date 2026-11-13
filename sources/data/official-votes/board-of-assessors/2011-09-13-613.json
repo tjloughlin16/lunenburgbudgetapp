@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2011-09-13",
  "docid": "613",
@@ -12,13 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Not to grant FY11 Supplemental Real Estate abatement applications",
-   "outcome": "passed",
+   "motion": "Not to grant the FY11 supplemental real estate abatement applications (48, submitted August 29, 2011).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the board reviewed and voted not to grant the abatements."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision. Only one vote explicitly recorded; other approvals (exemption applications, utility values, sales report, AT&T settlement) used approval language but not explicit voting language.",
- "cost_usd": 0.0959965
+ "note": "OCR text from a scanned page (macOS Vision); some words garbled (e.g., 'torward', signature 'Lanise'). No motions, movers, seconds or vote tallies are recorded for approvals, adjournment, or the exemption and abatement decisions; those are recorded as decisions. The single vote entry is the 'voted not to grant' line, which has no motion wording or tally, so its outcome is 'not stated'. The Sales Report Cover Letter item is cut off mid-sentence. Jeff Ugalde, David and Jen are named only in discussion and are not listed as attendees. No public comment is recorded.",
+ "cost_usd": 0.00667572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Christopher Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present:, chairman, christopher comeau, board members, matthew papini, sr., lou franco, harald scheid regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew Papini, Sr.",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present:, chairman, christopher comeau, board members, matthew papini, sr., lou franco, harald scheid regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present:, chairman, christopher comeau, board members, matthew papini, sr., lou franco, harald scheid regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present:, chairman, christopher comeau, board members, matthew papini, sr., lou franco, harald scheid regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present:, chairman, christopher comeau, board members, matthew papini, sr., lou franco, harald scheid regional assessor and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board accepted and approved the Utility Net Book Personal Property Values as submitted by Boston Gas Co., New England Power Co., MA Electric Co., and Unitil/ Fitchburg Gas & Electric.",
+   "quote": "board accepted and approved the values as submitted by each company."
+  },
+  {
+   "decision": "Board accepted and approved the Sales Report Cover Letter (the Board agrees to review and approve full and fair cash valuations before submission to the Bureau of Local Assessment).",
+   "quote": "the board accepted and approved"
+  },
+  {
+   "decision": "Board agreed to support the AT&T settlement (waiving appeals since 2004 in exchange for adopting AT&T's depreciation schedule), and Chris Comeau signed the agreement.",
+   "quote": "board agreed and chris comeau signed the agreement"
+  },
+  {
+   "decision": "Board reviewed and approved the FY2011 Sewer Betterment abatement, not to affect the overlay, for the Lunenburg Village 40B project.",
+   "quote": "the board reviewed and approved the fiscal year 2011 sewer betterment abatement / not to affect the overlay."
+  },
+  {
+   "decision": "Majority of the Board used its discretion to continue a Veteran (V1) exemption for an applicant whose domicile is no longer in Lunenburg.",
+   "quote": "the majority of the board used their discretion in deciding that the vet after many years of receiving the exemption should continue to be granted the exemption at this time."
+  },
+  {
+   "decision": "Board approved 99 statutory exemption applications and denied one senior Clause 17D / ED application for having less than 5 years of ownership of the property in Lunenburg.",
+   "quote": "the board approved 99 applications for exemptions and denied one senior clause 17d / ed application"
+  },
+  {
+   "decision": "Chair requested that the Administrative Assistant continue to bring forward questions for discussion regarding eligibility requirements for any individuals.",
+   "quote": "chris requested that louise continue to bring torward questions for discussion regarding eligibility requirements for any individuals."
+  },
+  {
+   "decision": "Regional Assessor will mail notifications of the supplemental abatement denials.",
+   "quote": "regional assessor will mail notifications."
+  },
+  {
+   "decision": "Administrative Assistant will send out notice of the next meeting and agenda.",
+   "quote": "louise will send out notice of meeting and agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Village 40B sewer privilege fee abatement",
+   "what_was_recorded": "The Sewer Commission sought an administrative abatement of the full sewer privilege fee for the Lunenburg Village 40B project at 250 Whalom Road, with the lien kept in place.",
+   "figures_as_printed": [
+    "$519,618.15"
+   ],
+   "quote": "the sewer commission is seeking an administrative abatement in the amount of $519,618.15 (the full amount of sewer privilege fee) for the lunenburg village"
+  },
+  {
+   "topic": "State reimbursement for exemptions",
+   "what_was_recorded": "Regional Assessor explained the Town is reimbursed by the State for statutory exemptions; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "harald explained that the town does get reimbursed from the state for these exemptions."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, abatements, warrants, payroll, minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll & minutes",
+   "tags": [
+    "vouchers",
+    "warrants",
+    "payroll",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DLS forms: utility values and sales report cover letters",
+   "resolution": "accepted and approved",
+   "quote": "harald presented forms to the board required by the division of local services for review and approval:",
+   "tags": [
+    "DLS",
+    "utility values",
+    "sales report"
+   ]
+  },
+  {
+   "topic": "AT&T ATB settlement letter",
+   "resolution": "Board agreed; chair signed agreement",
+   "quote": "harald advised the board to support this. board agreed and chris comeau signed the agreement",
+   "tags": [
+    "AT&T",
+    "settlement",
+    "appeals"
+   ]
+  },
+  {
+   "topic": "Lunenburg Village sewer privilege fee abatement",
+   "resolution": "approved FY2011 sewer betterment abatement",
+   "quote": "lunenburg privilege assessment fee: we are in receipt of a memo from the sewer commission",
+   "tags": [
+    "sewer",
+    "privilege fee",
+    "40B",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Assessment finalization and tax rate setting",
+   "resolution": "no action",
+   "quote": "harald spoke on the process assessment finalization leading to tax rate setting.",
+   "tags": [
+    "tax rate",
+    "DOR certification"
+   ]
+  },
+  {
+   "topic": "Munis upgrade",
+   "resolution": "no action",
+   "quote": "louise spoke of an upgrade of munis which is schedule to take place in october.",
+   "tags": [
+    "Munis",
+    "software",
+    "CAMA"
+   ]
+  },
+  {
+   "topic": "Statutory exemption applications (100)",
+   "resolution": "99 approved, one denied",
+   "quote": "louise presented (100) statutory exemption applications to the board for review.",
+   "tags": [
+    "exemptions",
+    "veterans",
+    "clause 17D"
+   ]
+  },
+  {
+   "topic": "FY11 supplemental real estate abatement applications (48)",
+   "resolution": "not granted",
+   "quote": "harald presented to the board fy11 supplemental real estate abatement applications totally 48,",
+   "tags": [
+    "abatements",
+    "supplemental"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for October 4, 2011; adjourned 7:25pm",
+   "quote": "next meeting is slated to be held on tuesday, october 4, 2011 at 6:00pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Locally Assessed Utility Cover Letter",
+   "where": "list",
+   "quote": "(1) locally assessed utility cover letter this letter states that the boa has accepted the utility net"
+  },
+  {
+   "name": "Sales Report Cover Letter",
+   "where": "list",
+   "quote": "(2) sales report cover letter the letter states that the board agrees to review and approve all"
+  },
+  {
+   "name": "Letter regarding settlement of an ATB case (AT&T)",
+   "where": "text",
+   "quote": "harald spoke on a letter received regarding settlement of an atb case."
+  },
+  {
+   "name": "Memo from the Sewer Commission regarding the Lunenburg Village Privilege Fee",
+   "where": "text",
+   "quote": "we are in receipt of a memo from the sewer commission"
+  },
+  {
+   "name": "Sewer Assessment By Law",
+   "where": "text",
+   "quote": "and reviewing the sewer assessment by law,"
+  },
+  {
+   "name": "DOR revised (7/2011) Taxpayers Guide to Local Property Tax Exemptions",
+   "where": "text",
+   "quote": "has received the dor revised (7/2011) taxpayers guide to local property tax exemptions for all"
+  },
+  {
+   "name": "FY11 Supplemental Real Estate abatement applications (48, submitted August 29, 2011)",
+   "where": "text",
+   "quote": "harald presented to the board fy11 supplemental real estate abatement applications totally 48,"
+  },
+  {
+   "name": "Statutory Exemption applications (100)",
+   "where": "text",
+   "quote": "louise presented (100) statutory exemption applications to the board for review."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "exemptions",
+  "sewer privilege fee",
+  "AT&T settlement",
+  "DLS forms",
+  "Munis upgrade",
+  "tax rate setting",
+  "veterans exemption"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald presented forms to the board required by the division of local services for review and approval"
+ },
+ "dropped_unquoted_by_field": {}
 }

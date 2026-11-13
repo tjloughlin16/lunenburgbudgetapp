@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-10-16",
  "docid": "4825",
@@ -12,29 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Appoint Mike Nault to the Sewer Commission vacancy, to be held until the May 2013 election",
+   "motion": "Recommend approval, with the Sewer Commission, of the appointment of Mike Nault to the Sewer Commission vacancy, to be held until the May 2013 election.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to recommend approval, with the sewer commission, the appointment of mike nault to the vacancy on the sewer commission to be held until the next election in may 2013. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo moved to recommend approval, with the sewer commission, the appointment of mike nault to the vacancy on the sewer commission to be held until the next election in may 2013."
   },
   {
-   "motion": "Appoint Mike Nault to the Sewer Commission vacancy, to be held until the May 2013 election",
+   "motion": "Recommend approval, with the Board of Selectmen, of the appointment of Mike Nault to the Sewer Commission vacancy, to be held until the May 2013 election.",
    "moved_by": "Mr. MacDonald",
    "seconded_by": "Mr. Simeone",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. macdonald moved to recommend approval, with the board of selectmen, the appointment of mike nault to the vacancy on the sewer commission to be held until the next election in may 2013. mr. simeone seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. macdonald moved to recommend approval, with the board of selectmen, the appointment of mike nault to the vacancy on the sewer commission to be held until the next election in may 2013."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed unanimously",
+   "motion": "Sewer Commission adjourn its meeting at 7:15 PM.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed",
    "procedural": true,
    "quote": "sewer commission voted unanimously to adjourn their meeting at 7:15 pm."
   },
   {
-   "motion": "Approve the Power Purchase Agreement for EPG Solar",
+   "motion": "Approve the Power Purchase Agreement for EPG Solar.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
@@ -42,7 +44,7 @@
    "quote": "ms. bertram moved to approve the power purchase agreement for epg solar. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the regular Board of Selectmen meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed unanimously",
@@ -51,6 +53,330 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1104225
+ "note": "OCR text from macOS Vision, not a clean scan. The opening attendance line is garbled ('Town ill as scheduled', 'Town MEgGiN speeplestil'); the board roster is recovered from the surviving words. Board members are named but their roles are not printed. The Sewer Commission's adjournment vote is recorded by that body, not the BOS. No vote is recorded on approving the 10/2/12 and 10/9/12 minutes or on warrant #22-13. Policy items in the work session show directions and wording changes but no motions. Quotes were checked against the OCR text with line breaks collapsed.",
+ "cost_usd": 0.01207212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "ill as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "ill as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "ill as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "ill as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund"
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "ill as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Sewer Commission",
+   "status": "present",
+   "quote": "with carl luck, jay simeone, dave macdonald, & butch bilotta present."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Sewer Commission",
+   "status": "present",
+   "quote": "with carl luck, jay simeone, dave macdonald, & butch bilotta present."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Sewer Commission",
+   "status": "present",
+   "quote": "with carl luck, jay simeone, dave macdonald, & butch bilotta present."
+  },
+  {
+   "name": "Butch Bilotta",
+   "role": "Sewer Commission",
+   "status": "present",
+   "quote": "with carl luck, jay simeone, dave macdonald, & butch bilotta present."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "candidate for vacancy on the Sewer Commission",
+   "status": "present",
+   "quote": "mike nault, 56 brookview terrace, came before the joint meeting of the bos and the sewer commission to introduce himself"
+  },
+  {
+   "name": "Michael Borkowski",
+   "role": "Representative from EPG Solar",
+   "status": "present",
+   "quote": "michael borkowski, representative from epg solar was present to answer previous questions the bos had regarding the wording"
+  },
+  {
+   "name": "Michael Padula",
+   "status": "present",
+   "quote": "michael padula came before the bos to offer the town right of first refusal regarding the purchase of property he owns"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Director of the Teen Center",
+   "status": "present",
+   "quote": "michelle belleza, director of the teen center came forward and thanked the bos for painting the crosswalk on main st"
+  },
+  {
+   "name": "Ms. Speidel",
+   "status": "present",
+   "quote": "ms. speidel informed the bos that an adjustment had been made in the name on an application for a used car dealer license"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed the Town would not be interested in buying the Padula property on Leominster/Shirley Rd, and preferred a sale for commercial use that generates tax revenue.",
+   "quote": "members were in agreement that the town would not be interested in purchasing this property but rather have mr. padula sell it"
+  },
+  {
+   "decision": "Board will seek input from the Planning Board, Conservation Commission and other interested departments on a Right of First Refusal, once a Purchase & Sale Agreement is presented.",
+   "quote": "the board will solicit input once a purchase & sale agreement has been presented to the"
+  },
+  {
+   "decision": "Section 4.08 (Automatic Amusement): directions removed; Ms. Speidel to ask the Building Dept. and Board of Health why they must recommend on this application.",
+   "quote": "section 4.08 automatic amusement - directions were removed, ms. speidel will make inquiries with the building dept. and board of health"
+  },
+  {
+   "decision": "Section 4.09 (Base License): keep the base license definition and eliminate the rest; Town Counsel to be contacted regarding CORI requirement.",
+   "quote": "section 4.09 base license - keep base license definition and eliminate rest. town counsel will be contacted regarding"
+  },
+  {
+   "decision": "Section 4.11 (Billiard License): verbiage updated.",
+   "quote": "section 4.11 billiard license - verbiage was updated."
+  },
+  {
+   "decision": "Section 4.12 (Class 1 & 2 Licenses): Ms. Speidel to check with the Selectmen's Administrative Assistant on abutter notification procedure.",
+   "quote": "section 4.12 class 1 & 2 licenses - ms. speidel will check with selectmen's administrative assistant regarding abutter"
+  },
+  {
+   "decision": "Section 4.13 (Class 3 License): change wording to refer to the Licensing Authority; bond requirements for property cleanup to be researched.",
+   "quote": "change \"upon favorable decision by the board of selectmen\" to \"upon favorable decision by the licensing authority\"."
+  },
+  {
+   "decision": "Section 4.15 (Sunday License): Blue Laws to be reviewed.",
+   "quote": "section 4.15 sunday license - blue laws will be reviewed."
+  },
+  {
+   "decision": "Section 4.16 (Taxicab License): change Board of Selectmen to Licensing Authority.",
+   "quote": "section 4.16 taxicab license -change board of selectmen to licensing authority."
+  },
+  {
+   "decision": "Section 4.17 (Limousine): eliminate Licensing of Limousine Drivers items 1, 2 and 3; move item 4 to General Rules of Operation as item 11, with MIIA insurance requirements to be researched.",
+   "quote": "under licensing of limousine drivers move #4 to general rules of operation to become #11 (research miia on insurance"
+  },
+  {
+   "decision": "Section 4.18 (Gasoline Storage): keep the spelling of \"Inflammables\"; check with Fire Department on bond issues.",
+   "quote": "spelling of \"inflammables\" to remain. check with fire department in regards to bond issues."
+  },
+  {
+   "decision": "After discussion, the BOS was satisfied with the current language in the EPG Solar agreements (solar facility size wording).",
+   "quote": "after discussion the bos were satisfied with the current language in the agreements."
+  },
+  {
+   "decision": "No action on Mass PV1 until more information is available on changes to its proposals.",
+   "quote": "no action taken regarding mass pv1 until more information is available regarding changes in their proposals."
+  },
+  {
+   "decision": "The previously approved Used Car Dealer License application was re-signed with the name changed to Double Down Sales Inc.",
+   "quote": "the bos re-signed the previously approved application with the name change to double down sales inc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant #22-13",
+   "what_was_recorded": "Warrant #22-13 dated 10/16/12 is listed under Minutes/Warrants/Action File Issues; no vote on it is recorded.",
+   "figures_as_printed": [
+    "$549,929.34"
+   ],
+   "quote": "warrants: 10/16/12 #22-13 $549,929.34"
+  },
+  {
+   "topic": "Limousine license fee (Section 4.17)",
+   "what_was_recorded": "Policy change to remove the $25 limousine fee.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "section 4.17 limousine - remove $25 fee."
+  },
+  {
+   "topic": "EPG Solar Power Purchase Agreement and PILOT Agreement",
+   "what_was_recorded": "Board reviewed the Power Purchase Agreement and PILOT Agreement for EPG Solar; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "review power purchase agreement and pilot agreement for epg solar and/or mass pv1"
+  },
+  {
+   "topic": "Padula property tax revenue",
+   "what_was_recorded": "Members said a commercial sale of the Padula property would generate tax revenue for the Town; no figure given.",
+   "figures_as_printed": [],
+   "quote": "which would generate tax revenue for the town"
+  },
+  {
+   "topic": "Bond requirements (Sections 4.13 and 4.18)",
+   "what_was_recorded": "Bond requirements for property cleanup to be researched; bond issues to be checked with Fire Department. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "bond requirements for property cleanup will be researched."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michael Padula",
+   "topic": "Right of First Refusal on his Leominster/Shirley Rd property",
+   "quote": "michael padula came before the bos to offer the town right of first refusal regarding the purchase of property he owns"
+  },
+  {
+   "speaker": "Michelle Belleza",
+   "stated_role": "Director of the Teen Center",
+   "topic": "thanks for crosswalk painting on Main St",
+   "quote": "michelle belleza, director of the teen center came forward and thanked the bos for painting the crosswalk on main st"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; Board to seek input once a Purchase & Sale Agreement is presented",
+   "quote": "michael padula came before the bos to offer the town right of first refusal regarding the purchase of property he owns",
+   "tags": [
+    "right of first refusal",
+    "property",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Joint Session with Sewer Commission: interview and appointment of Mike Nault",
+   "resolution": "appointment recommended by Sewer Commission and BOS (two votes)",
+   "quote": "mike nault, 56 brookview terrace, came before the joint meeting of the bos and the sewer commission to introduce himself",
+   "tags": [
+    "sewer commission",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Work Session: continue review of BOS Policies & Procedures (Sections 4.08-4.18)",
+   "resolution": "continued review; wording changes and follow-up items noted",
+   "quote": "continue review of bos policies & procedures - the bos continued their review and discussed the",
+   "tags": [
+    "licensing",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Current Business: EPG Solar Power Purchase Agreement and PILOT; Mass PV1",
+   "resolution": "Power Purchase Agreement approved 5-0; no action on Mass PV1",
+   "quote": "ms. bertram moved to approve the power purchase agreement for epg solar. mr. sund seconded.",
+   "tags": [
+    "solar",
+    "power purchase agreement",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports: Used Car Dealer License name change",
+   "resolution": "application re-signed with the new name Double Down Sales Inc.",
+   "quote": "the bos re-signed the previously approved application with the name change to double down sales inc.",
+   "tags": [
+    "license",
+    "used car dealer"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "minutes of 10/2/12 and 10/9/12 and warrant #22-13 listed; no vote recorded",
+   "quote": "minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned regular session at 8:30 PM, unanimous",
+   "quote": "the board voted unanimously to adjourn regular session at 8:30pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Power Purchase Agreement for EPG Solar",
+   "where": "text",
+   "quote": "review power purchase agreement and pilot agreement for epg solar and/or mass pv1"
+  },
+  {
+   "name": "PILOT Agreement for EPG Solar",
+   "where": "text",
+   "quote": "review power purchase agreement and pilot agreement for epg solar and/or mass pv1"
+  },
+  {
+   "name": "BOS Policies & Procedures (Sections 4.08-4.18)",
+   "where": "text",
+   "quote": "continue review of bos policies & procedures - the bos continued their review and discussed the"
+  },
+  {
+   "name": "Used Car Dealer License application (Double Down Inc. / Double Down Sales Inc.)",
+   "where": "text",
+   "quote": "an adjustment had been made in the name on an application for a used car dealer license"
+  },
+  {
+   "name": "Warrant #22-13 dated 10/16/12",
+   "where": "text",
+   "quote": "warrants: 10/16/12 #22-13 $549,929.34"
+  },
+  {
+   "name": "Minutes of 10/2/12 and 10/9/12",
+   "where": "text",
+   "quote": "minutes: 10/2/12 10/9/12"
+  },
+  {
+   "name": "Mass PV1 proposals",
+   "where": "text",
+   "quote": "no action taken regarding mass pv1 until more information is available regarding changes in their proposals."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Sewer Commission",
+  "appointment",
+  "solar",
+  "power purchase agreement",
+  "right of first refusal",
+  "licensing policies",
+  "used car dealer license",
+  "warrants",
+  "minutes",
+  "crosswalk"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

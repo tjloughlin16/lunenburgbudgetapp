@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-11-08",
  "docid": "5529",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of October 3, 2016",
+   "motion": "Approve the minutes of 10/3/16.",
    "moved_by": "Joan Pease",
    "seconded_by": "John Reynolds",
    "outcome": "passed unanimously",
@@ -20,23 +20,287 @@
    "quote": "joan pease made motion to approve 10/3/16 minutes, john reynolds seconded, passed unanimously"
   },
   {
-   "motion": "approve the minutes of October 11, 2016",
-   "moved_by": "John Reynolds",
+   "motion": "Approve the minutes of 10/11/16.",
+   "moved_by": "John",
    "seconded_by": "Joan Pease",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "john made motion to approve 10/11/16 minutes, joan pease seconded-passed unanimously"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Joe Anderson",
    "seconded_by": "John Reynolds",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "joe anderson made the motion to adjourn, john reynolds seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-read document (macOS Vision). Three votes recorded: two to approve prior minutes (both unanimous) and one to adjourn (unanimous).",
- "cost_usd": 0.0834125
+ "note": "OCR text from a scanned page; the signature is truncated (\"Joe Anders\") and a received stamp (DEC 05 2016) is present. Votes on minutes and adjournment are recorded only as \"unanimous\"/\"passed unanimously\" with no tally. \"Jack\" appears without a surname or role. The text lists no dollar amounts; the only figure is \".3 hours\" on the KP Law invoice. No public comment section is printed.",
+ "cost_usd": 0.00524032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: carl luck, chair, john reynolds, vice-chair, joe anderson, clerk, joan pease and rich st. cyr,"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendance: carl luck, chair, john reynolds, vice-chair, joe anderson, clerk, joan pease and rich st. cyr,"
+  },
+  {
+   "name": "Joe Anderson",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: carl luck, chair, john reynolds, vice-chair, joe anderson, clerk, joan pease and rich st. cyr,"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendance: carl luck, chair, john reynolds, vice-chair, joe anderson, clerk, joan pease and rich st. cyr,"
+  },
+  {
+   "name": "Rich St. Cyr",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendance: carl luck, chair, john reynolds, vice-chair, joe anderson, clerk, joan pease and rich st. cyr,"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "absent",
+   "quote": "absent: barb lefebvre, business manager"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "380 Electric",
+   "status": "absent",
+   "quote": "dan proctor, 380 electric - dan advised in advance that he would be unable to attend this meeting."
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "not stated",
+   "quote": "jack to confirm how many grease traps at bangkok hill."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Restaurants will measure grease in inches and send it to the Commission, which will do the calculations (grease trap process; new work instruction discussed).",
+   "quote": "the restaurants will be responsible for getting the amount of grease in inches, and sending it to us, and we will do the calculations."
+  },
+  {
+   "decision": "Barb to send letters to each restaurant listed as 'no schematic' asking for a copy of their schematics.",
+   "quote": "barb to send out letters to each restaurant listed as \"no schematic\" to inform them that we need a copy of their schematics."
+  },
+  {
+   "decision": "Jack to confirm the number of grease traps at Bangkok Hill.",
+   "quote": "jack to confirm how many grease traps at bangkok hill."
+  },
+  {
+   "decision": "Jack to visit restaurants listed with no floor drains and those whose schematics show mop sinks going directly to the sewer, to verify or dispute the information.",
+   "quote": "jack to visit restaurants listed with no floor drains and visit restaurants that the"
+  },
+  {
+   "decision": "Carl to seek legal advice on what action, if any, can be taken against restaurants with outstanding fines.",
+   "quote": "carl is going to seek legal advice to determine what action, if any, we can take on restaurants with outstanding fines"
+  },
+  {
+   "decision": "No formal decision on the SRF betterments and the Rennie St abatement request; more information to be gathered.",
+   "quote": "no formal decision made while more information gathered."
+  },
+  {
+   "decision": "Carl to talk to Jack about pump station reports.",
+   "quote": "carl will talk to jack about pump station reports."
+  },
+  {
+   "decision": "Carl to contact town counsel on how to collect the money owed from Highfield Village developers related to the 361 Mass Ave inquiry.",
+   "quote": "carl will contact town counsel to determine how to get our owed money from highfield village developers."
+  },
+  {
+   "decision": "Barb to redistribute the Wright Pierce communications on the I&I report due to the state next year.",
+   "quote": "barb to redistribute the communications from wright pierce regarding the i&l report due to the state next year."
+  },
+  {
+   "decision": "Barb to confirm the .3 hours on the KP Law invoice.",
+   "quote": "barb to confirm the .3 hours on the invoice."
+  },
+  {
+   "decision": "Carl asked Joan to tell the Woodlands that the first step would be getting into the sewer serviceable area.",
+   "quote": "carl asked that joan tell them the first step would get into the sewer serviceable area."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap fines",
+   "what_was_recorded": "Restaurants with outstanding fines are to be reviewed by legal counsel for possible action; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "carl is going to seek legal advice to determine what action, if any, we can take on restaurants with outstanding fines"
+  },
+  {
+   "topic": "SRF betterments and abatement",
+   "what_was_recorded": "SRF betterments recently recorded at Registry and an abatement request for 2 Rennie St were discussed; no decision made.",
+   "figures_as_printed": [],
+   "quote": "commission discussed srf betterments recently recorded at registry and the abatement request received for 2 rennie st."
+  },
+  {
+   "topic": "Owed money from Highfield Village developers",
+   "what_was_recorded": "Commission sought to recover money owed from the Highfield Village developers via town counsel; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "carl will contact town counsel to determine how to get our owed money from highfield village developers."
+  },
+  {
+   "topic": "KP Law invoice",
+   "what_was_recorded": "Commission had one question on a KP Law invoice concerning .3 hours; Barb to confirm. No dollar figure printed.",
+   "figures_as_printed": [
+    ".3 hours"
+   ],
+   "quote": "commission had one question on kp law invoice. barb to confirm the .3 hours on the invoice."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments: A&D Crossroads hearing and Dan Proctor",
+   "resolution": "no action; no one attended for the appointments",
+   "quote": "a&d did not attend the meeting or send any designee."
+  },
+  {
+   "topic": "Grease traps",
+   "resolution": "discussed; action items assigned to Barb, Jack and Carl",
+   "tags": [
+    "grease traps",
+    "FOG",
+    "restaurants",
+    "inspections"
+   ],
+   "quote": "ugly omelet received our letter; they have 30 days to respond to the letter (11/30/16)."
+  },
+  {
+   "topic": "SRF betterments and 2 Rennie St abatement",
+   "resolution": "discussed; no formal decision, more information gathered",
+   "tags": [
+    "SRF",
+    "abatement",
+    "betterments"
+   ],
+   "quote": "no formal decision made while more information gathered."
+  },
+  {
+   "topic": "Pump station reports",
+   "resolution": "action assigned to Carl",
+   "tags": [
+    "pump stations"
+   ],
+   "quote": "carl will talk to jack about pump station reports."
+  },
+  {
+   "topic": "361 Mass Ave inquiry and Highfield Village money owed",
+   "resolution": "action assigned to Carl (town counsel)",
+   "tags": [
+    "Highfield Village",
+    "receivables"
+   ],
+   "quote": "carl will contact town counsel to determine how to get our owed money from highfield village developers."
+  },
+  {
+   "topic": "Roles and responsibilities",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "roles",
+    "bidding",
+    "procurement"
+   ],
+   "quote": "commission discussed project process, who does what, bidding, quotes etc."
+  },
+  {
+   "topic": "FY 17/18 goals",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "goals",
+    "budget year"
+   ],
+   "quote": "commission discussed fy 17/18 goals:"
+  },
+  {
+   "topic": "Minutes, invoices and action file",
+   "resolution": "approved minutes of 10/3/16 and 10/11/16; KP Law invoice question referred to Barb",
+   "tags": [
+    "minutes",
+    "invoices",
+    "legal"
+   ],
+   "quote": "minutes of 10/3/16 joan pease made motion to approve 10/3/16 minutes"
+  },
+  {
+   "topic": "Other business: Woodlands sewer",
+   "resolution": "no action; Joan to relay first step to residents",
+   "tags": [
+    "Woodlands",
+    "sewer service"
+   ],
+   "quote": "joan asked about the possibility of getting sewer at the woodlands"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting was adjourned at 8:30pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter to Ugly Omelet (grease trap response, due 11/30/16)",
+   "where": "text",
+   "quote": "ugly omelet received our letter; they have 30 days to respond to the letter (11/30/16)."
+  },
+  {
+   "name": "Grease Trap Inspection Report Forms (new)",
+   "where": "text",
+   "quote": "creating a new work instruction to have the new grease trap inspection report forms to show how to measure the"
+  },
+  {
+   "name": "KP Law invoice",
+   "where": "text",
+   "quote": "commission had one question on kp law invoice. barb to confirm the .3 hours on the invoice."
+  },
+  {
+   "name": "Wright Pierce communications regarding the I&I report",
+   "where": "text",
+   "quote": "barb to redistribute the communications from wright pierce regarding the i&l report due to the state next year."
+  },
+  {
+   "name": "Business Manager job description",
+   "where": "text",
+   "quote": "the question of barb's job description was raised and whether it can be updated by the commission."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "grease traps",
+  "FOG",
+  "restaurants",
+  "SRF betterments",
+  "abatement",
+  "Highfield Village",
+  "legal counsel",
+  "FY 17/18 goals",
+  "minutes approval",
+  "Woodlands sewer"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

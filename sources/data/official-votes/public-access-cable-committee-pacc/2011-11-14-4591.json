@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2011-11-14",
  "docid": "4591",
@@ -12,6 +12,204 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe decisions and discussions (e.g., \"It was decided that it did not make sense to use the middle room for studio space\") but contain no formal motions, seconders, or recorded vote outcomes.",
- "cost_usd": 0.0804805
+ "note": "OCR text (macOS Vision) with stray characters and a stamp artifact (\"RECEIVET BY 14:202\"). No motions or votes are recorded anywhere in the text, including the adjournment, so no votes are listed. No public comment section appears. No dollar figures are printed. The minutes do not state a vote count or move any item to a vote.",
+ "cost_usd": 0.00389732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred cellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred cellin"
+  },
+  {
+   "name": "Fred Cellin",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred cellin"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, jo mclaughlin, john dextraze"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, jo mclaughlin, john dextraze"
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, jo mclaughlin, john dextraze"
+  },
+  {
+   "name": "Christian Kapstadt",
+   "role": "student videographer (as printed: 'a student')",
+   "status": "not stated",
+   "quote": "football game was videotaped by a student - christian kapstadt"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board decided it did not make sense to use the middle room at Brooks House for studio space at this time.",
+   "quote": "it was decided that it did not make sense to use the middle room for studio space at this time"
+  },
+  {
+   "decision": "Board agreed to explore Ernie's suggestion of a short infomercial on volunteering.",
+   "quote": "ernie suggested that we put together a short infomercial on volunteering. this will be explored."
+  },
+  {
+   "decision": "Jo and John assigned to put together a design to present at the January meeting for the art logo.",
+   "quote": "jo and john will put together a design to present at the jan. meeting"
+  },
+  {
+   "decision": "Jo assigned to meet with Peg (?) in accounting to determine what has been paid on Blackboard Connect.",
+   "quote": "jo will meet with peg (?) in accounting to determine what has been paid"
+  },
+  {
+   "decision": "Andrea directed to put a notice on the bulletin board scroll reminding people about Blackboard Connect and the e-alert sign up, and to include copies of the reminder in the ad in The Ledger.",
+   "quote": "have andrea put a notice on the bulletin board scroll reminding"
+  },
+  {
+   "decision": "Next meeting scheduled for December 5.",
+   "quote": "next meeting scheduled for dec. 5"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Repair costs for GL2 camera and Nexus system",
+   "what_was_recorded": "Repair costs for the GL2 camera and Nexus system were listed as to be determined; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "repair costs for gl2 camera and nexus system - tba"
+  },
+  {
+   "topic": "GL2 camera warranty",
+   "what_was_recorded": "The GL2 camera was broken by weather and may be under warranty; no cost figure printed.",
+   "figures_as_printed": [],
+   "quote": "the gl.2 camera was broken (due to weather conditions) and may be under warranty"
+  },
+  {
+   "topic": "Blackboard Connect payments",
+   "what_was_recorded": "Jo was to check with accounting on what has been paid for Blackboard Connect; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "jo will meet with peg (?) in accounting to determine what has been paid"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Homecoming Update",
+   "resolution": "reported; no action recorded",
+   "quote": "football game was videotaped by a student - christian kapstadt",
+   "tags": [
+    "homecoming",
+    "video footage",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Programming Update",
+   "resolution": "reported; see progress report",
+   "quote": "christmas programming (band/chorus) is likely",
+   "tags": [
+    "programming",
+    "Christmas"
+   ]
+  },
+  {
+   "topic": "Art Logo Update",
+   "resolution": "Jo and John to present design at January meeting",
+   "quote": "the deadline passed with o submissions",
+   "tags": [
+    "art logo"
+   ]
+  },
+  {
+   "topic": "Blackboard Connect Update",
+   "resolution": "assignments made; bulletin board notice and newspaper ad reminder",
+   "quote": "jo will meet with peg (?) in accounting to determine what has been paid",
+   "tags": [
+    "Blackboard Connect",
+    "e-alert",
+    "outreach",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Acid Rain Documentary",
+   "resolution": "no action; not yet previewed",
+   "quote": "acid rain documentary - still not previewed",
+   "tags": [
+    "documentary"
+   ]
+  },
+  {
+   "topic": "Repair costs for GL2 camera and Nexus system",
+   "resolution": "TBA; no action recorded",
+   "quote": "repair costs for gl2 camera and nexus system - tba",
+   "tags": [
+    "equipment repair",
+    "warranty"
+   ]
+  },
+  {
+   "topic": "Update on Brooks House space",
+   "resolution": "decided not to use middle room as studio space for now",
+   "quote": "it was decided that it did not make sense to use the middle room for studio space at this time",
+   "tags": [
+    "Brooks House",
+    "studio space"
+   ]
+  },
+  {
+   "topic": "Volunteer videographers",
+   "resolution": "infomercial on volunteering to be explored",
+   "quote": "ernie suggested that we put together a short infomercial on volunteering. this will be explored.",
+   "tags": [
+    "volunteers",
+    "outreach"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Programming progress report (as printed: 'progress report')",
+   "where": "text",
+   "quote": "programming update see progress report"
+  },
+  {
+   "name": "Acid Rain Documentary",
+   "where": "text",
+   "quote": "acid rain documentary - still not previewed"
+  }
+ ],
+ "tags": [
+  "public access",
+  "cable committee",
+  "homecoming",
+  "programming",
+  "art logo",
+  "Blackboard Connect",
+  "equipment repair",
+  "Brooks House",
+  "volunteers",
+  "documentary"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

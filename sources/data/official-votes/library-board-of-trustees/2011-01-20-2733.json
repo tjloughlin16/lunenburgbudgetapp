@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2011-01-20",
  "docid": "2733",
@@ -12,23 +12,176 @@
  },
  "votes": [
   {
-   "motion": "Approve December 16, 2010 minutes",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve the December 16, 2010 minutes.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": true,
    "quote": "december 16, 2010 minutes approved unanimously."
   },
   {
-   "motion": "Accept FY12 Budget Revised Line Items",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Accept the FY12 Budget Revised Line Items.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "motion made and passed unanimously to accept fy12 budget revised line items."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0849695
+ "note": "Text is extracted from a single page with some typos and split words (e.g., \"dontatin\", \"FY2011total\", \"$63, 907\"), copied as printed. The minutes record no mover or seconder for any motion. The adjournment at 7:45 p.m. is recorded without a motion or vote, so it is not listed as a vote. The Director's Report is referred to but its contents are not included in these minutes.",
+ "cost_usd": 0.00354232,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jeanne raboin secretary trustees of lunenburg public library"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Amy will present the FY12 budget at the Board of Selectmen meeting in the format requested by Kerry Speidel.",
+   "quote": "amy will present the fy12 budget in the format requested by kerry speidel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2011 total budget position",
+   "what_was_recorded": "As of December 2010 the FY2011 total budget was reported to be under a stated amount.",
+   "quote": "as of december 2010, fy2011total budget under $63, 907.",
+   "figures_as_printed": [
+    "$63, 907"
+   ]
+  },
+  {
+   "topic": "Estate gift to Endowment Fund",
+   "what_was_recorded": "A donation from the estate of Vida Waller was placed into the Endowment Fund.",
+   "quote": "$5,000 dontatin from the estate of vida waller was placed into the endowment fund",
+   "figures_as_printed": [
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Old Mutual Fund account earnings",
+   "what_was_recorded": "The Old Mutual Fund account showed an increase, with total earnings for last calendar year reported.",
+   "quote": "old mutual fund account has shown an increase, total earnings for last calendar year: $784.09",
+   "figures_as_printed": [
+    "$784.09"
+   ]
+  },
+  {
+   "topic": "FY12 budget highlights from Board of Selectmen meeting",
+   "what_was_recorded": "Highlights of the FY12 budget included a 3% utilities increase, a 5% increase for Clerical Union employees, and a 3% increase for SalAdmin employees.",
+   "quote": "3% utilities increase; 5% increase for clerical union employees, saladmin employees 3%.",
+   "figures_as_printed": [
+    "3%",
+    "5%",
+    "3%"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "New Business: minutes and Director's Report",
+   "resolution": "December 16, 2010 minutes approved unanimously; Director's Report noted",
+   "quote": "december 16, 2010 minutes approved unanimously.",
+   "tags": [
+    "minutes",
+    "director's report",
+    "budget",
+    "circulation",
+    "programs",
+    "friends",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen meeting, January 18, 2011 (FY12 budget)",
+   "resolution": "FY12 Budget Revised Line Items accepted unanimously",
+   "quote": "motion made and passed unanimously to accept fy12 budget revised line items.",
+   "tags": [
+    "FY12 budget",
+    "selectmen",
+    "salaries",
+    "utilities"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report (please see report for more detail)"
+  }
+ ],
+ "tags": [
+  "library budget",
+  "FY11",
+  "FY12 budget",
+  "director's report",
+  "endowment",
+  "friends of the library",
+  "trustees",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

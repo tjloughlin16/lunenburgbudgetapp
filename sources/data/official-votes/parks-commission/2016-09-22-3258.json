@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2016-09-22",
  "docid": "3258",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of August 18, 2016",
+   "motion": "Approve the minutes of August 18, 2016.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
@@ -20,31 +20,244 @@
    "quote": "motion to approve minutes of august 18, 2016 made by karin menard, seconded by dennis mannone- approved 3-0"
   },
   {
-   "motion": "Allow Leominster Lacrosse to use the turf field for 8 Sundays in 2017 at $7,500 for the season, with field attendant costs of $25-$50 per hour and police detail as Leominster Lacrosse's responsibility",
+   "motion": "Allow Leominster Lacrosse to use the turf field for 8 Sundays at a rate of $7500 for the season, with a field attendant and police detail at their expense.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard, seconded by dennis mannone - to allow leominster lacrosse to use the turf field for 8 sundays at a rate of $7500 for the season. additional expense for field attendant (set up and clean up) which is estimated at $25-$50 per hour as well as police detail at the discretion of lunenburg pd to be the responsibility of leominster lacrosse. passed 3-0"
+   "quote": "motion made by karin menard, seconded by dennis mannone - to allow leominster lacrosse to use the turf field for 8 sundays at a rate of $7500 for the season."
   },
   {
-   "motion": "Allow Triple Play Fall Baseball to use Marshall Park at a rate of $25 per hour, requiring insurance certificate and schedule coordination with Town office",
+   "motion": "Allow Triple Play Fall Baseball to use Marshall Park at a rate of $25 per hour, with an insurance certificate provided before first practice.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard, seconded by dennis mannone to allow triple play fall baseball to use marshall park at a rate of $25 per hour: insurance certificate must be provided prior to first practice. schedule needs to be passed through pm to cross reference availability. passed 3-0."
+   "quote": "motion made by karin menard, seconded by dennis mannone to allow triple play fall baseball to use marshall park at a rate of $25 per hour"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:31.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion for adjournment made at 8:31 by karin menard, seconded by pete mccauliff. passed 3-0:"
+   "quote": "motion for adjournment made at 8:31 by karin menard, seconded by pete mccauliff. passed 3-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10913149999999999
+ "note": "OCR text from a scanned page (macOS Vision). The next-meeting line reads \"October 20, 2017\" in a 2016 meeting, likely a typo; the received stamp reads NOV 23 2016. \"Iriple\" in item 5a is an OCR error for \"Triple\". Votes are recorded as printed; the minutes give no vote on the policy discussion, which was continued.",
+ "cost_usd": 0.00486062,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "dennis mannone, chair karin menard, clerk"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dennis mannone, chair karin menard, clerk"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendance - pete mccauliff, dennis mannone, karin menard, jack rodriquenz."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendance - pete mccauliff, dennis mannone, karin menard, jack rodriquenz."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack to investigate which organization used Fitzgerald Field for fall ball and follow up with Steve Chow regarding Fall Little League.",
+   "quote": "jack will investigate to see which organization they are with. he will also follow up with steve chow regarding fall little league."
+  },
+  {
+   "decision": "Karin to photograph playground equipment and email the photographs to Jack, to be forwarded to someone with expertise for next steps.",
+   "quote": "karin will photograph and email photographs to jack."
+  },
+  {
+   "decision": "Jack to research and provide an analysis of field maintenance costs at a future meeting.",
+   "quote": "jack said he would research and get the information to us at a future meeting."
+  },
+  {
+   "decision": "Karin to request participation numbers from Steve Chow, Lunenburg Little League President.",
+   "quote": "karin will request more information from steve chow, lunenburg little league president, for their participation numbers"
+  },
+  {
+   "decision": "Karin to create a policy and application document for review at the next meeting.",
+   "quote": "karin will take the information we discussed and create a policy and application document that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Leominster Lacrosse turf field rental",
+   "what_was_recorded": "The board set a season rate for Leominster Lacrosse's turf use, with the field attendant and police detail costs placed on the lacrosse group.",
+   "figures_as_printed": [
+    "$7500",
+    "$25-$50"
+   ],
+   "quote": "to allow leominster lacrosse to use the turf field for 8 sundays at a rate of $7500 for the season."
+  },
+  {
+   "topic": "Field attendant cost for Leominster Lacrosse",
+   "what_was_recorded": "The field attendant for set up and clean up is estimated at an hourly rate, to be paid by Leominster Lacrosse.",
+   "figures_as_printed": [
+    "$25-$50"
+   ],
+   "quote": "additional expense for field attendant (set up and clean up) which is estimated at $25-$50 per hour"
+  },
+  {
+   "topic": "Triple Play Fall Baseball Marshall Park rental",
+   "what_was_recorded": "The board set an hourly rate for Triple Play's use of Marshall Park.",
+   "figures_as_printed": [
+    "$25 per hour"
+   ],
+   "quote": "to use marshall park at a rate of $25 per hour"
+  },
+  {
+   "topic": "Field maintenance costs analysis",
+   "what_was_recorded": "Dennis asked Jack for an analysis of field maintenance costs to understand yearly upkeep and fees; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "dennis asked jack if he could provide an analysis of the costs to maintain the fields"
+  },
+  {
+   "topic": "Lunenburg Little League fees",
+   "what_was_recorded": "The board noted the current fee charged to Lunenburg Little League and will seek participation numbers to evaluate fees.",
+   "figures_as_printed": [
+    "$10 per player per season"
+   ],
+   "quote": "currently we are charging lunenburg little league $10 per player per season."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "call to order - 7:01 attendance - pete mccauliff, dennis mannone, karin menard, jack rodriquenz."
+  },
+  {
+   "topic": "Approval of August 18, 2016 minutes",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to approve minutes of august 18, 2016 made by karin menard, seconded by dennis mannone- approved 3-0"
+  },
+  {
+   "topic": "DPW Director / Town Manager updates",
+   "resolution": "follow-up assigned",
+   "tags": [
+    "Fitzgerald Field",
+    "playground safety"
+   ],
+   "quote": "dpw director / town manager updates - fitzgerald field has been used by a team for fall ball."
+  },
+  {
+   "topic": "Turf complex discussion and update",
+   "resolution": "no action",
+   "tags": [
+    "turf field",
+    "RAD",
+    "demolition"
+   ],
+   "quote": "pete updated that rad will be starting demolition on tuesday."
+  },
+  {
+   "topic": "Leominster Lacrosse request for turf use",
+   "resolution": "approved 3-0",
+   "tags": [
+    "turf field",
+    "lacrosse",
+    "field rental"
+   ],
+   "quote": "leominster lacrosse responded with email with more details about their request to use the turf"
+  },
+  {
+   "topic": "Triple Play request for Marshall Park",
+   "resolution": "approved 3-0",
+   "tags": [
+    "Marshall Park",
+    "baseball",
+    "field rental"
+   ],
+   "quote": "request from local triple play team for marshall park usage"
+  },
+  {
+   "topic": "Policy, fees, and field scheduling",
+   "resolution": "continued",
+   "tags": [
+    "policy",
+    "fees",
+    "field request form"
+   ],
+   "quote": "policy/procedure discussion, fees, and scheduling of fields, courts and beaches under the parks commission umbrella."
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "a) no unanticipated items b) no correspondence, announcements and public comment"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "noted",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "next meeting: october 20, 2017."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed 3-0",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion for adjournment made at 8:31 by karin menard, seconded by pete mccauliff. passed 3-0"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Leominster Lacrosse email (details of 2017 spring turf request)",
+   "where": "text",
+   "quote": "leominster lacrosse responded with email with more details about their request to use the turf"
+  },
+  {
+   "name": "Email of 8/18 sent to Karin Menard from Leominster Lacrosse President",
+   "where": "text",
+   "quote": "per email of 8/18 that was sent to karin, larry cordio, leominster lacrosse president said they are requesting"
+  }
+ ],
+ "tags": [
+  "Parks Commission",
+  "turf field",
+  "field rentals",
+  "fees",
+  "Leominster Lacrosse",
+  "Triple Play",
+  "Marshall Park",
+  "Fitzgerald Field",
+  "playground safety",
+  "Little League"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

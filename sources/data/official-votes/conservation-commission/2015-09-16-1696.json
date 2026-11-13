@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-09-16",
  "docid": "1696",
@@ -12,23 +12,287 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from 8/19 and 9/2 meetings",
+   "motion": "Approve the minutes of 8/19 and 9/2.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "Approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval ~ 8/19 & 9/2 approved"
   },
   {
-   "motion": "approve the Order of Conditions for the lake management plan",
+   "motion": "Approve the draft Order of Conditions (OoG) for the LSIC Lake Management Plan, with the removal of the reference to shallow wells running dry.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion was made fo approve the oog, seconded and unanimously approved"
+   "quote": "the motion was made fo approve the oog, seconded and unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of handwritten/photocopied minutes. Two votes extracted: the procedural minutes approval and the substantive vote on lake management plan conditions (OoG, likely OCR for OoC - Order of Conditions). Hearing determinations marked \"Unanimous\" and \"Approved\" lack explicit motion language and are not included. No mover or seconder names appear in the minutes for either vote.",
- "cost_usd": 0.1234065
+ "note": "OCR text of a scan: garbled in places (e.g., 'fo', 'OoG'/'OoC', stray 'dr ronning' artifact). No attendance list, no board member names, no movers or seconders, and no vote counts. The 7:00 PM hearing and the 7:30 PM hearing show only the words 'Unanimous' and 'Approved' with no motion text, so they are not recorded as votes; they appear as topics. The 'Approved' entries for 380 Sunset Lane and 175 Northfield Road are recorded as decisions for the same reason. Page 2 has no heading or date, and it is placed last in the record. The meeting date comes from the request, not the text.",
+ "cost_usd": 0.0068628199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Caroline Griffis",
+   "role": "applicant (Request for Determination of Applicability, 31 Spring Street)",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by caroline griffis."
+  },
+  {
+   "name": "Matthew Olsen",
+   "role": "applicant, representing Ashoryn LLC",
+   "status": "not stated",
+   "quote": "abbreviated notice of resource area delineation filed by matthew olsen of ashoryn llc (charles caron of caron environmental consulting)"
+  },
+  {
+   "name": "Charles Caron",
+   "role": "representing Caron Environmental Consulting",
+   "status": "not stated",
+   "quote": "abbreviated notice of resource area delineation filed by matthew olsen of ashoryn llc (charles caron of caron environmental consulting)"
+  },
+  {
+   "name": "Jan",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jan pointed out that there were several calls with complaints of issues with wells."
+  },
+  {
+   "name": "Chair",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "the chair assured the lcc members, and informed the lsic, that the lcc could request this 3id party/peer review funding"
+  },
+  {
+   "name": "LSIC President",
+   "role": "LSIC President",
+   "status": "not stated",
+   "quote": "this fact was acknowledged by the lsic president who expressed concern about the increasing costs of the program"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board approved Chuck Caron's plan for the Abbreviated Notice of Resource Area Delineation at 175 Northfield Road (no motion recorded).",
+   "quote": "matt approved chuck caron's plan."
+  },
+  {
+   "decision": "Updated plans for 380 Sunset Lane were reviewed and approved (no motion recorded).",
+   "quote": "review updated plans for 380 sunset lane ~ reviewed updated plans approved"
+  },
+  {
+   "decision": "It was agreed that third-party funding did not have to be specifically mentioned in the Order of Conditions, preserving the right to require it later; the LCC may request it from the Applicant at any point.",
+   "quote": "based on this, it was agreed that 3rd party funding did not have to be specifically mentioned in the ooc at this"
+  },
+  {
+   "decision": "Conflict of interest forms are to be filed by abutters to the lakes in town; other regulation and by-law changes to be discussed at future meetings.",
+   "quote": "conflict of interest forms should be filed by abutter's to the lakes in town. other changes will be"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Third-party / peer review funding for the LSIC Lake Management Plan",
+   "what_was_recorded": "The LCC could request third-party or peer review funding from the Applicant at any point; the funding did not have to be named in the Order of Conditions.",
+   "figures_as_printed": [],
+   "quote": "that the lcc could request this 3id party/peer review funding from the applicant at any point in the process going"
+  },
+  {
+   "topic": "Rising program costs",
+   "what_was_recorded": "The LSIC President expressed concern about the increasing costs of the program and its requirements.",
+   "figures_as_printed": [],
+   "quote": "expressed concern about the increasing costs of the program and requirements."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Abutters (unnamed)",
+   "stated_role": "abutter",
+   "topic": "Vernal pool and house locations, 175 Northfield Road delineation",
+   "quote": "abutter's questioned whether there was a vernal pool on the property and where will houses be."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment hearings 22222",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Hearing: Request for Determination of Applicability, 31 Spring Street (Caroline Griffis)",
+   "resolution": "recorded as Unanimous; no motion printed",
+   "quote": "7:00 pm ~ 31 spring street ~pursuant to mgl ch s s as as amended and the town of lunenburg wetlands protection and municipal",
+   "tags": [
+    "hearing",
+    "tree removal",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Hearing: Abbreviated Notice of Resource Area Delineation, 175 Northfield Road (Matthew Olsen / Ashoryn LLC)",
+   "resolution": "approved",
+   "quote": "matt approved chuck caron's plan.",
+   "tags": [
+    "hearing",
+    "wetland delineation",
+    "vernal pool"
+   ]
+  },
+  {
+   "topic": "Minutes approval (8/19 and 9/2)",
+   "resolution": "approved",
+   "quote": "minutes approval ~ 8/19 & 9/2 approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "no action",
+   "quote": "new business ~ ongoing business",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Special conditions for Shirley Village Reservoir",
+   "resolution": "minor changes; finalize and approve",
+   "quote": "finalize & approve special conditions for shirley village reservoir ~ minor changes",
+   "tags": [
+    "special conditions",
+    "reservoir"
+   ]
+  },
+  {
+   "topic": "Updated plans, 380 Sunset Lane",
+   "resolution": "approved",
+   "quote": "review updated plans for 380 sunset lane ~ reviewed updated plans approved",
+   "tags": [
+    "plan review"
+   ]
+  },
+  {
+   "topic": "Forest cutting plans",
+   "resolution": "no action; stewardship program under review",
+   "quote": "forest cutting plans ~ ken's project. also looking into stewardship program.",
+   "tags": [
+    "forest cutting"
+   ]
+  },
+  {
+   "topic": "Regulations and by-law (conflict of interest forms)",
+   "resolution": "continued; other changes to future meetings",
+   "quote": "conflict of interest forms should be filed by abutter's to the lakes in town. other changes will be",
+   "tags": [
+    "regulations",
+    "bylaw",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Stormwater by-law",
+   "resolution": "no action recorded",
+   "quote": "stormwater by law signatures ~ ooc(, coc(3) done",
+   "tags": [
+    "stormwater",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "done",
+   "quote": "signatures ~ ooc(, coc(3) done",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Announcements (Talent Bank forms)",
+   "resolution": "no action",
+   "quote": "announcements~ talent bank forms",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "October 7 and 21 listed",
+   "quote": "meeting schedule ~ october 7 & 21",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "public comment commission comment~",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:20 PM (no motion printed)",
+   "quote": "adjournment ~ 9:20 pm",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "LSIC Lake Management Plan: draft Order of Conditions (page 2, no heading printed)",
+   "resolution": "approved with one change (removal of shallow-well reference)",
+   "quote": "the motion was made fo approve the oog, seconded and unanimously approved.",
+   "tags": [
+    "order of conditions",
+    "lake management",
+    "LSIC",
+    "peer review"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability (31 Spring Street, filed by Caroline Griffis)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by caroline griffis."
+  },
+  {
+   "name": "Abbreviated Notice of Resource Area Delineation (175 Northfield Road, filed by Matthew Olsen of Ashoryn LLC)",
+   "where": "text",
+   "quote": "abbreviated notice of resource area delineation filed by matthew olsen of ashoryn llc (charles caron of caron environmental consulting)"
+  },
+  {
+   "name": "Chuck Caron's plan (delineation)",
+   "where": "text",
+   "quote": "matt approved chuck caron's plan."
+  },
+  {
+   "name": "draft OoG (Order of Conditions) for the LSIC Lake Management Plan",
+   "where": "text",
+   "quote": "one change to the draft oog was requested"
+  },
+  {
+   "name": "LSIC Lake Management Plan",
+   "where": "text",
+   "quote": "expected to be followed in preparation of the lsic lake management plan, that the lcc might require"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearings",
+  "order of conditions",
+  "lake management",
+  "vernal pool",
+  "delineation",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2014-06-19",
  "docid": "2952",
@@ -12,41 +12,216 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of the April 17, 2014 meeting",
+   "motion": "Accept the minutes of the April 17, 2014 meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Caroline Fortin",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "deborah christen made a motion to accept the minutes of the april 17, 2014 meeting. caroline fortin seconded the motion, the motion was unanimously approved."
   },
   {
-   "motion": "nominate Elizabeth Murphy as Chair and Deborah Christen as Vice Chair for the 2014-2015 year",
-   "moved_by": "Sheila Lumi",
-   "seconded_by": "Caroline Fortin",
-   "outcome": "carried",
-   "procedural": true,
-   "quote": "sheila lumi motioned to nominate the same slate of officers; that being elizabeth murphy as chair and deborah christen as vice chair. motion was seconded by caroline fortin; all were in favor and the motion ===page ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "accept the financial report",
-   "moved_by": "Caroline Fortin",
-   "seconded_by": "Deb Christen",
-   "outcome": "accepted",
-   "procedural": false,
-   "quote": "caroline fortin made a motion to accept the financial report, seconded by deb christen. the financial report was accepted."
-  },
-  {
-   "motion": "allow the Lunenburg Housing Authority to revise the maintenance fee schedule",
+   "motion": "Nominate the same slate of officers: Elizabeth Murphy as Chair and Deborah Christen as Vice Chair, for 2014-2015.",
    "moved_by": "Sheila Lumi",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by sheila lumi to allow the l unenburg housing authority to revise the maintenance fee schedule. ===page 3=== seconded, caroline fortin seconded the motion, and the moti",
-   "quote_taken_from_text": true
+   "quote": "motion was seconded by caroline fortin; all were in favor and the motion"
+  },
+  {
+   "motion": "Accept the financial report.",
+   "moved_by": "Caroline Fortin",
+   "seconded_by": "Deb Christen",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "caroline fortin made a motion to accept the financial report, seconded by deb christen."
+  },
+  {
+   "motion": "Allow the Lunenburg Housing Authority to revise the maintenance fee schedule under Resolution 201405.",
+   "moved_by": "Sheila Lumi",
+   "seconded_by": "Caroline Fortin",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion made by sheila lumi to allow the l unenburg housing authority to revise the maintenance fee schedule."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Sheila Lumi",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "sheila lumi, the meeting adjourned at 7:50 p.m."
   }
  ],
  "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1058245
+ "note": "Minutes are plain text with page breaks and irregular spacing; quotes were collapsed to single spaces. The Executive Director is referred to only as \"the Executive Director\" and is not named. Item 6 reads \"No Motions.\" after the Facilities Report, which is ambiguous, so it is not recorded as a separate topic. The fee-schedule resolution records \"passed\" with no count. The resignation and correspondence were accepted without a recorded motion.",
+ "cost_usd": 0.00504952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Sheila Lumi",
+   "role": "Member",
+   "status": "present",
+   "quote": "sheila lumi, member amaryllis leet, member"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "sheila lumi, member amaryllis leet, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Eugene Capoccia",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board accepted the resignation of board member Sheila Lumi, along with the correspondence from State Auditor Susan Bump (no recorded motion).",
+   "quote": "both were accepted by the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial report: reserves and budget position",
+   "what_was_recorded": "The Executive Director reported reserves at 62.3% and the housing authority ahead of budget projections by $30,652.00.",
+   "figures_as_printed": [
+    "62.3%",
+    "$30,652.00"
+   ],
+   "quote": "reserves were at 62.3% and that the housing authority was ahead of their"
+  },
+  {
+   "topic": "Maintenance fee schedule revision",
+   "what_was_recorded": "Resolution 201405 cited rising maintenance and material costs and the authority's need to recover costs for resident damages and light bulb replacement; no dollar figures printed, fee list was attached.",
+   "figures_as_printed": [],
+   "quote": "the costs of maintenance and material has increased and,"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "tenants present at the meeting",
+   "stated_role": "tenants",
+   "topic": "leaf raking and parking",
+   "quote": "some comments included the need to rake leaves in the back parking lot and some concern about the need for additional parking."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation",
+   "resolution": "Executive Director answered tenant questions; no action",
+   "quote": "the executive director answered a number of questions brought up by tenants present at the meeting."
+  },
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "meeting opened at 6:42 p.m.",
+   "quote": "the chair declared a quorum present"
+  },
+  {
+   "topic": "Minutes of April 17, 2014",
+   "resolution": "approved",
+   "quote": "deborah christen made a motion to accept the minutes of the april 17, 2014 meeting."
+  },
+  {
+   "topic": "Annual meeting: election of officers",
+   "resolution": "same slate re-elected for 2014-2015",
+   "quote": "motion was seconded by caroline fortin; all were in favor and the motion"
+  },
+  {
+   "topic": "Executive Director's report",
+   "resolution": "presented; occupancy and rent collection at 100%",
+   "quote": "the executive director presented his report noti ng that our occupancy is a",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "accepted",
+   "quote": "caroline fortin made a motion to accept the financial report, seconded by deb christen."
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "presented; no action recorded",
+   "quote": "the executive director presented the facilities report."
+  },
+  {
+   "topic": "Resolution 201405: revise maintenance fee schedule",
+   "resolution": "passed",
+   "quote": "motion made by sheila lumi to allow the l unenburg housing authority to revise the maintenance fee schedule."
+  },
+  {
+   "topic": "Correspondence and resignation of Sheila Lumi",
+   "resolution": "correspondence reported; resignation accepted",
+   "quote": "he also presented the resignation of board member sheila lumi."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 p.m.",
+   "quote": "the meeting adjourned at 7:50 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution 201405 (revise the sample/maintenance fee schedule)",
+   "where": "text",
+   "quote": "resolution 201405 whereas: the costs of maintenance and material has increased and,"
+  },
+  {
+   "name": "Attached list of fees",
+   "where": "text",
+   "quote": "that the attached list of fees is revised to meet t he current"
+  },
+  {
+   "name": "Correspondence from State Auditor Susan Bump",
+   "where": "text",
+   "quote": "mr. capoccia reported on the correspondence from state auditor susan"
+  },
+  {
+   "name": "Financial Report",
+   "where": "text",
+   "quote": "the executive director presented the financial r eport;"
+  },
+  {
+   "name": "Facilities Report",
+   "where": "text",
+   "quote": "the executive director presented the facilities report."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "officer election",
+  "fee schedule",
+  "financial report",
+  "occupancy",
+  "resident concerns",
+  "resignation",
+  "annual meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

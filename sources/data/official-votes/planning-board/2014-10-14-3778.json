@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-10-14",
  "docid": "3778",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to move forward with the Housing Production Plan",
+   "motion": "Move forward with the Housing Production Plan draft, as discussed at the meeting.",
    "moved_by": "N. Lockwood",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -21,6 +21,130 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09433949999999999
+ "note": "Summary-style minutes: the single recorded vote gives 'all aye' with no numeric count. The adjournment at 10:00 PM is recorded without a motion, so it is not treated as a vote. The 322 Flat Hill public hearing is referenced to separate minutes that were not provided. The minutes do not say whether Sam Lawton attended in person, so his status is 'not stated'. No public comment is recorded. No dollar figures are printed.",
+ "cost_usd": 0.0037589200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Sam Lawton",
+   "role": "MRPC",
+   "status": "not stated",
+   "quote": "sam lawton, mrpc had requested board review draft of his 10.06.14 presentation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Add a Table of Contents to the Housing Production Plan.",
+   "quote": "m. allison noted projected population growth is slower than past ten years. add table of contents ."
+  },
+  {
+   "decision": "A. Burney to research the possibility of a 40B applying to a mixed use development (commercial on upper floors, residential on first floor).",
+   "quote": "a. burney to research the possibility of a 40b applying to a mixed used development, e.g., commercial on second and third"
+  },
+  {
+   "decision": "The Plan should include discussion of the reimbursement percentage under the Community Preservation Act.",
+   "quote": "a. burney noted plan should include discussion of reimbursement percentage under t he community preservation act."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Preservation Act reimbursement percentage in the Housing Production Plan",
+   "what_was_recorded": "A. Burney noted the Plan should include discussion of the reimbursement percentage under the Community Preservation Act; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a. burney noted plan should include discussion of reimbursement percentage under t he community preservation act."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "322 Flat Hill Community Solar, Public Hearing",
+   "resolution": "see separate minutes",
+   "quote": "322 flat hill community solar, public hearing- see separate minutes",
+   "tags": [
+    "solar",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Housing Production Plan (HPP) draft review",
+   "resolution": "moved forward (passed); comments and follow-up research assigned",
+   "quote": "housing production plan (hpp)- sam lawton, mrpc had requested board review draft of his 10.06.14 presentation for this",
+   "tags": [
+    "housing",
+    "housing production plan",
+    "affordable housing",
+    "40B",
+    "Community Preservation Act"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "HPP Working Draft",
+   "where": "list",
+   "quote": "documents used at workshop: hpp working draft n. lockwood's comments"
+  },
+  {
+   "name": "N. Lockwood’s Comments",
+   "where": "list",
+   "quote": "comments presented by n. lockwood (on file in planning office) to augmenting with more specifics."
+  },
+  {
+   "name": "Sam Lawton, MRPC draft of 10.06.14 presentation",
+   "where": "text",
+   "quote": "sam lawton, mrpc had requested board review draft of his 10.06.14 presentation"
+  }
+ ],
+ "tags": [
+  "housing",
+  "housing production plan",
+  "solar",
+  "public hearing",
+  "planning board",
+  "40B",
+  "Community Preservation Act"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at workshop:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-01-16",
  "docid": "2549",
@@ -12,15 +12,154 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from December 10, 2013 as amended",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of 12/10/13 as amended.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes from 12/10/13 approved as amended"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. Other items (newspaper assignments, spreading word about new member opening, decision to wait on Ritter Building and Brooks House) are stated as decisions or assignments with no motion or vote recorded.",
- "cost_usd": 0.0822185
+ "note": "OCR text from one page. Stray marks 'RL RLM DTM' appear under the header and are unexplained. The next-meeting line reads 'Feb 6, 2013' though this meeting is 2014-01-16; the year is likely a typo but is printed as such. The minutes approval is recorded as 'approved as amended' with no mover, seconder or count. Adjournment at 7:00pm has no motion recorded. No dollar figures appear.",
+ "cost_usd": 0.00288212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission decided to wait on making any formal decision on protecting the Ritter Building and Brooks House from demolition, because the town owns both buildings and action is several years away.",
+   "quote": "the commission has decided to wait on making any formal decision because as of right now the town owns both buildings"
+  },
+  {
+   "decision": "Damon McQuaid to make minor updates to the Form B's and prepare them for submittal.",
+   "quote": "damon to make minor updates to the form b's and prepare them for submittal."
+  },
+  {
+   "decision": "Becky Lantry to write up the annual town report item due 2/25/14.",
+   "quote": "becky will write it up"
+  },
+  {
+   "decision": "Newspaper articles assigned: Becky for February; Richard and Damon for March; Amory for April.",
+   "quote": "becky to write for february"
+  },
+  {
+   "decision": "The Commission will hold a succession-of-officers vote at the May meeting.",
+   "quote": "the commission will hold a vote at the may meeting."
+  },
+  {
+   "decision": "All members to spread the word about the new member opening, with a possible write-up in the ledger and an announcement at the Selectmen's meetings.",
+   "quote": "all members should spread the word."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes Approval",
+   "resolution": "approved 12/10/13 minutes as amended",
+   "quote": "minutes from 12/10/13 approved as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and Communications",
+   "resolution": "Becky to write up annual town report item",
+   "quote": "request to complete a write up for the annual town report due 2/25/14. becky will write it up",
+   "tags": [
+    "annual town report"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Wide Survey",
+   "resolution": "Damon to update Form B's for submittal",
+   "quote": "damon to make minor updates to the form b's and prepare them for submittal.",
+   "tags": [
+    "survey",
+    "Form B"
+   ]
+  },
+  {
+   "topic": "Old Business: Newspaper Articles",
+   "resolution": "monthly article writers assigned",
+   "quote": "becky to write for february",
+   "tags": [
+    "newspaper articles",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Old Business: Succession of Officers",
+   "resolution": "vote deferred to May meeting",
+   "quote": "the commission will hold a vote at the may meeting.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "Old Business: New Member Needed",
+   "resolution": "members to publicize opening",
+   "quote": "all members should spread the word.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "New Business: Ritter Building and Brooks House demolition protection",
+   "resolution": "no formal decision; waiting while town owns buildings",
+   "quote": "the commission has decided to wait on making any formal decision because as of right now the town owns both buildings",
+   "tags": [
+    "Ritter Building",
+    "Brooks House",
+    "demolition"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form B's",
+   "where": "text",
+   "quote": "damon to make minor updates to the form b's and prepare them for submittal."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "town wide survey",
+  "Form B",
+  "newspaper articles",
+  "succession of officers",
+  "new member",
+  "Ritter Building",
+  "Brooks House",
+  "demolition",
+  "annual town report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

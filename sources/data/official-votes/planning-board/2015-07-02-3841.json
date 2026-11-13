@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-07-02",
  "docid": "3841",
@@ -12,15 +12,92 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing on 270 Electric Avenue",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed unanimously",
+   "motion": "Close the public hearing on 270 Electric Avenue.",
+   "moved_by": "M. Allison",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "motion to close hearing, m. allison, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0852595
+ "note": "Single-page excerpt of the minutes. The text does not record the hearing's opening, the applicant or their representatives, any vote on the submittal, or an approval of prior minutes or adjournment. The minutes record a motion to close the hearing without a stated count beyond \"all aye\". No dollar figures appear. The minutes name no documents or exhibits and print no documents list.",
+ "cost_usd": 0.00242712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "remote",
+   "quote": "member k. chenis participated remotely in accordance with the remote participation policy adopted by the board of selectmen"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney will follow up to confirm that an NPDES permit has been filed for clearing of more than one acre at 270 Electric Avenue.",
+   "quote": "a. burney will follow-up to make sure that has been filed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "270 Electric Avenue public hearing (continued)",
+   "resolution": "hearing closed; staff to follow up on NPDES filing",
+   "quote": "the board was unable to vote on the submittal at the june 8 th continuation due to the absence of a board member.",
+   "tags": [
+    "public hearing",
+    "tree clearing",
+    "telecommunications tower",
+    "NPDES"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "270 Electric Avenue",
+  "tree clearing",
+  "telecommunications tower",
+  "NPDES permit",
+  "remote participation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

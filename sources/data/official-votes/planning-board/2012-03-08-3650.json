@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-03-08",
  "docid": "3650",
@@ -12,24 +12,320 @@
  },
  "votes": [
   {
-   "motion": "Remove properties No. 1 and No. 2 (Chase Road and Pleasant/West Street) from Section 4.15.4.2 of the Solar Bylaw overlay district",
+   "motion": "Remove No. 1 and No. 2 (Chase Road and Pleasant/West Street sites) from Section 4.15.4.2.",
    "moved_by": "Nathan J. Lockwood",
-   "seconded_by": "Thomas W. Bodkin, Jr.",
+   "seconded_by": "Thomas W. Bodkin Jr.",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "roll call vote on mr. lockwood's motion to remove no. 1 and no. 2 from the section - mr. bodkin jr., aye; ms. bilotta -simeone, aye; mr. bakaysa, nay; mr. lockwood, aye",
-   "quote_taken_from_text": true
+   "quote": "mr. lockwood made motion to remove no. 1 and no. 2, (chase road and pleasant/west street) from section 4.15.4.2., second, mr. bodkin jr."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Thomas W. Bodkin, Jr.",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Thomas W. Bodkin Jr.",
    "seconded_by": "Nathan J. Lockwood",
    "outcome": "passed",
    "procedural": true,
-   "quote": "adjournment: motion, mr. bodkin jr., second, mr. lockwood, motion passed."
+   "quote": "adjournment: motion, mr. bodkin jr., second, mr. lockwood, motion passed. adjourned 9:10 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1648675
+ "note": "Minutes are a single extracted text with no scan problems. The Lockwood motion's roll call printed aye/nay per member (3 aye, 1 nay) but no result word; outcome recorded as 'passed 3-1' from that tally. Most of the meeting was line-by-line review with no motions. Decisions list includes both directions and assigned follow-ups; many items show 'No issues' with no vote. Ms. Bertram's role is not stated and her presence is inferred from her recorded comment. Citizens are unnamed.",
+ "cost_usd": 0.00805362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: robert j. saiia"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. bertram feels the two properties should not be included."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board felt screening for small-scale ground-mounted solar should be the same as for large-scale.",
+   "quote": "board felt screening should be same for both small -scale and large -scale."
+  },
+  {
+   "decision": "Board requested the Building Official's documentation requirements in writing and a landscape diagram of adequate screening from developers.",
+   "quote": "board requested building official's documentation requirements in writing"
+  },
+  {
+   "decision": "Town Counsel input to be obtained on height restrictions for ground-mounted systems.",
+   "quote": "get town counsel input on height restrictions."
+  },
+  {
+   "decision": "Board disagreed with Town Counsel's recommended site control language on entering private property.",
+   "quote": "town counsel recommended adding \"town cannot enter upon private property without owner's consent or court order\". board disagreed."
+  },
+  {
+   "decision": "Ms. Benson to ask Town Counsel whether installation can be restricted to side and rear yards.",
+   "quote": "ms. benson to ask town counsel if there is any way to restrict installation to side and rear yards."
+  },
+  {
+   "decision": "Ms. Benson to ask one of the Town's reviewing engineers to prepare visual setback diagrams for one-, five-, ten- and twenty-acre lots.",
+   "quote": "ms. benson will ask one of the town's reviewing engineers to put together some visual diagrams"
+  },
+  {
+   "decision": "Wording edits agreed: 'Residential' Districts changed to 'Solar Overlay' District in setbacks; 'structure' changed to 'solar array' in visual impact; 'phase' added in Required Documents subparagraph 5.",
+   "quote": "in first line, change \"residential\" districts to read \"solar overlay\" district."
+  },
+  {
+   "decision": "Specify surety bond by a recognized insurer and maintain liability insurance; ownership changes must ensure the new owner has the same.",
+   "quote": "specify surety bond by recognized insurer and also maintain liability insurance."
+  },
+  {
+   "decision": "Add notification of hazardous-material disposal site and route to the abandonment section; a form to be prepared to accompany DPR.",
+   "quote": "form will be worked on to include with dpr."
+  },
+  {
+   "decision": "Ms. Benson to confer with Town Accountant and Town Counsel on how surety cost is determined.",
+   "quote": "ms. benson to confer with town accountant and town counsel."
+  },
+  {
+   "decision": "Mr. Bodkin Jr. to supply information to Ms. Benson to confer with Town Counsel on a special permitting process.",
+   "quote": "mr. bodkin jr. will supply information to ms. benson to confer with town counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial surety cost for removal",
+   "what_was_recorded": "Chair asked how the removal cost is determined to account for cost escalations; the developer presents the cost and the Board has the bond reviewed, and a copy is filed with the Town Accountant. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. bakaysa inquired as to how cost is determined to account for cost escalations over time."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Citizen",
+   "stated_role": "Citizen",
+   "topic": "screening and height limits",
+   "quote": "concern with screening to cover height."
+  },
+  {
+   "speaker": "Citizen",
+   "stated_role": "Citizen",
+   "topic": "removing Chase Road and Pleasant Street sites",
+   "quote": "citizen requested that 651 chase road and 265 pleasant street be removed from list."
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "not stated",
+   "topic": "keeping two properties out of overlay district",
+   "quote": "ms. bertram feels the two properties should not be included."
+  },
+  {
+   "speaker": "Citizen",
+   "stated_role": "Citizen",
+   "topic": "grandfathered by-right status of two sites",
+   "quote": "citizen noted the 651 chase road and pleasant/west street sites have already applied and have by -right."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Solar bylaw review, Town Counsel recommendations",
+   "resolution": "reviewed; follow-ups assigned",
+   "quote": "proposed solar bylaw reviewed to address town counsel's recommended requirements.",
+   "tags": [
+    "solar bylaw",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "4.15.2 Definitions (on-site photovoltaic)",
+   "resolution": "follow-up assigned to Planning Director",
+   "quote": "mr. bakaysa recommended purpose be modified for power generation for all, whether home, commercial or industrial",
+   "tags": [
+    "definitions",
+    "photovoltaic"
+   ]
+  },
+  {
+   "topic": "4.15.3.3 Small-scale ground-mounted equipment",
+   "resolution": "continued; height and screening to be researched",
+   "quote": "ms. benson felt there should be height limit.",
+   "tags": [
+    "screening",
+    "height",
+    "setbacks"
+   ]
+  },
+  {
+   "topic": "4.15.3.4 Required documents",
+   "resolution": "Board requested written documentation requirements",
+   "quote": "board requested building official's documentation requirements in writing",
+   "tags": [
+    "required documents"
+   ]
+  },
+  {
+   "topic": "4.15.4.2 Overlay district site list",
+   "resolution": "motion to remove Chase Road and Pleasant/West Street sites passed 3-1",
+   "quote": "mr. lockwood made motion to remove no. 1 and no. 2, (chase road and pleasant/west street) from section 4.15.4.2., second, mr. bodkin jr.",
+   "tags": [
+    "overlay district",
+    "site list",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "4.15.4.6 Setbacks and buffer strips",
+   "resolution": "continued; diagrams to be prepared",
+   "quote": "town counsel recommended definition of buffer strips be placed in this section.",
+   "tags": [
+    "setbacks",
+    "buffer strips"
+   ]
+  },
+  {
+   "topic": "4.15.4.7 Visual impact",
+   "resolution": "wording change agreed",
+   "quote": "change \"structure\" to read \"solar array\".",
+   "tags": [
+    "visual impact"
+   ]
+  },
+  {
+   "topic": "4.15.4.8 Required documents",
+   "resolution": "wording changes agreed",
+   "quote": "include title documents, i.e., property owner, lessor, lessee, address, etc.",
+   "tags": [
+    "required documents"
+   ]
+  },
+  {
+   "topic": "4.15.4.9 Site control",
+   "resolution": "Board disagreed with Town Counsel recommendation",
+   "quote": "town counsel recommended adding \"town cannot enter upon private property without owner's consent or court order\".",
+   "tags": [
+    "site control"
+   ]
+  },
+  {
+   "topic": "4.15.4.10 Design standards (safety, monitoring)",
+   "resolution": "discussed; no vote",
+   "quote": "ms. benson responded this is done annually in january.",
+   "tags": [
+    "safety",
+    "monitoring",
+    "training"
+   ]
+  },
+  {
+   "topic": "4.15.4.11 Modifications",
+   "resolution": "discussed; definition to be written",
+   "quote": "\"material modification\" may be standard legal language that covers modification to the design.",
+   "tags": [
+    "modifications"
+   ]
+  },
+  {
+   "topic": "4.15.4.12 Abandonment and removal",
+   "resolution": "form to be worked on with DPR",
+   "quote": "form will be worked on to include with dpr.",
+   "tags": [
+    "abandonment",
+    "removal"
+   ]
+  },
+  {
+   "topic": "4.15.4.13 Financial surety",
+   "resolution": "surety and insurance requirements to be specified; cost to be confirmed",
+   "quote": "specify surety bond by recognized insurer and also maintain liability insurance.",
+   "tags": [
+    "financial surety",
+    "bond",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:10 PM",
+   "quote": "adjournment: motion, mr. bodkin jr., second, mr. lockwood, motion passed. adjourned 9:10 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ms. Benson's March 5, 2012 memorandum (Town Counsel recommendations)",
+   "where": "text",
+   "quote": "mr. lockwood referred to ms. benson's march 5, 2012 memorandum noting that town counsel recommends"
+  },
+  {
+   "name": "Proposed Solar Bylaw",
+   "where": "text",
+   "quote": "proposed solar bylaw reviewed to address town counsel's recommended requirements."
+  },
+  {
+   "name": "Open Space Plan",
+   "where": "text",
+   "quote": "the open space plan emphasized the need to keep properties in their environmental habitat"
+  },
+  {
+   "name": "State model (Section 3.12.2 and 3.12.3)",
+   "where": "text",
+   "quote": "section 3.12.2. of state model defines"
+  },
+  {
+   "name": "Change in ownership form and yearly verification form (for DPR packet)",
+   "where": "text",
+   "quote": "both a change in ownership form and yearly verification form will be included in dpr packet."
+  }
+ ],
+ "tags": [
+  "solar bylaw",
+  "zoning",
+  "overlay district",
+  "large-scale solar",
+  "small-scale solar",
+  "setbacks",
+  "financial surety",
+  "decommissioning",
+  "public comment",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

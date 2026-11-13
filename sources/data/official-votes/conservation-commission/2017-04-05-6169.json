@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-04-05",
  "docid": "6169",
@@ -12,56 +12,63 @@
  },
  "votes": [
   {
-   "motion": "Continue to next meeting and issue standard order subject to applicant meeting expectations for Emkey addition at 445 Townsend Harbor Road",
+   "motion": "Continue the 445 Townsend Harbor Road (Emkey) Notice of Intent to the next meeting, with a standard order ready to be signed subject to the applicant meeting the expectations for plan additions.",
    "moved_by": "JR",
    "seconded_by": "CL",
-   "outcome": "passed 5-1",
+   "outcome": "passed; TB voted no (count not printed)",
    "procedural": false,
-   "quote": "jr moved to continue to the next meeting and a standard order ready to be signed subject to the applicant meeting the expectations of the additions to the plan. cl seconded and the commission approved with the exception of tb who voted no."
+   "quote": "jr moved to continue to the next meeting and a standard order ready to be signed subject to the applicant meeting the expectations of the additions to the plan."
   },
   {
-   "motion": "Continue Viviano Notice of Intent to April 19th for work at 338 Sunset Lane",
+   "motion": "Continue the 338 Sunset Lane (Viviano) amendment hearing to April 19, 2017.",
    "moved_by": "TD",
    "seconded_by": "JR",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "the meeting was continued to the 19th of april with a motion of td and a second by jr and a unanimous vote to approve."
+   "quote": "with a motion of td and a second by jr and a unanimous vote to approve"
   },
   {
-   "motion": "Approve the plan as presented for Lunenburg Water District work at 496 Mass Ave",
+   "motion": "Approve the 496 Mass Ave (Lunenburg Water District) plan as presented.",
    "moved_by": "BP",
    "seconded_by": "CL",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "bp moved to approve the plan as presented. cl seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue Boyd Notice of Intent for work at 121 Peninsula Drive to April 19, 2017",
+   "motion": "Continue the 121 Peninsula Drive (Jonathan Boyd) hearing to 4/19/17.",
    "moved_by": "BP",
    "seconded_by": "KJ",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "meeting was continued to 4/19/17 by motion of bp and a second by kj with a unanimous vote ",
-   "quote_taken_from_text": true
+   "quote": "meeting was continued to 4/19/17 by motion of bp and a second by kj with a unanimous vote"
   },
   {
-   "motion": "Issue a negative Determination for The Woodlands At Hickory Hills vegetation management and dock project at 208 Northfield Road",
+   "motion": "Issue a negative determination on the 208 Northfield Road (Woodlands at Hickory Hills) request for determination.",
    "moved_by": "CL",
    "seconded_by": "TD",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "cl moved for a negative determination. td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue Gougen Construction Notice of Intent for work at 675 Reservoir Road",
+   "motion": "Continue the 675 Reservoir Road (Gougen Construction) hearing.",
    "moved_by": "CL",
    "seconded_by": "TD",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "cl moved to continue. td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Appoint BP as treasurer for the commission.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
+   "outcome": "passed (unanimous)",
+   "procedural": false,
+   "quote": "this was done by a mo tion from jr kj seconded and the commission approved unanimously."
+  },
+  {
+   "motion": "Adjourn the meeting at 9:50 PM.",
    "moved_by": "KJ",
    "seconded_by": "CL",
    "outcome": "not stated",
@@ -69,7 +76,391 @@
    "quote": "the meeting was adjourned at 9:50 pm by a motion of kj and a second by cl."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1190785
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-like with split words, typos and inconsistent spellings (e.g., 'Marc 29', 'arial photos', 'Ritter Memorial Land Sue Building', 'Jack Denny Brown' as printed). The 445 Townsend Harbor Road vote is printed only as 'approved with the exception of TB who voted no', so no count is recorded. Several motions have no count, and the minutes approval of 3/1, 3/15 and 3/29 is listed with no vote recorded. The adjournment has no printed result. Attendance is inferred from the call-to-order line and the speakers.",
+ "cost_usd": 0.012410120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the meeting started at 7 pm with chairman bursch presiding with all members present except vice chair"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "except vice chair dwyer"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member",
+   "status": "present",
+   "quote": "with all members present except vice chair"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with all members present except vice chair"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "note: commissioner luck recused and left the table."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "with all members present except vice chair"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Member",
+   "status": "present",
+   "quote": "with all members present except vice chair"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted a comment from dep to ensure the detention basin has a sufficient offset to ground water."
+  },
+  {
+   "name": "Steve Sunstrom",
+   "role": "representing",
+   "status": "present",
+   "quote": "steve sunstrom representing. he reminded the commission of the positive determination"
+  },
+  {
+   "name": "Jeff Viviano",
+   "role": "applicant",
+   "status": "present",
+   "quote": "jeff viviano presented the commission with a plan for amend his existing ooc"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "represented the applicant",
+   "status": "present",
+   "quote": "anthony cleaves represented the applicant and outlined the location of the project"
+  },
+  {
+   "name": "Sandra Habe",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sandra habe reviewed the changes presented to the request for a determination"
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris anderson outlined the changes proposed from the last meeting as requested by the commission."
+  },
+  {
+   "name": "Anne Denny Brown",
+   "role": "not stated",
+   "status": "present",
+   "quote": "anne denny brown noted that the small dock should be removed every fall"
+  },
+  {
+   "name": "Jack Denny Brown",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack denny brown noted the rda states there is a path between 15 and 17 wintergreen"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joan pease 11 wintergreen noted it is actually a natural path."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "183 Hemlock Dr was continued until April 19, 2017.",
+   "quote": "183 hemlock dr continued until april 19, 2017"
+  },
+  {
+   "decision": "The Commission will hold a public forum on the Forest Stewardship plans after final issue of the plan.",
+   "quote": "the commission will, after final issue of the plan look to hold a public forum on these plans."
+  },
+  {
+   "decision": "MM will refer 101 Pleasant Street fines matter to Adam for further action.",
+   "quote": "he will refer to adam for further action."
+  },
+  {
+   "decision": "Wording in the 675 Reservoir Road order changed from stone wall to banking remediation.",
+   "quote": "tb wants the words stone wall removed. it will be changed to banking remediation."
+  },
+  {
+   "decision": "Issues of a floating raft in the lake and placement of a boulder at 338 Sunset Lane to be researched further.",
+   "quote": "the issue of a floating raft in the lake as the lake is town property as well as the placement of a boulder needs to be researched further."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget update",
+   "what_was_recorded": "The commission reviewed items discussed with the town manager at the March 29, 2017 meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "budget update- the commission reviewed the items discussed with the town manager at the marc 29, 2017"
+  },
+  {
+   "topic": "Forest Stewardship Grant implementation",
+   "what_was_recorded": "Commission reviewing grant-related goals and plans before the first May hearing; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "forest stewardship grant implementation"
+  },
+  {
+   "topic": "Fines at 101 Pleasant Street",
+   "what_was_recorded": "Determination of fines for 101 Pleasant Street; no response received and no amount printed.",
+   "figures_as_printed": [],
+   "quote": "determination of fines 101 pleasant street- mm has not received a response."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "TB",
+   "stated_role": "",
+   "topic": "walks in the woods",
+   "quote": "tb looking to start walks in the woods. will send update for the website"
+  },
+  {
+   "speaker": "Anne Denny Brown",
+   "stated_role": "",
+   "topic": "208 Northfield Road RDA hearing",
+   "quote": "anne denny brown noted that the small dock should be removed every fall"
+  },
+  {
+   "speaker": "Jack Denny Brown",
+   "stated_role": "",
+   "topic": "208 Northfield Road RDA hearing",
+   "quote": "jack denny brown noted the rda states there is a path between 15 and 17 wintergreen"
+  },
+  {
+   "speaker": "Joan Pease",
+   "stated_role": "11 wintergreen",
+   "topic": "208 Northfield Road RDA hearing",
+   "quote": "joan pease 11 wintergreen noted it is actually a natural path."
+  },
+  {
+   "speaker": "KJ",
+   "stated_role": "",
+   "topic": "open parcels in tax title",
+   "quote": "kj reviewed the list of open parcels currently in tax title and noted some parcels"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "noted; walks in the woods update to be sent to website",
+   "quote": "tb looking to start walks in the woods. will send update for the website",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing: 445 Townsend Harbor Road NOI (Emkey)",
+   "resolution": "continued with standard order subject to plan changes",
+   "quote": "he reminded the commission of the positive determination and reviewed the placement of the addition.",
+   "tags": [
+    "notice of intent",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Public hearing: 338 Sunset Lane NOI amendment (Viviano)",
+   "resolution": "continued to April 19, 2017",
+   "quote": "jeff viviano presented the commission with a plan for amend his existing ooc",
+   "tags": [
+    "notice of intent",
+    "dock",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Public hearing: 496 Mass Ave NOI amendment (Lunenburg Water District)",
+   "resolution": "approved as presented",
+   "quote": "anthony cleaves represented the applicant and outlined the location of the project",
+   "tags": [
+    "notice of intent",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Public hearing: 121 Peninsula Drive continued NOI (Boyd)",
+   "resolution": "continued to 4/19/17",
+   "quote": "meeting was continued to 4/19/17 by motion of bp and a second by kj with a unanimous vote",
+   "tags": [
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Public meeting: 208 Northfield Road continued RDA (Woodlands at Hickory Hills)",
+   "resolution": "negative determination issued",
+   "quote": "sandra habe reviewed the changes presented to the request for a determination and outlined them for the commission.",
+   "tags": [
+    "request for determination",
+    "dock"
+   ]
+  },
+  {
+   "topic": "Public hearing: 675 Reservoir Road continued NOI (Gougen Construction)",
+   "resolution": "continued",
+   "quote": "chris anderson outlined the changes proposed from the last meeting as requested by the commission.",
+   "tags": [
+    "notice of intent",
+    "septic",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Current business",
+   "resolution": "noted; 183 Hemlock Dr continued to April 19, 2017",
+   "quote": "183 hemlock dr continued until april 19, 2017",
+   "tags": [
+    "enforcement",
+    "as-built"
+   ]
+  },
+  {
+   "topic": "Old business: Forest Stewardship Grant",
+   "resolution": "under review; public forum planned after final plan",
+   "quote": "the commission is reviewing and will finish before the first hearing in may.",
+   "tags": [
+    "grant",
+    "forest stewardship"
+   ]
+  },
+  {
+   "topic": "Determination of fines: 101 Pleasant Street",
+   "resolution": "referred to Adam for further action",
+   "quote": "determination of fines 101 pleasant street- mm has not received a response.",
+   "tags": [
+    "enforcement",
+    "fines"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "listed for 3/1, 3/15, 3/29; no vote recorded",
+   "quote": "approval of 3/1,3/15,3/29 minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "listed; no report text recorded",
+   "quote": "holman st property program",
+   "tags": [
+    "committee"
+   ]
+  },
+  {
+   "topic": "Agent's report and budget update",
+   "resolution": "treasurer appointed; hearings reviewed; appeal noted",
+   "quote": "appeal on 120 west street soc- mm reviewed the soc dep issued affirming the original commission",
+   "tags": [
+    "budget",
+    "treasurer",
+    "appeal"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for April 19, 2017",
+   "quote": "next meeting for april 19, 2017 at 7:00 pm in the billotta meeting room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment at meeting close",
+   "resolution": "noted; tax-title open parcels reviewed",
+   "quote": "kj reviewed the list of open parcels currently in tax title and noted some parcels",
+   "tags": [
+    "open space",
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:50 PM",
+   "quote": "the meeting was adjourned at 9:50 pm by a motion of kj and a second by cl.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent form and a modified drawing by the applicant dated March 2017 (445 Townsend Harbor Road)",
+   "where": "list",
+   "quote": "documents presented for commission consideration was the notice of intent form and a modified drawing my the applicant dated march 2017"
+  },
+  {
+   "name": "Narrative master plan with exhibits by the applicant dated April 2017 (338 Sunset Lane)",
+   "where": "list",
+   "quote": "document presented for the commission consideration was a narrative master"
+  },
+  {
+   "name": "Notice of Intent and plan entitled Definitive Plan for 496 Mass Ave dated March 7, 2017, plan number 4-L-976",
+   "where": "list",
+   "quote": "for 496 mass ave dated march 7, 2017 plan number 4-l-976"
+  },
+  {
+   "name": "Original Form 1 and the amended narrative requested at the meeting of March 1, 2017 (208 Northfield Road)",
+   "where": "list",
+   "quote": "documents presented for consideration was the original form 1 and the amended narrative as"
+  },
+  {
+   "name": "Revised plan by Hannigan Engineering entitled Existing Conditions Plan dated March 29, 2017, plan number C-12-24 (675 Reservoir Road)",
+   "where": "list",
+   "quote": "documents presented for consideration was a revised plan by hannigan"
+  },
+  {
+   "name": "Revised RDA",
+   "where": "text",
+   "quote": "the revised rda prohibits overnight docking."
+  },
+  {
+   "name": "Aerial photos",
+   "where": "text",
+   "quote": "the arial photos in her opinion do not show the crown cover adequately"
+  },
+  {
+   "name": "Order of Conditions",
+   "where": "text",
+   "quote": "the details of live staking is shown and called out in the order of conditions."
+  },
+  {
+   "name": "SOC for 120 West Street",
+   "where": "text",
+   "quote": "appeal on 120 west street soc- mm reviewed the soc dep issued affirming the original commission"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "buffer zone",
+  "order of conditions",
+  "dock",
+  "Forest Stewardship Grant",
+  "enforcement",
+  "fines",
+  "treasurer appointment",
+  "budget",
+  "Conservation Commission"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for commission consideration was the notice of intent form and a modified drawing my the applicant dated march 2017"
+ },
+ "dropped_unquoted_by_field": {}
 }

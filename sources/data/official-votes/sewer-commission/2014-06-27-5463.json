@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-06-27",
  "docid": "5463",
@@ -12,25 +12,203 @@
  },
  "votes": [
   {
-   "motion": "to accept the proposal with final review of the not to exceed contract and addendum for field inspection in the amount of $198,300.00 to Wright Pierce",
+   "motion": "Accept the Wright Pierce proposal, with final review of the not to exceed contract and addendum for field inspection, in the amount of $198,300.00.",
    "moved_by": "Mr. MacDonald",
    "seconded_by": "Mr. Daniels",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. macdonald made a motion to accept the proposal with final re view of the not to exceed contract and addendum for field inspection, in the amount of $198,300.00 to wright pierce. mr. luck was authorized to inform wright pierce, in writing , that the contract is accepted without further motion. mr. daniels seconded. vote taken was unanimou",
-   "quote_taken_from_text": true
+   "quote": "mr. macdonald made a motion to accept the proposal with final re view of the not to exceed contract and addendum for field inspection, in the amount of $198,300.00 to wright pierce."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "carl asked for a motion to adjourn. troy made the m otion, dave seconded. meeting was adjourned at 3:30pm",
-   "quote_taken_from_text": true
+   "quote": "troy made the m otion, dave seconded. meeting was adjourned at 3:30pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12936150000000002
+ "note": "Vote count is not printed beyond 'unanimous'. The motion to adjourn has no recorded result, only that the meeting was adjourned at 3:30pm. The minutes are signed by Troy Daniels, Member, and the chair's signature is not shown. The text carries many spacing and typing artifacts from extraction, which were collapsed where needed for quotes.",
+ "cost_usd": 0.00555972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was opened by carl luck, chairman, at 1:54 p.m."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, troy daniels."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, troy daniels."
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, troy daniels."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: jack rodriquenz, dpw director"
+  },
+  {
+   "name": "Butch Bilotta",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: butch bilotta"
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "Guest of Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson and matt corbin of wright pier ce"
+  },
+  {
+   "name": "Matt Corbin",
+   "role": "Guest of Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson and matt corbin of wright pier ce"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Luck was authorized to inform Wright Pierce in writing that the contract is accepted, without further motion.",
+   "quote": "was authorized to inform wright pierce, in writing , that the contract is accepted without further motion."
+  },
+  {
+   "decision": "No bonus for completing the job early; all agreed no.",
+   "quote": "discussion about a bonus for completing job early. all agreed no."
+  },
+  {
+   "decision": "Penalty and bonus clauses and liquidated damages would not be placed in the contract; all commissioners agreed to leave the terms in the not to exceed.",
+   "quote": "all commissioners a greed it best to leave in the not to exceed."
+  },
+  {
+   "decision": "All agreed to a 'not to exceed' contract structure.",
+   "quote": "all agreed to 'not to exceed' contract."
+  },
+  {
+   "decision": "Wright Pierce to prepare a not to exceed for the field inspection phase based on 860 hours; other changes to be handled by amendment.",
+   "quote": "we will put together a not to exceed for field inspect ion phase based on 860 hours at rate, deal with otherwise by amendments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Project budget and contingency",
+   "what_was_recorded": "Commissioners and Wright Pierce discussed the project budget size, its contingency (described as a cushion), and whether the contingency was adequate; the budget was described as having changed from $1.8M to $2.0M to $2.2M.",
+   "figures_as_printed": [
+    "$2.2 M",
+    "$2 M",
+    "$1.8M",
+    "$2.0M",
+    "$2.2M"
+   ],
+   "quote": "the $2.2 m was just in case, a cushion."
+  },
+  {
+   "topic": "Typical construction contingency",
+   "what_was_recorded": "Wright Pierce said a typical contingency on a $2.2M job is 10-15%, and the DPW Director said a minimum of 10% is wise.",
+   "figures_as_printed": [
+    "$2.2M",
+    "10-15%",
+    "10%"
+   ],
+   "quote": "stated that overall it is wise to have a minimum of 10%."
+  },
+  {
+   "topic": "Lump sum example",
+   "what_was_recorded": "Wright Pierce used a $200K lump sum as an example of how a fixed fee could be structured, which was said to be effectively the same as a not to exceed contract.",
+   "figures_as_printed": [
+    "$200K"
+   ],
+   "quote": "using $200k as an example, there could be a lump sum"
+  },
+  {
+   "topic": "Consultant fee rate",
+   "what_was_recorded": "Commissioners calculated that Wright Pierce was comfortable with a rate of roughly $77 per hour, or $3200 per week.",
+   "figures_as_printed": [
+    "$77 hr.",
+    "$3200 week"
+   ],
+   "quote": "calculated that wp was comfortable with the roughly $77 hr./$3200 week."
+  },
+  {
+   "topic": "Police detail cost for the project",
+   "what_was_recorded": "Wright Pierce estimated $50K for police detail for the project, to be billed to the town because SRF funding does not allow police detail in the construction contract.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "estimate $50k for police detail for project."
+  },
+  {
+   "topic": "Police detail cost for design phase",
+   "what_was_recorded": "Wright Pierce guessed police detail for the design phase would run $2K.",
+   "figures_as_printed": [
+    "$2K"
+   ],
+   "quote": "guessed that police detail would run $2k for desig n phase."
+  },
+  {
+   "topic": "Wright Pierce contract amount",
+   "what_was_recorded": "The motion accepted the Wright Pierce proposal in the amount of $198,300.00.",
+   "figures_as_printed": [
+    "$198,300.00"
+   ],
+   "quote": "in the amount of $198,300.00 to wright pierce."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Wright Pierce proposal for Lakeview/Pratt sewer extension(s)",
+   "resolution": "approved proposal as not to exceed contract, $198,300.00",
+   "quote": "meeting was for the re view of proposal from wright pierce for sewer extension(s) for lakeview/pratt."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Wright Pierce proposal for sewer extension(s) for Lakeview/Pratt",
+   "where": "text",
+   "quote": "meeting was for the re view of proposal from wright pierce for sewer extension(s) for lakeview/pratt."
+  },
+  {
+   "name": "Weston & Sampson proposal",
+   "where": "text",
+   "quote": "discussed the proposals received from wp and weston & sampson"
+  },
+  {
+   "name": "Not to exceed contract and addendum for field inspection",
+   "where": "text",
+   "quote": "accept the proposal with final re view of the not to exceed contract and addendum for field inspection"
+  }
+ ],
+ "tags": [
+  "sewer extension",
+  "Lakeview/Pratt",
+  "Wright Pierce",
+  "consultant contract",
+  "not to exceed",
+  "SRF funding",
+  "contingency",
+  "police detail"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

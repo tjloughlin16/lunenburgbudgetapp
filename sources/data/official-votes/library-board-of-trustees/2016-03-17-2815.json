@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-03-17",
  "docid": "2815",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of February 18, 2016",
+   "motion": "Accept the minutes of February 18, 2016 as presented.",
    "moved_by": "Harry",
    "seconded_by": "Gare",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "harry moved to accept the minutes as presented, gare seconded; voted: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Kiirja",
    "outcome": "passed",
@@ -29,6 +29,304 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0819545
+ "note": "Typed minutes, no scan issues. Only two motions are recorded (approval of minutes and adjournment), both with 'all in favor' and no numeric count. Other items (director evaluation, youth rules, thank-you note) record discussion or direction without a motion, so they are listed as decisions. Public comment section says none. Troy Daniels is recorded as a guest in the Board Comments section, not as public comment.",
+ "cost_usd": 0.00710802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:45 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "martha moore - director, lpl; bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "present",
+   "quote": "martha moore - director, lpl; bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "absent",
+   "quote": "absent: donna saiia, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: donna saiia, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "guest",
+   "status": "present",
+   "quote": "note: troy was visiting the meeting and speaking only as a guest."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Thank-you note to the Friends of LPL, authored and read by Dick, to be sent to the Friends; it met with general approval from the trustees.",
+   "quote": "met with general approval by the trustees; to be sent to the friends."
+  },
+  {
+   "decision": "Rules and regulations on youth behavior to be implemented; one approach discussed is a temporary ban on students who misbehave, with a three-strikes warning and sign-in sheet; update at the April meeting.",
+   "quote": "rules and regulations to be implemented."
+  },
+  {
+   "decision": "Decision on how much of the Library Trust Funds to use for e-books to be made and recorded by the trustees at the September meeting.",
+   "quote": "decision to be made and recorded by/for the trustees on how much - will be on the september meeting agenda."
+  },
+  {
+   "decision": "Personnel sub-committee (Harry, Kiirja, Gare and Dick) to combine the individual director evaluations into one by the comment sections.",
+   "quote": "explanation on how the individual submitted evaluations will be combined into one (the comment sections) by the personnel sub-committee (harry, kiirja, gare and dick)"
+  },
+  {
+   "decision": "Personnel sub-committee meeting for the Director Evaluation set for March 24th at the LPL.",
+   "quote": "set personnel sub-committee meeting for director evaluation"
+  },
+  {
+   "decision": "Board noted the guest comment that policy and procedures should be worded in conjunction with town counsel.",
+   "quote": "troy daniels' comment - policy and procedures should be \"worded\" in conjunction with town counsel."
+  },
+  {
+   "decision": "Room use by for-profit entities (BPL Policies) scheduled for discussion in April; Access and Use of Library Trust Funds scheduled for September; Marketing/Technology subcommittee, BOS Energy Policy and Library of Things listed as future agenda items.",
+   "quote": "room use by for-profit entities (bpl policies), to be discussed in april."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2016 Budget – heating and electricity",
+   "what_was_recorded": "An overage in heating, and probably electricity, was reported due to the very mild winter; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "overage in heating and probably electricity due to the very mild winter."
+  },
+  {
+   "topic": "FY 2017 Budget – additional program materials funding",
+   "what_was_recorded": "FinCom had no objection to the library asking for additional funding to cover primarily program materials; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "fincom also had no objection to the library asking for the additional funding to cover for [primarily program] materials."
+  },
+  {
+   "topic": "Digital Services Position salary",
+   "what_was_recorded": "The DSP designation does not affect the salary for the position; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the dsp designation does not affect the salary for the position."
+  },
+  {
+   "topic": "Hiring of new employee and salary budget line",
+   "what_was_recorded": "Dick explained that hiring a new employee would have no impact on the salary budget line; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "concerning hiring of new employee and whether it affects the salary [budget line] - dick explained that there was no impact."
+  },
+  {
+   "topic": "Green Committee grant for interior LED lighting",
+   "what_was_recorded": "A grant proposal for interior lighting upgrade to LED was approved by the Green Committee; Martha is investigating the next step.",
+   "figures_as_printed": [
+    "$44,332.00"
+   ],
+   "quote": "grant proposal for $44,332.00 has been approved by the green committee."
+  },
+  {
+   "topic": "Interior painting estimates",
+   "what_was_recorded": "Martha is seeking additional vendor estimates and details on interior painting; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "martha is looking for additional estimates and details on the interior painting from vendors."
+  },
+  {
+   "topic": "Library Trust Funds",
+   "what_was_recorded": "Trust funds total $62,000.00; funds designated for books may be available for use for e-books.",
+   "figures_as_printed": [
+    "$62,000.00"
+   ],
+   "quote": "access and use of library trust funds o total $62,000.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment o no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes of February 18, 2016",
+   "resolution": "approved",
+   "quote": "harry moved to accept the minutes as presented, gare seconded; voted: all in favor",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received as per handout; subitems noted",
+   "quote": "director's report, as per handout",
+   "tags": [
+    "director report",
+    "budget",
+    "staffing",
+    "programs",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Access and Use of Library Trust Funds",
+   "resolution": "decision deferred to September meeting",
+   "quote": "access and use of library trust funds",
+   "tags": [
+    "trust funds",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Action regarding youth misbehavior",
+   "resolution": "rules to be implemented; update at April meeting",
+   "quote": "action regarding youth misbehavior",
+   "tags": [
+    "youth behavior",
+    "rules"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "thank-you note approved for sending",
+   "quote": "thank you note to the friends of lpl from the board authored and read by dick.",
+   "tags": [
+    "Friends of LPL"
+   ]
+  },
+  {
+   "topic": "Caucus results of March 14",
+   "resolution": "nominations noted; all nominated without opposition",
+   "quote": "three names put forth, dick (3 year), donna (3 year), kiirja (2 year) terms.",
+   "tags": [
+    "elections",
+    "caucus"
+   ]
+  },
+  {
+   "topic": "Director Evaluation",
+   "resolution": "evaluations still being collected (4 of 7 submitted); no action",
+   "quote": "director evaluation-due march 17 (today!)",
+   "tags": [
+    "personnel",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Set personnel sub-committee meeting for Director Evaluation",
+   "resolution": "meeting set for March 24th",
+   "quote": "set personnel sub-committee meeting for director evaluation",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "comments noted; no impact on salary",
+   "quote": "troy daniels' comment - policy and procedures should be \"worded\" in conjunction with town counsel.",
+   "tags": [
+    "policy",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Agenda Items for upcoming meetings",
+   "resolution": "scheduled for future meetings",
+   "quote": "room use by for-profit entities (bpl policies), to be discussed in april.",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:59 p.m.",
+   "quote": "motion to adjourn so moved by gare, seconded by kiirja voted all in favor at 7:59 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for March 17, 2016",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for march 17, 2016 director's report children's librarian's report ya librarian's report events and programs calendar"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for march 17, 2016 director's report children's librarian's report ya librarian's report events and programs calendar"
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for march 17, 2016 director's report children's librarian's report ya librarian's report events and programs calendar"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for march 17, 2016 director's report children's librarian's report ya librarian's report events and programs calendar"
+  },
+  {
+   "name": "Events and programs calendar",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for march 17, 2016 director's report children's librarian's report ya librarian's report events and programs calendar"
+  }
+ ],
+ "tags": [
+  "library board",
+  "FY2016 budget",
+  "FY2017 budget",
+  "trust funds",
+  "LED lighting grant",
+  "youth behavior",
+  "director evaluation",
+  "personnel",
+  "Friends of LPL",
+  "caucus",
+  "facilities",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

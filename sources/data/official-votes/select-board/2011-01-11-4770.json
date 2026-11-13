@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-01-11",
  "docid": "4770",
@@ -12,23 +12,392 @@
  },
  "votes": [
   {
-   "motion": "To open executive session in accordance with M.G.L. Chapter 39, §23B(3) for the purpose of discussing strategy with respect to collective bargaining or litigation",
+   "motion": "Enter Executive Session under M.G.L. Chapter 39, §23B(3) by roll call vote, to discuss strategy on collective bargaining or litigation.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "opened executive session by roll call vote; steve aye, paula aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3) for the purpose of discussing strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigation position."
+   "quote": "opened executive session by roll call vote; steve aye, paula aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3)"
   },
   {
-   "motion": "To adjourn the regular session",
+   "motion": "Adjourn Regular Session at 8:45 P.M.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 8:45 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. Two procedural votes recorded: executive session entry and adjournment. No moved_by/seconded_by recorded; only roll call result listed for first vote.",
- "cost_usd": 0.1491295
+ "note": "OCR text (macOS Vision) with misspellings; attachments (aggregation plan, IT activities, five-year forecast spreadsheet) follow on pages 4-19. No motions are recorded for minutes, warrants, the aggregation hearing or the Holman Street Bridge item; those are recorded as decisions. Only the executive session roll call and the adjournment are recorded as votes. The forecast spreadsheet is partly garbled in OCR, so its figures are as printed. No transfers were recorded.",
+ "cost_usd": 0.01262502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, dave matthews and town manager kerry speidel present, tom alonzo absent."
+  },
+  {
+   "name": "Steven M deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, dave matthews and town manager kerry speidel present, tom alonzo absent."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, dave matthews and town manager kerry speidel present, tom alonzo absent."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, dave matthews and town manager kerry speidel present, tom alonzo absent."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, dave matthews and town manager kerry speidel present, tom alonzo absent."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "absent",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, dave matthews and town manager kerry speidel present, tom alonzo absent."
+  },
+  {
+   "name": "Dan Keohan",
+   "role": "coach for 8i grade basketball travel team",
+   "status": "present",
+   "quote": "dan keohan of 92 cross street came before the board in a plea for their assistance"
+  },
+  {
+   "name": "Brian Murphy",
+   "role": "of Colonial Power Group",
+   "status": "present",
+   "quote": "brian murphy of colonial power group reveiwed where we've been and what brought us to this point"
+  },
+  {
+   "name": "Nancy Strom",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "it director nancy strom provided the board with the attached summary of it activities within the past"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board of Selectmen Regular session minutes for 10/5/10, 10/12/10 and 1/4/11, and Executive Session minutes for 10/5/10, reviewed and signed (Dave noted changes to the 10/12/10 minutes, which Steve concurred with).",
+   "quote": "and executive session for 10/5/10 reviewed and signed."
+  },
+  {
+   "decision": "Warrants #37 11 and #38 11 reviewed and signed.",
+   "quote": "warrants - #37 11, 1/11/11 - $127,281.07 and #38 11, 1/2/11 - $249,724.66 reviewed and signed."
+  },
+  {
+   "decision": "Holman Street Bridge item deferred; planned for a meeting in February pending Fire Chief, Police Chief and DPW Director information.",
+   "quote": "paula noted that this was scheduled for a future meeting and as there is quite an amount of information"
+  },
+  {
+   "decision": "Municipal aggregation plan placed on next week's agenda for formal vote; copies to be provided at the Library and Town Hall and public given the chance to comment.",
+   "quote": "paula would like to have this placed on the board's agenda for next week for formal vote"
+  },
+  {
+   "decision": "Retirement System Overview with Kevin Blanchette tabled until next week.",
+   "quote": "retirement system overview - kevin blanchette, executive director - tabled until next week."
+  },
+  {
+   "decision": "Town Manager to bring in department heads within the next couple of weeks to explain department needs during budget season.",
+   "quote": "kerry proposes bringing in the department heads within the next couple of weeks"
+  },
+  {
+   "decision": "Town Manager to add a retrospective of staff levels over the past 10 years and benefit costs for the proposed personnel increases to the forecast information.",
+   "quote": "kerry will add this information and is also in the process of"
+  },
+  {
+   "decision": "Town Manager to try to schedule one of the Chiefs and possibly the COA and Library for next week's meeting.",
+   "quote": "she will try to schedule one of the chiefs' and possibly the coa and library for next week's meeting."
+  },
+  {
+   "decision": "Town Manager to meet with the developer on the Eagle Heights option extension next week and report back to the board.",
+   "quote": "she will be meeting with him next week and will provide additional information to you after that time."
+  },
+  {
+   "decision": "Town Manager to schedule a meeting with RCAP Solutions, Inc. representatives and the board on Eagle Heights.",
+   "quote": "she would like to schedule a meeting with representatives of rcap solutions, inc. and the board to discuss these"
+  },
+  {
+   "decision": "Chairman announced the Board would not return to Regular Session after Executive Session.",
+   "quote": "chairman announced that the board would not be returning to regular session"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Two warrants were reviewed and signed with printed totals.",
+   "figures_as_printed": [
+    "$127,281.07",
+    "$249,724.66"
+   ],
+   "quote": "warrants - #37 11, 1/11/11 - $127,281.07 and #38 11, 1/2/11 - $249,724.66 reviewed and signed."
+  },
+  {
+   "topic": "School budget increase",
+   "what_was_recorded": "Dave reported the Superintendent's budget as a net increase over last fiscal year and over the Town Manager's projection.",
+   "figures_as_printed": [
+    "$923,000",
+    "$424,000"
+   ],
+   "quote": "net increase of approximately $923,000 of last fiscal year and $424,000 over the town manager's projection."
+  },
+  {
+   "topic": "Five-year financial plan projected deficit",
+   "what_was_recorded": "Projected deficit is the restoration of items that have been cut.",
+   "figures_as_printed": [
+    "$899,314"
+   ],
+   "quote": "projected deficit is restoration of items that have been cut totaling $899,314"
+  },
+  {
+   "topic": "Five-year forecast sub-total row",
+   "what_was_recorded": "Spreadsheet sub-total row for the special expenditure assumptions across FY12 to FY16.",
+   "figures_as_printed": [
+    "899,314",
+    "$ 1,935,336",
+    "$ 2,707,293",
+    "$ 3,404,784",
+    "$ 4,135,753"
+   ],
+   "quote": "sub-total: s 899,314 | $ 1,935,336| $ 2,707,293 $ 3,404,784| $ 4,135,753"
+  },
+  {
+   "topic": "DPW crack sealing program",
+   "what_was_recorded": "Forecast assumption adds a yearly crack sealing program.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "11. dpw: $50k per year for crack sealing program"
+  },
+  {
+   "topic": "Pavement Management Plan funding",
+   "what_was_recorded": "Forecast assumption: funding toward the pavement plan each year.",
+   "figures_as_printed": [
+    "$750K"
+   ],
+   "quote": "$750k toward pavement management plan each year"
+  },
+  {
+   "topic": "Capital Plan funding",
+   "what_was_recorded": "Forecast assumption: funding toward the Capital Plan each year.",
+   "figures_as_printed": [
+    "$500K"
+   ],
+   "quote": "24. $500k toward capital plan each year"
+  },
+  {
+   "topic": "Emergency Management stipend",
+   "what_was_recorded": "Forecast assumption to increase the stipend.",
+   "figures_as_printed": [
+    "$2,500",
+    "$5,000"
+   ],
+   "quote": "emergency management: increase stipend from $2,500 to $5,000"
+  },
+  {
+   "topic": "Community choice aggregation program funding",
+   "what_was_recorded": "Program funding comes from a per-kWh fee on the supplier, paid to Colonial Power Group.",
+   "figures_as_printed": [
+    "$0.001/kWh"
+   ],
+   "quote": "community choice aggregation program funding will be derived from a $0.001/kwh commission fee payable by the supplier to colonial power group, inc."
+  },
+  {
+   "topic": "Aggregation supplier adder",
+   "what_was_recorded": "Supply agreement includes a per-kWh adder paid to CPG to fund ongoing program costs.",
+   "figures_as_printed": [
+    "$0.001/kWh"
+   ],
+   "quote": "the electric supply agreement with a competitive supplier will include a $0.001/kwh adder that will be paid by the competitive supplier to cpg."
+  },
+  {
+   "topic": "Sample residential electric bill",
+   "what_was_recorded": "Plan shows a sample complete bill for 500 kWh in December 2010 with totals.",
+   "figures_as_printed": [
+    "$93.83",
+    "$56.16",
+    "$37.67"
+   ],
+   "quote": "the typical residential \"complete bill\" for use of 500 kilowatt hours shows the following charges for unitil's basic service in december 2010:"
+  },
+  {
+   "topic": "Youth basketball team fee offer",
+   "what_was_recorded": "The team has offered to pay a fee for gym time, which the speaker was told would not solve the problem. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "they have offered to pay a fee, but is being told that this will not solve the problem."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dan Keohan",
+   "stated_role": "coach for 8i grade basketball travel team",
+   "topic": "school gym availability for basketball practice",
+   "quote": "dan keohan of 92 cross street came before the board in a plea for their assistance"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment - school gym access for basketball travel team",
+   "resolution": "heard; Parks Department suggested as contact",
+   "quote": "dan keohan of 92 cross street came before the board in a plea for their assistance",
+   "tags": [
+    "youth sports",
+    "gym access",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements - pending snow storm",
+   "resolution": "noted",
+   "quote": "snow announcement for pending snow storm and potential power outages.",
+   "tags": [
+    "weather",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Current business - Retirement System Overview",
+   "resolution": "tabled until next week",
+   "quote": "retirement system overview - kevin blanchette, executive director - tabled until next week.",
+   "tags": [
+    "retirement"
+   ]
+  },
+  {
+   "topic": "Current business - Public hearing on municipal aggregation plan",
+   "resolution": "hearing held; formal vote requested for next week",
+   "quote": "public hearing municipal aggregation plan - kerry provided the attached information for the board",
+   "tags": [
+    "electric aggregation",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Current business - Minutes and warrants",
+   "resolution": "reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 10/5/10, 10/12/10 (dave noted changes to these minutes",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action file - Holman Street Bridge",
+   "resolution": "deferred to February",
+   "quote": "action file issues - ernie would like to discuss holman street bridge",
+   "tags": [
+    "bridge",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received",
+   "quote": "dave attended the recent school committee meeting at which time, the superintendent presented her budget.",
+   "tags": [
+    "school budget",
+    "PACC",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Department updates - IT",
+   "resolution": "report received",
+   "quote": "it director nancy strom provided the board with the attached summary of it activities within the past",
+   "tags": [
+    "IT",
+    "Munis",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "reported; Eagle Heights extension request noted",
+   "quote": "kerry received information from the planning director and the planning board is interested in broadcasting",
+   "tags": [
+    "Town Hall renovation",
+    "Eagle Heights housing",
+    "Planning Board broadcasting"
+   ]
+  },
+  {
+   "topic": "Old business - 5-year financial plan",
+   "resolution": "discussed; department heads to be scheduled",
+   "quote": "update on 5-year financial plan - same document that was presented in november",
+   "tags": [
+    "budget",
+    "five-year forecast",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered; board did not return to regular session",
+   "quote": "adjourned regular session at 8:45 p.m. and opened executive session by roll call vote",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town of Lunenburg Community Choice Aggregation Plan",
+   "where": "list",
+   "quote": "town of lunenburg community choice aggregation plan"
+  },
+  {
+   "name": "IT Activities 2010 - 2011",
+   "where": "list",
+   "quote": "it activities 2010 - 2011"
+  },
+  {
+   "name": "FY2012 - 2016 Financial Forecast",
+   "where": "list",
+   "quote": "fy2012 - 2016 financial forecast"
+  },
+  {
+   "name": "Warrants #37 11 (1/11/11) and #38 11 (1/2/11)",
+   "where": "text",
+   "quote": "warrants - #37 11, 1/11/11 - $127,281.07 and #38 11, 1/2/11 - $249,724.66 reviewed and signed."
+  }
+ ],
+ "tags": [
+  "electric aggregation",
+  "public hearing",
+  "school budget",
+  "five-year forecast",
+  "Town Hall renovation",
+  "Eagle Heights housing",
+  "IT department",
+  "youth basketball gym access",
+  "snow storm",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry provided the attached information for the board"
+ },
+ "dropped_unquoted_by_field": {}
 }

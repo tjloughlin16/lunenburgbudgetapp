@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-05-14",
  "docid": "637",
@@ -12,33 +12,319 @@
  },
  "votes": [
   {
-   "motion": "to appoint Lou as Chairman of the Board",
+   "motion": "Appoint Lou (Louis J. Franco) as Chairman of the Board.",
    "moved_by": "Chris",
    "seconded_by": "Matt",
    "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "a motion was made by chris and seconded by matt to appoint lou as chairman of the board."
   },
   {
-   "motion": "to grant full exemption to six ABC applications seeking FY14 property tax exemptions",
+   "motion": "Grant full exemption to all six FY14 ABC (religious and charitable) applicants.",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "after reviewing the applications the board voted unanimously in favor of granting full exemption to all applicants."
+   "quote": "the board voted unanimously in favor of granting full exemption to all applicants."
   },
   {
-   "motion": "to petition the Massachusetts Department of Revenue for authority to abate and waive back taxes and interest in excess of $100,000",
+   "motion": "Petition the Massachusetts Department of Revenue for authority to abate and waive back taxes and interest in excess of $100,000 on 163 and 171 Lancaster Ave (Form 8 of 58).",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "unanimously voted to petition the massachusetts department of revenue for authority to abate and wave back taxes and interest in excess of $100,000."
   },
   {
-   "motion": "to meet on Tuesday, June 4 at 6 p.m.",
-   "outcome": "not stated",
+   "motion": "Board voted to meet on Tuesday, June 4 at 6 pm.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "board voted to meet on tuesday, june 4\" at 6 pm."
+   "quote": "board voted to meet on tuesday, june 4\" at 6 pm. meeting adjourned at 7:40 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes; readable overall. One OCR artifact: \"June 4\\\"\" appears to be \"June 4th\". The text also contains other OCR artifacts ('Minutos' for 'Minutes', 'mealing' for 'meeting', 'posisoned' for 'postponed') but the votes are clear.",
- "cost_usd": 0.1438465
+ "note": "Scanned pages 1-2, OCR text. The header line is OCR-garbled (\"Minutos ... May 71i Meeting posisoned due to Lack of Quorum\") and may say the meeting was postponed for lack of quorum; the body records a full meeting with motions, so the body was used. Chairman appointment has no printed count. ABC exemptions and the DOR petition are recorded only as \"unanimously\"; no mover is printed. Several approvals are recorded with no motion and are kept as decisions, not votes. No public comment section is printed. Signature line OCR reads \"Lavise Paquette\" (presumably Louise Paquette).",
+ "cost_usd": 0.00691082,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis J. Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board members, christopher comeau and matthew j. papini, sr., regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board members, christopher comeau and matthew j. papini, sr., regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "matt informed the boa that he was sworn in this evening prior to the meeting after being elected for a"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board members, christopher comeau and matthew j. papini, sr., regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board members, christopher comeau and matthew j. papini, sr., regional assessor, harald scheid, and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes (no motion recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes."
+  },
+  {
+   "decision": "Board reviewed and approved two Supplemental FY13 Re Bills to be committed on May 16, 2013 (no motion recorded).",
+   "quote": "the board reviewed and approved two supplemental fy13 re bills to be committed on may 16, 2013 in the amount of $4,214.39."
+  },
+  {
+   "decision": "Board reviewed and signed the hard copy of the final FY2013 Statutory Exemption report, which will be filed; a copy goes to the accountant.",
+   "quote": "the board reviewed and signed the \"hard\" copy and will be filed."
+  },
+  {
+   "decision": "Board certified full abatement on the two uncollectable motor vehicle excise bills (1999 and 2001).",
+   "quote": "the board reviewed the request and certified full abatement on both ===pag",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Harald Scheid to send a letter to the Bureau of Municipal Finance Law / DOR on the Board's behalf and await their decision on the Lancaster Ave abatement.",
+   "quote": "harald has comprised a letter to the bureau of municipal finance law / dor on behalf of the board and will await their decision."
+  },
+  {
+   "decision": "Board agreed to add relief administrative clerk coverage (approx. 12 days per diem, to be quoted in the non-price proposal) to the RFP scope of services.",
+   "quote": "chris suggested and the board agreed that the item be added to the scope of services."
+  },
+  {
+   "decision": "Board will approve the RFP for Property Tax Administrative Services and submit it to the Town Manager once the scope-of-services omissions are revised as recommended.",
+   "quote": "they will approve the rfp and submit it to the town manager for review and approval."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental FY13 Re Bills",
+   "what_was_recorded": "Two supplemental FY13 real estate bills were approved for commitment on May 16, 2013.",
+   "figures_as_printed": [
+    "$4,214.39"
+   ],
+   "quote": "the board reviewed and approved two supplemental fy13 re bills to be committed on may 16, 2013 in the amount of $4,214.39."
+  },
+  {
+   "topic": "FY2013 Statutory Exemption report",
+   "what_was_recorded": "Total exemptions reported to the state, which include one tax deferral; the report excludes the tax work off program.",
+   "figures_as_printed": [
+    "$ 94,479.24"
+   ],
+   "quote": "total exemptions reported to the state are $ 94,479.24 which includes one tax deferrals."
+  },
+  {
+   "topic": "Tax work off program",
+   "what_was_recorded": "Tax work off program exemptions totalled an amount not included in the state report.",
+   "figures_as_printed": [
+    "$9,520.00"
+   ],
+   "quote": "tax work off program which totaled: $9,520.00 in exemptions."
+  },
+  {
+   "topic": "Uncollectable motor vehicle excise abatement",
+   "what_was_recorded": "Two uncollectable excise bills (1999 and 2001) were certified for full abatement, plus fees and interest.",
+   "figures_as_printed": [
+    "$72.50 plus fees & interest",
+    "$15.00 plus fees & interest"
+   ],
+   "quote": "one bill from calendar year 1999 in the amount of $72.50 plus fees & interest"
+  },
+  {
+   "topic": "163 and 171 Lancaster Ave tax title property (Form 8 of 58)",
+   "what_was_recorded": "Potential buyers offered a figure in the low $100,000; the IRS offered to pay Lunenburg $100,000 from a future sale's proceeds; the Board petitioned DOR to abate back taxes and interest in excess of $100,000.",
+   "figures_as_printed": [
+    "low $100,000",
+    "$100,000",
+    "in excess of $100,000"
+   ],
+   "quote": "the irs is willing to pay lunenburg $100,000 from a future sale's proceeds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "the meeting opened at 6:05 pm.",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Board member sworn in",
+   "resolution": "noted",
+   "quote": "matt informed the boa that he was sworn in this evening prior to the meeting after being elected for a",
+   "tags": [
+    "board membership",
+    "election"
+   ]
+  },
+  {
+   "topic": "Chairman election",
+   "resolution": "Lou appointed Chairman",
+   "quote": "a motion was made by chris and seconded by matt to appoint lou as chairman of the board.",
+   "tags": [
+    "chairman",
+    "election"
+   ]
+  },
+  {
+   "topic": "Routine approvals",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes.",
+   "tags": [
+    "vouchers",
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Supplemental FY13 Re Bills",
+   "resolution": "approved",
+   "quote": "the board reviewed and approved two supplemental fy13 re bills to be committed on may 16, 2013 in the amount of $4,214.39.",
+   "tags": [
+    "supplemental bills",
+    "FY13",
+    "tax commitment"
+   ]
+  },
+  {
+   "topic": "FY14 ABC exemption applications",
+   "resolution": "granted full exemption to all six applicants",
+   "quote": "the board voted unanimously in favor of granting full exemption to all applicants.",
+   "tags": [
+    "exemptions",
+    "FY14",
+    "charitable organizations"
+   ]
+  },
+  {
+   "topic": "FY2013 Statutory Exemption report",
+   "resolution": "submitted to state; hard copy signed",
+   "quote": "louise reported that she has electronically submitted the final fy 2013 statutory exemption report to the state.",
+   "tags": [
+    "exemptions",
+    "FY13",
+    "state report"
+   ]
+  },
+  {
+   "topic": "Uncollectable motor vehicle excise abatement",
+   "resolution": "full abatement certified",
+   "quote": "the board reviewed the request and certified full abatement on both ===pag",
+   "tags": [
+    "motor vehicle excise",
+    "abatement",
+    "uncollectable"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "163 and 171 Lancaster Ave abatement petition (Form 8 of 58)",
+   "resolution": "petition to DOR approved",
+   "quote": "unanimously voted to petition the massachusetts department of revenue for authority to abate and wave back taxes and interest in excess of $100,000.",
+   "tags": [
+    "tax title",
+    "abatement",
+    "IRS",
+    "DOR"
+   ]
+  },
+  {
+   "topic": "Personal property assessment project",
+   "resolution": "noted",
+   "quote": "harald reported that the personal property assessment project will be underway soon",
+   "tags": [
+    "personal property",
+    "RRG"
+   ]
+  },
+  {
+   "topic": "RFP for Property Tax Administrative Services",
+   "resolution": "not approved; revisions required before approval",
+   "quote": "the board was not satisfied with the item which they had requested at the last",
+   "tags": [
+    "RFP",
+    "procurement",
+    "office coverage"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for June 4 at 6 pm; adjourned 7:40 pm",
+   "quote": "board voted to meet on tuesday, june 4\" at 6 pm. meeting adjourned at 7:40 pm.",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Final FY 2013 Statutory Exemption report",
+   "where": "text",
+   "quote": "louise reported that she has electronically submitted the final fy 2013 statutory exemption report to the state."
+  },
+  {
+   "name": "State Tax Form 166-380-MVE / BE (with Tax Collector letter)",
+   "where": "text",
+   "quote": "received a letter and state tax form 166-380-mve / be today from the tax"
+  },
+  {
+   "name": "Form 8 of 58 (Request for Authority to Abate Local Tax)",
+   "where": "text",
+   "quote": "harald presented form 8 of 58 form (request for authority to abate local tax) regarding the property of"
+  },
+  {
+   "name": "Schedule 58.8",
+   "where": "text",
+   "quote": "the board reviewed schedule 58. 8 and the real estate tax statement provided by the tax collector"
+  },
+  {
+   "name": "Real Estate Tax Statement (provided by the Tax Collector)",
+   "where": "text",
+   "quote": "and the real estate tax statement provided by the tax collector"
+  },
+  {
+   "name": "Letter to the Bureau of Municipal Finance Law / DOR",
+   "where": "text",
+   "quote": "harald has comprised a letter to the bureau of municipal finance law / dor on behalf of the board"
+  },
+  {
+   "name": "Request For Proposal for Property Tax Administrative Services",
+   "where": "text",
+   "quote": "the board addressed and reviewed the request for proposal for property tax administrative services"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "exemptions",
+  "abatement",
+  "tax title",
+  "motor vehicle excise",
+  "RFP",
+  "personal property",
+  "chairman election",
+  "FY13",
+  "FY14",
+  "Lancaster Ave",
+  "IRS"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

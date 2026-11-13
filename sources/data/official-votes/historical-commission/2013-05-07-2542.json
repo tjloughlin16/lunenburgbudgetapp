@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2013-05-07",
  "docid": "2542",
@@ -11,7 +11,78 @@
   "doc_url": "/docs/meetings/historical-commission/2013-05-07-minutes-2542.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "Document is a meeting agenda, not minutes recording voting results. No votes are recorded in this text.",
- "cost_usd": 0.106337
+ "dropped_unquoted": 1,
+ "note": "The text is a single-page meeting agenda only. It records no minutes of discussion, no motions or votes (including approval of the 4/9/13 minutes), no attendance, no speakers, no dollar figures and no documents used. Topics are listed as agenda items with resolution not stated. Nothing was invented from the agenda.",
+ "cost_usd": 0.00224452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 4/9/13 Meeting Minutes",
+   "resolution": "not stated",
+   "quote": "1. approval of 4/9/13 meeting minutes"
+  },
+  {
+   "topic": "Old Business: Demolition Delay Release – Padula House",
+   "resolution": "not stated",
+   "quote": "demolition delay release - padula house"
+  },
+  {
+   "topic": "Old Business: Lunenburg Ledger Newspaper Articles – A. Phelps",
+   "resolution": "not stated",
+   "quote": "lunenburg ledger newspaper articles - a. phelps"
+  },
+  {
+   "topic": "Old Business: Town Wide Photo Inventory of Properties – D. McQuaid",
+   "resolution": "not stated",
+   "quote": "town wide photo inventory of properties - d. mcquaid"
+  },
+  {
+   "topic": "Old Business: Cemetery Preservation Project – R. McGrath",
+   "resolution": "not stated",
+   "quote": "cemetery preservation project - r. mcgrath"
+  },
+  {
+   "topic": "Old Business: Community Preservation Act Discussion",
+   "resolution": "not stated",
+   "quote": "community preservation act discussion"
+  },
+  {
+   "topic": "New Business: possible Town web site use",
+   "resolution": "not stated",
+   "quote": "discuss possible town web site use"
+  },
+  {
+   "topic": "Date of Next Meeting",
+   "resolution": "not stated",
+   "quote": "date of next meeting 6. adjournment"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "not stated",
+   "quote": "date of next meeting 6. adjournment"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "agenda only",
+  "demolition delay",
+  "cemetery preservation",
+  "photo inventory",
+  "Community Preservation Act",
+  "town website",
+  "historic preservation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

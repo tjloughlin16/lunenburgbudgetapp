@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2015-03-26",
  "docid": "3244",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve prior minutes",
+   "motion": "Approve the minutes of the previous meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 3-0",
@@ -20,15 +20,15 @@
    "quote": "motion was made to approve minutes. motion was seconded and minutes were approved 3-0."
   },
   {
-   "motion": "Recess into executive session regarding Marshall Parking Lot issue",
+   "motion": "Recess into a short executive session regarding the Marshall Parking Lot issue.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "the three commissioners voted in favor of recessing into a short executive session at 7:03pm."
+   "quote": "the three commissioners voted in favor of recessing into a short executive session"
   },
   {
-   "motion": "Accept the Marshall parking lot plans as designed from Ducharme and Dillis",
+   "motion": "Accept the Marshall parking lot plans as designed by Ducharme and Dillis.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 3-0",
@@ -36,7 +36,7 @@
    "quote": "the commissioners reviewed and vote in favor 3-0 to accept the plans as designed from ducharme and dillis."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 3-0",
@@ -45,6 +45,203 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text (macOS Vision); all votes are clearly readable and recorded with vote counts.",
- "cost_usd": 0.08574749999999999
+ "note": "OCR text from a scanned page. The signature block at the end is garbled (\"Mike Mascare a hi\", \"ces\") and the \"Minutes Accepted on: 411545\" line is unclear, so I did not rely on it. The minutes name the Chairman only in the page-1 header and do not say who moved or seconded any motion. The \"April 7t\" deadline is read as April 7. The minutes contain no dollar figures. No public comment section is printed.",
+ "cost_usd": 0.00420602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Masciarelli",
+   "role": "Commissioner (Chairman per minutes header)",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio and corinne scouten"
+  },
+  {
+   "name": "Bob Robuccio",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio and corinne scouten"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio and corinne scouten"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director - jack rodriquenz and director of public facilities at lunenburg public schools -"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Public Facilities at Lunenburg Public Schools",
+   "status": "present",
+   "quote": "director of public facilities at lunenburg public schools -"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commissioners requested a budget breakdown and explanation of expenses from the DPW Director, who will get it to them.",
+   "quote": "the commissioners requested a budget breakdown and explanation of expenses from dpw director."
+  },
+  {
+   "decision": "Mr. Londa will prepare a proposal on how to set up the lights fees, and will try to tie in historical electric data before April 7.",
+   "quote": "mr. londa will prepare a proposal of his thoughts on how to set up the lights fees."
+  },
+  {
+   "decision": "DPW will fix the collapsed gate in center field (softball) at Marshall.",
+   "quote": "the gate in center field (softball) is collapsed. dpw will fix."
+  },
+  {
+   "decision": "The commissioners will follow up with Sandy Laserte and Justin Sparks, who run the tennis camp, on the fee payment question.",
+   "quote": "the commissioners will follow up with sandy laserte and justin sparks who run the camp."
+  },
+  {
+   "decision": "Suggested two meetings in April: April 15 (Gen Nass to discuss weed issue at Town Beach) and April 29 (Marshall Parking Lot issue, inviting all interested parties).",
+   "quote": "suggest two meetings in april. april 15th - gen nass would like to come and discuss weed issue at town"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf fees: electricity charge",
+   "what_was_recorded": "Electricity for the lights will come from the new school once online, avoiding a separate demand cost; a fee charge for electricity is to be set from historical data.",
+   "figures_as_printed": [],
+   "quote": "the electricity will be coming from the new school once on line. this will save a separate and very expensive demand cost."
+  },
+  {
+   "topic": "Budget breakdown",
+   "what_was_recorded": "Commissioners requested a budget breakdown and explanation of expenses from the DPW Director; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "the commissioners requested a budget breakdown and explanation of expenses from dpw director."
+  },
+  {
+   "topic": "Tennis camp fees",
+   "what_was_recorded": "Tennis camp fees are questioned because the camp's website does not show fees as payable to the town; Mr. Robuccio said the money is deposited through the town. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "mr. robuccio said the money in fact is deposited through the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "tags": [
+    "call to order",
+    "attendance"
+   ],
+   "quote": "meeting convened at 7:01pm. in attendance were:"
+  },
+  {
+   "topic": "Review / Approve Minutes",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion was made to approve minutes. motion was seconded and minutes were approved 3-0."
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered 7:03pm, ended 7:25pm",
+   "tags": [
+    "executive session",
+    "Marshall parking lot"
+   ],
+   "quote": "dpw director jack rodriquenz requested a short executive session regarding marshall parking lot issue."
+  },
+  {
+   "topic": "Marshall Parking Lot",
+   "resolution": "plans accepted 3-0",
+   "tags": [
+    "Marshall",
+    "parking lot",
+    "plans"
+   ],
+   "quote": "the commissioners reviewed and vote in favor 3-0 to accept the plans as designed from ducharme and dillis."
+  },
+  {
+   "topic": "Marshall Baseball Fields",
+   "resolution": "DPW to fix gate; no vote",
+   "tags": [
+    "Marshall",
+    "baseball fields",
+    "maintenance"
+   ],
+   "quote": "snow clearing took place at marshall. fields are almost ready."
+  },
+  {
+   "topic": "Budgets",
+   "resolution": "breakdown requested from DPW",
+   "tags": [
+    "budget"
+   ],
+   "quote": "the commissioners requested a budget breakdown and explanation of expenses from dpw director."
+  },
+  {
+   "topic": "Turf Fees",
+   "resolution": "Londa to prepare lights fee proposal; no vote",
+   "tags": [
+    "turf fees",
+    "lights",
+    "electricity",
+    "fee schedule"
+   ],
+   "quote": "mr. londa will prepare a proposal of his thoughts on how to set up the lights fees."
+  },
+  {
+   "topic": "Tennis Camp",
+   "resolution": "commissioners to follow up; no vote",
+   "tags": [
+    "tennis camp",
+    "fees",
+    "summer program"
+   ],
+   "quote": "the commissioners will follow up with sandy laserte and justin sparks who run the camp."
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "two April meetings suggested; no vote",
+   "tags": [
+    "scheduling",
+    "Town Beach",
+    "weeds"
+   ],
+   "quote": "suggest two meetings in april. april 15th - gen nass would like to come and discuss weed issue at town"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 3-0 at 8:34pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "time adjourned was 8:34pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Updated plans for the Marshall parking lot project (as designed by Ducharme and Dillis)",
+   "where": "text",
+   "quote": "mr. rodriquenz presented updated plans for the parking lot project at marshall."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall parking lot",
+  "Marshall baseball fields",
+  "turf fees",
+  "lights electricity",
+  "tennis camp",
+  "budget",
+  "executive session",
+  "Town Beach weeds",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

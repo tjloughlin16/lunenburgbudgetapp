@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-11-14",
  "docid": "2300",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 10/10/13",
+   "motion": "Approve the minutes of 10/10/13.",
    "moved_by": "K.M",
    "seconded_by": "JH",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "k.m motioned to approve the minutes of 10/10/13. jh seconded, motion approved."
   },
   {
-   "motion": "Approve the minutes of 10/24/13",
+   "motion": "Approve the minutes of 10/24/13.",
    "moved_by": "KM",
    "seconded_by": "JH",
    "outcome": "passed",
    "procedural": true,
-   "quote": "km motioned to approve the minutes of 10/24/13. jh seconded, motion approved."
+   "quote": "km motioned to approve the minutes of 10/24/13. jh seconded, motion approved. js abstained as he wasn't present."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "KM",
    "seconded_by": "SR",
    "outcome": "passed",
@@ -37,6 +37,172 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. All three votes recorded: two motions to approve prior meeting minutes and one motion to adjourn.",
- "cost_usd": 0.0810485
+ "note": "Text is OCR (macOS Vision) of a scanned minutes page; some quote marks and abbreviations may be misread, though quotes were copied from the OCR text as printed. No pages appear missing. Attendance is taken from the Present line; the minutes record no absences. Public comment is not recorded in these minutes. The minutes do not state a vote count for any motion, so outcomes are recorded as passed.",
+ "cost_usd": 0.00363202,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard, j. smith"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard, j. smith"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes respectfully submitted by terri burchfield."
+  },
+  {
+   "name": "Jason Smith",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard, j. smith"
+  },
+  {
+   "name": "Steven Raboin",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard, j. smith"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard, j. smith"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard, j. smith"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will work on a fresh draft of the fiscal policies reflecting the discussion.",
+   "quote": "john will work on a fresh draft reflecting the discussion."
+  },
+  {
+   "decision": "The Town Manager will present the 5 Year Financial Forecast at the December 12 meeting.",
+   "quote": "december 12th, the town manager will present the 5 year financial forecast."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free cash certifications",
+   "what_was_recorded": "ME reviewed the Town Manager's email on free cash certifications, which include a general fund amount.",
+   "figures_as_printed": [
+    "$234,500"
+   ],
+   "quote": "regarding free cash certifications, including $234,500 in the general fund"
+  },
+  {
+   "topic": "Average tax bill under new tax rate",
+   "what_was_recorded": "The assessor expects the average tax bill to rise with the new tax rate.",
+   "figures_as_printed": [
+    "$179"
+   ],
+   "quote": "the assessor expects the average tax bill will go up $179 with the new tax rate."
+  },
+  {
+   "topic": "Council on Aging budget spending",
+   "what_was_recorded": "The Director of the Council on Aging said the department was through about 41% of its budget and on track for the year.",
+   "figures_as_printed": [
+    "41%"
+   ],
+   "quote": "they were through about 41% of the budget and on track for the year."
+  },
+  {
+   "topic": "Eagle House bocce ball court",
+   "what_was_recorded": "A bocce ball court was built by volunteers at no cost to the town.",
+   "figures_as_printed": [
+    "0 cost"
+   ],
+   "quote": "new bocce ball court built by volunteers at 0 cost to the town."
+  },
+  {
+   "topic": "School Building Committee project budget",
+   "what_was_recorded": "The school project budget is currently under a stated figure during value engineering.",
+   "figures_as_printed": [
+    "$73 million"
+   ],
+   "quote": "the project budget is currently under $73 million."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and Communications",
+   "resolution": "Special Town Meeting and election dates reviewed; no vote",
+   "quote": "me reviewed the dates for the special town meeting and election."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved minutes of 10/10/13 and 10/24/13",
+   "quote": "k.m motioned to approve the minutes of 10/10/13. jh seconded, motion approved."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received; no action",
+   "quote": "sr reported that capital planning is into deliberations and ranking items."
+  },
+  {
+   "topic": "Town Manager Update",
+   "resolution": "reviewed free cash email; no action",
+   "quote": "me reviewed the town manager's email regarding free cash certifications"
+  },
+  {
+   "topic": "Fiscal Policies",
+   "resolution": "draft presented; John Henshaw to prepare fresh draft",
+   "quote": "jh presented his draft of policies regarding capital expenditures, free cash and debt management."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "dates confirmed; no vote",
+   "quote": "december 19th will be the public hearing for the special town meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:52 pm",
+   "quote": "km motioned to adjourn. sr seconded, meeting adjourned at 8:52 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager's email regarding free cash certifications",
+   "where": "text",
+   "quote": "me reviewed the town manager's email regarding free cash certifications"
+  },
+  {
+   "name": "JH draft of policies regarding capital expenditures, free cash and debt management",
+   "where": "text",
+   "quote": "jh presented his draft of policies regarding capital expenditures, free cash and debt management."
+  },
+  {
+   "name": "5 Year Financial Forecast",
+   "where": "text",
+   "quote": "december 12th, the town manager will present the 5 year financial forecast."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Special Town Meeting",
+  "free cash",
+  "fiscal policy",
+  "capital planning",
+  "school building project",
+  "tax rate",
+  "minutes approval",
+  "2013"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

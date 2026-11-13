@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2015-09-15",
  "docid": "5345",
@@ -12,15 +12,199 @@
  },
  "votes": [
   {
-   "motion": "Approve the May 20, 2015 minutes",
-   "moved_by": "Jean",
-   "seconded_by": "Sue",
+   "motion": "Approve the May 20, 2015 minutes.",
+   "moved_by": "Jean Larkin",
+   "seconded_by": "Sue Doherty",
    "outcome": "not stated",
    "procedural": true,
    "quote": "approval of may 20, 2015 minutes motioned by jean and second by sue."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes describe a seconded nomination of Sue Doherty as Chairperson (\"Jean nominated Sue Doherty as the official Chairperson and Myleen second the nomination\"), but this is not stated as a vote with an outcome recorded. The election appears to have proceeded, but no explicit vote language is used. Meeting adjournment is stated as a fact, not moved as a motion. This is a OCR scan; transcription is readable.",
- "cost_usd": 0.0964625
+ "note": "OCR text of a scanned page with some garbled words: the signature line reads 'Vlai yes' and the closing reads 'Respectruly submittea'. The minutes name no dollar figures and record no vote results, so only the approval-of-minutes motion is captured, with its outcome as not stated. The minutes also do not include a documents list.",
+ "cost_usd": 0.00339472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "interim Chairperson",
+   "status": "present",
+   "quote": "members present: myleen mallari, jean larkin, sheila craigen and sue doherty (interim chairperson)."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: myleen mallari, jean larkin, sheila craigen and sue doherty (interim chairperson)."
+  },
+  {
+   "name": "Jean Larkin",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: myleen mallari, jean larkin, sheila craigen and sue doherty (interim chairperson)."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "member; signed the minutes",
+   "status": "present",
+   "quote": "members present: myleen mallari, jean larkin, sheila craigen and sue doherty (interim chairperson)."
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Town Clerk",
+   "status": "present",
+   "quote": "town clerk, kathy herrick, stepped into the meeting briefly to swear in myleen mallari."
+  },
+  {
+   "name": "Marion Walsh",
+   "role": "member",
+   "status": "absent",
+   "quote": "marion walsh is out briefly due to illness."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jean Larkin nominated Sue Doherty as the official Chairperson; Myleen Mallari seconded. No vote on the nomination is recorded.",
+   "quote": "jean nominated sue doherty as the official chairperson and myleen second the nomination."
+  },
+  {
+   "decision": "Sue Doherty will contact applicants for time sheets when needed.",
+   "quote": "sue stated that she will contact applicants for time sheets when needed."
+  },
+  {
+   "decision": "Sue Doherty will change dates on new 2016 applications, have them ready when applicants turn in time sheets, and revise the pamphlets.",
+   "quote": "sue stated that she will change dates on new applications and have them ready when applicants turn in their time sheets."
+  },
+  {
+   "decision": "Myleen Mallari will review the Bylaws.",
+   "quote": "myleen states she will review the bylaws."
+  },
+  {
+   "decision": "Myleen Mallari asked that her assistant, Sally Deming, take her place as a member of the Tax Work-Off Program and attend scheduled meetings while Myleen stays involved. No vote recorded.",
+   "quote": "myleen stated that she would like to have her assistant, sally deming, take her place as a member of the tax work-off program."
+  },
+  {
+   "decision": "Sue Doherty confirmed there must be representation from the Treasurer/Collectors office.",
+   "quote": "sue confirmed there must be representation from the treasurer/collectors office."
+  },
+  {
+   "decision": "The next meeting was set for October 27, 2015 at 1:00 pm.",
+   "quote": "the next meeting set for october 27, 2015 at 1:00 pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of May 20, 2015 minutes",
+   "resolution": "motion made; result not recorded",
+   "quote": "approval of may 20, 2015 minutes motioned by jean and second by sue.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review/election of officers",
+   "resolution": "Sue Doherty nominated as official Chairperson; no vote recorded",
+   "quote": "review/election of officers: town clerk, kathy herrick, stepped into the meeting briefly to swear in",
+   "tags": [
+    "officers",
+    "chair",
+    "oath"
+   ]
+  },
+  {
+   "topic": "Review of calendar year 2015 program",
+   "resolution": "no action; discussion of public awareness and shredding applicant information",
+   "quote": "review of calendar year 2015 program: there are 8 applicants in place, members received a list with the name and contact numbers for all.",
+   "tags": [
+    "applicants",
+    "public awareness",
+    "privacy"
+   ]
+  },
+  {
+   "topic": "Discussion of calendar year 2016 program",
+   "resolution": "no action; staff tasks assigned to chair",
+   "quote": "discussion of calendar year 2016 program: sue stated that she will change dates on new applications",
+   "tags": [
+    "2016 program",
+    "applications",
+    "pamphlets"
+   ]
+  },
+  {
+   "topic": "Board member vacancy",
+   "resolution": "no action; Bylaws review noted",
+   "quote": "board member vacancy: sue stated there is one opening for the tax work-off program.",
+   "tags": [
+    "membership",
+    "vacancy",
+    "bylaws",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Date and time of next meeting",
+   "resolution": "set for October 27, 2015 at 1:00 pm",
+   "quote": "date and time of next meeting: the next meeting set for october 27, 2015 at 1:00 pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2015 applications",
+   "where": "text",
+   "quote": "all members received copies of the 2015 applications, release forms and the literature available for public display."
+  },
+  {
+   "name": "Release forms",
+   "where": "text",
+   "quote": "all members received copies of the 2015 applications, release forms and the literature available for public display."
+  },
+  {
+   "name": "Literature available for public display",
+   "where": "text",
+   "quote": "all members received copies of the 2015 applications, release forms and the literature available for public display."
+  },
+  {
+   "name": "List of applicants with name and contact numbers",
+   "where": "text",
+   "quote": "members received a list with the name and contact numbers for all."
+  },
+  {
+   "name": "Bylaws",
+   "where": "text",
+   "quote": "myleen states she will review the bylaws."
+  },
+  {
+   "name": "Pamphlets",
+   "where": "text",
+   "quote": "sue stated that she will also revise the"
+  },
+  {
+   "name": "Time sheets",
+   "where": "text",
+   "quote": "sue stated that she will contact applicants for time sheets when needed."
+  }
+ ],
+ "tags": [
+  "senior tax work-off",
+  "property tax aid",
+  "officers",
+  "applications",
+  "bylaws",
+  "membership",
+  "public awareness",
+  "Eagle House Senior Center"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

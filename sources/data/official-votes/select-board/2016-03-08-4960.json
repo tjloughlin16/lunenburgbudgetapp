@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-03-08",
  "docid": "4960",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the request for placement and location of the Right to Farm Community signs",
+   "motion": "Approve the request for placement and location of the Right to Farm Community signs.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: r. ebersole 2nd: t. alonzo to approve the request for placement and location of the right to farm community signs vote: all in favor"
   },
   {
-   "motion": "Approve the redemption for 425 W. Townsend Road subject to payment in full to the Town on or before June 30, 2016",
+   "motion": "Approve the redemption of 425 W. Townsend Road, subject to payment in full to the Town on or before June 30, 2016.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,7 +28,13 @@
    "quote": "motion: r. ebersole 2n: p. bertram to approve the redemption for 425 w. townsend road subject to payment in full to the town on or before june 30, 2016 vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Ratify three-year collective bargaining agreement with the Lunenburg Professional Firefighter's Association (reported at this meeting; the vote was taken in Executive Session at the prior week's meeting).",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board voted to ratify a three year agreement with the lunenburg professional firefighter's association."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:45 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -37,6 +43,391 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor rendering artifacts (\"2n\" for \"2nd\" in vote 2, \"2*\" in vote 3), but three votes clearly recorded. The prior ratification of the firefighters' contract is mentioned as having occurred in a previous executive session, not voted in this meeting.",
- "cost_usd": 0.1088325
+ "note": "OCR text with errors: 'Cierk' for Clerk, '2n:' and '2*:' for seconds, 'givig', 'intial', 'Riikonenn'. Votes are recorded only as 'All in Favor' with no tally or roll call. The firefighter ratification was voted in Executive Session at a prior meeting and is reported here, not voted at this meeting. Attendance is taken from the 'Those present' block and the 'Others in attendance' line. The minutes contain no formal documents list; documents are named only in the narrative.",
+ "cost_usd": 0.012957920000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Cierk (OCR text; presumably Clerk)",
+   "status": "present",
+   "quote": "tom alonzo, cierk, paula ce"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others in attendance: kerry lafleur, town manager"
+  },
+  {
+   "name": "Jeff Mendoza",
+   "role": "Chairman (Agricultural Commission)",
+   "status": "present",
+   "quote": "chairman jeff mendoza presented a request to place"
+  },
+  {
+   "name": "Ryan McNutt",
+   "role": "Lancaster Town Administrator",
+   "status": "present",
+   "quote": "lancaster town administrator ryan mcnutt thanked the board for givig him time to come in and present."
+  },
+  {
+   "name": "Sherill Gould",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney sherill gould reported she had been retained by the previous property owner's estate"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "sue doherty, council on aging director, announced she applied for an"
+  },
+  {
+   "name": "Josh Herrick",
+   "role": "Boy Scout, Troop 1828",
+   "status": "present",
+   "quote": "mr. alonzo wanted to acknowledge boy scout josh herrick from troop 1828 in the meeting audience this evening."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "Conservation Agent",
+   "status": "not stated",
+   "quote": "matt marro, conservation agent, informed her that two public hearings were held"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board concurred that the roles and responsibilities of Board of Selectmen members merits further discussion.",
+   "quote": "mr. toale thought this topic merited further discussion. the board concurred"
+  },
+  {
+   "decision": "Board to research whether the Agricultural Commission can have an alternate member and whether the matter must go back to Town Meeting.",
+   "quote": "mr. toale stated they would research this."
+  },
+  {
+   "decision": "Town Manager to provide an update on the Summer Street construction project at the next meeting.",
+   "quote": "ms. lafleur stated she would get an update for the next meeting"
+  },
+  {
+   "decision": "Entire Board asked to be kept informed as the Lancaster intermunicipal agreement develops.",
+   "quote": "mr. toale stated the entire board would like to be kept informed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Right to Farm signs grant",
+   "what_was_recorded": "The Agricultural Commission was awarded a grant to pay for the signs.",
+   "figures_as_printed": [
+    "$450"
+   ],
+   "quote": "as of august 2014, the agricultural commission was awarded a $450 grant to pay for the signs from the massachusetts agricultural commission association."
+  },
+  {
+   "topic": "Right to Farm signs price",
+   "what_was_recorded": "The ten signs will be purchased at a unit price.",
+   "figures_as_printed": [
+    "$45.00"
+   ],
+   "quote": "at the price of $45.00 each."
+  },
+  {
+   "topic": "Lancaster water MOU cost",
+   "what_was_recorded": "Lancaster's representative assured the MOU would not cost the Lunenburg Water District anything and described it as a revenue generator.",
+   "figures_as_printed": [],
+   "quote": "mr. mcnutt assured this would not cost the lunenburg water district anything."
+  },
+  {
+   "topic": "Tax title redemption payment",
+   "what_was_recorded": "Redemption was approved subject to payment in full to the Town by a set date; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "subject to payment in full to the town on or before june 30, 2016"
+  },
+  {
+   "topic": "Firefighter contract outside detail and town detail rates",
+   "what_was_recorded": "The outside private detail rate rises and the Town detail rate is set.",
+   "figures_as_printed": [
+    "$35.00",
+    "$42.00/hr.",
+    "$36.00/hour"
+   ],
+   "quote": "the outside private detail rate will be increased from $35.00 to $42.00/hr., the town detail rate will be $36.00/hour"
+  },
+  {
+   "topic": "Firefighter contract wages",
+   "what_was_recorded": "Wage increases are within the Board's authorization of a 1.5% increase per year.",
+   "figures_as_printed": [
+    "1.5%"
+   ],
+   "quote": "both parties reached agreement within the board of selectmen's authorization of a 1.5%"
+  },
+  {
+   "topic": "Firefighter EMT stipend",
+   "what_was_recorded": "The EMT stipend increases from 3% to 5% for those who achieve Advanced Certification.",
+   "figures_as_printed": [
+    "3%",
+    "5%"
+   ],
+   "quote": "an increase from 3% to 5% in the emt stipend will be awarded to those"
+  },
+  {
+   "topic": "Are You Okay? Program grant",
+   "what_was_recorded": "The Council on Aging received a grant award for the Are You Okay? Program.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "october 2015 and was awarded $3000."
+  },
+  {
+   "topic": "Conservation enforcement fines",
+   "what_was_recorded": "The Conservation Commission started fining a property owner for work in the buffer zone without a Notice of Intent.",
+   "figures_as_printed": [
+    "$100 per day"
+   ],
+   "quote": "without a notice of intent at $100 per day."
+  },
+  {
+   "topic": "Conservation abutter notification cost",
+   "what_was_recorded": "The Conservation Commission was looking at the cost of notifying abutters via certified mail; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "they were also looking at the cost of notifying abutters via certified mail."
+  },
+  {
+   "topic": "Library lighting grant",
+   "what_was_recorded": "The Library applied for a Green Task Force grant to replace interior lights; the minutes give a payback period, not a dollar figure.",
+   "figures_as_printed": [],
+   "quote": "they have applied for a grant to the green task force for replacement of interior lights in the library."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Accounts payable, payroll and deductions warrants were signed in the amounts printed.",
+   "figures_as_printed": [
+    "$368,312.81",
+    "$747,868.73",
+    "$440,702.29"
+   ],
+   "quote": "an accounts payable warrant in the amount of $368,312.81, a payroll warrant in the amount of $747,868.73 and a deductions warrant in the amount of $440,702.29 were signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Ebersole",
+   "topic": "Announced reelection bid",
+   "quote": "mr. ebersole announced his intent to run for reelection for selectman this may."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "topic": "Lions Club pancake breakfast",
+   "quote": "ms. luck reminded all that the lions club pancake breakfast is tomorrow morning at eagle house senior center."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Boys and Girls Club fundraiser",
+   "quote": "mr. alonzo reminded all that the lunenburg boys and girls club fundraiser"
+  },
+  {
+   "speaker": "Mr. Toale",
+   "topic": "Citizens Party Caucus announcement",
+   "quote": "anyone interested in running for office should attend and if nominated, they will be placed on the election ballot."
+  },
+  {
+   "speaker": "Sue Doherty",
+   "stated_role": "Council on Aging Director",
+   "topic": "Are You Okay? Program grant",
+   "quote": "this is a computer generated phone call system to elders and disabled people under age 60."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Scout recognition",
+   "quote": "mr. alonzo wanted to acknowledge boy scout josh herrick from troop 1828 in the meeting audience this evening."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "heard; no action",
+   "quote": "mr. ebersole announced his intent to run for reelection for selectman this may.",
+   "tags": [
+    "elections",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Right to Farm Community signs (Agricultural Commission)",
+   "resolution": "approved",
+   "quote": "chairman jeff mendoza presented a request to place",
+   "tags": [
+    "agriculture",
+    "signs"
+   ]
+  },
+  {
+   "topic": "Draft MOU between Water District of Lunenburg and Town of Lancaster",
+   "resolution": "discussed; no vote; Board wants more detail",
+   "quote": "mr. mcnutt stated he was here to have a conversation with the board to see if there was support from this board.",
+   "tags": [
+    "water",
+    "Lancaster",
+    "intermunicipal agreement"
+   ]
+  },
+  {
+   "topic": "Request to redeem tax title property at 425 W. Townsend Road",
+   "resolution": "approved, subject to payment by June 30, 2016",
+   "quote": "to approve the redemption for 425 w. townsend road subject to payment in full to the town on or before june 30, 2016",
+   "tags": [
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Announcement of ratification of firefighter collective bargaining agreement (PPFM)",
+   "resolution": "announced; goes to Annual Town Meeting for funding",
+   "quote": "announcement of ratification of collective bargaining agreement with ppfm",
+   "tags": [
+    "labor",
+    "fire department",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Roles and responsibilities of Board of Selectmen",
+   "resolution": "discussed; further discussion merited",
+   "quote": "mr. toale thought this topic merited further discussion. the board concurred",
+   "tags": [
+    "governance",
+    "board roles"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants signed; status follow-ups",
+   "quote": "an accounts payable warrant in the amount of $368,312.81",
+   "tags": [
+    "warrants",
+    "Summer Street",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "mr. ebersole reported the board of health has received one application for the septic repair program.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "ms. lafleur reported she did receive the information from the conservation commission on 101 pleasant street",
+   "tags": [
+    "town manager",
+    "T.C. Passios",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45 p.m.",
+   "quote": "to adjourn the meeting at 8:45 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Map showing locations of Right to Farm Community signs",
+   "where": "text",
+   "quote": "he presented a map showing where they will be located"
+  },
+  {
+   "name": "Draft MOU between Water District of Lunenburg and Town of Lancaster",
+   "where": "text",
+   "quote": "draft mou between water district of lunenburg and town of lancaster"
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "she has looked at the town charter and the massachusetts municipal handbook for selectmen"
+  },
+  {
+   "name": "Massachusetts Municipal Handbook for Selectmen",
+   "where": "text",
+   "quote": "she has looked at the town charter and the massachusetts municipal handbook for selectmen"
+  },
+  {
+   "name": "Land Court judgement to foreclose on the tax title (April 2014)",
+   "where": "text",
+   "quote": "in april of 2014 the town received judgement from"
+  },
+  {
+   "name": "Packet from Conservation Commission concerning the enforcement order for 101 Pleasant Street",
+   "where": "text",
+   "quote": "a packet was sent to the town manager concerning the enforcement order for this property."
+  },
+  {
+   "name": "Collective Bargaining Agreement with the Lunenburg Professional Firefighter's Association (PPFM)",
+   "where": "text",
+   "quote": "announcement of ratification of collective bargaining agreement with ppfm"
+  },
+  {
+   "name": "Draft ATM warrant articles",
+   "where": "text",
+   "quote": "there will be a draft of the atm warrant articles for next week's meeting."
+  },
+  {
+   "name": "Accounts payable, payroll and deductions warrants",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $368,312.81"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Right to Farm signs",
+  "Lancaster water MOU",
+  "tax title",
+  "firefighter contract",
+  "board roles",
+  "warrants",
+  "committee reports",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

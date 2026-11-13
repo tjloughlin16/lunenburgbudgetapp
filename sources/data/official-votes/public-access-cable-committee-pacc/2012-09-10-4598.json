@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2012-09-10",
  "docid": "4598",
@@ -12,39 +12,210 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior meeting minutes as amended",
-   "outcome": "passed",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "the minutes were read and approved as amended."
-  },
-  {
-   "motion": "Delete the DAC analog converter ($447) from the package and accept the bid as amended ($33,530)",
+   "motion": "Delete the DAC analog converter ($447) from the package and accept the bid as amended ($33,530).",
    "outcome": "passed",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "a motion was made and seconded to delete the dac analog converter ($447) from the package and to accept the bid as amended ($33,530). the motion passed."
   },
   {
-   "motion": "Rescind the motion to accept the bid",
+   "motion": "Rescind the original motion on the mobile studio bid, after Access AV reported the Tricaster 300 is being discontinued.",
    "outcome": "passed",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "a motion was made and seconded to rescind the original motion. the motion passed."
+   "quote": "a motion was made and seconded to rescind the original motion. the"
   },
   {
-   "motion": "Table acceptance of the bid pending additional information",
+   "motion": "Accept the bid minus the Data Video Dac 50, Tricaster 300, Editor and the extended warranty on the Tricaster, bringing the new total to $19,257.",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "a new motion was made and seconded to accept the bid minus the data video dac 50, tricaster 300, editor and the extended warranty on the tricaster, bringing the new total to $19,257."
+  },
+  {
+   "motion": "Table acceptance of the mobile studio bid pending additional information.",
    "outcome": "passed",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "a motion was made and seconded to table acceptance of the bid pending additional information. the motion passed and the decision was tabled."
+   "procedural": false,
+   "quote": "a motion was made and seconded to table acceptance of the bid pending additional information. the motion passed"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. One motion (to accept bid minus Data Video Dac 50, Tricaster 300, Editor, and extended warranty for $19,257) was withdrawn before voting and is not recorded here. Meeting adjournment at 9:45pm is stated but not recorded as a voted motion.",
- "cost_usd": 0.1145955
+ "note": "OCR text of a scanned, two-page set with errors (e.g., 'Theovas', 'anad electiricain', 'Hoghway', 'Home Depo', 'liason'); names and figures are recorded as printed. The minutes record no motion approving the minutes and no motion to adjourn, so those are listed as decisions, not votes. The rescind motion's vote result is recorded only as 'The motion passed' and the withdrawn motion has no result. The motion-to-rescind quote is cut at a line break in the OCR; it is verbatim to the printed text. Mover and seconder names are not printed for any motion. The 'New Business' heading has no items under it.",
+ "cost_usd": 0.0047915200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: rhonda lisio, lance may, fred crellin"
+  },
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: rhonda lisio, lance may, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: rhonda lisio, lance may, fred crellin"
+  },
+  {
+   "name": "John Destraze",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john destraze, jomclaughlin, ernie sund"
+  },
+  {
+   "name": "JoMcLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john destraze, jomclaughlin, ernie sund"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john destraze, jomclaughlin, ernie sund"
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "theovas a report on a visit by john, lance and john londa with an electrician."
+  },
+  {
+   "name": "Martha Cheesman",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "martha cheesman indicated a willingness to be a liason with the high school."
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "a turkey hill middle school weekly podcast will be available (steve archambault)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of the prior meeting were read and approved as amended (no motion or vote count recorded).",
+   "quote": "the minutes were read and approved as amended."
+  },
+  {
+   "decision": "Jo McLaughlin will contact Access AV for information on replacement equipment for the discontinued items.",
+   "quote": "jo will contact access av asking for information on the replacement equipment for those things being discontinued."
+  },
+  {
+   "decision": "A meeting with the building inspector and electrician will need to be held for the studio.",
+   "quote": "there will need to be a meeting with the building inspector, anad electiricain."
+  },
+  {
+   "decision": "Jo will call Home Depot and the Highway Dept. about acquiring a scissor lift for programming.",
+   "quote": "rea still looking to acquire a scissor lift. jo will call home depo"
+  },
+  {
+   "decision": "The meeting was adjourned at 9:45pm (no motion or vote recorded).",
+   "quote": "the meeting was adjourned at 9:45pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mobile studio bid acceptance",
+   "what_was_recorded": "Bid accepted as amended at $33,530 after the $447 DAC analog converter was deleted from the package.",
+   "figures_as_printed": [
+    "$447",
+    "$33,530"
+   ],
+   "quote": "a motion was made and seconded to delete the dac analog converter ($447) from the package and to accept the bid as amended ($33,530). the motion passed."
+  },
+  {
+   "topic": "Mobile studio bid reduced total",
+   "what_was_recorded": "A new motion proposed accepting the bid minus several items, bringing the total to $19,257; the motion was withdrawn.",
+   "figures_as_printed": [
+    "$19,257"
+   ],
+   "quote": "a new motion was made and seconded to accept the bid minus the data video dac 50, tricaster 300, editor and the extended warranty on the tricaster, bringing the new total to $19,257."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Fred",
+   "stated_role": "not stated",
+   "topic": "passing of Paul L'Ecuyer",
+   "quote": "fred noted with sadness the passing of paul l'ecuyer."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "minutes approved as amended",
+   "quote": "secretary's report: the minutes were read and approved as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comments",
+   "resolution": "no action; passing of Paul L'Ecuyer noted",
+   "quote": "fred noted with sadness the passing of paul l'ecuyer.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: mobile studio bidding process",
+   "resolution": "bid acceptance tabled pending additional information; Jo to contact Access AV",
+   "quote": "a motion was made and seconded to table acceptance of the bid pending additional information. the motion passed",
+   "tags": [
+    "mobile studio",
+    "bid",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Studio update",
+   "resolution": "no action; electrician visit report, inspector meeting needed",
+   "quote": "theovas a report on a visit by john, lance and john londa with an electrician.",
+   "tags": [
+    "studio",
+    "electrical"
+   ]
+  },
+  {
+   "topic": "Programming update",
+   "resolution": "no action; Homecoming coverage and other programming reported",
+   "quote": "fatv is set with the truck. there will be three cameras",
+   "tags": [
+    "programming",
+    "homecoming",
+    "local programming"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:45pm",
+   "quote": "the meeting was adjourned at 9:45pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "mobile studio",
+  "bid",
+  "equipment",
+  "studio",
+  "programming",
+  "homecoming",
+  "local programming",
+  "Brooks House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-05-16",
  "docid": "5027",
@@ -12,31 +12,528 @@
  },
  "votes": [
   {
-   "motion": "To approve the Entertainment license for the Unifier Roots Gathering at 300 Holman Street on the condition they meet all the requirements of all Lunenburg Town departments",
+   "motion": "To approve the Entertainment license for the Unifier Roots Gathering at 300 Holman Street, on the condition they meet all the requirements of all Lunenburg Town departments.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2nd. p. luck to approve the entertainment license for the unifier roots gathering at 300 holman street on the condition they meet all the requirements of all lunenburg town departments vote: all in favor"
+   "quote": "motion: p. bertram 2nd. p. luck to approve the entertainment license for the unifier roots gathering at 300 holman street on the condition they meet all the requirements"
   },
   {
-   "motion": "To return the package store license #0003-PK-0636 to Old Ahad, d/b/a Hadwen Market",
+   "motion": "To return package store license #0003-PK-0636 to Old Ahad, d/b/a Hadwen Market.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"°: p. bertram to return the package store license #0003-pk-0636 to old ahad, d/b/a hadwen market vote: all in favor"
+   "quote": "to return the package store license #0003-pk-0636 to old ahad, d/b/a hadwen market vote: all in favor"
   },
   {
-   "motion": "To enter Executive Session and adjourn afterwards",
+   "motion": "To enter Executive Session under MGL c. 30A, §21 and adjourn afterwards.",
    "moved_by": "P.Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p.bertram to enter executive session and adjourn afterwards vote; ms. luck-aye, mr. bertram -aye,mr. alonzo- aye, mr. ebersole- aye, mr.toale-aye 2nd: t. alonzo"
+   "quote": "motion: p.bertram to enter executive session and adjourn afterwards vote; ms. luck-aye, mr. bertram -aye,mr. alonzo- aye, mr. ebersole- aye, mr.toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source. Quote in second vote contains OCR artifact \"2\\\"°:\" (intended: \"2nd:\") copied verbatim as it appears in minutes.",
- "cost_usd": 0.1277285
+ "note": "Text is macOS Vision OCR with some garbled characters (e.g., dates, \"Chriztine\", \"Mr. Bertram\" for Paula Bertram); quotes were copied as printed. The executive session vote is printed as five named ayes with no tally, so the outcome is recorded as \"passed\". The Hadwen Market and entertainment votes print only \"All in Favor\". The signature block names Elaine M. Peterson, Executive Assistant to the Town Manager; she is not recorded as an attendee. The minutes name no documents in a list; the items below come from the discussion text only.",
+ "cost_usd": 0.012420820000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member; phyllis luck, member and town manager heather"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member; phyllis luck, member and town manager heather"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager heather lemieux."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Building Reuse Committee member",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, building reuse committee member, thanked mr. alonzo for everything he"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, 49 brookview terrace, thanked mr. alonzo for all his years of service."
+  },
+  {
+   "name": "Katie Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katie adams, 45 williams drive, stated she spoke out about green space at town meeting."
+  },
+  {
+   "name": "Jennifer Benson",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "state representative jennifer benson, senator jennifer flanagan and representative stephan hay"
+  },
+  {
+   "name": "Jennifer Flanagan",
+   "role": "Senator",
+   "status": "present",
+   "quote": "state representative jennifer benson, senator jennifer flanagan and representative stephan hay"
+  },
+  {
+   "name": "Stephan Hay",
+   "role": "Representative",
+   "status": "present",
+   "quote": "state representative jennifer benson, senator jennifer flanagan and representative stephan hay"
+  },
+  {
+   "name": "Jason Cohen",
+   "role": "",
+   "status": "present",
+   "quote": "jason cohen and greg jones returned to address issues"
+  },
+  {
+   "name": "Greg Jones",
+   "role": "",
+   "status": "present",
+   "quote": "jason cohen and greg jones returned to address issues"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "town accountant karen brochu presented a summary of revenues and expenditures up to march 31"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "Dept. of Public Works Director",
+   "status": "present",
+   "quote": "mr. rodriquenz thanked the board for their feedback."
+  },
+  {
+   "name": "Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director burney reported this event will need electrical and plumbing permits"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Street cut replacement moratorium draft to be reviewed by Town counsel before the board takes a vote.",
+   "quote": "it was decided to have town counsel review it before a vote by the board is taken."
+  },
+  {
+   "decision": "Summer Street vote on property acquisitions and award of damages postponed to a later date.",
+   "quote": "the summer street vote on property acquisitions and award of damages agenda item was postponed to a later"
+  },
+  {
+   "decision": "Land Use Director Burney to put together a proposal on the event electrical and plumbing permit fees for the next meeting.",
+   "quote": "mr. burney will put together a proposal for the next meeting."
+  },
+  {
+   "decision": "Appointment of the Assistant Town Clerk postponed until the May 23 meeting.",
+   "quote": "mr. toale announced the appointment of the assistant town clerk would be postponed until the may 23"
+  },
+  {
+   "decision": "Ms. Luck to research further whether a flood plain survey and flood plain mitigation plan exist for the Town.",
+   "quote": "ms. luck will research it further."
+  },
+  {
+   "decision": "Reduced price for compost bin and rain barrel bundle to be a future agenda item.",
+   "quote": "this will be a future agenda item."
+  },
+  {
+   "decision": "Land Use Director Burney to work with the Town Manager to submit the Community Compact tasks.",
+   "quote": "land use director burney will work with the town manager to get that submitted."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Demolition cost estimates for Passios, old Primary School and Brooks House",
+   "what_was_recorded": "Public commenter Dave MacDonald cited estimates for tearing down the three municipal buildings, totalling over $1.25 million.",
+   "figures_as_printed": [
+    "$1+ million",
+    "$250,000",
+    "$45,000",
+    "over $1.25 million"
+   ],
+   "quote": "if you want to tear down passios, it will cost the town $1+ million based on estimates from two years ago."
+  },
+  {
+   "topic": "Ritter Building remodel estimate",
+   "what_was_recorded": "Dave MacDonald cited a report estimate for remodelling the Ritter Building, which he said was not a full remodel.",
+   "figures_as_printed": [
+    "$2.5 and $3 million"
+   ],
+   "quote": "to remodel ritter would be between $2.5 and $3 million and that is not a full remodel."
+  },
+  {
+   "topic": "Town Hall renovation estimate",
+   "what_was_recorded": "Dave MacDonald cited a 2013 engineering estimate for renovating Town Hall.",
+   "figures_as_printed": [
+    "$2.1 million"
+   ],
+   "quote": "to renovate town hall, an engineering estimate from 2013 quoted $2.1 million."
+  },
+  {
+   "topic": "Town Hall painting",
+   "what_was_recorded": "Town Meeting approved $90,000 to paint Town Hall, per Dave MacDonald's public comment.",
+   "figures_as_printed": [
+    "$90,000"
+   ],
+   "quote": "at this past town meeting, the town approved $90,000 to paint town hall which he supports."
+  },
+  {
+   "topic": "Casella dumpster disposal for Town Hall records clean-out",
+   "what_was_recorded": "Town Manager reported the approximate disposal cost for the Casella dumpster at Town Hall.",
+   "figures_as_printed": [
+    "$700.00"
+   ],
+   "quote": "the approximate cost for disposal will be $700.00."
+  },
+  {
+   "topic": "Regional animal shelter grant transferred to Lunenburg",
+   "what_was_recorded": "A grant of $42,257 for design and construction of a regional animal shelter was awarded and is now led by Lunenburg.",
+   "figures_as_printed": [
+    "$42,257"
+   ],
+   "quote": "was awarded $42,257 for the design and construction of a regional animal shelter."
+  },
+  {
+   "topic": "Compost bin and rain barrel pricing and grant",
+   "what_was_recorded": "A proposed reduced price of $80.00 for buying a compost bin and rain barrel together, supported by a $5,400 annual grant.",
+   "figures_as_printed": [
+    "$5,400",
+    "$80.00"
+   ],
+   "quote": "we would like to offer a reduced price if we sell both items at the same time for $80.00"
+  },
+  {
+   "topic": "Land Use electrical and plumbing permit fees for the Unifier Roots event",
+   "what_was_recorded": "Fees for electrical and plumbing permits, not in the fee schedule, were recommended at $150.00 each as a one-time amendment.",
+   "figures_as_printed": [
+    "$150.00"
+   ],
+   "quote": "it was recommended the fees be set at $150.00 each."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed four warrants: accounts payable, payroll, payroll deductions and a Middle/High School project warrant.",
+   "figures_as_printed": [
+    "$223,297.13",
+    "$752,557.36",
+    "$164,257.61",
+    "$140,153.47"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $223,297.13, a payroll warrant in the amount of"
+  },
+  {
+   "topic": "Cost to operate municipal buildings after Passios move-out",
+   "what_was_recorded": "Town will monitor the cost to operate the Passios and other municipal buildings after FLAAC moves out.",
+   "figures_as_printed": [],
+   "quote": "going forward we will be monitoring the cost to operate the passios and other municipal buildings."
+  },
+  {
+   "topic": "Federal and state budget effects on health care and transportation",
+   "what_was_recorded": "Representative Benson said that without federal Medicaid funding the state could lose possibly a billion dollars from the health care budget.",
+   "figures_as_printed": [
+    "a billion dollars"
+   ],
+   "quote": "without that funding we are looking at possibly a billion dollars leaving the state budget that supports health care."
+  },
+  {
+   "topic": "FY17 quarterly report: Reserve Fund and salary line reductions",
+   "what_was_recorded": "Reserve Fund reduced, Town Manager salary line reduced and a small audit-line surplus recorded for FY17.",
+   "figures_as_printed": [
+    "$98,000",
+    "$7,000",
+    "$1750"
+   ],
+   "quote": "the reserve fund was reduced by $98,000, town manager salary line was reduced by $7,000"
+  },
+  {
+   "topic": "FY17 quarterly report: Council on Aging budget increase",
+   "what_was_recorded": "Council on Aging budget increased due to MART reimbursement and contract changes.",
+   "figures_as_printed": [
+    "$3,100"
+   ],
+   "quote": "we increased the council on aging budget by $3,100 due to changes in the mart reimbursement process"
+  },
+  {
+   "topic": "FY17 quarterly report: animal control officer budget increase",
+   "what_was_recorded": "Animal control officer budget increased for extended care of two abused pit bulls.",
+   "figures_as_printed": [
+    "$6,100"
+   ],
+   "quote": "we increased the animal control officer budget by $6,100 due to extended care of two abused pit bulls."
+  },
+  {
+   "topic": "FY17 quarterly report: Monty Tech assessment surplus",
+   "what_was_recorded": "A surplus in the Monty Tech assessment is expected at fiscal year close.",
+   "figures_as_printed": [
+    "$9,209"
+   ],
+   "quote": "there is going to be a surplus in the monty tech assessment of $9,209 at the close of the fiscal year"
+  },
+  {
+   "topic": "FY17 quarterly report: snow removal supplemental appropriation",
+   "what_was_recorded": "A supplemental appropriation for snow removal was made at town meeting, with a small DPW deficit remaining.",
+   "figures_as_printed": [
+    "$166,000"
+   ],
+   "quote": "in snow removal we did a supplemental appropriation of $166,000 at town meeting."
+  },
+  {
+   "topic": "FY17 quarterly report: veterans, health insurance and unemployment reductions",
+   "what_was_recorded": "Veterans benefits, health insurance and unemployment lines were reduced at annual town meeting, offsetting snow and ice deficit.",
+   "figures_as_printed": [
+    "$45,000",
+    "$31,100",
+    "$8,000"
+   ],
+   "quote": "veterans benefits were reduced by $45,000 at annual town meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Building Reuse Committee member",
+   "topic": "Town center buildings, reuse and demolition costs",
+   "quote": "dave macdonald, 155 island road, building reuse committee member, thanked mr. alonzo for everything he"
+  },
+  {
+   "speaker": "Damon McQuaid",
+   "stated_role": "",
+   "topic": "Thanks to Mr. Alonzo",
+   "quote": "damon mcquaid, 49 brookview terrace, thanked mr. alonzo for all his years of service."
+  },
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "",
+   "topic": "Green space in town center",
+   "quote": "katie adams, 45 williams drive, stated she spoke out about green space at town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "heard; no action",
+   "quote": "mr. alonzo reported the cable license public hearing that was scheduled for this thursday has been",
+   "tags": [
+    "cable license",
+    "public comment",
+    "town center"
+   ]
+  },
+  {
+   "topic": "Appointments: recognition of Tom Alonzo and state delegation",
+   "resolution": "recognized; delegation spoke",
+   "quote": "mr. toale introduced the delegation and asked them to indulge him while he acknowledged tom alonzo.",
+   "tags": [
+    "recognition",
+    "state delegation"
+   ]
+  },
+  {
+   "topic": "Updates from Delegation",
+   "resolution": "received; no action",
+   "quote": "representative benson reported representative hay and herself have worked on the house budget.",
+   "tags": [
+    "state budget",
+    "health care",
+    "marijuana policy"
+   ]
+  },
+  {
+   "topic": "Street Cut Replacement Moratorium",
+   "resolution": "continued pending Town counsel review",
+   "quote": "ms. lemieux reported the draft policy before the board was created by dpw director rodriquenz.",
+   "tags": [
+    "DPW",
+    "street cut",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Entertainment License Hearing Unifier Roots Gathering (cont.)",
+   "resolution": "approved with condition",
+   "quote": "to approve the entertainment license for the unifier roots gathering at 300 holman street",
+   "tags": [
+    "entertainment license",
+    "Holman Street",
+    "event permits"
+   ]
+  },
+  {
+   "topic": "Land Use permit fees for Unifier Roots event",
+   "resolution": "proposal to come at next meeting",
+   "quote": "land use director burney reported this event will need electrical and plumbing permits",
+   "tags": [
+    "permit fees",
+    "fee schedule"
+   ]
+  },
+  {
+   "topic": "Summer Street property acquisitions and award of damages",
+   "resolution": "postponed",
+   "quote": "the summer street vote on property acquisitions and award of damages agenda item was postponed to a later",
+   "tags": [
+    "Summer Street",
+    "property"
+   ]
+  },
+  {
+   "topic": "Hadwen Market package store license return",
+   "resolution": "license returned to original seller by vote",
+   "quote": "the board needs to vote for the license to be transferred back to",
+   "tags": [
+    "liquor license",
+    "Hadwen Market"
+   ]
+  },
+  {
+   "topic": "Assistant Town Clerk appointment",
+   "resolution": "postponed to May 23 meeting",
+   "quote": "mr. toale announced the appointment of the assistant town clerk would be postponed until the may 23",
+   "tags": [
+    "appointment",
+    "town clerk"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes and warrants signed; action items noted",
+   "quote": "the board signed minutes of april 18 and may 9, 2017.",
+   "tags": [
+    "warrants",
+    "minutes",
+    "flood plain",
+    "rain barrels",
+    "PAYT bags",
+    "Lake Shirley dam"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "received; no action",
+   "quote": "ms. luck reported the swtf met on may 11 and voted on the specific tasks to be included in the community",
+   "tags": [
+    "stormwater",
+    "school contract",
+    "cable license",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "received; no action",
+   "quote": "ms. lemieux reported the dpw director has coordinated a casella dumpster to be delivered for may 24",
+   "tags": [
+    "Town Hall",
+    "Passios",
+    "animal shelter",
+    "collective bargaining",
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "Quarterly Financial Report",
+   "resolution": "presented; no action",
+   "quote": "town accountant karen brochu presented a summary of revenues and expenditures up to march 31",
+   "tags": [
+    "FY17 finances",
+    "revenues",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "Executive Session and adjournment",
+   "resolution": "entered executive session; adjourned 9:55 p.m.",
+   "quote": "mr. toale stated they would be entering executive session under mgl c. 30a, §21, to conduct strategy",
+   "tags": [
+    "executive session",
+    "Finance Director contract"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Street Cut Replacement Moratorium policy",
+   "where": "text",
+   "quote": "ms. lemieux reported the draft policy before the board was created by dpw director rodriquenz."
+  },
+  {
+   "name": "Architectural Preservation District Commission (APDC) regulations and guidelines for reuse in the Village District",
+   "where": "text",
+   "quote": "architectural preservation district commission (apdc) has presented their regulations"
+  },
+  {
+   "name": "Local Licensing Authority Summary Form",
+   "where": "text",
+   "quote": "complete the local licensing authority summary form, enclose letters from the buyer and"
+  },
+  {
+   "name": "Hazard mitigation plan",
+   "where": "text",
+   "quote": "there is a hazard mitigation plan that mentions flood maps only."
+  },
+  {
+   "name": "Community Compact",
+   "where": "text",
+   "quote": "voted on the specific tasks to be included in the community compact."
+  },
+  {
+   "name": "2013 engineering estimate for Town Hall renovation",
+   "where": "text",
+   "quote": "an engineering estimate from 2013 quoted $2.1 million."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "entertainment license",
+  "liquor license",
+  "street cut moratorium",
+  "Town Hall",
+  "town center buildings",
+  "state delegation",
+  "FY17 finances",
+  "animal shelter grant",
+  "stormwater",
+  "cable license",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

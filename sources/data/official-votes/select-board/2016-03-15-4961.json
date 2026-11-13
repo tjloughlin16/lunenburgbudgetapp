@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-03-15",
  "docid": "4961",
@@ -12,15 +12,419 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Approve the minutes of March 1, 2016.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of march 1, 2016 were approved"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:29 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:29 p.m. 2\": t. alonzo vote: all in favor"
+   "quote": "motion: p. bertram to adjourn the meeting at 8:29 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes mention that prior minutes were \"approved\" and a warrant was \"signed\" under section 3 (Minutes/Warrants/Action File Issues), but neither is recorded with formal motion language. Only the motion to adjourn has the explicit \"Motion:\" and \"Vote:\" structure. No votes were recorded on the pavement management plan discussion or the Annual Town Meeting warrant review, despite extended discussion of both.",
- "cost_usd": 0.1019645
+ "note": "OCR text from a macOS Vision scan. Table figures on pages 2-5 are garbled and reproduced as printed where legible (e.g., '4379,2001'); some text artifacts appear (e.g., 'Ms. Lafluer', 'Elainm.', 'Ms. Alonzo' apparently meaning Mr. Alonzo). The pavement financing item records no motion or vote. The minutes approving March 1, 2016 name no mover or seconder. The Board's opening remarks under Public Comment are by members and are not listed as public speakers. Status for members is taken from the opening roll call.",
+ "cost_usd": 0.012271320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz began the power point presentation."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney stated the commonwealth of massachusetts is required to file its own ms4 permits."
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "member of the Historical Society and the Council of Aging",
+   "status": "present",
+   "quote": "pete and debbie lincoln, 46 hemlock drive, both members of the historical society and the council of aging,"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "member of the Historical Society and the Council of Aging",
+   "status": "present",
+   "quote": "pete and debbie lincoln, 46 hemlock drive, both members of the historical society and the council of aging,"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elainm. peterson elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lafleur is to have a ballot question and warrant article for the pavement financing prepared for the next meeting, if the Board agrees to proceed.",
+   "quote": "ms. lafleur will have something prepared for the next meeting."
+  },
+  {
+   "decision": "The Board, as Road Commissioners, determined that a long term funding strategy for roads needed to be developed.",
+   "quote": "the board, in its capacity as road commissioners, determined that a long term funding strategy needed to be developed."
+  },
+  {
+   "decision": "DPW Director Jack Rodriquenz is to revisit prices on materials and services.",
+   "quote": "mr. toale suggested this might be the right time for mr. rodriquenz to revisit prices on materials and services. he agreed."
+  },
+  {
+   "decision": "Mr. Alonzo offered to work with the Teen Center to set up a meeting about the parking lot.",
+   "quote": "he offered to work with the teen center on setting up a meeting."
+  },
+  {
+   "decision": "An accounts payable warrant of $35,451.38 was signed.",
+   "quote": "an accounts payable warrant in the amount of $35,451.38 was signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Boys and Girls Club fundraiser",
+   "what_was_recorded": "The fundraiser raised a sum close to $20,000 for the club.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "they raised just shy of $20,000 for the club."
+  },
+  {
+   "topic": "Road maintenance spending gap",
+   "what_was_recorded": "The Town has been spending about $600,000 a year on roads but needs about $1.2 million a year for maintenance.",
+   "figures_as_printed": [
+    "$600,000",
+    "$1.2 million"
+   ],
+   "quote": "the town has only been spending around $600,000 per year on average and it actually needs to spend around $1.2 million per year to keep up maintenance."
+  },
+  {
+   "topic": "Estimated road repair needs",
+   "what_was_recorded": "Investing about $9 million today would bring roads to a perfect state of repair, based on on-call contract pricing plus a 20% contingency.",
+   "figures_as_printed": [
+    "$9 million",
+    "20%"
+   ],
+   "quote": "based upon the updated roadway inspection data and the town's current on-call paving contract, investing $9 million today would bring the town to a perfect state of repair."
+  },
+  {
+   "topic": "Cost per mile of repair by treatment",
+   "what_was_recorded": "The table printed cost per mile for each repair method, rising as roads deteriorate.",
+   "figures_as_printed": [
+    "$317,000",
+    "$190,000",
+    "$81,400",
+    "$13,900"
+   ],
+   "quote": "cost per mile $317,000 $190,000 $81,400 $13,900"
+  },
+  {
+   "topic": "FY16 operating budget and Chapter 90 funding",
+   "what_was_recorded": "The FY16 roadway program totaled $666,626.00 from the operating budget plus Chapter 90 funding, against a stated annual need.",
+   "figures_as_printed": [
+    "$250,000",
+    "$416,626",
+    "$666,626.00"
+   ],
+   "quote": "in fiscal year 2016 our operating budget was $250,000, with chapter 90 funding of $416,626"
+  },
+  {
+   "topic": "Annual deficit against goal",
+   "what_was_recorded": "The annual cost to meet the PCI goal is $1.0 to $1.2 million against current spending of $667,000, leaving a deficit of $333,000.",
+   "figures_as_printed": [
+    "$1.0 - 1.2 million",
+    "$667,000",
+    "$333,000"
+   ],
+   "quote": "the annual cost to meet goal is $1.0 - 1.2 million with the town's current spending level at $667,000, this leaves a deficit of $333,000."
+  },
+  {
+   "topic": "Local road improvement cost",
+   "what_was_recorded": "Improving the 58 local road segments below PCI 70 costs $3,123,063; segments at PCI 71-89 cost $257,300, for a total of $3,380,363.",
+   "figures_as_printed": [
+    "$3,123,063",
+    "$257,300",
+    "$3,380,363"
+   ],
+   "quote": "the cost to improve these 58 segments is $3,123,063."
+  },
+  {
+   "topic": "Storm water and catch basin costs",
+   "what_was_recorded": "The plan includes $510,000 in anticipated storm water improvements, with catch basin maintenance estimated at $850 each.",
+   "figures_as_printed": [
+    "$3.4M",
+    "$510,000",
+    "$850"
+   ],
+   "quote": "this is $3.4m in maintenance costs; $510,000 in anticipated needed storm water improvements"
+  },
+  {
+   "topic": "Total pavement project cost",
+   "what_was_recorded": "The total project cost for the local road program would be $3,910,000.",
+   "figures_as_printed": [
+    "$3,910,000"
+   ],
+   "quote": "the total project cost would be $3,910,000."
+  },
+  {
+   "topic": "Proposed operating budget increase",
+   "what_was_recorded": "Ms. Lafleur proposed raising the operating budget appropriation by $50,000 a year until $1 to $1.2 million is available per year.",
+   "figures_as_printed": [
+    "$50,000",
+    "$1 - $1.2 million"
+   ],
+   "quote": "she proposed increasing the operating budget appropriation by $50,000 per year until we have $1 - $1.2 million available per year."
+  },
+  {
+   "topic": "Debt exclusion cost to average homeowner",
+   "what_was_recorded": "The cost to the average homeowner would be about $145.00 a year, falling to $123.00 by year seven.",
+   "figures_as_printed": [
+    "$145.00",
+    "$123.00"
+   ],
+   "quote": "the cost to the average homeowner would be around $145.00 per year and then decreasing to $123.00"
+  },
+  {
+   "topic": "Debt exclusion financing scenario",
+   "what_was_recorded": "The scenario table financed $3,910,000 at 3.000% straight line over seven years, with annual average single-family-home impact falling from $144.78.",
+   "figures_as_printed": [
+    "3,910,000",
+    "3.000%",
+    "558,571",
+    "117,300",
+    "675,871",
+    "144.78",
+    "469,200",
+    "4379,2001"
+   ],
+   "quote": "scenario assumptions amount amount financed"
+  },
+  {
+   "topic": "Motor vehicle excise dedication",
+   "what_was_recorded": "Excise tax growth is roughly $50,000 a year and would be dedicated first to the road program from FY18.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the current annual growth in motor vehicle excise tax is roughly $50,000."
+  },
+  {
+   "topic": "School project remaining debt",
+   "what_was_recorded": "The remaining school project amount is not in the model and could range from $2 million to about $5 million.",
+   "figures_as_printed": [
+    "$2 million",
+    "$5 million"
+   ],
+   "quote": "the only thing that is not included is the remaining amount for the school project, which could be from $2 million to about $5 million dollars."
+  },
+  {
+   "topic": "School project debt impact",
+   "what_was_recorded": "The model is for $4 million; financing that amount would add about $145.00 a year.",
+   "figures_as_printed": [
+    "$4 million",
+    "$145.00"
+   ],
+   "quote": "the above model is for $4 million, so if it was financed accordingly, it would be"
+  },
+  {
+   "topic": "Article 27 road expenditure",
+   "what_was_recorded": "Article 27 authorizes expenditure of $3.9 million for roads, subject to a debt authorization at the ballot.",
+   "figures_as_printed": [
+    "$3.9 million"
+   ],
+   "quote": "article 27 authorizes expenditure of $3.9 million for the roads subject to a debt authorization at the ballot."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was signed in the stated amount.",
+   "figures_as_printed": [
+    "$35,451.38"
+   ],
+   "quote": "an accounts payable warrant in the amount of $35,451.38 was signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Pete and Debbie Lincoln",
+   "stated_role": "both members of the Historical Society and the Council of Aging",
+   "topic": "Proposed Uptown Stroll event",
+   "quote": "pete and debbie lincoln, 46 hemlock drive, both members of the historical society and the council of aging,"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment and announcements",
+   "resolution": "no action; Board expressed support for the Uptown Stroll proposal",
+   "quote": "mr. alonzo thanked everyone for supporting the boys and girls club fundraiser last friday.",
+   "tags": [
+    "public comment",
+    "announcements",
+    "uptown stroll"
+   ]
+  },
+  {
+   "topic": "Further Discussion on Financing of Pavement Management Plan",
+   "resolution": "discussed; next step is a ballot question and warrant article for next meeting",
+   "quote": "1. further discussion on financing of pavement management plan",
+   "tags": [
+    "pavement management",
+    "road repair",
+    "debt exclusion",
+    "capital financing"
+   ]
+  },
+  {
+   "topic": "Review Draft of Annual Town Meeting (ATM) Warrant",
+   "resolution": "reviewed; warrant open until March 24 at 6:00 p.m.",
+   "quote": "ms. lafleur stated the warrant for town meeting articles is open until march 24* at 6:00 p.m.",
+   "tags": [
+    "annual town meeting warrant",
+    "articles"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "approved minutes of March 1, 2016; signed accounts payable warrant",
+   "quote": "an accounts payable warrant in the amount of $35,451.38 was signed.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Teen Center parking lot and Town Hall parking",
+   "resolution": "Mr. Alonzo to set up a meeting with the Teen Center",
+   "quote": "ms. bertram expressed concern about the teen center parking lot being blocked off when she comes to town hall during the day.",
+   "tags": [
+    "parking",
+    "teen center",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received; vacancies noted",
+   "quote": "mr. ebersole reported public access cable committee (pacc) has two vacancies.",
+   "tags": [
+    "committees",
+    "vacancies",
+    "planning board",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no report",
+   "quote": "town manager report: no report this evening.",
+   "tags": [
+    "town manager"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Power Point presentation on the pavement management plan",
+   "where": "text",
+   "quote": "dpw director jack rodriquenz began the power point presentation."
+  },
+  {
+   "name": "Pavement management plan (developed 2009, updated 2015)",
+   "where": "text",
+   "quote": "the town first developed the pavement management plan in 2009. it was updated in 2015."
+  },
+  {
+   "name": "Existing Conditions Summary - Estimated Road Repair Needs",
+   "where": "text",
+   "quote": "existing conditions summary estimated road repair needs"
+  },
+  {
+   "name": "Lifecycle of a Road chart",
+   "where": "text",
+   "quote": "lifecycle of a road condition, excellent good fair"
+  },
+  {
+   "name": "Scenario Assumptions table (debt exclusion financing)",
+   "where": "text",
+   "quote": "scenario assumptions amount amount financed"
+  },
+  {
+   "name": "Combined estimated impact to single family home chart",
+   "where": "text",
+   "quote": "she presented a chart showing the combined estimated impact to a single family home."
+  },
+  {
+   "name": "Two color-coded maps (functional class and PCI)",
+   "where": "text",
+   "quote": "there are two maps that are color coded, based on their functional class or on their pci."
+  },
+  {
+   "name": "Draft Annual Town Meeting (ATM) Warrant",
+   "where": "text",
+   "quote": "review draft of annual town meeting (atm) warrant"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $35,451.38 was signed."
+  }
+ ],
+ "tags": [
+  "pavement management",
+  "road repair",
+  "debt exclusion",
+  "Chapter 90",
+  "motor vehicle excise",
+  "annual town meeting warrant",
+  "parking",
+  "committee reports",
+  "public comment",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

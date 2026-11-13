@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-07-05",
  "docid": "4973",
@@ -12,74 +12,429 @@
  },
  "votes": [
   {
-   "motion": "Nominate and jointly appoint Joe Anderson to Sewer Commission until next annual election",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Robert Ebersole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2nd.r. ebersole to nominate and jointly appoint joe anderson to the sewer commission until the next annual election mr. ebersole-aye, mr. alonzo-aye, mr. toale, aye, ms. luck - aye, ms. bertram - aye, mr. luck-aye, mr. reynolds- aye, ms. bunish-aye"
-  },
-  {
-   "motion": "Appoint Arthur Snow to Agricultural Commission with term expiring June 30, 2019",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Tom Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2'°: t. alonzo to appoint arthur snow to the agricultural commission with a term to expire june 30, 2019 ===page 2=== vote:",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Appoint Holly Carr to Cultural Council with term expiring June 30, 2019",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Tom Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to appoint holly carr to the cultural council with a term to expire june 30, 2019 2nd: t. alonzo vote: all in favor"
-  },
-  {
-   "motion": "Accept resignation of Bob Robuccio from Parks Commission effective June 22, 2016",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Tom Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to accept the resignation of bob robuccio effective june 22, 2016 2\"d. t. alonzo vote: all in favor",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Add the fee of $75.00 for alcohol license transfers to the license fee schedule",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Phyllis Luck",
+   "motion": "Jointly appoint Joe Anderson to the Sewer Commission until the next annual election.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2nd.p. luck to add the fee of $75.00 for alcohol license transfers to the license fee schedule vote: all in favor"
+   "quote": "to nominate and jointly appoint joe anderson to the sewer commission until the next annual election"
   },
   {
-   "motion": "Add the fee of $175.00 for Club - Wine & Malt license to the license fee schedule",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Robert Ebersole",
+   "motion": "Appoint Arthur Snow to the Agricultural Commission with a term to expire June 30, 2019.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: r. ebersole to add the fee of $175.00 for a club - wine & malt license to the license fee schedule vote: all in favor"
+   "quote": "to appoint arthur snow to the agricultural commission with a term to expire june 30, 2019"
   },
   {
-   "motion": "Accept the donation of the granite bench from the Adellas",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Paula Bertram",
+   "motion": "Appoint Holly Carr to the Cultural Council with a term to expire June 30, 2019.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd. p. bertram to accept the donation of the granite bench from the adellas as described vote: all in favor"
+   "quote": "to appoint holly carr to the cultural council with a term to expire june 30, 2019"
+  },
+  {
+   "motion": "Accept the resignation of Bob Robuccio from the Parks Commission effective June 22, 2016.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to accept the resignation of bob robuccio effective june 22, 2016"
+  },
+  {
+   "motion": "Add a $75.00 fee for alcohol license transfers to the license fee schedule.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to add the fee of $75.00 for alcohol license transfers to the license fee schedule"
+  },
+  {
+   "motion": "Add a $175.00 fee for a Club - Wine & Malt license to the license fee schedule.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to add the fee of $175.00 for a club - wine & malt license to the license fee schedule"
+  },
+  {
+   "motion": "Remove the jukebox license from the license fee schedule.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "P. Bertram",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "to remove the jukebox license from the license fee schedule"
+  },
+  {
+   "motion": "Accept the donation of the granite bench from the Adellas as described.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to accept the donation of the granite bench from the adellas as described"
   },
   {
    "motion": "Adjourn the meeting at 7:46 p.m.",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Tom Alonzo",
+   "moved_by": "P. Bertram",
+   "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 7:46 p.m. respectfully submitted, elainen reteroon blaine m. peterson executive assistant to the town manager 2\"d. t. alonzo vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 7:46 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR text (macOS Vision); minor OCR artifacts present but all votes clearly recorded.",
- "cost_usd": 0.2074035
+ "dropped_unquoted": 0,
+ "note": "Text is macOS Vision OCR of the minutes and contains OCR artifacts (e.g., \"Mi. Toale\", \"2'°:\", \"2\\\"d.\", \"13\\\"h\"); quotes copy the printed text as OCR shows it. Roll call for the Anderson appointment lists eight ayes with no printed count. The jukebox license motion has no recorded result. Warrants and June 21 minutes were presented with no motion recorded. The signature block OCR reads \"Elainen Reteroon\" above \"Blaine M. Peterson\"; only the typed name was used. No dedicated documents list appears; documents are only mentioned in discussion.",
+ "cost_usd": 0.009752020000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present: kerry lafleur, town manager"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Sewer Commissioner Chair",
+   "status": "present",
+   "quote": "he requested sewer commissioner chair carl luck to come forward. mr. luck opened the joint meeting of the sewer"
+  },
+  {
+   "name": "Joseph Anderson",
+   "role": "",
+   "status": "present",
+   "quote": "mr. anderson introduced himself; he moved to west street in lunenburg about three years ago."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Sewer Commissioner",
+   "status": "present",
+   "quote": "sewer commissioner john reynolds stated he had a background in quality assurance as well so it would be nice"
+  },
+  {
+   "name": "Ms. Bunish",
+   "role": "",
+   "status": "present",
+   "quote": "mr. reynolds- aye, ms. bunish-aye"
+  },
+  {
+   "name": "Arthur Snow",
+   "role": "",
+   "status": "present",
+   "quote": "mr. toale requested arthur snow come forward regarding his request to be appointed to the agricultural"
+  },
+  {
+   "name": "Holly Carr",
+   "role": "",
+   "status": "present",
+   "quote": "mr. toale asked holly carr, 86 valley road, who has requested to be appointed to the cultural commission to"
+  },
+  {
+   "name": "Blaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "blaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Storm Water Scope of Services Request item was postponed to a later meeting.",
+   "quote": "this item was postponed to a later meeting."
+  },
+  {
+   "decision": "The board decided to research the difference between an automatic amusement device and a jukebox license before voting on the jukebox license.",
+   "quote": "it was decided to research further before voting."
+  },
+  {
+   "decision": "All appointees were reminded to go to the Town Clerk office to be sworn in.",
+   "quote": "all appointees were reminded to go to the town clerk office to be sworn in."
+  },
+  {
+   "decision": "Ms. Bertram will forward the Ray Morin Inc. letter to the Town Manager and VHB for follow up.",
+   "quote": "ms. bertram will forward the letter to the town manager and vhb for follow up."
+  },
+  {
+   "decision": "DPW Director Rodriquenz will touch base with VHB engineer Trish Donovan on the Summer Street project TIP number.",
+   "quote": "dpw director rodriquenz is going to touch base with vhb engineer trish donovan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Alcohol license transfer fee",
+   "what_was_recorded": "A $75.00 fee for alcohol license transfers was added to the license fee schedule.",
+   "figures_as_printed": [
+    "$75.00"
+   ],
+   "quote": "to add the fee of $75.00 for alcohol license transfers to the license fee schedule"
+  },
+  {
+   "topic": "Club - Wine & Malt license fee",
+   "what_was_recorded": "A $175.00 fee for a Club - Wine & Malt license was added to the license fee schedule.",
+   "figures_as_printed": [
+    "$175.00"
+   ],
+   "quote": "to add the fee of $175.00 for a club - wine & malt license to the license fee schedule"
+  },
+  {
+   "topic": "Warrants presented for approval and signatures",
+   "what_was_recorded": "Five warrants were presented for approval and signatures; no motion or vote is recorded on them.",
+   "figures_as_printed": [
+    "$1,796,259.07",
+    "$584,850.81",
+    "$215,539.09",
+    "$134,449.24",
+    "$572,940.75"
+   ],
+   "quote": "the following warrants were presented for approval and signatures: fy 17 accounts payable $1,796,259.07; fy 16 accounts payable $584,850.81"
+  },
+  {
+   "topic": "Summer Street project TIP funding number",
+   "what_was_recorded": "The number programmed into the TIP is slightly less than the dollar amount the town engineer used because the cost of drainage is slightly higher; the Town needs to get the final number to MRPC.",
+   "figures_as_printed": [],
+   "quote": "the number used to program into the tip is slightly less than the dollar amount that the town engineer used."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Death of resident Larry Marshall",
+   "quote": "mr. alonzo reported that resident larry marshall, who had purchased the jones house and who was very active"
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Thanks to Police Department for Fourth of July weekend",
+   "quote": "ms. luck wanted to thank the police department for their excellent work over the fourth of july weekend"
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Board and committee vacancies",
+   "quote": "mr. toale listed several vacancies on the following: finance committee- 2, public access cable committee- 2,"
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lions Club Pancake Breakfast reminder",
+   "quote": "ms. luck reminded all of the lions club pancake breakfast at eagle house"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Volunteer Appreciation Social",
+   "quote": "volunteer appreciation social will be on the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; Marshall death noted, police thanked, vacancies listed",
+   "quote": "mr. alonzo reported that resident larry marshall, who had purchased the jones house and who was very active",
+   "tags": [
+    "public comment",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Joint appointment of Joseph Anderson to Sewer Commission",
+   "resolution": "appointed to Sewer Commission until next annual election",
+   "quote": "joint appointment of joseph anderson to sewer commission vacancy with sewer commission",
+   "tags": [
+    "appointments",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Appointment of Arthur Snow to Agricultural Commission",
+   "resolution": "appointed, term to June 30, 2019",
+   "quote": "to appoint arthur snow to the agricultural commission with a term to expire june 30, 2019",
+   "tags": [
+    "appointments",
+    "agricultural commission"
+   ]
+  },
+  {
+   "topic": "Appointment of Holly Carr to Cultural Council",
+   "resolution": "appointed, term to June 30, 2019",
+   "quote": "to appoint holly carr to the cultural council with a term to expire june 30, 2019",
+   "tags": [
+    "appointments",
+    "cultural council"
+   ]
+  },
+  {
+   "topic": "Resignation of Bob Robuccio from Parks Commission",
+   "resolution": "accepted, effective June 22, 2016",
+   "quote": "to accept the resignation of bob robuccio effective june 22, 2016",
+   "tags": [
+    "resignation",
+    "parks commission"
+   ]
+  },
+  {
+   "topic": "License fees (continued)",
+   "resolution": "transfer fee and Club Wine & Malt fee added; jukebox license removal deferred for research",
+   "quote": "to add the fee of $75.00 for alcohol license transfers to the license fee schedule",
+   "tags": [
+    "licenses",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Donation of granite bench to Town",
+   "resolution": "accepted",
+   "quote": "to accept the donation of the granite bench from the adellas as described",
+   "tags": [
+    "donation",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Finalized Storm Water Scope of Services Request",
+   "resolution": "postponed to a later meeting",
+   "quote": "this item was postponed to a later meeting.",
+   "tags": [
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes of June 21, 2016 and warrants presented for approval; no vote recorded",
+   "quote": "minutes of june 21, 2016 were presented for approval.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "heard; no action",
+   "quote": "ms. bertram reported the montachusett metropolitan planning organization (mmpo) met last week.",
+   "tags": [
+    "committee reports",
+    "transportation",
+    "planning board",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard; reminders of events",
+   "quote": "public comment: ms. luck reminded all of the lions club pancake breakfast at eagle house",
+   "tags": [
+    "public comment",
+    "events"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:46 p.m.",
+   "quote": "to adjourn the meeting at 7:46 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum from May 9th (license application process)",
+   "where": "text",
+   "quote": "a memorandum from may 9th outlined the process of what is involved in a license application."
+  },
+  {
+   "name": "Draft Amendment #2 FFY 2016 TIP",
+   "where": "text",
+   "quote": "draft amendment #2 ffy 2016 tip; some money was moved"
+  },
+  {
+   "name": "Draft FFY 2017-2021 Transportation Improvement Plan",
+   "where": "text",
+   "quote": "also released was the draft ffy 2017-2021 transportation improvement plan."
+  },
+  {
+   "name": "Draft 2016-2017 Unified Planning Work Program",
+   "where": "text",
+   "quote": "lastly, the draft 2016-2017 unified planning work program was also"
+  },
+  {
+   "name": "Letter from Ray Morin Inc. (business owner on Summer Street)",
+   "where": "text",
+   "quote": "ms. bertram stated she received a letter from a business owner on summer street."
+  },
+  {
+   "name": "Quarterly Animal Control report (Action file, Correspondence)",
+   "where": "text",
+   "quote": "the quarterly animal control report is in the action file under correspondence."
+  },
+  {
+   "name": "Warrant article to remove Whalom Overlay District (Special Town Meeting)",
+   "where": "text",
+   "quote": "they discussed removing the whalom overlay district which will be a warrant article for the special town meeting."
+  },
+  {
+   "name": "Warrants: FY 17 Accounts Payable, FY 16 Accounts Payable, FY 16 Payroll Deductions Warrant, FY 16 Payroll Warrant",
+   "where": "text",
+   "quote": "the following warrants were presented for approval and signatures: fy 17 accounts payable $1,796,259.07"
+  },
+  {
+   "name": "Minutes of June 21, 2016",
+   "where": "text",
+   "quote": "minutes of june 21, 2016 were presented for approval."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "appointments",
+  "resignations",
+  "license fees",
+  "alcohol licenses",
+  "donations",
+  "storm water",
+  "transportation TIP",
+  "planning board",
+  "conservation",
+  "warrants",
+  "public comment",
+  "Summer Street"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

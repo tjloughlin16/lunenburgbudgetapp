@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2015-01-22",
  "docid": "3242",
@@ -12,19 +12,216 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes",
+   "motion": "Approve the minutes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion was made to approve minutes. motion was seconded and minutes were approved 3-0."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion to adjourn meeting was made and seconded. vote in favor of adjournment 3-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. Two votes recorded: approval of prior minutes and adjournment. No other motions with recorded outcomes found in the minutes.",
- "cost_usd": 0.0860255
+ "note": "OCR text from a scanned page set; the letterhead is partly garbled (\"TUNENBURG ,MASS,\"). The minutes are dated January 22, 2015 and were accepted 2/26/15. Three pages were read. No public comment section appears. Votes were recorded as counts only, so no mover or seconder is printed.",
+ "cost_usd": 0.00481952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Masciarelli",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, and corinne scouten"
+  },
+  {
+   "name": "Bob Robuccio",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, and corinne scouten"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, and corinne scouten"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "dpw director - jack rodriquenz was unable to attend and provide an update this evening."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus is not to hand out keys to the concession stand; instead, a central pick-up location (possibly Corinne Scouten's house) will be used.",
+   "quote": "consensus is that we don't want to hand out keys - but could have a central pick up location - maybe corinne's house."
+  },
+  {
+   "decision": "The Bengals bill is to be sent to Bob Coppenrath, Bengals President, and the LYSA bill to the LYSA Treasurer.",
+   "quote": "the bengals bill can be send to bob coppenrath - bengals president and the lysa bill can be sent to the lysa treasurer."
+  },
+  {
+   "decision": "Bob Robuccio will obtain an accounting from Karen Brochu at Town Hall to review, to determine whether the school is current through the 2014 school year.",
+   "quote": "bob robuccio will get an accounting from karen brochu at town hall to review."
+  },
+  {
+   "decision": "Corinne Scouten will bring a sample User Fee Schedule template to the next meeting.",
+   "quote": "corinne scouten will bring a sample template of a user fee schedule to the next meeting."
+  },
+  {
+   "decision": "Signage is to be placed at the turf directing people whom to call or email to reserve the fields.",
+   "quote": "there should be signage placed at the turf to direct people who to call or email to reserve."
+  },
+  {
+   "decision": "Mike Masciarelli will talk to Brian Spadafino about the MIAA playoff games and user fee collection.",
+   "quote": "mike masciarelli will talk to brian spadafino and find out what he can."
+  },
+  {
+   "decision": "The Commission should have a master key set kept at the DPW; Commissioner Corinne Scouten is the only commissioner without a DPW key.",
+   "quote": "the commission should have a master key set kept at the dpw."
+  },
+  {
+   "decision": "Commissioners did not want to sponsor the Ping Pong Tournament; no official request was made, so no action was taken. The Teen Center could be a possible co-sponsor.",
+   "quote": "commissioners did not want to entertain this idea and will no official request, no action was needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf field use bills for prior years",
+   "what_was_recorded": "Two bills, for Lunenburg Bengals and LYSA, each reflected $10,000 for field use in 2013 and 2014 that had not previously been billed.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "both bills reflected $10,000 for the prior two years field use ===page 2=== (2013 & 2014) that were not previ",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Concession stand fee receipt",
+   "what_was_recorded": "The Music Aiders sent in a payment for six uses of the concession stand during the fall football season; Mike Masciarelli signed off on the receipt.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "the music aiders sent in $300 for 6 uses of the concession stand during the fall football season."
+  },
+  {
+   "topic": "Fuel bill",
+   "what_was_recorded": "The Commission was presented with a fuel bill whose purpose was unclear; Jack Rodriquenz is to be asked to explain. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the commission was presented with a fuel bill."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "convened 7:02pm; no action",
+   "quote": "meeting convened at 7:02pm. in attendance were:",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved 3-0",
+   "quote": "motion was made to approve minutes. motion was seconded and minutes were approved 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Marshall Parking Lot Update",
+   "resolution": "no update; DPW Director absent",
+   "quote": "dpw director - jack rodriquenz was unable to attend and provide an update this evening.",
+   "tags": [
+    "Marshall",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Turf Fees/Usage",
+   "resolution": "continued; follow-up assigned on bills, accounting, fee schedule and MIAA fees",
+   "quote": "two bills - one for lunenburg bengals and one for lysa (soccer) were reviewed by the commissioners prior to sending.",
+   "tags": [
+    "turf",
+    "fees",
+    "billing",
+    "LYSA",
+    "Bengals"
+   ]
+  },
+  {
+   "topic": "Concession Stand Fees/Usage",
+   "resolution": "receipt signed off; no keys to be handed out; central pick-up discussed",
+   "quote": "the music aiders sent in $300 for 6 uses of the concession stand during the fall football season.",
+   "tags": [
+    "concession stand",
+    "keys"
+   ]
+  },
+  {
+   "topic": "Key/Other Park Properties",
+   "resolution": "continued; locate keys and set up master key set at DPW",
+   "quote": "mike masciarelli stated that we need to find out where other keys are for all of the different gates and/or buildings on our park properties.",
+   "tags": [
+    "keys",
+    "DPW",
+    "Marshall"
+   ]
+  },
+  {
+   "topic": "Fuel Bill",
+   "resolution": "continued; Jack Rodriquenz to be asked to explain",
+   "quote": "the commission was presented with a fuel bill.",
+   "tags": [
+    "fuel",
+    "bill"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "no action; Ping Pong Tournament not sponsored",
+   "quote": "mike masciarelli reported that rhonda malatos, phys. ed. teacher at the high school unofficially approached him",
+   "tags": [
+    "ping pong",
+    "Teen Center",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:04pm, 3-0",
+   "quote": "time adjourned was 8:04pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks commission",
+  "turf fields",
+  "field use fees",
+  "concession stand",
+  "keys",
+  "DPW",
+  "LYSA",
+  "Bengals",
+  "fuel bill",
+  "ping pong",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

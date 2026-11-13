@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2014-10-14",
  "docid": "1843",
@@ -12,23 +12,202 @@
  },
  "votes": [
   {
-   "motion": "Accept the August 12, 2014 Council on Aging minutes",
+   "motion": "Accept the August 12, 2014 COA minutes.",
    "moved_by": "Debbie Lincoln",
    "seconded_by": "Deb Seeley",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. lincoln moved to accept the august 12, 2014 c oa minutes. ms. seeley seconded. on vote, motion carried unanimously."
+   "quote": "ms. lincoln moved to accept the august 12, 2014 c oa minutes. ms. seeley seconded. on vote, motion carried unanimously",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Betty DiGiacomo",
+   "motion": "Adjourn the COA meeting.",
+   "moved_by": "Ms. D’Giacomo",
    "seconded_by": "Judy Tarbell",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. d'giacomo moved to adjourn the coa meeting. ms. tarbell seconded. on vote, motion carried unanimously"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1010235
+ "dropped_unquoted": 1,
+ "note": "Text-only extraction, no scan. Spacing artifacts appear in the source (e.g. 'Su e Doherty', 'Vice-Chai rperson'); the name is read as Sue Doherty, and her signature block reads Susan Doherty. 'Ms. Lincoln' (the minutes-motion mover) is Debbie Lincoln by context, and 'Mr. Lincoln' is Pete Lincoln. The minutes header says they were approved at the 11/18/2014 COA meeting. Only the two procedural motions were recorded as votes. No dollar figures appear. Members other than Lincoln and Seeley have no roles printed.",
+ "cost_usd": 0.00499202,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice-chai rperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), deb seeley (vice-chai rperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), deb seeley (vice-chai rperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "doreen noble (director), judy tarbell, debbie lincoln, betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, debbie lincoln, betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: jacquelyn dwyer, sarah grant & diane nowd"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: jacquelyn dwyer, sarah grant & diane nowd"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: jacquelyn dwyer, sarah grant & diane nowd"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board determined the Director's Certification requirement was not part of the job description when Ms. Noble was hired and that it should be dropped from the Director's Goals; it is to come back as an agenda item to be voted on at the next meeting.",
+   "quote": "after due and diligent discussion among the board m embers it was determined that the requirement of director's certification was not a part of the job description when ms. noble was hired and that this should be d ropped from the director's goal",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The chair asked the Director to invite Representative Benson to a future COA meeting.",
+   "quote": "to invite representative benson to a future coa meeting"
+  },
+  {
+   "decision": "The board agreed to publicly clarify the COA's involvement with trips: the COA does not sponsor trips, is not liable for trip issues, trip advertising should carry a disclaimer, and trip organizers may not use the COA name or affiliate with the COA.",
+   "quote": "the board would like to publically clarify the coa's involvement with any trips as follows"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: November meeting date change",
+   "resolution": "noted; meeting rescheduled to 11/18/2014",
+   "quote": "the coa meeting has been rescheduled to 11/18/2014."
+  },
+  {
+   "topic": "COA General Orientation/Discussion (term limits)",
+   "resolution": "discussed; no action",
+   "quote": "board members discussed the fact that although the coa has term limits"
+  },
+  {
+   "topic": "COA Member Resignation (Jennifer Ayers)",
+   "resolution": "noted",
+   "quote": "jennifer ayers has sent a letter of resignation to the board of selectmen."
+  },
+  {
+   "topic": "COA Member Recommendation (Brian Guenard)",
+   "resolution": "noted; recommendation made to Board of Selectmen",
+   "quote": "that brian guenard be considered for appointment to the coa."
+  },
+  {
+   "topic": "Outreach Update / Introduction of Jeanne Tatro, Temporary Outreach Worker",
+   "resolution": "update received; Tatro absent",
+   "quote": "the outreach coordinator, faith anderson is still out on medical leave."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; Director's Certification item to return as a vote at next meeting",
+   "quote": "ms. noble gave the director's report which included the following"
+  },
+  {
+   "topic": "Boston Post Cane Ceremony",
+   "resolution": "noted",
+   "quote": "the boston post cane will be given to marion pepin this afternoon at the eagle house."
+  },
+  {
+   "topic": "Task Groups (suggestions)",
+   "resolution": "discussed; no action",
+   "quote": "board members discussed the roles of individual task groups as follows"
+  },
+  {
+   "topic": "Minutes approval (August 12, 2014)",
+   "resolution": "approved",
+   "quote": "ms. lincoln moved to accept the august 12, 2014 c oa minutes",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Notices & Communications",
+   "resolution": "discussed upcoming Eagle House events; no action",
+   "quote": "upcoming eagle house events which had been publis hed in the coa newsletter were discussed",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Board Comment (trip coordinators, Representative Benson, Supporters/Friendly Seniors invitations)",
+   "resolution": "board clarified COA trip involvement publicly; directed invitation to Rep. Benson",
+   "quote": "the board would like to publically clarify the coa's involvement with any trips as follows"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:45AM",
+   "quote": "meeting adjourned at 10:45am"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA Newsletter",
+   "where": "text",
+   "quote": "upcoming eagle house events which had been publis hed in the coa newsletter were discussed",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "board appointments",
+  "director evaluation",
+  "director certification",
+  "trip coordinators",
+  "task groups",
+  "minutes approval",
+  "public comment none"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

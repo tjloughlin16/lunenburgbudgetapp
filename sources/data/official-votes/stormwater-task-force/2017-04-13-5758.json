@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2017-04-13",
  "docid": "5758",
@@ -12,23 +12,246 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the March 9, 2017 meeting",
-   "outcome": "accepted",
-   "procedural": true,
-   "quote": "minutes of the march 9, 2017, meeting were accepted.",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "adjourn",
-   "outcome": "all voted in favor",
+   "motion": "Adjourn the meeting at 8:40 p.m.",
+   "moved_by": "Matt Allison",
+   "outcome": "passed",
    "procedural": true,
    "quote": "matt allison made a motion to adjourn at 8:40 p.m., it was seconded by jack rabbitt, all voted in favor.",
-   "moved_by": "Matt Allison",
    "seconded_by": "Jack Rabbitt"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Two votes recorded: approval of prior minutes (procedural, mover/seconder not stated) and motion to adjourn at 8:40 p.m. (procedural).",
- "cost_usd": 0.0889955
+ "note": "Text is OCR of a scanned page (macOS Vision); some words may be misread (e.g., \"3' quarter\" is probably \"3rd quarter\"). The minutes record only one formal vote (adjournment). Acceptance of the March 9 minutes is stated with no motion or count. No dollar figures, transfers, or public comment appear. The meeting location is given as \"first floor conference room\" at the top and \"upper conference room\" at the end. The minutes say the task force has 4 members and also refer to a 5-member task force; attendance of the 4 members beyond the 3 named is not stated. The RECEIVED & FILED stamp is not part of the minutes content.",
+ "cost_usd": 0.00638022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Lunenburg Land Use Director",
+   "status": "present",
+   "quote": "also in attendance were lunenburg land use director, adam burney, mike clark of design consultants, inc. (dci), and ed himlan of the mass watershed coalition (mwc)."
+  },
+  {
+   "name": "Mike Clark",
+   "role": "of Design Consultants, Inc. (DCI)",
+   "status": "present",
+   "quote": "also in attendance were lunenburg land use director, adam burney, mike clark of design consultants, inc. (dci), and ed himlan of the mass watershed coalition (mwc)."
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "of the Mass Watershed Coalition (MWC)",
+   "status": "present",
+   "quote": "also in attendance were lunenburg land use director, adam burney, mike clark of design consultants, inc. (dci), and ed himlan of the mass watershed coalition (mwc)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the March 9, 2017 meeting were accepted (no motion recorded).",
+   "quote": "minutes of the march 9, 2017, meeting were accepted."
+  },
+  {
+   "decision": "SWTF Education Subcommittee (Jack Rabbitt and Phyllis Luck) to begin work on the items due in 2017 under MCM draft 1.",
+   "quote": "it was determined that the swtf education subcommittee, jack rabbitt and phyllis luck, will begin to work on items to be completed in 2017"
+  },
+  {
+   "decision": "The Assessor's Office is the Responsible Entity for providing Guidance for Industrial Stormwater Management for Industrial Facilities.",
+   "quote": "it was further determined that the responsible entity for providing guidance for industrial stormwater management for industrial facilities would be the assessor's office."
+  },
+  {
+   "decision": "Continue recruiting one additional task force member, as the task force has 4 of 5 members.",
+   "quote": "the group will continue to reach out to enlist one additional member, as the task force currently has 4 members."
+  },
+  {
+   "decision": "A Stormwater Management Plan manager will not be pursued at this time, though the need is recognized.",
+   "quote": "it was determined that this would not be pursued at this time, although the need is recognized."
+  },
+  {
+   "decision": "Messages will originate in the SWTF, with distribution Responsible Entities spread among Town Boards and Institutions.",
+   "quote": "it was affirmed that the messages to be sent will originate in the swtf, although responsible entities for distribution will be spread among town boards and institutions."
+  },
+  {
+   "decision": "Community rain garden considered worthy of inclusion in the NOI, though not an MCM requirement.",
+   "quote": "creation of a community rain garden, which is not a requirement of this mcm, was considered worthy of inclusion"
+  },
+  {
+   "decision": "DCI to forward the altered Measurable goals as soon as possible.",
+   "quote": "some measurable goals were altered; dci will forward the changes asap."
+  },
+  {
+   "decision": "Storm Drain Stenciling and Community Cleanups will not be part of the NOI submittal.",
+   "quote": "storm drain stenciling and community cleanups are not requirements of the new ms4 permit, and will not be a part of the noi submittal."
+  },
+  {
+   "decision": "Construction-site regulations to be written by a working group of Planning Board and Conservation Commission members as one set used by all boards, in place by June 2018; current bylaws then moved to General Bylaws.",
+   "quote": "created by a working group composed of planning board and conservation commission members; that there will be one set of regulations which all boards will utilize and enforce"
+  },
+  {
+   "decision": "How the Town ensures boards and personnel follow the new BMPs, and who signs the NOI, to be discussed with the Board of Selectmen.",
+   "quote": "both these items will be discussed with the board of selectmen."
+  },
+  {
+   "decision": "IDDE and Good House Keeping/Pollution Prevention to be discussed at the next DCI meeting on May 25.",
+   "quote": "it was determined that at our next meeting with dci, on may 25,"
+  },
+  {
+   "decision": "Remaining agenda items deferred to the next meeting, 4/27/17, because the hour was late.",
+   "quote": "as the hour was late, other items on the agenda were deferred to the next meeting, to be held on 4/27/17."
+  },
+  {
+   "decision": "Meeting schedule set: April 27, May 11, May 25 (6 pm start), June 8 and 22; July 27, August 24, September 14 and 28 in the 3rd quarter, at the Ritter building at 6:30 pm unless noted.",
+   "quote": "the schedule of meetings will be april 27, may 11, may 25 (6 pm start), june 8 and 22."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of March 9, 2017",
+   "resolution": "accepted",
+   "quote": "minutes of the march 9, 2017, meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "MS4 Permit bylaw changes and NOI announcement",
+   "resolution": "announced; no action",
+   "quote": "matt allison announced that the planning board is aware that bylaw changes will be required in conjunction with the town's obligations",
+   "tags": [
+    "MS4 permit",
+    "bylaws",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "MCM draft 1 Public Education and Outreach",
+   "resolution": "reviewed; subcommittee assigned 2017 items",
+   "quote": "the evening's first discussion was a review of minimum control measure (mcm) \"public education and outreach\" draft 1 (attached)",
+   "tags": [
+    "public education",
+    "outreach",
+    "MS4 permit"
+   ]
+  },
+  {
+   "topic": "MCM draft 2 Public Participation",
+   "resolution": "reviewed; member recruitment continues",
+   "quote": "the group moved on to mcm draft 2 (attached), public participation.",
+   "tags": [
+    "public participation",
+    "MS4 permit"
+   ]
+  },
+  {
+   "topic": "MCM draft 4 Construction Site Stormwater Runoff Control",
+   "resolution": "reviewed; working group to write regulations",
+   "quote": "mcm draft 4 (attached), construction site stormwater runoff control was then reviewed.",
+   "tags": [
+    "construction site runoff",
+    "bylaws",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "MCM draft 5 Stormwater Management in New Development and Redevelopment",
+   "resolution": "reviewed; enforcement and NOI sign-off referred to Board of Selectmen",
+   "quote": "mcm draft 5 (attached), stormwater management in new development and redevelopment, was the",
+   "tags": [
+    "new development",
+    "post-construction",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Next steps with DCI and meeting schedule",
+   "resolution": "meetings scheduled; remaining items deferred to 4/27/17",
+   "quote": "we will meet with dci on may 25, at 6 pm, to discuss idde and good house keeping and pollution prevention for permittee owned operations",
+   "tags": [
+    "DCI",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:40 p.m., passed",
+   "quote": "matt allison made a motion to adjourn at 8:40 p.m., it was seconded by jack rabbitt, all voted in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MCM \"Public Education and Outreach\" draft 1 (attached)",
+   "where": "list",
+   "quote": "the evening's first discussion was a review of minimum control measure (mcm) \"public education and outreach\" draft 1 (attached)"
+  },
+  {
+   "name": "MCM draft 2 (attached), Public Participation",
+   "where": "list",
+   "quote": "the group moved on to mcm draft 2 (attached), public participation."
+  },
+  {
+   "name": "MCM draft 4 (attached), Construction Site Stormwater Runoff Control",
+   "where": "list",
+   "quote": "mcm draft 4 (attached), construction site stormwater runoff control was then reviewed."
+  },
+  {
+   "name": "MCM draft 5 (attached), Stormwater Management in New Development and Redevelopment",
+   "where": "list",
+   "quote": "mcm draft 5 (attached), stormwater management in new development and redevelopment, was the"
+  },
+  {
+   "name": "Neponset Stormwater Partnership messages",
+   "where": "text",
+   "quote": "the neponset stormwater partnership has many applicable messages that may be used as templates for"
+  },
+  {
+   "name": "EPA Stormwater Handbook (200 page)",
+   "where": "text",
+   "quote": "the epa has a 200 page stormwater handbook, which is also a great resource."
+  },
+  {
+   "name": "Notice of Intent (NOI) for the MS4 Permit",
+   "where": "text",
+   "quote": "notice of intent (noi) to be filed by 9/29/17."
+  }
+ ],
+ "tags": [
+  "MS4 permit",
+  "stormwater",
+  "NOI notice of intent",
+  "public education",
+  "public participation",
+  "construction site runoff",
+  "new development",
+  "bylaws",
+  "DCI consultant",
+  "task force schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the evening's first discussion was a review of minimum control measure (mcm) \"public education and outreach\" draft 1 (attached)"
+ },
+ "dropped_unquoted_by_field": {}
 }

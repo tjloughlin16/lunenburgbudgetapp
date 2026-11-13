@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-03-01",
  "docid": "4959",
@@ -12,42 +12,378 @@
  },
  "votes": [
   {
-   "motion": "Enter into Executive Session to discuss collective bargaining strategy",
+   "motion": "Enter into Executive Session for the stated reason (PFFM Collective Bargaining Agreement).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Luck",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to enter into executive session for the stated reason 2nd: p. luck ms. luck-aye, mr. alonzo-aye, mr. toale- aye"
+   "quote": "motion: t. alonzo to enter into executive session for the stated reason"
   },
   {
-   "motion": "Amend the MART routes as presented",
+   "motion": "Sign the proclamation proclaiming March 7 through 12, 2016 as Boys & Girls Club Week in Lunenburg.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to sign the proclamation proclaiming march 7 through 12, 2016 as boys & girls club week in lunenburg vote: all in favor"
+  },
+  {
+   "motion": "Amend the MART routes as presented by Ms. Luck.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to amend the mart routes as presented by ms. luck 2\"d.p. bertram vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to amend the mart routes as presented by ms. luck 2\"d.p. bertram vote: all in favor"
   },
   {
-   "motion": "Approve the third amendment to the intermunicipal agreement",
+   "motion": "Approve the third amendment to the intermunicipal agreement (adding the Town of Stow to the Devens household hazardous products program).",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve the third amendment to the intermunicipal agreement 2\"d, t. alonzo vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to approve the third amendment to the intermunicipal agreement 2\"d, t. alonzo vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve minutes of February 2, February 9 and February 16, 2016 (no motion, mover or tally printed).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of february 2, february 9 and february 16, 2016 were approved."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:42 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 7:42 p.m. 2'd: t. alonzo vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 7:42 p.m. 2'd: t. alonzo vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan of meeting minutes.",
- "cost_usd": 0.16008940000000002
+ "dropped_unquoted": 0,
+ "note": "OCR text from a macOS Vision scan with garbled words (e.g., 'Executive Session Minutes parate', 'chanch Peterson', 'MARI', 'congratuled'); quotes are copied from the OCR as printed. The minutes record the executive session opening at 6:05 p.m. and the meeting 'commenced' at 7:00 p.m., but do not record the return from executive session or its outcome. The minutes approving prior minutes and the 'Respectfully submitted' signature line carry no motion or tally detail; the minutes approval is recorded as a vote with no mover, seconder or tally printed. Roll-call entry to executive session lists three ayes, no tally printed. Several votes say only 'All in Favor' without a count.",
+ "cost_usd": 0.00852702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; tom alonzo, clerk; paula bertram,, member; phyllis luck,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; tom alonzo, clerk; paula bertram,, member; phyllis luck,"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; tom alonzo, clerk; paula bertram,, member; phyllis luck,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; tom alonzo, clerk; paula bertram,, member; phyllis luck,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others in attendance: kerry lafleur, town manager"
+  },
+  {
+   "name": "David Passios",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "david passios, 56 whiting street, board of health member, announced for homeowners with failed septic"
+  },
+  {
+   "name": "Robert Truax",
+   "role": "not stated",
+   "status": "present",
+   "quote": "a master teacher project was presented by robert truax."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave rodgers requested clarification on the mart schedule as it relates to veteran jim bellafiore."
+  },
+  {
+   "name": "Program director, Boys and Girls Club (unnamed)",
+   "role": "Program director, Boys and Girls Club",
+   "status": "present",
+   "quote": "the program director from the boys and girls club came forward and explained the national week is the week"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Add an alternate member to the Storm Water Task Force to a future agenda (requested by Ms. Luck due to lack of quorum).",
+   "quote": "it was decided to add this to a future agenda."
+  },
+  {
+   "decision": "Tabled the further discussion on financing of the Pavement Management Plan until March 15.",
+   "quote": "further discussion on financing of pavement mgmt. plan this item was tabled until march 15."
+  },
+  {
+   "decision": "Board agreed the Town Manager will continue to lease the TC Passios building to current tenants at a cost to cover building maintenance (reported by Town Manager, no vote recorded).",
+   "quote": "continue to lease that building to the current tenants at a cost to cover the building maintenance expenses."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Building Committee contingency funds",
+   "what_was_recorded": "Public comment reported the School Building Committee is considering spending four million dollars of contingency funding; a citizen email questioned discretionary spending.",
+   "figures_as_printed": [
+    "four million dollars"
+   ],
+   "quote": "the school building committee is considering spending the four million dollars of contingency funding."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was signed in the stated amount.",
+   "figures_as_printed": [
+    "$644,219.92"
+   ],
+   "quote": "an accounts payable warrant in the amount of $644,219.92 was signed."
+  },
+  {
+   "topic": "Transportation contract increase (School Committee)",
+   "what_was_recorded": "School Committee renewed FY2017-2019 transportation contracts with a $40,000 increase due to a state-mandated sick-time payment; no cost increase in the Special Education contract.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "there was a $40,000 increase in the contract as the vendor has reported the state mandated it pay its part-time employees for sick time."
+  },
+  {
+   "topic": "Master Teacher project stipend",
+   "what_was_recorded": "Master Teacher projects are approved annually with a stipend for approximately 100 hours of work.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "these projects are approved annually and a $5000 stipend is awarded for approximately 100 hours of work."
+  },
+  {
+   "topic": "Septic/sewer loan program",
+   "what_was_recorded": "Board of Health septic/sewer loans are written at a low interest rate with a betterment placed on the property.",
+   "figures_as_printed": [
+    "two percent"
+   ],
+   "quote": "loans are written with two percent interest rates and a betterment placed on the property."
+  },
+  {
+   "topic": "Devens household hazardous products intermunicipal agreement",
+   "what_was_recorded": "Third amendment adds the Town of Stow; the minutes state there are no additional costs to the Town.",
+   "figures_as_printed": [],
+   "quote": "there are no additional costs to the town for this."
+  },
+  {
+   "topic": "MART route change",
+   "what_was_recorded": "MART service changed to five 45-minute loops per day at no added cost to the Town.",
+   "figures_as_printed": [],
+   "quote": "to provide additional service without added cost, mart is going from seven, 30 minute loops to five, 45 minute loops per day."
+  },
+  {
+   "topic": "TC Passios building lease",
+   "what_was_recorded": "Town Manager to lease the building to current tenants at a cost to cover building maintenance expenses; the school is proposing no FY2017 operating or maintenance funds for it.",
+   "figures_as_printed": [],
+   "quote": "continue to lease that building to the current tenants at a cost to cover the building maintenance expenses."
+  },
+  {
+   "topic": "Pavement Management Plan financing",
+   "what_was_recorded": "Further discussion of how the Pavement Management Plan is financed was tabled to March 15; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "further discussion on financing of pavement mgmt. plan this item was tabled until march 15."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Email from citizen on School Building Committee contingency spending",
+   "quote": "ms. luck read an email sent from a concerned citizen regarding the school building committee spending"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "topic": "MART schedule clarification for a veteran",
+   "quote": "dave rodgers requested clarification on the mart schedule as it relates to veteran jim bellafiore."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session entry (PFFM collective bargaining)",
+   "resolution": "entered executive session",
+   "quote": "chairman toale opened the meeting at 6:05 p.m. and declared the reason for entering executive session.",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Public comment on School Building Committee contingency funds",
+   "resolution": "discussed, no action",
+   "quote": "ms. luck read an email sent from a concerned citizen regarding the school building committee spending",
+   "tags": [
+    "school building committee",
+    "contingency funds"
+   ]
+  },
+  {
+   "topic": "Announcements (polls, fundraiser, caucus, census, dog licenses, septic loans)",
+   "resolution": "no action",
+   "quote": "mr. alonzo moved on to announce the polls were still open until 8:00 p.m. tonight.",
+   "tags": [
+    "elections",
+    "announcements",
+    "septic loans"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club Week Proclamation",
+   "resolution": "proclamation signed",
+   "quote": "1. boys & girls club week proclamation",
+   "tags": [
+    "proclamation",
+    "boys and girls club"
+   ]
+  },
+  {
+   "topic": "Vote to change MART route in Lunenburg",
+   "resolution": "approved (amended routes)",
+   "quote": "2. vote to change mart route in lunenburg",
+   "tags": [
+    "MART",
+    "transportation",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Further discussion on financing of Pavement Management Plan",
+   "resolution": "tabled to March 15",
+   "quote": "3. further discussion on financing of pavement mgmt. plan",
+   "tags": [
+    "pavement management",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Third amendment to intermunicipal agreement (Devens household hazardous products)",
+   "resolution": "approved",
+   "quote": "4. third amendment to intermunicipal agreement (devens regional household hazardous products collection program)",
+   "tags": [
+    "intermunicipal agreement",
+    "hazardous waste"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes approved, warrant signed, storm water alternate added to future agenda",
+   "quote": "5. minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrant",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "6. committee reports:",
+   "tags": [
+    "committees",
+    "zoning",
+    "planning board",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "town manager report: the finance committee continues to review the individual department budget",
+   "tags": [
+    "budget",
+    "fiscal year 2017",
+    "town building lease"
+   ]
+  },
+  {
+   "topic": "Public comment on MART schedule",
+   "resolution": "no action",
+   "quote": "dave rodgers requested clarification on the mart schedule as it relates to veteran jim bellafiore.",
+   "tags": [
+    "MART",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:42 p.m.",
+   "quote": "to adjourn the meeting at 7:42 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Boys & Girls Club Week Proclamation (March 7 through 12, 2016)",
+   "where": "text",
+   "quote": "1. boys & girls club week proclamation"
+  },
+  {
+   "name": "Third Amendment to Intermunicipal Agreement (Devens Regional Household Hazardous Products Collection Program)",
+   "where": "text",
+   "quote": "third amendment to intermunicipal agreement (devens regional household hazardous products collection program)"
+  },
+  {
+   "name": "Accounts payable warrant in the amount of $644,219.92",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $644,219.92 was signed."
+  },
+  {
+   "name": "Citizen email on School Building Committee contingency funds",
+   "where": "text",
+   "quote": "ms. luck read an email sent from a concerned citizen regarding the school building committee spending"
+  },
+  {
+   "name": "ADA application (MART)",
+   "where": "text",
+   "quote": "must fill out an ada application at the mart office"
+  },
+  {
+   "name": "Map defining the ¾ mile MART eligibility zones",
+   "where": "text",
+   "quote": "the map to define the ¾ mile eligibility zones is still being worked on."
+  }
+ ],
+ "tags": [
+  "select board",
+  "executive session",
+  "MART",
+  "pavement management",
+  "school building committee",
+  "annual election 2016",
+  "boys and girls club",
+  "intermunicipal agreement",
+  "septic loans",
+  "storm water task force",
+  "town budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

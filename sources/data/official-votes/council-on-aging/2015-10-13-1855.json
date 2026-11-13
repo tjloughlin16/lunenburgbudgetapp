@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2015-10-13",
  "docid": "1855",
@@ -12,24 +12,340 @@
  },
  "votes": [
   {
-   "motion": "Accept the amended minutes",
-   "moved_by": "Debbie Lincoln",
-   "seconded_by": "Brian Guenard",
-   "outcome": "passed unanimously",
+   "motion": "Accept the amended September minutes.",
+   "moved_by": "Ms. Lincoln",
+   "seconded_by": "Mr. Guenard",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. lincoln moved to accept the amended minutes. m r. guenard seconded. on vote, motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. lincoln moved to accept the amended minutes."
   },
   {
-   "motion": "Adjourn the COA meeting",
-   "moved_by": "Sarah Grant",
-   "seconded_by": "Diane Nowd",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the COA meeting.",
+   "moved_by": "Ms. Grant",
+   "seconded_by": "Ms. Nowd",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. grant moved to adjourn the coa meeting. ms. nowd seconded. on vote, motion carried unanimously."
+   "quote": "being no further business, ms. grant moved to adjourn the coa meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded: approval of prior minutes (amended) and adjournment. Both passed unanimously. No other motions with recorded votes appear in these minutes.",
- "cost_usd": 0.08254950000000001
+ "note": "Text is a clean extraction with some split words and double spaces; quotes were chosen to avoid broken spacing. The header reads 'Minutes Approved at the 11/10/15 COA Meeting', but no vote approving these minutes is recorded in this meeting's text. The minutes name 'Ms. Lincoln' as mover of the minutes motion, while the Chairperson is Pete Lincoln; the printed name is kept. The 'Budget Report' item reads 'No Report' and is not recorded as a budget item.",
+ "cost_usd": 0.0076671199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), susan doherty (director), debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), susan doherty (director), debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "board member",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), susan doherty (director), debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "board member",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), susan doherty (director), debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "board member",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), susan doherty (director), debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Brian Guenard",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "board member",
+   "status": "absent",
+   "quote": "excused: jacquelyn dwyer"
+  },
+  {
+   "name": "Cheryl Aubuchon",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "cheryl aubuchon, eagle house supporters & karin menard, lunenburg finance committee"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "cheryl aubuchon, eagle house supporters & karin menard, lunenburg finance committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Doherty will request Capital Plan items for a new roof, outside/inside building painting, and outside building repairs to porch and siding; Mr. Lincoln asked that a new parking lot be added to the request.",
+   "quote": "she will be requesting the following:"
+  },
+  {
+   "decision": "Ms. Doherty agreed to host an Area COA Board Training on 11/16/15 at the Eagle House, and COA board members volunteered to supply refreshments for that morning meeting.",
+   "quote": "area coa board training on 11/16 at the eagle house and she agreed to do so."
+  },
+  {
+   "decision": "COA board members volunteered their help with the Boston Post Cane Ceremony, which the COA Director accepted.",
+   "quote": "coa board members volunteered their help with the ceremony"
+  },
+  {
+   "decision": "Ms. Doherty will open and close the Eagle House building for the Lunenburg Women's Club free lunch on 11/4/15.",
+   "quote": "ms. doherty will open and close the building for this event."
+  },
+  {
+   "decision": "Ms. Doherty gladly accepted the board members' offer to supply refreshments for the COA training morning.",
+   "quote": "ms. doherty gladly entrusted them with that duty."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tea Party fundraiser",
+   "what_was_recorded": "The October 6 Tea Party, led by Sarah Grant, raised approximately $400 for the Eagle House Supporters.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "was a great success and raised approximately $400 for the eagle house supporters."
+  },
+  {
+   "topic": "Eagle House Recreation Area plantings, shed and benches",
+   "what_was_recorded": "The Eagle House Supporters agreed to pay for the plantings, the shed and benches for the recreation area; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "the shed, along with benches for the recreation area."
+  },
+  {
+   "topic": "Atlas Landscaping work on recreation area",
+   "what_was_recorded": "Atlas Landscaping cleared and leveled the shed site free of charge.",
+   "figures_as_printed": [],
+   "quote": "they also cleared and leveled the area where the new shed will be placed, free of charge."
+  },
+  {
+   "topic": "Capital Plan requests",
+   "what_was_recorded": "Ms. Doherty will submit Capital Plan requests for a roof, painting, and porch and siding repairs, plus a new parking lot requested by Mr. Lincoln; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "she will be requesting the following:"
+  },
+  {
+   "topic": "Non-benefit employee pay during inclement weather closings",
+   "what_was_recorded": "Non-benefit employees must either make up the time on another day or lose that day's pay if they cannot report during an inclement weather closing.",
+   "figures_as_printed": [],
+   "quote": "non-benefit employees could either make up the time on another day or lose that day's pay."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "liaison for the Lunenburg Finance Committee",
+   "topic": "Introduction as Finance Committee liaison",
+   "quote": "karin menard introduced herself and stated that"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "birthdays"
+   ],
+   "quote": "mr. lincoln gave birthday greetings to board members cheryl moisan and jane rabbitt."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. lincoln moved to accept the amended minutes."
+  },
+  {
+   "topic": "Administrative Assistant hire",
+   "resolution": "reported; new hire named",
+   "tags": [
+    "staffing",
+    "hiring"
+   ],
+   "quote": "amanda koeck was chosen for the position and will begin work on october 19, 2015."
+  },
+  {
+   "topic": "Director's report (budget, property tax work-off, building repairs, events)",
+   "resolution": "reported, no action",
+   "tags": [
+    "events",
+    "property tax work-off",
+    "building repairs"
+   ],
+   "quote": "ms. doherty reported on the current events as follows:"
+  },
+  {
+   "topic": "Boston Post Cane Ceremony",
+   "resolution": "volunteers accepted",
+   "tags": [
+    "events",
+    "volunteers"
+   ],
+   "quote": "coa board members volunteered their help with the ceremony"
+  },
+  {
+   "topic": "Inclement weather closing procedures",
+   "resolution": "reported, no action",
+   "tags": [
+    "staffing",
+    "policy",
+    "inclement weather"
+   ],
+   "quote": "the employees must report to work."
+  },
+  {
+   "topic": "Eagle House walkway",
+   "resolution": "reported, no action",
+   "tags": [
+    "building",
+    "construction"
+   ],
+   "quote": "this project is still under slow construction and is slated to be completed sometime in november."
+  },
+  {
+   "topic": "Eagle House Recreation Area",
+   "resolution": "reported, no action",
+   "tags": [
+    "recreation area",
+    "donations",
+    "landscaping"
+   ],
+   "quote": "kevin mcnally will be donating horseshoe equipment to the rec area."
+  },
+  {
+   "topic": "COA Board Training 11/16/15",
+   "resolution": "agreed to host",
+   "tags": [
+    "training",
+    "state elder affairs"
+   ],
+   "quote": "area coa board training on 11/16 at the eagle house and she agreed to do so."
+  },
+  {
+   "topic": "Lunenburg Women's Club free lunch for Veterans",
+   "resolution": "discussed under Director's report; Director to open and close building",
+   "tags": [
+    "events",
+    "veterans"
+   ],
+   "quote": "ms. doherty will open and close the building for this event."
+  },
+  {
+   "topic": "Capital Plan requests",
+   "resolution": "Director to submit requests",
+   "tags": [
+    "capital plan",
+    "building"
+   ],
+   "quote": "she will be requesting the following:"
+  },
+  {
+   "topic": "Notices & Communications",
+   "resolution": "reported, no action",
+   "tags": [
+    "volunteers",
+    "talent bank"
+   ],
+   "quote": "there were 5 talent bank forms received from the"
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "tags": [
+    "condolences",
+    "volunteers",
+    "thanks"
+   ],
+   "quote": "ms. lincoln thanked cheryl aubuchon for attending"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "liaison"
+   ],
+   "quote": "karin menard introduced herself and stated that"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:30AM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 10:30am"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Talent bank forms (5)",
+   "where": "text",
+   "quote": "there were 5 talent bank forms received from the"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "senior center",
+  "staffing",
+  "capital plan",
+  "volunteers",
+  "events",
+  "building repairs",
+  "inclement weather",
+  "recreation area",
+  "training",
+  "finance committee liaison"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

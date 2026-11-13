@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-06-26",
  "docid": "2278",
@@ -12,31 +12,208 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 6/12/2014",
-   "moved_by": "Steven Raboin",
-   "seconded_by": "John Henshaw",
-   "outcome": "passed 3-0-1",
+   "motion": "Accept the minutes of 6/12/2014 as presented.",
+   "moved_by": "SR",
+   "outcome": "passed 3-0 with BL abstained",
    "procedural": true,
-   "quote": "sr motioned to accept the minutes of 6/12/2014 as presented. jh seconded, motion carried 3-0 with bl abstained."
+   "quote": "sr motioned to accept the minutes of 6/12/2014 as presented. jh seconded, motion carried 3-0 with bl abstained.",
+   "seconded_by": "JH"
   },
   {
-   "motion": "Offer Jason Smith the opportunity to resign by 6/30/2014, or recommend his removal to the appointing committee on 7/1/2014",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Steven Raboin",
+   "motion": "Inform JS that the Committee agreed to give him the opportunity to resign by 6/30/2014, or the Committee will recommend his removal to the appointing committee on 7/1/2014.",
+   "moved_by": "BL",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "bl made a motion to inform js that we agreed to give him the opportunity to resign by 6/30/2014 or we will recommend his removal to the appointing committee on 7/1/2014. sr seconded, motion carried 5-0."
+   "quote": "bl made a motion to inform js that we agreed to give him the opportunity to resign by 6/30/2014 or we will recommend his removal to the appointing committee on 7/1/2014.",
+   "seconded_by": "SR"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Steven Raboin",
-   "seconded_by": "Brian Laffond",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "SR",
    "outcome": "passed",
    "procedural": true,
-   "quote": "sr motioned to adjourn, bl seconded, meeting adjourned for carrot cake at 8:57pm."
+   "quote": "sr motioned to adjourn, bl seconded, meeting adjourned for carrot cake at 8:57pm.",
+   "seconded_by": "BL"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR-extracted via macOS Vision; legible with no impact on vote recording.",
- "cost_usd": 0.1174895
+ "note": "OCR text from macOS Vision with errors: 'H' for JH, '3L' for BL, 'ME said ... stimates', 'ge' truncated, and the attendance labels are separated from their names so the Present/Absent lines were read from the adjacent lines. ME is listed as present but the minutes say he would arrive later; the time of arrival is not recorded. Vote quotes were taken from the printed text. No public comment is recorded.",
+ "cost_usd": 0.00606882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, s. raboin, b. laffond"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, s. raboin, b. laffond"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, s. raboin, b. laffond"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, s. raboin, b. laffond"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, s. raboin, b. laffond"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "m. erickson, j. henshaw, t. burchfield, s. raboin, b. laffond j. smith, k. menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "m. erickson, j. henshaw, t. burchfield, s. raboin, b. laffond j. smith, k. menard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee assignments were not made; the minutes say KM and ME need to be present before assignments are set.",
+   "quote": "need km and me present for assignments, me will be coming later from another meeting"
+  },
+  {
+   "decision": "JH will hold prospective discussions with the DPW Director regarding the street sweeper and gather information on work done on the turf field and track.",
+   "quote": "said he would have some prospective discussions with the dpw director regarding the street sweeper"
+  },
+  {
+   "decision": "JH will bring a final draft of the fiscal policies to the next meeting, after reviewing changes recommended by K. Speidel and K. Brochu.",
+   "quote": "jh will come with a final draft to the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library Friends paying for building work (re-grouting)",
+   "what_was_recorded": "The Library Trustees are discussing whether the Friends should pay for items such as re-grouting, which the report said would be better addressed through the Capital Plan. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "discussing whether the friends should be paying for some of things they are paying for, such as re-grouting"
+  },
+  {
+   "topic": "School building project estimates and MSBA submission",
+   "what_was_recorded": "The School Building Committee voted to ratify the reconciliation of the architect's and construction manager's estimates and send 60% construction documents to the MSBA. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "me said the school building committee voted to ratify the reconciliation of the architect's and construction manager's stimates and send in the 60% construction documents to the msba."
+  },
+  {
+   "topic": "School project funding agreement",
+   "what_was_recorded": "The funding agreement for the school project needs to be signed. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the funding agreement needs to be signed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "meeting called to order by bl at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee Assignments",
+   "resolution": "deferred until KM and ME present",
+   "quote": "need km and me present for assignments, me will be coming later from another meeting",
+   "tags": [
+    "assignments"
+   ]
+  },
+  {
+   "topic": "Meeting minutes of 6/12/2014",
+   "resolution": "approved 3-0 with BL abstained",
+   "quote": "sr motioned to accept the minutes of 6/12/2014 as presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received, no action",
+   "quote": "sr said the building reuse committee met with the planning board on june 18",
+   "tags": [
+    "building reuse",
+    "library",
+    "school building",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Committee Vacancies",
+   "resolution": "motion passed 5-0 to ask JS to resign by 6/30/2014 or face recommended removal",
+   "quote": "with bl and sr not seeking reappointment, the committee discussed quorum issues which may arise until the vacancies",
+   "tags": [
+    "vacancies",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Fiscal Policies",
+   "resolution": "JH to bring final draft to next meeting",
+   "quote": "the committee reviewed changes recommended by k. speidel and k. brochu. jh will come with a final draft to the next meeting.",
+   "tags": [
+    "fiscal policies"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:57pm",
+   "quote": "sr motioned to adjourn, bl seconded, meeting adjourned for carrot cake at 8:57pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "60% construction documents (school project, sent to MSBA)",
+   "where": "text",
+   "quote": "ratify the reconciliation of the architect's and construction manager's stimates and send in the 60% construction documents to the msba"
+  },
+  {
+   "name": "Funding agreement (school project)",
+   "where": "text",
+   "quote": "the funding agreement needs to be signed"
+  },
+  {
+   "name": "Changes recommended by K. Speidel and K. Brochu (fiscal policies)",
+   "where": "text",
+   "quote": "the committee reviewed changes recommended by k. speidel and k. brochu."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "committee vacancies",
+  "quorum",
+  "fiscal policies",
+  "school building",
+  "library",
+  "building reuse",
+  "capital planning",
+  "street sweeper"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

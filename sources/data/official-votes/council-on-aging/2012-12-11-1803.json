@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-12-11",
  "docid": "1803",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the November 13, 2012 Council on Aging meeting",
+   "motion": "Accept the minutes of the November 13, 2012 COA Meeting.",
    "moved_by": "Sis Montuori",
    "seconded_by": "Joyce Wass",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "sis montuori motioned to accept the minutes of the november 13, 2012 coa meeting. joyce wass seconded. all approved, motion carried."
   },
   {
-   "motion": "Appoint Sis Montouri as COA Advocacy Sub-Committee Chairperson",
+   "motion": "Appoint Sis Montouri as COA Advocacy Sub-Committee Chairperson.",
    "moved_by": "Pete Lincoln",
    "seconded_by": "Joyce Wass",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "pete lincoln moved to appoint sis montouri as coa advocacy sub-committee chairperson. joyce wass seconded. all approved, motion carried."
   },
   {
-   "motion": "Appoint Pete Lincoln as COA Board Development Sub-Committee Chairperson",
+   "motion": "Appoint Pete Lincoln as COA Board Development Sub-Committee Chairperson.",
    "moved_by": "Joyce Wass",
    "seconded_by": "Sis Montouri",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "joyce wass moved to appoint pete lincoln as coa board development sub-committee chairperson. sis montouri seconded. all approved, motion carried."
   },
   {
-   "motion": "Appoint Fred Crellin as COA Finance Sub-Committee Chairperson",
+   "motion": "Appoint Fred Crellin as COA Finance Sub-Committee Chairperson.",
    "moved_by": "Deb Seeley",
    "seconded_by": "Pete Lincoln",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "deb seeley moved to appoint fred crellin as coa finance sub-committee chairperson. pete lincoln seconded. all approved, motion carried."
   },
   {
-   "motion": "Appoint Barbara Brown as COA By-Law Sub-Committee Chairperson",
+   "motion": "Appoint Barbara Brown as COA By-Law Sub-Committee Chairperson.",
    "moved_by": "Jane Doyle",
    "seconded_by": "Sis Montouri",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "jane doyle moved to appoint barbara brown as coa by-law sub-committee chairperson. sis montouri seconded. all approved, motion carried."
   },
   {
-   "motion": "Appoint Deb Seeley as COA Director's Evaluation Sub-Committee Chairperson",
+   "motion": "Appoint Deb Seeley as COA Director's Evaluation Sub-Committee Chairperson.",
    "moved_by": "Pete Lincoln",
    "seconded_by": "Barbara Brown",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "pete lincoln moved to appoint deb seeley as coa director's evaluation sub-committee chairperson. barbara brown seconded. all approved, motion carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Joyce Wass",
    "seconded_by": "Pete Lincoln",
    "outcome": "passed",
@@ -69,6 +69,259 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear digital minutes with seven recorded votes, all passed.",
- "cost_usd": 0.1027685
+ "note": "Text is an extracted, approved set of minutes with no scan problems. Correspondence and General Discussion headings have no recorded content and are not listed as topics. No public comment section is printed. The printed spelling varies (Montuori/Montouri) and the signature block repeats 'Susan Doherty' while the header names 'Sue Doherty'; both are recorded as printed. The new meal-site hours and menu (from January 2) are reported as information, not a board decision, so they are not listed as decisions.",
+ "cost_usd": 0.00684382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, jane doyle"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "pete lincoln (vice-chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "present",
+   "quote": "doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "",
+   "status": "present",
+   "quote": "barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "present",
+   "quote": "jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "",
+   "status": "present",
+   "quote": "deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "",
+   "status": "present",
+   "quote": "fred crellin, jim hays, sis montuori, joyce wass, and"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "",
+   "status": "present",
+   "quote": "jim hays, sis montuori, joyce wass, and"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "",
+   "status": "present",
+   "quote": "sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "Prospective COA Member",
+   "status": "present",
+   "quote": "whitney lacka, prospective coa member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed that if the sub-committee agenda situation arises again, the former Chairperson of the sub-committee meeting will set the agenda with the Administrative Assistant in time for posting.",
+   "quote": "board members decided that if this situation should arise again, it would be the responsibility of the former chairperson to set the agenda, of the particular sub-committee which will be meeting"
+  },
+  {
+   "decision": "Director directed to provide a COA Organizational Chart showing the COA's relationships with the Town, Supporters of the Eagle House and other entities, to be incorporated into the COA By-Laws.",
+   "quote": "jane doyle requested that the director provide a coa organizational chart which outlines the relationship the coa has with the town"
+  },
+  {
+   "decision": "Director will make a recommendation for the COA FY14 budget to be restored in full so the Senior Center can re-open on Fridays.",
+   "quote": "ms. noble will make a recommendation for the coa fy14 budget to be restored in full so the senior center can re-open on fridays."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Kitchen equipment purchased through the Capital Plan",
+   "what_was_recorded": "All new kitchen equipment bought through the Capital Plan, except the wall oven, has been received and installed; invoices are being paid through the Town Accountant.",
+   "figures_as_printed": [],
+   "quote": "all new kitchen equipment which was purchased through the capital plan, except the wall oven, has been received and installed."
+  },
+  {
+   "topic": "Budget transfer for Direct Energy, Sewer and Water lines",
+   "what_was_recorded": "$1600 was moved out of the Direct Energy line into the Sewer and Water lines to cover bills, and another transfer into those lines is anticipated before the end of FY13.",
+   "figures_as_printed": [
+    "$1600",
+    "$1000",
+    "$600"
+   ],
+   "quote": "$1600 needed to be transferred out of the direct energy line and put into the sewer ($1000) & water lines ($600) to cover bills."
+  },
+  {
+   "topic": "Replacement meal purchase",
+   "what_was_recorded": "Hotdogs and potato salad were bought to replace the MOC Nutrition meal that was not fit to eat on December 6.",
+   "figures_as_printed": [],
+   "quote": "hotdogs and potato salad were purchased to replace the meal."
+  },
+  {
+   "topic": "Funding for new meal site menu",
+   "what_was_recorded": "The Director believes funding for the new menu can come from the COA Gift Fund at the Town Hall.",
+   "figures_as_printed": [],
+   "quote": "she believes that funding for this can be done through the coa gift fund at the town hall."
+  },
+  {
+   "topic": "State funding per elder (MCOA)",
+   "what_was_recorded": "The Director is asking the Legislature to restore state funding per elder, which has been cut from $7 to $6.40.",
+   "figures_as_printed": [
+    "$7",
+    "$6.40"
+   ],
+   "quote": "restore funding to $7 per elder. approximately 25% of the population in massachusetts is over 60 and funding has been cut to $6.40 per elder."
+  },
+  {
+   "topic": "FY13 budget cuts",
+   "what_was_recorded": "The Town Manager said the state cuts were not as bad as expected and all departments should continue operations as is; no figures were given.",
+   "figures_as_printed": [],
+   "quote": "the town manager informed them that the town of lunenburg did not receive cuts from the state as bad as was previously thought and that all departments should continue operations as is."
+  },
+  {
+   "topic": "FY14 budget and carryover of cuts",
+   "what_was_recorded": "FY14 budget packets have not arrived and are expected mid-January; the FY13 cuts will remain in FY14, and the Director will recommend restoring the COA budget in full.",
+   "figures_as_printed": [],
+   "quote": "the town manager has told all department heads that the fy13 cuts will remain in fy14."
+  },
+  {
+   "topic": "Generator for Eagle House Senior Center",
+   "what_was_recorded": "The Director was to present a request to buy a generator for the Eagle House Senior Center at the Capital Plan meeting; no price was given and the Director does not expect approval.",
+   "figures_as_printed": [],
+   "quote": "discussing the request for the purchase of a generator for the eagle house senior center."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the Direct Energy line to the Sewer line ($1000) and Water line ($600) to cover bills.",
+   "outcome": "Reported as made; another transfer into the Sewer and Water lines is anticipated before end of FY13.",
+   "amount_as_printed": "$1600",
+   "quote": "$1600 needed to be transferred out of the direct energy line and put into the sewer ($1000) & water lines ($600) to cover bills."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome",
+   "resolution": "meeting opened at 9:30AM",
+   "quote": "mary lynn conrad (chairperson) opened the meeting at 9:30am",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved the November 13, 2012 minutes",
+   "quote": "sis montuori motioned to accept the minutes of the november 13, 2012 coa meeting. joyce wass seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; no action",
+   "quote": "ms. noble informed the coa board that the boston post cane ceremony for thelma katkin was held on november 20",
+   "tags": [
+    "Boston Post Cane",
+    "kitchen equipment",
+    "meal site",
+    "MOC Nutrition",
+    "budget transfer",
+    "state funding",
+    "FY13 cuts"
+   ]
+  },
+  {
+   "topic": "Old Business: Capital Plan",
+   "resolution": "discussed; Director to present generator request at Capital Plan meeting; no action",
+   "quote": "the director will be attending the capital plan meeting this morning at 10am where she will be",
+   "tags": [
+    "capital plan",
+    "generator",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "New Business: FY13 cuts and FY14 budget",
+   "resolution": "discussed; Director to recommend full FY14 restore",
+   "quote": "the director reported that the town manager has not provided fy14 budget packets yet but hopes they will be here sometime in mid-january.",
+   "tags": [
+    "FY14 budget",
+    "budget cuts",
+    "Senior Center Friday hours"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Report",
+   "resolution": "agenda posting responsibility clarified; sub-committee chairs appointed; Director to provide organizational chart",
+   "quote": "board members decided that if this situation should arise again, it would be the responsibility of the former chairperson to set the agenda",
+   "tags": [
+    "sub-committees",
+    "agenda posting",
+    "chairs",
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:05 a.m.",
+   "quote": "joyce wass motioned to adjourn the meeting. pete lincoln seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA Organizational Chart",
+   "where": "text",
+   "quote": "jane doyle requested that the director provide a coa organizational chart which outlines the relationship the coa has with the town"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "meal site",
+  "MOC Nutrition",
+  "budget transfer",
+  "state funding",
+  "FY13 budget cuts",
+  "FY14 budget",
+  "capital plan",
+  "generator",
+  "sub-committees",
+  "by-laws",
+  "Boston Post Cane"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-10-11",
  "docid": "4990",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the Weekday Entertainment License for Fifty Mass Ave, LLC d/b/a The Bootlegger Restaurant",
+   "motion": "Approve the Weekday Entertainment License for Fifty Mass Ave, LLC d/b/a The Bootlegger Restaurant.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: p. bertram 2\": t. alonzo to approve the weekday entertainment license for fifty mass ave, llc d/b/a the bootlegger restaurant vote: all in favor"
   },
   {
-   "motion": "Sign the easement as presented",
+   "motion": "Sign the easement for 1134 Northfield Road as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "",
    "outcome": "passed",
@@ -28,13 +28,20 @@
    "quote": "motion: r. ebersole to sign the easement as presented vote: all in favor"
   },
   {
-   "motion": "Sign the warrant for the November 8th election",
+   "motion": "Sign the warrant for the November 8th election.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to sign the warrant for the november 8th election 2'°: t. alonzo vote: all in favo",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "motion: r. ebersole to sign the warrant for the november 8th election 2'°: t. alonzo vote: all in favor"
+  },
+  {
+   "motion": "Appoint Richard St. Cyr to the Sewer Commission until the next annual election.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole 2'°: t. alonzo to appoint richard st. cyr to the sewer commission until the next annual election"
   },
   {
    "motion": "Adjourn the meeting at 8:25 p.m.",
@@ -42,11 +49,315 @@
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:25 p.m. oct 2 6 2016 lunenburg town cle",
-   "quote_taken_from_text": true
+   "quote": "motion: p. bertram to adjourn the meeting at 8:25 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-read minutes from macOS Vision. Readable text extracted clearly. All five recorded votes identified: entertainment license approval, easement signing, election warrant signing, Sewer Commission appointment (with individual vote tallies: 9-0), and adjournment.",
- "cost_usd": 0.12269350000000001
+ "dropped_unquoted": 0,
+ "note": "Text is OCR of a scanned page set. Several motion lines are garbled (the first easement motion line and some seconder marks such as \"2'°\" and \"2\\\"\"); the mover and seconder are read from the clearest lines and the easement seconder is left blank. The \"PUBLIC COMMENT:\" heading holds only board-member announcements, and the minutes state \"There was no further public comment,\" so no public speakers are recorded. The sewer appointment vote lists nine ayes by name with no printed tally. Luck is referred to as both \"Ms. Luck\" and \"Mr. Luck\" and as \"Chairman Luck\" in the sewer section; recorded as Phyllis Luck. Meeting date is from the request; the minutes header reads October 11, 2016.",
+ "cost_usd": 0.00847432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "Town Manager Screening Committee Chairman",
+   "status": "present",
+   "quote": "town manager screening committee chairman tim murphy thanked the selection committee members"
+  },
+  {
+   "name": "Sean Morrison",
+   "role": "new owner, presenting on behalf of the license application",
+   "status": "present",
+   "quote": "sean morrison, new owner, presented on behalf of the license application."
+  },
+  {
+   "name": "Richard St. Cyr",
+   "role": "appointee to the Sewer Commission",
+   "status": "present",
+   "quote": "mr. st. cyr stated he has worked in the wastewater field for thirty years."
+  },
+  {
+   "name": "Joan Pease",
+   "role": "Sewer Commissioner",
+   "status": "present",
+   "quote": "recognized members joan pease, joe anderson and john reynolds."
+  },
+  {
+   "name": "Joe Anderson",
+   "role": "Sewer Commissioner",
+   "status": "present",
+   "quote": "recognized members joan pease, joe anderson and john reynolds."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Sewer Commissioner",
+   "status": "present",
+   "quote": "recognized members joan pease, joe anderson and john reynolds."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Finalist interviews to be held on November 8 and 15 in a workshop format.",
+   "quote": "the interview dates will occur on november 8 and 15 in a workshop format."
+  },
+  {
+   "decision": "Board members to send questions for the finalists by email to Mr. Toale.",
+   "quote": "a list of questions and discussions should be sent via email to mr. toale."
+  },
+  {
+   "decision": "No executive session needed; Interim Town Manager Marciello asked to join the meeting.",
+   "quote": "mr. toale announced there was not a need to enter executive session this evening."
+  },
+  {
+   "decision": "Town Counsel RFP to be advertised on the MMA website and in The Beacon; Marciello to email the updated draft to the Board.",
+   "quote": "the board requested it be advertised on the mma website and in the beacon."
+  },
+  {
+   "decision": "Mr. Marciello asked to discuss Special Town Meeting dates with the Town Clerk; item to be on next week's agenda.",
+   "quote": "mr. marciello was asked to discuss dates with the town clerk."
+  },
+  {
+   "decision": "Board representatives to MITC and MRPC to be placed on a future agenda.",
+   "quote": "another agenda item should be the board representatives for mitc and mrpc."
+  },
+  {
+   "decision": "Forum on the November election ballot questions to be placed on a future agenda.",
+   "quote": "mr. toale stated he would put it on an agenda"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant in the amount of $394,104.33.",
+   "figures_as_printed": [
+    "$394,104.33"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $394,104.33."
+  },
+  {
+   "topic": "Chase Road TIP funding",
+   "what_was_recorded": "Chase Road is funded in the 2019 TIP for $1.765 million, per MRPC follow-up.",
+   "figures_as_printed": [
+    "$1.765 million"
+   ],
+   "quote": "it is funded in the 2019 tip for $1.765 million."
+  },
+  {
+   "topic": "Summer Street project change orders and town assessment",
+   "what_was_recorded": "Summer Street project is 75% complete; change orders divided among three towns, with a substantial assessment to the town.",
+   "figures_as_printed": [],
+   "quote": "the assessment to the town is substantial."
+  },
+  {
+   "topic": "MART van insurance",
+   "what_was_recorded": "MART asked the towns to take on insurance for their vans under the COA contract; discussion continuing.",
+   "figures_as_printed": [],
+   "quote": "mart is asking the towns to take on the insurance for their vans."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "events"
+   ],
+   "quote": "mr. alonzo reminded all of the homecoming parade and new school dedication on saturday, october 22nd"
+  },
+  {
+   "topic": "Town Manager candidate recommendations",
+   "resolution": "received; board to set interview process",
+   "tags": [
+    "town manager",
+    "hiring"
+   ],
+   "quote": "he presented three finalists for the board."
+  },
+  {
+   "topic": "Weekly Entertainment License for The Bootlegger Restaurant",
+   "resolution": "approved",
+   "tags": [
+    "licensing",
+    "entertainment license"
+   ],
+   "quote": "sean morrison, new owner, presented on behalf of the license application."
+  },
+  {
+   "topic": "1134 Northfield Road easement",
+   "resolution": "signed",
+   "tags": [
+    "easement",
+    "property"
+   ],
+   "quote": "the easement has been reviewed by town counsel and is ready for signing."
+  },
+  {
+   "topic": "RFP Town Counsel Services",
+   "resolution": "reviewed; to be advertised",
+   "tags": [
+    "procurement",
+    "legal services"
+   ],
+   "quote": "mr. marciello reported this draft is before the board for review and comment."
+  },
+  {
+   "topic": "Warrants and action file",
+   "resolution": "warrant signed",
+   "tags": [
+    "warrant",
+    "election"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $394,104.33."
+  },
+  {
+   "topic": "Special Town Meeting and agenda items",
+   "resolution": "placed on next agenda",
+   "tags": [
+    "special town meeting"
+   ],
+   "quote": "mr. toale stated he wanted to discuss holding a special town meeting in the fall."
+  },
+  {
+   "topic": "Mutual appointment to Sewer Commission",
+   "resolution": "approved",
+   "tags": [
+    "appointment",
+    "sewer commission"
+   ],
+   "quote": "mr. toale invited the sewer commissioners to come forward to mutually appoint richard st. cyr to the commission."
+  },
+  {
+   "topic": "Committee vacancies",
+   "resolution": "no action",
+   "tags": [
+    "vacancies",
+    "committees"
+   ],
+   "quote": "there are still vacancies on the finance committee (1), pacc (2), cable advisory committee (2) and"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "tags": [
+    "committee reports"
+   ],
+   "quote": "ms. bertram reported she was unable to attend the conservation commission meeting."
+  },
+  {
+   "topic": "November election ballot questions forum",
+   "resolution": "to be placed on next agenda",
+   "tags": [
+    "ballot questions",
+    "election"
+   ],
+   "quote": "mr. alonzo requested a forum discussion of the november election ballot questions to be on the next agenda."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:25 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: p. bertram to adjourn the meeting at 8:25 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial forecast (sent to Town Manager candidates)",
+   "where": "text",
+   "quote": "those selected were sent the financial forecast, the most recent audit report, and the budget."
+  },
+  {
+   "name": "Most recent audit report (sent to Town Manager candidates)",
+   "where": "text",
+   "quote": "those selected were sent the financial forecast, the most recent audit report, and the budget."
+  },
+  {
+   "name": "Budget (sent to Town Manager candidates)",
+   "where": "text",
+   "quote": "those selected were sent the financial forecast, the most recent audit report, and the budget."
+  },
+  {
+   "name": "Annual report",
+   "where": "text",
+   "quote": "they were also directed to the website and the annual report."
+  },
+  {
+   "name": "Brief memo on economic development (requested of candidates)",
+   "where": "text",
+   "quote": "they were requested to draft a brief memo and make a presentation on economic development."
+  },
+  {
+   "name": "RFP Town Counsel Services draft",
+   "where": "text",
+   "quote": "mr. marciello reported this draft is before the board for review and comment."
+  },
+  {
+   "name": "Warrant for the November 8th election",
+   "where": "text",
+   "quote": "motion: r. ebersole to sign the warrant for the november 8th election 2'°: t. alonzo vote: all in favor"
+  },
+  {
+   "name": "1134 Northfield Road easement",
+   "where": "text",
+   "quote": "the easement has been reviewed by town counsel and is ready for signing."
+  }
+ ],
+ "tags": [
+  "town manager search",
+  "licensing",
+  "easement",
+  "town counsel RFP",
+  "warrants",
+  "special town meeting",
+  "sewer commission appointment",
+  "committee reports",
+  "ballot questions",
+  "transportation",
+  "transportation funding"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

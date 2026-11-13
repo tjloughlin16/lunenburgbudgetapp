@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2015-11-12",
  "docid": "4539",
@@ -12,25 +12,300 @@
  },
  "votes": [
   {
-   "motion": "to approve the meeting minutes from October 14, 2015",
+   "motion": "Approve the meeting minutes of October 14, 2015.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from october 14, 2015. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from october 14, 2015. the motion was unanimously approved."
   },
   {
-   "motion": "to approve the October, 2015 invoices as presented by Joslin, Lesser (JLA-NV5)",
+   "motion": "Approve the October, 2015 invoices as presented by Joslin, Lesser (JLA-NV5).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: the lunenburg school building committee voted to approve the october, 2015 invoices as presented by joslin, lesser (jla-nv5). the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the october, 2015 invoices as presented by joslin, lesser (jla-nv5). the motion was unanimously approved."
   },
   {
-   "motion": "to approve Change Order #5 as presented by Shawmut, Tappe Architects and Joslin Lesser (JLA-NV5)",
+   "motion": "Approve Change Order #5 as presented by Shawmut, Tappe Architects and Joslin Lesser (JLA-NV5).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: the lunenburg school building committee voted to approve change order #5 as presented by shawmut, tappe architects and joslin lesser (jla-nv5). the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve change order #5 as presented by shawmut, tappe architects and joslin lesser (jla-nv5). the motion was unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0938815
+ "dropped_unquoted": 1,
+ "note": "The minutes are OCR text from a two-page scan. The attendance roster's names and affiliations are split across separate columns, so each role is matched to a name by line order. The mapping is an inference and the roster does not state attendance status, so most roster entries are marked \"not stated\". Votes are recorded as unanimous with no mover, seconder, or numeric count printed. No dollar figures are printed anywhere in the minutes. The \"Monthly Approvals\" and \"Monthly Invoices\" items discuss money but print no amounts. The minutes do not name a mover or seconder. The documents_list heading is not a printed heading; it is set to true because the Change Order sentence names documents presented.",
+ "cost_usd": 0.00563042,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro tom alonzo greg bittner"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:05 pm by mr. mackin, chairperson of the"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro tom alonzo greg bittner"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro tom alonzo greg bittner"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro tom alonzo greg bittner"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank greg s. roy kerry speidel john londa"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank greg s. roy kerry speidel john londa"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank greg s. roy kerry speidel john londa"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank greg s. roy kerry speidel john londa"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank greg s. roy kerry speidel john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank greg s. roy kerry speidel john londa"
+  },
+  {
+   "name": "Brian Spadatino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "brian spadatino tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools",
+   "status": "not stated",
+   "quote": "brian spadatino tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "status": "not stated",
+   "quote": "brian spadatino tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Jen Littlefield",
+   "role": "Tappe Architects",
+   "status": "not stated",
+   "quote": "brian spadatino tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Architects",
+   "status": "not stated",
+   "quote": "brian spadatino tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Stuart Lesser",
+   "role": "Joslin, Lesser & Associates - NV5",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger michael kearns jonathan hirst philip conroy"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser & Associates - NV5",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger michael kearns jonathan hirst philip conroy"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "Joslin, Lesser & Associates - NV5",
+   "status": "present",
+   "quote": "inga knox (jla-nv5) & jonathan hirst (sc) presented a construction update to the"
+  },
+  {
+   "name": "Robert Alger",
+   "role": "Joslin, Lesser & Associates - NV5",
+   "status": "not stated",
+   "quote": "rob alger is available to set up time for site visit."
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger michael kearns jonathan hirst philip conroy"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "inga knox (jla-nv5) & jonathan hirst (sc) presented a construction update to the"
+  },
+  {
+   "name": "Philip Conroy",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger michael kearns jonathan hirst philip conroy"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for December 9, 2015 at 6:30pm.",
+   "quote": "next meeting will be held on december 9, 2015 at 6:30pm"
+  },
+  {
+   "decision": "Weekly Construction Meetings are on Wednesdays at 10:00am in the Shawmut trailer; everyone is welcome to attend and walk the site, with Rob Alger available to set up a site visit.",
+   "quote": "weekly construction meetings are on wednesdays at 10:00am in the shawmut"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly progress invoices",
+   "what_was_recorded": "Joslin Lesser presented monthly progress invoices for work completed through October 2015 from Joslin Lesser (OPM), Tappe Architects, Shawmut (Payment Requisition No.15) and UTS Testing Services, and the Committee approved them; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "joslin lesser (jla-nv5) presented monthly progress invoices for work completed through october, 2015"
+  },
+  {
+   "topic": "Change Order #5 and pending change order log",
+   "what_was_recorded": "Shawmut, Tappe Architects and Joslin Lesser presented Change Order #5 Package and a log of pending potential change orders, which the Committee approved; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "presented change order #5 package as well as a log with pending potential change orders."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and business",
+   "resolution": "no action; next meeting date noted",
+   "quote": "the meeting was called to order at 6:05 pm by mr. mackin, chairperson of the",
+   "tags": [
+    "call to order",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee minutes",
+   "resolution": "approved October 14, 2015 minutes",
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from october 14, 2015. the motion was unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Monthly invoices and commitments",
+   "resolution": "approved October 2015 invoices",
+   "quote": "the lunenburg school building committee voted to approve the october, 2015 invoices as presented by joslin, lesser (jla-nv5).",
+   "tags": [
+    "invoices",
+    "payments",
+    "OPM",
+    "designer"
+   ]
+  },
+  {
+   "topic": "Monthly approvals (Change Order #5)",
+   "resolution": "approved Change Order #5",
+   "quote": "the lunenburg school building committee voted to approve change order #5 as presented by shawmut, tappe architects and joslin lesser (jla-nv5).",
+   "tags": [
+    "change orders",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Construction activity update",
+   "resolution": "no action; presented to Committee",
+   "quote": "inga knox (jla-nv5) & jonathan hirst (sc) presented a construction update to the",
+   "tags": [
+    "construction",
+    "site visits"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 7:00 pm; no motion recorded",
+   "quote": "the meeting was adjourned at approximately 7:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Change Order #5 Package",
+   "where": "text",
+   "quote": "presented change order #5 package as well as a log with pending potential change orders."
+  },
+  {
+   "name": "Log of pending potential change orders",
+   "where": "text",
+   "quote": "presented change order #5 package as well as a log with pending potential change orders."
+  },
+  {
+   "name": "Payment Requisition No.15 (Shawmut Design & Construction)",
+   "where": "text",
+   "quote": "shawmut design & construction (payment requisition no.15), uts testing services"
+  },
+  {
+   "name": "Monthly progress invoices for work completed through October, 2015",
+   "where": "text",
+   "quote": "joslin lesser (jla-nv5) presented monthly progress invoices for work completed through october, 2015"
+  },
+  {
+   "name": "October 14, 2015 LSBC Meeting minutes",
+   "where": "text",
+   "quote": "october 14, 2015 lsbc meeting"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "construction",
+  "change orders",
+  "invoices",
+  "OPM",
+  "Lunenburg",
+  "Shawmut",
+  "Tappe Architects",
+  "Joslin Lesser"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "shawmut (sdc), tappe architects(ta) and joslin lesser (jla-nv5) presented change order #5 package"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,0 +1,659 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2015-04-14",
+ "video_id": "DX6lA6iS7aU",
+ "video_url": "https://www.youtube.com/watch?v=DX6lA6iS7aU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-04-14-DX6lA6iS7aU.json",
+  "sha256": "de17b632212dbc4bd16090aa73aa9ad1d77b9766cade2df32ebdede7265d729f",
+  "caption_lines": 378,
+  "segments": 3324
+ },
+ "recording": {
+  "duration_s": 7958,
+  "duration": "2:12",
+  "spoken_chars": 108984,
+  "words_approx": 18164
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04142015-4924",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-04-14-agenda-4924.txt",
+   "path": "sources/meetings/select-board/2015-04-14-agenda-4924.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142015-4924",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-04-14-minutes-4924.txt",
+   "path": "sources/meetings/select-board/2015-04-14-minutes-4924.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:49:15Z",
+  "cost_usd": 0.2448984
+ },
+ "minutes": {
+  "headline": "Select Board approved two utility licenses and held three police bylaw articles for town counsel, amid a water district dispute.",
+  "summary": "The board approved license agreements with Unitil and Boston Gas for the middle/high school project, signed the town meeting warrants, and heard a heated exchange with a water commissioner over a proposed water extension to Lancaster. The police chief presented four warrant articles (Willard Lake vehicles, public marijuana smoking, pawn brokers, sex offender residency); the lake article was recommended, the others deferred pending town counsel review. The board then went into executive session on the DPW union contract.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs. Luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Ebersole",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Toll (Jamie Toll)",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "the police chief",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Lieutenant",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Mr. Rogers",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1118,
+    "topic": "A water commissioner objected to not being told the board would discuss the Lancaster water extension, and defended the district's process and the no-cost condition.",
+    "stated_role": "water commissioner"
+   },
+   {
+    "t": 0,
+    "topic": "A Lions Club representative promoted Saturday's fundraising event at Andrews Hall and thanked a volunteer."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "executive-session",
+   "facilities",
+   "high-school",
+   "legal",
+   "middle-school",
+   "policy",
+   "public-safety",
+   "town-departments",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "motion": "Approve the license agreement for the middle school high school project with Unitil Corporation",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 426
+   },
+   {
+    "motion": "Approve the license agreement for the middle school high school project with Boston Gas Company",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 469
+   },
+   {
+    "motion": "Recommend approval of the Willard Lake vehicle bylaw article",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 2998
+   },
+   {
+    "motion": "Enter executive session under chapter 30A section 21 subsection 9 regarding collective bargaining with Local Union 39 DPW employees",
+    "outcome": "passed",
+    "procedural": true,
+    "t": 7879
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 112,
+    "topic": "Article 13 AFSCME contract first-year funding",
+    "what_was_said": "Town meeting will be asked to move first-year contract funding from the salary reserve into departments.",
+    "figures_as_heard": [
+     "eight thousand eight hundred fifty one dollars and twelve cents"
+    ]
+   },
+   {
+    "t": 498,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "The accounts payable warrant was signed.",
+    "figures_as_heard": [
+     "thirty thousand two hundred eighty one dollars and twenty seven cents"
+    ]
+   },
+   {
+    "t": 1429,
+    "topic": "Lancaster water extension funding",
+    "what_was_said": "A water commissioner said the extension must not cost the Lunenburg water district anything, and the district would receive the revenue.",
+    "figures_as_heard": [
+     "a nickel"
+    ]
+   },
+   {
+    "t": 2340,
+    "topic": "Bylaw fine level",
+    "what_was_said": "The chief proposed a maximum fine for bylaw violations, while town counsel suggested a lower limit.",
+    "figures_as_heard": [
+     "300",
+     "a hundred dollar fine"
+    ]
+   },
+   {
+    "t": 6218,
+    "topic": "Cost of a map for sex offender bylaw",
+    "what_was_said": "A member asked whether funds exist for a map maker; regional planning offers free GIS time as an alternative.",
+    "figures_as_heard": [
+     "eight hours of GIS time a year free"
+    ]
+   },
+   {
+    "t": 7587,
+    "topic": "Emergency notification system change",
+    "what_was_said": "Switching from Blackboard Connect to Code Red saves money annually, with two free months.",
+    "figures_as_heard": [
+     "two thousand dollars less a year"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 112,
+    "description": "Move first-year AFSCME contract funding from salary reserve account into employing departments (Article 13)",
+    "amount_as_heard": "eight thousand eight hundred fifty one dollars and twelve cents",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4191,
+    "decision": "Board will wait until town meeting to make a recommendation on the public marijuana consumption bylaw, pending town counsel input."
+   },
+   {
+    "t": 5085,
+    "decision": "Pawn broker bylaw will be reworked with town counsel and may be deferred to a later town meeting."
+   },
+   {
+    "t": 6489,
+    "decision": "Sex offender residency bylaw deferred for chief to work with town counsel and town manager before town meeting."
+   },
+   {
+    "t": 1368,
+    "decision": "Board will hold a public agenda item with the water commissioners, tentatively May 12 or 19."
+   },
+   {
+    "t": 6552,
+    "decision": "Board may meet April 28 before town meeting; to be decided next week."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 44,
+    "t_end": 150,
+    "topic": "Article 13 AFSCME contract funding",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 150,
+    "t_end": 498,
+    "topic": "Utility license agreements for school project",
+    "resolution": "voted",
+    "tags": [
+     "facilities",
+     "middle-school",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 498,
+    "t_end": 735,
+    "topic": "Warrants, payables and warrant errors",
+    "resolution": "signed",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 735,
+    "t_end": 1839,
+    "topic": "Lancaster water extension and water district dispute",
+    "resolution": "letter to legislators supported; agenda item to follow",
+    "tags": [
+     "water-sewer",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 1839,
+    "t_end": 3023,
+    "topic": "Lake vehicle bylaw article",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "public-safety",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3023,
+    "t_end": 4191,
+    "topic": "Public marijuana smoking bylaw",
+    "resolution": "recommendation deferred to town meeting",
+    "tags": [
+     "warrant-article",
+     "public-safety",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4191,
+    "t_end": 5085,
+    "topic": "Pawn broker bylaw",
+    "resolution": "to be reworked with town counsel",
+    "tags": [
+     "warrant-article",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 5108,
+    "t_end": 6510,
+    "topic": "Sex offender residency bylaw",
+    "resolution": "deferred for legal review",
+    "tags": [
+     "warrant-article",
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 6510,
+    "t_end": 7690,
+    "topic": "Committee reports and town manager report",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "facilities",
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 7690,
+    "t_end": 7879,
+    "topic": "Board comments and announcements",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 7879,
+    "t_end": 7945,
+    "topic": "Executive session on DPW collective bargaining",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call vote on executive session is garbled in places",
+   "Some speakers in the water district exchange could not be identified"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1139,
+    "about": "A water commissioner and board members clashed over whether the board was told about the Lancaster water extension.",
+    "sides": "a water commissioner against several board members",
+    "words_as_heard": "what happened to good old civility Dave before you go",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1635,
+    "about": "Dispute over courtesy and respect escalated, with the commissioner ending the conversation.",
+    "sides": "a water commissioner against a board member",
+    "words_as_heard": "you have the audacity to tell me that I'm not courteous the conversation is done",
+    "kind": "charged language"
+   },
+   {
+    "t": 1695,
+    "about": "Chair asked the commissioner to show the board respect.",
+    "sides": "the chair against a water commissioner",
+    "words_as_heard": "Mr Rogers please would you show this board the same respect you're requesting",
+    "kind": "procedural fight"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2050,
+    "kind": "liability or legal",
+    "about": "Cars driving on lake ice are dangerous and a possible liability to the town.",
+    "who": "the police chief",
+    "words_as_heard": "having Motor Vehicles cars drive on the ice was kind of a dangerous proposition and and quite possibly a liability to the town"
+   },
+   {
+    "t": 5414,
+    "kind": "liability or legal",
+    "about": "The sex offender bylaw could cost the town attorney fees and be preempted or unconstitutional.",
+    "who": "a member reading town counsel's letter",
+    "words_as_heard": "the prevailing party may be entitled to an award of attorneys fees against the town it the bylaw may be preempted by state law"
+   },
+   {
+    "t": 3314,
+    "kind": "condition",
+    "about": "Member supports marijuana bylaw but not the clause barring medical patients.",
+    "who": "a member",
+    "words_as_heard": "I'm fine with the article but I've got a problem with that Clause"
+   },
+   {
+    "t": 947,
+    "kind": "safety",
+    "about": "Water ban and private well impacts from the Lancaster water extension.",
+    "who": "a member",
+    "words_as_heard": "what the impact is not only on individuals with what within the water district but private Wells"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 92,
+    "name_as_heard": "Article 13 AFSCME contract",
+    "kind": "warrant article",
+    "words_as_heard": "Article 13 this is the afsme contract which you approved",
+    "shown": true
+   },
+   {
+    "t": 153,
+    "name_as_heard": "License agreements for Unitil and Boston Gas",
+    "kind": "contract or agreement",
+    "words_as_heard": "in your packets as part of the construction project both Unitil and Boston gas",
+    "shown": true
+   },
+   {
+    "t": 1903,
+    "name_as_heard": "Town counsel letter on the articles",
+    "kind": "letter or email",
+    "words_as_heard": "this letter that Town Council had sent us because it outlines some of the questions on the Articles",
+    "shown": true
+   },
+   {
+    "t": 518,
+    "name_as_heard": "Warrant package",
+    "kind": "warrant article",
+    "words_as_heard": "one little error in in the warrant package you handed out",
+    "shown": true
+   },
+   {
+    "t": 7314,
+    "name_as_heard": "School committee budget packet",
+    "kind": "budget document",
+    "words_as_heard": "they sent out a packet I think we all got it and it's like it's 32 pages",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved license agreements with Unitil and Boston Gas for the middle/high school project.",
+    "t": 426
+   },
+   {
+    "line": "The board recommended the Willard Lake vehicle bylaw article for town meeting.",
+    "t": 2998
+   },
+   {
+    "line": "The board deferred its recommendation on the public marijuana smoking bylaw to town meeting, pending town counsel input.",
+    "t": 4191
+   },
+   {
+    "line": "The pawn broker bylaw will be reworked with town counsel and may move to a later town meeting; the sex offender residency bylaw was deferred for legal review.",
+    "t": 6489
+   },
+   {
+    "line": "A water commissioner objected to the board discussing a water extension to Lancaster without notice; a public agenda item with the water commissioners is tentatively set for May.",
+    "t": 1118
+   }
+  ],
+  "why_it_matters": [
+   "Town meeting voters will see the lake vehicle article with a board recommendation, but the marijuana, pawn broker and sex offender residency bylaws may come without one or be pushed to a later meeting.",
+   "The Lancaster water extension is conditioned on costing the Lunenburg water district nothing, so water customers will want to see how that condition is documented before any commitment.",
+   "Article 13 would move first-year AFSCME contract funding from the salary reserve into departments, which affects how the town budget, mostly taxes, is allocated."
+  ],
+  "watch_next": [
+   "Public agenda item with the water commissioners, tentatively May 12 or 19.",
+   "Whether the board meets April 28 before town meeting, to be decided next week."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:49:22Z",
+   "cost_usd": 0.024945099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142015-4924",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-04-14-minutes-4924.txt",
+   "path": "sources/meetings/select-board/2015-04-14-minutes-4924.pdf"
+  },
+  "official_sha256": "efd84028032e126ad5c55447614fcfb322e15740c98926735305fcdff670cd88",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree closely on the votes, figures and most decisions. Differences are mostly small caption errors in names, plus a few items only one record has.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Unitil license agreement vote",
+    "ours": "Approve the license agreement for the middle school high school project with Unitil Corporation — passed",
+    "official": "motion: r. ebersole 2nd:p. luck to approve the license agreement between fitchburg gas & electric d/b/a unitil and the town of lunenburg",
+    "note": "Both record the Unitil license agreement approved.",
+    "t": 426
+   },
+   {
+    "kind": "agree",
+    "about": "Boston Gas license agreement vote",
+    "ours": "Approve the license agreement for the middle school high school project with Boston Gas Company — passed",
+    "official": "motion: r. ebersole 2nd. p. bertram to approve the license agreement between boston gas and the town of lunenburg",
+    "note": "Both record the Boston Gas license agreement approved.",
+    "t": 469
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vehicle bylaw article vote (Willard Lake vs Whalom Lake)",
+    "ours": "Recommend approval of the Willard Lake vehicle bylaw article — passed",
+    "official": "motion: p. bertram 2\"d: j. toale to approve article 39 as presented vote: all in favor",
+    "note": "Same vote and outcome, but the lake name differs (Willard vs Whalom); likely a caption mishearing, but check the recording and article text.",
+    "t": 2998
+   },
+   {
+    "kind": "discrepancy",
+    "about": "AFSCME funding transfer",
+    "ours": "Move first-year AFSCME contract funding from salary reserve account into employing departments (Article 13) — eight thousand eight hundred fifty one dollars and twelve cents (discussed only)",
+    "official": "total cost of the first year is $8,851.12 which is set aside in the salary reserve account.",
+    "note": "Ours lists a transfer (discussed only); official lists no transfers and only says the amount is set aside in the reserve. Check whether a transfer was actually proposed.",
+    "t": 112
+   },
+   {
+    "kind": "agree",
+    "about": "AFSCME first-year cost figure",
+    "ours": "Article 13 AFSCME contract first-year funding: eight thousand eight hundred fifty one dollars and twelve cents",
+    "official": "total cost of the first year is $8,851.12 which is set aside in the salary reserve account.",
+    "note": "Same figure $8,851.12.",
+    "t": 112
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrant",
+    "ours": "Accounts payable warrant: thirty thousand two hundred eighty one dollars and twenty seven cents",
+    "official": "a warrant for accounts payable in the amount of $30,281.27 was presented for signatures.",
+    "note": "Same amount.",
+    "t": 498
+   },
+   {
+    "kind": "agree",
+    "about": "Lancaster water cost: a nickel",
+    "ours": "Lancaster water extension funding: a nickel",
+    "official": "one condition was that it not cost lunenburg \"one nickel.\"",
+    "note": "Same point: the proposal should cost Lunenburg nothing.",
+    "t": 1429
+   },
+   {
+    "kind": "agree",
+    "about": "Emergency notification system saving",
+    "ours": "Emergency notification system change: two thousand dollars less a year",
+    "official": "this will provide the same service at $2000 less per year.",
+    "note": "Same $2,000 per year saving.",
+    "t": 7587
+   },
+   {
+    "kind": "agree",
+    "about": "Bylaw fine level $300",
+    "ours": "Bylaw fine level: 300, a hundred dollar fine",
+    "official": "the maximum fine for marijuana possession is $100.00 and the $300.00 bylaw fine could also be subject to challenge.",
+    "note": "Both give the $300 bylaw fine and $100 state maximum.",
+    "t": 2340
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Third quarter water commitment",
+    "ours": "",
+    "official": "the 2015 3* quarter water commitment in the amount of $6.548.25 was presented for signatures.",
+    "note": "Official lists a $6,548.25 water commitment; ours does not."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "GIS map time for sex offender bylaw",
+    "ours": "Cost of a map for sex offender bylaw: eight hours of GIS time a year free",
+    "official": "",
+    "note": "Only our minutes record this figure.",
+    "t": 6218
+   },
+   {
+    "kind": "agree",
+    "about": "Marijuana bylaw recommendation deferred to town meeting",
+    "ours": "Board will wait until town meeting to make a recommendation on the public marijuana consumption bylaw, pending town counsel input.",
+    "official": "the board will make a recommendation at annual town meeting due to some lingering legal questions on this proposed bylaw.",
+    "note": "Same decision.",
+    "t": 4191
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Pawnbroker bylaw handling",
+    "ours": "Pawn broker bylaw will be reworked with town counsel and may be deferred to a later town meeting.",
+    "official": "the board asked chief marino to work with town counsel to reduce the content of the bylaw.",
+    "note": "Both have the chief working with counsel, but only ours says deferral to a later town meeting is possible; check the recording.",
+    "t": 5085
+   },
+   {
+    "kind": "agree",
+    "about": "Sex offender bylaw further work with counsel",
+    "ours": "Sex offender residency bylaw deferred for chief to work with town counsel and town manager before town meeting.",
+    "official": "they recommended further discussion between chief marino and legal counsel to address these concerns.",
+    "note": "Same direction; ours adds 'deferred' and the town manager, a minor difference.",
+    "t": 6489
+   },
+   {
+    "kind": "agree",
+    "about": "Water commissioners future agenda item",
+    "ours": "Board will hold a public agenda item with the water commissioners, tentatively May 12 or 19.",
+    "official": "mr. alonzo stated the board will have this as a future agenda item.",
+    "note": "Same decision; the official has no dates.",
+    "t": 1368
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "April 28 meeting possibility",
+    "ours": "Board may meet April 28 before town meeting; to be decided next week.",
+    "official": "",
+    "note": "Only ours records this.",
+    "t": 6552
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles to review next week",
+    "ours": "",
+    "official": "ms. speidel reported the board will review articles 9, 10, 11, 22, 36, 41 and 42 at next week's meeting.",
+    "note": "Official records this list of articles; ours does not."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Jamie Toale",
+    "ours": "Mr. Toll (Jamie Toll) (member)",
+    "official": "jamie toale, clerk",
+    "note": "Surname misheard; the official gives Toale, who is the clerk.",
+    "official_reading": "Jamie Toale"
+   },
+   {
+    "kind": "agree",
+    "about": "Members present",
+    "ours": "Mrs. Luck (member); Mr. Ebersole (member); Mrs. Bertram (member); the chair; the town manager",
+    "official": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk; robert ebersole, member; phyllis luck, member and town manager kerry speidel present.",
+    "note": "Same board members, chair and town manager."
+   },
+   {
+    "kind": "agree",
+    "about": "Police chief and Lieutenant presenters",
+    "ours": "the police chief (presenter); Lieutenant (presenter)",
+    "official": "lt. luth, sex offender registrar for the police department, reported on the bylaw details.",
+    "note": "Both record the police chief and a lieutenant presenting."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Rogers",
+    "ours": "Mr. Rogers (presenter)",
+    "official": "dave rodgers wanted to inform everyone that the lions' club will be holding meat bingo on saturday,",
+    "note": "Name spelled differently; the official gives Rodgers.",
+    "official_reading": "Dave Rodgers"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:50:21Z",
+   "cost_usd": 0.052983100000000005
+  }
+ }
+}

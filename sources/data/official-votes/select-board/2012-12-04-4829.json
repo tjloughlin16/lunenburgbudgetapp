@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-12-04",
  "docid": "4829",
@@ -12,39 +12,466 @@
  },
  "votes": [
   {
-   "motion": "Approve Common Victualler License for Dippin' Donuts located at 455 Massachusetts Avenue",
+   "motion": "Approve the Common Victualler License for Dippin' Donuts located at 455 Massachusetts Avenue.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. deBettencourt",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
    "quote": "ms. bertram moved to approve the common victualler license for dippin' donuts located at 455 massachusetts avenue. mr. debettencourt seconded. on vote, motion carried, 5' in favor, 0 opposed."
   },
   {
-   "motion": "The BOS not exercise Right of First Refusal on the portion of land in Lunenburg that consists of 19.9 acres approximately as identified on the map",
+   "motion": "That the BOS not exercise its Right of First Refusal on the portion of land in Lunenburg of about 19.9 acres on Land Plan, Book 10, page 10.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Alonzo",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
-   "quote": "ms. bertram motioned that the bos not exercise right of first refusal on the portion of land in lunenburg that consists of 19.9 acres approximately as identified on the map. mr. alonzo seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Authorize Emergency Appropriations Borrowing relative to 10/31/11 Storm Event",
-   "moved_by": "Mr. Sund",
+   "motion": "Authorize Emergency Appropriations Borrowing relative to 10/31/11 Storm Event.",
    "seconded_by": "Mr. deBettencourt",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
    "quote": "mr. sund read the motion to authorize emergency appropriations borrowing relative to 10/31/11 storm event into record. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn regular scheduled meeting to go into Executive Session to discuss strategy with respect to collective bargaining or litigation",
+   "motion": "Adjourn the regular session to enter Executive Session citing MGL Chapter 30A, Section 21 (a) 3.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. matthews moved to adjourn regular scheduled meeting to go into executive session citing mgl chapter 30a, section 21 (a) 3, to discuss strategy with respect to collective bargaining or litigation, if an open meeting may have a detrimental effect on the government's bargaining or litigating position, and the chair so declares. mr. debettencourt seconded. the board voted unanimously to adjourn regular session at 8:52pm."
+   "quote": "the board voted unanimously to adjourn regular session at 8:52pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1350885
+ "note": "OCR text from scanned pages with some garbled characters, reproduced as printed in quotes (e.g., \"5'\" for 5, \"$1OK\" for $10K, \"$9M\" likely $9K, \"shortfall ir\"). Public Comment heading has no speakers recorded; Sam Ramondelli spoke during Item 1, not public comment. Old Business and Appointments headings have no content. Lanni Orchards address appears as 294 Chase Road in Item 3 and 292 Chase Rd in the recorded notice. Minutes approval, warrants and Action File items are listed without a recorded motion or vote. The Dippin' Donuts vote count printed as \"5' in favor\"; recorded as 5 in favor, 0 opposed.",
+ "cost_usd": 0.013238220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town nall as scheduled with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven m. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town nall as scheduled with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven m. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town nall as scheduled with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven m. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town nall as scheduled with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven m. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town nall as scheduled with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven m. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town nall as scheduled with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven m. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Mark Cappadona",
+   "role": "representing Colonial Power Group Inc.",
+   "status": "present",
+   "quote": "mark cappadona, representing colonial power group inc., came before the bos to provide an update on the municipal"
+  },
+  {
+   "name": "Paul Karapatsas",
+   "role": "applicant, 122 Cross St",
+   "status": "present",
+   "quote": "paul karapatsas, 122 cross st spoke to request a common victualler license for dippin' donuts located at 455 mass ave in lunenburg."
+  },
+  {
+   "name": "Sam Ramondelli",
+   "role": "formerly of \"Showroom Sammy's\"",
+   "status": "present",
+   "quote": "sam ramondelli, formerly of \"showroom sammy's\", which is the location of the new dippin' donuts, spoke about the"
+  },
+  {
+   "name": "Dan Curley",
+   "role": "representing Fitchburg Redevelopment Authority",
+   "status": "present",
+   "quote": "dan curley, representing fitchburg redevelopment authority spoke to the bos regarding right of"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed the Salvation Army toll group could plan for a new date, with the date to be voted on at the December 11 BOS meeting.",
+   "quote": "board members agreed that the group could go ahead and plan for this date but it could not be voted on tonight"
+  },
+  {
+   "decision": "Discussion of the Building Inspector's inventory of abandoned properties was deferred to a future BOS meeting.",
+   "quote": "the building inspector is on vacation and this will be discussed at a future bos meeting."
+  },
+  {
+   "decision": "Ms. Bertram requested a draft of the EPG PILOT be distributed to the BOS before the next week's meeting.",
+   "quote": "ms. bertram requested that a draft copy of the pilot that is currently before epg be distributed to the bos for review"
+  },
+  {
+   "decision": "Ms. Bertram asked that the BOS receive an overview of the Capital Plan list of requests.",
+   "quote": "ms. bertram asked that the bos receive an overview of the capital plan list of requests for review."
+  },
+  {
+   "decision": "Ms. Bertram requested information on the cost of the Lake Shirley Dam inspection and repairs.",
+   "quote": "ms. bertram requested information as to how much the inspection and the repairs will be."
+  },
+  {
+   "decision": "Mr. Sund requested that State Rep. Stephen DiNatale and State Rep. Jennifer Benson be invited to a BOS meeting.",
+   "quote": "mr. sund requested that the new state rep. stephen dinatale along with state rep. jennifer benson be invited to a bos meeting to introduce mr. dinatale to the constituents."
+  },
+  {
+   "decision": "Mr. Matthews read into record the Notice of the APR for the Lanni Orchards property and signed it.",
+   "quote": "mr. matthews read into record the notice of the apr on property in the town of lunenburg owned by lanni orchards,"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal Aggregation Program savings",
+   "what_was_recorded": "Colonial Power Group reported Lunenburg participants saved an estimated amount over 12 months, with final Unitil numbers pending and a per-household estimate.",
+   "figures_as_printed": [
+    "$120,000",
+    "$150,000",
+    "$30.00"
+   ],
+   "quote": "in the 12 months that the program has been running the participants in lunenburg have saved approximately between $120,000 and $150,000."
+  },
+  {
+   "topic": "Municipal Aggregation rates",
+   "what_was_recorded": "Residents' current rate, the incoming Unitil Basic Service rate, and the best rate Colonial Power Group could get were reported.",
+   "figures_as_printed": [
+    "$0.0585",
+    "$0.07023",
+    "$0.0760"
+   ],
+   "quote": "the current rate which the residents are paying is $0.0585 which will be increasing to unitil's rate of $0.07023."
+  },
+  {
+   "topic": "Agricultural Preservation Restriction (APR) town contribution",
+   "what_was_recorded": "The State typically seeks a 20% Town commitment toward APR purchase, reducible to 10% through farm-friendly activities; a bargained sale would cut the owner's sale price by 10%.",
+   "figures_as_printed": [
+    "20%",
+    "10%",
+    "10%"
+   ],
+   "quote": "generally they are looking for a 20% commitment from the town but there are a series of evaluations"
+  },
+  {
+   "topic": "October 2011 storm reimbursement shortfall and short-term borrowing",
+   "what_was_recorded": "A $115K reimbursement from MEMA was outstanding, leaving a deficit; short-term borrowing of about $2K through the State House Note Program was proposed.",
+   "figures_as_printed": [
+    "$115K",
+    "$2K"
+   ],
+   "quote": "all reimbursements have been received except for $115k."
+  },
+  {
+   "topic": "Warrants and quarterly water commitment",
+   "what_was_recorded": "Warrants and a quarterly Water Dept. commitment were listed for approval with their amounts.",
+   "figures_as_printed": [
+    "$636,238.06",
+    "$151,422.95",
+    "$508,819.86",
+    "$4680.78"
+   ],
+   "quote": "warrants: 12/6/12 12p 13 $636,238.06 12/4/12 32-15 $151,422.95 12/4/12 31-13 $508,819.86 quarterly water dept. commitment $4680.78"
+  },
+  {
+   "topic": "Capital Planning requests",
+   "what_was_recorded": "Initial department requests to the Capital Planning Committee totaled about $2M and would be reduced.",
+   "figures_as_printed": [
+    "$2M"
+   ],
+   "quote": "the initial requests from town departments came in at approximately $2m."
+  },
+  {
+   "topic": "Special Town Meeting spending confusion",
+   "what_was_recorded": "Mr. Matthews referred to a $120K amount people believed was available beyond the budget at the last Special Town Meeting.",
+   "figures_as_printed": [
+    "$120K"
+   ],
+   "quote": "mr. matthews spoke and reminded everyone that at the last special town meeting people thought we had $120k more"
+  },
+  {
+   "topic": "Lake Shirley Dam valve repair",
+   "what_was_recorded": "The Town budgets $10K for dam repairs, but the cost of the valve repair is not yet known.",
+   "figures_as_printed": [
+    "$1OK"
+   ],
+   "quote": "the town carries $1ok in the budget for repairs at the dam but to date there is no information as to how much this will"
+  },
+  {
+   "topic": "Summer St. Project design contract share",
+   "what_was_recorded": "Leominster had not yet appropriated its $24K share of the design contract.",
+   "figures_as_printed": [
+    "$24K"
+   ],
+   "quote": "leominster does not have their appropriation for their share yet, which is $24k."
+  },
+  {
+   "topic": "Police restitution from phone scam",
+   "what_was_recorded": "A phone scam against an elder resident took $2500, which Officer Thibodeau recovered and returned.",
+   "figures_as_printed": [
+    "$2500"
+   ],
+   "quote": "a phone scam which resulted in $2500"
+  },
+  {
+   "topic": "Nashoba Valley Regional Dispatch District capital shortfall",
+   "what_was_recorded": "The capital shortfall fell from $213K to about $155K after contracts were renegotiated.",
+   "figures_as_printed": [
+    "$213K",
+    "$155K"
+   ],
+   "quote": "the shortfall in capital at this point is approximately $155k."
+  },
+  {
+   "topic": "State budget shortfall and local aid cuts",
+   "what_was_recorded": "Governor's FY13 shortfall and cuts were reported, including an expected $10K to $20K cut to Lunenburg Public Schools via Special Education Circuit Breaker and a 1% cut to General Government Aid.",
+   "figures_as_printed": [
+    "$540M",
+    "$28.75M",
+    "$11.5M",
+    "$10-$20K",
+    "$10K",
+    "$200M",
+    "$550M",
+    "$1.2B"
+   ],
+   "quote": "governor patrick has announced that there will be $540m shortfall in the state budget for"
+  },
+  {
+   "topic": "Proposed 1% cut to Unrestricted General Government Aid",
+   "what_was_recorded": "A 1% cut to Unrestricted General Government Aid would cost the town just under $9K; Ms. Speidel did not intend to lobby against it.",
+   "figures_as_printed": [
+    "1%",
+    "just under $9K"
+   ],
+   "quote": "this would represent just under $9k to the town."
+  },
+  {
+   "topic": "Mass Municipal League request on Municipal Aid cut",
+   "what_was_recorded": "The Mass Municipal League asked for support to oppose the Governor's cut to Municipal Aid, printed as $9M.",
+   "figures_as_printed": [
+    "$9M"
+   ],
+   "quote": "the mass municipal league would like support in calling representatives and senators to oppose the governor's $9m"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Municipal Aggregation Program update",
+   "resolution": "no action; program suspended pending better rates",
+   "quote": "mark cappadona, representing colonial power group inc., came before the bos to provide an update on the municipal",
+   "tags": [
+    "energy",
+    "municipal aggregation",
+    "electricity rates"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced that there will be a \"lunenburg family gift mart\".",
+   "tags": [
+    "announcements",
+    "holiday"
+   ]
+  },
+  {
+   "topic": "Common Victualler License, Dippin' Donuts, 455 Massachusetts Avenue",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram moved to approve the common victualler license for dippin' donuts located at 455 massachusetts avenue.",
+   "tags": [
+    "licensing",
+    "common victualler",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Power Purchase Agreement and PILOT for solar projects",
+   "resolution": "no action; update only",
+   "quote": "ms. speidel stated that there were no pilot's or ppa's for discussion",
+   "tags": [
+    "solar",
+    "PILOT",
+    "net metering"
+   ]
+  },
+  {
+   "topic": "Notice of Commonwealth's Proposed Acquisition of APR",
+   "resolution": "Notice read into record; Town partnership under consideration",
+   "quote": "ms. speidel explained that mario lanni from lanni orchards and daniel & kathleen pierce from pierce farm have filed",
+   "tags": [
+    "agriculture",
+    "APR",
+    "land preservation"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal, Land Plan, Book 10, page 10",
+   "resolution": "approved 5-0 not to exercise",
+   "quote": "dan curley, representing fitchburg redevelopment authority spoke to the bos regarding right of",
+   "tags": [
+    "right of first refusal",
+    "land",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Emergency appropriations borrowing, 10/31/11 storm",
+   "resolution": "approved 5-0",
+   "quote": "ms. speidel explained that this item concerns the october 2011 storm.",
+   "tags": [
+    "storm",
+    "borrowing",
+    "tax rate",
+    "MEMA"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, and action file",
+   "resolution": "listed; no action recorded",
+   "quote": "action file issues: none",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee reports and Budget Working Group",
+   "resolution": "discussion; no vote",
+   "quote": "mr. alonzo reported that the finance committee met last thursday where the new finance",
+   "tags": [
+    "budget",
+    "Finance Committee",
+    "School Committee",
+    "capital planning",
+    "Budget Working Group",
+    "broadband",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "Salvation Army toll date deferred to December 11; other items informational",
+   "quote": "ms. speidel informed the bos that due to inclement weather the previously approved salvation army voluntary toll",
+   "tags": [
+    "dam",
+    "abandoned property",
+    "Summer St. project",
+    "police",
+    "dispatch",
+    "state budget",
+    "local aid"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "adjourned regular session to executive session at 8:52PM",
+   "quote": "the board voted unanimously to adjourn regular session at 8:52pm.",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Commonwealth's Proposed Acquisition of Agricultural Preservation Restriction (APR) on Property in Lunenburg",
+   "where": "text",
+   "quote": "notice of commonwealth's proposed acquisition of agricultural preservation restriction (apr) on property in lunenburg"
+  },
+  {
+   "name": "Notice of the APR on Property in the Town of Lunenburg owned by Lanni Orchards, 292 Chase Rd.",
+   "where": "text",
+   "quote": "mr. matthews read into record the notice of the apr on property in the town of lunenburg owned by lanni orchards,"
+  },
+  {
+   "name": "APR applications for Lanni Orchards and Pierce Farm",
+   "where": "text",
+   "quote": "have filed applications for apr with the state on their respective properties."
+  },
+  {
+   "name": "Draft PILOT for EPG",
+   "where": "text",
+   "quote": "ms. bertram requested that a draft copy of the pilot that is currently before epg be distributed to the bos for review"
+  },
+  {
+   "name": "Anti-Islanding study (Borrego project)",
+   "where": "text",
+   "quote": "they are waiting for results from an \"anti-islanding\" study which is due next tuesday"
+  },
+  {
+   "name": "Request for Services (RES) for school building design services",
+   "where": "text",
+   "quote": "the school building committee has sent out the res (request for services) for design services for the new project."
+  },
+  {
+   "name": "Summer St. Project Design Contract",
+   "where": "text",
+   "quote": "the summer st. project is waiting for all three communities to sign the design contract."
+  },
+  {
+   "name": "Letter from Police Chief Marino to Officer Jeff Thibodeau",
+   "where": "text",
+   "quote": "ms. speidel read a copy of a letter which police chief marino had sent to officer jeff thibodeau"
+  },
+  {
+   "name": "Minutes of 10/16/12, 11/6/12, 11/13/12",
+   "where": "text",
+   "quote": "minutes: 10/16/12 11/6/12 11/13/12"
+  },
+  {
+   "name": "Warrants dated 12/6/12, 12/4/12 (32-15, 31-13) and Quarterly Water Dept. Commitment",
+   "where": "text",
+   "quote": "warrants: 12/6/12 12p 13 $636,238.06 12/4/12 32-15 $151,422.95 12/4/12 31-13 $508,819.86 quarterly water dept. commitment $4680.78"
+  }
+ ],
+ "tags": [
+  "municipal aggregation",
+  "liquor and licensing",
+  "common victualler license",
+  "solar",
+  "PILOT",
+  "agricultural preservation restriction",
+  "right of first refusal",
+  "storm reimbursement",
+  "borrowing",
+  "warrants",
+  "budget",
+  "capital planning",
+  "Budget Working Group",
+  "Lake Shirley Dam",
+  "state budget cuts",
+  "Nashoba Valley dispatch",
+  "Summer St. project",
+  "school building project",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

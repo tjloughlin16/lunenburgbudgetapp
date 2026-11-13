@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-04-11",
  "docid": "3883",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Endorse the Plan after the Dimensional Requirement Table is corrected",
+   "motion": "Endorse the 768 West Street ANR plan after the Dimensional Requirement Table is corrected.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion to endorse plan after dimensional requirement table is corrected, k. chenis, second, m. allison, all aye."
   },
   {
-   "motion": "Endorse the Plan",
+   "motion": "Endorse the 128 West Street ANR plan.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
@@ -28,25 +28,23 @@
    "quote": "motion to endorse plan, k. chenis, second, g. bittner, all aye."
   },
   {
-   "motion": "Approve the permit as submitted",
+   "motion": "Approve the 203 West Townsend Road permit as submitted.",
    "moved_by": "K. Chenis",
-   "seconded_by": "D. Prokowiek",
+   "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "k. chenis, motion to approve permit as submitted, second, d. prokowiew, all aye.",
-   "quote_taken_from_text": true
+   "quote": "k. chenis, motion to approve permit as submitted, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Support the bylaw change",
+   "motion": "Support the Zoning Article (Agricultural Commission) bylaw change.",
    "moved_by": "K. Chenis",
-   "seconded_by": "D. Prokowiek",
+   "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "k. chenis, motion to support bylaw change, second, d. prokowiew, all aye.",
-   "quote_taken_from_text": true
+   "quote": "k. chenis, motion to support bylaw change, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Approve the minutes of 3/28/16",
+   "motion": "Approve the minutes of 3/28/16.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
@@ -54,7 +52,7 @@
    "quote": "3/28/16- motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "Approve the minutes of 274 Prospect Street, 3/28/16",
+   "motion": "Approve the minutes of 3/28/16 for 274 Prospect Street.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
    "outcome": "not stated",
@@ -62,7 +60,213 @@
    "quote": "274 prospect street, 3/28/16- motion, k. chenis, second, m. allison"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clearly readable. Two of the six recorded votes (the minutes approvals) do not have explicit vote counts stated in their motion lines, though the heading states \"All minutes signed.\" The four substantive motions all show \"all aye\" outcomes.",
- "cost_usd": 0.1453785
+ "dropped_unquoted": 1,
+ "note": "Text extracted from a scanned-style minutes page with odd spacing. Motions for the 3/28/16 minutes show a mover and seconder but no result, so outcome is recorded as not stated. Votes marked 'all aye' carry no printed count. The 36 Summer Street information meeting, the 203 West Townsend Road hearing and the Agricultural Commission zoning article point to separate minutes that are not in this text. The adjournment time (8:35 PM) has no motion recorded and is not listed as a vote. No dollar figures or public comment appear.",
+ "cost_usd": 0.00482632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Ross Associates",
+   "role": "plan presenter (firm)",
+   "status": "not stated",
+   "quote": "plan presented by david ross associates to divide off 2.5 acres."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 768 West Street plan must have its Dimensional Requirement Table corrected before Board endorsement; members will come to the office to endorse the amended plan once received.",
+   "quote": "the dimensional requirement t able needs to be corrected prior to board endorsement."
+  },
+  {
+   "decision": "The drainage-rights note on the 768 West Street plan will be sent to the DPW Director.",
+   "quote": "this will be noted to the dpw director."
+  },
+  {
+   "decision": "Traffic count requests from Board members will be discussed at the next Board meeting.",
+   "quote": "discussion will continue at the next board meeting."
+  },
+  {
+   "decision": "Changes to the Site Plan Approval/Special Permit/Rules and Regulations will be reviewed at the next meeting.",
+   "quote": "board will review at next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plans",
+   "resolution": "768 West Street endorsed conditionally; 128 West Street endorsed",
+   "quote": "motion to endorse plan after dimensional requirement table is corrected",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Information meeting: 36 Summer Street",
+   "resolution": "see separate minutes",
+   "quote": "36 summer street- see separate minutes",
+   "tags": [
+    "information meeting"
+   ]
+  },
+  {
+   "topic": "Public hearings: 203 West Townsend Road and Zoning Article (Agricultural Commission)",
+   "resolution": "permit approved as submitted; bylaw change supported",
+   "quote": "203 west townsend road - see separate minutes.",
+   "tags": [
+    "public hearing",
+    "permit",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "no report",
+   "quote": "development status reports: no report",
+   "tags": [
+    "status report"
+   ]
+  },
+  {
+   "topic": "Director's items: traffic counts",
+   "resolution": "continued to next meeting",
+   "quote": "traffic counts - received the following requests from board members.",
+   "tags": [
+    "traffic counts"
+   ]
+  },
+  {
+   "topic": "Director's items: site plan, special permit, rules and regulations",
+   "resolution": "continued; board to review at next meeting",
+   "quote": "site plan approval/special permit/rules and regulations: changes noted.",
+   "tags": [
+    "site plan",
+    "special permit",
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "Town Meeting, May 7, 2016",
+   "resolution": "noted",
+   "quote": "town meeting, may 7, 2016- noted",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and member availability",
+   "resolution": "noted",
+   "quote": "april 25- information meeting- 301 massachusetts ave, hannaford",
+   "tags": [
+    "schedule",
+    "availability"
+   ]
+  },
+  {
+   "topic": "Board comments and committee reports",
+   "resolution": "reports received; Storm Water Task Force met with Leominster DPW and MA Watershed Coalition",
+   "quote": "storm water task force- met with leominster dpw and ma watershed coalition",
+   "tags": [
+    "committee reports",
+    "storm water"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 03/28/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 03/28/16 minutes 03/28/16 274 prospect street"
+  },
+  {
+   "name": "Minutes 03/28/16 274 Prospect Street",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 03/28/16 minutes 03/28/16 274 prospect street"
+  },
+  {
+   "name": "ANR Plan, 768 West Street",
+   "where": "list",
+   "quote": "anr plan, 768 west street anr plan 128 west street draft rules and regulations"
+  },
+  {
+   "name": "ANR Plan 128 West Street",
+   "where": "list",
+   "quote": "anr plan, 768 west street anr plan 128 west street draft rules and regulations"
+  },
+  {
+   "name": "DRAFT Rules and Regulations",
+   "where": "list",
+   "quote": "anr plan, 768 west street anr plan 128 west street draft rules and regulations"
+  },
+  {
+   "name": "Zoning Article, Agricultural Commission",
+   "where": "text",
+   "quote": "zoning article, agricultural commission - see separate minutes."
+  },
+  {
+   "name": "203 West Townsend Road permit",
+   "where": "text",
+   "quote": "203 west townsend road - see separate minutes. k. chenis, motion to approve permit as submitted"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "subdivision",
+  "endorsement",
+  "public hearing",
+  "zoning bylaw",
+  "minutes approval",
+  "traffic counts",
+  "town meeting",
+  "storm water",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

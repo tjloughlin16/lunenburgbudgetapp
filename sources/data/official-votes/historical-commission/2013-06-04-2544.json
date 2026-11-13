@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2013-06-04",
  "docid": "2544",
@@ -12,6 +12,115 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This document is a meeting agenda/notice, not minutes with recorded votes. It lists planned agenda items but contains no recorded motions, seconds, or voting outcomes.",
- "cost_usd": 0.0793365
+ "note": "Text is the agenda only (June 4, 2013, Ritter Memorial Building, 6:30PM). It records no attendance, no discussion, no motions or votes, no figures, and no public comment. A. Phelps and D. McQuaid appear only as names assigned to agenda items, so their attendance is not stated. Topic resolutions are \"no action recorded\" because the minutes do not report outcomes.",
+ "cost_usd": 0.00242232,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "A. Phelps",
+   "role": "",
+   "status": "not stated",
+   "quote": "publication on web site of ledger articles - a. phelps"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "",
+   "status": "not stated",
+   "quote": "town wide photo inventory of properties - d. mcquaid"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 5/23/13 Meeting Minutes",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "approval of 5/23/13 meeting minutes",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "2. correspondence 3. old business",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Old Business: Community Preservation Act Discussion",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "community preservation act discussion - all",
+   "tags": [
+    "community preservation act"
+   ]
+  },
+  {
+   "topic": "Old Business: Publication on Web site of Ledger Articles",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "publication on web site of ledger articles - a. phelps",
+   "tags": [
+    "website",
+    "ledger articles"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Wide Photo Inventory of Properties",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "town wide photo inventory of properties - d. mcquaid",
+   "tags": [
+    "photo inventory",
+    "properties"
+   ]
+  },
+  {
+   "topic": "New Business: Demolition Delay Preview, Leominster Shirley Road property",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "demolition delay preview- leominster shirley road property",
+   "tags": [
+    "demolition delay",
+    "shirley road"
+   ]
+  },
+  {
+   "topic": "New Business: Historic Town Center Discussion",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "historic town center discussion",
+   "tags": [
+    "historic town center"
+   ]
+  },
+  {
+   "topic": "Date of Next Meeting and Adjournment",
+   "resolution": "listed on agenda only; no action recorded",
+   "quote": "5. date of next meeting 6. adjournment",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ledger Articles (publication on Web site)",
+   "where": "text",
+   "quote": "publication on web site of ledger articles - a. phelps"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "agenda",
+  "preservation",
+  "demolition delay",
+  "community preservation act",
+  "historic town center"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

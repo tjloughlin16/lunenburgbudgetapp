@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2012-03-14",
  "docid": "5429",
@@ -12,23 +12,555 @@
  },
  "votes": [
   {
-   "motion": "Approve adding the easement and frontage clauses from the extension policy to the Sewer Bylaw as an article for Town meeting",
+   "motion": "Add two rules (connection on the owner's own property rather than by easement, and each lot served by its own frontage) to the Sewer Bylaw as an article for Town meeting.",
    "moved_by": "Dave",
    "seconded_by": "Jay",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "bob asked if there was a motion to approve adding these 2 items to the sewer bylaw as an article for town meeting. dave made the motion, jay seconded and the vote taken was unanimous."
+   "quote": "dave made the motion, jay seconded and the vote taken was unanimous."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (adjourned at 9:50 pm).",
    "moved_by": "Carl",
    "seconded_by": "Jay",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "bob asked for a motion to adjourn the meeting? carl made the motion and jay seconded. vote taken was unanimous."
+   "quote": "carl made the motion and jay seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Minutes approval for 1/31/12 and 2/28/12 mentioned as \"approved\" but without explicit motion language; not included as formal vote.",
- "cost_usd": 0.1042395
+ "note": "OCR text of a 2012 typed minutes document. Signature block is garbled and cut off (\"Whilet / Sewer Business Managi\"). Steve Pederson and Steve Pedersen appear as different spellings and are likely the same Weston & Sampson representative; both are listed as printed. Kiera's attendance is not stated. Only two motions are recorded (bylaw additions, adjournment); the minutes approval is recorded as approved without a stated motion, so it is a decision, not a vote. The memo of 3/9, Appendix A, and other items are referenced in discussion only, with no list.",
+ "cost_usd": 0.01203762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Ebersole",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:03 pm, with bob ebersole, carl luck, jay simeone,, and dave macdonald in attendance."
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:03 pm, with bob ebersole, carl luck, jay simeone,, and dave macdonald in attendance."
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:03 pm, with bob ebersole, carl luck, jay simeone,, and dave macdonald in attendance."
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:03 pm, with bob ebersole, carl luck, jay simeone,, and dave macdonald in attendance."
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "of Weston & Sampson",
+   "status": "present",
+   "quote": "also in attendance were pat cotton and steve pederson of weston & sampson and board of selectman liaison, steve debettencourt."
+  },
+  {
+   "name": "Steve Pederson",
+   "role": "of Weston & Sampson",
+   "status": "present",
+   "quote": "also in attendance were pat cotton and steve pederson of weston & sampson and board of selectman liaison, steve debettencourt."
+  },
+  {
+   "name": "Steve deBettencourt",
+   "role": "Board of Selectman liaison",
+   "status": "present",
+   "quote": "also in attendance were pat cotton and steve pederson of weston & sampson and board of selectman liaison, steve debettencourt."
+  },
+  {
+   "name": "Steve Pedersen",
+   "role": "of Weston & Sampson",
+   "status": "present",
+   "quote": "bob introduced steve pedersen of weston & sampson as the 7pm appointment."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw director, joined the meeting at 7:20."
+  },
+  {
+   "name": "Luca Ciccone",
+   "role": "owner of property on Eastern Ave",
+   "status": "present",
+   "quote": "mr. luca ciccone introduced himself and his wife, kiera, as owners of property on eastern ave."
+  },
+  {
+   "name": "Kiera",
+   "role": "wife of Luca Ciccone, owner of property on Eastern Ave",
+   "status": "not stated",
+   "quote": "mr. luca ciccone introduced himself and his wife, kiera, as owners of property on eastern ave."
+  },
+  {
+   "name": "Barb",
+   "status": "not stated",
+   "quote": "it was determined that barb would try and get the letter out within 2 weeks."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Table the discussion on the 2/3 survey rule and tiered system; do not put it on the warrant for a vote now. Steve to prepare tiered language for future discussion.",
+   "quote": "it was determined that we should table the discussion for now, and not put this on the warrant for a vote at this time."
+  },
+  {
+   "decision": "Commission office to send the standard letter to residents of Eastern Ave and Upland Ave on interest in connecting; Barb to get it out within 2 weeks.",
+   "quote": "it was determined that the commission office would be the ones to send out the letters to the people on the street"
+  },
+  {
+   "decision": "Mandatory-connection requirement removed from the proposed warrant articles; not ready for Town Meeting.",
+   "quote": "bob pointed out we were not ready to take this to town meeting yet, and we'll remove it from the proposed warrant articles."
+  },
+  {
+   "decision": "Hold a workshop on rules, regulations and policies on 5/9 at 6pm at the new DPW building on Chase Road, with no other agenda items if possible.",
+   "quote": "it was determined that we would have an early start, starting at 6pm, and that it should be at the new dpw building on chase road."
+  },
+  {
+   "decision": "Steve Pederson to wordsmith the Electric St. service-area language and send it to Barb for a warrant article.",
+   "quote": "steve will 'wordsmith' and send the proposed language to barb for incorporation into a warrant article."
+  },
+  {
+   "decision": "Barb to check Appendix A documents for missing or updated items.",
+   "quote": "barb will check the documents in appendix a for any missing or updated items."
+  },
+  {
+   "decision": "Jack to get bids to cap the Wallis Park manhole connection to Elizabeth St. and pump out and fill the manhole as part of the scope.",
+   "quote": "he will get bids to cap the connection to elizabeth and as part of the scope of work"
+  },
+  {
+   "decision": "NEPCCO manhole work and the Wallis Park manhole work to be paid from project funds; Barb to confirm the setup.",
+   "quote": "bob also stated that the work nepcco is doing can be paid out of project funds and asked barb to make sure that is how it has been set up."
+  },
+  {
+   "decision": "Commission directed that the Leominster Rd VFD be paid from project funds as a capital item relating to original construction.",
+   "quote": "bob stated we would use project funds as they are capital items that relate to the original construction of the project"
+  },
+  {
+   "decision": "Barb to call and follow up with a letter to Bootlegger, then call Steve P; engineers to coordinate an inspection of internal plumbing.",
+   "quote": "barb will call and follow up with letter, then call steve p to advise."
+  },
+  {
+   "decision": "Once the check for the 134 Leom-Shirley Rd peer review is received, authorize Weston & Sampson to commence the review; Steve keeps the plan.",
+   "quote": "once a check is provided, we will authorize weston & sampson to commence the review."
+  },
+  {
+   "decision": "Barb to send Mr. Nadeau a letter that the Youngs Rd numbers do not meet the required 2/3, while continuing outreach.",
+   "quote": "barb will send a letter to mr. nadeau that the numbers do not meet the required 2/3, but that we'll continue to reach out for participation."
+  },
+  {
+   "decision": "Send the Wallis Park I/I letter to customers originally connected to Leominster sewer, with a September 1st completion deadline.",
+   "quote": "send the letter to those customers originally connected to leominster sewer, with the deadline of september 1st to complete."
+  },
+  {
+   "decision": "Barb agreed to a payment arrangement for 199 Summer at $100/mo on the old balance; Dave asked for a formal memo copied to the Commission.",
+   "quote": "dave asked that she follow up with a formal memo to the resident, and copy the commission on the memo so they are kept aware."
+  },
+  {
+   "decision": "Barb to remove the outdated website notation about 2nd quarter invoices.",
+   "quote": "dave pointed out that our website still had a notation on it about 2id quarter invoices being sent out and asked that barb remove the notation."
+  },
+  {
+   "decision": "Minutes of 1/31/12 and 2/28/12 approved with no issues raised; signed by those present at the meetings.",
+   "quote": "commission discussed and there were no issues, so the minutes are approved and were signed off on by those present at the meetings."
+  },
+  {
+   "decision": "No executive session needed; Fitchburg IMA awaiting the meeting with Kevin to review future needs.",
+   "quote": "bob asked carl if there was any need to go into executive session?"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eastern Ave sewer extension cost",
+   "what_was_recorded": "The average extension cost figure to be provided to residents, which could be higher because of ledge.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "we will have to provide the $24,000 average cost figure, which could actually be higher since there is so much ledge."
+  },
+  {
+   "topic": "Betterment assessment size",
+   "what_was_recorded": "Discussion that a $24k betterment is difficult to assess when one person above 50% agrees to a project.",
+   "figures_as_printed": [
+    "$24k"
+   ],
+   "quote": "difficult to assess a $24k betterment because 1 person more than 50% agreed to the project."
+  },
+  {
+   "topic": "VFD for Leominster Rd pump station",
+   "what_was_recorded": "Estimated installation cost of a 40hp VFD per pump, about $14k for two pumps, expected to be paid off in power savings in about 2 years.",
+   "figures_as_printed": [
+    "$7,000",
+    "$14k"
+   ],
+   "quote": "with a 40hp vfd, the estimated cost is $7,000 per pump to install, so with the 2 pumps it would be about $14k"
+  },
+  {
+   "topic": "134 Leom-Shirley Rd peer review",
+   "what_was_recorded": "Weston & Sampson's price estimate for the peer review; Barb to call Whitman & Bingham with the cost.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "we received the price estimate from steve on 3/14 for $5,000 and barb will call whitman & bingham with the cost."
+  },
+  {
+   "topic": "Youngs Rd cost estimate",
+   "what_was_recorded": "The general CWMP estimate of $24,000 was discussed; costs were said to have gone up, not down.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "commission discussed the general $24,000 estimate provided by the cwmp"
+  },
+  {
+   "topic": "Youngs Rd zone-specific cost",
+   "what_was_recorded": "The CWMP zone-specific costing for Project A, Areas 6 & 9, was cited as about $22,700.",
+   "figures_as_printed": [
+    "$22,700"
+   ],
+   "quote": "the cwmp provided the costing on page 4-40 that project a for areas 6 & 9 would run about $22,700."
+  },
+  {
+   "topic": "199 Summer payment plan",
+   "what_was_recorded": "Resident owed a balance and agreed to pay a monthly amount on the old balance while staying current.",
+   "figures_as_printed": [
+    "$469.93",
+    "$100/mo"
+   ],
+   "quote": "they owed a balance of $469.93 and her husband had had his hours reduced at work."
+  },
+  {
+   "topic": "Manhole and Wallis Park work funding",
+   "what_was_recorded": "Work to cap the Wallis Park manhole connection and NEPCCO manhole work to be paid from project funds.",
+   "figures_as_printed": [],
+   "quote": "per bob, it can be paid out of project funds."
+  },
+  {
+   "topic": "Flow meter cost on Pioneer Drive",
+   "what_was_recorded": "Discussion of having the 3 customers on the line share the cost of a future flow meter.",
+   "figures_as_printed": [],
+   "quote": "discussion followed about having the 3 customers on that line share in the cost of installing the meter."
+  },
+  {
+   "topic": "FY13 budget",
+   "what_was_recorded": "Commission received the budget approved at the 2/28 meeting to be given to FinCom; Bob to appear before FinCom on 3/22.",
+   "figures_as_printed": [],
+   "quote": "commission was provided a copy of the budget approved at the 2/28 meeting to be provided to fincom"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Luca Ciccone",
+   "stated_role": "owner of property on Eastern Ave",
+   "topic": "Sewer extension petition on Eastern Ave",
+   "quote": "he would like to petition to do a sewer extension on eastern ave."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Visitor: Luca Ciccone, Eastern Ave sewer extension",
+   "resolution": "no vote; letters to Eastern Ave and Upland Ave residents on interest",
+   "tags": [
+    "sewer extension",
+    "Eastern Ave",
+    "Upland Ave"
+   ],
+   "quote": "we will send the letter to residents of both eastern ave & upland ave. to check on the interest in connecting"
+  },
+  {
+   "topic": "Bylaw and rules & regs review (Weston & Sampson)",
+   "resolution": "discussed; easement and frontage rules added to bylaw by vote",
+   "tags": [
+    "sewer bylaw",
+    "rules and regulations",
+    "Weston & Sampson"
+   ],
+   "quote": "steve began by speaking on the proposed changes to the bylaw and on the rules & regs review that weston & sampson(w&s) had been tasked with."
+  },
+  {
+   "topic": "357 Electric St. service area expansion",
+   "resolution": "discussed; Steve to draft wording for warrant article",
+   "tags": [
+    "sewer service area",
+    "Electric St",
+    "Town Meeting"
+   ],
+   "quote": "steve p. brought up the issue at 357 electric from last year's special town meeting"
+  },
+  {
+   "topic": "2/3 survey rule for extensions",
+   "resolution": "tabled; not put on warrant",
+   "tags": [
+    "extension policy",
+    "2/3 rule"
+   ],
+   "quote": "it was determined that we should table the discussion for now, and not put this on the warrant for a vote at this time."
+  },
+  {
+   "topic": "Mandatory sewer connection requirement",
+   "resolution": "removed from proposed warrant articles; more study needed",
+   "tags": [
+    "mandatory connection",
+    "sewer bylaw"
+   ],
+   "quote": "discussion began regarding the policy to require residents to connect to sewer."
+  },
+  {
+   "topic": "Easement and frontage clauses added to bylaw",
+   "resolution": "motion approved unanimously",
+   "tags": [
+    "sewer bylaw",
+    "extension policy"
+   ],
+   "quote": "steve p. noted the easement and frontage clauses from section 6.0 in the extension policy"
+  },
+  {
+   "topic": "Work session on rules and regulations",
+   "resolution": "scheduled for 5/9 at 6pm at new DPW building",
+   "tags": [
+    "work session",
+    "rules and regulations"
+   ],
+   "quote": "bob suggested that we do a workshop on the wednesday meeting in may (5/9) devoted entirely to reviewing all rules, regulations, and policies."
+  },
+  {
+   "topic": "NEPCCO manhole work",
+   "resolution": "update received; no vote",
+   "tags": [
+    "manholes",
+    "I/I",
+    "NEPCCO"
+   ],
+   "quote": "nepcco work on manholes pat cotton of weston & sampson spoke about the project."
+  },
+  {
+   "topic": "Sump pumps on Pierce Ave and Wallis Park",
+   "resolution": "Jack to get bids to cap connection",
+   "tags": [
+    "sump pumps",
+    "Wallis Park",
+    "I/I"
+   ],
+   "quote": "the issue of the sump pumps on pierce avenue and wallis park came up again"
+  },
+  {
+   "topic": "VFD for Leominster Rd pump station",
+   "resolution": "discussed; project funds to be used; no vote",
+   "tags": [
+    "pump station",
+    "VFD",
+    "project funds"
+   ],
+   "quote": "as far as the request for a vfd for leominster rd pump station"
+  },
+  {
+   "topic": "Consent agenda: Bootlegger grease trap",
+   "resolution": "no vote; follow-up call and letter",
+   "tags": [
+    "grease trap",
+    "consent agenda"
+   ],
+   "quote": "bootlegger - bob noted that the new plan was reviewed by weston & sampson and approved."
+  },
+  {
+   "topic": "134 Leom-Shirley Rd gas station peer review",
+   "resolution": "no vote; review to start once check received",
+   "tags": [
+    "peer review",
+    "gas station",
+    "consent agenda"
+   ],
+   "quote": "134 leom-shirley rd gas station proposal - plan was provided to weston & sampson on 3/6"
+  },
+  {
+   "topic": "Town Caucus",
+   "resolution": "information only",
+   "tags": [
+    "caucus",
+    "elections"
+   ],
+   "quote": "town caucus is march 19, 2012 at 7pm. bob confirmed that the terms are for 3 years."
+  },
+  {
+   "topic": "Budget FY13",
+   "resolution": "information only; to FinCom",
+   "tags": [
+    "budget",
+    "FinCom"
+   ],
+   "quote": "commission was provided a copy of the budget approved at the 2/28 meeting to be provided to fincom"
+  },
+  {
+   "topic": "Town Report",
+   "resolution": "no action; Bob to draft",
+   "tags": [
+    "town report"
+   ],
+   "quote": "town report- bob stated he is working on it"
+  },
+  {
+   "topic": "Youngs Rd sewer petition",
+   "resolution": "no; 2/3 not met; outreach continues",
+   "tags": [
+    "Youngs Rd",
+    "2/3 rule",
+    "extension"
+   ],
+   "quote": "youngs rd - barb had provided the spreadsheet and responses to the commission along with a map"
+  },
+  {
+   "topic": "Wallis Park I/I improvements letter",
+   "resolution": "letter to be sent with September 1 deadline",
+   "tags": [
+    "I/I",
+    "Wallis Park",
+    "PVC"
+   ],
+   "quote": "wallis park i/l improvements - barb recalled the question from the last meeting"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (no motion recorded)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes for approval -barb had both the 1/31/12 and 2/28/12 minutes for approval."
+  },
+  {
+   "topic": "ANR plan at 24 Leominster Rd",
+   "resolution": "no action; sewer ends near Chiefs House",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Leominster Rd"
+   ],
+   "quote": "barb had received an anr plan for a subdivision at 24 leominster rd for review from the planning board on 3/13."
+  },
+  {
+   "topic": "199 Summer payment plan",
+   "resolution": "agreed partial payment plan",
+   "tags": [
+    "payment plan",
+    "collections"
+   ],
+   "quote": "barb stated that she had received a payment plan request for 199 summer."
+  },
+  {
+   "topic": "Asian Imperial, 337 Mass Ave",
+   "resolution": "no update",
+   "tags": [
+    "building permit",
+    "337 Mass Ave"
+   ],
+   "quote": "asian imperial -337 mass ave. - bob noted that there was no update."
+  },
+  {
+   "topic": "Next meeting and executive session",
+   "resolution": "next meeting March 27; no executive session",
+   "tags": [
+    "meeting schedule",
+    "Fitchburg IMA"
+   ],
+   "quote": "next meeting -- regular sewer meeting - march 27 - jay won't be here"
+  },
+  {
+   "topic": "Website notation",
+   "resolution": "Barb to remove notation",
+   "tags": [
+    "website"
+   ],
+   "quote": "dave pointed out that our website still had a notation on it about 2id quarter invoices being sent out"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:50 pm, unanimous",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting was adjourned at 9:50 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Steve's memo of March 9 (draft of recommended changes; Sections A and B)",
+   "where": "text",
+   "quote": "steve had provided a memo on march 9 to the commission via email as a draft of recommended changes."
+  },
+  {
+   "name": "Appendix A (existing regs and policies)",
+   "where": "text",
+   "quote": "steve provided what he called appendix a to barb to review and approve of all the existing regs and policies."
+  },
+  {
+   "name": "Sewer Use Regulation of May 05, revised in December 08",
+   "where": "text",
+   "quote": "the main document is the sewer use regulation of may 05, revised in december 08."
+  },
+  {
+   "name": "Sewer Bylaw approved at Town meeting in May 2009",
+   "where": "text",
+   "quote": "the second is the sewer bylaw approved at town meeting in may 2009 which was imposed to help the commission regulate growth."
+  },
+  {
+   "name": "Sewer Extension Policy (May 2010)",
+   "where": "text",
+   "quote": "steve also mentioned the sewer extension policy, approved subsequent to bylaw in may 2010 in order to control sewer extensions."
+  },
+  {
+   "name": "CWMP (Comprehensive Wastewater Management Plan)",
+   "where": "text",
+   "quote": "the original determination of sewer service area came from the cwmp (comprehensive wastewater management plan)"
+  },
+  {
+   "name": "Youngs Rd spreadsheet, responses and map",
+   "where": "text",
+   "quote": "barb had provided the spreadsheet and responses to the commission along with a map, detailing where the positive responses were located."
+  },
+  {
+   "name": "Budget approved at the 2/28 meeting",
+   "where": "text",
+   "quote": "commission was provided a copy of the budget approved at the 2/28 meeting to be provided to fincom"
+  },
+  {
+   "name": "Payment plan email for 199 Summer (in meeting package)",
+   "where": "text",
+   "quote": "a copy of which was in the meeting package for the commission."
+  },
+  {
+   "name": "ANR plan for 24 Leominster Rd",
+   "where": "text",
+   "quote": "barb had received an anr plan for a subdivision at 24 leominster rd for review from the planning board on 3/13."
+  },
+  {
+   "name": "Letter to Bootlegger (3/13)",
+   "where": "text",
+   "quote": "barb had sent the letter on 3/13 to bootlegger advising that it was approved with the requested stipulations of inspection."
+  },
+  {
+   "name": "134 Leom-Shirley Rd gas station plan",
+   "where": "text",
+   "quote": "plan was provided to weston & sampson on 3/6 for the estimate on the peer review."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "sewer bylaw",
+  "rules and regulations",
+  "sewer extension",
+  "I/I inflow",
+  "pump station",
+  "Weston & Sampson",
+  "budget FY13",
+  "payment plan",
+  "Town Meeting",
+  "manholes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

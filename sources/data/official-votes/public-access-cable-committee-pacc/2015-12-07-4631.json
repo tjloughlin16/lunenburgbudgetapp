@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-12-07",
  "docid": "4631",
@@ -12,23 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from October 5th, 20th, and November 2nd, 2015",
+   "motion": "Approve the meeting minutes of Oct 5, Oct 20, and Nov 2, 2015, with recommended changes.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "committee reviewed and approved all meeting minutes with recommended changes."
   },
   {
-   "motion": "Pull Jo's health insurance from the purchase of service line item",
+   "motion": "Pull funds from the purchase of service line item to add Jo's health insurance.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "committee approved to pull from the purchase of service line item"
+   "quote": "committee approved to pull from the purchase of service line item."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1114735
+ "note": "Plain text with no scan issues. No motion, mover, seconder or vote count is recorded for any action; the minutes approval and the health-insurance pull are recorded only as committee approvals, so their outcome is recorded as passed without a count. Submission line date is garbled (\"1/1216\"). No dollar amount is printed for the health insurance transfer.",
+ "cost_usd": 0.00376792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin and bob ebersole."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin and bob ebersole."
+  },
+  {
+   "name": "Jeffrey Bajko",
+   "role": "PACC Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, jeffrey bajko, pacc clerk 1/1216."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the budget will be on the agenda for the next meeting.",
+   "quote": "discussion of budget will be on the agenda for the next meeting."
+  },
+  {
+   "decision": "Next meetings are scheduled for Jan 4, 2016 and Feb. 1, 2016.",
+   "quote": "next meetings are scheduled for jan 4, 2016 and feb. 1, 2016."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast payment received",
+   "what_was_recorded": "PAC received a payment from Comcast.",
+   "figures_as_printed": [
+    "$24,752.76"
+   ],
+   "quote": "pac did receive a payment from comcast: $24,752.76."
+  },
+  {
+   "topic": "Ending budget for November",
+   "what_was_recorded": "The coordinator reported the ending budget for November.",
+   "figures_as_printed": [
+    "$290,606.23"
+   ],
+   "quote": "ending budget of november is $290,606.23."
+  },
+  {
+   "topic": "Health insurance line item for Jo",
+   "what_was_recorded": "Jo's health insurance must be added and pulled from another line item; the committee approved pulling it from the purchase of service line item. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "jo's health insurance must be added and pulled from another line item"
+  },
+  {
+   "topic": "Purchased line item correction",
+   "what_was_recorded": "Jo edited the purchased line item due to a mistake by the accounting department. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "jo edited purchased line item due to mistake by accounting department."
+  },
+  {
+   "topic": "Reserve fund",
+   "what_was_recorded": "Karen had a discussion with Jo about keeping a reserve fund. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "karen had a discussion with jo about keeping a reserve fund."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Add Jo's health insurance to the budget, pulled from the purchase of service line item.",
+   "outcome": "approved by committee",
+   "amount_as_printed": "not stated",
+   "quote": "committee approved to pull from the purchase of service line item."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Jeff",
+   "stated_role": "",
+   "topic": "Meeting length and rushed endings",
+   "quote": "jeff shared his concern about if the meetings contained too many agenda points to cover."
+  },
+  {
+   "speaker": "Jeff",
+   "stated_role": "",
+   "topic": "Rushed endings due to time",
+   "quote": "jeff felt that sometimes the end of the meetings were rushed going over important information"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 6:04",
+   "quote": "meeting called to order at 6:04",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no action; concern about meeting length noted",
+   "quote": "jeff shared his concern about if the meetings contained too many agenda points to cover.",
+   "tags": [
+    "meeting length"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "approved with recommended changes",
+   "quote": "committee reviewed and approved all meeting minutes with recommended changes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "received; health insurance transfer approved",
+   "quote": "coordinator's monthly report:",
+   "tags": [
+    "budget",
+    "staff report",
+    "volunteers",
+    "marketing"
+   ]
+  },
+  {
+   "topic": "Discussion of strategic plan",
+   "resolution": "no action; Jeff and Steve presented plans",
+   "quote": "discussion of strategic plan:",
+   "tags": [
+    "strategic plan"
+   ]
+  },
+  {
+   "topic": "Review of CAC town-wide department survey results",
+   "resolution": "no action; Steve reviewed highlights",
+   "quote": "review of results from cac's town-wide department survey:",
+   "tags": [
+    "survey",
+    "departments"
+   ]
+  },
+  {
+   "topic": "Discussion of Castus and Telvue",
+   "resolution": "tabled until after Telvue demo of its server (Faith's suggestion)",
+   "quote": "faith suggests tabling the discussion until after telvue gives the pacc a demo of their server.",
+   "tags": [
+    "Castus",
+    "Telvue"
+   ]
+  },
+  {
+   "topic": "Discussion of Business Plan",
+   "resolution": "tabled until strategic plan is set (Faith's suggestion)",
+   "quote": "faith suggests tabling the discussion until the pacc strategic plan is set in place.",
+   "tags": [
+    "business plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:48pm",
+   "quote": "meeting adjourned at 7:48pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "CAC's town-wide department survey (results)",
+   "where": "text",
+   "quote": "review of results from cac's town-wide department survey:"
+  },
+  {
+   "name": "Coordinator's monthly report",
+   "where": "text",
+   "quote": "coordinator's monthly report:"
+  },
+  {
+   "name": "PACC strategic plan",
+   "where": "text",
+   "quote": "faith suggests tabling the discussion until the pacc strategic plan is set in place."
+  },
+  {
+   "name": "Business Plan",
+   "where": "text",
+   "quote": "discussion of business plan:"
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "budget",
+  "strategic plan",
+  "Comcast",
+  "volunteers",
+  "studio",
+  "department survey",
+  "Castus",
+  "Telvue",
+  "business plan",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

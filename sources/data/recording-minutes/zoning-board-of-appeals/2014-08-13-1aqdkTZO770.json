@@ -1,0 +1,276 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "ZBA",
+ "meeting_date": "2014-08-13",
+ "video_id": "1aqdkTZO770",
+ "video_url": "https://www.youtube.com/watch?v=1aqdkTZO770",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2014-08-13-1aqdkTZO770.json",
+  "sha256": "5609a9912c12ad44dfe79fc3ee1fe38d03625fc4dd7b5e70f6536faa37741498",
+  "caption_lines": 228,
+  "segments": 2026
+ },
+ "recording": {
+  "duration_s": 4815,
+  "duration": "1:20",
+  "spoken_chars": 56053,
+  "words_approx": 9342
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08132014-5932",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2014-08-13-agenda-5932.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2014-08-13-agenda-5932.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08132014-5933",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2014-08-13-agenda-5933.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2014-08-13-agenda-5933.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08132014-5934",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2014-08-13-agenda-5934.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2014-08-13-agenda-5934.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:20:42Z",
+  "cost_usd": 0.21344380000000002
+ },
+ "minutes": {
+  "headline": "Zoning board granted a pole shed variance and a scaled-back outdoor dining permit for Embers Pizzeria.",
+  "summary": "The Zoning Board of Appeals heard two special permit petitions. It granted a 34 by 25 pole shed at 520 Page Street with a reduced front setback. It then granted outdoor dining at Embers Pizzeria, cut back to the existing concrete area because members doubted the applicant owned the land beyond it. The board then went into executive session on litigation and said it would not return to open session.",
+  "attendees": [
+   {
+    "name_as_heard": "Lisa",
+    "role": "clerk who read the petitions"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 2100,
+    "speaker_as_heard": "john baker 53 chase road",
+    "stated_role": "resident",
+    "topic": "Spoke in favor of the Embers Pizzeria outdoor seating request, citing the owners' improvements to the lakefront."
+   }
+  ],
+  "tags": [
+   "executive-session",
+   "legal",
+   "planning-and-zoning"
+  ],
+  "votes": [
+   {
+    "t": 922,
+    "motion": "Grant the special permit for dimensional variation for the 34 by 25 pole shed at 520 Page Street.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3455,
+    "motion": "Grant the special permit for outdoor dining at Embers Pizzeria, limited to an 8 by 30 area on the existing concrete plus the existing cement walkway.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4748,
+    "motion": "Go into executive session to discuss litigation strategy, without returning to open session.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2386,
+    "topic": "Concrete barriers at Embers patio",
+    "what_was_said": "The applicant said the concrete barriers the police chief wanted would be too costly, so he proposed a decorative metal fence with painted pylons.",
+    "figures_as_heard": [
+     "3 500 tons",
+     "10 grand"
+    ]
+   },
+   {
+    "t": 2983,
+    "topic": "Prior patio investment",
+    "what_was_said": "The applicant said he had already spent heavily on a retaining wall and patio, making a smaller outdoor area hard to justify.",
+    "figures_as_heard": [
+     "35 grand"
+    ]
+   },
+   {
+    "t": 4325,
+    "topic": "Cost of engineered drawings",
+    "what_was_said": "A member said unstamped drawings were acceptable and spared the applicant the cost of a professional engineer's stamp.",
+    "figures_as_heard": [
+     "four or five thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3332,
+    "decision": "Board discussed requiring amended drawings as a condition, then agreed the existing drawings were enough given the restricted area."
+   },
+   {
+    "t": 4389,
+    "decision": "Seating confined to the 8 by 30 area and the existing cement walkway, with no cap set on the number of outdoor seats."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 1105,
+    "topic": "Special permit for pole shed at 520 Page Street",
+    "resolution": "voted, granted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1151,
+    "t_end": 1741,
+    "topic": "Recess",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1763,
+    "t_end": 4603,
+    "topic": "Special permit for outdoor dining at Embers Pizzeria, 84 Lakefront Avenue",
+    "resolution": "voted, granted with reduced area",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4603,
+    "t_end": 4808,
+    "topic": "Executive session on town litigation",
+    "resolution": "voted to enter executive session",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Whether the executive session roll call vote was unanimous is only loosely captured.",
+   "Recess stretch from about 1151 to 1741 is music and noise.",
+   "Much of the property-line discussion is garbled in places."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 2509,
+    "kind": "liability or legal",
+    "about": "A member doubted the applicant owned the land where the patio would extend.",
+    "who": "a member",
+    "words_as_heard": "how do you know that it belongs to you that belongs to the property and not the town"
+   },
+   {
+    "t": 2941,
+    "kind": "safety",
+    "about": "Snow plowing and cars leaving the road near an enlarged patio.",
+    "who": "a member",
+    "words_as_heard": "that's gonna impact snow plowing down there"
+   },
+   {
+    "t": 3832,
+    "kind": "condition",
+    "about": "A member would approve more space only with an engineered plan showing ownership.",
+    "who": "a member",
+    "words_as_heard": "until we see something like that i don't feel comfortable you know proving something beyond"
+   },
+   {
+    "t": 4220,
+    "kind": "safety",
+    "about": "Patio lighting could blind drivers on the road.",
+    "who": "a member",
+    "words_as_heard": "the light shined onto the road would have to be from that area back towards the building we wouldn't want to be blinding drivers"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 145,
+    "name_as_heard": "field card from the board of assessors",
+    "kind": "other",
+    "words_as_heard": "attached is the field card from the board of assessors",
+    "shown": true
+   },
+   {
+    "t": 166,
+    "name_as_heard": "land survey by james e gaffney",
+    "kind": "plan or drawing",
+    "words_as_heard": "there is a land survey done by james e gaffney",
+    "shown": true
+   },
+   {
+    "t": 166,
+    "name_as_heard": "memo from the board of health",
+    "kind": "memo",
+    "words_as_heard": "a memo from the board of health saying that they have no issues",
+    "shown": true
+   },
+   {
+    "t": 1826,
+    "name_as_heard": "application for special permit, Embers Pizzeria",
+    "kind": "application or permit",
+    "words_as_heard": "this is an application for a special permit",
+    "shown": true
+   },
+   {
+    "t": 3789,
+    "name_as_heard": "plot plan dated 1980",
+    "kind": "plan or drawing",
+    "words_as_heard": "the only engineered plan we have was dated in 1980",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals granted a special permit for a pole shed at 520 Page Street with a reduced front setback.",
+    "t": 922
+   },
+   {
+    "line": "The board granted a special permit for outdoor dining at Embers Pizzeria, limited to a small area on the existing concrete plus the existing walkway.",
+    "t": 3455
+   },
+   {
+    "line": "Members cut the outdoor area back because they doubted the applicant owned the land beyond the concrete.",
+    "t": 4389
+   },
+   {
+    "line": "The board agreed the existing, unstamped drawings were enough and did not require amended drawings as a condition.",
+    "t": 3332
+   },
+   {
+    "line": "The board then entered executive session on litigation and said it would not return to open session.",
+    "t": 4603
+   }
+  ],
+  "why_it_matters": [
+   "The Embers permit sets how much outdoor seating a lakefront restaurant may use, and no cap on the number of outdoor seats was set, which touches lakefront activity and neighbors.",
+   "The reduced dining area rests on a question of who owns the land beyond the concrete, so any later request to enlarge it would turn on that ownership."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:20:50Z",
+   "cost_usd": 0.021759099999999996
+  }
+ }
+}

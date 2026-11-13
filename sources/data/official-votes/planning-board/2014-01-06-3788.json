@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-01-06",
  "docid": "3788",
@@ -12,15 +12,124 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting",
+   "motion": "Motion to adjourn the public hearing.",
    "moved_by": "E. Bakaysa",
-   "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": true,
-   "quote": "e. bakaysa, motion to adjourn, second, d. mcquaid, motion passed."
+   "quote": "e. bakaysa, motion to adjourn, second, d. mcquaid, motion passed. adjourned 6:50 pm.",
+   "seconded_by": "D. McQuaid"
   }
  ],
  "dropped_unquoted": 0,
- "note": "This was a public hearing on a warrant article held by the Planning Board. The board did not vote on the warrant article itself (that would happen at Town Meeting); these minutes record only the board's procedural vote to adjourn the hearing.",
- "cost_usd": 0.0178547
+ "note": "Text is a typed public hearing record, not a scan. No vote on Article 2 is recorded; only the motion to adjourn has a result. Some words are garbled by text extraction (e.g. 'a mendment', 'regulat ions'); quotes were taken from the cleaner passages. Votes on procedural motions and the hearing outcome are as printed. The minutes do not state a count for the adjournment vote.",
+ "cost_usd": 0.0038758200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: joanna l. bilotta -simeone, chair, nathan j. lockwood , vice chair, damon mcquaid, emerick r. bakaysa,"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood , vice chair, damon mcquaid,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "damon mcquaid, clk."
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, matthew allison, marion m. benson, planning director"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, matthew allison, marion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "emerick r. bakaysa, matthew allison, marion m. benson, planning director"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "bob ebersole, 94 main street - encouraged the board to have a bylaw for adoption at the may town meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "M. Benson was directed to inquire of Town Counsel whether the Town would benefit economically, i.e. whether Town taxes differ for a not-for-profit entity.",
+   "quote": "d. mcquaid inquired if the town would benefit economically; e.g., are town taxes different for a not -for-profit entity. m. benson to inquire of town counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town tax effect of medical marijuana treatment centers",
+   "what_was_recorded": "A board member asked whether the Town would benefit economically, including whether Town taxes differ for a not-for-profit entity; the Planning Director was to ask Town Counsel. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "d. mcquaid inquired if the town would benefit economically; e.g., are town taxes different for a not -for-profit entity."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "",
+   "topic": "moratorium bylaw timing and hardship cultivation",
+   "quote": "bob ebersole, 94 main street - encouraged the board to have a bylaw for adoption at the may town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing on Special Town Meeting Article 2: temporary moratorium on medical marijuana treatment centers (new Zoning Bylaw Section 9.0)",
+   "resolution": "hearing held; no vote recorded on the article; hearing adjourned 6:50 PM",
+   "quote": "chair opened the public hearing at 6:30 pm with the reading of the legal notice",
+   "tags": [
+    "zoning bylaw",
+    "medical marijuana",
+    "moratorium",
+    "public hearing",
+    "special town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant Article 2 - Model Moratorium Warrant Article (new Zoning Bylaw Section 9.0, Temporary Moratorium on Medical Marijuana Treatment Centers/Registered Marijuana Dispensaries)",
+   "where": "text",
+   "quote": "model moratorium warrant article"
+  },
+  {
+   "name": "Legal notice published in the Sentinel & Enterprise on December 23 and December 30, 2013",
+   "where": "text",
+   "quote": "legal notice published in the sentinel & enterprise on december 23 and december 30, 2013."
+  }
+ ],
+ "tags": [
+  "zoning bylaw",
+  "medical marijuana",
+  "moratorium",
+  "public hearing",
+  "special town meeting",
+  "town taxes",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2017-01-10",
  "docid": "1869",
@@ -12,6 +12,80 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Scanned agenda/notice only. No minutes of actual meeting; no motions or votes recorded.",
- "cost_usd": 0.0785475
+ "note": "Only the meeting notice and agenda were provided (OCR of one page). There are no minutes of proceedings: no attendance, no motions or votes, no discussion, no decisions, and no dollar figures. Topics are agenda items only; the text does not show whether they were taken up or how they resolved. The OCR of the receipt stamp is partly garbled.",
+ "cost_usd": 0.00226242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "not stated",
+   "quote": "call to order announcements minutes approval",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "not stated",
+   "quote": "minutes approval current business",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report (MART, building, recreation area, property tax work-off, upcoming events)",
+   "resolution": "not stated",
+   "quote": "current business 1. director's report",
+   "tags": [
+    "director",
+    "building",
+    "transportation",
+    "property tax"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "not stated",
+   "quote": "notices & communications board comment public comment",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Board comment and public comment",
+   "resolution": "not stated",
+   "quote": "board comment public comment adjournment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "not stated",
+   "quote": "public comment adjournment upcoming meeting schedule",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Council on Aging",
+  "agenda",
+  "notice of meeting",
+  "senior center",
+  "director's report",
+  "property tax work-off"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-01-06",
  "docid": "2583",
@@ -10,17 +10,193 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01062016-2583",
   "doc_url": "/docs/meetings/historical-commission/2016-01-06-minutes-2583.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text of a two-page scan. No motions, votes, or roll-call results are recorded. The minutes approval and adjournment are stated without a motion, so they are recorded as decisions and topics, not votes. No dollar figures are printed. Public comment is not recorded.",
+ "cost_usd": 0.00358832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the minutes of December 1, 2015",
-   "outcome": "passed",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes were approved for december 1, 2015"
+   "name": "Becky Lantry",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, cullen dwyer and richard mcgrath"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, cullen dwyer and richard mcgrath"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, cullen dwyer and richard mcgrath"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, cullen dwyer and richard mcgrath"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, cullen dwyer and richard mcgrath"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. Procedural vote on minutes approval recorded; no vote count specified. No other motions or votes are recorded in the minutes, though various business items were discussed.",
- "cost_usd": 0.0849885
+ "decisions": [
+  {
+   "decision": "Minutes for December 1, 2015 were approved (no motion or vote recorded).",
+   "quote": "minutes were approved for december 1, 2015"
+  },
+  {
+   "decision": "Amory Phelps will obtain further information about the Community Preservation Act and its implications.",
+   "quote": "amory phelps will obtain further information about this act and its implications."
+  },
+  {
+   "decision": "A special meeting was scheduled for January 25, 2016 at 6:30 p.m. at the Ritter Building for the demolition delay hearing.",
+   "quote": "a special meeting was scheduled for january 25, 2016 at the ritter building at 6:30 p.m."
+  },
+  {
+   "decision": "Lois Lewis agreed to attend the January 15, 2016 Building Reuse Committee meeting in place of Becky Lantry.",
+   "quote": "lois lewis has agreed to be present at this meeting for becky lantry."
+  },
+  {
+   "decision": "Lunenburg Ledger Historically Speaking article assignments: Lois for January, Becky for February.",
+   "quote": "the lunenburg ledger historically speaking articles are for: january lois february becky"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Preservation Act",
+   "what_was_recorded": "Discussed a Community Preservation Act fund, paid by residents as a percentage of property assessed value and supplemented by some state support, to finance approved town projects; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "residents would contribute to a fund based on a percentage of the assessed value of their property"
+  },
+  {
+   "topic": "Wooden plaques for historic buildings",
+   "what_was_recorded": "Brochure samples and prices for wooden plaques were received from Erie Landmark Company; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "brochure information, both samples and prices, for wooden plaques for historic buildings"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 6:40 p.m.",
+   "quote": "meeting called to order at 6:40 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved December 1, 2015 minutes",
+   "quote": "minutes were approved for december 1, 2015",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action (none)",
+   "quote": "correspondence and communications: none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act",
+   "resolution": "discussed; Amory Phelps to get more information",
+   "quote": "the community preservation act, whereby residents would contribute to a fund based on a percentage of the assessed value of their property, was discussed.",
+   "tags": [
+    "community preservation act",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Architectural Preservation District Commission",
+   "resolution": "no action; new member sworn in and guidelines started",
+   "quote": "cullen dwyer has been sworn in as a member of the architectural preservation district commission by the board of selectmen.",
+   "tags": [
+    "architectural preservation district"
+   ]
+  },
+  {
+   "topic": "Demolition delay request, 37 Burrage Street",
+   "resolution": "special meeting scheduled January 25, 2016",
+   "quote": "richard mcgrath has received only one demolition delay request, 37 burrage street, that requires a hearing by the historical commission.",
+   "tags": [
+    "demolition delay",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Building Reuse Committee",
+   "resolution": "Lois Lewis to attend January 15, 2016 meeting for Becky Lantry",
+   "quote": "the building resuse committee has scheduled a meeting for january 15, 2016 to discuss the plans for moving and consolidating",
+   "tags": [
+    "town offices",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger Historically Speaking articles",
+   "resolution": "assigned: January Lois, February Becky",
+   "quote": "the lunenburg ledger historically speaking articles are for: january lois february becky",
+   "tags": [
+    "publicity",
+    "articles"
+   ]
+  },
+  {
+   "topic": "Wooden plaque brochure from Erie Landmark Company",
+   "resolution": "received; no action recorded",
+   "quote": "brochure information, both samples and prices, for wooden plaques for historic buildings",
+   "tags": [
+    "plaques",
+    "historic buildings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45 p.m.; next meeting February 2, 2016",
+   "quote": "meeting adjourned at 7:45 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Brochure information, samples and prices, for wooden plaques for historic buildings (Erie Landmark Company, Pennsylvania)",
+   "where": "text",
+   "quote": "brochure information, both samples and prices, for wooden plaques for historic buildings has been received from the erie landmark company in pennsylvania."
+  },
+  {
+   "name": "Demolition delay request, 37 Burrage Street",
+   "where": "text",
+   "quote": "richard mcgrath has received only one demolition delay request, 37 burrage street, that requires a hearing by the historical commission."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "community preservation act",
+  "demolition delay",
+  "architectural preservation district",
+  "building reuse",
+  "historic plaques",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

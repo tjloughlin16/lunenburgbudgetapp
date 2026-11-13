@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-02-22",
  "docid": "4656",
@@ -12,15 +12,211 @@
  },
  "votes": [
   {
-   "motion": "To let the reuse committee know that PACC would like to stay in the current location, would use more space if available, and would pay a little for renovation",
-   "moved_by": "Faith Beall",
-   "seconded_by": "",
+   "motion": "Faith moved to let the building reuse committee know that PACC would like to stay in its current location, would use more space if available, and would pay a little for renovation.",
+   "moved_by": "Faith",
    "outcome": "not stated",
    "procedural": false,
    "quote": "faith made a motion to let the reuse committee know that we would like to stay in our current location, we would use more space if available, and we would pay a little for renovation."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One motion recorded but no vote result stated in minutes. Minutes are handwritten originals scanned; one clear motion visible. No procedural votes (adjournment, approval of prior minutes) were formally recorded as motions in these minutes.",
- "cost_usd": 0.0877445
+ "note": "No votes are recorded except one motion with no result printed. Approval of minutes, the extension, and adjournment are not recorded as votes. Public comment says 'No comments', so no speakers are listed. The header says minutes from Jan 4, 2015 while the meeting is Feb 22, 2016, and the signature is dated 3/28/2016. The 11.3.15 FATV notes are appended with no document heading. Some quotes collapse line breaks and extra spaces.",
+ "cost_usd": 0.00473782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member; signed the minutes as PACC Clerk",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Non-member; presented the building reuse committee report",
+   "status": "present",
+   "quote": "non-members present were jamie toale, jo mclaughlin, and john henshaw."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jamie toale, jo mclaughlin, and john henshaw."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jamie toale, jo mclaughlin, and john henshaw."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to give Jo more time to complete the PACC Fiscal 2015 Annual Report (a report for the town hall to add to the town 2015 financial report).",
+   "quote": "an extension was agreed on by the committee to give jo more time to get this together."
+  },
+  {
+   "decision": "The committee agreed to work on a more concrete business plan for its next meeting, following Steve's presentation of his vision.",
+   "quote": "we will work on a more concrete plan for our next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly account balance",
+   "what_was_recorded": "The coordinator reported the February ending balance.",
+   "figures_as_printed": [
+    "$281,261.55"
+   ],
+   "quote": "feb ending balance was $281,261.55."
+  },
+  {
+   "topic": "Town budget submission (health insurance)",
+   "what_was_recorded": "Jo's health insurance was added to the budget and submitted; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "jo's health insurance was added to the budget and was submitted."
+  },
+  {
+   "topic": "Building renovation cost share",
+   "what_was_recorded": "The motion said PACC would pay a little for renovation; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "faith made a motion to let the reuse committee know that we would like to stay in our current location, we would use more space if available, and we would pay a little for renovation."
+  },
+  {
+   "topic": "FATV TelVue purchase cost",
+   "what_was_recorded": "FATV spent money to acquire TelVue and said it would otherwise dislike the system; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "if they hadn't spent the money to use telvue, they would trash the whole system."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 6:03pm; no action",
+   "quote": "meeting called to order at 6:03pm.",
+   "tags": [
+    "call to order",
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "quote": "public comments: 1. no comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Building reuse committee report",
+   "resolution": "presented; motion to tell reuse committee PACC wants to stay in current location (outcome not stated)",
+   "quote": "building reuse committee report by jamie toale.",
+   "tags": [
+    "building reuse",
+    "facilities",
+    "long-term plan"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "no minutes approved",
+   "quote": "review and approve meeting minutes from jan 4, 2015: 1. no minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "reported; no action",
+   "quote": "coordinator's monthly report: 1. feb ending balance was $281,261.55.",
+   "tags": [
+    "coordinator report",
+    "programming",
+    "FATV",
+    "budget"
+   ]
+  },
+  {
+   "topic": "PACC Fiscal 2015 Annual Report",
+   "resolution": "extension granted to the committee member preparing it",
+   "quote": "an extension was agreed on by the committee to give jo more time to get this together.",
+   "tags": [
+    "annual report",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Update of meeting with town manager: budget and strategic plans",
+   "resolution": "reported; no action",
+   "quote": "update of meeting with town manager: budget and strategic plans.",
+   "tags": [
+    "budget",
+    "strategic plan",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Cable advisory committee update: Business Plan",
+   "resolution": "Steve presented vision; concrete plan deferred to next meeting",
+   "quote": "steve presented his vision of a business plan.",
+   "tags": [
+    "business plan"
+   ]
+  },
+  {
+   "topic": "FATV TelVue meeting notes (11.3.15)",
+   "resolution": "notes attached to minutes; no action recorded",
+   "quote": "meeting notes 11.3.15 - meeting with fatv to discuss telvue fatv got telvue in july 2015.",
+   "tags": [
+    "FATV",
+    "TelVue",
+    "equipment",
+    "complaints"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:05pm; no motion recorded",
+   "quote": "meeting adjourned at 8:05pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Meeting Notes 11.3.15 (FATV meeting on TelVue)",
+   "where": "text",
+   "quote": "meeting notes 11.3.15 - meeting with fatv to discuss telvue fatv got telvue in july 2015."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "budget",
+  "FATV",
+  "TelVue",
+  "building reuse",
+  "annual report",
+  "business plan",
+  "town manager"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

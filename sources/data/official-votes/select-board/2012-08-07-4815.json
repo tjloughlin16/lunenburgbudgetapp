@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-08-07",
  "docid": "4815",
@@ -12,31 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Appoint Todd Blake to the School Committee vacancy",
-   "moved_by": "Mr. Mackin",
-   "seconded_by": "Mr. Berthiaume",
-   "outcome": "passed 7-0",
+   "motion": "Approve the Fire Chief employment contract (voted at the prior meeting in Executive Session); described as a unanimous vote to support.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. matthews called for a roll call vote to appoint mr. todd blake to the school committee. mackin - aye berthiaume - aye grady - aye shapiro - aye matthews - aye alonzo - aye bertram - aye"
+   "quote": "mr. matthews said that this contract was voted on at the last meeting in executive session and that it was a unanimous vote to support."
   },
   {
-   "motion": "Begin the process toward a Town Meeting for EPG Solar net metering credits",
+   "motion": "Appoint Todd Blake to the School Committee vacancy, by roll call vote.",
+   "moved_by": "Mr. Mackin",
+   "seconded_by": "Mr. Berthiaume",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. matthews called for a roll call vote to appoint mr. todd blake to the school committee."
+  },
+  {
+   "motion": "Start the process toward a Town Meeting for the EPG Solar net metering project, commit to going to Town Meeting, without committing to any agreements yet.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Mr. Sund",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
    "quote": "mr. debettencourt moved the vote. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve FY12 year-end budget transfers of $220.53 from Treasurer's Administration to Administrative Fee/Loans and $21,152.82 from Health Insurance to Central Purchasing",
+   "motion": "Approve the FY12 year-end budget transfers under MGL C. 44, Section 33B as identified by the Town Manager.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Mr. Sund",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
    "quote": "mr. debettencourt moved to approve the transfers as identified by the town manager. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the regular meeting",
+   "motion": "Adjourn the regular session at 8:20PM.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed unanimously",
@@ -45,6 +53,482 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1615695
+ "note": "OCR-extracted text with errors (e.g., '1O0K' for $100K, 'Bethiaume', 'Mir.', 'diffficult', 'currant'); quotes were copied as printed. The warrant amounts appear in an unlabeled list, so the minutes do not tie each figure to a specific warrant. The Fire Chief contract vote was taken at a prior meeting in Executive Session and is recorded only as reported here. The public comment heading has no speakers recorded. Attendance for Londa, Sullivan, the School Committee candidates and the recording secretary is not stated. The minutes give no vote totals for the School Committee roll call beyond the individual Aye votes.",
+ "cost_usd": 0.011935320000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "present from the school committee were: michael mackin, colleen shapiro, gregory berthiaume, and participating via remote participation was brendan grady."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "present from the school committee were: michael mackin, colleen shapiro, gregory berthiaume, and participating via remote participation was brendan grady."
+  },
+  {
+   "name": "Gregory Berthiaume",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "present from the school committee were: michael mackin, colleen shapiro, gregory berthiaume, and participating via remote participation was brendan grady."
+  },
+  {
+   "name": "Brendan Grady",
+   "role": "School Committee",
+   "status": "remote",
+   "quote": "present from the school committee were: michael mackin, colleen shapiro, gregory berthiaume, and participating via remote participation was brendan grady."
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "superintendent loxi calmes was also present at the meeting."
+  },
+  {
+   "name": "Mike Borkowski",
+   "role": "EPG Solar",
+   "status": "present",
+   "quote": "mike borkowski from epg solar will be giving a presentation to the bos regarding the town's purchasing of net metering credits from this project."
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "not stated",
+   "quote": "ms. speidel and director of facilities john londa, have reviewed this proposal"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief (appointee)",
+   "status": "not stated",
+   "quote": "the town has entered into a 3 year agreement with patrick sullivan to serve as fire chief for the town of lunenburg."
+  },
+  {
+   "name": "Todd Blake",
+   "role": "School Committee candidate",
+   "status": "not stated",
+   "quote": "mr. mackin nominated todd blake for the open position on the school committee."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "School Committee candidate",
+   "status": "not stated",
+   "quote": "mr. sund nominated anthony caiozzo for the school committee position."
+  },
+  {
+   "name": "Meek La Veck",
+   "role": "School Committee candidate",
+   "status": "not stated",
+   "quote": "encouraged mr. caiozzo and mr. meek la veck to seek other volunteer opportunities within the town government."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Speidel will ask the Assessors office to provide an updated estimated Assessed Valuation Calculation for the EPG Solar project.",
+   "quote": "ms. speidel will ask the assessors office to provide an updated estimated assessed valuation calculation."
+  },
+  {
+   "decision": "Ms. Speidel is to investigate whether an interim step can be taken to move the EPG Solar project forward.",
+   "quote": "she is investigating if there is an interim step which could be taken in order to get this moving"
+  },
+  {
+   "decision": "Town Counsel's review of the MSBA Contract/Feasibility Study is not complete; a draft will be sent to the BOS and the item placed on next week's agenda.",
+   "quote": "ms. speidel stated that counsel has not completed the review, a draft copy will be sent to the bos for review, and this item will be on the agenda for next weeks bos meeting."
+  },
+  {
+   "decision": "Ms. Bertram requested copies of Town Counsel correspondence on the Open Meeting Law.",
+   "quote": "ms. bertram requested copies of correspondence from town counsel concerning the open meeting law."
+  },
+  {
+   "decision": "Ms. Speidel will ask Kopelman & Page about scheduling an Open Meeting Law workshop; the Town Clerk is working on scheduling it for September or October.",
+   "quote": "ms. speidel replied that the town clerk is working on a scheduling one with them either in september or october."
+  },
+  {
+   "decision": "Ms. Speidel will provide the BOS with updates on the Rod & Gun Club noise complaint as she receives them.",
+   "quote": "she will provide the bos with updates when she receives them."
+  },
+  {
+   "decision": "Ms. Speidel will obtain the DPW project list for the next meeting.",
+   "quote": "she had just received it today, has not had a chance to review it yet, and should have it for the next meeting."
+  },
+  {
+   "decision": "Ms. Speidel will follow up with the developers interested in the Primary School Building about changes to their funding agreement.",
+   "quote": "ms. speidel will follow up with them."
+  },
+  {
+   "decision": "Ms. Speidel will investigate the damaged Lunenburg/Fitchburg town line sign, and Fitchburg is to be contacted about a joint replacement and cleanup.",
+   "quote": "ms. speidel will investigate this matter."
+  },
+  {
+   "decision": "Ms. Calmes will forward the MSBA Contract/Feasibility Study to the BOS for review once Town Counsel finishes.",
+   "quote": "it is currently being reviewed by town counsel and ms. calmes will forward it to the bos for review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Chief employment contract salary",
+   "what_was_recorded": "The three-year Fire Chief contract salary is set out by fiscal year.",
+   "quote": "salary for this position for fy13 is $80,000, fy14 $82,000,and for fy15 $84,000.",
+   "figures_as_printed": [
+    "$80,000",
+    "$82,000",
+    "$84,000"
+   ]
+  },
+  {
+   "topic": "EPG Solar net metering projected savings",
+   "what_was_recorded": "Ms. Speidel and the Director of Facilities reviewed the proposal, which is said to save the town approximately an annual amount in utility costs.",
+   "quote": "save the town approximately $80k - $1o0k annually in utility costs.",
+   "figures_as_printed": [
+    "$80K - $1O0K"
+   ]
+  },
+  {
+   "topic": "EPG Solar PILOT tax payments",
+   "what_was_recorded": "Mr. Borkowski requested a PILOT agreement to straight-line EPG's tax payments to the Town for a steadier cash flow; the Assessors are to provide an updated estimate.",
+   "quote": "he requested a pilot agreement that epg's tax payments to the town be straight lined over a period of time",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY12 year-end budget transfers",
+   "what_was_recorded": "Two transfers were requested: $220.53 from Treasurer's Administration to Administrative Fee/Loans, and $21,152.82 from Health Insurance to Central Purchasing.",
+   "quote": "ms. speidel made a request to the board under mgl c. 44, section 33b, to transfer $220.53 from the treasurer's administration",
+   "figures_as_printed": [
+    "$220.53",
+    "$21,152.82"
+   ]
+  },
+  {
+   "topic": "Warrant amounts listed under Minutes/Warrants/Action File Issues",
+   "what_was_recorded": "Warrant dollar amounts are printed in the list, without labels tying each amount to a specific warrant.",
+   "quote": "w/3p-13 $316,612.55 $616,156.60 $96,543.34 $7.54 $520,363.30",
+   "figures_as_printed": [
+    "$316,612.55",
+    "$616,156.60",
+    "$96,543.34",
+    "$7.54",
+    "$520,363.30"
+   ]
+  },
+  {
+   "topic": "October 2011 Ice Storm FEMA/MEMA reimbursement",
+   "what_was_recorded": "Several requests totaling approximately $607,000 were submitted; the contracts received from the State totaled $447,000 and were signed and returned.",
+   "quote": "several different requests had been submitted for approximately $607,000. the contracts received yesterday from the state totaled $447,000, were signed and returned to ema.",
+   "figures_as_printed": [
+    "$607,000",
+    "$447,000"
+   ]
+  },
+  {
+   "topic": "2008 Ice Storm 25% remainder",
+   "what_was_recorded": "The Town appealed to the State for payment of the 25% remainder of the reimbursement not covered by FEMA; a letter was sent with no reply.",
+   "quote": "which was not reimbursed from fema. he asked about the letter",
+   "figures_as_printed": [
+    "25%"
+   ]
+  },
+  {
+   "topic": "State Transportation Bond Bill design money for Summer St. project",
+   "what_was_recorded": "The bond bill includes the remainder of design money for the Summer St. project, covering 80% of the design; it awaits the Governor's signature.",
+   "quote": "this includes the remainder of the design money for the summer st. project, which will cover 80% of the design.",
+   "figures_as_printed": [
+    "80%"
+   ]
+  },
+  {
+   "topic": "State tax rate ranking",
+   "what_was_recorded": "Lunenburg's tax rate was ranked high in a State survey, but its valuation is said to be 10% below the State average.",
+   "quote": "which lunenburg is currently taxed at 10% below the state average.",
+   "figures_as_printed": [
+    "10%"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Treasurer's Administration to Administrative Fee/Loans (FY12 year-end, MGL C. 44, Section 33B)",
+   "outcome": "passed, 5 in favor, 0 opposed",
+   "amount_as_printed": "$220.53",
+   "quote": "ms. speidel made a request to the board under mgl c. 44, section 33b, to transfer $220.53 from the treasurer's administration"
+  },
+  {
+   "description": "Transfer from Health Insurance to Central Purchasing (FY12 year-end)",
+   "outcome": "passed, 5 in favor, 0 opposed",
+   "amount_as_printed": "$21,152.82",
+   "quote": "a transfer of $21,152.82 from health insurance to central purchasing."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment recorded",
+   "quote": "7:00pm public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcement: Fire Chief employment contract",
+   "resolution": "announced",
+   "quote": "speidel announced on behalf of the bos that the town has entered into a 3 year agreement with patrick sullivan to serve",
+   "tags": [
+    "fire chief",
+    "contract",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Joint meeting with School Committee: appointment to vacancy",
+   "resolution": "appointed Todd Blake",
+   "quote": "school committee members called their meeting to order for the joint meeting with the bos to appoint a person to",
+   "tags": [
+    "school committee",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "EPG Solar net metering credits offer",
+   "resolution": "approved starting process toward Town Meeting; no agreements committed",
+   "quote": "mike borkowski from epg solar will be giving a presentation to the bos regarding the town's purchasing of net metering credits",
+   "tags": [
+    "solar",
+    "net metering",
+    "town meeting",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "State Primary posting, sign warrant",
+   "resolution": "warrant signed",
+   "quote": "ms. speidel presented a warrant for the state primary posting which",
+   "tags": [
+    "election",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "FY12 year-end budget transfers",
+   "resolution": "approved",
+   "quote": "ms. speidel made a request to the board under mgl c. 44, section 33b, to",
+   "tags": [
+    "budget",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "MSBA Contract, Feasibility Study",
+   "resolution": "continued; Town Counsel review pending, on next week's agenda",
+   "quote": "calmes updated the bos on the timeline for returning the msba contract/feasibility study to the state",
+   "tags": [
+    "school building",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no action",
+   "quote": "5. minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants",
+    "DPW",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Rod & Gun Club noise complaint",
+   "resolution": "referred to Building Inspector; updates to follow",
+   "quote": "mr. matthews reported that a neighbor of the n. leominster rod & gun club on lancaster ave had complained",
+   "tags": [
+    "noise",
+    "zoning",
+    "complaint"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; follow-ups assigned",
+   "quote": "mr. alonzo reported that the finance committee met a couple of weeks ago and discussed",
+   "tags": [
+    "finance committee",
+    "school building committee",
+    "primary school",
+    "fitchburg sign"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "quote": "4. department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "reported; no action",
+   "quote": "ms. speidel mentioned that she had received the contracts back from mema in regards",
+   "tags": [
+    "ice storm",
+    "state bond bill",
+    "reimbursement"
+   ]
+  },
+  {
+   "topic": "Old business; appointments, re-appointments, resignations",
+   "resolution": "none",
+   "quote": "old business - none appointments/re-appointments/resignations - none",
+   "tags": []
+  },
+  {
+   "topic": "State tax rate ranking discussion",
+   "resolution": "discussion only; no action",
+   "quote": "mr. sund mentioned that he saw a survey concerning tax rates within the state",
+   "tags": [
+    "tax rates",
+    "valuation"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20PM",
+   "quote": "being no further business mr. debettencourt motioned to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "EPG Solar presentation (distributed by Mr. Borkowski)",
+   "where": "text",
+   "quote": "mr. borkowski distributed a presentation to the bos"
+  },
+  {
+   "name": "Warrant for the State Primary posting",
+   "where": "text",
+   "quote": "ms. speidel presented a warrant for the state primary posting which"
+  },
+  {
+   "name": "Request for FY12 year-end transfers under MGL C. 44, Section 33B",
+   "where": "text",
+   "quote": "ms. speidel made a request to the board under mgl c. 44, section 33b, to"
+  },
+  {
+   "name": "Power Purchase agreement (EPG Solar)",
+   "where": "text",
+   "quote": "the power purchase agreement is a 20 year agreement and any contract over 3 years needs town"
+  },
+  {
+   "name": "MSBA Contract, Feasibility Study",
+   "where": "text",
+   "quote": "it is currently being reviewed by town counsel and ms. calmes will forward it to the bos for review."
+  },
+  {
+   "name": "Minutes and warrants listed under Minutes/Warrants/Action File Issues",
+   "where": "text",
+   "quote": "5. minutes/warrants/action file issues"
+  },
+  {
+   "name": "DPW project list",
+   "where": "text",
+   "quote": "mr. sund asked about the project list from dpw"
+  },
+  {
+   "name": "Town Counsel correspondence concerning the Open Meeting Law",
+   "where": "text",
+   "quote": "ms. bertram requested copies of correspondence from town counsel concerning the open meeting law."
+  },
+  {
+   "name": "Contracts from MEMA / State for the October 2011 Ice Storm reimbursement",
+   "where": "text",
+   "quote": "the contracts received yesterday from the state totaled $447,000, were signed and returned to ema."
+  },
+  {
+   "name": "Letter to the Governor and State Reps regarding 2008 Ice Storm reimbursement",
+   "where": "text",
+   "quote": "he asked about the letter, which was signed off on by other communities, to be sent to the governor and the state reps."
+  },
+  {
+   "name": "State Transportation Bond Bill",
+   "where": "text",
+   "quote": "ms. speidel said that the state transportation bond bill was approved by the legislature."
+  },
+  {
+   "name": "Survey concerning tax rates within the State",
+   "where": "text",
+   "quote": "mr. sund mentioned that he saw a survey concerning tax rates within the state"
+  }
+ ],
+ "tags": [
+  "fire chief contract",
+  "school committee appointment",
+  "EPG Solar",
+  "net metering",
+  "Town Meeting",
+  "PILOT",
+  "budget transfers",
+  "MSBA feasibility study",
+  "ice storm reimbursement",
+  "state bond bill",
+  "tax rates",
+  "Rod & Gun Club",
+  "open meeting law",
+  "Fitchburg town line sign"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

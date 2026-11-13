@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2015-01-13",
  "docid": "1213",
@@ -12,37 +12,317 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the Tuesday, January 6, 2015 CPC meeting as corrected",
+   "motion": "Raise the priority of $34,000 for upgraded technology for Town Departments from 11 to priority 9.",
+   "moved_by": "John",
+   "seconded_by": "Joanna",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "john moved to raise the priority of $34,000 for upgraded technology for town departments from 11 to priority 9. joanna seconded his motion."
+  },
+  {
+   "motion": "Recommend that the Town fund the ten highest priority capital items, total estimated cost $1,028,778, and that the Town Manager consider borrowing for one, two or all three of the dump truck, backhoe and street sweeper.",
+   "moved_by": "Jamie",
+   "seconded_by": "Heather",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "jamie moved that the cpc recommend that the town fund the ten highest priority items with a total estimated cost of $1,028,778"
+  },
+  {
+   "motion": "Approve the minutes of the Tuesday, January 6 CPC meeting as corrected.",
+   "moved_by": "not stated",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "the committee approved the minutes of the tuesday, january 6 cpc meeting as corrected, 5-0,"
   },
   {
-   "motion": "Raise the priority of $34,000 for upgraded technology for Town Departments from priority 11 to priority 9",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Joanna Bilotta-Simeone",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "john moved to raise the priority of $34,000 for upgraded technology for town departments from 11 to priority 9. joanna seconded his motion. this would dramatically increase the probability that the upgrade to town technology is funded. the motion was approved 5-0."
-  },
-  {
-   "motion": "Recommend that the Town fund the ten highest priority capital items with a total estimated cost of $1,028,778, and recommend the Town Manager consider borrowing to pay for capital purchases of $100,000 or more (dump truck, backhoe, and street sweeper)",
-   "moved_by": "Jamie Toale",
-   "seconded_by": "Heather Sroka",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "jamie moved that the cpc recommend that the town fund the ten highest priority items with a total estimated cost of $1,028,778, and that the cpc recommend the town manager consider borrowing to pay for one, two or all three of the capital purchases that cost $100,000 or more the dump truck, the backhoe, and the street sweeper. heather seconded his motion and the committee voted 5-0 in favor."
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Joanna Bilotta-Simeone",
-   "seconded_by": "Heather Sroka",
+   "motion": "Adjourn the meeting (adjourned at 6:36 pm).",
+   "moved_by": "Joanna",
+   "seconded_by": "Heather",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "joanna made a motion to adjourn the meeting. heather seconded the motion and the committee voted 5-0 to adjourn at 6:36 pm."
+   "quote": "joanna made a motion to adjourn the meeting. heather seconded the motion and the committee voted 5-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0954925
+ "note": "Scanned page text (macOS Vision OCR) of the minutes. The text gives the asbestos project total as $1,092,500, but the phase table's printed total is $1,192,500, and the table entries sum to $1,192,500; both are recorded as printed. The OCR column order for the FY2020-FY2022 table rows is ambiguous. The mover of the approval-of-minutes motion is not printed. No public comment speakers are recorded (\"No public comment.\"). Kerry's role is not printed. Vote outcomes are taken from the printed \"5-0\" counts.",
+ "cost_usd": 0.008768419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., vice-chairman"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "john henshaw, clerk joanna bilotta-simeone, member"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "joanna bilotta-simeone, member"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "heather sroka, member"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry speidel, dennis mannone, jr., joanna bilotta-simeone, heather sroka, jamie toale,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The CPC agreed that borrowing is an option for funding large capital requests, under stated guidelines (borrow for projects of $100,000 or more; loan term not beyond useful life; debt service under 4% of tax levy or 3% of omnibus budget, whichever is lower; Town Manager sets term and down payment).",
+   "quote": "the cpc agreed that borrowing is an option when funding large capital requests, provided"
+  },
+  {
+   "decision": "The priority of the street sweeper and the police speed sign dropped from 9 to 10 and from 10 to 11 respectively.",
+   "quote": "the priority of the street sweeper and the police speed sign dropped from 9 to 10 and 10 to"
+  },
+  {
+   "decision": "Jamie Toale to locate and review the B-1 form the school submitted in the FY 2014 capital project request process.",
+   "quote": "action: jamie will locate and review the b-1 form submitted by the school in the fy 2014"
+  },
+  {
+   "decision": "Jamie to respond to the email from Superintendent Loxi Calmes about the low priority assigned to the request for additional Phase 1 asbestos abatement funds.",
+   "quote": "jamie will respond to the email from superintendent loxi calmes regarding the cpc decision to"
+  },
+  {
+   "decision": "Jamie to present the priority and borrowing recommendation to the Finance Committee on Thursday, January 22 at 7:00 in the Bilotta Meeting Room; next CPC meeting date to be decided then or after.",
+   "quote": "jamie will present the priority and borrowing recommendation to the finance committee on thursday, january 22 at 7:00 in the bilotta meeting room."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turkey Hill Middle School asbestos abatement FY2016 request",
+   "what_was_recorded": "School Department requested $34,500 to augment the $138,000 approved at the prior Annual Town Meeting, because $138,000 was insufficient for the FY2015 scope.",
+   "figures_as_printed": [
+    "$34,500",
+    "$138,000"
+   ],
+   "quote": "the fy 2016 request is for $34,500 to augment the $138,000 that the capital planning committee"
+  },
+  {
+   "topic": "Total estimated cost of multi-phase asbestos abatement project",
+   "what_was_recorded": "Seven phases (covered by eight requests) with an estimated total cost stated in the text as $1,092,500; the phase table's printed total is $1,192,500.",
+   "figures_as_printed": [
+    "$1,092,500"
+   ],
+   "quote": "however, seven phases (covered by eight requests) with an estimated total cost of $1,092,500"
+  },
+  {
+   "topic": "Asbestos abatement phase-by-phase schedule",
+   "what_was_recorded": "Table of phase amounts by fiscal year from FY 2015 to FY 2022, with a printed total of $1,192,500.",
+   "figures_as_printed": [
+    "$138,000",
+    "$34,500",
+    "$182,000",
+    "$203,000",
+    "$183,000",
+    "$142,000",
+    "$196,000",
+    "$114,000",
+    "$1,192,500"
+   ],
+   "quote": "fy 2015 (approved) 1 $138,000"
+  },
+  {
+   "topic": "Levy limit and asbestos project",
+   "what_was_recorded": "Kerry stated the Town has never tried to fund a project of this size within the levy limit.",
+   "figures_as_printed": [],
+   "quote": "kerry stated that the town has never tried to fund a project of this size within the levy limit."
+  },
+  {
+   "topic": "Effect of asbestos project on other capital requests",
+   "what_was_recorded": "Table of high-cost capital requests through FY 2020 that the project would constrain, listing Fire Engine #4, Police Vehicle, Ladder 1 Truck, 10 Wheel Dump Truck, and Rescue 1.",
+   "figures_as_printed": [
+    "$600,000",
+    "$144,000",
+    "$850,000",
+    "$210,000",
+    "$300,000"
+   ],
+   "quote": "the table below lists most of the high cost capital requests through fy 2020."
+  },
+  {
+   "topic": "Library carpet replacement - added moving and storage cost",
+   "what_was_recorded": "Library requested an added $28,476 to move and store books during carpet replacement; the original quote excluded this cost and it will likely not be funded.",
+   "figures_as_printed": [
+    "$28,476"
+   ],
+   "quote": "jamie notified the library of the low priority of their request for an added $28,476 to move and"
+  },
+  {
+   "topic": "Library carpet replacement - approved funds",
+   "what_was_recorded": "The $36,524 approved at the May ATM for carpet replacement cannot be used as authorized and will not be expended now.",
+   "figures_as_printed": [
+    "$36,524"
+   ],
+   "quote": "this means that the $36,524 they requested to replace the carpet and that was approved at the"
+  },
+  {
+   "topic": "Borrowing threshold",
+   "what_was_recorded": "The Town may borrow to fund projects costing $100,000 or more, under the CPC borrowing guidelines.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the town may borrow to fund projects costing $100,000 or more."
+  },
+  {
+   "topic": "Upgraded technology for Town Departments priority change",
+   "what_was_recorded": "Motion to raise priority of $34,000 upgraded technology request from 11 to 9, approved 5-0.",
+   "figures_as_printed": [
+    "$34,000"
+   ],
+   "quote": "john moved to raise the priority of $34,000 for upgraded technology for town departments from 11 to priority 9."
+  },
+  {
+   "topic": "Ten highest priority capital items total",
+   "what_was_recorded": "CPC recommended the Town fund the ten highest priority items with a total estimated cost of $1,028,778.",
+   "figures_as_printed": [
+    "$1,028,778"
+   ],
+   "quote": "jamie moved that the cpc recommend that the town fund the ten highest priority items with a total estimated cost of $1,028,778"
+  },
+  {
+   "topic": "Capital budget shortfall",
+   "what_was_recorded": "Recommended items exceed the capital budget by $178,778; Kerry must determine whether the Town can afford this in FY2016 or, if borrowing, the effect of debt service on future years.",
+   "figures_as_printed": [
+    "$178,778"
+   ],
+   "quote": "kerry stated that as this exceeded the capital budget by $178,778 she needed to determine"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Asbestos Abatement Projects at Turkey Hill Middle School",
+   "resolution": "discussed; action items assigned to Jamie",
+   "quote": "the committee discussed the asbestos abatement projects at turkey hill middle school requested by the",
+   "tags": [
+    "asbestos abatement",
+    "Turkey Hill Middle School",
+    "school department"
+   ]
+  },
+  {
+   "topic": "Implications of the scope of the asbestos abatement project",
+   "resolution": "discussed; no vote",
+   "quote": "implications of the scope of the asbestos abatement project:",
+   "tags": [
+    "capital budget",
+    "levy limit"
+   ]
+  },
+  {
+   "topic": "Library carpet replacement",
+   "resolution": "Library notified of low priority; Board of Trustees to respond",
+   "quote": "jamie notified the library of the low priority of their request for an added $28,476 to move and",
+   "tags": [
+    "library",
+    "carpet replacement"
+   ]
+  },
+  {
+   "topic": "Borrowing and Prioritizing Capital Requests",
+   "resolution": "priority of technology raised 5-0; top ten items recommended 5-0; borrowing guidelines agreed",
+   "quote": "borrowing and prioritizing capital requests:",
+   "tags": [
+    "borrowing",
+    "capital priorities",
+    "debt service"
+   ]
+  },
+  {
+   "topic": "Action item: response to Superintendent email",
+   "resolution": "assigned to Jamie",
+   "quote": "jamie will respond to the email from superintendent loxi calmes regarding the cpc decision to",
+   "tags": [
+    "school department",
+    "asbestos abatement"
+   ]
+  },
+  {
+   "topic": "Approval of January 6 CPC minutes",
+   "resolution": "approved as corrected 5-0",
+   "quote": "the committee approved the minutes of the tuesday, january 6 cpc meeting as corrected, 5-0,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Presentation to Finance Committee",
+   "resolution": "Jamie to present on January 22",
+   "quote": "jamie will present the priority and borrowing recommendation to the finance committee on thursday,",
+   "tags": [
+    "Finance Committee",
+    "capital priorities"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 6:36 pm",
+   "quote": "joanna made a motion to adjourn the meeting. heather seconded the motion and the committee voted 5-0",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PRIORITY WORKSHEET Third Pass for TM discussion.xisx (distributed by Jamie to the committee on January 7)",
+   "where": "text",
+   "quote": "please refer to priority worksheet third pass for tm discussion.xisx distributed by jamie to the"
+  },
+  {
+   "name": "B-1 form submitted by the school in the FY 2014 capital project request process",
+   "where": "text",
+   "quote": "action: jamie will locate and review the b-1 form submitted by the school in the fy 2014"
+  },
+  {
+   "name": "Capital request submission by the school department dated Sept. 2013",
+   "where": "text",
+   "quote": "substantiated on a capital request submission by the school department dated sept. 2013."
+  },
+  {
+   "name": "Email from Superintendent Loxi Calmes",
+   "where": "text",
+   "quote": "jamie will respond to the email from superintendent loxi calmes regarding the cpc decision to"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "asbestos abatement",
+  "Turkey Hill Middle School",
+  "school department",
+  "library",
+  "borrowing",
+  "capital priorities",
+  "FY2016 budget",
+  "levy limit",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "please refer to priority worksheet third pass for tm discussion.xisx"
+ },
+ "dropped_unquoted_by_field": {}
 }

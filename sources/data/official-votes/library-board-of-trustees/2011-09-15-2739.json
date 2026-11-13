@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2011-09-15",
  "docid": "2739",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes as amended from June 16, 2011",
+   "motion": "Accept the minutes of June 16, 2011 as amended.",
    "moved_by": "LK",
    "seconded_by": "NB",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "motion made by lk and seconded by nb, to u nanimously accept minutes as amended from june 16, 2011."
   },
   {
-   "motion": "Close Lunenburg Public Library on December 24 & 26, 2011; January 2, 2012",
+   "motion": "Close the library on Dec. 24 and Dec. 26, 2011, and on Jan. 2, 2012.",
    "moved_by": "NB",
    "seconded_by": "LS",
    "outcome": "passed unanimously",
@@ -28,15 +28,265 @@
    "quote": "nb made motion to close lpl on dec . 24 & 26, 2011; jan. 2, 2012, ls seconded, unanimous to close library on these dates."
   },
   {
-   "motion": "Adjourn at 8:10 pm",
+   "motion": "Adjourn the meeting at 8:10 pm.",
    "moved_by": "JM",
    "seconded_by": "LK",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion made by jm, seconded by lk to adjourn at 8:1 0 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR text as provided; spacing preserved from source.",
- "cost_usd": 0.1201545
+ "dropped_unquoted": 1,
+ "note": "Text is a plain extraction with word-split artifacts (e.g., 'Rabo in', 'u nanimously'); the attendance line prints 'Jeanne Rabo in', and the name is taken as 'Jeanne Raboin' from the signature. Roles for trustees are not printed. Adjournment vote result is not printed. The minutes refer to a 'report' and a 'handout' (Capital Plan FY2013) but set out no document list, so documents_list is not printed. No dollar figure was recorded for the Great Hall, capital or staffing items beyond those listed.",
+ "cost_usd": 0.004935019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "",
+   "status": "present",
+   "quote": "noelle bodkin, lisa krowitz, john mara, jeanne rabo in, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "",
+   "status": "present",
+   "quote": "noelle bodkin, lisa krowitz, john mara, jeanne rabo in, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "role": "",
+   "status": "present",
+   "quote": "noelle bodkin, lisa krowitz, john mara, jeanne rabo in, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "jeanne raboin, secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "",
+   "status": "present",
+   "quote": "noelle bodkin, lisa krowitz, john mara, jeanne rabo in, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "",
+   "status": "present",
+   "quote": "noelle bodkin, lisa krowitz, john mara, jeanne rabo in, amy sadkin, len smetana"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: richard mailloux, kathy murray"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: richard mailloux, kathy murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustees declined the request to use the Great Hall for a wedding ceremony, citing the LPL policy on after-hours library use; John Mara will draft a letter of regret for trustee review.",
+   "quote": "john will draft a letter of regret and will send to trustees for revi ew."
+  },
+  {
+   "decision": "Trustees would add exterior doors and a handicapped access button (ADA compliance) to the FY2013 capital plan; roof and HVAC added to the inventory list for items $10K and up.",
+   "quote": "trustees would like to add exterior doors and include handicapped access b utton to be in ada compliance into the plan."
+  },
+  {
+   "decision": "Calendar of meetings: no conflict with the school calendar until April vacation week; the board will wait until then to decide whether to move a meeting.",
+   "quote": "no conflicts with school cale ndar until april vacation week"
+  },
+  {
+   "decision": "Evergreen software conversion pushed to January 2012, though this could change.",
+   "quote": "pushed to january 20 12 (but this could change)"
+  },
+  {
+   "decision": "No library closure needed for the new OPAC system; no new items to be shelved while cataloging is down for a month.",
+   "quote": "cataloging will be down for a m onth, so no new items to be shelved at this time."
+  },
+  {
+   "decision": "Freegal website not yet implemented or paid for.",
+   "quote": "freegal website not implemented nor paid for yet."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revolving Fund balance",
+   "what_was_recorded": "The Director reported the revolving fund balance.",
+   "figures_as_printed": [
+    "$9,391.39"
+   ],
+   "quote": "revolving fund balance: $9,391.39"
+  },
+  {
+   "topic": "Salary, July 2011 budget",
+   "what_was_recorded": "A step increase (described as a signing bonus) voted at Town Meeting for one LPL staff member was noted; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "july budget 2011 - salary: there was a step increas e (signing bonus) voted on at town meeting"
+  },
+  {
+   "topic": "Salary over budget",
+   "what_was_recorded": "Salary was a little over due to an extra pay period.",
+   "figures_as_printed": [],
+   "quote": "salary a little over due to extra pay period."
+  },
+  {
+   "topic": "Inventory threshold for capital items",
+   "what_was_recorded": "Roof and HVAC system added to the list of inventory items valued at $10K and up.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "roof a nd hvac system added to list of inventory items $10k and up ."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of June 16, 2011",
+   "resolution": "approved as amended",
+   "quote": "motion made by lk and seconded by nb, to u nanimously accept minutes as amended from june 16, 2011.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Calendar of meetings",
+   "resolution": "no action; revisit after April vacation week",
+   "quote": "no conflicts with school cale ndar until april vacation week",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Library closings calendar",
+   "resolution": "approved closures Dec. 24 and 26, 2011, and Jan. 2, 2012",
+   "quote": "nb made motion to close lpl on dec . 24 & 26, 2011; jan. 2, 2012, ls seconded, unanimous to close library on these dates.",
+   "tags": [
+    "closures",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Director's Report (summer and September 2011)",
+   "resolution": "received; no questions on summer report; staffing, gaming and circulation discussed",
+   "quote": "summer director's report: no questions",
+   "tags": [
+    "staffing",
+    "gaming",
+    "circulation"
+   ]
+  },
+  {
+   "topic": "State aid reports",
+   "resolution": "reported completed",
+   "quote": "state aid reports are completed: collections have i ncreased, lpl is a net lender",
+   "tags": [
+    "state aid"
+   ]
+  },
+  {
+   "topic": "OPAC system conversion",
+   "resolution": "no action; no closure needed, cataloging paused a month",
+   "quote": "cataloging will be down for a m onth, so no new items to be shelved at this time.",
+   "tags": [
+    "OPAC",
+    "cataloging"
+   ]
+  },
+  {
+   "topic": "Capital Plan FY2013",
+   "resolution": "items to present in 2013 plan discussed; exterior doors and ADA button to be added",
+   "quote": "trustees would like to add exterior doors and include handicapped access b utton to be in ada compliance into the plan.",
+   "tags": [
+    "capital plan",
+    "ADA"
+   ]
+  },
+  {
+   "topic": "Evergreen software conversion",
+   "resolution": "pushed to January 2012",
+   "quote": "pushed to january 20 12 (but this could change)",
+   "tags": [
+    "software",
+    "Evergreen",
+    "CWMars"
+   ]
+  },
+  {
+   "topic": "Other business: Friends book and bake sale",
+   "resolution": "noted, Oct. 1",
+   "quote": "friends of lpl book and bake sale o ct. 1.",
+   "tags": [
+    "Friends of LPL"
+   ]
+  },
+  {
+   "topic": "Great Hall wedding request",
+   "resolution": "declined under after-hours use policy; letter of regret to be drafted",
+   "quote": "john will draft a letter of regret and will send to trustees for revi ew.",
+   "tags": [
+    "Great Hall",
+    "facility use"
+   ]
+  },
+  {
+   "topic": "Freegal website",
+   "resolution": "not implemented or paid for",
+   "quote": "freegal website not implemented nor paid for yet.",
+   "tags": [
+    "Freegal"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Summer Director’s Report",
+   "where": "text",
+   "quote": "summer director's report: no questions"
+  },
+  {
+   "name": "September 2011 Director’s Report",
+   "where": "text",
+   "quote": "september 2011 director's report: see report"
+  },
+  {
+   "name": "Capital Plan FY2013 (handout)",
+   "where": "text",
+   "quote": "capital plan fy2013 (see handout): discussion about which items to present in the 2013 plan."
+  },
+  {
+   "name": "State Aid Reports",
+   "where": "text",
+   "quote": "state aid reports are completed: collections have i ncreased, lpl is a net lender"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "capital plan",
+  "staffing",
+  "library closures",
+  "software",
+  "Evergreen",
+  "gaming",
+  "facility use",
+  "Great Hall"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

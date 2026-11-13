@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-02-17",
  "docid": "2363",
@@ -12,23 +12,213 @@
  },
  "votes": [
   {
-   "motion": "approve the authorization allowing deficit spending for snow and ice removal",
+   "motion": "Approve the authorization allowing deficit spending for snow & ice removal.",
    "moved_by": "BR",
    "seconded_by": "MS",
-   "outcome": "unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "br made a motion to approve the authorization allowing deficit spending for snow & ice removal, ms second. vote to approve was unanimous."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 8:25 PM.",
    "moved_by": "ME",
    "seconded_by": "BR",
-   "outcome": "unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "me made motion to adjourn at 8:25 pm and br seconded. vote was unanimous."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are OCR'd from macOS Vision. All votes recorded. The Town Manager's preliminary budget proposal (item 3) was presented and discussed but no motion or vote on it was recorded in the minutes.",
- "cost_usd": 0.1114685
+ "dropped_unquoted": 1,
+ "note": "Text is OCR of a scanned minutes page; letterhead and signature block are partly garbled. Attendance is taken from the Present/Absent/Also Present lines. Martha McDonald left early (time not stated). No public comment section is printed; David Reif's remarks appear within the budget item. The 'Approved 3/3/11' line is a notation, and no vote approving these minutes is recorded in this meeting. Motions use initials as printed (BR, MS, ME). Schedule item BL reviewed the calendar with no figures or detail printed.",
+ "cost_usd": 0.005186219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond, martha mcdonald (left early), barbara reynolds, john male"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond, martha mcdonald (left early), barbara reynolds, john male"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond, martha mcdonald (left early), barbara reynolds, john male"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "martha mcdonald (left early), barbara reynolds, john male"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond, martha mcdonald (left early), barbara reynolds, john male"
+  },
+  {
+   "name": "John Male",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond, martha mcdonald (left early), barbara reynolds, john male"
+  },
+  {
+   "name": "Mike Mackin",
+   "status": "absent",
+   "quote": "mike mackin kerry speidel, town council members, several members of other committees, various department heads"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "mike mackin kerry speidel, town council members, several members of other committees, various department heads"
+  },
+  {
+   "name": "David Reif",
+   "role": "school committee chair",
+   "status": "present",
+   "quote": "david reif, school committee chair, said they are watching enrollment closely."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "KS agreed to show total town health insurance costs in the aggregate, in response to the school committee chair's request to take health insurance out of the school budget.",
+   "quote": "ks responded that the schools budget is required to include health insurance costs but agreed to show total town health insurance costs in the aggregate."
+  },
+  {
+   "decision": "KS agreed to provide the committee with a longer term view of debt service.",
+   "quote": "she agreed to provide a longer term view for the committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snow and ice removal budget and deficit spending",
+   "what_was_recorded": "The latest snow and ice expenditure report showed a budget, expenditures and in-process invoices; KS requested approval of deficit spending under MGL Chapter 44, Section 31D.",
+   "figures_as_printed": [
+    "$250,000",
+    "$236,528.93",
+    "$30,243.85"
+   ],
+   "quote": "the report shows a budget of $250,000, expenditures of $236,528.93, in-process invoices of $30,243.85."
+  },
+  {
+   "topic": "FY2012 property tax revenue",
+   "what_was_recorded": "Preliminary FY2012 budget proposal shows property tax revenue increasing by 4.21%.",
+   "figures_as_printed": [
+    "4.21%"
+   ],
+   "quote": "property tax revenue increases by 4.21%."
+  },
+  {
+   "topic": "FY2012 total revenue",
+   "what_was_recorded": "Preliminary FY2012 budget proposal shows total revenue increasing by 1.3%.",
+   "figures_as_printed": [
+    "1.3%"
+   ],
+   "quote": "total revenue increases by 1.3%"
+  },
+  {
+   "topic": "FY2012 expenditures",
+   "what_was_recorded": "Preliminary FY2012 budget proposal shows expenditures increasing by 2.03%, with a focus on services, not employees.",
+   "figures_as_printed": [
+    "2.03%"
+   ],
+   "quote": "expenditures increase by 2.03%, with a focus on services, not employees."
+  },
+  {
+   "topic": "Debt service",
+   "what_was_recorded": "Debt service decreases by $107,000 after including the loan on the new DPW facility.",
+   "figures_as_printed": [
+    "$107,000"
+   ],
+   "quote": "debt service decreases by $107,000, after including the loan on the new dpw facility."
+  },
+  {
+   "topic": "School budget increase",
+   "what_was_recorded": "KS recommended a 2.5% increase for schools, significantly less than the superintendent's recommendation, reflecting declining enrollments.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "ks recommends 2.5% increase in schools, noting this is significantly less than the superintendants recommendation"
+  },
+  {
+   "topic": "Health insurance costs in school budget",
+   "what_was_recorded": "The school committee chair asked that health insurance costs be taken out of the school budget to show school costs more fairly; KS said the schools budget must include them and agreed to show town-wide totals in aggregate. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "he asked if health insurance costs could be taken out from the school budget, as it is from other department budgets, to spotlight these costs and show school costs more fairly."
+  },
+  {
+   "topic": "Future school building debt service",
+   "what_was_recorded": "KS said future borrowing for school buildings would be exempt debt, so the impact is small; debt service peaked in FY11 and continues to decline. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "ks noted that this would be exempt debt, so the impact is small."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Reif",
+   "stated_role": "school committee chair",
+   "topic": "school health insurance costs and enrollment",
+   "quote": "david reif, school committee chair, said they are watching enrollment closely. he asked if health insurance costs could be taken out from the school budget"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Town Manager preliminary FY2012 budget proposal",
+   "resolution": "presented, no action",
+   "tags": [
+    "FY2012 budget",
+    "schools",
+    "debt service",
+    "health insurance"
+   ],
+   "quote": "ks presented the preliminary budget proposal for fy2012"
+  },
+  {
+   "topic": "Schedule for upcoming budget reviews",
+   "resolution": "reviewed, no action",
+   "tags": [
+    "budget calendar"
+   ],
+   "quote": "bl reviewed the calendar for future budget reviews over the next 6 weeks"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:25 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "me made motion to adjourn at 8:25 pm and br seconded. vote was unanimous."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "latest snow & ice expenditure report",
+   "where": "text",
+   "quote": "ks had distributed the latest snow & ice expenditure report prior to the meeting."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "snow and ice",
+  "deficit spending",
+  "FY2012 budget",
+  "schools",
+  "health insurance",
+  "debt service",
+  "budget calendar"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ks had distributed the latest snow & ice expenditure report prior to the meeting."
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

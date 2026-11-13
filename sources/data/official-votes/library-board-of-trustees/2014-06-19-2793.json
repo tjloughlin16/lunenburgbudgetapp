@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-06-19",
  "docid": "2793",
@@ -12,7 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept May 22 minutes",
+   "motion": "Accept the April 17 minutes as revised.",
+   "moved_by": "Lars",
+   "seconded_by": "Jean",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "motion to accept minutes as revis ed, by lars, second by jean, unanimous yes vote."
+  },
+  {
+   "motion": "Accept the May 20 minutes.",
+   "moved_by": "Gare",
+   "seconded_by": "Harry",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "motion to accept minutes by gare, s econd by harry, unanimous yes vote."
+  },
+  {
+   "motion": "Accept the May 22 minutes.",
    "moved_by": "Susan",
    "seconded_by": "Gare",
    "outcome": "passed unanimously",
@@ -20,16 +36,360 @@
    "quote": "motion to accept minutes by susan, second by gare, unanimous yes vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:26 p.m.",
    "moved_by": "Gare Thompson",
    "seconded_by": "Susan",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion to adjourn at 8:26 p.m., moved by gare thomp son, second by susan, unanimous yes vote",
+   "quote": "motion to adjourn at 8:26 p.m., moved by gare thomp son, second by susan, unanimous yes vote."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text extraction has many split words and spacing breaks (e.g., \"Jea n\", \"Thomp son\"); quotes reproduce them as printed. Director's report and Friends treasury report are referenced but their figures are not in the minutes. Votes are recorded as unanimous yes with no per-member counts printed.",
+ "cost_usd": 0.00902752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jean Raboin",
+   "status": "present",
+   "quote": "attending: jean raboin, robin venezia"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: jean raboin, robin venezia"
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "harry: first bullet on second page of report"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "present",
+   "quote": "susan: financial section"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "gare: ways that we can involve the library"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Bob Ebersol",
+   "role": "B.O.S.",
+   "status": "present",
+   "quote": "bob ebersol (b.o.s.)"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "brian laffond is stepping down from a long service to the lunenburg finance committee."
+  },
+  {
+   "name": "Lydia Henshaw",
+   "role": "Friends of LPL",
+   "status": "present",
+   "quote": "lydia henshaw, ( friends of lpl)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "absent",
+   "quote": "absent: dick mailloux, martha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "absent",
+   "quote": "absent: dick mailloux, martha moore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jean will send an informational email to the Finance Committee and Brian with the answer on what drove the reduction in heating cost.",
+   "quote": "committee/brian with the answer."
+  },
+  {
+   "decision": "Going forward the town should be made aware of monies the Friends spend on library maintenance; maintenance requests should be flagged in the budget, and real maintenance costs should be shown in the September budget planning.",
+   "quote": "should be made aware of the monies spent"
+  },
+  {
+   "decision": "Brian to prepare a request for a larger kitchen update for the Wallace room, or put it into the long-term or master plan if not now.",
+   "quote": "brian: prepare request for larger kitchen update"
+  },
+  {
+   "decision": "Bring the list of FY15 brainstorming ideas to the September meeting; ideas to be sent to Jean by August 1.",
+   "quote": "bring list to september meeting."
+  },
+  {
+   "decision": "Jean and Susan were assigned to serve on the Board of Trustees Endowment Committee representing the Library Trustees.",
+   "quote": "jean and susan are on representing the library trus tee",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 2,
- "note": "",
- "cost_usd": 0.0875345
+ "budget_items": [
+  {
+   "topic": "Friends book and bake sale proceeds",
+   "what_was_recorded": "The Friends' book and bake sale was the best yet, with a final count reported above $3,600.00.",
+   "quote": "final count >$3,600.00.",
+   "figures_as_printed": [
+    ">$3,600.00"
+   ]
+  },
+  {
+   "topic": "Heating cost reduction",
+   "what_was_recorded": "Brian asked what drove a reduction in heating cost; speculation was that HVAC adjustments produced significant savings; no figure was printed.",
+   "quote": "reduction in heating cost",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Friends endowment baseline funds",
+   "what_was_recorded": "The Friends endowment holds a baseline of funds that is not spent; only investment gains are used.",
+   "quote": "$300,000.0 0 baseline funds resides in the endowment, but is not",
+   "figures_as_printed": [
+    "$300,000.0 0"
+   ]
+  },
+  {
+   "topic": "Friends funding of library operating costs",
+   "what_was_recorded": "Friends operating funds come from memberships, the book-and-bake sale and an ongoing book sale; the Friends pay for library programs, printer supplies and copier maintenance. No figures printed.",
+   "quote": "all library programs, printer ink/toner, paper, copier supplies",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Building maintenance paid by Friends",
+   "what_was_recorded": "Trustees discussed the Friends paying for building maintenance, noting the town usually pays for upkeep; the town may not know full maintenance costs; no figure printed.",
+   "quote": "in general, the town pays for upkeep",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cultural horizon program funding",
+   "what_was_recorded": "The Cultural horizon program was paid for from earnings of the Saundra Lane gift; no figure printed.",
+   "quote": "cultural horizon program was paid for by earnings",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY16 maintenance budget line",
+   "what_was_recorded": "Maintenance was added to the budget, including non-capital requests; no figure printed.",
+   "quote": "fy-16, maintenance added to budget",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Possible consultant for five-year plan",
+   "what_was_recorded": "A consultant for the five-year plan might be paid for by the Friends; no cost printed.",
+   "quote": "p ossibly paid for by friends",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Kitchen update for Wallace room",
+   "what_was_recorded": "Brian was asked to prepare a request for a larger kitchen update; no cost printed.",
+   "quote": "brian: prepare request for larger kitchen update",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Annual state report on monies spent",
+   "what_was_recorded": "The ARIS official annual report on monies spent is to be sent to the state; no figure printed.",
+   "quote": "aris reporting official annual report on monies spe n",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Transfer of funds to Ingram",
+   "what_was_recorded": "Susan asked whether transferring funds to Ingram is a timing issue with billing; no amount printed.",
+   "quote": "it is a timing issue with billing?",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Gift in memory of Bob Ebersole's mother",
+   "what_was_recorded": "Various people gave money to the library in the name of Bob Ebersole's mother; Martha procured a historical book with part of it.",
+   "quote": "$1,000.00 was given by various people in his mother's name",
+   "figures_as_printed": [
+    "$1,000.00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brian Laffond",
+   "stated_role": "Finance Committee",
+   "topic": "stepping down from Finance Committee",
+   "quote": "brian laffond is stepping down from a long service to the lunenburg finance committee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "noted",
+   "quote": "brian laffond is stepping down from a long service",
+   "tags": [
+    "public comment",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved April 17, May 20 and May 22 minutes",
+   "quote": "motion to accept minutes by susan, second by gare, unanimous yes vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "questions left open; discussed",
+   "quote": "these questions remain open",
+   "tags": [
+    "director's report",
+    "maintenance",
+    "staffing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Board of Trustees Endowment Committee",
+   "resolution": "Jean and Susan assigned to represent trustees",
+   "quote": "jean and susan are on representing the library trus tee",
+   "tags": [
+    "endowment"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Heating billing question from Brian",
+   "resolution": "Jean to answer by email",
+   "quote": "committee/brian with the answer.",
+   "tags": [
+    "heating",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Friends information",
+   "resolution": "noted",
+   "quote": "book and bake sale was a rousing success",
+   "tags": [
+    "friends of lpl",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Friends presentation by Lydia Henshaw",
+   "resolution": "presented",
+   "quote": "friends of lpl was instituted on 7th december 1972",
+   "tags": [
+    "friends of lpl",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Other: Friends pot-luck meeting",
+   "resolution": "announced",
+   "quote": "july 26 10:00 a.m. pot-luck meeting for friends of lpl",
+   "tags": [
+    "friends of lpl"
+   ]
+  },
+  {
+   "topic": "Brainstorming for FY15",
+   "resolution": "ideas gathered; list due September",
+   "quote": "bring list to september meeting.",
+   "tags": [
+    "fy15 planning",
+    "community center",
+    "five-year plan"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "noted; Harry's email issue referred to selectmen",
+   "quote": "for the selectmen to address",
+   "tags": [
+    "selectmen",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting suggestions",
+   "resolution": "suggestions listed",
+   "quote": "august brainstorming meeting",
+   "tags": [
+    "master plan",
+    "five-year plan"
+   ]
+  },
+  {
+   "topic": "Other: gift in memory of Bob Ebersole's mother",
+   "resolution": "noted",
+   "quote": "$1,000.00 was given by various people in his mother's name",
+   "tags": [
+    "donation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:26 p.m.",
+   "quote": "motion to adjourn at 8:26 p.m., moved by gare",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for June 19, 2014",
+   "where": "list",
+   "quote": "lplbot agenda for june 19, 2014"
+  },
+  {
+   "name": "Lunenburg Public Library, Director’s Report of June 19, 2014",
+   "where": "list",
+   "quote": "lunenburg public library, director's report of june"
+  },
+  {
+   "name": "Friends of Library Treasury report",
+   "where": "text",
+   "quote": "a friends of library treas ury report was presented"
+  },
+  {
+   "name": "ARIS annual report on monies spent",
+   "where": "text",
+   "quote": "aris reporting official annual report on monies spe n",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Staff evaluation prepared by Martha",
+   "where": "text",
+   "quote": "complete staff evaluation that martha has done"
+  },
+  {
+   "name": "Town Master plan",
+   "where": "text",
+   "quote": "add the lpl to the town master pl an",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "library",
+  "friends of LPL",
+  "budget",
+  "building maintenance",
+  "heating costs",
+  "FY15 planning",
+  "endowment",
+  "minutes approval",
+  "five-year plan"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

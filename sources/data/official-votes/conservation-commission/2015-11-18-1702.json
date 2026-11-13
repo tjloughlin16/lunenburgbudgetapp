@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-11-18",
  "docid": "1702",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Issue a negative determination for 392 Sunset Lane",
+   "motion": "Issue a negative determination on the 392 Sunset Lane Request for Determination of Applicability.",
    "moved_by": "Mr. Bertram",
    "seconded_by": "Mr. Rabbit",
    "outcome": "passed unanimously",
@@ -20,39 +20,39 @@
    "quote": "mr. bertram moved to issue a negative determination. mr. rabbit seconded and the commission approved unanimously."
   },
   {
-   "motion": "Issue a standard Order of Conditions for 324 Mulpus Road based on the planting plan and fence being moved",
+   "motion": "Issue a standard Order of Conditions for 324 Mulpus Road based on the planting plan and the fence being moved.",
    "moved_by": "Mr. Bertram",
    "seconded_by": "Mr. Luck",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. bertram moved to issue a standard order of conditions based on the planting plan and the fence being moved. mr. luck seconded and the commission approved unanimously."
+   "quote": "mr. bertram moved to issue a standard order of conditions based on the planting plan and the fence being moved."
   },
   {
-   "motion": "Issue a negative determination for 169 Townsend Harbor Road with amendment to attempt to add a second tree",
+   "motion": "Issue a negative determination on the 169 Townsend Harbor Road Request for Determination of Applicability, with the amendment to attempt to add a second tree.",
    "moved_by": "Mr. Jones",
    "seconded_by": "Mr. Bertram",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. jones made a motion to issue a negative. mr. bertram seconded with the amendment to attempt to add a second tree which was accepted by mr. jones. the applicant voted unanimously to approve."
+   "quote": "mr. jones made a motion to issue a negative. mr. bertram seconded with the amendment to attempt to add a second tree"
   },
   {
-   "motion": "Issue a negative determination for 571 Chase Road with conditions that no work is done past the tree line and a sediment basin be built",
+   "motion": "Issue a negative determination on the 571 Chase Road Request for Determination of Applicability, with conditions that no work is done past the tree line and a sediment basin be built.",
    "moved_by": "Mr. Luck",
    "seconded_by": "Mr. Rabbitt",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. luck moved to issue a negative determination with the conditions that no work is done past the tree line and a sediment basin be built. mr. rabbitt seconded and the commission voted unanimously."
+   "quote": "mr. luck moved to issue a negative determination with the conditions that no work is done past the tree line and a sediment basin be built."
   },
   {
-   "motion": "Continue the hearing on 155 Reservoir Road, Lots 1-9 to December 2, 2015",
+   "motion": "Continue the 155 Reservoir Road Lots 1-9 hearing to December 2, 2015.",
    "moved_by": "Commissioner Bertram",
    "seconded_by": "Commissioner Luck",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the meeting was continued to december 2, 2015 by motion of commissioner bertram and a second by commissioner luck with a unanimous vote of the commission."
+   "procedural": false,
+   "quote": "the meeting was continued to december 2, 2015 by motion of commissioner bertram and a second by commissioner luck"
   },
   {
-   "motion": "Approve the minutes of October 7 as amended",
+   "motion": "Approve the minutes of October 7 as amended.",
    "moved_by": "Mr. Luck",
    "seconded_by": "Mr. Bertram",
    "outcome": "passed unanimously",
@@ -60,7 +60,7 @@
    "quote": "mr. luck moved to approve the minutes of the seventh as amended. mr. bertram seconded and the commission voted unanimously."
   },
   {
-   "motion": "Approve the minutes of October 21 as amended with attendees correction",
+   "motion": "Approve the minutes of October 21 as amended with the attendees correction.",
    "moved_by": "Mr. Bertram",
    "seconded_by": "Mr. Kennedy",
    "outcome": "passed unanimously",
@@ -68,23 +68,455 @@
    "quote": "mr. bertram moved to approve the minutes as amended with the attendees correction mr. kennedy seconded and the commission voted unanimously."
   },
   {
-   "motion": "Approve the minutes of October 28",
+   "motion": "Approve the minutes of October 28 (with the grant language amendment as accepted).",
    "moved_by": "Mr. Bertram",
    "seconded_by": "Mr. Luck",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. bertram moved to approve the minutes. mr. luck seconded and commented that he wanted the portion of the motion added that the work could start with conservation commission risk. mr. bertram accepted the amended and the commission voted unanimously."
+   "quote": "mr. bertram moved to approve the minutes. mr. luck seconded and commented that he wanted the portion"
   },
   {
-   "motion": "Approve the revised plan as a field change for 107 Youngs Road",
+   "motion": "Approve the revised plan for 107 Youngs Road as a field change.",
    "moved_by": "Mr. Dwyer",
    "seconded_by": "Mr. Jones",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. dwyer moved to approve the revised plan as a field change. mr. jones seconded and the commission voted unanimously."
+   "quote": "mr. dwyer moved to approve the revised plan as a field change. mr. jones seconded and the commission"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Meeting minutes are clear and readable. All votes recorded with verbatim quotes and complete information.",
- "cost_usd": 0.1047215
+ "note": "Plain extracted text, not a scan. Attendance for the nine commissioners is inferred from the roster line at the top of the minutes; the minutes do not separately mark each as present, and the Chair is never named. Jack Rabbitt is printed as 'Jack Rabbi tt' in the roster and spelled Rabbit or Rabbitt elsewhere. The header lists minutes dated 10/7, 21, 24, 28 and 11/4, but 24 is never addressed. The 169 Townsend Harbor vote says 'The applicant voted unanimously to approve', which is recorded as printed. The 155 Reservoir Road continuance is recorded as a motion but is not procedural. Adjournment at 10:45 PM has no recorded motion or vote. The minutes print no dollar figures, so budget_items and transfers are empty.",
+ "cost_usd": 0.01188932,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "brad kennedy, carl luck, ken jones, matt marro"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "brad kennedy, carl luck, ken jones, matt marro"
+  },
+  {
+   "name": "Ken Jones",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "brad kennedy, carl luck, ken jones, matt marro"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "brad kennedy, carl luck, ken jones, matt marro"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "mrs. carrier informed the commission she received a cutting plan for the stillman's"
+  },
+  {
+   "name": "Patrick J. Murphy",
+   "role": "applicant, representing himself",
+   "status": "present",
+   "quote": "mr. murphy was present to represent himself."
+  },
+  {
+   "name": "Mike Sherockman",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "mike sherockman represented the applicant."
+  },
+  {
+   "name": "Tom Christopher",
+   "role": "of Christopher Environmental Associates; filed the Notice of Intent",
+   "status": "present",
+   "quote": "tom christopher outlined the discussion from the last meeting and noted the continuance"
+  },
+  {
+   "name": "Brian P. Pomerleau",
+   "role": "applicant, of P & S Truck & Part Inc. Chase Realty Trust",
+   "status": "not stated",
+   "quote": "filed by brian p. pomerleau of p & s"
+  },
+  {
+   "name": "Robert/Laurie Parsons",
+   "role": "applicant, 667 Reservoir Road",
+   "status": "absent",
+   "quote": "applicant was not present."
+  },
+  {
+   "name": "Steve Powell",
+   "role": "applicant, 155 Reservoir Road Lots 1-9",
+   "status": "not stated",
+   "quote": "steve po well (brian marchetti of mccarty engineering inc."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "of McCarty Engineering Inc.",
+   "status": "present",
+   "quote": "brian marchetti was present."
+  },
+  {
+   "name": "Peter McCaron",
+   "role": "",
+   "status": "present",
+   "quote": "peter mccaron was present and noted that there was some discussion with the forester"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "of 42 Reservoir Road",
+   "status": "present",
+   "quote": "kate mccarron of 42 reservoir road inquired as to the jurisdiction of wetland protection."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "of 151 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio of 151 reservoir road noted that the debris and access road would impact her property"
+  },
+  {
+   "name": "Shunette Shellem",
+   "role": "62 Reservoir Road",
+   "status": "present",
+   "quote": "shunette shellem- 62 reservoir road expressed dismay due to the forestry activity under the forest practice act."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 667 Reservoir Road Notice of Intent hearing was rescheduled to December 2, 2015 because there was no date for the notification.",
+   "quote": "it was established there was no date for the notification and it was rescheduled for december 2, 2015."
+  },
+  {
+   "decision": "At the 169 Townsend Harbor Road hearing, the applicant would return with a subsequent file for the double-trunk tree area instead of amending the current file.",
+   "quote": "it was decided by the applicant he would just come back with a subsequent file instead of amending."
+  },
+  {
+   "decision": "The Commission agreed to examine tree-for-tree replacement as sites arise.",
+   "quote": "the commission seemed in agreement to examine that issue as sites arise."
+  },
+  {
+   "decision": "The 155 Reservoir Road session was treated as informational gathering, with a more formal hearing to be opened on December 2, 2015.",
+   "quote": "commissioner bertram wanted to clarify that this was informational gathering and we would open a more formal hearing on december 2, 2015"
+  },
+  {
+   "decision": "Regulation and by-law changes to be discussed using the bullet list format; the Commission did not take up the 30 and 50 foot no touch zone.",
+   "quote": "after discussion, the chair polled the commission and they unanimously voiced a preference to continue discussion using the bullet list format."
+  },
+  {
+   "decision": "The resident caretaker/custodian contract item will be placed on the agenda quarterly.",
+   "quote": "that item would be placed quarterly on the agenda."
+  },
+  {
+   "decision": "Enforcement matters to be placed on the next agenda for updates.",
+   "quote": "commissioner bertram requested that they be placed on the next a genda for updates."
+  },
+  {
+   "decision": "Commissioner Bertram will finish the proposed hike schedule before Thanksgiving and inform the commission.",
+   "quote": "he will finish the schedule before thanksgiving and inform the commission."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Commissioner Bertram",
+   "stated_role": "Commissioner",
+   "topic": "trails conference and volunteer partnerships",
+   "quote": "commissioner bertram spoke about the trails conference on november 14"
+  },
+  {
+   "speaker": "Commissioner Luck",
+   "stated_role": "Commissioner",
+   "topic": "participation in hiring for Jan Carrier's replacement",
+   "quote": "commissioner luck noted that he would like the commission to be able to participate in a process of hiring for jan carrier's replacement."
+  },
+  {
+   "speaker": "Peter McCaron",
+   "stated_role": "",
+   "topic": "forester timeline for development at Reservoir Road",
+   "quote": "peter mccaron was present and noted that there was some discussion with the forester"
+  },
+  {
+   "speaker": "Kate McCarron",
+   "stated_role": "of 42 Reservoir Road",
+   "topic": "jurisdiction of wetland protection",
+   "quote": "kate mccarron of 42 reservoir road inquired as to the jurisdiction of wetland protection."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "of 151 Reservoir Road",
+   "topic": "flooding, sediment and access road impacts",
+   "quote": "rhonda lisio of 151 reservoir road noted that the debris and access road would impact her property"
+  },
+  {
+   "speaker": "Shunette Shellem",
+   "stated_role": "62 Reservoir Road",
+   "topic": "forestry cutting plan under the forest practice act",
+   "quote": "shunette shellem- 62 reservoir road expressed dismay due to the forestry activity under the forest practice act."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "commissioner bertram spoke about the trails conference on november 14",
+   "tags": [
+    "trails",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "392 Sunset Lane, retaining wall RDA (Carl Luck)",
+   "resolution": "negative determination issued",
+   "quote": "mr. bertram moved to issue a negative determination.",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "324 Mulpus Road, tree removal in Riverfront Buffer Zone (continued NOI)",
+   "resolution": "standard Order of Conditions issued",
+   "quote": "mr. bertram moved to issue a standard order of conditions based on the planting plan and the fence being moved.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "riverfront",
+    "trees"
+   ]
+  },
+  {
+   "topic": "169 Townsend Harbor Road, oak tree removal RDA (Patrick J. Murphy)",
+   "resolution": "negative determination issued, amended to attempt a second replacement tree",
+   "quote": "mr. jones made a motion to issue a negative.",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "trees"
+   ]
+  },
+  {
+   "topic": "571 Chase Road, drilling a new well RDA",
+   "resolution": "negative determination issued with conditions",
+   "quote": "mr. luck moved to issue a negative determination with the conditions that no work is done past the tree line",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "well"
+   ]
+  },
+  {
+   "topic": "667 Reservoir Road, driveway NOI (Parsons)",
+   "resolution": "rescheduled to December 2, 2015",
+   "quote": "it was established there was no date for the notification and it was rescheduled for december 2, 2015.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "155 Reservoir Road Lots 1-9, ANR subdivision NOI (Steve Powell)",
+   "resolution": "continued to December 2, 2015",
+   "quote": "the meeting was continued to december 2, 2015 by motion of commissioner bertram",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "subdivision",
+    "riparian zone"
+   ]
+  },
+  {
+   "topic": "Minutes approval (October 7, 21, 28; November 4)",
+   "resolution": "approved as amended for 10/7, 10/21 and 10/28; 11/4 forthcoming",
+   "quote": "mr. luck moved to approve the minutes of the seventh as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: Connecting Communities Along Our Trails",
+   "resolution": "Commissioner Bertram to bring a proposed hike schedule",
+   "quote": "he will finish the schedule before thanksgiving and inform the commission.",
+   "tags": [
+    "trails",
+    "hiking"
+   ]
+  },
+  {
+   "topic": "New business: Stillman forest cutting plan",
+   "resolution": "ongoing, no action recorded",
+   "quote": "stillman ~ forest cutting plan ~ ongoing from original plan.",
+   "tags": [
+    "forestry"
+   ]
+  },
+  {
+   "topic": "Ongoing business: 107 Youngs Road field change",
+   "resolution": "approved",
+   "quote": "mr. dwyer moved to approve the revised plan as a field change.",
+   "tags": [
+    "wetlands",
+    "field change"
+   ]
+  },
+  {
+   "topic": "Ongoing business: Resident caretaker/custodian contract (3-year)",
+   "resolution": "placed on agenda quarterly; Commissioner Jones recused and left the room",
+   "quote": "that item would be placed quarterly on the agenda.",
+   "tags": [
+    "contract",
+    "caretaker"
+   ]
+  },
+  {
+   "topic": "Ongoing business: Forest cutting plans (Stillman property)",
+   "resolution": "informational, no action recorded",
+   "quote": "mrs. carrier informed the commission she received a cutting plan for the stillman's",
+   "tags": [
+    "forestry"
+   ]
+  },
+  {
+   "topic": "Ongoing business: Regulations and by-law changes to send to Selectmen",
+   "resolution": "continue discussion in bullet list format",
+   "quote": "they unanimously voiced a preference to continue discussion using the bullet list format.",
+   "tags": [
+    "bylaw",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Ongoing business: Commission education and stormwater by-law",
+   "resolution": "commission representative (Commissioner Rabbitt) to sit on stormwater committee",
+   "quote": "ms. carrier noted that there was a stormwater committee formulated",
+   "tags": [
+    "stormwater",
+    "bylaw",
+    "education"
+   ]
+  },
+  {
+   "topic": "Public comment (forestry concerns)",
+   "resolution": "no action; Chair responded",
+   "quote": "shunette shellem- 62 reservoir road expressed dismay due to the forestry activity under the forest practice act.",
+   "tags": [
+    "forestry",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Commission comment: ongoing enforcement matters",
+   "resolution": "placed on next agenda for updates",
+   "quote": "commissioner bertram requested that they be placed on the next a genda for updates.",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:45 PM; no motion recorded",
+   "quote": "adjournment ~ 10:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the forester dated September 8, 2015 (read into the record; compliance letter)",
+   "where": "text",
+   "quote": "the chair read in the record sections of the letter from 9/8/15."
+  },
+  {
+   "name": "Follow-up email from the forester (Reservoir Road, 155 Lots 1-9)",
+   "where": "text",
+   "quote": "mr. marchetti indicated he has a follow up email from the forester."
+  },
+  {
+   "name": "NHESP determination (324 Mulpus Road)",
+   "where": "text",
+   "quote": "he noted that nhesp issued a determination allowing the work as outlined in the notice of intent."
+  },
+  {
+   "name": "Alternatives analysis (324 Mulpus Road)",
+   "where": "text",
+   "quote": "dep requested that an alternatives analysis be submitted to the commission as the work technically is in riverfront."
+  },
+  {
+   "name": "Planting plan and planting detail list (324 Mulpus Road)",
+   "where": "text",
+   "quote": "they also inquired about a planting plan and a planting detail list which the applicant has provided."
+  },
+  {
+   "name": "Amended plan for 169 Townsend Harbor Road (penciled and signed)",
+   "where": "text",
+   "quote": "he penciled in the amendment on the plan and signed the amendment of the plan."
+  },
+  {
+   "name": "Revised plan for 107 Youngs Road (field change)",
+   "where": "text",
+   "quote": "mr. dwyer moved to approve the revised plan as a field change."
+  },
+  {
+   "name": "Stillman forest cutting plan",
+   "where": "text",
+   "quote": "mrs. carrier informed the commission she received a cutting plan for the stillman's"
+  },
+  {
+   "name": "Trails conference materials (to be posted on the town website)",
+   "where": "text",
+   "quote": "materials from the conference will be made available on the town website"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "requests for determination",
+  "notice of intent",
+  "orders of conditions",
+  "public hearings",
+  "minutes approval",
+  "forestry",
+  "stormwater",
+  "trails",
+  "public comment",
+  "bylaw"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

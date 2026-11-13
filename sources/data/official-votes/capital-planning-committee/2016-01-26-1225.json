@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2016-01-26",
  "docid": "1225",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Shift the asbestos abatement for Turkey Hill School to priority 11, ahead of the all-terrain vehicle request",
+   "motion": "Shift the asbestos abatement for Turkey Hill School to priority 11, ahead of the all-terrain vehicle request.",
    "moved_by": "Dennis M.",
-   "seconded_by": "Matt A.",
+   "seconded_by": "Matt A",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "dennis m. made a motion to shift the asbestos abatement for turkey hill school to priority 11, ahead of the all-terrain vehicle request. matt a, seconded the motion. the committee approved the motion by a vote of 5-0."
+   "quote": "dennis m. made a motion to shift the asbestos abatement for turkey hill school to priority 11, ahead of the all-terrain vehicle request."
   },
   {
-   "motion": "Approve the minutes from January 12, 2016 Capital Planning Committee meeting",
+   "motion": "Approve the January 12, 2016 Capital Planning Committee meeting minutes.",
    "moved_by": "Matt A.",
    "seconded_by": "Dennis M.",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "matt a. moved, and dennis m. seconded, a motion to approve these minutes. the committee approved the motion by a vote of 5-0."
   },
   {
-   "motion": "Approve the minutes from January 19, 2016 Capital Planning Committee meeting",
+   "motion": "Approve the January 19, 2016 Capital Planning Committee meeting minutes.",
    "moved_by": "Matt A.",
    "seconded_by": "Dennis M.",
    "outcome": "passed 5-0",
@@ -36,7 +36,7 @@
    "quote": "matt a. moved, and dennis m. seconded, a motion to approve these minutes. the committee approved the motion by a vote of 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Heather S.",
    "seconded_by": "John H.",
    "outcome": "passed 5-0",
@@ -45,6 +45,184 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. All votes recorded with outcome stated.",
- "cost_usd": 0.0897235
+ "note": "OCR text from a scanned page set. The priority table's number for priority 11 is garbled as \"=\" in the OCR; the asbestos abatement request was moved to priority 11 by the recorded vote. Minutes were submitted for review September 19, 2016 and filed October 5, 2016. The Jan 12 and Jan 19 minute-approval motions use identical wording in the text, so they are recorded as two separate votes with the same quote. Attendance was recorded from the Present and Also Present lines; no absences were listed. Kerry Speidel's status is inferred from his role in the discussion and is recorded as present.",
+ "cost_usd": 0.00458832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john henshaw"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john henshaw"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john henshaw"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john henshaw"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "based on the governor's budget that was recently released, kerry estimated that the town's capital"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee determined the priority order of the 12 capital improvement requests it recommends funding in FY17, with funding to proceed in priority order.",
+   "quote": "the committee determined the priority of the 12 capital improvement requests we recommend funding in fy17."
+  },
+  {
+   "decision": "If future funding or capital needs change and the committee meets again, Jamie T. will make the agenda and John H. will distribute it.",
+   "quote": "if so, jamie t. will make an agenda for that meeting, which john h. will distribute."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY17 capital budget estimate",
+   "what_was_recorded": "Kerry Speidel estimated the Town's FY17 capital budget, based on the governor's recently released budget, would be between $600,000 and $700,000; at that level the Town could fund the nine highest priorities and possibly the tenth.",
+   "figures_as_printed": [
+    "$600,000",
+    "$700,000"
+   ],
+   "quote": "kerry estimated that the town's capital budget in fy17 will be between $600,000 and $700,000."
+  },
+  {
+   "topic": "Cost of the 12 recommended FY17 capital requests",
+   "what_was_recorded": "The priority table lists the cost of each of the 12 recommended capital requests in priority order.",
+   "figures_as_printed": [
+    "$107,000",
+    "$17,500",
+    "$22,000",
+    "$22,000",
+    "$15,000",
+    "$87,125",
+    "$194,750",
+    "$53,300",
+    "$30,800",
+    "$70,000",
+    "$145,000",
+    "$16,500"
+   ],
+   "quote": "cost $107,000 $17,500 $22,000 $22,000 $15,000 $87,125 $194,750 $53,300 $30,800 $70,000 $145,000 $16,500"
+  },
+  {
+   "topic": "Running total of recommended FY17 capital requests",
+   "what_was_recorded": "The priority table gives a running total of cost as each request is added in priority order, reaching $780,925 at priority 12.",
+   "figures_as_printed": [
+    "$107,000",
+    "$124,500",
+    "$146,500",
+    "$168,500",
+    "$183,500",
+    "$270,625",
+    "$465,375",
+    "$518,675",
+    "$549,475",
+    "$619,475",
+    "$764,475",
+    "$780,925"
+   ],
+   "quote": "running total $107,000 $124,500 $146,500 $168,500 $183,500 $270,625 $465,375 $518,675 $549,475 $619,475 $764,475 $780,925"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 4:30 pm; no action",
+   "quote": "jamie t. called the capital planning committee to order at 4:30 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Priority ranking of 12 FY17 capital requests",
+   "resolution": "priority order set; asbestos abatement moved to priority 11 by 5-0 vote",
+   "quote": "the committee determined the priority of the 12 capital improvement requests we recommend funding in fy17.",
+   "tags": [
+    "capital requests",
+    "FY17 budget",
+    "priority ranking",
+    "public safety",
+    "DPW",
+    "schools",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved January 12 and January 19, 2016 minutes, 5-0 each",
+   "quote": "matt a. moved, and dennis m. seconded, a motion to approve these minutes. the committee approved the motion by a vote of 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Future meetings",
+   "resolution": "no action; agenda to be prepared if the committee meets again",
+   "quote": "if so, jamie t. will make an agenda for that meeting, which john h. will distribute.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:54, 5-0",
+   "quote": "heather s. made a motion to adjourn; john h. seconded the motion. the committee approved the motion 5-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Requests Recommended for Funding in FY2017 in Priority Order (January 26, 2016)",
+   "where": "list",
+   "quote": "capital requests recommended for funding in fy2017 in priority order"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY17 budget",
+  "capital requests",
+  "priority ranking",
+  "town budget",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "capital requests recommended for funding in fy2017 in priority order"
+ },
+ "dropped_unquoted_by_field": {}
 }

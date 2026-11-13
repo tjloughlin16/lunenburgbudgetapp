@@ -1,0 +1,546 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2016-04-05",
+ "video_id": "CEssWALaZ30",
+ "video_url": "https://www.youtube.com/watch?v=CEssWALaZ30",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2016-04-05-CEssWALaZ30.json",
+  "sha256": "408cf590e035f387e53049ec1b2cfbd770083dd2a4a8a4fa74fe630237089f9c",
+  "caption_lines": 63,
+  "segments": 424
+ },
+ "recording": {
+  "duration_s": 1330,
+  "duration": "0:22",
+  "spoken_chars": 15575,
+  "words_approx": 2595
+ },
+ "town_published": [
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04052016-4963",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-04-05-minutes-4963.txt",
+   "path": "sources/meetings/select-board/2016-04-05-minutes-4963.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:11:50Z",
+  "cost_usd": 0.1718539
+ },
+ "minutes": {
+  "headline": "Select Board recommended the FY2017 operating budget and other articles, then signed the 2016 town meeting warrant.",
+  "summary": "The board met early to go through the annual town meeting warrant articles, deciding which to recommend now and which to hold until Town Meeting. They also approved minutes, accepted a stormwater committee resignation and planned upcoming meetings. Public comment raised a Pleasant Street agenda item and the Green Communities task force.",
+  "attendees": [
+   {
+    "name_as_heard": "mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr. Rivas oil",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "miss LeFleur",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 825,
+    "topic": "A resident asked that the Conservation Commission's article not be missed in the warrant; told it is article 43, the wetlands bylaw."
+   },
+   {
+    "t": 1098,
+    "speaker_as_heard": "Greg Buettner",
+    "stated_role": "resident",
+    "topic": "Asked that One Pleasant Street be made an agenda item, and said the Green Communities task force lacks members and cannot meet to use available grant money."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "elections",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 247,
+    "motion": "Recommend approval of article 15, the operating budget, at the amount in the warrant",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 288,
+    "motion": "Recommend approval of article 17, stabilization fund transfer, at the stated amount",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 333,
+    "motion": "Make recommendation on article 18 solid waste enterprise fund at Town Meeting",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 376,
+    "motion": "Recommend approval of article 19 at the stated amount",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 418,
+    "motion": "Make recommendation on article 21 inflow infiltration stabilization fund at Town Meeting",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 679,
+    "motion": "Make a recommendation at Town Meeting on the zoning article",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 700,
+    "motion": "Make a recommendation at Town Meeting on article 44, citizen petition",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 983,
+    "motion": "Accept resignation of Dave Macdonald from the stormwater task force",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1302,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 226,
+    "topic": "Article 15 FY2017 operating budget",
+    "what_was_said": "The warrant total was confirmed as the town manager's latest submitted budget, which the Finance Committee had approved.",
+    "figures_as_heard": [
+     "33 million 802 804 in two thousand three hundred twenty-eight dollars"
+    ]
+   },
+   {
+    "t": 268,
+    "topic": "Article 17 stabilization fund",
+    "what_was_said": "Finance Committee recommended an amount; the board recommended approval of it.",
+    "figures_as_heard": [
+     "ninety-nine thousand eight hundred fifty-one dollars",
+     "291,000"
+    ]
+   },
+   {
+    "t": 333,
+    "topic": "Article 18 solid waste enterprise fund",
+    "what_was_said": "No number was available, so recommendation deferred to Town Meeting.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 356,
+    "topic": "Article 19 water department article",
+    "what_was_said": "Submitted amount said to be in line with prior years; recommended.",
+    "figures_as_heard": [
+     "$25,000"
+    ]
+   },
+   {
+    "t": 418,
+    "topic": "Article 21 inflow infiltration stabilization fund",
+    "what_was_said": "Wait for the Sewer Commission report before recommending.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 740,
+    "topic": "Article 44 citizen petition on yard waste",
+    "what_was_said": "Board wants petitioners to explain costs and budget impact before Town Meeting.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 912,
+    "topic": "Warrants payable and payroll",
+    "what_was_said": "Bills payable and payroll amounts were read.",
+    "figures_as_heard": [
+     "300 9180 2083 cents",
+     "four hundred and fifty-three thousand three hundred and fifty dollars and forty-five cents",
+     "seven hundred fifteen thousand nine hundred and eighty dollars and thirty-seven cents"
+    ]
+   },
+   {
+    "t": 1118,
+    "topic": "Green Communities grant money",
+    "what_was_said": "A resident said the task force could use available money but cannot meet for lack of members.",
+    "figures_as_heard": [
+     "130 thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 268,
+    "description": "Article 17 transfer to or from the Stabilization Fund",
+    "amount_as_heard": "ninety-nine thousand eight hundred fifty-one dollars",
+    "outcome": "discussed only; recommendation voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 803,
+    "decision": "Chair will meet with the town manager to get the recommendations printed in the warrant and will invite the article 44 petitioners to present before Town Meeting."
+   },
+   {
+    "t": 1044,
+    "decision": "A May 3 meeting will be put on the agenda for April 12."
+   },
+   {
+    "t": 1065,
+    "decision": "An update on the Pleasant Street property will go on the April 12 agenda."
+   },
+   {
+    "t": 1220,
+    "decision": "Board will consider putting community events on the website and a town Facebook page as a workshop topic."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 103,
+    "topic": "Opening, election dates and open positions",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 103,
+    "t_end": 803,
+    "topic": "Review of annual town meeting warrant articles and recommendations",
+    "resolution": "voted on several; others deferred to Town Meeting",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 803,
+    "t_end": 887,
+    "topic": "Warrant signing and Conservation article question",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 887,
+    "t_end": 1003,
+    "topic": "Minutes, bills payable, stormwater committee resignation",
+    "resolution": "voted",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1003,
+    "t_end": 1098,
+    "topic": "Upcoming meeting schedule",
+    "resolution": "agenda items set",
+    "tags": []
+   },
+   {
+    "t_start": 1098,
+    "t_end": 1158,
+    "topic": "Public comment on Pleasant Street and Green Communities task force",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 1159,
+    "t_end": 1324,
+    "topic": "Board comments on pipeline hearing, website, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts for most motions were not stated, only 'aye'.",
+   "Whether minutes approval motion was voted is not clear in the captions.",
+   "Article numbers and some recommendation details in the 400-700 second stretch are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 103,
+    "name_as_heard": "the annual town meeting warrant",
+    "kind": "warrant article",
+    "words_as_heard": "cover the annual town meeting warrant articles and to sign the actual warrant itself which I have here"
+   },
+   {
+    "t": 887,
+    "name_as_heard": "minutes from 15th of March",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes we have minutes from 15th of March"
+   },
+   {
+    "t": 963,
+    "name_as_heard": "resignation letter from Dave Macdonald",
+    "kind": "letter or email",
+    "words_as_heard": "I have a resignation letter that I'd like to read into the record from dave macdonald"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to recommend approval of the FY2017 operating budget, article 15, at the amount in the warrant.",
+    "t": 247
+   },
+   {
+    "line": "The board also voted to recommend the stabilization fund transfer (article 17) and article 19, the water department article.",
+    "t": 288
+   },
+   {
+    "line": "Recommendations on the solid waste fund (article 18) and the inflow infiltration stabilization fund (article 21) were left for Town Meeting, pending numbers and a Sewer Commission report.",
+    "t": 418
+   },
+   {
+    "line": "The board voted to make recommendations at Town Meeting on the zoning article and on article 44, the citizen petition on yard waste.",
+    "t": 700
+   },
+   {
+    "line": "The chair will arrange for recommendations to appear in the printed warrant and invite the article 44 petitioners to explain costs before Town Meeting.",
+    "t": 803
+   }
+  ],
+  "why_it_matters": [
+   "The operating budget and the funds behind it are decided at Town Meeting, so these recommendations show which warrant articles the board will back when residents vote on spending and taxes.",
+   "Article 44 on yard waste could change a town service, and the board has asked for its costs and budget impact to be explained before the vote."
+  ],
+  "watch_next": [
+   "The April 12 board agenda, which is to include a May 3 meeting and an update on the Pleasant Street property.",
+   "Presentation by the article 44 petitioners, and the Sewer Commission report on article 21, before Town Meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:11:58Z",
+   "cost_usd": 0.0248311
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04052016-4963",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-04-05-minutes-4963.txt",
+   "path": "sources/meetings/select-board/2016-04-05-minutes-4963.pdf"
+  },
+  "official_sha256": "a02f011219d80b9d597493c02cf4ce606c3a248b95fa032c93e4e92681ed7b4d",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the main article votes (15, 17, 18, 19) and the warrant and budget figures once caption errors are corrected. They differ on vote outcomes for Articles 21, 44 and the resignation, on which article was voted (zoning vs. 43), and on whether the town manager attended.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 6,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Article 15 operating budget vote",
+    "ours": "Recommend approval of article 15, the operating budget, at the amount in the warrant — passed",
+    "official": "motion: t. alonzo to approve article 15 as presented 2nd: p. luck vote: all in favor",
+    "note": "Both record Article 15 approved/recommended; wording differs slightly but outcome matches.",
+    "t": 247
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article 15 operating budget figure",
+    "ours": "33 million 802 804 in two thousand three hundred twenty-eight dollars",
+    "official": "the amount listed, $33,802,328, was the amount the finance committee had approved",
+    "note": "Captions garbled the same figure; official gives $33,802,328.",
+    "official_reading": "$33,802,328",
+    "t": 226
+   },
+   {
+    "kind": "agree",
+    "about": "Article 17 stabilization transfer vote and amount",
+    "ours": "Recommend approval of article 17, stabilization fund transfer, at the stated amount — passed",
+    "official": "motion: t. alonzo to approve article 17 as presented 2nd. p. bertram vote: all in favor",
+    "note": "Both record Article 17 approved; $99,851 matches our 'ninety-nine thousand eight hundred fifty-one'.",
+    "t": 288
+   },
+   {
+    "kind": "agree",
+    "about": "Article 17 transfer amount",
+    "ours": "ninety-nine thousand eight hundred fifty-one dollars",
+    "official": "article 17 requests a transfer of $99,851 to the stabilization fund.",
+    "note": "Same amount.",
+    "t": 268
+   },
+   {
+    "kind": "agree",
+    "about": "Article 18 solid waste vote",
+    "ours": "Make recommendation on article 18 solid waste enterprise fund at Town Meeting — passed",
+    "official": "to make a recommendation at town meeting on article #18 2nd. p. bertram vote: all in favor",
+    "note": "Same item and outcome.",
+    "t": 333
+   },
+   {
+    "kind": "agree",
+    "about": "Article 19 water vote and $25,000",
+    "ours": "Recommend approval of article 19 at the stated amount — passed",
+    "official": "motion: t. alonzo 2nd. p. bertram to recommend approval of $25,000 for the water department/enterprise fund vote: all in favor",
+    "note": "Same vote; $25,000 matches.",
+    "t": 376
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article 21 inflow/infiltration vote outcome",
+    "ours": "Make recommendation on article 21 inflow infiltration stabilization fund at Town Meeting — passed",
+    "official": "motion: t. alonzo to make a recommendation at town meeting on article #21",
+    "note": "Ours says passed; official records the motion but no result. Check the recording/clerk's record for the vote.",
+    "t": 418
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Article 21 amount $14,520",
+    "ours": "",
+    "official": "article 21 creates an inflow/infiltration stabilization fund and places $14,520 into it.",
+    "note": "Our minutes give no amount for Article 21.",
+    "t": 418
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Zoning article vs Article 43 Conservation Commission article",
+    "ours": "Make a recommendation at Town Meeting on the zoning article — passed",
+    "official": "to make a recommendation at town meeting on article #43 2nd. p. bertram vote: all in favor",
+    "note": "Ours calls it the zoning article; official says Article 43 (Conservation Commission). Check what article was voted and whether a zoning vote occurred.",
+    "t": 679
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article 44 vote",
+    "ours": "Make a recommendation at Town Meeting on article 44, citizen petition — passed",
+    "official": "motion: t. alonzo to make a recommendation at town meeting on article 44",
+    "note": "Ours says passed; official records the motion with no result shown in the quote. Verify outcome.",
+    "t": 700
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Macdonald resignation vote",
+    "ours": "Accept resignation of Dave Macdonald from the stormwater task force — not audible",
+    "official": "to accept dave macdonald's resignation with regret vote: all in favor",
+    "note": "Ours could not hear the result; official says passed unanimously.",
+    "t": 983
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision on who will present articles / article 44 petitioner",
+    "ours": "Chair will meet with the town manager to get the recommendations printed in the warrant and will invite the article 44 petitioners to present before Town Meeting.",
+    "official": "ms. bertram asked that the person who submitted the petition for article 44 (bi-monthly yard waste pickup)",
+    "note": "Official attributes the invitation to Ms. Bertram and has no chair/town manager warrant meeting; check who requested it.",
+    "t": 803
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Boards to be scheduled to present articles",
+    "ours": "",
+    "official": "the board will be scheduling the planning board, conservation commission, sewer commission and agricultural commission to come before them to present their articles.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Pleasant Street update on April 12 agenda",
+    "ours": "An update on the Pleasant Street property will go on the April 12 agenda.",
+    "official": "ms. bertram requested an update on the pleasant street town property on that agenda.",
+    "note": "Same decision.",
+    "t": 1065
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "May 3 meeting on April 12 agenda",
+    "ours": "A May 3 meeting will be put on the agenda for April 12.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 1044
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Community events on website and Facebook workshop topic",
+    "ours": "Board will consider putting community events on the website and a town Facebook page as a workshop topic.",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 1220
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants payable and payroll figures",
+    "ours": "300 9180 2083 cents, four hundred and fifty-three thousand three hundred and fifty dollars and forty-five cents, seven hundred fifteen thousand nine hundred and eighty dollars and thirty-seven cents",
+    "official": "an accounts payable warrant in the amount of $309,182.83, a payroll warrant in the amount of $715,980.37 and a deductions warrant in the amount of $453,350.45 were presented for signatures.",
+    "note": "Same three warrants; captions garbled the first figure ($309,182.83); others match.",
+    "official_reading": "$309,182.83",
+    "t": 912
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Green Communities grant money $130 thousand",
+    "ours": "Green Communities grant money: 130 thousand dollars",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 1118
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance of town manager",
+    "ours": "miss LeFleur (town manager)",
+    "official": "not present: robert ebersole, vice chairman, and kerry lafleur, town manage",
+    "note": "Ours lists the town manager as attending; official lists her absent. Check who was present.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member names",
+    "ours": "mrs. Bertram (member)",
+    "official": "amie toale, chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member",
+    "note": "Bertram matches; 'Rivas oil' likely misheard Alonzo.",
+    "official_reading": "Tom Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment from Carl Luck and Greg Bittner",
+    "ours": "",
+    "official": "carl luck, 50 sunset lane, stated there was an article submitted by the conservation commission, is it in the warrant?",
+    "note": "Our minutes list neither public speaker."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:13:22Z",
+   "cost_usd": 0.054911100000000004
+  }
+ }
+}

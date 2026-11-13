@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-05-22",
  "docid": "2792",
@@ -12,63 +12,249 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 17, 2014",
-   "outcome": "tabled",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "april 17, 2014: tabled until june meeting"
-  },
-  {
-   "motion": "Approve the minutes from May 15, 2014 as presented",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "motion": "Accept the May 15, 2014 minutes as presented.",
    "moved_by": "Dick",
    "seconded_by": "Robin",
-   "quote": "jeanne entertained a motion to accept the minutes as presented, moved by dick, seconded by robin voted to approve: jeanne, dick, robin"
-  },
-  {
-   "motion": "Elect Jean Raboin as Chairman",
    "outcome": "passed",
    "procedural": true,
+   "quote": "jeanne entertained a motion to accept the minutes as presented, moved by dick, seconded by robin"
+  },
+  {
+   "motion": "Elect Jeanne Raboin as Chairman.",
    "moved_by": "Gare",
    "seconded_by": "Susan",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "for chairman: jean was nominated by gare, seconded by susan, voted: all in favor"
   },
   {
-   "motion": "Elect Dick Mailloux as Vice-Chairman",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Elect Dick Mailloux as Vice-chairman.",
    "moved_by": "Jean",
    "seconded_by": "Robin",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "for vice-chairman: dick was nominated by jean, seconded by robin, voted: all in favor"
   },
   {
-   "motion": "Elect Lars Widstrand as Secretary",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Elect Lars Widstrand as Secretary.",
    "moved_by": "Gare",
    "seconded_by": "Robin",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "for secretary: lars was nominated by gare, seconded by robin, voted: all in favor"
   },
   {
-   "motion": "Accept all committee members as listed",
-   "outcome": "passed",
-   "procedural": true,
-   "moved_by": "Jean",
+   "motion": "Accept all committee members as listed (Personnel: Gare, Harry, Dick; Policy: Lars, Dick, Robin; Budget: Susan, Harry, Jean; Endowment: Jean, Susan).",
+   "moved_by": "Susan",
    "seconded_by": "Dick",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion by jean to accept all committee members as listed: so moved by susan, seconded by dick, voted: all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 8:31 p.m.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion to adjourn, made by gare at 8:31 p.m., seconded by dick, voted: all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes procedurally recorded. The April 17 minutes tabling vote lists no mover/seconder in the minutes.",
- "cost_usd": 0.1273815
+ "note": "Text is complete (pages 1 and 2 of 2). Name inconsistencies: Jeanne Raboin is also printed as 'Jean' in several places; Lars Widstrand is listed as attending but the May 15 minutes abstention line says 'Lars (not present at the meeting)', which refers to the May 15 meeting. The minutes print no vote counts for reorganization and committee motions beyond 'all in favor'. The committee motion lists 'Motion by Jean' and 'so moved by Susan'; mover recorded as Susan. The director is discussed but did not take part, so is not listed as an attendee.",
+ "cost_usd": 0.00602972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "chair",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "vice-chair",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "secretary",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The April 17, 2014 minutes were tabled until the June meeting.",
+   "quote": "april 17, 2014: tabled until june meeting"
+  },
+  {
+   "decision": "The Board will contact Martha (the director) about how she wants to proceed on budget line items, since a line may be reassigned.",
+   "quote": "the board will contact to martha and ask how she wants to proceed."
+  },
+  {
+   "decision": "Brian Laffond's questions about the heating portion of the budget will be placed on the June agenda.",
+   "quote": "brian laffond's questions about the heating portion of the budget will be put on the agenda for the june meeting."
+  },
+  {
+   "decision": "A meeting with the director will be held before the next regular trustee meeting to present the evaluation and new contract; Jeanne will arrange it and Jeanne, Gare and Harry will meet with Martha.",
+   "quote": "meeting with the director will take place before the next regular trustee meeting to present evaluation and the director's new contract."
+  },
+  {
+   "decision": "Jeanne will ask Lydia Henshaw to attend the June trustee meeting to give a full presentation on the Friends to the new board.",
+   "quote": "jeanne will ask lydia henshaw to come to the june trustee meeting to give a full presentation of the friends to the new board."
+  },
+  {
+   "decision": "Next regular trustee meeting set for 6/19/14 at 6:45 p.m. in the Lunenburg Public Library.",
+   "quote": "next lpl trustee meeting will be held on 6/19/14 at 6:45 p.m. in the lunenburg public library."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library budget line items",
+   "what_was_recorded": "Specific line items the director wants in the library budget may not be possible; an existing line may be reassigned, and the Board discussed how much flexibility the director has to reassign or break down line items.",
+   "figures_as_printed": [],
+   "quote": "more specific line items that martha would like to see in the library budget may not be possible to implement, an existing line may be reassigned"
+  },
+  {
+   "topic": "Heating portion of the budget",
+   "what_was_recorded": "Brian Laffond's questions about the heating portion of the budget were to be placed on the June agenda.",
+   "figures_as_printed": [],
+   "quote": "brian laffond's questions about the heating portion of the budget will be put on the agenda for the june meeting."
+  },
+  {
+   "topic": "Mass Broadband Project fiber optic connections",
+   "what_was_recorded": "Clarification was needed on who would be attached to the fiber optic network and the cost implications; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "clarification needed on who will possibly get attached to the fiber optic network (staff / staff+public / other computers), and the cost implications."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no public comment",
+   "quote": "public comment o no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Welcome of new and returning trustees",
+   "resolution": "welcomed",
+   "quote": "jeanne and the incumbents of the board welcomed recently elected trustees harry kubetz and susan visser",
+   "tags": [
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "April 17 minutes tabled to June; May 15 minutes approved 3-0-3 (approve: Jeanne, Dick, Robin; abstained: Lars, Harry, Susan)",
+   "quote": "april 17, 2014: tabled until june meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "read and discussed; no action",
+   "quote": "the director's report, as submitted by the director, was read and discussed",
+   "tags": [
+    "director",
+    "budget",
+    "broadband"
+   ]
+  },
+  {
+   "topic": "LPL director evaluation",
+   "resolution": "information to new board; meeting with director to be scheduled",
+   "quote": "described by jeanne as information to the new board members; general discussion followed",
+   "tags": [
+    "director evaluation",
+    "goals"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "no action; presentation requested for June",
+   "quote": "annual friends meeting coming up, saturday july 26 at 10 a.m.; pot luck breakfast.",
+   "tags": [
+    "Friends of LPL",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Board of Trustees reorganization",
+   "resolution": "officers elected and committees accepted, all in favor",
+   "quote": "for chairman: jean was nominated by gare, seconded by susan, voted: all in favor",
+   "tags": [
+    "reorganization",
+    "committees",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for 6/19/14; adjourned 8:31 p.m.",
+   "quote": "next lpl trustee meeting will be held on 6/19/14 at 6:45 p.m. in the lunenburg public library.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for May 22, 2014",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for may 22, 2014 director's report"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for may 22, 2014 director's report"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "board reorganization",
+  "director evaluation",
+  "library budget",
+  "heating budget",
+  "broadband",
+  "Friends of LPL",
+  "minutes approval",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-09-08",
  "docid": "3770",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of August 18, 2014",
+   "motion": "Approve the minutes of 8-18-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "motion, n. lockwood to approve 8-18-14, second, d. mcquaid"
   },
   {
-   "motion": "Approve Information Meeting minutes of August 25, 2014",
+   "motion": "Approve the Information Meeting minutes of 8-25-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "motion, n. lockwood to approve information meeting 8-25-14, second, d. mcquaid"
   },
   {
-   "motion": "Approve minutes of August 25, 2014",
+   "motion": "Approve the minutes of 8-25-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "motion, n. lockwood to approve 8-25-14, second, d. mcquaid"
   },
   {
-   "motion": "Approve extension to November 24, 2014 for Highfield Village",
+   "motion": "Approve the requested extension of Highfield Village to November 24, 2014.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion n. lockwood to approve requested extension to november 24, 2014, second, d. mcquaid. all aye."
   },
   {
-   "motion": "Approve Findings and Directives for 1259 Massachusetts Avenue",
+   "motion": "Approve the Findings and Directives for 1259 Massachusetts Avenue.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -52,15 +52,231 @@
    "quote": "motion, n. lockwood to app rove findings and directives for 1259 massachusetts avenue, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Send letter to Zoning Board of Appeals recommending design standards and development plan review compliance",
+   "motion": "Send a letter to the Zoning Board of Appeals recommending that, if a special permit is approved for 790 Massachusetts Avenue, the applicant adhere to the Zoning Bylaw Design Standards and the Planning Board's Development Plan Review.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "n. lockwood made motion that a letter be sent to the zoning board of appeals recommending that if a special permit i s approved, as part of the zoning board of appeals' approval, the applicant adhere to the design standards of the zoning bylaw and also adhere to the planning board's development plan review , second, d. mcquaid, all aye."
+   "quote": "n. lockwood made motion that a letter be sent to the zoning board of appeals recommending that if a special permit i s approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are a clear text scan with readable votes. The first three motions (minute approvals) list the motion and second but lack explicit outcome statements; the remaining three explicitly state \"All aye\" or \"all aye.\"",
- "cost_usd": 0.1334285
+ "note": "Single-page-sequence text, readable; no scan issue. The minutes record motions to approve three sets of minutes and a Highfield Village extension, but print no vote count for the minutes motions (outcome recorded as not stated). Several motions end with 'All aye' without a count. No budget figures or public comment appear. Adjournment at 7:20 PM is recorded without a motion.",
+ "cost_usd": 0.00614992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "also present: chantell fleck, mrpc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board endorsed the final plan for the MS/HS Project.",
+   "quote": "ms/hs project- final plan endorsed by board"
+  },
+  {
+   "decision": "A meeting was scheduled for October 6, 2014 to discuss the Housing Production Plan with MRPC.",
+   "quote": "a meeting will be scheduled for october 6, 2014 for discussion of the housing production plan with mrpc"
+  },
+  {
+   "decision": "N. Lockwood requested that future Board discussion take place on placing design standards in Sections 4.4 and 4.5 of the bylaw (Limited Business/Residential and Retail Commercial District Uses).",
+   "quote": "n. lockwood requested that future board discussion take place on placing design standards in §4.4."
+  },
+  {
+   "decision": "D. McQuaid requested that the applicant work with the Historical Commission to determine the status of the property.",
+   "quote": "d. mcquaid also requested that the applicant work with the historical commission to determine the status of the property."
+  },
+  {
+   "decision": "D. McQuaid suggested the Historical Commission compose a brief history of Flat Hill Road and Northfield Road to assist the Board in determining scenic road qualifications.",
+   "quote": "a brief history of flat hill road and northfield road to assist the board in determining scenic road qualifications"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (three motions; results not printed)",
+   "quote": "minutes approval: all minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received, no action",
+   "quote": "school building committee, n. lockwood- abutter meeting held.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "noted",
+   "quote": "909 massachusetts avenue- noted hearing date of september 22",
+   "tags": [
+    "development status",
+    "hearings"
+   ]
+  },
+  {
+   "topic": "Highfield Village extension",
+   "resolution": "approved extension to November 24, 2014",
+   "quote": "motion n. lockwood to approve requested extension to november 24, 2014, second, d. mcquaid. all aye.",
+   "tags": [
+    "subdivision",
+    "extension"
+   ]
+  },
+  {
+   "topic": "Action file: 1259 Massachusetts Avenue",
+   "resolution": "Findings and Directives approved; endorsed",
+   "quote": "motion, n. lockwood to app rove findings and directives for 1259 massachusetts avenue,",
+   "tags": [
+    "findings",
+    "directives"
+   ]
+  },
+  {
+   "topic": "Master Plan, Economic Development Element",
+   "resolution": "joint workshop scheduled",
+   "quote": "joint workshop scheduled for october 20, 2014.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "september 15, 6:30 pm, ritter building - village district bylaw - workshop",
+   "tags": [
+    "schedule",
+    "village district bylaw"
+   ]
+  },
+  {
+   "topic": "Member issues: 790 Massachusetts Avenue ZBA referral",
+   "resolution": "letter to Zoning Board of Appeals approved",
+   "quote": "n. lockwood made motion that a letter be sent to the zoning board of appeals recommending",
+   "tags": [
+    "zoning",
+    "special permit",
+    "design standards"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 8/18/14, 8/25/14, and Information Meeting 8/25/14",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 8/18/14, 8/25/14, and information meeting 8/25/14"
+  },
+  {
+   "name": "909 Mass Ave Hearing Notice",
+   "where": "list",
+   "quote": "909 mass ave hearing notice"
+  },
+  {
+   "name": "Whites Woods Hearing Notice",
+   "where": "list",
+   "quote": "whites woods hearing notice"
+  },
+  {
+   "name": "322 Flat Hill Solar Hearing Notice",
+   "where": "list",
+   "quote": "322 flat hill solar hearing notice"
+  },
+  {
+   "name": "MS/HS Final Plans",
+   "where": "list",
+   "quote": "ms/hs final plans highfield village request for extension"
+  },
+  {
+   "name": "Highfield Village Request for Extension",
+   "where": "list",
+   "quote": "ms/hs final plans highfield village request for extension"
+  },
+  {
+   "name": "50 Elmwood Road Progress Form",
+   "where": "list",
+   "quote": "50 elmwood road progress form"
+  },
+  {
+   "name": "Emerald Place Progress Form",
+   "where": "list",
+   "quote": "emerald place progress form"
+  },
+  {
+   "name": "1259 Massachusetts Avenue Approval",
+   "where": "list",
+   "quote": "1259 massachusetts avenue approval"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, §4.6 Commercial District Uses and §4.6.5 Design Standards",
+   "where": "text",
+   "quote": "protective bylaw of the town of lunenburg , §4.6. commercial district uses, §§ 4.6.5. design stand ards pertain only to commercial districts."
+  },
+  {
+   "name": "Master Plan, Economic Development Element",
+   "where": "text",
+   "quote": "master plan, economic development element- joint workshop scheduled for october 20, 2014."
+  },
+  {
+   "name": "Housing Production Plan",
+   "where": "text",
+   "quote": "a meeting will be scheduled for october 6, 2014 for discussion of the housing production plan with mrpc"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development status",
+  "zoning board referral",
+  "special permit",
+  "design standards",
+  "solar",
+  "subdivision",
+  "master plan",
+  "housing production plan",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-04-10",
  "docid": "3939",
@@ -12,29 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Withdraw the warrant article regarding Section 6.2",
+   "motion": "Withdraw the Section 6.2 Warrant Article at Town Meeting.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion, k. chenis to withdraw the warrant article at town meeting, second, g. bittner, roll call vote - k. chenis aye; g. bittner, aye; d. mcquaid, aye; m. allison, aye."
   },
   {
-   "motion": "Recommend approval of the Section 6.4 addition",
+   "motion": "Recommend approval of the Section 6.4 addition.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion, k. chenis to recommend approval of section 6.4. addition, second, d. mcquaid, roll call vote- k. chenis aye; g. bittner, aye; d. mcquaid, aye; m. allison, aye."
   },
   {
-   "motion": "Approve minutes from March 27, 2017",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 03/27/17.",
+   "moved_by": "not stated",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval: 03/27/17- approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1056395
+ "note": "Text is OCR (macOS Vision) with garbled header lines and some misspellings (e.g., 'STENBURG, MAS', 'Prokowiew', 'Passios'). Page 2 header reads 'Minutes 04/11/17' while the meeting date is April 10, 2017. Roll-call votes list each member's aye with no printed count; outcome recorded as 'passed' and mover/second as printed. Minutes approval of 03/27/17 records 'approved' with no motion or mover printed. Adjournment at 8:48 PM has no recorded vote. The separate minutes for the ATM public hearing are referenced but not included.",
+ "cost_usd": 0.00453852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, chair"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: david prokowiew"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Williams Drive resident, public comment",
+   "status": "present",
+   "quote": "katey adams, williams drive - had concerns regarding recreational marijuana."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney will send the Complete Streets policy to Board members once it is distributed at the 4/11 Select Board meeting.",
+   "quote": "complete streets- a. burney will send out policy to board members once it is distributed at the 4/11 select board meeting."
+  },
+  {
+   "decision": "Edits will be made to the Definitions and Use Table; SP (special permit) will be defined as either by Planning Board or Zoning Board of Appeals.",
+   "quote": "edits will be made. sp (special permit) will be defined as either by planning board or zoning board of appeals."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community Task Force first round funds",
+   "what_was_recorded": "All first round funds have been committed except for a remaining amount.",
+   "figures_as_printed": [
+    "$350.00"
+   ],
+   "quote": "all first round funds committed except for $350.00. town currently at 6.5% energy"
+  },
+  {
+   "topic": "Street lights via net metering credits",
+   "what_was_recorded": "The Green Community Task Force discussed purchasing street lights through net metering credits; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "task force had discussion regarding purchasing street lights through net metering credits."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "Williams Drive",
+   "topic": "concerns regarding recreational marijuana",
+   "quote": "katey adams, williams drive - had concerns regarding recreational marijuana. noted that even though"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; comment heard",
+   "tags": [
+    "public comment",
+    "marijuana"
+   ],
+   "quote": "public comment: katey adams, williams drive - had concerns regarding recreational marijuana."
+  },
+  {
+   "topic": "Public hearing: Board warrant articles for ATM",
+   "resolution": "see separate minutes",
+   "tags": [
+    "warrant articles",
+    "town meeting"
+   ],
+   "quote": "public hearing: board warrant articles for atm- see separate minutes"
+  },
+  {
+   "topic": "Board decision on articles",
+   "resolution": "Section 6.2 withdrawn; Section 6.4 recommended for approval",
+   "tags": [
+    "warrant articles",
+    "zoning"
+   ],
+   "quote": "section 6.2. - motion, k. chenis to withdraw the warrant article at town meeting, second, g. bittner, roll call vote"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 03/27/17 minutes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: 03/27/17- approved"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; Building Reuse Committee recommendations reported",
+   "tags": [
+    "committees",
+    "town hall",
+    "green community",
+    "stormwater"
+   ],
+   "quote": "committee discussion regarding no responses to rfp and how to move forward."
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "May 6 ATM noted; Definitions and Use Table edits to be made",
+   "tags": [
+    "zoning",
+    "definitions",
+    "solar",
+    "town meeting"
+   ],
+   "quote": "definitions and use table- lengthy discussion held. edits will be made."
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "notices & communications: noted"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; April 24 public hearing and May 6 ATM listed",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ],
+   "quote": "april 24 - public hearing, 496 massachusetts avenue"
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "Complete Streets policy to be sent to Board; 40B update in progress",
+   "tags": [
+    "complete streets",
+    "40B",
+    "housing"
+   ],
+   "quote": "complete streets- a. burney will send out policy to board members once it is distributed at the 4/11 select board meeting."
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "no action; stormwater zoning changes noted",
+   "tags": [
+    "stormwater",
+    "zoning"
+   ],
+   "quote": "g. bittner noted it was stated at the select board meeting that stormwater management might require some changes to the"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:48 PM; no vote recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 8:48 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 03/27/17",
+   "where": "list",
+   "quote": "documents used at meeting minutes- 03/27/17 minutes/2017/04.11.17"
+  },
+  {
+   "name": "Minutes/2017/04.11.17",
+   "where": "list",
+   "quote": "documents used at meeting minutes- 03/27/17 minutes/2017/04.11.17"
+  },
+  {
+   "name": "Complete Streets policy",
+   "where": "text",
+   "quote": "a. burney will send out policy to board members once it is distributed at the 4/11 select board meeting."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "warrant articles",
+  "town meeting",
+  "marijuana",
+  "solar",
+  "stormwater",
+  "complete streets",
+  "40B",
+  "committees",
+  "green community"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

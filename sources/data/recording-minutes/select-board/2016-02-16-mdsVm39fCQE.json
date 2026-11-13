@@ -1,0 +1,485 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2016-02-16",
+ "video_id": "mdsVm39fCQE",
+ "video_url": "https://www.youtube.com/watch?v=mdsVm39fCQE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2016-02-16-mdsVm39fCQE.json",
+  "sha256": "c797ed952c919f0513f57af5eea16c2b59eefe86986c1456528fae6b256db859",
+  "caption_lines": 92,
+  "segments": 653
+ },
+ "recording": {
+  "duration_s": 1967,
+  "duration": "0:32",
+  "spoken_chars": 21331,
+  "words_approx": 3555
+ },
+ "town_published": [
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02162016-4958",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-02-16-minutes-4958.txt",
+   "path": "sources/meetings/select-board/2016-02-16-minutes-4958.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:18:54Z",
+  "cost_usd": 0.17325610000000002
+ },
+ "minutes": {
+  "headline": "Board approved a bar license transfer and an auto dealer license; license fees left unchanged pending a town manager review.",
+  "summary": "The board held two licensing hearings and approved both applications, along with amusement licenses and an architectural district appointment. It reviewed a survey of other towns' license fees and asked the town manager for a recommendation before renewal time. Committee reports covered a MART van route change, the stormwater task force, the finance committee's FY2017 budget review, and the school building committee contingency.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs Bertram",
+    "role": "member (absent)"
+   },
+   {
+    "name_as_heard": "Mrs luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr lonzo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager (absent)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "economic-development",
+   "elections",
+   "fees",
+   "legal",
+   "personnel",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 424,
+    "motion": "Approve transfer of the all-alcoholic general on-premise license to MJ Inc, J&M's Sports Bar",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 464,
+    "motion": "Approve automatic amusement, jukebox, common victualer and weekday entertainment licenses",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 551,
+    "motion": "Receive and accept notification of Sunday hours change for Lunenburg Liquors",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1206,
+    "motion": "Appoint Brian corkran to the architectural Protection District, term to expire June 30th 2018",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1839,
+    "motion": "Approve class two auto dealer license for KC Sales and Service LLC",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1928,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 617,
+    "topic": "License fee survey",
+    "what_was_said": "Compared with the highest fees in each category the town would collect more, and also more against the average. Common victualer fee was noted as below average.",
+    "figures_as_heard": [
+     "$36,000",
+     "$55,000",
+     "25",
+     "a 100",
+     "35"
+    ]
+   },
+   {
+    "t": 1479,
+    "topic": "Stormwater rain barrel grant",
+    "what_was_said": "The town manager has a grant that will buy rain barrels.",
+    "figures_as_heard": [
+     "$3,600"
+    ]
+   },
+   {
+    "t": 1066,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable and school construction warrants were signed.",
+    "figures_as_heard": [
+     "$1,645",
+     "2,543 385"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 997,
+    "decision": "Board will ask the town manager for a recommendation on license fees, with any change made before renewal, probably with notice in the summer."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 249,
+    "topic": "Public comment from board, absentee ballot and announcements",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 249,
+    "t_end": 505,
+    "topic": "Hearing: J&M's Sports Bar license transfer and amusement licenses",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 505,
+    "t_end": 574,
+    "topic": "Lunenburg Liquors Sunday hours notification",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 574,
+    "t_end": 1019,
+    "topic": "License fee survey of other towns",
+    "resolution": "referred to town manager",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 1019,
+    "t_end": 1162,
+    "topic": "Minutes and warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1162,
+    "t_end": 1290,
+    "topic": "Architectural Protection District appointment and vacancies",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1290,
+    "t_end": 1666,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 1666,
+    "t_end": 1907,
+    "topic": "Hearing: KC Sales and Services class 2 auto dealer license",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1907,
+    "t_end": 1951,
+    "topic": "Next meeting and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts not stated beyond voice votes",
+   "Warrant amounts garbled"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 42,
+    "kind": "liability or legal",
+    "about": "A resident objected to spending school building contingency on items outside the original scope.",
+    "who": "a member reading a resident email",
+    "words_as_heard": "the residual contingency funding needs to be returned as unspent"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 21,
+    "name_as_heard": "resident email on school building committee contingency",
+    "kind": "letter or email",
+    "words_as_heard": "we received an email from a resident that I would like to share"
+   },
+   {
+    "t": 617,
+    "name_as_heard": "license fee survey chart",
+    "kind": "spreadsheet",
+    "words_as_heard": "I'm looking at this chart"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "license-fee-revenue",
+    "title": "License fee revenue",
+    "question": "What do the town's license fees bring in compared with other towns and the cost to administer them?",
+    "t": 617,
+    "words_as_heard": "if we were to compare ourselves to the average in each category we would run $55,000 behind total",
+    "data_in_play": [
+     "$36,000",
+     "$55,000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved the transfer of an all-alcoholic on-premise license for J&M's Sports Bar to MJ Inc after a hearing.",
+    "t": 424
+   },
+   {
+    "line": "The board approved automatic amusement, jukebox, common victualer and weekday entertainment licenses in the same hearing.",
+    "t": 464
+   },
+   {
+    "line": "The board decided to ask the town manager for a recommendation on license fees, with any change made before renewal, probably with notice in the summer.",
+    "t": 997
+   },
+   {
+    "line": "The board appointed a member to the Architectural Protection District, with a term to expire June 30, 2018.",
+    "t": 1206
+   },
+   {
+    "line": "After a second hearing, the board approved a class two auto dealer license for KC Sales and Service LLC.",
+    "t": 1839
+   }
+  ],
+  "why_it_matters": [
+   "License fees are a source of town revenue, and a survey of other towns' fees is the basis for a possible change that would reach local license holders at renewal.",
+   "Licensed businesses such as bars, restaurants and car dealers would be the ones affected by any fee change, and the board has not yet voted on one."
+  ],
+  "watch_next": [
+   "The town manager's recommendation on license fees, which the board asked for ahead of license renewal.",
+   "Any notice of a fee change, which the board said would probably go out in the summer."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:19:01Z",
+   "cost_usd": 0.0224611
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02162016-4958",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-02-16-minutes-4958.txt",
+   "path": "sources/meetings/select-board/2016-02-16-minutes-4958.pdf"
+  },
+  "official_sha256": "9d5b43b789577bf78a015d7252968060bcedc7173c68ce16fc368b4ce298c90f",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all five licensing and appointment votes, with only name misspellings from the captions. They differ on the license-fee decision (a town manager recommendation versus a cost analysis) and on the license fee survey figures ($36,000 and $55,000 in ours versus $35,000 and $5,000 in the official minutes). The $3,600 rain barrel grant appears only in ours, and the official minutes have several items we lack, including the FY2017 budget presentation and the attendee list.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Transfer of all-alcohol on-premise license to MIJ, Inc. (J&M's Sports Bar)",
+    "ours": "Approve transfer of the all-alcoholic general on-premise license to MJ Inc, J&M's Sports Bar — passed",
+    "official": "to approve the transfer of the general on premise all alcohol license transfer as presented vote: all in favor",
+    "note": "Same vote and outcome; 'MJ Inc' is a caption rendering of MIJ, Inc.",
+    "t": 424
+   },
+   {
+    "kind": "caption_error",
+    "about": "Licensee name MIJ, Inc.",
+    "ours": "MJ Inc",
+    "official": "to approve the automatic amusement, jukebox, common victualer and weekday entertainment licenses for mij, inc. d/b/a j & m's sports bar as presented",
+    "note": "Captions heard MIJ as MJ.",
+    "official_reading": "MIJ, Inc.",
+    "t": 424
+   },
+   {
+    "kind": "agree",
+    "about": "Automatic amusement, jukebox, common victualer, weekday entertainment licenses",
+    "ours": "Approve automatic amusement, jukebox, common victualer and weekday entertainment licenses — passed",
+    "official": "to approve the automatic amusement, jukebox, common victualer and weekday entertainment licenses for mij, inc. d/b/a j & m's sports bar as presented",
+    "note": "Same vote, passed.",
+    "t": 464
+   },
+   {
+    "kind": "agree",
+    "about": "Sunday hours change for Lunenburg Liquors",
+    "ours": "Receive and accept notification of Sunday hours change for Lunenburg Liquors — passed",
+    "official": "to receive and accept the notification of change of hours for sunday sales for lunenburg liquors",
+    "note": "Same vote, passed.",
+    "t": 551
+   },
+   {
+    "kind": "caption_error",
+    "about": "Appointee to Architectural Protection District",
+    "ours": "Appoint Brian corkran to the architectural Protection District, term to expire June 30th 2018 — passed",
+    "official": "to appoint brian corcoran to the apdc with a term to expire june 30, 2018 vote: all in favor",
+    "note": "Same appointment and term; name misspelled by captions.",
+    "official_reading": "Brian Corcoran",
+    "t": 1206
+   },
+   {
+    "kind": "agree",
+    "about": "Class II auto dealer license for KC Sales and Service",
+    "ours": "Approve class two auto dealer license for KC Sales and Service LLC — passed",
+    "official": "to approve the class ii auto dealer license for kc sales and services, llc located at 1312 mass",
+    "note": "Same vote, passed.",
+    "t": 1839
+   },
+   {
+    "kind": "discrepancy",
+    "about": "License fee survey figures",
+    "ours": "License fee survey: $36,000, $55,000, 25, a 100, 35",
+    "official": "if we compare our fees to the highest fees, we would be $35,000 behind. if we were to compare ourselves to the average fees, we would run $5,000 behind.",
+    "note": "Ours has $36,000 and $55,000 where official has $35,000 and $5,000; $55,000 may be a mishearing of $5,000 and $36,000 of $35,000, but check the recording. The $25, $100 and 35 match the common victualer text.",
+    "t": 617
+   },
+   {
+    "kind": "agree",
+    "about": "Common victualer fee figures",
+    "ours": "25, a 100, 35",
+    "official": "the most licenses issued were common victualer (35) and were $25.00. she added the town would be able to charge up $100 for a common victualer license.",
+    "note": "The 25, 100 and 35 figures match.",
+    "t": 617
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants amounts",
+    "ours": "Warrants: $1,645, 2,543 385",
+    "official": "the board signed an accounts payable warrant in the amount of $181,604.51 and a school construction warrant in the amount of $2,543,308.05.",
+    "note": "Captions garbled both amounts: the school construction warrant is $2,543,308.05 and the accounts payable warrant is $181,604.51.",
+    "official_reading": "$181,604.51 and $2,543,308.05",
+    "t": 1066
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision on license fees",
+    "ours": "Board will ask the town manager for a recommendation on license fees, with any change made before renewal, probably with notice in the summer.",
+    "official": "it was decided to request a cost analysis for processing a license application.",
+    "note": "Ours describes a request for a town manager recommendation and timing. Official describes a request for a cost analysis. Check the recording to see which was decided, or whether both were.",
+    "t": 997
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Stormwater rain barrel grant",
+    "ours": "Stormwater rain barrel grant: $3,600",
+    "official": "",
+    "note": "The official minutes do not mention a rain barrel grant or $3,600.",
+    "t": 1479
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY2017 budget presentation",
+    "ours": "",
+    "official": "ms. lafleur presented the fy2017 budget.",
+    "note": "Our minutes have no FY2017 budget presentation; Ms. Lafleur is also listed as absent in the official minutes, so check this.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MART van service expansion",
+    "ours": "",
+    "official": "to see if lunenburg could provide more beneficial van transportation services to more of our residents without adding",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School building contingency fund public comment",
+    "ours": "",
+    "official": "concerning the school building contingency fund. this person expressed that she did not believe contingency money should be spent on items",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Mrs. Bertram absent",
+    "ours": "Mrs Bertram (member (absent))",
+    "official": "kerry lafleur, town manager and paula bertram, member were absent.",
+    "note": "Both record Bertram absent.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager absent",
+    "ours": "town manager (town manager (absent))",
+    "official": "kerry lafleur, town manager and paula bertram, member were absent.",
+    "note": "Both record the town manager absent.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Members Luck and Alonzo present",
+    "ours": "Mrs luck (member); Mr lonzo (member)",
+    "official": "robert ebersole, vice chairman; tom alonzo, clerk and phyllis luck, member.",
+    "note": "Luck and Alonzo present in both; 'lonzo' is a caption misspelling of Alonzo.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chairman Toale and Vice Chairman Ebersole present",
+    "ours": "",
+    "official": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and phyllis luck, member.",
+    "note": "Our attendees omit Toale and Ebersole.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants present at hearing",
+    "ours": "",
+    "official": "melissa thibodeau, applicant, stated she was here for the license transfer hearing.",
+    "note": "Our attendee list omits the applicants Thibodeau and Bartnowski.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:19:55Z",
+   "cost_usd": 0.0498771
+  }
+ }
+}

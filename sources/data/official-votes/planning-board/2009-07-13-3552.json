@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-07-13",
  "docid": "3552",
@@ -12,15 +12,174 @@
  },
  "votes": [
   {
-   "motion": "To approve the Development Plan Review for 100 Pleasant Street",
-   "moved_by": "Joanna L. Bilotta",
-   "seconded_by": "James A. Halloran",
+   "motion": "Approve the Development Plan Review for 100 Pleasant Street, as amended.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Halloran",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion to approve dpr for 100 pleasant street, ms. bilotta, second, mr. halloran, motion passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes state the motion passed but do not record a vote count (e.g., 5-0 or unanimously).",
- "cost_usd": 0.0881075
+ "note": "Text extraction has irregular spacing inside words (e.g. \"Mars den\", \"responde d\"); quotes copy the printed spacing as far as possible. No public comment section and no document list is printed. The Present line lists members without roles beyond Chair. The minutes contain only one recorded vote (the DPR approval); no roll-call count is printed, so the outcome is recorded as \"passed\".",
+ "cost_usd": 0.00469212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m."
+  },
+  {
+   "name": "James A. Hallo ran",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m."
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m."
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, joanna l. bilotta, robert j. saiia, thomas w. bodkin, jr., marion m."
+  },
+  {
+   "name": "Michael DeLuca",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "the applicant, michael deluca, 74 bolton woods way, bolton, ma was represented by steven marsden, mars den engineering."
+  },
+  {
+   "name": "Steven Marsden",
+   "role": "representing the applicant (Marsden Engineering)",
+   "status": "present",
+   "quote": "was represented by steven marsden, mars den engineering."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Directive E was changed: notice of completion for painting is due by November 15, 2009, notice of completion of landscaping by May 15, 2010, and verification goes to the Planning Board.",
+   "quote": "directive e. shall be changed to read, \"painting an d landscaping as depicted will be done. notice of completion for pa inting shall be by november 15, 200",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Findings item 10 (removal of two buildings) was deleted, with the remaining Findings renumbered, because the buildings had already been removed.",
+   "quote": "item 10 will be deleted and findings renumbered accordingly."
+  },
+  {
+   "decision": "The Planning Office will supply the ZBA with the DPR.",
+   "quote": "planning office will supply zba with dpr."
+  },
+  {
+   "decision": "Plans were sent to David Ross Engineering for peer review, with the report due to the Director July 17.",
+   "quote": "plans we nt to david ross engineering for review this date as submittal was n ot received in the planning office until july 10",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Municipal benefit/cost of the new use at 100 Pleasant Street",
+   "what_was_recorded": "The minutes state the new use will add real estate and business tax revenue and that no cost to the Town is anticipated; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "additional tax revenue, bot h real estate and business, will benefit the town. no anticipated cost to town.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Development Plan Review, 100 Pleasant Street (information meeting continuation)",
+   "resolution": "approved with amended directives",
+   "quote": "chair opened the information meeting continuation t o hear and discuss an application for a development plan review under",
+   "tags": [
+    "development plan review",
+    "change of use",
+    "ANR",
+    "special permit",
+    "commercial zoning",
+    "circuit board testing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Development Plan Review 100 Pleasant Street, Lunenburg, MA (DPR)",
+   "where": "text",
+   "quote": "all statements confined in the document entit led development plan review 100 pleasant street, lunenburg, m",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Plan, Job No. 807",
+   "where": "text",
+   "quote": "the applicant shall conform to the plan- job no. 80 7, to all statements"
+  },
+  {
+   "name": "ANR (Approval Not Required) Plan to separate lots",
+   "where": "text",
+   "quote": "who is aware of the anr (approval not required) pl an to separate lots."
+  },
+  {
+   "name": "Special Permit granted by the ZBA to Mr. Joseph Livergood",
+   "where": "text",
+   "quote": "was part of a special permit granted by the zba to mr. joseph livergood"
+  },
+  {
+   "name": "Environmental Impact Statement (EIS)",
+   "where": "text",
+   "quote": "that an environm ental impact statement (eis) has been submitted."
+  },
+  {
+   "name": "Sedimentation Erosion Control Plan",
+   "where": "text",
+   "quote": "a sedim entation erosion control plan has been submitted"
+  },
+  {
+   "name": "Drainage calculation and design of drainage system",
+   "where": "text",
+   "quote": "calculation and design of drainage system"
+  },
+  {
+   "name": "Plans submitted to David Ross Engineering for peer review",
+   "where": "text",
+   "quote": "plans we nt to david ross engineering for review this date",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development plan review",
+  "100 Pleasant Street",
+  "ANR lot separation",
+  "special permit release",
+  "zoning",
+  "ZBA referral",
+  "drainage",
+  "septic",
+  "fire department"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

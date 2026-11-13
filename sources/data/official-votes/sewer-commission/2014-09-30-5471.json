@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-09-30",
  "docid": "5471",
@@ -12,25 +12,434 @@
  },
  "votes": [
   {
-   "motion": "Accept a bond for the full amount naming the Town as 'obligee'",
+   "motion": "Accept a bond for the full amount naming the Town as obligee for the 42 Highland St extension project.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "troy made the motion to accept a bond for the full amount naming the tow n as 'obligee', dave seconded. vote taken was unani mou",
-   "quote_taken_from_text": true
+   "quote": "troy made the motion to accept a bond for the full amount"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Troy",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "butch made the motion, troy seconded. vote taken w as unanimous",
-   "quote_taken_from_text": true
+   "quote": "butch made the motion, troy"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The first is on accepting a bond for Dan Proctor's project at 42 Highland St Extension (a substantive matter); the second is the procedural adjournment vote.",
- "cost_usd": 0.0862135
+ "note": "Attendance is inferred from the member list in the header and the visitors line; no roll call is printed. Only the bond motion and adjournment carry recorded motions; both are marked unanimous with no tallies. Some words in the text are split by extraction spacing (for example \"unani mous\", \"tha n\"), so some quotes were chosen to avoid split words. Appointment and budget figures are as printed and some items were reviewed without a recorded motion.",
+ "cost_usd": 0.010153920000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "carl luck, dave macdonald, troy daniels, butch bilotta"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "carl luck, dave macdonald, troy daniels, butch bilotta"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "carl luck, dave macdonald, troy daniels, butch bilotta"
+  },
+  {
+   "name": "Butch Bilotta",
+   "status": "present",
+   "quote": "carl luck, dave macdonald, troy daniels, butch bilotta"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Business Manager",
+   "status": "not stated",
+   "quote": "barbara lefebvre, business manager for the sewer commission"
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson, wright pierce"
+  },
+  {
+   "name": "Matt Corbin",
+   "role": "WP",
+   "status": "present",
+   "quote": "visitors: stephen keating, debbie sundstrom"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "BOS liaison",
+   "status": "present",
+   "quote": "visitors: stephen keating, debbie sundstrom"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom liaison",
+   "status": "present",
+   "quote": "visitors: stephen keating, debbie sundstrom"
+  },
+  {
+   "name": "Stephen Keating",
+   "status": "present",
+   "quote": "stephen keating, 236 cross rd."
+  },
+  {
+   "name": "Debbie Sundstrom",
+   "status": "present",
+   "quote": "visitors: stephen keating, debbie sundstrom"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "discussed with jack rodriquenz allowing dan to put up contract value in cash"
+  },
+  {
+   "name": "Dan Proctor",
+   "status": "present",
+   "quote": "dan proctor, 42 highland st extension"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dan Proctor to provide a schedule of values, which Jack will review, for the cash-with-schedule approach to the bond.",
+   "quote": "dan will provide schedule of valu es, and have jack review.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Dan Proctor to obtain a letter from FR Mahoney on pipe sizing.",
+   "quote": "dan will get letter from fr mahoney on pipe sizing."
+  },
+  {
+   "decision": "Jack to start plans to cap off the sewer at 37 Graham St.",
+   "quote": "jack will start plans to cap off sewer 9/29."
+  },
+  {
+   "decision": "Barb to see that SRF project work is broken out to track costs.",
+   "quote": "barb will see that is done."
+  },
+  {
+   "decision": "Barb to follow up on the Small Water SCADA invoice.",
+   "quote": "barb will follow up."
+  },
+  {
+   "decision": "Carl to talk to IT on the SCADA.",
+   "quote": "carl will talk to it on the scada."
+  },
+  {
+   "decision": "Barb to check again with the new Land Use Director, Adam, on whether he wants notices of Intent to Connect.",
+   "quote": "dave asked that barb check again with new land use director, adam,"
+  },
+  {
+   "decision": "Commission reviewed and approved the Wright Pierce invoices (no motion recorded).",
+   "quote": "rev iewed invoices, approved.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Other invoices approved (no motion recorded).",
+   "quote": "other in voices approved.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Commission position stated to the ZBA that the sewer fees for Whalom will remain.",
+   "quote": "that the fees will remain"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Small Water SCADA invoice",
+   "what_was_recorded": "Small Water's SCADA invoice came in higher than the original proposal, and Barb will follow up.",
+   "figures_as_printed": [
+    "$7700.90"
+   ],
+   "quote": "invoice for scada $7700.90 higher"
+  },
+  {
+   "topic": "I/I fine at 18 The Clearing",
+   "what_was_recorded": "A letter was sent with a $500 fine and no appeal was filed.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "18 the clearing -letter sent 9/17with $500 fine, no appeal."
+  },
+  {
+   "topic": "Bond cash release and warranty holdback",
+   "what_was_recorded": "Discussed letting the applicant put up contract value in cash on a completion schedule, leaving 5% on account for a 12 month warranty period.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "on account for 12 month warranty period"
+  },
+  {
+   "topic": "SRF project soil and rock conditions",
+   "what_was_recorded": "Rock on Rennie and shallow rock on Pratt may increase cost of the project.",
+   "figures_as_printed": [],
+   "quote": "shallow on pratt-may increase cost"
+  },
+  {
+   "topic": "Whalom Luxury Apartments sewer fees",
+   "what_was_recorded": "ZBA hearing discussion dealt mostly with sewer fees, which the Commission said will remain.",
+   "figures_as_printed": [],
+   "quote": "most of which dealt with sewer fees"
+  },
+  {
+   "topic": "Annual permit fee for grease traps",
+   "what_was_recorded": "Sites with grease traps were reminded to send in their Annual Permit Fee and reporting.",
+   "figures_as_printed": [],
+   "quote": "annual permit fee and reporting"
+  },
+  {
+   "topic": "YTD FY15 budget",
+   "what_was_recorded": "The YTD FY15 budget was reviewed and discussed.",
+   "figures_as_printed": [],
+   "quote": "reviewed and discussed."
+  },
+  {
+   "topic": "Invoices",
+   "what_was_recorded": "Invoices were reviewed and approved, including Wright Pierce invoices and other invoices, with no dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "rev iewed invoices, approved.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Stephen Keating",
+   "stated_role": "236 Cross Rd.",
+   "topic": "Inclusion of parcel in SRF project, Lakeview area",
+   "quote": "requesting consideration of the commission to be in"
+  },
+  {
+   "speaker": "Debbie Sundstrom",
+   "stated_role": "214 Cross Rd",
+   "topic": "Request for inclusion in SRF project",
+   "quote": "had sent letter to commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "reminder to those sites with grease traps",
+   "tags": [
+    "grease traps",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Public comment: Stephen Keating",
+   "resolution": "no action; referred to Kevin Olson review of CWMP area",
+   "quote": "requesting consideration of the commission to be in",
+   "tags": [
+    "sewer service area",
+    "CWMP",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Appointment 7:00 pm: Kevin Olson, Wright Pierce, SRF project",
+   "resolution": "reviewed; invoices approved; no motion recorded",
+   "quote": "reviewed outcome of workshop preceding meeting",
+   "tags": [
+    "SRF project",
+    "Wright Pierce",
+    "easements",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Appointment 7:30 pm: Dan Proctor, 42 Highland St extension",
+   "resolution": "bond motion passed; covenant signed",
+   "quote": "dan proctor, 42 highland st extension",
+   "tags": [
+    "bond",
+    "developer",
+    "warranty"
+   ]
+  },
+  {
+   "topic": "I/I project status",
+   "resolution": "assessing fines; no action",
+   "quote": "18 the clearing -letter sent 9/17with $500 fine, no appeal.",
+   "tags": [
+    "I/I",
+    "fines"
+   ]
+  },
+  {
+   "topic": "Whalom Luxury Apartments",
+   "resolution": "no action; ZBA hearing reported",
+   "quote": "carl reviewed outcome of zba hearing on 9/24",
+   "tags": [
+    "sewer fees",
+    "ZBA",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Privately funded extension policy",
+   "resolution": "discussed; no action",
+   "quote": "troy noted that our policy is good and that we",
+   "tags": [
+    "extension policy"
+   ]
+  },
+  {
+   "topic": "Capital Plan 2016",
+   "resolution": "discussed; no action",
+   "quote": "capital plan 2016 is due 10/17",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "SWSS status",
+   "resolution": "awaiting status update; no action",
+   "quote": "we are awaiting status update on generator work",
+   "tags": [
+    "SWSS",
+    "SCADA",
+    "generators"
+   ]
+  },
+  {
+   "topic": "Permits to Connect",
+   "resolution": "received",
+   "quote": "permits to connect received for",
+   "tags": [
+    "permits"
+   ]
+  },
+  {
+   "topic": "Business Manager reports",
+   "resolution": "YTD FY15 budget reviewed",
+   "quote": "reviewed and discussed.",
+   "tags": [
+    "budget",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "approved",
+   "quote": "other in voices approved.",
+   "tags": [
+    "invoices",
+    "SRF project",
+    "SCADA"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Cards sent",
+   "resolution": "no action",
+   "quote": "cards sent on behalf of sewer commission",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action",
+   "quote": "october 14, 2014 - dpw, 520 chase rd",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Commissioners comments",
+   "resolution": "no action",
+   "quote": "troy will be away for 10/28.",
+   "tags": [
+    "grease traps",
+    "land use",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:35 pm",
+   "quote": "butch made the motion, troy",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Covenant",
+   "where": "text",
+   "quote": "covenant received and signed by commission."
+  },
+  {
+   "name": "SRF application (to be submitted 10/15/14)",
+   "where": "text",
+   "quote": "srf application to be submitted 10/15/14"
+  },
+  {
+   "name": "Letter from Debbie Sundstrom (214 Cross Rd)",
+   "where": "text",
+   "quote": "had sent letter to commission"
+  },
+  {
+   "name": "Planning Board notice of joint meeting on Economic Dev Element (October 20th)",
+   "where": "text",
+   "quote": "planning board notice of joint meeting"
+  },
+  {
+   "name": "Invitation for groundbreaking 10/18 for Lunenburg High School",
+   "where": "text",
+   "quote": "invitation for groundbreaking 10/18 for lunenburg high school"
+  },
+  {
+   "name": "Letter from FR Mahoney on pipe sizing",
+   "where": "text",
+   "quote": "dan will get letter from fr mahoney on pipe sizing."
+  },
+  {
+   "name": "Schedule of values (Dan Proctor)",
+   "where": "text",
+   "quote": "dan will provide schedule of valu es, and have jack review.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Small Water SCADA invoice",
+   "where": "text",
+   "quote": "invoice for scada $7700.90 higher"
+  },
+  {
+   "name": "Whalom pro forma",
+   "where": "text",
+   "quote": "pro forma has not been reviewed in full"
+  },
+  {
+   "name": "CWMP area of need (Area 9)",
+   "where": "text",
+   "quote": "requires town meeting vote to extend sewer"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "SRF project",
+  "I/I",
+  "bond",
+  "Whalom apartments",
+  "capital plan",
+  "SCADA",
+  "invoices",
+  "grease traps",
+  "permits",
+  "Lakeview area"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

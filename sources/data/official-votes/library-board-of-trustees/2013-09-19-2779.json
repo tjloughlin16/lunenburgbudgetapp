@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2013-09-19",
  "docid": "2779",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes for June 20, 2013",
+   "motion": "Approve the submitted minutes of June 20, 2013.",
    "moved_by": "Dick",
    "seconded_by": "Jeanne",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion made by dick to approve submitted minutes; s econd by jeanne. approved by all except robin who was not present at the june 20 th meeting, and lisa who arrived after this part of t he meeting was complet",
-   "quote_taken_from_text": true
+   "quote": "motion made by dick to approve submitted minutes; s econd by jeanne. approved by all except"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Lisa",
    "outcome": "not stated",
@@ -30,6 +29,246 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09238550000000001
+ "note": "Text is extracted from a multi-page scan-like PDF with broken word spacing (e.g., 'amou nt'); quotes keep that spacing as printed. Page 2 of 3 is blank in the extraction. The minutes give no vote count for the June 20 minutes approval beyond 'approved by all except' two members, and no result for the adjournment motion. Public comment: none recorded. Nick Harrison (painting contractor) and John Mara are mentioned but did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.00562612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lisa Krowitz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, martha moor e, jeanne raboin"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, martha moor e, jeanne raboin"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, martha moor e, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "meeting called to order at 6:45 pm in the sudolnik conference room by chairperson jeanne raboin."
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "",
+   "status": "present",
+   "quote": "jeanne raboin, robin venezia, lars widstrand, bo b ebersole"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "respectfully submitted, lars widstrand secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "present",
+   "quote": "bob ebersole, representative for the board of selec tmen"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: joanne mcquaid, kathy murray"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: joanne mcquaid, kathy murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jeanne will contact Kathy Murray about the Budget subcommittee meeting minutes of 01-24-2013, and about the meeting minutes for 10-18-2012.",
+   "quote": "jeanne will contact kathy murray about budget subco mmittee meeting minutes of 01-24-2013."
+  },
+  {
+   "decision": "Lars will inform the Town Clerk about the 09-25-2012 agenda, since no meeting was held before the Special Town Meeting that day.",
+   "quote": "lars will inform town clerk about 09-25-2012:"
+  },
+  {
+   "decision": "Jeanne will draw up a communication to all involved in the painting project thanking them for their work and support.",
+   "quote": "jeanne will draw up communication to all involved"
+  },
+  {
+   "decision": "A Policy subcommittee will be called to review difficult patron issues and create one or more policies; the trustees expressed full support for the Director's actions.",
+   "quote": "a policy subcommittee meeting will be called to rev iew the issues"
+  },
+  {
+   "decision": "The trustees support the Director's actions on difficult patrons.",
+   "quote": "the trustees show full support for the actions take n by the director."
+  },
+  {
+   "decision": "The personnel subcommittee (Jeanne, Lisa, Dick) will meet in October to look at director evaluation instruments for discussion at the October/November meeting.",
+   "quote": "subcommittee: jeanne, lisa, dick - to meet in october."
+  },
+  {
+   "decision": "Jeanne will add to future meeting notices: use the community wing side door to access the Trustee meeting after 8 p.m.",
+   "quote": "jeanne will put it through the posting on the futur e meeting notices"
+  },
+  {
+   "decision": "The October meeting will be held October 17, 6:45 p.m.; an OML discussion is to be put on a future agenda for October/November.",
+   "quote": "october meeting to be held october 17, 6:45 p.m."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Building painting project",
+   "what_was_recorded": "The whole painting job came in at about 50 percent of the budgeted amount.",
+   "figures_as_printed": [
+    "~ 50%"
+   ],
+   "quote": "the whole job has come in at ~ 50% of budgeted amou nt(!)."
+  },
+  {
+   "topic": "Endowment fund placement",
+   "what_was_recorded": "A new financial advisor has reviewed and is readjusting the placement of endowment funds; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ne w financial advisor has reviewed placement of endowment funds and is readjusting the",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Statewide library card",
+   "what_was_recorded": "Discussion of whether extra costs for a statewide library card would be covered by state funds or a pay library card; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "as viable option to cover extra costs?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; no public comments",
+   "quote": "public comment o no public comments",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes for June 20, 2013",
+   "resolution": "approved",
+   "quote": "approval of minutes for june 20, 2013:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Minutes: Town Policies and Procedures",
+   "resolution": "discussed; follow-up assignments made",
+   "quote": "minutes: town policies and procedures",
+   "tags": [
+    "town records",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted; painting praised, Director's actions supported",
+   "quote": "director's report - all bullets below, except as no ted, are discussed in the library director's repor",
+   "tags": [
+    "director",
+    "building",
+    "technology",
+    "policy",
+    "programming"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Friends of LPL: Update and Endowment",
+   "resolution": "noted",
+   "quote": "friends of lpl: update and endowment",
+   "tags": [
+    "friends",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Trustee Chair: Director Evaluation Instrument",
+   "resolution": "subcommittee to meet in October",
+   "quote": "trustee chair: director evaluation instrument",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "discussed; OML and state library card noted",
+   "quote": "film evenings (last friday of the month) are going to start up again in the future.",
+   "tags": [
+    "programs",
+    "state library card",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "October meeting date",
+   "resolution": "set for October 17, 6:45 p.m.",
+   "quote": "october meeting to be held october 17, 6:45 p.m.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:41 p.m.",
+   "quote": "motion to adjourn made by dick, lisa second at 8:41 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for September 19",
+   "where": "list",
+   "quote": "lplbot agenda for september 19"
+  },
+  {
+   "name": "Library Director’s Report, including Financial Spreadsheet",
+   "where": "list",
+   "quote": "library director's report, including financial spre adshee",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Budget subcommittee meeting minutes of 01-24-2013",
+   "where": "text",
+   "quote": "jeanne will contact kathy murray about budget subco mmittee meeting minutes of 01-24-2013."
+  },
+  {
+   "name": "DVD of the May-16 BOD meeting on OML",
+   "where": "text",
+   "quote": "dvd of the meeting should be available for viewing."
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "open meeting law",
+  "building painting",
+  "personnel evaluation",
+  "endowment",
+  "library policy",
+  "statewide library card",
+  "minutes approval",
+  "difficult patrons"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

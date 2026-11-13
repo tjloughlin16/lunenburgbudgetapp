@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-12-04",
  "docid": "1198",
@@ -12,13 +12,261 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of November 20, 2013",
-   "outcome": "approved",
+   "motion": "Approve the 11-20-13 minutes.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "11-20-13 minutes approved."
+   "quote": "11-20-13 minutes approved.",
+   "seconded_by": ""
   }
  ],
- "dropped_unquoted": 0,
- "note": "The minutes record approval of prior minutes but do not specify who moved or seconded the motion, nor do they state a vote count. The document describes many discussions and decisions (regarding technology prioritization, capital items ranking, etc.) but these are not recorded as formal motions with voting outcomes.",
- "cost_usd": 0.09714049999999999
+ "dropped_unquoted": 1,
+ "note": "Extracted text, not a scan. No motions with movers, seconds or tallies are recorded; the only approval is the 11-20-13 minutes line, included as procedural with outcome passed and no mover. Several direction items are recorded as decisions without a vote. No public comment section is printed. Figures are kept as printed, including the typos '$21,00 0' and '$36, 524'. The Fire Chief is named only by title and is not recorded as present.",
+ "cost_usd": 0.005541819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "it director steve malandrinos was available for questions regarding town and school technology."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee requested that the IT Director ask the School Superintendent for technology priority.",
+   "quote": "committee requested s. malandrinos ask school superintendent for technology priority."
+  },
+  {
+   "decision": "Committee revised the prioritization sheet, including Senior Center and Library carpeting amounts and priorities.",
+   "quote": "revise prioritization sheet as follows:"
+  },
+  {
+   "decision": "Committee separated the Library and Senior Center carpeting items, applied separate priorities, decreased Library by $2,000 and increased Senior Center by $1,600 to reach the $10,000 required minimum.",
+   "quote": "the committee chose to separate the items , apply separate priorities, decrease library by $2,000"
+  },
+  {
+   "decision": "The Chair will ask the Fire Chief for five years of actual usage for the vehicles requested on his Five Year Plan; the Fire Chief may attend the next meeting.",
+   "quote": "m. benson will ask the fire chief for five years of actual usage for the vehicles requested on his five year plan."
+  },
+  {
+   "decision": "The Committee will ask for actual firefighting usage over the past five years in future requests.",
+   "quote": "in the future the committee will be asking for actual firefighting usage over past five years."
+  },
+  {
+   "decision": "Committee sub-prioritized its first, second, and third priorities.",
+   "quote": "committee sub-prioritized its first, second, and third priorities."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY14 technology appropriations",
+   "what_was_recorded": "Asked whether FY14 technology funds were spent; the School appropriation is mostly spent and about half of the Town appropriation is spent, with projects being spaced out due to lack of IT staff.",
+   "figures_as_printed": [],
+   "quote": "the majority of school has been spent and approximately half of the town appropriation."
+  },
+  {
+   "topic": "School teacher/admin laptops",
+   "what_was_recorded": "IT Director to ask the School Committee whether teacher/admin laptops are to be in the School FY15 expense budget or remain in the Capital Plan.",
+   "figures_as_printed": [
+    "$21,00 0"
+   ],
+   "quote": "teacher/admin laptops for $21,00 0 are to be included in the school"
+  },
+  {
+   "topic": "Revised prioritization sheet amounts",
+   "what_was_recorded": "Revised prioritization sheet listing HVAC, sprinkler, carpeting and HVAC amounts with their priorities.",
+   "figures_as_printed": [
+    "$15,798",
+    "$11,430",
+    "$36,524",
+    "$10,000",
+    "$20,100"
+   ],
+   "quote": "senior center sprinkler repairs- $11,430- priority 3 library carpeting- $36,524- priority 3"
+  },
+  {
+   "topic": "Library and Senior Center carpeting split",
+   "what_was_recorded": "Committee decreased Library by $2,000 and increased Senior Center by $1,600 to make it the $10,000 required minimum.",
+   "figures_as_printed": [
+    "$2,000",
+    "$1,600",
+    "$10,000"
+   ],
+   "quote": "decrease library by $2,000, and increase senior center by $1,600 to make it the $10,000 required minimum amount."
+  },
+  {
+   "topic": "Technology reductions",
+   "what_was_recorded": "Sub-prioritized list shows Town technology reduced by $14,400 and School technology reduced by $35,000.",
+   "figures_as_printed": [
+    "$25,000",
+    "$14,400",
+    "$30,000",
+    "$35,000"
+   ],
+   "quote": "#8 technology - town - $25,000 (decrease of $14,400)"
+  },
+  {
+   "topic": "Priority 1 sub-prioritized list",
+   "what_was_recorded": "Priority 1 items listed with their dollar amounts.",
+   "figures_as_printed": [
+    "$138,000",
+    "$550,000",
+    "$40,000",
+    "$46,000",
+    "$12,000",
+    "$14,000",
+    "$14,000",
+    "$25,000",
+    "$30,000",
+    "$10,000"
+   ],
+   "quote": "#1 school asbestos - $138,000 #2 fire dept - engine 1 - $550,000"
+  },
+  {
+   "topic": "Priority 2 sub-prioritized list",
+   "what_was_recorded": "Priority 2 items listed with their dollar amounts.",
+   "figures_as_printed": [
+    "$30,000",
+    "$35,000",
+    "$37,000",
+    "$15,798",
+    "$14,400",
+    "$35,000"
+   ],
+   "quote": "#12 asphalt roller - $35,000 #13 marshall park - $37,000"
+  },
+  {
+   "topic": "Priority 3 sub-prioritized list",
+   "what_was_recorded": "Priority 3 items listed with their dollar amounts.",
+   "figures_as_printed": [
+    "$180,000",
+    "$11,430",
+    "$36, 524",
+    "$40,000",
+    "$41,766",
+    "$17,900"
+   ],
+   "quote": "#17 street sweeper - $180,000 #18 senior center sprinkler - $11,430"
+  },
+  {
+   "topic": "Fire Dept pump truck and vehicle replacements",
+   "what_was_recorded": "Discussed the pump truck and the requested FY17 and FY19 replacements, noting costs increase if the FY15 request is pushed off a year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "if the current request for fy15 is pushed off a year, costs will increase ."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Technology (Town and School)",
+   "resolution": "discussed; IT director to ask School Superintendent for technology priority",
+   "quote": "it director steve malandrinos was available for questions regarding town and school technology.",
+   "tags": [
+    "technology",
+    "school",
+    "town"
+   ]
+  },
+  {
+   "topic": "Prioritization sheet revisions",
+   "resolution": "revised",
+   "quote": "revise prioritization sheet as follows:",
+   "tags": [
+    "prioritization",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Library and Senior Center carpeting",
+   "resolution": "separated into separate items with separate priorities; amounts adjusted",
+   "quote": "the committee chose to separate the items , apply separate priorities, decrease library by $2,000",
+   "tags": [
+    "library",
+    "senior center",
+    "carpeting"
+   ]
+  },
+  {
+   "topic": "Fire Dept correspondence and pump truck",
+   "resolution": "discussed; Chair to request five years of actual usage data from Fire Chief",
+   "quote": "correspondence from the fire chief noted engine 1 responded to 148 runs in 2012",
+   "tags": [
+    "fire department",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Sub-prioritization of priorities 1-3",
+   "resolution": "sub-prioritized",
+   "quote": "committee sub-prioritized its first, second, and third priorities.",
+   "tags": [
+    "prioritization",
+    "capital plan"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Correspondence from the Fire Chief (run and call counts for Engine 1 and Car 2, 2012 and 2013)",
+   "where": "text",
+   "quote": "correspondence from the fire chief noted engine 1 responded to 148 runs in 2012"
+  },
+  {
+   "name": "Prioritization sheet",
+   "where": "text",
+   "quote": "revise prioritization sheet as follows:"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY15",
+  "technology",
+  "fire department",
+  "prioritization",
+  "school",
+  "senior center",
+  "library",
+  "carpeting",
+  "pump truck"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence from the fire chief noted"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

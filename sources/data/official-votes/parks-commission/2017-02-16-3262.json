@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2017-02-16",
  "docid": "3262",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the January 19, 2017 meeting",
+   "motion": "Accept the minutes of January 19, 2017.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -20,15 +20,15 @@
    "quote": "karin motioned and pete seconded to accept minutes of january 19, 2017. approved 3-0."
   },
   {
-   "motion": "Approve usage agreement form for Leominster Youth Lacrosse and send to their organization pending verification of insurance requirements",
+   "motion": "Approve the usage agreement form for Leominster Youth Lacrosse and send it to their organization pending verification of insurance requirements.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard to approve usage agreement form for leominster youth lacrosse and to send to their organization pending verification of insurance requirements. dennis mannone seconded. approved 3-0."
+   "quote": "motion made by karin menard to approve usage agreement form for leominster youth lacrosse and to send to their organization pending verification of insurance requirements."
   },
   {
-   "motion": "Approve request forms as presented",
+   "motion": "Approve the request forms as presented (facility request for youth organizations with pay for player/season agreements; facility request and permit application for short term usage).",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -36,7 +36,7 @@
    "quote": "motion made by dennis mannone to approve request forms as presented. seconded by pete mccauliff. approved 3-0."
   },
   {
-   "motion": "Accept Park Use policies listed",
+   "motion": "Accept the park use policies listed in the minutes.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -44,7 +44,7 @@
    "quote": "motion made by karin menard and seconded by pete mccauliff to accept park use policies listed above. approved 3-0."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:43pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -52,7 +52,213 @@
    "quote": "motion to adjourn by karin menard, seconded by pete mccauliff- 3-0 to adjourn at 8:43pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan of printed minutes. All votes recorded with outcomes.",
- "cost_usd": 0.0858105
+ "dropped_unquoted": 1,
+ "note": "OCR text (macOS Vision) of two pages with a received-and-filed stamp; some header words are garbled (e.g. 'ENBURG', 'CREATS * CORPORA'). Votes are recorded as printed ('Approved 3-0'). The turf bill is discussed with no dollar figure printed. No public comment was recorded.",
+ "cost_usd": 0.0057096199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "1) call to order - 7:00pm attendance: dennis mannone, pete mccauliff, karin menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "1) call to order - 7:00pm attendance: dennis mannone, pete mccauliff, karin menard"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "",
+   "status": "present",
+   "quote": "1) call to order - 7:00pm attendance: dennis mannone, pete mccauliff, karin menard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karin will follow up with Town Manager Heather Lemieux to verify the Certificate of Insurance amounts are acceptable.",
+   "quote": "to verify that the insurance amounts are acceptable."
+  },
+  {
+   "decision": "Karin confirmed with Town Manager Heather Lemieux that the proper procedure for hiring seasonal employees was to post the position.",
+   "quote": "confirmed that the proper procedure for hiring seasonal employees was to post the position."
+  },
+  {
+   "decision": "The committee will create a job description for the summer town beach staff at the next meeting.",
+   "quote": "committee will create a job description at the next meeting."
+  },
+  {
+   "decision": "The Memorandum of Agreement with Lunenburg Public Schools was tabled until a future meeting due to time constraints.",
+   "quote": "memorandum of agreement with lunenburg public schools - tabled until future meeting due to time constraints."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf complex update - company bill",
+   "what_was_recorded": "Pete said the company sent an updated bill covering only work completed to date; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "pete said the company sent an updated bill for only work completed to date."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00pm; attendance taken",
+   "tags": [
+    "procedure",
+    "attendance"
+   ],
+   "quote": "1) call to order - 7:00pm attendance: dennis mannone, pete mccauliff, karin menard"
+  },
+  {
+   "topic": "Review minutes of January 19, 2017",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "karin motioned and pete seconded to accept minutes of january 19, 2017. approved 3-0."
+  },
+  {
+   "topic": "DPW Director / Town Manager Updates",
+   "resolution": "no action; none reported",
+   "tags": [
+    "updates"
+   ],
+   "quote": "3) dpw director / town manager updates - none"
+  },
+  {
+   "topic": "Leominster Lacrosse turf request",
+   "resolution": "usage agreement approved 3-0, pending insurance verification",
+   "tags": [
+    "turf",
+    "lacrosse",
+    "insurance",
+    "facility use"
+   ],
+   "quote": "motion made by karin menard to approve usage agreement form for leominster youth lacrosse and to send to their organization pending verification of insurance requirements."
+  },
+  {
+   "topic": "Turf complex update and discussion",
+   "resolution": "no action; discussion only",
+   "tags": [
+    "turf",
+    "track",
+    "contractor"
+   ],
+   "quote": "pete said the company sent an updated bill for only work completed to date."
+  },
+  {
+   "topic": "Memorandum of Agreement with Lunenburg Public Schools",
+   "resolution": "tabled to a future meeting",
+   "tags": [
+    "schools",
+    "agreement"
+   ],
+   "quote": "memorandum of agreement with lunenburg public schools - tabled until future meeting due to time constraints."
+  },
+  {
+   "topic": "Town Beach summer staff hiring",
+   "resolution": "job description to be created at next meeting",
+   "tags": [
+    "beach",
+    "staffing",
+    "hiring"
+   ],
+   "quote": "committee will create a job description at the next meeting."
+  },
+  {
+   "topic": "Policy and procedure: fees and scheduling of fields, courts and beaches",
+   "resolution": "request forms approved 3-0; park use policies accepted 3-0",
+   "tags": [
+    "policy",
+    "fees",
+    "scheduling",
+    "facility use"
+   ],
+   "quote": "motion made by dennis mannone to approve request forms as presented. seconded by pete mccauliff. approved 3-0."
+  },
+  {
+   "topic": "Other business: unanticipated items",
+   "resolution": "none",
+   "tags": [
+    "other business"
+   ],
+   "quote": "1. unanticipated items - none"
+  },
+  {
+   "topic": "Correspondence, announcements and public comment",
+   "resolution": "none",
+   "tags": [
+    "public comment",
+    "correspondence"
+   ],
+   "quote": "2. correspondence, announcements and public comment - none"
+  },
+  {
+   "topic": "Upcoming meeting schedule and agenda",
+   "resolution": "next meeting set for March 16, 2017",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming meeting schedule and agenda - next meeting march 16, 2017."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 8:43pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion to adjourn by karin menard, seconded by pete mccauliff- 3-0 to adjourn at 8:43pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FACILITY REQUEST FOR YOUTH ORGANIZATIONS WITH PAY FOR PLAYER / SEASON-AL AGREEMENTS",
+   "where": "list",
+   "quote": "karin presented two forms for committee approval - facility request"
+  },
+  {
+   "name": "FACILITY REQUEST AND PERMIT APPLICATION FOR SHORT TERM USAGE",
+   "where": "list",
+   "quote": "karin presented two forms for committee approval - facility request"
+  },
+  {
+   "name": "Usage agreement form for Leominster Youth Lacrosse",
+   "where": "list",
+   "quote": "committee reviewed usage agreement and dis-"
+  },
+  {
+   "name": "Park use policies list",
+   "where": "list",
+   "quote": "committee discussed general park use policies and created the following list:"
+  },
+  {
+   "name": "Memorandum of Agreement with Lunenburg Public Schools",
+   "where": "text",
+   "quote": "memorandum of agreement with lunenburg public schools - tabled until future meeting due to time constraints."
+  }
+ ],
+ "tags": [
+  "park commission",
+  "turf",
+  "lacrosse",
+  "beach staffing",
+  "facility use",
+  "park use policy",
+  "field and court scheduling",
+  "insurance",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "karin presented two forms for committee approval"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

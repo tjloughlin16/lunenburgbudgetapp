@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-04-04",
  "docid": "2312",
@@ -12,95 +12,359 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 14 (Capital Plan) in the amount of $652,483",
-   "moved_by": "John Male",
-   "seconded_by": "Steven Raboin",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Article 14 in the amount of $652,483 (Capital Plan).",
+   "moved_by": "JM",
+   "seconded_by": "SR",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jm made a motion to recommend approval of article 14 in the amount of $652,483. sr seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Articles 1-6 (Consent Calendar regarding revolving fund accounts)",
-   "moved_by": "John Male",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Articles 1-6 (consent calendar, revolving fund accounts).",
+   "moved_by": "JM",
+   "seconded_by": "BL",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jm made a motion to recommend approval of articles 1-6. bl seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 13 (appropriation to the Stabilization Fund) in the amount of $286,958",
-   "moved_by": "John Male",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Article 13 in the amount of $286,958 (appropriation to the Stabilization Fund).",
+   "moved_by": "JM",
+   "seconded_by": "BL",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jm made a motion to recommend approval of article 13 in the amount of $286,958. bl seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 15 (Solid Waste Disposal Program Enterprise Fund) in the amount of $285,000",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Steven Raboin",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Article 15 in the amount of $285,000 (Solid Waste Disposal Program Enterprise Fund).",
+   "moved_by": "BL",
+   "seconded_by": "SR",
+   "outcome": "passed",
    "procedural": false,
    "quote": "bl made a motion to recommend approval of article 15 in the amount of $285,000. sr seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 16 (Water Department/Water Enterprise Fund) in the amount of $18,000",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "John Male",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Article 16 in the amount of $18,000 (Water Enterprise Fund).",
+   "moved_by": "TB",
+   "seconded_by": "JM",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tb made a motion to recommend approval of article 16 in the amount of $18,000. jm seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 17 (Sewer Enterprise Fund) in the amount of $714,613",
-   "moved_by": "Jason Smith",
-   "seconded_by": "Terri Burchfield",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Article 17 in the amount of $$714,613 (Sewer Enterprise Fund), as printed.",
+   "moved_by": "JS",
+   "seconded_by": "TB",
+   "outcome": "passed",
    "procedural": false,
    "quote": "js made a motion to recommend approval of article 17 in the amount of $$714,613. tb seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 18 (FY2014 Town budget) in the amount of $28,184,453",
-   "moved_by": "John Male",
-   "seconded_by": "Jason Smith",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Article 18 in the amount of $28,184,453 (FY2014 Town budget).",
+   "moved_by": "JM",
+   "seconded_by": "JS",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jm made a motion to recommend approval of article 18 in the amount of $28,184,453. js seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend disapproval of Article 19 (repeal of local meals excise tax)",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed unanimously",
+   "motion": "Recommend disapproval of Article 19 (repeal of local meals excise tax).",
+   "moved_by": "TB",
+   "seconded_by": "BL",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tb made a motion to recommend disapproval of article 19. bl seconded, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 25 (Energy Stretch Code)",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Steven Raboin",
-   "outcome": "passed 3-0 (3 abstained)",
+   "motion": "Recommend approval of Article 25 (Energy Stretch Code).",
+   "moved_by": "BL",
+   "seconded_by": "SR",
+   "outcome": "3 yes, 3 abstain",
    "procedural": false,
-   "quote": "bl made a motion to recommend approval of article 25. sr seconded. split vote of 3 yes, and 3 abstain. yes: tb, sr, bl abstain: js, me, jm"
+   "quote": "bl made a motion to recommend approval of article 25. sr seconded. split vote of 3 yes, and 3 abstain."
   },
   {
-   "motion": "Recommend approval of Article 28 (transfer of the Parks Garage to the Select Board for disposition)",
-   "moved_by": "Jason Smith",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed unanimously",
+   "motion": "Recommend approval of Article 28 (transfer of the Parks Garage to the Select Board for disposition).",
+   "moved_by": "JS",
+   "seconded_by": "BL",
+   "outcome": "passed",
    "procedural": false,
    "quote": "js made a motion to recommend approval of article 28. bl seconded, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Brian Laffond",
+   "motion": "Adjourn the meeting at 9:13 pm.",
+   "moved_by": "TB",
+   "seconded_by": "BL",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "tb motioned to adjourn at 9:13. bl seconded, approved 6-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable. All votes extracted.",
- "cost_usd": 0.09813749999999999
+ "note": "Text is macOS Vision OCR with header noise (\"Enchss\", \"A '13\") ignored. Present line OCR-split; attendance taken from it. Article 9 was not voted on, only deferred. Article 25 recorded as a split vote (3 yes, 3 abstain) with no pass/fail result printed. Article 17 figure is printed as \"$$714,613\" and is recorded as printed. Members' roles are not printed beyond the header list; Kerry Speidel's role is not printed. Capital Planning Committee was present but no names are given. Public comment: none recorded.",
+ "cost_usd": 0.00778422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, j. smith, t. burchfield, s. raboin"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, j. smith, t. burchfield, s. raboin"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, j. smith, t. burchfield, s. raboin"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, j. smith, t. burchfield, s. raboin"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, j. smith, t. burchfield, s. raboin"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, j. smith, t. burchfield, s. raboin"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief sullivan addressed previous questions regarding the cost of the ambulance put forward in the capital plan."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry speidel discussed continuing assessment of the benefits to the town to purchase the street lights."
+  },
+  {
+   "name": "D. Blatt",
+   "role": "Green Community Task Force chairperson",
+   "status": "present",
+   "quote": "following a brief presentation by the green community task force chairperson d. blatt"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 9 (items related to the FY13 budget) was not voted on and was deferred to the next meeting.",
+   "quote": "article 9 regarding items related to the fy13 budget will be addressed at our next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 14 - Capital Plan",
+   "what_was_recorded": "Committee recommended approval of Article 14 at $652,483.",
+   "figures_as_printed": [
+    "$652,483"
+   ],
+   "quote": "jm made a motion to recommend approval of article 14 in the amount of $652,483. sr seconded, motion carried unanimously."
+  },
+  {
+   "topic": "Article 13 - Appropriation to the Stabilization Fund",
+   "what_was_recorded": "Committee recommended approval of Article 13 at $286,958.",
+   "figures_as_printed": [
+    "$286,958"
+   ],
+   "quote": "jm made a motion to recommend approval of article 13 in the amount of $286,958. bl seconded, motion carried unanimously."
+  },
+  {
+   "topic": "Article 15 - Solid Waste Disposal Program Enterprise Fund",
+   "what_was_recorded": "Committee recommended approval of Article 15 at $285,000.",
+   "figures_as_printed": [
+    "$285,000"
+   ],
+   "quote": "bl made a motion to recommend approval of article 15 in the amount of $285,000. sr seconded, motion carried unanimously."
+  },
+  {
+   "topic": "Article 16 - Water Enterprise Fund",
+   "what_was_recorded": "Committee recommended approval of Article 16 at $18,000.",
+   "figures_as_printed": [
+    "$18,000"
+   ],
+   "quote": "tb made a motion to recommend approval of article 16 in the amount of $18,000. jm seconded, motion carried unanimously."
+  },
+  {
+   "topic": "Article 17 - Sewer Enterprise Fund",
+   "what_was_recorded": "Committee recommended approval of Article 17 at $$714,613 as printed (double dollar sign in the minutes).",
+   "figures_as_printed": [
+    "$$714,613"
+   ],
+   "quote": "js made a motion to recommend approval of article 17 in the amount of $$714,613. tb seconded, motion carried unanimously."
+  },
+  {
+   "topic": "Article 18 - FY2014 Town budget",
+   "what_was_recorded": "Committee recommended approval of Article 18 at $28,184,453.",
+   "figures_as_printed": [
+    "$28,184,453"
+   ],
+   "quote": "jm made a motion to recommend approval of article 18 in the amount of $28,184,453. js seconded, motion carried unanimously."
+  },
+  {
+   "topic": "Ambulance cost in the Capital Plan",
+   "what_was_recorded": "Chief Sullivan addressed questions on the cost of the ambulance in the Capital Plan; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "chief sullivan addressed previous questions regarding the cost of the ambulance put forward in the capital plan."
+  },
+  {
+   "topic": "Town Manager's additional recommendations using free cash",
+   "what_was_recorded": "Town Manager addressed questions on her additional recommendations using available free cash; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager also addressed questions that had come up regarding the additional recommendations she had made using available free cash."
+  },
+  {
+   "topic": "Purchase of street lights",
+   "what_was_recorded": "Town Manager update on assessing benefits to the Town of buying the street lights; Unitil notified of interest; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "kerry speidel discussed continuing assessment of the benefits to the town to purchase the street lights."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "no action (workshop information distributed)",
+   "quote": "me distributed workshop information from the association of town finance committees.",
+   "tags": [
+    "communications",
+    "training"
+   ]
+  },
+  {
+   "topic": "Warrant Article Review",
+   "resolution": "recommended approval or disapproval of articles; Article 9 deferred; Article 25 split vote",
+   "quote": "chief sullivan addressed previous questions regarding the cost of the ambulance put forward in the capital plan.",
+   "tags": [
+    "warrant articles",
+    "town meeting",
+    "capital plan",
+    "enterprise funds",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Manager Update",
+   "resolution": "no action (street lights assessment continuing)",
+   "quote": "kerry speidel discussed continuing assessment of the benefits to the town to purchase the street lights.",
+   "tags": [
+    "street lights",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "no action (schedule noted)",
+   "quote": "april 11\" and 25\" are regular meetings.",
+   "tags": [
+    "schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:13 pm, approved 6-0",
+   "quote": "tb motioned to adjourn at 9:13. bl seconded, approved 6-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Workshop information from the Association of Town Finance Committees",
+   "where": "text",
+   "quote": "me distributed workshop information from the association of town finance committees."
+  },
+  {
+   "name": "Article 14 (Capital Plan)",
+   "where": "text",
+   "quote": "article 14 regarding the capital plan."
+  },
+  {
+   "name": "Articles 1-6 (Consent Calendar, revolving fund accounts)",
+   "where": "text",
+   "quote": "articles 1-6 consent calendar regarding revolving fund accounts."
+  },
+  {
+   "name": "Article 9 (FY13 budget items)",
+   "where": "text",
+   "quote": "article 9 regarding items related to the fy13 budget will be addressed at our next meeting."
+  },
+  {
+   "name": "Article 13 (Stabilization Fund appropriation)",
+   "where": "text",
+   "quote": "article 13 regarding an appropriation to the stabilization fund."
+  },
+  {
+   "name": "Article 15 (Solid Waste Disposal Program Enterprise Fund)",
+   "where": "text",
+   "quote": "article 15 regarding the solid waste disposal program enterprise fund."
+  },
+  {
+   "name": "Article 16 (Water Enterprise Fund)",
+   "where": "text",
+   "quote": "article 16 regarding the water department/water enterprise fund."
+  },
+  {
+   "name": "Article 17 (Sewer Enterprise Fund)",
+   "where": "text",
+   "quote": "article 17 regarding the sewer enterprise fund."
+  },
+  {
+   "name": "Article 18 (FY2014 Town budget)",
+   "where": "text",
+   "quote": "article 18 regarding the fy2014 town budget."
+  },
+  {
+   "name": "Article 19 (repeal of local meals excise tax)",
+   "where": "text",
+   "quote": "article 19 regarding repeal of local meals excise tax."
+  },
+  {
+   "name": "Article 25 (Energy Stretch Code)",
+   "where": "text",
+   "quote": "article 25 regarding the energy stretch code."
+  },
+  {
+   "name": "Article 28 (transfer of the Parks Garage to the Select Board)",
+   "where": "text",
+   "quote": "article 28 regarding the transfer of the parks garage to the select board for disposition."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "warrant articles",
+  "town meeting 2013",
+  "FY2014 budget",
+  "capital plan",
+  "enterprise funds",
+  "stabilization fund",
+  "energy stretch code",
+  "street lights",
+  "meals excise tax",
+  "parks garage",
+  "free cash"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

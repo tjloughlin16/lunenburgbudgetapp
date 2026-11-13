@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-11-22",
  "docid": "4996",
@@ -12,55 +12,562 @@
  },
  "votes": [
   {
-   "motion": "enter Executive Session to conduct strategy sessions in preparation for negotiations with non-union personnel regarding Town Manager contract",
+   "motion": "Enter executive session to conduct strategy in preparation for contract negotiations for Town Manager, under M.G.L. C. 30, 821.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: r. ebersole 2nd: p. bertram to enter executive session according to m.g.l. c. 30, 821 to conduct strategy sessions in preparation for negotiations with non-union personnel or to conduct collective bargaining sessions or contract negotiations with non-union personnel (town manager contract) vote: ms. bertram -aye, mr. ebersole-aye, ms. luck-aye, mr. toale-aye"
+   "quote": "to enter executive session according to m.g.l. c. 30, 821 to conduct strategy sessions"
   },
   {
-   "motion": "approve the Salvation Army toll booth fundraiser on December 10 from 9:00 a.m. to 3:00 p.m.",
+   "motion": "Approve the Salvation Army toll booth fundraiser on December 10 from 9:00 a.m. to 3:00 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\": p. luck to approve the salvation army toll booth fundraiser on december 10* from 9:00 a.m. to 3:00 p.m. vote: all in favor"
+   "quote": "to approve the salvation army toll booth fundraiser on december 10* from 9:00 a.m. to 3:00 p.m."
   },
   {
-   "motion": "authorize the Chair to sign the change orders as presented by Supt. Calmes",
+   "motion": "Authorize the Chair to sign the change orders as presented by Supt. Calmes.",
    "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole 21: p. bertram to authorize the chair to sign the change orders as presented by supt. calmes ms. luck asked supt. calmes if she anticipated more contingency items. ms. calmes stated they are about four days away from substantial completion of phase 2, so at this point in time nothing that she is aware of. vote: all in favor"
+   "quote": "to authorize the chair to sign the change orders as presented by supt. calmes"
   },
   {
-   "motion": "appoint Adam Burney as Acting Town Manager until such time the current candidate accepts the contract and begins in Lunenburg",
+   "motion": "Appoint Adam Burney as Acting Town Manager until such time the current candidate accepts the contract and begins in Lunenburg.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd. p. luck to appoint adam burney as acting town manager until such time the current candidate accepts the contract and begins in lunenburg vote: all in favor"
+   "quote": "to appoint adam burney as acting town manager until such time the current candidate accepts the contract and begins in lunenburg"
   },
   {
-   "motion": "accept the resignation effective December 31, 2016 for James Sharkey",
+   "motion": "Accept the resignation of James Sharkey as Wiring Inspector effective December 31, 2016.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2^: p. bertram to accept the resignation effective december 31, 2016 for james sharkey ms. bertram suggested contacting the person mr. sharkey suggested as his replacement to see if there is any interest and to schedule his appointment if so. mr. ebersole also suggested getting input from the building commissioner and land use director. vote: all in favor"
+   "quote": "to accept the resignation effective december 31, 2016 for james sharkey"
   },
   {
-   "motion": "adjourn the meeting at 9:00 p.m.",
+   "motion": "Adjourn the meeting at 9:00 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:00 p.m. 2\"°: r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 9:00 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1482585
+ "note": "OCR text from macOS Vision with garbling (header reads 'SAMIR AIR'; 'Ploor', 'Ebersole' spellings; a stray 'ExEcutive Session Minutes reSprate' line). Votes recorded only for motions with an explicit result; the Special Town Meeting article motions were assigned to members ('will make the motion') but no votes were recorded. Figures conflict within the text: the Reserve Fund transfer is printed as $120,407 in the suggested motion and $120,047 in the discussion. Attendance line lists Robert Ebersole without a title. Minutes were signed by Elaine M. Peterson, not included as an attendee. All 9 pages of text were readable.",
+ "cost_usd": 0.015426020000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: tom alonzo, clerk"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, commented on the november 28, 2016 special town meeting warrant"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Lunenburg School Superintendent",
+   "status": "present",
+   "quote": "loxi calmes, lunenburg school superintendent, wanted to extend on behalf of all of their students"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "presenter, Salvation Army tollbooth fundraiser request",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, presented to request to hold a tollbooth fundraiser on december 10 from"
+  },
+  {
+   "name": "Annette",
+   "role": "envoy for the Salvation Army",
+   "status": "present",
+   "quote": "he introduced annette who is an envoy for the salvation army"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director burney reported he couldn't explain why personnel committee minutes are not posted"
+  },
+  {
+   "name": "Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director brochu reported there was not going to be a financial impact from this article other than the"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "",
+   "status": "present",
+   "quote": "troy daniels, 94 main street, came in because the board approved the salvation army toll booth fundraiser"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board approved the minutes of October 25 and November 1, 2016 and signed them (no motion recorded).",
+   "quote": "minutes of october 25 and november 1, 2016 were approved and signed."
+  },
+  {
+   "decision": "The Board requested more information on Special Town Meeting Article 7 (Salary Administration Plan grade changes).",
+   "quote": "the board requested more information."
+  },
+  {
+   "decision": "It was suggested the impact of the Article 1 pavement encumbrance be obtained from the DPW Director; Mr. Ebersole suggested making a recommendation at town meeting.",
+   "quote": "it was suggested to get the impact of this from the dpw director."
+  },
+  {
+   "decision": "Ms. Bertram asked Ms. Brochu to assist the Board with the FY 2018 budget process during the transition period.",
+   "quote": "ms. bertram asked ms. brochu to assist the board with the fy 2018 budget process during the transition period."
+  },
+  {
+   "decision": "Board suggested contacting the person Mr. Sharkey proposed as his replacement; Mr. Ebersole suggested getting input from the Building Commissioner and Land Use Director.",
+   "quote": "ms. bertram suggested contacting the person mr. sharkey suggested as his replacement to see if there is any"
+  },
+  {
+   "decision": "Ms. Luck requested a future agenda discussion on hiring a consultant to provide stormwater guidance prior to paving roads; Ms. Bertram agreed and suggested a paving workshop, Complete Streets and an MS4 update.",
+   "quote": "ms. luck requested an agenda discussion on hiring a consultant to provide stormwater guidance prior to paving"
+  },
+  {
+   "decision": "Suggested motion for Special Town Meeting Article 2 states the Town is not interested in purchasing the property (motion to pass over Article 2).",
+   "quote": "suggested motion (town is not interested in purchasing the property)"
+  },
+  {
+   "decision": "The Board did not see the need to meet before the Special Town Meeting.",
+   "quote": "the board did not see the need to meet before the special town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Middle/High School project budget",
+   "what_was_recorded": "The original project amount before construction contingency changes and the remaining amount after change orders were reported.",
+   "figures_as_printed": [
+    "$4,170,774",
+    "$2,982,048"
+   ],
+   "quote": "the original amount before the construction contingency changes was $4,170,774"
+  },
+  {
+   "topic": "Change Order #14",
+   "what_was_recorded": "Change Order #14 items were itemized and totalled.",
+   "figures_as_printed": [
+    "$15,834",
+    "$888",
+    "$3,680",
+    "$1401",
+    "$10,039",
+    "$31,842.00"
+   ],
+   "quote": "change order #14 includes adding cabinet unit heaters on the second floor in area b, totaling $15,834"
+  },
+  {
+   "topic": "Change Order #15",
+   "what_was_recorded": "Change Order #15 items were itemized and totalled.",
+   "figures_as_printed": [
+    "$12,244",
+    "$3,835",
+    "$6,632",
+    "$2021",
+    "$24,732"
+   ],
+   "quote": "change order #15 reworks the wood wall cap around the auditorium wing walls for added railing ($12,244)"
+  },
+  {
+   "topic": "Change Order #16",
+   "what_was_recorded": "Change Order #16 post-occupancy items were itemized and totalled.",
+   "figures_as_printed": [
+    "$25,619",
+    "$13,535",
+    "$3,574",
+    "$2,227",
+    "$15,419",
+    "$4,240",
+    "$5,526",
+    "$70,140.00"
+   ],
+   "quote": "change order #16 addresses post occupancy changes; athletic field resizing ($25,619)"
+  },
+  {
+   "topic": "Change Order #17",
+   "what_was_recorded": "Change Order #17 items were itemized and totalled.",
+   "figures_as_printed": [
+    "$34,437",
+    "$3,632",
+    "$38,069"
+   ],
+   "quote": "change order #17 added a radio repeater system for police department ($34,437)"
+  },
+  {
+   "topic": "Change Order #18",
+   "what_was_recorded": "Change Order #18 items were itemized and totalled.",
+   "figures_as_printed": [
+    "$6,415",
+    "$15,366",
+    "$21,781"
+   ],
+   "quote": "change order #18 added plantings around oak avenue property line ($6,415)"
+  },
+  {
+   "topic": "Change Order #20",
+   "what_was_recorded": "Change Order #20 was an Other Project Transfer Budget Revision Request for additional commissioning of HRU units.",
+   "figures_as_printed": [
+    "$6000"
+   ],
+   "quote": "change order #20 is an other project transfer budget revision request in the amount of $6000."
+  },
+  {
+   "topic": "Change Order #21",
+   "what_was_recorded": "Change Order #21 was for additional cabinets.",
+   "figures_as_printed": [
+    "$1530.00"
+   ],
+   "quote": "change order #21 was for additional cabinets in the amount of $1530.00"
+  },
+  {
+   "topic": "Change Order #22",
+   "what_was_recorded": "Change Order #22 was due to architect's amendment #11 for resizing the athletic field.",
+   "figures_as_printed": [
+    "$1794"
+   ],
+   "quote": "change order #22 was due to architect's amendment #11 for resizing the athletic field in the amount of $1794."
+  },
+  {
+   "topic": "Accounts payable and payroll warrants",
+   "what_was_recorded": "The Board signed Accounts Payable, Payroll and School Payroll warrants.",
+   "figures_as_printed": [
+    "$2,789,918.53",
+    "$574,060.46",
+    "$6560.00",
+    "$4677.88"
+   ],
+   "quote": "the board signed accounts payable warrants in the amount of $2,789,918.53 and $574,060.46"
+  },
+  {
+   "topic": "Special Town Meeting Article 1 (FY17 budget amendment)",
+   "what_was_recorded": "Suggested motion to raise and appropriate a sum and adjust several budget lines and the Student Transportation Offset transfer.",
+   "figures_as_printed": [
+    "$189,139",
+    "$31,623.00",
+    "$-0-",
+    "$1,184",
+    "$8,876",
+    "$2,430",
+    "$120,407",
+    "$1,042",
+    "$40,200",
+    "$15,000",
+    "$31,623"
+   ],
+   "quote": "i move the town vote to raise and appropriate the sum of $189,139 and adjust the transfer from"
+  },
+  {
+   "topic": "Reserve Fund transfer and pavement plan impact",
+   "what_was_recorded": "Ms. Bertram noted a Reserve Fund transfer and concern that $100,000 encumbered from the pavement plan for Summer Street design would affect the pavement plan. The Reserve Fund figure read aloud ($120,047) differs from the suggested motion figure ($120,407).",
+   "figures_as_printed": [
+    "$120,047",
+    "$100,000"
+   ],
+   "quote": "expressed concern about $100,000 being encumbered last year from the pavement management plan"
+  },
+  {
+   "topic": "Special Town Meeting Article 3 (Police contract funding)",
+   "what_was_recorded": "Suggested transfers to fund the first year of the Police Officers contract.",
+   "figures_as_printed": [
+    "$34,378",
+    "$13,400",
+    "$47,778"
+   ],
+   "quote": "transfer from article 15 of the may 7, 2016 annual town meeting - line 13a, salary reserve, the sum of $34,378"
+  },
+  {
+   "topic": "Special Town Meeting Article 6 (Cemetery care)",
+   "what_was_recorded": "Suggested motion to appropriate from the Sale of Cemetery lots account for cemetery care.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "to see if the town will vote to appropriate the sum of $35,000 from the sale of cemetery lots account"
+  },
+  {
+   "topic": "Special Town Meeting Article 7 (Salary grade changes)",
+   "what_was_recorded": "Finance Director reported no financial impact other than PACC Coordinator pay; contracted personnel not affected.",
+   "figures_as_printed": [],
+   "quote": "finance director brochu reported there was not going to be a financial impact from this article other than the"
+  },
+  {
+   "topic": "Special Town Meeting Article 8 (salary schedule and COLA)",
+   "what_was_recorded": "Finance Director stated no financial impact for FY2017; the article includes a 2% COLA approved at the May 2016 Annual Town Meeting.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "ms. brochu stated this does not have a financial impact for fiscal year 2017."
+  },
+  {
+   "topic": "Special Town Meeting Article 9 (PEG access fund)",
+   "what_was_recorded": "Suggested appropriation from PEG access and cable related fund revenues to supplement the FY17 PEG Access Committee operating budget.",
+   "figures_as_printed": [
+    "$110,142.36"
+   ],
+   "quote": "cable related fund revenues, the sum of $110,142.36 to supplement the amounts voted under article 25"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Special Town Meeting Article 1: adjust transfer from the Student Transportation Offset Receipt Fund.",
+   "amount_as_printed": "$31,623.00 to $-0-",
+   "outcome": "Proposed in suggested motion for Special Town Meeting Article 1; no vote recorded at this meeting.",
+   "quote": "adjust the transfer from the student transportation offset receipt fund from $31,623.00 to $-0-"
+  },
+  {
+   "description": "Special Town Meeting Article 1: add to Line 13, Reserve Fund.",
+   "amount_as_printed": "$120,407",
+   "outcome": "Proposed in suggested motion for Special Town Meeting Article 1; no vote recorded at this meeting.",
+   "quote": "add to line 13, reserve fund, the sum of $120,407"
+  },
+  {
+   "description": "Special Town Meeting Article 1: deduct from Line 79, School Department.",
+   "amount_as_printed": "$31,623",
+   "outcome": "Proposed in suggested motion for Special Town Meeting Article 1; no vote recorded at this meeting.",
+   "quote": "and deduct from line 79, school department, the sum of $31,623"
+  },
+  {
+   "description": "Special Town Meeting Article 3: transfers from Salary Reserve (Line 13A) and Radio Watch (Line 46) to Police Department (Line 39) to fund the police contract.",
+   "amount_as_printed": "$34,378; $13,400; $47,778",
+   "outcome": "Proposed in suggested motion for Special Town Meeting Article 3; no vote recorded at this meeting.",
+   "quote": "transfer from article 15 of the may 7, 2016 annual town meeting - line 13a, salary reserve, the sum of $34,378"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "storm water workshops and salt use",
+   "quote": "ms. luck reported she has attended multiple workshops concerning storm water."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "Article 7 salary plan and Personnel Committee records",
+   "quote": "rhonda lisio, 181 reservoir road, commented on the november 28, 2016 special town meeting warrant"
+  },
+  {
+   "speaker": "Loxi Calmes",
+   "stated_role": "Lunenburg School Superintendent",
+   "topic": "thanks, Jane Doyle Playground dedication, tree lighting",
+   "quote": "loxi calmes, lunenburg school superintendent, wanted to extend on behalf of all of their students"
+  },
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "94 Main Street",
+   "topic": "criteria for Salvation Army fundraiser approval",
+   "quote": "troy daniels, 94 main street, came in because the board approved the salvation army toll booth fundraiser"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session (Town Manager contract)",
+   "resolution": "entered executive session 4-0",
+   "quote": "mr. toale announced the board needed to enter executive session to conduct",
+   "tags": [
+    "executive session",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Pledge and opening public comment",
+   "resolution": "no action",
+   "quote": "ms. luck reported she has attended multiple workshops concerning storm water.",
+   "tags": [
+    "public comment",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Salvation Army tollbooth fundraiser request",
+   "resolution": "approved",
+   "quote": "dave macdonald, 155 island road, presented to request to hold a tollbooth fundraiser on december 10 from",
+   "tags": [
+    "fundraiser",
+    "salvation army"
+   ]
+  },
+  {
+   "topic": "Change orders for Middle/High School Project",
+   "resolution": "Chair authorized to sign change orders",
+   "quote": "supt. calmes reviewed the school budget revision requests based on change orders and some line item transfers.",
+   "tags": [
+    "school construction",
+    "change orders"
+   ]
+  },
+  {
+   "topic": "Motion sheet for Special Town Meeting",
+   "resolution": "reviewed Articles 1-9; Article 2 passed over by suggested motion; no votes recorded on articles",
+   "quote": "2. motion sheet for special town meeting",
+   "tags": [
+    "special town meeting",
+    "budget transfers",
+    "salary administration",
+    "reserve fund"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes approved and warrants signed; agenda item on paving and stormwater requested",
+   "quote": "the board signed accounts payable warrants in the amount of $2,789,918.53",
+   "tags": [
+    "warrants",
+    "minutes",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Town Manager transition plan",
+   "resolution": "Adam Burney appointed Acting Town Manager",
+   "quote": "mr. toale reported the board is negotiating a contract for a permanent town manager.",
+   "tags": [
+    "town manager",
+    "acting town manager"
+   ]
+  },
+  {
+   "topic": "Resignation of Wiring Inspector James Sharkey",
+   "resolution": "resignation accepted effective December 31, 2016",
+   "quote": "resignation as wiring inspector effective december 31, 2016- james sharkey",
+   "tags": [
+    "resignation",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "ms. luck reported the school committee discussed the contingency items discussed earlier this evening.",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public comment on Salvation Army fundraiser",
+   "resolution": "no action; Board members to educate themselves",
+   "quote": "troy daniels, 94 main street, came in because the board approved the salvation army toll booth fundraiser",
+   "tags": [
+    "public comment",
+    "salvation army"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 p.m.",
+   "quote": "to adjourn the meeting at 9:00 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting Warrant, November 28, 2016",
+   "where": "text",
+   "quote": "commented on the november 28, 2016 special town meeting warrant"
+  },
+  {
+   "name": "Motion Sheet for Special Town Meeting",
+   "where": "text",
+   "quote": "2. motion sheet for special town meeting"
+  },
+  {
+   "name": "Salary Administration Plan (Article XV of the Town's Bylaw)",
+   "where": "text",
+   "quote": "amend article xv of the town's bylaw entitled \"salary administration plan\" of the town of lunenburg as follows"
+  },
+  {
+   "name": "Memo to the Board of Selectmen concerning the PACC Coordinator",
+   "where": "text",
+   "quote": "read aloud a memo to the board of selectmen concerning the pacc coordinator"
+  },
+  {
+   "name": "Fliers on MassDOT Snow and Ice Operations workshops",
+   "where": "text",
+   "quote": "she distributed fliers on the workshops to the other board members."
+  },
+  {
+   "name": "Personnel Committee meeting agendas and minutes",
+   "where": "text",
+   "quote": "personnel committee meeting agendas going back to january 2016 do not list any reference"
+  },
+  {
+   "name": "Change Orders #14 through #22, Middle/High School Project",
+   "where": "text",
+   "quote": "change order #14 includes adding cabinet unit heaters on the second floor in area b"
+  },
+  {
+   "name": "Architect's amendment #11",
+   "where": "text",
+   "quote": "due to architect's amendment #11 for resizing the athletic field"
+  },
+  {
+   "name": "Accounts Payable, Payroll and School Payroll warrants",
+   "where": "text",
+   "quote": "the board signed accounts payable warrants in the amount of $2,789,918.53"
+  }
+ ],
+ "tags": [
+  "select board",
+  "special town meeting",
+  "motion sheet",
+  "executive session",
+  "town manager",
+  "acting town manager",
+  "school construction",
+  "change orders",
+  "salary administration",
+  "police contract",
+  "reserve fund",
+  "pavement plan",
+  "stormwater",
+  "public access cable",
+  "salvation army",
+  "resignation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

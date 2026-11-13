@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-08-11",
  "docid": "2245",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval to transfer $77,933 into the reserve fund and $36,740 into the School Department",
+   "motion": "Recommend approval to transfer $77,933 into the reserve fund and $36,740 into the School Dept., for a total of $114,733 (Article 1).",
    "moved_by": "Mark E.",
    "seconded_by": "John H.",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "mark e. motions to recommend approval to transfer $77,933 into the reserve fund and $36,740 into the school dept. for a total of $114,733. john h. seconded. all in favor. 4-0"
   },
   {
-   "motion": "Recommend approval for article 2 to fund the first year of the public employee union 39 contract",
+   "motion": "Recommend approval of Article 2 to fund the first year of the public employee union contract.",
    "moved_by": "Mark E.",
    "seconded_by": "John H.",
    "outcome": "passed 4-0",
@@ -28,7 +28,7 @@
    "quote": "mark e. move to recommend approval for article 2 to fund the first year of the public employee union 39 contract. john h. seconded. all in favor. 4-0"
   },
   {
-   "motion": "Recommend approval to authorize the local 10% match on the Lanni property",
+   "motion": "Recommend approval to authorize the local 10% match on the Lanni property (Article 16, Agricultural Preservation Restriction).",
    "moved_by": "Mark E.",
    "seconded_by": "John",
    "outcome": "passed 4-0",
@@ -36,7 +36,7 @@
    "quote": "mark e. moves to recommend approval to authorize the local 10% match on the lanni property. john seconded. all in favor. 4-0"
   },
   {
-   "motion": "Accept the minutes of the July 14th, 2016 meeting",
+   "motion": "Accept the minutes of the July 14, 2016 meeting.",
    "moved_by": "Mark E.",
    "seconded_by": "Jay",
    "outcome": "passed 4-0",
@@ -44,7 +44,7 @@
    "quote": "mark e. moved to accept the minutes; jay seconded the motion, and the motion was approved by a 4-0 vote."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mark E.",
    "seconded_by": "John",
    "outcome": "passed 4-0",
@@ -53,6 +53,401 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR output from macOS Vision. All five votes are clearly recorded with mover, seconder, and outcome. A sixth motion regarding change order approvals is mentioned but not formally voted on—it is part of the Building Commission's report.",
- "cost_usd": 0.0944825
+ "note": "Scanned via OCR (macOS Vision); some figures look garbled as printed and are recorded as printed: '$77,993' in the discussion vs '$77,933' in the Article 1 motion, and '$513,86.89'. Hannah Anderson's status is taken from the layout, where she is listed under the 'Absent:' label. The minutes name no separate documents list. Article 3 (police union) was not decided. The public hearing portion was not voted on as a whole.",
+ "cost_usd": 0.009903820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Hannah Anderson",
+   "status": "absent",
+   "quote": "hannah anderson kerry lafleur, town manager"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "hannah anderson kerry lafleur, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Articles 4 (Cemetery Commission) and 5-6-7 (solar power agreements) were passed over without a vote.",
+   "quote": "article 4. cemetery commission. pass over."
+  },
+  {
+   "decision": "Members deferred deciding whether Articles 8 through 14 carry any financial impact until they hear the discussion on those articles.",
+   "quote": "members would like to hear the discussion on the articles before deciding if there is any financial impact."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cherry sheet: additional revenue",
+   "what_was_recorded": "The town will receive additional revenue on the 2017 Cherry sheet, mostly from Chapter 70.",
+   "figures_as_printed": [
+    "$61,191"
+   ],
+   "quote": "the town will receive $61,191 in additional revenue. mostly from chapter 70."
+  },
+  {
+   "topic": "Cherry sheet: reduced assessments",
+   "what_was_recorded": "Reductions in assessments result in additional revenue for the Town.",
+   "figures_as_printed": [
+    "$18,892"
+   ],
+   "quote": "there are reductions in assessments of $18,892, which result in additional revenue for the town."
+  },
+  {
+   "topic": "Veterans benefits funding",
+   "what_was_recorded": "Additional state funding for Veterans benefits, which are reimbursed 75% in the following year.",
+   "figures_as_printed": [
+    "$26,065"
+   ],
+   "quote": "additional funding for veterans benefits in the amount of $26,065."
+  },
+  {
+   "topic": "Net increase in revenue from Cherry sheet",
+   "what_was_recorded": "The total net increase in revenue from the Cherry sheet changes.",
+   "figures_as_printed": [
+    "$114,733"
+   ],
+   "quote": "the total net increase in revenue is $114,733."
+  },
+  {
+   "topic": "Article 1 proposed uses of additional income",
+   "what_was_recorded": "The Town Manager recommends the reserve fund receive a sum and the School Dept. receive $36,740 to replace lost kindergarten grant funding.",
+   "figures_as_printed": [
+    "$77,993",
+    "$36,740"
+   ],
+   "quote": "the town manager recommends $77,993 to the reserve fund and $36,740 to the school dept."
+  },
+  {
+   "topic": "Article 2 DPW collective bargaining agreement cost",
+   "what_was_recorded": "Estimated cost for one year of the DPW contract, 1.5% COL plus a uniform allowance increase, for 9 employees, funded through the Salary Reserve account.",
+   "figures_as_printed": [
+    "$6100"
+   ],
+   "quote": "estimated cost for one year is $6100 for 9 employees."
+  },
+  {
+   "topic": "Article 16 Lanni Orchards APR local match",
+   "what_was_recorded": "Town to fund a local 10% match toward the Agricultural Preservation Restriction, funds already held in reserve since last year.",
+   "figures_as_printed": [
+    "$58,000"
+   ],
+   "quote": "to authorize the town to fund $58,000 towards the apr."
+  },
+  {
+   "topic": "FY16 expenditure close-out",
+   "what_was_recorded": "Expenditure close-out for FY16, including the $58K for the APR.",
+   "figures_as_printed": [
+    "$331,676.92",
+    "$58K"
+   ],
+   "quote": "the town will be ending the fiscal year with expenditure close out of $331,676.92, which includes the $58k for the apr."
+  },
+  {
+   "topic": "FY16 revenue over estimates",
+   "what_was_recorded": "Revenue received over estimates.",
+   "figures_as_printed": [
+    "$643,840.66"
+   ],
+   "quote": "revenue received over our estimates in the amount of $643,840.66."
+  },
+  {
+   "topic": "FY16 ending balance",
+   "what_was_recorded": "Ending balance reported.",
+   "figures_as_printed": [
+    "$975,517.58"
+   ],
+   "quote": "ending balance of $975,517.58"
+  },
+  {
+   "topic": "Estimated certified free cash",
+   "what_was_recorded": "Estimated certified free cash as of July 1, 2016; board to discuss options for its use.",
+   "figures_as_printed": [
+    "$800K"
+   ],
+   "quote": "estimated certified free cash as of july 1, 2016 estimated at $800k"
+  },
+  {
+   "topic": "Local receipts above estimate",
+   "what_was_recorded": "Local receipts collected were 118.55% of estimates, a stated excess over estimate.",
+   "figures_as_printed": [
+    "$513,86.89"
+   ],
+   "quote": "that is $513,86.89 more than estimated."
+  },
+  {
+   "topic": "Meals tax and motor vehicle excise over estimate",
+   "what_was_recorded": "Meals tax and motor vehicle excise came in above estimate.",
+   "figures_as_printed": [
+    "9K",
+    "$200k"
+   ],
+   "quote": "about 9k more in meals tax. $200k more in motor vehicles excise tax."
+  },
+  {
+   "topic": "Prior-year delinquent taxes received",
+   "what_was_recorded": "Prior year delinquent taxes received above estimate.",
+   "figures_as_printed": [
+    "$400k"
+   ],
+   "quote": "received about $400k in prior year delinquent taxes."
+  },
+  {
+   "topic": "Tri Town Landing 40R payment",
+   "what_was_recorded": "Payment received for the Tri Town Landing 40R project at $3000 per unit.",
+   "figures_as_printed": [
+    "96K",
+    "$3000"
+   ],
+   "quote": "received 96k for the tri town landing. a 40r project. we receive $3000 per unit."
+  },
+  {
+   "topic": "FY16 appropriation turn backs",
+   "what_was_recorded": "Total appropriation turn backs at year end.",
+   "figures_as_printed": [
+    "$331,676.92"
+   ],
+   "quote": "there was a total of $331,676.92 in appropriation turn backs."
+  },
+  {
+   "topic": "Facilities turn back",
+   "what_was_recorded": "Facility and grounds turn back due to lower utility cost.",
+   "figures_as_printed": [
+    "$4200"
+   ],
+   "quote": "facility and grounds ($4200) due to lower utility cost"
+  },
+  {
+   "topic": "School choice and charter tuition turn backs",
+   "what_was_recorded": "Choice and Charter tuition turn backs due to declining enrollment.",
+   "figures_as_printed": [
+    "$40,747",
+    "$150,075"
+   ],
+   "quote": "choice ($40,747) and charter tuition ($150,075) due to declining enrollment."
+  },
+  {
+   "topic": "Track and Field design and Lanni covered by additional funds",
+   "what_was_recorded": "Track and Field design cost and the Lanni Orchards $58K covered by additional funds.",
+   "figures_as_printed": [
+    "10K",
+    "$58K"
+   ],
+   "quote": "track and field design (10k). $58k for the lanni orchards was covered with the additional funds."
+  },
+  {
+   "topic": "Sick leave buyback liability (AFSCME)",
+   "what_was_recorded": "Total sick leave buyback liability; Town automatically buys back 20%.",
+   "figures_as_printed": [
+    "$94,713",
+    "just under $19,000"
+   ],
+   "quote": "in total the liability is $94,713. the 20% the town will buy back automatically is just under $19,000."
+  },
+  {
+   "topic": "New school change orders total",
+   "what_was_recorded": "Total of change orders and the resulting project total.",
+   "figures_as_printed": [
+    "$1,058,736",
+    "$70,140K",
+    "$1,128,876"
+   ],
+   "quote": "total for change orders $1,058,736. plus $70,140k, for a total of $1,128,876."
+  },
+  {
+   "topic": "Change order #16 items",
+   "what_was_recorded": "Change order #16 line items for marker board, tack board and infield panel changes.",
+   "figures_as_printed": [
+    "$13,535",
+    "$3574"
+   ],
+   "quote": "marker board and tact board changes $13,535. open riser infield panel $3574."
+  },
+  {
+   "topic": "Potential Police Dept. repeater change order",
+   "what_was_recorded": "Potential change order for a Police Dept. repeater, which was missed in the budget.",
+   "figures_as_printed": [
+    "$34,347"
+   ],
+   "quote": "one is the repeater for police dept. for $34,347 fire dept repeater was in the budget."
+  },
+  {
+   "topic": "Potential abutter plantings change order",
+   "what_was_recorded": "Potential change order for plantings for an abutter.",
+   "figures_as_printed": [
+    "$6400"
+   ],
+   "quote": "two is for plantings for an abuter. $6400"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 1: transfer of additional Cherry sheet income into the reserve fund and the School Dept. (committee recommendation to Town Meeting)",
+   "amount_as_printed": "$77,933 into the reserve fund and $36,740 into the School Dept.; total $114,733",
+   "outcome": "passed 4-0 (recommended to Town Meeting)",
+   "quote": "mark e. motions to recommend approval to transfer $77,933 into the reserve fund and $36,740 into the school dept. for a total of $114,733."
+  },
+  {
+   "description": "Article 2: first-year DPW contract funding from the Salary Reserve account",
+   "amount_as_printed": "$6100",
+   "outcome": "passed 4-0 (recommended to Town Meeting)",
+   "quote": "funded thru the salary reserve account."
+  },
+  {
+   "description": "Article 16: Town local 10% match toward Lanni Orchards APR, funded from reserve held since last year",
+   "amount_as_printed": "$58,000",
+   "outcome": "passed 4-0 (recommended to Town Meeting)",
+   "quote": "mark e. moves to recommend approval to authorize the local 10% match on the lanni property."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Comments",
+   "resolution": "no action; no public comment or new communications",
+   "quote": "2. comments: a. public: none b. new communications: none",
+   "tags": [
+    "comments"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant public hearing",
+   "resolution": "Articles 1, 2 and 16 recommended for approval; 4, 5-7 passed over; 8-14 deferred; 15 no financial impact; 3 not yet ratified",
+   "quote": "this concluded the public hearing on the town meeting warrant. public meeting is closed.",
+   "tags": [
+    "warrant articles",
+    "town meeting",
+    "cherry sheet",
+    "APR",
+    "DPW contract"
+   ]
+  },
+  {
+   "topic": "Town Manager report: FY16 financial report",
+   "resolution": "reported; no action",
+   "quote": "the town will be ending the fiscal year with expenditure close out of $331,676.92, which includes the $58k for the apr.",
+   "tags": [
+    "FY16 close-out",
+    "free cash",
+    "turn backs",
+    "local receipts",
+    "sick leave buyback"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "listed; no discussion recorded",
+   "quote": "a. financial policy managing debt",
+   "tags": [
+    "debt policy"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved July 14, 2016 minutes 4-0",
+   "quote": "mark e. moved to accept the minutes; jay seconded the motion, and the motion was approved by a 4-0 vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received",
+   "quote": "school bldg. comm. meet last night. demo of old high school is continuing and should be complete next week.",
+   "tags": [
+    "school building project",
+    "change orders",
+    "Police repeater",
+    "Building Reuse",
+    "Town Manager search"
+   ]
+  },
+  {
+   "topic": "On going business",
+   "resolution": "no action; none",
+   "quote": "8. on going buisness: none",
+   "tags": [
+    "ongoing business"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "noted schedule",
+   "quote": "thursday, august 22, 2016 at 6:00 pm at new high school.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:17 pm",
+   "quote": "the committee approved the motion 4-0 at 8:17 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town meeting warrant articles",
+   "where": "text",
+   "quote": "special town meeting warrant article recommendations"
+  },
+  {
+   "name": "2017 Cherry sheet",
+   "where": "text",
+   "quote": "review of the 2017 cherry sheet."
+  },
+  {
+   "name": "Minutes of the July 14, 2016 meeting",
+   "where": "text",
+   "quote": "minutes of the july 14th, 2016 meeting: mark e. moved to accept the minutes"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "special town meeting",
+  "warrant articles",
+  "cherry sheet",
+  "free cash",
+  "FY16 close-out",
+  "school building project",
+  "Lanni Orchards APR",
+  "DPW contract",
+  "sick leave buyback",
+  "change orders",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

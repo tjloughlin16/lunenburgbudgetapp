@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-03-13",
  "docid": "4240",
@@ -12,23 +12,199 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of March 6, 2014",
-   "outcome": "passed",
+   "motion": "Recommend the following budget for tolerance, respect and diversity actions, totalling about $30 to $38,000, with costs detailed regardless of funding source.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "the minutes of march 6, 2014 were accepted as presented.",
-   "procedural": true
-  },
-  {
-   "motion": "Recommend a budget for diversity initiatives totaling $30-38,000 with specified allocations for programming, materials, grant writing, activities, staff training, curriculum, and exchange exercises",
    "outcome": "not stated",
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "the committee voted to recommend the following budget: programming and speakers - $5-10,000, materials (including banners and other supplies) $1-2,000, grant writer - stipend $5,000",
-   "procedural": false
+   "procedural": false,
+   "quote": "the committee voted to recommend the following budget"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record two votes: acceptance of prior minutes and a budget recommendation. The budget vote outcome is recorded as \"voted to recommend\" with no specific vote count stated. No movers or seconders are identified in the minutes.",
- "cost_usd": 0.09700450000000001
+ "note": "Text extraction of a single-page-pair minutes document; no vote count, mover or seconder is printed for the budget recommendation, so outcome is 'not stated'. The minutes accepting the March 6 minutes records no motion or vote, so it is listed as a decision, not a vote. Adjournment at 8:30 pm has no recorded motion. No public comment section appears. John Chetro-Szivos is mentioned only as a past presenter and possible future attendee, so he is not listed as an attendee. The board named in the header is a committee titled 'Advisory Committee for Acceptance and Diversity', not the board name given for this record.",
+ "cost_usd": 0.00450482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Berthiaume",
+   "role": "School Committee",
+   "status": "absent",
+   "quote": "gregory berthiaume school committee not present"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "michael mackin school committee present"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "robert ebersole board of selectmen present"
+  },
+  {
+   "name": "Charlene Stephens",
+   "role": "Community-at-large",
+   "status": "absent",
+   "quote": "charlene stephens community-at-large not present"
+  },
+  {
+   "name": "Richard Beardmore",
+   "role": "Community-at-large Alternate",
+   "status": "absent",
+   "quote": "richard beardmore community-at-large alternate not present"
+  },
+  {
+   "name": "Nicole Hennessy",
+   "role": "Student Representative",
+   "status": "absent",
+   "quote": "student representative not present"
+  },
+  {
+   "name": "Casey Voyer",
+   "role": "Student Alternate",
+   "status": "absent",
+   "quote": "casey voyer student alternate not present"
+  },
+  {
+   "name": "Elizabeth Rawlinson",
+   "role": "Parent",
+   "status": "present",
+   "quote": "elizabeth rawlinson parent present"
+  },
+  {
+   "name": "Darruenee Vann",
+   "role": "Parent",
+   "status": "present",
+   "quote": "darruenee vann parent present"
+  },
+  {
+   "name": "Paul Bertrand",
+   "role": "Parent Alternate",
+   "status": "absent",
+   "quote": "paul bertrand parent alternate not present"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "also present, loxi calmes, superintendent of schools"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of March 6, 2014 were accepted as presented.",
+   "quote": "the minutes of march 6, 2014 were accepted as presented."
+  },
+  {
+   "decision": "Bob Ebersole (Robert Ebersole) volunteered to present the budget recommendation to the School Committee at its next meeting on Wednesday, March 19.",
+   "quote": "bob ebersole volunteered to present this recommendation to"
+  },
+  {
+   "decision": "Loxi Calmes will contact John Chetro-Szivos to check on the status of the donated services by FSU; John may join the next meeting on March 27 depending on the outcome.",
+   "quote": "loxi will contact him to check on the status of the donated services by fsu"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Recommended first-year budget line items",
+   "what_was_recorded": "The committee's recommended line items for first-year needs, after discussion with the Superintendent, with the amounts as printed.",
+   "quote": "programming and speakers - $5-10,000, materials (including banners and other supplies) $1-2,000,",
+   "figures_as_printed": [
+    "$5-10,000",
+    "$1-2,000",
+    "$5,000",
+    "$2,500-5,000",
+    "$8,000",
+    "$5,000",
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "Recommended total budget",
+   "what_was_recorded": "The total recommended budget was stated as a range.",
+   "quote": "the total budget would be in the range of $30 - 38,000.",
+   "figures_as_printed": [
+    "$30 – 38,000"
+   ]
+  },
+  {
+   "topic": "Funding source for costs",
+   "what_was_recorded": "Costs ideally would be covered by grants or donations, but the committee wanted the costs detailed regardless of source.",
+   "quote": "ideally, these costs would be covered by grants or donations",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved (accepted as presented)",
+   "quote": "the minutes of march 6, 2014 were accepted as presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review proposed budget numbers for Committee recommendations",
+   "resolution": "recommended budget of about $30 to $38,000",
+   "quote": "review proposed budget numbers for committee recommendations.",
+   "tags": [
+    "budget",
+    "recommendation"
+   ]
+  },
+  {
+   "topic": "Identify and outline Committee's next steps",
+   "resolution": "discussed; FSU dashboard and donated services follow-up",
+   "quote": "identify and outline committee's next steps",
+   "tags": [
+    "dashboard",
+    "Fitchburg State University",
+    "next steps"
+   ]
+  },
+  {
+   "topic": "Schedule and future meetings",
+   "resolution": "no action; dates noted",
+   "quote": "next meeting march 27th",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Homework for Committee",
+   "resolution": "no action; none assigned",
+   "quote": "homework for committee none",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "sheet that documented the various actions that would be recommended to undertake to improve tolerance, respect and diversity",
+   "where": "text",
+   "quote": "the committee reviewed the sheet that documented the various actions"
+  },
+  {
+   "name": "proposed dashboard (described by John Chetro-Szivos from Fitchburg State University at the January 30 meeting)",
+   "where": "text",
+   "quote": "much of our work and recommendations will get captured in the proposed dashboard"
+  }
+ ],
+ "tags": [
+  "tolerance and diversity",
+  "advisory committee",
+  "school budget recommendation",
+  "grants and donations",
+  "Fitchburg State University dashboard",
+  "school committee presentation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

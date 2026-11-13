@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-03-24",
  "docid": "2368",
@@ -12,23 +12,188 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the March 3, 2011 meeting",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
+   "motion": "Accept the minutes of the 3.3.11 meeting.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
    "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to accept, jm seconded, all in favor"
+   "quote": "br made motion to accept, jm seconded, all in favor."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "John Male",
-   "seconded_by": "Mike Mackin",
+   "motion": "Adjourn the meeting at 8:45 PM.",
+   "moved_by": "JM",
+   "seconded_by": "MM",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "jm made motion to adjourn at 8:45 pm and mm seconded"
+   "quote": "jm made motion to adjourn at 8:45 pm and mm seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes via macOS Vision. Two votes recorded: approval of prior minutes and adjournment.",
- "cost_usd": 0.0818635
+ "note": "OCR of a scanned page; text is readable. The adjournment motion records no vote result. Agenda numbering skips item 5. The minutes-approval vote is recorded only as 'all in favor' with no count. No public comment section is printed; a member of the public's question about Hollis Hills legal costs is reported only within the Town Manager update, with no speaker name. No reserve fund or line-item transfer amounts are printed.",
+ "cost_usd": 0.00376982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "marilyn stokes kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "present",
+   "quote": "marilyn stokes kerry speidel"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Library grant application",
+   "what_was_recorded": "The Library applied for a grant to buy books for a program.",
+   "figures_as_printed": [
+    "$7500"
+   ],
+   "quote": "applied for $7500 grant called \"on the same page\" to purchase books for the program."
+  },
+  {
+   "topic": "Monty Tech versus Nashoba Tech cost",
+   "what_was_recorded": "BR is investigating a higher cost at Monty Tech than at Nashoba Tech, driven by higher retirement expenses.",
+   "figures_as_printed": [
+    "$3K"
+   ],
+   "quote": "br is investigating $3k higher cost over nashoba tech; retirement expenses are considerably higher at"
+  },
+  {
+   "topic": "Snow and ice budget deficit",
+   "what_was_recorded": "The Town Manager's handout showed the snow and ice budget now in deficit.",
+   "figures_as_printed": [
+    "$76,906"
+   ],
+   "quote": "handout: snow and ice budget now shows a $76,906 deficit"
+  },
+  {
+   "topic": "Monty Tech adjustment since preliminary budget",
+   "what_was_recorded": "The Monty Tech adjustment is the only known change since the preliminary budget; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "monty tech adjustment is the only known adjustment since the preliminary budget."
+  },
+  {
+   "topic": "Legal expenses for Hollis Hills",
+   "what_was_recorded": "Legal expenses on the Hollis Hills case were questioned by a member of the public; the town continues to spend a large amount on the case. No figure is printed.",
+   "figures_as_printed": [],
+   "quote": "town continues to spend large amount of money on this case."
+  },
+  {
+   "topic": "Sewer warrant article moving funds to Enterprise Fund",
+   "what_was_recorded": "A warrant article would move funds into the Enterprise Fund, tied to an accounting change. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "there is a warrant article to move funds into enterprise fund that is related to an accounting change."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and minutes of 3.3.11 meeting",
+   "resolution": "minutes accepted",
+   "quote": "br made motion to accept, jm seconded, all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Library, DPW, Monty Tech, Sewer)",
+   "resolution": "no action",
+   "quote": "library - applied for $7500 grant called \"on the same page\" to purchase books for the program.",
+   "tags": [
+    "library",
+    "monty tech",
+    "sewer",
+    "dpw"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no action",
+   "quote": "town manager updates - handout: snow and ice budget now shows a $76,906 deficit",
+   "tags": [
+    "snow and ice",
+    "budget",
+    "legal",
+    "hollis hills"
+   ]
+  },
+  {
+   "topic": "Mike Mackin School Committee nomination",
+   "resolution": "informational, no action",
+   "quote": "mike mackin informed the committee he has been nominated for an open position on the school committee",
+   "tags": [
+    "school committee",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:45 PM",
+   "quote": "jm made motion to adjourn at 8:45 pm and mm seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Snow and Ice budget (handout)",
+   "where": "text",
+   "quote": "handout: snow and ice budget now shows a $76,906 deficit"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "snow and ice",
+  "monty tech",
+  "library grant",
+  "hollis hills legal",
+  "enterprise fund",
+  "school committee",
+  "town manager update"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

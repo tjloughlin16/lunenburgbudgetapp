@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-07-23",
  "docid": "2249",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Mark E. be nominated and elected Chairman for Fiscal 2015 term",
+   "motion": "Nominate Mark E. as Chairman for Fiscal 2015.",
    "moved_by": "Karin M.",
    "seconded_by": "John H.",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by karin m. to nominate mark e. the motion was seconded by john h. there were no other nominations; the committee approved the motion 5-0."
   },
   {
-   "motion": "Terri B. be nominated and elected Vice-Chairman for Fiscal 2015 term",
+   "motion": "Nominate Terri B. as Vice-Chairman for Fiscal 2015.",
    "moved_by": "Jay S.",
    "seconded_by": "Karin M.",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by jay s. to nominate terri b. the motion was seconded by karin m. there were no other nominations; the committee approved the motion 5-0."
   },
   {
-   "motion": "John H. be nominated and elected Secretary for Fiscal 2015 term",
+   "motion": "Nominate John H. as Secretary for Fiscal 2015.",
    "moved_by": "Karin M.",
    "seconded_by": "Terri B.",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by karin m. to nominate john h. the motion was seconded by terri b. there were no other nominations; the committee approved the motion 5-0."
   },
   {
-   "motion": "to approve the minutes of the June 11 meeting as amended",
+   "motion": "Approve the minutes of the June 11 meeting as amended.",
    "moved_by": "Terri B.",
    "seconded_by": "Karin M.",
    "outcome": "passed 5-0",
@@ -44,7 +44,7 @@
    "quote": "terri b. moved to approve the minutes of the june 11 meeting as amended. karin m. seconded the motion. the motion was approved 5-0."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
@@ -53,6 +53,222 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes OCR'd by macOS Vision. All five votes recorded with clear outcomes and voting margins.",
- "cost_usd": 0.0997905
+ "note": "OCR scan of typed minutes; some text is garbled (the item 4b line reads \"hadmet\", the town header reads \"Lunenbury\", and the item 7 committee-updates table is misaligned, so the mapping of the Pratt Street and $37,000 conduit change order lines to specific committees is unclear). Caroline Griffis's resignation was announced before the call to order; she is not listed as present. Public comment was recorded as \"None\". Item 3 reorganization was approved by Mark E., not by a recorded committee vote. The \"Chapter 44 §33B transfers\" reference is a future agenda item, not a recorded transfer. Minutes are marked received and filed Aug 18, 2015.",
+ "cost_usd": 0.006504019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: kerry speidel"
+  },
+  {
+   "name": "Caroline Griffis",
+   "status": "not stated",
+   "quote": "caroline griffis inform the committee that, due"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The liaison and department reorganization was approved by Mark E., pending his reappointment to the Finance Committee by the Appointing Committee (no committee vote recorded).",
+   "quote": "reorganization of department and committee liaison responsibilities, approved by mark e., pending his reappointment to the finance committee by the appointing committee."
+  },
+  {
+   "decision": "The committee will continue the initiatives begun in FY15, such as a ten-year planning horizon and parameters on borrowing.",
+   "quote": "the committee will continue the initiatives begun in fy15, e.g. a ten year planning horizon, parameters on borrowing."
+  },
+  {
+   "decision": "John H. will send the May 2 meeting minutes to Mark E. for review; the committee will review them at the next meeting.",
+   "quote": "john h. will send the minutes of our may 2 meeting at the annual town meeting to mark e. for his review."
+  },
+  {
+   "decision": "At the next meeting the committee will review FY15 revenues and Chapter 44 §33B transfers.",
+   "quote": "at our next meeting we will review fy15 revenues and chapter 44 §33b transfers."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free Cash estimate",
+   "what_was_recorded": "Free Cash is estimated at about $300,000 after the state certifies the Town's unexpended fund balance.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "free cash should be about $300,000 after the state certifies the town's unexpended fund balance."
+  },
+  {
+   "topic": "Revenue versus plan and expenditure balance",
+   "what_was_recorded": "Revenues through June exceeded plan by $245,574, and the balance comes from expenditures under budget by about $54,600.",
+   "figures_as_printed": [
+    "$245,574",
+    "$54,600"
+   ],
+   "quote": "revenues exceeded plan by $245,574--the balance comes from expenditures under budget by about $54,600."
+  },
+  {
+   "topic": "Encumbrances going into fiscal 2016",
+   "what_was_recorded": "About $250,000 in encumbrances will carry into fiscal 2016.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "there are about $250,000 in encumbrances going into fiscal 2016."
+  },
+  {
+   "topic": "OPEB cost projections",
+   "what_was_recorded": "Initial projections show the growth of OPEB costs to be gradual and manageable; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "based on initial projections of the growth of opeb costs, were gradual and manageable."
+  },
+  {
+   "topic": "Conduit change order",
+   "what_was_recorded": "A change order for conduit omitted from the plan has been processed; the committee updates table does not clearly name the committee it belongs to.",
+   "figures_as_printed": [
+    "$37,000"
+   ],
+   "quote": "a $37,000 change order for conduit omitted from the plan has been processed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:02 pm",
+   "quote": "meeting called to order by mark e. at 7:02 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Election of officers for Fiscal 2015",
+   "resolution": "Mark E. Chairman, Terri B. Vice-Chairman, John H. Secretary, each approved 5-0",
+   "quote": "election of officers for fiscal 2015, term runs from july 1, 2015-june 30, 2016:",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Liaison and department reorganization",
+   "resolution": "approved by Mark E., pending his reappointment",
+   "quote": "reorganization of department and committee liaison responsibilities, approved by mark e., pending his reappointment to the finance committee by the appointing committee.",
+   "tags": [
+    "liaisons",
+    "assignments"
+   ]
+  },
+  {
+   "topic": "Comments",
+   "resolution": "no public comment; committee noted reappointment review and OPEB projections",
+   "quote": "the appointing committee for re-appointment will meet to review the reappointment of mark e. and terri b. to the finance committee.",
+   "tags": [
+    "reappointment",
+    "OPEB"
+   ]
+  },
+  {
+   "topic": "Town Manager's Report",
+   "resolution": "revenue report through June received; FY15 revenues to be reviewed at next meeting",
+   "quote": "kerry handed out a report on revenue through june, 2015. main points:",
+   "tags": [
+    "revenue",
+    "free cash",
+    "encumbrances"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "June 11 minutes approved as amended; May 2 minutes to be reviewed next meeting",
+   "quote": "terri b. moved to approve the minutes of the june 11 meeting as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports given; most committees no report; Pratt Street extension and conduit change order noted",
+   "quote": "the pratt street extension is to go forward despite some",
+   "tags": [
+    "committee updates",
+    "Pratt Street"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:46, 5-0",
+   "quote": "the board voted 5-0 in favor; the meeting adjourned at 8:46.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Report on revenue through June, 2015",
+   "where": "text",
+   "quote": "kerry handed out a report on revenue through june, 2015."
+  },
+  {
+   "name": "Presentation of OPE projections",
+   "where": "text",
+   "quote": "john h. followed up on the presentation of ope projections."
+  },
+  {
+   "name": "Minutes of the June 11 meeting",
+   "where": "text",
+   "quote": "terri b. moved to approve the minutes of the june 11 meeting as amended."
+  },
+  {
+   "name": "Minutes of the May 2 meeting at the Annual Town Meeting",
+   "where": "text",
+   "quote": "john h. will send the minutes of our may 2 meeting at the annual town meeting to mark e. for his review."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "officer elections",
+  "liaison assignments",
+  "free cash",
+  "revenue",
+  "encumbrances",
+  "OPEB",
+  "minutes",
+  "committee updates",
+  "Pratt Street",
+  "Caroline Griffis resignation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-06-14",
  "docid": "2325",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from April 5, 2012",
+   "motion": "Accept the minutes of 4/5/12.",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "minutes reviewed for 4/5/12; bl made motion to accept; br seconded; all approved"
   },
   {
-   "motion": "Approve meeting minutes from April 26, 2012",
+   "motion": "Accept the minutes of 4/26/12.",
    "moved_by": "BR",
    "seconded_by": "BL",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "minutes reviewed for 4/26/12; br made motion to accept; bl seconded; all approved"
   },
   {
-   "motion": "Approve meeting minutes from May 5, 2012",
+   "motion": "Accept the minutes of 5/5/12.",
    "moved_by": "BR",
    "seconded_by": "MM",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "minutes reviewed for 5/5/12; br made motion to accept; mm seconded; all approved"
   },
   {
-   "motion": "Approve meeting minutes from May 10, 2012",
+   "motion": "Accept the minutes of 5/10/12.",
    "moved_by": "BR",
    "seconded_by": "MM",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "minutes reviewed for 5/10/12; br made motion to accept; mm seconded; all approved"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:09 PM.",
    "moved_by": "BR",
    "seconded_by": "BL",
    "outcome": "passed",
@@ -52,7 +52,171 @@
    "quote": "br made a motion to adjourn at 9:09 pm, bl seconded; all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are OCR-scanned; all five votes are clearly recorded and legible.",
- "cost_usd": 0.0893505
+ "dropped_unquoted": 1,
+ "note": "OCR text of a single page (Page 1 of 1). Attendance is laid out in columns, so present/absent names were read from the labels in order (Present: four members; Absent: Scott Gile and John Male; Kerry Speidel appears under Attendees with no status). Motions use initials as printed (BL, BR, MM); the minutes do not spell out the full names for those votes. Vote outcomes are recorded only as 'all approved' or 'all in favor', so outcome is 'passed' with no count. No public comment section is printed. The Communications list is treated as documents received and is marked as a list; this is a judgment call since the minutes do not use a documents heading.",
+ "cost_usd": 0.00464412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, barbara reynolds"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, barbara reynolds"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, barbara reynolds"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, barbara reynolds"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "scott gile, john male"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "scott gile, john male"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will reorganize committee offices and liaison assignments at its second meeting in July.",
+   "quote": "will reorganize committee offices and liaison assignments at second meeting in july"
+  },
+  {
+   "decision": "The committee would like to schedule Kevin Blanchette to discuss pension plan education.",
+   "quote": "would like to schedule kevin blanchette to discuss pension plan education"
+  },
+  {
+   "decision": "Placed on future agenda: discussion of the committee's role in the police and fire chief contracts.",
+   "quote": "discussion on what is our role in the police and fire chief contracts"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserve fund transfer for October 2011 storm expenses",
+   "what_was_recorded": "Town Manager will submit a reserve fund transfer at the next meeting to close out storm expenses, with a $32K overage funded from reserve.",
+   "figures_as_printed": [
+    "$32K"
+   ],
+   "quote": "will be submitting a reserve fund transfer next meeting to close out expenses from october 2011 storm; $32k"
+  },
+  {
+   "topic": "Reissued bonds at a lower rate",
+   "what_was_recorded": "Reissuing some bonds at a lower rate will save the town a net of $15k per year and the state $25k per year; the town retained its AA credit rating.",
+   "figures_as_printed": [
+    "$15k per year",
+    "$25k per year"
+   ],
+   "quote": "reissued some bonds at a lower rate; will be saving a net of $15k per year and state saves $25k per year"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve fund transfer to close out expenses from October 2011 storm",
+   "amount_as_printed": "$32K",
+   "outcome": "to be submitted at next meeting; not voted at this meeting",
+   "quote": "will be submitting a reserve fund transfer next meeting to close out expenses from october 2011 storm; $32k"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:02 PM",
+   "quote": "meeting called to order by the chairman at 7:02 pm"
+  },
+  {
+   "topic": "Communications",
+   "resolution": "received 2011 Lunenburg Town Report and The Beacon; no action recorded",
+   "quote": "2011 lunenburg town report • the beacon"
+  },
+  {
+   "topic": "FY13 Finance Committee appointments/reappointments",
+   "resolution": "new appointments introduced; committee offices to be reorganized in July",
+   "quote": "introduced new appointments effective 07.01.12 - jason smith (one year term); theresa birchfield (3 year term);"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "four sets of minutes approved",
+   "quote": "minutes reviewed for 4/5/12; bl made motion to accept; br seconded; all approved"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action recorded",
+   "quote": "schools - last night voted on reconfiguration of school buildings from 4 buildings to 3"
+  },
+  {
+   "topic": "Review election results",
+   "resolution": "discussed; no action recorded",
+   "quote": "review election results - general discussion stating there was not enough information to successfully inform voters"
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "reported; reserve fund transfer to come next meeting",
+   "quote": "to close out the fiscal year, will not accept p.o.'s after june 15 in order to close the books by july 15"
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "police and fire chief contracts placed on future agenda; pension education speaker requested",
+   "quote": "discussion on what is our role in the police and fire chief contracts"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:09 PM",
+   "quote": "br made a motion to adjourn at 9:09 pm, bl seconded; all in favor"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2011 Lunenburg Town Report",
+   "where": "list",
+   "quote": "2011 lunenburg town report • the beacon"
+  },
+  {
+   "name": "The Beacon",
+   "where": "list",
+   "quote": "2011 lunenburg town report • the beacon"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "appointments",
+  "minutes approval",
+  "reserve fund",
+  "storm expenses",
+  "bonds",
+  "school reconfiguration",
+  "library hours",
+  "election results",
+  "fiscal year close",
+  "pension plan",
+  "police and fire contracts",
+  "town manager",
+  "land development"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "communications"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

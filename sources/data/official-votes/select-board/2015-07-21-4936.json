@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-07-21",
  "docid": "4936",
@@ -12,69 +12,60 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from April 14 and July 7, 2015",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes of april 14 and july 7, 2015 were approved."
-  },
-  {
-   "motion": "Approve the pole petition for Oak Avenue",
+   "motion": "Approve the Verizon New England pole petition for pole T.10 1/2 on Oak Avenue as requested.",
    "moved_by": "P. Bertram",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve the pole petition as requested 2°d:b. ebersole vote: all in favor"
+   "quote": "motion: p. bertram to approve the pole petition as requested"
   },
   {
-   "motion": "Continue the Class II Auto Dealer License hearing to August 4 at 7:30 p.m.",
+   "motion": "Continue the Class II Auto Dealer License hearing for Adnan Inayat (10 Massachusetts Avenue) to August 4 at 7:30 p.m.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2n°: p. bertram to continue the hearing to august 4* at 7:30 p.m. vote: all in favor"
+   "quote": "to continue the hearing to august 4* at 7:30 p.m. vote: all in favor"
   },
   {
-   "motion": "Request Conservation Commission provide information and have Town Counsel review second letter and clarify exemption statute",
+   "motion": "Request Conservation Commission provide information and have Town Counsel review the second letter and clarify the exemption statute (White Street ROFR).",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2\"d p. bertram to request conservation commission provide information and have town counsel review the second letter and clarify the exemption statute vote: all in favor"
+   "quote": "to request conservation commission provide information and have town counsel review the second letter and clarify the exemption statute"
   },
   {
-   "motion": "Authorize issuance of bond or interim loan note for Sewer Commission Pratt Street extension project, amount not to exceed $1,521,653",
+   "motion": "Adopt the certified vote authorizing bonds and interim loan notes not to exceed $1,521,653 for the Pratt Street sewer extension project with the Massachusetts Clean Water Trust.",
    "moved_by": "T. Alonzo",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo i, the clerk of the board of selectmen of the town of lunenburg, ma, certify that at a meeting held july 21, 2015, of which meeting all members of the board were duly notified and at which",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "dated july 21, 2015 2'': b. ebersole vote: all in favor"
   },
   {
-   "motion": "Authorize Chairman Toale to sign a letter on behalf of the Board regarding Unitil Rate Case",
+   "motion": "Authorize Chairman Toale to sign a letter on behalf of the Board regarding the Unitil matters.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\"°: r. ebersole to authorize chairman toale to sign a letter on behalf of the board vote: all in favor"
+   "quote": "to authorize chairman toale to sign a letter on behalf of the board vote: all in favor"
   },
   {
-   "motion": "Authorize the Chair to sign the Mass DOT Title VI/Non-discrimination Assurance",
+   "motion": "Authorize the Chair to sign the MassDOT Title VI/Non-discrimination Assurance.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: p. bertram to authorize the chair to sign the title vi/non-discrimination assurance vote: all in favor"
+   "procedural": false,
+   "quote": "to authorize the chair to sign the title vi/non-discrimination assurance vote: all in favor"
   },
   {
-   "motion": "Appoint Brian LeBlanc as Assistant Radio Operator",
+   "motion": "Appoint Brian LeBlanc as Assistant Radio Operator.",
    "moved_by": "B. Ebersole",
    "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: b. ebersole to appoint brian leblanc as assistant radio operator public comment: none"
+   "quote": "motion: b. ebersole to appoint brian leblanc as assistant radio operator"
   },
   {
    "motion": "Adjourn the meeting at 7:17 p.m.",
@@ -86,6 +77,582 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Six votes recorded with clear motion/second/outcome; one vote (Brian LeBlanc appointment) shows motion but no recorded second or vote result. Minutes also record approval of prior minutes but without named mover/seconder details.",
- "cost_usd": 0.181197
+ "note": "OCR text from a scanned packet (macOS Vision), with garbled spellings: 'Chiet Marino' (likely Police Chief Marino), 'Ms. Corriea' (Kelly Correa), 'Wildlite', 'Claire In. Peterson' (signature, printed as Elaine M. Peterson), and the interest rate printed as '. 9 of 1%'. Vote counts are not printed; votes are recorded as 'All in Favor' (outcome 'passed'). The adjournment shows two 'Vote: All in Favor' lines and is recorded once. The LeBlanc appointment motion has no recorded vote or seconder (outcome 'not stated'). Minutes approval has no motion or vote recorded. The Action File Issue heading is unnumbered and follows item 4.",
+ "cost_usd": 0.018331720000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager kerry lafleur (formerly speidel)"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson, executive assistant to the town manager"
+  },
+  {
+   "name": "Sam Ramondelli",
+   "role": "resident, Reservoir Road",
+   "status": "present",
+   "quote": "sam ramondelli of reservoir road stated he saw the highway department coming down the road clearing both"
+  },
+  {
+   "name": "Karim Gabriel",
+   "role": "resident, 60 Burrage Street",
+   "status": "present",
+   "quote": "karim and rachel gabriel of 60 burrage street presented about their beagle, edge, who ran away on march"
+  },
+  {
+   "name": "Rachel Gabriel",
+   "role": "resident, 60 Burrage Street",
+   "status": "present",
+   "quote": "karim and rachel gabriel of 60 burrage street presented about their beagle, edge, who ran away on march"
+  },
+  {
+   "name": "Debra Leger",
+   "role": "resident, Sandy Cove Road",
+   "status": "present",
+   "quote": "debra leger of sandy cove road stated she was the woman who found the beagle and it was on last thursday."
+  },
+  {
+   "name": "Kim Martin",
+   "role": "resident, 522 Burrage Street",
+   "status": "present",
+   "quote": "kim martin, 522 burrage street, has contacted the aco three times."
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "resident, 98 Main Street",
+   "status": "present",
+   "quote": "troy daniels, 98 main street, stated he found a poodle and was told by the aco to let the dog loose."
+  },
+  {
+   "name": "George Martin",
+   "role": "resident, 522 Burrage Street",
+   "status": "present",
+   "quote": "george martin, 522 burrage street, stated he was bad; he had two unlicensed dogs he kept inside"
+  },
+  {
+   "name": "Chiet Marino",
+   "role": "",
+   "status": "present",
+   "quote": "chiet marino stated he believed ms. comeau paid $300 for the vehicle years"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "resident, 129 Pleasant Street",
+   "status": "present",
+   "quote": "greg bittner, 129 pleasant street, stated he knows the board is the appointing authority"
+  },
+  {
+   "name": "Kelly Correa",
+   "role": "of Verizon",
+   "status": "present",
+   "quote": "kelly correa of verizon reported they would be placing a new service pole for phone lines to the new school."
+  },
+  {
+   "name": "Adnan Inayat",
+   "role": "applicant, d/b/a Premium Motors",
+   "status": "present",
+   "quote": "mr. inayat stated he has moved here from atlanta, georgia where he sold used cars"
+  },
+  {
+   "name": "Alan Foster",
+   "role": "presenter, 164 White Street",
+   "status": "present",
+   "quote": "alan foster, 164 white street, presented concerning the above property."
+  },
+  {
+   "name": "Brian LeBlanc",
+   "role": "applicant for reappointment, Assistant Radio Operator",
+   "status": "not stated",
+   "quote": "brian leblanc has applied to be reappointed as assistant radio operator."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of April 14 and July 7, 2015 were approved (no motion or vote recorded).",
+   "quote": "minutes of april 14 and july 7, 2015 were approved."
+  },
+  {
+   "decision": "Board will review the Animal Control Officer job duties.",
+   "quote": "mr. toale stated they would review the aco job duties."
+  },
+  {
+   "decision": "Board requested a full description of the Animal Control Officer's responsibilities for a future meeting.",
+   "quote": "mr. alonzo requested a full description of the responsibilities of the animal control officer for a future meeting."
+  },
+  {
+   "decision": "Town Manager will accept the public comments on the ACO as a formal complaint.",
+   "quote": "ms. lafleur stated she will accept the comments here as a formal complaint."
+  },
+  {
+   "decision": "Chair agreed the ACO would be heard at a future agenda.",
+   "quote": "mr. toale stated it would."
+  },
+  {
+   "decision": "Board will revisit the White Street Notice of First Refusal at its August 11 meeting.",
+   "quote": "the board will revisit again at their meeting on august 11*."
+  },
+  {
+   "decision": "Town Manager offered to draft Unitil grid modernization comments reflecting the discussion.",
+   "quote": "ms. lafleur offered to draft comments for the grid modernization reflective of the discussion and points made tonight."
+  },
+  {
+   "decision": "A workshop on August 25 at 6:00 PM was suggested to define short term deliverables (suggested, not confirmed).",
+   "quote": "the date of august 25 at 6:00 pm for a workshop was suggested."
+  },
+  {
+   "decision": "Ms. Bertram agreed and suggested the Board send a letter to legislators on the proposed public records bill; Chair concurred (no vote recorded).",
+   "quote": "ms. bertram agreed and suggested the board send a letter to our legislators voicing our concerns on this proposed legislation."
+  },
+  {
+   "decision": "Election officers' appointments and the conflict-of-interest question placed on next meeting agenda after the question is answered.",
+   "quote": "this item and the election officers' appointments will be placed on the next meeting agenda after the question is answered."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Interim loan to Massachusetts Clean Water Trust (Pratt Street sewer extension)",
+   "what_was_recorded": "Interim loan agreement amount was stated, with the interest rate and the expected final rate after permanent financing.",
+   "quote": "an interim loan agreement with the massachusetts clean water trust in the amount of $1,521,653.",
+   "figures_as_printed": [
+    "$1,521,653",
+    ". 9 of 1%",
+    "2%"
+   ]
+  },
+  {
+   "topic": "Sewer project borrowing authorization",
+   "what_was_recorded": "The certified vote referenced a 2014 Town vote authorizing total borrowing for sewer and water pollution control construction.",
+   "quote": "may 3, 2014 (article 25), which authorized a total borrowing of $2,200,000",
+   "figures_as_printed": [
+    "$2,200,000"
+   ]
+  },
+  {
+   "topic": "Unitil grid modernization costs",
+   "what_was_recorded": "Unitil would likely seek to recover modernization costs through a separate process; no dollar figure was given.",
+   "quote": "it appears unitil would be looking to recoup whatever costs associated with the modernization",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Compost bins sold at Public Works",
+   "what_was_recorded": "Compost bins were announced as available for purchase at the Public Works at a stated price.",
+   "quote": "they are $43.00 and can be",
+   "figures_as_printed": [
+    "$43.00"
+   ]
+  },
+  {
+   "topic": "Delinquent dog license fees",
+   "what_was_recorded": "A resident said he had paid delinquent dog license fees and asked where the late fees go.",
+   "quote": "had just paid $300 in delinquent dog license fees.",
+   "figures_as_printed": [
+    "$300"
+   ]
+  },
+  {
+   "topic": "ACO vehicle purchase",
+   "what_was_recorded": "A speaker stated the ACO paid a figure for her vehicle; the Town Manager stated the town does not own it.",
+   "quote": "chiet marino stated he believed ms. comeau paid $300 for the vehicle years",
+   "figures_as_printed": [
+    "$300"
+   ]
+  },
+  {
+   "topic": "Animal Control Officer pay",
+   "what_was_recorded": "A speaker stated the ACO's daily pay for caring for dogs.",
+   "quote": "only gets $3 per day to care for dogs.",
+   "figures_as_printed": [
+    "$3 per day"
+   ]
+  },
+  {
+   "topic": "White Street rollback tax",
+   "what_was_recorded": "The applicant said he would pay the rollback tax if the Board waives the ROFR; no figure was given.",
+   "quote": "he is prepared to pay the rollback tax if the board will waive the right of first refusal (rofr).",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY2015 year-end close-out",
+   "what_was_recorded": "Town Manager reported FY2015 spending and a surplus at fiscal year end.",
+   "quote": "having expended $31.6 million with a surplus of just under $87,000.",
+   "figures_as_printed": [
+    "$31.6 million",
+    "$87,000"
+   ]
+  },
+  {
+   "topic": "Encumbrances at fiscal year end",
+   "what_was_recorded": "Contracts in process at fiscal year end carried encumbrances, mostly school and public works.",
+   "quote": "we have $241,544.08 encumbered due to contracts in process at the end of the fiscal year",
+   "figures_as_printed": [
+    "$241,544.08"
+   ]
+  },
+  {
+   "topic": "Chapter 44 §33B transfer requests",
+   "what_was_recorded": "Five transfer requests totaling a stated amount to come to the Board after Finance Committee review.",
+   "quote": "there are also five transfer requests for expenditures totaling $14,442.62 as allowed under m.g.l. chapter 44,",
+   "figures_as_printed": [
+    "$14,442.62"
+   ]
+  },
+  {
+   "topic": "School Building Committee change order",
+   "what_was_recorded": "School Building Committee signed warrants and a change order.",
+   "quote": "met today to sign warrants and a change order totaling $37,000",
+   "figures_as_printed": [
+    "$37,000"
+   ]
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "An Accounts Payable warrant was presented for signatures.",
+   "quote": "an accounts payable warrant in the amount of $1,729,817.65 was presented for signatures.",
+   "figures_as_printed": [
+    "$1,729,817.65"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Five transfer requests for expenditures under M.G.L. Chapter 44, §33B",
+   "amount_as_printed": "$14,442.62",
+   "outcome": "to be brought to the Board after Finance Committee review; no action taken at this meeting",
+   "quote": "there are also five transfer requests for expenditures totaling $14,442.62 as allowed under m.g.l. chapter 44,"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Library cardboard boat race and garden thanks",
+   "quote": "mr. alonzo announced the library-sponsored"
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Compost bins",
+   "quote": "ms. luck announced there is a new shipment of compost bins available; they are $43.00 and can be"
+  },
+  {
+   "speaker": "Sam Ramondelli",
+   "stated_role": "of Reservoir Road",
+   "topic": "Thanks to Highway Department",
+   "quote": "sam ramondelli of reservoir road stated he saw the highway department coming down the road clearing both"
+  },
+  {
+   "speaker": "Karim and Rachel Gabriel",
+   "stated_role": "of 60 Burrage Street",
+   "topic": "Lost beagle Edge and ACO concerns",
+   "quote": "karim and rachel gabriel of 60 burrage street presented about their beagle, edge, who ran away on march"
+  },
+  {
+   "speaker": "Debra Leger",
+   "stated_role": "of Sandy Cove Road",
+   "topic": "Found beagle and ACO defense",
+   "quote": "debra leger of sandy cove road stated she was the woman who found the beagle and it was on last thursday."
+  },
+  {
+   "speaker": "Kim Martin",
+   "stated_role": "522 Burrage Street",
+   "topic": "ACO responses to dogs and raccoon",
+   "quote": "kim martin, 522 burrage street, has contacted the aco three times."
+  },
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "98 Main Street",
+   "topic": "Poodle found; ACO advice",
+   "quote": "troy daniels, 98 main street, stated he found a poodle and was told by the aco to let the dog loose."
+  },
+  {
+   "speaker": "George Martin",
+   "stated_role": "522 Burrage Street",
+   "topic": "Unlicensed dogs and late fees",
+   "quote": "george martin, 522 burrage street, stated he was bad; he had two unlicensed dogs he kept inside"
+  },
+  {
+   "speaker": "Chiet Marino",
+   "stated_role": "",
+   "topic": "Beagle investigation and ACO vehicle",
+   "quote": "chiet marino stated he believed ms. comeau paid $300 for the vehicle years"
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "129 Pleasant Street",
+   "topic": "Formal complaint avenue",
+   "quote": "greg bittner, 129 pleasant street, stated he knows the board is the appointing authority"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "discussion; ACO comments taken as formal complaint; ACO job duties to be reviewed",
+   "quote": "ms. lafleur stated she will accept the comments here as a formal complaint.",
+   "tags": [
+    "animal control",
+    "public comment",
+    "complaint"
+   ]
+  },
+  {
+   "topic": "Pole Petition Hearing for Oak Avenue",
+   "resolution": "approved",
+   "quote": "mr. toale opened the public hearing. the petition was from verizon new england to place one solely owned",
+   "tags": [
+    "pole petition",
+    "utilities",
+    "Verizon"
+   ]
+  },
+  {
+   "topic": "Class II Auto Dealer License Application for Adnan Inayat at 10 Massachusetts Avenue",
+   "resolution": "hearing continued to August 4",
+   "quote": "mr. toale read the hearing notice aloud: the licensing authority will hold a public hearing",
+   "tags": [
+    "license hearing",
+    "auto dealer",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Notice of First Refusal for 150 & 164 White Street",
+   "resolution": "continued; Board to revisit August 11; request to Conservation Commission and Town Counsel",
+   "quote": "alan foster, 164 white street, presented concerning the above property.",
+   "tags": [
+    "right of first refusal",
+    "Chapter 61A",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Interim Loan Instructions & Financial Agreement Instructions [ED-01.FID866556]",
+   "resolution": "approved; certificate signed",
+   "quote": "the board signed the certificate and clerk alonzo signed the vote.",
+   "tags": [
+    "interim loan",
+    "sewer",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Unitil Rate Case and Grid Modernization",
+   "resolution": "Chair authorized to sign letter; grid modernization comments to be drafted",
+   "quote": "ms. lafleur offered to draft comments for the grid modernization reflective of the discussion and points made tonight.",
+   "tags": [
+    "Unitil",
+    "rate case",
+    "grid modernization",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Fiscal Year 2016 Goals",
+   "resolution": "three goals discussed; further workshop suggested for August 25",
+   "quote": "mr. toale reported the board had held a workshop and arrived at three goals with the assigned board",
+   "tags": [
+    "FY2016 goals",
+    "storm water",
+    "pavement",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Minutes and Accounts Payable warrant",
+   "resolution": "minutes approved; warrant presented for signatures",
+   "quote": "minutes of april 14 and july 7, 2015 were approved.",
+   "tags": [
+    "minutes",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Action File Issue (public records law)",
+   "resolution": "letter to legislators suggested; no vote",
+   "quote": "mr. alonzo reported the state is looking to expand the public records law",
+   "tags": [
+    "public records",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "MassDOT Title VI/Non-discrimination Assurance",
+   "resolution": "Chair authorized to sign",
+   "quote": "ms. lafleur reported massdot is requesting review and signature on the federal highway administration title",
+   "tags": [
+    "Title VI",
+    "MassDOT",
+    "federal assurance"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received; Finance Committee appointments noted",
+   "quote": "mr. alonzo reported the finance committee appointing committee appointed",
+   "tags": [
+    "committees",
+    "Finance Committee",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Town Manager/Department Reports",
+   "resolution": "FY2015 close-out reported; transfer requests to come to Board",
+   "quote": "ms. lafleur reported on the final fiscal year 2015 expenditure report.",
+   "tags": [
+    "FY2015",
+    "budget close-out",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Appointment of Election Officers",
+   "resolution": "continued to next agenda",
+   "quote": "this item and the election officers' appointments will be placed on the next meeting agenda after the question is answered.",
+   "tags": [
+    "elections",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Appointment (Assistant Radio Operator)",
+   "resolution": "motion made; no result recorded",
+   "quote": "brian leblanc has applied to be reappointed as assistant radio operator.",
+   "tags": [
+    "appointments"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Interim Loan Note (Sewer Commission extension, Pratt Street area)",
+   "where": "text",
+   "quote": "ms. lafleur referred the board to the interim loan note related to the sewer commission's extension"
+  },
+  {
+   "name": "Vote of the Board of Selectmen (interim loan certificate, dated July 21, 2015)",
+   "where": "text",
+   "quote": "mr. alonzo read the vote of the board of selectmen aloud into the record."
+  },
+  {
+   "name": "Notice of First Refusal for 150 & 164 White Street",
+   "where": "text",
+   "quote": "notice of first refusal for 150 & 164 white street"
+  },
+  {
+   "name": "Letter from Mr. Foster's attorney regarding the exemption from the statute",
+   "where": "text",
+   "quote": "the letter from mr. foster's attorney regarding an exemption from the statute"
+  },
+  {
+   "name": "Second letter of intent (White Street ROFR)",
+   "where": "text",
+   "quote": "ms. lafleur stated the second letter of intent was only received yesterday"
+  },
+  {
+   "name": "Hearing notice, Class II Auto Dealer License (Adnan Inayat d/b/a Premium Motors)",
+   "where": "text",
+   "quote": "mr. toale read the hearing notice aloud: the licensing authority will hold a public hearing"
+  },
+  {
+   "name": "Verizon New England pole petition, pole T.10 1/2, Oak Avenue",
+   "where": "text",
+   "quote": "the petition was from verizon new england to place one solely owned"
+  },
+  {
+   "name": "Unitil formal notice of rate case filing dated June 29, 2015",
+   "where": "text",
+   "quote": "received the formal notice of the filing of the rate case dated june 29, 2015"
+  },
+  {
+   "name": "Petition to Intervene (Unitil rate case)",
+   "where": "text",
+   "quote": "a deadline of july 13, 2015 to file a petition to intervene."
+  },
+  {
+   "name": "Federal Highway Administration Title VI non-discrimination assurance",
+   "where": "text",
+   "quote": "requesting review and signature on the federal highway administration title vi non-discrimination assurance."
+  },
+  {
+   "name": "RFQ for Building Needs Study",
+   "where": "text",
+   "quote": "the rfq for building needs study is still out and we are waiting"
+  },
+  {
+   "name": "Accounts Payable warrant",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $1,729,817.65 was presented for signatures."
+  },
+  {
+   "name": "Annual town report (ACO statistics)",
+   "where": "text",
+   "quote": "we would report on statistics that would appear in the annual town report"
+  },
+  {
+   "name": "Proposed state public records law expansion bill",
+   "where": "text",
+   "quote": "the bill would significantly reduce the amount that communities can charge for complying with a public records request"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "animal control",
+  "public comment",
+  "pole petition",
+  "license hearing",
+  "right of first refusal",
+  "interim loan",
+  "sewer",
+  "Unitil rate case",
+  "FY2016 goals",
+  "public records",
+  "Title VI",
+  "committee reports",
+  "budget close-out",
+  "transfers",
+  "appointments",
+  "elections"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

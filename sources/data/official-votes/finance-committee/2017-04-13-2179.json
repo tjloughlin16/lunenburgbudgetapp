@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-04-13",
  "docid": "2179",
@@ -12,15 +12,237 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "John Henshaw",
+   "motion": "Adjourn the meeting",
+   "moved_by": "Mark",
+   "seconded_by": "John",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 4-0 at 8:44 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. One procedural vote recorded: adjournment. The document is labelled ===OCR macOS Vision=== and contains discussion of debt policy, capital planning, and committee updates, but only the adjournment motion was voted on and recorded with a result.",
- "cost_usd": 0.0815105
+ "note": "OCR of a scanned page; column layout is garbled. Attendance labels (Present/Absent/Guest) are not clearly aligned; the three names listed after the four present members are treated as absent, consistent with the 4-0 vote. The Building Reuse and Committee updates table is partly illegible, so its content is not recorded. Only one motion (adjournment) is printed. Attachments are printed as (0).",
+ "cost_usd": 0.00488912,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Member",
+   "status": "absent",
+   "quote": "hannah anderson, george martin, cindy testa"
+  },
+  {
+   "name": "George Martin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "hannah anderson, george martin, cindy testa"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "Member",
+   "status": "absent",
+   "quote": "hannah anderson, george martin, cindy testa"
+  },
+  {
+   "name": "Heather Lemieaux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieaux - town manager, dave passios member of the public"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "heather lemieaux - town manager, dave passios member of the public"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw is to work on the debt policy spreadsheet.",
+   "quote": "john to work on debt policy spreadsheet."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turkey Hill school repairs and renovation",
+   "what_was_recorded": "The School Facilities Director anticipates about $1M in roof repairs in 7-10 years and about $3.6M in critical repairs before a major renovation; a large capital expense likely around FY2025 to FY2030.",
+   "figures_as_printed": [
+    "$1M",
+    "$3.6M"
+   ],
+   "quote": "the director is anticipating the roof will need about $1m in repairs in about 7-10 years and about $3.6m in critical repairs that will be needed in near future prior"
+  },
+  {
+   "topic": "TC Passios school roof and rehab",
+   "what_was_recorded": "The TC Passios school is projected to need a new roof within the next few years, estimated at $1M, and rehab of the school is estimated at $4.5M.",
+   "figures_as_printed": [
+    "$1M",
+    "$4.5M"
+   ],
+   "quote": "the tc passios is projected to need a new roof with in the next few years. estimated at $1m. rehab of the school is estimated at $4.5m."
+  },
+  {
+   "topic": "New growth projection",
+   "what_was_recorded": "New growth is projected at $300k this year; it rises and falls and usually brings demand for more services.",
+   "figures_as_printed": [
+    "$300k"
+   ],
+   "quote": "new growth goes up and down, this year it is projected at $300k."
+  },
+  {
+   "topic": "Exempt borrowing growth",
+   "what_was_recorded": "Dave Passios noted exempt borrowing increases yearly by 2.5%, and compounding interest increases significantly.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "dave passios: the exempt borrowing increases yearly and by 2.5%, compounding of interest increases significantly."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "member of the public",
+   "topic": "debt policy and borrowing limits",
+   "quote": "dave passios: the exempt borrowing increases yearly and by 2.5%, compounding of interest increases significantly."
+  },
+  {
+   "speaker": "Dave P.",
+   "stated_role": "member of the public",
+   "topic": "replacement of town offices and old TC Passios school",
+   "quote": "dave p. question on solution to replacement of town offices? has the re purposing of the old tc"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Comments: public question on seniors or students writing minutes; new communications",
+   "resolution": "discussed; no action",
+   "quote": "the chair asked if would be possible to hire seniors from the tax work off program to write",
+   "tags": [
+    "minutes",
+    "staffing",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review debt policy information",
+   "resolution": "discussed; John to work on debt policy spreadsheet",
+   "quote": "john h. what prospective debt do we think we have or are anticipating? one big ticket item",
+   "tags": [
+    "debt policy",
+    "capital planning",
+    "Turkey Hill school",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Review Collins Center Report (Capital Improvement Report)",
+   "resolution": "reviewed; no action",
+   "quote": "review collins center report (capital improvement report): john reviewed the report and found it helpful to",
+   "tags": [
+    "capital planning",
+    "Collins Center"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "none",
+   "quote": "5. review of minutes: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Financial Officers report",
+   "resolution": "none",
+   "quote": "6. town financial officers report: none",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Committee and Department Updates",
+   "resolution": "updates given; Building Reuse moved to next week",
+   "quote": "7. committee and department updates:",
+   "tags": [
+    "School Building Committee",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "noted April 21, 2017 and May 6, 2017 Annual Town Meeting",
+   "quote": "next meeting: april 21, 2017 may 6, 2017 annual town meeting",
+   "tags": [
+    "schedule",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:44 pm",
+   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 4-0 at 8:44 pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Collins Center Report (Capital Improvement Report)",
+   "where": "text",
+   "quote": "review collins center report (capital improvement report): john reviewed the report and found it helpful to"
+  },
+  {
+   "name": "Debt policy spreadsheet",
+   "where": "text",
+   "quote": "john to work on debt policy spreadsheet."
+  },
+  {
+   "name": "Debt tracking from the Town Accountant",
+   "where": "text",
+   "quote": "mark reviewed debt tracking from the town accountant. look at the net debt after reimbursement."
+  }
+ ],
+ "tags": [
+  "debt policy",
+  "capital planning",
+  "Turkey Hill school",
+  "TC Passios school",
+  "Collins Center report",
+  "borrowing",
+  "annual town meeting",
+  "minutes",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

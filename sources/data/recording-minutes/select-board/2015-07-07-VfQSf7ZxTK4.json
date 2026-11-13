@@ -1,0 +1,446 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "selectmen",
+ "meeting_date": "2015-07-07",
+ "video_id": "VfQSf7ZxTK4",
+ "video_url": "https://www.youtube.com/watch?v=VfQSf7ZxTK4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-07-07-VfQSf7ZxTK4.json",
+  "sha256": "65d7a47e460e5105120be298b5b9565a1483be825faddd52f8b6d2200f10b88a",
+  "caption_lines": 95,
+  "segments": 712
+ },
+ "recording": {
+  "duration_s": 2012,
+  "duration": "0:33",
+  "spoken_chars": 26178,
+  "words_approx": 4363
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07072015-4934",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-07-07-agenda-4934.txt",
+   "path": "sources/meetings/select-board/2015-07-07-agenda-4934.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07072015-4934",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-07-07-minutes-4934.txt",
+   "path": "sources/meetings/select-board/2015-07-07-minutes-4934.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:41:07Z",
+  "cost_usd": 0.139813
+ },
+ "minutes": {
+  "headline": "Board appointed Faith Beal to the PAC and John Reynolds to the Sewer Commission, and voted to send a Chapter 61 letter.",
+  "summary": "With the town manager on vacation, the board made two appointments: Faith Beal to the PAC (cable committee) and, in a joint meeting, John Reynolds to the Sewer Commission. It voted to send a letter saying the Chapter 61 removal notice was not in compliance. It also heard a transit schedule and fare update and a round of committee reports.",
+  "attendees": [
+   {
+    "name_as_heard": "chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Elaine",
+    "role": "town manager's office staff"
+   },
+   {
+    "name_as_heard": "Chief Marino",
+    "role": "police chief (mentioned)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "town-departments",
+   "transportation",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 530,
+    "motion": "Appoint Faith Beal to the PAC",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 634,
+    "motion": "Send the letter saying the Chapter 61 removal notification was not in compliance",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1239,
+    "motion": "Appoint John Reynolds to the Sewer Commission (joint vote)",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1990,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 654,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "One warrant for accounts payable was read.",
+    "figures_as_heard": [
+     "330 3516 dollars and eighty-one cents"
+    ]
+   },
+   {
+    "t": 734,
+    "topic": "Transit loop schedule change",
+    "what_was_said": "Changing from five loops to seven is cost-neutral to the town for the fiscal year, and fares were raised for the first time in years.",
+    "figures_as_heard": [
+     "a dollar twenty-five",
+     "sixty cents"
+    ]
+   },
+   {
+    "t": 1599,
+    "topic": "Brownfields assessment grant",
+    "what_was_said": "The regional planning agency received a brownfields grant that might be usable for cleaning up a gas station property.",
+    "figures_as_heard": [
+     "four hundred thousand dollar"
+    ]
+   },
+   {
+    "t": 1769,
+    "topic": "Donation to middle school",
+    "what_was_said": "A company donated money to the middle school for computer purchases.",
+    "figures_as_heard": [
+     "five thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 902,
+    "decision": "Chair to try to schedule a meeting with town counsel to recalibrate the level of service during the summer."
+   },
+   {
+    "t": 923,
+    "decision": "Staff asked to schedule a possible joint meeting with the Townsend selectmen on the pipeline response."
+   },
+   {
+    "t": 1371,
+    "decision": "Board to discuss next week appointing a screening/approval committee for the building reuse RFQ."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 211,
+    "topic": "Opening and board announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 211,
+    "t_end": 551,
+    "topic": "PAC appointment of Faith Beal",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 551,
+    "t_end": 654,
+    "topic": "Chapter 61 letter",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 654,
+    "t_end": 944,
+    "topic": "Warrant, transit schedule and fares, other action items",
+    "resolution": "informational",
+    "tags": [
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 944,
+    "t_end": 1326,
+    "topic": "Joint meeting: Sewer Commission appointment of John Reynolds",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1326,
+    "t_end": 1977,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "planning-and-zoning",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 1977,
+    "t_end": 2010,
+    "topic": "Closing and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Adjournment vote result not captured; closing lines are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 571,
+    "name_as_heard": "letter concerning removal from chapter 61",
+    "kind": "letter or email",
+    "words_as_heard": "the letter concerning the removal from chapter 61"
+   },
+   {
+    "t": 1456,
+    "name_as_heard": "2016-2017 TIP",
+    "kind": "report",
+    "words_as_heard": "they reviewed the 2016-2017 tip which is now out for public comment"
+   },
+   {
+    "t": 1517,
+    "name_as_heard": "unified planning work program",
+    "kind": "plan or drawing",
+    "words_as_heard": "the unified planning work program is also out for public comment"
+   },
+   {
+    "t": 1557,
+    "name_as_heard": "2007 stormwater report",
+    "kind": "report",
+    "words_as_heard": "the 2007 report that was done by earth tack on stormwater"
+   },
+   {
+    "t": 1326,
+    "name_as_heard": "the RFQ",
+    "kind": "application or permit",
+    "words_as_heard": "we finalized the RFQ"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to send a letter stating the Chapter 61 removal notification was not in compliance.",
+    "t": 634
+   },
+   {
+    "line": "In a joint meeting, the board voted unanimously to appoint a member to the Sewer Commission.",
+    "t": 1239
+   },
+   {
+    "line": "The board voted to appoint a member to the PAC, the town's cable committee.",
+    "t": 530
+   },
+   {
+    "line": "The board heard that moving the transit route from five loops to seven is cost-neutral to the town for the fiscal year, and that fares were raised.",
+    "t": 734
+   },
+   {
+    "line": "The board will discuss next week appointing a screening committee for the building reuse RFQ.",
+    "t": 1371
+   }
+  ],
+  "why_it_matters": [
+   "The Chapter 61 letter bears on how the town handles notice about land leaving a preferential tax classification, which can affect whether the town gets a chance to act on the land.",
+   "The transit change affects riders' fares and service frequency, with no added cost to the town budget, mostly taxes, for the fiscal year."
+  ],
+  "watch_next": [
+   "Next week's Select Board discussion of a screening committee for the building reuse RFQ.",
+   "A possible meeting with town counsel on the level of service, and a possible joint meeting with the Townsend selectmen on the pipeline response."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:41:13Z",
+   "cost_usd": 0.0221631
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07072015-4934",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-07-07-minutes-4934.txt",
+   "path": "sources/meetings/select-board/2015-07-07-minutes-4934.pdf"
+  },
+  "official_sha256": "e8fb4a723160e7fb10003f4ebc1ebafebcc205306fca6e63a8a90d3a5096c8d0",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the three votes and on most figures, with differences mostly caption garbling in the warrant amount and names. The one thing to know: our notes on the town counsel meeting and the building reuse RFQ committee read differently from the official minutes, so check the recording for those two.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Appoint Faith Beal/Beall to the PAC/PACC",
+    "ours": "Appoint Faith Beal to the PAC — passed",
+    "official": "motion: p. bertram to appoint ms. beall to the pacc with a term to expire june 30, 2018 2: b. ebersole vote: all in favor",
+    "official_reading": "Faith Beall / PACC",
+    "note": "Same appointment and outcome; name spelling and committee acronym differ due to captions.",
+    "t": 530
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 61 letter of insufficient notice",
+    "ours": "Send the letter saying the Chapter 61 removal notification was not in compliance — passed",
+    "official": "motion: b. ebersole to sign and send the letter of insufficient notice 2nd: p. bertram vote: all in favor",
+    "note": "Same vote to send the letter, passed in both.",
+    "t": 634
+   },
+   {
+    "kind": "agree",
+    "about": "Appoint John Reynolds to Sewer Commission",
+    "ours": "Appoint John Reynolds to the Sewer Commission (joint vote) — passed unanimously",
+    "official": "to appoint john reynolds to the sewer commission until the next annual election vote: mr. ebersole-yes, ms. bertram - yes, ms. luck- yes, mr. toale- yes",
+    "note": "Both record the appointment passing unanimously (joint vote with sewer commissioners).",
+    "t": 1239
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant amount",
+    "ours": "330 3516 dollars and eighty-one cents",
+    "official": "mr. toale presented an accounts payable warrant in the amount of $333,516.81 for signatures.",
+    "official_reading": "$333,516.81",
+    "note": "Garbled digits; cents match and the figure is the same item.",
+    "t": 654
+   },
+   {
+    "kind": "caption_error",
+    "about": "Transit loop fare",
+    "ours": "Transit loop schedule change: a dollar twenty-five, sixty cents",
+    "official": "the fee is $1.25 for the mart service; students, seniors and disabled residents pay .60.",
+    "official_reading": "$1.25 and $.60",
+    "note": "Same fares; ours describes it as a schedule change but figures match.",
+    "t": 734
+   },
+   {
+    "kind": "agree",
+    "about": "Brownfields assessment grant",
+    "ours": "Brownfields assessment grant: four hundred thousand dollar",
+    "official": "there is also a $400,000 grant through mrpc for brownfields assessment that could possibly be used for the cleanup of the mass avenue gas station property.",
+    "note": "Same $400,000 amount.",
+    "t": 1599
+   },
+   {
+    "kind": "agree",
+    "about": "Donation to middle school",
+    "ours": "Donation to middle school: five thousand dollars",
+    "official": "a $5000 donation was made to the middle school for computer purchases",
+    "note": "Same amount and item.",
+    "t": 1769
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meeting with town counsel on legal costs",
+    "ours": "Chair to try to schedule a meeting with town counsel to recalibrate the level of service during the summer.",
+    "official": "mr. toale will arrange a time for the meeting with mr. bard.",
+    "note": "Both have the chair arranging a meeting, but ours says recalibrating level of service in summer, official says reviewing legal costs and fees with Joel Bard; check the recording for the purpose and timing."
+   },
+   {
+    "kind": "agree",
+    "about": "Joint meeting with Townsend on pipeline",
+    "ours": "Staff asked to schedule a possible joint meeting with the Townsend selectmen on the pipeline response.",
+    "official": "all agreed it would be a good idea. a meeting will be coordinated by ms. peterson.",
+    "note": "Same decision to hold a meeting with Townsend, coordinated by staff.",
+    "t": 923
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Building reuse RFQ review committee",
+    "ours": "Board to discuss next week appointing a screening/approval committee for the building reuse RFQ.",
+    "official": "mr. toale recommended the building reuse committee to be the reviewing committee for the rfqs",
+    "note": "Ours says deferred to next week's discussion; official records a chair recommendation of the Building Reuse Committee with no vote. Check the recording.",
+    "t": 1371
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Reason for sending the letter",
+    "ours": "",
+    "official": "the board agreed to send the letter because there was some interest from the conservation commission.",
+    "note": "Rationale only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager follow-up on brownfields grant",
+    "ours": "",
+    "official": "town manager will be following up on this.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Reynolds told to be sworn in",
+    "ours": "",
+    "official": "mr. toale congratulated mr. reynolds and asked him to see the town clerk to be sworn in.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board members present and absent",
+    "ours": "",
+    "official": "with jamie toale, chair; robert ebersole, vice chair; paula bertram, member; and phyllis luck, member.",
+    "note": "Our attendee list omits the four board members by name; it lists only 'chair'."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent town manager and clerk",
+    "ours": "",
+    "official": "town manager kerry speidel and thomas alonzo, clerk, were not present.",
+    "note": "Absences not in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendees Elaine and Chief Marino",
+    "ours": "Elaine (town manager's office staff); Chief Marino (police chief (mentioned))",
+    "official": "",
+    "note": "Neither appears in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board member reports",
+    "ours": "",
+    "official": "ms. luck reported lunenburg families hosted japanese exchange students recently.",
+    "note": "Reports on exchange students, water district meeting and energy impact statement are not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:42:31Z",
+   "cost_usd": 0.0466731
+  }
+ }
+}

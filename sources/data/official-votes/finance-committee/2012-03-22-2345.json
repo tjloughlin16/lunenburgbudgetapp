@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-03-22",
  "docid": "2345",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 8:31 PM.",
    "moved_by": "BL",
    "seconded_by": "JM",
    "outcome": "passed",
@@ -21,6 +21,358 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR'd meeting minutes (marked OCR macOS Vision). Text is legible. Only one vote recorded: adjournment motion. No other motions or votes found in the minutes, though various department budget presentations were discussed.",
- "cost_usd": 0.1026835
+ "note": "Minutes are marked DRAFT. The attendance block is laid out in columns, so Martha McDonald is read as absent and Kerry Speidel as attending; this mapping is inferred. Department speakers are recorded as present from their reports. Several slide pages (3-12) are appended without attribution to a meeting speaker. Only one motion is recorded (adjournment), with no count printed; \"all in favor\" is recorded as passed. No decisions or transfers are recorded. The e-books figure quote is split across a line break and was collapsed to single spaces.",
+ "cost_usd": 0.00848992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile (arrived 7:05)"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile (arrived 7:05)"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile (arrived 7:05)"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile (arrived 7:05)"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile (arrived 7:05)"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "location: present: absent: attendees: town hall mark erickson, brian laffond, john male, barbara reynolds, scott gile (arrived 7:05) martha mcdonald kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Administration (BOS)/Town Manager",
+   "status": "present",
+   "quote": "administration (bos)/town manager - kerry speidel the bos/town manager's office would be reduced from 3"
+  },
+  {
+   "name": "Nancy Strom",
+   "role": "Information Technology",
+   "status": "present",
+   "quote": "information technology - nancy strom - is aligning equipment contract for ease of licensing and expiration dates."
+  },
+  {
+   "name": "Marion Benson",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "planning board - marion benson - department is using three seniors to work in the office."
+  },
+  {
+   "name": "Mike Sauvageau",
+   "role": "Building Commission",
+   "status": "present",
+   "quote": "building commission - mike sauvageau - budget level funded."
+  },
+  {
+   "name": "Ron Verge",
+   "role": "Conservation",
+   "status": "present",
+   "quote": "conservation - ron verge - level funded"
+  },
+  {
+   "name": "George Emond",
+   "role": "Board of health",
+   "status": "present",
+   "quote": "board of health - george emond - ninety five percent o the budget is salary."
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "formerly on the BOH",
+   "status": "present",
+   "quote": "troy daniels, formerly on the boh, commented that the department should be using legal counsel more often"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave shea commented that the budget was reduced 34% and the reduction of"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Sewer",
+   "status": "present",
+   "quote": "sewer - bob ebersole - sewer project needs more users to maintain current infrastructure."
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "Library",
+   "status": "present",
+   "quote": "library - amy sadkin accompanied by john mara."
+  },
+  {
+   "name": "John Mara",
+   "role": "accompanying Amy Sadkin (Library)",
+   "status": "present",
+   "quote": "library - amy sadkin accompanied by john mara."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Assessors",
+   "status": "present",
+   "quote": "assessors - harald scheid - contract covers all benefits."
+  },
+  {
+   "name": "Laura Gustus",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "treasurer - laura gustus - current budget will result in a decrease in hours"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Library funding gap",
+   "what_was_recorded": "The Library said it needs $35k more to remain a certified library and to receive State Aid.",
+   "quote": "the library needs $35k more to remain a certified library and to receive state aid.",
+   "figures_as_printed": [
+    "$35k"
+   ]
+  },
+  {
+   "topic": "Town Manager's recommended cut",
+   "what_was_recorded": "The Town Manager recommended a 10% budget cut from the current fiscal 2012 budget.",
+   "quote": "the town manager has recommended a 10% budget cut from the current fiscal 2012 budget.",
+   "figures_as_printed": [
+    "10%"
+   ]
+  },
+  {
+   "topic": "Trustee proposed FY13 library budget",
+   "what_was_recorded": "The Trustees proposed a library budget that meets the 10% cut request but significantly impacts services and staffing.",
+   "quote": "the $312,313 budget proposed by the trustees",
+   "figures_as_printed": [
+    "$312,313"
+   ]
+  },
+  {
+   "topic": "Minimum State Aid budget for library",
+   "what_was_recorded": "A FY13 library budget of $347,911 would meet the minimum State Aid requirements to remain certified without a waiver.",
+   "quote": "a budget of $347,911 for fy13 would meet the minimum state aid requirements to remain",
+   "figures_as_printed": [
+    "$347,911"
+   ]
+  },
+  {
+   "topic": "Library extra hours budget",
+   "what_was_recorded": "A library budget of $394,754 would allow the LPL to be open an additional 4 hours per week.",
+   "quote": "a budget of $394,754 would allow the lpl to be open an additional 4 hours per week",
+   "figures_as_printed": [
+    "$394,754"
+   ]
+  },
+  {
+   "topic": "Library share of town budget",
+   "what_was_recorded": "The library states it is only 1% of the town's total budget.",
+   "quote": "lpl is only 1% of the town's total budget",
+   "figures_as_printed": [
+    "1%"
+   ]
+  },
+  {
+   "topic": "State Aid loss from decertification",
+   "what_was_recorded": "The library would lose State Aid monies for FY 2012, described as over $12,000, which funds software and network fees.",
+   "quote": "the library would tose state aid monies for fy 2012: this is over $12,000.",
+   "figures_as_printed": [
+    "$12,000"
+   ]
+  },
+  {
+   "topic": "State Aid received",
+   "what_was_recorded": "The LPL received $12,620 in State Aid last year.",
+   "quote": "lpl received $12,620 in state aid last year",
+   "figures_as_printed": [
+    "$12,620"
+   ]
+  },
+  {
+   "topic": "Cost of interlibrary loans",
+   "what_was_recorded": "Purchasing the interlibrary loan items Lunenburg patrons received would cost over $144,200.",
+   "quote": "if lpl had to purchase these items the cost would be over $144,200",
+   "figures_as_printed": [
+    "$144,200"
+   ]
+  },
+  {
+   "topic": "Cost of database licenses",
+   "what_was_recorded": "Purchasing the database licenses would cost an estimated $69,614.",
+   "quote": "if lpl purchased these licenses it would cost an estimated $69,614",
+   "figures_as_printed": [
+    "$69,614"
+   ]
+  },
+  {
+   "topic": "Cost of e-books",
+   "what_was_recorded": "Purchasing these e-books would cost $79,823.",
+   "quote": "it would cost $79,823",
+   "figures_as_printed": [
+    "$79,823"
+   ]
+  },
+  {
+   "topic": "Legal expenses",
+   "what_was_recorded": "Legal expenses for the BOS/Town Manager's office are level funded at $125K on a flat rate per month contract.",
+   "quote": "legal expenses are level funded at $125k.",
+   "figures_as_printed": [
+    "$125K"
+   ]
+  },
+  {
+   "topic": "Police injury insurance",
+   "what_was_recorded": "Insurance for police went up from 30K to 75k due to injuries.",
+   "quote": "insurance for police went from 30k to 75k due to injuries.",
+   "figures_as_printed": [
+    "30K",
+    "75k"
+   ]
+  },
+  {
+   "topic": "Liability and workers comp premium decrease",
+   "what_was_recorded": "The town received a 10% decrease for signing up for Liability and WC in December.",
+   "quote": "received a 10% decrease for signing up for liability and wc in december.",
+   "figures_as_printed": [
+    "10%"
+   ]
+  },
+  {
+   "topic": "MIIA grant",
+   "what_was_recorded": "MIIA offers a $5k grant annually.",
+   "quote": "miia offers $5k grant annually.",
+   "figures_as_printed": [
+    "$5k"
+   ]
+  },
+  {
+   "topic": "Health insurance increase",
+   "what_was_recorded": "Health insurance went up 3.55% this year.",
+   "quote": "the health insurance only went up 3.55% this year.",
+   "figures_as_printed": [
+    "3.55%"
+   ]
+  },
+  {
+   "topic": "Board of health budget reduction",
+   "what_was_recorded": "A public commenter said the budget was reduced 34%, and the board objected to cutting the Administrative Assistant.",
+   "quote": "dave shea commented that the budget was reduced 34% and the reduction of",
+   "figures_as_printed": [
+    "34%"
+   ]
+  },
+  {
+   "topic": "Cost to operate versus revenue",
+   "what_was_recorded": "It was stated the town costs $200k more to operate each year than it collects in revenue.",
+   "quote": "it was stated that it cost the town $200k more to operate now than we collect in revenue each year.",
+   "figures_as_printed": [
+    "$200k",
+    "25%"
+   ]
+  },
+  {
+   "topic": "Budget levels for Building Commission and Conservation",
+   "what_was_recorded": "The Building Commission budget is level funded, and the Conservation budget is level funded.",
+   "quote": "building commission - mike sauvageau - budget level funded.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "formerly on the BOH",
+   "topic": "Board of health legal counsel and administrative assistant",
+   "quote": "troy daniels, formerly on the boh, commented that the department should be using legal counsel more often"
+  },
+  {
+   "speaker": "Dave Shea",
+   "stated_role": "not stated",
+   "topic": "Board of health budget cut and staffing",
+   "quote": "dave shea commented that the budget was reduced 34% and the reduction of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "no action",
+   "quote": "2) communications • no communications",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Minutes Review",
+   "resolution": "no action; no minutes to review",
+   "quote": "3) minutes review • no minutes to review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Department Budget Meetings & Budget Impact",
+   "resolution": "heard department reports; no action recorded",
+   "quote": "4) department budget meetings & budget impact",
+   "tags": [
+    "FY13 budget",
+    "department budgets",
+    "staffing cuts",
+    "library",
+    "health department",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:31 PM",
+   "quote": "5) adjournment- bl made a motion to adjourn at 8:31 pm, jm seconded; all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY13 Budget Proposal, Lunenburg Public Library (slide handouts, including FY13 Town Manager's Recommended Budget, FY13 Trustee Proposed Budget, Information About the LPL, What Does Loss of Certification Mean?, Benefits of Resource Sharing, Additional Impacts of 10% Cut, and Trustees Statement)",
+   "where": "list",
+   "quote": "library - amy sadkin accompanied by john mara. referred to handouts."
+  }
+ ],
+ "tags": [
+  "FY13 budget",
+  "department budget meetings",
+  "Lunenburg Public Library",
+  "library certification",
+  "State Aid",
+  "Board of Health",
+  "staffing cuts",
+  "health insurance",
+  "MIIA",
+  "Finance Committee",
+  "2012"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referred to handouts"
+ },
+ "dropped_unquoted_by_field": {}
 }

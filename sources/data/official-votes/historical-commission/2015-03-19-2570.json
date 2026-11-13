@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2015-03-19",
  "docid": "2570",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Submit the Architectural Preservation District Bylaw as amended with the discussed changes",
+   "motion": "Submit the Architectural Preservation District Bylaw as amended with the changes discussed.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -21,6 +21,112 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0864215
+ "note": "The minutes are OCR text of a two-page scan. The vote has no recorded mover or seconder. The adjournment at 10:30 p.m. is not a recorded vote. The minutes do not label a public comment section, so the written comments attributed to Bob Ebersole are recorded as attendees, not as public comment. Bob Ebersole's role and attendance are not stated. The minutes list the bylaw changes but do not record separate votes on them.",
+ "cost_usd": 0.00267912,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: amory phelps, cullen dwyer, richard mcgrath, lois lewis",
+   "role": "Historical Commission member"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "quote": "members present: amory phelps, cullen dwyer, richard mcgrath, lois lewis",
+   "role": "Historical Commission member"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: amory phelps, cullen dwyer, richard mcgrath, lois lewis",
+   "role": "Historical Commission member"
+  },
+  {
+   "name": "Lois Lewis",
+   "status": "present",
+   "quote": "members present: amory phelps, cullen dwyer, richard mcgrath, lois lewis",
+   "role": "Historical Commission member"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "status": "present",
+   "quote": "planning board: nathan lockwood, damon mcquaid, kenneth chenis, matthew allison",
+   "role": "Planning Board member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "planning board: nathan lockwood, damon mcquaid, kenneth chenis, matthew allison",
+   "role": "Planning Board member"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "quote": "planning board: nathan lockwood, damon mcquaid, kenneth chenis, matthew allison",
+   "role": "Planning Board member"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "planning board: nathan lockwood, damon mcquaid, kenneth chenis, matthew allison",
+   "role": "Planning Board member"
+  },
+  {
+   "name": "Adam Burney",
+   "status": "present",
+   "quote": "adam burney, the land use director, was also present.",
+   "role": "Land Use Director"
+  },
+  {
+   "name": "Bob Ebersole",
+   "status": "not stated",
+   "quote": "comments were received from bob ebersole, damon mcquaid and nathan lockwood.",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Architectural Preservation District Bylaw draft was revised along the listed lines before submission: Purpose and Substantial Alteration definitions, Certificate to Alter (stone walls), substitute siding deleted, Powers and Duties, Administrative Review, binding review timeline changed from 60 to 90 days, and Enforcement (demolition by neglect).",
+   "quote": "changes: (based partially on the march 2, 2015 meeting with the planning board)"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Architectural Preservation District Bylaw draft (joint meeting with Planning Board)",
+   "resolution": "submitted to Town as amended, passed unanimously",
+   "quote": "the architectural preservation district bylaw draft was reviewed.",
+   "tags": [
+    "bylaw",
+    "architectural preservation district",
+    "historic preservation",
+    "joint meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Architectural Preservation District Bylaw draft",
+   "where": "text",
+   "quote": "the architectural preservation district bylaw draft was reviewed."
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "bylaw",
+  "historic preservation",
+  "joint meeting",
+  "planning board",
+  "demolition"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

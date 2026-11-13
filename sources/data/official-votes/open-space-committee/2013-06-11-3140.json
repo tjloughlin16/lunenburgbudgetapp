@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2013-06-11",
  "docid": "3140",
@@ -12,6 +12,96 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe attendees and action items assigned to the Open Space Committee by the Board of Selectmen, but contain no record of motions, seconds, or votes taken during this meeting.",
- "cost_usd": 0.07999150000000001
+ "note": "Single-page macOS Vision OCR extract with no votes, roll call, motions, or adjournment recorded. The text is a list of Board of Selectmen (BOS) assignments to the Open Space Committee from a joint session; it does not record any OS Committee vote. Header date 2013-06-11 was supplied with the request, not read from the text. Attendee status is inferred from the attendance line. The text shows OCR line breaks and minor artifacts, so quotes are collapsed to single spaces.",
+ "cost_usd": 0.00230262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Benson",
+   "status": "present",
+   "quote": "os attendees at joint session june 11: m. benson, r. verge, j. carrier, r. brockelman, b. kibbe, s. jordan"
+  },
+  {
+   "name": "R. Verge",
+   "status": "present",
+   "quote": "os attendees at joint session june 11: m. benson, r. verge, j. carrier, r. brockelman, b. kibbe, s. jordan"
+  },
+  {
+   "name": "J. Carrier",
+   "status": "present",
+   "quote": "os attendees at joint session june 11: m. benson, r. verge, j. carrier, r. brockelman, b. kibbe, s. jordan"
+  },
+  {
+   "name": "R. Brockelman",
+   "status": "present",
+   "quote": "os attendees at joint session june 11: m. benson, r. verge, j. carrier, r. brockelman, b. kibbe, s. jordan"
+  },
+  {
+   "name": "B. Kibbe",
+   "status": "present",
+   "quote": "os attendees at joint session june 11: m. benson, r. verge, j. carrier, r. brockelman, b. kibbe, s. jordan"
+  },
+  {
+   "name": "S. Jordan",
+   "status": "present",
+   "quote": "os attendees at joint session june 11: m. benson, r. verge, j. carrier, r. brockelman, b. kibbe, s. jordan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOS assigned four action items to the OS Committee: (1) a list of priority criteria for conservation value of available and potentially available properties, including Chapter 61 lands and tax title/town-owned land; (2) a policy and town process for responding to rights of first refusal on Chapter 61 lands; (3) updates in the next OS plan on sewer expansion, population growth against wastewater plan numbers, and stress on the Mulpus and Catacunamoug water source basins; (4) placing the OS plan in its own directory on the town web site.",
+   "quote": "the bos assigned 4 action items to the os committee:"
+  },
+  {
+   "decision": "The BOS requested that the Town Manager copy the OS Committee on Chapter 61 ROFR notices when the BOS is notified.",
+   "quote": "the bos requested that the town manager copy the os committee on chapter rofr notices when the bos is notified."
+  },
+  {
+   "decision": "The next iteration of the OS plan will be after 2014, and the listed factors will be considered at that time.",
+   "quote": "the next iteration of the plan will be after 2014 and these factors will be considered at that time."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board of Selectmen action items assigned to Open Space Committee (joint session)",
+   "resolution": "recorded assignments; no action taken",
+   "quote": "the bos assigned 4 action items to the os committee:",
+   "tags": [
+    "action items",
+    "joint session",
+    "open space plan"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "OS plan (Open Space plan)",
+   "where": "text",
+   "quote": "put the os plan in its own directory (as well as in the existing location) on the town web site"
+  },
+  {
+   "name": "comprehensive waste water management plan",
+   "where": "text",
+   "quote": "population growth in reference to the comprehensive waste water management plan numbers"
+  }
+ ],
+ "tags": [
+  "open space",
+  "chapter 61",
+  "right of first refusal",
+  "joint session",
+  "action items",
+  "open space plan",
+  "conservation land",
+  "tax title"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

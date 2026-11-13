@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2015-03-02",
  "docid": "2567",
@@ -12,6 +12,131 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR-read minutes describing a joint meeting between Planning Board and Historical Commission. The text records discussions of proposed bylaws (VCD and APD), suggestions for revisions, and notes that the Historical Commission would discuss further options on enforcement. No formal motions or votes are recorded. The meeting adjourned at 9:45 but no vote on adjournment is stated.",
- "cost_usd": 0.0816325
+ "note": "OCR text from macOS Vision, with some garbled words (e.g., 'Passios'). No votes are recorded, and the adjournment has no motion or vote. No dollar figures appear. Public comment is not recorded. The minutes list no documents heading.",
+ "cost_usd": 0.0030280199999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Planning Board Members",
+   "status": "present",
+   "quote": "planning board members: joanna bilotta-simeone, nathan lockwood, damon mcquaid, kenneth chenis and matthew allison"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Members",
+   "status": "present",
+   "quote": "planning board members: joanna bilotta-simeone, nathan lockwood, damon mcquaid, kenneth chenis and matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Planning Board Members",
+   "status": "present",
+   "quote": "planning board members: joanna bilotta-simeone, nathan lockwood, damon mcquaid, kenneth chenis and matthew allison"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Planning Board Members",
+   "status": "present",
+   "quote": "planning board members: joanna bilotta-simeone, nathan lockwood, damon mcquaid, kenneth chenis and matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Planning Board Members",
+   "status": "present",
+   "quote": "planning board members: joanna bilotta-simeone, nathan lockwood, damon mcquaid, kenneth chenis and matthew allison"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Chairperson, Historical Commission",
+   "status": "present",
+   "quote": "rebecca lantry, chairperson, of the historical commission expressed concern the vcd bylaw would encourage"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "historical commission: rebecca lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "historical commission: rebecca lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "historical commission: rebecca lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Historical Commission",
+   "status": "present",
+   "quote": "historical commission: rebecca lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Historical Commission will discuss further options on enforcement of the APD Bylaw, including fines.",
+   "quote": "the historical commission will discuss further options."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Discussion of the Village Center District Bylaw (VCD) and Architectural Preservation District Bylaw (APD)",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion of the village center district bylaw (vcd) and architectural preservation district bylaw (apd)",
+   "tags": [
+    "zoning",
+    "village center district",
+    "architectural preservation district",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:45 (no motion recorded)",
+   "quote": "meeting adjourned at 9:45",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Village Center District Bylaw (VCD)",
+   "where": "text",
+   "quote": "expressed concern the vcd bylaw would encourage commercial growth in the village center district"
+  },
+  {
+   "name": "Architectural Preservation District Bylaw (APD)",
+   "where": "text",
+   "quote": "the apd bylaw was in response to the vcd bylaw and had to be crafted very quickly by the historical commission."
+  },
+  {
+   "name": "Demolition delay bylaw",
+   "where": "text",
+   "quote": "enforcement shall be compatible with the demolition delay bylaw"
+  }
+ ],
+ "tags": [
+  "joint meeting",
+  "village center district bylaw",
+  "architectural preservation district bylaw",
+  "historic preservation",
+  "zoning",
+  "demolition delay",
+  "enforcement"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2013-11-14",
  "docid": "3129",
@@ -12,23 +12,129 @@
  },
  "votes": [
   {
-   "motion": "Brandon Kibbee should represent the Open Space Committee on the Acquisition Advisory Team",
+   "motion": "Brandon Kibbee to represent the Open Space Committee on the Acquisition Advisory Team.",
    "moved_by": "Jan Carrier",
-   "seconded_by": "Rich Brockleman",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "jan carrier moved that brandon kibbee represent the open space committee on the acquisition advisory team, seconded by rich brockleman; unanimously approved."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "jan carrier moved that brandon kibbee represent the open space committee on the acquisition advisory team, seconded by rich brockleman; unanimously approved.",
+   "seconded_by": "Rich Brockleman"
   },
   {
-   "motion": "Approve the minutes of the September 10, 2013 meeting",
+   "motion": "Approve the minutes of the Sept. 10, 2013 meeting.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "the open space committee unanimously approved the minutes of the sept. 10, 2013 meeting."
+   "quote": "the open space committee unanimously approved the minutes of the sept. 10, 2013 meeting.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0830805
+ "note": "Action-item minutes, not full minutes: no vote counts beyond 'unanimously approved', no mover for the minutes approval, no public comment section, no document list. Jan Carrier is named as moving a motion but is not in the attendee list; attendance is recorded as 'present' only for the listed attendees. Several people named as team members (Tom Alonzo, Toby Bakaysa, JJ Cote, Chris Rodstrom) did not appear as attendees and are not recorded as attendees. The text contains a printed typo ('muster support town support') that is reproduced nowhere in the output.",
+ "cost_usd": 0.0031769199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "attendees: rob verge, marion benson, rich brockleman, brandon kibbee, sharon jordan & paula bertram (board of selectmen)"
+  },
+  {
+   "name": "Marion Benson",
+   "status": "present",
+   "quote": "attendees: rob verge, marion benson, rich brockleman, brandon kibbee, sharon jordan & paula bertram (board of selectmen)"
+  },
+  {
+   "name": "Rich Brockleman",
+   "status": "present",
+   "quote": "attendees: rob verge, marion benson, rich brockleman, brandon kibbee, sharon jordan & paula bertram (board of selectmen)"
+  },
+  {
+   "name": "Brandon Kibbee",
+   "status": "present",
+   "quote": "attendees: rob verge, marion benson, rich brockleman, brandon kibbee, sharon jordan & paula bertram (board of selectmen)"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "attendees: rob verge, marion benson, rich brockleman, brandon kibbee, sharon jordan & paula bertram (board of selectmen)"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "attendees: rob verge, marion benson, rich brockleman, brandon kibbee, sharon jordan & paula bertram (board of selectmen)"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "jan carrier moved that brandon kibbee represent the open space committee on the acquisition advisory team, seconded by rich brockleman; unanimously approved."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Acquisition Advisory Team will have 4 members: Paula Bertram from the BOS (alternate Tom Alonzo), Toby Bakaysa from the Planning Board, JJ Cote from the Conservation Commission, and Brandon Kibbee; it is a temporary advisory group limited to the potential Lane property acquisition.",
+   "quote": "the team will have 4 members: paula bertram from the bos (alternate is tom alonzo), toby bakaysa from the planning board, and jj cote from the conservation commission, as well as brandon."
+  },
+  {
+   "decision": "Brandon Kibbee will take lead responsibility for discussions with Chris Rodstrom of Land Vest.",
+   "quote": "brandon will take lead responsibility for discussions with chris rodstrom of land vest."
+  },
+  {
+   "decision": "The Open Space Committee will review and approve the advisory team's recommendations and present proposals to the Board of Selectmen for approval.",
+   "quote": "the open space committee will review and approve the team's recommendations, and present the proposals for approval to the board of selectmen."
+  },
+  {
+   "decision": "The committee recommended that the Board of Selectmen ask other town boards to develop similar acquisition criteria for their scope, and that a process be established for acquisition procedures.",
+   "quote": "we recommend that the board of selectmen request that other town boards develop similar acquisition criteria relative to their scope of responsibilities, and that a process be established for acquisition procedures."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Lane Property acquisition and Acquisition Advisory Team",
+   "resolution": "Kibbee appointed as committee representative; team structure and role set out",
+   "quote": "the principal agenda topic was the potential acquisition of the lane property on holman st.",
+   "tags": [
+    "land acquisition",
+    "Lane property",
+    "Holman St",
+    "advisory team"
+   ]
+  },
+  {
+   "topic": "Priority criteria for conservation values",
+   "resolution": "discussed; recommendation to Board of Selectmen",
+   "quote": "the open space committee also discussed the list of priority criteria for determining conservation values",
+   "tags": [
+    "conservation criteria",
+    "acquisition procedures"
+   ]
+  },
+  {
+   "topic": "Approval of Sept. 10, 2013 minutes",
+   "resolution": "approved",
+   "quote": "the open space committee unanimously approved the minutes of the sept. 10, 2013 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "open space",
+  "land acquisition",
+  "Lane property",
+  "Holman St",
+  "Acquisition Advisory Team",
+  "conservation criteria",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

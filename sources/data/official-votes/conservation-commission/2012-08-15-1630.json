@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-08-15",
  "docid": "1630",
@@ -12,37 +12,219 @@
  },
  "votes": [
   {
-   "motion": "Issue negative determination of applicability for fence placement at 26 Spring Street Extension",
+   "motion": "Issue a negative determination on the Request for Determination of Applicability filed by Joseph Fortin at 26 Spring Street Extension (fence about 15 feet from the water's edge).",
    "moved_by": "JJ",
    "seconded_by": "Rich",
-   "outcome": "passed",
+   "outcome": "Unanimous (printed as 'Negative 3 Unanimous')",
    "procedural": false,
    "quote": "no problem with installation of fence. jj/rich negative 3 unanimous"
   },
   {
-   "motion": "Approve Notice of Intent for septic system upgrade as submitted at 1340 Lancaster Avenue",
+   "motion": "Approve as submitted the Notice of Intent filed by Robert Proctor Excavating at 1340 Lancaster Avenue (complete septic system upgrade).",
    "moved_by": "Rich",
    "seconded_by": "Mark",
-   "outcome": "passed",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "approved as submitted. rich/mark unanimous"
   },
   {
-   "motion": "Approve amendment to Order of Conditions for repaving roadways and parking lots at 131 White Street",
+   "motion": "Act on the Amended Order of Conditions filed by Courtney Rheault for the Lunenburg Housing Authority at 131 White Street (repaving roadways and parking lots).",
    "moved_by": "JJ",
    "seconded_by": "R",
-   "outcome": "passed",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "amendment to existing ooc. jj/r unanimous"
   },
   {
-   "motion": "Approve minutes of 5/16, 6/6, 7/18 and 8/1",
+   "motion": "Approve the minutes of 5/16, 6/6, 7/18 and 8/1.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "approved minutes of 5/16, 6/6, 7/18 and 8/1."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The entry for 2 Oak Ridge Road (enforcement order) states what \"should be issued\" but records no formal vote. The 70 Lesure Avenue entry records only a rescheduling action with no vote recorded.",
- "cost_usd": 0.1390155
+ "note": "Short-form minutes: motions are shorthand (mover/seconder initials and 'Unanimous'), with no motion wording, roll call, or adjournment shown. Initials 'JJ', 'Rich', 'Mark' and 'R' are recorded as printed. The 26 Spring Street Extension result is printed as 'Negative 3 Unanimous'. The reschedule date is printed as '9/5/23' (year likely a typo for 2012) and is recorded as printed. Applicants and complainants are named without stated attendance. Attendance for board members is inferred from the header list.",
+ "cost_usd": 0.00443712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy,"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy,"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy,"
+  },
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Joseph Fortin",
+   "role": "applicant, Request for Determination of Applicability",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by joseph fortin."
+  },
+  {
+   "name": "Robert Proctor Excavating",
+   "role": "applicant, Notice of Intent",
+   "status": "not stated",
+   "quote": "notice of intent filed by robert proctor excavating."
+  },
+  {
+   "name": "Courtney Rheault",
+   "role": "of Graves Engineering, for the Lunenburg Housing Authority",
+   "status": "not stated",
+   "quote": "filed by courtney rheault of graves engineering for the lunenburg housing authority."
+  },
+  {
+   "name": "Nick Pirro",
+   "role": "complainant",
+   "status": "not stated",
+   "quote": "nick pirro would like action taken on complaints."
+  },
+  {
+   "name": "Khan Mohiuddin",
+   "role": "applicant, Notice of Intent",
+   "status": "not stated",
+   "quote": "notice of intent filed by khan mohiuddin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Enforcement Order to be issued to both parties regarding trees cut by a neighbor at 2 Oak Ridge Road and Leominster Shirley Road; no vote recorded.",
+   "quote": "enforcement order should be issued to both parties."
+  },
+  {
+   "decision": "Public hearing on the Notice of Intent filed by Khan Mohiuddin at 70 Lesure Avenue rescheduled (originally 8/1, moved due to communication problem); no vote recorded.",
+   "quote": "rescheduled until 9/5/23@ 7:30pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Nick Pirro",
+   "stated_role": "",
+   "topic": "complaints about trees cut by neighbor at 2 Oak Ridge Road",
+   "quote": "nick pirro would like action taken on complaints."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "26 Spring Street Extension - Request for Determination of Applicability (Joseph Fortin), fence placement",
+   "resolution": "negative determination, unanimous",
+   "quote": "no problem with installation of fence. jj/rich negative 3 unanimous",
+   "tags": [
+    "wetlands",
+    "fence",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "1340 Lancaster Avenue - Notice of Intent (Robert Proctor Excavating), septic upgrade",
+   "resolution": "approved as submitted, unanimous",
+   "quote": "approved as submitted. rich/mark unanimous",
+   "tags": [
+    "septic",
+    "NOI",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "131 White Street - Amended Order of Conditions (Lunenburg Housing Authority), repaving",
+   "resolution": "amendment approved, unanimous",
+   "quote": "amendment to existing ooc. jj/r unanimous",
+   "tags": [
+    "amended OoC",
+    "housing authority",
+    "paving"
+   ]
+  },
+  {
+   "topic": "2 Oak Ridge Road and Leominster Shirley Road - complaints (Nick Pirro), trees cut by neighbor",
+   "resolution": "enforcement order to be issued to both parties, no vote",
+   "quote": "enforcement order should be issued to both parties.",
+   "tags": [
+    "enforcement",
+    "tree cutting",
+    "complaint"
+   ]
+  },
+  {
+   "topic": "70 Lesure Avenue - Notice of Intent (Khan Mohiuddin), demolition and new two family home",
+   "resolution": "continued to 9/5/23 at 7:30PM as printed",
+   "quote": "rescheduled until 9/5/23@ 7:30pm.",
+   "tags": [
+    "NOI",
+    "buffer zone",
+    "rescheduled"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 5/16, 6/6, 7/18 and 8/1",
+   "resolution": "approved",
+   "quote": "approved minutes of 5/16, 6/6, 7/18 and 8/1.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Joseph Fortin (26 Spring Street Extension)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by joseph fortin."
+  },
+  {
+   "name": "Notice of Intent filed by Robert Proctor Excavating (1340 Lancaster Avenue)",
+   "where": "text",
+   "quote": "notice of intent filed by robert proctor excavating."
+  },
+  {
+   "name": "Amended Order of Conditions filed by Courtney Rheault of Graves Engineering (131 White Street)",
+   "where": "text",
+   "quote": "filed by courtney rheault of graves engineering for the lunenburg housing authority."
+  },
+  {
+   "name": "Notice of Intent filed by Khan Mohiuddin (70 Lesure Avenue)",
+   "where": "text",
+   "quote": "notice of intent filed by khan mohiuddin."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands hearings",
+  "notice of intent",
+  "request for determination",
+  "enforcement",
+  "rescheduling",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

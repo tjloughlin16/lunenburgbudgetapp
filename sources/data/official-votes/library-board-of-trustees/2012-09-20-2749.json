@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-09-20",
  "docid": "2749",
@@ -12,79 +12,274 @@
  },
  "votes": [
   {
-   "motion": "approve June 21, 2012 LPL Trustee minutes as amended",
+   "motion": "Approve the June 21, 2012 LPL Trustee minutes as amended.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "dick mailloux made a motion to approve the june 21, 2012 lpl trustee minutes as amended; seconded by r obin venezia; unanimous approval by all in attendance."
   },
   {
-   "motion": "approve August 8, 2012 LPL Trustee minutes as presented",
+   "motion": "Approve the August 8, 2012 LPL Trustee minutes as presented.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dick mailloux made a motion to approve the august 8 , 2012 lpl trustee minutes as presented; seconded b y robin venezia; unanimous approval by all in attendance, e xcept lisa krowitz who did not attend this meeting"
+   "quote": "dick mailloux made a motion to approve the august 8 , 2012 lpl trustee minutes as presented; seconded b y robin venezia"
   },
   {
-   "motion": "approve August 27, 2012 LPL Trustee minutes as presented",
+   "motion": "Approve the August 27, 2012 LPL Trustee minutes as presented.",
    "moved_by": "Kathy Murray",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kathy murray made a motion to approve the august 27 , 2012 lpl trustee minutes as presented; seconded b y dick mailloux; unanimous approval by all in attendance."
   },
   {
-   "motion": "approve August 28, 2012 LPL Trustee minutes as presented",
+   "motion": "Approve the August 28, 2012 LPL Trustee minutes as presented.",
    "moved_by": "Kathy Murray",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kathy murray made a motion to approve the august 28 , 2012 lpl trustee minutes as presented; seconded b y dick mailloux; unanimous approval by all in attendance."
   },
   {
-   "motion": "approve September 6, 2012 LPL Trustee minutes as presented",
+   "motion": "Approve the September 6, 2012 LPL Trustee minutes as presented.",
    "moved_by": "Kathy Murray",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kathy murray made a motion to approve the september 6, 2012 lpl trustee minutes as presented; seconded by dick mailloux; unanimous approval by all in attendance."
   },
   {
-   "motion": "fund the upcoming NELAC in Springfield, MA of up to $500 from the small trust fund",
+   "motion": "Fund the upcoming NE LAC in Springfield, MA, up to $500 from the small trust fund.",
    "moved_by": "Robin Venezia",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "robin venezia made a motion to fund the upcoming ne lac in springfield, ma of up to $500 from the small trust fund, dick mailloux seconded, unanimous approval by all i n attendance."
+   "quote": "robin venezia made a motion to fund the upcoming ne lac in springfield, ma of up to $500 from the small trust fund, dick mailloux seconded, unanimous approval by all i n attendance",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "amend the Special Town Meeting warrant at the Special Town Meeting September 25, 2012 @ 7pm",
+   "motion": "Amend the Special Town Meeting warrant at the Special Town Meeting September 25, 2012 @ 7pm.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Lisa Krowitz",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dick mailloux made a motion to amended the special town meeting warrant at the special town meeting se ptember 25, 2012 @ 7pm, seconded by lisa krowitz, unanimous approval by all in attendance."
   },
   {
-   "motion": "enter executive session to discuss new LPL Director's contract",
+   "motion": "Go to Executive Session at 9 pm to discuss the new LPL Director's contract.",
    "moved_by": "Jeanne Raboin",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "jeanne raboin made a motion to go to executive sess ion @ 9 pm to discuss new lpl director's contract, seconded by dick mailloux, unanimous approval by all in atte ndance."
+   "quote": "jeanne raboin made a motion to go to executive sess ion @ 9 pm to discuss new lpl director's contract, seconded by dick mailloux, unanimous approval by all in atte ndance",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "end the meeting",
+   "motion": "End the meeting at 9:46 pm.",
    "moved_by": "Jeanne Raboin",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "jeanne raboin made a motion to end the meeting at 9 :46 pm; seconded by robin venezia; unanimous approv al by all in attendance."
+   "quote": "jeanne raboin made a motion to end the meeting at 9 :46 pm; seconded by robin venezia"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12969050000000001
+ "note": "Text is a clean extraction with stray spacing inside words and numbers (e.g. 'R obin', 'Sess ion', '9 :46'); quotes keep those as printed. Votes are recorded as 'unanimous approval' with no tally, so outcome is 'passed'. The August 8 vote was unanimous only among those present, since Lisa Krowitz did not attend that meeting. The FY13 budget figure was submitted as a motion to Town Hall and discussed, but no board vote on it is recorded. The minutes do not say whether the executive session ended with any action. Minutes are signed by the Secretary with no approval date.",
+ "cost_usd": 0.00697652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee (no role printed)",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, terry hathaway (in terim director)"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, terry hathaway (in terim director)"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Trustee (no role printed)",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, terry hathaway (in terim director)"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee (no role printed)",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, terry hathaway (in terim director)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee (no role printed)",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, terry hathaway (in terim director)"
+  },
+  {
+   "name": "Terry Hathaway",
+   "role": "Interim Director",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, terry hathaway (in terim director)"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "New Director",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, terry hathaway (in terim director)"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Trustee (no role printed)",
+   "status": "absent",
+   "quote": "absent: lars widstrand, john mara"
+  },
+  {
+   "name": "John Mara",
+   "role": "Trustee (no role printed)",
+   "status": "absent",
+   "quote": "absent: lars widstrand, john mara"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tabled the Friends' update, the LPL garden and water feature discussion, and Old business to the next meeting.",
+   "quote": "tabled the friend's update, lpl garden and water fe ature discussion, and old business to the next meet in",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Asked that the staff attending NELAC present their thoughts and experience to the board.",
+   "quote": "jeanne raboin asked that the staff attending nelac present their thoughts and experience."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Gift donations",
+   "what_was_recorded": "Donations of $3580 were received as gifts, bringing the total to $16246.",
+   "figures_as_printed": [
+    "$3580",
+    "$16246"
+   ],
+   "quote": "donations: $3580 was received as gift donations, wh ich brings the total to $16246"
+  },
+  {
+   "topic": "NE LAC (Springfield, MA) funding",
+   "what_was_recorded": "The board voted to fund the upcoming NE LAC conference up to $500 from the small trust fund.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "robin venezia made a motion to fund the upcoming ne lac in springfield, ma of up to $500 from the small trust fund"
+  },
+  {
+   "topic": "Special Town Meeting FY13 budget",
+   "what_was_recorded": "A motion was submitted to Town Hall to reinstate the FY13 budget to $346,541; the board discussed lowering it to $338,541 and using the $8000 revolving fund to cover the difference. No board vote on the figure is recorded.",
+   "figures_as_printed": [
+    "$346,541",
+    "$338,541",
+    "$8000"
+   ],
+   "quote": "dick mailloux submitted a motion to the town hall f or the upcoming special town meeting, to reinstate the fy13 budget to $346,541",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and welcome of new Director",
+   "resolution": "no action",
+   "quote": "meeting called to order at 7:55 pm",
+   "tags": [
+    "welcome",
+    "director transition"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved five sets of minutes",
+   "quote": "dick mailloux made a motion to approve the june 21, 2012 lpl trustee minutes as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "no action; NELAC funding approved; NELAC staff report requested",
+   "quote": "donations: $3580 was received as gift donations, wh ich brings the total to $16246",
+   "tags": [
+    "donations",
+    "ARIS",
+    "backpack policy",
+    "NELAC",
+    "programs",
+    "staff transition"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant and FY13 budget",
+   "resolution": "warrant amendment approved; budget figure discussed, no vote recorded",
+   "quote": "dick mailloux submitted a motion to the town hall f or the upcoming special town meeting, to reinstate the fy13 budget to $346,541",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "FY13 budget",
+    "revolving fund"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Other: tabled items, executive session, adjournment",
+   "resolution": "tabled to next meeting; executive session; adjourned",
+   "quote": "tabled the friend's update, lpl garden and water fe ature discussion, and old business to the next meet in",
+   "tags": [
+    "executive session",
+    "director contract",
+    "tabled"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant (Special Town Meeting September 25, 2012 @ 7pm)",
+   "where": "text",
+   "quote": "dick mailloux made a motion to amended the special town meeting warrant at the special town meeting se ptember 25, 2012 @ 7pm"
+  },
+  {
+   "name": "Annual Report Information Survey (ARIS) of 2012 Data",
+   "where": "text",
+   "quote": "the annual report information survey (aris) of 2012 data was submitted to the mblc."
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "new library director",
+  "interim director",
+  "special town meeting",
+  "FY13 budget",
+  "donations",
+  "NELAC",
+  "executive session",
+  "minutes approval",
+  "warrant amendment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

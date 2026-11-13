@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-09-22",
  "docid": "3775",
@@ -12,15 +12,135 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion d. mcquaid to close hearing, second, m. allison."
+   "quote": "motion d. mcquaid to close hearing, second, m. allison. hearing closed 7:17 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One motion recorded; outcome not stated in minutes, though the hearing closing time immediately follows suggests passage.",
- "cost_usd": 0.0828155
+ "note": "Extracted text of a single-page-plus-continuation public hearing minutes; no scan problems. The minutes record a motion to close the hearing but no vote result, and no vote on the special permit or development plan review itself. The chair and one member were absent. Sign-related suggestions by members and the N. Lockwood interpretation of Section 6.5 are discussion, not recorded decisions.",
+ "cost_usd": 0.00346052,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone, kenneth chenis"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone, kenneth chenis"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "also present; chantell fleck, mrpc"
+  },
+  {
+   "name": "DJ Layhe",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "presentation by dj layhe. currently owns antique business at 3 lancaster avenue."
+  },
+  {
+   "name": "Lois Filiau",
+   "role": "919 Mass Ave",
+   "status": "present",
+   "quote": "lois filiau, 919 mass ave - supports the antique business"
+  },
+  {
+   "name": "Donna Cameron",
+   "role": "919 Mass Ave",
+   "status": "present",
+   "quote": "donna cameron, 919 mass ave- concerned with flags obstructing view of"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lois Filiau",
+   "stated_role": "919 Mass Ave",
+   "topic": "concern over two large proposed flags",
+   "quote": "lois filiau, 919 mass ave - supports the antique business but was concerned with the two large proposed flags"
+  },
+  {
+   "speaker": "Donna Cameron",
+   "stated_role": "919 Mass Ave",
+   "topic": "flags obstructing traffic view; site plan review question",
+   "quote": "donna cameron, 919 mass ave- concerned with flags obstructing view of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: special permit and development plan review, in-home antique and consignment shop, 909 Massachusetts Avenue",
+   "resolution": "hearing closed 7:17 PM; no decision recorded",
+   "quote": "public hearing was to hear and discuss a special permit under section 4.4.3. and a development plan review under section",
+   "tags": [
+    "special permit",
+    "development plan review",
+    "home business",
+    "antique shop",
+    "signage",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "909 Massachusetts Avenue Special Permit and Development Plan Review application",
+   "where": "list",
+   "quote": "909 massachusetts avenue special permit and development plan review application"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg",
+   "where": "text",
+   "quote": "protective bylaw of the town of lunenburg"
+  },
+  {
+   "name": "Sample flag",
+   "where": "text",
+   "quote": "sample flag was shown."
+  }
+ ],
+ "tags": [
+  "special permit",
+  "development plan review",
+  "home business",
+  "signage",
+  "public hearing",
+  "909 Massachusetts Avenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

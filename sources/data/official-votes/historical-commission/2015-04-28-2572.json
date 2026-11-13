@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2015-04-28",
  "docid": "2572",
@@ -12,6 +12,87 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded in these minutes. The document describes a special meeting to prepare a presentation of the Architectural Preservation Bylaw, discusses two proposed amendments, and notes that these amendments \"will be submitted at the Town Meeting, May 2, 2015,\" and that the meeting adjourned. However, no motions or votes are recorded—neither on the amendments, on submitting them, nor on adjournment. This is OCR'd from a scan.",
- "cost_usd": 0.0809895
+ "note": "Scanned OCR text of a special meeting. No motions, votes, or roll-call results are recorded; the adjournment line gives a time (8:15 p.m.) but no motion or vote. Public comment is not recorded, though two residents attended. The proposed change from 20 to 45 days is printed as an amendment in the text, not as an adopted change. The minutes were stamped received and filed June 9, 2015.",
+ "cost_usd": 0.00198792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Member, Historical Commission",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath, cullen dwyer"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member, Historical Commission",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath, cullen dwyer"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Member, Historical Commission",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath, cullen dwyer"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member, Historical Commission",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath, cullen dwyer"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Member, Historical Commission",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath, cullen dwyer"
+  },
+  {
+   "name": "Lawrence Marshall",
+   "role": "Town resident",
+   "status": "present",
+   "quote": "two town residents were in attendance: lawrence marshall and brian corcoran"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Town resident",
+   "status": "present",
+   "quote": "two town residents were in attendance: lawrence marshall and brian corcoran"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The proposed amendments to the Architectural Preservation Bylaw (Section 7 and Section 8, Paragraph (c)) will be submitted at the Town Meeting on May 2, 2015.",
+   "quote": "these amendments will be submitted at the town meeting, may 2, 2015."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Architectural Preservation Bylaw presentation for Town Meeting",
+   "resolution": "discussed two proposed amendments; to be submitted at Town Meeting May 2, 2015",
+   "quote": "this meeting was called to prepare the presentation of the architectural preservation bylaw for the town meeting, may 2, 2015.",
+   "tags": [
+    "bylaw",
+    "architectural preservation",
+    "town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "architectural preservation bylaw",
+  "town meeting",
+  "bylaw amendments",
+  "APDC",
+  "special meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

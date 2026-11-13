@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2013-02-05",
  "docid": "5458",
@@ -12,15 +12,243 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
-   "outcome": "unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "butch made the motion, mike seconded. vote taken was unanimous."
+   "quote": "carl asked for a motion to adjourn, butch made the motion, mike seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR'd by macOS Vision; text is legible. One procedural vote recorded (adjournment).",
- "cost_usd": 0.09079050000000001
+ "note": "OCR text of a two-page set of minutes. No attendance roll, so attendance status is not stated for anyone. The minutes are truncated mid-sentence on page 1 (\"Barb noted she had 80+\") and page 2 resumes mid-discussion, so some discussion is missing. The only recorded vote is the adjournment motion; no budget figure was voted on. The meeting date is not printed in the text (the date given was supplied separately). Dollar figures and percentages are as printed by OCR.",
+ "cost_usd": 0.00558272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Barb",
+   "role": "Sewer Business Manager (signs the minutes as Barbara Lefebvre)",
+   "status": "not stated",
+   "quote": "respectfully submitted, barbara lefebvre sewer business manager"
+  },
+  {
+   "name": "Carl",
+   "status": "not stated",
+   "quote": "carl asked for a motion to adjourn, butch made the motion, mike seconded."
+  },
+  {
+   "name": "Butch",
+   "status": "not stated",
+   "quote": "carl asked for a motion to adjourn, butch made the motion, mike seconded."
+  },
+  {
+   "name": "Mike",
+   "status": "not stated",
+   "quote": "carl asked for a motion to adjourn, butch made the motion, mike seconded."
+  },
+  {
+   "name": "Jack",
+   "status": "not stated",
+   "quote": "jack pointed out that we are overdue to commence paying leominster based on flow meter readings"
+  },
+  {
+   "name": "Dave",
+   "status": "not stated",
+   "quote": "dave stated that since they hadn't yet made the switch over, we could put off the project for fy14."
+  },
+  {
+   "name": "John Male",
+   "status": "not stated",
+   "quote": "john male suggested that, even if fitchburg commences the work on john fitch highway in the summer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to double the Drain Layers License fee to $100.",
+   "quote": "commission agreed we could double the fee to $100."
+  },
+  {
+   "decision": "The capital estimate of $66K for Fitchburg was removed from the operating budget figures, though Carl noted the cost will not go away.",
+   "quote": "the capital estimate of $66k was removed."
+  },
+  {
+   "decision": "Barb is to talk with Kerry about the fringe benefits line, which may be adjusted.",
+   "quote": "fringe benefits line may be adjusted. barb will talk with kerry."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY14 proposed transfer to Retained Earnings",
+   "what_was_recorded": "The proposed transfer to Retained Earnings in the FY14 budget was the starting figure, and the meeting's task was to review the budget and reduce it.",
+   "figures_as_printed": [
+    "$204,943.66"
+   ],
+   "quote": "the proposed transfer to retained earnings was at $204,943.66."
+  },
+  {
+   "topic": "Outsourcing line item",
+   "what_was_recorded": "The outsourcing line used a general assumption of a $100,000 cost, with savings from personnel and vehicle maintenance discussed against it.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "outsourcing line item used a general assumption of $100,000 cost."
+  },
+  {
+   "topic": "Engineering services and I/I project",
+   "what_was_recorded": "Engineering services included an I/I project of $65,000 for home inspections to find illegal connections; Weston & Sampson had proposed a $65k project for the Whalom area.",
+   "figures_as_printed": [
+    "$65,000",
+    "$65k"
+   ],
+   "quote": "engineering services include the l/l project of $65,000 for the home inspections to discover illegal connections."
+  },
+  {
+   "topic": "Fitchburg capital cost",
+   "what_was_recorded": "Fitchburg's capital cost was discussed; a $66K capital estimate was removed from the operating figures, and it would likely come from Retained Earnings by Town Meeting vote.",
+   "figures_as_printed": [
+    "$66K"
+   ],
+   "quote": "the capital estimate of $66k was removed."
+  },
+  {
+   "topic": "Connection fees",
+   "what_was_recorded": "Raising connection fees to $2250 was discussed, applying to all customers, since Fitchburg proposes $2000; $250 was said to cover Lunenburg's inspection and administration costs.",
+   "figures_as_printed": [
+    "$2250",
+    "$2000",
+    "$250"
+   ],
+   "quote": "commission discussed raising connection fees to $2250 since fitchburg is proposing a connection fee of $2000"
+  },
+  {
+   "topic": "Connection fee increase timing",
+   "what_was_recorded": "Connection fees are to increase 7/1/13, and the increase could be advertised to encourage sign-ups before then.",
+   "figures_as_printed": [],
+   "quote": "connection fees will increase 7/1/13 - and we could advertise the increase"
+  },
+  {
+   "topic": "Drain Layers License fee",
+   "what_was_recorded": "Some towns were said to add $150-200 for I/I remediation; the Commission agreed to double the license fee to $100.",
+   "figures_as_printed": [
+    "$150-200",
+    "$100"
+   ],
+   "quote": "corey had stated at one time that some towns add in for i/l remediation $150-200."
+  },
+  {
+   "topic": "Water/sewer rates and minimum charge",
+   "what_was_recorded": "Rates were discussed to cut the deficit, citing prior Fitchburg and Leominster increases; raising the minimum to the standard rate was proposed.",
+   "figures_as_printed": [
+    "49%",
+    "20%",
+    "19%",
+    "9.72/cf",
+    "$97.20",
+    "$16.20/qtr"
+   ],
+   "quote": "we could increase that this year to the standard rate of 9.72/cf or $97.20 (an increase of $16.20/qtr)."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Proposed transfer to Retained Earnings in the FY14 budget, to be reduced by the Commission",
+   "amount_as_printed": "$204,943.66",
+   "outcome": "not stated",
+   "quote": "the proposed transfer to retained earnings was at $204,943.66."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY14 budget review: revenues and customers",
+   "resolution": "discussed, no action",
+   "quote": "barb started with the revenues, stating that we are currently at 673 customers, and we are proposing an additional 40 in fy14.",
+   "tags": [
+    "revenue",
+    "customers"
+   ]
+  },
+  {
+   "topic": "Personnel, outsourcing and fringe benefits",
+   "resolution": "discussed; Barb to talk with Kerry",
+   "quote": "outsourcing line item used a general assumption of $100,000 cost.",
+   "tags": [
+    "outsourcing",
+    "personnel",
+    "fringe benefits"
+   ]
+  },
+  {
+   "topic": "Engineering services and I/I project",
+   "resolution": "discussed; Dave suggested deferring project to FY15",
+   "quote": "engineering services include the l/l project of $65,000 for the home inspections to discover illegal connections.",
+   "tags": [
+    "inflow and infiltration",
+    "engineering",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Fitchburg capital cost",
+   "resolution": "capital estimate removed from operating figures",
+   "quote": "the capital estimate of $66k was removed.",
+   "tags": [
+    "Fitchburg",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Connection fees and drain layers license fee",
+   "resolution": "discussed; drain layers fee to be doubled to $100 by agreement",
+   "quote": "commission discussed raising connection fees to $2250 since fitchburg is proposing a connection fee of $2000",
+   "tags": [
+    "connection fees",
+    "drain layers license",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "Rate increases to cut deficit",
+   "resolution": "discussed; minimum charge increase proposed",
+   "quote": "discussion turned to raising other rates to cut the deficit",
+   "tags": [
+    "rates",
+    "deficit",
+    "minimum charge"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously at 8:52pm",
+   "quote": "meeting was adjourned at 8:52pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handouts of the proposed FY14 Budget",
+   "where": "list",
+   "quote": "barb had provided handouts of the proposed fy14 budget."
+  }
+ ],
+ "tags": [
+  "FY14 budget",
+  "sewer enterprise",
+  "retained earnings",
+  "connection fees",
+  "inflow and infiltration",
+  "Leominster",
+  "Fitchburg",
+  "rates",
+  "drain layers license",
+  "outsourcing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb had provided handouts of the proposed fy14 budget"
+ },
+ "dropped_unquoted_by_field": {}
 }

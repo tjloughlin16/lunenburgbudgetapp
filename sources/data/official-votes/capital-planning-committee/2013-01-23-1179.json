@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-01-23",
  "docid": "1179",
@@ -12,6 +12,245 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document discussions and decisions on capital planning items (keeping items on the plan, removing items, requesting further information) but do not record any motions, voting language, or vote outcomes. Adjournment is stated without vote language.",
- "cost_usd": 0.0843215
+ "note": "No motions or votes are recorded in these minutes; the many 'remain on Plan' and 'remove from Plan' entries are recorded as decisions without a vote. No public comment section, no transfers, and no recorded motion to adjourn (adjournment at 1:10 PM is stated without a vote). The 'Present' line lists 'Chair, Marion M. Benson' with 'Carl (Ernie) Sund' etc.; attendance is otherwise from the header. Minutes text is extracted from a scan-like layout with odd spacing; quotes were copied with single spaces where the source wrapped.",
+ "cost_usd": 0.00495612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "absent",
+   "quote": "absent: kerry speidel"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "provided data on vehicle hours and miles and requested that the committee keep the discussion relative to the agenda."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Streetsweeper removed from the Capital Plan.",
+   "quote": "streetsweeper- remove from plan."
+  },
+  {
+   "decision": "Shotguns (2) not placed in Capital Planning; to be requested under the Department budget.",
+   "quote": "not appropriate for capital planning due to cost ($1,000)."
+  },
+  {
+   "decision": "ADA Ramp, Eagle House removed from the Plan pending further resolution; more information needed from the Council on Aging Director.",
+   "quote": "ada ramp, eagle house - removed from plan pending further resolution."
+  },
+  {
+   "decision": "Historical Commission asked to prioritize the Town Hall repainting and chimney repair if the items are separated.",
+   "quote": "ask historical commission to prioritize, if items separated."
+  },
+  {
+   "decision": "Pistols & Holsters remain on the Plan.",
+   "quote": "pistols & holsters- remain on plan."
+  },
+  {
+   "decision": "Police department computers, laptops, toughbooks, printers, cameras and fax machine remain on the Plan; Fire, Public Safety Building, Board of Selectmen, Board of Health, Treasurer, Building, Eagle House, Library, Town Clerk and Town Manager items likewise remain on the Plan.",
+   "quote": "computers (5)- remain on plan"
+  },
+  {
+   "decision": "Town Technology remains on the Plan with a caveat of amending if needed.",
+   "quote": "town technology- remain on plan with caveat of amending if needed"
+  },
+  {
+   "decision": "Committee directed that the Mobile Media Carts be broken down and reviewed line by line.",
+   "quote": "mobile media carts- need to break down and go line by line."
+  },
+  {
+   "decision": "Committee directed that the 4-way flasher and the Reconfigure Townsend Hbr Rd & Mulpus Rd items need more documentation, with accident counts requested from the Police Dept.",
+   "quote": "go to police dept and request accident count."
+  },
+  {
+   "decision": "Asbestos Remediation: update with specifics requested from Mr. Londa, Director of Facilities and Grounds.",
+   "quote": "requesting update with specifics from mr. londa, director of facilities and grounds."
+  },
+  {
+   "decision": "Viewing of Westminster police vehicles scheduled for January 30; Department Heads notified; a write-up to be placed in the Ledger after the viewing.",
+   "quote": "viewing of police vehicles from westminster will be scheduled for january 30 th."
+  },
+  {
+   "decision": "IT Director and Director of Facilities and Grounds directed to confer on more information about the schools' HVAC control upgrade.",
+   "quote": "it director and director of facilities and grounds to confer."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW street sweeper maintenance",
+   "what_was_recorded": "The maintenance cost for the street sweeper is estimated at $5000 per year.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "the maintenance cost is estimated at $5000 per year."
+  },
+  {
+   "topic": "School Mobile Media Carts and School technology request",
+   "what_was_recorded": "Ms. Shapiro noted the total cost includes administrative costs; the $64,000 is the complete technology request for the School Department.",
+   "figures_as_printed": [
+    "$64,000"
+   ],
+   "quote": "ms. shapiro noted the total cost of $64,000 also includes administrative costs."
+  },
+  {
+   "topic": "4-way flasher on Lancaster Ave at Goodrich St",
+   "what_was_recorded": "The Committee asked what specifics are covered under the $35,000 figure.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "ask chief marino what specifics are covered under the $35,000."
+  },
+  {
+   "topic": "Shotguns (2)",
+   "what_was_recorded": "Shotguns were judged not appropriate for Capital Planning because of their cost and should go through the Department budget.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "not appropriate for capital planning due to cost ($1,000)."
+  },
+  {
+   "topic": "School floor replacement in Cafe and Teacher's lunchroom",
+   "what_was_recorded": "The item has a new price and remains on the Plan.",
+   "figures_as_printed": [
+    "$16,000"
+   ],
+   "quote": "new price of $16,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Site visit, DPW Facility",
+   "resolution": "discussed; no action",
+   "quote": "discussion was held on the vehicles, particularly the street sweeper.",
+   "tags": [
+    "DPW",
+    "vehicles",
+    "street sweeper"
+   ]
+  },
+  {
+   "topic": "Department technology review",
+   "resolution": "items remain on Plan",
+   "quote": "computers (5)- remain on plan",
+   "tags": [
+    "technology",
+    "departments"
+   ]
+  },
+  {
+   "topic": "Mobile Media Carts and school technology",
+   "resolution": "staggering considered; line-by-line review needed",
+   "quote": "committee inquired as to possibility of staggering purchases of mobile media carts.",
+   "tags": [
+    "schools",
+    "technology",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Future Town network change recommended by IT Director",
+   "resolution": "discussed; no action",
+   "quote": "future change to technology recommended by it director is to get the town buildings networked in a more uniform way for distribution of services.",
+   "tags": [
+    "technology",
+    "networking"
+   ]
+  },
+  {
+   "topic": "School HVAC control upgrade",
+   "resolution": "more information requested",
+   "quote": "committee looking for more information on the hvac control upgrade for the schools.",
+   "tags": [
+    "schools",
+    "HVAC",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "General review and preliminary prioritization",
+   "resolution": "prioritization updated; items kept, removed or sent for more information",
+   "quote": "general review/preliminary prioritization- 01-16-13 revision reviewed.",
+   "tags": [
+    "prioritization",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Town Technology",
+   "resolution": "remains on Plan with caveat",
+   "quote": "town technology- remain on plan with caveat of amending if needed",
+   "tags": [
+    "technology"
+   ]
+  },
+  {
+   "topic": "Police vehicle viewing from Westminster",
+   "resolution": "scheduled for January 30",
+   "quote": "viewing of police vehicles from westminster will be scheduled for january 30 th.",
+   "tags": [
+    "police",
+    "vehicles",
+    "public notice"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Prioritization list, 01-16-13 Revision",
+   "where": "list",
+   "quote": "general review/preliminary prioritization- 01-16-13 revision reviewed."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "prioritization",
+  "DPW",
+  "vehicles",
+  "technology",
+  "schools",
+  "public safety",
+  "facilities",
+  "site visit"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "general review/preliminary prioritization- 01-16-13 revision reviewed."
+ },
+ "dropped_unquoted_by_field": {}
 }

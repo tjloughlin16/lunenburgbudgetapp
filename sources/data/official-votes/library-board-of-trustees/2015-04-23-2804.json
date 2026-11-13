@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-04-23",
  "docid": "2804",
@@ -12,31 +12,292 @@
  },
  "votes": [
   {
-   "motion": "Table March 19th open and executive session meeting minutes pending State Attorney General consultation",
+   "motion": "Table both the open session and executive session minutes for the March 19th meeting, pending consultation with the State Attorney General.",
    "moved_by": "Gare",
    "seconded_by": "Susan",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "jeanne made a motion to table both (open session and executive session) meeting minutes for the march 19th meeting due to pending consultation with the state attorney general; so moved by gare, second by susan; voted all in favor"
+   "quote": "so moved by gare, second by susan; voted all in favor."
   },
   {
-   "motion": "Approve April 1, 2015 meeting minutes as amended",
+   "motion": "Approve the April 1, 2015 minutes as amended.",
    "moved_by": "Harry",
    "seconded_by": "Gare",
-   "outcome": "passed",
+   "outcome": "passed (Susan abstained)",
    "procedural": true,
-   "quote": "april 1, 2015 motion to approve minutes as amended, so moved by harry, second by gare, voted all in favor, except susan, abstained - not present at april 1st meeting"
+   "quote": "so moved by harry, second by gare, voted all in favor, except susan, abstained"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "jeanne asked for a motion to adjourn the meeting; so moved by gare; second by harry; voted all in favor at 9:07 p.m"
+   "quote": "so moved by gare; second by harry; voted all in favor at 9:07 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1438335
+ "note": "Extracted text has page breaks and some dash and curly-quote characters; quotes were copied as printed. Vote 1 says 'Jeanne made a motion' but also 'so moved by Gare, second by Susan'; recorded as printed with Gare as mover. No numeric vote counts are printed, only 'all in favor' or 'abstained'. Martha Moore's role is inferred from the 'Director’s Report (Martha)' heading. The 'As per handout' under Petitions and LPL names an unidentified handout and is not listed. Bob Ebersole and Troy Daniels arrived at 8:43 p.m.; no departure times are recorded.",
+ "cost_usd": 0.00842302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:45 p.m. by chairperson jeanne raboin."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director (per Director’s Report (Martha))",
+   "status": "present",
+   "quote": "attending: jeanne raboin, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: dick mailloux"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "bob ebersole (selectman) - arrived at 8:43 p.m."
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "visitor",
+   "status": "present",
+   "quote": "troy daniels (visitor) - arrived at 8:43 p.m."
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Green Committee",
+   "status": "present",
+   "quote": "visit from the green committee, from here on referred to as g.c.:"
+  },
+  {
+   "name": "Neil Sullivan",
+   "role": "Green Committee",
+   "status": "present",
+   "quote": "visit from the green committee, from here on referred to as g.c.:"
+  },
+  {
+   "name": "Zachary Cutting",
+   "role": "Green Committee",
+   "status": "present",
+   "quote": "visit from the green committee, from here on referred to as g.c.:"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Green Committee",
+   "status": "present",
+   "quote": "visit from the green committee, from here on referred to as g.c.:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jeanne will contact the State Attorney General for clarification on executive session practices.",
+   "quote": "jeanne will contact state attorney general for clarification on executive session practices."
+  },
+  {
+   "decision": "Dave Blatt to contact John Londa and ask for the consultants to come in to survey the library's inside lighting.",
+   "quote": "dave: contact john londa and ask for the consultants to come in"
+  },
+  {
+   "decision": "Review policy on how long public events can go on, for lighting and liability reasons, as a future task.",
+   "quote": "future task: review policy for how long public events can go on"
+  },
+  {
+   "decision": "Martha's staff review moved to around September, with a positive response.",
+   "quote": "gare asked if martha would feel ok with doing it around september instead"
+  },
+  {
+   "decision": "Martha will send out a self-evaluation; the board will provide essays based on her goals and comments.",
+   "quote": "martha will be sending out a self-evaluation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle house bulb replacement",
+   "what_was_recorded": "Over 100 bulbs were replaced at Eagle house for a total expense under $3,000.00, with energy savings of one-third.",
+   "figures_as_printed": [
+    "<$3,000.00"
+   ],
+   "quote": "over a 100 bulbs replaced, total expense was <$3,000.00; energy savings 1/3."
+  },
+  {
+   "topic": "FY15 budget adjustment",
+   "what_was_recorded": "Leftover electrical line money and some of Terry’s compensation money may be moved to the heating line; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "monies may be left over from the electrical line, that could be moved to the heating line"
+  },
+  {
+   "topic": "Collections balance",
+   "what_was_recorded": "Collections funds left and available.",
+   "figures_as_printed": [
+    "$16,000.00"
+   ],
+   "quote": "collections: $16,000.00 left/available."
+  },
+  {
+   "topic": "Lighting bulb survey for cost estimate",
+   "what_was_recorded": "A survey of functioning and non-functioning bulbs is to be given to the Green Committee to estimate bulb cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "survey of [functioning/non-functioning] bulbs to give to g.c. (for cost of bulbs estimate)"
+  },
+  {
+   "topic": "FY 2016 budget",
+   "what_was_recorded": "Budget numbers will be worked out after the town meeting; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "waiting for the town meeting… then we'll crunch the numbers."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Possible move of leftover electrical line money and some of Terry’s compensation money to the heating line in the FY15 budget adjustment.",
+   "amount_as_printed": "not stated",
+   "outcome": "proposed; FY15 budget adjustment going to the town meeting May 2nd; no vote taken at this meeting",
+   "quote": "monies may be left over from the electrical line, that could be moved to the heating line"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Lars",
+   "stated_role": "not stated",
+   "topic": "rain headlight law",
+   "quote": "lars reminded about the new mass state law on the roads"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "information only; no action",
+   "quote": "lars reminded about the new mass state law on the roads",
+   "tags": [
+    "public comment",
+    "traffic law",
+    "headlights"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "March 19 minutes tabled; April 1 minutes approved as amended",
+   "quote": "jeanne made a motion to table both (open session and executive session) meeting minutes for the march 19th",
+   "tags": [
+    "minutes",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Green Committee Update (Dave Blatt)",
+   "resolution": "discussed; lighting survey and follow-up tasks assigned",
+   "quote": "visit from the green committee, from here on referred to as g.c.:",
+   "tags": [
+    "lighting",
+    "green committee",
+    "energy savings"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "information; FY15 budget adjustment to town meeting May 2nd",
+   "quote": "going to the town meeting may 2nd",
+   "tags": [
+    "budget",
+    "building repairs",
+    "personnel",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Petitions and LPL (Lars)",
+   "resolution": "discussed; suggestion to ask Town Counsel",
+   "quote": "bob also suggested that we go through town manager ask town counsel about an interpretation.",
+   "tags": [
+    "petitions",
+    "hours",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Director’s Evaluation Essays",
+   "resolution": "information; self-evaluation to be sent",
+   "quote": "martha will be sending out a self-evaluation",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:07 p.m.",
+   "quote": "so moved by gare; second by harry; voted all in favor at 9:07 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for April 23, 2015",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for april 23, 2015"
+  },
+  {
+   "name": "Guardian Electric report",
+   "where": "text",
+   "quote": "requested status on guardian electric report"
+  }
+ ],
+ "tags": [
+  "library",
+  "lighting",
+  "green committee",
+  "energy",
+  "FY15 budget adjustment",
+  "FY16 budget",
+  "personnel",
+  "building repairs",
+  "minutes approval",
+  "executive session",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

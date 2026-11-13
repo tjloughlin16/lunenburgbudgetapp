@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-08-20",
  "docid": "1670",
@@ -12,25 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Approve the Notice of Intent at 52 Hemlock Drive for property restoration",
-   "outcome": "unanimous",
+   "motion": "Approve the Notice of Intent filed by Peter B. Lincoln for work at 52 Hemlock Drive, with the plan as presented.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "plan approved, plantings will be ornamental grasses, blueberry bushes and lady fern. unanimous"
   },
   {
-   "motion": "Approve the Notice of Intent at 42 Highland Street for sewer work in buffer zone to water body and wetlands",
-   "outcome": "unanimous",
+   "motion": "Approve the Notice of Intent filed by Matthew Robichaud for sewer work in the buffer zone at 42 Highland Street.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "plan approved by dpw, explained to commission and approved. unanimous"
   },
   {
-   "motion": "Approve prior meeting minutes from July 2 and August 6",
-   "outcome": "approved",
+   "motion": "Approve the minutes of July 2 and August 6, 2014.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval: july 2, august 6 ~ approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1060435
+ "note": "Text is a clean extraction of an approved minutes page; no scan issues. The hearing outcomes are recorded only as 'Unanimous' with no mover, seconder or vote count, so those are recorded with the printed outcome and no mover. Public comment headings are blank. No dollar figures appear. Visitor status is inferred from the sign-in list. 'Dour Smith' in the visitor list and 'Doug Smith' in the 42 Highland Street entry may be the same person; both are recorded as printed. 'Matt Ma rro' is printed with a space in the source.",
+ "cost_usd": 0.00877803,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, mark murphy, matt ma rro, jan carrier"
+  },
+  {
+   "name": "R. Bursch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, mark murphy, matt ma rro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, mark murphy, matt ma rro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, mark murphy, matt ma rro, jan carrier"
+  },
+  {
+   "name": "Matt Ma rro",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, mark murphy, matt ma rro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob verge, r. bursch, jj cote, mark murphy, matt ma rro, jan carrier"
+  },
+  {
+   "name": "Peter B. Lincoln",
+   "role": "applicant, Notice of Intent for 52 Hemlock Drive",
+   "status": "not stated",
+   "quote": "a notice o f intent filed by peter b. lincoln"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "visitor (listed under Visitors)",
+   "status": "present",
+   "quote": "visitors: pete & debbie lincoln eric d. holt dour smith sheila d. holt dan proctor"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "visitor (listed under Visitors)",
+   "status": "present",
+   "quote": "visitors: pete & debbie lincoln eric d. holt dour smith sheila d. holt dan proctor"
+  },
+  {
+   "name": "Matthew Robichaud",
+   "role": "applicant, Notice of Intent for 42 Highland Street",
+   "status": "not stated",
+   "quote": "notice of intent filed by matthew robichaud"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "Soilsmith Designs, named with applicant Matthew Robichaud",
+   "status": "not stated",
+   "quote": "(doug smith, soilsmith designs)"
+  },
+  {
+   "name": "Dour Smith",
+   "role": "visitor (listed under Visitors; possibly the same person as Doug Smith)",
+   "status": "present",
+   "quote": "visitors: pete & debbie lincoln eric d. holt dour smith sheila d. holt dan proctor"
+  },
+  {
+   "name": "Eric D. Holt",
+   "role": "presenter, Village at Flat Hill Solar Project (listed as Eric & Sheila Holt)",
+   "status": "present",
+   "quote": "eric & sheila holt presented proposed plans for solar project"
+  },
+  {
+   "name": "Sheila D. Holt",
+   "role": "presenter, Village at Flat Hill Solar Project (listed as Eric & Sheila Holt)",
+   "status": "present",
+   "quote": "eric & sheila holt presented proposed plans for solar project"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "visitor (listed under Visitors)",
+   "status": "present",
+   "quote": "visitors: pete & debbie lincoln eric d. holt dour smith sheila d. holt dan proctor"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The hearing for 790-792 Massachusetts Avenue will be held September 17.",
+   "quote": "went over proposed plans and the hearing will be september 17 th ."
+  },
+  {
+   "decision": "For 123 Hollis Road, the member will get keys from Jim and will get back to Jan with any changes after reviewing the application and license.",
+   "quote": "will get keys from jim. reviewed application and license, will get back to jan with any changes"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "52 Hemlock Drive public hearing (Notice of Intent, Peter B. Lincoln)",
+   "resolution": "approved unanimously",
+   "quote": "plan approved, plantings will be ornamental grasses, blueberry bushes and lady fern. unanimous",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "42 Highland Street public hearing (Notice of Intent, Matthew Robichaud)",
+   "resolution": "approved unanimously",
+   "quote": "plan approved by dpw, explained to commission and approved. unanimous",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "790-792 Massachusetts Avenue initial plans review",
+   "resolution": "hearing set for September 17",
+   "quote": "went over proposed plans and the hearing will be september 17 th .",
+   "tags": [
+    "initial review",
+    "hearing scheduling"
+   ]
+  },
+  {
+   "topic": "Village at Flat Hill Solar Project presentation",
+   "resolution": "presented, no action recorded",
+   "quote": "eric & sheila holt presented proposed plans for solar project",
+   "tags": [
+    "solar project",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved July 2 and August 6 minutes",
+   "quote": "minutes approval: july 2, august 6 ~ approved",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "123 Hollis Road review",
+   "resolution": "reviewed; follow-up pending",
+   "quote": "will get keys from jim. reviewed application and license, will get back to jan with any changes",
+   "tags": [
+    "application review",
+    "license"
+   ]
+  },
+  {
+   "topic": "50 Sunset Lane right of way",
+   "resolution": "discussed, no action recorded",
+   "quote": "50 sunset lane ~ right of way ???",
+   "tags": [
+    "right of way"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent filed by Peter B. Lincoln (52 Hemlock Drive)",
+   "where": "text",
+   "quote": "a notice o f intent filed by peter b. lincoln"
+  },
+  {
+   "name": "Notice of Intent filed by Matthew Robichaud (42 Highland Street)",
+   "where": "text",
+   "quote": "notice of intent filed by matthew robichaud"
+  },
+  {
+   "name": "Plan approved by DPW (42 Highland Street)",
+   "where": "text",
+   "quote": "plan approved by dpw, explained to commission and approved."
+  },
+  {
+   "name": "Initial plans (790-792 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "would like to review initial plans"
+  },
+  {
+   "name": "Proposed plans (Village at Flat Hill Solar Project)",
+   "where": "text",
+   "quote": "eric & sheila holt presented proposed plans for solar project"
+  },
+  {
+   "name": "Application and license (123 Hollis Road)",
+   "where": "text",
+   "quote": "reviewed application and license, will get back to jan with any changes"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "public hearing",
+  "solar project",
+  "minutes approval",
+  "buffer zone",
+  "right of way"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

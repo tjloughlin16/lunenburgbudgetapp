@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-11-18",
  "docid": "5475",
@@ -12,15 +12,393 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting, which was recorded as adjourned at 9:08 pm.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "carl asked for a motion to adjourn. dave made the motion, troy seconded. vote taken was unanimous."
+   "quote": "dave made the motion, troy seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes; one procedural vote recorded (adjournment).",
- "cost_usd": 0.0837035
+ "note": "Text is an OCR extract that starts mid-sentence on page 1 and has no printed attendance roster, call to order or approval of prior minutes. Only one motion appears (adjournment, unanimous, no tally printed). The Whalom ¾ privilege fee agreement is recorded as \"All present agreed,\" not a motion. The SWSS payment sentence is cut off at the page break. Some OCR garble (e.g., \"I/l\", \"Jack a cari\"). Attendance statuses are inferred from speech and actions in the text; most people named are only mentioned.",
+ "cost_usd": 0.00795662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl asked for a motion to adjourn."
+  },
+  {
+   "name": "Dick Heaton",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dick heaton thanked the commission, and dick, dan and don bowen left the meeting."
+  },
+  {
+   "name": "Dan Hill",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl asked for dan hill's opinion of the situation."
+  },
+  {
+   "name": "Don Bowen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dick heaton thanked the commission, and dick, dan and don bowen left the meeting."
+  },
+  {
+   "name": "Troy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "troy brought up that there is a time limit to abatement"
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb will check with counsel as to timing."
+  },
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave made the motion, troy seconded."
+  },
+  {
+   "name": "Butch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "butch added that he will unavailable 12/12 and for some time after for personal reasons."
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jack had stated that we need to pay swss, that they are doing the work that"
+  },
+  {
+   "name": "Cari",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jack, cari, national grid, and the lunenburg water dept."
+  },
+  {
+   "name": "Deb",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "deb will provide details/updated figures as to the ongoing"
+  },
+  {
+   "name": "Debbie",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "debbie said she would provide an invoice detailing the $960 in additional labor."
+  },
+  {
+   "name": "Steve",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "carl will work with steve on getting internet access."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "ConCom agent",
+   "status": "not stated",
+   "quote": "in discussions with matt marro, concom agent,"
+  },
+  {
+   "name": "Chuck Caron",
+   "role": "environmental consultant",
+   "status": "not stated",
+   "quote": "the environmental consultant, chuck caron can't make the 12/3 meeting."
+  },
+  {
+   "name": "Adam",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "commission discussed the planning board's lengthy peer review provided by adam."
+  },
+  {
+   "name": "Jan",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "barb will check with jan or matt to follow-up."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All present agreed that asking Whalom Luxury Apts. to pay 3/4 of the privilege fee ($900,000), with the $124,000 figure, sounded reasonable; no formal motion recorded.",
+   "quote": "all present agreed that it sounded reasonable."
+  },
+  {
+   "decision": "Barb to check with counsel on the time limit for the Drumm Property privilege fee abatement request.",
+   "quote": "barb will check with counsel as to timing."
+  },
+  {
+   "decision": "Wright Pierce to meet on 11/21 with the final plans/specs with Jack, Cari, National Grid, and the Lunenburg Water Dept.; anyone welcome to attend.",
+   "quote": "wright pierce will be in for a meeting on 11/21 with the 'final' set of"
+  },
+  {
+   "decision": "Barb to check with Jan or Matt on following up the NOI for ConsCom, since the project may be exempt.",
+   "quote": "barb will check with jan or matt to follow-up."
+  },
+  {
+   "decision": "Commission expressed interest in attending the 11/19 storm water workshop; storm water management costs would not be added to the sewer betterment and would be handled separately through the DPW.",
+   "quote": "any costs for storm water management would not be added to the sewer betterment, and should be handled separately through the dpw."
+  },
+  {
+   "decision": "Weston & Sampson to attend the December meeting to discuss their proposal; Barb to send the proposal to the Commission.",
+   "quote": "barb will send out the proposal sent earlier this month by weston & sampson for the commission to review."
+  },
+  {
+   "decision": "Barb to check the status of the 37 Graham and Elizabeth St. manhole projects with Jack.",
+   "quote": "barb will check the status of the projects with jack."
+  },
+  {
+   "decision": "Highfield Village: await the engineering response on easements before acting further.",
+   "quote": "we will await the engineering response for more information."
+  },
+  {
+   "decision": "Maple Parkway: developer to involve residents; Barb to let the Planning Board know so they can advise residents.",
+   "quote": "barb will let the planning board know so they can advise residents."
+  },
+  {
+   "decision": "Troy to work with Barb on correspondence to residents about the process going forward.",
+   "quote": "troy will work with barb on the correspondence."
+  },
+  {
+   "decision": "Carl to work with Steve on getting internet access for SCADA at Leominster Rd.",
+   "quote": "carl will work with steve on getting internet access."
+  },
+  {
+   "decision": "Debbie to provide an invoice detailing the additional labor.",
+   "quote": "debbie said she would provide an invoice detailing the $960 in additional labor."
+  },
+  {
+   "decision": "Deb to provide details and updated figures on generator work; to attend the 12/9 meeting.",
+   "quote": "they will come to the next december meeting on 12/9."
+  },
+  {
+   "decision": "Commission agreed the SWSS monthly invoices could be paid, as withholding could be seen as breach of contract; the sentence is cut off at the page break.",
+   "quote": "commission discussed that it could be seen as breach of contract and agreed we could pay the"
+  },
+  {
+   "decision": "Invoice for Koppelman & Paige was approved; no motion recorded.",
+   "quote": "invoice for koppelman & paige was approved."
+  },
+  {
+   "decision": "At the 12/9 meeting the Commission will determine whether to hold a meeting on 12/30.",
+   "quote": "at that meeting, the commission will determine whether or not to hold the meeting on 12/30."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Whalom Luxury Apts. privilege fee proposal",
+   "what_was_recorded": "Dan Hill suggested the developer pay three-quarters of the privilege fee, $900,000, with a $124,000 figure based on the previous $1760 connection fee rate; the group found it reasonable.",
+   "figures_as_printed": [
+    "¾",
+    "$900,000",
+    "$124,000",
+    "$1760"
+   ],
+   "quote": "dan asked the commission to consider them paying ¾ of the privilege fee, or $900,000, and the figure of $124,000 based on the previous rate of"
+  },
+  {
+   "topic": "Privilege fee rates (ROC and TIBO)",
+   "what_was_recorded": "Dick Heaton reviewed the ROC and TIBO rates, which were said to only go up; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "dick reviewed the rate on roc(return of cost) and tibo rates, and that they will only go up."
+  },
+  {
+   "topic": "SWSS generator maintenance invoice",
+   "what_was_recorded": "Jack's concern that SWSS monthly maintenance invoices be paid even if reduced by 1/12 of $7500 for generator maintenance.",
+   "figures_as_printed": [
+    "$7500"
+   ],
+   "quote": "even if they are reduced by 1/12\" of $7500 for generator maintenance."
+  },
+  {
+   "topic": "SCADA Leominster Rd additional labor",
+   "what_was_recorded": "Debbie to provide an invoice detailing $960 in additional labor.",
+   "figures_as_printed": [
+    "$960"
+   ],
+   "quote": "debbie said she would provide an invoice detailing the $960 in additional labor."
+  },
+  {
+   "topic": "Maple Parkway / Highfield betterment",
+   "what_was_recorded": "Residents who contribute to the extension would get the betterment at $5775; otherwise it would be the full last betterment.",
+   "figures_as_printed": [
+    "$5775"
+   ],
+   "quote": "those who contribute to the project will get it at $5775, if not it will be at the full last betterment."
+  },
+  {
+   "topic": "SRF project betterment comparison",
+   "what_was_recorded": "The last betterment was $11,551 and the new project is possibly $24,000; a reserve could reduce the potential betterment.",
+   "figures_as_printed": [
+    "$11,551",
+    "$24,000"
+   ],
+   "quote": "the last betterment was $11,551 and the new project is possibly $24,000."
+  },
+  {
+   "topic": "Storm water management costs",
+   "what_was_recorded": "Storm water management costs would be kept out of the sewer betterment and handled separately through the DPW; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "any costs for storm water management would not be added to the sewer betterment, and should be handled separately through the dpw."
+  },
+  {
+   "topic": "Electricity aggregate contract",
+   "what_was_recorded": "Notice of a new Electricity Aggregate contract affecting several pump stations and a rate increase; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb noted that we'd received notice of a new electricity aggregate contract, which impacts"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Whalom Luxury Apts. / privilege fee discussion (opening, before Current Business)",
+   "resolution": "discussed; group found the proposed fee figure reasonable, no vote",
+   "quote": "the point was made that right across from this development is pratt st",
+   "tags": [
+    "privilege fees",
+    "Whalom",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Drumm Property privilege fee abatement request",
+   "resolution": "Barb to check timing with counsel",
+   "quote": "troy brought up that there is a time limit to abatement",
+   "tags": [
+    "abatement",
+    "privilege fees"
+   ]
+  },
+  {
+   "topic": "Pratt St/Lakeview Ave SRF project",
+   "resolution": "no action; plans returned to Wright Pierce, meeting set 11/21",
+   "quote": "pratt st/lakeview ave srf project - the plans & specifications were reviewed",
+   "tags": [
+    "SRF",
+    "Pratt St",
+    "Wright Pierce"
+   ]
+  },
+  {
+   "topic": "NOI for ConsCom",
+   "resolution": "Barb to follow up; 12/3 review uncertain",
+   "quote": "noi for conscom - the hearing on 11/19 was cancelled for the storm water workshop",
+   "tags": [
+    "NOI",
+    "ConsCom"
+   ]
+  },
+  {
+   "topic": "Storm Water workshop",
+   "resolution": "Commission interested in attending 11/19",
+   "quote": "commission is interested in attending the workshop 11/19 for the potential storm water issues with this project.",
+   "tags": [
+    "storm water"
+   ]
+  },
+  {
+   "topic": "I/I project status / Spring project",
+   "resolution": "Weston & Sampson to attend December meeting",
+   "quote": "spring project-weston & sampson will attend the december meeting to discuss their proposal.",
+   "tags": [
+    "I/I",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Highfield Village",
+   "resolution": "await engineering response",
+   "quote": "commission discussed the planning board's lengthy peer review provided by adam.",
+   "tags": [
+    "Highfield Village",
+    "easements",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Maple Parkway residents betterment",
+   "resolution": "Barb to inform Planning Board; Troy and Barb on correspondence",
+   "quote": "barb advised that maple parkway residents were calling about their cost.",
+   "tags": [
+    "betterment",
+    "Maple Parkway",
+    "residents"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects update (SWSS generators, SCADA, invoices)",
+   "resolution": "updates received; SWSS invoices to be paid",
+   "quote": "carl reviewed the projects to ensure there were no further updates",
+   "tags": [
+    "SWSS",
+    "generators",
+    "SCADA",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Business Manager reports",
+   "resolution": "Koppelman & Paige invoice approved; 12/9 meeting and 12/30 question noted",
+   "quote": "barb noted that we'd received notice of a new electricity aggregate contract, which impacts",
+   "tags": [
+    "electricity aggregate",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:08 pm, unanimous",
+   "quote": "dave made the motion, troy seconded. vote taken was unanimous.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plans & Specifications (Pratt St/Lakeview Ave SRF project, 'final' set)",
+   "where": "text",
+   "quote": "the plans & specifications were reviewed by jack a cari, annotated, and returned to wright pierce on 11/14."
+  },
+  {
+   "name": "Weston & Sampson proposal (sent earlier this month)",
+   "where": "text",
+   "quote": "barb will send out the proposal sent earlier this month by weston & sampson for the commission to review."
+  },
+  {
+   "name": "Planning Board peer review (Highfield Village), provided by Adam",
+   "where": "text",
+   "quote": "commission discussed the planning board's lengthy peer review provided by adam."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "privilege fees",
+  "betterment",
+  "SRF project",
+  "SWSS contract",
+  "generators",
+  "storm water",
+  "Highfield Village",
+  "Maple Parkway",
+  "ConsCom NOI",
+  "electricity aggregate"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

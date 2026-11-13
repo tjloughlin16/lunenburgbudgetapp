@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-06-12",
  "docid": "4810",
@@ -12,48 +12,320 @@
  },
  "votes": [
   {
-   "motion": "Approve the appointment of Patrick Sullivan to the post of Fire Chief effective August 1, 2012",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Approve the appointment of Patrick Sullivan as Fire Chief effective August 1, 2012.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo motioned to vote to approve the appointment of patrick sullivan to the post of fire chief effective august 1, 2012. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. alonzo motioned to vote to approve the appointment of patrick sullivan to the post of fire chief effective august 1, 2012."
   },
   {
-   "motion": "Rescind the appointment of Laura Caron Gustus as acting Treasurer/Collector in accordance with MGL Chapter 41, Section 40",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed 3-0-1",
-   "procedural": true,
-   "quote": "mr. alonzo moved to rescind the appointment of laura caron gustus as acting treasurer/collector in accordance with mgl chapter 41, section 40. ms. bertram seconded. mr. sund spoke in saying that he was troubled by this matter and ne",
-   "quote_taken_from_text": true
+   "motion": "Rescind the appointment of Laura Caron Gustus as acting Treasurer/Collector under MGL Chapter 41, Section 40.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
+   "outcome": "passed 3-0-1 (Sund abstaining; deBettencourt recused)",
+   "procedural": false,
+   "quote": "mr. alonzo moved to rescind the appointment of laura caron gustus as acting treasurer/collector in accordance with mgl chapter 41, section 40."
   },
   {
-   "motion": "Appoint the Assistant Treasurer/Collector for a period of one week",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Alonzo",
+   "motion": "Appoint the Assistant Treasurer/Collector on a temporary basis for a period of one week.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Tom Alonzo",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "ms. bertram motioned to appoint the assistant treasurer/collector for a period of 1 week. mr. alonzo seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Execute the deed and land development agreement for the Jones House",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Sund",
+   "motion": "Execute the deed and land development agreement for the Jones House.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Carl \"Ernie\" Sund",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram motioned to execute the deed & land development agreement for the jones house. mr. sund seconded; on vote, motion passed, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1379545
+ "note": "Text is OCR of a scanned typed page with visible OCR errors (e.g., 'Chiet', 'Covenance', 'thics', 'Gustus' vs 'Caron Gustus'); quotes were copied as printed. The Caron Gustus rescission vote is recorded as 3 in favor, 0 opposed, 1 abstention (Sund), with deBettencourt recused. The first temporary-appointment motion has no second recorded; the vote recorded is the later restatement. Warrant W71-12 is listed without a recorded vote. Minutes were not approved in this meeting ('Minutes: None'). No documents list heading is printed.",
+ "cost_usd": 0.00940952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Scott Glenny",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "fire chief scott glenny introduced deputy chiet patrick sullivan to the bos."
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Deputy Chiet",
+   "status": "present",
+   "quote": "fire chief scott glenny introduced deputy chiet patrick sullivan to the bos."
+  },
+  {
+   "name": "Marc Terry",
+   "role": "Labor Counsel from Mirick O'Connell",
+   "status": "present",
+   "quote": "marc terry, labor counsel from mirick o'connell, was present and stated that to be sure"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review of the proposed Electrical Permit Fee for Solar Arrays was continued to a future meeting.",
+   "quote": "review proposed electrical permit fee for solar arrays - continued to a future meeting."
+  },
+  {
+   "decision": "Steven M. deBettencourt recused himself from participating in the vote on rescinding the Caron Gustus appointment.",
+   "quote": "mr. debettencourt recused himself from participating in the vote."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant W71-12 was listed in the minutes with a total amount; no vote on the warrant is recorded.",
+   "figures_as_printed": [
+    "$305,065.80"
+   ],
+   "quote": "warrants - w71-12 $305,065.80"
+  },
+  {
+   "topic": "Temporary Treasurer/Collector compensation",
+   "what_was_recorded": "Ms. Speidel offered to serve as temporary Treasurer/Collector if needed, for no additional compensation.",
+   "figures_as_printed": [],
+   "quote": "temporary basis for no additional compensation."
+  },
+  {
+   "topic": "Electrical permit fee for solar arrays",
+   "what_was_recorded": "A proposed electrical permit fee for solar arrays was reviewed and continued; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "review proposed electrical permit fee for solar arrays - continued to a future meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matthews",
+   "topic": "Congratulations to graduating classes; thanks for memorial service invitation",
+   "quote": "mr. matthews began the meeting by congratulating the 2012 graduating classes from lunenburg high school and monty tech regional vocational school."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; congratulations and thanks noted",
+   "quote": "mr. matthews began the meeting by congratulating the 2012 graduating classes from lunenburg high school and monty tech regional vocational school.",
+   "tags": [
+    "ceremonies",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Ratification of Town Manager's appointment of Fire Chief",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo motioned to vote to approve the appointment of patrick sullivan to the post of fire chief effective august 1, 2012.",
+   "tags": [
+    "appointments",
+    "fire department"
+   ]
+  },
+  {
+   "topic": "Rescind appointment of Laura Caron Gustus as acting Treasurer/Collector",
+   "resolution": "rescinded 3-0-1",
+   "quote": "mr. alonzo moved to rescind the appointment of laura caron gustus as acting treasurer/collector in accordance with mgl chapter 41, section 40.",
+   "tags": [
+    "appointments",
+    "treasurer/collector",
+    "bond",
+    "MGL"
+   ]
+  },
+  {
+   "topic": "Temporary appointment of Assistant Treasurer/Collector",
+   "resolution": "approved 5-0 for one week",
+   "quote": "ms. bertram motioned to appoint the assistant treasurer/collector for a period of 1 week. mr. alonzo seconded.",
+   "tags": [
+    "appointments",
+    "treasurer/collector"
+   ]
+  },
+  {
+   "topic": "Review proposed Electrical Permit Fee for Solar Arrays",
+   "resolution": "continued",
+   "quote": "review proposed electrical permit fee for solar arrays - continued to a future meeting.",
+   "tags": [
+    "permits",
+    "solar",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Execute Deed & Land Development Agreement, Jones House",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram motioned to execute the deed & land development agreement for the jones house. mr. sund seconded; on vote, motion passed, 5 in favor, 0 opposed.",
+   "tags": [
+    "Jones House",
+    "land development",
+    "property sale"
+   ]
+  },
+  {
+   "topic": "BOS Policies & Procedures",
+   "resolution": "not discussed",
+   "quote": "4. bos policies & procedures - not discussed",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no minutes; warrant listed, no vote recorded",
+   "quote": "warrants - w71-12 $305,065.80",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Report",
+   "resolution": "reported",
+   "quote": "mr. matthews reported that the school committee met last wednesday and began exploring the possibility of consolidating into 3 buildings down from 4.",
+   "tags": [
+    "school committee",
+    "school consolidation"
+   ]
+  },
+  {
+   "topic": "Department Reports",
+   "resolution": "no action; none",
+   "quote": "8. department reports - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports",
+   "resolution": "read into record; no action",
+   "quote": "ms. speidel read a notification from the lake shirley improvement corp. regarding aquatic treatment at lake shirley on tuesday june 19t*",
+   "tags": [
+    "Lake Shirley",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Old Business and Executive Session",
+   "resolution": "no action; none",
+   "quote": "old business - none executive session - none",
+   "tags": [
+    "old business",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 7:47 p.m.",
+   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Quick Claim Deed",
+   "where": "text",
+   "quote": "she than presented the quick claim deed and land development agreement for the boards approval."
+  },
+  {
+   "name": "Land Development agreement (Jones House)",
+   "where": "text",
+   "quote": "she than presented the quick claim deed and land development agreement for the boards approval."
+  },
+  {
+   "name": "Purchase and Sales agreement",
+   "where": "text",
+   "quote": "ms. speidel explained the 4 parts to the sale of the jones house which were the purchase and sales agreement"
+  },
+  {
+   "name": "Restrictive Covenance",
+   "where": "text",
+   "quote": "restrictive covenance (historical committee has approved),"
+  },
+  {
+   "name": "Notification of appointment of Patrick Sullivan as Fire Chief",
+   "where": "text",
+   "quote": "ms. speidel read the notification of the appointment of mr. sullivan to the position of fire chief for the town of"
+  },
+  {
+   "name": "Opinion of Town Labor Counsel",
+   "where": "text",
+   "quote": "ms. speidel has followed up on this matter with the town labor counsel and their opinion, which was circulated to the bos"
+  },
+  {
+   "name": "Notification from Lake Shirley Improvement Corp. on aquatic treatment",
+   "where": "text",
+   "quote": "ms. speidel read a notification from the lake shirley improvement corp. regarding aquatic treatment at lake shirley on tuesday june 19t*"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "fire chief",
+  "treasurer/collector",
+  "bond",
+  "Jones House",
+  "land development",
+  "solar permit fee",
+  "warrants",
+  "school consolidation",
+  "Lake Shirley"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

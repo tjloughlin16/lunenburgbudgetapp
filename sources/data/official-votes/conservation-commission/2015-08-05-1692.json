@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-08-05",
  "docid": "1692",
@@ -12,31 +12,530 @@
  },
  "votes": [
   {
-   "motion": "Remove dead trees at 54 Pine Acres Road",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "approved to remove dead trees"
-  },
-  {
-   "motion": "Approve the Notice of Intent for septic system at 40 Fire Road 12",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "approved unanimously"
-  },
-  {
-   "motion": "Approve minutes from 7/15",
+   "motion": "Approve the minutes of 7/15.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval ~ 7/15 ~ approved"
   },
   {
-   "motion": "Not recommend right of first refusal at 150/164 White Street",
+   "motion": "Approve the Notice of Intent for a new septic system and related site grading at 40 Fire Road 12.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "unanimous not to recommend rofr"
+   "quote": "erosion control to be placed on hill. approved unanimously"
+  },
+  {
+   "motion": "Not to recommend the right of first refusal (ROFR) for 150/164 White Street.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "unanimous not to recommend rofr ~ letter sent to selectmen"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is clear and readable; four votes recorded.",
- "cost_usd": 0.11894750000000001
+ "note": "Text is extracted with split words and garbled characters (e.g., \"Micke D utton\", \"Col e\", \"smal l\", \"Jack Rabbi tt\"); names were normalized in name fields and quotes copied as printed. Header reads \"MINUTES ~ APPROVED 8/19/2015\". Only three motions with recorded results are coded as votes: the 7/15 minutes approval (no mover or count printed), 40 Fire Road 12 (approved unanimously, no mover printed), and 150/164 White Street (unanimous, no mover printed). Continuances and \"Approved to remove dead trees\" / \"Approved to continue\" entries have no recorded motion or count, so they are recorded as decisions. No motion or vote is recorded for 274 Prospect Street or for adjournment. Attendance is taken from the member list at the top of the minutes; no separate present/absent designation is printed. Dollar figures appear only for the Shirley Village item.",
+ "cost_usd": 0.01225842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Ken Jones",
+   "role": "",
+   "status": "present",
+   "quote": "ken jones introduced himself to the other members of the commission."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "public comment",
+   "status": "present",
+   "quote": "dave rodgers questioned the location of the new construction by emerald place on the beach area at whalom."
+  },
+  {
+   "name": "Micke Dutton",
+   "role": "applicant (Request for Determination of Applicability, 54 Pine Acres Road)",
+   "status": "not stated",
+   "quote": "a request for determination of applicability filed by micke d utton."
+  },
+  {
+   "name": "Alton/Elizabeth Cole",
+   "role": "applicant, Cole Family Realty Trust (338 Sunset Lane)",
+   "status": "not stated",
+   "quote": "on an abbreviated no tice of intent filed by alton/elizabeth cole"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the applicant, Whitman & Bingham Associates LLC",
+   "status": "not stated",
+   "quote": "(chris mackenzie of whitman & bingham associates llc)"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "applicant, Lake Shirley Improvement Corporation",
+   "status": "not stated",
+   "quote": "on a notice o f intent filed by joanna bilotta-simeone"
+  },
+  {
+   "name": "Dominic Meringlo",
+   "role": "representing the applicant, Aquatic Control Technology LLC",
+   "status": "not stated",
+   "quote": "(dominic meringlo of aquatic control technology llc)"
+  },
+  {
+   "name": "Ronald Wilson",
+   "role": "property owner, 701 R Reservoir Road (violation)",
+   "status": "not stated",
+   "quote": "ronald wilson ~ violation ~ deck added on to ori ginal footprint"
+  },
+  {
+   "name": "Frank Novak",
+   "role": "property owner, 380 Sunset Lane (enforcement order)",
+   "status": "not stated",
+   "quote": "frank novak ~ enforcement order ~ damage from ju ly 2014 micro burst in area"
+  },
+  {
+   "name": "Robert Proctor",
+   "role": "applicant, Robert Proctor Excavating (40 Fire Road 12)",
+   "status": "not stated",
+   "quote": "on a notice of inten t filed by robert proctor"
+  },
+  {
+   "name": "Daniel Gardner",
+   "role": "applicant, Greener Living Luxury Homes (274 Prospect Street)",
+   "status": "not stated",
+   "quote": "on a notice o f intent filed by daniel gardner"
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "representing the applicant, Whitman & Bingham (274 Prospect Street)",
+   "status": "not stated",
+   "quote": "(mark piermarini whitman & bingham)"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "FROM THE SELECTMEN’S OFFICE",
+   "status": "present",
+   "quote": "paula bertram & bob ebersole from the selectmen's office requested a letter stating the concom's opinion of the km/tg pipeline"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "FROM THE SELECTMEN’S OFFICE",
+   "status": "present",
+   "quote": "paula bertram & bob ebersole from the selectmen's office requested a letter stating the concom's opinion of the km/tg pipeline"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Site walk location changed to the Harold Harley area off of Townsend Harbor Road and the small Town Forest.",
+   "quote": "tom is changing the location of the site walk to the harold harley area off of townsend harbor road and the small town forest."
+  },
+  {
+   "decision": "Board requested time at the next meeting to go over regulations and bylaws; the Update/Revise Regulations & ByLaws item is scheduled for August 19.",
+   "quote": "update/revise regulations & bylaws ~ next meeting ~ august 19"
+  },
+  {
+   "decision": "54 Pine Acres Road: continued to 8/19; approved to remove dead trees (no motion recorded). Owner to provide plan and proposal from contractor for fence/boulders at crossing.",
+   "quote": "need plan and proposal from contractor. continued to 8/19. approved to remove dead trees."
+  },
+  {
+   "decision": "338 Sunset Lane: hearing continued to 10/7; Board of Health meeting noted as 9/24.",
+   "quote": "move house out of 50' no build zone. continued until 10/7. board of health meeting is 9/24."
+  },
+  {
+   "decision": "Shirley Village Reservoir: hearing continued to 8/19 (approved to continue, no motion recorded); members asked to submit questions to Jan for forwarding to the applicant and engineer.",
+   "quote": "members were asked to submit questions to jan and she will see that they get forwarded to joanna and engineer for answers."
+  },
+  {
+   "decision": "701 R Reservoir Road: continued until 8/19; Matt to measure exact distance; applicant has 60 days to resolve; As-Built Plan needed.",
+   "quote": "need an as-built plan. matt to measure exact distance. continued until 8/19"
+  },
+  {
+   "decision": "380 Sunset Lane: owner received OK to remove fallen/damaged trees; wall plan with plantings to be submitted; continued to 8/19.",
+   "quote": "received ok to remove fallen/damaged trees."
+  },
+  {
+   "decision": "183 Hemlock Drive: send note requesting filing of NOI and plan (assigned to Jan).",
+   "quote": "have not heard from ~ send note requesting"
+  },
+  {
+   "decision": "123/145 Hollis Road: letter to abutters (assigned to Jan).",
+   "quote": "123/145 hollis road ~ letter to abutters ~ dumping & motorized vehicles on property ~ jan"
+  },
+  {
+   "decision": "189 Howard Street: letter needs to be sent (assigned to Jan).",
+   "quote": "189 howard street ~ violation ~ filling in of wetland ~ letter needs to be sent ~ jan"
+  },
+  {
+   "decision": "192 Peninsula Drive: Matt to contact Neal of David Ross about the updated plan.",
+   "quote": "192 peninsula drive ~ received updated plan ~ matt to contact neal of david ross"
+  },
+  {
+   "decision": "7 Ruth Street: inspection of plantings assigned to Matt or Rich.",
+   "quote": "7 ruth street ~ inspection of plantings ~ matt or rich"
+  },
+  {
+   "decision": "Woodlands Kayak Cove tree removal: need to file RDA; Talent Bank Form to Cullen Dwyer.",
+   "quote": "woodlands kayak cove ~ tree removal ~ need to file rda"
+  },
+  {
+   "decision": "Meeting schedule set: August 19, September 2 and 16.",
+   "quote": "meeting schedule ~ august 19 th , september 2 nd & 16th"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Shirley Village Reservoir - LSIC volunteer association dues",
+   "what_was_recorded": "The minutes note that LSIC is a volunteer association with yearly dues.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "lsic is a volunteer association; dues are $300 per year."
+  },
+  {
+   "topic": "Shirley Village Reservoir - weekly lab testing cost",
+   "what_was_recorded": "Weekly lab testing was described as prohibitive because of its cost per test.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "lab testing once a week, prohibitive because of cost of $200 each."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ken Jones",
+   "stated_role": "",
+   "topic": "introduction to commission",
+   "quote": "ken jones introduced himself to the other members of the commission."
+  },
+  {
+   "speaker": "Tom",
+   "stated_role": "",
+   "topic": "site walk location change",
+   "quote": "tom is changing the location of the site walk to the harold harley area off of townsend harbor road and the small town forest."
+  },
+  {
+   "speaker": "Rich",
+   "stated_role": "",
+   "topic": "DPW boulders on Hollis Road",
+   "quote": "rich stated that the dpw has placed boulders on hollis road to eliminate dumping of yard waste on the trail."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Emerald Place construction location at Whalom beach",
+   "quote": "dave rodgers questioned the location of the new construction by emerald place on the beach area at whalom."
+  },
+  {
+   "speaker": "PAULA BERTRAM",
+   "stated_role": "FROM THE SELECTMEN’S OFFICE",
+   "topic": "letter on KM/TG pipeline",
+   "quote": "paula bertram & bob ebersole from the selectmen's office requested a letter stating the concom's opinion of the km/tg pipeline"
+  },
+  {
+   "speaker": "BOB EBERSOLE",
+   "stated_role": "FROM THE SELECTMEN’S OFFICE",
+   "topic": "letter on KM/TG pipeline",
+   "quote": "paula bertram & bob ebersole from the selectmen's office requested a letter stating the concom's opinion of the km/tg pipeline"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "call to order ~ 7:00 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment ~ ken jones introduced himself to the other members of the commission.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "54 Pine Acres Road - RDA hearing (Micke Dutton)",
+   "resolution": "continued to 8/19; dead tree removal approved",
+   "quote": "need plan and proposal from contractor. continued to 8/19. approved to remove dead trees.",
+   "tags": [
+    "hearing",
+    "RDA",
+    "erosion",
+    "ATV"
+   ]
+  },
+  {
+   "topic": "338 Sunset Lane - Abbreviated Notice of Intent (Cole)",
+   "resolution": "continued to 10/7",
+   "quote": "move house out of 50' no build zone. continued until 10/7.",
+   "tags": [
+    "hearing",
+    "ANOI",
+    "single family home",
+    "septic",
+    "shoreline"
+   ]
+  },
+  {
+   "topic": "Shirley Village Reservoir - Notice of Intent (aquatic weed management)",
+   "resolution": "continued to 8/19",
+   "quote": "approved to continue to 8/19.",
+   "tags": [
+    "hearing",
+    "NOI",
+    "aquatic weeds",
+    "drawdown",
+    "herbicide",
+    "lake management"
+   ]
+  },
+  {
+   "topic": "701 R Reservoir Road - violation (Ronald Wilson)",
+   "resolution": "continued to 8/19",
+   "quote": "need an as-built plan. matt to measure exact distance. continued until 8/19",
+   "tags": [
+    "violation",
+    "deck",
+    "as-built plan"
+   ]
+  },
+  {
+   "topic": "380 Sunset Lane - enforcement order (Frank Novak)",
+   "resolution": "continued to 8/19; tree removal OK'd",
+   "quote": "received ok to remove fallen/damaged trees.",
+   "tags": [
+    "enforcement order",
+    "storm damage",
+    "erosion",
+    "wall"
+   ]
+  },
+  {
+   "topic": "40 Fire Road 12 - Notice of Intent (Robert Proctor)",
+   "resolution": "approved unanimously",
+   "quote": "erosion control to be placed on hill. approved unanimously",
+   "tags": [
+    "hearing",
+    "NOI",
+    "septic",
+    "wetland buffer"
+   ]
+  },
+  {
+   "topic": "274 Prospect Street - Notice of Intent (Daniel Gardner, 22 townhouses)",
+   "resolution": "no vote recorded; dock requested",
+   "quote": "requested a dock on the smal l piece of land abutting the lake.",
+   "tags": [
+    "hearing",
+    "NOI",
+    "townhouses",
+    "stormwater",
+    "retention pond"
+   ]
+  },
+  {
+   "topic": "Minutes approval 7/15",
+   "resolution": "approved",
+   "quote": "minutes approval ~ 7/15 ~ approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "need to file RDA; Talent Bank Form noted",
+   "quote": "new business ~ woodlands kayak cove ~ tree removal ~ need to file rda",
+   "tags": [
+    "tree removal",
+    "Talent Bank"
+   ]
+  },
+  {
+   "topic": "Violations and enforcement orders list",
+   "resolution": "follow-up items assigned",
+   "quote": "183 hemlock drive ~ told to refile noi with an engineered plot plan ~ have not heard from",
+   "tags": [
+    "violations",
+    "enforcement",
+    "follow-up"
+   ]
+  },
+  {
+   "topic": "150/164 White Street - ROFR",
+   "resolution": "unanimous not to recommend; letter sent to Selectmen",
+   "quote": "unanimous not to recommend rofr ~ letter sent to selectmen",
+   "tags": [
+    "ROFR",
+    "Selectmen"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "no action; regulations update set for August 19",
+   "quote": "update/revise regulations & bylaws ~ next meeting ~ august 19",
+   "tags": [
+    "forest cutting",
+    "Lane Grant",
+    "FY 2016 budget",
+    "advisory teams",
+    "education",
+    "stormwater bylaw",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "done",
+   "quote": "signatures ~ ooc(2), coc(3) ~ done",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Announcements - meeting schedule",
+   "resolution": "no action",
+   "quote": "meeting schedule ~ august 19 th , september 2 nd & 16th",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) - KM/TG pipeline letter",
+   "resolution": "request noted; no action recorded",
+   "quote": "paula bertram & bob ebersole from the selectmen's office requested a letter stating the concom's opinion of the km/tg pipeline",
+   "tags": [
+    "public comment",
+    "pipeline",
+    "Selectmen"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:58 PM (no vote recorded)",
+   "quote": "adjournment ~ 10:58 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Micke Dutton (54 Pine Acres Road)",
+   "where": "text",
+   "quote": "a request for determination of applicability filed by micke d utton."
+  },
+  {
+   "name": "Abbreviated Notice of Intent filed by Alton/Elizabeth Cole (338 Sunset Lane)",
+   "where": "text",
+   "quote": "on an abbreviated no tice of intent filed by alton/elizabeth cole"
+  },
+  {
+   "name": "Notice of Intent filed by Joanna Bilotta-Simeone (Shirley Village Reservoir)",
+   "where": "text",
+   "quote": "on a notice o f intent filed by joanna bilotta-simeone"
+  },
+  {
+   "name": "As-Built Plan (701 R Reservoir Road)",
+   "where": "text",
+   "quote": "need an as-built plan. matt to measure exact distance."
+  },
+  {
+   "name": "Plans (701 R Reservoir Road)",
+   "where": "text",
+   "quote": "plans do not show deck."
+  },
+  {
+   "name": "Notice of Intent filed by Robert Proctor (40 Fire Road 12)",
+   "where": "text",
+   "quote": "on a notice of inten t filed by robert proctor"
+  },
+  {
+   "name": "Notice of Intent filed by Daniel Gardner (274 Prospect Street)",
+   "where": "text",
+   "quote": "on a notice o f intent filed by daniel gardner"
+  },
+  {
+   "name": "Lake Management Plan (like Hickory Hills’)",
+   "where": "text",
+   "quote": "would like a lake management plan (like hickory hills')."
+  },
+  {
+   "name": "Talent Bank Form",
+   "where": "text",
+   "quote": "talent bank form ~ cullen dwyer"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands hearings",
+  "notice of intent",
+  "enforcement",
+  "violations",
+  "aquatic weed control",
+  "septic",
+  "tree removal",
+  "ROFR",
+  "KM/TG pipeline",
+  "Shirley Village Reservoir",
+  "2015"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

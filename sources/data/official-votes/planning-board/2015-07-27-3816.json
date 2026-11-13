@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-07-27",
  "docid": "3816",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "release bond for Whites Woods Phase III",
+   "motion": "Release the bond for Whites Woods Phase III (condominiums) after as-built plans were received.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
@@ -21,6 +21,221 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. Minutes Approval section states \"All minutes signed\" but does not record it as a formal motion/second/vote.",
- "cost_usd": 0.0815665
+ "note": "Text extract of minutes with clean page breaks. Only one motion is recorded (bond release, Whites Woods); no votes recorded for the 59 Easter Brook Road ANR, minutes approval, or adjournment. The PUBLIC COMMENT heading has nothing printed under it, so no speakers are recorded. The adjournment time (8:30 PM) is printed without a motion. Attendance is taken from the 'Present:' line; no absences are listed.",
+ "cost_usd": 0.0051581199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "59 Easter Brook Road ANR plan accepted for departmental review; applicant to share a drive with abutters and will provide an easement letter.",
+   "quote": "59 easter brook road - plan accepted for departmental review."
+  },
+  {
+   "decision": "Applicant to provide an easement letter from Robert & Sharon Yousey at the August 10 meeting.",
+   "quote": "the applicant will provide an easement letter from robert & sharon yousey at the august 10 th meeting."
+  },
+  {
+   "decision": "Chair endorsed a letter to Enterprise Bank to release the remaining $32,000 to John White/RIW Realty Trust.",
+   "quote": "chair endorsed letter to enterprise bank to release the remaining $32,000 to john white/riw realty trust."
+  },
+  {
+   "decision": "Board moved bylaw review to a use table with a standard definition list instead of going line by line through Section 4.2.2.",
+   "quote": "shortly into the review, the board felt it would be more advantageous to work off a use table"
+  },
+  {
+   "decision": "Meeting schedule set: August 10 to include discussion of site plan review; August 24 to include discussion of Section 6.1.",
+   "quote": "august 24 - will include discussion of section 6.1."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Whites Woods bond release",
+   "what_was_recorded": "Chair endorsed a letter to Enterprise Bank to release the remaining bond amount to John White/RIW Realty Trust.",
+   "figures_as_printed": [
+    "$32,000"
+   ],
+   "quote": "chair endorsed letter to enterprise bank to release the remaining $32,000 to john white/riw realty trust."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANRs: 59 Easter Brook Road",
+   "resolution": "plan accepted for departmental review; easement letter due August 10",
+   "quote": "59 easter brook road - plan accepted for departmental review.",
+   "tags": [
+    "ANR",
+    "common drive",
+    "easement"
+   ]
+  },
+  {
+   "topic": "Informational meetings: 10 Massachusetts Avenue",
+   "resolution": "referred to separate minutes",
+   "quote": "informational meetings: 10 massachusetts avenue- see separate minutes",
+   "tags": [
+    "informational meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes signed; no vote recorded",
+   "quote": "minutes approval: all minutes signed:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "agricultural commission- farmers' market continues.",
+   "tags": [
+    "committee reports",
+    "stormwater",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "progress noted; Whites Woods bond released by motion; Enterprise Bank letter endorsed",
+   "quote": "motion, m. allison to release bond, second, k. chenis. all aye.",
+   "tags": [
+    "bond release",
+    "subdivision",
+    "development"
+   ]
+  },
+  {
+   "topic": "Director's items: bylaw updates",
+   "resolution": "Board shifted to a use table approach; no action recorded",
+   "quote": "shortly into the review, the board felt it would be more advantageous to work off a use table",
+   "tags": [
+    "bylaw",
+    "zoning",
+    "use table"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted; no action",
+   "quote": "noted zoning board of appeals special permit for dimensional variation for 59 easter brook road and notices from abutting communities.",
+   "tags": [
+    "notices",
+    "zoning board"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "August 10 and August 24 agendas set",
+   "quote": "august 24 - will include discussion of section 6.1.",
+   "tags": [
+    "schedule",
+    "site plan review"
+   ]
+  },
+  {
+   "topic": "Board comments and concerns",
+   "resolution": "discussed; no action",
+   "quote": "d. mcquaid noted he has received inquiries from residents about a solar project receiving imminent approval.",
+   "tags": [
+    "solar",
+    "stormwater task force"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 07/13/15",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 07/13/15 minutes 07/13/15, 10 massachusetts avenue"
+  },
+  {
+   "name": "Minutes 07/13/15, 10 Massachusetts Avenue",
+   "where": "list",
+   "quote": "minutes 07/13/15, 10 massachusetts avenue minutes 07/13/15, 333 massachusetts avenue"
+  },
+  {
+   "name": "Minutes 07/13/15, 333 Massachusetts Avenue",
+   "where": "list",
+   "quote": "minutes 07/13/15, 333 massachusetts avenue decision, 333 massachusetts avenue"
+  },
+  {
+   "name": "Decision, 333 Massachusetts Avenue",
+   "where": "list",
+   "quote": "decision, 333 massachusetts avenue whites woods, release letter of credit"
+  },
+  {
+   "name": "Whites Woods, Release Letter of Credit",
+   "where": "list",
+   "quote": "whites woods, release letter of credit anr plan, 59 easter brook road"
+  },
+  {
+   "name": "ANR Plan, 59 Easter Brook Road",
+   "where": "list",
+   "quote": "anr plan, 59 easter brook road"
+  },
+  {
+   "name": "Zoning Board of Appeals Special Permit for Dimensional Variation, 59 Easter Brook Road",
+   "where": "text",
+   "quote": "noted zoning board of appeals special permit for dimensional variation for 59 easter brook road and notices from abutting communities."
+  },
+  {
+   "name": "Letter to Enterprise Bank re release of remaining $32,000",
+   "where": "text",
+   "quote": "chair endorsed letter to enterprise bank to release the remaining $32,000 to john white/riw realty trust."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "bond release",
+  "bylaw update",
+  "zoning",
+  "solar",
+  "stormwater",
+  "meeting minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

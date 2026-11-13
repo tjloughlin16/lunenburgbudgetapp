@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-12-10",
  "docid": "644",
@@ -12,47 +12,368 @@
  },
  "votes": [
   {
-   "motion": "to approve November 5, 2013 minutes, current expense vouchers, abatements, warrants, commitments, and payroll",
-   "outcome": "not stated",
+   "motion": "Grant the Chapter 61 / 61A Forest Land application for four parcels (285 E Goodrich St., 992 Lancaster Ave., 1168 Lancaster Ave & 991 Lancaster Ave.), effective January 1, 2014.",
    "moved_by": "",
-   "seconded_by": "",
-   "procedural": true,
-   "quote": "board reviewed and approved november 5, 2013 minutes, current expense vouchers, abatements, warrants, commitments & payroll."
-  },
-  {
-   "motion": "to grant the Chapter 61 / 61A application",
    "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
-   "quote": "the board voted to grant the chapter 61 / 61a application."
+   "quote": "the board voted to grant the chapter 61 / 61a application.",
+   "seconded_by": ""
   },
   {
-   "motion": "to deny the application if sufficient documentation is not received by December 31, 2013",
+   "motion": "Deny the Lunenburg Realty LLC (35 Leominster Rd.) Chapter 61A application if sufficient documentation is not received by December 31, 2013.",
+   "moved_by": "",
    "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
-   "quote": "the board voted to deny the application if sufficient documentation is not received by december 31, 2013."
+   "quote": "after a long discussion the board voted to deny the application if sufficient documentation is not received by december 31, 2013.",
+   "seconded_by": ""
   },
   {
-   "motion": "to grant authorization for the Regional Assessor to input data in Gateway",
+   "motion": "Authorize Harald Scheid to input data in Gateway.",
+   "moved_by": "",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
-   "quote": "the board unanimously granted permission."
+   "quote": "the board unanimously granted permission.",
+   "seconded_by": ""
   },
   {
-   "motion": "to accept the contract with Cartographic Associates for $2400.00",
-   "outcome": "passed",
+   "motion": "Accept the Cartographic Associates (CAI Technologies) contract at a cost of $2400.00.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the board reviewed and voted to accept the contract."
+   "quote": "the board reviewed and voted to accept the contract.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Start Board of Assessors meetings at 5:30 pm, at least for the winter months.",
+   "moved_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "the board unanimously agreed and will review the scheduled meeting time in a few months.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1154425
+ "note": "Text is OCR output (macOS Vision) with some garbled words (e.g., 'CAl' for CAI, 'Obra', 'Lavise Paguette' signature). The Lunenburg Realty paragraph is cut off mid-sentence in the text. No motions name a mover or seconder, and no vote counts are printed. The adjournment at 7:25 pm is recorded without a motion, so it is not listed as a vote. No public comment is recorded. Persons named only as not present or as sources (Dale Erskine, Karen Brochu, Nancy Forest, Tim Fountain, J. Robert Connor) are not listed as attendees.",
+ "cost_usd": 0.007640019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, christopher comeau & matt papini, sr., regional assessor harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, christopher comeau & matt papini, sr., regional assessor harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, christopher comeau & matt papini, sr., regional assessor harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, christopher comeau & matt papini, sr., regional assessor harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, christopher comeau & matt papini, sr., regional assessor harald scheid, and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved the November 5, 2013 minutes, current expense vouchers, abatements, warrants, commitments & payroll.",
+   "quote": "board reviewed and approved november 5, 2013 minutes, current expense vouchers, abatements, warrants, commitments & payroll."
+  },
+  {
+   "decision": "Board approved all three statutory exemption applications presented by Louise Paquette.",
+   "quote": "after reviewing all the applications, the board approved all the applications for exemptions."
+  },
+  {
+   "decision": "Board signed the Classified Chapter 61 Forest Land Tax Lien, which was notarized; Louise Paquette to collect fees and record the document.",
+   "quote": "louise will follow up with collecting the fees and recording the document."
+  },
+  {
+   "decision": "Harald Scheid to arrange an on-site inspection of Central Mass Garden Center, Inc. (621 Chase Rd.) in the spring.",
+   "quote": "he will make arrangements in the spring to do an on-site inspection."
+  },
+  {
+   "decision": "Louise Paquette to mail back the signed CAI contract.",
+   "quote": "louise will mail back the signed contract."
+  },
+  {
+   "decision": "Harald Scheid suggested that David contact Tim Fountain at CAI about mapping the Emerald Place properties, which are not available on-line under the town GIS mapping.",
+   "quote": "harald suggested that david contact tim fountain at cal regarding the mapping of the properties at emerald place."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemptions approved",
+   "what_was_recorded": "Total exemptions approved this meeting, in addition to tax amounts already approved for three V22D exemptions.",
+   "figures_as_printed": [
+    "$9,227.33"
+   ],
+   "quote": "the total exemptions approved in addition to the tax amounts already approved for (3) v22d exemptions total $9,227.33."
+  },
+  {
+   "topic": "Total exemptions to date compared with last year",
+   "what_was_recorded": "Total exemption amount to date, including tax work-off exemptions, versus the FY13 total at the same time last year.",
+   "figures_as_printed": [
+    "$96,965.33",
+    "$98,922.85"
+   ],
+   "quote": "louise reported that the total exemption amount to date is $96,965.33 which includes the tax work-off program exemptions."
+  },
+  {
+   "topic": "FY14 committed real estate and personal property",
+   "what_was_recorded": "Committed amounts for real estate and personal property for FY14, with the Actual FY14 RE & PP to be mailed 12/26/2013.",
+   "figures_as_printed": [
+    "$19,747,418.40",
+    "$538,702.65"
+   ],
+   "quote": "the committed amount for real-estate is $19,747,418.40 and $538,702.65 for personal property."
+  },
+  {
+   "topic": "FY14 tax rate",
+   "what_was_recorded": "The FY 2014 tax rate reported to the Board.",
+   "figures_as_printed": [
+    "$17.99 per thousand"
+   ],
+   "quote": "the tax rate for fy 2014 is $17.99 per thousand."
+  },
+  {
+   "topic": "Motor vehicle commitment",
+   "what_was_recorded": "The 6th motor vehicle commitment was prepared and mailed 11/29/2013 in the stated amount.",
+   "figures_as_printed": [
+    "$22,716.18"
+   ],
+   "quote": "louise reported that the 6* commitment in motor vehicle billing was prepared and mailed on 11/29/2013 in the amount of $22,716.18."
+  },
+  {
+   "topic": "FY14 overlay",
+   "what_was_recorded": "The overlay approved for FY 14.",
+   "figures_as_printed": [
+    "$145,256.60"
+   ],
+   "quote": "harald reported that the overlay approved for fy 14 is $145,256.60."
+  },
+  {
+   "topic": "CAI Technologies mapping contract",
+   "what_was_recorded": "Cost of the Cartographic Associates (CAI Technologies) contract, which the Board voted to accept; includes three reduced size prints, one full size color composite map and a PDF map set.",
+   "figures_as_printed": [
+    "$2400.00"
+   ],
+   "quote": "the contract states the cost is $2400.00 which includes three (3) each reduced size replacement prints"
+  },
+  {
+   "topic": "Tax work-off program exemption",
+   "what_was_recorded": "Example of tax due after the IRS-required W-2 treatment of tax work-off earnings: a $750.00 exemption would leave about $67.00 in tax due.",
+   "figures_as_printed": [
+    "$750.00",
+    "$67.00"
+   ],
+   "quote": "the result for a tax exemption of $750.00 would be approximately $67.00 in tax due."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Prior minutes, vouchers, abatements, warrants, commitments, payroll",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "warrants",
+    "payroll"
+   ],
+   "quote": "board reviewed and approved november 5, 2013 minutes, current expense vouchers, abatements, warrants, commitments & payroll."
+  },
+  {
+   "topic": "Statutory exemption applications",
+   "resolution": "approved",
+   "tags": [
+    "exemptions"
+   ],
+   "quote": "after reviewing all the applications, the board approved all the applications for exemptions."
+  },
+  {
+   "topic": "New Chapter 61 / 61A Forest Land application",
+   "resolution": "granted",
+   "tags": [
+    "chapter 61A",
+    "forest land"
+   ],
+   "quote": "the board voted to grant the chapter 61 / 61a application."
+  },
+  {
+   "topic": "Land tax lien releases and Chapter 61 tax lien",
+   "resolution": "signed and notarized",
+   "tags": [
+    "tax liens",
+    "chapter 61"
+   ],
+   "quote": "the classified chapter 61 forest land tax lien was reviewed and the boa signed and the document was notarized."
+  },
+  {
+   "topic": "Chapter 61A applications in question (Lunenburg Realty LLC; Central Mass Garden Center)",
+   "resolution": "Lunenburg Realty application conditionally denied; Garden Center inspection planned for spring",
+   "tags": [
+    "chapter 61A",
+    "agricultural land",
+    "denial"
+   ],
+   "quote": "after a long discussion the board voted to deny the application if sufficient documentation is not received by december 31, 2013."
+  },
+  {
+   "topic": "FY14 real estate and personal property commitment; Gateway access",
+   "resolution": "Gateway data entry authorized",
+   "tags": [
+    "commitment",
+    "tax rate",
+    "gateway"
+   ],
+   "quote": "harald requested that the board vote whether or not they grant authorization for him to input data in gateway."
+  },
+  {
+   "topic": "Motor vehicle commitment and overlay",
+   "resolution": "informational",
+   "tags": [
+    "motor vehicle",
+    "overlay"
+   ],
+   "quote": "louise reported that the 6* commitment in motor vehicle billing was prepared and mailed on 11/29/2013"
+  },
+  {
+   "topic": "Residential questionnaires and periodic inspections",
+   "resolution": "informational",
+   "tags": [
+    "inspections",
+    "questionnaires"
+   ],
+   "quote": "louise reported that approximately 550 residential questionnaires were mailed recently."
+  },
+  {
+   "topic": "CAI Technologies mapping contract",
+   "resolution": "accepted",
+   "tags": [
+    "mapping",
+    "contract",
+    "GIS"
+   ],
+   "quote": "the board reviewed and voted to accept the contract."
+  },
+  {
+   "topic": "Emerald Place property mapping",
+   "resolution": "suggestion to contact vendor",
+   "tags": [
+    "mapping",
+    "GIS"
+   ],
+   "quote": "harald suggested that david contact tim fountain at cal regarding the mapping of the properties at emerald place."
+  },
+  {
+   "topic": "Special Town Meeting and debt exclusion vote reminder",
+   "resolution": "informational",
+   "tags": [
+    "town meeting",
+    "debt exclusion"
+   ],
+   "quote": "louise reminded the board that a special town meeting is scheduled on tuesday, january 7, 2014 at 7:00 p.m. at lunenburg high school."
+  },
+  {
+   "topic": "Tax work-off program payment processing",
+   "resolution": "informational",
+   "tags": [
+    "tax work-off",
+    "payroll",
+    "W-2"
+   ],
+   "quote": "harald reported that karen brochu, accountant notified several departments that the payments made to the"
+  },
+  {
+   "topic": "RRG vacancy survey",
+   "resolution": "informational",
+   "tags": [
+    "commercial assessments",
+    "economic development"
+   ],
+   "quote": "harald reported that his company, \"rrg\", has hired two fairly \"new\" colleagues that will be doing a vacancy survey beginning in january"
+  },
+  {
+   "topic": "Meeting start time",
+   "resolution": "start moved to 5:30 pm for winter months",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "the board unanimously agreed and will review the scheduled meeting time in a few months."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Statutory Exemption applications (3)",
+   "where": "text",
+   "quote": "louise presented (3) statutory exemption applications to the board for review."
+  },
+  {
+   "name": "Chapter 61 / 61A Forest Land / Forest Management Plan application (4 parcels)",
+   "where": "text",
+   "quote": "harald presented one \"new\" chapter 61 / 61a forest land / forest management plan to the board for"
+  },
+  {
+   "name": "Land tax lien releases (recorded 1974, 1975 & 1976)",
+   "where": "text",
+   "quote": "harald provided (3) land tax lien releases which had been recorded in 1974, 1975 & 1976."
+  },
+  {
+   "name": "Classified Chapter 61 Forest Land Tax Lien",
+   "where": "text",
+   "quote": "the classified chapter 61 forest land tax lien was reviewed and the boa signed and the document was notarized."
+  },
+  {
+   "name": "Letter to Lunenburg Realty LLC dated 12/3/2013",
+   "where": "text",
+   "quote": "harald reported that he had sent a letter to lunenburg realty llc on 12/3/2013 requesting more supporting"
+  },
+  {
+   "name": "Cartographic Associates (CAI Technologies) contract",
+   "where": "text",
+   "quote": "louise informed the board that cartographic associates, doing business as cal technologies, has submitted the contract for approval."
+  },
+  {
+   "name": "Actual FY14 RE & PP tax bills",
+   "where": "text",
+   "quote": "louise reported that the actual fy14 re & pp will be mailed on 12/26/2013."
+  },
+  {
+   "name": "Residential questionnaires (approximately 550)",
+   "where": "text",
+   "quote": "louise reported that approximately 550 residential questionnaires were mailed recently."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "chapter 61A",
+  "forest land",
+  "exemptions",
+  "tax commitments",
+  "tax rate",
+  "mapping contract",
+  "tax work-off",
+  "town meeting",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

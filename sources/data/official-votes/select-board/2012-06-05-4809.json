@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-06-05",
  "docid": "4809",
@@ -12,31 +12,379 @@
  },
  "votes": [
   {
-   "motion": "approve the request for a voluntary toll for the Chester Mossman Teen Center for June 23, 2012 and September 8, 2012",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Steven M. deBettencourt",
-   "outcome": "passed 4-0",
+   "motion": "Approve the request for a Voluntary Toll for the Chester Mossman Teen Center on June 23, 2012 and September 8, 2012.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. deBettencourt",
+   "outcome": "passed 4 in favor, O opposed",
    "procedural": false,
-   "quote": "ms. bertram motioned to approve the request for the voluntary toll for the chester mossman teen center for june 23, 2012 & september 8, 2012. mr. debettencourt seconded. on vote, motion carried, 4 in favor, o opposed."
+   "quote": "ms. bertram motioned to approve the request for the voluntary toll for the chester mossman teen center for june 23, 2012 & september 8, 2012. mr. debettencourt seconded."
   },
   {
-   "motion": "approve the sale of bonds, 2012 General Obligation & 2003 Advanced Refunding",
-   "moved_by": "Carl Sund",
-   "seconded_by": "Tom Alonzo",
+   "motion": "Approve the Sale of Bonds, 2012 General Obligation & 2003 Advanced Refunding.",
+   "moved_by": "Mr. Sund",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. sund motioned to approve the sale of bonds, 2012 general obligation & 2003 advanced refunding. mr. alonzo seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Steven M. deBettencourt",
-   "seconded_by": "Paula Bertram",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. deBettencourt",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR transcript via macOS Vision. All three recorded votes found and verified verbatim against source text.",
- "cost_usd": 0.0964545
+ "dropped_unquoted": 1,
+ "note": "Scanned minutes with OCR text; several figures and marks are garbled and are recorded as printed (for example \"$SK\", \"$1, 815,000.\", \"O opposed\", \"FX2013\"). Minutes are stamped received and filed Aug 27 2012. No recorded motion on the FY13 schedule change, the Eagle Heights project, the Voluntary Toll discussion's recusal, or approval of the 5/8/12 and 5/22/12 minutes. Warrant figures are printed in a jumbled OCR layout. The Mr. Matthews remarks under the PUBLIC COMMENT heading are recorded as public comment because the minutes place them there.",
+ "cost_usd": 0.00992992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Jon Juhl",
+   "role": "representing JNJUHL & Associates",
+   "status": "present",
+   "quote": "jon juhl representing jnjuhl & associates and paul teixeria from rcap solutions came before the bos"
+  },
+  {
+   "name": "Paul Teixeria",
+   "role": "from RCAP Solutions",
+   "status": "present",
+   "quote": "jon juhl representing jnjuhl & associates and paul teixeria from rcap solutions came before the bos"
+  },
+  {
+   "name": "Maureen Dupuis",
+   "role": "Program Director at the Boys & Girls Club Chester Mossman Teen Center",
+   "status": "present",
+   "quote": "maureen dupuis, program director at the boys & girls club chester mossman teen center spoke requesting permission"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager decided to retain both part-time Administrative Assistant positions at the Board of Health and Conservation, reducing BOH hours from 30 to 26 and Conservation hours from 32 to 28 per week.",
+   "quote": "she reviewed this again and due to the concerns of the boh and conservation office she has decided to retain both part-time positions."
+  },
+  {
+   "decision": "Town Manager will forgo her contractual raise for FY13.",
+   "quote": "ms. speidel will forego her town manager contractual raise for fy13."
+  },
+  {
+   "decision": "FY13 schedule and hour changes take effect July 1, 2012, with the hours to be re-looked at on August 31.",
+   "quote": "these adjustments will be effective as of july 1, 2012 and ms. speidel would like to re-look at these hours again on"
+  },
+  {
+   "decision": "For the 2012 bond issue, the Assistant Treasurer will sign as Treasurer because the acting Treasurer/Collector has not yet provided the required bond.",
+   "quote": "for this bond issue the assistant treasurer will be signing as the treasurer because the acting treasurer/collector does not have the bond that she needs in"
+  },
+  {
+   "decision": "A board member would read the bond vote into the record, with the documents to be signed at the board's leisure.",
+   "quote": "ms. speidel requested that a board member read the vote and then sign the documents at the"
+  },
+  {
+   "decision": "Marked-up copies of the BOS Policies & Procedures will be printed this week for distribution to the BOS.",
+   "quote": "ms. speidel will have marked up copies printed this week to distribute to the bos."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2012 bond sale: estimated savings from advance refunding",
+   "what_was_recorded": "Ms. Speidel said the estimated savings was originally $600K, now expected to be $550K over the next 11 years.",
+   "quote": "ms. speidel said that originally it was thought that the town could save $600k but now realizes it will be less than that at",
+   "figures_as_printed": [
+    "$600K",
+    "$550K"
+   ]
+  },
+  {
+   "topic": "2012 bond sale: net annual savings",
+   "what_was_recorded": "The refunding is expected to produce a net savings of about $30K per year to the town.",
+   "quote": "which will result in a net savings of about $30k per year to the town.",
+   "figures_as_printed": [
+    "$30K"
+   ]
+  },
+  {
+   "topic": "2012 bond sale: new borrowing",
+   "what_was_recorded": "New borrowing in the bond issue is stated as $1,815,000; the rest of the issue refunds the 2003 issue.",
+   "quote": "the new borrowing is $1, 815,000. and the rest of the issue is refunding the 2003 issue.",
+   "figures_as_printed": [
+    "$1, 815,000."
+   ]
+  },
+  {
+   "topic": "2012 bond sale: winning bid interest cost",
+   "what_was_recorded": "Robert W. Baird & Co. submitted the best of three bids, with a true interest cost of 2.284%.",
+   "quote": "the best bid was from robert w. baird & co. with a true interest cost of 2.284% for this issue.",
+   "figures_as_printed": [
+    "2.284%"
+   ]
+  },
+  {
+   "topic": "2012 bond sale: premium",
+   "what_was_recorded": "The town receives a premium of $179K, with a net premium after costs of $137K recorded as a receipt for this year.",
+   "quote": "the premium received is for $179k with a net premium to the town after all of the costs are accounted for at $137k",
+   "figures_as_printed": [
+    "$179K",
+    "$137K"
+   ]
+  },
+  {
+   "topic": "Acting Treasurer/Collector salary and bond cost",
+   "what_was_recorded": "Concern was raised that the acting Treasurer/Collector's salary is paid from the BOS budget; the Town Manager said the Town will pay the cost of the bond and the salary will be journaled to the Treasurer/Collector's office before year end.",
+   "quote": "he was also concerned about the position's salary being paid out of the bos budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY13 budget: IT Coordinator funding cut",
+   "what_was_recorded": "Funding for the IT Coordinator is reduced as part of the FY13 schedule changes.",
+   "quote": "reducing funding for it coordinator from $10k to $sk, and",
+   "figures_as_printed": [
+    "$10K",
+    "$SK"
+   ]
+  },
+  {
+   "topic": "FY13 budget: remaining shortfall",
+   "what_was_recorded": "After the adjustments the town is still about $2K short, which the Town Manager hopes to make up during the year.",
+   "quote": "she believes the town will still be approximately $2k. short but is hoping to",
+   "figures_as_printed": [
+    "$2K"
+   ]
+  },
+  {
+   "topic": "FY13 budget: Town Manager raise forgone",
+   "what_was_recorded": "The Town Manager will forgo her contractual raise for FY13 as part of the budget adjustments.",
+   "quote": "ms. speidel will forego her town manager contractual raise for fy13.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Payroll and accounts payable warrants",
+   "what_was_recorded": "Warrants were listed for payroll, payroll deductions, and accounts payable.",
+   "quote": "payroll deductions $407,772.97 payroll $765,984.88 accts. payable $297,406.19",
+   "figures_as_printed": [
+    "-$1118.64",
+    "$358. 68",
+    "$407,772.97",
+    "$765,984.88",
+    "$297,406.19"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "welcome to LSI and Yankee Consignment Store",
+   "quote": "mr. matthews welcomed lsi (life skills inc.) and the yankee consignment store which had their grand opening"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "mr. matthews welcomed lsi (life skills inc.) and the yankee consignment store which had their grand opening",
+   "tags": [
+    "welcome",
+    "business"
+   ]
+  },
+  {
+   "topic": "Eagle Heights Project (JNJUHL & Associates)",
+   "resolution": "discussed; BOS voiced support; no vote",
+   "quote": "jon juhl representing jnjuhl & associates and paul teixeria from rcap solutions came before the bos to ask for an extension",
+   "tags": [
+    "housing",
+    "Eagle Heights",
+    "HUD",
+    "extension"
+   ]
+  },
+  {
+   "topic": "Request for Voluntary Toll, Chester Mossman Teen Center",
+   "resolution": "approved",
+   "quote": "request for voluntary toll, chester mossman teen center - maureen dupuis, program director at the boys & girls club",
+   "tags": [
+    "toll",
+    "teen center",
+    "permit"
+   ]
+  },
+  {
+   "topic": "Notification, Bicycles Battling Cancer Event",
+   "resolution": "no action",
+   "quote": "there is no action required from the bos on this matter.",
+   "tags": [
+    "event",
+    "notification",
+    "police"
+   ]
+  },
+  {
+   "topic": "Approval, Sale of Bonds, 2012 General Obligation & 2003 Advanced Refunding",
+   "resolution": "approved 5-0",
+   "quote": "mr. sund motioned to approve the sale of bonds, 2012 general obligation & 2003 advanced refunding. mr. alonzo seconded.",
+   "tags": [
+    "bonds",
+    "refunding",
+    "treasurer",
+    "finance"
+   ]
+  },
+  {
+   "topic": "FY13 Budget; Schedule Change",
+   "resolution": "discussed; schedule changes announced; Ms. Bertram recused; no vote",
+   "quote": "4. fx2013 budget; schedule change - ms. bertram recused herself from this discussion.",
+   "tags": [
+    "FY13 budget",
+    "staffing",
+    "hours",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "BOS Policies & Procedures",
+   "resolution": "no action; copies to be printed",
+   "quote": "5. bos policies & procedures - ms. speidel will have marked up copies printed this week to distribute to the bos.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no action recorded; action file none",
+   "quote": "action file issues - none",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received; no action",
+   "quote": "7. committee report - mr. alonzo reported that the finance committee appointing committee had five good",
+   "tags": [
+    "committees",
+    "Planning Board",
+    "solar",
+    "MPO",
+    "grants",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Department Reports",
+   "resolution": "none",
+   "quote": "8. department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager Reports",
+   "resolution": "reports; pole location document to be signed; no vote",
+   "quote": "9. town manager reports - ms. speidel presented a document to the bos to sign regarding a pole location which was",
+   "tags": [
+    "Jones House",
+    "925 Mass Ave",
+    "fire chief",
+    "police chief"
+   ]
+  },
+  {
+   "topic": "Appointments/Re-appointments/Resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": []
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the Director of the Eagle House on senior center schedule changes",
+   "where": "text",
+   "quote": "ms. speidel read a letter from the director of the eagle house"
+  },
+  {
+   "name": "MPO draft TIP",
+   "where": "text",
+   "quote": "ms. bertram said that she had forwarded to the bos the mpo draft tip and that lunenburg is only mentioned once in the"
+  },
+  {
+   "name": "Original agreement with the town on the Eagle Heights Project",
+   "where": "text",
+   "quote": "the original agreement they had with the town on the eagle heights project"
+  },
+  {
+   "name": "Document regarding a pole location, approved by the BOS on April 9, 2012",
+   "where": "text",
+   "quote": "ms. speidel presented a document to the bos to sign regarding a pole location which was"
+  },
+  {
+   "name": "Deed and land development agreement for the Jones House",
+   "where": "text",
+   "quote": "the final document to be signed for the deed and land development"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "FY13 budget",
+  "bond sale",
+  "refunding",
+  "staffing cuts",
+  "Eagle Heights housing",
+  "treasurer",
+  "committees",
+  "Town Manager",
+  "2012"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-01-04",
  "docid": "4769",
@@ -12,37 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Authorize Superintendent to submit Statement of Interest to Massachusetts School Building Authority for Thomas C. Passios Elementary School",
+   "motion": "Approve the Priority 5 Statement of Interest for Thomas C. Passios Elementary School to be submitted to the Massachusetts School Building Authority.",
    "moved_by": "Ernie",
    "seconded_by": "Tom",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ernie move to approve, tom seconded, voted unanimously to approve."
   },
   {
-   "motion": "Authorize Superintendent to submit Statement of Interest to Massachusetts School Building Authority for Turkey Hill Middle School",
+   "motion": "Approve the Statement of Interest dated December 15, 2010 for the Turkey Hill Middle School to be submitted to the Massachusetts School Building Authority.",
    "moved_by": "Tom",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom, so moved to approve, dave seconded, voted unanimously."
   },
   {
-   "motion": "Approve Verizon pole location on Chase Road",
+   "motion": "Approve the Verizon New England Inc. petition to locate a new midspan pole on Chase Road.",
    "moved_by": "Dave",
    "seconded_by": "Tom",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dave motion to approve, tom seconded, voted uanimously."
   },
   {
-   "motion": "Adjourn Regular Session",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the Regular Session at 7:43 P.M.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 7:43 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 7:43 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scan via macOS Vision; typo 'uanimously' in vote 3 as printed in source.",
- "cost_usd": 0.11150550000000001
+ "note": "Text is an OCR scan of a three-page document. Several words are OCR errors (e.g., attendance line prints \"Emie Sund\" while later text says \"Ernie\"; \"uanimously\"; \"Facilites\"), and the lead-in sentence of the first Passios form of vote is garbled (\"the Avenue\"). Quotes were copied as OCR'd. Vote outcomes are recorded from \"voted unanimously\" wording; no counts are printed. The PUBLIC COMMENT heading contains only the Vice Chair's explanation, not a public speaker. Page 3 headings (Town Manager Updates, Old Business, Committee Appointments, Executive Session, Announcements) have no content printed beneath them.",
+ "cost_usd": 0.00744032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "steven m. debettencourt, emie sund, tom alonzo and dave matthews present."
+  },
+  {
+   "name": "Emie Sund",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, emie sund, tom alonzo and dave matthews present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, emie sund, tom alonzo and dave matthews present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, emie sund, tom alonzo and dave matthews present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "absent",
+   "quote": "paula bertram and town manager kerry speidel absent."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "paula bertram and town manager kerry speidel absent."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "present was school superintendent loxi jo calmes and facilites mgr. john londa."
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilites Mgr.",
+   "status": "present",
+   "quote": "present was school superintendent loxi jo calmes and facilites mgr. john londa."
+  },
+  {
+   "name": "Paul Schneider",
+   "role": "",
+   "status": "present",
+   "quote": "paul schneider explained that they will be placing a new pole in between"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the 11/23/10 and 12/14/10 Regular and Executive Sessions were reviewed and signed.",
+   "quote": "minutes - board of selectmen regular session for 11/23/10& 12/14/10 and executive session for 11/23/10& 12/14/10 reviewed and signed."
+  },
+  {
+   "decision": "Warrant #35 11 dated 12/22/10 was reviewed and signed.",
+   "quote": "warrants - #35 11, 12/22/10 - $138,196.91 reviewed and signed."
+  },
+  {
+   "decision": "Tom to report back to the board on the Mass Broadband status at next week's meeting.",
+   "quote": "tom: mass broadband has a conference call scheduled for noon tomorrow and he will report back to the board on the status"
+  },
+  {
+   "decision": "Public to be advised, per a DPW Director request forwarded by Laura, of the winter right-of-way rules: nothing may be placed in the right-of-way.",
+   "quote": "laura forwarded a request from the dpw director to advise the public of the right-of -way issue(s) during winter operations."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant #35 11 dated 12/22/10 was reviewed and signed at a total of $138,196.91.",
+   "figures_as_printed": [
+    "$138,196.91"
+   ],
+   "quote": "warrants - #35 11, 12/22/10 - $138,196.91 reviewed and signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment: meeting room accommodations",
+   "resolution": "no action",
+   "tags": [
+    "renovations",
+    "meeting room"
+   ],
+   "quote": "vice chair steve debettencourt explained that as the second floor of town hall"
+  },
+  {
+   "topic": "MSBA Statement of Interest, Superintendent Calmes (7:15 PM)",
+   "resolution": "approved two Statements of Interest (Passios Elementary and Turkey Hill Middle School)",
+   "tags": [
+    "MSBA",
+    "statement of interest",
+    "school facilities",
+    "school building authority"
+   ],
+   "quote": "7: 15 p.m. msba statement of interest, superintendent calmes - present was school superintendent loxi jo calmes and"
+  },
+  {
+   "topic": "Pole Location Hearing, Verizon (7:30 PM)",
+   "resolution": "approved",
+   "tags": [
+    "pole location hearing",
+    "Verizon",
+    "Chase Road"
+   ],
+   "quote": "2. 7:30 p.m. pole location hearing - steve read the following: notice to abutters - public hearing, december 22, 2010"
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes and warrant reviewed and signed; recycling award noted",
+   "tags": [
+    "minutes",
+    "warrants",
+    "recycling"
+   ],
+   "quote": "minutes - board of selectmen regular session for 11/23/10& 12/14/10 and executive session for 11/23/10& 12/14/10 reviewed and signed."
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action",
+   "tags": [
+    "committee updates",
+    "school budget",
+    "capital planning",
+    "DPW building",
+    "broadband"
+   ],
+   "quote": "dave; school committee will be meeting tomorrow to present their fy2012 budget, will be televised."
+  },
+  {
+   "topic": "Department updates: DPW winter right-of-way",
+   "resolution": "directed public notice",
+   "tags": [
+    "DPW",
+    "right-of-way",
+    "winter operations"
+   ],
+   "quote": "laura forwarded a request from the dpw director to advise the public of the right-of -way issue(s) during winter operations."
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "january 11, 2011 - tom will be absent."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Statement of Interest dated December 15, 2010 for the Turkey Hill Middle School, 129 Northfield Road",
+   "where": "text",
+   "quote": "statement of interest dated december 15, 2010 for the turkey hill middle school located at 129 northfield road"
+  },
+  {
+   "name": "Form of vote for Statement of Interest, Thomas C. Passios Elementary School (Priority 5)",
+   "where": "text",
+   "quote": "resolved: having convened in an open meeting on january 4, 2011, the board of selectmen, town of lunenburg, in accordance with"
+  },
+  {
+   "name": "Notice to Abutters - Public Hearing, December 22, 2010 (Verizon New England Inc. pole petition)",
+   "where": "text",
+   "quote": "notice to abutters - public hearing, december 22, 2010"
+  },
+  {
+   "name": "Verizon New England Inc. petition for pole location, Chase Road",
+   "where": "text",
+   "quote": "upon petition of: verizon new england inc. for permission to:"
+  },
+  {
+   "name": "Warrant #35 11, 12/22/10",
+   "where": "text",
+   "quote": "warrants - #35 11, 12/22/10 - $138,196.91 reviewed and signed."
+  }
+ ],
+ "tags": [
+  "school facilities",
+  "MSBA statement of interest",
+  "Passios Elementary",
+  "Turkey Hill Middle School",
+  "pole location hearing",
+  "Verizon",
+  "Chase Road",
+  "minutes",
+  "warrants",
+  "DPW winter right-of-way",
+  "committee updates"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

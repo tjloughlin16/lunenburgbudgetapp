@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2017-05-23",
  "docid": "4302",
@@ -12,15 +12,313 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes as written",
-   "outcome": "Accepted",
-   "procedural": true,
+   "motion": "Accept the minutes as written.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
    "quote": "motion to accept the minutes as written: accepted"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Only one vote is recorded in these minutes. The remainder of the document consists of discussions, reports, and action items assigned to individuals or committees, but no formal motions were brought to a vote.",
- "cost_usd": 0.0841325
+ "dropped_unquoted": 3,
+ "note": "Date and board mismatch: the request gave meeting date 2017-05-23 and board 'School Advisory Councils Committees', but the minutes are headed 'Lunenburg Schools Athletic Advisory Council', dated 'May 24, 2018'. Recorded as printed. Also: 'Eric Short' appears twice in the attendee list; 'Steve Powell' is listed both absent and under Other; the name 'Rhondal' in the attendee list is apparently Rhonda Jardine-Yeats. The minutes record no mover or seconder and no vote count for the minutes approval; no votes were recorded on the field hockey proposal, the concession policy, or the fundraising language. The minutes list no public comment section. Text is extracted, with some sentences cut off mid-line.",
+ "cost_usd": 0.0056021199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jim LaVeck",
+   "status": "present",
+   "quote": "attendees: jim laveck, brian spadafino, dennis mannone, jean proctor"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "interim AD",
+   "status": "present",
+   "quote": "brian spadafino is the interim ad until july 14, 2018."
+  },
+  {
+   "name": "Dennis Mannone",
+   "status": "present",
+   "quote": "attendees: jim laveck, brian spadafino, dennis mannone, jean proctor"
+  },
+  {
+   "name": "Jean Proctor",
+   "status": "present",
+   "quote": "attendees: jim laveck, brian spadafino, dennis mannone, jean proctor"
+  },
+  {
+   "name": "Eric Short",
+   "status": "present",
+   "quote": "jean proctor, eric short, lynn walsh, nicole boredelais"
+  },
+  {
+   "name": "Lynn Walsh",
+   "status": "present",
+   "quote": "eric short, lynn walsh, nicole boredelais, eric"
+  },
+  {
+   "name": "Nicole Boredelais",
+   "status": "present",
+   "quote": "eric short, lynn walsh, nicole boredelais, eric"
+  },
+  {
+   "name": "Allison Lilly",
+   "status": "present",
+   "quote": "dean defranchesco, jo weigold, allison lilly, karma tousignant"
+  },
+  {
+   "name": "Karma Tousignant",
+   "status": "present",
+   "quote": "dean defranchesco, jo weigold, allison lilly, karma tousignant"
+  },
+  {
+   "name": "Christa Palma",
+   "status": "absent",
+   "quote": "absent: christa palma, jim broden, ernie friend, steve powell, arthur thibeault, lisa bishop, terry montemurro."
+  },
+  {
+   "name": "Jim Broden",
+   "status": "absent",
+   "quote": "absent: christa palma, jim broden, ernie friend, steve powell, arthur thibeault, lisa bishop, terry montemurro."
+  },
+  {
+   "name": "Ernie Friend",
+   "status": "absent",
+   "quote": "absent: christa palma, jim broden, ernie friend, steve powell, arthur thibeault, lisa bishop, terry montemurro."
+  },
+  {
+   "name": "Steve Powell",
+   "status": "absent",
+   "quote": "absent: christa palma, jim broden, ernie friend, steve powell, arthur thibeault, lisa bishop, terry montemurro."
+  },
+  {
+   "name": "Arthur Thibeault",
+   "status": "absent",
+   "quote": "absent: christa palma, jim broden, ernie friend, steve powell, arthur thibeault, lisa bishop, terry montemurro."
+  },
+  {
+   "name": "Lisa Bishop",
+   "status": "absent",
+   "quote": "absent: christa palma, jim broden, ernie friend, steve powell, arthur thibeault, lisa bishop, terry montemurro."
+  },
+  {
+   "name": "Terry Montemurro",
+   "status": "absent",
+   "quote": "absent: christa palma, jim broden, ernie friend, steve powell, arthur thibeault, lisa bishop, terry montemurro."
+  },
+  {
+   "name": "Kim Mannone",
+   "status": "not stated",
+   "quote": "other: kim mannone, rhondal,,,,john londa, nadine lorenzen, erik dellasanta"
+  },
+  {
+   "name": "Rhondal (Rhonda Jardine-Yeats)",
+   "status": "not stated",
+   "quote": "middle school sports discussion: erik dellasanta and rhonda jardine-yeats"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "quote": "john londa presents. school dept took over management of concession stand a few years ago."
+  },
+  {
+   "name": "Nadine Lorenzen",
+   "status": "not stated",
+   "quote": "other: kim mannone, rhondal,,,,john londa, nadine lorenzen, erik dellasanta"
+  },
+  {
+   "name": "Erik Dellasanta",
+   "status": "present",
+   "quote": "middle school sports discussion: erik dellasanta and rhonda jardine-yeats"
+  },
+  {
+   "name": "Courtney Z",
+   "status": "not stated",
+   "quote": "erik dellasanta, courtney z, jen biery, steve powell, katie"
+  },
+  {
+   "name": "Jen Biery",
+   "status": "not stated",
+   "quote": "courtney z, jen biery, steve powell, katie mcguire"
+  },
+  {
+   "name": "Katie McGuire",
+   "status": "not stated",
+   "quote": "steve powell, katie mcguire"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agrees to support middle school sports; it will involve creative scheduling and funding, and Jim will report back to the SC.",
+   "quote": "the committee agrees that we would like to support middle school sports and it will involve creative scheduling and funding."
+  },
+  {
+   "decision": "Dean DeFranchesco will spearhead a sub-committee on the concession stand policy.",
+   "quote": "dean is willing to spearhead a sub-committee to get us back to what we want to do."
+  },
+  {
+   "decision": "Each team must designate a Concession Event Coordinator (CEC) to schedule concession events in School Dude.",
+   "quote": "each team needs to designate a concession event coordinator (cec) to schedule concession events in school dude."
+  },
+  {
+   "decision": "Concession policy to be separated into policy and procedure before going to the AD and facilities.",
+   "quote": "they need to separate what is policy from what is procedural to go to the"
+  },
+  {
+   "decision": "Jim will make the AD aware that the committee exists and that the committee wants input at a higher level on scheduling, with high school made a priority.",
+   "quote": "jim will like the ad aware that this committee exists and that we would like input at a higher level"
+  },
+  {
+   "decision": "Waivers will be applied; a fall sports sign-up night will be held before the end of the year.",
+   "quote": "there will be a fall sports sign up night before the end of the year."
+  },
+  {
+   "decision": "Another meeting before the start of the year to discuss snack shack policies.",
+   "quote": "we will need another meeting before the start of the year to discuss snack shack policies"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Middle school field hockey parent-funded program cost",
+   "what_was_recorded": "Rhonda estimated a parent-funded field hockey program could run on a $175 user fee for two coaches and three practices per week, with a $10 per athlete Marshall Park fee.",
+   "figures_as_printed": [
+    "$175",
+    "$10"
+   ],
+   "quote": "rhonda estimates it could be done for the $175 user fee for two coaches"
+  },
+  {
+   "topic": "Marshall Park field fee",
+   "what_was_recorded": "The Marshall Park fee would be $10 per athlete, and the school would need to request the field from the parks department.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "marshall park fee would be $10 per athlete."
+  },
+  {
+   "topic": "Coach pay in field hockey estimate",
+   "what_was_recorded": "The field hockey price estimate factors in $25 per hour for the coach.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "this price factors in $25 per hour for coach"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved (accepted as written)",
+   "quote": "motion to accept the minutes as written: accepted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: interim AD, hiring timeline, scheduling equity",
+   "resolution": "reported, no action recorded",
+   "quote": "pete mccauiff has retired and brian spadafino is the interim ad until july 14, 2018.",
+   "tags": [
+    "interim AD",
+    "hiring",
+    "scheduling",
+    "equity"
+   ]
+  },
+  {
+   "topic": "Review of Concession Stand Policies and Procedures",
+   "resolution": "discussed; sub-committee to be formed; policy to be separated from procedure",
+   "quote": "review of concession stand policies and procedures:",
+   "tags": [
+    "concessions",
+    "policy",
+    "health"
+   ]
+  },
+  {
+   "topic": "Middle School Sports Discussion (field hockey, other middle school sports)",
+   "resolution": "committee supports middle school sports; Jim to recommend field hockey and report back",
+   "quote": "middle school sports discussion: erik dellasanta and rhonda jardine-yeats",
+   "tags": [
+    "middle school",
+    "field hockey",
+    "basketball",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Waiver/Team Size/Practice Players",
+   "resolution": "discussed; policy to be considered; waivers will be applied",
+   "quote": "waiver/team size/practice players:",
+   "tags": [
+    "waivers",
+    "team size",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Fundraising Related to Athletics",
+   "resolution": "recommended policy language reviewed; no changes noted",
+   "quote": "fundraising related to athletics:",
+   "tags": [
+    "fundraising",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Discussion points for committee / new AD",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion points for committee / new ad:",
+   "tags": [
+    "swim team",
+    "vacation scheduling",
+    "turf field"
+   ]
+  },
+  {
+   "topic": "Next agenda",
+   "resolution": "listed for next meeting",
+   "quote": "the make-up and priorities for next year's council.",
+   "tags": [
+    "next meeting",
+    "student representation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Concession stand policy (current policy)",
+   "where": "text",
+   "quote": "absent from the current policy is any information about fees."
+  },
+  {
+   "name": "Recommended language for policy (fundraising related to athletics)",
+   "where": "text",
+   "quote": "review the recommended language for policy. no changes noted."
+  }
+ ],
+ "tags": [
+  "athletics",
+  "athletic advisory council",
+  "interim athletic director",
+  "concession stands",
+  "middle school sports",
+  "field hockey",
+  "scheduling",
+  "field use",
+  "waivers",
+  "fundraising",
+  "swim team",
+  "fees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 2,
+  "decisions": 1
+ }
 }

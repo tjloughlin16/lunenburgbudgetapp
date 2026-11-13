@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-06-20",
  "docid": "859",
@@ -12,21 +12,184 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes were approved"
-  },
-  {
-   "motion": "to grant the septic variance request for 202 Chase Road",
+   "motion": "Grant the septic variance request at 202 Chase Road with three conditions: well inspection and repairs with a pressure water line, discontinue the old dug well, and annual Title 5 well water testing.",
    "moved_by": "Daniels",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by daniels and second by jewell, the request was granted with the following conditions: 1. the well is to be inspected by a well company and any defects noted will be corrected, there will be a pressure water line between the house and well; 2. the old dug well will be discontinued; 3. the well water will be tested (title 5 scan) annually. all in favor."
+   "quote": "on motion by daniels and second by jewell, the request was granted with the following conditions:"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1210795
+ "note": "Text is a clean extraction with some PDF line-break artifacts (e.g., 'Je well', 'own er', 'Dep artment'); names are given as printed. Two items carry no recorded motion: minutes approval (recorded only as 'MINUTES WERE APPROVED') and adjournment at 7:55 pm, so neither is recorded as a vote. The 202 Chase Road vote is recorded as 'All in favor' with no count. Budget: no dollar figures appear. The Title 5 reports and septic permits are treated as a documents list under the agenda headings; this is an inference, not a labelled documents list.",
+ "cost_usd": 0.00458622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry je well, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry je well, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry Je well",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry je well, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry je well, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, perry je well, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "administrative assistant, andrea schnepf, reported that although our records indicate that the tight tank was destroyed"
+  },
+  {
+   "name": "Mr. Dube",
+   "role": "owner",
+   "status": "present",
+   "quote": "the owner, mr. dube, met with the board to discuss the replacement of the septic system."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner, Mr. Hall",
+   "status": "present",
+   "quote": "dan proctor met with the board representing the own er, mr. hall."
+  },
+  {
+   "name": "Mr. Hall",
+   "role": "owner",
+   "status": "not stated",
+   "quote": "dan proctor met with the board representing the own er, mr. hall."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board continued the 335 Highland Avenue septic variance matter until July 18 at 7:15 pm.",
+   "quote": "after discussion, the board continued this matter until july 18"
+  },
+  {
+   "decision": "Minutes were approved. No motion, mover, or count is recorded.",
+   "quote": "minutes were approved"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved",
+   "quote": "minutes were approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed, no action recorded",
+   "quote": "title 5 inspection reports reviewed : 253 fire road 16 4 cove road",
+   "tags": [
+    "Title 5",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed : 552 mass avenue goodrich street, lot 4",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Center Pizza tight tank disposition",
+   "resolution": "no action; administrative report on tank converted to exterior grease trap",
+   "quote": "administrative assistant, andrea schnepf, reported that although our records indicate that the tight tank was destroyed it was, in fact, converted to an exterior grease trap.",
+   "tags": [
+    "tight tank",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "202 Chase Road septic variances",
+   "resolution": "granted with conditions",
+   "quote": "on motion by daniels and second by jewell, the request was granted with the following conditions:",
+   "tags": [
+    "septic variance",
+    "well",
+    "high ground water"
+   ]
+  },
+  {
+   "topic": "335 Highland Avenue septic variances",
+   "resolution": "continued to July 18 at 7:15 pm",
+   "quote": "after discussion, the board continued this matter until july 18",
+   "tags": [
+    "septic variance",
+    "ledge",
+    "bedroom count"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 253 Fire Road 16",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed : 253 fire road 16 4 cove road"
+  },
+  {
+   "name": "Title 5 inspection report, 4 Cove Road",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed : 253 fire road 16 4 cove road"
+  },
+  {
+   "name": "Septic permit, 552 Mass Avenue",
+   "where": "list",
+   "quote": "septic permits signed : 552 mass avenue goodrich street, lot 4"
+  },
+  {
+   "name": "Septic permit, Goodrich Street, Lot 4",
+   "where": "list",
+   "quote": "septic permits signed : 552 mass avenue goodrich street, lot 4"
+  },
+  {
+   "name": "3 bedroom septic permit on file (335 Highland Avenue)",
+   "where": "text",
+   "quote": "there is a 3 bedroom septic permit on file."
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variance",
+  "septic permits",
+  "well water",
+  "high water table",
+  "tight tank",
+  "Board of Health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

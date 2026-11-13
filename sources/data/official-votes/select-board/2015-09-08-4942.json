@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-09-08",
  "docid": "4942",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the ALS Intercept agreement with Town of Townsend",
+   "motion": "To approve the ALS Intercept agreement with Town of Townsend.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: r. ebersole to approve the als intercept agreement with town of townsend 2nd. t. alonzo vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -29,6 +29,306 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; note that the second motion's \"2nd\" is captured by the OCR as \"2\\\"'\" which appears to be an OCR artifact (should read \"2nd\").",
- "cost_usd": 0.1039595
+ "note": "Scanned OCR text, not a clean transcript. The first lines are cut off, so no roll call or attendance list is printed; member presence is inferred from speaking or moving. The minutes of April 21, August 4, August 11 and August 18, 2015 were only presented, and the warrants presented for signatures; no vote to approve them is recorded. The section headed \"Public Comment:\" holds only board-member remarks, so no outside public speaker is recorded. The text names \"P. Bertram\" in the adjournment motion and \"Ms. Bertram\" elsewhere; both are recorded as printed. The text also says \"Ms. Toale\" and \"Mr. Toale\" for the same person; the OCR may be wrong. One sentence reads \"He moved to developing, adopting and implementing a policy for utility road openings,\" with no second and no recorded vote, so it is not recorded as a vote. Words like \"roton\" and \"preterred\" look like OCR errors.",
+ "cost_usd": 0.00919822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "member and town manager kerry lafleur. the meeting opened at 7:00 p.m."
+  },
+  {
+   "name": "R. Ebersole",
+   "status": "present",
+   "quote": "mr. ebersole presented his report."
+  },
+  {
+   "name": "T. Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo reported he was invited to an eagle scout court of honor"
+  },
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale stated he got little feedback from other committees for the volunteer booth."
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck and ms. bertram will compose a mission statement to be ready for the september 22 meeting."
+  },
+  {
+   "name": "Ms. Bertram",
+   "status": "present",
+   "quote": "ms. bertram reported she and ms. luck met with dpw director rodriquenz"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "ms. bertram reported she and ms. luck met with dpw director rodriquenz"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "P.A.C.C. Chair",
+   "status": "not stated",
+   "quote": "rhonda lisio, p.a.c.c. chair has volunteered"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Board of Health Clerk",
+   "status": "not stated",
+   "quote": "board of health clerk andrea schnepf will have her own booth there"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "adam burney, land use director, who would like to work closely with the board on this."
+  },
+  {
+   "name": "Elaine M Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Luck and Ms. Bertram will compose a mission statement for the stormwater task force, to be ready for the September 22 meeting.",
+   "quote": "ms. luck and ms. bertram will compose a mission statement to be ready for the september 22 meeting."
+  },
+  {
+   "decision": "Ms. Bertram will contact other towns to learn the cost of a stormwater feasibility study.",
+   "quote": "ms. bertram will contact other towns to see what would be the cost of a feasibility study."
+  },
+  {
+   "decision": "The board decided to have a vision for economic development by the end of the calendar year and progress further for town meeting.",
+   "quote": "it was decided to have a vision by the end of the calendar year and progress further for town meeting."
+  },
+  {
+   "decision": "Board members were asked to email any other comments on pavement management to the Town Manager.",
+   "quote": "mr. ebersole asked the board to email any other comments regarding pavement management to ms. lafleur."
+  },
+  {
+   "decision": "Town Manager Goals were presented; the Town Manager is to add dates to them.",
+   "quote": "town manager goals were presented but ms. lafleur needs to add dates to them."
+  },
+  {
+   "decision": "A different format will be tried for board liaison reports at future meetings.",
+   "quote": "a different format will be tried for future meetings."
+  },
+  {
+   "decision": "The policy for submitting items for agendas is to be reexamined.",
+   "quote": "the policy for submitting items for agendas should be reexamined."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable and School System warrants",
+   "what_was_recorded": "Two Accounts Payable warrants and one School System warrant were presented for signatures.",
+   "quote": "accounts payable warrant in the amount of $286,887.90, accounts payable warrant in the amount of $419,572.29 and a school system warrant in the amount of $667,788.02 were presented for signatures.",
+   "figures_as_printed": [
+    "$286,887.90",
+    "$419,572.29",
+    "$667,788.02"
+   ]
+  },
+  {
+   "topic": "Stormwater remote sensing cost",
+   "what_was_recorded": "Remote sensing technology for stormwater work was said to be more expensive, averaging under $10,000.",
+   "quote": "remote sensing technology is more expensive, averaging under $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Stormwater software cost",
+   "what_was_recorded": "Ms. Bertram said the software mentioned earlier is not too expensive; no figure printed.",
+   "quote": "she added the software mentioned earlier is not too expensive.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Stormwater feasibility study cost",
+   "what_was_recorded": "Ms. Bertram will contact other towns to learn the cost of a stormwater feasibility study; no figure printed.",
+   "quote": "ms. bertram will contact other towns to see what would be the cost of a feasibility study.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Stormwater budget",
+   "what_was_recorded": "Stormwater money is built into the drain budget, typically tied to road work, and is not set aside for stormwater maintenance and construction; no figure printed.",
+   "quote": "the budget for stormwater is currently built into the drain budget,",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Pratt Street repaving cost",
+   "what_was_recorded": "Discussion on whether the Town or residents (betterment fees) should pay for repaving Pratt Street after the sewer project; no figure printed.",
+   "quote": "discussion ensued on whether to put the cost of repaving pratt street following the completion of the sewer project on the town",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ALS Intercept Agreement with Town of Townsend",
+   "resolution": "approved",
+   "quote": "motion: r. ebersole to approve the als intercept agreement with town of townsend 2nd. t. alonzo vote: all in favor",
+   "tags": [
+    "ALS",
+    "Townsend",
+    "intergovernmental agreement"
+   ]
+  },
+  {
+   "topic": "Board remarks under the Public Comment label (Eagle Scout ceremony, Stillman Country Fair booth)",
+   "resolution": "no action",
+   "quote": "mr. toale stated there was a committee including the police chief coordinating it.",
+   "tags": [
+    "events",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Board Goals: stormwater task force and mission statement",
+   "resolution": "discussed; mission statement due for September 22 meeting",
+   "quote": "ms. bertram reported she and ms. luck met with dpw director rodriquenz after going over the initial",
+   "tags": [
+    "stormwater",
+    "task force",
+    "DPW",
+    "MS4"
+   ]
+  },
+  {
+   "topic": "Pavement Management Plan and Traffic Rules & Orders",
+   "resolution": "discussed; comments requested by email",
+   "quote": "mr. ebersole presented his report.",
+   "tags": [
+    "pavement management",
+    "betterments",
+    "sewer",
+    "utility road openings",
+    "TIP funding"
+   ]
+  },
+  {
+   "topic": "Economic Development",
+   "resolution": "discussed; vision by end of calendar year",
+   "quote": "mr. toale stated that since they last met on the subject, not much has changed from the july draft.",
+   "tags": [
+    "economic development",
+    "master plan",
+    "permitting"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and Town Manager Goals",
+   "resolution": "presented; warrants presented for signatures; minutes not approved in this record",
+   "quote": "minutes of april 21, august 4, august 11 and august 18, 2015 were presented.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "town manager goals"
+   ]
+  },
+  {
+   "topic": "Meeting Process and Schedule",
+   "resolution": "discussed; different format to be tried",
+   "quote": "mr. toale stated a discussion had been started on how often to meet",
+   "tags": [
+    "meeting process",
+    "board liaison reports",
+    "agenda policy",
+    "liquor license hearings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "to adjourn the meeting",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of April 21, August 4, August 11 and August 18, 2015",
+   "where": "list",
+   "quote": "minutes of april 21, august 4, august 11 and august 18, 2015 were presented."
+  },
+  {
+   "name": "Accounts Payable warrant in the amount of $286,887.90",
+   "where": "list",
+   "quote": "accounts payable warrant in the amount of $286,887.90, accounts payable warrant in the amount of $419,572.29 and a school system warrant in the amount of $667,788.02 were presented for signatures."
+  },
+  {
+   "name": "Accounts Payable warrant in the amount of $419,572.29",
+   "where": "list",
+   "quote": "accounts payable warrant in the amount of $286,887.90, accounts payable warrant in the amount of $419,572.29 and a school system warrant in the amount of $667,788.02 were presented for signatures."
+  },
+  {
+   "name": "School System warrant in the amount of $667,788.02",
+   "where": "list",
+   "quote": "accounts payable warrant in the amount of $286,887.90, accounts payable warrant in the amount of $419,572.29 and a school system warrant in the amount of $667,788.02 were presented for signatures."
+  },
+  {
+   "name": "Town Manager Goals",
+   "where": "list",
+   "quote": "town manager goals were presented but ms. lafleur needs to add dates to them."
+  },
+  {
+   "name": "ALS Intercept agreement with Town of Townsend",
+   "where": "text",
+   "quote": "to approve the als intercept agreement with town of townsend"
+  },
+  {
+   "name": "2007 Stormwater Report",
+   "where": "text",
+   "quote": "to gather and review existing data (2007 stormwater report, stormwater submittals to the state, gis"
+  },
+  {
+   "name": "Earth Tech report (stormwater structures)",
+   "where": "text",
+   "quote": "rodriquenz wasn't aware that earth tech report graded the stormwater"
+  },
+  {
+   "name": "July draft (economic development)",
+   "where": "text",
+   "quote": "not much has changed from the july draft."
+  },
+  {
+   "name": "List of town roads eligible for federal funds",
+   "where": "text",
+   "quote": "mr. ebersole presented a list of town roads that are eligible for federal funds."
+  },
+  {
+   "name": "Proposed regulations for MS4s",
+   "where": "text",
+   "quote": "review and investigate proposed regulations for ms4s and make recommendations to ensure"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "task force",
+  "pavement management",
+  "betterments",
+  "sewer",
+  "economic development",
+  "ALS intercept",
+  "Townsend",
+  "board goals",
+  "warrants",
+  "meeting process",
+  "agenda policy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "minutes of april 21, august 4, august 11 and august 18, 2015 were presented"
+ },
+ "dropped_unquoted_by_field": {}
 }

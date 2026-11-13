@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-12-12",
  "docid": "2301",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 9/26/13",
+   "motion": "Approve the minutes of 9/26/13.",
    "moved_by": "KM",
    "seconded_by": "SR",
-   "outcome": "passed",
+   "outcome": "passed (BL abstained)",
    "procedural": true,
    "quote": "km motioned to approve the minutes of 9/26/13. sr seconded, bl abstained, motion approved"
   },
   {
-   "motion": "Approve the minutes of 11/14/13",
+   "motion": "Approve the minutes of 11/14/13.",
    "moved_by": "BL",
    "seconded_by": "KM",
    "outcome": "passed",
@@ -29,6 +29,262 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision. Two procedural votes recorded; no other motions found.",
- "cost_usd": 0.0814725
+ "note": "OCR text is partly garbled. The adjournment line (\"Th met red to dietin. Kil becanda, meting adjourned at 9,00 pm.\") is unreadable, so no adjournment motion is recorded; the minutes state the meeting adjourned at 9:00 pm. Agenda item 3 is missing from the numbering (items jump from 2 to 4). The vote on the 9/26/13 minutes records BL abstaining, with no tally printed. Speidel's and Dave Matthews' roles are not printed. The Special Election date reads \"January 114\" in the OCR.",
+ "cost_usd": 0.005388619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "town hall m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes respectfully submitted by terri burchfield."
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "town hall m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "K. Speidel",
+   "role": "presented the Town Manager's forecast",
+   "status": "present",
+   "quote": "k. speidel presented the town manager's forecast beginning with a review of assumptions made which lead to the forecast."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "not stated",
+   "status": "present",
+   "quote": "during public comment, dave matthews wanted to make the point that it is normal to see deficits projected"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will look at the pavement plan and the current process to prioritize the 5 year Capital Plan.",
+   "quote": "john will look at the pavement plan and current process to prioritize the 5 year capital plan."
+  },
+  {
+   "decision": "The question of when borrowing should occur for capital expenditures will be addressed later by the committee.",
+   "quote": "the question of when borrowing should occur for capital expenditures will be addressed."
+  },
+  {
+   "decision": "The committee will continue looking for efficiencies that could produce long-term savings.",
+   "quote": "we will continue looking for any efficiencies that could result in savings over the long term."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "5 Year Financial Forecast revenue and expenditure assumptions",
+   "what_was_recorded": "The forecast assumes revenue grows 2% a year and expenditures 2.8% a year, leaving deficits to be addressed through the budget process.",
+   "figures_as_printed": [
+    "2%",
+    "2.8%"
+   ],
+   "quote": "the revenue outlook anticipates a 2% annual increase, while expenditures are seen at 2.8%"
+  },
+  {
+   "topic": "Projected deficits",
+   "what_was_recorded": "Deficits are expected to be addressed through the budget process, described as more manageable than in the recent past.",
+   "figures_as_printed": [],
+   "quote": "leaving deficits which will have to be addressed through the budget process, though more manageable"
+  },
+  {
+   "topic": "Debt service for school project",
+   "what_was_recorded": "The chair would have liked the forecast to show debt service beginning in 2017 if the school project is authorized; current debt has fixed interest rates.",
+   "figures_as_printed": [
+    "2017"
+   ],
+   "quote": "me would have liked to have seen the assumptions showing debt service beginning in 2017 if the school project is"
+  },
+  {
+   "topic": "Interest rates and bond rating",
+   "what_was_recorded": "Interest rates on current debt are fixed, and the Town's improved bond rating should help obtain favorable rates if the school project goes forward.",
+   "figures_as_printed": [],
+   "quote": "the interest rates are fixed for current debt."
+  },
+  {
+   "topic": "Library budget spending",
+   "what_was_recorded": "The Library budget is reported as 33% spent into the year.",
+   "figures_as_printed": [
+    "33%"
+   ],
+   "quote": "bl reported that the library budget is 33% spent into the year."
+  },
+  {
+   "topic": "Friends of the Library payments",
+   "what_was_recorded": "The Friends paid for window cleaning and a new automatic door at the library.",
+   "figures_as_printed": [],
+   "quote": "the friends have paid for window cleaning inside and out,"
+  },
+  {
+   "topic": "Grant opportunities for DPW signage",
+   "what_was_recorded": "Possible grant opportunities were reported for the DPW's signage project.",
+   "figures_as_printed": [],
+   "quote": "jh reported that there were possible grant opportunities for the dpw's signage project."
+  },
+  {
+   "topic": "Regional services savings",
+   "what_was_recorded": "The town continues to look for savings by regionalizing services such as animal control and a regional lock up.",
+   "figures_as_printed": [],
+   "quote": "the town continues to look for opportunities to realize savings through"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Matthews",
+   "stated_role": "not stated",
+   "topic": "projected deficits in the forecast",
+   "quote": "during public comment, dave matthews wanted to make the point that it is normal to see deficits projected"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public hearing reminder",
+   "resolution": "no action",
+   "quote": "me reminded everyone that we will have a public hearing regarding the special town meeting warrant on december 19th.",
+   "tags": [
+    "special town meeting",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Presentation of the 5 Year Financial Forecast",
+   "resolution": "presented and discussed; public comment taken",
+   "quote": "k. speidel presented the town manager's forecast beginning with a review of assumptions made which lead to the forecast.",
+   "tags": [
+    "forecast",
+    "deficits",
+    "debt service",
+    "bond rating"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 9/26/13 and 11/14/13",
+   "resolution": "approved",
+   "quote": "km motioned to approve the minutes of 9/26/13.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received",
+   "quote": "sr reported that capital plan prioritization is complete for the year.",
+   "tags": [
+    "capital plan",
+    "library",
+    "grants",
+    "school budget"
+   ]
+  },
+  {
+   "topic": "Town Manager Update",
+   "resolution": "no action",
+   "quote": "the summer street project is at 25% design and so will be going back to the state for review.",
+   "tags": [
+    "summer street",
+    "design"
+   ]
+  },
+  {
+   "topic": "Fiscal Policies",
+   "resolution": "discussed; John Henshaw to review pavement plan and capital prioritization",
+   "quote": "jh discussed his draft of policies regarding capital expenditures, free cash and debt management.",
+   "tags": [
+    "fiscal policy",
+    "free cash",
+    "debt management",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Budget Opportunities",
+   "resolution": "continued",
+   "quote": "we will continue looking for any efficiencies that could result in savings over the long term.",
+   "tags": [
+    "efficiency",
+    "savings"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "no action",
+   "quote": "the public hearing for the special town meeting. the st meeting will be january",
+   "tags": [
+    "special town meeting",
+    "special election"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "5 Year Financial Forecast (Town Manager's forecast)",
+   "where": "text",
+   "quote": "k. speidel presented the town manager's forecast beginning with a review of assumptions made which lead to the forecast."
+  },
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "me reminded everyone that we will have a public hearing regarding the special town meeting warrant on december 19th."
+  },
+  {
+   "name": "Draft fiscal policies on capital expenditures, free cash and debt management (JH draft)",
+   "where": "text",
+   "quote": "jh discussed his draft of policies regarding capital expenditures, free cash and debt management."
+  },
+  {
+   "name": "Pavement plan",
+   "where": "text",
+   "quote": "john will look at the pavement plan and current process to prioritize the 5 year capital plan."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "five year forecast",
+  "fiscal policy",
+  "special town meeting",
+  "capital plan",
+  "debt service",
+  "minutes approval",
+  "library",
+  "DPW signage",
+  "deficits"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

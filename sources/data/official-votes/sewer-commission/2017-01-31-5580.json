@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-01-31",
  "docid": "5580",
@@ -12,6 +12,307 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No formally recorded votes found. The minutes mention approvals (the Pat Cotton proposal and invoices) but without explicit voting language (motion by/seconded by, vote count, unanimously approved, so voted, or motion carried/failed) required by the rules.",
- "cost_usd": 0.0844515
+ "note": "OCR text from a scanned document with many garbled words (e.g., 'nanhole', 'intlow', 'MIlA', 'lelanie Rich, Minutes Cler'); quotes copied as OCR'd. Page 1 begins mid-report with a fragment about a DPW Director visit. No roll call or attendance list is printed, so attendance status is not stated for members. No motions or roll-call votes are recorded; invoice approval and the dish proposal approval are reported without a motion, so they are recorded as decisions, not votes. Page 3 contains only the minutes clerk signature line. No public comment section is printed.",
+ "cost_usd": 0.007120319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pat Cotton",
+   "role": "representing Weston & Sampson (presenter at 6:30pm appointment)",
+   "status": "present",
+   "quote": "6:30pm pat cotton, weston & sampson, inflow/infiltration proposal - mr. cotton introduced himself;"
+  },
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "carl was not sure you can contract with an individual."
+  },
+  {
+   "name": "Joan",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "joan asked if there was any recommendation for standard maintenance"
+  },
+  {
+   "name": "Heather",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "heather clarified that a 3-prong test counsel referenced for municipalities"
+  },
+  {
+   "name": "Barb",
+   "role": "not stated (appears to handle billing and reports)",
+   "status": "not stated",
+   "quote": "barb tried to call seth directly but was unable to reach him."
+  },
+  {
+   "name": "Joe",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "joe will check and let the commission know if he can attend that date."
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jack brought the proposal to the commission and it was approved."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ms. lemieux has been involved in barre and brought it up to bos; applications due by mid-february."
+  },
+  {
+   "name": "Melanie Rich",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "lelanie rich, minutes cler"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed the town needs to send a letter with an invoice for the $25/day fee to Ugly Omelet.",
+   "quote": "commission agreed that we need to send letter with invoice for $25/day."
+  },
+  {
+   "decision": "Commission wants Conrads to request a waiver from submitting logs while the seasonal business is closed; a letter requesting the waiver will be sent.",
+   "quote": "commission wants conrads to request a waiver since he is a seasonal business so that"
+  },
+  {
+   "decision": "Carl asked Pat Cotton to provide a quote so the commission can prioritize with pricing.",
+   "quote": "carl asked pat to provide a quote so we can prioritize with pricing."
+  },
+  {
+   "decision": "Pat Cotton will provide a combined plan (control plan for DEP, manhole data, TV inspection footage) within 2 weeks.",
+   "quote": "pat will provide something within 2 weeks."
+  },
+  {
+   "decision": "Heather will get an opinion from Town Counsel on whether billing can be outsourced.",
+   "quote": "carl asked if billing could be outsourced; heather will get an opinion from town counsel."
+  },
+  {
+   "decision": "The dish installation proposal from Weston & Sampson was reported as approved after Jack brought it to the Commission; no motion is recorded.",
+   "quote": "jack brought the proposal to the commission and it was approved."
+  },
+  {
+   "decision": "Invoices to Fitchburg and KP Law were reported as approved; no motion is recorded.",
+   "quote": "invoices-fitchburg $11672.19; kp law $663.00 approved"
+  },
+  {
+   "decision": "Barb will check with Jack on whether manhole repair has moved forward, in-house or with an outside source.",
+   "quote": "barb will check with jack."
+  },
+  {
+   "decision": "Barb will send an email when the next meeting date and time are confirmed.",
+   "quote": "barb will send an email when date and time is confirmed."
+  },
+  {
+   "decision": "Joan will bring the review of the penalty rules and the 1st Tuesday report to the next agenda; Carl will clean up his September list and provide an updated one for the next meeting.",
+   "quote": "carl offered to clean up list and provide an updated one for the next"
+  },
+  {
+   "decision": "Carl will provide input to Jack as a checklist for Jack's restaurant visits.",
+   "quote": "carl added that he wants to provide input to jack by way of a checklist for use on his visits"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2015 Weston & Sampson proposal for Graham Street area",
+   "what_was_recorded": "A 2015 proposal for cleaning, television inspection, data analysis, reporting and recommendations for the Graham Street area was noted; Pat Cotton will provide it to Jack.",
+   "figures_as_printed": [
+    "$48,000"
+   ],
+   "quote": "there is one from 2015 for cleaning, television inspection, data analysis, reporting, and recommendations for the graham street area for $48,000."
+  },
+  {
+   "topic": "Manhole re-lining",
+   "what_was_recorded": "Cost to re-line 20 manholes was reported as $32K.",
+   "figures_as_printed": [
+    "$32K"
+   ],
+   "quote": "to re-line 20 manholes the cost would be $32k."
+  },
+  {
+   "topic": "Next fiscal year inflow/infiltration work",
+   "what_was_recorded": "A figure of $50-$60K was described as a workable number for the next fiscal year.",
+   "figures_as_printed": [
+    "$50-$60K"
+   ],
+   "quote": "$50-$60k could be a workable number for the next fiscal year."
+  },
+  {
+   "topic": "Invoices approved",
+   "what_was_recorded": "Fitchburg and KP Law invoices were reported as approved.",
+   "figures_as_printed": [
+    "$11672.19",
+    "$663.00"
+   ],
+   "quote": "invoices-fitchburg $11672.19; kp law $663.00 approved"
+  },
+  {
+   "topic": "Grease trap non-compliance fee",
+   "what_was_recorded": "A $25/day fee would be charged retroactive to 1/17 if Ugly Omelet does not submit a repair plan; a letter with invoice is to be sent.",
+   "figures_as_printed": [
+    "$25/day"
+   ],
+   "quote": "must submit plan or $25/day fee would be retroactive to 1/17."
+  },
+  {
+   "topic": "Grease trap annual fee",
+   "what_was_recorded": "Conrads and Donnellys have each submitted their $50 fee and past due logs.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "conrads and donnellys-both accounts have submitted their $50 fee and"
+  },
+  {
+   "topic": "Community Compact Grant Program",
+   "what_was_recorded": "The town is considering the Community Compact grant; the Water Resource Management best practice fits; applications due mid-February. No dollar amount stated.",
+   "figures_as_printed": [],
+   "quote": "the town is looking at community compact grant program; the bos will be determining the focus"
+  },
+  {
+   "topic": "MIIA grant for line cleaning",
+   "what_was_recorded": "A MIIA grant for cleaning lines may be available but the deadline for the work is May 1, so it may be too late. No dollar amount stated.",
+   "figures_as_printed": [],
+   "quote": "there's a mila grant the town could get for cleaning the lines"
+  },
+  {
+   "topic": "FY 18 Budget",
+   "what_was_recorded": "Barb will begin work on the FY 18 Budget after billing is sent out. No dollar amount stated.",
+   "figures_as_printed": [],
+   "quote": "barb noted that after billing is sent out, hopefully the end of this week, that she will begin work on the fy 18"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: Pat Cotton, Weston & Sampson, inflow/infiltration proposal",
+   "resolution": "presented; Pat Cotton to provide a proposal and quote within 2 weeks",
+   "quote": "6:30pm pat cotton, weston & sampson, inflow/infiltration proposal - mr. cotton introduced himself;",
+   "tags": [
+    "inflow and infiltration",
+    "Weston & Sampson",
+    "manholes",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Minutes Clerk current status/update",
+   "resolution": "discussed; Town Counsel opinion on employee vs contractor and outsourcing billing pending",
+   "quote": "minutes clerk current status/update - we have a good candidate in line",
+   "tags": [
+    "staffing",
+    "minutes clerk",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Minutes and invoices; action file issues",
+   "resolution": "no minutes for review; invoices reported approved",
+   "quote": "minutes/invoices; action file issues - no minutes for review.",
+   "tags": [
+    "invoices",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business manager report: grease trap compliance, permits, Highfield Village",
+   "resolution": "reported; letter with invoice to be sent to Ugly Omelet; waiver request letter to Conrads",
+   "quote": "business manager report/updates - grease trap compliance status: ugly omelet has not yet",
+   "tags": [
+    "grease traps",
+    "permits",
+    "Highfield Village",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Next meeting scheduling",
+   "resolution": "discussed; Thursday 2/16 proposed, Joe to confirm, Barb to send email",
+   "quote": "discussed next meeting scheduled for february 14.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "discussed; Barb to check with Jack on manhole repair; penalty rules to next agenda",
+   "quote": "members agenda inputs for future meetings - carl has added this topic on our agendas since there is",
+   "tags": [
+    "agenda",
+    "manholes",
+    "penalty rules",
+    "payments"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Weston & Sampson proposal to install inflow dishes (as many as 40; 32 fit the category)",
+   "where": "text",
+   "quote": "weston sampson has provided proposal to install as many as 40; 60-70 were recommended; 32 fit the"
+  },
+  {
+   "name": "2015 proposal for Graham Street area cleaning, television inspection, data analysis and recommendations ($48,000)",
+   "where": "text",
+   "quote": "there is one from 2015 for cleaning, television inspection, data analysis, reporting, and recommendations for the graham street area for $48,000."
+  },
+  {
+   "name": "Letter sent 1/17 to Ugly Omelet requiring repair plan",
+   "where": "text",
+   "quote": "ugly omelet has not yet submitted repair plan per letter sent 1/17"
+  },
+  {
+   "name": "Highfield Village withdrawal letter sent by counsel on 1/30/17",
+   "where": "text",
+   "quote": "the letter on the highfield village withdrawal was sent out by counsel on 1/30/17."
+  },
+  {
+   "name": "Carl's list from September",
+   "where": "text",
+   "quote": "commission briefly reviewed carl's list from september."
+  },
+  {
+   "name": "List of manholes provided by Wright Pierce",
+   "where": "text",
+   "quote": "the list of manholes that wright pierce provided could be used to set up a database"
+  },
+  {
+   "name": "Penalty rules: Section 4 of Appendix C and section 7 of Sewer Use Regs, articles 5 & 6 (7 pages to review)",
+   "where": "text",
+   "quote": "changing regulations - section 4 of appendix c penalties and section 7 of sewer use regs"
+  },
+  {
+   "name": "1st Tuesday report",
+   "where": "text",
+   "quote": "she also added that the 1s' tuesday report needs to be reviewed at the"
+  },
+  {
+   "name": "Control plan for DEP (to be prepared by Pat Cotton, December)",
+   "where": "text",
+   "quote": "pat will pull together a combination: control plan for dep in december"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "inflow and infiltration",
+  "grease traps",
+  "manholes",
+  "minutes clerk",
+  "invoices",
+  "grants",
+  "budget",
+  "Weston & Sampson",
+  "next meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

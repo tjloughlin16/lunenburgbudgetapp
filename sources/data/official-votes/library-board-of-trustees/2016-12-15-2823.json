@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-12-15",
  "docid": "2823",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of November 17, 2016",
+   "motion": "Accept the minutes of November 17, 2016.",
    "moved_by": "Gare Thompson",
    "seconded_by": "Kiirja Paananen",
    "outcome": "passed unanimously",
@@ -20,39 +20,367 @@
    "quote": "gare moved to accept the minutes, kiirja seconded; voted 'aye' unanimously."
   },
   {
-   "motion": "accept the Policy for the Use of Bequests, Trust Funds as amended",
+   "motion": "Accept the Policy for the Use of bequests, Trusts funds as amended.",
    "moved_by": "Gare Thompson",
    "seconded_by": "Donna Saiia",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "gare moved to accept the \"policy for the use of bequests, trusts funds\" as amended, donna seconded, all voted 'aye'."
   },
   {
-   "motion": "accept the policy for library cards for out of state residents as amended",
+   "motion": "Accept the library cards for out of state residents policy as amended.",
    "moved_by": "Susan Visser",
    "seconded_by": "Kiirja Paananen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "susan moved to accept the policy as amended, kiirja seconded, voted all in favor"
   },
   {
-   "motion": "move the January meeting to the 26th",
+   "motion": "Move the January meeting from the 19th to the 26th.",
    "moved_by": "Gare Thompson",
    "seconded_by": "Lars Widstrand",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "gare moved to move the january meeting to the 26th, lars seconded, voted 'aye' unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare Thompson",
    "seconded_by": "Susan Visser",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion to adjourn, so moved by gare, seconded by susan; voted 'aye' unanimously"
+   "quote": "motion to adjourn, so moved by gare, seconded by susan; voted 'aye' unanimously @ 8:25 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0874605
+ "note": "Text is a clean extraction, not a scan; all votes recorded with motion, mover and seconder. Harry Kubetz is listed as absent, yet the minutes attribute a statement to 'Harry' in the trust policy discussion; status recorded as absent per the attendance list. The meeting room is named 'Sudolnik meeting room' on page 1 and 'Sudolnik Conference Room' on pages 2-3. The Director's report hand-out and the agenda themselves are not included in the text. The LED and trust figures are not dollar amounts; no dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.01466999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore"
+  },
+  {
+   "name": "John Londa",
+   "role": "Lunenburg Public Facilities Director",
+   "status": "present",
+   "quote": "john londa - lunenburg public facilities director"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: harry kubetz, bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: harry kubetz, bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: harry kubetz, bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Martha Moore will ask the town accountant for clarification on the trust fund balance numbers.",
+   "quote": "martha will ask town accountant for clarification on the numbers."
+  },
+  {
+   "decision": "Further discussion of the Library Trust Funds policy deferred to the next meeting; amounts and possible uses to be revisited in January.",
+   "quote": "further discussion on this topic at the next meeting."
+  },
+  {
+   "decision": "The expenditure from trust funds in a fiscal year should not exceed 20% of total accrued income (stated as the working rule; no vote recorded).",
+   "quote": "the expenditure in a fiscal year should not exceed 20% of total accrued income."
+  },
+  {
+   "decision": "Child Safety policy issue tabled until January; Boston Public Library samples to be adapted for wording.",
+   "quote": "will be adapted - issue tabled until january"
+  },
+  {
+   "decision": "Meeting room policy scheduled for January review.",
+   "quote": "meeting room policy o january review"
+  },
+  {
+   "decision": "Appropriate use policy to be reviewed in January.",
+   "quote": "appropriate use policy review in january"
+  },
+  {
+   "decision": "Study room policy to be reviewed in January.",
+   "quote": "study room policy review in january"
+  },
+  {
+   "decision": "Director's evaluation process to be reviewed further in January, starting early February, with evaluations due by the March meeting and a salary decision by April.",
+   "quote": "will look closer in january. it will start beginning of february with evaluations due either by email or person by march meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Interior LED conversion energy savings",
+   "what_was_recorded": "New electricity and natural gas sources or contracts are expected to bring substantial savings on the town's energy bill; net-metering credits may add savings by spring.",
+   "figures_as_printed": [],
+   "quote": "substantial savings for the town's energy bill"
+  },
+  {
+   "topic": "Recessed can replacement bulbs paid by DMH",
+   "what_was_recorded": "DMH paid for replacement bulbs for recessed cans; some bulbs by the foyer do not work. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "on recessed cans, dmh paid for replacement bulbs"
+  },
+  {
+   "topic": "Split of earned trust interest between reinvestment and spending",
+   "what_was_recorded": "Discussion of an 80/20 split of earned interest, with up to 20 percent spent and 80 percent held or reinvested.",
+   "figures_as_printed": [
+    "80/20",
+    "80%",
+    "20%"
+   ],
+   "quote": "suggestion of 80/20, i.e. 80% held as cash or reinvested and 20% used."
+  },
+  {
+   "topic": "Annual cap on trust fund expenditure",
+   "what_was_recorded": "Expenditure in a fiscal year should not exceed 20 percent of total accrued income.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "the expenditure in a fiscal year should not exceed 20% of total accrued income."
+  },
+  {
+   "topic": "Town report on trust fund balances",
+   "what_was_recorded": "The town's report on current trust asset balances needs clarification; earnings figures, such as the Touchstone fund data, appear incomplete. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "the town's report on the current balances of the total trust assets needs clarification"
+  },
+  {
+   "topic": "Trust monies to supplement Friends for speakers",
+   "what_was_recorded": "Suggestion that trust monies supplement the Friends of LPL to pay for higher-cost speakers and performers; reception uncertain. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "suggestion that \"trust monies\" to supplement friends to pay for \"speakers\", to get higher cost \"performers\""
+  },
+  {
+   "topic": "Director's evaluation salary",
+   "what_was_recorded": "The director's evaluation will end in a decision with new salary numbers by April. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "decision with new salary numbers by april"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Update on interior LED light project",
+   "resolution": "presented by John Londa; no action, he was thanked and left",
+   "quote": "update on lpl interior led light project by john londa, lunenburg public facilities director",
+   "tags": [
+    "LED lighting",
+    "facilities",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of November 17, 2016",
+   "resolution": "approved unanimously",
+   "quote": "approval of minutes of november 17, 2016",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received per distributed hand-out; no recorded action",
+   "quote": "director's report, per distributed hand-out.",
+   "tags": [
+    "director",
+    "budget",
+    "staffing",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Policy for access and use of Library Trust Funds",
+   "resolution": "discussed; continued to January, with a separate motion accepting the bequests/trust funds policy as amended",
+   "quote": "policy for access and use of library trust funds - continued to january meeting",
+   "tags": [
+    "trust funds",
+    "policy",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Library cards for out of state residents",
+   "resolution": "policy accepted as amended",
+   "quote": "susan moved to accept the policy as amended, kiirja seconded, voted all in favor",
+   "tags": [
+    "library cards",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Child Safety policy",
+   "resolution": "tabled until January",
+   "quote": "will be adapted - issue tabled until january",
+   "tags": [
+    "child safety",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Meeting room policy",
+   "resolution": "scheduled for January review",
+   "quote": "meeting room policy o january review",
+   "tags": [
+    "meeting room",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Appropriate use policy",
+   "resolution": "scheduled for January review",
+   "quote": "appropriate use policy review in january",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Study room policy",
+   "resolution": "scheduled for January review",
+   "quote": "study room policy review in january",
+   "tags": [
+    "study room",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "reported; no recorded action",
+   "quote": "dick went to meeting, discussed \"little library\"",
+   "tags": [
+    "Friends of LPL",
+    "programs",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Plans for Director's evaluation",
+   "resolution": "to be looked at more closely in January; no recorded action",
+   "quote": "will look closer in january. it will start beginning of february with evaluations due either by email or person by march meeting",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "January meeting moved from the 19th to the 26th",
+   "quote": "gare moved to move the january meeting to the 26th, lars seconded, voted 'aye' unanimously.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:25 p.m.",
+   "quote": "motion to adjourn, so moved by gare, seconded by susan; voted 'aye' unanimously @ 8:25 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for December 15, 2016",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for december 15, 2016 director's report"
+  },
+  {
+   "name": "Director’s report (per distributed hand-out)",
+   "where": "list",
+   "quote": "director's report, per distributed hand-out."
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "children's librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "ya librarian's report"
+  },
+  {
+   "name": "Policy for the Use of bequests, Trusts funds",
+   "where": "text",
+   "quote": "gare moved to accept the \"policy for the use of bequests, trusts funds\" as amended, donna seconded, all voted 'aye'."
+  },
+  {
+   "name": "Boston Public Library child safety policy samples",
+   "where": "text",
+   "quote": "donna had samples from boston public library policy that can be adapted (verbiage) to our policy."
+  },
+  {
+   "name": "Town report on current balances of total trust assets",
+   "where": "text",
+   "quote": "the town's report on the current balances of the total trust assets needs clarification"
+  }
+ ],
+ "tags": [
+  "library board",
+  "LED lighting",
+  "trust funds",
+  "policies",
+  "director evaluation",
+  "energy savings",
+  "meeting schedule",
+  "Friends of LPL"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

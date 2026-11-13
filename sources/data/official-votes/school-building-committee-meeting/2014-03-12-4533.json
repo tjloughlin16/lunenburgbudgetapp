@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-03-12",
  "docid": "4533",
@@ -12,25 +12,308 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the February 12, 2014 (as amended); October 3, 2013; October 3, 2013; December 5, 2013, and August 7, 2013",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of the February 12, 2014 meeting (as amended), October 3, 2013 (two sessions), December 5, 2013, and August 7, 2013.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: the lunenburg school building committee voted to approve the minutes from the february 12, 2014 (as amended); october 3, 2013; october 3, 2013; december 5, 2013, and august 7, 2013. the motion was unanimously approved."
+   "quote": "voted to approve the minutes from the february 12, 2014 (as amended); october 3, 2013; october 3, 2013; december 5, 2013, and august 7, 2013."
   },
   {
-   "motion": "Approve the minutes from the February 11, 2014 (design development programming); February 25, 2014 (educational technology); February 25, 2014 (building systems); and March 5, 2014 (landscape and site) working and design sessions",
+   "motion": "Approve the working session and design minutes of February 11, 2014, February 25, 2014 (two sessions), and March 5, 2014.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "votion: the lunenburg school building committee voted to approve the minutes from the february 11 2014 (design development programming); february 25, 2014 (educational technology); february 25 2014 (building systems); and march 5, 2014 (landscape and site) working and design sessions."
+   "quote": "the lunenburg school building committee voted to approve the minutes from the february 11 2014 (design development programming)"
   },
   {
-   "motion": "Approve the February 2014 invoices as presented by Joslin, Lesser + Associates",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "motion: the lunenburg school building committee voted to approve the february 2014 invoices as presented by joslin, lesser + associates. the motion was unanimously approved."
+   "motion": "Approve the February 2014 monthly invoices as presented by Joslin, Lesser + Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed (unanimous)",
+   "procedural": false,
+   "quote": "the lunenburg school building committee voted to approve the february 2014 invoices as presented by joslin, lesser + associates. the motion was unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Three votes recorded: two prior minutes approvals and one invoice approval, all procedural. Second motion outcome is incomplete in the minutes—vote is recorded but no result is stated.",
- "cost_usd": 0.09248050000000001
+ "note": "OCR of a scanned minutes packet. The attendee roster is a column-split sign-in list; each name was matched to its role by line order (23 names, 23 roles), and status is inferred as present from that roster, not stated per person. Charles Hay is printed as 'Charles Hay' in the roster and 'Charlie Hay' in the text. Vote 2's result line is garbled ('Votion') and no outcome is printed, so it is 'not stated'. No mover or seconder is printed for any vote. The minutes print no dollar figures. The 'Project Management' heading is the roster table title and was not treated as an agenda topic.",
+ "cost_usd": 0.006435419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:38 pm by mr. mackin, chairperson for the lunenburg school building"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative, LSBC Member",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "present",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "present",
+   "quote": "mark erickson requested that the attendance list from the february 12, 2014"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "mike barney brian frank greg s. roy kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "mike barney brian frank greg s. roy kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "mike barney brian frank greg s. roy kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "mike barney brian frank greg s. roy kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "john Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "mike barney brian frank greg s. roy kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, ISBC (non-voting member)",
+   "status": "present",
+   "quote": "mike barney brian frank greg s. roy kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMS Principal",
+   "status": "present",
+   "quote": "mike barney brian frank greg s. roy kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "present",
+   "quote": "charlie hay from tappe associates provided the lunenburg school building committee with an update on"
+  },
+  {
+   "name": "Cesar Dedios",
+   "role": "Senior Associate, Tappé Associates",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Associates",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Ron Simoneau",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Craig Gabri",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Steve Ham",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A Working Group session will be set up to discuss the 100% design development cost estimates; the Working Group will meet April 9 at 4:30pm.",
+   "quote": "a working group session will be set up to discuss the 100% design development cost estimates."
+  },
+  {
+   "decision": "Additional follow-up design development meetings will be scheduled in April and May.",
+   "quote": "additional followup design development meetings wil! be scheduled in april and"
+  },
+  {
+   "decision": "Abutter meetings will be scheduled as the project gets closer to the construction phase.",
+   "quote": "as the project gets closer to the construction phase, abutter meetings will be scheduled."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly progress invoices (OPM, designer, preconstruction)",
+   "what_was_recorded": "Joslin, Lesser + Associates presented monthly progress invoices for work through February 2014 for the OPM, designer and preconstruction services, and the committee approved them; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "presented monthly progress invoices for work completed for through"
+  },
+  {
+   "topic": "100% design development cost estimates",
+   "what_was_recorded": "A Working Group session was set up to discuss the 100% design development cost estimates; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "a working group session will be set up to discuss the 100% design development cost estimates."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order 6:38 PM by Chair Mackin",
+   "quote": "the meeting was called to order at 6:38 pm by mr. mackin, chairperson for the lunenburg school building",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee Minutes",
+   "resolution": "approved as amended",
+   "quote": "voted to approve the minutes from the february 12, 2014 (as amended); october 3, 2013; october 3, 2013; december 5, 2013, and august 7, 2013.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Approval of Working Session/Design Minutes",
+   "resolution": "approved (no result printed)",
+   "quote": "the lunenburg school building committee voted to approve the minutes from the february 11 2014 (design development programming)",
+   "tags": [
+    "minutes",
+    "design sessions"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals",
+   "resolution": "approved February 2014 invoices",
+   "quote": "the lunenburg school building committee voted to approve the february 2014 invoices as presented by joslin, lesser + associates.",
+   "tags": [
+    "invoices",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Design Development Update",
+   "resolution": "no action; update given",
+   "quote": "charlie hay from tappe associates provided the lunenburg school building committee with an update on",
+   "tags": [
+    "design development",
+    "Tappe Associates"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "next meeting set for April 9",
+   "quote": "the lunenburg school building committee will meet next on wednesday, april 9 at 6:30pm at the thomas",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Community Outreach Efforts",
+   "resolution": "abutter list shared; abutter meetings to be scheduled later",
+   "quote": "the district/town shared a list of project abutters with joslin, lesser + assoclates.",
+   "tags": [
+    "abutters",
+    "outreach"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "Working Group session to be set up",
+   "quote": "a working group session will be set up to discuss the 100% design development cost estimates.",
+   "tags": [
+    "cost estimates",
+    "working group"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 8:15pm",
+   "quote": "the meeting was adjourned at approximately 8:15pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "school building committee",
+  "school construction",
+  "design development",
+  "monthly invoices",
+  "abutters",
+  "minutes approval",
+  "Joslin Lesser",
+  "Tappe Associates",
+  "Shawmut"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-07-18",
  "docid": "860",
@@ -12,32 +12,197 @@
  },
  "votes": [
   {
-   "motion": "Approve septic system variances for 335 Highland Street",
+   "motion": "Approve variances for the 335 Highland Street matter.",
    "moved_by": "Shea",
    "seconded_by": "Rabbit",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "after discussion and on motion by shea and second by rabbit, variances unanimously approved."
+   "quote": "on motion by shea and second by rabbit, variances unanimously approved."
   },
   {
-   "motion": "Accept the Lunenburg BOH Policy regarding Farmers' Markets",
-   "moved_by": "Mr. Rabbitt",
-   "seconded_by": "Mr. Shea",
-   "outcome": "passed 2-1",
+   "motion": "Adopt the Lunenburg BOH Policy regarding Farmers' Markets, as stated by Mr. Shea.",
+   "moved_by": "Rabbitt",
+   "seconded_by": "Shea",
+   "outcome": "passed 2 to 1",
    "procedural": false,
-   "quote": "mr. rabbitt made a motion to accept the above as th e lunenburg boh policy regarding farmers' markets. mr. shea seconded. mr. shea and mr. rabbitt voted for the pol",
-   "quote_taken_from_text": true
+   "quote": "mr. shea seconded. mr. shea and mr. rabbitt voted for the policy, mr. emond voted against. the policy is adopted by a vote of 2 to 1."
   },
   {
-   "motion": "Grant permission for Habitat for Humanity to park up to 6 recreational vehicles at Shady Point Campground from September 25 to October 9",
+   "motion": "Grant Habitat for Humanity permission to park up to 6 Recreational Vehicles at Shady Point Campground from September 25 to October 9.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "permission was granted by unanimous vote of the board."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. The septic variances motion at 335 Highland Street and Habitat for Humanity parking permission lack explicit mover/seconder names in the minutes but show unanimous approval. The Farmers Market policy vote shows 2-1 margin with named votes.",
- "cost_usd": 0.14520349999999999
+ "note": "Typed text with extraction artifacts (words split across spaces, e.g. 'th e', 'o wner'); quotes were chosen to avoid broken words. No vote recorded on adjournment (Meeting adjourned 8:20 pm) or on approval of minutes; the 'Minutes Approved' line is blank. Name spellings vary (Latanzi/Lattanzi; Rabbit/Rabbitt). No dollar figures appear in the minutes. The Habitat vote states no mover or seconder.",
+ "cost_usd": 0.00583372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea and jack rabbitt"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea and jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea and jack rabbitt"
+  },
+  {
+   "name": "Dan Proctor",
+   "status": "present",
+   "quote": "dan proctor met with the board on the owner."
+  },
+  {
+   "name": "Matt Latanzi",
+   "role": "local farmer",
+   "status": "present",
+   "quote": "comments were also heard from mr. matt latanzi"
+  },
+  {
+   "name": "A representative of Habitat for Humanities",
+   "role": "representing Habitat for Humanities",
+   "status": "present",
+   "quote": "a representative of habitat for humanities asked the board for permission to park up to 6"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The draft Farmers Market policy was not adopted after no motion came forward on it; the board then took up a revised text offered by Mr. Shea.",
+   "quote": "a motion was not forthcoming and the policy was not adopted."
+  },
+  {
+   "decision": "The board would need a letter from the Campground owner or manager before a formal permission letter is sent to Shady Point.",
+   "quote": "once the letter is received, a formal letter granting permission will be sent to shady point."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matt Latanzi",
+   "stated_role": "a local farmer who wishes to sell meat at the local Farmers Market",
+   "topic": "meat sales at Farmers Market",
+   "quote": "comments were also heard from mr. matt latanzi"
+  },
+  {
+   "speaker": "A representative of Habitat for Humanities",
+   "stated_role": "representative of Habitat for Humanities",
+   "topic": "parking RVs at Shady Point Campground",
+   "quote": "a representative of habitat for humanities asked the board for permission to park up to 6"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed (511 Flat Hill Road, 110 Mulpus Road, 30 Eastern Avenue)",
+   "resolution": "reviewed, no action recorded",
+   "quote": "title 5 inspection reports reviewed :",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed (127 Highland Street, 493 West Townsend Road Lot 2, 653 Lancaster Avenue)",
+   "resolution": "signed",
+   "quote": "septic permits signed :",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "335 Highland Street",
+   "resolution": "variances approved",
+   "quote": "a plan for a five (5) bedroom systems was presented to the board.",
+   "tags": [
+    "variance",
+    "septic",
+    "wells"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmers Market policy",
+   "resolution": "policy adopted 2 to 1; earlier draft not adopted",
+   "quote": "the policy is adopted by a vote of 2 to 1.",
+   "tags": [
+    "farmers market",
+    "food safety",
+    "meat sales"
+   ]
+  },
+  {
+   "topic": "Habitat for Humanity RV parking at Shady Point Campground",
+   "resolution": "permission granted unanimously, subject to campground letter",
+   "quote": "permission was granted by unanimous vote of the board.",
+   "tags": [
+    "campground",
+    "RV parking",
+    "Habitat for Humanity"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports: 511 Flat Hill Road, 110 Mulpus Road, 30 Eastern Avenue",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed :"
+  },
+  {
+   "name": "Septic permits: 127 Highland Street, 493 West Townsend Road Lot 2, 653 Lancaster Avenue",
+   "where": "list",
+   "quote": "septic permits signed :"
+  },
+  {
+   "name": "Draft copy of a Policy for Farmers Markets",
+   "where": "text",
+   "quote": "chairman emond presented a draft copy of a policy"
+  },
+  {
+   "name": "Purdue University Extension Service publication 'Food Safety Regulations for Farmers' Markets' (EC-740)",
+   "where": "text",
+   "quote": "purdue university extension service"
+  },
+  {
+   "name": "Lunenburg BOH Policy regarding Farmers' Markets (as accepted, text read by Mr. Shea)",
+   "where": "text",
+   "quote": "mr. rabbitt made a motion to accept the above as"
+  },
+  {
+   "name": "Qualifications of Mr. Lattanzi to sell meat (copies handed out to board members)",
+   "where": "text",
+   "quote": "mr. lattanzi handed out copies of his qualifications to sell meat to the board members."
+  },
+  {
+   "name": "Plan for a five (5) bedroom system, 335 Highland Street",
+   "where": "text",
+   "quote": "a plan for a five (5) bedroom systems was presented to the board."
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "Title 5",
+  "septic permits",
+  "variances",
+  "farmers market",
+  "food safety",
+  "meat sales",
+  "Habitat for Humanity",
+  "campground",
+  "RV parking"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

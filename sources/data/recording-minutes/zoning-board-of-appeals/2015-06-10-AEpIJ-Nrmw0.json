@@ -1,0 +1,373 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "ZBA",
+ "meeting_date": "2015-06-10",
+ "video_id": "AEpIJ-Nrmw0",
+ "video_url": "https://www.youtube.com/watch?v=AEpIJ-Nrmw0",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2015-06-10-AEpIJ-Nrmw0.json",
+  "sha256": "fc1ddfc671f1e88e98172efbf9fa33d512e03a99ae0bfd6dc8ebb03f8eabac34",
+  "caption_lines": 150,
+  "segments": 1055
+ },
+ "recording": {
+  "duration_s": 3241,
+  "duration": "0:54",
+  "spoken_chars": 38666,
+  "words_approx": 6444
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06102015-5959",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2015-06-10-agenda-5959.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2015-06-10-agenda-5959.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06102015-5959",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2015-06-10-minutes-5959.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2015-06-10-minutes-5959.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:43:29Z",
+  "cost_usd": 0.1772872
+ },
+ "minutes": {
+  "headline": "Zoning Board granted Hannaford a special permit alteration for outdoor plant, flower and produce displays, with size limits.",
+  "summary": "The board heard Hannaford's application to display seasonal plants outside its store at 333 Mass Ave. A resident opposed it on fire lane, safety and theft grounds. The board added conditions on area, location and type of goods, and the chair announced the permit granted. The applicant must still go to the Planning Board for site plan review.",
+  "attendees": [
+   {
+    "name_as_heard": "Lisa",
+    "role": "clerk, read the application and correspondence"
+   },
+   {
+    "name_as_heard": "Al Gravelle",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jim vesser Kowski",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Paul Doherty",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bowen",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1056,
+    "speaker_as_heard": "Richard verse",
+    "stated_role": "resident, 250 electric avenue",
+    "topic": "Opposed the permit: the 1993 permit assumed all sales indoors; past displays in fire lanes and travel lanes; theft and policing concerns."
+   },
+   {
+    "t": 1413,
+    "speaker_as_heard": "Michelle Harvey",
+    "stated_role": "resident, 250 electric avenue",
+    "topic": "Said she took the photos, that displays were in the fire lane despite enforcement attempts, and that the product could go inside."
+   }
+  ],
+  "tags": [
+   "legal",
+   "planning-and-zoning",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 2790,
+    "motion": "Grant the alteration of the special permit for outdoor display of seasonal items (flowers, plants, produce) in a 35 by 9 area right of the store and a 10 by 9 area left, at Hannaford, 333 Mass Ave.",
+    "moved_by": "Paul Doherty",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3222,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3074,
+    "decision": "Chair read the grant of the special permit alteration with standard contingencies, and told the applicant the next step is site plan review with the Planning Board."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 340,
+    "topic": "Opening and reading of the Hannaford application and correspondence",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 340,
+    "t_end": 1000,
+    "topic": "Applicant presentation and board questions on size and location",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1056,
+    "t_end": 1475,
+    "topic": "Public comment in opposition",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1476,
+    "t_end": 2870,
+    "topic": "Board deliberation and conditions",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2870,
+    "t_end": 3222,
+    "topic": "Vote, permit conditions, and adjournment",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The vote count on the motion was not captured; only a call of ayes and the chair announcing the grant.",
+   "The adjournment vote result was not captured.",
+   "Roll call names are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1056,
+    "about": "A resident said Hannaford and Walmart displayed product in fire and travel lanes without a permit and that the permit should be denied.",
+    "sides": "a resident against the application",
+    "words_as_heard": "it's clearly in violation",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1182,
+    "kind": "safety",
+    "about": "Product displayed in fire lanes puts shoppers outside the building.",
+    "who": "a resident",
+    "words_as_heard": "it is clearly a safety hazard to have shopping going on out there"
+   },
+   {
+    "t": 1327,
+    "kind": "liability or legal",
+    "about": "Outdoor product could increase shoplifting and burden police.",
+    "who": "a resident",
+    "words_as_heard": "now you've opened up both stores to further and greater events of shoplifting"
+   },
+   {
+    "t": 2830,
+    "kind": "condition",
+    "about": "A member wanted a minimum distance from the fire lane in the permit.",
+    "who": "a member",
+    "words_as_heard": "I want to make sure it is a minimum of four feet from the fire lane"
+   },
+   {
+    "t": 2623,
+    "kind": "condition",
+    "about": "Permit limited to the applicant's dimensions and to flowers, plants and produce.",
+    "who": "a member",
+    "words_as_heard": "only the dimensions provided by the applicant and only for plants"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 109,
+    "name_as_heard": "application for special permit",
+    "kind": "application or permit",
+    "words_as_heard": "this is an application for a special permit massachusetts general law chapter 40 a section 9",
+    "shown": true
+   },
+   {
+    "t": 235,
+    "name_as_heard": "letter from Hannaford Brothers authorizing store manager",
+    "kind": "letter or email",
+    "words_as_heard": "letter authorizes mark bono store manager to represent victory distributors LLC",
+    "shown": true
+   },
+   {
+    "t": 256,
+    "name_as_heard": "letter from the building commissioner",
+    "kind": "letter or email",
+    "words_as_heard": "There is also a letter from the building commissioner",
+    "shown": true
+   },
+   {
+    "t": 277,
+    "name_as_heard": "field card and assessors map with abutters list",
+    "kind": "plan or drawing",
+    "words_as_heard": "a copy of the field card from the board of assessors office and the assesses map with a list of a butters",
+    "shown": true
+   },
+   {
+    "t": 298,
+    "name_as_heard": "memo from the land-use director",
+    "kind": "memo",
+    "words_as_heard": "I did receive a memo from the land-use director regarding hannaford special permit",
+    "shown": true
+   },
+   {
+    "t": 1182,
+    "name_as_heard": "photographs distributed by resident",
+    "kind": "other",
+    "words_as_heard": "I have distributed some pictures",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals granted Hannaford an alteration to its special permit for outdoor displays of seasonal plants, flowers and produce at 333 Mass Ave.",
+    "t": 3074
+   },
+   {
+    "line": "The grant limits the display to a set area on each side of the store, with conditions on location and type of goods; the vote tally was not audible.",
+    "t": 2790
+   },
+   {
+    "line": "A resident opposed the request, citing the 1993 permit's indoor-sales assumption, past displays in fire lanes, and theft and policing concerns.",
+    "t": 1056
+   },
+   {
+    "line": "The resident said she took photos showing displays in the fire lane despite enforcement attempts, and that the product could be sold inside.",
+    "t": 1413
+   },
+   {
+    "line": "The chair told the applicant the next step is site plan review with the Planning Board.",
+    "t": 3074
+   }
+  ],
+  "why_it_matters": [
+   "This changes what a neighborhood grocery store may put outside on town-regulated land, and it touches fire lane access and safety at a busy Mass Ave site."
+  ],
+  "watch_next": [
+   "Hannaford's site plan review before the Planning Board, which the chair named as the next step; no date was given in the minutes."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:43:36Z",
+   "cost_usd": 0.0211131
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06102015-5959",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2015-06-10-minutes-5959.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2015-06-10-minutes-5959.pdf"
+  },
+  "official_sha256": "8ec31b66f9a85addea639c3ddafd8597732bce6e3725c09fe784fb0cb258ca5f",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Both records show the special permit for Hannaford's outdoor seasonal display being granted, and the board members match once the captions' misheard names are corrected. They differ on the conditions: ours records specific display areas, standard contingencies and a site plan review step, while the official records only that parameters and products must be defined, and it also has public comment ours lacks.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 0,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to grant the special permit for Hannaford outdoor seasonal display",
+    "ours": "Grant the alteration of the special permit for outdoor display of seasonal items (flowers, plants, produce) in a 35 by 9 area right of the store and a 10 by 9 area left, at Hannaford, 333 Mass Ave. — not audible",
+    "official": "paul doherty made a motion to grant the special permit and alfred gravelle seconded the motion.",
+    "note": "Both records show a grant of the special permit; ours gives no tally, and the official gives mover and seconder but no tally either.",
+    "t": 2790
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Conditions on the grant: display area and products",
+    "ours": "Chair read the grant of the special permit alteration with standard contingencies, and told the applicant the next step is site plan review with the Planning Board.",
+    "official": "the board members agreed that parameters must be placed on the area of display and to define the specific products.",
+    "note": "Ours gives specific areas (35x9 and 10x9) and standard contingencies, and the next step as site plan review; the official records only that parameters and products must be defined. Check the decision and the permit text for the actual conditions and whether site plan review was required.",
+    "t": 3074
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mover and seconder of the motion",
+    "ours": "",
+    "official": "paul doherty made a motion to grant the special permit and alfred gravelle seconded the motion.",
+    "note": "Our minutes do not name who moved and seconded; the official does."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on fire lane and merchandise",
+    "ours": "",
+    "official": "michelle harvey, 250 electric avenue also felt that the merchandise in the fire lane is a",
+    "note": "Public comment from Richard Bursch and Michelle Harvey about the fire lane appears only in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: member James Besarkarski",
+    "ours": "Jim vesser Kowski (member)",
+    "official": "board members present: raymond beal, chairman, donald f. bowen, alfred gravelle, james besarkarski and paul doherty.",
+    "note": "Misheard surname of the same member.",
+    "official_reading": "James Besarkarski"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Lisa the clerk",
+    "ours": "Lisa (clerk, read the application and correspondence)",
+    "official": "chairman beal opened the meeting and lisa normandin; administrative assistant read the petition into the public record.",
+    "note": "Same person; the official gives her full name and title.",
+    "official_reading": "Lisa Normandin"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Gravelle, Doherty, Bowen",
+    "ours": "Al Gravelle (member); Paul Doherty (member); Bowen (member)",
+    "official": "board members present: raymond beal, chairman, donald f. bowen, alfred gravelle, james besarkarski and paul doherty.",
+    "note": "The same members are listed in both."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Chairman Raymond Beal and Marc Bonneau",
+    "ours": "",
+    "official": "others present- marc bonneau, lunenburg store manager and two members of the public.",
+    "note": "Our minutes do not list Chairman Beal by name or the Hannaford store manager."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:44:11Z",
+   "cost_usd": 0.0323351
+  }
+ }
+}

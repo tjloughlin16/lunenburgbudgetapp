@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-11-12",
  "docid": "4865",
@@ -12,56 +12,418 @@
  },
  "votes": [
   {
-   "motion": "Approve General on Premise All Alcohol License for MLMR, Inc. d/b/a Primetime Pub, 5 Summer Street, Unit 10",
-   "outcome": "passed 5-0",
+   "motion": "Approve the General on Premise All Alcohol License for MLMR, Inc. d/b/a Primetime Pub, 5 Summer Street, Unit 10.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
+   "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the general on premise all alcohol license for mlmr, inc. d/b/a primetime pub, 5 summer street, unit 10. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to approve the general on premise all alcohol license for mlmr, inc. d/b/a primetime pub, 5 summer street, unit 10. mr. matthews seconded."
   },
   {
-   "motion": "Maintain the single uniform tax rate in the Town of Lunenburg",
-   "outcome": "passed 5-0",
+   "motion": "Maintain the single uniform tax rate in the Town of Lunenburg.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Ms. Bertram",
+   "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. matthews moved to maintain the single uniform tax rate in the town of lunenburg. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve Consultant Agreement with Colonial Power Group",
-   "outcome": "passed 5-0",
+   "motion": "Approve the Consultant Agreement with Colonial Power Group as contained in the packet.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
+   "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the consultant agreement with colonial power group as contained in the packet. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed"
+   "quote": "ms. bertram moved to approve the consultant agreement with colonial power group as contained in the packet. mr. matthews seconded."
   },
   {
-   "motion": "Open warrant for Special Town Meeting and Special Town Election effective November 12, 2013, closing November 25, 2013 at 4PM",
-   "outcome": "passed 5-0",
+   "motion": "Open the warrant for the Special Town Meeting and Special Town Election effective November 12, 2013 to close on November 25, 2013 at 4PM.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Ebersole",
-   "procedural": true,
-   "quote": "mr. matthews moved to open the warrant for the special town meeting and special town election effective november 12, 2013 to close on november 25, 2013 at 4pm. mr. ebersole seconded discussion: ms. bertram said that it was indica",
-   "quote_taken_from_text": true
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mr. matthews moved to open the warrant for the special town meeting and special town election effective november 12, 2013 to close on november 25, 2013 at 4pm. mr. ebersole seconded"
   },
   {
-   "motion": "Adopt Board of Selectmen Policies & Procedures with specified corrections to page 55, Section 7.08 and page 7",
-   "outcome": "passed 5-0",
+   "motion": "Adopt the Board of Selectmen Policies & Procedures, with deletion of page 55 Section 7.08 paragraphs A & B and correction of page 7 numbering.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Toale",
+   "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved to adopt the board of selectmen policies & procedures with the understanding that on page 55, section 7.08 paragraphs a & b will be deleted and on page 7 the numbering issue will be corrected. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. matthews moved to adopt the board of selectmen policies & procedures with the understanding that on page 55, section 7.08 paragraphs a & b will be deleted"
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 5-0",
+   "motion": "Adjourn the BOS meeting.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
+   "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the bos meeting. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business ms. bertram moved to adjourn the bos meeting. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1238565
+ "note": "Scanned/OCR text with garbled characters and interleaved page stamps. The motion to open the warrant has its 5-0 tally printed after the discussion, not directly after the motion. No vote is recorded for approving the 11/5/2013 minutes or the warrants. Attached sheets (pages 6-10) are OCR-garbled; figures from them are not recorded as budget items.",
+ "cost_usd": 0.01107992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair Person",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Mark LaPrade",
+   "role": "representing MLMR",
+   "status": "present",
+   "quote": "mark laprade, representing mlmr spoke to the board saying that he would like to be open by the beginning of the new"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "harald scheid, regional assessor reported to the board concerning the fy2014 tax classification."
+  },
+  {
+   "name": "Brian Murphy",
+   "role": "President of Colonial Power Group",
+   "status": "present",
+   "quote": "brian murphy, president of colonial power group, came before the board to ask for an extension of the existing contract"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Road closure date request from the DPW Director (11/29/13) tabled until the next meeting; Ms. Bertram wants a written policy with timelines and DPW Director recommendations.",
+   "quote": "2. request from dpw director to establish road closure date, 11/29/13: tabled until next meeting"
+  },
+  {
+   "decision": "Snow date for the Special Town Meeting and Special Town Election to be added to next week's meeting agenda.",
+   "quote": "seeing that this is not an agenda item this evening, it will be added to next weeks meeting."
+  },
+  {
+   "decision": "Review of the draft ballot question to be added again to next week's BOS agenda.",
+   "quote": "the review of the ballot question will be added again to next weeks bos agenda."
+  },
+  {
+   "decision": "Ms. Speidel to ask about including the town-share and MSBA-share information in the warrant article.",
+   "quote": "ms. speidel said that we can ask about including that information in the article."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax relief granted to qualifying residents",
+   "what_was_recorded": "Regional Assessor said approximately $80,000 is granted in tax relief in a given year.",
+   "figures_as_printed": [
+    "$80,000"
+   ],
+   "quote": "he mentioned that approximately $80,000 is granted in tax relief in a given year but"
+  },
+  {
+   "topic": "State Circuit Breaker tax refund",
+   "what_was_recorded": "Mr. Ebersole said the Circuit Breaker refund is up to $1000, subject to income and asset limits.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "mr. ebersole added that the circuit breaker refund is in the amount of up to $1000, there is an income limit along with an"
+  },
+  {
+   "topic": "Valuation change in tax classification hearing",
+   "what_was_recorded": "Regional Assessor said the overall decrease was 30%, typical of Central Mass.",
+   "figures_as_printed": [
+    "30%"
+   ],
+   "quote": "mr. scheid replied overall it was 30%, which is very typical of central mass."
+  },
+  {
+   "topic": "Colonial Power Group cumulative savings",
+   "what_was_recorded": "Colonial Power Group reported cumulative savings to residents and businesses since 1/2012.",
+   "figures_as_printed": [
+    "$183,301.72"
+   ],
+   "quote": "to date the current program in lunenburg has saved residents and businesses $183,301.72, which is a cumulative total"
+  },
+  {
+   "topic": "Colonial Power Group commission payments",
+   "what_was_recorded": "Commission payments since 11/2010 total the figure shown, paid by energy suppliers through a per-kWh fee embedded in rates, not Town funds.",
+   "figures_as_printed": [
+    "$54,031.13",
+    "1cent per Kwh"
+   ],
+   "quote": "commission payments for colonial power group since 11/2010 have amounted to $54,031.13."
+  },
+  {
+   "topic": "Electricity rate increase for participating consumers",
+   "what_was_recorded": "Participating consumers' rate will rise from the printed current rate to the printed higher rate.",
+   "figures_as_printed": [
+    "7.75 cents per Kwh",
+    "9.2 cents per Kwh"
+   ],
+   "quote": "the current rate that the town's participating consumers have is 7.75 cents per kwh and will be increasing to 9.2 cents per kwh."
+  },
+  {
+   "topic": "Oil stockpiling cost for generators",
+   "what_was_recorded": "Companies spent a printed amount on oil stockpiled for winter, a cost FERC's order puts onto consumers.",
+   "figures_as_printed": [
+    "$78M"
+   ],
+   "quote": "companies have gone out and spent $78m on oil to have on hand in case this happens again."
+  },
+  {
+   "topic": "Warrant amount on payment list",
+   "what_was_recorded": "Warrant listed under Minutes/Warrants/Action File Issues with a printed dollar amount; no vote recorded.",
+   "figures_as_printed": [
+    "$514,549.17"
+   ],
+   "quote": "11/12/2013 #25-14 $514,549.17"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "Vice Chairperson",
+   "topic": "thanks to veterans",
+   "quote": "ms. bertram spoke and thanked all of the veteran's who have served, and those who are currently serving."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00PM)",
+   "resolution": "no action",
+   "quote": "ms. bertram spoke and thanked all of the veteran's who have served, and those who are currently serving.",
+   "tags": [
+    "public comment",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Announcements: board and committee vacancies",
+   "resolution": "announced",
+   "quote": "board & committee vacancies (discussed after action file issues): mr. alonzo announced that there are vacancies on",
+   "tags": [
+    "vacancies",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public hearing: all alcohol license for Primetime Pub",
+   "resolution": "approved",
+   "quote": "7:00pm public hearing on general on premises all alcohol license for mlmr, inc. d/b/a primetime pub, 5",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "FY2014 tax classification hearing",
+   "resolution": "maintained single tax rate",
+   "quote": "7:15pm fy2014 tax classification hearing, board of assessors: harald scheid, regional assessor reported to the",
+   "tags": [
+    "tax rate",
+    "assessors",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Review of tax exemption and deferral programs",
+   "resolution": "no action",
+   "quote": "1. review of tax exemption & deferral programs with regional assessor (taken out of order before the 7:15pm",
+   "tags": [
+    "tax exemptions",
+    "deferrals",
+    "elderly",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Road closure date request from DPW Director",
+   "resolution": "tabled",
+   "quote": "2. request from dpw director to establish road closure date, 11/29/13: tabled until next meeting",
+   "tags": [
+    "DPW",
+    "road closure",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Colonial Power Group consultant agreement",
+   "resolution": "approved",
+   "quote": "3. accept/ approve consultant agreement, colonial power group: brian murphy, president of colonial power",
+   "tags": [
+    "energy",
+    "consultant",
+    "electricity"
+   ]
+  },
+  {
+   "topic": "Open warrant for STM and STE; closing date; draft ballot question",
+   "resolution": "warrant opened; ballot question review continued",
+   "quote": "4. open warrant for stm; set closing date; review draft ballot question: ms. speidel informed the board that there is",
+   "tags": [
+    "special town meeting",
+    "special election",
+    "warrant",
+    "school building",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Accept BOS Policies & Procedures",
+   "resolution": "adopted with edits",
+   "quote": "5. accept bos policies & procedures: mr. alonzo stated the bos policies & procedures are ready to be adopted but",
+   "tags": [
+    "policies",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, action file issues",
+   "resolution": "no action recorded",
+   "quote": "6. minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "7.committee report: board of health; building reuse committee; capital planning committee; finance",
+   "tags": [
+    "committees",
+    "building reuse",
+    "sewer",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Town Manager reports: school financing survey",
+   "resolution": "received",
+   "quote": "8. town manager reports or department reports: ms. speidel reported that the online survey asking what the towns",
+   "tags": [
+    "survey",
+    "school building",
+    "financing"
+   ]
+  },
+  {
+   "topic": "Appointments, re-appointments, resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations: none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:15PM",
+   "quote": "regular scheduled meeting adjourned at 8:15pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax Rate Options spread sheet (Lunenburg Board of Assessors, Fiscal Year 2014)",
+   "where": "text",
+   "quote": "(see attached tax rate options spread sheet)"
+  },
+  {
+   "name": "Property Tax Exemptions and Deferrals sheet (FY 14)",
+   "where": "text",
+   "quote": "(see attached property tax exemptions and deferrals sheet)"
+  },
+  {
+   "name": "Special Town Meeting and Special Town Election schedule",
+   "where": "text",
+   "quote": "a special town meeting (stm) and special town election (ste) schedule included in their packets"
+  },
+  {
+   "name": "Draft warrant article and draft ballot question",
+   "where": "text",
+   "quote": "copies of the draft article and draft ballot question have been sent to the school superintendent for"
+  },
+  {
+   "name": "Consultant Agreement with Colonial Power Group",
+   "where": "text",
+   "quote": "ms. bertram moved to approve the consultant agreement with colonial power group as contained in the packet."
+  },
+  {
+   "name": "Board of Selectmen Policies & Procedures",
+   "where": "text",
+   "quote": "mr. matthews moved to adopt the board of selectmen policies & procedures with the understanding that on page 55,"
+  },
+  {
+   "name": "MSBA Bulletin",
+   "where": "text",
+   "quote": "ms. bertram voiced concern over wording in the msba bulletin which states that"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "tax classification",
+  "tax exemptions",
+  "road closure",
+  "Colonial Power Group",
+  "electricity",
+  "special town meeting",
+  "special town election",
+  "warrant",
+  "school building",
+  "MSBA",
+  "policies and procedures",
+  "committee reports",
+  "survey"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached tax rate options spread sheet)"
+ },
+ "dropped_unquoted_by_field": {}
 }

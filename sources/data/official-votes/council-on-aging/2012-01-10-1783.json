@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-01-10",
  "docid": "1783",
@@ -12,23 +12,359 @@
  },
  "votes": [
   {
-   "motion": "Accept the December 14, 2011 COA meeting minutes as presented",
+   "motion": "Accept the December 14, 2011 COA meeting minutes as presented.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to accept the december 14, 2011 coa meeting minutes as presented. all approved, motion carried."
+   "quote": "a motion was made and seconded to accept the december 14, 2011 coa meeting",
+   "seconded_by": ""
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
+   "quote": "a motion was made and seconded to adjourn the meeting.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded; both are procedural. The minutes do not identify who moved or seconded either motion, only that \"a motion was made and seconded.\" The note about reviewing Board Development and Advocacy Committee minutes records future voting at the February meeting, not a vote at this meeting.",
- "cost_usd": 0.0854335
+ "note": "Minutes text is a plain text extraction with some words split (for example \"par king\", \"Transf er\") and irregular spacing; quotes were chosen to avoid split words and collapse spacing. Header says minutes approved at the 2/14/12 COA meeting. No recorded roll-call or vote counts; both votes are recorded only as \"All approved, motion carried.\" Mover and seconder are not printed.",
+ "cost_usd": 0.007622019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), mary lynn conrad (vice chair), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "mary lynn conrad (vice chair), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "mary lynn conrad (vice chair), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "board member",
+   "status": "present",
+   "quote": "doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "board member",
+   "status": "present",
+   "quote": "fred crellin left the meeting for another engagement at this time."
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "board member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, deb seeley, joyce wass,"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "board member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, deb seeley, joyce wass,"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "board member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, deb seeley, joyce wass,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "board member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, deb seeley, joyce wass,"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "board member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, deb seeley, joyce wass,"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "President of the Friends of the Eagle House",
+   "status": "present",
+   "quote": "lloyd carlson, president of the friends of the eagle house and pete lincoln"
+  },
+  {
+   "name": "John Male",
+   "role": "guest",
+   "status": "present",
+   "quote": "lloyd carlson, john male, judy st arnaud, and armand st arnaud."
+  },
+  {
+   "name": "Judy St Arnaud",
+   "role": "guest",
+   "status": "present",
+   "quote": "lloyd carlson, john male, judy st arnaud, and armand st arnaud."
+  },
+  {
+   "name": "Armand St Arnaud",
+   "role": "guest",
+   "status": "present",
+   "quote": "lloyd carlson, john male, judy st arnaud, and armand st arnaud."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Deb Seeley will chair the Director's Evaluation Sub Committee, with Fred Crellin and Jim Hays as members.",
+   "quote": "it was decided that deb seeley will chair the evaluation sub committee along fred crellin and jim hays as members."
+  },
+  {
+   "decision": "Pete Lincoln will contact the Town Manager to ask what the Town's plan is for the parking lot project.",
+   "quote": "pete lincoln stated that he would contact the town manager to ask what the town of lunenburg's plan is for this project."
+  },
+  {
+   "decision": "The executive session on the Director's evaluation was not added to the January COA agenda, following the Town Clerk's advice that it was not necessary.",
+   "quote": "therefore it was not added to the january coa agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Septic mound removal behind Eagle House",
+   "what_was_recorded": "The Friends of the Eagle House Inc. paid for removal of the septic mound, which cost $12,000.00.",
+   "figures_as_printed": [
+    "$12,000.00"
+   ],
+   "quote": "the friends of the eagle house inc. funded the removal which cost $12,000.00."
+  },
+  {
+   "topic": "MARTAP transportation grant",
+   "what_was_recorded": "The Director is working on a MARTAP grant of $850.00 to improve the transportation program with new safety equipment for the van.",
+   "figures_as_printed": [
+    "$850.00"
+   ],
+   "quote": "the director is currently working on a martap grant for $850.00 which if received"
+  },
+  {
+   "topic": "Executive Office of Elder Affairs Service Incentive Grant",
+   "what_was_recorded": "A consortium of area Councils on Aging may apply for a $20,000.00 grant under the Service Incentive Grant being considered.",
+   "figures_as_printed": [
+    "$20,000.00"
+   ],
+   "quote": "this would involve a consortium of area councils on aging, which border the town of lunenburg, applying for a $20,000.00 grant."
+  },
+  {
+   "topic": "Community Foundation wellness grant",
+   "what_was_recorded": "The Director is researching a Community Foundation grant to fund a wellness program with a paid instructor; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "will provide funds for a wellness program with a paid instructor."
+  },
+  {
+   "topic": "Gas to electric utilities line transfer for Unitil bill",
+   "what_was_recorded": "A transfer from the gas utilities line to the electric utilities line to pay a Unitil bill is awaiting Town Manager approval; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "this is not uncommon and was expected to happen at this time of"
+  },
+  {
+   "topic": "Unpaid final half of septic mound excavation invoice",
+   "what_was_recorded": "The Friends have not yet paid the last half of the invoice to William Proctor Excavating and will submit the final payment after their next meeting; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the last half of the invoice to william proctor excavating"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of funds from the gas utilities line to the electric utilities line to pay a Unitil bill",
+   "amount_as_printed": "not printed",
+   "outcome": "pending Town Manager approval of a Request for Transfer",
+   "quote": "this is not uncommon and was expected to happen at this time of"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "no action",
+   "quote": "pete lincoln, chairperson, welcomed the guests and called the meeting to order at 9:30 a.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of December 14, 2011",
+   "resolution": "approved",
+   "quote": "a motion was made and seconded to accept the december 14, 2011 coa meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "quote": "she met with the cable access representa tive, jo mclaughlin, and filmed a generic",
+   "tags": [
+    "cable access",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Finance/Informational Report",
+   "resolution": "no action",
+   "quote": "this is not uncommon and was expected to happen at this time of",
+   "tags": [
+    "budget",
+    "utilities",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Old Business: Parking Lot",
+   "resolution": "no action",
+   "quote": "the septic mound behind the eagle house senior center has been removed.",
+   "tags": [
+    "parking",
+    "septic mound",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Old Business: Janitor for Eagle House",
+   "resolution": "no action",
+   "quote": "the department of public works has hired a part time 19 hour per week person",
+   "tags": [
+    "janitorial",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "sub committee formed",
+   "quote": "it was decided that deb seeley will chair the evaluation sub committee along fred crellin and jim hays as members.",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "New Business: Eagle Heights",
+   "resolution": "no action",
+   "quote": "the eagle heights project was not funded this yea r by the state",
+   "tags": [
+    "Eagle Heights",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "COA resignation and term limits",
+   "resolution": "no action",
+   "quote": "a letter of resignation was received and read from coa board member sandra flanagan.",
+   "tags": [
+    "resignation",
+    "term limits",
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Senior Center Evaluation/Survey",
+   "resolution": "no action",
+   "quote": "doreen suggested that an overall evaluation of th e center and its programs be",
+   "tags": [
+    "survey",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Friends of the Eagle House Inc.",
+   "resolution": "discussed; Chair to contact Town Manager",
+   "quote": "pete lincoln stated that he would contact the town manager to ask what the town of lunenburg's plan is for this project.",
+   "tags": [
+    "Friends of the Eagle House",
+    "parking lot",
+    "invoice"
+   ]
+  },
+  {
+   "topic": "Sub Committee Reports",
+   "resolution": "December minutes distributed; vote deferred to February",
+   "quote": "and both will be voted on at the february coa meeting.",
+   "tags": [
+    "sub committees"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "quote": "no correspondence was read at this meeting.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "no action",
+   "quote": "comments were made about how the friendly seniors n eed to seek other accommodations",
+   "tags": [
+    "Friendly Seniors",
+    "room capacity"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:59AM",
+   "quote": "a motion was made and seconded to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "December minutes from the Board Development meeting",
+   "where": "list",
+   "quote": "and both will be voted on at the february coa meeting."
+  },
+  {
+   "name": "December minutes from the Advocacy Committee meeting",
+   "where": "list",
+   "quote": "and both will be voted on at the february coa meeting."
+  },
+  {
+   "name": "Revised Director Job Description draft",
+   "where": "text",
+   "quote": "\"director job description\" draft"
+  },
+  {
+   "name": "Invoice from William Proctor Excavating",
+   "where": "text",
+   "quote": "the last half of the invoice to william proctor excavating"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "parking lot",
+  "septic mound",
+  "director evaluation",
+  "grants",
+  "term limits",
+  "friends of the eagle house",
+  "utilities transfer",
+  "janitorial"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "december minutes from the board development meeting and the advocacy committee meeting were passed out"
+ },
+ "dropped_unquoted_by_field": {}
 }

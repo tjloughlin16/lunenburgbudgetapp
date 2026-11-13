@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-05-14",
  "docid": "3658",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve prior minutes from April 23, 2012 and May 5, 2012",
+   "motion": "Approve the minutes of 4-23-12 and 5-5-12.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Saiia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, ms. bilotta-simeone, to approve 4-23-12 and 5-5-12. second, mr. saiia. minutes signed."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
@@ -29,6 +29,344 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08658650000000001
+ "note": "Text extraction, not a scan; all three pages readable. Minutes approval motion records no tally or result, so outcome is not stated. Lockwood arrived late, so attendance during early items is not fully stated. Votes are not recorded on the ANR or EPG items; their acceptances and directions are recorded as decisions. No dollar figures are printed anywhere; budget items are fee and funding mentions only. Mr. Babcock has no role printed. The five citizens are listed as having continuing issues; their presence is inferred from that listing.",
+ "cost_usd": 0.008122919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, robert j. saiia, nathan j. lockwood (arrived late), marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, robert j. saiia, nathan j. lockwood (arrived late), marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, robert j. saiia, nathan j. lockwood (arrived late), marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr. (arrived late)",
+   "status": "present",
+   "quote": "nathan j. lockwood (arrived late), marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, robert j. saiia, nathan j. lockwood (arrived late), marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "absent",
+   "quote": "absent: thomas w. bodkin jr."
+  },
+  {
+   "name": "Matthew Bombaci",
+   "role": "representing the applicant (EPG Solar), GPR (Goldsmith, Prest & Ringwall)",
+   "status": "present",
+   "quote": "epg solar was represented by matthew bombaci from gpr (goldsmith, prest & ringwall)"
+  },
+  {
+   "name": "Lorayne Black",
+   "role": "landscape architect",
+   "status": "present",
+   "quote": "lorayne black, landscape architect, will assist with plant selection and placement."
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "Reviewing Engineer, David Ross Associates",
+   "status": "present",
+   "quote": "reviewing engineer jesse johnson of david ross associates noted a substantial increase in number of plantings"
+  },
+  {
+   "name": "Mr. Babcock",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. babcock noted that the standard for these projects is six feet."
+  },
+  {
+   "name": "Christopher Gould",
+   "role": "Citizen, 305 Pleasant Street",
+   "status": "present",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve"
+  },
+  {
+   "name": "Maria Maki",
+   "role": "Citizen, 714 West Street",
+   "status": "present",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve"
+  },
+  {
+   "name": "Angelina Belisle",
+   "role": "Citizen, 642 West Street",
+   "status": "present",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve"
+  },
+  {
+   "name": "Kristin Burns",
+   "role": "Citizen, 634 West Street",
+   "status": "present",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Citizen, 733 West Street",
+   "status": "present",
+   "quote": "david prokowiew, 733 west street inquired as to fence height."
+  },
+  {
+   "name": "Daniel Cronin",
+   "role": "applicant, Hillside Drive (ANR, 1 Turkey Hill Road)",
+   "status": "present",
+   "quote": "anr- daniel cronin, hillside drive - presented anr plan for 1 turkey hill road."
+  },
+  {
+   "name": "Alice Heikkila",
+   "role": "ANR applicant, 651 Chase Road",
+   "status": "not stated",
+   "quote": "anr- alice heikkila, 651 chase road - jamie rheault, whitman and bingham associates."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman and Bingham Associates",
+   "status": "present",
+   "quote": "anr- alice heikkila, 651 chase road - jamie rheault, whitman and bingham associates."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to prepare Findings and Directives on the EPG Solar landscaping and screening for presentation at its next meeting.",
+   "quote": "board to prepare findings and directives for presentation at its next meeting."
+  },
+  {
+   "decision": "Plan for 1 Turkey Hill Road (ANR, Daniel Cronin) accepted for review.",
+   "quote": "mr. cronin paid connection fees in 2005 for the back lot and he has stayed current with fees from the sewer department. plan accepted for review."
+  },
+  {
+   "decision": "Mr. Bakaysa requested Parcel C be labeled buildable; Mr. Rheault to bring a revised plan to the next meeting. ANR plan for 651 Chase Road accepted for review.",
+   "quote": "mr. rheau lt will bring a revised plan noting such for the next planning board meeting.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Mr. Saiia requested that the Applicant discuss plantings with the abutting residents.",
+   "quote": "mr. saiia requested that applicant discuss plantings with the abutting residents."
+  },
+  {
+   "decision": "Ms. Benson to follow up on how many buildings at Emerald Place have been completed.",
+   "quote": "ms. bilotta-simeone inquired as to how many buildings have been completed. ms. benson to follow-up."
+  },
+  {
+   "decision": "Plan Procedures tabled.",
+   "quote": "plan procedures- tabled"
+  },
+  {
+   "decision": "Meeting schedule set: May 21 Master Planning Workshop, June 11 Planning Board Meeting, June 18 Master Planning Workshop, June 25 Planning Board Meeting; no meeting May 28.",
+   "quote": "june 11- planning board meeting, town hall"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Reconfiguration Committee funding request",
+   "what_was_recorded": "A funding request for a preliminary study was approved at the May 5th Town Meeting; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "school reconfiguration committee- funding request for preliminary study was approved at may 5th town meeting."
+  },
+  {
+   "topic": "Sewer connection fees, 1 Turkey Hill Road",
+   "what_was_recorded": "Mr. Cronin paid connection fees in 2005 for the back lot and has stayed current with Sewer Department fees; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. cronin paid connection fees in 2005 for the back lot and he has stayed current with fees from the sewer department."
+  },
+  {
+   "topic": "New England Farms sewer review and fee",
+   "what_was_recorded": "Correspondence from the Sewer Commission regarding sewer review and fee was noted; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "ms. benson noted correspondence from the sewer commission regarding sewer review and fee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Christopher Gould",
+   "topic": "landscaping and screening, West Street curve",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve where the field is ascending."
+  },
+  {
+   "speaker": "Maria Maki",
+   "topic": "landscaping and screening, West Street curve",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve where the field is ascending."
+  },
+  {
+   "speaker": "Angelina Belisle",
+   "topic": "landscaping and screening, West Street curve",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve where the field is ascending."
+  },
+  {
+   "speaker": "Kristin Burns",
+   "topic": "landscaping and screening, West Street curve",
+   "quote": "citizens noted below continue to have issues with the landscaping and screening, particularly on the west street curve where the field is ascending."
+  },
+  {
+   "speaker": "David Prokowiew",
+   "topic": "fence height",
+   "quote": "david prokowiew, 733 west street inquired as to fence height. six feet."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (motion recorded, no result printed)",
+   "quote": "motion, ms. bilotta-simeone, to approve 4-23-12 and 5-5-12. second, mr. saiia. minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "EPG Solar landscaping and screening appointment",
+   "resolution": "continued; Findings and Directives to be prepared for next meeting",
+   "quote": "board to prepare findings and directives for presentation at its next meeting.",
+   "tags": [
+    "solar",
+    "landscaping",
+    "screening",
+    "fencing",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "ANR, Daniel Cronin, 1 Turkey Hill Road",
+   "resolution": "accepted for review",
+   "quote": "anr- daniel cronin, hillside drive - presented anr plan for 1 turkey hill road.",
+   "tags": [
+    "ANR",
+    "sewer easement",
+    "lot frontage"
+   ]
+  },
+  {
+   "topic": "ANR, Alice Heikkila, 651 Chase Road",
+   "resolution": "accepted for review; revised plan to be brought to next meeting",
+   "quote": "anr- alice heikkila, 651 chase road - jamie rheault, whitman and bingham associates.",
+   "tags": [
+    "ANR",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "noted traffic count requests to mrpc for mulpus road at townsend harbor road",
+   "tags": [
+    "traffic",
+    "campaign finance"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "school reconfiguration committee- funding request for preliminary study was approved at may 5th town meeting.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "Plan Procedures tabled; Verizon Wireless application under review",
+   "quote": "application currently being reviewed by marsden engineering.",
+   "tags": [
+    "cell tower",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted; follow-up assigned on Emerald Place",
+   "quote": "tri town landing, youngs road- license agreement regarding water supply for building 3 on board of selectmen agenda for may 15th.",
+   "tags": [
+    "development",
+    "sewer",
+    "water supply"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action; thanks to petitioners and citizens for passing solar bylaw",
+   "quote": "successfully passing the new solar bylaw.",
+   "tags": [
+    "solar bylaw"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set dates; no May 28 meeting",
+   "quote": "may 21- master planning workshop, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:00 PM",
+   "quote": "motion, ms. bilotta-simeone, second, mr. saiia, motion passed. adjourned 8:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter re: Solar Bylaw, from Michael Sauvageau, dated May 14, 2012",
+   "where": "text",
+   "quote": "mr. bakaysa read the following letter into record."
+  },
+  {
+   "name": "Planting Plan (Lorayne Black)",
+   "where": "text",
+   "quote": "she did a planting plan which shows spacing and planting locations."
+  },
+  {
+   "name": "ANR Plan for 1 Turkey Hill Road (revision of plan approved March 28, 2005)",
+   "where": "text",
+   "quote": "plan is a revision of a previous anr plan approved by the planning board on march 28, 2005."
+  },
+  {
+   "name": "Revised ANR plan for 651 Chase Road (Parcel C labeled buildable)",
+   "where": "text",
+   "quote": "mr. rheau lt will bring a revised plan noting such for the next planning board meeting.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "solar bylaw",
+  "landscaping and screening",
+  "ANR",
+  "sewer easement",
+  "zoning",
+  "special permit",
+  "meeting schedule",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

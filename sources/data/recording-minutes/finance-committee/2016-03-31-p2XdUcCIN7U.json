@@ -1,0 +1,528 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2016-03-31",
+ "video_id": "p2XdUcCIN7U",
+ "video_url": "https://www.youtube.com/watch?v=p2XdUcCIN7U",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2016-03-31-p2XdUcCIN7U.json",
+  "sha256": "fd75773162c17fbb96681dfb629f1818f03c15e48ce1c1be627e4b77175103bd",
+  "caption_lines": 174,
+  "segments": 1214
+ },
+ "recording": {
+  "duration_s": 3733,
+  "duration": "1:02",
+  "spoken_chars": 37836,
+  "words_approx": 6306
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03312016-2237",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2016-03-31-agenda-2237.txt",
+   "path": "sources/meetings/finance-committee/2016-03-31-agenda-2237.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03312016-2237",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2016-03-31-minutes-2237.txt",
+   "path": "sources/meetings/finance-committee/2016-03-31-minutes-2237.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:12:16Z",
+  "cost_usd": 0.19622620000000002
+ },
+ "minutes": {
+  "headline": "Finance Committee recommended the FY17 operating budget and stabilization transfer; other articles held for Town Meeting.",
+  "summary": "The committee finished its warrant article review ahead of annual town meeting. It voted to recommend the operating budget, the stabilization transfer and the water enterprise fund, and held several others for Town Meeting. It also reviewed the draft budget letter, approved minutes, and agreed to skip a meeting.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "town accountant / finance staff"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jay",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Terry",
+    "role": "member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "debt",
+   "health-insurance",
+   "retirement",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 643,
+    "motion": "Recommend approval of Article 15, the FY17 operating budget, as written",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 892,
+    "motion": "Recommend approval of Article 17, transfer to the stabilization fund",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1091,
+    "motion": "Recommend approval of the FY17 water department enterprise fund",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3490,
+    "motion": "Approve the minutes of the March 17, 2016 meeting",
+    "moved_by": "Jay",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3722,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 491,
+    "topic": "FY17 operating budget",
+    "what_was_said": "No changes since last week's presentation; the budget figure stands.",
+    "figures_as_heard": [
+     "33 m802 328"
+    ]
+   },
+   {
+    "t": 577,
+    "topic": "Article 15 motion",
+    "what_was_said": "The motion text was read, with transfers from several receipt and enterprise funds.",
+    "figures_as_heard": [
+     "$1,868",
+     "31,6 123",
+     "62781"
+    ]
+   },
+   {
+    "t": 867,
+    "topic": "Stabilization transfer",
+    "what_was_said": "Recommendation tied to the budget figure.",
+    "figures_as_heard": [
+     "$99,800",
+     "99851"
+    ]
+   },
+   {
+    "t": 1027,
+    "topic": "Water enterprise fund",
+    "what_was_said": "The amount is a good number; it pays for itself.",
+    "figures_as_heard": [
+     "25,000"
+    ]
+   },
+   {
+    "t": 1157,
+    "topic": "Inflow infiltration stabilization fund",
+    "what_was_said": "Amount depends on revenues through town meeting, so the committee waits.",
+    "figures_as_heard": [
+     "$1 14,520"
+    ]
+   },
+   {
+    "t": 3319,
+    "topic": "Retirement assessment",
+    "what_was_said": "Retirement assessment rose year over year.",
+    "figures_as_heard": [
+     "88.7%",
+     "84143"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 577,
+    "description": "Article 15 funding transfers from septic receipts, sewer enterprise, student transportation offset, water betterment",
+    "amount_as_heard": "$1,868",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 892,
+    "description": "Transfer to stabilization fund (Article 17)",
+    "amount_as_heard": "$99,800",
+    "outcome": "voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 987,
+    "decision": "Hold recommendation on the solid waste article until town meeting."
+   },
+   {
+    "t": 1199,
+    "decision": "Wait for town meeting on the inflow infiltration stabilization fund and reserve capacity stabilization fund."
+   },
+   {
+    "t": 2023,
+    "decision": "Hold the road maintenance debt exclusion until town meeting."
+   },
+   {
+    "t": 2372,
+    "decision": "Hold the turf field, Brooks House custody and bylaw articles for town meeting."
+   },
+   {
+    "t": 3640,
+    "decision": "Skip the next week meeting; next meeting April 28."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 322,
+    "topic": "Communications and MMA workshops",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 322,
+    "t_end": 960,
+    "topic": "Warrant articles 1-17 and FY17 budget",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 960,
+    "t_end": 1500,
+    "topic": "Enterprise funds and stabilization articles",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 1500,
+    "t_end": 2040,
+    "topic": "Road maintenance debt exclusion",
+    "resolution": "held for town meeting",
+    "tags": [
+     "debt",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 2040,
+    "t_end": 2890,
+    "topic": "Remaining warrant articles",
+    "resolution": "mostly held",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 2890,
+    "t_end": 3490,
+    "topic": "Budget letter review",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 3490,
+    "t_end": 3740,
+    "topic": "Minutes, updates, scheduling",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Adjournment vote result not captured",
+   "Several figures garbled in Article 15 motion text"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1563,
+    "kind": "condition",
+    "about": "Member wanted the financing plan before recommending road debt exclusion",
+    "who": "a member",
+    "words_as_heard": "last week there were uh at least two members uh that that wanted to hear the the uh financing plan first"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 514,
+    "name_as_heard": "the motion for that article",
+    "kind": "warrant article",
+    "words_as_heard": "you got a copy of the motion for that article with that dollar figure in it"
+   },
+   {
+    "t": 2895,
+    "name_as_heard": "the budget letter",
+    "kind": "letter or email",
+    "words_as_heard": "we had a topic related to that is the uh the budget letter"
+   },
+   {
+    "t": 3490,
+    "name_as_heard": "minutes March 17",
+    "kind": "prior minutes",
+    "words_as_heard": "it's the March 17 meeting I circulated it"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "road-bond-tax-impact",
+    "title": "Road bond tax impact",
+    "question": "What would the road debt exclusion cost households alongside the school project debt?",
+    "t": 1584,
+    "words_as_heard": "what the average per household payments were for the middle school high school project",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee voted to recommend Article 15, the FY17 operating budget, as written.",
+    "t": 643
+   },
+   {
+    "line": "It voted to recommend Article 17, a transfer to the stabilization fund, and the FY17 water department enterprise fund.",
+    "t": 892
+   },
+   {
+    "line": "The committee held its recommendation until Town Meeting on the solid waste article, the road maintenance debt exclusion, and the inflow infiltration and reserve capacity stabilization funds.",
+    "t": 987
+   },
+   {
+    "line": "The turf field, Brooks House custody and bylaw articles were also held for Town Meeting.",
+    "t": 2372
+   },
+   {
+    "line": "The committee agreed to skip the next week's meeting; the next meeting is April 28.",
+    "t": 3640
+   }
+  ],
+  "why_it_matters": [
+   "The operating budget and stabilization transfer are the articles that set the town's spending and savings for FY17, and residents will be asked to vote on them at annual Town Meeting.",
+   "The road maintenance debt exclusion and other held articles reach Town Meeting without a committee recommendation, so voters will decide them without that guidance; a debt exclusion would add to tax bills."
+  ],
+  "watch_next": [
+   "Annual Town Meeting votes on the held articles, including the road maintenance debt exclusion.",
+   "The committee's next meeting on April 28."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:12:22Z",
+   "cost_usd": 0.0226111
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03312016-2237",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2016-03-31-minutes-2237.txt",
+   "path": "sources/meetings/finance-committee/2016-03-31-minutes-2237.pdf"
+  },
+  "official_sha256": "f1724f6918df7e1b434ae3fe8eb4c13d104ead4a4d413b6f39cfe14ef5f7f9e1",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the main budget, stabilization, water votes, deferrals and next meeting date, but official records several additional votes (CIP, sewer, PEG, PACC) that ours lacks. The key difference is the stabilization transfer, where ours labels the voted amount $99,800 while official gives $99,851.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "FY17 operating budget figure",
+    "ours": "FY17 operating budget: 33 m802 328",
+    "official": "of $33,802,328 includes all the",
+    "official_reading": "$33,802,328",
+    "note": "Same figure garbled by captions; digits match $33,802,328.",
+    "t": 491
+   },
+   {
+    "kind": "agree",
+    "about": "Article 15 / FY17 operating budget vote",
+    "ours": "Recommend approval of Article 15, the FY17 operating budget, as written — passed",
+    "official": "karin moved to recommend motion approval. terri seconded",
+    "note": "Both record a passing recommendation of the operating budget (official gives 5-0).",
+    "t": 643
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stabilization transfer amount",
+    "ours": "Transfer to stabilization fund (Article 17) — $99,800 (voted)",
+    "official": "terri moved to recommend motion $99,851, approval. john seconded.",
+    "note": "Ours says $99,800 as the voted amount, though ours also heard 99851 in figures; official says $99,851. Check the warrant article amount.",
+    "t": 892
+   },
+   {
+    "kind": "caption_error",
+    "about": "Stabilization transfer figure heard",
+    "ours": "Stabilization transfer: $99,800, 99851",
+    "official": "terri moved to recommend motion $99,851, approval. john seconded.",
+    "official_reading": "$99,851",
+    "note": "The '99851' reading matches the official amount.",
+    "t": 867
+   },
+   {
+    "kind": "agree",
+    "about": "Stabilization fund vote",
+    "ours": "Recommend approval of Article 17, transfer to the stabilization fund — passed",
+    "official": "terri moved to recommend motion $99,851, approval. john seconded.",
+    "note": "Both record the recommendation passing.",
+    "t": 892
+   },
+   {
+    "kind": "agree",
+    "about": "Water enterprise fund vote",
+    "ours": "Recommend approval of the FY17 water department enterprise fund — passed",
+    "official": "karin moved to recommend motion approval. terri seconded. passed: 5-0",
+    "note": "Both record passage.",
+    "t": 1091
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY17 Capital Improvement Plan vote",
+    "ours": "",
+    "official": "terri moved to recommend motion approval. john seconded. passed: fy1",
+    "note": "Official records a 5-0 vote on the Capital Improvement Plan that our minutes do not record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY17 Sewer Enterprise Fund vote",
+    "ours": "",
+    "official": "terri moved to recommend motion approval. karin seconded. passed: 5-0",
+    "note": "Official records a 5-0 vote on the sewer enterprise budget that ours does not; ours only mentions sewer as a funding source."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PEG Access and Cable Fund vote",
+    "ours": "",
+    "official": "karin moved to recommend motion approval. passed: terri seconded.",
+    "note": "Official records a passed vote on the PEG Access fund article; ours has no such vote."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY17 PACC Budget vote",
+    "ours": "",
+    "official": "karin moved to recommend motion approval. jay seconded. passed: 5-0",
+    "note": "Official records a 5-0 vote on the PACC budget that ours does not."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Article 15 funding sources transfer $1,868",
+    "ours": "Article 15 funding transfers from septic receipts, sewer enterprise, student transportation offset, water betterment — $1,868 (discussed only)",
+    "official": "",
+    "note": "Official minutes do not mention these funding transfers or the $1,868 figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Water enterprise fund $25,000 and inflow infiltration $114,520 figures",
+    "ours": "Water enterprise fund: 25,000",
+    "official": "",
+    "note": "Official minutes give no amounts for these; the inflow infiltration amount is described only as not certain."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Retirement assessment figure",
+    "ours": "Retirement assessment: 88.7%, 84143",
+    "official": "",
+    "note": "Official minutes contain no retirement assessment figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Solid waste recommendation held",
+    "ours": "Hold recommendation on the solid waste article until town meeting.",
+    "official": "postpone recommendation until 4/12 meeting.",
+    "note": "Both postpone; however ours says until town meeting while official says the 4/12 meeting. Check which date applies."
+   },
+   {
+    "kind": "agree",
+    "about": "Inflow infiltration article deferred",
+    "ours": "Wait for town meeting on the inflow infiltration stabilization fund and reserve capacity stabilization fund.",
+    "official": "as the amount of this article is not certain,",
+    "note": "Both defer recommendation on the inflow-infiltration article; official says until the amount is firm."
+   },
+   {
+    "kind": "agree",
+    "about": "Other articles held for town meeting",
+    "ours": "Hold the turf field, Brooks House custody and bylaw articles for town meeting.",
+    "official": "the committee will make a recommendation at the atm.",
+    "note": "Both defer several articles to Annual Town Meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Road maintenance debt exclusion held",
+    "ours": "Hold the road maintenance debt exclusion until town meeting.",
+    "official": "",
+    "note": "Official does not specifically mention the road maintenance debt exclusion; it discusses pavement management funding plan in the budget letter."
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting April 28",
+    "ours": "Skip the next week meeting; next meeting April 28.",
+    "official": "the next meeting will be thursday, april 28t.",
+    "note": "Both set the next meeting for April 28; official says April 14 was cancelled for lack of quorum."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MMA workshop email",
+    "ours": "",
+    "official": "mark will forward the email to all committee members.",
+    "note": "Official records Mark forwarding the MMA workshop email; ours lacks it."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Chair, Karen, John, Jay, Terry",
+    "official": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw",
+    "note": "Same members; Karen/Terry are caption renderings of Karin/Terri, and Karen as accountant corresponds to Karin Brochu in official."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:13:24Z",
+   "cost_usd": 0.0464831
+  }
+ }
+}

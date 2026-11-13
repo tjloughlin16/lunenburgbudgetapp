@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2014-06-18",
  "docid": "1463",
@@ -12,6 +12,180 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe discussions and committee recommendations regarding various town buildings, resident questions about property reuse, zoning and overlay district considerations, and planning for a future public charrette, but contain no motions that were formally voted on. The meeting was called to order and adjourned without any voting language recorded.",
- "cost_usd": 0.0815245
+ "note": "Text is OCR of a single page with no votes recorded: no motion appears for approving minutes, entering or closing any item, or adjournment (adjourned @ 8:19pm with no motion printed). OCR garbles and truncates several passages (e.g., 'eeas to be determined by surveving', 'Town Center' overlay sentence incomplete, 'Not huge market' line), so some attributions and the survey-cost sentence are uncertain. No dollar figures appear in the text. Attendee roles for members beyond the chair are not printed.",
+ "cost_usd": 0.00329022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Re-Use Committee Chair",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: joanna l. bilotta-simeone, nathan j. lockwood, kenneth chenis,"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: joanna l. bilotta-simeone, nathan j. lockwood, kenneth chenis,"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: joanna l. bilotta-simeone, nathan j. lockwood, kenneth chenis,"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident david rodgers opined passios might have issues of transferring ownership to town."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Passios building maintenance cost",
+   "what_was_recorded": "The minutes describe the Passios building as costly to maintain and repair, with no dollar figure printed.",
+   "quote": "passios- significant cost to maintain and repair.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Brooks House retrofit cost",
+   "what_was_recorded": "The minutes state the Brooks House requires extensive retrofitting to be used as a municipal building, with no dollar figure printed.",
+   "quote": "requires extensive retrofitting to be used for",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Survey work paid by proposer",
+   "what_was_recorded": "The minutes record that a party was willing to pay for survey work as part of its proposal, with no dollar figure printed.",
+   "quote": "willing to pay for survey work as part of their proposal.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "Resident",
+   "topic": "Passios ownership transfer, zoning, and parking",
+   "quote": "resident david rodgers opined passios might have issues of transferring ownership to town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Building recommendations (Eagle House, Brooks House, Ritter Building, Passios, Town Hall)",
+   "resolution": "noted; no action",
+   "quote": "re-use committee chair j. toale noted the committee's recommendations:",
+   "tags": [
+    "building reuse",
+    "recommendations",
+    "Town Hall",
+    "Ritter Building"
+   ]
+  },
+  {
+   "topic": "Passios and Town Center zoning discussion",
+   "resolution": "discussed; no action",
+   "quote": "long term view for town center is for zoning which will open it up for commercial, retail, mixed",
+   "tags": [
+    "zoning",
+    "Passios",
+    "Town Center",
+    "overlay district"
+   ]
+  },
+  {
+   "topic": "Village District Bylaw",
+   "resolution": "discussed; to be forwarded to committee when revised",
+   "quote": "as the village district bylaw is revised, it will be forwarded to the re-use committee.",
+   "tags": [
+    "village district bylaw",
+    "zoning",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Planning Board public charrette (August)",
+   "resolution": "no action; board input sought on agenda and date",
+   "quote": "the planning board is planning to hold a public charrette in august and would appreciate",
+   "tags": [
+    "charrette",
+    "Planning Board",
+    "Historical Commission"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "building reuse",
+  "Passios",
+  "Town Hall",
+  "Brooks House",
+  "Eagle House",
+  "Ritter Building",
+  "zoning",
+  "village district bylaw",
+  "charrette",
+  "Town Center"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

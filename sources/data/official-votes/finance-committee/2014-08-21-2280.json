@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-08-21",
  "docid": "2280",
@@ -12,31 +12,233 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the July 11 meeting",
-   "moved_by": "Karin M.",
+   "motion": "Approve the minutes of the July 11 meeting.",
+   "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "karin m. moved to approve the minutes of the july 11 meeting. terri burchfield seconded the motion. the motion was approved 4-0."
   },
   {
-   "motion": "Recommend that the Board of Selectmen approve the Financial Policies submitted by the Finance Committee",
-   "moved_by": "Terri B.",
-   "seconded_by": "Karin M.",
+   "motion": "Recommend that the Board of Selectmen approve the Financial Policies submitted by the Fin Comm.",
+   "moved_by": "Terri Burchfield",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "terri b. moved that the committee recommend that the board of selectmen [bos] approve the financial policies submitted by the fin comm. karin m. seconded the motion. the committee approved the motion 4-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Terri B.",
-   "seconded_by": "John H.",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri Burchfield",
+   "seconded_by": "John Henshaw",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "terri b. moved to adjourn the meeting and john h. seconded the motion. the board voted 4-0 in favor"
+   "quote": "terri b. moved to adjourn the meeting and john h. seconded the motion. the board voted 4-0 in favor; the meeting adjourned at 8:20."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scanned document via macOS Vision; all votes are clearly legible.",
- "cost_usd": 0.0944675
+ "dropped_unquoted": 2,
+ "note": "OCR text (macOS Vision) of a 3-page scan. Header date and page numbers are garbled (e.g. '9/24/4', '2063'). The committee-updates table is scrambled by OCR: reporter names in the 'Reported by' column may not line up with the committee rows, so no reporter is assigned to a committee. Text is otherwise readable and the three recorded motions have clear results. No public comment section is printed. Karen Brochu is named as likely to present the FY2014 accounting at a future meeting; she is not recorded as taking part in this meeting and is not listed as an attendee.",
+ "cost_usd": 0.00582242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "note as kerry speidel was not present mark erickson gave a brief update in lieu of the town manager report."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town is to advertise for candidates for the three vacancies on the Fin Comm.",
+   "quote": "the town is to advertise for candidates for the three vacancies on the fin comm."
+  },
+  {
+   "decision": "Mark Erickson will email a request to be put on the agenda of an upcoming Board of Selectmen meeting to present the financial policies; he will notify members of the date.",
+   "quote": "mark e. will email a request to be put on the agenda of an upcoming board of selectmen meeting to present the policies to the bos."
+  },
+  {
+   "decision": "School Building committee agreed to set up a submittal exchange to increase transparency of the bid-invoice process.",
+   "quote": "the committee agreed to set up a submittal exchange to increase the"
+  },
+  {
+   "decision": "A web cam will be set up to enable monitoring of the school construction site.",
+   "quote": "a web cam will be set up to enable monitoring of the school construction site."
+  },
+  {
+   "decision": "Mark Erickson will set up a meeting between the committee and current and former Parks Commission members on the Turf Field policies and fee history.",
+   "quote": "mark erickson will set up a meeting between this committee and current and former members of the parks commission"
+  },
+  {
+   "decision": "Review the updated Pavement Management Plan and set expectations for budget presentations placed on future agendas.",
+   "quote": "review the updated pavement management plan set expectations for budget presentations"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Out-of-district placements (Schools)",
+   "what_was_recorded": "Out-of-district placement costs came in $150,000 under budget and that amount was transferred to fund two educators for an in-district transition program.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "project costs for out of district placements is $150,000 less than budgeted so this amount was transferred from that account and will fund two educators to head up an in district transition program."
+  },
+  {
+   "topic": "Fire engine purchase (Public Safety)",
+   "what_was_recorded": "The Fire Department has begun the process of buying the new fire engine in the FY 2014 capital plan; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the fire department has begun the process of purchasing the new fire engine in the fy 2014 capital plan."
+  },
+  {
+   "topic": "Turf Field Policies/Fees (Budget Opportunity)",
+   "what_was_recorded": "Committee will meet with Parks Commission to understand the history behind the turf field policies and fee structure; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "turf field policies/fees: mark erickson will set up a meeting between this committee and current and former members of the parks commission to get a better understanding of the history and decisions that led to the policies and fee structure."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Out-of-district placement account surplus transferred to fund two educators for an in-district transition program (Schools).",
+   "amount_as_printed": "$150,000",
+   "outcome": "transferred; to fund two educators for an in-district transition program",
+   "quote": "this amount was transferred from that account and will fund two educators to head up an in district transition program."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "no action; The Beacon passed around for information",
+   "tags": [
+    "communications"
+   ],
+   "quote": "mark e. passed around the recent issue of the beacon for the fin. comm's information"
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "noted; Town to advertise for committee vacancies; quorum interpretation discussed",
+   "tags": [
+    "vacancies",
+    "quorum",
+    "fy2014 accounting"
+   ],
+   "quote": "the town is to advertise for candidates for the three vacancies on the fin comm."
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved July 11 minutes 4-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "karin m. moved to approve the minutes of the july 11 meeting."
+  },
+  {
+   "topic": "Finance Policy Document",
+   "resolution": "recommended to Board of Selectmen 4-0; BOS presentation to be requested",
+   "tags": [
+    "financial policies",
+    "board of selectmen"
+   ],
+   "quote": "terri b. moved that the committee recommend that the board of selectmen [bos] approve the financial policies submitted by the fin comm."
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received; no action recorded",
+   "tags": [
+    "schools",
+    "school construction",
+    "monty tech",
+    "public safety",
+    "public access cable",
+    "library",
+    "dpw"
+   ],
+   "quote": "project costs for out of district placements is $150,000 less than budgeted"
+  },
+  {
+   "topic": "Budget opportunity: Turf Field policies and fees",
+   "resolution": "committee to meet with Parks Commission",
+   "tags": [
+    "turf field",
+    "fees",
+    "parks commission"
+   ],
+   "quote": "turf field policies/fees: mark erickson will set up a meeting between this committee and current and former members of the parks commission"
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future agendas",
+   "tags": [
+    "pavement management",
+    "budget presentations"
+   ],
+   "quote": "review the updated pavement management plan set expectations for budget presentations"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Policies submitted by the Fin Comm",
+   "where": "text",
+   "quote": "approve the financial policies submitted by the fin comm."
+  },
+  {
+   "name": "Minutes of the July 11 meeting",
+   "where": "text",
+   "quote": "karin m. moved to approve the minutes of the july 11 meeting."
+  },
+  {
+   "name": "The Beacon (recent issue)",
+   "where": "text",
+   "quote": "mark e. passed around the recent issue of the beacon for the fin. comm's information"
+  },
+  {
+   "name": "updated Pavement Management Plan",
+   "where": "text",
+   "quote": "review the updated pavement management plan set expectations for budget presentations"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "financial policies",
+  "school budget",
+  "school construction",
+  "PACC balance",
+  "turf field fees",
+  "committee vacancies",
+  "quorum",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1,
+  "budget_items": 1
+ }
 }

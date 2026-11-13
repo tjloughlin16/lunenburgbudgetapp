@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-05-20",
  "docid": "2727",
@@ -12,47 +12,304 @@
  },
  "votes": [
   {
-   "motion": "Accept the previous minutes as amended",
-   "outcome": "passed",
+   "motion": "Accept the minutes as amended.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion made and passed to accept minutes as amended."
   },
   {
-   "motion": "Re-elect John Mara as chair and Jeanne Raboin as secretary",
-   "outcome": "passed unanimously",
+   "motion": "Accept the Director's performance evaluation as discussed, to be presented to her by the chair and one additional Trustee.",
    "moved_by": "",
    "seconded_by": "",
-   "procedural": true,
-   "quote": "john mara and jeanne raboin were re-elected by unanimous declaration as chair and secretary respectively."
-  },
-  {
-   "motion": "Accept Amy Sadkin's performance evaluation as discussed",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made and passed unanimously to accept evaluation as discussed and to be presented to her by chair and one (1) additional trustee."
   },
   {
-   "motion": "Offer Amy Sadkin a 3-year contract with the LPL Trustees Board Chair to negotiate salary and terms",
-   "outcome": "passed unanimously",
+   "motion": "Offer Amy Sadkin a 3 year contract, with the LPL Trustees Board Chair to negotiate salary and terms.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion made and passed unanimously to offer amy sadkin a 3 year contract with the lpl trustees board chair to negotiate salary and terms."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "not stated",
+   "motion": "Adjourn the meeting at 8:02 pm.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion made to adjourn at 8:02 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clean OCR text, all votes clearly recorded. No missing pages or unreadable sections noted.",
- "cost_usd": 0.1005225
+ "note": "Minutes are a clean text extraction, not a scan. The motions at the minutes approval item and the adjournment have no mover, seconder, or tally printed, so those are recorded without names or counts. The Director's Report refers to a handout (\"please see handout for details\") that is not listed or named. The minutes end with a signature line for the Secretary. Budget and staffing figures are as printed (e.g., \"$13, 561\" with the space).",
+ "cost_usd": 0.00616962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "LPL Director",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Lunenburg Town Clerk",
+   "status": "present",
+   "quote": "kathy herrick, lunenburg town clerk swore in all of the newly elected trustees."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Mara and Jeanne Raboin were re-elected by unanimous declaration as chair and secretary respectively, and committees were assigned (Budget, Personnel, Policy, Endowment).",
+   "quote": "john mara and jeanne raboin were re-elected by unanimous declaration as chair and secretary respectively."
+  },
+  {
+   "decision": "Committee assignment: Budget committee named as Kathy, John and Amy.",
+   "quote": "budget: kathy, john and amy"
+  },
+  {
+   "decision": "Amy will ask Kerry of Building Maintenance to fix the library sign.",
+   "quote": "amy will ask kerry for building maintenance to take care of fixing the sign."
+  },
+  {
+   "decision": "Jenn will coordinate with schools to add educational links to the public area desktops.",
+   "quote": "jenn will coordinate with schools to add appropriate educational links to the public area desktops."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payroll budget",
+   "what_was_recorded": "Payroll budget may be over by $40.00, but the director said this will be fine.",
+   "figures_as_printed": [
+    "$40.00"
+   ],
+   "quote": "payroll budget may be over by $40.00, but this will be fine."
+  },
+  {
+   "topic": "Library materials expenditure",
+   "what_was_recorded": "Director hoping for a little over $60,000.00 in library materials expenditure.",
+   "figures_as_printed": [
+    "$60,000.00"
+   ],
+   "quote": "hoping for a little over $60,000.00 in library materials expenditure."
+  },
+  {
+   "topic": "CW Mars software expenditure",
+   "what_was_recorded": "CW Mars software expenditure for FY 10 is reported at $13, 561.",
+   "figures_as_printed": [
+    "$13, 561"
+   ],
+   "quote": "cw mars software expenditure for fy 10 is $13, 561."
+  },
+  {
+   "topic": "Staff raises",
+   "what_was_recorded": "Staff on salary administration will not receive a raise next year; AFSCME union staff will receive 5%.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "afscme union people will receive 5%"
+  },
+  {
+   "topic": "Friends weed & feed application",
+   "what_was_recorded": "Friends are providing money for a weed & feed application on the library lawn; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "friends are providing monies to do a weed & feed application for the library lawn."
+  },
+  {
+   "topic": "Millennium Alarm camera project",
+   "what_was_recorded": "Friends gave $8,500 for the camera project; the bid came in at $5,800.",
+   "figures_as_printed": [
+    "$8,500",
+    "$5,800"
+   ],
+   "quote": "friends gave $8,500 for this project; the bid came in at $5,800."
+  },
+  {
+   "topic": "Computer replacement funding",
+   "what_was_recorded": "PCs will be replaced after July 1, funded from capital planning money for FY11; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "they're funded from capital planning money for fy11"
+  },
+  {
+   "topic": "Friends monetary donation to Bea Adams program",
+   "what_was_recorded": "Friends of Forbush Library sent a monetary donation thanking Bea for her program, and Bea gave it to LPL; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the friends of forbush library sent a letter and monetary donation thanking bea for her program"
+  },
+  {
+   "topic": "Director salary and contract",
+   "what_was_recorded": "Board offered the director a 3 year contract, with the chair to negotiate salary and terms; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "offer amy sadkin a 3 year contract with the lpl trustees board chair to negotiate salary and terms"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kathy Herrick",
+   "stated_role": "Lunenburg Town Clerk",
+   "topic": "swearing in of newly elected Trustees",
+   "quote": "kathy herrick, lunenburg town clerk swore in all of the newly elected trustees."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment / swearing in",
+   "resolution": "no action",
+   "tags": [
+    "swearing in",
+    "trustees"
+   ],
+   "quote": "kathy herrick, lunenburg town clerk swore in all of the newly elected trustees."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "accepted as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion made and passed to accept minutes as amended."
+  },
+  {
+   "topic": "Town Meeting",
+   "resolution": "noted; budget approved",
+   "tags": [
+    "town meeting",
+    "budget"
+   ],
+   "quote": "town meeting: this went very well and our budget was approved."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, no action",
+   "tags": [
+    "circulation",
+    "budget",
+    "staffing",
+    "facilities",
+    "programming"
+   ],
+   "quote": "circulation rates have leveled off; meeting rooms usage remains consistent with the policy change due to budget cuts."
+  },
+  {
+   "topic": "LPL Main Hall Technology",
+   "resolution": "no action; all-in-one computer obtained",
+   "tags": [
+    "technology"
+   ],
+   "quote": "amy was able to obtain an all-in-one computer that can be used for library and town announcements such as meetings, programs, etc."
+  },
+  {
+   "topic": "Bea Adams donation",
+   "resolution": "noted; donation given to LPL",
+   "tags": [
+    "donation",
+    "friends of library"
+   ],
+   "quote": "the friends of forbush library sent a letter and monetary donation thanking bea for her program"
+  },
+  {
+   "topic": "LPL Trustees Board Re-organization",
+   "resolution": "chair and secretary re-elected; committees named",
+   "tags": [
+    "elections",
+    "committees"
+   ],
+   "quote": "john mara and jeanne raboin were re-elected by unanimous declaration as chair and secretary respectively."
+  },
+  {
+   "topic": "Open Meeting Law changes",
+   "resolution": "information only, no action",
+   "tags": [
+    "open meeting law"
+   ],
+   "quote": "subcommittee meetings must be posted 24 hours in advance of the meeting; must also provide report minutes and send to town hall."
+  },
+  {
+   "topic": "Director's performance review and evaluation",
+   "resolution": "passed unanimously",
+   "tags": [
+    "personnel",
+    "director evaluation"
+   ],
+   "quote": "motion made and passed unanimously to accept evaluation as discussed and to be presented to her by chair and one (1) additional trustee."
+  },
+  {
+   "topic": "Director's contract",
+   "resolution": "passed unanimously; 3 year contract offered",
+   "tags": [
+    "personnel",
+    "contract"
+   ],
+   "quote": "motion made and passed unanimously to offer amy sadkin a 3 year contract with the lpl trustees board chair to negotiate salary and terms."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director’s Report handout",
+   "where": "text",
+   "quote": "please see handout for details"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "director evaluation",
+  "director contract",
+  "staffing",
+  "technology",
+  "security cameras",
+  "facilities",
+  "programming",
+  "open meeting law",
+  "elections"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

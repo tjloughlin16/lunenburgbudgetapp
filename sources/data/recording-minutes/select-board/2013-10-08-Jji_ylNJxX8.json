@@ -1,0 +1,374 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-10-08",
+ "video_id": "Jji_ylNJxX8",
+ "video_url": "https://www.youtube.com/watch?v=Jji_ylNJxX8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-10-08-Jji_ylNJxX8.json",
+  "sha256": "b8b680ca19bb88bb3a1588ce010d17c43f767c50ddebc05aa5d75f08024b43bc",
+  "caption_lines": 149,
+  "segments": 1188
+ },
+ "recording": {
+  "duration_s": 3147,
+  "duration": "0:52",
+  "spoken_chars": 40955,
+  "words_approx": 6825
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10082013-4861",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-08-agenda-4861.txt",
+   "path": "sources/meetings/select-board/2013-10-08-agenda-4861.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10082013-4861",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-08-minutes-4861.txt",
+   "path": "sources/meetings/select-board/2013-10-08-minutes-4861.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T19:01:19Z",
+  "cost_usd": 0.1510343
+ },
+ "minutes": {
+  "headline": "Board heard counsel on negotiating a casino surrounding-community deal before the Oct. 31 deadline; no budget votes.",
+  "summary": "The Select Board spent most of the meeting on the proposed Leominster slots casino and Lunenburg's effort to be designated a surrounding community, hearing from special counsel on the process, timeline and mitigation fund. Department heads asked that any mitigation money go to roads and public safety. The board also took routine reports, discussed scheduling a policies workshop, and went into executive session on the town manager's contract renewal.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Toll",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carrie Spidel",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Jonathan Silverstein",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Chief Marino",
+    "role": "police chief"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 127,
+    "topic": "Police chief recognized three officers and two firefighters for rescuing a driver from a car submerged in the lake, and invited the public to coffee at the fire department open house Oct. 19."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "executive-session",
+   "grants",
+   "legal",
+   "personnel",
+   "public-safety",
+   "roads-and-dpw"
+  ],
+  "votes": [
+   {
+    "t": 3089,
+    "motion": "Go into executive session under MGL c.30A s.21 to discuss strategy on collective bargaining or litigation, regarding the town manager's employment contract renewal; will not return to open session.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 795,
+    "topic": "Community mitigation fund",
+    "what_was_said": "Counsel explained the state fund is fed by a share of casino license fees and gaming tax, and designation as a surrounding community may help in seeking grants from it.",
+    "figures_as_heard": [
+     "$85 million",
+     "25 million",
+     "6.5 million"
+    ]
+   },
+   {
+    "t": 2530,
+    "topic": "Payroll and accounts payable warrants",
+    "what_was_said": "Payroll and accounts payable warrants were read for signing.",
+    "figures_as_heard": [
+     "66,329 223 33",
+     "$424,999"
+    ]
+   },
+   {
+    "t": 2808,
+    "topic": "Existing debt service for school building project",
+    "what_was_said": "The town manager is preparing existing debt service information for the Finance Committee on the school building project.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 107,
+    "decision": "Board agreed to offer a proclamation to the Lunenburg Women's Club for its 100th anniversary."
+   },
+   {
+    "t": 2488,
+    "decision": "Board will consider scheduling a policies and procedures workshop in early November or on the 29th, to be decided next week."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 127,
+    "topic": "Pledge, announcements, Women's Club proclamation",
+    "resolution": "agreed to proclamation",
+    "tags": []
+   },
+   {
+    "t_start": 127,
+    "t_end": 361,
+    "topic": "Public comment: police chief recognizes rescuers",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 361,
+    "t_end": 2426,
+    "topic": "Casino surrounding-community designation with special counsel",
+    "resolution": "informational",
+    "tags": [
+     "economic-development",
+     "legal",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 2446,
+    "t_end": 2551,
+    "topic": "Policies workshop scheduling",
+    "resolution": "no resolution",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2551,
+    "t_end": 2625,
+    "topic": "Minutes and warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 2625,
+    "t_end": 2962,
+    "topic": "Committee and town manager reports",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "debt",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2962,
+    "t_end": 3140,
+    "topic": "Board comments and executive session",
+    "resolution": "executive session on town manager contract",
+    "tags": [
+     "executive-session",
+     "personnel"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote result on executive session motion not stated beyond partial roll call",
+   "Whether the proclamation was formally voted"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 2234,
+    "kind": "condition",
+    "about": "A member intends mitigation funds to go to roads and traffic impacts barring emergency.",
+    "who": "a member",
+    "words_as_heard": "it would be my intention barring any emergency situation that that's where they would be applied"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2466,
+    "name_as_heard": "one-page sheet of upcoming agenda items",
+    "kind": "agenda",
+    "words_as_heard": "I handed out um a one-page sheet that shows your agenda upcoming agenda items"
+   },
+   {
+    "t": 2551,
+    "name_as_heard": "last week's minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes these are um just last weeks which just was sent out to you"
+   },
+   {
+    "t": 2871,
+    "name_as_heard": "Form 43s",
+    "kind": "application or permit",
+    "words_as_heard": "I have a couple of uh form 43 form 43s for you to sign"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board spent most of the meeting hearing special counsel on how Lunenburg could be designated a surrounding community to the proposed Leominster slots casino.",
+    "t": 361
+   },
+   {
+    "line": "Counsel explained that a state community mitigation fund is fed by casino license fees and gaming tax, and that designation may help in seeking grants from it.",
+    "t": 795
+   },
+   {
+    "line": "The board took no votes; it agreed to offer a proclamation to the Lunenburg Women's Club for its 100th anniversary.",
+    "t": 107
+   },
+   {
+    "line": "The board will consider a policies and procedures workshop in early November or on the 29th, to be decided at the next meeting.",
+    "t": 2488
+   },
+   {
+    "line": "The board went into executive session on the town manager's contract renewal, and the town manager is preparing existing school building debt service information for the Finance Committee.",
+    "t": 2962
+   }
+  ],
+  "why_it_matters": [
+   "Casino mitigation money, if Lunenburg is designated a surrounding community and wins grants, would be outside the local tax levy and could offset costs for roads and public safety that would otherwise fall on the town budget, mostly taxes.",
+   "The school building debt service figures being prepared for the Finance Committee bear on the tax impact of that project, which residents may be asked to vote on."
+  ],
+  "watch_next": [
+   "The Oct. 31 deadline for the surrounding-community designation and any negotiated agreement.",
+   "Next week's meeting, where the board is to decide the date of the policies and procedures workshop."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T19:01:26Z",
+   "cost_usd": 0.022681100000000003
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10082013-4861",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-08-minutes-4861.txt",
+   "path": "sources/meetings/select-board/2013-10-08-minutes-4861.pdf"
+  },
+  "official_sha256": "9962cb0c9f8a79b1caa2afc1a481c61f537317344822e1c181b72c38bac315c0",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Neither record has a recorded vote, and the proclamation and the policies workshop agree in substance. The main differences are garbled caption figures (the warrant totals and the casino fee amounts) and several official-only items, including the ABCC Form 43 action.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 0,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Proclamation for Lunenburg Women's Club 100th anniversary",
+    "ours": "Board agreed to offer a proclamation to the Lunenburg Women's Club for its 100th anniversary.",
+    "official": "could present them with a proclamation at a future bos meeting. the board agreed to do so",
+    "note": "Both records show the board agreeing to give the proclamation.",
+    "t": 107
+   },
+   {
+    "kind": "agree",
+    "about": "Policies and procedures workshop",
+    "ours": "Board will consider scheduling a policies and procedures workshop in early November or on the 29th, to be decided next week.",
+    "official": "bos policies & procedures: to be placed as a workshop item on a future agenda tba.",
+    "note": "Both place a policies and procedures workshop on a future agenda with the date to be determined. Ours adds candidate dates that the official minutes do not give.",
+    "t": 2488
+   },
+   {
+    "kind": "caption_error",
+    "about": "Casino license fee Category 1 ($85 million)",
+    "ours": "Community mitigation fund: $85 million, 25 million, 6.5 million",
+    "official": "the license fee for category 1 facilities is $85m and the fee for category 2 facilites is $25m.",
+    "note": "The $85 million and $25 million match the gaming license fees. Our caption labels them a 'community mitigation fund'. The 6.5 million has no counterpart in the official minutes.",
+    "t": 795,
+    "official_reading": "$85M and $25M license fees"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Payroll and accounts payable warrants",
+    "ours": "Payroll and accounts payable warrants: 66,329 223 33, $424,999",
+    "official": "warrants: #w8p-14 #w18-14 #w19-14 10/7/2013 10/8/2013 10/9/2013 $660,736.36 $424,727.47 $372,322.33",
+    "note": "The captions garble the totals. $424,999 is probably $424,727.47, and the 66,329 223 33 may be $372,322.33 or $660,736.36. A person should check the warrant totals against the recording.",
+    "t": 2530,
+    "official_reading": "$424,727.47"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "ABCC Form 43 reconsideration for Lakeview Club and Bangkok Hill",
+    "ours": "",
+    "official": "the bos must sign and submit to the abcc new form 43's marked \"for reconsideration\"",
+    "note": "Our minutes do not mention this action on the Lakeview Club and PP Group LLC d/b/a Bangkok Hill licenses."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board will keep public posted on casino surrounding community issue",
+    "ours": "",
+    "official": "the board will keep everyone posted as they progress with this issue",
+    "note": "Our minutes do not record this commitment."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Committee request for debt service information on school building project",
+    "ours": "",
+    "official": "asked her to provide them with additional information on existing debt service as a part of contemplating the school building project.",
+    "note": "Our minutes do not record this item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment from Jack Rodriquenz and Marion Benson",
+    "ours": "",
+    "official": "jack rodriquenz, highway superintendent spoke to the board and suggested that if the town is eligible to receive funding that it be used for upkeep of the roads",
+    "note": "Our attendees list omits the Highway Superintendent and the Planning Board Director, who spoke on casino funds and surrounding community designation."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: board members present and absent",
+    "ours": "Chair (chair); Mr. Toll (member); Carrie Spidel (town manager)",
+    "official": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chair person tom alonzo, jamie toale, robert ebersole, and town manager kerry speidel.",
+    "note": "Our list names only a chair, Mr. Toll and the town manager, and omits Robert Ebersole. The official minutes also record Paula Bertram and Dave Matthews as absent. Mr. Toll is probably Jamie Toale, and Carrie Spidel is probably Kerry Speidel (caption misspellings). A person should check who attended."
+   },
+   {
+    "kind": "agree",
+    "about": "Attorney Jonathan Silverstein and Chief Marino attended",
+    "ours": "Jonathan Silverstein (presenter); Chief Marino (police chief)",
+    "official": "ms. speidel introduced attorney jonathan silverstein from kopelman and paige and explained that mr. silverstein specializes",
+    "note": "Both records show the attorney and the police chief present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T19:02:27Z",
+   "cost_usd": 0.0394591
+  }
+ }
+}

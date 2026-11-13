@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-03-13",
  "docid": "1793",
@@ -12,23 +12,283 @@
  },
  "votes": [
   {
-   "motion": "Accept the February 14, 2012 meeting minutes as amended",
+   "motion": "Accept the February 14, 2012 meeting minutes as amended.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to accept the februa ry 14, 2012 meeting minutes as amended. all approv ed/motion carried."
+   "quote": "a motion was made and seconded to accept the februa ry 14, 2012 meeting minutes as amended."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
+   "quote": "a motion was made and seconded to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08379550000000001
+ "note": "Text is a PDF extraction with broken word spacing and a header noting minutes approved at the 4/10/12 meeting; read as printed. Two procedural motions recorded, neither with a named mover or seconder. Member name spelled both 'Sis Montuori' and 'Sis Montouri' in the text. No dollar figures appear except the 10% cut. No public comment section is recorded. Ernie Sund and the Town Manager are mentioned but did not attend as recorded.",
+ "cost_usd": 0.005497519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "member",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "member",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "member",
+   "status": "present",
+   "quote": "deb seeley presented two documents to the coa."
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "member",
+   "status": "present",
+   "quote": "deb seeley, & joyce wass."
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "mary lynn conrad (vice chair)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "absent",
+   "quote": "sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Guest",
+   "status": "present",
+   "quote": "pete lincoln, chairperson, welcomed lloyd"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No longer conduct the 'Pot Luck' by Eagle House volunteers for a period of time, after the February 22 gastric distress reports.",
+   "quote": "i t was determined to no longer conduct \"pot luck\" by eagle house volunte ers for a period of time.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "COA members will review the Director's updated job description and job evaluation form and discuss them at the April 10, 2012 meeting.",
+   "quote": "t he coa members will review these documents and discuss them at the april 10, 2012 meeting.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Members will review the proposed By-Law changes and discuss them at the April meeting; omitted sections and unprocessed prior changes to be corrected at the April meeting.",
+   "quote": "members will review them and discuss changes at the april meeting."
+  },
+  {
+   "decision": "Director will submit a request for a van application, which is due March 31.",
+   "quote": "doreen stated that march 31 st is the final day for van applications and she will be submitting a request."
+  },
+  {
+   "decision": "Snow fence at the parking lot will be fixed.",
+   "quote": "the snow fence will be fixed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY13 COA budget reduction",
+   "what_was_recorded": "The Town Manager requested a 10% cut in the FY13 COA budget, with cuts aimed at changes with the least impact on seniors.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "the town manager requested a 10% cut"
+  },
+  {
+   "topic": "Center hours scenarios and heat/electricity costs",
+   "what_was_recorded": "Director presented scenarios of closings or changed hours (8-4 four days a week, 4PM closing Tuesdays, closed Fridays) that would lessen the cost of heat and electricity.",
+   "figures_as_printed": [],
+   "quote": "closing all day on fridays would lessen the cost of heat and electricity"
+  },
+  {
+   "topic": "Van driver income",
+   "what_was_recorded": "Jim Hays was concerned that reduced hours would cut the money received by van drivers and asked for other options.",
+   "figures_as_printed": [],
+   "quote": "jim hays was concerned that cutting hours would impact the amount of money received by the van drivers"
+  },
+  {
+   "topic": "Financial report",
+   "what_was_recorded": "No financial report was presented at the meeting.",
+   "figures_as_printed": [],
+   "quote": "no financial report was presented."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "called to order at 9:30 a.m.",
+   "quote": "pete lincoln, chairperson, welcomed lloyd and called the meeting to order at 9:30 a.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of February 14, 2012",
+   "resolution": "approved as amended",
+   "quote": "a motion was made and seconded to accept the februa ry 14, 2012 meeting minutes as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; pot luck suspended, van application due March 31",
+   "quote": "doreen reported that on february 22 there were",
+   "tags": [
+    "director report",
+    "food safety",
+    "van service"
+   ]
+  },
+  {
+   "topic": "Parking lot",
+   "resolution": "snow fence to be fixed",
+   "quote": "the snow fence will be fixed.",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Director's evaluation",
+   "resolution": "continued to April 10, 2012 meeting for review",
+   "quote": "deb seeley presented two documents to the coa.",
+   "tags": [
+    "personnel",
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "FY13 COA budget",
+   "resolution": "presented; 10% cut discussed, no action recorded",
+   "quote": "doreen presented the budget to the fin/com on march 8",
+   "tags": [
+    "budget",
+    "FY13"
+   ]
+  },
+  {
+   "topic": "Advocacy subcommittee report",
+   "resolution": "information packet distributed",
+   "quote": "sis montouri handed out a packet",
+   "tags": [
+    "advocacy"
+   ]
+  },
+  {
+   "topic": "By-Law committee report",
+   "resolution": "proposed changes to be reviewed at April meeting",
+   "quote": "fred handed out proposed by-law change to board members.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no correspondence read",
+   "quote": "no correspondence was read at this meeting.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General discussion",
+   "resolution": "no action",
+   "quote": "general discussion: none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:10AM",
+   "quote": "meeting adjourned at 11:10am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Job Description (updated), Director's position",
+   "where": "text",
+   "quote": "the first document was an updated \"job desc ription\" and the second was"
+  },
+  {
+   "name": "Job Evaluation form, Director's position",
+   "where": "text",
+   "quote": "a \"job evaluation\" form of the director"
+  },
+  {
+   "name": "Proposed By-Law changes",
+   "where": "text",
+   "quote": "fred handed out proposed by-law change to board members."
+  },
+  {
+   "name": "Services information packet (addresses and phone numbers for the elderly)",
+   "where": "text",
+   "quote": "sis montouri handed out a packet that li sted information"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "seniors",
+  "FY13 budget",
+  "budget cut",
+  "director evaluation",
+  "by-laws",
+  "van service",
+  "food safety incident",
+  "parking lot"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

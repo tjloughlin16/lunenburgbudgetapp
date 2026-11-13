@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2015-11-10",
  "docid": "1856",
@@ -12,23 +12,350 @@
  },
  "votes": [
   {
-   "motion": "accept the amended minutes",
-   "moved_by": "Betty DiGiacomo",
-   "seconded_by": "Debbie Lincoln",
-   "outcome": "passed unanimously",
+   "motion": "Accept the amended minutes (of the prior meeting).",
+   "moved_by": "Ms. DiGiacomo",
+   "seconded_by": "Ms. Lincoln",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. digiacomo motioned to accept the amended minutes, ms. lincoln seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Jane Rabbitt",
-   "seconded_by": "Jacquelyn Dwyer",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. Rabbitt",
+   "seconded_by": "Ms. Dwyer",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. rabbitt moved to adjourn the meeting and was seconded by ms. dwyer. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and well-recorded. Two votes extracted: approval of prior amended minutes and adjournment, both procedural votes that passed unanimously.",
- "cost_usd": 0.0868355
+ "note": "Clean text extraction with no scan or missing pages. Only two votes are recorded (minutes approval and adjournment), both procedural. Dollar figures are limited to $1,000 and $3. The text does not record the amount behind the Director's fund shift, so no transfer is listed.",
+ "cost_usd": 0.00662582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson pete lincoln called the meeting to order at 9:30 a.m."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "susan doherty (director) debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "susan doherty (director) debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "susan doherty (director) debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "susan doherty (director) debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, jacquelyn dwyer, and jane rabbitt."
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, jacquelyn dwyer, and jane rabbitt."
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, jacquelyn dwyer, and jane rabbitt."
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, jacquelyn dwyer, and jane rabbitt."
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, jacquelyn dwyer, and jane rabbitt."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, jacquelyn dwyer, and jane rabbitt."
+  },
+  {
+   "name": "Brian Guenard",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: brian guenard"
+  },
+  {
+   "name": "Cheryl Aubuchon",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: cheryl aubuchon, eagle house supporters, and karin menard, finance committee."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "guests: cheryl aubuchon, eagle house supporters, and karin menard, finance committee."
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "Administrative Assistant COA",
+   "status": "not stated",
+   "quote": "the board welcomed new hire administrative assistant amanda koeck."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Doherty will contact Steve Malandrinos, Director of the town's Information Technology Department, about board members' inability to access their town email accounts.",
+   "quote": "ms. doherty said she'd contact steve malandrinos director of the town's information technology department."
+  },
+  {
+   "decision": "Board members will come to the next meeting to compile their answers to the cable advisory committee's request for feedback on town department cable use.",
+   "quote": "board members said they'd come to the next meeting to compile their answers."
+  },
+  {
+   "decision": "A small holiday party and ornament swap at the December 8 meeting, which most members favored; members who want to bring ornaments are welcome to do so.",
+   "quote": "ms. lincoln suggested a small holiday party and ornament swap, most were in favor."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Meals on Wheels worker pay and fund shifts",
+   "what_was_recorded": "Director reported Meals on Wheels workers are now paid every two months and that she had shifted funds around for drivers, with no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty also reported that she's had to shift funds around to account for drivers going to florida"
+  },
+  {
+   "topic": "Property Tax Work-Off Committee program",
+   "what_was_recorded": "Director reported 9 participants in last year's work-off program and that the committee is working on the 2016 program; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty reported that the committee is working on the 2016 program"
+  },
+  {
+   "topic": "Eagle House washer/dryer and roof repair",
+   "what_was_recorded": "Director said the Eagle House should invest in an apartment-sized washer/dryer for linens used at lunch, and noted roof repair is in the capital plan; no dollar figures given.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty also expressed that the eagle house should invest in an apartment sized washer/dryer to clean towels, aprons, and table cloths used during lunch."
+  },
+  {
+   "topic": "RUOK program grant",
+   "what_was_recorded": "RUOK program may return through a grant from the Community Health Care Fund, with a grant deadline of Nov. 20; no dollar amount given.",
+   "figures_as_printed": [],
+   "quote": "the ruok program hopefully will be coming back to lunenburg through a grant by the community health care fund."
+  },
+  {
+   "topic": "Eagle House Walkway donation",
+   "what_was_recorded": "Cheryl Aubuchon said the Eagle House Supporters would donate another $1,000 for the Eagle Scout's project.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "cheryl aubuchon from the eagle house supporters said they'd donate another $1,000 for the eagle scout's project."
+  },
+  {
+   "topic": "Council on Aging board training lunch cost",
+   "what_was_recorded": "Board training on Nov. 16 at the Eagle House includes soup and sandwich day at a stated price.",
+   "figures_as_printed": [
+    "$3"
+   ],
+   "quote": "registration is at 8:45 a.m. and it's soup and sandwich day which is $3."
+  },
+  {
+   "topic": "Capital plan requests",
+   "what_was_recorded": "Items added to the Eagle House capital plan are a new roof, parking lot, and possibly a washer/dryer; no dollar figures given.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty reported that items added to the eagle house capital plan are: new roof, parking lot, and possibly a washer/dryer."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted; welcomed new hire",
+   "quote": "the board welcomed new hire administrative assistant amanda koeck.",
+   "tags": [
+    "staffing",
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended",
+   "quote": "ms. digiacomo motioned to accept the amended minutes, ms. lincoln seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report: Budget Report",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that meals on wheels workers are now being paid every two months and that there have been no problems so far.",
+   "tags": [
+    "budget",
+    "meals on wheels"
+   ]
+  },
+  {
+   "topic": "Property Tax Work-Off Committee",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that the committee is working on the 2016 program",
+   "tags": [
+    "tax work-off",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Building Repair Progress",
+   "resolution": "no action",
+   "quote": "jim breault from the dpw suggested removing the peak over the foyer to avoid ice dams.",
+   "tags": [
+    "building repair",
+    "roof",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Upcoming Events",
+   "resolution": "no action",
+   "quote": "ms. doherty reported on upcoming and current events as follows",
+   "tags": [
+    "events",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Boston Post Cane ceremony",
+   "resolution": "no action",
+   "quote": "the boston post cane ceremony took place oct. 22 and was well attended.",
+   "tags": [
+    "events",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Eagle House Walkway",
+   "resolution": "no action; signs and floodlight to be added",
+   "quote": "signs will be posted on the walkway, and an extra floodlight will be added to the area around the walkway/upper parking lot so people can see better at night.",
+   "tags": [
+    "facilities",
+    "safety",
+    "donation"
+   ]
+  },
+  {
+   "topic": "Eagle House Recreation Area",
+   "resolution": "no action; new shed planned for Dec. 7",
+   "quote": "the eagle house recreation area will be improved upon on december 7 as a new shed is to be built for storing bocce equipment",
+   "tags": [
+    "recreation",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Council on Aging board training",
+   "resolution": "no action",
+   "quote": "council on aging board training is scheduled for nov. 16 at the eagle house.",
+   "tags": [
+    "training"
+   ]
+  },
+  {
+   "topic": "Veterans Day lunch",
+   "resolution": "no action",
+   "quote": "lunenburg women's club \"free lunch for veterans\" takes place on veterans day at noon at the eagle house.",
+   "tags": [
+    "events",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Capital Plan Requests",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that items added to the eagle house capital plan are: new roof, parking lot, and possibly a washer/dryer.",
+   "tags": [
+    "capital plan",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "December COA meeting",
+   "resolution": "holiday party favored by most members",
+   "quote": "ms. lincoln suggested a small holiday party and ornament swap, most were in favor.",
+   "tags": [
+    "meetings",
+    "holiday"
+   ]
+  },
+  {
+   "topic": "Notices and Communications",
+   "resolution": "no action; IT contact and cable survey follow-up",
+   "quote": "ms. doherty distributed a printed email from tom alonzo who chairs the cable advisory committee",
+   "tags": [
+    "email",
+    "cable",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "quote": "public comment: none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:32 a.m.",
+   "quote": "ms. rabbitt moved to adjourn the meeting and was seconded by ms. dwyer. on vote, motion carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Printed email from Tom Alonzo, chair of the cable advisory committee, asking for feedback on how town departments use cable",
+   "where": "list",
+   "quote": "ms. doherty distributed a printed email from tom alonzo who chairs the cable advisory committee asking for feedback on how town departments use cable."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "Eagle House",
+  "senior services",
+  "facilities",
+  "budget",
+  "events",
+  "volunteers",
+  "cable",
+  "email",
+  "training"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. doherty distributed a printed email"
+ },
+ "dropped_unquoted_by_field": {}
 }

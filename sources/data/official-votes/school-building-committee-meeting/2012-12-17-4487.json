@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-12-17",
  "docid": "4487",
@@ -12,23 +12,227 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from November 14, 2012",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
+   "motion": "Approve the minutes of the November 14, 2012 meeting.",
+   "moved_by": "LSBC",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "lsbc moved to approve meeting minutes from the november 14, 2012 luneburg school building committee meeting. the committee voted to recommend approval."
+   "quote": "lsbc moved to approve meeting minutes from the november 14, 2012 luneburg school building committee meeting."
   },
   {
-   "motion": "Recommend approval of JLA invoice number 1",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
+   "motion": "Recommend approval of JLA invoice number 1.",
+   "moved_by": "LSBC",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "lsbc moved to recommend approval of jla invoice number 1. the committee voted to recommend approval."
+   "quote": "lsbc moved to recommend approval of jla invoice number 1."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Two votes recorded. Neither vote count nor individual member names are recorded as voting; \"LSBC\" (Lunenburg School Building Committee abbreviation) is listed as the mover, not a person's name. Both outcomes reported as \"recommend approval\" with no specific vote tally stated. Note: OCR rendered \"Luneburg\" (missing 'n'); \"Greg Cohan\" appears as \"Gre Cohan\".",
- "cost_usd": 0.0969605
+ "note": "OCR of a two-page scan (Page 1 of 2, Page 2 of 2). Attendance 'Present' column marks read as 'x', 'r', 'x' and are unreliable, so status is 'not stated' for everyone; names are paired to roles by column order and may be misaligned. Agenda items 3 and 4 are absent from the text (numbering jumps from 2 to 5), and the start of page 2 is partly garbled ('LA submitted', 'Gre Cohan'). The Location field is blank in the OCR. Votes are recorded as 'The Committee voted to recommend approval' with no count, so outcome is 'passed' without a tally. The minutes are marked 'Approved by SBC January 23, 2013'. Quotes for lines with OCR damage are reproduced as printed.",
+ "cost_usd": 0.00583892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg, Superintendent, SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair of SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative, SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, Vice Chair of SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen, SBC",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, SBC (non-voting member)",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, SBC (non-voting member)",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, SBC (non-voting member)",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMS Principal",
+   "status": "not stated",
+   "quote": "attendees: name loxi jo calmes michael mackin colleen shapiro dave matthews"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "these meeting minutes were prepared by greg cohan from joslin, lesser + associates, inc."
+  },
+  {
+   "name": "Margaret Howard",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "joslin, lesser + associates"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "LSBC requested that additional language on the educational requirements of the school district be added to the Site and Design Alternatives evaluation matrix.",
+   "quote": "lsbc requested additional language be added to the matrix concerning educational requirements of the school district."
+  },
+  {
+   "decision": "Expenses paid by the District are to be forwarded to JLA for inclusion in the next invoice payment period (as stated by Greg Cohan).",
+   "quote": "cohan stated any expenses expended by the district should be forwarded to jla for inclusion into the next invoice payment period."
+  },
+  {
+   "decision": "The next meeting is set for Wednesday, January 23, 2013 at 7:00 PM in the Thomas C. Passios School, Room 13.",
+   "quote": "the next meeting will be on wednesday, january 23, 2013 at 7:00 pm in the thomas c. passios school, room 13"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "JLA Invoice No. 1",
+   "what_was_recorded": "JLA submitted Invoice No. 1 for services performed November 1-30, 2012; the committee recommended approval. The minutes print no dollar amount.",
+   "figures_as_printed": [],
+   "quote": "submitted invoice no. 1 for services performed for the period of november 1 thru 30, 2012"
+  },
+  {
+   "topic": "District expenses for invoicing",
+   "what_was_recorded": "Greg Cohan said District expenses should be sent to JLA to be included in the next invoice payment period. No dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "cohan stated any expenses expended by the district should be forwarded to jla for inclusion into the next invoice payment period."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "approved (recommended approval of Nov 14, 2012 minutes)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "jla distributed the meeting minutes for the prior meeting held on november 14, 2012."
+  },
+  {
+   "topic": "Evaluation Matrix",
+   "resolution": "continued; committee requested added language on educational requirements",
+   "tags": [
+    "evaluation matrix",
+    "site and design alternatives",
+    "educational requirements"
+   ],
+   "quote": "jla had distributed a copy of the proposed site and design alternatives matrix to the group for review and comment."
+  },
+  {
+   "topic": "JLA Invoice No. 1",
+   "resolution": "approved (recommended approval)",
+   "tags": [
+    "invoice",
+    "JLA"
+   ],
+   "quote": "submitted invoice no. 1 for services performed for the period of november 1 thru 30, 2012"
+  },
+  {
+   "topic": "Next Meeting Schedule",
+   "resolution": "set for January 23, 2013",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "the next meeting will be on wednesday, january 23, 2013 at 7:00 pm in the thomas c. passios school, room 13"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "no action recorded (no motion printed)",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "6. adjournment these meeting minutes were prepared by greg cohan from joslin, lesser + associates, inc."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed Site and Design Alternatives matrix",
+   "where": "list",
+   "quote": "jla had distributed a copy of the proposed site and design alternatives matrix to the group for review and comment."
+  },
+  {
+   "name": "Meeting minutes for the November 14, 2012 meeting",
+   "where": "list",
+   "quote": "jla distributed the meeting minutes for the prior meeting held on november 14, 2012."
+  },
+  {
+   "name": "JLA Invoice No. 1 (services November 1-30, 2012)",
+   "where": "text",
+   "quote": "submitted invoice no. 1 for services performed for the period of november 1 thru 30, 2012"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "Thomas C. Passios School",
+  "school construction",
+  "evaluation matrix",
+  "JLA invoice",
+  "minutes approval",
+  "Joslin Lesser + Associates"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jla had distributed a copy of the proposed site and design alternatives matrix"
+ },
+ "dropped_unquoted_by_field": {}
 }

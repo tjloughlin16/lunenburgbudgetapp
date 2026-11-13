@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-07-12",
  "docid": "5555",
@@ -12,56 +12,443 @@
  },
  "votes": [
   {
-   "motion": "Send a letter to Conrad's, Donnelly's, and Kabobelicous by end of business day 7/13 for $50 non-compliance fee plus $25 per day fee if not paid by 7/25, with Board of Health notification",
+   "motion": "Send a letter to Conrad's, Donnelly's and Kabobelicous by end of business 7/13 assessing a $50 non-compliance fee, with a $25 per day fee effective 7/1 if not resolved by 7/25 (Board of Health to be notified).",
    "moved_by": "Joe A.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "motion: joe a. second: john r. to send a letter to conrad's, donnelly's and kabobelicous, by the end of business day 7/13, for the fee of $50 non- compliance assessed which they will have until 7/25 to get permit fee and non-compliance fee with other annual permit requirements, or the $25 per day fee will be assessed effective 7/1 and the board of health will be notified. vote: unanimou",
-   "quote_taken_from_text": true
+   "quote": "to send a letter to conrad's, donnelly's and kabobelicous, by the end of business day 7/13, for the fee of $50"
   },
   {
-   "motion": "Accept the Flow Assessment service proposal with revised date of June 30, 2016",
+   "motion": "Accept the Flow Assessment service proposal with revised date of June 30, 2016.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "motion: john r. to accept the flow assessment service proposal with revised date of june 30, 2016 second: joe a. vote: unanimous"
+   "quote": "to accept the flow assessment service proposal with revised date of june 30, 2016"
   },
   {
-   "motion": "Accept the minutes of the 4/26/16 Sewer Commission meeting",
+   "motion": "Accept the minutes of the 4/26/16 Sewer Commission meeting.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: john r. to accept the minutes of the 4/26/16 sewer commission meeting second: joe a. vote: unanimous"
+   "quote": "to accept the minutes of the 4/26/16 sewer commission meeting"
   },
   {
-   "motion": "Accept the minutes of the 5/10/16 Sewer Commission meeting",
+   "motion": "Accept the minutes of the 5/10/16 Sewer Commission meeting.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: john r. to accept the minutes of the 5/10/16 sewer commission meeting second: joe a. vote: unanimous"
+   "quote": "to accept the minutes of the 5/10/16 sewer commission meeting"
   },
   {
-   "motion": "Accept the minutes of the 11/10/15 Sewer Commission meeting with modification",
+   "motion": "Accept the minutes of the 11/10/15 Sewer Commission meeting with modification.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: john r. to accept the minutes of the 11/10/15 sewer commission meeting with modification second: joe a. vote: unanimous"
+   "quote": "to accept the minutes of the 11/10/15 sewer commission meeting with modification"
   },
   {
-   "motion": "Adjourn the 7/12/2016 Sewer Commission meeting at 9:33pm",
+   "motion": "Adjourn the 7/12/2016 Sewer Commission meeting at 9:33pm.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "motion: john r. to adjourn the 7/12/2016 sewer commission meeting at 9:33pm second: joe a. vote: unanimous"
+   "quote": "to adjourn the 7/12/2016 sewer commission meeting at 9:33pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scanned minutes. Text extracted via macOS Vision with annotation intact. All votes recorded unanimously; no failed or contested motions.",
- "cost_usd": 0.10427049999999999
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR and has likely errors (e.g., \"July 26'h\", \"July 13t\", \"Jaimie\" vs \"Jamie\", signature line \"Cuil Lelto\"). No roll call or attendance list is printed, so attendance is \"not stated\". Motions carry \"Vote: Unanimous\" with no count, recorded as \"passed (unanimous)\". Minutes of 6/21/16, 6/28/16 and 10/27/15 were reviewed but no motion is recorded for them. Public comment is not recorded. No transfers are recorded. Jack Rodriquenz and Jack R. are treated as the same person.",
+ "cost_usd": 0.008010419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joseph Anderson",
+   "role": "New Commissioner",
+   "status": "not stated",
+   "quote": "new commissioner, joseph anderson, was welcomed."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "representing Unitil (W&B)",
+   "status": "absent",
+   "quote": "jamie rheault (w&b) for unitil - jaimie r. could not attend"
+  },
+  {
+   "name": "Joe A.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "second: joe a. vote: unanimous"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jack rodriquenz will visit with them on july 13th to discuss."
+  },
+  {
+   "name": "Barb L.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "barb l. will send a certified letter to the owner (cc: wind river)"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack R. will visit Small Water Systems on July 13 to discuss the outstanding contract clarifications and the Grease Trap Time and Materials quote.",
+   "quote": "jack rodriquenz will visit with them on july 13th to discuss."
+  },
+  {
+   "decision": "The Commission will speak with Jack R. about its concerns over the Small Water interceptor inspections.",
+   "quote": "the commission will speak with jack r. about concerns."
+  },
+  {
+   "decision": "Barb L. will send a certified letter to the owner of A&D Crossroads (cc: Wind River) with the current amount due in fees.",
+   "quote": "barb l. will send a certified letter to the owner (cc: wind river)"
+  },
+  {
+   "decision": "The Commission will ask Jack R. to make a proposal for the Graham St. meter sand build-up issue.",
+   "quote": "the commission will ask jack r. to make a proposal of what can be done."
+  },
+  {
+   "decision": "Jack R. will come up with a prioritized subset of the manhole inspection projects for the first year.",
+   "quote": "jack r. will come up with a prioritized subset for the first year projects."
+  },
+  {
+   "decision": "The Jamie Rheault (W&B) for Unitil appointment item is moved to the July 26 agenda because she could not attend.",
+   "quote": "jaimie r. could not attend and will be moved to the july 26'h agenda."
+  },
+  {
+   "decision": "The Commission directed research into policy on repercussions for annual permit non-compliance.",
+   "quote": "they went on to discuss repercussions for non-compliance and to research policy."
+  },
+  {
+   "decision": "The Encumbrance Form was signed by the Commission.",
+   "quote": "the encumbrance form was signed by the commission."
+  },
+  {
+   "decision": "The EOY Commitment was signed by the Commission.",
+   "quote": "the eoy commitment is $481.70 and was signed by the commission"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual permit non-compliance fees",
+   "what_was_recorded": "Non-compliance fee of $50 for three businesses, with a $25 per day fee if not resolved by 7/25.",
+   "figures_as_printed": [
+    "$50",
+    "$25"
+   ],
+   "quote": "or the $25 per day fee will be assessed effective 7/1 and the board of health will be notified."
+  },
+  {
+   "topic": "EOY Commitment",
+   "what_was_recorded": "The EOY Commitment amount was printed and signed by the Commission.",
+   "figures_as_printed": [
+    "$481.70"
+   ],
+   "quote": "the eoy commitment is $481.70 and was signed by the commission"
+  },
+  {
+   "topic": "Pump station FY17 Operations & Maintenance contract",
+   "what_was_recorded": "FY17 O&M contract award to Small Water System Services is pending; no contract yet received. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "contract for fy17 operations & maintenance award - small water system services has not yet sent a contract"
+  },
+  {
+   "topic": "Grease trap program Time and Materials quote",
+   "what_was_recorded": "Small Water's Time and Materials quote not yet received. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a quote based on a time and materials contract from small water has not yet been received."
+  },
+  {
+   "topic": "Small Water interceptor inspection invoice",
+   "what_was_recorded": "Commission discussed issues with the June 30th invoice and June 24th inspections. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed issues with the june 30th invoice and the inspections completed on june 24th."
+  },
+  {
+   "topic": "A&D Crossroads non-compliance fees",
+   "what_was_recorded": "Fees are still accumulating while awaiting a plan from a registered engineer. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "with the current amount due in fees that is still accumulating while awaiting plan from registered engineer."
+  },
+  {
+   "topic": "Betterment assessment (Weston and Sampson)",
+   "what_was_recorded": "Commission discussed the betterment assessment being done by Weston and Sampson. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the betterment assessment being done by weston and sampson."
+  },
+  {
+   "topic": "SRF project costs spreadsheet (Wright Pierce)",
+   "what_was_recorded": "Updated spreadsheet of project costs from Wright Pierce reviewed and discussed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "an updated spreadsheet of project costs from wright pierce was reviewed and discussed by the commission."
+  },
+  {
+   "topic": "Encumbrances going into FY17",
+   "what_was_recorded": "Encumbrances going into FY17 were discussed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "encumbrances going into fy17 were discussed."
+  },
+  {
+   "topic": "Invoices",
+   "what_was_recorded": "One invoice from Wright Pierce was received. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there was one invoice from wright pierce."
+  },
+  {
+   "topic": "53 Prospect St betterment",
+   "what_was_recorded": "A question on betterment was reviewed in the Business Manager Report. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "business manager report - 53 prospect st - a question on betterment was reviewed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; new commissioner welcomed, resignation noted",
+   "quote": "new commissioner, joseph anderson, was welcomed.",
+   "tags": [
+    "announcements",
+    "commission membership"
+   ]
+  },
+  {
+   "topic": "Appointments - Jamie Rheault (W&B) for Unitil",
+   "resolution": "moved to July 26 agenda",
+   "quote": "jamie rheault (w&b) for unitil - jaimie r. could not attend",
+   "tags": [
+    "appointments",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Pump stations O&M contract (Small Water)",
+   "resolution": "no action; awaiting contract",
+   "quote": "contract for fy17 operations & maintenance award - small water system services has not yet sent a contract",
+   "tags": [
+    "pump stations",
+    "Small Water",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Grease trap program - Small Water proposal",
+   "resolution": "no action; awaiting quote",
+   "quote": "a quote based on a time and materials contract from small water has not yet been received.",
+   "tags": [
+    "grease trap",
+    "Small Water"
+   ]
+  },
+  {
+   "topic": "Small Water interceptor inspections",
+   "resolution": "no action; Commission to speak with Jack R.",
+   "quote": "the commission will speak with jack r. about concerns.",
+   "tags": [
+    "grease trap",
+    "invoice",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Annual permits non-compliance",
+   "resolution": "letters to three businesses approved",
+   "quote": "to send a letter to conrad's, donnelly's and kabobelicous, by the end of business day 7/13",
+   "tags": [
+    "annual permits",
+    "non-compliance",
+    "fees"
+   ]
+  },
+  {
+   "topic": "A&D Crossroads non-compliance",
+   "resolution": "certified letter directed (Barb L.)",
+   "quote": "barb l. will send a certified letter to the owner (cc: wind river)",
+   "tags": [
+    "non-compliance",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Flow meters - Flow Assessment FY17 contract",
+   "resolution": "approved",
+   "quote": "to accept the flow assessment service proposal with revised date of june 30, 2016",
+   "tags": [
+    "flow meters",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Graham St. meter issue",
+   "resolution": "no action; Jack R. to make proposal",
+   "quote": "the commission will ask jack r. to make a proposal of what can be done.",
+   "tags": [
+    "meter",
+    "sand build-up",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Engineering project updates (manhole inspections, SRF costs)",
+   "resolution": "no action",
+   "quote": "jack r. will come up with a prioritized subset for the first year projects.",
+   "tags": [
+    "engineering",
+    "SRF",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "Encumbrances",
+   "resolution": "form signed",
+   "quote": "the encumbrance form was signed by the commission.",
+   "tags": [
+    "encumbrances",
+    "FY17"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 4/26/16, 5/10/16 and 11/10/15 (with modification); 6/21/16, 6/28/16 and 10/27/15 reviewed with no motion recorded",
+   "quote": "to accept the minutes of the 4/26/16 sewer commission meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "EOY Commitment",
+   "resolution": "signed",
+   "quote": "the eoy commitment is $481.70 and was signed by the commission",
+   "tags": [
+    "EOY",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "no action",
+   "quote": "there was one invoice from wright pierce.",
+   "tags": [
+    "invoices",
+    "Wright Pierce"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "no action; betterment question reviewed",
+   "quote": "business manager report - 53 prospect st - a question on betterment was reviewed.",
+   "tags": [
+    "betterment",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "noted",
+   "quote": "july 26, 2016 regular meeting, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Commissioner's comments",
+   "resolution": "no action",
+   "quote": "john r. commented on jack rodriquenz's email on small water's hannaford training.",
+   "tags": [
+    "Small Water",
+    "training"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:33pm",
+   "quote": "to adjourn the 7/12/2016 sewer commission meeting at 9:33pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Status Sheets (annual permits)",
+   "where": "list",
+   "quote": "status sheets were given out to the commission."
+  },
+  {
+   "name": "Weekly reports (pump stations)",
+   "where": "text",
+   "quote": "weekly reports - the most recent were reviewed during the meeting."
+  },
+  {
+   "name": "Flow Assessment contract and service proposal",
+   "where": "text",
+   "quote": "the commission reviewed the flow meters and the contract with flow assessment."
+  },
+  {
+   "name": "Manhole inspections report",
+   "where": "text",
+   "quote": "engineering project updates - manhole inspections report"
+  },
+  {
+   "name": "Updated spreadsheet of project costs (Wright Pierce)",
+   "where": "text",
+   "quote": "an updated spreadsheet of project costs from wright pierce was reviewed and discussed by the commission."
+  },
+  {
+   "name": "Encumbrance Form",
+   "where": "text",
+   "quote": "the encumbrance form was signed by the commission."
+  },
+  {
+   "name": "EOY Commitment",
+   "where": "text",
+   "quote": "the eoy commitment is $481.70 and was signed by the commission"
+  },
+  {
+   "name": "Jack Rodriquenz email on Small Water's Hannaford Training",
+   "where": "text",
+   "quote": "john r. commented on jack rodriquenz's email on small water's hannaford training."
+  },
+  {
+   "name": "Business Manager Report",
+   "where": "text",
+   "quote": "business manager report - 53 prospect st - a question on betterment was reviewed."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "Small Water Systems",
+  "grease trap",
+  "annual permits",
+  "non-compliance",
+  "flow meters",
+  "minutes",
+  "encumbrances",
+  "FY17",
+  "SRF",
+  "betterment",
+  "appointments",
+  "EOY commitment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "status sheets were given out to the commission"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

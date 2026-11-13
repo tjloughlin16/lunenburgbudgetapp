@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-04-06",
  "docid": "4636",
@@ -12,23 +12,300 @@
  },
  "votes": [
   {
-   "motion": "to approve meeting minutes from February 28, 2015 and March 9, 2015",
+   "motion": "Approve the minutes of the Feb. 28, 2015 and Mar 9, 2015 meetings.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "committee approved minutes for feb 25\" and march 9th, ', 2015."
+   "quote": "committee approved minutes for feb 25\" and march 9th,"
   },
   {
-   "motion": "to approve the access A/V Proposal for Town Hall",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve the access A/V Proposal for the Town Hall control room at a total quote of 24,589.00.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "pacc approved the proposal on the motion of the town approving the work."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1294745
+ "note": "Scanned OCR of a handwritten/stamped set. Stamps read 'Hes Bo 5/12/15' and 'Approved by vote at PACk Meeting April 6, 2015' and page 3 OCR shows 'Rhonda Sisio' (likely the stamp/annotation for Rhonda Lisio); none treated as attendee info beyond the roll call. The minutes-approval item says 'Feb 25\"' while its heading says 'Feb. 28, 2015'; recorded as printed. No mover, seconder or vote count is printed for either recorded approval. Page 3 is an attached Access AN quote (dated 3/25/2015, submitted by Robert Haigh) with OCR-garbled table figures, so line-item figures are not fully reliable; Robert Haigh is named only as the quote submitter and is not listed as an attendee. The adjournment at 7:47pm has no recorded motion and is not counted as a vote.",
+ "cost_usd": 0.00722222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "steve presented information on fatv mobile units."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non committee member",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, bob ebersole, and john dextraze."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Non committee member",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, bob ebersole, and john dextraze."
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Non committee member",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, bob ebersole, and john dextraze."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee liked the new format for PACC policies; the PACC will review the policies, make changes as needed, and approve the final draft later.",
+   "quote": "pacc will review the policies, make changes as needed and approve the final draft."
+  },
+  {
+   "decision": "The committee approved the idea of a show about organic living from the Devens business, on condition there is no product or service advertisement.",
+   "quote": "the pacc committee ok'd the idea as long as now product or service advertisement."
+  },
+  {
+   "decision": "Staff or members were directed to contact Comcast for the annual report.",
+   "quote": "contact comcast for annual report."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast deposit and account balance",
+   "what_was_recorded": "Comcast deposited a check in February and the ending balance was reported.",
+   "figures_as_printed": [
+    "$300,589.92"
+   ],
+   "quote": "comcast deposited a check in february. ending balance was $300,589.92."
+  },
+  {
+   "topic": "March spending",
+   "what_was_recorded": "The coordinator reported March spending was within budget; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "march's spending was within budget."
+  },
+  {
+   "topic": "Town Hall control room A/V improvement quote",
+   "what_was_recorded": "Total quote for improvement of the town hall control room, approved by the committee.",
+   "figures_as_printed": [
+    "24,589.00"
+   ],
+   "quote": "total quote for improvement for the town hall control room is 24,589.00"
+  },
+  {
+   "topic": "Access AN quote list price and cost",
+   "what_was_recorded": "The attached Access AN quote prints a list price and a cost for the camera system.",
+   "figures_as_printed": [
+    "29,945.00",
+    "24,589.00"
+   ],
+   "quote": "list price: $ 29,945.00"
+  },
+  {
+   "topic": "Access AN quote options",
+   "what_was_recorded": "An optional wireless VGA projector-to-control-room item is priced as an option on the quote.",
+   "figures_as_printed": [
+    "795.00"
+   ],
+   "quote": "avocent lvs3500w** wireless vga- projector to control room 35 $ 795.00"
+  },
+  {
+   "topic": "Access AN quote install note",
+   "what_was_recorded": "An install note on the quote prints a dollar figure; its meaning is not stated.",
+   "figures_as_printed": [
+    "$520"
+   ],
+   "quote": "reuse existing audio $520"
+  },
+  {
+   "topic": "Access AN quote unlabelled figure",
+   "what_was_recorded": "An unlabelled figure appears in the OCR text of the quote near the cost lines; it does not match the 24,589.00 total and may be an OCR error.",
+   "figures_as_printed": [
+    "24,069"
+   ],
+   "quote": "is 30+ days unmakin 24,069 install notes"
+  },
+  {
+   "topic": "Fees from cable providers",
+   "what_was_recorded": "The committee noted a need for more fees from cable providers; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "e. need more fees from cable providers."
+  },
+  {
+   "topic": "Low-cost mobile vehicle",
+   "what_was_recorded": "Steve's FATV mobile unit presentation suggested considering a low-cost vehicle (used school bus, trailer, tow vehicle); no figure printed.",
+   "figures_as_printed": [],
+   "quote": "b. consider a low cost vehicle: used school bus, trailer, tow vehicle"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "Agenda change deadline",
+   "quote": "revised changes to agenda can be submitted up to 48hrs before meeting."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "Agenda format for upcoming meetings",
+   "quote": "upcoming meetings should be added to bottom of agenda."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "Shrewsbury PAC policies",
+   "quote": "shrewsbury's pac policies were submitted to the committee for guidelines."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "Missing minutes for 12/15/2014 and 1/28/2015",
+   "quote": "missing meeting minutes for 12/15/2014 and 1/28/2015 (no meeting due to snow storm)."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "noted; no speakers named",
+   "quote": "revised changes to agenda can be submitted up to 48hrs before meeting.",
+   "tags": [
+    "agenda",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes of Feb. 28 and Mar 9, 2015 meetings",
+   "resolution": "approved",
+   "quote": "review and approve meeting minutes from feb. 28, 2015 and mar 9, 2015 meetings:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly budget report",
+   "resolution": "received; no action recorded",
+   "quote": "coordinator's monthly budget report:",
+   "tags": [
+    "budget",
+    "programming",
+    "mobile unit",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Review and approve access A/V Proposal - Town Hall",
+   "resolution": "approved",
+   "quote": "review and approve access a/v proposal - town hall:",
+   "tags": [
+    "town hall",
+    "a/v equipment",
+    "control room"
+   ]
+  },
+  {
+   "topic": "Review and approve reformatting of PACC policies",
+   "resolution": "reviewed; final draft to be approved later",
+   "quote": "review and approve reformatting of pacc policies:",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Agenda items for next meeting",
+   "resolution": "listed for next meeting",
+   "quote": "agenda items for next meeting:",
+   "tags": [
+    "agenda",
+    "webpage",
+    "bulletin board",
+    "student video"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:47pm",
+   "quote": "meeting adjourned at 7:47pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Access AN quote for Lunenburg Town Hall, 4 Camera Robotic System, dated 3/25/2015 (attached page)",
+   "where": "list",
+   "quote": "lunenburg, ma date: 3/25/2015 4 camera robotic system"
+  },
+  {
+   "name": "Coordinator's monthly budget report",
+   "where": "text",
+   "quote": "coordinator's monthly budget report:"
+  },
+  {
+   "name": "Access A/V Proposal - Town Hall",
+   "where": "text",
+   "quote": "review and approve access a/v proposal - town hall:"
+  },
+  {
+   "name": "Reformatting of PACC policies",
+   "where": "text",
+   "quote": "review and approve reformatting of pacc policies:"
+  },
+  {
+   "name": "Shrewsbury's PAC policies",
+   "where": "text",
+   "quote": "shrewsbury's pac policies were submitted to the committee for guidelines."
+  },
+  {
+   "name": "FATV mobile units information",
+   "where": "text",
+   "quote": "steve presented information on fatv mobile units."
+  },
+  {
+   "name": "Production calendar for March and April",
+   "where": "text",
+   "quote": "production calendar for march and april."
+  },
+  {
+   "name": "Promotional sheets for volunteering",
+   "where": "text",
+   "quote": "promotional sheets for volunteering."
+  }
+ ],
+ "tags": [
+  "public access tv",
+  "PACC",
+  "cable",
+  "Comcast",
+  "Town Hall control room",
+  "A/V equipment",
+  "budget report",
+  "minutes approval",
+  "mobile unit",
+  "policies",
+  "volunteers"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

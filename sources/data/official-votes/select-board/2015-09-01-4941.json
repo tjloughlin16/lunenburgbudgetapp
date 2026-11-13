@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-09-01",
  "docid": "4941",
@@ -12,12 +12,12 @@
  },
  "votes": [
   {
-   "motion": "Approve a one-day beer and wine license for 449 Corp. d/b/a Lakeview Club for September 12, with a rain date of September 13",
+   "motion": "Approve a One Day Beer and Wine license for 449 Corp. d/b/a Lakeview Club, outside 449 Whalom Road, for September 12 with a rain date of September 13.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"°: t. alonzo to approve a one day beer and wine license for 449 corp. d/b/a lakeview club, located outside of 449 whalom road for september 12, with a rain date of september 13 vote: all in favor"
+   "quote": "to approve a one day beer and wine license for 449 corp. d/b/a lakeview club, located outside of 449 whalom road for september 12, with a rain date of september 13"
   },
   {
    "motion": "Accept the recommendation of the Building Re-Use Committee and approve contracting with Tappe Architects, Inc.",
@@ -25,42 +25,371 @@
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'°: t. alonzo to accept the recommendation of the building re-use committee and approve contracting with tappe architects, inc. vote: all in favor"
+   "quote": "to accept the recommendation of the building re-use committee and approve contracting with tappe architects, inc."
   },
   {
-   "motion": "Appoint Sally Jahriss to the Lunenburg Cultural Council with a term to expire June 30, 2018",
+   "motion": "Appoint Sally Jahriss to the Lunenburg Cultural Council with a term to expire June 30, 2018.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'd: p. bertram to appoint sally jahriss to the lunenburg cultural council with a term to expire june 30, 2018 vote: all in favor"
+   "quote": "to appoint sally jahriss to the lunenburg cultural council with a term to expire june 30, 2018"
   },
   {
-   "motion": "Accept the Policies and Procedures for Health Insurance under the Federal Affordable Care Act as presented",
+   "motion": "Accept the Policies and Procedures for Health Insurance under the Federal Affordable Care Act as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2^°: t. alonzo to accept the policies and procedures for health insurance under the federal affordable care act as presented this evening vote: all in favor"
+   "quote": "to accept the policies and procedures for health insurance under the federal affordable care act as presented this evening"
   },
   {
-   "motion": "Accept the resignation of Jamie Toale from the Cable Advisory Committee",
+   "motion": "Accept the resignation of Jamie Toale from the Cable Advisory Committee.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to accept the resignation of jamie toale from the cable advisory committee 2nd: t. alonzo vote: all in favor"
+   "procedural": false,
+   "quote": "to accept the resignation of jamie toale from the cable advisory committee"
   },
   {
-   "motion": "Adjourn the meeting at 8:09 PM",
+   "motion": "Adjourn the meeting at 8:09 PM.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:09 pm 2': t. alonzo vote: all in favor"
+   "quote": "to adjourn the meeting at 8:09 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision; all votes marked \"All in Favor\" with no dissents or abstentions recorded.",
- "cost_usd": 0.1015365
+ "note": "OCR text (macOS Vision) with garbled motion ordinals (e.g., '2\"°', '2'd', '2^°') and some stray characters; seconders are read as printed. No vote is recorded on approving prior minutes or on signing the warrants; these are recorded as presented only. The Toale motion to move to Current Business #2 and the Cemetery Superintendent ratification plan are not votes. Documents list: no headed list is printed; the sentences recording the warrants and prior minutes as presented are the closest equivalent, so printed is marked true on that basis. Transfers: none recorded.",
+ "cost_usd": 0.011376620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member; paula bertram, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member; paula bertram, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member; paula bertram, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member; paula bertram, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member; paula bertram, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member; paula bertram, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Danielle Bettencourt",
+   "role": "not printed (presented the license request)",
+   "status": "present",
+   "quote": "danielle bettencourt presented to request the one-day license for an american diabetes association fundraiser"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Vice Chairman of the Building Re-use Committee",
+   "status": "present",
+   "quote": "ron albert, 69 island road, vice chairman of the building re-use committee, reported a meeting was held to"
+  },
+  {
+   "name": "Sally Jahriss",
+   "role": "not printed (Cultural Council appointment applicant)",
+   "status": "present",
+   "quote": "mr. toale asked ms. sally jahriss to come forward."
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll and Benefits Specialist",
+   "status": "present",
+   "quote": "introduced nancy forest, payroll and benefits specialist and who also serves as our insurance risk person."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board asked for a follow-up report on the Animal Control Officer situation; the Town Manager reported a proposal is being drafted with September 22 as the goal for completion.",
+   "quote": "mr. alonzo asked for a follow up report on the animal control officer situation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "One Day license applicant's delinquent real estate taxes and payment plan",
+   "what_was_recorded": "The licensee's reported $200-per-week payment plan was checked with the Treasurer/Collector, who showed a total due of $6,623.00 for 2014, 2015 and 2016 real estate taxes; the owner paid about $3,300 that week.",
+   "figures_as_printed": [
+    "$200 per week",
+    "$6,623.00",
+    "$3,300"
+   ],
+   "quote": "the licensee entered into a payment plan to pay $200 per week but upon checking with the treasurer/collector, it was noted that the total amount due was $6,623.00"
+  },
+  {
+   "topic": "Cost of Building Assessment & Space Needs Study",
+   "what_was_recorded": "The Building Re-Use Committee vice chair said the cost approved by the Capital Plan was $28,000.",
+   "figures_as_printed": [
+    "$28,000"
+   ],
+   "quote": "mr. albert stated the cost was $28,000 and"
+  },
+  {
+   "topic": "Accounts payable and school construction warrants",
+   "what_was_recorded": "Accounts Payable Warrants and a school construction warrant were presented for signatures.",
+   "figures_as_printed": [
+    "$143,508.90",
+    "$447,582.33",
+    "$4,259,078.92"
+   ],
+   "quote": "accounts payable warrants in the amount of $143,508.90 and $447,582.33 and a school construction warrant in the amount of $4,259,078.92 were presented for signatures."
+  },
+  {
+   "topic": "School one-to-one Chromebook technology fee",
+   "what_was_recorded": "The School Committee's one-to-one computing plan for grades 10-12 involves a technology fee; students keep the devices after graduating.",
+   "figures_as_printed": [
+    "$120"
+   ],
+   "quote": "there will be a $120 technology fee involved but students can take them with them after graduating"
+  },
+  {
+   "topic": "Board of Health septic system loan program",
+   "what_was_recorded": "The Board of Health's septic loan program funding is targeted for applications in the fall and use next spring; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "dave passios is the lead on the septic system loan program; their goal is to get"
+  },
+  {
+   "topic": "Special town meeting for unfinished business and budget adjustments",
+   "what_was_recorded": "The Town Manager asked the Board to consider a special town meeting date for unfinished annual town meeting business and budget adjustments; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lafleur asked the board to start thinking about a special town meeting date as there is unfinished business"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Thomas Alonzo",
+   "stated_role": "Clerk",
+   "topic": "Walk in the Woods announcement and passing of a resident",
+   "quote": "mr. alonzo announced another \"walk in the woods,\" sponsored by the conservation commission on"
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Chair",
+   "topic": "Board vacancies and Stillman Farm Country Fair booth",
+   "quote": "mr. toale announced there are still vacancies on town boards."
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Pancake breakfast and Farmer's Market reminder",
+   "quote": "ms. luck reported the pancake breakfast at eagle house is september"
+  },
+  {
+   "speaker": "Thomas Alonzo",
+   "stated_role": "Clerk",
+   "topic": "Recognition of Lions' Club and Ms. Luck",
+   "quote": "mr. alonzo wanted to recognize the lions' club for all the work they do on the food bank"
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "Vice Chair",
+   "topic": "Traffic rules, parking plan and Chestnut Street intersection",
+   "quote": "mr. ebersole asked ms. lafleur if town counsel had provided the status on the traffic rules and regulations."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Member",
+   "topic": "Chase Road update request",
+   "quote": "ms. bertram added they should get an update on chase road at some point also."
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Chair",
+   "topic": "Next meeting schedule",
+   "quote": "mr. toale announced the next meeting is september"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (announcements)",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced another \"walk in the woods,\" sponsored by the conservation commission on",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "One Day Special License for 449 Corp. d/b/a Lakeview Club",
+   "resolution": "approved one-day beer and wine license",
+   "quote": "danielle bettencourt presented to request the one-day license for an american diabetes association fundraiser",
+   "tags": [
+    "liquor license",
+    "delinquent taxes"
+   ]
+  },
+  {
+   "topic": "Recommendation from Building Reuse Committee on Building Assessment & Space Needs Study",
+   "resolution": "approved contracting with Tappe Architects, Inc.",
+   "quote": "recommendation from building reuse committee on building assessment & space needs study",
+   "tags": [
+    "building study",
+    "architect contract",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Cultural Council Appointment Request",
+   "resolution": "approved appointment of Sally Jahriss",
+   "quote": "mr. toale asked ms. sally jahriss to come forward.",
+   "tags": [
+    "appointments",
+    "cultural council"
+   ]
+  },
+  {
+   "topic": "Policies and Procedures for Health Insurance under the Federal Affordable Care Act (ACA)",
+   "resolution": "accepted policy",
+   "quote": "1) policies and procedures for health insurance under the federal affordable care act (aca)",
+   "tags": [
+    "health insurance",
+    "ACA",
+    "personnel policy"
+   ]
+  },
+  {
+   "topic": "Accounts payable warrants, prior minutes and action file",
+   "resolution": "warrants presented for signatures; minutes presented; Animal Control Officer follow-up requested",
+   "quote": "accounts payable warrants in the amount of $143,508.90 and $447,582.33 and a school construction warrant",
+   "tags": [
+    "warrants",
+    "minutes",
+    "action file",
+    "animal control"
+   ]
+  },
+  {
+   "topic": "Committee Reports and Town Manager report",
+   "resolution": "no action",
+   "quote": "town manager- ms. lafleur reported long-time cemetery superintendent greg bingham retired last month",
+   "tags": [
+    "committee reports",
+    "town manager",
+    "cemetery",
+    "parks",
+    "solar",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Resignation from Cable Advisory Committee",
+   "resolution": "accepted resignation",
+   "quote": "resignation from cable advisory committee",
+   "tags": [
+    "resignation",
+    "cable committee"
+   ]
+  },
+  {
+   "topic": "Public Comment (second session)",
+   "resolution": "no action",
+   "quote": "ms. luck reported the pancake breakfast at eagle house is september",
+   "tags": [
+    "public comment",
+    "traffic",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:09 PM",
+   "quote": "to adjourn the meeting at 8:09 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Accounts Payable Warrants ($143,508.90 and $447,582.33) and school construction warrant ($4,259,078.92)",
+   "where": "list",
+   "quote": "accounts payable warrants in the amount of $143,508.90 and $447,582.33 and a school construction warrant in the amount of $4,259,078.92 were presented for signatures."
+  },
+  {
+   "name": "Minutes of April 21, August 4, August 11, and August 18, 2015",
+   "where": "list",
+   "quote": "minutes of april 21, august 4, august 11, and august 18, 2015 were presented."
+  },
+  {
+   "name": "Memorandum on the Lakeview Club one-day license and payment plan",
+   "where": "text",
+   "quote": "the memorandum provided reports the licensee entered into a payment plan to pay $200 per week"
+  },
+  {
+   "name": "Draft policy and procedures for implementing the Affordable Care Act",
+   "where": "text",
+   "quote": "the draft policy and procedures for implementing the affordable care act"
+  },
+  {
+   "name": "Request for qualifications for Building Assessment & Space Needs Study",
+   "where": "text",
+   "quote": "responded to the committee's request for qualifications"
+  },
+  {
+   "name": "Qualifying proposals (written proposals) from architects",
+   "where": "text",
+   "quote": "review and discuss the qualifying proposals from architects who responded"
+  },
+  {
+   "name": "Building Re-Use Committee graded Score Sheet",
+   "where": "text",
+   "quote": "prepared a graded 'score sheet' for each architect firm."
+  },
+  {
+   "name": "Draft of user fees for fields and recreational facilities, composed by the DPW Director",
+   "where": "text",
+   "quote": "a presentation of a draft of user fees composed by the dpw director"
+  }
+ ],
+ "tags": [
+  "select board",
+  "2015",
+  "liquor license",
+  "building study",
+  "architect contract",
+  "cultural council",
+  "health insurance ACA",
+  "warrants",
+  "committee reports",
+  "town manager",
+  "public comment",
+  "cable committee",
+  "cemetery",
+  "solar",
+  "traffic"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "accounts payable warrants in the amount of $143,508.90 and $447,582.33"
+ },
+ "dropped_unquoted_by_field": {}
 }

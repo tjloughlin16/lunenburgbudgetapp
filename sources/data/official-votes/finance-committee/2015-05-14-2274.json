@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-05-14",
  "docid": "2274",
@@ -12,31 +12,228 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes of April 2, 2015",
-   "moved_by": "T. Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Accept the minutes of 4/2/15.",
+   "moved_by": "T.B.",
+   "seconded_by": "J.S.",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "t.b. motioned to accept the minutes of 4/2/15. j.s. seconded. no discussion. motioned moved 4-0."
   },
   {
-   "motion": "Accept minutes of April 23, 2015",
-   "moved_by": "T. Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Accept the minutes of 4/23/15.",
+   "moved_by": "T.B.",
+   "seconded_by": "J.S.",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "t.b. motioned to accept the minutes of 4/23/15. j.s. seconded. no discussion. motioned moved 4-0."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "K. Menard",
-   "seconded_by": "Jay Simeone",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "K.M.",
+   "seconded_by": "J.S.",
    "outcome": "passed",
    "procedural": true,
    "quote": "k.m. motioned to adjourn. j.s. seconded, meeting adjourned at 8:34 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; three procedural votes recorded.",
- "cost_usd": 0.09516350000000001
+ "note": "OCR text is garbled in places: the chair and vice chair titles in the header, the next-meeting date (\"rune 0; 2015\"), and some words are misread, so those readings are approximate. Two of the three votes are on minutes and one is adjournment; the adjournment vote records no count. No public comment section is printed. No documents list or exhibits are printed. Several attendees are recorded only by initials (K.S., T.B., J.S., K.M., M.E., I.B.), and I did not expand them except where the minutes give the full name.",
+ "cost_usd": 0.00479132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Erickson",
+   "role": "Chairman (per header, OCR garbled)",
+   "status": "present",
+   "quote": "m. erickson, t. burchfield, k. menard, jay simeone"
+  },
+  {
+   "name": "T. Burchfield",
+   "role": "Vice Chairman (per header, OCR garbled)",
+   "status": "present",
+   "quote": "m. erickson, t. burchfield, k. menard, jay simeone"
+  },
+  {
+   "name": "K. Menard",
+   "status": "present",
+   "quote": "m. erickson, t. burchfield, k. menard, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "m. erickson, t. burchfield, k. menard, jay simeone"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "jamie toale - bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale - bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "J. Henshaw",
+   "status": "absent",
+   "quote": "j. henshaw, c. griffis"
+  },
+  {
+   "name": "C. Griffis",
+   "status": "absent",
+   "quote": "j. henshaw, c. griffis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to ask departments over the summer to prepare a 10-year capital plan to look at long-term funding for capital planning.",
+   "quote": "capital planning - over the summer k.s. will ask departments to prepare 10 year capital plan"
+  },
+  {
+   "decision": "Street light purchase question placed on the list for a future budget opportunity; no consultant currently engaged.",
+   "quote": "will put on list for future budget opportunity."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School District one-time expenses (state aid)",
+   "what_was_recorded": "The town budgeted $116k for the School District's one-time expenses, but the state budget shows more returning to the town; the remainder would fall to free cash if not requested.",
+   "figures_as_printed": [
+    "116k"
+   ],
+   "quote": "budgeted 116k to the school district for one-time expenses but state budget has more coming back to the"
+  },
+  {
+   "topic": "Lunenburg Public Schools electricity-to-gas line shift",
+   "what_was_recorded": "The School District is moving $17k from its electricity line to its gas line because gas costs are up and electricity costs are down.",
+   "figures_as_printed": [
+    "$17k"
+   ],
+   "quote": "they are moving $17k from electricity line to gas line."
+  },
+  {
+   "topic": "Advanced ambulance service transition",
+   "what_was_recorded": "Moving to advanced ambulance service would need approximately $6700 for equipment and medicines, plus additional personnel cost.",
+   "figures_as_printed": [
+    "$6700"
+   ],
+   "quote": "approximately $6700 would be needed in equipment and medicines, and there would be additional personnel"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "School District moving $17k from its electricity line to its gas line, reported to the committee.",
+   "amount_as_printed": "$17k",
+   "outcome": "reported; no board vote recorded",
+   "quote": "they are moving $17k from electricity line to gas line."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "1. meeting called to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting recap",
+   "resolution": "no action; remaining articles to Special Town Meeting in fall 2015",
+   "quote": "lost quorum - remaining articles can be taken up at special town meeting anticipate for fall of 2015.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no action; state budget and school one-time funds reported",
+   "quote": "senate budget committee released their version of the budget.",
+   "tags": [
+    "state budget",
+    "school district",
+    "free cash",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "General OPEB discussion",
+   "resolution": "no action; discussion of health insurance regulations and enrollment",
+   "quote": "selectmen have some ability to put forth health insurance regulations",
+   "tags": [
+    "OPEB",
+    "health insurance",
+    "retirees"
+   ]
+  },
+  {
+   "topic": "Meeting minutes",
+   "resolution": "approved minutes of 4/2/15 and 4/23/15",
+   "quote": "t.b. motioned to accept the minutes of 4/2/15.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department reports",
+   "resolution": "reports received; capital plan directive noted",
+   "quote": "capital planning - over the summer k.s. will ask departments to prepare 10 year capital plan",
+   "tags": [
+    "capital planning",
+    "public safety",
+    "sewer",
+    "schools",
+    "building reuse",
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "Miscellaneous items",
+   "resolution": "discussed; street light purchase to future budget list",
+   "quote": "street lights - can we purchase to maintain ourselves?",
+   "tags": [
+    "surplus property",
+    "street lights",
+    "ambulance"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for June 2015 at Town Hall (date garbled in OCR)",
+   "quote": "next meeting - rune 0; 2015, /pm at lown hall.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:34 pm",
+   "quote": "k.m. motioned to adjourn. j.s. seconded, meeting adjourned at 8:34 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "budget",
+  "OPEB",
+  "health insurance",
+  "school district",
+  "capital planning",
+  "town meeting",
+  "ambulance",
+  "street lights",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

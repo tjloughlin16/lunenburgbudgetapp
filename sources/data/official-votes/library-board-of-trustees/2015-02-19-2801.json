@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-02-19",
  "docid": "2801",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from January 15, 2015 as amended",
+   "motion": "Approve the January 15, 2015 minutes as amended.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
@@ -20,23 +20,212 @@
    "quote": "gare made a motion to accept minutes as amended, second by dick, voted all in favor"
   },
   {
-   "motion": "Accept minutes from February 5, 2015",
+   "motion": "Approve the February 5, 2015 minutes.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
    "procedural": true,
-   "quote": "so moved by gare, second by dick, voted all in favor"
+   "quote": "jeanne requested a motion; so moved by gare, second by dick, voted all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "so moved by gare, second by harry; voted all in favor"
+   "quote": "jeanne asked for a motion to adjourn the meeting; so moved by gare, second by harry; voted all in favor @ 9:06 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08451149999999999
+ "dropped_unquoted": 1,
+ "note": "Text extraction, no scan issues; votes recorded only as 'voted all in favor' (no roll-call counts). Minutes are internally inconsistent in places: the referenced agenda is dated 'February 19, 2014' against a 2015 meeting; 'Terry Hathaway' appears in the Green Community heading where 'Teresa Hathaway' is listed elsewhere; 'Bob E'/'Bob Ebersole' is the same person as Robert Ebersole. John Londa and 'Matt' (consultant) are mentioned but not recorded as attending. The 'Teresa's last week' line implies Teresa is the outgoing director but she is listed as a trustee in attendance. The attendance line is split across a page/line break for Martha Moore, so that quote is collapsed to one space. Attendance status is taken from the 'Attending' line and 'Absent: (none)'.",
+ "cost_usd": 0.00506622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:47 p.m. by chairperson jeanne raboin."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, martha"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Trustee; Secretary",
+   "status": "present",
+   "quote": "lars widstrand, martha moore, teresa hathaway, robert ebersole (selectmen representative)"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "lars widstrand, martha moore, teresa hathaway, robert ebersole (selectmen representative)"
+  },
+  {
+   "name": "Teresa Hathaway",
+   "role": "Trustee; Director (per minutes, last week next week)",
+   "status": "present",
+   "quote": "lars widstrand, martha moore, teresa hathaway, robert ebersole (selectmen representative)"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Selectmen representative",
+   "status": "present",
+   "quote": "lars widstrand, martha moore, teresa hathaway, robert ebersole (selectmen representative)"
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "reporter, Lunenburg Ledger",
+   "status": "present",
+   "quote": "amanda koeck - reporter, lunenburg ledger"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bob Ebersole will raise the repair or replacement of the burner/boiler with the Town Manager, and the board chose not to spend more on temporary fixes (band-aids) for the heating system.",
+   "quote": "bob ebersole will talk to town manager and ask about the repair/replacement of the burner/boiler and not spend more on band-aids for the heating system."
+  },
+  {
+   "decision": "The director's evaluation will be placed on the next meeting's agenda for discussion.",
+   "quote": "jeanne asked for input on how we should proceed - will be put on next meeting's agenda for discussion."
+  },
+  {
+   "decision": "Options for the replacement strategy for the YA and Children's librarian positions are deferred to the next meeting.",
+   "quote": "we will discuss our options at the next meeting."
+  },
+  {
+   "decision": "Trustees will attend the March 5th Finance Committee presentation.",
+   "quote": "trustees will be present at the march 5th presentation;"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2015 budget: utilities and heating",
+   "what_was_recorded": "Teresa reported the remaining FY2015 electricity and other electric funds and the amount left for heating (natural gas), saying the budget is on schedule and utilities and heating are the biggest concern.",
+   "figures_as_printed": [
+    "$1500",
+    "$1500",
+    "~7k"
+   ],
+   "quote": "teresa stated that $1500 electricity and $1500 for (unitil and other electric source) remains"
+  },
+  {
+   "topic": "Building management system / HVAC controls (Green Community initiatives)",
+   "what_was_recorded": "Harry said the building management system may not deliver the expected savings; the $12k covers only HVAC with external web access and will not control building lights.",
+   "figures_as_printed": [
+    "$12k"
+   ],
+   "quote": "the $12k is only for the hvac, with external access (web control)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes (January 15 and February 5, 2015)",
+   "resolution": "approved",
+   "quote": "gare made a motion to accept minutes as amended, second by dick, voted all in favor"
+  },
+  {
+   "topic": "Director's Report: FY 2015 Budget",
+   "resolution": "no action; on schedule",
+   "quote": "on schedule with rest of budget"
+  },
+  {
+   "topic": "FY 2016 Budget / March 5, 2015 Finance Committee presentation",
+   "resolution": "discussed; trustees to attend",
+   "quote": "trustees will be present at the march 5th presentation;"
+  },
+  {
+   "topic": "Personnel",
+   "resolution": "discussed; options to next meeting",
+   "quote": "kate's last day is march 31st; karen still looking at july 3rd"
+  },
+  {
+   "topic": "Building Damage (2/17/15) update and next steps",
+   "resolution": "no action; Town Manager to be asked about boiler",
+   "quote": "lpl probably not operable for another week (kit info)."
+  },
+  {
+   "topic": "Green Community Committee initiatives",
+   "resolution": "discussed; no action",
+   "quote": "robin: discussion was held with john londa."
+  },
+  {
+   "topic": "Director's and Interim Director's Transition",
+   "resolution": "no action",
+   "quote": "martha will be coming back ~march (first week) tuesdays and thursdays ~20 hours per week"
+  },
+  {
+   "topic": "Town Caucus: open trustee positions",
+   "resolution": "no action",
+   "quote": "caucus is monday march 16."
+  },
+  {
+   "topic": "Other: director's evaluation, planning board, FinCom, next meeting",
+   "resolution": "director evaluation put on next agenda",
+   "quote": "jeanne asked for input on how we should proceed - will be put on next meeting's agenda for discussion."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:06 p.m.",
+   "quote": "jeanne asked for a motion to adjourn the meeting; so moved by gare, second by harry; voted all in favor @ 9:06 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for February 19, 2014",
+   "where": "list",
+   "quote": "lplbot agenda for february 19, 2014"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "utilities and heating",
+  "building damage",
+  "personnel",
+  "director transition",
+  "Green Community",
+  "energy savings",
+  "town caucus",
+  "trustee elections",
+  "finance committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-12-18",
  "docid": "2798",
@@ -12,31 +12,306 @@
  },
  "votes": [
   {
-   "motion": "Approval of Trustee Meeting minutes from November 20, 2014",
+   "motion": "Approve the minutes of the 11-20-14 Trustee meeting, with revisions recommended by Robin.",
    "moved_by": "Dick",
    "seconded_by": "Gare",
-   "outcome": "passed (all in favor with Susan abstaining)",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion by dick, second by gare; voted all in favor with susan abstaining (not present in november)."
   },
   {
-   "motion": "The library be closed on December 24, 2014",
+   "motion": "That the library is closed on 12-24 (change from early closing to fully closed).",
    "moved_by": "Gare",
    "seconded_by": "Dick",
-   "outcome": "passed (all in favor)",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion was made by gare, second by dick, that the library is closed on 12-24. no discussion; voted all in favor."
+   "quote": "motion was made by gare, second by dick, that the library is closed on 12-24."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jean",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dick",
    "seconded_by": "Sue",
-   "outcome": "passed (all in favor)",
+   "outcome": "passed",
    "procedural": true,
    "quote": "jean moved to adjourn the meeting; moved by dick, second by sue; voted all in favor @ 7:59 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1310345
+ "note": "Scanned-looking plain text with editorial brackets (e.g. [budget], [library]) inserted by the minutes. The adjournment line is ambiguous: 'Jean moved to adjourn' and 'moved by Dick' both appear; moved_by is recorded as Dick as printed. No vote counts beyond 'voted all in favor'. Teresa Hathaway's title is not printed in the minutes. Jamie Toale, Joanna Bilotta-Simone, Jim Breault, Jack Rodriquenz, Karen, and Martha are named but did not appear, so they are not listed as attendees.",
+ "cost_usd": 0.00642532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, robert"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, robert"
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, robert"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, robert"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, robert"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand, robert"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Selectmen Representative",
+   "status": "present",
+   "quote": "robert ebersole (selectmen representative), kerry speidel (town manager); troy daniels (visitor)"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "robert ebersole (selectmen representative), kerry speidel (town manager); troy daniels (visitor)"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Visitor",
+   "status": "present",
+   "quote": "robert ebersole (selectmen representative), kerry speidel (town manager); troy daniels (visitor)"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "absent",
+   "quote": "absent: martha moore, teresa hathaway, caroline griffis (finance committee representative)"
+  },
+  {
+   "name": "Teresa Hathaway",
+   "status": "absent",
+   "quote": "absent: martha moore, teresa hathaway, caroline griffis (finance committee representative)"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Finance Committee Representative",
+   "status": "absent",
+   "quote": "absent: martha moore, teresa hathaway, caroline griffis (finance committee representative)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The question on the budget numbers presented by Ms. Hathaway was tabled, since she was not present.",
+   "quote": "since ms. hathaway was not present, the question was tabled."
+  },
+  {
+   "decision": "Susan will contact the Green Task Force about how much of the library lighting its plan covers, and invite the Green Task Force to the January meeting.",
+   "quote": "susan will contact green task force to find out how much of the lights (in and/out) are covered by"
+  },
+  {
+   "decision": "Harry will talk to Jack Rodriquenz about repair of the furnace (igniter replacement), and possibly about what Jim Breault has for information on lights.",
+   "quote": "harry will talk to jack rodriquenz about repair of furnace - igniter replacement."
+  },
+  {
+   "decision": "Jeanne booked Jamie Toale and Joanna Bilotta-Simone to participate in the January meeting to discuss the village district by-law.",
+   "quote": "were able to book jamie toale and joanna bilotta-simone to participate in the january meeting to discuss the village district by-law."
+  },
+  {
+   "decision": "The next meeting is set for January 15, 2015 at 6:45 p.m. in the Mary Ann Sudolnik Conference Room.",
+   "quote": "january 15 2015, at 6:45 p.m. in the mary ann sudolnik conference room."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library budget target from Town Manager",
+   "what_was_recorded": "Ms. Speidel said the target library budget is somewhat higher than current-year spending, with the budget request due mid-January.",
+   "figures_as_printed": [
+    "$353,206.00",
+    "$363,849.00"
+   ],
+   "quote": "spending; current $353,206.00, projected $363,849.00."
+  },
+  {
+   "topic": "Utilities overspend and FinCom reserve fund",
+   "what_was_recorded": "Utilities are about $7k over the library budget; the Town Manager recommended the Trustees send a memo to FinCom flagging the deficit and requesting use of the FinCom reserve fund to cover it.",
+   "figures_as_printed": [
+    "$7k"
+   ],
+   "quote": "utilities are approximately $7k over [library] budget."
+  },
+  {
+   "topic": "Pending electricity increases and possible state aid cut",
+   "what_was_recorded": "Discussion covered budget pressure from pending electricity cost increases and a possible 1.5% cut of state aid to towns.",
+   "figures_as_printed": [
+    "1.5%"
+   ],
+   "quote": "discussion ensued about budget, state aid and possible 1.5% cut of state aid to towns."
+  },
+  {
+   "topic": "Possible extension of interim director's contract",
+   "what_was_recorded": "A possible extension of Teresa Hathaway's contract was discussed, with its fiscal implications; the workers' comp portion currently covers her pay. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the workman's comp portion currently covers ms. hathaway's pay."
+  },
+  {
+   "topic": "Percentage of annual budget represented by Hathaway's numbers",
+   "what_was_recorded": "Mr. Daniels asked what percentage of the annual budget the budget numbers presented by Ms. Hathaway represented; the question was tabled. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "what percentage of the annual budget the numbers represented?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jeanne Raboin",
+   "topic": "Career change and Trustee work",
+   "quote": "jeanne raboin notified the trustees that she is changing careers; the change will not affect her work"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "noted; no action",
+   "quote": "jeanne raboin notified the trustees that she is changing careers; the change will not affect her work",
+   "tags": [
+    "public comment",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Budget Q&A with Town Manager",
+   "resolution": "discussed; no vote; memo to FinCom recommended",
+   "quote": "kerry speidel, lunenburg town manager was invited for [budget] q&a session.",
+   "tags": [
+    "budget",
+    "utilities",
+    "state aid",
+    "FinCom",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Budget numbers presented by Ms. Hathaway",
+   "resolution": "tabled",
+   "quote": "since ms. hathaway was not present, the question was tabled.",
+   "tags": [
+    "budget",
+    "tabled"
+   ]
+  },
+  {
+   "topic": "Approval of 11-20-14 minutes",
+   "resolution": "approved with revisions",
+   "quote": "motion by dick, second by gare; voted all in favor with susan abstaining (not present in november).",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; discussed staffing, programming, technology and building issues",
+   "quote": "director's report: mailed in by teresa hathaway",
+   "tags": [
+    "director report",
+    "staffing",
+    "programming",
+    "building",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Holiday hours, December 24, 2014",
+   "resolution": "approved closure",
+   "quote": "motion was made by gare, second by dick, that the library is closed on 12-24.",
+   "tags": [
+    "holiday hours"
+   ]
+  },
+  {
+   "topic": "Capital planning, village district by-law and January meeting",
+   "resolution": "discussed; assignments made",
+   "quote": "capital planning: capital committee, village district by-law and january 2015 meeting.",
+   "tags": [
+    "capital planning",
+    "village district",
+    "lighting",
+    "furnace",
+    "painting"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled January 15, 2015",
+   "quote": "january 15 2015, at 6:45 p.m. in the mary ann sudolnik conference room.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:59 p.m.",
+   "quote": "jean moved to adjourn the meeting; moved by dick, second by sue; voted all in favor @ 7:59 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for December 18, 2014",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for december 18, 2014"
+  },
+  {
+   "name": "Childrens young adults staffing (separate letter)",
+   "where": "text",
+   "quote": "childrens young adults staffing (separate letter); budget numbers (spread sheet)"
+  },
+  {
+   "name": "budget numbers (spread sheet)",
+   "where": "text",
+   "quote": "childrens young adults staffing (separate letter); budget numbers (spread sheet)"
+  },
+  {
+   "name": "Budget numbers presented by Ms. Hathaway (submitted report)",
+   "where": "text",
+   "quote": "budget numbers presented by ms. hathaway (submitted report)"
+  },
+  {
+   "name": "Village District By-law",
+   "where": "text",
+   "quote": "capital planning: capital committee, village district by-law and january 2015 meeting."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "utilities",
+  "state aid",
+  "staffing",
+  "holiday hours",
+  "capital planning",
+  "building maintenance",
+  "minutes approval",
+  "trustees"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

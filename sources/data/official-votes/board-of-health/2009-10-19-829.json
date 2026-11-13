@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-10-19",
  "docid": "829",
@@ -12,31 +12,200 @@
  },
  "votes": [
   {
-   "motion": "Approve drilling and installation of a geothermic well at 32 West Acres Road with deed restriction noting well is not a source of potable water and requirement to obtain well drilling permit from Nashoba Associated Board of Health.",
+   "motion": "Approve the drilling and installation of a geothermic well at 32 West Acres Road, provided a deed restriction notes the well is not a source of potable water and a well drilling permit is obtained from Nashoba Associated Board of Health.",
    "moved_by": "Rabbit",
    "seconded_by": "Jewell",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by rabbit and second by jewell, the board voted unanimously to approve the drilling and installation of a geothermic well provided that a deed restriction be placed on the property noting that his well is not a source of potable water. in addition, a well drilling permit must be obtained from nashoba associated board of health."
+   "quote": "on motion by rabbit and second by jewell, the board voted unanimously to approve the drilling and installation of a geothermic well"
   },
   {
-   "motion": "Approve septic system variances at 91 Maple Parkway: offset to groundwater from 4 feet to 3 feet, Sieve Analysis in lieu of percolation test, and offset to wetlands from 100 feet to 53 feet.",
+   "motion": "Approve Steve Marsden's request for the 91 Maple Parkway septic replacement: offset to groundwater 4 feet to 3 feet, sieve analysis in lieu of percolation test, and offset to wetlands 100 feet to 53 feet.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbit",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, and on motion by jewell and second by rabbit, the board voted unanimously to approve the request."
+   "quote": "on motion by jewell and second by rabbit, the board voted unanimously to approve the request."
   },
   {
-   "motion": "Approve septic tank and water line placement at 43 Hemlock Terrace for Bob Proctor's septic system installation.",
+   "motion": "Approve Bob Proctor's request regarding the 43 Hemlock Terrace septic tank and water line offsets.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by rabbitt, the request was unanimously approved."
+   "quote": "on motion by jewell and second by rabbitt, the request was unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-scanned from macOS Vision, readable throughout. Three votes recorded.",
- "cost_usd": 0.0888745
+ "note": "OCR text (macOS Vision). Garbled word '›edroom' (bedroom) kept verbatim in quote. Names vary within the text: 'Rabbit'/'Rabbitt', 'Jewell'/'Jewel', and 'Mr. Goodman' (likely Dan Goodwin) - recorded as printed. The 'Minutes Approved:' heading is blank, so no minutes-approval vote is recorded. Adjournment at 7:50 pm is stated without a motion, so no procedural vote recorded. No dollar figures appear. Vote outcomes are printed as 'unanimously' with no numeric count.",
+ "cost_usd": 0.00501362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: vice chairman, george emond, members perry jewel and jack rabbitt",
+   "role": "Vice Chairman"
+  },
+  {
+   "name": "Perry Jewel",
+   "status": "present",
+   "quote": "present: vice chairman, george emond, members perry jewel and jack rabbitt",
+   "role": "Member"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: vice chairman, george emond, members perry jewel and jack rabbitt",
+   "role": "Member"
+  },
+  {
+   "name": "Susan Robbins",
+   "status": "present",
+   "quote": "owner ms. susan robbins and contractor travis moore met with the board to execute a",
+   "role": "Owner"
+  },
+  {
+   "name": "Travis Moore",
+   "status": "present",
+   "quote": "owner ms. susan robbins and contractor travis moore met with the board to execute a",
+   "role": "contractor"
+  },
+  {
+   "name": "Dan Goodwin",
+   "status": "present",
+   "quote": "mr. dan goodwin met with the board to discuss the installation of a geothermic well at",
+   "role": "not stated"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "status": "not stated",
+   "quote": "administrative assistance andrea schnepf spoke with mr. francis mcnammara of the lunenburg water district",
+   "role": "Administrative Assistance"
+  },
+  {
+   "name": "Francis McNammara",
+   "status": "not stated",
+   "quote": "administrative assistance andrea schnepf spoke with mr. francis mcnammara of the lunenburg water district",
+   "role": "of the Lunenburg Water District"
+  },
+  {
+   "name": "Steve Marsden",
+   "status": "present",
+   "quote": "steve marsden met with the board to discuss the replacement of the above septic system.",
+   "role": "not stated"
+  },
+  {
+   "name": "Bob Proctor",
+   "status": "not stated",
+   "quote": "the matter was before the board on june 1, 2009 at which time the requested variances was approved.",
+   "role": "not stated"
+  },
+  {
+   "name": "Jim Garreffi",
+   "status": "not stated",
+   "quote": "during the inspection of the installation by agent jim garreffi, it was noted that the septic tank was too close to the foundation",
+   "role": "Agent"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 40 Fire Road 12 two-bedroom deed restriction was prepared, signed and notarized; after recording, the original returns to the board of health.",
+   "quote": "administrative assistant prepared a ›edroom deed restriction for execution, which was signed and notarized"
+  },
+  {
+   "decision": "No certificate of occupancy will be issued for 40 Fire Road 12 until the deed restriction is recorded.",
+   "quote": "a certificate of occupancy will not be issued until the deed restriction is recorded."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed, no action recorded",
+   "quote": "title 5 inspection reports reviewed: 224 townsend harbor road - fail 58 hemlock drive",
+   "tags": [
+    "title 5",
+    "septic inspections"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed, no action recorded",
+   "quote": "septic permits signed: 15 chestnut street 175 pleasant street",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "40 Fire Road 12 deed restriction",
+   "resolution": "deed restriction signed and notarized",
+   "quote": "owner ms. susan robbins and contractor travis moore met with the board to execute a",
+   "tags": [
+    "deed restriction",
+    "bedroom count"
+   ]
+  },
+  {
+   "topic": "32 West Acres Road geothermic well",
+   "resolution": "approved with conditions",
+   "quote": "mr. dan goodwin met with the board to discuss the installation of a geothermic well at",
+   "tags": [
+    "geothermic well",
+    "water district"
+   ]
+  },
+  {
+   "topic": "91 Maple Parkway septic replacement (Marsden)",
+   "resolution": "variances approved",
+   "quote": "steve marsden met with the board to discuss the replacement of the above septic system.",
+   "tags": [
+    "septic variance",
+    "high water table"
+   ]
+  },
+  {
+   "topic": "43 Hemlock Terrace (Bob Proctor)",
+   "resolution": "request approved",
+   "quote": "the matter was before the board on june 1, 2009 at which time the requested variances was approved.",
+   "tags": [
+    "septic offsets",
+    "variance"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports: 224 Townsend Harbor Road (Fail), 58 Hemlock Drive, 442 Howard Street, 65 White Street, 125 Howard Street",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 224 townsend harbor road - fail 58 hemlock drive"
+  },
+  {
+   "name": "Septic permits: 15 Chestnut Street, 175 Pleasant Street",
+   "where": "list",
+   "quote": "septic permits signed: 15 chestnut street 175 pleasant street"
+  },
+  {
+   "name": "Two-bedroom deed restriction, 40 Fire Road 12",
+   "where": "text",
+   "quote": "to execute a two bedroom deed restriction. after review of the plans submitted"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "title 5",
+  "deed restriction",
+  "geothermic well",
+  "variances",
+  "septic permits"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

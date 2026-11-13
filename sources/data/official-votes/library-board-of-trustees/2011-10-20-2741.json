@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2011-10-20",
  "docid": "2741",
@@ -12,47 +12,281 @@
  },
  "votes": [
   {
-   "motion": "Approve September minutes",
-   "moved_by": "Kathy Murray",
-   "seconded_by": "John Mara",
-   "outcome": "passed unanimously",
+   "motion": "Approve the September minutes.",
+   "moved_by": "KM",
+   "seconded_by": "JM",
+   "outcome": "passed",
    "procedural": true,
    "quote": "km made motion for approval of m inutes, jm seconded; motion passed unanimously."
   },
   {
-   "motion": "Go into Executive Session for LPL Director Evaluation",
-   "moved_by": "John Mara",
-   "seconded_by": "Richard Mailloux",
-   "outcome": "unanimous",
+   "motion": "Go into Executive Session for LPL Director Evaluation.",
+   "moved_by": "JM",
+   "seconded_by": "RM",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion made by jm to go into executive session for lpl director evaluation, seconded by rm, roll call unanimous."
   },
   {
-   "motion": "Accept Director's FY11 Evaluation to be presented by 2 Trustees",
-   "moved_by": "John Mara",
-   "seconded_by": "Lisa Krowitz",
-   "outcome": "Unanimous",
+   "motion": "Accept the Director's FY11 Evaluation, to be presented by 2 Trustees.",
+   "moved_by": "JM",
+   "seconded_by": "LK",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by jm to accept director's fy11 evaluati on to be presented by 2 trustees, seconded by lk. unanimous"
+   "quote": "motion made by jm to accept director's fy11 evaluati on to be presented by 2 trustees, seconded by lk",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Give Ms. Sadkin a 3% increase for 2012 retroactive to July 1, 2011",
-   "moved_by": "John Mara",
-   "seconded_by": "Lisa Krowitz",
-   "outcome": "Unanimous",
+   "motion": "Give Ms. Sadkin a 3% increase for 2012, retroactive to July 1, 2011.",
+   "moved_by": "JM",
+   "seconded_by": "LK",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "jm makes a motion to give ms. sadkin a 3% increase for 2012 retroactive to july 1 2011, lk seconded. unanimous vote"
+   "quote": "jm makes a motion to give ms. sadkin a 3% increase for 2012 retroactive to july 1 2011"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Noelle Bodkin",
-   "seconded_by": "Kathy Murray",
-   "outcome": "Unanimous",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "NB",
+   "seconded_by": "KM",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "nb makes motion to adjourn, seconded by km. unanimo us vote."
+   "quote": "nb makes motion to adjourn, seconded by km. unanimo us vot",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor spacing artifacts preserved in quotes (e.g., \"m inutes\", \"Evaluati on\", \"Unanimo us\").",
- "cost_usd": 0.0910375
+ "note": "Text extraction has broken word spacing (e.g. 'Mai lloux', 'Evaluati on', 'Novembe r'), so names and quotes are copied as printed. Page 3 is blank. Several motions record only 'Unanimous' with no count. The lending policy and the 2012-2013 budget were deferred without a vote. Public comment was stated as none.",
+ "cost_usd": 0.00759552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, john mara, kathy murray, jeanne raboin,"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, john mara, kathy murray, jeanne raboin,"
+  },
+  {
+   "name": "Richard Mai lloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, john mara, kathy murray, jeanne raboin,"
+  },
+  {
+   "name": "John Mara",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, john mara, kathy murray, jeanne raboin,"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mai lloux, john mara, kathy murray, jeanne raboin,"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "respectfully submitted, jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "Director (inferred from 'Director's Report'; not stated as a role)",
+   "status": "present",
+   "quote": "jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jeanne raboin, amy sadkin, len smetana"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lending policy question (extending privileges to Fitchburg Public Library) tabled until the November meeting; Amy to speak with other library directors first.",
+   "quote": "trustees will table this decision until november meeting."
+  },
+  {
+   "decision": "Amy to put together a package with costs for Trustees to review at the November meeting, for her attending the National Conference for Public Librarians.",
+   "quote": "amy will put together a package with costs for trustees to review"
+  },
+  {
+   "decision": "John and Dick to send the letter to Amanda Johnson concerning use of the Great Hall for a wedding ceremony.",
+   "quote": "john and dick will get this letter out."
+  },
+  {
+   "decision": "Director and Budget subcommittee to meet on the 2012-2013 budget; Trustees to vote on it at the November meeting.",
+   "quote": "director and budget subcommittee will need to meet."
+  },
+  {
+   "decision": "Amy to post the 8 hour position in November 2011.",
+   "quote": "amy will be posting the 8 hour position in november"
+  },
+  {
+   "decision": "Amy to add prior year figures to the computer usage and people counter statistics.",
+   "quote": "amy will add prior year to computer"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library grant of free products from Leap Frog",
+   "what_was_recorded": "LPL received free products from Leap Frog and was chosen as one of 50 libraries to receive them.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "lpl received $1000 worth of free products"
+  },
+  {
+   "topic": "Friends October Book & Bake Sale",
+   "what_was_recorded": "The Friends' October Book & Bake Sale was reported as the best yet, with a total printed.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "october book & bake sale was best y et - $3,000!",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Used Wii and games purchase",
+   "what_was_recorded": "Kate bought a used Wii and several games from GameStop, funded by the Friends; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "kate purchased a used wii and several games"
+  },
+  {
+   "topic": "Preliminary budget for 2012-2013",
+   "what_was_recorded": "Preliminary overview of the 2012-2013 budget; the budget was requested by a November 30, 2012 date and a vote is needed at the November meeting. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "would like the budget to her november 30, 2012"
+  },
+  {
+   "topic": "Conference attendance costs (National Conference for Public Librarians, March 2012)",
+   "what_was_recorded": "Amy to prepare a package with costs for Trustees to review; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "amy will put together a package with costs for trustees to review"
+  },
+  {
+   "topic": "Director salary increase",
+   "what_was_recorded": "A 3% increase for 2012, retroactive to July 1, 2011, was moved and approved.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "jm makes a motion to give ms. sadkin a 3% increase for 2012 retroactive to july 1 2011"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of September minutes",
+   "resolution": "approved unanimously",
+   "quote": "km made motion for approval of m inutes, jm seconded; motion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; staff follow-ups assigned",
+   "quote": "computer use tracking to prior year is level",
+   "tags": [
+    "director report",
+    "circulation",
+    "staff",
+    "programs",
+    "technology",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Conference attendance request (Amy Sadkin, National Conference for Public Librarians)",
+   "resolution": "deferred; costs package to November meeting",
+   "quote": "amy asked trustees to consider having her attend the",
+   "tags": [
+    "professional development",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "reported",
+   "quote": "october book & bake sale was best y et - $3,000!",
+   "tags": [
+    "friends",
+    "fundraising"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Lending policy (Fitchburg Public Library)",
+   "resolution": "tabled until November meeting",
+   "quote": "trustees will table this decision until november meeting.",
+   "tags": [
+    "lending policy",
+    "interlibrary"
+   ]
+  },
+  {
+   "topic": "Preliminary overview of budget for 2012-2013",
+   "resolution": "discussed; subcommittee to meet; vote expected November",
+   "quote": "preliminary overview of budget for 2012-2013",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Other business: letter re Great Hall wedding use",
+   "resolution": "letter assigned to two trustees",
+   "quote": "john and dick will get this letter out.",
+   "tags": [
+    "facilities",
+    "letters"
+   ]
+  },
+  {
+   "topic": "Executive session: Director evaluation and personnel",
+   "resolution": "evaluation accepted; 3% increase approved",
+   "quote": "motion made by jm to go into executive session for lpl director evaluation, seconded by rm, roll call unanimous.",
+   "tags": [
+    "personnel",
+    "director evaluation",
+    "salary"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY13 Capital Plan (submitted to Planning Committee on September 30, 2011)",
+   "where": "text",
+   "quote": "amy submitted fy13 capital plan to planning committe e on september 30, 2011."
+  },
+  {
+   "name": "Director's FY11 Evaluation",
+   "where": "text",
+   "quote": "motion made by jm to accept director's fy11 evaluati on to be presented by 2 trustees, seconded by lk",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "personnel",
+  "director evaluation",
+  "lending policy",
+  "Friends of the Library",
+  "capital plan",
+  "special town meeting",
+  "programs"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

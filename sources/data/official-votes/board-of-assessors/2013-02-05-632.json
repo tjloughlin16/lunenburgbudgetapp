@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-02-05",
  "docid": "632",
@@ -12,23 +12,279 @@
  },
  "votes": [
   {
-   "motion": "to accept Harald's proposal for personal property collection and valuation services",
+   "motion": "Accept Harald's proposal for the personal property collection and valuation service and award the contract to RRG.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "chris entertained a motion to accept haralds' proposal and the board unanimously accepted and awarded the contract to rrg."
+   "quote": "chris entertained a motion to accept haralds' proposal and the board unanimously accepted and awarded the contract to rrg.",
+   "seconded_by": ""
   },
   {
-   "motion": "to meet on Tuesday, March 5th at 6 pm",
+   "motion": "Meet on Tuesday, March 5th at 6 pm.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "board voted to meet on tuesday, march 5th at 6 pm."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "board voted to meet on tuesday, march 5th at 6 pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Two explicit votes recorded. The first approves the RRG contract for personal property collection services; no mover or seconder named, outcome expressed as \"unanimously accepted.\" The second schedules the next meeting; voting procedure stated but outcome not explicitly given.",
- "cost_usd": 0.1091965
+ "note": "OCR of a scanned two-page set of minutes; some words are garbled (e.g., 'statt', 'Haralds'', 'March 1s'', 'August 318', 'MVE', '7\\\"'), and the quotes reproduce the OCR text as printed. Page 2 begins mid-sentence. The minutes record approvals of vouchers, abatements, warrants, payroll, minutes and the Chapter 61 lien as 'reviewed and approved' with no motion, mover or count, so they are recorded as decisions/topics rather than votes. The March 5 meeting-date entry is recorded as 'Board voted' with no mover, second or count. The minutes print no adjournment motion; the adjournment time (7:35 pm) is noted only as stated. No public comment section is printed. Only two motions appear, and neither names a mover or seconder.",
+ "cost_usd": 0.00569012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, matthew j."
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "matthew j. papini, sr., lou j. franco, regional assessor harald scheid and louise paquette administrative"
+  },
+  {
+   "name": "Lou J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "matthew j. papini, sr., lou j. franco, regional assessor harald scheid and louise paquette administrative"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "lou j. franco, regional assessor harald scheid and louise paquette administrative"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "regional assessor harald scheid and louise paquette administrative"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present for part of the meeting, town manager, kerry speidel."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board directed that the personal property project should be started by March 1 and completed by August 31.",
+   "quote": "the board directed that the project should be started by march 1s' to be completed by august 318."
+  },
+  {
+   "decision": "Town Manager to send formal notice and inform RRC that it will not receive the personal property contract.",
+   "quote": "kerry stated that she will send a formal notice and inform rrc that they will not receive the contract."
+  },
+  {
+   "decision": "Board asked to discuss the scope of Assessors' contract services and contact the Town Manager before the next meeting as she prepares the RFP.",
+   "quote": "she requested that the board of assessors discuss this and contact her before the next meeting as she prepares the rfp."
+  },
+  {
+   "decision": "Board approved a revised Chapter 61 Forest Land Tax Lien and Forest Management Plan for 380 West Townsend Rd, now assessed to RCL Realty Trust II; Louise Paquette to mail the lien to the Registry of Deeds for recording.",
+   "quote": "board reviewed and approved a revised forest land tax lien (chapter 61) and forest management plan"
+  },
+  {
+   "decision": "Board agreed to maintain the present policy of closing the office when needed.",
+   "quote": "the board agreed at this time to maintain the present policy of closing the office when needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Personal property collection and valuation contract",
+   "what_was_recorded": "Town voted at May 2010 Town Meeting to raise and appropriate $15,000 for mandated field audits of personal property accounts.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "the town had voted unanimously to raise and appropriate the sum of $15,000 to retain the services of a qualified firm"
+  },
+  {
+   "topic": "Personal property bid amount",
+   "what_was_recorded": "RRG's lower bid is within the amount appropriated at the May 2010 Town Meeting for the project; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the amount is within the amount appropriated at the may 2010 town meeting for this project"
+  },
+  {
+   "topic": "FY14 Assessors' Office budget",
+   "what_was_recorded": "Budget target for the Assessors' Office for FY14 is set at $122,442.",
+   "figures_as_printed": [
+    "$122,442"
+   ],
+   "quote": "the budget target for the office is set at $122,442."
+  },
+  {
+   "topic": "FY14 Assessor's Administration overage",
+   "what_was_recorded": "Total expenses came in higher than the target; the additional $18,900 covers mandated Department of Revenue periodic inspections.",
+   "figures_as_printed": [
+    "$18,900"
+   ],
+   "quote": "the additional $18,900 is to cover the mandated department of revenue periodic inspections"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals (vouchers, abatements, warrants, payroll, minutes)",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes.",
+   "tags": [
+    "routine",
+    "approvals"
+   ]
+  },
+  {
+   "topic": "Personal property RFP bids and contract award",
+   "resolution": "awarded to RRG",
+   "quote": "chris entertained a motion to accept haralds' proposal and the board unanimously accepted and awarded the contract to rrg.",
+   "tags": [
+    "procurement",
+    "personal property",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Community Software Consortium personal property software review",
+   "resolution": "reported; no action",
+   "quote": "louise informed the board that linda bradley from community software consortium (cs) will be coming in",
+   "tags": [
+    "software",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Assessors' contract RFP (expires June 2013)",
+   "resolution": "discussed; board to contact Town Manager before next meeting",
+   "quote": "kerry also addressed once again, the upcoming rfp for the assessors' contract that will expire at the end of june.",
+   "tags": [
+    "contract",
+    "RFP",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Assessors' office staffing study",
+   "resolution": "presented; no action",
+   "quote": "harald presented a 25 page study report outlining assessors' office staffing for task and assignments.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Abatement applications",
+   "resolution": "reported; no action",
+   "quote": "harald reported that a total of 21 abatement applications have been received in the office.",
+   "tags": [
+    "abatements",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "MVE commitments",
+   "resolution": "reported; full report at next meeting",
+   "quote": "louise reported that the first mve commitment for 2013 and 7\" commitment for 2012 will be processed",
+   "tags": [
+    "MVE",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Chapter 61 forest land lien, 380 West Townsend Rd",
+   "resolution": "approved; lien to Registry of Deeds",
+   "quote": "board reviewed and approved a revised forest land tax lien (chapter 61) and forest management plan",
+   "tags": [
+    "Chapter 61",
+    "forest land"
+   ]
+  },
+  {
+   "topic": "FY14 Assessors' Office budget",
+   "resolution": "reported; over target",
+   "quote": "harald reported on the assessors' office budget for fy14.",
+   "tags": [
+    "budget",
+    "FY14"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting and Aro chapter roll-back",
+   "resolution": "discussed; no action",
+   "quote": "harald reported that he prepared a chapter roll-back calculation as requested by john & judith aro",
+   "tags": [
+    "Special Town Meeting",
+    "Chapter 61",
+    "agricultural land"
+   ]
+  },
+  {
+   "topic": "Office coverage and staffing hours",
+   "resolution": "discussed; maintain present closing policy",
+   "quote": "the board agreed at this time to maintain the present policy of closing the office when needed.",
+   "tags": [
+    "staffing",
+    "office hours"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for March 5, 2013 at 6 pm",
+   "quote": "board voted to meet on tuesday, march 5th at 6 pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "25 page study report outlining Assessors' office staffing for task and assignments (presented by Harald Scheid)",
+   "where": "text",
+   "quote": "harald presented a 25 page study report outlining assessors' office staffing for task and assignments."
+  },
+  {
+   "name": "Request for proposal bids for the personal property collection and valuation service project",
+   "where": "text",
+   "quote": "kerry attended to address the request for proposal bids received for the personal property collection and"
+  },
+  {
+   "name": "RFP for the Assessors' contract expiring end of June 2013",
+   "where": "text",
+   "quote": "kerry also addressed once again, the upcoming rfp for the assessors' contract that will expire at the end of june."
+  },
+  {
+   "name": "Revised Forest Land Tax Lien (Chapter 61) and Forest Management Plan for 380 West Townsend Rd",
+   "where": "text",
+   "quote": "board reviewed and approved a revised forest land tax lien (chapter 61) and forest management plan"
+  },
+  {
+   "name": "Chapter roll-back calculation for John & Judith Aro, 400 Howard St",
+   "where": "text",
+   "quote": "harald reported that he prepared a chapter roll-back calculation as requested by john & judith aro"
+  },
+  {
+   "name": "Budget instructions and budget forms for FY14 (sent by Kerry, due January 25, 2013)",
+   "where": "text",
+   "quote": "kerry sent instructions and budget forms to be completed by january 25, 2013"
+  }
+ ],
+ "tags": [
+  "assessors",
+  "personal property",
+  "RFP",
+  "procurement",
+  "FY14 budget",
+  "abatements",
+  "staffing",
+  "Chapter 61",
+  "Special Town Meeting",
+  "software"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald presented a 25 page study report"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-12-05",
  "docid": "1636",
@@ -12,47 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Issue a negative determination on the notice of intent for replacement of an existing deck at 82 Laurel Lane",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Negative determination on the Notice of Intent filed by Greg Croteau for replacing and rebuilding a deck at 58 Laurel Lane.",
+   "moved_by": "JJ",
+   "seconded_by": "Sharon",
+   "outcome": "passed, Unanimous, 3 votes",
    "procedural": false,
    "quote": "jj/sharon negative 3 unanimous"
   },
   {
-   "motion": "Issue a negative determination on the request for determination of applicability for removal of two trees at 8 Iris Court",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Negative determination on the Request for Determination of Applicability for removal of two trees at 8 Iris Court.",
+   "moved_by": "JJ",
+   "seconded_by": "Jack",
+   "outcome": "passed, Unanimous, 3 votes",
    "procedural": false,
    "quote": "jj/jack negative 3 unanimous"
   },
   {
-   "motion": "Close the notice of intent and approve the pool, fence, retaining wall, and landscaping project at 155 Island Road",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved unanimously",
+   "motion": "Close the public hearing and approve the Notice of Intent filed by David V/Betty A MacDonald for 155 Island Road (pool, fence, retaining wall, tree removal and plantings).",
+   "moved_by": "JJ",
+   "seconded_by": "Jack",
+   "outcome": "passed, Unanimous",
    "procedural": false,
    "quote": "jj/jack closed and approved unanimous"
   },
   {
-   "motion": "Issue a negative determination for the storage shed replacement project at 56 Brookview Terrace",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Negative determination on the continuation at 56 Brookview Terrace to replace a plastic shed with a 10 x 20 storage shed outside the 30' No Touch Zone.",
+   "moved_by": "Sharon",
+   "seconded_by": "Jack",
+   "outcome": "passed, Unanimous, 3 votes",
    "procedural": false,
    "quote": "sharon/jack negative 3 unanimous"
   },
   {
-   "motion": "Approve minutes from prior meetings held on 8/15, 9/5, 9/19, 10/3, 10/17, and 11/7",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 8/15, 9/5, 9/19, 10/3, 10/17 and 11/7 (printed as 8/15, 9/5, 19, 10/3, 17, 11/7).",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approved ~ 8/15, 9/5, 19, 10/3, 17, 11/7"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction. Names of voters (JJ, Jack, Sharon) appear in vote notations but explicit moved_by/seconded_by roles are not stated. Dates in minute approval list use abbreviated notation (19, 17) that likely represent 9/19 and 10/17.",
- "cost_usd": 0.1281995
+ "note": "Scanned OCR text with errors (e.g. 'Isiand', 'tiled', 'ch 131' lines). Vote lines are bare ballot entries ('JJ/Sharon Negative 3 Unanimous') with no 'moved to' wording, so motions are paraphrased from the agenda item and outcomes are as printed. Header names are not labelled present or absent, so their status is 'not stated'. The minutes mention a date of 12/8 and a filing stamp of SEP 1 6 2013, both after the meeting date of 12/5/2012. The text ends after the forestry item with no adjournment vote recorded.",
+ "cost_usd": 0.0063116199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "not stated",
+   "quote": "rob verge, ju cote, jack byrne, sharon jordan, mark murphy"
+  },
+  {
+   "name": "JU Cote",
+   "status": "not stated",
+   "quote": "rob verge, ju cote, jack byrne, sharon jordan, mark murphy"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "not stated",
+   "quote": "rob verge, ju cote, jack byrne, sharon jordan, mark murphy"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "not stated",
+   "quote": "rob verge, ju cote, jack byrne, sharon jordan, mark murphy"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "not stated",
+   "quote": "rob verge, ju cote, jack byrne, sharon jordan, mark murphy"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "matt marro, jan carrie:"
+  },
+  {
+   "name": "Jan Carrie",
+   "status": "not stated",
+   "quote": "matt marro, jan carrie:"
+  },
+  {
+   "name": "Greg Croteau",
+   "role": "applicant (Notice of Intent, 58 Laurel Lane)",
+   "status": "not stated",
+   "quote": "notice of intent filed by greg croteau"
+  },
+  {
+   "name": "Ed Weksner",
+   "role": "applicant, represented himself",
+   "status": "present",
+   "quote": "ed weksner represented himself."
+  },
+  {
+   "name": "Edward P/Diane P Weksner",
+   "role": "applicants (Request for Determination of Applicability, 8 Iris Court)",
+   "status": "not stated",
+   "quote": "request for determination of applicability tiled by edward p/diane p"
+  },
+  {
+   "name": "David V/Betty A MacDonald",
+   "role": "applicants (Notice of Intent, 155 Island Road)",
+   "status": "present",
+   "quote": "the macdonald's and gary shepherd from david ross presented."
+  },
+  {
+   "name": "Betty MacDonald",
+   "role": "applicant",
+   "status": "present",
+   "quote": "betty outlined the rain garden and how it will catch runoff from the pool"
+  },
+  {
+   "name": "Gary Shepherd",
+   "role": "from David Ross",
+   "status": "present",
+   "quote": "the macdonald's and gary shepherd from david ross presented."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "HH Lake Association",
+   "status": "present",
+   "quote": "tom bertram came in from the hh lake association and spoke of"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission noted that a consultant forester is needed and that any cutting in the forestry program is to be on a contingency basis only.",
+   "quote": "forestry program discussed. need to get a consultant forester. make sure that cutting is on a contingency basis only."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hickory Hills rain garden grant",
+   "what_was_recorded": "The Hickory Hills Lake Association is pursuing grants for a rain garden near Mulpus; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the association is also pursuing grants for a rain garden near mulpus to handle the storm water from that area."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "7:15 PM public hearing, 58 Laurel Lane, Greg Croteau deck Notice of Intent",
+   "resolution": "negative determination, unanimous",
+   "quote": "7:15 pm ~ 58 laurel lane ~ pursuant to mgl ch 131, s 40 as amended",
+   "tags": [
+    "notice of intent",
+    "deck",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "7:30 PM public hearing, 8 Iris Court, Weksner tree removal",
+   "resolution": "negative determination, unanimous",
+   "quote": "7:30 pm ~ 8 iris court ~ pursuant to mgl ch 131, s 40 as amended",
+   "tags": [
+    "determination of applicability",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "7:45 PM public hearing, 155 Island Road, MacDonald pool Notice of Intent",
+   "resolution": "hearing closed, approved, unanimous",
+   "quote": "7:45 pm ~ 155 isiand road ~ pursuant to mgl ch 131, s 40 as amended",
+   "tags": [
+    "notice of intent",
+    "pool",
+    "retaining wall",
+    "rain garden"
+   ]
+  },
+  {
+   "topic": "8:00 PM continuation, 56 Brookview Terrace, storage shed",
+   "resolution": "negative determination, unanimous",
+   "quote": "8:00 pm ~ 56 brookview terrace ~ continuation ~ originally scheduled for 9/5, over ruled by enforcement order.",
+   "tags": [
+    "enforcement order",
+    "shed",
+    "no touch zone"
+   ]
+  },
+  {
+   "topic": "8:15 PM Hickory Hills Lake Association lake management update",
+   "resolution": "no action (update)",
+   "quote": "8:15 pm ~ hickory hills lake association ~ update",
+   "tags": [
+    "lake management",
+    "coir logs",
+    "beaver dam",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "minutes approved ~ 8/15, 9/5, 19, 10/3, 17, 11/7",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Forestry program",
+   "resolution": "discussed; no action recorded",
+   "quote": "forestry program discussed. need to get a consultant forester.",
+   "tags": [
+    "forestry",
+    "consultant forester"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent filed by Greg Croteau (58 Laurel Lane deck)",
+   "where": "text",
+   "quote": "on a notice of intent filed by greg croteau. the proposed project is for the"
+  },
+  {
+   "name": "Photos of the deck (examined at hearing)",
+   "where": "text",
+   "quote": "rob asked the age of the deck and photos were examined."
+  },
+  {
+   "name": "Request for Determination of Applicability tiled by Edward P/Diane P Weksner (8 Iris Court)",
+   "where": "text",
+   "quote": "request for determination of applicability tiled by edward p/diane p"
+  },
+  {
+   "name": "Notice of Intent filed by David V/Betty A MacDonald (155 Island Road)",
+   "where": "text",
+   "quote": "notice of intent filed by david v/betty a macdonald. the proposed project"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearing",
+  "notice of intent",
+  "determination of applicability",
+  "tree removal",
+  "lake management",
+  "forestry",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

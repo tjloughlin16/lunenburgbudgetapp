@@ -1,0 +1,677 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-04-22",
+ "video_id": "-cXmAu9jtDk",
+ "video_url": "https://www.youtube.com/watch?v=-cXmAu9jtDk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-04-22--cXmAu9jtDk.json",
+  "sha256": "8c2a7e9acf4efb1a5165ff3c78c60b869f9becbacf3898823cf572088330b077",
+  "caption_lines": 340,
+  "segments": 2887
+ },
+ "recording": {
+  "duration_s": 7258,
+  "duration": "2:00",
+  "spoken_chars": 94571,
+  "words_approx": 15761
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04222014-4884",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-04-22-agenda-4884.txt",
+   "path": "sources/meetings/select-board/2014-04-22-agenda-4884.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04222014-4884",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-04-22-minutes-4884.txt",
+   "path": "sources/meetings/select-board/2014-04-22-minutes-4884.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:36:12Z",
+  "cost_usd": 0.3327053
+ },
+ "minutes": {
+  "headline": "Selectmen recommended the marijuana dispensary bylaw, right-to-farm bylaw and FY14 budget amendments for Town Meeting.",
+  "summary": "The Select Board reviewed warrant articles ahead of Town Meeting, hearing the planning board on the medical marijuana bylaw and the agricultural commission on right to farm. It recommended the FY14 budget amendments, discussed the land use director reorganization pending Town Counsel and a public hearing, abated an ambulance bill, backed the mosquito control assessment, and reviewed third quarter financials.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Ebersole",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Matthews",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Joanna ballotta Simeone",
+    "role": "presenter, planning board chair"
+   },
+   {
+    "name_as_heard": "Doug McMillan",
+    "role": "presenter, agricultural commission"
+   },
+   {
+    "name_as_heard": "Jeffrey Mendoza",
+    "role": "presenter, agricultural commission"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 361,
+    "topic": "Police Department drug give-back day this Saturday, 10 to 2.",
+    "stated_role": "resident"
+   }
+  ],
+  "tags": [
+   "budget",
+   "free-cash",
+   "legal",
+   "monty-tech",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 2062,
+    "motion": "Support Article 27, registered marijuana dispensaries, recommend approval",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3022,
+    "motion": "Recommend Town Meeting approval of the right to farm bylaw (Article 28)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3353,
+    "motion": "Recommend approval of Article 9, FY14 budget amendments",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4950,
+    "motion": "Abate the ambulance bills as documented",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5268,
+    "motion": "Appoint the Board of Health chair as designee to support the mosquito control assessment",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7231,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3086,
+    "topic": "Article 9 FY14 budget amendments",
+    "what_was_said": "Surpluses from several lines move to cover deficits in legal, lockup, injury leave, fire, snow removal and veterans benefits, plus a free cash appropriation.",
+    "figures_as_heard": [
+     "229 thousand dollars",
+     "154 563 dollars",
+     "five thousand two hundred and thirty dollars"
+    ]
+   },
+   {
+    "t": 3208,
+    "topic": "Prior year unpaid bill, Article 8",
+    "what_was_said": "A police injured-on-duty medical bill came to light and will be handled next week.",
+    "figures_as_heard": [
+     "570 dollars"
+    ]
+   },
+   {
+    "t": 4649,
+    "topic": "Ambulance bill abatement",
+    "what_was_said": "Abatement requested for an account with six transports, income documented.",
+    "figures_as_heard": [
+     "3947.10"
+    ]
+   },
+   {
+    "t": 5057,
+    "topic": "Mosquito control FY15 assessment",
+    "what_was_said": "Assessment rose slightly from last year and is in the manager's budget.",
+    "figures_as_heard": [
+     "62 000. 374 dollars",
+     "sixty thousand nine hundred and eighty five dollars"
+    ]
+   },
+   {
+    "t": 5412,
+    "topic": "Q3 financials",
+    "what_was_said": "Revenues and expenditures are on track at the 75 percent mark; incentive payment and FEMA reimbursement noted.",
+    "figures_as_heard": [
+     "76.44",
+     "73 percent",
+     "forty eight thousand dollar"
+    ]
+   },
+   {
+    "t": 6621,
+    "topic": "Monty Tech FY15 assessment revision",
+    "what_was_said": "Revised assessment is lower than budgeted, and the manager recommends reappropriating the savings to the schools.",
+    "figures_as_heard": [
+     "seventeen thousand nine hundred and eighty eight dollars"
+    ]
+   },
+   {
+    "t": 5726,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable and payroll warrants read.",
+    "figures_as_heard": [
+     "two hundred two thousand eight hundred thirty dollars and three cents",
+     "621 863.92"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3188,
+    "description": "Unexpended appropriations from two school planning articles moved to cover deficits",
+    "amount_as_heard": "fifteen hundred dollars and two thousand four hundred and thirty nine dollars",
+    "outcome": "discussed only, Article 9 recommended"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4628,
+    "decision": "Public hearing on the land use reorganization set for next Tuesday; manager to revise the document to add Sewer Commission and DPW coordination."
+   },
+   {
+    "t": 7104,
+    "decision": "Board will send thank-you letters to both resigning committee members."
+   },
+   {
+    "t": 2419,
+    "decision": "Agricultural commission will show the moderator the four wording corrections before Town Meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 403,
+    "topic": "Announcements and public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 403,
+    "t_end": 2082,
+    "topic": "Article 27 medical marijuana zoning bylaw",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 2082,
+    "t_end": 3043,
+    "topic": "Article 28 right to farm bylaw",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 3065,
+    "t_end": 3480,
+    "topic": "Article 9 FY14 budget amendments",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "transfers",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 3524,
+    "t_end": 4628,
+    "topic": "Article 19 administrative reorganization, land use director",
+    "resolution": "referred to public hearing",
+    "tags": [
+     "personnel",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 4649,
+    "t_end": 5016,
+    "topic": "Ambulance bill abatement",
+    "resolution": "voted",
+    "tags": [
+     "fees",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 5016,
+    "t_end": 5328,
+    "topic": "Mosquito control assessment",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5328,
+    "t_end": 5726,
+    "topic": "Q3 financials",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5726,
+    "t_end": 5909,
+    "topic": "Warrants and open meeting law",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5909,
+    "t_end": 6621,
+    "topic": "Committee reports and TIP",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "school-choice"
+    ]
+   },
+   {
+    "t_start": 6621,
+    "t_end": 7254,
+    "topic": "Manager report, resignations, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "monty-tech",
+     "personnel"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Captions for the ambulance bill review stretch (about 4738-4950) are largely missing.",
+   "The vote on warrants is not in the captions."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 4522,
+    "kind": "condition",
+    "about": "A member would support the reorganization only if needed and would await Town Counsel.",
+    "who": "a member",
+    "words_as_heard": "I would await um Town council's opinion but I would say in the event that it is required I would make a motion"
+   },
+   {
+    "t": 3810,
+    "kind": "condition",
+    "about": "Member wants DPW and Sewer Commission added to coordination language.",
+    "who": "a member",
+    "words_as_heard": "adding the Sewer Commission there and also I would like to see at least from a coordination level the DPW"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 444,
+    "name_as_heard": "printouts of the bylaw draft",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "we have printouts here of what was sent",
+    "shown": true
+   },
+   {
+    "t": 3065,
+    "name_as_heard": "updated spreadsheet of FY14 budget amendments",
+    "kind": "spreadsheet",
+    "words_as_heard": "I have provided you with a an updated spreadsheet",
+    "shown": true
+   },
+   {
+    "t": 3524,
+    "name_as_heard": "administrative organizational plan",
+    "kind": "memo",
+    "words_as_heard": "a draft document which was the detail of the administrative organizational plan",
+    "shown": true
+   },
+   {
+    "t": 5370,
+    "name_as_heard": "town accountant Q3 financial report",
+    "kind": "report",
+    "words_as_heard": "a copy of the report that the town accountant put together",
+    "shown": true
+   },
+   {
+    "t": 6707,
+    "name_as_heard": "letter from Tennessee gas pipeline",
+    "kind": "letter or email",
+    "words_as_heard": "a letter that we received from Tennessee gas pipeline",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to recommend Town Meeting approval of the registered marijuana dispensary zoning bylaw, Article 27.",
+    "t": 2062
+   },
+   {
+    "line": "The Board voted to recommend the right to farm bylaw, Article 28, after the agricultural commission said it would show the moderator four wording corrections.",
+    "t": 3022
+   },
+   {
+    "line": "The Board voted to recommend Article 9, FY14 budget amendments that move surpluses from some lines to cover deficits in others, plus a free cash appropriation.",
+    "t": 3353
+   },
+   {
+    "line": "The land use director reorganization went to a public hearing set for next Tuesday, with the manager to add Sewer Commission and DPW coordination.",
+    "t": 4628
+   },
+   {
+    "line": "The Board abated an ambulance bill as documented and backed the mosquito control assessment by naming the Board of Health chair as designee.",
+    "t": 4950
+   }
+  ],
+  "why_it_matters": [
+   "Articles 27, 28 and 9 will come before residents at Town Meeting, where the Board's recommendations are on record but the votes are residents' to take.",
+   "The Article 9 transfers and the unpaid prior-year police medical bill show how year-end deficits are covered from other lines and free cash, which are town funds drawn mostly from taxes.",
+   "The land use reorganization would change how zoning, building and related permitting staff are organized, so the coming hearing is the place to comment."
+  ],
+  "watch_next": [
+   "Public hearing on the land use reorganization, set for next Tuesday.",
+   "The Monty Tech FY15 revised assessment and the manager's recommendation to reappropriate the savings to the schools, and the police injured-on-duty bill, due back next week."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:36:19Z",
+   "cost_usd": 0.0251151
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04222014-4884",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-04-22-minutes-4884.txt",
+   "path": "sources/meetings/select-board/2014-04-22-minutes-4884.pdf"
+  },
+  "official_sha256": "f8d1bb4f9a7522aba01fb797996b6d47ff985e412c78a372ae6227c1e1370134",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the main votes (Articles 27, 28, 9, the ambulance abatement and the mosquito control designee) and on most figures, apart from caption-garbled numbers and names. The main differences are the public hearing item (ours says a land use reorganization hearing next Tuesday; the official says Article 19 on 4/29/2014), the Article 9 \"229 thousand\" figure that the official minutes do not give, and the many official items our minutes do not cover.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 4,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Article 27 registered marijuana dispensaries",
+    "ours": "Support Article 27, registered marijuana dispensaries, recommend approval — passed",
+    "official": "ms. bertram moved for the bos to recommend approval of warrant article 27, registered marijuana dispensaries, at annual town meeting. mr. matthews seconded. on vote, motion carried, 5 in favor",
+    "note": "Both record a passed recommendation of approval.",
+    "t": 2062
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 28 right to farm bylaw",
+    "ours": "Recommend Town Meeting approval of the right to farm bylaw (Article 28) — passed",
+    "official": "mr. ebersole moved for the bos to recommend approval at annual town meeting, on warrant article 28, right to farm bylaw as revised. ms. bertram seconded. on vote, motion carried, 5 in favor",
+    "note": "Same vote, same outcome.",
+    "t": 3022
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 9 FY14 budget amendments",
+    "ours": "Recommend approval of Article 9, FY14 budget amendments — passed",
+    "official": "mr. matthews moved for the bos to recommend approval at annual town meeting, on warrant article 9, fy14 budget amendments. ms. bertram seconded.",
+    "note": "Same recommendation; the quoted official text does not show the vote count but the structured record says passed 5-0.",
+    "t": 3353
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: abate ambulance bills",
+    "ours": "Abate the ambulance bills as documented — passed",
+    "official": "ms. bertram moved to abate the ambulance bills as noted in the documentation amounting to $3947.10. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+    "note": "Same vote and outcome.",
+    "t": 4950
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: mosquito control designee",
+    "ours": "Appoint the Board of Health chair as designee to support the mosquito control assessment — passed",
+    "official": "ms. bertram moved to support the budget and to appoint the chairperson of the lunenburg board of health as the designee for the mosquito control funding.",
+    "note": "Same motion; the official quote shows no tally, so check the minutes for the recorded vote.",
+    "t": 5268
+   },
+   {
+    "kind": "agree",
+    "about": "Ambulance abatement amount",
+    "ours": "Ambulance bill abatement: 3947.10",
+    "official": "ms. speidel presented the board a request for abatement on ambulance bill #whitb in the amount of $3947.10.",
+    "note": "Same figure.",
+    "t": 4649
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer of school planning unexpended appropriations",
+    "ours": "Unexpended appropriations from two school planning articles moved to cover deficits — fifteen hundred dollars and two thousand four hundred and thirty nine dollars (discussed only, Article 9 recommended)",
+    "official": "transferring of unexpended appropriations from two articles relating to school planning expenses in the amount of $1500& $2439",
+    "note": "Same amounts, proposed only under Article 9 and not voted separately.",
+    "t": 3188
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article 9 free cash supplemental appropriation",
+    "ours": "154 563 dollars",
+    "official": "they will be seeking a supplemental appropriation of free cash in the amount of $154,563",
+    "note": "Same figure, with the digit grouping lost in the captions.",
+    "t": 3086,
+    "official_reading": "$154,563"
+   },
+   {
+    "kind": "agree",
+    "about": "Free cash balance after Article 9",
+    "ours": "five thousand two hundred and thirty dollars",
+    "official": "balance of free cash remaining is $5230",
+    "note": "Same figure.",
+    "t": 3086
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Article 9 figure of 229 thousand dollars",
+    "ours": "229 thousand dollars",
+    "official": "",
+    "note": "The official minutes do not print a 229 thousand figure for Article 9, so check the recording for what it refers to.",
+    "t": 3086
+   },
+   {
+    "kind": "agree",
+    "about": "Police OD in duty medical bill, Article 8",
+    "ours": "Prior year unpaid bill, Article 8: 570 dollars",
+    "official": "od in duty medical bill of $570 which was received last week",
+    "note": "Same amount.",
+    "t": 3208
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mosquito control FY15 assessment",
+    "ours": "62 000. 374 dollars",
+    "official": "lunenburg's assessment portion for fy2015 is $62,374 and is included in the town manager's budget recommendation.",
+    "note": "The captions garbled $62,374.",
+    "t": 5057,
+    "official_reading": "$62,374"
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Mosquito control sixty thousand nine hundred and eighty five dollars",
+    "ours": "sixty thousand nine hundred and eighty five dollars",
+    "official": "",
+    "note": "The official minutes do not print a $60,985 figure, so check whether it was a prior-year figure or a mishearing.",
+    "t": 5057
+   },
+   {
+    "kind": "agree",
+    "about": "Monty Tech FY15 assessment revision",
+    "ours": "Monty Tech FY15 assessment revision: seventeen thousand nine hundred and eighty eight dollars",
+    "official": "a revised fy2015 assessment letter was received from monty tech and it is approximately $17,988 less than what is projected in the budget.",
+    "note": "Same figure.",
+    "t": 6621
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants total",
+    "ours": "621 863.92",
+    "official": "4/22/2014 4/23/2014 w#55-14 w#56-14 $202,830.03 $257,811.69 $621,863.92",
+    "note": "Two of the three warrant totals match. The official minutes also list $257,811.69, which ours does not.",
+    "t": 5726
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Q3 financials figures and the $99k zoning incentive",
+    "ours": "Q3 financials: 76.44, 73 percent, forty eight thousand dollar",
+    "official": "mr. matthews suggested that in regards to local receipts he would like to see the $99k received from the zoning incentive",
+    "note": "The official minutes give a $99k zoning incentive item and none of our Q3 figures. Check the recording to see what the 76.44, 73 percent and 48 thousand refer to.",
+    "t": 5412
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Public hearing set",
+    "ours": "Public hearing on the land use reorganization set for next Tuesday; manager to revise the document to add Sewer Commission and DPW coordination.",
+    "official": "a public hearing concerning this article has been set for 4/29/2014.",
+    "note": "The official minutes tie the hearing to Article 19 and the administrative organization plan, and say the BOS will review one paragraph for a possible language change. Ours describes a revision adding Sewer Commission and DPW coordination. Check the recording.",
+    "t": 4628
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Thank-you letters to resigning members",
+    "ours": "Board will send thank-you letters to both resigning committee members.",
+    "official": "the board agreed to send letters to mr. lattanzi and mr. levine thanking them for their service to the town.",
+    "note": "Substantively the same, but ours does not name the two people and the official minutes also say the BOS will accept the resignations with no vote. Check whether any vote was taken on accepting them.",
+    "t": 7104
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Agricultural commission and the moderator",
+    "ours": "Agricultural commission will show the moderator the four wording corrections before Town Meeting.",
+    "official": "agricultural commission should discuss changes with the moderator before annual town meeting",
+    "note": "Ours says four wording corrections will be shown; the official minutes say the changes will be discussed, and add a BOS request for clarification on lot vs. parcel wording. Check the recording for the number of corrections.",
+    "t": 2419
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Joanna Bilotta Simeone",
+    "ours": "Joanna ballotta Simeone (presenter, planning board chair)",
+    "official": "joanna bilotta simeone, chairperson of the lunenburg planning board reviewed",
+    "note": "The captions misheard the surname.",
+    "official_reading": "Joanna Bilotta Simeone"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Doug MacMillan",
+    "ours": "Doug McMillan (presenter, agricultural commission)",
+    "official": "doug macmillan & jeffrey mendoza representing the agricultural commission came before the",
+    "note": "Spelling difference only.",
+    "official_reading": "Doug MacMillan"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Jeffrey Mendoza",
+    "ours": "Jeffrey Mendoza (presenter, agricultural commission)",
+    "official": "doug macmillan & jeffrey mendoza representing the agricultural commission came before the",
+    "note": "Same name and role."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board members present",
+    "ours": "Mrs Bertram (member); Mr Ebersole (member); Mr Matthews (member); town manager (town manager)",
+    "official": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel.",
+    "note": "Our list omits Jamie Toale, and does not name the town manager (Kerry Speidel) or show Bertram as chair. The official minutes record five members voting (5-0); check whether Toale was present.",
+    "t": 2062
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Transfers from budget lines to cover deficits",
+    "ours": "",
+    "official": "transfers will be made from interest/temporary loans; liability insurance; workers compensation; health insurance",
+    "note": "The official minutes list the source budget lines for the Article 9 transfers. Ours mentions only the school planning transfer."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MPO Rt. 12 Sterling intersection cost",
+    "ours": "",
+    "official": "the cost for these improvements have gone from $1.3m to in excess of $6.1m",
+    "note": "Our minutes have no discussion of the MPO Rt. 12 intersection cost or the follow-up by Ms. Bertram."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meals tax certificate fee",
+    "ours": "",
+    "official": "there is a provision, which is a $25 fee, to have the applicants receive a certificate of good standing from the department of revenue.",
+    "note": "Our minutes have no $25 fee."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tennessee Gas public meeting",
+    "ours": "",
+    "official": "will schedule a public meeting with a representative from tennessee gas to discuss the proposed gas pipeline project within in the next 3 months",
+    "note": "Our minutes do not record this commitment."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Goals discussion and Article 8 bill on 4/29 agenda",
+    "ours": "",
+    "official": "board of selectmen goals & town manager goals will be discussed at the 4/29/2014 bos meeting",
+    "note": "Our minutes do not record the 4/29 agenda items."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:38:35Z",
+   "cost_usd": 0.07385710000000001
+  }
+ }
+}

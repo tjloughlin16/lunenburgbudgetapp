@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2012-09-27",
  "docid": "5418",
@@ -12,31 +12,310 @@
  },
  "votes": [
   {
-   "motion": "Accept the Lancaster Ave. extension plan contingent upon incorporation of modifications from Weston & Sampson and upon final resolution to the extension policy",
+   "motion": "Accept the Lancaster Ave. extension plan, contingent on incorporating Weston & Sampson's modifications and on final resolution of the extension policy.",
    "moved_by": "Dave",
    "seconded_by": "Butch",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "dave made the motion to accept the plan contingent upon incorporation of modifications from weston & sampson and upon final resolution to the policy. butch seconded. all in favor? vote was by roll call due to remote participation policy: carl-aye, dave-aye, butch-aye, jay-aye. vote unanimous to move forward."
+   "quote": "dave made the motion to accept the plan contingent upon incorporation of modifications from weston & sampson and upon final resolution to the policy."
   },
   {
-   "motion": "Deny credit for WMHP Unit 17",
+   "motion": "Deny the request for a credit on Unit 17 (WMHP), because the meter error was not the Commission's mistake.",
    "moved_by": "Dave",
    "seconded_by": "Butch",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dave made the motion, butch seconded, vote taken was unanimous - no credit."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "butch made the motion to adjourn, dave seconded, vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. Carl participated remotely and signed off at 9:06 PM, before the credit request and adjourn votes.",
- "cost_usd": 0.1159725
+ "note": "OCR text (macOS Vision) of a 3-page minutes set. Page 1 begins mid-sentence and the attendance list is not printed, so attendance is taken from the discussion. Jay's title is not printed. \"Pat\" and \"Pat Cotton\" may or may not be the same person; both are listed as printed. \"John R\" is presumed to be John Reynolds. The consent-agenda section is run together and parts are garbled, so some topics are summarized. Votes: the Lancaster plan motion was a roll call of four ayes, recorded as unanimous; the outcome is \"passed\" because no count is printed beyond that. Jim Carnivale and Bob Ebersole are named but not recorded as attending. The minutes' signature block is unnamed (\"Business Manager for the Sewer commission\").",
+ "cost_usd": 0.00824962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jay",
+   "role": "not stated (presides; minutes do not print a title)",
+   "status": "present",
+   "quote": "jay announced that carl luck is participating remotely as he is out of the country on business."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commissioner (participating remotely)",
+   "status": "remote",
+   "quote": "jay announced that carl luck is participating remotely as he is out of the country on business."
+  },
+  {
+   "name": "Dave",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "carl-aye, dave-aye, butch-aye, jay-aye."
+  },
+  {
+   "name": "Butch",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "carl-aye, dave-aye, butch-aye, jay-aye."
+  },
+  {
+   "name": "Pat",
+   "role": "not stated (gave the peer review of the Lancaster Ave. extension)",
+   "status": "present",
+   "quote": "pat went over the peer review, stating that the 2\" pipe proposed for the 6-10 homes is fine"
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "not stated",
+   "status": "present",
+   "quote": "pat cotton noted that with the floor stripper compounds used"
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack stated he was the one that had requested this type at that point in the line."
+  },
+  {
+   "name": "Jamie",
+   "role": "not stated (appeared for the Lancaster Ave. applicants)",
+   "status": "present",
+   "quote": "jamie stated that lateral/stubs will be installed."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated (staff; summarized billing and the extension policy)",
+   "status": "present",
+   "quote": "barb confirmed that the 50% rule is in the extension policy."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "not stated (also shown as \"John R\")",
+   "status": "present",
+   "quote": "john reynolds said that mcclure mentioned that extending the line to 50%"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will go through the notes from the extension policy discussion and send them to counsel for review.",
+   "quote": "barb will go through the notes and put them forward to counsel for review."
+  },
+  {
+   "decision": "Pat will check with the DEP contact on whether the 1000' limit has any flexibility for a 100' to 150' extension without the DEP process.",
+   "quote": "but he will check with their dep contact."
+  },
+  {
+   "decision": "Pat will check with Steve on the automatic release valve and the PVC swing check valve questions.",
+   "quote": "pat will check with steve."
+  },
+  {
+   "decision": "The Commission will proceed with the covenant for the extension after the extension policy is firm, with counsel involved, and before construction begins.",
+   "quote": "we should proceed with the covenant after our policy is firm."
+  },
+  {
+   "decision": "Barb will give a copy of the executed Weston & Sampson FY13 agreement to Pat after the meeting.",
+   "quote": "barb will give a copy of the executed agreement to pat after the meeting."
+  },
+  {
+   "decision": "Barb will advise John Londa on the floor stripping compound issue (contains ether, a restricted chemical).",
+   "quote": "barb will advise john londa that in weston &"
+  },
+  {
+   "decision": "Building access fee policy moves forward as written, with three levels of letters sent before any fee is imposed; incorporated into the regulations.",
+   "quote": "we'll move forward as it is and have incorporated into the regulations."
+  },
+  {
+   "decision": "The Sewer Commissioners agreed to recommend to the Selectmen's office that Fitchburg's input be used for the legal review of the documents; Barb will share this with Kerry.",
+   "quote": "the sewer commissioners agreed that we will recommend to the selectmen's office that we want fitchburg input's to do our legal review."
+  },
+  {
+   "decision": "Barb to put together something for Bob Ebersole for the Commissioners to chip in on at the next meeting.",
+   "quote": "dave asked that barb put something together and they can all chip in next meeting."
+  },
+  {
+   "decision": "Capital planning placed on the agenda for 10/10.",
+   "quote": "capital planning will be on the agenda for 10/10"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lancaster Ave. extension cost summary",
+   "what_was_recorded": "Barb's spreadsheet was missing engineering and septic tank decommissioning amounts, but the connection costs were close to the figures given for the east and west sides.",
+   "figures_as_printed": [
+    "$22,000",
+    "$27,000"
+   ],
+   "quote": "that it is close to $22,000 for the east side connections, and $27,000 for the west."
+  },
+  {
+   "topic": "Credit request, WMHP Unit 17",
+   "what_was_recorded": "Unit 17 was billed 7 quarters at minimum charge (equated to 7000 cf) while the corrected meter read 4200 cf; the requester asked for the excess over the minimum to be credited. The Commission denied it.",
+   "figures_as_printed": [
+    "7000 cf",
+    "4200cf"
+   ],
+   "quote": "we had billed them for 7 quarters at minimum charge, which equates to 7000 cf in usage."
+  },
+  {
+   "topic": "Legal review of intermunicipal agreements",
+   "what_was_recorded": "The Commission wanted the Selectmen to pay for legal review of the IMAs, and said the other party would pay if it wanted to go ahead with its own review.",
+   "figures_as_printed": [],
+   "quote": "for the ima's and would like the selectmen to pay for legal to review."
+  },
+  {
+   "topic": "Rules & Regulations review consultant cost",
+   "what_was_recorded": "Dave said the Commission needs the cost of the Rules & Regs review up front and not billed hourly, with a budget number set in advance.",
+   "figures_as_printed": [],
+   "quote": "dave noted that we need to get the cost up front and not go hourly."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Remote participation announcement",
+   "resolution": "noted; consent agenda moved later to address Lancaster Ave. residents",
+   "quote": "jay announced that carl luck is participating remotely as he is out of the country on business.",
+   "tags": [
+    "remote participation",
+    "agenda order"
+   ]
+  },
+  {
+   "topic": "Lancaster Ave. extension",
+   "resolution": "plan accepted contingent on Weston & Sampson changes and resolution of the extension policy (DEP 1000' question pending)",
+   "quote": "lancaster ave. extension - pat went over the peer review, stating that the 2\" pipe proposed for the 6-10 homes is fine",
+   "tags": [
+    "sewer extension",
+    "privately funded",
+    "peer review",
+    "DEP 1000 foot limit",
+    "50% rule",
+    "low pressure system"
+   ]
+  },
+  {
+   "topic": "Consent agenda: pending connections, vacancy posting, Special Town Meeting, Asian Imperial, Weston & Sampson contract, Rules & Regs, building access, floor stripping",
+   "resolution": "reviewed; several follow-up actions assigned",
+   "quote": "pending connections - received applications to connect for 88 whalom rd 9/13/12, 40-46 great pond rd (emerald",
+   "tags": [
+    "consent agenda",
+    "connections",
+    "Weston & Sampson",
+    "regulations",
+    "building access",
+    "floor stripping"
+   ]
+  },
+  {
+   "topic": "Legal review of intermunicipal agreements (IMAs)",
+   "resolution": "Commission to recommend waiting for Fitchburg input before legal review",
+   "quote": "the sewer commissioners agreed that we will recommend to the selectmen's office that we want fitchburg input's to do our legal review.",
+   "tags": [
+    "IMA",
+    "legal review",
+    "Fitchburg",
+    "Selectmen"
+   ]
+  },
+  {
+   "topic": "Credit request, WMHP Unit 17",
+   "resolution": "denied (no credit)",
+   "quote": "credit request-wmhp, unit 17, barb summarized that jim carnivale was requesting a credit on unit 17",
+   "tags": [
+    "credit request",
+    "meter",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Administrative matters",
+   "resolution": "letter to Bob Ebersole signed; capital planning set for 10/10; next regular meeting 10/10",
+   "quote": "administrative matters- letter to bob ebersole-barb had the formal letter from the commission thanking him for service",
+   "tags": [
+    "administration",
+    "capital planning",
+    "next meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:19 pm",
+   "quote": "butch made the motion to adjourn, dave seconded, vote taken was unanimous.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Weston & Sampson peer review of the Lancaster Ave. extension plan",
+   "where": "text",
+   "quote": "lancaster ave. extension - pat went over the peer review, stating that the 2\" pipe proposed for the 6-10 homes is fine"
+  },
+  {
+   "name": "Counsel's recent submittal for the extension policy (Section 8, Items 5 and 6)",
+   "where": "text",
+   "quote": "per counsel's recent submittal for the extension policy, item 5 in section 8 states:"
+  },
+  {
+   "name": "Marked-up extension policy (Carl Luck), Section 8.0",
+   "where": "text",
+   "quote": "sent a marked up policy with a couple small items in section 8.0 - for example"
+  },
+  {
+   "name": "Cost summary spreadsheet prepared by Barb",
+   "where": "text",
+   "quote": "barb produced a spreadsheet, but is missing amounts for the engineering"
+  },
+  {
+   "name": "Weston & Sampson FY13 contract (executed agreement)",
+   "where": "text",
+   "quote": "fy13 contract has been signed."
+  },
+  {
+   "name": "Capital plan documents received 9/26",
+   "where": "text",
+   "quote": "barb noted that the capital plan docs were received 9/26"
+  },
+  {
+   "name": "Commission letter to Bob Ebersole thanking him for service",
+   "where": "text",
+   "quote": "barb had the formal letter from the commission thanking him for service"
+  },
+  {
+   "name": "CWMP (Comprehensive Wastewater Management Plan)",
+   "where": "text",
+   "quote": "a gravity system was preferred per the cwmp"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "Lancaster Ave extension",
+  "privately funded extension",
+  "extension policy",
+  "DEP 1000 foot rule",
+  "50% frontage rule",
+  "low pressure sewer",
+  "remote participation",
+  "consent agenda",
+  "credit request",
+  "legal review",
+  "capital planning",
+  "FY13 contract",
+  "regulations"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

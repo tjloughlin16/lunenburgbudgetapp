@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-02-15",
  "docid": "4775",
@@ -12,15 +12,485 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the regular session",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the Regular Session.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 11:01 p.m"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record one explicit vote to adjourn. The document mentions accepting Rob Bowen's resignation and signing warrants, but these are stated as actions (\"board accepted resignation,\" \"reviewed and signed\") without explicit vote language.",
- "cost_usd": 0.1036365
+ "note": "Text is macOS Vision OCR. Some figures are garbled as printed (rate per kWh shown as '$0.01 621' and '$0.0 1621'). The appropriations tables on pages 6-8 are partly illegible, and the Lunenburg row is not readable, so no figures were taken from them. The minutes record no vote to approve prior minutes ('Minutes - None') and no motion to enter executive session. The attached presentations are referenced but not reproduced in the text. Only one motion (adjournment) is recorded, and its mover and seconder are not printed.",
+ "cost_usd": 0.015390520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "John DiNapoli",
+   "role": "Municipal and Facilities Manager from Unitil",
+   "status": "present",
+   "quote": "john dinapoli, municipal and facilities manager from unitil was present"
+  },
+  {
+   "name": "Keith Carou",
+   "role": "Chief Operations Mgr.",
+   "status": "present",
+   "quote": "keith carou, chief operations mgr., discussed the 12 mile"
+  },
+  {
+   "name": "Gary Epler",
+   "role": "Corporate Attorney for Unitil",
+   "status": "present",
+   "quote": "gary epler corporate attorney for unitil reiterated that part of the dpu order was that unitil hire an independent consultant (eci) to"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "",
+   "status": "present",
+   "quote": "cathy clark, 275 cross road thinks that it's unconscionable what they're asking for and urges people to attend the hearing."
+  },
+  {
+   "name": "Kevin Blanchette",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "kevin blanchette, executive director - kevin presented the attached information"
+  },
+  {
+   "name": "Scott Glenny",
+   "role": "Fire Department",
+   "status": "present",
+   "quote": "a. scott glenny, fire department, uncollectable ambulance fees, fleet expansion - scott presented the attached information for"
+  },
+  {
+   "name": "Dan Bourgeois",
+   "role": "Police Department",
+   "status": "present",
+   "quote": "b. dan bourgeois, police department - dan provided the attached information as an overview of the reporting on the police"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW",
+   "status": "present",
+   "quote": "c. jack rodriquenz, dpw, street signs, stormwater regulations - jack discussed the paving as it relates to comprehensive"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board accepted the resignation of Rob Bowen from the Municipal Utilities Task Force with regrets; a letter of appreciation is to be sent.",
+   "quote": "board accepted resignation with regrets, letter of appreciation to be sent."
+  },
+  {
+   "decision": "Warrants #45 11, #46 11, 17P 1q1 and #17M 11 were reviewed and signed.",
+   "quote": "warrants - #45 11, 2/15/11 - $110,493.40, # 46 11, 2/16/11 - $366,007.35,17p 1q1, 2/17/11 - $628,590.27 and #17m 11, 2/17/11 - $622.02 reviewed and signed."
+  },
+  {
+   "decision": "Town Manager Kerry Speidel to follow up with Nancy Strom on the Ritter Building servers not being backed up.",
+   "quote": "ritter building servers are not being backed up, sees this as a huge issue. kerry to follow up with nancy strom."
+  },
+  {
+   "decision": "John DiNapoli of Unitil will provide the tree trimming information to the Town Manager for the public access channel.",
+   "quote": "john will provide this information to kerry."
+  },
+  {
+   "decision": "Unitil's Keith has given the tree trimming information to DPW Director Jack Rodriquenz and will provide him the future tree trimming schedule.",
+   "quote": "keith has provided the information to the dpw director, jack rodriquenz, and will provide him with the future tree trimming schedule."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unitil vegetation management funding",
+   "what_was_recorded": "Unitil said it currently has $400,000 allocated for all communities it serves and that the new budget would triple vegetation management funding to $1.4 million.",
+   "figures_as_printed": [
+    "$400,000",
+    "$1.4 million"
+   ],
+   "quote": "per john they currently have $400,000 allocated for all communities that they serve and with the new budget, will be tripling the amount allocated for vegetation management to $1.4 million."
+  },
+  {
+   "topic": "Storm restoration cost recovery",
+   "what_was_recorded": "Unitil proposes recovering $13,026,642 in December 2008 ice storm restoration expenses over seven years, with carrying charges; the minutes also refer to 13 million in storm costs.",
+   "figures_as_printed": [
+    "$2,205,868",
+    "seven-year period",
+    "$13,026,642",
+    "8.58 percent",
+    "13 million"
+   ],
+   "quote": "$2,205,868 in annual recovery over a, seven-year period of $13,026,642 in expenses associated with the company's efforts"
+  },
+  {
+   "topic": "Electric distribution rate increase request (D.P.U. 11-01)",
+   "what_was_recorded": "The Company seeks to increase annual electric distribution revenues by $7,149,627, made up of a $4,943,759 base deficiency and $2,205,868 storm cost recovery; the minutes give a rate impact of $0.01 621 per kWh offset by a transition charge reduction.",
+   "figures_as_printed": [
+    "$7,149,627",
+    "11.3 percent",
+    "42.6 percent",
+    "$4,943,759",
+    "$2,205,868",
+    "8.58 percent",
+    "$0.01 621 per kilowatt hour",
+    "$0.0 1621 per kWh"
+   ],
+   "quote": "the company seeks to increase its annual electric distribution revenues by $7,149,627, which represents an 11.3 percent increase in current total electric operating revenues"
+  },
+  {
+   "topic": "Revenue shortfall",
+   "what_was_recorded": "Attorney Epler said the shortfall is roughly 7%; the minutes say the average consumer would not see an increase.",
+   "figures_as_printed": [
+    "roughly 7%"
+   ],
+   "quote": "according to attorney epler, it's roughly 7%."
+  },
+  {
+   "topic": "Retirement system unfunded liability",
+   "what_was_recorded": "The unfunded liability is 449 million dollars and the system is about 49% funded; funding schedules extended to 2040.",
+   "figures_as_printed": [
+    "449 million dollars",
+    "49%"
+   ],
+   "quote": "currently the unfunded liability, the gap between the assets and the accrued liability, is 449 million dollars and as such they are about"
+  },
+  {
+   "topic": "Retirement assessment increase cap",
+   "what_was_recorded": "The assessment increase was capped at 6% for the next two years and 7% going forward to 2040.",
+   "figures_as_printed": [
+    "6%",
+    "7%"
+   ],
+   "quote": "this year the increase was capped overall to 6% for the next two years, and 7% going forward to 2040."
+  },
+  {
+   "topic": "Retirement contribution rates",
+   "what_was_recorded": "Employees pay 5% to 12% into the system; employer normal cost is 3.5%, compared with a 6.25% Social Security match.",
+   "figures_as_printed": [
+    "5% to 12%",
+    "3.5%",
+    "6.25%"
+   ],
+   "quote": "normal cost for the employer is 3.5% compared to social security you'd have to match at 6.25%."
+  },
+  {
+   "topic": "Fire Department capital request - radios",
+   "what_was_recorded": "The only capital item for this year is the radios at $20,000 and the re-outfit of Engine 2.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "per scott all that should be on this year is the radio's ($20,000) and the re-outfit of"
+  },
+  {
+   "topic": "Federal public safety radio grant",
+   "what_was_recorded": "Fire Department slides list oversight and expenditure of a federal grant to upgrade the town's public safety radio system.",
+   "figures_as_printed": [
+    "$146,000"
+   ],
+   "quote": "oversight/expenditure of $146,000 federal grant to upgrade town's"
+  },
+  {
+   "topic": "Police grant funding loss",
+   "what_was_recorded": "Community Policing grant funding of $11,000.00 is disappearing; no COPS Hiring or Byrne grant funding is in the President's budget.",
+   "figures_as_printed": [
+    "$11,000.00"
+   ],
+   "quote": "such as community policing, $11,000.00, there is no \"cops hiring\" grant"
+  },
+  {
+   "topic": "Police bulletproof vest grant",
+   "what_was_recorded": "Federal Bulletproof Grant approved for LPD; 50% match needed to replace officer vests, town share to be approved in the FY12 Capital Plan.",
+   "figures_as_printed": [
+    "$18,900.00",
+    "$9,450.00"
+   ],
+   "quote": "total cost $18,900.00 town share $9,450.00 to be approved in the fy12 capitol plan."
+  },
+  {
+   "topic": "DPW highway budget and staffing",
+   "what_was_recorded": "General Highway budget was $120,000 in 1995 with 7 employees, and $110,000 in 2010 with 4 employees; the department was cut $40,000 in the spring of the prior year due to state budget cuts.",
+   "figures_as_printed": [
+    "$120,000",
+    "$110,000",
+    "$40,000"
+   ],
+   "quote": "personnel - 1995 had 7 employees to the highway department; general highway budget was $120,000, in 2010 there are 4"
+  },
+  {
+   "topic": "DPW state budget cut",
+   "what_was_recorded": "The DPW was cut $40,000 in the spring because of state budget cuts.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "last year the department was cut $40,000 in the spring because of the state budget cuts."
+  },
+  {
+   "topic": "Pavement management funding",
+   "what_was_recorded": "Current pavement funding is less than $400,000; the town will have to infuse $800,000 to $1 million, and two roads alone would exceed $800,000.",
+   "figures_as_printed": [
+    "less than $400,000",
+    "$800,000 to $1 million",
+    "in excess of $800,000"
+   ],
+   "quote": "will have to infuse $800,000 to $1 million dollars in our infrastructure moving forward."
+  },
+  {
+   "topic": "Crack seal funding",
+   "what_was_recorded": "Crack seal work will come from the operational budget at about $20,000 - $25,000.",
+   "figures_as_printed": [
+    "$20,000 - $25,000"
+   ],
+   "quote": "will take this out of the operational budget, about $20,000 - $25,000 towards the crack seal process."
+  },
+  {
+   "topic": "Snow and ice expenditures",
+   "what_was_recorded": "Snow expenditures to date, as of 2/15/11, were over budget by $16,772.78.",
+   "figures_as_printed": [
+    "$16,772.78"
+   ],
+   "quote": "provided the attached snow expenditures to date, 2/15/11, currently $16,772.78 over budget."
+  },
+  {
+   "topic": "Warrants approved for payment",
+   "what_was_recorded": "Warrants reviewed and signed totaling the amounts listed.",
+   "figures_as_printed": [
+    "$110,493.40",
+    "$366,007.35",
+    "$628,590.27",
+    "$622.02"
+   ],
+   "quote": "warrants - #45 11, 2/15/11 - $110,493.40, # 46 11, 2/16/11 - $366,007.35,17p 1q1, 2/17/11 - $628,590.27 and #17m 11, 2/17/11 - $622.02 reviewed and signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Cathy Clark",
+   "stated_role": "275 Cross Road",
+   "topic": "Rate case hearing",
+   "quote": "cathy clark, 275 cross road thinks that it's unconscionable what they're asking for and urges people to attend the hearing."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Unitil tree trimming program and rate case",
+   "resolution": "update received; no action recorded",
+   "quote": "1. 7:05 pm - unitil tree trimming program & rate case - john dinapoli, municipal and facilities manager from unitil was present",
+   "tags": [
+    "Unitil",
+    "tree trimming",
+    "rate case",
+    "electric"
+   ]
+  },
+  {
+   "topic": "Retirement system overview",
+   "resolution": "presentation received; no action recorded",
+   "quote": "2. 7:30 pm - retirement system overview - kevin blanchette, executive director - kevin presented the attached information",
+   "tags": [
+    "retirement",
+    "assessments",
+    "unfunded liability"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "no minutes; warrants reviewed and signed; Town Manager to follow up on server backups",
+   "quote": "warrants - #45 11, 2/15/11 - $110,493.40, # 46 11, 2/16/11 - $366,007.35,17p 1q1, 2/17/11 - $628,590.27 and #17m 11, 2/17/11 - $622.02 reviewed and signed.",
+   "tags": [
+    "warrants",
+    "action file",
+    "IT backup"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "discussion; no action recorded",
+   "quote": "tom the finance committee meets this thursday, is also the budget hearing.",
+   "tags": [
+    "finance committee",
+    "planning board",
+    "Tri-Town Landing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Fire Department - uncollectable ambulance fees and fleet expansion",
+   "resolution": "presentation; discussion of vehicle rotation, capital plan and night staffing; no action recorded",
+   "quote": "a. scott glenny, fire department, uncollectable ambulance fees, fleet expansion - scott presented the attached information for",
+   "tags": [
+    "fire department",
+    "vehicles",
+    "capital plan",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Police Department report",
+   "resolution": "presentation; discussion of staffing and training; no action recorded",
+   "quote": "b. dan bourgeois, police department - dan provided the attached information as an overview of the reporting on the police",
+   "tags": [
+    "police department",
+    "staffing",
+    "grants",
+    "training"
+   ]
+  },
+  {
+   "topic": "DPW - street signs, stormwater regulations and paving",
+   "resolution": "presentation; board requested project list; no action recorded",
+   "quote": "c. jack rodriquenz, dpw, street signs, stormwater regulations - jack discussed the paving as it relates to comprehensive",
+   "tags": [
+    "DPW",
+    "stormwater",
+    "paving",
+    "signs",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "none",
+   "quote": "4. town manager updates - none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Committee appointments - resignation of Rob Bowen",
+   "resolution": "resignation accepted with regrets",
+   "quote": "1. resignation of rob bowen from municipal utilities task force - board accepted resignation with regrets, letter of appreciation",
+   "tags": [
+    "committee appointments",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered under M.G.L. c.39 s.23B(3); no vote or outcome recorded",
+   "quote": "m.g.l. chapter 39, §23b (3) to discuss strategy with respect to collective bargaining or litigation if an open meeting may",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed; no action recorded",
+   "quote": "february 17, presentation of budget recommendation",
+   "tags": [
+    "meeting schedule",
+    "budget"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Rate Case Review (attached, provided and reviewed by Attorney Epler)",
+   "where": "text",
+   "quote": "he also provided and reviewed the attached rate case review."
+  },
+  {
+   "name": "Retirement system information presented by Kevin Blanchette (attached)",
+   "where": "text",
+   "quote": "kevin presented the attached information"
+  },
+  {
+   "name": "Fire Department information presented by Scott Glenny (attached)",
+   "where": "text",
+   "quote": "scott presented the attached information for"
+  },
+  {
+   "name": "Police Department reporting presented by Dan Bourgeois (attached)",
+   "where": "text",
+   "quote": "dan provided the attached information as an overview of the reporting on the police"
+  },
+  {
+   "name": "Snow expenditures to date, 2/15/11 (attached)",
+   "where": "text",
+   "quote": "provided the attached snow expenditures to date, 2/15/11, currently"
+  },
+  {
+   "name": "D.P.U. 11-01 petition filed with the Department of Public Utilities for an increase in electric distribution rates",
+   "where": "text",
+   "quote": "paula commented on the petition filed with the department of public utilities for an increase in its electric distribution rates."
+  },
+  {
+   "name": "Independent consultant (ECI) review of the entire Unitil system",
+   "where": "text",
+   "quote": "gary epler corporate attorney for unitil reiterated that part of the dpu order was that unitil hire an independent consultant (eci) to"
+  },
+  {
+   "name": "Lunenburg Police Department, February 15, 2011, Board of Selectmen Update",
+   "where": "list",
+   "quote": "lunenburg police department february 15, 2011 board of selectmen update"
+  },
+  {
+   "name": "Fire Rescue slides: Department Table of Organization, Response Breakdown, Fire Prevention, Training, R.I.T., Rope Technician Training, Budget",
+   "where": "list",
+   "quote": "department table of organization"
+  },
+  {
+   "name": "Member Unit Appropriations for Fiscal Year Ending June 30, 2012 (Worcester Regional Contributory Retirement System tables)",
+   "where": "list",
+   "quote": "member unit appropriations for fiscal year ending june 30, 2012"
+  }
+ ],
+ "tags": [
+  "Unitil",
+  "tree trimming",
+  "electric rate case",
+  "retirement system",
+  "fire department",
+  "police department",
+  "DPW",
+  "stormwater",
+  "warrants",
+  "budget",
+  "staffing",
+  "committee appointments",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kevin presented the attached information"
+ },
+ "dropped_unquoted_by_field": {}
 }

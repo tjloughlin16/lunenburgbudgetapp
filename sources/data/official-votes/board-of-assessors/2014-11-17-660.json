@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-11-17",
  "docid": "660",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "variances were approved for septic system at 843 Chase Road",
+   "motion": "Approve the variances requested for 843 Chase Road (distance from property line 10 ft to 5.5 ft; distance to well 100 ft to 87 ft; inlet/outlet to groundwater 2 ft).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -20,23 +20,165 @@
    "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved. all in favor."
   },
   {
-   "motion": "variance was approved for distance from component to foundation at 36 Kimball Street from 10 feet to 9 feet",
+   "motion": "Approve the variance for 36 Kimball Street (distance from a component to the foundation, 10 ft to 9 ft).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved. all in favor aste t"
+   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved."
   },
   {
-   "motion": "variance was approved for offset to groundwater to two feet at 611 Leominster Road",
+   "motion": "Approve the variance for 611 Leominster Road (offset to groundwater to two feet, for a Presby system).",
    "moved_by": "Jewell",
-   "seconded_by": "Fortin",
+   "seconded_by": "Feting",
    "outcome": "passed",
    "procedural": false,
-   "quote": "sjon and on motion by jewell and socond by feting the variance vasapproyed. all"
+   "quote": "on motion by jewell and socond by feting the variance vasapproyed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with significant garbling, particularly in the final vote. The header states \"Board Of Assessors\" but the minutes are from the Board of Health. All three votes passed with \"All in favor\" recorded.",
- "cost_usd": 0.0841815
+ "note": "Board mismatch: the request names the Board of Assessors, but the minutes are headed 'LUNENBURG BOARD OF HEALTH' and were recorded as such. Text is heavy OCR (macOS Vision) with garbled lines. The 611 Leominster Road seconder reads 'Feting' in the OCR; likely Fortin but recorded as printed. The 611 Leominster vote text is partly garbled ('vasapproyed'), so the outcome 'passed' rests on 'approved'. The 'All in favor' wording was absent for 36 Kimball and 611 Leominster, so no vote counts were printed. The 'Meeting adjourned at 8:15 pm' line has no motion recorded, so it is not logged as a vote. No dollar figures appear. Documents under the Title 5 and septic headings are listed by address only; the list entries are garbled and were not itemised.",
+ "cost_usd": 0.0035204200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin."
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin."
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "applicant, 843 Chase Road",
+   "status": "present",
+   "quote": "doug smith, together with mrs. lazotte met with the board."
+  },
+  {
+   "name": "Mrs. Lazotte",
+   "role": "appeared with Doug Smith",
+   "status": "present",
+   "quote": "doug smith, together with mrs. lazotte met with the board."
+  },
+  {
+   "name": "Normandin",
+   "role": "owner of the property, 36 Kimball Street",
+   "status": "present",
+   "quote": "normandin, owner of the property, met with the board."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the owner, 611 Leominster Road",
+   "status": "present",
+   "quote": "greg roy met with the board of behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports were acknowledged by the board for the listed properties (no vote recorded).",
+   "quote": "title 5 inspection reports acknowledged:"
+  },
+  {
+   "decision": "Septic permits were signed for the listed properties (no vote recorded).",
+   "quote": "septic permits signed:"
+  },
+  {
+   "decision": "No minutes were approved at this meeting.",
+   "quote": "minutes approved: none"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "no action (none approved)",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged:",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed:",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "843 Chase Road variances",
+   "resolution": "approved",
+   "quote": "doug smith, together with mrs. lazotte met with the board.",
+   "tags": [
+    "variance",
+    "septic",
+    "well setback"
+   ]
+  },
+  {
+   "topic": "36 Kimball Street variance",
+   "resolution": "approved",
+   "quote": "normandin, owner of the property, met with the board.",
+   "tags": [
+    "variance",
+    "foundation",
+    "septic"
+   ]
+  },
+  {
+   "topic": "611 Leominster Road variance",
+   "resolution": "approved",
+   "quote": "greg roy met with the board of behalf of the owner.",
+   "tags": [
+    "variance",
+    "presby system",
+    "groundwater"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged:"
+  },
+  {
+   "name": "Septic permits",
+   "where": "list",
+   "quote": "septic permits signed:"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "variances",
+  "septic",
+  "title 5",
+  "groundwater",
+  "OCR garbled"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

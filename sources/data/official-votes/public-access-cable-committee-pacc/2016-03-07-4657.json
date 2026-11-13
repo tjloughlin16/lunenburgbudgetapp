@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-03-07",
  "docid": "4657",
@@ -12,6 +12,127 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are recorded in these minutes. The text describes agenda items (roll call, business plan, equipment update) and their discussion, but contains no motions, voting language, or formal approval statements.",
- "cost_usd": 0.0785025
+ "note": "No motions or votes are recorded in these minutes, including the adjournment, so the votes list is empty. Public comment reads 'No comments.' with no speaker named. Some figures are printed as the minutes have them, including the typo '$100,00'. The minutes are signed by Jeffrey Bajko, PACC Clerk, dated 3/28/2016. No documents or exhibits are listed.",
+ "cost_usd": 0.00280342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "non-member",
+   "status": "present",
+   "quote": "non-members present were bob ebersole, and jo mclaughlin."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "non-member",
+   "status": "present",
+   "quote": "non-members present were bob ebersole, and jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Steve will take the business plan to the CAC in two weeks with a few improvements.",
+   "quote": "steve will take the plan to the cac in two weeks with a few improvisions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast infusion and funding need",
+   "what_was_recorded": "Steve is to tell the CAC that PAC needs 5% from Comcast and a $100,00 infusion payment.",
+   "quote": "when steve presents to cac, he needs to let them know that pac needs 5% from comcast and a $100,00 infusion payment.",
+   "figures_as_printed": [
+    "5%",
+    "$100,00"
+   ]
+  },
+  {
+   "topic": "Long-term financial outlook",
+   "what_was_recorded": "The PACC may be in financial trouble by year 2024.",
+   "quote": "by year 2024, the pacc may be in financial trouble.",
+   "figures_as_printed": [
+    "2024"
+   ]
+  },
+  {
+   "topic": "Equipment rental cost",
+   "what_was_recorded": "The cost of renting equipment is still unknown.",
+   "quote": "cost of renting is still unknown.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no action; no comments received",
+   "quote": "public comments: 1. no comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Business Plan",
+   "resolution": "no vote; Steve to take plan to CAC in two weeks",
+   "quote": "fy2018 is when the new comcast contract will start. the contract is good for 10 years.",
+   "tags": [
+    "business plan",
+    "Comcast contract",
+    "CAC"
+   ]
+  },
+  {
+   "topic": "Equipment Update",
+   "resolution": "no action; reported loaner received, glitches, live feed delay, rental cost unknown",
+   "quote": "pac received the loaner from nexus.",
+   "tags": [
+    "equipment",
+    "Nexus",
+    "live feed"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:10pm; no motion recorded; next meeting April 4",
+   "quote": "meeting adjourned at 7:10pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "PACC",
+  "public access TV",
+  "Comcast contract",
+  "business plan",
+  "equipment",
+  "Nexus loaner",
+  "CAC",
+  "financial outlook"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-11-16",
  "docid": "4739",
@@ -12,45 +12,512 @@
  },
  "votes": [
   {
-   "motion": "Table the liquor license hearing until November 23, 2010 at 7:15 PM",
+   "motion": "Table the Central Mass Gardens wine and malt license hearing until 11/23/10 at 7:15 PM.",
    "moved_by": "Steve",
    "seconded_by": "Ernie",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "steve motion to table the hearing until 11/23/10 @ 7:15 pm, ernie seconded, voted unanimously."
   },
   {
-   "motion": "Approve a uniform tax rate for fiscal year 2011",
+   "motion": "Approve a uniform tax rate for FY11 (single tax rate under the tax classification hearing).",
    "moved_by": "Tom",
    "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "tom recommend to approve a uniform tax rate, dave seconded voted unanimously."
   },
   {
-   "motion": "Approve permission for Cub Scouts to hold annual coat drive on Saturday November 20, 2010",
+   "motion": "Approve the Cub Scouts' annual coat drive on Saturday 11/20/10 using the front lawn of the Ritter Building as the collection station.",
    "moved_by": "Ernie",
    "seconded_by": "Tom",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "ernie motion to approve, tom seconded voted unanimously."
   },
   {
-   "motion": "Ratify the appointment of Andrew Burr as Police Chaplain",
+   "motion": "Ratify the appointment of Andrew Burr as Police Department Chaplain.",
    "moved_by": "Steve",
    "seconded_by": "Ernie",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "steve move to ratify the appointment; ernie seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn Regular Session",
-   "outcome": "passed",
+   "motion": "Adjourn the Regular Session at 9:30 P.M.",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 9:30 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-read minutes; all votes unanimously passed. No procedural motions on minutes or executive session entry recorded.",
- "cost_usd": 0.1144785
+ "note": "OCR text of a 2010 scanned minutes packet. Several figures are garbled in the OCR (notably the FY11 tables on pages 5-7 and the levy figure $18,006.81), so those are recorded as printed, not checked. Speakers \"Steve\" and \"Dave\" are ambiguous (Steven deBettencourt / Steve Randle; Dave Matthews / Dave Rodgers); \"Dave\" in the opening public comment is not identified. Attendance is taken from the opening line. No roll-call votes recorded; all votes are as printed. The executive session is listed with no motion to enter recorded. Two PACC members are named as attending next week and are not counted as present.",
+ "cost_usd": 0.014432820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "James VanBuren",
+   "role": "Attorney, representing the 131 Massachusetts Ave, Mr. Mikes",
+   "status": "present",
+   "quote": "attorney james vanburen was present representing the 131 massachusetts ave, mr. mikes: present mr. pat dillon, manager."
+  },
+  {
+   "name": "Pat Dillon",
+   "role": "Manager",
+   "status": "present",
+   "quote": "attorney james vanburen was present representing the 131 massachusetts ave, mr. mikes: present mr. pat dillon, manager."
+  },
+  {
+   "name": "Donna Capone",
+   "role": "owner of Central Mass Gardens",
+   "status": "present",
+   "quote": "donna capone owner of central mass gardens would like to add the license to their growing establishment for the use of celebratory"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "of Highland Street",
+   "status": "present",
+   "quote": "dave rodgers of... highland street referred to an article that he recently read on the construction of a parking lot behind the eagle"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor harald scheid presented the tax rate option - fiscal year 2011"
+  },
+  {
+   "name": "Dan Bourgeois",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief dan bourgeois and lt. james marino presented the attached information on their cruiser purchase request article 7, november"
+  },
+  {
+   "name": "James Marino",
+   "role": "Lieutenant",
+   "status": "present",
+   "quote": "chief dan bourgeois and lt. james marino presented the attached information on their cruiser purchase request article 7, november"
+  },
+  {
+   "name": "Steve Randle",
+   "role": "Cub Master",
+   "status": "not stated",
+   "quote": "steve randle, cub master is requesting permission for the cub scouts to hold their annual coat drive on saturday 11/20/10"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the 11/9/10 Regular session and warrants #26 11 and #27 11 were reviewed and signed.",
+   "quote": "minutes - board of selectmen regular session for 11/9/10 reviewed and signed."
+  },
+  {
+   "decision": "Board asked that the Cub Scout coat drive information be placed on the scroll and Cable Station Bulletin Board.",
+   "quote": "board would suggest that this information is placed on the scroll and cable station bulletin board."
+  },
+  {
+   "decision": "Road/paving issues and debt exclusion to be a specific agenda item for future discussion, placed on the December 7 agenda.",
+   "quote": "chair concurred that this should be a specific agenda for future discussion, placed on december 7' agenda."
+  },
+  {
+   "decision": "Board requested a breakdown of the cost of the Eagle House parking lot and more information from the Board of Health before the continuation of the Public Hearing.",
+   "quote": "board would like more information, a breakdown on the cost for the eagle house parking lot, and get more information from the board"
+  },
+  {
+   "decision": "Tri-Town Water / Sewer IMA item to be placed on the December 14, 2010 agenda, with the Sewer Commission to come before the board.",
+   "quote": "she recommends placing this on the december 14, 2010 agenda."
+  },
+  {
+   "decision": "Chair requested a copy of the draft Sewer IMA with the City of Leominster, a listing of Leominster water customers billed directly, and the Lunenburg Water District's maintenance and capital component.",
+   "quote": "paula would like to have a copy of the draft ima that the sewer commission is currently working on with the city of"
+  },
+  {
+   "decision": "Town Manager to look into state funding committed to the community in response to the 40R.",
+   "quote": "kerry will need to look into the funding that the state is committed to sending to the community in response to the 40r."
+  },
+  {
+   "decision": "Town Manager to look at buying the cruisers and getting aftermarket parts at the annual town meeting, as an option for the cruiser request.",
+   "quote": "kerry concurred as this would bring the cost down to about $70,000 / $75,000 and will look at this option."
+  },
+  {
+   "decision": "Historical Commission Jones House Article tabled.",
+   "quote": "a. historical commission to present jones house article - tabled."
+  },
+  {
+   "decision": "Review Truax Dog Hearing Order tabled.",
+   "quote": "3. review truax dog hearing order - tabled"
+  },
+  {
+   "decision": "Fire Department Fleet Expansion tabled to November 23.",
+   "quote": "2. fire department fleet expansion - tabled november 23rd."
+  },
+  {
+   "decision": "Town Manager to address the Lake Shirley Dam crack repair again in the spring, as recommended by the DPW Director.",
+   "quote": "the dpw director has recommended that we address this again in the spring."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY11 new growth certification",
+   "what_was_recorded": "Assessor's office reported new growth will be certified at a lower figure, and the projected amount left on the table with full use of Certified Free Cash.",
+   "quote": "according to dave in the assessor's office new growth will be certified at $188,732."
+  },
+  {
+   "topic": "FY11 new growth shortfall",
+   "what_was_recorded": "Certified new growth is $37,811 lower than the current projection.",
+   "quote": "this is $37,811 lower than what we have in the current projection."
+  },
+  {
+   "topic": "Projected dollar amount left on the table",
+   "what_was_recorded": "Projected dollar amount left on the table assuming full use of Certified Free Cash.",
+   "figures_as_printed": [
+    "$71,283.49"
+   ],
+   "quote": "assuming full use of certified free cash is now $71,283.49."
+  },
+  {
+   "topic": "FY11 tax rate option",
+   "what_was_recorded": "Regional Assessor presented total certified full and fair cash value, estimated levy, and single tax rate for FY11.",
+   "figures_as_printed": [
+    "$1,114,282,889.00",
+    "$18,006.81",
+    "$16.16"
+   ],
+   "quote": "the total certified full and fair cash value of all classes of property is $1,114,282,889.00 and the estimated levy $18,006.81 which would realize a single tax rate of $16.16."
+  },
+  {
+   "topic": "Alcohol sales estimate for Mr. Mikes license",
+   "what_was_recorded": "Applicant estimated monthly alcohol sales for the proposed wine and malt license.",
+   "figures_as_printed": [
+    "$10,000 to $20,000 / month"
+   ],
+   "quote": "estimate that alcohol sales would be about $10,000 to $20,000 / month."
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Two warrants were reviewed and signed with the amounts printed.",
+   "figures_as_printed": [
+    "$190,026.79",
+    "$71,621.07"
+   ],
+   "quote": "warrants - #26 11, 11/16/10 - $190,026.79 and #27 11, 11/17/10 - $71,621.07 reviewed and signed."
+  },
+  {
+   "topic": "Police cruiser purchase cost",
+   "what_was_recorded": "Approximate cost of two cruisers without equipment, as amended in the article.",
+   "figures_as_printed": [
+    "$48,000.00"
+   ],
+   "quote": "total cost: approximate cost of two cruisers without equipment=$48,000.00. (amended)"
+  },
+  {
+   "topic": "Police cruiser cost with aftermarket parts",
+   "what_was_recorded": "Town Manager said buying the vehicles and getting aftermarket parts at town meeting would bring the cost down to an estimated range.",
+   "figures_as_printed": [
+    "$70,000 / $75,000"
+   ],
+   "quote": "kerry concurred as this would bring the cost down to about $70,000 / $75,000 and will look at this option."
+  },
+  {
+   "topic": "FY2011 budget summary general fund revenue",
+   "what_was_recorded": "Budget summary table shows total general fund revenue across the printed years.",
+   "figures_as_printed": [
+    "$ 27,797,568",
+    "$ 27,930,084",
+    "$ 27,247,513",
+    "$ 28,247,316",
+    "$ 28,518,002",
+    "$ 28,518,005"
+   ],
+   "quote": "total: general fund revenue s 27,797,568 $ 27,930,084 $ 27,247,513 $ 28,247,316 $ 28,518,002 $ 28,518,005"
+  },
+  {
+   "topic": "FY2011 revenue/expenditure projection changes",
+   "what_was_recorded": "Projection table shows changes to revenues and expenditures, including the subtotal and free cash appropriation, updated for the recap.",
+   "figures_as_printed": [
+    "(S19,000.00)",
+    "$111,746.51",
+    "$196,045.51"
+   ],
+   "quote": "(s19,000.00) $111,746.51 $196,045.51"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "topic": "projected deficits",
+   "quote": "dave would like to address the significant deficits projected and the question has come up repeatedly"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "of Highland Street",
+   "topic": "Eagle House parking lot",
+   "quote": "dave rodgers of... highland street referred to an article that he recently read on the construction of a parking lot behind the eagle"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Finance Committee public hearing on FY11 budget",
+   "resolution": "hearing opened and turned over to the Finance Committee; no vote recorded",
+   "quote": "turned the meeting over to the finance committee at this time for their public hearing on the fy11",
+   "tags": [
+    "FY11 budget",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; Eagle House parking lot and grant money raised",
+   "quote": "dave rodgers of... highland street referred to an article that he recently read on the construction of a parking lot behind the eagle",
+   "tags": [
+    "public comment",
+    "Eagle House parking lot"
+   ]
+  },
+  {
+   "topic": "Liquor license public hearings (Mr. Mikes; Central Mass Gardens)",
+   "resolution": "Mr. Mikes hearing held; Central Mass Gardens hearing tabled to 11/23/10",
+   "quote": "steve motion to table the hearing until 11/23/10 @ 7:15 pm, ernie seconded, voted unanimously.",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Tax classification hearing",
+   "resolution": "uniform tax rate approved",
+   "quote": "tom recommend to approve a uniform tax rate, dave seconded voted unanimously.",
+   "tags": [
+    "tax rate",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "PACC broadcast and PEG programming",
+   "resolution": "no action",
+   "quote": "pacc - broadcast of additional meetings; additional programming for peg channels",
+   "tags": [
+    "PEG channels"
+   ]
+  },
+  {
+   "topic": "Cub Scout coat drive request",
+   "resolution": "approved",
+   "quote": "steve randle, cub master is requesting permission for the cub scouts to hold their annual coat drive on saturday 11/20/10",
+   "tags": [
+    "Cub Scouts"
+   ]
+  },
+  {
+   "topic": "Review Truax Dog Hearing Order",
+   "resolution": "tabled",
+   "quote": "3. review truax dog hearing order - tabled",
+   "tags": [
+    "dog hearing"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "11/9/10 minutes and warrants reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 11/9/10 reviewed and signed.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action file issues (roads and paving, debt exclusion)",
+   "resolution": "placed on December 7 agenda",
+   "quote": "chair concurred that this should be a specific agenda for future discussion, placed on december 7' agenda.",
+   "tags": [
+    "roads",
+    "debt exclusion"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action",
+   "quote": "ernie - green communities task force meeting, ieec code which exceeds the stretch code",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none",
+   "quote": "6. department updates - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager updates (Lake Shirley Dam; Tri-Town Water)",
+   "resolution": "informational; Sewer IMA item placed on December 14 agenda",
+   "quote": "paula would like to have this on a future agenda and per kerry, the sewer commission has asked to come before the board",
+   "tags": [
+    "Lake Shirley Dam",
+    "Tri-Town Water",
+    "Fitchburg IMA"
+   ]
+  },
+  {
+   "topic": "Jones House article (Town Meeting warrant)",
+   "resolution": "tabled",
+   "quote": "a. historical commission to present jones house article - tabled.",
+   "tags": [
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Police cruiser purchase (Article 7)",
+   "resolution": "discussed; Town Manager to look at aftermarket parts option",
+   "quote": "chief dan bourgeois and lt. james marino presented the attached information on their cruiser purchase request article 7, november",
+   "tags": [
+    "police cruisers",
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Fire Department fleet expansion",
+   "resolution": "tabled to November 23",
+   "quote": "2. fire department fleet expansion - tabled november 23rd.",
+   "tags": [
+    "fire fleet"
+   ]
+  },
+  {
+   "topic": "Police Chaplain appointment",
+   "resolution": "ratified",
+   "quote": "steve move to ratify the appointment; ernie seconded, voted unanimously.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "listed on agenda; no vote recorded",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:30 P.M.",
+   "quote": "being no further business board voted unanimously to adjourn regular session at 9:30 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town of Lunenburg Special Town Meeting November 29, 2010 Article 7. Purchase of Police Cruisers",
+   "where": "list",
+   "quote": "town of lunenburg special town meeting november 29, 2010 article 7. purchase of police cruisers"
+  },
+  {
+   "name": "Town of Lunenburg FY2011 Budget Summary",
+   "where": "list",
+   "quote": "town of lunenburg fy2011 budget summary"
+  },
+  {
+   "name": "Projected Revenues/Expenditures FY2011 - Updated 11/9/10 for Recap",
+   "where": "list",
+   "quote": "projected revenues/expenditures fy2011 - updated 11/9/10 for recap"
+  },
+  {
+   "name": "FY2011 Revenue Expenditure Projection for 11 30 10 STM 11/9/10",
+   "where": "list",
+   "quote": "fy2011 revenue expenditure projection for 11 30 10 stm11/9/10"
+  },
+  {
+   "name": "Tax Rate Option - Fiscal Year 2011",
+   "where": "text",
+   "quote": "regional assessor harald scheid presented the tax rate option - fiscal year 2011"
+  },
+  {
+   "name": "Liquor license notice, Lunenburg Ledger, September 3, 2010",
+   "where": "text",
+   "quote": "the following notice was placed in the september 3, 2010 lunenburg ledger"
+  },
+  {
+   "name": "Public Hearing Notice, tax classification (M.G.L. Chapter 40, §56)",
+   "where": "text",
+   "quote": "town of lunenburg, public hearing notice: the board of selectmen for the town of lunenburg will hold a public hearing as required"
+  },
+  {
+   "name": "Warrants #26 11 (11/16/10) and #27 11 (11/17/10)",
+   "where": "text",
+   "quote": "warrants - #26 11, 11/16/10 - $190,026.79 and #27 11, 11/17/10 - $71,621.07 reviewed and signed."
+  },
+  {
+   "name": "Certificate of insurance (Cub Scouts coat drive)",
+   "where": "text",
+   "quote": "he also provided the certificate of insurance."
+  },
+  {
+   "name": "Draft IMA between Sewer Commission and City of Leominster",
+   "where": "text",
+   "quote": "paula would like to have a copy of the draft ima that the sewer commission is currently working on with the city of"
+  },
+  {
+   "name": "Expired IMA with the City of Fitchburg (written 1993)",
+   "where": "text",
+   "quote": "we have an expired ima with the city of fitchburg which was written in 1993,"
+  }
+ ],
+ "tags": [
+  "FY11 budget",
+  "public hearing",
+  "liquor license",
+  "tax rate",
+  "police cruisers",
+  "Fitchburg water IMA",
+  "Eagle House parking lot",
+  "Cub Scouts",
+  "police chaplain",
+  "executive session",
+  "town meeting warrant",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "chief dan bourgeois and lt. james marino presented the attached information"
+ },
+ "dropped_unquoted_by_field": {}
 }

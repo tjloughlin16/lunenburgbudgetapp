@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-09-22",
  "docid": "3773",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve two allowable use signs for the two uses on the premises and the open flag",
+   "motion": "Approve two allowable use signs for the two uses on the premises and the open flag (909 Massachusetts Avenue hearing).",
    "moved_by": "M. Allison",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion, m. allison to approve two allowable use signs for the two uses on the premises and the open flag, second, d. mcquaid, all aye."
   },
   {
-   "motion": "amend to include furniture sign at proposed location and exit sign",
+   "motion": "Amend the 909 Massachusetts Avenue sign approval to include a furniture sign at the proposed location and an exit sign.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion n. lockwood to amend to include furniture sign at proposed location and exit sign, second, d. mcquaid, all aye."
   },
   {
-   "motion": "approve special permit and development plan review for Harley House Décor",
+   "motion": "Approve special permit and development plan review for Harley House Décor (909 Massachusetts Avenue).",
    "moved_by": "M. Allison",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion to approve special permit and development plan review for harley house décor, m. allison, second, d. mcquaid, all aye."
   },
   {
-   "motion": "approve modification request for Whites Woods, 221 White Street",
+   "motion": "Approve the modification request for Whites Woods, 221 White Street.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion, d. mcquaid to approve modification request, second, m. allison, all aye."
   },
   {
-   "motion": "grant waivers, release applicant from 14 day review period, and endorse ANR Plan",
+   "motion": "Grant waivers, release the applicant from the 14 day review period, and endorse the ANR Plan for 18 and 22 Oak Ridge Road.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion, d. mcquaid to grant waivers , release applicant from 14 day review period, and endorse anr plan, second, m. allison, all aye."
   },
   {
-   "motion": "approve minutes of 9-8-14 and 9-15-14",
+   "motion": "Approve the minutes of 9-8-14 and 9-15-14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -61,6 +61,234 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0219131
+ "note": "Text extract is readable. Votes are recorded as \"all aye\" without numeric counts, so outcomes are \"passed\". Separate minutes for the 909 Massachusetts Avenue and Whites Woods hearings are referenced but not included. The minutes record no dollar figures and no public comment section. Adjournment at 8:30 PM has no recorded motion and is not listed as a vote.",
+ "cost_usd": 0.005690219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone, kenneth chenis"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone, kenneth chenis"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "also present: chantell fleck, mrpc"
+  },
+  {
+   "name": "Mike Martorella",
+   "role": "David Ross Associates, representing applicants",
+   "status": "present",
+   "quote": "mike martorella, david ross associates, representing applicants."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Findings and Directives for 909 Massachusetts Avenue will be prepared.",
+   "quote": "findings and directives will be prepared."
+  },
+  {
+   "decision": "Findings and Directives for Whites Woods will be prepared.",
+   "quote": "findings and directives will be prepared."
+  },
+  {
+   "decision": "Due to lack of quorum, the 322 Flat Hill Community Solar public hearing is continued to a date to be determined.",
+   "quote": "due to lack of quorum hearing will be continued to a date tbd."
+  },
+  {
+   "decision": "The ANR plan for 18 and 22 Oak Ridge Road will be endorsed at the conclusion of the Board meeting.",
+   "quote": "plan will be endorsed at conclusion of board meeting."
+  },
+  {
+   "decision": "N. Lockwood will note to the School Building Committee the need for coordination with the Planning Board on the Passios property line.",
+   "quote": "n. lockwood will note same to the school building committee."
+  },
+  {
+   "decision": "C. Fleck will research whether a hearing is required for the scenic road designation request.",
+   "quote": "c. fleck will research to see if a hearing is required."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: 909 Massachusetts Avenue (Harley House Décor)",
+   "resolution": "approved signs, special permit and development plan review; findings to be prepared",
+   "quote": "motion to approve special permit and development plan review for harley house décor, m. allison, second, d. mcquaid, all aye.",
+   "tags": [
+    "public hearing",
+    "special permit",
+    "signs"
+   ]
+  },
+  {
+   "topic": "Public hearing: Whites Woods, 221 White Street",
+   "resolution": "approved modification request; findings to be prepared",
+   "quote": "motion, d. mcquaid to approve modification request, second, m. allison, all aye.",
+   "tags": [
+    "public hearing",
+    "modification"
+   ]
+  },
+  {
+   "topic": "Public hearing: 322 Flat Hill Community Solar",
+   "resolution": "continued to a date TBD for lack of quorum",
+   "quote": "due to lack of quorum hearing will be continued to a date tbd.",
+   "tags": [
+    "public hearing",
+    "solar",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "ANR plan: 18 and 22 Oak Ridge Road",
+   "resolution": "waivers granted, 14-day review released, ANR plan endorsed",
+   "quote": "plan will be endorsed at conclusion of board meeting.",
+   "tags": [
+    "ANR",
+    "septic easement",
+    "waiver"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 9-8-14 and 9-15-14 minutes",
+   "quote": "motion, d. mcquaid to approve 9-8-14 and 9-15-14, second, m. allison, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; School Building Committee ground-breaking and Passios coordination",
+   "quote": "open space ad hoc committee, n. lockwood- no report",
+   "tags": [
+    "committees",
+    "Passios",
+    "Village District Bylaw"
+   ]
+  },
+  {
+   "topic": "New business / development status reports",
+   "resolution": "noted; 50 Elmwood Road update and Tri Town Landing flow tests received",
+   "quote": "definitive subdivision, 50 elmwood road - update provided.",
+   "tags": [
+    "subdivision",
+    "gravel",
+    "street trees",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "noted; scenic roads research assigned, Zoning Bylaw and other items carried",
+   "quote": "c. fleck will research to see if a hearing is required.",
+   "tags": [
+    "scenic roads",
+    "Zoning Bylaw",
+    "Whalom Road",
+    "master planning"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; upcoming meetings listed",
+   "quote": "october 6, 6:30 pm, ritter building, hpp & village district bylaw",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 9/8/14, 9/15/14",
+   "where": "list",
+   "quote": "minutes- 9/8/14, 9/15/14"
+  },
+  {
+   "name": "909 Mass Ave Submittal Packet",
+   "where": "list",
+   "quote": "909 mass ave submittal packet"
+  },
+  {
+   "name": "221 White Street Submittal Packet",
+   "where": "list",
+   "quote": "221 white street submittal packet"
+  },
+  {
+   "name": "50 Elmwood Road Progress Form",
+   "where": "list",
+   "quote": "50 elmwood road progress form"
+  },
+  {
+   "name": "Tri Town Landing Update",
+   "where": "list",
+   "quote": "tri town landing update"
+  },
+  {
+   "name": "ANR Plan (18 and 22 Oak Ridge Road)",
+   "where": "text",
+   "quote": "motion, d. mcquaid to grant waivers , release applicant from 14 day review period, and endorse anr plan, second, m. allison, all aye."
+  },
+  {
+   "name": "Village District Bylaw",
+   "where": "text",
+   "quote": "commission interested in discussion on village district bylaw."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "special permit",
+  "signs",
+  "ANR",
+  "subdivision",
+  "solar",
+  "scenic roads",
+  "village district bylaw",
+  "master plan",
+  "minutes approval",
+  "2014"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

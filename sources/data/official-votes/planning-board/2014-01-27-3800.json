@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-01-27",
  "docid": "3800",
@@ -12,23 +12,176 @@
  },
  "votes": [
   {
-   "motion": "Approve the requested waivers from Zoning Bylaw Section 6.4.3.5 and Section 4.6.5.2.",
-   "moved_by": "Nathan J. Lockwood",
-   "seconded_by": "Matthew Allison",
+   "motion": "Approve the requested zoning waivers for 305 Leominster Shirley Road.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": false,
    "quote": "n. lockwood, motion to approve the requested waivers, second, m. allison, all aye."
   },
   {
    "motion": "Approve the Plan for 305 Leominster Shirley Road conditional upon applicant providing sight distances on Plan.",
-   "moved_by": "Nathan J. Lockwood",
-   "seconded_by": "Matthew Allison",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": false,
    "quote": "n. lockwood, motion to approve the plan for 305 leominster shirley road conditional upon applicant providing sight distances on plan, second, m. allison, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08415450000000001
+ "note": "Minutes are a clean typed text with no scan issues. Votes were recorded as \"all aye\" without a numeric count, so outcome is \"passed\". The printed name \"R aouf Mankaryous\" is kept as printed with the space. No dollar figures appear in the text. No procedural motions (open, close, adjourn) are recorded; the meeting closed at 7:05 PM without a vote.",
+ "cost_usd": 0.00379022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa"
+  },
+  {
+   "name": "R aouf Mankaryous",
+   "role": "represented by Alpha Omega Engr., Inc.; applicant's representative",
+   "status": "present",
+   "quote": "represented by r aouf mankaryous, alpha omega engr., inc., and juliano fernandes, force corp."
+  },
+  {
+   "name": "Juliano Fernandes",
+   "role": "Force Corp.",
+   "status": "present",
+   "quote": "represented by r aouf mankaryous, alpha omega engr., inc., and juliano fernandes, force corp."
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "Reviewing Engineer, David Ross Associates",
+   "status": "present",
+   "quote": "review by reviewing engineer jesse johnson, david ross associates"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "representing the Conservation Commission",
+   "status": "present",
+   "quote": "sharon jordan, representing the conservation commission, noted the applicant has come before the commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Findings and Directives for 305 Leominster Shirley Road will be prepared.",
+   "quote": "findings and directives will be prepared."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sharon Jordan",
+   "stated_role": "representing the Conservation Commission",
+   "topic": "Conservation Commission review and wetlands comments",
+   "quote": "sharon jordan, representing the conservation commission, noted the applicant has come before the commission and complied with commission requests."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Information Meeting continuation: Force Corp., 305 Leominster Shirley Road",
+   "resolution": "continued; plan approved with conditions",
+   "quote": "the information meeting continuation was to hear and discuss a development plan review under section 8.4.",
+   "tags": [
+    "site plan",
+    "lumber yard",
+    "development plan review",
+    "Leominster Shirley Road"
+   ]
+  },
+  {
+   "topic": "Requested zoning waivers (Sections 6.4.3.5 and 4.6.5.2)",
+   "resolution": "approved",
+   "quote": "applicant is requesting a waiver from zoning bylaw section 6.4.3.5. which states that a 4 foot wide island",
+   "tags": [
+    "waivers",
+    "zoning bylaw",
+    "driveway",
+    "landscaping"
+   ]
+  },
+  {
+   "topic": "Plan approval, 305 Leominster Shirley Road",
+   "resolution": "approved with conditions (sight distances to be shown on Plan)",
+   "quote": "n. lockwood, motion to approve the plan for 305 leominster shirley road conditional upon applicant providing sight distances on plan",
+   "tags": [
+    "site plan approval",
+    "sight distance",
+    "conditions"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised Drainage Analysis",
+   "where": "list",
+   "quote": "revised drainage analysis and site plan submitted."
+  },
+  {
+   "name": "Site Plan (revised)",
+   "where": "list",
+   "quote": "revised drainage analysis and site plan submitted."
+  },
+  {
+   "name": "Order of Conditions (Conservation Commission)",
+   "where": "text",
+   "quote": "an order of conditions has been issued by the conservation commission."
+  },
+  {
+   "name": "Findings and Directives",
+   "where": "text",
+   "quote": "findings and directives will be prepared."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan",
+  "lumber yard",
+  "waivers",
+  "sight distance",
+  "stormwater",
+  "wetlands",
+  "Force Corp",
+  "Leominster Shirley Road",
+  "information meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "revised drainage analysis and site plan submitted."
+ },
+ "dropped_unquoted_by_field": {}
 }

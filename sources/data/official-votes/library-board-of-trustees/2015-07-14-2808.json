@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-07-14",
  "docid": "2808",
@@ -12,33 +12,171 @@
  },
  "votes": [
   {
-   "motion": "to appoint Joy Ruth Cohen to the Library Board of Trustees",
-   "outcome": "failed 5-4",
-   "procedural": false,
-   "quote": "joy ruth cohen, 4 for, 5 against"
-  },
-  {
-   "motion": "to appoint Kiirja Paananen to the Library Board of Trustees",
-   "outcome": "passed 5-4",
+   "motion": "Vote on Kiirja Paananen for the appointments to the two vacant Library Board of Trustees seats (motion text not recorded)",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "5 for, 4 against",
    "procedural": false,
    "quote": "kiirja paananen, 5 for, 4 against"
   },
   {
-   "motion": "to appoint Donna Seiia to the Library Board of Trustees",
-   "outcome": "passed 5-3-1",
+   "motion": "Vote on Donna Seiia (printed as Seiia; introduced as Donna Saiia) for the appointments to the two vacant Library Board of Trustees seats (motion text not recorded)",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "5 for, 3 against, 1 abstain",
    "procedural": false,
    "quote": "donna seiia, 5 for, 3 against, 1 abstain"
   },
   {
-   "motion": "to adjourn the Library Board of Trustees meeting",
+   "motion": "Motion by Dick Mailloux to adjourn the LPLBoT meeting",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Gare Thompson",
    "outcome": "passed",
    "procedural": true,
-   "quote": "dick made a motion to adjourn the lplbot meeting, second by gare, voted all in favor"
+   "quote": "dick made a motion to adjourn the lplbot meeting, second by gare, voted all in favor @ 7:30 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Three candidate appointment votes recorded as vote tallies without explicit mover/seconder named. Adjournment vote recorded with mover and seconder explicitly named.",
- "cost_usd": 0.1232035
+ "dropped_unquoted": 1,
+ "note": "Joint meeting with the Lunenburg Board of Selectmen (LBOS); minutes cover the LPLBoT portion only. The vote lines give tallies per candidate but record no motion text, mover, seconder, or stated result (passed/failed/elected). Those three tallies are recorded as printed. Candidate name is printed as \"Donna Saiia\" in the introduction and \"Donna Seiia\" in the vote tally; both are kept as printed. Total votes per candidate (9 and 8/9 counts) are not reconciled to any stated membership. The adjournment motion is the only motion with mover and seconder. The minutes include a bracketed \"[two]\" in the nomination line. No dollar figures appear. Attendance for the LBOS members is listed as attending but does not say who voted.",
+ "cost_usd": 0.00432032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee, Lunenburg Public Library Board of Trustees",
+   "status": "present",
+   "quote": "attending: harry kubetz, dick mailloux, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 7:05 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "dick mailloux, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "dick mailloux, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman, LBOS",
+   "status": "present",
+   "quote": "attending from the lbos: jamie toale, chairman; robert ebersole, vice-chairman; thomas a. alonzo, clerk"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice-Chairman, LBOS",
+   "status": "present",
+   "quote": "attending from the lbos: jamie toale, chairman; robert ebersole, vice-chairman; thomas a. alonzo, clerk"
+  },
+  {
+   "name": "Thomas A. Alonzo",
+   "role": "Clerk, LBOS",
+   "status": "present",
+   "quote": "attending from the lbos: jamie toale, chairman; robert ebersole, vice-chairman; thomas a. alonzo, clerk"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member, LBOS",
+   "status": "present",
+   "quote": "paula bertram, member; kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, member; kerry speidel, town manager"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member LBOS",
+   "status": "absent",
+   "quote": "absent: phyllis luck, member lbos"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "candidate for Library Board of Trustees seat",
+   "status": "present",
+   "quote": "dick mailloux introduced the three candidates: donna saiia, kiirja paananen and joy ruth cohen to the lbos."
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "candidate for Library Board of Trustees seat",
+   "status": "present",
+   "quote": "dick mailloux introduced the three candidates: donna saiia, kiirja paananen and joy ruth cohen to the lbos."
+  },
+  {
+   "name": "Joy Ruth Cohen",
+   "role": "candidate for Library Board of Trustees seat",
+   "status": "present",
+   "quote": "dick mailloux introduced the three candidates: donna saiia, kiirja paananen and joy ruth cohen to the lbos."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All three candidates (Donna Saiia, Kiirja Paananen and Joy Ruth Cohen) were nominated for the two vacant positions.",
+   "quote": "all three candidates were nominated for the [two] positions."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment o no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Consideration of appointments to two vacant Library Board of Trustees seats",
+   "resolution": "three candidates heard and nominated; ballots tallied, no result stated",
+   "quote": "consideration of appointments to two (2) vacant seats on the library board of trustees (failure to elect, sections 3-1, 7-10, and any other relevant provisions of the town charter)",
+   "tags": [
+    "appointments",
+    "vacancies",
+    "Library Board of Trustees",
+    "Town Charter"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for July 14, 2015",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for july 14, 2015"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "appointments",
+  "vacancies",
+  "joint meeting with Board of Selectmen",
+  "joint meeting",
+  "Town Charter"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 1
+ }
 }

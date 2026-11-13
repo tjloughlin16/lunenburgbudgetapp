@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-12-14",
  "docid": "3559",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of November 23, 2009",
+   "motion": "Approve the minutes of 11/23/09.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "approved 11/23/09, motion, mr. saiia, second, mr. l ockwood, motion passed."
   },
   {
-   "motion": "Approve executive minutes of November 23, 2009",
+   "motion": "Approve the executive session minutes of 11/23/09.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
@@ -28,23 +28,41 @@
    "quote": "approved executive 11/23/09, motion, mr. saiia, second, mr. lockwood, motion passed."
   },
   {
-   "motion": "Permit extension request for Highfield Village until February 28, 2010",
+   "motion": "Approve the minutes of 11/18/09.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Lockwood",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "approved 11/18/09, motion, mr. saii a, second, mr. lockwood, motion passed."
+  },
+  {
+   "motion": "Sign the ANR plan for 137 Leominster Shirley Road (Padula/Shirley Road Realty Trust to Powell Stone and Gravel Co.), contingent on the return from other land-use boards that the Plan was approvable.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "failed 4-1",
+   "procedural": false,
+   "quote": "ms. bilott a made motion to sign the plan contingent on the re turn from other land-use boards that the plan was approvable, mr. saiia, sec ond."
+  },
+  {
+   "motion": "Permit the Highfield Village extension request, to February 28, 2010.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": false,
-   "quote": "request is until february 28, 2010 m otion to permit, mr. bodkin jr., second, mr. saiia, motio n passed."
+   "quote": "m otion to permit, mr. bodkin jr., second, mr. saiia, motio n passed.",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Enter executive session for purpose of litigation discussion not to return to open session",
+   "motion": "Go into executive session for purpose of litigation discussion, not to return to open session.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "chair asked for motion to go into executive session for purpose of litigation discussion not to return to open session. motion, mr. bodkin jr., se cond, mr. saiia, roll call vote, mr. bakaysa, aye, ms. bilotta, aye, mr. bodkin jr., aye, mr. saiia, aye, mr. lockwood, aye, motion passed."
+   "quote": "motion, mr. bodkin jr., se cond, mr. saiia, roll call vote, mr. bakaysa, aye, ms. bilotta, aye, mr. bodkin jr., aye, mr. saiia, aye, mr. lockwood, aye, motion passed.",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn open session",
+   "motion": "Adjourn open session.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
@@ -52,7 +70,225 @@
    "quote": "motion to adjourn open session, mr. saiia, second, mr. lockwood, motion passed."
   }
  ],
- "dropped_unquoted": 2,
- "note": "OCR scan with minor artifacts (spacing variations in \"L ockwood\", \"Sec ond\", \"si gning\", \"M otion\", \"Se cond\") preserved verbatim in quotes. The ANR vote is notable as the only failure recorded (4-1).",
- "cost_usd": 0.10384950000000001
+ "dropped_unquoted": 0,
+ "note": "Text extraction has broken-word and spacing artifacts (e.g. 'Ma rion', 'Saii a', 'L ockwood', 'Bilott a'); names are given in their correct form and quotes copy the printed text. No public comment is recorded. The minutes print no dollar figures; the only figure is 'thirty percent'. Document list is not printed; documents below are only mentioned in text.",
+ "cost_usd": 0.00714452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "presenter, David Ross Associates",
+   "status": "present",
+   "quote": "jesse johnson, david ross associates, presented anr plan dividing"
+  },
+  {
+   "name": "David Ross",
+   "role": "Reviewing Engineer",
+   "status": "not stated",
+   "quote": "director revie wed with reviewing engineer david ross.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Signing meeting for the 137 Leominster Shirley Road ANR plan tentatively set for December 29, 2009.",
+   "quote": "signing meeting tentatively set for december 29, 2009."
+  },
+  {
+   "decision": "Chair said the ANR signing process should continue the same as previous signings of ANR plans, after he advised not voting that night.",
+   "quote": "he said the process should continue the same as any previous si gning of anr plans."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Committee budget requests",
+   "what_was_recorded": "Director reported all departments' Form B requests were returned through the Town Manager, with first review set for December 15 with Fire and Police.",
+   "figures_as_printed": [],
+   "quote": "all departments' form b's ha ve been returned through the town manager."
+  },
+  {
+   "topic": "Green Community Task Force grant request",
+   "what_was_recorded": "Director reported on the status of a grant request; the committee was disappointed only one proposal was submitted and the grant may go out to bid again.",
+   "figures_as_printed": [],
+   "quote": "director reported status of grant request."
+  },
+  {
+   "topic": "MRPC stimulus money",
+   "what_was_recorded": "MRPC was looking at available stimulus money and an extension to the railroad line.",
+   "figures_as_printed": [],
+   "quote": "mrpc was looking at available stimulus money"
+  },
+  {
+   "topic": "Emerald Place construction cost estimate",
+   "what_was_recorded": "Applicant prepared a Construction Cost Estimate report; groups 1 and 2 will be totaled and divided by a thirty percent figure, with discussion to follow with the Applicant.",
+   "figures_as_printed": [
+    "thirty percent"
+   ],
+   "quote": "divided by thirty percent."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 11/23/09, executive 11/23/09 and 11/18/09 minutes",
+   "quote": "approved 11/23/09, motion, mr. saiia, second, mr. l ockwood, motion passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointment: ANR 137 Leominster Shirley Road",
+   "resolution": "motion to sign failed 4-1; signing tentatively set for December 29, 2009",
+   "quote": "vote was taken. motion failed 4-1.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "signing"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "conservation commission certificate of compliance for 40 hemlock",
+   "tags": [
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "director reported that all departments' form b's ha ve been returned through the town manager.",
+   "tags": [
+    "capital planning",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business",
+   "resolution": "reported, no action",
+   "quote": "director reported status of grant request.",
+   "tags": [
+    "green community",
+    "ethics commission"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "Highfield Village extension permitted; other projects reported, no action",
+   "quote": "m otion to permit, mr. bodkin jr., second, mr. saiia, motio n passed.",
+   "tags": [
+    "development status",
+    "Emerald Place",
+    "Highfield Village",
+    "Stone Farm",
+    "Tri Town Landing"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action; referred to earlier reports",
+   "quote": "see above planning director's reports and",
+   "tags": []
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session for litigation discussion, not returning to open session",
+   "quote": "chair asked for motion to go into executive session",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:40 pm",
+   "quote": "motion to adjourn open session, mr. saiia, second, mr. lockwood, motion passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR plan dividing 20± acres at 137 Leominster Shirley Road",
+   "where": "text",
+   "quote": "jesse johnson, david ross associates, presented anr plan dividing"
+  },
+  {
+   "name": "Construction Cost Estimate report (Emerald Place)",
+   "where": "text",
+   "quote": "estimate report has been prepared by the applicant."
+  },
+  {
+   "name": "Extension Request (Highfield Village)",
+   "where": "text",
+   "quote": "extension request received from"
+  },
+  {
+   "name": "Conservation Commission Certificate of Compliance for 40 Hemlock Drive and 125 Howard Street",
+   "where": "text",
+   "quote": "conservation commission certificate of compliance for 40 hemlock"
+  },
+  {
+   "name": "Conservation Commission Order of Conditions for 362 Sunset Lane, 262 Sunset Lane and 15 Chestnut Street",
+   "where": "text",
+   "quote": "conservation commission order of conditions for 362"
+  },
+  {
+   "name": "Conservation Commission Determination of Applicability for 344 Townsend Harbor Road",
+   "where": "text",
+   "quote": "conservation commission determination of applicab ility for 344 townsend harbor road"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "subdivision",
+  "development status",
+  "extension request",
+  "executive session",
+  "minutes approval",
+  "signing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

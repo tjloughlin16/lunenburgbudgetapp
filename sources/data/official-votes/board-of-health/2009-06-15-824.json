@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-06-15",
  "docid": "824",
@@ -12,23 +12,244 @@
  },
  "votes": [
   {
-   "motion": "Approve variance request for 40 Hemlock Drive to reduce wetland setback from 50 feet to 42 feet and reduce offset from 100 feet to 42 feet",
+   "motion": "Approve the variance requests for 40 Hemlock Drive (offset from wetland, Title 5 setback reduced to forty-two feet and local regulation offset reduced to forty-two feet).",
    "moved_by": "Sund",
    "seconded_by": "Shea",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on motion by sund and second by shea, the request for variances was unanimously approved."
   },
   {
-   "motion": "Approve variance request for 43 West Street Terrace to reduce groundwater offset from 4 feet to 3 feet",
+   "motion": "Approve the variance requests for 43 West Street Terrace (reduction of groundwater offset from 4 feet to 3 feet).",
    "moved_by": "Shea",
    "seconded_by": "Sund",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on motion by shea and second by sund, the request for variances was unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text extracted via OCR from scanned minutes. Two variance approvals recorded; no procedural votes (e.g., to approve minutes or adjourn) are explicitly stated with motions and votes in these minutes.",
- "cost_usd": 0.08386550000000001
+ "note": "Text is OCR (macOS Vision) with visible errors (e.g. 'Abbutter', 'llow', 'surfacé', 'is would'); quotes were copied as printed. The 'Minutes Approved:' heading has no approval vote recorded. The adjournment at 8:25 pm is stated without a motion or vote, so no procedural vote is recorded. No dollar figures appear in the minutes. The 'TITLE 5 INSPECTION REPORTS REVIEWED' and 'SEPTIC PERMITS SIGNED' headings are treated as document lists.",
+ "cost_usd": 0.00484972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, members ernie sund, david shea, perry jewel and jack rabbitt"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman george emond, members ernie sund, david shea, perry jewel and jack rabbitt"
+  },
+  {
+   "name": "David Shea",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman george emond, members ernie sund, david shea, perry jewel and jack rabbitt"
+  },
+  {
+   "name": "Perry Jewel",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman george emond, members ernie sund, david shea, perry jewel and jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman george emond, members ernie sund, david shea, perry jewel and jack rabbitt"
+  },
+  {
+   "name": "John Male",
+   "role": "owner of 40 Hemlock Drive",
+   "status": "present",
+   "quote": "john and judy male, owners of the property met with the board."
+  },
+  {
+   "name": "Judy Male",
+   "role": "owner of 40 Hemlock Drive",
+   "status": "present",
+   "quote": "john and judy male, owners of the property met with the board."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi has reviewed the plan as submitted and has stated that since the only"
+  },
+  {
+   "name": "David Haughland",
+   "role": "Abbutter",
+   "status": "present",
+   "quote": "abbutter, mr. david haughland was also present at the meeting and expressed concerns"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "applicant for 43 West Street Terrace",
+   "status": "present",
+   "quote": "neil gorman met with the board to discuss the above property."
+  },
+  {
+   "name": "Kurt Hayes",
+   "role": "presenter on Lyme disease",
+   "status": "present",
+   "quote": "mr. hayes met with the board to discuss an upcoming presentation on lyme disease that is being held at the lunenburg public library"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "representing the owner of 69 Island Road",
+   "status": "present",
+   "quote": "bill hannigan, along with nat from his office, met with the board to discuss the redesign"
+  },
+  {
+   "name": "Nat",
+   "role": "from Bill Hannigan's office",
+   "status": "present",
+   "quote": "bill hannigan, along with nat from his office, met with the board to discuss the redesign"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board offered Kurt Hayes their support and whatever assistance he might need on the Lyme disease presentation.",
+   "quote": "the board offered mr. hayes their support and whatever assistance he might need."
+  },
+  {
+   "decision": "The board advised it would be open to a redesign of the septic system at 69 Island Road, and the matter was set for further discussion on July 20, 2009 at 7:15 pm.",
+   "quote": "after discussion the board advised that they would be open to a redesign of the system."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "69 Island Road septic redesign cost",
+   "what_was_recorded": "Bill Hannigan advised that the proposed Presby system redesign would cost significantly less than the existing design, with no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "he advised that is would also cost significantly less."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Haughland",
+   "stated_role": "Abbutter",
+   "topic": "Odor from 40 Hemlock Drive vent",
+   "quote": "expressed concerns as to odor that might emit from the \"candy cane\" vent."
+  },
+  {
+   "speaker": "Bill Hannigan",
+   "stated_role": "representing the owner of 69 Island Road",
+   "topic": "69 Island Road septic redesign",
+   "quote": "bill hannigan, along with nat from his office, met with the board to discuss the redesign"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed, no action recorded",
+   "tags": [
+    "title 5",
+    "inspection"
+   ],
+   "quote": "title 5 inspection reports reviewed: 241 reservoir road 50 hemlock drive"
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed: 40 hemlock drive 43 west street"
+  },
+  {
+   "topic": "40 Hemlock Drive variance request",
+   "resolution": "approved",
+   "tags": [
+    "variance",
+    "septic",
+    "wetland"
+   ],
+   "quote": "on motion by sund and second by shea, the request for variances was unanimously approved."
+  },
+  {
+   "topic": "43 West Street Terrace variance request",
+   "resolution": "approved",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ],
+   "quote": "on motion by shea and second by sund, the request for variances was unanimously approved."
+  },
+  {
+   "topic": "Lyme disease discussion with Kurt Hayes",
+   "resolution": "board offered support and assistance",
+   "tags": [
+    "lyme disease",
+    "public health"
+   ],
+   "quote": "the board offered mr. hayes their support and whatever assistance he might need."
+  },
+  {
+   "topic": "69 Island Road septic redesign (public discussion)",
+   "resolution": "continued to July 20, 2009",
+   "tags": [
+    "septic",
+    "presby system",
+    "public discussion"
+   ],
+   "quote": "this matter can be set for discussion again on july 20, 2009 at 7:15 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 241 Reservoir Road",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 241 reservoir road 50 hemlock drive"
+  },
+  {
+   "name": "Title 5 inspection report, 50 Hemlock Drive",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 241 reservoir road 50 hemlock drive"
+  },
+  {
+   "name": "Septic permit signed, 40 Hemlock Drive",
+   "where": "list",
+   "quote": "septic permits signed: 40 hemlock drive 43 west street"
+  },
+  {
+   "name": "Septic permit signed, 43 West Street",
+   "where": "list",
+   "quote": "septic permits signed: 40 hemlock drive 43 west street"
+  },
+  {
+   "name": "Plan as submitted for 40 Hemlock Drive",
+   "where": "text",
+   "quote": "agent jim garreffi has reviewed the plan as submitted and has stated that since the only"
+  },
+  {
+   "name": "Three bedroom septic permit dated September 18, 2006, 69 Island Road",
+   "where": "text",
+   "quote": "currently, there is a three bedroom septic permit that is dated september 18, 2006."
+  }
+ ],
+ "tags": [
+  "septic",
+  "variance",
+  "title 5",
+  "wetland offset",
+  "groundwater offset",
+  "lyme disease",
+  "public health",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

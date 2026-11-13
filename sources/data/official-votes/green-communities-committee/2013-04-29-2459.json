@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2013-04-29",
  "docid": "2459",
@@ -12,15 +12,145 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from 4/3/2013",
+   "motion": "Approve the minutes of 4/3/2013.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the minutes from 4/3/2013 were approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "the minutes from 4/3/2013 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are sparse. One procedural vote recorded (approval of prior minutes). No formal motions with named movers/seconders are stated. No other votes recorded; discussion items and suggestions are noted but not voted on.",
- "cost_usd": 0.0933045
+ "note": "The minutes are a short summary with no recorded motion, second, or vote count for the approval of the 4/3/2013 minutes; it is recorded as passed from the statement that the minutes were approved. Adjournment at 7:50 P.M. is noted but no motion is recorded, so it is not listed as a vote. The header reads Green Community Task Force while the board named in the request is Green Communities Committee. Kelly Brown's statement is reported in the minutes; her attendance is not stated.",
+ "cost_usd": 0.00292392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan, e.sund advisors: m. benson"
+  },
+  {
+   "name": "J. McQuaid",
+   "role": "Member (Joanne McQuaid, Secretary)",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan, e.sund advisors: m. benson"
+  },
+  {
+   "name": "N. Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan, e.sund advisors: m. benson"
+  },
+  {
+   "name": "E.Sund",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan, e.sund advisors: m. benson"
+  },
+  {
+   "name": "M. Benson",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan, e.sund advisors: m. benson"
+  },
+  {
+   "name": "Kelly Brown",
+   "role": "of the DOER",
+   "status": "not stated",
+   "quote": "kelly brown of the doer said that a draft for an updated stretch code is in the works."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting to be determined after Town Meeting.",
+   "quote": "next meeting to be determined after town meeting."
+  },
+  {
+   "decision": "Members clarified and modified the wording of the Town Meeting presentation slides to create an informative yet brief presentation (no vote recorded).",
+   "quote": "d.blatt reviewed the actually power point slides while members clarified and modified the wording"
+  },
+  {
+   "decision": "Suggested (not recorded as decided) that a line be added to the Warrant specifying the Stretch Code effective date as 6/30/14.",
+   "quote": "d. blatt suggested that a line needs to be added to the warrant to specify the effective date to implement the stretch code as 6/30/14."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stretch Code renovation/addition cost",
+   "what_was_recorded": "The average estimated increased cost for renovations or additions under the Stretch Code is about $1.50 per square foot.",
+   "figures_as_printed": [
+    "$1.50 per square foot"
+   ],
+   "quote": "the average estimated increased cost for renovations or additions is about $1.50 per square foot."
+  },
+  {
+   "topic": "Green Community grant",
+   "what_was_recorded": "The Town will be awarded an estimated grant of $145,000.00 once its application to become a Green Community is accepted.",
+   "figures_as_printed": [
+    "$145,000.00"
+   ],
+   "quote": "the town will be awarded an estimated grant of $145,000.00 once the application to become a green community is accepted."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "approved 4/3/2013 minutes",
+   "quote": "meeting called to order at 7:35 p.m. the minutes from 4/3/2013 were approved.",
+   "tags": [
+    "minutes",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Review of Town Meeting Presentation",
+   "resolution": "presentation slides reviewed and reworded; Warrant line suggested",
+   "quote": "review of town meeting presentation: d. blatt suggested that a line needs to be added to the warrant",
+   "tags": [
+    "town meeting",
+    "stretch code",
+    "warrant",
+    "green community grant"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "to be determined after Town Meeting",
+   "quote": "next meeting to be determined after town meeting.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Power Point slides (Town Meeting presentation)",
+   "where": "text",
+   "quote": "d.blatt reviewed the actually power point slides while members clarified and modified the wording"
+  },
+  {
+   "name": "Warrant (Town Meeting warrant)",
+   "where": "text",
+   "quote": "d. blatt suggested that a line needs to be added to the warrant to specify the effective date"
+  }
+ ],
+ "tags": [
+  "Stretch Code",
+  "Green Community",
+  "Town Meeting",
+  "warrant",
+  "grant",
+  "energy efficiency",
+  "building code"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

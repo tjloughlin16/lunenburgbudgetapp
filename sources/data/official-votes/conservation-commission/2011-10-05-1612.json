@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-10-05",
  "docid": "1612",
@@ -12,23 +12,266 @@
  },
  "votes": [
   {
-   "motion": "Negative Determination of Applicability for removal of 15 pine trees and storage shed",
+   "motion": "Determination on the Request for Determination of Applicability filed by Eric S./Stacy J. Manseau for 11 Beachview Road (motion wording not printed).",
    "moved_by": "Sharon",
    "seconded_by": "Rich",
-   "outcome": "passed 3-0",
+   "outcome": "Negative 3, Unanimous (as printed)",
    "procedural": false,
-   "quote": "some trees are dead or damaged. sharon/rich negative 3 unanimous"
+   "quote": "eric briefly explained his project. some trees are dead or damaged. sharon/rich negative 3 unanimous"
   },
   {
-   "motion": "Negative Determination of Applicability for renovations to existing building and new building in 200-foot River Front Zone",
+   "motion": "Determination on the Request for Determination of Applicability filed by the Town of Lunenburg for 520 Chase Road (motion wording not printed).",
    "moved_by": "Mark",
    "seconded_by": "Sharon",
-   "outcome": "passed 3-0",
+   "outcome": "Negative 3, Unanimous (as printed)",
    "procedural": false,
    "quote": "matt stated that there would be no problems within the area. mark/sharon negative 3 unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of 2011 meeting minutes. Vote notation uses shorthand format (names followed by vote result). \"Negative 3 Unanimous\" interpreted as a Negative Determination passed 3-0 unanimously (standard in conservation commission Requests for Determination of Applicability).",
- "cost_usd": 0.1406155
+ "note": "Text is partly garbled (header line is encoding noise). No attendance list, no call to order, no approval of minutes, and no adjournment appear. Two votes appear only as result lines (e.g. 'Sharon/Rich Negative 3 Unanimous') with no motion wording; 'Negative 3' alongside 'Unanimous' is ambiguous, so outcomes are recorded as printed. Names such as Luck and Mulaney appear with spacing breaks in the scan. Public comment is not a separate section; speakers are recorded as agenda applicants.",
+ "cost_usd": 0.00619712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jan",
+   "role": "not printed",
+   "status": "present",
+   "quote": "jan displayed plan for view."
+  },
+  {
+   "name": "Matt",
+   "role": "not printed",
+   "status": "present",
+   "quote": "matt stated that there would be no problems within the area."
+  },
+  {
+   "name": "Sharon",
+   "role": "not printed",
+   "status": "present",
+   "quote": "mark/sharon negative 3 unanimous"
+  },
+  {
+   "name": "Rich",
+   "role": "not printed",
+   "status": "present",
+   "quote": "sharon/rich negative 3 unanimous"
+  },
+  {
+   "name": "Mark",
+   "role": "not printed",
+   "status": "present",
+   "quote": "mark/sharon negative 3 unanimous"
+  },
+  {
+   "name": "John Sawyer",
+   "role": "applicant",
+   "status": "present",
+   "quote": "john sawyer explained the project."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "requester, Snowriders club",
+   "status": "not stated",
+   "quote": "tom requested permission from the commision to use town owned property"
+  },
+  {
+   "name": "Carl A. Luck",
+   "role": "resident, 50 Sunset Lane",
+   "status": "not stated",
+   "quote": "resident carl a. luc k of 50 sunset lane"
+  },
+  {
+   "name": "Eric S./Stacy J. Manseau",
+   "role": "applicant, 11 Beachview Road",
+   "status": "present",
+   "quote": "filed by eric s./stacy j. manseau."
+  },
+  {
+   "name": "Eric",
+   "role": "applicant",
+   "status": "present",
+   "quote": "eric briefly explained his project."
+  },
+  {
+   "name": "David Rawlinson",
+   "role": "Eagle Scout project",
+   "status": "not stated",
+   "quote": "david rawlinson ~ eagle scout project"
+  },
+  {
+   "name": "Mark Flagg",
+   "role": "property owner, 1263/1275 Massachusetts Avenue",
+   "status": "not stated",
+   "quote": "the property owner is mark flagg."
+  },
+  {
+   "name": "Keating Trust",
+   "role": "property owner, Reservoir Road",
+   "status": "not stated",
+   "quote": "the property owner is keating trust."
+  },
+  {
+   "name": "David Normandin",
+   "role": "named at Keating hearing",
+   "status": "not stated",
+   "quote": "david normandin (keating's)"
+  },
+  {
+   "name": "Steve Mulaney",
+   "role": "named at Keating hearing",
+   "status": "not stated",
+   "quote": "steve mulaney, sam ramodelli, robert viviano, jim normandin, tom fisk."
+  },
+  {
+   "name": "Sam Ramodelli",
+   "role": "named at Keating hearing",
+   "status": "not stated",
+   "quote": "steve mulaney, sam ramodelli, robert viviano, jim normandin, tom fisk."
+  },
+  {
+   "name": "Robert Viviano",
+   "role": "named at Keating hearing",
+   "status": "not stated",
+   "quote": "steve mulaney, sam ramodelli, robert viviano, jim normandin, tom fisk."
+  },
+  {
+   "name": "Jim Normandin",
+   "role": "named at Keating hearing",
+   "status": "not stated",
+   "quote": "steve mulaney, sam ramodelli, robert viviano, jim normandin, tom fisk."
+  },
+  {
+   "name": "Tom Fisk",
+   "role": "named at Keating hearing",
+   "status": "not stated",
+   "quote": "steve mulaney, sam ramodelli, robert viviano, jim normandin, tom fisk."
+  },
+  {
+   "name": "Town of Lunenburg",
+   "role": "applicant, 520 Chase Road",
+   "status": "not stated",
+   "quote": "filed by the town of lunenburg."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 7:00 PM Request for Determination of Applicability filed by John Sawyer was rescheduled to October 19, 2011, and Matt will submit a Site Visit Report.",
+   "quote": "rescheduled to october 19, 2011. matt will submit a site visit report."
+  },
+  {
+   "decision": "The commission requested pictures of the beach project so it could better understand the scope of work.",
+   "quote": "the commission requested pictures so that they could better understand the scope of work."
+  },
+  {
+   "decision": "Tom Bertram's club will provide Jan a copy of the insurance certificate.",
+   "quote": "will get jan a copy of the insurance certificate."
+  },
+  {
+   "decision": "Matt will submit a Site Visit Report on Carl A. Luck's fence request.",
+   "quote": "matt will submit a site visit report."
+  },
+  {
+   "decision": "The owner of the 1263/1275 Massachusetts Avenue item cancelled and asked to be placed on the October 19 agenda, where a hearing on violations and encroachment will be held.",
+   "quote": "owner cancelled, requested to be put on agenda for october 19"
+  },
+  {
+   "decision": "Commission members agreed to go and view the scene at the Keating detention pond on Reservoir Road.",
+   "quote": "commission members would like to go and view the scene."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snowriders club insurance (Tom Bertram request, town-owned property)",
+   "what_was_recorded": "The club is insured for one million dollars and will provide a copy of its insurance certificate.",
+   "figures_as_printed": [
+    "$1,000,000"
+   ],
+   "quote": "the club is insure for $1,000,000 and will get jan a copy of the insurance certificate."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "7:00 PM beach slope reduction RDA (John Sawyer)",
+   "resolution": "rescheduled to October 19, 2011; site visit report",
+   "quote": "the proposed project is to reduce slope on beach from a 3 foot drop to a gradual slope."
+  },
+  {
+   "topic": "7:10 PM Snowriders club request (Tom Bertram)",
+   "resolution": "no action recorded",
+   "quote": "tom requested permission from the commision to use town owned property"
+  },
+  {
+   "topic": "7:20 PM fence within buffer zones (Carl A. Luck)",
+   "resolution": "no action recorded; site visit report",
+   "quote": "carl would like to discus s and understand the rules, process and procedures"
+  },
+  {
+   "topic": "7:30 PM 11 Beachview Road RDA (Eric S./Stacy J. Manseau)",
+   "resolution": "vote recorded, Negative 3, Unanimous (as printed)",
+   "quote": "eric briefly explained his project. some trees are dead or damaged. sharon/rich negative 3 unanimous"
+  },
+  {
+   "topic": "7:40 PM Eagle Scout project, Robb's Hill walkway (David Rawlinson)",
+   "resolution": "for information only",
+   "quote": "david rawlinson ~ eagle scout project"
+  },
+  {
+   "topic": "7:45 PM 1263/1275 Massachusetts Avenue violation hearing (Mark Flagg)",
+   "resolution": "owner cancelled; moved to October 19 agenda",
+   "quote": "owner cancelled, requested to be put on agenda for october 19"
+  },
+  {
+   "topic": "8:00 PM Keating detention pond violation, Reservoir Road",
+   "resolution": "commission to view the site",
+   "quote": "discussion on water running into shirley village reservoir (color, clarity, etc)."
+  },
+  {
+   "topic": "8:15 PM 520 Chase Road RDA (Town of Lunenburg)",
+   "resolution": "vote recorded, Negative 3, Unanimous (as printed)",
+   "quote": "matt stated that there would be no problems within the area. mark/sharon negative 3 unanimous"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Visit Report (to be submitted by Matt)",
+   "where": "text",
+   "quote": "matt will submit a site visit report."
+  },
+  {
+   "name": "Plan of 520 Chase Road renovations and new building (displayed by Jan)",
+   "where": "text",
+   "quote": "jan displayed plan for view."
+  },
+  {
+   "name": "Pictures of the beach slope scope of work (requested by commission)",
+   "where": "text",
+   "quote": "the commission requested pictures so that they could better understand the scope of work."
+  },
+  {
+   "name": "Insurance certificate (Snowriders club)",
+   "where": "text",
+   "quote": "will get jan a copy of the insurance certificate."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "request for determination of applicability",
+  "beach",
+  "snowmobile trails",
+  "fence",
+  "violation enforcement",
+  "Eagle Scout",
+  "detention pond",
+  "river front zone"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-05-08",
  "docid": "4509",
@@ -12,23 +12,285 @@
  },
  "votes": [
   {
-   "motion": "approve meeting minutes from April 10, 2013",
+   "motion": "Approve the minutes of the April 10, 2013 LSBC meeting.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "the lsbc moved to approve the meeting minutes from the april 10, 2013 meeting. the motion passed unanimously."
+   "quote": "motion: the lsbc moved to approve the meeting minutes from the april 10, 2013 meeting. the motion passed unanimously."
   },
   {
-   "motion": "approve both design project commitments from Tappe Associates",
+   "motion": "Approve both design project commitments (preliminary site survey by Nitsch Engineering and preliminary geotechnical investigation by LGCI).",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the lsbc moved to approve both commitments. the motion passed unanimously."
+   "quote": "motion: the lsbc moved to approve both commitments. the motion passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, MacOS Vision. The minutes record motions but do not name movers or seconders. A meeting adjournment is stated (\"was adjourned at 8:05 pm\") without a recorded motion.",
- "cost_usd": 0.09544849999999999
+ "note": "OCR scan of a two-page set of minutes prepared by Joslin, Lesser + Associates, approved June 17, 2013. The roster is OCR-scrambled: 17 names are printed but the role column is garbled (one role line reads 'Lumenu gone cunnieces, bran') and cannot be reliably matched to names, so roles are left blank except where the body text states them. Michael Mackin appears as 'Michael Mackin' and 'Mike Mackin' in the text. The MSBA-meeting paragraph's section heading is not legible. Two votes are recorded with no mover or seconder printed. Invoice approval, the Town Meeting confirmation and adjournment have no recorded motion. The public comment section says there was none.",
+ "cost_usd": 0.00835842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chairperson, Lunenburg School Building Committee (LSBC)",
+   "status": "present",
+   "quote": "michael mackin, chairperson of the lunenburg school building committee (lsbc), called the meeting to"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "from JLA (Joslin, Lesser + Associates)",
+   "status": "present",
+   "quote": "greg cohan from jla presented for approval copies of joslin, lesser + associates and tappe associates"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "LSBC member",
+   "status": "present",
+   "quote": "as requested by a lsbc member brian frank in the 4/10/13 meeting, jla needs to"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Mike Barney",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Richard Cohen",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Brian Spadafino",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Tim Santry",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Charles Hay",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Cesar Dedios",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Damian Liddiard",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Christine DePalma",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "status": "present",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank richard cohen kerry speidel john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair requested that JLA take the lead in coordinating the agenda, date, time and location for the community outreach briefings and public forum.",
+   "quote": "he requested jla take the lead to coordinate agenda, date, time, and location."
+  },
+  {
+   "decision": "The board confirmed its desire to hold a Town Meeting to review the project in the last week of November or first week of December 2013.",
+   "quote": "confirmation of thier desire to hold a town meeting to review the project either the last week of november or first week of december 2013."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Preliminary Site Survey (Nitsch Engineering) commitment",
+   "what_was_recorded": "Tappe Associates forwarded a not-to-exceed proposal for a preliminary site survey by Nitsch Engineering, which the board approved.",
+   "figures_as_printed": [
+    "$20,460.00"
+   ],
+   "quote": "the proposal is for a not to exceed amount for $20,460.00."
+  },
+  {
+   "topic": "Preliminary Geotechnical Investigation (LGCI) commitment",
+   "what_was_recorded": "A not-to-exceed cost was recorded for a preliminary geotechnical investigation by Lahlaf Geotechnical Consulting, Inc (LGCI) with up to twelve borings, which the board approved.",
+   "figures_as_printed": [
+    "$13,937.00"
+   ],
+   "quote": "cost amount for this work is $13,937.00."
+  },
+  {
+   "topic": "JLA and Tappe invoices billing format",
+   "what_was_recorded": "JLA will show the total contract amount and a subtotal billed to date on future invoices, as requested by Brian Frank; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "jla needs to include the total amount of its contract on future invoices as well as a subtotal showing what has been billed to date."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:07 PM",
+   "quote": "michael mackin, chairperson of the lunenburg school building committee (lsbc), called the meeting to order at 7:07 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "approved April 10, 2013 minutes",
+   "quote": "motion: the lsbc moved to approve the meeting minutes from the april 10, 2013 meeting. the motion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Project Commitments",
+   "resolution": "approved two commitments (site survey and geotechnical investigation)",
+   "quote": "motion: the lsbc moved to approve both commitments. the motion passed unanimously.",
+   "tags": [
+    "consultant contracts",
+    "site survey",
+    "geotechnical"
+   ]
+  },
+  {
+   "topic": "Project Invoices",
+   "resolution": "presented for approval; no recorded vote",
+   "quote": "greg cohan from jla presented for approval copies of joslin, lesser + associates and tappe associates",
+   "tags": [
+    "invoices"
+   ]
+  },
+  {
+   "topic": "MSBA meeting review",
+   "resolution": "reported; no action",
+   "quote": "jla affirmed that the meeting went well and the msba by nature of their",
+   "tags": [
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Next Steps in the Feasibility Study/Schematic Design Phase",
+   "resolution": "briefed; Town Meeting desire confirmed; no vote",
+   "quote": "greg cohan briefed the lsbc on the request from the msba to move the approval period for the preferred",
+   "tags": [
+    "MSBA",
+    "schedule",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Project Schedule",
+   "resolution": "listed; no action",
+   "quote": "may 13, 2013 - jla/tappe meeting with the msba",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Community Outreach Efforts",
+   "resolution": "JLA asked to lead coordination; no vote",
+   "quote": "mike mackin reinforced the school building committee plans to have a public forum on the project this",
+   "tags": [
+    "community outreach",
+    "public forum"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no other business",
+   "quote": "there was no other business.",
+   "tags": []
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:05 pm (no motion recorded)",
+   "quote": "the meeting was adjourned at 8:05 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Meeting minutes from the prior meeting held on April 10, 2013",
+   "where": "text",
+   "quote": "distributed the meeting minutes from the prior meeting held on april 10, 2013."
+  },
+  {
+   "name": "Two design project commitments received from Tappe Associates (preliminary site survey by Nitsch Engineering; preliminary geotechnical investigation by LGCI)",
+   "where": "text",
+   "quote": "jla distributed to the lsbc two (2) design project commitments received from tappe associates for review and approval;"
+  },
+  {
+   "name": "Joslin, Lesser + Associates and Tappe Associates April 2013 Invoices",
+   "where": "text",
+   "quote": "greg cohan from jla presented for approval copies of joslin, lesser + associates and tappe associates"
+  },
+  {
+   "name": "Tappe and JA's May 2013 invoices",
+   "where": "text",
+   "quote": "tappe and ja's may 2013 invoices show those amounts and will continue to do so."
+  }
+ ],
+ "tags": [
+  "school building project",
+  "MSBA",
+  "Town Meeting",
+  "consultant contracts",
+  "invoices",
+  "site survey",
+  "geotechnical",
+  "community outreach",
+  "schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jla distributed to the lsbc two (2) design project commitments"
+ },
+ "dropped_unquoted_by_field": {}
 }

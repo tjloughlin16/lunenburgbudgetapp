@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-01-23",
  "docid": "5478",
@@ -12,15 +12,239 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the workshop.",
    "moved_by": "Butch",
-   "seconded_by": "Jay",
-   "outcome": "Unanimous",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "carl asked for a motion to adjourn. butch made the motion, jay seconded. vote taken was unanimous."
+   "quote": "carl asked for a motion to adjourn. butch made the motion, jay seconded. vote taken was unanimous.",
+   "seconded_by": "Jay"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. Minutes record extensive discussions and decisions (FY15 budget adjustments, contract terms, infrastructure decisions) but only one formal motion and vote is recorded: adjournment.",
- "cost_usd": 0.0826845
+ "note": "Single OCR page (page 1 only), a budget workshop of the Sewer Commission. No attendance list, so attendance is inferred from who spoke or moved. Only one recorded vote (adjournment, unanimous, no tally printed). Several decisions were reached by consensus without a vote. OCR errors are present (e.g., 'vrate was fow meters', 'Fins', 'l/l'), so quotes are copied as printed. Meeting start time, earlier pages and any public comment are not in this text. Debbie (Small Water) is referenced but not recorded as taking part.",
+ "cost_usd": 0.00472652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl started the discussion of the fy15 budget."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager/for the Sewer Commission",
+   "status": "present",
+   "quote": "barb lefebvre business manager/for the sewer commission"
+  },
+  {
+   "name": "Mike",
+   "role": "",
+   "status": "present",
+   "quote": "in reviewing utilities, mike brought up whether we had checked with unitil about 'losing a leg'"
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack noted we had submitted for a similar issue and were denied a credit."
+  },
+  {
+   "name": "Butch",
+   "role": "",
+   "status": "present",
+   "quote": "butch made the motion, jay seconded. vote taken was unanimous."
+  },
+  {
+   "name": "Jay",
+   "role": "",
+   "status": "present",
+   "quote": "butch made the motion, jay seconded. vote taken was unanimous."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Highfield capacity figure should not appear in the FY15 budget.",
+   "quote": "commission discussed the highfield capacity figure and determined that it should not appear."
+  },
+  {
+   "decision": "The $50,000 engineering for the proposed extension with the SRF loan is removed from the budget; it will be requested as an appropriation at Town meeting.",
+   "quote": "in purchase of service, the $50,000 for engineering of the proposed extension with the srf loan was removed - we will request appropriation at town meeting and it should not be a line item on our budget."
+  },
+  {
+   "decision": "Accept Small Water Systems' outsourcing offer: 2.5% over last year for next year with labor at $68/hr; Year 3 at 2.5% with labor raised to $70/hr.",
+   "quote": "the commission were satisfied with that offer."
+  },
+  {
+   "decision": "Attempt the Unitil credit request for the 'losing a leg' labor and materials billing anyway.",
+   "quote": "commission all felt we should attempt it anyway."
+  },
+  {
+   "decision": "Leave the Fitchburg usage amount as is.",
+   "quote": "it was decided to leave the fitchburg amount as is."
+  },
+  {
+   "decision": "Reduce the Leominster usage amount to balance the budget.",
+   "quote": "commission determined to reduce leominster usage amount as it seemed high to balance the budget."
+  },
+  {
+   "decision": "Barb Lefebvre to check invoices to ensure there was no error for the Fitchburg amount.",
+   "quote": "barb will check invoices to ensure there was no error for fins."
+  },
+  {
+   "decision": "Barb Lefebvre to check whether Small Water checked the flow meters monthly as committed at the 12/20 inspection.",
+   "quote": "carl asked if small water had checked the flow meters as they had committed to do it monthly at the inspection on 12/20. barb will check."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Highfield capacity figure",
+   "what_was_recorded": "The Highfield capacity figure was discussed and determined not to appear in the budget.",
+   "figures_as_printed": [],
+   "quote": "commission discussed the highfield capacity figure and determined that it should not appear."
+  },
+  {
+   "topic": "Purchase of Service engineering for SRF-loan extension",
+   "what_was_recorded": "A $50,000 engineering line for the proposed extension with the SRF loan was removed from the budget and moved to a Town meeting appropriation request.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "in purchase of service, the $50,000 for engineering of the proposed extension with the srf loan was removed"
+  },
+  {
+   "topic": "Small Water Systems outsourcing rates",
+   "what_was_recorded": "Debbie proposed 2.5% over last year for next year with the labor rate unchanged, and 2.5% in Year 3 with the labor rate raised; the Commission was satisfied.",
+   "figures_as_printed": [
+    "2.5%",
+    "$68/hr",
+    "$70/hr"
+   ],
+   "quote": "jack had talked to debbie and she stated she would go with 2.5% over last year for next year, with the labor rate staying the same at $68/hr."
+  },
+  {
+   "topic": "Unitil labor and materials billing for damage",
+   "what_was_recorded": "The utility billed labor and materials for damage; a similar prior request was denied a credit, but the Commission agreed to attempt it anyway.",
+   "figures_as_printed": [],
+   "quote": "since we were billed for labor and materials for the damage."
+  },
+  {
+   "topic": "Fitchburg usage",
+   "what_was_recorded": "The Commission was concerned the Fitchburg usage was quite high; Barb will check invoices and the amount was left as is.",
+   "figures_as_printed": [],
+   "quote": "the commission was concerned that the fitchburg usage was quite high."
+  },
+  {
+   "topic": "Leominster usage",
+   "what_was_recorded": "The Leominster usage amount was reduced because it seemed high, to balance the budget.",
+   "figures_as_printed": [],
+   "quote": "commission determined to reduce leominster usage amount as it seemed high to balance the budget."
+  },
+  {
+   "topic": "Sewer bank fee and L/I remediation entry",
+   "what_was_recorded": "Barb pointed out the sewer bank fee and an entry in both income and expense for the I/I required remediation.",
+   "figures_as_printed": [],
+   "quote": "barb pointed out the sewer bank fee and that there was an entry in both income and expense for the l/l required remediation."
+  },
+  {
+   "topic": "Project funds for infrastructure",
+   "what_was_recorded": "The Commission discussed using project funds soon for infrastructure expenses; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed project funds and getting it used soon for infrastructure expenses."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY15 budget review",
+   "resolution": "reviewed; budget balanced again for the second year, no vote",
+   "quote": "carl started the discussion of the fy15 budget.",
+   "tags": [
+    "budget",
+    "FY15"
+   ]
+  },
+  {
+   "topic": "Highfield capacity figure and future capacity charge",
+   "resolution": "figure removed; future charge discussed, no action",
+   "quote": "commission discussed the highfield capacity figure and determined that it should not appear.",
+   "tags": [
+    "Highfield",
+    "capacity charge"
+   ]
+  },
+  {
+   "topic": "Utilities: Unitil labor and materials billing",
+   "resolution": "attempt credit request, no vote",
+   "quote": "in reviewing utilities, mike brought up whether we had checked with unitil about 'losing a leg'",
+   "tags": [
+    "Unitil",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Purchase of Service: SRF-loan extension engineering",
+   "resolution": "removed from budget; to Town meeting",
+   "quote": "in purchase of service, the $50,000 for engineering of the proposed extension with the srf loan was removed",
+   "tags": [
+    "SRF loan",
+    "Town meeting"
+   ]
+  },
+  {
+   "topic": "Outsourcing: Small Water Systems",
+   "resolution": "Commission satisfied with two-year rate offer, no vote",
+   "quote": "as for outsourcing, the commission all agreed that they are very happy with small water systems.",
+   "tags": [
+    "Small Water Systems",
+    "outsourcing"
+   ]
+  },
+  {
+   "topic": "Project funds and SCADA",
+   "resolution": "discussed, no action",
+   "quote": "the commission discussed project funds and getting it used soon for infrastructure expenses.",
+   "tags": [
+    "project funds",
+    "SCADA"
+   ]
+  },
+  {
+   "topic": "Fitchburg and Leominster usage",
+   "resolution": "Fitchburg left as is; Leominster reduced",
+   "quote": "the commission was concerned that the fitchburg usage was quite high.",
+   "tags": [
+    "Fitchburg",
+    "Leominster",
+    "flow"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously at 7:56pm",
+   "quote": "carl asked for a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "sewer",
+  "FY15 budget",
+  "workshop",
+  "Small Water Systems",
+  "Fitchburg",
+  "Leominster",
+  "Unitil",
+  "Highfield",
+  "SRF loan",
+  "Town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

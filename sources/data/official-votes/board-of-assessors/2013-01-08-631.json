@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-01-08",
  "docid": "631",
@@ -12,39 +12,243 @@
  },
  "votes": [
   {
-   "motion": "To approve current expense vouchers, abatements, warrants and prior minutes",
-   "outcome": "not stated",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & minutes."
-  },
-  {
-   "motion": "To approve and grant two elderly exemptions totaling $1,750.00",
-   "outcome": "not stated",
+   "motion": "Accept the Cartographic Associates contract, which states a cost of $2400.00.",
+   "outcome": "passed",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "two elderly exemptions approved and granted totally $1,750.00."
-  },
-  {
-   "motion": "To grant the 41A elderly persons tax deferral application",
-   "outcome": "not stated",
-   "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "the board reviewed and granted the application."
-  },
-  {
-   "motion": "To accept the Cartographic Associates contract for $2,400.00",
-   "outcome": "not stated",
-   "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "the board reviewed and voted to accept the contract."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; no vote counts, no mover/seconder names recorded for any vote. Four votes identified by explicit approval or grant language.",
- "cost_usd": 0.1158295
+ "note": "OCR text from a scanned page with visible errors (e.g., 'Laurie Faquette' in the signature block, 'August 3151', 'February 5°', 'Regional Resouce'). Figures and names were copied as printed and may carry OCR error. No motions to approve prior minutes, adjourn, or enter executive session are recorded; the only recorded vote is the Cartographic contract, and the minutes print no vote count or mover. No documents list heading is printed. No public comment section is printed.",
+ "cost_usd": 0.0045774200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chris comeau - chairman, board members, - matthew j. papini, sr., louis j. franco, harald scheid - regional assessor, kerry speidel, town manager and"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau - chairman, board members, - matthew j. papini, sr., louis j. franco, harald scheid - regional assessor, kerry speidel, town manager and"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau - chairman, board members, - matthew j. papini, sr., louis j. franco, harald scheid - regional assessor, kerry speidel, town manager and"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chris comeau - chairman, board members, - matthew j. papini, sr., louis j. franco, harald scheid - regional assessor, kerry speidel, town manager and"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry attended in response to an invitation to address the topic of soliciting bids for proposal for the"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "louise paquette- administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants and minutes (no motion recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & minutes."
+  },
+  {
+   "decision": "Harald and the Board agreed that the personal property assessment project must be started immediately.",
+   "quote": "harald and the board agreed that the project must be started immediately"
+  },
+  {
+   "decision": "Board agreed to roll the reevaluation/periodicals funding into the three-year Assessor contract rather than go before a Town vote.",
+   "quote": "proposed and agreed that the monies be rolled into the three year contract of the assessor rather that going before a town vote."
+  },
+  {
+   "decision": "Board reviewed and granted the 41A (Elderly Persons) Tax Deferral application.",
+   "quote": "the board reviewed and granted the application."
+  },
+  {
+   "decision": "Kerry Speidel to prepare the RFP for the personal property assessment project and present it at the next meeting.",
+   "quote": "kerry stated that she will prepare the rfp (request for proposal) and present it to the boa at the next meeting."
+  },
+  {
+   "decision": "Louise Paquette to send the property owner the Certificate of Deferral.",
+   "quote": "louise will send the property owner the certificate of deferral."
+  },
+  {
+   "decision": "Louise Paquette to mail back the signed Cartographic Associates contract.",
+   "quote": "louise will mail back the signed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Committed amounts for FY13 Real Estate and Personal Property bills",
+   "what_was_recorded": "Louise reported the committed totals for the mailed FY13 RE and PP bills.",
+   "figures_as_printed": [
+    "$19,058,622.85",
+    "$508,191.78"
+   ],
+   "quote": "the committed amount for 4,875 real estate accounts total is $19,058,622.85 and 179 personal property accounts total $508,191.78."
+  },
+  {
+   "topic": "Elderly exemptions granted",
+   "what_was_recorded": "Two elderly exemptions were approved and granted totaling this amount.",
+   "figures_as_printed": [
+    "$1,750.00"
+   ],
+   "quote": "two elderly exemptions approved and granted totally $1,750.00."
+  },
+  {
+   "topic": "Cartographic Associates map contract",
+   "what_was_recorded": "The resubmitted contract states the cost, including three reduced size replacement prints, one full size color Composite map and a complete set of PDF map files.",
+   "figures_as_printed": [
+    "$2400.00"
+   ],
+   "quote": "the contract states the cost is $2400.00 which includes three (3) each"
+  },
+  {
+   "topic": "Funding for the measure and list periodicals project",
+   "what_was_recorded": "Chris said an article is needed for the spring Town Meeting warrant to fund the additional monies, and suggested splitting the amounts into three equal amounts over three years; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "chris stated that we will need to submit an article for the spring town meeting warrant in order to fund the additional monies necessary for the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Personal property forms mailing",
+   "resolution": "no action; informational",
+   "tags": [
+    "personal property",
+    "forms"
+   ],
+   "quote": "louise reported that approximately 540 personal property forms of list were being prepared and mailed"
+  },
+  {
+   "topic": "Personal property assessment project bids",
+   "resolution": "RFP to be prepared and presented at next meeting; project to start immediately",
+   "tags": [
+    "personal property",
+    "RFP",
+    "bids"
+   ],
+   "quote": "kerry stated that she will prepare the rfp (request for proposal) and present it to the boa at the next meeting."
+  },
+  {
+   "topic": "Assessors' contract RFP and reevaluation funding",
+   "resolution": "funding to roll into three-year Assessor contract; RFP to be prepared for next meeting",
+   "tags": [
+    "contract",
+    "revaluation",
+    "periodicals",
+    "RFP"
+   ],
+   "quote": "kerry also addressed the upcoming rfp for the assessors' contract that will expire at the end of june."
+  },
+  {
+   "topic": "FY13 RE and PP tax bills",
+   "resolution": "no action; informational",
+   "tags": [
+    "tax bills",
+    "committed amounts"
+   ],
+   "quote": "louise reported that the bills have been mailed for the actual fy13 re & pp."
+  },
+  {
+   "topic": "FY13 abatement applications",
+   "resolution": "no action; informational, deadline noted",
+   "tags": [
+    "abatements",
+    "deadlines"
+   ],
+   "quote": "the deadline for filing is feb. 1, 2013."
+  },
+  {
+   "topic": "Elderly exemptions and 41A tax deferral",
+   "resolution": "exemptions granted; 41A deferral granted",
+   "tags": [
+    "exemptions",
+    "41A",
+    "elderly"
+   ],
+   "quote": "two elderly exemptions approved and granted totally $1,750.00."
+  },
+  {
+   "topic": "Budget",
+   "resolution": "no action; awaiting proposed budget",
+   "tags": [
+    "budget"
+   ],
+   "quote": "louise stated that the department should be receiving the proposed budget from the town manager shortly."
+  },
+  {
+   "topic": "Cartographic Associates contract",
+   "resolution": "accepted",
+   "tags": [
+    "contract",
+    "maps"
+   ],
+   "quote": "louise informed the board that cartographic associates has resubmitted the contract and added the"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Personal Property Forms of List",
+   "where": "text",
+   "quote": "louise reported that approximately 540 personal property forms of list were being prepared and mailed"
+  },
+  {
+   "name": "Request for proposal (RFP) for personal property assessment project",
+   "where": "text",
+   "quote": "kerry stated that she will prepare the rfp (request for proposal) and present it to the boa at the next meeting."
+  },
+  {
+   "name": "FY13 RE & PP abatement applications",
+   "where": "text",
+   "quote": "louise reported that the fy13 re & pp abatement applications are available in the office"
+  },
+  {
+   "name": "41A (Elderly Persons) Tax Deferral application",
+   "where": "text",
+   "quote": "louise also presented one 41a"
+  },
+  {
+   "name": "Certificate of Deferral",
+   "where": "text",
+   "quote": "louise will send the property owner the certificate of deferral."
+  },
+  {
+   "name": "Cartographic Associates contract",
+   "where": "text",
+   "quote": "louise informed the board that cartographic associates has resubmitted the contract and added the"
+  }
+ ],
+ "tags": [
+  "assessors",
+  "personal property",
+  "revaluation",
+  "abatements",
+  "exemptions",
+  "41A deferral",
+  "contracts",
+  "RFP",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

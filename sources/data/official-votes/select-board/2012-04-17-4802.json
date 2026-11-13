@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-04-17",
  "docid": "4802",
@@ -12,62 +12,503 @@
  },
  "votes": [
   {
-   "motion": "approve the pole relocation as shown on the maps provided by Verizon",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Approve the pole relocation for Pole No. 5 on Leominster-Shirley Road as shown on Verizon's maps.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved to approve the pole relocation as shown on the maps provided by verizon. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "close the public hearing",
+   "motion": "Close the public hearing on the pole location.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
    "quote": "it was then moved and seconded to close the public hearing."
   },
   {
-   "motion": "waive the $990.00 payment to the Town of Lunenburg Ambulance",
-   "moved_by": "Mr. Sund",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Waive the $990.00 payment to the Town of Lunenburg Ambulance.",
+   "moved_by": "Carl \"Ernie\" Sund",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "mr. sund motioned to waive the $990.00 payment to the town of lunenburg ambulance. mr. debettencourt seconded. discussion: mr. debettencourt questioned",
-   "quote_taken_from_text": true
+   "quote": "mr. sund motioned to waive the $990.00 payment to the town of lunenburg ambulance. mr. debettencourt seconded."
   },
   {
-   "motion": "approve the revised amount on STM Article 1 by $990.00",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Approve the revised amount on STM Article 1 by $990.00.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "a new motion was then presented by ms. bertram to approve the revised amount on stm article 1 by $990.00. mr. debettencourt seconded. on vote, motion carried, 5 in favor, o opposed."
   },
   {
-   "motion": "approve the Lions Club Road Block",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Mr. Alonzo",
-   "outcome": "passed 4-0 (1 recused)",
+   "motion": "Establish a Memorial Day Celebration Planning Committee in accordance with the guideline laid out by Selectmen Sund.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "town establish a memorial day celebration planning committee in accordance with the guideline laid out by selectmen sund. mr. debettencourt seconded."
+  },
+  {
+   "motion": "Approve the Lions Club Road Block on 05/12/12.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Tom Alonzo",
+   "outcome": "passed 4-0-1",
    "procedural": false,
    "quote": "mr. debettencourt motioned for approval for the lions club road block. mr. alonzo seconded. on vote, motion carried, 4 in favor, 0 opposed, 1 recused (bertram)"
   },
   {
-   "motion": "approve the two licenses for Rick's Foods doing business as Harry's Road Side",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Approve the Peddler's License and Common Victualler License for Rick's Foods doing business as Harry's Road Side.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved that they approve the two licenses for rick's foods doing business as harry's road side. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Paula Bertram",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. debettencourt made a motion to adjourn. ms. bertram seconded. the board voted unanimously to adjourn the meeting at 9:03 p.m."
+   "quote": "being no further business mr. debettencourt made a motion to adjourn. ms. bertram seconded. the board voted unanimously to adjourn the meeting at 9:03 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR text from macOS Vision. Two instances of \"O opposed\" in quotes reflect OCR errors for \"0 opposed\"; quoted verbatim as they appear in the extracted text.",
- "cost_usd": 0.1402825
+ "dropped_unquoted": 0,
+ "note": "OCR text of a received-and-filed scan (stamp May 14, 2012). Some votes read as \"O opposed\" where the printed figure is a zero. Quotes are collapsed across line breaks. Some vote quotes are cut to 200 characters, so the result sentence sits outside the quote for the ambulance waiver. Chair role is not printed. Harald Scheid appears only as an email sender and is not listed as an attendee. The minutes contain no attendance line for the Lions Club, which had no representatives. The Sewer Commission and Public Access Television items were deferred to May 1 and are not discussed here.",
+ "cost_usd": 0.013094420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "member of the Citizens for Fiscal Responsibility in Lunenburg",
+   "status": "present",
+   "quote": "dave mcdonald, island rd., began by congratulating chief bourgeois on his upcoming retirement."
+  },
+  {
+   "name": "Milree Keeling",
+   "role": "",
+   "status": "present",
+   "quote": "milree keeling, 324 sunnyhill rd., asked the board what cuts in services, excluding the cuts in the school department,"
+  },
+  {
+   "name": "Dan Bourgeois",
+   "role": "Lunenburg Police Chief",
+   "status": "present",
+   "quote": "lunenburg police chief dan bourgeois spoke on behalf of the lunenburg and fitchburg police and fire departments"
+  },
+  {
+   "name": "Daniel Jones",
+   "role": "State Trooper",
+   "status": "present",
+   "quote": "the bos signed the proclamation and it was then presented to trooper jones."
+  },
+  {
+   "name": "Paul Schneider",
+   "role": "Manager-Rights of Way for Verizon New England",
+   "status": "present",
+   "quote": "paul schneider, manager-rights of way for verizon new england, explained the purpose for the new pole"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "STM Article 20 (personal property accounts minimum value, Board of Assessors) was tabled until the next BOS meeting.",
+   "quote": "this item was tabled until the next bos meeting."
+  },
+  {
+   "decision": "The BOS decided to hold a workshop on April 24 at 6:00 p.m. on combining the Building Department and BOH.",
+   "quote": "the bos decided to have a workshop on april 24 at 6:00 p.m. to discuss this issue."
+  },
+  {
+   "decision": "Any adjustments to departments would have to be made at the STM in the fall, not at Town Meeting.",
+   "quote": "it was determined that if there were adjustments to be made then they would have to be done at stm in the fall."
+  },
+  {
+   "decision": "Remote Participation Policy continued to May 22, 2012.",
+   "quote": "remote participation policy, continue to may 22, 2012"
+  },
+  {
+   "decision": "Town Manager to make the date change on the STM Article 1 spread sheet for the BOS.",
+   "quote": "which she will make that change on the spread sheet for the bos."
+  },
+  {
+   "decision": "Town Manager requested that town counsel hold a workshop on Open Meeting Law email communication and agenda detail.",
+   "quote": "ms. speidel has requested town council have a workshop on this matter but has not heard back from them yet."
+  },
+  {
+   "decision": "No executive session was needed on the collective bargaining and non-union negotiation item.",
+   "quote": "no need for executive session this evening"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "STM Article 1, prior year unpaid bills (police officer medical services)",
+   "what_was_recorded": "Six unpaid medical bills for an injured-on-duty officer exceeded the injured-on-duty insurance cap by a stated total.",
+   "quote": "exceeded the injured on duty insurance cap of $50,000, by a total of $6,595.98.",
+   "figures_as_printed": [
+    "$50,000",
+    "$6,595.98"
+   ]
+  },
+  {
+   "topic": "Ambulance bill waiver",
+   "what_was_recorded": "A $990.00 bill owed to the Town of Lunenburg Ambulance was the subject of a waiver motion and then a revised amount motion.",
+   "quote": "mr. sund motioned to waive the $990.00 payment to the town of lunenburg ambulance.",
+   "figures_as_printed": [
+    "$990.00"
+   ]
+  },
+  {
+   "topic": "STM Article 20, personal property accounts minimum value",
+   "what_was_recorded": "The Regional Tax Assessor's email put the net revenue loss from the personal property exemption at approximately $3,000.",
+   "quote": "the net loss would be approximately $3,000.",
+   "figures_as_printed": [
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "Administrative Assistant position restoration",
+   "what_was_recorded": "An adjustment from the last meeting proposed $17,000 to partially restore one of two Administrative Assistant positions.",
+   "quote": "to include $17,000 to partially restore one of the two administrative assistant positions",
+   "figures_as_printed": [
+    "$17,000"
+   ]
+  },
+  {
+   "topic": "Override amount and budget cuts",
+   "what_was_recorded": "A board member asked which programs would be cut to reach a $2.2M figure needed to sustain services for five years.",
+   "quote": "he would cut to the tune of $2.2m dollars to sustain us or the next five years",
+   "figures_as_printed": [
+    "$2.2M"
+   ]
+  },
+  {
+   "topic": "Senior citizen circuit breaker tax credit",
+   "what_was_recorded": "Dave McDonald described a state circuit breaker credit of up to a fixed refundable amount based on property taxes paid.",
+   "quote": "allows up to a $980 refundable credit on state income taxes",
+   "figures_as_printed": [
+    "$980"
+   ]
+  },
+  {
+   "topic": "Override tax impact",
+   "what_was_recorded": "Mr. Matthews corrected a published claim, saying taxes would rise about 11% one time rather than 12.5% each year.",
+   "quote": "they would increase by about 11% one time",
+   "figures_as_printed": [
+    "12.5%",
+    "11%"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant for Town Election and Town Meeting",
+   "what_was_recorded": "Warrant W # 61-12 was presented for approval with a stated total.",
+   "quote": "2. warrants - w # 61-12 $89,326.69",
+   "figures_as_printed": [
+    "$89,326.69"
+   ]
+  },
+  {
+   "topic": "Summer Street project state funding",
+   "what_was_recorded": "No state money this fiscal year; a STM warrant article would appropriate the town's share of the 25% engineering funding.",
+   "quote": "appropriation of funds which will cover the town's share of the 25%.",
+   "figures_as_printed": [
+    "25%"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of money to cover the STM Article 1 prior year unpaid bills, source not yet identified.",
+   "outcome": "not yet identified by the Town Manager",
+   "amount_as_printed": "not stated",
+   "quote": "this will be covered by a transfer of money which the town manager has not identified yet."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "member of the Citizens for Fiscal Responsibility in Lunenburg",
+   "topic": "Override; Citizens for Fiscal Responsibility handout",
+   "quote": "dave mcdonald, island rd., began by congratulating chief bourgeois on his upcoming retirement."
+  },
+  {
+   "speaker": "Milree Keeling",
+   "stated_role": "",
+   "topic": "Services cuts if override fails",
+   "quote": "milree keeling, 324 sunnyhill rd., asked the board what cuts in services, excluding the cuts in the school department,"
+  },
+  {
+   "speaker": "Milree Keeling",
+   "stated_role": "",
+   "topic": "Pre-school program and senior circuit breaker",
+   "quote": "milree keeling spoke to this discussion in saying that the pre-school program is required by law because they must"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Proclamation for State Trooper Daniel Jones",
+   "resolution": "proclamation read and presented",
+   "quote": "on behalf of the board, mr. matthews thanked trooper jones and read the proclamation into record",
+   "tags": [
+    "proclamation",
+    "police"
+   ]
+  },
+  {
+   "topic": "Public hearing, pole location, Leominster-Shirley Road, Pole No. 5",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved to approve the pole relocation as shown on the maps provided by verizon.",
+   "tags": [
+    "public hearing",
+    "pole location",
+    "Verizon"
+   ]
+  },
+  {
+   "topic": "FY2013 Budget & Override; review of Town Meeting warrant articles",
+   "resolution": "STM Article 1 revised by $990.00; STM Article 20 tabled; workshop set April 24",
+   "quote": "1. fy2013 budget & override; review & recommendations on town meeting warrant articles -",
+   "tags": [
+    "FY2013 budget",
+    "override",
+    "STM",
+    "warrant articles",
+    "unpaid bills",
+    "Administrative Assistant hours"
+   ]
+  },
+  {
+   "topic": "Establishment of Memorial Day Committee",
+   "resolution": "approved 5-0",
+   "quote": "town establish a memorial day celebration planning committee in accordance with the guideline laid out by selectmen sund.",
+   "tags": [
+    "committee",
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "Remote Participation Policy",
+   "resolution": "continued to May 22, 2012",
+   "quote": "remote participation policy, continue to may 22, 2012",
+   "tags": [
+    "policy",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Request for approval from Lions Club, Road Block 05/12/12",
+   "resolution": "approved 4-0-1",
+   "quote": "mr. debettencourt motioned for approval for the lions club road block. mr. alonzo seconded.",
+   "tags": [
+    "road block",
+    "Lions Club"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrant presented; no minutes; action file updates, no vote",
+   "quote": "2. warrants - w # 61-12 $89,326.69",
+   "tags": [
+    "warrants",
+    "action file",
+    "walkway",
+    "trash barrels"
+   ]
+  },
+  {
+   "topic": "Committee reports (Mass Broad Band Institute, MMPO)",
+   "resolution": "information only",
+   "quote": "mr. alonzo said that there will be an informational work shop from the mass broad band institute on may 22, 2012.",
+   "tags": [
+    "MMPO",
+    "Summer Street",
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "quote": "7. department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager reports: Rick's Foods licenses",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved that they approve the two licenses for rick's foods doing business as harry's road side.",
+   "tags": [
+    "licenses",
+    "Peddler's License",
+    "Common Victualler License"
+   ]
+  },
+  {
+   "topic": "Old business and appointments",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": [
+    "Whalom control box",
+    "accident debris"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "not needed",
+   "quote": "no need for executive session this evening",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant W # 61-12 $89,326.69",
+   "where": "list",
+   "quote": "2. warrants - w # 61-12 $89,326.69"
+  },
+  {
+   "name": "Warrant for Town Election",
+   "where": "list",
+   "quote": "warrant for town election warrant for town meeting"
+  },
+  {
+   "name": "Warrant for Town Meeting",
+   "where": "list",
+   "quote": "warrant for town election warrant for town meeting"
+  },
+  {
+   "name": "Notice to Abutters regarding the pole location for Pole No. 5 on Leominster-Shirley Rd.",
+   "where": "text",
+   "quote": "mr. matthews read the notice to abutters regarding the pole location for pole no. 5 on leominster-shirley rd."
+  },
+  {
+   "name": "Maps provided by Verizon (pole relocation)",
+   "where": "text",
+   "quote": "as shown on the maps provided by verizon"
+  },
+  {
+   "name": "Citizens for Fiscal Responsibility handout of Fitchburg Sentinel & Enterprise articles",
+   "where": "text",
+   "quote": "and he had a hand out which he provided to the board."
+  },
+  {
+   "name": "Article \"Vote No on Lunenburg Override\"",
+   "where": "text",
+   "quote": "he then had ms. bertram read one of the articles which was entitled \"vote no on lunenburg override\"."
+  },
+  {
+   "name": "Lunenburg Ledger article on tax increases",
+   "where": "text",
+   "quote": "clarified some confusing information which was published in the lunenburg ledger that stated that the"
+  },
+  {
+   "name": "STM Article 1, Prior Year Unpaid Bills, spread sheet",
+   "where": "text",
+   "quote": "she presented a spread sheet which detailed the outstanding bills"
+  },
+  {
+   "name": "Email from Harald Scheid on personal property exemption impact numbers",
+   "where": "text",
+   "quote": "harald scheid, regional tax assessor for the town of lunenburg sent an email to the town manager showing the impact numbers"
+  },
+  {
+   "name": "Administrative Assistant alternative scenarios spread sheet",
+   "where": "text",
+   "quote": "she put together a spread sheet which proposes some alternative scenarios."
+  },
+  {
+   "name": "Board's Abatement Policy",
+   "where": "text",
+   "quote": "it does not meet the criteria for an abatement as identified in the board's abatement policy."
+  },
+  {
+   "name": "Proclamation for State Trooper Daniel Jones",
+   "where": "text",
+   "quote": "on behalf of the board, mr. matthews thanked trooper jones and read the proclamation into record"
+  },
+  {
+   "name": "Remote Participation Policy",
+   "where": "text",
+   "quote": "remote participation policy, continue to may 22, 2012"
+  },
+  {
+   "name": "Emails from town council on Open Meeting Law changes",
+   "where": "text",
+   "quote": "ms. bertram requested copies be made of emails sent by town council concerning the changes in the open meeting law"
+  },
+  {
+   "name": "Peddler's License and Common Victualler License application, Rick's Foods",
+   "where": "text",
+   "quote": "a request to approve a peddler's license and a common victualler license from rick's foods"
+  }
+ ],
+ "tags": [
+  "override",
+  "FY2013 budget",
+  "Town Meeting warrant articles",
+  "STM",
+  "unpaid bills",
+  "ambulance bill",
+  "Administrative Assistant hours",
+  "public hearing",
+  "pole location",
+  "Verizon",
+  "Memorial Day committee",
+  "Lions Club",
+  "licenses",
+  "proclamation",
+  "Summer Street project",
+  "Open Meeting Law",
+  "executive session",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following minutes and warrants were presented for approval."
+ },
+ "dropped_unquoted_by_field": {}
 }

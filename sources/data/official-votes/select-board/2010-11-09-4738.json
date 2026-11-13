@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-11-09",
  "docid": "4738",
@@ -12,31 +12,362 @@
  },
  "votes": [
   {
-   "motion": "Approve Lions Club roadblock request for November 13 at Electric Avenue/Whalom Road and Route 2A/Main Street",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Lions Club request to hold its voluntary roadblocks at Electric Ave./Whalom Road and the town center (Route 2A & Main Street) on Saturday Nov. 13th, rain date the 20th, 8:00 AM to 2:00 PM.",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "board of selectmen voted unanimously to approve."
   },
   {
-   "motion": "Accept digitized historical records donation from Emerald Place to the Historical Commission",
-   "outcome": "not stated",
-   "procedural": false,
+   "motion": "Accept the gift from Emerald Place, LLC to the Historical Commission (scanning of 35 rolls of microfilm).",
    "moved_by": "Ernie",
    "seconded_by": "Steve",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "ernie motion to accept and expressed appreciation to mr. slattery for all his work, steve seconded"
   },
   {
-   "motion": "Adjourn the Regular Session",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the Regular Session at 8:53 P.M.",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "board voted unanimously to adjourn regular session at 8:53 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:53 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Warrant articles in the OLD BUSINESS section (Articles 1–14) list \"Board of Selectmen recommendations\" to town meeting but record no votes at this selectmen's meeting itself—these are proposals for town meeting, not selectmen's votes.",
- "cost_usd": 0.1192745
+ "note": "OCR text of a scanned page set; no roll-call tallies are printed, so the donation motion has no recorded result. Some OCR is garbled or truncated (e.g., Article 3 and Article 11 recommendation lines are cut off, and Article 13's opening is broken). Committee votes (Capital Planning Committee) are reported but are not board votes and are not recorded as votes here. Attendance for some named people is not stated.",
+ "cost_usd": 0.010336820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Jeff Ugalde",
+   "role": "Treasurer",
+   "status": "not stated",
+   "quote": "kerry requested information from treasurer, jeff ugalde to provide the board with the following analysis of chapter 90 funding"
+  },
+  {
+   "name": "Patrick Slattery",
+   "role": "member of Historical Commission",
+   "status": "present",
+   "quote": "patrick slattery, member of historical commission requesting the board accept a gift to the town."
+  },
+  {
+   "name": "Warren Stevenson",
+   "role": "teacher, Government Studies Class, High School",
+   "status": "present",
+   "quote": "government studies class from the high school and their teacher mr. warren stevenson in the audience."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and signed the Regular session minutes of 9/21/10 and 11/2/10 and the Executive Session minutes of 11/2/10, with no recorded motion.",
+   "quote": "minutes - board of selectmen regular session for 9/21/10, 11/2/10 and executive session for 11/2/10 reviewed and signed."
+  },
+  {
+   "decision": "Board reviewed and signed the warrants (#10P 11 and #25 11) with no recorded motion.",
+   "quote": "warrants - #10p 11, 11/10/10 - $63,412.53 and #25 11, 11/9/10 - $462,353.66 reviewed and signed."
+  },
+  {
+   "decision": "Town Manager to follow up on the complete list of capital planning requests.",
+   "quote": "steve noted that he is still waiting for the entire list of capital planning requests, kerry will follow up on."
+  },
+  {
+   "decision": "Town Manager to notify the police department of street light locations and ensure the outages are addressed.",
+   "quote": "kerry would like to have the approximate locations so that she could notify the police department and she will make sure"
+  },
+  {
+   "decision": "Board requested a presentation from the Police Department on the police cruiser vehicle request (Article 7).",
+   "quote": "board requested a presentation from the police department on the vehicle request."
+  },
+  {
+   "decision": "Board requested that the Historical Commission come before the board before Town Meeting with its recommendation on the Jones House (Article 10).",
+   "quote": "board requested that the historical commission come before them prior to town meeting with regards to their recommendation."
+  },
+  {
+   "decision": "Town Manager to circulate information on the Summer Street alternatives analysis to the Board of Selectmen (Article 4).",
+   "quote": "kerry will circulate information to board of selectmen"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 90 borrowing terms",
+   "what_was_recorded": "Analysis of borrowing against Chapter 90 funds: a 15-year repayment at 2.25% with an annual payment of $325,000 and a borrowing capacity of $4,099,000.",
+   "figures_as_printed": [
+    "$325,000",
+    "15 year",
+    "2.25%",
+    "$4,099,000"
+   ],
+   "quote": "annual payment = $325,000 15 year repayment schedule @ 2.25% borrowing rate, $4,099,000 borrowing capacity."
+  },
+  {
+   "topic": "Chapter 90 borrowing interest cost",
+   "what_was_recorded": "Interest on a $4 million Chapter 90 borrowing over 15 years was given as $776,000.00, with principal of $325,000 per year.",
+   "figures_as_printed": [
+    "4 million",
+    "$776,000.00",
+    "$325,000/year"
+   ],
+   "quote": "steve questioned how much on the 4 million would be interest, and per jeff $776,000.00"
+  },
+  {
+   "topic": "Road repair cost estimate",
+   "what_was_recorded": "Per Tom, citing the DPW Director, repairing the roads would cost 10 million.",
+   "figures_as_printed": [
+    "10 million"
+   ],
+   "quote": "it would cost 10 million to get the roads repaired"
+  },
+  {
+   "topic": "Financial forecast road allowance",
+   "what_was_recorded": "The Town Manager's financial forecast includes three-quarters of a million for roads, which will not cover the program repairs.",
+   "figures_as_printed": [
+    "¾ of a million"
+   ],
+   "quote": "in the financial forecast she has put in ¾ of a million realizing that this is not going to cover the repairs"
+  },
+  {
+   "topic": "Microfilm scanning proposal (Emerald Place gift)",
+   "what_was_recorded": "Proposal to scan 35 rolls of microfilm into indexed PDFs on three memory sticks, for the Historical Commission gift.",
+   "figures_as_printed": [
+    "$2,704.50"
+   ],
+   "quote": "so that they could be stored by the town for $2,704.50"
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Two warrants were reviewed and signed: #10P 11 and #25 11.",
+   "figures_as_printed": [
+    "$63,412.53",
+    "$462,353.66"
+   ],
+   "quote": "warrants - #10p 11, 11/10/10 - $63,412.53 and #25 11, 11/9/10 - $462,353.66 reviewed and signed."
+  },
+  {
+   "topic": "Police cruisers (Article 7)",
+   "what_was_recorded": "Town Meeting article to raise, appropriate, transfer or borrow $105,000.00 for new police cruisers and equipment.",
+   "figures_as_printed": [
+    "$105,000.00"
+   ],
+   "quote": "or borrow the sum of $105,000.00 for the purchase of new police cruisers)"
+  },
+  {
+   "topic": "Summer Street alternatives analysis (Article 4)",
+   "what_was_recorded": "The Town Manager received information that the Summer Street alternatives analysis will cost $56,000.",
+   "figures_as_printed": [
+    "$56,000"
+   ],
+   "quote": "kerry has received information that this will cost $56,000 cost associated with the analysis"
+  },
+  {
+   "topic": "Police special detail fund (Article 5)",
+   "what_was_recorded": "Initial appropriation of $10,000 seed money for the police special detail revolving fund, which stays in the fund absent other Town Meeting action.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "this would be an initial appropriation of $10,000; seed money."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Chair",
+   "topic": "Rachel's Challenge school program",
+   "quote": "paula expressed appreciation to the school committee for their program on rachel's challenge."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Veterans Day tribute",
+   "resolution": "no action",
+   "tags": [
+    "veterans",
+    "ceremony"
+   ],
+   "quote": "we are privileged to have members of the american legion and veterans from around the area present"
+  },
+  {
+   "topic": "Public comment: Rachel's Challenge",
+   "resolution": "no action",
+   "tags": [
+    "schools",
+    "public comment"
+   ],
+   "quote": "paula expressed appreciation to the school committee for their program on rachel's challenge."
+  },
+  {
+   "topic": "5-Year Financial Forecast & 10 Year Trends presentation",
+   "resolution": "presented; discussed; no action",
+   "tags": [
+    "budget",
+    "financial forecast"
+   ],
+   "quote": "presentation of 5-year financial forecast & 10 year trends monitoring - kerry acknowledged the presence of the"
+  },
+  {
+   "topic": "Proposal to borrow against Chapter 90 allocation",
+   "resolution": "discussed; no action",
+   "tags": [
+    "roads",
+    "Chapter 90",
+    "borrowing"
+   ],
+   "quote": "kerry requested information from treasurer, jeff ugalde to provide the board with the following analysis of chapter 90 funding"
+  },
+  {
+   "topic": "Lions Club voluntary roadblock request",
+   "resolution": "approved",
+   "tags": [
+    "permits",
+    "events"
+   ],
+   "quote": "request from lions club for voluntary road block - the lions club request to hold their roadblock's"
+  },
+  {
+   "topic": "Acceptance of donation from Emerald Place, LLC to Historical Commission",
+   "resolution": "motion made to accept; outcome not stated",
+   "tags": [
+    "donation",
+    "historical records"
+   ],
+   "quote": "acceptance of donation: emerald place, llc to historical commission - patrick slattery, member of historical commission"
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "reviewed and signed",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "minutes - board of selectmen regular session for 9/21/10, 11/2/10 and executive session for 11/2/10 reviewed and signed."
+  },
+  {
+   "topic": "Action file issues (Vegas Lounge; street lights)",
+   "resolution": "follow-up assigned to Town Manager",
+   "tags": [
+    "enforcement",
+    "street lights"
+   ],
+   "quote": "dave questioned issues at vegas lounge and whether the issues have been addressed."
+  },
+  {
+   "topic": "Committee updates (Capital Planning Committee)",
+   "resolution": "reported; no board action",
+   "tags": [
+    "capital planning",
+    "police cruisers"
+   ],
+   "quote": "ernie, capital planning committee met last week and reviewed the warrant article for the police cruisers"
+  },
+  {
+   "topic": "Town Meeting warrant articles (Articles 1-14)",
+   "resolution": "reviewed; board recommendations noted; no vote recorded",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ],
+   "quote": "article 1. to see if the town will vote to raise and appropriate or transfer from available funds all sums of money necessary to"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Summit (5-Year Financial Forecast & 10 Year Trends Monitoring presentation)",
+   "where": "list",
+   "quote": "presented the attached financial summit."
+  },
+  {
+   "name": "DLS \"ASSET USEFUL LIFE SCHEDULES AND MAXIMUM BORROWING TERMS\" effective October 18, 2010",
+   "where": "text",
+   "quote": "for installing macadam pavement or other road material as set by dls guidelines: \"asset useful life schedules and maximum borrowing terms\""
+  },
+  {
+   "name": "Lena Lane Acceptance Plan of Land in Lunenburg, MA Prepared for Gerard A. Albert, November 26, 2008, by Whitman & Bingham",
+   "where": "text",
+   "quote": "lena lane acceptance plan of land in lunenburg, ma prepared for gerard a. albert, november 26, 2008, by whitman & bingham"
+  },
+  {
+   "name": "Emerald Place microfilm scanning proposal",
+   "where": "text",
+   "quote": "has a proposal that would take the rolls, scan them and digitize them into a pdf format"
+  },
+  {
+   "name": "Warrants #10P 11 (11/10/10) and #25 11 (11/9/10)",
+   "where": "text",
+   "quote": "warrants - #10p 11, 11/10/10 - $63,412.53 and #25 11, 11/9/10 - $462,353.66 reviewed and signed."
+  },
+  {
+   "name": "Town Meeting Warrant Articles (Articles 1-14)",
+   "where": "text",
+   "quote": "town meeting warrant articles -"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Veterans Day",
+  "public comment",
+  "5-year financial forecast",
+  "Chapter 90 roads borrowing",
+  "road repairs",
+  "Lions Club roadblock",
+  "donation",
+  "microfilm digitization",
+  "warrants",
+  "Town Meeting warrant articles",
+  "police cruisers",
+  "police special detail fund",
+  "Summer Street",
+  "Lena Lane",
+  "sewer",
+  "OPEB",
+  "electric aggregation",
+  "Jones House",
+  "fiscal 2011"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "presented the attached"
+ },
+ "dropped_unquoted_by_field": {}
 }

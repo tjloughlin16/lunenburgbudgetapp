@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2014-09-18",
  "docid": "2953",
@@ -12,47 +12,338 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the June 19, 2014 Meeting",
+   "motion": "Accept the minutes of the June 19, 2014 meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Elizabeth Murphy",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "deborah christen made a motion to accept the minutes of the june 19, 2014 meeting. elizabeth murphy seconded the motion, the motion was unanimously approved."
   },
   {
-   "motion": "Accept the Financial Report as submitted",
+   "motion": "Accept the Financial Report as submitted.",
    "moved_by": "Caroline Fortin",
    "seconded_by": "Deborah Christen",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "caroline fortin made a motion to accept the financial report as submitted, deborah christen seconded the motion; the motion was unanimously approved."
   },
   {
-   "motion": "Accept the Revised Income Limits for Admission & Fair Market Rents for Continued Occupancy (Public Housing Notice 2014-15) as presented",
+   "motion": "Accept the Revised Income Limits for Admission & Fair Market Rents for Continued Occupancy (Public Housing Notice 2014-15) as presented.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Caroline Fortin",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "elizabeth murphy made a motion to accept the revised income limits for admission & fair market rents for continued occupancy (public housing notice 2014-15) as presented, caroline fortin seconded the motion; the motion was unanimously approved."
+   "quote": "elizabeth murphy made a motion to accept the revised income limits for admission & fair market rents for continued occupancy (public housing notice 2014-15) as presented"
   },
   {
-   "motion": "Accept the 2014 Budget Certification Revision 1 as presented",
+   "motion": "Accept the 2014 Budget Certification Revision 1 as presented.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Elizabeth Murphy",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "deborah christen made a motion to accept the 2014 budget certification revision 1 as presented, elizabeth murphy seconded the motion; the motion was unanimously approved."
+   "quote": "deborah christen made a motion to accept the 2014 budget certification revision 1 as presented, elizabeth murphy seconded the motion"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:50 pm.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Elizabeth Murphy",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "deborah christen made a motion to adjourn the meeting at 6:50 pm, elizabeth murphy seconded the motion; the motion was unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0863765
+ "note": "Text is extracted with split and misspelled words (for example \"an d\", \"i tems\", \"lig hts\", \"p arking\"); quotes reproduce them as printed. Votes are recorded only as \"unanimously approved\", so outcome is \"passed\". Resident items A to N appear before the call to order and are attributed to \"A resident\" because no names are printed. Executive Director, Assistant Director and Assistant Executive Director are referred to by title only and are not listed as attendees. No dollar figures are printed. No transfers appear.",
+ "cost_usd": 0.00813392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair caroline fortin, member"
+  },
+  {
+   "name": "Eugene Capoccia",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary peter proulx"
+  },
+  {
+   "name": "Peter Proulx",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary peter proulx"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A meeting will be planned in October for a resident to give input on snow plowing.",
+   "quote": "a meeting will be planned in october to have the resident give input on this subject."
+  },
+  {
+   "decision": "In the spring the Authority will cut out the grass along the driveway edge and install mulch.",
+   "quote": "in the spring the authority will cut out the grass along the edge and install mulch"
+  },
+  {
+   "decision": "The Assistant Director will have an arborist look into whether it makes sense to cut the back parking lot pine trees.",
+   "quote": "the assistant director stated that he would have an arborist look into whether it will make sense to cut the trees."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Generator funds at the development",
+   "what_was_recorded": "A resident thought an emergency generator had been purchased; the Executive Director said generator funds were removed during renovations to complete other work items.",
+   "figures_as_printed": [],
+   "quote": "funds for the generator were removed in order to complete other work items"
+  },
+  {
+   "topic": "Computer budget revision and DHCD budget guidelines",
+   "what_was_recorded": "The Executive Director's Report noted that a computer budget revision and the DHCD budget guidelines were discussed; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "all units occupied, tree trimming ongoing, computer budget revision"
+  },
+  {
+   "topic": "Financial Report",
+   "what_was_recorded": "The Financial Report was accepted as submitted; no figures printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "caroline fortin made a motion to accept the financial report as submitted"
+  },
+  {
+   "topic": "2014 Budget Certification Revision 1",
+   "what_was_recorded": "The Executive Director presented the 2014 Budget Certification Revision 1 for review and it was accepted; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the executive director presented the 2014 budget certification"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "A resident",
+   "topic": "snow plowing schedule",
+   "quote": "a resident asked what the snow plowing schedule will be."
+  },
+  {
+   "speaker": "A resident",
+   "topic": "weeds by sign and bank",
+   "quote": "a resident asked if the weeds around the sign"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "pine trees at back parking lot",
+   "quote": "a resident asked if the pine trees at the back"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "smoking in apartments",
+   "quote": "a resident stating that some residents are"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "new lights",
+   "quote": "a resident asked if they will be getting new"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "exterior porch lights out at Buildings J and K",
+   "quote": "a resident stated that the exterior porch lights"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "items stolen from unlocked cars",
+   "quote": "a resident stated that some residents have had"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "dead grass along driveway",
+   "quote": "a resident stated that the grass along the edge of the driveway is dead."
+  },
+  {
+   "speaker": "A resident",
+   "topic": "back parking lot lighting",
+   "quote": "a resident stated the back parking lot is not"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "emergency generator",
+   "quote": "a resident stated that the development was"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "power outage without a car",
+   "quote": "a resident asked what they should do if the"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "pine tree cutting before winter",
+   "quote": "asked if the pine trees at the back p arking lot will be cut before"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "rent recertification paperwork",
+   "quote": "a resident asked about the requirement for rent recertification paper"
+  },
+  {
+   "speaker": "A resident",
+   "topic": "thanks to Executive Director",
+   "quote": "a resident wanted to thank the executive"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation",
+   "resolution": "residents raised items A through N; some answered by staff, one meeting planned in October",
+   "quote": "a resident asked what the snow plowing schedule will be.",
+   "tags": [
+    "resident participation",
+    "grounds",
+    "lighting",
+    "security"
+   ]
+  },
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened at 6:30 p.m.",
+   "quote": "the chair opened the meeting at 6:30 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes of June 19, 2014",
+   "resolution": "approved",
+   "quote": "deborah christen made a motion to accept the minutes of the june",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director's Report",
+   "resolution": "presented; no action recorded",
+   "quote": "all units occupied, tree trimming ongoing, computer budget revision",
+   "tags": [
+    "executive director report",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "accepted",
+   "quote": "caroline fortin made a motion to accept the financial report as submitted",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Facilities Report",
+   "resolution": "presented; no action recorded",
+   "quote": "the assistant executive director presented the",
+   "tags": [
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Resolutions: Revised Income Limits and Fair Market Rents (PHN 2014-15)",
+   "resolution": "approved as presented",
+   "quote": "the executive director presented the revised income limits for admission & fair market rents for continued occupancy",
+   "tags": [
+    "public housing rules",
+    "rents"
+   ]
+  },
+  {
+   "topic": "Resolutions: 2014 Budget Certification Revision 1",
+   "resolution": "approved as presented",
+   "quote": "the executive director presented the 2014 budget certification",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "none",
+   "quote": "no other correspondence.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Resident participation (agenda item 8)",
+   "resolution": "no resident participation requested",
+   "quote": "no resident participation requested",
+   "tags": [
+    "resident participation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:50 pm",
+   "quote": "deborah christen made a motion to adjourn the meeting at 6:50 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised Income Limits for Admission & Fair Market Rents for Continued Occupancy (Public Housing Notice 2014-15)",
+   "where": "list",
+   "quote": "the executive director presented the revised income limits for"
+  },
+  {
+   "name": "2014 Budget Certification Revision 1",
+   "where": "list",
+   "quote": "the executive director presented the 2014 budget certification"
+  },
+  {
+   "name": "Executive Director's Report",
+   "where": "text",
+   "quote": "all units occupied, tree trimming ongoing, computer budget revision"
+  },
+  {
+   "name": "Financial Report",
+   "where": "text",
+   "quote": "caroline fortin made a motion to accept the financial report as submitted"
+  },
+  {
+   "name": "Facilities Report",
+   "where": "text",
+   "quote": "the assistant executive director presented the"
+  },
+  {
+   "name": "Minutes of the June 19, 2014 Meeting",
+   "where": "text",
+   "quote": "deborah christen made a motion to accept the minutes of the june"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "resident participation",
+  "grounds maintenance",
+  "lighting",
+  "public safety",
+  "emergency generator",
+  "financial report",
+  "budget certification",
+  "public housing rents",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the executive director presented the revised income limits for"
+ },
+ "dropped_unquoted_by_field": {}
 }

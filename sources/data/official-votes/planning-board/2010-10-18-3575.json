@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-10-18",
  "docid": "3575",
@@ -12,6 +12,103 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Workshop minutes; no votes recorded. The minutes describe discussion of the Master Plan, state mandated studies, the planning process, and statements about future attendance at a seminar and the next meeting agenda, but contain no formal motions or recorded votes.",
- "cost_usd": 0.0805635
+ "note": "Workshop minutes. No motions or votes are recorded. No dollar figures, no public comment section, and no list of documents appear in the text. Extracted text has split words and odd spacing (e.g. \"M aster\", \"pr esent\"), copied as printed with whitespace collapsed.",
+ "cost_usd": 0.00264262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board and Director will attend a Master Planning seminar at MRPC.",
+   "quote": "the board and director will attend a master plannin g seminar at mrpc."
+  },
+  {
+   "decision": "The next meeting will address a plan to do an update of the Master Plan.",
+   "quote": "the next meeting will address a plan to do an updat e."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Master Plan workshop: review of 2002 Master Plan and new Master Plan direction",
+   "resolution": "discussed, no action",
+   "quote": "chair opened meeting noting the definition of the m aster plan and the purpose.",
+   "tags": [
+    "master plan",
+    "workshop",
+    "2002 master plan",
+    "land use",
+    "housing",
+    "economic development",
+    "natural resources",
+    "open space",
+    "circulation",
+    "implementation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2002 Master Plan",
+   "where": "text",
+   "quote": "chair reviewed the pr esent 2002 master plan and updates."
+  },
+  {
+   "name": "Proposed CLURPA legislation",
+   "where": "text",
+   "quote": "director pointed out state mandated studies and not ed the proposed clurpa legislation."
+  }
+ ],
+ "tags": [
+  "master plan",
+  "workshop",
+  "planning board",
+  "MRPC seminar",
+  "CLURPA",
+  "state mandated studies"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

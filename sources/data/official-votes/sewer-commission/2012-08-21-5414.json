@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2012-08-21",
  "docid": "5414",
@@ -12,15 +12,151 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Motion to adjourn the workshop.",
    "moved_by": "Dave",
    "seconded_by": "Butch",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dave made the motion, butch seconded. vote taken was unanimous."
+   "quote": "dave made the motion, butch seconded. vote taken was unanimous. meeting was adjourned at 8:33pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One vote recorded: motion to adjourn. The remainder of the minutes is discussion of pipe sizing, betterment policy, and extension fees for Lancaster Avenue residents, with no formal motions voted upon in those sections.",
- "cost_usd": 0.0839675
+ "note": "OCR text from a scanned page set; page 2 begins mid-sentence and the text ends with a truncated sentence (\"they still\"), so the record is incomplete. The minutes do not print a clerk's name in the signature block. The OCR reads the pipe size as \"1'\" in one place, which likely means 1.5\". Only one motion (adjournment) is recorded; it is a procedural vote with no printed roll-call count beyond \"unanimous\", recorded here as passed.",
+ "cost_usd": 0.00347542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Vice-Chair (presiding in absence of chairman)",
+   "status": "present",
+   "quote": "carl luck as vice-chair opened workshop at 6:39 pm in the absence of chairman, bob ebersole."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "chairman",
+   "status": "absent",
+   "quote": "carl luck as vice-chair opened workshop at 6:39 pm in the absence of chairman, bob ebersole."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb summarized what we did have - that f.r.mahony."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "not stated; spoke for the Lancaster Ave. group and its engineers",
+   "status": "present",
+   "quote": "jamie said in so many words that the group would, in return for installing a larger pipe"
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack noted we are still at the same place without the engineered plan"
+  },
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave presented the possibility"
+  },
+  {
+   "name": "Butch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave made the motion, butch seconded."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Design discussion for the Lancaster Ave / Rolling Acres sewer line postponed because neither the formal engineered plan nor the peer review was completed.",
+   "quote": "design portion of discussion has to be postponed since neither the formal plan from jamie toale's engineers nor the peer"
+  },
+  {
+   "decision": "Barb will contact counsel on whether property owners on the even side of the street (or the odd side that did not contribute) must pay a privilege fee, and whether the full betterment can be charged to those not in on the installation.",
+   "quote": "barb will contact counsel on whether the property owners on the even side of the street must pay a privilege fee"
+  },
+  {
+   "decision": "Commission agreed the installed pipe should support the rest of the development (3\") so no future risk or further work is needed; the group awaits the engineer's design.",
+   "quote": "we just have to await the engineer's design."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lancaster Ave betterment for non-contributors",
+   "what_was_recorded": "Anyone who did not pay into the construction at this time would be charged the full 100% betterment to connect later; Barb warned the Commission lacks legal backing for that charge.",
+   "figures_as_printed": [
+    "100%",
+    "11,551.47"
+   ],
+   "quote": "anyone who didn't pay into the construction at this time would pay the 100% (11,551.47 betterment) if"
+  },
+  {
+   "topic": "Full betterment charge after extension",
+   "what_was_recorded": "Discussion of whether the Commission had the right to charge the full amount of about $11k after the extension is complete.",
+   "figures_as_printed": [
+    "$11k"
+   ],
+   "quote": "if we had the right to charge the full amount of $11k after the extension is complete."
+  },
+  {
+   "topic": "Lancaster Ave privilege fee",
+   "what_was_recorded": "Commission policy noted as a privilege fee equal to 50% of the last betterment.",
+   "figures_as_printed": [
+    "50%"
+   ],
+   "quote": "carl noted that it is a privilege fee 50% of the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Lancaster Ave / Rolling Acres sewer line pipe size (workshop)",
+   "resolution": "no action; design postponed pending engineered plan and peer review",
+   "quote": "design portion of discussion has to be postponed since neither the formal plan from jamie toale's engineers nor the peer",
+   "tags": [
+    "sewer",
+    "Lancaster Ave",
+    "Rolling Acres",
+    "pipe size",
+    "low pressure"
+   ]
+  },
+  {
+   "topic": "Lancaster Ave extension policy, privilege fee and betterments",
+   "resolution": "no action; Barb to ask counsel on fee and betterment questions",
+   "quote": "next we need to determine the commission's policy for lancaster ave",
+   "tags": [
+    "betterments",
+    "privilege fee",
+    "legal counsel",
+    "Lancaster Ave"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Comprehensive Wastewater Management Plan (CWMP), referred to as the master plan",
+   "where": "text",
+   "quote": "because the low pressure alternative is not in the master plan (cwmp)"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "Lancaster Ave",
+  "Rolling Acres",
+  "betterment",
+  "privilege fee",
+  "low pressure sewer",
+  "workshop",
+  "legal counsel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

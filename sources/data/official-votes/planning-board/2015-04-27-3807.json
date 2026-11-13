@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-04-27",
  "docid": "3807",
@@ -12,39 +12,254 @@
  },
  "votes": [
   {
-   "motion": "to support the warrant article",
-   "moved_by": "Damon McQuaid",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed 3-0-1",
+   "motion": "Support the warrant article (public hearing item, see separate minutes).",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "M. Allison",
+   "outcome": "roll call: 3 aye, 0 nay, 1 abstain; result not stated",
    "procedural": false,
-   "quote": "d. mcquaid, motion to support the warrant article, second, m. allison, discussion ensued. n. lockwood had no problem with the article going for town vote, but felt there were pluses and minuses to both sides. k. chenis noted interested parties were in attendance at the last meeting stating they had challenges with selling the property due to the current commercial zoning restricting a dual use of the property. n. lockwood opined that limited business zoning is \"messier and less by -right\" than commercial zoning. he also noted points previously raised by both the board of selectmen and the property owner noting hardship. roll call vote - m. allison, aye; k. chenis, aye; d. mcquaid, aye; n. lockwood, abstain."
+   "quote": "d. mcquaid, motion to support the warrant article, second, m. allison, discussion ensued."
   },
   {
-   "motion": "to approve the minutes of April 13, 2015",
-   "moved_by": "Damon McQuaid",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed",
+   "motion": "Approve the 04/13/15 minutes.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "K. Chenis",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "04/13/15, motion d. mcquaid, second, k. chenis"
   },
   {
-   "motion": "to approve the minutes of the April 13, 2015 Warrant Article Hearing",
-   "moved_by": "Damon McQuaid",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed",
+   "motion": "Approve the 04/13/15 Warrant Article Hearing minutes.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "K. Chenis",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "04/13/15 warrant article hearing, motion, d. mcquaid, second, k. chenis"
   },
   {
-   "motion": "to approve the minutes of the April 13, 2015 Highfield Village Continuation",
-   "moved_by": "Damon McQuaid",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed",
+   "motion": "Approve the 04/13/15 Highfield Village Continuation minutes.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "K. Chenis",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "04/13/15 highfield village continuation, motion, d. mcquaid, second, k. chenis"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. The warrant article support vote had explicit roll-call results: three ayes (Allison, Chenis, McQuaid) and one abstention (Lockwood). The three minutes-approval motions resulted in approval as indicated by \"All minutes signed\"; specific vote counts are not recorded for these procedural votes.",
- "cost_usd": 0.14967750000000002
+ "note": "Plain-text extraction with collapsed odd spacing; no scan. Minutes approval motions and the warrant-article roll call have no printed result. The adjournment time (8:00 PM) is printed but no adjournment motion is recorded. No dollar figures or public comment appear in the minutes. The warrant article text itself is referenced as \"see separate minutes\" and not reproduced here.",
+ "cost_usd": 0.0051898199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The ANR plan for 790-792 Massachusetts Avenue was endorsed by the Board (no motion recorded).",
+   "quote": "anr: 790-792 massachusetts avenue- endorsed by board."
+  },
+  {
+   "decision": "Board consensus that a short Saturday morning meeting before Town Meeting would not be necessary.",
+   "quote": "board consensus was that a short meeting saturday morning would not be necessary."
+  },
+  {
+   "decision": "A. Burney will tell citizens that the Town Meeting handouts reflect any changes recommended by Town Counsel and by the Board, and will give K. Chenis the correct language for requesting amendments.",
+   "quote": "a. burney will note to the citizens that the handouts reflect any changes recommended by town cou nsel and any changes recommended by the board",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "A. Burney will provide K. Chenis the correct language to request amendments.",
+   "quote": "a. burney will provide k. chenis the correct language to request amendments."
+  },
+  {
+   "decision": "The Planning Board will work with the DPW to put forward standards for stormwater systems to be properly maintained.",
+   "quote": "the planning board will work with the dpw to put forward a set of standards for systems to be property"
+  },
+  {
+   "decision": "The Board will continue to follow the current ANR process until the Rules and Regulations Governing the Subdivision of Land are updated.",
+   "quote": "the board will continue to follow the current process until the rules and regulation governing the subdivision of land is updated."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR: 790-792 Massachusetts Avenue",
+   "resolution": "endorsed by Board",
+   "quote": "anr: 790-792 massachusetts avenue- endorsed by board.",
+   "tags": [
+    "ANR",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Public hearing: Warrant Article",
+   "resolution": "support motion, roll call (result not stated)",
+   "quote": "public hearing: warrant article - see separate minutes . d. mcquaid, motion to support the warrant article",
+   "tags": [
+    "warrant article",
+    "public hearing",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (motions recorded, results not stated)",
+   "quote": "04/13/15, motion d. mcquaid, second, k. chenis",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "mjtc, k. chenis- tip (transportation improvement program) amendments reviewed.",
+   "tags": [
+    "MRPC",
+    "MJTC",
+    "Building Reuse",
+    "Agricultural Commission",
+    "Farmers Market"
+   ]
+  },
+  {
+   "topic": "New business / development status reports",
+   "resolution": "noted",
+   "quote": "town meeting, may 2, 2015- noted",
+   "tags": [
+    "Town Meeting",
+    "Town Election",
+    "subdivision",
+    "Highfield Village"
+   ]
+  },
+  {
+   "topic": "Action file: stormwater, scenic road, master planning, HPP",
+   "resolution": "discussed; Board to work with DPW on stormwater standards",
+   "quote": "the planning board will work with the dpw to put forward a set of standards for systems to be property",
+   "tags": [
+    "stormwater",
+    "MS4",
+    "scenic road",
+    "master plan",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; no Saturday morning meeting",
+   "quote": "board consensus was that a short meeting saturday morning would not be necessary.",
+   "tags": [
+    "Town Meeting",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues: ANR plan process",
+   "resolution": "continue current process until rules updated",
+   "quote": "the board will continue to follow the current process until the rules and regulation governing the subdivision of land is updated.",
+   "tags": [
+    "ANR",
+    "subdivision rules"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "04/13/15 Minutes",
+   "where": "list",
+   "quote": "04/13/15 minutes 04/13/15 warrant article hearing minutes"
+  },
+  {
+   "name": "04/13/15 Warrant Article Hearing Minutes",
+   "where": "list",
+   "quote": "04/13/15 warrant article hearing minutes 04/13/15 highfield village hearing minutes"
+  },
+  {
+   "name": "04/13/15 Highfield Village Hearing Minutes",
+   "where": "list",
+   "quote": "04/13/15 highfield village hearing minutes anr, 790-792 massachusetts avenue"
+  },
+  {
+   "name": "ANR, 790-792 Massachusetts Avenue",
+   "where": "list",
+   "quote": "anr, 790-792 massachusetts avenue"
+  },
+  {
+   "name": "Highfield Village Traffic Study (2007)",
+   "where": "text",
+   "quote": "the highfield village traffic study was in 2007."
+  },
+  {
+   "name": "Rules and Regulation Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "until the rules and regulation governing the subdivision of land is updated."
+  },
+  {
+   "name": "Article on Warrant to accept Northfield Road and Flat Hill Road",
+   "where": "text",
+   "quote": "noted article on warrant to accept northfield road and flat hill road"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "warrant article",
+  "ANR",
+  "stormwater",
+  "subdivision",
+  "Highfield Village",
+  "Town Meeting",
+  "scenic road",
+  "housing",
+  "zoning",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

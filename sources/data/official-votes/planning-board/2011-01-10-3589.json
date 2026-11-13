@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-01-10",
  "docid": "3589",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of November 30, 2010",
+   "motion": "Approve the minutes signed 11-30-10.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Ms. Bilotta",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "signed 11-30-10, motion, mr. lockwood, second, ms. bilotta."
   },
   {
-   "motion": "Approve minutes of December 13, 2010",
+   "motion": "Approve the minutes signed 12-13-10.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "signed 12-13-10, motion, mr. saiia, second, mr. lockwood."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
@@ -37,6 +37,278 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1066745
+ "note": "Extracted text, not a scan. The two minutes-approval motions and the executive session minutes tabling have no recorded outcome count. The Highfield Village 4-1 vote mentioned under minutes approval concerns a prior meeting and is not recorded here as a vote of this meeting. No dollar figures are printed. Public comment is not labelled in the minutes. The Data folder is not itemised, so no documents are listed. Name 'Jamie Rhea ult' is reproduced as printed with a line-break artifact.",
+ "cost_usd": 0.00608732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Champa Realty",
+   "role": "represented Charles Gitto, owner of the property",
+   "status": "not stated",
+   "quote": "champa realty represented charles gitto, owner of the property."
+  },
+  {
+   "name": "Jamie Rhea ult",
+   "role": "from Whitman and Bingham Associates LLC",
+   "status": "present",
+   "quote": "also present was jamie rhea ult from whitman and bingham associates llc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Signing of the executive session minutes of 12-13-10 was tabled until the next meeting.",
+   "quote": "signing of executive 12-13-10 minutes tabled until next meeting."
+  },
+  {
+   "decision": "The Director will review the minutes regarding the unrecorded vote on the Highfield Village extension.",
+   "quote": "director will review minutes."
+  },
+  {
+   "decision": "By consensus, the Master Planning session is set for February 21.",
+   "quote": "consensus was february 21."
+  },
+  {
+   "decision": "Mr. Higgen was informed that a zoning change requires a Town Meeting vote, and that he could ask the Board to place an article on the warrant or submit an article to the Board of Selectmen by petition.",
+   "quote": "informed mr. higgen that zoning change has to have a town meeting vote."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY12 Budget: copier lease",
+   "what_was_recorded": "The lease of a new copier will be taken out of the Planning budget for the remaining five months of FY 2011 and will be part of the Technology budget in FY 2012; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "leasing cost will be taken out of the planning budget for the remaining five months of fy 2011"
+  },
+  {
+   "topic": "Eagle House parking lot grant",
+   "what_was_recorded": "The Director reported that the grant for the parking lot has been filed; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "director notified the planning board that the grant for the parking lot, etc. has been filed."
+  },
+  {
+   "topic": "Green Community solar field grant request",
+   "what_was_recorded": "Preparation of a grant request for a solar field on the landfill is continuing; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "preparation for grant request on solar field on the landfill is continuing."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "Signed minutes of 11-30-10 and 12-13-10 approved by motion; executive minutes of 12-13-10 tabled",
+   "quote": "signed 11-30-10, motion, mr. lockwood, second, ms. bilotta.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "Reported; no action",
+   "quote": "dpw building committee- ms. bilotta reported that next meeting will be held on january 18, 2011.",
+   "tags": [
+    "committees",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "FY12 Budget",
+   "resolution": "Reported; no action",
+   "quote": "fy12 budget- budget will be presented to town manager.",
+   "tags": [
+    "budget",
+    "FY12",
+    "copier lease"
+   ]
+  },
+  {
+   "topic": "Zoning change request, 'D. P. Higgen' industrial to commercial",
+   "resolution": "Applicant informed that a Town Meeting vote is required; no action by the Board",
+   "quote": "director noted request of d. p. higgen for zoning change from industrial to commercial",
+   "tags": [
+    "zoning",
+    "Town Meeting",
+    "Leominster-Shirley Road"
+   ]
+  },
+  {
+   "topic": "Summer Street reconstruction",
+   "resolution": "Reported; no action",
+   "quote": "work is being done on preparation for reconstruction of summer street in cooperation with the city of fitchburg",
+   "tags": [
+    "Summer Street",
+    "MRPC",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "1263 Reservoir Road, Keating Trust towers",
+   "resolution": "Reported; Development Plan Review to be filed; no action",
+   "quote": "the towers will be taller than the ones presently in place.",
+   "tags": [
+    "Keating",
+    "height",
+    "Fire Chief"
+   ]
+  },
+  {
+   "topic": "Eagle House grant",
+   "resolution": "Reported; no action",
+   "quote": "eagle house- director notified the planning board that the grant for the parking lot, etc. has been filed.",
+   "tags": [
+    "Eagle House",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force",
+   "resolution": "Reported; no action",
+   "quote": "preparation for grant request on solar field on the landfill is continuing.",
+   "tags": [
+    "solar",
+    "landfill",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Open Space",
+   "resolution": "Reported; no action",
+   "quote": "next meeting is friday, january 14, 2011, which should finalize all state requested data.",
+   "tags": [
+    "open space"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "Reported; no action",
+   "quote": "emerald place at lake whalom- noted placement of the first villas.",
+   "tags": [
+    "Highfield Village",
+    "Emerald Place",
+    "Tri Town Landing",
+    "school-age children"
+   ]
+  },
+  {
+   "topic": "Unfinished business: MMA Annual Meeting",
+   "resolution": "Discussed attendance; no action",
+   "quote": "mr. lockwood will not be able to attend.",
+   "tags": [
+    "MMA",
+    "conference"
+   ]
+  },
+  {
+   "topic": "Unfinished business: Nashua River Watershed workshops, Sign Bylaw, CVS, Lunenburg Crossing",
+   "resolution": "Reported or discussed; no action",
+   "quote": "sign bylaw- director commented on the concern of the signage in the center facing 2a.",
+   "tags": [
+    "sign bylaw",
+    "CVS",
+    "Lunenburg Crossing",
+    "Nashua River"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and Master Planning",
+   "resolution": "Schedule noted; Master Planning session set for February 21 by consensus",
+   "quote": "consensus was february 21.",
+   "tags": [
+    "schedule",
+    "master planning"
+   ]
+  },
+  {
+   "topic": "Data information",
+   "resolution": "Data folder presented for member viewing; no action",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing",
+   "tags": [
+    "data"
+   ]
+  },
+  {
+   "topic": "Member information and issues",
+   "resolution": "No action (Technology budget note only)",
+   "quote": "office: technology (see fy 12 budget above).",
+   "tags": [
+    "office",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Executive session (litigation)",
+   "resolution": "Held; separate minutes kept",
+   "quote": "executive session: litigation- separate minutes.",
+   "tags": [
+    "litigation",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned at 9:15 PM",
+   "quote": "motion to adjourn, ms. bilotta, second, mr. lockwood, adjourned 9:15 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "planning board",
+  "zoning",
+  "budget",
+  "FY12",
+  "copier lease",
+  "Summer Street",
+  "development status",
+  "MMA",
+  "meeting schedule",
+  "executive session",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

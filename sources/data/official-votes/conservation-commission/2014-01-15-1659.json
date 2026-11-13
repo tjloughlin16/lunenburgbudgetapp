@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-01-15",
  "docid": "1659",
@@ -12,79 +12,328 @@
  },
  "votes": [
   {
-   "motion": "Approve Order of Conditions for Notice of Intent at 2 New West Townsend Road",
+   "motion": "Approve the Notice of Intent filed by Allan Foster at 2 New West Townsend Road (single family home, grading, driveway and utilities), with standard OoC and buffer medallion posting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "unanimously approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "medallions are available at the concom office. unanimously approved."
   },
   {
-   "motion": "Approve Order of Conditions for Notice of Intent at 4 New West Townsend Road",
+   "motion": "Approve the Notice of Intent filed by Allan Foster at 4 New West Townsend Road, with standard OoC and buffer medallion posting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "unanimously approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "medallions are available at the concom office. unanimously approved."
   },
   {
-   "motion": "Continue hearing on Notice of Intent at 50 Elmwood Road until February 5, 2014",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "continued until february 5, 2014 @ 7:15 pm.",
+   "motion": "Issue a Negative 3 determination on the Request for Determination of Applicability filed by Sandra J. Perko at 64 Spring Street Extension.",
    "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Approve Negative Determination of Applicability for stone wall replacement at 64 Spring Street Extension",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "unanimously approved a negative 3.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "area is 100' or less. unanimously approved a negative 3."
   },
   {
-   "motion": "Approve Notice of Intent for soil absorption system installation at 39 Peninsula Drive",
+   "motion": "Approve the Notice of Intent filed by Mildred MacDonald at 39 Peninsula Drive for installation of a new Soil Absorption System.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "unanimously approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "buffer zone. unanimously approved."
   },
   {
-   "motion": "Approve Negative Determination of Applicability at 40 Page Street",
+   "motion": "Issue a Negative 3 determination on the Request for Determination of Applicability filed by Gerard Chabot at 40 Page Street.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "negative 3 unanimously approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "negative 3 unanimously approved."
   },
   {
-   "motion": "Approve revised plan for 305 Leominster Shirley Road",
+   "motion": "Approve the revised plan for the 305 Leominster Shirley Road continuation.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "unanimously approved.",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Approve minutes from December 4",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "approve minutes ~ 12/4",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Approve and accept land donation at 30 Rennie Street",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "approved and accepted donation of land at 30 rennie street",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "medallions are available at the concom office. unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded as \"unanimously approved\" without explicit movers or seconders named in the minutes.",
- "cost_usd": 0.1153415
+ "dropped_unquoted": 1,
+ "note": "The header line is garbled text and several words are split by stray spaces in the extraction (e.g. 'Tow n', 'prop osed'); quotes were chosen to avoid split words. Attendance is given only as an unlabelled name list, so board member status is 'not stated'. No roll call, no public comment section, and no motion or vote is printed for approving the 12/4 minutes or for the signatures item. The 'Unanimously approved' results carry no mover, seconder, or numeric count. Acceptance of the 30 Rennie Street donation is recorded as approved without a printed vote tally, so it is recorded as a decision, not a vote.",
+ "cost_usd": 0.00701132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Allan Foster",
+   "role": "applicant (Notice of Intent filer)",
+   "status": "not stated",
+   "quote": "notice of intent filed by allan foster"
+  },
+  {
+   "name": "Michael Crowley",
+   "role": "applicant (Notice of Intent filer)",
+   "status": "not stated",
+   "quote": "filed by michael crowley."
+  },
+  {
+   "name": "Sandra J. Perko",
+   "role": "applicant (Request for Determination filer)",
+   "status": "not stated",
+   "quote": "filed by sandra j. perko."
+  },
+  {
+   "name": "Mildred MacDonald",
+   "role": "applicant (Notice of Intent filer)",
+   "status": "not stated",
+   "quote": "by mildred macdonald."
+  },
+  {
+   "name": "Gerard Chabot",
+   "role": "applicant (Request for Determination filer)",
+   "status": "not stated",
+   "quote": "filed by gerard chabot."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continued the 50 Elmwood Road Notice of Intent hearing (Michael Crowley) until February 5, 2014 at 7:15 PM.",
+   "quote": "continued until february 5, 2014 @ 7:15 pm."
+  },
+  {
+   "decision": "Noted that the ConCom now prefers waddles over hay bales, and mandatory posting of Buffer Medallions every 30'-40' or at ConCom discretion.",
+   "quote": "note was made that the concom now prefers waddles over hay bales and also mandatory posting"
+  },
+  {
+   "decision": "Approved and accepted the donation of land at 30 Rennie Street.",
+   "quote": "approved and accepted donation of land at 30 rennie street"
+  },
+  {
+   "decision": "Elmwood Road review handled at the 7:30 PM hearing.",
+   "quote": "elmwood road review ~ handled at hearing (7:30)"
+  },
+  {
+   "decision": "Jan will file the donated property abatements with the Assessors.",
+   "quote": "donated property abatements ~ jan will file with assessors"
+  },
+  {
+   "decision": "Sharon will set up an appointment with the Selectmen for acceptance of the donated land at 801 Northfield Road, 30 Rennie Street and 781 Page Street.",
+   "quote": "sharon will set up appointment"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Donated property abatements",
+   "what_was_recorded": "Jan will file the donated property abatements with the Assessors; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "donated property abatements ~ jan will file with assessors"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "2 New West Townsend Road – Notice of Intent (Allan Foster), public hearing 7:00 PM",
+   "resolution": "approved, unanimous",
+   "tags": [
+    "notice of intent",
+    "hearing",
+    "buffer medallions"
+   ],
+   "quote": "medallions are available at the concom office. unanimously approved."
+  },
+  {
+   "topic": "4 New West Townsend Road – Notice of Intent (Allan Foster), public hearing 7:15 PM",
+   "resolution": "approved, unanimous",
+   "tags": [
+    "notice of intent",
+    "hearing"
+   ],
+   "quote": "medallions are available at the concom office. unanimously approved."
+  },
+  {
+   "topic": "50 Elmwood Road – Notice of Intent (Michael Crowley), 750 foot roadway, public hearing 7:30 PM",
+   "resolution": "continued to February 5, 2014 at 7:15 PM",
+   "tags": [
+    "notice of intent",
+    "roadway",
+    "riverfront"
+   ],
+   "quote": "continued until february 5, 2014 @ 7:15 pm."
+  },
+  {
+   "topic": "64 Spring Street Extension – Request for Determination (Sandra J. Perko), stone wall, 7:45 PM",
+   "resolution": "Negative 3, unanimous",
+   "tags": [
+    "request for determination",
+    "stone wall"
+   ],
+   "quote": "area is 100' or less. unanimously approved a negative 3."
+  },
+  {
+   "topic": "39 Peninsula Drive – Notice of Intent (Mildred MacDonald), soil absorption system, 8:00 PM",
+   "resolution": "approved, unanimous",
+   "tags": [
+    "notice of intent",
+    "septic"
+   ],
+   "quote": "buffer zone. unanimously approved."
+  },
+  {
+   "topic": "40 Page Street – Request for Determination (Gerard Chabot), conversion and lot division, 8:15 PM",
+   "resolution": "Negative 3, unanimous",
+   "tags": [
+    "request for determination",
+    "septic",
+    "lot division"
+   ],
+   "quote": "negative 3 unanimously approved."
+  },
+  {
+   "topic": "305 Leominster Shirley Road – continuation, revised plan, 8:30 PM",
+   "resolution": "approved, unanimous",
+   "tags": [
+    "continuation",
+    "revised plan"
+   ],
+   "quote": "medallions are available at the concom office. unanimously approved."
+  },
+  {
+   "topic": "Miscellaneous – Approve Minutes 12/4",
+   "resolution": "no action recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "approve minutes ~ 12/4"
+  },
+  {
+   "topic": "FYI / Handouts",
+   "resolution": "noted, no action recorded",
+   "tags": [
+    "handouts",
+    "grants",
+    "trails",
+    "budget"
+   ],
+   "quote": "trail accessibility requirements"
+  },
+  {
+   "topic": "Approval of land donation – 30 Rennie Street",
+   "resolution": "approved and accepted",
+   "tags": [
+    "land donation",
+    "conservation land"
+   ],
+   "quote": "approved and accepted donation of land at 30 rennie street"
+  },
+  {
+   "topic": "Elmwood Road review",
+   "resolution": "handled at hearing (7:30)",
+   "tags": [
+    "notice of intent"
+   ],
+   "quote": "elmwood road review ~ handled at hearing (7:30)"
+  },
+  {
+   "topic": "Donated property abatements",
+   "resolution": "Jan to file with Assessors",
+   "tags": [
+    "abatements",
+    "assessors"
+   ],
+   "quote": "donated property abatements ~ jan will file with assessors"
+  },
+  {
+   "topic": "Appointment with Selectmen for acceptance of donated land",
+   "resolution": "Sharon to set up appointment",
+   "tags": [
+    "selectmen",
+    "donated land"
+   ],
+   "quote": "sharon will set up appointment"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Grant Workshop",
+   "where": "list",
+   "quote": "fyi handouts grant workshop macc environmental conference budget review trail accessibility requirements"
+  },
+  {
+   "name": "MACC Environmental Conference",
+   "where": "list",
+   "quote": "fyi handouts grant workshop macc environmental conference budget review trail accessibility requirements"
+  },
+  {
+   "name": "Budget Review",
+   "where": "list",
+   "quote": "fyi handouts grant workshop macc environmental conference budget review trail accessibility requirements"
+  },
+  {
+   "name": "Trail Accessibility Requirements",
+   "where": "list",
+   "quote": "fyi handouts grant workshop macc environmental conference budget review trail accessibility requirements"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "public hearing",
+  "land donation",
+  "abatements",
+  "buffer medallions",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

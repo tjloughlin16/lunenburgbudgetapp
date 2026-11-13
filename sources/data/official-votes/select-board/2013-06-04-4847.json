@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-06-04",
  "docid": "4847",
@@ -12,40 +12,443 @@
  },
  "votes": [
   {
-   "motion": "Approve the request for a BYOB permit at Bangkok Hill Restaurant with waiver of section 3A, subject to the requirements that the license will expire Dec. 31 or at issuance of liquor license",
+   "motion": "Approve a BYOB permit for the Bangkok Hill Restaurant with a waiver of section 3A, subject to the application requirements, with the permit expiring Dec. 31, 2013 or at issuance of a liquor license.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Ms. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve the request for a byob permit at the bangkok hill restaurant with a waiver of section 3a, and subject to the requirements stated in their application that the license will expire on dec. 315 or ===page 2=== at the issuance of a liquor license. ms. bertram seconded the motion. on vote motion carried, 5 in favo",
-   "quote_taken_from_text": true
+   "quote": "mr. ebersole moved to approve the request for a byob permit at the bangkok hill restaurant with a waiver of"
   },
   {
-   "motion": "Accept the donation of carpet for the PACC Studio",
+   "motion": "Accept the donation of carpet for the PACC Studio.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Ms. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
-   "quote": "mr. ebersole moved to accept the donation of carpet for the pacc studio. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to accept the donation of carpet for the pacc studio. ms. bertram seconded."
   },
   {
-   "motion": "Approve the recommendations of the Town Manager for the Agricultural Commission",
+   "motion": "Approve the Town Manager's recommendations for the Agricultural Commission appointments.",
    "moved_by": "Mr. Matthews",
-   "seconded_by": "Mir. Toale",
-   "outcome": "passed 5-0",
+   "seconded_by": "Mr. Toale",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the recommendations of the town manager for the agricultural commission. mir. toale seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. matthews moved to approve the recommendations of the town manager for the agricultural commission."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": true,
-   "quote": "mr. alonzo moved to adjourn the meeting. ms. bertram seconded the motion. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business mr. alonzo moved to adjourn the meeting. ms. bertram seconded the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. The BYOB permit quote contains \"Dec. 315\" which is almost certainly an OCR error for \"Dec. 31\"; the motion description corrects this. One vote shows \"Mir. Toale\" which appears to be an OCR error for \"Mr. Toale\" but is quoted as printed.",
- "cost_usd": 0.1131255
+ "note": "OCR scan of typed minutes (page 1 carries a RECEIVED & FILED stamp). Votes were read from OCR text. The Bangkok Hill motion cites section 3A while the discussion refers to provision 3C. The OCR prints 'Mir. Toale' for the second on the Agricultural Commission motion; recorded here as Mr. Toale. No vote is recorded on approving the 05/21/2013 minutes or on the warrants. The Town Manager goals item was tabled without a recorded motion. The 'PUBLIC COMMENT' heading at 7:00 PM precedes board remarks, which are not recorded as public comment. Warrants and minutes are recorded under a list heading 'Warrants:', a judgment call since the minutes print no 'documents used' heading.",
+ "cost_usd": 0.012693220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "representing the Bangkok Hill Restaurant",
+   "status": "present",
+   "quote": "mr. robert bowen, representing the bangkok hill restaurant, had read through the terms issued by the town"
+  },
+  {
+   "name": "Brian Murphy",
+   "role": "Colonial Power Group",
+   "status": "present",
+   "quote": "brian murphy, colonial power group, reviewed the history of the town's relationship with municipal aggregation plan."
+  },
+  {
+   "name": "Doug MacMillan",
+   "role": "Agricultural Commission applicant",
+   "status": "present",
+   "quote": "doug macmillan, 471 leominster road, noted that he grew up on a farm, raised some beef"
+  },
+  {
+   "name": "james Lattanzi",
+   "role": "Agricultural Commission applicant",
+   "status": "present",
+   "quote": "james lattanzi, 123 hollis road, noted that he has come before the bos as an advocate for the agricultural"
+  },
+  {
+   "name": "Jeffery L. Mendoza",
+   "role": "Agricultural Commission applicant",
+   "status": "present",
+   "quote": "jeffery l. mendoza, 162 lancaster avenue, owns 14 acres of land that are farmed in lunenburg by lunenburg"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Agricultural Commission applicant",
+   "status": "present",
+   "quote": "andrea schnepf, 74 highland street, owns a farm on highland street which mostly farms fruits and vegetables"
+  },
+  {
+   "name": "Garrett Stillman",
+   "role": "Agricultural Commission applicant",
+   "status": "present",
+   "quote": "garrett stillman, 991 lancaster ave"
+  },
+  {
+   "name": "Renee T. Trakimas",
+   "role": "Agricultural Commission applicant",
+   "status": "present",
+   "quote": "renee t. trakimas, 520 page street, owns sunrise stables, which is an equine boarding stable."
+  },
+  {
+   "name": "Greg Barnett",
+   "role": "Agricultural Commission applicant",
+   "status": "present",
+   "quote": "greg barnett, 74 highland street, stated his hope to be an alternate on the board."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tom Alonzo and David Matthews will negotiate the Town Manager's contract, which is up in December; no objections from the BOS.",
+   "quote": "mr. matthews volunteered to be the other member of the bos to negotiate the contract."
+  },
+  {
+   "decision": "Approve Town Manager Goals and Objectives was tabled until the 6/11/13 BOS meeting.",
+   "quote": "approve town manager goals and objectives- tabled until 6/11/13 bos meeting"
+  },
+  {
+   "decision": "Mr. Alonzo will revise the BOS goals and objectives as discussed, striking 'regular' from the Chair meetings language and adding periodic meetings with department and board heads.",
+   "quote": "mr. alonzo said that he will make changes to the goals and objectives of the bos as discussed"
+  },
+  {
+   "decision": "Regular meetings between the BOS and department/board heads to be added to the BOS goals and objectives under improved communication.",
+   "quote": "mr. alonzo stated that regular meetings between the bos and department/board heads would be added onto"
+  },
+  {
+   "decision": "New Agricultural Commission members are to see the Town Clerk to be sworn in; the Town Clerk will organize the first meeting.",
+   "quote": "mr. alonzo stated that the new members of the agricultural commission should see the town clerk to be sworn in"
+  },
+  {
+   "decision": "Interviews for the Building Reuse Task Force positions to be scheduled for the next meeting (stated by Mr. Toale).",
+   "quote": "he also stated that interviews for the positions should be scheduled for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public employee union health insurance agreement",
+   "what_was_recorded": "Ms. Speidel said the Town will save significant money in coming years on health insurance under the agreement.",
+   "figures_as_printed": [
+    "$600,000.00"
+   ],
+   "quote": "the town will be saving significant money in the coming years, possibly up to $600,000.00"
+  },
+  {
+   "topic": "Carpet donation for PACC Studio",
+   "what_was_recorded": "A donation of carpet worth approximately $500.00 was made to the PACC Studio by Mr. Dave McDonald.",
+   "figures_as_printed": [
+    "$500.00"
+   ],
+   "quote": "explained that a donation of approximately $500.00 worth of carpet was made to the pacc studio"
+  },
+  {
+   "topic": "Dominion energy contract and rate",
+   "what_was_recorded": "Ms. Speidel asked whether the Town could still buy energy at 7.75 cents for the second half of the agreement; Mr. Murphy said the Town did not agree to that rate.",
+   "figures_as_printed": [
+    "7.75 cents"
+   ],
+   "quote": "ms. speidel asked if the town still has the opportunity to buy energy for 7.75 cents for the second half of the agreement"
+  },
+  {
+   "topic": "Chapter 90 state road funding",
+   "what_was_recorded": "The Town expects to receive $316,598.00 in Chapter 90 funding, about 50% of the request, so the spring paving project will be smaller.",
+   "figures_as_printed": [
+    "$316,598.00"
+   ],
+   "quote": "ms. speidel stated that the town is only expected to receive $316,598.00 of chapter 90 funding from the state"
+  },
+  {
+   "topic": "MIIA participation credit",
+   "what_was_recorded": "A letter from MIlA advised an additional Participation Credit of $7,294.00 starting July 1.",
+   "figures_as_printed": [
+    "$7,294.00"
+   ],
+   "quote": "the additional credit is in the amount of $7,294.00."
+  },
+  {
+   "topic": "MIIA workers compensation credit",
+   "what_was_recorded": "An additional workers compensation credit of $273.00 will be received.",
+   "figures_as_printed": [
+    "$273.00"
+   ],
+   "quote": "an additional credit for workers compensation will be received in the amount of $273.00."
+  },
+  {
+   "topic": "Properties at 925 Mass. Ave. and Parks Garage",
+   "what_was_recorded": "The LSP site professional was doing pro-bono work on the two properties; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the professional was doing pro-bono work."
+  },
+  {
+   "topic": "Warrants approved",
+   "what_was_recorded": "Three warrants were listed for approval: 25P13 ($738,924.17), 64-13 ($625,591.03) and 65-13 ($164,688.11).",
+   "figures_as_printed": [
+    "$738,924.17",
+    "$625,591.03",
+    "$164,688.11"
+   ],
+   "quote": "6/4/13 25p13 $738,924.17 6/4/13 64-13 $625,591.03"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "congratulations to Lunenburg High School class of 2013",
+   "quote": "public comment - mr. toale congratulated lunenburg high school's class of 2013 for graduating."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Meet with Town Counsel on solar farm agreements",
+   "resolution": "briefing held; no action recorded",
+   "quote": "6:00pm meet with town counsel to review status",
+   "tags": [
+    "solar",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Public employee union health insurance agreement",
+   "resolution": "reported; no action recorded",
+   "quote": "mr. matthews noted that an agreement was come to with the public employee union that helps contain health",
+   "tags": [
+    "health insurance",
+    "labor"
+   ]
+  },
+  {
+   "topic": "Bangkok Hill Restaurant BYOB permit",
+   "resolution": "approved 5-0 with conditions",
+   "quote": "mr. ebersole moved to approve the request for a byob permit at the bangkok hill restaurant with a waiver of",
+   "tags": [
+    "BYOB",
+    "liquor",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Accept donation of carpet for PACC Studio",
+   "resolution": "accepted 5-0",
+   "quote": "mr. ebersole moved to accept the donation of carpet for the pacc studio. ms. bertram seconded.",
+   "tags": [
+    "donation",
+    "PACC"
+   ]
+  },
+  {
+   "topic": "12-month contract with Dominion for Municipal Aggregation Plan",
+   "resolution": "presented and discussed; no action recorded",
+   "quote": "12-month contract with dominion for municipal aggregation plan- brian murphy, colonial power group",
+   "tags": [
+    "aggregation",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Approve BOS Goals and Objectives",
+   "resolution": "revisions directed by chair; no vote recorded",
+   "quote": "approve bos goals and objectives- mr. matthews stated that he noticed that reinstating the chair",
+   "tags": [
+    "goals",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Approve Town Manager Goals and Objectives",
+   "resolution": "tabled to 6/11/13",
+   "quote": "approve town manager goals and objectives- tabled until 6/11/13 bos meeting",
+   "tags": [
+    "goals",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants listed; Town Manager contract negotiators named; no approval vote recorded",
+   "quote": "mr. matthews volunteered to be the other member of the bos to negotiate the contract.",
+   "tags": [
+    "warrants",
+    "town manager contract"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "mr. toale stated that the finance committee met with nathan kenney who provided the committee with a brief",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "reported; no action",
+   "quote": "ms. speidel stated that the town is only expected to receive $316,598.00 of chapter 90 funding",
+   "tags": [
+    "chapter 90",
+    "MIIA",
+    "properties"
+   ]
+  },
+  {
+   "topic": "Building Reuse Task Force appointments",
+   "resolution": "no appointment; interviews to be scheduled",
+   "quote": "ms. speidel stated that she had 3 applications for the building reuse task",
+   "tags": [
+    "appointments",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Agricultural Commission appointments",
+   "resolution": "appointments approved 5-0",
+   "quote": "mr. matthews moved to approve the recommendations of the town manager for the agricultural commission.",
+   "tags": [
+    "appointments",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "MART Advisory Board seat",
+   "resolution": "no action; Mr. Bowen did not wish to continue unless no one else could serve",
+   "quote": "mr. robert bowen replied that he had missed several meetings of the board and that he did not believe it was",
+   "tags": [
+    "appointments",
+    "MART"
+   ]
+  },
+  {
+   "topic": "Public comment: congratulations to graduates",
+   "resolution": "noted",
+   "quote": "public comment - mr. toale congratulated lunenburg high school's class of 2013 for graduating.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0",
+   "quote": "being no further business mr. alonzo moved to adjourn the meeting. ms. bertram seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 05/21/2013",
+   "where": "list",
+   "quote": "minutes/warrants/action file issues minutes: 05/21/2013 warrants: state special election: june 25, 2013"
+  },
+  {
+   "name": "Warrants 25P13 (6/4/13), 64-13 (6/4/13), 65-13 (6/5/13)",
+   "where": "list",
+   "quote": "6/4/13 25p13 $738,924.17 6/4/13 64-13 $625,591.03"
+  },
+  {
+   "name": "BYOB Permit application (Bangkok Hill Restaurant)",
+   "where": "text",
+   "quote": "she stated this language was listed on the application for the byob permit."
+  },
+  {
+   "name": "Letter from Lance D. May, Chairman of the PACC",
+   "where": "text",
+   "quote": "a letter was sent by lance d. may, chairman of the pacc, explaining the donation"
+  },
+  {
+   "name": "Letter from MIlA on Participation Credits",
+   "where": "text",
+   "quote": "a letter was received from mila advising that additional participation credits will be available starting on july 1st"
+  },
+  {
+   "name": "Contract with Dominion Energy Services",
+   "where": "text",
+   "quote": "ms. speidel agreed to a contract with dominion energy services which is valid for one year"
+  },
+  {
+   "name": "Policy manual",
+   "where": "text",
+   "quote": "in reviewing the policy manual this issue should be reviewed and updated"
+  },
+  {
+   "name": "BOS Goals and Objectives",
+   "where": "text",
+   "quote": "approve bos goals and objectives- mr. matthews stated that he noticed that reinstating the chair"
+  },
+  {
+   "name": "Town Manager Goals and Objectives",
+   "where": "text",
+   "quote": "approve town manager goals and objectives- tabled until 6/11/13 bos meeting"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "solar farm",
+  "BYOB permit",
+  "health insurance",
+  "municipal aggregation",
+  "goals and objectives",
+  "Town Manager contract",
+  "Agricultural Commission",
+  "appointments",
+  "Chapter 90",
+  "warrants",
+  "donation",
+  "2013"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "warrants:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,464 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-07-08",
+ "video_id": "jpAvblLP1Ew",
+ "video_url": "https://www.youtube.com/watch?v=jpAvblLP1Ew",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-07-08-jpAvblLP1Ew.json",
+  "sha256": "b58adf5b04e6431dc51b3000d82709a5f4bd833f238412ca24cb9a3d81a9fabe",
+  "caption_lines": 140,
+  "segments": 1185
+ },
+ "recording": {
+  "duration_s": 2933,
+  "duration": "0:48",
+  "spoken_chars": 39474,
+  "words_approx": 6579
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07082014-4894",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-07-08-agenda-4894.txt",
+   "path": "sources/meetings/select-board/2014-07-08-agenda-4894.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07082014-4894",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-07-08-minutes-4894.txt",
+   "path": "sources/meetings/select-board/2014-07-08-minutes-4894.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:24:01Z",
+  "cost_usd": 0.2002608
+ },
+ "minutes": {
+  "headline": "Select Board ratified town manager appointments and heard a storm damage update; no budget decisions made.",
+  "summary": "The board affirmed the police reserve officer appointments and then the town manager's appointment list. A motion to reject the animal control officer appointment got no second. The town manager reported on the previous day's storms, a Chapter 61A right of first refusal notice, and the planning board joint appointment. The building reuse committee gave an update, and the goals discussions were tabled for a workshop.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carrie",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Bob",
+    "role": "member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "executive-session",
+   "facilities",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety",
+   "roads-and-dpw",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 550,
+    "motion": "Affirm the appointment of the police officers as read last week for Lunenburg, Shirley and Townsend",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 734,
+    "motion": "Reject the appointment of the animal control officer as presented",
+    "outcome": "failed for lack of a second",
+    "procedural": false
+   },
+   {
+    "t": 754,
+    "motion": "Approve the town manager's appointments as listed",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2905,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2203,
+    "topic": "Storm response costs",
+    "what_was_said": "The town manager said the town's storm costs were likely in the tens of thousands of dollars, with a firmer figure in a week or two.",
+    "figures_as_heard": [
+     "tens of thousands of dollars"
+    ]
+   },
+   {
+    "t": 2304,
+    "topic": "State or federal storm reimbursement",
+    "what_was_said": "The town manager said reimbursement depends on a threshold formula and this event likely does not qualify."
+   },
+   {
+    "t": 924,
+    "topic": "Accounts payable warrants",
+    "what_was_said": "Two accounts payable warrants were presented.",
+    "figures_as_heard": [
+     "118 502 dollars",
+     "171 195 dollars and eight cents"
+    ]
+   },
+   {
+    "t": 1684,
+    "topic": "Right of first refusal on Chapter 61A land",
+    "what_was_said": "The town has 120 days from a proper notice to decide whether to pursue purchase."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 879,
+    "decision": "Town manager goals and board goals discussions tabled to a date when all members are present, possibly a workshop."
+   },
+   {
+    "t": 2803,
+    "decision": "Board members to attend the planning board meeting on the 14th for candidate interviews, with the appointment on the 15th."
+   },
+   {
+    "t": 2597,
+    "decision": "Town manager to look into opening the landfill for storm debris after consulting the DPW director and police."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 257,
+    "topic": "Public comment and board remarks on storm; sewer survey notice",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 257,
+    "t_end": 797,
+    "topic": "Town manager appointments ratification",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 797,
+    "t_end": 924,
+    "topic": "FY2015 goals for town manager and board",
+    "resolution": "tabled",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 924,
+    "t_end": 967,
+    "topic": "Accounts payable warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 967,
+    "t_end": 1515,
+    "topic": "Committee reports, building reuse",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1515,
+    "t_end": 1765,
+    "topic": "Chapter 61A right of first refusal",
+    "resolution": "referred",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1765,
+    "t_end": 2680,
+    "topic": "Storm damage update",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 2680,
+    "t_end": 2845,
+    "topic": "Planning board vacancy joint appointment",
+    "resolution": "decided to attend the 14th",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2845,
+    "t_end": 2926,
+    "topic": "Closing comments and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "water-sewer"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts were not stated for the motions."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 2161,
+    "kind": "safety",
+    "about": "Roadside washouts, blocked culverts and erosion risk to roadways after the storm.",
+    "who": "the town manager reading the DPW director's report",
+    "words_as_heard": "definitely some concern about erosion of of roadways"
+   },
+   {
+    "t": 1641,
+    "kind": "liability or legal",
+    "about": "Town counsel found the 61A notice deficient.",
+    "who": "the town manager",
+    "words_as_heard": "the notice we received is insufficient in that it does not meet the procedural requirements of chapter 61a"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 279,
+    "name_as_heard": "list of appointments",
+    "kind": "other",
+    "words_as_heard": "the list of appointments before you this evening"
+   },
+   {
+    "t": 1641,
+    "name_as_heard": "letter from Town Council",
+    "kind": "letter or email",
+    "words_as_heard": "the letter that I circulated to you last week from Town Council"
+   },
+   {
+    "t": 817,
+    "name_as_heard": "packet of board evaluation recommendations",
+    "kind": "memo",
+    "words_as_heard": "put together a packet for everyone that contains everyone's recommendations"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "chapter-61-right-of-first-refusal",
+    "title": "Chapter 61 first refusal",
+    "question": "What does the town's right of first refusal on Chapter 61A land involve and what could it cost?",
+    "t": 1515,
+    "words_as_heard": "the town has the right of first refusal on it because it is in chapter land",
+    "data_in_play": [
+     "120 days"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "Board members plan to attend the planning board meeting on the 14th for candidate interviews, with the joint appointment on the 15th.",
+   "A date when all members are present, possibly a workshop, for the tabled town manager and board goals discussions."
+  ],
+  "what_happened": [
+   {
+    "line": "The Select Board voted to approve the town manager's list of appointments; the vote was not audible in the recording.",
+    "t": 754
+   },
+   {
+    "line": "A motion to reject the animal control officer appointment failed for lack of a second.",
+    "t": 734
+   },
+   {
+    "line": "The board affirmed the police reserve officer appointments for Lunenburg, Shirley and Townsend; the vote was not audible.",
+    "t": 550
+   },
+   {
+    "line": "The town manager said storm costs were likely substantial, with a firmer figure in a week or two, and that state or federal reimbursement likely does not apply.",
+    "t": 2304
+   },
+   {
+    "line": "The board tabled the town manager and board goals discussions until all members can attend, possibly in a workshop.",
+    "t": 879
+   }
+  ],
+  "why_it_matters": [
+   "Storm cleanup costs would fall on the town budget, mostly taxes, if reimbursement does not apply, and a firmer cost figure is expected within weeks.",
+   "The town has 120 days from a proper notice to decide whether to pursue buying Chapter 61A land, a decision that would involve public money and could come before voters."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:24:08Z",
+   "cost_usd": 0.0226951
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07082014-4894",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-07-08-minutes-4894.txt",
+   "path": "sources/meetings/select-board/2014-07-08-minutes-4894.pdf"
+  },
+  "official_sha256": "8953639e455482c8e0d6ea4ce329771cd971eb6c5dd733b95662b6d97d1b2594",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes and decisions, but our minutes miss the 3-1 result on the town manager's appointments and the officially recorded sewer, building-report and Katkin items. The key difference is that our recording was inaudible on two votes, while the official minutes show the town manager's appointments passed 3-1 with Mr. Ebersole opposed.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Town manager's appointments vote",
+    "ours": "Approve the town manager's appointments as listed — not audible",
+    "official": "mr. toale moved to approve the town manager's appointments as listed and read. ms. luck seconded. on vote, motion carried, 3 in favor, 1 opposed (ebersole).",
+    "note": "Ours records no outcome; official gives a 3-1 passage with Ebersole opposed. Check the recording or ask the town to confirm the tally.",
+    "t": 754
+   },
+   {
+    "kind": "agree",
+    "about": "Animal control officer appointment rejection motion",
+    "ours": "Reject the appointment of the animal control officer as presented — failed for lack of a second",
+    "official": "mr. ebersole moved to reject the appointment of the animal control officer as presented. there was no second to the motion.",
+    "note": "Both record the motion dying for lack of a second.",
+    "t": 734
+   },
+   {
+    "kind": "agree",
+    "about": "Police officer appointments affirmed",
+    "ours": "Affirm the appointment of the police officers as read last week for Lunenburg, Shirley and Townsend — not audible",
+    "official": "mr. ebersole moved to affirm the appointment of the police officers as read last week into the record and as listed in the print out",
+    "note": "Same motion; neither states a vote result. Ours adds the town names Lunenburg, Shirley and Townsend, which the official excerpt does not show.",
+    "t": 550
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrants amounts",
+    "ours": "Accounts payable warrants: 118 502 dollars, 171 195 dollars and eight cents",
+    "official": "w# 1p-14 w# 71-14 $171,195.08 $118,502.00",
+    "note": "Same two amounts, $118,502.00 and $171,195.08, in a different order, with the cents garbled in ours.",
+    "t": 924
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager goals and board goals tabled",
+    "ours": "Town manager goals and board goals discussions tabled to a date when all members are present, possibly a workshop.",
+    "official": "further discussion of fy2015 bos goals: tabled to a future meeting that will be determined later.",
+    "note": "Both tabled. The official minutes add that members review each other's recommendations and bring comments to a workshop or full-board meeting.",
+    "t": 879
+   },
+   {
+    "kind": "agree",
+    "about": "Planning Board interviews 7/14 and appointment 7/15",
+    "ours": "Board members to attend the planning board meeting on the 14th for candidate interviews, with the appointment on the 15th.",
+    "official": "the bos will attend the 7/14/2014 interview meeting to be followed on 7/15/2014 with a joint session, at the bos meeting",
+    "note": "Same plan.",
+    "t": 2803
+   },
+   {
+    "kind": "agree",
+    "about": "Landfill opening for storm debris",
+    "ours": "Town manager to look into opening the landfill for storm debris after consulting the DPW director and police.",
+    "official": "ms. bertram requested that opening the town land fill should be investigated, specifically for those affected by the damage",
+    "note": "Same item. Ours adds consultation with the DPW director and police and assigns it to the town manager; the official excerpt does not say this.",
+    "t": 2597
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Storm response costs",
+    "ours": "Storm response costs: tens of thousands of dollars",
+    "official": "",
+    "note": "The official minutes print no dollar figure for storm costs. They say only that Ms. Speidel said the storm would not qualify for Federal/State reimbursement.",
+    "t": 2203
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Katkin property Chapter 61A notice",
+    "ours": "",
+    "official": "ms. bertram recommended that the bos sign the document. document was signed.",
+    "note": "The board signed the Town Counsel document on deficiencies in the Katkin notice; our minutes do not record this decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Building status report request",
+    "ours": "",
+    "official": "ms. bertram would like a more comprehensive report of the status of the buildings before fall town meeting.",
+    "note": "Our minutes do not record this request."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School Advisory Committee item removed",
+    "ours": "",
+    "official": "mr. ebersole noted that this is completed and should be removed from the agenda.",
+    "note": "Our minutes do not record this agenda change."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Carrie (town manager)",
+    "official": "town manager kerry speidel",
+    "note": "Captions misheard the first name of Town Manager Kerry Speidel.",
+    "official_reading": "Kerry Speidel"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Phyllis Luck",
+    "ours": "Mrs luck (member)",
+    "official": "phyllis luck",
+    "note": "Same person, Phyllis Luck.",
+    "official_reading": "Phyllis Luck"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Robert Ebersole",
+    "ours": "Bob (member)",
+    "official": "robert ebersole",
+    "note": "Bob is a short form of Robert; the same member.",
+    "official_reading": "Robert Ebersole"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees",
+    "ours": "",
+    "official": "with vice chair paula bertram, jamie",
+    "note": "Our minutes list no Paula Bertram or Jamie Toale. Chairperson Tom Alonzo was absent, and Susan Doherty recorded."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:25:18Z",
+   "cost_usd": 0.0443431
+  }
+ }
+}

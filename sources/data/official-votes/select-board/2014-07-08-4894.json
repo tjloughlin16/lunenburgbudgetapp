@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-07-08",
  "docid": "4894",
@@ -12,39 +12,329 @@
  },
  "votes": [
   {
-   "motion": "Affirm the appointment of Police Officers as read at the 7/1/2014 meeting and as listed in the print out provided to the Town of Lunenburg, the Town of Shirley, and the Town of Townsend",
-   "moved_by": "Ebersole",
-   "seconded_by": "Toale",
+   "motion": "Affirm the appointment of the Police Officers as read into the record and as listed in the print out.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Toale",
    "outcome": "not stated",
-   "procedural": true,
-   "quote": "mr. ebersole moved to affirm the appointment of the police officers as read last week into the record and as listed in the print out provided to us by the town of lunenburg, the town of shirley, and the town of townsend. mr. toale seconded."
+   "procedural": false,
+   "quote": "mr. ebersole moved to affirm the appointment of the police officers as read last week into the record and as listed in the print out"
   },
   {
-   "motion": "Reject the appointment of the Animal Control Officer as presented",
-   "moved_by": "Ebersole",
+   "motion": "Reject the appointment of the Animal Control Officer as presented.",
+   "moved_by": "Mr. Ebersole",
    "seconded_by": "",
-   "outcome": "failed",
-   "procedural": true,
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "mr. ebersole moved to reject the appointment of the animal control officer as presented. there was no second to the motion."
   },
   {
-   "motion": "Approve the Town Manager's appointments as listed and read",
-   "moved_by": "Toale",
-   "seconded_by": "Luck",
+   "motion": "Approve the Town Manager's appointments as listed and read (ratify under Section 4-2(d) of Town Charter).",
+   "moved_by": "Mr. Toale",
+   "seconded_by": "Ms. Luck",
    "outcome": "passed 3-1",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. toale moved to approve the town manager's appointments as listed and read. ms. luck seconded. on vote, motion carried, 3 in favor, 1 opposed (ebersole)."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Toale",
-   "seconded_by": "Ebersole",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Toale",
+   "seconded_by": "Mr. Ebersole",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "being no further business mr. toale moved to adjourn the meeting. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed"
+   "quote": "mr. toale moved to adjourn the meeting. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. Minutes are complete and readable.",
- "cost_usd": 0.11000650000000001
+ "dropped_unquoted": 1,
+ "note": "OCR text of a scanned page set; header line partly garbled (\"I fell lau\") and the appointments table is scrambled across columns, so individual appointee-to-position pairings are not recorded here. Warrant amounts are paired with W# numbers by order only. The minutes do not print a vote result for the Police Officer motion or a motion for the Animal Control Officer that had no second. Dollar figures are limited to the two warrant amounts. The \"1\"\" responders\" text is an OCR artifact.",
+ "cost_usd": 0.00853862,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with vice chair paula bertram, jamie"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with vice chair paula bertram, jamie"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "",
+   "status": "present",
+   "quote": "toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "absent",
+   "quote": "not present chairperson tom alonzo"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed it was not necessary to re-read the Police Officer Appointments list, which had been read into the record at the 7/1/2014 BOS meeting.",
+   "quote": "board members were in agreement that it would not be necessary to read the list of police officer appointments again"
+  },
+  {
+   "decision": "FY2015 Town Manager Goals item tabled; board members to review each other's recommendations and bring back comments to a workshop or a full-board meeting.",
+   "quote": "she asked the board to review each other's recommendation and then bring back comments to either a workshop session"
+  },
+  {
+   "decision": "FY2015 BOS Goals item tabled to a future meeting to be determined.",
+   "quote": "further discussion of fy2015 bos goals: tabled to a future meeting that will be determined later."
+  },
+  {
+   "decision": "Board signed the Town Counsel document noting deficiencies in the Katkin property notice (Chapter 61A sale, Right of First Refusal).",
+   "quote": "ms. bertram recommended that the bos sign the document. document was signed."
+  },
+  {
+   "decision": "Ms. Bertram asked for a more comprehensive report on the status of the buildings before Fall Town Meeting.",
+   "quote": "ms. bertram would like a more comprehensive report of the status of the buildings before fall town meeting."
+  },
+  {
+   "decision": "Ms. Bertram requested that opening the Town Land Fill be investigated for residents affected by storm debris.",
+   "quote": "ms. bertram requested that opening the town land fill should be investigated, specifically for those affected by the damage"
+  },
+  {
+   "decision": "BOS to attend the 7/14/2014 Planning Board interviews, then hold a joint session at the 7/15/2014 BOS meeting to appoint a person to the vacant Planning Board seat, effective until the May 2015 election.",
+   "quote": "the bos will attend the 7/14/2014 interview meeting to be followed on 7/15/2014 with a joint session, at the bos meeting"
+  },
+  {
+   "decision": "School Advisory Committee on Acceptance & Diversity item to be removed from the agenda as completed.",
+   "quote": "mr. ebersole noted that this is completed and should be removed from the agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants for payment",
+   "what_was_recorded": "Two warrants dated 6/30/2014 were listed with amounts; the minutes print the amounts after the W# numbers in the same order, so pairing is by order.",
+   "figures_as_printed": [
+    "$171,195.08",
+    "$118,502.00"
+   ],
+   "quote": "w# 1p-14 w# 71-14 $171,195.08 $118,502.00"
+  },
+  {
+   "topic": "State money for storm damage",
+   "what_was_recorded": "Ms. Luck asked whether the State would provide money for the storm situation; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "ms. luck asked if the state would provide money for a situation like this"
+  },
+  {
+   "topic": "State/Federal reimbursement for storm",
+   "what_was_recorded": "Ms. Speidel said reimbursement needs a State of Emergency and a threshold formula; she said this storm would not qualify for Federal/State reimbursement. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel replied that if we were to declare a state of emergency there is a process to go through for reimbursement that is federal"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "",
+   "topic": "Storm and storm drain debris",
+   "quote": "she also mentioned that the storm drains were full of debris and asked for the public's help with clearing them if they"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Vice Chair",
+   "topic": "Tree cutting near wetlands after storm",
+   "quote": "ms. bertram also commented on the storm saying that if you are doing any type of tree cutting near the wetland to please contact the conservation commission so that they can be placed under order of conditions."
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "",
+   "topic": "Sewer extension survey (Lakefront/Pierce Ave)",
+   "quote": "mr. ebersole mentioned that the sewer commission has retained the firm of wright pierce to design the lakefront/pierce ave sewer extension"
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "",
+   "topic": "Reminder on sewer extension work",
+   "quote": "public comment: mr. ebersole reminded the public again about the sewer extension work which will begin on 7/9/2014 and will continue through 7/31/2014."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Vice Chair",
+   "topic": "Reminder to contact Conservation about storm damage",
+   "quote": "ms. bertram reminded all again to contact conservation about damage they may have incurred during the storm."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening, 7:00PM)",
+   "resolution": "no action; storm comments and sewer survey notice",
+   "quote": "7:00pm public comment: ms. luck commented on the previous day's storm and complimented the 1\"\" responders for their",
+   "tags": [
+    "public comment",
+    "storm",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Ratify Town Manager's appointments (Section 4-2(d))",
+   "resolution": "approved 3-1 (Ebersole opposed); Animal Control Officer rejection motion had no second",
+   "quote": "request to ratify town manager's appointments under section 4-2(d) of town charter, per attached list:",
+   "tags": [
+    "appointments",
+    "town charter"
+   ]
+  },
+  {
+   "topic": "Further discussion of FY2015 Town Manager Goals",
+   "resolution": "tabled",
+   "quote": "further discussion of fy2015 town manager goals: ms. bertram noted that the town manager had put together a packet of",
+   "tags": [
+    "town manager goals",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Further discussion of FY2015 BOS Goals",
+   "resolution": "tabled",
+   "quote": "further discussion of fy2015 bos goals: tabled to a future meeting that will be determined later.",
+   "tags": [
+    "board goals"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no minutes; two warrants listed; no action file issues",
+   "quote": "action file issues: none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; School Advisory Committee item to be removed from agenda",
+   "quote": "committee report: board of health; building reuse committee; capital planning committee; finance committee; library",
+   "tags": [
+    "committee reports",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "Katkin document signed; Planning Board appointment process set; land fill review requested; storm damage update",
+   "quote": "ms. speidel spoke about the katkin property which has gone into chapter 61a and is being sold.",
+   "tags": [
+    "katkin property",
+    "storm damage",
+    "planning board",
+    "chapter 61a"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "reminders only",
+   "quote": "public comment: mr. ebersole reminded the public again about the sewer extension work which will begin on 7/9/2014",
+   "tags": [
+    "public comment",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations",
+   "resolution": "discussed under Item 1",
+   "quote": "appointments/ re-appointments/ resignations: discussed under item (1) of current business",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 7:49PM",
+   "quote": "adjournment: being no further business mr. toale moved to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager's appointments list (Attached List)",
+   "where": "list",
+   "quote": "request to ratify town manager's appointments under section 4-2(d) of town charter, per attached list:"
+  },
+  {
+   "name": "Print out of Police Officer appointments provided by the Town of Lunenburg, the Town of Shirley, and the Town of Townsend",
+   "where": "text",
+   "quote": "as listed in the print out provided to us by the town of lunenburg, the town of shirley, and the town of townsend"
+  },
+  {
+   "name": "Town Manager packet of board members' recommendations (not for public discussion)",
+   "where": "text",
+   "quote": "the town manager had put together a packet of board members recommendations, which are not for public discussion"
+  },
+  {
+   "name": "Power point presentation on Lake Shirley storm damage",
+   "where": "text",
+   "quote": "ms. speidel provided a power point presentation showing the damage that had been done in the lake shirley area"
+  },
+  {
+   "name": "Document from Town Counsel noting deficiencies in the Katkin property notice",
+   "where": "text",
+   "quote": "ms. speidel asked the board to sign the document from town counsel noting the deficiencies"
+  },
+  {
+   "name": "Warrants dated 6/30/2014 (W# 1P-14 and W# 71-14)",
+   "where": "text",
+   "quote": "w# 1p-14 w# 71-14 $171,195.08 $118,502.00"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "town manager goals",
+  "board goals",
+  "warrants",
+  "storm damage",
+  "Katkin property",
+  "Chapter 61A",
+  "Planning Board appointment",
+  "sewer extension",
+  "committee reports",
+  "public comment",
+  "Town Land Fill",
+  "Building Reuse Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "per attached list"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

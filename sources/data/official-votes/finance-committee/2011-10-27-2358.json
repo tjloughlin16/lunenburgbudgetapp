@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-10-27",
  "docid": "2358",
@@ -12,31 +12,262 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the October 6, 2011 meeting as submitted",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Accept the minutes of the 10/6/11 meeting as submitted.",
+   "moved_by": "BL",
+   "seconded_by": "BR",
    "outcome": "passed",
    "procedural": true,
    "quote": "bl made a motion to accept the minutes of the 10/6/11 meeting as submitted; br seconded; all approved"
   },
   {
-   "motion": "Accept the minutes of the October 13, 2011 meeting as submitted",
-   "moved_by": "John Male",
-   "seconded_by": "Scott Gile",
+   "motion": "Accept the minutes of the 10/13/11 meeting as submitted.",
+   "moved_by": "JM",
+   "seconded_by": "SG",
    "outcome": "passed",
    "procedural": true,
    "quote": "jm made a motion to accept the minutes of the 10/13/11 meeting as submitted; sg seconded; all approved"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "John Male",
-   "seconded_by": "Scott Gile",
+   "motion": "Adjourn the meeting at 8:57 pm.",
+   "moved_by": "JM",
+   "seconded_by": "SG",
    "outcome": "passed",
    "procedural": true,
    "quote": "jm made a motion to adjourn at 8:57 pm, sg seconded; all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scanned minutes. Three votes recorded: two to approve prior meeting minutes, one to adjourn. A DPW Pavement Management Plan was presented but no motion to vote on it was recorded in the minutes.",
- "cost_usd": 0.1128745
+ "dropped_unquoted": 6,
+ "note": "OCR text (macOS Vision) of a scanned set. Page 1 (the minutes) is legible and carries all votes and attendance. Pages 2-38 are handouts reproduced as garbled OCR; dollar figures in those tables are pulled as printed and their column pairing is uncertain. Votes are recorded only as 'all approved' or 'all in favor' with no tally. The DPW Director is not named. No public comment section appears. The text 'DW' is read as DPW.",
+ "cost_usd": 0.01176582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "DPW Director",
+   "role": "presenter of the Pavement Management Plan (name not printed)",
+   "status": "present",
+   "quote": "dw pavement management plan presented by dpw director - handouts included"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "presented budget data to the Service Level Team on 10/25 (not at this meeting)",
+   "status": "not stated",
+   "quote": "loxi calmes and dave rief presented some budget data indicating"
+  },
+  {
+   "name": "Dave Rief",
+   "role": "presented budget data to the Service Level Team on 10/25 (not at this meeting)",
+   "status": "not stated",
+   "quote": "loxi calmes and dave rief presented some budget data indicating"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "SG will be the new Public Safety representative from FinComm (no vote recorded).",
+   "quote": "public safety - sg will be the new representative from fincomm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Paved road value per mile",
+   "what_was_recorded": "The DPW Director's presentation put the paved roads at 87 miles valued at $700,000 per mile.",
+   "figures_as_printed": [
+    "$700,000"
+   ],
+   "quote": "87 miles of paved roads valued at $700,000 per mile"
+  },
+  {
+   "topic": "Recommended annual road spend",
+   "what_was_recorded": "A reasonable yearly spend on pavement, as recommended by the DPW Director, is stated as $800K.",
+   "figures_as_printed": [
+    "$800K"
+   ],
+   "quote": "a reasonable spend per year as recommended by the dpw director is $800k"
+  },
+  {
+   "topic": "Chapter 90 funding for FY11 resurfacing",
+   "what_was_recorded": "The DPW resurfacing program is predicted on State Chapter 90 funding holding at current levels, shown as $329,794.00 for FY11.",
+   "figures_as_printed": [
+    "$329,794.00"
+   ],
+   "quote": "the dpw resurfacing program is predicted on the state maintaining current levels of chapter 90 funding"
+  },
+  {
+   "topic": "Chapter 90 State Aid funding history",
+   "what_was_recorded": "A handout table lists Chapter 90 State Aid amounts by year from FY06 onward; the figures are printed in OCR order and their year pairing is not fully clear.",
+   "figures_as_printed": [
+    "$377,704.00",
+    "$258,031.00",
+    "$322,432.00",
+    "$321,809.00",
+    "$319,828.00",
+    "$329,794.00"
+   ],
+   "quote": "chapt. - 291b & sup. (fy06) $377,704.00"
+  },
+  {
+   "topic": "Asphalt prices per ton, 10-year history",
+   "what_was_recorded": "A handout chart shows asphalt prices per ton over 2001 to 2010; the printed price points are listed.",
+   "figures_as_printed": [
+    "$34.00",
+    "$38.00",
+    "$41.00",
+    "$56.00",
+    "$77.00",
+    "$65.85",
+    "$80.00"
+   ],
+   "quote": "asphalt prices per ton 10 year history"
+  },
+  {
+   "topic": "FY2011 cost estimates by street segment",
+   "what_was_recorded": "A handout table gives a COSTEST FY2011 cost per street segment, with many figures; the first entries and a $0.00 entry are shown as printed (OCR, partly garbled).",
+   "figures_as_printed": [
+    "$394,602.70",
+    "$95,189.25",
+    "$247,492.04",
+    "$0.00"
+   ],
+   "quote": "costest fy2011 $394,602.70 $95,189.25 $247,492.04"
+  },
+  {
+   "topic": "Reconstruction cost and total road asset value (Pavement Management Plan)",
+   "what_was_recorded": "The plan puts reconstruction at about $700,000 per road mile on roughly 100 miles, an asset value of about $70 million.",
+   "figures_as_printed": [
+    "$700,000",
+    "$70 million"
+   ],
+   "quote": "current road construction estimates put the cost of reconstruction at approximately $700,000 per road mile"
+  },
+  {
+   "topic": "Chapter 90 and local road funding (Pavement Management Plan)",
+   "what_was_recorded": "The plan says Chapter 90 provides about $320,000 per year and the FY10 budget commits $70,000 for road improvements.",
+   "figures_as_printed": [
+    "$320,000",
+    "$70,000"
+   ],
+   "quote": "chapter 90 provides about $320,000 per year and the fy10 budget commits $70,000 for road improvements"
+  },
+  {
+   "topic": "Summary of road maintenance funding and asset value",
+   "what_was_recorded": "The plan states maintenance is funded by about $320,000 a year in State c. 90 money and about $70,000 a year locally, against an asset of about $70,000,000.",
+   "figures_as_printed": [
+    "$320,000",
+    "$70,000",
+    "$70,000,000"
+   ],
+   "quote": "state c. 90 funding at approximately $320,000 per year and local funds at about $70,000 per year"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:01 PM",
+   "quote": "meeting called to order by the chairman at 7:01 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review minutes of 10/6/11 and 10/13/11",
+   "resolution": "approved both sets of minutes as submitted",
+   "quote": "bl made a motion to accept the minutes of the 10/6/11 meeting as submitted; br seconded; all approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department reports",
+   "resolution": "received; no action recorded",
+   "quote": "capital planning - committee met today; reviewed form b's that have been submitted",
+   "tags": [
+    "capital planning",
+    "monty tech",
+    "service levels",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Pavement Management Plan (DPW)",
+   "resolution": "presented by DPW Director; no action recorded",
+   "quote": "dw pavement management plan presented by dpw director - handouts included",
+   "tags": [
+    "roads",
+    "pavement",
+    "DPW",
+    "Chapter 90"
+   ]
+  },
+  {
+   "topic": "Next meeting and town meeting dates",
+   "resolution": "noted",
+   "quote": "next meeting - november 10; special town meeting, december 5",
+   "tags": [
+    "schedule",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:57 pm",
+   "quote": "jm made a motion to adjourn at 8:57 pm, sg seconded; all in favor",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pavement Survey and Maintenance Program",
+   "where": "list",
+   "quote": "handouts included: pavement survey and maintenance program, street ranking spreadsheet, asphalt patching program, pavement management plan"
+  },
+  {
+   "name": "Street Ranking Spreadsheet",
+   "where": "list",
+   "quote": "handouts included: pavement survey and maintenance program, street ranking spreadsheet, asphalt patching program, pavement management plan"
+  },
+  {
+   "name": "Asphalt Patching Program (Department of Public Works, July 2010)",
+   "where": "list",
+   "quote": "handouts included: pavement survey and maintenance program, street ranking spreadsheet, asphalt patching program, pavement management plan"
+  },
+  {
+   "name": "Pavement Management Plan (Department of Public Works, June 2010)",
+   "where": "list",
+   "quote": "handouts included: pavement survey and maintenance program, street ranking spreadsheet, asphalt patching program, pavement management plan"
+  },
+  {
+   "name": "Road Classification System Survey Form",
+   "where": "text",
+   "quote": "road classification system survey form used to determine priority, i.e., local"
+  },
+  {
+   "name": "Form B's (capital submissions)",
+   "where": "text",
+   "quote": "reviewed form b's that have been submitted"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "pavement management",
+  "roads",
+  "DPW",
+  "Chapter 90",
+  "asphalt",
+  "Monty Tech",
+  "service levels",
+  "capital planning",
+  "special town meeting",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts included"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 6
+ }
 }

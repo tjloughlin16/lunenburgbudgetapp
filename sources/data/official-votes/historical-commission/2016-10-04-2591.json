@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-10-04",
  "docid": "2591",
@@ -10,17 +10,150 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10042016-2591",
   "doc_url": "/docs/meetings/historical-commission/2016-10-04-minutes-2591.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "No votes are recorded in this text. The September 6, 2016 minutes are reported as approved, but no motion, mover, seconder or count is printed, so no vote entry was created. No public comment, dollar figures, or attached documents appear in the minutes.",
+ "cost_usd": 0.00302172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the minutes of September 6, 2016",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes were approved for september 6, 2016.",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath",
+   "role": "member"
+  },
+  {
+   "name": "Lois Lewis",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath",
+   "role": "member"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath",
+   "role": "member"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath",
+   "role": "member"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "not stated",
+   "quote": "amory phelps has requested to withdraw as a member of the historical commission.",
+   "role": "member (requested to withdraw)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "One procedural vote (minutes approval) recorded. No moved_by or seconded_by names stated in the minutes. No other motions or votes recorded; remaining items are reports, discussions, and descriptions of actions individual members will take.",
- "cost_usd": 0.07855450000000001
+ "decisions": [
+  {
+   "decision": "Minutes for September 6, 2016 were approved (no motion or vote count recorded).",
+   "quote": "minutes were approved for september 6, 2016."
+  },
+  {
+   "decision": "Becky Lantry wrote two letters to the building inspector, Michael Sauvageau, advising that 203 West Townsend Road and 37 Burrage Road have not complied with the demolition delay plan.",
+   "quote": "becky lantry has written two letters to advise michael sauvageau, the building inspector,"
+  },
+  {
+   "decision": "Cullen Dwyer and Becky Lantry will write letters to Jack Rodriquenz at the Department of Public Works about care and maintenance of the Town Pound, citing traffic and heavy trucks and equipment.",
+   "quote": "both cullen dwyer and becky lantry will write letters to jack rodriquenz, at the department of public works,"
+  },
+  {
+   "decision": "Richard McGrath will write to Jack Rodriquenz at Public Works requesting installation of a lock on the gate at the Town Pound.",
+   "quote": "richard mcgrath will also write to jack rodriquenz, at the public works department for the installation of a lock on the gate at the town pound."
+  },
+  {
+   "decision": "Cullen Dwyer will put notices on older homes in the area seeking interest in membership to fill the vacancy left by Amory Phelps.",
+   "quote": "cullen dwyer suggested he will put notices on the older homes in the area for any interest in membership"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:40 p.m.",
+   "quote": "meeting called to order at 6:40 p. m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved September 6, 2016 minutes",
+   "quote": "minutes were approved for september 6, 2016.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action",
+   "quote": "there was no correspondence received.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition delay requests",
+   "resolution": "no action; no new requests reported",
+   "quote": "richard mcgrath reported no new demolition delay requests have been received.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Demolition delay compliance letters",
+   "resolution": "letters written to building inspector",
+   "quote": "becky lantry has written two letters to advise michael sauvageau, the building inspector,",
+   "tags": [
+    "demolition delay",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Town Pound care and maintenance",
+   "resolution": "letters assigned to Public Works",
+   "quote": "both cullen dwyer and becky lantry will write letters to jack rodriquenz, at the department of public works,",
+   "tags": [
+    "town pound",
+    "public works"
+   ]
+  },
+  {
+   "topic": "Commission membership vacancy",
+   "resolution": "outreach planned to fill vacancy",
+   "quote": "cullen dwyer suggested he will put notices on the older homes in the area for any interest in membership",
+   "tags": [
+    "membership",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:35 p.m.",
+   "quote": "meeting adjourned at 7:35 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "town pound",
+  "membership vacancy",
+  "correspondence",
+  "public works"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

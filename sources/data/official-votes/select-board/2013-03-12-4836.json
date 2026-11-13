@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-03-12",
  "docid": "4836",
@@ -12,23 +12,349 @@
  },
  "votes": [
   {
-   "motion": "Support the Conservation Commission's proposal to go to town meeting",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Alonzo",
+   "motion": "Support the Conservation Commission's Pleasant Street proposal to go to the 2013 town meeting.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Tom Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram motioned to support the conservation commissions proposal to go to town meeting. mr. alonzo seconded the motion. on vote motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from macOS Vision; readable. Two votes recorded.",
- "cost_usd": 0.09131149999999999
+ "note": "OCR text from a scanned minutes page set; some words are garbled (e.g. \"andRECETVED & FILEI\" stamp, \"Tøwn\", \"Mir.\"), and quotes are copied as printed. Two motions are recorded with votes (the Conservation Commission motion and adjournment). The warrant and minutes listing under Minutes/Warrants/Action File Issues records no approval vote. Board members appear under the PUBLIC COMMENT heading; the Town Manager is referenced but not named. Member roles beyond names are not printed. Board members' roles (such as chair) are not stated explicitly.",
+ "cost_usd": 0.010553920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Matthews",
+   "role": "not stated",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at tøwn hall as scheduled with dave"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, paula bertram, steven m. debettencourt andrecetved & filei"
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, paula bertram, steven m. debettencourt andrecetved & filei"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, paula bertram, steven m. debettencourt andrecetved & filei"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matthews, tom alonzo, carl (ernie) sund, paula bertram, steven m. debettencourt andrecetved & filei"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steven m. debettencourt andrecetved & filei kerry speidel."
+  },
+  {
+   "name": "Jennifer Flanagan",
+   "role": "State Senator",
+   "status": "present",
+   "quote": "senator flanagan started by stating after redistricting went into"
+  },
+  {
+   "name": "Jennifer Benson",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "representative benson spoke and said that she currently sits on health care and finance"
+  },
+  {
+   "name": "Stephen DiNatale",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "representative dinatale spoke thanking the bos for the invitation to the meeting."
+  },
+  {
+   "name": "Rob Verge",
+   "role": "Representative of the Conservation Commission",
+   "status": "present",
+   "quote": "representatives from the conservation commission, rob verge, and sharon jordan attended the meeting"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "Representative of the Conservation Commission",
+   "status": "present",
+   "quote": "representatives from the conservation commission, rob verge, and sharon jordan attended the meeting"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Speidel will get back to Ms. Bertram with answers to her FY2014 budget questions on Wednesday.",
+   "quote": "she will be getting back to her with answers on wednesday"
+  },
+  {
+   "decision": "The Board will meet at 6:30PM on March 26 to sign the Warrant for Town Meeting.",
+   "quote": "the bos will meet at 6:30pm on march 26"
+  },
+  {
+   "decision": "Ms. Bertram asked that the Article concerning recreational vehicles be included in the warrant.",
+   "quote": "requested that the article concerning recreational vehicles also be included in the warrant"
+  },
+  {
+   "decision": "Ms. Bertram encouraged the Conservation Commission to add the 30% trail re-grading to the RFP.",
+   "quote": "she encouraged the conservation commission to include it in the rfp."
+  },
+  {
+   "decision": "It was determined that newly elected officials take office the day after the April 30 election.",
+   "quote": "it was determined that yes it would become effective the day after the election"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Governor's proposed state tax package",
+   "what_was_recorded": "A $2 billion tax package is attached to the Governor's state budget, which has not yet been voted on.",
+   "figures_as_printed": [
+    "$2 billion"
+   ],
+   "quote": "there is a $2 billion tax package"
+  },
+  {
+   "topic": "State stabilization fund",
+   "what_was_recorded": "Senator Flanagan said Massachusetts has over $1 billion in its stabilization fund.",
+   "figures_as_printed": [
+    "$1 billion"
+   ],
+   "quote": "massachusetts is one of only three states that has over $1 billion in its stabilization fund"
+  },
+  {
+   "topic": "State aid to the Town",
+   "what_was_recorded": "Mr. Matthews said the Town is receiving lower State Aid for FY12 and FY13 than in FY10, and that Chapter 70 falls short of the Town's needs.",
+   "figures_as_printed": [],
+   "quote": "the town is receiving lower state aid for fy 12 and fy13 then they did in fy10"
+  },
+  {
+   "topic": "Chapter 70 funding gap",
+   "what_was_recorded": "Mr. Matthews said Chapter 70 funding does not match the Town's needs, leaving a large funding gap.",
+   "figures_as_printed": [],
+   "quote": "there wouldn't be such a massive gap in funding between the towns needs and what the state offers."
+  },
+  {
+   "topic": "Chapter 90 transportation funding",
+   "what_was_recorded": "Senator Flanagan said the Governor's proposal doubles Chapter 90 transportation funding.",
+   "figures_as_printed": [],
+   "quote": "the current proposal put forth in the governor's budget doubles the amount of funding in chapter 90"
+  },
+  {
+   "topic": "Warrants approved for payment",
+   "what_was_recorded": "Warrants 48-13, 49-13 and 19P-13 were listed with their amounts.",
+   "figures_as_printed": [
+    "$284,539.92",
+    "$389,137.68",
+    "$663,691.01"
+   ],
+   "quote": "48-13 $284,539.92 49-13 $389,137.68 19p-13 $663,691.01"
+  },
+  {
+   "topic": "FY2014 budget",
+   "what_was_recorded": "The FY2014 budget was discussed and the Finance Committee calendar reviewed; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "fy2014 budget discussion - ms. speidel confirmed that she had received a list of questions"
+  },
+  {
+   "topic": "Conservation land gravel sale",
+   "what_was_recorded": "The Conservation Commission proposed selling gravel from Pleasant Street land to generate funds for future land purchases; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "sell the gravel to generate funds for future land purchases"
+  },
+  {
+   "topic": "Street light purchase",
+   "what_was_recorded": "Mr. Matthews suggested looking into the Finance Committee's proposal to buy the street lights from the utility, noting the Town would then have to maintain them; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "mr. matthews suggested looking into the finance committees proposal to buy the street lights"
+  },
+  {
+   "topic": "Contractor performance bond and landfill recap",
+   "what_was_recorded": "Mr. deBettencourt requested a performance bond for the contractor and a plan to recap the town landfill embankments; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "requested that they have a performance bond for the contractor"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "not stated",
+   "topic": "Town caucus and open positions",
+   "quote": "mr. matthews began the meeting thanking everyone who turned out for the town caucus the previous"
+  },
+  {
+   "speaker": "Mr. deBettencourt",
+   "stated_role": "not stated",
+   "topic": "Street light outages",
+   "quote": "mr. debettencourt requested an update on the street lights that are out in the town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening) - town caucus",
+   "resolution": "no action",
+   "tags": [
+    "caucus",
+    "elections"
+   ],
+   "quote": "mr. matthews began the meeting thanking everyone who turned out for the town caucus the previous"
+  },
+  {
+   "topic": "Appointments - State delegation (Flanagan, Benson, DiNatale)",
+   "resolution": "discussed, no action",
+   "tags": [
+    "state budget",
+    "Chapter 70",
+    "Chapter 90",
+    "state aid"
+   ],
+   "quote": "the bos thanked the delegation for attending this evenings meeting."
+  },
+  {
+   "topic": "Conservation Commission - Pleasant Street Request for Proposals",
+   "resolution": "motion to support going to 2013 town meeting passed 5-0",
+   "tags": [
+    "conservation",
+    "Pleasant Street",
+    "town meeting",
+    "Article 97"
+   ],
+   "quote": "ms. bertram motioned to support the conservation commissions proposal to go to town meeting."
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants and minutes listed; no vote recorded",
+   "tags": [
+    "warrants",
+    "minutes"
+   ],
+   "quote": "minutes/warrants/action file issues"
+  },
+  {
+   "topic": "FY2014 Budget Discussion",
+   "resolution": "discussed, answers to be provided",
+   "tags": [
+    "FY2014 budget",
+    "finance committee"
+   ],
+   "quote": "fy2014 budget discussion - ms. speidel confirmed that she had received a list of questions"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "noted; Finance Committee meeting rescheduled",
+   "tags": [
+    "finance committee"
+   ],
+   "quote": "committee reports - mr. alonzo stated that the finance committee meeting that was cancelled due to"
+  },
+  {
+   "topic": "Old Business and Appointments/Re-appointments/Resignations",
+   "resolution": "none",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "old business - none appointments/re-appointments/resignations - none."
+  },
+  {
+   "topic": "Public comment - street lights",
+   "resolution": "discussed, no action",
+   "tags": [
+    "street lights",
+    "utilities"
+   ],
+   "quote": "mr. debettencourt requested an update on the street lights that are out in the town."
+  },
+  {
+   "topic": "Other business - warrant signing, election, Town Manager reviews",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "town meeting warrant",
+    "election",
+    "town manager review"
+   ],
+   "quote": "mr. matthews reminded the bos that town manager reviews need to be finished by april 30th."
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "executive session - none"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrants 48-13, 49-13 and 19P-13 (dated 3/13, 3/13 and 3/11)",
+   "where": "list",
+   "quote": "warrants: 3/13 3/13 3/11 48-13 $284,539.92 49-13 $389,137.68 19p-13 $663,691.01"
+  },
+  {
+   "name": "Minutes of 3/5/2013",
+   "where": "list",
+   "quote": "minutes/warrants/action file issues minutes: 3/5/2013"
+  },
+  {
+   "name": "Conservation Commission, Pleasant Street Request for Proposals",
+   "where": "text",
+   "quote": "conservation commission, pleasant street request for proposals"
+  },
+  {
+   "name": "List of questions from Ms. Bertram regarding the FY2014 budget",
+   "where": "text",
+   "quote": "had received a list of questions from ms. bertram regarding the fy2014 budget"
+  },
+  {
+   "name": "Town Manager packet for the state delegation",
+   "where": "text",
+   "quote": "the town manager had put together a packet for the delegation to look at with"
+  }
+ ],
+ "tags": [
+  "state budget",
+  "Chapter 70",
+  "Chapter 90",
+  "state aid",
+  "Pleasant Street",
+  "Conservation Commission",
+  "Article 97",
+  "town landfill",
+  "performance bond",
+  "FY2014 budget",
+  "warrants",
+  "town meeting",
+  "street lights",
+  "election",
+  "town caucus"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "minutes/warrants/action file issues"
+ },
+ "dropped_unquoted_by_field": {}
 }

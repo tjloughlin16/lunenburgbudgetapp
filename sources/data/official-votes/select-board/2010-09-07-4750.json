@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-09-07",
  "docid": "4750",
@@ -12,45 +12,451 @@
  },
  "votes": [
   {
-   "motion": "Approve one-day beer and wine license for St. Boniface Church for its Annual Italian Festival",
+   "motion": "Approve the One Day Beer & Wine License for St. Boniface Church for its Annual Italian Festival.",
    "moved_by": "Ernie",
    "seconded_by": "Tom",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "ernie motion to approve, tom seconded, voted unanimously."
   },
   {
-   "motion": "Authorize the Town Manager to issue a Request for Proposals for municipal aggregation consulting services",
+   "motion": "Authorize the Town Manager to proceed with issuing an RFP for aggregation services.",
    "moved_by": "Tom",
    "seconded_by": "Ernie",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom move to authorize the town manager to proceed with issuing an rfp for aggregation services, ernie seconded, voted unanimously to approve."
   },
   {
-   "motion": "Move forward with the proposal as discussed with the Green Community Task Force",
+   "motion": "Move forward with a proposal as discussed with the Green Community Task Force.",
    "moved_by": "Tom",
    "seconded_by": "Ernie",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom motion to move forward with a proposal as discussed with the green community task force, ernie seconded, voted unanimously to approve."
   },
   {
-   "motion": "Approve the Memorandum of Understanding dated September 7, 2010",
+   "motion": "Approve the Memorandum of Understanding of September 7, 2010 with Emerald Place LLC.",
    "moved_by": "Tom",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom move to approve the mou of september 7, 2010, dave seconded, voted unanimously to approve."
   },
   {
-   "motion": "Adjourn the regular session and enter into executive session",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn Regular Session at 8:25 P.M. and enter into Executive Session under M.G.L. Chapter 39, §23B(3), not to return to regular session.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "board voted unanimously to adjourn regular session at 8:25 p.m. to enter into executive session not to return to regular session."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1167285
+ "note": "OCR text (macOS Vision) with some errors (e.g., 'Emie' for Ernie, 'Memoral', 'Cicotti' vs 'Ciccotti', 'Spiedel'); quotes follow the OCR as printed. Pages 4-9 are attached materials (Municipal Aggregation study excerpts, Emerald Place MOU letter, and plan sheets) with no heading of their own. Page 3 proclamation date line reads '70 day'. Board members' remarks under the PUBLIC COMMENT heading are recorded as the only public-comment entry; no members of the public are recorded speaking in public comment. Outcomes for unanimous votes recorded as 'passed' since no count is printed. No transfers recorded.",
+ "cost_usd": 0.013651620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "with steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "present",
+   "quote": "with steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Member",
+   "status": "present",
+   "quote": "with steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "with steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Mike Sauvageau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike sauvageau of 191 elmwood road was present to introduce representatives from leominster credit union"
+  },
+  {
+   "name": "Julio Grego",
+   "role": "Chairman of the Board of Directors, Leominster Credit Union",
+   "status": "present",
+   "quote": "julio grego, chairman of the board of directors, butch bilotta, member of the board of directors"
+  },
+  {
+   "name": "Butch Bilotta",
+   "role": "member of the Board of Directors, Leominster Credit Union",
+   "status": "present",
+   "quote": "julio grego, chairman of the board of directors, butch bilotta, member of the board of directors"
+  },
+  {
+   "name": "Sue Martino",
+   "role": "Fundraising Committee Chair for the Teen Center",
+   "status": "present",
+   "quote": "sue martino, fundraising committee chair for the teen center and michelle belleza, director of the teen center."
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Director of the Teen Center",
+   "status": "present",
+   "quote": "sue martino, fundraising committee chair for the teen center and michelle belleza, director of the teen center."
+  },
+  {
+   "name": "Gordon Edmonds",
+   "role": "Chief Executive Officer of Leominster Credit Union",
+   "status": "present",
+   "quote": "gordon edmonds, chief executive officer of leominster credit union presented the check of $5,000.00 to the teen center."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "Chair of the Green Energy Task Force",
+   "status": "present",
+   "quote": "steve marsden, chair of the green energy task force informed the board that he"
+  },
+  {
+   "name": "Brian Murphy",
+   "role": "representing Colonial Power Group",
+   "status": "present",
+   "quote": "brian reviewed the attached information from the municipal aggregation"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board concurred that the green energy solar project should be pursued and commended the Green Community Task Force; Steve M. to meet with Unitil and the DPU and keep moving toward an RFP.",
+   "quote": "board concurred that this is something that we should pursue and commended the green community task force for their efforts."
+  },
+  {
+   "decision": "Board accepted the resignation of Dawn Ciccotti from the Personnel Committee and expressed appreciation.",
+   "quote": "board accepted and expressed appreciation to all the work that dawn has put in."
+  },
+  {
+   "decision": "Town Manager to discuss free cash certification with the Town Accountant.",
+   "quote": "she will be having a discussion with the town accountant on this issue."
+  },
+  {
+   "decision": "Fall Town Meeting date item to be placed on next week's agenda with proposed articles from department heads.",
+   "quote": "will place on agenda for next week with a list of proposed items as she has sent an email out to department heads"
+  },
+  {
+   "decision": "Minutes of 8/24/10 (regular and executive session) reviewed and signed.",
+   "quote": "minutes - board of selectmen regular and executive session for 8/24/10 reviewed and signed."
+  },
+  {
+   "decision": "Water Commission warrant reviewed and signed.",
+   "quote": "warrants - water commission #1st qtr. 2011, 9/7/10 - $617.80 reviewed and signed."
+  },
+  {
+   "decision": "Mid-managers (DPW Middle Managers) contract signed by the board.",
+   "quote": "memorandum of agreement. signed by board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Leominster Credit Union donation to Teen Center",
+   "what_was_recorded": "Leominster Credit Union presented a check to the Teen Center, to fund the bowling program.",
+   "figures_as_printed": [
+    "$5,000.00"
+   ],
+   "quote": "gordon edmonds, chief executive officer of leominster credit union presented the check of $5,000.00 to the teen center."
+  },
+  {
+   "topic": "Water Commission warrant",
+   "what_was_recorded": "A Water Commission warrant for the 1st Qtr. 2011 was reviewed and signed.",
+   "figures_as_printed": [
+    "$617.80"
+   ],
+   "quote": "warrants - water commission #1st qtr. 2011, 9/7/10 - $617.80 reviewed and signed."
+  },
+  {
+   "topic": "Municipal aggregation consultant pay",
+   "what_was_recorded": "The consultant is paid based on a per kilowatt-hour charge; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "consultant is paid based upon a per kilowatt hour charge."
+  },
+  {
+   "topic": "Municipal aggregation - tax dollars",
+   "what_was_recorded": "The study says a consultant-run program would let the Town avoid using tax dollars to fund it.",
+   "figures_as_printed": [],
+   "quote": "the town can avoid using tax dollars to fund the program"
+  },
+  {
+   "topic": "Residential electricity price history (study)",
+   "what_was_recorded": "The aggregation study printed residential electricity prices per kWh over twelve years.",
+   "figures_as_printed": [
+    "2.8 cents",
+    "almost 13 cents",
+    "approximately 8 cents"
+   ],
+   "quote": "twelve years ago the residential price per kilowatt-hour of electricity was 2.8"
+  },
+  {
+   "topic": "Natural gas savings from short-term supply",
+   "what_was_recorded": "Manager said short-term natural gas supply for municipal buildings produced substantial savings; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "for natural gas supply we've been doing this for short term, 1 to 2 years and have been able see substantial savings."
+  },
+  {
+   "topic": "Green energy PPA - rate escalation",
+   "what_was_recorded": "Power purchase rates have historically risen by a stated percentage each year.",
+   "figures_as_printed": [
+    "one to two percent per year"
+   ],
+   "quote": "does have a cost of living escalation where the rate has historically gone up one to two percent per year."
+  },
+  {
+   "topic": "Green energy PPA - town cost",
+   "what_was_recorded": "The solar power arrangement was described as no cost to the town, with the provider bearing the risk.",
+   "figures_as_printed": [],
+   "quote": "will be no cost to the town as this is placed solely on the power provider, the town would be"
+  },
+  {
+   "topic": "Free cash certification",
+   "what_was_recorded": "Board asked whether free cash has been certified; it has not yet been done. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "steve questioned if free cash has been certified and per kerry this has not been"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom",
+   "topic": "Kevin Szocik Memorial Gate dedication",
+   "quote": "tom mentioned that this saturday on the anniversary of 9/11 will be the dedication of the kevin szocik memoral gate @ 3:00 pm."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment - Kevin Szocik Memorial Gate",
+   "resolution": "no action",
+   "quote": "tom mentioned that this saturday on the anniversary of 9/11 will be the dedication of the kevin szocik memoral gate",
+   "tags": [
+    "announcement",
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Announcements - Leominster Credit Union donation",
+   "resolution": "received; no action",
+   "quote": "gordon edmonds, chief executive officer of leominster credit union presented the check of $5,000.00 to the teen center.",
+   "tags": [
+    "donation",
+    "teen center"
+   ]
+  },
+  {
+   "topic": "Appointment - One Day Beer & Wine License, St. Boniface Church",
+   "resolution": "approved",
+   "quote": "one day beer & wine license for st. boniface church - steve explained that this is for the church's annual italian festival,",
+   "tags": [
+    "license",
+    "alcohol"
+   ]
+  },
+  {
+   "topic": "Appointment - Colonial Power Group municipal aggregation study",
+   "resolution": "RFP authorized",
+   "quote": "colonial power group - municipal aggregation feasibility study - kerry referred to the board's meeting of july where brian",
+   "tags": [
+    "electricity",
+    "municipal aggregation",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Appointment - Green Energy Task Force grant proposal",
+   "resolution": "approved to pursue; RFP to follow",
+   "quote": "green energy task force - grant proposal - steve marsden, chair of the green energy task force informed the board that he",
+   "tags": [
+    "solar",
+    "landfill",
+    "PPA",
+    "green energy"
+   ]
+  },
+  {
+   "topic": "Current business - Fall Town Meeting date",
+   "resolution": "no action; item to next week's agenda",
+   "quote": "determining date for fall town meeting - kerry informed the board that we've developed a timeline for different dates in",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Current business - minutes and warrants",
+   "resolution": "reviewed and signed",
+   "quote": "minutes - board of selectmen regular and executive session for 8/24/10 reviewed and signed.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action",
+   "quote": "tom finance committee met and reorganized a couple of weeks ago, kept the same slate of officers.",
+   "tags": [
+    "finance committee",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none",
+   "quote": "department updates - none",
+   "tags": []
+  },
+  {
+   "topic": "Manager updates - underground tanks; Ritter Memorial grounds",
+   "resolution": "no action",
+   "quote": "underground tanks at the old primary school; received notice back from inspectional contractor that no contamination was found.",
+   "tags": [
+    "environment",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Old business - Emerald Place MOU",
+   "resolution": "approved",
+   "quote": "memorandum of understanding with emerald place llc - kerry presented the attached revised copy of the mou that was",
+   "tags": [
+    "Emerald Place",
+    "Lakefront Avenue",
+    "MOU"
+   ]
+  },
+  {
+   "topic": "Old business - United Nations Day proclamation",
+   "resolution": "read into record",
+   "quote": "2. united nations day proclamation - steve read the following proclamation into the record:",
+   "tags": [
+    "proclamation"
+   ]
+  },
+  {
+   "topic": "Old business - mid-managers contract",
+   "resolution": "signed by board",
+   "quote": "mid-managers contract - signature required - kerry provided three copies of the dpw middle managers contract",
+   "tags": [
+    "contract",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Committee appointments - Personnel Committee resignation",
+   "resolution": "accepted",
+   "quote": "personnel committee resignation - dawn ciccotti - kerry informed the board of the resignation of dawn cicotti from the",
+   "tags": [
+    "personnel committee"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation if an open meeting",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action",
+   "quote": "upcoming meeting schedule september 14, 2010 september 21, 2010",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Municipal Aggregation for Lunenburg - Executive Summary (Colonial Power Group, Inc., 2010)",
+   "where": "list",
+   "quote": "municipal aggregation for lunenburg 1. executive summary"
+  },
+  {
+   "name": "Memorandum of Understanding with Emerald Place LLC, dated September 7, 2010 (letter from Gary C. Crossen)",
+   "where": "list",
+   "quote": "memorandum of understanding with emerald place llc - kerry presented the attached revised copy of the mou that was"
+  },
+  {
+   "name": "Plan identifying parcel D (Exhibit B)",
+   "where": "text",
+   "quote": "have furnished a copy of the plan which specifically identifies \"parcel d\" on exhibit b."
+  },
+  {
+   "name": "M.O.U. Attachments A and B - Lakefront Avenue improvements and Emerald Place at Lake Whalom plans (Whitman & Bingham Associates, dated 8-25-10)",
+   "where": "list",
+   "quote": "refer to definitive site development plans for \"emerald place at lake whalom\" by dated july 19, 2010, revised august 12, 2010."
+  },
+  {
+   "name": "Water Commission warrant, 1st Qtr. 2011, 9/7/10",
+   "where": "text",
+   "quote": "warrants - water commission #1st qtr. 2011, 9/7/10 - $617.80 reviewed and signed."
+  },
+  {
+   "name": "DPW Middle Managers contract",
+   "where": "text",
+   "quote": "kerry provided three copies of the dpw middle managers contract, this is the"
+  },
+  {
+   "name": "United Nations Day Proclamation",
+   "where": "text",
+   "quote": "2. united nations day proclamation - steve read the following proclamation into the record:"
+  },
+  {
+   "name": "Town of Concord Power and Light documents (for RFP model)",
+   "where": "text",
+   "quote": "has a copy of their documents which we could utilize and the rfp could be written"
+  }
+ ],
+ "tags": [
+  "municipal aggregation",
+  "electricity",
+  "green energy",
+  "solar",
+  "landfill",
+  "Emerald Place",
+  "MOU",
+  "Lakefront Avenue",
+  "Teen Center",
+  "donation",
+  "liquor license",
+  "town meeting",
+  "proclamation",
+  "personnel committee",
+  "executive session",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "brian reviewed the attached information from the municipal aggregation feasibility study."
+ },
+ "dropped_unquoted_by_field": {}
 }

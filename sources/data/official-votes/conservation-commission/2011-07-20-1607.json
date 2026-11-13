@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-07-20",
  "docid": "1607",
@@ -12,31 +12,301 @@
  },
  "votes": [
   {
-   "motion": "Recommend that the applicant wait until fall when the lake is low to remove debris and restore the beach to original condition",
+   "motion": "Motion by Rich, seconded by JJ, on the Request for Determination of Applicability for 171 Island Road (Walter R. Pearson); motion wording not printed, minutes record the tally only.",
    "moved_by": "Rich",
    "seconded_by": "JJ",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "the concom suggested he wait until fall when that lake is low to remove debris material and bring it back to original condition without using new material. rich/jj unanimous"
+   "quote": "without using new material. rich/jj unanimous"
   },
   {
-   "motion": "Issue a Negative Determination of Applicability for the proposed septic tank installation",
+   "motion": "Motion by JJ, seconded by Rich, on the Request for Determination of Applicability for 338 Townsend Harbor Road (David Meredith, filed by David Perry); motion wording not printed. Minutes print 'Negative 3' and 'Unanimous', which do not agree, so no outcome is recorded.",
    "moved_by": "JJ",
    "seconded_by": "Rich",
-   "outcome": "passed unanimously",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "jj/rich negative 3 unanimous"
+   "quote": "solution to a very limited lot. jj/rich negative 3 unanimous"
   },
   {
-   "motion": "Continue the hearing to August 3",
+   "motion": "Motion by JJ, seconded by Rich, to continue the Notice of Intent hearing for 23 Valley Road (Carolynn McCarthy) until 8/3 at 7:45 PM.",
    "moved_by": "JJ",
    "seconded_by": "Rich",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "jj/rich recommended we continue. unanimous"
+   "outcome": "Unanimous",
+   "procedural": false,
+   "quote": "jj/rich recommended we continue. unanimous continued until 8/3 @ 7:45 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd scan",
- "cost_usd": 0.15625650000000002
+ "note": "Text is an extraction with split words (for example 'septi c', 'W esley', 'gr ound') and a garbled first line, so some wording is approximate and quotes were copied as printed. No votes on approving minutes, adjournment, or executive session are recorded. Meredith (338 Townsend Harbor Road) vote prints 'Negative 3' and 'Unanimous' with no motion wording, so no outcome is recorded. Pearson (171 Island Road) and McCarthy (23 Valley Road) votes have no motion wording, and the movers and seconders are taken from the printed 'Rich/JJ' and 'JJ/Rich' pairs. No public comment section is printed. Attendance is taken from the Attendees line; no roles are printed for members. The applicants named in the hearing headings are not recorded as appearing. The minutes name no dollar figures. Page 1 is the only page provided.",
+ "cost_usd": 0.008276519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, sharon jordan, rich bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, sharon jordan, rich bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, sharon jordan, rich bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sharon had pictures of the property and some of the violations."
+  },
+  {
+   "name": "Rich Bursch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, sharon jordan, rich bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, sharon jordan, rich bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matt stated that it was an excellent solution to a very limited lot."
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jan with check with the fire department (jim ricci)"
+  },
+  {
+   "name": "William Giguere",
+   "role": "presenter, 390 Page Street hearing",
+   "status": "present",
+   "quote": "william giguere and marty connelly presented."
+  },
+  {
+   "name": "Marty Connelly",
+   "role": "presenter, 390 Page Street hearing",
+   "status": "present",
+   "quote": "william giguere and marty connelly presented."
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "presenter, 23 Valley Road hearing; of Whitman & Bingham Associates, LLC as printed",
+   "status": "present",
+   "quote": "wesley flis presented."
+  },
+  {
+   "name": "David Perry",
+   "role": "presenter, 338 Townsend Harbor Road hearing",
+   "status": "present",
+   "quote": "david perry explained the situation and installation of new tank."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Grenier hearing (176 Sunnyhill Road) continued until an up-to-date plan is provided.",
+   "quote": "continued until we have an up to date plan."
+  },
+  {
+   "decision": "Benson hearing (1010 Flat Hill Road) continued to 8/3 at 7:15 PM; wetlands to be marked and a plan submitted showing the pool layout; above-ground pool recommended.",
+   "quote": "w etlands need to be marked and a plan submitted showing layout of pool.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "K & G Developers hearing (390 Page Street) continued to 8/3 at 7:30 PM; wetlands to be marked properly, area at end of driveway to be finished with grass or mulch, and a request that the deed state the trail be kept open.",
+   "quote": "continued to 8/3 @ 7:30 pm"
+  },
+  {
+   "decision": "Commission suggested Walter R. Pearson (171 Island Road) wait until fall, when the lake is low, to remove debris and restore the beach without using new material.",
+   "quote": "the concom suggested he wait until fall when that lake is low to remove debris material"
+  },
+  {
+   "decision": "Commission was very concerned about the tank location at 23 Valley Road and preferred it be moved out of the wetlands; Jan Carrier to check with the Fire Department (Jim Ricci).",
+   "quote": "jan with check with the fire department (jim ricci)"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "176 Sunnyhill Road, RDA public hearing (David N. Grenier)",
+   "resolution": "continued until an up-to-date plan is provided",
+   "quote": "7:00 pm ~ 176 sunnyhill road ~ pursuant to mgl ch 131",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "septic",
+    "continued"
+   ]
+  },
+  {
+   "topic": "1010 Flat Hill Road, RDA public hearing (Jennifer E. Benson)",
+   "resolution": "continued to 8/3 at 7:15 PM",
+   "quote": "7:15 pm ~ 1010 flat hill road ~ pursuant to mgl ch 131",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "swimming pool",
+    "continued"
+   ]
+  },
+  {
+   "topic": "390 Page Street, RDA public hearing (K & G Developers)",
+   "resolution": "continued to 8/3 at 7:30 PM",
+   "quote": "7:30 pm ~ 390 page street ~ pursuant to mgl ch 131",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "single family dwelling",
+    "vernal pool",
+    "continued"
+   ]
+  },
+  {
+   "topic": "171 Island Road, RDA public hearing (Walter R. Pearson)",
+   "resolution": "unanimous vote; applicant advised to wait until fall",
+   "quote": "7:45 pm ~ 171 island road ~ pursuant to mgl ch 131",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "shoreline",
+    "beach debris"
+   ]
+  },
+  {
+   "topic": "338 Townsend Harbor Road, RDA public hearing (David Meredith, by David Perry)",
+   "resolution": "vote recorded; result not clear from minutes",
+   "quote": "8:00 pm ~ 338 townsend harbor road ~ pursuant to mgl ch 131",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "septic tank",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "23 Valley Road, Notice of Intent hearing (Carolynn McCarthy)",
+   "resolution": "continued to 8/3 at 7:45 PM",
+   "quote": "8:15 pm ~ 23 valley road ~ pursuant to mgl ch 131",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "propane tank",
+    "buffer zone",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "no action recorded (heading only)",
+   "quote": "old business ~ sharon new business ~",
+   "tags": []
+  },
+  {
+   "topic": "New Business",
+   "resolution": "no action recorded (heading only)",
+   "quote": "old business ~ sharon new business ~",
+   "tags": []
+  },
+  {
+   "topic": "Action File Items",
+   "resolution": "no action recorded (heading only)",
+   "quote": "new business ~ action file items unfinished business",
+   "tags": []
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "no action recorded (heading only)",
+   "quote": "unfinished business ~ approve minutes ~ jan",
+   "tags": []
+  },
+  {
+   "topic": "Approve Minutes",
+   "resolution": "no vote recorded (heading only, assigned to Jan)",
+   "quote": "unfinished business ~ approve minutes ~ jan",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "no action recorded (heading only)",
+   "quote": "approve minutes ~ jan signatures",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability, 176 Sunnyhill Road, filed by David N. Grenier",
+   "where": "text",
+   "quote": "filed by david n. grenier."
+  },
+  {
+   "name": "Request for Determination of Applicability, 1010 Flat Hill Road, filed by Jennifer E. Benson",
+   "where": "text",
+   "quote": "filed by jennifer e. benson."
+  },
+  {
+   "name": "Request for Determination of Applicability, 390 Page Street, filed by K & G Developers",
+   "where": "text",
+   "quote": "filed by k & g developers."
+  },
+  {
+   "name": "Request for Determination of Applicability, 171 Island Road, filed by Walter R. Pearson",
+   "where": "text",
+   "quote": "filed by walter r. pearson."
+  },
+  {
+   "name": "Request for Determination of Applicability, 338 Townsend Harbor Road, filed for David Meredith by David Perry",
+   "where": "text",
+   "quote": "filed for david meredith by david perry."
+  },
+  {
+   "name": "Notice of Intent, 23 Valley Road, filed for Carolynn McCarthy",
+   "where": "text",
+   "quote": "a notice of intent filed for carolynn mccarthy"
+  },
+  {
+   "name": "Photographs of the property and some violations (pictures held by Sharon)",
+   "where": "text",
+   "quote": "sharon had pictures of the property and some of the violations."
+  },
+  {
+   "name": "Town of Lunenburg Wetlands Protection and Municipal Bylaws",
+   "where": "text",
+   "quote": "the town of lunenburg wetlands protection and municipal bylaws"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "request for determination",
+  "notice of intent",
+  "public hearing",
+  "continued hearing",
+  "septic",
+  "swimming pool",
+  "shoreline",
+  "propane tank",
+  "Ritter Memorial Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-04-25",
  "docid": "3846",
@@ -12,15 +12,132 @@
  },
  "votes": [
   {
-   "motion": "Approve the Hannaford outside grocery pick up service application with a jughandle configuration for the maneuvering lane.",
-   "moved_by": "Kenneth Chenis",
-   "seconded_by": "Gregory Bittner",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Hannaford outside grocery pick-up application with the jughandle.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "G. Bittner",
+   "outcome": "passed",
    "procedural": false,
    "quote": "k. chenis, motion to approve with jughandle, second, g. bittner, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07972950000000001
+ "note": "Text is a clean extraction, not a scan. The only recorded motion (K. Chenis / G. Bittner) is printed as \"all aye\" with no numeric count, so outcome is recorded as \"passed\". Four members were listed, two absent. No dollar figures appear in the minutes.",
+ "cost_usd": 0.00340922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: matthew allison, david prokowiew"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: matthew allison, david prokowiew"
+  },
+  {
+   "name": "J.M. Lord",
+   "role": "represented Hannaford (Maple Rock Marketing & Project Development)",
+   "status": "present",
+   "quote": "hannaford was represented by j.m. lord, maple rock marketing & project development, po box 28, 560 south road"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "resident, 82 Highland Street (public comment)",
+   "status": "present",
+   "quote": "david rodgers, 82 highland street - spoke in favor of the application noting that h annaford is a great corporate citizen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board wants the maneuvering lane widened by removing some parking spaces across the lot, using a jughandle with directional arrows on the pavement, because the mall site has more than the required number of parking spaces.",
+   "quote": "the board wants the maneuvering lane widened by taking away some of the parking spaces across the lot."
+  },
+  {
+   "decision": "The Applicant is to submit two large plans with a signature block; plans and decision to be signed at the May 9, 2016 meeting.",
+   "quote": "the applicant will submit two large plans with signature block for the planning board. plans and decision will be signed at the may 9, 2016 meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "support for Hannaford application",
+   "quote": "david rodgers, 82 highland street - spoke in favor of the application noting that h annaford is a great corporate citizen"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Informational meeting: Hannaford outside grocery pick-up (development plan review, Section 8.4)",
+   "resolution": "approved with jughandle; plans and decision to be signed May 9, 2016",
+   "quote": "the information meeting was to hear and discuss an application for a development plan review under section 8.4. of the protective bylaw",
+   "tags": [
+    "development plan review",
+    "Hannaford",
+    "grocery pick-up",
+    "parking",
+    "traffic circulation",
+    "Protective Bylaw"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application Packet",
+   "where": "list",
+   "quote": "documents use at meeting: application packet minutes/information meeting 2016/301 massachusetts avenue 04.25.16"
+  },
+  {
+   "name": "Minutes/Information meeting 2016/301 massachusetts avenue 04.25.16",
+   "where": "list",
+   "quote": "application packet minutes/information meeting 2016/301 massachusetts avenue 04.25.16"
+  },
+  {
+   "name": "Application for development plan review under Section 8.4 of the Protective Bylaw (outside grocery pick-up service at Hannaford, 301 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "to hear and discuss an application for a development plan review under section 8.4. of the protective bylaw of the town of lunenburg"
+  }
+ ],
+ "tags": [
+  "Hannaford",
+  "development plan review",
+  "parking",
+  "Section 8.4",
+  "informational meeting",
+  "grocery pick-up"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents use at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

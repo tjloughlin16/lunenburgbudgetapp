@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2017-04-12",
  "docid": "3265",
@@ -12,49 +12,47 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes of March 16, 2017",
+   "motion": "Accept the minutes of March 16, 3017 (printed as such; likely 2017).",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "dennis mannone motioned and pete mccauliff seconded to accept minutes of march 16, 3017. ap- proved 3-",
-   "quote_taken_from_text": true
+   "quote": "dennis mannone motioned and pete mccauliff seconded to accept minutes of march 16, 3017."
   },
   {
-   "motion": "Accept minutes of March 24, 2017",
+   "motion": "Accept the minutes of March 24, 2017.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "dennis mannone motioned and karin menard seconded to accept minutes of march 24, 2017. ap- proved 3-",
-   "quote_taken_from_text": true
+   "quote": "dennis mannone motioned and karin menard seconded to accept minutes of march 24, 2017."
   },
   {
-   "motion": "Approve the Beach Coordinator job description and forward to Personnel Committee",
+   "motion": "Approve the Beach Coordinator job description and forward it to the Personnel Committee.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard to approve the job description and to forward to personnel committee. dennis mannone seconded. approved 3-0."
+   "quote": "motion made by karin menard to approve the job description and to forward to personnel committee."
   },
   {
-   "motion": "Allow DPW to approve usage applications for grass fields if available for time requested",
+   "motion": "Allow the DPW to approve usage applications for grass fields if available for the time requested.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard to allow dpw to approve usage applications for grass fields if available for time requested. seconded by dennis mannone. approved 3-0."
+   "quote": "motion made by karin menard to allow dpw to approve usage applications for grass fields if available for time requested."
   },
   {
-   "motion": "Remove the $10 per player fee for the Tball program for Spring 2017; fee remains for other divisions",
+   "motion": "Remove the $10 per player fee (printed as \"free\") for the Tball program for Spring 2017; a $10 per player fee remains for the rest of the divisions.",
    "moved_by": "Karin Menard",
-   "seconded_by": "Pete",
+   "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion by karin menard to remove the $10 per player free for the tball program for the spring 2017. a $10 per player fee will remain for the rest of the divisions. pete seconded. approved 3-0."
+   "quote": "motion by karin menard to remove the $10 per player free for the tball program for the spring 2017."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:53pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
@@ -63,6 +61,227 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; minor errors (3017 for 2017, \"free\" for \"fee\") do not affect vote records. All votes clearly recorded with outcomes.",
- "cost_usd": 0.0887515
+ "note": "Text is macOS Vision OCR of a single-page-plus-two minutes sheet; hyphenated words are split across lines (e.g. 'Ap-proved'), and several quotes were copied with line breaks collapsed to single spaces. Printing errors kept as printed: 'March 16, 3017', 'per player free' (meaning fee), 'wave' (meaning waive), 'don't' (meaning done). Lettering skips from 'c' to 'e' under item 4. Jack Rodriquenz appears in the attendance line as 'Jack' and no role is printed for him or Pete McCauliff; Karin Menard's 'Clerk' and Dennis Mannone's 'Chair' come from the page header. The attendance line does not record anyone as absent. Little League speakers appeared under New Business, not public comment, so only Joe Ruth is listed under public comment.",
+ "cost_usd": 0.0059998199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, pete mccauliff, dennis mannone, jack rodriquenz"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: karin menard, pete mccauliff, dennis mannone, jack rodriquenz"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendance: karin menard, pete mccauliff, dennis mannone, jack rodriquenz"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendance: karin menard, pete mccauliff, dennis mannone, jack rodriquenz"
+  },
+  {
+   "name": "RJ Thibeault",
+   "role": "representing Lunenburg Little League",
+   "status": "present",
+   "quote": "rj thibeault, steve chow and mike were present representing lunenburg little league."
+  },
+  {
+   "name": "Steve Chow",
+   "role": "representing Lunenburg Little League",
+   "status": "present",
+   "quote": "rj thibeault, steve chow and mike were present representing lunenburg little league."
+  },
+  {
+   "name": "Mike",
+   "role": "representing Lunenburg Little League",
+   "status": "present",
+   "quote": "rj thibeault, steve chow and mike were present representing lunenburg little league."
+  },
+  {
+   "name": "Joe Ruth",
+   "role": "from the Lunenburg Phillies",
+   "status": "present",
+   "quote": "joe ruth from the lunenburg phillies gave a brief narrative about his program and their usage of marshall park since 1984."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DPW to keep following up with the contractor (Surfside) on the delayed Marshall Park 90' diamond backstop netting installation; play stays limited and batting uses the cage in the meantime.",
+   "quote": "he will continue to follow up and in the mean time, play will continue to be limited and batting will require use of the cage."
+  },
+  {
+   "decision": "Mr. Ruth (Lunenburg Phillies) was advised to fill out the field usage request form; if a flat per season rate is adopted, the amount already paid this season will be applied to that rate.",
+   "quote": "he advised mr. ruth to fill out the field usage request form and if we eventually settle on a flat per season rate we will put the amount already paid for this season to that seasonal rate."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Little League per player fee",
+   "what_was_recorded": "Little League said it was unaware of the per player fee implemented in 2016 and was concerned about its effect on their budget.",
+   "figures_as_printed": [
+    "$10 per player per season"
+   ],
+   "quote": "they were unaware of the per player fee that had been implemented in 2016 of $10 per player per season."
+  },
+  {
+   "topic": "Tball user fee waiver",
+   "what_was_recorded": "Little League asked the commission to waive the $10 user fee for the Tball program, and the commission voted to remove that fee for Spring 2017.",
+   "figures_as_printed": [
+    "$10 user fee",
+    "$10 per player"
+   ],
+   "quote": "asked the commission to wave the $10 user fee for the players in that program."
+  },
+  {
+   "topic": "Lunenburg Phillies field payment",
+   "what_was_recorded": "Joe Ruth said the Phillies paid $600 for use of the field in 2015.",
+   "figures_as_printed": [
+    "$600"
+   ],
+   "quote": "he said they paid $600 for the use of the field in 2015."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joe Ruth",
+   "stated_role": "from the Lunenburg Phillies",
+   "topic": "Phillies field usage fees at Marshall Park",
+   "quote": "joe ruth from the lunenburg phillies gave a brief narrative about his program and their usage of marshall park since 1984."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 7:30pm",
+   "quote": "dennis mannone called the meeting to order at 7:30pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Review minutes",
+   "resolution": "approved two sets of minutes 3-0",
+   "quote": "dennis mannone motioned and pete mccauliff seconded to accept minutes of march 16, 3017.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager Updates",
+   "resolution": "no action; contractor follow-up continuing",
+   "quote": "jack gave update on the marshall park 90' diamond backstop netting.",
+   "tags": [
+    "Marshall Park",
+    "backstop",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Ongoing business: Leominster Lacrosse turf usage, turf complex, Town Beach summer staff hiring",
+   "resolution": "turf usage noted; turf complex no update; beach coordinator job description approved and forwarded to Personnel Committee",
+   "quote": "leominster lacrosse turf usage - pete advised that everything went well with their first usage on sunday.",
+   "tags": [
+    "turf",
+    "lacrosse",
+    "beach staffing",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Field use policy and procedures",
+   "resolution": "approved: DPW may approve grass field usage applications 3-0",
+   "quote": "motion made by karin menard to allow dpw to approve usage applications for grass fields if available for time requested.",
+   "tags": [
+    "field use",
+    "policy",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "New business: Lunenburg Little League spring usage and fees",
+   "resolution": "Tball $10 per player fee removed for Spring 2017; $10 fee remains for other divisions; approved 3-0",
+   "quote": "lunenburg little league - spring usage request and fees - rj thibeault, steve chow and mike were present representing lunenburg little league.",
+   "tags": [
+    "Little League",
+    "fees",
+    "Tball"
+   ]
+  },
+  {
+   "topic": "Other business: unanticipated items",
+   "resolution": "no action; none",
+   "quote": "unanticipated items - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Correspondence, announcements and public comment: Lunenburg Phillies",
+   "resolution": "no vote; Phillies advised to fill out field usage request form",
+   "quote": "joe ruth from the lunenburg phillies gave a brief narrative about his program and their usage of marshall park since 1984.",
+   "tags": [
+    "Phillies",
+    "public comment",
+    "Marshall Park",
+    "usage fees"
+   ]
+  },
+  {
+   "topic": "Next meeting date and agenda",
+   "resolution": "not decided",
+   "quote": "next meeting date and agenda - not decided",
+   "tags": [
+    "next meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 9:53pm",
+   "quote": "motion to adjourn by karin menard, seconded by dennis mannone - 3-0 to adjourn at 9:53pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Beach Coordinator job description",
+   "where": "text",
+   "quote": "karin presented a beach coordinator description and advised the committee that the next step is to bring that description to the personnel committee."
+  },
+  {
+   "name": "Field usage request form",
+   "where": "text",
+   "quote": "he advised mr. ruth to fill out the field usage request form and if we eventually settle on a flat per season rate"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "field use fees",
+  "Little League",
+  "Lunenburg Phillies",
+  "turf",
+  "beach staffing",
+  "backstop netting",
+  "Tball fee waiver",
+  "policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

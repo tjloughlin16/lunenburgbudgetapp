@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2017-03-13",
  "docid": "1534",
@@ -12,15 +12,134 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of 1/23/17",
+   "motion": "Accept the minutes of 1/23/17.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "paula made a motion to accept the minutes of 1/23/17, steve seconded. motion passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd from a scan. One vote recorded: approval of prior minutes.",
- "cost_usd": 0.0803745
+ "note": "OCR text with artifacts (e.g., 'Ja 8PS' header, 'May 18'' and '2^d' symbols, 'ECEIVED & FILED' stamp, garbled 'Committee outlined discussed'). Only one motion is recorded (approval of 1/23/17 minutes). The adjournment at 7:14 has no recorded motion, so it is not listed as a vote. Dollar figures are not printed. The minutes are signed by Paula Bertram and stamped received April 13 2017. The 'Tom to request following' list items were OCR'd as bullets, so only the lead-in is quoted.",
+ "cost_usd": 0.0034666199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: tom alonzo, paula bertram & steve walker. heather lemieux, town manager, was also in attendance."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: tom alonzo, paula bertram & steve walker. heather lemieux, town manager, was also in attendance."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: tom alonzo, paula bertram & steve walker. heather lemieux, town manager, was also in attendance."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "present: tom alonzo, paula bertram & steve walker. heather lemieux, town manager, was also in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula Bertram will draft a letter to the State on where the contract renewal process stands and the expected May public hearing, and forward it to Tom for approval.",
+   "quote": "paula bertram will draft a letter to the state outlining where we are in the contract renewal process"
+  },
+  {
+   "decision": "The committee agreed to advertise the public hearing through PACC, the newspaper, announcements at BOS meetings, and internal correspondence to departments.",
+   "quote": "committee outlined discussed the need to advertise prior to public meeting, will target"
+  },
+  {
+   "decision": "Tom Alonzo will reach out to Bill Hewig to get the notification requirements and format for the public hearing.",
+   "quote": "tom alonzo to reach out to bill hewig to get requirements for notification and format for the public hearing."
+  },
+  {
+   "decision": "Tom will request from Cable strand maps in electronic format and reports required by law, including proof of performance and signal quality.",
+   "quote": "tom to request following from cable:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PACC business plan budget spreadsheet",
+   "what_was_recorded": "PACC is still reviewing the budget spreadsheet, which will go to the Finance Committee on 3/16/17 and later be added to the business plan as an appendix. No dollar figures are printed.",
+   "quote": "pacc is still reviewing the budget spreadsheet and will be presenting to finance committee on thursday 3/16/17.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action (none)",
+   "quote": "public comment - none. announcements - none."
+  },
+  {
+   "topic": "Minutes and correspondence",
+   "resolution": "minutes of 1/23/17 accepted; letter to State to be drafted",
+   "quote": "paula made a motion to accept the minutes of 1/23/17, steve seconded. motion passed unanimously."
+  },
+  {
+   "topic": "PACC submitted Lunenburg Cable Business Plan",
+   "resolution": "continued; PACC still reviewing budget spreadsheet",
+   "quote": "discuss pacc -submitted lunenburg cable business plan - pacc is still reviewing the budget spreadsheet"
+  },
+  {
+   "topic": "Plans for public hearing",
+   "resolution": "target date of May 18 set; advertising and notice steps assigned",
+   "quote": "discuss plans for public hearing - steve walker will be travelling from april 16* to may 2^d."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Correspondence from Massachusetts Department of Telecommunications and Cable regarding expiration of the cable license",
+   "where": "text",
+   "quote": "tom shared correspondence from massachusetts department of telecommunications and cable regarding expiration of the cable license."
+  },
+  {
+   "name": "Lunenburg Cable Business Plan (submitted by PACC)",
+   "where": "text",
+   "quote": "discuss pacc -submitted lunenburg cable business plan - pacc is still reviewing the budget spreadsheet"
+  },
+  {
+   "name": "PACC budget spreadsheet",
+   "where": "text",
+   "quote": "pacc is still reviewing the budget spreadsheet and will be presenting to finance committee on thursday 3/16/17."
+  },
+  {
+   "name": "Strand maps in electronic format (requested from Cable)",
+   "where": "text",
+   "quote": "tom to request following from cable:"
+  },
+  {
+   "name": "Reports required by law, proof of performance and signal quality (requested from Cable)",
+   "where": "text",
+   "quote": "tom to request following from cable:"
+  }
+ ],
+ "tags": [
+  "cable",
+  "cable license renewal",
+  "public hearing",
+  "PACC",
+  "business plan",
+  "budget",
+  "Department of Telecommunications and Cable"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

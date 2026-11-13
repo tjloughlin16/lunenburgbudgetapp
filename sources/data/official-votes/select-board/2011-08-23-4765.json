@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-08-23",
  "docid": "4765",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Abate an ambulance bill balance from 2008",
+   "motion": "To abate the ambulance bill (request submitted by Fire Chief Scott Glenny).",
    "moved_by": "Ernie",
    "seconded_by": "Paula",
    "outcome": "passed unanimously",
@@ -20,13 +20,332 @@
    "quote": "ernie motion to abate, paula seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn the regular session",
+   "motion": "To adjourn the Regular Session at 8:25 P.M.",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 8:25 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision; text is clear and readable.",
- "cost_usd": 0.1080035
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned 2011 minutes packet; several words are garbled (e.g., 'reveiwed', 'turther', 'Elimina', 'poncy'). Page 2 begins mid-sentence and page 3 opens with an uncut Current Business item; the policy-review list on pages 7-8 is a worksheet with partial numbering. No attendance roll is printed, so attendance status is inferred from participation. No motion to enter executive session is recorded. Only two motions have recorded votes; the warrants, minutes and contracts were reviewed/signed without a recorded vote.",
+ "cost_usd": 0.011770820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tom expressed appreciation to the town band, and conductor steve archambault for their performances throughout the summer as"
+  },
+  {
+   "name": "Marion Benson",
+   "role": "advisor to the Task Force (also signs CPC memo as Chair)",
+   "status": "present",
+   "quote": "marion, serves as an advisor to the task force and noted that there is currently a vacancy on the committee"
+  },
+  {
+   "name": "Kerry A. Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry a. speidel, town manager"
+  },
+  {
+   "name": "Ernie",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ernie motion to abate, paula seconded, voted unanimously."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "ernie motion to abate, paula seconded, voted unanimously."
+  },
+  {
+   "name": "Dave",
+   "role": "reports on School Regionalization Committee",
+   "status": "present",
+   "quote": "dave - school regionalization committee met this week and have been discussing the town options"
+  },
+  {
+   "name": "David Blatt",
+   "role": "of the Green Community Task Force",
+   "status": "present",
+   "quote": "david blatt of the green community task force and john londa (advisor to the group) were present."
+  },
+  {
+   "name": "John Londa",
+   "role": "advisor to the group (Green Communities Task Force)",
+   "status": "present",
+   "quote": "david blatt of the green community task force and john londa (advisor to the group) were present."
+  },
+  {
+   "name": "Scott Glenny",
+   "role": "Fire Chief",
+   "status": "not stated",
+   "quote": "the request submitted by fire chief, scott glenny to abate an ambulance"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board concurred that the Green Communities information should be made as public as possible through media, website and public meetings before town meeting.",
+   "quote": "board concurred that they want to make this information as public as possible, be it through the media, website and public meetings"
+  },
+  {
+   "decision": "Minutes of the 8/16/11 Regular and Executive sessions were reviewed and signed.",
+   "quote": "minutes - board of selectmen regular session for 8/16/11 and executive session for 8/16/11 reviewed and signed."
+  },
+  {
+   "decision": "Warrants (#9, #10, #11 and Water Commission 1st Qtr. 2012) were reviewed and signed.",
+   "quote": "warrants - #9 12, 8/16/11 - $149,618.36, #10 12, 8/17/11 - $338,523.79 and #11 12, 8/23/11 - $82,205.14, water commission 1st qtr. 2012, 8/23/11 - $3276.10 reviewed and signed"
+  },
+  {
+   "decision": "Board wants the Town Accountant's contract to stay within the 2½ percent annual increase.",
+   "quote": "karen brochu's contract the board wants to stay within the 2½ percent annual increase over the"
+  },
+  {
+   "decision": "Clerical Unit contract for July 1, 2011 through June 30, 2014 was signed.",
+   "quote": "also contract for the clerical unit for july 1, 2011 through june 30, 2014 signed."
+  },
+  {
+   "decision": "Board asked that the rotary at Lakefront Ave. and Whalom Road (no painted crosswalk) be investigated.",
+   "quote": "would like to have this investigated."
+  },
+  {
+   "decision": "Kerry will check into the Mulpus Road pole replacement.",
+   "quote": "dave commented on an accident on mulpus road and the need for a pole to be replaced, kerry will check into this."
+  },
+  {
+   "decision": "Kerry will discuss the Human Resources policy question further with Paula and present at the next board meeting.",
+   "quote": "kerry will discuss turther with paula and present at next board meeting"
+  },
+  {
+   "decision": "For the next meeting, the 2007 workshop edits will be completed, and the Town Manager may put together the financial piece.",
+   "quote": "for next meeting, we'll have the edits done from the 2007 workshop, then perhaps"
+  },
+  {
+   "decision": "Dave will reach out to the State Rep to see if she can reach out to the Department of Education on school regionalization.",
+   "quote": "dave will reach out to the state rep and see if she can reach our to the department of education."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ambulance bill abatement",
+   "what_was_recorded": "Ambulance bill of $865.00 for 2008 service; a $600 settlement was discussed, leaving $265.00 to be abated; client's annual income about $9,000.",
+   "figures_as_printed": [
+    "$865.00",
+    "$600",
+    "$265.00",
+    "$9,000"
+   ],
+   "quote": "the client received service in 2008, total charges were $865.00, the billing company learned that she did not have any insurance"
+  },
+  {
+   "topic": "Warrants and Water Commission warrant",
+   "what_was_recorded": "Warrants and the Water Commission 1st Qtr. 2012 warrant were listed with amounts and reviewed and signed.",
+   "figures_as_printed": [
+    "$149,618.36",
+    "$338,523.79",
+    "$82,205.14",
+    "$3276.10"
+   ],
+   "quote": "warrants - #9 12, 8/16/11 - $149,618.36, #10 12, 8/17/11 - $338,523.79 and #11 12, 8/23/11 - $82,205.14, water commission 1st qtr. 2012, 8/23/11 - $3276.10 reviewed and signed"
+  },
+  {
+   "topic": "Town Accountant contract",
+   "what_was_recorded": "Board wants the Town Accountant's contract to stay within a 2½ percent annual increase.",
+   "figures_as_printed": [
+    "2½ percent"
+   ],
+   "quote": "karen brochu's contract the board wants to stay within the 2½ percent annual increase over the"
+  },
+  {
+   "topic": "Landfill solar project price",
+   "what_was_recorded": "Negotiations on the per-kilowatt energy price with Berago are waiting on Town Counsel input on contract changes; no price figure printed.",
+   "figures_as_printed": [],
+   "quote": "begin negotiations with berago on the per kilowatt price for energy"
+  },
+  {
+   "topic": "Middle School solar project bills",
+   "what_was_recorded": "Middle School solar has been generating for about 60 days and the town has received its first bills with the power reduction; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "have received our first bills with the power reduction"
+  },
+  {
+   "topic": "School regionalization financial analysis",
+   "what_was_recorded": "Financial analysis indicates Lunenburg and other district members will pay more under the options; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "in reviewing the financial analysis, it appears that lunenburg will be paying more as will the other members of the district."
+  },
+  {
+   "topic": "Chapter 90 road funds",
+   "what_was_recorded": "Chapter 90 monies released to communities drove vendor demand; road work scheduled for September; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "since the release of chapter 90 monies to communities"
+  },
+  {
+   "topic": "Capital plan threshold",
+   "what_was_recorded": "CPC packet sets the capital plan threshold for items costing $10,000.00 or more.",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "all items with a cost equal to, or greater than $10,000.00, shall be included on the fy capital plan."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Town Band thanks; DPW addition development plan review",
+   "resolution": "presented; no action recorded",
+   "quote": "marion benson presented the approval of the development plan review for the dpw addition at 520 chase road.",
+   "tags": [
+    "DPW",
+    "development plan review",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Green Communities Task Force update",
+   "resolution": "received; board wants public outreach before fall town meeting",
+   "quote": "update from green communities task force -david blatt of the green community task force and john londa",
+   "tags": [
+    "green communities",
+    "solar",
+    "stretch code",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Request to abate ambulance bill",
+   "resolution": "approved (abated)",
+   "quote": "request to abate ambulance bill - board reveiwed the request submitted by fire chief, scott glenny to abate an ambulance",
+   "tags": [
+    "ambulance",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Human Resources and policy review (workshop follow-up)",
+   "resolution": "continued; Kerry to present at next meeting",
+   "quote": "paula noted that under organization of the board in the workshop meeting minutes, nomination should have a second.",
+   "tags": [
+    "policy review",
+    "human resources",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and contracts",
+   "resolution": "reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 8/16/11 and executive session for 8/16/11 reviewed and signed.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Action file issues",
+   "resolution": "referred to Town Manager for follow-up",
+   "quote": "action file issues - tom commented on the rotary at lakefront ave. and whalom road",
+   "tags": [
+    "traffic",
+    "crosswalk",
+    "utility pole"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action; regionalization discussed",
+   "quote": "tom - finance committee meets this thursday.",
+   "tags": [
+    "finance committee",
+    "school regionalization"
+   ]
+  },
+  {
+   "topic": "Department updates - Chapter 90 road projects",
+   "resolution": "no action; information received",
+   "quote": "chapter 90 road projects - levelling and overlay on lancaster ave and new west townsend road are tentatively scheduled",
+   "tags": [
+    "chapter 90",
+    "roads",
+    "paving",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Town Manager updates - Jones House RFP schedule",
+   "resolution": "reviewed advertisement; no vote",
+   "quote": "jones house advertisement schedule - kerry reveiwed the attached advertisement for the jones house rfp process,",
+   "tags": [
+    "jones house",
+    "rfp",
+    "property sale"
+   ]
+  },
+  {
+   "topic": "Committee appointments/reappointments/resignations",
+   "resolution": "no items recorded",
+   "quote": "committee appointments/reappointments/resignations",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "listed; no entry vote recorded",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation if an open meeting may",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "non-union personnel"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule and adjournment",
+   "resolution": "adjourned at 8:25 P.M.",
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:25 p.m.",
+   "tags": [
+    "schedule",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "CPC Schedule memo from Marion M. Benson, Chair, to All Department Heads (FY2013 capital planning timeline and packet contents)",
+   "where": "list",
+   "quote": "from: marion m. benson, chair cpc schedule timeline is as follows:"
+  }
+ ],
+ "tags": [
+  "green communities",
+  "solar",
+  "ambulance abatement",
+  "Jones House",
+  "Chapter 90 roads",
+  "school regionalization",
+  "policy review",
+  "capital planning",
+  "contracts",
+  "warrants",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1,
+  "documents_list_heading": 1
+ }
 }

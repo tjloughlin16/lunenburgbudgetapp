@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2012-10-01",
  "docid": "4599",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve prior minutes",
+   "motion": "Approve the prior meeting minutes (Secretary's Report).",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the minutes were read and approved."
+   "quote": "secretary's report: the minutes were read and approved."
   },
   {
-   "motion": "reject the Access AV bid for equipment which included the TC300 because it was to be discontinued",
+   "motion": "Reject the Access AV bid for equipment that included the TC300 switcher, which was to be discontinued.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "a motion was made and passed to reject the access av bid for equipment which included the tc300 because it was to be discontinued."
   },
   {
-   "motion": "split the purchase in two, with the Access AV equipment list minus the switcher and 4 related items",
+   "motion": "Split the equipment purchase in two, with #1 being the Access AV equipment list minus the switcher and 4 related items.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "a motion was made and passed to split the purchase in two, with #1 being the access av equipment list minus the switcher and 4 related items."
   },
   {
-   "motion": "purchase the Tricaster 455 at school cost and include the related warranty",
+   "motion": "Purchase the Tricaster 455 at school cost and include the related warranty.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "a motion was mad and passed to purchase the tricaster 455 at school cost and to include the related warranty."
   },
   {
-   "motion": "appropriate an amount not to exceed $2,000 for electrical work in Passios School, room 11",
+   "motion": "Appropriate an amount not to exceed $2,000 for electrical work in Passios School, room 11 (the new studio).",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "a motion was mackand passed to appropriate an amount not to exceed $2,000 for electrical work in passios school, room 11 (the new studio)."
   },
   {
-   "motion": "appropriate an amount not to exceed $400 to rent a scissor lift",
+   "motion": "Appropriate an amount not to exceed $400 to rent a scissor lift.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "a motion was made and passed to appropriate an amount not to exceed $400 to rent a scissor lift."
   },
   {
-   "motion": "appropriate an amount not to exceed $250 for a PACC logo banner",
+   "motion": "Appropriate an amount not to exceed $250 for a PACC logo banner.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -69,6 +69,227 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Mover and seconder names are not recorded in the minutes for any vote.",
- "cost_usd": 0.08924850000000001
+ "note": "OCR text with visible errors (e.g., 'mackand', 'madkand', 'mad', 'reprted', 'camer', 'ipcoming', 'liscussed', 'Mmembers'); vote quotes copied as printed. The minutes name no mover or seconder for any motion, and no roll-call counts are printed. The 'Secretary's Report' approval has no motion wording; recorded as a procedural approval with outcome 'passed'. Page 2 OCR is partly garbled, so the New Business detail is limited. Adjournment at 9:21pm has no motion wording and is not recorded as a vote. Attendance for Martha Cheesman, Brian McCarthy and John Gugarty is not stated.",
+ "cost_usd": 0.00479422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "mmembers present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "mmembers present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "mmembers present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john dextraze, jo mclaughlin, ernie sund"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john dextraze, jo mclaughlin, ernie sund"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john dextraze, jo mclaughlin, ernie sund"
+  },
+  {
+   "name": "Martha Cheesman",
+   "role": "representative to the high school",
+   "status": "not stated",
+   "quote": "martha cheesman, serving as our representative to the high school, mentioned"
+  },
+  {
+   "name": "Brian McCarthy",
+   "role": "camera operator for homecoming football game",
+   "status": "not stated",
+   "quote": "brian mccarthy will operate one camera. john gugarty will do graphics."
+  },
+  {
+   "name": "John Gugarty",
+   "role": "graphics for homecoming football game",
+   "status": "not stated",
+   "quote": "brian mccarthy will operate one camera. john gugarty will do graphics."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Announcers for the homecoming football game are set and will be provided with rosters; John Dextraze will scope it out with FATV; camera operators are to be at LLHS at noon for a 2:00 game.",
+   "quote": "announcers are set. they will be provided with rosters. brian mccarthy will operate one camera."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Electrician price for studio space",
+   "what_was_recorded": "The electrician's price for the studio electrical work was reported at $1,500.",
+   "figures_as_printed": [
+    "$1,500"
+   ],
+   "quote": "the price from the electrician will be $1,500."
+  },
+  {
+   "topic": "Electrical work for new studio, Passios School room 11",
+   "what_was_recorded": "Board appropriated not to exceed $2,000 for electrical work in Passios School, room 11.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "a motion was mackand passed to appropriate an amount not to exceed $2,000 for electrical work in passios school, room 11 (the new studio)."
+  },
+  {
+   "topic": "Scissor lift rental for homecoming football game",
+   "what_was_recorded": "Board appropriated not to exceed $400 to rent a scissor lift.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "a motion was made and passed to appropriate an amount not to exceed $400 to rent a scissor lift."
+  },
+  {
+   "topic": "PACC logo banner",
+   "what_was_recorded": "Board appropriated not to exceed $250 for a PACC logo banner.",
+   "figures_as_printed": [
+    "$250"
+   ],
+   "quote": "a motion was madkand passed to appropriate an amount not to exceed $250 for a pacc logo banner."
+  },
+  {
+   "topic": "Mobile studio equipment bid split and Tricaster purchase",
+   "what_was_recorded": "Access AV bid rejected in part, purchase split in two, and Tricaster 455 bought at school cost with warranty; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "a motion was made and passed to split the purchase in two, with #1 being the access av equipment list minus the switcher and 4 related items."
+  },
+  {
+   "topic": "Budget update",
+   "what_was_recorded": "Jo presented a budget update, referring to the overview in her September report; no figures printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "jo presented a budget update. (see the overview in jo's september report.)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "minutes approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "secretary's report: the minutes were read and approved."
+  },
+  {
+   "topic": "Mobile studio equipment update",
+   "resolution": "bid partly rejected, purchase split, Tricaster 455 approved",
+   "tags": [
+    "equipment",
+    "bids",
+    "switcher"
+   ],
+   "quote": "jo reported that the bid could be split in two"
+  },
+  {
+   "topic": "Studio space update",
+   "resolution": "electrical work appropriated up to $2,000",
+   "tags": [
+    "studio space",
+    "electrical",
+    "Passios School"
+   ],
+   "quote": "lance reprted on conversations with the building inspector, the electrical inspector and the electrician."
+  },
+  {
+   "topic": "Homecoming football game update",
+   "resolution": "announcers set; scissor lift $400 approved",
+   "tags": [
+    "homecoming",
+    "football",
+    "broadcast"
+   ],
+   "quote": "announcers are set. they will be provided with rosters."
+  },
+  {
+   "topic": "PACC logo banner",
+   "resolution": "approved up to $250",
+   "tags": [
+    "banner",
+    "branding"
+   ],
+   "quote": "a motion was madkand passed to appropriate an amount not to exceed $250 for a pacc logo banner."
+  },
+  {
+   "topic": "Budget update",
+   "resolution": "presented, no action",
+   "tags": [
+    "budget"
+   ],
+   "quote": "jo presented a budget update. (see the overview in jo's september report.)"
+  },
+  {
+   "topic": "New business: high school events and volunteers",
+   "resolution": "discussed, no action",
+   "tags": [
+    "high school",
+    "volunteers",
+    "class plays",
+    "musical"
+   ],
+   "quote": "martha cheesman, serving as our representative to the high school, mentioned"
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comments: none"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Jo's September report (overview of budget)",
+   "where": "text",
+   "quote": "(see the overview in jo's september report.)"
+  },
+  {
+   "name": "Access AV bid",
+   "where": "text",
+   "quote": "a motion was made and passed to reject the access av bid for equipment which included the tc300"
+  },
+  {
+   "name": "Access AV equipment list",
+   "where": "text",
+   "quote": "with #1 being the access av equipment list minus the switcher and 4 related items."
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access television",
+  "studio equipment",
+  "switcher purchase",
+  "electrical work",
+  "homecoming football",
+  "budget",
+  "high school volunteers",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

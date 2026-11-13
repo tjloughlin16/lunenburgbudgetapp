@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2015-03-26",
  "docid": "2957",
@@ -12,33 +12,320 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the January 22, 2015 meeting",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Accept the minutes of the January 22, 2015 meeting.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Paul Doherty",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "elizabeth murphy made a motion to accept the minutes; paul doherty seconded. all were in favor, the motion passed unanimously."
   },
   {
-   "motion": "Enter into contract for accounting services with Fenton, Ewald & Associates, P.C. for the period January 1, 2015 through December 31, 2015",
-   "outcome": "passed unanimously",
+   "motion": "Accept the January 2015 financials.",
+   "moved_by": "Paul Doherty",
+   "seconded_by": "Amaryllis Leet",
+   "outcome": "passed",
    "procedural": false,
-   "moved_by": "Elizabeth Murphy",
-   "seconded_by": "Paul Doherty",
-   "quote": "motion made by elizabeth murphy to enter into contract for accounting services. seconded, paul doherty seconded the motion, and the motion wa s passed by a unanimous vote",
+   "quote": "p aul doherty made a motion to accept the financials. amaryllis leet seconded; all were in favor",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adopt Resolution 201503 to enter into a contract for accounting services with Fenton, Ewald & Associates, P.C. for January 1, 2015 through December 31, 2015.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Paul Doherty",
-   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:12 p.m. paul doherty seconded, all were in favor, and the meeting was adjourned",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "resolved, motion made by elizabeth murphy to enter into contract for accounting services."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Elizabeth Murphy",
+   "seconded_by": "Paul Doherty",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "paul doherty seconded, all were in favor, and the meeting was adjourned."
   }
  ],
  "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0898495
+ "note": "Text is a rough extraction with split words (e.g. 'meeti ng', 'finan cials') and collapsed spacing; quotes avoid the broken spots. Minutes do not name the Executive Director, and the text refers to 'the E.D.' without a name. Residents and staff named only by first name (Evelyn, Keith) are not recorded as attendees. The page headers read 'Page 2' and 'Page 3' on pages 3 and 4, which may mean pages are out of order or a page is missing. No dollar figures or votes are missing from the text provided.",
+ "cost_usd": 0.00539762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "paul doherty, member"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "peter proulx, secretary"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "Fenton & Ewald",
+   "status": "present",
+   "quote": "sue honeycutt, fenton & ewald"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "caroline fortin, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Request to wash the outside windows put on the list, possibly with an extension pole Keith could use.",
+   "quote": "peter replied that it would be put on the list; possibly with an extension pole keith could do."
+  },
+  {
+   "decision": "Peter to ask Evelyn to look into a resident's complaint about a neighbor.",
+   "quote": "peter said he would ask evelyn to look into this matter."
+  },
+  {
+   "decision": "Peter to check with Evelyn on whether family units may use the laundry room.",
+   "quote": "peter replied he will check with evelyn."
+  },
+  {
+   "decision": "Peter asked the tenant to call him the next day about the windows.",
+   "quote": "peter asked the tenant to call him tomorrow."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DHCD snow initiative",
+   "what_was_recorded": "The authority received extra DHCD money to help with snow removal, which paid for an outside contractor and a shoveler.",
+   "figures_as_printed": [
+    "$1400"
+   ],
+   "quote": "we received approximately $1400."
+  },
+  {
+   "topic": "Year-end reserve balance (2014 audit review)",
+   "what_was_recorded": "Fenton & Ewald reported the reserve balance and that reserves over 100% cause loss of subsidy.",
+   "figures_as_printed": [
+    "$88,000",
+    "62%",
+    "100%"
+   ],
+   "quote": "reserve balance is $88,000; almost at 62%."
+  },
+  {
+   "topic": "Employee benefits (health insurance) difference in year-end financials",
+   "what_was_recorded": "The main difference in the year-end financials was employee benefits, specifically health insurance, because the last maintenance employee had benefits and the current one does not.",
+   "figures_as_printed": [],
+   "quote": "employee benefits (health insurance); last maintenance"
+  },
+  {
+   "topic": "January 2015 financials: reserves and rents",
+   "what_was_recorded": "Reserves were at 62.45% and rents collected exceeded the budgeted rent per unit.",
+   "figures_as_printed": [
+    "62.45%",
+    "$350/per unit per month",
+    "$392"
+   ],
+   "quote": "actual rents collected were $392."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "A resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Washing outside windows",
+   "quote": "a resident wanted to know if anyone was ever going to wash the outside windows."
+  },
+  {
+   "speaker": "A resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Widening space near mail boxes",
+   "quote": "a resident asked if next winter the space near the mail boxes could be widened."
+  },
+  {
+   "speaker": "A resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Pole light in back parking lot",
+   "quote": "a resident commented on a pole light in the back parking lot."
+  },
+  {
+   "speaker": "A resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Complaint about neighbor",
+   "quote": "a resident had a complaint about her neighbor."
+  },
+  {
+   "speaker": "A resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Community room doors and deadbolt",
+   "quote": "a resident asked why the community room doors were not always locked; deadbolt on back door?"
+  },
+  {
+   "speaker": "A resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Family units using laundry room",
+   "quote": "peter replied he will check with evelyn."
+  },
+  {
+   "speaker": "A resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Windows to be fixed next year",
+   "quote": "a resident asked if the windows would be fixed next year."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "items referred to staff (Peter, Evelyn)",
+   "quote": "resident participation prior to meeting:",
+   "tags": [
+    "residents",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Call to order",
+   "resolution": "quorum declared; meeting opened at 6:42 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:42 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of January 22, 2015 minutes",
+   "resolution": "approved unanimously",
+   "quote": "elizabeth murphy made a motion to accept the minutes; paul doherty seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action",
+   "quote": "dhcd snow initiative - a little extra money to help with snow removal.",
+   "tags": [
+    "snow removal",
+    "net metering",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "January 2015 financials accepted; annual review received",
+   "quote": "sue honeycutt (fenton & ewald) was here; annually reviews the year-end financials with the board.",
+   "tags": [
+    "finance",
+    "reserves",
+    "audit"
+   ]
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "no action",
+   "quote": "all units are occupied through the end of february.",
+   "tags": [
+    "facilities",
+    "occupancy",
+    "roof"
+   ]
+  },
+  {
+   "topic": "New business: accounting services resolution",
+   "resolution": "Resolution 201503 approved",
+   "quote": "the following resolution was presented by the executive director:",
+   "tags": [
+    "accounting",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "quote": "no other correspondence.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Resident participation at meeting",
+   "resolution": "none requested",
+   "quote": "no resident participation was requested for this meeting.",
+   "tags": [
+    "residents"
+   ]
+  },
+  {
+   "topic": "Year-end certifications",
+   "resolution": "presented; board members signed",
+   "quote": "peter presented the year-end certifications to the board; all board members signed.",
+   "tags": [
+    "certifications"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:12 p.m.",
+   "quote": "paul doherty seconded, all were in favor, and the meeting was adjourned.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution 201503, Resolution for Accounting Services",
+   "where": "text",
+   "quote": "the following resolution was presented by the executive director:"
+  },
+  {
+   "name": "Year-end certifications",
+   "where": "text",
+   "quote": "peter presented the year-end certifications to the board; all board members signed."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "accounting services",
+  "year-end financials",
+  "reserves",
+  "subsidy",
+  "DHCD",
+  "snow removal",
+  "facilities",
+  "resident complaints",
+  "Fenton & Ewald"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

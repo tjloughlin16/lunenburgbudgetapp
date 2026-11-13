@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-11-16",
  "docid": "2258",
@@ -12,15 +12,139 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin",
    "seconded_by": "Terri",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "karin moved to adjourn the meeting and terri seconded the motion. the board voted 5-0 in favor"
+   "quote": "karin moved to adjourn the meeting and terri seconded the motion. the board voted 5-0 in favor; the meeting adjourned at 9:21."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0979825
+ "note": "Text is OCR of a typed minutes page; the header reads \"Town of Runenbury\" and the Article 13/14 rows are jumbled in the OCR (the \"Presentation by Cheryl Aler\" text sits between rows 13 and 14). Location is printed as Town Hall, but item 1 says the meeting convened at the Lunenburg High School Auditorium alongside the Special Town Meeting. No motion on the recommendations is recorded; the table states them as outcomes, so they are recorded as decisions, not votes. Only the adjournment vote is a recorded motion. Tom Alonzo, Kerry Lafleur and Karen Brochu are named only as attending the Special Town Meeting, not this committee meeting, so they are listed as absent.",
+ "cost_usd": 0.00470232,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, chairman terri burchfield, vice-chairman"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "absent",
+   "quote": "tom alonzo, kerry lafleur and karen brochu also attended this special town meeting, but not this finance committee meeting."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "status": "absent",
+   "quote": "tom alonzo, kerry lafleur and karen brochu also attended this special town meeting, but not this finance committee meeting."
+  },
+  {
+   "name": "Karen Brochu",
+   "status": "absent",
+   "quote": "tom alonzo, kerry lafleur and karen brochu also attended this special town meeting, but not this finance committee meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee recommended approval of warrant articles 3, 4-7, 9, 10, 13 and 14, and no direct financial effect for articles 8, 11, 12 and 15, as set out in the recommendations table (no recorded vote).",
+   "quote": "finance committee recommendations on warrant articles that were taken up by this special town meeting."
+  },
+  {
+   "decision": "No Finance Committee recommendation was made on warrant articles 1 and 2, which were passed over.",
+   "quote": "as articles 1 and 2 were passed over, the committee made no recommendations."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 3: FY 16 budget adjustments reducing local receipts",
+   "what_was_recorded": "Committee recommended approval of an FY 16 budget adjustment reducing budgeted local receipts by the same amount as the increase in revenues; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "fy 16 budget adjustments to reduce budgeted local receipts by recommend approval"
+  },
+  {
+   "topic": "Articles 4-7: rescinding unused borrowing authority",
+   "what_was_recorded": "Committee recommended approval of rescinding borrowing authority on unused balances of previously granted authority; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "rescind borrowing authority on unused balances on previously recommend approval",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Article 14: funds to the stabilization fund",
+   "what_was_recorded": "Committee recommended approval of funds to the stabilization fund to bring the stabilization fund to a stated total.",
+   "figures_as_printed": [
+    "$7,136"
+   ],
+   "quote": "funds to the stabilization fund - to make the stabilization recommend appro",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Finance Committee recommendations on Special Town Meeting warrant articles",
+   "resolution": "recommendations recorded; no recorded vote",
+   "quote": "finance committee recommendations on warrant articles that were taken up by this special town meeting.",
+   "tags": [
+    "warrant articles",
+    "special town meeting",
+    "recommendations"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 9:21",
+   "quote": "karin moved to adjourn the meeting and terri seconded the motion. the board voted 5-0 in favor; the meeting adjourned at 9:21.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant articles 3-15 (Finance Committee recommendations table)",
+   "where": "text",
+   "quote": "finance committee recommendations on warrant articles that were taken up by this special town meeting."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "special town meeting",
+  "warrant articles",
+  "stabilization fund",
+  "FY16 budget",
+  "borrowing authority",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

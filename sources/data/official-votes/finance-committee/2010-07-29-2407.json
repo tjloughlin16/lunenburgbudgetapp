@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2010-07-29",
  "docid": "2407",
@@ -12,46 +12,230 @@
  },
  "votes": [
   {
-   "motion": "Delay assigning Finance Committee seats until more committee members are in attendance",
-   "moved_by": "Martha McDonald",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "mm made motion to delay assigning committee seats until more committee members in attendance."
-  },
-  {
-   "motion": "Accept the Finance Committee minutes of May 1, 2010",
-   "moved_by": "Marilyn Stokes",
-   "seconded_by": "Martha McDonald",
+   "motion": "Accept the 5/1/2010 minutes as presented.",
+   "moved_by": "MS",
+   "seconded_by": "MM",
    "outcome": "passed",
    "procedural": true,
    "quote": "review of 5/1/2010 minutes; motion by ms to accept and seconded by mm; all approved."
   },
   {
-   "motion": "Accept the Finance Committee minutes of June 10, 2010",
-   "moved_by": "Marilyn Stokes",
-   "seconded_by": "Martha McDonald",
+   "motion": "Accept the 6/10/2010 minutes as presented.",
+   "moved_by": "MS",
+   "seconded_by": "MM",
    "outcome": "passed",
    "procedural": true,
    "quote": "review of 6/10/2010 minutes; motion by ms to accept and seconded by mm; all approved."
   },
   {
-   "motion": "Accept the year-end transfers as presented",
-   "moved_by": "Marilyn Stokes",
-   "seconded_by": "Martha McDonald",
+   "motion": "Accept the Chapter 44 & 33B year-end transfers as presented.",
+   "moved_by": "MS",
+   "seconded_by": "MM",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms made motion to accept the transfers as presented and mm seconded, all approved."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Marilyn Stokes",
-   "seconded_by": "Martha McDonald",
+   "motion": "Delay assigning committee seats until more committee members are in attendance.",
+   "moved_by": "MM",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "mm made motion to delay assigning committee seats until more committee members in attendance."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:15 PM.",
+   "moved_by": "MS",
+   "seconded_by": "MM",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "ms made motion to adjourn at 8:15 pm and mm seconded."
+   "quote": "adjournment - ms made motion to adjourn at 8:15 pm and mm seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1163095
+ "note": "OCR text of a scanned page (single page). Votes are recorded as \"all approved\" with no vote counts printed, and members are identified by initials (MS, MM). Barbara Reynolds appears only in the letterhead roster and is not recorded as present or absent, so she is omitted. A stray \"Bilal\" and \"5126110\" appear in the OCR and are not used. The motion to delay committee seats has no seconder and no recorded result.",
+ "cost_usd": 0.00453952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, marilyn stokes"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, marilyn stokes"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, marilyn stokes"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "absent",
+   "quote": "mark erickson, john male"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee",
+   "status": "absent",
+   "quote": "mark erickson, john male"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "mark erickson, john male karen brochu"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee assignments to be made at the next meeting.",
+   "quote": "will make committee assignments at the next meeting."
+  },
+  {
+   "decision": "Next meeting set for August 12.",
+   "quote": "next meeting - august 12"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY10 revenue over anticipated amount",
+   "what_was_recorded": "FY10 revenues were not fully closed and came in $500K over the anticipated amount.",
+   "figures_as_printed": [
+    "$500K"
+   ],
+   "quote": "not fully closed, $500k over in revenues from anticipated amount"
+  },
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "A $115K snow and ice deficit still needs to be covered, which will need a fall appropriation.",
+   "figures_as_printed": [
+    "$115K"
+   ],
+   "quote": "still need to cover $115k snow and ice deficit (will need a fall appropriation to cover)"
+  },
+  {
+   "topic": "Ice storm costs not reimbursed by state",
+   "what_was_recorded": "A further $150K for ice storm amounts not reimbursed by the state still needs to be covered.",
+   "figures_as_printed": [
+    "$150K"
+   ],
+   "quote": "plus $150k for ice storm amounts not reimbursed by state"
+  },
+  {
+   "topic": "Zoning incentive surplus to Stabilization Fund",
+   "what_was_recorded": "Discussed putting $198K (zoning incentive) of the $500K surplus into the Stabilization Fund; no action recorded.",
+   "figures_as_printed": [
+    "$198K",
+    "$500K"
+   ],
+   "quote": "discussed putting $198k (zoning incentive) of $500k surplus in the stabilization fund."
+  },
+  {
+   "topic": "Year-end transfers",
+   "what_was_recorded": "Appropriation funds to be transferred were reviewed and the transfers were accepted as presented; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "reviewed appropriation funds to be transferred, ms made motion to accept the transfers as presented and mm seconded, all approved."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Year-end transfers under Chapter 44 & 33B, reviewed from the handout and accepted as presented.",
+   "amount_as_printed": "",
+   "outcome": "accepted as presented (all approved)",
+   "quote": "ms made motion to accept the transfers as presented and mm seconded, all approved."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reorganization of FY2011 Finance Committee",
+   "resolution": "delayed; committee seats to be assigned later",
+   "quote": "mm made motion to delay assigning committee seats until more committee members in attendance.",
+   "tags": [
+    "committee seats",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Communication and minutes",
+   "resolution": "5/1/2010 and 6/10/2010 minutes approved",
+   "quote": "review of 5/1/2010 minutes; motion by ms to accept and seconded by mm; all approved.",
+   "tags": [
+    "minutes",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "library-heavy activity; full hours restored; received new computers, waiting for tech. dept. to install.",
+   "tags": [
+    "library",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Year-end transfers and FY10 revenue/expenditure update",
+   "resolution": "transfers accepted as presented; FY10 update discussed, no action recorded on the surplus",
+   "quote": "year-end transfers - handout: chapter 44 & 33b transfers",
+   "tags": [
+    "year-end transfers",
+    "FY10",
+    "snow and ice deficit",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for August 12",
+   "quote": "next meeting - august 12",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 PM",
+   "quote": "adjournment - ms made motion to adjourn at 8:15 pm and mm seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Chapter 44 & 33B Transfers (handout)",
+   "where": "list",
+   "quote": "handout: chapter 44 & 33b transfers; reviewed appropriation funds to be"
+  },
+  {
+   "name": "Revenue/Expenditure Update for FY10 (handout)",
+   "where": "list",
+   "quote": "handout: revenue/expenditure update for fy10; not fully closed, $500k over in revenues from"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "year-end transfers",
+  "FY10 revenue",
+  "snow and ice deficit",
+  "ice storm",
+  "stabilization fund",
+  "committee reorganization",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout:"
+ },
+ "dropped_unquoted_by_field": {}
 }

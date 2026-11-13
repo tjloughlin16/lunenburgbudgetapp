@@ -1,0 +1,607 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2016-01-05",
+ "video_id": "TurTH9hYAZA",
+ "video_url": "https://www.youtube.com/watch?v=TurTH9hYAZA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2016-01-05-TurTH9hYAZA.json",
+  "sha256": "8d26fca848c6e7434c4461889bf549e5f8b19233b8a1f7bf5b884ddd2bf50315",
+  "caption_lines": 143,
+  "segments": 1110
+ },
+ "recording": {
+  "duration_s": 3018,
+  "duration": "0:50",
+  "spoken_chars": 41039,
+  "words_approx": 6839
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01052016-5013",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-01-05-agenda-5013.txt",
+   "path": "sources/meetings/select-board/2016-01-05-agenda-5013.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01052016-5016",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-01-05-agenda-5016.txt",
+   "path": "sources/meetings/select-board/2016-01-05-agenda-5016.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01052016-5001",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-01-05-minutes-5001.txt",
+   "path": "sources/meetings/select-board/2016-01-05-minutes-5001.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:24:31Z",
+  "cost_usd": 0.1573704
+ },
+ "minutes": {
+  "headline": "Selectmen opened the annual town meeting warrant and pressed for a joint meeting on school building contingency spending.",
+  "summary": "Board members debated whether items the school building committee is considering, such as signage and touchscreen wiring, belong in the project contingency, and asked for an agenda item and a joint meeting. A resident and a companion asked the board to look at paratransit service reaching a mobile home park, and a resident volunteered rides. The board opened the warrant, renewed an entertainment license, reviewed a license fee survey, and went into executive session.",
+  "attendees": [
+   {
+    "name_as_heard": "mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr. Alonso",
+    "role": "member (school building committee representative)"
+   },
+   {
+    "name_as_heard": "mrs. luck",
+    "role": "member (MART representative)"
+   },
+   {
+    "name_as_heard": "vice chair",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1435,
+    "speaker_as_heard": "Dave Rogers, 82 Highland Street",
+    "stated_role": "resident",
+    "topic": "Explained his earlier transparency remark about missing school building committee minutes, urged caution on spending the contingency, and thanked the committee."
+   },
+   {
+    "t": 1749,
+    "speaker_as_heard": "Jane Edmond stone",
+    "stated_role": "non-resident advocate",
+    "topic": "Asked for a future agenda item on the scope of MART paratransit service to 1790 Massachusetts Avenue (Meadowbrook mobile home park)."
+   },
+   {
+    "t": 1831,
+    "stated_role": "resident (Mr. Belfiore)",
+    "topic": "Described difficulty reaching VA appointments because MART does not serve his address and he needs transport."
+   },
+   {
+    "t": 1435,
+    "speaker_as_heard": "Dave Rogers",
+    "stated_role": "resident",
+    "topic": "Offered personally to drive Mr. Belfiore to appointments in the near term."
+   }
+  ],
+  "tags": [
+   "capital",
+   "executive-session",
+   "fees",
+   "high-school",
+   "middle-school",
+   "msba",
+   "public-comment",
+   "seniors",
+   "town-meeting",
+   "transportation",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 2327,
+    "motion": "Open the annual town meeting warrant and close it on March 24 at 6pm",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2411,
+    "motion": "Approve the weekday entertainment license renewal for the Bootlegger",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2968,
+    "motion": "Enter executive session under Chapter 30A section 21 for non-union negotiation strategy, not to return",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 2992,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 342,
+    "topic": "School building project contingency",
+    "what_was_said": "A member reported the amount authorized so far against the contingency and said the project is mostly complete.",
+    "figures_as_heard": [
+     "two hundred and eighty-three thousand dollars",
+     "four million dollar contingency",
+     "seventy percent"
+    ]
+   },
+   {
+    "t": 679,
+    "topic": "Contingency items (signage, touchscreens, engineering)",
+    "what_was_said": "A member objected to items added to the project being paid fully by taxpayers and asked about MSBA reimbursement.",
+    "figures_as_heard": [
+     "72 million dollars",
+     "61 thousand dollars",
+     "fifty percent"
+    ]
+   },
+   {
+    "t": 953,
+    "topic": "MSBA grant and town share",
+    "what_was_said": "The member stated the maximum MSBA grant and the town's share was discussed, with a cap the committee agreed not to exceed.",
+    "figures_as_heard": [
+     "34 million",
+     "36 million",
+     "thirty six point seven million dollars"
+    ]
+   },
+   {
+    "t": 1666,
+    "topic": "Contingency size",
+    "what_was_said": "A resident noted the contingency is roughly a tenth of the town share and need not all be spent.",
+    "figures_as_heard": [
+     "four million",
+     "ten percent"
+    ]
+   },
+   {
+    "t": 2433,
+    "topic": "License fee survey",
+    "what_was_said": "Staff presented a survey of license fees in nearby towns; members noted the town is below average on many and asked for a column of license counts.",
+    "figures_as_heard": [
+     "three hundred dollars",
+     "125"
+    ]
+   },
+   {
+    "t": 2646,
+    "topic": "Accounts payable",
+    "what_was_said": "Accounts payable warrant presented.",
+    "figures_as_heard": [
+     "two million six hundred and thirty-seven thousand twenty nine dollars and seventy seven cents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1141,
+    "decision": "Board agreed to put the school building contingency items on a future agenda, possibly a joint meeting with the school building committee around the 19th."
+   },
+   {
+    "t": 2005,
+    "decision": "The MART representative will follow up on the paratransit service gap and take Mr. Belfiore's contact information."
+   },
+   {
+    "t": 2602,
+    "decision": "Staff will add a column showing the number of licenses issued per category to the license fee survey."
+   },
+   {
+    "t": 2709,
+    "decision": "A member asked that the boot drive policy be amended to bar advertising."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 280,
+    "topic": "Opening, remembrance, volunteer vacancies, announcements",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 280,
+    "t_end": 1435,
+    "topic": "School building committee contingency spending debate",
+    "resolution": "referred to a future agenda",
+    "tags": [
+     "msba",
+     "high-school",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 1435,
+    "t_end": 1749,
+    "topic": "Public comment on school building committee transparency",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "msba"
+    ]
+   },
+   {
+    "t_start": 1749,
+    "t_end": 2264,
+    "topic": "MART paratransit service scope",
+    "resolution": "referred to MART representative",
+    "tags": [
+     "public-comment",
+     "transportation",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 2305,
+    "t_end": 2350,
+    "topic": "Open annual town meeting warrant",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 2350,
+    "t_end": 2433,
+    "topic": "Entertainment license renewal for the Bootlegger",
+    "resolution": "motion made, result not audible",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2433,
+    "t_end": 2646,
+    "topic": "License fee survey",
+    "resolution": "informational",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2646,
+    "t_end": 2968,
+    "topic": "Accounts payable, minutes, boot drive policy, committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2968,
+    "t_end": 3012,
+    "topic": "Executive session and adjournment",
+    "resolution": "entered executive session",
+    "tags": [
+     "executive-session",
+     "personnel"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Results of the voice votes on the entertainment license and executive session motion are not in the captions.",
+   "Several overlapping exchanges in the contingency debate are garbled; speakers are not identified.",
+   "Exact figures for the MSBA grant and the town share are unreliable."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 890,
+    "about": "A member challenged a school building committee representative on why items such as the sign were not in the original project.",
+    "sides": "a member against the school building committee representative",
+    "words_as_heard": "if this sign is such a no-brainer why wasn't it in the original bid",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1100,
+    "about": "Disagreement over whether the contingency is available to spend and how the state share affects the town share.",
+    "sides": "a member against the school building committee representative",
+    "words_as_heard": "i think that's disingenuous be four million available but that's just math",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1225,
+    "about": "The school building committee representative suggested a member distrusts the committee.",
+    "sides": "school building committee representative against a member",
+    "words_as_heard": "your concern is a concern because you don't trust that the school building committee is okay",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 743,
+    "kind": "liability or legal",
+    "about": "Whether contingency items can legally be incorporated under the original town meeting article and the selectmen's authority.",
+    "who": "a member",
+    "words_as_heard": "whether or not under the original article they can be incorporated and as I said before I wanted a legal opinion about the selectmen's authority"
+   },
+   {
+    "t": 763,
+    "kind": "condition",
+    "about": "A member would not sign contingency approvals without more discussion.",
+    "who": "a member",
+    "words_as_heard": "I would be opposed to signing any form related to contingency money without more discussion"
+   },
+   {
+    "t": 1182,
+    "kind": "liability or legal",
+    "about": "Concern that some expenditures should not come out of the contingency fund and may not be legally appropriate.",
+    "who": "the vice chair",
+    "words_as_heard": "whether or not they're legally appropriate is a concern that I have"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 200,
+    "name_as_heard": "tax bill letter with building project update",
+    "kind": "letter or email",
+    "words_as_heard": "there was a letter in there the majority of it was the high school middle school building project update",
+    "shown": false
+   },
+   {
+    "t": 236,
+    "name_as_heard": "cable survey",
+    "kind": "other",
+    "words_as_heard": "the survey that we want people to take",
+    "shown": false
+   },
+   {
+    "t": 2433,
+    "name_as_heard": "license fee survey",
+    "kind": "spreadsheet",
+    "words_as_heard": "we did want to let you know that we have received the data",
+    "shown": true
+   },
+   {
+    "t": 2305,
+    "name_as_heard": "annual town meeting warrant",
+    "kind": "warrant article",
+    "words_as_heard": "open warrant for the annual Tom meeting",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-project-contingency",
+    "title": "Building project contingency",
+    "question": "What is in the school building contingency and what has been spent or approved?",
+    "t": 342,
+    "words_as_heard": "we have spent authorized spending two hundred and eighty-three thousand dollars of a four million dollar contingency",
+    "data_in_play": [
+     "four million",
+     "283 thousand",
+     "36.7 million"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "license-fee-comparison",
+    "title": "License fee comparison",
+    "question": "How do the town's license fees compare with nearby towns?",
+    "t": 2433,
+    "words_as_heard": "we should look at license fees that area communities charge",
+    "data_in_play": [
+     "three hundred dollars",
+     "125"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "A future agenda item, possibly a joint meeting with the school building committee around the 19th, on school building contingency items.",
+   "The annual town meeting warrant closes March 24 at 6pm."
+  ],
+  "what_happened": [
+   {
+    "line": "The Select Board voted to open the annual town meeting warrant and set it to close on March 24 at 6pm.",
+    "t": 2327
+   },
+   {
+    "line": "Members questioned whether items such as signage and touchscreens belong in the school building contingency, and agreed to schedule a future agenda item, possibly a joint meeting.",
+    "t": 1141
+   },
+   {
+    "line": "A resident asked the board to look at paratransit service to a mobile home park; the MART representative will follow up and take his contact information.",
+    "t": 2005
+   },
+   {
+    "line": "Staff will add a column of licenses issued per category to the license fee survey, which members noted shows the town below average on many fees.",
+    "t": 2602
+   },
+   {
+    "line": "A motion to renew the weekday entertainment license for the Bootlegger was made, but the result is not audible in the recording.",
+    "t": 2411
+   }
+  ],
+  "why_it_matters": [
+   "Items added to the school building project and paid from its contingency fall on local taxpayers unless the state reimburses them, so the joint meeting is where that question gets answered.",
+   "The warrant sets the articles voters will be asked to act on at town meeting, and the license fee survey could lead to fee changes for local businesses."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:24:39Z",
+   "cost_usd": 0.0240931
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01052016-5001",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-01-05-minutes-5001.txt",
+   "path": "sources/meetings/select-board/2016-01-05-minutes-5001.pdf"
+  },
+  "official_sha256": "996865c22bae303f4dfc7b3c88d330ed9b82787d6abb7a08b2203c60e1e8dae1",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the warrant vote, the main contingency and warrant figures, and the MART and license survey follow-ups. The main difference is the Bootlegger license vote, which we could not hear but the official shows passed unanimously. Ours also has some items the official lacks, such as the joint meeting and boot drive advertising.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Open annual town meeting warrant, close March 24 at 6pm",
+    "ours": "Open the annual town meeting warrant and close it on March 24 at 6pm — passed",
+    "official": "to open the warrant for the annual town meeting and close it at 6:00 p.m. on march 24, 2016 vote: all in favor",
+    "note": "Same motion and passed in both.",
+    "t": 2327
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Bootlegger weekday entertainment license vote",
+    "ours": "Approve the weekday entertainment license renewal for the Bootlegger — not audible",
+    "official": "to approve the weekday entertainment license for cosimi corporation d/b/a the bootlegger vote: all in favor",
+    "note": "Our record could not hear the outcome; official shows it passed unanimously. Check the recording for the vote.",
+    "t": 2411
+   },
+   {
+    "kind": "agree",
+    "about": "School building contingency $283,000 of $4,000,000",
+    "ours": "two hundred and eighty-three thousand dollars, four million dollar contingency, seventy percent",
+    "official": "he reported we have spent $283,000 of the $4,000,000 in the contingency fund; that is about 5 percent of the fund.",
+    "note": "Dollar figures and 70 percent project completion match.",
+    "t": 342
+   },
+   {
+    "kind": "agree",
+    "about": "Engineering $61,000 already voted",
+    "ours": "Contingency items (signage, touchscreens, engineering): 72 million dollars, 61 thousand dollars, fifty percent",
+    "official": "$61,000 was already voted for engineering and that is a lot of money.",
+    "note": "$61,000 matches; the 72 million and fifty percent in ours are not in the official text.",
+    "t": 679
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town share $36 million",
+    "ours": "MSBA grant and town share: 34 million, 36 million, thirty six point seven million dollars",
+    "official": "the town's portion of the cost; $36 million dollars and the $4 million dollar contingency fund (roughly 10 percent) is a lot of money.",
+    "note": "Official gives the town portion as $36 million; the 36.7 and 34 are likely misheard or additional context.",
+    "official_reading": "$36 million",
+    "t": 953
+   },
+   {
+    "kind": "agree",
+    "about": "Contingency size $4 million, ten percent",
+    "ours": "Contingency size: four million, ten percent",
+    "official": "the town's portion of the cost; $36 million dollars and the $4 million dollar contingency fund (roughly 10 percent) is a lot of money.",
+    "note": "Same figures.",
+    "t": 1666
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable / school construction warrant $2,637,029.77",
+    "ours": "Accounts payable: two million six hundred and thirty-seven thousand twenty nine dollars and seventy seven cents",
+    "official": "the board signed a school construction warrant in the amount of $2,637,029.77.",
+    "note": "Amounts match; the official calls it a school construction warrant.",
+    "t": 2646
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Contingency spent percentage",
+    "ours": "seventy percent",
+    "official": "he reported we have spent $283,000 of the $4,000,000 in the contingency fund; that is about 5 percent of the fund.",
+    "note": "Ours records no 5 percent; the 70 percent is project completion. Check whether the 5 percent was said.",
+    "t": 342
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "License fee survey figures $300 and 125",
+    "ours": "License fee survey: three hundred dollars, 125",
+    "official": "",
+    "note": "Official prints no license fee figures; check recording for these.",
+    "t": 2433
+   },
+   {
+    "kind": "agree",
+    "about": "License survey to add number of licenses per category",
+    "ours": "Staff will add a column showing the number of licenses issued per category to the license fee survey.",
+    "official": "ms. lafleur stated this will be amended and added to a future agenda.",
+    "note": "Same decision; official adds that it goes on a future agenda.",
+    "t": 2602
+   },
+   {
+    "kind": "agree",
+    "about": "MART follow-up for Mr. Belfiore",
+    "ours": "The MART representative will follow up on the paratransit service gap and take Mr. Belfiore's contact information.",
+    "official": "ms. luck will contact mart and find out what can be done.",
+    "note": "Same follow-up; name spelled Bellefiore in official. Official has him giving his number to Ms. Lafleur, not the MART representative.",
+    "t": 2005
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School building contingency items on future agenda / joint meeting around the 19th",
+    "ours": "Board agreed to put the school building contingency items on a future agenda, possibly a joint meeting with the school building committee around the 19th.",
+    "official": "",
+    "note": "Official records no such decision; check recording.",
+    "t": 1141
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Boot drive policy amended to bar advertising",
+    "ours": "A member asked that the boot drive policy be amended to bar advertising.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2709
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Taxpayer funding 100% of school building committee items",
+    "ours": "",
+    "official": "these items that are now being considered by the school building committee are going to be paid for 100% by the taxpayers.",
+    "note": "Our record does not capture this statement."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: board members and town manager",
+    "ours": "mrs. Bertram, mr. Alonso, mrs. luck, vice chair, town manager",
+    "official": "robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and",
+    "note": "Same people; Alonso is Alonzo, and chairman Toale was absent per official."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters and staff",
+    "ours": "",
+    "official": "jane edmundstone stated she was here on behalf of lunenburg resident, jim bellefiore, 1790 massachusetts",
+    "note": "Official lists Rodgers, Edmundstone, Bellefiore and Peterson; ours lists none."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:25:47Z",
+   "cost_usd": 0.0459451
+  }
+ }
+}

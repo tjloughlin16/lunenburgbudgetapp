@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-01-28",
  "docid": "2227",
@@ -12,23 +12,356 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the January 14, 2016 meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "John Henshaw",
+   "motion": "Approve the minutes of the January 14, 2016 meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "John",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "terri made a motion to approve the minutes of the january 14, 2016 meeting. john seconded the motion. the motion carried 3-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "terri moved to adjourn the meeting and jay seconded the motion. the board voted 4-0 in favor"
+   "quote": "terri moved to adjourn the meeting and jay seconded the motion. the board voted 4-0 in favor; the meeting adjourned at 8:08."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; two votes recorded, both procedural (prior minutes and adjournment). One member abstained on the first vote.",
- "cost_usd": 0.08520649999999999
+ "note": "OCR text: masthead reads \"Town of Luminars\" (apparent OCR error for Lunenburg). The capital table is badly garbled, so cost-to-project mapping is not reliable; figures are recorded as printed. Internal inconsistency: the text gives a recommended total of $781,975, but the table's final running total reads $780,975. One committee-update line is garbled by OCR (\"What the r\"). Minutes record Jay Simeone abstaining on the January 14 minutes because he did not attend; the 3-0 count is as printed. No public comment (\"Public: None\"). No transfers. No documents list heading is printed; the CPC table carries a source line only. Two votes recorded, both procedural.",
+ "cost_usd": 0.010797020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: karin menard"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, town accountant, dennis mannone, capital"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, town accountant, dennis mannone, capital"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Capital Planning Committee Vice-Chairman",
+   "status": "present",
+   "quote": "3. capital planning committee [cpc] report presented by dennis mannone, vice-chair, cpc:"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectmen Chairman",
+   "status": "present",
+   "quote": "jamie toale, board of selectmen chairman, tom"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen Clerk",
+   "status": "present",
+   "quote": "alonzo, board of selectmen clerk."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "not stated",
+   "quote": "jay invited carl luck to report: carl said the budget looks good and they are working on the debt side right now."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kerry will send out a spreadsheet of the Town's FY17 budget before her February 11th presentation.",
+   "quote": "kerry will send out a spreadsheet of the town's fy17 budget before her february 11th presentation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2017 capital requests and recommended total",
+   "what_was_recorded": "Capital requests from all departments for FY2017 totaled $1.6 million, and the CPC recommends funding 12 projects at a stated total cost.",
+   "figures_as_printed": [
+    "$1.6 million",
+    "$781,975"
+   ],
+   "quote": "capital requests for fy2017 from all departments totaled $1.6 million. the committee recommends funding 12 projects, at a total cost of $781,975."
+  },
+  {
+   "topic": "Recommended capital projects table (priority order)",
+   "what_was_recorded": "A table lists each recommended FY2017 project with its cost and running total; the final running total printed in the table differs from the text total.",
+   "figures_as_printed": [
+    "$107,000",
+    "$17,500",
+    "$124,500",
+    "$22,000",
+    "$15,000",
+    "$87,125",
+    "$194,750",
+    "$53,300",
+    "$30,800",
+    "$70,000",
+    "$145,000",
+    "$146,500",
+    "$168,500",
+    "$183,500",
+    "$270,625",
+    "$465,375",
+    "$518,675",
+    "$549,475",
+    "$619,475",
+    "$764,475",
+    "$16,500",
+    "$780,975"
+   ],
+   "quote": "the following table gives details of the projects recommended for funding."
+  },
+  {
+   "topic": "Local aid and capital funding range",
+   "what_was_recorded": "Based on governor's budget local aid amounts, Kerry estimates the Town will have between $600,000 and $700,000 for capital improvements; the lower end funds the first ten projects, the higher end includes THMS asbestos abatement.",
+   "figures_as_printed": [
+    "$600,000",
+    "$700,000"
+   ],
+   "quote": "kerry estimates that the town will have between $600,000 and $700,000 to fund capital improvements."
+  },
+  {
+   "topic": "THMS repairs and asbestos abatement",
+   "what_was_recorded": "The THMS project spans several years and would consume the whole capital budget over several years, so it is a candidate for a funding source outside the capital budget.",
+   "figures_as_printed": [],
+   "quote": "this project spans several years and costs enough that funding it would consume all the capital budget over several years."
+  },
+  {
+   "topic": "Fire department replacement pick-up",
+   "what_was_recorded": "Jay said the $70,000 pick-up costs about twice the price of similar trucks; Dennis said the quotation included a 5% price escalator for a 2017 purchase.",
+   "figures_as_printed": [
+    "$70,000",
+    "5%"
+   ],
+   "quote": "jay pointed out that, at $70,000 this pick-up costs about twice as much as the price of similar pick-up trucks."
+  },
+  {
+   "topic": "Governor's budget: Chapter 70 aid",
+   "what_was_recorded": "The Governor's budget would fund Chapter 70 at a per-student amount; the legislature may set different education priorities.",
+   "figures_as_printed": [
+    "$20 per student"
+   ],
+   "quote": "in this budget chapter 70 funding would be $20 per student."
+  },
+  {
+   "topic": "Unrestricted General Government Aid (UGGA)",
+   "what_was_recorded": "The Governor's budget increases UGGA by $42,000, but the account was cut by around $300,000 in FY2006 or FY2007 and remains below its level ten years ago.",
+   "figures_as_printed": [
+    "$42,000",
+    "$300,000"
+   ],
+   "quote": "but this account was cut by around $300,000 in fy2006 or fy2007, so even with the $42,000 increase ugga remains below"
+  },
+  {
+   "topic": "Health insurance costs",
+   "what_was_recorded": "Town health insurance costs for most employees will likely rise at the high end of the allowable increase, partly offset by lower costs for retirees aged 65+.",
+   "figures_as_printed": [],
+   "quote": "town health insurance costs for most employees will likely increase on the high end"
+  },
+  {
+   "topic": "Capital financing and debt service",
+   "what_was_recorded": "No financing of capital purchases is planned for FY17 to limit debt service costs.",
+   "figures_as_printed": [],
+   "quote": "there will be no financing of capital purchases in fy17 as the town needs to limit"
+  },
+  {
+   "topic": "Bond refinancing savings",
+   "what_was_recorded": "Refinancing two callable bond issues lowered interest rates and will save the Town a stated amount per year and in total over the nine-year debt service period.",
+   "figures_as_printed": [
+    "$20,000",
+    "$180,000"
+   ],
+   "quote": "which in turn will save the town $20,000 per year or $180,000 in total over the nine-year debt service period."
+  },
+  {
+   "topic": "Debt service policy limit",
+   "what_was_recorded": "The rating agency reported debt service above the 3% of revenues in the financial policy; the Chair said the policy means 3% of the Town's budget.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "the financial policy states that debt service expenses will not exceed three percent of the town's budget."
+  },
+  {
+   "topic": "Q2 revenue update",
+   "what_was_recorded": "Property taxes, meals tax and ambulance receipts are above budget; snow and ice costs are more manageable, and a FY17 deficit may not need to be made up.",
+   "figures_as_printed": [],
+   "quote": "the q2 budget update on revenues is positive: property taxes, meals tax, and ambulance receipts are above budget"
+  },
+  {
+   "topic": "Snow and ice removal budget",
+   "what_was_recorded": "The snow and ice removal budget was increased to a stated FY 2017 amount; a stated amount had been spent through the prior week, not counting unbilled private contractor invoices.",
+   "figures_as_printed": [
+    "$275,000",
+    "$165,000"
+   ],
+   "quote": "the town increased the snow and ice removal budget to $275,000 in fy 2017."
+  },
+  {
+   "topic": "School construction contingency",
+   "what_was_recorded": "Concern was raised about how to spend any remaining money in the contingency account for the new school construction project.",
+   "figures_as_printed": [],
+   "quote": "that may remain in the contingency account associated with the new school construction project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "no action; public comment none, committee vacancies noted",
+   "quote": "mark called the meeting to order at 7:00 pm.",
+   "tags": [
+    "procedure",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Capital Planning Committee report",
+   "resolution": "presented; no vote",
+   "quote": "3. capital planning committee [cpc] report presented by dennis mannone, vice-chair, cpc:",
+   "tags": [
+    "capital planning",
+    "FY2017 budget",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Town Manager's report",
+   "resolution": "received; no vote",
+   "quote": "the q2 budget update on revenues is positive: property taxes, meals tax, and ambulance receipts are above budget",
+   "tags": [
+    "state aid",
+    "debt service",
+    "bond rating",
+    "revenue"
+   ]
+  },
+  {
+   "topic": "Minutes of January 14, 2016",
+   "resolution": "approved 3-0",
+   "quote": "terri made a motion to approve the minutes of the january 14, 2016 meeting. john seconded the motion. the motion carried 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "no discussion",
+   "quote": "6. budget goals and opportunities",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received; no action",
+   "quote": "the building re-use committee will present their recommendations to the board of selectmen at the",
+   "tags": [
+    "committees",
+    "snow and ice",
+    "school construction",
+    "building re-use"
+   ]
+  },
+  {
+   "topic": "Ongoing business: Pavement Management Plan",
+   "resolution": "to be heard shortly; no action",
+   "quote": "the committee will hear about the pavement management plan shortly.",
+   "tags": [
+    "pavement"
+   ]
+  },
+  {
+   "topic": "Next three meetings",
+   "resolution": "scheduled; no action",
+   "quote": "february 4-special meeting at town hall. chapter 70 workshop-as a joint",
+   "tags": [
+    "schedule",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:08",
+   "quote": "terri moved to adjourn the meeting and jay seconded the motion. the board voted 4-0 in favor; the meeting adjourned at 8:08.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Planning Committee All Requests, FY2017-2031, December 17, 2015 (compiled by Kerry A. Lafleur)",
+   "where": "text",
+   "quote": "this is an extract from capital planning committee all requests, fy2017-"
+  },
+  {
+   "name": "Governor's budget",
+   "where": "text",
+   "quote": "based on local aid amounts in the governor's budget, kerry estimates"
+  },
+  {
+   "name": "S & P Rating Services report on the Town's AA+ rating",
+   "where": "text",
+   "quote": "s & p rating services has confirmed the town's aa+ rating with a stable outlook."
+  },
+  {
+   "name": "Spreadsheet of the Town's FY17 budget",
+   "where": "text",
+   "quote": "kerry will send out a spreadsheet of the town's fy17 budget before her february 11th presentation."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY2017 budget",
+  "state aid",
+  "Governor's budget",
+  "debt service",
+  "bond rating",
+  "bond refinancing",
+  "snow and ice",
+  "school construction",
+  "minutes",
+  "committee updates"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

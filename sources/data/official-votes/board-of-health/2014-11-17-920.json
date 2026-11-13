@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-11-17",
  "docid": "920",
@@ -12,31 +12,177 @@
  },
  "votes": [
   {
-   "motion": "Approve septic system variances at 843 Chase Road",
+   "motion": "Approve the variances requested for 843 Chase Road: distance from property line from 10 feet to 5.5 feet; distance to well from 100 feet to 87 feet; inlet/outlet to groundwater to 2 feet.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved."
   },
   {
-   "motion": "Approve septic system variance at 36 Kimball Street",
+   "motion": "Approve the variance for 36 Kimball Street: distance from a component to the foundation reduced from 10 feet to 9 feet.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved. all in favor"
+   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved."
   },
   {
-   "motion": "Approve septic system variance at 611 Leominster Road",
+   "motion": "Approve the variance for 611 Leominster Road: offset to groundwater reduced to two feet to allow a Presby system.",
    "moved_by": "Jewell",
    "seconded_by": "Feting",
    "outcome": "passed",
    "procedural": false,
-   "quote": "aftel in ta sjon and on motion by jewell and socond by feting the variance vasapproyed. all"
+   "quote": "on motion by jewell and socond by feting the variance vasapproyed"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. Third vote (611 Leominster Road) contains garbled OCR text. The name \"Feting\" in the third vote is likely an OCR error for \"Fortin\" (consistent with the first two votes), and \"vasapproyed\" is clearly \"was approved\"; \"socond\" is \"second\". However, quoted verbatim as scanned.",
- "cost_usd": 0.1094825
+ "note": "OCR text is badly garbled in places. Page 1 header is corrupted, the first Title 5 address reads \"750 0093\", and the 36 Kimball Street applicant reads \"jir Normandin\" on page 1 but \"Ms. Normandin\" on page 2. The 611 Leominster Road vote text is garbled (\"socond by Feting\", \"vasapproyed\"); the seconder is recorded as \"Feting\", likely Fortin, and the outcome \"passed\" is inferred from \"approved\". Variance votes show \"All in favor\" with no numeric count. The adjournment at 8:15 pm has no recorded motion, so it is not treated as a vote. No dollar figures or public comment section appear. Title 5 and septic permit lists are treated as documents because they are printed under headings.",
+ "cost_usd": 0.00476752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin."
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin."
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin."
+  },
+  {
+   "name": "Doug Smith",
+   "status": "present",
+   "quote": "doug smith, together with mrs. lazotte met with the board."
+  },
+  {
+   "name": "Mrs. Lazotte",
+   "status": "present",
+   "quote": "doug smith, together with mrs. lazotte met with the board."
+  },
+  {
+   "name": "Ms. Normandin",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "jir normandin, owner of the property, met with the board."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "greg roy met with the board of behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for 750 0093, 154 Peninsula Drive, 536 New West Townsend Road, 629 Reservoir Road, 226 Page Street and 21 Charlton Street were acknowledged.",
+   "quote": "title 5 inspection reports acknowledged"
+  },
+  {
+   "decision": "Septic permits for 611 Leominster Road, 843 Chase Road, 154 Peninsula Drive and 536 New West Townsend Road were signed.",
+   "quote": "septic permits signed:"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "none approved",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed:",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "843 Chase Road variances",
+   "resolution": "approved",
+   "quote": "doug smith, together with mrs. lazotte met with the board.",
+   "tags": [
+    "variance",
+    "septic",
+    "well"
+   ]
+  },
+  {
+   "topic": "36 Kimball Street variance",
+   "resolution": "approved",
+   "quote": "ms. normandin is requesting a variance from 10 feet to 9 feet",
+   "tags": [
+    "variance",
+    "septic",
+    "foundation"
+   ]
+  },
+  {
+   "topic": "611 Leominster Road variance",
+   "resolution": "approved",
+   "quote": "greg roy met with the board of behalf of the owner.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 pm, no motion recorded",
+   "quote": "meeting adjourned at 8:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports (750 0093; 154 Peninsula Drive; 536 New West Townsend Road; 629 Reservoir Road; 226 Page Street; 21 Charlton Street)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged"
+  },
+  {
+   "name": "Septic permits (611 Leominster Road; 843 Chase Road; 154 Peninsula Drive; 536 New West Townsend Road)",
+   "where": "list",
+   "quote": "septic permits signed:"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "variance",
+  "title 5",
+  "permits",
+  "groundwater",
+  "2014"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged"
+ },
+ "dropped_unquoted_by_field": {}
 }

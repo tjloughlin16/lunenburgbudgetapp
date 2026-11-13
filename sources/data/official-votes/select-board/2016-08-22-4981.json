@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-08-22",
  "docid": "4981",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To recommend approval of Article #5",
+   "motion": "Recommend approval of Article #5 (Special Town Meeting).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: r. ebersole to recommend approval of article #5 znd. p. bertram vote: all in favor"
   },
   {
-   "motion": "To recommend approval of Article #7",
+   "motion": "Recommend approval of Article #7 (Special Town Meeting).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -29,6 +29,94 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; two votes recorded.",
- "cost_usd": 0.08850949999999999
+ "note": "Single-page OCR (macOS Vision). OCR errors: the second-vote seconder line reads 'znd.' for '2nd.' in the first motion; the signature reads 'Slaine M. Peterso'. No adjournment vote is recorded; the minutes state only that the meeting adjourned at 6:55 p.m. Only Articles 5 and 7 have recorded votes; Articles 4, 10-14 have none. Ebersole and Alonzo entered late (6:20 and 6:40 p.m.); their status is recorded as present. Quotes of the motion seconder use the OCR text as printed.",
+ "cost_usd": 0.0031130199999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board members present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "(mr. ebersole entered the meeting at 6:20 p.m. and mr. alonzo entered the meeting at 6:40 p.m.)"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "(mr. ebersole entered the meeting at 6:20 p.m. and mr. alonzo entered the meeting at 6:40 p.m.)"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with mr. toale, ms. bertram and ms. luck present."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "board members present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will make its recommendation on Special Town Meeting Articles 10-14 after discussion at Town Meeting.",
+   "quote": "the board will make a recommendation on articles 10-14 after discussion at town meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Joint meeting with Finance Committee on Special Town Meeting warrant articles",
+   "resolution": "reviewed remaining articles; recommended approval of Articles 5 and 7; Articles 10-14 deferred to Town Meeting",
+   "quote": "the board met jointly with the finance committee to review and discuss recommendations on special town meeting warrant articles.",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:55 p.m. so the Board could attend Special Town Meeting",
+   "quote": "the meeting adjourned at 6:55 p.m. so the board could attend special town meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant articles",
+   "where": "text",
+   "quote": "to review and discuss recommendations on special town meeting warrant articles."
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "finance committee",
+  "select board",
+  "2016"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

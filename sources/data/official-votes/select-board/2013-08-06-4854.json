@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-08-06",
  "docid": "4854",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Ratify the IBPO Local 353 contract",
+   "motion": "Ratify the contract for the IBPO Local 353.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
@@ -20,33 +20,31 @@
    "quote": "mr. matthews moved to ratify the contract for the ibpo local 353. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve appointments of Bradley McNamara, Deven O'Brien, and Quinn Smith as Reserve Police Officers",
+   "motion": "Recommend approval of the appointments of Bradley McNamara, Deven O'Brien, & Quinn Smith as Reserve Police Officers to the Lunenburg Police Department.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to recommend approval for the appointments of bradley mcnamara, deven o'brien, & quinn smith as reserve police officers to the lunenburg police department. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to recommend approval for the appointments of bradley mcnamara, deven o'brien, & quinn smith as reserve police officers to the lunenburg police department."
   },
   {
-   "motion": "Approve Class II Used Car Dealer's License for Discount Auto & Marine d/b/a Fitchburg Marine & Auto",
+   "motion": "Approve the request for a Class II, Used Car Dealer's License for Discount Auto & Marine d/b/a Fitchburg Marine & Auto.",
    "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Toale",
+   "seconded_by": "Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the request for a class ii, used car dealer's license for discount auto & marine d/b/a fitchburg marine & auto. mir. toale seconded. on vote, motion carried, 4 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "mr. matthews moved to approve the request for a class ii, used car dealer's license for discount auto & marine d/b/a fitchburg marine & auto."
   },
   {
-   "motion": "Approve Bonfire event by Lunenburg Firefighters Association on August 24, 2013 from 4–9 PM",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Ebersole",
+   "motion": "Approve the request for a Bonfire to be held by the Lunenburg Firefighters Association on August 24, 2013 from 4-9PM.",
+   "moved_by": "Matthews",
+   "seconded_by": "Ebersole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the request for a class ii, used car dealer's license for discount auto & marine d/b/a fitchburg marine & auto. mir. toale seconded. on vote, motion carried, 4 in favor, 0 opposed.",
-   "quote_taken_from_text": true
+   "quote": "mir. matthews moved to approve the request for a bonfire to be held by the lunenburg firefighters association on august 24, 2013 from 4-9pm."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Toale",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
@@ -55,6 +53,549 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1115025
+ "note": "OCR text of a scanned, partly garbled page set (e.g., 'Mir.' for Mr., 'Sestion', 'Pro former'). The 6:15 PM executive session has a heading and purpose but no motion or vote text; the board's return from executive session is described as having voted on the IBPO contract, and that vote is recorded here only as the motion to ratify at the open session. Minutes of 7/23/2013 and warrants of 8/6/2013 are listed with no motion recorded. Board members' remarks under the PUBLIC COMMENT heading are recorded as public comment speakers. The motion-to-enter-executive-session is not in the text.",
+ "cost_usd": 0.01268112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with tom alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with tom alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with tom alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with tom alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with tom alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "absent",
+   "quote": "absent was paula bertram"
+  },
+  {
+   "name": "Mark Terry",
+   "role": "Town Labor Counsel",
+   "status": "present",
+   "quote": "town labor counsel attorney mark terry spoke to explain the ibpo contract negotiation process"
+  },
+  {
+   "name": "Marino",
+   "role": "Lunenburg Police Chief",
+   "status": "present",
+   "quote": "marino came before the bos to recommend bradley mcnamara, deven o'brien, and quinn smith be appointed as reserve police officers"
+  },
+  {
+   "name": "Rick Cuddy",
+   "role": "owner of Fitchburg Marine & Auto",
+   "status": "present",
+   "quote": "rick cuddy owner of fitchburg marine & auto spoke to his request saying that this business has been there for"
+  },
+  {
+   "name": "Rick Howard",
+   "role": "President of the Lunenburg Firefighters Association",
+   "status": "present",
+   "quote": "rick howard, president of the lunenburg firefighters association came before the bos to request permission"
+  },
+  {
+   "name": "John Whalen",
+   "role": "resident, 526 W. Townsend Rd.",
+   "status": "present",
+   "quote": "john whalen, 526 w. townsend rd. spoke to say that he had missed the town meeting in the spring"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Boot Drive request from the Boys & Girls Club fundraising committee deferred to the 8/13/2013 BOS agenda for a vote, after checking with Police on rules.",
+   "quote": "this item will be placed on the 8/13/2013 bos agenda for a vote."
+  },
+  {
+   "decision": "Change of Manager application for Mckey Shea's continued to the 8/13/2013 BOS meeting; no action taken because it was not posted on the agenda.",
+   "quote": "this item will be continued to the 8/13/2013 bos meeting."
+  },
+  {
+   "decision": "No further action taken on the Mckey Shea's application this evening since it was not posted on the agenda.",
+   "quote": "it was decided that no further action could be taken this evening since it was not posted on tonight's agenda."
+  },
+  {
+   "decision": "Applicant to be notified that he and the Manager must attend the next BOS meeting.",
+   "quote": "the applicant will be notified that he, along with the manager, be present at the next bos meeting."
+  },
+  {
+   "decision": "Town Manager to confer with Town Counsel on adverse action against the Mckey Shea's license; board will not be within the time frame to act at the next meeting.",
+   "quote": "ms. speidel will confer with town counsel regarding taking any adverse action on this license"
+  },
+  {
+   "decision": "Mr. Matthews requested that the last 3 years of license applications for the establishment be provided and that advice be sought from Town Counsel.",
+   "quote": "he also requested advice be sought from town counsel concerning anything illegal"
+  },
+  {
+   "decision": "Lakeview Driving Range base license renewal continued to the next BOS meeting to gather more information on the definition of base license.",
+   "quote": "the bos decided to continue this item to the next bos meeting."
+  },
+  {
+   "decision": "Workshop on BOS Policies & Procedures set for August 27 at 6PM.",
+   "quote": "a workshop date was set for august 27\" at 6pm"
+  },
+  {
+   "decision": "Town will not spend more resources negotiating the EPG Solar PILOT until the developer provides a document showing whether an agreement exists.",
+   "quote": "the town is not going to expend any more resources to negotiate this."
+  },
+  {
+   "decision": "Unitil rate case to be discussed at the next BOS meeting.",
+   "quote": "ms. speidel stated that the rate case for unitil will be discussed at the next bos meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "IBPO contract base wages",
+   "what_was_recorded": "The new IBPO base wage package confines increases to less than 2% per year.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "newly negotiated base wage package which confines increases to less than 2% per year"
+  },
+  {
+   "topic": "Town Hall chimney repair (FY14 capital)",
+   "what_was_recorded": "FY14 capital item for Town Hall chimney repair, on informal hold.",
+   "figures_as_printed": [
+    "$18,500"
+   ],
+   "quote": "town hall chimney repair -$18,500."
+  },
+  {
+   "topic": "Police marked cruisers (FY14 capital)",
+   "what_was_recorded": "Marked cruisers on order under FY14 capital.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "police dept. -$45,000 for marked cruisers which are on order"
+  },
+  {
+   "topic": "Police pistols and holsters (FY14 capital)",
+   "what_was_recorded": "40 sets of pistols and holsters on order.",
+   "figures_as_printed": [
+    "$20,583"
+   ],
+   "quote": "police dept. - $20,583 for 40 sets of pistols & holsters which are on order."
+  },
+  {
+   "topic": "Cemetery & Parks building demolition (FY14 capital)",
+   "what_was_recorded": "Funds for demolition of the Cemetery & Parks building; Phase 1 Environmental Analysis done on Parks building, not yet reviewed.",
+   "figures_as_printed": [
+    "$39,000"
+   ],
+   "quote": "cemetery & parks - $39,000 for demolition of cemetery & parks building."
+  },
+  {
+   "topic": "Town-wide technology (FY14 capital)",
+   "what_was_recorded": "Funds for town-wide technology.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "technology -$45,000 to be used for town wide technology."
+  },
+  {
+   "topic": "Ambulance (FY14 capital)",
+   "what_was_recorded": "Ambulance bid package being prepared; item on hold.",
+   "figures_as_printed": [
+    "$215,000"
+   ],
+   "quote": "fire dept. -$215,000 for ambulance."
+  },
+  {
+   "topic": "Turnout gear (FY14 capital)",
+   "what_was_recorded": "35 sets of turnout gear; Fire Dept. received a grant for some equipment and item to be reviewed again.",
+   "figures_as_printed": [
+    "$37,000"
+   ],
+   "quote": "fire dept. - $37,000 for 35 sets of turn out gear."
+  },
+  {
+   "topic": "Unmarked cruiser (FY14 capital)",
+   "what_was_recorded": "Unmarked cruiser on order.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "police dept. - $40,000 for an un-marked cruiser which is on order."
+  },
+  {
+   "topic": "Townsend Harbor/Mulpus Rd. intersection (FY14 capital)",
+   "what_was_recorded": "$30,000 for intersection improvements; engineer contract for minor design at approximately $4,000.",
+   "figures_as_printed": [
+    "$30,000",
+    "$4,000"
+   ],
+   "quote": "intersection of townsend harbor/mulpus rd. - $30,000 for improvements."
+  },
+  {
+   "topic": "Library exterior improvements (FY14 capital)",
+   "what_was_recorded": "Funds for exterior improvements to the Library; specs being prepared for bid.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "library - $40,000 for exterior improvements to the library."
+  },
+  {
+   "topic": "Ritter Building roof repairs (FY13 capital)",
+   "what_was_recorded": "Original contractor declined the job; re-bid and new contractor hired, with work expected by end of September; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the contractor that was originally hired has decided to not do the job."
+  },
+  {
+   "topic": "Household Hazardous Waste Program",
+   "what_was_recorded": "FY13 closed with an operating surplus of approximately $10,500.",
+   "figures_as_printed": [
+    "$10,500"
+   ],
+   "quote": "fy13 closed with an operating surplus of approximately $10,500."
+  },
+  {
+   "topic": "Household Hazardous Waste fees",
+   "what_was_recorded": "Disposal fees for the program.",
+   "figures_as_printed": [
+    "$20",
+    "$40"
+   ],
+   "quote": "fees to use the facility are $20 for 5 gallons/5 ibs and $40 for up to 10 gallons/10 ibs of material to dispose of."
+  },
+  {
+   "topic": "Sewer amnesty fee",
+   "what_was_recorded": "Sewer Commission to waive a $5000 fee for residents with illegal connections who contact it; otherwise liable for the $5000 penalty.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "where they will waive the $5000 fee to residents that have an illegal connection."
+  },
+  {
+   "topic": "MA Broadband funding",
+   "what_was_recorded": "Governor reportedly put approximately $40M into the IT Bond Bill, now before the House.",
+   "figures_as_printed": [
+    "$40M"
+   ],
+   "quote": "the governor has put approximately $40m into the it bond bill"
+  },
+  {
+   "topic": "NuGen PILOT real estate taxes",
+   "what_was_recorded": "Real estate taxes on the 10 acres to be developed are approximately $6500.",
+   "figures_as_printed": [
+    "$6500"
+   ],
+   "quote": "the real estate taxes on the 10 acres are approximately $6500."
+  },
+  {
+   "topic": "NuGen PILOT Town revenue capture",
+   "what_was_recorded": "Town is capturing 2.5% under the methodology.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "so that the town is capturing 2.5%"
+  },
+  {
+   "topic": "Solar personal property valuation (PILOT)",
+   "what_was_recorded": "Public comment questioned the $18,000 per MW valuation used for the PILOT; Town says it was agreed at Town Meeting.",
+   "figures_as_printed": [
+    "$18,000 per MW"
+   ],
+   "quote": "thought the numbers were higher than $18,000 per mw."
+  },
+  {
+   "topic": "Grant money for building repairs",
+   "what_was_recorded": "Traditionally not a lot of grant money available; Pat Slattery of Montachusett Regional Historical Commission suggested as resource.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel replied that traditionally there is not a lot of grant money available"
+  },
+  {
+   "topic": "Warrant payment",
+   "what_was_recorded": "Warrants of 8/6/2013 totaling the amount printed.",
+   "figures_as_printed": [
+    "$419,254.91"
+   ],
+   "quote": "8/6/2013 #7-14 $419,254.91"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Board of Selectmen",
+   "topic": "Eagle House Volunteer Recognition Cookout",
+   "quote": "mr. toale stated that he had attended the eagle house volunteer recognition cookout this afternoon."
+  },
+  {
+   "speaker": "David Matthews",
+   "stated_role": "Board of Selectmen",
+   "topic": "Motor vehicle homicide and bar licensing on Whalom Lake",
+   "quote": "mr. matthews commented on an incident that happened on the leominster side of lakefront, on whalom lake,"
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "Board of Selectmen",
+   "topic": "Interviews for Election Officer candidates",
+   "quote": "mr. ebersole spoke and said that in light of the secretary of state investigation of the annual town election"
+  },
+  {
+   "speaker": "A representative of the Fundraising Committee for the Boys & Girls Club",
+   "stated_role": "",
+   "topic": "Boot Drive request September 7",
+   "quote": "a representative of the fundraising committee for the boys & girls club came before the bos to request"
+  },
+  {
+   "speaker": "John Whalen",
+   "stated_role": "526 W. Townsend Rd.",
+   "topic": "Solar projects warrant articles and PILOT/PPA terms",
+   "quote": "john whalen, 526 w. townsend rd. spoke to say that he had missed the town meeting in the spring"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session",
+   "resolution": "held; no vote recorded in these minutes",
+   "quote": "discussion of proposed settlement of ibpc contract and/ or town manager's employment contract.",
+   "tags": [
+    "executive session",
+    "labor"
+   ]
+  },
+  {
+   "topic": "IBPO Local 353 contract",
+   "resolution": "ratified 4-0",
+   "quote": "mr. matthews moved to ratify the contract for the ibpo local 353.",
+   "tags": [
+    "labor",
+    "IBPO",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Reserve Police Officer appointments",
+   "resolution": "approved 4-0",
+   "quote": "marino came before the bos to recommend bradley mcnamara, deven o'brien, and quinn smith be appointed as reserve police officers",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Police burglary arrests report",
+   "resolution": "no action; report received",
+   "quote": "chief marino stated that it is an honor and pleasure to serve with these officers and commended the actions of",
+   "tags": [
+    "police",
+    "report"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced that the last band town band concert was held last night",
+   "tags": [
+    "announcements",
+    "events"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "mr. toale stated that he had attended the eagle house volunteer recognition cookout this afternoon.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Change of Manager, Mckey Shea's (B&H Corporation)",
+   "resolution": "continued to 8/13/2013; no action",
+   "quote": "change of manager, b&h corporation d/b/a mckey shea's, 324 electric avenue",
+   "tags": [
+    "license",
+    "alcohol",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Class II Used Car Dealer's License, Fitchburg Marine & Auto",
+   "resolution": "approved 4-0",
+   "quote": "mr. matthews moved to approve the request for a class ii, used car dealer's license for discount auto & marine d/b/a fitchburg marine & auto.",
+   "tags": [
+    "license",
+    "hearing",
+    "used cars"
+   ]
+  },
+  {
+   "topic": "Lunenburg Firefighters bonfire request",
+   "resolution": "approved 4-0",
+   "quote": "mir. matthews moved to approve the request for a bonfire to be held by the lunenburg firefighters association",
+   "tags": [
+    "event",
+    "permit"
+   ]
+  },
+  {
+   "topic": "NuGen PILOT agreement",
+   "resolution": "no action; document to be cleaned up for next week",
+   "quote": "approve pilot agreement with nugen (formerly mass pv1 project)",
+   "tags": [
+    "solar",
+    "PILOT",
+    "tax"
+   ]
+  },
+  {
+   "topic": "EPG Solar PILOT agreement",
+   "resolution": "no action; Town not spending more resources until document provided",
+   "quote": "approve pilot agreement with epg solar",
+   "tags": [
+    "solar",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "Lakeview Driving Range base license renewal",
+   "resolution": "continued to next meeting",
+   "quote": "renewal of base license for lakeview driving range",
+   "tags": [
+    "license"
+   ]
+  },
+  {
+   "topic": "BOS policies and procedures",
+   "resolution": "workshop set for August 27 at 6PM",
+   "quote": "a workshop date was set for august 27\" at 6pm",
+   "tags": [
+    "policy",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, action file",
+   "resolution": "no vote recorded; warrant listed",
+   "quote": "8/6/2013 #7-14 $419,254.91",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received, no action",
+   "quote": "finance committee - mr. toale reported that the committee began work on their fiscal policies",
+   "tags": [
+    "committees",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Town Manager capital projects update (FY14/FY13)",
+   "resolution": "received, no action",
+   "quote": "ms. speidel provided the board with a spreadsheet of capital items which were approved on the capital planning article at the past spring town meeting",
+   "tags": [
+    "capital",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Household Hazardous Waste Program update",
+   "resolution": "received, no action",
+   "quote": "household hazardous waste program update: ms. speidel reported that fy13 marked the 2° year of",
+   "tags": [
+    "hazardous waste",
+    "Devens"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; questions answered",
+   "quote": "john whalen, 526 w. townsend rd. spoke to say that he had missed the town meeting in the spring",
+   "tags": [
+    "public comment",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:27PM",
+   "quote": "mr. toale moved to adjourn the meeting. mr. matthews seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Spreadsheet of Capital items approved at the spring Town Meeting Capital Planning Article",
+   "where": "list",
+   "quote": "ms. speidel provided the board with a spreadsheet of capital items which were approved on the capital planning article at the past spring town meeting"
+  },
+  {
+   "name": "Notice of Public Hearing (Class II Used Car Dealer's License application, Discount Auto & Marine d/b/a Fitchburg Marine & Auto)",
+   "where": "text",
+   "quote": "mr. alonzo read into record the notice of public hearing concerning the application submitted by discount auto"
+  },
+  {
+   "name": "Pro forma for NuGen real estate taxes prepared by the Assessor",
+   "where": "text",
+   "quote": "the assessor had put together a pro former for nugen on what the real estate taxes would be based upon the valuation of the property."
+  },
+  {
+   "name": "Letter received by Ms. Speidel regarding the Mckey Shea's Manager of record",
+   "where": "text",
+   "quote": "based on a letter that she had received, that person has not been the manager of record"
+  },
+  {
+   "name": "Annual Renewal license application for Mckey Shea's",
+   "where": "text",
+   "quote": "mr. alonzo asked if the current manager is listed in the annual renewal."
+  },
+  {
+   "name": "Warrant 8/6/2013 #7-14",
+   "where": "text",
+   "quote": "8/6/2013 #7-14 $419,254.91"
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "IBPO contract",
+  "police appointments",
+  "license hearings",
+  "solar PILOT",
+  "capital projects",
+  "hazardous waste",
+  "committee reports",
+  "public comment",
+  "sewer",
+  "broadband"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. speidel provided the board with a spreadsheet of capital items"
+ },
+ "dropped_unquoted_by_field": {}
 }

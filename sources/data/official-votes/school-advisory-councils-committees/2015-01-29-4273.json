@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2015-01-29",
  "docid": "4273",
@@ -12,23 +12,243 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes",
+   "motion": "Approve the minutes of the prior meeting.",
    "moved_by": "Colleen Shapiro",
    "seconded_by": "Katie McGuire",
-   "outcome": "unanimous",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "colleen shapiro motioned to approve, heather sroka motioned to approve, katie mcguire seconded the motion, vote: unanimous"
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Heather Sroka",
    "seconded_by": "Katie McGuire",
    "outcome": "passed",
    "procedural": true,
-   "quote": "heather sroka made a motion to adjourn the meeting, katie mcguire seconded the motion."
+   "quote": "heather sroka made a motion to adjourn the meeting, katie mcguire seconded the motion. meeting adjourned at 9:30pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1003345
+ "note": "Header reads CALENDAR ADVISORY SUB-COMMITTEE MEETING; the board named in the request is School Advisory Councils Committees. No roll call; attendance comes from the roster, where only Dr. Gary Asher, Amanda Waltz and Louis Bettencourt are marked absent. Dr. Asher is marked absent but the presentation section says he presented, though the sentence reads as a past presentation to the Wellness Committee. The guest Sandy Laserte appears as 'Sandy Laserte' in the roster and 'Sandy Lasert' in the text. Two motions were made by different members for the minutes; the first-named mover is recorded. No dollar figures appear in the text. The Feb 12/Feb 26 date change is recorded without a vote.",
+ "cost_usd": 0.00577702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Colleen Shapiro",
+   "role": "School Committee; Calendar Advisory Committee member",
+   "status": "present",
+   "quote": "colleen shapiro motioned to approve, heather sroka motioned to approve"
+  },
+  {
+   "name": "Ronald Hyatt",
+   "role": "SAC LHS",
+   "status": "not stated",
+   "quote": "ronald hyatt - sac lhs"
+  },
+  {
+   "name": "Dr. Gary Asher",
+   "role": "Former Lunenburg Family Practice, Health Advisory Committee",
+   "status": "absent",
+   "quote": "dr. gary asher - former lunenburg family practice, health advisory committee-absent"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "SAC LPS",
+   "status": "not stated",
+   "quote": "brandon kibbe - sac lps"
+  },
+  {
+   "name": "Amanda Waltz",
+   "role": "Parent",
+   "status": "absent",
+   "quote": "amanda waltz - parent-absent"
+  },
+  {
+   "name": "Louis Bettencourt",
+   "role": "Parent",
+   "status": "absent",
+   "quote": "louis bettencourt - parent-absent"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka - school committee"
+  },
+  {
+   "name": "Ami Powers",
+   "role": "SAC THMS",
+   "status": "not stated",
+   "quote": "ami powers - sac thms"
+  },
+  {
+   "name": "Katie McGuire",
+   "role": "SAC LHS",
+   "status": "present",
+   "quote": "katie mcguire seconded the motion"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "not stated",
+   "quote": "loxi jo calmes superintendent of schools"
+  },
+  {
+   "name": "Chad Adams",
+   "role": "LPS Assistant Principal",
+   "status": "not stated",
+   "quote": "chad adams, lps assistant principal, tim santry, thms principal"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "THMS Principal",
+   "status": "not stated",
+   "quote": "chad adams, lps assistant principal, tim santry, thms principal"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal",
+   "status": "present",
+   "quote": "brian spadafino - teachers like having students through the day"
+  },
+  {
+   "name": "Sandy Laserte",
+   "role": "Wellness Advisory Coordinator",
+   "status": "present",
+   "quote": "sandy lasert made comment of loss of sleep is cumulative."
+  },
+  {
+   "name": "Carrie Ford",
+   "role": "Nursing Coordinator",
+   "status": "not stated",
+   "quote": "carrie ford, nursing coordinator, tammy perry, extended day director"
+  },
+  {
+   "name": "Tammy Perry",
+   "role": "Extended Day Director",
+   "status": "not stated",
+   "quote": "carrie ford, nursing coordinator, tammy perry, extended day director"
+  },
+  {
+   "name": "Peter McCauliff",
+   "role": "Athletic Director",
+   "status": "present",
+   "quote": "peter mccauliff - adding 2 more fields, that are both lighted would help."
+  },
+  {
+   "name": "Eric Short",
+   "role": "Teacher, Parent and Coach",
+   "status": "present",
+   "quote": "discussion: eric short - parent perspective - late time of younger kids getting home."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting date changed: the February 12 meeting is cancelled and the next meeting is set for February 26.",
+   "quote": "change next meeting date - cancel meeting date on feb 12th. next meeting on february 26th"
+  },
+  {
+   "decision": "The February 26 meeting is to formalize the committee's recommendation to the School Committee and to launch a community campaign on the proposed change.",
+   "quote": "next meeting to formalize our recommendation to the school committee"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School start time change cost impact",
+   "what_was_recorded": "The minutes state the proposed start-time change would have to have no cost impact, with athletic field lighting said to add no extra cost because of an upcoming solar project.",
+   "figures_as_printed": [],
+   "quote": "this would have to have no cost impact."
+  },
+  {
+   "topic": "Field lighting electricity cost",
+   "what_was_recorded": "Peter McCauliff said that with electricity running from the school, lighting fields could cost almost nothing; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "with electricity running from the school, could light fields for almost nothing."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:23pm",
+   "quote": "meeting called to order at 7:23pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved unanimously",
+   "quote": "colleen shapiro motioned to approve, heather sroka motioned to approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Updated presentation on school start time",
+   "resolution": "presented and discussed; no vote",
+   "quote": "updated presentation-school start time : dr. asher presented to wellness committee.",
+   "tags": [
+    "school start time",
+    "sleep",
+    "health"
+   ]
+  },
+  {
+   "topic": "Discussion of start-time effects on athletics, activities, extended day and buses",
+   "resolution": "discussed; no vote",
+   "quote": "discussion: eric short - parent perspective - late time of younger kids getting home.",
+   "tags": [
+    "athletics",
+    "extended day",
+    "transportation",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "February 12 meeting cancelled; next meeting set for February 26",
+   "quote": "change next meeting date - cancel meeting date on feb 12th. next meeting on february 26th",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:30pm",
+   "quote": "meeting adjourned at 9:30pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Updated Presentation-School Start Time",
+   "where": "text",
+   "quote": "updated presentation-school start time : dr. asher presented to wellness committee."
+  },
+  {
+   "name": "Superintendent magazine article on engaging community and full impacts of this change",
+   "where": "text",
+   "quote": "engaging community and full impacts of this change (superintendent magazine)"
+  }
+ ],
+ "tags": [
+  "school start time",
+  "sleep",
+  "athletics",
+  "extended day",
+  "transportation",
+  "scheduling",
+  "calendar advisory",
+  "health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-03-08",
  "docid": "4778",
@@ -12,24 +12,333 @@
  },
  "votes": [
   {
-   "motion": "Abate ambulance fees",
-   "moved_by": "Ernie",
-   "seconded_by": "Steve",
+   "motion": "Abate the ambulance fees as outlined in the Fire Chief's request.",
+   "moved_by": "Ernie Sund",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ernie motion to abate the ambulance fees as outlined, steve seconded voted unanimously to abate."
+   "quote": "ernie motion to abate the ambulance fees as outlined, steve seconded voted unanimously to abate.",
+   "seconded_by": "Steve"
   },
   {
-   "motion": "Adjourn regular session and convene executive session",
+   "motion": "Adjourn the Regular Session at 7:30 P.M. and convene Executive Session under M.G.L. Chapter 39, §23B.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 7:30 p.m. and convened executive session at this respe",
-   "quote_taken_from_text": true
+   "quote": "being no further business board voted unanimously to adjourn regular session at 7:30 p.m. and convened executive session at this",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The text mentions a resignation acceptance (\"board accepted with regrets\") and a matter being tabled, but neither includes explicit voting language (motion, second, or vote) and are therefore not counted as votes per the instructions.",
- "cost_usd": 0.1073485
+ "note": "OCR text (macOS Vision) of a scanned minutes document with garbled spelling and line breaks; quotes are collapsed to single spaces. The seconder on the ambulance vote is printed only as \"Steve\". The executive session statute subsection is blank in the minutes (\"§23B( )\"). The adjourn motion records no mover or seconder. The \"PUBLIC COMMENT\" heading holds remarks by board member Tom, not outside speakers. Page 4 is an attached billing/aging table (Tufts Health Plan, 439 Townsend Harbor Rd) with dollar figures not discussed in the minutes text; it is not recorded as budget items. Snow transfers were hoped for, not voted, so no transfer is recorded.",
+ "cost_usd": 0.014615389999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M deBettencourt",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Selectman, Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura williams, chief administrative assistant"
+  },
+  {
+   "name": "Four Boy Scouts from Troop 1728 (unnamed)",
+   "role": "Boy Scouts, Troop 1728",
+   "status": "present",
+   "quote": "also present were four boy scouts from troop 1728 and they are present to earn their citizenship in the community badge."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Joint Session with Conservation Commission item (Lake Whalom; Lake Shirley; gate automation; Pleasant Street Enhancement) tabled until March 22nd.",
+   "quote": "joint session with conservation commission - lake whalom; lake shirley; automation of gates at lake shirley dam and pleasant street enhancement (landfill sand/gravel rfp) - tabled until march 22nd."
+  },
+  {
+   "decision": "Board accepted the resignation of Steve Marden from the Green Community Task Force, with regrets, and a letter of appreciation is to be sent.",
+   "quote": "resignation: steve marden, green community task force - board accepted with regrets, letter of appreciation to be sent."
+  },
+  {
+   "decision": "Town Manager to check on the status of the sewer IMA; the board is awaiting the next draft of the IMA.",
+   "quote": "paula questioned where we stand with the ima for sewer and if kerry could check on this, we are currently awaiting the next draft of the ima."
+  },
+  {
+   "decision": "Board did not approve the updated Open Space Plan but accepted that it is available.",
+   "quote": "also has three copies of the updated open space plan from marion benson, planning board director, board doesn't approve but accepts that this is available."
+  },
+  {
+   "decision": "Town Manager will try to get an electronic copy of the Open Space Plan available and place it on the website.",
+   "quote": "will try to get an electonic copy available and will place on the website."
+  },
+  {
+   "decision": "Staff identified May 1 as the website go-live date and hope to have a brief presentation ready for Town Meeting.",
+   "quote": "identified may 1s' as a go live date, hope to have a brief presentation ready for town meeting."
+  },
+  {
+   "decision": "Town Manager will provide the individual department budget requests to the board.",
+   "quote": "kerry provided the attached information on future agenda items and will provide the individual department requests to the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ambulance fee abatement (deceased resident, no estate)",
+   "what_was_recorded": "Uncollectable ambulance fee balance for a deceased resident with no estate was presented for abatement; the minutes print no dollar amount.",
+   "figures_as_printed": [],
+   "quote": "kerry presented the attached request from the fire chief as the resident is deceased and leaves no estate that we are able to collect from."
+  },
+  {
+   "topic": "Warrant #49 11",
+   "what_was_recorded": "Warrant #49 11 dated 3/8/11 was reviewed and signed.",
+   "figures_as_printed": [
+    "$233,857.79"
+   ],
+   "quote": "warrants - #49 11, 3/8/11 - $233,857.79 reveiwed and signed"
+  },
+  {
+   "topic": "School budget gap between Superintendent and Town Manager budgets",
+   "what_was_recorded": "The School Committee's budget gap with the Town Manager's budget was described; the board was told it will not be made a burden on the town side.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "will not make the $600,000 gap between the superintendent's budget and town manger's budget a burden on the town side of the budget."
+  },
+  {
+   "topic": "Snow expenditures deficit",
+   "what_was_recorded": "Snow expenditures are about $25,000 over budget; state law allows the deficit to be carried and the town hopes to fund it through transfers from other departments this fiscal year.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "also presented the attached snow expenditures to date;currently about $25,000 deficit."
+  },
+  {
+   "topic": "Snow expenditures to date (3/3/11) table",
+   "what_was_recorded": "Snow appropriation, expended and balance totals as of 3/3/11, with a deficit shown in parentheses; the table's line items were printed alongside.",
+   "figures_as_printed": [
+    "250,000.00",
+    "275,192.02",
+    "(25,192.02)"
+   ],
+   "quote": "totals 250,000.00 275,192.02 (25,192.02)"
+  },
+  {
+   "topic": "Town Hall painting by work release crew",
+   "what_was_recorded": "Painting of Town Hall by the Worcester County Sheriff's Work Release Program is believed to have saved about $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "believes that we've seen a benefit of about $10,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom",
+   "topic": "Congratulations to Ruth Green; Boston Post Cane; memorial remarks for Vera McCarthy and William McMunn; welcome back of Ofc. Omar Connor",
+   "quote": "tom extended congratulations to ruth green and expressed appreciation to the council on aging and doreen noble for coordinating"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and tributes",
+   "resolution": "no action",
+   "tags": [
+    "tributes",
+    "Boston Post Cane",
+    "public comment"
+   ],
+   "quote": "tom extended congratulations to ruth green and expressed appreciation to the council on aging and doreen noble for coordinating"
+  },
+  {
+   "topic": "Joint session with Conservation Commission (lake and dam items)",
+   "resolution": "tabled until March 22",
+   "tags": [
+    "conservation",
+    "lakes",
+    "Pleasant Street",
+    "RFP"
+   ],
+   "quote": "joint session with conservation commission - lake whalom; lake shirley; automation of gates at lake shirley dam and pleasant street enhancement (landfill sand/gravel rfp) - tabled until march 22nd."
+  },
+  {
+   "topic": "Ambulance fee abatement",
+   "resolution": "approved (abated)",
+   "tags": [
+    "ambulance fees",
+    "abatement",
+    "Fire Department"
+   ],
+   "quote": "ernie motion to abate the ambulance fees as outlined, steve seconded voted unanimously to abate."
+  },
+  {
+   "topic": "Minutes and warrant review",
+   "resolution": "reviewed and signed",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "minutes - board of selectmen regular and executive session for 3/1/11 reveiwed and signed."
+  },
+  {
+   "topic": "Eagle Scout ceremony attendance question",
+   "resolution": "no action",
+   "tags": [
+    "Eagle Scout",
+    "Boy Scouts",
+    "scheduling"
+   ],
+   "quote": "action file issues - paula two eagle scout ceremonies would like to know if any members of the board will be able to attend"
+  },
+  {
+   "topic": "Committee updates (School Committee, future agenda items, budget, sewer IMA)",
+   "resolution": "no action",
+   "tags": [
+    "school budget",
+    "budget",
+    "sewer IMA",
+    "Finance Committee"
+   ],
+   "quote": "dave school committee met last wednesday, some changes were made to superintendent budget"
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "no action",
+   "tags": [
+    "departments"
+   ],
+   "quote": "5. department updates - none"
+  },
+  {
+   "topic": "Town Manager updates (Town Meeting warrant, snow, town hall painting, broadband, open space, website)",
+   "resolution": "no action",
+   "tags": [
+    "Town Meeting",
+    "snow",
+    "website",
+    "open space",
+    "broadband"
+   ],
+   "quote": "kerrry reminded everyone that the warrant for the town meeting closes @4:00 pm, monday,"
+  },
+  {
+   "topic": "Old business: health care public hearing",
+   "resolution": "no action",
+   "tags": [
+    "health care",
+    "State House"
+   ],
+   "quote": "paula discussed the issue on the public hearing on health care scheduled for today at the state house"
+  },
+  {
+   "topic": "Committee resignation: Green Community Task Force",
+   "resolution": "accepted",
+   "tags": [
+    "resignation",
+    "Green Community Task Force",
+    "conflict of interest"
+   ],
+   "quote": "resignation: steve marden, green community task force - board accepted with regrets, letter of appreciation to be sent."
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ],
+   "quote": "m.g.l. chapter 39, §23b( ) to discuss strategy with respect to collective bargaining or litigation"
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming meeting schedule march 15, 2011 march 22, 2011"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Uncollectable Ambulance Fees memo from Chief Scott F. Glenny to Kerry Speidel (received Dec 6 2010)",
+   "where": "list",
+   "quote": "kerry presented the attached request from the fire chief as the resident is deceased and leaves no estate that we are able to collect from."
+  },
+  {
+   "name": "Snow expenditures to date (3/3/11)",
+   "where": "list",
+   "quote": "also presented the attached snow expenditures to date;currently about $25,000 deficit."
+  },
+  {
+   "name": "Information on future agenda items",
+   "where": "list",
+   "quote": "kerry provided the attached information on future agenda items and will provide the individual department requests to the board."
+  },
+  {
+   "name": "Updated Open Space Plan (Marion Benson, Planning Board Director)",
+   "where": "text",
+   "quote": "also has three copies of the updated open space plan from marion benson, planning board director, board doesn't approve but accepts that this is available."
+  },
+  {
+   "name": "Board of Selectmen minutes, regular and executive session, 3/1/11",
+   "where": "text",
+   "quote": "minutes - board of selectmen regular and executive session for 3/1/11 reveiwed and signed."
+  },
+  {
+   "name": "Warrant #49 11, 3/8/11 ($233,857.79)",
+   "where": "text",
+   "quote": "warrants - #49 11, 3/8/11 - $233,857.79 reveiwed and signed"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "ambulance fees",
+  "snow deficit",
+  "school budget gap",
+  "Town Meeting warrant",
+  "website",
+  "open space plan",
+  "sewer IMA",
+  "resignation",
+  "executive session",
+  "tributes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry presented the attached request from the fire chief"
+ },
+ "dropped_unquoted_by_field": {}
 }

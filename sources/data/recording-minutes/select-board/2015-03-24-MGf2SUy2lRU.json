@@ -1,0 +1,467 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2015-03-24",
+ "video_id": "MGf2SUy2lRU",
+ "video_url": "https://www.youtube.com/watch?v=MGf2SUy2lRU",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-03-24-MGf2SUy2lRU.json",
+  "sha256": "d26b1539008f551656300d72eb98878fc0197cb82d61237cc993b8a1e66b2717",
+  "caption_lines": 376,
+  "segments": 3523
+ },
+ "recording": {
+  "duration_s": 7854,
+  "duration": "2:10",
+  "spoken_chars": 102087,
+  "words_approx": 17014
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03242015-4922",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-03-24-agenda-4922.txt",
+   "path": "sources/meetings/select-board/2015-03-24-agenda-4922.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03242015-4922",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-03-24-minutes-4922.txt",
+   "path": "sources/meetings/select-board/2015-03-24-minutes-4922.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:53:51Z",
+  "cost_usd": 0.384587
+ },
+ "minutes": {
+  "headline": "Board reviewed the draft town meeting warrant and held the FY16 budget and village district zoning for later meetings.",
+  "summary": "The Select Board approved two fundraiser and roadblock requests and received a Purple Heart Community certificate. It delayed the regional 911 vote because the district agreement does not yet exist. Most of the evening went to the draft annual town meeting warrant, where several articles were recommended and the budget, village district and police bylaws were held for later.",
+  "attendees": [
+   {
+    "name_as_heard": "mrs bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mrs luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "karen brochu",
+    "role": "town accountant (referenced)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 167,
+    "topic": "Boys and Girls Club board member requested a toll booth fundraiser at town center.",
+    "speaker_as_heard": "mike mac",
+    "stated_role": "member of the board of directors of the boys and girls club"
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy26",
+   "free-cash",
+   "planning-and-zoning",
+   "public-safety",
+   "town-meeting",
+   "transfers",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 230,
+    "motion": "Approve Boys and Girls Club toll booth fundraiser on May 16, 9 a.m. to noon.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 497,
+    "motion": "Approve Lions Club spring roadblock May 9, 8 a.m. to 2 p.m.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1712,
+    "motion": "Recommend approval of articles one through six as in draft.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7825,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1652,
+    "topic": "Ambulance billing revolving fund",
+    "what_was_said": "Request to reauthorize the fund with a higher limit than the current year.",
+    "figures_as_heard": [
+     "sixty thousand dollars",
+     "fifty thousand dollars"
+    ]
+   },
+   {
+    "t": 1835,
+    "topic": "Snow and ice deficit",
+    "what_was_said": "Overage projected, with possible state reimbursement; proposal to cover it from free cash.",
+    "figures_as_heard": [
+     "250 000",
+     "two hundred and twenty eight thousand six hundred and nine dollars",
+     "485 thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 877,
+    "decision": "Regional 911 district vote continued because the district agreement is not yet drafted."
+   },
+   {
+    "t": 2909,
+    "decision": "Town manager to fund the highway maintenance gap from free cash rather than cutting the line."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 270,
+    "topic": "Opening comments and Boys and Girls Club request",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 271,
+    "t_end": 516,
+    "topic": "Purple Heart certificate and Lions Club roadblock",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 517,
+    "t_end": 895,
+    "topic": "Regional 911 dispatch vote",
+    "resolution": "tabled",
+    "tags": [
+     "public-safety",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 896,
+    "t_end": 1588,
+    "topic": "FY16 budget meeting scheduling",
+    "resolution": "no resolution",
+    "tags": [
+     "budget",
+     "budget-fy26"
+    ]
+   },
+   {
+    "t_start": 1589,
+    "t_end": 6960,
+    "topic": "Draft town meeting warrant review",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6961,
+    "t_end": 7845,
+    "topic": "Warrants, action items, committee reports, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Outcome of the motion on article one at 1672 was not stated before the broader motion."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4449,
+    "about": "Whether the village district and architectural preservation district articles should be tied together.",
+    "sides": "Members split on tying the two articles.",
+    "words_as_heard": "i would disagree",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 4635,
+    "kind": "condition",
+    "about": "Opposition to the village district without the preservation district.",
+    "who": "a member",
+    "words_as_heard": "i will be actively opposing the village district if the architectural preservation district isn't a part of the package"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1589,
+    "name_as_heard": "draft of the annual town meeting warrant",
+    "kind": "warrant article",
+    "words_as_heard": "review and approve the draft of the annual town meeting warrant"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "snow-and-ice-budget",
+    "title": "Snow and ice budget",
+    "question": "How large is the snow deficit and how will it be covered?",
+    "t": 1835,
+    "words_as_heard": "snow and ice budget were projecting an overage of 250 000",
+    "data_in_play": [
+     "250 000",
+     "485 thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board recommended approval of warrant articles one through six as in the draft, during a long review of the draft annual town meeting warrant.",
+    "t": 1712
+   },
+   {
+    "line": "The Board continued the regional 911 district vote because the district agreement has not yet been drafted.",
+    "t": 877
+   },
+   {
+    "line": "The Board approved a Boys and Girls Club toll booth fundraiser and a Lions Club spring roadblock.",
+    "t": 230
+   },
+   {
+    "line": "The town manager is to cover the highway maintenance gap from free cash rather than cut the line.",
+    "t": 2909
+   },
+   {
+    "line": "A snow and ice deficit was projected, with possible state reimbursement and a proposal to cover it from free cash.",
+    "t": 1835
+   }
+  ],
+  "why_it_matters": [
+   "Free cash is town money that is not committed to anything, so using it for highway maintenance and the snow and ice overage affects what remains for other needs and for next year's tax rate.",
+   "The FY16 budget, village district zoning and police bylaws were held, so residents will be asked to vote on them at town meeting after later Board meetings settle their wording."
+  ],
+  "watch_next": [
+   "Later Board meetings on the held FY16 budget, village district zoning and police bylaw articles.",
+   "The regional 911 district vote, which waits on a drafted district agreement."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:53:58Z",
+   "cost_usd": 0.0218111
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03242015-4922",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-03-24-minutes-4922.txt",
+   "path": "sources/meetings/select-board/2015-03-24-minutes-4922.pdf"
+  },
+  "official_sha256": "ed6f886fb8d2a7ef318283955db788ebdbf03b98bc1a0293386fc8e444bd1374",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the three votes we captured and on the ambulance fund, snow and ice, and highway free-cash items. The official minutes record many more votes, figures and decisions that our minutes omit, including Articles 7-8, 18, 19, 27-28, 39-41 and 43-47.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 0,
+   "only_in_official": 10
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Boys and Girls Club toll booth vote, May 16, 9 a.m. to noon",
+    "ours": "Approve Boys and Girls Club toll booth fundraiser on May 16, 9 a.m. to noon. — passed",
+    "official": "to approve the request for the voluntary tollbooth on may 16\" from 9 am to noon vote: all in favor",
+    "note": "Same motion, same hours, passed in both.",
+    "t": 230
+   },
+   {
+    "kind": "agree",
+    "about": "Lions Club spring roadblock vote",
+    "ours": "Approve Lions Club spring roadblock May 9, 8 a.m. to 2 p.m. — passed",
+    "official": "to approve the spring roadblock for may 9\" from 8 am to 2 pm. vote: all in favor",
+    "note": "Same date, hours and outcome.",
+    "t": 497
+   },
+   {
+    "kind": "agree",
+    "about": "Articles 1 through 6 recommendation",
+    "ours": "Recommend approval of articles one through six as in draft. — passed",
+    "official": "to approve and recommend draft articles 1 - 6 as presented vote: all in favor",
+    "note": "Same motion and outcome.",
+    "t": 1712
+   },
+   {
+    "kind": "agree",
+    "about": "Ambulance billing revolving fund cap",
+    "ours": "Ambulance billing revolving fund: sixty thousand dollars, fifty thousand dollars",
+    "official": "reauthorize the ambulance billing revolving account not to exceed $60,000 (up from $50,000 in the current year) during the fiscal year.",
+    "note": "Both give $60,000, up from $50,000.",
+    "t": 1652
+   },
+   {
+    "kind": "agree",
+    "about": "Snow and ice overage of $250,000",
+    "ours": "Snow and ice deficit: 250 000",
+    "official": "the snow and ice budget is projected to have an overage of $250,000.",
+    "note": "Same figure.",
+    "t": 1835
+   },
+   {
+    "kind": "agree",
+    "about": "MEMA reimbursement for four storms",
+    "ours": "two hundred and twenty eight thousand six hundred and nine dollars",
+    "official": "the town has submitted for the reimbursement cost of four storms to mema in the amount of $228,609.",
+    "note": "Same amount.",
+    "t": 1835
+   },
+   {
+    "kind": "agree",
+    "about": "Free cash balance",
+    "ours": "485 thousand dollars",
+    "official": "there is $485,000 in free cash.",
+    "note": "Same amount.",
+    "t": 1835
+   },
+   {
+    "kind": "agree",
+    "about": "Highway maintenance gap paid from free cash",
+    "ours": "Town manager to fund the highway maintenance gap from free cash rather than cutting the line.",
+    "official": "further discussion resulted in ms. speidel taking the necessary finding from free cash to fund road maintenance.",
+    "note": "Same decision.",
+    "t": 2909
+   },
+   {
+    "kind": "agree",
+    "about": "Regional 911 vote deferred until agreement wording is seen",
+    "ours": "Regional 911 district vote continued because the district agreement is not yet drafted.",
+    "official": "after some discussion it was decided to wait to see the agreement wording before voting.",
+    "note": "Both record waiting on the agreement. Our minutes say it is not yet drafted; the official minutes say only that the wording is awaited.",
+    "t": 877
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles 7 and 8 vote",
+    "ours": "",
+    "official": "to approve articles 7 and 8 as presented 2n: j. toale vote: all in favor",
+    "note": "This vote is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Article 18 recommendation",
+    "ours": "",
+    "official": "motion: b. ebersole to recommend article 18 as presented 2*: p. bertram vote: all in favor",
+    "note": "This vote is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Article 19 recommendation",
+    "ours": "",
+    "official": "motion: p. bertram to recommend article 19 as presented 2nd: j. toale vote: all in favor",
+    "note": "This vote is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles 27 and 28 recommendation",
+    "ours": "",
+    "official": "motion: b. ebersole 2nd: p. bertram to recommend approving article 27 and 28 subject to town meeting approval vote",
+    "note": "This vote is not in our minutes, and the official minutes do not state its outcome.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles 39, 40 and 41 recommendations",
+    "ours": "",
+    "official": "motion: r. ebersole to recommend article 39 2nd: p. bertram vote: all in favor",
+    "note": "The Article 39, 40 and 41 votes are all missing from our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Articles 43 through 46 and Article 47 recommendations",
+    "ours": "",
+    "official": "motion: p. bertram to recommend articles 43 through 46 2^: j. toale vote: all in favor",
+    "note": "The votes on Articles 43-46 and 47 are missing from our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Article 8 prior-year bills",
+    "ours": "",
+    "official": "article 8 is for payment of three prior year bills amounting in $1782.00 for police and fire medical bills and copy paper.",
+    "note": "This figure is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrants signed",
+    "ours": "",
+    "official": "the board signed the following warrants: $1,619,144.65 for school construction; $656,487.84 for payroll; $147,020.96 for payroll deductions and $91,744.87 for accounts payable.",
+    "note": "The four warrant totals are not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other budget figures: surpluses, deficits, Chapter 90, veterans, rescissions",
+    "ours": "",
+    "official": "under veterans' benefits, there is a proposed deficit of $57,500 this year on approved benefits.",
+    "note": "Many other figures in the official minutes are missing from ours: the departmental surpluses and deficits, the $51,897 highway surplus, the Chapter 90 and pothole money, and the Article 40-46 amounts.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other decisions: April 2 meeting, Finance Committee attendance, Narcan, Article 20 and others",
+    "ours": "",
+    "official": "the board decided to meet on the 2\"d of april at 6:00 pm. to follow up on budget items.",
+    "note": "Our minutes omit this and several other follow-up decisions, including the plan to pose questions only at the Finance Committee meeting.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: members and town manager",
+    "ours": "mrs bertram (member); mrs luck (member); town manager (town manager); karen brochu (town accountant (referenced))",
+    "official": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck",
+    "note": "Bertram and Luck match. Our minutes omit Alonzo, Toale and Ebersole, and the town manager is Kerry Speidel in the official minutes. Karen Brochu appears only in ours; the official minutes refer to \"the town accountant\" without a name, so check whether she is the town accountant named.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:55:51Z",
+   "cost_usd": 0.0651951
+  }
+ }
+}

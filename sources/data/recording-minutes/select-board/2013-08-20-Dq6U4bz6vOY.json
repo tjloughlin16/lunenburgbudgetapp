@@ -1,0 +1,461 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-08-20",
+ "video_id": "Dq6U4bz6vOY",
+ "video_url": "https://www.youtube.com/watch?v=Dq6U4bz6vOY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-08-20-Dq6U4bz6vOY.json",
+  "sha256": "07fa1594d579df4bea5625ab20615b571765d76284649be424a18ef20c3353ab",
+  "caption_lines": 90,
+  "segments": 850
+ },
+ "recording": {
+  "duration_s": 1893,
+  "duration": "0:31",
+  "spoken_chars": 25603,
+  "words_approx": 4267
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08202013-4856",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-08-20-agenda-4856.txt",
+   "path": "sources/meetings/select-board/2013-08-20-agenda-4856.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08202013-4856",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-08-20-minutes-4856.txt",
+   "path": "sources/meetings/select-board/2013-08-20-minutes-4856.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T19:07:04Z",
+  "cost_usd": 0.1392931
+ },
+ "minutes": {
+  "headline": "Board held off certifying school enrollment for two weeks and set a special MSBA meeting; it approved a charity toll.",
+  "summary": "The board approved a voluntary road toll for the boys and girls club and appointed a member to the cable access committee. The main item was the new school's enrollment number. The school building committee chair asked for a two-week extension, and the board agreed to take no vote and to meet with the MSBA at a special meeting. Members raised concerns about the size of the planned building.",
+  "attendees": [
+   {
+    "name_as_heard": "mr chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "mr mackin",
+    "role": "chair of the school building committee, presenter"
+   },
+   {
+    "name_as_heard": "ms beliza",
+    "role": "presenter for the boys and girls club"
+   },
+   {
+    "name_as_heard": "mrs bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr matthews",
+    "role": "member, school committee liaison and school building committee member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "enrollment",
+   "facilities",
+   "high-school",
+   "middle-school",
+   "msba",
+   "public-comment",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 318,
+    "motion": "Approve the voluntary toll on Saturday September 7 from 9 a.m. to noon for the boys and girls club",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1726,
+    "motion": "Appoint Troy Daniels to the public access cable committee for a one year term",
+    "outcome": "passed",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1446,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "The board had an accounts payable warrant to sign.",
+    "figures_as_heard": [
+     "139 748 dollars and 16 cents"
+    ]
+   },
+   {
+    "t": 131,
+    "topic": "Unitil rate increase petition",
+    "what_was_said": "Unitil has petitioned for an electric base rate increase and a major storm reserve fund. The chair opposes it and the board will send a letter to the hearing.",
+    "figures_as_heard": [
+     "6.7 million dollars",
+     "2.1 million",
+     "13.36",
+     "2.8 million dollars per year"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 568,
+    "decision": "No official vote on enrollment certification; the board will use the two-week extension and offers of an MSBA meeting or phone conference."
+   },
+   {
+    "t": 1334,
+    "decision": "A special meeting with the MSBA on enrollment will be held Tuesday August 27 as the sole agenda item, subject to confirmation by mr mackin."
+   },
+   {
+    "t": 1292,
+    "decision": "The town's last submission to the MSBA will be emailed to all board members."
+   },
+   {
+    "t": 255,
+    "decision": "The board will send a letter to the Department of Public Utilities hearing on the Unitil petition."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 276,
+    "topic": "Announcements: public access on YouTube and Unitil rate petition",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 276,
+    "t_end": 350,
+    "topic": "Voluntary toll for boys and girls club",
+    "resolution": "voted",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 350,
+    "t_end": 1416,
+    "topic": "MSBA school enrollment certification and extension",
+    "resolution": "no vote; extension, special meeting set",
+    "tags": [
+     "msba",
+     "enrollment",
+     "middle-school"
+    ]
+   },
+   {
+    "t_start": 1416,
+    "t_end": 1517,
+    "topic": "Minutes, accounts payable warrant, golf range license",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1517,
+    "t_end": 1645,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1645,
+    "t_end": 1746,
+    "topic": "Appointment to public access cable committee",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1746,
+    "t_end": 1891,
+    "topic": "Meeting schedule, closing",
+    "resolution": "informational",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Count of the toll and cable committee voting beyond aye and none opposed",
+   "Some speakers in the enrollment discussion are not identified"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 691,
+    "about": "Whether the MSBA uses the planning board's projections or its own formula",
+    "sides": "a member against another speaker's understanding",
+    "words_as_heard": "i don't think that's true okay that may be a misunderstanding",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1067,
+    "about": "Member's late enrollment concerns versus the school building committee chair",
+    "sides": "a member and the school building committee chair",
+    "words_as_heard": "i don't know why we're in an adversarial situation",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 318,
+    "kind": "safety",
+    "about": "Police chief's conditions for the road toll",
+    "who": "presenter",
+    "words_as_heard": "as long as we continue to use the cones that we do you know prior to the actual toll and ensure that everyone has the safety colored attire on"
+   },
+   {
+    "t": 1003,
+    "kind": "condition",
+    "about": "Future expansion costs would fall on residents because MSBA cannot be returned to for 10 years",
+    "who": "a member",
+    "words_as_heard": "those expanded areas should they become necessary will be on the citizens of lunenburg rather than part of this overall initial project"
+   },
+   {
+    "t": 1250,
+    "kind": "condition",
+    "about": "Wants to know what was submitted to the MSBA before certifying",
+    "who": "a member",
+    "words_as_heard": "i would like to be involved in finding out what was submitted to the the msba and whether things have changed enough before our meeting to certify"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1272,
+    "name_as_heard": "the April 11th submission to the MSBA",
+    "kind": "report",
+    "words_as_heard": "the last submission to the msba from the town was on april 11th of this year",
+    "shown": false
+   },
+   {
+    "t": 131,
+    "name_as_heard": "Unitil bulletin",
+    "kind": "letter or email",
+    "words_as_heard": "important information for unitil electric customers",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-enrollment-projection",
+    "title": "School enrollment projection",
+    "question": "What enrollment did the town submit to the MSBA and does it support an 820-student building?",
+    "t": 855,
+    "words_as_heard": "right now we have 846 students from grades 6 through 12",
+    "data_in_play": [
+     "846 students",
+     "798 students",
+     "820"
+    ],
+    "existing": "topic:enrolment-by-year"
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "Special meeting with the MSBA on school enrollment, set for Tuesday August 27 as the only agenda item, subject to confirmation.",
+   "The town's last submission to the MSBA, to be emailed to all board members."
+  ],
+  "what_happened": [
+   {
+    "line": "The Select Board took no vote on certifying school enrollment and will use a two-week extension requested by the school building committee chair.",
+    "t": 568
+   },
+   {
+    "line": "A special meeting with the MSBA on enrollment is set for Tuesday August 27 as its only agenda item, subject to confirmation.",
+    "t": 1334
+   },
+   {
+    "line": "The town's last submission to the MSBA will be emailed to all board members.",
+    "t": 1292
+   },
+   {
+    "line": "The board will send a letter to the Department of Public Utilities hearing on the Unitil petition for an electric base rate increase.",
+    "t": 255
+   },
+   {
+    "line": "The board approved a voluntary toll for the boys and girls club and appointed a member to the public access cable committee.",
+    "t": 318
+   }
+  ],
+  "why_it_matters": [
+   "The enrollment number the town certifies to the MSBA feeds into the size of the planned school, which affects the cost residents would be asked to carry through taxes.",
+   "The Unitil petition concerns base electric rates and a storm reserve fund, so the outcome could change electric bills for town households."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T19:07:16Z",
+   "cost_usd": 0.022119100000000003
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08202013-4856",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-08-20-minutes-4856.txt",
+   "path": "sources/meetings/select-board/2013-08-20-minutes-4856.pdf"
+  },
+  "official_sha256": "352834a680b78c86bfb89213697ab0719c11edec7fe501825fd00d2965bb5379",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the two votes, the warrant total, and the no-vote-on-enrollment decision with an 8/27 meeting. They differ on the vote counts (only in the official record), on whether Matthews attended, and on several items found in only one record.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Boys & Girls Club voluntary toll vote",
+    "ours": "Approve the voluntary toll on Saturday September 7 from 9 a.m. to noon for the boys and girls club — passed",
+    "official": "ms. bertram moved to approve the request from the lunenburg boys & girls club for a voluntary toll to be",
+    "note": "Same motion, date, hours and outcome (passed); official adds a 4-0 tally.",
+    "t": 318
+   },
+   {
+    "kind": "agree",
+    "about": "Troy Daniels appointment to PACC",
+    "ours": "Appoint Troy Daniels to the public access cable committee for a one year term — passed",
+    "official": "ms. bertram moved to appoint troy daniels to pacc for a 1 year term. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposes.",
+    "note": "Same appointment, term and outcome.",
+    "t": 1726
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant total",
+    "ours": "Accounts payable warrant: 139 748 dollars and 16 cents",
+    "official": "action file issues: no discussion $139,748.16",
+    "official_reading": "$139,748.16",
+    "note": "Same amount; captions spelled it out in words.",
+    "t": 1446
+   },
+   {
+    "kind": "agree",
+    "about": "Enrollment certification: no vote, special meeting 8/27 as sole item",
+    "ours": "No official vote on enrollment certification; the board will use the two-week extension and offers of an MSBA meeting or phone conference.",
+    "official": "stated that there would be no official vote tonight and that this item will be posted on the agenda for another meeting to be held on 8/27/2013.",
+    "note": "Both record no vote and a follow-up meeting 8/27 as the only item.",
+    "t": 568
+   },
+   {
+    "kind": "agree",
+    "about": "Special meeting Tuesday August 27 on enrollment",
+    "ours": "A special meeting with the MSBA on enrollment will be held Tuesday August 27 as the sole agenda item, subject to confirmation by mr mackin.",
+    "official": "mr. alonzo reminded all again that he will attempt to schedule a meeting with the school building committee",
+    "note": "Both describe a meeting next Tuesday that is not yet certain. Ours says it is with the MSBA and depends on Mackin, while the official says it is with the School Building Committee and depends on space and posting. Worth a check.",
+    "t": 1334
+   },
+   {
+    "kind": "agree",
+    "about": "Letter to Unitil rate hearing",
+    "ours": "The board will send a letter to the Department of Public Utilities hearing on the Unitil petition.",
+    "official": "the bos will send along a letter to be read at this hearing",
+    "note": "Same decision.",
+    "t": 255
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unitil petition figures",
+    "ours": "Unitil rate increase petition: 6.7 million dollars, 2.1 million, 13.36, 2.8 million dollars per year",
+    "official": "",
+    "note": "The official minutes print no dollar figures for the Unitil increase; the figures from the recording cannot be checked against them.",
+    "t": 131
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Last MSBA submission to be emailed to board",
+    "ours": "The town's last submission to the MSBA will be emailed to all board members.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 1292
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Meeting with PACC on policies and staffing",
+    "ours": "",
+    "official": "mr. alonzo mentioned that the bos would like to set up a meeting with pacc to discuss policies and staffing.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Policies & procedures discussed off camera",
+    "ours": "",
+    "official": "the bos met \"off camera\" to discuss policies & procedures.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance of Matthews",
+    "ours": "mr matthews (member, school committee liaison and school building committee member)",
+    "official": "absent was dave matthews & town manager kerry speidel",
+    "note": "Our minutes list Matthews as a member present, but the official minutes say he was absent. Check the recording to see who was speaking; the captions may have mislabeled another speaker."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Club presenter name",
+    "ours": "ms beliza (presenter for the boys and girls club)",
+    "official": "michelle belleza, director chester mossman teen center, came before the bos to request a voluntary",
+    "official_reading": "Michelle Belleza",
+    "note": "Misspelled name; same person.",
+    "t": 318
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "mr chairman (chair)",
+    "official": "mr. alonzo announced that the public will now be able to view all bos meetings online by signing onto",
+    "official_reading": "Mr. Alonzo",
+    "note": "Our minutes give only the title; the official names the chair as Mr. Alonzo."
+   },
+   {
+    "kind": "agree",
+    "about": "Mackin attendance",
+    "ours": "mr mackin (chair of the school building committee, presenter)",
+    "official": "mike mackin, school building committee chair, came before the bos to speak on the certification of school enrollment.",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "agree",
+    "about": "Bertram attendance",
+    "ours": "mrs bertram (member)",
+    "official": "ms. bertram moved to adjourn the meeting. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed",
+    "note": "Present in both."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Toale and Ebersole present",
+    "ours": "",
+    "official": "sewer commission- mr. ebersole stated that they will be meeting next week.",
+    "note": "Mr. Toale (who seconded motions) and Mr. Ebersole are in the official minutes but not in our attendee list."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T19:08:09Z",
+   "cost_usd": 0.04305110000000001
+  }
+ }
+}

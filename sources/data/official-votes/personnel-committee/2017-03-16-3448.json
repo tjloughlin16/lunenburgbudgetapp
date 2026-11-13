@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2017-03-16",
  "docid": "3448",
@@ -12,6 +12,170 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Minutes record several approvals (\"Reviewed and approved Minutes,\" \"Approved appointment,\" \"was approved\") but do not state formal motions, seconders, or voting outcomes. No votes meet the threshold of motion language (\"moved to,\" \"seconded by\") with a recorded outcome.",
- "cost_usd": 0.0826975
+ "note": "OCR text of a single page. No motions, seconds or vote counts are printed, so no votes are recorded; approvals are listed as decisions without a recorded vote. Meeting date 2017-03-16, but the minutes were submitted April 18, 2017 and stamped received May 2017. The footer reads \"5/9/2016\" and \"FY2016 Personnel Committee Minutes\", which does not match the 2017 meeting date. The \"Meeting Posted\" and \"Absent\" fields are blank. Heather Lemieux's role is printed as Town Manager in item 4 but as \"former Town Manager\" for Kerry La Fleur in item 7.",
+ "cost_usd": 0.00329342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman (Committee Vice-Chair; chaired the meeting)",
+   "status": "present",
+   "quote": "lin vickery, scott chase and dave macdonald, nancy forest, heather lemieux and rhonda lisio"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "lin vickery, scott chase and dave macdonald, nancy forest, heather lemieux and rhonda lisio"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "lin vickery, scott chase and dave macdonald, nancy forest, heather lemieux and rhonda lisio"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Employee Representative",
+   "status": "present",
+   "quote": "lin vickery, scott chase and dave macdonald, nancy forest, heather lemieux and rhonda lisio"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "discussed role of personnel committee with town manager, heather lemieux."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lin vickery, scott chase and dave macdonald, nancy forest, heather lemieux and rhonda lisio"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee reviewed and approved the minutes of the May, August and November meetings (no motion or vote count recorded).",
+   "quote": "reviewed and approved minutes from may, august & november meetings"
+  },
+  {
+   "decision": "Committee approved the appointment of a sewer commission employee (no motion or vote count recorded).",
+   "quote": "approved appointment of sewer commission employee"
+  },
+  {
+   "decision": "Town Manager Heather Lemieux is to take more time to decide how she will use the Personnel Committee.",
+   "quote": "heather would like more time to decide how she would like to use the personnel committee."
+  },
+  {
+   "decision": "Town Manager Heather Lemieux is to provide a list of priorities the Personnel Committee can assist with.",
+   "quote": "heather will provide a list of priorities that the personnel committee can assist with"
+  },
+  {
+   "decision": "Scott Chase is to look at the list of volunteers.",
+   "quote": "scott will look at list of volunteers"
+  },
+  {
+   "decision": "The Board Clerk/Secretary grade 6 addition to the grid was approved by former Town Manager Kerry La Fleur, and Heather Lemieux was approved to write the article for Town Meeting.",
+   "quote": "heather was approved to write the article for town meeting."
+  },
+  {
+   "decision": "Nancy Forest is to provide Lin Vickery with the missing positions.",
+   "quote": "nancy will provide lin with missing positions."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (May, August, November)",
+   "resolution": "approved (no vote recorded)",
+   "quote": "reviewed and approved minutes from may, august & november meetings",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointment of sewer commission employee",
+   "resolution": "approved (no vote recorded)",
+   "quote": "approved appointment of sewer commission employee",
+   "tags": [
+    "appointment",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "no action (none)",
+   "quote": "personnel action forms - none",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Role of Personnel Committee",
+   "resolution": "discussed; Town Manager to decide how to use committee",
+   "quote": "discussed role of personnel committee with town manager, heather lemieux.",
+   "tags": [
+    "personnel committee",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Priorities list for Personnel Committee",
+   "resolution": "pending; Town Manager to provide list",
+   "quote": "heather will provide a list of priorities that the personnel committee can assist with",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "List of volunteers",
+   "resolution": "pending; Scott Chase to review",
+   "quote": "scott will look at list of volunteers",
+   "tags": [
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Article to add Board Clerk/Secretary grade 6 to the grid",
+   "resolution": "approved for Town Meeting article drafting",
+   "quote": "article to add board clerk/secretary - grade 6 to the grid.",
+   "tags": [
+    "town meeting article",
+    "pay grade",
+    "grade plan"
+   ]
+  },
+  {
+   "topic": "Other business and adjournment",
+   "resolution": "adjourned at 7:15 p.m. (no vote recorded)",
+   "quote": "meeting adjourned at 7:15 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article to add Board Clerk/Secretary - grade 6 to the grid (proposed Town Meeting article)",
+   "where": "text",
+   "quote": "article to add board clerk/secretary - grade 6 to the grid."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "town manager",
+  "sewer commission appointment",
+  "town meeting article",
+  "pay grade",
+  "minutes approval",
+  "volunteers"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

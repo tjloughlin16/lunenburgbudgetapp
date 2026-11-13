@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-07-27",
  "docid": "3840",
@@ -12,15 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Approve the application with conditions including a 15-foot wide loading zone behind the building",
+   "motion": "Motion to approve the development plan review for the used car lot at 10 Massachusetts Avenue with the outlined conditions (parking striping, one handicap space, no loading or delivery 9:00 AM to 6:00 PM, delivery not blocking access to the rear).",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "m. allison, motion to approve with outlined conditions: parking is striped in accordance with the fourteen (14) spaces shown on the plan."
+  },
+  {
+   "motion": "Amended motion that a 15 foot wide loading zone is provided behind the building.",
+   "moved_by": "M. Allison",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "m. allison amended motion that a 15 foot wide loading zone is provided behind the building, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The original motion to approve with outlined conditions was seconded, but during discussion the Board declined part of it. An amended motion about the loading zone was then made and voted on with result \"all aye\" (unanimous approval).",
- "cost_usd": 0.1093325
+ "note": "Minutes are readable text, not a scan. The main motion to approve with conditions has a recorded second and discussion but no recorded result; only the amended motion (loading zone) is recorded as \"all aye\". No dollar figures appear. The minutes contain no documents heading; the document references come from sentences describing the parking plan, the Tenant Agreement letter and a letter presented by Andrea Adams.",
+ "cost_usd": 0.0044807200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adnan Inayat",
+   "role": "Applicant, dba Premium Motors",
+   "status": "present",
+   "quote": "applicant is adnan inayat, dba premium motors."
+  },
+  {
+   "name": "Andrea Adams",
+   "role": "member of the public, 39 Pleasant Street",
+   "status": "present",
+   "quote": "andrea adams, 39 pleasant street - presented letter to the board (on file in planning office) urging the board to be comfortable"
+  },
+  {
+   "name": "Lance Rozell",
+   "role": "property owner",
+   "status": "present",
+   "quote": "lance rozell (property owner) - noted that the other two businesses on site do not have a high number of customers."
+  },
+  {
+   "name": "Frank Dower",
+   "role": "FunStuf Rentals",
+   "status": "present",
+   "quote": "frank dower, funstuf rentals- his concern at the july 13th meeting was that he has access to the back lot where his warehouse"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board declined the proposed condition of no loading/unloading within the State layout.",
+   "quote": "a. burney noted to the board a condition of no loading/unloading within the state layout. board declined."
+  },
+  {
+   "decision": "Conditions of approval will be prepared for Board signature at the August 10, 2015 meeting.",
+   "quote": "conditions will be prepared for board signature at its august 10, 2015 meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Andrea Adams",
+   "stated_role": "39 Pleasant Street",
+   "topic": "parking situation; letter to Board; medical clinic permit",
+   "quote": "andrea adams, 39 pleasant street - presented letter to the board (on file in planning office) urging the board to be comfortable"
+  },
+  {
+   "speaker": "Lance Rozell",
+   "stated_role": "property owner",
+   "topic": "customer levels at other businesses on site",
+   "quote": "lance rozell (property owner) - noted that the other two businesses on site do not have a high number of customers."
+  },
+  {
+   "speaker": "Frank Dower",
+   "stated_role": "FunStuf Rentals",
+   "topic": "access to back lot and customer parking",
+   "quote": "frank dower, funstuf rentals- his concern at the july 13th meeting was that he has access to the back lot where his warehouse"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Informational Meeting (cont'd): used car lot, 10 Massachusetts Avenue, development plan review under Section 8.4",
+   "resolution": "approved with conditions; loading zone amendment passed; conditions to be prepared for August 10",
+   "quote": "the informational meeting , continued from july 13, 2015, was to hear and discuss an application for development plan review",
+   "tags": [
+    "development plan review",
+    "used car lot",
+    "parking",
+    "zoning",
+    "10 Massachusetts Avenue"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Parking plan (scaled, showing customer and staff parking, fourteen spaces)",
+   "where": "list",
+   "quote": "a parking plan was provided along with a tenant agreement letter signed by all tenants of the site and the property owner."
+  },
+  {
+   "name": "Tenant Agreement letter signed by all tenants of the site and the property owner",
+   "where": "list",
+   "quote": "a parking plan was provided along with a tenant agreement letter signed by all tenants of the site and the property owner."
+  },
+  {
+   "name": "Letter presented by Andrea Adams (on file in Planning Office)",
+   "where": "text",
+   "quote": "andrea adams, 39 pleasant street - presented letter to the board (on file in planning office) urging the board to be comfortable"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development plan review",
+  "used car lot",
+  "parking",
+  "loading zone",
+  "public comment",
+  "zoning bylaw Section 8.4"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a parking plan was provided along with a tenant agreement letter"
+ },
+ "dropped_unquoted_by_field": {}
 }

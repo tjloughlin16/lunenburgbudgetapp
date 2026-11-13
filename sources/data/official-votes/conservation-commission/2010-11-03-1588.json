@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-11-03",
  "docid": "1588",
@@ -12,31 +12,239 @@
  },
  "votes": [
   {
-   "motion": "Approval of Notice of Intent for bridge repair, track work and signal work at MBTA Right of Way",
-   "moved_by": "JJ",
-   "seconded_by": "Rich",
-   "outcome": "unanimous",
+   "motion": "Action on the MBTA Notice of Intent (bridge repair, track work and signal work within the right of way); motion wording not printed.",
+   "moved_by": "JJ Cote",
+   "seconded_by": "Rich Bursch",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "national heritage has been contacted regarding a trench of 60 feet long and 30 inches deep. jj/rich unanimous"
+   "quote": "he stated that they have notified epa and concom. national heritage has been contacted regarding a trench of 60 feet long and 30 inches deep. jj/rich unanimous"
   },
   {
-   "motion": "Approval of Notice of Intent for retaining wall construction at 7 Oakes Landing to correct erosion issue",
-   "moved_by": "JJ",
-   "seconded_by": "Sharon",
+   "motion": "Action on the 7 Oakes Landing Notice of Intent (retaining wall to correct erosion); motion wording not printed.",
+   "moved_by": "JJ Cote",
+   "seconded_by": "Sharon Jordan",
    "outcome": "passed 4-1",
    "procedural": false,
    "quote": "the filter was a 301 grant project and was not thought thru very thoroughly. jj/sharon 1 no 4 yes"
   },
   {
-   "motion": "Approval of Notice of Intent for barn construction within buffer zone at 125 Howard Street for kennel use",
-   "moved_by": "Mark",
-   "seconded_by": "Rich",
-   "outcome": "unanimous",
+   "motion": "Action on the 125 Howard Street Notice of Intent (barn within the buffer zone); motion wording not printed.",
+   "moved_by": "Mark Murphy",
+   "seconded_by": "Rich Bursch",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "the concom had no comments or questions. mark/rich unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; votes are legible and clear.",
- "cost_usd": 0.1246855
+ "note": "OCR text of a single page, with a handwritten-style stamp '11-29-10 jpc' at top. The minutes do not print the motion wording for the three hearing votes, and they do not state whether members were present; the attendee list is the header names only. The 7 Oakes Landing tally reads '1 No 4 Yes' and is recorded as printed. No adjournment, prior-minutes approval, or money figures appear. The 392 Sunset Lane entry has no vote recorded. Some OCR text may be garbled (for example 'willo be').",
+ "cost_usd": 0.005281119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Rich Bursch",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "rob verge, rich bursch, mark murphy, john lattanzi, jj cote, jack byrne, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Gary Lorden",
+   "role": "presenter (footbridge discussion)",
+   "status": "present",
+   "quote": "7:15 pm ~ lunenburg village ~ gary lorden to discuss footbridge"
+  },
+  {
+   "name": "Richard Tonole",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by richard tonole."
+  },
+  {
+   "name": "Holly Palmgren",
+   "role": "applicant (MBTA)",
+   "status": "not stated",
+   "quote": "filed by holly palmgren of m b ta (lars carlson of the jacobs engineering group, inc.)"
+  },
+  {
+   "name": "Lars Carlson",
+   "role": "of the Jacobs Engineering Group, Inc.",
+   "status": "not stated",
+   "quote": "filed by holly palmgren of m b ta (lars carlson of the jacobs engineering group, inc.)"
+  },
+  {
+   "name": "Mike Turgeon",
+   "role": "presenter (MBTA project)",
+   "status": "present",
+   "quote": "mike turgeon presented. a small amount of track will be shifted and replaced in several sections."
+  },
+  {
+   "name": "Robert W/Mary M Marchetti",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "on a notice of intent filed by robert w/mary m marchetti."
+  },
+  {
+   "name": "Gary T Burton",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "filed by gary t burton. the proposed project is for construction of a barn within the buffer zone."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "presenter (125 Howard Street)",
+   "status": "present",
+   "quote": "steve marsden presented. barn will be used for a kennel only"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board noted the applicant at the 392 Sunset Lane hearing did not appear and directed that the applicant be called.",
+   "quote": "proposed project is for replacement of an existing railroad timber retaining wall with stone/cement pavers. only the wall will be replaced, no regrading or vegetation removal proposed. no show-will call"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "301 Grant Project (7 Oakes Landing filter)",
+   "what_was_recorded": "A wetland filter at 7 Oakes Landing was described as a 301 Grant Project, with a comment that it was not thought through very thoroughly.",
+   "figures_as_printed": [],
+   "quote": "the filter was a 301 grant project and was not thought thru very thoroughly. jj/sharon 1 no 4 yes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Gary Lorden footbridge discussion (Lunenburg Village, 7:15 PM)",
+   "resolution": "informational only, no hearing; board definitely against footbridge over wetland",
+   "tags": [
+    "footbridge",
+    "wetland",
+    "informational"
+   ],
+   "quote": "gary discussed the possibility of putting a footbridge over a wetland area. the concom was definitely against it. this was not a hearing, just informational."
+  },
+  {
+   "topic": "Park Watch and ATV update",
+   "resolution": "informational update from Sharon Jordan; 4-H interest in trail work noted",
+   "tags": [
+    "park watch",
+    "ATV",
+    "trails"
+   ],
+   "quote": "sharon updated and gave us info on park watch and atv's. a 4-h group might be interested in trail work."
+  },
+  {
+   "topic": "392 Sunset Lane Request for Determination of Applicability (retaining wall replacement)",
+   "resolution": "no show; board to call the applicant; no vote recorded",
+   "tags": [
+    "RDA",
+    "retaining wall",
+    "no show"
+   ],
+   "quote": "proposed project is for replacement of an existing railroad timber retaining wall with stone/cement pavers. only the wall will be replaced, no regrading or vegetation removal proposed. no show-will call"
+  },
+  {
+   "topic": "MBTA Right of Way Notice of Intent (7:40 PM)",
+   "resolution": "voted unanimously",
+   "tags": [
+    "MBTA",
+    "bridge repair",
+    "track work",
+    "signal work",
+    "Notice of Intent"
+   ],
+   "quote": "he stated that they have notified epa and concom. national heritage has been contacted regarding a trench of 60 feet long and 30 inches deep. jj/rich unanimous"
+  },
+  {
+   "topic": "7 Oakes Landing Notice of Intent (retaining wall, 7:50 PM)",
+   "resolution": "voted 4-1",
+   "tags": [
+    "retaining wall",
+    "erosion",
+    "wetland filter",
+    "Notice of Intent"
+   ],
+   "quote": "the filter was a 301 grant project and was not thought thru very thoroughly. jj/sharon 1 no 4 yes"
+  },
+  {
+   "topic": "125 Howard Street Notice of Intent (barn in buffer zone, 8:00 PM)",
+   "resolution": "voted unanimously",
+   "tags": [
+    "barn",
+    "buffer zone",
+    "kennel",
+    "Notice of Intent"
+   ],
+   "quote": "the concom had no comments or questions. mark/rich unanimous"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Exhibit B (MBTA project detailed description)",
+   "where": "text",
+   "quote": "refer to exhibit b for detailed description."
+  },
+  {
+   "name": "SG-1 General Notes (MBTA plan sheet)",
+   "where": "text",
+   "quote": "sg-1 general notes - concerned about materials going into brook."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "public hearing",
+  "determination of applicability",
+  "MBTA",
+  "retaining wall",
+  "footbridge",
+  "barn",
+  "trails"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

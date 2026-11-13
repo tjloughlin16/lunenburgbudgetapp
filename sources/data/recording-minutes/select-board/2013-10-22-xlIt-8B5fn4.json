@@ -1,0 +1,576 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-10-22",
+ "video_id": "xlIt-8B5fn4",
+ "video_url": "https://www.youtube.com/watch?v=xlIt-8B5fn4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-10-22-xlIt-8B5fn4.json",
+  "sha256": "15ac7d4516fe821d6be5f75b176b900f8721d84dbd86bec41736a3f7c791b076",
+  "caption_lines": 473,
+  "segments": 4102
+ },
+ "recording": {
+  "duration_s": 9900,
+  "duration": "2:45",
+  "spoken_chars": 138136,
+  "words_approx": 23022
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222013-4871",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-22-agenda-4871.txt",
+   "path": "sources/meetings/select-board/2013-10-22-agenda-4871.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10222013-4871",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-22-minutes-4871.txt",
+   "path": "sources/meetings/select-board/2013-10-22-minutes-4871.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:59:55Z",
+  "cost_usd": 0.2889892
+ },
+ "minutes": {
+  "headline": "Selectmen approved the Mass Live casino surrounding community agreement and the Green Communities energy plan.",
+  "summary": "The board approved a surrounding community agreement with the casino developer after extended questions on traffic and mitigation funds, and approved the energy reduction plan for Green Communities status. It also reviewed debt scenarios for the middle/high school project and first-quarter revenue and expenses, and gave a proclamation and commendations. A Dunkin Donuts license request was deferred to next week.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Toll",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Matthews",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Abraol",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Police Chief Marino",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Fire Chief Sullivan",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Jonathan Silverstein",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Mr. Blat",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Miss Brochu",
+    "role": "town accountant"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 112,
+    "speaker_as_heard": "Frank Hartnet",
+    "stated_role": "development director, Catalano companies",
+    "topic": "Asked for leeway on a late common victualler license so the Dunkin Donuts could open Thursday."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "debt",
+   "economic-development",
+   "facilities",
+   "free-cash",
+   "grants",
+   "high-school",
+   "legal",
+   "middle-school",
+   "msba",
+   "personnel",
+   "public-safety",
+   "tax-rate",
+   "technology",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 3914,
+    "motion": "Approve the surrounding community agreement with Cordish / Mass Live casino project",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5517,
+    "motion": "Accept the energy reduction plan from the Green Communities task force",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 9870,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1502,
+    "topic": "Casino license fee and community mitigation fund",
+    "what_was_said": "The slots facility pays a license fee, with a share going to a community mitigation fund for surrounding communities.",
+    "figures_as_heard": [
+     "$25 million",
+     "$2.5 million"
+    ]
+   },
+   {
+    "t": 1672,
+    "topic": "Casino impact fee to Lunenburg",
+    "what_was_said": "The developer agreed to a nominal annual payment plus reimbursement of public safety response costs.",
+    "figures_as_heard": [
+     "$5,000 per year"
+    ]
+   },
+   {
+    "t": 6246,
+    "topic": "School project debt impact",
+    "what_was_said": "A 30-year borrowing of the local share costs the average home less per year than 20 years but much more interest.",
+    "figures_as_heard": [
+     "$37 million",
+     "$530",
+     "$625",
+     "$25.7 million",
+     "$18.1 million"
+    ]
+   },
+   {
+    "t": 7396,
+    "topic": "First quarter revenue",
+    "what_was_said": "Revenues and new growth are ahead of budget.",
+    "figures_as_heard": [
+     "25%",
+     "$262,278",
+     "$285,000"
+    ]
+   },
+   {
+    "t": 7713,
+    "topic": "Legal expenses",
+    "what_was_said": "A large share of the legal appropriation was spent in two months, so a transfer may be needed.",
+    "figures_as_heard": [
+     "$25,000",
+     "$125,000"
+    ]
+   },
+   {
+    "t": 7796,
+    "topic": "Veterans benefits and health insurance",
+    "what_was_said": "Veterans benefits are running over while retiree health renewals will save money.",
+    "figures_as_heard": [
+     "$47,000",
+     "$50,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 360,
+    "decision": "Dunkin Donuts license placed on next Tuesday's agenda."
+   },
+   {
+    "t": 9779,
+    "decision": "Green Communities task force membership/quorum to go on the November 5th agenda."
+   },
+   {
+    "t": 8743,
+    "decision": "Town manager and board goals pushed to November 5th meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 400,
+    "topic": "Announcements and Dunkin Donuts license request",
+    "resolution": "referred",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 400,
+    "t_end": 570,
+    "topic": "Women's Club proclamation",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 570,
+    "t_end": 1235,
+    "topic": "Police and fire commendations",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1235,
+    "t_end": 1360,
+    "topic": "Announcements, trick-or-treat, cable committee vacancies",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1360,
+    "t_end": 3955,
+    "topic": "Casino surrounding community agreement",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "economic-development",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 3955,
+    "t_end": 5559,
+    "topic": "Green Communities energy reduction plan",
+    "resolution": "voted",
+    "tags": [
+     "facilities",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 5579,
+    "t_end": 7396,
+    "topic": "Bond rating and school building project debt",
+    "resolution": "informational",
+    "tags": [
+     "debt",
+     "high-school",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 7396,
+    "t_end": 8743,
+    "topic": "First quarter revenue and expenses; tax title",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 8743,
+    "t_end": 9840,
+    "topic": "Minutes, warrants, action file, committee reports, resignations",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 9840,
+    "t_end": 9890,
+    "topic": "Closing and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Adjournment vote result not clearly captioned.",
+   "Exact payroll warrant amounts garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 2234,
+    "kind": "safety",
+    "about": "Traffic impact on Lunenburg roads from the casino.",
+    "who": "a member",
+    "words_as_heard": "I anticipate that we will have a lot of traffic coming from New Hampshire down Route 13"
+   },
+   {
+    "t": 3853,
+    "kind": "condition",
+    "about": "Member's vote tied to documenting traffic baselines early.",
+    "who": "a member",
+    "words_as_heard": "While I will vote to to enter into this agreement tonight, it is with a a strong caution that we utilize these funds"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1440,
+    "name_as_heard": "proposed surrounding community agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "we have before you for your review uh and consideration a proposed surrounding community agreement"
+   },
+   {
+    "t": 4056,
+    "name_as_heard": "energy reduction action plan town of Lunberg",
+    "kind": "report",
+    "words_as_heard": "energy reduction action plan town of Lunberg"
+   },
+   {
+    "t": 6099,
+    "name_as_heard": "two handouts on school project funding scenarios",
+    "kind": "spreadsheet",
+    "words_as_heard": "walk through these two handouts with you"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-project-local-share",
+    "title": "School project borrowing",
+    "question": "What would the 20-year versus 30-year borrowing cost taxpayers?",
+    "t": 6246,
+    "words_as_heard": "for a 30-year term, we would be looking at about $530 annually for that project",
+    "data_in_play": [
+     "$37 million",
+     "$530",
+     "$625"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to approve a surrounding community agreement with the casino developer, after extended questions on traffic and mitigation funds.",
+    "t": 3914
+   },
+   {
+    "line": "The board accepted the energy reduction plan from the Green Communities task force, a step toward Green Communities status.",
+    "t": 5517
+   },
+   {
+    "line": "Under the agreement as described, the developer would make a nominal annual payment to Lunenburg plus reimbursement of public safety response costs.",
+    "t": 1672
+   },
+   {
+    "line": "The board reviewed borrowing scenarios for the middle/high school project; a 30-year term costs the average home less per year than 20 years but adds much more interest.",
+    "t": 6246
+   },
+   {
+    "line": "First-quarter figures showed revenues and new growth ahead of budget, while legal spending ran high and a transfer may be needed.",
+    "t": 7713
+   }
+  ],
+  "why_it_matters": [
+   "The casino agreement sets what Lunenburg receives for policing and other response costs, which are paid from the town budget, mostly taxes.",
+   "The school borrowing term decides the yearly tax-bill impact against total interest paid over the life of the loan, so a longer term lowers each year's bill but raises the overall cost.",
+   "Legal costs and veterans benefits running over budget could require transfers that draw on other town funds."
+  ],
+  "watch_next": [
+   "The Dunkin Donuts license request returns on next Tuesday's agenda.",
+   "The November 5th meeting is to take up town manager and board goals and Green Communities task force membership and quorum."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T19:00:03Z",
+   "cost_usd": 0.0236011
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10222013-4871",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-22-minutes-4871.txt",
+   "path": "sources/meetings/select-board/2013-10-22-minutes-4871.pdf"
+  },
+  "official_sha256": "b03941ab8a8a2dbfa5777e6ec357cc13edffdd19f95b9e3e8bc3dfb6735ad687",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the two main votes (casino agreement, energy plan) and most figures, with a few caption errors. Differences: the Dunkin license agenda date (next Tuesday vs 10/29), the school tax impact ($530 vs $538), and the energy plan vote, which the official minutes limit to Criteria 3.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: surrounding community agreement with Mass Live casino",
+    "ours": "Approve the surrounding community agreement with Cordish / Mass Live casino project — passed",
+    "official": "mr. matthews moved to approve the surrounding community agreement with mass live! casino project. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+    "note": "Same vote and outcome; official adds the 5-0 tally.",
+    "t": 3914
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: Green Communities energy reduction plan",
+    "ours": "Accept the energy reduction plan from the Green Communities task force — passed",
+    "official": "ms. bertram moved to approve the green communities task force criteria 3, of the energy reduction plan. mir. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+    "note": "Official minutes limit the vote to Criteria 3 of the plan, while ours describes accepting the whole plan; check the recording for the motion wording.",
+    "t": 5517
+   },
+   {
+    "kind": "agree",
+    "about": "Casino license fee $25 million",
+    "ours": "Casino license fee and community mitigation fund: $25 million, $2.5 million",
+    "official": "they will immediately need to pay a $25m license fee and from then on will pay 49% of their gaming revenues to the state.",
+    "note": "The $25M license fee matches; the $2.5 million figure has no clear counterpart in the official figures.",
+    "t": 1502
+   },
+   {
+    "kind": "agree",
+    "about": "Casino impact fee to Lunenburg",
+    "ours": "Casino impact fee to Lunenburg: $5,000 per year",
+    "official": "the actual impact fee that the developer would agree to was $5000 per year.",
+    "note": "Same amount.",
+    "t": 1672
+   },
+   {
+    "kind": "caption_error",
+    "about": "School project annual tax impact",
+    "ours": "School project debt impact: $37 million, $530, $625, $25.7 million, $18.1 million",
+    "official": "the projected impact of a 30 year project on an estimated $37m would be approximately $538 annually for a home of average assessed valuation of $248,000.",
+    "note": "$530 is probably a mishearing of $538; the other figures ($37M, $625, $25.7M, $18.1M) match.",
+    "t": 6246,
+    "official_reading": "$538"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "First quarter revenue",
+    "ours": "First quarter revenue: 25%, $262,278, $285,000",
+    "official": "revenues through 9/30/2013 are running at 24.46% of budget.",
+    "note": "25% is consistent with 24.46% rounded. The official minutes' $250,000 and $280,000 are expected second-quarter new growth figures, not Q1 revenue; $262,278 and $285,000 are not in the official minutes. Check the recording for what those amounts refer to.",
+    "t": 7396
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Legal expenses $25,000 / $125,000",
+    "ours": "Legal expenses: $25,000, $125,000",
+    "official": "",
+    "note": "The official figures do not mention legal expenses.",
+    "t": 7713
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Veterans benefits and health insurance $47,000 / $50,000",
+    "ours": "Veterans benefits and health insurance: $47,000, $50,000",
+    "official": "",
+    "note": "The official figures do not mention these items.",
+    "t": 7796
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Dunkin Donuts license agenda date",
+    "ours": "Dunkin Donuts license placed on next Tuesday's agenda.",
+    "official": "this request will be added to the 10/29/2013 bos agenda.",
+    "note": "The meeting was 10/22, so next Tuesday is 10/29 and the two likely agree. Confirm that. The official minutes also record that the board said it could not act before the Thursday grand opening.",
+    "t": 360
+   },
+   {
+    "kind": "agree",
+    "about": "Green Communities task force membership on Nov 5 agenda",
+    "ours": "Green Communities task force membership/quorum to go on the November 5th agenda.",
+    "official": "this item will be put on the 11/5/2013 bos agenda for further discussion.",
+    "note": "Same decision and date.",
+    "t": 9779
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager and board goals moved to Nov 5",
+    "ours": "Town manager and board goals pushed to November 5th meeting.",
+    "official": "5. status update: town manager goals: rescheduled to the 11/5/2013 bos meeting.",
+    "note": "Same decision and date.",
+    "t": 8743
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town reserves 5% vs 12-15%",
+    "ours": "",
+    "official": "have our financial reserves north of 10% upwards to 12 or 15% and currently we struggle to stay at 5%.",
+    "note": "Reserve discussion is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Q1 expenditures at 37.5% of budget",
+    "ours": "",
+    "official": "expenditures through 9/30/2013 are running at 37.5% of budget, which is typical of the first quarter, as this",
+    "note": "Our minutes do not record the expenditure percentage.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Solar permits and Jones House status reports",
+    "ours": "",
+    "official": "mr. alonzo suggested that the bos receive status reports on the progress of the renovations to the jones house.",
+    "note": "Our minutes omit this and the Town Manager contract paperwork signing.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Toll",
+    "ours": "Mr. Toll (member)",
+    "official": "jamie toale",
+    "note": "Misheard name for Toale.",
+    "t": 0,
+    "official_reading": "Jamie Toale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Abraol",
+    "ours": "Mr. Abraol (member)",
+    "official": "tom alonzo",
+    "note": "Misheard name for Chair Alonzo.",
+    "t": 0,
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Blat",
+    "ours": "Mr. Blat (presenter)",
+    "official": "david blatt, chairperson of the green communities task force and john londa, advisor came before the bos",
+    "note": "Name misspelled.",
+    "t": 0,
+    "official_reading": "David Blatt"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Robert Ebersole",
+    "ours": "",
+    "official": "vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and",
+    "note": "Board member Ebersole is in the official minutes but not in our attendee list.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Bertram, Matthews, Marino, Sullivan, Silverstein, Brochu",
+    "ours": "Mrs. Bertram (member); Mr. Matthews (member); Police Chief Marino; Fire Chief Sullivan; Jonathan Silverstein; Miss Brochu",
+    "official": "police chief james marino and fire chief patrick sullivan came before the bos to present commendations of bravery",
+    "note": "These attendees appear in both records.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T19:01:44Z",
+   "cost_usd": 0.057791100000000005
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-06-29",
  "docid": "3548",
@@ -12,16 +12,123 @@
  },
  "votes": [
   {
-   "motion": "Continue the Information Meeting to July 13, 2009, 6:30 PM",
-   "moved_by": "Robert J. Saiia",
-   "seconded_by": "Thomas W. Bodkin, Jr.",
+   "motion": "Continue the Information Meeting for 100 Pleasant Street to July 13, 2009, 6:30 PM.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "chair asked for a motion to continue information me eting to july 13, 2009, 6:30 pm. motion, mr. saiia, second, mr. bodkin",
-   "quote_taken_from_text": true
+   "quote": "motion, mr. saiia, second, mr. bodkin."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One motion to continue an Information Meeting was recorded. The minutes show the motion was made and seconded, and the meeting subsequently recessed (implying passage), but no explicit vote count or formal approval language was recorded in the minutes.",
- "cost_usd": 0.10465250000000001
+ "note": "Text is a machine extraction with split words (e.g. \"Hallo ran\", \"Mars den\", \"Information Me eting\") and collapsed spacing; quotes were chosen to avoid split words. The minutes record one motion (continuance) with the mover and seconder but no result, so outcome is 'not stated'. Lieutenant Ricci's first name and the applicant's attendance at the meeting are not stated. No budget figures or public comment appear in the text.",
+ "cost_usd": 0.00375552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "James A. Hallo ran",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr., marion m. benson, planning"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta"
+  },
+  {
+   "name": "Michael DeLuca",
+   "role": "Applicant",
+   "status": "not stated",
+   "quote": "the applicant, michael deluca, 74 bolton woods way, bolton, ma was represented by steven marsden"
+  },
+  {
+   "name": "Steven Marsden",
+   "role": "representing the applicant (Marsden Engineering)",
+   "status": "present",
+   "quote": "was represented by steven marsden, mars den engineering.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Lieutenant Ricci",
+   "role": "Fire Department",
+   "status": "present",
+   "quote": "lieutenant ricci, fire department noted department"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Development Plan Review, 100 Pleasant Street (repair of machinery and service establishment, Section 8.4)",
+   "resolution": "continued to July 13, 2009",
+   "quote": "the information meeting was to hear and discuss an application for a development plan review under section 8.4.",
+   "tags": [
+    "development plan review",
+    "100 Pleasant Street",
+    "continuance",
+    "zoning"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR (Approval Not Required) Plan (new ANR providing 100 feet of frontage on Lot A; current plan shows 99.78 feet)",
+   "where": "text",
+   "quote": "ms. benson noted a new anr is being submitted"
+  },
+  {
+   "name": "Septic plans submitted to Nashoba Associated Boards of Health",
+   "where": "text",
+   "quote": "submitted to nashoba associated boards of health."
+  },
+  {
+   "name": "Audio recording of the Information Meeting (on file in Planning Office)",
+   "where": "text",
+   "quote": "audio recording on file in planning office."
+  }
+ ],
+ "tags": [
+  "development plan review",
+  "information meeting",
+  "100 Pleasant Street",
+  "ANR",
+  "special permit",
+  "fire safety",
+  "continuance",
+  "zoning"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

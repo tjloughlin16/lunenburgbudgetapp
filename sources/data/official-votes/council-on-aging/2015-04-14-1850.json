@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2015-04-14",
  "docid": "1850",
@@ -12,23 +12,364 @@
  },
  "votes": [
   {
-   "motion": "to accept the March 10, 2015 Council on Aging minutes",
+   "motion": "Accept the March 10, 2015 Council on Aging minutes.",
    "moved_by": "Ms. Dwyer",
    "seconded_by": "Ms. Moisan",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. dwyer moved to accept the march 10, 2015 council on aging minutes. ms. moisan seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "to adjourn the COA meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Ms. Dwyer",
    "seconded_by": "Ms. Grant",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "being no further business, ms. dwyer moved to adjourn the coa meeting. ms. grant seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and fully readable. Two votes recorded, both procedural.",
- "cost_usd": 0.0854805
+ "note": "Minutes are marked as approved at the May 12, 2015 COA meeting. Text has split words and odd spacing; quotes collapse runs of spaces. Two motions are recorded, both carried unanimously with no tally printed. The Director's Report sub-bullets are treated as separate topics. Several budget items discuss money without printing any dollar figures.",
+ "cost_usd": 0.00780722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice chai r), doreen noble (director), debbie lincoln,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice chai r), doreen noble (director), debbie lincoln,"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice chai r), doreen noble (director), debbie lincoln,"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice chai r), doreen noble (director), debbie lincoln,"
+  },
+  {
+   "name": "Sarah Grant",
+   "status": "present",
+   "quote": "sarah grant, diane nowd, betty digiacomo, cheryl mo isan, judy tarbell, jacquelyn dwyer, kevin mcnally,"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "sarah grant, diane nowd, betty digiacomo, cheryl mo isan, judy tarbell, jacquelyn dwyer, kevin mcnally,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "sarah grant, diane nowd, betty digiacomo, cheryl mo isan, judy tarbell, jacquelyn dwyer, kevin mcnally,"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "present",
+   "quote": "sarah grant, diane nowd, betty digiacomo, cheryl mo isan, judy tarbell, jacquelyn dwyer, kevin mcnally,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "sarah grant, diane nowd, betty digiacomo, cheryl mo isan, judy tarbell, jacquelyn dwyer, kevin mcnally,"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "status": "present",
+   "quote": "sarah grant, diane nowd, betty digiacomo, cheryl mo isan, judy tarbell, jacquelyn dwyer, kevin mcnally,"
+  },
+  {
+   "name": "Kevin McNally",
+   "status": "present",
+   "quote": "sarah grant, diane nowd, betty digiacomo, cheryl mo isan, judy tarbell, jacquelyn dwyer, kevin mcnally,"
+  },
+  {
+   "name": "Brian Guenard",
+   "status": "present",
+   "quote": "brian guenard & sue doherty (admin. asst)."
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst",
+   "status": "present",
+   "quote": "brian guenard & sue doherty (admin. asst)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Salad Bar will be reinstated on the last Thursday of each month at the meal site.",
+   "quote": "the salad bar will be reinstated on the last thursd ay of each month at the meal site",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The cribbage day was changed from Mondays to Tuesdays because attendance is increasing and space is limited.",
+   "quote": "the cribbage day has been changed from mondays to tuesdays."
+  },
+  {
+   "decision": "The Lunenburg Turkey Hill Lions Club pancake breakfast stays on the 2nd Wednesday of the month, per participant preference in the questionnaire.",
+   "quote": "participants preferred to keep this event on the 2"
+  },
+  {
+   "decision": "Pamphlet printing was dropped as too expensive; pamphlets will remain at the senior center and other Town locations.",
+   "quote": "researched printing costs but has come to the conclusion that it would be too expensive of an undertaking."
+  },
+  {
+   "decision": "The Board of Selectmen procedure from 1998 will be followed to pick the next Boston Post Cane recipient, with the Town Clerk and Director making the determination.",
+   "quote": "the town clerk and director will be making the determination of who the recipient will be."
+  },
+  {
+   "decision": "The board set the Annual Volunteer Appreciation Cookout for August 17, 2015, 11AM-2PM.",
+   "quote": "the board set the date of august 17, 2015, from 11am-2pm, for the annual volunteer appreciation cookout."
+  },
+  {
+   "decision": "The Director will contact the Fire & Police to request their help with the Volunteer Appreciation Cookout.",
+   "quote": "the director will contact the fire & police to request their help again this year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget report",
+   "what_was_recorded": "Director will prepare a budget report for the May COA meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. noble informed the board"
+  },
+  {
+   "topic": "LED lighting and senior center grant",
+   "what_was_recorded": "New LED lighting was installed through a grant obtained by the Lunenburg Green Communities Task Force; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "new led lighting has been installed throughout the senior center."
+  },
+  {
+   "topic": "Gardener for senior center grounds",
+   "what_was_recorded": "Eagle House Supporters Inc. agreed to pay for a gardener for daily watering and upkeep; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the eagle house supporters inc. have agreed to pay for a gardener"
+  },
+  {
+   "topic": "Wish list for Eagle House Supporters",
+   "what_was_recorded": "Wish list items for purchase by Eagle House Supporters (storage shed and shade trees) discussed; no prices printed.",
+   "figures_as_printed": [],
+   "quote": "which included a storage shed and shade trees."
+  },
+  {
+   "topic": "Informational pamphlet printing costs",
+   "what_was_recorded": "Printing costs were researched with the Ledger and judged too expensive; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "researched printing costs but has come to the conclusion that it would be too expensive of an undertaking."
+  },
+  {
+   "topic": "Shuffleboard court and horseshoe pits",
+   "what_was_recorded": "Project to be funded by outside donations and volunteers; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "driven project with outside donations"
+  },
+  {
+   "topic": "Oral health screenings",
+   "what_was_recorded": "Dental hygienist will perform oral health screenings at reasonable rates; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "will be preforming oral health screenings at reasonable rates."
+  },
+  {
+   "topic": "Twin City Paws shoe collection",
+   "what_was_recorded": "Old shoe collection will earn funds for an agency; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "collection box available for old shoes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; Facebook page praised",
+   "quote": "ms. dwyer spoke to say how she pleased she was to see how well the page is working.",
+   "tags": [
+    "announcements",
+    "facebook"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved March 10, 2015 minutes",
+   "quote": "ms. dwyer moved to accept the march 10, 2015 council on aging minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported, no action",
+   "quote": "meal site worker judy alario will be returning to work after a lengthy illness.",
+   "tags": [
+    "staffing",
+    "meal site",
+    "senior center",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Budget Report",
+   "resolution": "continued to May meeting",
+   "quote": "ms. noble informed the board",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Building Repair Progress",
+   "resolution": "reported; roof repair under DPW review",
+   "quote": "new led lighting has been installed throughout the senior center.",
+   "tags": [
+    "building",
+    "grant",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Boston Post Cane recipient",
+   "resolution": "procedure confirmed; Town Clerk and Director to determine recipient",
+   "quote": "the town clerk and director will be making the determination of who the recipient will be.",
+   "tags": [
+    "boston post cane",
+    "awards"
+   ]
+  },
+  {
+   "topic": "Eagle Scout walkway",
+   "resolution": "reported; awaiting Boy Scout Council approval",
+   "quote": "mr. marshall still needs to obtain approval from the boy scout council",
+   "tags": [
+    "eagle scout",
+    "parking lot"
+   ]
+  },
+  {
+   "topic": "Expiring COA terms renewal",
+   "resolution": "renewal forms given to members",
+   "quote": "currently there are three coa board members, brian guenard, debby lincoln, & betty digiacomo",
+   "tags": [
+    "appointments",
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Wish list for Eagle House Supporters",
+   "resolution": "discussed; work in progress",
+   "quote": "board members discussed items for the wish list to be submitted to the eagle house supporters",
+   "tags": [
+    "fundraising",
+    "wish list"
+   ]
+  },
+  {
+   "topic": "Task groups: Advocacy",
+   "resolution": "reported; health fair suggested",
+   "quote": "board members updated ms. seeley on the meeting which was held with state rep. jennifer benson in",
+   "tags": [
+    "advocacy",
+    "task groups"
+   ]
+  },
+  {
+   "topic": "Task groups: Communication",
+   "resolution": "pamphlets dropped as too costly",
+   "quote": "ms. lincoln updated the board about eagle house senior center informational pamphlets.",
+   "tags": [
+    "communication",
+    "task groups"
+   ]
+  },
+  {
+   "topic": "Task groups: Public Relations",
+   "resolution": "no action; see announcements",
+   "quote": "facebook page : discussed under announcements.",
+   "tags": [
+    "public relations",
+    "task groups"
+   ]
+  },
+  {
+   "topic": "Notices & Communications",
+   "resolution": "received notice; no action",
+   "quote": "a notice was read from executive office of elder affairs announcing upcoming coa board training sessions.",
+   "tags": [
+    "training",
+    "notices"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "Slate of Officers to May meeting; cookout date set",
+   "quote": "the board set the date of august 17, 2015, from 11am-2pm, for the annual volunteer appreciation cookout.",
+   "tags": [
+    "officers",
+    "volunteers",
+    "cookout"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment : none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:50AM",
+   "quote": "meeting adjourned at 10:50am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Council on Aging minutes of March 10, 2015",
+   "where": "text",
+   "quote": "ms. dwyer moved to accept the march 10, 2015 council on aging minutes."
+  },
+  {
+   "name": "Yes/no questionnaire provided at the 4/8/2015 pancake breakfast",
+   "where": "text",
+   "quote": "a simple \"yes/no\" questionnaire was provided at the 4/8/2015 pancake breakfast"
+  },
+  {
+   "name": "Appointment renewal forms",
+   "where": "text",
+   "quote": "were given appointment renewal forms to fill out."
+  },
+  {
+   "name": "Notice from Executive Office of Elder Affairs on COA Board Training sessions",
+   "where": "text",
+   "quote": "a notice was read from executive office of elder affairs announcing upcoming coa board training sessions."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "eagle house",
+  "meal site",
+  "volunteers",
+  "boston post cane",
+  "task groups",
+  "appointments",
+  "budget",
+  "facilities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

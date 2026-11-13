@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-12-29",
  "docid": "3560",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to sign the ANR plan presented by Jesse Johnson, David Ross Associates",
+   "motion": "Sign the ANR plan for 137 Leominster Shirley Road presented by Jesse Johnson, David Ross Associates",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed 3-0",
@@ -20,15 +20,121 @@
    "quote": "motion, mr. bodkin jr., to sign the anr pl an presented by jesse johnson, david ross associate s, second, mr. lockwood, motion passed 3-0."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn, mr. bodkin jr., se cond, mr. lockwood, motion passed."
+   "quote": "motion to adjourn, mr. bodkin jr., se cond, mr. lockwood, motion passed. adjourned 6:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10512550000000001
+ "note": "The text is a machine extraction: the top of page 1 carries garbled font-code strings (/U76/U85...) in place of the letterhead, and many words are split by stray spaces (for example \"pl an\", \"Shirl ey\", \"Se cond\"); quotes reproduce that spacing as printed. Vote tally is 3-0 with four members listed present; the minutes do not say which member did not vote. The Planning Director is named only by title. No dollar figures, transfers, public comment, or document list appear in the minutes.",
+ "cost_usd": 0.00350242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, thomas w. bodkin jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, thomas w. bodkin jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, thomas w. bodkin jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, thomas w. bodkin jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Planning Director",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, thomas w. bodkin jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta, robert j. saiia"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta, robert j. saiia"
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "presenter of ANR plan, David Ross Associates",
+   "status": "not stated",
+   "quote": "motion, mr. bodkin jr., to sign the anr pl an presented by jesse johnson, david ross associate s"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Notice of Approval to the applicants will note that they must contact the Conservation Commission and the Board of Health.",
+   "quote": "notice of approval to the applicants will note that they need to contact the conservation commission a nd the board of health."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Project plan signatures: ANR 137 Leominster Shirley Road",
+   "resolution": "ANR plan signed, passed 3-0; Land Use office comments noted (Conservation Commission and Board of Health follow-up)",
+   "quote": "project plan signatures: anr- 137 leominster shirl ey road- director noted comments from land use offices",
+   "tags": [
+    "ANR",
+    "plan signature",
+    "subdivision",
+    "conservation",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:45 PM",
+   "quote": "motion to adjourn, mr. bodkin jr., se cond, mr. lockwood, motion passed. adjourned 6:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR plan, 137 Leominster Shirley Road, presented by Jesse Johnson, David Ross Associates",
+   "where": "text",
+   "quote": "motion, mr. bodkin jr., to sign the anr pl an presented by jesse johnson, david ross associate s"
+  },
+  {
+   "name": "Fitchburg Gas & Electric/Verizon easement recorded in Book 5469, Page 129",
+   "where": "text",
+   "quote": "records noted a fitchburg gas & electric/verizon easement recorded in book 5469, page 129."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "plan signature",
+  "conservation commission",
+  "board of health",
+  "notice of intent",
+  "wetlands",
+  "riverfront",
+  "septic",
+  "Chapter 61A"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

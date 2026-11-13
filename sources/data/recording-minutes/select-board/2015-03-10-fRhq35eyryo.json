@@ -1,0 +1,552 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2015-03-10",
+ "video_id": "fRhq35eyryo",
+ "video_url": "https://www.youtube.com/watch?v=fRhq35eyryo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-03-10-fRhq35eyryo.json",
+  "sha256": "bf0459acef76caf694f0cd446157af9e1ad206aa971f18ed3b5f9431e42eaed0",
+  "caption_lines": 82,
+  "segments": 670
+ },
+ "recording": {
+  "duration_s": 1740,
+  "duration": "0:29",
+  "spoken_chars": 21785,
+  "words_approx": 3630
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03102015-4920",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-03-10-agenda-4920.txt",
+   "path": "sources/meetings/select-board/2015-03-10-agenda-4920.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102015-4920",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-03-10-minutes-4920.txt",
+   "path": "sources/meetings/select-board/2015-03-10-minutes-4920.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:55:24Z",
+  "cost_usd": 0.1342524
+ },
+ "minutes": {
+  "headline": "Select Board appointed a five-member cable advisory committee and heard the town manager's FY16 state-aid update.",
+  "summary": "The board named two public access cable committee members and three board members to a new cable advisory committee. It reviewed the FY16 budget in light of the governor's budget, health insurance renewal, Monty Tech and snow storm costs. Committee reports covered the Village Center District and architectural preservation bylaws, and the caucus offices were announced.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mrs Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr ebiso",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jamie",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bob",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tom",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Paula",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 237,
+    "topic": "Chair asked for public comment; none offered."
+   },
+   {
+    "t": 1693,
+    "topic": "Final call for public comment; none recorded."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy26",
+   "chapter-70",
+   "elections",
+   "health-insurance",
+   "monty-tech",
+   "personnel",
+   "planning-and-zoning",
+   "school-choice",
+   "state-aid",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 364,
+    "motion": "Nominate Rhonda and Steve from the public access cable committee, plus Tom, Paula and Jamie from the Select Board, to the cable advisory committee.",
+    "moved_by": "a member",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 478,
+    "topic": "Chapter 70 in governor's budget",
+    "what_was_said": "The governor's budget raised Chapter 70 over the current year; the town manager had carried a lower assumption.",
+    "figures_as_heard": [
+     "2.4 percent",
+     "2 percent"
+    ]
+   },
+   {
+    "t": 478,
+    "topic": "Unrestricted general government aid",
+    "what_was_said": "The governor's budget increased unrestricted aid, which the town manager had not included.",
+    "figures_as_heard": [
+     "3.6 percent"
+    ]
+   },
+   {
+    "t": 501,
+    "topic": "Annual state payment (the '40s' payment)",
+    "what_was_said": "The governor's budget includes this payment, which may not stay and is not in the town manager's recommendation.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 543,
+    "topic": "Choice tuition",
+    "what_was_said": "Carried at the same higher level in next year's budget, so not an issue.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 589,
+    "topic": "Health insurance renewal",
+    "what_was_said": "Renewal came in higher than the projection, adding cost.",
+    "figures_as_heard": [
+     "10.9 percent",
+     "seven"
+    ]
+   },
+   {
+    "t": 610,
+    "topic": "Monty Tech assessment",
+    "what_was_said": "No preliminary assessment yet; expected to be higher than the preliminary budget.",
+    "figures_as_heard": [
+     "forty eight thousand dollars",
+     "forty seven thousand"
+    ]
+   },
+   {
+    "t": 717,
+    "topic": "Snow and ice storm costs / FEMA",
+    "what_was_said": "Costs for four storms were submitted to FEMA as one event, with possible reimbursement.",
+    "figures_as_heard": [
+     "three hundred thousand dollars",
+     "75 percent"
+    ]
+   },
+   {
+    "t": 757,
+    "topic": "Governor's two-year amortization of snow deficit",
+    "what_was_said": "The town can already carry the deficit into FY16; staff would not propose using the amortization.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 944,
+    "topic": "Two annual state payments in one fiscal year",
+    "what_was_said": "The recommendation includes the prior payment; if two payments come, one should go to capital or one-time expenses.",
+    "figures_as_heard": [
+     "1540s payment"
+    ]
+   },
+   {
+    "t": 1029,
+    "topic": "Payroll and accounts payable warrants",
+    "what_was_said": "Warrants for payroll deduction, payroll and accounts payable were read.",
+    "figures_as_heard": [
+     "487 168.37",
+     "705 849.91",
+     "386 000 626.77"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 321,
+    "decision": "Board proceeded to make cable committee appointments without waiting for town counsel's answers."
+   },
+   {
+    "t": 797,
+    "decision": "Board and town manager indicated they would not use the governor's two-year amortization option for snow costs."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 237,
+    "topic": "Pledge, announcements and caucus offices",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 237,
+    "t_end": 387,
+    "topic": "Cable advisory committee appointments",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 387,
+    "t_end": 1029,
+    "topic": "FY16 budget, governor's budget, Monty Tech, FEMA snow costs",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy26",
+     "state-aid",
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 1029,
+    "t_end": 1110,
+    "topic": "Minutes and warrants",
+    "resolution": "no vote audible",
+    "tags": []
+   },
+   {
+    "t_start": 1110,
+    "t_end": 1693,
+    "topic": "Committee reports, Village Center District and preservation bylaws",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1693,
+    "t_end": 1737,
+    "topic": "Final comment and adjournment to workshop",
+    "resolution": "informational",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Votes on minutes and warrants not audible; lines 1074-1110 are garbled.",
+   "Exact figures read for warrants unreliable."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1424,
+    "about": "Members differed on whether the Village Center District bylaw should proceed without the architectural preservation bylaw.",
+    "sides": "one member favored postponing to fall town meeting if preservation bylaw isn't ready; another urged moving forward quickly",
+    "words_as_heard": "the implementation of the Village Center District would uh decimate the historic district",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1424,
+    "kind": "condition",
+    "about": "A member would postpone the Village Center District bylaw if the preservation district is not ready.",
+    "who": "a member",
+    "words_as_heard": "if the architectural preservation district is not ready for town meeting then I would recommend that we consider postponing it to the fall town meeting"
+   },
+   {
+    "t": 1546,
+    "kind": "condition",
+    "about": "A member is concerned about moving forward without preservation protections for historic properties.",
+    "who": "a member",
+    "words_as_heard": "I'm very concerned about moving forward without at least some type of preservation by law in place"
+   },
+   {
+    "t": 965,
+    "kind": "condition",
+    "about": "If two annual state payments come in one year, one should fund one-time items, not the base.",
+    "who": "the town manager",
+    "words_as_heard": "one of them should be for capital or one-time expenses"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1029,
+    "name_as_heard": "minutes from October 7th",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes they were here somewhere and it's from October 7th"
+   },
+   {
+    "t": 1401,
+    "name_as_heard": "Village Center District bylaw draft, map and architectural preservation district drafts",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "the Village Center District bylaw draft the map and the architectural preservation District draft bylaws"
+   },
+   {
+    "t": 589,
+    "name_as_heard": "health insurance renewal information",
+    "kind": "memo",
+    "words_as_heard": "I know I sent you some information"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "state-aid-fy16-governors-budget",
+    "title": "Governor's budget state aid",
+    "question": "How do the governor's budget aid figures change the town's FY16 budget?",
+    "t": 478,
+    "words_as_heard": "the Chapter 70 allocation the governor's budget increased over the current year by 2.4 percent",
+    "data_in_play": [
+     "2.4 percent",
+     "3.6 percent",
+     "2 percent"
+    ],
+    "existing": "topic:state-aid-growth"
+   },
+   {
+    "slug": "snow-and-ice-budget",
+    "title": "Snow and ice budget",
+    "question": "How much did the four storms cost and how much might FEMA reimburse?",
+    "t": 717,
+    "words_as_heard": "the total costs that we incurred for those four storms were about three hundred thousand dollars",
+    "data_in_play": [
+     "three hundred thousand dollars",
+     "75 percent"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "monty-tech-assessment",
+    "title": "Monty Tech assessment",
+    "question": "How much higher will the Monty Tech assessment be than budgeted?",
+    "t": 610,
+    "words_as_heard": "the assessment is going to be probably forty eight thousand dollars higher",
+    "data_in_play": [
+     "forty eight thousand dollars"
+    ],
+    "existing": "topic:monty-tech-assessment"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted unanimously to name five members to a new cable advisory committee: two from the public access cable committee and three board members.",
+    "t": 364
+   },
+   {
+    "line": "The board made the cable appointments without waiting for town counsel's answers on the committee.",
+    "t": 321
+   },
+   {
+    "line": "The town manager said the governor's budget raises Chapter 70 and unrestricted aid above what the FY16 recommendation assumed, and includes an annual state payment that may not stay.",
+    "t": 478
+   },
+   {
+    "line": "Health insurance renewal came in above the projection, and Monty Tech has not yet given a preliminary assessment, which is expected to be higher than budgeted.",
+    "t": 589
+   },
+   {
+    "line": "Costs from four snow storms were submitted to FEMA as one event; the board and town manager indicated they would not use the governor's two-year amortization option.",
+    "t": 757
+   }
+  ],
+  "why_it_matters": [
+   "State aid, health insurance and the Monty Tech assessment all feed the FY16 budget, so each change moves the amount the town budget, mostly taxes, must cover.",
+   "Snow costs stay in FY16 rather than being spread over two years, and any FEMA reimbursement is not yet certain."
+  ],
+  "watch_next": [
+   "The Monty Tech preliminary assessment, which had not yet been issued at this meeting.",
+   "Whether FEMA reimburses the snow costs, and whether a second annual state payment arrives and is directed to capital or one-time expenses."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:55:32Z",
+   "cost_usd": 0.0237171
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102015-4920",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2015-03-10-minutes-4920.txt",
+   "path": "sources/meetings/select-board/2015-03-10-minutes-4920.pdf"
+  },
+  "official_sha256": "e4525ddbf3ffa29dab28332b9727a0903677f9e0d3b1e30f25f17ba4b3c3a0e7",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on most budget figures and the five cable committee appointees, with only caption garbling in a few names and numbers. The main difference is that ours says the board went ahead with the appointments and would not use the amortization option, while the official minutes say the cable discussion was continued a week and record no amortization decision; the FEMA percentage also differs (75% vs 70%).",
+  "counts": {
+   "agree": 6,
+   "caption_error": 4,
+   "discrepancy": 4,
+   "only_in_ours": 0,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Cable advisory committee appointment vote",
+    "ours": "Nominate Rhonda and Steve from the public access cable committee, plus Tom, Paula and Jamie from the Select Board, to the cable advisory committee. — passed (aye, none opposed)",
+    "official": "to appoint steve walker, rhonda lisio, tom alonzo, paula bertram and jamie toale to the cable advisory committee",
+    "note": "Both record the same five appointees as passed, but the official minutes also say the discussion was continued to next week, which conflicts with our decision that the board proceeded; check the recording on whether the appointments were final.",
+    "t": 364
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cable committee: proceed vs continue",
+    "ours": "Board proceeded to make cable committee appointments without waiting for town counsel's answers.",
+    "official": "the discussion will be continued at next week's meeting.",
+    "note": "Our minutes describe appointments made immediately; official says the discussion was continued a week. Check the recording to see what was actually decided.",
+    "t": 321
+   },
+   {
+    "kind": "agree",
+    "about": "Chapter 70 increase 2.4%",
+    "ours": "Chapter 70 in governor's budget: 2.4 percent, 2 percent",
+    "official": "chapter 70 will receive an increase of 2.4% and unrestricted general government aid will have a 3.6 % increase",
+    "note": "2.4% matches; the stray '2 percent' in the captions is not in the official text.",
+    "t": 478
+   },
+   {
+    "kind": "agree",
+    "about": "Unrestricted general government aid 3.6%",
+    "ours": "Unrestricted general government aid: 3.6 percent",
+    "official": "chapter 70 will receive an increase of 2.4% and unrestricted general government aid will have a 3.6 % increase",
+    "note": "Same figure.",
+    "t": 478
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance renewal 10.9% vs 7% projected",
+    "ours": "Health insurance renewal: 10.9 percent, seven",
+    "official": "health insurance renewal has increased 10.9%; she had projected 7%.",
+    "note": "Same figures.",
+    "t": 589
+   },
+   {
+    "kind": "caption_error",
+    "about": "Monty Tech assessment",
+    "ours": "Monty Tech assessment: forty eight thousand dollars, forty seven thousand",
+    "official": "it may possibly be $48,000 more than listed on the preliminary budget.",
+    "note": "$48,000 matches; 'forty seven thousand' appears to be a caption artifact, so check the recording if it matters.",
+    "official_reading": "$48,000",
+    "t": 610
+   },
+   {
+    "kind": "discrepancy",
+    "about": "FEMA reimbursement percentage",
+    "ours": "Snow and ice storm costs / FEMA: three hundred thousand dollars, 75 percent",
+    "official": "the total costs the town incurred during those storms is around $300,000.",
+    "note": "Cost of $300,000 agrees, but our minutes say 75 percent reimbursement and the official summary says 70% by FEMA; check the recording.",
+    "t": 717
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Governor's two-year amortization for snow costs",
+    "ours": "Board and town manager indicated they would not use the governor's two-year amortization option for snow costs.",
+    "official": "",
+    "note": "The official minutes only say the Governor filed legislation to allow amortizing over two years and record no decision not to use it; check the recording.",
+    "t": 797
+   },
+   {
+    "kind": "agree",
+    "about": "40S payment",
+    "ours": "Two annual state payments in one fiscal year: 1540s payment",
+    "official": "it also included the 40s payment which she is not sure if that will stay or not.",
+    "note": "Same item; the captions garbled '40S' as '1540s'.",
+    "t": 944
+   },
+   {
+    "kind": "caption_error",
+    "about": "Payroll and accounts payable warrants",
+    "ours": "Payroll and accounts payable warrants: 487 168.37, 705 849.91, 386 000 626.77",
+    "official": "payroll deduction warrant in the amount of $487,168.37; payroll warrant in the amount of $705,849.91 and the accounts payable warrant of $386,626.77 were presented and signed.",
+    "note": "The third figure is garbled in the captions; the first two match.",
+    "official_reading": "$386,626.77",
+    "t": 1029
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Thomas Alonzo (chair)",
+    "ours": "Mr chairman (chair)",
+    "official": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present.",
+    "note": "Chair; our minutes list 'Tom' as a member, which is the same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Robert Ebersole",
+    "ours": "Mr ebiso (member)",
+    "official": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present.",
+    "note": "The name was misheard.",
+    "official_reading": "Robert Ebersole",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Phyllis Luck",
+    "ours": "Bob (member)",
+    "official": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present.",
+    "note": "Our minutes list Bob and Mr ebiso separately, but the official shows only one Robert, and no Bob; check who Bob is. Phyllis Luck is not in ours.",
+    "official_reading": "Phyllis Luck",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Paula Bertram, Jamie Toale, town manager",
+    "ours": "Mrs Bertram (member); Jamie (member); town manager (town manager)",
+    "official": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present.",
+    "note": "Same people.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ken Chenis MJTC report",
+    "ours": "",
+    "official": "ken chenis reported on the montachusett joint transportation commission (mjtc) meeting.",
+    "note": "The official minutes record a report from Ken Chenis that ours does not mention.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Cherry Sheet charges",
+    "ours": "",
+    "official": "the cherry sheet charges overall were about what we were expecting.",
+    "note": "Only the official minutes record this.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T17:56:25Z",
+   "cost_usd": 0.0464251
+  }
+ }
+}

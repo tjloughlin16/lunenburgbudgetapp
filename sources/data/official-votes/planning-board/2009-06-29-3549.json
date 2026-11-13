@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-06-29",
  "docid": "3549",
@@ -10,8 +10,212 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06292009-3549",
   "doc_url": "/docs/meetings/planning-board/2009-06-29-minutes-3549.pdf"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "One procedural vote recorded on the Highfield Village cluster development hearing. The minutes are a public hearing continuation on a definitive plan; no other motions voted on are recorded in the text.",
- "cost_usd": 0.0916315
+ "votes": [
+  {
+   "motion": "Continue the public hearing on Highfield Village to July 27, 2009, 7:00 PM.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mot ion was made to continue the hearing to july 27, 2009, 7::00 pm, mr. saiia, second, mr. bodkin, motion passed.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text extraction has many broken or doubled words (e.g., \"whe n\", \"Bakays a\", \"To wn-owned\"); quotes copy the text as extracted. The minutes print the Halloran name as \"James A. Hallo ran\"; kept as printed. The vote gives no count, only \"Motion passed.\" No dollar figures appear in the text. The minutes do not set out a list of documents used; documents are mentioned only in passing. Mr. Scully, Mr. Rodriquenz, and Fire and Police Chiefs are mentioned but did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.00603412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr."
+  },
+  {
+   "name": "James A. Hallo ran",
+   "role": "",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr."
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia, thomas w. bodkin, jr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "planning director marion benson noted"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta"
+  },
+  {
+   "name": "Kent Oldfield",
+   "role": "representing the applicant (Boucher Construction, Leominster, MA)",
+   "status": "present",
+   "quote": "mr. oldfield responded"
+  },
+  {
+   "name": "Steven Marsden",
+   "role": "Reviewing Engineer, Marsden Engineering",
+   "status": "present",
+   "quote": "reviewing engineer steven marsden, marsden"
+  },
+  {
+   "name": "Ann Marie Mead",
+   "role": "abutter, 91 Maple Parkway",
+   "status": "present",
+   "quote": "ann marie mead, 91 maple parkway, asked if, and whe n, sewer would come down maple parkway."
+  },
+  {
+   "name": "David Colvin",
+   "role": "abutter, 92 Maple Parkway",
+   "status": "present",
+   "quote": "david colvin, 92 maple parkway asked if the sewer l ine would be near maple parkway."
+  },
+  {
+   "name": "Pat Kelly",
+   "role": "resident, 117 Chase Road",
+   "status": "present",
+   "quote": "pat kelly, 117 chase road asked if pope road was a walking trail."
+  },
+  {
+   "name": "Gary Kelly",
+   "role": "resident, 117 Chase Road",
+   "status": "present",
+   "quote": "gary kelly asked if pope road would be used during construction."
+  },
+  {
+   "name": "Ronald Smith",
+   "role": "resident, 110 Old Farm Road",
+   "status": "present",
+   "quote": "ronald smith, 110 old farm road noted there is a to wn-owned 50 foot strip along the east side of the p roperty"
+  },
+  {
+   "name": "Steve deBettencourt",
+   "role": "resident, 200 Pleasant Street",
+   "status": "present",
+   "quote": "steve debettencourt, 200 pleasant stre et was under the impression that when wal-mart was built"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "resident, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane asked how pump station lo cation was determined."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ann Marie Mead",
+   "stated_role": "91 Maple Parkway",
+   "topic": "sewer line along Maple Parkway",
+   "quote": "ann marie mead, 91 maple parkway, asked if, and whe n, sewer would come down maple parkway."
+  },
+  {
+   "speaker": "David Colvin",
+   "stated_role": "92 Maple Parkway",
+   "topic": "sewer line distance from Maple Parkway",
+   "quote": "david colvin, 92 maple parkway asked if the sewer l ine would be near maple parkway."
+  },
+  {
+   "speaker": "Pat Kelly",
+   "stated_role": "117 Chase Road",
+   "topic": "Pope Road as walking trail; telecom tower fall zone",
+   "quote": "pat kelly, 117 chase road asked if pope road was a walking trail."
+  },
+  {
+   "speaker": "Gary Kelly",
+   "stated_role": "117 Chase Road",
+   "topic": "use of Pope Road during construction",
+   "quote": "gary kelly asked if pope road would be used during construction."
+  },
+  {
+   "speaker": "Ronald Smith",
+   "stated_role": "110 Old Farm Road",
+   "topic": "Town strip, conservation land access, signage",
+   "quote": "ronald smith, 110 old farm road noted there is a to wn-owned 50 foot strip along the east side of the p roperty"
+  },
+  {
+   "speaker": "Steve deBettencourt",
+   "stated_role": "200 Pleasant Street",
+   "topic": "access to back property via Wal-Mart site; pump station purpose",
+   "quote": "steve debettencourt, 200 pleasant stre et was under the impression that when wal-mart was built"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "pump station location",
+   "quote": "carl luck, 50 sunset lane asked how pump station lo cation was determined."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Highfield Village revised plan public hearing (Cluster Development, Section 5.6; Development Plan Review, Section 8.4), Northfield Road/Massachusetts Avenue, 66 dwelling units",
+   "resolution": "continued to July 27, 2009, 7:00 PM",
+   "quote": "mr. bakaysa asked for a motion to continue hearing to the next board meeting.",
+   "tags": [
+    "public hearing",
+    "cluster development",
+    "subdivision",
+    "sewer",
+    "traffic",
+    "Pope Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Legal advertisement published in the Sentinel and Enterprise on June 15 and June 22, 2009",
+   "where": "text",
+   "quote": "legal advertisement published in the sentinel and enterprise on june 15"
+  },
+  {
+   "name": "Definitive Plan (Section 5.6 Cluster Development)",
+   "where": "text",
+   "quote": "mr. oldfield noted this application is a definitive plan, submitted under section 5.6"
+  },
+  {
+   "name": "Traffic plans (MS Transportation System, Inc.)",
+   "where": "text",
+   "quote": "will have to be approved by reviewing engineer steven marsden."
+  },
+  {
+   "name": "Audio recording on file in Planning Office",
+   "where": "text",
+   "quote": "audio recording on file in planning office."
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "Highfield Village",
+  "cluster development",
+  "sewer",
+  "pump station",
+  "traffic",
+  "Pope Road",
+  "water district",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

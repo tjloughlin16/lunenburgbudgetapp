@@ -1,0 +1,413 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2017-03-21",
+ "video_id": "yPBdCtxsYw8",
+ "video_url": "https://www.youtube.com/watch?v=yPBdCtxsYw8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2017-03-21-yPBdCtxsYw8.json",
+  "sha256": "c7cebd37a9fbf8522baa5158fbd88208ab01dbd061996d7c82e82066f413cc1b",
+  "caption_lines": 26,
+  "segments": 164
+ },
+ "recording": {
+  "duration_s": 562,
+  "duration": "0:09",
+  "spoken_chars": 5981,
+  "words_approx": 996
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03212017-5070",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-03-21-agenda-5070.txt",
+   "path": "sources/meetings/select-board/2017-03-21-agenda-5070.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03212017-5070",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-03-21-minutes-5070.txt",
+   "path": "sources/meetings/select-board/2017-03-21-minutes-5070.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T15:57:25Z",
+  "cost_usd": 0.1344132
+ },
+ "minutes": {
+  "headline": "Select Board ratified two town hires: a head accounting clerk and a Council on Aging van driver.",
+  "summary": "A light agenda. The board ratified two town manager appointments, then approved payroll and accounts payable warrants. The manager reported that an RFP drew no responses so far and that the Finance Committee hearing on the budget is Thursday. Warrant article work was scheduled for April meetings.",
+  "attendees": [
+   {
+    "name_as_heard": "Town Manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen Brochu",
+    "role": "town accountant / Director of Finance"
+   },
+   {
+    "name_as_heard": "Xu Dougherty",
+    "role": "Council on Aging director"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "hiring",
+   "personnel",
+   "seniors",
+   "town-departments",
+   "transportation",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 127,
+    "motion": "Ratify the appointment of Lynn Craft (as heard: linen cloth) as head accounting clerk",
+    "moved_by": "a member",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 193,
+    "motion": "Ratify the appointment of a Council on Aging van driver",
+    "moved_by": "a member",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 550,
+    "motion": "Motion to adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 193,
+    "topic": "Council on Aging van driver training",
+    "what_was_said": "Training for the van driver is paid for from the budget, as noted in the appointment request.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 258,
+    "topic": "Payroll warrant",
+    "what_was_said": "Town payroll warrant read out.",
+    "figures_as_heard": [
+     "seven hundred eighteen thousand six hundred and seventy four dollars and thirty-nine cents"
+    ]
+   },
+   {
+    "t": 258,
+    "topic": "Payroll deductions",
+    "what_was_said": "Payroll deduction warrant read out.",
+    "figures_as_heard": [
+     "one hundred and fifty-eight thousand three hundred and ninety-nine thousand",
+     "six cents"
+    ]
+   },
+   {
+    "t": 278,
+    "topic": "School payroll warrant",
+    "what_was_said": "School payroll warrant read out.",
+    "figures_as_heard": [
+     "seven hundred and six thousand four hundred and eighty thousand forty six cents"
+    ]
+   },
+   {
+    "t": 303,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "Accounts payable warrant read out.",
+    "figures_as_heard": [
+     "550 5309 dollars and thirty-two cents"
+    ]
+   },
+   {
+    "t": 438,
+    "topic": "Snow and ice deficit",
+    "what_was_said": "A member assumed a snow and ice deficit after the last storm; the manager said the adjustment was already made at the Finance Committee meeting.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 391,
+    "topic": "Town and school electricity accounts split",
+    "what_was_said": "The manager reported a proposed percentage split of town and school electricity costs; it was deferred to next meeting.",
+    "figures_as_heard": [
+     "50-50"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 413,
+    "decision": "Electricity account percentage split between town and school put off to a later meeting in April."
+   },
+   {
+    "t": 479,
+    "decision": "Warrant article work set for April fourth and eleventh, with follow-up April eighteenth."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 64,
+    "topic": "Opening, pledge, and call for candidates for open positions",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 64,
+    "t_end": 216,
+    "topic": "Appointments: head accounting clerk and Council on Aging van driver",
+    "resolution": "motions made to ratify; results not audible",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 238,
+    "t_end": 326,
+    "topic": "Minutes and payroll/accounts payable warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 326,
+    "t_end": 550,
+    "topic": "Manager's report: RFP, Finance Committee hearing, electricity split, snow and ice, warrant articles",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "warrant-article",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 550,
+    "t_end": 570,
+    "topic": "Final comment and adjournment",
+    "resolution": "motion to adjourn seconded",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Results of the votes on the two appointments and adjournment are not in the captions.",
+   "Whether the minutes of February 28 and March 7 were approved is not audible.",
+   "Payroll and warrant figures are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 238,
+    "name_as_heard": "minutes for February 28th and March seven",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes for februari 28th and march seven"
+   },
+   {
+    "t": 258,
+    "name_as_heard": "payroll warrant",
+    "kind": "other",
+    "words_as_heard": "payroll warrant for seven hundred eighteen thousand six hundred and seventy four dollars"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "snow-and-ice-budget",
+    "title": "Snow and ice budget",
+    "question": "How large is the snow and ice deficit after the last storm and how is it covered?",
+    "t": 438,
+    "words_as_heard": "we now have a deficit in the snow and ice so you're going to have to make an adjustment on the budget",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board moved to ratify two town manager appointments, a head accounting clerk and a Council on Aging van driver, but the vote results were not audible.",
+    "t": 127
+   },
+   {
+    "line": "The board's motion on the van driver appointment was made, and the minutes note that training for the driver is paid for from the budget.",
+    "t": 193
+   },
+   {
+    "line": "Payroll, payroll deduction, school payroll and accounts payable warrants were read out.",
+    "t": 258
+   },
+   {
+    "line": "A proposed percentage split of electricity costs between the town and the schools was put off to a later meeting in April.",
+    "t": 391
+   },
+   {
+    "line": "The manager said a snow and ice deficit adjustment was already made at the Finance Committee meeting, and warrant article work was set for April 4 and 11, with follow-up April 18.",
+    "t": 479
+   }
+  ],
+  "why_it_matters": [
+   "How electricity costs are divided between the town and school budgets is still undecided, and the split changes which budget, and so which part of the tax bill, carries that cost.",
+   "Warrant article work in April shapes what residents are later asked to vote on at Town Meeting."
+  ],
+  "watch_next": [
+   "Select Board meetings on April 4, 11 and 18 for warrant article work and the electricity split.",
+   "The Finance Committee budget hearing the manager said is set for Thursday."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T15:57:32Z",
+   "cost_usd": 0.0222171
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03212017-5070",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-03-21-minutes-5070.txt",
+   "path": "sources/meetings/select-board/2017-03-21-minutes-5070.pdf"
+  },
+  "official_sha256": "aa336e187518d1f230c6e49edb55292dd5000accd0b0cf1fb780f6d576377200",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records cover the same business: the two appointments, the warrants and the electricity/net-metering item. They agree on most warrant figures once caption errors are allowed for. The main differences are that neither record gives a clear vote outcome for the van driver, the accounts payable cents differ (.32 vs .23), and ours has no Board attendance and no named driver.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 4,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Head accounting clerk appointment name",
+    "ours": "Ratify the appointment of Lynn Craft (as heard: linen cloth) as head accounting clerk — not audible",
+    "official": "to ratify the appointment of ms. klaft as head accounting clerk",
+    "official_reading": "Lynne Klaft",
+    "note": "Same appointment; captions misheard the name. Outcome is 'not audible' in ours but 'passed' in official.",
+    "t": 127
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Council on Aging van driver appointment",
+    "ours": "Ratify the appointment of a Council on Aging van driver — not audible",
+    "official": "to ratify the appointment of eugene cote as coa mart van driver",
+    "note": "Same item, but ours does not name the driver and says the outcome was not audible, and the official gives no outcome ('not stated'). Check the recording or the official record for the vote and the name.",
+    "t": 193
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Accounts payable warrant amount",
+    "ours": "Accounts payable warrant: 550 5309 dollars and thirty-two cents",
+    "official": "they signed an accounts payable warrant in the amount of $555,309.23",
+    "note": "Captions give '550 5309' and 32 cents; official has $555,309.23. The cents (32 vs 23) go beyond simple digit-grouping, so check the warrant itself.",
+    "t": 303
+   },
+   {
+    "kind": "agree",
+    "about": "Payroll warrant (town)",
+    "ours": "Payroll warrant: seven hundred eighteen thousand six hundred and seventy four dollars and thirty-nine cents",
+    "official": "$718,674.39",
+    "note": "$718,674.39 matches the official figure list.",
+    "t": 258
+   },
+   {
+    "kind": "caption_error",
+    "about": "Payroll deductions warrant",
+    "ours": "Payroll deductions: one hundred and fifty-eight thousand three hundred and ninety-nine thousand, six cents",
+    "official": "$158,399.06",
+    "official_reading": "$158,399.06",
+    "note": "Captions garbled the figure ('ninety-nine thousand' for ninety-nine dollars) but the same amount.",
+    "t": 258
+   },
+   {
+    "kind": "caption_error",
+    "about": "School payroll warrant",
+    "ours": "School payroll warrant: seven hundred and six thousand four hundred and eighty thousand forty six cents",
+    "official": "a payroll warrant in the amount of $706,480.46",
+    "official_reading": "$706,480.46",
+    "note": "Captions garbled 'eighty dollars'; same amount.",
+    "t": 278
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town and school electricity split 50-50",
+    "ours": "Town and school electricity accounts split: 50-50",
+    "official": "",
+    "note": "The official minutes print no 50-50 split.",
+    "t": 391
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article work dates",
+    "ours": "Warrant article work set for April fourth and eleventh, with follow-up April eighteenth.",
+    "official": "",
+    "note": "The official minutes give no warrant article schedule.",
+    "t": 479
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes of Feb 28 and March 7 approved",
+    "ours": "",
+    "official": "the board approved and signed minutes of february 28 and march 7, 2017.",
+    "note": "Our minutes do not mention approving prior minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Snow and ice deficit budget",
+    "ours": "",
+    "official": "ms. bertram asked about the snow and ice deficit budget being adjusted since the last snow storm.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Finance Committee FY2018 hearing announcement",
+    "ours": "",
+    "official": "mr. toale announced the finance committee public hearing for the fy2018 budget is this thursday night",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Council on Aging director name",
+    "ours": "Xu Dougherty (Council on Aging director)",
+    "official": "council on aging director sue doherty, who is present tonight, had advertised for the",
+    "official_reading": "Sue Doherty",
+    "note": "Misheard name; same person."
+   },
+   {
+    "kind": "agree",
+    "about": "Karen Brochu, finance director attendee",
+    "ours": "Karen Brochu (town accountant / Director of Finance)",
+    "official": "finance director brochu and ms. lemieux interviewed her",
+    "note": "Both name Brochu as finance director."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board members present",
+    "ours": "Town Manager (town manager)",
+    "official": "the board of selectmen met in the bilotta meeting room, with jamie toale, chairman; robert ebersole, vice",
+    "note": "Ours lists no Board members and no names; official lists Toale, Ebersole, Bertram present, Alonzo and Luck absent, and Town Manager Heather Lemieux. Check the recording for attendance."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T15:58:21Z",
+   "cost_usd": 0.0415391
+  }
+ }
+}

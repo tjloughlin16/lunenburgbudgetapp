@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-10-23",
  "docid": "4247",
@@ -12,6 +12,202 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes explicitly state that no vote could be taken on the Advisory Organization (Chair, Vice-Chair, Secretary elections) because the meeting and agenda were not posted in time at town hall. No other motions with voting language are recorded. While a meeting schedule was \"established\" and the meeting was adjourned, neither was recorded as a formal motion that was voted on.",
- "cost_usd": 0.0097564
+ "note": "No votes were recorded; the minutes state the officer election could not be held because the meeting and agenda were not posted in time. The minutes are headed 'Calendar Advisory Sub-Committee' while the board was listed as School Advisory Councils Committees. Attendance is inferred from the roster and absence markers; the minutes do not state presence explicitly for most members, though the call to order says members introduced themselves. No dollar figures appear in the text.",
+ "cost_usd": 0.00375992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Colleen Shapiro",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "colleen shapiro - school committee"
+  },
+  {
+   "name": "Ronald Hyatt",
+   "role": "SAC LHS",
+   "status": "present",
+   "quote": "ronald hyatt - sac lhs"
+  },
+  {
+   "name": "Ashley Wheeler",
+   "role": "SAC LHS",
+   "status": "absent",
+   "quote": "ashley wheeler-sac lhs- absent"
+  },
+  {
+   "name": "Gary Asher",
+   "role": "Former Lunenburg Family Practice, Heath Advisory Committee",
+   "status": "present",
+   "quote": "gary asher - former lunenburg family practice, heath advisory committee"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "SAC LPS",
+   "status": "present",
+   "quote": "brandon kibbe - sac lps"
+  },
+  {
+   "name": "Amanda Waltz",
+   "role": "Parent",
+   "status": "absent",
+   "quote": "amanda waltz - parent- absent"
+  },
+  {
+   "name": "Lou Bettencourt",
+   "role": "Parent",
+   "status": "present",
+   "quote": "lou bettencourt - parent"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka - school committee"
+  },
+  {
+   "name": "Ami Powers",
+   "role": "SAC THMS",
+   "status": "present",
+   "quote": "ami powers - sac thms"
+  },
+  {
+   "name": "Katie McGuire",
+   "role": "SAC LHS",
+   "status": "absent",
+   "quote": "katie mcguire- sac lhs- absent"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "review of parameters for school calendar & community feedback -superintendent calmes"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee established its meeting schedule: Oct 30, Nov 13, Nov 20, Nov 24, Dec 3 (to present to School Committee), and Dec 11, 2014.",
+   "quote": "meeting schedule established as the following:"
+  },
+  {
+   "decision": "The Superintendent will communicate back to the other Calendar Committee.",
+   "quote": "superintendent will communicate back to other calendar committee."
+  },
+  {
+   "decision": "Under open meeting law, members may not discuss meeting business in person or on social media; they may post and share survey links but not discuss them with other members.",
+   "quote": "due to open law policy, no member of the advisory committee may discuss anything from these meeting in person, or social media."
+  },
+  {
+   "decision": "Staff will request a copy of the Athletic Department schedule for use as a data point.",
+   "quote": "copy of athletic department schedule will be requested."
+  },
+  {
+   "decision": "Committee agreed to seek school calendars from surrounding districts/towns as a data point (Westford, Fitchburg, Lancaster, Littleton, Groton, Ayer/Shirley, Leominster).",
+   "quote": "looking to obtain copies from westford, fitchburg, lancaster, littleton, groton, ayer/shirley,"
+  },
+  {
+   "decision": "Suggested that a three-question survey of parents and students be distributed via Survey Monkey, Twitter, and the Lunenburg Ledger.",
+   "quote": "suggested to bring a survey to the district - parents and students."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and introductions",
+   "resolution": "no action",
+   "quote": "7:05 meeting called to order and members went around the table and introduced",
+   "tags": [
+    "call to order",
+    "introductions"
+   ]
+  },
+  {
+   "topic": "Election of Chair, Vice-Chair and Secretary",
+   "resolution": "not held; not posted in time",
+   "quote": "because meeting and agenda were not posted in time at",
+   "tags": [
+    "officers",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Review charge and timeline",
+   "resolution": "reviewed; proposed calendar due to School Committee by December 3rd",
+   "quote": "proposed calendar needs to be presented to school committee by december 3rd meeting, to be",
+   "tags": [
+    "charge",
+    "timeline",
+    "school calendar"
+   ]
+  },
+  {
+   "topic": "Establish meeting schedule",
+   "resolution": "schedule established",
+   "quote": "meeting schedule established as the following:",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Review of parameters for school calendar and community feedback",
+   "resolution": "discussed; survey and data-gathering suggested",
+   "quote": "superintendent will communicate back to other calendar committee.",
+   "tags": [
+    "community survey",
+    "open meeting law",
+    "data gathering"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "no public comment at this meeting.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:05pm",
+   "quote": "meeting adjourned 9:05pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School calendars of surrounding districts/towns (Westford, Fitchburg, Lancaster, Littleton, Groton, Ayer/Shirley, Leominster)",
+   "where": "text",
+   "quote": "looking to obtain copies from westford, fitchburg, lancaster, littleton, groton, ayer/shirley,"
+  },
+  {
+   "name": "Athletic Department schedule",
+   "where": "text",
+   "quote": "copy of athletic department schedule will be requested."
+  },
+  {
+   "name": "Parent and student survey (three questions)",
+   "where": "text",
+   "quote": "suggested to bring a survey to the district - parents and students."
+  }
+ ],
+ "tags": [
+  "school calendar",
+  "vacations",
+  "start and end dates",
+  "half days",
+  "professional development",
+  "community survey",
+  "open meeting law",
+  "advisory committee",
+  "first year"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

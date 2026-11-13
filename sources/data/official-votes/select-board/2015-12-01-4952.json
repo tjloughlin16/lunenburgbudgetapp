@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-12-01",
  "docid": "4952",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the tollbooth fundraiser on December 12 as presented",
+   "motion": "Approve the tollbooth fundraiser on December 12 as presented (Salvation Army, town center and CVS intersection).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -20,20 +20,20 @@
    "quote": "motion: t. alonzo 2nd. p. bertram to approve the tollbooth fundraiser on december 12* as presented vote: all in favor"
   },
   {
-   "motion": "Authorize the Chair to sign the change order documents as presented",
+   "motion": "Authorize the Chair to sign the change order documents as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2'°:r. ebersole to authorize the chair to sign the change order documents as presented vote: all in favor"
+   "quote": "to authorize the chair to sign the change order documents as presented"
   },
   {
-   "motion": "File as an intervener to FERC and join the Northeast Municipal Gas Pipeline Coalition",
+   "motion": "File as an intervener to FERC and join the Northeast Municipal Gas Pipeline Coalition.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'd:t. alonzo to file as an intervener to ferc and to join the northeast municipal gas pipeline coalition vote: all in favor"
+   "quote": "to file as an intervener to ferc and to join the northeast municipal gas pipeline coalition"
   },
   {
    "motion": "Adjourn the meeting at 7:50 p.m.",
@@ -41,10 +41,258 @@
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 7:50 p.m. 2\": r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 7:50 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision. Contains OCR artifacts in seconded-by designations (2'°, 2'd, 2\\\") which are rendered verbatim. Minutes also record approval and signing of November 3, 2015 minutes and warrants (accounts payable $287,022.04, payroll deductions $42,222.51, payroll $693,012.18) but with no formal motion/vote language recorded.",
- "cost_usd": 0.0958875
+ "dropped_unquoted": 1,
+ "note": "Text is OCR output (macOS Vision) with some garbled characters (e.g., '12*', '2'°:R. Ebersole', 'December 9h'); quotes were copied as printed. The minutes record no vote count beyond 'All in Favor' and do not print a vote for approving the Nov 3 minutes; that approval is recorded as a decision without a motion. Public comment section includes announcements by board members. Minutes are signed by an Executive Assistant whose name is OCR-garbled, so she is not listed as an attendee. No documents list is printed.",
+ "cost_usd": 0.00623812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Paul Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "155 Island Road, representing the Salvation Army",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, appeared on behalf of the salvation army to request a tollbooth fundraiser"
+  },
+  {
+   "name": "Major Garrett",
+   "role": "Salvation Army",
+   "status": "present",
+   "quote": "major garrett stated although their office is in fitchburg, they are eager to be"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "school superintendent loxi calmes invited all to attend the high school presentation this friday and saturday"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board approved and signed the minutes of November 3, 2015 (recorded without a motion).",
+   "quote": "the board approved and signed the minutes of november 3, 2015."
+  },
+  {
+   "decision": "The Board concurred that legal counsel could file for the Town but will not have counsel review the FERC docket on an ongoing basis; Board members will do that task themselves.",
+   "quote": "the board concurred that legal counsel could file for the town but does not want them to review the docket on an on-going basis."
+  },
+  {
+   "decision": "Ms. Lafleur will send out the agenda for the coalition's next meeting.",
+   "quote": "ms. lafleur will send out the agenda for the coalition's next meeting."
+  },
+  {
+   "decision": "Ms. Lafleur said the cable survey would be sent out with the tax bills.",
+   "quote": "ms. lafleur stated the best way would be to send the survey out with the tax bills."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Change Order #4 (Middle/High School project)",
+   "what_was_recorded": "Change Order #4 items totaled $24,935.00, leaving the construction contingency at $4,007,862.",
+   "figures_as_printed": [
+    "$5,817",
+    "$6,890",
+    "$6,257",
+    "$5,971",
+    "$24,935.00",
+    "$4,007,862"
+   ],
+   "quote": "totaling $24,935.00. after this request the remaining amount in the construction contingency is $4,007,862."
+  },
+  {
+   "topic": "Change Order #6 (MSBA advertising omission)",
+   "what_was_recorded": "A clerical omission for advertising of $45,000 in the PFA was reclassified from cost estimates to advertising.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "change order #6 addresses notification from the msba about a clerical omission for advertising ($45,000) in the pfa."
+  },
+  {
+   "topic": "Change Order #5 (Middle/High School project)",
+   "what_was_recorded": "Change Order #5 totaled $8,203, with the contingency now at $3,999,659.",
+   "figures_as_printed": [
+    "$2,690",
+    "$5,513",
+    "$8,203",
+    "$3,999,659"
+   ],
+   "quote": "total of this change order is $8,203 with the contingency amount now at $3,999,659."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant, a payroll deductions warrant and a payroll warrant.",
+   "figures_as_printed": [
+    "$287,022.04",
+    "$42,222.51",
+    "$693,012.18"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $287,022.04, a payroll deductions warrant in the amount of $42,222.51 and a payroll warrant in the amount of $693,012.18."
+  },
+  {
+   "topic": "Tollbooth fundraiser proceeds",
+   "what_was_recorded": "The fundraiser organizer said all money collected stays in the community. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. macdonald stated that all money collected stays in the community."
+  },
+  {
+   "topic": "FERC intervener legal costs",
+   "what_was_recorded": "Legal counsel cost to prepare and file the petition was described as minimal, but following the process could add up. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the cost of using legal counsel to prepare and file the petition is minimal but the expense of legal counsel following the process could add up"
+  },
+  {
+   "topic": "School health and wellness budget and new school operating costs",
+   "what_was_recorded": "The School Committee discussed the FY2017 health and wellness budget and predicted operation and maintenance costs for the new Middle/High School. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the committee discussed the health and wellness budget for fiscal year 2017 and the cost of operation and maintenance predicted for the new middle/high school next year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Chairman",
+   "topic": "tree lighting thanks and committee vacancies",
+   "quote": "he also reminded everyone that there are vacancies remaining on the finance committee, architectural preservation district commission, cable advisory committee"
+  },
+  {
+   "speaker": "Paul Bertram",
+   "stated_role": "Member",
+   "topic": "Girl Scout Pancake Breakfast",
+   "quote": "ms. bertram asked everyone to support the girl scout pancake breakfast being held this saturday from 8 to 11 a.m."
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "Vice Chairman",
+   "topic": "Public Library 10 year anniversary",
+   "quote": "mr. ebersole reported from 10 a.m. - 12 noon on saturday there will be children's activities at the public library"
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Senior Center events and Lions Club breakfast",
+   "quote": "ms. luck stated the eagle house senior center is holding their christmas boutique from 9 a.m. to 1 p.m. on saturday."
+  },
+  {
+   "speaker": "Loxi Calmes",
+   "stated_role": "School Superintendent",
+   "topic": "high school presentation of A Date with Judy",
+   "quote": "school superintendent loxi calmes invited all to attend the high school presentation this friday and saturday at 7:00 p.m."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "mr. toale stated he had attended the tree lighting ceremony last night."
+  },
+  {
+   "topic": "Tollbooth Fundraiser Request",
+   "resolution": "approved",
+   "quote": "to approve the tollbooth fundraiser on december 12* as presented"
+  },
+  {
+   "topic": "Budget Revision Requests for Middle/High School Project",
+   "resolution": "approved change orders; Chair authorized to sign",
+   "quote": "to authorize the chair to sign the change order documents as presented"
+  },
+  {
+   "topic": "FERC Filing as Intervener (Pipeline Project)",
+   "resolution": "approved filing as intervener and joining coalition",
+   "quote": "to file as an intervener to ferc and to join the northeast municipal gas pipeline coalition"
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes approved and signed; warrants signed",
+   "quote": "the board approved and signed the minutes of november 3, 2015."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "mr. ebersole reported the board of health met last night and is continuing their septic system loan program workshop."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 p.m.",
+   "quote": "to adjourn the meeting at 7:50 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Change Order #4 (Middle/High School project)",
+   "where": "text",
+   "quote": "change order #4 included redesign of the main mechanical room ($5,817)"
+  },
+  {
+   "name": "Change Order #6 (MSBA advertising notification)",
+   "where": "text",
+   "quote": "change order #6 addresses notification from the msba about a clerical omission for advertising"
+  },
+  {
+   "name": "Attorney General's study on gas capacity and findings report",
+   "where": "text",
+   "quote": "the attorney general commissioned a study on the need for increased gas capacity"
+  },
+  {
+   "name": "Five Year Financial Forecast",
+   "where": "text",
+   "quote": "ms. lafleur reminded her five year financial forecast will be presented thursday to the finance committee."
+  }
+ ],
+ "tags": [
+  "Middle/High School project",
+  "change orders",
+  "FERC pipeline intervener",
+  "Tollbooth fundraiser",
+  "warrants",
+  "committee reports",
+  "public comment",
+  "school budget",
+  "Five Year Financial Forecast"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

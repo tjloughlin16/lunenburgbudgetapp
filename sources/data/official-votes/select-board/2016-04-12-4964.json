@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-04-12",
  "docid": "4964",
@@ -12,39 +12,451 @@
  },
  "votes": [
   {
-   "motion": "To authorize Ms. Lafleur to obtain a quote from Casella Waste Management for bi-weekly curbside yard waste pickup",
+   "motion": "Authorize Town Manager Lafleur to obtain a quote from Casella Waste Management for bi-weekly curbside yard waste pickup (for comparison only).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: p. bertram to authorize ms. lafleur to obtain a quote from casella waste management for bi-weekly curbside yard waste pickup vote: all in favor"
+   "quote": "to authorize ms. lafleur to obtain a quote from casella waste management for bi-weekly curbside yard waste pickup"
   },
   {
-   "motion": "To keep the van in MART's existing fleet",
+   "motion": "Keep the MART van in MART's existing fleet (Town does not take title of the van).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion:t. alonzo to keep the van in mart's existing fleet 2n°.p. bertram vote: all in favor"
+   "quote": "to keep the van in mart's existing fleet"
   },
   {
-   "motion": "To appoint Ms. Luck as the designee for MPO",
+   "motion": "Appoint Ms. Luck as the designee for MPO.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: t. alonzo to appoint ms. luck as the designee for mpo 2\"': p. bertram vote: all in favor"
+   "quote": "to appoint ms. luck as the designee for mpo"
   },
   {
-   "motion": "To adjourn the meeting at 8:25 p.m.",
+   "motion": "Adjourn the meeting at 8:25 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:25 p.m. 20°: t. alonzo vote: all in favor"
+   "quote": "to adjourn the meeting at 8:25 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document; vote language is clear. Quote artifacts (2\\\"d, 2n°, 2\\\"', 20°) preserved exactly as scanned.",
- "cost_usd": 0.1505289
+ "note": "OCR text from macOS Vision with some garbled words (e.g., 'Pleasanat', 'Commision', 'incorpoarted'); quotes were copied as OCR printed them. Every motion is recorded as 'Vote: All in Favor' with no numeric count, so outcomes are recorded as 'passed (all in favor)'. Minutes signed by Elaine M. Petersor (OCR garbled). The workshop portion after the televised meeting recorded no formal votes. Robert Ebersole listed as not present.",
+ "cost_usd": 0.011165020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Member (board member named in the minutes)",
+   "status": "absent",
+   "quote": "not present: robert ebersole"
+  },
+  {
+   "name": "Jennifer Benson",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "state representative jennifer benson, state senator jennifer flanagan & state representative stephan hay"
+  },
+  {
+   "name": "Jennifer Flanagan",
+   "role": "State Senator",
+   "status": "present",
+   "quote": "state representative jennifer benson, state senator jennifer flanagan & state representative stephan hay"
+  },
+  {
+   "name": "Stephan Hay",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "state representative jennifer benson, state senator jennifer flanagan & state representative stephan hay"
+  },
+  {
+   "name": "Lori Lehtinen",
+   "role": "359 Whalom Road (public)",
+   "status": "present",
+   "quote": "lori lehtinen, 359 whalom road, stated she would be presenting to the board on may 3d on the citizen"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "129 Pleasant Street, direct abutter",
+   "status": "present",
+   "quote": "greg bittner, 129 pleasant street, stated he was a direct abutter to the property."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney presented a timeline on events."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town to approach the 101 Pleasant Street owner and/or his engineer about remediating 225 Pleasant Street at their expense; if they refuse, the Town will take legal action for damages. Ms. Lafleur and Mr. Burney assigned to address it.",
+   "quote": "ms. lafleur and mr. burney will address this task."
+  },
+  {
+   "decision": "The Board signed the five Annual Town Meeting warrants for posting.",
+   "quote": "the board signed the five warrants for the annual town meeting posting."
+  },
+  {
+   "decision": "The Board signed an accounts payable warrant.",
+   "quote": "the board signed an accounts payable warrant in the amount of $373,303.60."
+  },
+  {
+   "decision": "Suggested amendment to the Town Manager evaluation form was not agreed on; the form will not be changed midway through the process.",
+   "quote": "suggestion made to amend the form tonight was not agreed on because it would not be fair to the town manager to change the form midway through the process."
+  },
+  {
+   "decision": "The Board agreed to hold workshops once a month, with workshop topics scheduled in advance.",
+   "quote": "the board agreed. the workshops and topics should be scheduled in advance so research can be done in preparation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW sale of rain barrels and compost bins",
+   "what_was_recorded": "Ms. Luck reported prices for rain barrels and compost bins sold at the DPW, payable by cash or check.",
+   "quote": "compost bins are $43 and rain barrels are $56.",
+   "figures_as_printed": [
+    "$43",
+    "$56"
+   ]
+  },
+  {
+   "topic": "Pavement management debt exclusion ($4 million)",
+   "what_was_recorded": "Ms. Luck corrected a newspaper report about her vote on placing the $4 million debt exclusion article for pavement management on the ballot.",
+   "quote": "reported that she had voted against placing the $4 million debt exclusion article for pavement management on the ballot.",
+   "figures_as_printed": [
+    "$4 million"
+   ]
+  },
+  {
+   "topic": "Curbside yard waste pickup cost to residents",
+   "what_was_recorded": "Ms. Luck asked whether residents would be willing to pay extra for bi-weekly curbside yard waste pickup; no figure was given.",
+   "quote": "ms. luck asked ms. lehtinen if she and others would be willing to pay extra for this service.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "State budget increases (Governor and House)",
+   "what_was_recorded": "Rep. Benson reported the Governor's budget has a 3.5% increase and the House budget will have a 3% increase.",
+   "quote": "the governor's budget has a 3.5% percent increase and the house budget will have a 3% increase.",
+   "figures_as_printed": [
+    "3.5%",
+    "3%"
+   ]
+  },
+  {
+   "topic": "Local aid and education aid",
+   "what_was_recorded": "Rep. Benson reported local aid has a 4.6% increase in the Governor's budget and education aid a 1.6% increase; the delegation will file an amendment to fully fund Chapter 40S.",
+   "quote": "local aid has a 4.6% increase in the governor's budget. education aid was only a 1.6% increase",
+   "figures_as_printed": [
+    "4.6%",
+    "1.6%"
+   ]
+  },
+  {
+   "topic": "Chapter 70 foundation formula",
+   "what_was_recorded": "Discussion of the Chapter 70 increase, phase-in of foundation formula changes, and the millionaires' tax as a possible revenue source not available until 2017; Mr. Alonzo asked for a partial deferral.",
+   "quote": "the 11.5% increase in chapter 70 does not take into account the increase that you would see here in town.",
+   "figures_as_printed": [
+    "11.5%"
+   ]
+  },
+  {
+   "topic": "School Building Committee contingency items",
+   "what_was_recorded": "Mr. Alonzo reported three contingency items approved (maintenance garage, air cooling system, digital sign for Mass Ave.) at a total cost of approximately $740,000.",
+   "quote": "total cost of these 3 items is approximately $740,000.",
+   "figures_as_printed": [
+    "$740,000"
+   ]
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant in the stated amount.",
+   "quote": "the board signed an accounts payable warrant in the amount of $373,303.60.",
+   "figures_as_printed": [
+    "$373,303.60"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Lions Club pancake breakfasts; correction on debt exclusion vote; DPW sales",
+   "quote": "ms. luck announced the lions club will be hosting a pancake breakfast tomorrow morning at eagle house"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Clerk",
+   "topic": "Thanks for DPU hearing turnout; Dave Rodgers retirement",
+   "quote": "mr. alonzo thanked everyone who showed up for the dpu public hearing last tuesday regarding the kinder"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Member",
+   "topic": "Walks in the Woods program",
+   "quote": "ms. bertram announced the conservation commission was restarting the"
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Chairman",
+   "topic": "Support for pavement management debt exclusion",
+   "quote": "mr. toale, referring to mrs. luck's no vote regarding the pavement management debt exclusion article, stated"
+  },
+  {
+   "speaker": "Lori Lehtinen",
+   "stated_role": "359 Whalom Road",
+   "topic": "Bi-weekly curbside yard waste pickup",
+   "quote": "lori lehtinen, 359 whalom road, stated she would be presenting to the board on may 3d on the citizen"
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "129 Pleasant Street, direct abutter",
+   "topic": "101/225 Pleasant Street wetlands violation",
+   "quote": "greg bittner, 129 pleasant street, stated he was a direct abutter to the property."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "announcements; Casella quote authorized",
+   "quote": "ms. luck announced the lions club will be hosting a pancake breakfast tomorrow morning at eagle house",
+   "tags": [
+    "public comment",
+    "yard waste"
+   ]
+  },
+  {
+   "topic": "Appointments: state delegation (Benson, Flanagan, Hay)",
+   "resolution": "heard from delegation; no action",
+   "quote": "rep. benson echoed the well wishes for dave rodgers' retirement.",
+   "tags": [
+    "state budget",
+    "Chapter 70",
+    "local aid"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Warrant",
+   "resolution": "warrants signed",
+   "quote": "the board signed the five warrants for the annual town meeting posting.",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "MART van options",
+   "resolution": "van kept in MART fleet",
+   "quote": "to keep the van in mart's existing fleet",
+   "tags": [
+    "MART",
+    "COA",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Update on 225 Pleasant Street (Conservation Commission)",
+   "resolution": "Town to approach 101 owner on remediation; Lafleur and Burney to address; no vote",
+   "quote": "ms. lafleur and mr. burney will address this task.",
+   "tags": [
+    "wetlands",
+    "conservation",
+    "enforcement",
+    "Pleasant Street"
+   ]
+  },
+  {
+   "topic": "Minutes / Warrants / Action File Issues",
+   "resolution": "AP warrant signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $373,303.60.",
+   "tags": [
+    "warrants",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "Luck appointed MPO designee",
+   "quote": "to appoint ms. luck as the designee for mpo",
+   "tags": [
+    "MPO",
+    "school building committee",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Workshop: Outstanding To Do and Agenda Items list",
+   "resolution": "list updated; no vote",
+   "quote": "the first item addressed was the outstanding \"to do\" and agenda items list (#9).",
+   "tags": [
+    "workshop",
+    "goals",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Town Manager evaluation form",
+   "resolution": "not amended; no action",
+   "quote": "discussion turned to the town manager evaluation form.",
+   "tags": [
+    "town manager",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Economic development discussion",
+   "resolution": "discussion only; no action",
+   "quote": "discussion on economic development came next.",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:25 p.m.",
+   "quote": "to adjourn the meeting at 8:25 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from MART regarding the MART van's useful life and options",
+   "where": "text",
+   "quote": "the board received a letter from mart stating the mart van being used in lunenburg has exceeded its defined useful life based on the van age."
+  },
+  {
+   "name": "Letter from COA Director Sue Doherty recommending MART ownership",
+   "where": "text",
+   "quote": "coa director sue doherty wrote a letter to the board recommending the town keep the mart van in mart's ownership"
+  },
+  {
+   "name": "Driveway permit application for 101 Pleasant Street (filed November 2015)",
+   "where": "text",
+   "quote": "there was a driveway application filed in november 2015 for 101 pleasant street for a single family home."
+  },
+  {
+   "name": "Map submitted with the driveway permit application showing property lines",
+   "where": "text",
+   "quote": "he also presented a map that was submitted with the driveway permit application showing property lines."
+  },
+  {
+   "name": "Before and after photos of town land (presented by Greg Bittner)",
+   "where": "text",
+   "quote": "he presented some \"before\" and \"after\" photos of the town land."
+  },
+  {
+   "name": "Conservation Commission enforcement orders (101 and 225 Pleasant Street)",
+   "where": "text",
+   "quote": "at their meeting last week, the conservation commission issued enforcements orders for additional work at"
+  },
+  {
+   "name": "Cease and desist letter issued by Town Counsel",
+   "where": "text",
+   "quote": "a cease and desist letter for crossing town land with machines and other motorized vehicles, which was issued by town counsel."
+  },
+  {
+   "name": "Email from the state forester regarding 101 Pleasant Street",
+   "where": "text",
+   "quote": "conservation commission has received an email from the state forester regarding 101 pleasant street"
+  },
+  {
+   "name": "Fitchburg Sentinel article",
+   "where": "text",
+   "quote": "reported that she had voted against placing the $4 million debt exclusion article for pavement management on the ballot."
+  },
+  {
+   "name": "Governor's budget and House budget",
+   "where": "text",
+   "quote": "the governor's budget has a 3.5% percent increase and the house budget will have a 3% increase."
+  },
+  {
+   "name": "Annual Town Meeting warrants (five warrants)",
+   "where": "text",
+   "quote": "the board signed the five warrants for the annual town meeting posting."
+  },
+  {
+   "name": "Accounts payable warrant ($373,303.60)",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $373,303.60."
+  },
+  {
+   "name": "Board packet and BOS goals",
+   "where": "text",
+   "quote": "mr. toale directed the board members to their packet and the bos goals."
+  },
+  {
+   "name": "Outstanding \"To Do\" and Agenda Items list",
+   "where": "text",
+   "quote": "the first item addressed was the outstanding \"to do\" and agenda items list (#9)."
+  },
+  {
+   "name": "Town Manager evaluation form",
+   "where": "text",
+   "quote": "discussion turned to the town manager evaluation form."
+  },
+  {
+   "name": "Workshop agenda (nine items) presented by Mr. Toale",
+   "where": "text",
+   "quote": "mr. toale presented the following agenda for the workshop:"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "town meeting warrant",
+  "MART van",
+  "yard waste pickup",
+  "225 Pleasant Street",
+  "wetlands enforcement",
+  "state budget",
+  "Chapter 70",
+  "school building committee",
+  "warrants",
+  "MPO",
+  "workshop",
+  "town manager evaluation",
+  "economic development"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

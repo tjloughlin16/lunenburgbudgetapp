@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2014-10-06",
  "docid": "1466",
@@ -12,15 +12,205 @@
  },
  "votes": [
   {
-   "motion": "Cancel the October 20 meeting due to conflict with BOS and Planning Board meeting.",
-   "moved_by": "Ron Albert",
-   "seconded_by": "Dave MacDonald",
+   "motion": "Cancel the committee's 10/20 meeting because of a conflict with the BOS and Planning Board meeting on October 20.",
+   "moved_by": "Mr. Albert",
+   "seconded_by": "Mr. MacDonald",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. albert moved that the 10/20 meeting be cancelled. mr. macdonald seconded and the decision passed 5-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted via OCR (macOS Vision). One vote recorded: motion to cancel the October 20 meeting.",
- "cost_usd": 0.0818485
+ "note": "The minutes print no dollar figures, so budget_items carry no figures. Only one motion is recorded (cancelling the 10/20 meeting). The adjournment at 7:15 is not a recorded vote. Public comment is printed as None. The minutes list no documents or exhibits.",
+ "cost_usd": 0.00374522,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "role": "Chair",
+   "quote": "chair, jamie toale introduced agenda item and stated that the planning board was also meeting this"
+  },
+  {
+   "name": "Ron Albert",
+   "status": "present",
+   "role": "committee member",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mike mackin and dave matthews."
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "role": "committee member",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mike mackin and dave matthews."
+  },
+  {
+   "name": "Mike Mackin",
+   "status": "present",
+   "role": "committee member",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mike mackin and dave matthews."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "role": "committee member",
+   "quote": "present were committee members jamie toale, ron albert, dave macdonald, mike mackin and dave matthews."
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "role": "advisor",
+   "quote": "also present was advisor, john londa."
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "absent",
+   "role": "committee member",
+   "quote": "members damon mcquaid, deb seeley, mark erickson and rebecca lantry were absent."
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "absent",
+   "role": "committee member",
+   "quote": "members damon mcquaid, deb seeley, mark erickson and rebecca lantry were absent."
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "absent",
+   "role": "committee member",
+   "quote": "members damon mcquaid, deb seeley, mark erickson and rebecca lantry were absent."
+  },
+  {
+   "name": "Rebecca Lantry",
+   "status": "absent",
+   "role": "committee member",
+   "quote": "members damon mcquaid, deb seeley, mark erickson and rebecca lantry were absent."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee re-confirmed its charge as: staff work to assess current and future maintenance and capital costs for Town-owned buildings; evaluate market potential of surplus buildings; recommend a course of action and assist planning of renovation, demolition or sale as directed by the Town.",
+   "quote": "it was agreed that the committee saw the following as our charge:"
+  },
+  {
+   "decision": "Status agreed: T.C. Passios & Brooks House - no action, School Committee to decide boundaries and timing of any excess property.",
+   "quote": "t.c. passios & brooks house - no action - school committee to decide the boundaries and timing of any excess property."
+  },
+  {
+   "decision": "Status agreed: Ritter Building & Old Primary School - no action, awaiting any changes to Village Zoning Bylaw affecting potential use and market.",
+   "quote": "ritter building & old primary school - no action - awaiting any changes to village zoning"
+  },
+  {
+   "decision": "Status agreed: Town Hall - reviewing renovation plans and costs for current capital needs and potential future use.",
+   "quote": "town hall - reviewing renovation plans and costs for current capital needs and potential future use."
+  },
+  {
+   "decision": "FLACC may begin getting financing together, but discussions beyond mutual interest in continuing to talk wait until the School Committee formalizes its property transfer plans for the Passios property.",
+   "quote": "it was agreed that any discussions beyond that of mutual interest in continuing to talk would wait until the school committee formalized their property transfer plans."
+  },
+  {
+   "decision": "Chair to arrange video tours of the Old Primary School and other Town Halls around the state using Town Public Access resources; members to watch the videos individually or as a group and discuss at a future meeting.",
+   "quote": "this plan of action was supported, and committee members agreed to watch the videos as a group or individually and then discuss at a future meeting."
+  },
+  {
+   "decision": "Mr. Toale and Mr. Erickson to begin work on the cost/revenue assumption model and share it with the committee as it is developed.",
+   "quote": "mr. toale stated that he and mr. erickson would begin work on the cost/revenue assumption model shortly and share the work with the committee as it was developed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall renovation and capital costs",
+   "what_was_recorded": "The committee is reviewing Town Hall renovation plans and costs for current capital needs; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "town hall - reviewing renovation plans and costs for current capital needs and potential future use."
+  },
+  {
+   "topic": "Cost/revenue assessments for building re-use",
+   "what_was_recorded": "Mr. MacDonald said cost/revenue assessments are the most important part of the committee's work; a cost/revenue assumption model is being started. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "mr. macdonald stated that the cost/revenue assessments were the most important part of the committees work and would be crucial"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Current Business: committee charge and property status",
+   "resolution": "charge re-confirmed; property status agreed, no action on Passios, Ritter/Old Primary School; Town Hall under review",
+   "quote": "the discussion of the various properties resulted in the agreement as to the following status:",
+   "tags": [
+    "charge",
+    "surplus property",
+    "Town Hall",
+    "Ritter Building",
+    "Old Primary School",
+    "Passios"
+   ]
+  },
+  {
+   "topic": "FLACC interest in Passios property and Verizon School Street property",
+   "resolution": "no action; FLACC talks wait for School Committee transfer plans",
+   "quote": "mr. toale stated that the flacc collaborative still had an interest in the passios property.",
+   "tags": [
+    "FLACC",
+    "Passios",
+    "Verizon",
+    "School Street"
+   ]
+  },
+  {
+   "topic": "Tours of Old Primary School and other Town Halls by video",
+   "resolution": "approved plan; members to watch videos and discuss later",
+   "quote": "this plan of action was supported, and committee members agreed to watch the videos as a group or individually and then discuss at a future meeting.",
+   "tags": [
+    "site tours",
+    "Old Primary School",
+    "Public Access"
+   ]
+  },
+  {
+   "topic": "Cost/revenue assumption model",
+   "resolution": "Toale and Erickson to begin model and share with committee",
+   "quote": "mr. toale stated that he and mr. erickson would begin work on the cost/revenue assumption model shortly",
+   "tags": [
+    "cost/revenue",
+    "model"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "no action; discussion included in topics above",
+   "quote": "old business: - discussion included in topics above.",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Meeting Schedule",
+   "resolution": "10/20 meeting cancelled 5-0; next meeting November 3, 2014",
+   "quote": "mr. albert moved that the 10/20 meeting be cancelled. mr. macdonald seconded and the decision passed 5-0",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "building reuse",
+  "Town buildings",
+  "surplus property",
+  "Passios",
+  "Ritter Building",
+  "Old Primary School",
+  "Town Hall",
+  "FLACC",
+  "Verizon",
+  "meeting schedule",
+  "cost/revenue"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

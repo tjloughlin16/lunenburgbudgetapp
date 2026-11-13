@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-06-16",
  "docid": "3757",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adopt the Economic Development Element of the Master Plan and circulate to Town Boards",
+   "motion": "Adopt the Economic Development Element of the Master Plan and circulate it to Town Boards.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -20,15 +20,247 @@
    "quote": "motion, k. chenis, to adopt the economic development element of the master plan and circulate to town boards, second, d. mcquaid. all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion k. chenis to adjourn, second, d. mcquaid, adjourned 9:20 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08511250000000001
+ "note": "Workshop minutes, not a regular meeting. Text is an extraction with spacing artifacts (e.g., 'th e', 'f ramework'); quotes were collapsed to single spaces. The adjournment motion records no vote tally, so its outcome is 'not stated'. The Economic Development Element motion is recorded as 'All aye.' P. Bertram 'opined' in the text but no public comment section exists, so public_comment is empty. The 'Adopt' motion is followed by 'Action plan to follow.' with no further vote. Budget figures are cited in discussion only, with no transfer recorded.",
+ "cost_usd": 0.00524572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Glenn Eaton",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present; glenn eaton & john hume, mrpc"
+  },
+  {
+   "name": "John Hume",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present; glenn eaton & john hume, mrpc"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "MPO Rep",
+   "status": "not stated",
+   "quote": "p. bertram opined that the population projection numbers are low"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to hold a public workshop in July to develop a framework for a charrette and discuss the Village District Bylaw.",
+   "quote": "board to hold public workshop in july to develop framework for charrette and discuss village district bylaw."
+  },
+  {
+   "decision": "Planning Board and Board of Selectmen to hold a joint meeting to discuss forming an economic development committee.",
+   "quote": "planning board and board of selectmen hold a joint meeting to discuss same."
+  },
+  {
+   "decision": "N. Lockwood suggested C. Fleck follow up on using the Open Space and Recreation Plan as the Natural and Cultural Resources and Open Space and Recreation Elements.",
+   "quote": "n. lockwood suggested c. fleck follow up with the open space and recreation plan"
+  },
+  {
+   "decision": "Have a joint meeting with the Board of Selectmen on Economic Development, and hold a meeting with boards, committees, departments and the public.",
+   "quote": "have joint meeting with board of selectmen on economic development. hold meeting with boards, committees, departments and the public."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Planning Board encumbered funds for Housing Production Plan",
+   "what_was_recorded": "J. Hume noted $4400 plus of Planning Board encumbered funds being used, leveraged with MRPC's DLTA program for a Housing Production Plan.",
+   "figures_as_printed": [
+    "$4400 +"
+   ],
+   "quote": "he noted the $4400 + being utilized in planning board encumbered"
+  },
+  {
+   "topic": "Converting Housing Production Plan to Housing Element",
+   "what_was_recorded": "The HPP could be converted to a Housing Element for approximately $1000.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "the hpp could be converted to a housing element for approximately $1000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "MRPC Master Plan update overview",
+   "resolution": "presented; no action",
+   "quote": "j. hume reviewed mrpc's document outlining the updating of the master plan.",
+   "tags": [
+    "master plan",
+    "MRPC",
+    "housing production plan"
+   ]
+  },
+  {
+   "topic": "Economic Development Element",
+   "resolution": "adopted and circulated to Town Boards; action plan to follow",
+   "quote": "discussion ensued on th e economic development element.",
+   "tags": [
+    "economic development",
+    "master plan"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Economic Development goals and actions review",
+   "resolution": "discussed; action items assigned",
+   "quote": "discussion ensued as to necessary actions to take; go through section 2",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Utilizing Town Web to Promote Economic Development",
+   "resolution": "K. Chenis to put together framework",
+   "quote": "utilizing town web to promote economic development",
+   "tags": [
+    "economic development",
+    "website"
+   ]
+  },
+  {
+   "topic": "Revisit recommendations in priority development report",
+   "resolution": "economic development committee discussed; joint meeting with Selectmen",
+   "quote": "revisit recommendations in",
+   "tags": [
+    "economic development",
+    "priority development"
+   ]
+  },
+  {
+   "topic": "Village District Bylaw",
+   "resolution": "continued; public workshop planned for July",
+   "quote": "continue work on village district bylaw - in process.",
+   "tags": [
+    "village district",
+    "zoning",
+    "charrette"
+   ]
+  },
+  {
+   "topic": "Review adequacy of current zoning",
+   "resolution": "discussed; no action recorded",
+   "quote": "review adequacy of current zoning",
+   "tags": [
+    "zoning",
+    "special permits"
+   ]
+  },
+  {
+   "topic": "Funding for road and infrastructure improvements",
+   "resolution": "discussed; no action recorded",
+   "quote": "aggressively seek funding for road/infrastructure improvements",
+   "tags": [
+    "roads",
+    "infrastructure",
+    "stormwater",
+    "MJTC"
+   ]
+  },
+  {
+   "topic": "Retail market study",
+   "resolution": "discussed; no action recorded",
+   "quote": "prepare a retail market study to identify potential business",
+   "tags": [
+    "retail",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Commercial and industrial development areas",
+   "resolution": "discussed; joint meeting with Selectmen proposed",
+   "quote": "identify areas in town suitable for commercial/industrial development",
+   "tags": [
+    "commercial",
+    "industrial",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Site Plan Approval Bylaw review",
+   "resolution": "discussed; no action recorded",
+   "quote": "review/revise site plan approval bylaw",
+   "tags": [
+    "site plan",
+    "design standards",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Re-Use Committee and vacant Town buildings",
+   "resolution": "in process; no action recorded",
+   "quote": "work with the re-use committee in identifying potential new uses for vacant/soon to be vacant town buildings",
+   "tags": [
+    "town buildings",
+    "re-use"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Master Plan Update, Economic Development Element",
+   "where": "list",
+   "quote": "documents used at workshop: lunenburg master plan update, economic development element"
+  },
+  {
+   "name": "MRPC's document outlining the updating of the Master Plan",
+   "where": "text",
+   "quote": "j. hume reviewed mrpc's document outlining the updating of the master plan."
+  },
+  {
+   "name": "Lunenburg Priority Development/Priority Preservation Report",
+   "where": "text",
+   "quote": "lunenburg priority development/priority preservation report"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "master plan",
+  "economic development",
+  "MRPC",
+  "housing production plan",
+  "zoning",
+  "village district",
+  "workshop"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at workshop:"
+ },
+ "dropped_unquoted_by_field": {}
 }

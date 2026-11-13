@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-09-11",
  "docid": "2281",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Transfer $10,033.44 from Health Insurance to Legal Expenses",
+   "motion": "Transfer $10,033.44 from Health Insurance to Legal Expenses (Chapter 44 § 33B).",
    "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 4-0",
@@ -20,15 +20,302 @@
    "quote": "karin moved that the town transfer $10,033.44 from health insurance to legal expenses and terri seconded the motion. the finance committee approved the motion 4-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "karin moved to adjourn the meeting; her motion was seconded by terri. the board voted 4-0 in favor"
+   "quote": "karin moved to adjourn the meeting; her motion was seconded by terri. the board voted 4-0 in favor; the meeting adjourned at 9:12."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is a macOS Vision OCR of a scanned document, marked ===OCR===. All votes found and recorded with verbatim quotes.",
- "cost_usd": 0.0822605
+ "note": "OCR of a scanned 3-page document; several columns are garbled and interleaved (Bodkin's numbered points, school building update, library and some committee report cells). The $50,000 figure in the School Building update could not be placed reliably and was not recorded as a budget item. Attendance is inferred from the 'Present' line and 'All Members Present'. Both recorded votes show printed tallies; no other motions are recorded. The 'Chief Marino' entry is from a committee report and his attendance status is not stated.",
+ "cost_usd": 0.00639132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Tom Bodkin",
+   "role": "",
+   "status": "present",
+   "quote": "tom bodkin conveyed to the fin comm his concerns that a potential increase of"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "",
+   "status": "not stated",
+   "quote": "chief marino discussed capital"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will correct the errors and omission in the August 21 minutes and re-submit them for approval at the next meeting.",
+   "quote": "john will correct them and re-submit the minutes for approval at the next meeting."
+  },
+  {
+   "decision": "John Henshaw will submit the Financial Policies to Stephen Malandrinos to be posted on the Town web site (action item).",
+   "quote": "john will submit the financial policies to stephen malandrinos to be posted"
+  },
+  {
+   "decision": "Mark Erickson will set up a meeting between the committee and current and former Parks Commission members on the history and decisions behind the turf field policies and fee structure.",
+   "quote": "turf field policies/fees: mark erickson will set up a meeting between this committee and"
+  },
+  {
+   "decision": "Mark Erickson will add a review of the school construction project financing to the future agenda item list.",
+   "quote": "mark will add a review of the school construction project financing project to the future"
+  },
+  {
+   "decision": "John Henshaw will attend the ATFC Annual Meeting and Workshops and Karin Menard may attend.",
+   "quote": "the atfc annual meeting and workshops will take place saturday, october 18 at tri-county regional high school in franklin, ma. john will attend and karin may."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 44 § 33B transfer to Legal Expenses",
+   "what_was_recorded": "A transfer of $10,033.44 from Health Insurance to Legal Expenses to cover the FY 2014 legal expense shortfall was approved.",
+   "figures_as_printed": [
+    "$10,033.44"
+   ],
+   "quote": "chapter 44 § 33b transfer of $10,033.44 from health insurance to legal expenses."
+  },
+  {
+   "topic": "FY2014 revenue",
+   "what_was_recorded": "Actual revenues exceeded budget by about $275,000 or 0.9%, led by fines and forfeits, meals tax, motor vehicle excise and miscellaneous non-recurring revenue.",
+   "figures_as_printed": [
+    "$275,000",
+    "0.9%"
+   ],
+   "quote": "actual revenues exceeded budget by about $275,000 or 0.9%"
+  },
+  {
+   "topic": "FY2014 expenditures",
+   "what_was_recorded": "Total expenditures were $216,700 below the revised budget.",
+   "figures_as_printed": [
+    "$216,700"
+   ],
+   "quote": "total expenditures were $216,700 below the revised budget."
+  },
+  {
+   "topic": "Undesignated fund balance",
+   "what_was_recorded": "Undesignated Fund Balance for FY2014 was reported at $562,131.",
+   "figures_as_printed": [
+    "$562,131"
+   ],
+   "quote": "undesignated fund balance (revenue + free cash + underspends) for the year was $562,131."
+  },
+  {
+   "topic": "Estimated Free Cash",
+   "what_was_recorded": "Estimated Free Cash is $483,320, pending DOR certification.",
+   "figures_as_printed": [
+    "$483,320"
+   ],
+   "quote": "estimated free cash is $483,320, pending dor certification."
+  },
+  {
+   "topic": "Cost of financing High School/Middle School project",
+   "what_was_recorded": "Public concern that rising interest rates before 2016 would raise the Town's cost of borrowing for the school project; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a potential increase of interest rates between now and 2016 would raise the cost to the town of financing"
+  },
+  {
+   "topic": "School building project equipment",
+   "what_was_recorded": "Web cam documentation was judged very expensive, so the SBC is considering aerial photos instead.",
+   "figures_as_printed": [],
+   "quote": "instead of the web cam which is very expensive, the sbc is considering"
+  },
+  {
+   "topic": "Monty Tech principal salary",
+   "what_was_recorded": "The new Monty Tech principal's salary is $3,000 less than the prior principal's salary.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "the salary of the new principal at monty tech is $3,000 less than the prior principal's salary was."
+  },
+  {
+   "topic": "Library budget increases",
+   "what_was_recorded": "The library is concerned about projected increases for the FY2015 budget and will seek ways to mitigate costs; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "next steps are to get a better handle on potential increase in costs and what actions the"
+  },
+  {
+   "topic": "Turf field policies and fees",
+   "what_was_recorded": "The committee will meet with the Parks Commission to understand the history behind the turf field policies and fee structure; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "turf field policies/fees: mark erickson will set up a meeting between this committee and"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Chapter 44 § 33B transfer from Health Insurance to Legal Expenses to cover the FY 2014 legal expense shortfall.",
+   "amount_as_printed": "$10,033.44",
+   "outcome": "passed 4-0",
+   "quote": "chapter 44 § 33b transfer of $10,033.44 from health insurance to legal expenses."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Tom Bodkin",
+   "stated_role": "",
+   "topic": "interest rates and High School/Middle School project financing",
+   "quote": "tom bodkin conveyed to the fin comm his concerns that a potential increase of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Communications: public comment on school project financing and interest rates",
+   "resolution": "received; no action recorded",
+   "quote": "tom bodkin conveyed to the fin comm his concerns that a potential increase of",
+   "tags": [
+    "public comment",
+    "interest rates",
+    "school construction",
+    "financing"
+   ]
+  },
+  {
+   "topic": "Communications: committee (The Beacon, ATFC meeting)",
+   "resolution": "noted; John to attend ATFC",
+   "quote": "the atfc annual meeting and workshops will take place saturday, october 18 at",
+   "tags": [
+    "ATFC",
+    "training"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates: transfer and FY2014 final accounting",
+   "resolution": "transfer approved 4-0; accounting reported",
+   "quote": "chapter 44 § 33b transfer of $10,033.44 from health insurance to legal expenses.",
+   "tags": [
+    "transfer",
+    "FY2014",
+    "free cash",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Review of Minutes (August 21)",
+   "resolution": "deferred; corrections to be resubmitted next meeting",
+   "quote": "there was an error and an omission in the minutes of the august 21 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Finance Policy Document",
+   "resolution": "action item assigned to John Henshaw",
+   "quote": "action item: john will submit the financial policies to stephen malandrinos to be posted",
+   "tags": [
+    "financial policies",
+    "web site"
+   ]
+  },
+  {
+   "topic": "Committee Updates (Building Re-Use, School Building, Monty Tech, Council on Aging, Public Safety, DPW, Library, Public Access Cable)",
+   "resolution": "reports received",
+   "quote": "building re-use will meet on september 15 to discuss the charrette presentation,",
+   "tags": [
+    "committee reports",
+    "school construction",
+    "library",
+    "Monty Tech",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Budget Opportunity: Turf Field Policies/Fees",
+   "resolution": "Chair to arrange meeting with Parks Commission",
+   "quote": "turf field policies/fees: mark erickson will set up a meeting between this committee and",
+   "tags": [
+    "turf field",
+    "fees",
+    "Parks Commission"
+   ]
+  },
+  {
+   "topic": "Future Agenda Items",
+   "resolution": "listed for future meetings",
+   "quote": "review the updated pavement management plan",
+   "tags": [
+    "pavement",
+    "budget presentations",
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:12 pm, 4-0",
+   "quote": "karin moved to adjourn the meeting; her motion was seconded by terri. the board voted 4-0 in favor; the meeting adjourned at 9:12.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Beacon (recent issue)",
+   "where": "text",
+   "quote": "mark passed around the recent issue of the beacon."
+  },
+  {
+   "name": "Financial Policies",
+   "where": "text",
+   "quote": "john will submit the financial policies to stephen malandrinos to be posted"
+  },
+  {
+   "name": "Charrette presentation",
+   "where": "text",
+   "quote": "building re-use will meet on september 15 to discuss the charrette presentation,"
+  },
+  {
+   "name": "Updated Pavement Management Plan",
+   "where": "text",
+   "quote": "review the updated pavement management plan"
+  },
+  {
+   "name": "Minutes of the August 21 meeting",
+   "where": "text",
+   "quote": "there was an error and an omission in the minutes of the august 21 meeting."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "school construction",
+  "interest rates",
+  "transfer",
+  "free cash",
+  "FY2014 final accounting",
+  "minutes",
+  "turf field",
+  "library budget",
+  "Monty Tech"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

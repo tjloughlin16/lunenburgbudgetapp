@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2016-01-21",
  "docid": "5353",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve January 12, 2016 minutes",
+   "motion": "Approve the minutes of January 12, 2016.",
    "moved_by": "Sue",
    "seconded_by": "Jean",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "approval of january 12, 2016 minutes motioned by sue and second by jean."
   },
   {
-   "motion": "Require documents to support income",
+   "motion": "Require documents to support income for the Property Tax Work-Off Program applications.",
    "moved_by": "Sheila",
    "seconded_by": "Sue",
    "outcome": "passed",
@@ -29,6 +29,135 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted by macOS Vision, single page. Clear text quality.",
- "cost_usd": 0.1036895
+ "note": "Single-page OCR (macOS Vision) of a scanned document; the OCR text reads cleanly. The header names the body \"Senior Citizen Property Tax Work-Off Program & Taxation Aid Committee\", which differs from the board name given for this record. No dollar figures appear. The only motion with a stated result is \"all in favor\" (no tally printed). The motion approving the January 12 minutes has no recorded result. The adjournment at 2:20pm has no motion recorded. Public comment is not recorded. Roles for Sue Doherty and the other members are not printed beyond \"Members\"; \"Chair\" is not stated.",
+ "cost_usd": 0.00328342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Member (listed under \"Members present\"; called the meeting to order)",
+   "status": "present",
+   "quote": "meeting called to order by sue doherty at 2:03 pm, at lunenburg town hall, 17 main st. members present: jean larkin, sheila craigen, myleen mallari and sue doherty."
+  },
+  {
+   "name": "Jean Larkin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jean larkin, sheila craigen, myleen mallari and sue doherty."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Member; recorded the minutes as Respectfully submitted by",
+   "status": "present",
+   "quote": "members present: jean larkin, sheila craigen, myleen mallari and sue doherty."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jean larkin, sheila craigen, myleen mallari and sue doherty."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Financial Director",
+   "status": "present",
+   "quote": "also present: financial director, karen brochu and payroll & benefits coordinator, nancy forest."
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits Coordinator",
+   "status": "present",
+   "quote": "also present: financial director, karen brochu and payroll & benefits coordinator, nancy forest."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members agreed that applicants need to provide supporting documents by Wednesday, January 27, 2016.",
+   "quote": "members agree we need documents by next wednesday, january 27, 2016."
+  },
+  {
+   "decision": "Sue will follow up with all applicants again and tell them the document due date (she had already contacted them that additional documents may be required).",
+   "quote": "she will follow up with them again and let them know the due date."
+  },
+  {
+   "decision": "Members agreed the next meeting would be Thursday, January 28, 2016; Sue will set the time and send the agenda.",
+   "quote": "members agree next thursday, january 28, 2016 would be an appropriate time for our next meeting. sue will set the time and follow up with the agenda."
+  },
+  {
+   "decision": "On the advice from consultation, interest and dividend information will not be required unless it is a regular source of income.",
+   "quote": "it is recommended that we do not require information on interest and dividends unless it is a regular source of income."
+  },
+  {
+   "decision": "Members agreed the modified sample application for next year looks good.",
+   "quote": "all members agree the application looks good."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of January 12, 2016 minutes",
+   "resolution": "motion made; result not stated",
+   "quote": "approval of january 12, 2016 minutes motioned by sue and second by jean.",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Review/vote on proof of income eligibility",
+   "resolution": "approved requiring income documents by January 27, 2016; interest and dividend information limited to regular income",
+   "quote": "sheila motioned that we require documents to support income. sue second and all in favor.",
+   "tags": [
+    "income eligibility",
+    "applications",
+    "documentation"
+   ]
+  },
+  {
+   "topic": "Sample application for next year",
+   "resolution": "members agreed the application looks good; no vote recorded",
+   "quote": "sue modified and brought a sample application for next year. all members agree the application looks good.",
+   "tags": [
+    "application form",
+    "next year"
+   ]
+  },
+  {
+   "topic": "Board discussion: recommending a candidate for appointment",
+   "resolution": "suggested; no vote recorded",
+   "quote": "sue suggested that we recommend nancy forest to the board of selectman as a candidate for appointment to the tax work-off program.",
+   "tags": [
+    "appointment",
+    "board of selectmen"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Current, completed applications for this year",
+   "where": "text",
+   "quote": "we are able to use the current, completed applications for this year."
+  },
+  {
+   "name": "Sample application for next year (modified by Sue Doherty)",
+   "where": "text",
+   "quote": "sue modified and brought a sample application for next year."
+  }
+ ],
+ "tags": [
+  "senior property tax work-off",
+  "income eligibility",
+  "applications",
+  "appointments",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

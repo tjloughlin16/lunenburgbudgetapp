@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2015-03-02",
  "docid": "927",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve variances for septic system at 954 Chase Road",
+   "motion": "Approve the variances requested for 954 Chase Road (offset to ground water, and the proposed gravity system's distance from the suction well line).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by passios, the variances were approved. all in favor."
   },
   {
-   "motion": "Approve variance from 50 feet to 25 feet distance from property line",
+   "motion": "Approve the request of 9 Fire Road 15A for a variance from 50 feet to 25 feet, distance from property line, for the new well.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -28,15 +28,172 @@
    "quote": "on motion by jewell and second by fortin, the board voted to approve the request. all in favor."
   },
   {
-   "motion": "Approve finishing basement at 190 Chase Road with three bedroom deed restriction",
+   "motion": "Approve the 190 Chase Road request to finish the basement, subject to a three (3) bedroom deed restriction.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios they approved the request with a three (3) bedroom deed restriction. all in favor."
+   "quote": "they approved the request with a three (3) bedroom deed restriction. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1103275
+ "note": "Text is a clean extraction with no scan issues. The minutes record no motion or vote on approving prior minutes and no motion to adjourn (only 'Meeting adjourned at 7:55 pm'), so no procedural votes are recorded. The vote count is not printed; outcomes are 'All in favor' as printed. No dollar figures appear. No public comment section is printed; applicants appeared before the board. Kerry Speidel is named only in passing and did not take part, so she is not listed as an attendee.",
+ "cost_usd": 0.00421642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios, paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios, paul fortin"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios, paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios, paul fortin"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owne r."
+  },
+  {
+   "name": "Scott Malone",
+   "role": "owner",
+   "status": "present",
+   "quote": "owners scott malone and marcy foreman met with the board."
+  },
+  {
+   "name": "Marcy Foreman",
+   "role": "owner",
+   "status": "present",
+   "quote": "owners scott malone and marcy foreman met with the board."
+  },
+  {
+   "name": "John Duggan",
+   "role": "owner",
+   "status": "present",
+   "quote": "the owner of the property, john duggan, met with th e board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board of Health's involvement with the Lunenburg Farmers Market is limited to issuing permits, and the Board will continue in that capacity, as Chairman Emond advised after Town Administrator Kerry Speidel asked that the market be turned over to the Agricultural Commission.",
+   "quote": "cha irman emond advised that the board of health's involvement was limited to issuing permits and the board of health would continue in that capacity.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Chairman Emond had approved, before the hearing, an emergency drilling of a new well at 9 Fire Road 15A because the owners were without water (recorded as a chair approval, not a board vote).",
+   "quote": "this well has already been drilled as an emergency with chairman emond's approval."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "no action recorded (heading only, no motion or vote text)",
+   "quote": "title 5 inspection reports acknowledged : 54 broadmeadow dr 74 townsend harbor road 43 arbor street (fail)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged (seven reports listed)",
+   "quote": "title 5 inspection reports acknowledged : 54 broadmeadow dr 74 townsend harbor road 43 arbor street (fail)",
+   "tags": [
+    "Title 5",
+    "septic",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (two permits listed)",
+   "quote": "septic permits signed : 954 chase road 18 white tail crossing",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "954 Chase Road",
+   "resolution": "variances approved",
+   "quote": "this lot has high ground water and a high perc rate.",
+   "tags": [
+    "septic",
+    "variance",
+    "failed system"
+   ]
+  },
+  {
+   "topic": "9 Fire Road 15A",
+   "resolution": "variance approved for new well distance to property line",
+   "quote": "the owners are requesting a variance from 50 feet to 25 feet, distance from property line.",
+   "tags": [
+    "well",
+    "variance",
+    "emergency"
+   ]
+  },
+  {
+   "topic": "190 Chase Road",
+   "resolution": "approved with three-bedroom deed restriction",
+   "quote": "they approved the request with a three (3) bedroom deed restriction. all in favor.",
+   "tags": [
+    "Title 5",
+    "bedrooms",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "Farmers Market",
+   "resolution": "no action; Board's role limited to issuing permits",
+   "quote": "cha irman emond advised that the board of health's involvement was limited to issuing permits and the board of health would continue in that capacity.",
+   "tags": [
+    "farmers market",
+    "permits",
+    "agricultural commission"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "proposed floor plan (190 Chase Road)",
+   "where": "text",
+   "quote": "the members of board reviewed the proposed floor plan."
+  }
+ ],
+ "tags": [
+  "Title 5",
+  "septic",
+  "variances",
+  "well",
+  "permits",
+  "farmers market",
+  "deed restriction"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the members of board reviewed the proposed floor plan."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-01-04",
  "docid": "526",
@@ -12,19 +12,160 @@
  },
  "votes": [
   {
-   "motion": "Elect Richard McGrath as Chair, Jim LaVeck as Vice Chair, and Cullen Dwyer as Recording Clerk",
-   "outcome": "unanimous",
-   "procedural": true,
-   "quote": "officers were elected by unanimous vote: richard mcgrath- chair jim laveck- vice chair cullen dwyer- recording clerk"
-  },
-  {
-   "motion": "Meet on Saturday the 16th at 8AM for a site visit of the APD",
+   "motion": "Elect officers: Richard McGrath as Chair, Jim LaVeck as Vice Chair, and Cullen Dwyer as Recording Clerk.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the commission also resolved to meet on saturday the 16 th at 8am for a site visit of the apd, to help the apdc formulate design guidelines."
+   "quote": "officers were elected by unanimous vote:"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear meeting minutes with explicit vote language. All required information present in the text.",
- "cost_usd": 0.11349050000000001
+ "note": "The minutes record no motions, mover, or seconder for any action except the officer election (recorded only as 'elected by unanimous vote'). Adjournment at 8:30PM is recorded without a motion or vote, so it is not listed as a vote. No public comment section is printed. No dollar figures appear. The minutes print 'thirty(45) days' as written, and 'Saturday the 16th' with no month; both are reproduced as printed.",
+ "cost_usd": 0.00422792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "7:15pm- meeting called to order with all three members present."
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "7:15pm- meeting called to order with all three members present."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Recording Clerk",
+   "status": "present",
+   "quote": "7:15pm- meeting called to order with all three members present."
+  },
+  {
+   "name": "Bob Ebersol",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "also present was selectman bob ebersol to assist the commission at its first meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The bylaw will need to be amended at the May 2016 Town Meeting to correct the errata (district definition/map, number of members, and the 'thirty(45) days' wording).",
+   "quote": "the bylaw will need to be amended to correct these mistakes at the town meeting in may 2016."
+  },
+  {
+   "decision": "McGrath agreed to contact Mass Historic to obtain an example of historic design guidelines.",
+   "quote": "mcgrath agreed to contact mass historic to obtain an example of"
+  },
+  {
+   "decision": "LaVeck agreed to contact the Town of Ipswich and research other towns with historic preservation bylaws to find a set of guidelines as a model.",
+   "quote": "laveck agreed to contact the town of ipswich and research other towns with historic preservation bylaws"
+  },
+  {
+   "decision": "The Commission resolved to meet on Saturday the 16th at 8AM for a site visit of the APD to help formulate design guidelines.",
+   "quote": "the commission also resolved to meet on saturday"
+  },
+  {
+   "decision": "McGrath agreed to contact the police about the site visit and to contact the Town Clerk to post the next meeting.",
+   "quote": "mcgrath agreed to contact the police about the site visit, and to contact the town clerk to post the next meeting."
+  },
+  {
+   "decision": "The APDC agreed to hold its next meeting on Jan 19, 2016 at the Ritter Building.",
+   "quote": "the apdc agreed to have its next meeting on jan 19"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and election of officers",
+   "resolution": "officers elected unanimously",
+   "quote": "officers were elected by unanimous vote:",
+   "tags": [
+    "officer election"
+   ]
+  },
+  {
+   "topic": "Errata in ratified bylaw",
+   "resolution": "to be corrected by amendment at May 2016 Town Meeting; corrected map being drawn",
+   "quote": "certain errata were noticed in the town bylaw as ratified:",
+   "tags": [
+    "bylaw errata",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Commission membership size",
+   "resolution": "discussed; no action",
+   "quote": "there was also discussion regarding the apdc having less than its proposed number of members.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Enforcing demolition by neglect",
+   "resolution": "discussed; no conclusion reached",
+   "quote": "there was some discussion of how we would enforce this rule, and whether the intentions of the violator might be a factor",
+   "tags": [
+    "demolition by neglect",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Design guidelines for contributing properties",
+   "resolution": "members assigned research; guidelines due within 180 days",
+   "quote": "the commission recognized its obligation to provide design guidelines for alterations of existing contributing properties in the apd.",
+   "tags": [
+    "design guidelines",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Site visit of the APD",
+   "resolution": "site visit set for Saturday the 16th at 8AM",
+   "quote": "the commission also resolved to meet on saturday",
+   "tags": [
+    "site visit"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "next meeting set for Jan 19, 2016 at the Ritter Building",
+   "quote": "the apdc agreed to have its next meeting on jan 19",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town bylaw (as ratified), Architectural Preservation District",
+   "where": "text",
+   "quote": "certain errata were noticed in the town bylaw as ratified:"
+  },
+  {
+   "name": "Map attached to the bylaw (APD boundary map)",
+   "where": "text",
+   "quote": "the map attached to the bylaw shows the apd as only the historic district."
+  }
+ ],
+ "tags": [
+  "officer election",
+  "bylaw errata",
+  "design guidelines",
+  "historic preservation",
+  "demolition by neglect",
+  "site visit",
+  "Town Meeting",
+  "Architectural Preservation District"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

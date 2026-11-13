@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-06-17",
  "docid": "1689",
@@ -12,47 +12,358 @@
  },
  "votes": [
   {
-   "motion": "Approve the Notice of Intent for construction of two residential buildings at Stone Farm Estates project",
+   "motion": "Approve the Notice of Intent filed by Stone Farm, LLC for construction of two residential buildings at 758 Massachusetts Avenue.",
+   "moved_by": "",
    "outcome": "passed 4-2",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "project approved 4 to 2."
   },
   {
-   "motion": "Approve the Field Change on Notice of Intent for Emerald Place Development, LLC reducing buildings from 4 to 2",
+   "motion": "Approve the Field Change on the Notice of Intent (DEP # 208-0848) filed by Emerald Place Development, LLC at 1 Lakefront Avenue.",
+   "moved_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "all work is outside the 30' no touch zone. approved unanimously."
+   "quote": "approved unanimously."
   },
   {
-   "motion": "Accept a 10' shoreline with up to 90 square feet of patio space for Malcolm Parker at 40 Hemlock Drive",
+   "motion": "Accept a 10’ shoreline with up to 90 square feet of patio space at 40 Hemlock Drive, with the wall no more than 24” high.",
+   "moved_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "it was voted to accept a 10' shoreline with up to 90 square feet of patio space. wall will maintain the same dimensions with a height of no more than 24\". area left of patio will be revegetated. will use permeable pavers and natural tone hand laid steps. approved unanimously."
+   "quote": "it was voted to accept a 10' shoreline with up to 90 square feet of patio space."
   },
   {
-   "motion": "Approve the June 3 minutes",
+   "motion": "Approve the minutes of 6/3.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "minutes approval ~ 6/3 ~ approved"
   },
   {
-   "motion": "Approve as an amendment the use of an aeration system and muck pellets instead of chemicals at Little Hickory",
+   "motion": "Approve the Little Hickory amendment to use an aeration system and muck pellets instead of chemicals, as an amendment of the Order of Conditions.",
+   "moved_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "approved unanimously as an amendment of ooc."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes extracted. The 100 Chestnut Street hearing (7:30 PM) and 150 & 164 White Street item were explicitly noted as withdrawn or with \"no decision\" respectively, so no votes were recorded for those items.",
- "cost_usd": 0.1455235
+ "note": "Text is an extraction with broken words (e.g. \"Rabbi tt\", \"Carrie r\", \"Anthon y\", \"Inten t\"); quotes copy those breaks verbatim, and attendee names are cleaned up. Board member names come only from the header list, with no present/absent marking, so status is \"not stated\". Vote results are printed without a roll call or mover/seconder; the Stone Farm vote is recorded only as \"4 to 2\". The 6/3 minutes approval is recorded as \"Approved\" with no motion wording. The Public Comment and Commission Comment headings are blank, and the FY 2016 Budget and Lane Grant Reimbursement headings have no text under them, so no budget figures or transfers appear. The meeting schedule line is ambiguous; I read it as no meeting July 1 and a meeting July 15.",
+ "cost_usd": 0.01092942,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Tom Bertram",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Brad Kennedy",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, matt marro, jan carrie r"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "of Whitman & Bingham Associates, Inc.",
+   "status": "not stated",
+   "quote": "emerald place development, llc. (anthony cleaves of whitman & bingham associates, inc.)."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "D P W, for the Lunenburg Parks Department filing",
+   "status": "not stated",
+   "quote": "filed by lunenburg parks department (jack rodriquenz d p w)"
+  },
+  {
+   "name": "Malcolm Parker",
+   "role": "Notice of Intent filer",
+   "status": "not stated",
+   "quote": "a notice of intent filed by malcolm parker."
+  },
+  {
+   "name": "Elaine Mroz",
+   "role": "of Chestnut Street",
+   "status": "present",
+   "quote": "elaine mroz of chestnut street spoke and outlined her concerns."
+  },
+  {
+   "name": "Corinne & Dan Jones",
+   "role": "re: 123 Hollis Road",
+   "status": "present",
+   "quote": "the jone's discussed the amount of work done inside the house to make it safe"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Conditions added to the 758 Massachusetts Avenue approval: hay bales/silt fence along the 30’ NO TOUCH Zone, to be strictly enforced as special conditions.",
+   "quote": "hay bales/silt fence will be installed along 30' no touch zone and added to special conditions to be strictly enforced."
+  },
+  {
+   "decision": "Sunnyhill Road (Lot 5, off Leominster Road): applicant needs an engineered plan with wetlands marked properly.",
+   "quote": "need engineered plan with wetlands marked properly"
+  },
+  {
+   "decision": "100 Chestnut Street parking NOI withdrawn; to be rescheduled for July 15.",
+   "quote": "withdrawn will reschedule for july 15"
+  },
+  {
+   "decision": "123 Hollis Road: large stones recommended at the entrance to deter intruders.",
+   "quote": "it was recommended that large stones be placed at the entrance to deter the intruders."
+  },
+  {
+   "decision": "123 Hollis Road: Jan (Jan Carrier) to contact DPW about neighbors dumping.",
+   "quote": "jan will contact dpw."
+  },
+  {
+   "decision": "123 Hollis Road: Dan Jones given permission to report the neighbors to the Commission.",
+   "quote": "dan has spoken to them and was given permission to report them to the commission."
+  },
+  {
+   "decision": "Little Hickory: applicant to provide a summary of current conditions and a target description of desired conditions after treatment and aeration.",
+   "quote": "need summary of current conditions and then a target description of desired conditions after treatment and aeration."
+  },
+  {
+   "decision": "150 & 164 White Street Right of First Refusal: no decision; held pending staff (Kerry) determining whether it was filed properly.",
+   "quote": "no decision ~ waiting for kerry to determine if it was filed properly"
+  },
+  {
+   "decision": "Meeting schedule: no meeting on July 1; the July 15 meeting stands.",
+   "quote": "no meeting, july 15th"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Elaine Mroz",
+   "stated_role": "of Chestnut Street",
+   "topic": "Chestnut Street off-street parking concerns",
+   "quote": "elaine mroz of chestnut street spoke and outlined her concerns."
+  },
+  {
+   "speaker": "Corinne & Dan Jones",
+   "stated_role": "",
+   "topic": "123 Hollis Road work and neighbor dumping",
+   "quote": "the jone's discussed the amount of work done inside the house to make it safe"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "call to order ~ 7:00 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "7:00 PM hearing: 758 Massachusetts Avenue, Stone Farm, LLC Notice of Intent",
+   "resolution": "approved 4-2 with added conditions",
+   "quote": "project approved 4 to 2.",
+   "tags": [
+    "hearing",
+    "wetlands",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "7:15 PM hearing: 1 Lakefront Avenue, Field Change",
+   "resolution": "approved unanimously",
+   "quote": "approved unanimously.",
+   "tags": [
+    "hearing",
+    "wetlands",
+    "field change"
+   ]
+  },
+  {
+   "topic": "7:30 PM hearing: 100 Chestnut Street, Parks Department parking NOI",
+   "resolution": "withdrawn, rescheduled to July 15",
+   "quote": "withdrawn will reschedule for july 15",
+   "tags": [
+    "hearing",
+    "parking",
+    "withdrawn"
+   ]
+  },
+  {
+   "topic": "7:35 PM: Sunnyhill Road, Lot 5 off Leominster Road",
+   "resolution": "engineered plan with wetlands marked required",
+   "quote": "need engineered plan with wetlands marked properly",
+   "tags": [
+    "wetlands",
+    "engineered plan"
+   ]
+  },
+  {
+   "topic": "7:45 PM continuation hearing: 40 Hemlock Drive, Malcolm Parker",
+   "resolution": "approved unanimously",
+   "quote": "approved unanimously.",
+   "tags": [
+    "hearing",
+    "continuation",
+    "patio",
+    "shoreline"
+   ]
+  },
+  {
+   "topic": "8:00 PM: 123 Hollis Road, Corinne & Dan Jones",
+   "resolution": "no vote; DPW contact and stone barrier recommended",
+   "quote": "jan will contact dpw.",
+   "tags": [
+    "dumping",
+    "trails",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Minutes approval 6/3",
+   "resolution": "approved",
+   "quote": "minutes approval ~ 6/3 ~ approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: Little Hickory amendment",
+   "resolution": "approved unanimously as amendment of OoC",
+   "quote": "approved unanimously as an amendment of ooc.",
+   "tags": [
+    "invasive plants",
+    "aeration",
+    "amendment"
+   ]
+  },
+  {
+   "topic": "New business: 150 & 164 White Street, Right of First Refusal",
+   "resolution": "no decision",
+   "quote": "no decision ~ waiting for kerry to determine if it was filed properly",
+   "tags": [
+    "right of first refusal",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "listed, no action recorded",
+   "quote": "ongoing business forest cutting plans lane grant reimbursement",
+   "tags": [
+    "forest cutting",
+    "grant",
+    "budget",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "no action recorded",
+   "quote": "signatures ~ ooc(1), eo(1), coc(1)",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Announcements and meeting schedule",
+   "resolution": "no action",
+   "quote": "no meeting, july 15th",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:13 PM",
+   "quote": "adjournment ~ 10:13 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, Stone Farm, LLC (DEP #208-0727), 758 Massachusetts Avenue",
+   "where": "text",
+   "quote": "the project had previously been approved under dep #208-0727."
+  },
+  {
+   "name": "Field Change on Notice of Intent (DEP # 208-0848), Emerald Place Development, LLC, 1 Lakefront Avenue",
+   "where": "text",
+   "quote": "notice of intent (dep # 208-0848)"
+  },
+  {
+   "name": "Notice of Intent filed by Lunenburg Parks Department, 100 Chestnut Street",
+   "where": "text",
+   "quote": "filed by lunenburg parks department (jack rodriquenz d p w)"
+  },
+  {
+   "name": "Notice of Intent filed by Malcolm Parker, 40 Hemlock Drive",
+   "where": "text",
+   "quote": "a notice of intent filed by malcolm parker."
+  },
+  {
+   "name": "Little Hickory amendment, Order of Conditions (OoC)",
+   "where": "text",
+   "quote": "approved unanimously as an amendment of ooc."
+  },
+  {
+   "name": "Ken Jones Talent Bank Form and recommendation",
+   "where": "text",
+   "quote": "ken jones talent bank form and recommendation"
+  },
+  {
+   "name": "Signatures: OoC(1), EO(1), CoC(1)",
+   "where": "text",
+   "quote": "signatures ~ ooc(1), eo(1), coc(1)"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "conservation commission",
+  "public hearings",
+  "Stone Farm",
+  "Lakefront Avenue",
+  "Hemlock Drive",
+  "Little Hickory",
+  "Chestnut Street parking",
+  "Hollis Road",
+  "White Street",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

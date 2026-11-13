@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2013-03-14",
  "docid": "4608",
@@ -12,23 +12,150 @@
  },
  "votes": [
   {
-   "motion": "Approve the February 25 minutes as amended",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "the minutes for feb. 25' were read and approved as amended.",
+   "motion": "Approve the minutes of Feb. 25 as amended.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the minutes for feb. 25' were read and approved as amended."
   },
   {
-   "motion": "Purchase four panels of additional backdrop curtains at a cost not to exceed $350.00",
+   "motion": "Purchase four panels of additional backdrop curtains at a cost not to exceed $350.00.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and was passed to purchase four panels of additional backdrop curtains at a cost not to exceed $350.00.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "a motion was made and was passed to purchase four panels of additional backdrop curtains at a cost not to exceed $350.00."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scanned minutes. Vote counts not recorded in original.",
- "cost_usd": 0.08352749999999999
+ "note": "Scanned page, OCR text with errors: header reads 'Je Zom', date reads 'March 144, 2013', 'Feb. 25'' and 'April 8t' are garbled, and 'or Saturday' is probably 'on Saturday'. The minutes record no mover or seconder and no vote tallies for either motion, and no call-to-order or adjournment vote. No documents list is printed. The page appears to be incomplete: the Budget item is cut off mid-sentence and no adjournment is shown.",
+ "cost_usd": 0.00315162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio (8:30)"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio (8:30)"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present (arrived 8:30)",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio (8:30)"
+  },
+  {
+   "name": "JoMcLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jomclaughlin, ernie sund"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jomclaughlin, ernie sund"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continue the inventory/capital planning list work on Saturday, April 6 at 10:00am at Town Hall.",
+   "quote": "it was decided to continue the work or saturday, april 6"
+  },
+  {
+   "decision": "Next regular meeting set for Tuesday April 8 at the Brooks House.",
+   "quote": "the next regular scheduled meeting will be on tuesday april 8t at the brooks house."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Backdrop curtains purchase",
+   "what_was_recorded": "A motion passed to buy four panels of additional backdrop curtains, capped at a set cost.",
+   "figures_as_printed": [
+    "$350.00"
+   ],
+   "quote": "a motion was made and was passed to purchase four panels of additional backdrop curtains at a cost not to exceed $350.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "minutes of Feb. 25 approved as amended",
+   "quote": "secretary's report: the minutes for feb. 25' were read and approved as amended.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public Comments",
+   "resolution": "no public comment",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Studio and Equipment Update",
+   "resolution": "backdrop curtain purchase passed; studio programming expected within two weeks; Tricaster dry run and baseball show discussed",
+   "quote": "studio and equipment update:",
+   "tags": [
+    "studio",
+    "equipment",
+    "backdrop",
+    "Tricaster",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Budget",
+   "resolution": "inventory and capital planning list work continued on April 6",
+   "quote": "• see jo's progress report of 3/14 --- inventory list work began on the inventory/capital planning list.",
+   "tags": [
+    "budget",
+    "inventory",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for Tuesday April 8 at the Brooks House",
+   "quote": "the next regular scheduled meeting will be on tuesday april 8t at the brooks house.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Jo's progress report of 3/14",
+   "where": "text",
+   "quote": "see jo's progress report of 3/14 --- inventory list work began on the inventory/capital planning list."
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access cable",
+  "studio",
+  "equipment",
+  "budget",
+  "inventory",
+  "capital planning",
+  "Brooks House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

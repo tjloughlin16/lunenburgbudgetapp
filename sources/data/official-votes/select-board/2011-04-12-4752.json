@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-04-12",
  "docid": "4752",
@@ -12,15 +12,424 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the Regular Session and open Executive Session",
+   "motion": "Adjourn Regular Session at 8:55 P.M. and open Executive Session under M.G.L. Chapter 39, §23B to discuss collective bargaining or litigation strategy.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 8:55 p.m. and opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye"
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:55 p.m. and opened executive session by roll call"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. One procedural vote recorded by roll call at end of meeting.",
- "cost_usd": 0.1063855
+ "note": "Scanned minutes read by OCR (macOS Vision); some words are garbled (e.g., \"SELECIMEN\", \"Municipaly\", \"privelege\"), and quotes are taken from the OCR text. Only one motion with a recorded vote appears (the adjournment into executive session). Most actions are recorded as signed, accepted or directed without a motion. The Finance Committee 4-2 vote is a committee vote, not a board vote. Presence of Representative Jen Benson and Senator Jen Flanagan is inferred from their agenda item, and their attendance mode is not stated. Loxi Calmes is named as the appointment listing; attendance is not stated.",
+ "cost_usd": 0.01035342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with paula bertram, steven m."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo"
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo"
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Autumn Burrell",
+   "role": "students on the Steering Committee for Project 582",
+   "status": "present",
+   "quote": "autumn burrell and bethany hudson, students on the steering"
+  },
+  {
+   "name": "Bethany Hudson",
+   "role": "students on the Steering Committee for Project 582",
+   "status": "present",
+   "quote": "autumn burrell and bethany hudson, students on the steering"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Project 582, LHS Community Service Project (appointment listed)",
+   "status": "not stated",
+   "quote": "loxi calmes, project 582, lhs community service project"
+  },
+  {
+   "name": "Jen Benson",
+   "role": "Representative",
+   "status": "present",
+   "quote": "representative jen benson & senator jen flanagan - provided an update on issues with the state budget."
+  },
+  {
+   "name": "Jen Flanagan",
+   "role": "Senator",
+   "status": "present",
+   "quote": "representative jen benson & senator jen flanagan - provided an update on issues with the state budget."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board signed the Election and Town Meeting Warrants for posting.",
+   "quote": "board signed election and town meeting warrants for posting."
+  },
+  {
+   "decision": "Board reviewed and signed the Board of Selectmen Executive Session minutes for 3/15/11 and 3/22/11.",
+   "quote": "minutes - board of selectmen executive session for 3/15/11 & 3/22/11 reviewed and signed."
+  },
+  {
+   "decision": "Board reviewed and signed the warrants #55 11, #56 11 and #21P 11.",
+   "quote": "warrants - #55 11, 4/12/11- $1,197,902.48, #56 11, 4/13/11 - $149,087.17 and #21p 11, 4/14/11 - $648,678.11 reviewed and signed."
+  },
+  {
+   "decision": "Town Manager Kerry will ask the DPW to specifically address the Leominster Road settling, particularly if there are concerns with fill.",
+   "quote": "kerry will ask the dpw to specifically address this, particularly if there are concerns with fill."
+  },
+  {
+   "decision": "Board accepted the resignation of Martha Cheesman from the Public Access Cable Committee, with a letter of appreciation to be sent.",
+   "quote": "board accepted with regrets, letter of appreciation to be sent."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Three payment warrants were reviewed and signed with the amounts printed.",
+   "figures_as_printed": [
+    "$1,197,902.48",
+    "$149,087.17",
+    "$648,678.11"
+   ],
+   "quote": "warrants - #55 11, 4/12/11- $1,197,902.48, #56 11, 4/13/11 - $149,087.17 and #21p 11, 4/14/11 - $648,678.11 reviewed and signed."
+  },
+  {
+   "topic": "State aid at risk",
+   "what_was_recorded": "Town could potentially lose state aid depending on the state budget.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "we could potentially lose the $20,000 in state aid"
+  },
+  {
+   "topic": "FY12 Capital Plan total",
+   "what_was_recorded": "Capital Plan Committee request for FY12 totals a stated amount, split between budget cash and borrowing.",
+   "figures_as_printed": [
+    "$538,765.00",
+    "$133,765.00",
+    "$405,000.00"
+   ],
+   "quote": "will be in the amount of $538,765.00 of which $133,765.00 will"
+  },
+  {
+   "topic": "FY12 budget items included",
+   "what_was_recorded": "Items to be included in the FY12 budget were listed with their amounts (technology, police vests, cruiser equipment).",
+   "figures_as_printed": [
+    "$99,965.00",
+    "$9,800.00",
+    "$24,000.00"
+   ],
+   "quote": "the items to be included in the budget are technology - $99,965.00;"
+  },
+  {
+   "topic": "Prioritized capital items",
+   "what_was_recorded": "The Committee's prioritized capital items were listed with their costs.",
+   "figures_as_printed": [
+    "$110,000.00",
+    "$125,000.00",
+    "$54,965.00",
+    "$45,000.00",
+    "$24,000.00",
+    "$9,800.00",
+    "$50,000.00",
+    "$15,000.00",
+    "$25,000.00",
+    "$35,000.00",
+    "$20,000.00",
+    "$25,000.00"
+   ],
+   "quote": "thms parking lot, $110,000.00, dpw fe loader, $125,000.00, general technology, $54,965.00"
+  },
+  {
+   "topic": "Capital items to be borrowed",
+   "what_was_recorded": "The balance of the capital plan to be borrowed was listed item by item with amounts.",
+   "figures_as_printed": [
+    "$125,000.00",
+    "$50,000.00",
+    "$110,000.00",
+    "$25,000.00",
+    "$35,000.00",
+    "$15,000.00",
+    "$25,000.00",
+    "$20,000.00"
+   ],
+   "quote": "the balance of the plan to be borrowed are dpw front loader - $125,000.00; fire engine #2 refit - $50,000.00;"
+  },
+  {
+   "topic": "Finance Committee recommendation on capital plan",
+   "what_was_recorded": "Finance Committee recommended approving the plan including its funding by a split vote.",
+   "figures_as_printed": [],
+   "quote": "the finance committee has made their recommendation to approve the plan, including the funding, by 4 to 2."
+  },
+  {
+   "topic": "Borrowing versus one-time debt exclusion funding",
+   "what_was_recorded": "Board discussed preferring one-time funding via debt exclusion over borrowing for capital items.",
+   "figures_as_printed": [],
+   "quote": "would rather see one time funding, via debt exclusion"
+  },
+  {
+   "topic": "DPW project funding within levy limit",
+   "what_was_recorded": "DPW project is funded within the levy limit; offset compared with borrowing cost.",
+   "figures_as_printed": [],
+   "quote": "the dpw project will be coming on line and is being funded within the levy limit"
+  },
+  {
+   "topic": "Chapter 90 funding",
+   "what_was_recorded": "Additional Chapter 90 funding noted as one-time funding.",
+   "figures_as_printed": [],
+   "quote": "dave expressed appreciation for the additional funding in chapter 90"
+  },
+  {
+   "topic": "Ice storm funding",
+   "what_was_recorded": "Remaining share of 2008 ice storm state funding questioned.",
+   "figures_as_printed": [
+    "12 ½ %"
+   ],
+   "quote": "tom questioned the remaining 12 ½ % from the 2008 ice storm."
+  },
+  {
+   "topic": "Health care share of state budget",
+   "what_was_recorded": "State health care costs described as a share of the state budget.",
+   "figures_as_printed": [
+    "2/3"
+   ],
+   "quote": "health care costs are 2/3 of the budget within the state"
+  },
+  {
+   "topic": "Health insurance cost split",
+   "what_was_recorded": "Percentages paid by communities for health insurance questioned against private industry cost split.",
+   "figures_as_printed": [
+    "50/50"
+   ],
+   "quote": "when you look at private industry charging 50/50"
+  },
+  {
+   "topic": "40B developer fee exemption",
+   "what_was_recorded": "Developer seeking exemption from paying privilege fees on the local 40B project, shifting cost to current ratepayers.",
+   "figures_as_printed": [],
+   "quote": "the developer is trying to be exempt for having to pay privelege fees on"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "informational, no action",
+   "quote": "annual yard waste days - the lunenburg landfill, off of youngs road will be open for consecutive saturdays april 23rd",
+   "tags": [
+    "announcements",
+    "yard waste",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "pledge of allegiance. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment: Project 582 community service day",
+   "resolution": "appreciation extended",
+   "quote": "board extended appreciation to those involved.",
+   "tags": [
+    "appointments",
+    "community service",
+    "students"
+   ]
+  },
+  {
+   "topic": "Appointment: state legislators budget update",
+   "resolution": "update received",
+   "quote": "representative jen benson & senator jen flanagan - provided an update on issues with the state budget.",
+   "tags": [
+    "state budget",
+    "local aid",
+    "Chapter 70",
+    "pension reform",
+    "health insurance"
+   ]
+  },
+  {
+   "topic": "Current business: warrants and minutes",
+   "resolution": "warrants and minutes signed",
+   "quote": "board signed election and town meeting warrants for posting.",
+   "tags": [
+    "warrants",
+    "minutes",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Action file: Leominster Road",
+   "resolution": "DPW to address",
+   "quote": "kerry will ask the dpw to specifically address this, particularly if there are concerns with fill.",
+   "tags": [
+    "roads",
+    "sewer project",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reported, no action",
+   "quote": "steve dpw building committee has met and it was decided to re-bid the electrical sub-bid.",
+   "tags": [
+    "committees",
+    "DPW building",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none",
+   "quote": "4. department updates - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "none",
+   "quote": "5. town manager updates - none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "FY12 and FY11 budget updates",
+   "resolution": "informational; capital plan funding discussed",
+   "quote": "kerry informed the board that there aren't any changes to the 2012 budget.",
+   "tags": [
+    "FY12 budget",
+    "FY11 budget",
+    "capital plan",
+    "borrowing",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant articles",
+   "resolution": "no action recorded",
+   "quote": "2. town meeting warrant articles -",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Committee resignation: Martha Cheesman",
+   "resolution": "accepted",
+   "quote": "resignation: martha cheesman, public access cable committee - board accepted with regrets",
+   "tags": [
+    "resignation",
+    "public access cable committee"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered; not returned to regular session",
+   "quote": "m.g.l. chapter 39, §23b to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting April 19, 2011",
+   "quote": "upcoming meeting schedule april 19, 2011",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Current Board & Committee Vacancies (VACANCIES - FY'11, as of 04/12/11)",
+   "where": "list",
+   "quote": "current board & committee vacancies - as attached"
+  },
+  {
+   "name": "Election and Town Meeting Warrants",
+   "where": "text",
+   "quote": "board signed election and town meeting warrants for posting."
+  },
+  {
+   "name": "Warrants #55 11, #56 11 and #21P 11",
+   "where": "text",
+   "quote": "warrants - #55 11, 4/12/11- $1,197,902.48, #56 11, 4/13/11 - $149,087.17 and #21p 11, 4/14/11 - $648,678.11 reviewed and signed."
+  },
+  {
+   "name": "Board of Selectmen Executive Session minutes for 3/15/11 and 3/22/11",
+   "where": "text",
+   "quote": "minutes - board of selectmen executive session for 3/15/11 & 3/22/11 reviewed and signed."
+  },
+  {
+   "name": "Capital Planning Committee's proposal",
+   "where": "text",
+   "quote": "dave would like to discuss the capital planning committee's proposal."
+  },
+  {
+   "name": "Municipal Utility Bill",
+   "where": "text",
+   "quote": "also asked about the municipaly utility bill which according"
+  },
+  {
+   "name": "Specific legislation around 40B",
+   "where": "text",
+   "quote": "jen b., filed specific legislation around 40b and is committed in making changes"
+  }
+ ],
+ "tags": [
+  "state budget",
+  "FY12 budget",
+  "capital plan",
+  "borrowing",
+  "town meeting",
+  "health insurance",
+  "pension reform",
+  "yard waste",
+  "appointments",
+  "resignation",
+  "executive session",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "vacancies - fy'11"
+ },
+ "dropped_unquoted_by_field": {}
 }

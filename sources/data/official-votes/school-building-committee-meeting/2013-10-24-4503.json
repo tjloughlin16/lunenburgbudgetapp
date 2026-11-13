@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-10-24",
  "docid": "4503",
@@ -12,15 +12,190 @@
  },
  "votes": [
   {
-   "motion": "Remove $1,000,000 from the Design Contingency line item and continue value engineering to reduce costs",
-   "moved_by": "not stated",
-   "seconded_by": "not stated",
+   "motion": "Remove $1,000,000 from the Design Contingency line item of the project estimate and continue value engineering to reduce costs.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion was made by working group members to remove $1,000,000 from the design contingency line item of the project estimate and continue value engineering to reduce costs."
   }
  ],
- "dropped_unquoted": 0,
- "note": "The minutes record one substantive motion but do not state who moved it (only \"Working Group members\"), who seconded it, or the outcome of the vote.",
- "cost_usd": 0.0831575
+ "dropped_unquoted": 4,
+ "note": "Text is a fragmentary extraction. Only one motion appears (design contingency); it has no recorded mover, second, or result. No adjournment motion is recorded, though the minutes state the meeting was adjourned at 6:55 PM. Attendance is a roster with only two absences marked (×); other members are not marked present or absent, and committee members' names are absent from the Name/Association table, so those people are not named. Time and Next Meeting fields are blank. The reimbursement figure is in points, not dollars.",
+ "cost_usd": 0.0062396199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chairperson of the Lunenburg School Building Committee (LSBC)",
+   "status": "present",
+   "quote": "michael mackin, chairperson of the lunenburg school building committee (lsbc), called the meeting to order at 5:15 pm."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes member"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "dave matthews member"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "nathan lockwood advisor"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "brian spadafino advisor"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Advisor",
+   "status": "absent",
+   "quote": "× tim santry advisor"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "greg cohan and jeff luxenberg distributed two (2) form 3011 cost estimates to the working group for review."
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "Advisor",
+   "status": "absent",
+   "quote": "× christine depalma advisor"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "greg cohan and jeff luxenberg distributed two (2) form 3011 cost estimates to the working group for review."
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "michael kearns advisor"
+  },
+  {
+   "name": "Tappe",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "present",
+   "quote": "alternative design was summarized by tappe explaining several differences from the original design."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Design Contingency reduction",
+   "what_was_recorded": "A motion was made to remove $1,000,000 from the Design Contingency line item of the project estimate and continue value engineering; no result is recorded.",
+   "figures_as_printed": [
+    "$1,000,000"
+   ],
+   "quote": "motion was made by working group members to remove $1,000,000 from the design contingency line item of the project estimate and continue value engineering to reduce costs."
+  },
+  {
+   "topic": "Form 3011 cost estimates",
+   "what_was_recorded": "Two Form 3011 cost estimates, one with Green House costs rolled into line items and one for the Alternative Design, were distributed and discussed in detail; no dollar totals are printed.",
+   "figures_as_printed": [],
+   "quote": "greg cohan and jeff luxenberg distributed two (2) form 3011 cost estimates to the working group for review."
+  },
+  {
+   "topic": "MSBA reimbursement points",
+   "what_was_recorded": "The available reimbursement points to the District, tied to the Overlay Zoning 40R and 100 units documentation request, could total 1.5 points; this is a points figure, not dollars.",
+   "figures_as_printed": [],
+   "quote": "the available reimbursement points to the district could total 1.5 points."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and purpose",
+   "resolution": "meeting called to order 5:15 PM; purpose stated as review of schematic design cost estimates",
+   "quote": "the purpose of the meeting was to review lunenburg middle/high school project schematic design cost estimates prepared by tappe and pm & c for additional savings.",
+   "tags": [
+    "call to order",
+    "cost estimates"
+   ]
+  },
+  {
+   "topic": "Review of Lunenburg Middle/High School Cost Estimates and Value Management Discussion",
+   "resolution": "both Form 3011 estimates discussed; motion to remove $1,000,000 from design contingency made, result not recorded",
+   "quote": "each estimate was discussed in detail with the working group.",
+   "tags": [
+    "cost estimates",
+    "value engineering",
+    "design contingency"
+   ]
+  },
+  {
+   "topic": "MSBA request on Overlay Zoning 40R and 100 units",
+   "resolution": "discussed; no action recorded",
+   "quote": "the recent request by the msba for the district to provide documentation concerning the overlay zoning 40r and overlay zoning 100 units.",
+   "tags": [
+    "MSBA",
+    "reimbursement",
+    "overlay zoning"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:55 PM; no motion recorded",
+   "quote": "the meeting was adjourned at 6:55 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form 3011 cost estimate (original design with Green House costs rolled into applicable line items)",
+   "where": "list",
+   "quote": "one form was for the previously distributed 3011 form now with the green house costs rolled into the applicable line items."
+  },
+  {
+   "name": "Form 3011 cost estimate for the Alternative Design (Green House rolled into applicable cost line items)",
+   "where": "list",
+   "quote": "the other 3011 form was for the alternative design with the green house rolled into the applicable cost line items."
+  },
+  {
+   "name": "Lunenburg Middle/High School schematic design cost estimates prepared by Tappe and PM & C",
+   "where": "text",
+   "quote": "schematic design cost estimates prepared by tappe and pm & c for additional savings."
+  },
+  {
+   "name": "MSBA request for documentation concerning Overlay Zoning 40R and Overlay Zoning 100 units",
+   "where": "text",
+   "quote": "the district to provide documentation concerning the overlay zoning 40r and overlay zoning 100 units."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "Lunenburg Middle/High School",
+  "schematic design",
+  "cost estimates",
+  "value engineering",
+  "design contingency",
+  "MSBA reimbursement",
+  "Form 3011",
+  "Alternative Design",
+  "working group"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "greg cohan and jeff luxenberg distributed two (2) form 3011 cost estimates"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 4
+ }
 }

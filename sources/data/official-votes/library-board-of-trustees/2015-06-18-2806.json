@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-06-18",
  "docid": "2806",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept March 19, 2015 minutes",
+   "motion": "Approve the March 19, 2015 minutes.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "gare made motion to accept march 19 minutes, seconded by harry; voted all in favor."
   },
   {
-   "motion": "approve May 21, 2015 minutes as amended",
+   "motion": "Approve the May 21, 2015 minutes as amended (Balbony changed to Balboni).",
    "moved_by": "Gare",
    "seconded_by": "Susan",
    "outcome": "passed",
@@ -28,56 +28,374 @@
    "quote": "gare made motion to approve minutes as amended; seconded by susan; voted all in favor."
   },
   {
-   "motion": "approve having the Farmer's Market use Library property under agreement with the Library",
+   "motion": "Approve the Farmer’s Market using Library property under agreement with the Library.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
    "outcome": "passed",
    "procedural": false,
-   "quote": "gare made a motion to approve having the farmer's market use library property under agr eement with the library; seconded by harry. all voted in favor",
-   "quote_taken_from_text": true
+   "quote": "gare made a motion to approve having the farmer's market use library property under agr eement with the library; seconded by harry."
   },
   {
-   "motion": "keep meetings at 6:45 pm on the third Thursday of the month from September to June",
+   "motion": "Keep Trustee meetings at 6:45 pm on the third Thursday of the month, September to June.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "gare made motion to keep meetings at 6:45 pm on the third thursday of the month from september to june; seconded by dick. all voted in favor."
+   "procedural": false,
+   "quote": "gare made motion to keep meetings at 6:45 pm on the third thursday of the month from september to june; seconded by dick."
   },
   {
-   "motion": "have Board of Trustees meeting on July 6, 2015 at 6:45 pm to interview candidates",
+   "motion": "Hold a Board of Trustees meeting on July 6, 2015 at 6:45 pm to interview candidates.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "gare moved to have board of trustees meeting on july 6, 2015 at 6:45 pm to interview candidates; seconded by dick. all voted in favor."
+   "procedural": false,
+   "quote": "gare moved to have board of trustees meeting on july 6, 2015 at 6:45 pm to interview candidates; seconded by dick."
   },
   {
-   "motion": "accept edited 2014/2015 director's evaluation with suggested edit",
+   "motion": "Accept the edited 2014/2015 Director’s evaluation with the suggested edit.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
    "outcome": "passed",
    "procedural": false,
-   "quote": "gare made motion to accept edited 2014/2015 evaluation with suggested edit; seconded by harry. all voted in favor."
+   "quote": "gare made motion to accept edited 2014/2015 evaluation with suggested edit; seconded by harry."
   },
   {
-   "motion": "increase Martha's salary to $64,500 for 2016 fiscal year",
+   "motion": "Increase Martha Moore’s salary to $64,500 for fiscal year 2016.",
    "moved_by": "Dick",
    "seconded_by": "Harry",
    "outcome": "passed",
    "procedural": false,
-   "quote": "dick moved to increase martha's salary to $64,500 for 2016 fiscal year; seconded by harry. all voted in favor."
+   "quote": "dick moved to increase martha's salary to $64,500 for 2016 fiscal year; seconded by harry."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
    "procedural": true,
-   "quote": "gare moved to adjourn the meeting; seconded by dick. all voted in favor at 7:57 pm."
+   "quote": "gare moved to adjourn the meeting; seconded by dick."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0919485
+ "note": "Votes are recorded only as 'all in favor' or 'All voted in favor' with no tally, so outcomes are given as 'passed'. Public comment reads 'No public comment'. Bob Ebersole and Robin Venezia joined partway through; Martha Moore left during the director's evaluation. Minutes are typed with some printed typos (e.g. 'June 76', 'agr eement') kept as printed.",
+ "cost_usd": 0.01306148,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee (joined via Facetime)",
+   "status": "remote",
+   "quote": "attending: harry kubetz (via facetime), dick mailloux, gare thompson, susan visser, martha moore (library director)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:45 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "not printed",
+   "status": "present",
+   "quote": "attending: harry kubetz (via facetime), dick mailloux, gare thompson, susan visser, martha moore (library director)"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Vice Chair, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "gare thompson, susan visser, martha moore (library director)"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "susan visser, martha moore (library director)"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "bob ebersole (selectman); robin venezia (public attendee)"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "public attendee",
+   "status": "present",
+   "quote": "bob ebersole (selectman); robin venezia (public attendee)"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "not printed",
+   "status": "absent",
+   "quote": "absent: lars widstrand"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Policy on solicitations to go on a future Trustees agenda for discussion.",
+   "quote": "policy will be on future library board of trustees meeting agenda for discussion."
+  },
+  {
+   "decision": "Director to tell the Farmer’s Market organizers to plan on generator power only.",
+   "quote": "martha will tell them to plan on generator only."
+  },
+  {
+   "decision": "Chair to ask the Board of Selectmen to add appointment of new Library Trustees to its July 14, 2015 agenda.",
+   "quote": "dick will request bos to add appointment of new library trustees to their july 14, 2015 agenda."
+  },
+  {
+   "decision": "Chair to update the Director’s contract with the new rate and present it with the evaluation; chair and Susan Visser to meet with the Director to review the evaluation.",
+   "quote": "dick will update martha's contract with new rate to present to martha with the director's evaluation."
+  },
+  {
+   "decision": "Gare Thompson to forward original evaluation input from Susan and Harry to the chair for Board records.",
+   "quote": "gare will forward original input from susan and harry to dick for board of trustees' records."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Electricity budget line",
+   "what_was_recorded": "The electricity budget line includes an extra amount from the Town added to FY 15.",
+   "figures_as_printed": [
+    "$16,000"
+   ],
+   "quote": "electricity budget line item includes extra $16,000 from town added to fy 15"
+  },
+  {
+   "topic": "Heat budget line",
+   "what_was_recorded": "The heat budget line includes extra money from the Town; one more FY15 heating bill is expected in June or July.",
+   "figures_as_printed": [],
+   "quote": "heat budget line item includes extra money from town."
+  },
+  {
+   "topic": "Library materials unspent purchase order money",
+   "what_was_recorded": "Unspent money on some purchase orders, about $7,500, was found and moved; the original goal was about $14,000 on electronic materials.",
+   "figures_as_printed": [
+    "$7,500",
+    "$14,000"
+   ],
+   "quote": "found money on some purchase orders that was unspent, on the order of $7,500."
+  },
+  {
+   "topic": "E-book purchases",
+   "what_was_recorded": "$7,500 was put into e-books, EEE and related in Overdrive.",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "$7,500 put into e-books, eee and related in overdrive."
+  },
+  {
+   "topic": "CWMARS e-book system",
+   "what_was_recorded": "CWMARS is paying for the Commonwealth e-book system for this year.",
+   "figures_as_printed": [],
+   "quote": "cwmars is paying for this for this year."
+  },
+  {
+   "topic": "FY 15 Final LPL Budget",
+   "what_was_recorded": "The final FY 15 library budget was presented in two formats; the library budget equals the Town budget plus the Town-voted heating and electricity increase.",
+   "figures_as_printed": [],
+   "quote": "library budget is composed of amounts in town budget plus the town -voted increase in the heating and electricity budget."
+  },
+  {
+   "topic": "Friends of LPL Book and Bake sale",
+   "what_was_recorded": "The Friends’ sale raised about $3,200.",
+   "figures_as_printed": [
+    "$3,200"
+   ],
+   "quote": "sale made about $3,200."
+  },
+  {
+   "topic": "Director’s salary",
+   "what_was_recorded": "The Trustees voted to set the Library Director’s salary at $64,500 for fiscal year 2016.",
+   "figures_as_printed": [
+    "$64,500"
+   ],
+   "quote": "dick moved to increase martha's salary to $64,500 for 2016 fiscal year; seconded by harry."
+  },
+  {
+   "topic": "Comparable pay increases",
+   "what_was_recorded": "The Union salary increase in Lunenburg was 1.5% and the Town Manager increase was 2%; a raise in the 2% range was said to keep the Director in line with peer libraries.",
+   "figures_as_printed": [
+    "1.5%",
+    "2%"
+   ],
+   "quote": "dick noted that union salary increase in lunenburg was 1.5%."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Collections funds found on unspent purchase orders moved to the CWMARS budget to meet State targets for materials.",
+   "amount_as_printed": "on the order of $7,500",
+   "outcome": "transferred to CWMARS budget",
+   "quote": "martha transferred to cwmars budget to make state targets for materials"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved March 19 and May 21, 2015 minutes (May 21 as amended)",
+   "quote": "minutes of march 19; 2015 with amendments/edits",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director’s Report",
+   "resolution": "received; staffing, budget and programs reported",
+   "quote": "director's report (martha moore), as per handout",
+   "tags": [
+    "director",
+    "staffing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Summer programs",
+   "resolution": "no action",
+   "quote": "summer reading program starts june 76.",
+   "tags": [
+    "programs"
+   ]
+  },
+  {
+   "topic": "FY 15 Final LPL Budget",
+   "resolution": "presented per handout; no action",
+   "quote": "fy 15 final lpl budget (as per handout)",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Book and Bake sale",
+   "resolution": "reported; no action",
+   "quote": "friends of lpl book and bake sale:",
+   "tags": [
+    "friends",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "LPL Policy on Solicitations",
+   "resolution": "Town Counsel response distributed; to a future agenda",
+   "quote": "response that lars got from town counsel, joel bard, was distributed.",
+   "tags": [
+    "policy",
+    "solicitations"
+   ]
+  },
+  {
+   "topic": "Farmer’s Market proposal",
+   "resolution": "approved use of Library property under agreement",
+   "quote": "they asked martha if farmer's market could be held on library grounds.",
+   "tags": [
+    "farmers market",
+    "community"
+   ]
+  },
+  {
+   "topic": "Meeting dates 2015/2016",
+   "resolution": "approved third Thursday at 6:45 pm, September to June",
+   "quote": "calendar was reviewed.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Candidates for open Trustee positions",
+   "resolution": "interview meeting set for July 6, 2015",
+   "quote": "currently have two official applicants, two others have expressed unofficial interest.",
+   "tags": [
+    "appointments",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Board of Selectmen",
+   "resolution": "chair to request appointment item on BOS July 14 agenda",
+   "quote": "dick will request bos to add appointment of new library trustees to their july 14, 2015 agenda.",
+   "tags": [
+    "appointments",
+    "selectmen"
+   ]
+  },
+  {
+   "topic": "Director’s evaluation",
+   "resolution": "accepted edited 2014/2015 evaluation; salary set at $64,500",
+   "quote": "reviewed gare's draft evaluation.",
+   "tags": [
+    "evaluation",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "noted; no action",
+   "quote": "dick informed us that the friends of lpl annual meeting and potluck is in july.",
+   "tags": [
+    "friends"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "suggestions listed; no action",
+   "quote": "bob: capital planning to meet town's accelerated schedule",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:57 pm",
+   "quote": "gare moved to adjourn the meeting; seconded by dick.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for June 18, 2015",
+   "where": "list",
+   "quote": "lplbot agenda for june 18, 2015"
+  },
+  {
+   "name": "Library Director’s Report",
+   "where": "list",
+   "quote": "library director's report"
+  },
+  {
+   "name": "Director’s Evaluation",
+   "where": "list",
+   "quote": "director's evaluation"
+  },
+  {
+   "name": "Town of Lunenburg/Lunenburg Public Library Budget",
+   "where": "list",
+   "quote": "town of lunenburg/lunenburg public library budget"
+  },
+  {
+   "name": "May 28, 2015 e-mail from Joel Bard on Solicitation Policy and draft Solicitation Policy",
+   "where": "list",
+   "quote": "may 28, 2015 e-mail from joel bard on solicitation policy and draft solicitation policy"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "director evaluation",
+  "director salary",
+  "farmers market",
+  "library budget",
+  "e-books and collections",
+  "trustee appointments",
+  "meeting schedule",
+  "solicitation policy",
+  "friends of the library"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-09-01",
  "docid": "1584",
@@ -12,47 +12,251 @@
  },
  "votes": [
   {
-   "motion": "to approve tight tank installation at 64 Spring Street Extension",
-   "moved_by": "JJ Cote",
-   "seconded_by": "Ken Jones",
-   "outcome": "passed",
+   "motion": "Approve the tight tank installation for 64 Spring Street Extension (Sandra Perko, Notice of Intent).",
+   "moved_by": "JJ",
+   "seconded_by": "Ken",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "jj/ken approved tight tank installation. unanimous"
+   "quote": "chris presented. jj/ken approved tight tank installation."
   },
   {
-   "motion": "to issue negative determination of applicability for tree removal at 72 Hemlock Drive",
-   "moved_by": "Ken Jones",
-   "seconded_by": "Mark Murphy",
-   "outcome": "passed",
+   "motion": "Negative determination on the Request for Determination of Applicability for removal of four trees at 72 Hemlock Drive.",
+   "moved_by": "Ken",
+   "seconded_by": "Mark",
+   "outcome": "Negative 3-Unanimous",
    "procedural": false,
-   "quote": "ken/mark negative 3-unanimous"
+   "quote": "dick kullman presented. ken/mark negative 3-unanimous"
   },
   {
-   "motion": "to issue negative determination of applicability for inground pool at 18 Cove Terrace",
-   "moved_by": "JJ Cote",
-   "seconded_by": "Ken Jones",
-   "outcome": "passed",
+   "motion": "Negative determination on the Request for Determination of Applicability for an inground pool at 18 Cove Terrace.",
+   "moved_by": "JJ",
+   "seconded_by": "Ken",
+   "outcome": "Negative 3-Unanimous",
    "procedural": false,
-   "quote": "jj/ken negative 3-unanimous"
+   "quote": "ken presented. jj/ken negative 3-unanimous"
   },
   {
-   "motion": "to issue negative determination of applicability at 235 Island Road",
-   "moved_by": "JJ Cote",
-   "seconded_by": "Mark Murphy",
-   "outcome": "passed",
+   "motion": "Action not stated; unanimous vote on the Notice of Intent for replacement of a failed sewage disposal system at 24 Hemlock Terrace.",
+   "moved_by": "JJ",
+   "seconded_by": "Mark",
+   "outcome": "Unanimous",
+   "procedural": false,
+   "quote": "steve presented. jj/mark-unanimous"
+  },
+  {
+   "motion": "Action not stated; unanimous vote on the Notice of Intent for demolition and replacement of the house at 20 Fire Road 19.",
+   "moved_by": "Ken",
+   "seconded_by": "Mark",
+   "outcome": "Unanimous",
+   "procedural": false,
+   "quote": "pam/norm presented. ken/mark-unanimous."
+  },
+  {
+   "motion": "Negative determination on the Request for Determination of Applicability at 235 Island Road (text truncated in the minutes).",
+   "moved_by": "JJ",
+   "seconded_by": "Mark",
+   "outcome": "Negative 3-Unanimous",
    "procedural": false,
    "quote": "down. jj/mark negative 3-unanimous"
   },
   {
-   "motion": "to appoint Sharon Jordan as Associate Member of Conservation Commission",
-   "moved_by": "JJ Cote",
-   "seconded_by": "Ken Jones",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Accept the adjusted building and paving layouts at Emerald Place @ Lake Whalom as a field change.",
+   "moved_by": "JJ",
+   "seconded_by": "Ken",
+   "outcome": "Unanimous",
+   "procedural": false,
+   "quote": "accepted as a \"field change\". jj/ken-unanimous"
+  },
+  {
+   "motion": "Nominate Sharon Jordan, Associate Member, to be the new member of the Conservation Commission and pass the recommendation to the Selectmen.",
+   "moved_by": "JJ",
+   "seconded_by": "Ken",
+   "outcome": "Unanimous",
+   "procedural": false,
    "quote": "jj/ken nominated and seconded sharon jordan, associate member to be the new member on the con com. unanimous."
   }
  ],
- "dropped_unquoted": 3,
- "note": "OCR scan with one minor text artifact (235 Island Road address text incomplete). Ken Jones's resignation was accepted but no voting process is explicitly recorded, so not included.",
- "cost_usd": 0.1367645
+ "dropped_unquoted": 0,
+ "note": "OCR text, with gaps. Page 2 opens mid-entry: the 235 Island Road hearing text reads only \"down.\" before the vote, so its motion is incomplete. Several entries give a vote tally but no stated action (24 Hemlock Terrace, 20 Fire Road 19). \"Ken presented\" at 18 Cove Terrace is ambiguous because Ken Jones is also a member. Votes are recorded in shorthand (e.g., \"JJ/Ken\", \"Negative 3-Unanimous\"). No roll call, adjournment, or minutes-approval vote appears. No dollar figures or public comment are recorded.",
+ "cost_usd": 0.00490532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "Member (listed in roll line)",
+   "status": "present",
+   "quote": "rob verge, jj cote, ken jones, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "Member (listed in roll line)",
+   "status": "present",
+   "quote": "rob verge, jj cote, ken jones, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Ken Jones",
+   "role": "Member; resigned at this meeting",
+   "status": "present",
+   "quote": "ken jones resignation: the commission accepted ken's resignation with regret"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "Member (listed in roll line)",
+   "status": "present",
+   "quote": "rob verge, jj cote, ken jones, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "Associate Member (nominated as new member)",
+   "status": "present",
+   "quote": "rob verge, jj cote, ken jones, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "Member (listed in roll line); to pass recommendation to Selectmen",
+   "status": "present",
+   "quote": "jan will pass the recommendation on to the selectmen."
+  },
+  {
+   "name": "Sandra Perko",
+   "role": "Applicant (Notice of Intent, 64 Spring Street Extension)",
+   "status": "not stated",
+   "quote": "filed by sandra perko (chris mackenzie of whitman & bingham associates, llc)."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "Representing the applicant, Whitman & Bingham Associates, LLC",
+   "status": "present",
+   "quote": "chris presented. jj/ken approved tight tank installation."
+  },
+  {
+   "name": "Richard A/Patricia B Kullman",
+   "role": "Applicant (Request for Determination, 72 Hemlock Drive)",
+   "status": "not stated",
+   "quote": "filed by richard a/patricia b kullman. the proposed project is for removal of four trees"
+  },
+  {
+   "name": "Dick Kullman",
+   "role": "Presenter for applicant, 72 Hemlock Drive",
+   "status": "present",
+   "quote": "dick kullman presented. ken/mark negative 3-unanimous"
+  },
+  {
+   "name": "Kenneth L. Franklin",
+   "role": "Applicant (Request for Determination, 18 Cove Terrace)",
+   "status": "not stated",
+   "quote": "tiled by kenneth l. franklin (rick haggar surfside pool company)."
+  },
+  {
+   "name": "Rick Haggar",
+   "role": "Surfside Pool Company, named with applicant (18 Cove Terrace); participation not stated",
+   "status": "not stated",
+   "quote": "tiled by kenneth l. franklin (rick haggar surfside pool company)."
+  },
+  {
+   "name": "Patricia Michaud",
+   "role": "Applicant (Notice of Intent, 24 Hemlock Terrace)",
+   "status": "not stated",
+   "quote": "filed by patricia michaud (steven marsden of marsden engineering inc)."
+  },
+  {
+   "name": "Steven Marsden",
+   "role": "Representing the applicant, Marsden Engineering Inc",
+   "status": "present",
+   "quote": "steve presented. jj/mark-unanimous"
+  },
+  {
+   "name": "Norman/Pamela J Vincent",
+   "role": "Applicant (Notice of Intent, 20 Fire Road 19)",
+   "status": "present",
+   "quote": "pam/norm presented. ken/mark-unanimous."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Presenter, Emerald Place @ Lake Whalom",
+   "status": "present",
+   "quote": "jamie rheault presented. the revised plan will be"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission accepted Ken Jones's resignation with regret (no vote recorded).",
+   "quote": "ken jones resignation: the commission accepted ken's resignation with regret, coc for 410 lancaster avenue was signed (1999)"
+  },
+  {
+   "decision": "Jan Carrier will pass the recommendation of Sharon Jordan as new member on to the Selectmen.",
+   "quote": "jan will pass the recommendation on to the selectmen."
+  },
+  {
+   "decision": "The 8:40 PM Emerald Place @ Lake Whalom revised plan (building and paving layouts) is treated as a field change.",
+   "quote": "the revised plan will be accepted as a \"field change\"."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Miscellaneous: Ken Jones resignation",
+   "resolution": "accepted with regret",
+   "quote": "ken jones resignation: the commission accepted ken's resignation with regret"
+  },
+  {
+   "topic": "64 Spring Street Extension, Notice of Intent (septic tight tank)",
+   "resolution": "approved tight tank installation, unanimous",
+   "quote": "chris presented. jj/ken approved tight tank installation."
+  },
+  {
+   "topic": "72 Hemlock Drive, Request for Determination (tree removal)",
+   "resolution": "negative determination, 3-unanimous",
+   "quote": "dick kullman presented. ken/mark negative 3-unanimous"
+  },
+  {
+   "topic": "18 Cove Terrace, Request for Determination (inground pool)",
+   "resolution": "negative determination, 3-unanimous",
+   "quote": "ken presented. jj/ken negative 3-unanimous"
+  },
+  {
+   "topic": "24 Hemlock Terrace, Notice of Intent (failed sewage system replacement)",
+   "resolution": "unanimous vote; action not stated",
+   "quote": "steve presented. jj/mark-unanimous"
+  },
+  {
+   "topic": "20 Fire Road 19, Notice of Intent (house demolition and rebuild)",
+   "resolution": "unanimous vote; action not stated",
+   "quote": "pam/norm presented. ken/mark-unanimous."
+  },
+  {
+   "topic": "235 Island Road, Request for Determination",
+   "resolution": "negative determination, 3-unanimous (text truncated)",
+   "quote": "down. jj/mark negative 3-unanimous"
+  },
+  {
+   "topic": "Emerald Place @ Lake Whalom, adjusted plans",
+   "resolution": "accepted as field change, unanimous",
+   "quote": "accepted as a \"field change\". jj/ken-unanimous"
+  },
+  {
+   "topic": "Nomination of Sharon Jordan as new member",
+   "resolution": "nominated, unanimous; to Selectmen",
+   "quote": "jj/ken nominated and seconded sharon jordan, associate member to be the new member on the con com. unanimous."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "notice of intent",
+  "request for determination",
+  "public hearing",
+  "septic",
+  "membership",
+  "resignation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

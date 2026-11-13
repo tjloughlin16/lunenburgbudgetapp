@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-05-05",
  "docid": "2349",
@@ -12,55 +12,407 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 9 regarding stabilization fund and reserve fund",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
+   "motion": "Recommend approval of Article 9 as written in the Motion Sheet 2012 Town Meeting Final Draft dated 5/3/12.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "br moved to recommend approval of article 9 as written in motion sheet 2012 town meeting final draft dated 5/3/12 (handout), jm seconded, discussion held, all approved 5-0"
   },
   {
-   "motion": "Pass over Article 10",
-   "moved_by": "Scott Gile",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Pass over (recommend passing over) Article 10.",
+   "moved_by": "SG",
+   "seconded_by": "BR",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "sg recommended passing over article 10, br seconded, all approved 5-0"
   },
   {
-   "motion": "Recommend approval of Article 5 (Police Officers Collective Bargaining) with rewritten language",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
+   "motion": "Recommend approval of rewritten language for Article 5 (Police Officers Collective Bargaining) per Motion Sheet 2012.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "br recommends approval of rewritten language per motion sheet 2012, jm seconded, discussion held, all approved 5-0"
   },
   {
-   "motion": "Recommend approval of Article 20 (Personal Property) as written in the Town Warrant",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
+   "motion": "Recommend Article 20 (Personal Property) as written in the Town Warrant.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "br moves we recommend as written in the town warrant, jm seconded, all in favor 5-0"
   },
   {
-   "motion": "Pass over Article 12 (DPW Contract)",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Scott Gile",
+   "motion": "Recommend passing over Article 12 (DPW Contract).",
+   "moved_by": "BR",
+   "seconded_by": "SG",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "br recommends we pass over article 12, sg seconded, all in favor 5-0"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Scott Gile",
+   "motion": "Adjourn the meeting at 8:45 AM.",
+   "moved_by": "BR",
+   "seconded_by": "SG",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "br made motion to adjourn at 8:45 am, sg seconded, all in favor 5-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "These votes were taken at the Finance Committee meeting itself. The subsequent Motion Sheet pages document formal warrant article language and Finance Committee recommendations to be presented at the town meeting, but do not record additional votes taken at this Finance Committee meeting.",
- "cost_usd": 0.1091015
+ "note": "OCR text of a one-page Finance Committee minutes (May 5, 2012) with Motion Sheet pages 2-9 appended. Layout and header text are garbled in places (e.g., 'Finance Comile', 'Commite'), and quotes copy the OCR text as printed. Motion Sheet lines such as 'Finance Committee recommends approval, 5-0' or '6 - 0' record earlier Finance Committee votes; they are not counted as votes at this meeting. Article 9 is '$284K' in the minutes but the Motion Sheet shows $288,432 to the Reserve Fund. Motion Sheet figures are proposals for Town Meeting; the Finance Committee votes recorded here cover Articles 5, 9, 10, 12, 20 and adjournment. Attendance is from a jumbled block; Brian Laffond's absence is inferred from the 'Absent:' label. No public comment is recorded.",
+ "cost_usd": 0.014644120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "lunenburg high school classroom mark erickson, barbara reynolds, scott gile, john male, martha mcdonald brian laffond"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "lunenburg high school classroom mark erickson, barbara reynolds, scott gile, john male, martha mcdonald brian laffond"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, john male, martha mcdonald"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, john male, martha mcdonald"
+  },
+  {
+   "name": "John Male",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, john male, martha mcdonald"
+  },
+  {
+   "name": "Scott Gile",
+   "status": "present",
+   "quote": "mark erickson, barbara reynolds, scott gile, john male, martha mcdonald"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Article 9 stabilization / reserve fund revision",
+   "what_was_recorded": "Counsel's advice was to revise Article 9 so a sum goes to the reserve fund as spelled out in the Motion Sheet.",
+   "figures_as_printed": [
+    "$284K"
+   ],
+   "quote": "so $284k goes to reserve fund as spelled out in motion sheet"
+  },
+  {
+   "topic": "Article 1 prior year expenses transfer (Motion Sheet)",
+   "what_was_recorded": "Motion Sheet proposes transferring $5,606.98 from the Reserve Fund to fund prior year expenses.",
+   "figures_as_printed": [
+    "$5,606.98"
+   ],
+   "quote": "i move to transfer the sum of $5,606.98 from line 13, reserve"
+  },
+  {
+   "topic": "Article 4 rescind remaining borrowing (Motion Sheet)",
+   "what_was_recorded": "Motion Sheet proposes rescinding the remaining borrowing authorization for Meadow Woods water and wastewater work; note gives the full authorization and amount bonded.",
+   "figures_as_printed": [
+    "$833,370.13",
+    "$4,154,298",
+    "$2,864,000",
+    "$456,927.87"
+   ],
+   "quote": "the full amount of the borrowing authorization was $4,154,298. the actual amount bonded was $2,864,000."
+  },
+  {
+   "topic": "Article 5 police collective bargaining funding (Motion Sheet)",
+   "what_was_recorded": "Motion Sheet proposes $0 for year 1 and a transfer of $24,593 from the Salary Reserve Fund to the Police Department for year 2.",
+   "figures_as_printed": [
+    "$0",
+    "$24,593"
+   ],
+   "quote": "i move to raise and appropriate the sum of $0 dollars to fund the"
+  },
+  {
+   "topic": "Article 6 fire collective bargaining funding (Motion Sheet)",
+   "what_was_recorded": "Motion Sheet proposes transferring $5,954 from the Salary Reserve Fund to the Fire Department for the first year of the firefighters contract.",
+   "figures_as_printed": [
+    "$5,954"
+   ],
+   "quote": "i move to transfer the sum of $5,954 from line 13a, salary"
+  },
+  {
+   "topic": "Article 7 school unemployment from Free Cash (Motion Sheet)",
+   "what_was_recorded": "Motion Sheet proposes transferring $39,124 from Free Cash for extraordinary unemployment benefits; note gives certified Free Cash.",
+   "figures_as_printed": [
+    "$39,124",
+    "$104,113"
+   ],
+   "quote": "as of july 1, 2011, certified free cash is $104,113."
+  },
+  {
+   "topic": "Article 8 FY2013 operating budget (Motion Sheet)",
+   "what_was_recorded": "Motion Sheet proposes raising and appropriating $26,562,011 with listed transfers, for a FY2013 budget of $27,453,841.",
+   "figures_as_printed": [
+    "$26,562,011",
+    "$10,872",
+    "$36,858",
+    "$781,319",
+    "$62,781",
+    "$27,453,841"
+   ],
+   "quote": "i move the town vote to raise and appropriate $26,562,011,"
+  },
+  {
+   "topic": "Article 9 FY2013 override budget (Motion Sheet)",
+   "what_was_recorded": "Motion Sheet proposes $2,200,000 in additional funding for the Town Manager's Override Budget, contingent on voter approval of a Proposition 2½ override, with line-by-line increases.",
+   "figures_as_printed": [
+    "$2,200,000",
+    "$288,432",
+    "$8,000",
+    "$50,752",
+    "$7,549",
+    "$4,650",
+    "$9,647",
+    "$8,500",
+    "$31,554",
+    "$5,463",
+    "$11,290",
+    "$34,698",
+    "$550,000",
+    "$14,325",
+    "$1,131,040",
+    "$35,600"
+   ],
+   "quote": "raise and appropriate the sum of $2,200,000 for the purpose of additional funding to meet the fy2013 town manager's override budget"
+  },
+  {
+   "topic": "Article 11 Lunenburg High School feasibility study",
+   "what_was_recorded": "Motion Sheet proposes $750,000 for a feasibility study, with $30,000 transferred from a 2008 article and $720,000 borrowed.",
+   "figures_as_printed": [
+    "$750,000",
+    "$30,000",
+    "$720,000"
+   ],
+   "quote": "i move the town appropriate the amount of $750,000 for the"
+  },
+  {
+   "topic": "Article 13 Water Department enterprise funding",
+   "what_was_recorded": "Motion Sheet proposes appropriating $5,000 from Water Enterprise Revenues to operate the Water Department.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "the sum of $5,000 to operate the water department."
+  },
+  {
+   "topic": "Article 14 Solid Waste Disposal enterprise funding",
+   "what_was_recorded": "Motion Sheet proposes appropriating $285,000 from Solid Waste Disposal Enterprise Revenues; program paid 100% through user fees.",
+   "figures_as_printed": [
+    "$285,000"
+   ],
+   "quote": "the sum of $285,000 to operate the solid waste disposal program."
+  },
+  {
+   "topic": "Article 15 Sewer Department enterprise funding",
+   "what_was_recorded": "Motion Sheet proposes $570,518 from Sewer Enterprise Revenues and $73,208 from Sewer Retained Earnings, a total of $643,726.",
+   "figures_as_printed": [
+    "$570,518",
+    "$73,208",
+    "$643,726"
+   ],
+   "quote": "the sum of $570,518 and to appropriate from sewer retained earnings the sum of $73,208, for a total"
+  },
+  {
+   "topic": "Article 16 FY13 Capital Plan funding",
+   "what_was_recorded": "Motion Sheet proposes $439,193 plus transfers from eleven older articles, for a total of $464,487 for the FY13 Capital Plan.",
+   "figures_as_printed": [
+    "$439,193",
+    "$1,789.27",
+    "$7,112.98",
+    "$3.99",
+    "$4,875",
+    "$2,903.39",
+    "$103. 90",
+    "$848.64",
+    "$3,313.54",
+    "$14.29",
+    "$74.00",
+    "$4,255.00",
+    "$464,487"
+   ],
+   "quote": "i move the town vote to raise and appropriate the sum of $439,193 and to"
+  },
+  {
+   "topic": "Article 20 personal property minimum fair cash value",
+   "what_was_recorded": "Motion Sheet proposes accepting a minimum fair cash value of $2,500 for personal property accounts to be taxed.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "establishing minimum fair cash value of $2,500 for personal property"
+  },
+  {
+   "topic": "Article 21 Summer Street design fee",
+   "what_was_recorded": "Motion Sheet proposes appropriating $138,700 from the Zoning Incentive Stabilization Fund for the Town's share of the 25% design fee.",
+   "figures_as_printed": [
+    "$138,700"
+   ],
+   "quote": "i move the town vote to appropriate $138,700 from the zoning"
+  },
+  {
+   "topic": "Revolving fund spending limits (Articles 1-6 Motion Sheet)",
+   "what_was_recorded": "Motion Sheet sets annual spending caps for revolving funds: ambulance $50,000, timber $5,000, custodial $25,000, Greenthumb $10,000, library $12,000, MART $38,000.",
+   "figures_as_printed": [
+    "$50,000",
+    "$5,000",
+    "$25,000",
+    "$10,000",
+    "$12,000",
+    "$38,000"
+   ],
+   "quote": "expenditures from the revolving fund may not exceed $50,000 during the fiscal year without the approval of the board"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Line 13, Reserve Fund, to fund prior year expenses (Article 1, Motion Sheet)",
+   "amount_as_printed": "$5,606.98",
+   "outcome": "Motion Sheet prints Finance Committee recommendation of approval; no vote on it recorded in these minutes",
+   "quote": "i move to transfer the sum of $5,606.98 from line 13, reserve"
+  },
+  {
+   "description": "Transfer from Line 13A, Salary Reserve Fund, to Line 41, Police Department (Article 5, Motion Sheet)",
+   "amount_as_printed": "$24,593",
+   "outcome": "Motion Sheet prints Finance Committee recommendation; no vote on it recorded in these minutes",
+   "quote": "the sum of $24,593 from line 13a, salary reserve fund, of article 20 of the may 7, 2011 annual town meeting, to"
+  },
+  {
+   "description": "Transfer from Line 13A, Salary Reserve Fund, to Line 46, Fire Department (Article 6, Motion Sheet)",
+   "amount_as_printed": "$5,954",
+   "outcome": "Motion Sheet prints Finance Committee recommendation; no vote on it recorded in these minutes",
+   "quote": "i move to transfer the sum of $5,954 from line 13a, salary"
+  },
+  {
+   "description": "Transfer from Free Cash to Line 79A, School Unemployment (Article 7, Motion Sheet)",
+   "amount_as_printed": "$39,124",
+   "outcome": "Motion Sheet proposal; no vote on it recorded in these minutes",
+   "quote": "i move to transfer from free cash the sum of $39,124 to line 79a,"
+  },
+  {
+   "description": "Transfers of Septic Receipts, Sewer Enterprise Fund and Sewer and Water Betterment Revenue into the FY2013 budget (Article 8, Motion Sheet)",
+   "amount_as_printed": "$10,872; $36,858; $781,319; $62,781",
+   "outcome": "Motion Sheet proposal; no vote on it recorded in these minutes",
+   "quote": "transter $10,872 from septic receipts reserved for appropriation, transfer $36,858 from the sewer enterprise fund,"
+  },
+  {
+   "description": "Increase of Line 13, Reserve Fund, within the FY2013 override budget (Article 9, Motion Sheet)",
+   "amount_as_printed": "$288,432",
+   "outcome": "Motion Sheet proposal, contingent on voter override approval; no vote on it recorded in these minutes",
+   "quote": "to increase line 13, reserve fund by $288,432, to increase line 17, annual town audit by"
+  },
+  {
+   "description": "Transfer of $30,000 from a 2008 article toward the feasibility study (Article 11, Motion Sheet)",
+   "amount_as_printed": "$30,000",
+   "outcome": "Motion Sheet proposal; no vote on it recorded in these minutes",
+   "quote": "to meet this appropriation, $30,000 will be transferred from article 2 of the may 3, 2008 annual town meeting"
+  },
+  {
+   "description": "Transfers from eleven older articles to the FY13 Capital Plan (Article 16, Motion Sheet)",
+   "amount_as_printed": "$1,789.27; $7,112.98; $3.99; $4,875; $2,903.39; $103. 90; $848.64; $3,313.54; $14.29; $74.00; $4,255.00",
+   "outcome": "Motion Sheet proposal; no vote on it recorded in these minutes",
+   "quote": "i move the town vote to raise and appropriate the sum of $439,193 and to"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order by the chairman at 8:08 am",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review warrant articles for Special and Annual Town Meeting",
+   "resolution": "recommendations voted on Articles 5, 9, 10, 12 and 20; Article 9 recommended as written in the Motion Sheet",
+   "quote": "atm article 9 - bos meeting on tuesday night brought to light if stabilization fund is involved in a vote you need 2/3",
+   "tags": [
+    "warrant articles",
+    "town meeting",
+    "budget",
+    "override",
+    "police contract",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45 AM",
+   "quote": "br made motion to adjourn at 8:45 am, sg seconded, all in favor 5-0",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Motion Sheet 2012 Town Meeting Final Draft dated 5/3/12 (HANDOUT)",
+   "where": "list",
+   "quote": "as written in motion sheet 2012 town meeting final draft dated 5/3/12 (handout)"
+  },
+  {
+   "name": "Lunenburg Planning Board handout dated May 5, 2012",
+   "where": "text",
+   "quote": "as printed in the lunenburg planning board handout dated may 5, 2012"
+  },
+  {
+   "name": "Capital Planning Report",
+   "where": "text",
+   "quote": "to fund the fy13 capital plan, as appearing in the capital planning report"
+  },
+  {
+   "name": "Town Warrant",
+   "where": "text",
+   "quote": "br moves we recommend as written in the town warrant"
+  },
+  {
+   "name": "Police Officers Collective Bargaining Agreement dated July 1, 2010 - June 30, 2013",
+   "where": "text",
+   "quote": "first year of the police officers collective bargaining agreement dated july 1, 2010 - june 30, 2013"
+  },
+  {
+   "name": "Lunenburg Professional Firefighters Collective Bargaining Agreement dated July 1, 2011 - June 30, 2014",
+   "where": "text",
+   "quote": "the lunenburg professional firefighters collective bargaining agreement dated july 1, 2011 - june 30, 2014"
+  },
+  {
+   "name": "Feasibility Study Agreement (between the Town of Lunenburg and the MSBA)",
+   "where": "text",
+   "quote": "the feasibility study agreement that may be executed between the town of lunenburg and"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town meeting 2012",
+  "warrant articles",
+  "budget",
+  "FY2013 override",
+  "police contract",
+  "fire contract",
+  "revolving funds",
+  "capital plan",
+  "solar bylaw",
+  "sewer",
+  "reserve fund"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "motion sheet 2012 town meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

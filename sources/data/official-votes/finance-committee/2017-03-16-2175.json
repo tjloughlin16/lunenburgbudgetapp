@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-03-16",
  "docid": "2175",
@@ -12,15 +12,295 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John",
-   "seconded_by": "Cindy",
    "outcome": "passed 7-0",
    "procedural": true,
-   "quote": "john made a motion to adjourn. cindy seconded the motion. the committee approved the motion 7-0 at 8:03 pm."
+   "quote": "john made a motion to adjourn. cindy seconded the motion. the committee approved the motion 7-0 at 8:03 pm.",
+   "seconded_by": "Cindy"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. One procedural vote recorded: adjournment.",
- "cost_usd": 0.0815935
+ "note": "Text is an OCR (macOS Vision) read of a scanned two-page minutes document; some words are garbled (e.g. 'Al tunds', 't ne operating budget'), so quotes were taken from the cleanest lines. The Absent line is blank. The only recorded vote is the motion to adjourn; no other motions appear. Attachments are printed as 'Attachments (0):' with nothing listed.",
+ "cost_usd": 0.004923919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, chairman mark erickson, vice-chairman"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, chairman mark erickson, vice-chairman"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jay simeone, secretary"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin,"
+  },
+  {
+   "name": "Hannah Anderson",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin,"
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin,"
+  },
+  {
+   "name": "Cindy Testa",
+   "status": "present",
+   "quote": "cindy testa"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Public Access Committee (PAC)",
+   "status": "present",
+   "quote": "steve walker - public access committee (pac), joe mcglaughlin - pac, members of the public,"
+  },
+  {
+   "name": "Joe Mcglaughlin",
+   "role": "PAC",
+   "status": "not stated",
+   "quote": "steve walker - public access committee (pac), joe mcglaughlin - pac, members of the public,"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "karen brochu - town accountant, heather lemeaux - town manager"
+  },
+  {
+   "name": "Heather Lemeaux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "karen brochu - town accountant, heather lemeaux - town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "PAC FY18 budget",
+   "what_was_recorded": "Steve Walker presented the Public Access Committee FY18 budget, with operations, capital, total, income and additional income figures; he said PAC's budget does not affect the Town budget.",
+   "figures_as_printed": [
+    "$102,800",
+    "$60K",
+    "$162,800",
+    "$104K",
+    "$75K",
+    "$179K"
+   ],
+   "quote": "fy18 operations budget: $102,800 capital budget: $60k total: $162,800 income: $104k additional income: $75k total: $179k"
+  },
+  {
+   "topic": "PAC budget effect on Town budget",
+   "what_was_recorded": "Steve Walker said PAC's budget does not affect the Town budget, and that PAC's funds come from Comcast through a revenue fund.",
+   "figures_as_printed": [],
+   "quote": "pac's budget does not affect the town budget."
+  },
+  {
+   "topic": "Audit line decrease",
+   "what_was_recorded": "The Town Manager reported a decrease in the Audit line within the Administration budgets.",
+   "figures_as_printed": [
+    "$9500"
+   ],
+   "quote": "a $9500 decrease in the audit line."
+  },
+  {
+   "topic": "Assessor personal property appraisal contract",
+   "what_was_recorded": "The Town Manager reported $15K for the Assessor to contract with a Personnel Property Appraisal firm to look for new revenues.",
+   "figures_as_printed": [
+    "$15K"
+   ],
+   "quote": "$15k for the assessor to contract with a personnel property appraisal firm to look for new revenues."
+  },
+  {
+   "topic": "Collector delinquent property court action",
+   "what_was_recorded": "The Town Manager reported $3700 to the Collectors office to fund taking delinquent property owners to court to recover money.",
+   "figures_as_printed": [
+    "$3700"
+   ],
+   "quote": "$3700 to the collectors office to fund"
+  },
+  {
+   "topic": "Technology hardware and bandwidth",
+   "what_was_recorded": "The Town Manager reported 15K to Technology for hardware updates and more bandwidth for proper backups.",
+   "figures_as_printed": [
+    "15K"
+   ],
+   "quote": "15k to technology to fund hardware updates and"
+  },
+  {
+   "topic": "Town Clerk budget decrease",
+   "what_was_recorded": "The Town Manager reported a decrease in the Town Clerk's budget as a result of fewer elections.",
+   "figures_as_printed": [
+    "$9400"
+   ],
+   "quote": "a decrease of $9400 in the town clerks budget as a result of fewer"
+  },
+  {
+   "topic": "Health insurance increase",
+   "what_was_recorded": "The Town Manager reported a 5.6% increase in Health Insurance.",
+   "figures_as_printed": [
+    "5.6%"
+   ],
+   "quote": "5.6% increase in health ins."
+  },
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "The minutes record the Snow and Ice deficit at $150k.",
+   "figures_as_printed": [
+    "$150k"
+   ],
+   "quote": "snow and ice deficit is at $150k."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action; meeting called to order at 7:00 pm",
+   "quote": "chairman called the meeting to order at 7:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Comments and new communications",
+   "resolution": "no action; Board reminded to check inbox for conflict of interest document",
+   "quote": "received the monty tech assessment, which was already discussed.",
+   "tags": [
+    "communications",
+    "conflict of interest",
+    "Monty Tech"
+   ]
+  },
+  {
+   "topic": "Public Access Committee FY18 budget presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "steve walker for public access committee. presented a budget handout.",
+   "tags": [
+    "PAC",
+    "FY18 budget",
+    "Comcast"
+   ]
+  },
+  {
+   "topic": "Town Manager Administration budget report",
+   "resolution": "presented; no action recorded",
+   "quote": "the tm presented the administration dept. budgets: land use and unclassified budgets.",
+   "tags": [
+    "FY18 budget",
+    "town manager",
+    "health insurance",
+    "snow and ice"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "discussed; no action recorded",
+   "quote": "financial policy for managing debt service:",
+   "tags": [
+    "debt service",
+    "capital purchases"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "no action; none",
+   "quote": "5. review of minutes: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town financial officers reports",
+   "resolution": "no action; none",
+   "quote": "6. town financial officers reports: none",
+   "tags": [
+    "financial reports"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reported; DPW roof leak noted",
+   "quote": "met with sue. reviewed items in need of repair.",
+   "tags": [
+    "DPW",
+    "COA",
+    "roof repair"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "listed; no action recorded",
+   "quote": "8. ongoing business: pavement management plan contract commitments sale of surplus properties",
+   "tags": [
+    "pavement management",
+    "contracts",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for March 23, 2017",
+   "quote": "9. next meeting: march 23, 2017",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7-0 at 8:03 pm",
+   "quote": "john made a motion to adjourn. cindy seconded the motion. the committee approved the motion 7-0 at 8:03 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PAC budget handout (FY18)",
+   "where": "text",
+   "quote": "steve walker for public access committee. presented a budget handout."
+  },
+  {
+   "name": "Conflict of Interest document from the Town Clerks office",
+   "where": "text",
+   "quote": "check their inbox for the \"conflict of interest document from the town clerks office for review and reply."
+  },
+  {
+   "name": "Monty Tech assessment",
+   "where": "text",
+   "quote": "received the monty tech assessment, which was already discussed."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY18 budget",
+  "Public Access Committee",
+  "town manager budget",
+  "health insurance",
+  "snow and ice deficit",
+  "Monty Tech",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

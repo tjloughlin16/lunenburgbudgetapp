@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-07-24",
  "docid": "4814",
@@ -12,21 +12,328 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment of Christina Roberts as Principal Account Clerk",
-   "moved_by": "Alonzo",
-   "seconded_by": "Sund",
+   "motion": "Ratify the appointment of Christina Roberts as Principal Account Clerk, Treasurer-Collector's Office, as presented by the Town Manager.",
+   "moved_by": "Mr. Alonzo",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. alonzo moved that the board ratify the appointment of christina roberts as the principal account clerk as presented to the board by the town manager. mr. sund seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. alonzo moved that the board ratify the appointment of christina roberts as the principal account clerk as presented to the board by the town manager.",
+   "seconded_by": "Mr. Sund"
   },
   {
-   "motion": "Adjourn regular session",
+   "motion": "Adjourn regular session at 8:15PM.",
+   "moved_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "being no further business the board voted unanimously to adjourn regular session at 8:15pm."
+   "quote": "being no further business the board voted unanimously to adjourn regular session at 8:15pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR-read by macOS Vision, marked ===OCR macOS Vision===. Scanned clearly with no readable defects.",
- "cost_usd": 0.1184325
+ "note": "OCR text (macOS Vision) with garbled passages. The warrant table is scrambled: the seven amounts are legible but cannot be reliably matched to the warrant dates and numbers. The Chair is not labelled in the minutes, so no role is assigned to Mr. Matthews. Only two recorded motions: the Roberts ratification (4-0) and adjournment (unanimous). The executive session entry has no recorded vote. Speaker attributions and quotes from the candidate interviews are as OCR'd.",
+ "cost_usd": 0.01027162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "absent",
+   "quote": "absent was paula bertram"
+  },
+  {
+   "name": "Todd Blake",
+   "role": "Candidate for School Committee Vacancy",
+   "status": "present",
+   "quote": "todd blake, 6 robbs terrace spoke to the board and explained his reasons"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Candidate for School Committee Vacancy",
+   "status": "present",
+   "quote": "anthony caiozzo, 120 robbs hill rd. spoke to the board and explained his reasons"
+  },
+  {
+   "name": "Robert Meek-LaVeck",
+   "role": "Candidate for School Committee Vacancy",
+   "status": "present",
+   "quote": "robert meek-laveck, 33 lancaster ave, spoke to the board and explained his reasons"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board confirmed that the existing fee of $10 per $1,000 of value for Commercial Building Permits applies to Electrical Permits for alternative energy arrays, including solar farms (confirmed at 6PM work session, no vote recorded here).",
+   "quote": "the board confirmed that the existing fee of $10 per $1,000 of value for commercial building permits apply to electrical permits for"
+  },
+  {
+   "decision": "Board went into executive session under M.G.L. Chapter 39, Section 23B(3), for strategy and negotiations with non-union personnel, specifically the Fire Chief; no entry vote is recorded.",
+   "quote": "mr. matthews stated that the bos was going into executive session, not to return and read into record m.g.l."
+  },
+  {
+   "decision": "Chair asked to sign the grant agreement for Master Plan assistance, already reviewed and approved by the Planning Department.",
+   "quote": "ms. speidel produced a copy of the grant agreement for the chair to sign"
+  },
+  {
+   "decision": "Board will vote on the School Committee vacancy appointment together with the School Committee on August 7, 2012.",
+   "quote": "said that the bos will be voting on this with the school committee on august 7, 2012."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Electrical permit fee for solar arrays and farms",
+   "what_was_recorded": "Board confirmed the existing commercial building permit fee rate applies to electrical permits for alternative energy arrays, including solar farms.",
+   "figures_as_printed": [
+    "$10 per $1,000 of value"
+   ],
+   "quote": "the board confirmed that the existing fee of $10 per $1,000 of value for commercial building permits apply to electrical permits for"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant amounts are listed under Minutes/Warrants/Action File Issues; the OCR text does not clearly map each amount to its warrant number and date.",
+   "figures_as_printed": [
+    "$608,180.87",
+    "$197,943.30",
+    "$102,303.87",
+    "$346,446.27",
+    "$3714.78",
+    "$479,982.45",
+    "$1549.72"
+   ],
+   "quote": "$608,180.87 $197,943.30 $102,303.87 $346,446.27 $3714.78 $479,982.45 $1549.72"
+  },
+  {
+   "topic": "Grant agreement for Master Plan",
+   "what_was_recorded": "Grant agreement applied for and received by the Planning Board to assist with the Master Plan was presented for the Chair's signature; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel produced a copy of the grant agreement for the chair to sign, which was applied for, and received by the planning board to assist with the master plan."
+  },
+  {
+   "topic": "Fire Chief contract",
+   "what_was_recorded": "New Fire Chief contract discussed in executive session, with the option of approving it in open session; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel stated that there is an executive session posted concerning the new contract for the fire chief and asked if"
+  },
+  {
+   "topic": "School budget deficit and override",
+   "what_was_recorded": "Candidates were asked how to reduce expenses or close the deficit between the Superintendent's recommended budget and available funds; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. matthews: given the override discussion & result where do you see opportunities to reduce expenses and/or close"
+  },
+  {
+   "topic": "Telephony costs",
+   "what_was_recorded": "Candidate Caiozzo said the town and school spend more each month than needed on basic telephony services; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "every month we are spending more money then we need to on basic telephony services for our town"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Last band concert of the season",
+   "quote": "mr. alonzo informed the public that the last band concert of the season will be held on july 30"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00PM)",
+   "resolution": "no action",
+   "quote": "mr. alonzo informed the public that the last band concert of the season will be held on july 30",
+   "tags": [
+    "public comment",
+    "band concert"
+   ]
+  },
+  {
+   "topic": "Announcements: water use restriction",
+   "resolution": "read, no action",
+   "quote": "mr. matthews read a memo from the lunenburg water district concerning a mandatory water use restriction which has become in effect.",
+   "tags": [
+    "water",
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Interviews for School Committee vacancy (Blake, Caiozzo, Meek-LaVeck)",
+   "resolution": "interviews held; BOS to vote with School Committee August 7, 2012",
+   "quote": "mr. matthews explained that the bos along with the school committee will be interviewing the candidates separately",
+   "tags": [
+    "appointment",
+    "school committee",
+    "vacancy",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Electrical permit fee for solar arrays/farms",
+   "resolution": "fee applies as existing; confirmed",
+   "quote": "the board confirmed that the existing fee of $10 per $1,000 of value for commercial building permits apply to electrical permits for",
+   "tags": [
+    "permit fee",
+    "solar",
+    "electrical"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no minutes; warrants listed; action file discussed (public records request, emails)",
+   "quote": "minutes: none warrants : 7/17 6/30 7/24 7/8 6/29 7/19 7/19",
+   "tags": [
+    "warrants",
+    "public records",
+    "action file",
+    "emails"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "mr. alonzo reported that the finance committee will be meeting on thursday evening at town hall at 7pm.",
+   "tags": [
+    "committee reports",
+    "finance committee",
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "quote": "department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "self evaluation distributed; grant agreement presented; fire chief contract executive session raised",
+   "quote": "ms. speidel distributed copies of her self evaluation to the board members",
+   "tags": [
+    "town manager",
+    "grant",
+    "fire chief"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "none",
+   "quote": "old business - none appointments/re-appointments/resignations",
+   "tags": []
+  },
+  {
+   "topic": "Appointment of Christina Roberts, Principal Account Clerk",
+   "resolution": "ratified 4-0",
+   "quote": "ms. speidel stated that she has made the appointment of christina roberts, as principal account clerk, treasure-collector's office",
+   "tags": [
+    "appointment",
+    "treasurer-collector"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered; purpose stated as collective bargaining/Fire Chief contract",
+   "quote": "mr. matthews stated that the bos was going into executive session, not to return and read into record m.g.l.",
+   "tags": [
+    "executive session",
+    "fire chief",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned regular session 8:15PM",
+   "quote": "being no further business the board voted unanimously to adjourn regular session at 8:15pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo from the Lunenburg Water District on mandatory water use restriction",
+   "where": "text",
+   "quote": "mr. matthews read a memo from the lunenburg water district concerning a mandatory water use restriction which has become in effect."
+  },
+  {
+   "name": "Letter from Sentinel & Enterprise reporter (public records request)",
+   "where": "text",
+   "quote": "a letter from the sentinel & enterprise reporter asking about emails concerning the vote"
+  },
+  {
+   "name": "Public records request from the same reporter, answered by Town Manager on July 6th",
+   "where": "text",
+   "quote": "ms. speidel said that she also received a public records request from the same reporter on the same subject a few"
+  },
+  {
+   "name": "Response to public records request (copy in action file)",
+   "where": "text",
+   "quote": "the response in the action file if the board is interested in reviewing it."
+  },
+  {
+   "name": "Two emails from the employee and the Town Manager",
+   "where": "text",
+   "quote": "which are the two emails from the employee and the town manager."
+  },
+  {
+   "name": "Town Manager Self Evaluation",
+   "where": "text",
+   "quote": "ms. speidel distributed copies of her self evaluation to the board members"
+  },
+  {
+   "name": "Grant agreement for Master Plan assistance",
+   "where": "text",
+   "quote": "ms. speidel produced a copy of the grant agreement for the chair to sign"
+  },
+  {
+   "name": "Executive Session notice concerning the new contract for the Fire Chief",
+   "where": "text",
+   "quote": "there is an executive session posted concerning the new contract for the fire chief"
+  }
+ ],
+ "tags": [
+  "school committee vacancy",
+  "appointments",
+  "interviews",
+  "warrants",
+  "public records",
+  "executive session",
+  "fire chief contract",
+  "solar permit fee",
+  "water restriction",
+  "grant",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

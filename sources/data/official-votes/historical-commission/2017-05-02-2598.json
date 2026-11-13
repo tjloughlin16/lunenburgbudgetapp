@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2017-05-02",
  "docid": "2598",
@@ -12,31 +12,204 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 4, 2017",
-   "outcome": "approved",
+   "motion": "Approve the minutes of April 4, 2017.",
+   "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "minutes were approved for april 4, 2017."
   },
   {
-   "motion": "Encumber three thousand dollars ($3,000.00) allotted in the town budget for the Historical Commission",
-   "outcome": "not stated",
+   "motion": "The Historical Commission will encumber the three thousand dollars ($3000.00) allotted in the town budget for the Historical Commission.",
+   "outcome": "passed",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "voted: the historical commission will encumber the monies, three thousand dollars ($3000.00) allotted in the town budget for the historical commission"
   },
   {
-   "motion": "Renew the subscription to the Lunenburg Ledger for the Historical Commission",
-   "outcome": "passed by a majority with one abstention",
+   "motion": "Renew the subscription to the Lunenburg Ledger for the Historical Commission.",
+   "outcome": "passed by majority, one abstention",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "voted: it was voted by a majority (with one abstention) to renew the subscription to the lunenburg ledger for the historical commission."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR by macOS Vision.",
- "cost_usd": 0.1223655
+ "note": "Text is macOS Vision OCR of a two-page set of minutes. Two recorded \"Voted:\" motions carry no mover, seconder or roll-call count; the subscription vote gives only \"majority (with one abstention)\". The Kilburn item reads \"until the tall\", most likely \"fall\" as printed, and is recorded verbatim. No public comment section appears. The minutes approval has no printed motion or mover. Adjournment has no printed motion, so it is not recorded as a vote. Jack Rodriquenz is named only as a recipient and is not listed as an attendee.",
+ "cost_usd": 0.00470482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: becky lantry, cullen dwyer, richard mcgrath, jennifer sanderson and lois lewis."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: becky lantry, cullen dwyer, richard mcgrath, jennifer sanderson and lois lewis."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: becky lantry, cullen dwyer, richard mcgrath, jennifer sanderson and lois lewis."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "a new member of the Historical Commission",
+   "status": "present",
+   "quote": "members present: becky lantry, cullen dwyer, richard mcgrath, jennifer sanderson and lois lewis."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "members present: becky lantry, cullen dwyer, richard mcgrath, jennifer sanderson and lois lewis."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Any necessary repairs and work at the Town Pound should start within the next two weeks (painting the sign, new padlock, stone walls, trimming shrubs and limbs).",
+   "quote": "richard mcgrath advised any necessary repairs and work at the town pound should start within the next two weeks."
+  },
+  {
+   "decision": "The request to have the town cemeteries maintained will be forwarded to Jack Rodriquenz, Director of Public Works.",
+   "quote": "a request to have maintained the town cemeteries will be forwarded to jack rodriquenz, director of public works."
+  },
+  {
+   "decision": "The Form B Kilburn house project is postponed (minutes print 'until the tall', likely 'fall').",
+   "quote": "the form b kilburn house project will be postponed until the tall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Encumbrance of town budget funds",
+   "what_was_recorded": "The Historical Commission voted to encumber the Historical Commission's allotment in the town budget.",
+   "figures_as_printed": [
+    "three thousand dollars ($3000.00)",
+    "$3000.00"
+   ],
+   "quote": "voted: the historical commission will encumber the monies, three thousand dollars ($3000.00) allotted in the town budget for the historical commission"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of April 4, 2017",
+   "quote": "minutes were approved for april 4, 2017.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "noted",
+   "quote": "notice has been received from the town clerk's office jennifer sanderson, a new member of the historical commission, has been officially sworn in",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition delay",
+   "resolution": "no new requests",
+   "quote": "richard mcgrath reported there have been no new demolition delay requests.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Town Pound repairs",
+   "resolution": "work to start within two weeks",
+   "quote": "richard mcgrath advised any necessary repairs and work at the town pound should start within the next two weeks.",
+   "tags": [
+    "town pound",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Town cemeteries maintenance",
+   "resolution": "request forwarded to Public Works",
+   "quote": "a request to have maintained the town cemeteries will be forwarded to jack rodriquenz, director of public works.",
+   "tags": [
+    "cemeteries",
+    "public works"
+   ]
+  },
+  {
+   "topic": "Budget encumbrance",
+   "resolution": "passed",
+   "quote": "the historical commission will encumber the monies, three thousand dollars ($3000.00) allotted in the town budget for the historical commission",
+   "tags": [
+    "budget",
+    "encumbrance"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger subscription",
+   "resolution": "renewed by majority, one abstention",
+   "quote": "it was voted by a majority (with one abstention) to renew the subscription to the lunenburg ledger for the historical commission.",
+   "tags": [
+    "subscriptions"
+   ]
+  },
+  {
+   "topic": "Kilburn house project",
+   "resolution": "postponed",
+   "quote": "the form b kilburn house project will be postponed until the tall.",
+   "tags": [
+    "Kilburn house"
+   ]
+  },
+  {
+   "topic": "Missing loaned items (gavel and jury box)",
+   "resolution": "reported; no action recorded",
+   "quote": "jennifer sanderson said certain items, the gavel and the jury box, loaned to the town have not been returned to the historical society.",
+   "tags": [
+    "lost property"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 p.m.",
+   "quote": "the meeting adjourned at 8:15 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice from the Town Clerk's office regarding Jennifer Sanderson's swearing-in",
+   "where": "list",
+   "quote": "notice has been received from the town clerk's office jennifer sanderson, a new member of the historical commission, has been officially sworn in"
+  },
+  {
+   "name": "Massachusetts Historical Commission meeting notice (May 12, 2017, Worcester)",
+   "where": "list",
+   "quote": "the massachusetts historical commission will meet may 12, 2017 in worcester."
+  },
+  {
+   "name": "Freedom's Way Heritage Area survey regarding Lunenburg Center (compact disc)",
+   "where": "list",
+   "quote": "freedom's way heritage area survey regarding lunenburg center and historical buildings cannot be properly addressed with the current compact disc of the center."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "town pound",
+  "cemeteries",
+  "demolition delay",
+  "budget encumbrance",
+  "subscriptions",
+  "Kilburn house",
+  "lost property",
+  "correspondence"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence and communications"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-02-07",
  "docid": "2305",
@@ -12,31 +12,263 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of 1/10/2013 as corrected",
+   "motion": "Approve the minutes of 1/10/2013 as corrected.",
    "moved_by": "BL",
    "seconded_by": "SR",
-   "outcome": "approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "bl moved to approve the minutes of 1/10/2013 as corrected. sr seconded, approved unanimously."
   },
   {
-   "motion": "approve the minutes of 1/24/2013",
+   "motion": "Approve the minutes of 1/24/2013.",
    "moved_by": "SR",
    "seconded_by": "BL",
-   "outcome": "approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "sr moved to approve the minutes of 1/24/2013. bl seconded, approved unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 8:33.",
    "moved_by": "IM",
    "seconded_by": "SR",
-   "outcome": "approved 5-0",
+   "outcome": "passed 5-0",
    "procedural": true,
    "quote": "im motioned to adjourn at 8:33. sr seconded, approved 5-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted text. Note: \"IM\" on the adjournment motion appears to be a transcription error (possibly JM or ME); the initials do not match any named committee member listed as present.",
- "cost_usd": 0.0830965
+ "note": "OCR text with artifacts: the adjourning member's initials print as \"IM\" (likely JM) and the motion number as \"I1.\" (likely 11.); the attendance block is in columns so attendance is inferred from column order. Dates like \"April 4'' vote\" and \"May 44h\" are OCR-garbled and not recorded. Only two procedural approval votes and one adjournment vote are recorded; the Select Board 3-2 vote mentioned in Communications is that board's vote, not this committee's, so it is not listed as a vote. No public comment section is printed.",
+ "cost_usd": 0.0049095200000000006,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. raboin, t. burchfield"
+  },
+  {
+   "name": "John Male",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "m. erickson, b. laffond, j. male, s. raboin, t. burchfield j. smith k. speidel"
+  },
+  {
+   "name": "K. Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. raboin, t. burchfield j. smith k. speidel"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "dave matthews of the select board participated in the discussion"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark will work with Kerry to schedule upcoming budget hearings for every Thursday in March.",
+   "quote": "mark will work with kerry to schedule upcoming budget hearings for every thursday in the month of march."
+  },
+  {
+   "decision": "TB will pick up the DPW liaison role and SR will take the Council on Aging liaison role, since S Giles has left.",
+   "quote": "tb will pick up dpw, and sr will take council on aging, as he is better able to attend their meetings."
+  },
+  {
+   "decision": "ME will forward the Finance Committee report for the Annual Town Report, as presented, to the town manager.",
+   "quote": "finance committee report for annual town report. me circulated will forward the report as presented to the town manager."
+  },
+  {
+   "decision": "The buildings list will be reviewed.",
+   "quote": "buildings list will be reviewed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer commission budget for engineering consultation",
+   "what_was_recorded": "JM reported the sewer commission may look to budget a sum for engineering consultation on infiltration issues.",
+   "figures_as_printed": [
+    "65,000"
+   ],
+   "quote": "the commission may look to budget 65,000 for engineering consultation to get at infiltration issues."
+  },
+  {
+   "topic": "Capital share of the town budget",
+   "what_was_recorded": "Discussion stated that with the allocation to roads, capital is 5% of budget and 10% of debt service.",
+   "figures_as_printed": [
+    "5%",
+    "10%"
+   ],
+   "quote": "with the allocation to roads, 5% of budget is to capital. it is also 10% of debt service."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:03 pm",
+   "quote": "meeting called to order at 7:03 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Meet and greet",
+   "resolution": "no action; no departments to meet",
+   "quote": "there are no additional departments to meet with.",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted; school board and Select Board items reported",
+   "quote": "k. brochu forwarded the quarterly reports.",
+   "tags": [
+    "communications",
+    "special town meeting",
+    "debt exclusion"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 1/10/2013 as corrected and 1/24/2013",
+   "quote": "bl moved to approve the minutes of 1/10/2013 as corrected. sr seconded, approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "discussed; DPW and Council on Aging liaisons reassigned",
+   "quote": "sr reported that the capital planning committee continues to be on target to have recommendations reached soon.",
+   "tags": [
+    "capital planning",
+    "sewer",
+    "schools",
+    "liaisons",
+    "savings"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "received; local aid and forecast update",
+   "quote": "update on local aid figures from the state: the senate rejected setting a date to set figures.",
+   "tags": [
+    "local aid",
+    "forecast",
+    "library"
+   ]
+  },
+  {
+   "topic": "Discussion points: Annual Town Report and budget hearings",
+   "resolution": "report to be forwarded; budget hearings scheduled for March Thursdays",
+   "quote": "mark will work with kerry to schedule upcoming budget hearings for every thursday in the month of march.",
+   "tags": [
+    "annual town report",
+    "budget hearings"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted schedule",
+   "quote": "2/28 budget presentation",
+   "tags": [
+    "schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Budget opportunities",
+   "resolution": "list of ideas noted; buildings list to be reviewed",
+   "quote": "regional dispatch is a trial balloon. success there may lead to other opportunities.",
+   "tags": [
+    "savings",
+    "regionalization",
+    "street lights",
+    "energy",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:33, passed 5-0",
+   "quote": "im motioned to adjourn at 8:33. sr seconded, approved 5-0",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Quarterly reports (forwarded by K. Brochu)",
+   "where": "text",
+   "quote": "k. brochu forwarded the quarterly reports."
+  },
+  {
+   "name": "Notice of Library legislative breakfast",
+   "where": "text",
+   "quote": "notice of library legislative breakfast was forwarded."
+  },
+  {
+   "name": "Finance Committee Report for Annual Town Report",
+   "where": "text",
+   "quote": "finance committee report for annual town report. me circulated will forward the report as presented to the town manager."
+  },
+  {
+   "name": "Review of budget assumptions (Kerry)",
+   "where": "text",
+   "quote": "sr mentioned that he found kerry's review of budget assumptions at the last select board meeting very helpful."
+  },
+  {
+   "name": "Buildings list",
+   "where": "text",
+   "quote": "buildings list will be reviewed."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget",
+  "capital planning",
+  "sewer",
+  "schools",
+  "annual town report",
+  "town meeting",
+  "budget hearings",
+  "regionalization",
+  "debt exclusion",
+  "savings"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

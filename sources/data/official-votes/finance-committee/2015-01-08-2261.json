@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-01-08",
  "docid": "2261",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of December 11, 2014 as amended",
+   "motion": "Approve the minutes of the December 11, 2014 meeting as amended.",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "terri moved that the minutes be approved as amended. jay seconded her motion and the committee approved the motion 5-0."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
@@ -29,6 +29,250 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; readable. Finance Committee meeting, January 8, 2015. Five members present (Mark Erickson, Terri Burchfield, Karin Menard, Jay Simeone, John Henshaw); one absent (Caroline Griffis).",
- "cost_usd": 0.08348549999999999
+ "note": "OCR of three scanned pages with some garbled text (a stray line reading 'Тони о непризна' in the header, 'LUNANEERO' and 'Fin Common' in stamps and agenda text, and typos such as 'tor' and 'ili.'). Votes are recorded with counts only, with no roll-call. The minutes say the Chairman called the meeting to order at 7:02 pm and adjourned at 9:10 PM. Role for Kerry Speidel is not printed. Public comment: 'A. Public: None.' The documents_list is printed only as a sentence in the Communications section ('Mark also handed out...'), not as a heading.",
+ "cost_usd": 0.006152019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: caroline griffis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "also present: jamie toale--bos liaison, kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present (role not printed)",
+   "status": "present",
+   "quote": "also present: jamie toale--bos liaison, kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will correct the December 11, 2014 minutes, sign them, and give them to the Town Clerk's office the following week.",
+   "quote": "action item: john will correct the minutes, sign them and give them to the town clerk's office next week."
+  },
+  {
+   "decision": "Mark recommended the committee study the capital borrowing spreadsheet and process to prepare for the Capital Planning Committee presentation.",
+   "quote": "mark recommended we study the spreadsheet/process to prepare for"
+  },
+  {
+   "decision": "Terri Burchfield will contact both the Fire and Police Departments about their budget presentations, including round-the-clock schedules and how budget constraints would affect service levels.",
+   "quote": "nothing to report, but terri will be in touch with both the fire and police"
+  },
+  {
+   "decision": "Jamie Toale will update his spreadsheet with the new information on minimum lot sizes.",
+   "quote": "jamie will update his spreadsheet with the new information."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library electricity costs",
+   "what_was_recorded": "The Library is concerned that increased electricity costs may push its expenditures over the FY15 budget, possibly by a set amount.",
+   "figures_as_printed": [
+    "$5,500"
+   ],
+   "quote": "the library is concerned about the effect to their expenditures relative to fy15 budget from the increase in electricity costs."
+  },
+  {
+   "topic": "School choice-out students and cost to the Town",
+   "what_was_recorded": "Schools are checking reported choice-out of 87 students; if valid it means a cost increase to the Town, though the figure may be an overstatement.",
+   "figures_as_printed": [
+    "$100,000",
+    "87 students"
+   ],
+   "quote": "this if valid, means a $100,000 increase in costs to the town."
+  },
+  {
+   "topic": "School FY16 proposed budget increase",
+   "what_was_recorded": "The school committee decided on an FY16 budget that is a percentage over FY15, to increase further as staffing effects are added.",
+   "figures_as_printed": [
+    "6.09%"
+   ],
+   "quote": "at the 1/7 meeting the school committee decided on an fy16 budget that would be a 6.09% over the fy15 budget."
+  },
+  {
+   "topic": "State aid for FY16 budget",
+   "what_was_recorded": "The Town will prepare the FY16 budget without formal state aid figures; the Town Manager does not expect state aid changes, at least for FY16.",
+   "figures_as_printed": [],
+   "quote": "thus the town will put together the fy16 budget without formal input on levels of state aid."
+  },
+  {
+   "topic": "Capital borrowing scenarios for high-cost requests",
+   "what_was_recorded": "The committee discussed borrowing scenarios and their effect on the FY17-and-beyond capital budget.",
+   "figures_as_printed": [],
+   "quote": "we also discussed scenarios of borrowing and the effect borrowing to"
+  },
+  {
+   "topic": "Green Community LED lighting grant",
+   "what_was_recorded": "The Green Community is installing LED lights at the Library using grant money.",
+   "figures_as_printed": [],
+   "quote": "as there is grant money for this."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "noted; mosquito control notice and budget schedules handed out",
+   "quote": "mark circulated to the committee notification of the central mass. mosquito control",
+   "tags": [
+    "communications",
+    "mosquito control",
+    "budget schedule"
+   ]
+  },
+  {
+   "topic": "Review of 2014 Audited Financial Statements (Powers and Sullivan, LLC)",
+   "resolution": "reviewed highlights; full audit report on file at Town Hall",
+   "quote": "highlights of the review of the report of the 2014 audited financial statements by powers and sullivan, llc.",
+   "tags": [
+    "audit",
+    "free cash",
+    "OPEB",
+    "internal controls"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported on state budget timing, library electricity, school choice-out figures",
+   "quote": "charlie baker, as new governor, gets an additional month to prepare the state budget.",
+   "tags": [
+    "state aid",
+    "library",
+    "schools",
+    "FY16 budget"
+   ]
+  },
+  {
+   "topic": "Minutes of December 11, 2014 meeting",
+   "resolution": "approved as amended, 5-0",
+   "quote": "terri moved that the minutes be approved as amended. jay seconded her motion and the committee approved the motion 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee/Department Liaison Updates",
+   "resolution": "reported; capital planning list and borrowing spreadsheet discussed",
+   "quote": "6. committee/department liaison updates:",
+   "tags": [
+    "capital planning",
+    "schools",
+    "PACC",
+    "building re-use",
+    "green community",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Future Agenda Items",
+   "resolution": "noted; capital plan presentation and FY16 department budget presentations scheduled",
+   "quote": "capital planning presents the proposed capital plan for fy16 to the fin common january 22.",
+   "tags": [
+    "agenda",
+    "FY16 budget",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:10 PM, passed 5-0",
+   "quote": "karin moved to adjourn the meeting, her motion was seconded by jay and approved 5-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Central Mass. Mosquito Control meeting notification (Northborough Free Library, January 14, FY16 mosquito control budget)",
+   "where": "text",
+   "quote": "mark circulated to the committee notification of the central mass. mosquito control"
+  },
+  {
+   "name": "Budget Hearing Schedule",
+   "where": "list",
+   "quote": "mark also handed out the budget hearing schedule and the proposed schedule for"
+  },
+  {
+   "name": "Proposed Schedule for FY2015 Annual Town Meeting",
+   "where": "list",
+   "quote": "mark also handed out the budget hearing schedule and the proposed schedule for"
+  },
+  {
+   "name": "Work-in-progress spreadsheet illustrating borrowing and capital process (handed out by John H.)",
+   "where": "list",
+   "quote": "john handed out a work-in-progress spreadsheet illustrating the process and framing the issues around borrowing."
+  },
+  {
+   "name": "Report of the 2014 Audited Financial Statements by Powers and Sullivan, LLC (audit report on file at Town Hall)",
+   "where": "text",
+   "quote": "for more detail than given below, note that the audit report is on file at town hall."
+  },
+  {
+   "name": "Management Report (audit recommendations, three categories)",
+   "where": "text",
+   "quote": "the management report included recommendations in three categories:"
+  },
+  {
+   "name": "Minutes of the December 11, 2014 Meeting",
+   "where": "text",
+   "quote": "minutes of the december 11, 2014 meeting: mark had two corrections, which john will make to the"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY16 budget",
+  "audit",
+  "capital planning",
+  "schools",
+  "library",
+  "state aid",
+  "minutes approval",
+  "Green Community",
+  "Monty Tech"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mark also handed out the budget hearing schedule"
+ },
+ "dropped_unquoted_by_field": {}
 }

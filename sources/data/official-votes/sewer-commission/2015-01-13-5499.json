@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-01-13",
  "docid": "5499",
@@ -12,55 +12,514 @@
  },
  "votes": [
   {
-   "motion": "return $3622.50 in warranty reserve funds",
+   "motion": "Return $3622.50 to Elliott (Lancaster Ave. warranty reserve) and move on.",
    "moved_by": "Troy",
    "seconded_by": "Mike",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "troy made the motion that we give back the money and move on. carl asked for a second. mike stated, under the circumstances, he'll second. vote taken was unanimous."
+   "quote": "troy made the motion that we give back the money and move on."
   },
   {
-   "motion": "credit 65 Fairview Rd. $770.00 pursuant to Board of Assessor's assessment",
+   "motion": "Credit 65 Fairview Rd. $770.00, pursuant to the Board of Assessor's assessment.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "troy made the motion to credit 65 fairview rd. $770.00, pursuant to the board of assessor's assessment. dave seconded. vote taken was unanimous."
   },
   {
-   "motion": "approve the minutes of 10/28/14",
+   "motion": "Accept the minutes of 10/28/14.",
    "moved_by": "Dave",
    "seconded_by": "Mike",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "dave made the motion to accept the minutes of 10/28/14, mike seconded, and vote was unanimous based on their recommendation to approve."
   },
   {
-   "motion": "approve the minutes of 11/18/14",
+   "motion": "Accept the minutes of 11/18/14.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "dave made the motion to accept minutes, troy seconded, and the vote taken was unanimous to approve the minutes of 11/18/14."
   },
   {
-   "motion": "approve the minutes of 12/9/14",
+   "motion": "Accept the minutes of 12/9/14.",
    "moved_by": "Troy",
    "seconded_by": "Dave",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "troy made the motion to accept, dave seconded, the vote taken was unanimous to approve the minutes of 12/9/14."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Troy",
    "seconded_by": "Mike",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "troy made the motion, mike seconded. vote taken was unanimous and the meeting was adjourned at 9:55pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision scan of original meeting minutes. One article reference appears OCR-corrupted (\"1gm\" for \"11 Jan\" and \"Sentinel\" reference). All votes extracted are clearly recorded with unmotivated outcomes.",
- "cost_usd": 0.1207965
+ "note": "OCR text from a scan with errors (e.g., 'contirm', 'gin', 'Car's'); some passages garbled on page 3 and a Weston & Sampson bid amount is cut off at a page break. The minutes have no header, roll call, or attendance list, so attendance is inferred from who spoke or acted and roles are mostly not stated. Votes are recorded with results but no tallies beyond 'unanimous'. Meeting date supplied by the requester as 2015-01-13.",
+ "cost_usd": 0.012788820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl asked for a motion on elliott's request to return $3622.50."
+  },
+  {
+   "name": "Troy",
+   "status": "present",
+   "quote": "troy made the motion that we give back the money and move on."
+  },
+  {
+   "name": "Mike",
+   "status": "present",
+   "quote": "mike stated, under the circumstances, he'll second."
+  },
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave made the motion to accept the minutes of 10/28/14, mike seconded"
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb made her a copy of the notice, and will mail her the 2 letters."
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "troy asked jack if he was happy with swss,"
+  },
+  {
+   "name": "Bob E.",
+   "status": "present",
+   "quote": "bob e., who had joined the meeting, said he would look into it"
+  },
+  {
+   "name": "Mr. Emma",
+   "status": "present",
+   "quote": "mr. emma summed it up saying he didn't agree, but respects the commission's time and left the meeting."
+  },
+  {
+   "name": "Susan Drumm",
+   "role": "representative of the Drumm Privilege Fee Abatement Request",
+   "status": "present",
+   "quote": "susan drumm came in and she owns the property with her brother bill drumm"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No credit on the closing owner's account; the minimum charge applies because the meter is on, and the policy was restated rather than changed.",
+   "quote": "discussion continued that even if an owner is in california and has 0 usage, would we credit? no, because the meter is on."
+  },
+  {
+   "decision": "No vote was needed on the Mr. Emma billing issue unless the policy were changed; none was.",
+   "quote": "troy said that no vote was needed, unless they were to change policy."
+  },
+  {
+   "decision": "The Drumm abatement request cannot be processed by the Commission; it must go through the appeals process. Communication restricted to the party that submitted the request.",
+   "quote": "he stated that per mass general law we are prohibited from processing an abatement and that it must through the appeals process."
+  },
+  {
+   "decision": "Barb will send copies of the two zoning officer letters to Bill Drumm.",
+   "quote": "barb will send copies of the 2 letters to bill drumm."
+  },
+  {
+   "decision": "For FY16 budgeting, use 24 new accounts (30% of 80 properties in the sewer project) as the new-connection figure for the whole town.",
+   "quote": "this is the number for the whole town that we'll use for fy16 budgeting as far as new connections just to keep it simple."
+  },
+  {
+   "decision": "All present agreed that Infrastructure cost should not be reduced.",
+   "quote": "all present agreed that infrastructure cost should not be reduced."
+  },
+  {
+   "decision": "All present agreed that Electricity needed to go up by 30%.",
+   "quote": "all present agreed that electricity needed to go up by 30%."
+  },
+  {
+   "decision": "Fuel should be level-funded.",
+   "quote": "commission determined that fuel should be level-funded."
+  },
+  {
+   "decision": "Barb to find out whether the phone line can be removed with SCADA; if so, the telephone expense is a wash.",
+   "quote": "barb will get her answer on whether the phone line can be removed with scada, and if so, the expense is a wash."
+  },
+  {
+   "decision": "On Leominster usage, 5% increases are to be based on the FY15 budget amount.",
+   "quote": "on leominster usage, 5% increases should be based on the fy15 budget amount."
+  },
+  {
+   "decision": "Grease trap fines to be re-looked at, and the item added to the next agenda.",
+   "quote": "carl agreed and wants it added to next agenda."
+  },
+  {
+   "decision": "The Commission signed the Sewer Assessment Statement for the privilege fee lien; Carl to take it to the Clerk's office for notarization.",
+   "quote": "the commission signed the statement and carl will bring it to the clerk's office for notarization."
+  },
+  {
+   "decision": "Carl will write a letter to the editor clarifying the 40B and ZBA process and the Commission's position on charges, and will clarify on TV at the next meeting.",
+   "quote": "carl will do the letter and clarify on tv at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY16 new connections revenue assumption",
+   "what_was_recorded": "Revenue assumes 30% of 80 sewer-project properties connect, giving 24 new accounts, a 5% increase overall.",
+   "figures_as_printed": [
+    "80",
+    "30%",
+    "24",
+    "5%"
+   ],
+   "quote": "we are assuming of the 80 properties in the sewer project, that 30% will connect. that means 24 new accounts, which is a 5% increase overall."
+  },
+  {
+   "topic": "Infrastructure line",
+   "what_was_recorded": "Dave thought the infrastructure line should be increased from its $30,000 figure.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "dave thought that infrastructure should be increased from $30,000."
+  },
+  {
+   "topic": "Infrastructure and outsourcing contingency",
+   "what_was_recorded": "Dave proposed increasing infrastructure to $40,000 and also increasing outsourcing as a contingency.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "dave stated that just like we increase infrastructure to $40,000, we need to increase outsourcing as it may"
+  },
+  {
+   "topic": "FY16 line items reviewed by Carl",
+   "what_was_recorded": "Carl reviewed increasing infrastructure to $41,000, adding about $25,000 to outsourcing, and level-funding legal at $9000.",
+   "figures_as_printed": [
+    "$41,000",
+    "$25,000",
+    "$9000"
+   ],
+   "quote": "carl reviewed that we should increase infrastructure to $41,000, outsourcing add about $25,000, level fund legal at $9000."
+  },
+  {
+   "topic": "Outsourcing line and generator",
+   "what_was_recorded": "Outsourcing line to carry Weston & Sampson's RFP price plus 5%, and $7500 for the generator.",
+   "figures_as_printed": [
+    "5%",
+    "$7500"
+   ],
+   "quote": "the outsourcing line will have weston & sampson's rfp price, plus 5%, and $7500 for the generator."
+  },
+  {
+   "topic": "Weston & Sampson bid delta for remaining stations",
+   "what_was_recorded": "Carl proposed adding the delta of the Weston & Sampson bid amount; the amount itself is cut off in the minutes at a page break.",
+   "figures_as_printed": [],
+   "quote": "carl proposed that we add in the delta of the weston & sampson bid amount of"
+  },
+  {
+   "topic": "SWSS outsourcing increase",
+   "what_was_recorded": "The SWSS outsource line was increased by 2.5% for FY16; costs after FY16 are unknown.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "the outsource for swss was bumped by 2.5% as deb already agreed, but after fy16, we don't know."
+  },
+  {
+   "topic": "Electricity",
+   "what_was_recorded": "All present agreed electricity needed to go up by 30%.",
+   "figures_as_printed": [
+    "30%"
+   ],
+   "quote": "all present agreed that electricity needed to go up by 30%."
+  },
+  {
+   "topic": "Telephone and wireless SCADA cost",
+   "what_was_recorded": "Telephone line to increase for potential 7 more SCADA stations with an associated wireless monthly cost of $36.",
+   "figures_as_printed": [
+    "$36"
+   ],
+   "quote": "we'll increase telephone with the potential for 7 more stations with scada and the associated wireless monthly cost of $36."
+  },
+  {
+   "topic": "Leominster usage rate basis",
+   "what_was_recorded": "5% increases on Leominster usage to be based on the FY15 budget amount.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "on leominster usage, 5% increases should be based on the fy15 budget amount."
+  },
+  {
+   "topic": "Reserve question for Jack",
+   "what_was_recorded": "Carl asked Jack whether $100,000 should be available and what it would be used for; Jack wanted time to think.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "carl asked jack about expenses he foresees, should we have $100,000 available, and what he would see it being used for."
+  },
+  {
+   "topic": "Potential betterment for sewer extension",
+   "what_was_recorded": "Commission discussed a potential $24,000 betterment and how to reduce it for residents; it sets the basis for future privilege fees.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "commission discussed the potential $24,000 betterment and how we can get it reduced for the residents"
+  },
+  {
+   "topic": "Lancaster Ave warranty reserve",
+   "what_was_recorded": "Warranty reserve of about $3600 to be released after the warranty year; the Commission then voted to return $3622.50 to Elliott.",
+   "figures_as_printed": [
+    "$3600",
+    "$3622.50"
+   ],
+   "quote": "carl stated that the amount is about $3600."
+  },
+  {
+   "topic": "Elliott return of warranty money",
+   "what_was_recorded": "Carl asked for a motion on returning $3622.50 to Elliott, which passed unanimously.",
+   "figures_as_printed": [
+    "$3622.50"
+   ],
+   "quote": "carl asked for a motion on elliott's request to return $3622.50."
+  },
+  {
+   "topic": "65 Fairview Rd. bedroom-count connection fee credit",
+   "what_was_recorded": "Credit for the 7-bedroom connection fee amounts to $770, credited after the Board of Assessors found 6 bedrooms.",
+   "figures_as_printed": [
+    "$770",
+    "$770.00"
+   ],
+   "quote": "the credit for the 7 bedroom amounts to $770."
+  },
+  {
+   "topic": "Drumm betterment refund",
+   "what_was_recorded": "The Drumms paid cash for the betterments and seek a refund without interest; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "they paid cash for the betterments and are just asking for a refund and not even asking for interest."
+  },
+  {
+   "topic": "Grease trap program funding",
+   "what_was_recorded": "Carl proposed outsourcing the grease trap program and funding it from permit fees and fines; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "carl introduced the thought of having the grease trap program outsourced and funded by the permit fees & fines."
+  },
+  {
+   "topic": "Retained earnings",
+   "what_was_recorded": "Carl wants a positive budget result to put toward retained earnings; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "carl would like to have a positive to put toward the retained earnings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Emma",
+   "stated_role": "",
+   "topic": "Minimum charge billed on closed account with zero usage",
+   "quote": "mr. emma asked the commission to contirm that we still bill even it there is no usage?"
+  },
+  {
+   "speaker": "Susan Drumm",
+   "stated_role": "representative of the Drumm Privilege Fee Abatement Request",
+   "topic": "Drumm privilege fee abatement request for Lot 5",
+   "quote": "susan drumm came in and she owns the property with her brother bill drumm, who had sent a letter expressing his disappointment at the commission's ruling."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Mr. Emma billing dispute (minimum charge)",
+   "resolution": "no action; policy restated, no vote needed",
+   "quote": "carl restated the policy and the minimum charge.",
+   "tags": [
+    "billing",
+    "minimum charge"
+   ]
+  },
+  {
+   "topic": "Drumm Privilege Fee Abatement Request",
+   "resolution": "referred to appeals process; no action",
+   "quote": "troy advised the commission against getting in to too much of a discussion as this may go to litigation.",
+   "tags": [
+    "abatement",
+    "privilege fee",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "FY16 budget",
+   "resolution": "discussed; consensus on direction, no vote",
+   "quote": "fy16 budget - barb handed out fy16 draft (copy of rev2-meeting discussion file) and the ytd fy15.",
+   "tags": [
+    "budget",
+    "FY16",
+    "infrastructure",
+    "outsourcing",
+    "SWSS",
+    "electricity",
+    "telephone",
+    "fuel"
+   ]
+  },
+  {
+   "topic": "Lancaster Ave extension warranty reserve",
+   "resolution": "returned $3622.50 to Elliott, passed unanimously",
+   "quote": "carl asked for a motion on elliott's request to return $3622.50.",
+   "tags": [
+    "Lancaster Ave",
+    "warranty",
+    "refund"
+   ]
+  },
+  {
+   "topic": "Pratt St/Lakeview Ave SRF project",
+   "resolution": "update; no action",
+   "quote": "barb noted that we had received the project acceptance certificate with the limit based on certificate of title, but wright pierce was",
+   "tags": [
+    "SRF",
+    "easements"
+   ]
+  },
+  {
+   "topic": "Privately funded extension process and 65 Fairview Rd. credit",
+   "resolution": "$770 credit approved, passed unanimously",
+   "quote": "troy made the motion to credit 65 fairview rd. $770.00, pursuant to the board of assessor's assessment.",
+   "tags": [
+    "connection fee",
+    "bedrooms",
+    "credit"
+   ]
+  },
+  {
+   "topic": "Privilege fee lien and Sewer Assessment Statement",
+   "resolution": "statement signed; to be notarized",
+   "quote": "the commission signed the statement and carl will bring it to the clerk's office for notarization.",
+   "tags": [
+    "privilege fee",
+    "lien",
+    "tax bill"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved minutes of 10/28/14, 11/18/14 and 12/9/14",
+   "quote": "dave made the motion to accept the minutes of 10/28/14, mike seconded, and vote was unanimous based on their recommendation to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "received; invoices approved, permits and pump station items noted",
+   "quote": "business manager report- invoices - barb had 3 invoices which were approved.",
+   "tags": [
+    "invoices",
+    "permits",
+    "pump stations",
+    "SCADA"
+   ]
+  },
+  {
+   "topic": "Commissioners comments and upcoming meeting",
+   "resolution": "Carl to write letter to editor; next meeting January 27, 2015",
+   "quote": "upcoming meeting - january 27, 2015, town hall.",
+   "tags": [
+    "40B",
+    "ZBA",
+    "press",
+    "next meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY16 draft (copy of rev2-meeting discussion file)",
+   "where": "list",
+   "quote": "barb handed out fy16 draft (copy of rev2-meeting discussion file) and the ytd fy15."
+  },
+  {
+   "name": "YTD FY15",
+   "where": "list",
+   "quote": "barb handed out fy16 draft (copy of rev2-meeting discussion file) and the ytd fy15."
+  },
+  {
+   "name": "Notice of privilege fee assessment (Jan 7, 2010)",
+   "where": "text",
+   "quote": "susan added that on jan 7, 2010, they were sent a notice of privilege fee assessment"
+  },
+  {
+   "name": "Two letters from the zoning officer",
+   "where": "text",
+   "quote": "that references the privilege fee notice, and 2 letters from the zoning officer"
+  },
+  {
+   "name": "Letter from Bill Drumm",
+   "where": "text",
+   "quote": "bill drumm, who had sent a letter expressing his disappointment at the commission's ruling."
+  },
+  {
+   "name": "Project Acceptance Certificate",
+   "where": "text",
+   "quote": "barb noted that we had received the project acceptance certificate with the limit based on certificate of title"
+  },
+  {
+   "name": "Easements",
+   "where": "text",
+   "quote": "barb noted that the easements went out on january gin, and only 1 return receipt received so far, on the brogna property."
+  },
+  {
+   "name": "Sentinel article",
+   "where": "text",
+   "quote": "dave brought up the article that was in the sentinel today"
+  },
+  {
+   "name": "Weston & Sampson bid",
+   "where": "text",
+   "quote": "carl proposed that we add in the delta of the weston & sampson bid amount of"
+  },
+  {
+   "name": "Sewer Assessment Statement",
+   "where": "text",
+   "quote": "so a sewer assessment statement has been done to record a lien at the registry"
+  },
+  {
+   "name": "Board of Assessors assessment (65 Fairview Rd.)",
+   "where": "text",
+   "quote": "troy made the motion to credit 65 fairview rd. $770.00, pursuant to the board of assessor's assessment."
+  },
+  {
+   "name": "SWSS Pump station reports",
+   "where": "text",
+   "quote": "regarding the swss pump station reports, mike stated that he had done the pump station tour"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "billing",
+  "minimum charge",
+  "abatement",
+  "privilege fee",
+  "FY16 budget",
+  "infrastructure",
+  "outsourcing",
+  "SWSS",
+  "pump stations",
+  "SCADA",
+  "Lancaster Ave",
+  "refund",
+  "betterment",
+  "connection fee",
+  "minutes approval",
+  "lien",
+  "SRF project",
+  "grease trap",
+  "Leominster"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb handed out fy16 draft"
+ },
+ "dropped_unquoted_by_field": {}
 }

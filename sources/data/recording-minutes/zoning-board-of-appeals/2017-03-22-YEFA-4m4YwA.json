@@ -1,0 +1,137 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "ZBA",
+ "meeting_date": "2017-03-22",
+ "video_id": "YEFA-4m4YwA",
+ "video_url": "https://www.youtube.com/watch?v=YEFA-4m4YwA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2017-03-22-YEFA-4m4YwA.json",
+  "sha256": "b8f45c6b573c230eb35d4c84e07d2e08ea0641fbbf3ef94ef621d49f973e0a06",
+  "caption_lines": 6,
+  "segments": 32
+ },
+ "recording": {
+  "duration_s": 109,
+  "duration": "0:01",
+  "spoken_chars": 1147,
+  "words_approx": 191
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03222017-6020",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2017-03-22-agenda-6020.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2017-03-22-agenda-6020.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T15:56:51Z",
+  "cost_usd": 0.083117
+ },
+ "minutes": {
+  "headline": "Zoning Board continued the 380 Electric Ave car wash hearing to April 12 at eight because the abutters list was wrong.",
+  "summary": "A very short meeting. The chair said the abutters list was found to be incorrect, so the hearing for a car wash at 380 Electric Ave was continued. The applicant's representative agreed to the continuance and said the correct abutters list was provided to the secretary.",
+  "attendees": [
+   {
+    "name_as_heard": "mr. chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Greg boy with Ducharme and iliff",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "damn Proctor",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "planning-and-zoning"
+  ],
+  "votes": [],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 61,
+    "decision": "Hearing on the car wash application at 380 Electric Ave continued to April 12 at eight o'clock, with the applicant agreeing and the corrected abutters list handed to the secretary."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 21,
+    "topic": "Opening and public access announcement",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 21,
+    "t_end": 107,
+    "topic": "Continuance of 380 Electric Ave car wash hearing",
+    "resolution": "continued to April 12 at eight o'clock",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Whether the continuance was put to a formal motion and vote; none is evident in the captions.",
+   "Exact wording of the abutters list problem and the closing remarks, which are partly garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 21,
+    "name_as_heard": "the abutters list (\"bodies list\")",
+    "kind": "other",
+    "words_as_heard": "we have found from the bodies list that it was incorrect",
+    "shown": false
+   },
+   {
+    "t": 61,
+    "name_as_heard": "correct of butter sauce (corrected abutters list)",
+    "kind": "other",
+    "words_as_heard": "we do have the correct of butter sauce which I can give the okay",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals continued the hearing on a car wash application at 380 Electric Ave to April 12 at eight o'clock.",
+    "t": 61
+   },
+   {
+    "line": "The chair said the abutters list was found to be incorrect, which is why the hearing could not go ahead.",
+    "t": 21
+   },
+   {
+    "line": "The applicant's representative agreed to the continuance and gave the corrected abutters list to the secretary.",
+    "t": 61
+   }
+  ],
+  "why_it_matters": [
+   "Neighbors of 380 Electric Ave have not yet had the car wash proposal heard, and an accurate abutters list is what ensures the right neighbors are notified before the hearing resumes."
+  ],
+  "watch_next": [
+   "The continued hearing on the 380 Electric Ave car wash application, April 12 at eight o'clock."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T15:56:59Z",
+   "cost_usd": 0.018889100000000002
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-03-23",
  "docid": "3804",
@@ -12,15 +12,113 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
+   "motion": "Close the public hearing on the Village Center District zoning amendments.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to close hearing, d. mcquaid, second, k. chenis. all aye."
+   "quote": "motion to close hearing, d. mcquaid, second, k. chenis. all aye. hearing closed 6:40 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are Planning Board minutes of a public hearing on town meeting warrant articles regarding zoning bylaw amendments. Only one motion is recorded—the procedural motion to close the hearing. The actual votes on the warrant articles would have occurred at Town Meeting, not at this Planning Board hearing.",
- "cost_usd": 0.08215650000000001
+ "note": "Minutes of a public hearing on two Town Meeting warrant articles (zoning bylaw Sections 5.2 and 8.4). The only motion recorded is the motion to close the hearing; the minutes record no Board vote recommending or opposing the articles. No dollar figures appear. The minutes say the Board 'had no issues with the changes' but record no action on that, so it is not logged as a decision. Text is complete with no pages missing.",
+ "cost_usd": 0.0036249200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair (presided)",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing on Village Center District zoning amendments (Town Meeting warrant articles)",
+   "resolution": "hearing held and closed 6:40 PM; no Board vote on the articles recorded",
+   "quote": "vice chair n. lockwood opened the hearing with the reading of the notice published in the sentinel and enterprise",
+   "tags": [
+    "zoning",
+    "village center district",
+    "public hearing",
+    "town meeting warrant",
+    "zoning bylaw section 5.2",
+    "zoning bylaw section 8.4"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 5.2.",
+   "where": "list",
+   "quote": "protective bylaw of the town of lunenburg, section 5.2."
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 8.4.",
+   "where": "list",
+   "quote": "protective bylaw of the town of lunenburg, section 8.4."
+  },
+  {
+   "name": "Town Meeting warrant article amending Zoning Bylaw Section 5.2 (new subsection 5.2.5.1.e, Village Center District)",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the zoning bylaw by adding to section 5.2. \"setbacks and"
+  },
+  {
+   "name": "Town Meeting warrant article amending Zoning Bylaw Section 8.4 (Subsection 8.4.2.1.a)",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the zoning bylaw by amending section 8.4. development"
+  },
+  {
+   "name": "Village Center District Bylaw (potential adoption at May 2015 Town Meeting)",
+   "where": "text",
+   "quote": "both changes are in response to potential adoption of the village center district bylaw at may"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "village center district",
+  "public hearing",
+  "town meeting warrant",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

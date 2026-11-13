@@ -1,0 +1,246 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "ZBA Meeting",
+ "meeting_date": "2016-04-13",
+ "video_id": "qiX11MYfaww",
+ "video_url": "https://www.youtube.com/watch?v=qiX11MYfaww",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2016-04-13-qiX11MYfaww.json",
+  "sha256": "012c0899cda5c82de793d8b56004d30681507a8d8fcf0c81036c4695f8eccf3e",
+  "caption_lines": 77,
+  "segments": 577
+ },
+ "recording": {
+  "duration_s": 1662,
+  "duration": "0:27",
+  "spoken_chars": 21244,
+  "words_approx": 3540
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04132016-5992",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2016-04-13-agenda-5992.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2016-04-13-agenda-5992.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T17:10:45Z",
+  "cost_usd": 0.1530283
+ },
+ "minutes": {
+  "headline": "ZBA found no concerns with a two-story addition and apartment at 36 Summer Street, then sent a driveway permit back to the building inspector",
+  "summary": "The Zoning Board of Appeals reviewed a development plan for a two-story addition to an automotive building at 36 Summer Street, with garage bays below and an apartment above. The addition was moved from the east to the west side, so it meets setbacks and avoids the floodplain. The board moved that it had no concerns, then moved to refer a Land Court-remanded driveway permit matter for 233 Lancaster Avenue to the building inspector.",
+  "attendees": [
+   {
+    "name_as_heard": "Raymond T Beal",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Lisa",
+    "role": "clerk reading the application"
+   },
+   {
+    "name_as_heard": "Christopher Harrison (Hannigan Engineering)",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "economic-development",
+   "housing",
+   "legal",
+   "planning-and-zoning"
+  ],
+  "votes": [
+   {
+    "t": 1326,
+    "motion": "Have reviewed the application and have no concerns (36 Summer Street development plan review).",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1585,
+    "motion": "Pursuant to Land Court remand, refer Ronald Colvin's driveway permit application for 233 Lancaster Avenue to the building inspector.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 1632,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1349,
+    "decision": "Review approved with the condition that the applicant comply with all licenses, regulations and requirements of other boards with jurisdiction."
+   },
+   {
+    "t": 1564,
+    "decision": "Board to refer the Colvin driveway permit matter to the building inspector per the Land Court remand, with a letter noting the board's vote."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 80,
+    "topic": "Opening and hearing procedure",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 80,
+    "t_end": 645,
+    "topic": "Reading of the 36 Summer Street application, engineer letter and Conservation Commission memo",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 645,
+    "t_end": 1326,
+    "topic": "Applicant presentation and board questions on the addition and apartment",
+    "resolution": "discussed",
+    "tags": [
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 1326,
+    "t_end": 1450,
+    "topic": "Motion of no concerns and closing remarks on conditions and floodplain",
+    "resolution": "motion made; result not audible",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1453,
+    "t_end": 1657,
+    "topic": "Colvin driveway permit remand from Land Court, then adjournment",
+    "resolution": "motion to refer to building inspector; adjourned",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts on all motions",
+   "Several speaker identities",
+   "Section number of the bylaw (4.14 vs 4.1) rendered inconsistently"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 599,
+    "kind": "liability or legal",
+    "about": "The Conservation Commission agent says the work would alter the ten-year floodplain and need a notice of intent.",
+    "who": "the clerk reading the Conservation Commission memo",
+    "words_as_heard": "will require the filing of a notice of intent with the Conservation Commission it is necessary as the proposed work would alter the ten-year floodplain"
+   },
+   {
+    "t": 1349,
+    "kind": "condition",
+    "about": "Approval is conditioned on compliance with all other applicable licenses and agencies.",
+    "who": "the chair",
+    "words_as_heard": "we approve it with the contingency that you comply with all licenses regulation statutes"
+   },
+   {
+    "t": 1264,
+    "kind": "condition",
+    "about": "Prior Board of Health condition barring drain connection to the sewer line should carry over to the new bays.",
+    "who": "a member",
+    "words_as_heard": "the drains couldn't be connected to the sewer line he's adding additional Bay's I assume that was also carried on to those new units"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 80,
+    "name_as_heard": "development plan review application",
+    "kind": "application or permit",
+    "words_as_heard": "development plan review the name and address of the applicant is Peter Kelly",
+    "shown": true
+   },
+   {
+    "t": 167,
+    "name_as_heard": "Hannigan Engineering letter",
+    "kind": "letter or email",
+    "words_as_heard": "the hannigan engineering has submitted this letter to Raymond T Beal chairman",
+    "shown": true
+   },
+   {
+    "t": 579,
+    "name_as_heard": "building rendering, site plan and site development plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "a rendering of the building show on the front elevations front and rear elevation",
+    "shown": true
+   },
+   {
+    "t": 599,
+    "name_as_heard": "Conservation Commission memo",
+    "kind": "memo",
+    "words_as_heard": "I did receive a memo from the lunenburg Conservation Commission",
+    "shown": true
+   },
+   {
+    "t": 1501,
+    "name_as_heard": "Land Court order",
+    "kind": "letter or email",
+    "words_as_heard": "a copy of land court's order allowing a pop motion for partial summary judgment",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals reviewed a plan for a two-story addition with garage bays and an apartment at 36 Summer Street and moved that it had no concerns.",
+    "t": 1326
+   },
+   {
+    "line": "The review was approved on the condition that the applicant comply with all licenses, regulations and requirements of other boards with jurisdiction.",
+    "t": 1349
+   },
+   {
+    "line": "The board moved to send a driveway permit application for 233 Lancaster Avenue back to the building inspector, as the Land Court remand directs.",
+    "t": 1585
+   },
+   {
+    "line": "A letter noting the board's vote is to go with the referral to the building inspector.",
+    "t": 1564
+   },
+   {
+    "line": "The addition was moved from the east to the west side of the lot, so it meets setbacks and stays out of the floodplain.",
+    "t": 645
+   }
+  ],
+  "why_it_matters": [
+   "The 36 Summer Street addition can go ahead to other boards' permits, and it adds a dwelling unit to an automotive property.",
+   "The driveway permit at 233 Lancaster Avenue now returns to the building inspector, so the next decision on it will come from that office rather than this board."
+  ],
+  "watch_next": [
+   "The building inspector's action on the 233 Lancaster Avenue driveway permit after the referral and the board's letter.",
+   "Approvals from the other boards with jurisdiction over 36 Summer Street, which the review made a condition."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T17:10:52Z",
+   "cost_usd": 0.0219771
+  }
+ }
+}

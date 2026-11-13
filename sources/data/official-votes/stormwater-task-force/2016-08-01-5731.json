@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2016-08-01",
  "docid": "5731",
@@ -12,6 +12,144 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Minutes are readable text but record no votes. The agenda lists items under \"MINUTES APPROVAL,\" \"CURRENT BUSINESS,\" and other sections, but no motions, seconds, or voting outcomes are documented in the text. The minutes appear to be an agenda with discussion topics rather than a record of formal actions voted on.",
- "cost_usd": 0.07936750000000001
+ "note": "These minutes are a notice of meeting and agenda only. They print no record of attendance, discussion, motions, votes, or public comment. The June 30, 2016 minutes approval is listed but no motion is recorded, so no votes are recorded. Attendee status is 'not stated' because no attendance is printed. The agenda spells the member as 'Jack Rabbit' in item 4 and 'Jack Rabbitt' in the header. Item numbering skips from 9 to 11.",
+ "cost_usd": 0.00331092,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "phyllis luck, chair lunenburg, ma 01462"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matt allison, member sarah cammer, member"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matt allison, member sarah cammer, member"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jack rabbitt, member jack rodriquenz, member"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jack rabbitt, member jack rodriquenz, member"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval of June 30, 2016 meeting",
+   "resolution": "not stated (listed on agenda only; no motion recorded)",
+   "quote": "minutes approval of june 30, 2016 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Scope of Services request for bid",
+   "resolution": "not stated (listed on agenda only; no discussion recorded)",
+   "quote": "discussion of finalizing scope of services reque st to put out to bid.",
+   "tags": [
+    "scope of services",
+    "bid"
+   ]
+  },
+  {
+   "topic": "Report on Central Mass Regional Stormwater Coalition meeting",
+   "resolution": "not stated (listed on agenda only; no report recorded)",
+   "quote": "report on central mass regional stormwater coalition meeting of 7/25/16",
+   "tags": [
+    "regional coalition"
+   ]
+  },
+  {
+   "topic": "Rain barrel advertisement",
+   "resolution": "not stated (listed on agenda only; no discussion recorded)",
+   "quote": "rain barrel advertisement in lunenburg ledger",
+   "tags": [
+    "rain barrels",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Update on members' areas of focus",
+   "resolution": "not stated (listed on agenda only; no updates recorded beyond agenda assignments)",
+   "quote": "update on members' areas of focus:",
+   "tags": [
+    "public education",
+    "IDDE",
+    "construction runoff",
+    "post construction",
+    "pollution prevention",
+    "public involvement"
+   ]
+  },
+  {
+   "topic": "Other issues for future agendas",
+   "resolution": "not stated (listed on agenda only; no items recorded)",
+   "quote": "other issues for future agendas?",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "not stated (agenda notice of next meeting; no vote recorded)",
+   "quote": "next meeting scheduled for monday, august 29, at 6:30 pm, ritter building, upper conference room.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Member issues: formal meeting format",
+   "resolution": "not stated (listed on agenda as a question; no discussion or decision recorded)",
+   "quote": "should task force consider",
+   "tags": [
+    "meeting format",
+    "workshop"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scope of Services request (to put out to bid)",
+   "where": "text",
+   "quote": "discussion of finalizing scope of services reque st to put out to bid."
+  },
+  {
+   "name": "Rain Barrel advertisement in Lunenburg Ledger",
+   "where": "text",
+   "quote": "rain barrel advertisement in lunenburg ledger"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "task force",
+  "scope of services",
+  "rain barrels",
+  "public education",
+  "meeting schedule",
+  "agenda only"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

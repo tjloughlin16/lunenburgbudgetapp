@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-05-05",
  "docid": "692",
@@ -12,6 +12,183 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No formal votes recorded. The minutes describe reviews and approvals of routine matters (expense vouchers, abatements, supplemental tax bills, exemption reports) but do not record these as motions with voting results. The only vote mentioned is from a prior meeting: \"(Previously voted on 1/13/15)\" for the recreational land tax lien. The current meeting's minutes show administrative actions and approvals but lack the voting language required (motion by/seconded by, vote counts, unanimously approved, so voted, or motion carried/failed).",
- "cost_usd": 0.08199350000000001
+ "note": "OCR text from a single scanned page. No motions or roll-call votes are recorded; the approvals and commitments are stated as board actions without a moved/seconded motion, so the votes list is empty. No public comment section appears. The minutes name no list of documents; the lien, the statutory exemption report and the FY16 calendar are only mentioned in the narrative, so they are recorded as text references.",
+ "cost_usd": 0.0036481200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco; board members, matt papini, sr.,"
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco; board members, matt papini, sr.,"
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "christopher comeau, and regional assessor, harald scheid."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "absent",
+   "quote": "louise paquette, administrative assistant was not present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and the April 7, 2015 minutes (no vote recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and april 7, 2015 minutes."
+  },
+  {
+   "decision": "Board reviewed and committed twenty-six (26) FY15 Supplemental RE bills.",
+   "quote": "boa reviewed and committed twenty-six (26) fy15 supplemental re bills, which reflect properties that were under new construction"
+  },
+  {
+   "decision": "Board reviewed and signed the hard copy of the FY 2015 Statutory Exemption report; it will be filed.",
+   "quote": "the board reviewed and signed the \"hard\" copy and it will be filed."
+  },
+  {
+   "decision": "A copy of the Statutory Exemption report will be given to the accountant.",
+   "quote": "a copy of the report will be given to the accountant."
+  },
+  {
+   "decision": "Board recognized Chris Comeau at his final meeting with thanks and praise for his service.",
+   "quote": "harald, louis & matt applauded chris comeau in his final meeting tonight; extending thanks and praise"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY15 supplemental tax assessments",
+   "what_was_recorded": "Supplemental tax assessments on the 26 committed FY15 supplemental RE bills totaled a stated amount.",
+   "figures_as_printed": [
+    "$49,716.10"
+   ],
+   "quote": "the supplemental tax assessments total $49,716.10."
+  },
+  {
+   "topic": "FY 2015 statutory exemptions reported to the state",
+   "what_was_recorded": "Total exemptions reported to the state on the FY 2015 Statutory Exemption report.",
+   "figures_as_printed": [
+    "$95,525.33"
+   ],
+   "quote": "total exemptions reported to the state are $95,525.33."
+  },
+  {
+   "topic": "Tax work off program exemptions",
+   "what_was_recorded": "The statutory exemption report did not include the tax work off program, which totaled a stated amount in exemptions.",
+   "figures_as_printed": [
+    "$9,402.50"
+   ],
+   "quote": "the tax work off program which totaled $9,402.50 in exemptions."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll and April 7, 2015 minutes",
+   "resolution": "approved (no vote recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and april 7, 2015 minutes.",
+   "tags": [
+    "approvals",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Recreational Land Tax Lien (Chapter 61B), 210 Island Road",
+   "resolution": "presented for Board review and signature",
+   "quote": "harald presented (1) one recreational land tax lien (chapter 61b) for the board to review and sign.",
+   "tags": [
+    "chapter 61B",
+    "tax lien",
+    "land"
+   ]
+  },
+  {
+   "topic": "FY15 supplemental RE bills",
+   "resolution": "committed",
+   "quote": "boa reviewed and committed twenty-six (26) fy15 supplemental re bills, which reflect properties that were under new construction",
+   "tags": [
+    "supplemental tax",
+    "commitments",
+    "new construction"
+   ]
+  },
+  {
+   "topic": "FY 2015 Statutory Exemption report",
+   "resolution": "submitted to state, forms approved, signed and filed",
+   "quote": "harald reported that the fy 2015 statutory exemption report has been submitted to the state and the forms were approved.",
+   "tags": [
+    "statutory exemptions",
+    "tax work off",
+    "state report"
+   ]
+  },
+  {
+   "topic": "FY16 Preliminary Tax calendar",
+   "resolution": "reported; map changes and land divisions in progress",
+   "quote": "harald reported on the fy16 preliminary tax calendar and stated that he is finalizing map changes and land divisions for fy 16.",
+   "tags": [
+    "FY16",
+    "tax calendar",
+    "maps"
+   ]
+  },
+  {
+   "topic": "Recognition of Chris Comeau",
+   "resolution": "no action (recognition of final meeting and 20 plus years of service)",
+   "quote": "harald, louis & matt applauded chris comeau in his final meeting tonight; extending thanks and praise",
+   "tags": [
+    "personnel",
+    "recognition",
+    "retirement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Recreational Land Tax Lien (Chapter 61B), 46 acre parcel at 210 Island Road, Assessors Map 23, Parcel 24",
+   "where": "text",
+   "quote": "harald presented (1) one recreational land tax lien (chapter 61b) for the board to review and sign."
+  },
+  {
+   "name": "FY 2015 Statutory Exemption report",
+   "where": "text",
+   "quote": "harald reported that the fy 2015 statutory exemption report has been submitted to the state and the forms were approved."
+  },
+  {
+   "name": "FY16 Preliminary Tax calendar",
+   "where": "text",
+   "quote": "harald reported on the fy16 preliminary tax calendar and stated that he is finalizing map changes and land divisions for fy 16."
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "tax lien",
+  "Chapter 61B",
+  "supplemental tax",
+  "statutory exemptions",
+  "tax work off",
+  "FY16 calendar",
+  "board member departure"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

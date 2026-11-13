@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-02-03",
  "docid": "906",
@@ -12,23 +12,150 @@
  },
  "votes": [
   {
-   "motion": "Grant a variance allowing the well at 40 Page Street to be forty-three feet from the property line",
+   "motion": "Grant a variance allowing the well at 40 PAGE STREEL (as printed) to be 43 feet from the property line, with conditions that a well completion report be submitted and the well provide adequate water with a water quality test.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios, a variance was granted allowing the well to be forty-three (43) feet from the property line"
+   "quote": "after discussion, and on motion by jewell and second by passios, a variance was granted allowing the well to be forty-three (43) feet from the property line"
   },
   {
-   "motion": "Grant variances for groundwater offset and wetlands offset at 10 Tilton Avenue",
+   "motion": "Grant the variances for 10 Tilton Avenue (groundwater offset reduced from five feet to four feet, and an offset to wetlands).",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by shea, the variances were granted. all in favor."
+   "quote": "after discussion and on motion by jewell and second by shea, the variances were granted."
+  },
+  {
+   "motion": "Grant the variance for 260 Lancaster Avenue (groundwater offset reduced from four feet to three feet).",
+   "moved_by": "Jewell",
+   "seconded_by": "Shea",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "after discussion and on motion by. jewell and second by 'shea the variance was granted."
   }
  ],
- "dropped_unquoted": 1,
- "note": "This is OCR of a scanned document. Note: the second instance of Shea's name in the minutes shows a leading apostrophe ('Shea) which appears to be an OCR artifact; the individual is identified as Dave Shea in the attendance list.",
- "cost_usd": 0.1378935
+ "dropped_unquoted": 0,
+ "note": "OCR text with errors: '40 PAGE STREEL' is printed that way, some sentences are garbled (e.g. 'an offset to wetlands from is also request'), and the minutes-approved line reads 'January 3, 2013' in a 2014 meeting. Votes are recorded only as 'All in favor' with no tallies, so outcomes are 'passed' by that phrase. No motion is recorded for approving minutes or for adjournment, so neither is listed as a vote. The septic permits signed list is not treated as documents used. No document list is printed.",
+ "cost_usd": 0.00396092,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios",
+   "role": "not stated"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios",
+   "role": "not stated"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios",
+   "role": "not stated"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios",
+   "role": "not stated"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "status": "present",
+   "quote": "chris mackenzie met with the board of behalf of the owner.",
+   "role": "representing the owner"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "listed as approved for January 3, 2013; no motion recorded",
+   "quote": "minutes approved: january 3, 2013",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "none acknowledged",
+   "quote": "title 5 inspection reports acknowledged: none",
+   "tags": [
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "listed as signed for 260 Lancaster Avenue, 10 Tilton Avenue and 40 Page Street; no motion recorded",
+   "quote": "septic permits signed: 260 lancaster avenue",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "40 Page Street well offset variance",
+   "resolution": "variance granted with conditions",
+   "quote": "the owner of this property installed a well on this property and used an existing stone wall as the property",
+   "tags": [
+    "variance",
+    "well",
+    "septic"
+   ]
+  },
+  {
+   "topic": "10 Tilton Avenue septic variances",
+   "resolution": "variances granted",
+   "quote": "chris mackenzie met with the board of behalf of the owner. a title 5 was attempted on this property",
+   "tags": [
+    "variance",
+    "septic",
+    "Title 5",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "260 Lancaster Avenue groundwater offset variance",
+   "resolution": "variance granted",
+   "quote": "this system is in failure and is a cesspool in the water table.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 7:45 pm; no motion recorded",
+   "quote": "meeting adjourned 7:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "variance",
+  "septic",
+  "well",
+  "Title 5",
+  "groundwater offset",
+  "wetlands",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

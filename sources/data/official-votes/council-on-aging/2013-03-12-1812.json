@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-03-12",
  "docid": "1812",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the February 12, 2013 COA minutes",
+   "motion": "Approve the February 12, 2013 COA minutes.",
    "moved_by": "Sis Montouri",
    "seconded_by": "Pete Lincoln",
    "outcome": "passed 7-0",
@@ -20,15 +20,15 @@
    "quote": "sis montouri motioned to approve the february 12, 2013 coa minutes. pete lincoln seconded. on vote, motion carried, 7 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend to the Selectmen the appointment of Connie O'Dea as a Selectmen Appointee to the Council on Aging",
+   "motion": "Recommend to the Selectmen that Connie O’Dea be appointed as Selectmen Appointee to the Council on Aging.",
    "moved_by": "Jane Doyle",
    "seconded_by": "Pete Lincoln",
    "outcome": "passed 7-0",
    "procedural": false,
-   "quote": "jane doyle moved to recommend to the selectmen that connie o'dea be appointed as selectmen appointee to the council on aging. pete lincoln seconded. on vote motion carried, 7 in favor, 0 opposed."
+   "quote": "jane doyle moved to recommend to the selectmen that connie o'dea be appointed as selectmen appointee to the council on aging."
   },
   {
-   "motion": "Accept the January 15, 2013 COA Finance Committee minutes",
+   "motion": "Accept the January 15, 2013 COA Finance Committee minutes.",
    "moved_by": "Pete Lincoln",
    "seconded_by": "Sis Montouri",
    "outcome": "passed 7-0",
@@ -36,7 +36,7 @@
    "quote": "pete lincoln moved to accept the january 15, 2013 coa finance committee minutes. sis montouri seconded. on vote, motion carried 7 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Sis Montouri",
    "seconded_by": "Barbara Brown",
    "outcome": "passed 7-0",
@@ -44,7 +44,311 @@
    "quote": "sis montouri moved to adjourn the coa meeting. barbara brown seconded. on vote motion carried, 7 in favor 0 opposed."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0940855
+ "dropped_unquoted": 1,
+ "note": "Text extract, not a scan; all four votes are recorded with counts. The header says these minutes were approved at the 4/9/13 meeting, so the text is the approved version. Names vary within the text (Sis Montouri/Montuori, Sue/Susan Doherty); names are kept as printed in each place. No dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.007003519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director)"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, jane doyle, jim hays, sis montuori, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, jane doyle, jim hays, sis montuori, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, jane doyle, jim hays, sis montuori, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, jane doyle, jim hays, sis montuori, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, jane doyle, jim hays, sis montuori, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "barbara brown, jane doyle, jim hays, sis montuori, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "member",
+   "status": "absent",
+   "quote": "deb seeley & fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "member",
+   "status": "absent",
+   "quote": "deb seeley & fred crellin"
+  },
+  {
+   "name": "Stephen Raboin",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "stephen raboin (lunenburg finance committee), & whitney lacka"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "guest",
+   "status": "present",
+   "quote": "stephen raboin (lunenburg finance committee), & whitney lacka"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The COA is not able to hold fundraisers as it is a Town Department; the Advocacy Committee should collaborate with the Eagle House Supporters on the Festival of Trees.",
+   "quote": "it was determined that the coa is not able to hold fundraisers as they are a town department and they should look at collaborating with the eagle house supporters on this endeavor."
+  },
+  {
+   "decision": "The Director will look into increasing Outreach staffing, as the Town Manager does not want Town buildings opened on Fridays.",
+   "quote": "ms. noble said that the town manager does not want to open town buildings on fridays and she will look into increasing outreach staffing."
+  },
+  {
+   "decision": "The Advocacy Committee will post a meeting at 9AM on April 9, 2013 to discuss the Festival of Trees event.",
+   "quote": "the advocacy committee will post a meeting at 9am on april 9, 2013 for further discussion on this event."
+  },
+  {
+   "decision": "Barbara Brown will work on the ByLaw changes on outgoing sub-committee chairpersons' responsibilities and present corrections at the April COA meeting.",
+   "quote": "barbara brown reported that she will be working on the bylaw changes concerning outgoing coa sub- committee chairpersons responsibilities and will present corrections at the april coa meeting",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The Advocacy Committee minutes of December 11, 2012 will be voted on at the April COA Board meeting.",
+   "quote": "these will be voted on at the april coa board meeting."
+  },
+  {
+   "decision": "A COA orientation date will be set with Ms. O’Dea and Ms. Lacka by the Director, the Chairperson and the Vice Chairperson.",
+   "quote": "a coa orientation date will be set with ms. o'dea and ms. lacka with the director and the coa chairperson and vice chairperson."
+  },
+  {
+   "decision": "The Tuesday meal site pizza and hotdogs menu will be discontinued; the normal MOC meal will continue that day.",
+   "quote": "the tuesday meal site menu of pizza and hotdogs is not going as well as planned and will be discontinued."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly financial page not available",
+   "what_was_recorded": "No COA monthly financial page was available for the meeting because of vendor changes and monies being moved between budget lines to cover shortages.",
+   "quote": "there was no coa monthly financial page available for this meeting due to the fact that there have been some vendor changes"
+  },
+  {
+   "topic": "FY14 utility lines moved to Central Purchasing",
+   "what_was_recorded": "The Town Manager removed the utility lines from the COA FY14 Budget and placed them into Central Purchasing through the DPW.",
+   "quote": "the town manager has decided to remove the utility lines from the coa fy14 budget and place into central purchasing through the dpw."
+  },
+  {
+   "topic": "Lunenburg Relief Day gift account",
+   "what_was_recorded": "Money collected for the COA at Lunenburg Relief Day sits in a Gift Account, not the FY14 Town Budget; the Director hopes to use it for Friday transportation costs, and Mr. Lincoln asked whether it could fund Outreach positions or a benefit position.",
+   "quote": "the monies collected for the coa last summer at the lunenburg relief day"
+  },
+  {
+   "topic": "Friday transportation costs",
+   "what_was_recorded": "The Director hopes to draw on the gift account money for Friday transportation costs.",
+   "quote": "she is hoping to draw on that money for friday transportation costs."
+  },
+  {
+   "topic": "Longevity pay",
+   "what_was_recorded": "Town employees receive a stipend after 10 years of benefit service, a small percentage of yearly wage built into the budget each year.",
+   "quote": "after 10 years of benefit service to the town"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line-item transfers of monies from one budget line to another to cover shortages, following vendor changes.",
+   "outcome": "in process; no amount recorded",
+   "amount_as_printed": "not stated",
+   "quote": "we are in the process of transferring monies from one line to another to cover shortages."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "mary lynn conrad (chairperson) opened the meeting at 9:30am."
+  },
+  {
+   "topic": "Minutes of February 12, 2013",
+   "resolution": "approved 7-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "sis montouri motioned to approve the february 12, 2013 coa minutes."
+  },
+  {
+   "topic": "Quorum question for voting on minutes",
+   "resolution": "noted; Town Clerk advice reported",
+   "tags": [
+    "quorum",
+    "minutes"
+   ],
+   "quote": "sue doherty verified with the town clerk that"
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "tags": [
+    "director report",
+    "outreach",
+    "meal sites",
+    "transportation"
+   ],
+   "quote": "doreen noble mentioned that there was no coa monthly financial page available for this meeting"
+  },
+  {
+   "topic": "Old Business: Finance Committee presentation March 21",
+   "resolution": "no action; members asked to attend",
+   "tags": [
+    "FY14 budget",
+    "finance committee"
+   ],
+   "quote": "the director is scheduled to present her fy14 coa"
+  },
+  {
+   "topic": "Old Business: 2014 Budget",
+   "resolution": "discussed; no action",
+   "tags": [
+    "FY14 budget",
+    "utilities",
+    "gift fund",
+    "longevity pay"
+   ],
+   "quote": "ms. noble mentioned that the town manager has decided to remove the utility lines from the coa fy14 budget"
+  },
+  {
+   "topic": "Sub-Committee Report: appointment recommendation",
+   "resolution": "recommendation approved 7-0",
+   "tags": [
+    "appointments",
+    "selectmen"
+   ],
+   "quote": "vote to recommend to selectmen appointment of connie o'dea as coa member"
+  },
+  {
+   "topic": "Sub-Committee Report: Finance Committee minutes",
+   "resolution": "accepted 7-0",
+   "tags": [
+    "minutes",
+    "finance committee"
+   ],
+   "quote": "pete lincoln moved to accept the january 15, 2013 coa finance committee minutes."
+  },
+  {
+   "topic": "Sub-Committee Report: Advocacy Committee",
+   "resolution": "discussed; Festival of Trees not a COA fundraiser",
+   "tags": [
+    "advocacy",
+    "fundraiser",
+    "eagle house"
+   ],
+   "quote": "it was determined that the coa is not able to hold fundraisers as they are a town department"
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "correspondence - none"
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "no action",
+   "tags": [
+    "general discussion"
+   ],
+   "quote": "general discussion - none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7-0 at 10:25AM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "sis montouri moved to adjourn the coa meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA Advocacy Committee minutes of December 11, 2012",
+   "where": "list",
+   "quote": "the coa advocacy committee minutes of december 11, 2012 were distributed to members for review."
+  },
+  {
+   "name": "COA Finance Committee minutes of January 15, 2013",
+   "where": "text",
+   "quote": "pete lincoln moved to accept the january 15, 2013 coa finance committee minutes."
+  },
+  {
+   "name": "February 12, 2013 COA minutes",
+   "where": "text",
+   "quote": "sis montouri motioned to approve the february 12, 2013 coa minutes."
+  },
+  {
+   "name": "COA monthly financial page",
+   "where": "text",
+   "quote": "no coa monthly financial page available for this meeting"
+  },
+  {
+   "name": "FY14 COA Budget",
+   "where": "text",
+   "quote": "the director is scheduled to present her fy14 coa"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "FY14 budget",
+  "outreach staffing",
+  "eagle house",
+  "transportation",
+  "gift fund",
+  "appointments",
+  "minutes",
+  "fundraising"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the coa advocacy committee minutes of december 11, 2012 were distributed"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

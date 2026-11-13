@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-06-07",
  "docid": "2589",
@@ -10,15 +10,177 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06072016-2589",
   "doc_url": "/docs/meetings/historical-commission/2016-06-07-minutes-2589.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "The minutes record no formal motions with mover, second, or vote count; the minutes approval and the gift/marker items are stated as outcomes, so they are recorded as decisions, not votes. The OCR text has some errors (e.g., 'Towr Pound', 'Rodriquenz', 'Public Work'), reproduced as printed. Quotes were collapsed across line breaks. No public comment section appears. The documents section is not a printed list of documents used; correspondence is described in the text only.",
+ "cost_usd": 0.00392062,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve minutes from May 3, 2016",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes were approved for may 3, 2016."
+   "name": "Becky Lantry",
+   "role": "member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Michael Sauvageau",
+   "role": "Building Inspector",
+   "status": "not stated",
+   "quote": "the building inspector, michael sauvageau, advised richard mcgrath may use the current forms for his restoration work at the north cemetery."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "the Operations Director, of the Department of Public Work",
+   "status": "not stated",
+   "quote": "richard mcgrath will discuss the maintenance and preservation of the town pound with jack rodriquenz, the operations director, of the department of public work."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan; single vote recorded, procedurally. Minutes state approval without naming moved_by, seconded_by, or vote count.",
- "cost_usd": 0.0975045
+ "decisions": [
+  {
+   "decision": "Minutes of May 3, 2016 were approved (no motion, mover, or vote count recorded).",
+   "quote": "minutes were approved for may 3, 2016."
+  },
+  {
+   "decision": "The $500 from the Historical Commission for the North Cemetery receiving tomb restoration is to be specified as a gift from the Historical Commission.",
+   "quote": "becky lantry stated the five hundred dollars ($ 500.00) from the historical commission for the restoration of the receiving tomb at the north cemetery"
+  },
+  {
+   "decision": "The Historical Commission will sponsor the historical marker program for the buildings and residences.",
+   "quote": "the historical marker program for the buildings and residences will be sponsored by the historical commission."
+  },
+  {
+   "decision": "Richard McGrath will discuss maintenance and preservation of the Town Pound with Jack Rodriquenz of the Department of Public Works.",
+   "quote": "richard mcgrath will discuss the maintenance and preservation of the town pound with jack rodriquenz, the operations director, of the department of public work."
+  },
+  {
+   "decision": "Lunenburg Ledger Historically Speaking article assignments: July to Becky Lantry, August to Richard McGrath, September to Cullen Dwyer.",
+   "quote": "lunenburg ledger, historically speaking articles: july becky lantry august richard mcgrath september cullen dwyer"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Gift for restoration of receiving tomb at North Cemetery",
+   "what_was_recorded": "The Historical Commission's $500 for restoring the receiving tomb at the North Cemetery is to be specified as a gift from the Historical Commission.",
+   "figures_as_printed": [
+    "five hundred dollars ($ 500.00)"
+   ],
+   "quote": "becky lantry stated the five hundred dollars ($ 500.00) from the historical commission for the restoration of the receiving tomb at the north cemetery"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:40 p.m.",
+   "quote": "meeting called to order at 6:40 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of May 3, 2016",
+   "quote": "minutes were approved for may 3, 2016.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "noted; no action recorded",
+   "quote": "notice was received the lunenburg planning board held a public hearing may 23, 2016 and discussed a storm water management special permit",
+   "tags": [
+    "planning board",
+    "public works",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "New business and present business",
+   "resolution": "demolition delay report; Town Pound and cemetery items; marker program; no action recorded beyond the decisions noted",
+   "quote": "richard mcgrath reported there have been no new demolition delay requests.",
+   "tags": [
+    "demolition delay",
+    "town pound",
+    "north cemetery",
+    "historical markers"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger Historically Speaking articles",
+   "resolution": "assigned monthly authors for July, August, September",
+   "quote": "lunenburg ledger, historically speaking articles: july becky lantry august richard mcgrath september cullen dwyer",
+   "tags": [
+    "publicity",
+    "ledger articles"
+   ]
+  },
+  {
+   "topic": "Meeting adjournment",
+   "resolution": "adjourned at 7:25 p.m.; next meeting September 6, 2016",
+   "quote": "the meeting adjourned at 7:25 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice from Lunenburg Planning Board regarding May 23, 2016 Public Hearing (storm water management special permit, 175 Northfield Road; site plan review, 234 Summer Street)",
+   "where": "text",
+   "quote": "notice was received the lunenburg planning board held a public hearing may 23, 2016 and discussed a storm water management special permit"
+  },
+  {
+   "name": "Department of Public Works brief comment on the Tennessee Pipeline",
+   "where": "text",
+   "quote": "the department of public works submitted a brief comment on the tennessee pipeline."
+  },
+  {
+   "name": "Lunenburg Ledger, Historically Speaking articles",
+   "where": "text",
+   "quote": "lunenburg ledger, historically speaking articles: july becky lantry august richard mcgrath september cullen dwyer"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "town pound",
+  "north cemetery",
+  "receiving tomb",
+  "historical markers",
+  "planning board notices",
+  "ledger articles",
+  "gift funds"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

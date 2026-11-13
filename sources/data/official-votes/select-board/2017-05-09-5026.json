@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-05-09",
  "docid": "5026",
@@ -21,6 +21,260 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One procedural vote recorded: adjournment. Note: \"REbersole\" appears to be an OCR rendering of \"R. Ebersole\" (Robert Ebersole, Vice Chairman). The warrant signings mentioned (accounts payable warrant $146,360.61 and FY17 Q4 Water Commissioners warrant $6,355.68) are stated as board actions without recorded motions or votes.",
- "cost_usd": 0.1028355
+ "note": "OCR scan of minutes (macOS Vision). Some text is garbled (e.g., header date, 'REbersole', 'RPF', 'DW Director'); quotes were taken from the OCR text as printed. Only one motion is recorded (adjournment); the warrants were signed without a recorded motion, and tax-title list outcomes are recorded as decisions without votes. Remarks by Board members that appear under the 'Public Comment' headings were not recorded as public comment; only the two Katie Adams statements were. No meeting-wide documents list is printed.",
+ "cost_usd": 0.005895419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager heather lemieux."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager heather lemieux."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: tom alonzo, clerk"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "resident, 25 Williams Drive",
+   "status": "present",
+   "quote": "katie adams, 25 williams drive, stated she wanted to come tonight as she was very opposed to articles 22-25"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Leave 875 Flat Hill Road on the tax title sale list.",
+   "quote": "after discussion, it was decided to leave it on the list for tax title sale."
+  },
+  {
+   "decision": "Leave 512 Mass Ave. on the tax title sale list.",
+   "quote": "512 mass ave. abuts hollis road. it was decided to leave it on the list for tax title sale."
+  },
+  {
+   "decision": "Leave 224 Townsend Harbor Road on the tax title sale list.",
+   "quote": "224 townsend harbor road abuts the cowdry conservation land but has a house on it."
+  },
+  {
+   "decision": "Leave 294 Holman Street on the tax title sale list.",
+   "quote": "294 holman street abuts the lane property. it was decided to leave it on the list for tax title sale."
+  },
+  {
+   "decision": "Leave 70 Pleasant St. on the tax title list for sale.",
+   "quote": "it was decided to leave it on the list for tax title sale."
+  },
+  {
+   "decision": "Keep 220 Lancaster Road on the tax title list.",
+   "quote": "220 lancaster road was kept on the list."
+  },
+  {
+   "decision": "Board requested more information on 422 Mulpus Road before deciding.",
+   "quote": "the board requested more information on this property."
+  },
+  {
+   "decision": "Hold a workshop meeting on May 23 for setting goals and board reorganization.",
+   "quote": "it was decided to have a meeting for setting goals and board reorganization."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant in the amount of $146,360.61.",
+   "figures_as_printed": [
+    "$146,360.61"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $146,360.61."
+  },
+  {
+   "topic": "FY 17 4th Quarter Water Commissioners Warrant and Collector's Commitment",
+   "what_was_recorded": "The Board signed the FY 17 4th Quarter Water Commissioners Warrant and Collector's Commitment.",
+   "figures_as_printed": [
+    "$6355.68"
+   ],
+   "quote": "water commissioners warrant and collector's commitment in the amount of $6355.68."
+  },
+  {
+   "topic": "422 Mulpus Road tax title property",
+   "what_was_recorded": "The property is valued at $265,300 and taxes owed are $17,418.10.",
+   "figures_as_printed": [
+    "$265,300",
+    "$17,418.10"
+   ],
+   "quote": "422 mulpus road is valued at $265,300 and taxes owed are $17,418.10."
+  },
+  {
+   "topic": "213 Island Road tax title property",
+   "what_was_recorded": "The property is valued at $1600.00 but back taxes are $38,000.",
+   "figures_as_printed": [
+    "$1600.00",
+    "$38,000"
+   ],
+   "quote": "213 island road (.23 acres) is only valued at $1600.00 but the back taxes are $38,000."
+  },
+  {
+   "topic": "230 Kilburn Street tax title property",
+   "what_was_recorded": "The property is valued at $126,100.00 and taxes owed total $9051.80.",
+   "figures_as_printed": [
+    "$126,100.00",
+    "$9051.80"
+   ],
+   "quote": "230 kilburn street (5.8 acres) is valued at $126,100.00 and taxes owed total $9051.80."
+  },
+  {
+   "topic": "Tax title budget for legal fees, collection and advertising",
+   "what_was_recorded": "A realistic budget should be planned for next year for legal fees, collection and advertising; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "a realistic budget should be planned for next year for legal fees, collection and advertising."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "25 Williams Drive",
+   "topic": "opposition to Articles 22-25 and open space",
+   "quote": "katie adams, 25 williams drive, stated she wanted to come tonight as she was very opposed to articles 22-25"
+  },
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "not stated",
+   "topic": "town center land use and open space",
+   "quote": "katie adams stated she found it ironic that the board was talking about adding town conservation land while"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "discussed, no action",
+   "quote": "public comment: ms. luck informed there is a workshop in boston on may 23d presented by mcppo",
+   "tags": [
+    "public comment",
+    "RFP",
+    "MPO",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Follow Up",
+   "resolution": "no action; municipal buildings a long-term issue",
+   "quote": "mr. toale asked if there was any short-term follow up from to the annual town meeting.",
+   "tags": [
+    "town meeting",
+    "municipal buildings"
+   ]
+  },
+  {
+   "topic": "Tax Title/Foreclosure Workshop",
+   "resolution": "discussed; several properties kept on tax title list; 422 Mulpus Road more information requested",
+   "quote": "tax title/foreclosure workshop ms. bertram stated she had drafted a list off of the collector's tax title property list with her comments.",
+   "tags": [
+    "tax title",
+    "foreclosure",
+    "conservation",
+    "tax collector",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants signed; goal-setting workshop set for May 23",
+   "quote": "the board signed an accounts payable warrant in the amount of $146,360.61.",
+   "tags": [
+    "warrants",
+    "workshop",
+    "board reorganization"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "discussed, no action",
+   "quote": "katie adams stated she found it ironic that the board was talking about adding town conservation land while",
+   "tags": [
+    "municipal buildings",
+    "town center",
+    "open space",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:36 p.m.",
+   "quote": "to adjourn the meeting at 9:36 p.m. 2\"d: rebersole vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Articles 22-25 (annual town meeting, concerning sale of town buildings)",
+   "where": "text",
+   "quote": "very opposed to articles 22-25"
+  },
+  {
+   "name": "Request for Proposals (RFP) on the municipal buildings",
+   "where": "text",
+   "quote": "in the request for proposals (rfp) process on the municipal buildings"
+  },
+  {
+   "name": "Collector's tax title property list (with Ms. Bertram's comments)",
+   "where": "text",
+   "quote": "she had drafted a list off of the collector's tax title property list with her comments"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $146,360.61."
+  }
+ ],
+ "tags": [
+  "tax title",
+  "foreclosure",
+  "conservation land",
+  "municipal buildings",
+  "town meeting follow-up",
+  "warrants",
+  "public comment",
+  "workshop",
+  "Lake Shirley",
+  "policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

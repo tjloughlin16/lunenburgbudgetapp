@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2015-01-06",
  "docid": "1212",
@@ -12,23 +12,194 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the December 9 Capital Planning Committee meeting",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Approve the minutes of the December 9 CPC meeting as submitted.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 5-0",
+   "procedural": true,
    "quote": "the committee approved the minutes of the tuesday, december 9 cpc meeting as submitted, 5-0."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Joanna",
+   "seconded_by": "Heather",
    "outcome": "passed 5-0",
    "procedural": true,
-   "moved_by": "Joanna Bilotta-Simeone",
-   "seconded_by": "Heather Sroka",
    "quote": "joanna made a motion to adjourn the meeting. heather seconded the motion and the committee voted 5-0 to adjourn at 6:36 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan, legible. Two procedural votes recorded.",
- "cost_usd": 0.08320849999999999
+ "dropped_unquoted": 1,
+ "note": "OCR text of a scanned page; column layout and some lines are garbled (e.g., 'splo' and the Meeting Posted/Location labels). The signature block contains a stray name, 'Marjorie Boggio', with no stated role, so it was not recorded as an attendee. Kerry Speidel is listed under Present with no stated role. Two votes are recorded; the mover of the minutes approval is not printed. The capital priority ranking and action items were recorded without a vote.",
+ "cost_usd": 0.00425572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman dennis mannone, jr., vice-chairman"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., vice-chairman"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "john henshaw, clerk joanna bilotta-simeone, member"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "joanna bilotta-simeone, member"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "heather sroka, member"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry speidel, dennis mannone, jr., joanna bilotta-simeone, heather sroka, jamie toale,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee arranged the requested Capital Projects in priority order: eight projects first through eighth (Pavement Management Plan through Intersection Reconfiguration Plan), with the Street sweeper at ninth.",
+   "quote": "the committee arranged in priority the capital projects requested by town departments:"
+  },
+  {
+   "decision": "Jamie will write two letters, to the library and to the school department, asking how each would plan to spend its allocated but unspent capital funds.",
+   "quote": "jamie will write two letters: one to the library and the other to the school department requesting information"
+  },
+  {
+   "decision": "Jamie will contact Jack Rodriquenz on DPW to confirm the Town Hall painting quote (written in 2012) and ask the same company to quote painting the exterior and trim of the Senior Center.",
+   "quote": "jamie will also reach out to jack rodriquenz on dpw to confirm the quote for painting town hall in"
+  },
+  {
+   "decision": "Jamie and John will draft proposals on financing capital projects that cost more than $100,000.",
+   "quote": "jamie and john will draft proposals on financing some capital projects that cost more than"
+  },
+  {
+   "decision": "The proposed Capital Plan must be presented to the Finance Committee at its Thursday, January 22 meeting at 7:00 pm (deadline).",
+   "quote": "the deadline is to present the proposed capital plan to the finance committee on their meeting on"
+  },
+  {
+   "decision": "The CPC will next meet Tuesday, January 13 at 4:30 in the Bilotta Meeting Room.",
+   "quote": "the cpc will meet on tuesday, january 13 at 4:30 in the bilotta meeting room."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital budget fit of the eight prioritized projects",
+   "what_was_recorded": "Eight prioritized projects have a total estimated cost that would fall just within the capital budget.",
+   "quote": "eight projects with a total estimated cost of $815,000 would fall just within the $850,000 capital",
+   "figures_as_printed": [
+    "$815,000",
+    "$850,000"
+   ]
+  },
+  {
+   "topic": "Street sweeper cost",
+   "what_was_recorded": "The Street sweeper, ranked ninth priority, has an estimated cost.",
+   "quote": "the street sweeper, at ninth priority, cost an estimated $180,000.",
+   "figures_as_printed": [
+    "$180,000"
+   ]
+  },
+  {
+   "topic": "Financing of large capital projects",
+   "what_was_recorded": "Proposals on financing capital projects costing more than a set amount will be drafted.",
+   "quote": "jamie and john will draft proposals on financing some capital projects that cost more than $100,000.",
+   "figures_as_printed": [
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Unspent capital funds for library and school",
+   "what_was_recorded": "The library and school department each hold allocated but unspent funds from the capital plan approved by Town Meeting last May; no amounts printed.",
+   "quote": "requesting information on how each would plan to spend the allocated but unspent funds each has as a result",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town Hall painting quote",
+   "what_was_recorded": "The CPC's quote for painting Town Hall was written in 2012 and is to be confirmed; no amount printed.",
+   "quote": "confirm the quote for painting town hall in",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Capital project priorities",
+   "resolution": "arranged in priority order",
+   "quote": "the committee arranged in priority the capital projects requested by town departments:",
+   "tags": [
+    "capital plan",
+    "prioritization",
+    "capital budget"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "letters, quote requests and financing proposals assigned",
+   "quote": "jamie will write two letters: one to the library and the other to the school department requesting",
+   "tags": [
+    "unspent funds",
+    "Town Hall painting",
+    "financing"
+   ]
+  },
+  {
+   "topic": "Approval of December 9 minutes",
+   "resolution": "approved 5-0",
+   "quote": "the committee approved the minutes of the tuesday, december 9 cpc meeting as submitted, 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled January 13",
+   "quote": "the cpc will meet on tuesday, january 13 at 4:30 in the bilotta meeting room.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 6:36 pm",
+   "quote": "joanna made a motion to adjourn the meeting. heather seconded the motion and the committee voted 5-0 to adjourn at 6:36 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital planning",
+  "capital budget",
+  "project prioritization",
+  "Town Hall painting",
+  "unspent funds",
+  "financing",
+  "Finance Committee deadline",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

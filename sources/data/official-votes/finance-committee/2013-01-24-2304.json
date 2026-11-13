@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-01-24",
  "docid": "2304",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 9:15.",
    "moved_by": "SG",
    "seconded_by": "SR",
    "outcome": "passed 6-0",
@@ -21,6 +21,235 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR by macOS Vision from a single page. One vote recorded: the motion to adjourn.",
- "cost_usd": 0.0800735
+ "note": "Text is OCR of a scanned page with some garbling: item 5 heading reads \"S. Committee Updates\", the Annual Town Report bullet is cut off mid-sentence (\"forwarded to\"), and the Littleton bullet is unnumbered. Initials (SG, SR, ME) are as printed. Only one vote is recorded (adjournment, 6-0); no other motions appear. No dollar figures are printed anywhere.",
+ "cost_usd": 0.00463722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, s. raboin, t. burchfield"
+  },
+  {
+   "name": "John Male",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "burchfield j. smith k. speidel, m. benson, m. sauvageau, j. carrier"
+  },
+  {
+   "name": "K. Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "j. smith k. speidel, m. benson, m. sauvageau, j. carrier"
+  },
+  {
+   "name": "M. Benson",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "j. smith k. speidel, m. benson, m. sauvageau, j. carrier"
+  },
+  {
+   "name": "M. Sauvageau",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "j. smith k. speidel, m. benson, m. sauvageau, j. carrier"
+  },
+  {
+   "name": "J. Carrier",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "j. smith k. speidel, m. benson, m. sauvageau, j. carrier"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed that the assumptions used to develop the financial forecast should not be adjusted.",
+   "quote": "this committee agrees that assumptions used to develop the financial forecast should not be adjusted."
+  },
+  {
+   "decision": "A footnote will be included in the 5 Year Forecast discussing the potential need for funding the school building project, rather than a placeholder amount.",
+   "quote": "as there is no specific plan or data to enter, a footnote will be included just discussing the potential need for funding this project in the future."
+  },
+  {
+   "decision": "The 1/10/2013 minutes will be corrected and reviewed at the next meeting.",
+   "quote": "the minutes of 1/10/2013 require corrections and will be reviewed at the next meeting."
+  },
+  {
+   "decision": "Kerry will talk to the Littleton Town Manager about the results of Littleton's energy audit and whether Lunenburg might benefit from that process.",
+   "quote": "kerry will talk to the littleton town manager regarding the results of their energy audit and whether lunenburg might benefit from that process"
+  },
+  {
+   "decision": "Efforts will be made to fill the Committee vacancy left by Scott Gile's resignation.",
+   "quote": "the town moderator has been informed, and efforts will be made to fill the vacancy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Aro Estates right of first refusal purchase",
+   "what_was_recorded": "A purchase of the Aro Estates land under right of first refusal would require a debt exclusion and override; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "such a purchase would require a debt exclusion and override."
+  },
+  {
+   "topic": "Governor's budget and cherry sheets",
+   "what_was_recorded": "The Governor's budget was reported out with no surprises; cherry sheets were not yet out. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the governor's budget is out. there are no surprises, and the cherry sheets are not out yet."
+  },
+  {
+   "topic": "5 Year Forecast school building placeholder",
+   "what_was_recorded": "A placeholder for the school building project was considered, but no plan or data existed, so a footnote on future funding need will be used instead; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "as there is no specific plan or data to enter, a footnote will be included just discussing the potential need for funding this project in the future."
+  },
+  {
+   "topic": "Street lights: renting vs. owning",
+   "what_was_recorded": "A question was raised about looking into the cost of renting versus owning street lights; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "question was raised about looking into the cost of renting vs. owning street lights."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Meet and greet with departments",
+   "resolution": "informal discussion, no action",
+   "quote": "the planning director, building commission/zoning officer, and conservation commission administrative assistant were",
+   "tags": [
+    "departments",
+    "operations"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted; Gile resignation shared, vacancy to be filled",
+   "quote": "scott gile's resignation from the committee, effective on conclusion of this meeting, was shared.",
+   "tags": [
+    "vacancy",
+    "planning board",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "1/10/2013 minutes to be corrected and reviewed next meeting",
+   "quote": "the minutes of 1/10/2013 require corrections and will be reviewed at the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Updates",
+   "resolution": "noted; Capital Planning and School Building Committee progress reported",
+   "quote": "sr reported that the capital planning committee continues to be on target to have recommendations reached within the",
+   "tags": [
+    "capital planning",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "noted; forecast assumptions not to be adjusted",
+   "quote": "the governor's budget is out. there are no surprises, and the cherry sheets are not out yet.",
+   "tags": [
+    "state budget",
+    "forecast"
+   ]
+  },
+  {
+   "topic": "Discussion Points",
+   "resolution": "5 Year Forecast footnote; annual report draft comments; Littleton energy audit follow-up",
+   "quote": "5 year forecast. me suggested a placeholder for the school building project be entered.",
+   "tags": [
+    "5 year forecast",
+    "annual town report",
+    "energy audit"
+   ]
+  },
+  {
+   "topic": "Next Meetings and open question",
+   "resolution": "schedule set; street light cost question raised",
+   "quote": "2/7 meet and greet with departments to continue, look at budget hearing schedule",
+   "tags": [
+    "schedule",
+    "street lights",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed 6-0 at 9:15 pm",
+   "quote": "sg motioned to adjourn at 9:15. sr seconded, approved 6-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Finance Committee Report for Annual Town Report (draft circulated by ME)",
+   "where": "text",
+   "quote": "finance committee report for annual town report. me circulated a draft and asked that comments be forwarded to"
+  },
+  {
+   "name": "Governor's budget",
+   "where": "text",
+   "quote": "the governor's budget is out. there are no surprises, and the cherry sheets are not out yet."
+  },
+  {
+   "name": "Cherry sheets",
+   "where": "text",
+   "quote": "the governor's budget is out. there are no surprises, and the cherry sheets are not out yet."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "5 year forecast",
+  "school building project",
+  "annual town report",
+  "special town meeting",
+  "Aro Estates",
+  "street lights",
+  "governor's budget",
+  "committee vacancy",
+  "energy audit"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

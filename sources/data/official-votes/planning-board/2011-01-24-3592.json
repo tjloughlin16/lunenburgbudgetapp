@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-01-24",
  "docid": "3592",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from January 10, 2011",
+   "motion": "Approve minutes: signed 1-10-11 minutes, with Executive 12-13-10 previously voted on and signed this date",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, mr. saiia, second, mr. bodkin jr., signed executive 12 -13-10, previously voted on; signed this date",
-   "quote_taken_from_text": true
+   "quote": "signed 1-10-11, motion, mr. saiia, second, mr. bodkin jr., signed executive 12 -13-10, previously voted on"
   },
   {
-   "motion": "enter executive session for discussion of direction to Town Counsel in the O'Brien Homes (Aro Estate s Litigation)",
+   "motion": "Enter executive session for discussion of direction to Town Counsel in the O'Brien Homes (Aro Estates Litigation)",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed 5-0",
@@ -30,6 +29,268 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are legible. Two votes recorded: one on prior minutes (outcome not explicitly stated, marked \"Signed\"), one on entering executive session with full roll call vote showing 5-0 passage.",
- "cost_usd": 0.1268845
+ "note": "Text extraction with irregular spacing; quotes collapsed to single spaces. Roll call lists Mr. Bakaysa without an absence marking while Ms. Bilotta sat as Chair; recorded as present per roll call. The minutes-approval motion records no vote result. No votes on zoning, silo, or Highfield items; those are recorded as board decisions without vote. The Data folder is described but not itemized, so no documents list is recorded.",
+ "cost_usd": 0.00659022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta (sat as chair)"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair (sat as Chair)",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta (sat as chair)"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Member",
+   "status": "present",
+   "quote": "robert j. saiia , thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "robert j. saiia , thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "robert j. saiia , thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "robert j. saiia , thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "representing Whitman and Bingham Associates LLC",
+   "status": "present",
+   "quote": "jamie rheault , whitman and bingham associates llc"
+  },
+  {
+   "name": "Steve Mullaney",
+   "role": "SJ Mullaney Engineering Company, represented Keating Trust",
+   "status": "present",
+   "quote": "steve mullaney, sj mullaney engineering company"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board indicated to Mr. Rheault it would support a zoning change for 134 Leominster Shirley Road from Industrial to Commercial; Mr. Rheault to follow up for presentation to the Board. Board members also noted an overlay district may be appropriate.",
+   "quote": "the board indicated to mr. rheault they would support the zoning change from industrial to commercial"
+  },
+  {
+   "decision": "Board requested that the increased height of six of the silos be identified by flying a balloon or another methodology.",
+   "quote": "board has requested that the increased height of six of the"
+  },
+  {
+   "decision": "Director to send a memorandum to abutters noting the Keating Trust project and the new height of the silos.",
+   "quote": "memorandum to abutters noting the project and the new height of the silos"
+  },
+  {
+   "decision": "Board requested the letter from Highfield Village asking for the extension be presented at the next Planning Board meeting, since the vote to extend was based on receipt of the letter.",
+   "quote": "board has requested the letter from highfield village asking for the extension be presented at the next planning board meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street re-design funding from the State",
+   "what_was_recorded": "Director reported correspondence from the Town Manager on State funding of $50K toward the re-design of Summer Street.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "funding of $50k from the state toward the re"
+  },
+  {
+   "topic": "Capital Planning Committee funding sources",
+   "what_was_recorded": "Director reported on the draft prioritization; CPC will meet with Town Manager on funding sources. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "cpc will meet with town manager as to funding sources"
+  },
+  {
+   "topic": "Eagle House grant",
+   "what_was_recorded": "Committee is still waiting to hear on a grant. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "eagle house-the committee is still waiting to hear on the grant."
+  },
+  {
+   "topic": "Green Community solar field grant request",
+   "what_was_recorded": "Preparation of a grant request for a solar field on the landfill is continuing. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "preparation for grant request on solar field on the landfill is continuing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: Jamie Rheault, zoning change request at 134 Leominster Shirley Road",
+   "resolution": "Board indicated support for Industrial to Commercial change; applicant to follow up",
+   "quote": "the board indicated to mr. rheault they would support the zoning change from industrial to commercial",
+   "tags": [
+    "zoning",
+    "rezoning",
+    "overlay district"
+   ]
+  },
+  {
+   "topic": "Appointment: Steve Mullaney, Development Plan Review for Keating Trust silo and tank replacement at 1263 Reservoir Road",
+   "resolution": "presented; board requested silo heights be identified; info meeting set February 14, 2011",
+   "quote": "he presented a development plan review for tank and silo replacement",
+   "tags": [
+    "development plan review",
+    "silos",
+    "public hearing",
+    "Keating Trust"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "signed; motion recorded, result not printed",
+   "quote": "signed 1-10-11, motion, mr. saiia, second, mr. bodkin jr.,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communication: Zoning Board of Appeals petitions",
+   "resolution": "no comment from Board on Best Auto petition; question raised whether Alleva use is new and needs development plan review",
+   "quote": "noted zba petition of edward w. alleva jr., 92 whalom road",
+   "tags": [
+    "zoning board of appeals",
+    "used car lot",
+    "development plan review"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "cpc will meet with town manager as to funding sources",
+   "tags": [
+    "capital planning",
+    "DPW building committee"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "informational; no action recorded",
+   "quote": "census-director noted that the latest news is that it will be march before all information is released.",
+   "tags": [
+    "television",
+    "census",
+    "workshop",
+    "Summer Street",
+    "Eagle House",
+    "green community",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "informational; Highfield Village letter requested for next meeting",
+   "quote": "board has requested the letter from highfield village asking for the extension be presented at the next",
+   "tags": [
+    "Highfield Village",
+    "Emerald Place",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "discussion; no action recorded",
+   "quote": "sign bylaw- director inquired as to what direction the board will be taking",
+   "tags": [
+    "sign bylaw",
+    "MMA",
+    "Lunenburg Crossing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "february 14 information meeting for 1263 reservoir road, keating trust, followed by planning board meeting (to be televised).",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Data information and office",
+   "resolution": "informational; no action",
+   "quote": "new copier/scanner/printer has been delivered to office.",
+   "tags": [
+    "office",
+    "data folder"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session 5-0; regular session adjourned at 8:00 PM",
+   "quote": "motion, ms. bilotta, second, mr. lockwood, roll call vote, mr. bakaysa, aye",
+   "tags": [
+    "executive session",
+    "litigation",
+    "O'Brien Homes",
+    "Town Counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Development Plan Review for tank and silo replacement (Keating Trust, 1263 Reservoir Road)",
+   "where": "text",
+   "quote": "he presented a development plan review for tank and silo replacement"
+  },
+  {
+   "name": "Memorandum to abutters on the silo project",
+   "where": "text",
+   "quote": "memorandum to abutters noting the project and the new height of the silos"
+  },
+  {
+   "name": "Letter from Highfield Village requesting extension",
+   "where": "text",
+   "quote": "board has requested the letter from highfield village asking for the extension"
+  },
+  {
+   "name": "Correspondence from the Town Manager on State funding for Summer Street",
+   "where": "text",
+   "quote": "director reported on correspondence from the town manager funding of $50k"
+  },
+  {
+   "name": "Data folder of items of interest not on agenda",
+   "where": "text",
+   "quote": "data folder containing items of interest not on agenda presented to members"
+  },
+  {
+   "name": "Sign Bylaw",
+   "where": "text",
+   "quote": "sign bylaw- director inquired as to what direction the board will be taking"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "development plan review",
+  "silos",
+  "Keating Trust",
+  "sign bylaw",
+  "grants",
+  "Summer Street",
+  "executive session",
+  "litigation",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

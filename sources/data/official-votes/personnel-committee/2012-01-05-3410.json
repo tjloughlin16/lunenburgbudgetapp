@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2012-01-05",
  "docid": "3410",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of December 1, 2011",
+   "motion": "Approve the minutes of the December 1, 2011 meeting.",
    "moved_by": "Barbara Reynolds",
    "seconded_by": "Robert Rand",
    "outcome": "passed",
@@ -20,16 +20,15 @@
    "quote": "minutes of december 1, 2011 (barbara 1st, robert 2°° ) meeting were approved."
   },
   {
-   "motion": "accept the draft Personnel Committee blurb for the 2011 Town Report",
+   "motion": "Accept the Chair's draft of the Personnel Committee blurb for the 2011 Town Report.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Barbara Reynolds",
    "outcome": "passed",
    "procedural": false,
-   "quote": "chair shared draft of personnel committee blurb for 2011 town report, accepted (deb 1st *, barbara 2\"°)",
-   "quote_taken_from_text": true
+   "quote": "chair shared draft of personnel committee blurb for 2011 town report, accepted (deb 1st *, barbara 2\"°)."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:25 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Barbara Reynolds",
    "outcome": "passed",
@@ -38,6 +37,188 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1371695
+ "note": "OCR text with garbled characters in the vote lines (e.g., \"2°°\", \"1sl.\", \"2\\\"°\") and a stamp reading RECEIVED FEB 07 2012. Vote results are inferred from the minutes' wording (\"were approved\", \"accepted\", \"adjourned\"); no vote counts are printed. The Town Manager is named only by title. Personnel actions are listed under \"to Review and Approve\" with no recorded motion.",
+ "cost_usd": 0.00443652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert Rand",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present were chair robert rand, barbara reynolds, and deborah christen."
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Member",
+   "status": "present",
+   "quote": "present were chair robert rand, barbara reynolds, and deborah christen."
+  },
+  {
+   "name": "Deborah Christen",
+   "role": "Member; Secretary",
+   "status": "present",
+   "quote": "present were chair robert rand, barbara reynolds, and deborah christen."
+  },
+  {
+   "name": "William Murray",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent was william murray."
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present was town manager."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair will research the missing New Hire form for Nancy Forest (effective 7/1/11) and report back to LPC.",
+   "quote": "lpc could not find new hire form for nancy forest effective 7/1/11; chair will research and report back to lpc."
+  },
+  {
+   "decision": "LPC Initiatives 2012 passed over until the February meeting.",
+   "quote": "lpc initiatives 2012: passed over until february meeting."
+  },
+  {
+   "decision": "Job Description Format Project: Town Manager will follow up after Fire Chief review.",
+   "quote": "job description format project: in progress, barbara and chair working on - fire chief reviewing; town manager will follow-up."
+  },
+  {
+   "decision": "Next meeting agenda set: standard on-going items plus Current Business items (Job Description Format Discussion, review of LPC Initiatives progress and assignments for 2011, Next Meeting Agenda).",
+   "quote": "next meeting agenda: standard on-going (public comment, personnel actions/approvals, personnel change/hiring notifications, and review of previous minutes)"
+  },
+  {
+   "decision": "Next scheduled meeting set for February 2, 2012 at 6:00 p.m. at the Lunenburg Public Library.",
+   "quote": "the next scheduled meeting will be on february 2, 2012 at 6:00 p.m. at the lunenburg public library."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Nancy Forest wage, Accountant's Dept.",
+   "what_was_recorded": "Personnel action listing Nancy Forest as Principal Clerk at Grade 7, Step 1½, at an hourly rate, effective 1/1/12, for review and approval.",
+   "figures_as_printed": [
+    "15.75/hour"
+   ],
+   "quote": "principal clerk, grade 7, step 1½, 15.75/hour, effective 1/1/12."
+  },
+  {
+   "topic": "Darrell Demers wage, Fire Dept.",
+   "what_was_recorded": "Personnel change notification for Darrell Demers as EMT-I at Grade 9, Step 1, at an hourly rate, effective 12/1/11.",
+   "figures_as_printed": [
+    "18.43/hour"
+   ],
+   "quote": "step 1, 18.43/hour, effective 12/1/11."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action (none offered)",
+   "quote": "public comment: none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Personnel Actions to Review and Approve (Nancy Forest)",
+   "resolution": "reviewed; New Hire form question referred to Chair",
+   "quote": "personnel actions to review and approve: accountant's dept., nancy forest, principal clerk, grade 7, step 1½, 15.75/hour, effective 1/1/12.",
+   "tags": [
+    "personnel",
+    "wages",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Personnel Change/Hiring Notifications (Darrell Demers)",
+   "resolution": "noted",
+   "quote": "personnel change/hiring notifications: fire dept., darrell demers, emt-i, grade 9,",
+   "tags": [
+    "personnel",
+    "wages",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Review of Previous Meeting Minutes",
+   "resolution": "approved",
+   "quote": "minutes of december 1, 2011 (barbara 1st, robert 2°° ) meeting were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Job Description Format Project",
+   "resolution": "in progress; Town Manager to follow up",
+   "quote": "job description format project: in progress, barbara and chair working on - fire chief reviewing; town manager will follow-up.",
+   "tags": [
+    "job descriptions"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting",
+   "resolution": "no action (no articles at this time)",
+   "quote": "annual town meeting: no articles at this time.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "LPC Initiatives 2012",
+   "resolution": "passed over until February meeting",
+   "quote": "lpc initiatives 2012: passed over until february meeting.",
+   "tags": [
+    "LPC initiatives"
+   ]
+  },
+  {
+   "topic": "2011 Town Report blurb",
+   "resolution": "draft accepted",
+   "quote": "chair shared draft of personnel committee blurb for 2011 town report, accepted (deb 1st *, barbara 2\"°).",
+   "tags": [
+    "town report"
+   ]
+  },
+  {
+   "topic": "Next Meeting Agenda",
+   "resolution": "agenda items set",
+   "quote": "next meeting agenda: standard on-going (public comment, personnel actions/approvals, personnel change/hiring notifications, and review of previous minutes)",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "New Hire form for Nancy Forest effective 7/1/11",
+   "where": "text",
+   "quote": "lpc could not find new hire form for nancy forest effective 7/1/11; chair will research and report back to lpc."
+  },
+  {
+   "name": "Draft of Personnel Committee blurb for 2011 Town Report",
+   "where": "text",
+   "quote": "chair shared draft of personnel committee blurb for 2011 town report, accepted (deb 1st *, barbara 2\"°)."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "wages",
+  "hiring",
+  "job descriptions",
+  "town report",
+  "minutes approval",
+  "LPC initiatives",
+  "Accountant's Dept",
+  "Fire Dept"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

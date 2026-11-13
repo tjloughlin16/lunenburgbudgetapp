@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-04-01",
  "docid": "2803",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Increase budget request by $14,250.60 over the town manager's preliminary recommendation",
+   "motion": "Increase the library's budget request by $14,250.60 over the town manager's preliminary recommendation.",
    "moved_by": "Dick",
    "seconded_by": "Gare",
    "outcome": "passed",
@@ -20,15 +20,141 @@
    "quote": "dick made a motion that we increase our budget request with $14,250.60 over the town manager's preliminary recommendation, second by gare; voted all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
    "procedural": true,
-   "quote": "so moved by gare; second by dick; voted all in favor"
+   "quote": "jeanne asked for a motion to adjourn the meeting; so moved by gare; second by dick; voted all in favor at 7:47 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0820465
+ "note": "Minutes record the budget increase and adjournment votes as \"voted all in favor\" with no numeric tally or roll call. Harry Kubetz attended by call-in; the Town Manager, Bob Ebersole and Harry Kubetz left at 7:17 p.m. Public comment and Other were recorded as \"No public comment\" and \"none\", so they are not listed as topics. The text is plain, not a scan.",
+ "cost_usd": 0.00396882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz (via call-in), gare thompson, robin venezia, lars widstrand, martha moore"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz (via call-in), gare thompson, robin venezia, lars widstrand, martha moore"
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "remote",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz (via call-in), gare thompson, robin venezia, lars widstrand, martha moore"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz (via call-in), gare thompson, robin venezia, lars widstrand, martha moore"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz (via call-in), gare thompson, robin venezia, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz (via call-in), gare thompson, robin venezia, lars widstrand, martha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, harry kubetz (via call-in), gare thompson, robin venezia, lars widstrand, martha moore"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel (town manager), john henshaw (finance committee), bob ebersole (selectman)"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "kerry speidel (town manager), john henshaw (finance committee), bob ebersole (selectman)"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "kerry speidel (town manager), john henshaw (finance committee), bob ebersole (selectman)"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "absent",
+   "quote": "absent: susan visser"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY2015 utility costs versus appropriation",
+   "what_was_recorded": "The Town Manager estimated current-year utility costs well above the amount appropriated, and the FY2016 budget will not cover projected utilities.",
+   "figures_as_printed": [
+    "~$36,000.00",
+    "$30,000.00"
+   ],
+   "quote": "after budget, the t.m. started looking at utility bills, estimated current fiscal year (fy2015) ~$36,000.00 vs. appropriated $30,000.00."
+  },
+  {
+   "topic": "Gap between library and Town Manager budget numbers",
+   "what_was_recorded": "Martha reported the difference between the library's suggested budget and the Town Manager's suggested numbers.",
+   "figures_as_printed": [
+    "~$12,300.00"
+   ],
+   "quote": "according to martha, the difference between the library's suggested budget and the t.m.'s suggested numbers is ~$12,300.00."
+  },
+  {
+   "topic": "Increase to FY2016 budget request",
+   "what_was_recorded": "The board voted to raise its budget request above the Town Manager's preliminary recommendation by a stated amount.",
+   "figures_as_printed": [
+    "$14,250.60"
+   ],
+   "quote": "dick made a motion that we increase our budget request with $14,250.60 over the town manager's preliminary recommendation, second by gare; voted all in favor."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Fiscal Year 2016 Budget (All)",
+   "resolution": "approved budget request increase of $14,250.60 over Town Manager's preliminary recommendation",
+   "quote": "fiscal year 2016 budget (all)",
+   "tags": [
+    "FY2016 budget",
+    "utilities",
+    "state funding"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for April 1, 2015",
+   "where": "list",
+   "quote": "lplbot agenda for april 1, 2015"
+  }
+ ],
+ "tags": [
+  "library budget",
+  "FY2016",
+  "utilities",
+  "town manager",
+  "budget increase",
+  "state funding rules"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

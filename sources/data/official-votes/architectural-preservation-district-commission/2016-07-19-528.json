@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-07-19",
  "docid": "528",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from July 5, 2016",
+   "motion": "Accept the minutes of July 5, 2016.",
    "moved_by": "LaVeck",
    "seconded_by": "McGrath",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "laveck motioned to accept them and mcgrath seconded the motion. the motion carried unanimously."
   },
   {
-   "motion": "Accept prior minutes from March 29 and May 24, 2016, and revised draft of Section 1 for Guidelines and draft on temporary building for Guidelines",
+   "motion": "Accept all four items raised again from the irregular June 14 meeting: minutes of 3-29-16, minutes of 5-24-16, revised draft of Section 1 for the Guidelines, and draft on temporary building for the Guidelines.",
    "moved_by": "Dwyer",
    "seconded_by": "La Veck",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "dwyer motioned to accept all four items, la veck seconded and the motion carried unanimously."
   },
   {
-   "motion": "Accept final flowchart for certificate to alter process into guidelines",
+   "motion": "Accept the final version of the flowchart outlining the process of applying for a certificate to alter into the guidelines.",
    "moved_by": "Keher",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "keher motioned to accept it into the guidelines and the motion carried unanimously."
   },
   {
-   "motion": "Accept revised guidelines for windows and doors, and for demolition by neglect",
+   "motion": "Accept the revised drafts of guidelines for windows and doors, and for demolition by neglect.",
    "moved_by": "LaVeck",
    "seconded_by": "Corcoran",
    "outcome": "passed unanimously",
@@ -44,7 +44,7 @@
    "quote": "laveck motioned to accept them, corcoran seconded and the motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:30PM.",
    "moved_by": "McGrath",
    "seconded_by": "Corcoran",
    "outcome": "passed unanimously",
@@ -53,6 +53,141 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1129975
+ "note": "Minutes give no roll call, so attendance status is inferred from each person's recorded motion or second; no one is recorded as absent. Dwyer's motion covered four items from the irregular June 14 meeting in one vote. Name is printed \"La Veck\" in some places and \"LaVeck\" in others; both are kept as printed. No vote counts are printed beyond \"unanimously\". No motion was recorded for the flowchart seconder.",
+ "cost_usd": 0.00376222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mcgrath called the meeting to order at 7:07"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "laveck motioned to accept them and mcgrath seconded the motion."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dwyer motioned to accept all four items, la veck seconded and the motion carried unanimously."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "laveck motioned to accept them, corcoran seconded and the motion carried unanimously."
+  },
+  {
+   "name": "Matthew Keher",
+   "role": "Member",
+   "status": "present",
+   "quote": "keher motioned to accept it into the guidelines and the motion carried unanimously."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved",
+   "quote": "laveck motioned to accept them and mcgrath seconded the motion. the motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old business: items from irregular June 14 meeting",
+   "resolution": "accepted four items",
+   "quote": "items from that irregular meeting were again raised at this meeting and voted on:",
+   "tags": [
+    "irregular meeting",
+    "minutes",
+    "guidelines"
+   ]
+  },
+  {
+   "topic": "Flowchart for certificate to alter",
+   "resolution": "accepted into guidelines",
+   "quote": "laveck presented a final version of the flowchart outlining the process of applying for a certificate to alter.",
+   "tags": [
+    "guidelines",
+    "certificate to alter"
+   ]
+  },
+  {
+   "topic": "Guidelines for windows and doors, and demolition by neglect",
+   "resolution": "accepted revised drafts",
+   "quote": "dwyer presented revised drafts of guidelines for windows and doors, and also for demolition by neglect.",
+   "tags": [
+    "guidelines",
+    "windows and doors",
+    "demolition by neglect"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30PM",
+   "quote": "mcgrath motioned to adjourn. the motion was seconded by corcoran and carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes from July 5th, 2016",
+   "where": "text",
+   "quote": "review of minutes: minutes from july 5th, 2016 were reviewed."
+  },
+  {
+   "name": "Approval of minutes from 3-29-16",
+   "where": "text",
+   "quote": "approval of minutes from 3-29-16"
+  },
+  {
+   "name": "Approval of minutes from 5-24-16",
+   "where": "text",
+   "quote": "approval of minutes from 5-24-16"
+  },
+  {
+   "name": "Revised draft of Section 1 for the Guidelines",
+   "where": "text",
+   "quote": "acceptance of a revised draft of section 1 for the guidelines"
+  },
+  {
+   "name": "Draft on temporary building for the Guidelines",
+   "where": "text",
+   "quote": "acceptance of a draft on temporary building for the guidelines"
+  },
+  {
+   "name": "Final version of the flowchart outlining the process of applying for a certificate to alter",
+   "where": "text",
+   "quote": "laveck presented a final version of the flowchart outlining the process of applying for a certificate to alter."
+  },
+  {
+   "name": "Revised drafts of guidelines for windows and doors, and for demolition by neglect",
+   "where": "text",
+   "quote": "dwyer presented revised drafts of guidelines for windows and doors, and also for demolition by neglect."
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "guidelines",
+  "certificate to alter",
+  "irregular meeting",
+  "minutes approval",
+  "historic district"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

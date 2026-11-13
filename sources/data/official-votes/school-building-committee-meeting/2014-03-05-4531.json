@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-03-05",
  "docid": "4531",
@@ -12,6 +12,226 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This is a landscape design working session, not a formal meeting with recorded votes. The minutes document design decisions and approvals made through discussion and agreement (e.g., \"It was agreed...\", \"was discussed and approved\", \"It was decided...\"), but contain no formal motions, vote counts, or voting language such as \"motion by X, seconded by Y\", \"unanimously approved\", \"so voted\", \"carried\", or \"failed\".",
- "cost_usd": 0.009523900000000002
+ "note": "OCR text from a macOS Vision scan with some errors (e.g. 'PLANNINO', 'céremonies'). The attendee list gives nine names and nine roles in separate blocks; roles are matched to names by list order, which is inferred, not printed beside each name. Several items are recorded as 'approved' or 'agreed' with no motion, mover, second or tally, so no votes are recorded. No dollar figures are printed. No call to order, prior minutes approval or adjournment appears in the text.",
+ "cost_usd": 0.00612762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent LPS",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Principal Turkey Hill Middle School",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "Principal Lunenburg High School",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities LPS",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "Peter McCauliff",
+   "role": "Athletic Director LPS",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "Sandy Laserte",
+   "role": "Turkey Hill Middle School Physical Education",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Chair Lunenburg School Building Committee",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "David Warner",
+   "role": "Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  },
+  {
+   "name": "Charlie Hay",
+   "role": "Tappe Associates Architects",
+   "status": "present",
+   "quote": "loxi jo calmes tim santry brian spadafino john londa peter mccauliff sandy laserte michael mackin david warner charlie hay"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Alternative site layout (parking on east or west side with connecting road or drive) not pursued further; not enough benefit.",
+   "quote": "it was agreed by all present that there did not appear to be enough of a benefit to pursue this option further."
+  },
+  {
+   "decision": "Eliminate a portion of the existing high school driveway loop in Phase 1 to accommodate a full-size field along MA Ave (approved, no motion recorded); one-way high school traffic and possible relocation of HC parking.",
+   "quote": "the option to eliminate a portion of the existing high school driveway loop in phase 1 in order to accommodate a full size field along ma ave was discussed and approved."
+  },
+  {
+   "decision": "New soccer field to be irrigated and sodded.",
+   "quote": "the new soccer field will be irrigated and sodded."
+  },
+  {
+   "decision": "4' black vinyl coated chain link fence offset from Mass Ave sidewalk approved (approved, no motion recorded).",
+   "quote": "4' black vinyl coated chain link fence offset from mass ave sidewalk (10' +/- to allow snowbank) was approved to stop ground balls."
+  },
+  {
+   "decision": "Tall netting to stop all balls along Mass Ave will not be included.",
+   "quote": "it was agreed that any tall netting to stop all balls would be undesirable along mass ave and will not be included."
+  },
+  {
+   "decision": "Bleacher location on east side with 600 seats approved (approved, no motion recorded).",
+   "quote": "the location as currently shown with 600 seats was approved based on proximity to game day parking and the memorial entrance gate."
+  },
+  {
+   "decision": "No lighting at tennis or basketball courts.",
+   "quote": "it was agreed that there will be no lighting at tennis or basketball."
+  },
+  {
+   "decision": "Bus drop-off in front of the school to plan for 10 buses.",
+   "quote": "this amount of busses was confirmed as the correct quantity to plan for."
+  },
+  {
+   "decision": "Single auto pick-up/drop-off loop retained; no separate middle school loop.",
+   "quote": "it was decided that a single loop is the best approach as students of different ages are picked up and dropped off in the same car"
+  },
+  {
+   "decision": "Keep the current design layout for the new access road around the concession building, despite utility concerns.",
+   "quote": "it was decided by those present to keep the current design layout."
+  },
+  {
+   "decision": "Pedestrian connection between new school and Turkey Hill School to remain in design, routed as directly as possible without compromising the flat lawn or the archery/sledding hill.",
+   "quote": "it was confirmed that such a connection is desirable and should remain in the design"
+  },
+  {
+   "decision": "Synthetic turf option to be considered at end of project only if contingency remains; base contract is natural grass.",
+   "quote": "a synthetic turf field option would be desirable and this might be an option at the end of the project if there is remaining contingency available"
+  },
+  {
+   "decision": "Small field north of gym to serve as a ceremonies lawn or tent site; no additional area needed.",
+   "quote": "it was agreed that the new small field to the north of the gym could function as a lawn for céremonies or a tent if that was ever required, no additional area is necessary."
+  },
+  {
+   "decision": "No exterior maintenance building in project scope; no slab for a future location.",
+   "quote": "it was agreed that no exterior maintenance building will be included as part of the scope of the project so no slab will be provided for a future location."
+  },
+  {
+   "decision": "Memorial gate to be preserved close to the fields.",
+   "quote": "memorial gate will be preserved close to fields."
+  },
+  {
+   "decision": "Signage at Mass Ave and Oak Ave driveway entrances, with lighting at identity sign locations; wayfinding and traffic signage in contract scope.",
+   "quote": "signage for the new school will be located at mass ave and oak ave driveway entrances."
+  },
+  {
+   "decision": "Entrance roadway to have 12' wide speed tables.",
+   "quote": "the entrance roadway will have speed tables that are 12' wide to slow traffic entering and exiting the site."
+  },
+  {
+   "decision": "School to notify parents and public of the traffic pattern change for September 2014.",
+   "quote": "school will notify parents and public of change in traffic pattern for september 2014."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "New scoreboard funding",
+   "what_was_recorded": "A new scoreboard is out of project scope; the Owner will seek to furnish it from donations. No dollar figure printed.",
+   "quote": "a new scoreboard is not in scope and the owner will seek to furnish this from donations.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Synthetic turf option and contingency",
+   "what_was_recorded": "A synthetic turf field could be an option at the end of the project only if remaining contingency is available; base contract is natural grass. No dollar figure printed.",
+   "quote": "a synthetic turf field option would be desirable and this might be an option at the end of the project if there is remaining contingency available",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Alternative Site Layout",
+   "resolution": "no action; option not pursued",
+   "quote": "it was agreed by all present that there did not appear to be enough of a benefit to pursue this option further.",
+   "tags": [
+    "parking",
+    "traffic",
+    "site layout"
+   ]
+  },
+  {
+   "topic": "Athletic Fields",
+   "resolution": "approved driveway loop change for soccer field",
+   "quote": "the option to eliminate a portion of the existing high school driveway loop in phase 1 in order to accommodate a full size field along ma ave was discussed and approved.",
+   "tags": [
+    "athletic fields",
+    "soccer",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Field Fencing, Bleachers and Equipment",
+   "resolution": "fence and bleacher location approved; netting excluded",
+   "quote": "the location as currently shown with 600 seats was approved based on proximity to game day parking and the memorial entrance gate.",
+   "tags": [
+    "fencing",
+    "bleachers",
+    "lighting",
+    "scoreboard",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Site Design and Grading",
+   "resolution": "single loop and current layout kept",
+   "quote": "it was decided by those present to keep the current design layout.",
+   "tags": [
+    "bus loop",
+    "grading",
+    "utilities",
+    "pedestrian connection"
+   ]
+  },
+  {
+   "topic": "Outdoor Activities, Signage and Entrance",
+   "resolution": "decisions recorded on ceremonies lawn, signage and speed tables",
+   "quote": "memorial gate will be preserved close to fields.",
+   "tags": [
+    "signage",
+    "ceremonies",
+    "entrance",
+    "speed tables"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "school building committee",
+  "landscape design",
+  "athletic fields",
+  "site layout",
+  "traffic and bus loop",
+  "lighting",
+  "Lunenburg Middle High School",
+  "Passios Elementary School"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

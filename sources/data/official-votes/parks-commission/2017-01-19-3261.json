@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2017-01-19",
  "docid": "3261",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes from November 17, 2016",
-   "moved_by": "Dennis",
-   "seconded_by": "Karin",
+   "motion": "Accept the minutes of November 17, 2016.",
+   "moved_by": "Dennis Mannone",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "dennis motioned and karin seconded to accept minutes of november 17, 2016. approved 3-0."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:40pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -29,6 +29,206 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text, readable. Two procedural votes recorded.",
- "cost_usd": 0.09474350000000001
+ "note": "Scanned text via OCR (macOS Vision) with garbled fragments, e.g. the page 1 footer (\"figy utator&\") and the filed stamp; quotes were taken from the readable lines. The Correspondence/Public Comment line reads \"non\" in the OCR, read as \"none\". No documents or exhibits are listed or named. Jack Rodriquenz's attendance is taken from the attendance line; his role is not printed. Votes: two motions (minutes approval and adjournment) both recorded 3-0. No other motions appear in the text.",
+ "cost_usd": 0.005168819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order - 7:02pm attendance: dennis mannone, pete mccauliff, karin menard, jack"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "call to order - 7:02pm attendance: dennis mannone, pete mccauliff, karin menard, jack"
+  },
+  {
+   "name": "Pete McCauliff",
+   "status": "present",
+   "quote": "call to order - 7:02pm attendance: dennis mannone, pete mccauliff, karin menard, jack"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "call to order - 7:02pm attendance: dennis mannone, pete mccauliff, karin menard, jack"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack will press Surfside pool and the Marshall backstop contractor to have the backstop completed for the spring.",
+   "quote": "jack will get on them to have it completed for the spring."
+  },
+  {
+   "decision": "Karin will report back on her findings about summer seasonal hiring requirements at the next meeting.",
+   "quote": "karin will report back with her findings at the next meeting."
+  },
+  {
+   "decision": "Pete will not pay the part of the turf company's invoice covering track resurfacing oversight until the track is resurfaced, and has asked the company to remove that item.",
+   "quote": "he has send them a request to remove that from the invoice and won't pay that part until the track is resurfaced."
+  },
+  {
+   "decision": "Karin will tweak the field usage forms for the next meeting.",
+   "quote": "karin will tweak the forms that were created for field usage for the next meeting."
+  },
+  {
+   "decision": "Dennis asked that a Memorandum of Agreement with Lunenburg Public Schools be added to the next meeting agenda.",
+   "quote": "dennis would like it added to the next meeting agenda."
+  },
+  {
+   "decision": "The committee will continue the discussion of field usage costs as it moves further into the policy discussions.",
+   "quote": "we will continue this discussion as we move further into these discus- sion",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Playground equipment request",
+   "what_was_recorded": "A request was submitted to the Capital Planning Committee for new equipment for one playground in FY18.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "a request has been submitted to the capital planning committee for $12,000 in fy18"
+  },
+  {
+   "topic": "Turf complex payment request",
+   "what_was_recorded": "The turf company's payment request included overseeing of track resurfacing that has not been done; Pete will not pay that part until the track is resurfaced.",
+   "figures_as_printed": [],
+   "quote": "pete said the company sent in request for payment which included overseeing of the track resurfacing which has not been done"
+  },
+  {
+   "topic": "Cell tower revenue outlook",
+   "what_was_recorded": "The cell tower item was described as still looking positive for FY18, with no figure printed.",
+   "figures_as_printed": [],
+   "quote": "cell tower is still looking positive for fy18."
+  },
+  {
+   "topic": "Spring field maintenance cost",
+   "what_was_recorded": "Jack said materials for maintaining field space for the spring season were not much, but cost between $200 and $400 a week.",
+   "figures_as_printed": [
+    "$200",
+    "$400"
+   ],
+   "quote": "jack said that materials weren't much but was between $200 and $400 a week."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:02pm",
+   "quote": "call to order - 7:02pm attendance: dennis mannone, pete mccauliff, karin menard, jack",
+   "tags": [
+    "call to order",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Review minutes of November 17, 2016",
+   "resolution": "approved 3-0",
+   "quote": "dennis motioned and karin seconded to accept minutes of november 17, 2016. approved 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager Updates",
+   "resolution": "no action",
+   "quote": "surfside pool has dragged their feet and the backstop at marshall is not finished.",
+   "tags": [
+    "DPW",
+    "playgrounds",
+    "backstop",
+    "capital request"
+   ]
+  },
+  {
+   "topic": "Leominster Lacrosse Turf Request",
+   "resolution": "no action",
+   "quote": "karin informed the committee that she has heard nothing further from leominster lacrosse.",
+   "tags": [
+    "turf",
+    "lacrosse"
+   ]
+  },
+  {
+   "topic": "Turf Complex Update and Discussion",
+   "resolution": "payment held pending track resurfacing; no vote",
+   "quote": "he has send them a request to remove that from the invoice and won't pay that part until the track is resurfaced.",
+   "tags": [
+    "turf complex",
+    "invoice",
+    "track resurfacing",
+    "cell tower"
+   ]
+  },
+  {
+   "topic": "Town Beach summer staff hiring",
+   "resolution": "continued; Karin to report back",
+   "quote": "a job description will need if we are to post for any position at the beach.",
+   "tags": [
+    "town beach",
+    "seasonal hiring"
+   ]
+  },
+  {
+   "topic": "Policy and procedure discussions on fields, courts and beaches",
+   "resolution": "continued",
+   "quote": "continuation of policy / procedure discussions, fees and scheduling of fields, courts and beaches under the parks commission umbrella.",
+   "tags": [
+    "field usage",
+    "fees",
+    "scheduling",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action",
+   "quote": "unanticipated items - none",
+   "tags": [
+    "other business",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule and agenda",
+   "resolution": "next meeting set for February 16, 2017",
+   "quote": "next meeting february 16, 2017. normal agenda items as well as beach hiring",
+   "tags": [
+    "agenda",
+    "memorandum of agreement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 8:40pm",
+   "quote": "motion to adjourn by karin menard, seconded by pete mccauliff- 3-0 to adjourn at 8:40pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks commission",
+  "fields and turf",
+  "playgrounds",
+  "town beach",
+  "seasonal hiring",
+  "field usage fees",
+  "Memorandum of Agreement",
+  "Lunenburg Public Schools",
+  "FY18 capital request",
+  "cell tower"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

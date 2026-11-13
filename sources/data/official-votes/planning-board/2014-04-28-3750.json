@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-04-28",
  "docid": "3750",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Give temporary permission to use the four pole design with review of new engineering design and plan in six months, by December 29, 2014",
+   "motion": "Temporary permission for NuGen to use the four pole design as discussed, with review of new engineering design and plan in six months, by December 29, 2014 (265 Pleasant Street Solar).",
    "moved_by": "N. Lockwood",
    "seconded_by": "E. Bakaysa",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "motion, n. lockwood to give temporary permission to use the four pole design as discussed, with review of new engineering design and plan in six months, by december 29, 2014, second, e. bakaysa, all aye."
+   "quote": "motion, n. lockwood to give temporary permission to use the four pole design as discussed, with review of new engineering design and plan in six months"
   },
   {
-   "motion": "Endorse ANR Plan for 115 Fairview Road",
+   "motion": "Endorse the ANR Plan for 115 Fairview Road.",
    "moved_by": "N. Lockwood",
    "seconded_by": "E. Bakaysa",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "motion, n. lockwood, to endorse anr plan, second, e. bakaysa . opened for discussion."
+   "quote": "motion, n. lockwood, to endorse anr plan, second, e. bakaysa"
   },
   {
-   "motion": "Endorse ANR Plan for 317 Sunny Hill Road",
+   "motion": "Endorse the ANR Plan for 317 Sunny Hill Road.",
    "moved_by": "D. McQuaid",
    "seconded_by": "E. Bakaysa",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, d. mcquaid, to endorse anr plan, second, e. bakaysa, all aye."
   },
   {
-   "motion": "Approve minutes from 4-14-14",
+   "motion": "Approve the minutes of 4-14-14.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -44,7 +44,7 @@
    "quote": "motion, e. bakaysa , to approve 4-14-14, second, d. mcquaid."
   },
   {
-   "motion": "Approve minutes from 4-14-14 Public Hearing",
+   "motion": "Approve the minutes of 4-14-14 Public Hearing.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -52,15 +52,15 @@
    "quote": "motion, e. bakaysa, to approve 4-14-14 public hearing, second, d. mcquaid."
   },
   {
-   "motion": "Recommend adoption of the medical marijuana bylaw at Town Meeting",
+   "motion": "Recommend adoption of the medical marijuana (RMD) bylaw at Town Meeting.",
    "moved_by": "N. Lockwood",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, n. lockwood, to recommend adoption of the medical marijuana bylaw at town meeting, second, m. allison, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -69,6 +69,373 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two minutes approval motions (votes 4–5) record no explicit vote result in the minutes. All other votes show outcomes.",
- "cost_usd": 0.1509645
+ "note": "Text is a clean extraction, not a scan. Vote results for the two minutes approvals and the adjournment are not printed as counts; the adjournment is recorded as passed because the minutes say it adjourned at 10:15 PM. The trailing line 'Minutes/2014/04.28.14' appears to be a file path and is not treated as a document. Dollar figures are not printed anywhere in the minutes; the only figure is 25% design completion.",
+ "cost_usd": 0.01131732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood , damon mcquaid"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood , damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta -simeone, nathan j. lockwood , damon mcquaid"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, emerick r. bakaysa, matthew allison , chantell fleck- mrpc"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, matthew allison , chantell fleck- mrpc"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "matthew allison , chantell fleck- mrpc"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Resident, 129 Pleasant Street",
+   "status": "present",
+   "quote": "greg bittner, 129 pleasant street - read letter into record regarding"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief james marino and jamie rheault, whitman & bingham"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "police chief james marino and jamie rheault, whitman & bingham"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram (board of selectmen), noted as the montachusett metropolitan planning organization"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "50 Sunset Lane; Chair, Sewer Commission",
+   "status": "present",
+   "quote": "carl luck, chair, sewer commission, opined that in order for the board"
+  },
+  {
+   "name": "David Milner",
+   "role": "NuGen Capital Management",
+   "status": "present",
+   "quote": "david milner, nugen capital management (entity that owns 265 solar) agreed"
+  },
+  {
+   "name": "John Bonazoli",
+   "role": "Distribution Engineering Manager, Unitil Corp.",
+   "status": "present",
+   "quote": "john bonazoli, distribution engineering manager, unitil corp., referred to unitil letter dated april 17, 2014."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board encouraged the Police Chief to place advisory yellow signage (not state enforceable) on Leominster Shirley Road and move forward requesting state enforceable white signage.",
+   "quote": "board encouraged ch. marino to place advisory yellow (not state enforceable) signage"
+  },
+  {
+   "decision": "The Board will issue a letter to NuGen stating that solar and utilities are exempted uses under Ch. 40A, Section 3 and that NuGen will return within six months to readdress the situation.",
+   "quote": "the board will issue a letter to nugen stating that"
+  },
+  {
+   "decision": "Once the Board approves an option, Unitil will proceed to order the necessary equipment for 265 Pleasant Street Solar.",
+   "quote": "once the board approves an option, unitil will then proceed to order the necessary equipment."
+  },
+  {
+   "decision": "The Board will review the Agricultural Commission bylaw article and take a vote at its May 3, 2014 pre-Town Meeting Board meeting.",
+   "quote": "board will review the article and take a vote at their may 3, 2014 pre- town meeting board meeting."
+  },
+  {
+   "decision": "Board consensus that the Emerald Place meter-access problem is under the jurisdiction of the Water Department, not the Planning Board.",
+   "quote": "board consensus was that this is under the jurisdiction of the water department; not the planning board."
+  },
+  {
+   "decision": "A minor administrative change will be made on the Town Meeting floor to Section 4.16.10., Documentation, of the medical marijuana bylaw.",
+   "quote": "there will be a minor administrative change made on town meeting floor to section 4.16.10., documentation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street Corridor design",
+   "what_was_recorded": "Town is at 25% design for the Summer Street Corridor and funds are not currently available to complete design.",
+   "figures_as_printed": [
+    "25%"
+   ],
+   "quote": "town is currently at 25% design for the summer street corridor."
+  },
+  {
+   "topic": "265 Pleasant Street Solar grid deadline",
+   "what_was_recorded": "The solar project must be on the grid by June 30, 2014, and the matter has legal and financial ramifications for the Town; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "this has both legal and financial ramifications for the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "129 Pleasant Street",
+   "topic": "letter on solar array on Pleasant Street",
+   "quote": "greg bittner, 129 pleasant street - read letter into record regarding"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Town liability due to sight distance on Leominster Shirley Road",
+   "quote": "carl luck, 50 sunset lane - inquired as to town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Greg Bittner letter on solar array",
+   "resolution": "letter read into record; on file",
+   "tags": [
+    "solar",
+    "public comment"
+   ],
+   "quote": "greg bittner, 129 pleasant street - read letter into record regarding"
+  },
+  {
+   "topic": "Speed/Traffic, 305 Leominster Shirley Road",
+   "resolution": "discussed; Board encouraged advisory signage and state white signage request",
+   "tags": [
+    "traffic",
+    "sight distance",
+    "signage"
+   ],
+   "quote": "board encouraged ch. marino to place advisory yellow (not state enforceable) signage"
+  },
+  {
+   "topic": "265 Pleasant Street Solar",
+   "resolution": "temporary permission for four-pole design approved, review by December 29, 2014",
+   "tags": [
+    "solar",
+    "Unitil",
+    "utility poles",
+    "underground wiring"
+   ],
+   "quote": "motion, n. lockwood to give temporary permission to use the four pole design as discussed"
+  },
+  {
+   "topic": "ANR Endorsements: 115 Fairview Road and 317 Sunny Hill Road",
+   "resolution": "both ANR plans endorsed",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "sewer"
+   ],
+   "quote": "317 sunny hill road- motion, d. mcquaid, to endorse anr plan, second, e. bakaysa, all aye."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes of 4-14-14 and 4-14-14 Public Hearing approved (result not printed)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion, e. bakaysa , to approve 4-14-14, second, d. mcquaid."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "Agricultural Commission bylaw to be voted May 3; other committees no report or no update",
+   "tags": [
+    "committees",
+    "Agricultural Commission",
+    "Right to Farm"
+   ],
+   "quote": "bylaw placed on town warrant."
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "noted; Highfield Village hearing continuation set for May 12, 2014; Emerald Place item referred to Water Department",
+   "tags": [
+    "development",
+    "Highfield Village",
+    "Emerald Place",
+    "White Tail Crossing",
+    "Town Meeting"
+   ],
+   "quote": "highfield village- in house tech meeting with town departments was held april 23, 2014."
+  },
+  {
+   "topic": "Action file: medical marijuana (RMD) bylaw",
+   "resolution": "recommended for adoption at Town Meeting",
+   "tags": [
+    "marijuana",
+    "bylaw",
+    "Town Meeting"
+   ],
+   "quote": "motion, n. lockwood, to recommend adoption of the medical marijuana bylaw at town meeting, second, m. allison, all aye."
+  },
+  {
+   "topic": "250 Whalom Road, Lunenburg Village",
+   "resolution": "general discussion; no action",
+   "tags": [
+    "zoning",
+    "Zoning Board of Appeals"
+   ],
+   "quote": "250 whalom road, lunenburg village- general discussion of current status with zoning board of appeals."
+  },
+  {
+   "topic": "Master Plan / Housing Production Plan",
+   "resolution": "noted; MRPC to work on Housing Element and new plan",
+   "tags": [
+    "master plan",
+    "housing",
+    "MRPC"
+   ],
+   "quote": "the town's housing production plan expired in 2011."
+  },
+  {
+   "topic": "Data information: letter on 71 Main Street",
+   "resolution": "noted",
+   "tags": [
+    "DPW",
+    "correspondence"
+   ],
+   "quote": "noted letter to dpw director from resident regarding 71 main street."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; three meetings listed",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "may 12, 2014, 6:30 pm, town hall, highfield village hearing followed by board meeting"
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "discussion; Village District Bylaw to be a priority; Summer Street design funds not available",
+   "tags": [
+    "Village District Bylaw",
+    "AASHTO",
+    "Summer Street",
+    "Building Reuse"
+   ],
+   "quote": "d. mcquaid noted that the village district bylaw needs to be a priority for board discussion"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:15 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn, e. bakaysa, second, d. mcquaid, adjourned 10:15 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter dated 4-28-14, Resident Gregory Bittner",
+   "where": "list",
+   "quote": "letter dated 4-28-14, resident gregory bittner"
+  },
+  {
+   "name": "Minutes 4-14-14",
+   "where": "list",
+   "quote": "minutes 4-14-14 public hearing"
+  },
+  {
+   "name": "Minutes 4-14-14 Public Hearing",
+   "where": "list",
+   "quote": "minutes 4-14-14 public hearing"
+  },
+  {
+   "name": "115 Fairview Road ANR",
+   "where": "list",
+   "quote": "115 fairview road anr"
+  },
+  {
+   "name": "317 Sunny Hill Road ANR",
+   "where": "list",
+   "quote": "317 sunny hill road anr"
+  },
+  {
+   "name": "Unitil Letter to Town Manager dated April 17, 2014",
+   "where": "list",
+   "quote": "unitil letter to town manager dated april 17, 2014"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom Update",
+   "where": "list",
+   "quote": "emerald place at lake whalom update"
+  },
+  {
+   "name": "Registered Marijuana Dispensary Bylaw Town Meeting Handout",
+   "where": "list",
+   "quote": "registered marijuana dispensary bylaw town meeting handout"
+  },
+  {
+   "name": "White Tail Crossing Release Deed",
+   "where": "list",
+   "quote": "white tail crossing release deed"
+  },
+  {
+   "name": "Sewer Commission memo (complete memo on file in Planning Office)",
+   "where": "text",
+   "quote": "(complete memo on file in planning office.)"
+  },
+  {
+   "name": "ANR Handbook",
+   "where": "text",
+   "quote": "c. fleck disagreed and noted that the anr handbook"
+  },
+  {
+   "name": "Schematic of pole layout",
+   "where": "text",
+   "quote": "(schematic available at meeting)"
+  },
+  {
+   "name": "Letter from resident regarding 71 Main Street",
+   "where": "text",
+   "quote": "noted letter to dpw director from resident regarding 71 main street."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar",
+  "Unitil",
+  "ANR endorsement",
+  "traffic",
+  "sight distance",
+  "marijuana bylaw",
+  "Town Meeting",
+  "Highfield Village",
+  "master plan",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2016-01-12",
  "docid": "1223",
@@ -12,47 +12,332 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the October 27, 2015 meeting as written",
-   "moved_by": "Dennis Mannone",
-   "seconded_by": "John Henshaw",
+   "motion": "Approve the minutes of the October 27, 2015 meeting as written.",
+   "moved_by": "Dennis",
+   "seconded_by": "John",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "the minutes of the october 27, 2015 meeting. dennis made a motion to approve the minutes as written and john seconded the motion. the committee approved the motion by a vote of 3-0."
+   "quote": "dennis made a motion to approve the minutes as written and john seconded the motion. the committee approved the motion by a vote of 3-0."
   },
   {
-   "motion": "Approve the minutes of the December 29, 2015 meeting as written",
-   "moved_by": "Dennis Mannone",
-   "seconded_by": "Heather Sroka",
+   "motion": "Approve the minutes of the December 29, 2015 meeting as written.",
+   "moved_by": "Dennis",
+   "seconded_by": "Heather",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "the minutes of the december 29, 2015 meeting. dennis made a motion to approve the minutes as written and heather seconded the motion. the committee approved the motion by a vote of 4-0."
+   "quote": "dennis made a motion to approve the minutes as written and heather seconded the motion. the committee approved the motion by a vote of 4-0."
   },
   {
-   "motion": "Approve the minutes of the January 5, 2016 meeting as written",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Heather Sroka",
+   "motion": "Approve the minutes of the January 5, 2016 meeting as written.",
+   "moved_by": "John",
+   "seconded_by": "Heather",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "the minutes of the january 5, 2016 meeting. john made a motion to approve the minutes as written and heather seconded the motion. the committee approved the motion by a vote of 4-0."
+   "quote": "john made a motion to approve the minutes as written and heather seconded the motion. the committee approved the motion by a vote of 4-0."
   },
   {
-   "motion": "Append John Londa's email to the asbestos abatement request",
-   "moved_by": "Dennis Mannone",
-   "seconded_by": "John Henshaw",
+   "motion": "Append John Londa's email regarding the asbestos abatement project to the asbestos abatement request.",
+   "moved_by": "Dennis",
+   "seconded_by": "John",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "dennis made a motion to append john londa's email to the asbestos abatement request. john seconded the motion. the committee approved the motion 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Heather Sroka",
-   "seconded_by": "Matthew Allison",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Heather",
+   "seconded_by": "Matt",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "heather made a motion to adjourn; matt seconded the motion. the committee approved the motion 4-0 and the meeting adjourned at 6:28."
+   "quote": "heather made a motion to adjourn; matt seconded the motion. the committee approved the motion 4-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR-read from scanned pages. All votes are clearly recorded with movers, seconders, and outcomes.",
- "cost_usd": 0.0884105
+ "note": "Scanned minutes read by OCR; some words are garbled (e.g., 'xIsx', 'liscenced') and the request table columns are scrambled, so figures are paired to items by printed order. Public comment was 'None' at both points. Kip Wilson and John Londa are named but did not clearly appear; status left as not stated. Minutes were signed off by the clerk on January 17, 2016.",
+ "cost_usd": 0.00897072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: jamie toale, dennis mannone, heather sroka, matt allison, john henshaw"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: jamie toale, dennis mannone, heather sroka, matt allison, john henshaw"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: jamie toale, dennis mannone, heather sroka, matt allison, john henshaw"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: jamie toale, dennis mannone, heather sroka, matt allison, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: jamie toale, dennis mannone, heather sroka, matt allison, john henshaw"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry speidel, town manager; jack rodriquenz, director, dpw from 4:30 - 5:30"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Director, DPW",
+   "status": "present",
+   "quote": "also present: kerry speidel, town manager; jack rodriquenz, director, dpw from 4:30 - 5:30"
+  },
+  {
+   "name": "Kip Wilson",
+   "role": "",
+   "status": "not stated",
+   "quote": "kip wilson said that standard procedure was to re-paint these buildings every ten years."
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, School Department",
+   "status": "not stated",
+   "quote": "copy: jack rodriquenz john londa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consideration of the October 27, 2015 and January 5, 2016 minutes was tabled until the January 12, 2016 CPC meeting because no formal motion had been taken.",
+   "quote": "we will table consideration of these two sets of minutes until the cpc meeting of january 12, 2016."
+  },
+  {
+   "decision": "Dennis asked for a firm quote describing the scope of work for the Teen Center exterior painting project.",
+   "quote": "dennis requested a firm quote describing the scope of work of this project."
+  },
+  {
+   "decision": "DPW is to obtain the engineer's reconfiguration of each intersection and the required construction before estimating the cost of reconfiguring the intersections.",
+   "quote": "dpw to needs to have the engineer's reconfiguration of each intersection"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Records Room at Public Safety Building",
+   "what_was_recorded": "Priority #1 of 4 DPW facilities request estimated at $25,000 with no quote, based on the square footage of a room that may become the records room.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "there are no quotes: the $25,000 is an estimate based the size in square feet of a room that may become the records room."
+  },
+  {
+   "topic": "Exterior painting of the Teen Center",
+   "what_was_recorded": "Priority #2 of 4 facilities request for $12,000; the quote uses exterior grade paint and no scope of work is documented.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "exterior painting of the teen center $12,000"
+  },
+  {
+   "topic": "Exterior painting of the Eagle House",
+   "what_was_recorded": "Priority #3 of 4 facilities request for $15,000; wood deterioration makes this project more urgent.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "exterior painting of the eagle house $15,000. #3 of 4."
+  },
+  {
+   "topic": "Building Automation System, Public Safety Building",
+   "what_was_recorded": "Priority #4 of 4 facilities request for $12,000 to replace the unsupported front end controller.",
+   "figures_as_printed": [
+    "$12,000."
+   ],
+   "quote": "building automation system public safety building $12,000."
+  },
+  {
+   "topic": "Townsend Harbor Bridge",
+   "what_was_recorded": "FY2017 project request for $15,000 to repair the cracking abutments and bring guardrails up to code.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "townsend harbor bridge fy2017 $15,000"
+  },
+  {
+   "topic": "Reconfiguration of four intersections",
+   "what_was_recorded": "No priority and no estimate given; reconfiguration could not start before FY2018 at one intersection a year because of constraints of funds; federal funding was an option but a long process.",
+   "figures_as_printed": [],
+   "quote": "at the earliest the reconfiguration of these intersections would not be until fy2018 with one intersection reconfigured in a year-mainly because of the constraints of funds."
+  },
+  {
+   "topic": "Federal funding for intersection reconfiguration",
+   "what_was_recorded": "Federal funding was mentioned as an option for the intersection work but described as a long process.",
+   "figures_as_printed": [],
+   "quote": "federal funding is an option but jack said that was a long process"
+  },
+  {
+   "topic": "Catch Basin Cleaner attachment",
+   "what_was_recorded": "Priority #1 vehicle request for a catch basin cleaner attachment at $87,125 to replace the old, structurally weak equipment.",
+   "figures_as_printed": [
+    "$87,125."
+   ],
+   "quote": "the town needs new equipment needed to clean the catch basins. attachment--- $87,125."
+  },
+  {
+   "topic": "Re-work of the Intl 6-wheel dump truck",
+   "what_was_recorded": "Proposal to re-work and re-configure a 17-year-old snow truck and mount the catch basin attachment at $123,000, extending its life 15 years; the truck would need replacing in FY2018.",
+   "figures_as_printed": [
+    "$123,000"
+   ],
+   "quote": "attachment at $123,000. it would extend the life of the truck by another 15 years."
+  },
+  {
+   "topic": "Replacement of GMC and/or Chevy pick-up trucks",
+   "what_was_recorded": "Vehicle request for pick-up trucks at $53,000 each; possible candidates for school or fire department use.",
+   "figures_as_printed": [
+    "$53,000 each."
+   ],
+   "quote": "replace the gmc and/or chevy pick up trucks. $53,000 each."
+  },
+  {
+   "topic": "Turf track surface repair",
+   "what_was_recorded": "Track surface repair estimated at $150,000 with about one year to act; later sub-surface failure would cost a multiple of $150,000. Bond counsel says the track does not qualify for contingency fund spending.",
+   "figures_as_printed": [
+    "$150,000",
+    "$150,000"
+   ],
+   "quote": "repair the track surface at a cost of $150,000."
+  },
+  {
+   "topic": "Contingency fund eligibility for turf track and field",
+   "what_was_recorded": "Bond counsel advised that the turf track and field does not qualify for contingency fund expenditures.",
+   "figures_as_printed": [],
+   "quote": "bond counsel advises that the turf track and field does not qualify for contingency fund expenditures."
+  },
+  {
+   "topic": "Turf field renovation",
+   "what_was_recorded": "Turf field may last another year; renovation before systemic failure would reduce costs significantly.",
+   "figures_as_printed": [],
+   "quote": "renovation prior to systemic failure would reduce costs significantly"
+  },
+  {
+   "topic": "Asbestos abatement at Turkey Hill Middle School",
+   "what_was_recorded": "Londa's email says abatement was determined necessary as funds were available; he has seen no grant funding or other programs for asbestos removal in schools in 18 years.",
+   "figures_as_printed": [],
+   "quote": "i have not seen any grant funding or other programs that support removal or remediation of asbestos in schools"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Overview of requests",
+   "resolution": "no action; referred to Town Manager summary and DPW hand-outs",
+   "quote": "this is an overview of the requests. for details on specific requests, please refer to the town manager's",
+   "tags": [
+    "overview"
+   ]
+  },
+  {
+   "topic": "Department of Public Works FY2017 requests",
+   "resolution": "presented; Dennis asked for a firm quote on Teen Center painting; no vote",
+   "quote": "department of public works requests presented by jack rodriquenz.",
+   "tags": [
+    "public works",
+    "FY2017 requests",
+    "facilities",
+    "projects",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Turf track and field contingency eligibility",
+   "resolution": "no action; bond counsel advice noted",
+   "quote": "bond counsel advises that the turf track and field does not qualify for contingency fund expenditures.",
+   "tags": [
+    "turf track",
+    "contingency fund"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "Oct 27 approved 3-0; Dec 29 approved 4-0; Jan 5 approved 4-0",
+   "quote": "minutes of the october 27, 2015 and january 5, 2016 capital planning committee meetings:",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Committee discussion: asbestos email and capital process scope",
+   "resolution": "Londa email appended to asbestos request 5-0; discussion on including large projects, no decision",
+   "quote": "john briefed the committee on the email he had received from john londa",
+   "tags": [
+    "asbestos abatement",
+    "school department",
+    "capital process"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:28 pm, 4-0",
+   "quote": "heather made a motion to adjourn; matt seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "E Mail from John Londa re. Compliance to AHERA: Asbestos hazard Emergency Response Act.",
+   "where": "list",
+   "quote": "e mail from john londa re. compliance to ahera: asbestos hazard emergency response act."
+  },
+  {
+   "name": "Town Manager's summary dated December 17, 2015",
+   "where": "text",
+   "quote": "please refer to the town manager's summary dated december 17, 2015 in the capital planning committee all requests binder"
+  },
+  {
+   "name": "Capital Planning Committee All Requests binder",
+   "where": "text",
+   "quote": "in the capital planning committee all requests binder"
+  },
+  {
+   "name": "Department of Public Works hand-outs",
+   "where": "text",
+   "quote": "and the hand-outs from the department of public works."
+  },
+  {
+   "name": "Notice of Non Compliance dated November 19, 2012",
+   "where": "text",
+   "quote": "notice of non compliance dated november 19, 2012."
+  },
+  {
+   "name": "xlsx files of the projects (ranking spreadsheets)",
+   "where": "text",
+   "quote": "kerry sent xisx files of the projects to use to rank requests for the 1/22 meeting."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY2017 requests",
+  "public works",
+  "facilities",
+  "vehicles",
+  "bridges",
+  "turf track",
+  "asbestos abatement",
+  "school department",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachment (1):"
+ },
+ "dropped_unquoted_by_field": {}
 }

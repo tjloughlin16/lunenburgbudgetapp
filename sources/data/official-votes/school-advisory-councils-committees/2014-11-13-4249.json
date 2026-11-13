@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-11-13",
  "docid": "4249",
@@ -12,15 +12,14 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 10/30 and 10/23 meetings",
+   "motion": "Approve the minutes of the 10/30 and 10/23 meetings.",
    "moved_by": "Colleen Shapiro",
-   "seconded_by": "Brandon Kibbe",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "colleen shapiro made motion to approve minutes from 10/30 and 10/23 meetings. brandon kibbe moved the motion, vote: unanimous."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Heather Sroka",
    "seconded_by": "Louis Bettencourt",
    "outcome": "passed",
@@ -29,6 +28,180 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. Only procedural votes recorded (approval of prior minutes and adjournment). A nomination of Louis Bettencourt to develop guidelines was mentioned but was not voted on.",
- "cost_usd": 0.0843405
+ "note": "The minutes are headed Calendar Advisory Sub-Committee (Lunenburg Public Schools), not the board name given in the request. Minutes are a summary, not verbatim. The minutes say Colleen Shapiro made the motion on the minutes but also that Brandon Kibbe moved it; no seconder is printed. Lou Bettencourt is listed on the roster and Louis Bettencourt in the text; I used the roster name and noted the variant. Attendance is not formally taken; presence is inferred from participation where status is \"present\". No dollar figures or public comment section appear. Survey percentages are not budget items. The minutes do not record a formal vote on the nomination of Louis Bettencourt.",
+ "cost_usd": 0.00448822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Colleen Shapiro",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "colleen shapiro made motion to approve minutes from 10/30 and 10/23 meetings."
+  },
+  {
+   "name": "Ronald Hyatt",
+   "role": "SAC LHS",
+   "status": "not stated",
+   "quote": "ronald hyatt - sac lhs"
+  },
+  {
+   "name": "Ashley Wheeler",
+   "role": "SAC LHS",
+   "status": "absent",
+   "quote": "ashley wheeler-sac lhs- absent"
+  },
+  {
+   "name": "Gary Asher",
+   "role": "Former Lunenburg Family Practice, Health Advisory Committee",
+   "status": "absent",
+   "quote": "gary asher - former lunenburg family practice, health advisory committee-absent"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "SAC LPS",
+   "status": "present",
+   "quote": "brandon kibbe moved the motion, vote: unanimous."
+  },
+  {
+   "name": "Amanda Waltz",
+   "role": "Parent",
+   "status": "not stated",
+   "quote": "amanda waltz - parent"
+  },
+  {
+   "name": "Lou Bettencourt",
+   "role": "Parent",
+   "status": "present",
+   "quote": "louis bettencourt second the motion, meeting adjourned at 9:06pm."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka made motion to adjourn, louis bettencourt second the motion"
+  },
+  {
+   "name": "Ami Powers",
+   "role": "SAC THMS",
+   "status": "not stated",
+   "quote": "ami powers - sac thms"
+  },
+  {
+   "name": "Katie McGuire",
+   "role": "SAC LHS",
+   "status": "not stated",
+   "quote": "katie mcguire- sac lhs-"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "loxi brought back feedback from staff on some issues"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Group decided to present the calendar to the school committee as it was set at the 10/30 meeting, as originally discussed.",
+   "quote": "group decided to present calendar as we had set it on 10/30 meeting to school committee as originally discussed."
+  },
+  {
+   "decision": "Survey results to be released only after High School results are in, with a summary of comments and a thank-you to respondents.",
+   "quote": "we will wait for high school results, then release with summary of comments."
+  },
+  {
+   "decision": "Loxi Jo Calmes to run attendance to see how the PD day in conjunction with the holiday works.",
+   "quote": "loxi to run attendance to see how the pd day in conjuction with holiday."
+  },
+  {
+   "decision": "Brandon Kibbe nominated Louis Bettencourt to come up with a standard set of calendar guidelines.",
+   "quote": "brandon kibbe nominated louis bettencourt to come up with a standard set of guidelines."
+  },
+  {
+   "decision": "Next meetings set for November 20 and the 24th; agenda to cover guidelines, town clerk information, the 2016/2017 calendar, and firming up the calendar and how to present it.",
+   "quote": "next meetings to occur on november 20 and the 24th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "meeting called to order at 7:25pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "approved (10/30 and 10/23 minutes)",
+   "quote": "colleen shapiro made motion to approve minutes from 10/30 and 10/23 meetings.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of Survey Results",
+   "resolution": "discussed; High School results still pending; release held",
+   "quote": "results from survey monkey - downloaded into excel for easy reading.",
+   "tags": [
+    "survey",
+    "school calendar"
+   ]
+  },
+  {
+   "topic": "Update Regarding Meeting with School Calendar Committee",
+   "resolution": "discussed; guidelines nominated",
+   "quote": "internal calendar committee presents calendar to school committee in january.",
+   "tags": [
+    "school calendar",
+    "guidelines"
+   ]
+  },
+  {
+   "topic": "Begin Draft of Final Report",
+   "resolution": "decided to present calendar as set on 10/30",
+   "quote": "group decided to present calendar as we had set it on 10/30 meeting to school committee as originally discussed.",
+   "tags": [
+    "final report",
+    "school calendar"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:06pm; next meetings November 20 and 24",
+   "quote": "meeting adjourned at 9:06pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Survey Monkey survey results (downloaded into Excel)",
+   "where": "text",
+   "quote": "results from survey monkey - downloaded into excel for easy reading."
+  },
+  {
+   "name": "Proposed school calendar",
+   "where": "text",
+   "quote": "loxi brought our proposed calendar to"
+  }
+ ],
+ "tags": [
+  "school calendar",
+  "survey",
+  "half days",
+  "professional development days",
+  "calendar guidelines",
+  "school committee",
+  "Lunenburg Public Schools"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

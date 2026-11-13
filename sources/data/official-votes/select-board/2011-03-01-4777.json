@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-03-01",
  "docid": "4777",
@@ -12,31 +12,359 @@
  },
  "votes": [
   {
-   "motion": "approve appointment of Zachary Cutting to the Green Community Task Force",
+   "motion": "Approve the appointment of Zachary Cutting (Green Community Task Force).",
    "moved_by": "Tom",
    "seconded_by": "Dave",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom move to approve appointment of zachary cutting, dave second, voted unanimously."
   },
   {
-   "motion": "award Mrs. Green the Boston Post Cane",
+   "motion": "Congratulate and award Mrs. Ruth Green the Boston Post Cane.",
    "moved_by": "Dave",
    "seconded_by": "Tom",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dave move to congratulate and award mrs. green the boston post cane, tom seconded, voted unanimously."
   },
   {
-   "motion": "adjourn Regular Session",
+   "motion": "Appoint Zachary Cutting to the Green Community Task Force.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "board unanimously appointed zachary cutting to the green community task force."
+  },
+  {
+   "motion": "Adjourn the Regular Session and enter Executive Session under M.G.L. Chapter 39, §23B (3).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session"
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:10 p.m. and entered into executive session at this"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of meeting minutes. Three votes recorded: two substantive appointments/awards and one procedural adjournment vote. Minutes indicate board members present were Steven M. deBettencourt, Ernie Sund, Tom Alonzo, Dave Matthews, with Paula Bertram absent.",
- "cost_usd": 0.09656050000000001
+ "note": "Text is macOS Vision OCR with visible errors (e.g., \"Uniti\", \"Until\", \"DU\" likely meaning Unitil, DPU; \"Tom move\" and \"Dave second\" shorthand). Chair is not named in the text. Only three motions are recorded, all with unanimous results and no roll-call counts; the committee-appointment line is a second unanimous record of the same appointment. Votes on minutes and warrants are recorded only as \"reviewed and signed,\" so no vote was logged. Minutes contain an anachronism: \"Mrs. Ross passed away in December 2011,\" later than the 3/1/11 meeting date. Page 3 is a continuation of the Town Manager updates. Text ends with \"time.\" from a line break before the executive-session entry.",
+ "cost_usd": 0.00807872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry spieled present, paula bertram absent."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry spieled present, paula bertram absent."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry spieled present, paula bertram absent."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry spieled present, paula bertram absent."
+  },
+  {
+   "name": "Kerry Spieled",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry spieled present, paula bertram absent."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Select Board member",
+   "status": "absent",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry spieled present, paula bertram absent."
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Chairman of the Board of Assessors",
+   "status": "present",
+   "quote": "christopher comeau, chairman of the board of assessors announced that their office has installed a new cartographics system"
+  },
+  {
+   "name": "Zachary Cutting",
+   "role": "applicant for Green Community Task Force",
+   "status": "present",
+   "quote": "zachary cutting, green community task force - of 337 page street came before the board for a brief"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "presenter, Boston Post Cane",
+   "status": "present",
+   "quote": "doreen noble explained the history of the boston post cane, tradition"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kerry Spieled will provide a draft of her comments on the MMA health insurance hearing to the board before attending.",
+   "quote": "kerry will provide a draft of her comments to the board prior to attending."
+  },
+  {
+   "decision": "The Unitil petition copies will be provided to the board in Executive Session, where the Unitil rate matter is to be discussed further.",
+   "quote": "she has copies of the petition and will provide to the board in executive session."
+  },
+  {
+   "decision": "Board members asked to tell Linda whether they can attend one of the two Eagle Scout Honor Courts.",
+   "quote": "please let linda know if you will be able to attend one or the other so that she can inform the families."
+  },
+  {
+   "decision": "Solar Farm RFP: staff to meet Unitil next week and bring information back to the board within two weeks.",
+   "quote": "tentative meeting with unitil next week and should be able to bring this information back to the board within two weeks."
+  },
+  {
+   "decision": "Permanent Closure of Holman Street Bridge was tabled.",
+   "quote": "3. permanent closure of holman street bridge - tabled"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Three warrants were reviewed and signed with printed totals.",
+   "figures_as_printed": [
+    "$514,677.44",
+    "$410,066.58",
+    "$627,686.34"
+   ],
+   "quote": "warrants - #47 11, 2/22/11 - $514,677.44, #48 11, 3/1/11 - $410,066.58 and #18p 11, 3/3/11 - $627,686.34 reviewed and signed."
+  },
+  {
+   "topic": "Solid waste and recycling costs",
+   "what_was_recorded": "Board noted repeated questions on the cost of the recycling and trash components; the new contract will require each component's cost to be submitted. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "one of the questions that has been repeatedly asked has been on the costs of recycling portion as well as the trash program"
+  },
+  {
+   "topic": "MRPC grant for Summer Street",
+   "what_was_recorded": "Town received a grant from MRPC for Summer Street; contract received and reviewed by Town Counsel. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "kerry has received the contract for the grant that town received from mrpc for summer street"
+  },
+  {
+   "topic": "Health insurance cost sharing",
+   "what_was_recorded": "Cost sharing between town and employees moves to 75/25 as of July 1.",
+   "figures_as_printed": [
+    "75/25"
+   ],
+   "quote": "noted that as of july 1st we'll be going to 75/25 of cost sharing split between the town and employees."
+  },
+  {
+   "topic": "Health insurance tiering savings",
+   "what_was_recorded": "Manager said employees would save about 10% under tiering with little or no effect on providers.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "in almost all instances employees would be saving about 10% with little or no effect on their current providers."
+  },
+  {
+   "topic": "Health insurance savings",
+   "what_was_recorded": "Dave said a few thousand dollars could make a significant savings for the budget.",
+   "figures_as_printed": [
+    "a few thousand dollars"
+   ],
+   "quote": "noted that a few thousand dollars could make a significant savings for our budget"
+  },
+  {
+   "topic": "Unitil rate increase costs",
+   "what_was_recorded": "Board discussed storm-related costs cited in the Unitil request (generators, lost food, housing). No figures printed.",
+   "figures_as_printed": [],
+   "quote": "noted all of the issues incurred as a result of the storm, costs of generators, lost food, housing for them"
+  },
+  {
+   "topic": "Solar farm financial impact",
+   "what_was_recorded": "Staff working with Unitil to understand the financial impact to customers; board not comfortable with information received. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "to get a better understanding of what the financial impact could be to the customers"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Christopher Comeau",
+   "stated_role": "Chairman of the Board of Assessors",
+   "topic": "New Cartographics mapping system",
+   "quote": "christopher comeau, chairman of the board of assessors announced that their office has installed a new cartographics system which is now on line."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment - Assessors Cartographics system",
+   "resolution": "informational, no action",
+   "tags": [
+    "assessors",
+    "mapping",
+    "GIS"
+   ],
+   "quote": "christopher comeau, chairman of the board of assessors announced that their office has installed a new cartographics system"
+  },
+  {
+   "topic": "Appointments - Zachary Cutting interview",
+   "resolution": "approved appointment",
+   "tags": [
+    "appointments",
+    "green community"
+   ],
+   "quote": "tom move to approve appointment of zachary cutting, dave second, voted unanimously."
+  },
+  {
+   "topic": "Boston Post Cane",
+   "resolution": "awarded to Ruth E. Green",
+   "tags": [
+    "boston post cane",
+    "awards"
+   ],
+   "quote": "dave move to congratulate and award mrs. green the boston post cane, tom seconded, voted unanimously."
+  },
+  {
+   "topic": "Review RFP for Solid Waste & Recycling Program",
+   "resolution": "discussed, no action",
+   "tags": [
+    "solid waste",
+    "recycling",
+    "procurement"
+   ],
+   "quote": "review rfp for solid waste & recycling program (tentative) - kerry informed the board that our current contract expires on june 30, 2011"
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "reviewed and signed",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "minutes - board of selectmen regular session for 1/16/10, 2/8/11, 2/10/11, 2/15/11 and executive session for 2/8/11 & 2/15/11"
+  },
+  {
+   "topic": "Committee Updates - budget working group and Finance Committee",
+   "resolution": "discussed; Tom asked that budget stay on Old Business agenda until Town Meeting",
+   "tags": [
+    "budget",
+    "health insurance",
+    "finance committee"
+   ],
+   "quote": "dave budget working group met informally last night, informational meeting."
+  },
+  {
+   "topic": "Department Updates",
+   "resolution": "none reported",
+   "tags": [],
+   "quote": "5. department updates - none"
+  },
+  {
+   "topic": "Town Manager Updates - MRPC grant, Eagle Scout courts, MMA health insurance hearing",
+   "resolution": "discussed; Kerry to provide draft comments; board members asked to tell Linda about Eagle Scout courts",
+   "tags": [
+    "grants",
+    "health insurance",
+    "eagle scout",
+    "MMA"
+   ],
+   "quote": "kerry has received the contract for the grant that town received from mrpc for summer street"
+  },
+  {
+   "topic": "Unitil Rate Increase Request",
+   "resolution": "intervener status; to be discussed in Executive Session",
+   "tags": [
+    "unitil",
+    "rate case",
+    "utilities"
+   ],
+   "quote": "we were granted intervener status which means we can participate to whatever level this board deems as appropriate"
+  },
+  {
+   "topic": "Solar Farm RFP",
+   "resolution": "status update, continued",
+   "tags": [
+    "solar",
+    "unitil",
+    "green community"
+   ],
+   "quote": "status update; still not ready to move forward with this."
+  },
+  {
+   "topic": "Permanent Closure of Holman Street Bridge",
+   "resolution": "tabled",
+   "tags": [
+    "bridge",
+    "holman street"
+   ],
+   "quote": "3. permanent closure of holman street bridge - tabled"
+  },
+  {
+   "topic": "Committee Appointments - Green Community Task Force",
+   "resolution": "appointed Zachary Cutting unanimously",
+   "tags": [
+    "appointments",
+    "green community"
+   ],
+   "quote": "board unanimously appointed zachary cutting to the green community task force."
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered executive session",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ],
+   "quote": "m.g.l. chapter 39, §23b (3) to discuss strategy with respect to collective bargaining or litigation if an open meeting may"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Unitil petition (copies)",
+   "where": "text",
+   "quote": "she has copies of the petition and will provide to the board in executive session."
+  },
+  {
+   "name": "RFP for Solid Waste & Recycling Program (tentative)",
+   "where": "text",
+   "quote": "review rfp for solid waste & recycling program (tentative) - kerry informed the board that our current contract expires on june 30, 2011"
+  },
+  {
+   "name": "MRPC grant contract for Summer Street",
+   "where": "text",
+   "quote": "kerry has received the contract for the grant that town received from mrpc for summer street"
+  },
+  {
+   "name": "Warrants #47 11 (2/22/11), #48 11 (3/1/11), #18P 11 (3/3/11)",
+   "where": "text",
+   "quote": "warrants - #47 11, 2/22/11 - $514,677.44, #48 11, 3/1/11 - $410,066.58 and #18p 11, 3/3/11 - $627,686.34 reviewed and signed."
+  },
+  {
+   "name": "Board of Selectmen Regular session minutes for 1/16/10, 2/8/11, 2/10/11, 2/15/11 and Executive Session minutes for 2/8/11 & 2/15/11",
+   "where": "text",
+   "quote": "minutes - board of selectmen regular session for 1/16/10, 2/8/11, 2/10/11, 2/15/11 and executive session for 2/8/11 & 2/15/11"
+  }
+ ],
+ "tags": [
+  "boston post cane",
+  "solid waste contract",
+  "recycling",
+  "health insurance",
+  "unitil rate case",
+  "solar farm",
+  "appointments",
+  "budget",
+  "warrants",
+  "executive session",
+  "assessors cartographics",
+  "eagle scout",
+  "MRPC grant"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

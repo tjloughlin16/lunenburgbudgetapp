@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-03-10",
  "docid": "4920",
@@ -12,15 +12,260 @@
  },
  "votes": [
   {
-   "motion": "Appoint Steve Walker, Rhonda Lisio, Tom Alonzo, Paula Bertram and Jamie Toale to the Cable Advisory Committee",
+   "motion": "Appoint Steve Walker, Rhonda Lisio, Tom Alonzo, Paula Bertram and Jamie Toale to the Cable Advisory Committee.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2°: p. luck to appoint steve walker, rhonda lisio, tom alonzo, paula bertram and jamie toale to the cable advisory committee vote: all in favor"
+   "quote": "to appoint steve walker, rhonda lisio, tom alonzo, paula bertram and jamie toale to the cable advisory committee"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR-scanned; vote is clearly readable.",
- "cost_usd": 0.0982825
+ "note": "OCR text (macOS Vision) of three pages; some characters garbled (e.g. 'March 18t', 'March 17\"', 'Passios'). The only recorded motion is the Cable Advisory Committee appointment; no motions to approve minutes, adjourn, or enter executive session appear. Items under the PUBLIC COMMENT heading are board and staff announcements; the minutes state there was no public comment. Warrants and minutes were presented and signed without a recorded vote.",
+ "cost_usd": 0.00599132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Ken Chenis",
+   "status": "not stated",
+   "quote": "ken chenis reported on the montachusett joint transportation commission (mjtc) meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Cable Advisory Committee discussion was continued to the next week's meeting.",
+   "quote": "the discussion will be continued at next week's meeting."
+  },
+  {
+   "decision": "The minutes of October 7, 2014 were presented and signed, and the payroll deduction, payroll and accounts payable warrants were presented and signed (no vote recorded).",
+   "quote": "minutes of october 7, 2014 were presented and signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY'16 state local aid (Governor's budget)",
+   "what_was_recorded": "Chapter 70 is to increase 2.4% and Unrestricted General Government Aid 3.6%, more than anticipated; the 40S payment's continuation is uncertain.",
+   "figures_as_printed": [
+    "2.4%",
+    "3.6 %"
+   ],
+   "quote": "chapter 70 will receive an increase of 2.4% and unrestricted general government aid will have a 3.6 % increase"
+  },
+  {
+   "topic": "Health insurance renewal",
+   "what_was_recorded": "Health insurance renewal increased 10.9%, against a projected 7%.",
+   "figures_as_printed": [
+    "10.9%",
+    "7%"
+   ],
+   "quote": "health insurance renewal has increased 10.9%; she had projected 7%."
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "The Monty Tech assessment is not yet known and may be about $48,000 more than the preliminary budget listed.",
+   "figures_as_printed": [
+    "$48,000"
+   ],
+   "quote": "it may possibly be $48,000 more than listed on the preliminary budget."
+  },
+  {
+   "topic": "FEMA reimbursement for snowstorms",
+   "what_was_recorded": "Total snowstorm costs are around $300,000; the town has the potential to be reimbursed 70% by FEMA; the Governor filed legislation to allow amortizing over two years.",
+   "figures_as_printed": [
+    "$300,000",
+    "70%",
+    "two years"
+   ],
+   "quote": "the total costs the town incurred during those storms is around $300,000."
+  },
+  {
+   "topic": "40S payment",
+   "what_was_recorded": "The FY'16 budget recommendation includes the FY'15 40S payment; the Governor may add a second payment not anticipated. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "it also included the 40s payment which she is not sure if that will stay or not."
+  },
+  {
+   "topic": "Cherry Sheet charges",
+   "what_was_recorded": "Overall Cherry Sheet charges were about what was expected. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cherry sheet charges overall were about what we were expecting."
+  },
+  {
+   "topic": "Payroll and accounts payable warrants",
+   "what_was_recorded": "Payroll deduction, payroll and accounts payable warrants were presented and signed.",
+   "figures_as_printed": [
+    "$487,168.37",
+    "$705,849.91",
+    "$386,626.77"
+   ],
+   "quote": "payroll deduction warrant in the amount of $487,168.37; payroll warrant in the amount of $705,849.91 and the accounts payable warrant of $386,626.77 were presented and signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no public comment; board and staff announcements read",
+   "quote": "there was no comment from the public.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Cable Advisory Committee appointments",
+   "resolution": "appointed five members; discussion continued",
+   "quote": "the discussion will be continued at next week's meeting.",
+   "tags": [
+    "cable",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "FY'16 budget review",
+   "resolution": "discussion only, no action",
+   "quote": "ms. speidel stated that governor baker has released his budget.",
+   "tags": [
+    "budget",
+    "state aid",
+    "health insurance",
+    "Monty Tech"
+   ]
+  },
+  {
+   "topic": "FEMA snowstorm reimbursement",
+   "resolution": "reported; no action",
+   "quote": "ms. speidel reported the blizzard in january was certified and we will get fema reimbursement.",
+   "tags": [
+    "FEMA",
+    "snowstorms"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes and warrants presented and signed",
+   "quote": "minutes of october 7, 2014 were presented and signed.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Storm water management joint meeting announcement",
+   "resolution": "announced; no action",
+   "quote": "mr. alonzo announced the board had a 7:30 pm appointment with the planning board to discuss storm water management.",
+   "tags": [
+    "stormwater",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "board of health-no report since last meeting",
+   "tags": [
+    "committee reports",
+    "village center",
+    "APD",
+    "PACC",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Adjournment to workshop",
+   "resolution": "next meeting March 17; board exited to workshop",
+   "quote": "there was no further public or board comment.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Payroll deduction warrant, payroll warrant and Accounts Payable warrant",
+   "where": "text",
+   "quote": "payroll deduction warrant in the amount of $487,168.37; payroll warrant in the amount of $705,849.91"
+  },
+  {
+   "name": "Governor Baker's FY'16 state budget",
+   "where": "text",
+   "quote": "governor baker has released his budget."
+  },
+  {
+   "name": "Monty Tech preliminary budget",
+   "where": "text",
+   "quote": "we do not have a preliminary assessment from monty tech yet."
+  },
+  {
+   "name": "FEMA application for the multiple snowstorms",
+   "where": "text",
+   "quote": "mr. alonzo asked if there was any news on fema application for the multiple snowstorms."
+  },
+  {
+   "name": "Village Center District bylaw draft and map",
+   "where": "text",
+   "quote": "village center district bylaw draft and map and the architectural preservation district draft bylaws"
+  },
+  {
+   "name": "Architectural Preservation District draft bylaws",
+   "where": "text",
+   "quote": "architectural preservation district draft bylaws"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "FY16 budget",
+  "state local aid",
+  "FEMA",
+  "snowstorm costs",
+  "cable committee",
+  "appointments",
+  "warrants",
+  "committee reports",
+  "Monty Tech",
+  "health insurance",
+  "stormwater",
+  "village center bylaw"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

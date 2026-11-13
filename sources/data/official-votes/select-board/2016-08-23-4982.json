@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-08-23",
  "docid": "4982",
@@ -12,53 +12,430 @@
  },
  "votes": [
   {
-   "motion": "To authorize Chairman Toale to sign the letter of support as amended",
+   "motion": "Authorize Chairman Toale to sign the letter of support for the Town of Lancaster Massworks grant, as amended and read.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-1",
+   "outcome": "passed 4 in favor, 1 opposed (Ebersole)",
    "procedural": false,
-   "quote": "motion: p. bertram 21d: p. luck to authorize chairman toale to sign the letter as amended and read vote: 4 in favor, 1 opposed (ebersole)"
+   "quote": "motion: p. bertram 21d: p. luck to authorize chairman toale to sign the letter as amended and read vote: 4 in favor, 1 opposed"
   },
   {
-   "motion": "To extend the Colonial contract as presented",
+   "motion": "Extend the Colonial contract as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "motion: r. ebersole to extend the colonial contract as presented 2\"d: t. alonzo vote: all in favor"
   },
   {
-   "motion": "To approve the supply contract with ConEdison Solutions for one year",
+   "motion": "Approve the one-year supply contract with ConEdison Solutions.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "motion: r. ebersole znd. p. bertram to approve the supply contract with conedison solutions for one year vote: all in favor"
   },
   {
-   "motion": "To approve and execute the boundary line and the release of claim agreements concerning 64 Chestnut Street",
+   "motion": "Approve and execute the boundary line and release of claim agreements concerning 64 Chestnut Street.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'': t. alonzo to approve and execute the boundary line and the release of claim agreements concerning 64 chestnut street ms. bertram asked for clarification on blank lines remaining in the agreement. ms. lafleur stated the \"consideration paid of\" line would be filled in with $1.00 and the \"plan entitled\" line is coming from the survey company hired by the town as it is being modified for recording. it is not known what it will be called until it is received. it will allow the property owner to move forward on her sale of the property. further discussion ensued on the plan. vote: all in favor"
+   "quote": "motion: r. ebersole 2'': t. alonzo to approve and execute the boundary line and the release of claim agreements concerning 64 chestnut street"
   },
   {
-   "motion": "To ratify the Town Manager appointment of Christopher Clark to DPW/Heavy Equipment Operator",
+   "motion": "Ratify the Town Manager appointment of Christopher Clark to DPW/Heavy Equipment Operator.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "motion: t. alonzo 2\": p. bertram to ratify the town manager appointment of christopher clark to dpw/heavy equipment operator vote: all in favor"
-  },
-  {
-   "motion": "To approve the minutes of August 2, 2016",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of august 2, 2016 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR macOS Vision extraction. Minor OCR artifacts present in names of seconders (21d, 2\"d, znd, 2'', 2\":) which have been copied verbatim as they appear in the scan.",
- "cost_usd": 0.1555605
+ "note": "OCR (macOS Vision) scan with garbled passages: the PAYT paragraph under item 6 is partly unreadable, and the heading \"Ratity\" is likely \"Ratify\". Seconder marks such as \"21d\", \"2\\\"d\", \"znd.\", \"2''\" and \"2\\\": \" are read as 2nd. No adjournment vote is recorded, and the minutes do not record a motion for approving the August 2 minutes. The request to amend the August minutes was made with no motion recorded.",
+ "cost_usd": 0.011557920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Mark Cappadona",
+   "role": "from Colonial Power",
+   "status": "present",
+   "quote": "she introduced mark cappadona from colonial power."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz presented an update of the program."
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "sue doherty, council on aging director, reported in june that the council on aging (coa) voted to amend the"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "COA Chairman",
+   "status": "present",
+   "quote": "coa chairman pete lincoln reported the coa has prepared a letter to ms. lafleur."
+  },
+  {
+   "name": "Elaine Mroz",
+   "role": "",
+   "status": "present",
+   "quote": "elaine mroz, 64 chestnut street and 3 riley road, stated she was as frustrated as the board about the lack of promptness on this matter."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of August 2, 2016 were approved (no motion, mover or tally recorded).",
+   "quote": "minutes of august 2, 2016 were approved."
+  },
+  {
+   "decision": "The Board signed the accounts payable warrant, the payroll warrant and the payroll deductions warrant.",
+   "quote": "the board signed an accounts payable warrant in the amount of $374, 882.79; a payroll warrant in the amount of $265,404.39 and a payroll deductions warrant in the amount of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Massworks letter for Lancaster / Water District Intermunicipal Agreement",
+   "what_was_recorded": "No dollar figure printed for the grant or the agreement.",
+   "quote": "the water district board voted in support of the project and has begun drafting an intermunicipal agreement with lancaster."
+  },
+  {
+   "topic": "Municipal aggregation consultant fee and supply rate",
+   "what_was_recorded": "Consultant fee added to the supply rate; new one-year supply rate is .09661, stated as 7.46% lower than the contract ending.",
+   "figures_as_printed": [
+    ".001 per kilowatt hour",
+    ".09661",
+    "7.46%"
+   ],
+   "quote": "their consultant fee is .001 per kilowatt hour which is added on to the supply rate on the utility bill."
+  },
+  {
+   "topic": "Boundary agreement consideration, 64 Chestnut Street",
+   "what_was_recorded": "The consideration line in the agreement would be filled in with $1.00.",
+   "figures_as_printed": [
+    "$1.00"
+   ],
+   "quote": "line would be filled in with $1.00 and the"
+  },
+  {
+   "topic": "Residential pavement storm drainage costs",
+   "what_was_recorded": "Storm drainage cost estimated per drainage basin across 600 basins.",
+   "figures_as_printed": [
+    "$850.00",
+    "600",
+    "$510,000"
+   ],
+   "quote": "the cost was estimated at $850.00 per drainage basin with 600 basins amounting to $510,000"
+  },
+  {
+   "topic": "Residential pavement management program funding",
+   "what_was_recorded": "Board thanked voters for approving the program funding; no figure printed.",
+   "quote": "he also thanked the voters for approving the funding."
+  },
+  {
+   "topic": "Warrants signed at August 23 meeting",
+   "what_was_recorded": "Accounts payable, payroll and payroll deductions warrants signed in the amounts printed.",
+   "figures_as_printed": [
+    "$374, 882.79",
+    "$265,404.39",
+    "$76,433.57"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $374, 882.79; a payroll warrant in the amount of $265,404.39 and a payroll deductions warrant in the amount of $76,433.57."
+  },
+  {
+   "topic": "PAYT larger bag pricing",
+   "what_was_recorded": "Proposed price for a 40-42 gallon, 1.75 mil bag; staff suggested no change until January 1, 2017 or later.",
+   "figures_as_printed": [
+    "$3.95 per bag"
+   ],
+   "quote": "ms. lafleur proposed charging $3.95 per bag."
+  },
+  {
+   "topic": "FY16 MIIA participation credits",
+   "what_was_recorded": "Town is receiving FY 2016 MIIA Rewards Credits.",
+   "figures_as_printed": [
+    "$8,848.00"
+   ],
+   "quote": "ms. lafleur reported the town is receiving $8,848.00 in fy 2016 miia rewards credits."
+  },
+  {
+   "topic": "Sewer betterments",
+   "what_was_recorded": "Sewer Commission meeting to determine betterments for the most recent project; no figure printed.",
+   "quote": "sewer commission is meeting tonight to determine betterments for the most recent project."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY 2016 Chapter 44, §33B transfers request",
+   "amount_as_printed": "not printed",
+   "outcome": "continued to the September 6 meeting",
+   "quote": "request to approve fy 2016 chapter 44, §33b transfers this will be continued to the september 6'' meeting."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "topic": "special town meeting",
+   "quote": "mr. toale thanked all who attended the special town meeting last night."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "topic": "Lake Shirley police patrol and Farmer's Market",
+   "quote": "ms. luck thanked the lunenburg police department for continuing to patrol lake shirley on sundays."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Boys and Girls Club color run",
+   "quote": "mr. alonzo announced the boys and girls club are holding their annual 'are we there yet sk color run' on"
+  },
+  {
+   "speaker": "Sue Doherty",
+   "stated_role": "Council on Aging Director",
+   "topic": "Eagle House Senior Community Center programs",
+   "quote": "sue doherty, council on aging director, reported in june that the council on aging (coa) voted to amend the"
+  },
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "COA Chairman",
+   "topic": "Council on Aging letter to Town Manager Lafleur",
+   "quote": "coa chairman pete lincoln reported the coa has prepared a letter to ms. lafleur."
+  },
+  {
+   "speaker": "Elaine Mroz",
+   "topic": "Boundary agreement timing, 64 Chestnut Street",
+   "quote": "elaine mroz, 64 chestnut street and 3 riley road, stated she was as frustrated as the board about the lack of promptness on this matter."
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "topic": "amend August minutes to record opposing voter",
+   "quote": "ms. bertram asked to amend the august minutes to record the opposing voter when a mixed vote is taken and"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "mr. toale thanked all who attended the special town meeting last night.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Discussion of letter of support for Town of Lancaster Massworks grant (cont.)",
+   "resolution": "approved (authorized Chairman to sign as amended, 4-1)",
+   "quote": "to authorize chairman toale to sign the letter as amended and read",
+   "tags": [
+    "grant",
+    "Lancaster",
+    "letter of support"
+   ]
+  },
+  {
+   "topic": "Lunenburg Municipal Aggregation: Colonial contract and ConEdison supply contract",
+   "resolution": "approved (extended Colonial contract; approved one-year supply contract)",
+   "quote": "to extend the colonial contract as presented",
+   "tags": [
+    "aggregation",
+    "electricity",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Execute boundary agreement, 64 Chestnut Street",
+   "resolution": "approved and executed",
+   "quote": "to approve and execute the boundary line and the release of claim agreements concerning 64 chestnut street",
+   "tags": [
+    "boundary",
+    "property",
+    "land"
+   ]
+  },
+  {
+   "topic": "Review proposed scope of work, residential pavement management program",
+   "resolution": "reviewed; no action",
+   "quote": "dpw director jack rodriquenz presented an update of the program.",
+   "tags": [
+    "roads",
+    "paving",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Ratify Town Manager appointment of DPW worker Christopher M. Clark",
+   "resolution": "ratified",
+   "quote": "to ratify the town manager appointment of christopher clark to dpw/heavy equipment operator",
+   "tags": [
+    "personnel",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Request to approve FY 2016 Chapter 44, §33B transfers",
+   "resolution": "continued to September 6 meeting",
+   "quote": "this will be continued to the september 6'' meeting.",
+   "tags": [
+    "transfers",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Cost of larger-sized PAYT bags",
+   "resolution": "no action; suggested no change until January 1, 2017 or later",
+   "quote": "she suggested not implementing any changes until january 1, 2017 or later as we order bags twice per year.",
+   "tags": [
+    "PAYT",
+    "trash",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File issues",
+   "resolution": "minutes approved; warrants signed; CBA presented for signatures",
+   "quote": "minutes of august 2, 2016 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "labor contract"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "mr. alonzo reported cable advisory committee meets monday where they will discuss pacc's business plan",
+   "tags": [
+    "committees",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Farewell to Town Manager Kerry Lafleur",
+   "resolution": "no action; remarks by Board and Town Manager",
+   "quote": "mr. toale announced tonight's meeting is ms. lafleur's last board meeting.",
+   "tags": [
+    "town manager",
+    "transition"
+   ]
+  },
+  {
+   "topic": "Town Manager report: FY16 MIIA participation credits",
+   "resolution": "reported",
+   "quote": "ms. lafleur reported the town is receiving $8,848.00 in fy 2016 miia rewards credits.",
+   "tags": [
+    "insurance",
+    "MIIA",
+    "credits"
+   ]
+  },
+  {
+   "topic": "Public comment (closing): amend August minutes",
+   "resolution": "request noted; no action recorded",
+   "quote": "ms. bertram asked to amend the august minutes to record the opposing voter when a mixed vote is taken and",
+   "tags": [
+    "minutes",
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft letter of support from the Lunenburg Board of Water Commissioners for the Town of Lancaster grant application",
+   "where": "text",
+   "quote": "ms. lafleur referred the board to a draft letter of support from the lunenburg board of water commissioners which they would be sending"
+  },
+  {
+   "name": "Draft support letter from the Board of Selectmen",
+   "where": "text",
+   "quote": "discussion ensued on a draft support letter from the board of selectmen."
+  },
+  {
+   "name": "Intermunicipal Agreement with Lancaster (draft)",
+   "where": "text",
+   "quote": "has begun drafting an intermunicipal agreement with lancaster."
+  },
+  {
+   "name": "Colonial Power consulting services agreement and twelve-month supply (rate) contract with ConEdison Solutions",
+   "where": "text",
+   "quote": "there are actually two agreements; one for the consulting services and the other for the twelve month supply (rate) contract."
+  },
+  {
+   "name": "Boundary line agreement and release of claim agreement, 64 Chestnut Street (two originals of each)",
+   "where": "text",
+   "quote": "she presented two originals of each document."
+  },
+  {
+   "name": "List of roads and calendar year for residential pavement management program",
+   "where": "text",
+   "quote": "he presented the list of roads and the calendar year they will be addressed."
+  },
+  {
+   "name": "Council on Aging letter to Town Manager Kerry Lafleur",
+   "where": "text",
+   "quote": "coa chairman pete lincoln reported the coa has prepared a letter to ms. lafleur."
+  },
+  {
+   "name": "Collective bargaining agreement between the Town of Lunenburg and the Laborer's International Union of North America, Public Employees, Local 39",
+   "where": "text",
+   "quote": "ms. lafleur presented the collective bargaining agreement between the town of lunenburg and the laborer's international union of north america, public employees, local 39 for signatures."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "municipal aggregation",
+  "boundary agreement",
+  "pavement management",
+  "PAYT",
+  "warrants",
+  "town manager transition",
+  "committee reports",
+  "MIIA credits",
+  "Lancaster Massworks"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

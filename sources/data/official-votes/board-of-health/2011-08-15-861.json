@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-08-15",
  "docid": "861",
@@ -12,31 +12,232 @@
  },
  "votes": [
   {
-   "motion": "Approve the septic system request at 281 West Street (Riddle property) conditioned on ANR approval, easement being granted and recorded, and strip of property at rear of lot being conveyed",
+   "motion": "Approve the 281 West Street (Riddle) request conditioned on the ANR being approved, the easement being granted and recorded, and the strip of property at the rear of the lot being conveyed.",
    "moved_by": "Rabbitt",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by rabbitt and second by shea, the board approved the request conditioned on the anr being approved, the easement being granted and recorded and the strip of property at the rear of the lot being conveyed. all in favor."
+   "quote": "after discussion and on motion by rabbitt and second by shea, the board approved the request conditioned on the anr being approved"
   },
   {
-   "motion": "Accept the Title 5 report for 607 Reservoir Road as passing",
+   "motion": "Accept the Title 5 report for 607 Reservoir Road as a passing report.",
    "moved_by": "Rabbitt",
    "seconded_by": "Daniels",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by rabbitt and second by daniels, the board voted to accept the title report as passing. all in favor."
+   "quote": "on motion by rabbitt and second by daniels, the board voted to accept the title report as passing."
   },
   {
-   "motion": "Elect Troy Daniels as Chairman of the Board of Health",
+   "motion": "Elect Troy Daniels as Chairman of the Board of Health.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Dave Shea",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "jack rabbitt nominated troy daniels, nomination was seconded by dave shea. mr. daniels accepted in the nomination and was elected unanimously."
+   "procedural": false,
+   "quote": "daniels accepted in the nomination and was elected unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08679550000000001
+ "note": "Text extracted from a typed document, not a scan. Some words split by OCR and are reproduced as printed in quotes: 'Jack Rab bitt' in the roll call (spelled 'Jack Rabbitt' in the motion text, used here), 'Later recinded', 'Oth er board members'. Votes are recorded as 'All in favor' or 'unanimously' with no numeric count. The 'Minutes Approved' line at the top is blank. The Gorman role is not stated. No dollar figures appear in the minutes. The adjournment has no recorded motion. No public comment section is printed; applicants and owners are listed as attendees only.",
+ "cost_usd": 0.0053008199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, jack rab bitt and troy daniels"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, jack rab bitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, jack rab bitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman george emond, dave shea, jack rab bitt and troy daniels"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "not stated",
+   "status": "present",
+   "quote": "neil gorman together with owner alton cole met with the board"
+  },
+  {
+   "name": "Alton Cole",
+   "role": "owner",
+   "status": "present",
+   "quote": "neil gorman together with owner alton cole met with the board"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "representing the owner of the property",
+   "status": "present",
+   "quote": "steve marsden met with the board representing the owner of the property."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent jim garreffi stated that abutters were required to be notified of this hearing."
+  },
+  {
+   "name": "John Glover",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "john and virginia glover, owners of the property, met with the board"
+  },
+  {
+   "name": "Virginia Glover",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "john and virginia glover, owners of the property, met with the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed to a reduction in the wetland offset at 338 Sunset Lane from the 100 foot requirement to 57 feet proposed, subject to Conservation Commission approval; Gorman and Cole must meet the Conservation Commission.",
+   "quote": "oth er board members are in agreement.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "The Board would request a drilled well at 338 Sunset Lane.",
+   "quote": "the board would request a drilled well."
+  },
+  {
+   "decision": "Agent Garreffi to send a letter to the owner of 609/611 Reservoir Road; the owner was advised by phone not to drink the water until the well is chlorinated and retested.",
+   "quote": "agent jim garreffi advised that he will send a letter to the owner of 609/611 reservoir road."
+  },
+  {
+   "decision": "Chairman Emond signed the building permit for the new DPW storage building on behalf of the Board of Health, conditioned on there being no toilets or sanitary facilities in the building.",
+   "quote": "after review, chairman emond signed same on behalf of the board of health conditioned on there being no toilets or sanitary facilities in the building."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed; 127 Highland Avenue noted as Conditional Pass",
+   "tags": [
+    "Title 5",
+    "septic"
+   ],
+   "quote": "title 5 inspection reports reviewed : 127 highland avenue - conditional pass"
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed; 281 West Street noted as later rescinded",
+   "tags": [
+    "septic permits"
+   ],
+   "quote": "septic permits signed : 281 west street - later recinded"
+  },
+  {
+   "topic": "338 Sunset Lane (Cole) vacant lot development",
+   "resolution": "discussed; board open to wetland offset reduction and would request a drilled well; no vote recorded",
+   "tags": [
+    "septic",
+    "wetlands",
+    "well",
+    "Conservation Commission"
+   ],
+   "quote": "the board would request a drilled well."
+  },
+  {
+   "topic": "281 West Street (Riddle) failed system",
+   "resolution": "approved conditionally",
+   "tags": [
+    "septic",
+    "easement",
+    "ANR plan",
+    "abutter notification"
+   ],
+   "quote": "after discussion and on motion by rabbitt and second by shea, the board approved the request"
+  },
+  {
+   "topic": "607 Reservoir Road Title 5 and well testing",
+   "resolution": "accepted as passing",
+   "tags": [
+    "Title 5",
+    "well testing",
+    "water quality"
+   ],
+   "quote": "on motion by rabbitt and second by daniels, the board voted to accept the title report as passing."
+  },
+  {
+   "topic": "New DPW storage building permit",
+   "resolution": "permit signed by Chairman, conditioned on no toilets",
+   "tags": [
+    "building permit",
+    "DPW"
+   ],
+   "quote": "after review, chairman emond signed same on behalf of the board of health conditioned on there being no toilets or sanitary facilities in the building."
+  },
+  {
+   "topic": "Reorganization of board",
+   "resolution": "Troy Daniels elected Chairman unanimously",
+   "tags": [
+    "board reorganization",
+    "election"
+   ],
+   "quote": "daniels accepted in the nomination and was elected unanimously."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:32 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "having no further business before the board, the meeting was adjourned at 8:32 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Building permit for the construction of the new DPW storage building",
+   "where": "text",
+   "quote": "the building permit for the construction of the new dpw storage building was submitted for signature."
+  },
+  {
+   "name": "ANR Plan for the subdivision of land (281 West Street)",
+   "where": "text",
+   "quote": "mr. marsden advised that an anr plan for the subdivision of land as well as the required"
+  },
+  {
+   "name": "Easement for the 281 West Street septic system (from adjoining property owner)",
+   "where": "text",
+   "quote": "the system being proposed requires an easement from the adjoining property owner."
+  },
+  {
+   "name": "Title 5 inspection report for 607 Reservoir Road",
+   "where": "text",
+   "quote": "the report was submitted as a conditional pass due to the proximity of wells to the septic system."
+  }
+ ],
+ "tags": [
+  "Title 5",
+  "septic systems",
+  "wetlands offset",
+  "well testing",
+  "water quality",
+  "building permit",
+  "DPW",
+  "board reorganization",
+  "election of chair"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

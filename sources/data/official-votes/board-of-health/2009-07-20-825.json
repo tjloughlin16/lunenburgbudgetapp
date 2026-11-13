@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-07-20",
  "docid": "825",
@@ -12,23 +12,122 @@
  },
  "votes": [
   {
-   "motion": "Approve variance request for 802 Chase Road septic system and well replacement",
-   "outcome": "passed unanimously",
+   "motion": "Approve the variance request for 802 Chase Road (replacement well and septic system on a small high-water-table lot).",
    "moved_by": "Sund",
    "seconded_by": "Rabbitt",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "on motion by sund and second by rabbitt, the request was unanimously approved."
+   "quote": "after discussion and on motion by sund and second by rabbitt, the request was unanimously approved."
   },
   {
-   "motion": "Approve variance request for 408 Chase Road well installation with reduced setback distance",
-   "outcome": "passed unanimously",
+   "motion": "Approve the variance request for 408 Chase Road (new drilled well, distance from property line reduced from 50 feet to 43 feet).",
    "moved_by": "Shea",
    "seconded_by": "Sund",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "on motion by shea and second by sund the request for variance was unanimously approved"
+   "quote": "after discussion and on motion by shea and second by sund the request for variance was unanimously approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision. Header states \"Minutes Approved\" but records no formal motion on that item.",
- "cost_usd": 0.0889915
+ "note": "Text is OCR of the minutes (macOS Vision); the attendance line is out of order and reads oddly, so names were taken from it as printed. A 'Minutes Approved:' heading appears on page 1 with no motion or vote recorded. The adjournment at 8:25 pm was recorded without a motion, so it is not listed as a vote. No dollar figures appear. The Title 5 list is printed without votes or outcomes beyond the 45 Page Hill Road entry. The OCR text does not show the applicant or owner names for 408 Chase Road.",
+ "cost_usd": 0.00266112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: rabbitt chairman george emond, members ernie sund, david shea, and jack"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: rabbitt chairman george emond, members ernie sund, david shea, and jack"
+  },
+  {
+   "name": "David Shea",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: rabbitt chairman george emond, members ernie sund, david shea, and jack"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: rabbitt chairman george emond, members ernie sund, david shea, and jack"
+  },
+  {
+   "name": "George Sullivan",
+   "role": "of David E. Ross and Associates",
+   "status": "present",
+   "quote": "george sullivan of david e. ross and associates met with the board to request variances"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Septic permits were listed as signed for 12 Robbs Hill Terrace, Lot 36; 747 Flat Hill Road; and 802 Chase Road, Lot 17.",
+   "quote": "septic permits signed: 12 robbs hill terrace, lot 36 747 flat hill road 802 chase road, lot 17"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "no action (reviewed)",
+   "quote": "title 5 inspection reports reviewed:",
+   "tags": [
+    "Title 5",
+    "septic",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "listed as signed",
+   "quote": "septic permits signed:",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "802 Chase Road variance request",
+   "resolution": "approved",
+   "quote": "802 chase road - variance request",
+   "tags": [
+    "variance",
+    "well",
+    "septic",
+    "high water table"
+   ]
+  },
+  {
+   "topic": "408 Chase Road variance request",
+   "resolution": "approved",
+   "quote": "408 chase road - variance request",
+   "tags": [
+    "variance",
+    "well",
+    "property line"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Board of Health",
+  "Title 5",
+  "septic",
+  "variances",
+  "wells",
+  "Chase Road",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

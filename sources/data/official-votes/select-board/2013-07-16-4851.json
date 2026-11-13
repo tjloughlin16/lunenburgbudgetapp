@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-07-16",
  "docid": "4851",
@@ -12,79 +12,473 @@
  },
  "votes": [
   {
-   "motion": "approve change of manager at Lakeview Club, 449 Whalom Rd",
-   "moved_by": "Jamie Toale",
-   "seconded_by": "Robert Ebersole",
+   "motion": "Approve the change of Manager at the Lakeview Club, 449 Whalom Rd.",
+   "moved_by": "Mr. Toale",
+   "seconded_by": "Mr. Ebersole",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. toale moved to approve the change of manager at the lakeview club, 449 whalom rd. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "approve one day extension of premises license for Lakeview Club on August 24, 2013 from 9 a.m. to 9 p.m.",
-   "moved_by": "David Matthews",
-   "seconded_by": "Jamie Toale",
+   "motion": "Approve the One Day Extension of Premises License for Lakeview Club, 449 Whalom Rd., on August 24, 2013, from 9 a.m. - 9 p.m.",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the one day extension of premises license for lakeview club, 449 whaom ra on august 24, 2013, from 9 a.m. - 9 p.m. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. matthews moved to approve the one day extension of premises license for lakeview club, 449 whaom ra on august 24, 2013, from 9 a.m. - 9 p.m."
   },
   {
-   "motion": "approve Common Victualler's License for Tarrnum Williams d/b/a Kabob-E-Licious, 165 Mass Avenue, contingent on Food Service License approval",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "David Matthews",
+   "motion": "Approve the request for the Common Victualler's License for Tarrnum Williams d/b/a Kabob-E-Licious, 165 Mass Avenue, contingent upon approval of the Food Service License.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mir. ebersole moved to approve the request for the common victualler's license, contingent upon the approval of the food service license for tarrnum williams d/b/a kabob-e-licious, 165 mass avenue. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "moved to approve the request for the common victualler's license, contingent upon the approval of the food service license for tarrnum williams d/b/a kabob-e-licious, 165 mass avenue."
   },
   {
-   "motion": "approve one day beer and wine license for Conrad's Drive-In, Inc., 835 Massachusetts Avenue on August 2, 2013 from 3-9 p.m.",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Jamie Toale",
+   "motion": "Approve a One Day Liquor License for Conrad's Drive-In, Inc., 835 Massachusetts Avenue, on August 2, 2013, from 3-9 p.m.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve a one day liquor license for conrad's drive-in, inc. 835 massachusetts avenue on august 2, 2013 from 3-9 p.m. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to approve a one day liquor license for conrad's drive-in, inc. 835 massachusetts avenue on august 2, 2013 from 3-9 p.m."
   },
   {
-   "motion": "approve Class 2 License for Custom Auto Sales & Storage, 39 Massachusetts Avenue, pending receipt of CORI check",
-   "moved_by": "David Matthews",
-   "seconded_by": "Jamie Toale",
+   "motion": "Approve the Class 2 License for Custom Auto Sales & Storage, 39 Massachusetts Avenue, pending receipt of the CORI check.",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the request of the class 2 license for custom auto sales & storage, 39 massachusetts avenue, pending the receipt of the cori check. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. matthews moved to approve the request of the class 2 license for custom auto sales & storage, 39 massachusetts avenue, pending the receipt of the cori check."
   },
   {
-   "motion": "approve Power Purchase Agreement with NuGen Capital Management, LLC as presented",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "David Matthews",
+   "motion": "Approve the PPA with NuGen Capital Management, LLC as presented.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. ebersole moved to approve the ppa with nugen capital management, llc as presented. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "approve amendments to Power Purchase Agreement with EPG Solar as presented",
-   "moved_by": "David Matthews",
-   "seconded_by": "Robert Ebersole",
+   "motion": "Approve the amendments to the PPA with EPG Solar as presented.",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Mr. Ebersole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mir. matthews moved to approve the amendments to the ppa with epg solar as presented. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mir. matthews moved to approve the amendments to the ppa with epg solar as presented."
   },
   {
-   "motion": "re-appoint Shirley McBride to Registrar of Voters",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "David Matthews",
+   "motion": "Re-appoint Shirley McBride to Registrar of Voters.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. ebersole moved to re-appoint shirley mcbride to registrar of voters. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Jamie Toale",
-   "seconded_by": "David Matthews",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Toale",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "being no further business, mr. toale moved to adjourn the meeting. mr. matthews seconded. on vote, motion carried, 4 in favor, o opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Several minor OCR errors present: \"Mir.\" for \"Mr.\" in votes 3 and 7; \"Whaom Ra\" for \"Whalom Rd\" in vote 2; \"Tarrnum\" (unclear if correct); \"O opposed\" for \"0 opposed\" in final vote. All votes recorded with explicit vote counts (4-0 in each case). The board had four members voting; Town Manager Kerry Speidel attended but did not vote.\"",
- "cost_usd": 0.1346455
+ "note": "Scanned page run through macOS Vision OCR with garbled words (e.g. 'Whaom Ra', 'Mir.', 'costiy', 'July 2gth'); quotes copy the OCR text as printed. Page 1 opening is cut off: the chair's name and the start of the attendance line are missing, and the Kabob-E-Licious applicant intro is missing, so the text begins mid-item on page 2. Conrad's and Custom Auto intros are partly truncated. The 7:00 PM public comment was a Chair reminder, not a speaker. Transfers were mentioned (a couple to be asked of the BOS and Finance Committee) but no amounts or votes were recorded. The minutes/warrants list was printed with no motion or vote. Warrant dates and amounts do not pair clearly in the OCR text.",
+ "cost_usd": 0.012427420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "alonzo, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "absent",
+   "quote": "absent: paula bertram"
+  },
+  {
+   "name": "Danielle Bettencourt",
+   "role": "representing the Lakeview Club",
+   "status": "present",
+   "quote": "danielle bettencourt, representing the lakeview club came before the"
+  },
+  {
+   "name": "Tarrnum Williams",
+   "role": "applicant, d/b/a Kabob-E-Licious",
+   "status": "present",
+   "quote": "ms. williams replied yes and they told her to go through the process of plumbing & electrical inspections which"
+  },
+  {
+   "name": "David H. Leet",
+   "role": "representing Conrad's Drive-In",
+   "status": "present",
+   "quote": "david h. leet, 835 mass ave, representing conrad's drive-in came before the bos to request a one"
+  },
+  {
+   "name": "Rocco Lastella",
+   "role": "applicant, Custom Auto Sales & Storage",
+   "status": "present",
+   "quote": "rocco lastella, 146 elmwood rd. came before the bos to request approval for class 2 license for"
+  },
+  {
+   "name": "Attorney Holland",
+   "role": "Kopelman & Paige",
+   "status": "present",
+   "quote": "attorney holland from kopelman & paige came before the bos to report on the ppa's with nugen and epg"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant Lakeview Club to contact the Police Chief about the police detail for the August 24 event; applicant agreed.",
+   "quote": "ms. speidel asked that if this approved, that the applicant be in touch with the police chief about the detail. ms. bettencourt agreed."
+  },
+  {
+   "decision": "Town Manager to contact Andy Sheehan of Townsend to work out IMA terms; the IMA item remains a work in progress.",
+   "quote": "he recommended that ms. speidel contact andy sheehan from townsend to work out the terms in the ima."
+  },
+  {
+   "decision": "BOS Policies & Procedures placed on the July 23 agenda, with a workshop to discuss them on July 29.",
+   "quote": "bos policies & procedures will be placed on the july 23d agenda and they will also hold a workshop to discuss these items on july 2gth"
+  },
+  {
+   "decision": "Engineer to review the Tri Town fence and access plans again.",
+   "quote": "ms. speidel replied yes and that they will have the engineer review the plans again."
+  },
+  {
+   "decision": "Town Manager to draft a letter to the Town Political Parties asking for recommendations for Other Election Officers; item to go on the August 6, 2013 BOS agenda.",
+   "quote": "ms. speidel will draft a letter to the town political parties asking for their recommendations for other election officers and this matter will be put on the bos august 6, 2013 agenda."
+  },
+  {
+   "decision": "Unitil rate case to be placed on the next BOS agenda as a detailed report.",
+   "quote": "this will be an agenda item for the next bos meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Custom Auto Sales & Storage Class 2 License bond",
+   "what_was_recorded": "If approved, the applicant must provide a $25,000 bond before the license issues.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "if the bos approves this license the applicant will need to provide a $25,000 bond."
+  },
+  {
+   "topic": "Conrad's Drive-In one-day beer and wine sales donation",
+   "what_was_recorded": "Twenty percent of beer sale profits from the Classic Car Show will go to the Lunenburg Boys & Girls Club.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "20% of the profits from the beer sales will be given to the lunenburg boys & girls club."
+  },
+  {
+   "topic": "NuGen and EPG net metering credit purchases (IMA and PPAs)",
+   "what_was_recorded": "Counsel said the Town could potentially purchase well over 4M Wh per year of net metering credits under both agreements; no dollar figure given.",
+   "figures_as_printed": [
+    "4M Wh per year"
+   ],
+   "quote": "the town could be potentially purchasing well over 4m wh per year worth of net metering credits."
+  },
+  {
+   "topic": "PILOT amount approved at Town Meeting",
+   "what_was_recorded": "The BOS stated the PILOT amount approved at Town Meeting was approximately $18,800.",
+   "figures_as_printed": [
+    "$18,800"
+   ],
+   "quote": "the amount that was approved at town meeting was approximately $18,800."
+  },
+  {
+   "topic": "Parks Building Phase 1 Environmental report cost",
+   "what_was_recorded": "The Phase 1 Environmental report on the Parks Building on West St. will cost $3000 and be ready in about one month.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "the cost to do the report will be $3000 and should be ready in approximately 1 month."
+  },
+  {
+   "topic": "Mass Ave gas station LSP proposal",
+   "what_was_recorded": "The LSP's proposal for the Mass Ave gas station was described as a little more costly; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "he put together a proposal which is a little more costiy."
+  },
+  {
+   "topic": "Unitil rate case residential impact",
+   "what_was_recorded": "Unitil's rate case changes would raise residential bills by 50 cents per month.",
+   "figures_as_printed": [
+    "50 cent per month"
+   ],
+   "quote": "all of the changes that they are looking for will result in a 50 cent per month increase to residential customers."
+  },
+  {
+   "topic": "Warrants approved or listed",
+   "what_was_recorded": "Warrant amounts listed under Minutes/Warrants/Action File Issues; no vote recorded and the dates do not pair clearly with the amounts in the OCR.",
+   "figures_as_printed": [
+    "$236,805.80",
+    "$792,768.14",
+    "$508,340.10",
+    "$502,615.62"
+   ],
+   "quote": "$236,805.80 $792,768.14 $508,340.10 $502,615.62"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening public comment",
+   "resolution": "no action (Chair reminder about band concerts)",
+   "quote": "mr. alonzo reminded all of the band concerts being held at the lower common gazebo on monday evenings.",
+   "tags": [
+    "public comment",
+    "events"
+   ]
+  },
+  {
+   "topic": "Lakeview Club change of manager and one day extension of premises license",
+   "resolution": "approved both (4-0)",
+   "quote": "danielle bettencourt, representing the lakeview club came before the",
+   "tags": [
+    "licensing",
+    "alcohol",
+    "Whalom Rd"
+   ]
+  },
+  {
+   "topic": "Kabob-E-Licious Common Victualler's License",
+   "resolution": "approved, contingent on Food Service License (4-0)",
+   "quote": "moved to approve the request for the common victualler's license, contingent upon the approval of the food service license",
+   "tags": [
+    "licensing",
+    "restaurant",
+    "Mass Ave"
+   ]
+  },
+  {
+   "topic": "Conrad's Drive-In one day liquor license",
+   "resolution": "approved (4-0)",
+   "quote": "david h. leet, 835 mass ave, representing conrad's drive-in came before the bos to request a one",
+   "tags": [
+    "licensing",
+    "alcohol",
+    "car show"
+   ]
+  },
+  {
+   "topic": "Custom Auto Sales & Storage Class 2 License (public hearing)",
+   "resolution": "approved pending CORI check (4-0)",
+   "quote": "rocco lastella, 146 elmwood rd. came before the bos to request approval for class 2 license for",
+   "tags": [
+    "licensing",
+    "public hearing",
+    "used cars",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Report on PPAs with NuGen and EPG Solar and IMA with Townsend",
+   "resolution": "report received, no action",
+   "quote": "attorney holland from kopelman & paige came before the bos to report on the ppa's with nugen and epg",
+   "tags": [
+    "net metering",
+    "solar",
+    "legal"
+   ]
+  },
+  {
+   "topic": "IMA with Town of Townsend for resale of net metering credits",
+   "resolution": "work in progress, no vote",
+   "quote": "approve ima with town of townsend for resale of net metering credits: attorney holland explained",
+   "tags": [
+    "net metering",
+    "intermunicipal agreement",
+    "Townsend"
+   ]
+  },
+  {
+   "topic": "PPA with NuGen (formerly Mass PV1 project)",
+   "resolution": "approved (4-0)",
+   "quote": "approve ppa and/ or pilot agreement with nugen (formerly mass pv1 project): attorney holland",
+   "tags": [
+    "net metering",
+    "solar",
+    "PPA",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "Revised PPA with EPG Solar",
+   "resolution": "amendments approved (4-0); PILOT pending assessor information",
+   "quote": "approve revised ppa and/or pilot agreement with epg solar: attorney holland explained that epg",
+   "tags": [
+    "net metering",
+    "solar",
+    "PPA",
+    "PILOT",
+    "bankruptcy"
+   ]
+  },
+  {
+   "topic": "BOS Policies & Procedures workshop date",
+   "resolution": "set for July 23 agenda and July 29 workshop",
+   "quote": "bos policies & procedures will be placed on the july 23d agenda and they will also hold a workshop to discuss these items on july 2gth",
+   "tags": [
+    "policies",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues (Tri Town fence)",
+   "resolution": "discussed; engineer to review plans; no vote recorded",
+   "quote": "action file issues: mr. matthews questioned the status of the fence issue at tri town.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "Tri Town",
+    "fence",
+    "fire access"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received, no action",
+   "quote": "building reuse committee - mr. toale reported that the committee met last night",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "reports received; Unitil item to next agenda",
+   "quote": "ms. speidel mentioned that jones house is coming along quite nicely.",
+   "tags": [
+    "Jones House",
+    "Parks Building",
+    "Mass Ave gas station",
+    "fiscal 2013",
+    "Unitil rate case"
+   ]
+  },
+  {
+   "topic": "Registrar of Voters re-appointment and Other Election Officers",
+   "resolution": "Shirley McBride re-appointed (4-0); letter to political parties; back on August 6 agenda",
+   "quote": "registrar of voters - ms. speidel commented that we have two groups here",
+   "tags": [
+    "elections",
+    "appointments",
+    "registrar of voters"
+   ]
+  },
+  {
+   "topic": "Public comment and executive session",
+   "resolution": "none",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:43 p.m. (4-0)",
+   "quote": "meeting adjourned at 8:43 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum on Other Election Officers and political party affiliation (distributed by Town Manager)",
+   "where": "list",
+   "quote": "ms. speidel distributed a memorandum to the bos on who the people are for other election officers and what"
+  },
+  {
+   "name": "PPA with NuGen (formerly Mass PV1 project)",
+   "where": "list",
+   "quote": "informed the bos that he has negotiated a ppa with nugen and explained the document to them."
+  },
+  {
+   "name": "Amendments to the PPA with EPG Solar",
+   "where": "list",
+   "quote": "epg had requested some amendments to the ppa and reviewed each change with the board. (see attached)"
+  },
+  {
+   "name": "Notice of Public Hearing, Class 2 License for Custom Auto Sales & Storage",
+   "where": "text",
+   "quote": "reading and into record the notice of public hearing."
+  },
+  {
+   "name": "IMA with Town of Townsend for Resale of Net Metering Credits",
+   "where": "text",
+   "quote": "approve ima with town of townsend for resale of net metering credits: attorney holland explained"
+  },
+  {
+   "name": "Phase 1 Environmental report, Parks Building on West St.",
+   "where": "text",
+   "quote": "they will be doing a phase 1 environmental on the property which will help the bos to market the property."
+  },
+  {
+   "name": "Licensed Site Professional proposal, Mass Ave gas station",
+   "where": "text",
+   "quote": "he put together a proposal which is a little more costiy."
+  },
+  {
+   "name": "Unitil rate case filing",
+   "where": "text",
+   "quote": "ms. speidel was advised by unitil that they have filed a rate case"
+  }
+ ],
+ "tags": [
+  "licensing",
+  "alcohol",
+  "net metering",
+  "solar",
+  "PPA",
+  "PILOT",
+  "Tri Town",
+  "elections",
+  "appointments",
+  "Unitil",
+  "Town Manager reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. speidel distributed a memorandum to the bos on who the people are for other election officers"
+ },
+ "dropped_unquoted_by_field": {}
 }

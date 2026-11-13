@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2014-12-02",
  "docid": "1209",
@@ -12,13 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the Tuesday, November 18 CPC meeting, as corrected with the addition of the cost of asbestos abatement at Turkey Hill Middle School",
+   "motion": "Approve the minutes of the November 18 CPC meeting as corrected to add the cost of asbestos abatement at Turkey Hill Middle School.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "the committee approved the minutes of the tuesday, november 18 cpc meeting, 4-0 as corrected with the addition of the cost of asbestos abatement at turkey hill middle school."
+   "quote": "the committee approved the minutes of the tuesday, november 18 cpc meeting, 4-0 as corrected"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Heather",
    "seconded_by": "John",
    "outcome": "passed 4-0",
@@ -27,6 +29,231 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09730349999999999
+ "note": "Scanned page OCR in column layout. The Facilities table's line figures ($40,000 (Estimated), $28,000) could not be mapped to items with certainty, so they are recorded as printed. Joanna Bilotta-Simeone's absent status is inferred from the layout of the OCR text. Marjorie Boggio appears only in a 'c.' line and is not recorded as an attendee. The minutes do not state who moved or seconded the minutes approval. The December 9 scheduling was a decision without a recorded vote. The text ends with a '....' line and the minutes are unsigned by the chair.",
+ "cost_usd": 0.00712992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "absent",
+   "quote": "joanna bilotta-simeone"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Presented by",
+   "status": "present",
+   "quote": "presented by jack rodriquenz"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Convene a CPC meeting on December 9 to review capital requests; John Henshaw to draft the agenda, get Jamie Toale's approval, and have it posted by the Town Clerk's office.",
+   "quote": "the cpc decided to convene a meeting on december 9 to review capital requests."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Minutes amendment: asbestos abatement cost at Turkey Hill Middle School",
+   "what_was_recorded": "The November 18 minutes were corrected to add the cost of asbestos abatement at Turkey Hill Middle School; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "with the addition of the cost of asbestos abatement at turkey hill middle school."
+  },
+  {
+   "topic": "Facilities FY2016 capital requests overview",
+   "what_was_recorded": "Presented by Jack Rodriquenz, the Facilities FY2016 requests total $136,476; the line figures are printed in the table but their mapping to items is not clear in the scanned text.",
+   "figures_as_printed": [
+    "$25,000",
+    "$15,000",
+    "$28,476",
+    "$40,000 (Estimated)",
+    "$28,000",
+    "$136,476"
+   ],
+   "quote": "$40,000 (estimated) $28,000 $136,476"
+  },
+  {
+   "topic": "Library carpeting project",
+   "what_was_recorded": "Total library carpeting cost is $65,000, including $28,476 for moving and storing books during carpet replacement; the remaining $36,524 was approved as part of the FY2015 capital plan.",
+   "figures_as_printed": [
+    "$65,000",
+    "$28,476",
+    "$36,524"
+   ],
+   "quote": "the total cost is $65,000, which includes the"
+  },
+  {
+   "topic": "DPW paving and Chapter 90 funds",
+   "what_was_recorded": "Paving is requested at $600,000 per year as an annual cost, augmented by Chapter 90 funds, which have averaged about $400,000 per year in recent years.",
+   "figures_as_printed": [
+    "$600,000",
+    "$400,000"
+   ],
+   "quote": "this $600,000 would be an annual cost,"
+  },
+  {
+   "topic": "DPW FY2016 capital project requests overview",
+   "what_was_recorded": "Presented by Jack Rodriquenz, the DPW project requests total $701,gan 578 across four items: paving $600,000, intersection reconfiguration $40,850, outsourced culvert installation $48,728, and hazardous tree survey $12,000.",
+   "figures_as_printed": [
+    "$600,000",
+    "$40,850",
+    "$48,728",
+    "$12,000",
+    "$701,578"
+   ],
+   "quote": "$600,000 $40,850 $48,728 $12,000 $701,578"
+  },
+  {
+   "topic": "Tree removal funding",
+   "what_was_recorded": "Almost all tree removal would be outsourced and paid for from the operating budget; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "almost all tree removal would be outsourced and paid for from the operating budget."
+  },
+  {
+   "topic": "DPW FY2016 capital equipment requests",
+   "what_was_recorded": "Presented by Jack Rodriquenz, the three DPW equipment items total $490,000: street sweeper $180,000, backhoe/loader $120,000, and 6-wheel dump truck with plow and sander $190,000.",
+   "figures_as_printed": [
+    "$180,000",
+    "$120,000",
+    "$190,000",
+    "$490,000"
+   ],
+   "quote": "$190,000 • improve plowing efficiency, productivity. • significantly lower maintenance costs. $490,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of November 18 minutes",
+   "resolution": "approved 4-0 as corrected",
+   "quote": "the committee approved the minutes of the tuesday, november 18 cpc meeting, 4-0 as corrected",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Public Schools and Police FY2016 capital requests",
+   "resolution": "reviewed, no action recorded",
+   "quote": "as input for the fy2016 capital improvement plan, the cpc reviewed capital project requests of the public",
+   "tags": [
+    "capital plan",
+    "FY2016",
+    "public schools",
+    "police",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Department of Public Works FY2016 capital project and equipment requests",
+   "resolution": "reviewed, no action recorded",
+   "quote": "department of public works capital project requests fy2016, an overview",
+   "tags": [
+    "public works",
+    "roads",
+    "culverts",
+    "trees",
+    "equipment",
+    "FY2016"
+   ]
+  },
+  {
+   "topic": "Scheduling a December 9 meeting",
+   "resolution": "decided to convene December 9 meeting",
+   "quote": "the cpc decided to convene a meeting on december 9 to review capital requests.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 5:57 pm",
+   "quote": "heather moved to adjourn the meeting; john seconded her motion, and the committee voted 4-0 to adjourn at 5:57 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Planning Binder",
+   "where": "list",
+   "quote": "refer to the capital planning binder"
+  },
+  {
+   "name": "Pavement Condition Index [PCI] chart (attached)",
+   "where": "list",
+   "quote": "see attached chart on pavement condition index [pci"
+  },
+  {
+   "name": "Facilities Capital Project Requests FY2016, An Overview",
+   "where": "text",
+   "quote": "facilities capital project requests fy2016, an overview"
+  },
+  {
+   "name": "Department of Public Works Capital Project Requests FY2016, An Overview",
+   "where": "text",
+   "quote": "department of public works capital project requests fy2016, an overview"
+  },
+  {
+   "name": "Department of Public Works Capital Equipment Requests FY2016, An Overview",
+   "where": "text",
+   "quote": "department of public works capital equipment requests fy2016, an overview"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY2016 capital plan",
+  "public schools",
+  "police",
+  "public works",
+  "roads",
+  "equipment",
+  "budget",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "for details on the requests and for projected annual capital requirements"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-10-06",
  "docid": "1586",
@@ -12,45 +12,374 @@
  },
  "votes": [
   {
-   "motion": "Negative determination of applicability for removal of three oak trees at 36 May Street",
+   "motion": "Negative determination on the Request for Determination of Applicability filed by Frank E Moore for removal of three oak trees at 36 May Street (printed as 'Negative 3 Unanimous').",
    "moved_by": "Jack",
    "seconded_by": "Rich",
-   "outcome": "3-0 unanimous",
+   "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "jack/rich negative 3 unanimous"
+   "quote": "frank described the project and stated that three trees would be removed. jack/rich negative 3 unanimous"
   },
   {
-   "motion": "Negative determination of applicability for removal of trees at 36 Peninsula Drive",
+   "motion": "Negative determination on the Request for Determination of Applicability filed by Gloria R Gerry at 36 Peninsula Drive (printed as 'Negative 3 Unanimous').",
    "moved_by": "JJ",
    "seconded_by": "Mark",
-   "outcome": "3-0 unanimous",
+   "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "jj/mark negative 3 unanimous"
+   "quote": "only two trees will be removed. jj/mark negative 3 unanimous"
   },
   {
-   "motion": "Approval of selective cutting of trees within wetlands for construction of solar panels at 23 Valley Road",
+   "motion": "Action on the Notice of Intent filed by Carolyn McCarthy at 23 Valley Road (motion wording not printed; vote shown as '6 Yes 1 No').",
    "moved_by": "Rich",
    "seconded_by": "Mark",
    "outcome": "passed 6-1",
    "procedural": false,
-   "quote": "rich/mark 6 yes 1 no"
+   "quote": "the gas tank excavation will require a separate noi. rich/mark 6 yes 1 no"
   },
   {
-   "motion": "Negative determination of applicability for replacement of existing deck at 309 Townsend Harbor Road",
+   "motion": "Negative determination on the Request for Determination of Applicability filed by Melvin Bertram at 309 Townsend Harbor Road (printed as 'Negative 3 Unanimous'); Rich recused himself.",
    "moved_by": "Jack",
    "seconded_by": "Mark",
-   "outcome": "3-0 unanimous",
+   "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "jack/mark negative 3 unanimous rich recused himself."
-  },
-  {
-   "motion": "Amendment to Order of Conditions approved for replacement of tank and relocation of well at 25 May Street",
-   "outcome": "approved",
-   "procedural": false,
-   "quote": "tight tank and well location change approved."
+   "quote": "tom presented plan to replace deck. jack/mark negative 3 unanimous rich recused himself."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd document. Votes 1, 2, and 4 use shorthand notation (X/Y Negative 3 Unanimous) typical of Conservation Commission determinations of applicability. Vote 4 notes Rich recused; voting outcome shown as 3-0 unanimous with that recusal noted.",
- "cost_usd": 0.1410095
+ "note": "OCR text of a printed minutes page set; some words are garbled or hyphen-broken in extraction (e.g., 'Municipal. Bylaws', 'to_control'). Votes are recorded as shorthand (e.g., 'Jack/Rich Negative 3 Unanimous') with first names only and no motion wording, so motion text is paraphrased or marked as not printed. The 25 May Street approval has no motion or count and is recorded as a decision, not a vote. No dollar figures, transfers, procedural votes (minutes approval, adjournment, executive session), or document list heading appear in this text. Attendance is shown only as a list in the header with no present/absent marks.",
+ "cost_usd": 0.008133119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Lattanzi",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Rich Bursch",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Rob Verge",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "Commission member (listed in header)",
+   "status": "not stated",
+   "quote": "john lattanzi, jack byrne, mark murphy, jj cote, rich bursch, rob verge, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Frank E Moore",
+   "role": "applicant, 36 May Street Request for Determination",
+   "status": "present",
+   "quote": "frank described the project and stated that three trees would be removed."
+  },
+  {
+   "name": "Gloria R Gerry",
+   "role": "applicant, 36 Peninsula Drive Request for Determination",
+   "status": "not stated",
+   "quote": "filed by gloria r gerry."
+  },
+  {
+   "name": "David Gerry",
+   "role": "spoke on behalf of his mother (Gloria R Gerry)",
+   "status": "present",
+   "quote": "david gerry spoke on behalf of his mother."
+  },
+  {
+   "name": "Carolyn McCarthy",
+   "role": "applicant, 23 Valley Road Notice of Intent",
+   "status": "not stated",
+   "quote": "carolyn mccarthy (james rheault of whitman & bingham associates llc)."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "representing the applicant, Whitman & Bingham Associates LLC (agenda lists James Rheault)",
+   "status": "present",
+   "quote": "jamie rheault from whitman & bingham presented new plans which would include no stump removal."
+  },
+  {
+   "name": "Phil Porter",
+   "role": "representing Wilder Beach Association",
+   "status": "present",
+   "quote": "wilder beach association ~ phil porter, steve dipace, russell hume re: whalom spillway"
+  },
+  {
+   "name": "Steve DiPace",
+   "role": "representing Wilder Beach Association",
+   "status": "present",
+   "quote": "wilder beach association ~ phil porter, steve dipace, russell hume re: whalom spillway"
+  },
+  {
+   "name": "Russell Hume",
+   "role": "representing Wilder Beach Association",
+   "status": "present",
+   "quote": "wilder beach association ~ phil porter, steve dipace, russell hume re: whalom spillway"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "applicant, 69 Island Road Amended Order of Conditions (cancelled)",
+   "status": "not stated",
+   "quote": "filed by ron albert."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "agenda item: update on Hickory Hill management project",
+   "status": "not stated",
+   "quote": "8:15 pm ~ tom bertram ~ update on hickory hill management project"
+  },
+  {
+   "name": "Tom",
+   "role": "presented plan to replace deck at 309 Townsend Harbor Road (surname not printed in that entry)",
+   "status": "present",
+   "quote": "tom presented plan to replace deck."
+  },
+  {
+   "name": "Melvin Bertram",
+   "role": "applicant, 309 Townsend Harbor Road Request for Determination",
+   "status": "not stated",
+   "quote": "filed by melvin bertram."
+  },
+  {
+   "name": "Lois Herman",
+   "role": "applicant, 25 May Street Amended Order of Conditions",
+   "status": "not stated",
+   "quote": "lois herman (nathaniel e mahonen of hannigan engineering)."
+  },
+  {
+   "name": "Nathaniel E Mahonen",
+   "role": "representing the applicant, Hannigan Engineering",
+   "status": "not stated",
+   "quote": "lois herman (nathaniel e mahonen of hannigan engineering)."
+  },
+  {
+   "name": "Robert E Tucker",
+   "role": "applicant, 58 Brookview Terrace Request for Determination (cancelled)",
+   "status": "not stated",
+   "quote": "filed by robert e tucker."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tight tank and well location change at 25 May Street approved (Amended Order of Conditions filed by Lois Herman); no vote count or motion recorded.",
+   "quote": "tight tank and well location change approved."
+  },
+  {
+   "decision": "Commission suggested that the 23 Valley Road applicant have a selective cutting plan and a plan for crane cutting.",
+   "quote": "the commission suggested that they have a selective cutting plan and a plan for crane cutting."
+  },
+  {
+   "decision": "Commission stated the gas tank excavation at 23 Valley Road will require a separate Notice of Intent.",
+   "quote": "the gas tank excavation will require a separate noi."
+  },
+  {
+   "decision": "Wilder Beach Association will schedule to meet with the Commission again.",
+   "quote": "they will schedule to meet with the commission again."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Gerry",
+   "stated_role": "spoke on behalf of his mother",
+   "topic": "36 Peninsula Drive tree removal",
+   "quote": "david gerry spoke on behalf of his mother."
+  },
+  {
+   "speaker": "Phil Porter, Steve DiPace, Russell Hume",
+   "stated_role": "Wilder Beach Association",
+   "topic": "Whalom Spillway ownership and responsibility",
+   "quote": "the group met with the commission to inform them that the wilder beach association has been"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "36 May Street, Request for Determination (Frank E Moore), tree removal",
+   "resolution": "negative determination, 3-0",
+   "quote": "7:30 pm ~ 36 may street ~ pursuant to mgl ch 131, s 40 as amended",
+   "tags": [
+    "wetlands",
+    "tree removal",
+    "determination"
+   ]
+  },
+  {
+   "topic": "36 Peninsula Drive, Request for Determination (Gloria R Gerry), tree removal",
+   "resolution": "negative determination, 3-0",
+   "quote": "7:40 pm ~ 36 peninsula drive ~ pursuant to mgl ch 131, s 40 as amended",
+   "tags": [
+    "wetlands",
+    "tree removal",
+    "determination"
+   ]
+  },
+  {
+   "topic": "23 Valley Road, Notice of Intent (Carolyn McCarthy), selective cutting for solar panels",
+   "resolution": "vote 6-1, motion wording not printed; commission asked for cutting plans",
+   "quote": "7:50 pm ~ 23 valley road ~ pursuant to mgl ch 131, s 40 as amended",
+   "tags": [
+    "wetlands",
+    "solar panels",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Wilder Beach Association, Whalom Spillway",
+   "resolution": "no action; group to meet with Commission again",
+   "quote": "8:00 pm ~ wilder beach association ~ phil porter, steve dipace, russell hume re: whalom spillway",
+   "tags": [
+    "spillway",
+    "beach",
+    "ownership"
+   ]
+  },
+  {
+   "topic": "69 Island Road, Amended Order of Conditions (Ron Albert)",
+   "resolution": "cancelled",
+   "quote": "cancelled 8:15 pm ~ 69 island road",
+   "tags": [
+    "wetlands",
+    "cancelled"
+   ]
+  },
+  {
+   "topic": "Hickory Hill management project update",
+   "resolution": "no action recorded",
+   "quote": "8:15 pm ~ tom bertram ~ update on hickory hill management project",
+   "tags": [
+    "hickory hill",
+    "management"
+   ]
+  },
+  {
+   "topic": "309 Townsend Harbor Road, Request for Determination (Melvin Bertram), deck replacement",
+   "resolution": "negative determination, 3-0; Rich recused",
+   "quote": "8:25 pm ~ 309 townsend harbor road ~ pursuant to mgl ch 131, s 40 as amended and the town of",
+   "tags": [
+    "wetlands",
+    "deck",
+    "determination"
+   ]
+  },
+  {
+   "topic": "25 May Street, Amended Order of Conditions (Lois Herman), tight tank and well move",
+   "resolution": "tight tank and well location change approved",
+   "quote": "8:35 pm ~ 25 may street ~ pursuant to mgl ch 131, s 40 as amended and the town of lunenburg",
+   "tags": [
+    "wetlands",
+    "septic",
+    "well"
+   ]
+  },
+  {
+   "topic": "58 Brookview Terrace, Request for Determination (Robert E Tucker), tree removal",
+   "resolution": "cancelled",
+   "quote": "cancelled 8:45 pm ~ 58 brookview terrace ~ pursuant to mgl ch 131, s 40 as amended and the",
+   "tags": [
+    "wetlands",
+    "tree removal",
+    "cancelled"
+   ]
+  },
+  {
+   "topic": "250 Whalom Road, site development plans and environmental notification form review",
+   "resolution": "no action recorded",
+   "quote": "8:55 pm ~ 250 whalom road ~ review site development plans and environmental notification form",
+   "tags": [
+    "site plan",
+    "environmental notification"
+   ]
+  },
+  {
+   "topic": "47 Cliffview Terrace, addendum to Determination of Applicability",
+   "resolution": "no action recorded",
+   "quote": "9:05 pm ~ 47 cliffview terrace ~ addendum to determination of applicability for removal of 5 or 6 trees",
+   "tags": [
+    "tree removal",
+    "determination"
+   ]
+  },
+  {
+   "topic": "951 Northfield Road (Highfield Village) Extension",
+   "resolution": "no action recorded",
+   "quote": "9:10 pm ~ 951 northfield road (highfield village) extension",
+   "tags": [
+    "highfield village"
+   ]
+  },
+  {
+   "topic": "Signatures, Correspondence, etc.",
+   "resolution": "no action recorded",
+   "quote": "signatures, correspondence, etc.",
+   "tags": [
+    "correspondence",
+    "signatures"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "New plans for 23 Valley Road (presented by Jamie Rheault, Whitman & Bingham Associates LLC; no stump removal)",
+   "where": "text",
+   "quote": "jamie rheault from whitman & bingham presented new plans which would include no stump removal."
+  },
+  {
+   "name": "Site Development Plans and Environmental Notification Form, 250 Whalom Road",
+   "where": "text",
+   "quote": "review site development plans and environmental notification form"
+  },
+  {
+   "name": "Letter submitted by Cannivinno's regarding 69 Island Road",
+   "where": "text",
+   "quote": "cannivinno's submitted a letter."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "tree removal",
+  "determinations",
+  "notices of intent",
+  "solar panels",
+  "Whalom spillway",
+  "public hearings",
+  "septic and well",
+  "cancellations"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-03-14",
  "docid": "3876",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "A prescriptive easement for Fire Road 16 has been determined",
+   "motion": "Find that a prescriptive easement has been determined for Fire Road 16 (238 Fire Road 16 appointment).",
    "moved_by": "D. Prokowiew",
    "seconded_by": "G. Bittner",
-   "outcome": "all aye",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion, d. prokowiew, that a prescriptive easement has been determined, second, g. bittner, all aye."
   },
   {
-   "motion": "Approve minutes of 2/22/16",
+   "motion": "Approve the 2/22/16 minutes.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "2/22/16- motion, k. chenis, second, d. prokowiew"
   },
   {
-   "motion": "Approve Highfield Village minutes of 2/22/16",
+   "motion": "Approve the Highfield Village 2/22/16 minutes.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "highfield village 2/22/16- motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "Approve 339 Electric Avenue minutes of 2/22/16",
+   "motion": "Approve the 339 Electric Avenue 2/22/16 minutes.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
@@ -44,7 +44,7 @@
    "quote": "339 electric avenue, 2/22/16- motion, k. chenis, second, d. prokowiew"
   },
   {
-   "motion": "Approve Unitil minutes of 2/22/16",
+   "motion": "Approve the Unitil 2/22/16 minutes.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
@@ -53,6 +53,248 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Five votes recorded. The prescriptive easement vote is substantive; the four minutes-approval votes are procedural. Minutes list motions and seconds for all four minute-approval items but do not explicitly state individual vote outcomes (only a general heading \"All minutes signed\"), so those outcomes are marked \"not stated\".",
- "cost_usd": 0.1116365
+ "note": "Text extraction of minutes with no recorded roll-call tallies; the four 2/22/16 minute-approval motions and the 238 Fire Road 16 prescriptive-easement motion have no printed result beyond \"all aye\" for the latter. ANR endorsements and the 339 Electric Avenue decision signing are recorded without a motion. No public comment section is recorded. Adjournment has no recorded motion. Committee-report timing was reached by consensus, not a vote.",
+ "cost_usd": 0.007063119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk; recused from the 238 Fire Road 16 appointment",
+   "status": "present",
+   "quote": "k. chenis recused himself due to a conflict of interest"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: matthew allison"
+  },
+  {
+   "name": "Peter Knox",
+   "role": "Attorney, representing the applicant J&A Realty Trust",
+   "status": "present",
+   "quote": "represented by attorney peter knox"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Plan for 390 & 400 Howard Street (ANR) endorsed by the Board; parcels to be conveyed to Rennie Shattuck and O'Brien Homes, Inc.",
+   "quote": "plan endorsed by board."
+  },
+  {
+   "decision": "Plan for 1346 Lancaster Road (ANR) endorsed; Parcel 1 not to be considered a building lot and kept as raw land.",
+   "quote": "1346 lancaster road- parcel 1 is not to be considered a building lot; will be kept as raw land."
+  },
+  {
+   "decision": "Next step for 238 Fire Road 16 is an ANR Plan for a single lot; the Board will certify at endorsement that Fire Road 16 has vital access.",
+   "quote": "at the time of anr plan endorsement the board will certify that fire road 16 has vital access."
+  },
+  {
+   "decision": "Consensus that committee reports stay at each meeting; time-sensitive items may be raised during Public Comment at the start of the meeting, otherwise reports go at the 2nd meeting of each month.",
+   "quote": "consensus was if there are time sensitive issues to impart"
+  },
+  {
+   "decision": "Decision on 339 Electric Avenue signed by the Board.",
+   "quote": "339 electric avenue- decision- decision signed by board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "238 Fire Road 16 applicant continuance",
+   "what_was_recorded": "The minutes say the applicant continued the discussion to the March meeting due to cost, with no dollar figure printed.",
+   "quote": "due to cost, the applicant continued the discussion",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plans: 390 & 400 Howard Street; 1346 Lancaster Road",
+   "resolution": "endorsed by Board",
+   "quote": "parcel 1 is not to be considered a building lot; will be kept as raw land.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Appointment: 238 Fire Road 16 (J&A Realty Trust)",
+   "resolution": "prescriptive easement determined; next step ANR plan for single lot",
+   "quote": "appointment: 238 fire road 16 - k. chenis recused himself due to a conflict of interest",
+   "tags": [
+    "appointment",
+    "prescriptive easement",
+    "fire road",
+    "access",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Information meetings: WalMart; Unitil 357 Electric Avenue (cont'd)",
+   "resolution": "see separate minutes",
+   "quote": "walmart, 301 massachusetts avenue- see separate minutes",
+   "tags": [
+    "information meeting"
+   ]
+  },
+  {
+   "topic": "Public hearing: Zoning Articles for May 2015 Town Meeting",
+   "resolution": "see separate minutes",
+   "quote": "public hearing: zoning articles for may 2015 town meeting- see separate minutes",
+   "tags": [
+    "public hearing",
+    "zoning",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made on 2/22/16 minutes; all minutes signed",
+   "quote": "2/22/16- motion, k. chenis, second, d. prokowiew",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; committee reports schedule discussed",
+   "quote": "storm water task force- a. burney noted the swtf is taking six portions of the ms4 permit",
+   "tags": [
+    "committees",
+    "MS4",
+    "stormwater",
+    "MRPC",
+    "traffic counts"
+   ]
+  },
+  {
+   "topic": "Board concerns/comments",
+   "resolution": "consensus on committee report timing; no vote",
+   "quote": "g. bittner feels there could be better communication between boards/commissions.",
+   "tags": [
+    "board concerns",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "foundation and backfilling taking place.",
+   "tags": [
+    "subdivision",
+    "Elmwood Road"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "339 Electric Avenue decision signed; Town Meeting noted",
+   "quote": "339 electric avenue- decision- decision signed by board.",
+   "tags": [
+    "director",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "274 prospect street continuation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:10 PM",
+   "quote": "adjournment: 9:10 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 02/22/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 02/22/16"
+  },
+  {
+   "name": "Minutes 02/22/16 Unitil",
+   "where": "list",
+   "quote": "minutes 02/22/16 unitil"
+  },
+  {
+   "name": "Minutes 02/22/16 Highfield Village",
+   "where": "list",
+   "quote": "minutes 02/22/16 highfield village"
+  },
+  {
+   "name": "Minutes 02/22/16 339 Electric Avenue",
+   "where": "list",
+   "quote": "minutes 02/22/16 339 electric avenue"
+  },
+  {
+   "name": "ANR Plan, 390 & 400 Howard Street",
+   "where": "list",
+   "quote": "anr plan, 390 & 400 howard street"
+  },
+  {
+   "name": "ANR Plan, 1346 Lancaster Road",
+   "where": "list",
+   "quote": "anr plan, 1346 lancaster road"
+  },
+  {
+   "name": "339 Electric Avenue Decision",
+   "where": "list",
+   "quote": "339 electric avenue decision"
+  },
+  {
+   "name": "Memorandum in Support of Allowed Use of Fire Road 16 Created by a Prescriptive Easement",
+   "where": "list",
+   "quote": "memorandum in support of allowed use of fire road 16 created by a prescriptive easement"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "prescriptive easement",
+  "fire road",
+  "appointment",
+  "minutes approval",
+  "zoning",
+  "town meeting",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

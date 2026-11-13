@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2011-12-01",
  "docid": "1973",
@@ -12,33 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes",
-   "outcome": "passed",
+   "motion": "Accept the minutes (2010 minutes).",
    "moved_by": "Brent Benson",
-   "seconded_by": "Caroline Griffin",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "brent benson made a motion to accept the minutes. caroline griffin seconded. all were in favor."
+   "quote": "brent benson made a motion to accept the minutes. caroline griffin seconded. all were in favor.",
+   "seconded_by": "Caroline Griffin"
   },
   {
-   "motion": "Accept the requests totaling $1275 from groups outside Lunenburg",
+   "motion": "Accept the Lunenburg/locally sponsored requests and the other requests totaling $1275, both groups.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "other requests totaling $1275 were evaluated and both groups were accepted on a motion that was seconded and approved by all."
+   "quote": "and both groups were accepted on a motion that was seconded and approved by all.",
+   "seconded_by": ""
   },
   {
-   "motion": "Approve the Say It with Magic program change",
+   "motion": "Move $43.79 for administrative costs.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the request for \"say it with magic\" was to change the program to this coming year. it was approved by the group."
+   "quote": "a motion was made to move $43.79 for administrative costs and was passed by all.",
+   "seconded_by": ""
   },
   {
-   "motion": "Move $43.79 for administrative costs",
+   "motion": "Unspecified motion; the minutes do not say what was moved.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made to move $43.79 for administrative costs and was passed by all."
+   "quote": "motion was made and seconded and then passed by all present.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text extracted from scanned minutes. All votes have outcomes recorded.",
- "cost_usd": 0.1238385
+ "note": "OCR text of a handwritten or typed meeting notes page (single page). Name spellings vary within the text: Mary Ann Sudoinik/Sudolnik, Caroline Griffis/Griffin, James Ryan/Jim Ryan; recorded as printed. Two motions have no named mover or seconder, and one motion (\"motion was made and seconded and then passed by all present\") does not say what was moved, so its motion field is generic. Votes are recorded as 'passed by all' or 'all in favor' with no numeric count. The printed figures do not reconcile on their face: $5,173 plus $6,490 does not equal $12,463, and $3857.00 plus $1275 does not equal $12,463; these are recorded as printed. The header phone numbers and emails were not recorded. Public comment: 'No public comment.' so no speakers.",
+ "cost_usd": 0.00559502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter McCarron",
+   "role": "Member",
+   "status": "present",
+   "quote": "members attending: peter mccarron robin corbett james ryan mary ann sudoinik kiirja paanananen caroline griffis brent benson"
+  },
+  {
+   "name": "Robin Corbett",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order by the chairman robin corbett at 7:10 pm."
+  },
+  {
+   "name": "James Ryan",
+   "role": "Treasurer (referred to as Jim Ryan)",
+   "status": "present",
+   "quote": "the treasurer's report was presented by jim ryan."
+  },
+  {
+   "name": "Mary Ann Sudoinik",
+   "role": "Secretary (printed as Mary Ann Sudolnik in the minutes text)",
+   "status": "present",
+   "quote": "the minutes from 2010 were read by the secretary mary ann sudolnik."
+  },
+  {
+   "name": "Kiirja Paanananen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members attending: peter mccarron robin corbett james ryan mary ann sudoinik kiirja paanananen caroline griffis brent benson"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Member (printed as Caroline Griffin in the motion text)",
+   "status": "present",
+   "quote": "brent benson made a motion to accept the minutes. caroline griffin seconded. all were in favor."
+  },
+  {
+   "name": "Brent Benson",
+   "role": "Member",
+   "status": "present",
+   "quote": "brent benson made a motion to accept the minutes. caroline griffin seconded. all were in favor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The request for 'Say It with Magic' to change the program to this coming year was approved by the group, and the $300 allocated last year will pay the fee this year.",
+   "quote": "it was approved by the group. the $300 allocated last year will pay the fee this year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Account balance",
+   "what_was_recorded": "The treasurer reported a remaining balance in the Town Account.",
+   "figures_as_printed": [
+    "$123.79"
+   ],
+   "quote": "there is $123.79 remaining in the town account."
+  },
+  {
+   "topic": "Funds to disperse to applicants as of June 30, 2011",
+   "what_was_recorded": "As of June 30, 2011 a figure was reported as available to disperse to applicants.",
+   "figures_as_printed": [
+    "$4306.70"
+   ],
+   "quote": "as of june 30, 2011 there was $4306.70 to disperse to the applicants."
+  },
+  {
+   "topic": "Payments made and pending",
+   "what_was_recorded": "The treasurer reported payments made and an amount pending.",
+   "figures_as_printed": [
+    "$1,110",
+    "$3,198.70"
+   ],
+   "quote": "treasurer jim ryan has paid $1,110 and has $3,198.70 pending."
+  },
+  {
+   "topic": "Grand total available to award in 2012",
+   "what_was_recorded": "Money left in Town Hall was added to the amount granted this year for a grand total to award to acceptable applicants in 2012.",
+   "figures_as_printed": [
+    "$3993.79"
+   ],
+   "quote": "the money left in town hall was added to the amount granted this year for a grand total of $3993.79 to award to acceptable applicants in 2012."
+  },
+  {
+   "topic": "Amounts requested by Lunenburg and outside groups",
+   "what_was_recorded": "Lunenburg requests amounted to one figure; groups outside Lunenburg requested another.",
+   "figures_as_printed": [
+    "$5,173",
+    "$6,490"
+   ],
+   "quote": "lunenburg requests amounted to $5,173. $6,490 was requested by groups outside lunenburg."
+  },
+  {
+   "topic": "Total requested in 19 applications",
+   "what_was_recorded": "There were 19 applications submitted with a total amount requested.",
+   "figures_as_printed": [
+    "$12,463"
+   ],
+   "quote": "there were 19 applications submitted. amount requested totaled $12,463."
+  },
+  {
+   "topic": "Locally sponsored and other requests totals",
+   "what_was_recorded": "Lunenburg/locally sponsored requests totaled one figure; other requests totaling another figure were evaluated.",
+   "figures_as_printed": [
+    "$3857.00",
+    "$1275"
+   ],
+   "quote": "these totaled $3857.00. other requests totaling $1275 were evaluated"
+  },
+  {
+   "topic": "Say It with Magic program fee",
+   "what_was_recorded": "The $300 allocated last year will pay the program fee this year.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "the $300 allocated last year will pay the fee this year."
+  },
+  {
+   "topic": "Administrative costs",
+   "what_was_recorded": "A motion moved $43.79 for administrative costs and passed.",
+   "figures_as_printed": [
+    "$43.79"
+   ],
+   "quote": "a motion was made to move $43.79 for administrative costs and was passed by all."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Move money for administrative costs",
+   "amount_as_printed": "$43.79",
+   "outcome": "passed",
+   "quote": "a motion was made to move $43.79 for administrative costs and was passed by all."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:10 PM",
+   "quote": "meeting called to order by the chairman robin corbett at 7:10 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes (2010)",
+   "resolution": "accepted",
+   "quote": "the minutes from 2010 were read by the secretary mary ann sudolnik.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "no public comment. the treasurer's report was presented by jim ryan.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Treasurer's report",
+   "resolution": "presented",
+   "quote": "there is $123.79 remaining in the town account.",
+   "tags": [
+    "treasurer",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Review of grant applications",
+   "resolution": "reviewed; Lunenburg requests first, then other requests accepted",
+   "quote": "there were 19 applications submitted. amount requested totaled $12,463.",
+   "tags": [
+    "grants",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Say It with Magic program change",
+   "resolution": "approved by the group",
+   "quote": "it was approved by the group. the $300 allocated last year will pay the fee this year.",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Administrative cost transfer",
+   "resolution": "passed",
+   "quote": "a motion was made to move $43.79 for administrative costs and was passed by all.",
+   "tags": [
+    "transfer",
+    "administrative costs"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cultural council",
+  "grants",
+  "treasurer report",
+  "grant applications",
+  "minutes approval",
+  "administrative costs",
+  "2011"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

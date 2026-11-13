@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-01-15",
  "docid": "4528",
@@ -12,31 +12,327 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from January 6, 2014",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve the minutes of the January 6, 2014 LSBC meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": true,
    "quote": "the meeting minutes from the january 6, 2014 lsbc meeting were reviewed and unanimously approved."
   },
   {
-   "motion": "Approve the contract amendment for Joslin, Lesser + Associates for project management services",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Approve the Joslin, Lesser + Associates Owner's Project Manager contract amendment covering design development through project closeout.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "the amendment was for project management services from the design development phase through project closeout. the proposed fee for services was consistent with the project's total budget and msba form 3011. the contract amendment was unanimously approved."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "the contract amendment was unanimously approved. joslin lesser will work with the town of lunenburg to process the contract"
   },
   {
-   "motion": "Approve the contract amendment for Tappé Associates for designer services",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Approve the Tappé Associates designer contract amendment covering design development through project closeout.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "the amendment was for designer services from the design development phase through project closeout. the proposed fee for services was consistent with the project's total budget and msba form 3011. isbc members noted a typo or error on the amendment. joslin lesser will revise the amendment accordingly. the contract amendment was unanimously approved."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "the contract amendment was unanimously approved. joslin lesser will work with tappé associates and town of lunenburg to process"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned text from macOS Vision. Three votes recorded, all unanimously approved. Two contract amendment quotes exceed the 200-character guideline but are necessary for verbatim accuracy and verifiability against the source text.",
- "cost_usd": 0.1748695
+ "note": "OCR scan of a Joslin, Lesser + Associates minutes document. The sign-in table carries no present/absent marks, so attendance is recorded as present from the sign-in list; name and title pairs were matched by row order. Movers and seconders are not printed, and votes are recorded only as unanimous. No adjournment motion is printed. The minutes print \"Next Meeting 12/12/14 6:30 PM\", which does not match the second-Wednesday schedule set in the text. OCR errors are kept as printed (for example \"Senlor\", \"1.S8C\", \"Revlew ofiMSBA\"). The 'Tappe' and 'Tappé' spellings both appear in the source.",
+ "cost_usd": 0.00820592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "status": "present",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "quote": "mr. mackin and superintendent calmes thanked lsbc members and the consultant team for their efforts at and leading up to the january 7 special town meeting."
+  },
+  {
+   "name": "Michael Mackin",
+   "status": "present",
+   "role": "Lunenburg School Committee, Chair",
+   "quote": "mr. mackin and superintendent calmes thanked lsbc members and the consultant team for their efforts at and leading up to the january 7 special town meeting."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "status": "present",
+   "role": "Lunenburg School Committee, ISBC Member",
+   "quote": "lunenburg school committee, isbc member"
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "role": "BOS Representative, LSBC Member",
+   "quote": "bos representative, lsbc member"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "status": "present",
+   "role": "Planning Board, LSBC Member",
+   "quote": "planning board, lsbc member"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "quote": "finance committee, lsbc vice chair"
+  },
+  {
+   "name": "Mike Barney",
+   "status": "present",
+   "role": "Citizen, LSBC Member",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Brian Frank",
+   "status": "present",
+   "role": "Citizen, LSBC Member",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Greg S. Roy",
+   "status": "present",
+   "role": "Citizen, LSBC Member",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "present",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "quote": "town manager, lsbc (non-voting member)"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "quote": "director of facilities, lsbc (non-voting member)"
+  },
+  {
+   "name": "Brian Spadafino",
+   "status": "present",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "quote": "lhs principal, lsbc (non-voting member)"
+  },
+  {
+   "name": "Tim Santry",
+   "status": "present",
+   "role": "LMS Principal",
+   "quote": "lms principal principal-in-charge, tappé associates"
+  },
+  {
+   "name": "Charles Hay",
+   "status": "present",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "quote": "charlie hay from tappe associates provided the lsbc with an update on the design development phase."
+  },
+  {
+   "name": "Cesar Dedios",
+   "status": "present",
+   "role": "Senlor Associate, Tappé Associates",
+   "quote": "senlor associate, tappé associates"
+  },
+  {
+   "name": "Damian Liddiard",
+   "status": "present",
+   "role": "Project Architect, Tappé Associates",
+   "quote": "project architect, tappé associates"
+  },
+  {
+   "name": "Greg Cohan",
+   "status": "present",
+   "role": "Joslin, Lesser + Associates",
+   "quote": "greg cohan from joslin, lesser + associates provided lsbc members with a copy of the project's schedule and preliminary logistics plan."
+  },
+  {
+   "name": "Christine DePalma",
+   "status": "present",
+   "role": "Joslin, Lesser + Associates",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "status": "present",
+   "role": "Joslin, Lesser + Associates",
+   "quote": "jeffery luxenberg from joslin, lesser + associates noted that a contract amendment is not required for"
+  },
+  {
+   "name": "Ron Simoneau",
+   "status": "present",
+   "role": "Shawmut Design & Construction",
+   "quote": "shawmut design & construction"
+  },
+  {
+   "name": "Michael Kearns",
+   "status": "present",
+   "role": "Shawmut Design & Construction",
+   "quote": "mike kearns from shawmut, design and construction mentioned that the pre-qualification process"
+  },
+  {
+   "name": "Craig Gabri",
+   "status": "present",
+   "role": "Shawmut Design & Construction",
+   "quote": "shawmut design & construction"
+  },
+  {
+   "name": "Steve Ham",
+   "status": "present",
+   "role": "Shawmut Design & Construction",
+   "quote": "shawmut design & construction"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The LSBC will meet every second Wednesday of the month, starting at 6:30pm in the Thomas C. Passios Building, Room 13.",
+   "quote": "it was determined that the lsbc will meet every second wednesday of the month."
+  },
+  {
+   "decision": "Joslin Lesser will confirm the 2014 LSBC meeting schedule and distribute it to the ISBC.",
+   "quote": "joslin lesser will confirm the 2014 meeting schedule and distribute it to the isbc."
+  },
+  {
+   "decision": "Tappé will work with Joslin Lesser and the district to confirm the design development meeting schedule, which will be shared with the LSBC.",
+   "quote": "tappe will work with joslin lesser and the district to confirm the schedule of meetings and it will be shared with the lsbc."
+  },
+  {
+   "decision": "Joslin Lesser will revise the Tappé Associates amendment to correct the typo or error noted by ISBC members.",
+   "quote": "isbc members noted a typo or error on the amendment. joslin lesser will revise the amendment accordingly."
+  },
+  {
+   "decision": "Joslin Lesser will send a Notice to Proceed letter to Shawmut for the Design Development, Construction Documents, & the Bid Phase; no contract amendment is required for Shawmut.",
+   "quote": "joslin lesser will send a notice to proceed letter to shawmut for the design development, construction documents, & the bid phase."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Joslin, Lesser + Associates Owner's Project Manager contract amendment fee",
+   "what_was_recorded": "The proposed fee for project management services was described as consistent with the project's total budget and MSBA Form 3011; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the proposed fee for services was consistent with the project's total budget and msba form 3011."
+  },
+  {
+   "topic": "Tappé Associates designer contract amendment fee",
+   "what_was_recorded": "The proposed designer fee was described as consistent with the project's total budget and MSBA Form 3011; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the proposed fee for services was consistent with the project's total budget and msba form 3011. isbc members noted"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 PM",
+   "quote": "the meeting was called to order at 7:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of meeting minutes (January 6, 2014)",
+   "resolution": "approved unanimously",
+   "quote": "the meeting minutes from the january 6, 2014 lsbc meeting were reviewed and unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Joslin, Lesser + Associates Owner's Project Manager Contract Amendment",
+   "resolution": "approved unanimously",
+   "quote": "the 1.s8c reviewed a contract amendment for joslin, lesser + associates.",
+   "tags": [
+    "contract amendment",
+    "owner's project manager",
+    "fee"
+   ]
+  },
+  {
+   "topic": "Tappé Associates Contract Amendment",
+   "resolution": "approved unanimously; typo to be corrected",
+   "quote": "the lsbc reviewed a contract amendment for tappé associates.",
+   "tags": [
+    "contract amendment",
+    "designer",
+    "fee"
+   ]
+  },
+  {
+   "topic": "Review of MSBA Module 6 - Design Details",
+   "resolution": "update received, no action",
+   "quote": "charlie hay from tappe associates provided the lsbc with an update on the design development phase.",
+   "tags": [
+    "design development",
+    "workshops",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "Notice to Proceed to Shawmut; no action",
+   "quote": "joslin lesser will send a notice to proceed letter to shawmut for the design development, construction documents, & the bid phase.",
+   "tags": [
+    "notice to proceed",
+    "construction manager"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:10pm",
+   "quote": "the meeting was adjourned at 8:10pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Project's schedule and preliminary logistics plan",
+   "where": "list",
+   "quote": "greg cohan from joslin, lesser + associates provided lsbc members with a copy of the project's schedule and preliminary logistics plan."
+  },
+  {
+   "name": "Joslin, Lesser + Associates Owner's Project Manager Contract Amendment",
+   "where": "text",
+   "quote": "joslin, lesser + associates owner's project manager contract amendment"
+  },
+  {
+   "name": "Tappé Associates Contract Amendment",
+   "where": "text",
+   "quote": "tappé associates contract amendment"
+  },
+  {
+   "name": "MSBA Form 3011",
+   "where": "text",
+   "quote": "the proposed fee for services was consistent with the project's total budget and msba form 3011."
+  },
+  {
+   "name": "Notice to Proceed letter",
+   "where": "text",
+   "quote": "joslin lesser will send a notice to proceed letter to shawmut for the design development, construction documents, & the bid phase."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "owner's project manager",
+  "contract amendment",
+  "design development",
+  "Tappé Associates",
+  "Joslin Lesser",
+  "Shawmut",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "greg cohan from joslin, lesser + associates provided lsbc members with a copy of the project's schedule"
+ },
+ "dropped_unquoted_by_field": {}
 }

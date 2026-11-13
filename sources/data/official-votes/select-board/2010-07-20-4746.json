@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-07-20",
  "docid": "4746",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Louis Franco to the Board of Assessors",
+   "motion": "Appoint Louis Franco to the Board of Assessor's (joint appointment).",
    "moved_by": "Ernie",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "ernie motioned to appoint mr. franco to the board of assessor's, steve seconded, voted unanimously."
   },
   {
-   "motion": "Approve appointment of Rhonda Lisio to the Public Access Cable Committee",
+   "motion": "Approve Rhonda Lisio's appointment to the PACC (term to 2013).",
    "moved_by": "Ernie Sund",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "ernie sund motion to approve rhonda's appointment to the pacc, steve seconded voted unanimously."
   },
   {
-   "motion": "Approve appointment of Tania Fernandez to the Public Access Cable Committee",
+   "motion": "Appoint Tania Fernandez to the PACC for the 2011 term.",
    "moved_by": "Ernie",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "ernie motion to appoint tania to pacc for the 2011 term, steve seconded voted unanimously."
   },
   {
-   "motion": "Approve $10,000 capital plan funding for Senior Center parking lot expansion design",
+   "motion": "Approve the $10,000 Capital Plan funding and include the full amount of the Hudson Design Group contract, subject to the Friends of the Eagle House supplementing the funds necessary.",
    "moved_by": "Dave",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -44,16 +44,15 @@
    "quote": "dave motion to approve the $10,000 capital plan funding and to include the full amount of the contract, subject to the friends of the eagle house supplementing the funds necessary, steve seconded voted unanimously."
   },
   {
-   "motion": "Approve Lions Club and Firefighters Association bonfire on August 14, 2010",
+   "motion": "Approve the Lions Club/Firefighters Association bonfire request for August 14, 2010 at Lunenburg High School and authorize the permit.",
    "moved_by": "Steve",
    "seconded_by": "Ernie",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "steve motioned to approve the request, ernie seconded with the notation of \"527 cmr: board of fire prevention regulations, section10.23: bonfires and the burning of christmas trees (i) ceremonial bonfires the city council of a city with the approval of its mayor, or the board of selectmen or town council of a town, may authorize the fire department of such city or town to issue not more than one permit in any one year for a ceremonial bonfire. such bonfires shall mark the observance of a signiticant municipal, state or national event, and such ceremonial bonfire shall be under the continuous supervision of the fire department. a permit for such ceremonial bonfires shall be issued only to a municipal department or a civic, fraternal or veterans organization within such city or town. only wood which has not been painted, impregnated, or otherwise treated with any foreign substance shall be permitted to burn in ceremonial bonfires. no bonfire shall bum for more than 12 hours; in accordance with the ===page 3=== state regulation the board also needs to permit fire department to conduct the bonfire\", voted unanimously to approve the bonfire request and authorize the issua",
-   "quote_taken_from_text": true
+   "quote": "steve motioned to approve the request, ernie seconded with the notation of"
   },
   {
-   "motion": "Approve use of Gazebo for candlelight vigil on July 31, 2010",
+   "motion": "Approve use of the Gazebo for a Candlelight Vigil on July 31, 2010.",
    "moved_by": "Dave",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -61,7 +60,7 @@
    "quote": "dave motion to approve use of the gazebo, steve seconded, voted unanimously."
   },
   {
-   "motion": "Approve farmers market at Ritter Memorial Building",
+   "motion": "Approve request to establish a farmers market on the School Street side of the Ritter Memorial Building.",
    "moved_by": "Dave",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -69,13 +68,399 @@
    "quote": "dave motion to approve request to establish a farmers market, steve seconded voted unanimously."
   },
   {
-   "motion": "Adjourn the Regular Session",
+   "motion": "Approve the Board of Assessor's joint appointment of Louis Franco, 250 Arbor Street (term to 2011).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "board of assessor's - joint appointment of louis franco, of 250 arbor street (term next annual election - 2011) unanimously approved."
+  },
+  {
+   "motion": "Approve appointment of Rhonda Lisio (term 2013) and Tania Fernandez (term 2011) to the Public Access Cable Committee.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "public access cable committee - appointment of rhonda lisio (term 2013) and tania fernandez (term 2011) unanimously"
+  },
+  {
+   "motion": "Adjourn the Regular Session.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 8:24 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text is readable with only minor character errors (e.g., \"signiticant\" for \"significant\"). No pages missing.",
- "cost_usd": 0.1644135
+ "note": "OCR text of a typed scan (macOS Vision); some names are spelled inconsistently in the source (Shelly/Shelley Hatch, Doreen Nobel/Noble, Louis Franco/France). Board members are often identified by first name only (Ernie, Steve, Dave, Paula). Several motions give no mover or seconder beyond what is printed. The PUBLIC COMMENT heading has no speakers under it. The executive session is listed on the agenda but no motion to enter it or result is recorded. Pages 5 and 6 are attachments (talent bank form, Unitil diagram).",
+ "cost_usd": 0.011202420000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "with paula bertram, steven m"
+  },
+  {
+   "name": "Steven M deBettencourt",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "with paula bertram, steven m"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "debettencourt, ernie sund, dave matthews present"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "debettencourt, ernie sund, dave matthews present"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen member",
+   "status": "absent",
+   "quote": "tom alonzo and town manager kerry speidel absent"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "tom alonzo and town manager kerry speidel absent"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "present",
+   "quote": "laura advised the board that two contracts (engineering & construction) have been mailed out"
+  },
+  {
+   "name": "John DiNapoli",
+   "role": "Municipal & Community Services Manager, Unitil",
+   "status": "present",
+   "quote": "john dinapoli, municipal & community services manager, and keith caribo,"
+  },
+  {
+   "name": "Keith Caribo",
+   "role": "Electric Operations Manager, Unitil",
+   "status": "present",
+   "quote": "john dinapoli, municipal & community services manager, and keith caribo,"
+  },
+  {
+   "name": "Shelly Hatch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present were shelly hatch and doreen nobel."
+  },
+  {
+   "name": "Doreen Nobel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present were shelly hatch and doreen nobel."
+  },
+  {
+   "name": "Dave Berthiaume",
+   "role": "on behalf of the Lions Club/Firefighters Association",
+   "status": "present",
+   "quote": "dave berthiaume came before the board to request on behalf of the lions club/firefighters association"
+  },
+  {
+   "name": "Cathy Kerbert",
+   "role": "of 127 Woodland Drive",
+   "status": "present",
+   "quote": "cathy kerbert of 127 woodland drive, request to use the gazebo on july 31, 2010"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "on behalf of a group of 5 farmers",
+   "status": "present",
+   "quote": "andrea schnepf, grounds of ritter memorial for farmers' market"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "applicant, 250 Arbor Street",
+   "status": "not stated",
+   "quote": "louis franco, to fill unexpired term on board of assessor's"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "applicant, 181 Reservoir Road",
+   "status": "not stated",
+   "quote": "rhonda lisio, to fill vacancy on pacc"
+  },
+  {
+   "name": "Tania Fernandez",
+   "role": "applicant, 61 Cove Road",
+   "status": "not stated",
+   "quote": "tania fernandez, to fill vacancy on pacc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Workshop minutes for 7/13/10 were reviewed and signed.",
+   "quote": "workshop minutes for 7/13/10 reviewed and signed."
+  },
+  {
+   "decision": "Warrants listed in the minutes were reviewed and signed.",
+   "quote": "warrants - #2wp 10, 6/30/10 - $377,839.76, #3wp 10, 6/30/10 - $2,780.26, #7 10, 6/30/10 - $254,339.62, #2 11, 7/19/10 - $392,857.16, #2p 11, 7/22/10 - $461,553.06 and #3wp 10, 6/30/10 - $2,780.26 reviewed and signed."
+  },
+  {
+   "decision": "Paula recused herself from the Lions Club/Firefighters bonfire request because she is a Lions Club member.",
+   "quote": "paula recused herself as she is currently a member of the lunenburg lions club,"
+  },
+  {
+   "decision": "Keith Caribo of Unitil will look into Ernie Sund's secondary service issue; he requested Ernie's address for that purpose.",
+   "quote": "requested ernie's address so that he can look into this situation."
+  },
+  {
+   "decision": "Board asked that any specific Unitil issues be given to the Chair or Town Manager before the meeting with John DiNapoli on the 26th.",
+   "quote": "if the board has any specific issues to provide this information to either her or kerry prior to the meeting"
+  },
+  {
+   "decision": "FY2010 Budget Adjustments item tabled.",
+   "quote": "4. fy2010 budget adjustments [if needed] - tabled"
+  },
+  {
+   "decision": "Manager Updates item tabled.",
+   "quote": "7. manager updates - tabled."
+  },
+  {
+   "decision": "No action taken on DPW Building Committee appointments; the Town Manager had requested that the Board make appointments.",
+   "quote": "requests that the board of selectmen make appointments to this committee. no action taken."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unitil tree trimming cost for Lunenburg",
+   "what_was_recorded": "Unitil said it spends roughly $400,000 on trimming covering close to 500 circuit miles, and that the figure is for the four communities it serves.",
+   "quote": "spend roughly $400,000 for fg&e trimming, which encompasses close to 500 circuit miles, and normally creeps up higher.",
+   "figures_as_printed": [
+    "$400,000"
+   ]
+  },
+  {
+   "topic": "Senior Center parking lot design funding",
+   "what_was_recorded": "The FY2011 Capital Improvement Plan included $10,000 for the design; the board approved that funding, including the full contract amount subject to Friends of the Eagle House supplementing funds.",
+   "quote": "the fy2011 capital improvement plan included $10,000 for the design.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Farmers market vendor permit fee",
+   "what_was_recorded": "Stillman and Dutch Kitchen will require a permit fee for the farmers market.",
+   "quote": "stillman and dutch kitchen will requre a $25/permit for market.",
+   "figures_as_printed": [
+    "$25/permit"
+   ]
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Six warrants were reviewed and signed, with amounts as printed.",
+   "quote": "warrants - #2wp 10, 6/30/10 - $377,839.76, #3wp 10, 6/30/10 - $2,780.26, #7 10, 6/30/10 - $254,339.62, #2 11, 7/19/10 - $392,857.16, #2p 11, 7/22/10 - $461,553.06 and #3wp 10, 6/30/10 - $2,780.26 reviewed and signed.",
+   "figures_as_printed": [
+    "$377,839.76",
+    "$2,780.26",
+    "$254,339.62",
+    "$392,857.16",
+    "$461,553.06",
+    "$2,780.26"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; condolences and benefit recognized",
+   "quote": "paula noted omar connor benefit held on july 17% at the eastwood club",
+   "tags": [
+    "announcements",
+    "police"
+   ]
+  },
+  {
+   "topic": "Appointments (Board of Assessor's, PACC)",
+   "resolution": "appointments approved",
+   "quote": "louis franco, to fill unexpired term on board of assessor's",
+   "tags": [
+    "appointments",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Unitil Vegetation Management Plan Update",
+   "resolution": "informational presentation; no action",
+   "quote": "unitil vegetation management plan update - john dinapoli, municipal & community services manager",
+   "tags": [
+    "utilities",
+    "tree trimming",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Senior Center Parking Lot Expansion Project",
+   "resolution": "approved $10,000 design funding and full contract amount, subject to supplement",
+   "quote": "senior center parking lot expansion project - present were shelly hatch and doreen nobel.",
+   "tags": [
+    "senior center",
+    "CDBG grant",
+    "design contract"
+   ]
+  },
+  {
+   "topic": "Requests to use Public Property",
+   "resolution": "approved bonfire, gazebo vigil and farmers market requests",
+   "quote": "3. requests to use public property",
+   "tags": [
+    "public property",
+    "bonfire",
+    "gazebo",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "FY2010 Budget Adjustments",
+   "resolution": "tabled",
+   "quote": "4. fy2010 budget adjustments [if needed] - tabled",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "workshop minutes and warrants reviewed and signed",
+   "quote": "minutes - workshop minutes for 7/13/10 reviewed and signed.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action File Issues",
+   "resolution": "status update; no action",
+   "quote": "action file issues - dave questioned the status of the fuel tank removal at the old primary school site",
+   "tags": [
+    "fuel tank",
+    "Primary School site"
+   ]
+  },
+  {
+   "topic": "Committee Updates",
+   "resolution": "reports given; no action",
+   "quote": "paula informed the board of the recent planning board meeting, amendment to the emerald place units",
+   "tags": [
+    "Planning Board",
+    "PACC",
+    "Emerald Place"
+   ]
+  },
+  {
+   "topic": "Manager Updates",
+   "resolution": "tabled",
+   "quote": "7. manager updates - tabled.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Committee Appointments/Reappointments/Resignations",
+   "resolution": "Assessor's and PACC appointments approved",
+   "quote": "board of assessor's - joint appointment of louis franco, of 250 arbor street (term next annual election - 2011) unanimously approved.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "DPW Building Committee",
+   "resolution": "no action taken",
+   "quote": "dpw building committee - article 27, section 1 of the town bylaws call for the appointment of a building committee for",
+   "tags": [
+    "DPW",
+    "building committee",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Executive Session (M.G.L. c.39 §23B(3))",
+   "resolution": "listed on agenda; no entry vote recorded in the text",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Talent bank form, Louis J. Franco, dated 24 May 2010",
+   "where": "list",
+   "quote": "louis franco, 250 arbor street referred to his talent bank form, attached:"
+  },
+  {
+   "name": "Unitil 'A Closer Look' page (typical pole construction layout)",
+   "where": "list",
+   "quote": "a closer look unitil responsibility typical pole construction layout"
+  },
+  {
+   "name": "FY2011 Capital Improvement Plan",
+   "where": "text",
+   "quote": "the fy2011 capital improvement plan included $10,000 for the design."
+  },
+  {
+   "name": "Request for Qualifications for Engineering Services (May 26, 2010)",
+   "where": "text",
+   "quote": "on may 26, 2010 a request for qualifications for engineering services was placed in the central register"
+  },
+  {
+   "name": "Correspondence from Board of Assessor's Chair Christopher Comeau",
+   "where": "text",
+   "quote": "office received correspondance from board of assessor's chair, christopher comeau informing the board"
+  },
+  {
+   "name": "Workshop minutes for 7/13/10",
+   "where": "text",
+   "quote": "workshop minutes for 7/13/10 reviewed and signed."
+  },
+  {
+   "name": "Town Bylaws Article 27, Section 1",
+   "where": "text",
+   "quote": "article 27, section 1 of the town bylaws call for the appointment of a building committee for"
+  },
+  {
+   "name": "Warrants #2WP 10, #3WP 10, #7 10, #2 11, #2P 11",
+   "where": "text",
+   "quote": "warrants - #2wp 10, 6/30/10 - $377,839.76, #3wp 10, 6/30/10 - $2,780.26, #7 10, 6/30/10 - $254,339.62"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "Unitil",
+  "tree trimming",
+  "senior center",
+  "CDBG",
+  "public property",
+  "bonfire",
+  "farmers market",
+  "warrants",
+  "budget adjustments",
+  "committee updates",
+  "executive session",
+  "DPW Building Committee",
+  "PACC",
+  "Board of Assessor's"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referred to his talent bank form, attached:"
+ },
+ "dropped_unquoted_by_field": {}
 }

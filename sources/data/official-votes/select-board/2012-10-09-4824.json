@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-10-09",
  "docid": "4824",
@@ -12,31 +12,256 @@
  },
  "votes": [
   {
-   "motion": "Approve Class II Used Car Dealer's License for Double Down, Inc. d/b/a Import Domestic Auto Sales",
-   "moved_by": "Mr. Sund",
-   "seconded_by": "Mr. Alonzo",
+   "motion": "Approve the Class II Used Car Dealer's License for Double Down, Inc. d/b/a Import Domestic Auto Sales.",
+   "moved_by": "Carl \"Ernie\" Sund",
+   "seconded_by": "Tom Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. sund moved to approve the class ii used car dealer's license for double down, inc. d/b/a import domestic auto sales. mr. alonzo seconded."
+   "quote": "mr. sund moved to approve the class ii used car dealer's license for double down, inc. d/b/a import domestic auto sales."
   },
   {
-   "motion": "Close the public hearing",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Sund",
+   "motion": "Close the Public Hearing.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Carl \"Ernie\" Sund",
    "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "ms. bertram moved to close the public hearing. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed."
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. deBettencourt",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. the board voted unanimously to adjourn regular session at 7:26pm."
+   "quote": "ms. bertram moved to close the public hearing. mr. sund seconded."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steven M. deBettencourt",
+   "seconded_by": "Paula Bertram",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "mr. debettencourt moved to adjourn the meeting. ms. bertram seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Three votes recorded: the Class II license approval, closing the public hearing, and adjournment.",
- "cost_usd": 0.0962435
+ "note": "OCR text from macOS Vision with garbled symbols (e.g., the warrant numbers and kW figures such as '1M 800K KW'); figures are quoted as the OCR text prints them. Only three motions are recorded with votes or outcomes; the minutes do not name a chair, and no public comment speakers are recorded. The Warrants block has OCR symbol errors, so only the dollar figures are quoted.",
+ "cost_usd": 0.00947579,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, and carl \"ernie\" sund."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "absent was town manager kerry speidel"
+  },
+  {
+   "name": "Richard Holland",
+   "role": "Town Counsel Attorney, Kopelman & Paige",
+   "status": "present",
+   "quote": "town counsel attorney richard holland from kopelman & paige was present to answer questions from the bos."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Item 2, the Power Purchase Agreement and PILOT Agreement for EPG Solar and/or Mass PV1, could not be reviewed in time and was postponed to the 10/16/12 BOS meeting.",
+   "quote": "the bos will be unable to move on this matter tonight and it will be acted on at the 10/16/12 bos meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed at the meeting",
+   "what_was_recorded": "Three warrant totals dated 10/9/12 were listed in the Minutes/Warrants/Action File Issues item.",
+   "figures_as_printed": [
+    "$627,380.39",
+    "$200,877.53",
+    "$139,624.08"
+   ],
+   "quote": "$627,380.39 $200,877.53 $139,624.08"
+  },
+  {
+   "topic": "Net metering credits and Town payment obligation under the solar agreement",
+   "what_was_recorded": "Town Counsel said the agreement states the Town pays nothing unless it receives the credits on the utility invoice.",
+   "figures_as_printed": [],
+   "quote": "the agreement clearly states that the town is not required to pay anything under the agreement unless the town is receiving these credits"
+  },
+  {
+   "topic": "PILOT agreement",
+   "what_was_recorded": "Town Counsel was still awaiting comments on the PILOT agreement form and Assessor information on the real estate side.",
+   "figures_as_printed": [],
+   "quote": "town counsel is still waiting on comments from both parties on the form of pilot agreement"
+  },
+  {
+   "topic": "Sale of net metering credits to other municipalities",
+   "what_was_recorded": "Town Counsel explained the Town could sell its net metering credits to another municipality on the same utility and load zone without Unitil's permission.",
+   "figures_as_printed": [],
+   "quote": "the town could then sell these credits to another municipality that uses the same utility in the same load zone."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Class II Used Car Dealer's License, Double Down, Inc. d/b/a Import Domestic Auto Sales (continued public hearing)",
+   "resolution": "approved 5-0; public hearing closed",
+   "quote": "mr. sund moved to approve the class ii used car dealer's license for double down, inc. d/b/a import domestic auto sales.",
+   "tags": [
+    "licensing",
+    "public hearing",
+    "used car dealer"
+   ]
+  },
+  {
+   "topic": "Review Power Purchase Agreement and PILOT Agreement for EPG Solar and/or Mass PV1",
+   "resolution": "postponed to 10/16/12 meeting; Town Counsel answered questions",
+   "quote": "the bos will be unable to move on this matter tonight and it will be acted on at the 10/16/12 bos meeting.",
+   "tags": [
+    "solar",
+    "power purchase agreement",
+    "PILOT",
+    "net metering"
+   ]
+  },
+  {
+   "topic": "Sign November 2012 Election Warrant",
+   "resolution": "signed",
+   "quote": "3. sign november 2012 election warrant - signed",
+   "tags": [
+    "election",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no minutes or action file issues; warrants listed",
+   "quote": "action file issues: none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; School Building Committee to pick OPM",
+   "quote": "mr. matthews reported that the school building committee will be meeting tomorrow night",
+   "tags": [
+    "school building committee",
+    "OPM"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "no action",
+   "quote": "6. department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "no action",
+   "quote": "7. town manager reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Old business and appointments",
+   "resolution": "no action",
+   "quote": "old business - none appointments/re-appointments/resignations",
+   "tags": []
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "no action",
+   "quote": "executive session - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:26PM",
+   "quote": "mr. debettencourt moved to adjourn the meeting. ms. bertram seconded.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Review Power Purchase Agreement and PILOT Agreement for EPG Solar and/or Mass PV1",
+   "where": "text",
+   "quote": "review power purchase agreement and pilot agreement for epg solar and/or mass pv1"
+  },
+  {
+   "name": "Attachment B (solar facility)",
+   "where": "text",
+   "quote": "he said that attachment b states that they are only building 1200kw."
+  },
+  {
+   "name": "Schedule A (expected annual production)",
+   "where": "text",
+   "quote": "schedule a lists what they expect the annual production"
+  },
+  {
+   "name": "Interconnection Service Agreement",
+   "where": "text",
+   "quote": "received a form of interconnection service agreement from the utility"
+  },
+  {
+   "name": "Mass PV agreement",
+   "where": "text",
+   "quote": "looking at the mass pv agreement which he assumes will be coming soon"
+  },
+  {
+   "name": "C.D. of the last meeting",
+   "where": "text",
+   "quote": "viewed the c.d. of the last meeting"
+  },
+  {
+   "name": "November 2012 Election Warrant",
+   "where": "text",
+   "quote": "3. sign november 2012 election warrant - signed"
+  },
+  {
+   "name": "Warrants dated 10/9/12",
+   "where": "text",
+   "quote": "$627,380.39 $200,877.53 $139,624.08"
+  }
+ ],
+ "tags": [
+  "select board",
+  "used car dealer license",
+  "public hearing",
+  "solar power purchase agreement",
+  "PILOT",
+  "net metering",
+  "election warrant",
+  "warrants",
+  "school building committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2012-01-31",
  "docid": "5425",
@@ -12,32 +12,369 @@
  },
  "votes": [
   {
-   "motion": "To accept the Bootlegger restaurant grease trap plan with inspection requirement",
+   "motion": "Accept the Bootlegger grease trap plan, with the added notation requiring inspection and witnessed testing by the Sewer Commission.",
    "moved_by": "Butch",
    "seconded_by": "Jay",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "accept the plan, with the additional notation of the inspection. butch made the motion, jay seconded. vote taken was unanimous."
+   "quote": "carl asked for a motion to accept the plan, with the additional notation of the inspection. butch made the motion, jay seconded. vote taken was unanimous."
   },
   {
-   "motion": "To accept the FY12 Weston & Sampson contract at $15,000",
+   "motion": "Accept the FY12 Weston & Sampson contract at an upset limit of $15,000.",
    "moved_by": "Butch",
    "seconded_by": "Jay",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "accept the contract at $15,000. butch made the motion, jay seconded. carl asked if there were ",
-   "quote_taken_from_text": true
+   "quote": "carl asked if there was a motion to accept the contract at $15,000. butch made the motion, jay seconded."
   },
   {
-   "motion": "To approve the minutes of January 11th",
+   "motion": "Approve the minutes of January 11th, 2012.",
    "moved_by": "Butch",
    "seconded_by": "Jay",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "approve the minutes of january 11th. butch made the motion, jay seconded. vote taken was unanimous."
+   "quote": "carl asked if there were a motion to approve the minutes of january 11th. butch made the motion, jay seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd from a scan (macOS Vision). All three votes recorded in the minutes were unanimous.",
- "cost_usd": 0.05111360000000001
+ "note": "The extracted text is OCR (macOS Vision) with some garbled words (e.g., 'January 184h', 'Rodriquenz'). Page 3 has no text. No adjournment, roll call, or signatures appear, so attendance is taken from who spoke or moved; no one is marked absent. Public comment is empty: the only non-member speakers were Kristin Levine (introduction) and Brian Milisci (presenting for the applicant), and Carl's remarks to the public were not recorded as comment. The minutes list no documents heading.",
+ "cost_usd": 0.00892842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl noted that with all parties present, we would start with"
+  },
+  {
+   "name": "Butch",
+   "status": "present",
+   "quote": "butch made the motion, jay seconded."
+  },
+  {
+   "name": "Jay",
+   "status": "present",
+   "quote": "butch made the motion, jay seconded."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb noted the hourly rates for the engineers were the same in this contract as for fy11 contract."
+  },
+  {
+   "name": "Steve",
+   "role": "W&S (Weston & Sampson)",
+   "status": "present",
+   "quote": "steve presented the current set up of the restaurant, summarizing his review of 1/27"
+  },
+  {
+   "name": "Brian Milisci",
+   "role": "representing Bootlegger restaurant for WBA",
+   "status": "present",
+   "quote": "brian milisci, representing bootlegger restaurant for wba, provided steve with the revised plan"
+  },
+  {
+   "name": "Kristin Levine",
+   "role": "reporter for the Ledger",
+   "status": "present",
+   "quote": "kristin levine introduced herself as the new reporter for the ledger, replacing meghan."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Steve will obtain a final Bootlegger plan and copy the Commission.",
+   "quote": "steve will get a final plan and copy the commission."
+  },
+  {
+   "decision": "Steve will prepare a scope of services to finalize the Rules & Regulations review, compile input, and possibly hold a work session.",
+   "quote": "he will do up a scope of services to finalize the review"
+  },
+  {
+   "decision": "The Homeowners' letter on replacing aging piping with PVC will go on the next agenda for discussion of how and when.",
+   "quote": "carl determined that they would like time to review and barb will put it on the next agenda to discuss how and when."
+  },
+  {
+   "decision": "Bob will prepare a draft Town Report submission for Commission review at the next meeting.",
+   "quote": "it was determined that bob would put together a draft that the commission would need to review at their next meeting."
+  },
+  {
+   "decision": "Barb will send the rate-increase notice to the new Ledger reporter for publication.",
+   "quote": "barb will send it to the new reporter, present at tonight's meeting, and she will get it into the paper."
+  },
+  {
+   "decision": "Barb will obtain the number of homes that would be affected by a sewer installation in the Hollis Rd area.",
+   "quote": "barb will get the number of homes that would be impacted by a sewer installation in the area."
+  },
+  {
+   "decision": "The 2/8 regular meeting is cancelled; the next meeting is February 28th.",
+   "quote": "it had been determined that it would be cancelled since it falls so close to this one, being just next week."
+  },
+  {
+   "decision": "Corey's laptop will use a docking station at the DPW rather than a desktop, so files stay current.",
+   "quote": "it was determined that they would just have a docking station for his laptop"
+  },
+  {
+   "decision": "Barb will check with Kerry on remote access to meetings under the new open meeting law and report at the next meeting.",
+   "quote": "barb will check with kerry and advise at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY12 Weston & Sampson contract",
+   "what_was_recorded": "The new FY12 contract carries an upset limit of $15,000; engineers' hourly rates are unchanged from FY11.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "steve had submitted the new contract for fy12, with an upset limit of $15,000, and with the tasks to be"
+  },
+  {
+   "topic": "Hourly rates for engineers",
+   "what_was_recorded": "Hourly rates in the FY12 contract are the same as in the FY11 contract.",
+   "figures_as_printed": [],
+   "quote": "barb noted the hourly rates for the engineers were the same in this contract as for fy11 contract."
+  },
+  {
+   "topic": "Sewer rate increase",
+   "what_was_recorded": "Commission must raise rates by 20% because of a substantial increase by Fitchburg; the increase was voted 12/14/11, effective January 1st.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "and the substantial increase by fitchburg, requiring the commission to raise their rates by 20%."
+  },
+  {
+   "topic": "Minimum sewer rate",
+   "what_was_recorded": "The minimum rate stays at the prior rate despite the increase.",
+   "figures_as_printed": [
+    "$81 per 1000 cubic feet"
+   ],
+   "quote": "the minimum will remain at the prior rate of $81 per 1000 cubic feet."
+  },
+  {
+   "topic": "Sewer Enterprise Fund",
+   "what_was_recorded": "The Sewer Enterprise Fund is running in the red, which was part of the reason for the rate increase.",
+   "figures_as_printed": [],
+   "quote": "including the sewer enterprise fund running in the red"
+  },
+  {
+   "topic": "Invoices for payment",
+   "what_was_recorded": "Invoices already approved by Bob (two from Fitchburg, one W&S smoke testing, one Koppelman & Page counsel on Wallis Park) were reviewed; no amounts are printed and no issue was raised.",
+   "figures_as_printed": [],
+   "quote": "barb presented invoices that bob had already approved for payment for the commission's review."
+  },
+  {
+   "topic": "Betterment payment for Hollis Rd sewer",
+   "what_was_recorded": "Residents seeking sewer must be willing to pay for the betterment.",
+   "figures_as_printed": [],
+   "quote": "people have to come forward and be willing to pay for the betterment"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Weston & Sampson - Bootlegger grease trap plan review",
+   "resolution": "approved with inspection condition",
+   "quote": "carl asked for a motion to accept the plan, with the additional notation of the inspection.",
+   "tags": [
+    "grease trap",
+    "Bootlegger",
+    "inspection",
+    "W&S"
+   ]
+  },
+  {
+   "topic": "FY12 Weston & Sampson contract",
+   "resolution": "approved at $15,000 upset limit",
+   "quote": "carl asked if there was a motion to accept the contract at $15,000.",
+   "tags": [
+    "contract",
+    "W&S",
+    "FY12",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Private Inflow Removal Program re-review",
+   "resolution": "discussed; continued to next agenda",
+   "quote": "private inflow removal program for re-review was discussed briefly.",
+   "tags": [
+    "inflow",
+    "regulations",
+    "homeowners"
+   ]
+  },
+  {
+   "topic": "Asian Imperial, 337 Mass Ave",
+   "resolution": "no action; tech meeting planned within a month",
+   "quote": "barb noted that the owner was in today to meet with mike to discuss and that no architectural plans are ready as set.",
+   "tags": [
+    "consent agenda",
+    "development"
+   ]
+  },
+  {
+   "topic": "Sewer service area on GIS maps",
+   "resolution": "information only",
+   "quote": "barb noted that our sewer system has been added to the gis",
+   "tags": [
+    "GIS",
+    "consent agenda"
+   ]
+  },
+  {
+   "topic": "Town Report submission",
+   "resolution": "Bob to draft for next meeting",
+   "quote": "it was determined that bob would put together a draft that the commission would need to review at their next meeting.",
+   "tags": [
+    "town report"
+   ]
+  },
+  {
+   "topic": "Budget FY13 and rate increase",
+   "resolution": "no update; rate increase discussed",
+   "quote": "budget fy13- barb stated there are no updates.",
+   "tags": [
+    "budget",
+    "rates",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Leominster clay pipe issues, Whalom - Wallis Park area",
+   "resolution": "update; manhole decommissioning is next step",
+   "quote": "the next step will be the decommissioning of the wallis park manhole.",
+   "tags": [
+    "Wallis Park",
+    "pipe",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Patricia Chansky letter (Hollis Rd sewer request)",
+   "resolution": "discussed; Barb to count affected homes",
+   "quote": "barb will get the number of homes that would be impacted by a sewer installation in the area.",
+   "tags": [
+    "sewer extension",
+    "Hollis Rd",
+    "petition"
+   ]
+  },
+  {
+   "topic": "Youngs Rd update",
+   "resolution": "update; residents encouraged to respond",
+   "quote": "barb noted that 50 letters were sent out.",
+   "tags": [
+    "Youngs Rd",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Minutes of January 11, 2012",
+   "resolution": "approved",
+   "quote": "carl asked if there were a motion to approve the minutes of january 11th.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Wireless capability in Ritter and Town Hall",
+   "resolution": "information only",
+   "quote": "wireless capability has been installed in the ritter and already exists in town hall.",
+   "tags": [
+    "IT",
+    "wireless"
+   ]
+  },
+  {
+   "topic": "Corey's laptop",
+   "resolution": "docking station, no desktop",
+   "quote": "it was determined that they would just have a docking station for his laptop",
+   "tags": [
+    "IT",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "reviewed; no issue with payment",
+   "quote": "there was no issue with the payment of these invoices.",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Munis, meeting schedule and remote access",
+   "resolution": "2/8 meeting cancelled; remote access question deferred to Kerry",
+   "quote": "the next meeting will be february 28th.",
+   "tags": [
+    "Munis",
+    "meeting schedule",
+    "open meeting law"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bootlegger grease trap revised plan (WBA)",
+   "where": "text",
+   "quote": "brian milisci, representing bootlegger restaurant for wba, provided steve with the revised plan"
+  },
+  {
+   "name": "1970 drawing of the original grease tank installation",
+   "where": "text",
+   "quote": "there is a drawing from the 1970 installation of the original tank, specifying cast iron pipe."
+  },
+  {
+   "name": "Homeowners' letter draft (replace aging piping with PVC)",
+   "where": "text",
+   "quote": "steve also brought up the homeowners' letter draft that was just sent out to commission"
+  },
+  {
+   "name": "Inflow removal policy",
+   "where": "text",
+   "quote": "w&s had recommended we adopt the inflow removal policy and incorporate into our regulations"
+  },
+  {
+   "name": "Rules & Regulations review",
+   "where": "text",
+   "quote": "the current review of rules & regulations that he is doing for the commission."
+  },
+  {
+   "name": "Notice of rate increase (sent to Ledger reporter January 17th)",
+   "where": "text",
+   "quote": "barb stated that she had sent to notice of the increase to the reporter for the ledger's on january 17th"
+  },
+  {
+   "name": "Patricia Chansky letter dated January 18",
+   "where": "text",
+   "quote": "patricia chansky letter - barb noted that the commission had received a letter january 184h from a resident of hollis rd"
+  },
+  {
+   "name": "Invoices (two Fitchburg, one W&S smoke testing, one Koppelman & Page)",
+   "where": "text",
+   "quote": "barb presented invoices that bob had already approved for payment for the commission's review."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease trap",
+  "Bootlegger",
+  "W&S contract",
+  "FY12 budget",
+  "rate increase",
+  "Fitchburg",
+  "sewer extension request",
+  "inflow removal",
+  "town report",
+  "Munis",
+  "open meeting law",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

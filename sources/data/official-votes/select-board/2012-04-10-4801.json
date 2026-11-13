@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-04-10",
  "docid": "4801",
@@ -12,119 +12,549 @@
  },
  "votes": [
   {
-   "motion": "Approve Douglas S. Duval Sr. as Constable",
-   "moved_by": "Alonzo",
-   "seconded_by": "deBettencourt",
+   "motion": "Approve Douglas S. Duval Sr. for the position of Constable.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved that douglas s. duval sr. be approved for the position of constable. mr. debettencourt seconded. on vote, motion carried 5 in favor, o opposed."
   },
   {
-   "motion": "Recommend approval of Article 4 - Rescind Remaining Bond Authorization for Meadow Woods",
-   "moved_by": "Bertram",
-   "seconded_by": "deBettencourt",
+   "motion": "Recommend approval of Article 4, Rescind Remaining Bond Authorization for Meadow Woods.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram moved to recommend approval. mr. debettencourt seconded. on vote motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the FY12 Professional Firefighters Collective Bargaining Agreement",
-   "moved_by": "Alonzo",
-   "seconded_by": "Sund",
+   "motion": "Approve the FY12 Professional Firefighters Collective Bargaining Agreement (Article 6).",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved to approve the firefighters contract. mr. sund seconded. on vote motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend approval of the Consent Calendar - Reauthorize Revolving Funds",
-   "moved_by": "Alonzo",
-   "seconded_by": "Bertram",
+   "motion": "Recommend approval of the consent calendar (Annual Town Meeting Articles 1 through 6, revolving fund reauthorizations).",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved to recommend the approval of the consent calendar. ms. bertram seconded. on vote motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend approval of Article 7 - Accept/Hear Reports of Certain Committees",
-   "moved_by": "Alonzo",
-   "seconded_by": "Sund",
+   "motion": "Recommend approval of Article 7, Accept / Hear Reports of Certain Committees.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved to recommend approval. mr. sund seconded. on vote motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend approval of the FY13 Non-Override Budget",
-   "moved_by": "Bertram",
-   "seconded_by": "Alonzo",
+   "motion": "Recommend approval of the balanced budget (Article 8, FY13 Non-Override Budget), on re-vote.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "at this time the motion on the floor made by ms. bertram was to recommend approval of the balanced budget and was seconded by mr. alonzo. upon re-vote motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend approval of the revised Article 9 FY13 Override Budget",
-   "moved_by": "Bertram",
-   "seconded_by": "Alonzo",
+   "motion": "Recommend the revised Article 9 FY13 Override Budget.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 3-2",
    "procedural": false,
    "quote": "ms. bertram made a motion to recommend the revised article 9 override budget. mr. alonzo seconded the motion. on vote, motion carried, 3 in favor; 2 opposed (debettencourt & sund)"
   },
   {
-   "motion": "Recommend approval of $277,432 into the Stabilization Fund if Article 9 passes",
-   "moved_by": "Alonzo",
-   "seconded_by": "Bertram",
+   "motion": "Recommend approval of $277,432 into the stabilization fund (Article 10) if Article 9 passes.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo made the motion to recommend approval of $277,432 into the stabilization fund if article 9 passes. ms. bertram seconded the motion. on vote motion, carried 5 in favor, 0 opposed"
   },
   {
-   "motion": "Recommend approval of Article 11 - School Feasibility Study & Schematic Plan Design",
-   "moved_by": "Alonzo",
-   "seconded_by": "Bertram",
+   "motion": "Recommend approval of Article 11, School Feasibility Study & Schematic Plan Design.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo made the motion to recommend approval of article 11. ms. bertram seconded the motion. on vote motion carried, 5 in favor, o opposed."
   },
   {
-   "motion": "Recommend approval of Article 13 - FY13 Budget, Water Department Enterprise Fund",
-   "moved_by": "Bertram",
-   "seconded_by": "Alonzo",
+   "motion": "Recommend approval of Article 13, FY13 Budget, Water Department Enterprise Fund.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram moved to recommend approval of article 13. mr. alonzo seconded the motion. on vote, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend approval of Article 14 - FY13 Budget, Solid Waste Disposal Enterprise Fund",
-   "moved_by": "Alonzo",
-   "seconded_by": "Bertram",
+   "motion": "Recommend approval of Article 14, FY13 Budget, Solid Waste Disposal Enterprise Fund.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved to recommend approval of article 14. ms. bertram seconded the motion. on vote, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend approval of Article 16 - FY13 Capital Improvements Plan",
-   "moved_by": "Bertram",
-   "seconded_by": "Alonzo",
+   "motion": "Recommend approval of Article 15, FY13 Budget, Sewer Department Enterprise Fund.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. deBettencourt",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "ms. bertram moved to recommend approval of article 15. mr. debettencourt seconded the motion."
+  },
+  {
+   "motion": "Recommend approval of Article 16, FY13 Capital Improvements Plan (school snow plow truck).",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram moved to recommend approval for article 16. mr. alonzo seconded. on vote, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Recommend approval of Article 23 - Grant Driveway Easement along a portion of Town-owned Property",
-   "moved_by": "Bertram",
-   "seconded_by": "Alonzo",
+   "motion": "Recommend approval of Article 23, driveway easement along a portion of Town-owned Property.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram moved to recommend approval of article 23. mr. alonzo seconded. on vote, motion passed, 5 in favor 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:45 p.m.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "being no further business the board voted unanimously to adjourn the meeting at 9:45 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text with minor artifacts (e.g., letter 'O' for zero in one instance). Text is readable. Several warrant articles (1, 2, 3, 5, 7, 12, 17–22, 24–25) were deferred to town meeting with no vote taken at this meeting.",
- "cost_usd": 0.16479549999999998
+ "note": "Text is OCR of a scanned 5-page set with errors. \"O\" is read as zero in vote counts (e.g. \"O opposed\"); \"Vir. Alonzo\" is likely Mr. Alonzo; \"FY1I\" is likely FY11. Article 8 has an initial motion with no recorded count; the result is taken from the re-vote. Consent calendar articles 1-6 show \"5-0\" lines but are covered by the single consent-calendar motion, so no separate votes are listed. Article 15 records a motion and second but no result. The minutes and warrants presentation has no recorded vote. The adjournment motion names no mover or seconder. Several articles say only \"BOS to make recommendation at Town Meeting\" with no vote.",
+ "cost_usd": 0.01435962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Douglas S. Duval, Sr.",
+   "role": "Candidate for Constable",
+   "status": "present",
+   "quote": "douglas s. duval of lancaster ave came before the board as a candidate for constable."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member of the BOH",
+   "status": "present",
+   "quote": "dave passios, 56 whiting st and member of the boh spoke to the board to tell them that the boh meeting scheduled for april 17th has been rescheduled"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed that more information is needed on the loss of revenue figure before Article 20 (Min. Value for Personal Property) is passed; Article 20 sent to Town Meeting for a BOS recommendation.",
+   "quote": "board agreed that more information is needed before this is passed."
+  },
+  {
+   "decision": "Article 24, Authorize Revolving Fund - Off-Road Vehicle Fines, to be withdrawn.",
+   "quote": "ms. speidel stated that this article will be withdrawn."
+  },
+  {
+   "decision": "The Public Access Cable Committee will be invited to a BOS meeting to review the Bylaws (Article 25).",
+   "quote": "the public access cable committee will be invited to a bos meeting to review the bylaws."
+  },
+  {
+   "decision": "Reduce line item 13 by $8,000, add $10,000 to line item 39 and add $10,000 to line item 57 in the Article 9 override budget; all members agree the matter needs to be looked at again.",
+   "quote": "it was decided to reduce line item 13 by $8,000, add $10,000 to line item 39 and add $10,000 to line item 57."
+  },
+  {
+   "decision": "The Town Manager asked that the engineer provide her with a revised dollar amount of the town's 25% share for Summer Street design (Article 21).",
+   "quote": "the town manager requested that the engineer provide her with a revised dollar amount of what the towns 25% share is."
+  },
+  {
+   "decision": "No Executive Session needed this evening.",
+   "quote": "no need for executive session this evening"
+  },
+  {
+   "decision": "Articles 1, 2, 3, 5, 7 (special), 12, 17, 18, 19, 21, 22 and 25 left for a BOS recommendation at Town Meeting with no vote recorded.",
+   "quote": "article 2. stabilization fund: bos to make recommendation at town meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Override and tax bills (general discussion)",
+   "what_was_recorded": "Mr. Matthews said tax bills have risen in Lunenburg due to the primary school and police and fire building, and that Lunenburg has fallen lower in average tax bill rankings.",
+   "figures_as_printed": [],
+   "quote": "mr. matthews commented on an article which was printed in the fitchburg sentinel & enterprise concerning the override and how the tax bills have risen in lunenburg"
+  },
+  {
+   "topic": "Land use office consolidation (Article 8)",
+   "what_was_recorded": "Ms. Speidel said cost savings from combining the land use offices would be about $22,000 in salary and $15,000 in health insurance.",
+   "figures_as_printed": [
+    "$22,000",
+    "$15,000"
+   ],
+   "quote": "the cost savings would be about $22,000 in salary and $15,000 in health insurance"
+  },
+  {
+   "topic": "Assistant Tax Collector hours (Article 8 discussion)",
+   "what_was_recorded": "Expanding Assistant Tax Collector hours from 27 to 32 a week at a lower grade was discussed, with no increase in salary.",
+   "figures_as_printed": [],
+   "quote": "from 27 hours to 32 hours a week at a lower grade with no increase in salary."
+  },
+  {
+   "topic": "Override budget (Article 9)",
+   "what_was_recorded": "Ms. Speidel said a column was added to show where the $2.2M override would be allocated.",
+   "figures_as_printed": [
+    "$2.2M"
+   ],
+   "quote": "a column has been added to this article to identify where the $2.2m would be allocated"
+  },
+  {
+   "topic": "Recording secretary funding (Article 9)",
+   "what_was_recorded": "The override budget includes $3000 for a recording secretary, which Ms. Bertram said is not enough for the hours needed.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "ms. speidel said that it includes $3000 for a recording secretary."
+  },
+  {
+   "topic": "Reserve Fund use for recording secretary (Article 9)",
+   "what_was_recorded": "Ms. Speidel suggested $20,000 from the Reserve Fund to cover the extra expense, leaving a balance of $8000.",
+   "figures_as_printed": [
+    "$20,000",
+    "$8000"
+   ],
+   "quote": "ms. speidel suggested that $20,000 be used from the reserve fund to cover the extra expense. this leaves a balance of $8000."
+  },
+  {
+   "topic": "Line item shifts (Article 9)",
+   "what_was_recorded": "Line item 13 reduced by $8,000 and line items 39 and 57 each increased by $10,000.",
+   "figures_as_printed": [
+    "$8,000",
+    "$10,000"
+   ],
+   "quote": "it was decided to reduce line item 13 by $8,000, add $10,000 to line item 39 and add $10,000 to line item 57."
+  },
+  {
+   "topic": "Stabilization fund (Article 10)",
+   "what_was_recorded": "Recommended approval of $277,432 into the stabilization fund if Article 9 passes.",
+   "figures_as_printed": [
+    "$277,432"
+   ],
+   "quote": "mr. alonzo made the motion to recommend approval of $277,432 into the stabilization fund if article 9 passes."
+  },
+  {
+   "topic": "School maintenance and repairs (Article 11)",
+   "what_was_recorded": "Mr. Matthews said maintenance and repairs for the four current school buildings come to approximately $18M.",
+   "figures_as_printed": [
+    "$18M"
+   ],
+   "quote": "if you add up maintenance and repairs to the four buildings it comes up to approximately $18m"
+  },
+  {
+   "topic": "Sewer enterprise fund (Article 15)",
+   "what_was_recorded": "The sewer enterprise fund is not yet self-sustaining; Ms. Speidel will include the dollar amount in the article.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel will include the dollar amount in the article."
+  },
+  {
+   "topic": "School snow plow truck (Article 16)",
+   "what_was_recorded": "Discussion of purchasing a new truck with plow for the school department; the current truck is described as in complete disrepair.",
+   "figures_as_printed": [],
+   "quote": "he was also concerned about the purchasing of a new truck with plow for the school department."
+  },
+  {
+   "topic": "Library painting and caulking (Capital Plan)",
+   "what_was_recorded": "Mr. Matthews was concerned that library painting and caulking was not funded in Capital Planning.",
+   "figures_as_printed": [],
+   "quote": "mr. matthews spoke and said he was concerned with the painting and caulking at the library that did not get funded in capital planning."
+  },
+  {
+   "topic": "Personal property minimum value (Article 20)",
+   "what_was_recorded": "Ms. Speidel did not have the loss of revenue figure for the meeting.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel did not have the loss of revenue figure available for this meeting."
+  },
+  {
+   "topic": "Summer Street design funding (Article 21)",
+   "what_was_recorded": "Senator Flanagan is seeking $150,000 from the Transportation Bond Bill; the town makes up the difference from its 25% share.",
+   "figures_as_printed": [
+    "$150,000",
+    "25%"
+   ],
+   "quote": "senator flanagan is trying to get $150,000 for this from the transportation bond bill and the towns will make up the difference."
+  },
+  {
+   "topic": "Warrant payments presented for approval",
+   "what_was_recorded": "Three warrants were presented for approval with the amounts printed.",
+   "figures_as_printed": [
+    "$333,280.64",
+    "$632,415.63",
+    "$597,647.64"
+   ],
+   "quote": "2. warrants - w #59-12 $333,280.64 w #21 p-12 $632,415.63 w# 60-12 $597,647.64"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve Fund transfer to cover the recording secretary expense in the override budget (Article 9), suggested by the Town Manager.",
+   "amount_as_printed": "$20,000",
+   "outcome": "suggested; no vote recorded",
+   "quote": "ms. speidel suggested that $20,000 be used from the reserve fund to cover the extra expense."
+  },
+  {
+   "description": "Line-item transfer in the Article 9 override budget: reduce line item 13, add to line items 39 and 57.",
+   "amount_as_printed": "$8,000",
+   "outcome": "decided without a recorded vote",
+   "quote": "it was decided to reduce line item 13 by $8,000, add $10,000 to line item 39 and add $10,000 to line item 57."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Vir. Alonzo",
+   "stated_role": "",
+   "topic": "Voter registration deadline and Teen Center auction",
+   "quote": "vir. alonzo announced that the deadline to register to vote is thursday, april 12 at 8 p.m."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "member of the BOH",
+   "topic": "BOH meeting rescheduling, override revenue and school truck",
+   "quote": "dave passios, 56 whiting st and member of the boh spoke to the board to tell them that the boh meeting scheduled for april 17th has been rescheduled"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "",
+   "topic": "Regional Trails Organization meeting",
+   "quote": "ms. bertram stated that she had attended a regional trails organizational meeting which is a compilation"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "quote": "vir. alonzo announced that the deadline to register to vote is thursday, april 12 at 8 p.m.",
+   "tags": [
+    "voter registration",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Police drug take-back announcement",
+   "resolution": "no action",
+   "quote": "mr. matthews announced that the lunenburg police dept. will take part in the u.s. drug enforcement administration",
+   "tags": [
+    "police",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointment: Douglas S. Duval, Sr., Constable",
+   "resolution": "approved",
+   "quote": "mr. alonzo moved that douglas s. duval sr. be approved for the position of constable.",
+   "tags": [
+    "appointments",
+    "constable"
+   ]
+  },
+  {
+   "topic": "FY2013 budget, override and Town Meeting warrant article recommendations",
+   "resolution": "recommendations made on Articles 4, 6, 8, 9, 10, 11, 13, 14, 15, 16, 23; Articles 1-3, 5, 7, 12, 17-19, 21, 22, 25 left for Town Meeting; Article 20 needs more information; Article 24 withdrawn",
+   "quote": "the board reviewed the articles on the town meeting warrant and made the following recommendations.",
+   "tags": [
+    "FY2013 budget",
+    "override",
+    "town meeting",
+    "schools",
+    "land use",
+    "solar bylaw",
+    "sewer",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting consent calendar (revolving funds, Articles 1-6)",
+   "resolution": "approved",
+   "quote": "the consent calendar was voted on as a group.",
+   "tags": [
+    "consent calendar",
+    "revolving funds"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Articles 7-25 (non-budget)",
+   "resolution": "recommendations made or deferred to Town Meeting",
+   "quote": "article 7. accept / hear reports of certain committees: mr. alonzo moved to recommend approval.",
+   "tags": [
+    "town meeting",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Solar Energy Systems bylaw (Articles 17-19)",
+   "resolution": "BOS to make recommendation at Town Meeting; concerns raised",
+   "quote": "article 17. amend protective bylaw, add new section 4.15, solar energy systems: discussion began when",
+   "tags": [
+    "solar bylaw",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "School feasibility study (Article 11)",
+   "resolution": "recommended approval 5-0",
+   "quote": "mr. alonzo made the motion to recommend approval of article 11.",
+   "tags": [
+    "schools",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Memorial Day Committee",
+   "resolution": "not discussed",
+   "quote": "2. establishment of memorial day committee - not discussed.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "presented for approval; no vote recorded",
+   "quote": "the following minutes and warrants were presented for approval.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee and department reports",
+   "resolution": "no action",
+   "quote": "4. committee report - mr. alonzo reported that he attended the financial committee's public hearing",
+   "tags": [
+    "committees",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Old Business: appointments",
+   "resolution": "no action",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "not needed",
+   "quote": "no need for executive session this evening",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Public discussion: Regional Trails Organization",
+   "resolution": "no action",
+   "quote": "ms. bertram stated that she had attended a regional trails organizational meeting which is a compilation",
+   "tags": [
+    "trails",
+    "public discussion"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:45 p.m.",
+   "quote": "being no further business the board voted unanimously to adjourn the meeting at 9:45 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Meeting Warrant articles",
+   "where": "list",
+   "quote": "the board reviewed the articles on the town meeting warrant and made the following recommendations."
+  },
+  {
+   "name": "Warrants W #59-12, W #21 P-12, W# 60-12",
+   "where": "list",
+   "quote": "2. warrants - w #59-12 $333,280.64 w #21 p-12 $632,415.63 w# 60-12 $597,647.64"
+  },
+  {
+   "name": "Minutes 4/3/12 & 3/13/12",
+   "where": "list",
+   "quote": "1. minutes: 4/3/12 & 3/13/12"
+  },
+  {
+   "name": "Revised Article 9 override budget (with added column)",
+   "where": "text",
+   "quote": "a column has been added to this article to identify where the $2.2m would be allocated"
+  },
+  {
+   "name": "Fitchburg Sentinel & Enterprise article on the override",
+   "where": "text",
+   "quote": "an article which was printed in the fitchburg sentinel & enterprise concerning the override"
+  }
+ ],
+ "tags": [
+  "FY2013 budget",
+  "override",
+  "town meeting warrant",
+  "consent calendar",
+  "schools",
+  "land use offices",
+  "solar bylaw",
+  "sewer enterprise",
+  "constable appointment",
+  "executive session",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board reviewed the articles on the town meeting warrant"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-01-12",
  "docid": "5002",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the ambulance fee abatement in the amount of $817.46",
+   "motion": "To approve the ambulance fee abatement in the amount of $817.46.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -20,15 +20,248 @@
    "quote": "motion: r. ebersole to approve the abatement in the amount of $817.46 2nd. p. bertram vote: all in favor"
   },
   {
-   "motion": "Amend the tollbooth fundraiser form to prohibit advertising of private businesses",
+   "motion": "To amend the tollbooth fundraiser form under Special Conditions to read \"No advertising of private businesses is allowed during the fundraiser.\"",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: r. ebersole to amend the tollbooth fundraiser form under special conditions to read \"no advertising of private businesses is allowed during the fundraiser. \" vote: all in favor"
+   "quote": "to amend the tollbooth fundraiser form under special conditions to read"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. No readability issues that prevent vote identification.",
- "cost_usd": 0.0993925
+ "note": "OCR text from macOS Vision with some misspellings (e.g., 'recieved', 'Ottice', 'realtive'); figures and names read as printed. Only two motions are recorded, both with 'All in Favor' and no tally, and both are non-procedural. No adjournment or executive-session motion appears; the minutes end with 'The televised meeting ended at 7:25 p.m.' The pavement management workshop is announced but its content is not in the text. Signature block reads Elaine M. Peterson, Executive Assistant to the Town Manager, and she is not listed as an attendee.",
+ "cost_usd": 0.00570302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, member and kerry lafleur, town manager. the meeting opened at 7:00 p.m. with the pledge of"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and kerry lafleur, town manager. the meeting opened at 7:00 p.m. with the pledge of"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, was here to report on some progress on accessing school building committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair Toale will follow up on the Building Reuse Committee minutes, which he stated have been approved.",
+   "quote": "mr. toale stated they have been approved and he will follow up."
+  },
+  {
+   "decision": "Agenda order: the other agenda items are to be concluded before taking up #3 FY16 BOS Goals/ Pavement Management.",
+   "quote": "mr. toale recommended concluding the other agenda items before addressing #3 fy16 bos goals/ pavement management."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ambulance fee abatement",
+   "what_was_recorded": "An ambulance fee abatement request was approved in the amount of $817.46 for an applicant who met the low income limits.",
+   "figures_as_printed": [
+    "$817.46"
+   ],
+   "quote": "to approve the abatement in the amount of $817.46"
+  },
+  {
+   "topic": "Accounts payable and payroll warrants signed",
+   "what_was_recorded": "The Board signed one accounts payable warrant, a second accounts payable warrant, and a payroll warrant.",
+   "figures_as_printed": [
+    "$430,263.65",
+    "$244,789.21",
+    "$688,187.05"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $430,263.65; an accounts payable warrant in"
+  },
+  {
+   "topic": "School budget over target",
+   "what_was_recorded": "The Superintendent presented a school budget reported as over target by a stated amount.",
+   "figures_as_printed": [
+    "$312,600"
+   ],
+   "quote": "the superintendent presented a budget which is $312,600 over target."
+  },
+  {
+   "topic": "Fire Department SAFE and Senior Safe grants",
+   "what_was_recorded": "The Fire Department received two fire safety and education grants, one for the SAFE Program and one for the Senior Safe Program.",
+   "figures_as_printed": [
+    "$4,237",
+    "$2,716"
+   ],
+   "quote": "(safe) program in the amount of $4,237 and the senior safe program in the amount of $2,716."
+  },
+  {
+   "topic": "Bond counsel opinion on contingency fund",
+   "what_was_recorded": "A bond counsel opinion on the use of the contingency fund was to be discussed at the school building committee meeting; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "one item being discussed will be the opinion from bond counsel regarding use of the contingency fund."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "school building committee minutes and Firefighters Union negotiations",
+   "quote": "dave rodgers, 82 highland street, was here to report on some progress on accessing school building committee"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "heard; no action",
+   "tags": [
+    "public comment",
+    "school building committee",
+    "firefighters union"
+   ],
+   "quote": "dave rodgers, 82 highland street, was here to report on some progress on accessing school building committee"
+  },
+  {
+   "topic": "Ambulance Fee Abatement Request for $817.46",
+   "resolution": "approved $817.46 abatement",
+   "tags": [
+    "abatement",
+    "ambulance"
+   ],
+   "quote": "ms. lafleur stated this request was submitted via the fire chief's office. the application is complete and the"
+  },
+  {
+   "topic": "Tollbooth Fundraiser Policy Amendment",
+   "resolution": "fundraiser form amended",
+   "tags": [
+    "tollbooth",
+    "fundraiser",
+    "policy"
+   ],
+   "quote": "mr. alonzo stated this agenda item should be an amendment to the form as there is no policy."
+  },
+  {
+   "topic": "FY16 BOS Goals / Pavement Management",
+   "resolution": "deferred; workshop to follow a break, no discussion recorded in minutes",
+   "tags": [
+    "pavement management",
+    "FY16 goals",
+    "workshop"
+   ],
+   "quote": "mr. toale suggested a five minute break be taken before they begin their workshop on pavement management."
+  },
+  {
+   "topic": "Minutes / Warrants / Action File Issues",
+   "resolution": "warrants signed",
+   "tags": [
+    "warrants",
+    "accounts payable",
+    "payroll"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $430,263.65; an accounts payable warrant in"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received; no action",
+   "tags": [
+    "committee reports",
+    "conservation commission",
+    "planning board",
+    "capital planning",
+    "school building committee"
+   ],
+   "quote": "mr. ebersole reported sewer commission is meeting tonight."
+  },
+  {
+   "topic": "State primary warrant and absentee voting notice",
+   "resolution": "noted; no action",
+   "tags": [
+    "election",
+    "state primary",
+    "absentee ballots"
+   ],
+   "quote": "ms. lafleur indicated a warrant for the state primary needing signatures."
+  },
+  {
+   "topic": "Fire Department SAFE and Senior Safe grants",
+   "resolution": "noted; no action",
+   "tags": [
+    "fire department",
+    "grants"
+   ],
+   "quote": "the fire department has recieved fire safety and education grants for the student awareness fire education"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ambulance fee abatement application",
+   "where": "text",
+   "quote": "the application is complete and the applicant meets the low income limits as set forth in the application process."
+  },
+  {
+   "name": "Tollbooth fundraiser form",
+   "where": "text",
+   "quote": "to amend the tollbooth fundraiser form under special conditions to read"
+  },
+  {
+   "name": "Warrant for the state primary",
+   "where": "text",
+   "quote": "ms. lafleur indicated a warrant for the state primary needing signatures."
+  },
+  {
+   "name": "Building Reuse Committee final presentation",
+   "where": "text",
+   "quote": "building reuse committee will meet this friday at 7:30 a.m. to review their final presentation to this board."
+  },
+  {
+   "name": "Monoosnoc Brook Renewal presentation (Leominster TV)",
+   "where": "text",
+   "quote": "one presentation, monoosnoc brook renewal in leominster is available for viewing on lunenburg public access, courtesy of leominster tv."
+  }
+ ],
+ "tags": [
+  "select board",
+  "abatement",
+  "tollbooth fundraiser policy",
+  "warrants",
+  "committee reports",
+  "school building committee",
+  "pavement management",
+  "state primary election",
+  "fire department grants"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

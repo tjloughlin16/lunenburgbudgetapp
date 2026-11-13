@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-12-08",
  "docid": "4953",
@@ -12,104 +12,429 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session to discuss collective bargaining, litigation, retiree health insurance regulations, and union negotiations",
+   "motion": "Enter executive session under M.G.L. Ch. 30A, § 21A to discuss collective bargaining/union negotiations and retiree health insurance regulations, and reconvene to open session.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole 2^d: p. luck to enter into executive session-m.g.l. ch. 30a, § 21a, to discuss strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigating position, and the chair declares so for discussion of retiree health insurance regulations and to update union negotiations and to reconvene to open session vote: mr. ebersole-aye, ms. luck-aye, mr. toale-aye"
+   "quote": "to enter into executive session-m.g.l. ch. 30a, § 21a, to discuss strategy with respect to collective bargaining"
   },
   {
-   "motion": "Approve the net metering agreement between the Town and Fitchburg Solar, LLC",
+   "motion": "Approve drafting the temporary license for 1134 Northfield Road with the stipulation that the agreement indemnify the Town from any damage during construction (as amended by Ms. Bertram).",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve drafting the license with the stipulation that language be incorporated into the agreement that indemnifies the town from any damage during construction"
+  },
+  {
+   "motion": "Approve the net metering agreement between the Town and Fitchburg Solar, LLC (section reference corrected from 4.3 to 4.2).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2n%: p. bertram to approve the net metering agreement between the town and fitchburg solar, llc effective on this ms. bertram noted on page 2 a reference is made to section 4.3 and there is no such section, it should be changed to section 4.2. the notation was made. vote: all in favor"
+   "quote": "to approve the net metering agreement between the town and fitchburg solar, llc effective on this"
   },
   {
-   "motion": "Appoint Phyllis Luck as Board of Selectmen representative to the Storm Water Task Force",
+   "motion": "Appoint Phyllis Luck as the Board of Selectmen representative to the Storm Water Task Force.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: r. ebersole to appoint phyllis luck as the board of selectmen representative to the storm water task force vote: all in favor"
+   "quote": "to appoint phyllis luck as the board of selectmen representative to the storm water task force"
   },
   {
-   "motion": "Appoint Dave MacDonald as member-at-large on the Storm Water Task Force",
+   "motion": "Appoint Dave MacDonald as a member-at-large on the Storm Water Task Force.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to appoint dave macdonald as a member-at-large on the storm water task force 2°°: t. alonzo ===page 3=== mr. macdonald thanked the board. he looks forward to working on the task force. vote:",
-   "quote_taken_from_text": true
+   "quote": "to appoint dave macdonald as a member-at-large on the storm water task force"
   },
   {
-   "motion": "Appoint Cullen Dwyer as Historical Commission representative to the Architectural Preservation District Commission",
+   "motion": "Appoint Cullen Dwyer as the Historical Commission representative to the Architectural Preservation District Commission.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to appoint cullen dwyer as the historical commission representative to the architectural preservation district commission 2\"d: t. alonzo vote: all in favor"
+   "quote": "to appoint cullen dwyer as the historical commission representative to the architectural preservation"
   },
   {
-   "motion": "Approve the 2016 liquor license renewals",
+   "motion": "Approve the 2016 liquor license renewals as read by the Town Manager.",
    "moved_by": "R. Ebersole",
    "seconded_by": "I. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: i. alonzo to approve the 2016 liquor license renewals as read by the town manager vote: all in favor"
+   "quote": "to approve the 2016 liquor license renewals as read by the town manager"
   },
   {
-   "motion": "Approve the common victualer license renewals",
+   "motion": "Approve the common victualer license renewals as read by the Town Manager.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2ªd: t. alonzo to approve the common victualer license renewals as read by the town manager vote: all in favor"
+   "quote": "to approve the common victualer license renewals as read by the town manager"
   },
   {
-   "motion": "Approve the automatic amusement device license renewals",
+   "motion": "Approve the auto dealer license renewals as read by the Town Manager.",
+   "moved_by": "T. Alonzo",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "to approve the auto dealer license renewals as read by the town manager"
+  },
+  {
+   "motion": "Approve the automatic amusement device license renewals as read by the Town Manager.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'': t. alonzo to approve the automatic amusement device license renewals as read by the town manager vote: all in favor"
+   "quote": "to approve the automatic amusement device license renewals as read by the town manager"
   },
   {
-   "motion": "Approve the jukebox licenses",
+   "motion": "Approve the weekday entertainment licenses as presented.",
+   "moved_by": "P. Bertram",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "to approve the weekday entertainment licenses as presented"
+  },
+  {
+   "motion": "Approve the jukebox licenses as read by the Town Manager.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to approve the jukebox licenses as read by the town manager 2nd. p. bertram vote: all in favor"
+   "quote": "to approve the jukebox licenses as read by the town manager"
   },
   {
-   "motion": "Approve the miscellaneous license renewals",
+   "motion": "Approve the miscellaneous license renewals as presented.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve the miscellaneous license renewals as presented. 2nd, t. alonzo vote: all in favor"
+   "quote": "to approve the miscellaneous license renewals as presented."
   },
   {
-   "motion": "Approve the jukebox license for Lunenburg Zeda's Inc.",
+   "motion": "Approve the new jukebox license for Lunenburg Zeda's Inc.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2nd: t. alonzo to approve the jukebox license for lunenburg zeda's ine. vote: all in favor"
+   "quote": "to approve the jukebox license for lunenburg zeda's ine."
   },
   {
-   "motion": "Adjourn the meeting at 8:38 PM",
+   "motion": "Adjourn the meeting at 8:38 PM.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:38 pm 2*°:t. alonzo vote: all in favor"
+   "quote": "to adjourn the meeting at 8:38 pm"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-extracted text. Two motions appear in the minutes with no recorded vote: the auto dealer license renewals (T. Alonzo) and the weekday entertainment licenses (P. Bertram). These are excluded. Minor OCR artifacts preserved in quotes (e.g., \"2^d\" for \"2nd\", \"2n%\" for \"2nd\", \"2\\\"d\" for \"2nd\", \"I. Alonzo\" likely for \"T. Alonzo\", \"Ine.\" likely for \"Inc.\").",
- "cost_usd": 0.1611695
+ "dropped_unquoted": 0,
+ "note": "OCR scan (macOS Vision) of a 7-page minutes text with garbled motion/second lines (e.g. \"2^d\", \"2n%\", \"2°°\"). Votes are recorded as \"All in Favor\" or by member names without a numeric count, so outcomes are \"passed\" or \"not stated\". The executive-session vote lists three members only (Ebersole, Luck, Toale). The auto dealer and weekday entertainment motions show no result. A \"2nd. T. Alonzo / Vote: All in Favor\" block follows the weekday entertainment list and may belong to that motion or to the jukebox motion; I did not record it as a separate vote. The first \"Vote: All in Favor\" in the amusement device section has no clear motion; I recorded the later motion that has a clear second. Liquor renewals seconder is printed as \"I. Alonzo\" and kept as printed. The net metering motion names Fitchburg Solar, LLC while the discussion concerns Nexamp; both are kept as printed. No documents list is printed.",
+ "cost_usd": 0.01111902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Rick Holland",
+   "role": "Attorney, Kopelman and Paige",
+   "status": "present",
+   "quote": "attorney rick holland was here to review the highlights of the agreement with the board and address any questions."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "applicant, 563 Massachusetts Avenue",
+   "status": "present",
+   "quote": "tanner cole, 563 massachusetts avenue, presented his request for access to the town's right of way in order"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director rodriquenz reported he visited the site and there was a precedent set on rolling acres road and"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "member-at-large appointee, Storm Water Task Force",
+   "status": "present",
+   "quote": "mr. macdonald thanked the board. he looks forward to working on the task force."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "mr. toale commended executive assistant peterson for providing a comprehensive renewal package."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The temporary license for 1134 Northfield Road could be approved but must be signed at a later date, as it is not ready for the evening's meeting.",
+   "quote": "mr. toale pointed out the license could be approved but must be signed at a later date as it is not ready for this"
+  },
+  {
+   "decision": "The four businesses whose 2016 licenses were not ready for renewal are to be continued to the next meeting.",
+   "quote": "we only have four businesses who hold licenses that are not ready for renewal; one of them is not renewing due to retirement."
+  },
+  {
+   "decision": "The Board accepted the other nominations for the Storm Water Task Force representatives.",
+   "quote": "the board accepted the other nominations for the storm water task force representatives."
+  },
+  {
+   "decision": "The Town Manager requested that Supt. Calmes obtain clarification from the MSBA on the Board of Selectmen's role in budget revision and change-order notifications.",
+   "quote": "ms. lafleur stated she has requested supt. calmes to get clarification from the msba"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Net metering agreement with Nexamp (value to Town)",
+   "what_was_recorded": "The Town Manager estimated the annual value of the net metering share at $20,000 to $25,000 and the annual expense for municipal buildings outside the school at about $140,000.",
+   "figures_as_printed": [
+    "$20,000 to $25,000",
+    "$140,000"
+   ],
+   "quote": "the annual value of this is around $20,000 to $25,000. the annual expense just for municipal buildings outside of the school is around $140,000."
+  },
+  {
+   "topic": "Net metering agreement pricing",
+   "what_was_recorded": "Attorney Holland described a minimum floor price for the credits.",
+   "figures_as_printed": [
+    ".08 cents"
+   ],
+   "quote": "there is a minimum floor price of .08 cents."
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant.",
+   "figures_as_printed": [
+    "$376,237.80"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $376,237.80."
+  },
+  {
+   "topic": "Facilities improvement request (School Committee report)",
+   "what_was_recorded": "Facilities Director Londa requested funds for facilities improvement that included a used pickup truck.",
+   "figures_as_printed": [
+    "$228,000"
+   ],
+   "quote": "facilities director londa requested $228,000 for facilities improvement which included a used pickup truck."
+  },
+  {
+   "topic": "Middle/High School construction budget revisions and contingency funds",
+   "what_was_recorded": "Ms. Luck questioned the Board's role in budget revision and change-order notices and how contingency funds can be spent; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. luck also wanted to know how contingency funds can be expended and on what contingency funds can be used."
+  },
+  {
+   "topic": "License fees",
+   "what_was_recorded": "Ms. Bertram asked whether the Town's license fees match similar-sized communities and requested a review over the next year; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. bertram inquired if the town's license fees were up to par with other communities of similar size."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "Chairman",
+   "topic": "Lions Club pancake breakfast",
+   "quote": "mr. toale announced the turkey hill lions club of lunenburg will be holding a pancake breakfast at eagle"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "Member",
+   "topic": "Girl Scout breakfast and Senior Center boutique",
+   "quote": "ms. bertram thanked everyone who attended the girl scout pancake breakfast this past saturday."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "Storm drains, COA, senior programs",
+   "quote": "ms. luck reminded residents to rake the leaves off their storm drains in their neighborhoods in order for water"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Clerk",
+   "topic": "Family gift mart and Boys & Girls Club fund drive",
+   "quote": "mr. alonzo announced the lunenburg family gift mart is open for the season."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, then reconvened to open session",
+   "quote": "to enter into executive session-m.g.l. ch. 30a, § 21a, to discuss strategy with respect to collective bargaining",
+   "tags": [
+    "executive session",
+    "union negotiations",
+    "retiree health insurance"
+   ]
+  },
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "announcements only, no action",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Temporary license request, 1134 Northfield Road",
+   "resolution": "drafting of temporary license approved; signing deferred",
+   "quote": "tanner cole, 563 massachusetts avenue, presented his request for access to the town's right of way in order",
+   "tags": [
+    "septic system",
+    "right of way",
+    "temporary license",
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "Review of net metering agreement with Nexamp",
+   "resolution": "net metering agreement approved",
+   "quote": "ms. lafleur reported the board had authorized her to negotiate the net metering agreement for the project that",
+   "tags": [
+    "net metering",
+    "solar",
+    "Nexamp",
+    "Unitil",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "Storm Water Task Force and Historical Commission appointments approved",
+   "quote": "mr. toale moved on to the storm water task force recommendations for the representatives for planning",
+   "tags": [
+    "appointments",
+    "storm water task force",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Current business 1: 2016 license renewals",
+   "resolution": "liquor, common victualer, auto dealer, amusement, entertainment, jukebox and misc renewals approved; Zeda's jukebox license approved; four incomplete renewals continued",
+   "quote": "1. 2016 license renewals: mr. toale commended executive assistant peterson for providing a comprehensive renewal package.",
+   "tags": [
+    "licenses",
+    "renewals",
+    "liquor",
+    "jukebox"
+   ]
+  },
+  {
+   "topic": "Warrants and action file issues",
+   "resolution": "AP warrant signed; school project questions discussed, no action",
+   "quote": "the board signed an accounts payable warrant in the amount of $376,237.80.",
+   "tags": [
+    "warrant",
+    "school building project",
+    "contingency funds",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only, no action",
+   "quote": "ms. luck reported the school committee met on december 2n; the three school principals shared their budget",
+   "tags": [
+    "committee reports",
+    "school budget",
+    "conservation",
+    "pipeline",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:38 PM; next meeting December 15",
+   "quote": "to adjourn the meeting at 8:38 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Net metering agreement (Nexamp / Fitchburg Solar, LLC)",
+   "where": "text",
+   "quote": "ms. lafleur reported the board had authorized her to negotiate the net metering agreement for the project that was proposed to them."
+  },
+  {
+   "name": "November 17 memo from School Superintendent Calmes to the Town Manager and the Chairman",
+   "where": "text",
+   "quote": "she asked about ms. calmes' notation that the project manager stated the board of selectmen receives notification"
+  },
+  {
+   "name": "Five Year Financial Forecast",
+   "where": "text",
+   "quote": "mr. alonzo reported town manager presented her five year financial forecast to the finance committee last week."
+  },
+  {
+   "name": "Attorney General report on the pipeline project",
+   "where": "text",
+   "quote": "the attorney general issued a report on the pipeline project which basically says"
+  },
+  {
+   "name": "Kinder Morgan official application (FERC docket CP16-21)",
+   "where": "text",
+   "quote": "kinder morgan did file its official application."
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "licenses",
+  "renewals",
+  "net metering",
+  "solar",
+  "appointments",
+  "storm water task force",
+  "school building project",
+  "budget",
+  "executive session",
+  "pipeline",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

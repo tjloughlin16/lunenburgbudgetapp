@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2017-04-03",
  "docid": "972",
@@ -12,39 +12,213 @@
  },
  "votes": [
   {
-   "motion": "Approve requested variances for 178 Peninsula Drive septic system",
+   "motion": "Approve the requested variances for the 564 Page Street replacement septic system (sieve analysis, offset to groundwater, inlet and outlet tees).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios, the requested variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by passios, the requested variances were approved."
   },
   {
-   "motion": "Approve requested variances for 90 Arbor Street septic system",
+   "motion": "Approve the requested variances for the 90 Arbor Street septic system (offset to groundwater 4 feet to 3 feet; inlet and outlet tees).",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "on motion by passios and second by jewell, the requested variances were approved. all in favor."
+   "quote": "after discussion and on motion by passios and second by jewell, the requested variances were approved."
   },
   {
-   "motion": "Approve requested variances for 52 Spring Street Extension septic system",
+   "motion": "Approve an item under the 52 Spring Street Extension heading (the subject is cut off in the OCR text; the minutes say only that the vote was passed).",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "on motion by fortin and second by jewell, the voted was passed. all in favor."
   },
   {
-   "motion": "Retain permanent boundary marker regulation for new construction",
+   "motion": "Retain the Lunenburg Zoning/Planning Board regulation requiring permanent boundary markers on all new construction.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the board is unanimously in favor a retaining the lunenburg zoning/planning board regulation requiring permanent boundary markers on all new construction."
+   "quote": "after discussion the board is unanimously in favor a retaining the lunenburg zoning/planning board regulation requiring permanent boundary markers on all new construction."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Vote 4 (boundary markers) records the board as unanimously in favor but does not name a specific mover and seconder.",
- "cost_usd": 0.1013425
+ "note": "OCR scan (macOS Vision) with scrambled page order: the 52 Spring Street Extension heading sits at the end of page 1 and its text (ending 'higher nitrate level.' and the Fortin motion) appears at the top of page 2, so the subject of that motion is not legible. The 564 Page Street and 90 Arbor Street headings are split from their text, so the address-to-motion pairing is inferred from order. 'Dog Smith' is likely an OCR error for Doug Smith. A date stamp reads 'APR 2 3 2018' against a 2017 meeting date. The minutes record no dollar figures, no transfers, no public comment section, and no list of documents. The Title 5 and septic permit items are recorded as received/signed without a motion.",
+ "cost_usd": 0.0057496199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Emond",
+   "role": "Chairman",
+   "status": "not stated",
+   "quote": "chairman emond directed administrative assistant andrea schnepf to draft a letter to the planning director"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "after discussion and on motion by passios and second by jewell, the requested variances were approved."
+  },
+  {
+   "name": "Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "after discussion and on motion by jewell and second by passios, the requested variances were approved."
+  },
+  {
+   "name": "Fortin",
+   "role": "",
+   "status": "present",
+   "quote": "on motion by fortin and second by jewell, the voted was passed. all in favor."
+  },
+  {
+   "name": "Dog Smith",
+   "role": "representing the owner (as printed: on behalf of the owner)",
+   "status": "present",
+   "quote": "dog smith met with the board on behalf of the owner."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner (as printed: on behalf of the owner)",
+   "status": "present",
+   "quote": "doug smith and bob proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "representing the owner (as printed: on behalf of the owner)",
+   "status": "present",
+   "quote": "doug smith and bob proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Greg Bitner",
+   "role": "",
+   "status": "present",
+   "quote": "greg bitner was also present for this discussion."
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "chairman emond directed administrative assistant andrea schnepf to draft a letter to the planning director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for 38 Country Road and 193 Houghtons Mill Road were acknowledged and received and filed.",
+   "quote": "title 5 inspection reports acknowledged: 38 country road 193 houghtons mill road received & filed"
+  },
+  {
+   "decision": "Septic permit signed for 178 Peninsula Drive.",
+   "quote": "septic permits signed: 178 peninsula drive"
+  },
+  {
+   "decision": "Chairman Emond directed Administrative Assistant Andrea Schnepf to draft a letter to the Planning Director stating that the Board of Health is requiring that the current regulation be enforced.",
+   "quote": "chairman emond directed administrative assistant andrea schnepf to draft a letter to the planning director stating that the board of health is requiring that the current regulation be enforced."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (March 6, 2017 minutes, per heading)",
+   "quote": "minutes approved: march 6, 2017",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "received and filed",
+   "quote": "title 5 inspection reports acknowledged: 38 country road 193 houghtons mill road received & filed",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permit, 178 Peninsula Drive",
+   "resolution": "permit signed",
+   "quote": "septic permits signed: 178 peninsula drive",
+   "tags": [
+    "septic",
+    "permit"
+   ]
+  },
+  {
+   "topic": "564 Page Street septic variances",
+   "resolution": "approved",
+   "quote": "dog smith met with the board on behalf of the owner. this system is in failure due to high ground water.",
+   "tags": [
+    "variances",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "90 Arbor Street septic variances",
+   "resolution": "approved",
+   "quote": "doug smith and bob proctor met with the board on behalf of the owner. this system is in failure due to",
+   "tags": [
+    "variances",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "52 Spring Street Extension",
+   "resolution": "motion passed; subject not legible in OCR text",
+   "quote": "on motion by fortin and second by jewell, the voted was passed. all in favor.",
+   "tags": [
+    "septic",
+    "nitrate"
+   ]
+  },
+  {
+   "topic": "Permanent boundary markers on new construction",
+   "resolution": "retained regulation unanimously; chair directed letter to Planning Director",
+   "quote": "permanent boundary markers on new construction",
+   "tags": [
+    "boundary markers",
+    "zoning regulation",
+    "Planning Board"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports (38 Country Road; 193 Houghtons Mill Road)",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 38 country road 193 houghtons mill road received & filed"
+  },
+  {
+   "name": "Septic permit for 178 Peninsula Drive",
+   "where": "text",
+   "quote": "septic permits signed: 178 peninsula drive"
+  },
+  {
+   "name": "Letter to the Planning Director (to be drafted by Andrea Schnepf)",
+   "where": "text",
+   "quote": "chairman emond directed administrative assistant andrea schnepf to draft a letter to the planning director stating that the board of health is requiring that the current regulation be enforced."
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic",
+  "Title 5",
+  "variances",
+  "groundwater",
+  "boundary markers",
+  "zoning regulation",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

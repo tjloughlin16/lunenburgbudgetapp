@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-08-26",
  "docid": "5468",
@@ -12,34 +12,341 @@
  },
  "votes": [
   {
-   "motion": "to charge Whalom Luxury Apartments the sewer fees that were in the regulations as of the original application date of September 3, 2008",
+   "motion": "Recommend to the ZBA that Whalom Luxury Apartments be charged the sewer fees in the regulations as of the original application date of September 3, 2008.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "dave made the motion that our recommendation to the zba is to char ge whalom luxury apartments the sewer fees that were in the regulations as of the original application date of september 3, 2008, troy seconded. vote taken was unanimous",
-   "quote_taken_from_text": true
+   "quote": "dave made the motion that our recommendation to the zba is to char ge whalom luxury apartments the sewer fees that were in the regulations"
   },
   {
-   "motion": "to accept the minutes from the 8/5/14 Executive Session",
+   "motion": "Accept the minutes of the 8/5/14 Executive Session.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "dave made the motion to accept the minutes, troy seconded. vote ta ken was unanimous",
-   "quote_taken_from_text": true
+   "quote": "dave made the motion to accept the minutes, troy seconded."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Troy",
    "seconded_by": "Mike",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "troy made the motion to adjourn, mike seconded. vote taken was unani mous",
-   "quote_taken_from_text": true
+   "quote": "troy made the motion to adjourn, mike seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0885875
+ "note": "Typed minutes with many words split by extraction (e.g. 'char ge', 'discuss ion'); quotes copied as printed. Attendance line lists five members; Barbara Lefebvre is recorded as present from her own statement and her signature on the minutes. Only three motions are recorded as votes (Whalom recommendation, 8/5/14 minutes, adjournment). Several board decisions were reached without a recorded vote. Meeting was held at the DPW. The 8/12 minutes were on the agenda but not finished; no outcome recorded.",
+ "cost_usd": 0.00766622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, butch b ilotta, troy daniels"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, butch b ilotta, troy daniels"
+  },
+  {
+   "name": "Mike Nault",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, butch b ilotta, troy daniels"
+  },
+  {
+   "name": "Butch Bilotta",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, butch b ilotta, troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "attendees: carl luck, dave macdonald, mike nault, butch b ilotta, troy daniels"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "status": "present",
+   "quote": "barb stated she had just done up invoices, not letters."
+  },
+  {
+   "name": "Kevin",
+   "status": "not stated",
+   "quote": "carl noted that we'd received a short update from kevin,"
+  },
+  {
+   "name": "Jack",
+   "status": "not stated",
+   "quote": "carl talked to jack and his belief is that the best solution"
+  },
+  {
+   "name": "Karen Weller",
+   "status": "not stated",
+   "quote": "he talked with karen weller, who walked away"
+  },
+  {
+   "name": "Dick Heaton",
+   "status": "not stated",
+   "quote": "carl stated that dick heaton believed the developers"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Cut off the sewer connection at the street for 37 Graham rather than repair the line; a reconnection charge will apply to new owners; notice to Weller as legal owner with lien holder copied; BOH to be advised.",
+   "quote": "commission discussed this option and decided in fa vor of that option."
+  },
+  {
+   "decision": "Commission agreed not to send the fining letters certified, even to the banks.",
+   "quote": "commission agreed to not send the letters certified, even to the banks"
+  },
+  {
+   "decision": "Fines will not be levied on those whose issues are resolved or who have inspection appointments set up; fines go to illegal connections with no appointment.",
+   "quote": "they would not fine those who have reso lved issues"
+  },
+  {
+   "decision": "Letter to non-responding property owners to state the failure to reply, the two letters sent, three notices left, the $50/day fine, that the lien holder is copied, and to include a copy of the last letter.",
+   "quote": "it should state you have failed to reply"
+  },
+  {
+   "decision": "Give the owners of 55 Graham until the 30th to arrange an inspection before fining.",
+   "quote": "we'll give the owners of 55 graham until the 30"
+  },
+  {
+   "decision": "Barb to serve notice to Weller as legal owner that the connection is being disconnected, with lien holder copied.",
+   "quote": "bar b to serve notice to weller as the legal owner",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Grease trap non-compliance fines confirmed: $50 for non-compliance, then $25/day backdated to the start of the fiscal year (7/1).",
+   "quote": "fines for $50 for non- compliance, t hen $25/day backdated to the start of the fiscal year"
+  },
+  {
+   "decision": "Carl to verify with Jack whether generator maintenance is covered under the contract; generator maintenance to be discussed on 9/9.",
+   "quote": "carl will verify with jack and generator maintenance can be"
+  },
+  {
+   "decision": "SWSS to be asked to attend the 9/9 meeting to discuss pump station reports, SCADA, run times and a station tour.",
+   "quote": "it was determined we'd ask them in to our next me eting 9/9"
+  },
+  {
+   "decision": "Leominster and Fitchburg invoices were approved as coming in at the expected amounts.",
+   "quote": "they had come in for the amounts that were expected and were approved."
+  },
+  {
+   "decision": "The 9/9 meeting date will be kept so SWSS can attend, even though Barb is on vacation from 8/29 to 9/8.",
+   "quote": "but we want swss to come in, so we'll keep the date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "37 Graham daily charge",
+   "what_was_recorded": "Troy said that, as with 37 Graham, the Commission could justify a $50/day charge for the cost.",
+   "figures_as_printed": [
+    "$50/day"
+   ],
+   "quote": "we could justify the charge of $50/day"
+  },
+  {
+   "topic": "Proposed monthly charge for refused access",
+   "what_was_recorded": "Troy asked Town Counsel to consider a $500/mo. charge where a resident refuses access, similar to assessor laws; he preferred to move away from the $50/day.",
+   "figures_as_printed": [
+    "$500/mo."
+   ],
+   "quote": "charge $500/mo., similar to laws supporting the assessors"
+  },
+  {
+   "topic": "Suspected illegal connection fine",
+   "what_was_recorded": "Carl noted a resident who solves an illegal connection quickly pays only $200; suspected connections pay more if they delay.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "they can solve it quickly and pay only $200"
+  },
+  {
+   "topic": "Metering each account",
+   "what_was_recorded": "Butch asked about metering each account, but Carl thought it would be too expensive.",
+   "figures_as_printed": [],
+   "quote": "carl thought that wou ld be too expensive."
+  },
+  {
+   "topic": "Reconnection charge for new owners",
+   "what_was_recorded": "A reconnection charge for new owners would help recoup the cost of cutting the pipe at the street.",
+   "figures_as_printed": [],
+   "quote": "we would charge a reconnection charge for new owners"
+  },
+  {
+   "topic": "Grease trap non-compliance fines",
+   "what_was_recorded": "Fines of $50 for non-compliance, then $25/day backdated to 7/1, were confirmed.",
+   "figures_as_printed": [
+    "$50",
+    "$25/day"
+   ],
+   "quote": "$25/day backdated to the start of the fiscal year"
+  },
+  {
+   "topic": "Generator maintenance estimate",
+   "what_was_recorded": "Barb reported an estimate for major generator maintenance; the Commission expects it to be covered under the contract since 7/1/14.",
+   "figures_as_printed": [
+    "$9250"
+   ],
+   "quote": "maintenance for $9250, but the commission expects that to"
+  },
+  {
+   "topic": "Leominster invoice",
+   "what_was_recorded": "Barb had invoices from Leominster for review; they came in as expected and were approved.",
+   "figures_as_printed": [
+    "$43,364.73"
+   ],
+   "quote": "barb had the invoices from leominster for $43,364.73"
+  },
+  {
+   "topic": "Fitchburg invoice",
+   "what_was_recorded": "Barb had an invoice from Fitchburg for review; it came in as expected and was approved.",
+   "figures_as_printed": [
+    "$7524.47"
+   ],
+   "quote": "fitchburg $7524.47 for review"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "SRF Project",
+   "resolution": "update received; no action recorded",
+   "quote": "carl noted that we'd received a short update from kevin,",
+   "tags": [
+    "SRF",
+    "betterments",
+    "West St"
+   ]
+  },
+  {
+   "topic": "I/I Project status",
+   "resolution": "fining approach discussed; letters and decisions made without vote; 37 Graham to be cut off at street",
+   "quote": "carl stated that he and barb have had a lot of discuss ion on the fining",
+   "tags": [
+    "I/I",
+    "fines",
+    "illegal connections",
+    "37 Graham",
+    "55 Graham"
+   ]
+  },
+  {
+   "topic": "Grease Trap Non-compliance",
+   "resolution": "fines confirmed; letters to be sent",
+   "quote": "commission reviewed the list of non-compliant permittees",
+   "tags": [
+    "grease trap",
+    "fines",
+    "victualler licenses"
+   ]
+  },
+  {
+   "topic": "ZBA Hearings",
+   "resolution": "Whalom recommendation passed unanimously; 790 Mass Ave and Whalom hearings noted",
+   "quote": "dave made the motion that our recommendation to the zba is to char ge whalom luxury apartments",
+   "tags": [
+    "ZBA",
+    "Whalom Luxury Apartments",
+    "790 Mass Ave",
+    "sewer fees"
+   ]
+  },
+  {
+   "topic": "Sewer Commission Projects update",
+   "resolution": "no updates",
+   "quote": "no updates in addition to anything previously discussed.",
+   "tags": [
+    "projects"
+   ]
+  },
+  {
+   "topic": "SWSS pump station reports and generator maintenance",
+   "resolution": "SWSS invited to 9/9 meeting; generator maintenance to be verified",
+   "quote": "commission had the pump station reports for week ending 8 /9 and 8/16",
+   "tags": [
+    "SWSS",
+    "pump stations",
+    "generators",
+    "SCADA"
+   ]
+  },
+  {
+   "topic": "Minutes approval (8/5/14 Executive Session)",
+   "resolution": "approved unanimously",
+   "quote": "dave made the motion to accept the minutes, troy seconded.",
+   "tags": [
+    "minutes",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Business Manager reports",
+   "resolution": "invoices approved; adjourned at 9:10pm",
+   "quote": "barb had the invoices from leominster for $43,364.73",
+   "tags": [
+    "invoices",
+    "budget",
+    "water billing",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout dated 8/25/14, entitled 'Sewer Fines'",
+   "where": "text",
+   "quote": "troy provided his handout dated 8/25/14, entitled 'sewer fines',"
+  },
+  {
+   "name": "ZBA hearing notices (2)",
+   "where": "text",
+   "quote": "2 hearing notices from the zba"
+  },
+  {
+   "name": "Plan received for 790 Mass Ave",
+   "where": "text",
+   "quote": "the commissioners reviewed the plan re ceived."
+  },
+  {
+   "name": "Pump station reports for week ending 8/9 and 8/16",
+   "where": "text",
+   "quote": "commission had the pump station reports for week ending 8 /9 and 8/16"
+  },
+  {
+   "name": "Invoices from Leominster and Fitchburg",
+   "where": "text",
+   "quote": "barb had the invoices from leominster for $43,364.73"
+  },
+  {
+   "name": "Minutes from the 8/5/14 Executive Session",
+   "where": "text",
+   "quote": "minutes from the 8/5/14 executive session"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "I/I",
+  "illegal connections",
+  "fines",
+  "grease trap",
+  "ZBA",
+  "Whalom Luxury Apartments",
+  "SWSS",
+  "generators",
+  "SRF",
+  "invoices",
+  "37 Graham",
+  "55 Graham"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

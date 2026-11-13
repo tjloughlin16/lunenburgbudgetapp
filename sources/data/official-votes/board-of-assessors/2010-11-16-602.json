@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2010-11-16",
  "docid": "602",
@@ -12,19 +12,255 @@
  },
  "votes": [
   {
-   "motion": "adopt the uniform tax rate for both commercial and residential properties",
+   "motion": "Adopt the uniform tax rate for both commercial and residential properties.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted in favor of adopting the uniform tax rate for both commercial and residential properties."
+   "quote": "after hearing harald's presentation, the board voted in favor of adopting the uniform tax rate for both commercial and residential properties."
   },
   {
-   "motion": "meet on December 7, 2010 at 6:00pm",
+   "motion": "Meet on December 7, 2010 at 6:00 pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "the board voted to meet on december 7, 2010 at 6:00pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision",
- "cost_usd": 0.10488449999999999
+ "note": "OCR of a scanned document; the tax rate options table (pages 3-4) is garbled and only partly legible. The uniform tax rate vote records no motion, mover, seconder or count. The approval of abatements, vouchers, commitments, warrants and minutes, and the exemption approvals, record no motion or vote. Signature block reads 'Lauri Paquette' above 'Louise Paquette'. The received stamp reads FEB 16 2019 for a 2010 meeting. No public comment is recorded. The agenda's OPEN DISCUSSION item has no minutes text.",
+ "cost_usd": 0.00745472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board member, louis j. franco, regional assessor harald scheid"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board member, louis j. franco, regional assessor harald scheid"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board member, louis j. franco, regional assessor harald scheid"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "and louise paquette, administrative assistant. not present: board member, matthew j. papini, sr.,"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "not present: board member, matthew j. papini, sr.,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved expense vouchers, commitments, abatements, warrants, and minutes of October 5, 2010 (no motion or count recorded).",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on october 5, 2010"
+  },
+  {
+   "decision": "Board approved 29 statutory exemption applications and denied 2.",
+   "quote": "the board reviewed and approved 29 applications totally $14,390.00 and 2 applications were denied."
+  },
+  {
+   "decision": "Board approved 15 Tax Work-Off Program abatements.",
+   "quote": "board also approved 15 tax work -off program abatements totally $10,500."
+  },
+  {
+   "decision": "Board signed two Chapter 61A Land Tax Lien Certificates, for Matthew Woodward of 64 Arbor St. and Andrea Schnepf of 74 Highland St.",
+   "quote": "the board signed (2) chapter 61 a land tax lien certificates for recording the properties of matthew woodward of 64 arbor st."
+  },
+  {
+   "decision": "Board reviewed and signed the Interim Year Adjustment Report, certifying valuation adjustments are fair and equitable and documentation will be retained for 5 years.",
+   "quote": "the board reviewed and signed the interim year adjustment report that stated that they agree the valuation"
+  },
+  {
+   "decision": "Board reviewed and signed the Classification/Assessment report FY2011.",
+   "quote": "the classification /assessment report fy2011 was also reviewed and signed."
+  },
+  {
+   "decision": "DOR approvals and certifications to be discussed further at the next meeting.",
+   "quote": "the approvals and certifications by the dor will be discussed further at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemptions approved",
+   "what_was_recorded": "The Board approved 29 of 31 statutory exemption applications, totaling $14,390.00; 2 were denied.",
+   "figures_as_printed": [
+    "$14,390.00"
+   ],
+   "quote": "the board reviewed and approved 29 applications totally $14,390.00 and 2 applications were denied."
+  },
+  {
+   "topic": "Tax Work-Off Program abatements",
+   "what_was_recorded": "The Board approved 15 Tax Work-Off Program abatements totaling $10,500.",
+   "figures_as_printed": [
+    "$10,500"
+   ],
+   "quote": "board also approved 15 tax work -off program abatements totally $10,500."
+  },
+  {
+   "topic": "Tax rate estimate",
+   "what_was_recorded": "Harald estimated the tax rate at approximately $16.16 per thousand after a 10.5% decrease in FY11 property values.",
+   "figures_as_printed": [
+    "$16.16",
+    "10.5%"
+   ],
+   "quote": "estimates the tax rate to be approx. $16.16 per thousand."
+  },
+  {
+   "topic": "Estimated levy and single tax rate",
+   "what_was_recorded": "The tax rate options table prints an estimated levy of 18,006,811 and a single tax rate of 16.16.",
+   "figures_as_printed": [
+    "18,006,811",
+    "16.16"
+   ],
+   "quote": "18,006,811 estimated levy"
+  },
+  {
+   "topic": "New growth estimate",
+   "what_was_recorded": "Harald estimated new growth (new construction) at approximately $188,732.",
+   "figures_as_printed": [
+    "$188,732"
+   ],
+   "quote": "harald reported that he estimates new growth (new construction) to be approx. $188,732."
+  },
+  {
+   "topic": "New growth reduced by DOR",
+   "what_was_recorded": "About $37,000 of proposed new growth (Emerald Place Development) was reduced by the DOR.",
+   "figures_as_printed": [
+    "$37,000"
+   ],
+   "quote": "approximately $37,000 of the proposed new growth (emerald place development) was reduced by the dor."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approval of expense vouchers, commitments, abatements, payroll and minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on october 5, 2010",
+   "tags": [
+    "abatements",
+    "vouchers",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review exemption applications",
+   "resolution": "29 approved, 2 denied",
+   "quote": "louise presented 31 statutory exemption applications.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Chapter accounts",
+   "resolution": "two Chapter 61A lien certificates signed",
+   "quote": "the board signed (2) chapter 61 a land tax lien certificates for recording the properties",
+   "tags": [
+    "chapter 61A",
+    "liens"
+   ]
+  },
+  {
+   "topic": "Tax rate setting calendar",
+   "resolution": "process explained; interim and classification reports signed",
+   "quote": "harald explained the process used in the tax recap process and rate setting.",
+   "tags": [
+    "tax recap",
+    "DOR forms"
+   ]
+  },
+  {
+   "topic": "Classification hearing - November 16, 2010",
+   "resolution": "Board voted in favor of uniform tax rate; Selectmen have final say",
+   "quote": "after hearing harald's presentation, the board voted in favor of adopting the uniform tax rate",
+   "tags": [
+    "classification",
+    "uniform tax rate",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting - November 30, 2010",
+   "resolution": "warrant presented; no BOA articles",
+   "quote": "louise presented the special town meeting warrant which there are 14 articles.",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Report by Assessor",
+   "resolution": "no action; new growth reported",
+   "quote": "harald reported that he estimates new growth (new construction) to be approx. $188,732.",
+   "tags": [
+    "new growth",
+    "DOR"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax Rate Options spreadsheet prepared by Harald Scheid for the classification hearing (attached)",
+   "where": "list",
+   "quote": "harald presented a spreadsheet which he prepared for tonight's hearing. (see attached)"
+  },
+  {
+   "name": "Public Hearing notice, Lunenburg Ledger, November 3, 2010",
+   "where": "text",
+   "quote": "the public hearing notice was advertised in the lunenburg ledger on november 3, 2010."
+  },
+  {
+   "name": "Interim Year Adjustment Report",
+   "where": "text",
+   "quote": "the board reviewed and signed the interim year adjustment report that stated that they agree the valuation"
+  },
+  {
+   "name": "Classification/Assessment report FY2011",
+   "where": "text",
+   "quote": "the classification /assessment report fy2011 was also reviewed and signed."
+  },
+  {
+   "name": "Special Town Meeting Warrant (14 articles, November 30, 2010)",
+   "where": "text",
+   "quote": "louise presented the special town meeting warrant which there are 14 articles."
+  },
+  {
+   "name": "Required DOR revenue tax forms (Assessment Classification Report, LA-4, LA13, LA-15, Interim Year Adjustment Report, Classification Tax Allocation Report)",
+   "where": "text",
+   "quote": "assessment classification report, la-4, la13 ( growth report), la-15 (reval report occurring every 3"
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "tax rate",
+  "classification",
+  "exemptions",
+  "abatements",
+  "new growth",
+  "tax recap",
+  "special town meeting",
+  "liens"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald presented a spreadsheet which he prepared for tonight's hearing."
+ },
+ "dropped_unquoted_by_field": {}
 }

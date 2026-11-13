@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2016-01-19",
  "docid": "1224",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Heather",
    "seconded_by": "Matt",
    "outcome": "passed 5-0",
@@ -21,6 +21,212 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-scanned text. One procedural vote recorded (adjournment). Capital requests table shows items recommended for funding but no formal vote is recorded for them in the minutes.",
- "cost_usd": 0.08905350000000001
+ "note": "OCR scan with garbled text: the Present line is partly corrupted (John Henshaw's name reads 'John HensflE RK OFFICE' and is recorded from the partial 'John Hens' text); item 5 is missing and an OCR-garbled line ('LAne omite with a copy to the Town Manger PC meeting, send it to the Town Clerks fice and email it to') appears where it would be, so its content is unclear and not recorded as a decision. The text names 'Jack' (DPW), 'John Londa' and 'Loxi' only in passing and they are not listed as attendees. Only one formal vote (adjournment) is recorded; the tabling of the January 12 minutes is recorded as a decision without a vote. Table on page 2 is recorded as a budget item but not as a documents list.",
+ "cost_usd": 0.005009619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order by jamie toale at 4:30 pm."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john hens"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john hens"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john hens"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, dennis mannone, heather sroka, matthew allison, john hens"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review of the January 12, 2016 Capital Planning Committee minutes was tabled because the draft was circulated too late for members to review.",
+   "quote": "so the committee had insufficient time for review; thus reviewing those minutes was tabled"
+  },
+  {
+   "decision": "Town Manager Kerry Speidel will look into why the Pick-up 4x4 (M1) costs $70,000 and report back to the committee.",
+   "quote": "kerry will look into this and get back to the committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Catch basin cleaner and dump truck repurposing",
+   "what_was_recorded": "Cost of buying a catch basin cleaner, combined with repurposing a 17-year-old dump truck, was reported as $87,125.",
+   "figures_as_printed": [
+    "$87,125"
+   ],
+   "quote": "the total cost of purchasing a catch basin cleaner for $87,125 in conjunction with re-purposing a 17-"
+  },
+  {
+   "topic": "Replacement of old plow truck",
+   "what_was_recorded": "DPW director Jack said replacing the old plow truck with a new one would cost $194,750, and the $123,000 in the original request would not need to be spent.",
+   "figures_as_printed": [
+    "$194,750",
+    "$123,000"
+   ],
+   "quote": "replace the old plow truck with a new one at a cost of $194,750, but would not need to spend the $123,000"
+  },
+  {
+   "topic": "Pick-up 4x4 (M1) replacement cost",
+   "what_was_recorded": "The committee questioned why the Pick-up 4x4 (M1) would cost $70,000 when base 4x4 pick-up prices are around $40,000.",
+   "figures_as_printed": [
+    "$70,000",
+    "$40,000"
+   ],
+   "quote": "why the pick-up 4x4 (m1) truck would cost $70,000 since the base price of 4x4 pick-up trucks is around $40,000."
+  },
+  {
+   "topic": "Five-year forecast capital funding",
+   "what_was_recorded": "The Town Manager's five-year financial forecast includes $600,000 for capital expenditures, subject to expected changes.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "the town manager's five-year financial forecast includes $600,000 for capital expenditures."
+  },
+  {
+   "topic": "State local aid outlook",
+   "what_was_recorded": "Town Manager expects the Governor's budget to increase local aid by 3.5% to 4%, including chapter 70.",
+   "figures_as_printed": [
+    "3.5%",
+    "4%"
+   ],
+   "quote": "increase local aid by 3.5% to 4% including chapter 70."
+  },
+  {
+   "topic": "Debt service and financing of capital purchases",
+   "what_was_recorded": "Town Manager does not recommend financing capital purchases because the Town is still paying debt service from prior purchases in FY17, FY18 and FY19; no leftover funds from the prior budget.",
+   "figures_as_printed": [],
+   "quote": "the town is still paying off debt service expenses from financing prior capital purchases."
+  },
+  {
+   "topic": "FY2017 recommended capital requests total",
+   "what_was_recorded": "The table of capital requests recommended for funding in FY2017 totals $780,975, including Police vehicles $107,000, Townsend Harbor Road Bridge Repair $145,000, Catch Basin Cleaner Attachment $87,125, and Pick-Up 4x4 (M1) Replacement $70,000.",
+   "figures_as_printed": [
+    "$107,000",
+    "$16,500",
+    "$17,500",
+    "$15,000",
+    "$87,125",
+    "$53,300",
+    "$194,750",
+    "$70,000",
+    "$145,000",
+    "$22,000",
+    "$22,000",
+    "$30,800",
+    "$780,975"
+   ],
+   "quote": "capital requests recommended for funding in fy2017"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 4:30 pm by Jamie Toale",
+   "quote": "meeting called to order by jamie toale at 4:30 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Deliberation on FY2017 capital requests",
+   "resolution": "no action; deliberated priorities, asked Town Manager to look into Pick-up cost",
+   "quote": "the capital planning committee deliberated the merits and trade-offs of the capital requests made by the",
+   "tags": [
+    "capital budget",
+    "FY2017",
+    "THMS asbestos",
+    "police",
+    "public works",
+    "fire",
+    "school",
+    "IT",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Minutes of January 12, 2016 meeting",
+   "resolution": "tabled",
+   "quote": "so the committee had insufficient time for review; thus reviewing those minutes was tabled",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:15 pm, approved 5-0",
+   "quote": "heather moved to adjourn; matt seconded the motion. the committee approved the motion 5-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from John Londa on asbestos surveyor's finding",
+   "where": "text",
+   "quote": "per email from john londa the asbestos surveyor has said the town needs to make"
+  },
+  {
+   "name": "Town Manager's five-year financial forecast",
+   "where": "text",
+   "quote": "the town manager's five-year financial forecast includes $600,000 for capital expenditures."
+  },
+  {
+   "name": "Draft minutes of the January 12 meeting",
+   "where": "text",
+   "quote": "john completed and circulated the draft minutes of the january 12 meeting"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY2017 capital requests",
+  "THMS asbestos abatement",
+  "police vehicles",
+  "public works equipment",
+  "debt service",
+  "local aid",
+  "minutes tabled",
+  "town manager"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2017-01-03",
  "docid": "2602",
@@ -10,17 +10,114 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01032017-2602",
   "doc_url": "/docs/meetings/historical-commission/2017-01-03-minutes-2602.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "The minutes record no motions or votes. Minutes approval (December 12, 2016) and adjournment are stated without a motion, second, or tally, so they are not recorded as votes. Page 2 is empty in the extract.",
+ "cost_usd": 0.0022723200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "approve minutes from December 12, 2016",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes were approved for december 12, 2016."
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer"
   }
  ],
- "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The adjournment is mentioned as a factual statement (\"The meeting adjourned at 7:40 p.m.\") with no explicit motion, second, or voting language, so it is not counted.",
- "cost_usd": 0.08310250000000001
+ "decisions": [
+  {
+   "decision": "The commission determined that the demolition delay does not apply to 420 Flat Hill Road because the split level residence was built in 1967 and has no historical value.",
+   "quote": "the plan does not apply since this split level residence was constructed in 1967, and has no historical value."
+  },
+  {
+   "decision": "Becky Lantry is to complete the public notice for the demolition delay application and process.",
+   "quote": "becky lantry is completing the public notice for the demolition delay application and process."
+  },
+  {
+   "decision": "Further meetings were scheduled to consider the suggested changes and corrections to the Architectural Preservation District Committee's proposed rules and regulations.",
+   "quote": "further meetings have been scheduled to consider the suggested changes and corrections."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order at 6:39 p. m."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of December 12, 2016",
+   "quote": "minutes were approved for december 12, 2016."
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action",
+   "quote": "there was no correspondence received."
+  },
+  {
+   "topic": "Demolition delay application, 420 Flat Hill Road",
+   "resolution": "determined demolition delay does not apply",
+   "quote": "the plan does not apply since this split level residence was constructed in 1967, and has no historical value."
+  },
+  {
+   "topic": "Demolition delay public notice",
+   "resolution": "assigned to Becky Lantry",
+   "quote": "becky lantry is completing the public notice for the demolition delay application and process."
+  },
+  {
+   "topic": "Architectural Preservation District Committee rules and regulations",
+   "resolution": "submitted to Land Use Director for review; further meetings scheduled",
+   "quote": "reported the committee's proposed rules and regulation were submitted to adam burney, the land use director, for review."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:40 p.m.",
+   "quote": "the meeting adjourned at 7:40 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition delay application for 420 Flat Hill Road",
+   "where": "text",
+   "quote": "richard mcgrath received a demolition delay application for 420 flat hill road."
+  },
+  {
+   "name": "Architectural Preservation District Committee proposed rules and regulations",
+   "where": "text",
+   "quote": "reported the committee's proposed rules and regulation were submitted to adam burney, the land use director, for review."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "architectural preservation district",
+  "minutes",
+  "public notice"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

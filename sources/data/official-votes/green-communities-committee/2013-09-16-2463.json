@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2013-09-16",
  "docid": "2463",
@@ -12,15 +12,164 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Benson",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
+   "quote": "m. benson made a motion to adjourned; approved. meeting adjourned at 8:22 p.m."
+  }
+ ],
+ "dropped_unquoted": 1,
+ "note": "Partial minutes: the text begins mid-discussion (page 1 only), with no call to order, attendance roll, agenda, or item headings. Attendance is not stated. Only one recorded vote (adjournment, moved by M. Benson, outcome printed as 'Approved'; no second recorded). Energy usage of 26,809 MM BTU'S is an energy unit, not a dollar figure, so it is not listed as a budget item.",
+ "cost_usd": 0.00353412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "J. Londa",
+   "status": "not stated",
+   "quote": "j. londa reported that better numbers are needed from the architects for the proposed"
+  },
+  {
+   "name": "J. Breault",
+   "status": "not stated",
+   "quote": "j. breault will have to fill in data for the town buildings"
+  },
+  {
+   "name": "J. McQuaid",
+   "status": "not stated",
+   "quote": "j. mcquaid noted that other towns have used the grant funds for these improvements,"
+  },
+  {
+   "name": "M. Benson",
+   "status": "not stated",
    "quote": "m. benson made a motion to adjourned; approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes extracted via OCR (macOS Vision). One procedural vote recorded: motion to adjourn.",
- "cost_usd": 0.0815215
+ "decisions": [
+  {
+   "decision": "The Energy Reduction Plan baseline will be 2013, and a plan for a specific 15% energy reduction and general strategies for 5% needs to be formulated.",
+   "quote": "the baseline will be 2013 and a plan for specific energy reduction of 15% and general strategies for 5% needs to be formulated."
+  },
+  {
+   "decision": "J. Breault will fill in data for the town buildings and J. Londa will do all the school buildings, with the goal of completing Table 4 by 9/27/13 for review with the Select Board.",
+   "quote": "j. londa will do all the school buildings with a goal of completing table 4 by 9/27/13 so it will be ready to review with the select board."
+  },
+  {
+   "decision": "The next meeting is set for October 7, 2013 at 6:30 P.M., location to be determined.",
+   "quote": "the next meeting will be october 7, 2013 at 6:30 p.m. location to be determined."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Energy costs for the proposed new school building",
+   "what_was_recorded": "J. Londa reported that estimated fuel costs were lower but electrical costs were much higher than current levels.",
+   "figures_as_printed": [],
+   "quote": "estimated fuel cost were lower but electrical cost were much higher than current levels."
+  },
+  {
+   "topic": "Grant funds for energy improvements",
+   "what_was_recorded": "J. McQuaid noted that other towns have used the Grant funds for energy audits and the measures identified by the audits.",
+   "figures_as_printed": [],
+   "quote": "j. mcquaid noted that other towns have used the grant funds for these improvements,"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Green Communities criteria: vehicle purchase exemption",
+   "resolution": "discussed; no action",
+   "quote": "regarding 4 (vehicle purchase) only 4 vehicles are not exempt from the",
+   "tags": [
+    "green communities",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Stretch Code certification",
+   "resolution": "discussed; no action",
+   "quote": "criterion 5 requires a certified letter stating that the town adopted the stretch code.",
+   "tags": [
+    "stretch code",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Energy Reduction Plan (criterion 3)",
+   "resolution": "discussed; baseline and targets set",
+   "quote": "the most difficult is #3, the energy reduction plan.",
+   "tags": [
+    "energy reduction",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "New school building energy estimates",
+   "resolution": "discussed; better architect numbers needed",
+   "quote": "better numbers are needed from the architects for the proposed",
+   "tags": [
+    "school building",
+    "energy use"
+   ]
+  },
+  {
+   "topic": "Town Safety building heating conversion",
+   "resolution": "discussed; no action",
+   "quote": "it was established that the town safety building is in national grid's supply territory",
+   "tags": [
+    "town buildings",
+    "natural gas",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Town energy usage baseline and 20% reduction target",
+   "resolution": "assigned data entry for Table 4 by 9/27/13",
+   "quote": "the targeted 20% reduction would be 5,362 mm btu's.",
+   "tags": [
+    "energy usage",
+    "town buildings",
+    "school buildings"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set; adjourned",
+   "quote": "the next meeting will be october 7, 2013 at 6:30 p.m.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Table 4",
+   "where": "text",
+   "quote": "with a goal of completing table 4 by 9/27/13 so it will be ready to review with the select board."
+  },
+  {
+   "name": "Energy Reduction Plan",
+   "where": "text",
+   "quote": "the most difficult is #3, the energy reduction plan."
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy reduction",
+  "stretch code",
+  "school building",
+  "town buildings",
+  "energy usage",
+  "natural gas",
+  "grant funds"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

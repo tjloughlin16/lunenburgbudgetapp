@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-09-15",
  "docid": "1585",
@@ -12,6 +12,140 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The meeting had no quorum and was informational only. The minutes list agenda items (property hearings and informational requests) but record no motions, votes, or outcomes. All hearings were rescheduled to October 6th with no voting language.",
- "cost_usd": 0.0806445
+ "note": "OCR text from a scanned page; minor errors possible (e.g., \"here will be\" for \"there will be\"). No votes are recorded and the meeting had no quorum, so it was informational only. The minutes name no dollar figures and no public comment. Attendance is taken from the opening name list; the minutes do not state each person's status explicitly.",
+ "cost_usd": 0.0032391200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "jj cote, mark murphy, rich bursch, sharon jordan, karen lefebvre, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "jj cote, mark murphy, rich bursch, sharon jordan, karen lefebvre, jan carrier"
+  },
+  {
+   "name": "Rich Bursch",
+   "status": "present",
+   "quote": "jj cote, mark murphy, rich bursch, sharon jordan, karen lefebvre, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "jj cote, mark murphy, rich bursch, sharon jordan, karen lefebvre, jan carrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "status": "present",
+   "quote": "jj cote, mark murphy, rich bursch, sharon jordan, karen lefebvre, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "jj cote, mark murphy, rich bursch, sharon jordan, karen lefebvre, jan carrier"
+  },
+  {
+   "name": "Ron Albert",
+   "status": "present",
+   "quote": "7:40 pm ~ 67 island road ~ ron albert showed us new plans"
+  },
+  {
+   "name": "Jamie Rheault",
+   "status": "present",
+   "quote": "jamie rheault showed us updated plans."
+  },
+  {
+   "name": "Melvin Bertram",
+   "status": "not stated",
+   "quote": "there will be a public hearing on a request for determination of applicability filed by melvin bertram."
+  },
+  {
+   "name": "Carolyn McCarthy",
+   "status": "not stated",
+   "quote": "on a notice of intent filed by carolyn mccarthy. the proposed project is for selective cutting of trees"
+  },
+  {
+   "name": "Wes Flis",
+   "status": "absent",
+   "quote": "250 whalom road ~ informational request from wes flis - wes called to cancel earlier in the day."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All hearings on the agenda were rescheduled until October 6.",
+   "quote": "all hearings rescheduled until october 6th"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Quorum / informational meeting",
+   "resolution": "no action; no quorum, informational only",
+   "quote": "7:30 pm ~ no quorum, informational meeting only"
+  },
+  {
+   "topic": "67 Island Road",
+   "resolution": "informational; Ron Albert showed new plans",
+   "quote": "7:40 pm ~ 67 island road ~ ron albert showed us new plans"
+  },
+  {
+   "topic": "309 Townsend Harbor Road - Request for Determination of Applicability (deck replacement, Melvin Bertram)",
+   "resolution": "public hearing noticed; rescheduled to October 6",
+   "quote": "there will be a public hearing on a request for determination of applicability filed by melvin bertram."
+  },
+  {
+   "topic": "23 Valley Road - Notice of Intent (tree cutting for solar panels, Carolyn McCarthy)",
+   "resolution": "public hearing noticed; updated plans shown; rescheduled to October 6",
+   "quote": "on a notice of intent filed by carolyn mccarthy. the proposed project is for selective cutting of trees"
+  },
+  {
+   "topic": "250 Whalom Road - informational request (Wes Flis)",
+   "resolution": "cancelled by applicant",
+   "quote": "250 whalom road ~ informational request from wes flis - wes called to cancel earlier in the day."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "New plans (67 Island Road), shown by Ron Albert",
+   "where": "text",
+   "quote": "7:40 pm ~ 67 island road ~ ron albert showed us new plans"
+  },
+  {
+   "name": "Updated plans (23 Valley Road), shown by Jamie Rheault",
+   "where": "text",
+   "quote": "jamie rheault showed us updated plans."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Melvin Bertram (309 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "there will be a public hearing on a request for determination of applicability filed by melvin bertram."
+  },
+  {
+   "name": "Notice of Intent filed by Carolyn McCarthy (23 Valley Road)",
+   "where": "text",
+   "quote": "on a notice of intent filed by carolyn mccarthy. the proposed project is for selective cutting of trees"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearing",
+  "request for determination of applicability",
+  "notice of intent",
+  "deck replacement",
+  "solar panels",
+  "tree cutting",
+  "no quorum",
+  "hearings rescheduled"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

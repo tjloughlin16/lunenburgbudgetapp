@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-07-12",
  "docid": "2327",
@@ -12,56 +12,277 @@
  },
  "votes": [
   {
-   "motion": "Elect Mark Erickson as Chairman for FY2013",
-   "moved_by": "J. Male",
-   "seconded_by": "S. Gile",
+   "motion": "Nominate Mark Erickson for Chairman of the Finance Committee for FY2013.",
+   "moved_by": "JM",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "mark erickson nominated for chairman by jm. seconded by sg, vote to approve was unanimous."
+   "procedural": false,
+   "quote": "mark erickson nominated for chairman by jm. seconded by sg, vote to approve was unanimous.",
+   "seconded_by": "SG"
   },
   {
-   "motion": "Elect Brian Laffond as Vice-Chairman for FY2013",
-   "moved_by": "J. Male",
-   "seconded_by": "J. Smith",
+   "motion": "Nominate Brian Laffond for Vice-Chairman.",
+   "moved_by": "JM",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "brian latfond nominated for vice-chairman by jm. seconded by js, vote to approve was unanimous."
+   "procedural": false,
+   "quote": "brian latfond nominated for vice-chairman by jm. seconded by js, vote to approve was unanimous.",
+   "seconded_by": "JS"
   },
   {
-   "motion": "Elect Terri Burchfield as primary Secretary and Jason Smith as secondary Secretary for FY2013",
-   "moved_by": "B. Laffond",
-   "seconded_by": "J. Male",
+   "motion": "Nominate Terri Burchfield as primary Secretary and Jason Smith as secondary Secretary.",
+   "moved_by": "Brian Laffond",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "brian laffond nominated terri burchfield as primary secretar and jason smith as secondary secretary. seconded by jm, vote to approve was unanimous. ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "and jason smith as secondary secretary. seconded by jm, vote to approve was unanimous.",
+   "seconded_by": "JM"
   },
   {
-   "motion": "Approve the minutes of June 14",
-   "moved_by": "B. Laffond",
-   "seconded_by": "M. Erickson",
+   "motion": "Approve the 6/14 minutes.",
+   "moved_by": "BL",
    "outcome": "passed 2-0",
    "procedural": true,
-   "quote": "bl motioned to approve, me seconded. approved 2-0."
+   "quote": "bl motioned to approve, me seconded. approved 2-0. (jm and sg did not attend)",
+   "seconded_by": "ME"
   },
   {
-   "motion": "Approve the minutes of June 28",
-   "moved_by": "B. Laffond",
-   "seconded_by": "M. Erickson",
+   "motion": "Approve the 6/28 minutes.",
+   "moved_by": "BL",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "bl motioned to approve, me seconded. approved 3-0."
+   "quote": "bl motioned to approve, me seconded. approved 3-0. (jm did not attend)",
+   "seconded_by": "ME"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "S. Gile",
-   "seconded_by": "J. Smith",
+   "motion": "Adjourn the meeting at 9:28.",
+   "moved_by": "SG",
    "outcome": "passed 7-0",
    "procedural": true,
-   "quote": "sg motioned to adjourn at 9:28. js seconded, approved 7-0."
+   "quote": "sg motioned to adjourn at 9:28. js seconded, approved 7-0.",
+   "seconded_by": "JS"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from macOS Vision. All votes recorded.",
- "cost_usd": 0.0959375
+ "note": "OCR text from a scanned page; some words are garbled and quoted as printed (e.g., 'Latfond' for Laffond, 'vould' for would, 'Secretar' truncated). Names with initials (JM, SG, BL, ME, JS, SR, TB) are used as printed. Votes are recorded with results. No public comment section is printed. No dollar figures appear in the minutes. Both pages (Page 1 of 2, Page 2 of 2) are present.",
+ "cost_usd": 0.006333719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "erickson, b. laffond. j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "erickson, b. laffond. j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "erickson, b. laffond. j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "erickson, b. laffond. j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "erickson, b. laffond. j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "erickson, b. laffond. j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "erickson, b. laffond. j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Kerry",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry was unable to attend, but notified mark e. that she is holding a transfer for finance committee approval."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee determined that the Secretary position would be best shared, with a primary and a secondary Secretary.",
+   "quote": "vould be best to have the secretary position shared."
+  },
+  {
+   "decision": "Town committee assignments were determined (School Building, School Committee, Monty Tech, Capital Planning, DPW, Public Safety, Library, Council on Aging, Sewer Commission, Service Level Team).",
+   "quote": "town committee assignments determined"
+  },
+  {
+   "decision": "By consensus, no formal liaison assignment to the Board of Selectmen will be made.",
+   "quote": "consensus was that no formal assignment needed to be made."
+  },
+  {
+   "decision": "Steve R. will visit the Planning Board to obtain an inventory of town property and vacant commercial property.",
+   "quote": "steve r. will visit the planning board to obtain an inventory of town property and vacant commercial property."
+  },
+  {
+   "decision": "The Committee will ask Kerry (Town Manager) to revisit her presentation on required costs, nondiscretionary to less discretionary spending.",
+   "quote": "the committee will ask kerry to revisit her presentation on required costs, nondiscretionary to less discretionary spending, etc."
+  },
+  {
+   "decision": "The Committee would like to benchmark Lunenburg with comparable towns.",
+   "quote": "the committee would like to benchmark lunenburg with comparable towns."
+  },
+  {
+   "decision": "A standing agenda item on real estate inventory, grant writing opportunities, and discretionary vs. non discretionary spending will be added.",
+   "quote": "a standing agenda item to periodically review the topics of real estate inventory, grant writing opportunities, issues of"
+  },
+  {
+   "decision": "The pension plan training will likely be a joint presentation with the Board of Selectmen.",
+   "quote": "the pension plan training will likely be a joint presentation with the board of selectmen."
+  },
+  {
+   "decision": "Sewer cost reconciliation on the costs to connect town buildings and debt service is listed as a future item.",
+   "quote": "sewer cost reconciliation on the costs to connect town buildings and debt service."
+  },
+  {
+   "decision": "Mark E. will determine whether a meeting on July 26 is needed to help close the fiscal year; otherwise the next meeting is the 2nd Thursday in August, with a report by Steve R. on real estate inventory.",
+   "quote": "if the meeting is not necessary, the next meeting will be the 2nd thursday in august."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer sharing of debt service and operating costs",
+   "what_was_recorded": "John M. reported on Sewer Commission discussions on whether the town is funding its share of debt service as well as operating costs; no figures printed.",
+   "quote": "john m. reported on sewer commission discussions regarding whether the town is funding its share of debt service as well as operating costs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer cost reconciliation",
+   "what_was_recorded": "A future item listed for a sewer cost reconciliation covering the costs to connect town buildings and debt service; no figures printed.",
+   "quote": "sewer cost reconciliation on the costs to connect town buildings and debt service.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Town Manager (Kerry) is holding a transfer for Finance Committee approval; not discussed further in the minutes.",
+   "outcome": "pending Finance Committee approval; no action recorded",
+   "quote": "kerry was unable to attend, but notified mark e. that she is holding a transfer for finance committee approval.",
+   "amount_as_printed": ""
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Reorganize Finance Committee for FY2013",
+   "resolution": "approved; Chairman, Vice-Chairman and shared Secretaries elected unanimously",
+   "quote": "reorganize finance committee for fy2013",
+   "tags": [
+    "reorganization",
+    "elections",
+    "FY2013"
+   ]
+  },
+  {
+   "topic": "Town committee assignments",
+   "resolution": "determined; no liaison to Board of Selectmen",
+   "quote": "town committee assignments determined",
+   "tags": [
+    "committee assignments"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action; notice shared",
+   "quote": "by the planning committee regarding the solar energy facility was shared",
+   "tags": [
+    "solar",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (6/14 and 6/28)",
+   "resolution": "approved",
+   "quote": "bl motioned to approve, me seconded. approved 2-0. (jm and sg did not attend)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager update",
+   "resolution": "no action; transfer pending Finance Committee approval",
+   "quote": "kerry was unable to attend, but notified mark e. that she is holding a transfer for finance committee approval.",
+   "tags": [
+    "town manager",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "Open discussion",
+   "resolution": "no action; committee directions set on benchmarking, property inventory and spending review",
+   "quote": "members of the committee discussed such topics as exploring expenses which are, and are not, controllable by the town",
+   "tags": [
+    "discretionary spending",
+    "town property",
+    "benchmarking"
+   ]
+  },
+  {
+   "topic": "Future items",
+   "resolution": "noted for future agendas",
+   "quote": "the pension plan training will likely be a joint presentation with the board of selectmen.",
+   "tags": [
+    "pension",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "continued; possible July 26 meeting to be determined, else 2nd Thursday in August",
+   "quote": "if the meeting is not necessary, the next meeting will be the 2nd thursday in august.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:28",
+   "quote": "sg motioned to adjourn at 9:28. js seconded, approved 7-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Public Hearing by the Planning Committee regarding the solar energy facility (Monday July 16)",
+   "where": "text",
+   "quote": "by the planning committee regarding the solar energy facility was shared"
+  }
+ ],
+ "tags": [
+  "reorganization",
+  "committee assignments",
+  "minutes approval",
+  "town manager transfer",
+  "sewer debt service",
+  "pension training",
+  "solar public hearing",
+  "FY2013",
+  "benchmarking",
+  "discretionary spending"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

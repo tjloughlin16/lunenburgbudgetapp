@@ -1,0 +1,260 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "ZBA",
+ "meeting_date": "2016-09-14",
+ "video_id": "D7Q-TTlk4-A",
+ "video_url": "https://www.youtube.com/watch?v=D7Q-TTlk4-A",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2016-09-14-D7Q-TTlk4-A.json",
+  "sha256": "b09c0fd6368a6d3747f324dae3fbb26d5890b81129e39a38aeed898266ce0360",
+  "caption_lines": 73,
+  "segments": 559
+ },
+ "recording": {
+  "duration_s": 1548,
+  "duration": "0:25",
+  "spoken_chars": 20444,
+  "words_approx": 3407
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09142016-5981",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2016-09-14-agenda-5981.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2016-09-14-agenda-5981.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T16:47:52Z",
+  "cost_usd": 0.12864720000000002
+ },
+ "minutes": {
+  "headline": "Zoning board granted a special permit for a basement accessory apartment at 314 Townsend Harbor Road; vote heard as unanimous.",
+  "summary": "The Zoning Board of Appeals heard a special permit application for a dimensional variation so a mother-in-law apartment could be created in the basement of a home on an undersized lot. The board reviewed the accessory apartment bylaw conditions, and the applicant said the work was nearly complete. The permit was granted with standard conditions, then the meeting adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Lisa",
+    "role": "clerk or staff who read the application"
+   },
+   {
+    "name_as_heard": "Mr. chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Jim",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 869,
+    "topic": "A Board of Health member said he was there to learn the process, noted the septic system still needs Board of Health review, and objected in general to projects that are mostly complete before approval."
+   }
+  ],
+  "tags": [
+   "housing",
+   "legal",
+   "planning-and-zoning"
+  ],
+  "votes": [
+   {
+    "t": 1354,
+    "motion": "Grant the special permit for a dimensional variation to create an accessory apartment within the existing footprint of the dwelling.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1507,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1400,
+    "decision": "Permit granted with the contingency that the petitioner comply with all applicable licenses, regulations, statutes and ordinances, and get final inspections."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 86,
+    "topic": "Hearing procedure explained",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 86,
+    "t_end": 460,
+    "topic": "Application, letters and agency memos read into the record",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 460,
+    "t_end": 869,
+    "topic": "Applicant's presentation and board questions, including septic and work already done",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 869,
+    "t_end": 954,
+    "topic": "Comment from a Board of Health member",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 954,
+    "t_end": 1354,
+    "topic": "Board review of accessory apartment bylaw conditions and parking",
+    "resolution": "discussed",
+    "tags": [
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 1354,
+    "t_end": 1487,
+    "topic": "Vote on special permit, conditions and appeal rights",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1487,
+    "t_end": 1560,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Roll call and names of board members are not in the captions.",
+   "The vote count on the special permit is only heard as unanimous in garbled words.",
+   "The wording of the Board of Health agent's septic condition is partly garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 913,
+    "kind": "liability or legal",
+    "about": "A Board of Health member objected to projects that are mostly complete before approval.",
+    "who": "a Board of Health member",
+    "words_as_heard": "I have a problem with projects that are ninety percent complete before they're approved"
+   },
+   {
+    "t": 500,
+    "kind": "liability or legal",
+    "about": "The applicant acknowledged he began work before approval at his own risk.",
+    "who": "the applicant",
+    "words_as_heard": "i understand i did that or my own peril I fully understand that"
+   },
+   {
+    "t": 1400,
+    "kind": "condition",
+    "about": "The permit is conditioned on compliance with all applicable regulations and final inspections.",
+    "who": "the chair",
+    "words_as_heard": "the special permit is granted with the contingency that the petitioner comply with all licenses regulations statutes and ordinances"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 86,
+    "name_as_heard": "application for a special permit",
+    "kind": "application or permit",
+    "words_as_heard": "this is an application for a special permit a dimensional variation",
+    "shown": true
+   },
+   {
+    "t": 190,
+    "name_as_heard": "applicant's letter dated August fourth",
+    "kind": "letter or email",
+    "words_as_heard": "this letter with his application dated august forth to the lüneburg zoning board",
+    "shown": true
+   },
+   {
+    "t": 334,
+    "name_as_heard": "letter from the building commissioner",
+    "kind": "letter or email",
+    "words_as_heard": "letter attached from the building commission of michael savage Oh dated august eight",
+    "shown": true
+   },
+   {
+    "t": 398,
+    "name_as_heard": "conservation agent memo",
+    "kind": "memo",
+    "words_as_heard": "a memo from the map Matthew morrow our conservation agent dated august 31st",
+    "shown": true
+   },
+   {
+    "t": 418,
+    "name_as_heard": "Board of Health agent note",
+    "kind": "memo",
+    "words_as_heard": "I received this this morning from refugee health agent",
+    "shown": true
+   },
+   {
+    "t": 376,
+    "name_as_heard": "site plan, floor plan and abutters list",
+    "kind": "plan or drawing",
+    "words_as_heard": "a list of abutters a field card from the assessor's office a site plan",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals granted a special permit for a dimensional variation to create an accessory apartment in an existing home's footprint.",
+    "t": 1354
+   },
+   {
+    "line": "The permit carries a condition that the petitioner comply with all applicable licenses, regulations, statutes and ordinances, and pass final inspections.",
+    "t": 1400
+   },
+   {
+    "line": "The board reviewed the accessory apartment bylaw conditions and parking before voting.",
+    "t": 954
+   },
+   {
+    "line": "A Board of Health member said the septic system still needs Board of Health review and objected to projects mostly complete before approval.",
+    "t": 869
+   }
+  ],
+  "why_it_matters": [
+   "The approval allows a basement apartment on an undersized lot, and it shows that work done before a permit still leaves septic review with the Board of Health as a separate step."
+  ],
+  "watch_next": [
+   "Board of Health review of the septic system and the final inspections required as conditions of the permit."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T16:47:57Z",
+   "cost_usd": 0.020233100000000004
+  }
+ }
+}

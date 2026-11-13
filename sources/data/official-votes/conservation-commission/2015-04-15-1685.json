@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-04-15",
  "docid": "1685",
@@ -12,39 +12,307 @@
  },
  "votes": [
   {
-   "motion": "To approve Order of Conditions for replacement of single family home at 9 Crescent Road with waddles at 30' demarcation line noted in Order of Conditions",
-   "outcome": "passed unanimously",
+   "motion": "Decision on the 9 Crescent Road Notice of Intent: Order of Conditions with standard waddles at the 30’ demarcation line.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "standard ooc recommended waddles to be placed at 30' demarcation line and noted in ooc. unanimous"
   },
   {
-   "motion": "To approve Order of Conditions for single family home construction at 50 Elmwood Road Lot 2 with waddles and silt fence at 30' line, no grading below top of slope, native vegetation revegetation between 30' and 50' lines, and note in Order of Conditions",
-   "outcome": "passed unanimously",
+   "motion": "Decision on the 50 Elmwood Road, Lot #2 Notice of Intent, with waddles and silt fence at the 30’ line and revegetation of the natural down slope.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "waddles & silt fence in place at 30' line. no grading below top of slope. revegetate natural down slope following the natural shape of the land with native vegetation. area is between the 30' and 50' lines. include in ooc. unanimous"
+   "quote": "area is between the 30' and 50' lines. include in ooc. unanimous"
   },
   {
-   "motion": "To approve Order of Conditions for single family home construction at 50 Elmwood Road Lot 3 with same conditions as Lot 2",
-   "outcome": "passed unanimously",
+   "motion": "Decision on the 50 Elmwood Road, Lot #3 Notice of Intent, same conditions as Lot #2.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "same as above. unanimous"
   },
   {
-   "motion": "To approve minutes of February 18, 2015",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 2/18/2015.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval ~ 2/18/2015 ~ approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are the official votes recorded in the Conservation Commission minutes. No moved_by or seconded_by names are provided in the minutes for any of these votes. All three hearing decisions are recorded as unanimous approvals without formal motion language.",
- "cost_usd": 0.1118705
+ "note": "Scanned-style extract: the page-1 header is garbled and some words are split (e.g. \"Inten t\", \"Ern co\", \"Tow n\"). The attendance header lists seven names with no present/absent marking, so status is \"not stated\". The three hearing votes are recorded only as \"Unanimous\" with no motion, mover or seconder printed. The 2/18/2015 minutes approval has no motion text. No adjournment motion is printed. No dollar figures appear in the text.",
+ "cost_usd": 0.00822942,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rich Bursch",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, todd dwyer, jack rabbitt"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "of the Conservation Commission",
+   "status": "not stated",
+   "quote": "tom bertram of the conservation commission requested permission to schedule \"walks in the woods\"."
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, todd dwyer, jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, todd dwyer, jack rabbitt"
+  },
+  {
+   "name": "Brad Kennedy",
+   "status": "not stated",
+   "quote": "brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "William Galloway",
+   "role": "applicant (Notice of Intent filed for Wilmat Company, Inc.)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of inten t filed by william galloway"
+  },
+  {
+   "name": "Michael Crowley",
+   "role": "applicant (dba Ernco Development Inc.)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent filed by michael crowley dba ern co development inc."
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "listed in parentheses after the applicant (Whitman & Bingham)",
+   "status": "not stated",
+   "quote": "filed by michael crowley dba ern co development inc. (mark piermarini"
+  },
+  {
+   "name": "John Esposito",
+   "role": "appeared at 8:00 PM hearing re: Info for Fish Farming",
+   "status": "present",
+   "quote": "had a discussion with john & clive and tried to lead them in the right direction."
+  },
+  {
+   "name": "Clive Barros",
+   "role": "appeared at 8:00 PM hearing re: Info for Fish Farming",
+   "status": "present",
+   "quote": "had a discussion with john & clive and tried to lead them in the right direction."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jan will forward a tentative Walks in the Woods schedule to Tom for approval.",
+   "quote": "jan will forward a tentative schedule to tom for approval."
+  },
+  {
+   "decision": "Any changes to the Stormwater Management Bylaw must go through Jan, who holds the master copy.",
+   "quote": "any further changes must go thru jan as this is the master copy."
+  },
+  {
+   "decision": "Jan will contact Steve about setting up town site emails for commission members.",
+   "quote": "jan will contact steve"
+  },
+  {
+   "decision": "Jan will check with Rob about keys to the benches at Cowdrey.",
+   "quote": "jan will check with rob to inquire about keys to benches at cowdrey."
+  },
+  {
+   "decision": "Staff directed to contact Brandon to see if he can attend the 5/6 meeting to update the commission on the Lane grant.",
+   "quote": "contact brandon and see if he can attend 5/6 meeting"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Bertram",
+   "stated_role": "of the Conservation Commission",
+   "topic": "Walks in the Woods schedule",
+   "quote": "tom bertram of the conservation commission requested permission to schedule \"walks in the woods\"."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:02 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "call to order ~ 7:02 pm"
+  },
+  {
+   "topic": "Public comment: Walks in the Woods schedule",
+   "resolution": "Jan to forward tentative schedule to Tom for approval",
+   "tags": [
+    "walks in the woods",
+    "scheduling"
+   ],
+   "quote": "jan will forward a tentative schedule to tom for approval."
+  },
+  {
+   "topic": "Hearing: 9 Crescent Road",
+   "resolution": "unanimous; Order of Conditions with waddles at 30’ line",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "order of conditions"
+   ],
+   "quote": "7:00 pm ~ 9 crescent road ~ pursuant to mgl ch 131, s 40 as amended"
+  },
+  {
+   "topic": "Hearing: 50 Elmwood Road, Lot #2",
+   "resolution": "unanimous; Order of Conditions; Lots 2 and 3 discussed together, approved separately",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "buffer zone"
+   ],
+   "quote": "discussed lots 2 & 3 together, approved separately."
+  },
+  {
+   "topic": "Hearing: 50 Elmwood Road, Lot #3",
+   "resolution": "unanimous; same as Lot #2",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "buffer zone"
+   ],
+   "quote": "the proposed project consists of a single family home"
+  },
+  {
+   "topic": "Discussion: 615 Townsend Street fish farming information",
+   "resolution": "information handed out; discussion only, no action",
+   "tags": [
+    "aquaculture",
+    "fish farming"
+   ],
+   "quote": "handed out ma aquaculture permits guidance document ~ new information for everyone."
+  },
+  {
+   "topic": "Minutes approval 2/18/2015",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval ~ 2/18/2015 ~ approved"
+  },
+  {
+   "topic": "New business",
+   "resolution": "heading only, no items listed",
+   "tags": [
+    "new business"
+   ],
+   "quote": "minutes approval ~ 2/18/2015 ~ approved new business ~"
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "forest cutting plans, Lane grant reimbursement, advisory teams, storm water listed; Brandon to be asked to attend 5/6 meeting",
+   "tags": [
+    "forest cutting",
+    "lane grant",
+    "advisory teams",
+    "stormwater"
+   ],
+   "quote": "contact brandon and see if he can attend 5/6 meeting"
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "listed as CoC (2); no action printed",
+   "tags": [
+    "signatures"
+   ],
+   "quote": "signatures ~ coc (2) announcements ~"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "May 6 and 20 listed",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "meeting schedule ~ may 6 & 20"
+  },
+  {
+   "topic": "Commission comment",
+   "resolution": "stormwater bylaw master copy; Ethics Commission discussion on Hickory Hills; email setup; bench keys at Cowdrey",
+   "tags": [
+    "stormwater bylaw",
+    "ethics",
+    "hickory hills",
+    "email",
+    "cowdrey"
+   ],
+   "quote": "jan passed out copy of stormwater management bylaw with additions and deletions."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:20 PM; no motion printed",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "adjournment ~ 9:20 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MA Aquaculture Permits Guidance Document",
+   "where": "list",
+   "quote": "handed out ma aquaculture permits guidance document ~ new information for everyone."
+  },
+  {
+   "name": "Stormwater Management Bylaw, with additions and deletions (master copy)",
+   "where": "list",
+   "quote": "jan passed out copy of stormwater management bylaw with additions and deletions."
+  },
+  {
+   "name": "Notice of Intent for 9 Crescent Road, filed by William Galloway of the Wilmat Company, Inc.",
+   "where": "text",
+   "quote": "a public hearing on a notice of inten t filed by william galloway"
+  },
+  {
+   "name": "Notice of Intent for 50 Elmwood Road, Lot #2, filed by Michael Crowley dba Ernco Development Inc.",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent filed by michael crowley dba ern co development inc."
+  },
+  {
+   "name": "Notice of Intent for 50 Elmwood Road, Lot #3, filed by Michael Crowley dba Ernco Development Inc.",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent filed by michael crowley dba ern co development inc."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "order of conditions",
+  "public hearing",
+  "walks in the woods",
+  "stormwater bylaw",
+  "aquaculture",
+  "forest cutting",
+  "lane grant",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handed out"
+ },
+ "dropped_unquoted_by_field": {}
 }

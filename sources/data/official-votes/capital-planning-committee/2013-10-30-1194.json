@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-10-30",
  "docid": "1194",
@@ -10,8 +10,317 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10302013-1194",
   "doc_url": "/docs/meetings/capital-planning-committee/2013-10-30-minutes-1194.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Approve the minutes of 10-9-13 and 10-16-13.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "10-9-13 and 10-16-13 minutes approved."
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "The minutes record that \"10-9-13 and 10-16-13 minutes approved\" and that the meeting \"Adjourned 12:00 PM,\" but neither the approval of prior minutes nor the adjournment is recorded with the procedural details of the vote (moved by, seconded by, or explicit outcome). No other motions are recorded as voted upon in these minutes.",
- "cost_usd": 0.0842905
+ "note": "Minutes approval is recorded with no mover, seconder or tally. Adjournment at 12:00 PM is recorded with no motion, so no vote is listed. No public comment section appears in the text. No documents list heading is printed; the three documents named are referenced in the text only. Several figures are marked as having no figure at initial submittal and are recorded as printed.",
+ "cost_usd": 0.00610652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager kerry speidel"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw director presented."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Edits will be made to the Town-wide summarization sheet, which the Committee viewed.",
+   "quote": "committee viewed town-wide summarization sheet. edits will be made."
+  },
+  {
+   "decision": "Eagle House ADA ramp question deferred to further discussion with the Eagle House Director at the November 13th meeting.",
+   "quote": "will have more discussion with eagle house director at november 13th meeting."
+  },
+  {
+   "decision": "DPW Director to provide a quote to the Committee for the Public Safety Building epoxy floors.",
+   "quote": "would be done professionally. will provide quote to committee."
+  },
+  {
+   "decision": "DPW Director to provide quotes to the Committee for the Ritter HVAC upgrade and the other items marked as to be quoted.",
+   "quote": "will provide quote to committee."
+  },
+  {
+   "decision": "Drawing (schematic) of the Marshall Park Parking Lot to be provided to the Committee; Committee requested it.",
+   "quote": "drawing will be provided to committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Street sweeper (FY15) capital request",
+   "what_was_recorded": "DPW Director presented a street sweeper request for FY15 at $180,000, for Town-wide spring-into-summer sweeping.",
+   "figures_as_printed": [
+    "$180,000"
+   ],
+   "quote": "street sweeper, fy15- $180,000- occurs town-wide spring into summer."
+  },
+  {
+   "topic": "Outsourcing street sweeping",
+   "what_was_recorded": "DPW Director said outsourcing is not financially feasible; roughly $40-$50,000 per single pass of each street, with the Town still supplying the dump truck and operator, and extra cost for anything else.",
+   "figures_as_printed": [
+    "$40- $50,000"
+   ],
+   "quote": "would be approximately $40- $50,000 to do each street once and anything else would cost extra."
+  },
+  {
+   "topic": "Street sweeper repair cost",
+   "what_was_recorded": "Repairs to the street sweeper cost approximately $10,000 last year.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "it cost approximately $10,000 to repair for last year."
+  },
+  {
+   "topic": "Asphalt roller (FY15) capital request",
+   "what_was_recorded": "Replacement asphalt roller for FY15 at $35,000, replacing a 1968 model; the Town has been renting one at about $7,000 a year, with rental cost built into the DPW operating budget.",
+   "figures_as_printed": [
+    "$35,000",
+    "$7,000/ yr."
+   ],
+   "quote": "asphalt roller , fy15- $35,000- would be replacing a 1968 model taken out of service three years ago."
+  },
+  {
+   "topic": "Asphalt roller rental cost",
+   "what_was_recorded": "Rental of the asphalt roller has run about $7,000 per year and is not cost effective.",
+   "figures_as_printed": [
+    "$7,000/ yr."
+   ],
+   "quote": "have been renting since at approximately $7,000/ yr., but not cost effective."
+  },
+  {
+   "topic": "Eagle House ADA ramp (FY15)",
+   "what_was_recorded": "Eagle House ADA ramp estimate raised from $25,000 to $40,000 for FY15, including excavation, concrete ramp and railings to ADA standards; an engineer's design will be needed.",
+   "figures_as_printed": [
+    "$25,000",
+    "$40,000"
+   ],
+   "quote": "fy15 - from $25,000 to $40,000"
+  },
+  {
+   "topic": "Public Safety Building epoxy floors (FY15)",
+   "what_was_recorded": "Epoxy floor work at the Public Safety Building for FY15 at $12,000 because paint is coming off; to be done professionally.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "public safety building, epoxy floors, fy15- at $12,000- paint coming off when floors are moped."
+  },
+  {
+   "topic": "Ritter HVAC upgrade (FY15)",
+   "what_was_recorded": "Ritter HVAC upgrade for FY15 at $21,000, because the manufacturer no longer supports parts for three AC condensers.",
+   "figures_as_printed": [
+    "$21,000"
+   ],
+   "quote": "ritter, hvac upgrade, fy15- $21,000- the manufacturer no longer supports parts for the three ac condensers."
+  },
+  {
+   "topic": "Eagle House/Library carpet replacement (FY16)",
+   "what_was_recorded": "Carpet and floor tile replacement for FY16 combined for Eagle House and Library at $45,000 (no figure at initial submittal); breakdown $7,000 Eagle House and $38,000 Library; Eagle House cost will rise once floor tiles are included.",
+   "figures_as_printed": [
+    "$45,000",
+    "$7,000",
+    "$38,000"
+   ],
+   "quote": "eagle house/library replace carpets, fy16- $45,000 (no figure provided at initial submittal)."
+  },
+  {
+   "topic": "Eagle House carpet breakdown",
+   "what_was_recorded": "Split of the combined carpet figure between Eagle House and Library.",
+   "figures_as_printed": [
+    "$7,000",
+    "$38,000"
+   ],
+   "quote": "breakdown is $7,000 for eagle house; $38,000 for library."
+  },
+  {
+   "topic": "Eagle House HVAC upgrade (FY16)",
+   "what_was_recorded": "Eagle House HVAC upgrade for FY16 at $17,000 (no figure at initial submittal); quote to be provided.",
+   "figures_as_printed": [
+    "$17,000"
+   ],
+   "quote": "eagle house, hvac upgrade, fy16- $17,000 (no figure provided at initial submittal)."
+  },
+  {
+   "topic": "Eagle House sprinkler system repair (FY16)",
+   "what_was_recorded": "Sprinkler system repair at Eagle House for FY16 at $11,000; described as an issue because a valve could trip if Lunenburg loses power.",
+   "figures_as_printed": [
+    "$11,000"
+   ],
+   "quote": "eagle house- sprinkler system repair, fy16- $11,000."
+  },
+  {
+   "topic": "Library building automation system (FY18)",
+   "what_was_recorded": "Library building automation system for FY18 at $23,000 (no figure at initial submittal); Public Safety Building automation for FY19 is included in this figure.",
+   "figures_as_printed": [
+    "$23,000"
+   ],
+   "quote": "library, building automation system, fy18- $23,000 (no figure provided at initial submittal)."
+  },
+  {
+   "topic": "Ritter brick and chimney repointing (FY19)",
+   "what_was_recorded": "Repointing of brick and chimney at Ritter for FY19 at $28,500 (no figure at initial submittal).",
+   "figures_as_printed": [
+    "$28,500"
+   ],
+   "quote": "ritter, repoint brick and chimney, fy19- $28,500 (no figure provided at initial submittal)."
+  },
+  {
+   "topic": "Paving (FY15)",
+   "what_was_recorded": "Paving request for FY15 at $800,000; concern raised that large items will be harder to bring to citizens once the new school building is under construction.",
+   "figures_as_printed": [
+    "$800,000"
+   ],
+   "quote": "paving, fy15- $800,000- concern is that once new school building is under construction"
+  },
+  {
+   "topic": "Town Hall five-year renovation (FY15)",
+   "what_was_recorded": "Town Hall five-year renovation for FY15 at $85,000 for structural work; to be coordinated with the Building Reuse Committee.",
+   "figures_as_printed": [
+    "$85,000"
+   ],
+   "quote": "town hall five year renovation , fy15- $85,000- will work with the building reuse committee."
+  },
+  {
+   "topic": "Marshall Park parking lot (FY15)",
+   "what_was_recorded": "Marshall Park parking lot for FY15 at $37.000 (as printed), brought forward by the Fire and Police Chiefs to address a public safety issue on Chestnut Street; Committee asked whether youth groups could contribute.",
+   "figures_as_printed": [
+    "$37.000"
+   ],
+   "quote": "marshall park parking lot, fy15 - $37.000- brought forth by the fire and police chiefs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 10-9-13 and 10-16-13 minutes",
+   "quote": "10-9-13 and 10-16-13 minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "General discussion: Town-wide summarization sheet",
+   "resolution": "viewed; edits to be made",
+   "quote": "committee viewed town-wide summarization sheet. edits will be made.",
+   "tags": [
+    "summary sheet",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "DPW vehicles: street sweeper and asphalt roller",
+   "resolution": "discussed; no action recorded",
+   "quote": "department of public works: jack rodriquenz, dpw director presented.",
+   "tags": [
+    "DPW",
+    "vehicles",
+    "street sweeper",
+    "asphalt roller"
+   ]
+  },
+  {
+   "topic": "Facilities five-year plan",
+   "resolution": "discussed; quotes and follow-up requested for several items",
+   "quote": "updated facilities five year plan provided:",
+   "tags": [
+    "facilities",
+    "ADA",
+    "HVAC",
+    "carpets",
+    "sprinklers"
+   ]
+  },
+  {
+   "topic": "Projects: paving, Town Hall renovation, Marshall Park parking lot",
+   "resolution": "discussed; schematic and drawing to be provided",
+   "quote": "paving, fy15- $800,000- concern is that once new school building is under construction",
+   "tags": [
+    "paving",
+    "Town Hall",
+    "Marshall Park",
+    "parking"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town-wide summarization sheet",
+   "where": "text",
+   "quote": "committee viewed town-wide summarization sheet. edits will be made."
+  },
+  {
+   "name": "Updated Facilities Five Year Plan",
+   "where": "text",
+   "quote": "updated facilities five year plan provided:"
+  },
+  {
+   "name": "Engineering inspection attached to Form B-3",
+   "where": "text",
+   "quote": "noted engineering inspection attached to form b-3."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "DPW",
+  "vehicles",
+  "facilities",
+  "paving",
+  "capital budget",
+  "FY15-FY19",
+  "Eagle House",
+  "Ritter",
+  "Library"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2011-05-03",
  "docid": "609",
@@ -12,31 +12,201 @@
  },
  "votes": [
   {
-   "motion": "to grant full exemptions for four of the five ABC applications seeking property tax exemptions",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the board voted unanimously in favor of granting a full exemption for all but one of the applications."
-  },
-  {
-   "motion": "to determine that the property at 39 Main Street does not qualify for a full tax exemption",
+   "motion": "Grant a full property tax exemption for all but one of the five ABC (religious and charitable) applications.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted that the property does not qualify for a full tax exemption."
+   "quote": "the board voted unanimously in favor of granting a full exemption for all but one of the applications"
   },
   {
-   "motion": "to grant a partial tax exemption to United Parish Assembly, Inc.",
+   "motion": "Determine that the United Parish Assembly, Inc. property at 39 Main Street does not qualify for a full tax exemption.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "with much discussion, the board voted that the property does not qualify for a full tax exemption."
+  },
+  {
+   "motion": "Grant a partial exemption to the United Parish Assembly, Inc. property at 39 Main Street.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion was made to grant a partial exemption and board voted unanimously in favor to grant a partial exemption."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. No procedural votes recorded (no votes on minutes approval or adjournment). Three substantive votes on ABC applications are recorded, with no individual mover or seconder identified in the minutes.",
- "cost_usd": 0.11581949999999999
+ "note": "OCR text from scanned pages, with some garbled passages (e.g., the recreational land paragraph contains a sentence fragment, and the quoted DOR statute language is partly fragmentary). No public comment is recorded. No vote is recorded for approving prior minutes or for adjournment; the minutes give an adjournment time of 7:06pm but no motion. The minutes do not name who moved or seconded any motion. The ABC vote gives no tally beyond \"unanimously\". The partial-exemption vote's \"3-0\" count is inferred from the three members listed as present and \"unanimously\", so it is not printed. The minutes contain no printed documents list heading.",
+ "cost_usd": 0.0036576200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: board members: chris comeau, chairman, members: louis j. franco & matthew j. papini, sr.,"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: louis j. franco & matthew j. papini, sr.,"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: louis j. franco & matthew j. papini, sr.,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "harald scheid, regional assessor, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "harald scheid, regional assessor, and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harald Scheid will notify all the ABC organizations in writing of the Assessors' decisions.",
+   "quote": "harald will notify all the organizations in writing of the assessors' decisions."
+  },
+  {
+   "decision": "Harald Scheid will contact the recreational land classification applicants that their applications may be held at their direction until the Oct. 1, 2011 filing deadline, and request a response.",
+   "quote": "the board agreed to have harald contact the applicants with this information and further request a response from them."
+  },
+  {
+   "decision": "The Board reviewed and signed the Commitment/Warrant for FY 2011 RE Supplemental Billing.",
+   "quote": "boa reviewed and signed commitment /warrant for fy 2011 re supplemental billing."
+  },
+  {
+   "decision": "The Board reviewed and signed the hard copy of the final Statutory Exemption report, to be filed.",
+   "quote": "the board reviewed and signed the \"hard\" copy and will be filed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2011 RE supplemental tax commitment",
+   "what_was_recorded": "The total supplemental tax for 15 property bills that gained an additional tax due to a 50% or more increase in value was reported.",
+   "figures_as_printed": [
+    "$23,634.77"
+   ],
+   "quote": "the total supplemental tax amount is $23,634.77."
+  },
+  {
+   "topic": "Statutory exemption report to the state",
+   "what_was_recorded": "Total exemptions reported to the state, which include two tax deferrals.",
+   "figures_as_printed": [
+    "$95,611.76"
+   ],
+   "quote": "total exemptions reported to the state are $95,611.76 which includes two tax deferrals."
+  },
+  {
+   "topic": "Tax work off program",
+   "what_was_recorded": "The tax work off program totaled exemptions not included in the statutory exemption report.",
+   "figures_as_printed": [
+    "$10,500.00"
+   ],
+   "quote": "the tax work off program which totaled: $10,500.00 in exemptions."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: Town Meeting and election",
+   "resolution": "no action",
+   "tags": [
+    "town meeting",
+    "election"
+   ],
+   "quote": "louise reminded the boa that the town meeting will be held this sat., may 7, 2011 at the hs at 9 am."
+  },
+  {
+   "topic": "ABC property tax exemption applications",
+   "resolution": "approved; United Parish Assembly granted partial exemption",
+   "tags": [
+    "exemptions",
+    "ABC applications",
+    "religious and charitable"
+   ],
+   "quote": "boa is in receipt of 5 abc applications (religious & charitable organizations) seeking property tax"
+  },
+  {
+   "topic": "FY 2011 RE supplemental billing commitment",
+   "resolution": "signed",
+   "tags": [
+    "commitment",
+    "supplemental tax",
+    "billing"
+   ],
+   "quote": "boa reviewed and signed commitment /warrant for fy 2011 re supplemental billing."
+  },
+  {
+   "topic": "Growth updates: Emerald Place and Lunenburg Village",
+   "resolution": "no action",
+   "tags": [
+    "development",
+    "growth"
+   ],
+   "quote": "harald spoke briefly on the growth updates on emerald place and lunenburg village."
+  },
+  {
+   "topic": "Final statutory exemption report",
+   "resolution": "signed and filed",
+   "tags": [
+    "statutory exemptions",
+    "state report"
+   ],
+   "quote": "louise reported that she has electronically submitted the final statutory exemption report to the state."
+  },
+  {
+   "topic": "Recreational land classification applications received late",
+   "resolution": "Harald to contact applicants; no vote",
+   "tags": [
+    "recreational land",
+    "classification",
+    "deadline"
+   ],
+   "quote": "harald informed the board that two applications seeking recreational land tax classifications were"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Commitment/Warrant for FY 2011 RE Supplemental Billing",
+   "where": "text",
+   "quote": "boa reviewed and signed commitment /warrant for fy 2011 re supplemental billing."
+  },
+  {
+   "name": "Final Statutory Exemption report",
+   "where": "text",
+   "quote": "louise reported that she has electronically submitted the final statutory exemption report to the state."
+  },
+  {
+   "name": "Taxpayers Guide to Local Property Exemptions For Religious and Charitable Organizations (DOR)",
+   "where": "text",
+   "quote": "taxpayers guide to local property exemptions for religious and charitable organizations to determine"
+  }
+ ],
+ "tags": [
+  "property tax exemptions",
+  "ABC applications",
+  "supplemental tax billing",
+  "statutory exemption report",
+  "recreational land classification",
+  "Board of Assessors",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

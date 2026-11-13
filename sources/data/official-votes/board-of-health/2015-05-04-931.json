@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2015-05-04",
  "docid": "931",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the well variance at 1259 Massachusetts Avenue",
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Fortin",
+   "motion": "Approve the requested well variance for Jonathan Markey (1259 Massachusetts Avenue) as submitted; members voted Emond No, Passios No, Shea Yes, Fortin Yes, Jewell Abstain.",
+   "moved_by": "Passios",
+   "seconded_by": "Fortin",
    "outcome": "failed",
    "procedural": false,
-   "quote": "motion made by mr. passios, seconded by mr. fortin. members voted as follows: emond - no ===page 2=== passios - no shea - yes fortin - yes jewell - abstain the vote d",
-   "quote_taken_from_text": true
+   "quote": "chairman emond asked for a motion on the requested variance as submitted. motion made by mr. passios, seconded by mr. fortin."
   },
   {
-   "motion": "Approve the variances at 1455 Massachusetts Avenue",
+   "motion": "Approve the requested variances for 1455 Massachusetts Avenue (offset to ground water, sieve analysis, reduction in inlet and outlet tees).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
@@ -29,7 +28,7 @@
    "quote": "after discussion and on motion by jewell and second by passios, the variances were approved. all in favor."
   },
   {
-   "motion": "Approve the variance at 32 Arbor Street",
+   "motion": "Approve the offset-to-wetland variance for 32 Arbor Street (100 feet to 61 feet).",
    "moved_by": "Fortin",
    "seconded_by": "Passios",
    "outcome": "passed",
@@ -38,6 +37,215 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes mention \"MINUTES APPROVED\" as a section heading but record no motion or vote outcome for prior minutes, so it is not included. An appointment of Dave Passios to investigate the Septic System Grant is mentioned but is not recorded as a voted motion.",
- "cost_usd": 0.1072545
+ "note": "Text extraction splits many words with stray spaces (e.g., 'Dav e', 'Pas sios', 'Agr icultural'); names were normalized where the minutes print the full name elsewhere. The minutes record no vote on approving prior minutes or on adjournment; the 'MINUTES APPROVED:' heading has no motion under it. Adjournment appears twice: 'Meeting adjourned at 8:05 pm' followed later by 'Meeting adjourned 7:45 pm', which is earlier than the first. No dollar figures are printed. No documents-used list is printed.",
+ "cost_usd": 0.00597282,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, dav e passios, paul fortin"
+  },
+  {
+   "name": "Jonathan Markey",
+   "role": "applicant",
+   "status": "present",
+   "quote": "jonathan markey as well as josh brianas met with th e board."
+  },
+  {
+   "name": "Josh Brianas",
+   "role": "applicant",
+   "status": "present",
+   "quote": "jonathan markey as well as josh brianas met with th e board."
+  },
+  {
+   "name": "Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "chairman emond read agent garreffi comments which s tate that he is not in favor of approving this variance."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board of behalf of the own er."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jeff Mendoza",
+   "role": "member, Agricultural Commission",
+   "status": "present",
+   "quote": "jeff mendoza and maureen dupuis, members of the agr icultural commission met with the board"
+  },
+  {
+   "name": "Maureen Dupuis",
+   "role": "member, Agricultural Commission",
+   "status": "present",
+   "quote": "jeff mendoza and maureen dupuis, members of the agr icultural commission met with the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed that Mr. Markey could submit another well variance proposal at a later date.",
+   "quote": "mr. markey asked to if he could submit another proposal at a later date. the board agreed."
+  },
+  {
+   "decision": "Chairman Emond appointed Dave Passios to do further investigation of the septic system grant and report back to the board at its next scheduled meeting on June 1, 2015.",
+   "quote": "report back to the board at their next scheduled meeting on june 1, 2015."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Septic system grant funds",
+   "what_was_recorded": "The board discussed the history of the grant and two options for using its money: repair or maintenance of a current system, or re-loaning the funds to Lunenburg town residents, with internal or outside management.",
+   "figures_as_printed": [],
+   "quote": "in addition, management of the grant can be internal or through an outside agency."
+  },
+  {
+   "topic": "Septic loan program and betterment fees",
+   "what_was_recorded": "Criteria for a resident loan program were discussed, including that betterment fees could not be included if sewer connection was part of the loan program.",
+   "figures_as_printed": [],
+   "quote": "if sewer connection where included in the loan program, betterment fees could not be included."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "heading only; no motion recorded",
+   "quote": "minutes approved: title 5 inspection reports acknowledged : 15 john street 45 otis st",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged (nine properties listed)",
+   "quote": "title 5 inspection reports acknowledged : 15 john street 45 otis street 5 upland",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "permits signed for two properties",
+   "quote": "septic permits signed : 1455 mass avenue 1259 massachusetts avenue",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "1259 Massachusetts Avenue well variance (Markey/Brianas)",
+   "resolution": "variance failed; applicant may resubmit later",
+   "quote": "mr. markey is requesting a well variance as follows: setback from a property line, 50 feet required, 25 feet proposed.",
+   "tags": [
+    "variance",
+    "well",
+    "public water"
+   ]
+  },
+  {
+   "topic": "1455 Massachusetts Avenue variances",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by jewell and second by passios, the variances were approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic",
+    "failed system"
+   ]
+  },
+  {
+   "topic": "32 Arbor Street wetland offset variance",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by fortin and second by passios, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "wetland",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Agricultural Commission and Farmers Market vendor permits",
+   "resolution": "discussed; vendors referred to Nashoba food-service sanitarian",
+   "quote": "is bridgette braley and she can issue the permits as necessary.",
+   "tags": [
+    "agricultural commission",
+    "farmers market",
+    "food permits"
+   ]
+  },
+  {
+   "topic": "Septic system grant",
+   "resolution": "Dave Passios to investigate and report at June 1, 2015 meeting",
+   "quote": "report back to the board at their next scheduled meeting on june 1, 2015.",
+   "tags": [
+    "septic grant",
+    "loans"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Agent Garreffi comments",
+   "where": "text",
+   "quote": "chairman emond read agent garreffi comments which s tate that he is not in favor of approving this variance."
+  },
+  {
+   "name": "Title 5 Inspection Reports (15 John Street, 45 Otis Street, 5 Upland, 73 Horizon Island Road, 173 Hollis Road, 42 Beal Street, 15 Fitchview, 163 Sunny Hill Road, 300 Cross Road)",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged : 15 john street 45 otis street 5 upland"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "Title 5",
+  "septic",
+  "variance",
+  "well",
+  "septic grant",
+  "agricultural commission",
+  "farmers market",
+  "food permits",
+  "Nashoba"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

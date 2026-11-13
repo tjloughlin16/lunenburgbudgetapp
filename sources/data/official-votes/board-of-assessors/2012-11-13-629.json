@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-11-13",
  "docid": "629",
@@ -12,19 +12,268 @@
  },
  "votes": [
   {
-   "motion": "to table the signing of the 2013 Tax Map Maintenance Contract due to an omission in the scope of services",
+   "motion": "Approve abatements, expense vouchers, commitments, warrants, and minutes of the October 2, 2012 meeting.",
+   "procedural": true,
    "outcome": "passed",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on october 2, 2012."
+  },
+  {
+   "motion": "Approve the approximately 30 statutory exemption applications totaling $18,686.00.",
    "procedural": false,
+   "outcome": "passed",
+   "quote": "the board reviewed and approved all applications totaling $18,686.00."
+  },
+  {
+   "motion": "Release the FY 2010, FY 2011 and FY 2012 overlay surpluses, depleting all FY overlay account balances.",
+   "procedural": false,
+   "outcome": "passed",
+   "quote": "the board reviewed and approved to release the following overlay surpluses which will deplete balances of all fy overlay accounts"
+  },
+  {
+   "motion": "Table signing of the 2013 Tax Map Maintenance Contract from Cartographic Associates, Inc. due to an omission in the scope of services.",
+   "procedural": false,
+   "outcome": "passed",
    "quote": "the board voted to table the signing of the contract at this time due to an omission in the scope of services."
   },
   {
-   "motion": "to meet on Tuesday, December 4, 2012 at 6:00pm",
-   "outcome": "passed",
+   "motion": "Set the next Board of Assessors meeting for Tuesday, December 4, 2012 at 6:00pm.",
    "procedural": true,
+   "outcome": "passed",
    "quote": "the board voted to meet on tuesday, december 4, 2012 at 6:00pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR reading via macOS Vision. Minutes use language like \"reviewed and approved\" for several items (prior minutes, statutory exemptions, chapter applications) but do not explicitly record these as votes with \"voted,\" vote counts, or passage language. Only two votes are recorded with explicit \"The Board voted\" language. No moved_by or seconded_by names are stated in either vote.",
- "cost_usd": 0.0976675
+ "note": "OCR text from a scanned, stamped copy (received and filed Jan 09 2013). Some words are garbled (e.g., signature block, 'Applelate', 'received on from'). No movers, seconders or vote counts are printed; the approval and vote entries are recorded as passed from the wording alone. The Chapter applications action (67 granted, 6 tabled) is recorded as a decision because no vote wording appears. No public comment section is printed. Adjournment at 7:05 pm is recorded without a vote.",
+ "cost_usd": 0.00663872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "louise paquette, administrative assistant. not present: chris comeau, chairman"
+  },
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "not present: chris comeau, chairman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will review the Tax Work Off program totals at the next meeting, since the tally was not complete.",
+   "quote": "board will review the totals submitted at the next meeting"
+  },
+  {
+   "decision": "Louise Paquette will contact Cartographic Associates for clarification on the tax map contract scope.",
+   "quote": "louise will contact them for clarification."
+  },
+  {
+   "decision": "Harald Scheid will address the Verizon abatement settlement with the Town Manager and the Accountant.",
+   "quote": "he will be addressing the abatement settlement with the town manager and the accountant."
+  },
+  {
+   "decision": "The BOA granted 67 chapter applications and tabled the remaining 6 for further review.",
+   "quote": "the boa reviewed and granted 67 chapter applications and tabled the remaining 6 applications for further review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption applications",
+   "what_was_recorded": "Approximately 30 statutory exemption applications were approved in a total amount.",
+   "quote": "the board reviewed and approved all applications totaling $18,686.00.",
+   "figures_as_printed": [
+    "$18,686.00"
+   ]
+  },
+  {
+   "topic": "Verizon New England 2009 PP abatement settlement payment",
+   "what_was_recorded": "The settlement payment stands at a stated amount and is accruing interest at 8 percent from May 1, 2009.",
+   "quote": "he reported that the payment presently stands at the amount of $44,154.74 and is accruing interest at 8 percent from may 1, 2009.",
+   "figures_as_printed": [
+    "$44,154.74",
+    "8 percent"
+   ]
+  },
+  {
+   "topic": "Overlay account surpluses released",
+   "what_was_recorded": "Overlay surpluses released by FY year, depleting all FY overlay account balances.",
+   "quote": "fy 2010: $14,860.27 fy 2011: $4,385.99 fy 2012: $29,226.73",
+   "figures_as_printed": [
+    "$14,860.27",
+    "$4,385.99",
+    "$29,226.73"
+   ]
+  },
+  {
+   "topic": "Tax rate and average assessed home value",
+   "what_was_recorded": "Regional Assessor said the tax rate could be $17.30 per thousand and the average assessed home is valued at a stated amount.",
+   "quote": "he stated that potentially the tax rate will be $17.30 per thousand and the average assessed home has a value of $247,800.00.",
+   "figures_as_printed": [
+    "$17.30 per thousand",
+    "$247,800.00"
+   ]
+  },
+  {
+   "topic": "Commercial and industrial share of assessment",
+   "what_was_recorded": "Commercial and industrial base is about 10 percent of overall assessment; a 10 percent increase in that base would yield a 1 percent reduction in residential properties.",
+   "quote": "he noted that the commercial and industrial base represents about 10 percent of the town's overall assessment",
+   "figures_as_printed": [
+    "10 percent",
+    "1 percent"
+   ]
+  },
+  {
+   "topic": "Padula / Lunenburg LLC Chapter 61A roll-back tax and Right of First Refusal",
+   "what_was_recorded": "Roll-back tax figure and the Town's Right of First Refusal were discussed with the property owner and Town Manager; no figure printed.",
+   "quote": "regarding the town's right of first refusal and the roll-back tax figure.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "2013 Tax Map Maintenance Contract",
+   "what_was_recorded": "Cartographic Associates contract was presented and tabled; no contract amount is printed.",
+   "quote": "louise presented the 2013 tax map maintenance contract received on from cartographic associates,",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals and October 2 minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on october 2, 2012.",
+   "tags": [
+    "abatements",
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Statutory exemption applications and Tax Work Off tally",
+   "resolution": "approved $18,686.00; Tax Work Off totals deferred to next meeting",
+   "quote": "louise presented approx. 30 statutory exemption applications.",
+   "tags": [
+    "exemptions",
+    "tax work off"
+   ]
+  },
+  {
+   "topic": "Chapter land applications and Chapter 61A withdrawal",
+   "resolution": "67 granted, 6 tabled; one owner withdrew from Chapter 61A",
+   "quote": "louise reported that a final chapter letter was sent on october 4, 2012 as directed by the boa",
+   "tags": [
+    "chapter 61A",
+    "right of first refusal",
+    "roll-back tax"
+   ]
+  },
+  {
+   "topic": "Classification Hearing with Board of Selectmen",
+   "resolution": "no action; Regional Assessor recommended keeping single tax rate",
+   "quote": "harald spoke with the board regarding the classification hearing which will be held tonight at 7:15 with",
+   "tags": [
+    "classification",
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Verizon New England 2009 PP abatement appeal",
+   "resolution": "settled in favor of applicant; settlement to be addressed with Town Manager and Accountant",
+   "quote": "case was settled in favor of the applicant.",
+   "tags": [
+    "abatement",
+    "Verizon",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Overlay account surpluses",
+   "resolution": "surpluses released",
+   "quote": "louise reported on the balance of the overlay accounts",
+   "tags": [
+    "overlay"
+   ]
+  },
+  {
+   "topic": "2013 Tax Map Maintenance Contract",
+   "resolution": "tabled",
+   "quote": "the board voted to table the signing of the contract at this time due to an omission in the scope of services.",
+   "tags": [
+    "tax maps",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Next meeting date and adjournment",
+   "resolution": "next meeting set for December 4, 2012 at 6:00pm; adjourned 7:05 pm",
+   "quote": "the board voted to meet on tuesday, december 4, 2012 at 6:00pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FINAL Chapter letter sent October 4, 2012",
+   "where": "text",
+   "quote": "louise reported that a final chapter letter was sent on october 4, 2012 as directed by the boa"
+  },
+  {
+   "name": "Classification hearing notification published in the Lunenburg Ledger on November 2, 2012",
+   "where": "text",
+   "quote": "louise stated that the hearing notification was published in the lunenburg ledger on november 2, 2012."
+  },
+  {
+   "name": "Letter received by Chu, Ring & Hazel LLP (Verizon's Attorneys)",
+   "where": "text",
+   "quote": "harald spoke of the letter received by chu, ring & hazel llp (verizon's attorneys)"
+  },
+  {
+   "name": "2009 PP abatement appeal from Verizon New England Inc.",
+   "where": "text",
+   "quote": "regarding the 2009 pp abatement appeal received from verizon new england inc."
+  },
+  {
+   "name": "2013 Tax Map Maintenance Contract from Cartographic Associates, Inc.",
+   "where": "text",
+   "quote": "louise presented the 2013 tax map maintenance contract received on from cartographic associates,"
+  }
+ ],
+ "tags": [
+  "assessors",
+  "abatements",
+  "statutory exemptions",
+  "chapter 61A",
+  "classification",
+  "tax rate",
+  "Verizon appeal",
+  "overlay",
+  "tax map contract"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

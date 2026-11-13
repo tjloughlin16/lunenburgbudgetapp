@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-08-25",
  "docid": "3769",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Refund all of the remaining bond except for $44,000.00",
+   "motion": "Refund all of the remaining Emerald Place at Lake Whalom bond except for $44,000.00.",
    "moved_by": "K. Chenis",
    "seconded_by": "N. Lockwood",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion k. chenis to refund all of the remaining bond except for $44,000.00, second n. lockwood, all aye."
   },
   {
-   "motion": "Approve minutes from 8-11-14",
+   "motion": "Approve the minutes of 8-11-14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "motion, d. mcquaid to approve 8-11-14, second, k. chenis"
   },
   {
-   "motion": "Approve Information Meeting minutes from 8-11-14",
+   "motion": "Approve the Information Meeting minutes of 8-11-14.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -37,6 +37,263 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0948025
+ "note": "Text extraction is readable but has split words and spacing artifacts (e.g. \"request ed\", \"$44,000 .00\", \"9 th\"); quotes were copied as printed. The minutes refer to a separate Information Meeting minutes document (1259 Massachusetts Avenue) that is not included. No public comment section is printed. The adjournment (9:30 PM) has no recorded motion. The minutes approval motions have no recorded result. The document list names \"Whited Woods\" while the development status section says \"Whites Woods\".",
+ "cost_usd": 0.007553039999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Jack Sullivan",
+   "role": "Emerald Place Development",
+   "status": "present",
+   "quote": "jack sullivan, emerald place development"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "Project Engineer, Whitman & Bingham Associates (WBA)",
+   "status": "present",
+   "quote": "project engineer anthony cleaves, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Sam Lawton",
+   "role": "Principal Planner, MRPC",
+   "status": "present",
+   "quote": "presented by sam lawton, principal planner, mrpc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Village District Draft Bylaw public discussion is tabled until the rough draft is finished.",
+   "quote": "village district draft bylaw- public discussion tabled until rough draft is finished."
+  },
+  {
+   "decision": "S. Lawton will develop a draft implementation strategy for the Housing Production Plan and return to the Board in October.",
+   "quote": "s. lawton will develop a draft implementation strategy and return to the board in october."
+  },
+  {
+   "decision": "MRPC can come up with draft recommendations for a needs assessment and affordable housing goals, with a production schedule, to submit to the Board in September (tentatively September 22nd).",
+   "quote": "mrpc can come up with draft recommendations for a needs assessment and affordable housing goals"
+  },
+  {
+   "decision": "Board to set a joint meeting with representatives from each Board/Commission for the Master Plan Economic Development Element, with attendance of J. Hume from MRPC recommended, and schedule a workshop for October 20th.",
+   "quote": "attendance of j. hume from mrpc recommended."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Emerald Place at Lake Whalom bond release",
+   "what_was_recorded": "The remaining bond was approximately $137,000.00; the developer asked the Board to release $100,000.00, and the Board voted to retain $44,000.00 for remaining interior work.",
+   "quote": "remaining bond amount is approximately $137,000.00.",
+   "figures_as_printed": [
+    "$137,000.00",
+    "$100,000.00",
+    "$44,000.00"
+   ]
+  },
+  {
+   "topic": "Housing Production Plan income figures",
+   "what_was_recorded": "Census median income figures were given for Lunenburg and the Fitchburg/Leominster area, the basis for the 80% of area median income affordability test.",
+   "quote": "current median income for lunenburg from 2010 census is $78,452; median income for fitchburg/leominster area is $67,900 (based on a family of 4).",
+   "figures_as_printed": [
+    "$78,452",
+    "$67,900"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Information meeting, 1259 Massachusetts Avenue (cont'd)",
+   "resolution": "referred to separate minutes",
+   "quote": "information meeting, 1259 massachusetts avenue (cont'd)- see separate minutes.",
+   "tags": [
+    "information meeting",
+    "1259 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Appointment: Emerald Place at Lake Whalom bond release",
+   "resolution": "approved; refund all remaining bond except $44,000.00",
+   "quote": "motion k. chenis to refund all of the remaining bond except for $44,000.00, second n. lockwood, all aye.",
+   "tags": [
+    "bond",
+    "Emerald Place",
+    "release"
+   ]
+  },
+  {
+   "topic": "MRPC Introduction to Housing Production Plan",
+   "resolution": "presented; no action; implementation strategy to return in October",
+   "quote": "presented by sam lawton, principal planner, mrpc.",
+   "tags": [
+    "housing",
+    "40B",
+    "affordable housing",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Village District Draft Bylaw",
+   "resolution": "tabled until rough draft is finished",
+   "quote": "village district draft bylaw- public discussion tabled until rough draft is finished.",
+   "tags": [
+    "village district",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 8-11-14 and Information Meeting 8-11-14",
+   "quote": "motion, d. mcquaid to approve 8-11-14, second, k. chenis",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "upcoming meeting with abutters and school committee on september 4, 2014",
+   "tags": [
+    "school building committee",
+    "committees"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "received; no action",
+   "quote": "whites woods , mass ave - town counsel's opinion is that a public hearing needs to be held",
+   "tags": [
+    "development status",
+    "subdivision",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "ZBA hearing continuation noted; Master Plan economic development joint meeting to be set",
+   "quote": "noted zoning board of appeals hearing continuation to september 24th, 7:00 pm.",
+   "tags": [
+    "ZBA",
+    "master plan",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "noted. 790 massachusetts avenue seeking special permit from zoning board of appeals",
+   "tags": [
+    "special permit",
+    "gas station"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action; Land Use Director interviews set with Board of Selectmen",
+   "quote": "top two candidates for the land use director position will be",
+   "tags": [
+    "land use director",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "september 8, 6:30 pm - town hall",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Housing Production Plan – PowerPoint presentation handout",
+   "where": "list",
+   "quote": "lunenburg housing production plan - powerpoint presentation handout"
+  },
+  {
+   "name": "Minutes- 8/11/14 and Information Meeting 8/11/14",
+   "where": "list",
+   "quote": "minutes- 8/11/14 and information meeting 8/11/14"
+  },
+  {
+   "name": "Tri Town Landing update",
+   "where": "list",
+   "quote": "tri town landing update"
+  },
+  {
+   "name": "Whited Woods- Correspondence from Town Counsel",
+   "where": "list",
+   "quote": "whited woods- correspondence from town counsel"
+  },
+  {
+   "name": "250 Whalom Road Zoning Board of Appeals Notice",
+   "where": "list",
+   "quote": "250 whalom road zoning board of appeals notice"
+  },
+  {
+   "name": "50 Elmwood Road Progress Form",
+   "where": "list",
+   "quote": "50 elmwood road progress form"
+  },
+  {
+   "name": "Solar Sites Progress Form",
+   "where": "list",
+   "quote": "solar sites progress form"
+  },
+  {
+   "name": "Construction Cost Estimate form",
+   "where": "text",
+   "quote": "noted the construction cost estimate form was typical for a subdivision."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "Emerald Place bond",
+  "housing production plan",
+  "40B",
+  "village district bylaw",
+  "master plan",
+  "MRPC",
+  "subdivision",
+  "solar",
+  "land use director",
+  "meeting minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2015-09-08",
  "docid": "1854",
@@ -12,33 +12,225 @@
  },
  "votes": [
   {
-   "motion": "Accept the August 11, 2015 Council on Aging minutes",
+   "motion": "Approve the August 11, 2015 Council on Aging minutes.",
    "moved_by": "Ms. Dwyer",
    "seconded_by": "Mr. McNally",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. dwyer moved to accept the august 11, 2015 cou ncil on aging minutes. mr. mcnally seconded. on vote, motion carried unani mousl",
-   "quote_taken_from_text": true
+   "quote": "ms. dwyer moved to accept the august 11, 2015 cou ncil on aging minutes. mr. mcnally seconded. on vote, motion carried unani mously."
   },
   {
-   "motion": "Terminate all Council on Aging Task Groups (Advocacy, Communication, & Public Relations)",
+   "motion": "Terminate all Council on Aging Task Groups (Advocacy, Communication, & Public Relations).",
    "moved_by": "Ms. Lincoln",
    "seconded_by": "Ms. Grant",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ms. lincoln moved to terminate all council on aging task groups (advocacy, communication, & public rel ations). ms. grant seconded. on vote, motion carried unanimousl ",
-   "quote_taken_from_text": true
+   "quote": "ms. lincoln moved to terminate all council on aging task groups (advocacy, communication, & public rel ations). ms. grant seconded. on vote, motion carried unanimousl y."
   },
   {
-   "motion": "Adjourn the COA meeting",
+   "motion": "Adjourn the Council on Aging meeting.",
    "moved_by": "Mr. Guenard",
    "seconded_by": "Ms. DiGiacomo",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. guenard moved to adjourn the coa meeting. ms. digiacomo seconded. on vote, motion carried unanimously."
+   "quote": "being no further business, mr. guenard moved to adjourn the coa meeting. ms. digiacomo seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1314015
+ "note": "Text is extracted with broken word spacing in places (e.g. 'Cou ncil', 'unani mously', 'Direct or'); quotes copy the printed text as-is. The mover 'Ms. Lincoln' is printed without a first name; Debbie Lincoln is the only Ms. Lincoln listed, but Pete Lincoln is also present, so the attribution is as printed. Minutes are stamped 'APPROVED AT THE 10/13/ 2015 COA MEETING'. No dollar figures appear in the text. Public comment is printed as 'None'.",
+ "cost_usd": 0.00602272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson pete lincoln called the meeting"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "susan doherty, director"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "board member",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "board member",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "board member",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, jacquelyn dwyer, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, jacquelyn dwyer, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, jacquelyn dwyer, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, jacquelyn dwyer, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Brian Guenard",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, jacquelyn dwyer, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "board member",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, judy tarbell, jacquelyn dwyer, brian guenard & jane rabbitt."
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "board member",
+   "status": "absent",
+   "quote": "excused: cheryl moisan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hours of the 2 kitchen aides will be restored after September 30, 2015, using money freed by the 2 meal site resignations.",
+   "quote": "hours will be restored after september 30, 2015."
+  },
+  {
+   "decision": "Mr. Guenard will speak to DPW about whether anti-freeze was used in the senior center heating system.",
+   "quote": "mentioned that he would speak to dpw about that."
+  },
+  {
+   "decision": "Council on Aging task groups were done away with, and Ad-Hoc groups will be formed when needed.",
+   "quote": "it was decided to do away with the coa task groups, and to form ad-hoc groups when needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Restoring kitchen aide hours in COA budget",
+   "what_was_recorded": "Ms. Doherty said the COA budget again has money to restore previously cut kitchen aide hours, because of 2 meal site resignations.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty explained that due to the 2 meal site"
+  },
+  {
+   "topic": "Generator for sprinkler system",
+   "what_was_recorded": "The board discussed buying a small generator to keep the sprinkler system running during a power outage; no cost was printed.",
+   "figures_as_printed": [],
+   "quote": "also discussed was the possibility of purchasing a small generator"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Boston Post Cane Ceremony October 19",
+   "resolution": "reported, no action",
+   "quote": "ms. doherty reported that she had visited the next recipient of the",
+   "tags": [
+    "Boston Post Cane",
+    "events",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; kitchen aide hours to be restored",
+   "quote": "hours will be restored after september 30, 2015.",
+   "tags": [
+    "budget",
+    "kitchen aides",
+    "building repairs",
+    "Eagle Scout walkway",
+    "classes",
+    "property tax work-off"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved August 11, 2015 minutes",
+   "quote": "ms. dwyer moved to accept the august 11, 2015 cou ncil on aging minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Update on Eagle House Recreation Area",
+   "resolution": "discussed, no action",
+   "quote": "also discussed was the possibility of purchasing a small generator",
+   "tags": [
+    "Eagle House",
+    "shuffleboard",
+    "shed",
+    "generator"
+   ]
+  },
+  {
+   "topic": "Task Groups Re-Organization / Liaison to Eagle House Supporters Inc.",
+   "resolution": "task groups terminated; Ad-Hoc groups when needed",
+   "quote": "it was decided to do away with the coa task groups, and to form ad-hoc groups when needed.",
+   "tags": [
+    "task groups",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Notices, communications and board comment",
+   "resolution": "discussed, no action",
+   "quote": "the board discussed the possibility of board member",
+   "tags": [
+    "greeters",
+    "Stillman Fair",
+    "Open Meetings Law workshop",
+    "public access video"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:15AM",
+   "quote": "being no further business, mr. guenard moved to adjourn the coa meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Council on Aging",
+  "Eagle House",
+  "senior center",
+  "budget",
+  "kitchen aides",
+  "task groups",
+  "building repairs",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

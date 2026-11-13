@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-04-03",
  "docid": "2531",
@@ -10,15 +10,174 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04032012-2531",
   "doc_url": "/docs/meetings/historical-commission/2012-04-03-minutes-2531.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR of a typed page with several garbled words (e.g., 'QP-6:30pm', 'far' for 'for', 'af' for 'of', 'Buiiding'); the header date reads '4/3/202'. No attendance list or names appear, so attendees is empty. No motions and no vote tallies are recorded anywhere; the minutes approval, Jones House support, letter of support and grant application are recorded as actions without a motion, so they are listed as decisions, not votes. No dollar figures appear. Public comment speakers are not named.",
+ "cost_usd": 0.00326972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [
   {
-   "motion": "Approve minutes from 3/6/12",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes from 3/6/12 approved"
+   "decision": "Commission agreed to support changes to the Jones House purchase.",
+   "quote": "commission agreed to support changes to jones house purchase"
+  },
+  {
+   "decision": "Becky is writing the April newspaper article on Trolleys; Damon is to write the May article and Richard the June article.",
+   "quote": "becky is currently in the process of writing the april article on trolleys"
+  },
+  {
+   "decision": "A working session was scheduled for 4/10/12 to start the town-wide survey inventory.",
+   "quote": "working session scheduled far 4/10/12 to start inventory"
+  },
+  {
+   "decision": "The Commission decided to submit a letter in support of the cause to protect the stone walls at the Pleasant St. solar project site, while noting it can do little to stop the project.",
+   "quote": "the commission decided to submit a letter in support of their cause to protect the stone walls"
+  },
+  {
+   "decision": "The Commission is to apply for funds from the Montachusett Society for Preservation of Historic Buildings to supplement the effort.",
+   "quote": "the commission is to apply for funds from montachusett society for preservation of historic buildings"
+  },
+  {
+   "decision": "Next meeting scheduled for May 1, 2012 at 6:30 PM in the Ritter Building.",
+   "quote": "next meeting scheduled for may 1. 2012 @ 6:30 in the ritter buiiding"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR quality is readable. The document describes several decisions (support for Jones House changes, letter in support of stone walls protection, capital plan suggestion) but does not record formal votes with vote mechanics for these items—only \"agreed\" and \"decided\" language, which does not meet the criteria for recorded votes per the rules.",
- "cost_usd": 0.0948475
+ "budget_items": [
+  {
+   "topic": "Montachusett Society grant application",
+   "what_was_recorded": "The Commission is to apply for funds from the Montachusett Society to help supplement the effort; no dollar amount is printed.",
+   "quote": "the commission is to apply for funds from montachusett society for preservation of historic buildings to help supplement the effort.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town hall repainting capital plan suggestion",
+   "what_was_recorded": "A capital plan suggestion for repainting town hall was raised; no cost is printed.",
+   "quote": "capital plan suggestion - town hall repainting.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Jones House purchase",
+   "what_was_recorded": "The Commission agreed to support changes to the Jones House purchase; no price or amount is printed.",
+   "quote": "commission agreed to support changes to jones house purchase",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "",
+   "stated_role": "representatives",
+   "topic": "opposition to Pleasant St. solar project",
+   "quote": "there were representatives present against the pleasant st. solar project"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Correspondence",
+   "resolution": "noted notice of public hearing on zoning by-law amendment for solar projects",
+   "quote": "notice of public hearing to amend zoning by law on solar projects",
+   "tags": [
+    "correspondence",
+    "zoning",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved minutes of 3/6/12 (no motion recorded)",
+   "quote": "minutes from 3/6/12 approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old business: Newspaper articles",
+   "resolution": "assignments made for April, May and June articles",
+   "quote": "becky is currently in the process of writing the april article on trolleys",
+   "tags": [
+    "newspaper",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Old business: Town wide survey",
+   "resolution": "working session scheduled for 4/10/12 to start inventory",
+   "quote": "working session scheduled far 4/10/12 to start inventory",
+   "tags": [
+    "survey",
+    "inventory"
+   ]
+  },
+  {
+   "topic": "Old business: Jones House",
+   "resolution": "Commission agreed to support changes to the purchase",
+   "quote": "commission agreed to support changes to jones house purchase",
+   "tags": [
+    "Jones House",
+    "property"
+   ]
+  },
+  {
+   "topic": "New business: Pleasant St. solar project and stone walls",
+   "resolution": "letter of support to be submitted to protect stone walls",
+   "quote": "discussion af ancient stone walls on site and possibility of registering a historic vista.",
+   "tags": [
+    "solar",
+    "stone walls",
+    "historic vista",
+    "Pleasant St."
+   ]
+  },
+  {
+   "topic": "New business: Capital plan suggestion, town hall repainting",
+   "resolution": "suggestion noted, no action recorded",
+   "quote": "capital plan suggestion - town hall repainting.",
+   "tags": [
+    "town hall",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "New business: Montachusett grant application",
+   "resolution": "Commission to apply for supplemental funds",
+   "quote": "the commission is to apply for funds from montachusett society for preservation of historic buildings to help supplement the effort.",
+   "tags": [
+    "grant",
+    "preservation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 8:00pm",
+   "quote": "meeting adjourned @8:00pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of public hearing to amend zoning by law on solar projects",
+   "where": "list",
+   "quote": "notice of public hearing to amend zoning by law on solar projects"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "solar project",
+  "Pleasant St.",
+  "stone walls",
+  "newspaper articles",
+  "town wide survey",
+  "Jones House",
+  "town hall",
+  "grant",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

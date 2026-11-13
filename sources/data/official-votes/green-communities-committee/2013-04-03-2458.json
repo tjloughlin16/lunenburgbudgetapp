@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2013-04-03",
  "docid": "2458",
@@ -12,6 +12,165 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes describe discussions of Stretch Code adoption, exterior lighting projects, and resignation announcement, but contain no motions, seconding, or voting outcomes.",
- "cost_usd": 0.0805715
+ "note": "Partial text: it begins mid-agenda at item 3, with no call to order, attendance roll, agenda, or approval of prior minutes. No motions or votes are recorded; adjournment at 8:44 P.M. is stated without a motion. Attendance is not stated for any member; statuses are 'not stated' except the presenter. The signature block contains OCR debris ('Read meete') that is not reproduced in any field.",
+ "cost_usd": 0.00407172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "status": "not stated",
+   "quote": "d. blatt was told by building inspector m.sauvegeau that on 7/1/13 a new code will be in place"
+  },
+  {
+   "name": "M. Sauvegeau",
+   "role": "Building Inspector",
+   "status": "not stated",
+   "quote": "d. blatt was told by building inspector m.sauvegeau that on 7/1/13 a new code will be in place"
+  },
+  {
+   "name": "Robert Garrity",
+   "role": "Mass Climate Action Network",
+   "status": "present",
+   "quote": "robert garrity of mass climate action network spoke regarding the stretch code in massachusetts."
+  },
+  {
+   "name": "S. DiCampo",
+   "status": "not stated",
+   "quote": "s. dicampo commented on renovations, only the part of the project that is being touched must follow the code."
+  },
+  {
+   "name": "J. Londa",
+   "status": "not stated",
+   "quote": "as for the proposed new school building j. londa said it should be built as energy efficiently as possible."
+  },
+  {
+   "name": "M. Garrity",
+   "status": "not stated",
+   "quote": "m. garrity pointed out that that there is also a new fire sprinkler code going into effect but not related to the stretch code."
+  },
+  {
+   "name": "J. McQuaid",
+   "status": "not stated",
+   "quote": "j. mcquaid will research how other towns have used their grants."
+  },
+  {
+   "name": "Steve DiCampo",
+   "status": "not stated",
+   "quote": "steve dicampo formally announced his resignation from the task force."
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Secretary",
+   "status": "not stated",
+   "quote": "joanne mcquaid, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for April 29th at 6:30 p.m. at the Ritter Building.",
+   "quote": "6. next meeting set for april 29th at 6:30 a the ritter building."
+  },
+  {
+   "decision": "D. Blatt to confirm with Kelly Brown the Stretch Code grant amount and related details.",
+   "quote": "d. blatt will confirm this with kelly brown and also the amount of grant money that would be available"
+  },
+  {
+   "decision": "J. McQuaid to research how other towns have used their grants.",
+   "quote": "j. mcquaid will research how other towns have used their grants."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stretch Code grant money",
+   "what_was_recorded": "Grant money available under the Stretch Code was discussed, possibly about $170,000 in the first year, with a competitive bid round in later years; D. Blatt to confirm the amount.",
+   "figures_as_printed": [
+    "$170,000"
+   ],
+   "quote": "d. blatt will confirm this with kelly brown and also the amount of grant money that would be available (possibly $170,000 first year than a competitive bid round in following years)."
+  },
+  {
+   "topic": "HERS rater inspection reimbursement",
+   "what_was_recorded": "Grant money might fund reimbursements for HERS rater inspections; D. Blatt reported paying $250.00 for this service.",
+   "figures_as_printed": [
+    "$250.00"
+   ],
+   "quote": "the money might be able to fund reimbursements for hers rater inspections. d.blatt paid $250.00 for this service"
+  },
+  {
+   "topic": "Exterior lighting LED conversion at THMS and Primary buildings",
+   "what_was_recorded": "Exterior lighting conversion to LED at the THMS and Primary buildings was reported at a cost of $16,700.00, with 82% energy savings and a 4.6-year payback.",
+   "figures_as_printed": [
+    "$16,700.00",
+    "82%",
+    "4.6 years"
+   ],
+   "quote": "exterior lighting at the thms and primary buildings is being converted to led for $16,700.00, saving 82% in energy use with a payback in 4.6 years."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Robert Garrity",
+   "stated_role": "Mass Climate Action Network",
+   "topic": "Stretch Code in Massachusetts",
+   "quote": "robert garrity of mass climate action network spoke regarding the stretch code in massachusetts."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Stretch Code",
+   "resolution": "discussed; follow-up assigned to D. Blatt and J. McQuaid",
+   "quote": "3. stretch code: d. blatt was told by building inspector m.sauvegeau that on 7/1/13 a new",
+   "tags": [
+    "stretch code",
+    "building code",
+    "energy efficiency",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Other Projects",
+   "resolution": "discussed; LED lighting project reported and library lighting suggested",
+   "quote": "4. other projects: exterior lighting at the thms and primary buildings is being converted",
+   "tags": [
+    "LED lighting",
+    "energy efficiency",
+    "public library"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action; resignation announced and thanked",
+   "quote": "5. other business: steve dicampo formally announced his resignation from the task",
+   "tags": [
+    "task force",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "next meeting set for April 29",
+   "quote": "6. next meeting set for april 29th at 6:30 a the ritter building.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "stretch code",
+  "energy efficiency",
+  "LED lighting",
+  "grants",
+  "building code",
+  "HERS rater",
+  "task force",
+  "green communities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

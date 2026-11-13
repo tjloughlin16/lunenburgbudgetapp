@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2013-05-16",
  "docid": "2777",
@@ -12,39 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Jeanne Raboin to serve as Chair of the Trustees",
+   "motion": "Elect Jeanne as Chair of the Board of Trustees.",
    "moved_by": "Dick",
    "seconded_by": "Joanne",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "dick nominated jeanne for position of chair; second by joanne. approved by unanimous vote."
   },
   {
-   "motion": "Dick Mailloux to serve as Vice Chair of the Trustees",
+   "motion": "Elect Dick as Vice chair.",
    "moved_by": "Jeanne",
    "seconded_by": "Robin",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "jeanne nominated dick for position of vice chair; second by robin. approved by unanimous vote."
   },
   {
-   "motion": "Lars Widstrand to serve as Secretary of the Trustees",
+   "motion": "Elect Lars as Secretary.",
    "moved_by": "Lisa",
    "seconded_by": "Dick",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "lisa nominated lars for position of secretary; second by dick. approved by unanimous vote."
   },
   {
-   "motion": "Approve minutes from April 25, 2013",
+   "motion": "Approve the minutes of April 25, 2013.",
    "moved_by": "Jeanne",
    "seconded_by": "Robin",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-2",
    "procedural": true,
    "quote": "motion made by jeanne to approve submitted minutes; second by robin. approved by jean, lisa, robin and lars."
   },
   {
-   "motion": "Accept the Library Bill of Rights policy",
+   "motion": "Accept the policy for Library Bill of Rights.",
    "moved_by": "Dick",
    "seconded_by": "Lisa",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion to accept policy for library bill of rights by jeanne, moved by dick; second by lisa. approved by unanimous vote."
   },
   {
-   "motion": "Accept the Reciprocal Borrowing policy",
+   "motion": "Accept the policy for Reciprocal Borrowing.",
    "moved_by": "Dick",
    "seconded_by": "Robin",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "motion to accept policy for reciprocal borrowing by jeanne, moved by dick; second by robin. approved by unanimous vote."
   },
   {
-   "motion": "Accept the Operational Safety Policy",
+   "motion": "Accept the policy for Operational Safety Policy.",
    "moved_by": "Dick",
    "seconded_by": "Lisa",
    "outcome": "passed",
@@ -68,7 +68,7 @@
    "quote": "motion to accept policy for operational safety policy moved by dick; second by lisa. approved by unanimous vote."
   },
   {
-   "motion": "Accept the Closing Policy",
+   "motion": "Accept the Closing Policy.",
    "moved_by": "Jeanne",
    "seconded_by": "Dick",
    "outcome": "passed",
@@ -76,7 +76,7 @@
    "quote": "motion to accept closing policy, by jeanne; second by dick. approved by unanimous vote."
   },
   {
-   "motion": "Move the Director's Evaluation to the end of the meeting",
+   "motion": "Move the Director's evaluation item to the end of the meeting.",
    "moved_by": "Jeanne",
    "seconded_by": "Lars",
    "outcome": "passed",
@@ -84,7 +84,7 @@
    "quote": "jeanne made a motion to move the evaluation to the end of meeting, second by lars. approved by unanimous vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jeanne",
    "seconded_by": "Robin",
    "outcome": "passed",
@@ -93,6 +93,254 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1742195
+ "note": "The minutes print no dollar figures anywhere, so figures_as_printed is empty throughout and no transfers are recorded. The Bill of Rights motion reads 'by Jeanne, moved by Dick'; moved_by is recorded as Dick, the explicit 'moved by'. The April 25 minutes vote lists four approvals and two abstentions; Martha Moore and Kathy Murray are not recorded on that vote. The personnel discussion is described as commencing after Martha and Bob left, with no executive session stated. Text includes typos as printed ('Dick in formed'). Text is complete across pages 1 to 3.",
+ "cost_usd": 0.00805932,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lisa Krowitz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia, lars widstrand"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia, lars widstrand"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia, lars widstrand"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia, lars widstrand"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "meeting called to order at 6:45 pm, by chairperson jeanne raboin."
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectboard Representative",
+   "status": "present",
+   "quote": "bob ebersole, selectboard representative"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: kathy murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next trustee meeting set for June 20th; July and August meetings will not take place unless special needs arise, and September will be the first fall meeting.",
+   "quote": "next trustee meeting: june 20th due to end of fiscal year. july and august meeting will not take place"
+  },
+  {
+   "decision": "Subcommittee assignments: Budget (Kathy, Robin, Joanne); Policy (Martha, Lisa, Robin, Lars); Personnel (Jeanne, Dick, Lisa).",
+   "quote": "budget subcommittee: kathy, robin and joanne"
+  },
+  {
+   "decision": "Endowment group: Lydia Henshaw will call the meeting before mid-July; Martha, Dick and Jeanne will represent the Trustees.",
+   "quote": "lydia henshaw (treasurer of the friends of lpl) will call the meeting before mid-july."
+  },
+  {
+   "decision": "Next Policy Meeting to be called by Robin.",
+   "quote": "next policy meeting to be called by robin"
+  },
+  {
+   "decision": "DPW will maintain the library's green surfaces, except the outside garden area.",
+   "quote": "dpw will maintain our green surfaces"
+  },
+  {
+   "decision": "Information on the building's external wall material is needed before the board goes out to bid the paint job.",
+   "quote": "need some information on the building's external wall material before we go out to bid the paint job"
+  },
+  {
+   "decision": "Any power assist front doors must work both manually and with power assist.",
+   "quote": "need to make sure we get doors that work both manually as well as with power assist"
+  },
+  {
+   "decision": "New evaluation methods will be discussed for future evaluations, as the current form does not match the Director's situation.",
+   "quote": "new evaluation methods will be discussed"
+  },
+  {
+   "decision": "The revised evaluation summary will be presented to Martha by Jeanne.",
+   "quote": "the revised evaluation summary will be presented to martha by jeanne."
+  },
+  {
+   "decision": "Dick requested that the next agenda include a review of the OML based on the Town Counsel presentation of May 14, 2013.",
+   "quote": "dick requested that the on the next agenda we review the oml (open meeting law) based on the presentation given by town counsel on may 14, 2013."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financials",
+   "what_was_recorded": "The Director's financials were presented in a separate spreadsheet; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "as presented in separate spread sheet by the director"
+  },
+  {
+   "topic": "New Muni system for purchase orders and invoicing",
+   "what_was_recorded": "Director looks forward to the new Muni system with a tentative July implementation date; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "director looking forward to new muni system to make handling of purchase orders and invoicing streamlined; tentative july date for implementation."
+  },
+  {
+   "topic": "Painting of the library",
+   "what_was_recorded": "Paint job to go out to bid; paint selection and wall material information needed first; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "need some information on the building's external wall material before we go out to bid the paint job"
+  },
+  {
+   "topic": "Memorial monies for children's section",
+   "what_was_recorded": "Monies given in memory of Karen to be donated for the children's section; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "monies given in the memory of karen to be donated for the children"
+  },
+  {
+   "topic": "E-subscriptions and standing orders",
+   "what_was_recorded": "Discussion of standing orders and subscriptions; Zunio suggested for e-subscriptions of books and magazines; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "lisa mentioned zunio for e- subscriptions of books and magazines.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Cultural Horizons Program funding",
+   "what_was_recorded": "Cultural Horizons Program in January 2014 funded by a named donor; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "cultural horizons program, january 2014, funded by [saundra lane], scandinavian theme."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "Selectboard Representative",
+   "topic": "introduction as Selectboard liaison",
+   "quote": "bob ebersole introduced himself as the new liaison for the selectboard and was welcomed by the trustees."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment: Selectboard liaison introduction",
+   "resolution": "no action; welcomed by trustees",
+   "quote": "bob ebersole introduced himself as the new liaison for the selectboard and was welcomed by the trustees."
+  },
+  {
+   "topic": "Welcome and congratulations",
+   "resolution": "trustees concurred",
+   "quote": "jeanne welcomed new trustee member joanne mcquaid and congratulated dick mailloux on the renewed"
+  },
+  {
+   "topic": "Board of Trustees Reorganization",
+   "resolution": "officers elected unanimously; subcommittees named",
+   "quote": "board of trustees reorganization - after the election, the trustees reorganized."
+  },
+  {
+   "topic": "Approval of minutes, April 25, 2013",
+   "resolution": "approved 4-0-2",
+   "quote": "motion made by jeanne to approve submitted minutes; second by robin. approved by jean, lisa, robin and lars."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action",
+   "quote": "new digital service librarian (sandy altucher) hired, all going well."
+  },
+  {
+   "topic": "Policies Subcommittee",
+   "resolution": "four policies approved",
+   "quote": "updates and revisions presented by robin. four policies for final review and approval by trustees."
+  },
+  {
+   "topic": "Supporting the Lunenburg Schools by allowing access to rooms",
+   "resolution": "discussed; no action",
+   "quote": "martha discussed the use of the wallace room for teacher training in august"
+  },
+  {
+   "topic": "Personnel Subcommittee: Director's Evaluation scheduling",
+   "resolution": "moved to end of meeting",
+   "quote": "jeanne made a motion to move the evaluation to the end of meeting, second by lars."
+  },
+  {
+   "topic": "Other: open meeting law session, Friends and program items, meeting schedule",
+   "resolution": "informational; no action; OML review requested for next agenda",
+   "quote": "discussion about the open meeting law informational session with town counsel."
+  },
+  {
+   "topic": "Personnel evaluation of Martha",
+   "resolution": "discussed in closed trustee session after Martha and Bob left; revised summary to be presented by Jeanne",
+   "quote": "martha and bob left at 8:30 p.m., whereafter the evaluation for martha commenced."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:30 p.m.",
+   "quote": "motion to adjourn the meeting by jeanne; second by robin. approved by unanimous vote @ 9:30 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for May 16",
+   "where": "list",
+   "quote": "lplbot agenda for may 16"
+  },
+  {
+   "name": "Library Director’s Report, including Financial Spreadsheet",
+   "where": "list",
+   "quote": "library director's report, including financial spreadsheet"
+  },
+  {
+   "name": "Submitted revised Library Policies",
+   "where": "list",
+   "quote": "submitted revised library policies"
+  },
+  {
+   "name": "OML presentation handout of May 14, 2013",
+   "where": "list",
+   "quote": "oml presentation handout of may 14, 2013"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "reorganization",
+  "officer elections",
+  "policies",
+  "minutes approval",
+  "personnel evaluation",
+  "open meeting law",
+  "Friends of LPL",
+  "facilities",
+  "painting",
+  "programs",
+  "schools",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

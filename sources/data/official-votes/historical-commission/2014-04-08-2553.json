@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-04-08",
  "docid": "2553",
@@ -10,49 +10,222 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04082014-2553",
   "doc_url": "/docs/meetings/historical-commission/2014-04-08-minutes-2553.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Minutes are OCR text from a scanned page. No motions, seconds, or vote tallies are recorded; the approvals are stated only as outcomes, so no votes are listed. The page header reads 'Meeting Minutes 4/4/2014' while the meeting date is 4/8 (a handwritten '4/8' appears). 'May 318' in the open house sentence looks garbled. No dollar figures are printed. No public comment is recorded.",
+ "cost_usd": 0.00372382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve minutes from 3/4/14 as submitted",
-   "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": true,
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of 3/4/14 approved as submitted (no motion or tally recorded).",
    "quote": "minutes from 3/4/14 approved as submitted"
   },
   {
-   "motion": "Approve Jones House Release-Letter-Draft to forward to town manager",
-   "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": false,
+   "decision": "Commission approved Becky's draft letter on the Jones House release, to be forwarded to the town manager.",
    "quote": "the commission approves the draft that becky has written to be forwarded to the town manager."
   },
   {
-   "motion": "Approve Cemetery Commission-Letter-Draft to forward to town manager and cemetery commission",
-   "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": false,
+   "decision": "An open house to view the Jones house restoration was scheduled for Saturday May 318 (date as printed; OCR text appears garbled).",
+   "quote": "there will be an open house saturday may 318 to view the jones house restoration."
+  },
+  {
+   "decision": "Commission approved Becky's draft letter on the Cemetery Commission matter, to be forwarded to the town manager and the cemetery commission.",
    "quote": "the commission approves the draft that becky has written to be forwarded to the town manager and the cemetery commission."
   },
   {
-   "motion": "Approve Demolition Delay Determination Form to forward to building department",
-   "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": false,
+   "decision": "Newspaper article assignments: Becky to write for May, Damon to write for June, Richard to write for July.",
+   "quote": "becky to write for may"
+  },
+  {
+   "decision": "Richard assigned to submit a grant request to the Montachusett Society for the Town Tomb proposal.",
+   "quote": "richard to submit a request for a grant to the montachusett society."
+  },
+  {
+   "decision": "Noted that the Page St. stone needs painting and the Fish St. marker needs repair (no assignment recorded).",
+   "quote": "the page st. stone needs painting and the fish st. marker needs repair"
+  },
+  {
+   "decision": "Amory Phelps will represent the Historic Commission on the Building Re-Use Committee.",
+   "quote": "amory phelps will represent the historic commission on the building re-use committee"
+  },
+  {
+   "decision": "Demolition Delay Determination Form completed by Damon approved to be forwarded to the building department.",
    "quote": "completed by damon has been approved to be forward to the building department"
   },
   {
-   "motion": "Adjourn meeting",
-   "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
-   "procedural": true,
+   "decision": "Richard assigned to look into a bronze plaque for the Jones house and to assess the condition of the town pound.",
+   "quote": "richard to look into a bronze plaque for the jones house and put together an assessment of the condition of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Tomb Proposal grant request",
+   "what_was_recorded": "Richard is to submit a grant request to the Montachusett Society; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "richard to submit a request for a grant to the montachusett society."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 6:30 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting called to order april 8, 2014 @ 6:30 pm"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as submitted",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes from 3/4/14 approved as submitted"
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "correspondence and communications: none"
+  },
+  {
+   "topic": "Old Business: Jones House release letter draft",
+   "resolution": "approved draft letter",
+   "tags": [
+    "Jones House",
+    "letter"
+   ],
+   "quote": "the commission approves the draft that becky has written to be forwarded to the town manager."
+  },
+  {
+   "topic": "Old Business: Cemetery Commission letter draft",
+   "resolution": "approved draft letter",
+   "tags": [
+    "cemetery",
+    "letter"
+   ],
+   "quote": "the commission approves the draft that becky has written to be forwarded to the town manager and the cemetery commission."
+  },
+  {
+   "topic": "Old Business: Newspaper articles",
+   "resolution": "assigned authors for May, June, July",
+   "tags": [
+    "newspaper",
+    "outreach"
+   ],
+   "quote": "becky to write for may"
+  },
+  {
+   "topic": "Old Business: Town Tomb proposal",
+   "resolution": "grant request assigned to Richard",
+   "tags": [
+    "town tomb",
+    "grant"
+   ],
+   "quote": "richard to submit a request for a grant to the montachusett society."
+  },
+  {
+   "topic": "Old Business: Town markers",
+   "resolution": "noted repairs needed, no action recorded",
+   "tags": [
+    "markers",
+    "maintenance"
+   ],
+   "quote": "the page st. stone needs painting and the fish st. marker needs repair"
+  },
+  {
+   "topic": "New Business: Representative to Building Re-Use Committee",
+   "resolution": "Amory Phelps appointed as representative",
+   "tags": [
+    "building re-use",
+    "representation"
+   ],
+   "quote": "amory phelps will represent the historic commission on the building re-use committee"
+  },
+  {
+   "topic": "New Business: Demolition Delay Determination Form",
+   "resolution": "approved to forward to building department",
+   "tags": [
+    "demolition delay"
+   ],
+   "quote": "completed by damon has been approved to be forward to the building department"
+  },
+  {
+   "topic": "New Business: Jones house plaque and town pound assessment",
+   "resolution": "assigned to Richard",
+   "tags": [
+    "Jones House",
+    "town pound",
+    "plaque"
+   ],
+   "quote": "richard to look into a bronze plaque for the jones house and put together an assessment of the condition of"
+  },
+  {
+   "topic": "Meeting adjournment",
+   "resolution": "adjourned 7:45pm",
+   "tags": [
+    "procedure"
+   ],
    "quote": "meeting adjourned @ 7:45pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd from scan",
- "cost_usd": 0.11046349999999999
+ "documents_and_exhibits": [
+  {
+   "name": "Jones House release letter draft (written by Becky)",
+   "where": "text",
+   "quote": "the commission approves the draft that becky has written to be forwarded to the town manager."
+  },
+  {
+   "name": "Cemetery Commission letter draft (written by Becky)",
+   "where": "text",
+   "quote": "the commission approves the draft that becky has written to be forwarded to the town manager and the cemetery commission."
+  },
+  {
+   "name": "Demolition Delay Determination Form (completed by Damon)",
+   "where": "text",
+   "quote": "completed by damon has been approved to be forward to the building department"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "Jones House",
+  "cemetery",
+  "town tomb",
+  "demolition delay",
+  "town markers",
+  "letters",
+  "newspaper articles"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

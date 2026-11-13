@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2011-07-12",
  "docid": "611",
@@ -12,6 +12,176 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes mention that the board \"reviewed and approved current expense vouchers, abatements, warrants & minutes\" and that a chairman appointment was \"tabled until the next meeting,\" but neither is recorded as an explicit motion with a mover, seconder, and voting outcome. The minutes contain no language such as \"moved,\" \"seconded,\" \"vote,\" \"carried,\" \"failed,\" \"unanimously,\" or \"so voted.\"",
- "cost_usd": 0.08195050000000001
+ "note": "OCR text from a scanned page; signature block is garbled (\\\"Lamine\\\", \\\"Paquitte\\\"). The chair is not named. No motions or vote counts are recorded anywhere; the approval of vouchers/abatements/warrants/minutes is recorded only as \\\"Board reviewed and approved\\\" and was entered as a decision, not a vote. The adjournment at 7:15pm has no recorded motion. Jeff Ugalde, Beth Caron and \\\"David\\\" are named but did not appear as participants, so they are not listed as attendees.",
+ "cost_usd": 0.00430722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: regional assessor, harald scheid, board members: louis j. franco, matthew j. papini, sr., and"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: regional assessor, harald scheid, board members: louis j. franco, matthew j. papini, sr., and"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: regional assessor, harald scheid, board members: louis j. franco, matthew j. papini, sr., and"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "louise paquette, administrative assistant. chris comeau was unable to attend meeting."
+  },
+  {
+   "name": "Chris Comeau",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "chris comeau was unable to attend meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants and minutes (no motion or vote count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & minutes."
+  },
+  {
+   "decision": "Chairman appointment tabled until the next meeting.",
+   "quote": "chairman appointment: tabled until the next meeting"
+  },
+  {
+   "decision": "Louise Paquette to prepare the supplemental bills in Munis, to be reviewed by the Tax Collector.",
+   "quote": "louise will prepare the bills in munis and will be reviewed by the tax collector, jeff ugalde."
+  },
+  {
+   "decision": "Louise to send out notice of the next meeting and agenda.",
+   "quote": "louise will send out notice of meeting and agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY11 overlay ending balance",
+   "what_was_recorded": "Louise reported the FY11 overlay ending balance; Harald explained that the monies remain under Assessors' control for pending appeals.",
+   "figures_as_printed": [
+    "$4,385.99"
+   ],
+   "quote": "louise reported that the overlay ending balance for fy11 is $4,385.99."
+  },
+  {
+   "topic": "Abatement totals FY11 and FY10",
+   "what_was_recorded": "Abatement totals were reported for FY11 and FY10.",
+   "figures_as_printed": [
+    "$119,992.49",
+    "$ 114,078.97"
+   ],
+   "quote": "abatements totaled $119,992.49 and in fy10 it was $ 114,078.97."
+  },
+  {
+   "topic": "DOR personal property / business audit funding",
+   "what_was_recorded": "Harald said $15,000 is earmarked for the DOR-mandated personal property/business audit.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "there is $15,000. \"ear-marked \" for this project."
+  },
+  {
+   "topic": "Special Town Meeting article on DPW renovation expenditures",
+   "what_was_recorded": "The Special Town Meeting article seeks approval of expenditures for DPW renovations; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "article is seeking approval of the expenditures for the renovations of the dpw."
+  },
+  {
+   "topic": "Office equipment encumbrance",
+   "what_was_recorded": "Louise reported she encumbered FY11 monies budgeted for office equipment; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "louise reported that she was able to encumber fy11 monies to be budgeted for office equipment."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Vouchers, abatements, warrants and minutes",
+   "resolution": "approved (no motion or count recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & minutes."
+  },
+  {
+   "topic": "Chairman appointment",
+   "resolution": "tabled to next meeting",
+   "quote": "chairman appointment: tabled until the next meeting"
+  },
+  {
+   "topic": "FY11 overlay and recap",
+   "resolution": "reported; no action",
+   "quote": "louise reported that the overlay ending balance for fy11 is $4,385.99."
+  },
+  {
+   "topic": "Supplemental bill commitment FY11",
+   "resolution": "in preparation; no action",
+   "quote": "supplemental bill commitment is being prepared for fy 11."
+  },
+  {
+   "topic": "Town Hall renovations and office equipment",
+   "resolution": "reported; no action",
+   "quote": "town hall renovations continue."
+  },
+  {
+   "topic": "Town website",
+   "resolution": "no action",
+   "quote": "beth caron plans to get together with louise / david for instruction and direction."
+  },
+  {
+   "topic": "DOR personal property and business audit",
+   "resolution": "reported; no action",
+   "quote": "harald explained to the board that the dor has mandated an audit for personal property / businesses."
+  },
+  {
+   "topic": "Regional Resource website tutorial",
+   "resolution": "tutorial given; no action",
+   "quote": "harald gave a brief tutorial on the regional resource website for reviewing properties."
+  },
+  {
+   "topic": "Special Town Meeting article on DPW renovations",
+   "resolution": "reported; no action",
+   "quote": "article is seeking approval of the expenditures for the renovations of the dpw."
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for August 2, 2011; adjourned at 7:15pm (no vote recorded)",
+   "quote": "the next meeting is slated to be held on tuesday, august 2, 2011 at 6:00pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article seeking approval of the expenditures for the renovations of the DPW (Special Town Meeting, 18th)",
+   "where": "text",
+   "quote": "article is seeking approval of the expenditures for the renovations of the dpw."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "overlay",
+  "abatements",
+  "supplemental bills",
+  "DOR audit",
+  "personal property",
+  "town hall renovations",
+  "website",
+  "special town meeting",
+  "FY11",
+  "revaluation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

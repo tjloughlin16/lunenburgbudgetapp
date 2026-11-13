@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-01-14",
  "docid": "2226",
@@ -12,23 +12,306 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the December 10, 2015 meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Karin Menard",
+   "motion": "Approve the minutes of the December 10, 2015 meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Karin",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "terri made a motion to approve the minutes of the december 10, 2015 meeting. karin seconded the motion. the motion carried 4-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Karin Menard",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Karin",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "terri moved to adjourn the meeting and karin seconded the motion. the board voted 4-0 in favor"
+   "quote": "terri moved to adjourn the meeting and karin seconded the motion. the board voted 4-0 in favor; the meeting adjourned at 8:23."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract; readable. Two procedural votes recorded.",
- "cost_usd": 0.0913115
+ "note": "Text is OCR of a draft minutes file (footer reads 'Draft'); some words are garbled (e.g., 'S& Prating', 'FY201/', 'FY1/', 'Tappé' and table text in the Committee Updates section is partly broken), and two-column table text was read in line order. Only two motions were recorded (both procedural, 4-0); no substantive votes appear. The 'committee agreed' item is consensus, not a recorded vote. Chief Marino appears only as a person addressed in discussion; his attendance is inferred from the exchange. Sue Doherty's role is not printed. Documents were referenced in the text only; no documents list heading appears.",
+ "cost_usd": 0.00757082,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "no report-jay was not in attendance."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, town accountant"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, town accountant"
+  },
+  {
+   "name": "Frank Serreti",
+   "role": "presenter, Powers and Sullivan, LLC",
+   "status": "present",
+   "quote": "presented by frank serreti from powers and sullivan, llc"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief (as referred to in minutes)",
+   "status": "present",
+   "quote": "terri asked chief marino if the workload was straining his resources."
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "sue doherty presented her budget which is right in line with the town manager's request."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that the Finance Committee report on Town Finances, which has been in the Town Meeting Warrant, should remain there (suggested by Mark; no formal vote recorded).",
+   "quote": "it should remain there. the committee agreed."
+  },
+  {
+   "decision": "The committee will receive a presentation on the funding of the pavement management plan at a future date.",
+   "quote": "the committee will receive a presentation of the funding of the pavement management plan at a future date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mass Mosquito Control assessment",
+   "what_was_recorded": "The Mosquito Control Project notified the Town that the Town's assessment is $68,307, in line with past assessments.",
+   "figures_as_printed": [
+    "$68,307"
+   ],
+   "quote": "notified the town that our assessment is $68,307. it is in line with our assessment in the past."
+  },
+  {
+   "topic": "FY2017 capital budget",
+   "what_was_recorded": "A projected $600,000 in the capital budget, net of debt service for three financed items, is not enough to fund all capital requests, so some will not be granted; the CPC will rank requests next week.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "there is a projected $600,000 in the capital budget net of the debt service costs for the three items the town purchased through financing."
+  },
+  {
+   "topic": "Junior-Senior High School building project change order and contingency",
+   "what_was_recorded": "The School Building Committee approved change order #7 totaling $31,540, bringing total expenditures from contingency funds to $208,000.",
+   "figures_as_printed": [
+    "$31,540",
+    "$208,000"
+   ],
+   "quote": "they approved change order #7 which totaled $31,540. that brings total expenditures from contingency funds to $208,000."
+  },
+  {
+   "topic": "Pending change orders, school building project",
+   "what_was_recorded": "The largest pending change order is $185,000 for a maintenance garage; the others are still under discussion.",
+   "figures_as_printed": [
+    "$185,000"
+   ],
+   "quote": "the largest item on the pending change orders is $185,000 for a maintenance garage."
+  },
+  {
+   "topic": "Debt service and bond rating outlook",
+   "what_was_recorded": "The S&P rating update is due shortly and the outlook could change to negative because of debt service from the Junior-Senior High School construction project.",
+   "figures_as_printed": [],
+   "quote": "because of the amount of debt service the town has incurred from the junior-senior high school construction project."
+  },
+  {
+   "topic": "Snow and ice removal costs (DPW)",
+   "what_was_recorded": "DPW will report at the next meeting on snow and ice removal costs incurred to date and whether it can spend at least to budget; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "no report-will report at our next meeting about snow and ice removal costs incurred to date and prospects of managing to spend at least to the budget."
+  },
+  {
+   "topic": "Library state grants and FY17 appropriation",
+   "what_was_recorded": "Differences in the appropriation level needed to satisfy grant requirements for two state library grants were discussed; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "terri noted differences in the appropriation level necessary to satisfy the grant requirements and get the two state library grants."
+  },
+  {
+   "topic": "Turf Field and Track funding",
+   "what_was_recorded": "Parks Commission and School Committee are setting up a user-fee funding mechanism for the Turf Field and Track; renovating the track is more critical and costlier than the field. No dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "renovating the track is more critical than renovating the field; there is more risk of failure of the foundation underlying the track, with a much higher cost."
+  },
+  {
+   "topic": "Council on Aging budget",
+   "what_was_recorded": "Sue Doherty presented her budget, which is right in line with the Town Manager's request; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "sue doherty presented her budget which is right in line with the town manager's request."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "informational, no action",
+   "quote": "reports for the fy2015 annual report are due february 25.",
+   "tags": [
+    "annual report",
+    "mosquito control",
+    "the Beacon"
+   ]
+  },
+  {
+   "topic": "FY2015 audit results and management letter (Powers and Sullivan)",
+   "resolution": "received, no action recorded",
+   "quote": "based on their findings, powers and sullivan issued an unmodified opinion on the financial statements, which is the highest rating possible.",
+   "tags": [
+    "audit",
+    "FY2015",
+    "internal controls",
+    "management letter"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational, no action",
+   "quote": "4. town manager report",
+   "tags": [
+    "bond rating",
+    "debt service",
+    "turf field and track"
+   ]
+  },
+  {
+   "topic": "FY2017 budget hearing schedule",
+   "resolution": "handed out; citizens invited to join committee",
+   "quote": "mark handed out the fy2017 budget hearing schedule.",
+   "tags": [
+    "FY2017 budget",
+    "budget hearings",
+    "committee membership"
+   ]
+  },
+  {
+   "topic": "Approval of December 10, 2015 minutes",
+   "resolution": "approved 4-0",
+   "quote": "terri made a motion to approve the minutes of the december 10, 2015 meeting. karin seconded the motion. the motion carried 4-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee updates from members",
+   "resolution": "informational, no action",
+   "quote": "7. committee updates:",
+   "tags": [
+    "DPW",
+    "capital planning",
+    "library",
+    "public safety",
+    "schools",
+    "council on aging",
+    "sewer",
+    "school building committee",
+    "building re-use"
+   ]
+  },
+  {
+   "topic": "Ongoing business: pavement management plan",
+   "resolution": "deferred to a future meeting",
+   "quote": "8. ongoing business: the committee will receive a presentation of the funding of the pavement management plan at a future date.",
+   "tags": [
+    "pavement management"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "scheduled, no action",
+   "quote": "9. the next two meetings:",
+   "tags": [
+    "Chapter 70",
+    "town manager budget presentation",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:23, 4-0",
+   "quote": "terri moved to adjourn the meeting and karin seconded the motion. the board voted 4-0 in favor; the meeting adjourned at 8:23.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY2017 Budget Hearing Schedule",
+   "where": "text",
+   "quote": "mark handed out the fy2017 budget hearing schedule."
+  },
+  {
+   "name": "The Beacon (January issue)",
+   "where": "text",
+   "quote": "mark circulated the january issue of the beacon to the committee."
+  },
+  {
+   "name": "Report on Examination of Basic Financial Statements, year ended June 30, 2015 (Powers and Sullivan)",
+   "where": "text",
+   "quote": "1. the report on examination of basic financial statements year ended june 30, 2015"
+  },
+  {
+   "name": "Management Letter (Powers and Sullivan)",
+   "where": "text",
+   "quote": "their management letter which notes \"opportunities for strengthening internal controls and operating efficiencies.\""
+  },
+  {
+   "name": "Draft from Tappé on the needs assessment (Building Re-Use committee)",
+   "where": "text",
+   "quote": "reviewed a draft from tappé on the needs assessment"
+  },
+  {
+   "name": "List of pending and possible change orders",
+   "where": "text",
+   "quote": "reviewed a list of pending and possible change order"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY2015 audit",
+  "management letter",
+  "FY2017 budget",
+  "capital plan",
+  "school building project",
+  "debt service",
+  "turf field and track",
+  "town meeting warrant",
+  "mosquito control"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

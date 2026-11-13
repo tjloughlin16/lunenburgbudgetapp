@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-02-06",
  "docid": "870",
@@ -12,25 +12,175 @@
  },
  "votes": [
   {
-   "motion": "Allow garage construction at 111 Rolling Acres Road as an addition, with conditions regarding the Enforceable Agreement.",
-   "moved_by": "Perry Jewell",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Approve the minutes of January 23, 2012.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes approved: january 23, 2012"
+  },
+  {
+   "motion": "Allow a garage as an addition at 111 Rolling Acres Road, with the board to consider removing the Enforceable Agreement once occupancy information is provided.",
+   "moved_by": "Jewell",
+   "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, and on motion by jewell and secon d by rabbitt, it was agreed that a garage would be an allowed addition as there is no additio nal living space being created. further, if mr. st. jean could provide the board with information a s to when the house was occupied and it satisfied the conditions as set out it the enforcea ble agreement, the board would consider removing same. all in fa",
-   "quote_taken_from_text": true
+   "quote": "by rabbitt, it was agreed that a garage would be an allowed addition as there is no"
   },
   {
    "motion": "Prepare and serve correspondence requiring access to the premises at 605 Mulpus Road for re-inspection.",
-   "moved_by": "Perry Jewell",
-   "seconded_by": "Dave Shea",
+   "moved_by": "Jewell",
+   "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by shea, the board v oted to prepare and serve correspondence requiring access to the premises for re-inspection. all in favor",
-   "quote_taken_from_text": true
+   "quote": "to prepare and serve correspondence requiring access to the premises for re-inspection."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08378849999999999
+ "note": "Text is extracted with broken words (e.g. 'b oard', 'secon d', 'v oted'); quotes avoid those spans. The attendance line reads 'Perry Jewell Jack  Rabbitt' with no separator, so Perry Jewell and Jack Rabbitt are recorded as two members. No roles are printed for members. No public comment section is printed. The 'MINUTES APPROVED' entry gives no mover, seconder or count. The adjournment at 8:25 pm has no recorded motion, so it is not listed as a vote. The Rolling Acres vote quote starts mid-sentence because the words before it are broken in the extract.",
+ "cost_usd": 0.00633542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell jack rabbitt and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell jack rabbitt and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell jack rabbitt and dave passios"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell jack rabbitt and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell jack rabbitt and dave passios"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "administrative assistant, andrea schnepf, advised that the owner, bruce st. jean has applied for"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Board of Health Agent",
+   "status": "present",
+   "quote": "mr. garreffi is asking the board for a letter to be served requiring access to the property"
+  },
+  {
+   "name": "Bruce St. Jean",
+   "role": "owner",
+   "status": "not stated",
+   "quote": "the owner, bruce st. jean has applied for"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection report for 304 Lancaster Avenue acknowledged.",
+   "quote": "title 5 inspection reports acknowledged : 304 lancaster avenue"
+  },
+  {
+   "decision": "Septic permit for 920 Lancaster Avenue signed.",
+   "quote": "septic permits signed : 920 lancaster avenue"
+  },
+  {
+   "decision": "The board's view on 605 Mulpus Road was that it is consistent with the action taken by the Health Agent.",
+   "quote": "after reviewing this information the board view is consistent with the action taken by mr. garreffi."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "approved minutes of January 23, 2012",
+   "quote": "minutes approved: january 23, 2012",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged - 304 Lancaster Avenue",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged : 304 lancaster avenue",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed - 920 Lancaster Avenue",
+   "resolution": "signed",
+   "quote": "septic permits signed : 920 lancaster avenue",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "111 Rolling Acres Road - garage addition and Enforceable Agreement",
+   "resolution": "garage allowed as addition; board to consider removing Enforceable Agreement once occupancy information is provided",
+   "quote": "administrative assistant, andrea schnepf, advised that the owner, bruce st. jean has applied for a building permit to construct a garage.",
+   "tags": [
+    "building permit",
+    "enforceable agreement",
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "605 Mulpus Road - housing complaint",
+   "resolution": "board voted to prepare and serve correspondence requiring re-inspection access",
+   "quote": "an ongoing housing complaint at 605 mulpus road.",
+   "tags": [
+    "housing complaint",
+    "mold",
+    "re-inspection"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the Department of Public Health regarding mold as it relates to regulations",
+   "where": "list",
+   "quote": "mr. garreffi also provided the board with a letter received from the department of public health regarding mold"
+  },
+  {
+   "name": "Enforceable Agreement (executed September 2010) for 111 Rolling Acres Road",
+   "where": "text",
+   "quote": "executed in september of 2010 stated that no additional construction"
+  },
+  {
+   "name": "Title 5 inspection completed February 4, 2012, 111 Rolling Acres Road",
+   "where": "text",
+   "quote": "had a new title 5 completed on february 4, 2012"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "housing complaint",
+  "mold",
+  "septic",
+  "Title 5",
+  "building permit",
+  "enforceable agreement",
+  "re-inspection"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. garreffi also provided the board with a letter"
+ },
+ "dropped_unquoted_by_field": {}
 }

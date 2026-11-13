@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2017-03-16",
  "docid": "2971",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the January 19, 2017 meeting",
+   "motion": "Accept the minutes of the January 19, 2017 meeting.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "elizabeth murphy made a motion to accept the minutes ; deborah christen seconded. all were in favor and the minutes were accepted."
   },
   {
-   "motion": "Accept the January 2017 financials with the exception of the $6,886 calculation error",
+   "motion": "Accept the January 2017 financials with the exception of the $6,886 calculation error.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Paul Doherty",
    "outcome": "passed",
@@ -28,31 +28,31 @@
    "quote": "elizabeth murphy made a motion to accept the jan uary 2017 financials with the exception of the $6,886 calculation error; paul doherty seconded and all were in favor."
   },
   {
-   "motion": "Certify and execute the year-end financial statement certifications in compliance with DHCD requirement",
+   "motion": "Certify and execute the DHCD year-end financial statement certifications (Resolution 201705).",
    "moved_by": "Paul Doherty",
    "seconded_by": "Linda McDonald",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by paul doherty to certify and execute the year -end financial statement certifications in compliance with the dhcd requirement. seconded, linda mcdonald seconded the motion, and the motion was passed by a unanimous vote"
+   "quote": "resolved, motion made by paul doherty to certify and execute the year -end financial statement certifications in compliance with the dhcd requirement."
   },
   {
-   "motion": "Enter into contract for accounting services with Fenton, Ewald & Associates, P.C. for the period January 1, 2017 through December 31, 2017",
+   "motion": "Enter into a contract for accounting services with Fenton, Ewald & Associates, P.C. for January 1, 2017 through December 31, 2017 (Resolution 201706).",
    "moved_by": "Paul Doherty",
    "seconded_by": "Linda McDonald",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by paul doherty to enter into contract for accounting services. seconded, linda mcdonald seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "resolved, motion made by paul doherty to enter into contract for accounting services."
   },
   {
-   "motion": "Award the contract for the building envelope repair project at the 667-1 elderly development to Edward Paige Corporation in the amount of $92,469.00",
+   "motion": "Award the building envelope repair bid at the 667-1 elderly development to the lowest bidder, Edward Paige Corporation, $92,469.00 (Resolution 201707).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah christen to award the bid for the building envelope repair project at the 667 -1 elderly development to the lowest bidder. seconded, paul doherty seconded the motion and the motion was passed by a unanimous vote."
+   "quote": "resolved, motion made by deborah christen to award the bid for the building envelope repair project at the 667 -1 elderly development to the lowest bidder."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:10 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Paul Doherty",
    "outcome": "passed",
@@ -60,7 +60,295 @@
    "quote": "deborah christen made a motion to adjourn the meeting at 7:10 p.m. paul doherty seconded, all were in favor, and the meeting was adjourned."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08989249999999999
+ "dropped_unquoted": 1,
+ "note": "Text extracted from a typed document with spacing artifacts (e.g., 'Jan uary', 'f inancials', 'H .A.', 'year -end'); quotes keep these as printed. Financial pages F2 and F3 are referenced but their figures are not in the text. Mr. Gold is mentioned in the Executive Director Report but is not listed as attending. No public comment: 'No residents were present.' Two of the votes are procedural (minutes approval, adjournment).\"",
+ "cost_usd": 0.00812552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "paul doherty, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "linda mcdonald, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: caroline fortin, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "peter proulx executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "from Fenton & Ewald",
+   "status": "present",
+   "quote": "mr. proulx noted that sue honeycutt from fenton & ewald was present to go over the year -end"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Executive Director to look into adding a light at the back Community Room door, which the E.D. called a good idea.",
+   "quote": "the e.d. replied that was a good idea and he will look into it (there is only one light out there now)."
+  },
+  {
+   "decision": "Executive Director to check with Sue Honeycutt on page F3 regarding utilities.",
+   "quote": "the e.d. will check with sue honeycutt on page f3 - utilities, etc."
+  },
+  {
+   "decision": "The 400-1 Budget Certification for fiscal year beginning January 1, 2017 was signed but not sent to DHCD, as it was not necessary.",
+   "quote": "noted that the 400-1 budget certification for fiscal year beginning january 1, 2017 was signed but not sent to dhcd (as it was not necessary)."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Year-end subsidy earned",
+   "what_was_recorded": "Year-end subsidy earned was $27,000, below expectations, including $3,600 for the AUP per DHCD.",
+   "figures_as_printed": [
+    "$27,000",
+    "$3,600"
+   ],
+   "quote": "earned $27,000 in subsidy, not as much as expected. this included $3,600 for the aup"
+  },
+  {
+   "topic": "DHCD subsidy owed and received",
+   "what_was_recorded": "DHCD owes the Authority $15,000 and can be asked for it if there is a cash issue; only $11,500 of the $27,000 subsidy was received.",
+   "figures_as_printed": [
+    "$15,000",
+    "$27,000",
+    "$11,500"
+   ],
+   "quote": "dhcd owes lunenburg h .a. $15,000, can ask for this money if there is a cash issue."
+  },
+  {
+   "topic": "Reserves level",
+   "what_was_recorded": "Reserves are at 65%; once they exceed 70% the Authority should start using some money.",
+   "figures_as_printed": [
+    "70%",
+    "65%"
+   ],
+   "quote": "once over $70% reserves should start using some money, currently at 65%."
+  },
+  {
+   "topic": "Capital funds",
+   "what_was_recorded": "The Authority is receiving a lot of Capital Funds this year for the generator, patio, etc.; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "receiving a lot of capital funds this year for the generator, patio, etc."
+  },
+  {
+   "topic": "January 2017 subsidy",
+   "what_was_recorded": "Financial report says the Authority is in good shape with a $12,000 subsidy, $200 per unit for some work.",
+   "figures_as_printed": [
+    "$12,000",
+    "$200"
+   ],
+   "quote": "we are in good shape; $12,000 subsidy ($200 per unit for some work)."
+  },
+  {
+   "topic": "Utilities shortfall",
+   "what_was_recorded": "Utilities were $8,000 negative in the January 31, 2017 financial report.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "$8,000 negative in utilities."
+  },
+  {
+   "topic": "Total operating expenses calculation",
+   "what_was_recorded": "The $6,886 total operating expenses figure may be in error; the January financials were accepted except for it.",
+   "figures_as_printed": [
+    "$6,886"
+   ],
+   "quote": "the e.d. noted that the $6,886 amount under total operating expenses may be in error."
+  },
+  {
+   "topic": "Snow removal costs",
+   "what_was_recorded": "Snow removal is now at a fixed fee; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "paul doherty inquired about the snow removal costs so far this year."
+  },
+  {
+   "topic": "Building envelope repair contract award",
+   "what_was_recorded": "Contract awarded to the lowest eligible and responsible bidder, Edward Paige Corporation, for the building envelope repair project.",
+   "figures_as_printed": [
+    "$92,469.00"
+   ],
+   "quote": "bidder, edward paige corporation, in the amount of $92,469.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Year-end financials (presented by Sue Honeycutt)",
+   "resolution": "reviewed; revised F2 handed out",
+   "quote": "sue honeycutt went over the year-end financials first with the following comments:",
+   "tags": [
+    "year-end financials",
+    "subsidy",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "Minutes of January 19, 2017 meeting",
+   "resolution": "approved",
+   "quote": "the minutes of the january 19 , 2017 meeting were presented .",
+   "tags": [
+    "minutes",
+    "waivers"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "no action",
+   "quote": "the executive director report:",
+   "tags": [
+    "training",
+    "NAHRO"
+   ]
+  },
+  {
+   "topic": "Financial Report (January 31, 2017)",
+   "resolution": "approved with exception of $6,886 calculation error",
+   "quote": "financial report (january 31, 2017):",
+   "tags": [
+    "financials",
+    "utilities",
+    "snow removal"
+   ]
+  },
+  {
+   "topic": "Modernization Report",
+   "resolution": "no action",
+   "quote": "building envelope repair - we have a resolution to award contract later in the meeting.",
+   "tags": [
+    "modernization",
+    "building envelope repair"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "no action",
+   "quote": "340 total applicants currently on the waitlist; 143 elderly/yd and 197 family.",
+   "tags": [
+    "waitlist",
+    "occupancy",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "New Business: DHCD certifications, accounting services, building envelope bid",
+   "resolution": "approved (Resolutions 201705, 201706, 201707)",
+   "quote": "the following resolutions were presented:",
+   "tags": [
+    "DHCD",
+    "accounting services",
+    "bid award"
+   ]
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "no action",
+   "quote": "other correspondence: nahro news, march 2017",
+   "tags": [
+    "NAHRO"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised first page (F2) for the January 31, 2017 financials",
+   "where": "list",
+   "quote": "a revised first page (f2) for the january 31, 2017 f inancials was handed out to board members."
+  },
+  {
+   "name": "Resolution 201705 (DHCD year-end financial statement certifications)",
+   "where": "list",
+   "quote": "whereas: the lunenburg housing authority has the need to be in compliance with dhcd year-end financial certifications as follows:"
+  },
+  {
+   "name": "Resolution 201706 (accounting services, Fenton, Ewald & Associates, P.C.)",
+   "where": "list",
+   "quote": "whereas: the lunenburg housing authority requires a fee accountant to assist the agency in maintaining compliance"
+  },
+  {
+   "name": "Resolution 201707 (building envelope repair bid, Pearl Brook 667-1 Elderly Development)",
+   "where": "list",
+   "quote": "whereas: the lunenburg housing authority has advertised for bids for the building envelope repair project at the 667-1 elderly development"
+  },
+  {
+   "name": "NAHRO News, March 2017",
+   "where": "list",
+   "quote": "other correspondence: nahro news, march 2017"
+  },
+  {
+   "name": "Bid list for building envelope repair (two bids received)",
+   "where": "text",
+   "quote": "the authority received two (2) bids to complete the work (see attached list)"
+  },
+  {
+   "name": "Year-end financial statements, pages F2 and F3",
+   "where": "text",
+   "quote": "page f2 - lunenburg h.a. is in pretty good shape, did very well on utilities."
+  },
+  {
+   "name": "400-1 Budget Certification for Fiscal Year Beginning January 1, 2017",
+   "where": "text",
+   "quote": "noted that the 400-1 budget certification for fiscal year beginning january 1, 2017 was signed"
+  },
+  {
+   "name": "Minutes of the January 19, 2017 meeting",
+   "where": "text",
+   "quote": "the minutes of the january 19 , 2017 meeting were presented ."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "DHCD",
+  "year-end financials",
+  "January financials",
+  "reserves",
+  "modernization",
+  "building envelope repair",
+  "bid award",
+  "accounting services",
+  "waitlist",
+  "state-aided housing",
+  "NAHRO"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following resolutions were presented:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

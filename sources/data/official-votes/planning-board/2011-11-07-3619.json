@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-11-07",
  "docid": "3619",
@@ -12,15 +12,365 @@
  },
  "votes": [
   {
-   "motion": "adjourn Regular Session, enter into Executive Session, not to return to Regular Session",
+   "motion": "Approve the minutes signed 9-26-11, 10-24-11, and MASS PV1 LLC Information Meeting 10-24-11.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Lockwood",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion mr. saiia, second, mr. lockwood."
+  },
+  {
+   "motion": "Adjourn the Regular Session and enter Executive Session, not to return to Regular Session.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. bilotta, motion to adjourn regular session, enter into executive session, not to return to regular session, second, mr. lockwood, roll call vote, mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye; mr. bakaysa, aye; ms. bilotta, aye."
+   "quote": "ms. bilotta, motion to adjourn regular session, enter into executive session, not to return to regular session, second, mr. lockwood"
   }
  ],
  "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1408775
+ "note": "Text is OCR-like with split words and stray spaces (e.g., 'Bo dkin', 'Oldfie ld'); names are given in cleaned form. Only two motions are recorded: the minutes-approval motion has no printed result, and the adjournment roll call lists five ayes without a stated tally, so 'passed' is recorded without a count. No dollar figures appear in the text. No documents list heading is printed; documents are recorded only where mentioned in the text.",
+ "cost_usd": 0.008084319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, vice-chair"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia, mbr."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Kent Oldfield",
+   "role": "Project Engineer, New England Engineering Group (Highfield Village)",
+   "status": "present",
+   "quote": "kent oldfie ld, new england engineering group familiarized the board with the project."
+  },
+  {
+   "name": "Mr. Marsden",
+   "role": "Reviewing Engineer",
+   "status": "present",
+   "quote": "reviewing engineer mr. marsden was asked to give a brief summary of applicant"
+  },
+  {
+   "name": "Stuart Leinson",
+   "role": "resident, 494 West Townsend Road",
+   "status": "present",
+   "quote": "stuart leinson, 494 west townsend road, inquired if project was still in planning stages"
+  },
+  {
+   "name": "Brenda Whalen",
+   "role": "resident, 526 West Townsend Road",
+   "status": "present",
+   "quote": "brenda whalen, 526 west townsend road, inquired as to what is meant by detention basins"
+  },
+  {
+   "name": "Baron Bowser",
+   "role": "resident, 512 West Townsend Road",
+   "status": "present",
+   "quote": "baron bowser, 512 west townsend road, noted he sent"
+  },
+  {
+   "name": "Donald Bowen",
+   "role": "Zoning Board of Appeals Chair",
+   "status": "present",
+   "quote": "zoning board of appeals chair, donald bowen, ray beal, and michael sauvageau, zoning officer/building commissioner were in the audience."
+  },
+  {
+   "name": "Ray Beal",
+   "role": "Zoning Board of Appeals member",
+   "status": "present",
+   "quote": "written comments were received from ray beal, zoning board of appeals member."
+  },
+  {
+   "name": "Michael Sauvageau",
+   "role": "Zoning Officer/Building Commissioner",
+   "status": "present",
+   "quote": "zoning board of appeals chair, donald bowen, ray beal, and michael sauvageau, zoning officer/building commissioner were in the audience."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Benson will get written comments on the draft Design Standards and work with Mr. Sauvageau on updating the Bylaw.",
+   "quote": "ms. benson will get comments in writing and work with mr. sauvageau on updating the bylaw."
+  },
+  {
+   "decision": "If necessary, a Planning Board workshop on the Warrant Zoning Articles will be scheduled for 5:00 PM on November 21, prior to the Planning Board meeting.",
+   "quote": "if necessary, a planning board workshop regarding the warrant zoning articles will be scheduled for 5:00 pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Department Engine 4 refurbishment (Capital Planning Commission)",
+   "what_was_recorded": "Fire Chief asked for refurbishing of Engine 4 to extend the vehicle's life eight more years; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "fire chief asking for refurbishing of engine 4 to extend vehicle"
+  },
+  {
+   "topic": "Police Tasers request (Capital Planning Commission)",
+   "what_was_recorded": "Police Chief requested 6 Tasers; no price printed.",
+   "figures_as_printed": [],
+   "quote": "police chief requesting 6 tasers."
+  },
+  {
+   "topic": "Planning budget for MMA Annual Conference",
+   "what_was_recorded": "No funds are in the Planning budget for Board members to attend the MMA Annual Conference; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "funds are not available in the planning budget for board members to attend mma"
+  },
+  {
+   "topic": "Funding for Rules and Regulations update",
+   "what_was_recorded": "Ms. Benson noted monies will be needed to update the Rules and Regulations Governing the Subdivision of Land; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "monies will be needed for updating of the rules and regulations governing the subdivision of land."
+  },
+  {
+   "topic": "Solar farm tax revenue, 651 Chase Road",
+   "what_was_recorded": "Mr. Marsden said the solar panels are taxable real property that will generate revenue for Lunenburg; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the panels are taxable, which will generate revenue for lunenburg"
+  },
+  {
+   "topic": "Green Communities grants",
+   "what_was_recorded": "If the Town votes to become a Green Community it can then apply to the State for grants; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "if the town votes to become a green community, it can then apply to the state for grants."
+  },
+  {
+   "topic": "Tri Town Landing state subsidies",
+   "what_was_recorded": "DHCD provided additional subsidies to Lunenburg for another 33-unit building at Tri Town Landing; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "dhcd (department of housing and community development) has provided additional subsidies"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Stuart Leinson",
+   "stated_role": "494 West Townsend Road",
+   "topic": "Solar farm 651 Chase Road: plan stage and town benefit",
+   "quote": "stuart leinson, 494 west townsend road, inquired if project was still in planning stages or had the plan been approved?"
+  },
+  {
+   "speaker": "Brenda Whalen",
+   "stated_role": "526 West Townsend Road",
+   "topic": "Solar farm: detention basins, property values, residential zoning",
+   "quote": "brenda whalen, 526 west townsend road, inquired as to what is meant by detention basins; mr. marsden defined."
+  },
+  {
+   "speaker": "Baron Bowser",
+   "stated_role": "512 West Townsend Road",
+   "topic": "Solar farm: public awareness and State contacts",
+   "quote": "baron bowser, 512 west townsend road, noted he sent"
+  },
+  {
+   "speaker": "Michael Sauvageau",
+   "stated_role": "Zoning Officer/Building Commissioner",
+   "topic": "Design Standards bylaw wording and conflicts",
+   "quote": "mr. sauvageau felt that the design standards were not specific enough to be design standards"
+  },
+  {
+   "speaker": "Donald Bowen",
+   "stated_role": "Zoning Board of Appeals Chair",
+   "topic": "Design Standards bylaw; Town Counsel discussion to include ZBA",
+   "quote": "mr. bowen's additional comments were that as noted at the may 2011 annual town meeting"
+  },
+  {
+   "speaker": "Ray Beal",
+   "stated_role": "Zoning Board of Appeals member",
+   "topic": "Design Standards bylaw opposition (written and spoken comments)",
+   "quote": "mr. beal's comments focused on the design standards bylaw."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "motion made; outcome not stated",
+   "quote": "motion mr. saiia, second, mr. lockwood.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "zoning board of appeals special permit for 50 massachusetts avenue to expand existing",
+   "tags": [
+    "notices",
+    "conservation",
+    "zoning board"
+   ]
+  },
+  {
+   "topic": "Appointment: Highfield Village project",
+   "resolution": "presented; no action; applicant to seek further extension",
+   "quote": "kent oldfie ld, new england engineering group familiarized the board with the project.",
+   "tags": [
+    "Highfield Village",
+    "subdivision",
+    "MEPA",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "police chief requesting 6 tasers.",
+   "tags": [
+    "capital planning",
+    "DPW building",
+    "school reconfiguration"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business",
+   "resolution": "discussed; Design Standards follow-up assigned to Planning Director",
+   "quote": "application to be reviewed by mr. marsden.",
+   "tags": [
+    "subsidized housing",
+    "special town meeting",
+    "solar farm",
+    "zoning",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force",
+   "resolution": "discussed; no action",
+   "quote": "mr. marsden, former chair of the green community task force, noted",
+   "tags": [
+    "green communities",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "weekly progress reports note construction on building 56 commencing",
+   "tags": [
+    "DPW facility",
+    "Emerald Place",
+    "Highfield Village",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Unfinished / old business",
+   "resolution": "referred to Planning Director's reports and development status reports",
+   "quote": "see above planning director",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "december- 12-12-11, planning board meeting, town hall.",
+   "tags": [
+    "meeting schedule",
+    "public hearings"
+   ]
+  },
+  {
+   "topic": "Office: MMA packets and conference funds",
+   "resolution": "noted",
+   "quote": "funds are not available in the planning budget for board members to attend mma",
+   "tags": [
+    "MMA",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Member issues: Design Standards Bylaw",
+   "resolution": "discussed; Design Standards not for December warrant unless revised",
+   "quote": "mr. bodkin jr. and ms. bilotta felt that once mr. sauvageau and ms. benson work",
+   "tags": [
+    "design standards",
+    "zoning",
+    "special town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Two draft zoning bylaw articles (Summer Street Revitalization Overlay District; Design Standards)",
+   "where": "text",
+   "quote": "the land use departments were provided copies of the two draft zoning bylaw articles"
+  },
+  {
+   "name": "Written comments from Ray Beal, ZBA member, on the Design Standards",
+   "where": "text",
+   "quote": "written comments were received from ray beal, zoning board of appeals member."
+  },
+  {
+   "name": "Master Deed Amendment (Stone Farm)",
+   "where": "text",
+   "quote": "no response yet from town counsel regarding review of the master deed amendment."
+  },
+  {
+   "name": "Weekly progress reports (DPW Facility, Chase Road)",
+   "where": "text",
+   "quote": "weekly progress reports on file in planning office."
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "monies will be needed for updating of the rules and regulations governing the subdivision of land."
+  },
+  {
+   "name": "MMA packets",
+   "where": "text",
+   "quote": "distributed to board members."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "solar farm",
+  "Design Standards",
+  "Special Town Meeting",
+  "subsidized housing",
+  "Highfield Village",
+  "Green Communities",
+  "public comment",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

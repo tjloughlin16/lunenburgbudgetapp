@@ -1,0 +1,472 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2017-05-22",
+ "video_id": "98zhqGE0aKk",
+ "video_url": "https://www.youtube.com/watch?v=98zhqGE0aKk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2017-05-22-98zhqGE0aKk.json",
+  "sha256": "489bd51ae4fedb9ef214d93af0d3d9a5db8ae78b926cc7c69d27ac15a4bf4d42",
+  "caption_lines": 372,
+  "segments": 2568
+ },
+ "recording": {
+  "duration_s": 7955,
+  "duration": "2:12",
+  "spoken_chars": 92543,
+  "words_approx": 15423
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05222017-3898",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2017-05-22-agenda-3898.txt",
+   "path": "sources/meetings/planning-board/2017-05-22-agenda-3898.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05222017-3898",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2017-05-22-minutes-3898.txt",
+   "path": "sources/meetings/planning-board/2017-05-22-minutes-3898.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T15:45:17Z",
+  "cost_usd": 0.2227365
+ },
+ "minutes": {
+  "headline": "Planning Board elected a new chair and worked through the zoning use table for commercial and industrial uses",
+  "summary": "The board reorganized after a member left to join the Board of Selectmen, choosing a chair, vice chair, clerk and committee representatives. Most of the meeting went on the zoning use table: auto repair, boat repair, construction sales, recreation uses and a proposed separate firing range definition, agriculture, earth removal, kennels and veterinary uses. The board also heard committee reports and discussed the building inspector search and filling the vacant seat.",
+  "attendees": [
+   {
+    "name_as_heard": "Greg Bittner",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Matt Bells",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Ken Janice",
+    "role": "clerk"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 309,
+    "topic": "Outgoing member, newly elected to the Board of Selectmen, said he had submitted his resignation to the town clerk and thanked the board.",
+    "speaker_as_heard": "McQuaid"
+   }
+  ],
+  "tags": [
+   "elections",
+   "facilities",
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 0,
+    "motion": "Nominate Greg Bittner as chair",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 21,
+    "motion": "Nominate Matt Bells as vice chair",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 42,
+    "motion": "Nominate Ken Janice as clerk",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 382,
+    "motion": "Approve minutes of May 6, 2017",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 404,
+    "motion": "Approve minutes of May 8, 2017",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 7919,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 560,
+    "topic": "School building committee budget transfer for snow and ice barriers",
+    "what_was_said": "The school building committee voted a budget transfer to pay for ice barriers.",
+    "figures_as_heard": [
+     "$80,000",
+     "300 linear feet"
+    ]
+   },
+   {
+    "t": 644,
+    "topic": "School building project contingency",
+    "what_was_said": "The project expects to finish with money left in contingency, under the estimated budget.",
+    "figures_as_heard": [
+     "2.8 million dollars"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 560,
+    "description": "School building committee budget transfer to finance snow and ice barriers",
+    "amount_as_heard": "$80,000",
+    "outcome": "discussed only (reported as voted by the committee)"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4283,
+    "decision": "Planning staff to draft a separate firing range definition to be a special permit use under recreation; the board to consider it next meeting."
+   },
+   {
+    "t": 2390,
+    "decision": "Agreed to merge retail commercial into commercial; equipment sales and similar uses changed to special permit."
+   },
+   {
+    "t": 7434,
+    "decision": "The chair will notify the Board of Selectmen of the vacancy so the joint interview process can start."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 288,
+    "topic": "Reorganization: chair, vice chair, clerk, committee reps",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 288,
+    "t_end": 455,
+    "topic": "Public comment and approval of minutes",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 456,
+    "t_end": 770,
+    "topic": "Committee reports including school building project",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 772,
+    "t_end": 960,
+    "topic": "State paving and drainage on Route near Meadow",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 962,
+    "t_end": 6420,
+    "topic": "Zoning use table revisions: auto, boat, recreation, industrial, agriculture, earth removal, kennels, veterinary",
+    "resolution": "referred to staff for redraft",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 6425,
+    "t_end": 6600,
+    "topic": "Accessory dwelling one-year occupancy provision",
+    "resolution": "agreed to remove",
+    "tags": [
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 6620,
+    "t_end": 6740,
+    "topic": "Meeting schedule and ongoing items",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 6748,
+    "t_end": 7900,
+    "topic": "Board comments: building inspector search, vacancy, applicant resubmission, standard details",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "town-departments",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7919,
+    "t_end": 7945,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Votes on minutes and adjournment: results not clear in captions.",
+   "Some speakers and the name of the member discussing the Verizon pole and amusement license are unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 3416,
+    "kind": "safety",
+    "about": "Indoor firing range near residences, a school and a theater",
+    "who": "a member",
+    "words_as_heard": "we can't discharge a firearm within 500 feet of a residence"
+   },
+   {
+    "t": 5527,
+    "kind": "condition",
+    "about": "Earth fill and removal should need a special permit",
+    "who": "a member",
+    "words_as_heard": "I would say at a minimum they'd be special permit in their residence"
+   },
+   {
+    "t": 6490,
+    "kind": "liability or legal",
+    "about": "Rental of accessory units lacking fire separation",
+    "who": "the town planner",
+    "words_as_heard": "don't put what would be legal fire separation between the units"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 962,
+    "name_as_heard": "use table 4.6",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "we're into 4.6 on the youth table",
+    "shown": true
+   },
+   {
+    "t": 382,
+    "name_as_heard": "minutes May 6, 2017",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes approval from May 6th of 2017",
+    "shown": true
+   },
+   {
+    "t": 436,
+    "name_as_heard": "minutes of the public hearing on 496 Massachusetts Avenue",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes from the public hearing of 496 Massachusetts Avenue",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "building-inspector-recruitment",
+    "title": "Building inspector recruitment",
+    "question": "Why has the town struggled to hire a qualified building commissioner and what would a local inspector cost?",
+    "t": 6965,
+    "words_as_heard": "we've had very limited response from qualified commissioners and we're exploring our options",
+    "data_in_play": [
+     "pay scale",
+     "five tests"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board reorganized after a member left for the Board of Selectmen, voting a new chair, vice chair and clerk.",
+    "t": 0
+   },
+   {
+    "line": "Most of the meeting went to the zoning use table, and the board referred the revisions to staff for a redraft.",
+    "t": 962
+   },
+   {
+    "line": "The board agreed to merge retail commercial into commercial and to make equipment sales and similar uses special permit uses.",
+    "t": 2390
+   },
+   {
+    "line": "Planning staff will draft a separate firing range definition as a special permit use under recreation, for the board to consider next meeting.",
+    "t": 4283
+   },
+   {
+    "line": "The chair will notify the Board of Selectmen of the vacancy so the joint interview process can start.",
+    "t": 7434
+   }
+  ],
+  "why_it_matters": [
+   "The use table sets which businesses may locate where in town and which need a special permit, so the redraft could change what can be built near residents.",
+   "The vacant seat is to be filled through a joint process with the Board of Selectmen, which decides who votes on future zoning and permit decisions."
+  ],
+  "watch_next": [
+   "The board's next meeting, where it is to consider the staff draft of a separate firing range definition.",
+   "The joint interview process with the Board of Selectmen to fill the vacant Planning Board seat."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T15:45:24Z",
+   "cost_usd": 0.0224151
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05222017-3898",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2017-05-22-minutes-3898.txt",
+   "path": "sources/meetings/planning-board/2017-05-22-minutes-3898.pdf"
+  },
+  "official_sha256": "3ae002f9065685a36e2d3cabec1f445d0fe3febf1c21a325dc8ca8739e6e4e52",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree that G. Bittner was elected chair and that the vacancy would be reported to the Selectmen. They differ on the other officers' names, the budget transfer and figures, and the zoning decisions. Our minutes name Matt Bells and Ken Janice, where the official minutes give Allison and Chenis, and they record a school building transfer that the official minutes do not.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 0,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Greg Bittner elected chair",
+    "ours": "Nominate Greg Bittner as chair — passed",
+    "official": "chair- m. allison made motion for g. bittner, second, k. chenis, all aye.",
+    "note": "Same vote and outcome in both records.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chair name and vote",
+    "ours": "Nominate Matt Bells as vice chair — passed",
+    "official": "vice chair- d. prokowiew made motion for m. allison, second, k. chenis, all aye.",
+    "note": "Same vice chair vote; 'Matt Bells' is a misheard 'Matt Allison'.",
+    "official_reading": "M. Allison",
+    "t": 21
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk name and vote",
+    "ours": "Nominate Ken Janice as clerk — passed",
+    "official": "clerk- d. prokowiew, made motion for k. chenis, second, m. allison, all aye.",
+    "note": "Same clerk vote; 'Ken Janice' is a misheard 'Ken Chenis'.",
+    "official_reading": "K. Chenis",
+    "t": 42
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Committee and liaison appointment votes",
+    "ours": "",
+    "official": "mrpc representative- m. allison made motion for d. prokowiew, second, k. chenis, all aye.",
+    "note": "The official minutes record eight further appointment votes (MRPC, MJTC, School Building Committee, Capital Planning, Open Space, Green Community, Stormwater, Agricultural Commission) that our minutes do not list. Check the recording for them."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "School building committee snow and ice barrier transfer, $80,000",
+    "ours": "School building committee budget transfer to finance snow and ice barriers — $80,000 (discussed only (reported as voted by the committee))",
+    "official": "",
+    "note": "Our minutes record an $80,000 transfer and the official minutes record no transfers. Check whether it was a report from the School Building Committee rep and whether it belongs in the minutes.",
+    "t": 560
+   },
+   {
+    "kind": "discrepancy",
+    "about": "School building project contingency $2.8 million",
+    "ours": "School building project contingency: 2.8 million dollars",
+    "official": "",
+    "note": "The official minutes print no budget figures. Check the recording to confirm the figure and whether it was discussed.",
+    "t": 644
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Firing range definition and use table decisions",
+    "ours": "Planning staff to draft a separate firing range definition to be a special permit use under recreation; the board to consider it next meeting.",
+    "official": "definitions and use table- continued discussion and edits to be made.",
+    "note": "Our minutes give specific decisions on a firing range definition. The official minutes only say the item was continued with edits. Check the recording for what was agreed.",
+    "t": 4283
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Merge retail commercial into commercial; equipment sales to special permit",
+    "ours": "Agreed to merge retail commercial into commercial; equipment sales and similar uses changed to special permit.",
+    "official": "definitions and use table- continued discussion and edits to be made.",
+    "note": "The official minutes do not record the agreed merge or the special permit change. Check whether the board decided this or only discussed it.",
+    "t": 2390
+   },
+   {
+    "kind": "agree",
+    "about": "Vacancy notification to Selectmen",
+    "ours": "The chair will notify the Board of Selectmen of the vacancy so the joint interview process can start.",
+    "official": "a. burney will notify the town manager/board of selectmen of the current planning board vacancy",
+    "note": "Both records say the Selectmen will be notified, but ours assigns this to the chair and the official minutes assign it to A. Burney (and also name the Town Manager). Check who was assigned.",
+    "t": 7434
+   },
+   {
+    "kind": "only_in_official",
+    "about": "496 Massachusetts Avenue decision and plan endorsed",
+    "ours": "",
+    "official": "496 massachusetts avenue- endorse decision & plan- decision and plan endorsed by board. decision will be filed with the",
+    "note": "The official minutes record an endorsement that our minutes do not mention. Check the recording."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes approval",
+    "ours": "",
+    "official": "minutes approval: all minutes accepted.",
+    "note": "Our minutes do not record the approval of prior minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment: D. McQuaid resignation",
+    "ours": "",
+    "official": "public comment: d. mcquaid, 49 brookview terrace- gave his letter of resignation from the board to the town clerk and",
+    "note": "The official minutes record a board member's resignation. Our minutes do not mention it, though the vacancy appears in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendees: vice chair and clerk",
+    "ours": "Matt Bells (vice chair); Ken Janice (clerk)",
+    "official": "present: matthew allison, gregory bittner, kenneth chenis, david prokowiew, adam r. burney",
+    "note": "The names are misheard versions of Matthew Allison and Kenneth Chenis. Our attendee list is also missing David Prokowiew and Adam Burney.",
+    "official_reading": "Matthew Allison; Kenneth Chenis"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T15:46:11Z",
+   "cost_usd": 0.042215100000000005
+  }
+ }
+}

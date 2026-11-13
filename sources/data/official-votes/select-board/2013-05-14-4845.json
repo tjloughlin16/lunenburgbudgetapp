@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-05-14",
  "docid": "4845",
@@ -12,39 +12,360 @@
  },
  "votes": [
   {
-   "motion": "approve the appointment of Samantha J. Hudson as a Reserve Police Officer in the Town of Lunenburg",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Ebersole",
+   "motion": "Approve the appointment of Samantha J. Hudson as a Reserve Police Officer in the Town of Lunenburg.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Robert Ebersole",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the appointment of ms. samantha j. hudson as a reserve police officer in the town of lunenburg. mr. ebersole seconded. on vote mote carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to approve the appointment of ms. samantha j. hudson as a reserve police officer"
   },
   {
-   "motion": "create a Building Reuse Committee with 9 members including representatives from the Planning Committee, Council on Aging, Finance Committee, BOS, School Committee, and Historical Commission, plus 2 citizens at large",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Create the Building Reuse Committee with 9 members: a representative each from the Planning Committee, Council on Aging, Finance Committee, BOS, School Committee and Historical Commission, plus 2 citizens at large.",
+   "moved_by": "David Matthews",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. matthews so moved the motion. ms. bertram seconded the motion. on vote motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "nominate Mr. Toale to represent the Board of Selectmen on the Building Reuse Committee",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Nominate Jamie Toale to represent the BOS on the Building Reuse Committee.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. ebersole nominated mr. toale to represent the bos on the building reuse committee. ms. bertram seconded. on vote motion carried, 5 in favor, o opposed."
   },
   {
-   "motion": "enter into Executive session to discuss strategy with respect to collective bargaining or litigation",
-   "moved_by": "Mr. Alonzo",
+   "motion": "Enter executive session under M.G.L. Chapter 30A, Section 21A (9) to discuss strategy with respect to collective bargaining or litigation, with no return to open session.",
+   "moved_by": "Tom Alonzo",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. alonzo moved to enter into executive session citing m.g.l. chapter 30a, section 21a (9), to discuss strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigati",
-   "quote_taken_from_text": true
+   "quote": "mr. alonzo moved to enter into executive session citing m.g.l. chapter 30a, section 21a (9), to discuss strategy with respect to collective bargaining or litigation"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes scanned via OCR; contains two apparent OCR errors: \"mote\" instead of \"motion\" in vote 1, and \"O\" instead of \"0\" in vote 3. Errors preserved in quotes as they appear in source.",
- "cost_usd": 0.18508349999999998
+ "note": "OCR text from a scanned page set (macOS Vision). Some words are garbled as printed (e.g., \"vote mote\", \"O opposed\" for 0, \"Mir.\" for Mr.), and the warrant figure \"$1,601.290.32\" is kept as printed. No minutes approval motion, warrant approval, or adjournment motion is recorded in the text, so none is listed as a vote. The meeting-end line reads \"Regular scheduled meeting ended at 9:39PM.\" and the chair is not named by title.",
+ "cost_usd": 0.012251420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Marino",
+   "role": "Chief of Police",
+   "status": "present",
+   "quote": "chief of police marino presented to the bos samantha j. hudson,"
+  },
+  {
+   "name": "Samantha J. Hudson",
+   "role": "Reserve Police Officer appointee",
+   "status": "present",
+   "quote": "ms. hudson stated that she wanted to become a reserve police officer in town so she could give back to the community"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "representing Kopelman and Paige, P.C., Town's Legal Counsel",
+   "status": "present",
+   "quote": "mr. bard began by stating that he was from kopelman and paige, p.c., who is the town's legal counsel."
+  },
+  {
+   "name": "Sharon McCullah",
+   "role": "Boys and Girls Club of Lunenburg",
+   "status": "present",
+   "quote": "sharon mccullah, boys and girls club of lunenburg, opened up public comment from the public by thanking the bos"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "member of the Library Board of Trustees",
+   "status": "present",
+   "quote": "richard mailloux, 88 laurel lane, member of the library board of trustees, stated that this rule was established because"
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "Chairman of the Historical Commission",
+   "status": "present",
+   "quote": "pat slattery, 139 leominster road, chairman of the historical commission, urged the bos to consider making a member"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Voluntary toll request by the Teen Center cannot be voted tonight because it was not on the agenda; it could be voted at the next BOS meeting.",
+   "quote": "however, the voluntary toll could be voted on at the next bos meeting."
+  },
+  {
+   "decision": "Robert Ebersole volunteered to be the BOS liaison to the Library Committee and the Board of Health; Mr. Alonzo said that would work well.",
+   "quote": "mr. ebersole volunteered to be the liaison from the bos to both groups."
+  },
+  {
+   "decision": "Town Manager Speidel offered to provide the BOS with a map of where the Water Department is serving compared to the Water District.",
+   "quote": "ms. speidel said she was not sure if there was an official map but could provide the bos with such a map."
+  },
+  {
+   "decision": "Town Manager Speidel will research the Tri-Town extra funding question (40S / Chapter 70) further and had asked the Planning Board Director to follow up.",
+   "quote": "ms. speidel will research this matter further."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Passios Building demolition cost",
+   "what_was_recorded": "Mr. Ebersole said the committee should consider demolishing the Passios Building, which he put at between $750,000.00 and $1,000,000.00, and compare that to repair and reuse costs.",
+   "figures_as_printed": [
+    "$750,000.00",
+    "$1,000,000.00"
+   ],
+   "quote": "additionally, the committee should also look at the option of demolition the passios building, which would cost between $750,000.00 and $1,000,000.00"
+  },
+  {
+   "topic": "Warrant and Water Department commitment",
+   "what_was_recorded": "Warrants for 5/14/13 were listed on the agenda, including warrant #61-13 and a 4th Quarter Water Department Commitment; no vote on the warrants is recorded.",
+   "figures_as_printed": [
+    "$1,601.290.32",
+    "$4909.20"
+   ],
+   "quote": "#61-13 $1,601.290.32 4\"' quarter water department commitment $4909.20"
+  },
+  {
+   "topic": "Transportation Alternatives Program funding",
+   "what_was_recorded": "Ms. Bertram reported from the MPO meeting that the new Transportation Alternatives Program has about $75,000.00 per year in funding for non-Federally funded projects.",
+   "figures_as_printed": [
+    "$75,000.00"
+   ],
+   "quote": "the program just started out and has funding of about $75,000.00 per year."
+  },
+  {
+   "topic": "Tri-Town extra student funding (40S / Chapter 70)",
+   "what_was_recorded": "Mr. Alonzo asked whether the Town had seen the extra student funding Tri-Town was supposed to bring; Ms. Speidel said no separate funding was seen and that the Town may not have qualified for 40S funding in the first year.",
+   "figures_as_printed": [],
+   "quote": "tri-town which was built under 40r and 40s and was supposed to include extra funding for students and asked if the town had ever seen any extra funding."
+  },
+  {
+   "topic": "Teen Center funding",
+   "what_was_recorded": "Sharon McCullah said the Teen Center receives little funding and often has to fundraise itself, citing a 5K race and a proposed voluntary toll.",
+   "figures_as_printed": [],
+   "quote": "the teen center is a much needed service in town that does not receive much funding, so they often have to fundraise themselves."
+  },
+  {
+   "topic": "Funding for Building Reuse Committee research",
+   "what_was_recorded": "Mr. Matthews said the beginning stages of funding research for the Building Reuse Committee needed to go forward; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "the beginning stages of funding any sort of research done on the building reuse committee needed to go forward."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sharon McCullah",
+   "stated_role": "Boys and Girls Club of Lunenburg",
+   "topic": "Teen Center fundraising, 5K race, proposed voluntary toll",
+   "quote": "sharon mccullah, boys and girls club of lunenburg, opened up public comment from the public by thanking the bos"
+  },
+  {
+   "speaker": "Richard Mailloux",
+   "stated_role": "member of the Library Board of Trustees",
+   "topic": "Open Meeting Law and listing license/permit renewals on agendas",
+   "quote": "richard mailloux, 88 laurel lane, member of the library board of trustees, stated that this rule was established because"
+  },
+  {
+   "speaker": "Pat Slattery",
+   "stated_role": "Chairman of the Historical Commission",
+   "topic": "Historical Commission seat on the Building Reuse Committee",
+   "quote": "pat slattery, 139 leominster road, chairman of the historical commission, urged the bos to consider making a member"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (7:00 PM)",
+   "resolution": "no action; voluntary toll deferred to next meeting",
+   "tags": [
+    "public comment",
+    "Pop's Concert",
+    "LHS Musical",
+    "Memorial Day",
+    "Teen Center"
+   ],
+   "quote": "mr. matthews opened up public comment from the board by thanking the high school and specifically mrs. karen"
+  },
+  {
+   "topic": "Appointments: Samantha J. Hudson, Reserve Police Officer",
+   "resolution": "approved 5-0",
+   "tags": [
+    "appointments",
+    "police"
+   ],
+   "quote": "chief of police marino presented to the bos samantha j. hudson,"
+  },
+  {
+   "topic": "7:30 p.m. Open Meeting Law seminar (Joel Bard)",
+   "resolution": "presentation; no action",
+   "tags": [
+    "open meeting law",
+    "legal counsel"
+   ],
+   "quote": "mr. bard began by stating that he was from kopelman and paige, p.c., who is the town's legal counsel."
+  },
+  {
+   "topic": "Current Business 1: Building Reuse Committee",
+   "resolution": "committee created 5-0; Jamie Toale named BOS representative 5-0",
+   "tags": [
+    "building reuse committee",
+    "Passios Building",
+    "town buildings"
+   ],
+   "quote": "mr. alonzo brought up the ad hoc committee that mr. matthews had proposed as a way of identifying all possible reuses of the passios building."
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "listed; no vote recorded; Robert Ebersole named liaison to Library Committee and Board of Health",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file",
+    "open space",
+    "liaison"
+   ],
+   "quote": "2. minutes/warrants/action file issues"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "tags": [
+    "school building committee",
+    "MPO",
+    "Planning Board",
+    "Tri-Town"
+   ],
+   "quote": "mr. matthews stated that the school building committee had met last wednesday."
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "none",
+   "tags": [
+    "department reports"
+   ],
+   "quote": "4. town manager reports or department reports - none."
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "suggestion made; no action",
+   "tags": [
+    "policy and procedure",
+    "workshop"
+   ],
+   "quote": "ms. bertram suggested that the bos schedule a policy and procedure workshop, and that the new members of the bos be"
+  },
+  {
+   "topic": "Executive session (health insurance MOA)",
+   "resolution": "entered by roll call 5-0; no return to open session",
+   "tags": [
+    "executive session",
+    "health insurance",
+    "collective bargaining"
+   ],
+   "quote": "ms. speidel stated the executive session was going to review the proposed memorandum of agreement between the"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Attorney General's Open Meeting Law Guide (Joel Bard presentation)",
+   "where": "text",
+   "quote": "mr. bard's presentation was titled \"attorney general's open meeting law guide\""
+  },
+  {
+   "name": "Ad Hoc committee outline/purpose document prepared by David Matthews",
+   "where": "text",
+   "quote": "mr. matthews had sent around a document that fleshed out the purpose of the ad hoc committee."
+  },
+  {
+   "name": "Warrant #61-13, 4th Quarter Water Department Commitment (warrants 5/14/13)",
+   "where": "text",
+   "quote": "#61-13 $1,601.290.32 4\"' quarter water department commitment $4909.20"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "ms. bertram asked if there had been any talent bank forms submitted for roles on the committee."
+  },
+  {
+   "name": "2013-2014 TIP (Transportation Improvement Program) on MRPC web site",
+   "where": "text",
+   "quote": "the 2013-2014 tip was released for public comment."
+  },
+  {
+   "name": "Open Space Plan (Town Master Plan component)",
+   "where": "text",
+   "quote": "ms. bertram stated that the open space plan is a component of the town's master plan."
+  },
+  {
+   "name": "Proposed Memorandum of Agreement between the Town and the Lunenburg Public Employees Committee (health insurance)",
+   "where": "text",
+   "quote": "ms. speidel stated the executive session was going to review the proposed memorandum of agreement between the"
+  },
+  {
+   "name": "Policy and procedure handbook",
+   "where": "text",
+   "quote": "issued a copy of the current policy and procedure handbook."
+  }
+ ],
+ "tags": [
+  "open meeting law",
+  "building reuse committee",
+  "Passios Building",
+  "appointments",
+  "police",
+  "executive session",
+  "health insurance",
+  "public comment",
+  "warrants",
+  "water department",
+  "open space",
+  "Tri-Town",
+  "Teen Center",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-hazard-mitigation-plan-team-committee",
  "meeting_date": "2012-09-24",
  "docid": "2904",
@@ -12,6 +12,264 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document discussions of hazard identification, assessment, and planning for the Lunenburg Hazard Mitigation Plan Team, but contain no motions, seconds, or voting outcomes.",
- "cost_usd": 0.0851195
+ "note": "Minutes are unedited rough notes with unresolved transcription marks (e.g., '???', 'flows???') and several unclear phrases; the text ends mid-section on page 4. The header names the board 'Lunenburg Hazard Mitigation Plan Team Committee' but the minutes title the meeting 'Hazard Mitigation Planning Team Meeting'. No motions or votes are recorded, and no time, adjournment, or public comment section appears. The 'list' entry for the GIS map is based on a sentence stating that Renee presented it; the minutes have no separate document heading.",
+ "cost_usd": 0.00696782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief, Lunenburg Fire",
+   "status": "present",
+   "quote": "lunenburg officials in attendance: fire chief patrick sullivan, lunenburg fire; jack rodriquenz, dpw"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW (Lunenburg)",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw and kerry speidel, town administrator"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Administrator",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw and kerry speidel, town administrator"
+  },
+  {
+   "name": "Renee Marion",
+   "role": "GIS Analyst, MRPC Staff",
+   "status": "present",
+   "quote": "mrpc staff present: renee marion, gis analyst; and eric r. smith, principal planner."
+  },
+  {
+   "name": "Eric R. Smith",
+   "role": "Principal Planner, MRPC Staff",
+   "status": "present",
+   "quote": "mrpc staff present: renee marion, gis analyst; and eric r. smith, principal planner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Eric Smith will provide Chief Sullivan with a PDF version of the existing Lunenburg Hazard Mitigation Plan.",
+   "quote": "chief sullivan requested a copy of the existing lunenburg hazard mitigation plan. eric noted he would provide him with a pdf version."
+  },
+  {
+   "decision": "Renee Marion will work with Chief Sullivan to obtain ECEMP data for review of previously identified Critical Facilities.",
+   "quote": "renee will work with chief sullivan to obtain ecemp data - for review of previously identified critical facilities."
+  },
+  {
+   "decision": "Renee Marion will share draft identified evacuation routes with the Town.",
+   "quote": "also will share draft identified evacuation routes with the town."
+  },
+  {
+   "decision": "HR #2 (problematic culverts) is to be made more specific after review of notes with Renee.",
+   "quote": "hr #2: problematic culverts previously identified under beaver-related hazards. be more specific after review of notes with renee"
+  },
+  {
+   "decision": "The West Street Area was noted as the highest priority beaver-related hazard (BH #4).",
+   "quote": "it was noted that now the west street area is highest priority for beaver-related hazard (bh #4)."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MEMA funding for a Drainage / Stormwater Runoff Plan",
+   "what_was_recorded": "Asked whether MEMA could fund a drainage plan; MEMA said only the Hazard Mitigation Plan itself is eligible under hazard mitigation planning dollars, but culvert improvements remain eligible.",
+   "figures_as_printed": [],
+   "quote": "could mema fund a drainage / stormwater runoff plan? (eric learned from mema representative that unfortunately only such planning that is"
+  },
+  {
+   "topic": "Lake Shirley dam testing and monitoring funds",
+   "what_was_recorded": "Jack Rodriquenz said the Lake Shirley Association has money set aside for testing and monitoring; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "they do have $ for testing and monitoring."
+  },
+  {
+   "topic": "Lake Shirley Association Section 319 grant (Sunset Lane culvert)",
+   "what_was_recorded": "The Lake Shirley Association received a Section 319 grant that funded reconfiguring the outfall with plantings; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the lake shirley association got a grant (section 319) and reconfigured outfall with plantings"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Updated Hazard Identification and Assessment: culvert repairs",
+   "resolution": "discussed; no action recorded",
+   "quote": "jack rodriquenz of lunenburg dpw began the meeting with discussion of issue of repair/replacements related to culverts.",
+   "tags": [
+    "culverts",
+    "hazards",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Management plan and pavement management tool",
+   "resolution": "discussed; MEMA funding limits noted",
+   "quote": "question on management plan - jack noted his use of pavement management tool.",
+   "tags": [
+    "pavement",
+    "MEMA",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Existing Local Hazards Map review (Shirley culvert)",
+   "resolution": "reviewed; Shirley culvert change noted",
+   "quote": "as the lunenburg team began review of the existing local hazards map, they noted that for the town of shirley the culvert has been replaced",
+   "tags": [
+    "hazard map",
+    "Shirley",
+    "culverts"
+   ]
+  },
+  {
+   "topic": "Existing beaver-related hazards (BH #1 to BH #14)",
+   "resolution": "reviewed; West Street area (BH #4) named highest priority",
+   "quote": "the review of the existing hazards map began with a review of review of existing beaver-related hazards:",
+   "tags": [
+    "beavers",
+    "culverts",
+    "wetlands",
+    "flooding"
+   ]
+  },
+  {
+   "topic": "Dam-related hazards (DMH #1 to DMH #5)",
+   "resolution": "reviewed; new dam hazard areas identified",
+   "quote": "dmh #1: james pond dam - nothing has changed - remains as is.",
+   "tags": [
+    "dams",
+    "Lake Shirley",
+    "Hickory Hills Lake"
+   ]
+  },
+  {
+   "topic": "Fire hazards (FH #1 to FH #4)",
+   "resolution": "reviewed; FH #4 newly identified",
+   "quote": "fh #2: northeast lunenburg - remains as is",
+   "tags": [
+    "wildfire",
+    "forest",
+    "rail"
+   ]
+  },
+  {
+   "topic": "Heavy rain-related hazard areas",
+   "resolution": "reviewed; HR #2 to be made specific",
+   "quote": "hr #1: holman street - the bridge is closed at this time.",
+   "tags": [
+    "heavy rain",
+    "culverts",
+    "Holman Street"
+   ]
+  },
+  {
+   "topic": "Snow melt hazard areas",
+   "resolution": "none identified",
+   "quote": "there were no specific areas of snow melt hazard areas",
+   "tags": [
+    "snow melt"
+   ]
+  },
+  {
+   "topic": "High wind hazard areas (hazard trees and debris)",
+   "resolution": "discussed; no action recorded",
+   "quote": "issue with cleaning up debris from trees.",
+   "tags": [
+    "high wind",
+    "trees",
+    "Unitil",
+    "debris"
+   ]
+  },
+  {
+   "topic": "Town-wide hazards",
+   "resolution": "identified",
+   "quote": "the following hazards were identified to be town-wide:",
+   "tags": [
+    "nor'easter",
+    "ice storm",
+    "blizzard",
+    "thunderstorms"
+   ]
+  },
+  {
+   "topic": "FEMA flood-hazard areas",
+   "resolution": "presented; no action recorded",
+   "quote": "renee presented the gis map showing the 100-year and 500-year flood zone areas for the town of lunenburg.",
+   "tags": [
+    "flood zones",
+    "GIS",
+    "FEMA"
+   ]
+  },
+  {
+   "topic": "Critical facilities and infrastructure",
+   "resolution": "discussed; ECEMP data and evacuation routes to be obtained and shared",
+   "quote": "renee then discussed the worcester county evacuation plan and plan to update the critical facilities/infrastructure data layers.",
+   "tags": [
+    "evacuation",
+    "critical facilities",
+    "GIS"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GIS map showing the 100-year and 500-year flood zone areas for the Town of Lunenburg",
+   "where": "list",
+   "quote": "renee presented the gis map showing the 100-year and 500-year flood zone areas for the town of lunenburg."
+  },
+  {
+   "name": "Existing Local Hazards Map",
+   "where": "text",
+   "quote": "as the lunenburg team began review of the existing local hazards map, they noted that for the town of shirley the culvert has been replaced"
+  },
+  {
+   "name": "Existing Lunenburg Hazard Mitigation Plan (PDF version to be provided)",
+   "where": "text",
+   "quote": "chief sullivan requested a copy of the existing lunenburg hazard mitigation plan."
+  },
+  {
+   "name": "Worcester County Evacuation Plan",
+   "where": "text",
+   "quote": "renee then discussed the worcester county evacuation plan and plan to update the critical facilities/infrastructure data layers."
+  },
+  {
+   "name": "ECEMP data",
+   "where": "text",
+   "quote": "renee will work with chief sullivan to obtain ecemp data - for review of previously identified critical facilities."
+  },
+  {
+   "name": "Draft identified evacuation routes",
+   "where": "text",
+   "quote": "also will share draft identified evacuation routes with the town."
+  },
+  {
+   "name": "Phase III overall stormwater management plan",
+   "where": "text",
+   "quote": "noted that this was part of phase iii overall stormwater management plan."
+  }
+ ],
+ "tags": [
+  "hazard mitigation",
+  "culverts",
+  "beavers",
+  "dams",
+  "wildfire",
+  "flooding",
+  "heavy rain",
+  "high wind",
+  "evacuation",
+  "GIS",
+  "MEMA",
+  "MRPC",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "renee presented the gis map showing the 100-year and 500-year flood zone areas"
+ },
+ "dropped_unquoted_by_field": {}
 }

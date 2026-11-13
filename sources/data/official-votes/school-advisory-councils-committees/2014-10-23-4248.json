@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-10-23",
  "docid": "4248",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "elect Colleen Shapiro as Chair, Heather Sroka as Vice Chair, and Ami Powers as Secretary",
+   "motion": "Elect Colleen Shapiro as Chair, Heather Sroka as Vice Chair and Ami Powers as Secretary of the Calendar Advisory Committee.",
    "moved_by": "Brandon Kibbe",
    "seconded_by": "Lou Bettencourt and Dr. Gary Asher",
    "outcome": "passed",
@@ -21,6 +21,163 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10026650000000001
+ "note": "Metadata mismatch: the board is given as School Advisory Councils Committees and the meeting date as 2014-10-23, but the minutes are headed Calendar Advisory Sub-Committee Meeting, Thursday, October 30, 2014. Recorded as printed. Only one motion is recorded (officer election); it gives no vote count beyond \"all in favor vote\". The 7:17pm call to order and 9:02pm adjournment are not votes, and no motion is recorded for adjournment. The discussion of the suggested calendar and survey involved no recorded motion. Attendance is marked only where the minutes say so; other members are listed without a stated status. Text is extracted from a multi-page document; no budget figures appear in the minutes.",
+ "cost_usd": 0.00447142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Colleen Shapiro",
+   "role": "School Committee; elected Chair at this meeting",
+   "status": "present",
+   "quote": "colleen shapiro - school committee"
+  },
+  {
+   "name": "Ronald Hyatt",
+   "role": "SAC LHS",
+   "status": "not stated",
+   "quote": "ronald hyatt - sac lhs"
+  },
+  {
+   "name": "Ashley Wheeler",
+   "role": "SAC LHS",
+   "status": "absent",
+   "quote": "ashley wheeler-sac lhs- absent"
+  },
+  {
+   "name": "Gary Asher",
+   "role": "Former Lunenburg Family Practice, Health Advisory Committee; seconded the election motion as \"Dr. Gary Asher\"",
+   "status": "present",
+   "quote": "lou bettencourt and dr. gary asher second the motion, all in favor vote."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "SAC LPS; moved the election motion",
+   "status": "present",
+   "quote": "brandon kibbe moved a motion to elect colleen shapiro chair, heather sroka vice chair and ami powers secretary."
+  },
+  {
+   "name": "Amanda Waltz",
+   "role": "Parent",
+   "status": "not stated",
+   "quote": "amanda waltz - parent"
+  },
+  {
+   "name": "Lou Bettencourt",
+   "role": "Parent; seconded the election motion",
+   "status": "present",
+   "quote": "lou bettencourt and dr. gary asher second the motion, all in favor vote."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee; elected Vice Chair at this meeting",
+   "status": "present",
+   "quote": "heather sroka vice chair and ami powers secretary."
+  },
+  {
+   "name": "Ami Powers",
+   "role": "SAC THMS; elected Secretary at this meeting; signed the minutes",
+   "status": "present",
+   "quote": "ami powers secretary. lou bettencourt and dr. gary asher second the motion"
+  },
+  {
+   "name": "Katie McGuire",
+   "role": "SAC LHS",
+   "status": "absent",
+   "quote": "katie mcguire- sac lhs- absent"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "superintendent calmes said good starting point and will bring to other calendar committee made up of staff to see their thoughts."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee's suggested 2015-2016 school calendar is to go to the staff Calendar Committee for their thoughts; the Superintendent will bring it to them.",
+   "quote": "superintendent calmes said good starting point and will bring to other calendar committee made up of staff to see their thoughts."
+  },
+  {
+   "decision": "The Superintendent will try to send the survey results in spreadsheet form before the next meeting.",
+   "quote": "to send the results in a spreadsheet form before our next meeting."
+  },
+  {
+   "decision": "The committee will try to get data from other areas of the country that test and whether vacation weeks fall around testing.",
+   "quote": "we will try to get data from other areas of the country that do a testing and if vacation weeks occur around it."
+  },
+  {
+   "decision": "At the next meeting the committee will discuss feedback from the other committee, approve the minutes from the first meeting, and check whether census data has come back.",
+   "quote": "next meeting we need to approve minutes from first meeting and see if we get census data back."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:17pm",
+   "quote": "meeting called to order at 7:17pm."
+  },
+  {
+   "topic": "Advisory Organization - Election of Chair, Vice-Chair and Secretary",
+   "resolution": "Chair, Vice Chair and Secretary elected",
+   "quote": "brandon kibbe moved a motion to elect colleen shapiro chair, heather sroka vice chair and ami powers secretary."
+  },
+  {
+   "topic": "Review & Discussion of Surrounding School Calendars",
+   "resolution": "discussed; no action",
+   "quote": "review & discussion of surrounding school calendars: only two districts started after labor day."
+  },
+  {
+   "topic": "Review & Discussion of Major Events in 2015-2016 and 2016-2017 Calendars & Survey Update",
+   "resolution": "discussed; suggested 2015-2016 calendar sent to staff Calendar Committee",
+   "quote": "calendar advisory committee suggests the following calendar for school year 2015 - 2016."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "no public comment at this meeting. next meeting in thursday nov 13th at 7:15pm."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:02pm",
+   "quote": "meeting adjourned at 9:02pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Survey (calendar survey, as referenced in the discussion of survey update)",
+   "where": "text",
+   "quote": "discussion of survey - try to get as many people as possible to take the survey."
+  },
+  {
+   "name": "Calendar Advisory Committee suggested calendar for school year 2015-2016",
+   "where": "text",
+   "quote": "calendar advisory committee suggests the following calendar for school year 2015 - 2016."
+  },
+  {
+   "name": "2015-2016 and 2016-2017 Calendars",
+   "where": "text",
+   "quote": "review & discussion of major events in 2015-2016 and 2016-2017 calendars & survey update:"
+  }
+ ],
+ "tags": [
+  "school calendar",
+  "2015-2016 calendar",
+  "2016-2017 calendar",
+  "school advisory council",
+  "officer election",
+  "survey",
+  "asbestos abatement",
+  "school start and end dates",
+  "snow days",
+  "MCAS testing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

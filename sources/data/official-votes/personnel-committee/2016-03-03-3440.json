@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2016-03-03",
  "docid": "3440",
@@ -12,28 +12,252 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of December 3, 2015",
+   "motion": "Approve the minutes of December 3, 2015.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "minutes of december 3, 2015 minutes were reviewed and approved."
+   "quote": "minutes of december 3, 2015 minutes were reviewed and approved.",
+   "seconded_by": ""
   },
   {
-   "motion": "Present an article for a 2% cost of living adjustment for town employees on the SAP",
+   "motion": "Present an article at the Annual Town Meeting for a 2% cost of living adjustment for town employees on the SAP.",
+   "moved_by": "Deb Christen",
    "outcome": "passed",
    "procedural": false,
-   "moved_by": "Deb Christen",
-   "quote": "deb christen made a motion to present an article for a cola 2% increase for town employees on the sap. the motion was seconded and all approved."
+   "quote": "deb christen made a motion to present an article for a cola 2% increase for town employees on the sap. the motion was seconded and all approved.",
+   "seconded_by": ""
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Lin Vickery",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "Lin",
-   "seconded_by": "Deb",
-   "quote": "lin motioned to adjourn, deb seconded, and all were in favor."
+   "quote": "lin motioned to adjourn, deb seconded, and all were in favor.",
+   "seconded_by": "Deb Christen"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1120685
+ "dropped_unquoted": 2,
+ "note": "Plain-text extraction of a two-page minutes document. Motion to approve the December 3, 2015 minutes records no mover, seconder or vote count. The COLA motion records \"all approved\" with no named seconder and no count. Kerry LaFleur's and Jamie Toale's roles are not printed. No dollar amounts are printed in the minutes; the only figures are percentages and fiscal years.",
+ "cost_usd": 0.00468532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: lin vickery, scott chase, nancy forest, deb christen, kerry lafleur and jamie toale"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: lin vickery, scott chase, nancy forest, deb christen, kerry lafleur and jamie toale"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: lin vickery, scott chase, nancy forest, deb christen, kerry lafleur and jamie toale"
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: lin vickery, scott chase, nancy forest, deb christen, kerry lafleur and jamie toale"
+  },
+  {
+   "name": "Kerry LaFleur",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: lin vickery, scott chase, nancy forest, deb christen, kerry lafleur and jamie toale"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: lin vickery, scott chase, nancy forest, deb christen, kerry lafleur and jamie toale"
+  },
+  {
+   "name": "Mr. Rodriquenz",
+   "role": "town employee covered by the SAP, presenting the COLA request",
+   "status": "present",
+   "quote": "mr. rodriquenz stated that articles for the may annual town meeting will closes on march 25, 2016."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Personnel Committee members signed off on 2 Personnel Action Forms.",
+   "quote": "personnel committee members signed off on 2 personnel action forms"
+  },
+  {
+   "decision": "Elaine Peterson will prepare the COLA article and send it to Lin Vickery for her signature; an administrative order is being presented at the Annual Town Meeting.",
+   "quote": "elaine peterson, will prepare the article and send to lin for her signature."
+  },
+  {
+   "decision": "The Personnel Committee will review the Town of Shirley compensation and classification study the committee has a copy of.",
+   "quote": "the town of shirley did a compensation and classification study and we have a copy of that study, which will be reviewed."
+  },
+  {
+   "decision": "The Personnel Committee will schedule a special meeting on Saturday, April 2 from 9:30 to 12:30 at the Town Hall to review job descriptions.",
+   "quote": "in order to review the job descriptions the personnel committee will schedule a special meeting on saturday, april 2"
+  },
+  {
+   "decision": "The Personnel Committee will discuss the draft Employee handbook at the May committee meeting; BOS approval is needed for the handbook and any training.",
+   "quote": "there is a draft employee handbook and the personnel committee will discuss this at the may committee meeting."
+  },
+  {
+   "decision": "Review of Talent Bank forms and Performance Evaluation Templates is postponed until after the SAP salary schedule steps, job descriptions, handbook review and training are done.",
+   "quote": "personnel committee decided to postpone this topic until after we accomplish the sap salary schedule steps, job descriptions, review of the handbook and training."
+  },
+  {
+   "decision": "Discussion of the DPW Director grade in comparison with the market analysis is moved to the April 2 meeting.",
+   "quote": "discuss dpw director grade in comparison with market analysis."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP cost of living adjustment (COLA)",
+   "what_was_recorded": "Employees covered by the SAP, about 20-22 town employees, requested a 2% cost of living adjustment for each of three consecutive fiscal years, with no increase in 5 years.",
+   "figures_as_printed": [
+    "2%",
+    "20-22",
+    "three consecutive years",
+    "fiscal years 2017 through 2019",
+    "5 years"
+   ],
+   "quote": "were looking for a cost of living adjustment of 2% for next three consecutive years (fiscal years 2017 through 2019)"
+  },
+  {
+   "topic": "Funding for SAP increase",
+   "what_was_recorded": "Kerry LaFleur said there was money set aside in her budget for the increase, and that yearly increases typically vary based on contracts.",
+   "figures_as_printed": [],
+   "quote": "kerry stated that there was money set aside in her budget."
+  },
+  {
+   "topic": "DPW Director grade",
+   "what_was_recorded": "The committee will discuss the DPW Director pay grade against a market analysis at its April 2 meeting; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "discuss dpw director grade in comparison with market analysis."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "signed off on 2 forms",
+   "quote": "personnel committee members signed off on 2 personnel action forms",
+   "tags": [
+    "personnel actions"
+   ]
+  },
+  {
+   "topic": "Review/Approval of Previous Meeting Minutes",
+   "resolution": "approved December 3, 2015 minutes",
+   "quote": "minutes of december 3, 2015 minutes were reviewed and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Discussion of SAP grid (COLA)",
+   "resolution": "motion passed to present a 2% COLA article for the Annual Town Meeting; SAP steps and job descriptions to be reviewed",
+   "quote": "deb christen made a motion to present an article for a cola 2% increase for town employees on the sap.",
+   "tags": [
+    "SAP",
+    "COLA",
+    "salary schedule",
+    "town meeting article"
+   ]
+  },
+  {
+   "topic": "Policies, employee handbook and sexual harassment training",
+   "resolution": "handbook to May meeting; training options discussed; no vote",
+   "quote": "there is a draft employee handbook and the personnel committee will discuss this at the may committee meeting.",
+   "tags": [
+    "employee handbook",
+    "sexual harassment training",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Talent Bank forms and Performance Evaluation Templates",
+   "resolution": "postponed",
+   "quote": "personnel committee decided to postpone this topic until after we accomplish the sap salary schedule steps",
+   "tags": [
+    "talent bank",
+    "performance evaluation"
+   ]
+  },
+  {
+   "topic": "DPW Director grade vs market analysis",
+   "resolution": "continued to April 2 meeting",
+   "quote": "discuss dpw director grade in comparison with market analysis.",
+   "tags": [
+    "DPW",
+    "pay grade",
+    "market analysis"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:57 p.m.",
+   "quote": "meeting adjourned at 7:57 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town of Shirley compensation and classification study",
+   "where": "text",
+   "quote": "the town of shirley did a compensation and classification study and we have a copy of that study, which will be reviewed."
+  },
+  {
+   "name": "Draft Employee handbook",
+   "where": "text",
+   "quote": "there is a draft employee handbook and the personnel committee will discuss this at the may committee meeting."
+  },
+  {
+   "name": "Talent Bank forms",
+   "where": "text",
+   "quote": "review of talent bank forms and performance evaluation templates."
+  },
+  {
+   "name": "Performance Evaluation Templates",
+   "where": "text",
+   "quote": "review of talent bank forms and performance evaluation templates."
+  },
+  {
+   "name": "Personnel Action Forms",
+   "where": "text",
+   "quote": "personnel committee members signed off on 2 personnel action forms"
+  },
+  {
+   "name": "COLA article for the Annual Town Meeting",
+   "where": "text",
+   "quote": "deb christen made a motion to present an article for a cola 2% increase for town employees on the sap."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "SAP salary schedule",
+  "COLA",
+  "town meeting article",
+  "employee handbook",
+  "sexual harassment training",
+  "DPW director",
+  "job descriptions",
+  "talent bank",
+  "performance evaluation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

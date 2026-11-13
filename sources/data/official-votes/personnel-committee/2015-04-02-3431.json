@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2015-04-02",
  "docid": "3431",
@@ -12,21 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of March 16, 2015 meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "reviewed minutes of march 16, 2015 meeting. minutes were accepted after making one minor correction."
-  },
-  {
-   "motion": "the Personnel Committee is not required to approve the Personal Action form for regular step increases or for new hires hired at the minimum pay",
+   "motion": "Personnel Committee is not required to approve the Personnel Action form for regular step increases or for new hires hired at the minimum pay.",
    "moved_by": "Lin",
    "seconded_by": "Cheryl",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "lin made a motion that the personnel committee is not required to approve the personal action form for regular step increases or for new hires hired at the minimum pay. cheryl seconded the motion. all agreed 4-0."
+   "quote": "lin made a motion that the personnel committee is not required to approve the personal action form for regular step increases or for new hires hired at the minimum pay."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Deb",
    "seconded_by": "Nancy",
    "outcome": "passed 4-0",
@@ -34,7 +28,163 @@
    "quote": "deb moved to adjourn the meeting; nancy seconded the motion, and the committee voted 4-0 to adjourn at 8:15 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1117175
+ "dropped_unquoted": 1,
+ "note": "Text is extracted from a two-page document; page 2 contains only a footer. The minutes record no motion or vote approving the March 16, 2015 minutes, only that they were accepted, so no vote is recorded for that item. The motion's text prints 'Personal Action form' while the heading prints 'Personnel Action form'; the record keeps the printed wording. The closing line says the minutes were re-submitted with changes discussed at the May 14, 2015 meeting, so this version post-dates that meeting. The file name is dated 5-14-15 while the meeting is April 2, 2015. Attendance is taken from the Present/Absent lines; the Board of Selectmen and the Town Clerk are mentioned but took no part as persons.",
+ "cost_usd": 0.00543982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cheryl Valera",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, deb christen and nancy forest"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, deb christen and nancy forest"
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, deb christen and nancy forest"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, deb christen and nancy forest"
+  },
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "absent: scott chase"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the March 16, 2015 meeting accepted after one minor correction, with no recorded motion or vote; Lin to submit the corrected minutes to the Town Clerk and Assistant Town Clerk.",
+   "quote": "minutes were accepted after making one minor correction."
+  },
+  {
+   "decision": "Lin will submit the corrected minutes of March 16 to the Town Clerk and Assistant Town Clerk.",
+   "quote": "lin will be submitting the corrected minutes to kathy herrick, town clerk and lynn klaft, assistant town clerk."
+  },
+  {
+   "decision": "Cheryl Valera takes the action item to illustrate various time-off scenarios.",
+   "quote": "cheryl is taking the action item to illustrate various time-off scenarios."
+  },
+  {
+   "decision": "Deb Christen will look for a Word version of the Salary Administration Plan.",
+   "quote": "deb will see if she can find a word version of the salary administration plan."
+  },
+  {
+   "decision": "Next meeting set for May 14, 2015 at 6:30 p.m. at the Lunenburg Library, with salary and benefits discussion as the agenda.",
+   "quote": "next personnel committee meeting will be may 14, 2015 at 6:30 p.m. at the lunenburg library"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Salary and benefits discussion",
+   "what_was_recorded": "The committee continued discussing salary and benefits, including reduction in hours and workload, paid time off, and step increase dates versus July 1; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "continuation of discussion regarding salary and benefits"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of March 16, 2015 minutes",
+   "resolution": "minutes accepted with one minor correction",
+   "quote": "minutes were accepted after making one minor correction.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "3. no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Salary and benefits",
+   "resolution": "discussed; continued to May 14 meeting",
+   "quote": "continuation of discussion regarding salary and benefits",
+   "tags": [
+    "salary",
+    "benefits",
+    "paid time off",
+    "step increases",
+    "reduction in hours"
+   ]
+  },
+  {
+   "topic": "Personnel Action form approval",
+   "resolution": "voted 4-0 that approval is not required for regular step increases or minimum-pay new hires",
+   "quote": "lin made a motion that the personnel committee is not required to approve the personal action form for regular step increases or for new hires hired at the minimum pay.",
+   "tags": [
+    "personnel action form",
+    "step increases",
+    "new hires"
+   ]
+  },
+  {
+   "topic": "Next meeting and agenda",
+   "resolution": "next meeting set for May 14, 2015",
+   "quote": "next personnel committee meeting will be may 14, 2015 at 6:30 p.m. at the lunenburg library",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:15 pm",
+   "quote": "deb moved to adjourn the meeting; nancy seconded the motion, and the committee voted 4-0 to adjourn at 8:15 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of March 16, 2015 meeting",
+   "where": "text",
+   "quote": "reviewed minutes of march 16, 2015 meeting."
+  },
+  {
+   "name": "Personnel Action form",
+   "where": "text",
+   "quote": "lin made a motion that the personnel committee is not required to approve the personal action form for regular step increases or for new hires hired at the minimum pay."
+  },
+  {
+   "name": "Salary Administration Plan (Word version)",
+   "where": "text",
+   "quote": "deb will see if she can find a word version of the salary administration plan."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "salary and benefits",
+  "paid time off",
+  "step increases",
+  "personnel action forms",
+  "minutes",
+  "union",
+  "town committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

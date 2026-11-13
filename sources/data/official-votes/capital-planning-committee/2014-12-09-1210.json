@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2014-12-09",
  "docid": "1210",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the Tuesday, December 2 CPC meeting as submitted",
+   "motion": "Approve the minutes of the Tuesday, December 2 CPC meeting as submitted.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "the committee approved the minutes of the tuesday, december 2 cpc meeting as submitted, 4-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Henshaw",
    "seconded_by": "Heather Sroka",
    "outcome": "passed 4-0",
@@ -29,6 +29,181 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable. Two votes recorded: approval of prior minutes and adjournment, both procedural.",
- "cost_usd": 0.08336450000000001
+ "note": "OCR text of a scanned page; some words garbled (e.g., priority column header reads \"There\" and is likely \"Three\"; \"2id floor\" likely \"2nd floor\"). Joanna Bilotta-Simeone is listed under Absent in the OCR layout; the Present and Absent labels are separated by line breaks, so her absence is inferred from placement. Kerry Speidel's role is not printed. Loxi Calmes and John Londa are named only as invitees, not as attendees. Votes recorded: minutes approval and adjournment only; no motions moved by name on the minutes approval. No public comment was recorded. No dollar transfers were recorded.",
+ "cost_usd": 0.004661520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman dennis mannone, jr., vice-chairman john henshaw, clerk joanna bilotta-simeone, member heather sroka, member"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "absent",
+   "quote": "dennis mannone, jr., kerry speidel, heather sroka, jamie toale, john henshaw. joanna bilotta-simeone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will circulate the draft spreadsheet on regular borrowing limits to the CPC and discuss it with the Finance Committee on Thursday.",
+   "quote": "john will circulate the spreadsheet to the cpc and will discuss it with the finance committee on thursday."
+  },
+  {
+   "decision": "Kerry Speidel will invite Loxi Calmes and John Londa to the CPC meeting on December 16 at THMS to discuss the proposed asbestos abatement project.",
+   "quote": "kerry will invite loxi calmes and john londa to the cpc meeting, on december 16 to discuss the proposed asbestos abatement project at turkey hill middle school."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital project priority totals",
+   "what_was_recorded": "The priority summary shows total cost by priority level, with a grand total for the 25 requested projects.",
+   "figures_as_printed": [
+    "$1,095,928",
+    "$426,550",
+    "$242,132",
+    "$1,764,610"
+   ],
+   "quote": "total cost $1,095,928 $426,550 $242,132 $1,764,610"
+  },
+  {
+   "topic": "FY2016 capital outlays",
+   "what_was_recorded": "Kerry said the FY2016 budget as of now includes a figure for capital outlays; the Town may also fund some projects by borrowing.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "kerry said the fiscal 2016 budget as of now includes $600,000 for capital outlays."
+  },
+  {
+   "topic": "Debt service policy limits on regular borrowing",
+   "what_was_recorded": "The Town's financial policies cap total debt service of regular borrowing at the lower of 4% of the total tax levy or three percent of the Town's budget in a fiscal year.",
+   "figures_as_printed": [
+    "4%",
+    "three percent"
+   ],
+   "quote": "total debt service costs of regular borrowing should not exceed 4% of the total tax levy, or three percent of the town's budget in a fiscal year, whichever is lower."
+  },
+  {
+   "topic": "Asbestos abatement at Turkey Hill Middle School",
+   "what_was_recorded": "Asbestos abatement at THMS is projected to cost a stated amount between FY16 and FY20; the committee is concerned about committing to the entire project.",
+   "figures_as_printed": [
+    "$882,000"
+   ],
+   "quote": "asbestos abatement at thms would cost a projected $882,000 between fy16 and fy20"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Discussion of what constitutes a capital project",
+   "resolution": "discussed, no action",
+   "quote": "discussion of what constitutes a capital project-main points:",
+   "tags": [
+    "capital project definition",
+    "operating budget"
+   ]
+  },
+  {
+   "topic": "Approval of December 2 minutes",
+   "resolution": "approved 4-0",
+   "quote": "the committee approved the minutes of the tuesday, december 2 cpc meeting as submitted, 4-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Capital Improvement Project Priorities",
+   "resolution": "projects reviewed and assigned priorities one to three",
+   "quote": "the cpc reviewed all requested capital projects and assigned each project a priority of one, two, or three.",
+   "tags": [
+    "capital improvement plan",
+    "FY2016",
+    "priorities"
+   ]
+  },
+  {
+   "topic": "Projecting regular borrowing limits FY16-FY20",
+   "resolution": "draft process presented; John to circulate spreadsheet",
+   "quote": "john gave an overview of a first draft of a very cursory process for estimating a range of these limits from fy16-fy20.",
+   "tags": [
+    "debt service",
+    "borrowing limits",
+    "financial policy"
+   ]
+  },
+  {
+   "topic": "Asbestos abatement at Turkey Hill Middle School",
+   "resolution": "invite presenters to December 16 meeting at THMS",
+   "quote": "kerry will invite loxi calmes and john londa to the cpc meeting, on december 16 to discuss the proposed asbestos abatement project at turkey hill middle school.",
+   "tags": [
+    "asbestos",
+    "Turkey Hill Middle School",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 5:57 pm",
+   "quote": "john moved to adjourn the meeting; heather seconded the motion, and the committee voted 4-0 to adjourn at 5:57 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft spreadsheet estimating regular borrowing limits, FY16-FY20 (first draft, by John)",
+   "where": "text",
+   "quote": "john will circulate the spreadsheet to the cpc and will discuss it with the finance committee on thursday."
+  },
+  {
+   "name": "Town's financial policy document",
+   "where": "text",
+   "quote": "that definition defines \"capital projects\" in the town's financial policy document."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "capital improvement plan",
+  "FY2016",
+  "debt service",
+  "borrowing limits",
+  "asbestos abatement",
+  "Turkey Hill Middle School",
+  "project priorities",
+  "operating budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

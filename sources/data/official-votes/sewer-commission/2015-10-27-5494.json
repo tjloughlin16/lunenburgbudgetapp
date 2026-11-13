@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-10-27",
  "docid": "5494",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Waive Sean Patrick's accumulated non-compliance fees up to $100, due within 7 business days.",
+   "motion": "Waive non-compliance fees for Sean Patrick's up to this date to $100, payable within 7 business days to avoid any additional non-compliance fees.",
    "moved_by": "Troy D.",
    "seconded_by": "John R.",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: troy d. second: john r. to waive non-compliance fees for sean patrick's up to this date to $100, payable within 7 business days to avoid any additional non-compliance fees. reporting should be up to date. discussion - th",
-   "quote_taken_from_text": true
+   "quote": "motion: troy d. second: john r. to waive non-compliance fees for sean patrick's up to this date to $100, payable within 7 business days to avoid any additional non-compliance fees."
   },
   {
-   "motion": "Accept the follow-up non-compliance fee forms for internal and external grease traps to be used by the business manager.",
+   "motion": "Accept the follow-up non-compliance fee for internal and external grease traps forms to be used by the business manager.",
    "moved_by": "Troy D.",
    "seconded_by": "Sue B.",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: troy d. second: sue b. to accept the follow-up non-compliance fee for internal and external grease traps forms to be used by the business manager vote: unanimous"
+   "quote": "motion: troy d. second: sue b. to accept the follow-up non-compliance fee for internal and external grease traps forms to be used by the business manager"
   },
   {
-   "motion": "Adjourn the meeting at 9:50pm.",
+   "motion": "Adjourn at 9:50pm.",
    "moved_by": "Sue B.",
    "seconded_by": "Troy D.",
    "outcome": "passed unanimously",
@@ -38,6 +37,298 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source via macOS Vision; text is clear and readable.",
- "cost_usd": 0.1461595
+ "note": "Text is OCR (macOS Vision) of a two-page set of minutes. Attendance is not formally listed; commissioner status is inferred from the motions and the recusal line. Bill Severance's appearance is described but his attendance is not stated. The signature line is garbled by OCR. The minutes print no list of documents; the documents_list entry is inferred from sentences saying the Commission reviewed the list of non-compliant accounts and the Notices of Non-Compliance forms. Only the Sean Patrick's waiver and the forms motion are recorded votes; the Flanagan waiver's \"Vote: Unanimous\" and the adjournment vote are the printed results.",
+ "cost_usd": 0.00527612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Troy D.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: troy d. second: john r. to waive non-compliance fees for sean patrick's up to this date to $100"
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "second: john r. to waive non-compliance fees for sean patrick's up to this date to $100"
+  },
+  {
+   "name": "Sue B.",
+   "role": "",
+   "status": "present",
+   "quote": "sue b. recused herself from the discussion."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "present",
+   "quote": "respectfully submitted, mil dehto emily lehto, minutes assistant"
+  },
+  {
+   "name": "Sean Flanagan",
+   "role": "from Sean Patrick's",
+   "status": "present",
+   "quote": "sean flanagan and colleen flanagan from sean patrick's came before the commission to discuss their non-compliance to grease trap requirements"
+  },
+  {
+   "name": "Colleen Flanagan",
+   "role": "from Sean Patrick's",
+   "status": "present",
+   "quote": "sean flanagan and colleen flanagan from sean patrick's came before the commission to discuss their non-compliance to grease trap requirements"
+  },
+  {
+   "name": "Walt Rinki",
+   "role": "Pine Road",
+   "status": "present",
+   "quote": "walt rinki (pine road) had a question on permits and also asked if the road was going to be paved."
+  },
+  {
+   "name": "Bill Severance",
+   "role": "768 West Street",
+   "status": "not stated",
+   "quote": "bill severance from 768 west street is looking to subdivide his property and will need a sewer extension to the new lot."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applications for Permits to Connect to begin being accepted on October 28, 2015.",
+   "quote": "applications for permits to connect - these can begin to be accepted on october 28, 2015"
+  },
+  {
+   "decision": "Another workshop on grease trap regulations will be scheduled.",
+   "quote": "another workshop on grease trap regulations will be scheduled."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sean Patrick's grease trap non-compliance fees",
+   "what_was_recorded": "The Commission voted to waive the non-compliance fees for Sean Patrick's up to this date, with the balance payable within 7 business days.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "to waive non-compliance fees for sean patrick's up to this date to $100, payable within 7 business days to avoid any additional non-compliance fees."
+  },
+  {
+   "topic": "Project Funds",
+   "what_was_recorded": "Available funds were discussed and what they have been recently used for; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "project funds - available funds were discussed and what they have been recently used for."
+  },
+  {
+   "topic": "SCADA systems competitive bid",
+   "what_was_recorded": "The last quote from Small Water System Services was reviewed and the Commission then discussed going out to bid; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "scada systems - competitive bid - the last quote from small water system services was reviewed."
+  },
+  {
+   "topic": "Funding sources for public projects/individuals",
+   "what_was_recorded": "No new information; the Commission discussed ways to get more information on funding sources; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "funding sources for public projects/individuals - there is no new information."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sean Flanagan",
+   "stated_role": "from Sean Patrick's",
+   "topic": "grease trap non-compliance and resulting fees",
+   "quote": "sean flanagan and colleen flanagan from sean patrick's came before the commission to discuss their non-compliance to grease trap requirements and the resulting fees."
+  },
+  {
+   "speaker": "Colleen Flanagan",
+   "stated_role": "from Sean Patrick's",
+   "topic": "grease trap non-compliance and resulting fees",
+   "quote": "sean flanagan and colleen flanagan from sean patrick's came before the commission to discuss their non-compliance to grease trap requirements and the resulting fees."
+  },
+  {
+   "speaker": "Walt Rinki",
+   "stated_role": "Pine Road",
+   "topic": "Pratt/Lakeview project permits and road paving",
+   "quote": "walt rinki (pine road) had a question on permits and also asked if the road was going to be paved."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Bill Severance subdivision and sewer extension",
+   "resolution": "discussed; no action",
+   "quote": "bill severance from 768 west street is looking to subdivide his property and will need a sewer extension to the new lot.",
+   "tags": [
+    "sewer extension",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Twin City Baptist",
+   "resolution": "rescheduled to November 10th; discussed discontinuance policy for a 3-bay sink",
+   "quote": "twin city baptist has rescheduled for november 10th.",
+   "tags": [
+    "discontinuance policy"
+   ]
+  },
+  {
+   "topic": "Sean Patrick's grease trap non-compliance fees",
+   "resolution": "fees waived up to $100, passed unanimously",
+   "quote": "sean flanagan and colleen flanagan from sean patrick's came before the commission to discuss their non-compliance to grease trap requirements and the resulting fees.",
+   "tags": [
+    "grease traps",
+    "non-compliance fees",
+    "waiver"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview Sewer Extension project",
+   "resolution": "no action; project substantially complete; road paving discussed",
+   "quote": "pratt/lakeview sewer extension project - the project is now substantially complete.",
+   "tags": [
+    "sewer extension",
+    "road paving",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Applications for Permits to Connect",
+   "resolution": "to begin accepting applications October 28, 2015",
+   "quote": "applications for permits to connect - these can begin to be accepted on october 28, 2015",
+   "tags": [
+    "permits to connect"
+   ]
+  },
+  {
+   "topic": "Pleasantview Ave Project Commencement",
+   "resolution": "updates reviewed; no action",
+   "quote": "pleasantview ave project commencement - sue b. recused herself from the discussion.",
+   "tags": [
+    "project updates",
+    "recusal"
+   ]
+  },
+  {
+   "topic": "Grease traps: non-compliant accounts and follow-up forms",
+   "resolution": "follow-up non-compliance fee forms accepted, passed unanimously",
+   "quote": "grease traps - the commission reviewed a list of non-compliant accounts.",
+   "tags": [
+    "grease traps",
+    "non-compliance",
+    "forms"
+   ]
+  },
+  {
+   "topic": "Fats, Oils & Grease (FOG) Workshop 10/6",
+   "resolution": "follow-up discussed; another workshop to be scheduled",
+   "quote": "fats, oils & grease (fog) workshop 10/6 - the commission discussed follow-up actions form the workshop.",
+   "tags": [
+    "FOG",
+    "grease traps",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Private extension process",
+   "resolution": "revisions to private extension, surety bond and privilege fees reviewed and discussed; no action",
+   "quote": "private extension process - the commission reviewed and discussed the revisions made to private extension, surety bond and privilege fees.",
+   "tags": [
+    "private extension",
+    "surety bond",
+    "privilege fees"
+   ]
+  },
+  {
+   "topic": "Road Opening Permit",
+   "resolution": "discussed the Commission's role; need to define roles; no action",
+   "quote": "road opening permit discussion - there was a discussion of what role the sewer commission has in this and the need to define roles.",
+   "tags": [
+    "road opening permit"
+   ]
+  },
+  {
+   "topic": "Inflow/Infiltration (I/I) remediation",
+   "resolution": "discussed; no action",
+   "quote": "inflow/infiltration (i/i) remediation - i/l and ways to track it were discussed.",
+   "tags": [
+    "inflow infiltration"
+   ]
+  },
+  {
+   "topic": "SCADA systems competitive bid",
+   "resolution": "discussed going out to bid; no action recorded",
+   "quote": "scada systems - competitive bid - the last quote from small water system services was reviewed.",
+   "tags": [
+    "SCADA",
+    "bid",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Funding sources for public projects/individuals",
+   "resolution": "no new information; no action",
+   "quote": "funding sources for public projects/individuals - there is no new information.",
+   "tags": [
+    "funding"
+   ]
+  },
+  {
+   "topic": "Flow rate/metering",
+   "resolution": "no update",
+   "quote": "flow rate/metering - there is no update.",
+   "tags": [
+    "flow metering"
+   ]
+  },
+  {
+   "topic": "Business systems and process improvement",
+   "resolution": "no update",
+   "quote": "business systems and process improvement - there is no update.",
+   "tags": [
+    "business systems"
+   ]
+  },
+  {
+   "topic": "Project funds",
+   "resolution": "available funds discussed; no action",
+   "quote": "project funds - available funds were discussed and what they have been recently used for.",
+   "tags": [
+    "project funds"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting dates",
+   "resolution": "noted; November 3 workshop, November 10 regular meeting, November 16 special town meeting",
+   "quote": "november 16, 2015 - special town meeting",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "List of non-compliant accounts",
+   "where": "list",
+   "quote": "grease traps - the commission reviewed a list of non-compliant accounts."
+  },
+  {
+   "name": "Follow-up Notices of Non-Compliance forms",
+   "where": "list",
+   "quote": "to accept the follow-up non-compliance fee for internal and external grease traps forms to be used by the business manager"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease traps",
+  "non-compliance fees",
+  "sewer extension",
+  "permits to connect",
+  "SCADA",
+  "inflow infiltration",
+  "private extension",
+  "road opening permit",
+  "FOG workshop"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the commission reviewed a list of non-compliant accounts"
+ },
+ "dropped_unquoted_by_field": {}
 }

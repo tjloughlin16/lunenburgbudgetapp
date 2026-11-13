@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-10-18",
  "docid": "4784",
@@ -12,15 +12,245 @@
  },
  "votes": [
   {
-   "motion": "to adjourn Regular Session",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 8:12 p.m.",
+   "motion": "Adjourn the Regular Session at 8:12 P.M.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:12 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes mention \"reviewed and signed\" for prior minutes and warrants (items 3 in Current Business) but do not explicitly record these as motions voted on. The only recorded vote is the adjournment at the close of the meeting.",
- "cost_usd": 0.0963275
+ "note": "OCR text from a scanned packet. The forecast slides are garbled (tables and figures are partly unreadable), so printed figures are recorded as they appear. Attendance is not stated for the board members, and the minutes give no role for Kerry, Dave, Paula or Tom. The only recorded vote is the adjournment, which names no mover or seconder and gives no count. The minutes contain no public comment section. Gerry Galena of Casella is mentioned only as contacted by phone, so he is not listed as an attendee.",
+ "cost_usd": 0.00781812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kerry",
+   "status": "present",
+   "quote": "kerry presented the attached powerpoint presentation on the financial summit."
+  },
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave commented that the reality is we're at this place, as every budget season has been cutting"
+  },
+  {
+   "name": "Paula",
+   "status": "present",
+   "quote": "paula questioned if the school infrastructure was included in the projections."
+  },
+  {
+   "name": "Tom",
+   "status": "present",
+   "quote": "tom questioned large amounts of debris in the contractor type bags and we have no mechanism to deal with this"
+  },
+  {
+   "name": "Marc Erikson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "members of finance committee present: marc erikson, brian laffond and scott gile, department heads; karen brochu, town accountant, amy sadkin, library director and loxi jo calmes, school superintendent."
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "members of finance committee present: marc erikson, brian laffond and scott gile, department heads; karen brochu, town accountant, amy sadkin, library director and loxi jo calmes, school superintendent."
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "members of finance committee present: marc erikson, brian laffond and scott gile, department heads; karen brochu, town accountant, amy sadkin, library director and loxi jo calmes, school superintendent."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "members of finance committee present: marc erikson, brian laffond and scott gile, department heads; karen brochu, town accountant, amy sadkin, library director and loxi jo calmes, school superintendent."
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "members of finance committee present: marc erikson, brian laffond and scott gile, department heads; karen brochu, town accountant, amy sadkin, library director and loxi jo calmes, school superintendent."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "members of finance committee present: marc erikson, brian laffond and scott gile, department heads; karen brochu, town accountant, amy sadkin, library director and loxi jo calmes, school superintendent."
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura caron-gustus, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tom asked that discussion of demolition-type debris be placed on a future agenda.",
+   "quote": "would like to place on an agenda for some future time for discussions on demolition type (cut wood etc.) debris."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Two warrants were reviewed and signed, with their printed totals.",
+   "figures_as_printed": [
+    "$225,776.04",
+    "$446,703.99"
+   ],
+   "quote": "warrants - #22 12, 10/1/11 - $225,776.04 and #23 12, 10/19/11 - $446,703.99 reviewed and signed."
+  },
+  {
+   "topic": "Five-year forecast projected deficits",
+   "what_was_recorded": "The forecast table of revenues, expenditures and projected deficits was shown; the printed figures are garbled in the scan.",
+   "figures_as_printed": [
+    "$ 29,210,930",
+    "S 29.093,638",
+    "S 29,650,741"
+   ],
+   "quote": "$ 29,210,930 s 29.093,638 s 29,650,741 s 30,497,951"
+  },
+  {
+   "topic": "Average single family tax bill comparison",
+   "what_was_recorded": "The average single family tax bill in Lunenburg was reported as lower than the state average.",
+   "figures_as_printed": [
+    "$4,064",
+    "$4,537",
+    "$473"
+   ],
+   "quote": "the average single family tax bill in lunenburg was $4,064"
+  },
+  {
+   "topic": "Override cost estimate",
+   "what_was_recorded": "A $473 difference, about $40 per month, was given as the approximate cost of an override in the amount of $2,085,000.",
+   "figures_as_printed": [
+    "$473",
+    "$40 per month",
+    "$2,085,000"
+   ],
+   "quote": "$473, or about $40 per month, would be the approximate cost"
+  },
+  {
+   "topic": "Override in the amount of $2,085,000",
+   "what_was_recorded": "The override amount was printed on the forecast slide.",
+   "figures_as_printed": [
+    "$2,085,000"
+   ],
+   "quote": "override in the amount of $2,085,000"
+  },
+  {
+   "topic": "Recycling program cost",
+   "what_was_recorded": "The forecast assumption is that recycling is fully covered for the program cost.",
+   "figures_as_printed": [
+    "$15.5K"
+   ],
+   "quote": "recycling = cover full amount of program (inc. $15.5k)"
+  },
+  {
+   "topic": "Personnel and health insurance cost assumptions",
+   "what_was_recorded": "Personnel costs were assumed to rise about 3.5% overall; health insurance and pension were assumed to rise 9 to 10 percent.",
+   "figures_as_printed": [
+    "3.5%",
+    "9 - 10%"
+   ],
+   "quote": "personnel costs- union & non-union- according to contract, about 3.5% overall"
+  },
+  {
+   "topic": "Override as a funding option",
+   "what_was_recorded": "Discussion that now is the time to present an override to voters; no dollar figure was stated in that comment.",
+   "figures_as_printed": [],
+   "quote": "commented that now seems to be the time to present an override to the voters given the state of the town's roadways"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Redistricting maps (opening remarks)",
+   "resolution": "no action",
+   "quote": "early next week, final versions of these maps will be voted out of committee."
+  },
+  {
+   "topic": "Announcements: Yard Waste Days",
+   "resolution": "informational, no action",
+   "quote": "yard waste days - the lunenburg landfill, off of youngs road will be open for consecutive saturdays"
+  },
+  {
+   "topic": "Ratification of new Patrol Officer appointment",
+   "resolution": "no action",
+   "quote": "ratification of appoinment of new patrol officer - no action."
+  },
+  {
+   "topic": "Nashoba Valley Regional Dispatch Executive Committee representative",
+   "resolution": "no action",
+   "quote": "appointment of representative to executive committee of nashoba valley regional dispatch - no action."
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes and warrants reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 10/11/11 and executive session for 10/11/11 reviewed and signed."
+  },
+  {
+   "topic": "Department or Town Manager reports (trash bags, debris)",
+   "resolution": "discussed; agenda item requested for demolition-type debris",
+   "quote": "kerry noted that we received a couple of comments yesterday from residents questioning whether trash still needed"
+  },
+  {
+   "topic": "5-Year Financial Forecast, joint session with Finance Committee",
+   "resolution": "presented; discussion, no action recorded",
+   "quote": "presentation of 5-year financial forecast - joint session with the finance committee"
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed, no action",
+   "quote": "upcoming meeting schedule november 1, 2011 november 8, 2011 november 15, 2011"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Summit Powerpoint presentation (Town of Lunenburg, October 18, 2011)",
+   "where": "list",
+   "quote": "kerry presented the attached powerpoint presentation on the financial summit."
+  },
+  {
+   "name": "Budget calendar",
+   "where": "text",
+   "quote": "referred to the budget calendar (attached) where we are about a month ahead of where we were last year at this time."
+  },
+  {
+   "name": "Packet of detailed assumptions",
+   "where": "text",
+   "quote": "a detailed list of assumptions is provided in the packet"
+  },
+  {
+   "name": "Financial Management Policies & Objectives (adopted by the Board of Selectmen, July 2004)",
+   "where": "text",
+   "quote": "financial management policies & objectives adopted by the board of selectmen july 2004"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting",
+  "financial forecast",
+  "override",
+  "budget",
+  "finance committee",
+  "school budget",
+  "trash and recycling",
+  "yard waste",
+  "appointments",
+  "warrants",
+  "redistricting",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry presented the attached powerpoint presentation on the financial summit."
+ },
+ "dropped_unquoted_by_field": {}
 }

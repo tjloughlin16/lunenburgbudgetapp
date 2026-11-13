@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2016-01-13",
  "docid": "5739",
@@ -11,7 +11,112 @@
   "doc_url": "/docs/meetings/stormwater-task-force/2016-01-13-minutes-5739.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "This is the notice and agenda for the meeting, not the minutes. No votes are recorded. The document does not show what motions were made or what passed/failed during the meeting itself.",
- "cost_usd": 0.0786805
+ "dropped_unquoted": 6,
+ "note": "This text is the posted Notice of Meeting and agenda for the 13 January 2016 meeting, not a record of what happened. It has no recorded motions, votes, outcomes, public comment speakers, dollar figures, or documents list. The member names appear under a 'Name of Member' header with no attendance marks, so attendance is 'not stated'. The MassDEP presentation is listed on the agenda only, so its status is 'not stated'.",
+ "cost_usd": 0.00258492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matthew allison james auge phyllis luck david mac donald john rabbitt jack rodriquenz"
+  },
+  {
+   "name": "James Auge",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matthew allison james auge phyllis luck david mac donald john rabbitt jack rodriquenz"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matthew allison james auge phyllis luck david mac donald john rabbitt jack rodriquenz"
+  },
+  {
+   "name": "David Mac Donald",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matthew allison james auge phyllis luck david mac donald john rabbitt jack rodriquenz"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matthew allison james auge phyllis luck david mac donald john rabbitt jack rodriquenz"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matthew allison james auge phyllis luck david mac donald john rabbitt jack rodriquenz"
+  },
+  {
+   "name": "Fredrick Civian",
+   "role": "Presenter, MASS DEP Stormwater Coordinator",
+   "status": "not stated",
+   "quote": "presentation by fredrick civian, mass dep stormwater coordinator"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "listed on agenda, no outcome recorded",
+   "quote": "one opening for citizen at large to this task force.",
+   "tags": [
+    "vacancy",
+    "citizen at large"
+   ]
+  },
+  {
+   "topic": "Election of Taskforce officers",
+   "resolution": "listed on agenda, no outcome recorded",
+   "quote": "election of taskforce officers",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Presentation by MASS DEP Stormwater Coordinator",
+   "resolution": "listed on agenda, no outcome recorded",
+   "quote": "presentation by fredrick civian, mass dep stormwater coordinator",
+   "tags": [
+    "presentation",
+    "MassDEP",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "listed on agenda; next meeting noted for Feb. 10",
+   "quote": "next meeting currently scheduled for feb. 10.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "stormwater",
+  "task force",
+  "officer election",
+  "citizen at large vacancy",
+  "MassDEP presentation",
+  "meeting schedule",
+  "agenda only"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 6
+ }
 }

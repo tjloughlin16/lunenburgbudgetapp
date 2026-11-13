@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-04-11",
  "docid": "3880",
@@ -12,15 +12,129 @@
  },
  "votes": [
   {
-   "motion": "approve the application for site plan review for 36 Summer Street with conditions",
+   "motion": "Approve the site plan review application for 36 Summer Street with the listed conditions.",
    "moved_by": "K. Chenis",
-   "seconded_by": "D. Prokowiew",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion, k. chenis, to approve the application for site plan review with conditions as noted below , second, d. prokowiew : all aye."
+   "quote": "motion, k. chenis, to approve the application for site plan review with conditions as noted below , second, d. prokowiew : all aye.",
+   "seconded_by": "D. Prokowiew"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The meeting was an information meeting and site plan review approval for a proposed two-story addition (apartments over garage bays) at 36 Summer Street. Five board members were present (Damon McQuaid, Matthew Allison, Kenneth Chenis, Gregory Bittner, David Prokowiew); Adam R. Burney is the Land Use Director, not a voting member.",
- "cost_usd": 0.0877915
+ "note": "The minutes record one motion, passed by 'All aye' with no numeric count printed. No public comment section and no dollar figures appear in the text. Attendance for Peter Kelly is not stated as present; William Hannigan is shown as representing the applicant. The Fire Chief, Sewer Commission and Graves Engineering (GEI) are mentioned but are not attendees.",
+ "cost_usd": 0.00340922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Peter Kelly",
+   "role": "Applicant",
+   "status": "not stated",
+   "quote": "the applicant, peter kelly, was represented by william hannigan, hannigan engineering (he), inc."
+  },
+  {
+   "name": "William Hannigan",
+   "role": "representing the applicant, Hannigan Engineering (HE), Inc.",
+   "status": "present",
+   "quote": "the applicant, peter kelly, was represented by william hannigan, hannigan engineering (he), inc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney to follow up with the Fire Chief on emergency vehicle access at the building rear, as requested by K. Chenis.",
+   "quote": "k. chenis requested a. burney follow -up with the fire chief as to emergency vehicle access at the building rear."
+  },
+  {
+   "decision": "The Plan is to be revised as a result of the evening's meeting, with a signature block added.",
+   "quote": "the plan will be revised as a result of this evening's meeting and a signature block added."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Site plan review, two-story addition at 36 Summer Street (information meeting)",
+   "resolution": "approved with conditions",
+   "tags": [
+    "site plan review",
+    "commercial addition",
+    "apartment",
+    "36 Summer Street"
+   ],
+   "quote": "the information meeting was to hear and discuss a site plan review for a two -story addition to an existing commercial building at 36 summer street."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application",
+   "where": "list",
+   "quote": "documents used at meeting: application plan amended to 4/11/16 site photographs gei review letter dtd 4/8/16"
+  },
+  {
+   "name": "Plan amended to 4/11/16",
+   "where": "list",
+   "quote": "documents used at meeting: application plan amended to 4/11/16 site photographs gei review letter dtd 4/8/16"
+  },
+  {
+   "name": "Site Photographs",
+   "where": "list",
+   "quote": "documents used at meeting: application plan amended to 4/11/16 site photographs gei review letter dtd 4/8/16"
+  },
+  {
+   "name": "GEI Review Letter dtd 4/8/16",
+   "where": "list",
+   "quote": "documents used at meeting: application plan amended to 4/11/16 site photographs gei review letter dtd 4/8/16"
+  }
+ ],
+ "tags": [
+  "site plan review",
+  "36 Summer Street",
+  "commercial building addition",
+  "apartment",
+  "stormwater",
+  "information meeting",
+  "conditions of approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

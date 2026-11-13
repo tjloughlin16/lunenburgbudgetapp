@@ -1,0 +1,591 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-12-10",
+ "video_id": "vr_lR695a1k",
+ "video_url": "https://www.youtube.com/watch?v=vr_lR695a1k",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-12-10-vr_lR695a1k.json",
+  "sha256": "78bcf38161c531e50222741854b261a9e50fb51adf8909f62dd85aac2feb9bc0",
+  "caption_lines": 147,
+  "segments": 1133
+ },
+ "recording": {
+  "duration_s": 3132,
+  "duration": "0:52",
+  "spoken_chars": 34974,
+  "words_approx": 5829
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12102013-4869",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-12-10-agenda-4869.txt",
+   "path": "sources/meetings/select-board/2013-12-10-agenda-4869.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12102013-4869",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-12-10-minutes-4869.txt",
+   "path": "sources/meetings/select-board/2013-12-10-minutes-4869.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:53:16Z",
+  "cost_usd": 0.21647439999999998
+ },
+ "minutes": {
+  "headline": "Board approved the school-project debt exclusion ballot question and special town meeting warrant, plus annual business licenses.",
+  "summary": "The board voted on a short-term bond anticipation note for the school feasibility study, the ballot question and the special town meeting warrant for the new Middle High School debt exclusion, and a long list of annual business licenses. A resident asked about total interest cost and urged clearer wording that the ballot question is a debt exclusion, not an override. The board also accepted a historical commission resignation and heard committee reports.",
+  "attendees": [
+   {
+    "name_as_heard": "Shelley McKay",
+    "role": "Treasurer collector"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "chair",
+    "role": "chair"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 2394,
+    "speaker_as_heard": "Clarence Floyd",
+    "stated_role": "resident, 720 Goodrich Street",
+    "topic": "Asked about total interest cost of the school bond over 20 and 30 years, staffing impact, timing of state payments, how the term was chosen, and asked that the ballot question be explained as a debt exclusion rather than an override."
+   }
+  ],
+  "tags": [
+   "debt",
+   "fees",
+   "high-school",
+   "middle-school",
+   "msba",
+   "planning-and-zoning",
+   "public-comment",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 152,
+    "motion": "Approve the bond anticipation note for the feasibility study as awarded by the treasurer",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 477,
+    "motion": "Approve the ballot question as printed",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 734,
+    "motion": "Approve the special town meeting warrant as printed",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 882,
+    "motion": "Approve the base license for Lakeview",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1136,
+    "motion": "Approve common victualler licenses as read",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1223,
+    "motion": "Approve automatic amusement device licenses",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1331,
+    "motion": "Approve class one motor vehicle licenses as read",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1435,
+    "motion": "Approve class two motor vehicle licenses",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1457,
+    "motion": "Approve class three licenses",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3107,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 107,
+    "topic": "Bond anticipation note for feasibility study",
+    "what_was_said": "The treasurer reported the note was awarded to the lowest bidder and asked for the board's vote.",
+    "figures_as_heard": [
+     "two hundred and twenty thousand",
+     "0.50 percent",
+     "452.22"
+    ]
+   },
+   {
+    "t": 1690,
+    "topic": "Payroll and accounts payable warrants",
+    "what_was_said": "Warrants were read into the record.",
+    "figures_as_heard": [
+     "6130 dollars",
+     "225 258.53"
+    ]
+   },
+   {
+    "t": 1927,
+    "topic": "MSBA reimbursement rate",
+    "what_was_said": "The reimbursement rate was stated, including a bonus tied to a development, and the chair was authorized to sign.",
+    "figures_as_heard": [
+     "59.11 percent",
+     "one and a half percent"
+    ]
+   },
+   {
+    "t": 2011,
+    "topic": "Total school project budget and maximum facilities grant",
+    "what_was_said": "The total project budget and state grant maximum were stated.",
+    "figures_as_heard": [
+     "72 million 975 321 dollars",
+     "36 million one hundred and ninety thousand eight hundred and seventy dollars"
+    ]
+   },
+   {
+    "t": 2414,
+    "topic": "Interest on school bond",
+    "what_was_said": "A resident asked for interest cost; the town manager gave an estimate for a 30-year term and said it is included in the annual household impact.",
+    "figures_as_heard": [
+     "36.65 million",
+     "about 32 million dollars",
+     "36.1 million"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1969,
+    "decision": "Board agreed the chair may sign the MSBA reimbursement rate certification and project documents."
+   },
+   {
+    "t": 2209,
+    "decision": "A letter of thanks to be drawn up for the departing historical commission chair."
+   },
+   {
+    "t": 2499,
+    "decision": "A slide on total cost including interest to be prepared for town meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 84,
+    "t_end": 265,
+    "topic": "Bond anticipation note award",
+    "resolution": "voted",
+    "tags": [
+     "debt",
+     "msba"
+    ]
+   },
+   {
+    "t_start": 265,
+    "t_end": 526,
+    "topic": "Ballot question for school debt exclusion",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "msba",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 526,
+    "t_end": 756,
+    "topic": "Special town meeting warrant",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 756,
+    "t_end": 1667,
+    "topic": "Annual business licenses",
+    "resolution": "voted",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 1667,
+    "t_end": 1720,
+    "topic": "Minutes and warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1720,
+    "t_end": 1927,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "msba"
+    ]
+   },
+   {
+    "t_start": 1927,
+    "t_end": 2104,
+    "topic": "Town manager report: MSBA documents",
+    "resolution": "informational",
+    "tags": [
+     "msba",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 2104,
+    "t_end": 2394,
+    "topic": "Historical commission resignation",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2394,
+    "t_end": 3107,
+    "topic": "Public comment on school project cost and ballot wording",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "debt",
+     "msba"
+    ]
+   },
+   {
+    "t_start": 3107,
+    "t_end": 3127,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts were given only as ayes with none opposed; no tallies.",
+   "Gap in captions between roughly 219 and 265 while forms were signed."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 2835,
+    "kind": "condition",
+    "about": "A resident said voters may confuse the debt exclusion with an override and vote against.",
+    "who": "a resident",
+    "words_as_heard": "otherwise if they get confused and they're thinking that they would vote in a positive fashion for this building and they started to think it's a two and a half override they'll vote against it"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 286,
+    "name_as_heard": "the warrant",
+    "kind": "warrant article",
+    "words_as_heard": "made a copy of the warrant in the the warrant contains both the Articles and the ballot question"
+   },
+   {
+    "t": 1927,
+    "name_as_heard": "MSBA project scope and budget reimbursement rate certification",
+    "kind": "contract or agreement",
+    "words_as_heard": "the msba project scope and budget reimbursement rate certification"
+   },
+   {
+    "t": 2126,
+    "name_as_heard": "resignation letter from Patrick Slattery",
+    "kind": "letter or email",
+    "words_as_heard": "we have a resignation from the historic Commission Patrick Slattery"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-project-borrowing",
+    "title": "School project borrowing",
+    "question": "What will the new school cost in total with interest, and what does the 30-year term do to the tax bill?",
+    "t": 2414,
+    "words_as_heard": "what's the interest going to cost us for a 30-year term and what's the interest going to cost us for a 20-year term",
+    "data_in_play": [
+     "36.65 million",
+     "about 32 million dollars",
+     "72 million 975 321 dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved the ballot question for the new Middle High School debt exclusion as printed.",
+    "t": 477
+   },
+   {
+    "line": "The board approved the special town meeting warrant for the school project as printed.",
+    "t": 734
+   },
+   {
+    "line": "The board approved the bond anticipation note for the school feasibility study, as awarded by the treasurer to the lowest bidder.",
+    "t": 152
+   },
+   {
+    "line": "The board approved annual business licenses, including common victualler, amusement device and class one, two and three licenses.",
+    "t": 1136
+   },
+   {
+    "line": "The board agreed the chair may sign the MSBA reimbursement rate certification and project documents.",
+    "t": 1969
+   }
+  ],
+  "why_it_matters": [
+   "The ballot question and warrant set up the vote residents will be asked to take on a debt exclusion, which raises property tax bills for the life of the school bond.",
+   "A resident asked that the ballot wording say plainly it is a debt exclusion, not an override, and the interest cost over the bond term was raised as a figure voters may want to see."
+  ],
+  "watch_next": [
+   "A slide on total cost including interest is to be prepared for town meeting.",
+   "The special town meeting and the ballot vote on the school debt exclusion."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:53:22Z",
+   "cost_usd": 0.0230811
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12102013-4869",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-12-10-minutes-4869.txt",
+   "path": "sources/meetings/select-board/2013-12-10-minutes-4869.pdf"
+  },
+  "official_sha256": "351b17399b4e09e53cce886017ddbab531044409587149f5fb8a1a79e7a97557",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree closely on the nine licensing, ballot, warrant and note votes, and on the main school-project figures. Differences are mostly caption errors in names and numbers, plus a few items only one record has; the official minutes give the BAN vote and the chair's signature on the MSBA certification in more detail than ours.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 1,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Bond anticipation note vote",
+    "t": 152,
+    "ours": "Approve the bond anticipation note for the feasibility study as awarded by the treasurer — passed",
+    "official": "mr. ebersole moved to approve the bond anticipation note as provided. mr. matthews second. on vote, motion carried, 4 in favor, 0 opposed.",
+    "note": "Same vote, passed in both; official adds the 4-0 count and mover/seconder."
+   },
+   {
+    "kind": "agree",
+    "about": "Ballot question vote",
+    "t": 477,
+    "ours": "Approve the ballot question as printed — passed",
+    "official": "mr. matthews moved to approve the ballot question as printed. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Special town meeting warrant vote",
+    "t": 734,
+    "ours": "Approve the special town meeting warrant as printed — passed",
+    "official": "mr. matthews moved to approve the special town meeting warrant as printed. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Lakeview base license vote",
+    "t": 882,
+    "ours": "Approve the base license for Lakeview — passed",
+    "official": "mr. toale moved to approve the base license for lakeview golf driving range. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Common victualler licenses vote",
+    "t": 1136,
+    "ours": "Approve common victualler licenses as read — passed",
+    "official": "mr. matthews moved to approve the common victuallers licenses as read. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Automatic amusement device licenses vote",
+    "t": 1223,
+    "ours": "Approve automatic amusement device licenses — passed",
+    "official": "mir. ebersole moved to approve the automatic amusement device licenses as read. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Class 1 motor vehicle licenses vote",
+    "t": 1331,
+    "ours": "Approve class one motor vehicle licenses as read — passed",
+    "official": "mr. matthews moved to approve the class 1 motor vehicle licenses as read. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Class 2 motor vehicle licenses vote",
+    "t": 1435,
+    "ours": "Approve class two motor vehicle licenses — passed",
+    "official": "mr. ebersole moved to approve the class 2 motor vehicle licenses as read. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Class 3 licenses vote",
+    "t": 1457,
+    "ours": "Approve class three licenses — passed",
+    "official": "mr. ebersole moved to approve the class 3 motor vehicle licenses as read. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed.",
+    "note": "Same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "BAN interest amount",
+    "t": 107,
+    "ours": "two hundred and twenty thousand, 0.50 percent, 452.22",
+    "official": "the note will be due on may 15, 2014 and the total interest paid will be $452.22",
+    "note": "Principal, rate and interest match the official figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants total",
+    "t": 1690,
+    "ours": "6130 dollars, 225 258.53",
+    "official": "12/10/2013 #w12p-14m 12/10/2013 #w30-14 $6130.00 $225,258.53",
+    "note": "Same amounts."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Maximum facilities grant",
+    "t": 2011,
+    "ours": "36 million one hundred and ninety thousand eight hundred and seventy dollars",
+    "official": "with a maximum total facilities grant of $36, 190,870.",
+    "official_reading": "$36,190,870",
+    "note": "Spoken words equal $36,190,870; the official's formatting has a stray space."
+   },
+   {
+    "kind": "agree",
+    "about": "Total project budget",
+    "t": 2011,
+    "ours": "72 million 975 321 dollars",
+    "official": "total project budget for the school project which is $72,975,321.",
+    "note": "Same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Interest on school bond / principal question",
+    "t": 2414,
+    "ours": "36.65 million, about 32 million dollars, 36.1 million",
+    "official": "ms. speidel informed mr. floyd that the interest cost over 30 years is approximately $32m which will be added to the",
+    "note": "$36.65M question, $32M interest match; our 36.1 million is likely the $36M principal confirmed in the official."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Treasurer name",
+    "ours": "Shelley McKay (Treasurer collector)",
+    "official": "ms. mccaie spoke to the bos to ask their approval for the borrowing of a short term bond anticipation note",
+    "official_reading": "Shelley McCaie",
+    "note": "Same person, name misheard."
+   },
+   {
+    "kind": "agree",
+    "about": "MSBA certification signing",
+    "t": 1969,
+    "ours": "Board agreed the chair may sign the MSBA reimbursement rate certification and project documents.",
+    "official": "ms. speidel presented to the chairperson for signature the msba project scope & budget reimbursement rate certification.",
+    "note": "Official records presentation for signature, not a board agreement; roughly consistent but check whether a vote was taken."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Townsend net metering IMA continued",
+    "ours": "",
+    "official": "ima with town of townsend for sale of net metering credits: continued to the 12/17/2013 bos meeting.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sewer delinquent bills",
+    "ours": "",
+    "official": "approximately $53,000 worth of delinquent sewer bills to be added to the tax bills",
+    "note": "Our minutes have no mention of this $53,000 item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Remaining licenses deferred",
+    "ours": "",
+    "official": "the rest of the alcohol licenses will be on the bos 12/17/2013 agenda.",
+    "note": "Deferral is not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Historical commission chair resignation",
+    "ours": "A letter of thanks to be drawn up for the departing historical commission chair.",
+    "official": "mr. alonzo accepted the resignation with regret.",
+    "note": "Official records the resignation accepted, with no letter of thanks; ours records the letter but not the acceptance. Check the recording for the letter."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Slide on total cost including interest",
+    "t": 2499,
+    "ours": "A slide on total cost including interest to be prepared for town meeting.",
+    "official": "",
+    "note": "Official only says interest will be added to total cost for the special town meeting; no slide mentioned."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendees: chair and town manager names",
+    "ours": "town manager (town manager); chair (chair)",
+    "official": "with chair person tom alonzo, dave matthews, jamie toale, robert ebersole and town manager kerry speidel.",
+    "official_reading": "Tom Alonzo (Chair), Kerry Speidel (Town Manager)",
+    "note": "Ours gives only roles; official names all board members present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:54:26Z",
+   "cost_usd": 0.0564171
+  }
+ }
+}

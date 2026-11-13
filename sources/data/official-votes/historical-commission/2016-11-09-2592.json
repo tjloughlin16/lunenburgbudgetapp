@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-11-09",
  "docid": "2592",
@@ -12,23 +12,140 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from October 4, 2016",
+   "motion": "Approve the minutes of October 4, 2016.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes were approved for october 4, 2016."
+   "quote": "minutes approval: minutes were approved for october 4, 2016."
   },
   {
-   "motion": "Approve the demolition request for 37 Burrage Street",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve the demolition request for 37 Burrage Street under the six month demolition delay plan.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "voted: the demolition request for 37 burrage street is approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes do not record who moved or seconded either motion. No vote counts are provided. The demolition delay discussion and cemetery tour were discussed but not voted on.",
- "cost_usd": 0.0856565
+ "note": "The minutes record the Burrage Street demolition approval with no vote count or mover/seconder. The October 4, 2016 minutes approval gives no motion, mover, or count, so it is recorded as a procedural approval with outcome passed. No adjournment motion is printed, only the adjournment time, so no adjournment vote is recorded. No dollar figures, public comment, or document list appear in the text.",
+ "cost_usd": 0.00285002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath"
+  },
+  {
+   "name": "Lois Lewis",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present : becky lantry, lois lewis, cullen dwyer and richard mcgrath"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Richard McGrath will visit the Burrage Street property and take photographs before its demolition.",
+   "quote": "richard mcgrath will visit this property at burrage street, and take photographs prior to its demolition."
+  },
+  {
+   "decision": "The building inspector, Michael Sauvageau, will be notified that demolition delay review does not apply to 925 Chase Road, 675 Reservoir Road, 9 Electric Avenue and 70 Oak Ridge Road.",
+   "quote": "the building inspector, michael sauvageau, will be notified demolition delay review does not apply to these properties."
+  },
+  {
+   "decision": "Lunenburg Ledger Historically Speaking articles were assigned: December to Richard McGrath, January to Cullen Dwyer, February to Becky Lantry, March to Lois Lewis.",
+   "quote": "lunenburg ledger historically speaking articles: december richard mcgrath january cullen dwyer february becky lantry march lois lewis"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of October 4, 2016",
+   "quote": "minutes approval: minutes were approved for october 4, 2016.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action",
+   "quote": "there was no correspondence received.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Historical markers in village center",
+   "resolution": "discussed, no action",
+   "quote": "a discussion ensued for historical markers to be placed on historical buildings in the village center district.",
+   "tags": [
+    "historic markers",
+    "village center",
+    "Boy Scouts"
+   ]
+  },
+  {
+   "topic": "Demolition delay request, 37 Burrage Street",
+   "resolution": "approved",
+   "quote": "voted: the demolition request for 37 burrage street is approved.",
+   "tags": [
+    "demolition delay",
+    "Burrage Street"
+   ]
+  },
+  {
+   "topic": "Demolition delay properties not applicable",
+   "resolution": "noted; building inspector to be notified",
+   "quote": "demolition delay requests have been filed for and do not apply to the following properties:",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Cemetery tour suggestion",
+   "resolution": "suggested, no action recorded",
+   "quote": "richard mcgrath has suggested a tour of the three cemeteries, north, south and fish street, would be advisable to determine their present status.",
+   "tags": [
+    "cemeteries"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger Historically Speaking articles",
+   "resolution": "assigned by month",
+   "quote": "lunenburg ledger historically speaking articles: december richard mcgrath january cullen dwyer february becky lantry march lois lewis",
+   "tags": [
+    "newspaper articles",
+    "Ledger"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "historic markers",
+  "cemeteries",
+  "Lunenburg Ledger articles",
+  "Burrage Street"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

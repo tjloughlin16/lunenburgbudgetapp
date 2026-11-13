@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-11-22",
  "docid": "2797",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "accept September 18, 2014 minutes as revised",
+   "motion": "Approve the minutes of September 18, 2014 as revised (motion by Gare, second by Dick).",
+   "moved_by": "Gare",
+   "seconded_by": "Dick",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion from gare to add sept 18 minutes, second by dick, voted all in favor:"
+  },
+  {
+   "motion": "Accept the minutes of September 18, 2014 as revised.",
    "moved_by": "Dick",
    "seconded_by": "Gare",
    "outcome": "passed",
@@ -20,7 +28,7 @@
    "quote": "september 18, 2014 motion to accept minutes as revised, by dick, second by gare. voted all in favor."
   },
   {
-   "motion": "accept October 16, 2014 minutes as revised",
+   "motion": "Accept the minutes of October 16, 2014 as revised.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
@@ -28,7 +36,7 @@
    "quote": "october 16, 2014 motion to accept minutes as revised, by gare, second by dick. voted all in favor."
   },
   {
-   "motion": "accept October 27, 2014 minutes as revised",
+   "motion": "Accept the minutes of October 27, 2014 as revised.",
    "moved_by": "Dick",
    "seconded_by": "Gare",
    "outcome": "passed",
@@ -36,7 +44,7 @@
    "quote": "october 27, 2014 motion to accept minutes as revised, by dick, second by gare. voted all in favor."
   },
   {
-   "motion": "library closes at 3 pm on 12/24 and 12/31",
+   "motion": "The library closes at 3 pm on 12/24 and 12/31.",
    "moved_by": "Gare",
    "seconded_by": "Dick",
    "outcome": "passed",
@@ -44,7 +52,7 @@
    "quote": "motion by gare that the library closes at 3 pm on 12/24 and 12/31; second by dick. voted all in favor."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jean",
    "seconded_by": "Dick",
    "outcome": "passed",
@@ -53,6 +61,275 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11626750000000001
+ "note": "The request gives a meeting date of 2014-11-22, but the minutes are for a meeting held November 20, 2014. Names such as 'Terry' and 'Teresa' appear to refer to the same person (Teresa Hathaway, Interim Director), but the minutes do not say so, so this is inferred. Jack Rodriquenz, Jim Breault, Mr Polanski and Jane Crook are named but did not take part in the meeting, so they are left out of attendees. The minutes give no vote counts, only 'voted all in favor', so outcomes are recorded as 'passed'. The minutes record the September 18 minutes approval twice, with different movers; both are recorded as separate motions. No dollar figure is approved in the minutes; the only dollar figure is an uncertain $15k estimate.",
+ "cost_usd": 0.0056941199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jean Raboin",
+   "role": "",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:52 p.m. by jean raboin."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz (via skype, in china), gare thompson, robin venezia, lars widstrand,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "via Skype, in China",
+   "status": "remote",
+   "quote": "harry kubetz (via skype, in china)"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz (via skype, in china), gare thompson, robin venezia, lars widstrand,"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz (via skype, in china), gare thompson, robin venezia, lars widstrand,"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "respectfully submitted, lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Teresa Hathaway",
+   "role": "Interim Director",
+   "status": "present",
+   "quote": "teresa hathaway (interim director), caroline griffis (finance committee representative), bob ebersole (selectmen"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Finance Committee Representative",
+   "status": "present",
+   "quote": "caroline griffis (finance committee representative), bob ebersole (selectmen"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen representative",
+   "status": "present",
+   "quote": "bob ebersole (selectmen representative)"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: susan visser, martha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: susan visser, martha moore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Teresa to talk with other towns' libraries about options and role of their Teen and Children Librarians (duties, pay range) in anticipation of Kate's retirement.",
+   "quote": "teresa to talk with other towns' libraries about options/role of their teen and children librarians"
+  },
+  {
+   "decision": "Terry to ask staff and Martha about a Christmas gesture for staff and bring it to Friends for funding.",
+   "quote": "terry to ask staff and martha and bring to friends for funding."
+  },
+  {
+   "decision": "Building Reuse Committee and Planning Board to be invited to the January meeting to discuss the library neighborhood.",
+   "quote": "building reuse committee and planning board to be invited to our january meeting"
+  },
+  {
+   "decision": "Next meeting set for December 18, at 6:45 p.m. in the Sudolnik room.",
+   "quote": "december 18, at 6:45 p.m. in the sudolnik room."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget FY14-15 operating expenditures",
+   "what_was_recorded": "Director reported water and electrical expenditures are on target for the year.",
+   "figures_as_printed": [],
+   "quote": "numbers show that water and electrical expenditures are on target for the year."
+  },
+  {
+   "topic": "Capital plan: furnace igniter module",
+   "what_was_recorded": "Furnace igniter module (firing gun) to be replaced, possibly a $15k item.",
+   "figures_as_printed": [
+    "$15k"
+   ],
+   "quote": "possibly a $15k item."
+  },
+  {
+   "topic": "FY15-16 budget planning",
+   "what_was_recorded": "Director has started collecting data for the FY15-16 budget plan; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "terry has started to collect data to put the plan together."
+  },
+  {
+   "topic": "Friends endowment group CDs",
+   "what_was_recorded": "Maturing CDs to be reinvested with Edward Jones, the new financial advisor.",
+   "figures_as_printed": [],
+   "quote": "maturing cds to be reinvested with edward jones."
+  },
+  {
+   "topic": "Staff Christmas funding",
+   "what_was_recorded": "Staff gift for Christmas to be brought to Friends of LPL for funding; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "terry to ask staff and martha and bring to friends for funding."
+  },
+  {
+   "topic": "Library neighborhood driveway",
+   "what_was_recorded": "Driveway into elementary school was paid for by Friends (related to Brooks House discussion).",
+   "figures_as_printed": [],
+   "quote": "driveway into elementary school - paid for by friends"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved (Sept 18, Oct 16, Oct 27, 2014)",
+   "quote": "motion from gare to add sept 18 minutes, second by dick, voted all in favor:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "presented; no action",
+   "quote": "director's report: presented by teresa hathaway",
+   "tags": [
+    "director",
+    "report"
+   ]
+  },
+  {
+   "topic": "Personnel: Teen and Children Librarians",
+   "resolution": "director to research other libraries",
+   "quote": "teresa to talk with other towns' libraries about options/role of their teen and children librarians",
+   "tags": [
+    "personnel",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Programming",
+   "resolution": "no action; December and early 2015 events noted",
+   "quote": "trustees expressed positive opinions about the ongoing small art exhibit.",
+   "tags": [
+    "programming",
+    "events"
+   ]
+  },
+  {
+   "topic": "Capital planning",
+   "resolution": "discussed; facility request scheduled",
+   "quote": "plan is available on-line",
+   "tags": [
+    "capital planning",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "FY15-16 budget planning",
+   "resolution": "no action",
+   "quote": "terry has started to collect data to put the plan together.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Friends of LPL updates",
+   "resolution": "reported; no action",
+   "quote": "new friends of lpl president is jane crook.",
+   "tags": [
+    "friends",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Future ideas for LPL",
+   "resolution": "discussed; no action",
+   "quote": "ideas from many sources condensed by gare and lars.",
+   "tags": [
+    "planning",
+    "anniversary"
+   ]
+  },
+  {
+   "topic": "Holiday closing hours",
+   "resolution": "approved: close at 3 pm on 12/24 and 12/31",
+   "quote": "motion by gare that the library closes at 3 pm on 12/24 and 12/31; second by dick. voted all in favor.",
+   "tags": [
+    "hours",
+    "holidays"
+   ]
+  },
+  {
+   "topic": "Staff Christmas",
+   "resolution": "Terry to ask staff and bring to Friends for funding",
+   "quote": "terry to ask staff and martha and bring to friends for funding.",
+   "tags": [
+    "staff",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for December 18, 6:45 p.m.",
+   "quote": "december 18, at 6:45 p.m. in the sudolnik room.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20 p.m.",
+   "quote": "jean moved to adjourn; dick second, voted all in favor @ 8:20 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for November 20, 2014",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for november 20, 2014"
+  },
+  {
+   "name": "Capital plan (available on-line)",
+   "where": "text",
+   "quote": "plan is available on-line"
+  },
+  {
+   "name": "“Future ideas for LPL” summary",
+   "where": "text",
+   "quote": "ideas from many sources condensed by gare and lars."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "personnel",
+  "programming",
+  "holiday hours",
+  "capital planning",
+  "Friends of LPL",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

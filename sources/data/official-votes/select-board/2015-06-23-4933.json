@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-06-23",
  "docid": "4933",
@@ -12,120 +12,768 @@
  },
  "votes": [
   {
-   "motion": "Amend the Town of Lunenburg Traffic Rules and Orders to add no-parking, handicapped parking, and turn-around provisions on Holman Street",
+   "motion": "Amend the Town of Lunenburg Traffic Rules and Orders to add no parking, one handicapped space and a turnaround on Holman Street at the Mulpus Brook Bridge.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: b. ebersole 2nd: p. luck to amend the town of lunenburg traffic rules and orders as follows: to schedule i - no parking add - on the east side of holman street at a point beginning at the mulpus brook bridge thence to a point 400 feet south. add - on the west side of holman street at a point beginning at the mulpus brook bridge thence to a point 60 feet south. to schedule 1- handicapped parking add - on holman street at the mulpus brook bridge; one handicapped parking space as indicated by a signs. to schedule i-a off street parking add - at a point on the east side of holman street 40 feet south of the mulpus brook bridge, \"no parking turn around only,\" as indicated by signs. vote: all in favor"
+   "procedural": false,
+   "quote": "motion: b. ebersole 2nd: p. luck to amend the town of lunenburg traffic rules and orders as follows:"
   },
   {
-   "motion": "Dedicate the meeting room in the Planning Board office as the Marion Benson Meeting Room",
+   "motion": "Dedicate the meeting room in the Planning Board office as the Marion Benson Meeting Room.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed 3-1",
-   "procedural": true,
-   "quote": "motion: b. ebersole 2\"d: p. luck to dedicate the meeting room in the planning board office as the marion benson meeting room discussion: mr. alonzo stated he is very appreciative of the years and projects that ms. benson served, adding she is the model for volunteerism, but is not in favor of naming things after individuals. vote: 3 in favor, 1 abstain"
+   "outcome": "passed, 3 in favor, 1 abstain",
+   "procedural": false,
+   "quote": "to dedicate the meeting room in the planning board office as the marion benson meeting room"
   },
   {
-   "motion": "Adopt the cash reconciliation policy as presented by the Town Manager",
+   "motion": "Adopt the cash reconciliation policy as presented by the Town Manager.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: b. ebersole 2\"d: p. luck to adopt the cash reconciliation policy as presented by the town manager mr. alonzo asked if there were any checks and balances other than the treasurer/collector and accountant. who oversees their work? ms. speidel stated each department reconciles the turnover for their department, the treasurer then checks the turnover for accuracy. the checks and balances are between the treasurer/collector and the accountant each month during the year; town manager also reviews during the year and at the end of the fiscal year we have the independent audit review. vote: all in favor"
+   "procedural": false,
+   "quote": "to adopt the cash reconciliation policy as presented by the town manager"
   },
   {
-   "motion": "Award a bond anticipation note dated June 29, 2015 and due on January 28, 2016 to Eastern Bank in the amount of $725,000 with an interest rate of .075%",
+   "motion": "Award a bond anticipation note dated June 29, 2015 and due January 28, 2016 to Eastern Bank for $725,000 at .075%.",
    "moved_by": "B. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2°°: t. alonzo to award a bond anticipation note dated june 29, 2015 and due on january 28, 2016 to eastern bank in the amount of $725,000 with an interest rate of .075% vote: all in favor"
+   "quote": "to award a bond anticipation note dated june 29, 2015 and due on january 28, 2016 to eastern bank in the amount of $725,000 with an interest rate of .075%"
   },
   {
-   "motion": "Ratify the Town Manager appointments as presented",
-   "moved_by": "T. Alonzo",
+   "motion": "Ratify the Town Manager annual appointments as presented.",
+   "moved_by": "I. Alonzo",
    "seconded_by": "P. Luck",
-   "outcome": "passed 3-1",
-   "procedural": true,
-   "quote": "motion; i. alonzo to ratify the town manager appointments as presented 2\"d: p. luck ===page 6=== mr. ebersole opposed the appointment of the animal control officer for the same reason he has cited for the last two years. he stated it is based on the work involved, his direct observation and communications from many residents, all of which he has communicated to the town manager. vote: 3 in fav",
-   "quote_taken_from_text": true
+   "outcome": "passed, 3 in favor, 1 opposed",
+   "procedural": false,
+   "quote": "to ratify the town manager appointments as presented"
   },
   {
-   "motion": "Ratify the fulltime police officer appointments as listed",
+   "motion": "Ratify the full-time police appointments as listed.",
    "moved_by": "B. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: b. ebersole 2\": t. alonzo to ratify the fulltime appointments as listed vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the fulltime appointments as listed vote: all in favor"
   },
   {
-   "motion": "Ratify the reserve police officer appointments as listed",
+   "motion": "Ratify the reserve police appointments as listed.",
    "moved_by": "T. Alonzo",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: t. alonzo 2nd: b. ebersole to ratify the fulltime appointments as listed vote: all in favor"
   },
   {
-   "motion": "Ratify the appointments of special police officers from Shirley and Townsend as listed",
+   "motion": "Ratify the Shirley and Townsend appointments as listed as Special Officers.",
    "moved_by": "T. Alonzo",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to ratify the appointments as listed as special officers 2nd: b. ebersole vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointments as listed as special officers"
   },
   {
-   "motion": "Amend Ruth Anderson and Karen Kemp's terms as Board of Registrar as presented by Town Manager",
+   "motion": "Amend the terms of Ruth Anderson and Karen Kemp as presented by the Town Manager.",
    "moved_by": "B. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: b. ebersole 2\"': t. alonzo to amend ruth anderson and karen kemp's terms as presented by town manager vote: all in favor"
+   "procedural": false,
+   "quote": "to amend ruth anderson and karen kemp's terms as presented by town manager vote: all in favor"
   },
   {
-   "motion": "Appoint Stanley Young and Kevin Rice as Constables",
+   "motion": "Appoint Stanley Young and Kevin Rice as Constables.",
    "moved_by": "B. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: b. ebersole to appoint stanley young and kevin rice as constables 2nd: t. alonzo vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint stanley young and kevin rice as constables"
   },
   {
-   "motion": "Appoint Richard McGrath and Rebecca Lantry to the Historical Commission with a term to expire June 30, 2018",
+   "motion": "Appoint Richard McGrath and Rebecca Lantry to the Historical Commission.",
    "moved_by": "T. Alonzo",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo june 30, 2018 to appoint richard mcgrath and rebecca lantry to the historical commission with a term to expire 2nd: b. ebersole vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint richard mcgrath and rebecca lantry to the historical commission with a term to expire"
   },
   {
-   "motion": "Appoint Michael Barney, Gregory Roy, Brian Frank and Gregory Bittner to School Building Committee with a term to expire June 30, 2016",
+   "motion": "Appoint eight named individuals as Public Weighers for P. J. Keating, term to June 30, 2016.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "B. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint richard reynolds, erin morin, brian contois, jay vallierre, britany woodhouse, bruce"
+  },
+  {
+   "motion": "Appoint Michael Barney, Gregory Roy, Brian Frank and Gregory Bittner (Planning Board Representative) to the School Building Committee, term to June 30, 2016.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: p. luck to appoint michael barney, gregory roy, brian frank and gregory bittner (planning board representative) to school building committee with a term to expire june 30, 2016 vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint michael barney, gregory roy, brian frank and gregory bittner"
   },
   {
-   "motion": "Appoint Jean Larkin as Town Pound Keeper with a term to expire June 30, 2016",
+   "motion": "Appoint Jean Larkin as Town Pound Keeper, term to June 30, 2016.",
+   "moved_by": "B. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint jean larkin as town pound keeper with a term to expire june 30, 2016"
+  },
+  {
+   "motion": "Adjourn the meeting at 10:16 p.m.",
    "moved_by": "B. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: b. ebersole 2nd: t. alonzo to appoint jean larkin as town pound keeper with a term to expire june 30, 2016 vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "B. Ebersole",
-   "seconded_by": "T. Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: b. ebersole to adjourn the meeting at 10:16 p.m. 2'd:t. alonzo vote: all in favor"
+   "quote": "to adjourn the meeting at 10:16 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR'd via macOS Vision. All text readable. No apparent voting issues or missing votes in recorded motions.",
- "cost_usd": 0.1235565
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) of printed minutes, with some garbling. Not a scan missing votes: all recorded votes are listed. Print garbles noted: 'Motion; I. Alonzo' (moved_by recorded as printed, likely T. Alonzo); 'DP W Director' as printed; 'July 215 meeting' as printed; the Historical Commission term line is out of order. Carl Luck is printed as 'Chair Carl Luck' of the Sewer Commission, distinct from Phyllis Luck. The 'Public Comment' blocks include Board members' remarks (Alonzo) as printed. Some attendance statuses ('present') are inferred from speaking or presenting. The minutes give no transfers.",
+ "cost_usd": 0.01804572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member and town manager kerry speidel."
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member and town manager kerry speidel."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with jamie toale, chair, robert ebersole, vice chair; thomas alonzo, clerk; phyllis luck, member and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "paula bertram, member, was not present."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair carl luck thanked the board for the opportunity to present tonight."
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief jim marino and dp w director jack rodriguenz were present for the discussion."
+  },
+  {
+   "name": "Jack Rodriguenz",
+   "role": "DP W Director",
+   "status": "present",
+   "quote": "chief jim marino and dp w director jack rodriguenz were present for the discussion."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "mr. toale recognized land use director adam burney."
+  },
+  {
+   "name": "Elaine Mroz",
+   "role": "Resident, 64 Chestnut Street",
+   "status": "present",
+   "quote": "resident elaine mroz of 64 chestnut street, presented concerning her property that abuts marshall park."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, stepped up to the podium and asked the board to respond to ms. mroz's situation."
+  },
+  {
+   "name": "Paul Michaud",
+   "role": "9 Pratt Street",
+   "status": "present",
+   "quote": "paul michaud, 9 pratt street, stated their street was originally included in phase i"
+  },
+  {
+   "name": "Lorrie Kunz",
+   "role": "10 Rennie Street",
+   "status": "present",
+   "quote": "lorrie kunz, 10 rennie street, stated we cannot change this project because of town meeting vote"
+  },
+  {
+   "name": "Beverly Santora",
+   "role": "18 Pratt Street",
+   "status": "present",
+   "quote": "beverly santora, 18 pratt street, stated she came to the town three years ago because she needed a new septic"
+  },
+  {
+   "name": "Bernie Forget",
+   "role": "120 Pratt Street",
+   "status": "present",
+   "quote": "bernie forget, 120 pratt street, stated he received one letter about putting in the sewer extension."
+  },
+  {
+   "name": "Stephen Roy",
+   "role": "78 Pratt Street",
+   "status": "present",
+   "quote": "stephen roy, 78 pratt street, stated the costs were not presented to them at the time of the tm vote."
+  },
+  {
+   "name": "Paul Luria",
+   "role": "63 Pratt Street",
+   "status": "present",
+   "quote": "paul luria, 63 pratt street, stated the vote is completely confusing."
+  },
+  {
+   "name": "Paula Cookson- Luria",
+   "role": "63 Pratt Street",
+   "status": "present",
+   "quote": "paula cookson- luria, 63 pratt street, stated they had to install a raised septic system due to wetlands."
+  },
+  {
+   "name": "Allison Rainville",
+   "role": "17 Pleasantview Avenue",
+   "status": "present",
+   "quote": "allison rainville, 17 pleasantview avenue, stated she may be the only person in the room who does want sewer"
+  },
+  {
+   "name": "Ed Elcevich",
+   "role": "125 Pratt Street",
+   "status": "present",
+   "quote": "ed elcevich, 125 pratt street, stated he voted yes but wanted to clarify that he was approached by two"
+  },
+  {
+   "name": "Kimberly Moore",
+   "role": "106 Pratt Street",
+   "status": "present",
+   "quote": "kimberly moore, 106 pratt street, asked who designed the original whalom plan."
+  },
+  {
+   "name": "Joe Champa",
+   "role": "64 Pratt Street",
+   "status": "present",
+   "quote": "joe champa, 64 pratt street, informed the town that they are seven or eight years too late."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Sewer Commission was left to discuss the Pratt Street and Lakeview Avenue concerns, including options to defer the cost, at its next meeting.",
+   "quote": "this is for the sewer commission to discuss at their next meeting; perhaps different options to defer the cost."
+  },
+  {
+   "decision": "No Select Board meeting the following week; next meeting July 7.",
+   "quote": "mr. toale stated the board will not be meeting next week, next meeting is july 7"
+  },
+  {
+   "decision": "Workshop goal items (storm water, pavement management and traffic rules, economic development) to be discussed at the July meeting.",
+   "quote": "this will be discussed at our july 215 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pratt Street original Phase I price",
+   "what_was_recorded": "Paul Michaud said Pratt Street was in Phase I at a price of $15,000 at the time.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "the price at the time was $15,000."
+  },
+  {
+   "topic": "Extra cost and possible betterment fee for Pratt Street",
+   "what_was_recorded": "Paul Michaud asked why residents should pay an extra $15,000- $20,000 plus a possible $3,000 betterment fee.",
+   "figures_as_printed": [
+    "$15,000- $20,000",
+    "$3,000"
+   ],
+   "quote": "asked why should we pay an extra $15,000- $20,000 and the possibility of another $3,000 betterment fee"
+  },
+  {
+   "topic": "Gravity-feed alternative cost",
+   "what_was_recorded": "Mr. Luck confirmed a gravity feed on Pratt Street would cost $3000 more for all 80 participants.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "it would be $3000 more for all 80 participants"
+  },
+  {
+   "topic": "Cost borne by the other homeowners",
+   "what_was_recorded": "Mr. Luck said the other 50 homeowners would be paying $37,000.",
+   "figures_as_printed": [
+    "$37,000"
+   ],
+   "quote": "the other 50 homeowners would be paying $37,000."
+  },
+  {
+   "topic": "Grinder pump cost",
+   "what_was_recorded": "Mr. Luck said a single pump alone costs $325,000, which made it more expensive.",
+   "figures_as_printed": [
+    "$325,000"
+   ],
+   "quote": "the pump alone costs $325,000"
+  },
+  {
+   "topic": "Resident septic system spending",
+   "what_was_recorded": "Beverly Santora said she spent $38,000 on a septic system after the town had no funding or pump station.",
+   "figures_as_printed": [
+    "$38,000"
+   ],
+   "quote": "went out and spent $38,000 on a septic system"
+  },
+  {
+   "topic": "Original betterment estimate",
+   "what_was_recorded": "Bernie Forget said the betterment was described as costing $15,000 spread over 20 years.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "it would only cost $15,000 spread out over 20 years"
+  },
+  {
+   "topic": "Betterment increase and grinder pump",
+   "what_was_recorded": "Bernie Forget said at the May 26, 2015 informational meeting the betterment had risen to $23,000 with the grinder pump added.",
+   "figures_as_printed": [
+    "$23,000"
+   ],
+   "quote": "the betterment had ballooned to $23,000 and the grinder pump had to be added"
+  },
+  {
+   "topic": "Total project cost to residents",
+   "what_was_recorded": "Stephen Roy asked whether residents would have voted yes if total costs were between $35,000 and $40,000.",
+   "figures_as_printed": [
+    "$35,000",
+    "$40,000"
+   ],
+   "quote": "the total costs would be between $35,000 and $40,000"
+  },
+  {
+   "topic": "Home values on Pratt Street",
+   "what_was_recorded": "Stephen Roy said median home values on the street are roughly $170,000 to $180,000.",
+   "figures_as_printed": [
+    "$170,000",
+    "$180,000"
+   ],
+   "quote": "median values of the homes on the street are roughly $170,000 to $180,000."
+  },
+  {
+   "topic": "Initial betterment quoted to a resident",
+   "what_was_recorded": "Ed Elcevich said he was quoted $22,700 and nothing else.",
+   "figures_as_printed": [
+    "$22,700"
+   ],
+   "quote": "all he got was what they mentioned; $22,700, nothing else."
+  },
+  {
+   "topic": "Septic system cost",
+   "what_was_recorded": "Kimberly Moore said she already installed a septic system at a cost of $23,000.",
+   "figures_as_printed": [
+    "$23,000"
+   ],
+   "quote": "a septic system at the cost of $23,000."
+  },
+  {
+   "topic": "Bond anticipation note amount",
+   "what_was_recorded": "Ms. Speidel reported bids were opened for a $725,000 bond anticipation note.",
+   "figures_as_printed": [
+    "$725,000"
+   ],
+   "quote": "they opened bids for a $725,000 bond anticipation note"
+  },
+  {
+   "topic": "Bond note split between fire truck and sewer costs",
+   "what_was_recorded": "The note covers $425,000 for a fire truck in the 2015 Capital Improvement Plan and $300,000 for sewer costs not eligible for MWPAT funding.",
+   "figures_as_printed": [
+    "$425,000",
+    "$300,000"
+   ],
+   "quote": "$425,000 for purchase of a fire truck that was approved in the 2015 capital improvement plan"
+  },
+  {
+   "topic": "Bond note interest cost",
+   "what_was_recorded": "Total interest for the note period was stated as $3156.77, with a winning rate of .075% from Eastern Bank.",
+   "figures_as_printed": [
+    "$3156.77",
+    ".075%"
+   ],
+   "quote": "total interest paid for this period will be $3156.77."
+  },
+  {
+   "topic": "Warrants presented",
+   "what_was_recorded": "Warrants presented were for payroll, accounts payable and a teachers' summer payroll lump sum.",
+   "figures_as_printed": [
+    "$350,549.39",
+    "$325,324.75",
+    "$130,123.59"
+   ],
+   "quote": "warrants presented were for payroll in the amount of $350,549.39"
+  },
+  {
+   "topic": "Friends of the Library fundraising",
+   "what_was_recorded": "Friends of the Library book and bake sale raised $3,200 toward programs.",
+   "figures_as_printed": [
+    "$3,200"
+   ],
+   "quote": "friends of the library book and bake sale raised $3,200 towards programs"
+  },
+  {
+   "topic": "School building reimbursement",
+   "what_was_recorded": "The School Building Committee reported receiving $8.8 million in reimbursement from the Massachusetts School Building Authority.",
+   "figures_as_printed": [
+    "$8.8 million"
+   ],
+   "quote": "we have received reimbursement in the amount of $8.8 million dollars from massachusetts school building"
+  },
+  {
+   "topic": "MART fare increase",
+   "what_was_recorded": "MART fares are going from $1.00 to $1.50 for the average rider.",
+   "figures_as_printed": [
+    "$1.00",
+    "$1.50"
+   ],
+   "quote": "prices are going from $1.00 to $1.50 for the average rider"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Thomas Alonzo",
+   "stated_role": "Clerk",
+   "topic": "community event reminders",
+   "quote": "mr. alonzo reminded this friday, june 26 from 4. 7 pm is the boys and girls club of lunenburg"
+  },
+  {
+   "speaker": "Elaine Mroz",
+   "stated_role": "Resident, 64 Chestnut Street",
+   "topic": "trees cut on property abutting Marshall Park",
+   "quote": "resident elaine mroz of 64 chestnut street, presented concerning her property that abuts marshall park."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "asked Board to respond to Ms. Mroz's situation",
+   "quote": "dave rodgers, 82 highland street, stepped up to the podium and asked the board to respond to ms. mroz's situation."
+  },
+  {
+   "speaker": "Paul Michaud",
+   "stated_role": "9 Pratt Street",
+   "topic": "Pratt Street Phase I costs and gravity alternative",
+   "quote": "paul michaud, 9 pratt street, stated their street was originally included in phase i"
+  },
+  {
+   "speaker": "Lorrie Kunz",
+   "stated_role": "10 Rennie Street",
+   "topic": "Town Meeting vote and repeated surveys",
+   "quote": "lorrie kunz, 10 rennie street, stated we cannot change this project because of town meeting vote"
+  },
+  {
+   "speaker": "Beverly Santora",
+   "stated_role": "18 Pratt Street",
+   "topic": "septic system spending and no connection",
+   "quote": "beverly santora, 18 pratt street, stated she came to the town three years ago because she needed a new septic"
+  },
+  {
+   "speaker": "Bernie Forget",
+   "stated_role": "120 Pratt Street",
+   "topic": "survey, betterment increase and request for revote",
+   "quote": "bernie forget, 120 pratt street, stated he received one letter about putting in the sewer extension."
+  },
+  {
+   "speaker": "Stephen Roy",
+   "stated_role": "78 Pratt Street",
+   "topic": "costs not presented at Town Meeting vote",
+   "quote": "stephen roy, 78 pratt street, stated the costs were not presented to them at the time of the tm vote."
+  },
+  {
+   "speaker": "Paul Luria",
+   "stated_role": "63 Pratt Street",
+   "topic": "confusing vote and legal letter",
+   "quote": "paul luria, 63 pratt street, stated the vote is completely confusing."
+  },
+  {
+   "speaker": "Paula Cookson- Luria",
+   "stated_role": "63 Pratt Street",
+   "topic": "survey question on who needs sewer",
+   "quote": "paula cookson- luria, 63 pratt street, stated they had to install a raised septic system due to wetlands."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "read Town counsel letter; suggested a time out",
+   "quote": "dave rodgers read the letter sent to residents affected by the project"
+  },
+  {
+   "speaker": "Allison Rainville",
+   "stated_role": "17 Pleasantview Avenue",
+   "topic": "support for sewer installation",
+   "quote": "allison rainville, 17 pleasantview avenue, stated she may be the only person in the room who does want sewer"
+  },
+  {
+   "speaker": "Ed Elcevich",
+   "stated_role": "125 Pratt Street",
+   "topic": "amount quoted to him and objection to cost",
+   "quote": "ed elcevich, 125 pratt street, stated he voted yes but wanted to clarify that he was approached by two"
+  },
+  {
+   "speaker": "Kimberly Moore",
+   "stated_role": "106 Pratt Street",
+   "topic": "original Whalom plan, stub and hidden costs",
+   "quote": "kimberly moore, 106 pratt street, asked who designed the original whalom plan."
+  },
+  {
+   "speaker": "Joe Champa",
+   "stated_role": "64 Pratt Street",
+   "topic": "sewer promised years ago, residents installed septic",
+   "quote": "joe champa, 64 pratt street, informed the town that they are seven or eight years too late."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "closing comment on Mroz situation; Board did not act",
+   "quote": "dave rodgers stated at the beginning of this evening's meeting he had asked the board to take action regarding"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "heard; no action",
+   "quote": "resident elaine mroz of 64 chestnut street, presented concerning her property that abuts marshall park.",
+   "tags": [
+    "public comment",
+    "trees",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Sewer Commission Presentation about Betterment Project",
+   "resolution": "presented; public comment and Board comment followed; referred to Sewer Commission",
+   "quote": "sewer commission presentation about betterment project",
+   "tags": [
+    "sewer",
+    "betterment",
+    "Pratt Street",
+    "Sewer Commission"
+   ]
+  },
+  {
+   "topic": "Holman Street Signage",
+   "resolution": "approved traffic rules amendment",
+   "quote": "motion: b. ebersole 2nd: p. luck to amend the town of lunenburg traffic rules and orders as follows:",
+   "tags": [
+    "traffic rules",
+    "Holman Street",
+    "parking",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Request to Dedicate Meeting Room",
+   "resolution": "dedicated, 3 in favor, 1 abstain",
+   "quote": "to dedicate the meeting room in the planning board office as the marion benson meeting room",
+   "tags": [
+    "naming",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Town Manager's Annual Evaluation",
+   "resolution": "discussed; no vote recorded",
+   "quote": "overall rating was outstanding, total score was 194.2",
+   "tags": [
+    "town manager",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Financial Policies and Procedures for Cash Reconciliation",
+   "resolution": "adopted",
+   "quote": "to adopt the cash reconciliation policy as presented by the town manager",
+   "tags": [
+    "cash reconciliation",
+    "policy",
+    "auditors"
+   ]
+  },
+  {
+   "topic": "Bond Anticipation Note for Sewer Construction Project",
+   "resolution": "awarded to Eastern Bank",
+   "quote": "to award a bond anticipation note dated june 29, 2015 and due on january 28, 2016 to eastern bank in the amount of $725,000 with an interest rate of .075%",
+   "tags": [
+    "bond anticipation note",
+    "borrowing",
+    "sewer",
+    "fire truck"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "presented; no vote recorded",
+   "quote": "warrants presented were for payroll in the amount of $350,549.39",
+   "tags": [
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Workshop Update",
+   "resolution": "presented; to be discussed in July",
+   "quote": "workshop update- mr. toale presented an update on the workshop held last week.",
+   "tags": [
+    "goals",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "received",
+   "quote": "committee reports: board of health - no report",
+   "tags": [
+    "committees",
+    "School Building Committee",
+    "MART",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Town Manager/Department Reports",
+   "resolution": "no report",
+   "quote": "town manager/department reports- no report",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Town Manager Annual Appointments",
+   "resolution": "ratified, 3 in favor, 1 opposed",
+   "quote": "to ratify the town manager appointments as presented",
+   "tags": [
+    "appointments",
+    "animal control"
+   ]
+  },
+  {
+   "topic": "Police Reappointments and Special Officers",
+   "resolution": "ratified",
+   "quote": "to ratify the fulltime appointments as listed vote: all in favor",
+   "tags": [
+    "police",
+    "appointments",
+    "Shirley",
+    "Townsend"
+   ]
+  },
+  {
+   "topic": "Other Appointments (constables, registrars, historical, weighers, school building, pound keeper)",
+   "resolution": "approved",
+   "quote": "to appoint stanley young and kevin rice as constables",
+   "tags": [
+    "appointments",
+    "constables",
+    "School Building Committee"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "heard; no action",
+   "quote": "dave rodgers stated at the beginning of this evening's meeting he had asked the board to take action regarding",
+   "tags": [
+    "public comment",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:16 p.m.",
+   "quote": "to adjourn the meeting at 10:16 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sample attachments: summary cash reconciliation spreadsheet, cashbook summary and MUNIS Account trial balance",
+   "where": "list",
+   "quote": "the sample attachments showing the summary cash reconciliation spreadsheet, cashbook summary and munis account trial balance"
+  },
+  {
+   "name": "Draft cash reconciliation policy",
+   "where": "text",
+   "quote": "ms. speidel directed the board to the draft cash reconciliation policy."
+  },
+  {
+   "name": "Sewer Commission presentation (6-23-15_BOS_PresentationWebRev.pdf)",
+   "where": "text",
+   "quote": "this can be seen in its entirety on the sewer commission webpage at"
+  },
+  {
+   "name": "Letter to residents affected by the sewer project (Town counsel legal opinion)",
+   "where": "text",
+   "quote": "dave rodgers read the letter sent to residents affected by the project"
+  },
+  {
+   "name": "Homeowners' survey letter",
+   "where": "text",
+   "quote": "she clarified mr. luck's question about what the homeowners' survey letter indicating"
+  },
+  {
+   "name": "Letter read aloud by Elaine Mroz to the Board",
+   "where": "text",
+   "quote": "she read aloud a letter to the board about the process with town boards"
+  },
+  {
+   "name": "Town of Lunenburg Traffic Rules and Orders (Schedules I, I-A)",
+   "where": "text",
+   "quote": "to amend the town of lunenburg traffic rules and orders as follows:"
+  },
+  {
+   "name": "Town Manager composite evaluation",
+   "where": "text",
+   "quote": "he read aloud excerpts from the composite evaluation"
+  },
+  {
+   "name": "2015 Capital Improvement Plan",
+   "where": "text",
+   "quote": "approved in the 2015 capital improvement plan"
+  }
+ ],
+ "tags": [
+  "sewer betterment",
+  "Pratt Street",
+  "Sewer Commission",
+  "Town Meeting",
+  "bond anticipation note",
+  "town appointments",
+  "police appointments",
+  "traffic rules",
+  "Holman Street",
+  "cash reconciliation",
+  "town manager evaluation",
+  "public comment",
+  "2015"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "she noted the procedures for the policy and the sample attachments showing the summary cash reconciliation spreadsheet"
+ },
+ "dropped_unquoted_by_field": {}
 }

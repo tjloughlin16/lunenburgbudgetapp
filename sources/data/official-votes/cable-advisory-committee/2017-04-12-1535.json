@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2017-04-12",
  "docid": "1535",
@@ -12,6 +12,199 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes formally recorded. The minutes describe committee discussions and decisions (e.g., the committee discussed live feed vs. taping and \"decided against a live feed\"), but no motions with voting outcomes are explicitly stated in the minutes. The document records action items, assignments, and next steps, but no formal votes.",
- "cost_usd": 0.0808435
+ "note": "Text is OCR of a two-page scan (macOS Vision); some words are garbled (e.g., \"Attornev\", \"18t\"). No motions or votes are recorded in the minutes, so the votes list is empty. The next meeting date is given as 5/17/17 in one place and 5/15/17 in another. Public comment, announcements and minutes/correspondence are each recorded as \"None\" and carry no speakers or items. The minutes are signed by Paula Bertram; no role is printed for her or for Steve Walker and Tom Alonzo.",
+ "cost_usd": 0.00547202,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, town manager and bill hewig, attorney from kp law present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, town manager and bill hewig, attorney from kp law present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, town manager and bill hewig, attorney from kp law present."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, town manager and bill hewig, attorney from kp law present."
+  },
+  {
+   "name": "Bill Hewig",
+   "role": "Attorney from KP Law",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, town manager and bill hewig, attorney from kp law present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee decided against a live broadcast of the public hearing, to encourage people to attend in person; the hearing will be taped rather than fed live.",
+   "quote": "committee discussed a live show versus taping and decided against a live feed to encourage people to attend."
+  },
+  {
+   "decision": "Hearing to take place in the high school auditorium.",
+   "quote": "hearing will take place in high school auditorium, we can do live fee or chose not to."
+  },
+  {
+   "decision": "Attorney Hewig to notify Comcast in writing as soon as possible of the public hearing date.",
+   "quote": "attorney hewig instructed us to notify comcast in writing as soon as possible of public hearing date."
+  },
+  {
+   "decision": "Steve Walker will ask the current vendor to estimate equipment so the proposal can itemize equipment needs.",
+   "quote": "the committee felt that the proposal would be stronger if we could itemize equipment needs, steve will ask current vendor to estimate equipment."
+  },
+  {
+   "decision": "Tom Alonzo will send letters to Comcast about the public hearing and various reports the committee requested.",
+   "quote": "tom will send letters to comcast about public hearing and various reports that we have requested."
+  },
+  {
+   "decision": "Attorney Hewig will review the draft business plan and send comments to Tom Alonzo.",
+   "quote": "attorney hewig will review the draft business plan and provide comments to tom alonzo."
+  },
+  {
+   "decision": "Heather Lemieux will investigate locating the binder holding the proposal with the $100 check; if she cannot, Bill Hewig will contact Comcast.",
+   "quote": "bill indicated we should already have a binder with a proposal that has a check in it for $100 - we need to locate, heather will investigate."
+  },
+  {
+   "decision": "Tom Alonzo will follow up with Steve Malandrinos about the INET system.",
+   "quote": "tom will follow up with steve malandrinos about the inet."
+  },
+  {
+   "decision": "Paula Bertram will draft an email to departments about the public hearing and forward it to Heather for distribution.",
+   "quote": "paula will draft an email to departments about the public hearing and forward to heather for distribution to departments."
+  },
+  {
+   "decision": "Tom Alonzo will send the public notice to Elaine for printing in the Ledger.",
+   "quote": "tom will send public notice to elaine for printing in the ledger."
+  },
+  {
+   "decision": "Committee prefers that Attorney Hewig and the entire Committee, rather than one person, negotiate with Comcast.",
+   "quote": "preference is for attorney hewig and the entire committee (rather than 1 person) to negotiate."
+  },
+  {
+   "decision": "Committee to meet at 6:30 on the hearing date and begin the hearing at 7:00.",
+   "quote": "and commence the hearing at 7:00."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cable access licence fee on subscriber bills",
+   "what_was_recorded": "The minutes say the bill carries a license fee of 2.5%, as shown on the statement received from Comcast.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "on bill there is a license fee which is the 2.5% as noted on the statement that we receive from comcast"
+  },
+  {
+   "topic": "Requested increase in franchise payment",
+   "what_was_recorded": "The committee is asking for the maximum of 5%, which Hewig said is not unreasonable but will bring modest increases in monthly subscriber bills.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "we are asking for the maximum which is 5%, which is practical in terms of what we are asking for."
+  },
+  {
+   "topic": "Annual cost of running cable access",
+   "what_was_recorded": "Hewig said the committee needs to review how much money is needed to run cable access annually, then add some leeway; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "we need to review how much money is needed to run the cable access on an annual basis"
+  },
+  {
+   "topic": "Studio equipment cost estimate",
+   "what_was_recorded": "Steve Walker said the proposal used an industry-standard cost per foot for a 2600 s.f. studio, and equipment is not yet itemized.",
+   "figures_as_printed": [
+    "2600 s.f."
+   ],
+   "quote": "steve said they have used industry standard of cost per foot for a 2600 s.f. studio."
+  },
+  {
+   "topic": "Proposal binder check",
+   "what_was_recorded": "The binder with the proposal is said to contain a check for $100, which has to be located.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "bill indicated we should already have a binder with a proposal that has a check in it for $100 - we need to locate, heather will investigate."
+  },
+  {
+   "topic": "INET system buyout",
+   "what_was_recorded": "Hewig said Comcast no longer wants to be responsible for INET and will want to buy it out; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "attorney hewig stated that comcast is no longer wants to be responsible for inet and will want to buy out."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Discuss Plans for Public Hearing",
+   "resolution": "discussed; hearing set for May 18, 2017; no vote recorded",
+   "quote": "discuss plans for public hearing the public hearing has been scheduled for may 18, 2017.",
+   "tags": [
+    "public hearing",
+    "ascertainment",
+    "advertising",
+    "Comcast"
+   ]
+  },
+  {
+   "topic": "Plan Next Steps in Renewal Process",
+   "resolution": "discussed; assignments made; no vote recorded",
+   "quote": "plan next steps in renewal process if heather is unable to locate the binder, bill hewig will contact comcast.",
+   "tags": [
+    "renewal",
+    "negotiation",
+    "business plan",
+    "Comcast"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft business plan",
+   "where": "text",
+   "quote": "attorney hewig will review the draft business plan and provide comments to tom alonzo."
+  },
+  {
+   "name": "Proposal from Cable",
+   "where": "text",
+   "quote": "after receiving the proposal from cable."
+  },
+  {
+   "name": "Contract (Exhibit B, 10 sites)",
+   "where": "text",
+   "quote": "reviewed contract and in exhibit b there are 10 sites."
+  },
+  {
+   "name": "Standard public hearing notice",
+   "where": "text",
+   "quote": "the standard notice states people are encouraged to attend and let us know their concerns."
+  }
+ ],
+ "tags": [
+  "cable franchise renewal",
+  "public hearing",
+  "Comcast",
+  "cable access",
+  "business plan",
+  "license fee",
+  "INET",
+  "negotiation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

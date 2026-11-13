@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-05-04",
  "docid": "823",
@@ -12,15 +12,159 @@
  },
  "votes": [
   {
-   "motion": "Approve requested variances for septic system repair and replacement at 540 Northfield Road",
+   "motion": "Approve the three variance requests from Steve Marsden for 540 Northfield Road: sieve analysis in place of percolation testing, offset to groundwater of two feet, and well distance of 17 feet from the new lot line.",
    "moved_by": "Shea",
    "seconded_by": "Sund",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by shea and second by sund, the requests were unanimously approved"
+   "quote": "after discussion, and on motion by shea and second by sund, the requests were unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd scanned minutes (macOS Vision). Readable without gaps affecting vote extraction.",
- "cost_usd": 0.0843945
+ "note": "OCR text from scanned minutes. The attendance line is scrambled by OCR (\"Present: Rabbitt Chairman George Emond...\"), so attendance is read from the printed names. The vote record is one motion (unanimous, no count printed). The meeting adjournment (\"Meeting adjourned 7:55 pm\") has no printed motion, so it is not recorded as a vote. The 'Minutes Approved:' heading has no printed vote beneath it. No dollar figures appear in the text.",
+ "cost_usd": 0.0034782199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: rabbitt chairman george emond, members ernie sund, david shea and jack"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Member",
+   "status": "present",
+   "quote": "chairman george emond, members ernie sund, david shea and jack"
+  },
+  {
+   "name": "David Shea",
+   "role": "Member",
+   "status": "present",
+   "quote": "chairman george emond, members ernie sund, david shea and jack"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: rabbitt chairman george emond, members ernie sund, david shea and jack"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "applicant, 540 Northfield Road",
+   "status": "present",
+   "quote": "steve marsden met with the board to request variances for the repair/replacement of a"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi met with cafo kerry spidel and fire chief scott glenny to prepare a statement"
+  },
+  {
+   "name": "Kerry Spidel",
+   "role": "CAFO",
+   "status": "not stated",
+   "quote": "agent jim garreffi met with cafo kerry spidel and fire chief scott glenny to prepare a statement"
+  },
+  {
+   "name": "Scott Glenny",
+   "role": "Fire Chief",
+   "status": "not stated",
+   "quote": "agent jim garreffi met with cafo kerry spidel and fire chief scott glenny to prepare a statement"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "administrative assistant andrea schnepf printed an information sheet that was distributed at town"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Marsden must either submit a plan with the 100 foot wetlands offset or request a variance from the Board, and any ANR plan returning to the Board must show a Title 5 compliant system with a reserve.",
+   "quote": "mr. marsden must either submit a plan with the required 100 foot offset or request a variance from the board."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed: 49 Pratt Street",
+   "resolution": "reviewed; no action recorded",
+   "quote": "title 5 inspection reports reviewed: 49 pratt street",
+   "tags": [
+    "title 5",
+    "septic inspection"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "none signed",
+   "quote": "septic permits signed: none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "540 Northfield Road variance requests",
+   "resolution": "variances approved unanimously; applicant must submit a 100 ft wetlands-compliant plan or request a variance",
+   "quote": "steve marsden met with the board to request variances for the repair/replacement of a",
+   "tags": [
+    "variance",
+    "septic repair",
+    "wells",
+    "wetlands",
+    "ANR plan"
+   ]
+  },
+  {
+   "topic": "Swine flu information",
+   "resolution": "informational update; no action recorded",
+   "quote": "chairman george emond updated the board as to the status of the dissemination of",
+   "tags": [
+    "swine flu",
+    "public information"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR plan (540 Northfield Road, currently before the Board)",
+   "where": "text",
+   "quote": "there is an anr plan currently before the"
+  },
+  {
+   "name": "Plan provided by Mr. Marsden for 540 Northfield Road",
+   "where": "text",
+   "quote": "mr. marsden provided a plan for the board."
+  },
+  {
+   "name": "Town statement on swine flu illness and precautions",
+   "where": "text",
+   "quote": "agent jim garreffi met with cafo kerry spidel and fire chief scott glenny to prepare a statement"
+  },
+  {
+   "name": "Swine flu information sheet",
+   "where": "text",
+   "quote": "printed an information sheet that was distributed at town"
+  }
+ ],
+ "tags": [
+  "septic",
+  "title 5",
+  "variance",
+  "wells",
+  "wetlands",
+  "swine flu",
+  "public health",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2016-07-21",
  "docid": "3255",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve June 22, 2016 minutes",
-   "moved_by": "Dennis Mannone",
-   "seconded_by": "Karin Menard",
+   "motion": "Approve the June 22, 2016 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "approved 2-0",
    "procedural": true,
    "quote": "june 22, 2016 minutes - approved 2-0 (dm/km)"
   },
   {
-   "motion": "Approve July 19, 2016 minutes",
-   "moved_by": "Dennis Mannone",
-   "seconded_by": "Karin Menard",
+   "motion": "Approve the July 19, 2016 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "approved 2-0",
    "procedural": true,
    "quote": "july 19, 2016 minutes - approved 2-0 (dm/km)"
   },
   {
-   "motion": "For the Parks Commission to sponsor the Card Board Boat Race",
+   "motion": "For the Parks Commission to sponsor the Card Board Boat Race.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McAulliff",
    "outcome": "approved 3-0",
@@ -36,7 +36,7 @@
    "quote": "motion made by karin menard, seconded by pete mcaulliff - for the parks commission to sponsor the card board boat race - approved 3-0."
   },
   {
-   "motion": "Extend the beach season through August 19th pending confirmation of available funds with the DPW director",
+   "motion": "Extend the beach season through August 19th, pending confirmation of available funds with the DPW director.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
@@ -44,23 +44,23 @@
    "quote": "motion made by karin menard seconded by dennis mannone to extend the beach season through august 19th pending confirmation of available funds with the dpw director. passed 3-0."
   },
   {
-   "motion": "Support the town creating a boundary agreement with the adjacent property owner at town meeting",
+   "motion": "Support the town creating a boundary agreement with the adjacent property owner at Marshall Park, to be placed before town meeting.",
    "moved_by": "Pete McCauliff",
    "seconded_by": "Dennis Mannone",
-   "outcome": "Passed 3-0",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion by pete mccauliff and seconded by dennis mannone to support the town creating a boundary agreement with the adjacent property owner a town meeting. passed 3-0."
   },
   {
-   "motion": "Approve short term usage of Marshall Park (Chestnut Street field) by Lunenburg Public Schools for fall sports programs",
+   "motion": "Approve short term usage of Marshall Park (Chestnut Street field) by Lunenburg Public Schools for fall sports programs.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
-   "outcome": "Approved 2-0",
+   "outcome": "approved 2-0 (PM abstained from voting)",
    "procedural": false,
-   "quote": "motion made by dennis mannone / seconded by karin menard - approve short term usage of marshall park (chestnut street field) by lunenburg public schools for fall sports programs. approved 2-0"
+   "quote": "seconded by karin menard - approve short term usage of marshall park (chestnut street field) by lunenburg public schools for fall sports programs. approved 2-0"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:01.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McAuliff",
    "outcome": "not stated",
@@ -69,6 +69,209 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of handwritten minutes. One member (Pete McCauliff) abstained from the vote on motion 6, but the vote count is stated as 2-0. Spelling variations in OCR for one board member's name: McCauliff, McAulliff, McAuliff.",
- "cost_usd": 0.1286455
+ "note": "OCR text of a scanned, typed minutes page set; some words are OCR-garbled (e.g., 'ili.' for 'iii.'), and the board is printed as 'Park Commission' in the header but 'Parks Commission' in the body. The minutes print a stamp 'Approved 8118/16' and 'RECEIVED & FILED AUG 15 2017'. Motions for the two approved-minutes items print only initials (DM/KM), so no mover names are recorded for them. The adjournment motion records no result. The Marshall Park boundary motion says 'a town meeting' without a comma as printed. Public comment section is absent. Nancy Forest is mentioned but not recorded as attending.",
+ "cost_usd": 0.006636619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff, town manager kerry"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff, town manager kerry"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff, town manager kerry"
+  },
+  {
+   "name": "Kerry Lafleaur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff, town manager kerry"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendant",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccauliff, town manager kerry"
+  },
+  {
+   "name": "Gen Nass",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lafleaur, superintendant loxi jo calmes, gen nass."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karin Menard will contact DPW and request regular trash pick-up at the town beach.",
+   "quote": "karin menard stated she would contact dpw and request regular pick up."
+  },
+  {
+   "decision": "The request and approval to hire a part-time as-needed lifeguard is tabled; hiring for the summer beach season should start in April or May.",
+   "quote": "the request and subsequent approval of hiring a part time as needed lifeguard has been tabled due to time lines"
+  },
+  {
+   "decision": "The beach is to be placed on the winter agenda for review of policies, procedures and fees, and a review process is to be created in the off season.",
+   "quote": "the beach should be on the agenda over the winter for review of policies, proce- dures and fee",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Scheduling of the turf field stays with the Athletic Director until the turf/track project is completed this fall.",
+   "quote": "scheduling of turf field will remain with the athletic director until turf/ track project completed this fall."
+  },
+  {
+   "decision": "Commissioners agreed that policy creation for fields and beaches under the Park Commission is a lengthy process to be dealt with in the upcoming months.",
+   "quote": "parks commissioners all agree that this will be a lengthy process best dealt with in the upcoming months."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf complex financing",
+   "what_was_recorded": "Town Manager reported that bond counsel is receiving information for financing and reviewing agreements to determine the interest rate; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "information is being provided to bond council for financing and they are reviewing agreements"
+  },
+  {
+   "topic": "Beach season extension funding",
+   "what_was_recorded": "A commissioner was unsure whether the budget had enough funds to cover extending the beach season; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "she wasn't sure if there was enough funds in the budget to cover it."
+  },
+  {
+   "topic": "Verizon Wireless cell tower rental fees",
+   "what_was_recorded": "Town Manager anticipates tower rental fees beginning to come in this fiscal year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she is anticipating rental fees for tower to begin coming in this fiscal year"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00pm",
+   "quote": "1. call to order - 7:00pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review Minutes",
+   "resolution": "June 22 and July 19, 2016 minutes approved",
+   "quote": "june 22, 2016 minutes - approved 2-0 (dm/km)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "update only, no action",
+   "quote": "verizon wireless plan to build cell tower is moving along and",
+   "tags": [
+    "cell tower",
+    "rental fees"
+   ]
+  },
+  {
+   "topic": "Old Business: Turf Complex",
+   "resolution": "update only, no action",
+   "quote": "turf complex - pete mccauliff gave update on timeline.",
+   "tags": [
+    "turf complex",
+    "financing",
+    "bonds"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Beach",
+   "resolution": "Card Board Boat Race sponsorship approved; beach season extended to August 19 pending funds; lifeguard hiring tabled; trash pick-up to be requested",
+   "quote": "gen nass reports that the season is going well",
+   "tags": [
+    "beach",
+    "lifeguards",
+    "hiring",
+    "trash",
+    "events"
+   ]
+  },
+  {
+   "topic": "Old Business: Marshall Park",
+   "resolution": "boundary agreement support approved; netted backstop discussed, no action",
+   "quote": "kerry provided background that the fy15 capital plan approved a park",
+   "tags": [
+    "Marshall Park",
+    "boundary",
+    "parking lot",
+    "backstop",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Old Business: Usage fees",
+   "resolution": "passed over",
+   "quote": "d. usage fees - topic passed over.",
+   "tags": [
+    "fees"
+   ]
+  },
+  {
+   "topic": "New Business: Policy on scheduling of fields, courts and beaches",
+   "resolution": "turf scheduling stays with Athletic Director; short-term Marshall Park use for schools approved; policy to be taken up in coming months",
+   "quote": "policy discussion, scheduling of fields, courts and beaches under the park commission umbrella",
+   "tags": [
+    "scheduling",
+    "policy",
+    "schools",
+    "fields"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "no unanticipated items; no correspondence or announcements",
+   "quote": "a. no unanticipated items",
+   "tags": [
+    "other business"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant article for the Special Town Meeting in August (boundary/stone wall, Marshall Park)",
+   "where": "text",
+   "quote": "for the special town meeting in august, that in a nut shell would use the stone wall as the boundary marker"
+  },
+  {
+   "name": "Labor counsel opinion on supervision by relatives (conflict of interest)",
+   "where": "text",
+   "quote": "she has an opinion from labor council that an employ"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach",
+  "turf complex",
+  "Marshall Park",
+  "boundary dispute",
+  "field scheduling",
+  "hiring",
+  "lifeguards",
+  "cell tower",
+  "special town meeting",
+  "2016"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

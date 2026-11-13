@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2016-09-22",
  "docid": "5734",
@@ -12,6 +12,160 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This is a meeting notice and agenda, not minutes recording votes. The OCR text contains no recorded motions, votes, or outcomes. Document shows \"NOTICE OF MEETING\" for the September 22, 2016 meeting; agenda items are listed but no voting action is documented.",
- "cost_usd": 0.0801515
+ "note": "The text is the meeting notice and agenda with an OCR extraction (macOS Vision) and a received stamp that reads as \"DECEIVED SEP 2 0 2016\" (likely a scan artifact). It records no discussion, motions, votes, dollar figures, public comment, or decisions, so those lists are empty. Attendance is not recorded; the five names come from the printed board header, so status is \"not stated\". Items are listed as agenda items only.",
+ "cost_usd": 0.00304262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "phyllis luck, chair matt allison, member"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "phyllis luck, chair matt allison, member"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "sarah cammer, member jack rabbitt, member jack rodriquenz, member"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "sarah cammer, member jack rabbitt, member jack rodriquenz, member"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "sarah cammer, member jack rabbitt, member jack rodriquenz, member"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, announcements, board comment, public comment",
+   "resolution": "agenda item only; no action recorded",
+   "quote": "1. call to order 2. announcements 3. board comment 4. public comment",
+   "tags": [
+    "agenda",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval of August 29, 2016 meeting",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "5. minutes approval of august 29, 2016 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of Scope of Services bids",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "1. review of scope of services bids.",
+   "tags": [
+    "scope of services",
+    "bids",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Report on 9/20 Central Mass Regional Stormwater Coalition Annual Meeting",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "2. report on 9/20 central mass regional stormwater coalition (cmrswc) annual meeting",
+   "tags": [
+    "regional coalition",
+    "report"
+   ]
+  },
+  {
+   "topic": "Review SWTF mission statement and action plan",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "3. review swtf mission statement:",
+   "tags": [
+    "mission statement",
+    "action plan"
+   ]
+  },
+  {
+   "topic": "Other issues for future agendas",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "3. other issues for future agendas?",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Notices, communications, old business",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "7. notices & communications 8. old business 9. meeting schedule",
+   "tags": [
+    "notices",
+    "old business"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted on agenda: next meeting set for September 29, 2016",
+   "quote": "next meeting scheduled for thursday, september 29, at 6:30 pm",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Member issues: associate member possibility",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "11. member issues: associate member possibility?",
+   "tags": [
+    "membership",
+    "associate member"
+   ]
+  },
+  {
+   "topic": "Board comment, public comment, adjournment",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "12. board comment 13. public comment 14. adjournment",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scope of Services bids",
+   "where": "text",
+   "quote": "1. review of scope of services bids."
+  },
+  {
+   "name": "SWTF Mission Statement",
+   "where": "text",
+   "quote": "3. review swtf mission statement:"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "task force",
+  "scope of services",
+  "bids",
+  "mission statement",
+  "regional coalition",
+  "agenda",
+  "associate member"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

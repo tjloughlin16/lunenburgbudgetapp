@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-11-03",
  "docid": "919",
@@ -12,15 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Allow the change from four stools and a counter to four chairs and a table",
+   "motion": "Allow the change at 455 Massachusetts Avenue (Dippen Donuts) from four (4) stools and a counter to four (4) chairs and a table.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by passios, the board voted to allow the change from four (4) stools and a counter to four (4) chairs and a table. all in favor."
+   "quote": "after discussion, and on motion by jewell and second by passios, the board voted to allow the change from four (4) stools and a counter to four (4) chairs and a table. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text. The other permit discussions (237 Cross Street, 7 Ruth Street) record board agreement but no formal votes with motions recorded.",
- "cost_usd": 0.09786049999999999
+ "note": "OCR text. The page 2 tail after the adjournment line is garbled and unreadable, so anything there may be missed. No roll call or motion to adjourn is recorded, and the minutes give no vote count for the Dippen Donuts motion beyond \"All in favor\". No dollar figures appear; water usage is in gallons per day.",
+ "cost_usd": 0.0037936199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Bob Ebersole",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Paulo Adilson",
+   "role": "owner",
+   "status": "present",
+   "quote": "paulo and sara adilson, owners, met with the board."
+  },
+  {
+   "name": "Sara Adilson",
+   "role": "owner",
+   "status": "present",
+   "quote": "paulo and sara adilson, owners, met with the board."
+  },
+  {
+   "name": "Tom Curtin",
+   "status": "present",
+   "quote": "tom curtin met with the board to discuss finishing the second floor of his home."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent jim garreffi advised that finishing this space would create the potential for an additional bedroom or in-law apartment"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "237 Cross Street: the permit was signed with a three (3) bedroom deed restriction, as the board had indicated at its October 20, 2014 meeting.",
+   "quote": "after discussion, it was so agreed and the permit was signed."
+  },
+  {
+   "decision": "7 Ruth Street: the board advised it would sign the permit for finishing the space over the garage only if the space was one large room without partitions (a closet and a bathroom allowed).",
+   "quote": "the board advised that they would sign the permit if the space over the garage was one large room without partitions"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "none approved",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title inspection reports",
+   "resolution": "acknowledged",
+   "quote": "titles inspection reports acknowledger: 754 west street 141 elm street 16 hemlock drive 249 arbor street",
+   "tags": [
+    "title inspection"
+   ]
+  },
+  {
+   "topic": "Septic permit: 455 Massachusetts Avenue - Dippen Donuts",
+   "resolution": "approved seating change (stools and counter to table and chairs)",
+   "quote": "after discussion, and on motion by jewell and second by passios, the board voted to allow the change",
+   "tags": [
+    "septic",
+    "food establishment",
+    "water use"
+   ]
+  },
+  {
+   "topic": "237 Cross Street second-floor finish",
+   "resolution": "permit signed with three-bedroom deed restriction",
+   "quote": "after discussion, it was so agreed and the permit was signed.",
+   "tags": [
+    "septic",
+    "permits",
+    "deed restriction",
+    "bedroom"
+   ]
+  },
+  {
+   "topic": "7 Ruth Street space over garage",
+   "resolution": "no vote; board advised it would sign permit if one open room",
+   "quote": "the board advised that they would sign the permit if the space over the garage was one large room without partitions",
+   "tags": [
+    "permits",
+    "bedroom",
+    "in-law apartment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45 pm (no motion recorded)",
+   "quote": "meeting adjourned 7:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Water meter readings, April 2014 through October 2014",
+   "where": "text",
+   "quote": "reviewed water meter readings from april, 2014 through october, 2014."
+  },
+  {
+   "name": "Proposed building plans (7 Ruth Street)",
+   "where": "text",
+   "quote": "after reviewing the proposed building plans, the board advised that they would sign the permit if"
+  },
+  {
+   "name": "Title inspection reports (754 West Street, 141 Elm Street, 16 Hemlock Drive, 249 Arbor Street)",
+   "where": "text",
+   "quote": "titles inspection reports acknowledger: 754 west street 141 elm street 16 hemlock drive 249 arbor street"
+  }
+ ],
+ "tags": [
+  "septic",
+  "permits",
+  "food establishment",
+  "deed restriction",
+  "water use",
+  "bedroom addition",
+  "in-law apartment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

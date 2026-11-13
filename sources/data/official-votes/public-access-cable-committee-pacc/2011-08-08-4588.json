@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2011-08-08",
  "docid": "4588",
@@ -12,40 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from July",
+   "motion": "Approve the minutes of the July meeting.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from july sh were read and approved"
   },
   {
-   "motion": "Purchase a MacBook 17\" with software and any needed peripheral support and loan an old one to the high school",
+   "motion": "Purchase a MacBook 17\" with software and any needed peripheral support, and loan an old one to the high school.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "it was moved, seconded and approved that we purchase a macbook 17\" with software and any needed peripheral support and loan an old one to the high school."
   },
   {
-   "motion": "Purchase 4 headphones, 4 headphone cases, 2 extension cords and a printer",
+   "motion": "Purchase 4 headphones, 4 headphone cases, 2 extension cords and a printer (total cost not printed).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "it was moved, seconded and approved that we purchase 4 headphones, 4 headphone cases, 2 extension cords and a printer with the total cost of"
   },
   {
-   "motion": "Reimburse Jo for equipment and expenses ($161.33)",
+   "motion": "Reimburse Jo for equipment and expenses ($161.33) from the Newton Public Access surplus equipment sale.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "it was moved, seconded and approved that we purchase a macbook 17\" with software and any need",
-   "quote_taken_from_text": true
+   "quote": "it was moved, seconded and approved that w reimburse jo for equipment and expenses ($161.33)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text from macOS Vision. Minor OCR artifacts visible (e.g., \"July sh\" instead of likely \"July 5th\"). Mover and seconder names not recorded in the minutes for any vote.",
- "cost_usd": 0.0839165
+ "note": "OCR of a scanned page with garbled and truncated text. The surplus-sale paragraph is cut off at line edges (\"o and John\", \"J eported\", \"that w\"), so the mover, seconder and the Additional Purchases total cost are not legible. No movers or seconders are printed anywhere. The July minutes approval has no motion recorded; it is listed as a procedural vote with mover blank. The closing adjournment (9:19 pm) has no motion recorded and is not listed as a vote. No public comment speakers. Documents: no documents list heading is printed; the July 2011 progress report and FY12 Budget Projections are named in the text only.",
+ "cost_usd": 0.00458362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Others Present",
+   "status": "present",
+   "quote": "ernie provided some information regarding the future hookup of all public"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Others Present",
+   "status": "present",
+   "quote": "others present: ernie sund, jo mclaughlin"
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "o and john went to the newton public access surplus equipment sale and j"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agreed that a reasonable programming goal for local produced content would be 65% (up from 37%).",
+   "quote": "we agreed that a reasonable goal would be 65%."
+  },
+  {
+   "decision": "Discussion of Blackboard Connect legality tabled until September's meeting.",
+   "quote": "further discussion was tabled until september's meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reimbursement to Jo for surplus equipment sale",
+   "what_was_recorded": "Approved reimbursement to Jo for equipment and expenses from the Newton Public Access surplus equipment sale.",
+   "figures_as_printed": [
+    "$161.33"
+   ],
+   "quote": "it was moved, seconded and approved that w reimburse jo for equipment and expenses ($161.33)"
+  },
+  {
+   "topic": "Additional purchases (headphones, cases, extension cords, printer)",
+   "what_was_recorded": "Approved purchase of headphones, cases, extension cords and a printer; the total cost line is cut off in the text and no figure is legible.",
+   "figures_as_printed": [],
+   "quote": "it was moved, seconded and approved that we purchase 4 headphones, 4 headphone cases, 2 extension cords and a printer with the total cost of"
+  },
+  {
+   "topic": "MacBook 17\" purchase",
+   "what_was_recorded": "Approved purchase of a MacBook 17\" with software and peripheral support, with an old one loaned to the high school; no price printed.",
+   "figures_as_printed": [],
+   "quote": "it was moved, seconded and approved that we purchase a macbook 17\" with software and any needed peripheral support and loan an old one to the high school."
+  },
+  {
+   "topic": "FY12 Budget Projections",
+   "what_was_recorded": "Reviewed FY12 Budget Projections, which now include line item numbers; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "we reviewed fy12 budget projections the new projections now include line item numbers."
+  },
+  {
+   "topic": "Blackboard Connect",
+   "what_was_recorded": "Questions raised about whether PACC paying for Blackboard Connect is legal given the contract with Comcast; tabled. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "questions were raised concerning the legality of pacc paying for this given our contract with comcast."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of July minutes",
+   "resolution": "approved",
+   "quote": "minutes from july sh were read and approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Programming Schedule",
+   "resolution": "reviewed; 65% local content goal agreed",
+   "quote": "we agreed that a reasonable goal would be 65%.",
+   "tags": [
+    "programming",
+    "local content"
+   ]
+  },
+  {
+   "topic": "FY12 Budget Projections",
+   "resolution": "reviewed",
+   "quote": "we reviewed fy12 budget projections the new projections now include line item numbers.",
+   "tags": [
+    "budget",
+    "FY12"
+   ]
+  },
+  {
+   "topic": "MacBook purchase",
+   "resolution": "approved",
+   "quote": "it was moved, seconded and approved that we purchase a macbook 17\" with software and any needed peripheral support and loan an old one to the high school.",
+   "tags": [
+    "equipment",
+    "high school"
+   ]
+  },
+  {
+   "topic": "Additional purchases",
+   "resolution": "approved",
+   "quote": "it was moved, seconded and approved that we purchase 4 headphones, 4 headphone cases, 2 extension cords and a printer with the total cost of",
+   "tags": [
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Surplus equipment sale reimbursement",
+   "resolution": "approved",
+   "quote": "it was moved, seconded and approved that w reimburse jo for equipment and expenses ($161.33)",
+   "tags": [
+    "reimbursement",
+    "surplus equipment"
+   ]
+  },
+  {
+   "topic": "Blackboard Connect",
+   "resolution": "tabled to September meeting",
+   "quote": "questions were raised concerning the legality of pacc paying for this given our contract with comcast.",
+   "tags": [
+    "Comcast",
+    "contract",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Short term goals (social media, community outreach)",
+   "resolution": "discussed",
+   "quote": "short term goals esp. social media and community outreach were discussed (see july 2011 progress report)",
+   "tags": [
+    "goals",
+    "social media",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Long term goals (studio space)",
+   "resolution": "discussed",
+   "quote": "long term goals, esp. studio space in the future were discussed.",
+   "tags": [
+    "goals",
+    "studio space"
+   ]
+  },
+  {
+   "topic": "Fiber optic hookup of public buildings",
+   "resolution": "discussed; no action",
+   "quote": "ernie provided some information regarding the future hookup of all public",
+   "tags": [
+    "fiber optic",
+    "public buildings"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "none",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "July 2011 progress report",
+   "where": "text",
+   "quote": "short term goals esp. social media and community outreach were discussed (see july 2011 progress report)"
+  },
+  {
+   "name": "FY12 Budget Projections",
+   "where": "text",
+   "quote": "we reviewed fy12 budget projections the new projections now include line item numbers."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "equipment purchases",
+  "budget",
+  "programming",
+  "Comcast contract",
+  "Blackboard Connect",
+  "fiber optic",
+  "goals",
+  "social media"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "short term goals esp. social media and community outreach were discussed"
+ },
+ "dropped_unquoted_by_field": {}
 }

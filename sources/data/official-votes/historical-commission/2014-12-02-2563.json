@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-12-02",
  "docid": "2563",
@@ -10,8 +10,119 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12022014-2563",
   "doc_url": "/docs/meetings/historical-commission/2014-12-02-minutes-2563.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Approve the November 4, 2014 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "november 4, 2014 minutes were approved"
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "The OCR text is readable. Minutes approval is mentioned (\"November 4, 2014 minutes were approved\") but without procedural detail: no mover, seconder, or vote count is recorded. No other votes are documented in the minutes. The document records approvals and assignments informally without formal motion and voting language.",
- "cost_usd": 0.0807625
+ "note": "OCR of a scanned, received-and-filed page; the attendance line is garbled (\"Bey antry\" for Becky Lantry, who is named correctly in Old Business) and the sentence about Cullen Dwyer is cut off after \"was in\", so his attendance status is not stated. The minutes approval is recorded as \"were approved\" with no motion, mover, seconder or count, so it is listed as a procedural vote with outcome \"passed\". The adjournment has no recorded motion and is not listed as a vote. No dollar figures, public comment, transfers or document lists appear in the text.",
+ "cost_usd": 0.0032954200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Member (printed as \"Bey antry\" in the attendance line)",
+   "status": "present",
+   "quote": "bey antry, amory phelps, lois lewis and richard mccrath. cullen dwyer was in"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "bey antry, amory phelps, lois lewis and richard mccrath. cullen dwyer was in"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Member",
+   "status": "present",
+   "quote": "bey antry, amory phelps, lois lewis and richard mccrath. cullen dwyer was in"
+  },
+  {
+   "name": "Richard McCrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "bey antry, amory phelps, lois lewis and richard mccrath. cullen dwyer was in"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Member (candidate for membership per Old Business)",
+   "status": "not stated",
+   "quote": "bey antry, amory phelps, lois lewis and richard mccrath. cullen dwyer was in"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Membership for Cullen Dwyer on the Historical Commission will be presented to the Board of Selectmen on Tuesday, December 16, 2014.",
+   "quote": "membership for cullen dwyer on the historical commission will be presented to the board of selectman tuesday, december 16, 2014."
+  },
+  {
+   "decision": "Amory Phelps will discuss with Adam Burney, the Land Use Director, an Architectural Preservation District Bylaw to be in conjunction with the proposed Village Center District Bylaw before the Planning Board.",
+   "quote": "amory will discuss with adam burney, the land use director, an architectural preservation district bylaw to be in conjunction with the proposed village center district bylaw presently before the planning board."
+  },
+  {
+   "decision": "Richard McCrath agreed to review and report on the demolition delay requests received by the Historical Commission.",
+   "quote": "richard has agreed to review and report on the demolition delay requests received by the historical commission."
+  },
+  {
+   "decision": "Next meeting scheduled for January 6, 2015 at 6:30 p.m. in the Ritter Building.",
+   "quote": "next meeting scheduled for january 6, 2015 @ 6:30 p.m. in the ritter building."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order at 7:00 p.m."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved November 4, 2014 minutes",
+   "quote": "november 4, 2014 minutes were approved"
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action",
+   "quote": "there was no correspondence."
+  },
+  {
+   "topic": "Old business: preservation conference report and Cullen Dwyer membership",
+   "resolution": "reported; membership to go to Board of Selectmen",
+   "quote": "becky lantry and amory phelps attended the historic preservation conference at the university of massachusetts, amherst november 7, 2014."
+  },
+  {
+   "topic": "New business: Architectural Preservation District Bylaw and demolition delay review",
+   "resolution": "assignments made, no vote",
+   "quote": "richard has agreed to review and report on the demolition delay requests received by the historical commission."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:35 p.m.",
+   "quote": "meeting adjourned at 8:35 p.m."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "membership",
+  "architectural preservation district bylaw",
+  "village center district bylaw",
+  "demolition delay",
+  "preservation conference",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

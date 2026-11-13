@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2014-12-23",
  "docid": "2455",
@@ -12,21 +12,22 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 10/15/2014",
+   "motion": "Approve the minutes of 10/15/14.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes from 10/15/14 were approved."
   },
   {
-   "motion": "Approve up to $17,300.00 for Library and Public Safety Building lighting projects using the lowest bidder, plus $500.00 for Library timer clock repairs",
+   "motion": "Approve up to $17,300.00 for the Library and Public Safety Building lighting projects, going with the lowest bidder, plus $500.00 for repairs to the Library timer clock.",
    "moved_by": "D.Blatt",
    "seconded_by": "N.Sullivan",
    "outcome": "passed",
    "procedural": false,
-   "quote": "d.blatt motioned that we approve the money required, up to $17,300.00 for the library and public safety building lighting projects but go with the lowest bidder. also to be provided at the same time are the repairs to the library timer clock for $500.00 seconded by n.sullivan. approved."
+   "quote": "d.blatt motioned that we approve the money required, up to $17,300.00 for the library and public safety building lighting projects"
   },
   {
-   "motion": "Approve funding for envelope tightening at THMS ($1,000.) and the Eagle House ($2,000.)",
+   "motion": "Approve funding for envelope tightening at THMS ($1,000.) and the Eagle House ($2,000.).",
    "moved_by": "D.Blatt",
    "seconded_by": "J.McQuaid",
    "outcome": "passed",
@@ -35,6 +36,315 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1168065
+ "note": "Header reads \"Green Communities Task Force\" while the board is named Green Communities Committee. Minutes approval and the solar discussion are recorded without a stated mover or vote count. Adjournment at 8:30 P.M. is recorded without a motion. Attendance is from the \"Present\" and \"Observers\" lines; Zachary Cutting and Adam Burney are listed in the header but not marked present. Text was extracted with some odd spacing and collapsed for quotes.",
+ "cost_usd": 0.00622002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "Michael Conway",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "John Londa",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Library Trustee",
+   "status": "present",
+   "quote": "observers: robin venezia (library trustee), maryellen ramstack"
+  },
+  {
+   "name": "Maryellen Ramstack",
+   "role": "Observer",
+   "status": "present",
+   "quote": "observers: robin venezia (library trustee), maryellen ramstack"
+  },
+  {
+   "name": "Zachary Cutting",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "zachary cutting, member"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "adam burney, advisor"
+  },
+  {
+   "name": "James Breault",
+   "role": "Advisor",
+   "status": "absent",
+   "quote": "maintenance in j.breault's absence"
+  },
+  {
+   "name": "K. Walker",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "k. walker has taken over maintenance in"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Guardian Energy Systems was asked to re-quote the lighting project by 1/9/15.",
+   "quote": "guardian was asked to re-quote the project by 1/9/15."
+  },
+  {
+   "decision": "Three written quotes are required before the lighting project is awarded.",
+   "quote": "three written quotes are needed before awarding."
+  },
+  {
+   "decision": "Lighting fixtures will remain the same, with the lights changed to LED; DMH Electric will probably do the installation.",
+   "quote": "dmh electric will probably do the installation."
+  },
+  {
+   "decision": "When the lighting is installed, photos will be submitted or local media contacted to promote public awareness.",
+   "quote": "when the lights are actually installed we need to submit photos"
+  },
+  {
+   "decision": "A survey of Eagle House interior lighting is needed (room-by-room list of fixtures, quantities and photos); Mass Save can perform it.",
+   "quote": "a survey is needed; a room by room list of all lighting fixtures,"
+  },
+  {
+   "decision": "The DPW will obtain quotes and contact Mass Save for assistance on the envelope tightening work.",
+   "quote": "contact mass save for assistance."
+  },
+  {
+   "decision": "Stay with current bidders for the current projects; local contractors may be solicited going forward.",
+   "quote": "we should stay with current bidders for now."
+  },
+  {
+   "decision": "Solar by-law discussion continued to the next meeting, starting from the wording proposed by the Planning Board.",
+   "quote": "agreed to further discuss at next meeting."
+  },
+  {
+   "decision": "J. McQuaid will go to Town Hall to look for the Green Community road signs.",
+   "quote": "j.mcquaid will go to town hall"
+  },
+  {
+   "decision": "Next meeting should include A. Burney; possible date 1/13/15, date to be confirmed.",
+   "quote": "next meeting should include a. burney,; possibly 1/13/15. need to confirm date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Guardian Energy Systems quote for library and Public Safety Building exterior lights",
+   "what_was_recorded": "Guardian's quote for bollard, pole and Public Safety Building exterior lights was higher than estimated.",
+   "quote": "guardian energy systems provided a quote for the bollard and pole lights",
+   "figures_as_printed": [
+    "$10,018/ Library",
+    "$14,066/PS"
+   ]
+  },
+  {
+   "topic": "North East Electrical Supply second quote",
+   "what_was_recorded": "A second quote was still over the estimated price.",
+   "quote": "($6,300/ library and $11,000/ps)",
+   "figures_as_printed": [
+    "$6,300/ Library",
+    "$11,000/PS"
+   ]
+  },
+  {
+   "topic": "Lighting projects approval and timer repair",
+   "what_was_recorded": "Board approved money up to $17,300.00 for library and PS lighting, plus $500.00 for library timer clock repairs.",
+   "quote": "up to $17,300.00 for the library and public safety building lighting projects",
+   "figures_as_printed": [
+    "$17,300.00",
+    "$500.00"
+   ]
+  },
+  {
+   "topic": "Interior lighting retrofit savings at the library",
+   "what_was_recorded": "Retrofitting 18 up lights (400 W) could save 14,446 kWh/yr, possibly $3-4,000 per year.",
+   "quote": "possibly a $3-4,000. saving per year",
+   "figures_as_printed": [
+    "$3-4,000."
+   ]
+  },
+  {
+   "topic": "Grant funds and utility incentives",
+   "what_was_recorded": "Green Community Grant money and utility incentives are available for the projects.",
+   "quote": "d.blatt said that green community grant money is available as well as utility incentives.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library budget and fixed-rate Town contract",
+   "what_was_recorded": "Library manages its own budget but contracted with the Town for the next 2 years at a fixed rate.",
+   "quote": "the library is in charge of their own budget but contracted",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Prior funding status for Green Community projects",
+   "what_was_recorded": "Funding approved to date, less rebates, and amount actually spent.",
+   "quote": "to date $17,402. was approved, less $7,140. in rebates resulting in $10,262. actually spent.",
+   "figures_as_printed": [
+    "$17,402.",
+    "$7,140.",
+    "$10,262."
+   ]
+  },
+  {
+   "topic": "Envelope tightening funding",
+   "what_was_recorded": "Funding approved for envelope tightening at THMS and the Eagle House.",
+   "quote": "envelope tightening at thms ($1,000.) and the eagle house ($2,000.)",
+   "figures_as_printed": [
+    "$1,000.",
+    "$2,000."
+   ]
+  },
+  {
+   "topic": "School building LED lighting upgrade",
+   "what_was_recorded": "Cost of the LED lighting upgrade option for the new school would be $50,000 less utility rebates.",
+   "quote": "j.londa said the cost would be $50,000 less utility rebates.",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Robin Venezia",
+   "stated_role": "Library Trustee",
+   "topic": "Rising library electrical costs and interior lighting",
+   "quote": "library trustee, robin venezia , expressed concern that due to the rising cost"
+  },
+  {
+   "speaker": "M. Ramstack",
+   "stated_role": "observer",
+   "topic": "Solar by-law setback",
+   "quote": "m. ramstack mentioned that the doer minimum setback is 50'"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and minutes",
+   "resolution": "minutes of 10/15/14 approved",
+   "quote": "the minutes from 10/15/14 were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Status of current projects: library and Public Safety Building lighting",
+   "resolution": "approved up to $17,300.00 and $500.00 timer repair; lowest bidder; three quotes needed",
+   "quote": "d.blatt motioned that we approve the money required, up to $17,300.00 for the library and public safety building lighting projects",
+   "tags": [
+    "lighting",
+    "library",
+    "public safety building",
+    "LED",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Next projects to fund",
+   "resolution": "approved envelope tightening funding at THMS and Eagle House",
+   "quote": "d.blatt motioned to approve funding for envelope tightening at thms ($1,000.) and the eagle house ($2,000.)",
+   "tags": [
+    "envelope tightening",
+    "Eagle House",
+    "THMS",
+    "Mass Save",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Posting grant projects in the Lunenburg Ledger",
+   "resolution": "no action; stay with current bidders for now",
+   "quote": "we should stay with current bidders for now.",
+   "tags": [
+    "contractors",
+    "bidding"
+   ]
+  },
+  {
+   "topic": "Solar by-law",
+   "resolution": "continued to next meeting",
+   "quote": "agreed to further discuss at next meeting.",
+   "tags": [
+    "solar",
+    "zoning",
+    "by-law",
+    "setbacks"
+   ]
+  },
+  {
+   "topic": "Updates: school LED, solar RFP, EV charging, road signs",
+   "resolution": "no action; updates received",
+   "quote": "the school building committee has approved the led lighting upgrade option for",
+   "tags": [
+    "school",
+    "solar",
+    "electric vehicle",
+    "road signs"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "date to be confirmed; A. Burney to attend",
+   "quote": "next meeting should include a. burney,; possibly 1/13/15. need to confirm date.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Guardian Energy Systems quote (bollard, pole and PS exterior lights)",
+   "where": "text",
+   "quote": "guardian energy systems provided a quote for the bollard and pole lights"
+  },
+  {
+   "name": "North East Electrical Supply quote",
+   "where": "text",
+   "quote": "a second quote from north east electrical supply was still over the"
+  },
+  {
+   "name": "Solar by-law wording proposed by the Planning Board",
+   "where": "text",
+   "quote": "we should first look at the wording already proposed by"
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy efficiency",
+  "lighting",
+  "library",
+  "public safety building",
+  "solar by-law",
+  "grants",
+  "LED",
+  "school"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

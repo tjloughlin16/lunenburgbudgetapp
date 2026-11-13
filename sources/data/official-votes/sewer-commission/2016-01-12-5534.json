@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-01-12",
  "docid": "5534",
@@ -12,31 +12,437 @@
  },
  "votes": [
   {
-   "motion": "Approve the return of deposit (bond) on 42 Highland Ave. to Dan Proctor subject to Jack's written recommendation",
-   "moved_by": "Troy",
-   "seconded_by": "Mike",
+   "motion": "Approve the return of the deposit (a bond on 42 Highland Ave.) to Dan Proctor, subject to Jack's written recommendation to Barb.",
+   "moved_by": "Troy Daniels",
+   "seconded_by": "Mike Nault",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "troy made the motion to approve the return of deposit which is a bond on 42 highland ave. to dan proctor subject to jack's written recommendation to barb. mike seconded. vote taken was unanimous."
   },
   {
-   "motion": "Authorize Jack Rodriquenz and Carl to approve substantial completion of the Pleasantview project once Wright Pierce has reviewed and approved",
-   "moved_by": "Mike",
-   "seconded_by": "Troy",
-   "outcome": "passed 4-0-1",
-   "procedural": true,
+   "motion": "Authorize Jack Rodriquenz and Carl to approve substantial completion once Wright Pierce has reviewed and approved.",
+   "moved_by": "Mike Nault",
+   "seconded_by": "Troy Daniels",
+   "outcome": "passed, 4 in favor, 1 abstention",
+   "procedural": false,
    "quote": "mike made the motion, troy seconded. no discussion. sue recused herself from the vote. vote taken - 4 in favor, 1 abstention."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Troy",
-   "seconded_by": "Mike",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Troy Daniels",
+   "seconded_by": "Mike Nault",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "troy made the motion to adjourn, mike seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR-scanned but readable. All votes clearly recorded.",
- "cost_usd": 0.1165825
+ "note": "OCR text from a scanned, multi-page transcription with recognition errors (e.g., \"Jaime\", \"Small Waters\" for Small Water Systems). The workshop section ends at 7:08pm and the regular meeting has no separate recorded call to order; the 6:02 call to order applies to the workshop. Three motions are recorded and all have printed results. Some discussion items (grease trap, Hollis Hills) have no motion. The codification topic is printed as \"(no)\". Transfers: none recorded. Documents: the minutes name no headed list; the map handed out by Jamie Rheault and the 4:30 email are recorded as used in the text, so documents_list is marked printed with the sentence opening as heading.",
+ "cost_usd": 0.01201902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, mike nault, john reynolds, troy daniels; business manager,"
+  },
+  {
+   "name": "Sue Bunish",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, mike nault, john reynolds, troy daniels; business manager,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, mike nault, john reynolds, troy daniels; business manager,"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, mike nault, john reynolds, troy daniels; business manager,"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, mike nault, john reynolds, troy daniels; business manager,"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager, barb lefebvre. minutes clerk, emily lehto"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes clerk",
+   "status": "present",
+   "quote": "business manager, barb lefebvre. minutes clerk, emily lehto"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham",
+   "status": "present",
+   "quote": "jamie rheault, whitman & bingham -835 leominster rd- leominster sewer direct connect request -"
+  },
+  {
+   "name": "Kevin Hill",
+   "role": "developer on the project; W&B",
+   "status": "present",
+   "quote": "jamie introduced himself and kevin hill from w&b. kevin hill is the developer on the project located across from"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "bob ebersole, selectman, who had just joined the meeting noted that the selectmen are looking at the pavement management plan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Current regulations will be enforced, and the current log requirement for percentages of external and internal interceptors is to be added; the commission was in agreement.",
+   "quote": "carl stated that current regulations will be enforced and to add the current log requirement for percentages of external interceptors and to internal."
+  },
+  {
+   "decision": "Barb to check the status of the 274 Prospect project and how many units are slated for construction.",
+   "quote": "carl asked barb to check the status on the project and how many units are slated for construction."
+  },
+  {
+   "decision": "Connections, purchase of service, betterment, outsourcing, and betterments on new projects to be reviewed to estimate FY17 figures; other lines can generally be shifted from FY16.",
+   "quote": "determined that these areas will need review to determine estimates for fy 17- connections, purchase of service, betterment, outsourcing, betterments on the new projects."
+  },
+  {
+   "decision": "Barb to send the Wright Pierce budget status email to the Commission.",
+   "quote": "barb will send the email out to the commission."
+  },
+  {
+   "decision": "First step on betterment calculations is to ask Weston & Sampson for a quote, providing the area to be analyzed.",
+   "quote": "carl noted that the first step is to ask weston & sampson for a quote, providing the area to be analyzed."
+  },
+  {
+   "decision": "Carl authorized Troy to work with Jeff Blake directly on the private extension regulation; Troy would defer to town counsel's recommendations.",
+   "quote": "carl authorized troy to work with jeff blake directly, but troy noted that he would defer to whatever town counsel's recommendations were."
+  },
+  {
+   "decision": "Barb to send Jeff's email to Troy.",
+   "quote": "barb will send jeff's email to troy."
+  },
+  {
+   "decision": "Full Commission to review the final version of the private extension regulation at the 1/26 meeting.",
+   "quote": "full commission will review the final version at the 1/26 meeting."
+  },
+  {
+   "decision": "Barb to check with Wright Pierce on whether the House Bill H3654 provisions can apply to Pratt/Lakeview betterments.",
+   "quote": "barb will check with wright pierce."
+  },
+  {
+   "decision": "Barb to send the codification package with her notes and backup to the Commission for the next meeting.",
+   "quote": "barb will send out the package to the commission with her notes and backup that we can review at the next meeting."
+  },
+  {
+   "decision": "Jamie's appointment stays on the 1/26 agenda rather than substituting Graves.",
+   "quote": "barb asked if we wanted to push out jamie's appointment and have graves come in instead on 1/26. carl said to leave it as is."
+  },
+  {
+   "decision": "Jamie to bring a map showing all test spots and a letter from Leominster addressing capacity and no implications to existing agreements.",
+   "quote": "carl restated to jamie that we need a map with all the test spots shown."
+  },
+  {
+   "decision": "Carl's action: draft a statement to legal on charging developers a privilege fee (not yet done).",
+   "quote": "his action was to draft a statement to legal to contain the work which he hasn't done."
+  },
+  {
+   "decision": "Barb to send a draft betterment website update to Carl to review first.",
+   "quote": "barb will send a draft to carl to review first."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY16 year-to-date, l/l amount",
+   "what_was_recorded": "Commission discussed the l/l amount and said the numbers look good.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "commission discussed the l/l amount of $15,000."
+  },
+  {
+   "topic": "FY17 proposed budget",
+   "what_was_recorded": "Barb does not yet have a proposed FY17 budget and will bring it to the next meeting; the Enterprise Fund is on a different schedule than other Town departments.",
+   "figures_as_printed": [],
+   "quote": "as for fy17, barb does not have a proposed budget yet, but will have it for the next meeting."
+  },
+  {
+   "topic": "42 Highland Ave deposit return",
+   "what_was_recorded": "Return of the deposit bond to Dan Proctor, subject to Jack's recommendation, to release the funds.",
+   "figures_as_printed": [
+    "$2400"
+   ],
+   "quote": "if it is jack's recommendation that we release the $2400 that she will communicate with carl"
+  },
+  {
+   "topic": "Leominster direct connect - capacity fee",
+   "what_was_recorded": "Troy said the developers should share in the cost of capacity if reduced capacity is an implication.",
+   "figures_as_printed": [],
+   "quote": "they should share in the cost of capacity if that is the case."
+  },
+  {
+   "topic": "Pratt/Lakeview bond and betterment calculations",
+   "what_was_recorded": "The bond will close in February 2016; betterment bills may come due before betterment revenue arrives, so betterment calculations were discussed.",
+   "figures_as_printed": [],
+   "quote": "carl wanted to start the discussion on betterment calculations because our bills may hit before the betterment revenue starts coming in."
+  },
+  {
+   "topic": "Pratt/Lakeview bond closing",
+   "what_was_recorded": "Barb stated that the bond will be closed in February 2016.",
+   "figures_as_printed": [],
+   "quote": "barb stated that the bond will be closed in february 2016."
+  },
+  {
+   "topic": "House Bill H3654 betterment terms",
+   "what_was_recorded": "Bill passed House and Senate and awaits the Governor; it would allow betterments spread over 30 years instead of 20 and remove the requirement to add 2% to cost.",
+   "figures_as_printed": [
+    "30 years",
+    "20",
+    "2%"
+   ],
+   "quote": "allowing betterments to be spread over 30 years, instead of 20 and no requirement to add 2% to the cost."
+  },
+  {
+   "topic": "Highfield Village privilege fee",
+   "what_was_recorded": "No update from legal on charging developers a privilege fee.",
+   "figures_as_printed": [],
+   "quote": "carl stated that he had no update on legal's input regarding charging the developers a privilege fee."
+  },
+  {
+   "topic": "Betterment on tax bills (website)",
+   "what_was_recorded": "Residents asked when the betterment will hit their taxes; website to state it will not appear on tax bills until December 2016.",
+   "figures_as_printed": [],
+   "quote": "the betterment will not appear on the tax bills until december 2016."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "Selectman",
+   "topic": "pavement management plan",
+   "quote": "bob ebersole, selectman, who had just joined the meeting noted that the selectmen are looking at the pavement management plan and want to confer with the sewer commission and water district"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Workshop - Grease Trap Inspections",
+   "resolution": "discussed; current regulations to be enforced, log requirement added",
+   "quote": "workshop - grease trap inspections -carl l. and small water systems services, l.l.c. (swss) inspected the",
+   "tags": [
+    "grease traps",
+    "inspections",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Appointment - Jamie Rheault, Whitman & Bingham, Leominster sewer direct connect",
+   "resolution": "no action; to return on 1/26 agenda",
+   "quote": "it was confirmed that jamie will be on the next agenda which is 1/26.",
+   "tags": [
+    "Leominster",
+    "direct connect",
+    "development"
+   ]
+  },
+  {
+   "topic": "Budget - YTD FY16 and FY17",
+   "resolution": "discussed; FY17 budget to come at next meeting",
+   "quote": "budget - ytd fy16-carl first wanted to look at the year-to-date for fy16 and asked for comments.",
+   "tags": [
+    "budget",
+    "FY16",
+    "FY17"
+   ]
+  },
+  {
+   "topic": "42 Highland Ave acceptance and return of deposit",
+   "resolution": "approved, subject to Jack's written recommendation",
+   "quote": "42 highland ave acceptance and return of deposit - barb noted that she was awaiting jack's approval but was",
+   "tags": [
+    "deposit",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Hollis Hills",
+   "resolution": "no action; court case 2/2",
+   "quote": "carl reviewed that they have met with the board of selectmen and zba in joint session and the key points are",
+   "tags": [
+    "Hollis Hills",
+    "court case",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview Project status",
+   "resolution": "discussed; Weston & Sampson quote to be requested",
+   "quote": "pratt/lakeview project status - carl asked whether we'd received anything further on the budget status from",
+   "tags": [
+    "Pratt/Lakeview",
+    "betterments",
+    "bond",
+    "Wright Pierce"
+   ]
+  },
+  {
+   "topic": "Pleasantview",
+   "resolution": "approved substantial completion, 4 in favor, 1 abstention",
+   "quote": "pleasantview-barb noted that cjp was onsite 1/11 for mandrel testing",
+   "tags": [
+    "Pleasantview",
+    "line acceptance",
+    "CJP"
+   ]
+  },
+  {
+   "topic": "Town Codification update",
+   "resolution": "no action; package to come to next meeting",
+   "quote": "town codification update (no) - carl reviewed the codification process that the",
+   "tags": [
+    "codification",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Private Extension regulation",
+   "resolution": "continued; final version to Commission on 1/26",
+   "quote": "private extension - barb noted that she had sent off the latest version of the private extension regulation to counsel",
+   "tags": [
+    "private extension",
+    "surety bond",
+    "regulation"
+   ]
+  },
+  {
+   "topic": "Wright Pierce - House Bill H3654",
+   "resolution": "discussed; Barb to check with Wright Pierce",
+   "quote": "wright pierce - barb noted the house bill h3654 information that carl had forwarded on to wright",
+   "tags": [
+    "H3654",
+    "betterments",
+    "state law"
+   ]
+  },
+  {
+   "topic": "357 Electric Ave update",
+   "resolution": "no action; peer review on 1/26 agenda",
+   "quote": "357 electric ave update -peer review will be on the 1/26 agenda per jamie's request earlier.",
+   "tags": [
+    "peer review",
+    "357 Electric Ave",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Highfield Village",
+   "resolution": "no action; Planning Board hearing continued to 2/8",
+   "quote": "highfield village -barb noted that per the planning board, the hearing was continued to 2/8",
+   "tags": [
+    "Highfield Village",
+    "privilege fee",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Website - betterment information",
+   "resolution": "draft to Carl for review",
+   "quote": "website - barb's only suggestion at this time is to add information about the betterment",
+   "tags": [
+    "website",
+    "betterment",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Public comment - pavement management plan",
+   "resolution": "no action; Selectmen to be advised of paving projects",
+   "quote": "bob ebersole, selectman, who had just joined the meeting noted that the selectmen are looking at the pavement management plan",
+   "tags": [
+    "paving",
+    "public comment",
+    "Selectmen"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously at 8:49pm",
+   "quote": "troy made the motion to adjourn, mike seconded. vote taken was unanimous.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Map of the site (762 Leominster Rd area, 5-6 single family homes), handed out by Jamie Rheault",
+   "where": "list",
+   "quote": "jamie handed out a map of the site where 5-6 single family homes are to be built."
+  },
+  {
+   "name": "Email received at 4:30 today on budget status from Wright Pierce",
+   "where": "list",
+   "quote": "barb produced an email received at 4:30 today which carl reviewed for the commission."
+  },
+  {
+   "name": "Jack's written recommendation on the 42 Highland Ave deposit",
+   "where": "text",
+   "quote": "troy wants to be sure we get something in writing from jack."
+  },
+  {
+   "name": "House Bill H3654 information forwarded to Wright Pierce",
+   "where": "text",
+   "quote": "barb noted the house bill h3654 information that carl had forwarded on to wright"
+  },
+  {
+   "name": "Latest version of the private extension regulation",
+   "where": "text",
+   "quote": "barb noted that she had sent off the latest version of the private extension regulation to counsel"
+  },
+  {
+   "name": "Email on the Sewer Allocation Agreement from 11/13",
+   "where": "text",
+   "quote": "troy noted that he had an email regarding the sewer allocation agreement from 11/13."
+  },
+  {
+   "name": "Legal's recommendation on the codification process",
+   "where": "text",
+   "quote": "kerry had forwarded on legal's recommendation for the sewer commission."
+  },
+  {
+   "name": "Letter sent on hearing requests about fees",
+   "where": "text",
+   "quote": "that the letter sent already states that."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease traps",
+  "Leominster connection",
+  "betterments",
+  "Pratt/Lakeview",
+  "FY16/FY17 budget",
+  "private extension regulation",
+  "Highland Ave deposit",
+  "Pleasantview",
+  "Wright Pierce",
+  "Highfield Village",
+  "357 Electric Ave",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jamie handed out a map of the site"
+ },
+ "dropped_unquoted_by_field": {}
 }

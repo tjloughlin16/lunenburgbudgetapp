@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-02-10",
  "docid": "5502",
@@ -12,23 +12,417 @@
  },
  "votes": [
   {
-   "motion": "ratify the consensus of the board to approve the Weston & Sampson contract signed on February 3rd",
+   "motion": "To ratify the consensus of the board to approve the Weston & Sampson contract signed on February 3rd.",
    "moved_by": "Troy",
    "seconded_by": "Butch",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "troy made the motion to ratify the consensus of the board to approve the contract, signed on february 3rd, butch seconded. vote taken was unanimous."
   },
   {
-   "motion": "to adjourn",
+   "motion": "To adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Troy",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "butch made the motion, troy seconded. vote taken was unanimous and the meeting was adjourned at 9:08pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR minutes from macOS Vision. Two votes recorded, both unanimous.",
- "cost_usd": 0.1004645
+ "note": "OCR of a two-page scan (macOS Vision). The minutes open mid-discussion, with no call to order, roll call or agenda listed, so attendance is inferred from who speaks or is named. Two motions were recorded with votes (one ratification, one adjournment). Carl's request to move the Pleasant View item up has no recorded result. The Pleasant View 'unanimous' remark is a consensus read, not a vote. Several passages are garbled by OCR ('I/l' for I/I, 'Respectfülly'), and some quotes were collapsed across line breaks.",
+ "cost_usd": 0.00785252,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl asked if anyone had anything more and said he would entertain a motion to adjourn.",
+   "role": "not stated"
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb will contact pat of weston & sampson to come in to discuss, prior to starting the l/l project.",
+   "role": "not stated"
+  },
+  {
+   "name": "Troy",
+   "status": "present",
+   "quote": "troy made the motion to ratify the consensus of the board to approve the contract, signed on february 3rd, butch seconded.",
+   "role": "not stated"
+  },
+  {
+   "name": "Butch",
+   "status": "present",
+   "quote": "butch made the motion, troy seconded. vote taken was unanimous and the meeting was adjourned at 9:08pm",
+   "role": "not stated"
+  },
+  {
+   "name": "Mike",
+   "status": "present",
+   "quote": "mike noted that the letter should state that non-compliance will affect the issuance of your license",
+   "role": "not stated"
+  },
+  {
+   "name": "Bob",
+   "status": "present",
+   "quote": "bob mentioned that he questioned whether the town's payment included interest.",
+   "role": "not stated"
+  },
+  {
+   "name": "Dan",
+   "status": "present",
+   "quote": "dan advised due to line depth and grade, it had to be beal.",
+   "role": "not stated"
+  },
+  {
+   "name": "Sue Bunish",
+   "status": "present",
+   "quote": "with sue bunish present from pleasant view ave.",
+   "role": "resident, Pleasant View Ave."
+  },
+  {
+   "name": "Kevin Olson of Wright",
+   "status": "not stated",
+   "quote": "kevin olson of wright",
+   "role": "not stated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dan's worst-case pricing for the WCU extension is to be based on the last 12 months only for betterment and connection charges; Dan agreed.",
+   "quote": "by pricing the betterment and connection charges based on the last 12 months only. dan agreed."
+  },
+  {
+   "decision": "Consensus that the Commission favors the private extension if WCU wants to proceed.",
+   "quote": "butch pointed out that the consensus seems to be that the commission is in favor of the private extension if wcu wants to proceed."
+  },
+  {
+   "decision": "Dan will advise the customer of the danger in delaying the decision on the extension.",
+   "quote": "dan understood and will advise the customer of the danger in delaying the decision."
+  },
+  {
+   "decision": "Carl asked that the engineer for the plan use the WMP as a guideline, as any extension should be consistent with the master plan.",
+   "quote": "carl asked that the engineer for the plan use the wmp as a guideline, as any extension should be consistent with the master plan."
+  },
+  {
+   "decision": "Carl asked that the Commission get back to Upland Ave.; Barb will check prior survey responses from affected residents.",
+   "quote": "she could check the responses for those affected to see if they were in favor."
+  },
+  {
+   "decision": "Troy noted the contractor should not be required to contact residents.",
+   "quote": "troy noted that we should not"
+  },
+  {
+   "decision": "For Pleasant View Ave., the Commission will send a letter to all residents to gauge interest with an estimated cost, and will place a placeholder on the warrant; Sue Bunish gets a heads-up when letters go out.",
+   "quote": "carl summed up saying we would get a letter out, with an estimated cost, and get a placeholder on the warrant for sewering pleasant view ave."
+  },
+  {
+   "decision": "Board consensus, per Troy's read, that the Commission supports sewering Pleasant View Ave.; no formal vote recorded.",
+   "quote": "troy stated that it looked like it was unanimous to support sewering pleasant view."
+  },
+  {
+   "decision": "Carl will work with Barb on the letter about non-compliance; Troy will research collection agencies in the area.",
+   "quote": "carl will work with barb on the letter, and troy will research collection agencies in the area."
+  },
+  {
+   "decision": "Private sewer extension workshop set for Tuesday night, March 3, at 6pm at the DPW; Barb will check with Dave.",
+   "quote": "it was determined that it would be scheduled for tuesday night, march 3, at 6pm here at the dpw."
+  },
+  {
+   "decision": "Weston & Sampson to be asked to do a study of manholes and report what needs to be done before the I/I project starts; Barb will contact Pat.",
+   "quote": "carl suggested that we have weston & sampson do a study of manholes and give a report of what needs to be done."
+  },
+  {
+   "decision": "Carl has the NOAA link and will send it to Mike regarding flow-spike weather correlation.",
+   "quote": "carl has the noaa link and will send it to"
+  },
+  {
+   "decision": "Carl is planning to meet with Jack and Kerry regarding the road and water service on Pleasant View Ave.",
+   "quote": "carl is planning still to meet with jack and kerry regarding the road and water service."
+  },
+  {
+   "decision": "Barb will check with Dave on the workshop date.",
+   "quote": "barb will check with dave."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Betterment assessment basis for privilege fees (WCU extension)",
+   "what_was_recorded": "Privilege fees quoted are based on the last betterment assessment; a Pratt St. project completed first could raise the betterment much higher.",
+   "figures_as_printed": [
+    "$11,551.47"
+   ],
+   "quote": "the privilege fees quoted are based on the last betterment assessment of $11,551.47"
+  },
+  {
+   "topic": "Q3 Commitment for signature",
+   "what_was_recorded": "Barb had the Q3 Commitment ready for the Commission's signature.",
+   "figures_as_printed": [
+    "$217,200.45"
+   ],
+   "quote": "barb had the q3 commitment of $217,200.45 for the commission's signature."
+  },
+  {
+   "topic": "FY16 budget and betterment fund deficit",
+   "what_was_recorded": "Carl's plan is to proceed with the $69,000 figure, which can help offset the betterment fund deficit.",
+   "figures_as_printed": [
+    "$69,000",
+    "$147,000"
+   ],
+   "quote": "this amount can help to offset the $147,000 deficit in the betterment fund."
+  },
+  {
+   "topic": "Betterment repayment costs through 2047",
+   "what_was_recorded": "The Accountant provided costs through 2047; Carl wants reconciliation of funds versus loan payment; discussion of interest on up-front betterments.",
+   "figures_as_printed": [],
+   "quote": "the accountant had provided the costs through 2047, and carl wants to look at reconciliation of funds versus loan payment."
+  },
+  {
+   "topic": "Board of Health septic/sewer connection fund",
+   "what_was_recorded": "Board of Health fund for residents' septic or sewer connection, income-based, administered by MRPC, to be dealt with at Town Meeting.",
+   "figures_as_printed": [
+    "$125,000"
+   ],
+   "quote": "it has upwards of $125,000, and applications will be income-based, with the mrpc"
+  },
+  {
+   "topic": "Pleasant View Ave. sewer cost",
+   "what_was_recorded": "A cost estimate for sewering Pleasant View Ave. is still to be determined.",
+   "figures_as_printed": [],
+   "quote": "we'll need to determine cost estimate."
+  },
+  {
+   "topic": "Weston & Sampson contract",
+   "what_was_recorded": "Weston & Sampson contract discussed on 12/13 and signed on 2/3 was ratified; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the weston & sampson contract which was discussed on 12/13 with"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sue Bunish",
+   "stated_role": "from Pleasant View Ave.",
+   "topic": "Pleasant View Ave. sewer and water",
+   "quote": "sue provided more details of her and her neighbors' attempts to get sewer"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Connection charges and private extension for WCU facility",
+   "resolution": "discussed; pricing based on last 12 months; Commission favors private extension if WCU proceeds",
+   "quote": "commission also discussed with dan whether the line could go up mass ave. versus beal.",
+   "tags": [
+    "sewer extension",
+    "betterment",
+    "connection charges",
+    "WCU"
+   ]
+  },
+  {
+   "topic": "Upland Ave. / Electric Ave. sewer connection",
+   "resolution": "discussed; Commission to return to Upland Ave.",
+   "quote": "dan stated that the next project proposed was a similar situation to that just done for the highland ave.",
+   "tags": [
+    "sewer extension",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "603 Mass Ave. and Whitcomb property (Prospect Ave./Cross Rd.)",
+   "resolution": "discussed; no vote",
+   "quote": "dan noted that his 3d issue was the 17 acre whitcomb property on prospect ave, and cross rd.",
+   "tags": [
+    "sewer service area",
+    "subdivision",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "Pleasant View Ave. sewer extension (taken up early)",
+   "resolution": "letter to residents with estimated cost; placeholder on warrant",
+   "quote": "carl introduced sue and gave a brief history of the street's attempts",
+   "tags": [
+    "Pleasant View Ave",
+    "sewer extension",
+    "Town Meeting",
+    "water pipe"
+   ]
+  },
+  {
+   "topic": "Pratt St./Lakeview Ave. SRF project easements",
+   "resolution": "status update; no action",
+   "quote": "pratt st/lakeview ave srf project - easements - barb stated that we had received another easement",
+   "tags": [
+    "easements",
+    "SRF",
+    "Pratt St",
+    "eminent domain"
+   ]
+  },
+  {
+   "topic": "Pump specifications and agreements",
+   "resolution": "discussed; Carl seeking non-E-one specs",
+   "quote": "pump specification/ agreements - carl noted that he is trying to get specs on systems other than e-one",
+   "tags": [
+    "pumps",
+    "E-one",
+    "residents"
+   ]
+  },
+  {
+   "topic": "Delinquent accounts and collections",
+   "resolution": "discussed; Carl and Barb to draft letter; Troy to research collection agencies",
+   "quote": "commission discussed outsourcing to collection agencies, or small accounting firms.",
+   "tags": [
+    "collections",
+    "license",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Private sewer extension workshop scheduling",
+   "resolution": "scheduled for March 3, 6pm at DPW",
+   "quote": "it was determined that it would be scheduled for tuesday night, march 3, at 6pm here at the dpw.",
+   "tags": [
+    "workshop",
+    "private extensions"
+   ]
+  },
+  {
+   "topic": "FY16 budget",
+   "resolution": "discussed; items for research",
+   "quote": "fy16 budget - carl's plan is to go forward with the budget discussed with the commission on february 3rd",
+   "tags": [
+    "FY16 budget",
+    "betterment fund",
+    "interest",
+    "loan"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects: flow rate and metering",
+   "resolution": "discussed; NOAA link to be sent",
+   "quote": "mike noted that the couple of spikes he saw in the report on",
+   "tags": [
+    "flow metering",
+    "weather",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "I/I reduction project",
+   "resolution": "Weston & Sampson to study manholes",
+   "quote": "troy stated the sewer commission cannot make an i/l plan without accurate information.",
+   "tags": [
+    "inflow and infiltration",
+    "manholes",
+    "Mass Ave",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant and Board of Health fund",
+   "resolution": "discussed; no action",
+   "quote": "barb stated that the town meeting warrant is on the agenda to consider any other article besides pleasant view ave..",
+   "tags": [
+    "Town Meeting",
+    "warrant",
+    "Board of Health",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Permits, Q3 commitment and Weston & Sampson contract ratification",
+   "resolution": "contract ratified unanimously; Q3 commitment presented for signature",
+   "quote": "troy made the motion to ratify the consensus of the board to approve the contract, signed on february 3rd, butch seconded.",
+   "tags": [
+    "permits",
+    "commitment",
+    "contract",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Public Access Open House and upcoming meetings",
+   "resolution": "announced; no action",
+   "quote": "barb pointed out the town-wide invitation for the public access open house",
+   "tags": [
+    "meetings",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:08pm",
+   "quote": "butch made the motion, troy seconded. vote taken was unanimous and the meeting was adjourned at 9:08pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Betterment bylaw",
+   "where": "text",
+   "quote": "both the betterment bylaw and connection charge policy base"
+  },
+  {
+   "name": "Connection charge policy",
+   "where": "text",
+   "quote": "both the betterment bylaw and connection charge policy base"
+  },
+  {
+   "name": "Sewer Service Area map (GIS)",
+   "where": "text",
+   "quote": "barb pulled up the sewer service area map on gis and"
+  },
+  {
+   "name": "WMP (master plan)",
+   "where": "text",
+   "quote": "carl asked that the engineer for the plan use the wmp as a guideline"
+  },
+  {
+   "name": "NOAA link (weather data)",
+   "where": "text",
+   "quote": "carl has the noaa link and will send it to"
+  },
+  {
+   "name": "Q3 Commitment of $217,200.45",
+   "where": "text",
+   "quote": "barb had the q3 commitment of $217,200.45 for the commission's signature."
+  },
+  {
+   "name": "Weston & Sampson contract (signed 2/3)",
+   "where": "text",
+   "quote": "the weston & sampson contract which was discussed on 12/13 with"
+  },
+  {
+   "name": "Permit to connect, 712 Mass Ave. (Poirier property)",
+   "where": "text",
+   "quote": "a recent permit to connect was for 712 mass ave., the poirier property"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "sewer extension",
+  "betterment",
+  "private extension",
+  "Pleasant View Ave",
+  "easements",
+  "Pratt St SRF",
+  "FY16 budget",
+  "I/I",
+  "collections",
+  "Weston & Sampson",
+  "Town Meeting",
+  "workshop"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-08-14",
  "docid": "1799",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the June 12, 2012 Annual COA Meeting",
+   "motion": "Accept the minutes of the June 12, 2012 Annual COA Meeting.",
    "moved_by": "Sis Montuori",
    "seconded_by": "Barbara Brown",
    "outcome": "passed",
@@ -20,13 +20,13 @@
    "quote": "sis montuori motioned to accept the minutes of the june 12, 2012 annual coa meeting. barbara brown seconded. all approved, motion carried."
   },
   {
-   "motion": "Accept the end of year Director's Evaluation report",
+   "motion": "Accept the end-of-year Director's Evaluation report.",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "the end of the year director's evaluation report was submitted and accepted by the board with a unanimous vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sis Montuori",
    "seconded_by": "Barbara Brown",
    "outcome": "passed",
@@ -34,7 +34,332 @@
    "quote": "sis montuori motioned to adjourn the meeting. barbara brown seconded. all approved, motion carried."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Clear, legible minutes. All votes recorded with explicit outcomes.",
- "cost_usd": 0.0871565
+ "dropped_unquoted": 1,
+ "note": "Text is a clean extraction, not a scan. Votes on the minutes, adjournment and the Director's Evaluation are recorded as \"All approved\" or \"unanimous\" with no tally. The Director's Evaluation has no printed motion or mover. Page 3 signature block is garbled and names Susan Doherty where the attendance list says Sue Doherty. Sis Montuori is also spelled \"Ms. Montouri\" once in the text. The header says these minutes were approved at the 9/11/12 meeting, which is not recorded here.",
+ "cost_usd": 0.009295120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: peter lincoln, (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin,"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: peter lincoln, (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin,"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "board member",
+   "status": "present",
+   "quote": "present: peter lincoln, (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "board member",
+   "status": "present",
+   "quote": "present: peter lincoln, (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin,"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "board member",
+   "status": "present",
+   "quote": "present: peter lincoln, (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin,"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "board member",
+   "status": "present",
+   "quote": "sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "board member",
+   "status": "present",
+   "quote": "sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "absent",
+   "quote": "excused: mary lynn conrad (chairperson) & jane doyle"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "board member",
+   "status": "absent",
+   "quote": "excused: mary lynn conrad (chairperson) & jane doyle"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "board member",
+   "status": "absent",
+   "quote": "absent: jim hays guests: lloyd carlson (president friends of the eagle house inc.)"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "President Friends of the Eagle House Inc.",
+   "status": "present",
+   "quote": "guests: lloyd carlson (president friends of the eagle house inc.) & steve raboin (lunenburg finance committee member)"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Lunenburg Finance Committee member",
+   "status": "present",
+   "quote": "guests: lloyd carlson (president friends of the eagle house inc.) & steve raboin (lunenburg finance committee member)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Funds collected at Lunenburg Relief Day will be disclosed in a letter to the donors, once the final decision on their use is made.",
+   "quote": "it was decided that whatever the final decision was of how the money is going to be used, it should disclosed in a letter to the donors."
+  },
+  {
+   "decision": "Money not spent on the Eagle House parking lot project will be returned to the Friends of the Eagle House Inc.",
+   "quote": "ms. noble explained the particulars to the town manager and the money will be returned to the friends group."
+  },
+  {
+   "decision": "Ms. Noble will research another phone system with the help of the town IT Director.",
+   "quote": "ms. noble will be researching another phone system with the assistance of the it director for the town."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Kitchen equipment replacement",
+   "what_was_recorded": "Ms. Noble reported that $10K had been approved through Capital Planning to replace the main kitchen oven, refrigerator and steam table.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "ms. noble reported that $10k was approved through capitol planning to replace the oven, refrigerator and steam table in the main kitchen at the center."
+  },
+  {
+   "topic": "Lunenburg Relief Day donations",
+   "what_was_recorded": "Donations collected for the COA at Relief Day totaled about $5K, short of the $12K budget cut; the funds go to the COA Revolving Gift Fund.",
+   "figures_as_printed": [
+    "$5K",
+    "$12K"
+   ],
+   "quote": "donations collected totaled approximately $5k which is short of the $12k budget cut."
+  },
+  {
+   "topic": "Relief Day funds available for Friday opening",
+   "what_was_recorded": "Ms. Seeley said the $5K collected would amount to only about $125 available to reopen on Fridays with 10 months left in FY13.",
+   "figures_as_printed": [
+    "$5K",
+    "$125."
+   ],
+   "quote": "ms. seeley mentioned that with the $5k collected it would only amount to approximately $125. available to be spent on opening on fridays"
+  },
+  {
+   "topic": "FY13 Formula Grant increase",
+   "what_was_recorded": "The Formula Grant increased, amounting to $7 per elder in the town; grant money covers MOW mileage, Outreach salary, MCOA conference fees and dues, and travel for the MCOA Executive Board.",
+   "figures_as_printed": [
+    "$7 per elder"
+   ],
+   "quote": "there was an increase in the formula grant which will amount to $7 per elder in the town."
+  },
+  {
+   "topic": "Eagle House parking lot funds returned",
+   "what_was_recorded": "Unexpended funds from the Eagle House parking lot project are to be returned to the Friends of the Eagle House Inc.; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "she had been working with the town account to have funds returned to the friends of the eagle house inc. which were not expended for the parking lot project."
+  },
+  {
+   "topic": "FY14 operating budget planning",
+   "what_was_recorded": "Ms. Noble said the FY14 operating budget must be based on hard planning, not on possible Relief Fund donations; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. noble said that she must follow a hard planning perspective for fy14 and that she cannot base an operating budget on what may or may not come in via donations from the relief fund."
+  },
+  {
+   "topic": "COA and Library budget cuts and override",
+   "what_was_recorded": "Mr. Raboin said the COA and Library budget cuts were a scare tactic tied to the override that failed at Town Meeting in May; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cuts to the coa and library budgets were used as a \"scare tactic\" in order to pass the proposed override, which failed at town meeting in may."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Raboin",
+   "stated_role": "Lunenburg Finance Committee member",
+   "topic": "budget cuts and the failed override",
+   "quote": "mr. raboin spoke and said that he agrees that the situation would not be getting better but believes that the cuts to the coa and library budgets were used as a \"scare tactic\""
+  },
+  {
+   "speaker": "Mr. Raboin",
+   "stated_role": "Lunenburg Finance Committee member",
+   "topic": "van driver's role",
+   "quote": "mr. raboin questioned the van driver's role."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "opened 9:30AM; staffing issue noted",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "welcome: pete lincoln (vice-chairperson) opened the meeting at 9:30am"
+  },
+  {
+   "topic": "Minutes of June 12, 2012",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "sis montuori motioned to accept the minutes of the june 12, 2012 annual coa meeting."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; financial report presented; Friday closure and van driver changes reported",
+   "tags": [
+    "director",
+    "finance",
+    "van service",
+    "Friday closure"
+   ],
+   "quote": "finance/informational report: the financial report was presented to the coa board."
+  },
+  {
+   "topic": "Recreation area behind Eagle House",
+   "resolution": "no action; design plans expected by spring",
+   "tags": [
+    "Eagle House",
+    "recreation"
+   ],
+   "quote": "pete lincoln informed the board that he has been in contact with steve powell of powell stone & gravel"
+  },
+  {
+   "topic": "COA BBQ/Volunteer Recognition Ceremony",
+   "resolution": "reminder given; local press to be contacted",
+   "tags": [
+    "events",
+    "volunteers"
+   ],
+   "quote": "coa bbq/volunteer recognition ceremony 8/22/12: board members were reminded about the upcoming"
+  },
+  {
+   "topic": "Lunenburg Relief Day fundraising",
+   "resolution": "discussed; decided donors will get a letter on the final use of funds",
+   "tags": [
+    "fundraising",
+    "Relief Day",
+    "budget cuts"
+   ],
+   "quote": "lunenburg relief day: ms. noble reported that along with herself, pete & deb lincoln"
+  },
+  {
+   "topic": "FY13 Formula Grant",
+   "resolution": "grant completed and sent to Town Manager; walkway proposal to be pursued",
+   "tags": [
+    "grant",
+    "formula grant",
+    "walkway"
+   ],
+   "quote": "fy13 formula grant: ms. noble reported that the fy13 formula grant has been completed and submitted to"
+  },
+  {
+   "topic": "Elder Affairs Annual Report",
+   "resolution": "noted as due end of month",
+   "tags": [
+    "reporting"
+   ],
+   "quote": "the executive office of elder affairs annual report is due at the end of this month."
+  },
+  {
+   "topic": "Sub-committee assignments and Director's Evaluation",
+   "resolution": "Director's Evaluation accepted unanimously; sub-committee assignments deferred to September",
+   "tags": [
+    "director evaluation",
+    "sub-committees"
+   ],
+   "quote": "the end of the year director's evaluation report was submitted and accepted by the board with a unanimous vote."
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "none",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "correspondence: none general discussion: ms. noble reported that she had been working with the town account"
+  },
+  {
+   "topic": "General discussion: Eagle House funds",
+   "resolution": "money to be returned to Friends of the Eagle House Inc.",
+   "tags": [
+    "Eagle House",
+    "Friends group",
+    "Town Manager"
+   ],
+   "quote": "general discussion: ms. noble reported that she had been working with the town account"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:50 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: sis montuori motioned to adjourn the meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Report",
+   "where": "text",
+   "quote": "the financial report was presented to the coa board."
+  },
+  {
+   "name": "FY13 Formula Grant",
+   "where": "text",
+   "quote": "ms. noble reported that the fy13 formula grant has been completed and submitted to the town manager for her signature."
+  },
+  {
+   "name": "Executive Office of Elder Affairs Annual report",
+   "where": "text",
+   "quote": "the executive office of elder affairs annual report is due at the end of this month."
+  },
+  {
+   "name": "Director’s Evaluation report (end of year)",
+   "where": "text",
+   "quote": "the end of the year director's evaluation report was submitted and accepted by the board with a unanimous vote."
+  },
+  {
+   "name": "Letter to the donors (Relief Fund)",
+   "where": "text",
+   "quote": "it should disclosed in a letter to the donors."
+  },
+  {
+   "name": "Recreation area design plans",
+   "where": "text",
+   "quote": "he should have design plans formulated by next spring for the area."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "budget cuts",
+  "Relief Day",
+  "Friday closure",
+  "formula grant",
+  "van service",
+  "Eagle House",
+  "director evaluation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

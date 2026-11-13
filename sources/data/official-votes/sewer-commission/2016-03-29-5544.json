@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-03-29",
  "docid": "5544",
@@ -12,23 +12,231 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from November 29, 2011",
+   "motion": "Approve the minutes from 11-29-2011, although the member who was absent did not attend that meeting and the minutes were reviewed.",
    "moved_by": "Mike N.",
-   "seconded_by": "Sue B",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. second: sue b to approve the minutes from 11-29-2011, although not present it has been reviewed vote was unanimous"
+   "quote": "motion: mike n. second: sue b to approve the minutes from 11-29-2011, although not present it has been reviewed vote was unanimous",
+   "seconded_by": "Sue B"
   },
   {
-   "motion": "Adjourn the meeting at 8:18 pm",
+   "motion": "Adjourn the meeting at 8:18pm.",
    "moved_by": "Mike N.",
-   "seconded_by": "Sue B",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. to adjourn at 8:18pm second - sue b vote was unanimous"
+   "quote": "motion: mike n. to adjourn at 8:18pm second - sue b vote was unanimous",
+   "seconded_by": "Sue B"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR via macOS Vision. Two votes recorded, both clearly stated with unanimous outcomes.",
- "cost_usd": 0.08425049999999999
+ "note": "OCR text from macOS Vision, garbled in places. Page 1 has interleaved sentences (\"Carl gave some\" repeated mid-paragraph), and some lines are missing between \"36 Summer Street\" and \"years.\" The meeting header, call to order, and attendance roll are absent, so attendance is not stated. Only two votes are recorded, both procedural and both \"unanimous\" with no count printed. The \"Loans\" budget line and the \"Next meetings\" topic are cut off in the scan. Speaker in public comment is unnamed in the minutes. Closing signature is garbled but reads \"Emily Lehto, Minutes Assistan\".",
+ "cost_usd": 0.0051987199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl reviewed what the commission has done to date such as: posted agenda items"
+  },
+  {
+   "name": "Mike N.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: mike n. second: sue b"
+  },
+  {
+   "name": "Sue B",
+   "role": "",
+   "status": "present",
+   "quote": "second: sue b to approve the minutes from 11-29-2011"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistan"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Loan program for grease trap or sewer work",
+   "what_was_recorded": "Loans are described as available to qualifying applicants at a set term and interest rate.",
+   "figures_as_printed": [
+    "20 years",
+    "2%"
+   ],
+   "quote": "loans are available to those who qualify for 20 years at 2% interest."
+  },
+  {
+   "topic": "Town Meeting budget articles",
+   "what_was_recorded": "Three budget articles on the Town Meeting warrant were listed, with no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "there are three budget articles: transfer from enterprise fund, transfer to capacity account and creation of inflow/infiltration stabilization account."
+  },
+  {
+   "topic": "Paving program debt exclusion",
+   "what_was_recorded": "A resident objected to a possible debt exclusion for a paving program, saying residents who already paid for road repairs should not pay twice. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "she felt that it would be unfair if that debt exclusion went through."
+  },
+  {
+   "topic": "Pump station and grease trap maintenance contract",
+   "what_was_recorded": "The contract is being expanded to add generator maintenance and the grease trap program. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "in addition to maintenance of the pump stations, maintenance of generators and the grease trap program are being added to the contract."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "One resident from the betterment",
+   "stated_role": "resident of the betterment area",
+   "topic": "paving program and debt exclusion concerns",
+   "quote": "one resident from the betterment has brought up concerns with the selectmen's idea for a paving program."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Regulation change process",
+   "resolution": "described, no action",
+   "quote": "that there is currently no formal process for regulation changes and this will allow for more visibility.",
+   "tags": [
+    "regulations",
+    "public hearing",
+    "process"
+   ]
+  },
+  {
+   "topic": "Second Hearing - Changes to the Grease Trap Regulations",
+   "resolution": "presented, no action recorded",
+   "quote": "the changes to the grease trap regulations were presented.",
+   "tags": [
+    "grease trap",
+    "regulations",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrants",
+   "resolution": "reviewed",
+   "quote": "the warrants the sewer commission has for the town meeting were reviewed.",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "budget articles"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview/Pleasantview SRF Project",
+   "resolution": "reported, no action",
+   "quote": "these three betterment areas have been reported as substantially completed.",
+   "tags": [
+    "SRF",
+    "betterment",
+    "sewer connections"
+   ]
+  },
+  {
+   "topic": "36 Summer Street",
+   "resolution": "discussed, no action",
+   "quote": "there is a proposed change to mixed use that the planning board is reviewing.",
+   "tags": [
+    "planning",
+    "mixed use",
+    "residential"
+   ]
+  },
+  {
+   "topic": "Pump station and maintenance contract reports",
+   "resolution": "reported, no action",
+   "quote": "dana street had a check valve issue and mass ave had an issue with a dialer. both have been resolved.",
+   "tags": [
+    "contract",
+    "pump stations",
+    "weekly reports"
+   ]
+  },
+  {
+   "topic": "Minutes approval practice and 11-29-2011 minutes",
+   "resolution": "approved",
+   "quote": "minutes - carl wants to go back to approving the minutes rather than initialing as it will be easier.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Website update",
+   "resolution": "reported, no action",
+   "quote": "the website has been updated with the grease trap regulations and the bylaw.",
+   "tags": [
+    "website",
+    "grease trap",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Next meetings and Town Meeting presentations",
+   "resolution": "noted, no action",
+   "quote": "the next regular sewer commission meeting will be on april12th at the dpw.",
+   "tags": [
+    "schedule",
+    "town meeting",
+    "public meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:18pm",
+   "quote": "motion: mike n. to adjourn at 8:18pm second - sue b vote was unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrants for the Town Meeting",
+   "where": "text",
+   "quote": "the warrants the sewer commission has for the town meeting were reviewed."
+  },
+  {
+   "name": "Grease Trap Regulations",
+   "where": "text",
+   "quote": "the website has been updated with the grease trap regulations and the bylaw."
+  },
+  {
+   "name": "Bylaw",
+   "where": "text",
+   "quote": "the website has been updated with the grease trap regulations and the bylaw."
+  },
+  {
+   "name": "Minutes from November 29, 2011",
+   "where": "text",
+   "quote": "to approve the minutes from 11-29-2011, although not present it has been reviewed"
+  },
+  {
+   "name": "Hearing notice for grease trap changes",
+   "where": "text",
+   "quote": "posting a hearing notice and sending letters to all current grease trap users"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease trap regulations",
+  "town meeting",
+  "SRF project",
+  "betterment",
+  "paving program",
+  "minutes approval",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the warrants the sewer commission has for the town meeting were reviewed."
+ },
+ "dropped_unquoted_by_field": {}
 }

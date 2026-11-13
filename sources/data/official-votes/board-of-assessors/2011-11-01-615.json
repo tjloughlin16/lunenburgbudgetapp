@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2011-11-01",
  "docid": "615",
@@ -12,37 +12,334 @@
  },
  "votes": [
   {
-   "motion": "to approve abatements, expense vouchers, commitments, warrants, and minutes from the October 4, 2011 meeting",
-   "outcome": "passed",
+   "motion": "Approve abatements, expense vouchers, commitments, warrants, and the minutes of the October 4, 2011 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on october 4, 2011"
   },
   {
-   "motion": "to approve 14 statutory exemption applications totaling $9,350.00",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "the board reviewed and approved 14 applications totally $9,350.00"
-  },
-  {
-   "motion": "to deny the exemption application",
+   "motion": "Approve 14 statutory exemption applications totaling $9,350.00.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "the board members voted to deny the application but will contact the applicant"
+   "quote": "the board reviewed and approved 14 applications totally $9,350.00."
   },
   {
-   "motion": "to adopt the uniform tax rate for both commercial and residential properties",
+   "motion": "Deny the tabled statutory exemption application (ownership eligibility not met as of July 1); the Board will offer the applicant a resubmission with supporting documentation. Chris Comeau abstained.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted in favor of adopting the uniform tax rate for both commercial and residential properties"
+   "quote": "the board members voted to deny the application but will contact the applicant offering to have her resubmit the application along with supporting documentation"
   },
   {
-   "motion": "to meet on Tuesday, December 6, 2011 at 6:00pm",
+   "motion": "Adopt the uniform tax rate for both commercial and residential properties.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "after hearing harald's presentation, the board voted in favor of adopting the uniform tax rate for both commercial and residential properties."
+  },
+  {
+   "motion": "Meet on Tuesday, December 6, 2011 at 6:00pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the board voted to meet on tuesday, december 6, 2011 at 6:00pm"
+   "quote": "the board voted to meet on tuesday, december 6, 2011 at 6:00pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision; all votes legible",
- "cost_usd": 0.12461249999999999
+ "note": "Text is macOS Vision OCR of a scanned minutes packet; attachment tables (pages 4-5) are noisy and some figures may be misread, so tax rate figures are as OCR'd. Approvals of abatements, vouchers, minutes and the 14 exemptions are recorded as 'reviewed and approved' with no motion, second, or tally, so they are logged as votes with outcome 'not stated'. The denial and tax-rate votes have no tally; the denial records Chris abstaining. Printed date anomalies: Chapter letter dated 'October 25, 2012'; deadline 'November 2na'; Special Town Meeting 'Monday, December 5, 2010'. 'Franco at Cartographics' may not be Board member Louis J. Franco. No public comment section is printed.",
+ "cost_usd": 0.010604720000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board members, louis j. franco, matthew j. papini, sr., regional assessor harald scheid and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harald will contact the applicant about not responding to the Final Notice letter (FY13 application).",
+   "quote": "harald will contact the applicant about not responding to the final notice letter."
+  },
+  {
+   "decision": "The Board will investigate supporting documents to verify Chapter eligibility requirements after January 1st, and discuss its philosophy and direction at a later time.",
+   "quote": "the board stated that they plan to pursue in investigating the supports in order to verify the eligibility"
+  },
+  {
+   "decision": "The Board did not renew the Cartographic Associates contract as stated; Harald suggested substituting three sets of 11 x 17 paper maps with PDF files at the same contract price.",
+   "quote": "the board did not renew the contract as stated."
+  },
+  {
+   "decision": "Louise will email Franco at Cartographics with the request to substitute PDF files and will follow up on the status of the FY11 maps.",
+   "quote": "louise will send an email to franco at cartographics with this request and will follow up on the status of the fy11 maps."
+  },
+  {
+   "decision": "Harald will lay out a plan/procedure to prepare for a possible May Town Meeting article to fund parcel inspections.",
+   "quote": "harald agreed to lay out a plan/procedure that will assist in preparing for such article."
+  },
+  {
+   "decision": "Chris asked that the parcel inspection funding discussion continue at the next meeting.",
+   "quote": "chris suggested that we continue the discussion at our next meeting."
+  },
+  {
+   "decision": "Harald will talk with Kerry regarding the Requests for Proposals for personal property inspections.",
+   "quote": "he will talk with kerry regarding the requests for proposals."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption applications approved",
+   "what_was_recorded": "The Board reviewed and approved 14 exemption applications with a combined total stated in dollars.",
+   "figures_as_printed": [
+    "$9,350.00"
+   ],
+   "quote": "the board reviewed and approved 14 applications totally $9,350.00."
+  },
+  {
+   "topic": "Total values for tax rate",
+   "what_was_recorded": "Harald reported the total values for real estate and personal property used in the tax rate options.",
+   "figures_as_printed": [
+    "$1, 120,966,561"
+   ],
+   "quote": "the total values for re & pp are $1, 120,966,561."
+  },
+  {
+   "topic": "Tax rate options spreadsheet levy and rate",
+   "what_was_recorded": "The FY2012 tax rate options spreadsheet shows an estimated levy of 18,865,867 and a single tax rate of 16.83.",
+   "figures_as_printed": [
+    "18,865,867",
+    "16.83"
+   ],
+   "quote": "18,865,867 estimated levy"
+  },
+  {
+   "topic": "Effect of commercial tax increase on residential taxes",
+   "what_was_recorded": "Harald said raising commercial taxes would lower residential properties by only about 1%, which he felt would not be beneficial.",
+   "figures_as_printed": [
+    "1%"
+   ],
+   "quote": "residential properties would only see approx. a 1% decline"
+  },
+  {
+   "topic": "Cost of PDF tax map set from Cartographic Associates",
+   "what_was_recorded": "Cartographic offered to create a complete set of PDF tax maps at a stated cost equal to a full-size print set.",
+   "figures_as_printed": [
+    "$342.00"
+   ],
+   "quote": "the cost for creating a complete set of pdf's is $342.00"
+  },
+  {
+   "topic": "FY12 Cartographic contract substitution",
+   "what_was_recorded": "Harald proposed substituting PDF files for three sets of paper maps at the same price stated in the contract; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "for the pdf files at the same price as stated in the contract."
+  },
+  {
+   "topic": "Proposed warrant article for parcel audits",
+   "what_was_recorded": "Text of the accepted 2010 article to raise and appropriate funds for personal property audits.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "to see if the town will raise and appropriate the sum of $15,000 to retain the"
+  },
+  {
+   "topic": "Future funding for parcel inspections",
+   "what_was_recorded": "Discussion of funding for state-mandated property inspections and a prior Town set-aside of money for personal property inspections; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "town had voted to set aside monies to cover the cost for pp inspections."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals and prior minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from",
+   "tags": [
+    "abatements",
+    "vouchers",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Statutory exemption applications",
+   "resolution": "14 approved; tabled application denied with resubmission offered",
+   "quote": "louise presented approx. 14 statutory exemption applications.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Chapter 61A opt-out (Rand)",
+   "resolution": "noted; land reclassified to residential",
+   "quote": "decided to opt out of the chapter 61a (agricultural /horticultural",
+   "tags": [
+    "chapter 61A",
+    "land classification"
+   ]
+  },
+  {
+   "topic": "FY13 Chapter applications and eligibility",
+   "resolution": "noted; Board to study eligibility after January 1st",
+   "quote": "louise reported that all fy 13 applications were mailed on august 18, 2011",
+   "tags": [
+    "chapter 61A",
+    "applications"
+   ]
+  },
+  {
+   "topic": "DOR preliminary certification and public disclosure",
+   "resolution": "noted; public disclosure begun",
+   "quote": "harald informed the board that we have received notification of preliminary certification on october 18, 2011 by the dor.",
+   "tags": [
+    "DOR certification",
+    "revaluation"
+   ]
+  },
+  {
+   "topic": "Out-of-town taxpayer value letters",
+   "resolution": "noted",
+   "quote": "approx. 90 letters were mailed to out of town taxpayers",
+   "tags": [
+    "revaluation",
+    "public notice"
+   ]
+  },
+  {
+   "topic": "Classification hearing and uniform tax rate",
+   "resolution": "Board voted to adopt uniform tax rate for both classes",
+   "quote": "communities are required by law to meet annually to determine whether the town should adopt a uniform",
+   "tags": [
+    "tax rate",
+    "classification"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting reminder",
+   "resolution": "noted; no BOA articles",
+   "quote": "louise reminded the board of the special town meeting which will be held on monday, december 5,",
+   "tags": [
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Cartographic Associates FY12 contract and tax maps",
+   "resolution": "contract not renewed as stated; PDF alternative to be checked",
+   "quote": "louise presented the cartographic associates, inc. contract for fy12 to the board.",
+   "tags": [
+    "tax maps",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Future funding for parcel inspections",
+   "resolution": "continued to next meeting",
+   "quote": "there was a general discussion regarding future funding for parcel inspections.",
+   "tags": [
+    "parcel inspections",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for December 6, 2011; adjourned 7:25 pm",
+   "quote": "the board voted to meet on tuesday, december 6, 2011 at 6:00pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notification of Preliminary Certification, Massachusetts Department of Revenue letter dated Tuesday, October 18, 2011",
+   "where": "list",
+   "quote": "harald informed the board that we have received notification of preliminary certification on"
+  },
+  {
+   "name": "Tax Rate Options spreadsheet, Lunenburg Board of Assessors, Fiscal Year 2012",
+   "where": "list",
+   "quote": "he presented a spreadsheet (see attached) showing the tax rate options."
+  },
+  {
+   "name": "Form LA-10 Assessment Adjustment List",
+   "where": "text",
+   "quote": "a form la-10 which identifies any properties that have changed in assessments in"
+  },
+  {
+   "name": "Form LA-4 Assessment/Classification Report",
+   "where": "text",
+   "quote": "once the values are finalized the la-4 (assessment /"
+  },
+  {
+   "name": "Cartographic Associates, Inc. contract for FY12",
+   "where": "text",
+   "quote": "louise presented the cartographic associates, inc. contract for fy12 to the board."
+  },
+  {
+   "name": "Article accepted 5/01/2010 (raise and appropriate $15,000 for personal property audits)",
+   "where": "text",
+   "quote": "the article accepted on 5/01/2010 was as follows:"
+  },
+  {
+   "name": "Final Notice letter (FY13 applications)",
+   "where": "text",
+   "quote": "harald will contact the applicant about not responding to the final notice letter."
+  },
+  {
+   "name": "Legal public notice in the Lunenburg Ledger, October 21, 2011",
+   "where": "text",
+   "quote": "was published in the lunenburg ledger on october 21, 2011 and the deadline for inquiries is tomorrow"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "exemptions",
+  "chapter 61A",
+  "tax rate",
+  "classification",
+  "revaluation",
+  "DOR certification",
+  "tax maps",
+  "parcel inspections",
+  "special town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he presented a spreadsheet (see attached)"
+ },
+ "dropped_unquoted_by_field": {}
 }

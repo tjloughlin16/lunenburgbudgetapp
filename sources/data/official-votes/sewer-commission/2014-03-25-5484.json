@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-03-25",
  "docid": "5484",
@@ -12,23 +12,367 @@
  },
  "votes": [
   {
-   "motion": "Go ahead with the Weston & Sampson Inflow/Infiltration reduction proposal on Graham Street",
+   "motion": "Go ahead with the Weston & Sampson I/I (inflow/infiltration) house-inspection work at no additional cost to the $30,000 contract.",
    "moved_by": "Butch",
    "seconded_by": "Jay",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "butch made the motion, jay seconded. carl asked for discussion. dave asked about the targeted day. pat stated that they planned to start early may and have completed by end of may. dave asked about what happens when the find a sump pump? jack stated that they are instructed on how to divert the water. jack stated there are no easy solutions given the size of the lots in this area, but the i/l could bankrupt the commission in a year, and encouraged cooperation in getting this resolved butch stated we are not out to hurt the residents, but to help. jack agreed, and offered to come out to talk with residents. carl asked for a vote. vote taken was unanimous."
+   "quote": "carl asked for a motion to go ahead with the work, butch made the motion, jay seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Jay",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "carl asked if there was a motion to adjourn. butch made the motion that the meeting be adjourned, jay seconded. vote taken was unanimous."
+   "quote": "butch made the motion that the meeting be adjourned, jay seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text was OCR'd from a scan using macOS Vision. Commissioner full names are not provided for some attendees (only first names Butch, Jay, Dave, Carl appear in the minutes).",
- "cost_usd": 0.1426905
+ "note": "Scanned pages read by OCR (macOS Vision) and garbled in places: page 1 opening line and attendance names are unclear (e.g., \"dack Rodriguenz\", \"Dr Director\", \"Bard Letebvre\" may be OCR errors; Barb and Bard Letebvre may be the same person); the generator and capacity-fee paragraphs on pages 1-2 have a break in sequence (a sentence on the generator modem and the start of the capacity fee discussion appear out of order). Votes recorded are only the two motions with printed results; the generator, capacity and extension items had no recorded motions. Roles for Carl, Jay, Dave, Butch were not printed.",
+ "cost_usd": 0.00813612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl asked for a motion to go ahead with the work, butch made the motion, jay seconded."
+  },
+  {
+   "name": "Jack",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "he introduced jack for the dpw director operations update"
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "representing Weston & Sampson (W&S)",
+   "status": "present",
+   "quote": "jack invited pat cotton from weston & sampson (w&s) to come forward to discuss the new proposal"
+  },
+  {
+   "name": "Jay",
+   "role": "not stated",
+   "status": "present",
+   "quote": "butch made the motion, jay seconded."
+  },
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave asked about the targeted day."
+  },
+  {
+   "name": "Butch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "butch made the motion that the meeting be adjourned, jay seconded."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb added that the next meetings of the commission are the fincom presentation on thursday, 3/27 at 7pm"
+  },
+  {
+   "name": "Dack Rodriguenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "as presen were dack rodriguenz, dr director, bard letebvre, business manager,"
+  },
+  {
+   "name": "Bard Letebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "as presen were dack rodriguenz, dr director, bard letebvre, business manager,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent, mike nault."
+  },
+  {
+   "name": "Yent Mantel",
+   "role": "Sewer Business Manager",
+   "status": "not stated",
+   "quote": "yent mantel sewer business manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack will follow up with the pump-station contractor on a revised generator maintenance proposal (prorated through fiscal year end, then a comprehensive contract) and keep the Commission updated; scope must define who pays for what.",
+   "quote": "he'll follow up and keep the commission updated."
+  },
+  {
+   "decision": "Jay will ask Hall Pump for one total quote covering labor, parts and programming, and will ask that the warranty be put in writing including parts and labor.",
+   "quote": "jay stated that he expects hall pump to give us a quote for labor, parts and programing so it"
+  },
+  {
+   "decision": "The Commission noted the Board of Health request and agreed to schedule a joint workshop with the Board of Health on overlapping items.",
+   "quote": "carl added that we note that request to get together with the board of health with the several items that overlap and that we would like to schedule a workshop with them."
+  },
+  {
+   "decision": "Capacity fee policy: Carl will keep working on new policy language, hoping to have something in place by end of the year.",
+   "quote": "he will keep moving on that and hopes to have something in place by the end of the year."
+  },
+  {
+   "decision": "Wright Pierce will be asked to attend and support the sewer extension article at Town Meeting.",
+   "quote": "we will need to get wright pierce to come and help support the effort at town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "I/I (inflow/infiltration) contract with Weston & Sampson",
+   "what_was_recorded": "The W&S contract stayed at the same amount after adding two extra days at no additional cost.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "the contract stayed at $30,000."
+  },
+  {
+   "topic": "Rate impact of sump pumps and rain events",
+   "what_was_recorded": "Sump pumps and rain events could affect the rate by a stated percentage.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "sump pumps could impact rate by 20%"
+  },
+  {
+   "topic": "Fitchburg invoice",
+   "what_was_recorded": "A Fitchburg invoice came in as expected, with a credit due under an agreement with Joe Jordan.",
+   "figures_as_printed": [
+    "$7934.55"
+   ],
+   "quote": "invoices - fitchburg $7934.55 came in as expected, with the credit due from our agreement with joe jordan."
+  },
+  {
+   "topic": "Capacity purchase cost (Fitchburg IMA and capacity fee policy)",
+   "what_was_recorded": "Total cost of the purchased capacity was given as a yearly figure and a per-gallon equivalent, described as a one-time cost for new users.",
+   "figures_as_printed": [
+    "$19,000/year",
+    "$1.87/gal"
+   ],
+   "quote": "the total cost is $19,000/year for that capacity and equates to $1.87/gal of capacity"
+  },
+  {
+   "topic": "Capacity figures",
+   "what_was_recorded": "Stated gallons: 45,000 gallons needed to stay ahead of the capacity curve; actual usage 30,000 gpa versus 70,000 allowed under the IMA.",
+   "figures_as_printed": [
+    "45,000 gallons",
+    "30,000 gpa",
+    "70,000"
+   ],
+   "quote": "we have to have 45,000 gallons to be available to stay ahead of capacity curve."
+  },
+  {
+   "topic": "Septic system cost for Pratt St. residents",
+   "what_was_recorded": "A new septic system can cost a range of amounts, cited as an example for residents facing failing systems.",
+   "figures_as_printed": [
+    "20 - 45K"
+   ],
+   "quote": "a new septic can cost anywhere from 20 - 45k, and there is a known water table issue in that neighborhood."
+  },
+  {
+   "topic": "FY15 budget",
+   "what_was_recorded": "The Commission will present its FY15 budget to the FinCom on Thursday; the budget is reported as balanced.",
+   "figures_as_printed": [],
+   "quote": "carl pointed out that this thursday the commission will present their budget to the fincom."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; commission vacancy, grease trap reports and storm water pamphlet noted",
+   "quote": "carl announced that we have a one opening on the sewer",
+   "tags": [
+    "vacancy",
+    "grease trap",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "7:00 pm public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "DPW Director Operations Update: new proposal for I/I reduction",
+   "resolution": "approved (unanimous vote) to proceed with W&S I/I work",
+   "quote": "jack noted that w&s has given us a proposal to help find inflow/infiltration (i/i).",
+   "tags": [
+    "I/I",
+    "Weston & Sampson",
+    "sump pumps",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "DPW Director Operations Update: generator maintenance",
+   "resolution": "no vote; Jack to follow up on revised proposal",
+   "quote": "jack noted that the contractor for the pump stations has given us a proposal to do generator",
+   "tags": [
+    "generator maintenance",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Generator and pump station controls quotes (First Electric, Hall Pump)",
+   "resolution": "no vote; Jay to obtain combined quote and written warranty",
+   "quote": "jay stated we had quotes from first electric, and for the tech support and internet connection.",
+   "tags": [
+    "quotes",
+    "warranty",
+    "Hall Pump",
+    "First Electric"
+   ]
+  },
+  {
+   "topic": "Lake Whalom/Pratt St. extension",
+   "resolution": "update given; joint workshop with Board of Health requested",
+   "quote": "carl asked dave for an update on lake whalom/pratt extension, specifically on pratt st.",
+   "tags": [
+    "Pratt St",
+    "sewer extension",
+    "betterment",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Flow rate/metering",
+   "resolution": "no update",
+   "quote": "flow rate/metering- no updates.",
+   "tags": [
+    "metering"
+   ]
+  },
+  {
+   "topic": "Grease trap compliance",
+   "resolution": "discussed; education and onsite visits suggested",
+   "quote": "dave stated the need to educate on the reporting aspect.",
+   "tags": [
+    "grease trap",
+    "restaurants",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Capacity fee policy",
+   "resolution": "in progress; Carl to draft policy language",
+   "quote": "carl is working on this and trying to see how links with current policies.",
+   "tags": [
+    "capacity",
+    "policy",
+    "fee"
+   ]
+  },
+  {
+   "topic": "Privately funded extension policy",
+   "resolution": "no action; collecting input from non-Commissioners",
+   "quote": "carl noted that there was no champion yet.",
+   "tags": [
+    "extension policy"
+   ]
+  },
+  {
+   "topic": "Business systems and process improvement",
+   "resolution": "no update",
+   "quote": "business systems and process improvement - carl noted is it his task with barb.",
+   "tags": [
+    "process improvement"
+   ]
+  },
+  {
+   "topic": "Town caucus",
+   "resolution": "no action; one opening remains",
+   "quote": "town caucus - carl noted that there is still an opening.",
+   "tags": [
+    "caucus",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Budget FY15",
+   "resolution": "noted; FinCom presentation scheduled for Thursday",
+   "quote": "carl pointed out that this thursday the commission will present their budget to the fincom.",
+   "tags": [
+    "budget",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "Business Manager reports",
+   "resolution": "informational",
+   "quote": "demand billing - we sent out 189 demand notices on 3/12",
+   "tags": [
+    "billing",
+    "invoices",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:10pm",
+   "quote": "meeting was adjourned at 8:10pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Weston & Sampson proposal for I/I reduction (targeting Graham St. area)",
+   "where": "text",
+   "quote": "jack noted that w&s has given us a proposal to help find inflow/infiltration (i/i)."
+  },
+  {
+   "name": "Letter to homeowners about I/I house inspections, with a copy of the policy",
+   "where": "text",
+   "quote": "pat noted the letter that goes out is pretty clear. we'l include a copy of policy."
+  },
+  {
+   "name": "Generator maintenance proposal from the pump station contractor",
+   "where": "text",
+   "quote": "the contractor for the pump stations has given us a proposal to do generator maintenance."
+  },
+  {
+   "name": "Quotes from First Electric and for tech support and internet connection",
+   "where": "text",
+   "quote": "jay stated we had quotes from first electric, and for the tech support and internet connection."
+  },
+  {
+   "name": "Pamphlet \"Solutions to storm water pollution\"",
+   "where": "text",
+   "quote": "found in town hall with \"solutions to storm water pollution\"- under swimming"
+  },
+  {
+   "name": "Placeholders as submitted to town manager 3/24, article 2",
+   "where": "text",
+   "quote": "placeholders as submitted to town manager 3/24, article 2 was forwarded on to counsel per kerry"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "inflow and infiltration",
+  "Weston & Sampson",
+  "generator maintenance",
+  "grease trap",
+  "capacity fee",
+  "Pratt St extension",
+  "FY15 budget",
+  "Town Meeting",
+  "commission vacancy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-03-10",
  "docid": "2233",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the February 25, 2016 minutes",
+   "motion": "Approve the minutes of February 25 (as moved by Terri).",
    "moved_by": "Terri",
    "seconded_by": "Karin",
    "outcome": "passed 5-0",
@@ -20,16 +20,15 @@
    "quote": "terri moved to accept the minutes; karin seconded the motion. the committee approved the motion by a vote of 5-0."
   },
   {
-   "motion": "Accept the March 3, 2016 minutes",
+   "motion": "Approve the minutes of March 3 (as moved by Terri).",
    "moved_by": "Terri",
    "seconded_by": "Jay",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "terri moved to accept the minutes; jay seconded the motion. • the committee approved the motion by a vote of 4-",
-   "quote_taken_from_text": true
+   "quote": "terri moved to accept the minutes; jay seconded the motion. • the committee approved the motion by a vote of 4-0."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:50.",
    "moved_by": "Karin",
    "seconded_by": "Terri",
    "outcome": "passed 5-0",
@@ -38,6 +37,430 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR minutes. Three procedural votes (prior minutes and adjournment); no substantive votes on budget matters recorded despite presentations on Council on Aging and Monty Tech budgets.",
- "cost_usd": 0.1271085
+ "note": "OCR text of a scanned packet. Three motions recorded, all procedural (two minutes approvals, adjournment); no other votes. Several spreadsheet and slide figures are garbled or column-misaligned in the OCR and are recorded as printed. Attachments run pages 3-52. Minutes signed by John Henshaw, March 18, 2016. Rep. Benson and Jamie Toale are mentioned but did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.017375520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director, Council on Aging",
+   "status": "present",
+   "quote": "council on aging fiscal 2017 budget presentation by susan doherty. director"
+  },
+  {
+   "name": "Tammy LaFalam",
+   "status": "present",
+   "quote": "monty tech fiscal 2017 budget presentation by tammy lafalam"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting was set as a special meeting on Thursday, March 17th, with presentations on the Public Access Cable Committee and Sewer Commission FY17 budgets and other money articles.",
+   "quote": "next meeting: special thursday, march 17th. presentations on the public access cable committee and sewer commission fy17 budgets and other monied articles."
+  },
+  {
+   "decision": "Town Manager Kerry Lafleur decided to use the Chapter 70 aid in the Governor's budget (not a board vote).",
+   "quote": "therefore, kerry decided to use the chapter 70 aid in the governor's budget, which is what would"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging FY17 recommended budget",
+   "what_was_recorded": "The Town Manager's recommended FY17 COA budget is $111,945, a $735 (0.66%) increase over FY16 after recap; no reduction in services.",
+   "quote": "the town manager's recommended fy17 budget of $111,945 represents a $735 increase, 0.66%, more than fy16 after recap.",
+   "figures_as_printed": [
+    "$111,945",
+    "$735",
+    "0.66%"
+   ]
+  },
+  {
+   "topic": "COA FY17 budget detail totals",
+   "what_was_recorded": "The FY17 COA budget detail spreadsheet shows a FY17 budget target total of $111,945.00 against a FY16 budget of $111,210.00.",
+   "quote": "$7,572.52 $111,945.00 $111,945.00",
+   "figures_as_printed": [
+    "$7,572.52",
+    "$111,945.00",
+    "$111,210.00"
+   ]
+  },
+  {
+   "topic": "COA programs line",
+   "what_was_recorded": "COA requests $399.52 be placed in the programs line, funded by savings from the mileage line decrease.",
+   "quote": "requesting that $399.52 be placed into the program line.",
+   "figures_as_printed": [
+    "$399.52"
+   ]
+  },
+  {
+   "topic": "MOC donation",
+   "what_was_recorded": "The FY16 Montachusett Opportunity Council yearly donation request decreased to $200.",
+   "quote": "fy16 montachusett opportunity council yearly donation request has decreased to $200.",
+   "figures_as_printed": [
+    "$200"
+   ]
+  },
+  {
+   "topic": "Meals on Wheels driver mileage",
+   "what_was_recorded": "Mileage for MOW drivers changed from a $15 stipend per delivery to $11.50 per week as of 1/1/16.",
+   "quote": "as of 1/1/16 the mileage for mow (meals on wheels) drivers was decreased from a $15 stipend each time a delivery was made to $11.50 per week.",
+   "figures_as_printed": [
+    "$15",
+    "$11.50"
+   ]
+  },
+  {
+   "topic": "Formula Grant funding",
+   "what_was_recorded": "COA received $18,954.00 in Formula Grant funding in FY16, up from $8 to $9 per elder.",
+   "quote": "in fy16 we received $18,954.00 in formula grant funding. this was an increase from $8 to $9 per elder.",
+   "figures_as_printed": [
+    "$18,954.00",
+    "$8",
+    "$9"
+   ]
+  },
+  {
+   "topic": "Formula Grant budget split (FY16 attachment)",
+   "what_was_recorded": "The COA Formula Grant Budget for FY16 lists $2240 from the Formula Grant and $4000 from the Town, with page subtotals and a total printed as $18,954.",
+   "quote": "*$2240 formula grant *$4000 town",
+   "figures_as_printed": [
+    "$2240",
+    "$4000",
+    "$15,378",
+    "$18,954",
+    "$3,576",
+    "$2240"
+   ]
+  },
+  {
+   "topic": "Greater Lowell Community Foundation grant (RUOK)",
+   "what_was_recorded": "A $3,000 Greater Lowell Community Foundation grant applied for in October to reinstate RUOK was approved for full funding.",
+   "quote": "a greater lowell community foundation grant in the amount of $3,000 was applied for in october to reinstate the ruok",
+   "figures_as_printed": [
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "Eagle House support, calendar year 2015 totals",
+   "what_was_recorded": "Eagle House calendar year 2015 support for grounds and operations totals $12,343.45.",
+   "quote": "miscellaneous operations $2,075.99 $2,140.00 $2,500.00 $2,233.00 $1,295.46 $2,099.00 $12,343.45",
+   "figures_as_printed": [
+    "$2,075.99",
+    "$2,140.00",
+    "$2,500.00",
+    "$2,233.00",
+    "$1,295.46",
+    "$2,099.00",
+    "$12,343.45"
+   ]
+  },
+  {
+   "topic": "Eagle House miscellaneous support, 2015",
+   "what_was_recorded": "Eagle House miscellaneous support in 2015 itemised to a total of $2,099.00.",
+   "quote": "beverages open house mailings supplies volunteer recognition $477.00 $200.00 $548.00 $565.00 $309.00 $2,099.00",
+   "figures_as_printed": [
+    "$477.00",
+    "$200.00",
+    "$548.00",
+    "$565.00",
+    "$309.00",
+    "$2,099.00"
+   ]
+  },
+  {
+   "topic": "Monty Tech Governor's budget increase",
+   "what_was_recorded": "The tentative Monty Tech budget, based on the Governor's education budget, is $145,102 or 0.55% higher than the prior year.",
+   "quote": "is $145,102 or 0.55% higher than the previous year.",
+   "figures_as_printed": [
+    "$145,102",
+    "0.55%"
+   ]
+  },
+  {
+   "topic": "Lunenburg community assessment increase",
+   "what_was_recorded": "Lunenburg's Monty Tech community assessment is to increase by $99,789 or 11%, with enrollment rising from 78 to 91 students.",
+   "quote": "lunenburg's community assessment will increase by $99,789 or 11% (refer to slide #29 in the presentation.)",
+   "figures_as_printed": [
+    "$99,789",
+    "11%"
+   ]
+  },
+  {
+   "topic": "Monty Tech assessment understated",
+   "what_was_recorded": "The actual Monty Tech assessment to Lunenburg is about $67,000 higher than the initial assessment; not included in the FY17 recommendation and described as unresolved.",
+   "quote": "the actual assessment that lunenburg received from monty tech is about $67,000 higher than the initial",
+   "figures_as_printed": [
+    "$67,000"
+   ]
+  },
+  {
+   "topic": "Chapter 70 aid increase",
+   "what_was_recorded": "Monty Tech summary shows FY17 Chapter 70 funding increased by $37,430.",
+   "quote": "fy17 chapter 70 funding increased by $37,430",
+   "figures_as_printed": [
+    "$37,430"
+   ]
+  },
+  {
+   "topic": "Foundation budget per pupil",
+   "what_was_recorded": "Foundation budget per pupil rises $216 from $15,064 to $15,280.",
+   "quote": "foundation budget increased by $216/per pupil from $15,064 to $15,280",
+   "figures_as_printed": [
+    "$216",
+    "$15,064",
+    "$15,280"
+   ]
+  },
+  {
+   "topic": "Excess & Deficiency use",
+   "what_was_recorded": "FY17 Monty Tech proposes using $300,000 from Excess & Deficiency (FY16 used $500,000); E&D balance as of 7/1/15 is $1,051,986, subject to DOR certification.",
+   "quote": "fy17 proposes using $300,000 from excess & deficiency (fy16 used $500,000)",
+   "figures_as_printed": [
+    "$300,000",
+    "$500,000",
+    "$1,051,986"
+   ]
+  },
+  {
+   "topic": "Lunenburg FY17 assessment total",
+   "what_was_recorded": "Lunenburg's FY17 Monty Tech total assessment line shows a required minimum contribution of $833,619 and a total of $899,267 (FY16 total $799,478).",
+   "quote": "2017 $ 1,394,324 $833,619 $ 45,687 $ 2,396 $ 17,566 $ 899,267",
+   "figures_as_printed": [
+    "$ 899,267",
+    "$833,619",
+    "$799,478",
+    "$1,394,324"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "called to order at 7:00 pm; meeting recorded",
+   "quote": "mark e, called the finance committee meeting to order at 7:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Comments and new communications",
+   "resolution": "no public comment; Planning Board notice and talent bank openings noted",
+   "quote": "the planning board will meet on march 14 at 6:35 at town hall to hear and discuss a site plan",
+   "tags": [
+    "public comment",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Council on Aging FY17 budget",
+   "resolution": "presented; no vote recorded",
+   "quote": "council on aging fiscal 2017 budget presentation by susan doherty. director",
+   "tags": [
+    "council on aging",
+    "FY17 budget"
+   ]
+  },
+  {
+   "topic": "Monty Tech FY17 budget",
+   "resolution": "presented; no vote recorded",
+   "quote": "monty tech fiscal 2017 budget presentation by tammy lafalam",
+   "tags": [
+    "monty tech",
+    "FY17 budget",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Town Manager's updates",
+   "resolution": "discussed; no vote; unresolved assessment issue noted",
+   "quote": "the actual assessment that lunenburg received from monty tech is about $67,000 higher than the initial",
+   "tags": [
+    "town manager",
+    "chapter 70",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "February 25 and March 3 minutes approved",
+   "quote": "terri moved to accept the minutes; karin seconded the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "no discussion",
+   "quote": "there was no discussion at this meeting.",
+   "tags": [
+    "budget goals"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received; no action",
+   "quote": "school building: meeting was cancelled.",
+   "tags": [
+    "committee reports",
+    "building re-use"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "special meeting set for Thursday, March 17th",
+   "quote": "next meeting: special thursday, march 17th. presentations on the public access cable committee and sewer commission fy17 budgets and other monied articles.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:50",
+   "quote": "karin made a motion to adjourn and terri seconded the motion. the committee approved the motion 5-0 at 8:50.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Council on Aging Fiscal 2017 Budget presentation (Susan Doherty, Director)",
+   "where": "list",
+   "quote": "council on aging fiscal 2017 budget presentation by susan doherty. director"
+  },
+  {
+   "name": "Monty Tech Fiscal 2017 Budget presentation (Tammy LaFalam)",
+   "where": "list",
+   "quote": "monty tech fiscal 2017 budget presentation by tammy lafalam"
+  },
+  {
+   "name": "FY17 COA Budget Detail Spreadsheet",
+   "where": "list",
+   "quote": "fy17 coa budget detail spreadsheet"
+  },
+  {
+   "name": "Council on Aging Budget FY17 Line Changes",
+   "where": "list",
+   "quote": "council on aging budget fy17 line changes"
+  },
+  {
+   "name": "Attachment B - COA Formula Grant Budget - FY 2016",
+   "where": "list",
+   "quote": "attachment b - coa formula grant budget - fy 2016"
+  },
+  {
+   "name": "Eagle House Support for Calendar Year 2015",
+   "where": "list",
+   "quote": "eagle house support for calendar year 2015"
+  },
+  {
+   "name": "New FY16 Programs at Eagle House",
+   "where": "list",
+   "quote": "new fy16 programs at eagle house"
+  },
+  {
+   "name": "Event Statistics from 07/01/2015 to 03/10/2016 (print statistics)",
+   "where": "list",
+   "quote": "event statistics from 07/01/2015 to 03/10/2016"
+  },
+  {
+   "name": "Transportation provided between 07/01/2015 and 03/10/2016 (print statistics)",
+   "where": "list",
+   "quote": "transportation provided between 07/01/2015 and 03/10/2016"
+  },
+  {
+   "name": "Meals between 07/01/2015 and 03/10/2016 (print statistics)",
+   "where": "list",
+   "quote": "meals between 07/01/2015 and 03/10/2016"
+  },
+  {
+   "name": "Lunenburg Assessment & Enrollment History, 2 year comparison FY 2016-2017",
+   "where": "list",
+   "quote": "lunenburg assessment & enrollment history"
+  },
+  {
+   "name": "Per Pupil Expenditures in Massachusetts School Districts, FY14 (DESE)",
+   "where": "list",
+   "quote": "per pupil expenditures in massachusetts school districts, fy14"
+  },
+  {
+   "name": "Per Pupil Expenditures in Massachusetts School Districts, FY16 (DESE)",
+   "where": "list",
+   "quote": "per pupil expenditures in massachusetts school districts, fy16"
+  },
+  {
+   "name": "Mn-FY16-160310.xlsx (spreadsheet file reference)",
+   "where": "text",
+   "quote": "mn-fy16-160310.xlsx xisx (local and remote drives)"
+  },
+  {
+   "name": "Draft warrant",
+   "where": "text",
+   "quote": "we are finalizing the first draft of the warrant, but in advance of our meeting next week we will see a"
+  },
+  {
+   "name": "Letter from Jamie Toale on Building Re-use findings",
+   "where": "text",
+   "quote": "building re-use: jamie toale in a letter announced that the"
+  },
+  {
+   "name": "Governor's Budget for education",
+   "where": "text",
+   "quote": "the tentative budget is based on the governor's budget for education which calls for"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY17 budget",
+  "council on aging",
+  "monty tech",
+  "chapter 70 aid",
+  "lunenburg assessment",
+  "minutes approval",
+  "adjournment",
+  "eagle house",
+  "formula grant"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a copy of each presentation is attached to the minutes"
+ },
+ "dropped_unquoted_by_field": {}
 }

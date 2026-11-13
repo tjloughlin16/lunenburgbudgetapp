@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-11-13",
  "docid": "1802",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of the October 9, 2012 COA Meeting",
+   "motion": "Accept the minutes of the October 9, 2012 COA Meeting.",
    "moved_by": "Sis Montuori",
    "seconded_by": "Pete Lincoln",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "sis montuori motioned to accept the minutes of the october 9, 2012 coa meeting. pete lincoln seconded. all approved, motion carried."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jim Hays",
    "seconded_by": "Pete Lincoln",
    "outcome": "passed",
@@ -29,6 +29,292 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The capital plan items (refrigerator, freezer, etc.) are described as \"approved purchases through the Capital Plan\" but were not voted on in this meeting—they were referenced as previously approved. No other motions are recorded.",
- "cost_usd": 0.0993415
+ "note": "Minutes are marked as approved at the 12/11/12 COA meeting. The last page ends in font-encoded glyph strings with no readable text, so any signature block is unreadable. No public comment section is printed. The Sewer & Water transfer is noted as needed but no amount or vote is given.",
+ "cost_usd": 0.007196119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director), barbara brown, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: jane doyle"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "steven raboin, lunenburg finance committee & whitney lacka, prospective coa member"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "Prospective COA Member",
+   "status": "present",
+   "quote": "steven raboin, lunenburg finance committee & whitney lacka, prospective coa member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Congregate Meal Site lunch moves to 12 Noon beginning in January, except Thursday which remains 11:30AM.",
+   "quote": "beginning in january, to serving lunch at 12 noon except on thursday where it will remain at 11:30am."
+  },
+  {
+   "decision": "Every Tuesday meal will alternate with Hot Dogs and Pizza, with Director's Bingo half an hour before the meal.",
+   "quote": "every tuesday will alternate with serving hot dogs and pizza"
+  },
+  {
+   "decision": "Luncheon prices remain at the $2.25 donation.",
+   "quote": "luncheon prices will remain at $2.25 donation."
+  },
+  {
+   "decision": "The Director selected a John Deere diesel powered generator for the Eagle House.",
+   "quote": "the director selected a john deere diesel powered generator at a cost of $29k"
+  },
+  {
+   "decision": "FY15 Capital Plan to include a shower system in the older back bathroom for shelter purposes.",
+   "quote": "fy15 capital plan will include a shower system installed into the older back bathroom for shelter purposes."
+  },
+  {
+   "decision": "FY16 Capital Plan to include $10K for roof repair; FY17 and FY18 to include $10K for carpet and tile floor replacement.",
+   "quote": "fy16 capital plan will include $10k for roof repair."
+  },
+  {
+   "decision": "Sub-Committee meetings scheduled for December 11 (Advocacy 9AM, Board Development 9:15AM, Finance 10:30AM, ByLaw 10:45AM).",
+   "quote": "sub-committee meetings were scheduled on december 11"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House Chinese Luncheon tickets",
+   "what_was_recorded": "Tickets for the December 17 holiday luncheon are priced at $10.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "tickets will be at a cost of $10 and entertainment will be provided by the"
+  },
+  {
+   "topic": "Eagle House generator",
+   "what_was_recorded": "The Director selected a John Deere diesel generator at a cost of $29K for the 5 year Capital Plan request.",
+   "figures_as_printed": [
+    "$29K"
+   ],
+   "quote": "the director selected a john deere diesel powered generator at a cost of $29k"
+  },
+  {
+   "topic": "Meal site luncheon price",
+   "what_was_recorded": "Luncheon prices stay at a $2.25 donation.",
+   "figures_as_printed": [
+    "$2.25"
+   ],
+   "quote": "luncheon prices will remain at $2.25 donation."
+  },
+  {
+   "topic": "FY16 roof repair",
+   "what_was_recorded": "The FY16 Capital Plan will include $10K for roof repair.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "fy16 capital plan will include $10k for roof repair."
+  },
+  {
+   "topic": "FY17 and FY18 carpet and tile floor replacement",
+   "what_was_recorded": "The FY17 and FY18 Capital Plan will include $10K for carpet and tile floor replacement.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "fy17 & fy18 capital plan will include $10k for carpet and tile floor replacement."
+  },
+  {
+   "topic": "Sewer & Water utility rate increase",
+   "what_was_recorded": "A transfer into the Sewer & Water lines will be needed due to rate increases; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "there will need to be a transfer into the sewer & water lines due to increases in rates"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 9:30AM",
+   "quote": "mary lynn conrad (chairperson) opened the meeting at 9:30am",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of October 9, 2012 minutes",
+   "resolution": "approved",
+   "quote": "sis montuori motioned to accept the minutes of the october 9, 2012 coa meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report: finance and staffing",
+   "resolution": "informational; no action",
+   "quote": "doreen noble reported to the coa board that the coa utility bills are being",
+   "tags": [
+    "finance",
+    "staffing",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Old Business: Capital Planning",
+   "resolution": "discussed; items approved through Capital Plan",
+   "quote": "the director reported that the new refrigerator, freezer, hot dog roller, pizza oven,",
+   "tags": [
+    "capital plan",
+    "kitchen equipment"
+   ]
+  },
+  {
+   "topic": "Old Business: Meal site participation and food",
+   "resolution": "new lunch hours and Tuesday menu set for January",
+   "quote": "the meal site participant numbers have been dropping and there has been a concern regarding the",
+   "tags": [
+    "meal site",
+    "food quality"
+   ]
+  },
+  {
+   "topic": "Generator and emergency shelter at Eagle House",
+   "resolution": "discussed; capital plan items noted; no vote",
+   "quote": "the director is working on the 5 year capital plan request and the town manger suggested that a generator",
+   "tags": [
+    "generator",
+    "emergency shelter",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "none",
+   "quote": "new business: - none",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Report",
+   "resolution": "meetings scheduled December 11",
+   "quote": "sub-committee meetings were scheduled on december 11",
+   "tags": [
+    "sub-committees"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "informational; no action",
+   "quote": "the director read a note from the community council announcing their november 15",
+   "tags": [
+    "correspondence",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "reminder; sub-committee agenda request noted",
+   "quote": "the director reminded the board that the boston post cane ceremony will be held on",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:35 a.m.",
+   "quote": "jim hays motioned to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "5 year Capital Plan request",
+   "where": "text",
+   "quote": "the director is working on the 5 year capital plan request and the town manger suggested that a generator"
+  },
+  {
+   "name": "Note from the Community Council announcing their November 15 meeting",
+   "where": "text",
+   "quote": "the director read a note from the community council announcing their november 15"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "meal site",
+  "capital plan",
+  "generator",
+  "emergency shelter",
+  "transportation",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

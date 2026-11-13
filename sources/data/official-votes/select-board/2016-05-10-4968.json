@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-05-10",
  "docid": "4968",
@@ -12,47 +12,480 @@
  },
  "votes": [
   {
-   "motion": "to enter Executive Session and upon adjournment to enter into Open Session",
+   "motion": "Enter Executive Session under Chapter 30A, § 21A (9) to review IBPO Local 453 AFL-CIO and Public Employee Committee negotiations, and upon adjournment enter Open Session.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole 2nd, p. luck to enter executive session and upon adjournment to enter into open session vote: mr. ebersole-aye, ms. luck-aye, mr. toale-aye"
+   "quote": "to enter executive session and upon adjournment to enter into open session vote: mr. ebersole-aye, ms. luck-aye, mr. toale-aye"
   },
   {
-   "motion": "to approve the pole petition as presented",
+   "motion": "Approve the pole petition as presented (Verizon New England and Unitil Pittsfield Gas & Electric, pole T.10 ¼ 11A on Oak Avenue).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2id: p. bertram to approve the pole petition as presented vote: all in favor"
+   "quote": "to approve the pole petition as presented vote: all in favor"
   },
   {
-   "motion": "to approve the request for the tollbooth fundraiser this Saturday between 9:00 a.m. to 1:00 p.m. and to note the special conditions listed on the request form",
+   "motion": "Approve the Boys and Girls Club tollbooth fundraiser request for Saturday between 9:00 a.m. and 1:00 p.m. and note the special conditions on the request form.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nª. p. bertram to approve the request for the tollbooth fundraiser this saturday between 9:00 a.m. to 1:00 p.m. and to note the special conditions listed on the request form vote: all in favor"
+   "quote": "to approve the request for the tollbooth fundraiser this saturday between 9:00 a.m. to 1:00 p.m. and to note the special conditions listed on the request form"
   },
   {
-   "motion": "to create a resolution for Memorial Day",
+   "motion": "Create a resolution for Memorial Day declaring Sunday, May 29 as the day of observance and flags at half-staff.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'': p. bertram to create a resolution for memorial day vote: all in favor"
+   "quote": "to create a resolution for memorial day vote: all in favor"
   },
   {
-   "motion": "to adjourn the meeting at 8:24 p.m.",
+   "motion": "Adjourn the meeting at 8:24 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:24 p.m. 2\": p. luck vote: all in favor"
+   "quote": "to adjourn the meeting at 8:24 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-read text; three items where the \"second\" field shows OCR artifacts (\"2id\" for \"2nd\", \"2nª\" for \"2nd\", \"2\\\"\" for \"2nd\") but all votes are clearly recorded and outcomes stated.",
- "cost_usd": 0.1263625
+ "note": "Text is macOS Vision OCR with visible errors (e.g., '2id', '2'', 'Mir.', 'rooves', 'May 215', 'T.10 ¼ 11A'); quotes are copied as printed and may carry OCR artifacts. The executive session vote lists only Ebersole, Luck and Toale as ayes; no vote tally is printed for the other motions beyond 'All in Favor'. The minutes do not print a list of documents used; documents below are mentioned in the text only. Executive session minutes are stated to be separate and are not included.",
+ "cost_usd": 0.01000962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others in attendance: kerry lafleur, town manager"
+  },
+  {
+   "name": "Bill Oz",
+   "role": "Verizon representative",
+   "status": "present",
+   "quote": "verizon representative bill oz came forward in regards to the pole petition."
+  },
+  {
+   "name": "Mark Souza",
+   "role": "presented for the tollbooth request",
+   "status": "present",
+   "quote": "mark souza presented for the tollbooth request."
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "facilities director john londa presented an update on a project that has been in development for about two years."
+  },
+  {
+   "name": "Allison",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "planning board member allison reported the town of acton has a sidewalk fund."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaine m. peterson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board took no action on joining the Central Mass Regional Stormwater Coalition and will review the agreement again at the May 17 meeting.",
+   "quote": "the board took no action as they wanted to review the agreement."
+  },
+  {
+   "decision": "The Board will sign the Memorial Day resolution at its next meeting.",
+   "quote": "the board will sign it at their next meeting."
+  },
+  {
+   "decision": "Board signed two proclamations for upcoming Eagle Scout ceremonies.",
+   "quote": "the board signed two proclamations for upcoming eagle scout ceremonies."
+  },
+  {
+   "decision": "Board signed the Accounts Payable warrant and the 4th Quarter Water Commitment of FY 2016.",
+   "quote": "the board signed an accounts payable warrant in the amount of $99,851.72."
+  },
+  {
+   "decision": "Town Manager to follow up on whether all flags flown in town are properly illuminated, or be illuminated or taken down.",
+   "quote": "ms. lafleur will follow up on this matter."
+  },
+  {
+   "decision": "Town Manager to bring the license fee and transfer fee analysis back to the Board in early June.",
+   "quote": "she will bring this back to the board in the beginning of june."
+  },
+  {
+   "decision": "Town Manager to have a resolution on the Teen Center parking lot situation for the Board's next meeting.",
+   "quote": "ms. lafleur stated she would have something for the board by their next meeting."
+  },
+  {
+   "decision": "Town Manager to check the Pay As You Throw trash contract for a weight limit; larger trash bag item to be on the next agenda.",
+   "quote": "she will look at the contract to see if there is a weight limit in the contract."
+  },
+  {
+   "decision": "Board thanked Facilities Director Londa; the solar project was to be rediscussed after the town election and the School Committee kept informed.",
+   "quote": "the board thought this was a great project and thanked mr. londa for his work."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Solar technical advisor grant",
+   "what_was_recorded": "A Department of Energy Resource grant awarded funds to bring on a solar technical advisor.",
+   "quote": "the grant awarded $12,500 to bring on an advisor.",
+   "figures_as_printed": [
+    "$12,500"
+   ]
+  },
+  {
+   "topic": "Solar power purchase pricing",
+   "what_was_recorded": "Solect Energy proposed a 20-year fixed-rate contract for the middle/high school and the DPW garage.",
+   "quote": "it would be a 20 year contract for the middle/high school at 8.3 cents/kw hour and 13.5 cents/kw hour for the dpw, both at fixed rates.",
+   "figures_as_printed": [
+    "8.3 cents/kw hour",
+    "13.5 cents/kw hour"
+   ]
+  },
+  {
+   "topic": "Solar lease payment and annual savings",
+   "what_was_recorded": "A monthly lease payment applies to the middle/high school and annual savings were projected for both buildings.",
+   "quote": "annual savings would be $62,080 for the middle/high school and $3,472 for the dpw garage.",
+   "figures_as_printed": [
+    "$1000/month",
+    "$62,080",
+    "$3,472"
+   ]
+  },
+  {
+   "topic": "Stormwater coalition membership fee",
+   "what_was_recorded": "The annual membership fee for the Central Mass Regional Stormwater Coalition is stated.",
+   "quote": "the annual membership fee is $4,000.",
+   "figures_as_printed": [
+    "$4,000"
+   ]
+  },
+  {
+   "topic": "Stormwater funding in the budget",
+   "what_was_recorded": "Town Manager reported existing stormwater funding for this year and fiscal 2017.",
+   "quote": "ms. lafleur reported there is $40,000 in the budget this year and $50,000 for fiscal 2017 for stormwater activities.",
+   "figures_as_printed": [
+    "$40,000",
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Coalition MAEPA grant",
+   "what_was_recorded": "The coalition recently received a grant for training and technical assistance for member communities.",
+   "quote": "they just received a $50,000 maepa grant to help comply with upcoming federal requirements for managing",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "319 Nonpoint Source grant for lake watershed",
+   "what_was_recorded": "The 319 grant offers up to a set amount and requires a cash and in-kind match.",
+   "quote": "the grant offers up to $600,000 but it requires a 40% match, half in cash, half in kind",
+   "figures_as_printed": [
+    "$600,000",
+    "40%"
+   ]
+  },
+  {
+   "topic": "School bus fees",
+   "what_was_recorded": "Adult education classes could cover bus fees.",
+   "quote": "this could cover the $30,000 for bus fees.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Lanni Orchards agricultural preservation restriction match",
+   "what_was_recorded": "The town is expected to make a match for the proposed state acquisition, depending on factors.",
+   "quote": "she explained the town is expected to make a match of 5% or 10% depending on certain factors.",
+   "figures_as_printed": [
+    "5%",
+    "10%"
+   ]
+  },
+  {
+   "topic": "Accounts Payable warrant and water commitment",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant and a water commitment.",
+   "quote": "the board signed the 4* quarter water commitment of fy 2016 in the amount of $8,791.20.",
+   "figures_as_printed": [
+    "$99,851.72",
+    "$8,791.20"
+   ]
+  },
+  {
+   "topic": "Eagle Scout / Pancake breakfast price",
+   "what_was_recorded": "A public pancake breakfast price per person was announced (not a town expense).",
+   "quote": "the price is $2 per person for pancakes, sausage, tater crowns, fruit, pastry, juice and coffee.",
+   "figures_as_printed": [
+    "$2"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "topic": "National School Nurse Day",
+   "quote": "ms. luck stated may 11\" is national school nurse day, she thanked the lunenburg school nurses for all they do for the children of lunenburg."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Uptown Stroll and Election Day reminders; passing of Jean Hobbs",
+   "quote": "mr. alonzo announced with deep sadness the passing of jean hobbs. she was a mainstay in this town for many years."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "topic": "Jean Hobbs news columns",
+   "quote": "mr. ebersole noted her daughter has every single news column she wrote for the town."
+  },
+  {
+   "speaker": "Mr. Toale",
+   "topic": "Volunteer booth for town committees at Uptown Stroll",
+   "quote": "mr. toale stated there will be a volunteer booth for town committees/boards set up at the historical society during the uptown stroll."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session (IBPO Local 453 negotiations)",
+   "resolution": "entered executive session; minutes separate",
+   "quote": "chapter 30a, § 21a (9), to discuss strategy with respect to collective bargaining or litigation if an open",
+   "tags": [
+    "executive session",
+    "labor negotiations"
+   ]
+  },
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 7:08 p.m.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Pole petition public hearing for Oak Avenue",
+   "resolution": "approved",
+   "quote": "pole petition public hearing for oak avenue mr. toale read the pole petition hearing notice:",
+   "tags": [
+    "pole petition",
+    "utilities",
+    "Oak Avenue"
+   ]
+  },
+  {
+   "topic": "Tollbooth fundraiser request - Boys and Girls Club",
+   "resolution": "approved",
+   "quote": "mark souza presented for the tollbooth request. they are looking for approval for their tollbooth fundraiser for this saturday",
+   "tags": [
+    "fundraiser",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Memorial Day resolution",
+   "resolution": "resolution to be created; Board to sign at next meeting",
+   "quote": "1. memorial day resolution mr. toale wanted to have a discussion in advance of the day.",
+   "tags": [
+    "Memorial Day",
+    "flags"
+   ]
+  },
+  {
+   "topic": "Request to join Central Mass Regional Stormwater Coalition",
+   "resolution": "no action; to review again May 17",
+   "quote": "request to join central mass regional stormwater coalition ms. luck reported the storm water task force recently discussed joining",
+   "tags": [
+    "stormwater",
+    "regional",
+    "membership fee"
+   ]
+  },
+  {
+   "topic": "Solar project (middle/high school and DPW garage)",
+   "resolution": "discussed; no action; rediscuss after town election",
+   "quote": "facilities director john londa presented an update on a project that has been in development for about two years.",
+   "tags": [
+    "solar",
+    "school building",
+    "DPW",
+    "SREC II"
+   ]
+  },
+  {
+   "topic": "License application processing cost",
+   "resolution": "Town Manager to return in June",
+   "quote": "3. license application processing cost ms. lafleur reported that executive assistant peterson had provided an analysis",
+   "tags": [
+    "licenses",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Proclamation signatures for Eagle Scout ceremonies",
+   "resolution": "signed",
+   "quote": "the board signed two proclamations for upcoming eagle scout ceremonies.",
+   "tags": [
+    "proclamations"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting follow-up",
+   "resolution": "no action; thanks",
+   "quote": "mr. ebersole wanted to thank everyone who came out and stayed for the entire town meeting so a quorum could",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrants signed; parking and trash bag items to next agenda",
+   "quote": "the board signed an accounts payable warrant in the amount of $99,851.72.",
+   "tags": [
+    "warrants",
+    "Teen Center parking",
+    "Pay As You Throw"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "7. committee reports mr. ebersole reported he had no reports other than the sewer commission is meeting tonight.",
+   "tags": [
+    "committees",
+    "planning board",
+    "conservation",
+    "school committee",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Town Manager report (Lanni Orchards)",
+   "resolution": "no action; more information later",
+   "quote": "ms. lafleur reported the town had been notified on march 29th of a proposed acquisition by mdar of lanni orchards",
+   "tags": [
+    "agricultural preservation restriction",
+    "Lanni Orchards"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:24 p.m.; next meeting May 17",
+   "quote": "to adjourn the meeting at 8:24 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pole petition hearing notice (Oak Avenue, Verizon New England Inc. and Unitil Pittsfield Gas & Electric)",
+   "where": "text",
+   "quote": "mr. toale read the pole petition hearing notice:"
+  },
+  {
+   "name": "Tollbooth fundraiser request form (Boys and Girls Club)",
+   "where": "text",
+   "quote": "and to note the special conditions listed on the request form"
+  },
+  {
+   "name": "Intermunicipal agreement with the Central Mass Regional Stormwater Coalition",
+   "where": "text",
+   "quote": "she also presented a copy of the intermunicipal agreement with the coalition"
+  },
+  {
+   "name": "Request for Proposals (RFP) for solar technical advisor",
+   "where": "text",
+   "quote": "they put together a request for proposals (rfp) and advertised it in february 2016."
+  },
+  {
+   "name": "Executive Assistant Peterson license processing analysis",
+   "where": "text",
+   "quote": "executive assistant peterson had provided an analysis of what tasks and time is involved in processing a license."
+  },
+  {
+   "name": "Accounts Payable warrant ($99,851.72)",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $99,851.72."
+  },
+  {
+   "name": "4th Quarter Water Commitment of FY 2016",
+   "where": "text",
+   "quote": "the board signed the 4* quarter water commitment of fy 2016 in the amount of $8,791.20."
+  },
+  {
+   "name": "Pay As You Throw contract",
+   "where": "text",
+   "quote": "she will look at the contract to see if there is a weight limit in the contract."
+  },
+  {
+   "name": "Potential 319 Nonpoint Source grant application",
+   "where": "text",
+   "quote": "the storm water task force is working on a potential 319 nonpoint source grant application"
+  },
+  {
+   "name": "Memorial Day resolution",
+   "where": "text",
+   "quote": "he would like to create a resolution declaring sunday, may 29 as the day of observance in lunenburg"
+  }
+ ],
+ "tags": [
+  "select board",
+  "executive session",
+  "labor negotiations",
+  "pole petition",
+  "stormwater",
+  "solar",
+  "Memorial Day",
+  "fundraiser",
+  "town meeting",
+  "warrants",
+  "Lanni Orchards",
+  "parking",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2013-03-04",
  "docid": "891",
@@ -12,15 +12,153 @@
  },
  "votes": [
   {
-   "motion": "to approve the septic variances at 651 Reservoir Road",
+   "motion": "Approve the variances for 651 Reservoir Road with the listed conditions (well testing for nitrates, ammonia and coliform bacteria; water test on sale or connection to town water).",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by shea and seconded by jewell, the board voted to approve the variances with the following conditions:"
+   "quote": "after discussion and on motion by shea and seconded by jewell, the board voted to approve the variances with the following conditions:"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1179065
+ "note": "OCR text from a single scanned page set. The minutes approval (February 4, 2013) and the adjournment at 8:20 PM are recorded without a motion, mover, or vote, so they are not listed as votes. The only recorded vote is the 651 Reservoir Road variance motion; the minutes print \"All in favor\" with no count. No dollar figures appear in the text. Public comment is not labelled; Chris MacKenzie appeared as the owner's representative and is listed as an attendee.",
+ "cost_usd": 0.00329372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting was opened at 7:00 pm by chairman george emond at the ritter memorial building"
+  },
+  {
+   "name": "David Shea",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Admin Asst.",
+   "status": "not stated",
+   "quote": "chairman emond directed admin asst. andrea schnepf to look at what might have been requested on other agricultural properties"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for 356 Sunset Lane and 552 West Townsend Road were acknowledged.",
+   "quote": "title 5 inspection reports acknowledged: 356 sunset lane 552 west townsend road"
+  },
+  {
+   "decision": "Septic permits for 43 Island Road, 62 West Street Terrace and 651 Reservoir Road were signed.",
+   "quote": "septic permits signed: 43 island road 62 west street terrace 651 reservoir road"
+  },
+  {
+   "decision": "An update on Camp David is to be provided by the Board's Agent for the next Board of Health meeting on March 18, 2013.",
+   "quote": "it was requested that an update on camp david be provided by the board's agent for the next board of health meeting on march 18, 2013."
+  },
+  {
+   "decision": "Chairman Emond directed Admin Asst. Andrea Schnepf to research what might have been requested on other agricultural properties and report back to the board, regarding soil analysis for the Aro Estate Property.",
+   "quote": "chairman emond directed admin asst. andrea schnepf to look at what might have been requested on other agricultural properties and report back to the board."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (February 4, 2013); no motion recorded",
+   "quote": "minutes approved: february 4. 2013",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 356 sunset lane 552 west townsend road",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed: 43 island road 62 west street terrace 651 reservoir road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "651 Reservoir Road variances",
+   "resolution": "approved with conditions",
+   "quote": "this lot is lakefront and very small making it very difficult to site a new system.",
+   "tags": [
+    "variance",
+    "septic",
+    "wells",
+    "lakefront"
+   ]
+  },
+  {
+   "topic": "Camp David",
+   "resolution": "update requested for March 18, 2013 meeting",
+   "quote": "it was requested that an update on camp david be provided by the board's agent for the next board of health meeting on march 18, 2013.",
+   "tags": [
+    "Camp David"
+   ]
+  },
+  {
+   "topic": "ARO Estates soil analysis",
+   "resolution": "staff directed to research and report back",
+   "quote": "chairman emond directed admin asst. andrea schnepf to look at what might have been requested on other agricultural properties",
+   "tags": [
+    "ARO Estates",
+    "soil testing",
+    "agricultural property"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports (356 Sunset Lane, 552 West Townsend Road)",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 356 sunset lane 552 west townsend road"
+  },
+  {
+   "name": "Septic permits (43 Island Road, 62 West Street Terrace, 651 Reservoir Road)",
+   "where": "text",
+   "quote": "septic permits signed: 43 island road 62 west street terrace 651 reservoir road"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "Title 5",
+  "variance",
+  "well testing",
+  "Camp David",
+  "ARO Estates",
+  "soil analysis"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2013-04-04",
  "docid": "3422",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the October 4, 2012 and January 3, 2013 meetings",
+   "motion": "Accept the minutes of the October 4, 2012 and January 3, 2013 meetings.",
    "moved_by": "Nancy",
    "seconded_by": "Deb",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "the minutes of the october 4, 2012 and january 3, 2013 meetings were reviewed and accepted (nancy 1st, deb 2rd)."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:26 p.m.",
    "moved_by": "Deb",
    "seconded_by": "Nancy",
    "outcome": "passed",
@@ -29,6 +29,157 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned document. Personnel actions and hiring notifications are listed as items to review and approve but no explicit vote (motion, second, vote result) is recorded for them in the minutes.",
- "cost_usd": 0.0885135
+ "note": "OCR text, no scan defects beyond a garbled signature line ('Deborah Chuten' above the printed 'Deborah Christen, Secretary'); names taken from the printed name. Minutes record the personnel actions as 'to Review and Approve' but no approval vote is recorded. Nancy Forest is a committee member and also the subject of the Accounting Dept. pay action; the minutes record no recusal. The minutes-acceptance and adjournment entries show seconds but no printed vote count; outcome is 'passed' because the minutes state they were accepted and the meeting adjourned. Karen Weller's presence is not stated. K. Speidel is named only as someone the Chair will meet, not as a participant. The attendance line says the meeting was called to order at 6:05 p.m. with no vote recorded on that.",
+ "cost_usd": 0.00485822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert Rand",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present were chair robert rand, nancy forest, and deborah christen."
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "",
+   "status": "present",
+   "quote": "present were chair robert rand, nancy forest, and deborah christen."
+  },
+  {
+   "name": "Deborah Christen",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present were chair robert rand, nancy forest, and deborah christen."
+  },
+  {
+   "name": "Karen Weller",
+   "role": "",
+   "status": "not stated",
+   "quote": "karen weller had a question about reimbursement for emt recertification."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will prepare a By-Law change for the next Town Meeting to reduce the LPC from five (5) members to three (3) members and set a quorum of two (2) members.",
+   "quote": "chair will put together a by-law change for (next town meeting) to reduce the lpc from five (5) members to three (3) members and make a quorum of two (2) members."
+  },
+  {
+   "decision": "The Chair will meet with the Town Manager (K. Speidel) to seek clarifications on holiday, vacation, sick, and personal time and on the S.A.P. hours and building closing questions.",
+   "quote": "chair will meet with town manager (k. speidel) regarding these clarifications."
+  },
+  {
+   "decision": "The Chair gave Nancy Forest a copy of the LPC website page on EMT recertification reimbursement to share with Karen Weller.",
+   "quote": "the information is on the lpc website and gave nancy a copy of the page to share with karen."
+  },
+  {
+   "decision": "The next scheduled meeting is set for May 9, 2013 at the Lunenburg Public Library.",
+   "quote": "the next scheduled meeting will be on may 9, 2013 at the lunenburg public library."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounting Dept. personnel action (Payroll Coordinator)",
+   "what_was_recorded": "A pay rate for the Payroll Coordinator at Grade 10, Step 2, effective 4/1/13 was listed for review and approval.",
+   "figures_as_printed": [
+    "20.69/hour"
+   ],
+   "quote": "accounting dept. - nancy forest, payroll coordinator, grade 10, step 2, 20.69/hour, effective 4/1/13."
+  },
+  {
+   "topic": "Fire Dept. hiring notification (Andrew Burr)",
+   "what_was_recorded": "A Firefighter hire at Grade 7, Step 1 was noted, effective 3/25/13.",
+   "figures_as_printed": [
+    "15.51/hour"
+   ],
+   "quote": "fire dept. - andrew burr, firefighter, grade 7, step 1, 15.51/hour, effective 3/25/13;"
+  },
+  {
+   "topic": "Fire Dept. hiring notification (Andrew Duquette)",
+   "what_was_recorded": "A Firefighter hire at Grade 7, Step 1 was noted, effective 1/17/13.",
+   "figures_as_printed": [
+    "15.51/hour"
+   ],
+   "quote": "andrew duquette, firefighter, grade 7, step 1, 15.51/hour, effective 1/17/13."
+  },
+  {
+   "topic": "Payroll grid and COLA/step rates for S.A.P. employees",
+   "what_was_recorded": "Discussed whether the payroll grid, last set in 2010, needs adjustment using COLA and step rates; no figures printed and no decision recorded.",
+   "figures_as_printed": [],
+   "quote": "also discussion about the payroll grid (original in 2010 - now 3 years old) - do we need to make adjustments using cola and step rates"
+  },
+  {
+   "topic": "EMT recertification reimbursement",
+   "what_was_recorded": "A question about reimbursement for EMT recertification was raised; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "karen weller had a question about reimbursement for emt recertification."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment",
+   "quote": "1. public comment: none"
+  },
+  {
+   "topic": "Personnel Actions to Review and Approve (Accounting Dept.)",
+   "resolution": "listed; no approval vote recorded",
+   "quote": "accounting dept. - nancy forest, payroll coordinator, grade 10, step 2, 20.69/hour, effective 4/1/13."
+  },
+  {
+   "topic": "Personnel Change/Hiring Notifications (Fire Dept.)",
+   "resolution": "noted; no vote recorded",
+   "quote": "personnel change/hiring notifications: fire dept. - andrew burr, firefighter, grade 7, step 1, 15.51/hour, effective 3/25/13;"
+  },
+  {
+   "topic": "Review of Previous Meeting Minutes",
+   "resolution": "approved (Oct 4, 2012 and Jan 3, 2013 minutes)",
+   "quote": "the minutes of the october 4, 2012 and january 3, 2013 meetings were reviewed and accepted (nancy 1st, deb 2rd)."
+  },
+  {
+   "topic": "Review of LPC Initiatives",
+   "resolution": "By-Law change to be prepared; Chair to meet Town Manager; discussion only otherwise",
+   "quote": "discussion on, review of lpc initiatives: chair will put together a by-law change for (next town meeting)"
+  },
+  {
+   "topic": "Next Meeting Agenda",
+   "resolution": "agenda outlined for next meeting",
+   "quote": "next meeting agenda: on-going business: public comment, personnel actions to review and approve"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Salary Admin. Plan (S.A.P.)",
+   "where": "text",
+   "quote": "general discussion of areas of concern in the s.a.p. (salary admin. plan)"
+  },
+  {
+   "name": "Payroll grid (original 2010)",
+   "where": "text",
+   "quote": "also discussion about the payroll grid (original in 2010 - now 3 years old)"
+  },
+  {
+   "name": "LPC website page on EMT recertification reimbursement",
+   "where": "text",
+   "quote": "the information is on the lpc website and gave nancy a copy of the page to share with karen."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "LPC",
+  "by-law change",
+  "salary administration plan",
+  "payroll grid",
+  "personnel actions",
+  "fire department",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

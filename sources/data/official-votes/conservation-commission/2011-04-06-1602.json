@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-04-06",
  "docid": "1602",
@@ -12,23 +12,303 @@
  },
  "votes": [
   {
-   "motion": "Approve Notice of Intent for 44 Peninsula Drive for raising of house and installing concrete foundation",
+   "motion": "Action on the Notice of Intent for 44 Peninsula Drive (raising house #44 and installing a concrete foundation, Edward/Doris Kukkula).",
    "moved_by": "JJ",
    "seconded_by": "Jack",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "no room to move house as it is a very small (typical hh) lot. jj/jack unanimous"
   },
   {
-   "motion": "Approve Notice of Intent for 647 Northfield Road for replacement of failing cesspool with new sewage disposal system",
+   "motion": "Action on the Notice of Intent for 647 Northfield Road (replacement of failing cesspool with new sewage disposal system, Mary Violette).",
    "moved_by": "Jack",
    "seconded_by": "Sharon",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "plans to utilize area so as not to interfere with gardens and orchard. jack/sharon unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of handwritten meeting minutes. Two votes recorded at end of Notice of Intent public hearing sections; vote notation abbreviated as initials with \"Unanimous\" result, no numerical counts provided.",
- "cost_usd": 0.12414449999999999
+ "note": "OCR scan of typed minutes; several OCR errors (e.g., 'Mike Gromiey' for Michael Gromley, 'affedted', 'Streef'). Hearing times '1:45 PM' and '1:55 PM' appear to be OCR errors (likely 7:45/7:55 PM given sequence). Votes are recorded only as 'JJ/Jack Unanimous' and 'Jack/Sharon Unanimous' (mover/second read from slash notation). No vote recorded for Approve Minutes, Signatures, or any listed item. No public speakers are named under Public Discussion. No documents list or exhibit heading appears in the text.",
+ "cost_usd": 0.00690772,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Michael Gromley",
+   "role": "presenter, 611 Reservoir Road enforcement order",
+   "status": "present",
+   "quote": "mike gromiey presented. owned property since 1987, belongs to the ls/c, just maintaining property."
+  },
+  {
+   "name": "Steve & Michelle Marshall",
+   "role": "presenters, 283 Cross Road enforcement order",
+   "status": "present",
+   "quote": "steve & michelle marshall presented. they did not realize they were in violation."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "presenter, 44 Peninsula Drive and 647 Northfield Road hearings",
+   "status": "present",
+   "quote": "dan proctor presented. foundation will be five feet as house sits above grade by three feet."
+  },
+  {
+   "name": "Steven Sears",
+   "role": "David E. Ross Associates, Inc., filer of Notices of Intent",
+   "status": "not stated",
+   "quote": "filed by steven sears of david e. ross associates, inc. for"
+  },
+  {
+   "name": "Brian Waterman",
+   "role": "Waterman Design Associates, presenter",
+   "status": "present",
+   "quote": "brian waterman from waterman design associates and tom murphy from unitil presented."
+  },
+  {
+   "name": "Tom Murphy",
+   "role": "Unitil, presenter on static wire maintenance",
+   "status": "present",
+   "quote": "brian waterman from waterman design associates and tom murphy from unitil presented."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission requested that Michael Gromley file a Notice of Intent with his plans for wall repairs for 611 Reservoir Road; he does not plan to do work until October.",
+   "quote": "the commission requested that he file noi with his plans for wall repairs, etc. will file later, does not plan to do work until october."
+  },
+  {
+   "decision": "The Commission requested that Steve and Michelle Marshall file a Request for Determination of Applicability (RDA) for 283 Cross Road.",
+   "quote": "the commission requested that they file a rda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Replaced well pump on Hollis Road",
+   "what_was_recorded": "A well pump replacement on Hollis Road is listed with a dollar cost; the minutes do not say who incurred it or what action followed.",
+   "figures_as_printed": [
+    "$1807.35"
+   ],
+   "quote": "replaced well pump on hollis road ~ $1807.35"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Discussion (7:00 PM)",
+   "resolution": "no action recorded",
+   "quote": "7:00 pm ~ public discussion",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "611 Reservoir Road, Michael Gromley enforcement order",
+   "resolution": "Commission requested NOI filing; no vote recorded",
+   "quote": "enforcement order regarding activity of wall construction within 30 feet of the high water mark",
+   "tags": [
+    "enforcement",
+    "wetlands",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "283 Cross Road, Marshall enforcement order",
+   "resolution": "Commission requested RDA filing; no vote recorded",
+   "quote": "enforcement order regarding illegal disposing of horse manure near wetlands",
+   "tags": [
+    "enforcement",
+    "wetlands",
+    "manure"
+   ]
+  },
+  {
+   "topic": "44 Peninsula Drive public hearing (Kukkula)",
+   "resolution": "vote unanimous (JJ/Jack)",
+   "quote": "public hearing on a notice of intent filed by steven sears of david e. ross associates, inc. for",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "wetlands",
+    "house raising"
+   ]
+  },
+  {
+   "topic": "647 Northfield Road public hearing (Violette)",
+   "resolution": "vote unanimous (Jack/Sharon)",
+   "quote": "notice of intent filed by steven sears of david e. ross associates, inc. for mary violette",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "septic",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Unitil presentation on static wire maintenance and replacement (8:05 PM)",
+   "resolution": "presentation; no action recorded",
+   "quote": "tom murphy from unitil will have a presentation on maintenance and replacing static wire.",
+   "tags": [
+    "utilities",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Approve Minutes",
+   "resolution": "listed; no motion recorded",
+   "quote": "approve minutes signatures ~ dg ink, jp carrier, 80 ruth street,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "listed; no action recorded",
+   "quote": "signatures ~ dg ink, jp carrier, 80 ruth street,",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "New Business, Zoning Board hearings referrals",
+   "resolution": "listed; no action recorded",
+   "quote": "new business ~ zoning board hearings ~ 541 chase road ~ auto sales, 1263 massachusetts avenue",
+   "tags": [
+    "zoning",
+    "new business"
+   ]
+  },
+  {
+   "topic": "Planning Board Hearing, 134 Leominster-Shirley Road",
+   "resolution": "listed; no action recorded",
+   "quote": "planning board hearing ~ 134 leominster-shirley road",
+   "tags": [
+    "planning board"
+   ]
+  },
+  {
+   "topic": "11 Beachview Road, Eric Manseau",
+   "resolution": "listed; no action recorded",
+   "quote": "11 beachview road ~ eric manseau",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "781 Page Street gift to town",
+   "resolution": "listed; no action recorded",
+   "quote": "781 page street ~ gift to town",
+   "tags": [
+    "gift",
+    "land"
+   ]
+  },
+  {
+   "topic": "Correspondence re: Permit Extension Act",
+   "resolution": "listed; no action recorded",
+   "quote": "correspondence re: permit extension act from aquatic control technology",
+   "tags": [
+    "correspondence",
+    "permit extension act"
+   ]
+  },
+  {
+   "topic": "Tri-Town Landing",
+   "resolution": "listed; no action recorded",
+   "quote": "tri-town landing ~ matt",
+   "tags": [
+    "tri-town landing"
+   ]
+  },
+  {
+   "topic": "Action File Items; Unfinished Business",
+   "resolution": "listed; no action recorded",
+   "quote": "action file items ~ unfinished business-,",
+   "tags": [
+    "unfinished business"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Enforcement Order regarding activity of wall construction within 30 feet of the high water mark (611 Reservoir Road)",
+   "where": "text",
+   "quote": "enforcement order regarding activity of wall construction within 30 feet of the high water mark"
+  },
+  {
+   "name": "Enforcement Order regarding illegal disposing of horse manure near wetlands (283 Cross Road)",
+   "where": "text",
+   "quote": "enforcement order regarding illegal disposing of horse manure near wetlands"
+  },
+  {
+   "name": "Notice of Intent filed by Steven Sears of David E. Ross Associates, Inc. for Edward/Doris Kukkula (44 Peninsula Drive)",
+   "where": "text",
+   "quote": "public hearing on a notice of intent filed by steven sears of david e. ross associates, inc. for"
+  },
+  {
+   "name": "Notice of Intent filed by Steven Sears of David E. Ross Associates, Inc. for Mary Violette (647 Northfield Road)",
+   "where": "text",
+   "quote": "notice of intent filed by steven sears of david e. ross associates, inc. for mary violette"
+  },
+  {
+   "name": "Correspondence re: Permit Extension Act from Aquatic Control Technology",
+   "where": "text",
+   "quote": "correspondence re: permit extension act from aquatic control technology"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "enforcement order",
+  "notice of intent",
+  "public hearing",
+  "zoning referrals",
+  "utilities",
+  "minutes",
+  "Lunenburg conservation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

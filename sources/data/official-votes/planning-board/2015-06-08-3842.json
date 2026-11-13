@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-06-08",
  "docid": "3842",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing to June 22, 2015",
+   "motion": "Continue the hearing on the 270 Electric Avenue development plan review to June 22, 2015.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
@@ -21,6 +21,117 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes note that the board was unable to vote on the main submittal (the development plan review application) due to absence of a Board member (Kenneth Chenis, Clerk).",
- "cost_usd": 0.0804285
+ "note": "Text extraction has split and misspelled words in places (e.g. 'no ted', 'sufficie nt', '3 rd'), and some quotes were chosen to avoid them. Meeting recorded as a continued hearing: no vote on the submittal was taken, only a procedural motion to continue. No public comment section, no dollar figures, and no adjournment motion appear; the minutes end with a recess at 7:20 PM.",
+ "cost_usd": 0.0032367200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "R. Bursch",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "r. bursch noted he leases the space to the tower owner"
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Reviewing engineer, Graves Engineering, Inc.",
+   "status": "not stated",
+   "quote": "reviewing engineer jeffrey walsh, graves engineering, inc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board would not take a vote on the 270 Electric Avenue submittal that evening because a Board member was absent.",
+   "quote": "a. burney informed the board they would not be able to take a vote on the submittal this evening, due to the absence of a board member."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "270 Electric Avenue self-service storage facility, development plan review (Section 8.4) - hearing continuation",
+   "resolution": "continued to June 22, 2015",
+   "quote": "motion to continue hearing to june 22, 2015, m. allison, second, g. bittner, all aye.",
+   "tags": [
+    "development plan review",
+    "self-service storage",
+    "270 Electric Avenue",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Concept sketch requested at last meeting",
+   "where": "text",
+   "quote": "concept sketch requested at last meeting was presented."
+  },
+  {
+   "name": "Peer review letter dated June 3 by Jeffrey Walsh, Graves Engineering, Inc.",
+   "where": "text",
+   "quote": "reviewing engineer jeffrey walsh, graves engineering, inc."
+  },
+  {
+   "name": "Statutory notice published in the Sentinel and Enterprise on April 27 and May 4, 2015",
+   "where": "text",
+   "quote": "statutory notice published in the sentinel and enterprise on april 27 and may 4, 2015"
+  },
+  {
+   "name": "Application for development plan review under Section 8.4 of the Protective Bylaw (self-service storage facility, 270 Electric Avenue)",
+   "where": "text",
+   "quote": "the hearing is to hear and discuss an application for a development plan review under section 8.4."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "development plan review",
+  "self-service storage",
+  "270 Electric Avenue",
+  "zoning",
+  "peer review",
+  "continued"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2015-08-20",
  "docid": "3434",
@@ -12,23 +12,184 @@
  },
  "votes": [
   {
-   "motion": "amend the Salary Admin Plan to adjust step increases to every year (July 1st effective date) from every other year with a proposed increase of 2.5%",
-   "moved_by": "Scott",
-   "seconded_by": "Cheryl",
-   "outcome": "passed 3-0-1",
-   "procedural": false,
-   "quote": "scott made a motion to amend the salary admin plan to adjust step increases to ever year (july 1 st effective date) from every other year with a proposed increase of 2.5%. cheryl seconded the motion and after a discussion a vote was taken 3 approved, 1 abstained."
+   "motion": "Approve the minutes of the July meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes were approved, lin will send to town clerk for publication."
   },
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "Scott",
-   "seconded_by": "Lin",
+   "motion": "Amend the Salary Admin Plan to adjust step increases to every year (July 1 effective date) from every other year, with a proposed increase of 2.5%.",
+   "moved_by": "Scott Chase",
+   "seconded_by": "Cheryl Valera",
+   "outcome": "3 approved, 1 abstained",
+   "procedural": false,
+   "quote": "scott made a motion to amend the salary admin plan to adjust step increases to ever year (july 1 st effective date) from every other year"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:43 pm.",
+   "moved_by": "Scott Chase",
+   "seconded_by": "Lin Vickery",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "scott moved to adjourn the meeting; lin seconded the motion, and the committee voted 4-0 to adjourn at 7:43 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes mention that July meeting minutes were approved and that a COA Director appointment was approved, but neither is recorded with explicit motion/second language or vote counts. Only the two votes above have complete recorded details.",
- "cost_usd": 0.08844450000000001
+ "note": "Minutes are plain extracted text, not a scan. Kerry Lafleur's role is not printed. The July minutes approval is recorded without a stated motion or mover, so it is marked as a procedural vote with outcome passed. The step-increase vote is printed as \"3 approved, 1 abstained\" with no no-votes listed. Old Business is listed with nothing under it and is not treated as a topic.",
+ "cost_usd": 0.0038266199999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cheryl Valera",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest and kerry lafleur"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest and kerry lafleur"
+  },
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest and kerry lafleur"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest and kerry lafleur"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest and kerry lafleur"
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: deb christen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The step-increase amendment will be presented to the BOS and Finance Committee for comment; if no issue, it goes with the other Salary Admin Plan amendments to the fall Town Meeting.",
+   "quote": "amendment will be presented to bos and finance committee for comment."
+  },
+  {
+   "decision": "The Personnel Committee will continue to discuss cost of living increases.",
+   "quote": "the personnel committee will continue to discuss cost of living increases."
+  },
+  {
+   "decision": "Close out all Salary Admin Plan amendments and send them to the committee for review ahead of the September 3, 2015 meeting; Cheryl to adjust the table and Kerry to adjust the competitive analysis.",
+   "quote": "cheryl will adjust the table as discussed and kerry will adjust competitive analysis."
+  },
+  {
+   "decision": "COA Director appointment approved (Personnel Action Form), with no recorded vote.",
+   "quote": "coa director appointment approved."
+  },
+  {
+   "decision": "Set the September 3, 2015 agenda: final review of Salary Admin Plan amendments and Personnel Action Forms.",
+   "quote": "september 3, 2015 agenda items are:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual step increase cost analysis for town employees",
+   "what_was_recorded": "The committee reviewed and discussed a cost analysis of an annual step increase, and the proposed amendment carries a 2.5% increase.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "reviewed and discussed the cost analysis of doing an annual step increase for town employees prepared by scott."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and July minutes",
+   "resolution": "minutes approved",
+   "quote": "cheryl valera, committee chair, called meeting to order at 6:38 p.m.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Annual step increase and Salary Admin Plan amendment",
+   "resolution": "amendment approved 3-0-1 and sent to BOS and Finance Committee for comment",
+   "quote": "scott made a motion to amend the salary admin plan to adjust step increases to ever year (july 1 st effective date) from every other year",
+   "tags": [
+    "salary administration",
+    "step increases",
+    "cost analysis",
+    "fall Town Meeting"
+   ]
+  },
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "COA Director appointment approved",
+   "quote": "coa director appointment approved.",
+   "tags": [
+    "personnel",
+    "appointment",
+    "COA"
+   ]
+  },
+  {
+   "topic": "Next meeting agenda",
+   "resolution": "no action",
+   "quote": "september 3, 2015 agenda items are:",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 7:43 pm",
+   "quote": "scott moved to adjourn the meeting; lin seconded the motion, and the committee voted 4-0 to adjourn at 7:43 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Salary Admin Plan",
+   "where": "text",
+   "quote": "scott recommended that the committee close out all amendments on the salary admin plan and send the amendments out"
+  },
+  {
+   "name": "Cost analysis of doing an annual step increase for town employees (prepared by Scott)",
+   "where": "text",
+   "quote": "reviewed and discussed the cost analysis of doing an annual step increase for town employees prepared by scott."
+  },
+  {
+   "name": "Competitive analysis",
+   "where": "text",
+   "quote": "kerry will adjust competitive analysis."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "salary administration",
+  "step increases",
+  "cost of living",
+  "personnel action forms",
+  "COA",
+  "fall Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

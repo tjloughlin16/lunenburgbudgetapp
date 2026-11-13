@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2017-02-21",
  "docid": "534",
@@ -12,13 +12,202 @@
  },
  "votes": [
   {
-   "motion": "to approve the plans for restoring the home at 123 Leominster Rd",
+   "motion": "Approve the plans to restore 123 Leominster Rd and sign the building permit.",
    "outcome": "passed",
    "procedural": false,
    "quote": "the commission voted to approve the plans, and signed the building permit."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10418649999999999
+ "note": "Minutes are plain extracted text, single page run, with a recording clerk signature. The Phelps approval is recorded as \"The Commission voted to approve\" with no mover, seconder, or vote count, so the outcome is recorded as passed without a count. Adjournment (\"Adjourned: 8:36\") and the next meeting date are recorded without a motion or vote. The chair's absence is inferred from the minutes saying items wait \"until the chair was present\". Matthew Kherer appears only in the header. No public comment section is printed. No dollar figures appear in the text.",
+ "cost_usd": 0.00480212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "the resolution was tabled until the chair was present."
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "meeting open and called to order at 7:02 with laveck, corcoran and dwyer present."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "meeting open and called to order at 7:02 with laveck, corcoran and dwyer present."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk; recording clerk",
+   "status": "present",
+   "quote": "meeting open and called to order at 7:02 with laveck, corcoran and dwyer present."
+  },
+  {
+   "name": "Matthew Kherer",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member: matthew kherer"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "presenter",
+   "status": "present",
+   "quote": "amory phelps was present with jeff smart of j.smart contracting"
+  },
+  {
+   "name": "Jeff Smart",
+   "role": "of J.Smart Contracting",
+   "status": "present",
+   "quote": "amory phelps was present with jeff smart of j.smart contracting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members agreed that the known history of a property remains a valid basis for Historic Value.",
+   "quote": "members present agreed that the known history of a property would remain a valid basis for historic value."
+  },
+  {
+   "decision": "Guidelines to place emphasis on alterations to contributing properties visible from the public right-of-way; concept retained in the Historic Value description.",
+   "quote": "members present decided that our guidelines should place emphasis on alterations to contributing properties that are visible from the public right-of-way."
+  },
+  {
+   "decision": "Guidelines to have three main sections: Introduction and purpose; rules on what is or is not permitted; application process.",
+   "quote": "members present agreed that there shall be three main sections of the guidelines:"
+  },
+  {
+   "decision": "Members agreed to write new rules for exempt status of temporary buildings based on size and duration, as well as position and other factors.",
+   "quote": "members present agreed to write new rules for exempt status of temporary buildings based on size and duration, as well as position and other factors."
+  },
+  {
+   "decision": "Question of whether above ground swimming pools and play structures count as temporary buildings was tabled until the chair is present.",
+   "quote": "questions were raised regarding the inclusion of above ground swimming pools and play structures as temporary buildings, but the resolution was tabled until the chair was present."
+  },
+  {
+   "decision": "Dwyer to discuss the separate APDC filing fee question with Land use Director Adam Burney; the Commission to revisit at next meeting.",
+   "quote": "dwyer agreed to discuss this with land use director adam burney, and the commission would revisit the question at our next meeting when"
+  },
+  {
+   "decision": "LaVeck to re-type and re-format the Guidelines in their current state, accepting changes.",
+   "quote": "laveck agreed to re-type and re-format the guidelines in its current state, accepting changes."
+  },
+  {
+   "decision": "Minutes from January were not reviewed, since only two members present had attended that meeting.",
+   "quote": "minutes from january were not reviewed, since only two members were present who were at that meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Certificate to Alter filing fee",
+   "what_was_recorded": "LaVeck raised the need for clarity on the filing fee for a Certificate to Alter and whether the APDC would pay a separate fee; no figure was printed and the question was referred to Dwyer and Burney.",
+   "figures_as_printed": [],
+   "quote": "laveck also felt the guidelines required greater clarity on the filing fee for a certificate to alter."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order; January minutes",
+   "resolution": "January minutes not reviewed",
+   "quote": "minutes from january were not reviewed, since only two members were present who were at that meeting.",
+   "tags": [
+    "minutes",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Phelps restoration plans, 123 Leominster Rd",
+   "resolution": "approved; building permit signed",
+   "quote": "the commission voted to approve the plans, and signed the building permit.",
+   "tags": [
+    "building permit",
+    "restoration",
+    "Leominster Rd"
+   ]
+  },
+  {
+   "topic": "Guidelines: Historic Value",
+   "resolution": "known-history basis retained; emphasis on visible contributing properties kept",
+   "quote": "members present agreed that the known history of a property would remain a valid basis for historic value.",
+   "tags": [
+    "guidelines",
+    "historic value"
+   ]
+  },
+  {
+   "topic": "Guidelines: filing fee for Certificate to Alter",
+   "resolution": "continued to next meeting",
+   "quote": "the commission would revisit the question at our next meeting when the chair was present.",
+   "tags": [
+    "guidelines",
+    "filing fee",
+    "certificate to alter"
+   ]
+  },
+  {
+   "topic": "Guidelines: structure and temporary buildings",
+   "resolution": "three sections agreed; temporary-building rules to be written; pools and play structures tabled",
+   "quote": "members present agreed that there shall be three main sections of the guidelines:",
+   "tags": [
+    "guidelines",
+    "temporary buildings"
+   ]
+  },
+  {
+   "topic": "Guidelines: re-typing and re-formatting",
+   "resolution": "LaVeck to re-type and re-format",
+   "quote": "laveck agreed to re-type and re-format the guidelines in its current state, accepting changes.",
+   "tags": [
+    "guidelines"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Guidelines (Architectural Preservation District guidelines, latest version)",
+   "where": "text",
+   "quote": "laveck also felt the guidelines required greater clarity on the filing fee for a certificate to alter."
+  },
+  {
+   "name": "APD bylaw",
+   "where": "text",
+   "quote": "this decision has basis in both the apd bylaw and the way that it was presented at town meeting when it was adopted."
+  },
+  {
+   "name": "“the History of the Turkey Hills” (publication)",
+   "where": "text",
+   "quote": "publications such as \"the history of the turkey hills\""
+  },
+  {
+   "name": "Restoration plans for 123 Leominster Rd (Amory Phelps)",
+   "where": "text",
+   "quote": "presented plans to restore the home of"
+  },
+  {
+   "name": "Building permit (123 Leominster Rd)",
+   "where": "text",
+   "quote": "the commission voted to approve the plans, and signed the building permit."
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "historic district",
+  "certificate to alter",
+  "building permit",
+  "guidelines",
+  "temporary buildings",
+  "filing fee",
+  "Leominster Rd"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

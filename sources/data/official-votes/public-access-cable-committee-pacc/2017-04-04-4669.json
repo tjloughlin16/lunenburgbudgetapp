@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2017-04-04",
  "docid": "4669",
@@ -12,26 +12,238 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from March 6, 2017",
+   "motion": "Approve the meeting minutes of March 6, 2017.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "committee reviewed and approved the minutes."
   },
   {
-   "motion": "approve a budget of not to excess $9000 to purchase three camera bundles appropriate for live broadcasting",
+   "motion": "Approve a budget of not to exceed $9000 to purchase three camera bundles appropriate for live broadcasting.",
    "moved_by": "Faith",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "faith made a motion to approve a budget of not to excess $9000 to purchase three camera bundles appropriate for live broadcasting. the pacc committee approved."
   },
   {
-   "motion": "purchase an ARRAY storage system for around $3000",
+   "motion": "Purchase one ARRAY backup storage system for around $3000.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "the board made a motion to purchase one for around $3000. the board approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10512350000000001
+ "note": "Text is clean and complete, with a 2017 clerk signature dated 6/6/2017. No vote counts are printed. The minutes-approval and camera-budget motions give no seconder. The ARRAY storage motion names no mover or seconder. The adjournment has no recorded motion. The public-comment speaker is not named. The coordinator's role is not printed; she is listed only as a non-member present.",
+ "cost_usd": 0.00426292,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member; signed as PACC Clerk",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member present",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin."
+  },
+  {
+   "name": "Michael Wallman",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "michael wallman is looking for full time work and will fill in when available."
+  },
+  {
+   "name": "Emily",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "live broadcast training with emily and michael."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jo will contact Robert at Access AV about cameras with directing capabilities.",
+   "quote": "she will contact robert at access av about cameras with directing capabilities."
+  },
+  {
+   "decision": "May's meeting will be scheduled as needed; June's meeting will be on the 5th.",
+   "quote": "may's meeting will be scheduled as needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial committee: Article 7 FY17 to FY18 funds",
+   "what_was_recorded": "Article 7 was discussed as reducing the FY17 budget and adding the funds to the FY18 budget; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "article 7 was discussed about reducing the fy17 budget and adding the funds to the fy18 budget."
+  },
+  {
+   "topic": "Ending March balance",
+   "what_was_recorded": "The ending March balance was reported.",
+   "figures_as_printed": [
+    "$309,510.78"
+   ],
+   "quote": "ending march balance was $309,510.78"
+  },
+  {
+   "topic": "Internet-connected live broadcast cameras",
+   "what_was_recorded": "Jo looked into purchasing internet-connected cameras for live broadcast through the Castus system, suggesting two at around $2100 each.",
+   "figures_as_printed": [
+    "$2100"
+   ],
+   "quote": "each camera will be around $2100."
+  },
+  {
+   "topic": "Camera bundles budget",
+   "what_was_recorded": "The committee approved a budget of not to exceed $9000 to purchase three camera bundles for live broadcasting.",
+   "figures_as_printed": [
+    "$9000"
+   ],
+   "quote": "faith made a motion to approve a budget of not to excess $9000 to purchase three camera bundles appropriate for live broadcasting."
+  },
+  {
+   "topic": "ARRAY backup storage for Castus",
+   "what_was_recorded": "The board approved purchasing one ARRAY storage system for around $3000.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "the board made a motion to purchase one for around $3000."
+  },
+  {
+   "topic": "New monitor for Castus system",
+   "what_was_recorded": "Jo would like to purchase a new monitor for the Castus system; no price or decision printed.",
+   "figures_as_printed": [],
+   "quote": "jo would like to purchase a new monitor for the castus system."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Funds moved to purchase of service to cover salaries.",
+   "amount_as_printed": "not stated",
+   "outcome": "reported as moved; no amount printed",
+   "quote": "funds were moved to purchase of service to cover salaries."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "not stated",
+   "stated_role": "not stated",
+   "topic": "PAC electricity usage at town hall",
+   "quote": "email was sent concerning pac's electricity usage at town hall."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "electricity"
+   ],
+   "quote": "email was sent concerning pac's electricity usage at town hall."
+  },
+  {
+   "topic": "Review and approve minutes of March 6, 2017",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review and approve meeting minutes from march 6, 2017."
+  },
+  {
+   "topic": "Financial committee report",
+   "resolution": "no action",
+   "tags": [
+    "warrant",
+    "finance committee",
+    "FY17 budget",
+    "FY18 budget"
+   ],
+   "quote": "article 21 was added to the warrant based on the finance committee's recommendation."
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "camera and storage purchases approved; other items reported",
+   "tags": [
+    "Castus",
+    "cameras",
+    "staffing",
+    "training",
+    "budget",
+    "local programming"
+   ],
+   "quote": "castus training is set for april 20th."
+  },
+  {
+   "topic": "Business and cable advisory committee update",
+   "resolution": "no action",
+   "tags": [
+    "Comcast",
+    "cable franchise",
+    "public hearing"
+   ],
+   "quote": "may 18th at 7pm is the public hearing for comcast contract renewal."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 7:25pm",
+   "tags": [
+    "adjournment",
+    "schedule"
+   ],
+   "quote": "meeting adjourned at 7:25pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 21 (warrant)",
+   "where": "text",
+   "quote": "article 21 was added to the warrant based on the finance committee's recommendation."
+  },
+  {
+   "name": "Article 7",
+   "where": "text",
+   "quote": "article 7 was discussed about reducing the fy17 budget and adding the funds to the fy18 budget."
+  },
+  {
+   "name": "Business plan",
+   "where": "text",
+   "quote": "the business plan is good to go."
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access television",
+  "cable",
+  "Castus",
+  "camera purchase",
+  "equipment",
+  "budget",
+  "Comcast contract",
+  "town hall electricity"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

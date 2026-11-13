@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-06-08",
  "docid": "4638",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from May 18, 2015",
+   "motion": "Approve the minutes of May 18, 2015, with recommended changes.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "committee reviewed and approved minutes with recommended changes."
   },
   {
-   "motion": "Approve bulletin board policy",
+   "motion": "Approve the Bulletin Board Policy.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -29,6 +29,276 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; readable. Two votes recorded: approval of prior minutes (procedural) and approval of bulletin board policy. No mover or seconder names printed; outcomes stated as approved/voted for approval without vote counts.",
- "cost_usd": 0.0902595
+ "note": "OCR text from macOS Vision. No vote count or mover is printed for the Bulletin Board Policy approval, and the May 18 minutes approval has no recorded motion; both are recorded from the wording. No motion is printed for adjournment, so it is not recorded as a vote. Peter Lincoln (public comment) may be the same person as Pete Lincoln (roll call); the minutes print both spellings. Dollar figures are as printed. The Next Meetings line is truncated (\"Aug.\") and the trailing \"YBL15\" is an OCR artifact.",
+ "cost_usd": 0.005304919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "Committee members",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Committee members",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Committee members",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non committee members",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, joe ebersole, pete lincoln, deb lincoln, and faith beall"
+  },
+  {
+   "name": "Joe Ebersole",
+   "role": "Non committee members",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, joe ebersole, pete lincoln, deb lincoln, and faith beall"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Non committee members",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, joe ebersole, pete lincoln, deb lincoln, and faith beall"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Non committee members",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, joe ebersole, pete lincoln, deb lincoln, and faith beall"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "Non committee members",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, joe ebersole, pete lincoln, deb lincoln, and faith beall"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "",
+   "status": "not stated",
+   "quote": "project will be headed by peter lincoln."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jeff Bajko will review and format the purchasing policy and present it at the next meeting.",
+   "quote": "jeff will review and format purchasing policy and present it at the next meeting."
+  },
+  {
+   "decision": "A letter to Karen Brochu, the town accountant, should be sent with the numbers of the FY16 budget.",
+   "quote": "a letter to karen brochu, the town accountant, should be sent with the numbers of the fy16 budget."
+  },
+  {
+   "decision": "Staff to start work on remote locations; Jo will evaluate them and send out bids once educated, with an IT consultant under consideration.",
+   "quote": "jo will then send out bids once educated."
+  },
+  {
+   "decision": "Other committees will take their own meeting minutes; a letter will be drafted, reviewed by the committee chair, and sent to the selectmen board.",
+   "quote": "a letter will be constructed, reviewed by committee chair and sent to selectmen board."
+  },
+  {
+   "decision": "In future, communication will be started with PACC and CAC.",
+   "quote": "in future, communication will be started with pacc and cac."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ending balance",
+   "what_was_recorded": "The ending balance as of June 8, 2015 was reported.",
+   "figures_as_printed": [
+    "$302,086.24"
+   ],
+   "quote": "ending balance of june 8, 2015 is $302,086.24"
+  },
+  {
+   "topic": "Comcast payment",
+   "what_was_recorded": "A payment from Comcast was made on May 13.",
+   "figures_as_printed": [
+    "$24,428.48"
+   ],
+   "quote": "may 13, a payment from comcast was made of $24,428.48."
+  },
+  {
+   "topic": "Local broadcast increase",
+   "what_was_recorded": "Local broadcast increased 3%, with lacrosse games the bulk of it.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "increase 3% in local broadcast: lacrosse games bulk of it."
+  },
+  {
+   "topic": "Monthly training funds",
+   "what_was_recorded": "Committee raised concern about having enough money for monthly training and was told there is plenty of money to cover expenses.",
+   "figures_as_printed": [],
+   "quote": "the committee had a concern for having enough money for monthly training and"
+  },
+  {
+   "topic": "Funds transfer for Jason Kearns services",
+   "what_was_recorded": "A letter of transferred funds for Jason Kearns services was noted; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "letter of transferred funds for jason kearns services."
+  },
+  {
+   "topic": "FY16 line item funding",
+   "what_was_recorded": "Agenda item to define line items funding for FY16 at the next meeting.",
+   "figures_as_printed": [],
+   "quote": "define line items funding for fy16"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Letter of transferred funds for Jason Kearns services.",
+   "amount_as_printed": "",
+   "outcome": "not stated",
+   "quote": "letter of transferred funds for jason kearns services."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Peter Lincoln",
+   "stated_role": "",
+   "topic": "Virtual TV tour of old high school",
+   "quote": "virtual tv tour of old high school to preserve memory: project will be headed by"
+  },
+  {
+   "speaker": "Peter Lincoln",
+   "stated_role": "",
+   "topic": "Equipment loan request",
+   "quote": "peter would like to borrow equipment for the project."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "Re-appointment forms",
+   "quote": "re-appointment forms were just left in all committee's mailbox."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Roll call",
+   "resolution": "no action",
+   "quote": "meeting started at 6:00pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no action",
+   "quote": "re-appointment forms were just left in all committee's mailbox.",
+   "tags": [
+    "public comment",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes from May 18, 2015",
+   "resolution": "approved with recommended changes",
+   "quote": "committee reviewed and approved minutes with recommended changes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly budget report",
+   "resolution": "discussed; no action",
+   "quote": "coordinator's monthly budget report:",
+   "tags": [
+    "budget",
+    "broadcast",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Review vendor payment policy",
+   "resolution": "continued to next meeting",
+   "quote": "jeff will review and format purchasing policy and present it at the next meeting.",
+   "tags": [
+    "purchasing policy"
+   ]
+  },
+  {
+   "topic": "Bulletin Board Policy",
+   "resolution": "approved",
+   "quote": "reviewed and voted for approval.",
+   "tags": [
+    "bulletin board",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Discussion of cable advisory committee",
+   "resolution": "points held for further discussion",
+   "quote": "committee has not had their first meeting yet.",
+   "tags": [
+    "CAC"
+   ]
+  },
+  {
+   "topic": "Agenda items for next meeting",
+   "resolution": "set",
+   "quote": "agenda items for next meeting:",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20pm",
+   "quote": "meeting adjourned at 8:20pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter of transferred funds for Jason Kearns services",
+   "where": "text",
+   "quote": "letter of transferred funds for jason kearns services."
+  },
+  {
+   "name": "Re-appointment forms",
+   "where": "text",
+   "quote": "re-appointment forms were just left in all committee's mailbox."
+  },
+  {
+   "name": "Vendor payment policy / purchasing policy",
+   "where": "text",
+   "quote": "review vendor payment policy"
+  },
+  {
+   "name": "Bulletin Board Policy",
+   "where": "text",
+   "quote": "reviewed and voted for approval."
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access cable",
+  "coordinator report",
+  "budget",
+  "FY16 budget",
+  "broadcast",
+  "remote locations",
+  "purchasing policy",
+  "bulletin board policy",
+  "cable advisory committee",
+  "equipment loan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

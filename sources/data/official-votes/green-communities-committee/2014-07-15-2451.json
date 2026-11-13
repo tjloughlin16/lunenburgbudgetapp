@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2014-07-15",
  "docid": "2451",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "combine the VFD drives and air compressor replacement for THMS to maximize the rebate from Unitil",
+   "motion": "Combine the VFD drives and air compressor replacement for THMS to maximize the rebate from Unitil.",
    "moved_by": "Z.Cutting",
    "seconded_by": "N. Sullivan",
    "outcome": "passed",
@@ -20,15 +20,243 @@
    "quote": "motion by z.cutting to combine the vfd drives and air compressor replacement for thms to maximize the rebate from unitil. motion seconded by n. sullivan. approved."
   },
   {
-   "motion": "approve the light replacements, time clock and photo eye at the Library and light replacements at the Public Safety not to exceed 10% of total cost including rebates",
+   "motion": "Approve the light replacements, time clock and photo eye at the Library and light replacements at the Public Safety, as estimated not to exceed 10% of the total cost including the rebates.",
    "moved_by": "N. Sullivan",
    "seconded_by": "Z.Cutting",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by n. sullivan to approve the light replacements, time clock and photo eye at the library and light replacements at the public safety, as estimated not to exceed 10% of the total cost including the rebates. motion seconded by z.cutting. approved."
+   "quote": "motion by n. sullivan to approve the light replacements, time clock and photo eye at the library and light replacements at the public safety, as estimated"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scan using macOS Vision; text readable with expected OCR artifacts.",
- "cost_usd": 0.1112205
+ "note": "Scanned minutes read by OCR; header is garbled and the page carries a stamp, but the body text is legible. The heading reads \"Green Communities Task Force\" while the board is named Green Communities Committee. Votes are recorded as \"Approved\" with no vote count or roll call. No public comment is recorded. The adjournment has no recorded motion. James Breault appears in the header only, not in the present list.",
+ "cost_usd": 0.00511312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "david blatt, chair joanne mcquaid, secretary.: zachary cutting, member"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: d. blatt, m. conway, z. cutting, j mcquaid, n. sullivan, j. londa"
+  },
+  {
+   "name": "Zachary Cutting",
+   "role": "Member",
+   "status": "present",
+   "quote": "david blatt, chair joanne mcquaid, secretary.: zachary cutting, member"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "neal sullivan, member michael conway, member john londa, advisor"
+  },
+  {
+   "name": "Michael Conway",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, m. conway, z. cutting, j mcquaid, n. sullivan, j. londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "present: d. blatt, m. conway, z. cutting, j mcquaid, n. sullivan, j. londa"
+  },
+  {
+   "name": "James Breault",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "john londa, advisor james breault, advisor"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Londa will contact a company for a proposal to do the feasibility study and create an estimated cost for the Public Safety heat conversion.",
+   "quote": "j.londa will contact a company for a proposal to do the study and create an estimated cost."
+  },
+  {
+   "decision": "M. Conway will create an Excel spreadsheet of projects and expenses.",
+   "quote": "m. conway will create an excel spread sheet of projects and expenses."
+  },
+  {
+   "decision": "Next priorities set: envelope tightening at the Eagle House and THMS, and light replacements at Eagle House.",
+   "quote": "next priorities: envelope tightening at the eagle house and thms, and light replacements at eagle house."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant application project order and 25% grant funds",
+   "what_was_recorded": "Projects were reviewed to match completion order to approved funding, which is 25% of the grant.",
+   "figures_as_printed": [
+    "$39,250.00"
+   ],
+   "quote": "review of grant application projects to determine the order of completion to match the approved funding (25% of grant = $39,250.00)."
+  },
+  {
+   "topic": "Utility incentive refunds",
+   "what_was_recorded": "Utility incentives need to be refunded to the project contractor.",
+   "figures_as_printed": [],
+   "quote": "utility incentives need to be refunded to contractor of project."
+  },
+  {
+   "topic": "Grant funds not yet received",
+   "what_was_recorded": "No grant funds had yet been received by Town Hall; a line item is being created for accounting purposes.",
+   "figures_as_printed": [],
+   "quote": "j. londa stated no funds have been received by town hall yet."
+  },
+  {
+   "topic": "Light replacement project cost cap",
+   "what_was_recorded": "Light replacements, time clock and photo eye were approved as estimated not to exceed 10% of total cost including rebates.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "as estimated not to exceed 10% of the total cost including the rebates."
+  },
+  {
+   "topic": "Rebate from Unitil on VFD and compressor combination",
+   "what_was_recorded": "Combining the VFD drives and air compressor replacement was intended to maximize the Unitil rebate.",
+   "figures_as_printed": [],
+   "quote": "to maximize the rebate from unitil."
+  },
+  {
+   "topic": "Heat conversion feasibility study at Public Safety complex",
+   "what_was_recorded": "A company is needed to conduct a feasibility study for the heat conversion, at a cost of $5000.00.",
+   "figures_as_printed": [
+    "$5000.00"
+   ],
+   "quote": "a company is needed that will conduct a feasibility study for $5000.00."
+  },
+  {
+   "topic": "Gas line extension from Walmart",
+   "what_was_recorded": "Unitil will extend the gas line down from Walmart for a price; the price was not recorded.",
+   "figures_as_printed": [],
+   "quote": "unitil will extend the gas line down from walmart for a price."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and minutes",
+   "resolution": "called to order; no minutes available for approval",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting called to order at 6:30 p.m. no minutes were available for approval."
+  },
+  {
+   "topic": "Grant application project order",
+   "resolution": "reviewed; no action recorded",
+   "tags": [
+    "grant",
+    "funding"
+   ],
+   "quote": "review of grant application projects to determine the order of completion to match the approved funding"
+  },
+  {
+   "topic": "Managing projects and allocating funds",
+   "resolution": "two motions approved; spreadsheet assigned to M. Conway",
+   "tags": [
+    "energy projects",
+    "rebates",
+    "Unitil"
+   ],
+   "quote": "managing projects and allocating funds: motion by z.cutting to combine the vfd drives and air compressor replacement"
+  },
+  {
+   "topic": "Energy baseline and Energy Reduction Plan",
+   "resolution": "noted; baseline to be ready for next meeting",
+   "tags": [
+    "energy baseline",
+    "energy reduction plan"
+   ],
+   "quote": "j.londa noted that the energy baseline is now one year old"
+  },
+  {
+   "topic": "Town Employee Energy Policy and timetable",
+   "resolution": "no action; no information available",
+   "tags": [
+    "energy policy"
+   ],
+   "quote": "d.blatt said that according to the lunenburg ledger the selectmen did not approve the energy plan."
+  },
+  {
+   "topic": "Community Education Update",
+   "resolution": "noted; display ongoing",
+   "tags": [
+    "community education"
+   ],
+   "quote": "community education update: display is ongoing at the town library."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "TBD, mid September",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "next meeting date: tbd, mid september."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30 P.M.; no motion recorded",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned 7:30 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Grant Application",
+   "where": "text",
+   "quote": "review of grant application projects to determine the order of completion to match the approved funding"
+  },
+  {
+   "name": "Energy Reduction Plan",
+   "where": "text",
+   "quote": "so we can revise the energy reduction plan."
+  },
+  {
+   "name": "Town Employee Energy Policy",
+   "where": "text",
+   "quote": "review town employee energy policy and timetable"
+  },
+  {
+   "name": "Energy Plan (Selectmen did not approve)",
+   "where": "text",
+   "quote": "the selectmen did not approve the energy plan."
+  },
+  {
+   "name": "Lunenburg Ledger",
+   "where": "text",
+   "quote": "according to the lunenburg ledger the selectmen did not approve the energy plan."
+  },
+  {
+   "name": "Excel spreadsheet of projects and expenses",
+   "where": "text",
+   "quote": "m. conway will create an excel spread sheet of projects and expenses."
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy efficiency",
+  "grants",
+  "utility rebates",
+  "Unitil",
+  "town buildings",
+  "energy policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

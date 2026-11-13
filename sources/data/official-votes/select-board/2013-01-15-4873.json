@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-01-15",
  "docid": "4873",
@@ -12,15 +12,512 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Carl (Ernie) Sund",
+   "motion": "Move to adjourn the meeting.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "mr. alonzo moved to adjourn the meeting. mr. sund seconded. on vote motion carried, 3 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1126915
+ "note": "OCR text from macOS Vision with some garbled words: \"Town Halt\", \"Mir. Sund\" (likely Mr. Sund), \"$24l\" (Monty Tech figure unreadable), \"Steven.M. deBettencourt\", \"Progran\", and a jumbled forecast slide. The Needs and Current Conditions figures are printed without year labels in places; years were taken from the adjacent lines. The Benson attendee has no first name in the text. No vote is recorded for approving prior minutes or for the warrants; only the adjournment motion has a recorded vote. Transfers: none recorded. Susan Doherty signed as recording secretary; attendance at the meeting is not stated for her.",
+ "cost_usd": 0.01160712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town halt as scheduled with david matthews,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo, carl (ernie) sund, and town manager kerry speidel."
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "status": "present",
+   "quote": "tom alonzo, carl (ernie) sund, and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "tom alonzo, carl (ernie) sund, and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "absent",
+   "quote": "not present was paula bertram & steven.m. debettencourt"
+  },
+  {
+   "name": "Steven.M. deBettencourt",
+   "status": "absent",
+   "quote": "not present was paula bertram & steven.m. debettencourt"
+  },
+  {
+   "name": "John Hume",
+   "role": "Planning & Development Director, MRPC",
+   "status": "present",
+   "quote": "representatives from mrpc, john hume, planning & development director, renee marion, gis analyst, and glen eaton, executive"
+  },
+  {
+   "name": "Renee Marion",
+   "role": "GIS Analyst, MRPC",
+   "status": "present",
+   "quote": "representatives from mrpc, john hume, planning & development director, renee marion, gis analyst, and glen eaton, executive"
+  },
+  {
+   "name": "Glen Eaton",
+   "role": "Executive Director, MRPC",
+   "status": "present",
+   "quote": "representatives from mrpc, john hume, planning & development director, renee marion, gis analyst, and glen eaton, executive"
+  },
+  {
+   "name": "Benson",
+   "role": "Lunenburg Planning Director",
+   "status": "not stated",
+   "quote": "benson, lunenburg planning director also assisted with this undertaking."
+  },
+  {
+   "name": "Mark Ericson",
+   "role": "Chair of the Finance Committee",
+   "status": "present",
+   "quote": "mark ericson, chair of the finance committee spoke to the bos and thanked the town manager for pulling of this"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MRPC and the Planning Board will schedule a meeting for next week to keep the Priority Development/Preservation Areas project moving forward.",
+   "quote": "mrpc and the planning board will schedule a meeting for next week to keep this project moving forward."
+  },
+  {
+   "decision": "Forecast next steps listed: detailed discussion of assumptions, and investigate and finalize cost savings measures (health insurance plan changes, net metering tax credits, other).",
+   "quote": "investigate & finalize cost savings measures"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY14 projected deficit (FY14-18 Financial Forecast)",
+   "what_was_recorded": "Town projected to enter budget season with a deficit just to maintain current service levels.",
+   "figures_as_printed": [
+    "$226,912"
+   ],
+   "quote": "it is projected to be going into the budget season with a $226,912 deficit just to maintain"
+  },
+  {
+   "topic": "Current Conditions forecast shortfalls FY14-FY18",
+   "what_was_recorded": "Projected shortfalls under the Current Conditions scenario for FY2014 through FY2018.",
+   "figures_as_printed": [
+    "(226.912)",
+    "(308,522)",
+    "(306,752)",
+    "(298,158)",
+    "(250,084)"
+   ],
+   "quote": "fy2014 = (226.912) • fy2015 = (308,522)"
+  },
+  {
+   "topic": "Needs Forecast shortfalls FY14-FY18",
+   "what_was_recorded": "Projected shortfalls under the Needs scenario, listed without year labels in the minutes.",
+   "figures_as_printed": [
+    "(2,069,277)",
+    "(2,884,504)",
+    "(2,820,137)",
+    "(4,074,667)",
+    "(4,819,718)"
+   ],
+   "quote": "needs (2,069,277) (2,884,504) (2,820,137) (4,074,667) (4,819,718)"
+  },
+  {
+   "topic": "Council on Aging funding",
+   "what_was_recorded": "Current Conditions assumption: additional COA funding for Outreach or transportation.",
+   "figures_as_printed": [
+    "$7k"
+   ],
+   "quote": "council on aging on a 4 day schedule: additional funding for either outreach or transportation. $7k"
+  },
+  {
+   "topic": "Library funding",
+   "what_was_recorded": "Increase Library funding to maintain certification.",
+   "figures_as_printed": [
+    "$9k"
+   ],
+   "quote": "increase library funding in order to maintain its certification. $9k"
+  },
+  {
+   "topic": "LPS funding increase",
+   "what_was_recorded": "LPS funding up 3.8% to account for loss of Shirley Tuition and increased SPED tuitions and insurances.",
+   "figures_as_printed": [
+    "$587k"
+   ],
+   "quote": "lps funding up 3.8% to account for loss of shirley tuition, increased sped tuitions: insurances. $587k"
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "Monty Tech assessment up 3.5% for insurances and transportation, assuming level enrollment; the dollar figure is garbled in the text.",
+   "figures_as_printed": [
+    "$24l"
+   ],
+   "quote": "monty tech assessment up 3.5% to account for insurances & transportation. assumes level enrollment. $24l"
+  },
+  {
+   "topic": "Solid waste removal, municipal buildings",
+   "what_was_recorded": "Additional $13k for solid waste removal at municipal buildings, plus research on cost of recycling program.",
+   "figures_as_printed": [
+    "$13k"
+   ],
+   "quote": "solid waste removal, municipal buildings $13k additional research on cost of recycling progran"
+  },
+  {
+   "topic": "Pavement management: Crack Seal Program",
+   "what_was_recorded": "No funding for Pavement Management System beyond Ch. 90, but $50k for Crack Seal Program.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "no funding for pavement management system, other than ch. 90, but $50k for crack seal program"
+  },
+  {
+   "topic": "Unemployment expense",
+   "what_was_recorded": "Reduce Unemployment to $25k, historic level.",
+   "figures_as_printed": [
+    "$25k"
+   ],
+   "quote": "reduce unemployment to $25k, historic level"
+  },
+  {
+   "topic": "Health insurance net reduction",
+   "what_was_recorded": "Premium increase of 3% offset by reduced enrollment and Medicare Part B penalty, for an overall net reduction; further savings to be proposed 1/22/13.",
+   "figures_as_printed": [
+    "$67k"
+   ],
+   "quote": "overall net reduction or $67k, further cost savings measures to be proposed 1/22/13"
+  },
+  {
+   "topic": "Sick leave buyback liability",
+   "what_was_recorded": "Sick Leave Buyback benefit funded, overall liability of $200k; early buyback to be considered.",
+   "figures_as_printed": [
+    "$200k"
+   ],
+   "quote": "fund sick leave buyback benefit, first funded in fy13, overall liability $200k, consider early buyback"
+  },
+  {
+   "topic": "General Reserve Fund increase",
+   "what_was_recorded": "Increase General Reserve Fund from $50k to $75k, stated as 0.25% of expenditures.",
+   "figures_as_printed": [
+    "$50k",
+    "$75k",
+    "0.25%"
+   ],
+   "quote": "increase general reserve fund from $50k to $75k, represents 0.25% of exp."
+  },
+  {
+   "topic": "Stabilization Fund increase",
+   "what_was_recorded": "Increase Stabilization Fund to the required 5% minimum.",
+   "figures_as_printed": [
+    "$287k"
+   ],
+   "quote": "increase stabilization fund to required 5% minimum, $287k"
+  },
+  {
+   "topic": "Stabilization Fund and borrowing costs",
+   "what_was_recorded": "Mr. Matthews said keeping the Stabilization Fund at 5% has saved the town thousands of dollars in borrowing costs through a better credit rating.",
+   "figures_as_printed": [],
+   "quote": "keeping it at the 5% has saved us thousands of dollars in borrowing costs because we end up with a"
+  },
+  {
+   "topic": "Capital Improvement Plan funding",
+   "what_was_recorded": "CIP funded at $500k; the level cannot be maintained moving forward unless the town borrows for fire trucks and other equipment.",
+   "figures_as_printed": [
+    "$500k"
+   ],
+   "quote": "cip funded at $500k; can't maintain this level moving forward, unless we borrow for fire trucks & other"
+  },
+  {
+   "topic": "Retirement assessment",
+   "what_was_recorded": "Retirement Assessment increase of 9%.",
+   "figures_as_printed": [
+    "9%"
+   ],
+   "quote": "retirement assessment 9% increase"
+  },
+  {
+   "topic": "Needs: FY14 Resources Coordinator",
+   "what_was_recorded": "Needs Forecast item to restore the Resources Coordinator position in a different form.",
+   "figures_as_printed": [
+    "$40k"
+   ],
+   "quote": "fy14 resources coordinator. $40k (restore in different form)"
+  },
+  {
+   "topic": "Needs: FY14 Police Sergeant",
+   "what_was_recorded": "Needs Forecast item for a Police Sergeant.",
+   "figures_as_printed": [
+    "$68k"
+   ],
+   "quote": "fy14 police sergeant. $68k"
+  },
+  {
+   "topic": "Needs: FY14 DPW Laborer",
+   "what_was_recorded": "Needs Forecast item to restore a DPW laborer.",
+   "figures_as_printed": [
+    "$38k"
+   ],
+   "quote": "fy14 laborer, dpw. $38k (restore)"
+  },
+  {
+   "topic": "Needs: FY15 Police Officer",
+   "what_was_recorded": "Needs Forecast item for a Police Officer in FY15.",
+   "figures_as_printed": [
+    "$54.5k"
+   ],
+   "quote": "fy15 police officer. $54.5k"
+  },
+  {
+   "topic": "Needs: FY15 DPW Laborer",
+   "what_was_recorded": "Needs Forecast item to restore a DPW laborer in FY15.",
+   "figures_as_printed": [
+    "$39k"
+   ],
+   "quote": "fy15 laborer, dpw. $39k (restore)"
+  },
+  {
+   "topic": "Needs: FY17 Police Officer",
+   "what_was_recorded": "Needs Forecast item for a Police Officer in FY17.",
+   "figures_as_printed": [
+    "$57k"
+   ],
+   "quote": "fy17 police officer. $57k"
+  },
+  {
+   "topic": "Fire Department funding",
+   "what_was_recorded": "Increase Fire Dept. funding $50k per year to cover station at times not currently covered.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "increase fire dept. funding $50k per year to cover station at times not currently covered"
+  },
+  {
+   "topic": "Snow & Ice account",
+   "what_was_recorded": "Increase Snow & Ice Account closer to historic spending levels in FY14.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "fy14, increase snow & ice account closer to historic spending levels. $50k"
+  },
+  {
+   "topic": "Pavement Management Plan",
+   "what_was_recorded": "Needs Forecast Pavement Management Plan item.",
+   "figures_as_printed": [
+    "$800k"
+   ],
+   "quote": "pavement management plan. $800k"
+  },
+  {
+   "topic": "Capital Improvement Plan vehicle and equipment costs FY14-FY18",
+   "what_was_recorded": "Capital Improvement Plan list by year: street sweeper and ambulance, Engine 1, pumper truck, and ladder truck.",
+   "figures_as_printed": [
+    "$395k",
+    "$550k",
+    "$650k",
+    "$850k"
+   ],
+   "quote": "fy14 - street sweeper, ambulance $395k"
+  },
+  {
+   "topic": "Fire Department coverage options",
+   "what_was_recorded": "Coverage options presented: summer weekend day and holidays, full weekend coverage, and 24/7 coverage with per diem personnel.",
+   "figures_as_printed": [
+    "$50k",
+    "$150k",
+    "$200k"
+   ],
+   "quote": "up to $200k - 24 hour/7 day per week coverage with per diem @ 2 personnel"
+  },
+  {
+   "topic": "Town payroll and accounts payable warrants",
+   "what_was_recorded": "Warrants 15P13, 38-13 and 39-13 listed for payroll, accounts payable and payroll deduction.",
+   "figures_as_printed": [
+    "$615,924.96",
+    "$311,892.51",
+    "$543,395.04"
+   ],
+   "quote": "15p13 38-13 39-13 $615,924.96 $311,892.51 $543,395.04"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Sund",
+   "stated_role": "",
+   "topic": "Remarks on uncle's internment ceremony; board offered condolences",
+   "quote": "mir. sund stated that he had gone to an internment ceremony today for his 98 year old uncle who had recently celebrated"
+  },
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "Colonial Power letters on Energy Purchase Plan",
+   "quote": "mr. matthews explained to the public about the letters that have been sent out from colonial power letting customers"
+  },
+  {
+   "speaker": "Ms. Speidel",
+   "stated_role": "Town Manager",
+   "topic": "Colonial Power contact on energy rates",
+   "quote": "ms. speidel mentioned that she had been contacted by colonial power and they advised her that the rates are starting to go down"
+  },
+  {
+   "speaker": "Mr. Sund",
+   "stated_role": "",
+   "topic": "Reminder of Capital Planning meeting",
+   "quote": "mr. sund reminded everyone again about the capital planning meeting at the public safety"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Thanks to department staff in attendance",
+   "quote": "mr. alonzo thanked all of the people from the different departments in attendance at this evening meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no action; condolences and energy-letter remarks",
+   "quote": "mir. sund stated that he had gone to an internment ceremony today for his 98 year old uncle who had recently celebrated",
+   "tags": [
+    "public comment",
+    "energy"
+   ]
+  },
+  {
+   "topic": "MRPC Presentation of Priority Development/Preservation Areas Report",
+   "resolution": "presented; board thanked MRPC; no action",
+   "quote": "after the presentation, the bos thanked mrpc and all who were involved in the development of this report.",
+   "tags": [
+    "MRPC",
+    "economic development",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "FY14-18 Financial Forecast",
+   "resolution": "presented and discussed; no action recorded",
+   "quote": "ms. speidel began her fy14-18 financial forecast by thanking all who were in attendance this evening.",
+   "tags": [
+    "financial forecast",
+    "budget",
+    "deficit",
+    "stabilization fund",
+    "union contracts"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "listed; no vote recorded; action file issues none",
+   "quote": "action file issues: none",
+   "tags": [
+    "minutes",
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; no action",
+   "quote": "mr. sund reported that the capital planning committee will be meeting tomorrow at the",
+   "tags": [
+    "capital planning",
+    "police vehicles"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports or Department Reports",
+   "resolution": "none",
+   "quote": "5. town manager reports or department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "none",
+   "quote": "old business - none appointments/re-appointments/resignations -",
+   "tags": []
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; reminder and thanks",
+   "quote": "mr. sund reminded everyone again about the capital planning meeting at the public safety",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:41PM, 3-0",
+   "quote": "mr. alonzo moved to adjourn the meeting. mr. sund seconded. on vote motion carried, 3 in favor, 0 opposed.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY14-18 Financial Forecast Power Point presentation",
+   "where": "text",
+   "quote": "ms. speidel commenced with a power point presentation which included the following:"
+  },
+  {
+   "name": "MRPC Priority Development/Preservation Areas Report",
+   "where": "text",
+   "quote": "mrpc presentation of priority development/preservation areas report - representatives from"
+  },
+  {
+   "name": "Financial Management Policies & Objectives adopted by the Board of Selectmen July 2004",
+   "where": "text",
+   "quote": "financial management policies & objectives adopted by the board of selectmen july 2004"
+  },
+  {
+   "name": "Warrants 15P13, 38-13, 39-13",
+   "where": "text",
+   "quote": "15p13 38-13 39-13 $615,924.96 $311,892.51 $543,395.04"
+  },
+  {
+   "name": "Town Charter Section 4-2 (s)",
+   "where": "text",
+   "quote": "required by town's charter, section 4-2 (s)"
+  }
+ ],
+ "tags": [
+  "select board",
+  "financial forecast",
+  "FY14 budget",
+  "deficit",
+  "MRPC",
+  "economic development",
+  "stabilization fund",
+  "capital improvement plan",
+  "warrants",
+  "public comment",
+  "energy purchase plan",
+  "fire department",
+  "snow and ice",
+  "pavement"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

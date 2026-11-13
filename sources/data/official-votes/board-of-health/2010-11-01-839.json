@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-11-01",
  "docid": "839",
@@ -12,23 +12,161 @@
  },
  "votes": [
   {
-   "motion": "Approve variance requests for 20 Eastern Avenue septic system",
-   "outcome": "passed",
+   "motion": "Approve the variance requests for 20 Eastern Avenue (Title 5, high ground water, ledge, 2 feet of pervious soil).",
    "moved_by": "Perry Jewell",
    "seconded_by": "Jack Rabbitt",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion of perry jewell and second by jack rabbitt, the variance requests were approved. all in favor."
+   "quote": "after discussion and on motion of perry jewell and second by jack rabbitt, the variance requests were approved. all in favor."
   },
   {
-   "motion": "Approve variance requests for 29 Crest Avenue septic system",
-   "outcome": "passed",
+   "motion": "Approve the variance requests for 29 Crest Avenue (Manseau), based on the water table.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by rabbitt, the variance requests were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the variance requests were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd from scanned document. Two votes recorded; meeting adjournment is stated but not recorded as a formal vote or motion.",
- "cost_usd": 0.0933385
+ "note": "OCR text from a scan (macOS Vision). The 'Minutes Approved:' heading is printed with no vote on the minutes recorded. No motion to adjourn is recorded; the text only says the meeting was adjourned at 7:42 pm. Both variance votes print 'All in favor' with no vote count. Attendance for Lynn Klaft and Andrea Schnepf is not stated; they are named only as sender and conduit of the documents. The Open Meeting Law acknowledgement name is printed with the typo 'Acknowledgemenst'. No dollar figures appear in the text.",
+ "cost_usd": 0.00393372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Lynn Klaft",
+   "role": "Assistant Town Clerk",
+   "status": "not stated",
+   "quote": "assistant town clerk lynn klaft send document to the board members via andrea schnepf."
+  },
+  {
+   "name": "Andrea Schnepf",
+   "status": "not stated",
+   "quote": "assistant town clerk lynn klaft send document to the board members via andrea schnepf."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members signed the Open Meeting Law and Conflict of Interest acknowledgments, to be returned to Assistant Town Clerk Lynn Klaft.",
+   "quote": "acknowledgments were signed by board members and will be returned to ms. klaft."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed: 127 Highland Avenue",
+   "resolution": "reviewed, no action recorded",
+   "quote": "title 5 inspection reports reviewed: 127 highland avenue - conditional pass",
+   "tags": [
+    "Title 5",
+    "septic",
+    "inspection report"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "none signed",
+   "quote": "septic permits signed: none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "20 Eastern Avenue septic variance requests",
+   "resolution": "approved",
+   "quote": "after discussion and on motion of perry jewell and second by jack rabbitt, the variance requests were approved. all in favor.",
+   "tags": [
+    "Title 5",
+    "variance",
+    "septic"
+   ]
+  },
+  {
+   "topic": "29 Crest Avenue (Manseau) septic variance requests",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the variance requests were approved.",
+   "tags": [
+    "Title 5",
+    "variance",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law and Conflict of Interest documents",
+   "resolution": "acknowledgments signed and to be returned to the clerk",
+   "quote": "acknowledgments were signed by board members and will be returned to ms. klaft.",
+   "tags": [
+    "open meeting law",
+    "conflict of interest",
+    "town clerk"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Open Meeting Law Acknowledgement (as printed: Acknowledgemenst)",
+   "where": "list",
+   "quote": "open meeting law acknowledgemenst as well of conflict of interest"
+  },
+  {
+   "name": "Conflict of Interest Acknowledgment",
+   "where": "list",
+   "quote": "acknowledgments were signed by board members and will be returned to ms. klaft."
+  },
+  {
+   "name": "Title 5 inspection report, 127 Highland Avenue (Conditional Pass)",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 127 highland avenue - conditional pass"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variance",
+  "water table",
+  "open meeting law",
+  "conflict of interest",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "open meeting law and conflict of interest documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-10-10",
  "docid": "4482",
@@ -12,31 +12,197 @@
  },
  "votes": [
   {
-   "motion": "Accept the stated rankings of the OPM firms",
-   "moved_by": "Mr. Erickson",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Approve the meeting minutes of September 12, October 2, and October 4, 2012.",
+   "moved_by": "",
    "outcome": "passed",
-   "procedural": false,
-   "quote": "mr. erickson moved to accept stated rankings, mr. matthews seconded. all voted in favor."
+   "procedural": true,
+   "quote": "approved meeting minutes from september 12, october 2, and october 4, 2012.",
+   "seconded_by": ""
   },
   {
-   "motion": "Accept the contract negotiation team",
+   "motion": "Accept the OPM selection rankings as stated: Joslin Lesser & Associates ranked 1, Collaborative ranked 2, Dore & Whittier ranked 3, Skanska ranked 4.",
+   "moved_by": "Mark Erickson",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. erickson moved to accept stated rankings, mr. matthews seconded. all voted in favor.",
+   "seconded_by": "Dave Matthews"
+  },
+  {
+   "motion": "Accept the negotiating team of Brian Frank, Dave Matthews, Mark Erickson, and John Londa to negotiate a contract with Joslin, Lesser & Associates.",
    "moved_by": "Ms. Shapiro",
-   "seconded_by": "Mr. Erikson",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. shapiro moved to accept, mr. erikson seconded. all voted in favor."
+   "quote": "ms. shapiro moved to accept, mr. erikson seconded. all voted in favor.",
+   "seconded_by": "Mr. Erikson"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Erickson",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dave Matthews",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "mr. matthews made a motion to adjourn. mr. erickson seconded."
+   "quote": "at 8:04 mr. matthews made a motion to adjourn. mr. erickson seconded.",
+   "seconded_by": "Mark Erickson"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Item 2 records that prior minutes were \"Approved\" but does not specify a motion, mover, or seconder, so it is not included. The adjournment motion is recorded but the minutes do not explicitly state a vote outcome.",
- "cost_usd": 0.1050665
+ "note": "Single OCR'd page (macOS Vision). Attendance is not recorded by roll call: only Kerry Speidel is marked absent; other members' status is not stated. No public comment section appears. No dollar figures appear. Vote counts are not printed beyond \"All voted in favor\"; the adjournment motion has no recorded result. The minutes give no mover for the approval of prior minutes. The text spells Erickson and Erikson inconsistently and calls Michael Mackin \"Mike Mackin\"; names are kept as printed. The minutes are marked \"Approved by SBC\" March 27, 2013.",
+ "cost_usd": 0.00406102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "loxi jo calmes, superintendent"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative; Secretary",
+   "status": "present",
+   "quote": "ms. shapiro moved to accept, mr. erikson seconded."
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative, Chair",
+   "status": "present",
+   "quote": "at 7:05 pm the meeting was called to order by mike mackin, chair."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "present",
+   "quote": "at 8:04 mr. matthews made a motion to adjourn."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "not stated",
+   "quote": "nathan lockwood, planning board representative"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative, Vice Chair",
+   "status": "present",
+   "quote": "mr. erickson moved to accept stated rankings, mr. matthews seconded."
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "not stated",
+   "quote": "mike barney, citizen-at-large"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen-at-large",
+   "status": "not stated",
+   "quote": "brian frank, dave matthews, mark erickson, and john londa to"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "not stated",
+   "quote": "richard cohen, citizen-at-large"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry speidel, town manager - absent"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "not stated",
+   "quote": "john londa, director of facilities"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal",
+   "status": "not stated",
+   "quote": "brian spadafino, lhs principal"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Timeline for the OPM contract negotiation: stay on track and have a contract, signed by OPM, to the MSBA for approval on November 5.",
+   "quote": "timeline for this negotiation is to stay on track and have a contract (signed by opm) to the msba for approval on november 5."
+  },
+  {
+   "decision": "Next meeting set for October 24, 2012, 7:00 pm, at TCP Room 13.",
+   "quote": "next meeting: october 24, 2012, 7:00 pm, tcp room 13."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting called to order at 7:05 PM",
+   "quote": "at 7:05 pm the meeting was called to order by mike mackin, chair.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of prior meeting minutes",
+   "resolution": "approved",
+   "quote": "approved meeting minutes from september 12, october 2, and october 4, 2012.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "OPM selection rankings",
+   "resolution": "accepted stated rankings",
+   "quote": "opm selection: skanska ranked 4\" and dore & whittier ranked 3d.",
+   "tags": [
+    "OPM selection",
+    "rankings"
+   ]
+  },
+  {
+   "topic": "OPM contract negotiation",
+   "resolution": "negotiating team designated; all voted in favor",
+   "quote": "brian frank, dave matthews, mark erickson, and john londa to negotiate contract with joslin, lesser & associates.",
+   "tags": [
+    "OPM contract",
+    "Joslin Lesser & Associates",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for October 24, 2012",
+   "quote": "next meeting: october 24, 2012, 7:00 pm, tcp room 13.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn made at 8:04; result not recorded",
+   "quote": "at 8:04 mr. matthews made a motion to adjourn. mr. erickson seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "school building committee",
+  "OPM selection",
+  "OPM contract",
+  "MSBA",
+  "Joslin Lesser & Associates",
+  "T. C. Passios Elementary School",
+  "rankings",
+  "schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

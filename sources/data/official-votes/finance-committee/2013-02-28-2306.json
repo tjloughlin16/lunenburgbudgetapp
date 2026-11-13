@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-02-28",
  "docid": "2306",
@@ -12,40 +12,234 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of 2/7/2013 as presented",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "John Male",
-   "outcome": "approved unanimously",
+   "motion": "Approve the minutes of 2/7/2013 as presented.",
+   "moved_by": "BL",
+   "seconded_by": "JM",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "bl made a motion to approve the minutes of 2/7/2013 as presented. jm seconded, approved unanimously."
   },
   {
-   "motion": "permit the Town Manager to spend in excess of the budgeted amount for snow and ice",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jason Smith",
-   "outcome": "motion carried unanimously",
+   "motion": "Permit the Town Manager to spend in excess of the budgeted snow and ice amount.",
+   "moved_by": "TB",
+   "seconded_by": "JS",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "tb motioned to permit the town manager to spend in excess of the budgeted amount. js seconded, motion carried unanimously."
   },
   {
-   "motion": "table the reserve transfer request until closer to town meeting",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Jason Smith",
-   "outcome": "motion passed unanimously",
-   "procedural": true,
+   "motion": "Table the $5,041.84 reserve transfer request until closer to town meeting.",
+   "moved_by": "BL",
+   "seconded_by": "JS",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "bl motioned to table the request until we are closer to town meeting. js seconded, motion passed unanimously."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Jason Smith",
-   "outcome": "passed 5-0",
+   "motion": "Adjourn the meeting at 9:04.",
+   "moved_by": "BL",
+   "seconded_by": "JS",
+   "outcome": "passed S-0",
    "procedural": true,
-   "quote": "bl motioned to adjourn at 9:04. js seconded, approved s-0.",
-   "quote_taken_from_text": true
+   "quote": "bl motioned to adjourn at 9:04. js seconded, approved s-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. All votes clearly recorded with movers, seconders, and outcomes.",
- "cost_usd": 0.0829285
+ "note": "OCR text is noisy. The attendance block is jumbled: the Present/Absent labels are separated from the names, and only S. Raboin is printed under Absent. The Also Present line reads 'I. Burchfield', which is probably Terri Burchfield (signed as minutes secretary and moved motions as TB). The Town Manager is never named; only 'her' is printed. The adjournment vote is printed as 'S-0', probably meaning 5-0, recorded as printed. The letterhead carries a handwritten date '3/14/13' and an OCR fragment 'Wak Fuchton.', which are not part of the minutes content. No documents list is printed.",
+ "cost_usd": 0.004657720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, j. smith, i. burchfield"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "bl motioned to adjourn at 9:04. js seconded, approved s-0."
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "tb motioned to permit the town manager to spend in excess of the budgeted amount."
+  },
+  {
+   "name": "Jason Smith",
+   "role": "",
+   "status": "present",
+   "quote": "js seconded, motion carried unanimously."
+  },
+  {
+   "name": "John Male",
+   "role": "",
+   "status": "present",
+   "quote": "jm seconded, approved unanimously."
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: s. raboin"
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the town manager presented her budget recommendations as posted on the town website."
+  },
+  {
+   "name": "K. Speidel",
+   "role": "",
+   "status": "present",
+   "quote": "also present: k. speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The April 4 meeting intended for discussing budget recommendations may not happen, because there will not be enough time to set recommendations for the warrant.",
+   "quote": "will not have enough time to have the recommendations set for the warrant, so that meeting may not happen."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "The Town Manager reported the snow and ice line is expected to exceed its budget; the Committee allowed spending above the budgeted amount.",
+   "figures_as_printed": [],
+   "quote": "the town manager reported that we are anticipated to exceed our snow and ice budget."
+  },
+  {
+   "topic": "Reserve transfer for pump repair",
+   "what_was_recorded": "A reserve transfer request to cover the anticipated pump repair cost was brought forward and tabled.",
+   "figures_as_printed": [
+    "$5,041.84"
+   ],
+   "quote": "the town manager brought forward a reserve transfer request in the amount of $5,041.84 to cover the cost of the pump"
+  },
+  {
+   "topic": "FY budget recommendations",
+   "what_was_recorded": "The Town Manager presented budget recommendations, posted on the town website; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "the town manager presented her budget recommendations as posted on the town website."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve transfer request to cover the cost of the pump repair anticipated last fall.",
+   "outcome": "tabled until closer to town meeting",
+   "amount_as_printed": "$5,041.84",
+   "quote": "the town manager brought forward a reserve transfer request in the amount of $5,041.84 to cover the cost of the pump"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "From the public",
+   "topic": "Community event encouragement",
+   "quote": "tom alonzo encouraged people to attend the 'are you smarter than a 6' grader' event happening friday night."
+  },
+  {
+   "speaker": "Dave Matthews",
+   "stated_role": "",
+   "topic": "Thanks to Town Manager; budget hearing attendance",
+   "quote": "dave matthews thanked the town manager for her work on the budget and encouraged people to attend or watch the public hearings on the budget over the next month."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "noted; no action",
+   "tags": [
+    "communications",
+    "finance committee vacancy",
+    "caucus",
+    "town election"
+   ],
+   "quote": "me read the notice inviting people interested in filling the finance committee vacancy to apply."
+  },
+  {
+   "topic": "Minutes of 2/7/2013",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "bl made a motion to approve the minutes of 2/7/2013 as presented. jm seconded, approved unanimously."
+  },
+  {
+   "topic": "Town Manager updates: snow and ice deficit and reserve transfer",
+   "resolution": "snow and ice spending permitted; reserve transfer tabled",
+   "tags": [
+    "snow and ice",
+    "reserve fund",
+    "deficit spending",
+    "pump repair"
+   ],
+   "quote": "the town manager reported that we are anticipated to exceed our snow and ice budget."
+  },
+  {
+   "topic": "Budget hearing schedule",
+   "resolution": "reviewed; no action",
+   "tags": [
+    "budget hearings",
+    "schedule",
+    "warrant"
+   ],
+   "quote": "the proposed schedule for budget hearings running through the month of march was reviewed."
+  },
+  {
+   "topic": "Budget presentation",
+   "resolution": "presented; no action",
+   "tags": [
+    "budget",
+    "town manager",
+    "public comment"
+   ],
+   "quote": "the town manager presented her budget recommendations as posted on the town website."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "public hearings scheduled",
+   "tags": [
+    "public hearings",
+    "budget"
+   ],
+   "quote": "all departments have been scheduled to present their budgets."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice inviting people interested in filling the Finance Committee vacancy to apply",
+   "where": "text",
+   "quote": "me read the notice inviting people interested in filling the finance committee vacancy to apply."
+  },
+  {
+   "name": "Budget recommendations as posted on the town website",
+   "where": "text",
+   "quote": "the town manager presented her budget recommendations as posted on the town website."
+  },
+  {
+   "name": "Proposed schedule for budget hearings running through the month of March",
+   "where": "text",
+   "quote": "the proposed schedule for budget hearings running through the month of march was reviewed."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget",
+  "snow and ice deficit",
+  "reserve fund transfer",
+  "budget hearings",
+  "town meeting",
+  "town election",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-09-21",
  "docid": "827",
@@ -12,37 +12,207 @@
  },
  "votes": [
   {
-   "motion": "Approve septic system for 32 Hemlock Drive",
+   "motion": "Approve the septic request for 32 Hemlock Drive, as proposed.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "on motion by jewell and second by rabbitt, the request was unanimously approved"
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the request was unanimously approved."
   },
   {
-   "motion": "Approve variances for 29 Meadow Lane",
+   "motion": "Approve variances for 29 Meadow Lane.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "on motion by jewell and second by shea, variances were approved. all in favor"
+   "quote": "after discussion and on motion by jewell and second by shea, variances were approved."
   },
   {
-   "motion": "Approve variance for 15 Chestnut Street",
+   "motion": "Approve a local variance for 15 Chestnut Street (distance to wetlands).",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "on motion by jewell and second by shea, variance approved. all in favor"
+   "quote": "after discussion and on motion by jewell and second by shea, variance approved."
   },
   {
-   "motion": "Appoint David Shea as Chairman, George Emond as Vice-Chairman, and Perry Jewell as Secretary",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the board of health voted unanimously to appoint david shea as chairman, george emond as vice-chairman and perry jewell as secretary of the board"
+   "motion": "Appoint David Shea as Chairman, George Emond as Vice-Chairman and Perry Jewell as Secretary of the Board.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed (unanimous)",
+   "procedural": false,
+   "quote": "the board of health voted unanimously to appoint david shea as chairman, george emond as vice-chairman and perry jewell as secretary of the board."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; clean text, all votes recorded with clear motion language and outcomes.",
- "cost_usd": 0.0945625
+ "note": "OCR text from a scan. The attendance line is garbled across lines (Rabbitt appears before 'Chairman'); the five members are read from the 'Present' line. The 'Minutes Approved:' heading has no recorded vote. No motion to adjourn is recorded; the minutes only say the meeting was adjourned at 8:45 pm. The 26 Spring Street Extension owners are not named. One OCR error ('engincer') is kept as printed. The Title 5 report list is treated as a documents-reviewed list, which is a judgment call.",
+ "cost_usd": 0.00403212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman george emond, david shea, ernie sund, perry jewell and jack"
+  },
+  {
+   "name": "David Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chairman george emond, david shea, ernie sund, perry jewell and jack"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chairman george emond, david shea, ernie sund, perry jewell and jack"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chairman george emond, david shea, ernie sund, perry jewell and jack"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "chairman george emond, david shea, ernie sund, perry jewell and jack"
+  },
+  {
+   "name": "Tim Beauchemin",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "tim beauchemin met with the board on behalf of the owner."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Al Casson",
+   "role": "owner",
+   "status": "present",
+   "quote": "the owner, al casson was also present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Septic permits were signed for the listed lots and addresses under the 'Septic permits signed' heading.",
+   "quote": "septic permits signed: 483 flat hill road, lot 1"
+  },
+  {
+   "decision": "188-190 Hollis Road matter continued to October 5, 2009 at 7:00 pm.",
+   "quote": "after discussion, this matter was continued until october 5, 2009 at 7:00 pm."
+  },
+  {
+   "decision": "Board was receptive to repairs at 26 Spring Street Extension and suggested owners speak with their engineer and meet with the board once plans are complete.",
+   "quote": "the board was receptive to the repairs and suggested that they speak with their engincer"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed (143 Highland Street, 36 Kingman Street)",
+   "resolution": "reviewed",
+   "quote": "title 5 inspection reports reviewed: 143 highland street 36 kingman street",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed (seven lots/addresses)",
+   "resolution": "signed",
+   "quote": "septic permits signed: 483 flat hill road, lot 1",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "32 Hemlock Drive septic system",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the request was unanimously approved.",
+   "tags": [
+    "septic",
+    "failed system"
+   ]
+  },
+  {
+   "topic": "26 Spring Street Extension",
+   "resolution": "no action; board suggested owners meet after plans are complete",
+   "quote": "the board was receptive to the repairs and suggested that they speak with their engincer",
+   "tags": [
+    "septic repairs"
+   ]
+  },
+  {
+   "topic": "188-190 Hollis Road",
+   "resolution": "continued to October 5, 2009",
+   "quote": "after discussion, this matter was continued until october 5, 2009 at 7:00 pm.",
+   "tags": [
+    "septic",
+    "multi-family",
+    "continued"
+   ]
+  },
+  {
+   "topic": "29 Meadow Lane septic system",
+   "resolution": "variances approved",
+   "quote": "after discussion and on motion by jewell and second by shea, variances were approved.",
+   "tags": [
+    "septic",
+    "variance"
+   ]
+  },
+  {
+   "topic": "15 Chestnut Street septic system",
+   "resolution": "variance approved",
+   "quote": "after discussion and on motion by jewell and second by shea, variance approved.",
+   "tags": [
+    "septic",
+    "variance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "David Shea Chairman, George Emond Vice-Chairman, Perry Jewell Secretary",
+   "quote": "the board of health voted unanimously to appoint david shea as chairman, george emond as vice-chairman and perry jewell as secretary of the board.",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 143 Highland Street",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 143 highland street 36 kingman street"
+  },
+  {
+   "name": "Title 5 inspection report, 36 Kingman Street",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 143 highland street 36 kingman street"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variances",
+  "board of health",
+  "officer election",
+  "failed systems"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed:"
+ },
+ "dropped_unquoted_by_field": {}
 }

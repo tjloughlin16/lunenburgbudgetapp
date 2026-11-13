@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-02-11",
  "docid": "4916",
@@ -12,15 +12,242 @@
  },
  "votes": [
   {
-   "motion": "End the regular scheduled meeting.",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Toale",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the regular scheduled meeting.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Jamie Toale",
+   "outcome": "4-0",
    "procedural": true,
    "quote": "being no further business mr. matthews moved to end the regular scheduled meeting. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. One procedural vote recorded (motion to adjourn). No votes recorded on the substantive items discussed (PACC issues, Building Reuse Committee charge, PACC bylaws) — all appear as discussion items with follow-up actions assigned but no motions put to a vote at this meeting. Minutes from 1/21/2014 are listed but no explicit motion to approve them is recorded.",
- "cost_usd": 0.08776450000000001
+ "dropped_unquoted": 1,
+ "note": "OCR text from a macOS Vision scan with some errors: header reads 'Tow 1 Hall' (Town Hall) and 'Ja 7-812' is noise; 'Schoal' (School), 'investigatior', 'PN' (PM) and 'place' (placed) appear as printed. Agenda numbering runs 1-5, then 7, then 6. Only one vote is recorded (adjournment); the minutes approval, warrant approvals and tabling carry no recorded vote. The 7:00PM public comment heading contains the Green Communities presentation. Ms. Cheeseman is mentioned as a former PACC member and is not listed as an attendee; Town Counsel is mentioned but not named.",
+ "cost_usd": 0.00557892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "as scheduled with chairperson tom alonzo, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with chairperson tom alonzo, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with chairperson tom alonzo, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with chairperson tom alonzo, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "absent",
+   "quote": "not present vice chairperson paula bertram & town manager kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present vice chairperson paula bertram & town manager kerry speidel"
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Chairperson of the Green Communities Task Force",
+   "status": "present",
+   "quote": "dave blatt, chairperson of the green communities task force presented a grant check in the amount of $157,225.00"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "fred crellin, pacc member, spoke to the bos and said that a meeting had been held to ratify the votes."
+  },
+  {
+   "name": "Lance May",
+   "role": "PACC Chairperson",
+   "status": "present",
+   "quote": "lance may, pacc chairperson, spoke in reference to a second set of pacc bylaws that were recently passed at special town meeting"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The MA Broadband Project/Implementation update from the IT Director was tabled until the 2/18/2014 BOS meeting.",
+   "quote": "update on ma broadband project/implementation from it director: tabled until the 2/18/2014 bos meeting."
+  },
+  {
+   "decision": "Mr. Toale will schedule a meeting with the Building Reuse Committee group, propose a new charter, and report any vacancies to the BOS.",
+   "quote": "mr. toale will schedule a meeting with the group to discuss who would like to remain on the committee, propose developing a new charter, and will report back any vacancies to the bos."
+  },
+  {
+   "decision": "No action on rescinding PACC appointments this evening; PACC staff hours will need to be approved by the Town Manager, and the PACC cannot meet or make decisions until quorum is met.",
+   "quote": "nothing can be done this evening about rescinding appointments and moving forward pacc staff hours will need to be approved by the town manager."
+  },
+  {
+   "decision": "The Town Manager was asked to investigate whether the BOS could rescind the PACC appointments under BOS policies.",
+   "quote": "mr. ebersole added that he was unsure if the bos could rescind the pacc appointments due to bos policies and he would like for the town manager to investigate that."
+  },
+  {
+   "decision": "Mr. Alonzo will review the suggested PACC Bylaw changes with the Town Manager, and all changes will be placed on the warrant for Annual Town Meeting.",
+   "quote": "mr. alonzo will review these suggested changes with the town manager and all changes will be place on the warrant for annual town meeting."
+  },
+  {
+   "decision": "The Flat Hill Road dilapidated building issue (asbestos) was forwarded to the Town Manager for investigation regarding sale or demolition.",
+   "quote": "this issue will be forwarded to the town manager for further investigatior regarding either the sale or demolition of the property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Communities grant",
+   "what_was_recorded": "Dave Blatt presented a grant check to the BOS for Lunenburg's Green Community designation.",
+   "figures_as_printed": [
+    "$157,225.00"
+   ],
+   "quote": "dave blatt, chairperson of the green communities task force presented a grant check in the amount of $157,225.00 along with a certificate and 4 street signs"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Three warrants were listed under Minutes/Warrants/Action File Issues with their amounts; no vote on the warrants is recorded.",
+   "figures_as_printed": [
+    "$629,594.96",
+    "$248,965.98",
+    "$298,651.66"
+   ],
+   "quote": "warrants: 2/10/2014 #17p-14 $629,594.96 2/11/2014 #41-14 $248,965.98 2/12/2014 #42-14 $298,651.66"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Blatt",
+   "stated_role": "Chairperson of the Green Communities Task Force",
+   "topic": "Green Community grant check and signs",
+   "quote": "dave blatt, chairperson of the green communities task force presented a grant check in the amount of $157,225.00 along with a certificate and 4 street signs"
+  },
+  {
+   "speaker": "Fred Crellin",
+   "stated_role": "PACC member",
+   "topic": "PACC quorum and ratification of votes",
+   "quote": "fred crellin, pacc member, spoke to the bos and said that a meeting had been held to ratify the votes."
+  },
+  {
+   "speaker": "Lance May",
+   "stated_role": "PACC Chairperson",
+   "topic": "PACC bylaws and quorum",
+   "quote": "lance may, pacc chairperson, spoke in reference to a second set of pacc bylaws that were recently passed at special town meeting"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Green Communities grant presentation",
+   "resolution": "presented; no action",
+   "quote": "7:00pm public comment - dave blatt, chairperson of the green communities task force presented a grant check in the"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced that the citizens party caucus will be held on march 17\", 8pm, at the turkey hill middle school."
+  },
+  {
+   "topic": "Update on MA Broadband Project/Implementation",
+   "resolution": "tabled to 2/18/2014",
+   "quote": "update on ma broadband project/implementation from it director: tabled until the 2/18/2014 bos meeting."
+  },
+  {
+   "topic": "Review/Revise Charge of Building Reuse Committee",
+   "resolution": "discussed; Toale to schedule meeting and report vacancies",
+   "quote": "mr. toale will schedule a meeting with the group to discuss who would like to remain on the committee, propose developing a new charter"
+  },
+  {
+   "topic": "Review Open Meeting Law Complaint - PACC",
+   "resolution": "discussed; no BOS authority on complaint items; PACC remanded pending quorum fix",
+   "quote": "the bos does not have authority to take action on any of the items in the complaint"
+  },
+  {
+   "topic": "Review PACC Bylaw; roles and responsibilities",
+   "resolution": "discussed; Alonzo to review changes with Town Manager for Annual Town Meeting warrant",
+   "quote": "mr. alonzo will review these suggested changes with the town manager and all changes will be place on the warrant for annual town meeting."
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "listed minutes and warrants; Flat Hill Road issue forwarded to Town Manager; no vote recorded",
+   "quote": "this issue will be forwarded to the town manager for further investigatior regarding either the sale or demolition of the property."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "capital planning committee /finance committee - mr. toale reported that the capital planning committee will be presenting there"
+  },
+  {
+   "topic": "Town Manager / department reports",
+   "resolution": "no report",
+   "quote": "6.town manager reports or department reports: no report"
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations and public comment",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations: none public comment: none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:13PN",
+   "quote": "regular scheduled meeting adjourned at 8:13pn"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Open Meeting Law Complaint - PACC (filed with the Town Clerk)",
+   "where": "text",
+   "quote": "mr. alonzo reviewed parts of the open meeting law complaint which was filed with the town clerk concerning the pacc"
+  },
+  {
+   "name": "PACC Bylaws (second set, passed at Special Town Meeting)",
+   "where": "text",
+   "quote": "spoke in reference to a second set of pacc bylaws that were recently passed at special town meeting"
+  },
+  {
+   "name": "PACC Policy Manual",
+   "where": "text",
+   "quote": "would like to receive a copy of their policy manual."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Green Communities",
+  "grant",
+  "PACC",
+  "Open Meeting Law",
+  "quorum",
+  "bylaws",
+  "Building Reuse Committee",
+  "broadband",
+  "warrants",
+  "Flat Hill Road",
+  "committee reports",
+  "Annual Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-10-08",
  "docid": "657",
@@ -12,6 +12,123 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes from Board of Health meeting (labeled incorrectly as Board of Assessors in the header). The document records \"MINUTES APPROVED: September 15, 2014\" and notes that the meeting \"adjourned at 8:30 pm,\" but neither contains the motion language, mover, seconder, or explicit vote count required to record as a vote. No recorded votes with sufficient detail found.",
- "cost_usd": 0.0809005
+ "note": "Board mismatch: the request names the Board Of Assessors, but the minutes are headed \"LUNENBURG BOARD OF HEALTH\". Extracted as the Board of Health text. The text is OCR output with garbled or uncertain lines (e.g., \"TITLE'S\" likely a Title 5 reference; several addresses and permit lines are illegible). No motions, votes, or outcomes are recorded; the adjournment is stated without a motion. No dollar figures appear. Attendance is taken from the \"Present:\" line.",
+ "cost_usd": 0.00290852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Steve Sears",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "steve sears met with the board on behalf of the owner. this system is in failure."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of September 15, 2014 recorded as approved (no motion or vote text printed).",
+   "quote": "minutes approved: september 15, 2014"
+  },
+  {
+   "decision": "Title inspection reports for the listed properties recorded as acknowledged (no vote recorded).",
+   "quote": "title's inspection reports acknowledged"
+  },
+  {
+   "decision": "Septic permits for the listed properties recorded as signed (no vote recorded).",
+   "quote": "septic permits signed: 39 south row road"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "minutes of September 15, 2014 recorded as approved; no vote text",
+   "quote": "minutes approved: september 15, 2014",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title's inspection reports acknowledged",
+   "tags": [
+    "title 5",
+    "inspections",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed: 39 south row road",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "39 South Row Road failing system",
+   "resolution": "no action recorded; owner's representative met with board",
+   "quote": "steve sears met with the board on behalf of the owner. this system is in failure.",
+   "tags": [
+    "septic",
+    "failure",
+    "lakefront"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 8:30 pm; no motion recorded",
+   "quote": "having no other business before the board, meeting adjourned at 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title inspection reports (listed by address, e.g., 71 Pratt Street, 754 West Street - Fail, 590 Mulpus Road)",
+   "where": "list",
+   "quote": "title's inspection reports acknowledged"
+  },
+  {
+   "name": "Septic permits (listed by address, e.g., 39 South Row Road, 71 Stone Fence Road, 629 Referyoir Road)",
+   "where": "list",
+   "quote": "septic permits signed: 39 south row road"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "title 5 inspections",
+  "septic permits",
+  "minutes approval",
+  "lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title's inspection reports acknowledged"
+ },
+ "dropped_unquoted_by_field": {}
 }

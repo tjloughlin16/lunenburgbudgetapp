@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-05-02",
  "docid": "856",
@@ -12,6 +12,109 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes mention approval of minutes at the top (blank line), review of inspection reports, permit signing, discussion of grease trap regulations, and adjournment, but contain no recorded motions, seconds, or vote outcomes for any of these items.",
- "cost_usd": 0.0805055
+ "note": "Text is complete as extracted (one page). No motions, votes, or roll-call results are recorded, so the votes list is empty. The adjournment at 7:30 pm is stated without a motion. The \"Minutes Approved\" line at the top is blank, so no approval of prior minutes is recorded. No public comment section appears. No dollar figures appear.",
+ "cost_usd": 0.00302492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Bob Ebersol",
+   "role": "Sewer Commission Chairman",
+   "status": "not stated",
+   "quote": "sewer commission chairman bob ebersol sent proposed grease trap regulations to the board for review and comments."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Emond consolidated the Board's comments on the proposed Grease Trap Regulations and submitted them to the Sewer Commission; after discussion, no further comments were made.",
+   "quote": "board of health chairman emond consolidated the comments and submitted them to the sewer commission."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed; no action recorded",
+   "quote": "title 5 inspection reports reviewed : 52 pearl street 254 pleasant street 78 turkey hill road",
+   "tags": [
+    "title 5",
+    "septic",
+    "inspection reports"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed; no vote recorded",
+   "quote": "septic permits signed : 552 mass avenue goodrich street, lot 4",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Proposed grease trap regulations (Sewer Commission)",
+   "resolution": "comments consolidated and sent to Sewer Commission",
+   "quote": "proposed grease trap regulations - sewer commission sewer commission chairman bob ebersol sent proposed grease trap regulations to the board",
+   "tags": [
+    "grease trap",
+    "sewer commission",
+    "regulations"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports (52 Pearl Street; 254 Pleasant Street; 78 Turkey Hill Road; 549 Reservoir Road; 54 Houghton Mill Road; 121 Elmwood Road; 955 Chase Road)",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed : 52 pearl street 254 pleasant street 78 turkey hill road"
+  },
+  {
+   "name": "Septic permits signed (552 Mass Avenue; Goodrich Street, Lot 4)",
+   "where": "list",
+   "quote": "septic permits signed : 552 mass avenue goodrich street, lot 4"
+  },
+  {
+   "name": "Proposed Grease Trap Regulations (Sewer Commission)",
+   "where": "text",
+   "quote": "sewer commission chairman bob ebersol sent proposed grease trap regulations to the board for review and comments."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic permits",
+  "grease trap regulations",
+  "sewer commission",
+  "inspection reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2016-07-07",
  "docid": "1361",
@@ -12,47 +12,272 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from the June 15, 2016 meeting",
+   "motion": "Place $35,000.00 on the warrant, taken from the sale of cemetery lots account (vote taken at the commission's June 15, 2016 meeting, referred to here).",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the commission voted to place onto the warrant an amount of $35,000.00."
+  },
+  {
+   "motion": "Elect Steve Schaff as Chairman.",
+   "moved_by": "Lance May",
+   "seconded_by": "Lorraine Mendoza",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the june 15, 2016 were read and accepted"
-  },
-  {
-   "motion": "Elect Steve Schaff as Chairman",
-   "moved_by": "LANCE MAY",
-   "seconded_by": "LORRAINE MENDOZA",
-   "outcome": "unanimous",
    "procedural": false,
-   "quote": "lance may nominating steve schaff for chairman. lorraine mendoza offered a second to this motion and with-out further discussion a unanimous vote was taken electing steve to be the new chairman."
+   "quote": "with-out further discussion a unanimous vote was taken electing steve to be the new chairman."
   },
   {
-   "motion": "Elect Lorraine Mendoza as Vice Chairman",
-   "moved_by": "LANCE MAY",
-   "seconded_by": "STEVE SCHAFF",
-   "outcome": "unanimous",
+   "motion": "Elect Lorraine Mendoza as Vice Chairman.",
+   "moved_by": "Lance May",
+   "seconded_by": "Steve Schaff",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made by lance may and seconded by steve schaff nominating lorraine mendoza - as vice chairman and with-out further discussion, a unanimous vote was taken to elect lorraine mendoza to be the new vice chairman."
+   "quote": "a motion was made by lance may and seconded by steve schaff nominating lorraine mendoza - as vice chairman"
   },
   {
-   "motion": "Elect Lance May as Clerk",
-   "moved_by": "STEVE SCHAFF",
-   "seconded_by": "LORRAINE MENDOZA",
-   "outcome": "unanimous",
+   "motion": "Elect Lance May as Clerk.",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lorraine Mendoza",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "steve schaff made a motion to nominate lance may -as the clerk and lorraine mendoza seconded his motion and with-out further discussion, a unanimous vote was taken to elect lance may -as the new clerk."
+   "quote": "steve schaff made a motion to nominate lance may -as the clerk and lorraine mendoza seconded his motion"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "LORRAINE MENDOZA",
-   "seconded_by": "LANCE MAY",
-   "outcome": "unanimous",
+   "motion": "Close the meeting (adjourn).",
+   "moved_by": "Lorraine Mendoza",
+   "seconded_by": "Lance May",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made by lorraine mendoza to close the meeting and seconded by lance may to adjourn. the vote was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1219555
+ "note": "OCR text of a scanned two-page minutes document. The header OCR shows different spellings (Schatt, Mendosa) from the body (Schaff, Mendoza); body spellings used. Several words are OCR or typing errors (DICUSSED, REVEIW, MNGR); quotes kept as printed. Votes are recorded only as unanimous, with no individual counts. The June 15, 2016 vote is a reference to an earlier meeting, not a vote taken at this one. Minutes end with a typed clerk line and no signature is readable in the text.",
+ "cost_usd": 0.00867342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "CHAIR MAY (later elected Clerk)",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza, steve schaff and todd holman, (supt of cemetery's)."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Member (later elected Vice Chairman)",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza, steve schaff and todd holman, (supt of cemetery's)."
+  },
+  {
+   "name": "Steve Schaff",
+   "role": "Member (later elected Chairman)",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza, steve schaff and todd holman, (supt of cemetery's)."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Supt of Cemetery's",
+   "status": "present",
+   "quote": "todd holman,(supt of cemetery's), provided his report on the maintenance of both the north and south cemeterys"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of June 15, 2016 were read and accepted (no motion or vote recorded).",
+   "quote": "minutes of the june 15, 2016 were read and accepted"
+  },
+  {
+   "decision": "Steve Schaff to follow up on the warrant article for the Special Town Meeting and plans to attend that meeting.",
+   "quote": "steve will follow-up on the warrant article and is planning on attending"
+  },
+  {
+   "decision": "Steve Schaff to obtain a written letter from the Town Manager concerning the administrative transfer process.",
+   "quote": "steve was to obtain a written letter from the town mngr concerning this process."
+  },
+  {
+   "decision": "Todd Holman to follow up on bids for tree work and bulldozing and bring the information to the September meeting.",
+   "quote": "todd was to follow -up on the bids for the tree work and bulldozing work and provide the info for the next meeting in september."
+  },
+  {
+   "decision": "Steve Schaff to ask Leominster Monuments Co to prepare a plan outline for adding niche wall equipment to the building for the September meeting, and to invite additional vendors to present at future meetings.",
+   "quote": "leominster monuments co to work on a plan outline towards adding the niche wall equipment to the building"
+  },
+  {
+   "decision": "Commission agreed to hold meetings quarterly starting in September.",
+   "quote": "it was agreed the cemetery commission would hold their meetings on a quarterly basis starting in september."
+  },
+  {
+   "decision": "Lance May to review available meeting dates with the library and report back at the next meeting.",
+   "quote": "lance may was to reveiw the available meeting dates w/ the library and report back at the next"
+  },
+  {
+   "decision": "Commission asked Todd Holman to bring the vouchers needing approval and signature to the next meeting.",
+   "quote": "the commission asked todd to bring along with him the vouchers that need to be approved and signed by the commissioners."
+  },
+  {
+   "decision": "New cemetery rules and regulations are an ongoing matter to be discussed as needed; no further discussion taken.",
+   "quote": "no further discussion took place on adding new cemetery rules and regulations"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2016/2017 budget expenditures and use of available funds",
+   "what_was_recorded": "The chair opened discussion of the cemetery's FY 2016/2017 budget expenditures and the use of available funds; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "opening the discussion on the cemetery's fy 2016/2017 budget expenditures and the use of available funds."
+  },
+  {
+   "topic": "Warrant amount from sale of cemetery lots account",
+   "what_was_recorded": "The commission had voted on June 15 to place $35,000.00 on the warrant, to be taken from the sale of cemetery lots account, an administrative transfer done in the past.",
+   "figures_as_printed": [
+    "$35,000.00"
+   ],
+   "quote": "the commission voted to place onto the warrant an amount of $35,000.00."
+  },
+  {
+   "topic": "Tree work and bulldozing bids",
+   "what_was_recorded": "Todd Holman was to follow up on bids for tree work and bulldozing; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "todd was to follow -up on the bids for the tree work and bulldozing work"
+  },
+  {
+   "topic": "Vouchers for approval and signature",
+   "what_was_recorded": "The commission asked the superintendent to bring vouchers needing approval and signature by the commissioners; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "the commission asked todd to bring along with him the vouchers that need to be approved and signed by the commissioners."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Administrative transfer of $35,000.00 from the sale of cemetery lots account, to be placed on the Special Town Meeting warrant.",
+   "amount_as_printed": "$35,000.00",
+   "outcome": "not stated (to go on Special Town Meeting warrant; not yet approved)",
+   "quote": "this amount was to be taken from the sale of cemetery lot's account!"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of June 15, 2016 minutes",
+   "resolution": "accepted",
+   "quote": "minutes of the june 15, 2016 were read and accepted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY 2016/2017 budget and use of available funds",
+   "resolution": "discussed; Steve Schaff to follow up on warrant article",
+   "quote": "opening the discussion on the cemetery's fy 2016/2017 budget expenditures and the use of available funds.",
+   "tags": [
+    "budget",
+    "warrant article",
+    "special town meeting",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "North Cemetery tomb restoration",
+   "resolution": "briefly discussed; no action",
+   "quote": "richard mcgrath was no longer interested in pursuing his plans to restore the tomb.",
+   "tags": [
+    "north cemetery",
+    "tomb restoration"
+   ]
+  },
+  {
+   "topic": "Niche wall plans",
+   "resolution": "reviewed; Steve Schaff to seek plan outline and vendor presentations",
+   "quote": "a review of the niche wall plans were dicussed with a request for steve to ask",
+   "tags": [
+    "niche wall",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "New cemetery rules and regulations",
+   "resolution": "no action; ongoing, discussed as needed",
+   "quote": "no further discussion took place on adding new cemetery rules and regulations",
+   "tags": [
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "Superintendent's maintenance report",
+   "resolution": "report given; vouchers requested",
+   "quote": "provided his report on the maintenance of both the north and south cemeterys",
+   "tags": [
+    "maintenance",
+    "north cemetery",
+    "south cemetery",
+    "vouchers"
+   ]
+  },
+  {
+   "topic": "Reorganization of the commission (new business)",
+   "resolution": "elected Chairman Steve Schaff, Vice Chairman Lorraine Mendoza, Clerk Lance May",
+   "quote": "under new business the re-organizing of the commission took place with lance",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Meeting calendar",
+   "resolution": "agreed to meet quarterly starting in September",
+   "quote": "it was agreed the cemetery commission would hold their meetings on a quarterly basis starting in september.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously; no public comment",
+   "quote": "a motion was made by lorraine mendoza to close the meeting and seconded by lance may to adjourn. the vote was unanimous.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant article for the Special Town Meeting Warrant",
+   "where": "text",
+   "quote": "a warrant article was needed to be placed onto the \"special town meeting warrant.\""
+  },
+  {
+   "name": "Written letter from the Town Manager concerning the transfer process",
+   "where": "text",
+   "quote": "a written letter from the town mngr concerning this process."
+  },
+  {
+   "name": "Niche wall plans",
+   "where": "text",
+   "quote": "a review of the niche wall plans were dicussed with a request for steve to ask"
+  },
+  {
+   "name": "Vouchers needing approval and signature",
+   "where": "text",
+   "quote": "the vouchers that need to be approved and signed by the commissioners."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "FY 2016/2017 budget",
+  "warrant article",
+  "special town meeting",
+  "$35,000 transfer",
+  "officer election",
+  "tomb restoration",
+  "niche wall",
+  "maintenance",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

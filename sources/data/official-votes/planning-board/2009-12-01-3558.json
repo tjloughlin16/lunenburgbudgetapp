@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-12-01",
  "docid": "3558",
@@ -12,6 +12,80 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes show a roll call and note that board members reviewed Zoning Bylaw Articles for a Special Town Meeting, but no motions, votes, or outcomes are recorded. The document appears to be a fragment or incomplete extract of the meeting minutes.",
- "cost_usd": 0.08337049999999999
+ "note": "Short minutes with no recorded motions, votes, public comment, or budget figures. The minutes are a scan-like extract: the letterhead names and roles are rendered as glyph codes, so the roles listed (Chair, Vice-Chair, Clk., Mbr.) were decoded from that header and are not in a verbatim roll-call line. The roll-call line splits \"Marion\" as \"Ma rion\". Meeting time 6:30 PM and place High School Cafeteria are printed; no adjournment or end time is recorded. The Zoning Bylaw Articles are referenced only in passing and are not attached or listed.",
+ "cost_usd": 0.0028875199999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "ma rion m. benson, planning director"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Zoning Bylaw Articles for 12/1/09 Special Town Meeting",
+   "resolution": "reviewed; no vote recorded",
+   "quote": "zoning articles for special town meeting: board members reviewed zoning bylaw articles being presented at 12/1/09 special town meeting.",
+   "tags": [
+    "zoning",
+    "special town meeting",
+    "zoning bylaw"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Zoning Bylaw Articles for the 12/1/09 Special Town Meeting",
+   "where": "text",
+   "quote": "board members reviewed zoning bylaw articles being presented at 12/1/09 special town meeting."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning bylaw",
+  "special town meeting",
+  "review"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

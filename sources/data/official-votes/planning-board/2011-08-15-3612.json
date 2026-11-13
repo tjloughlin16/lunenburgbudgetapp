@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-08-15",
  "docid": "3612",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of July 11, 2011",
+   "motion": "Approve the minutes signed 7-11-11.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
@@ -20,23 +20,23 @@
    "quote": "signed 7-11-11, motion, mr. lockwood, second, mr. saiia, motion passed"
   },
   {
-   "motion": "Approve executive session minutes of July 11, 2011",
+   "motion": "Approve the executive session minutes signed 7-11-11.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "signed executive 7-11-11, motion, mr. lockwood, second, mr. saiia, motion passed"
+   "quote": "signed executive 7-11-11, motion, mr. lockwood, second, mr. saiia, motion passed."
   },
   {
-   "motion": "Approve executive session minutes of July 18, 2011",
+   "motion": "Approve the executive session minutes signed 7-18-11.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "signed executive 7-18-11, motion, mr. lockwood, second, mr. saiia, motion passed"
+   "quote": "signed executive 7-18-11, motion, mr. lockwood, second, mr. saiia, motion passed."
   },
   {
-   "motion": "Approve applicant's request to construct a commercial office/management building at Emerald Place at Lake Whalom",
+   "motion": "Approve the applicant's request to construct a commercial office/management building at 10 Lakefront (Emerald Place at Lake Whalom).",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion to approval applicant's request to construct a commercial office/management building , mr. saiia, second, mr. lockwood. motion passed."
   },
   {
-   "motion": "Approve modification to Stone Farm Estates to change units contingent on correction of numbering of unit 15",
+   "motion": "Approve the Stone Farm Estates modification to change a single unit and a 3-plex unit to 2-plex units, contingent on correcting the numbering of unit 15 (should say unit 54).",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
@@ -52,15 +52,303 @@
    "quote": "motion made, mr. lockwood, to approve modification contingent on correction of numbering of unit 15 (should say unit 54), second, mr. saiia, motion passed."
   },
   {
-   "motion": "Adjourn regular session and enter executive session, not to return to regular session",
+   "motion": "Adjourn the regular session and enter executive session, not to return to regular session.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn regular session and enter executive session, not to return to regular session, mr. saiia, second, mr. lockwood, roll call vote, mr. saiia, aye, mr. lockwood, aye, ms. bilotta, aye, motion passed."
+   "quote": "motion to adjourn regular session and enter executive session, not to return to regular session, mr. saiia, second, mr. lockwood, roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0971765
+ "note": "Plain-text minutes, no scan problems. Votes are only those with a printed motion and result; the roll-call adjournment vote lists three ayes without a printed count. No dollar figures are printed anywhere in the text, so budget_items record money discussed without figures. No public comment is recorded. Items under NOTICES AND COMMUNICATIONS are read as received correspondence. Chair Bakaysa is marked absent on the roll though the minutes later refer to his inquiry at the meeting.",
+ "cost_usd": 0.00766462,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa, thomas w. bodkin jr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa, thomas w. bodkin jr."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Emerald Place: applicant can proceed once building permit obtained; Director to prepare approval paperwork for applicant to register at Registry of Deeds.",
+   "quote": "applicant can proceed once building permit obtained."
+  },
+  {
+   "decision": "Highfield Village: Director to check current status with the Sewer Commission.",
+   "quote": "director to check current status with the sewer commission."
+  },
+  {
+   "decision": "Highfield Village: discussion continued to the September 12 Board meeting; Director asked to provide project timeline from initial application.",
+   "quote": "discussion to continue at the september 12th board meeting. director was asked to provide project timeline from initial application."
+  },
+  {
+   "decision": "Eagle House: Council on Aging Director will attempt to pursue other avenues; Mr. Saiia wants to be involved in assisting.",
+   "quote": "council on aging director will attempt to pursue other avenues."
+  },
+  {
+   "decision": "Open Space: Ad Hoc Committee will pursue DCS grant rounds.",
+   "quote": "ad hoc committee will pursue."
+  },
+  {
+   "decision": "Summer Street: Mr. Lockwood and Mr. Bakaysa will represent the Planning Board when a committee is formed.",
+   "quote": "mr. lockwood and mr. bakaysa will represent the planning board when a committee is formed."
+  },
+  {
+   "decision": "925 Massachusetts Avenue: Director to seek status update from Town Manager per Board request.",
+   "quote": "director to seek status update from town manager per board request."
+  },
+  {
+   "decision": "Lakewood/Emerald Place: Director noted that the Zoning letter stated a management office is allowed by right; the Board noted this in its record.",
+   "quote": "director noted august 11, 2011 letter from the building commissioner/zoning official."
+  },
+  {
+   "decision": "Green Community Task Force: Task Force is waiting for Town Counsel's review of Borrego Solar's contract for the landfill; presentation to the Town targeted for late summer/early fall.",
+   "quote": "task force is waiting for town counsel's review of borrego solar's contract for the landfill."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Highfield Village extensions",
+   "what_was_recorded": "Director noted the applicant would probably face financial ramifications if the Board voted to stop granting timeline extensions; no figure printed.",
+   "quote": "director noted there would probably be financial ramifications to the applicant if the planning board voted not to allow any more extensions.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Eagle House parking lot grant",
+   "what_was_recorded": "Eagle House did not receive a DHCD grant, and the State funded no senior center projects; no figure printed.",
+   "quote": "eagle house did not receive dhcd grant.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Hazard mitigation grant",
+   "what_was_recorded": "MJTC discussed a potential hazard mitigation grant; no figure printed.",
+   "quote": "one topic of discussion was potential hazard mitigation grant.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Open Space grant eligibility",
+   "what_was_recorded": "Approved Open Space and Recreation Plan allows Lunenburg to participate in DCS grant rounds through November 2014; no figure printed.",
+   "quote": "division of conservation services ( dcs) grant rounds through november 2014.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "925 Massachusetts Avenue taxes",
+   "what_was_recorded": "A member asked whether the owner is current with taxes; petroleum tank removal also raised by Selectmen; no figure printed.",
+   "quote": "member also inquiring if owner current with taxes.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Green Community landfill solar contract",
+   "what_was_recorded": "Task Force awaiting Town Counsel review of the Borrego Solar contract for the landfill; no figure printed.",
+   "quote": "task force is waiting for town counsel's review of borrego solar's contract for the landfill.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "signed 7-11-11, motion, mr. lockwood, second, mr. saiia, motion passed",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "noted letter from nashua river watershed association that mark archambault, the nrwa's smart growth circuit rider is available",
+   "tags": [
+    "correspondence",
+    "zoning reform"
+   ]
+  },
+  {
+   "topic": "ANR appointments",
+   "resolution": "146 Elmwood Road plan to be distributed for review; two postponements requested",
+   "quote": "plan will be distributed for review.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "next meeting scheduled for september 7th.",
+   "tags": [
+    "committees",
+    "TIP",
+    "DPW",
+    "capital planning",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "noted",
+   "quote": "site visit this date by building official and planning director.",
+   "tags": [
+    "1263 Reservoir Road",
+    "open space",
+    "Eagle House",
+    "Summer Street",
+    "Green Community"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "Emerald Place management office approved; Stone Farm modification approved; Highfield Village continued",
+   "quote": "motion to approval applicant's request to construct a commercial office/management building",
+   "tags": [
+    "development",
+    "Emerald Place",
+    "Stone Farm",
+    "Highfield Village",
+    "Asian Imperial"
+   ]
+  },
+  {
+   "topic": "Unfinished/old business",
+   "resolution": "Director to seek status update from Town Manager",
+   "quote": "director to seek status update from town manager per board request.",
+   "tags": [
+    "925 Massachusetts Avenue",
+    "petroleum tanks",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "september 12, planning board meeting, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "separate minutes",
+   "quote": "executive session: separate minutes",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned to executive session; regular session adjourned 7:55 PM",
+   "quote": "motion to adjourn regular session and enter executive session, not to return to regular session",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Nashua River Watershed Association (Mark Archambault, Smart Growth Circuit Rider)",
+   "where": "list",
+   "quote": "noted letter from nashua river watershed association that mark archambault, the nrwa's smart growth circuit rider is available"
+  },
+  {
+   "name": "Handouts from Beacon regarding zoning reform bill",
+   "where": "list",
+   "quote": "handouts for board members from beacon regarding zoning reform bill."
+  },
+  {
+   "name": "Conservation Commission Orders of Conditions for 332 Mass Ave and 897 Northfield Rd; Certificates of Compliance for 498 Holman St.",
+   "where": "list",
+   "quote": "noted orders of conditions for 332 mass ave, demolition and drainage correction and 897 northfield rd septic system."
+  },
+  {
+   "name": "August 11th review letter from site engineer S. J. Mullaney Engineering Inc. (1263 Reservoir Road)",
+   "where": "text",
+   "quote": "august 11th review letter from site engineer s. j. mullaney engineering inc."
+  },
+  {
+   "name": "August 11, 2011 letter from the Building Commissioner/Zoning Official (Emerald Place)",
+   "where": "text",
+   "quote": "director noted august 11, 2011 letter from the building commissioner/zoning official."
+  },
+  {
+   "name": "7/20/11 memo from the Sewer Commission to the Planning Board (Highfield Village)",
+   "where": "text",
+   "quote": "director noted 7/20/11 memo from the sewer commission to the planning board"
+  },
+  {
+   "name": "Handout of proposed Conservation Development Bylaw revisions in the town of Wendell",
+   "where": "text",
+   "quote": "handout of proposed conservation development bylaw revisions in the town of wendell for the board's perusal."
+  },
+  {
+   "name": "December 13, 2004 Board-approved plan (Stone Farm Estates)",
+   "where": "text",
+   "quote": "december 13, 2004 board approved plan was available for members to view as to original units' placement."
+  },
+  {
+   "name": "Weekly progress report (Emerald Place)",
+   "where": "text",
+   "quote": "weekly progress report noted and on file in planning office."
+  },
+  {
+   "name": "Capital Planning Committee timeline (on file in Planning Board office)",
+   "where": "text",
+   "quote": "timeline noted (on file in planning board office)."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development status",
+  "ANR",
+  "zoning",
+  "open space",
+  "grants",
+  "executive session",
+  "minutes approval",
+  "Emerald Place",
+  "Stone Farm Estates",
+  "Highfield Village",
+  "Green Community"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "notices and communications"
+ },
+ "dropped_unquoted_by_field": {}
 }

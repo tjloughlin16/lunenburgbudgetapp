@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-10-08",
  "docid": "1824",
@@ -12,6 +12,108 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded in the October 8, 2013 Council on Aging Finance Committee minutes. The document describes discussions about committee organization and scheduling a future meeting, but records no motions or voting actions taken at this meeting. A future election of Chair and Vice-Chair is mentioned as scheduled for the next meeting, not taken at this one.",
- "cost_usd": 0.0811765
+ "note": "Minutes of a COA Finance Committee meeting, not the full Council on Aging. No motions or votes are recorded; the meeting is said to have adjourned at 12:00 p.m. with no motion printed. The header stamps (approved 11/4/2013; accepted by COA 11/12/13) are printed on the page and are not part of the meeting record. No dollar figures appear in the text.",
+ "cost_usd": 0.0030921200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Seeley",
+   "role": "Member, Finance Committee",
+   "status": "present",
+   "quote": "deborah j. seeley member, finance committee"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, shirley bertone, tony bertone, connie o'dea, and judy tarbell."
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, shirley bertone, tony bertone, connie o'dea, and judy tarbell."
+  },
+  {
+   "name": "Connie O'Dea",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, shirley bertone, tony bertone, connie o'dea, and judy tarbell."
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, shirley bertone, tony bertone, connie o'dea, and judy tarbell."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will nominate and elect a Chair and Vice-Chair at its next meeting.",
+   "quote": "will nominate & elect a chair and vice-chair at it's next meeting."
+  },
+  {
+   "decision": "The next Finance Committee meeting is set for Monday, November 4, 2013 at 9:00 a.m. at the Eagle House.",
+   "quote": "the next meeting of the finance committee will be held on monday, november 4, 2013 at 9:00 a.m. at the eagle house."
+  },
+  {
+   "decision": "Ms. Seeley will submit the meeting agenda to Sue Doherty for posting.",
+   "quote": "ms. seeley will submit the meeting agenda to sue doherty for posting of the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA Annual Budget and Town Manager timeline",
+   "what_was_recorded": "Committee discussed the COA Annual Budget and the timeline required by the Town Manager, and proposed a follow-up meeting with the Executive Director for further explanation; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "further explanation of the budget and the timeline required by the town manager."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Role of Finance Committee in COA Annual Budget preparation",
+   "resolution": "discussed; follow-up meeting with Executive Director suggested",
+   "quote": "ms. seeley gave a brief overview of the coa finance committee's role in the preparation of the coa annual budget",
+   "tags": [
+    "budget",
+    "annual budget",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Organization of the Committee and election of officers",
+   "resolution": "brief discussion; Chair and Vice-Chair to be elected at next meeting",
+   "quote": "the committee had a brief discussion about the organization of the committee and will nominate & elect a chair and vice-chair",
+   "tags": [
+    "officers",
+    "organization"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for November 4, 2013 at 9:00 a.m.",
+   "quote": "the next meeting of the finance committee will be held on monday, november 4, 2013 at 9:00 a.m.",
+   "tags": [
+    "scheduling",
+    "meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "council on aging",
+  "finance committee",
+  "annual budget",
+  "officer election",
+  "meeting scheduling",
+  "Eagle House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

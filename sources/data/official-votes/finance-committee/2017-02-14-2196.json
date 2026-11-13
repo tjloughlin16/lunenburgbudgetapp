@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-02-14",
  "docid": "2196",
@@ -12,15 +12,328 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "John Henshaw",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mark",
+   "seconded_by": "John",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0 at 8:05 pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction from meeting minutes. One procedural vote recorded: adjournment. Sections 2–4 describe presentations and public comments with no motions or votes by the committee.",
- "cost_usd": 0.0822735
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scan. The attendance block is garbled: Hannah Anderson's status is inferred as absent from her position after the present list and the Absent label; the minutes do not state it outright. Loxi Calms appears only in the joint-meeting line, so status is not stated. Public comment items c and d are not attributed to a speaker. The meeting-date line reads 02-14-17 and the next meeting is Feb 16, 2017. Only one vote is recorded (adjournment). No decisions were recorded.",
+ "cost_usd": 0.00587532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa hannah anderson"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa hannah anderson"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux - town manager (tm), school superintendent loxi calms."
+  },
+  {
+   "name": "Loxi Calms",
+   "role": "School Superintendent",
+   "status": "not stated",
+   "quote": "heather lemieux - town manager (tm), school superintendent loxi calms."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Public",
+   "status": "present",
+   "quote": "dave rodgers: suggested setting up a tax deductible 5013c corp. to allow for individuals to make"
+  },
+  {
+   "name": "Bob Ebersol",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "bob ebersol - selectmen: resident can make donations to any town dept. and take a tax"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY2018 capital request total",
+   "what_was_recorded": "The total capital request for FY2018 was stated, and the CPC recommended a lower amount.",
+   "quote": "total capital request for fy2018 is $2,349,111 cpc recommended $633,317 in request.",
+   "figures_as_printed": [
+    "$2,349,111",
+    "$633,317"
+   ]
+  },
+  {
+   "topic": "Facilities Maintenance capital request",
+   "what_was_recorded": "Facilities Maintenance requested funds for five projects; the CPC recommended a lower amount for three priority one projects.",
+   "quote": "the facilities maintenance had requested $248,050 to fund five projects. three of the projects were",
+   "figures_as_printed": [
+    "$248,050",
+    "$216,050"
+   ]
+  },
+  {
+   "topic": "DPW capital request",
+   "what_was_recorded": "DPW requested funds for one project and two vehicles; the CPC recommended a lower amount for the two priority one items.",
+   "quote": "the dpw requested $108,891 for one project and two vehicles. the project and one vehicle were",
+   "figures_as_printed": [
+    "$108,891",
+    "$65,767"
+   ]
+  },
+  {
+   "topic": "Fire Dept. capital request",
+   "what_was_recorded": "Fire Dept. requested funds for three vehicles; the CPC recommended $60K for the priority one command car.",
+   "quote": "the cpc recommended $60k for the command car.",
+   "figures_as_printed": [
+    "$1,565,000",
+    "$60K"
+   ]
+  },
+  {
+   "topic": "Police Dept. capital request",
+   "what_was_recorded": "Police Dept. requested funds for cruisers, tasers, an ATV and riot gear; the CPC recommended $121,500 for the cruisers and tasers.",
+   "quote": "the cpc recommended $121,500 for the cruisers and the tasers.",
+   "figures_as_printed": [
+    "$ 158K",
+    "$121,500"
+   ]
+  },
+  {
+   "topic": "Schools capital request",
+   "what_was_recorded": "Schools requested funds for two projects; the CPC recommended $145K for the one priority project.",
+   "quote": "the schools requested $197,370 for two projects. one project was rated a priority one. the cpc",
+   "figures_as_printed": [
+    "$197,370",
+    "$145K"
+   ]
+  },
+  {
+   "topic": "Technology Dept. capital request",
+   "what_was_recorded": "Technology Dept. requested funds for three items; the CPC recommended $25,000 for the Police fingerprint system.",
+   "quote": "the technology dept. requested $71,300 for three items.",
+   "figures_as_printed": [
+    "$71,300",
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "The DPW Director reported the snow and ice deficit as of that day.",
+   "quote": "the dpw director reported as of today, the snow and ice deficit is at $86,647.",
+   "figures_as_printed": [
+    "$86,647"
+   ]
+  },
+  {
+   "topic": "Property tax revenue estimate",
+   "what_was_recorded": "FY2018 property tax revenue was estimated, with new growth estimated at $300K and no new overrides or exclusions.",
+   "quote": "property tax: $25,639,730. no new overrides or exclusions. new growth estimated at $300k.",
+   "figures_as_printed": [
+    "$25,639,730",
+    "$300K"
+   ]
+  },
+  {
+   "topic": "State aid revenue estimate",
+   "what_was_recorded": "FY2018 state aid was estimated, including an $883K Chapter 70 increase and $39K in General Government Aid.",
+   "quote": "state aid: $8,877,879. there is significant increase state aid which includes $883k in chapter 70",
+   "figures_as_printed": [
+    "$8,877,879",
+    "$883K",
+    "$39K"
+   ]
+  },
+  {
+   "topic": "Local receipts revenue estimate",
+   "what_was_recorded": "Local receipts were estimated, including a 2.5% increase in motor vehicle excise tax and $140K in solar revenues.",
+   "quote": "local receipts: $2,913,168. estimated 2.5% increase in motor vehicle excise tax and $140k in solar",
+   "figures_as_printed": [
+    "$2,913,168",
+    "$140K"
+   ]
+  },
+  {
+   "topic": "Available funds revenue estimate",
+   "what_was_recorded": "Available funds were estimated, including MSBA reimbursement and a Free Cash estimate of $900K.",
+   "quote": "available funds $2,419,818. msba reimbursement of$534,198. free cash estimated at $900k.",
+   "figures_as_printed": [
+    "$2,419,818",
+    "$534,198",
+    "$900K"
+   ]
+  },
+  {
+   "topic": "FY2018 expenditures and debt service",
+   "what_was_recorded": "Total FY2018 expenditures were estimated, including $633,317 for the capital budget and debt service of $4,796,858.",
+   "quote": "expenditures include $633,317 to fund the capital budget, and the debt service at $4,796,858.",
+   "figures_as_printed": [
+    "$36,891,930",
+    "$633,317",
+    "$4,796,858"
+   ]
+  },
+  {
+   "topic": "Unclassified cost increases",
+   "what_was_recorded": "Unclassified expenditures include an estimated 6% increase in health insurance and a 10% increase in Police/Fire IOD and workers comp.",
+   "quote": "unclassified expenditures includes estimated 6% increase in health insurance. 10% increase in",
+   "figures_as_printed": [
+    "6%",
+    "10%"
+   ]
+  },
+  {
+   "topic": "Pavement Management Plan",
+   "what_was_recorded": "The Pavement Management Plan is funded by $50K in the operating budget.",
+   "quote": "pavement management plan: funded by $50k in operating budget.",
+   "figures_as_printed": [
+    "$50K"
+   ]
+  },
+  {
+   "topic": "DPW fuel tank removal",
+   "what_was_recorded": "A public speaker suggested checking the fuel tanks for leaks and asked whether filling them with sand or cement would save money; no figure was given.",
+   "quote": "suggested allowing the dep investigate the tanks for leaks. if no leaks are found,",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Police vehicle outfitting cost",
+   "what_was_recorded": "Part of the increased cost of new Police vehicles was noted as the cost of outfitting the vehicles; no figure was given.",
+   "quote": "part of the increased cost of the new police vehicles in the cost of outfitting the vehicles.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "Public",
+   "topic": "tax-deductible 501(c)(3) to fund operating budget",
+   "quote": "dave rodgers: suggested setting up a tax deductible 5013c corp. to allow for individuals to make"
+  },
+  {
+   "topic": "DPW fuel tank removal",
+   "quote": "suggested allowing the dep investigate the tanks for leaks. if no leaks are found,"
+  },
+  {
+   "speaker": "Bob Ebersol",
+   "stated_role": "Selectmen",
+   "topic": "resident donations to town departments",
+   "quote": "bob ebersol - selectmen: resident can make donations to any town dept. and take a tax"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting called to order at 7:11 pm; televised",
+   "quote": "chairman called the meeting to order at 7:11 pm. televised meeting.",
+   "tags": [
+    "call to order",
+    "televised"
+   ]
+  },
+  {
+   "topic": "CPC capital presentation FY2018",
+   "resolution": "presented; no action recorded",
+   "quote": "the facilities maintenance had requested $248,050 to fund five projects.",
+   "tags": [
+    "capital budget",
+    "CPC",
+    "FY2018"
+   ]
+  },
+  {
+   "topic": "Town Manager FY18 budget recommendations",
+   "resolution": "presented; no action recorded",
+   "quote": "town manager report: budget recommendations fy18: the town manager is new to lunenburg.",
+   "tags": [
+    "FY2018 budget",
+    "revenue",
+    "expenditures",
+    "Town Manager"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for February 16, 2017",
+   "quote": "5. next meeting: february 16, 2017",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 8:05 pm",
+   "quote": "6. adjournment: mark made a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY2018 Town Manager Preliminary Budget Presentation",
+   "where": "text",
+   "quote": "the complete budget recommendation is available at:"
+  }
+ ],
+ "tags": [
+  "capital budget",
+  "FY2018 budget",
+  "Town Manager",
+  "CPC",
+  "snow and ice deficit",
+  "revenue estimates",
+  "public comment",
+  "joint meeting",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

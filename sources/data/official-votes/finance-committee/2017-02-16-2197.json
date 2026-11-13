@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-02-16",
  "docid": "2197",
@@ -13,14 +13,261 @@
  "votes": [
   {
    "motion": "Adjourn the meeting.",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "John Henshaw",
+   "moved_by": "Mark",
+   "seconded_by": "John",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0 at 7:53 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Only one vote recorded: the motion to adjourn.",
- "cost_usd": 0.0805955
+ "note": "OCR text from a scanned page with layout artifacts. Attendance status is inferred from line order under the 'Present:', 'Absent:' and 'Guest:' labels: Hannah Anderson is read as absent, which is not stated outright. Tom Alonzo's role is not printed. The minutes print no roll-call votes and no motions other than adjournment. Free cash figure '$888,994K' is printed as shown. Agenda item 8 lists headings with no text beneath them. The 'Attachments (0):' line is printed with no items under it.",
+ "cost_usd": 0.005075419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "hannah anderson tom alonzo, sue doherty - council on aging, adam burney - land use director, members of the"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Guest",
+   "status": "not stated",
+   "quote": "tom alonzo, sue doherty - council on aging, adam burney - land use director, members of the"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "tom alonzo, sue doherty - council on aging, adam burney - land use director, members of the"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "tom alonzo, sue doherty - council on aging, adam burney - land use director, members of the"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Council on Aging FY17 State Formula Grant funding",
+   "what_was_recorded": "The FY17 State Formula Grant funding for the Council on Aging was $21,060, and the grant funds could be used for other purposes such as kitchen renovations.",
+   "figures_as_printed": [
+    "$21,060"
+   ],
+   "quote": "the fy17 grant funding was $21,060."
+  },
+  {
+   "topic": "Free cash certification and use",
+   "what_was_recorded": "Free cash was certified at $888,994K, a little less than the $900K previously estimated; the Town Manager recommends free cash to fund the Capital budget, OPED, and Stabilization, and members questioned the numbers.",
+   "figures_as_printed": [
+    "$888,994K",
+    "$900K"
+   ],
+   "quote": "discussion around the free cash amount which is certified at $888,994k which is a little less than the $900k that was previously estimated."
+  },
+  {
+   "topic": "Free cash historical average",
+   "what_was_recorded": "A member commented that free cash in past years has only averaged around $250k, raising concern about funding the capital budget from free cash.",
+   "figures_as_printed": [
+    "$250k"
+   ],
+   "quote": "a member commented that free cash in the past years has only averaged around $250k."
+  },
+  {
+   "topic": "Energy savings presentation from Unitil",
+   "what_was_recorded": "A presentation from Unitil reported $82K in energy savings.",
+   "figures_as_printed": [
+    "$82K"
+   ],
+   "quote": "a presentation from unitil. $82k in energy savings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 7:00 pm, televised",
+   "quote": "chairman called the meeting to order at 7:00 pm. televised meeting.",
+   "tags": [
+    "call to order",
+    "televised"
+   ]
+  },
+  {
+   "topic": "Comments and new communications",
+   "resolution": "noted; no public comment",
+   "quote": "b. new communications: submitted the warrant report to elaine for the town report.",
+   "tags": [
+    "town report",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Department budget presentations (COA and Land Use)",
+   "resolution": "presented; no action recorded",
+   "quote": "council on aging (coa): the director is requesting to move outreach coordinator salary from the",
+   "tags": [
+    "council on aging",
+    "land use",
+    "salary",
+    "state grant",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Budget goals: financial policy for managing debt service",
+   "resolution": "presented second draft; FYI items",
+   "quote": "john h. presented a second draft of the financial policy he has been working on, a spreadsheet on",
+   "tags": [
+    "debt service",
+    "financial policy",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Anticipation of future large capital purchases",
+   "resolution": "no action recorded",
+   "quote": "b. anticipation of future large capital purchases:",
+   "tags": [
+    "capital"
+   ]
+  },
+  {
+   "topic": "Review minutes",
+   "resolution": "none",
+   "quote": "5. review minutes: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town financial officers report",
+   "resolution": "none",
+   "quote": "6. town financial officers report: none",
+   "tags": [
+    "treasury"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports given",
+   "quote": "7. committee and department updates:",
+   "tags": [
+    "public access",
+    "schools",
+    "monty tech",
+    "green task force",
+    "sewer",
+    "building reuse",
+    "energy savings"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "no action recorded",
+   "quote": "8. ongoing business: pavement management plan:",
+   "tags": [
+    "pavement",
+    "contracts",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for February 23, 2017",
+   "quote": "9. next meeting: february 23, 2017",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 7:53 pm",
+   "quote": "10. adjournment: mark made a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Policy (second draft), prepared by John H.",
+   "where": "text",
+   "quote": "john h. presented a second draft of the financial policy he has been working on, a spreadsheet on"
+  },
+  {
+   "name": "Summary of Debt Service FY2013-2029 (spreadsheet)",
+   "where": "text",
+   "quote": "the \"summary of debt service fy2013-2029\" is a fyi for members."
+  },
+  {
+   "name": "Table of Contents from the Town of Barre",
+   "where": "text",
+   "quote": "the \"table of contents\" is from the town of barre and is also a fyi for members."
+  },
+  {
+   "name": "Warrant report submitted for the Town Report",
+   "where": "text",
+   "quote": "b. new communications: submitted the warrant report to elaine for the town report."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget",
+  "free cash",
+  "council on aging",
+  "land use",
+  "debt service",
+  "financial policy",
+  "capital",
+  "energy savings",
+  "town report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

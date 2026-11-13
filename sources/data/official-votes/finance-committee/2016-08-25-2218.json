@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-08-25",
  "docid": "2218",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mark",
    "seconded_by": "John",
    "outcome": "passed 5-0",
@@ -21,6 +21,269 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract; one vote recorded (adjournment). No votes on approving prior minutes, no other motions voted on.",
- "cost_usd": 0.0841895
+ "note": "OCR text from a scan (macOS Vision). Some words are garbled or misspelled as printed (e.g., \"Town Manger\", \"AFSME\", \"hand much excluded debt\"), and the debt discussion in item 5 ends mid-sentence (\"How much debt, excluded or non-excluded, can the Town\"). Only one recorded vote (adjournment, 5-0). No vote on minutes (item 6 says None). Tim Murphy, John Londa and Sue Doherty are mentioned but not recorded as attending. The Attachments line reads \"Attachments (0):\" with nothing listed.",
+ "cost_usd": 0.00623402,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson"
+  },
+  {
+   "name": "Hannah Anderson",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "none kerry lafleur - town manager george martin"
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "none kerry lafleur - town manager george martin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to request a list of projects from the Planning Director (Planning Board articles with possible financial concern or liability to the town).",
+   "quote": "tm to request a list of projects from the planning director."
+  },
+  {
+   "decision": "John H. to follow up with the School Committee on when it plans to start THMS repairs or renovations, the cost estimates, how much it will ask from Capital Planning, and how much debt will be incurred.",
+   "quote": "john h. to follow up to see when the school committee is looking to start any of these repairs or renovations and what the cost estimates are."
+  },
+  {
+   "decision": "PACC is scheduled to meet with the Finance Committee on 9-22-16.",
+   "quote": "pacc to meet with fincom on 9-22-16."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2016 sick leave buy back (AFSME union employees)",
+   "what_was_recorded": "Sick leave buy back for AFSME union employees estimated at $100k, funded from FY16; the committee is waiting for all employees to complete applications.",
+   "figures_as_printed": [
+    "$100k"
+   ],
+   "quote": "sick leave buy back for afsme union employee's estimated at $100k."
+  },
+  {
+   "topic": "MIIA insurance rewards credits",
+   "what_was_recorded": "Final rewards credits received from MIIA for training and inspection programs.",
+   "figures_as_printed": [
+    "$8848"
+   ],
+   "quote": "received final rewards credits totaling $8848 from our insurance company"
+  },
+  {
+   "topic": "Asphalt contract rate",
+   "what_was_recorded": "Asphalt bid awarded to Keating Corp. on a three-year cycle; the rate drops from the previous price to the new one.",
+   "figures_as_printed": [
+    "$62 per ton",
+    "$58 per ton"
+   ],
+   "quote": "previously paying $62 per ton. new rate is $58 per ton."
+  },
+  {
+   "topic": "Drainage work projection",
+   "what_was_recorded": "Projected drainage work cost for the year.",
+   "figures_as_printed": [
+    "$500K"
+   ],
+   "quote": "projected $500k for drainage work."
+  },
+  {
+   "topic": "Chapter 90 road funds plus excise tax addition",
+   "what_was_recorded": "Starting in FY-18, $50k per year from excise taxes will be added to Ch 90 funds for annual road maintenance.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "starting in fy-18, $50k per year from excise taxes will be added to the ch 90 funds for annual road"
+  },
+  {
+   "topic": "Turkey Hill Middle School critical repairs",
+   "what_was_recorded": "Critical repairs at THMS are carried at $900k in the capital planning budget.",
+   "figures_as_printed": [
+    "$900k"
+   ],
+   "quote": "there are $900k in critical repairs in the capital planning budget."
+  },
+  {
+   "topic": "Turkey Hill Middle School necessary repairs estimate",
+   "what_was_recorded": "Estimated $3.5M in necessary repairs plus larger projects such as a new roof and asbestos remediation.",
+   "figures_as_printed": [
+    "$3.5M"
+   ],
+   "quote": "an estimated $3.5m in necessary repairs plus several larger projects like a new roof and asbestos remediation."
+  },
+  {
+   "topic": "Turkey Hill Middle School renovation market study",
+   "what_was_recorded": "A market study several years ago estimated renovations at $11M; the committee wants to know that figure in today's dollars.",
+   "figures_as_printed": [
+    "$11M"
+   ],
+   "quote": "several years ago a market study estimated renovations to cost $11m."
+  },
+  {
+   "topic": "PACC budget",
+   "what_was_recorded": "PACC FY17 budget is 20% below its actual needs; PACC is funded through the Comcast cable contract and is not tax supported; the Finance Committee may be able to loan PACC funds from the Reserve account.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "pacc budget: fy17 budget is 20% less than their actual needs."
+  },
+  {
+   "topic": "Facilities operational budget - oven/range replacement",
+   "what_was_recorded": "Operational budget issue with replacing oven/range appliances.",
+   "figures_as_printed": [
+    "$4K"
+   ],
+   "quote": "operational budget issue with replacement of oven/range appliances costing $4k."
+  },
+  {
+   "topic": "Board of Review / BRC market analysis bids",
+   "what_was_recorded": "Two market analysis bids both exceeded the budgeted amount; bidders were asked to revise proposals and the group may need more money.",
+   "figures_as_printed": [],
+   "quote": "received two market analysis bids. both exceeded the budgeted amount."
+  },
+  {
+   "topic": "Capital Planning threshold for small items",
+   "what_was_recorded": "Member asked how items under the Capital Planning threshold of $10K are funded; TM said a Facilities budget line item for small appliance replacement should be added.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "member question to tm regarding how items under the capital planning threshold of $10k are funded."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Sick leave buy back for AFSME union employees, funded from FY16.",
+   "amount_as_printed": "$100k",
+   "outcome": "No vote recorded; waiting for all employees to complete their buy-back applications.",
+   "quote": "sick leave buy back for afsme union employee's estimated at $100k."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Comments (Town Manager departure, new communications)",
+   "resolution": "discussed; no action",
+   "tags": [
+    "town manager",
+    "planning board",
+    "overlay district"
+   ],
+   "quote": "this is the last scheduled meeting with the town manger. kerry accepted a new position as"
+  },
+  {
+   "topic": "FY2016 transfers",
+   "resolution": "discussed; buy-back awaiting applications",
+   "tags": [
+    "sick leave",
+    "transfer",
+    "FY16"
+   ],
+   "quote": "sick leave buy back for afsme union employee's estimated at $100k."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "tags": [
+    "paving",
+    "PMP",
+    "MIIA",
+    "Ch 90"
+   ],
+   "quote": "received final rewards credits totaling $8848 from our insurance company"
+  },
+  {
+   "topic": "Budget goals and opportunities (debt policy, THMS repairs)",
+   "resolution": "discussed; John H. to follow up",
+   "tags": [
+    "debt",
+    "THMS",
+    "school capital",
+    "bond rating"
+   ],
+   "quote": "financial policy for managing debt service: jh talked with john londa, school facilities director,"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "none presented",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "6. minutes: none 7. committee and department updates:"
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reported; PACC to meet 9-22-16",
+   "tags": [
+    "PACC",
+    "intersections",
+    "BRC",
+    "appliances",
+    "storm water"
+   ],
+   "quote": "pacc budget: fy17 budget is 20% less than their actual needs."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meeting: 9-8-16, 9-22-16 at 7:00 pm at the town hall."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:42 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 5-0 at 8:42 pm"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "town manager transition",
+  "sick leave buy back",
+  "paving",
+  "Chapter 90",
+  "school capital",
+  "debt policy",
+  "THMS",
+  "PACC",
+  "BRC",
+  "capital planning",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

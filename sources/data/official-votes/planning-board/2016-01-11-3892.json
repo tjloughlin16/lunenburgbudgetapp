@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-01-11",
  "docid": "3892",
@@ -12,15 +12,226 @@
  },
  "votes": [
   {
-   "motion": "Continue the Information Meeting to February 22, 2016 at 6:35 PM",
+   "motion": "Continue the Information Meeting to February 22, 2016, 6:35 PM.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, all aye",
+   "procedural": false,
    "quote": "motion, k. chenis, to continue the information meeting to february 22, 2016, 6:35 pm, second, m. allison, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0918015
+ "note": "The minutes record one motion (continuance, all aye) and no dollar figures or transfers. Attendance for applicant representatives other than J. Rheault and M. Beliveau is not stated. Roles for Paula Bertram are given only as an address.",
+ "cost_usd": 0.00481152,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, chair tel: (978) 582-4147, ext 5"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Project Engineer, Whitman & Bingham Associates (WBA); representing the applicant",
+   "status": "present",
+   "quote": "project engineers, jamie rheault and mark piermarini, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "Project Engineer, Whitman & Bingham Associates (WBA); representing the applicant",
+   "status": "not stated",
+   "quote": "project engineers, jamie rheault and mark piermarini, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Mark Beliveau",
+   "role": "Legal counsel, Pierce Atwood LLP; representing the applicant",
+   "status": "present",
+   "quote": "legal counsel, pierce atwood llp, mark beliveau"
+  },
+  {
+   "name": "Christine West",
+   "role": "KITE Architects, Inc.; representing the applicant",
+   "status": "not stated",
+   "quote": "kite architects, inc., christine west"
+  },
+  {
+   "name": "Jacqueline Agel",
+   "role": "Unitil Project Manager; representing the applicant",
+   "status": "not stated",
+   "quote": "unitil project manager, jacqueline agel"
+  },
+  {
+   "name": "Ernie Nadeau",
+   "role": "Nadeau Corp., Construction Development & Engineering; representing the applicant",
+   "status": "not stated",
+   "quote": "nadeau corp., construction development & engineering, ernie nadeau"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member of the public, 312 Townsend Harbor Road",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road- concerned with cumulative effects of penta on the site due to proximity to wetlands."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will review the EIS and pose any questions to Land Use Director A. Burney before the next continuation, for response from J. Rheault.",
+   "quote": "the board will review and pose any questions to a. burney prior to the next continuation for response from j. rheault."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "312 Townsend Harbor Road",
+   "topic": "cumulative effects of penta near wetlands",
+   "quote": "paula bertram, 312 townsend harbor road- concerned with cumulative effects of penta on the site due to proximity to wetlands."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and statutory notice",
+   "resolution": "opened the information meeting continuation",
+   "quote": "chair d. mcquaid opened the information meeting continuation with the reading of the statutory notice published in the sentinel",
+   "tags": [
+    "information meeting",
+    "notice"
+   ]
+  },
+  {
+   "topic": "Oil-filled electrical equipment and hazardous materials handling",
+   "resolution": "no action; Board questions and information received",
+   "quote": "oil-filled electrical equipment will be managed and handled in the hazardous waste accumulation area, the pcp evaluation area",
+   "tags": [
+    "hazardous materials",
+    "oil",
+    "Petro-Plug",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Pole storage, PCP treatment and buffer zones",
+   "resolution": "no action; applicant to consider switching pole and pipe storage areas",
+   "quote": "the wood poles will be treated with pentachlorophenol (pcp or penta).",
+   "tags": [
+    "PCP",
+    "wetlands",
+    "buffer zone",
+    "pole storage"
+   ]
+  },
+  {
+   "topic": "Snow/ice treatment, dumpsters, fence and landscaping",
+   "resolution": "no action; landscaping plan to be resubmitted later",
+   "quote": "snow/ice treatment will consist of a mix of sand and salt in the parking areas and on the site's internal roads.",
+   "tags": [
+    "snow storage",
+    "landscaping",
+    "fence"
+   ]
+  },
+  {
+   "topic": "EIS and GEI review; continuation",
+   "resolution": "continued to February 22, 2016",
+   "quote": "an eis was distributed at the meeting.",
+   "tags": [
+    "EIS",
+    "GEI review",
+    "continuation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Aerial/GIS view of site",
+   "where": "list",
+   "quote": "documents used at meeting: aerial/gis view of site pole storage area handout"
+  },
+  {
+   "name": "Pole Storage Area Handout",
+   "where": "list",
+   "quote": "aerial/gis view of site pole storage area handout snow/ice treatment material handout"
+  },
+  {
+   "name": "Snow/Ice Treatment Material Handout",
+   "where": "list",
+   "quote": "pole storage area handout snow/ice treatment material handout"
+  },
+  {
+   "name": "Petro-Plug Informational Sheet",
+   "where": "list",
+   "quote": "snow/ice treatment material handout petro-plug informational sheet"
+  },
+  {
+   "name": "Oil-Filled Electrical Equipment Management Handout",
+   "where": "list",
+   "quote": "petro-plug informational sheet oil-filled electrical equipment management handout"
+  },
+  {
+   "name": "Site Plan Revised 1/11/16",
+   "where": "list",
+   "quote": "oil-filled electrical equipment management handout site plan revised 1/11/16"
+  },
+  {
+   "name": "EIS",
+   "where": "text",
+   "quote": "an eis was distributed at the meeting."
+  },
+  {
+   "name": "GEI review letter dated December 31, 2015",
+   "where": "text",
+   "quote": "a letter issued on december 31, 2015."
+  }
+ ],
+ "tags": [
+  "information meeting",
+  "continuation",
+  "Unitil",
+  "357 Electric Avenue",
+  "wetlands",
+  "hazardous materials",
+  "PCP",
+  "buffer zones",
+  "stormwater",
+  "utility facility",
+  "40B"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

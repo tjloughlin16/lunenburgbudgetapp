@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-11-08",
  "docid": "4994",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the Bond anticipation note for Pavement Management Temporary Financing in the amount of $800,000",
+   "motion": "Approve the bond anticipation note as presented by Chairman Toale.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: t. alonzo 2\"':p. bertram to approve the bond anticipation note as presented by chairman toale"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:14 p.m.",
    "moved_by": "P. Luck",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -29,6 +29,249 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes; character substitution in one motion line (2\"': likely OCR of \"2nd:\"), but votes are legible",
- "cost_usd": 0.1184715
+ "note": "OCR text from scanned pages (macOS Vision). Some text is garbled: the second in the BAN motion reads '2\"':P. Bertram', and the attendance/motion lines are merged. The text calls Ms. Lemieux 'Mr. Lemieux' once; the minutes are otherwise consistent that she is a woman. The BAN vote is recorded only as 'All in Favor' with no count. The Special Town Meeting warrant presentation is recorded without a vote. Budget items record candidate remarks about taxes and pay alongside Board business. The minutes do not print a list of documents used at the meeting; the listed items below come from sentences that name warrants and a presentation.",
+ "cost_usd": 0.00799982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager candidate (interviewee)",
+   "status": "present",
+   "quote": "mr. toale announced the first candidate was heather lemieux."
+  },
+  {
+   "name": "David Marciello",
+   "role": "Town Manager candidate (interviewee); Interim Town Manager per his remarks",
+   "status": "present",
+   "quote": "mr. toale asked mr. marciello to tell them briefly about him and why he is interested in the town manager"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino asked if there was anything in lunenburg that jumped out at her."
+  },
+  {
+   "name": "Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director brochu confirmed and stated there will permanent borrowing on a larger amount"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Candidates return next week with a prepared presentation and follow-up questions; the Board will deliberate at the conclusion of that meeting, and may vote on an appointment, continue the process, or start over. The Board agreed.",
+   "quote": "at the conclusion of that meeting we will deliberate. we can decide to vote on an appointment, decide to continue the process or we can decide to start the process over again. the board agreed."
+  },
+  {
+   "decision": "The Board should meet on November 22 in preparation for Special Town Meeting.",
+   "quote": "mr. toale stated the board should meet on november 22'd in preparation for special town meeting."
+  },
+  {
+   "decision": "Ms. Luck requested that DPW Director Rodriquenz come to the Board before permanent financing for an explanation of how the paving and stormwater funds will be spent.",
+   "quote": "ms. luck requested dpw director rodriquenz come in to the board before that occurs for an explanation of how it will be spent on"
+  },
+  {
+   "decision": "Ms. Bertram wanted to continue a discussion on the Complete Streets Program before January 27.",
+   "quote": "ms. bertram also wanted to continue a discussion on the complete streets program as well before january 27%"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond anticipation note for pavement management temporary financing",
+   "what_was_recorded": "A bond anticipation note of $800,000 due January 26, 2017 was presented for approval.",
+   "quote": "mr. toale stated this was a bond anticipation note (ban) in the amount of $800,000 due on january 26, 2017.",
+   "figures_as_printed": [
+    "$800,000"
+   ]
+  },
+  {
+   "topic": "Permanent borrowing for paving",
+   "what_was_recorded": "Finance Director Brochu said permanent borrowing of a larger amount in January 2017 would pay off the BAN and fund the spring paving.",
+   "quote": "finance director brochu confirmed and stated there will permanent borrowing on a larger amount ($2.5 million, which includes the $800,000) in january 2017",
+   "figures_as_printed": [
+    "$2.5 million",
+    "$800,000"
+   ]
+  },
+  {
+   "topic": "Accounts Payable warrants",
+   "what_was_recorded": "Two Accounts Payable warrants were presented for signature.",
+   "quote": "he presented an accounts payable warrant in the amount of $1,202,514.55 and an accounts payable warrant in the amount of $582,687.39.",
+   "figures_as_printed": [
+    "$1,202,514.55",
+    "$582,687.39"
+   ]
+  },
+  {
+   "topic": "Summer Street project",
+   "what_was_recorded": "Ms. Bertram noted additional costs of around $40,000 for the Summer Street project to move forward.",
+   "quote": "ms. bertram noted there will be additional costs of around $40,000 for the summer street project to move forward.",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Property tax increases and Proposition 2 1/2 (candidate discussion)",
+   "what_was_recorded": "Mr. Marciello explained that tax increases are limited under Proposition 2 1/2 and that assessments can also raise a bill.",
+   "quote": "people want to know why their taxes went up 4% when there is prop. 2 ½.",
+   "figures_as_printed": [
+    "4%",
+    "22%"
+   ]
+  },
+  {
+   "topic": "Pay reduction during recession (candidate discussion)",
+   "what_was_recorded": "Mr. Marciello said he gave back a share of his pay to keep the Rehoboth budget balanced during the recession.",
+   "quote": "i gave back almost 10% of my pay to keep the budget balanced.",
+   "figures_as_printed": [
+    "almost 10%"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lions Club pancake breakfast announcement",
+   "quote": "ms. luck announced the lions club pancake breakfast at eagle house senior center tomorrow morning from 8:00 - 11:00 a.m."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Boys and Girls Club Rockin' Auction fundraiser reminder",
+   "quote": "mr. alonzo reminded all of the boys and girls club of lunenburg rockin' auction fundraiser on november 19* at the eagles club in leominster"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and announcements",
+   "resolution": "no action; Pledge of Allegiance, next meeting focus announced",
+   "quote": "the meeting opened at 6:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "opening",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; community announcements",
+   "quote": "ms. luck announced the lions club pancake breakfast at eagle house senior center tomorrow morning from",
+   "tags": [
+    "public comment",
+    "community events"
+   ]
+  },
+  {
+   "topic": "Interview of Heather Lemieux for Town Manager",
+   "resolution": "interviewed; interview continued to next week",
+   "quote": "mr. toale announced the first candidate was heather lemieux.",
+   "tags": [
+    "town manager search",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Interview of David Marciello for Town Manager",
+   "resolution": "interviewed; candidate exited; process to continue next week",
+   "quote": "after a brief recess the board reconvened at 7:02 p.m. to interview david marciello.",
+   "tags": [
+    "town manager search",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Execution of Documents for November 15, 2016 Pavement Management Temporary Financing",
+   "resolution": "approved bond anticipation note of $800,000",
+   "quote": "execution of documents for november 15, 2016 pavement management temporary financing",
+   "tags": [
+    "bond anticipation note",
+    "pavement management",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Warrants/Action File Items",
+   "resolution": "warrants presented for signature; Accounts Payable warrants presented; no vote recorded",
+   "quote": "mr. toale presented special town meeting warrants for signatures in order to post them.",
+   "tags": [
+    "warrants",
+    "special town meeting",
+    "accounts payable"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrants",
+   "where": "list",
+   "quote": "mr. toale presented special town meeting warrants for signatures in order to post them."
+  },
+  {
+   "name": "Accounts Payable warrant in the amount of $1,202,514.55",
+   "where": "list",
+   "quote": "he presented an accounts payable warrant in the amount of $1,202,514.55 and an accounts payable warrant in the amount of $582,687.39."
+  },
+  {
+   "name": "Bond anticipation note (BAN) in the amount of $800,000 due January 26, 2017",
+   "where": "text",
+   "quote": "mr. toale stated this was a bond anticipation note (ban) in the amount of $800,000 due on january 26, 2017."
+  },
+  {
+   "name": "Presentation given by Mr. Rodriquenz on funding timelines",
+   "where": "text",
+   "quote": "mr. ebersole noted the presentation given by mr. rodriquenz had listed funding timelines and that this could be reviewed again."
+  }
+ ],
+ "tags": [
+  "town manager search",
+  "interviews",
+  "bond anticipation note",
+  "pavement management",
+  "warrants",
+  "special town meeting",
+  "stormwater",
+  "MS4",
+  "Complete Streets",
+  "Summer Street",
+  "public comment",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. toale presented special town meeting warrants"
+ },
+ "dropped_unquoted_by_field": {}
 }

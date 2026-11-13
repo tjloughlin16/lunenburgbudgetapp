@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2013-11-21",
  "docid": "2781",
@@ -12,23 +12,241 @@
  },
  "votes": [
   {
-   "motion": "Pass over approval of the October 17, 2013 minutes",
+   "motion": "Pass over approval of the October 17, 2013 minutes because the Trustees' Secretary is absent.",
    "moved_by": "Jeanne Raboin",
    "seconded_by": "Dick Mailloux",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "jeanne raboin made a motion to pass over the approval for the october 17, 2013 minutes; 2 nd by dick mailloux."
+   "quote": "jeanne raboin made a motion to pass over the approval for the october 17, 2013 minutes"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Dick Mailloux",
-   "seconded_by": "Joanne McQuaid",
+   "motion": "Adjourn the meeting at 8:05 pm.",
+   "moved_by": "Dick",
+   "seconded_by": "Joanne",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn was made by dick; joanne 2 nd at 8:05 pm."
+   "quote": "motion to adjourn was made by dick; joanne"
   }
  ],
  "dropped_unquoted": 0,
- "note": "No scan issues. Two votes recorded: approval of prior minutes (explicitly passed over per motion, though outcome not explicitly stated) and adjournment.",
- "cost_usd": 0.09342450000000001
+ "note": "No vote results are printed for either recorded motion (minutes approval pass-over and adjournment), so both are recorded as not stated. Some text is garbled by extraction (e.g., \"2 nd\" and \"w ater\"), and the Director's Report bullets (Staffing, Collections, etc.) have no printed content. The director is not named. No budget transfers are recorded.",
+ "cost_usd": 0.005180219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "status": "present",
+   "quote": "dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "dick mailloux, joanne mcquaid, martha moore, jeanne raboin, robin venezia"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order at 6:45 pm in the sudolnik conference room by chairperson jeanne raboin."
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Acting Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "robin venezia acting secretary, trustees of lunenburg public library and"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Select-Board Representative",
+   "status": "present",
+   "quote": "bob ebersole, select-board representative, brian laffond, fin-com representative"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Fin-Com Representative",
+   "status": "present",
+   "quote": "bob ebersole, select-board representative, brian laffond, fin-com representative"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "absent",
+   "quote": "lisa krowitz, lars widstrand, kathy murray"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "absent",
+   "quote": "lisa krowitz, lars widstrand, kathy murray"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "absent",
+   "quote": "lisa krowitz, lars widstrand, kathy murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Trustees agreed to Martha Moore's request to defer the tour of the new library website until the next meeting, when the website is completed.",
+   "quote": "martha asked to defer this tour until the next meeting when the website was completed and the trustees agreed to her request"
+  },
+  {
+   "decision": "Martha Moore will investigate whether the water budget is not reflecting actual costs or is an accounting and reporting limitation of the system.",
+   "quote": "martha moore will investigate this to determine if the budget isn't reflecting actual costs"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Water budget",
+   "what_was_recorded": "Trustees noted the water budget stands at 64% of budget while only 33% of the fiscal year has elapsed; Martha Moore to investigate.",
+   "figures_as_printed": [
+    "64%",
+    "33%"
+   ],
+   "quote": "although only 33% of the fiscal year has elapsed"
+  },
+  {
+   "topic": "Technology Plan hardware and savings",
+   "what_was_recorded": "Martha Moore's Technology Plan estimates the new system saves over 90% of current electricity costs and 75% of ongoing management costs; no dollar figure printed.",
+   "figures_as_printed": [
+    "90%",
+    "75%",
+    "19 new public computers",
+    "10 staff computers"
+   ],
+   "quote": "the plan provides estimates that the new hardware system will save over 90% of current electricity costs"
+  },
+  {
+   "topic": "Technology Plan funding",
+   "what_was_recorded": "Funds to purchase the system are available in the library's State Aid Fund; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "in the library's state aid fund"
+  },
+  {
+   "topic": "Capital funding of library purchases",
+   "what_was_recorded": "Bob Ebersole explained that a capital expenditure paid by the library must still be included in the town's Capital Funding; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "bob ebersole explained that even when the library pays for a capital expenditure, it still needs to be included in the town's capital funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; no public comments",
+   "quote": "public comment no public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Tour of the Library",
+   "resolution": "no action; trustees toured the building with the director",
+   "quote": "the director led the trustees on an in-depth tour of the library building and facilities.",
+   "tags": [
+    "library building",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "passed over; October 17, 2013 minutes deferred because Trustees' Secretary absent",
+   "quote": "jeanne raboin made a motion to pass over the approval for the october 17, 2013 minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Tour of the new Lunenburg Public Library Website",
+   "resolution": "deferred to next meeting",
+   "quote": "martha asked to defer this tour until the next meeting when the website was completed",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed; staffing, financials, collections, facilities, programs, technology, state aid bullets listed",
+   "quote": "which is referenced at the end of these minutes",
+   "tags": [
+    "director's report",
+    "staffing",
+    "financials",
+    "water budget"
+   ]
+  },
+  {
+   "topic": "Technology Plan",
+   "resolution": "presented; no action recorded",
+   "quote": "martha revealed her newly developed, integrated technology plan for the library.",
+   "tags": [
+    "technology",
+    "computers",
+    "state aid fund"
+   ]
+  },
+  {
+   "topic": "Friends of the LPL",
+   "resolution": "update received",
+   "quote": "martha and jeanne updated the trustees about the cultural horizons program and endowment fund.",
+   "tags": [
+    "friends of the library",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Lunenburg's website: Trustee's presence",
+   "resolution": "discussed; suggested updating LPL web page pending town site redesign",
+   "quote": "spoke about the trustee's lack of presence on the town of lunenburg's web site",
+   "tags": [
+    "town website",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:05 pm",
+   "quote": "motion to adjourn was made by dick; joanne",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Public Library Board of Trustees Agenda",
+   "where": "list",
+   "quote": "referenced documents: lunenburg public library board of trustees agenda library director's report, including technology plan and quote by john roche"
+  },
+  {
+   "name": "Library Director’s Report, including Technology Plan and Quote by John Roche",
+   "where": "list",
+   "quote": "referenced documents: lunenburg public library board of trustees agenda library director's report, including technology plan and quote by john roche"
+  },
+  {
+   "name": "Quote by John Roche",
+   "where": "list",
+   "quote": "referenced documents: lunenburg public library board of trustees agenda library director's report, including technology plan and quote by john roche"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "technology plan",
+  "water budget",
+  "town website",
+  "minutes",
+  "capital funding",
+  "state aid fund"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

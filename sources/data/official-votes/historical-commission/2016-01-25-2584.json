@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-01-25",
  "docid": "2584",
@@ -12,13 +12,93 @@
  },
  "votes": [
   {
-   "motion": "Demolition Delay Plan Review is applicable to the property at 37 Burrage Street",
+   "motion": "Determine that Demolition Delay Plan Review is applicable to the property at 37 Burrage Street (shown on the 1833 Cyrus Kilburn map).",
+   "moved_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "voted: demolition delay plan review is applicable to the property at 37 burrage street (shown on the 1833 cyrus kilburn map)."
+   "procedural": false,
+   "quote": "voted: demolition delay plan review is applicable to the property at 37 burrage street",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable. One vote recorded as taken on a property determination under the Demolition Delay Bylaw. The minutes state a determination that two other properties did not qualify for review, but do not record this as a vote (uses \\\"It was determined\\\" rather than \\\"Voted\\\"), so it is not included.",
- "cost_usd": 0.0925595
+ "note": "The minutes record a vote on 37 Burrage Street with the word \"Voted:\" but print no mover, seconder, or vote count, so the outcome is recorded as passed without a count. The minutes give no roles for the members. No public comment, budget figures, or document list are printed.",
+ "cost_usd": 0.00227302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "",
+   "status": "present",
+   "quote": "becky lantry, amory phelps and richard mcgrath"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "",
+   "status": "present",
+   "quote": "becky lantry, amory phelps and richard mcgrath"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "",
+   "status": "present",
+   "quote": "becky lantry, amory phelps and richard mcgrath"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "",
+   "status": "absent",
+   "quote": "cullen dwyer and lois lewis"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "",
+   "status": "absent",
+   "quote": "cullen dwyer and lois lewis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "It was determined that 339 Electric Avenue and 165 Townsend Harbor Road did not qualify for demolition delay review.",
+   "quote": "it was determined 339 electric avenue and 165 townsend harbor road did not qualify"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Special meeting: applicability of Demolition Delay Bylaw Section 22 to three properties",
+   "resolution": "37 Burrage Street found applicable; 339 Electric Avenue and 165 Townsend Harbor Road found not to qualify",
+   "quote": "this special meeting was called to consider whether the demolition delay bylaw section",
+   "tags": [
+    "demolition delay",
+    "bylaw",
+    "historic properties"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Delay Bylaw Section 22 (the six month delay provision)",
+   "where": "text",
+   "quote": "whether the demolition delay bylaw section"
+  },
+  {
+   "name": "1833 Cyrus Kilburn map",
+   "where": "text",
+   "quote": "(shown on the 1833 cyrus kilburn map)"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "special meeting",
+  "bylaw"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

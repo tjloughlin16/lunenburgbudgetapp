@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-07-15",
  "docid": "4896",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve one day Wine & Malt Beverage License for Conrad's Drive-In, Inc., 835 Mass Avenue, August 1, 2014, subject to determination by Lunenburg Police Chief as to number of officers",
+   "motion": "Approve one day Wine & Malt Beverage License for Conrad's Drive-In, Inc., 835 Mass Avenue, on August 1, 2014, subject to the Police Chief's determination of officers to be assigned.",
    "moved_by": "Robert Ebersole",
    "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve the one day wine & malt beverage license for conrad's drive-in, inc. 835 mass avenue on august 1, 2014, subject to determination by the lunenburg police chief as to the number of police officers to be assigned. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to approve the one day wine & malt beverage license for conrad's drive-in, inc. 835 mass avenue on august 1,"
   },
   {
-   "motion": "Approve Common Victualler's License for Ole Ahad d/b/a Hadwen Market, 1 Main Street",
+   "motion": "Approve Common Victualler's License for Ole Ahad d/b/a Hadwen Market, 1 Main Street.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Jamie Toale",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "ms. bertram moved to approve the common victualler's license for ole ahad d/b/a hadwen market, 1 main street. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Jamie Toale",
    "outcome": "passed 5-0",
@@ -37,6 +37,302 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11461650000000001
+ "note": "OCR text from macOS Vision of a scanned page set; some line breaks and punctuation are imperfect (e.g., 'Mir. Alonzo', '1' opportunity'). Quotes were collapsed to single spaces. The warrant dates, numbers and amounts are printed as separate lists, so the mapping of each amount to a warrant is not explicit. Two votes are recorded in the body and one at adjournment; the minutes record no vote on the Holt proposal, the pipeline presentation, or the work session dates, and no vote on resignations or committee appointments. The minutes do not name a documents list.",
+ "cost_usd": 0.009313519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & phyllis luck."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & phyllis luck."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & phyllis luck."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & phyllis luck."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & phyllis luck."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present town manager, kerry speidel"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  },
+  {
+   "name": "Eric Holt",
+   "role": "owner of Sunnyside Solar; presenter on community solar farm proposal",
+   "status": "present",
+   "quote": "eric holt, owner of sunnyside solar came before the board"
+  },
+  {
+   "name": "Allen Fore",
+   "role": "representative of Kinder Morgan; presenter on pipeline project",
+   "status": "present",
+   "quote": "allen fore along with other representatives from kinder morgan came before the bos"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Work session dates set for 7/22/2014 at 6PM for discussion of FY2015 Town Manager Goals and FY2015 BOS Goals.",
+   "quote": "further discussion of fy2015 town manager goals - set work session date: date set for 7/22/2014 at 6pm for discussion."
+  },
+  {
+   "decision": "Joint session with the Planning Board to appoint a candidate to the current vacancy postponed to the 7/22/2014 BOS meeting due to a Planning Board quorum issue.",
+   "quote": "due to a quorum issue with the planning board, this has been postponed to the 7/22/2014 bos meeting"
+  },
+  {
+   "decision": "Community solar farm proposal to be discussed with the Town Manager; board hopes it comes to Fall or Spring Town Meeting.",
+   "quote": "mr. alonzo thanked mr. holt for bringing this forward and said that they will discuss this with the town manager"
+  },
+  {
+   "decision": "Resignations of Council on Aging members Connie O'Dea, Anthony Bertone and Shirley Bertone accepted; a letter of thanks to be sent.",
+   "quote": "after determining the time served on this board, a letter of thanks will be sent for their contributions."
+  },
+  {
+   "decision": "BOS to schedule a joint session with the Planning Board to discuss the Planning Board Appointment and Economic Development.",
+   "quote": "bos will be scheduling a joint session with the planning board to discuss the planning board appointment and economic development."
+  },
+  {
+   "decision": "Mr. Toale to attend the next School Committee meeting to discuss transfer of the Passios Building and Brooks House from the school to the town, and to raise land transfer.",
+   "quote": "mr. toale will be attending the next school committee meeting to discuss the property transfer of the passios building and brooks"
+  },
+  {
+   "decision": "Board agreed PACC, COA and Personnel Committee need members appointed as soon as interviews are completed.",
+   "quote": "all agreed that these 3 committees need members appointed asap when all interviews are completed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants for payment",
+   "what_was_recorded": "Three warrants were listed for approval with dollar totals; the minutes do not map each amount to a date by label.",
+   "figures_as_printed": [
+    "$473,983.91",
+    "$52,919.06",
+    "$469,963.44"
+   ],
+   "quote": "w# 2p-15 w# 4-15 w#3-15 $473,983.91 $52,919.06 $469,963.44"
+  },
+  {
+   "topic": "Community solar farm lease fee",
+   "what_was_recorded": "Sunnyside Solar/CEC proposed paying the Town a lease fee per megawatt of electricity generated, which the minutes say rises over time.",
+   "figures_as_printed": [
+    "$20k"
+   ],
+   "quote": "pay the town of lunenburg $20k (lease fee for the land use) for each megawatt of electricity generated"
+  },
+  {
+   "topic": "Landfill solar site - tie-in cost",
+   "what_was_recorded": "Discussion that Borrego Solar's earlier attempt at the site failed because the cost to tie into Unitil's 3 phase made it uneconomical.",
+   "figures_as_printed": [],
+   "quote": "borrego solar had attempted a project at this site but the cost to tie into unitil's 3 phase made the project uneconomical"
+  },
+  {
+   "topic": "Pipeline easement compensation",
+   "what_was_recorded": "Kinder Morgan said landowners would be monetarily compensated for any easements acquired; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "landowners would be monetarily compensated for any easements that are acquired"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "thanks to Lion's Club pancake breakfast",
+   "quote": "ms. luck thanked and congratulated dave berthiaume & the lion's club for the monthly pancake"
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "Sewer Commission survey for Lakefront/Pierce Ave sewer extension",
+   "quote": "mr. ebersole mentioned that the sewer commission has retained the firm of wright pierce to design the lakefront/pierce ave sewer"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00PM)",
+   "resolution": "no action",
+   "quote": "7:00pm public comment: ms. luck thanked and congratulated dave berthiaume & the lion's club",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. toale announced that the planning board is planning a charrette to gather input on the town village and",
+   "tags": [
+    "planning board",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Joint session with Planning Board to appoint vacancy candidate",
+   "resolution": "postponed to 7/22/2014",
+   "quote": "7:00pm - joint session with planning board to appoint candidate to current vacancy",
+   "tags": [
+    "appointments",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Community solar farm proposal on landfill site (Eric Holt)",
+   "resolution": "no action; to discuss with Town Manager",
+   "quote": "7:15pm - eric holt, proposal to construct community solar farm on landfill site",
+   "tags": [
+    "solar",
+    "landfill",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Kinder Morgan proposed pipeline presentation",
+   "resolution": "presentation, no action",
+   "quote": "7:30pm - tentative: presentation from kinder morgan energy partners, lp, regarding proposed pipeline project:",
+   "tags": [
+    "pipeline",
+    "presentation",
+    "gas"
+   ]
+  },
+  {
+   "topic": "FY2015 Town Manager Goals and BOS Goals",
+   "resolution": "work session set 7/22/2014 at 6PM",
+   "quote": "further discussion of fy2015 town manager goals - set work session date",
+   "tags": [
+    "goals",
+    "work session"
+   ]
+  },
+  {
+   "topic": "One Day Wine & Malt license, Conrad's Drive-In",
+   "resolution": "approved 5-0",
+   "quote": "3. request to approve one day wine & malt beverages license for conrad's drive-in, inc, 835 mass avenue",
+   "tags": [
+    "licenses",
+    "alcohol"
+   ]
+  },
+  {
+   "topic": "Common Victualler's License, Hadwen Market",
+   "resolution": "approved 5-0",
+   "quote": "4. request to approve common victualler's license for ole ahad d/b/a/ hadwen market, 1 main street:",
+   "tags": [
+    "licenses"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrants listed; action file item noted; no minutes",
+   "quote": "5. minutes/warrants/action file issues",
+   "tags": [
+    "warrants",
+    "minutes",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received, no action",
+   "quote": "building reuse committee: mr. toale reported that he had attended last night's planning board meeting",
+   "tags": [
+    "committees",
+    "building reuse",
+    "planning board",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "none",
+   "quote": "7. town manager reports or department reports: none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Council on Aging resignations; committee quorum",
+   "resolution": "resignations accepted; letter of thanks; members to be appointed ASAP",
+   "quote": "accept resignations: council on aging- connie o'dea, anthony bertone & shirley bertone:",
+   "tags": [
+    "appointments",
+    "resignations",
+    "council on aging",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 9:05PM",
+   "quote": "meeting adjourned at 9:05pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Slide presentation by Eric Holt (Sunnyside Solar) on community solar farm",
+   "where": "text",
+   "quote": "mr. holt presented a slide presentation which showed"
+  },
+  {
+   "name": "Slide show presentation by Kinder Morgan on proposed pipeline project",
+   "where": "text",
+   "quote": "came before the bos to give a slide show presentation concerning the"
+  }
+ ],
+ "tags": [
+  "community solar",
+  "landfill",
+  "Kinder Morgan pipeline",
+  "natural gas",
+  "licenses",
+  "warrants",
+  "appointments",
+  "quorum",
+  "Council on Aging",
+  "Planning Board",
+  "work session goals",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

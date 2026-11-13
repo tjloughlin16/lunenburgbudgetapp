@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-03-08",
  "docid": "2760",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve February 9, 2012 minutes as amended",
+   "motion": "Approve the February 9, 2012 minutes as amended.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Len Smetana",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "motion made by dick mailloux and seconded by len smetana to approve minutes as amended; unanimous approval."
   },
   {
-   "motion": "approve February 16, 2012 minutes as amended",
+   "motion": "Approve the February 16, 2012 minutes as amended.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Kathy Murray",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "motion made by dick mailloux and seconded by kathy murray to approve minutes as amended; unanimous approval."
   },
   {
-   "motion": "close library from 3-6 pm for Staff Development, re-opening from 6-8 pm",
+   "motion": "Close the library from 3-6 pm for Staff Development, re-opening from 6-8 pm.",
    "moved_by": "Kathy Murray",
    "seconded_by": "Len Smetana",
    "outcome": "passed unanimously",
@@ -36,39 +36,39 @@
    "quote": "kathy murray made motion to close library from 3-6 pm for staff development, re-opening from 6-8; len smetana seconded; passed unanimously."
   },
   {
-   "motion": "accept the Revised LPL FY13 Budget as revised to Town Manager's request to $312,313, with Salary and Longevity at $216,775, remaining line items to be adjusted to equal $95,538",
+   "motion": "Accept the budget as revised to FY13 Town Manager's request to $312,313, with Salary and Longevity at $216,775, remaining line items adjusted to equal $95,538.",
    "moved_by": "Jeanne Raboin",
    "seconded_by": "Kathy Murray",
-   "outcome": "passed 4-2",
+   "outcome": "passed 4 yes, 2 no",
    "procedural": false,
-   "quote": "motion made by jeanne raboin that we accept the budget as revised to fy13 town manager's request to $312,313, with salary and longevity at $216,775. remaining line items to be adjusted to equal $95,538. seconded by kathy murray. motion passed: 4 yes, 2 no."
+   "quote": "motion made by jeanne raboin that we accept the budget as revised to fy13 town manager's request to $312,313, with salary and longevity at $216,775."
   },
   {
-   "motion": "move April Trustees meeting to April 26",
+   "motion": "Move the April Trustees meeting to April 26.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Lisa Krowitz",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made by dick mailloux and seconded by lisa krowitz to move trustees meeting to april 26; passed unanimously."
   },
   {
-   "motion": "vote Jeanne Raboin as chair",
+   "motion": "Elect Jeanne Raboin as chair.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Noelle Bodkin",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made by dick mailloux and seconded by noelle bodkin to vote jeanne raboin as chair; passed unanimously."
   },
   {
-   "motion": "vote Lisa Krowitz as secretary",
+   "motion": "Elect Lisa Krowitz as secretary.",
    "moved_by": "Jeanne Raboin",
    "seconded_by": "Len Smetana",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made by jeanne raboin and seconded by len smetana to vote lisa krowitz as secretary; passed unanimously."
   },
   {
-   "motion": "adjourn at 9:55 pm",
+   "motion": "Adjourn the meeting at 9:55 pm.",
    "moved_by": "Kathy Murray",
    "seconded_by": "Dick Mailloux",
    "outcome": "passed unanimously",
@@ -77,6 +77,279 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text extracted via macOS Vision OCR. Eight votes recorded. All passed.",
- "cost_usd": 0.0929335
+ "note": "OCR text of a scanned page with some garbled lines (for example the passage beginning 'Botry asked why lter to sheri', which is unreadable and was not recorded). The minutes say 'No Public comment'. John Mara's status is recorded as remote because he joined by telephone for the budget discussion. The budget vote is printed as '4 yes, 2 no' with the yes and no names listed. Staff and others named only in passing (for example Sarah Sogigian, Kate McCarron, Karen Kemp) were not recorded as attendees.",
+ "cost_usd": 0.0077385200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "status": "remote",
+   "quote": "absent: john mara, but joined the meeting via telephone for the revised lpl fy13 budget discussion"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The request by the Director (Amy) for an extension to her goals was granted, with the Director's evaluation to be done by June.",
+   "quote": "request by amy to get an extension to her goals, this is granted."
+  },
+  {
+   "decision": "Trustees' Director review forms are due April 19; the procedure and evaluation form stay the same for this cycle, with future changes to the review process to be discussed at the next meeting.",
+   "quote": "reviews by trustees to be turned in by april 19."
+  },
+  {
+   "decision": "Jen will post the Trustees' names and contact information on the library website/phone information.",
+   "quote": "jen will be posting the trustees names and contact information."
+  },
+  {
+   "decision": "Amy will let the Teen Center and schools know about the library closure for the teen program on April 5.",
+   "quote": "amy will let the teen center and schools know that this will be going on."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revised LPL FY13 budget total",
+   "what_was_recorded": "The motion to accept the budget as revised to the Town Manager's request set the total and the salary and longevity figures, and the remaining line items were to be adjusted to a set amount.",
+   "figures_as_printed": [
+    "$312,313",
+    "$216,775",
+    "$95,538"
+   ],
+   "quote": "motion made by jeanne raboin that we accept the budget as revised to fy13 town manager's request to $312,313, with salary and longevity at $216,775."
+  },
+  {
+   "topic": "Loss of State Aid",
+   "what_was_recorded": "Loss of State Aid was discussed; the amount is not reflected in the proposed budget, so the money would have to come from elsewhere. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "discussion surrounding loss of state aid, this amount isn't reflected in the proposed budget, so these monies would"
+  },
+  {
+   "topic": "CAFO budget cut request",
+   "what_was_recorded": "The CAFO requested a 10% budget cut, which led to the Trustees Budget Sub-committee proposal.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "since the subcommittee did not meet after the cafo requested a 10% budget cut"
+  },
+  {
+   "topic": "Budget Sub-committee proposal",
+   "what_was_recorded": "Sub-committee proposal froze the Director's salary, cut hours for several staff, and reduced library hours from 44 to 42 per week, plus operating expense line item cuts.",
+   "figures_as_printed": [
+    "44",
+    "42",
+    "2 hrs/wk",
+    "1 hr/wk"
+   ],
+   "quote": "library hours will also be reduced from 44 to 42 hours per week."
+  },
+  {
+   "topic": "Second budget proposal (Dick Mailloux)",
+   "what_was_recorded": "Proposal to reduce total library hours to 40 per week, cut staff hours, and eliminate two Page positions and one library assistant position, using the same operating cost cuts as the sub-committee.",
+   "figures_as_printed": [
+    "40/week",
+    "2 hrs/wk",
+    "4 hrs/wk"
+   ],
+   "quote": "dick presented a second budget proposal: reduce total library hours to 40/week, reduce hours for amy,"
+  },
+  {
+   "topic": "Postage over budget",
+   "what_was_recorded": "Postage is slightly over budget and may require a line item transfer request at the next Board meeting. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "postage is slightly over, may need a line item transfer request at next board of trustees meeting."
+  },
+  {
+   "topic": "Staff longevity payments",
+   "what_was_recorded": "Longevity payments were noted for two staff members, one due next month and one in June. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "kate mccarron's longevity is next month; karen kemp's longevity"
+  },
+  {
+   "topic": "Funding for food for teen program",
+   "what_was_recorded": "Amy will request money for food from the Friends for the teen program on April 5. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "amy will request money for food from friends."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "February 9, 2012 minutes",
+   "resolution": "approved as amended",
+   "quote": "february 9, 2012 minutes: motion made by dick mailloux and seconded by len smetana to approve minutes as",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "February 16, 2012 minutes",
+   "resolution": "approved as amended",
+   "quote": "february 16, 2012 minutes: motion made by dick mailloux and seconded by kathy murray to approve minutes as",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, no action",
+   "quote": "budget/circulation update: fy 2102 budget on track; postage is slightly over, may need a line item transfer",
+   "tags": [
+    "director report",
+    "circulation",
+    "staffing",
+    "programs",
+    "technology"
+   ]
+  },
+  {
+   "topic": "Staff Development closure and teen program April 5",
+   "resolution": "approved library closure 3-6 pm",
+   "quote": "kathy murray made motion to close library from 3-6 pm for staff development, re-opening from 6-8; len",
+   "tags": [
+    "programs",
+    "teens",
+    "hours"
+   ]
+  },
+  {
+   "topic": "Approval of Revised LPL FY 2013 Budget",
+   "resolution": "accepted as revised, passed 4 yes, 2 no",
+   "quote": "approval of revised lpl fy 2013 budget (trustee budget sub- committee: noelle bodkin, john mara, kathy murray):",
+   "tags": [
+    "budget",
+    "FY13",
+    "staffing",
+    "hours",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "April meeting date",
+   "resolution": "moved to April 26",
+   "quote": "motion made by dick mailloux and seconded by lisa krowitz to move trustees meeting to april 26; passed unanimously.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Process for Director's Evaluation",
+   "resolution": "extension granted; current process kept for this cycle",
+   "quote": "process for director's evaluation: this should be done by june; request by amy to get an extension to her goals, this",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Phone and library web site",
+   "resolution": "discussed; Jen to post Trustee contacts",
+   "quote": "information updates for phone and library web site: discussion about the issues with the phone and updating the web",
+   "tags": [
+    "technology",
+    "website"
+   ]
+  },
+  {
+   "topic": "Town Caucus and other business",
+   "resolution": "no action; announcements",
+   "quote": "town caucus, march 19, 2012: noelle bodkin will not run again; len and jeanne will run.",
+   "tags": [
+    "town caucus",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Board chair and secretary",
+   "resolution": "Jeanne Raboin elected chair; Lisa Krowitz elected secretary",
+   "quote": "dick mailloux announced his resignation as board chair.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:55 pm",
+   "quote": "motion made by kathy murray and seconded by dick mailloux to adjourn at 9:55 pm; passed unanimously",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report budget/circulation update: fy 2102 budget on track; postage is slightly over, may need a line item"
+  },
+  {
+   "name": "Approval of Revised LPL FY 2013 Budget",
+   "where": "text",
+   "quote": "approval of revised lpl fy 2013 budget (trustee budget sub- committee: noelle bodkin, john mara, kathy murray):"
+  },
+  {
+   "name": "Budget Sub-committee budget Proposal",
+   "where": "text",
+   "quote": "budget sub-committee budget proposal, which was developed by john since the subcommittee did not meet"
+  },
+  {
+   "name": "Second budget proposal (Dick Mailloux)",
+   "where": "text",
+   "quote": "dick presented a second budget proposal: reduce total library hours to 40/week, reduce hours for amy,"
+  }
+ ],
+ "tags": [
+  "library budget",
+  "FY13 budget",
+  "state aid",
+  "staffing and hours",
+  "director evaluation",
+  "board officers",
+  "meeting schedule",
+  "Friends of the Library",
+  "teen programs",
+  "technology",
+  "website"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-04-22",
  "docid": "4884",
@@ -12,33 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Warrant Article 27, Registered Marijuana Dispensaries, at Annual Town Meeting",
+   "motion": "Recommend approval at Annual Town Meeting of Warrant Article 27, Registered Marijuana Dispensaries.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved for the bos to recommend approval of warrant article 27, registered marijuana dispensaries, at annual town meeting. mr. matthews seconded. on vote, motion carried",
-   "quote_taken_from_text": true
+   "quote": "ms. bertram moved for the bos to recommend approval of warrant article 27, registered marijuana dispensaries, at annual town meeting. mr. matthews seconded. on vote, motion carried, 5 in favor"
   },
   {
-   "motion": "Recommend approval of Warrant Article 28, Right to Farm Bylaw as revised, at Annual Town Meeting",
+   "motion": "Recommend approval at Annual Town Meeting of Warrant Article 28, Right to Farm Bylaw, as revised.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved for the bos to recommend approval at annual town meeting, on warrant article 28, right to farm bylaw as revised. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved for the bos to recommend approval at annual town meeting, on warrant article 28, right to farm bylaw as revised. ms. bertram seconded. on vote, motion carried, 5 in favor"
   },
   {
-   "motion": "Recommend approval of Warrant Article 9, FY14 Budget Amendments, at Annual Town Meeting",
+   "motion": "Recommend approval at Annual Town Meeting of Warrant Article 9, FY14 Budget Amendments.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved for the bos to recommend approval at annual town meeting, on warrant article 9, fy14 budget amendments. ms. bertram seconded. noted was that this motion is for article 9 and",
-   "quote_taken_from_text": true
+   "quote": "mr. matthews moved for the bos to recommend approval at annual town meeting, on warrant article 9, fy14 budget amendments. ms. bertram seconded."
   },
   {
-   "motion": "Abate ambulance bills in the amount of $3947.10",
+   "motion": "Abate the ambulance bills as noted in the documentation, amounting to $3947.10.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
@@ -46,24 +44,530 @@
    "quote": "ms. bertram moved to abate the ambulance bills as noted in the documentation amounting to $3947.10. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Support the FY2015 Mosquito Control budget and appoint the Chairperson of the Lunenburg Board of Health as designee for mosquito control funding",
+   "motion": "Support the FY2015 Mosquito Control budget and appoint the Chairperson of the Lunenburg Board of Health as designee for the mosquito control funding.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to support the budget and to appoint the chairperson of the lunenburg board of health as the designee for the mosquito control funding. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed"
+   "quote": "ms. bertram moved to support the budget and to appoint the chairperson of the lunenburg board of health as the designee for the mosquito control funding."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded meeting mourned at 9. 5 invavor, o opposed. ",
-   "quote_taken_from_text": true
+   "quote": "adjournment: being no further business ms. bertram moved to adjourn the meeting. mr. matthews seconded"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document. Final vote on adjournment contains OCR errors (\\\"mourned\\\" for \\\"adjourned\\\", \\\"invavor\\\" for \\\"in favor\\\", \\\"O\\\" for \\\"0\\\"), quoted verbatim as printed. No votes recorded for approval of prior minutes; Executive Session section notes \\\"None\\\".",
- "cost_usd": 0.1354415
+ "note": "OCR text from a macOS Vision scan; several passages are garbled and were copied as printed. The adjournment vote line reads '5 invavor, O opposed' and the adjournment time reads '9'; outcome recorded as 5-0 from that garbled line. Article 9 figure reads '$1500&' followed by '$2439'. The public comment speaker 'So Sunget Lane' is OCR-garbled. The warrant figures are listed without a clear mapping to the 4/22 and 4/23 warrants. The attendance line omits Mr. Alonzo, who speaks and whose presence is implied by the 5-member votes; his role is not printed. The Article 9 motion is recorded as 5-0 in a line separate from its motion text. Votes on Article 9 and the mosquito item are quoted at the motion sentence, with the count printed in a later line. The minutes print no documents list heading; documents are named only in the discussion text.",
+ "cost_usd": 0.017915119999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "announcements: mr. alonzo announced the following:"
+  },
+  {
+   "name": "Joanna Bilotta Simeone",
+   "role": "Chairperson of the Lunenburg Planning Board",
+   "status": "present",
+   "quote": "joanna bilotta simeone, chairperson of the lunenburg planning board reviewed"
+  },
+  {
+   "name": "Doug MacMillan",
+   "role": "representing the Agricultural Commission",
+   "status": "present",
+   "quote": "doug macmillan & jeffrey mendoza representing the agricultural commission came before the"
+  },
+  {
+   "name": "Jeffrey Mendoza",
+   "role": "representing the Agricultural Commission",
+   "status": "present",
+   "quote": "doug macmillan & jeffrey mendoza representing the agricultural commission came before the"
+  },
+  {
+   "name": "Susan Doors",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doors, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "BOS will accept the resignations of Jim Lattanzi (Agricultural Commission) and Joe Levine (Building Reuse Committee); no vote recorded.",
+   "quote": "mr. alonzo stated that the bos will accept these resignations."
+  },
+  {
+   "decision": "Board agreed to send letters thanking Jim Lattanzi and Joe Levine for their service.",
+   "quote": "the board agreed to send letters to mr. lattanzi and mr. levine thanking them for their service to the town."
+  },
+  {
+   "decision": "Changes made to Article 27 that evening to be bookmarked for the Town Meeting floor.",
+   "quote": "any changes made this evening will be book marked for town meeting floor"
+  },
+  {
+   "decision": "Clerical change to Section 4.16.10 (Documentation) of the Article 27 bylaw to be put forward by Mr. Ebersole.",
+   "quote": "4.16.10. documentation: clerical change to the proposed language to be put forward by mr. ebersole"
+  },
+  {
+   "decision": "Agricultural Commission to discuss Article 28 changes with the Moderator before Annual Town Meeting.",
+   "quote": "agricultural commission should discuss changes with the moderator before annual town meeting"
+  },
+  {
+   "decision": "BOS requested clarification, before Annual Town Meeting, on the 'lot' vs. 'parcel' wording in Article 28 and research of other communities' farming size requirements.",
+   "quote": "bos requested clarification be received back, before the annual town meeting, on the verbiage"
+  },
+  {
+   "decision": "Public Hearing on Article 19 set for 4/29/2014.",
+   "quote": "a public hearing concerning this article has been set for 4/29/2014."
+  },
+  {
+   "decision": "BOS will review the last paragraph on page 3 of the draft Administrative Organization Plan for possible language change.",
+   "quote": "the bos will review further the last paragraph on page 3 of the draft document of the administrative organization plan for potential change in language"
+  },
+  {
+   "decision": "Town Manager will present Article 19 at Annual Town Meeting; it cannot be amended on the floor.",
+   "quote": "town manager will present this at annual town meeting and it cannot be amended on the floor"
+  },
+  {
+   "decision": "Police OD In Duty medical bill (Article 8, Payment of Prior Year Bills) to be placed on the 4/29/2014 agenda.",
+   "quote": "this will be placed on the 4/29/2014 agenda"
+  },
+  {
+   "decision": "Board of Selectmen Goals and Town Manager Goals to be discussed at the 4/29/2014 BOS meeting.",
+   "quote": "board of selectmen goals & town manager goals will be discussed at the 4/29/2014 bos meeting"
+  },
+  {
+   "decision": "Third Quarter Financials to be presented to the FinCom at its next meeting.",
+   "quote": "this report will be presented to the fincom at their next meeting"
+  },
+  {
+   "decision": "Town Manager to schedule a Public Meeting with a Tennessee Gas representative within the next 3 months.",
+   "quote": "will schedule a public meeting with a representative from tennessee gas to discuss the proposed gas pipeline project within in the next 3 months"
+  },
+  {
+   "decision": "Ms. Bertram to follow up with MRPC on the Rt. 12 Sterling intersection cost clarification.",
+   "quote": "ms. bertram will follow up with mrpc on clarification regarding this issue."
+  },
+  {
+   "decision": "Mr. Alonzo to follow up with MA Broadband by phone regarding his letter.",
+   "quote": "will follow up with a phone call to them."
+  },
+  {
+   "decision": "Mr. Ebersole to collect information from licensees who may be collecting meals tax.",
+   "quote": "mr. ebersole also mentioned that he will be collecting information from our licensees who may be collecting meals tax."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 9 FY14 supplemental appropriation of Free Cash",
+   "what_was_recorded": "The FY14 budget amendments would require a supplemental appropriation of Free Cash in the stated amount.",
+   "figures_as_printed": [
+    "$154,563"
+   ],
+   "quote": "they will be seeking a supplemental appropriation of free cash in the amount of $154,563"
+  },
+  {
+   "topic": "Transfer of unexpended school planning appropriations",
+   "what_was_recorded": "Unexpended appropriations from two articles relating to school planning expenses are to be transferred; the minutes print two figures with the OCR breaking the first.",
+   "figures_as_printed": [
+    "$1500&",
+    "$2439"
+   ],
+   "quote": "transferring of unexpended appropriations from two articles relating to school planning expenses in the amount of $1500& $2439"
+  },
+  {
+   "topic": "Free Cash balance after Article 9",
+   "what_was_recorded": "The remaining balance of Free Cash was stated.",
+   "figures_as_printed": [
+    "$5230"
+   ],
+   "quote": "balance of free cash remaining is $5230"
+  },
+  {
+   "topic": "Police OD In Duty medical bill (Article 8)",
+   "what_was_recorded": "A medical bill received the prior week needs board action under Article 8, Payment of Prior Year Bills.",
+   "figures_as_printed": [
+    "$570"
+   ],
+   "quote": "od in duty medical bill of $570 which was received last week"
+  },
+  {
+   "topic": "Ambulance bill abatement request",
+   "what_was_recorded": "A request to abate ambulance bill #WHITB was presented; the applicant qualified under income guidelines.",
+   "figures_as_printed": [
+    "$3947.10"
+   ],
+   "quote": "ms. speidel presented the board a request for abatement on ambulance bill #whitb in the amount of $3947.10."
+  },
+  {
+   "topic": "FY2015 Mosquito Control assessment",
+   "what_was_recorded": "Lunenburg's FY2015 mosquito control assessment is included in the Town Manager's budget recommendation.",
+   "figures_as_printed": [
+    "$62,374"
+   ],
+   "quote": "lunenburg's assessment portion for fy2015 is $62,374 and is included in the town manager's budget recommendation."
+  },
+  {
+   "topic": "Q3 Local Receipts - Zoning Incentive payment",
+   "what_was_recorded": "Mr. Matthews suggested setting aside a Zoning Incentive payment received for the Tri-Town Development for neighborhood improvements and/or the Summer St. project.",
+   "figures_as_printed": [
+    "$99k"
+   ],
+   "quote": "mr. matthews suggested that in regards to local receipts he would like to see the $99k received from the zoning incentive"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant totals were listed for the 4/22/2014 and 4/23/2014 warrants (W#55-14, W#56-14); the text does not clearly map each figure to a warrant.",
+   "figures_as_printed": [
+    "$202,830.03",
+    "$257,811.69",
+    "$621,863.92"
+   ],
+   "quote": "4/22/2014 4/23/2014 w#55-14 w#56-14 $202,830.03 $257,811.69 $621,863.92"
+  },
+  {
+   "topic": "Monty Tech FY2015 assessment",
+   "what_was_recorded": "A revised FY2015 Monty Tech assessment is below the budgeted projection; the Town Manager recommends re-appropriating the difference to the Lunenburg Public Schools.",
+   "figures_as_printed": [
+    "$17,988"
+   ],
+   "quote": "a revised fy2015 assessment letter was received from monty tech and it is approximately $17,988 less than what is projected in the budget."
+  },
+  {
+   "topic": "MPO Rt. 12 Sterling intersection cost",
+   "what_was_recorded": "Cost of proposed Rt. 12 intersection improvements in Sterling rose from the earlier figure to a higher figure.",
+   "figures_as_printed": [
+    "$1.3m",
+    "$6.1m"
+   ],
+   "quote": "the cost for these improvements have gone from $1.3m to in excess of $6.1m"
+  },
+  {
+   "topic": "Meals tax licensee certificate fee",
+   "what_was_recorded": "A provision carries a fee for applicants to receive a Certificate of Good Standing from the Department of Revenue.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "there is a provision, which is a $25 fee, to have the applicants receive a certificate of good standing from the department of revenue."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of unexpended appropriations from two articles relating to school planning expenses.",
+   "amount_as_printed": "$1500& $2439",
+   "outcome": "Proposed; to be requested at Annual Town Meeting under Article 9. No transfer vote recorded.",
+   "quote": "transferring of unexpended appropriations from two articles relating to school planning expenses in the amount of $1500& $2439"
+  },
+  {
+   "description": "Transfers from Interest/Temporary Loans, Liability Insurance, Workers Compensation, Health Insurance, Life Insurance, Historical Commission, Reserve Fund, Salary Reserve, Unemployment Expense and Recycling Line to cover projected deficits in several departments.",
+   "amount_as_printed": "not stated",
+   "outcome": "Described as planned as part of Article 9; no amounts printed and no transfer vote recorded.",
+   "quote": "transfers will be made from interest/temporary loans; liability insurance; workers compensation; health insurance"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "Chair",
+   "topic": "Lane Property Walk and public forum",
+   "quote": "ms. bertram commented to say that the lane property walk which was held on 4/19/2014, was well attended"
+  },
+  {
+   "speaker": "So Sunget Lane",
+   "topic": "Drug Give Back Day",
+   "quote": "public buck, so sunget lane announced that the drug give back day wilbe hold on april 25 r"
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "topic": "Earth Day reminder",
+   "quote": "mr. ebersole noted that today is earth day and all should reduce, reuse, and recycle."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "topic": "Meals tax licensee information",
+   "quote": "mr. ebersole also mentioned that he will be collecting information from our licensees who may be collecting meals tax."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "ms. bertram commented to say that the lane property walk which was held on 4/19/2014, was well attended",
+   "tags": [
+    "public comment",
+    "Lane Property"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements: mr. alonzo announced the following:",
+   "tags": [
+    "announcements",
+    "events"
+   ]
+  },
+  {
+   "topic": "Warrant Article 27 - Registered Marijuana Dispensaries",
+   "resolution": "recommended approval for Annual Town Meeting, 5-0",
+   "quote": "ms. bertram moved for the bos to recommend approval of warrant article 27, registered marijuana dispensaries, at annual town meeting.",
+   "tags": [
+    "warrant articles",
+    "marijuana",
+    "zoning bylaw",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Warrant Article 28 - Right to Farm Bylaw",
+   "resolution": "recommended approval as revised, 5-0",
+   "quote": "mr. ebersole moved for the bos to recommend approval at annual town meeting, on warrant article 28, right to farm bylaw as revised.",
+   "tags": [
+    "warrant articles",
+    "agriculture",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Warrant Article 9 - FY14 Budget Amendments",
+   "resolution": "recommended approval, 5-0",
+   "quote": "mr. matthews moved for the bos to recommend approval at annual town meeting, on warrant article 9, fy14 budget amendments.",
+   "tags": [
+    "warrant articles",
+    "budget amendments",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Warrant Article 19 - Administrative Reorganization, Land Use Departments",
+   "resolution": "discussed; Public Hearing set for 4/29/2014; no vote",
+   "quote": "article 19 - administrative reorganization, land use departments: ms. speidel commented to say that after further review she",
+   "tags": [
+    "warrant articles",
+    "land use",
+    "administration",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Request to abate ambulance bill",
+   "resolution": "abatement approved, 5-0",
+   "quote": "ms. speidel presented the board a request for abatement on ambulance bill #whitb in the amount of $3947.10.",
+   "tags": [
+    "abatement",
+    "ambulance"
+   ]
+  },
+  {
+   "topic": "Mosquito Control FY15 funding declaration",
+   "resolution": "approved support and designated BOH chair, 5-0",
+   "quote": "3. appoint designee, declaration of support/no support for fy15 mosquito control funding",
+   "tags": [
+    "mosquito control",
+    "board of health",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Q3 financials; BOS and Town Manager goals",
+   "resolution": "no action; goals to 4/29/2014 meeting",
+   "quote": "board of selectmen goals & town manager goals will be discussed at the 4/29/2014 bos meeting",
+   "tags": [
+    "financial review",
+    "quarterly report",
+    "goals"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no vote recorded on minutes or warrants; Open Meeting Law inquiries referred to Town Clerk",
+   "quote": "action file issues: mr. alonzo stated that inquiries are being received from various entities regarding the open meeting law",
+   "tags": [
+    "minutes",
+    "warrants",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational; vacancy joint meeting planned for Library Trustees seat",
+   "quote": "board of health - no report",
+   "tags": [
+    "committee reports",
+    "library",
+    "MPO",
+    "school building committee",
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Town Manager reports - Tennessee Gas pipeline and Monty Tech assessment",
+   "resolution": "informational; Public Meeting to be scheduled",
+   "quote": "proposed tennessee gas pipeline project: ms. speidel received a letter informing the town of this project",
+   "tags": [
+    "pipeline",
+    "monty tech",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Accept resignations",
+   "resolution": "accepted by announcement, no vote recorded; thank-you letters to be sent",
+   "quote": "mr. alonzo stated that the bos will accept these resignations.",
+   "tags": [
+    "appointments",
+    "resignations",
+    "agricultural commission",
+    "building reuse committee"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "mr. ebersole noted that today is earth day and all should reduce, reuse, and recycle.",
+   "tags": [
+    "public comment",
+    "meals tax"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned, 5-0",
+   "quote": "adjournment: being no further business ms. bertram moved to adjourn the meeting. mr. matthews seconded",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Medical Marijuana Bylaw (Warrant Article 27)",
+   "where": "text",
+   "quote": "reviewed the medical marijuana bylaw with the board touching on the following items"
+  },
+  {
+   "name": "Right to Farm Bylaw (Warrant Article 28)",
+   "where": "text",
+   "quote": "seeking approval of warrant article 28 and discussed the following changes"
+  },
+  {
+   "name": "Updated spreadsheet reflecting FY2014 budget amendments and supplemental appropriation",
+   "where": "text",
+   "quote": "ms. speidel provided the bos with an updated spreadsheet, which reflects the fy2014"
+  },
+  {
+   "name": "Warrant Article 9, FY14 Budget Amendments",
+   "where": "text",
+   "quote": "mr. matthews moved for the bos to recommend approval at annual town meeting, on warrant article 9, fy14 budget amendments."
+  },
+  {
+   "name": "Warrant Article 8, Payment of Prior Year Bills",
+   "where": "text",
+   "quote": "action will be needed by the bos regarding article 8. payment of prior year bills"
+  },
+  {
+   "name": "Warrant Article 19 - Administrative Reorganization, Land Use Departments",
+   "where": "text",
+   "quote": "article 19 - administrative reorganization, land use departments: ms. speidel commented to say that after further review she"
+  },
+  {
+   "name": "Draft Administrative Organization Plan",
+   "where": "text",
+   "quote": "the draft document of the administrative organization plan"
+  },
+  {
+   "name": "Third Quarter Financials (prepared by the Town Accountant)",
+   "where": "text",
+   "quote": "ms. speidel reviewed the third quarter financials prepared by the town accountant"
+  },
+  {
+   "name": "Warrants 4/22/2014 and 4/23/2014 (W#55-14, W#56-14)",
+   "where": "text",
+   "quote": "4/22/2014 4/23/2014 w#55-14 w#56-14 $202,830.03 $257,811.69 $621,863.92"
+  },
+  {
+   "name": "Revised FY2015 assessment letter from Monty Tech",
+   "where": "text",
+   "quote": "a revised fy2015 assessment letter was received from monty tech"
+  },
+  {
+   "name": "Letter from Tennessee Gas regarding proposed pipeline project",
+   "where": "text",
+   "quote": "ms. speidel received a letter informing the town of this project"
+  },
+  {
+   "name": "Mr. Alonzo's letter concerning the high cost of connection to MA Broadband",
+   "where": "text",
+   "quote": "he has re-sent his letter concerning the high cost of connection to ma broadband"
+  },
+  {
+   "name": "Talent Bank form",
+   "where": "text",
+   "quote": "to please fill out and return a talent bank form"
+  }
+ ],
+ "tags": [
+  "select board",
+  "annual town meeting",
+  "warrant articles",
+  "marijuana dispensary bylaw",
+  "right to farm",
+  "budget amendments",
+  "free cash",
+  "ambulance abatement",
+  "mosquito control",
+  "quarterly financials",
+  "committee reports",
+  "tennessee gas pipeline",
+  "monty tech",
+  "appointments",
+  "resignations",
+  "open meeting law",
+  "land use director"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

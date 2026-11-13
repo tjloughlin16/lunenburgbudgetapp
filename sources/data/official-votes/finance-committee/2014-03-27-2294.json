@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-03-27",
  "docid": "2294",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Articles 1-6 (revolving fund articles)",
+   "motion": "Recommend approval of Articles 1-6, the revolving fund articles",
    "moved_by": "BL",
    "seconded_by": "SR",
    "outcome": "passed 5-0",
@@ -44,15 +44,15 @@
    "quote": "bl motioned to recommend approval of article 17, to raise and appropriate or transfer $814,242 to operate the sewer enterprise fund. jh seconded; motion carried 5-0."
   },
   {
-   "motion": "Recommend approval of Article 21, to appropriate by transfer or borrowing up to $2,200,000 which will be funded through betterments to connect users to sewer mains",
+   "motion": "Recommend approval of Article 21, to appropriate by transfer or borrowing up to $2,200,000 funded through betterments to connect users to sewer mains",
    "moved_by": "JH",
    "seconded_by": "SR",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "jh motioned to recommend approval of article 21, to appropriate by transfer or borrowing up to $2,200,000 which will be funded through betterments to connect users to sewer mains. sr seconded; motion carried 5-0."
+   "quote": "jh motioned to recommend approval of article 21, to appropriate by transfer or borrowing up to $2,200,000 which will be funded through betterments"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting",
    "moved_by": "SR",
    "seconded_by": "TB",
    "outcome": "passed",
@@ -61,6 +61,273 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; scanned minutes readable. Note: Article 26 was tabled (postponed) for more information and was not voted on, so not included.",
- "cost_usd": 0.10380650000000001
+ "note": "OCR text of a single typed page; some typos (e.g., \"Junenburgaccess\"), and the layout splits the 4/10-to-4/3 paragraph around item numbers 5. The minutes record no vote on tabling Article 26 or on moving the 4/10 meeting; those are recorded as decisions. The meeting was called to order at 7:00 pm (no motion needed). No votes were recorded on the public hearing opening/closing. The Town Manager is referenced but not named. The minutes print no dollar figures for the 2015 budget itself, only for warrant articles and the Lane Property.",
+ "cost_usd": 0.00799662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, j. smith, k. menard"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, j. smith, k. menard"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, j. smith, k. menard"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "member, Finance Committee",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, j. smith, k. menard"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "member, Finance Committee",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, j. smith, k. menard"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "member, Finance Committee",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, j. smith, k. menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "member, Finance Committee",
+   "status": "present",
+   "quote": "m. erickson, j. henshaw, t. burchfield, b. laffond, s. raboin, j. smith, k. menard"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "of the Sewer Commission",
+   "status": "present",
+   "quote": "carl luck of the sewer commission presented the 2015 enterprise fund budget and discussed a borrowing to connect users"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "of the Open Space Ad Hoc Committee",
+   "status": "present",
+   "quote": "brandon kibbe of the open space ad hoc committee presented information regarding a warrant article to purchase a"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee decided to move the 4/10 meeting to 4/3 so that related discussions could be finished before the warrant is distributed.",
+   "quote": "the committee decided to move the 4/10 meeting to 4/3 in order to"
+  },
+  {
+   "decision": "Article 26 (Student Transportation Offset Receipt Fund) recommendation was tabled to next week to obtain more information on the nature of the account.",
+   "quote": "was tabled for next week in order to obtain more information regarding the nature of the account."
+  },
+  {
+   "decision": "All other moneyed warrant articles were held pending more information.",
+   "quote": "all other moneyed articles were held as more information was needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer enterprise fund 2015 budget and sewer connection borrowing",
+   "what_was_recorded": "Sewer Commission presented the 2015 enterprise fund budget and discussed a borrowing to connect users to the Fitchburg and Leominster sewer mains; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "carl luck of the sewer commission presented the 2015 enterprise fund budget and discussed a borrowing to connect users"
+  },
+  {
+   "topic": "Lane Property purchase (warrant article)",
+   "what_was_recorded": "Purchase is contingent on a state grant funding 60% of the price; the Town would fund the remainder, about $230,000 over 5 or 10 years.",
+   "figures_as_printed": [
+    "60%",
+    "$230,000"
+   ],
+   "quote": "the town would fund the remainder of the purchase price, about $230,000 over 5 or 10 years."
+  },
+  {
+   "topic": "2015 budget final review",
+   "what_was_recorded": "Town Manager gave a final review of the budget; some information to be presented next week before unallocated figures are allocated. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager provided a final review of the budget, and noted that some information will be presented next week"
+  },
+  {
+   "topic": "Articles 1-6 revolving funds",
+   "what_was_recorded": "Revolving fund articles set up to receive department fees were recommended for approval; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "articles 1-6 are the revolving fund articles set up to receive fees for departments."
+  },
+  {
+   "topic": "Article 15 Solid Waste Disposal Enterprise Fund",
+   "what_was_recorded": "Recommended for approval to raise and appropriate or transfer $285,000 to operate the Solid Waste Disposal Enterprise Fund.",
+   "figures_as_printed": [
+    "$285,000"
+   ],
+   "quote": "to raise and appropriate or transfer $285,000 to operate the solid waste disposal enterprise fund"
+  },
+  {
+   "topic": "Article 16 Water Department Enterprise Fund",
+   "what_was_recorded": "Recommended for approval to raise and appropriate or transfer $25,000 to operate the Water Department Enterprise Fund.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "to raise and appropriate or transfer $25,000 to operate the water department enterprise fund"
+  },
+  {
+   "topic": "Article 17 Sewer Enterprise Fund",
+   "what_was_recorded": "Recommended for approval to raise and appropriate or transfer $814,242 to operate the Sewer Enterprise Fund.",
+   "figures_as_printed": [
+    "$814,242"
+   ],
+   "quote": "bl motioned to recommend approval of article 17, to raise and appropriate or transfer $814,242 to operate the sewer"
+  },
+  {
+   "topic": "Article 21 sewer connection betterments",
+   "what_was_recorded": "Recommended for approval to appropriate by transfer or borrowing up to $2,200,000, funded through betterments to connect users to sewer mains.",
+   "figures_as_printed": [
+    "$2,200,000"
+   ],
+   "quote": "to appropriate by transfer or borrowing up to $2,200,000 which will be funded through betterments"
+  },
+  {
+   "topic": "Article 26 Student Transportation Offset Receipt Fund",
+   "what_was_recorded": "Recommendation tabled for a week; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a motion to recommend approval of article 26 to set up a student transportation offset receipt fund was tabled"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Sewer Enterprise Fund",
+   "resolution": "presented; no action recorded",
+   "quote": "carl luck of the sewer commission presented the 2015 enterprise fund budget and discussed a borrowing to connect users",
+   "tags": [
+    "sewer",
+    "enterprise fund",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Lane Property",
+   "resolution": "presented; no action recorded",
+   "quote": "the open space committee is putting forward the article to purchase the property contingent upon obtaining a state grant",
+   "tags": [
+    "open space",
+    "town forest",
+    "warrant article",
+    "state grant"
+   ]
+  },
+  {
+   "topic": "Public Hearing of the 2015 Budget",
+   "resolution": "held; opened 8:30pm, closed 8:50pm",
+   "quote": "public hearing of the 2015 budget opened at 8:30pm",
+   "tags": [
+    "budget",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Warrant Article Review",
+   "resolution": "Articles 1-6, 15, 16, 17, 21 recommended; Article 26 tabled; other moneyed articles held",
+   "quote": "several moneyed articles were taken up. all other moneyed articles were held as more information was needed.",
+   "tags": [
+    "warrant articles",
+    "enterprise funds",
+    "revolving funds",
+    "sewer",
+    "water",
+    "solid waste"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received",
+   "quote": "me reported that the school committee will hold a public hearing on their budget next week.",
+   "tags": [
+    "school budget",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "next meeting moved from 4/10 to 4/3",
+   "quote": "we will meet 4/3 instead of 4/10.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:30 pm",
+   "quote": "sr motioned to adjourn. tb seconded, meeting adjourned at 9:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Articles 1-6 (revolving fund articles)",
+   "where": "text",
+   "quote": "articles 1-6 are the revolving fund articles set up to receive fees for departments."
+  },
+  {
+   "name": "Article 15 (Solid Waste Disposal Enterprise Fund, $285,000)",
+   "where": "text",
+   "quote": "jh motioned to recommend approval of article 15, to raise and appropriate or transfer $285,000 to operate the solid waste"
+  },
+  {
+   "name": "Article 16 (Water Department Enterprise Fund, $25,000)",
+   "where": "text",
+   "quote": "jh motioned to recommend approval of article 16, to raise and appropriate or transfer $25,000 to operate the water"
+  },
+  {
+   "name": "Article 17 (Sewer Enterprise Fund, $814,242)",
+   "where": "text",
+   "quote": "bl motioned to recommend approval of article 17, to raise and appropriate or transfer $814,242 to operate the sewer"
+  },
+  {
+   "name": "Article 21 (sewer connection betterments, up to $2,200,000)",
+   "where": "text",
+   "quote": "jh motioned to recommend approval of article 21, to appropriate by transfer or borrowing up to $2,200,000"
+  },
+  {
+   "name": "Article 26 (Student Transportation Offset Receipt Fund)",
+   "where": "text",
+   "quote": "a motion to recommend approval of article 26 to set up a student transportation offset receipt fund was tabled"
+  },
+  {
+   "name": "Warrant Article to purchase a parcel of property abutting the Town Forest (Lane Property)",
+   "where": "text",
+   "quote": "presented information regarding a warrant article to purchase a parcel of property abutting the town forest"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "2015 budget",
+  "warrant articles",
+  "enterprise funds",
+  "sewer",
+  "solid waste",
+  "water",
+  "revolving funds",
+  "Lane Property",
+  "open space",
+  "public hearing",
+  "green communities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

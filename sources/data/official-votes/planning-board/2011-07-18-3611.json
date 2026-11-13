@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-07-18",
  "docid": "3611",
@@ -12,23 +12,115 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to discuss litigation of O'Brien Homes, Inc. v. Planning Board and Town of Lunenburg",
+   "motion": "Enter Executive Session at 6:25 PM for discussion of litigation of O'Brien Homes, Inc. v. Planning Board and the Town of Lunenburg, pending strategy.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Salia",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to enter executive session at 6:25 pm for discussion of litigation of o'brien homes, inc. v. planning board and the town of lunenburg pending strategy, motion, ms. bilotta, second, mr. salia, roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. saiia, aye. motion passed."
+   "quote": "chair called for motion to enter executive session at 6:25 pm for discussion of litigation of o'brien homes, inc. v. planning"
   },
   {
-   "motion": "Adjourn Executive Session",
+   "motion": "Adjourn Executive Session (adjourned 7:00 PM).",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saila",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "adjournment of executive session, motion, ms. bilotta, second, mr. saila, roll call vote, mr. bakaysa, aye; ms. bilotta, aye; mr. salia, aye. adjourned"
+   "quote": "chair called for adjournment of executive session, motion, ms. bilotta, second, mr. saila, roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text with minor spelling inconsistencies in board member name (Salia/Saila/Saiia appear to be OCR variations of the same person, Robert J. Saiia per roll call).",
- "cost_usd": 0.12214249999999999
+ "note": "OCR text from a scan; spellings vary within the minutes (Saiia in roll call, Salia and Saila in the motions; the same board member is meant). The minutes record no vote count in printed form; the roll-call ayes are listed by name (Bakaysa, Bilotta, Saiia), so outcomes are marked 'passed'. Board members discussed not granting an extension to O'Brien Homes, but the minutes record no motion or vote on that. Only an executive session appears; no open-session business or public comment is recorded. Two absent members are referred to without names. Letterhead lists Nathan J. Lockwood, Mbr., but the minutes do not name him as present or absent, so he is omitted.",
+ "cost_usd": 0.00386012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta, robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel Attorney",
+   "status": "present",
+   "quote": "also present: town counsel attorney joel bard, kopelman and paige"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Attorney Bard will talk to Attorney Tillotson as to their intent.",
+   "quote": "attorney bard will talk to attorney tillotson as to their intent. chair will address the issue in a future executive session when a"
+  },
+  {
+   "decision": "Chair will address the issue in a future executive session when a full Board can be present.",
+   "quote": "chair will address the issue in a future executive session when a full board can be present."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Litigation cost (O'Brien Homes case)",
+   "what_was_recorded": "Board discussed money in the litigation and noted that the cost can vary to a degree.",
+   "figures_as_printed": [],
+   "quote": "further discussion on money noted that there can be a varying degree in cost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: O'Brien Homes, Inc. v. Planning Board and the Town of Lunenburg litigation",
+   "resolution": "discussed in executive session; no recorded vote on the extension question; adjourned 7:00 PM",
+   "quote": "discussion of litigation of o'brien homes, inc. v. planning board and the town of lunenburg pending strategy"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Summons served on the Planning Board for appearance in Worcester Court on July 26, 2011",
+   "where": "text",
+   "quote": "town counsel attorney joel bard addressed the summons served the planning"
+  },
+  {
+   "name": "Correspondence between Attorney Winner and the Attorney for the Aros'",
+   "where": "text",
+   "quote": "noted was the correspondence between attorney winner and the attorney for the aros'."
+  },
+  {
+   "name": "Mr. O'Brien's Purchase and Sales Agreement",
+   "where": "text",
+   "quote": "one unknown is whether mr. o'brien's purchase and sales agreement is valid."
+  }
+ ],
+ "tags": [
+  "litigation",
+  "O'Brien Homes",
+  "executive session",
+  "extension request",
+  "Worcester Court",
+  "Land Court",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-08-11",
  "docid": "4939",
@@ -12,40 +12,319 @@
  },
  "votes": [
   {
-   "motion": "Appoint Sue Doherty as Council on Aging Director",
+   "motion": "Appoint Sue Doherty as Council on Aging Director on the recommendation of the Town Manager and Screening Committee.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: p. bertram to appoint sue doherty as council on aging director on the recommendation of the town manager and screening committee discussion: ms. lu",
-   "quote_taken_from_text": true
+   "quote": "to appoint sue doherty as council on aging director on the recommendation of the town manager and screening committee"
   },
   {
-   "motion": "Not exercise the Town's Right of First Refusal on Chapter 61A land containing 11.13 acres at 150 and 164 White Street",
+   "motion": "Not to exercise the Town's Right of First Refusal on the Chapter 61A land containing 11.13 acres at 150 and 164 White Street.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to not exercise the town's right of first refusal on the chapter 61a land containing 11.13 acres located at 150 and 164 white street 2'°: t. alonzo vote: all in favor"
+   "quote": "to not exercise the town's right of first refusal on the chapter 61a land containing 11.13 acres located at 150 and 164 white street"
   },
   {
-   "motion": "Designate Board of Registrars, Election Warden, Election Deputy Warden, Election Clerks, Election Inspectors and Election Deputy Inspectors as Special Municipal Employees",
+   "motion": "Designate the Board of Registrars, Election Warden, Election Deputy Warden, Election Clerks, Election Inspectors and Election Deputy Inspectors as Special Municipal Employees.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"': p. bertram to designated the following as special municipal employees; board of registrars, election warden, election deputy warden, election clerks, election inspectors and election deputy inspectors vote: all in favor"
+   "quote": "to designated the following as special municipal employees; board of registrars, election warden, election deputy warden"
   },
   {
-   "motion": "Adjourn the meeting at 7:32 PM",
+   "motion": "Adjourn the meeting at 7:32 PM.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 7:32 pm 2\"d: p. luck vote: all in favor"
+   "quote": "to adjourn the meeting at 7:32 pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scanned document. All votes explicitly recorded with names and outcomes.",
- "cost_usd": 0.1137985
+ "dropped_unquoted": 1,
+ "note": "Text is OCR of a scanned typed minutes document, with some garbled characters (e.g., '$123,00', 'Elaiem. Petetson', 'designated' printed as 'designated'). Votes recorded only as 'All in Favor' with no numeric tally, so outcomes are given as 'passed'. The minutes of July 21, 2015 were presented for approval but no motion or vote is recorded. Pages 1-3 present; no separate documents list is printed.",
+ "cost_usd": 0.007335119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member and phyllis luck, member."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member and phyllis luck, member."
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member and phyllis luck, member."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member and phyllis luck, member."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member and phyllis luck, member."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "town manager kerry lafleur was not present."
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Council of Aging Chairman",
+   "status": "not stated",
+   "quote": "the members of the committee were pete lincoln, council of aging chairman: phyllis luck, board of selectmen member, and ms. lafleur."
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "",
+   "status": "present",
+   "quote": "ms. doherty thanked the board."
+  },
+  {
+   "name": "Mr. Foster",
+   "role": "164 White Street",
+   "status": "present",
+   "quote": "mr. foster, 164 white street, requested the board vote to not exercise its right of first refusal on the property."
+  },
+  {
+   "name": "Sally Jahriss",
+   "role": "",
+   "status": "present",
+   "quote": "sally jahriss presented her resume to the board regarding her upcoming request to be appointed to the cultural council."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No motion was needed on the draft public hearing statement for the Unitil (Fitchburg Gas and Electric Light Company, D.P.U. 15-80) hearing.",
+   "quote": "mr. toale stated there was no motion needed on this draft."
+  },
+  {
+   "decision": "Ms. Luck will follow up on the request for feedback on the number of riders on the extended route.",
+   "quote": "number of riders on the extended route. ms. luck will follow up."
+  },
+  {
+   "decision": "Mr. Toale will have Sally Jahriss come back to the Board as soon as possible regarding her Cultural Council request.",
+   "quote": "mr. toale thanked her for coming in and will have her come back as soon as possible."
+  },
+  {
+   "decision": "The Board will hold its next workshop on September 8, continuing on goal setting.",
+   "quote": "the board will hold their next workshop on september 8t' continuing on goal setting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants: school custodian payroll and deductions",
+   "what_was_recorded": "Warrants presented for a school custodian payroll and a school custodian payroll deductions warrant.",
+   "figures_as_printed": [
+    "$1937.66",
+    "$140.08"
+   ],
+   "quote": "a school custodian payroll warrant in the amount of $1937.66 was presented as well as the school custodian payroll deductions warrant in the amount of $140.08."
+  },
+  {
+   "topic": "Warrants: accounts payable and payroll",
+   "what_was_recorded": "Accounts payable warrant and payroll plus payroll deductions warrants presented.",
+   "figures_as_printed": [
+    "$40,474.43",
+    "$496,430.79",
+    "$410,141.60"
+   ],
+   "quote": "a payroll warrant in the amount of $496,430.79 along with the payroll deductions warrant in the amount of $410,141.60 was presented."
+  },
+  {
+   "topic": "Chapter 70 school budget vs. town budget",
+   "what_was_recorded": "School Committee budget update: Chapter 70 budget stated against the town budget projection; a town meeting vote is needed to allocate the additional revenue.",
+   "figures_as_printed": [
+    "$5,834,483",
+    "$5,808,799"
+   ],
+   "quote": "chapter 70 budget was $5,834,483 and the town budget projected $5,808,799."
+  },
+  {
+   "topic": "Title 1 allocation",
+   "what_was_recorded": "Title 1 allocation to Lunenburg increased; funding to hire two new reading specialists.",
+   "figures_as_printed": [
+    "$350,478",
+    "$123,00"
+   ],
+   "quote": "the system allocated $350,478, up from $123,00 from last year, the funding will be used to hire two new reading specialists"
+  },
+  {
+   "topic": "Kindergarten grant",
+   "what_was_recorded": "Kindergarten grant restored by the legislature.",
+   "figures_as_printed": [
+    "$34,000"
+   ],
+   "quote": "the kindergarten grant of $34,000 was restored by the legislature."
+  },
+  {
+   "topic": "Circuit breaker funding",
+   "what_was_recorded": "Circuit breaker reported as fully funded; no final numbers released yet. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the circuit breaker was fully funded, no final numbers released yet."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sally Jahriss",
+   "topic": "Resume for Cultural Council appointment",
+   "quote": "sally jahriss presented her resume to the board regarding her upcoming request to be appointed to the cultural council."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, condolences and hearing announcements",
+   "resolution": "no action",
+   "quote": "mr. toale announced two very important public hearings this week",
+   "tags": [
+    "public comment",
+    "hearings"
+   ]
+  },
+  {
+   "topic": "Appointment: Council on Aging Director",
+   "resolution": "Sue Doherty appointed",
+   "quote": "mr. toale read a memorandum from town manager kerry lafleur to the board.",
+   "tags": [
+    "appointments",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Release Chapter 61A option to purchase at 150 & 164 White Street",
+   "resolution": "Right of First Refusal not exercised",
+   "quote": "vote to release chapter 61a option to purchase land at 150 & 164 white street",
+   "tags": [
+    "chapter 61A",
+    "right of first refusal",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Testimony for Unitil Hearing",
+   "resolution": "no motion needed",
+   "quote": "testimony for unitil hearing",
+   "tags": [
+    "Unitil",
+    "utilities",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Special Municipal Employee designations",
+   "resolution": "designated",
+   "quote": "special municipal employee designations for board of registrars, warden, deputy warden,",
+   "tags": [
+    "elections",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Minutes of July 21, 2015",
+   "resolution": "presented; no vote recorded",
+   "quote": "minutes of july 21, 2015 were presented for approval.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "presented",
+   "quote": "warrants: a school custodian payroll warrant in the amount of $1937.66 was presented",
+   "tags": [
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Action file issues: Cable Advisory Committee seat",
+   "resolution": "no other member interested",
+   "quote": "mr. toale stated he serves on the cable advisory committee meeting",
+   "tags": [
+    "cable",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public comment: Cultural Council resume",
+   "resolution": "no action",
+   "quote": "sally jahriss presented her resume to the board regarding her upcoming request to be appointed to the cultural council.",
+   "tags": [
+    "public comment",
+    "cultural council",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:32 PM",
+   "quote": "to adjourn the meeting at 7:32 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum from Town Manager Kerry Lafleur (Council on Aging Director recommendation)",
+   "where": "text",
+   "quote": "mr. toale read a memorandum from town manager kerry lafleur to the board."
+  },
+  {
+   "name": "Draft statement for the public hearing regarding the Fitchburg Gas and Electric Light Company Hearing (D.P.U. 15-80)",
+   "where": "text",
+   "quote": "reviewed the draft statement for the public hearing regarding the fitchburg gas and electric light company hearing (d.p.u. 15-80)"
+  },
+  {
+   "name": "Requests for Qualifications from the respondents (Building Reuse Committee)",
+   "where": "text",
+   "quote": "reviewed requests for qualifications from the respondents"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "council on aging",
+  "chapter 61A",
+  "right of first refusal",
+  "Unitil",
+  "special municipal employees",
+  "warrants",
+  "school budget",
+  "Title 1",
+  "committee reports",
+  "public comment",
+  "elections"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

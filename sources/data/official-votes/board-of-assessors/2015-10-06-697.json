@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-10-06",
  "docid": "697",
@@ -12,15 +12,184 @@
  },
  "votes": [
   {
-   "motion": "Approve 15 statutory exemption applications totaling $10, 100 for FY2016",
-   "moved_by": "Richard Letarte",
-   "seconded_by": "Matthew Papini Sr",
+   "motion": "Approve 15 statutory exemption applications totaling $10, 100 for FY2016.",
+   "moved_by": "RL",
+   "seconded_by": "MP",
    "outcome": "passed",
    "procedural": false,
    "quote": "rl made a motion to approve 15 statutory exemption applications totaling $10, 100 for fy2016, the motion was seconded by mp and it was so voted aye by all."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The text 'Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and September 8, minutes' describes approval actions but does not state them as formal motions or provide vote results; per rules, actions without explicit motion language are not counted as votes.",
- "cost_usd": 0.10520449999999999
+ "note": "Text is OCR (macOS Vision) of a short minutes page; readable throughout. Only one motion with a recorded vote (exemptions, 'so voted aye by all', no tally given). Routine approvals and the adjournment are stated without a recorded motion, so they are not listed as votes. Initials (HS, RB, RL, MP) are as printed; the full names come from the Present line. Louise Paquette is named but her attendance is not stated. No public comment section is printed. No documents list or exhibits are printed.",
+ "cost_usd": 0.00390862,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman louis franco, board member richard letarte, board member matthew papini sr, harald scheid, regional assessor and rebecca boucher, associate regional assessor."
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman louis franco, board member richard letarte, board member matthew papini sr, harald scheid, regional assessor and rebecca boucher, associate regional assessor."
+  },
+  {
+   "name": "Matthew Papini Sr",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman louis franco, board member richard letarte, board member matthew papini sr, harald scheid, regional assessor and rebecca boucher, associate regional assessor."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman louis franco, board member richard letarte, board member matthew papini sr, harald scheid, regional assessor and rebecca boucher, associate regional assessor."
+  },
+  {
+   "name": "Rebecca Boucher",
+   "role": "Associate Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman louis franco, board member richard letarte, board member matthew papini sr, harald scheid, regional assessor and rebecca boucher, associate regional assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "not stated",
+   "quote": "administrative assessor louise paquette had a list of a few accounts that need to be field listed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and the September 8 minutes, with no motion or vote recorded.",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and september 8, minutes."
+  },
+  {
+   "decision": "Board's stated opinion is not to be lenient with late Chapter Application filings.",
+   "quote": "the board's opinion was not to be lenient with late filings."
+  },
+  {
+   "decision": "Action on Chapter Land applications for FY2017 tabled until the next meeting.",
+   "quote": "the board tabled taking action on chapter land applications for fy2017 until next meeting"
+  },
+  {
+   "decision": "Next meeting set for November 3, 2015 at 5:45PM.",
+   "quote": "there was discussion regarding date of the next meeting and it was set for november 3, 2015 at 5:45pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption applications for FY2016",
+   "what_was_recorded": "Motion to approve 15 statutory exemption applications with a combined total stated in dollars for FY2016, passed.",
+   "figures_as_printed": [
+    "$10, 100"
+   ],
+   "quote": "rl made a motion to approve 15 statutory exemption applications totaling $10, 100 for fy2016, the motion was seconded by mp and it was so voted aye by all."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, abatements, warrants, commitments, payroll, minutes",
+   "resolution": "approved (no motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and september 8, minutes.",
+   "tags": [
+    "routine approvals",
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Statutory exemption applications for FY2016",
+   "resolution": "approved 15 applications by vote",
+   "quote": "rl made a motion to approve 15 statutory exemption applications totaling $10, 100 for fy2016, the motion was seconded by mp and it was so voted aye by all.",
+   "tags": [
+    "exemptions",
+    "FY2016"
+   ]
+  },
+  {
+   "topic": "Late Chapter Application filings",
+   "resolution": "board opinion stated, no action",
+   "quote": "the board's opinion was not to be lenient with late filings.",
+   "tags": [
+    "chapter land",
+    "late filings"
+   ]
+  },
+  {
+   "topic": "Chapter Land applications for FY2017",
+   "resolution": "tabled to next meeting",
+   "quote": "the board tabled taking action on chapter land applications for fy2017 until next meeting",
+   "tags": [
+    "chapter land",
+    "FY2017"
+   ]
+  },
+  {
+   "topic": "Property lookup at Community Software Consortium",
+   "resolution": "no action (informational)",
+   "quote": "rb explained to board that the property lookup at the community software consortium had been changed in appearance.",
+   "tags": [
+    "software",
+    "property lookup"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting announcement",
+   "resolution": "no action (announced)",
+   "quote": "a special town meeting will be held november 16, 2015.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Report by Assessor: valuation update, New Growth, personal property",
+   "resolution": "discussed, no action recorded",
+   "quote": "report by assessor. hs and rb provided an update on the valuation update and new growth calculation.",
+   "tags": [
+    "valuation",
+    "new growth",
+    "personal property",
+    "Department of Revenue"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for November 3, 2015 at 5:45PM",
+   "quote": "there was discussion regarding date of the next meeting and it was set for november 3, 2015 at 5:45pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:35 pm (no motion recorded)",
+   "quote": "meeting adjourned at 6:35 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "property assessment",
+  "exemptions",
+  "chapter land",
+  "valuation",
+  "new growth",
+  "personal property",
+  "special town meeting",
+  "meeting scheduling"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-08-14",
  "docid": "1187",
@@ -12,23 +12,113 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of July 10, 2013",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Support the Fire Chief's request to use the balance of the FY14 Capital Line for protective gear, to purchase 10 to 12 sets of firefighting turnout gear.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "minutes approved- july 10, 2013."
-  },
-  {
-   "motion": "support Chief Sullivan's request to use the balance of the FY14 Capital Line for protective gear to purchase 10-12 sets of firefighting turnout gear",
    "outcome": "not stated",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "the capital planning committee voted to support chief sullivan's request to use the balance of the fy14 capital line for protective gear to purchase 10 - 12 sets of firefighting turnout gear."
+   "quote": "the capital planning committee voted to support chief sullivan's request to use the balance of the fy14 capital line for"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0829335
+ "note": "Single-page minutes with no public comment section and no recorded motion text, mover, seconder, or vote count for the Fire Department item; the committee is said to have 'voted to support', so it is recorded with outcome 'not stated'. The July 10, 2013 minutes approval has no recorded motion or vote and is listed as a topic only, not a vote. No dollar figure is printed for the FY14 Capital Line balance.",
+ "cost_usd": 0.00260502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "town manager kerry speidel"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Chief (Fire Department request; attendance not stated)",
+   "status": "not stated",
+   "quote": "support chief sullivan's request to use the balance of the fy14 capital line"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY14 Capital Line – Fire Department turnout gear",
+   "what_was_recorded": "The committee supported using the balance of the FY14 Capital Line to buy 10 to 12 sets of firefighting turnout gear; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "use the balance of the fy14 capital line for protective gear to purchase 10 - 12 sets of firefighting turnout gear"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval, July 10, 2013",
+   "resolution": "approved",
+   "quote": "minutes approved- july 10, 2013.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Capital Expenditure – Fire Department (turnout gear)",
+   "resolution": "committee voted to support request; no count recorded",
+   "quote": "the capital planning committee voted to support chief sullivan's request to use the balance of the fy14 capital line for",
+   "tags": [
+    "fire department",
+    "capital expenditure",
+    "FY14 capital line",
+    "protective gear"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fire Dept Memo, subject: FY14 Turnout Gear/Protective Equipment Capital Expenditure",
+   "where": "list",
+   "quote": "document used during meeting: fire dept memo, subject: fy14 turnout gear/protective equipment capital expenditure"
+  }
+ ],
+ "tags": [
+  "capital expenditure",
+  "fire department",
+  "turnout gear",
+  "FY14 capital line",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "document used during meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

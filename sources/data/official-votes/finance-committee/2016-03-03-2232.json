@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-03-03",
  "docid": "2232",
@@ -12,23 +12,404 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of February 18",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Approve the minutes of February 18.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "terri moved to approve the minutes; jay seconded the motion. the committee approved the motion by a vote of 4-0."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "terri made a motion to adjourn and jay seconded the motion. the committee approved the motion 4-0 at 8:51."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable votes recorded. Budget presentations given but no votes taken on them in these minutes.",
- "cost_usd": 0.0873415
+ "note": "OCR text of a scanned document. Several figures are garbled by OCR and are recorded as printed (e.g., '$18,158.060', '5 5,393,514', '$ 5,568,867', '$5, 777,323'). Table layouts on the slide pages are scrambled, so some figure-to-label pairings are inferred from order. Karin Menard's attendance is inferred from the 'Absent:' label, whose entry is separated by line breaks in the text. Public comment was 'None'. Two votes are recorded (minutes approval and adjournment), both 4-0. The minutes were respectfully submitted by John Henshaw, March 9, 2016.",
+ "cost_usd": 0.01222952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, chairman"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, vice-chairman"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "john henshaw, secretary"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "absent",
+   "quote": "karin menard kerry lafleur, town manager, karen brochu, town financial manager/director of municipal"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry lafleur, town manager, karen brochu, town financial manager/director of municipal"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Financial Manager/Director of Municipal Finance",
+   "status": "present",
+   "quote": "kerry lafleur, town manager, karen brochu, town financial manager/director of municipal"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "library fiscal 2017 budget presentation by martha moore. director"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "school department fiscal 2017 budget presentation by school superintendent loxi calmes"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for Thursday, March 10th, with presentations on the Council on Aging and Monty Tech FY17 budgets.",
+   "quote": "next meeting: thursday, march 10th. presentations on council on aging and monty tech fy17 budgets."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library FY17 recommended budget vs. FY16 recap",
+   "what_was_recorded": "The Town Manager's recommended library FY17 budget is less than the library's request and is an increase over the FY16 recap.",
+   "figures_as_printed": [
+    "$370,739",
+    "$4,724",
+    "$6,890",
+    "1.9%"
+   ],
+   "quote": "the town manager's recommended fy17 budget of $370,739 is $4,724 less than the library's request, but represents an increase over fy16 recap of $6,890 or 1.9%."
+  },
+  {
+   "topic": "Library request, recommendation and difference",
+   "what_was_recorded": "The library's FY17 requested total, the Town Manager's recommendation, and the difference are listed, with the request as a share of the total town budget.",
+   "figures_as_printed": [
+    "$375,463",
+    "$370,739",
+    "$4,724",
+    "1% [less than]"
+   ],
+   "quote": "• lpl requested fy17 budget total"
+  },
+  {
+   "topic": "Library per capita expense",
+   "what_was_recorded": "The library's FY17 request is stated as a per capita expense.",
+   "figures_as_printed": [
+    "$ 37.23"
+   ],
+   "quote": "lpl's request as a per capita expense = $ 37.23"
+  },
+  {
+   "topic": "State aid cut for CWMARS network",
+   "what_was_recorded": "State aid that defrays part of the CWMARS network cost has been cut, and the library must make up the difference.",
+   "figures_as_printed": [],
+   "quote": "the portion of state aid to libraries that goes to defraying some of the cost of the cwmars network has been cut."
+  },
+  {
+   "topic": "Cost of e-content licensing",
+   "what_was_recorded": "E-books, e-video and e-audio are expensive because of licensing fees, which increases the circulation budget.",
+   "figures_as_printed": [],
+   "quote": "because these materials are expensive do to licensing fees"
+  },
+  {
+   "topic": "State mandated library minimums",
+   "what_was_recorded": "State requirement figures for FY15, FY16 and FY17 are shown for the town budget minimum and library materials requirement.",
+   "figures_as_printed": [
+    "$361,192",
+    "$363,325",
+    "$364,696",
+    "$353,192",
+    "$355,325",
+    "$356,696",
+    "$57,791",
+    "$58,182",
+    "$58,182",
+    "$58,351"
+   ],
+   "quote": "$361,192 $363,325 $364,696"
+  },
+  {
+   "topic": "Library spending outside the budget",
+   "what_was_recorded": "About $50,000 is spent outside the library budget, and reference databases are valued at $50,000 per library from state aid.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "approximately $50,000 spent outside of the budget"
+  },
+  {
+   "topic": "Library cost rationale",
+   "what_was_recorded": "Decrease in state aid is recorded as an increase in CWMARS fees.",
+   "figures_as_printed": [],
+   "quote": "decrease in state aid = increase in cwmars fees"
+  },
+  {
+   "topic": "School FY17 budget proposal vs. Town Manager recommendation",
+   "what_was_recorded": "The School Committee's FY17 proposal exceeds the Town Manager's recommendation for the schools.",
+   "figures_as_printed": [
+    "$18,470,655",
+    "$312,595",
+    "$18,158.060"
+   ],
+   "quote": "the school committee's fy17 budget proposal is $18,470,655, $312,595 more than"
+  },
+  {
+   "topic": "Chapter 70 school aid range",
+   "what_was_recorded": "Potential Chapter 70 revenues range between the current formula and the Governor's budget; available funding is not settled.",
+   "figures_as_printed": [
+    "$5,957,007",
+    "$6,248,530"
+   ],
+   "quote": "potential chapter 70 revenues range from $5,957,007 under the current formula to"
+  },
+  {
+   "topic": "Town Manager recommended school increase",
+   "what_was_recorded": "The Town Manager's recommended schools budget is an increase over FY16 recap.",
+   "figures_as_printed": [
+    "$642,968",
+    "3.7%"
+   ],
+   "quote": "$642,968 above fy16 recap, or 3.7%."
+  },
+  {
+   "topic": "School additional personnel",
+   "what_was_recorded": "The school budget includes funding for additional personnel.",
+   "figures_as_printed": [
+    "$237,059"
+   ],
+   "quote": "the budget includes $237,059 for additional personnel."
+  },
+  {
+   "topic": "Health insurance and bus contract increases",
+   "what_was_recorded": "Higher health insurance costs and a costlier bus contract add expenditures.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "a costlier bus contract will add nearly $300,000 in expenditures."
+  },
+  {
+   "topic": "School budget by year (FY15, FY16, FY17)",
+   "what_was_recorded": "The school budget totals are shown for FY15 actuals, FY16 current and FY17 recommended.",
+   "figures_as_printed": [
+    "$11,360,642",
+    "5 5,393,514",
+    "$16,754,156",
+    "$11,946,700",
+    "$ 5,568,867",
+    "$17,515,092",
+    "$18,470,655"
+   ],
+   "quote": "fy16 current $11,946,700 $ 5,568,867 $17,515,092"
+  },
+  {
+   "topic": "Projected school revenues",
+   "what_was_recorded": "Projected revenues by source are listed, including Chapter 70 under both the Town Manager and Governor's figures.",
+   "figures_as_printed": [
+    "$12,051,053",
+    "$5,957,007",
+    "$6,248,530",
+    "$119,000",
+    "$747,810",
+    "$501,272",
+    "$36,740",
+    "$111,617",
+    "$255,000"
+   ],
+   "quote": "- local $12,051,053 - chapter 70 $5,957,007 (town manager) $6,248,530 ( governor's budget)"
+  },
+  {
+   "topic": "FY17 general operation budget increase",
+   "what_was_recorded": "The school general operation budget is shown with its percentage increase.",
+   "figures_as_printed": [
+    "$18,470,655",
+    "5.46%"
+   ],
+   "quote": "expenditures general operation budget $18,470,655 = 5.46% increase"
+  },
+  {
+   "topic": "Personnel and non-personnel expenditures",
+   "what_was_recorded": "Personnel spending assumes three retirements; non-personnel spending is listed.",
+   "figures_as_printed": [
+    "$12,693,332",
+    "$5, 777,323"
+   ],
+   "quote": "- personnel $12,693,332 (assumes 3 retirements- 1 full & 2 partial)"
+  },
+  {
+   "topic": "Over-target amount",
+   "what_was_recorded": "The school budget is over the target by an amount that is now reported as larger.",
+   "figures_as_printed": [
+    "$18,158,060",
+    "$312,806",
+    "$475,624"
+   ],
+   "quote": "- over target $312,806 ( but in reality is now $475,624)"
+  },
+  {
+   "topic": "Over-target items",
+   "what_was_recorded": "Items making up the over-target amount are listed with dollar figures.",
+   "figures_as_printed": [
+    "$45K",
+    "$27K",
+    "$45K",
+    "$23K",
+    "$61K",
+    "$36K",
+    "40K",
+    "96K",
+    "$100K"
+   ],
+   "quote": "over-target • grade 3 teacher $45k • part-time pe teacher $27k"
+  },
+  {
+   "topic": "Personnel drivers",
+   "what_was_recorded": "Recommended FY17 personnel drivers total $237,059.",
+   "figures_as_printed": [
+    "$237,059"
+   ],
+   "quote": "school technology coordinator • custodian $237,059"
+  },
+  {
+   "topic": "Non-personnel drivers",
+   "what_was_recorded": "Non-personnel drivers include health insurance, transportation and tuitions.",
+   "figures_as_printed": [
+    "253,721",
+    "40,000",
+    "56,300"
+   ],
+   "quote": "fy17 non-personnel drivers health insurance transportation tuitions 253,721 40,000 56,300"
+  },
+  {
+   "topic": "Potential 40S funds",
+   "what_was_recorded": "Potential 40S funds if appropriated are stated.",
+   "figures_as_printed": [
+    "$119,000"
+   ],
+   "quote": "potential expenditures for $119,000 from 40s if appropriated"
+  },
+  {
+   "topic": "40S requests exceeding potential funds",
+   "what_was_recorded": "Listed 40S expenditures total more than the potential amount, so reductions will be necessary.",
+   "figures_as_printed": [
+    "$63,350",
+    "$26,200",
+    "$42,600",
+    "$8,000",
+    "$9,850"
+   ],
+   "quote": "- instructional texts & materials/curriculum adoption = $63,350"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "no action; public comment none, committee openings announced",
+   "quote": "mark said the committee has two openings. interested citizens may fill out a talent bank form to apply."
+  },
+  {
+   "topic": "Library FY17 budget presentation",
+   "resolution": "presented, no action",
+   "quote": "3. library fy17 budget presentation by martha moore, library director."
+  },
+  {
+   "topic": "School Department FY17 budget presentation",
+   "resolution": "presented, no action",
+   "quote": "school department fiscal 2017 budget presentation by school superintendent loxi calmes"
+  },
+  {
+   "topic": "Town Manager's report",
+   "resolution": "no action; none given",
+   "quote": "4. town manager's report: none."
+  },
+  {
+   "topic": "Review of minutes of February 18",
+   "resolution": "approved 4-0",
+   "quote": "terri moved to approve the minutes; jay seconded the motion. the committee approved the motion by a vote of 4-0."
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "no action; no discussion",
+   "quote": "budget goals and opportunities: there was no discussion at this meeting."
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received; no action",
+   "quote": "terri and john met with chief marino to explore some of the factors driving increased service demands on the department."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for March 10",
+   "quote": "next meeting: thursday, march 10th. presentations on council on aging and monty tech fy17 budgets."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:51",
+   "quote": "terri made a motion to adjourn and jay seconded the motion. the committee approved the motion 4-0 at 8:51."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Library FY17 Budget Presentation by Martha Moore, Library Director (LUNENBURG LIBRARY ANNUAL PRESENTATION & FY17 BUDGET REQUEST)",
+   "where": "list",
+   "quote": "lunenburg library annual presentation & fy17 budget request"
+  },
+  {
+   "name": "FY 17 Recommended Budget Presentation to Finance Committee, March 3, 2016 (School Department, Loxi Calmes)",
+   "where": "list",
+   "quote": "fy 17 recommended budget presentation to finance committee, march 3, 2016"
+  },
+  {
+   "name": "Mn-FY16-160218.xlsx (local and remote drives)",
+   "where": "text",
+   "quote": "mn-fy16-160218.xisx (local and remote drives)"
+  },
+  {
+   "name": "The Beacon (latest issue)",
+   "where": "text",
+   "quote": "mark circulated the latest issue of the beacon."
+  }
+ ],
+ "tags": [
+  "FY17 budget",
+  "library budget",
+  "school budget",
+  "state aid",
+  "Chapter 70",
+  "minutes approval",
+  "adjournment",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "for specific details, copies of library director moore's and superintendent calmes' presentations are on the town web site."
+ },
+ "dropped_unquoted_by_field": {}
 }

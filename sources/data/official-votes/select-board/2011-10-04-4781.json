@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-10-04",
  "docid": "4781",
@@ -12,48 +12,510 @@
  },
  "votes": [
   {
-   "motion": "Appoint Damon McQuaid to the Historical Commission",
+   "motion": "Appoint Damon McQuaid to the Historical Commission.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "paula move to appoint, steve seconded, voted unanimously to approve."
   },
   {
-   "motion": "Approve one-day liquor license for Linda Davis Jeha for October 13, 2011",
+   "motion": "Approve the one day liquor license for Lynda Davis Jeha's event on 10/13/11.",
    "moved_by": "Paula",
    "seconded_by": "Tom",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "paula motion to approve one day license, tom seconded, voted unanimously to approve."
   },
   {
-   "motion": "Abate ambulance fee balance of $101.13",
+   "motion": "Abate the remaining balance of the ambulance bill for service on February 14, 2011 (Kerry recommended $101.13).",
    "moved_by": "Tom",
    "seconded_by": "Paula",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "tom motioned to abate, paula seconded. steve questioned that we had set our ambulance fees to what medicare customarily bills, is that what is happening here? kerry will have to defer the question to chief glenny. there isn't any reason why this request has to be abated this evening, but will bring it back before the board if the board wants an answer being considering this action. dave's recollection is that the chief is supposed to be bringing this information back to the board and we should get him back to discuss the fee schedule with the board. paula questioned the possibility of a tiered rate and wants see if the chief thinks that this may be a possibility. board voted unanimously to abate the ambulance fee."
+   "quote": "tom motioned to abate, paula seconded."
   },
   {
-   "motion": "Approve amendment to Building Permit Fee Schedule including $25.00 reinspection fee for Woodstove, Coal Stove, and Pellet Stove permits",
+   "motion": "Approve the amended building permit fee schedule, including a $25.00 re-inspection fee under Woodstove, Coal Stove and Pellet Stove.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "paula would recommend under the \"woodstove, coal stove and pellet stove\" also include a $25.00 reinspection fee and move to approve this as well as the presented fee schedule, steve seconded, voted unanimously.",
-   "quote_taken_from_text": true
+   "quote": "and move to approve this as well as the presented fee schedule, steve seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the Regular Session at 9:53 P.M.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 9:53 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 9:53 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. One appointment item (Paul DeBenedetto for Constable) lacks a clear vote statement in the minutes (text appears OCR-truncated mid-sentence). Executive session topics listed but no motion/vote to enter recorded.",
- "cost_usd": 0.1207325
+ "note": "OCR text (macOS Vision), heavily garbled in places (e.g., 'Ocuber', 'Asphault', 'Johr iNapoli', 'adiustment'). The opening (call to order, roll call) is missing; the parking item is truncated at page break; pages 5-17 are attachments. No roll-call votes; votes are voice votes as printed. Board members' presence is inferred from speech and votes. No motion recorded for entering executive session. The Paul DeBenedetto constable item is fragmentary. The applicant appears as 'Linda Davis Jeha' in the header and 'Lynda Davis Jeha' in the body; the body spelling is used. Dollar figures in attachments are reproduced as printed, including the garbled table.",
+ "cost_usd": 0.01878252,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave announced the salvation army is holding a benefit auction this saturday afternoon"
+  },
+  {
+   "name": "Paula",
+   "status": "present",
+   "quote": "paula move to appoint, steve seconded, voted unanimously to approve."
+  },
+  {
+   "name": "Steve",
+   "status": "present",
+   "quote": "steve questioned that we had set our ambulance fees to what medicare customarily bills"
+  },
+  {
+   "name": "Tom",
+   "status": "present",
+   "quote": "tom motioned to abate, paula seconded."
+  },
+  {
+   "name": "Ernie",
+   "status": "present",
+   "quote": "ernie questioned as he has been informed that you are not allowed to serve alcohol on public property"
+  },
+  {
+   "name": "Kerry A. Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "from: kerry a. speidel, town manager"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director, jack rodriquenz"
+  },
+  {
+   "name": "Michael Sauvageau",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "building commissioner, michael sauvageau provided the attached information"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "applicant for Historical Commission",
+   "status": "present",
+   "quote": "damon mcquaid, applicant for historical commission - of 30 cushing lane came before board for a brief interview"
+  },
+  {
+   "name": "Patrick Slattery",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "also present was commission member patrick slattery who introduced damon to the board"
+  },
+  {
+   "name": "Paul DeBenedetto",
+   "role": "Applicant for Constable",
+   "status": "present",
+   "quote": "paul debenedetto, applicant for constable - of 10 portland street, fitchburg came before the board for a brief interview."
+  },
+  {
+   "name": "Lynda Davis Jeha",
+   "role": "applicant, one day liquor license",
+   "status": "present",
+   "quote": "linda was present and informed the board that she is a practicing artist"
+  },
+  {
+   "name": "Chief Glenny",
+   "role": "Chief",
+   "status": "not stated",
+   "quote": "chief glenny is asking the board to abate the remainder of an ambulance bill"
+  },
+  {
+   "name": "Chief Bourgeois",
+   "role": "Chief",
+   "status": "not stated",
+   "quote": "chief bourgeois has reviewed the application and"
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura caron-gustus, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Constable appointment for Paul DeBenedetto is conditioned on the applicant providing a bond (no vote recorded).",
+   "quote": "paul upon applicant providing a bond."
+  },
+  {
+   "decision": "Warrant #19 12 dated 10/3/11 reviewed and signed by the board.",
+   "quote": "warrants - #19 12, 10/3/11 - $185,409.97 reviewed and signed."
+  },
+  {
+   "decision": "Board approved the letter to the MSBA withdrawing from further North Middlesex regionalization talks and asking for consideration of Lunenburg's Statements of Interest; letter to be sent.",
+   "quote": "board approved and letter will be sent off."
+  },
+  {
+   "decision": "Chief Glenny to be asked back to discuss the ambulance fee schedule with the board; Paula asked whether he thinks a tiered rate is possible.",
+   "quote": "we should get him back to discuss the fee schedule with the board."
+  },
+  {
+   "decision": "Kerry to speak with Johr iNapoli (OCR reading; utility contact) about adjusting the streetlight bill and ask what the utility does for regular inspections.",
+   "quote": "kerry will speak with johr inapoli and discuss an adiustment with our bill"
+  },
+  {
+   "decision": "Jack Rodriquenz to present a scope of work for the Mulpus Road / Townsend Harbor Road intersection to the Town Manager for review before moving forward.",
+   "quote": "jack will present a scope of work to the town manager for her review"
+  },
+  {
+   "decision": "Kerry to check with the Green Community Task Force that it will be ready if the board holds a special town meeting on November 21st.",
+   "quote": "kerry will check with the green community task force to ensure that they'll be ready should the board decide to have the special"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ambulance fee abatement",
+   "what_was_recorded": "Abatement of the $101.13 balance left on an ambulance bill after Medicare adjustment and payments of $816.87.",
+   "quote": "the original bill was $918.00. the medicare adjustment and payments total $816.87, leaving a balance of $101.13.",
+   "figures_as_printed": [
+    "$918.00",
+    "$816.87",
+    "$101.13"
+   ]
+  },
+  {
+   "topic": "Building permit fee amendment - basic fee",
+   "what_was_recorded": "Ernie said he would like to see a basic fee of $25.00 if the fees must cover actual overhead costs.",
+   "quote": "ernie commented that he would like to see a basic fee of $25.00 if we have to cover our actual",
+   "figures_as_printed": [
+    "$25.00"
+   ]
+  },
+  {
+   "topic": "Building permit fee amendment - re-inspection fee",
+   "what_was_recorded": "Re-inspection fee of $25.00 added under Woodstove, Coal Stove and Pellet Stove and approved with the fee schedule; a general $25.00 re-inspection fee deferred until large projects drop off.",
+   "quote": "and move to approve this as well as the presented fee schedule, steve seconded, voted unanimously.",
+   "figures_as_printed": [
+    "$25.00"
+   ]
+  },
+  {
+   "topic": "Building permit fee comparison (Leominster, Bolton, Lunenburg)",
+   "what_was_recorded": "Attachment compares 2011 permit fees for an average 2,000 sq ft home across three towns.",
+   "quote": "ie: an average 2,000 sq ft home would fee out at: 2,000 x $102.00 = $204,000.",
+   "figures_as_printed": [
+    "$102.00",
+    "$107.00",
+    "$22.00",
+    "$7.00",
+    "$1,443.00",
+    "$80.00",
+    "$10.00",
+    "$1,600.00",
+    "$71.00",
+    "$1,420.00"
+   ]
+  },
+  {
+   "topic": "Building permit fee schedule - Lunenburg proposed fees",
+   "what_was_recorded": "Attached schedule lists current and proposed permit fees, including a $25.00 fee for certain items.",
+   "quote": "$25.00 up to 250 sq ft.",
+   "figures_as_printed": [
+    "$71.00",
+    "$15.00",
+    "$10.00",
+    "$20.00",
+    "$25.00",
+    "$100.00",
+    "$40.00",
+    "$50.00"
+   ]
+  },
+  {
+   "topic": "Warrant",
+   "what_was_recorded": "Warrant #19 12 dated 10/3/11 totaling $185,409.97 was reviewed and signed.",
+   "quote": "warrants - #19 12, 10/3/11 - $185,409.97 reviewed and signed.",
+   "figures_as_printed": [
+    "$185,409.97"
+   ]
+  },
+  {
+   "topic": "Engineering services for Townsend Harbor Road / Mulpus Road intersection",
+   "what_was_recorded": "Town Manager said there is no budgeted money for engineering but the town could agree to come up with $5,000; no more money is available for anything further now.",
+   "quote": "come up with $5,000 but doesn't have any more money to do anything more at this time.",
+   "figures_as_printed": [
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Ross Associates estimate for intersection survey and design",
+   "what_was_recorded": "Ross Associates estimated $5,000 for a survey base plan, measured sight distances and a preliminary design; construction cost cannot be estimated until design is done.",
+   "quote": "we would estimate a cost of $5,000 to get a survey base plan, measure existing and proposed sight distances",
+   "figures_as_printed": [
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Road maintenance funding",
+   "what_was_recorded": "DPW said about 1.3 million a year must be appropriated to keep up with road conditions.",
+   "quote": "until we appropriate about 1.3 million a year",
+   "figures_as_printed": [
+    "1.3 million"
+   ]
+  },
+  {
+   "topic": "Streetlight inspection cost",
+   "what_was_recorded": "DPW inventory of streetlights twice a year would cost several hundred dollars (figure garbled in the text).",
+   "quote": "doing this twice annually at a cost of several hundred o",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Unemployment costs from 2011 layoffs",
+   "what_was_recorded": "Unemployment costs from the 2011 layoffs were discussed with the School Superintendent; no figure printed; budget adjustments to be taken up in May.",
+   "quote": "conversation with the school superintendant today on unemployment costs associated with the layoffs that occurred in 2011",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Appropriation for Extraordinary Unemployment Costs (budget calendar)",
+   "what_was_recorded": "Listed in a budget/Town Meeting calendar table as an appropriation from Free Cash; no amount printed.",
+   "quote": "appropriation for extraordinary unemployment costs, from free cash",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Meadow Woods Water & Sewer Improvements (calendar table)",
+   "what_was_recorded": "Listed in a calendar table as an article for Meadow Woods Water & Sewer Improvements.",
+   "quote": "in for meadow woods water & sewer improvements, $456,927.87",
+   "figures_as_printed": [
+    "$456,927.87"
+   ]
+  },
+  {
+   "topic": "iPad purchase versus paper agenda packets",
+   "what_was_recorded": "Town Manager memo: paper copy cost $0.0228 each; average packet $1.134; annual packets $45.36 per member; iPad with 2-year service $578.",
+   "quote": "$45.36 annual cost of bos agenda packets, per member",
+   "figures_as_printed": [
+    "$0.0228",
+    "$1.134",
+    "$45.36",
+    "$578"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "dave announced the salvation army is holding a benefit auction this saturday afternoon",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointment - Damon McQuaid, Historical Commission",
+   "resolution": "approved",
+   "quote": "paula move to appoint, steve seconded, voted unanimously to approve.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Appointment - Paul DeBenedetto, Constable",
+   "resolution": "appointment conditioned on bond; no vote recorded",
+   "quote": "paul upon applicant providing a bond.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "One day liquor license - Lynda Davis Jeha",
+   "resolution": "approved",
+   "quote": "paula motion to approve one day license, tom seconded, voted unanimously to approve.",
+   "tags": [
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Request for abatement of ambulance fees",
+   "resolution": "abated $101.13 balance; fee schedule question referred to Chief Glenny",
+   "quote": "board voted unanimously to abate the ambulance fee.",
+   "tags": [
+    "ambulance",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Amendment to building permit fee schedule",
+   "resolution": "approved, with $25.00 re-inspection fee under woodstove/pellet stove",
+   "quote": "and move to approve this as well as the presented fee schedule, steve seconded, voted unanimously.",
+   "tags": [
+    "building permits",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "no minutes; warrant reviewed and signed",
+   "quote": "warrants - #19 12, 10/3/11 - $185,409.97 reviewed and signed.",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action; MSBA letter approved and to be sent",
+   "quote": "ernie - pacc met this evening and are still in need of volunteers/help with our televising, videoing.",
+   "tags": [
+    "committees",
+    "school regionalization",
+    "DPW building"
+   ]
+  },
+  {
+   "topic": "Request to eliminate parking on Main Street & Memorial Drive",
+   "resolution": "discussed; group agreed to eliminate one space as soon as possible (no board vote)",
+   "quote": "request to eliminate some parking on main street & memorial drive",
+   "tags": [
+    "traffic",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Mulpus Road / Townsend Harbor Road intersection",
+   "resolution": "short-term fixes recapped; Ross scope of work to Town Manager",
+   "quote": "dave recapped for short term fix; reduce speed zones, brush clean up, and restrict the left turn onto mulpus road",
+   "tags": [
+    "traffic safety",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Pothole program and road maintenance funding",
+   "resolution": "discussed; no action",
+   "quote": "pothole program - funding of road maintenance - jack presented the attached asphault patching program",
+   "tags": [
+    "roads",
+    "potholes"
+   ]
+  },
+  {
+   "topic": "Streetlights",
+   "resolution": "Kerry to contact utility about bill adjustment; no vote",
+   "quote": "update on streetlights - jack acquired an inventory of all the streetlights in lunenburg",
+   "tags": [
+    "streetlights",
+    "utility"
+   ]
+  },
+  {
+   "topic": "Unemployment costs and special town meeting timing (Green Communities)",
+   "resolution": "discussed; Kerry to check Green Communities readiness for November 21 special",
+   "quote": "paula questioned if there is a compelling reason to have a special town meeting in the fall",
+   "tags": [
+    "budget",
+    "town meeting",
+    "Green Communities"
+   ]
+  },
+  {
+   "topic": "Eagle Heights project and Councils on Aging",
+   "resolution": "information only",
+   "quote": "kerry has heard from jon juhl on the eagle heights project",
+   "tags": [
+    "housing",
+    "HUD",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "listed on agenda; no motion or vote recorded",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action",
+   "quote": "october 18, 2011 - joint session with finance committee, financial forecast",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:53 P.M.",
+   "quote": "being no further business board voted unanimously to adjourn regular session at 9:53 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Permit fee comparison: Leominster, Bolton and Lunenburg 2011 (attached)",
+   "where": "list",
+   "quote": "permit fee for the city of leominster 2011"
+  },
+  {
+   "name": "Building Permit Fee Schedule, Selectmen's Office (two proposed amendments, attached)",
+   "where": "list",
+   "quote": "kerry presented the attached two amendments that are different from what the board previously received"
+  },
+  {
+   "name": "Letter from David E. Ross Associates, Inc. re Mulpus Road / Townsend Harbor Road Intersection",
+   "where": "text",
+   "quote": "re: mulpus road / townsend harbor road intersection"
+  },
+  {
+   "name": "Asphalt Patching Program, Department of Public Works, July 2010 (attached)",
+   "where": "list",
+   "quote": "jack presented the attached asphault patching program which was"
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "jack also reviewed the pavement management plan on the differences"
+  },
+  {
+   "name": "Memorandum: Request to Consider Purchase of iPads, Kerry A. Speidel, October 1, 2011",
+   "where": "text",
+   "quote": "subject: request to consider purchase of ipads"
+  },
+  {
+   "name": "Letter to Katherine Craven, Executive Director, MSBA, dated October 3, 2011 (attached)",
+   "where": "list",
+   "quote": "presented the attached letter for submittal to the msba, board approved and letter will be sent off."
+  },
+  {
+   "name": "Warrant #19 12, 10/3/11",
+   "where": "text",
+   "quote": "warrants - #19 12, 10/3/11 - $185,409.97 reviewed and signed."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "appointments",
+  "liquor license",
+  "ambulance abatement",
+  "building permit fees",
+  "traffic safety",
+  "road maintenance",
+  "streetlights",
+  "school regionalization",
+  "MSBA",
+  "Green Communities",
+  "iPads",
+  "executive session",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "building commissioner, michael sauvageau provided the attached information"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2014-03-11",
  "docid": "1834",
@@ -12,34 +12,427 @@
  },
  "votes": [
   {
-   "motion": "Accept the 1/10/2014 COA minutes with correction",
-   "moved_by": "Ms. O'Dea",
+   "motion": "Accept the 1/10/2014 COA minutes with correction.",
+   "moved_by": "Ms. O’Dea",
    "seconded_by": "Ms. Brown",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. o'dea moved to accept the 1/10/2014 coa minutes with correction. ms. brown seconded. on vote, mo tion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. o'dea moved to accept the 1/10/2014 coa minutes with correction. ms. brown seconded. on vote, mo tion carried unanimously."
   },
   {
-   "motion": "Accept Whitney Lacka's resignation",
-   "moved_by": "Ms. O'Dea",
+   "motion": "Accept Whitney Lacka’s resignation from the COA board with regret.",
+   "moved_by": "Ms. O’Dea",
    "seconded_by": "Ms. Doyle",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "ms. o'dea moved to accept whitney lacka's resignati on with regret. ms. doyle seconded. on vote, moti on carried unanimousl",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "ms. o'dea moved to accept whitney lacka's resignati on with regret. ms. doyle seconded. on vote, moti on carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Ms. O'Dea",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. O’Dea",
    "seconded_by": "Ms. Wass",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. o'dea moved to adjourn the meeting. ms. wass seconded. on vote, motion carried unanimo usly",
-   "quote_taken_from_text": true
+   "quote": "ms. o'dea moved to adjourn the meeting. ms. wass seconded. on vote, motion carried unanimo usly."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned document with clear text. Three votes recorded: approval of prior minutes, acceptance of board member resignation, and adjournment.",
- "cost_usd": 0.0861375
+ "note": "Text extract is noisy: words are split mid-word (e.g., \"mo tion\") and lines break mid-sentence, so quotes keep the printed splits. Three motions recorded, all unanimous, no roll-call counts. Attendance is from the \"Present\", \"Excused\" and \"Guests\" lines; status for guests and for persons only mentioned is not stated where the minutes do not say they attended. Minutes header reads \"Approved at the 5/13/2014 COA Meeting\". Signature block reads \"Susan Doherty\" while the attendance line reads \"Sue Doherty\".",
+ "cost_usd": 0.01113192,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "mary lynn conrad, (chairperson), barbara brown (vi ce-chairperson)"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "mary lynn conrad, (chairperson), barbara brown (vi ce-chairperson)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyl e,"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyl e,"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, shirley bertone, tony bertone"
+  },
+  {
+   "name": "Connie O’Dea",
+   "role": "",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, shirley bertone, tony bertone"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, shirley bertone, tony bertone"
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, shirley bertone, tony bertone"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "absent",
+   "quote": "excused : judy tarbell & deb seeley"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "absent",
+   "quote": "excused : judy tarbell & deb seeley"
+  },
+  {
+   "name": "Karen Menard",
+   "role": "Lunenburg Finance Committee member",
+   "status": "present",
+   "quote": "karen menard, lunenburg finance committee member, pete & debby lincoln"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Guest (printed as Pete & Debby Lincoln; referred to as Mr. Lincoln)",
+   "status": "present",
+   "quote": "mr. lincoln brought up the subject of quorums sayin g that prior information"
+  },
+  {
+   "name": "Debby Lincoln",
+   "role": "Guest",
+   "status": "present",
+   "quote": "pete & debby lincoln & lloyd carlson"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Representative from the Supporters of the Eagle House Inc.",
+   "status": "present",
+   "quote": "mr. carlson, representative from the supporters of the eagle house inc. spoke to say"
+  },
+  {
+   "name": "Faith Anderson",
+   "role": "Outreach Coordinator",
+   "status": "not stated",
+   "quote": "ms. noble and fa ith anderson"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "Treasurer, Supporters of the Eagle House Inc.",
+   "status": "not stated",
+   "quote": "their treasu rer, jim hays, has sent a letter to the town manager"
+  },
+  {
+   "name": "Marion Pepin",
+   "role": "Next eligible recipient of the Boston Post Cane",
+   "status": "not stated",
+   "quote": "marion pepin, who is the ne xt eligible recipient of the boston post cane"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "COA Board Member (resigning)",
+   "status": "not stated",
+   "quote": "whitney lacka sent an email to ms. doherty informin g her"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director’s goals timeline to become a comprehensive 2-year plan (FY14-FY16), as recommended by board members.",
+   "quote": "director's goals timeline should become a comprehe nsive 2 year plan (fy14-fy16)"
+  },
+  {
+   "decision": "Director’s Evaluation to be performed on an annual basis.",
+   "quote": "director's evaluation will be performed on an annu al basis"
+  },
+  {
+   "decision": "Board agreed that a non-resident fee of $7-$8 per year would be reasonable beginning July 1, 2014.",
+   "quote": "board members agreed that beginning on july 1, 2014 a fee"
+  },
+  {
+   "decision": "Director to initiate a pay structure for vendors charging participants in their classes, starting April 1, 2014.",
+   "quote": "as of april 1, 2014 she will be initiating a pay structur e for all vendors"
+  },
+  {
+   "decision": "Director to speak with the Town Manager before Annual Town Meeting to make the meal site to administrative assistant funding adjustment.",
+   "quote": "ms. noble will speak to the town manager prior to annual town meeting to make th e adjustment."
+  },
+  {
+   "decision": "Director and Faith Anderson to arrange dignitaries and press for the Boston Post Cane presentation in April or May.",
+   "quote": "will arrange for the proper d ignitaries and press to attend the presentation eit her in april or may of this year."
+  },
+  {
+   "decision": "Director to invite all who were instrumental in the Bocci Court project to the May 14 dedication.",
+   "quote": "ms. noble will invite all who were instrumental in bringing this project to fruition."
+  },
+  {
+   "decision": "Board of Selectmen to be notified of Whitney Lacka’s resignation.",
+   "quote": "the lunenburg board of selectmen will be notified about this resignation."
+  },
+  {
+   "decision": "Board members to bring back questions on the Director’s Job Evaluation form after reviewing it.",
+   "quote": "asked me mbers to bring back questions after reviewing"
+  },
+  {
+   "decision": "A workshop meeting date to be set at a later time to discuss the sub-committee manuals.",
+   "quote": "a workshop meeting date will be determined at a later timer for discussion on the manuals."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY15 COA budget",
+   "what_was_recorded": "The Town Manager’s recommended FY15 budget for the COA was reported to the board after the FinCom presentation.",
+   "figures_as_printed": [
+    "$110,681.20"
+   ],
+   "quote": "the town manager's recommend ed fy15 budget for the coa is $110,681.20."
+  },
+  {
+   "topic": "Meal site to administrative assistant pay line",
+   "what_was_recorded": "Funding in the Meal Site line item is to be moved to the Administrative Assistant (dispatch) pay line to extend transportation hours; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "in the meal site line item will need to be moved to the ad ministrative assistant (dispatch) pay line in order"
+  },
+  {
+   "topic": "Non-resident fee for senior center",
+   "what_was_recorded": "Board agreed a per-year fee for non-residents is reasonable, comparable to the Formula Grant amount the Town receives per elder.",
+   "figures_as_printed": [
+    "$7- $8 per year"
+   ],
+   "quote": "of $7- $8 per year would be reasonable."
+  },
+  {
+   "topic": "Senior Citizen Tax Work-Off property tax deduction",
+   "what_was_recorded": "A Warrant article will seek to raise the participants’ property tax deduction in FY15.",
+   "figures_as_printed": [
+    "$750 - $1000"
+   ],
+   "quote": "property tax deduction from $750 - $1000 in fy15."
+  },
+  {
+   "topic": "Eagle House parking lot funds",
+   "what_was_recorded": "Supporters of the Eagle House Inc. raised funds specifically for the parking lot project; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "this group had raised funds specifically for this project"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Move funding from the Meal Site line item to the Administrative Assistant (dispatch) pay line to extend transportation hours.",
+   "amount_as_printed": "not stated",
+   "outcome": "Director to speak with the Town Manager before Annual Town Meeting to make the adjustment; not voted.",
+   "quote": "in the meal site line item will need to be moved to the ad ministrative assistant (dispatch) pay line in order"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Lloyd Carlson",
+   "stated_role": "Representative from the Supporters of the Eagle House Inc.",
+   "topic": "Eagle House parking lot status",
+   "quote": "mr. carlson, representative from the supporters of the eagle house inc. spoke to say that their treasu rer, jim hays, has sent a letter to the town manager"
+  },
+  {
+   "speaker": "Mr. Lincoln (Pete Lincoln)",
+   "stated_role": "Guest",
+   "topic": "Quorum rules",
+   "quote": "mr. lincoln brought up the subject of quorums sayin g that prior information received concerning this w as incorrect"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and welcome",
+   "resolution": "opened the meeting",
+   "quote": "ms. conrad opened the meeting at 10:30am & welcom ed all to the meeting.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes of 1/10/2014",
+   "resolution": "approved with correction",
+   "quote": "ms. doyle requested that a change in a date in the last set of minutes be made to \"december 2013\".",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "goals reviewed; 2-year plan and annual evaluation recommended; non-resident fee agreed; vendor pay structure to start",
+   "quote": "ms. noble distributed copies of her organizational chart and goals to the board for review.",
+   "tags": [
+    "director",
+    "goals",
+    "tax work-off",
+    "fees",
+    "vendors",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Old Business: Budget FY15 FinCom informational report",
+   "resolution": "informational; no action",
+   "quote": "budget fy15: lunenburg fincom meeting 3/6/14 inf ormational report",
+   "tags": [
+    "budget",
+    "FY15",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Old Business: Boston Post Cane",
+   "resolution": "presentation to be arranged in April or May",
+   "quote": "marion pepin, who is the ne xt eligible recipient of the boston post cane",
+   "tags": [
+    "Boston Post Cane",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "New Business: Bocci Court Dedication",
+   "resolution": "scheduled; no action",
+   "quote": "ms. noble will invite all who were instrumental in bringing this project to fruition.",
+   "tags": [
+    "bocci court",
+    "dedication"
+   ]
+  },
+  {
+   "topic": "New Business: Resignation of Whitney Lacka",
+   "resolution": "accepted",
+   "quote": "ms. o'dea moved to accept whitney lacka's resignati on with regret.",
+   "tags": [
+    "board membership",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Sub-committee reports/minutes",
+   "resolution": "no reports or minutes",
+   "quote": "sub-committee reports/minutes - finance, board deve lopment, advocacy, bylaw, director's evaluation: no reports/minutes",
+   "tags": [
+    "sub-committees"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation Report",
+   "resolution": "reviewed; members to bring back questions",
+   "quote": "ms. doyle reviewed the director's job evaluation form with the coa board.",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "quote": "correspondence : none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General discussion",
+   "resolution": "manuals workshop to be scheduled; bylaw sub-committee strike discussed; Eagle House and quorum raised",
+   "quote": "ms. brown had prepared manuals for each board mem ber with information to aid in the function of each sub-committee.",
+   "tags": [
+    "bylaws",
+    "open meeting law",
+    "quorum",
+    "Eagle House parking lot"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:50AM",
+   "quote": "meeting adjourned at 11:50am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Organizational Chart and Goals (Director, distributed for review)",
+   "where": "text",
+   "quote": "ms. noble distributed copies of her organizational chart and goals to the board for review."
+  },
+  {
+   "name": "Director’s Job Evaluation form",
+   "where": "text",
+   "quote": "ms. doyle reviewed the director's job evaluation form with the coa board."
+  },
+  {
+   "name": "Board manuals prepared by Ms. Brown",
+   "where": "text",
+   "quote": "ms. brown had prepared manuals for each board mem ber with information"
+  },
+  {
+   "name": "COA budget slide show presented to Lunenburg FinCom on 3/6/14",
+   "where": "text",
+   "quote": "to present the coa budget via a sl ide show, which went very well."
+  },
+  {
+   "name": "Letter from Treasurer Jim Hays to the Town Manager",
+   "where": "text",
+   "quote": "their treasu rer, jim hays, has sent a letter to the town manager"
+  },
+  {
+   "name": "Email from Whitney Lacka to Ms. Doherty (resignation)",
+   "where": "text",
+   "quote": "whitney lacka sent an email to ms. doherty informin g her"
+  },
+  {
+   "name": "Talent Bank forms submitted by Pete and Debby Lincoln",
+   "where": "text",
+   "quote": "both he and his wife debby h ave submitted talent bank forms to the selectmen"
+  },
+  {
+   "name": "Article on the Warrant for the Annual Town Meeting in May (tax work-off deduction)",
+   "where": "text",
+   "quote": "will be submitting an article on the warrant for th e annual town meeting in may"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "FY15 budget",
+  "director goals",
+  "director evaluation",
+  "senior tax work-off",
+  "non-resident fee",
+  "vendors",
+  "Boston Post Cane",
+  "bocci court",
+  "board resignation",
+  "sub-committees",
+  "bylaws",
+  "open meeting law",
+  "quorum",
+  "Eagle House parking lot",
+  "transportation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. noble distributed copies of her organizational chart and goals"
+ },
+ "dropped_unquoted_by_field": {}
 }

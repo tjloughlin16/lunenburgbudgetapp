@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-01-21",
  "docid": "2723",
@@ -12,32 +12,325 @@
  },
  "votes": [
   {
-   "motion": "approve December 2009 minutes as amended",
+   "motion": "Approve the December 2009 minutes as amended.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion made and passed to approve december 2009 minutes as amended."
   },
   {
-   "motion": "accept the revised Junior Library Assistant Lunenburg Public Library Job Description",
+   "motion": "Accept the revised Junior Library Assistant Lunenburg Public Library Job Description.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made and passed to accept the revised junior libra ry assistant lunenburg public library job description",
-   "quote_taken_from_text": true
+   "quote": "motion made and passed to accept the revised junior libra ry assistant lunenburg public library job description."
   },
   {
-   "motion": "accept the revised Senior Library Assistant Lunenburg Public Library Job Description",
+   "motion": "Accept the revised Senior Library Assistant Lunenburg Public Library Job Description.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion made and passed to accept the revised senior library assistant lunenburg public library job description."
   },
   {
-   "motion": "that LPL will close for the May 1, 2010 town meeting",
-   "outcome": "passed 4-1-1",
+   "motion": "That LPL will close for the May 1, 2010 town meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed; 4 yes, 1 no, 1 abstention",
    "procedural": false,
    "quote": "motion made and passed that lpl will close for the may 1, 2010 town meeting. votes: 1 abstention; 1 no; 4 yes"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1136115
+ "note": "Extracted text has garbled spacing and line breaks (e.g., 'Libra ry', '$1 -' then '1,500'); quotes copy the printed spacing. Mover and seconder are not printed for any motion. Most attendees have no role printed; only Jeanne Raboin's secretary role appears (in the signature). The Director is not named as such in the attendance line. The adjournment at 8 pm is recorded without a motion or vote, so it is not listed as a vote. The Town Meeting vote is printed as '1 abstention; 1 no; 4 yes' and is recorded in that order. Staff and others mentioned in passing (e.g., Scott Glenny, Nancy Strom, Jennifer Mason) are not recorded as taking part and are not listed as attendees.",
+ "cost_usd": 0.00677292,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Mara",
+   "role": "",
+   "status": "present",
+   "quote": "attending: john mara, amy sadkin, lisa krowitz, noelle bodkin, deb chapdelaine, lenny smetana, jeanne raboin and barbara reynolds"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "",
+   "status": "present",
+   "quote": "attending: john mara, amy sadkin, lisa krowitz, noelle bodkin, deb chapdelaine, lenny smetana, jeanne raboin and barbara reynolds"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: john mara, amy sadkin, lisa krowitz, noelle bodkin, deb chapdelaine, lenny smetana, jeanne raboin and barbara reynolds"
+  },
+  {
+   "name": "Noelle Bodkin",
+   "role": "",
+   "status": "present",
+   "quote": "attending: john mara, amy sadkin, lisa krowitz, noelle bodkin, deb chapdelaine, lenny smetana, jeanne raboin and barbara reynolds"
+  },
+  {
+   "name": "Deb Chapdelaine",
+   "role": "",
+   "status": "present",
+   "quote": "attending: john mara, amy sadkin, lisa krowitz, noelle bodkin, deb chapdelaine, lenny smetana, jeanne raboin and barbara reynolds"
+  },
+  {
+   "name": "Lenny Smetana",
+   "role": "",
+   "status": "present",
+   "quote": "attending: john mara, amy sadkin, lisa krowitz, noelle bodkin, deb chapdelaine, lenny smetana, jeanne raboin and barbara reynolds"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary, Lunenburg Public Library Board of Trustees",
+   "status": "present",
+   "quote": "jeanne raboin, secretary, lunenburg public library board of trustees"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "attending: john mara, amy sadkin, lisa krowitz, noelle bodkin, deb chapdelaine, lenny smetana, jeanne raboin and barbara reynolds"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Amy will call the Turkey Hill Gardeners for garden advice, in place of the cancelled garden replacement.",
+   "quote": "(however amy will call the turkey hill gardeners for garden advice.)"
+  },
+  {
+   "decision": "Amy will bring the Technology Cart proposal to the Friends.",
+   "quote": "she will bring this to the friends."
+  },
+  {
+   "decision": "Amy and John are invited to speak to the Selectmen at the next board meeting about the MBLC waiver.",
+   "quote": "amy and john invited to speak to selectmen at next board meeting about the mblc waiver."
+  },
+  {
+   "decision": "Personnel Sub-committee will send the evaluation form to Trustees in March and then compile the results.",
+   "quote": "personnel sub-committee will send out to trustees in march and then compile."
+  },
+  {
+   "decision": "The February Trustee meeting is rescheduled to February 25 at 6:30 pm.",
+   "quote": "the meeting is rescheduled to february 25 at 6:30 pm."
+  },
+  {
+   "decision": "Amy will use up materials expenditures as soon as possible.",
+   "quote": "revised budget is on track; amy will use up materials expenditures as soon as possible."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friends wish list: garden and fencing monies",
+   "what_was_recorded": "Monies approved at the Friends' 2009 Annual Meeting for a replacement garden and new fencing will not happen, freeing up money.",
+   "figures_as_printed": [
+    "$5300.00"
+   ],
+   "quote": "this frees up $5300.00 new phone system came"
+  },
+  {
+   "topic": "Friends wish list: phone system and sink savings",
+   "what_was_recorded": "The new phone system came in under budget and sinks came in at a lower cost than planned.",
+   "figures_as_printed": [
+    "$600",
+    "$750"
+   ],
+   "quote": "saved $600; sinks came in at $750"
+  },
+  {
+   "topic": "Technology Cart purchase proposal",
+   "what_was_recorded": "Amy proposes a Technology Cart (refurbished Dell laptops, 3-year warranty, MS Office 2007 licenses) at an approximate price with annual maintenance.",
+   "figures_as_printed": [
+    "$6,000",
+    "$1 - 1,500"
+   ],
+   "quote": "price will be approximately $6,000 with $1 - 1,500 per year maintenance."
+  },
+  {
+   "topic": "Recorded Books Chapter 11 filing",
+   "what_was_recorded": "Recorded Books filed Chapter 11 and LPL will pay this expenditure monthly; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "recorded books recently filed chapter 11, lpl will be paying this expenditure monthly."
+  },
+  {
+   "topic": "Revised FY10 budget and materials spending",
+   "what_was_recorded": "The revised budget is on track and materials expenditures are to be used up as soon as possible; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "revised budget is on track; amy will use up materials expenditures as soon as possible."
+  },
+  {
+   "topic": "State Aid and technology funding cuts",
+   "what_was_recorded": "Director and Barbara Reynolds discussed State Aid cuts and reduced technology funding and their effect on the library; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "discussed state aid cuts and how these affect the library, its staff, users and materials"
+  },
+  {
+   "topic": "Kindles from grant",
+   "what_was_recorded": "Kindles purchased from a grant have arrived; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "kindles from grant have come in."
+  },
+  {
+   "topic": "Generator grant for disaster recovery",
+   "what_was_recorded": "No grant is available for a generator; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "there is not a grant available for a generator."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike Kelly",
+   "stated_role": "former LPL Trustee",
+   "topic": "Email of thanks and best wishes",
+   "quote": "mike kelly (former lpl trustee) emailed his thanks and best wishes."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "received email, no action",
+   "quote": "mike kelly (former lpl trustee) emailed his thanks and best wishes.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of December 2009 minutes",
+   "resolution": "approved as amended",
+   "quote": "motion made and passed to approve december 2009 minutes as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action recorded",
+   "quote": "director's report (please see full report for details):",
+   "tags": [
+    "director",
+    "staffing",
+    "programs",
+    "technology",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Library as a Disaster Recovery Center",
+   "resolution": "discussed; no action",
+   "quote": "amy attended a meeting with scott glenny; forms will need to be filled-out in",
+   "tags": [
+    "disaster recovery",
+    "MEMA",
+    "FEMA"
+   ]
+  },
+  {
+   "topic": "LPL Job Descriptions",
+   "resolution": "approved two revised job descriptions",
+   "quote": "motion made and passed to accept the revised junior libra ry assistant lunenburg public library job description.",
+   "tags": [
+    "job descriptions",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Friends Wish List Update",
+   "resolution": "discussed; Technology Cart to go to Friends",
+   "quote": "monies had been approved for the replacement garden and new fencing",
+   "tags": [
+    "Friends of the Library",
+    "technology",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Meeting closure May 1, 2010",
+   "resolution": "voted to close the library",
+   "quote": "motion made and passed that lpl will close for the may 1, 2010 town meeting.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Planning for Budget FY 2011",
+   "resolution": "Amy and John to speak to Selectmen about MBLC waiver",
+   "quote": "amy and john invited to speak to selectmen at next board meeting about the mblc waiver.",
+   "tags": [
+    "FY2011 budget",
+    "MBLC"
+   ]
+  },
+  {
+   "topic": "Other: Trustee vacancy and terms",
+   "resolution": "letter sent to Selectman; no action recorded",
+   "quote": "john sent letter to selectman about mike's resignation and trustee vacancy.",
+   "tags": [
+    "trustees",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Director's evaluation",
+   "resolution": "Personnel Sub-committee to distribute form in March",
+   "quote": "personnel sub-committee will send out to trustees in march and then compile.",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "February meeting rescheduled",
+   "resolution": "moved to February 25, 2010 at 6:30 pm",
+   "quote": "the meeting is rescheduled to february 25 at 6:30 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY10 Library Expense Analysis Dec. 09 Month #6",
+   "where": "text",
+   "quote": "please see fy10 library expense analysis dec. 09 month #6 for details"
+  },
+  {
+   "name": "Director's Report (full report)",
+   "where": "text",
+   "quote": "director's report (please see full report for details):"
+  },
+  {
+   "name": "Revised Junior Library Assistant Lunenburg Public Library Job Description",
+   "where": "text",
+   "quote": "motion made and passed to accept the revised junior libra ry assistant lunenburg public library job description."
+  },
+  {
+   "name": "Revised Senior Library Assistant Lunenburg Public Library Job Description",
+   "where": "text",
+   "quote": "motion made and passed to accept the revised senior library assistant lunenburg public library job description."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "Friends of the Library",
+  "staffing",
+  "job descriptions",
+  "disaster recovery",
+  "town meeting",
+  "FY2011 budget",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

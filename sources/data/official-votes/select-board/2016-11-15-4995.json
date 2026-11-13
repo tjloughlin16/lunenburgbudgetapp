@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-11-15",
  "docid": "4995",
@@ -12,32 +12,303 @@
  },
  "votes": [
   {
-   "motion": "Offer the position of Town Manager to Heather Lemieux and enter into contract negotiations",
+   "motion": "Offer the Town Manager position to Heather Lemieux and enter into contract negotiations for the position of Town Manager of Lunenburg.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: p. bertram that the board offers the position to heather lemieux and enters into contract negotiations for the position of town manager of lunenburg discussion: ms. be",
-   "quote_taken_from_text": true
+   "quote": "that the board offers the position to heather lemieux and enters into contract negotiations for the position of town manager of lunenburg"
   },
   {
-   "motion": "Ratify the appointment of Garry Rhodes as Alternate Building Inspector",
+   "motion": "Ratify the Town Manager appointment of Garry Rhodes to Alternate Building Inspector.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2nd: p. bertram to ratify the town manager appointment of garry rhodes to alternate building inspector vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of garry rhodes to alternate building inspector"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the minutes of October 18, 2016.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes from october 18, 2016 were approved."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:14 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:14 p.m. 2nd:r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 8:14 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One OCR error: \"2\\\"d:\" instead of \"2nd:\" in the first vote, preserved verbatim as it appears in the minutes. Minutes also mention prior minutes were approved without a recorded motion, mover, or formal vote, so that is not included.",
- "cost_usd": 0.1232595
+ "note": "Text is OCR of a typed minutes document; some characters are garbled (e.g., quote marks and ordinals). The Rhodes appointment line calls Mr. Marciello \"Interim Town Manager,\" though Marciello is a candidate in the same minutes; recorded as printed. The minutes approving October 18, 2016 minutes give no mover, seconder or tally; recorded as procedural with outcome 'passed'. The Town Manager offer and Rhodes ratification are recorded as \"All in Favor\" with no tally. Recess times (7:00, 7:44 p.m.) are noted but no votes are recorded for them. Attendance is stated for the five board members; candidates appeared; other named persons' attendance is not stated.",
+ "cost_usd": 0.00708492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Town Manager candidate",
+   "status": "present",
+   "quote": "mr. marciello began his presentation by stating you should have short and long term goals."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager candidate",
+   "status": "present",
+   "quote": "ms. lemieux thanked the board for inviting her back."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  },
+  {
+   "name": "Garry Rhodes",
+   "role": "Alternate Building Inspector appointee",
+   "status": "not stated",
+   "quote": "garry rhodes of 75 hazen road, shirley, ma has been appointed by interim town manager marciello"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "mr. toale suggested appointing land use director adam burney as acting town manager."
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "chair of the search committee",
+   "status": "not stated",
+   "quote": "mr. ebersole agreed and thanked the search committee chaired by tim murphy."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board decided to schedule an Executive Session for the following week rather than go into one that night.",
+   "quote": "the board discussed whether to go into executive session or not. they decided to schedule for the following week."
+  },
+  {
+   "decision": "The Board discussed how to proceed until Ms. Lemieux starts; Mr. Toale suggested Adam Burney as Acting Town Manager and Mr. Ebersole suggested Mr. Toale communicate with Ms. Lemieux; no decision recorded on these suggestions.",
+   "quote": "mr. toale suggested appointing land use director adam burney as acting town manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Meat Bingo entry fee (announcement)",
+   "what_was_recorded": "Lions Club Meat Bingo announced with a $20.00 entry fee.",
+   "figures_as_printed": [
+    "$20.00"
+   ],
+   "quote": "there is a $20.00 entry fee which includes the bingo."
+  },
+  {
+   "topic": "Fiscal Year 2017 2nd Quarterly Water Commitment",
+   "what_was_recorded": "Board signed the water commitment.",
+   "figures_as_printed": [
+    "$5,853.72"
+   ],
+   "quote": "the board signed the fiscal year 2017 2nd quarterly water commitment in the amount of $5,853.72."
+  },
+  {
+   "topic": "Accounts Payable and Payroll warrants",
+   "what_was_recorded": "Board signed two Accounts Payable warrants and one Payroll warrant.",
+   "figures_as_printed": [
+    "$162,809.97",
+    "$170,494.05",
+    "$753,961.91"
+   ],
+   "quote": "the board signed accounts payable warrants in the amount of $162,809.97 and $170,494.05; a payroll warrant in the amount of $753,961.91."
+  },
+  {
+   "topic": "Alternate Building Inspector compensation",
+   "what_was_recorded": "Garry Rhodes to receive weekly compensation as Alternate Building Inspector; Local Inspector John Morreale Sr. paid hourly for additional hours.",
+   "figures_as_printed": [
+    "$100.00 per week",
+    "$30.00 per hour"
+   ],
+   "quote": "there will be compensation of $100.00 per week while mr. rhodes is performing these duties."
+  },
+  {
+   "topic": "Morreale additional hours pay rate",
+   "what_was_recorded": "Additional hours worked by John Morreale Sr. outside his stipend hours to be paid hourly.",
+   "figures_as_printed": [
+    "$30.00 per hour"
+   ],
+   "quote": "these hours will be paid at a rate of $30.00 per hour for the duration of the required additional hours"
+  },
+  {
+   "topic": "Complete Streets Program funding (candidate presentation)",
+   "what_was_recorded": "Economic development candidate proposed applying for Complete Streets funding of up to a stated construction amount.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "apply for complete streets program funding that will improve accessibility and provide up to $400,000 for construction"
+  },
+  {
+   "topic": "FLAAC lease at T.C. Passios Building",
+   "what_was_recorded": "Board signed a previously approved lease with FLAAC for renting space; no rent figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. toale signed the previously approved lease with flaac for renting space in the t.c. passios building."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "thanks to Chair for search process",
+   "quote": "ms. luck thanked mr. toale for his work on the search process and adding he did a great job organizing and steering the board through the process."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "community events"
+   ],
+   "quote": "mr. toale announced there would be a coat drive by cub scout pack 1728 at the ritter memorial building"
+  },
+  {
+   "topic": "Town Manager candidates: economic development presentations and follow-up questions (David Marciello, Heather Lemieux)",
+   "resolution": "no action; Board deliberated",
+   "tags": [
+    "town manager search",
+    "economic development"
+   ],
+   "quote": "town manager candidates - economic development presentations and follow up questions"
+  },
+  {
+   "topic": "Town Manager appointment: offer to Heather Lemieux",
+   "resolution": "approved motion to offer position and begin contract negotiations",
+   "tags": [
+    "town manager",
+    "appointment",
+    "contract"
+   ],
+   "quote": "that the board offers the position to heather lemieux and enters into contract negotiations for the position of town manager of lunenburg"
+  },
+  {
+   "topic": "Interim arrangements until Town Manager starts",
+   "resolution": "discussed; no decision recorded",
+   "tags": [
+    "acting town manager"
+   ],
+   "quote": "the board discussed how to proceed until ms. lemieux starts in lunenburg."
+  },
+  {
+   "topic": "Ratify Alternate Building Inspector appointment (Garry Rhodes)",
+   "resolution": "ratified",
+   "tags": [
+    "appointment",
+    "building inspector"
+   ],
+   "quote": "to ratify the town manager appointment of garry rhodes to alternate building inspector"
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "approved minutes; signed water commitment, warrants and lease",
+   "tags": [
+    "minutes",
+    "warrants",
+    "water commitment",
+    "lease"
+   ],
+   "quote": "minutes from october 18, 2016 were approved."
+  },
+  {
+   "topic": "Executive session scheduling",
+   "resolution": "scheduled for following week",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "the board discussed whether to go into executive session or not. they decided to schedule for the following week."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "ms. luck thanked mr. toale for his work on the search process"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:14 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn the meeting at 8:14 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Priority Development Area Study by MRPC",
+   "where": "text",
+   "quote": "review priority development area study by mrpc, zoning bylaw review)"
+  },
+  {
+   "name": "Lease with FLAAC for space in the T.C. Passios Building",
+   "where": "text",
+   "quote": "mr. toale signed the previously approved lease with flaac for renting space in the t.c. passios building."
+  },
+  {
+   "name": "Fiscal Year 2017 2nd Quarterly Water Commitment",
+   "where": "text",
+   "quote": "the board signed the fiscal year 2017 2nd quarterly water commitment in the amount of $5,853.72."
+  },
+  {
+   "name": "Accounts Payable warrants and Payroll warrant",
+   "where": "text",
+   "quote": "the board signed accounts payable warrants in the amount of $162,809.97 and $170,494.05; a payroll warrant in the amount of $753,961.91."
+  }
+ ],
+ "tags": [
+  "town manager search",
+  "appointments",
+  "economic development",
+  "warrants",
+  "executive session",
+  "water commitment",
+  "building inspector"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

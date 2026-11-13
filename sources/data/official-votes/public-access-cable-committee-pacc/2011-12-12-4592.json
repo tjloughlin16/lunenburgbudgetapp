@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2011-12-12",
  "docid": "4592",
@@ -10,17 +10,249 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12122011-4592",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2011-12-12-minutes-4592.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "No motions or vote counts are recorded in this text. The approval of the November 14, 2011 minutes and the 8:40pm adjournment are stated without a recorded motion, mover, or tally, so no votes are listed. The text is OCR output (macOS Vision) with some garbled words, and the minutes carry a 'RECEIVED & FILED' stamp dated FEB 07 2012. No public comment section is printed.",
+ "cost_usd": 0.004871520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the minutes from the November 14, 2011 meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes approved for november 14, 2011 meeting."
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: jo mclaughlin, ernie sund"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: jo mclaughlin, ernie sund"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0903585
+ "decisions": [
+  {
+   "decision": "Minutes of the November 14, 2011 meeting were approved (no motion or vote count recorded).",
+   "quote": "minutes approved for november 14, 2011 meeting."
+  },
+  {
+   "decision": "Designs for the logo to be discussed at the next meeting; Jo to create two or three more choices.",
+   "quote": "designs to be discussed at next meeting."
+  },
+  {
+   "decision": "Jo to collect price quotes for a sign outside the Brooks House once a design is selected and approved by school officials.",
+   "quote": "jo will be collecting price quotes for a sign to be posted outside the brooks house"
+  },
+  {
+   "decision": "Jo to obtain the original Blackboard Connect and Alert Now contracts and payment histories.",
+   "quote": "jo is in the process of obtaining the original contracts and payment histories for the service"
+  },
+  {
+   "decision": "Jo to investigate warranty information to defray camera repair costs.",
+   "quote": "jo will investigate warranty info to defray cost for repairs."
+  },
+  {
+   "decision": "Discussion of zoom control and monitor purchases tabled pending John's input regarding needs.",
+   "quote": "tabled discussion pending john's input regarding needs."
+  },
+  {
+   "decision": "Jo opened a purchase order in her name for MacBook software, to be purchased by the next meeting.",
+   "quote": "jo opened po in her name for purchase of software for macbook by next meeting."
+  },
+  {
+   "decision": "Look into taping LHS basketball games (action item, no vote).",
+   "quote": "look into taping lhs basketball games"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Blackboard Connect / Alert Now payment",
+   "what_was_recorded": "The only verified PACC payment was for Alert Now, paid via the School Committee on 12/7/2010.",
+   "figures_as_printed": [
+    "$1863.00"
+   ],
+   "quote": "paid via the school committee on 12/7/2010, in the amount of $1863.00."
+  },
+  {
+   "topic": "Blackboard Connect / Alert Now withdrawal and redeposit",
+   "what_was_recorded": "A $4050.00 amount was withdrawn from the account on 8/9/2010 and put back on 11/4/2010.",
+   "figures_as_printed": [
+    "$4050.00"
+   ],
+   "quote": "the amount of $4050.00 was withdrawn from the account on 8/9/2010, was put back into the account on 11/4/2010."
+  },
+  {
+   "topic": "Blackboard Connect / Alert Now withdrawal under questioning",
+   "what_was_recorded": "Members are still questioning a $7977.00 withdrawal on 7/15/2010 and trying to determine the financial commitment of the former PACC.",
+   "figures_as_printed": [
+    "$7977.00"
+   ],
+   "quote": "account on 7/15/2010 in the amount of $7977.00, and trying to determine"
+  },
+  {
+   "topic": "Voucher review - power supply payment",
+   "what_was_recorded": "An expected voucher for a power supply payment by John.",
+   "figures_as_printed": [
+    "$56.30"
+   ],
+   "quote": "expect $56.30 voucher for power supply payment by john"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved November 14, 2011 minutes",
+   "quote": "minutes approved for november 14, 2011 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Art Logo",
+   "resolution": "continued; designs to next meeting; sign quotes to be collected",
+   "quote": "jo distributed samples (4) of possible logo designs. she requested more time to create two or three more choices.",
+   "tags": [
+    "logo",
+    "sign"
+   ]
+  },
+  {
+   "topic": "Blackboard Connect",
+   "resolution": "continued; contracts and payment histories being obtained",
+   "quote": "jo met with peg stewart. the only payment from the pacc she was able to verify was for the alert now",
+   "tags": [
+    "blackboard connect",
+    "alert now",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Programming Update",
+   "resolution": "no action",
+   "quote": "psas in progress for drunk driving and pacc volunteering",
+   "tags": [
+    "programming",
+    "psas"
+   ]
+  },
+  {
+   "topic": "Repair Cost For GL2 Camera",
+   "resolution": "continued; warranty info to be investigated; Nexus install 12/13/11",
+   "quote": "camera is still being repaired, the nexus system will be installed on 12/13/11.",
+   "tags": [
+    "camera",
+    "repair"
+   ]
+  },
+  {
+   "topic": "Volunteer Videographer",
+   "resolution": "no action; awaiting two people",
+   "quote": "jo is waiting to hear from two people",
+   "tags": [
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "New Equipment",
+   "resolution": "tabled pending John's input",
+   "quote": "tabled discussion pending john's input regarding needs.",
+   "tags": [
+    "equipment",
+    "cameras"
+   ]
+  },
+  {
+   "topic": "Student Step Evaluation",
+   "resolution": "reviewed; no action",
+   "quote": "jo reviewed her monthly evaluation for mike wallman for nov-dec.",
+   "tags": [
+    "programming",
+    "staff evaluation"
+   ]
+  },
+  {
+   "topic": "Voucher Review",
+   "resolution": "reviewed; PO opened for MacBook software",
+   "quote": "expect $56.30 voucher for power supply payment by john",
+   "tags": [
+    "vouchers",
+    "purchasing"
+   ]
+  },
+  {
+   "topic": "Social Media Update",
+   "resolution": "no action",
+   "quote": "social media update- now, more accurate stats on facebook.",
+   "tags": [
+    "social media"
+   ]
+  },
+  {
+   "topic": "Basketball taping",
+   "resolution": "no action; to look into",
+   "quote": "look into taping lhs basketball games",
+   "tags": [
+    "programming"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Logo design samples (4) of possible logo designs",
+   "where": "text",
+   "quote": "jo distributed samples (4) of possible logo designs. she requested more time"
+  },
+  {
+   "name": "Original contracts and payment histories for Blackboard Connect and Alert Now",
+   "where": "text",
+   "quote": "jo is in the process of obtaining the original contracts and payment histories for the service"
+  },
+  {
+   "name": "Voucher for power supply payment",
+   "where": "text",
+   "quote": "expect $56.30 voucher for power supply payment by john"
+  },
+  {
+   "name": "Open PO NE Office Supply (purchase order in Jo's name for MacBook software)",
+   "where": "text",
+   "quote": "open po ne office supply, jo opened po in her name for purchase of"
+  },
+  {
+   "name": "Mike Wallman article in the Ledger about his Step experience with LPA",
+   "where": "text",
+   "quote": "jo mentioned his article in ledger about his step experience with lpa."
+  }
+ ],
+ "tags": [
+  "public access",
+  "cable",
+  "PACC",
+  "Blackboard Connect",
+  "Alert Now",
+  "camera repair",
+  "equipment",
+  "logo",
+  "programming",
+  "vouchers",
+  "volunteers"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

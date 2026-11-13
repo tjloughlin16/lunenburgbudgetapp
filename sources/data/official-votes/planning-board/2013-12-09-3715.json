@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-12-09",
  "docid": "3715",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the November 25, 2013 minutes",
+   "motion": "Approve the 11-25-13 minutes.",
    "moved_by": "N. Lockwood",
    "seconded_by": "M. Allison",
    "outcome": "not stated",
@@ -20,7 +20,15 @@
    "quote": "motion to approve 11-25-13, n. lockwood, second, m. allison."
   },
   {
-   "motion": "The Planning Board support the proposal of the School Building Committee and endorse Article 1 for a new school on the Town Warrant",
+   "motion": "Approve the 11-25-13 615/617 Leominster Road Public Hearing minutes.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "D. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion to approve 11 -25-13 615/617 leominster road public hearing, n. lockwood, second, d. mcquaid."
+  },
+  {
+   "motion": "Support the School Building Committee proposal for Article 1 (School Building Project) at the January 7, 2014 Special Town Meeting, i.e., endorse Article 1 on the Town Warrant.",
    "moved_by": "N. Lockwood",
    "seconded_by": "E. Bakaysa",
    "outcome": "passed 3-2",
@@ -28,15 +36,304 @@
    "quote": "n. lockwood made a motion for the planning board to support the proposal of the school building committee at town meeting, e. bakaysa, second."
   },
   {
-   "motion": "Enter into Executive Session, not to return to public session",
+   "motion": "Enter Executive Session, not to return to public session.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "N. Lockwood",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion, e. bakaysa, to enter into executive session, not to return to public session, second, n. lockwood, roll call vote- j. bilotta-simeone, aye; n. lockwood, aye; d. mcquaid, aye; e. bakaysa, aye; m. allison, aye."
+   "quote": "motion, e. bakaysa, to enter into executive session, not to return to public session, second, n. lockwood"
   }
  ],
  "dropped_unquoted": 1,
- "note": "Minutes are clear and legible. Four votes recorded: two routine minutes approvals (no outcome stated), one substantive vote on school building support (passed 3-2), one procedural executive session vote (passed 5-0 unanimously).",
- "cost_usd": 0.1348275
+ "note": "Plain readable text; no scan issues. Minutes-approval motions record no result. Adjournment has no motion recorded. Public comment recorded as none both times, so no speakers. P. Bertram's attendance is not stated. Bertram's name appears in several places. The Article 1 vote is recorded as roll call 3-2 with the motion text as quote.",
+ "cost_usd": 0.00898922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, chair"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood, vice-chair"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, marion m."
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, mbr."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, marion m."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "John Hume",
+   "role": "MRPC: Represented by",
+   "status": "present",
+   "quote": "represented by john hume and chantell fleck."
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC: Represented by",
+   "status": "present",
+   "quote": "represented by john hume and chantell fleck."
+  },
+  {
+   "name": "David Leroy",
+   "role": "presenter, David Ross Associates",
+   "status": "present",
+   "quote": "presented by david leroy, david ross associates."
+  },
+  {
+   "name": "P. Bertram",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "p. bertr am recommended the town manager attend a planning board meeting to update the",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board asked that the Town Manager be requested to attend the January 13 Board meeting to update the Board on the abandoned gas station property; M. Benson to ask.",
+   "quote": "j. bilotta -simeone requested m. benson ask the town manager to attend the january 13 th board meeting."
+  },
+  {
+   "decision": "Creation of a Design Guideline Handbook placed on the action list.",
+   "quote": "creation of design guideline handbook"
+  },
+  {
+   "decision": "Further Board discussion on triplex housing by special permit in the Village District to follow.",
+   "quote": "there will be more board discussion regarding this subject."
+  },
+  {
+   "decision": "MRPC to work with M. Benson to craft another DLTA covering the Village District Bylaw, Economic Development, zoning streamlining, and a possible Reuse Overlay Bylaw.",
+   "quote": "to craft another dlta for continuing the village district bylaw, economic development, streamlining the zoning, and possible reuse overlay bylaw."
+  },
+  {
+   "decision": "Marijuana Moratorium Bylaw (Articles 2 & 3) placed on the Special Town Meeting warrant; no vote recorded.",
+   "quote": "article 2 & 3- marijuana moratorium bylaw- placed on warrant."
+  },
+  {
+   "decision": "M. Benson to confer with Town Counsel on whether the Planning Board can require a dispensary to register with local police/town.",
+   "quote": "m. benson will confer with town counsel."
+  },
+  {
+   "decision": "M. Benson to schedule a meeting with herself, the project engineer and the reviewing engineer on the Force Corp. plans.",
+   "quote": "m. benson to schedule meeting with herself, project engineer and reviewing engineer."
+  },
+  {
+   "decision": "M. Benson to convey to the Town Manager a request that the Board of Selectmen encourage the public to complete the Citizen Survey during televised meetings.",
+   "quote": "requested m. benson convey to the town manager that the board of selectmen, during their televised meetings, encourage the public to complete the survey."
+  },
+  {
+   "decision": "ANR plan for 136 & 150 Sunset Lane accepted for department review.",
+   "quote": "plan accepted for department review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "40R Density Bonus Payment received (Smart Growth District / Tri Town Landing)",
+   "what_was_recorded": "The Town received a 40R Density Bonus Payment of $99,000 for the Smart Growth District.",
+   "figures_as_printed": [
+    "$99,000"
+   ],
+   "quote": "town received 40r density bonus payment of $99,000."
+  },
+  {
+   "topic": "School Building Project cost to the Town",
+   "what_was_recorded": "Board members discussed the cost to the Town of the school building project and whether repair or revitalizing the existing school would cost more; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "is it going to cost more to repair/revitalize the existing school"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "Minutes approval (11-25-13 and 11-25-13 615/617 Leominster Road hearing)",
+   "resolution": "motions made; result not recorded",
+   "quote": "motion to approve 11-25-13, n. lockwood, second, m. allison."
+  },
+  {
+   "topic": "MRPC presentation: draft Village District Bylaw and Economic Development Element",
+   "resolution": "presented; discussed; no action",
+   "quote": "presentation given on the draft village district bylaw and the economic development element of the master plan."
+  },
+  {
+   "topic": "Village District Bylaw action items (handbook, triplex, telecom towers, restaurants, gas stations, materials, design standards)",
+   "resolution": "continued; further Board discussion",
+   "quote": "creation of design guideline handbook"
+  },
+  {
+   "topic": "ANR 136 & 150 Sunset Lane, Bisceglia Family Realty Trust",
+   "resolution": "plan accepted for department review",
+   "quote": "plan accepted for department review."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "green community task force, m. benson- green community designation criteria submitted to the state."
+  },
+  {
+   "topic": "Special Town Meeting Article 1: School Building Project",
+   "resolution": "endorsed 3-2",
+   "quote": "n. lockwood made a motion for the planning board to support the proposal of the school building committee at town meeting, e. bakaysa, second."
+  },
+  {
+   "topic": "Special Town Meeting Articles 2 & 3: Marijuana Moratorium Bylaw",
+   "resolution": "placed on warrant; no vote recorded",
+   "quote": "article 2 & 3- marijuana moratorium bylaw- placed on warrant."
+  },
+  {
+   "topic": "Development status reports (Force Corp., Emerald Place, 35 Leominster Road, Smart Growth District, White Tail Crossing, NuGen)",
+   "resolution": "reported; follow-up assigned in part",
+   "quote": "town received 40r density bonus payment of $99,000."
+  },
+  {
+   "topic": "Action file: Citizen Survey and Conservation/ZBA notices (337 Page Street solar)",
+   "resolution": "directed staff to convey request; noted notice",
+   "quote": "requested m. benson convey to the town manager that the board of selectmen, during their televised meetings, encourage the public to complete the survey."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "january 13, 2014, town hall, public hearing followed by board meeting"
+  },
+  {
+   "topic": "Board comments: PSFB signboard use",
+   "resolution": "discussed; no action",
+   "quote": "signboard located at the psfb should be used for community announcements."
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, not to return to public session",
+   "quote": "motion, e. bakaysa, to enter into executive session, not to return to public session, second, n. lockwood"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:30 PM; no motion recorded",
+   "quote": "adjournment: regular session 10:30 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "11-25-13 Minutes",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "Notices- Conservation Commission & Zoning Board of Appeals",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "Draft Village District Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "Warrant for January 2014 Special Town Meeting",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "ANR- 136 & 150 Sunset Lane",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "Whites Woods Weekly Progress Report",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "Economic Development Element of the Master Plan",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "Smart Growth District Certificate of Compliance",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "11-25-13 615/617 Leominster Road Public Hearing Minutes",
+   "where": "list",
+   "quote": "documents used at meeting: 11-25-13 minutes notices- conservation commission & zoning board of appeals"
+  },
+  {
+   "name": "Minutes/2013/12.09.13",
+   "where": "list",
+   "quote": "minutes/2013/12.09.13"
+  },
+  {
+   "name": "Economic Development Update (Word format, to be provided by J. Hume)",
+   "where": "text",
+   "quote": "j. hume will provide the economic development update to the planning office in word format"
+  },
+  {
+   "name": "Draft map of proposed Village District boundary",
+   "where": "text",
+   "quote": "draft map was presented showing proposed boundary of village district as a result of board input."
+  },
+  {
+   "name": "Green Community Designation Criteria",
+   "where": "text",
+   "quote": "green community designation criteria submitted to the state."
+  },
+  {
+   "name": "Demolition Delay Bylaw",
+   "where": "text",
+   "quote": "have the demolition delay bylaw referenced."
+  },
+  {
+   "name": "Right-To-Farm Bylaw",
+   "where": "text",
+   "quote": "commission still working on right -to-farm bylaw."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "village district bylaw",
+  "school building project",
+  "special town meeting",
+  "marijuana moratorium",
+  "MRPC",
+  "economic development",
+  "ANR",
+  "zoning",
+  "citizen survey"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

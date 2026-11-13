@@ -1,0 +1,632 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-10-15",
+ "video_id": "hSqD5TRbSTg",
+ "video_url": "https://www.youtube.com/watch?v=hSqD5TRbSTg",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-10-15-hSqD5TRbSTg.json",
+  "sha256": "79a30d73ff752bf3dd021729c45e986eef5b89b0617efffe286943ddeaf63550",
+  "caption_lines": 148,
+  "segments": 1348
+ },
+ "recording": {
+  "duration_s": 3080,
+  "duration": "0:51",
+  "spoken_chars": 38137,
+  "words_approx": 6356
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10152013-4862",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-15-agenda-4862.txt",
+   "path": "sources/meetings/select-board/2013-10-15-agenda-4862.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10152013-4862",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-15-minutes-4862.txt",
+   "path": "sources/meetings/select-board/2013-10-15-minutes-4862.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T19:00:35Z",
+  "cost_usd": 0.1508204
+ },
+ "minutes": {
+  "headline": "Selectmen renewed the town manager's contract at a higher salary and ratified two new police officers.",
+  "summary": "The board approved a wine and malt license for a new Honey Farms store contingent on clean background checks, ratified two police appointments, and granted a one-day liquor license and a voluntary toll. It stayed the Mickey Shays suspension pending an ABCC appeal deadline, announced the town manager's renewed contract, and discussed financing options for the school building project debt.",
+  "attendees": [
+   {
+    "name_as_heard": "Tom Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Ms. Spidel (Bidell)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Moreno",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Chamberlain",
+    "role": "member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "contracts-and-unions",
+   "debt",
+   "high-school",
+   "hiring",
+   "legal",
+   "middle-school",
+   "msba",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety"
+  ],
+  "votes": [
+   {
+    "motion": "Approve wine and malt beverage license for Honey Farm contingent on clean CORI checks for owner and manager",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 458
+   },
+   {
+    "motion": "Ratify appointments of Peter Lechodis and Bradley McNamara as full-time police officers",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 830
+   },
+   {
+    "motion": "Approve one-day liquor license for North Leominster Rod and Gun Club on 11/15/2013",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 933
+   },
+   {
+    "motion": "Approve voluntary toll for Turkey Hill Lions Club on Nov 16 with police chief conditions",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 1019
+   },
+   {
+    "motion": "Stay Mickey Shays suspension if ABCC appeal confirmed timely filed by noon tomorrow",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 1329
+   },
+   {
+    "motion": "Adjourn televised meeting to non-televised workshop",
+    "outcome": "not audible",
+    "procedural": true,
+    "t": 3024
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1630,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "One accounts payable warrant was presented for signature.",
+    "figures_as_heard": [
+     "240 953 and 74 cents"
+    ]
+   },
+   {
+    "t": 2278,
+    "topic": "Town manager salary",
+    "what_was_said": "Salary rises from the current level for all three years of the renewed contract.",
+    "figures_as_heard": [
+     "125 000",
+     "122 039 dollars"
+    ]
+   },
+   {
+    "t": 2299,
+    "topic": "Town manager deferred compensation",
+    "what_was_said": "A deferred compensation payment is made each December 1.",
+    "figures_as_heard": [
+     "2500"
+    ]
+   },
+   {
+    "t": 2341,
+    "topic": "Town manager performance bonus",
+    "what_was_said": "Bonus for commendable or outstanding rating, not added to base; no severance if contract is not renewed by mutual agreement.",
+    "figures_as_heard": [
+     "1.5",
+     "2.5 percent"
+    ]
+   },
+   {
+    "t": 2000,
+    "topic": "MSBA reimbursement maintenance points",
+    "what_was_said": "The town earns extra reimbursement points for building maintenance, above the average.",
+    "figures_as_heard": [
+     "1.72 points out of two",
+     "one percent"
+    ]
+   },
+   {
+    "t": 2774,
+    "topic": "School project borrowing",
+    "what_was_said": "Interest-only or reduced principal option to be investigated; 20- versus 30-year bond affects total cost.",
+    "figures_as_heard": [
+     "10 million dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2692,
+    "decision": "Mrs. Bertram's name will be submitted to the open space committee team, with another member as alternate."
+   },
+   {
+    "t": 2795,
+    "decision": "Town manager to investigate an interest-only or reduced principal financing option for the school project."
+   },
+   {
+    "t": 3001,
+    "decision": "October 29 will be a workshop on policies and procedures."
+   },
+   {
+    "t": 1670,
+    "decision": "Town manager to request an update from town counsel on the town election complaint."
+   },
+   {
+    "t": 1284,
+    "decision": "Noon tomorrow set as deadline to confirm ABCC appeal filing for the stay."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 150,
+    "topic": "Announcements: school building forum, fire open house",
+    "resolution": "informational",
+    "tags": [
+     "msba",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 150,
+    "t_end": 570,
+    "topic": "Honey Farms wine and malt license",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 580,
+    "t_end": 870,
+    "topic": "Police officer appointments",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 872,
+    "t_end": 1075,
+    "topic": "One-day liquor license and Lions toll",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1081,
+    "t_end": 1580,
+    "topic": "Mickey Shays suspension stay",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1582,
+    "t_end": 1710,
+    "topic": "Minutes correction, warrant, action file",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1713,
+    "t_end": 2060,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "msba",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2060,
+    "t_end": 2236,
+    "topic": "United Nations Day proclamation",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 2236,
+    "t_end": 2610,
+    "topic": "Town manager contract renewal",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 2610,
+    "t_end": 2710,
+    "topic": "Open space team representative",
+    "resolution": "decided",
+    "tags": []
+   },
+   {
+    "t_start": 2712,
+    "t_end": 3078,
+    "topic": "Workshop format, school debt financing, policy workshop, adjournment",
+    "resolution": "informational",
+    "tags": [
+     "debt",
+     "msba",
+     "policy"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Adjournment vote outcome not stated.",
+   "Exact voice counts not stated for votes."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1500,
+    "about": "A member noted the licensee's own establishment had earlier been cited, contradicting an answer given at the earlier hearing.",
+    "sides": "a member against the license holder",
+    "words_as_heard": "when i asked you that night whether or not you had ever been in violation that was an incorrect answer",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 276,
+    "kind": "condition",
+    "about": "License approval contingent on second CORI result.",
+    "who": "the town manager",
+    "words_as_heard": "any decision you make this evening needs to be contingent upon receipt of the second"
+   },
+   {
+    "t": 458,
+    "kind": "condition",
+    "about": "License issued only with clean CORI; anything else returns to the board.",
+    "who": "a member",
+    "words_as_heard": "it will be issued on the contingent of a clean quarry anything other than the clean car would be remanded back to this board"
+   },
+   {
+    "t": 1060,
+    "kind": "condition",
+    "about": "Toll permission contingent on police chief review, reflective clothing and no collectors under 18.",
+    "who": "a member",
+    "words_as_heard": "everybody be wearing reflective clothing uh and that nobody under the age of 18 would be collecting"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2060,
+    "name_as_heard": "United Nations Day proclamation 2013",
+    "kind": "other",
+    "words_as_heard": "a proclamation a united nations day proclamation 2013"
+   },
+   {
+    "t": 1582,
+    "name_as_heard": "the 10-8 minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "the 10 18 min the 10-8 minutes that's right"
+   },
+   {
+    "t": 2817,
+    "name_as_heard": "handout given to the finance committee",
+    "kind": "presentation",
+    "words_as_heard": "i do have the handout that i gave to the finance committee last week"
+   },
+   {
+    "t": 1121,
+    "name_as_heard": "letter to the ABCC requesting appeal",
+    "kind": "letter or email",
+    "words_as_heard": "a copy of a letter that he sent to the abcc requesting an appeal"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-project-borrowing",
+    "title": "School project borrowing",
+    "question": "How would a 20-year versus 30-year bond, or interest-only payments, change the cost of the school building project?",
+    "t": 2774,
+    "words_as_heard": "it adds about 10 million dollars total to the cost round numbers",
+    "data_in_play": [
+     "10 million dollars",
+     "20 year or 30 year"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "town-manager-contract-terms",
+    "title": "Town manager contract",
+    "question": "What are the terms and cost of the renewed town manager contract?",
+    "t": 2278,
+    "words_as_heard": "increase to 125 000 per year from the current 122 039 dollars per year",
+    "data_in_play": [
+     "125 000",
+     "122 039 dollars",
+     "2500"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board announced a renewed town manager contract running three years, with a salary increase in each year, a December 1 deferred compensation payment and a performance bonus kept out of base pay.",
+    "t": 2278
+   },
+   {
+    "line": "The board voted to stay the Mickey Shays suspension if the ABCC appeal is confirmed as timely filed by noon the next day.",
+    "t": 1329
+   },
+   {
+    "line": "The board approved a wine and malt license for a new Honey Farms store, contingent on clean CORI checks for the owner and manager.",
+    "t": 458
+   },
+   {
+    "line": "The board ratified two full-time police officer appointments, and approved a one-day liquor license and a Lions Club voluntary toll with police chief conditions.",
+    "t": 830
+   },
+   {
+    "line": "The town manager was asked to investigate an interest-only or reduced-principal financing option for the school building project debt.",
+    "t": 2795
+   }
+  ],
+  "why_it_matters": [
+   "The town manager contract sets pay and benefits for three years, which are paid from the town budget, mostly taxes.",
+   "How the school building debt is structured, including a 20- or 30-year bond, changes the total interest the town pays and the annual debt on tax bills."
+  ],
+  "watch_next": [
+   "Whether the ABCC appeal on the Mickey Shays suspension was confirmed as timely filed by the noon deadline the day after the meeting.",
+   "The October 29 workshop on policies and procedures, and the town manager's report on the school project financing option."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T19:00:43Z",
+   "cost_usd": 0.024117100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10152013-4862",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-10-15-minutes-4862.txt",
+   "path": "sources/meetings/select-board/2013-10-15-minutes-4862.pdf"
+  },
+  "official_sha256": "eaa23ce55ae04d052ac03d009f6a5ea9d2d3654aefe9d030146287731a77b749",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main votes, the contract figures and the main decisions. The differences are mostly misheard names, plus agenda items (PACC, Keno, the PEG transfer) that only the official minutes cover.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 3,
+   "discrepancy": 3,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Honey Farms wine and malt license vote",
+    "ours": "Approve wine and malt beverage license for Honey Farm contingent on clean CORI checks for owner and manager — passed",
+    "official": "ms. bertram moved to approve the wine & malt beverage license for honey farms inc., located at 134 leominster shirley rd contingent upon the receipt of a clean cori",
+    "note": "Same motion and outcome; official adds 5-0 tally.",
+    "t": 458
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police officer appointment name",
+    "ours": "Ratify appointments of Peter Lechodis and Bradley McNamara as full-time police officers — passed",
+    "official": "ms. bertram moved to approve the recommendation to ratify peter lakaditis and bradley mcnamara to positions of full time police officers.",
+    "note": "Same vote; captions misheard the surname.",
+    "official_reading": "Peter Lakaditis",
+    "t": 830
+   },
+   {
+    "kind": "agree",
+    "about": "North Leominster Rod and Gun Club one-day license",
+    "ours": "Approve one-day liquor license for North Leominster Rod and Gun Club on 11/15/2013 — passed",
+    "official": "ms. bertram moved to recommend approval of a one day liquor license for north leominster rod & gun club",
+    "note": "Same vote and date.",
+    "t": 933
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill Lions Club voluntary toll",
+    "ours": "Approve voluntary toll for Turkey Hill Lions Club on Nov 16 with police chief conditions — passed",
+    "official": "mr. matthews moved to approve the turkey hill lions club request for a voluntary toll on 11/16/2013 from",
+    "note": "Same vote; official passed 4-0 and gives hours and locations rather than police chief conditions.",
+    "t": 1019
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mickey Shea's suspension stay",
+    "ours": "Stay Mickey Shays suspension if ABCC appeal confirmed timely filed by noon tomorrow — passed",
+    "official": "ms. bertram moved to set a deadline of 12 noon on october 16, 2013 to receive confirmation from the abco",
+    "note": "Same substance (noon Oct 16 deadline, stay if confirmed), but the wording differs: ours says a timely-filed appeal, official says appeal received. Check the recording and the motion text.",
+    "t": 1284
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrant total",
+    "ours": "Accounts payable warrant: 240 953 and 74 cents",
+    "official": "#20-14 10/15/2013 $240,953.74",
+    "note": "Same amount; the official records no vote on the warrant.",
+    "t": 1630
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager salary",
+    "ours": "Town manager salary: 125 000, 122 039 dollars",
+    "official": "the salary of the town manager will increase to $125,000 per year from the current $122,039 per year.",
+    "note": "Same figures.",
+    "t": 2278
+   },
+   {
+    "kind": "agree",
+    "about": "Deferred compensation",
+    "ours": "Town manager deferred compensation: 2500",
+    "official": "there will be $2500 paid in a deferred compensation plan to the town manager",
+    "note": "Same figure.",
+    "t": 2299
+   },
+   {
+    "kind": "agree",
+    "about": "Performance bonus",
+    "ours": "Town manager performance bonus: 1.5, 2.5 percent",
+    "official": "it would be a 2.5% performance bonus of base salary.",
+    "note": "Same percentages.",
+    "t": 2341
+   },
+   {
+    "kind": "agree",
+    "about": "MSBA maintenance reimbursement points",
+    "ours": "MSBA reimbursement maintenance points: 1.72 points out of two, one percent",
+    "official": "reimbursement for maintenance is 1% and we are at 1.72",
+    "note": "Same figures.",
+    "t": 2000
+   },
+   {
+    "kind": "discrepancy",
+    "about": "School project borrowing amount",
+    "ours": "School project borrowing: 10 million dollars",
+    "official": "suggested perhaps doing interest only or reduced payment during the time period when other exempt debt is",
+    "note": "Official prints no dollar figure for school financing; check the recording for the $10 million.",
+    "t": 2774
+   },
+   {
+    "kind": "agree",
+    "about": "Interest-only financing option for school project",
+    "ours": "Town manager to investigate an interest-only or reduced principal financing option for the school project.",
+    "official": "he would like the town manager to explore looking at another option to finance the school",
+    "note": "Same decision.",
+    "t": 2795
+   },
+   {
+    "kind": "agree",
+    "about": "Town election complaint request to counsel",
+    "ours": "Town manager to request an update from town counsel on the town election complaint.",
+    "official": "ms. speidel replied no and that she would put in a request tomorrow.",
+    "note": "Same action.",
+    "t": 1670
+   },
+   {
+    "kind": "agree",
+    "about": "Open space team",
+    "ours": "Mrs. Bertram's name will be submitted to the open space committee team, with another member as alternate.",
+    "official": "ms. bertram spoke and offered her services to serve on that team.",
+    "note": "Same item; the official says the Chair attends meetings she cannot.",
+    "t": 2692
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "October 29 workshop",
+    "ours": "October 29 will be a workshop on policies and procedures.",
+    "official": "",
+    "note": "Official minutes do not record this workshop.",
+    "t": 3001
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager renewal contract announcement",
+    "ours": "",
+    "official": "the board has successfully negotiated a renewal contract with the town manager.",
+    "note": "Official records the announcement; ours has the terms but not this framing."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Keno to Go at Honey Farms",
+    "ours": "",
+    "official": "were all in agreement that there would be no concerns from the bos regarding this matter.",
+    "note": "Board agreement on the Keno location is not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PEG line item transfer for school rent",
+    "ours": "",
+    "official": "reason for surplus june 10-dec 9, 2013",
+    "note": "Official has a $3,000 transfer form with no board vote; ours lists no transfers."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PACC recommendations",
+    "ours": "",
+    "official": "the bos recommended that the pacc get a recommendation from the town manager on how to receive their",
+    "note": "Official records PACC budget, meeting policy and job description items; ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session minutes correction",
+    "ours": "",
+    "official": "mr. alonzo asked mr. ebersole to make the note, and they will initial it on the way back.",
+    "note": "Correction of the 10/8 minutes is not in ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees: board members",
+    "ours": "Tom Alonzo (chair); Mrs. Bertram; Mr. Chamberlain (member)",
+    "official": "chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and",
+    "note": "Ours lists a Mr. Chamberlain who is not in the official roster, which has Matthews, Toale and Ebersole; check the recording."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager name",
+    "ours": "Ms. Spidel (Bidell) (town manager)",
+    "official": "town manager kerry speidel.",
+    "note": "Name misheard.",
+    "official_reading": "Kerry Speidel"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief name",
+    "ours": "Chief Moreno (police chief)",
+    "official": "police chief marino came before the bos to recommend appointment of peter lekaditis and bradley",
+    "note": "Name misheard.",
+    "official_reading": "Chief Marino"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T19:02:55Z",
+   "cost_usd": 0.0605951
+  }
+ }
+}

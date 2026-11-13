@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-12-11",
  "docid": "1199",
@@ -10,17 +10,185 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12112013-1199",
   "doc_url": "/docs/meetings/capital-planning-committee/2013-12-11-minutes-1199.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "The extracted text records no motions, roll-call or vote counts. The line '12-04-13 minutes approved.' states approval without a motion, mover or count, so it is recorded as a decision rather than a vote. The adjournment at 10:45 AM has no recorded motion. The text does not state who moved the minutes approval. Public comment is not recorded.",
+ "cost_usd": 0.0033226199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the December 4, 2013 minutes",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "12-04-13 minutes approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes mention deferring a vote on the Capital Plan FY2015 to a future meeting and tentatively planning to meet in January for a formal vote, but those votes did not occur at this meeting. The text refers to actions taken (revising school technology priorities, adding Ritter HVAC to prioritization, reiterating DPW priority) but records no motions or votes on those items.",
- "cost_usd": 0.0843905
+ "decisions": [
+  {
+   "decision": "Minutes of the 12-04-13 meeting recorded as approved; the text gives no motion, mover or vote count.",
+   "quote": "12-04-13 minutes approved."
+  },
+  {
+   "decision": "The Committee requests the Town Manager's presence at its December 18 meeting, and the meeting time is changed to 9:00AM.",
+   "quote": "the committee is requesting the town manager's presence at its december 18 th meeting. meeting time will be changed to 9:00am."
+  },
+  {
+   "decision": "Ritter HVAC added to the Prioritization as #21.",
+   "quote": "ritter hvac added to the prioritization as #21."
+  },
+  {
+   "decision": "School Technology priorities revised: Priority 1 from $30,000 to $40,000; Priority 2 from $35,000 to $25,000.",
+   "quote": "school technology revised- priority 1- from $30,000 to $40,000; priority 2- from $35,000 to $25,000."
+  },
+  {
+   "decision": "The Committee reiterated that the DPW Street Sweeper remains a Priority 3.",
+   "quote": "committee reiterated that the dpw street sweeper would remain a priority 3."
+  },
+  {
+   "decision": "The Committee holds off on its vote on the Capital Plan FY 2015 pending Town Manager comments.",
+   "quote": "committee will hold off on taking its vote on the capital plan fy 2015, pending town manager comments."
+  },
+  {
+   "decision": "The Committee tentatively plans to meet in January to take a formal vote and prepare a comment sheet for Town Meeting.",
+   "quote": "committee will tentatively plan to meet in january to take a formal vote and prepare a comment sheet for town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Technology priority amounts",
+   "what_was_recorded": "School Technology figures were revised between Priority 1 and Priority 2, with Priority 1 raised and Priority 2 lowered.",
+   "figures_as_printed": [
+    "$30,000",
+    "$40,000",
+    "$35,000",
+    "$25,000"
+   ],
+   "quote": "school technology revised- priority 1- from $30,000 to $40,000; priority 2- from $35,000 to $25,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (12-04-13)",
+   "resolution": "approved",
+   "quote": "12-04-13 minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager presence and meeting time change",
+   "resolution": "requested; time changed to 9:00AM",
+   "quote": "the committee is requesting the town manager's presence at its december 18 th meeting. meeting time will be changed to 9:00am.",
+   "tags": [
+    "scheduling",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Fire Chief vehicle firefighting usage data",
+   "resolution": "data received (calendar years 2007-2012)",
+   "quote": "the committee requested the fire chief provide actual vehicle firefighting usage for the past five years. data provided for calendar years 2007-2012",
+   "tags": [
+    "fire department",
+    "vehicles",
+    "data"
+   ]
+  },
+  {
+   "topic": "Ritter HVAC added to Prioritization",
+   "resolution": "added as #21",
+   "quote": "ritter hvac added to the prioritization as #21.",
+   "tags": [
+    "prioritization",
+    "building"
+   ]
+  },
+  {
+   "topic": "School Technology revision",
+   "resolution": "revised priority amounts",
+   "quote": "school technology revised- priority 1- from $30,000 to $40,000; priority 2- from $35,000 to $25,000.",
+   "tags": [
+    "school",
+    "technology",
+    "prioritization"
+   ]
+  },
+  {
+   "topic": "DPW Street Sweeper priority",
+   "resolution": "remains Priority 3",
+   "quote": "committee reiterated that the dpw street sweeper would remain a priority 3.",
+   "tags": [
+    "DPW",
+    "prioritization"
+   ]
+  },
+  {
+   "topic": "Capital Plan FY 2015 vote",
+   "resolution": "vote held off pending Town Manager comments",
+   "quote": "committee will hold off on taking its vote on the capital plan fy 2015, pending town manager comments.",
+   "tags": [
+    "capital plan",
+    "vote"
+   ]
+  },
+  {
+   "topic": "Next steps: January meeting and Town Meeting comment sheet",
+   "resolution": "tentatively planned for January",
+   "quote": "committee will tentatively plan to meet in january to take a formal vote and prepare a comment sheet for town meeting.",
+   "tags": [
+    "town meeting",
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Plan FY 2015",
+   "where": "text",
+   "quote": "committee will hold off on taking its vote on the capital plan fy 2015, pending town manager comments."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "prioritization",
+  "capital plan FY 2015",
+  "school technology",
+  "fire department vehicles",
+  "DPW",
+  "Ritter HVAC",
+  "town manager",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

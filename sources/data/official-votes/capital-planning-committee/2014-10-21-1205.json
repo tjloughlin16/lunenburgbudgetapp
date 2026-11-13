@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2014-10-21",
  "docid": "1205",
@@ -12,23 +12,223 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the Capital Planning Committee meeting of September 29",
-   "outcome": "approved without dissent",
-   "procedural": true,
+   "motion": "Approve the minutes of the CPC meeting of Monday, September 29 as submitted.",
    "moved_by": "",
-   "seconded_by": "",
-   "quote": "the committee approved without dissent the minutes of the cpc meeting of monday, september 29 as submitted."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the committee approved without dissent the minutes of the cpc meeting of monday, september 29 as submitted.",
+   "seconded_by": ""
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Joanna Bilotta",
    "outcome": "passed 5-0",
    "procedural": true,
-   "moved_by": "Joanna Bilotta",
-   "seconded_by": "Heather Sroka",
-   "quote": "joanna bilotta made a motion to adjourn the meeting. heather sroka seconded her motion, and the committee voted 5-0 to adjourn the meeting at 6:49 pm."
+   "quote": "joanna bilotta made a motion to adjourn the meeting. heather sroka seconded her motion, and the committee voted 5-0 to adjourn the meeting at 6:49 pm.",
+   "seconded_by": "Heather Sroka"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision. Two votes recorded: approval of prior minutes (procedural, unanimous by dissent language) and adjournment (procedural, 5-0). Item 5 records \"voiced general agreement\" to fit pavement management into capital plan, but this is not a recorded motion or vote.",
- "cost_usd": 0.08560250000000001
+ "note": "OCR text of a two-page scan; some line breaks and check marks are OCR noise, and quotes were collapsed to single spaces. The minutes print no public comment section and no documents list heading. Kerry S. is listed as present but no role is printed. A stray line 'c. Marjorie Boggio' appears after the signature with no context, so she is not recorded as an attendee. Item 6f is cut off mid-sentence in the text. The minutes print the approval of the September 29 minutes as 'approved without dissent' with no named mover or seconder.",
+ "cost_usd": 0.00450982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order by jamie toale at 5:30 pm."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., vice-chairman"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "minutes respectfully submitted by john henshaw"
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "joanna bilotta-simeone, john henshaw, dennis mannone, jr., kerry speidel,"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "heather sroka, jamie toale."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joanna bilotta-simeone, john henshaw, dennis mannone, jr., kerry speidel,"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "presenter, Pavement Management Plan",
+   "status": "present",
+   "quote": "pavement management plan, presented by jack rodriquenz."
+  },
+  {
+   "name": "Stephen Malandrinos",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "acting as the liaison to stephen malandrinos as needed to make the changes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jamie Toale is to try to schedule the CPC review of the Police and Fire Departments capital requests at the November 4 meeting, since there are no outstanding questions on them.",
+   "quote": "accordingly jamie is going to try to schedule the cpc review of the police and fire departments requests at the november 4 meeting."
+  },
+  {
+   "decision": "The committee voiced general agreement to fit the pavement management plan into the capital plan.",
+   "quote": "the committee voiced general agreement to fit the pavement management plan into the capital plan."
+  },
+  {
+   "decision": "Jamie Toale takes the lead on the CPC web site update, including liaison to Stephen Malandrinos and posting meeting dates, FY 2014 and FY 2015 capital plans, blank request forms, and a Financial Policies section III extract.",
+   "quote": "capital planning committee web site: jamie will take the lead on this effort, including:"
+  },
+  {
+   "decision": "Dennis M. is to write a paragraph on the CPC mission statement for the web site.",
+   "quote": "dennis m. will write a paragraph on the cpc mission statement to be included on the web"
+  },
+  {
+   "decision": "Reviews of department capital requests will be scheduled by the CPC depending on department availability and readiness; larger and smaller department requests may be paired.",
+   "quote": "depending on department availability and readiness of their request, the cpc will schedule"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town road asset value",
+   "what_was_recorded": "Jack Rodriquenz estimated the Town's roads at a cost that makes them the Town's highest-cost asset.",
+   "figures_as_printed": [
+    "$70,000,000"
+   ],
+   "quote": "at an estimated cost of $70,000,000 town roads are the highest cost asset the town has."
+  },
+  {
+   "topic": "Road maintenance to hold current quality",
+   "what_was_recorded": "About $600,000 per year would be needed to maintain overall road quality at current levels.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "it would require an expenditure of about $600,000 per year to maintain the overall quality"
+  },
+  {
+   "topic": "Road improvement to significantly raise quality",
+   "what_was_recorded": "About $1,200,000 per year in annual expenditures would be needed to significantly improve road quality.",
+   "figures_as_printed": [
+    "$1,200,000"
+   ],
+   "quote": "it would require annual expenditures of about $1,200,000 to significantly improve the"
+  },
+  {
+   "topic": "Chapter 90 state road funds",
+   "what_was_recorded": "Chapter 90 state funds for FY2015 are about $400,000.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "chapter 90 funds from the state-which in fy2015 is about $400,000."
+  },
+  {
+   "topic": "Past road investment",
+   "what_was_recorded": "Over the past three years the Town has invested an average of roughly $100,000 per year in roads.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "has invested an average of roughly $100,000 per year."
+  },
+  {
+   "topic": "Debt service savings for pavement program",
+   "what_was_recorded": "Kerry S. said savings from reduced debt service could be earmarked for the Pavement Management Program; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "there is an opportunity to earmark savings to the pavement management program."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of September 29 minutes",
+   "resolution": "approved without dissent",
+   "quote": "the committee approved without dissent the minutes of the cpc meeting of monday, september 29 as submitted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Schedule for CPC review of department capital requests",
+   "resolution": "Police and Fire reviews to be scheduled for November 4 meeting",
+   "quote": "depending on department availability and readiness of their request, the cpc will schedule",
+   "tags": [
+    "capital requests",
+    "police",
+    "fire",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Pavement Management Plan",
+   "resolution": "general agreement to fit plan into capital plan",
+   "quote": "the committee voiced general agreement to fit the pavement management plan into the capital plan.",
+   "tags": [
+    "roads",
+    "pavement",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Capital Planning Committee web site",
+   "resolution": "Jamie Toale to lead update; Dennis M. to write mission paragraph",
+   "quote": "capital planning committee web site: jamie will take the lead on this effort, including:",
+   "tags": [
+    "website",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 6:49 pm",
+   "quote": "joanna bilotta made a motion to adjourn the meeting. heather sroka seconded her motion, and the committee voted 5-0 to adjourn the meeting at 6:49 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pavement Management Plan (presented by Jack Rodriquenz)",
+   "where": "text",
+   "quote": "pavement management plan, presented by jack rodriquenz."
+  },
+  {
+   "name": "Town's Financial Policies, section III (regarding capital projects and process)",
+   "where": "text",
+   "quote": "show an extract of section iii (regarding capital projects and process) of the town's"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "pavement management",
+  "roads",
+  "police",
+  "fire",
+  "capital requests",
+  "CPC web site",
+  "Chapter 90",
+  "debt service"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

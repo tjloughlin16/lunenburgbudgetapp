@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2015-12-03",
  "docid": "3429",
@@ -12,36 +12,272 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the October 26, 2015 meeting",
+   "motion": "Approve the minutes of the October 26 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "reviewed minutes of october 26 th meeting. minutes were approved."
+   "quote": "minutes were approved. lin will send to town clerk for publication."
   },
   {
-   "motion": "Table further discussion on sexual harassment topics until a future Personnel Committee meeting when Kerry, Town Manager, can attend",
-   "moved_by": "Scott Chase",
+   "motion": "Table further discussion of the sexual harassment training and complaint handling topic until Kerry, Town Manager, can attend a Personnel Committee meeting.",
+   "moved_by": "Scott",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "scott motioned that we table further discussion on this topic to a date when kerry, town manager, could attend a personnel committee meeting for a more comprehensive discussion. all agreed."
+   "procedural": false,
+   "quote": "scott motioned that we table further discussion on this topic to a date when kerry, town manager, could attend a personnel committee meeting"
   },
   {
-   "motion": "Table the discussion of the DPW Director position's salary grade until a future Personnel Committee meeting when Kerry can attend",
-   "moved_by": "Scott Chase",
+   "motion": "Table the DPW Director salary grade discussion to a Personnel Committee meeting where Kerry can attend.",
+   "moved_by": "Scott",
+   "seconded_by": "",
    "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "scott motioned to table this to a personnel ===page 2=== /fy2015/personnel committee/minutes - 10-26-15.docx committee where k",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Deb Christen",
-   "seconded_by": "Lin Vickery",
-   "outcome": "passed 5-0",
+   "motion": "Adjourn the meeting at 7:37 p.m.",
+   "moved_by": "Deb",
+   "seconded_by": "Lin",
+   "outcome": "5-0",
    "procedural": true,
    "quote": "deb motioned to adjourn the meeting; lin seconded the motion, and the committee voted 5-0 to adjourn at 7:37 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clearly legible with four recorded votes. The third motion to table the DPW Director salary discussion has no explicit outcome recorded in the minutes, though the meeting proceeded to the next agenda item.",
- "cost_usd": 0.1328575
+ "dropped_unquoted": 1,
+ "note": "The file name reads \"Minutes – 10-26-15.docx\" but the text is the minutes of the December 3, 2015 meeting, submitted December 4, 2015. The October 26 minutes approval has no printed motion or mover, so it is recorded as procedural with no mover. The DPW Director tabling motion records no result. Kerry is named but not listed as present. No dollar figures are printed anywhere. The minutes name no documents list.",
+ "cost_usd": 0.005647419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cheryl Valera",
+   "role": "Committee Chair",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen, sherri freeman, and jamie toale"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen, sherri freeman, and jamie toale"
+  },
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen, sherri freeman, and jamie toale"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen, sherri freeman, and jamie toale"
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen, sherri freeman, and jamie toale"
+  },
+  {
+   "name": "Sherri Freeman",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sherri freeman was in attendance and mentioned that the town website needs updating"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen, sherri freeman, and jamie toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "An administrative order was prepared at the meeting to correct the salary grid (13 incorrect rates, reverting to the May 1, 2010 version); Deb agreed to file it with the Town Clerk.",
+   "quote": "the administrative order was prepared at our meeting and deb agreed to file the administrative order with the town clerk."
+  },
+  {
+   "decision": "Scott volunteered to take the talent bank forms and performance review form action item and will present at the January 7, 2016 meeting.",
+   "quote": "scott volunteered to take this action item and will present at the next personnel committee meeting january 7, 2016."
+  },
+  {
+   "decision": "The 2016 Personnel Committee meeting dates were set as listed.",
+   "quote": "jan 7, feb 4, mar 3, apr 7, may 5, jun 2, jul 7, aug 4, sept 8, oct 6, nov 3, and dec 1."
+  },
+  {
+   "decision": "Lin will send the approved October 26 minutes to the Town Clerk for publication.",
+   "quote": "minutes were approved. lin will send to town clerk for publication."
+  },
+  {
+   "decision": "Items set for the January 2016 agenda: policies, employee handbook and sexual harassment training; talent bank and performance review templates; DPW Director grade with Kerry; Personnel Action Forms.",
+   "quote": "january 2016 personnel committee meeting agenda items are:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Salary grid corrections (Advice Package)",
+   "what_was_recorded": "The salary grid attached to the SAP presented at the November 16 Special Town Meeting had 13 incorrect rates, and an administrative order was prepared to correct them to the May 1, 2010 version.",
+   "figures_as_printed": [],
+   "quote": "nancy mentioned that there were 13 rates that were incorrect and we needed to prepare an administrative order to make the corrections."
+  },
+  {
+   "topic": "DPW Director salary grade and compensation analysis",
+   "what_was_recorded": "The DPW Director position's salary grade was discussed, with compensation data gathered from surrounding towns and a compensation analysis suggested; the item was tabled. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "discussed the director of dpw position's salary grade."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sherri Freeman",
+   "stated_role": "",
+   "topic": "Town website and employee handbook",
+   "quote": "sherri freeman was in attendance and mentioned that the town website needs updating and if the personnel committee members could be listed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and approval of October 26 minutes",
+   "resolution": "approved minutes",
+   "quote": "minutes were approved. lin will send to town clerk for publication.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment: website, employee handbook, sexual harassment training",
+   "resolution": "tabled to a future meeting with Town Manager",
+   "quote": "scott motioned that we table further discussion on this topic to a date when kerry, town manager, could attend a personnel committee meeting",
+   "tags": [
+    "public comment",
+    "website",
+    "employee handbook",
+    "sexual harassment training"
+   ]
+  },
+  {
+   "topic": "Advice Package: salary grid corrections",
+   "resolution": "administrative order to correct 13 rates; Deb to file with Town Clerk",
+   "quote": "the administrative order was prepared at our meeting and deb agreed to file the administrative order with the town clerk.",
+   "tags": [
+    "salary grid",
+    "administrative order",
+    "SAP",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Talent bank forms, recruiting, and performance review forms",
+   "resolution": "Scott to present at January 7, 2016 meeting",
+   "quote": "discussed reviewing the talent bank forms and recruiting process for people who are interested in joining town committees",
+   "tags": [
+    "talent bank",
+    "recruiting",
+    "performance review"
+   ]
+  },
+  {
+   "topic": "DPW Director salary grade and compensation analysis",
+   "resolution": "tabled until Kerry can attend",
+   "quote": "scott motioned to table this to a personnel ===page 2=== /fy2015/personnel committee/minutes - 10-26-15.docx committee where k",
+   "tags": [
+    "DPW",
+    "salary grade",
+    "compensation",
+    "job descriptions"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "no action",
+   "quote": "there were no forms to sign",
+   "tags": [
+    "personnel actions"
+   ]
+  },
+  {
+   "topic": "2016 meeting dates",
+   "resolution": "dates set",
+   "quote": "lin requested that the 2016 personnel committee meeting dates be set.",
+   "tags": [
+    "meeting schedule",
+    "library room booking"
+   ]
+  },
+  {
+   "topic": "January 2016 agenda items",
+   "resolution": "agenda listed",
+   "quote": "january 2016 personnel committee meeting agenda items are:",
+   "tags": [
+    "agenda",
+    "policies",
+    "handbook"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:37 p.m., 5-0",
+   "quote": "deb motioned to adjourn the meeting; lin seconded the motion, and the committee voted 5-0 to adjourn at 7:37 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Administrative order (salary grid correction)",
+   "where": "text",
+   "quote": "the administrative order was prepared at our meeting and deb agreed to file the administrative order with the town clerk."
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "discussed reviewing the talent bank forms and recruiting process for people who are interested in joining town committees"
+  },
+  {
+   "name": "Performance review forms / DPW performance review form",
+   "where": "text",
+   "quote": "the dpw came up with their own performance review form."
+  },
+  {
+   "name": "Job descriptions (prepared by Nancy)",
+   "where": "text",
+   "quote": "nancy spoke with department managers and has written job descriptions for each job and"
+  },
+  {
+   "name": "Compensation data for similar positions in surrounding towns",
+   "where": "text",
+   "quote": "presented compensation data she gathered for similar position in surround towns."
+  },
+  {
+   "name": "Salary grid attached to the SAP (Special Town Meeting, November 16)",
+   "where": "text",
+   "quote": "when the sap was presented at the special town meeting"
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "salary grid",
+  "compensation",
+  "DPW director",
+  "performance review",
+  "talent bank",
+  "sexual harassment training",
+  "employee handbook",
+  "meeting schedule",
+  "town website"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-10-05",
  "docid": "4734",
@@ -12,55 +12,369 @@
  },
  "votes": [
   {
-   "motion": "To enter executive session",
+   "motion": "Recess Regular Session and enter Executive Session under MGL Chapter 39, §23B(2) for contract deliberations.",
+   "moved_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye"
   },
   {
-   "motion": "To declare 42 Main Street surplus property",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "dave so moved, voted unanimously",
+   "motion": "Declare 42 Main Street (Book 488, Page 10, about .35+ acres) surplus property available for disposition under MGL Chapter 30B.",
    "moved_by": "Dave",
-   "seconded_by": ""
-  },
-  {
-   "motion": "To approve placing an article on the spring warrant to rescind the meals tax",
    "outcome": "passed",
    "procedural": false,
-   "quote": "dave motion to approve, seconded voted unanimously to approve",
+   "quote": "such monetary consideration as the board of selectmen deems to be in the best interest of the town. dave so moved, voted unanimously."
+  },
+  {
+   "motion": "Approve the Meals Tax item discussed under Old Business item 1 (the minutes do not print the wording of the motion).",
    "moved_by": "Dave",
-   "seconded_by": ""
-  },
-  {
-   "motion": "To appoint Sharon Jordan as a full member of the Conservation Commission",
    "outcome": "passed",
    "procedural": false,
-   "quote": "board voted unanimously to appoint sharon jordan as a full member",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "dave motion to approve, seconded voted unanimously to approve."
   },
   {
-   "motion": "To approve the appointment of James M. Maillet as Assistant Building Inspector",
+   "motion": "Appoint Sharon Jordan to the Conservation Commission as a full member.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "board voted unanimously to approve the appointment of james m. maillet as assistant building inspector",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "board voted unanimously to appoint sharon jordan as a full member."
   },
   {
-   "motion": "To adjourn the Regular Session",
+   "motion": "Approve the appointment of James M. Maillet as Assistant Building Inspector.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "board voted unanimously to approve the appointment of james m. maillet as assistant building inspector."
+  },
+  {
+   "motion": "Adjourn Regular Session.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 7:30 p.m.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "being no further business board voted unanimously to adjourn regular session at 7:30 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR text. All votes found are recorded in the minutes.",
- "cost_usd": 0.10082849999999999
+ "dropped_unquoted": 1,
+ "note": "OCR of a scanned typed minutes document. The Meals Tax table is garbled in OCR (e.g., '18,352,74'); figures are recorded as printed. The minutes do not name the mover of the executive session motion or the motion to adjourn, nor the seconder of most votes, and the Chairman is not named. The wording of the Meals Tax approval motion is not printed. The public comment section records remarks by board members. Documents list is inferred from the sentence 'Please see the Treasurer-Collector's report below', which introduces an attached report. Warrants are recorded only as reviewed and signed, not voted.",
+ "cost_usd": 0.009217220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m."
+  },
+  {
+   "name": "Steven M. deBettencourt (called Steve)",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo and dave matthews present"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "debettencourt, ernie sund, tom alonzo and dave matthews present"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "dave matthews present, town manager kerry speidel absent."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "dave matthews present, town manager kerry speidel absent."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  },
+  {
+   "name": "Robert Verge",
+   "role": "Chair of the Conservation Commission",
+   "status": "present",
+   "quote": "robert verge, chair of the conservation commission was present to recommend the appointment of sharon to the commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Classification Hearing date set for November 16 at 7:15 P.M.",
+   "quote": "determine date for classification hearing - scheduled for november 16\" at 7:15 p.m."
+  },
+  {
+   "decision": "Warrant #18 11, 10/5/10 reviewed and signed.",
+   "quote": "warrants - #18 11, 10/5/10 - $512,235.08 reviewed and signed"
+  },
+  {
+   "decision": "Holman Street bridge culvert status update to be placed on next week's agenda.",
+   "quote": "would like to be placed on next week's agenda."
+  },
+  {
+   "decision": "Discussion of town meeting articles to be placed on a future agenda.",
+   "quote": "board would like to have discussion for town meeting articles placed on a future agenda."
+  },
+  {
+   "decision": "CDBG Block Grant, Senior Center parking lot, to be placed on next week's agenda for discussion.",
+   "quote": "board would like to have this on for discussion on next week's agenda."
+  },
+  {
+   "decision": "Board to check calendars on whether Thursday November 4th works for the 10-Year Budget Retrospective and 5-Year Financial Forecast presentation.",
+   "quote": "board will check their calendars for availability as the intent is to have this televised and"
+  },
+  {
+   "decision": "Board would like an article placed on the spring warrant to rescind the meals tax.",
+   "quote": "would like to see an article placed on the spring warrant to rescind this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant total",
+   "what_was_recorded": "Warrant #18 11, dated 10/5/10, was reviewed and signed at a total of $512,235.08.",
+   "figures_as_printed": [
+    "$512,235.08"
+   ],
+   "quote": "warrants - #18 11, 10/5/10 - $512,235.08 reviewed and signed"
+  },
+  {
+   "topic": "Local Options Meals Tax revenue",
+   "what_was_recorded": "The additional 0.75% meals tax was estimated by the DOR at about $60,000 per year; $36,523 collected to date, with the Treasurer-Collector's table showing inception-to-date total of 36,522.87 and estimated annual revenue; the minutes say collections should come close to the DOR estimate annually.",
+   "figures_as_printed": [
+    "0.75%",
+    "$60,000",
+    "$36,523",
+    "36,522.87",
+    "68,104.24",
+    "18,170.13",
+    "18,352,74"
+   ],
+   "quote": "the department of revenue estimated that this additional tax would bring in about $60,000 per year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom",
+   "topic": "appreciation for Town Fair",
+   "quote": "tom expressed appreciation to the lunenburg pto for the excellent job that they did with the annual town fair this past weekend."
+  },
+  {
+   "speaker": "Ernie",
+   "topic": "passing of Judy Holden",
+   "quote": "ernie reiterated mr. alonzo's thoughts and on a somber note wanted to recognize the recent passing of judy holden, who was a prior"
+  },
+  {
+   "speaker": "Tom",
+   "topic": "Massachusetts ballot questions and newspaper report",
+   "quote": "tom referred to the massachusetts voting ballot that several weeks ago this board took up discussions on the questions"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive Session - contract negotiations (non-union personnel)",
+   "resolution": "held executive session",
+   "tags": [
+    "executive session",
+    "negotiations"
+   ],
+   "quote": "to conduct strategy sessions in preparation for negotiations with non-union personnel"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "tom expressed appreciation to the lunenburg pto for the excellent job that they did with the annual town fair this past weekend."
+  },
+  {
+   "topic": "Classification Hearing date",
+   "resolution": "date set for November 16 at 7:15 P.M.",
+   "tags": [
+    "hearing"
+   ],
+   "quote": "determine date for classification hearing - scheduled for november 16\" at 7:15 p.m."
+  },
+  {
+   "topic": "Declaration of surplus property, 42 Main Street",
+   "resolution": "approved as surplus property",
+   "tags": [
+    "surplus property",
+    "land",
+    "MGL 30B"
+   ],
+   "quote": "such monetary consideration as the board of selectmen deems to be in the best interest of the town. dave so moved, voted unanimously."
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reviewed and signed",
+   "tags": [
+    "warrants",
+    "finance"
+   ],
+   "quote": "warrants - #18 11, 10/5/10 - $512,235.08 reviewed and signed"
+  },
+  {
+   "topic": "Action file issues: Holman Street bridge and town meeting articles",
+   "resolution": "placed on future agendas",
+   "tags": [
+    "Holman Street",
+    "bridge",
+    "town meeting"
+   ],
+   "quote": "steve mentioned the holman street bridge and would like an update on the status of the culvert and what is"
+  },
+  {
+   "topic": "CDBG Block Grant - Senior Center parking lot",
+   "resolution": "placed on next week's agenda",
+   "tags": [
+    "CDBG",
+    "senior center"
+   ],
+   "quote": "board would like to have this on for discussion on next week's agenda."
+  },
+  {
+   "topic": "Committee updates - DPW Building Committee",
+   "resolution": "no action",
+   "tags": [
+    "DPW",
+    "architects"
+   ],
+   "quote": "dpw building committee will be interviewing 5 architects on thursday and friday at the ritter."
+  },
+  {
+   "topic": "Manager updates - 10-Year Budget Retrospective presentation date",
+   "resolution": "board to check calendars",
+   "tags": [
+    "budget",
+    "forecast",
+    "televised"
+   ],
+   "quote": "board will check their calendars for availability as the intent is to have this televised and"
+  },
+  {
+   "topic": "Old business - Meals Tax",
+   "resolution": "approved (motion by Dave); board wants spring warrant article to rescind",
+   "tags": [
+    "meals tax",
+    "revenue"
+   ],
+   "quote": "dave motion to approve, seconded voted unanimously to approve."
+  },
+  {
+   "topic": "Update on Wind Energy Bill / Landfill solar RFP",
+   "resolution": "no action",
+   "tags": [
+    "wind energy",
+    "solar",
+    "landfill"
+   ],
+   "quote": "update on wind energy bill / landfill - the rfp for a solar farm (landfill) is still on hold."
+  },
+  {
+   "topic": "RFP Power Provider (Municipal Aggregation Consultant)",
+   "resolution": "no action; proposals due October 18th",
+   "tags": [
+    "aggregation",
+    "RFP"
+   ],
+   "quote": "proposals are due october 18th."
+  },
+  {
+   "topic": "Conservation Commission appointment - Sharon Jordan",
+   "resolution": "approved as full member",
+   "tags": [
+    "appointments",
+    "conservation"
+   ],
+   "quote": "board voted unanimously to appoint sharon jordan as a full member."
+  },
+  {
+   "topic": "Assistant Building Inspector appointment - James M. Maillet",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "building inspector"
+   ],
+   "quote": "board voted unanimously to approve the appointment of james m. maillet as assistant building inspector."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30 P.M.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "being no further business board voted unanimously to adjourn regular session at 7:30 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Treasurer & Tax Collector report, Local Options Meals Tax (receipts by period, FY2010 and FY2011)",
+   "where": "list",
+   "quote": "please see the treasurer-collector's report below for additional information."
+  },
+  {
+   "name": "Warrant #18 11, 10/5/10",
+   "where": "text",
+   "quote": "warrants - #18 11, 10/5/10 - $512,235.08 reviewed and signed"
+  },
+  {
+   "name": "Letter from Building Inspector Michael Sauvageau recommending re-appointment of James M. Maillet",
+   "where": "text",
+   "quote": "board received a letter from building inspector, michael sauvageau recommending the re-appointment of mr. maillet."
+  },
+  {
+   "name": "RFP for the Municipal Aggregation Consultant",
+   "where": "text",
+   "quote": "the rfp for the municipal aggregation consultant has been advertised in the goods & services bulletin"
+  },
+  {
+   "name": "RFP for a Solar Farm (Landfill)",
+   "where": "text",
+   "quote": "the rfp for a solar farm (landfill) is still on hold."
+  },
+  {
+   "name": "10-Year Budget Retrospective and 5-Year Financial Forecast presentation",
+   "where": "text",
+   "quote": "kerry is questioning if thursday november 4th will work for the presentation of the 10-year budget"
+  },
+  {
+   "name": "Supplemental Budget Bill",
+   "where": "text",
+   "quote": "put into the supplemental budget bill, which is being held up in the house."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "executive session",
+  "surplus property",
+  "meals tax",
+  "warrants",
+  "appointments",
+  "Holman Street bridge",
+  "CDBG",
+  "DPW building committee",
+  "wind energy",
+  "power aggregation RFP",
+  "budget presentation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "please see the treasurer-collector's report below"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-03-29",
  "docid": "6168",
@@ -11,7 +11,167 @@
   "doc_url": "/docs/meetings/conservation-commission/2017-03-29-minutes-6168.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document discussions and decisions but contain no formal motions or voting outcomes.",
- "cost_usd": 0.0785155
+ "dropped_unquoted": 2,
+ "note": "No motions or votes are recorded in these minutes, so the votes list is empty. Public comment is a heading (\"Public Comment For Meeting Close.\") with no speakers recorded. Attendance is marked by initials (pres/ab); Matthew S. Marro and Heather Lemieux are listed without a stated attendance status. Adjournment time is printed but no adjournment motion appears. No documents list is printed.",
+ "cost_usd": 0.00368662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "richard bursch, chair - ab"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "todd dwyer, vice-chair- ab"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commission member; LCC Treasurer",
+   "status": "present",
+   "quote": "bob pease volunteered to oversee the process next year as lcc treasurer."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "tom bertram- pres carl luck -pres"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Clerk, presiding as Chair",
+   "status": "present",
+   "quote": "the meeting was called to order with clerk carl luck residing as chair."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "kenneth jones- pres conservation agent"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "meeting with town manager heather lemieux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed that a better budget process needed to be in place before the FY 19 budget season.",
+   "quote": "it was agreed that a better process needed to be in place before the fy 19 budget season."
+  },
+  {
+   "decision": "Bob Pease volunteered to oversee the budget process next year as LCC Treasurer.",
+   "quote": "bob pease volunteered to oversee the process next year as lcc treasurer."
+  },
+  {
+   "decision": "An updated tax-taking property list would be provided to the Commission for LCC review and comment.",
+   "quote": "an updated list would be provided for lcc review and comment."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trail maintenance funding in budget",
+   "what_was_recorded": "The Commission discussed a $3,000 potential addition for trail maintenance and reported that the $3,000 it asked be included was removed before submittal to the Town Manager without LCC notification.",
+   "quote": "the $3,000 that the commission asked be included in the budget was removed before submittal to the town manager",
+   "figures_as_printed": [
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "Forestry program revenue for trail work",
+   "what_was_recorded": "Possible trail funding from the forestry program was discussed; the Commission told the Town Manager any revenue from it would not be available in FY 18.",
+   "quote": "any revenue from this program would not be available in fy 18",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Receipts-based fee account and revolving trail maintenance account",
+   "what_was_recorded": "The Commission discussed a receipts-based account for fees and a revolving account for trail maintenance; no conclusions were reached.",
+   "quote": "the commission also discussed the dynamics concerning a receipts based account for fees and a revolving account for trail maintenance.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sale of tax-taking liens",
+   "what_was_recorded": "The Town intended to sell liens to some or all of the properties the Commission expressed interest in.",
+   "quote": "the intention of the town would be to sell the liens to some or all of these properties.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Meeting with Town Manager Heather Lemieux on budget process",
+   "resolution": "discussed; no conclusions reached",
+   "quote": "meeting with town manager heather lemieux - the commission discussed issues with the budget",
+   "tags": [
+    "budget process",
+    "trail maintenance",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Tax taking",
+   "resolution": "list of properties of interest given to Town Manager; updated list to follow for review",
+   "quote": "tax taking: the commission expressed interest in some of the properties that were on the list being",
+   "tags": [
+    "tax taking",
+    "liens"
+   ]
+  },
+  {
+   "topic": "Work session: regulatory review",
+   "resolution": "reviewed sections 10.2 to 10.5",
+   "quote": "work session : regulatory review the commission reviewed sections 10.2 to 10.5",
+   "tags": [
+    "regulatory review",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for April 5, 2017 at 7:00 PM",
+   "quote": "meeting schedule- next meeting for april 5, 2017 at 7:00 pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:15 (no motion recorded)",
+   "quote": "adjournment time 9:15",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "List of properties of interest (tax taking)",
+   "where": "text",
+   "quote": "a list of properties of interest was given to the town manger."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "budget process",
+  "trail maintenance",
+  "tax taking",
+  "liens",
+  "regulatory review",
+  "town manager",
+  "forestry program"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 2
+ }
 }

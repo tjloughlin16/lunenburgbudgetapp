@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-05-20",
  "docid": "4889",
@@ -12,55 +12,52 @@
  },
  "votes": [
   {
-   "motion": "Approve revised purchase and sale agreement and name the property 'The William H. and Saundra B. Lane Property at Lunenburg Town Forest'",
+   "motion": "Nominate/appoint Gare Thompson to fill the vacant Library Board of Trustees seat until the May 2015 election (BOS vote)",
+   "moved_by": "Mr. Mailloux",
+   "seconded_by": "Ms. Venezia",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "lbt: mr. mailloux moved to nominate gare thompson to fill the vacant position on the library board of trustees. ms. venezia seconded. bos: on vote, motion carried, 5 in favor, 0 opposed."
+  },
+  {
+   "motion": "Approve the revised Lane Property purchase and sale agreement and the request to name the property 'The William H. and Saundra B. Lane Property at Lunenburg Town Forest'",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the revised purchase and sale agreement and the request to name the property \"the william h. and saundra b. lane property at lunenburg town forest\". mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Nominate Mr. Alonzo as Chairperson of the Lunenburg Board of Selectmen",
+   "motion": "Nominate Mr. Alonzo as Chairperson of the Board of Selectmen",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "ms. bertram moved to nominate mr. alonzo as chairperson of the lunenburg board of selectmen. mr. toale seconded on vote, motion carried, 5 in favor, 0 opposed ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "ms. bertram moved to nominate mr. alonzo as chairperson of the lunenburg board of selectmen. mr. toale seconded on vote, motion carried, 5 in favor, 0 opposed"
   },
   {
-   "motion": "Nominate Ms. Bertram as Vice Chairperson of the Lunenburg Board of Selectmen",
+   "motion": "Nominate Ms. Bertram as Vice Chairperson of the Board of Selectmen",
    "moved_by": "Mr. Toale",
    "seconded_by": "Ms. Luck",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. toale moved to nominate ms. bertram as vice chairperson of the lunenburg board of selectmen. ms. luck seconded. on vote, motion carried, 5 in favor, 0 opposed"
   },
   {
-   "motion": "Nominate Mr. Toale as Clerk of the Lunenburg Board of Selectmen",
+   "motion": "Nominate Mr. Toale as Clerk of the Board of Selectmen",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. ebersole move to nominate mr. toale as clerk of the lunenburg board of selectmen. ms. bertram seconded on vote, motion carried, 5 in favor, 0 opposed ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Nominate Gare Thompson to fill the vacant position on the Library Board of Trustees",
-   "moved_by": "Mr. Mailloux",
-   "seconded_by": "Ms. Venezia",
-   "outcome": "passed 6-0",
    "procedural": false,
-   "quote": "mr. mailloux moved to nominate gare thompson to fill the vacant position on the library board of trustees. ms. venezia seconded. bos: on vote, motion carried, 5 in favor, 0 opposed.",
-   "quote_taken_from_text": true
+   "quote": "mr. ebersole move to nominate mr. toale as clerk of the lunenburg board of selectmen. ms. bertram seconded on vote, motion carried, 5 in favor, 0 opposed"
   },
   {
-   "motion": "Ratify the Town Manager and Police Chief's recommendation for Sean Connery and Jack Hebert to the position of Police Sergeant",
+   "motion": "Ratify the Town Manager and Police Chief's recommendation appointing Sean Connery and Jack Hebert to the position of Police Sergeant",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to ratify the town manager and the police chief's recommendation for sean connery and jack hebert to the position of police sergeant. mr. toale seconded. discussion: mr. alonzo spoke to say that he has",
+   "quote": "the town manager and the police chief's recommendation for sean connery and jack hebert to the position of police sergeant. mr. toale seconded. discussion: mr. alonzo spoke to say that he has",
    "quote_taken_from_text": true
   },
   {
@@ -73,6 +70,429 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes marked \"===OCR macOS Vision===\" showing OCR extraction from scanned pages. One ambiguous motion language for a Board of Selectmen vote on the Library Board appointment (text shows 'Election. Ms. Bertram seconded.' which appears garbled in OCR; only the Library Board motion is clearly stated).",
- "cost_usd": 0.1739235
+ "note": "OCR of a scanned minutes document with stamps ('RECEIVED & FILED'). Some text is cut or garbled: the attendance line is truncated at the start, the Lane section and Town Manager evaluation have partial sentences, and some words are misread (e.g., 'Opens Space', 'Ar. Alonzo'). Approval of prior minutes (5/6/2014 Revised) and warrant approval are listed but no vote is recorded. The Library Board's own 6-0 vote is in the text but was not recorded as a board vote. The 'Election' line before the Library Board motion has no clear result. Executive session: none.",
+ "cost_usd": 0.01491102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo welcomed ms. luck to the bos and congratulated her on her win at the polls."
+  },
+  {
+   "name": "Kim Massack",
+   "status": "present",
+   "quote": "kim massack came before the bos to inform the public of the japanese exchange student program"
+  },
+  {
+   "name": "Regina Raboin",
+   "role": "Chairperson, Library Board of Trustees",
+   "status": "present",
+   "quote": "present this evening from the library board of trustees were regina raboin, chairperson, richard mailloux, lars widstrand, robin venezia, susan visser, & harry kubetz."
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "Library Board of Trustees",
+   "status": "present",
+   "quote": "present this evening from the library board of trustees were regina raboin, chairperson, richard mailloux, lars widstrand, robin venezia, susan visser, & harry kubetz."
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Library Board of Trustees",
+   "status": "present",
+   "quote": "present this evening from the library board of trustees were regina raboin, chairperson, richard mailloux, lars widstrand, robin venezia, susan visser, & harry kubetz."
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Library Board of Trustees",
+   "status": "present",
+   "quote": "present this evening from the library board of trustees were regina raboin, chairperson, richard mailloux, lars widstrand, robin venezia, susan visser, & harry kubetz."
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Library Board of Trustees",
+   "status": "present",
+   "quote": "present this evening from the library board of trustees were regina raboin, chairperson, richard mailloux, lars widstrand, robin venezia, susan visser, & harry kubetz."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Library Board of Trustees",
+   "status": "present",
+   "quote": "present this evening from the library board of trustees were regina raboin, chairperson, richard mailloux, lars widstrand, robin venezia, susan visser, & harry kubetz."
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "mr. thompson introduced himself to the bos and explained his reasons for wanting to be part of this board again."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "representative of the Opens Space Committee Land Acquisition Team",
+   "status": "present",
+   "quote": "brandon kibbe, representative of the opens space committee land acquisition team, came before the board"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief jim marino came before the board to request the appointments of acting police sergeants sean connery and jack hebert"
+  },
+  {
+   "name": "Sean Connery",
+   "role": "Acting Police Sergeant, appointment to Police Sergeant",
+   "status": "present",
+   "quote": "sergeant connery spoke to the board and thanked the town for allowing the opportunity for him to serve the community for 24 years."
+  },
+  {
+   "name": "Jack Hebert",
+   "role": "Acting Police Sergeant, appointment to Police Sergeant",
+   "status": "absent",
+   "quote": "informed them that sergeant jack hebert could not be present this evening due to a family commitment."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed to revisit the Middlesex County Interagency Mutual Aid Agreement (Police) after comparing it with the Worcester County Mutual Aid Agreement.",
+   "quote": "it was agreed to revisit this request again after further review is done with comparing the worcester county mutual aid agreement"
+  },
+  {
+   "decision": "Board agreed Department Heads should be involved in the Town Manager's evaluation and will schedule a workshop on this in July.",
+   "quote": "board members were all in agreement that having department heads involvement would be valuable and will schedule a workshop for discussion on this in july."
+  },
+  {
+   "decision": "A list of member committee assignments and liaison purposes will be given to Ms. Luck for review, to be completed at the 6/3/2014 BOS meeting.",
+   "quote": "will be given to new bos member ms. luck for review. this task will be completed at the 6/3/2014 bos meeting."
+  },
+  {
+   "decision": "Boards and commissions will be reminded that vacant seats and similar official matters are to be communicated to the BOS, not to liaisons.",
+   "quote": "boards and commissions will be reminded that the proper way to communicate things such as vacant seats is to the bos and not to liaisons."
+  },
+  {
+   "decision": "Letters of support will be sought from various entities to attach to the Lane Property grant application.",
+   "quote": "letters of support will be sought from various entities to attach to the grant application."
+  },
+  {
+   "decision": "Naming Brandon Kibbe and the Town Manager as grant 'Point Person/s' was deferred to a future BOS agenda.",
+   "quote": "this will be an agenda item at a future bos meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lane Property purchase price",
+   "what_was_recorded": "The town meeting approval was to buy at $3600 per acre or appraised value, whichever is less; the appraisal set $2400 per acre, reducing the purchase price from $600k to $400k.",
+   "figures_as_printed": [
+    "$3600 per acre",
+    "$2400 per acre",
+    "$400k",
+    "$600k"
+   ],
+   "quote": "was for approval to purchase the lane property at $3600 per acre or at appraised value, which ever is less."
+  },
+  {
+   "topic": "Lane Property purchase price",
+   "what_was_recorded": "The appraisal identified $2400 per acre, making the purchase price $400k rather than the $600k approved at Town Meeting.",
+   "figures_as_printed": [
+    "$2400 per acre",
+    "$400k",
+    "$600k"
+   ],
+   "quote": "the appraisal has identified a price of $2400 per acre which now makes the purchase price $400k rather than $600k which was approved at town meeting."
+  },
+  {
+   "topic": "Lane Property land grant",
+   "what_was_recorded": "An approximate figure for the land grant (context partly lost in the scan) was given as a range.",
+   "figures_as_printed": [
+    "$150k - $176k"
+   ],
+   "quote": "price approximately $150k - $176k."
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Three warrant totals were printed after warrant dates and numbers W#61-14, W#62-14 and W#24P-14 without an explicit label linking each amount to a warrant.",
+   "figures_as_printed": [
+    "$303,604.02",
+    "$612,899.39",
+    "$619,440.07"
+   ],
+   "quote": "warrants: 5/20/2014 w#61-14 5/21/2014 w#62-14 5/22/2014 w#24p-14 $303,604.02 $612,899.39 $619,440.07"
+  },
+  {
+   "topic": "HSIP signage funding",
+   "what_was_recorded": "HSIP money is available for signage; correcting Town signage is estimated to cost about $44k, and could be incorporated into the TIP.",
+   "figures_as_printed": [
+    "$44k"
+   ],
+   "quote": "hsip (highway safety improvement program) money is available for signage and to correct our signage in town will cost approximately $44k."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kim Massack",
+   "stated_role": "",
+   "topic": "Japanese Exchange Student Program",
+   "quote": "kim massack came before the bos to inform the public of the japanese exchange student program and encouraged the public to host"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no action; Mr. Alonzo welcomed Ms. Luck; Kim Massack spoke on exchange student program",
+   "quote": "kim massack came before the bos to inform the public of the japanese exchange student program",
+   "tags": [
+    "public comment",
+    "exchange students"
+   ]
+  },
+  {
+   "topic": "Announcements: Yard Waste Days",
+   "resolution": "announced",
+   "quote": "lunenburg yard waste days will be held on saturdays until 5/31/2014 from 8am-4pm",
+   "tags": [
+    "announcements",
+    "yard waste"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Library Board of Trustees: appointment of Gare Thompson",
+   "resolution": "appointed 5-0 to open Library Board seat",
+   "quote": "7:00 pm - joint meeting with library board of trustees to consider/ appoint gare thompson to open seat",
+   "tags": [
+    "appointments",
+    "library board"
+   ]
+  },
+  {
+   "topic": "Lane Property purchase and sale agreement revision and naming",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram moved to approve the revised purchase and sale agreement and the request to name the property",
+   "tags": [
+    "land acquisition",
+    "open space",
+    "town forest",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Board reorganization",
+   "resolution": "Alonzo chair, Bertram vice chair, Toale clerk, each 5-0",
+   "quote": "ms. bertram moved to nominate mr. alonzo as chairperson of the lunenburg board of selectmen.",
+   "tags": [
+    "reorganization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Member committee assignments",
+   "resolution": "deferred to 6/3/2014 BOS meeting",
+   "quote": "this task will be completed at the 6/3/2014 bos meeting.",
+   "tags": [
+    "committees",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Middlesex County Interagency Mutual Aid Agreement (Police)",
+   "resolution": "continued; revisit after comparing agreements",
+   "quote": "it was agreed to revisit this request again after further review is done",
+   "tags": [
+    "police",
+    "mutual aid"
+   ]
+  },
+  {
+   "topic": "Town Manager Annual Performance Evaluation",
+   "resolution": "reviewed; workshop on Department Heads involvement to be scheduled in July",
+   "quote": "mr. alonzo reviewed the town manager's annual performance evaluation and the narrative summary composite with the board",
+   "tags": [
+    "town manager",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Outstanding BOS policies and procedures",
+   "resolution": "list reviewed; further review and workshops to be scheduled",
+   "quote": "ms. speidel stated that the finance committee continues to work on the financial policies",
+   "tags": [
+    "policies",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "no action recorded",
+   "quote": "minutes: 5/6/2014 (revised)",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; MPO Summer St. letter of support discussed; Chase Rd. and HSIP signage noted",
+   "quote": "board of health: mr. ebersole reported that this committee met last night.",
+   "tags": [
+    "committees",
+    "MPO",
+    "transportation",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "received; Girl Scouts letter request noted",
+   "quote": "the annual ems cookout will be tomorrow at 6pm at the public safety building",
+   "tags": [
+    "town manager",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Police Sergeant appointments (Connery, Hebert)",
+   "resolution": "ratified 5-0",
+   "quote": "the town manager and the police chief's recommendation for sean connery and jack hebert to the position of police sergeant.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "none",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:46PM",
+   "quote": "meeting adjourned at 8:46pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager's Annual Performance Evaluation and Narrative Summary Composite",
+   "where": "text",
+   "quote": "mr. alonzo reviewed the town manager's annual performance evaluation and the narrative summary composite with the board"
+  },
+  {
+   "name": "Lane Property Purchase & Sales agreement (amendment)",
+   "where": "text",
+   "quote": "requested that the bos sign an amendment to the purchase & sales agreement to reflect that change."
+  },
+  {
+   "name": "Land grant application (Point Person/s)",
+   "where": "text",
+   "quote": "would need to be added to the grant application"
+  },
+  {
+   "name": "Middlesex County Interagency Mutual Aid Agreement (Police)",
+   "where": "text",
+   "quote": "chief marino reviewed the middlesex county interagency mutual aid agreement with the board."
+  },
+  {
+   "name": "Worcester County Mutual Aid Agreement",
+   "where": "text",
+   "quote": "comparing the worcester county mutual aid agreement with the middlesex mutual aid agreement."
+  },
+  {
+   "name": "Letter from Town Department Heads requesting involvement in Town Manager evaluation",
+   "where": "text",
+   "quote": "a letter was presented to him this evening from town department heads requesting their future involvement"
+  },
+  {
+   "name": "Girl Scouts letter of recognition/commendation",
+   "where": "text",
+   "quote": "to have the bos sign a letter of recognition/commendation to the lunenburg girl scouts"
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "request to read something of interest from the town charter at each bos meeting"
+  },
+  {
+   "name": "Outstanding BOS Policies & Procedures list",
+   "where": "text",
+   "quote": "the list of policies requiring additional review included:"
+  },
+  {
+   "name": "Warrants 5/20/2014 W#61-14, 5/21/2014 W#62-14, 5/22/2014 W#24P-14",
+   "where": "text",
+   "quote": "warrants: 5/20/2014 w#61-14 5/21/2014 w#62-14 5/22/2014 w#24p-14 $303,604.02 $612,899.39 $619,440.07"
+  },
+  {
+   "name": "Minutes 5/6/2014 (Revised)",
+   "where": "text",
+   "quote": "minutes: 5/6/2014 (revised)"
+  },
+  {
+   "name": "Cable contract with Comcast",
+   "where": "text",
+   "quote": "our cable contract with comcast will expire in \"2017\""
+  },
+  {
+   "name": "Talent bank form (PACC)",
+   "where": "text",
+   "quote": "fill out a talent bank form and return it to town hall."
+  }
+ ],
+ "tags": [
+  "select board",
+  "land acquisition",
+  "town forest",
+  "library board appointment",
+  "board reorganization",
+  "police mutual aid",
+  "police appointments",
+  "town manager evaluation",
+  "policies",
+  "committee reports",
+  "MPO transportation",
+  "sewer",
+  "exchange students"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

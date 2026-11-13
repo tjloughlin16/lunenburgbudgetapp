@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-06-09",
  "docid": "5515",
@@ -12,71 +12,518 @@
  },
  "votes": [
   {
-   "motion": "Send a letter to residents as proposed with the edits as described",
+   "motion": "Send a letter to residents as proposed, with the edits as described.",
    "moved_by": "Troy D.",
    "seconded_by": "Mike N.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: troy d. second: mike n. that the sewer commission send a letter as proposed with the edits as described. vote: unanimous"
+   "quote": "motion: troy d. second: mike n. that the sewer commission send a letter as proposed with the edits as described."
   },
   {
-   "motion": "Waive the $25 per day non-compliance fee, leaving the $50 non-compliance fee for Conrad's Drive-in",
+   "motion": "Waive the $25/day non-compliance fee for Conrad's Drive-in, leaving the $50 non-compliance fee.",
    "moved_by": "Mike N.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: mike n. to waive the $25/day fee, leaving the $50 non-compliance fee second: troy d. vote: unanimous"
   },
   {
-   "motion": "Waive the $25 per day non-compliance fee, leaving the $50 non-compliance fee for Hadwen Market",
+   "motion": "Waive the $25/day non-compliance fee for Hadwen Market, leaving the $50 non-compliance fee.",
    "moved_by": "Mike N.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: mike n. second: troy d. to waive the $25/day fee, leaving the $50 non-compliance fee vote: unanimous"
   },
   {
-   "motion": "Waive the $25 per day non-compliance fee, leaving the $50 non-compliance fee for American Graffiti",
+   "motion": "Waive the $25/day non-compliance fee for American Graffiti, leaving the $50 non-compliance fee.",
    "moved_by": "Troy D.",
    "seconded_by": "Mike N.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: troy d. to waive the $25/day fee, leaving the $50 non-compliance fee second: mike n. vote: unanimous"
   },
   {
-   "motion": "Authorize Carl L. to sign the contract from Small Water System Services to include Parts I and II",
+   "motion": "Authorize Carl L. to sign the Small Water System Services contract to include Parts I and II.",
    "moved_by": "Troy D.",
    "seconded_by": "Sue B.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: troy d. to authorize carl l. to sign the contract from small water system services to include parts i and ii. second: sue b. vote: unanimous"
   },
   {
-   "motion": "not stated",
+   "motion": "Motion on the Flow Assessment contract (wording not printed).",
    "moved_by": "Mike N.",
    "seconded_by": "Troy D.",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: mike n. second: troy d."
+   "quote": "the contract from flow assessment was reviewed and discussed by the commission motion: mike n. second: troy d."
   },
   {
-   "motion": "Approve the minutes as amended",
+   "motion": "Approve the minutes of March 11, 2015 as amended.",
    "moved_by": "Sue B.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: sue b. to approve the minutes as amended second: troy d. vote: unanimous"
   },
   {
-   "motion": "Adjourn at 10:12pm",
+   "motion": "Adjourn the meeting at 10:12pm.",
    "moved_by": "Troy D.",
    "seconded_by": "Mike N.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: troy d. to adjourn at 10:12pm second: mike n. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Flow Assessment motion (vote 6) is incomplete: the motion text is cut off at the page break between pages 1 and 2, and no vote outcome is recorded in the minutes.",
- "cost_usd": 0.1094335
+ "note": "OCR scan of minutes. The first item is cut off at the top of page 1, so its heading is missing. No attendance roll is printed; commissioners appear only as movers and seconders, so their status is marked not stated. The meeting date 2015-06-09 is not printed in the extracted text. Some OCR errors are kept verbatim (e.g. 'Emil • Lehto', 'inutes Assistant', 'avallable', 'tor', 'Manger'). The Flow Assessment motion has no printed wording and no result. The Commission's decision on the Small Water contract is recorded as a motion authorizing Carl L. to sign.",
+ "cost_usd": 0.010654320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Troy D.",
+   "status": "not stated",
+   "quote": "motion: troy d. second: mike n. that the sewer commission send a letter as proposed with the edits as described."
+  },
+  {
+   "name": "Mike N.",
+   "status": "not stated",
+   "quote": "motion: mike n. to waive the $25/day fee, leaving the $50 non-compliance fee second: troy d. vote: unanimous"
+  },
+  {
+   "name": "Sue B.",
+   "status": "not stated",
+   "quote": "motion: sue b. to approve the minutes as amended second: troy d. vote: unanimous"
+  },
+  {
+   "name": "Carl L.",
+   "status": "not stated",
+   "quote": "to authorize carl l. to sign the contract from small water system services to include parts i and ii."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, emil • lehto emily lehto, inutes assistant"
+  },
+  {
+   "name": "Steven Roy",
+   "role": "resident, 78 Pratt",
+   "status": "present",
+   "quote": "steven roy (78 pratt), nancy beach (180 cross), matt pappini (77 pratt), walt rinki (46 pine grove)"
+  },
+  {
+   "name": "Nancy Beach",
+   "role": "resident, 180 Cross",
+   "status": "present",
+   "quote": "steven roy (78 pratt), nancy beach (180 cross), matt pappini (77 pratt), walt rinki (46 pine grove)"
+  },
+  {
+   "name": "Matt Pappini",
+   "role": "resident, 77 Pratt",
+   "status": "present",
+   "quote": "steven roy (78 pratt), nancy beach (180 cross), matt pappini (77 pratt), walt rinki (46 pine grove)"
+  },
+  {
+   "name": "Walt Rinki",
+   "role": "resident, 46 Pine Grove",
+   "status": "present",
+   "quote": "steven roy (78 pratt), nancy beach (180 cross), matt pappini (77 pratt), walt rinki (46 pine grove)"
+  },
+  {
+   "name": "Lori Kunz",
+   "role": "resident, 10 Rennie",
+   "status": "present",
+   "quote": "lori kunz (10 rennie), bruce kunz (10 rennie), joe champa (pratt) and beverly santora (18 pratt)"
+  },
+  {
+   "name": "Bruce Kunz",
+   "role": "resident, 10 Rennie",
+   "status": "present",
+   "quote": "lori kunz (10 rennie), bruce kunz (10 rennie), joe champa (pratt) and beverly santora (18 pratt)"
+  },
+  {
+   "name": "Joe Champa",
+   "role": "resident, Pratt",
+   "status": "present",
+   "quote": "joe champa (pratt) addressed the commission on concerns about the betterment cost and costs to tie in."
+  },
+  {
+   "name": "Beverly Santora",
+   "role": "resident, 18 Pratt",
+   "status": "present",
+   "quote": "lori kunz (10 rennie), bruce kunz (10 rennie), joe champa (pratt) and beverly santora (18 pratt)"
+  },
+  {
+   "name": "Paul Michaud",
+   "role": "resident, 9 Pratt",
+   "status": "present",
+   "quote": "paul michaud (9 pratt) addressed the commission with his concerns and questions about the sewer extension."
+  },
+  {
+   "name": "Bernie Forget",
+   "role": "resident, 120 Pratt",
+   "status": "present",
+   "quote": "bernie forget (120 pratt) addressed the commission about the sewer extension and his concerns that the residents were misled."
+  },
+  {
+   "name": "Debbie Sundstrom",
+   "role": "resident, 214 Cross",
+   "status": "present",
+   "quote": "debbie sundstrom (214 cross) introduced brad joyal (204 cross) and nancy beach (180 cross)."
+  },
+  {
+   "name": "Brad Joyal",
+   "role": "resident, 204 Cross",
+   "status": "present",
+   "quote": "debbie sundstrom (214 cross) introduced brad joyal (204 cross) and nancy beach (180 cross)."
+  },
+  {
+   "name": "Howard Conrad",
+   "role": "owner, Conrad's Drive-in",
+   "status": "present",
+   "quote": "howard conrad (owner) and david leet (manager) from conrad's drive-in came before the commission to request a waiver"
+  },
+  {
+   "name": "David Leet",
+   "role": "manager, Conrad's Drive-in",
+   "status": "present",
+   "quote": "howard conrad (owner) and david leet (manager) from conrad's drive-in came before the commission to request a waiver"
+  },
+  {
+   "name": "Ole Ahad",
+   "role": "representing Hadwen Market",
+   "status": "present",
+   "quote": "ole ahad from hadwen market came before the commission to request a waiver from the $25/day non-compliance fee."
+  },
+  {
+   "name": "Todd Jennison",
+   "role": "representing American Graffiti",
+   "status": "present",
+   "quote": "todd jennison from american graffiti came before the commission to request a waiver"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Small Water System Services will be asked to attend the next meeting to go over the grease trap section of its proposal.",
+   "quote": "the grease trap portion was discussed and small water will be asked to the next meeting to go over the section."
+  },
+  {
+   "decision": "The Commission agreed the annual fee policy needs further review.",
+   "quote": "the commission then went on to discuss the annual fee policy and the need to further review it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap non-compliance fee waivers",
+   "what_was_recorded": "Three businesses sought waivers of the $25/day non-compliance fee; each motion waived the $25/day fee and left the $50 non-compliance fee in place.",
+   "figures_as_printed": [
+    "$25/day",
+    "$50"
+   ],
+   "quote": "to waive the $25/day fee, leaving the $50 non-compliance fee"
+  },
+  {
+   "topic": "Betterment and additional costs (public comment)",
+   "what_was_recorded": "Residents raised concerns about the betterment, additional costs and the project; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "topic": "Expected betterment and other costs handout",
+   "what_was_recorded": "A handout on expected betterment and other costs was given out at the meeting and is also on the website.",
+   "figures_as_printed": [],
+   "quote": "there was also a handout for expected betterment and other costs that was given out"
+  },
+  {
+   "topic": "Cost reduction request",
+   "what_was_recorded": "A resident asked the Commission to look into ways to lower costs; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "he requested that the commission look into ways to lower costs."
+  },
+  {
+   "topic": "Betterment cost and tie-in costs",
+   "what_was_recorded": "A resident raised concerns about the betterment cost and costs to tie in; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "joe champa (pratt) addressed the commission on concerns about the betterment cost and costs to tie in."
+  },
+  {
+   "topic": "Pump stations and betterment deferrals",
+   "what_was_recorded": "The Commission discussed the possibility of pump stations and betterment deferrals as ways to address costs; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "they also discussed the possibility of pump stations and betterment deferrals."
+  },
+  {
+   "topic": "Business manager invoice",
+   "what_was_recorded": "The business manager reported one invoice, but more information is needed; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "there was one invoice but more information is needed."
+  },
+  {
+   "topic": "Annual fee policy",
+   "what_was_recorded": "After Twin City Baptist's situation was reviewed, the Commission discussed the annual fee policy; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the commission then went on to discuss the annual fee policy and the need to further review it."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steven Roy",
+   "stated_role": "(78 Pratt)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Nancy Beach",
+   "stated_role": "(180 Cross)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Matt Pappini",
+   "stated_role": "(77 Pratt)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Walt Rinki",
+   "stated_role": "(46 Pine Grove)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Lori Kunz",
+   "stated_role": "(10 Rennie)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Bruce Kunz",
+   "stated_role": "(10 Rennie)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Joe Champa",
+   "stated_role": "(Pratt)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Beverly Santora",
+   "stated_role": "(18 Pratt)",
+   "topic": "betterment, additional costs and the project",
+   "quote": "all addressed the commission with their concerns and questions about the betterment, additional costs and the project."
+  },
+  {
+   "speaker": "Paul Michaud",
+   "stated_role": "(9 Pratt)",
+   "topic": "sewer extension questions; written response requested",
+   "quote": "paul michaud (9 pratt) addressed the commission with his concerns and questions about the sewer extension."
+  },
+  {
+   "speaker": "Bernie Forget",
+   "stated_role": "(120 Pratt)",
+   "topic": "sewer extension; residents misled; lower costs",
+   "quote": "bernie forget (120 pratt) addressed the commission about the sewer extension and his concerns that the residents were misled."
+  },
+  {
+   "speaker": "Joe Champa",
+   "stated_role": "(Pratt)",
+   "topic": "betterment cost and costs to tie in",
+   "quote": "joe champa (pratt) addressed the commission on concerns about the betterment cost and costs to tie in."
+  },
+  {
+   "speaker": "Debbie Sundstrom",
+   "stated_role": "(214 Cross)",
+   "topic": "214 Cross Road: sewer line not to run past their houses",
+   "quote": "she stated that though she had originally requested that her property be added to the sewer, she was unaware of the costs of doing so."
+  },
+  {
+   "speaker": "Brad Joyal",
+   "stated_role": "(204 Cross)",
+   "topic": "214 Cross Road: sewer line not to run past their houses",
+   "quote": "debbie sundstrom (214 cross) introduced brad joyal (204 cross) and nancy beach (180 cross)."
+  },
+  {
+   "speaker": "Nancy Beach",
+   "stated_role": "(180 Cross)",
+   "topic": "214 Cross Road: sewer line not to run past their houses",
+   "quote": "debbie sundstrom (214 cross) introduced brad joyal (204 cross) and nancy beach (180 cross)."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Letter to residents about betterment",
+   "resolution": "approved letter as proposed with edits",
+   "quote": "wording for the letter to be mailed to the residents was discussed.",
+   "tags": [
+    "betterment",
+    "letter",
+    "residents"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "discussed; questions answered",
+   "quote": "the commission discussed their concerns and answered all questions.",
+   "tags": [
+    "public comment",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "discussed; written response requested",
+   "quote": "appointments - paul michaud (9 pratt) addressed the commission with his concerns and questions about the sewer extension.",
+   "tags": [
+    "appointments",
+    "sewer extension"
+   ]
+  },
+  {
+   "topic": "214 Cross Road",
+   "resolution": "discussed; no action recorded",
+   "quote": "214 cross road - debbie sundstrom (214 cross) introduced brad joyal (204 cross) and nancy beach (180 cross).",
+   "tags": [
+    "sewer line",
+    "pump stations",
+    "betterment deferral"
+   ]
+  },
+  {
+   "topic": "Grease Trap Compliance Hearings",
+   "resolution": "three fee waivers approved",
+   "quote": "grease trap compliance hearings howard conrad (owner) and david leet (manager) from conrad's drive-in came before the commission",
+   "tags": [
+    "grease trap",
+    "fee waiver",
+    "non-compliance fee"
+   ]
+  },
+  {
+   "topic": "Twin City Baptist",
+   "resolution": "reviewed; annual fee policy to be reviewed further",
+   "quote": "twin city baptist had to reschedule and their situation was reviewed by the commission.",
+   "tags": [
+    "grease trap",
+    "annual fee policy"
+   ]
+  },
+  {
+   "topic": "Contracts FY16 - Small Water System Services",
+   "resolution": "Carl L. authorized to sign contract, Parts I and II; grease trap section to return",
+   "quote": "contracts - fy16 - the commission discussed the small water system services proposal.",
+   "tags": [
+    "contracts",
+    "FY16",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Flow Assessment contract",
+   "resolution": "reviewed and discussed; motion recorded without result",
+   "quote": "the contract from flow assessment was reviewed and discussed by the commission",
+   "tags": [
+    "contracts",
+    "flow assessment"
+   ]
+  },
+  {
+   "topic": "Minutes of March 11, 2015",
+   "resolution": "approved as amended",
+   "quote": "the commission discussed the amended minutes tor march 11, 2015.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "discussed; invoice needs more information; website updates discussed",
+   "quote": "business manger report - there was one invoice but more information is needed.",
+   "tags": [
+    "business manager",
+    "invoice",
+    "website"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "noted",
+   "quote": "june 19, 2015 -pre-construction meeting, town hall 9am",
+   "tags": [
+    "schedule",
+    "pre-construction"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:12pm",
+   "quote": "motion: troy d. to adjourn at 10:12pm second: mike n. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout for expected betterment and other costs",
+   "where": "list",
+   "quote": "there was also a handout for expected betterment and other costs that was given out"
+  },
+  {
+   "name": "Copy of the most recent inspections (Conrad's Drive-in)",
+   "where": "list",
+   "quote": "he gave the commission a copy of the most recent inspections."
+  },
+  {
+   "name": "Letter to residents (wording as proposed, with edits)",
+   "where": "text",
+   "quote": "wording for the letter to be mailed to the residents was discussed."
+  },
+  {
+   "name": "Summary of activities (Hadwen Market)",
+   "where": "text",
+   "quote": "the commission reviewed the summary of activities and there was discussion of when a log was faxed."
+  },
+  {
+   "name": "Small Water System Services proposal",
+   "where": "text",
+   "quote": "the commission discussed the small water system services proposal."
+  },
+  {
+   "name": "Contract from Flow Assessment",
+   "where": "text",
+   "quote": "the contract from flow assessment was reviewed and discussed by the commission"
+  },
+  {
+   "name": "Amended minutes of March 11, 2015",
+   "where": "text",
+   "quote": "the commission discussed the amended minutes tor march 11, 2015."
+  },
+  {
+   "name": "Written response to Paul Michaud's questions",
+   "where": "text",
+   "quote": "he requested a written response to his questions which, with his permission, is avallable on the website."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "betterment",
+  "SRF project",
+  "sewer extension",
+  "grease trap",
+  "fee waivers",
+  "contracts",
+  "public comment",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "there was also a handout for expected betterment and other costs"
+ },
+ "dropped_unquoted_by_field": {}
 }

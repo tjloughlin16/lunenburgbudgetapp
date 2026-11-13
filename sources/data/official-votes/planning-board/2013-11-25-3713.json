@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-11-25",
  "docid": "3713",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from October 28, 2013",
+   "motion": "Approve the minutes of 10-28-13.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "motion to approve 10-28-13, n. lockwood, second, d. mcquaid."
   },
   {
-   "motion": "approve executive minutes from September 9, 2013",
+   "motion": "Approve the executive session minutes of 9-9-13.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "M. Allison",
    "outcome": "not stated",
@@ -28,24 +28,232 @@
    "quote": "motion to approve 9-9-13 executive, e. bakaysa, second, m. allison."
   },
   {
-   "motion": "accept Article defining definition of Medical Marijuana Treatment Center",
+   "motion": "Accept the Special Town Meeting article defining Medical Marijuana Treatment Center.",
    "moved_by": "D. McQuaid",
    "seconded_by": "E. Bakaysa",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion to accept article defining definition of medical marijuana treatment center, d. mcquaid, second, e. bakaysa, roll call vote - j. bilotta- simeone, aye; e. bakaysa, aye; n. lockwood, aye; d. mcquaid, aye; m. allison, aye",
-   "quote_taken_from_text": true
+   "quote": "motion to accept article defining definition of medical marijuana treatment center, d. mcquaid, second, e. bakaysa, roll call vote"
   },
   {
-   "motion": "accept Article for Moratorium for Town Warrant",
+   "motion": "Accept the Article for the Moratorium for the Town Warrant.",
    "moved_by": "N. Lockwood",
    "seconded_by": "E. Bakaysa",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion to accept article for moratorium for town warrant, n. lockwood, second, e. bakaysa. roll call vote- j. bilotta-simeone, aye; e. bakaysa, aye; n. lockwood, aye; d. mcquaid, aye; m. allison, aye."
+   "quote": "motion to accept article for moratorium for town warrant, n. lockwood, second, e. bakaysa."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1215505
+ "note": "Text is a clean extraction, not a scan. Both minutes-approval motions are recorded with no printed result, so outcome is 'not stated'. The 615/617 Leominster Road hearing is covered only by separate minutes not included here. No dollar figures appear. The minutes record no motion to adjourn (only 'Adjourned 7:45 PM.'), so no adjournment vote is listed. The 'Documents used at meeting:' list is printed; the medical marijuana presentation and Subdivision Rules are text-only mentions.",
+ "cost_usd": 0.0055964199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Due to lack of citizen response, the deadline for the Citizen Survey would be extended.",
+   "quote": "citizen survey- it was noted that due to lack of citizen response, deadline would be extended."
+  },
+  {
+   "decision": "The Agricultural Commission will be added to Committee Reports.",
+   "quote": "the agricultural commission will be added to committee reports."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "Public hearing: 615/617 Leominster Road, Scenic Road application",
+   "resolution": "see separate minutes",
+   "tags": [
+    "public hearing",
+    "scenic road"
+   ],
+   "quote": "public hearing: 615/617 leominster road, scenic road application - see separate minutes."
+  },
+  {
+   "topic": "Minutes approval (10-28-13 and 9-9-13 executive)",
+   "resolution": "motions made; result not stated",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: motion to approve 10-28-13, n. lockwood, second, d. mcquaid."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "tags": [
+    "committees",
+    "MRPC",
+    "school building",
+    "town meeting"
+   ],
+   "quote": "mrpc, j. bilotta-simeone- j. bilotta-simeone, n. lockwood, and m. allison attended annual dinner."
+  },
+  {
+   "topic": "Planning Director's reports, new business and development status",
+   "resolution": "marijuana moratorium articles accepted; progress reports noted",
+   "tags": [
+    "marijuana moratorium",
+    "special town meeting",
+    "development status",
+    "building permit"
+   ],
+   "quote": "special town meeting, january 7, 2014 - marijuana moratorium bylaw- board reviewed moratorium bylaw."
+  },
+  {
+   "topic": "Action file: Citizen Survey and MRPC meetings",
+   "resolution": "survey deadline extended",
+   "tags": [
+    "citizen survey",
+    "MRPC"
+   ],
+   "quote": "citizen survey- it was noted that due to lack of citizen response, deadline would be extended."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "december 9- town hall, 6:30 pm, board anticipates mrpc presentation"
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action",
+   "tags": [
+    "subdivision rules"
+   ],
+   "quote": "m. allison reminded the board that, at each meeting, they should be reviewing a section from the rules and regulations governing the subdivision of land."
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "no action",
+   "tags": [
+    "Highfield Village",
+    "rental housing"
+   ],
+   "quote": "m. allison inquired about the status of the requested highfield village pdf."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 10-28-13",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 10-28-13 executive minutes 9-9-13 615/617 leominster road, scenic road application"
+  },
+  {
+   "name": "Executive Minutes 9-9-13",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 10-28-13 executive minutes 9-9-13 615/617 leominster road, scenic road application"
+  },
+  {
+   "name": "615/617 Leominster Road, Scenic Road Application",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 10-28-13 executive minutes 9-9-13 615/617 leominster road, scenic road application"
+  },
+  {
+   "name": "Marijuana Moratorium Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 10-28-13 executive minutes 9-9-13 615/617 leominster road, scenic road application"
+  },
+  {
+   "name": "Whites Woods Progress Report",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 10-28-13 executive minutes 9-9-13 615/617 leominster road, scenic road application"
+  },
+  {
+   "name": "Emerald Place at Lake Whalom Progress Report",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 10-28-13 executive minutes 9-9-13 615/617 leominster road, scenic road application"
+  },
+  {
+   "name": "35 Leominster Road Building Permit",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 10-28-13 executive minutes 9-9-13 615/617 leominster road, scenic road application"
+  },
+  {
+   "name": "NuGen Capital letter guaranty re 651 Chase Road and 265 Pleasant Street Decommissioning and annual Maintenance.",
+   "where": "list",
+   "quote": "nugen capital letter guaranty re 651 chase road and 265 pleasant street decommissioning and annual maintenance."
+  },
+  {
+   "name": "Medical marijuana presentation by Kay Doyle, Esq., Kopelman and Paige, P.C.",
+   "where": "text",
+   "quote": "presentation on file in the planning office."
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "they should be reviewing a section from the rules and regulations governing the subdivision of land."
+  },
+  {
+   "name": "Highfield Village PDF",
+   "where": "text",
+   "quote": "m. allison inquired about the status of the requested highfield village pdf."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "marijuana moratorium",
+  "zoning",
+  "public hearing",
+  "development status",
+  "minutes approval",
+  "special town meeting",
+  "subdivision",
+  "rental housing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

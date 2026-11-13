@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-02-28",
  "docid": "3596",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve Executive Session minutes from February 14, 2011",
+   "motion": "Approve the signed Executive Session minutes of 2-14-11.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -20,23 +20,214 @@
    "quote": "signed executive 2-14-11, motion, mr. saiia, second, mr. lockwood."
   },
   {
-   "motion": "Approve Keating Information Meeting minutes from February 14, 2011",
+   "motion": "Approve the signed Regular Session minutes of 2-14-11.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "signed keating information meeting 2-14-11, motion mr. lockwood, second, mr. saiia."
+   "quote": "motion, mr. lockwood, second, mr. saiia."
   },
   {
-   "motion": "Not to submit the zoning change article for 134 Leominster Shirley Road for the Town Warrant",
+   "motion": "Approve the signed Keating Information Meeting minutes of 2-14-11.",
+   "moved_by": "Mr. Lockwood",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "signed keating information meeting 2-14-11, motion mr. lockwood"
+  },
+  {
+   "motion": "Not to submit the Article (134 Leominster Shirley Rd., Tradex Corp., c/o Charles Gitto Jr., zoning change) for the Town Warrant.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "vote taken not to submit article for town warrant - motion, mr. lockwood, second, mr. bodkin jr., vote 4-0."
+   "quote": "motion, mr. lockwood, second, mr. bodkin jr.,"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All votes identified and verified against source text.",
- "cost_usd": 0.11636049999999999
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with broken word spacing (e.g., 'Ch air', 'w ill', 'member s') and line breaks mid-sentence; quotes were chosen to avoid those breaks. Vote outcomes are not stated for the three minute approvals. Bilotta is 'Joanne' in the roll call but 'Joanna L.' on the letterhead. The Select Board Chair is unnamed. The 'OFFICE. No issues' item has no usable verbatim quote of 20+ characters and is not listed as a topic. No adjournment vote, public comment, or transfers are recorded.",
+ "cost_usd": 0.00717062,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Member",
+   "status": "present",
+   "quote": "robert j. saiia, mbr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Joanne Bilotta",
+   "role": "Vice-Chair (per letterhead as Joanna L. Bilotta)",
+   "status": "absent",
+   "quote": "absent: joanne bilotta"
+  },
+  {
+   "name": "Select Board Chair (unnamed)",
+   "role": "Select Board Chair",
+   "status": "present",
+   "quote": "attendee select board chair noted concern and would approach the state."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director was instructed to write design standards for the Commercial District.",
+   "quote": "director was instructed to write design standards for the commercial district."
+  },
+  {
+   "decision": "A placeholder Article for design standards for the Commercial District will be submitted for the Town Warrant.",
+   "quote": "for an article for design standards for the commercial district."
+  },
+  {
+   "decision": "A 43D site on Summer Street will be researched by the Director.",
+   "quote": "a 43d site will be researched"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Committee FY12 total",
+   "what_was_recorded": "Director reported the Capital Planning Committee prioritization was completed, with a total amount for FY12 stated.",
+   "figures_as_printed": [
+    "$ $538,765.00"
+   ],
+   "quote": "the total amount for fy12 is $ $538,765.00."
+  },
+  {
+   "topic": "Tri Town Landing 40S funding",
+   "what_was_recorded": "Discussion of the lack of funding for the 40S component; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "to date , the information has been the lack of funding for the 4 0s."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved; outcome not stated",
+   "quote": "signed executive 2-14-11, motion, mr. saiia, second, mr. lockwood.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "director reported prioritization completed.",
+   "tags": [
+    "capital budget",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business",
+   "resolution": "informational; Summer Street sketch and 43D research assigned",
+   "quote": "director noted closing date to board.",
+   "tags": [
+    "town warrant",
+    "summer street",
+    "solar",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "received; 40S funding question continued",
+   "quote": "reports show continued work as described in previous report.",
+   "tags": [
+    "development status",
+    "40S"
+   ]
+  },
+  {
+   "topic": "Bylaw changes / Annual Town Meeting (Tradex Corp zoning change)",
+   "resolution": "not submitted by Board; placeholder for Commercial District design standards; CLURPA tabled",
+   "quote": "not to submit article for town warrant",
+   "tags": [
+    "zoning",
+    "town warrant",
+    "design standards",
+    "CLURPA"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "informational",
+   "quote": "march 28, planning board meeting, ritter memorial building",
+   "tags": [
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Data information",
+   "resolution": "presented to members for viewing",
+   "quote": "data folder containing items of interest not on agenda",
+   "tags": [
+    "data"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data folder containing items of interest not on agenda",
+   "where": "list",
+   "quote": "data folder containing items of interest not on agenda"
+  },
+  {
+   "name": "Written Article readied for the Town Meeting Warrant",
+   "where": "text",
+   "quote": "director presented written article"
+  },
+  {
+   "name": "Finished Open Space Plan",
+   "where": "text",
+   "quote": "director presented the finished open space plan"
+  },
+  {
+   "name": "Population reports (submitted by Mr. Saiia, filed in Planning Office)",
+   "where": "text",
+   "quote": "mr. saiia submitted population reports."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "town warrant",
+  "zoning",
+  "design standards",
+  "open space",
+  "solar",
+  "development status",
+  "capital budget",
+  "minutes",
+  "Tradex Corp"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "data information:"
+ },
+ "dropped_unquoted_by_field": {}
 }

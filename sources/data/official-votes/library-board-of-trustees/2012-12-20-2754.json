@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-12-20",
  "docid": "2754",
@@ -12,48 +12,206 @@
  },
  "votes": [
   {
-   "motion": "approve the September 20, 2012 LPL Trustee minutes as presented",
+   "motion": "Approve the September 20, 2012 LPL Trustee minutes as presented.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "John Mara",
-   "outcome": "passed",
+   "outcome": "passed unanimously (absent members excepted)",
    "procedural": true,
-   "quote": "dick mailloux made a motion to approve the septembe r 20, 2012 lpl trustee minutes as presented; 2nd by john mara; unanimous approval by all present, except joh n mara and lars widstran",
-   "quote_taken_from_text": true
+   "quote": "dick mailloux made a motion to approve the septembe r 20, 2012 lpl trustee minutes as presented; 2nd by john"
   },
   {
-   "motion": "approve and release to the public the September 20, 2012 LPL Trustee Executive meeting minutes as presented",
+   "motion": "Approve and release to the public the September 20, 2012 LPL Trustee executive meeting minutes as presented.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed",
+   "outcome": "passed unanimously (absent members excepted)",
    "procedural": true,
-   "quote": "dick mailloux made a motion to approve and release to the public the september 20, 2012 lpl trustee ex ecutive meeting minutes as presented; 2nd by robin venezia; unanimous approval"
+   "quote": "dick mailloux made a motion to approve and release to the public the september 20, 2012 lpl trustee ex ecutive meeting minutes as presented; 2nd by robin venezia"
   },
   {
-   "motion": "approve the October 10, 2012 LPL Trustee minutes as presented",
+   "motion": "Approve the October 10, 2012 LPL Trustee minutes as presented.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed",
+   "outcome": "passed unanimously (members absent from that meeting excepted)",
    "procedural": true,
-   "quote": "dick mailloux made a motion to approve the october 10, 2012 lpl trustee minutes as presented; seconded by robin venezia; unanimous approval by all in attendance, e xcept kathy murray"
+   "quote": "dick mailloux made a motion to approve the october 10, 2012 lpl trustee minutes as presented; seconded by robin venezia"
   },
   {
-   "motion": "approve the November 15, 2012 LPL Trustee minutes as amended",
+   "motion": "Approve the November 15, 2012 LPL Trustee minutes as amended.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Kathy Murray",
-   "outcome": "passed",
+   "outcome": "passed unanimously (member absent from that meeting excepted)",
    "procedural": true,
-   "quote": "dick mailloux made a motion to approve the november 15, 2012 lpl trustee minutes as amended; seconded by kathy murray; unanimous approval by all in attendan ce, except john mara"
+   "quote": "dick mailloux made a motion to approve the november 15, 2012 lpl trustee minutes as amended; seconded by kathy murray"
   },
   {
-   "motion": "end the meeting at 8:45 pm",
+   "motion": "End the meeting at 8:45 pm.",
    "moved_by": "Lars Widstrand",
    "seconded_by": "Kathy Murray",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "lars widstrand made a motion to end the meeting at 8:45 pm; 2nd by kathy murray; unanimous approval by all in attendance."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1311495
+ "note": "Text extraction has broken words and stray spacing (e.g., 'Septembe r', 'Ex ecutive'); quotes are copied as printed with double spaces collapsed. Martha Moore is referenced as the author of the Director's Report but the minutes do not print her title, so role is 'not stated'. No dollar figures appear anywhere in the minutes. The October 18, 2012 minutes were tabled without a recorded motion, so they are recorded as a decision, not a vote.",
+ "cost_usd": 0.00482802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robin Venezia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, john mara, kathy murray, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lisa krowitz secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "John Mara",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, john mara, kathy murray, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, john mara, kathy murray, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, john mara, kathy murray, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: robin venezia, lisa krowitz, john mara, kathy murray, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lars widstrand, martha moore, brian laffond"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Finance Committee Member",
+   "status": "present",
+   "quote": "brian laffond (finance committee member), absent: jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: jeanne raboin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the October 18, 2012 minutes was tabled until the next meeting.",
+   "quote": "the approval of the october 18, 2012 minutes was ta bled until the next meeting."
+  },
+  {
+   "decision": "Martha will work on obtaining quotes for painting the exterior of the LPL and will work with the DPW to fix broken siding.",
+   "quote": "martha will work on obtaining quotes for paintin g the exterior of the lpl and will work with the dpw to fix some brok en siding."
+  },
+  {
+   "decision": "Martha will take an inventory of all library computers and wants the newest computers at the circulation desk to accommodate the new Evergreen software.",
+   "quote": "martha will be taking an inventory of all the libra ry computers."
+  },
+  {
+   "decision": "The LBOT Finance subcommittee will meet with Martha on January 3rd to update her on the LPL budget process.",
+   "quote": "the lbot finance subcommittee will meet with martha on january 3 rd to update her on the lpl budget process."
+  },
+  {
+   "decision": "Robin will set up a meeting of the Policy subcommittee for January.",
+   "quote": "robin will setup a meeting of the policy subcommitt ee for january."
+  },
+  {
+   "decision": "The discussion on the LPL Garden and Water feature was tabled.",
+   "quote": "the discussion on the lpl garden and water feature was tabled."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financials",
+   "what_was_recorded": "No financial update was given because the report was delayed from the Town.",
+   "quote": "financials: no update, report delayed from the town"
+  },
+  {
+   "topic": "Exterior painting and siding repair",
+   "what_was_recorded": "Martha will obtain quotes for painting the exterior of the LPL; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "martha will work on obtaining quotes for paintin g the exterior of the lpl and will work with the dpw to fix some brok en siding."
+  },
+  {
+   "topic": "LPL budget process",
+   "what_was_recorded": "The LBOT Finance subcommittee will meet with Martha on January 3rd to update her on the LPL budget process; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "the lbot finance subcommittee will meet with martha on january 3 rd to update her on the lpl budget process."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "meeting called to order at 6:50 pm"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "public comment - none"
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "four sets approved, one tabled",
+   "quote": "dick mailloux made a motion to approve the septembe r 20, 2012 lpl trustee minutes as presented; 2nd by john"
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "report received, no action recorded",
+   "quote": "hired jack pike as the new jr. library assistant."
+  },
+  {
+   "topic": "Sub-Committee Meetings",
+   "resolution": "no action recorded",
+   "quote": "the lbot finance subcommittee will meet with martha on january 3 rd to update her on the lpl budget process."
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "tabled",
+   "quote": "the discussion on the lpl garden and water feature was tabled."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45 pm",
+   "quote": "lars widstrand made a motion to end the meeting at 8:45 pm; 2nd by kathy murray; unanimous approval by all in attendance."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "library",
+  "trustees",
+  "minutes approval",
+  "director's report",
+  "staffing",
+  "facilities",
+  "technology",
+  "subcommittees",
+  "budget process"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

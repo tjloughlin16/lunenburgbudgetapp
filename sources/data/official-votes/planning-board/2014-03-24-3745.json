@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-03-24",
  "docid": "3745",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Enter into public hearing and return to regular session",
+   "motion": "Enter into Public Hearing and then return to Regular Session.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
-   "quote": "e. bakaysa, motion to enter into public hearing and then to return to regular session, second, m. all ison, all aye",
-   "quote_taken_from_text": true
+   "quote": "e. bakaysa, motion to enter into public hearing and then to return to regular session, second, m. all ison, all aye."
   },
   {
-   "motion": "Endorse the 265 Pleasant Street ANR",
+   "motion": "Endorse the 265 Pleasant Street ANR plan.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "e. bakaysa, motion to endorse, second, d. mcquaid, plan signed."
   },
   {
-   "motion": "Approve minutes of March 10, 2014",
+   "motion": "Approve the minutes of 3-10-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -37,7 +36,7 @@
    "quote": "motion, n. lockwood, to approve 3-10-14, second, d. mcquaid."
   },
   {
-   "motion": "Approve March 18, 2014 workshop minutes",
+   "motion": "Approve the minutes of 3-18-14 workshop.",
    "moved_by": "N. Lockwood",
    "seconded_by": "M. Allison",
    "outcome": "not stated",
@@ -45,7 +44,7 @@
    "quote": "motion, n. lockwood, to approve 3-18-14 workshop, second, m. allison."
   },
   {
-   "motion": "Approve 30-day extension on Board endorsement of Findings and Directives for 50 Elmwood Road",
+   "motion": "Approve a 30-day extension of Board endorsement of the Findings and Directives for the Definitive Subdivision at 50 Elmwood Road, to April 14, 2014.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -53,7 +52,204 @@
    "quote": "motion to approve 30 -day extension, d. mcquaid, second, m. allison, all aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11908449999999998
+ "dropped_unquoted": 1,
+ "note": "Plain-text extraction, no scan issues. No public comment section is printed, and the RMD public hearing is referenced to separate minutes, so no hearing detail is recorded here. The adjournment at 9:00 PM has no recorded motion. Three motions (ANR endorsement and the two minutes approvals) have no printed vote count, so their outcome is 'not stated'. No dollar figures appear in the minutes.",
+ "cost_usd": 0.00617062,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, chair tel: (978) 582-4147, ext 5"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "also present; chantell fleck, mrpc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board requested a site visit by the peer reviewer for 265 Pleasant Street Solar, due to abutter comments about the location of a telephone pole; E. Bakaysa also wants no gaps in screening and appropriate landscaping checked.",
+   "quote": "board requesting a site visit by the peer reviewer due to abutter comments regarding location of a telephone pole."
+  },
+  {
+   "decision": "Continued discussion of the 305 Leominster Shirley Road safety issue at the April 14th Board meeting, seeking advisement from C. Fleck of MRPC.",
+   "quote": "there will be continued discussion at the april 14th board meeting with the board looking for advisement from c. fleck from mrpc."
+  },
+  {
+   "decision": "Meeting schedule set: April 14, 2014 hearing continuation followed by Board meeting at Town Hall, and April 28, 2014 at Ritter Memorial Building.",
+   "quote": "april 14, 2014, 6:30 pm, town hall, hearing continuation following by board meeting"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: RMD bylaw warrant article",
+   "resolution": "see separate minutes",
+   "quote": "public hearing, warrant article for may 2014 town meeting, rmd (registered marijuana dispensary) bylaw - see separate minutes.",
+   "tags": [
+    "RMD bylaw",
+    "public hearing",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "265 Pleasant Street ANR",
+   "resolution": "endorsed; plan signed",
+   "quote": "e. bakaysa, motion to endorse, second, d. mcquaid, plan signed.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 3-10-14 and 3-18-14 workshop minutes",
+   "quote": "motion, n. lockwood, to approve 3-10-14, second, d. mcquaid.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "mjtc, m. allison- discussion on construction of wachusett rail station.",
+   "tags": [
+    "committee reports",
+    "rail",
+    "school building",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "reports received; 50 Elmwood Road extension approved; site visit requested for 265 Pleasant Street Solar",
+   "quote": "definitive subdivision, 50 elmwood road - developer requesting a 30 -day extension on board endorsement of the findings and directives.",
+   "tags": [
+    "subdivision",
+    "solar",
+    "site plan",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "White Tail Crossing and Annual Town Meeting",
+   "resolution": "no action; RMD bylaw work continues",
+   "quote": "white tail crossing- developer is aware of his responsibility in getting article on town warrant.",
+   "tags": [
+    "town meeting",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "dates listed",
+   "quote": "april 28, 2014, 6:30 pm, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues: 305 Leominster Shirley Road sight distance",
+   "resolution": "continued to April 14 meeting; no resolution",
+   "quote": "discussion followed with no resolution.",
+   "tags": [
+    "safety",
+    "sight distance",
+    "traffic",
+    "MRPC"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 3-10-14",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-10-14 minutes 3-18-14 workshop 265 pleasant street anr 50 elmwood road request for extension chase road solar update pleasant street solar update draft rmd bylaw"
+  },
+  {
+   "name": "Minutes 3-18-14 Workshop",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-10-14 minutes 3-18-14 workshop 265 pleasant street anr 50 elmwood road request for extension chase road solar update pleasant street solar update draft rmd bylaw"
+  },
+  {
+   "name": "265 Pleasant Street ANR",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-10-14 minutes 3-18-14 workshop 265 pleasant street anr 50 elmwood road request for extension chase road solar update pleasant street solar update draft rmd bylaw"
+  },
+  {
+   "name": "50 Elmwood Road Request for Extension",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-10-14 minutes 3-18-14 workshop 265 pleasant street anr 50 elmwood road request for extension chase road solar update pleasant street solar update draft rmd bylaw"
+  },
+  {
+   "name": "Chase Road Solar Update",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-10-14 minutes 3-18-14 workshop 265 pleasant street anr 50 elmwood road request for extension chase road solar update pleasant street solar update draft rmd bylaw"
+  },
+  {
+   "name": "Pleasant Street Solar Update",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-10-14 minutes 3-18-14 workshop 265 pleasant street anr 50 elmwood road request for extension chase road solar update pleasant street solar update draft rmd bylaw"
+  },
+  {
+   "name": "Draft RMD Bylaw",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-10-14 minutes 3-18-14 workshop 265 pleasant street anr 50 elmwood road request for extension chase road solar update pleasant street solar update draft rmd bylaw"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "marijuana dispensary bylaw",
+  "solar",
+  "subdivision",
+  "ANR",
+  "town meeting",
+  "minutes approval",
+  "sight distance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

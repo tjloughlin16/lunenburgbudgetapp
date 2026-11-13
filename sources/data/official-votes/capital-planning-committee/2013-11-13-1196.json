@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-11-13",
  "docid": "1196",
@@ -12,15 +12,215 @@
  },
  "votes": [
   {
-   "motion": "Approval of November 7, 2013 minutes",
-   "outcome": "passed",
+   "motion": "Approve the 11-7-13 minutes.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "11-7-13 minutes approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-read document (macOS Vision). Only one vote recorded: approval of prior minutes. The remainder is discussion of capital projects; committee consensus is noted on some items but these do not constitute formal votes. Adjournment time is stated (11:55 AM) but no motion to adjourn is recorded.",
- "cost_usd": 0.0870405
+ "note": "Text is OCR of a scanned minutes page. Only one approval appears: \"11-7-13 minutes approved.\" It records no mover, seconder or count, so it is logged as a procedural vote with outcome \"passed\" from the word \"approved\". No other motions, roll-call votes or formal votes are recorded. Adjournment at 11:55 AM is stated without a motion. No public comment section is printed. J. Breault is mentioned in discussion but is not recorded as taking part, so is not listed as an attendee.",
+ "cost_usd": 0.00449142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro"
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: dennis mannone, jr."
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director, Council on Aging (represented by)",
+   "status": "present",
+   "quote": "council on aging- represented by doreen noble, director-"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz- no price currently available for tiles."
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, Library (represented by)",
+   "status": "present",
+   "quote": "library- represented by martha moore, director-"
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "Historical Commission (represented by)",
+   "status": "present",
+   "quote": "historical commission- represented by pat slattery and amory phelps-"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Historical Commission (represented by)",
+   "status": "present",
+   "quote": "historical commission- represented by pat slattery and amory phelps-"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee consensus to do the ADA ramp in FY16 and the sprinkler and HVAC repairs in FY15, along with the tiles and carpeting.",
+   "quote": "ada ramp- committee consensus on doing the ada ramp in fy16 and sprinkler and hvac repairs in fy15, along with tiles"
+  },
+  {
+   "decision": "Library carpeting moved from FY16 to FY15 in conjunction with the Council on Aging work.",
+   "quote": "will be moved from fy16 to fy 15 in conjunction with council on aging above."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Dept. pumper",
+   "what_was_recorded": "Committee raised concern about the cost of the pumper and how often it is used; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "concerns with cost of pumper for fire dept. how frequently is it used?"
+  },
+  {
+   "topic": "School shade structure",
+   "what_was_recorded": "Described as very costly and ranked the school's 4th priority.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "school shade structure - school's 4th priority. very costly at $40,000."
+  },
+  {
+   "topic": "Council on Aging floor tiles and carpeting",
+   "what_was_recorded": "No price available for the tiles; carpet price calculated at $5,000 and bundled with the Library because it does not reach $10,000 individually.",
+   "figures_as_printed": [
+    "$5,000",
+    "$10,000"
+   ],
+   "quote": "dpw director jack rodriquenz- no price currently available for tiles. carpet price calculated at $5,000. bundled with library"
+  },
+  {
+   "topic": "Library carpeting",
+   "what_was_recorded": "Carpeting for the whole library estimated at $40,000; original 2005 carpeting.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "carpeting at $40,000; will encompass whole library."
+  },
+  {
+   "topic": "Town Hall painting, chimneys and roof requests",
+   "what_was_recorded": "Historical Commission requested $40,000 for painting, $20,000 for chimneys and $40,000 for roof; committee discussed funding roof and chimney for FY15.",
+   "figures_as_printed": [
+    "$40,000",
+    "$20,000",
+    "$40,000"
+   ],
+   "quote": "town hall- requesting $40,000 for painting, $20,000 for chimneys, and $40,000 for roof."
+  },
+  {
+   "topic": "Town Hall structural work (five-year renovation)",
+   "what_was_recorded": "DPW Director submitted a request for structural work for FY15 as part of a five-year renovation.",
+   "figures_as_printed": [
+    "$85,000"
+   ],
+   "quote": "j. rodriquenz also submitted a request for structural work at $85,000 for fy15 as part of a five year renovation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 11-7-13 minutes",
+   "resolution": "approved",
+   "quote": "11-7-13 minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "General discussion regarding submittals",
+   "resolution": "no action",
+   "quote": "general discussion regarding submittals",
+   "tags": [
+    "capital requests",
+    "fire",
+    "schools",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Council on Aging facility requests (Eagle House)",
+   "resolution": "consensus on FY15 and FY16 timing",
+   "quote": "council on aging- represented by doreen noble, director-",
+   "tags": [
+    "council on aging",
+    "facilities",
+    "ADA",
+    "HVAC"
+   ]
+  },
+  {
+   "topic": "Library carpeting request",
+   "resolution": "moved from FY16 to FY15",
+   "quote": "library- represented by martha moore, director-",
+   "tags": [
+    "library",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Historical Commission Town Hall requests",
+   "resolution": "discussed; roof and chimney funding for FY15 discussed",
+   "quote": "historical commission- represented by pat slattery and amory phelps-",
+   "tags": [
+    "town hall",
+    "historic preservation",
+    "roof",
+    "chimneys"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital planning",
+  "FY15",
+  "FY16",
+  "capital requests",
+  "town hall",
+  "library",
+  "council on aging",
+  "fire pumper",
+  "school shade structure",
+  "street sweeper",
+  "DPW",
+  "historical commission",
+  "facilities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

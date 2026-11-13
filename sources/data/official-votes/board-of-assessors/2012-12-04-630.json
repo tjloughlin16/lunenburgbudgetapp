@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-12-04",
  "docid": "630",
@@ -12,31 +12,352 @@
  },
  "votes": [
   {
-   "motion": "approve four of the six Chapter 61 applications under review",
-   "outcome": "passed",
+   "motion": "Approve four of the six remaining Chapter classification applications, with a note that classifications will not be approved next year if owners do not comply with deadlines and procedures.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "voted to approve four of the applications and made note that the classifications will not be approved in the next fiscal year if the owners do not comply with all application deadlines and procedures"
+   "quote": "boa reviewed the applications and voted to approve four of the applications"
   },
   {
-   "motion": "remove 19.04 acres classified as Agricultural/Horticultural and approve remaining 78 acres under Forest Management Plan for the 305 Flat Hill Road property",
+   "motion": "Remove the 19.04 acres at 305 Flat Hill Road from Chapter 61A and approve the remaining 78 acres under the Forest Management Plan.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "voted to remove the 19.04 acres classified under agricultural/horticultural and approved the remaining 78 acres classified under the forest management plan"
+   "quote": "the board reviewed the application and voted to remove the 19.04 acres classified under agricultural/horticultural and approved the remaining 78 acres"
   },
   {
-   "motion": "deny the application for the 400 Howard Street property",
+   "motion": "Deny the Chapter 61A application for 400 Howard St based on the information Harald Scheid presented (Chris Comeau recused).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "voted to deny the application based on the information harald presented"
+   "quote": "after review and discussion, the remaining board members voted to deny the application based on the information harald presented."
   },
   {
-   "motion": "meet on Tuesday, January 8, 2013 at 6:00pm",
+   "motion": "Meet on Tuesday, January 8, 2013 at 6:00pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "voted to meet on tuesday, january 8, 2013 at 6:00pm"
+   "quote": "the board voted to meet on tuesday, january 8, 2013 at 6:00pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR via macOS Vision; some OCR errors visible in appended memo pages but main meeting minutes are legible. No moved_by or seconded_by information is printed for any vote. Vote 3 notes that Chris Comeau recused himself, leaving the remaining Board Members to vote.",
- "cost_usd": 0.13662649999999998
+ "dropped_unquoted": 1,
+ "note": "Scanned OCR text with garbled passages: the Verizon memorandum (page 4) is partly unreadable, so its figures and some wording are not recoverable; the signature line reads 'Louise Raquette' while the typed name is 'Louise Paquette'. No motion movers, seconders, or tallies are printed for any vote. Approvals of abatements, vouchers, commitments, warrants, minutes, and exemptions are recorded as 'reviewed and approved' with no motion, so they are listed under decisions, not votes. No public comment is recorded. The Ashby letter (page 3) and the Verizon memo (page 4) are attached pages; the memo is referenced as '(See attached)'.",
+ "cost_usd": 0.00837142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chris comeau, chairman, board members: louis j. franco & matthew j. papini, sr., regional"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau, chairman, board members: louis j. franco & matthew j. papini, sr., regional"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau, chairman, board members: louis j. franco & matthew j. papini, sr., regional"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "assessor, harald scheid, and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the November 13, 2012 meeting (no motion or tally recorded).",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on november 13, 2012"
+  },
+  {
+   "decision": "Board approved all 4 statutory exemption applications (no motion or tally recorded).",
+   "quote": "the board reviewed and approved all 4 applications totally $6,594.85."
+  },
+  {
+   "decision": "Board approved 12 Tax Work-Off exemptions (no motion or tally recorded).",
+   "quote": "the board reviewed and approved 12 tax work-off exemptions in the amount of $7,970.00."
+  },
+  {
+   "decision": "Harald Scheid will send notification of the Board's decision on 305 Flat Hill Road.",
+   "quote": "harald will send notification of the boards' decision."
+  },
+  {
+   "decision": "Harald Scheid will send a letter informing the 400 Howard St property owner of the Board's denial.",
+   "quote": "harald will send a letter informing the property owner of the boards' decision."
+  },
+  {
+   "decision": "Louise Paquette informed the Town Manager of the letter the Board received regarding 400 Howard St.",
+   "quote": "louise informed the town manager of the letter we received."
+  },
+  {
+   "decision": "Board reviewed and signed the partial release lien for Padula/Lunenburg, LLC; Louise Paquette will send it to the Registry of Deeds for recording.",
+   "quote": "board reviewed and signed the partial release. louise will send to the registry of deeds for recording."
+  },
+  {
+   "decision": "Board recognized the Ashby Assessor's Office withdrawal from the Cooperative Assessing Program and directed Louise Paquette to tell Ashby's administrative assistant that the Board reluctantly accepted the decision.",
+   "quote": "the board recognized ashby's withdrawal and requested that louise contact the administrative assistant to inform her that they reluctantly accepted their decision."
+  },
+  {
+   "decision": "Harald Scheid will speak with David Manzello about the Department Head Budget Meeting with the Town Manager.",
+   "quote": "harald will speak with david manzello regarding this past monday's meeting."
+  },
+  {
+   "decision": "Chairman wants the PP bids for the assessment project to go out as soon as possible, which requires contact with the Town Manager.",
+   "quote": "chris wants the pp bids for proposal for the assessment project to go out as soon as possible"
+  },
+  {
+   "decision": "Louise Paquette agreed to contact Tim Fountain of Cartographic Associates by phone about the missing reduced-size replacement maps.",
+   "quote": "louise agreed to contact the company representative, tim fountain by phone."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption applications",
+   "what_was_recorded": "Four statutory exemption applications were presented and approved, totaling the amount printed.",
+   "figures_as_printed": [
+    "$6,594.85"
+   ],
+   "quote": "the board reviewed and approved all 4 applications totally $6,594.85."
+  },
+  {
+   "topic": "Tax Work-Off exemptions",
+   "what_was_recorded": "Twelve Tax Work-Off exemptions were approved in the amount printed.",
+   "figures_as_printed": [
+    "$7,970.00"
+   ],
+   "quote": "the board reviewed and approved 12 tax work-off exemptions in the amount of $7,970.00."
+  },
+  {
+   "topic": "Rollback tax at 137 Leominster-Shirley Rd",
+   "what_was_recorded": "A rollback tax was reported as collected on 1.58 acres; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "harald reported that a rollback tax was collected on 1.58 acres/ portion of 137 leominster-shirley rd."
+  },
+  {
+   "topic": "Verizon 2009 personal property abatement",
+   "what_was_recorded": "Memo recommends paying the Verizon refund and says funds must be found for accrued interest; no amounts are legible in the scan.",
+   "figures_as_printed": [],
+   "quote": "funds will have to be found to pay the accrued interest."
+  },
+  {
+   "topic": "Proposed tax rate and possible delay from ice storm borrowing",
+   "what_was_recorded": "The proposed tax rate still needs certification, and the rate may be delayed by borrowing to cover the 2011 ice storm.",
+   "figures_as_printed": [
+    "$17.30"
+   ],
+   "quote": "stating the proposed tax rate of $17.30 still needs to be certified"
+  },
+  {
+   "topic": "Ice storm borrowing",
+   "what_was_recorded": "Possible delay of the tax rate due to borrowing for the 2011 ice storm; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "harald spoke of the possibility that the rate may be delayed due to the borrowing of monies to cover the 2011 ice storm"
+  },
+  {
+   "topic": "Personal property business identification by RRG staff",
+   "what_was_recorded": "A contracted RRG staff member is identifying businesses in town; the minutes say this has generated an additional amount for another town.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "has been successful in generating an additional $200,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approvals: abatements, vouchers, commitments, warrants, minutes",
+   "resolution": "approved",
+   "tags": [
+    "approvals",
+    "abatements",
+    "minutes"
+   ],
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on november 13, 2012"
+  },
+  {
+   "topic": "Statutory and Tax Work-Off exemptions",
+   "resolution": "approved",
+   "tags": [
+    "exemptions",
+    "tax work-off"
+   ],
+   "quote": "louise presented 4 statutory exemption applications."
+  },
+  {
+   "topic": "Remaining six Chapter applications (tabled last month)",
+   "resolution": "four approved; two decided separately",
+   "tags": [
+    "Chapter 61A",
+    "Chapter 61",
+    "classification"
+   ],
+   "quote": "boa reviewed the applications and voted to approve four of the applications"
+  },
+  {
+   "topic": "400 Howard St Chapter 61A application",
+   "resolution": "denied; Chairman recused",
+   "tags": [
+    "Chapter 61A",
+    "denial",
+    "recusal"
+   ],
+   "quote": "the remaining board members voted to deny the application based on the information harald presented."
+  },
+  {
+   "topic": "Rollback tax and partial release lien, Padula/Lunenburg LLC",
+   "resolution": "partial release signed",
+   "tags": [
+    "lien release",
+    "rollback tax",
+    "Chapter 61A"
+   ],
+   "quote": "board reviewed and signed the partial release. louise will send to the registry of deeds for recording."
+  },
+  {
+   "topic": "Unreturned FY14 Chapter application",
+   "resolution": "no action; classification will not be granted",
+   "tags": [
+    "Chapter 61A",
+    "FY14"
+   ],
+   "quote": "the property owner did not return the fy14 application and does no longer wish to participate in the chapter classification."
+  },
+  {
+   "topic": "2009 personal property abatement for Verizon",
+   "resolution": "update received; memo to Town Manager",
+   "tags": [
+    "Verizon",
+    "abatement",
+    "personal property"
+   ],
+   "quote": "harald gave an update regarding the 2009 pp abatement for verizon."
+  },
+  {
+   "topic": "Ashby withdrawal from Cooperative Assessing Program",
+   "resolution": "withdrawal recognized",
+   "tags": [
+    "cooperative assessing",
+    "Ashby",
+    "regional"
+   ],
+   "quote": "the board recognized ashby's withdrawal and requested that louise contact the administrative assistant"
+  },
+  {
+   "topic": "Tax billing process and tax rate",
+   "resolution": "update; no action",
+   "tags": [
+    "tax rate",
+    "billing",
+    "Munis"
+   ],
+   "quote": "harald gave a brief update regarding the tax billing process"
+  },
+  {
+   "topic": "Department Head Budget Meeting with Town Manager",
+   "resolution": "follow-up assigned",
+   "tags": [
+    "budget",
+    "Town Manager"
+   ],
+   "quote": "harald will speak with david manzello regarding this past monday's meeting."
+  },
+  {
+   "topic": "PP property periodical update",
+   "resolution": "update; bids to go out as soon as possible",
+   "tags": [
+    "personal property",
+    "assessment project",
+    "bids"
+   ],
+   "quote": "harald stated that he presently has one of the rrg staff identifying businesses in town."
+  },
+  {
+   "topic": "Cartographic Associates maps and 2013 Tax Map Maintenance Contract",
+   "resolution": "contract not signed; Louise to call vendor",
+   "tags": [
+    "tax maps",
+    "contract",
+    "vendor"
+   ],
+   "quote": "the board did not sign the 2013 tax map maintenance contract yet."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for January 8, 2013 at 6:00pm; adjourned 7:25 pm",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "the board voted to meet on tuesday, january 8, 2013 at 6:00pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum from Harald Scheid to Board of Assessors, Town Manager, Town Accountant, Tax Collector, dated November 27, 2012, re Verizon New England Abatement",
+   "where": "list",
+   "quote": "he presented a memorandum that he sent on 11/27/2012 to the town manager, accountant, and tax collector. (see attached)"
+  },
+  {
+   "name": "Letter from Ashby Board of Assessors dated November 15, 2012, re withdrawal from Cooperative Assessing Program",
+   "where": "text",
+   "quote": "a letter was received and co: to the town manager on 11/15/2012 from the assessor's office in ashby."
+  },
+  {
+   "name": "Letter from property owner's attorney received 12/03/2012, 'Notice of Intent to Sell Agricultural Land' (400 Howard St)",
+   "where": "text",
+   "quote": "the boa is in receipt of a letter received 12/03/2012 from the property owner's attorney declaring"
+  },
+  {
+   "name": "Partial Release Lien for Padula/Lunenburg, LLC (Chapter 61A), originally filed Sept. 16, 2010 with Worcester North Registry of Deeds",
+   "where": "text",
+   "quote": "he presented a partial release lien for property owned by padula/lunenburg, llc."
+  },
+  {
+   "name": "Email of 11/26 to Cartographic Associates regarding omission of three reduced size replacement maps",
+   "where": "text",
+   "quote": "louise reported that cartographic associates have yet to respond to a 11/26 email regarding the"
+  },
+  {
+   "name": "2013 Tax Map Maintenance Contract",
+   "where": "text",
+   "quote": "the board did not sign the 2013 tax map maintenance contract yet."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "Chapter 61A",
+  "tax exemptions",
+  "abatements",
+  "cooperative assessing",
+  "Ashby",
+  "Verizon",
+  "tax rate",
+  "personal property",
+  "tax maps",
+  "meeting minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached)"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

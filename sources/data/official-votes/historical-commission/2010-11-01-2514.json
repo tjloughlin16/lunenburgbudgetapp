@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2010-11-01",
  "docid": "2514",
@@ -12,23 +12,215 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the October 4, 2010 meeting",
+   "motion": "To accept the donation from the Developers of Emerald Place to cover the cost of having ScanSmart digitize the 34 rolls of microfilm, pending approval by the Town Manager.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes were reviewed and approved for 10/4/2010 meeting with one typo noted."
-  },
-  {
-   "motion": "Accept the donation from the Developers of Emerald Place to cover the cost of digitizing 34 rolls of microfilm",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the commission voted unanimously to accept the donation pending approval by the town manager."
+   "quote": "the commission voted unanimously to accept the donation pending approval by the town manager.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd scan; one OCR typo detected but votes are legible",
- "cost_usd": 0.12368950000000001
+ "note": "OCR text (macOS Vision) with errors: names vary (P.Slattety / Slattery); item 5 sentence is cut off after \"by the end of the\"; the Congregational Church paragraph has no item number (item 8 implied); a stray \"pt\" follows item 10; the stamp reads OCT 18 2011 although the meeting is dated November 1, 2010. Minutes approval (item 2) and the tabling (item 4) are recorded without a stated motion or vote, so they are not listed as votes. Only one vote is recorded (donation acceptance), with no mover, seconder, or vote count printed. The page appears to be a single page, so later pages may be missing.",
+ "cost_usd": 0.0047953200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "C.Foltz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: c.foltz, b. lantry, p.slattety, r. mcgrath"
+  },
+  {
+   "name": "B. Lantry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: c.foltz, b. lantry, p.slattety, r. mcgrath"
+  },
+  {
+   "name": "P.Slattety",
+   "role": "Acting Secretary (per signature); the Architect (per item 8 presentation)",
+   "status": "present",
+   "quote": "patrick j. slattety, acting secretary"
+  },
+  {
+   "name": "R. McGrath",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: c.foltz, b. lantry, p.slattety, r. mcgrath"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Demolition Delay matter for 86 Lakefront Avenue was tabled, without a recorded vote.",
+   "quote": "because of other considerations related to the developers of emerald place and their funding of the digitizing project the matter was tabled."
+  },
+  {
+   "decision": "C. Foltz will provide a statement from the Commission for the Town Meeting on the historic nature of the Jones House property.",
+   "quote": "c. foltz will provide a statement from the commission for the town meeting outlining the historic nature of the property."
+  },
+  {
+   "decision": "P. Slattery will contact K. Speidel about the microfilm digitizing donation.",
+   "quote": "p. slattery will contact k. speidel."
+  },
+  {
+   "decision": "C. Foltz asked that the Houghton House article be sent to her electronically so she could review it further.",
+   "quote": "c.foltz requested that it be sent to her electronically so she could review it further."
+  },
+  {
+   "decision": "The Congregational Church addition presentation was informational only; no Commission action required.",
+   "quote": "he noted that the presentation was informational only and no action is required by the commission."
+  },
+  {
+   "decision": "B. Lantry to investigate brass plaques for historic properties.",
+   "quote": "b. lantry to investigate brass plaques for historic properties, noting that the jones house already has a plaque in waiting."
+  },
+  {
+   "decision": "C. Foltz to update the MHC grant outline.",
+   "quote": "c. foltz to update grant outline"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Digitizing project funding (microfilm) and demolition delay matter",
+   "what_was_recorded": "Discussion of the Developers of Emerald Place's funding of the digitizing project, cited as a consideration in tabling the Lakefront matter; no dollar figure printed.",
+   "quote": "because of other considerations related to the developers of emerald place and their funding of the digitizing project the matter was tabled.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Microfilm digitizing donation by Developers of Emerald Place",
+   "what_was_recorded": "The Developers agreed to donate the money to cover the entire cost of ScanSmart digitizing 34 rolls of microfilm; no dollar amount printed.",
+   "quote": "they have agreed to donate the money to cover the entire cost.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 10/4/2010 meeting",
+   "resolution": "approved with one typo noted",
+   "quote": "minutes were reviewed and approved for 10/4/2010 meeting with one typo noted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted",
+   "quote": "correspondence was noted as receipt of 2 magazines related to preservation.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition Delay vote, 86 Lakefront Avenue",
+   "resolution": "tabled",
+   "quote": "because of other considerations related to the developers of emerald place and their funding of the digitizing project the matter was tabled.",
+   "tags": [
+    "demolition delay",
+    "lakefront avenue"
+   ]
+  },
+  {
+   "topic": "Jones House article for Town Meeting",
+   "resolution": "Foltz to provide Commission statement; tenant status discussed",
+   "quote": "c. foltz will provide a statement from the commission for the town meeting outlining the historic nature of the property.",
+   "tags": [
+    "town meeting",
+    "jones house"
+   ]
+  },
+  {
+   "topic": "Microfilm digitizing donation (ScanSmart)",
+   "resolution": "donation accepted pending Town Manager approval",
+   "quote": "the commission voted unanimously to accept the donation pending approval by the town manager.",
+   "tags": [
+    "donation",
+    "microfilm",
+    "digitizing"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger articles and Town Hall article",
+   "resolution": "no action; Houghton House article to be sent electronically",
+   "quote": "b. lantry distributed an article on the houghton house for publication in the lunenburg ledger for the town wide edition at thanksgiving.",
+   "tags": [
+    "publications",
+    "lunenburg ledger"
+   ]
+  },
+  {
+   "topic": "Congregational Church addition preliminary layout",
+   "resolution": "informational only; no action",
+   "quote": "he noted that the presentation was informational only and no action is required by the commission.",
+   "tags": [
+    "congregational church",
+    "main street"
+   ]
+  },
+  {
+   "topic": "Brass plaques for historic properties",
+   "resolution": "Lantry to investigate",
+   "quote": "b. lantry to investigate brass plaques for historic properties, noting that the jones house already has a plaque in waiting.",
+   "tags": [
+    "plaques"
+   ]
+  },
+  {
+   "topic": "MHC grant possibilities",
+   "resolution": "Foltz to update grant outline",
+   "quote": "discussion of mhc grant possibilities was held. c. foltz to update grant outline",
+   "tags": [
+    "grants",
+    "mhc"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article on the Houghton House for the Lunenburg Ledger town wide edition at Thanksgiving",
+   "where": "text",
+   "quote": "b. lantry distributed an article on the houghton house for publication in the lunenburg ledger for the town wide edition at thanksgiving."
+  },
+  {
+   "name": "Jones House article for the Town Meeting",
+   "where": "text",
+   "quote": "a discussion of the jones house article for the town meeting was held."
+  },
+  {
+   "name": "Preliminary layout plans for the proposed addition to the Congregational Church on Main Street",
+   "where": "text",
+   "quote": "p. slattery presented the preliminary layout plans for the proposed addition to the"
+  },
+  {
+   "name": "Town Hall article by P. Slattery",
+   "where": "text",
+   "quote": "the town hall article by p. slattery is still pending release."
+  },
+  {
+   "name": "2 magazines related to Preservation",
+   "where": "text",
+   "quote": "correspondence was noted as receipt of 2 magazines related to preservation."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "town meeting",
+  "donation",
+  "microfilm digitizing",
+  "preservation",
+  "publications",
+  "grants",
+  "plaques",
+  "jones house",
+  "lakefront avenue"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

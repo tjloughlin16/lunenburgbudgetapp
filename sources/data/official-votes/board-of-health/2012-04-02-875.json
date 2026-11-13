@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-04-02",
  "docid": "875",
@@ -12,31 +12,156 @@
  },
  "votes": [
   {
-   "motion": "Approve variances for septic system at 167 Townsend Harbor Road",
+   "motion": "Approve the requested variances for a reduction in groundwater and offsets to property lines at 167 Townsend Harbor Road.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by shea, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by shea, the variances were approved. all in favor."
   },
   {
-   "motion": "Approve variances for septic system at 167 White Street",
+   "motion": "Approve the requested variances for a reduction in groundwater and an offset to wetlands at 167 White Street.",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by shea and second by jewell the variances were approved. all in favor."
+   "quote": "after discussion and on motion by shea and second by jewell the variances were approved. all in favor."
   },
   {
-   "motion": "Grant request for additional 30 days to complete repairs at 605 Mulpus Road",
+   "motion": "Grant Marion Brandt's request for an additional 30 days to complete repairs at 605 Mulpus Road.",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by passios and second by jewell, the request was granted. all in favor."
+   "quote": "after discussion and on motion by passios and second by jewell, the request was granted. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR via macOS Vision; text is clearly readable with no flagged quality issues.",
- "cost_usd": 0.09082449999999999
+ "note": "OCR text of a single-page set of minutes. Votes are recorded with \"All in favor\" and no vote count printed. No adjournment motion or roll-call is recorded; the meeting ends with \"Meeting adjourned 7:45 pm\" only. No dollar figures appear. Roles of attendees beyond the four board members are not printed.",
+ "cost_usd": 0.00283112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Mark Ferrell",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "mark ferrell met with the board on behalf of the owner."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Marion Brandt",
+   "role": "",
+   "status": "present",
+   "quote": "marion brandt met with the board to request additional time to make corrections on this property"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "no action",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "no action",
+   "quote": "title 5 inspection reports acknowledged: none",
+   "tags": [
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "no action",
+   "quote": "septic permits signed: none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "167 Townsend Harbor Road",
+   "resolution": "variances approved",
+   "quote": "this system is in failure. this is a small lot serviced by public water. variances for a reduction in groundwater as well as offsets to property lines are",
+   "tags": [
+    "septic",
+    "variances",
+    "failed system"
+   ]
+  },
+  {
+   "topic": "167 White Street",
+   "resolution": "variances approved",
+   "quote": "this system is in failure and there is sewage on the ground. this property is served by town water.",
+   "tags": [
+    "septic",
+    "variances",
+    "failed system"
+   ]
+  },
+  {
+   "topic": "605 Mulpus Road",
+   "resolution": "extension granted",
+   "quote": "requesting an additional 30 days to complete the repairs.",
+   "tags": [
+    "housing order",
+    "extension"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Housing order issued by the Board (605 Mulpus Road)",
+   "where": "text",
+   "quote": "which is the subject of a housing order issued by the board. ms. brandt advised that due to the fact that gaining"
+  }
+ ],
+ "tags": [
+  "septic systems",
+  "variances",
+  "Title 5",
+  "housing order",
+  "failed systems",
+  "public health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-03-09",
  "docid": "3838",
@@ -12,15 +12,292 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
-   "moved_by": "Damon McQuaid",
-   "seconded_by": "Matthew Allison",
+   "motion": "To close the public hearing.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, d. mcquaid, to close hearing, second, m. allison, all aye."
+   "quote": "motion, d. mcquaid, to close hearing, second, m. allison, all aye. hearing closed 9:27 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "This is a public hearing on Town Meeting warrant articles. The bylaw text and proposed amendments are presented for discussion, but no votes on the substantive articles are recorded here—they would have been voted on at town meeting itself. Only the procedural vote to close the hearing is recorded in these minutes.",
- "cost_usd": 0.0962065
+ "note": "Text has PDF extraction artifacts (split words such as 'du ring', 'ame nd', 'Villa ge'); quotes were copied with those artifacts avoided. Only one recorded motion (closing the hearing). No dollar figures appear. The minutes list no separate documents heading; document references are inline in the text.",
+ "cost_usd": 0.00824252,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "David McDonald",
+   "role": "speaking as member of the Building Reuse Committee",
+   "status": "present",
+   "quote": "david mcdonald (speaking as member of the building reuse committee)"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "resident, 94 Main Street",
+   "status": "present",
+   "quote": "robert ebersole, 94 main street"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "speaking as Chair of Historical Commission",
+   "status": "present",
+   "quote": "rebecca lantry, 251 west street (speaking as chair of historical commission)"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "speaking as Chair of the Building Reuse Committee",
+   "status": "present",
+   "quote": "jamie toale, 147 peninsula drive (speaking as chair of the building reuse committee)"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "resident, 94 Main Street",
+   "status": "present",
+   "quote": "troy daniels, 94 main street"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "resident, 312 Townsend Harbor Road",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road"
+  },
+  {
+   "name": "Charles Arning",
+   "role": "resident, 755 West Street",
+   "status": "present",
+   "quote": "charles arning, 755 west street"
+  },
+  {
+   "name": "Robert Doolittle",
+   "role": "resident, 24 Leominster Road",
+   "status": "present",
+   "quote": "robert doolittle, 24 leominster road"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to make listed changes to the VCD Bylaw: add the date of Town Meeting in 4.17.2; change \"size\" to \"square footage\" in 4.17.8.c.8; and reword 4.17.5.c.1 to limit one-story buildings to lots of less than five acres.",
+   "quote": "the following updates/changes will be made to the vcd bylaw:"
+  },
+  {
+   "decision": "No decision was made on separating the VCD and APD bylaws at this hearing; further APD discussion was needed.",
+   "quote": "further discussion of the apd was needed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David McDonald",
+   "stated_role": "speaking as member of the Building Reuse Committee",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "david mcdonald (speaking as member of the building reuse committee)"
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "resident, 94 Main Street",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "robert ebersole, 94 main street"
+  },
+  {
+   "speaker": "Rebecca Lantry",
+   "stated_role": "speaking as Chair of Historical Commission",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "rebecca lantry, 251 west street (speaking as chair of historical commission)"
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "speaking as Chair of the Building Reuse Committee",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "jamie toale, 147 peninsula drive (speaking as chair of the building reuse committee)"
+  },
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "resident, 94 Main Street",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "troy daniels, 94 main street"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "resident, 312 Townsend Harbor Road",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "paula bertram, 312 townsend harbor road"
+  },
+  {
+   "speaker": "Charles Arning",
+   "stated_role": "resident, 755 West Street",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "charles arning, 755 west street"
+  },
+  {
+   "speaker": "Robert Doolittle",
+   "stated_role": "resident, 24 Leominster Road",
+   "topic": "concerns with VCD Bylaw",
+   "quote": "robert doolittle, 24 leominster road"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening of hearing and notice",
+   "resolution": "hearing opened, notice read",
+   "quote": "opened the hearing with the reading of the notice published in the sentinel and enterprise",
+   "tags": [
+    "public hearing",
+    "notice"
+   ]
+  },
+  {
+   "topic": "Village Center District bylaw (Section 4.17) text",
+   "resolution": "reviewed at hearing, no vote",
+   "quote": "to see if the town will vote to amend the zoning bylaw by adding section 4.17. village center district",
+   "tags": [
+    "zoning bylaw",
+    "village center district"
+   ]
+  },
+  {
+   "topic": "Public comment on VCD Bylaw",
+   "resolution": "no action; concerns recorded",
+   "quote": "the following residents voiced concerns with the village center district (vcd) bylaw.",
+   "tags": [
+    "public comment",
+    "village center district"
+   ]
+  },
+  {
+   "topic": "Board response and bylaw changes",
+   "resolution": "changes listed to be made to VCD Bylaw",
+   "quote": "the following updates/changes will be made to the vcd bylaw:",
+   "tags": [
+    "zoning bylaw",
+    "village center district"
+   ]
+  },
+  {
+   "topic": "Whether to separate VCD and APD bylaws for Town Meeting",
+   "resolution": "discussed, no decision",
+   "quote": "there was discussion on whether or not to separate out the two bylaws for town meeting.",
+   "tags": [
+    "architectural preservation district",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Housekeeping warrant articles",
+   "resolution": "read, no action",
+   "quote": "the remaining articles were housekeeping issues.",
+   "tags": [
+    "town meeting warrant",
+    "zoning map",
+    "marijuana dispensaries"
+   ]
+  },
+  {
+   "topic": "Closing of hearing",
+   "resolution": "passed 'all aye', hearing closed 9:27 PM",
+   "quote": "motion, d. mcquaid, to close hearing, second, m. allison, all aye.",
+   "tags": [
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public hearing notice published in the Sentinel and Enterprise (February 23 and March 2, 2015)",
+   "where": "text",
+   "quote": "opened the hearing with the reading of the notice published in the sentinel and enterprise"
+  },
+  {
+   "name": "Proposed Section 4.17 Village Center District zoning bylaw text",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the zoning bylaw by adding section 4.17. village center district"
+  },
+  {
+   "name": "Town of Lunenburg Zoning Map (dated blank in text, on file with Town/City Clerk)",
+   "where": "text",
+   "quote": "town of lunenburg zoning map on file with the town/city clerk and dated"
+  },
+  {
+   "name": "State model bylaw for Village Center Districts",
+   "where": "text",
+   "quote": "town planning experience and best practices, as exemplified in the state"
+  },
+  {
+   "name": "Architectural Preservation District (APD) Bylaw",
+   "where": "text",
+   "quote": "the architectural preservation district (apd) bylaw does not support the vcd preamble."
+  },
+  {
+   "name": "Warrant article to add subsection 3.1.o) Village Center District",
+   "where": "text",
+   "quote": "types of districts a new subsection 3.1.o)"
+  },
+  {
+   "name": "Warrant article to change Section 3.2.1 date from May 3, 2008 to May 2, 2015",
+   "where": "text",
+   "quote": "in section 3.2.1. delete the words"
+  },
+  {
+   "name": "Warrant article to renumber Section 4.16 Registered Marijuana Dispensaries",
+   "where": "text",
+   "quote": "to correct the numbering sequence by renumbering"
+  },
+  {
+   "name": "Warrant article to amend Zoning Map for Village Center District",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the zoning map to show the new delineation of the village center"
+  }
+ ],
+ "tags": [
+  "zoning bylaw",
+  "village center district",
+  "public hearing",
+  "town meeting warrant",
+  "architectural preservation district",
+  "zoning map",
+  "marijuana dispensaries",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

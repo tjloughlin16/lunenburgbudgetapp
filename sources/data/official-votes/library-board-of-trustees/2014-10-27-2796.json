@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-10-27",
  "docid": "2796",
@@ -12,14 +12,93 @@
  },
  "votes": [
   {
-   "motion": "to have Jean Raboin contract with BiblioTemps and offer $30 per hour (up to $32 per hour) to Terry Hathaway as Interim Library Director starting November 1, 2014",
+   "motion": "Have Jean Raboin contract with BiblioTemps and make an offer of $30 per hour (up to $32 per hour) to Terry Hathaway to be Interim Director starting the week of November 1, 2014.",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made to have jean raboin contract with bibli otemps and make an offer of $30 per hour (up to $32 per hour) to terry hathaway, to be the lunenburg pu blic library's interim director starting the week o f november 1, 2014. motion passed unanimous",
-   "quote_taken_from_text": true
+   "quote": "motion made to have jean raboin contract with bibli otemps and make an offer of $30 per hour (up to $32 per hour) to terry hathaway"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1179675
+ "note": "Text is extracted with broken word spacing (e.g., \"Teres a\", \"surg ery\", \"Bibli oTemps\"); quotes are copied as printed. The minutes do not name who moved or seconded the motion, so those fields are omitted. The adjournment at 6:30 pm is recorded without a motion or vote, so it is not listed as a vote. No public comment was recorded. No documents list or exhibits are printed.",
+ "cost_usd": 0.00280062,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jean Raboin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:00 p.m. by jea n raboin."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson, robin venezia, susan visser, lars widstrand,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson, robin venezia, susan visser, lars widstrand,"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson, robin venezia, susan visser, lars widstrand,"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson, robin venezia, susan visser, lars widstrand,"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson, robin venezia, susan visser, lars widstrand,"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: jean raboin, dick mailloux, harry kubetz , gare thompson, robin venezia, susan visser, lars widstrand,"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Interim Director pay rate via BiblioTemps",
+   "what_was_recorded": "The motion set an offer rate for the interim director of $30 per hour, with a ceiling of $32 per hour.",
+   "figures_as_printed": [
+    "$30 per hour",
+    "$32 per hour"
+   ],
+   "quote": "make an offer of $30 per hour (up to $32 per hour) to terry hathaway"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Temporary Director",
+   "resolution": "approved hiring interim director through BiblioTemps",
+   "quote": "trustees discussed hiring teres a hathaway, through bibliotemps, as interim library director while martha moore is recovering from surg ery.",
+   "tags": [
+    "interim director",
+    "staffing",
+    "BiblioTemps"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "library",
+  "interim director",
+  "staffing",
+  "hiring",
+  "wages",
+  "personnel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

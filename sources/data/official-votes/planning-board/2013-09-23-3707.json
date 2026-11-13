@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-09-23",
  "docid": "3707",
@@ -12,23 +12,393 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of September 9, 2013",
-   "moved_by": "Mr. Bakaysa",
-   "seconded_by": "Mr. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to approve 9-9-13, mr. bakaysa, second, mr. mcquaid. minutes signed."
-  },
-  {
-   "motion": "leave Regular Session and enter Executive Session, not to return to Regular Session",
+   "motion": "Leave Regular Session, enter Executive Session, and not return to Regular Session.",
    "moved_by": "Mr. McQuaid",
    "seconded_by": "Mr. Allison",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion to leave regular session, enter into executive session, not to return to regular session, mr. mcquaid, second, mr. allison, roll call vote - mr. allison, aye; mr. bakaysa, aye; mr. mcquaid, aye; mr. lockwood, aye; ms. bilotta-simeone, aye."
+   "quote": "motion to leave regular session, enter into executive session, not to return to regular session, mr. mcquaid, second, mr. allison, roll call vote - mr. allison, aye"
+  },
+  {
+   "motion": "Approve the minutes of September 9, 2013 (printed as 9-9-13).",
+   "moved_by": "Mr. Bakaysa",
+   "seconded_by": "Mr. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion to approve 9-9-13, mr. bakaysa, second, mr. mcquaid. minutes signed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0890775
+ "note": "Text extraction of a typed minutes document; readable throughout. Only two motions are recorded with movers (executive session passed 5-0 by roll call; minutes approval has no result printed). No other votes, endorsements or outcomes were recorded as motions. The Force Corp. information meeting and the executive session are referenced to separate minutes that are not included. Adjournment has no recorded motion. Mr. Allison's response in public comment is recorded under his board role, not as an outside speaker.",
+ "cost_usd": 0.00864532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, nathan j. lockwood , damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, nathan j. lockwood , damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood , damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "nathan j. lockwood , damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood , damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Jack Sullivan",
+   "role": "Represented by (Emerald Place at Lake Whalom)",
+   "status": "present",
+   "quote": "represented by jack sullivan and gary crossen."
+  },
+  {
+   "name": "Gary Crossen",
+   "role": "Represented by (Emerald Place at Lake Whalom)",
+   "status": "present",
+   "quote": "represented by jack sullivan and gary crossen."
+  },
+  {
+   "name": "Mr. Slattery",
+   "role": "Citizen",
+   "status": "present",
+   "quote": "citizen mr. slattery noted that he has been a lunenburg citizen for"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continued Planning Board goal discussion to be taken up at the October 7, 2013 Board meeting.",
+   "quote": "continued goal discussion to take place at the october 7, 2013 board meeting."
+  },
+  {
+   "decision": "Board consensus is required before any item is placed on the Planning Board Facebook page.",
+   "quote": "ms. bilotta-simeone noted that before an item is placed on facebook, there has to be a board consensus."
+  },
+  {
+   "decision": "Ms. Benson is to put together a draft on the Medical Marijuana moratorium for the October 28th Board meeting, for a town meeting presentation.",
+   "quote": "ms. benson to put together a draft for the october 28th board meeting for a town meeting presentation."
+  },
+  {
+   "decision": "The Board endorsed the Mylar for Whites Woods, Phase III.",
+   "quote": "whites woods, phase iii, white street- board endorsed mylar."
+  },
+  {
+   "decision": "The ANR plan for 419 Sunny Hill Road is to be distributed for review.",
+   "quote": "plan will be distributed for review."
+  },
+  {
+   "decision": "Appointments to be set in 15-minute increments, with nothing scheduled later than 8:30 PM.",
+   "quote": "would like appointments set in 15 minute increments, with nothing scheduled later than 8:30 pm."
+  },
+  {
+   "decision": "Public Comment to be placed at both the beginning and the end of the agenda.",
+   "quote": "be placed at both the beginning and the end of the agenda."
+  },
+  {
+   "decision": "The YouTube link is to be placed on the Planning Board web page.",
+   "quote": "ms. bilotta-simeone requested the youtube link be placed on the planning board web page."
+  },
+  {
+   "decision": "It was suggested Mr. Allison approach the Board of Selectmen about 4H funds expended on the Teen Center.",
+   "quote": "it was suggested mr. allison approach the board of selectmen regarding same."
+  },
+  {
+   "decision": "Emerald Place principals will plan to meet with the Board semi-annually to update.",
+   "quote": "will plan to meet with the board semi-annually to update."
+  },
+  {
+   "decision": "Ms. Benson has started updating the Rules and Regulations Governing the Subdivision of Land.",
+   "quote": "ms. benson has started updating the rules and regulations governing the subdivision of"
+  },
+  {
+   "decision": "Ms. Benson to pursue the 40S qualification formulation with the state for Tri Town Landing (Board request).",
+   "quote": "board still requesting formulation for 40s qualification."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Emerald Place at Lake Whalom: condo prices and recovering investment",
+   "what_was_recorded": "Principals reported condo prices are 20% below what they need to recoup their investment and make a profit, and they are not pushing sales in the current market.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "prices are currently 20% below where the principals need to be to recoup their investment and make a profit."
+  },
+  {
+   "topic": "Tri Town Landing: Density Bonus Payment",
+   "what_was_recorded": "The Planning Director expects to receive a Density Bonus Payment the following week; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "should be receiving density bonus payment next week."
+  },
+  {
+   "topic": "Building Reuse Committee: possible demolition of Passios",
+   "what_was_recorded": "A theoretical budget is being prepared for possible demolition of Passios; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "theoretical budget being prepared for possible demolition of passios."
+  },
+  {
+   "topic": "Citizen Survey account",
+   "what_was_recorded": "The survey account will not be activated until payment is received; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "account won't be activated until payment received."
+  },
+  {
+   "topic": "Teen Center: 4H funds",
+   "what_was_recorded": "Mr. Allison noted that 4H funds were expended on the Teen Center; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. allison noted that 4h funds were expended on the teen center."
+  },
+  {
+   "topic": "Leasing a scanner",
+   "what_was_recorded": "Mr. Allison approached the Town Manager about leasing a scanner; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. allison noted he has approached the town manager re leasing a scanner."
+  },
+  {
+   "topic": "iPads for Town Boards",
+   "what_was_recorded": "Public comment on whether the Town should issue iPads to Boards; the speaker said a member wanting one could purchase it themselves. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "if a board member wants an ipad, they can purchase it themselves."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Slattery",
+   "stated_role": "Citizen",
+   "topic": "iPads for boards; Leominster Shirley Road project; integrity of professionals",
+   "quote": "citizen mr. slattery noted that he has been a lunenburg citizen for"
+  },
+  {
+   "speaker": "Mr. Allison",
+   "stated_role": "",
+   "topic": "response to Mr. Slattery's comments",
+   "quote": "mr. allison took objection with mr. slattery referring to him as"
+  },
+  {
+   "speaker": "Reporter",
+   "stated_role": "Reporter",
+   "topic": "name of the citizen who spoke",
+   "quote": "reporter inquired the name of the citizen who spoke at the beginning of the meeting (mr. slattery)."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Emerald Place at Lake Whalom",
+   "resolution": "discussed; principals to meet semi-annually; no action",
+   "quote": "represented by jack sullivan and gary crossen.",
+   "tags": [
+    "emerald place",
+    "condos",
+    "lake whalom",
+    "developer update"
+   ]
+  },
+  {
+   "topic": "Information Meeting, Force Corp., 305 Leominster Shirley Road",
+   "resolution": "see separate minutes",
+   "quote": "information meeting, force corp., 305 leominster shirley road",
+   "tags": [
+    "force corp",
+    "information meeting"
+   ]
+  },
+  {
+   "topic": "ANR, 419 Sunny Hill Road (William Drumm and Susan Drumm)",
+   "resolution": "accepted for review; to be distributed",
+   "quote": "plan accepted for review.",
+   "tags": [
+    "anr",
+    "sunny hill road",
+    "lot design",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Minutes approval (9-9-13)",
+   "resolution": "approved and signed",
+   "quote": "motion to approve 9-9-13, mr. bakaysa, second, mr. mcquaid.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "report on trails program.",
+   "tags": [
+    "mjtc",
+    "mrpc",
+    "school building committee",
+    "building reuse",
+    "capital planning",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Public comment (beginning)",
+   "resolution": "heard; no action",
+   "quote": "citizen mr. slattery noted that he has been a lunenburg citizen for",
+   "tags": [
+    "public comment",
+    "iPads",
+    "leominster shirley road"
+   ]
+  },
+  {
+   "topic": "Old business: Planning Board goals",
+   "resolution": "continued to October 7, 2013",
+   "quote": "continued goal discussion to take place at the october 7, 2013 board meeting.",
+   "tags": [
+    "goals",
+    "facebook",
+    "open meeting law",
+    "subdivision rules"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports, new business and development status",
+   "resolution": "reports received; no action",
+   "quote": "stone farm estates- will be coming forward with a change.",
+   "tags": [
+    "development status",
+    "mepa",
+    "tri town landing",
+    "whites woods",
+    "medical marijuana"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "no action",
+   "quote": "definitions scanned to board members.",
+   "tags": [
+    "citizen survey",
+    "subdivision rules"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "ritter memorial building w/mrpc",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "discussed; items directed or suggested",
+   "quote": "ms. bilotta-simeone opined that to have someone come before the board for a 9 pm appointment is too late.",
+   "tags": [
+    "appointments",
+    "records storage",
+    "scanner",
+    "web page",
+    "4H funds"
+   ]
+  },
+  {
+   "topic": "Public comment (end) and reporter inquiry",
+   "resolution": "heard; no action",
+   "quote": "reporter inquired the name of the citizen who spoke at the beginning of the meeting (mr. slattery).",
+   "tags": [
+    "public comment",
+    "press"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session; separate minutes",
+   "quote": "motion to leave regular session, enter into executive session, not to return to regular session, mr. mcquaid, second, mr. allison, roll call vote - mr. allison, aye",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:30 PM",
+   "quote": "adjourned regular session 9:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 9-9-13",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 9-9-13 planning board goals force corp. application rules & regulations governing the subdivision of land- definitions anr plan, 419 sunny hill road"
+  },
+  {
+   "name": "Planning Board Goals",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 9-9-13 planning board goals force corp. application rules & regulations governing the subdivision of land- definitions anr plan, 419 sunny hill road"
+  },
+  {
+   "name": "Force Corp. Application",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 9-9-13 planning board goals force corp. application rules & regulations governing the subdivision of land- definitions anr plan, 419 sunny hill road"
+  },
+  {
+   "name": "Rules & Regulations Governing the Subdivision of Land- Definitions",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 9-9-13 planning board goals force corp. application rules & regulations governing the subdivision of land- definitions anr plan, 419 sunny hill road"
+  },
+  {
+   "name": "ANR Plan, 419 Sunny Hill Road",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 9-9-13 planning board goals force corp. application rules & regulations governing the subdivision of land- definitions anr plan, 419 sunny hill road"
+  },
+  {
+   "name": "Mylar (Whites Woods, Phase III)",
+   "where": "text",
+   "quote": "whites woods, phase iii, white street- board endorsed mylar."
+  },
+  {
+   "name": "original Permit (Mobil/commercial plan, Emerald Place)",
+   "where": "text",
+   "quote": "mr. sullivan noted their commercial plan, per the original permit, stated a sidewalk be built from the"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "emerald place at lake whalom",
+  "anr",
+  "sunny hill road",
+  "force corp",
+  "public comment",
+  "executive session",
+  "medical marijuana",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

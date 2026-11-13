@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2015-05-13",
  "docid": "4545",
@@ -12,25 +12,331 @@
  },
  "votes": [
   {
-   "motion": "approve the meeting minutes from April 8, 2015 with revisions",
+   "motion": "Approve the meeting minutes from April 8, 2015 with revisions made and presented at the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
    "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from april 8,2015 with revisions made and presented at the meeting."
   },
   {
-   "motion": "approve the April 2015 invoices as presented by Joslin, Lesser & Associates",
-   "outcome": "unanimously approved",
+   "motion": "Approve the April 2015 invoices as presented by Joslin, Lesser & Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: the lunenburg school building committee voted to approve the april 2015 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
   },
   {
-   "motion": "approve Change Order No. 1 for $51,378 as presented by Joslin, Lesser & Associates",
-   "outcome": "unanimously approved",
+   "motion": "Approve Change Order No.1 as presented by Joslin, Lesser & Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: the lunenburg school building committee voted to approve the change order no.1 as presented by joslin, lesser & associates. the motion was unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09649150000000001
+ "note": "OCR text. Page 4 of 4 is blank in the extract, so the closing of the meeting (adjournment) and any later votes are not in the text. Attendee roles were matched to names by row position in the OCR table (23 names, 23 roles), so the name-to-role pairing is inferred, not printed line by line. The table does not give attendance status, so all listed people are recorded as present. The motion to approve the April 8, 2015 minutes has no mover, seconder or result printed. Votes on invoices and change order are recorded as unanimous. The minutes do not print any transfer or public speaker.",
+ "cost_usd": 0.0062624199999999994,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "present",
+   "quote": "lunenburg superintendent of schools, lsbc"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair; Chairperson of the Lunenburg School Building Committee",
+   "status": "present",
+   "quote": "called to order at 4:35 pm by mr. mackin, chairperson of the lunenburg school building committee."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "present",
+   "quote": "lunenburg school committee, lsbc member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "present",
+   "quote": "bos representative, lsbc member"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "present",
+   "quote": "planning board, lsbc member"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "present",
+   "quote": "finance committee, lsbc vice chair"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "town manager, lsbc (non-voting member)"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "director of facilities, lsbc (non-voting member)"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "lhs principal, lsbc (non-voting member)"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools",
+   "status": "present",
+   "quote": "lunenburg public schools"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "status": "present",
+   "quote": "principal-in-charge, tappé architects"
+  },
+  {
+   "name": "Jen Littlefield",
+   "role": "Tappe Architects",
+   "status": "present",
+   "quote": "tappe architects project architect, tappé architects"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Architects",
+   "status": "present",
+   "quote": "project architect, tappé architects"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Robert Alger",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "rob alger is available to set up time for site visit."
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "shawmut design & construction"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "shawmut design & construction"
+  },
+  {
+   "name": "Philip Conroy",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "shawmut design & construction"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tappe will issue a concept sketch showing property line allocation around the TCP building and a proposed parking lot location for the re-use committee to review.",
+   "quote": "tappe will issue a concept sketch with allocation of property lines around tcp and proposed parking lot location for the re-use committee to review."
+  },
+  {
+   "decision": "The re-use committee will look for a proposed property line plan to approve, as the TCP building will be marked for possible reuse.",
+   "quote": "the re-use committee will be looking for a proposed property line plan to approve as the tcp building will be marked for possible reuse."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Change Order No.1",
+   "what_was_recorded": "JLA presented Change Order No.1 for $51,378, consisting of six change requests vetted by JLA, Tappe and Shawmut; approved by vote.",
+   "figures_as_printed": [
+    "$51,378"
+   ],
+   "quote": "presented change order no.1 for the amount of $51,378 to the committee."
+  },
+  {
+   "topic": "Change order funding source",
+   "what_was_recorded": "Change order funds come from construction contingency, which is set during Guaranteed Maximum Price (GMP) review; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "funds for change orders are allocated thru construction contingency which is pre-determined during guaranteed maximum price (gmp) review."
+  },
+  {
+   "topic": "Monthly progress invoices",
+   "what_was_recorded": "JLA presented monthly progress invoices for work through April 2015 (OPM, designer, Shawmut Payment Requisition No.9, UTS Testing, Gaw Photography); approved by vote; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "presented monthly progress invoices for work completed through april, 2015 for joslin, lesser & associates (opm)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and Site Walkthrough",
+   "resolution": "no action; site walkthrough by JLA and Shawmut",
+   "quote": "jla & shawmut guided the committee through the building project site with detailed construction progress and update.",
+   "tags": [
+    "site visit",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, April 8, 2015",
+   "resolution": "approved with revisions",
+   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from april 8,2015 with revisions made and presented at the meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Monthly Invoices",
+   "resolution": "approved",
+   "quote": "presented monthly progress invoices for work completed through april, 2015 for joslin, lesser & associates (opm)",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals - Change Order #1",
+   "resolution": "approved",
+   "quote": "joslin lesser & associates (jla) presented change order no.1 for the amount of",
+   "tags": [
+    "change order",
+    "contingency"
+   ]
+  },
+  {
+   "topic": "Construction progress summary",
+   "resolution": "no action; presented for information",
+   "quote": "asphalt shingle roof and edge metal installation is underway in",
+   "tags": [
+    "construction progress",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Re-Use of TCP building and Brooks House",
+   "resolution": "no action; Tappe to issue concept sketch for re-use committee",
+   "quote": "the re-use committee will be looking for a proposed property line plan to approve as the tcp building will be marked for possible reuse.",
+   "tags": [
+    "TCP building",
+    "Brooks House",
+    "property lines",
+    "reuse"
+   ]
+  },
+  {
+   "topic": "Finalized Finishes Review",
+   "resolution": "presented for record",
+   "quote": "tappe presented finalized finish boards as a summary of slight adjustments made",
+   "tags": [
+    "finishes",
+    "design"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Change Order No.1 (six change requests, package issued two weeks before meeting)",
+   "where": "text",
+   "quote": "presented change order no.1 for the amount of $51,378"
+  },
+  {
+   "name": "Finalized finish boards",
+   "where": "text",
+   "quote": "tappe presented finalized finish boards as a summary of slight adjustments made"
+  },
+  {
+   "name": "Shawmut Payment Requisition No.9",
+   "where": "text",
+   "quote": "shawmut design & construction (payment requisition no.9)"
+  },
+  {
+   "name": "UTS Testing Services invoice (April 2015)",
+   "where": "text",
+   "quote": "uts testing services (april 2015)"
+  },
+  {
+   "name": "Gaw Photography invoice #3",
+   "where": "text",
+   "quote": "gaw photography invoice #3"
+  },
+  {
+   "name": "Proposed lot line and property line concepts (TCP building)",
+   "where": "text",
+   "quote": "the committee reviewed a proposed lot line and property line concepts as they relate"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "construction progress",
+  "change orders",
+  "invoices",
+  "TCP building reuse",
+  "Brooks House",
+  "finishes",
+  "site walkthrough",
+  "Tappe Architects",
+  "Joslin Lesser & Associates",
+  "Shawmut Design & Construction"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

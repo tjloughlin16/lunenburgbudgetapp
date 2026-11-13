@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-01-11",
  "docid": "867",
@@ -12,23 +12,170 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from November 21, 2011 and December 19, 2011",
+   "motion": "Approve the minutes of November 21, 2011 and December 19, 2011.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "on motion by jewell and second by shea, the following minutes were approved"
   },
   {
-   "motion": "Recommend Mr. Passios for appointment to the Board of Health",
+   "motion": "Recommend Dave Passios for appointment to the Board of Health vacancy.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbit",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "on motion by jewell and secon d by rabbit, the board unanimously recommending mr. passios for appointment to the board of health"
+   "quote": "the board unanimously recommending mr. passios for appointment to the board of health"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11625850000000001
+ "note": "Text extraction splits some words with stray spaces (e.g. \"secon d\", \"th e\", \"re view\"); quotes avoid those splits. The second motion's seconder is printed as \"Rabbit\". No vote tally is printed for the minutes approval or the recommendation beyond \"unanimously\". The FY 2013 budget discussion names no dollar figures. Budget documents are referenced only generically.",
+ "cost_usd": 0.004332819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, dave shea, jack rabbitt and perry jewell",
+   "role": "Chair"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "present: george emond, dave shea, jack rabbitt and perry jewell",
+   "role": ""
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: george emond, dave shea, jack rabbitt and perry jewell",
+   "role": ""
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, dave shea, jack rabbitt and perry jewell",
+   "role": ""
+  },
+  {
+   "name": "Andrea Schnepf",
+   "status": "present",
+   "quote": "administrative assistant, andrea schnepf",
+   "role": "Administrative Assistant"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios met with the board to discuss filling the current vacancy on the board.",
+   "role": "applicant interviewing for Board of Health vacancy"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "not stated",
+   "quote": "town administrator, kerry speidel.",
+   "role": "Town Administrator"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After discussion of the FY 2013 budget, Administrative Assistant Andrea Schnepf agreed to forward the necessary budget documents to Town Administrator Kerry Speidel.",
+   "quote": "town administrator, kerry speidel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2013 Board of Health budget",
+   "what_was_recorded": "The chairman said there is no leeway in the budget because payments to Nashoba and the administrative assistant are contract-based, and the remaining balance is very small with all line items necessary.",
+   "quote": "chairman emond advised there is no leeway",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (November 21, 2011 and December 19, 2011)",
+   "quote": "on motion by jewell and second by shea, the following minutes were approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (56 Cross Road, 100 Sunset Lane)",
+   "quote": "title 5 inspection reports acknowledged",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed (56 Cross Road)",
+   "quote": "septic permits signed",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Board of Health vacancy interview",
+   "resolution": "recommended Dave Passios for appointment",
+   "quote": "dave passios met with the board to discuss filling the current vacancy on the board.",
+   "tags": [
+    "appointment",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Wallis Park sewer connections",
+   "resolution": "status update, no action",
+   "quote": "this work is in progress.",
+   "tags": [
+    "sewer",
+    "wallis park",
+    "pierce street"
+   ]
+  },
+  {
+   "topic": "FY 2013 budget",
+   "resolution": "no action; budget documents to go to Town Administrator",
+   "quote": "chairman emond advised there is no leeway",
+   "tags": [
+    "budget",
+    "fy 2013"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:00 pm",
+   "quote": "meeting adjourned at 8:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Budget documents (FY 2013 Board of Health budget)",
+   "where": "text",
+   "quote": "budget documents were available"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic",
+  "sewer connections",
+  "board appointment",
+  "fy 2013 budget",
+  "nashoba"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "budget documents were available"
+ },
+ "dropped_unquoted_by_field": {}
 }

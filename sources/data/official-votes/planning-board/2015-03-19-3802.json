@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-03-19",
  "docid": "3802",
@@ -12,15 +12,141 @@
  },
  "votes": [
   {
-   "motion": "Submit Architectural Preservation District Bylaw as amended with changes as discussed",
-   "moved_by": "Damon McQuaid",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed unanimously",
+   "motion": "Submit the Architectural Preservation District Bylaw as amended with the changes discussed at the meeting.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed",
    "procedural": false,
    "quote": "d. mcquaid, motion to submit architectural preservation district bylaw as amended with changes as discussed tonight, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The adjournment is noted but no motion to adjourn is explicitly recorded in the minutes.",
- "cost_usd": 0.0825785
+ "note": "Extracted text, not a scan. One motion is recorded with an all-aye result and no numeric count. Adjournment at 10:30 PM is recorded with no motion, so no procedural vote is entered. No dollar figures or transfers appear. No public comment section is printed. The text has OCR spacing artifacts (e.g., 'fro m', 'subs titute', 'Administrative R eview'). The discussion names 'Bob Ebersole' while the document list names 'Rob Ebersole'; both are recorded as printed. The 'Audio recording' line is included as a text reference only.",
+ "cost_usd": 0.00382852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: amory phelps, richard mcgrath, lois lewis, cullen dwyer"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: amory phelps, richard mcgrath, lois lewis, cullen dwyer"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: amory phelps, richard mcgrath, lois lewis, cullen dwyer"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: amory phelps, richard mcgrath, lois lewis, cullen dwyer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to make the listed edits to the draft APD bylaw, beginning with Section 1 (Purpose) (d) and (e) and Section 2 (Alteration Substantial), and continuing page by page through Section 12.",
+   "quote": "changes will be made to section 1: purpose (d), (e), and section 2: alteration substantial."
+  },
+  {
+   "decision": "The board agreed that the written determination deadline in Section 8 (Binding Review) and Section 10 would be 90 days after application submittal instead of the 60 days currently in place.",
+   "quote": "it will also be noted that written determination shall be no later than 90 days after application submittal instead of the 60 currently in place."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Joint meeting with Historical Commission: Architectural Preservation District (APD) Bylaw",
+   "resolution": "submitted to Town as amended with changes discussed",
+   "quote": "architectural preservation district (apd) bylaw",
+   "tags": [
+    "bylaw",
+    "architectural preservation district",
+    "historic preservation",
+    "joint meeting",
+    "historical commission"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Architectural Preservation District Bylaw DRAFT",
+   "where": "list",
+   "quote": "architectural preservation district bylaw draft"
+  },
+  {
+   "name": "Email dated 03.12.15, subject: Architectural Preservation District, author: Rob Ebersole",
+   "where": "list",
+   "quote": "03.12.15 email, subject: architectural preservation district, author: rob ebersole"
+  },
+  {
+   "name": "Email dated 03.10.15, subject: APD, author: Damon McQuaid",
+   "where": "list",
+   "quote": "03.10.15 email, subject: apd, author: damon mcquaid"
+  },
+  {
+   "name": "Audio recording of the meeting",
+   "where": "text",
+   "quote": "audio recording on file in the planning office."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "historical commission",
+  "architectural preservation district",
+  "bylaw",
+  "historic preservation",
+  "joint meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

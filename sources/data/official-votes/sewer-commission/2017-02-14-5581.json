@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-02-14",
  "docid": "5581",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "adjourn",
+   "motion": "Joe moved to adjourn the meeting.",
    "moved_by": "Joe",
    "seconded_by": "John",
    "outcome": "passed",
@@ -21,6 +21,266 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes; one procedural vote to adjourn recorded. Minutes end abruptly with \\\"Respectfully\\\" and no signature line, suggesting the OCR capture may be incomplete.",
- "cost_usd": 0.0811215
+ "note": "OCR text from a scanned page with garbled words (e.g. 'YUnnEN DUSINESS', 'I/l', 'worktlow'); quotes copied as printed. No attendance roll: attendance inferred from who speaks or acts. Joe is recorded as making the adjournment motion though the minutes also say 'Joe will try and attend', so his status is ambiguous. Only one motion is recorded (adjournment) and no tally is printed; outcome set to passed because the minutes say the meeting adjourned. Page 2 is partly garbled. Names mentioned but not taking part (Karen, Heather, John DiNapoli of Unitil, John from SWSS) are not listed as attendees.",
+ "cost_usd": 0.00671832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl had handout of new checklist to discuss."
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack has met, spoken with or left message for most of these accounts."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john stated that with crossroads, if it was at one point approved and given occupancy, we cannot go back."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb will have the ytd fy17 at the workshop to determine how much monies are left in this fiscal year to spend."
+  },
+  {
+   "name": "Joe",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joe made a motion to adjourn, john seconded."
+  },
+  {
+   "name": "Joan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "before joan left the meeting, it was confirmed that the budget workshop would be 6:30-8:30 on 2/21. joan left at 5:30."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to go with Jack's recommendation on the Mass 2 generator repair, but wants steps taken to prevent further mice damage; Jack to speak with SWSS.",
+   "quote": "commission agreed to go with jack's recommendation but wants to prevent mice any more mice damage."
+  },
+  {
+   "decision": "Budget Workshop confirmed for 6:30-8:30 on 2/21.",
+   "quote": "it was confirmed that the budget workshop would be 6:30-8:30 on 2/21."
+  },
+  {
+   "decision": "Barb to provide the sewer billing workflow to the other members for review before the budget workshop.",
+   "quote": "john requested that barb provide the billing worktlow to the other members for review before the budget workshop."
+  },
+  {
+   "decision": "Jack to follow up with SWSS on the annual report.",
+   "quote": "jack will follow up with swss."
+  },
+  {
+   "decision": "Jack to look into putting together an assessment of the pump stations.",
+   "quote": "jack spoke of an assessment of the pump stations; he will look to put something together."
+  },
+  {
+   "decision": "Jack's proposal to use project monies for the I/I work was reported as agreeable to Karen and Heather; no formal vote recorded.",
+   "quote": "jack proposed using project monies on the i/l work."
+  },
+  {
+   "decision": "John offered to come up with a form going forward for grease trap reporting.",
+   "quote": "john offered to come up with a form going forward."
+  },
+  {
+   "decision": "Jack to gave SWSS the Leominster Rd call-out information to trigger an investigation of the branch power interruption.",
+   "quote": "he gave john from swss the info to hopefully trigger investigation."
+  },
+  {
+   "decision": "Commissioners to review grease trap regulations for other changes; non-compliance to be communicated and reported back to the Commission.",
+   "quote": "carl stated that if someone doesn't comply with regs, this is the time to communicate that issue"
+  },
+  {
+   "decision": "Barb to have YTD FY17 figures at the budget workshop to determine remaining FY17 funds.",
+   "quote": "barb will have the ytd fy17 at the workshop to determine how much monies are left in this fiscal year to spend."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Project monies for I/I work",
+   "what_was_recorded": "About $39K in project funds was reported available, and Jack proposed using project monies for I/I work.",
+   "figures_as_printed": [
+    "$39K"
+   ],
+   "quote": "jack proposed using project monies on the i/l work. we have about $39k; carl talked with karen & heather and they are good with using project funds for i/l."
+  },
+  {
+   "topic": "Sewer billing software (Northern Data) cost",
+   "what_was_recorded": "Cost to buy and run a software package for sewer billing was given as $30,000 in the first year, then $3,500 per year.",
+   "figures_as_printed": [
+    "$30,000",
+    "$3,500/yr."
+   ],
+   "quote": "the cost to buy software package and do it is $30,000 first year; $3,500/yr. after-or work with the water district."
+  },
+  {
+   "topic": "Sewer billing through Lunenburg Water",
+   "what_was_recorded": "Going through Lunenburg Water was estimated at $20,000 plus a yearly cost, in discussion of a proposed partnership.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "if we went through lunenburg water, it would be $20,000 plus yearly cost; discussed of proposed partnership with lunenburg water."
+  },
+  {
+   "topic": "I/I work bidding threshold",
+   "what_was_recorded": "Jack noted that work over $50,000 must go out to bid; Carl wanted the I/I project spread out.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "jack noted that if it is over $50,000, has to go out to bid."
+  },
+  {
+   "topic": "Caterpillar repair at Mass 2 generator",
+   "what_was_recorded": "Repair of the damaged component was expected to be around $3000 per the Caterpillar proposals.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "will most likely be around $3000 for cat to repair the damaged component."
+  },
+  {
+   "topic": "Backup generator and pump trucks at Mass 2",
+   "what_was_recorded": "SWSS suggested a backup generator and pump trucks on site; the cost was described as substantial, with no figure printed.",
+   "figures_as_printed": [],
+   "quote": "suggested a backup generator and pump trucks on site, but cost would be substantial."
+  },
+  {
+   "topic": "FY17 year-to-date spending",
+   "what_was_recorded": "Barb to bring FY17 year-to-date figures to the workshop to determine how much money is left to spend this fiscal year; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb will have the ytd fy17 at the workshop to determine how much monies are left in this fiscal year to spend."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY18 Budget",
+   "resolution": "discussed; continued to budget workshop 2/21",
+   "quote": "fy18 budget- going through the working document tonight; we are on with fincom 3/9.",
+   "tags": [
+    "budget",
+    "FY18",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Regulations Update (grease trap regs)",
+   "resolution": "discussed; commissioners to review regs",
+   "quote": "several potential changes to the grease trap regs were discussed.",
+   "tags": [
+    "regulations",
+    "grease trap",
+    "FOG"
+   ]
+  },
+  {
+   "topic": "DPW Operations - FOG Program",
+   "resolution": "discussed; no action recorded",
+   "quote": "dpw operations issues- fog program: carl had handout of new checklist to discuss.",
+   "tags": [
+    "FOG",
+    "grease trap",
+    "restaurants",
+    "Crossroads"
+   ]
+  },
+  {
+   "topic": "Pump Stations",
+   "resolution": "discussed; Caterpillar repair accepted per Jack's recommendation",
+   "quote": "pump stations - jack talked about the generator issue at mass 2.",
+   "tags": [
+    "pump stations",
+    "generator",
+    "Leominster Rd",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Reports (SWSS flow meter work)",
+   "resolution": "discussed; no action recorded",
+   "quote": "reports - carl asked about the flow meter work that's part of swss contract.",
+   "tags": [
+    "SWSS",
+    "flow meter",
+    "pump station report"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:29pm",
+   "quote": "joe made a motion to adjourn, john seconded. meeting adjourned at 6:29pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "New checklist handout (FOG program)",
+   "where": "list",
+   "quote": "carl had handout of new checklist to discuss."
+  },
+  {
+   "name": "FY18 budget working document, Version 3",
+   "where": "text",
+   "quote": "commission reviewed version 3 but may need workshop."
+  },
+  {
+   "name": "Grease trap regulations",
+   "where": "text",
+   "quote": "several potential changes to the grease trap regs were discussed."
+  },
+  {
+   "name": "Crossroads schematic",
+   "where": "text",
+   "quote": "discussed the crossroads schematic."
+  },
+  {
+   "name": "Annual report from SWSS",
+   "where": "text",
+   "quote": "the commission is awaiting the annual report from swss"
+  },
+  {
+   "name": "Original pump station report",
+   "where": "text",
+   "quote": "the original pump station report"
+  },
+  {
+   "name": "Flow Assessment (November inspection)",
+   "where": "text",
+   "quote": "present for the november inspection with flow assessment as was jack."
+  },
+  {
+   "name": "List of call-out dates sent by Unitil to engineering",
+   "where": "text",
+   "quote": "who sent the list of dates to engineering."
+  }
+ ],
+ "tags": [
+  "sewer budget",
+  "FY18 budget",
+  "I/I work",
+  "billing software",
+  "grease trap FOG",
+  "pump stations",
+  "SWSS contract",
+  "generator repair",
+  "Lunenburg Water",
+  "budget workshop"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "carl had handout of new checklist to discuss"
+ },
+ "dropped_unquoted_by_field": {}
 }

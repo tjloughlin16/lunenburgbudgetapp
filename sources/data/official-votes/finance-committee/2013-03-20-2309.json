@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-03-20",
  "docid": "2309",
@@ -12,15 +12,145 @@
  },
  "votes": [
   {
-   "motion": "adjourn",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Steven Raboin",
+   "motion": "Adjourn the meeting at 9:04 pm.",
+   "moved_by": "BL",
+   "seconded_by": "SR",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "bl motioned to adjourn at 9:04. sr seconded, approved 6-0."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision). One procedural vote recorded: adjournment. The minutes record department budget presentations but no votes on substantive matters.",
- "cost_usd": 0.0785475
+ "dropped_unquoted": 6,
+ "note": "OCR text of a scanned page; no motion other than adjournment is recorded. The Present line prints 'I. Burchfield' while the header and signature name Terri Burchfield, Secretary; the attendee entry keeps the printed form. Some OCR artifacts remain (e.g., 'April 30*', 'March 21%', 'Rodriguenz' spelling as printed). Only the adjournment motion has a recorded vote, with initials-only mover and seconder. Public comment is not recorded; the presenters are department heads and staff.",
+ "cost_usd": 0.00315562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Martha Moore",
+   "role": "presenter, Library budget",
+   "status": "present",
+   "quote": "martha moore presented the library budget noting the state funding requirements to maintain certification"
+  },
+  {
+   "name": "Jack Rodriguenz",
+   "role": "presenter, Public Works services",
+   "status": "present",
+   "quote": "jack rodriguenz presented a dire picture of public works services given the lack of funding for the pavement project"
+  },
+  {
+   "name": "Mike Sauvageau",
+   "role": "presenter, Building Department budget",
+   "status": "present",
+   "quote": "mike sauvageau presented the building department budget. no changes are proposed"
+  },
+  {
+   "name": "Marion Benson",
+   "role": "presenter, Planning Office budget",
+   "status": "present",
+   "quote": "marion benson reviewed the planning office budget. as with the building department, no changes are proposed."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Public Works / general highway budget",
+   "what_was_recorded": "Public Works reported the general highway budget has increased by $1,000 while the town budget has more than doubled since 1995, and said this reflects a reduced workforce.",
+   "figures_as_printed": [
+    "$1,000",
+    "1995"
+   ],
+   "quote": "he reported that while the town budget has better than doubled since 1995, the general highway budget has increased by $1,000."
+  },
+  {
+   "topic": "Public Works pavement project and street sweeper",
+   "what_was_recorded": "Public Works said the lack of funding for the pavement project and the street sweeper request through the Capital Planning Committee left roads in bad shape, and failure to replace the sweeper would cause sand and salt run-off problems. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "jack rodriguenz presented a dire picture of public works services given the lack of funding for the pavement project and"
+  },
+  {
+   "topic": "Building Department budget",
+   "what_was_recorded": "No changes are proposed to the Building Department budget; the office continues on the reduced schedule imposed by the budget cuts of FY2013. No dollar figure printed.",
+   "figures_as_printed": [
+    "FY2013"
+   ],
+   "quote": "no changes are proposed, the office will continue to work on the reduced schedule imposed by the budget cuts of fy2013."
+  },
+  {
+   "topic": "Planning Office budget",
+   "what_was_recorded": "No changes are proposed to the Planning Office budget. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "marion benson reviewed the planning office budget. as with the building department, no changes are proposed."
+  },
+  {
+   "topic": "Library budget",
+   "what_was_recorded": "Library presented its budget noting state funding requirements to maintain certification. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "martha moore presented the library budget noting the state funding requirements to maintain certification and reviewed the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "no action; notices read (Finance Committee vacancy, public hearing date, election and Town Meeting dates)",
+   "quote": "me noted that the public hearing will be held on 3/28/2013 to make recommendations regarding the budget and any warrant",
+   "tags": [
+    "vacancy",
+    "public hearing",
+    "election",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Department Budget Presentations",
+   "resolution": "presented; no action taken",
+   "quote": "martha moore presented the library budget noting the state funding requirements to maintain certification",
+   "tags": [
+    "library",
+    "public works",
+    "building department",
+    "planning office",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "noted schedule; no action",
+   "quote": "last department budget presentations thursday march 21%, and public hearing thursday march 28th.",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 9:04 pm",
+   "quote": "bl motioned to adjourn at 9:04. sr seconded, approved 6-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "budget",
+  "department budget presentations",
+  "public hearing",
+  "town meeting",
+  "library",
+  "public works",
+  "building department",
+  "planning office",
+  "vacancy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 6
+ }
 }

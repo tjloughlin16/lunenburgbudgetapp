@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-12-19",
  "docid": "4502",
@@ -12,6 +12,256 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision; readable. No votes recorded. The minutes reference items (November 2013 LSBC minutes and a Tappé Associates invoice) scheduled for approval review at a future meeting (January 6, 2014), but no votes were taken at this December 19, 2013 meeting. No motion, adjourn, or executive session votes appear in the record.",
- "cost_usd": 0.0817815
+ "note": "Two-page OCR text; page 2 contains only a page footer. No votes are recorded in the minutes, so no votes are listed. The roster is OCR-scrambled: 22 names are printed against 21 role lines plus a stray 'Discussion' label and '2a.-2e.' labels, so the role mapping for names is by position and Steve Ham's role is not stated. The minutes do not say who was present, absent or remote, so attendance status is 'not stated'. No dollar figures are printed; the Tappé invoice amount is not in the text.",
+ "cost_usd": 0.00500452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Wilcide Ividukill",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "wilcide ividukill colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "wilcide ividukill colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "wilcide ividukill colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "wilcide ividukill colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "wilcide ividukill colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "wilcide ividukill colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "wilcide ividukill colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel john londa brian spadafino tim santry charles hay cesar dedios"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel john londa brian spadafino tim santry charles hay cesar dedios"
+  },
+  {
+   "name": "John Londa",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel john londa brian spadafino tim santry charles hay cesar dedios"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LMS Principal",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel john londa brian spadafino tim santry charles hay cesar dedios"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel john londa brian spadafino tim santry charles hay cesar dedios"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Senior Associate, Tappé Associates",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel john londa brian spadafino tim santry charles hay cesar dedios"
+  },
+  {
+   "name": "Cesar Dedios",
+   "role": "Project Architect, Tappé Associates",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel john londa brian spadafino tim santry charles hay cesar dedios"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Ron Simoneau",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Craig Gabri",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Steve Ham",
+   "role": "not stated (roster role not clearly aligned)",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The LSBC minutes of November 21, 2013 were deferred for review and approval to the January 6, 2014 LSBC meeting.",
+   "quote": "the meeting minutes from the november 21, 2013 lsbc meeting will be reviewed for approval at the lsbc meeting scheduled on january 6, 2014."
+  },
+  {
+   "decision": "The November 2013 Tappé Associates invoice was deferred for review and approval to the January 6, 2014 LSBC meeting.",
+   "quote": "the november 2013 invoice from tappe associates will be reviewed for approval at the lsbc meeting scheduled on january 6, 2014."
+  },
+  {
+   "decision": "The LSBC proposed additional changes and edits to the project update presentation; Joslin Lesser will make the necessary revisions before the next LSBC meeting and Special Town Meeting.",
+   "quote": "joslin lesser will work with the district to make any necessary revisions to the project update presentation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tappé Associates November 2013 invoice",
+   "what_was_recorded": "The November 2013 Tappé Associates invoice was scheduled for review and approval at the January 6, 2014 meeting; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the november 2013 invoice from tappe associates will be reviewed for approval at the lsbc meeting scheduled on january 6, 2014."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:00 PM",
+   "quote": "the meeting was called to order at 6:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review of Project Presentation",
+   "resolution": "reviewed the project update presentation and proposed additional changes and edits",
+   "quote": "the lsbc reviewed the project update presentation and proposed some additional changes and edits.",
+   "tags": [
+    "project update",
+    "presentation",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals",
+   "resolution": "minutes of November 21, 2013 and Tappé November 2013 invoice deferred to January 6, 2014",
+   "quote": "the meeting minutes from the november 21, 2013 lsbc meeting will be reviewed for approval at the lsbc meeting scheduled on january 6, 2014.",
+   "tags": [
+    "approvals",
+    "minutes",
+    "invoice"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "noted next LSBC meeting, Special Town Meeting and Special Town Election dates",
+   "quote": "next lsbc meeting - monday, january 6, 2014 at 6:00pm (lunenburg high school auditorium)",
+   "tags": [
+    "meetings",
+    "Special Town Meeting",
+    "special election"
+   ]
+  },
+  {
+   "topic": "Community Outreach Efforts",
+   "resolution": "Joslin Lesser assigned to revise the project update presentation before next LSBC meeting and Special Town Meeting",
+   "quote": "joslin lesser will work with the district to make any necessary revisions to the project update presentation",
+   "tags": [
+    "outreach",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no other business",
+   "quote": "there was no other business.",
+   "tags": [
+    "other business"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Project update presentation",
+   "where": "text",
+   "quote": "preview the project update presentation that will be presented to the finance committee at 7:00pm"
+  },
+  {
+   "name": "Minutes of the November 21, 2013 LSBC meeting",
+   "where": "text",
+   "quote": "the meeting minutes from the november 21, 2013 lsbc meeting will be reviewed for approval at the lsbc meeting"
+  },
+  {
+   "name": "November 2013 invoice from Tappé Associates",
+   "where": "text",
+   "quote": "the november 2013 invoice from tappe associates will be reviewed for approval at the lsbc meeting scheduled on january 6, 2014."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "project update",
+  "Special Town Meeting",
+  "Tappé Associates",
+  "Joslin Lesser",
+  "Shawmut",
+  "Finance Committee",
+  "monthly approvals",
+  "invoice"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

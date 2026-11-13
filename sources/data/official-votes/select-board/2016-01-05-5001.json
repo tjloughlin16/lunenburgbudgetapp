@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-01-05",
  "docid": "5001",
@@ -12,48 +12,340 @@
  },
  "votes": [
   {
-   "motion": "enter into executive session to discuss strategy with respect to collective bargaining or litigation",
+   "motion": "Enter into Executive Session (Chapter 30A, §21, litigation: Lunenburg v. Hollis Hills, LLC and HAC) and then enter Open Session upon adjournment.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Luck",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: p. luck to enter into executive session and then enter into open session upon adjournment vote: mr. ebersole-aye, ms. luck-aye, mr. alonzo-aye"
+   "quote": "motion: t. alonzo 2\"d: p. luck to enter into executive session and then enter into open session upon adjournment"
   },
   {
-   "motion": "open the warrant for the Annual Town Meeting (May 7, 2016) with a closing date of March 24, 2016 at 6:00 p.m.",
+   "motion": "Open the warrant for the Annual Town Meeting and close it at 6:00 p.m. on March 24, 2016.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2'\"': t. alonzo to open the warrant for the annual town meeting and close it at 6:00 p.m. on march 24, 2016 vote: all in favor"
+   "quote": "to open the warrant for the annual town meeting and close it at 6:00 p.m. on march 24, 2016 vote: all in favor"
   },
   {
-   "motion": "approve the entertainment license renewal for Cosimi Corporation d/b/a The Bootlegger",
+   "motion": "Approve the weekday entertainment license for Cosimi Corporation d/b/a The Bootlegger.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\"®: p. luck to approve the weekday entertainment license for cosimi corporation d/b/a the bootlegger vote: all in favor"
+   "quote": "to approve the weekday entertainment license for cosimi corporation d/b/a the bootlegger vote: all in favor"
   },
   {
-   "motion": "approve the minutes of November 17 and December 1, 2015",
+   "motion": "Approve the minutes of November 17 and December 1, 2015.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "minutes of november 17 and december 1, 2015 were approved"
+   "quote": "minutes of november 17 and december 1, 2015 were approved."
   },
   {
-   "motion": "enter into executive session pursuant to M.G.L. c. 30A, §21 to conduct strategy sessions in preparation for negotiations with non-union personnel",
+   "motion": "Enter into Executive Session per M.G.L. c. 30A, §21 for strategy in preparation for negotiations with non-union personnel and collective bargaining or contract negotiations with non-union personnel.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2nd: p. bertram to enter into executive session per m.g. l. c. 30a, §21 to conduct strategy sessions in preparation for negotiations with non- union personnel or to conduct collective bagaining sessions or contract negotiations with non-union personnel ms. luck -aye, ms. bertram -aye, mr. alonzo-aye, mr. ebersole-aye",
-   "quote_taken_from_text": true
+   "quote": "to enter into executive session per m.g. l. c. 30a, §21 to conduct strategy sessions in preparation for negotiations"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text; some character artifacts in seconded notation (votes 1–3) but all votes legible.",
- "cost_usd": 0.1713205
+ "note": "OCR text (macOS Vision) with artifacts such as '2\"d', '2nd', 'Elainem' and split lines; quotes are taken from clean spans. Chairman Jamie Toale was absent. The 'All in Favor' and the executive session votes print no count beyond the names listed. The first executive session vote lists three ayes and the second lists four. The minutes record no motion for adjournment, so none is listed. Executive session minutes are separate and not in this text. Board members' remarks sit under the Public Comment heading and are captured in topics rather than as public comment. The minutes of November 17 and December 1, 2015 approval has no mover or seconder printed.",
+ "cost_usd": 0.00844562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and kerry lafleur, town manager. chairman jamie toale was not present."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "chairman jamie toale was not present."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "resident, public comment",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, appreciated mr. alonzo's comments and felt obligated to explain why he"
+  },
+  {
+   "name": "Jane Edmundstone",
+   "role": "speaking on behalf of Jim Bellefiore",
+   "status": "present",
+   "quote": "jane edmundstone stated she was here on behalf of lunenburg resident, jim bellefiore, 1790 massachusetts"
+  },
+  {
+   "name": "Jim Bellefiore",
+   "role": "Lunenburg resident, Meadow Woods Mobile Home Park",
+   "status": "not stated",
+   "quote": "mr. bellefiore stated when he has to travel to the va hospital in bedford or roxbury he has to be at the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Luck will contact MART to find out what can be done about bus service for Mr. Bellefiore.",
+   "quote": "ms. luck will contact mart and find out what can be done."
+  },
+  {
+   "decision": "Mr. Bellefiore will provide his phone number to Ms. Lafleur, who will get back to him.",
+   "quote": "mr. bellefiore will provide his phone number to ms. lafleur and she will get back to him."
+  },
+  {
+   "decision": "The license survey will be amended to include the number of licenses issued in each category and added to a future agenda.",
+   "quote": "ms. lafleur stated this will be amended and added to a future agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Contingency fund spending to date",
+   "what_was_recorded": "Alonzo reported $283,000 spent of the $4,000,000 contingency fund, about 5 percent, with the project 70 percent complete.",
+   "figures_as_printed": [
+    "$283,000",
+    "$4,000,000",
+    "5 percent",
+    "seventy percent"
+   ],
+   "quote": "he reported we have spent $283,000 of the $4,000,000 in the contingency fund; that is about 5 percent of the fund."
+  },
+  {
+   "topic": "Engineering funding already voted",
+   "what_was_recorded": "Bertram said $61,000 was already voted for engineering and called it a lot of money.",
+   "figures_as_printed": [
+    "$61,000"
+   ],
+   "quote": "$61,000 was already voted for engineering and that is a lot of money."
+  },
+  {
+   "topic": "Town's share of school project and contingency",
+   "what_was_recorded": "Rodgers cited the Town's portion of the cost and the contingency fund as a large sum.",
+   "figures_as_printed": [
+    "$36 million",
+    "$4 million",
+    "roughly 10 percent"
+   ],
+   "quote": "the town's portion of the cost; $36 million dollars and the $4 million dollar contingency fund (roughly 10 percent) is a lot of money."
+  },
+  {
+   "topic": "Taxpayer funding of School Building Committee items",
+   "what_was_recorded": "Bertram said the items under consideration would be paid 100% by taxpayers.",
+   "figures_as_printed": [
+    "100%"
+   ],
+   "quote": "these items that are now being considered by the school building committee are going to be paid for 100% by the taxpayers."
+  },
+  {
+   "topic": "School construction warrant signed",
+   "what_was_recorded": "The Board signed a school construction warrant in the stated amount.",
+   "figures_as_printed": [
+    "$2,637,029.77"
+   ],
+   "quote": "the board signed a school construction warrant in the amount of $2,637,029.77."
+  },
+  {
+   "topic": "Surrounding-community license fees",
+   "what_was_recorded": "Lafleur presented license fee data from surrounding communities; some charge substantially more than Lunenburg. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "she presented the data on townsend, fitchburg, leominster, lancaster, ayer, shirley and berlin."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "School Building Committee transparency and contingency fund",
+   "quote": "dave rodgers, 82 highland street, appreciated mr. alonzo's comments and felt obligated to explain why he"
+  },
+  {
+   "speaker": "Jane Edmundstone",
+   "stated_role": "on behalf of Lunenburg resident, Jim Bellefiore",
+   "topic": "MART bus service to Meadow Woods Mobile Home Park",
+   "quote": "jane edmundstone stated she was here on behalf of lunenburg resident, jim bellefiore, 1790 massachusetts"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session (opening), litigation",
+   "resolution": "entered executive session",
+   "quote": "declared the reason for entering executive session, citing chapter 30a, § 21 (3)",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Public comment (School Building Committee, MART, memorial)",
+   "resolution": "discussed; MART follow-up assigned to Luck and Lafleur",
+   "quote": "mr. ebersole noted the passing of marion benson, a longtime resident, past member of the school committee",
+   "tags": [
+    "public comment",
+    "School Building Committee",
+    "MART",
+    "contingency fund"
+   ]
+  },
+  {
+   "topic": "Open warrant for Annual Town Meeting (May 7, 2016)",
+   "resolution": "approved; warrant closes March 24, 2016 at 6:00 p.m.",
+   "quote": "ms. lafleur stated this is a request to open the warrant for articles for the annual town meeting",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Entertainment license renewal, The Bootlegger",
+   "resolution": "approved",
+   "quote": "ms. lafleur reported this request from cosimi corporation is to renew the weekday entertainment license",
+   "tags": [
+    "licenses",
+    "entertainment license"
+   ]
+  },
+  {
+   "topic": "License survey results",
+   "resolution": "reviewed; to be amended and placed on a future agenda",
+   "quote": "ms. lafleur reported the board had requested that license fees from surrounding communities be reviewed.",
+   "tags": [
+    "licenses",
+    "license fees"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, action file issues",
+   "resolution": "minutes approved; school construction warrant signed; tollbooth fundraiser policy raised",
+   "quote": "minutes of november 17 and december 1, 2015 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "fundraiser policy"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "ms. luck reported the next school committee meeting is tomorrow night and will be televised.",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "acknowledged Storm Water Task Force appointment (Jim Auge)",
+   "quote": "the board acknowledged the board of health representative for the storm water task force will be jim auge.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session (closing), non-union personnel negotiations",
+   "resolution": "entered executive session",
+   "quote": "to enter into executive session per m.g. l. c. 30a, §21 to conduct strategy sessions in preparation for negotiations",
+   "tags": [
+    "executive session",
+    "personnel",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:57 P.M.",
+   "quote": "the meeting adjourned at 6:57 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter in the mailing regarding the cable survey",
+   "where": "text",
+   "quote": "mr. alonzo advised real estate taxpayers to read the letter in the mailing regarding the cable survey."
+  },
+  {
+   "name": "Talent Bank Form",
+   "where": "text",
+   "quote": "by filing out a talent bank form and submitting it to the office."
+  },
+  {
+   "name": "Open Warrant for Annual Town Meeting (May 7, 2016)",
+   "where": "text",
+   "quote": "open warrant for annual town meeting (may 7, 2016)"
+  },
+  {
+   "name": "School construction warrant ($2,637,029.77)",
+   "where": "text",
+   "quote": "the board signed a school construction warrant in the amount of $2,637,029.77."
+  },
+  {
+   "name": "License fee survey data (Townsend, Fitchburg, Leominster, Lancaster, Ayer, Shirley, Berlin)",
+   "where": "text",
+   "quote": "she presented the data on townsend, fitchburg, leominster, lancaster, ayer, shirley and berlin."
+  },
+  {
+   "name": "Minutes of November 17 and December 1, 2015",
+   "where": "text",
+   "quote": "minutes of november 17 and december 1, 2015 were approved."
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "according to town charter it needs to be opened until 42 days prior to the"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "town meeting warrant",
+  "School Building Committee",
+  "contingency fund",
+  "licenses",
+  "MART transit",
+  "executive session",
+  "minutes",
+  "committee reports",
+  "appointments"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2014-11-18",
  "docid": "1208",
@@ -12,31 +12,323 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the Tuesday, November 04 CPC meeting",
-   "outcome": "passed 5-0",
+   "motion": "Approve the minutes of the November 4 CPC meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 5-0",
    "procedural": true,
    "quote": "the committee approved the minutes of the tuesday, november 04 cpc meeting, 5-0."
   },
   {
-   "motion": "The Sewer Commission could include any of their requests for technology equipment purchases in the Technology capital request plan, with the Sewer Commission reimbursing the Town for the cost of these purchases upon delivery",
-   "outcome": "passed 4-0",
+   "motion": "The Sewer Commission may include any of its technology equipment requests in the Technology capital request plan, but the Sewer Commission will reimburse the Town for those purchases upon delivery to the commission.",
    "moved_by": "John",
    "seconded_by": "Dennis",
+   "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "john moved that \"the sewer commission could include any of their requests for technology equipment purchases in the technology capital request plan. however, the sewer commission will reimburse the town for the cost of these purchases upon delivery to the commission.\" dennis seconded the motion. the capital planning committee voted 4-0 in favor of this motion."
+   "quote": "dennis seconded the motion. the capital planning committee voted 4-0 in favor of this motion."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John",
    "seconded_by": "Dennis",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "john moved to adjourn the meeting; dennis seconded his motion, and the committee voted 4-0 to adjourn at 6:46 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0875335
+ "dropped_unquoted": 1,
+ "note": "Text extracted from a docx with page markers; readable, no scan. Three motions recorded with votes (minutes approval, Sewer Commission motion, adjournment). The December 2 agenda is described as approved with no vote count or motion, so it is recorded as a decision, not a vote. Joanna Bilotta-Simeone arrived late and Heather Sroka left before the meeting ended; the minutes do not give exact times. Kerry Speidel's role is not printed. Moved/seconded names are printed only as first names (\"John\", \"Dennis\") and are kept as printed. The end list of names (Marjorie Boggio, John Londa, Loxi Calmes, James Marino) appears to be a distribution list and is not treated as attendance beyond the presenters named in the text. Minutes state \"No public comment.\" so no speakers are recorded.",
+ "cost_usd": 0.006659419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: joanna bilotta-simeone (late), john henshaw, dennis mannone, jr., kerry speidel, heather sroka (left before meeting ended), jamie toale."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: joanna bilotta-simeone (late), john henshaw, dennis mannone, jr., kerry speidel, heather sroka (left before meeting ended), jamie toale."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: joanna bilotta-simeone (late), john henshaw, dennis mannone, jr., kerry speidel, heather sroka (left before meeting ended), jamie toale."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: joanna bilotta-simeone (late), john henshaw, dennis mannone, jr., kerry speidel, heather sroka (left before meeting ended), jamie toale."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "heather sroka (left before meeting ended), jamie toale."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: joanna bilotta-simeone (late), john henshaw, dennis mannone, jr., kerry speidel, heather sroka (left before meeting ended), jamie toale."
+  },
+  {
+   "name": "John Londa",
+   "role": "presenter, Public Schools (\"Presented by\")",
+   "status": "present",
+   "quote": "presented by john londa and loxi calmes"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "presenter, Public Schools (\"Presented by\")",
+   "status": "present",
+   "quote": "presented by john londa and loxi calmes"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Chief, Police Department (\"Presented by Chief Jim Marino\")",
+   "status": "present",
+   "quote": "presented by chief jim marino"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jamie Toale will write a letter to the Sewer Commission informing them of the decision taken by the CPC on its technology computer request.",
+   "quote": "jamie will write a letter to the sewer commission informing them of the decision taken by the cpc."
+  },
+  {
+   "decision": "The agenda for the December 2 meeting was approved (no vote recorded), and John Henshaw will send the approved agenda to the Town Clerk to post.",
+   "quote": "the agenda for the december 2 meeting was approved and john will send the approved agenda to the town clerk to post."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public Schools: THMS asbestos abatement (Phase 1)",
+   "what_was_recorded": "Phase 1 request of $34,500 plus $138,000 unspent from FY2014 (final bid exceeded the approved amount), totaling $172,500; total multi-phase project cost FY2015-FY2020 is $882,500.",
+   "figures_as_printed": [
+    "$34,500",
+    "$138,000",
+    "$172,500",
+    "$882,500"
+   ],
+   "quote": "$138,000 unspent from fy 2014 as final bid exceeded approved amount for this phase. ◊ phase 1 of a multi-phase project to prepare th",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Public Schools: THMS phone system replacement",
+   "what_was_recorded": "Request to replace the aging THMS phone system at a cost of $22,000.",
+   "figures_as_printed": [
+    "$22,000"
+   ],
+   "quote": "replace aging thms phone system. 2 $22,000"
+  },
+  {
+   "topic": "Public Schools: THMS grounds shed replacement",
+   "what_was_recorded": "Request to replace the red shed at THMS at a cost of $32,000; plan is to pare costs by having Monty Tech students build it.",
+   "figures_as_printed": [
+    "$32,000"
+   ],
+   "quote": "3 $32,000 ◊ existing shed will be torn down for new school."
+  },
+  {
+   "topic": "Public Schools: THMS renovation for school district HQ staff",
+   "what_was_recorded": "Request to renovate THMS space for school district HQ staff at a cost of $38,656.",
+   "figures_as_printed": [
+    "$38,656"
+   ],
+   "quote": "renovate space in thms for school district hq staff. 4 $38,656"
+  },
+  {
+   "topic": "Public Schools: replacement technology",
+   "what_was_recorded": "Technology request of $30,000, which is $2,000 less than the school documents, reflecting the latest estimate from the Technology Dept.",
+   "figures_as_printed": [
+    "$30,000",
+    "$2,000"
+   ],
+   "quote": "note that $30,000 is $2,000 less than the school documents; it reflects the latest estimated cost from the technology dept."
+  },
+  {
+   "topic": "Public Schools: THMS paging system",
+   "what_was_recorded": "Request to replace and upgrade the THMS paging system at a cost of $22,000, tied to future video surveillance for security.",
+   "figures_as_printed": [
+    "$22,000"
+   ],
+   "quote": "replace, upgrade thms paging system. 6 $22,000"
+  },
+  {
+   "topic": "Public Schools: total of requests",
+   "what_was_recorded": "Public Schools FY2016 request total is $179,156, which excludes the $138,000 funded in FY2015 but held in abeyance.",
+   "figures_as_printed": [
+    "$179,156",
+    "$138,000"
+   ],
+   "quote": "total: $179,156 total does not include the $138,000, funded in fy2015 but held in abeyance"
+  },
+  {
+   "topic": "Police: two utility pursuit patrol vehicles",
+   "what_was_recorded": "Request for two utility pursuit patrol vehicles at a total cost of $96,000 to replace two aging high-mileage patrol vehicles.",
+   "figures_as_printed": [
+    "$96,000"
+   ],
+   "quote": "two utility pursuit patrol vehicles 1 $96,000 ◊ would replace two aging, high mileage"
+  },
+  {
+   "topic": "Police: speed sign with traffic data collection",
+   "what_was_recorded": "Request for a speed sign with traffic data collection at $12,500 to replace a 1999 speed trailer.",
+   "figures_as_printed": [
+    "$12,500"
+   ],
+   "quote": "speed sign w/traffic data collecting. 2 $12,500"
+  },
+  {
+   "topic": "Police: body worn recording cameras",
+   "what_was_recorded": "Request for 29 personal digital A/V body worn recording cameras at $28,000.",
+   "figures_as_printed": [
+    "$28,000"
+   ],
+   "quote": "29 personal digital a/v body worn recording cameras. 4 $28,000"
+  },
+  {
+   "topic": "Police: portable radios and police total",
+   "what_was_recorded": "Request for six digital P-25 compliant portable radios at $10,200; the Police Department requests total $162,700.",
+   "figures_as_printed": [
+    "$10,200",
+    "$162,700"
+   ],
+   "quote": "$10,200 ◊ would replace dated, worn, inoperative portable radios. ◊ to improve communications between officers and officer(s) to station. total: $162,700"
+  },
+  {
+   "topic": "Sewer Commission computer",
+   "what_was_recorded": "Technology capital projects include a $900 computer requested by the Sewer Commission, which the commission intends to pay for from the Sewer Enterprise Fund.",
+   "figures_as_printed": [
+    "$900"
+   ],
+   "quote": "technology capital projects include a $900 computer requested by the sewer commission."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action (no public comment)",
+   "quote": "meeting called to order by jamie toale at 4:32 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes of November 4 CPC meeting",
+   "resolution": "approved 5-0",
+   "quote": "the committee approved the minutes of the tuesday, november 04 cpc meeting, 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY2016 Public Schools capital project requests",
+   "resolution": "reviewed as input for FY2016 Capital Improvement Plan",
+   "quote": "as input for the fy2016 capital improvement plan, the cpc reviewed capital project requests of the public schools and police departments.",
+   "tags": [
+    "capital plan",
+    "schools",
+    "THMS"
+   ]
+  },
+  {
+   "topic": "FY2016 Police Department capital project requests",
+   "resolution": "reviewed as input for FY2016 Capital Improvement Plan",
+   "quote": "police department capital project requests fy2016, an overview presented by chief jim marino",
+   "tags": [
+    "capital plan",
+    "police"
+   ]
+  },
+  {
+   "topic": "Sewer Commission computer request in technology capital requests",
+   "resolution": "approved 4-0 (Sewer Commission to reimburse Town for its technology purchases); chair to write letter",
+   "quote": "dennis seconded the motion. the capital planning committee voted 4-0 in favor of this motion.",
+   "tags": [
+    "sewer commission",
+    "technology",
+    "enterprise fund"
+   ]
+  },
+  {
+   "topic": "Building re-use issues (Town Hall) for December 2 meeting",
+   "resolution": "discussed; no action",
+   "quote": "discussion of building re-use issues in advance of the december 2 meeting.",
+   "tags": [
+    "town hall",
+    "building re-use"
+   ]
+  },
+  {
+   "topic": "December 2 meeting agenda",
+   "resolution": "approved (no vote recorded)",
+   "quote": "the agenda for the december 2 meeting was approved and john will send the approved agenda to the town clerk to post.",
+   "tags": [
+    "agenda",
+    "posting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 6:46 pm",
+   "quote": "john moved to adjourn the meeting; dennis seconded his motion, and the committee voted 4-0 to adjourn at 6:46 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Planning Binder",
+   "where": "text",
+   "quote": "refer to the capital planning binder"
+  },
+  {
+   "name": "Public Schools Capital Project Requests FY2016, An Overview",
+   "where": "text",
+   "quote": "public schools capital project requests fy2016, an overview"
+  },
+  {
+   "name": "Police Department Capital Project Requests FY2016, An Overview",
+   "where": "text",
+   "quote": "police department capital project requests fy2016, an overview"
+  },
+  {
+   "name": "Technology capital request folder",
+   "where": "text",
+   "quote": "refer to technology capital request folder for details."
+  },
+  {
+   "name": "CIP All Requests FY16-20 (updated 11.18.14 by Town Manager)",
+   "where": "text",
+   "quote": "see cip all requests fy16-20."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "capital improvement plan FY2016",
+  "public schools",
+  "police department",
+  "technology",
+  "sewer commission",
+  "town hall",
+  "agenda"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "for details on the requests and for projected annual capital requirements"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2013-05-20",
  "docid": "3138",
@@ -12,6 +12,91 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes contain only agenda items, status updates, and discussion of open space priorities. No motions or voting language appear in the text.",
- "cost_usd": 0.0815715
+ "note": "Partial text: a single page (PAGE 1) that begins mid-item (\"b.\") with no call to order, no attendance roll, no approval of minutes, and no votes recorded. The text does not print any dollar figures. Some agenda item numbering is ambiguous in the extract (priority items numbered 1-3 sit under an unlabeled item). No votes, transfers, budget figures or public comment appear in this excerpt.",
+ "cost_usd": 0.00269372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Lattanzi",
+   "role": "",
+   "status": "not stated",
+   "quote": "priority agenda items for mr. lattanzi are as follows. he will draft a report for the open space"
+  },
+  {
+   "name": "Mr. Kibbe",
+   "role": "",
+   "status": "present",
+   "quote": "mr. kibbe provided a status on the trail mapping project which is under the direction of the montachusett"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Lattanzi will draft a report on the priority agenda items for the Open Space Committee's review.",
+   "quote": "he will draft a report for the open space committee's review."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Priority agenda items for Mr. Lattanzi (Agricultural Commission, Right to Farm bylaw, agricultural town lands)",
+   "resolution": "report to be drafted by Mr. Lattanzi",
+   "quote": "priority agenda items for mr. lattanzi are as follows. he will draft a report for the open space",
+   "tags": [
+    "agriculture",
+    "right to farm",
+    "priorities"
+   ]
+  },
+  {
+   "topic": "Recreational Trails Program Update",
+   "resolution": "status reported, no action",
+   "quote": "mr. kibbe provided a status on the trail mapping project which is under the direction of the montachusett",
+   "tags": [
+    "trails",
+    "mapping",
+    "bikeways"
+   ]
+  },
+  {
+   "topic": "Open Space Plan Priorities",
+   "resolution": "priorities reviewed, no action",
+   "quote": "a. as discussed at the meeting, we have met or have in progress several goals as established the os plan",
+   "tags": [
+    "open space plan",
+    "grants",
+    "land acquisition",
+    "forest stewardship"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Right To Farm Bylaw",
+   "where": "text",
+   "quote": "draft the right to farm bylaw for conservation commission review and approval in time for"
+  },
+  {
+   "name": "Open Space Plan Five-Year Action Plan",
+   "where": "text",
+   "quote": "several goals as established the os plan five-year action plan"
+  }
+ ],
+ "tags": [
+  "open space",
+  "agriculture",
+  "right to farm bylaw",
+  "agricultural commission",
+  "recreational trails",
+  "open space plan",
+  "conservation",
+  "matching grants"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

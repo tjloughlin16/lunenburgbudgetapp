@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-10-07",
  "docid": "4904",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Paul Doherty to the unexpired Housing Authority term until the next election",
+   "motion": "Appoint Paul Doherty to the unexpired Housing Authority term until the next election.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
@@ -20,23 +20,23 @@
    "quote": "motion: p. bertram 2nd. j. toale to appoint paul doherty to the unexpired housing authority term until the next election vote: all in favor"
   },
   {
-   "motion": "Authorize the $3,000,000 bond anticipation note to Century Bank at . 25%",
+   "motion": "Authorize the $3,000,000 bond anticipation note to Century Bank at .25%.",
    "moved_by": "J. Toale",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. toale 2nd:p. bertram to authorize the $3,000,000 bond anticipation note to century bank at . 25% vote: all in favor"
+   "quote": "motion: j. toale 2nd:p. bertram to authorize the $3,000,000 bond anticipation note to century bank at . 25%"
   },
   {
-   "motion": "Authorize the release of review comments and additional comments to MRPC for inclusion in the updated Montachusett Hazard Mitigation Plan",
+   "motion": "Authorize release of the review comments and additional comments made this evening to MRPC for inclusion in the updated Montachusett Hazard Mitigation Plan.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2°: j. toale to authorize the release of review comments and additional comments made this evening to mrpc for inclusion in the updated montachusett hazard mitigation plan vote: all in favor"
+   "quote": "motion: p. bertram 2°: j. toale to authorize the release of review comments and additional comments made this evening to mrpc"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
@@ -45,6 +45,468 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes were OCR'd by macOS Vision. Minor character rendering artifacts appear in the OCR (\"2°\" for \"2nd\" and \"2n\" for \"2nd\"), but all votes are clearly recorded with outcomes specified.",
- "cost_usd": 0.1255455
+ "note": "OCR text from a scanned page set with garbled spots (e.g., 'begın', '2n:J.', '2°:', 'Turkey Hill' printed as 'Turk Hill' in one budget label). Votes are recorded only as 'All in Favor' with no count printed. The Housing Authority's own unanimous vote on Doherty is excluded because it is another body's vote. The Schedule IV stop sign item and the warrants item have no recorded motion. Agenda numbering skips item 6. Individual warrant totals are given in one budget entry.",
+ "cost_usd": 0.012140620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member liz murphy announced there was a vacancy and paul doherty was interested in filling it."
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "candidate for Housing Authority vacancy",
+   "status": "present",
+   "quote": "mr. doherty stated there was some confusion concerning his term; he thought it was for three not one year."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident richard bursch presented to ask the board to review the current procedures for town board appointments."
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "Conservation Commission Administrative Assistant",
+   "status": "present",
+   "quote": "jan carrier, conservation commission administrative assistant, read four letters of resignation from members"
+  },
+  {
+   "name": "Dawn Johnson",
+   "status": "present",
+   "quote": "dawn johnson stated when she heard mark murphy had not been reappointed; she thought what did he do wrong?"
+  },
+  {
+   "name": "Cliff Worthley",
+   "status": "present",
+   "quote": "cliff worthley came in to update the board on the veterans' brick walkway."
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Chair of the Green Community Committee",
+   "status": "present",
+   "quote": "dave blatt, chair of the green community committee, stated he is always looking for volunteers."
+  },
+  {
+   "name": "Mr. Holt",
+   "role": "of Sunnyside Solar",
+   "status": "present",
+   "quote": "mr. holt, of sunnyside solar, stated he was here to request a limited easement across the town's property off"
+  },
+  {
+   "name": "Sam Lawton",
+   "role": "of the MRPC",
+   "status": "present",
+   "quote": "sam lawton of the mrpc presented a draft housing production plan."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Building Reuse Committee member",
+   "status": "present",
+   "quote": "dave matthews reported they had discussed extending memorial avenue out to massachusetts avenue"
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "it director steve malandrinos outlined plans to provide laptops for secretarial and administrative staff at a cost of $36,200."
+  },
+  {
+   "name": "Dave Rogers",
+   "status": "present",
+   "quote": "dave rogers asked on details of the computers for every student initiative such as the initial and maintenance costs."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Alonzo will not accept the Conservation Commission resignations that evening and will postpone them for another week in hopes members reconsider.",
+   "quote": "he stated he will not accept the resignations this evening, but will postpone for another week in hopes that some of the members reconsider."
+  },
+  {
+   "decision": "Ms. Speidel will provide a draft Request for Proposals for the community solar garden and get comments from the Board.",
+   "quote": "ms. speidel will provide a draft request for proposals and get comments from the board."
+  },
+  {
+   "decision": "The Board decided to discuss whether to take a position on the Kinder Morgan pipeline project in two weeks.",
+   "quote": "it was decided to have a discussion about it in two weeks."
+  },
+  {
+   "decision": "No action on the JJ Cote Conservation Commission resignation was taken until the following week.",
+   "quote": "no action was taken on the resignation until next week."
+  },
+  {
+   "decision": "The Pedlar's License request from Daniel E. Patton, Solar City Corporation was passed over because the applicant was not present.",
+   "quote": "this was passed over as the applicant was not present."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community first check",
+   "what_was_recorded": "The Green Community Committee is waiting for its first check, a 28% share, in the stated amount.",
+   "figures_as_printed": [
+    "28%",
+    "$38,000"
+   ],
+   "quote": "they are waiting for their first check for 28%, in the amount of $38,000."
+  },
+  {
+   "topic": "Utility incentives for middle school",
+   "what_was_recorded": "Unitil and National Grid would give up to a stated amount per square foot for items placed in the middle school after reviewing plans.",
+   "figures_as_printed": [
+    "$2.25"
+   ],
+   "quote": "they will give us up to $2.25 per square foot for them."
+  },
+  {
+   "topic": "Chase Road solar project payments",
+   "what_was_recorded": "The Town Manager reported two months of payments received from the Chase Road solar project, slightly higher than normal.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "we have received two months of payment around $30,000."
+  },
+  {
+   "topic": "Bond anticipation note to Century Bank",
+   "what_was_recorded": "Century Bank was awarded the bid for a bond anticipation note as the low bidder, tied to the school building project cash flow change.",
+   "figures_as_printed": [
+    "$3 million",
+    ".25%"
+   ],
+   "quote": "century bank was awarded the bid for a $3 million bond anticipation note and was the low bidder of .25%."
+  },
+  {
+   "topic": "Warrants presented for signature",
+   "what_was_recorded": "The Town Manager presented payroll, payroll deductions and accounts payable warrants for signature.",
+   "figures_as_printed": [
+    "$672,966.91",
+    "$ 510,847.78",
+    "$463,819.38"
+   ],
+   "quote": "payroll warrant totaling $672,966.91; payroll deductions warrant totaling $ 510,847.78; accounts payable warrant totaling $463,819.38"
+  },
+  {
+   "topic": "Turk Hill Middle School asbestos abatement (School Committee report)",
+   "what_was_recorded": "The School Committee reported the asbestos abatement cost and its spread over two fiscal years.",
+   "figures_as_printed": [
+    "$232,385"
+   ],
+   "quote": "the abatement will cost $232,385 and will be spread over fiscal years 2016 and 2017."
+  },
+  {
+   "topic": "Laptops for secretarial and administrative staff",
+   "what_was_recorded": "The IT Director outlined plans to provide laptops at a stated cost; a member asked about initial and maintenance costs of the student computer initiative.",
+   "figures_as_printed": [
+    "$36,200"
+   ],
+   "quote": "it director steve malandrinos outlined plans to provide laptops for secretarial and administrative staff at a cost of $36,200."
+  },
+  {
+   "topic": "Turf field repair and user fees (Finance Committee)",
+   "what_was_recorded": "The Finance Committee discussed turf field reconstruction costs and reinstituting user fees to pay for field maintenance; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued about reinstituting user fees to pay for some of the field maintenance."
+  },
+  {
+   "topic": "Buddy bench donation",
+   "what_was_recorded": "A family donated funds for a buddy bench at the primary school; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "jim laveck and his family donated funds for a buddy bench"
+  },
+  {
+   "topic": "Town hall planning seed money (Building Reuse Committee)",
+   "what_was_recorded": "The Building Reuse Committee wants minimal seed money for town hall planning and engineering; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "minimal seed money for planning and engineering as we await the final outcome of the town hall."
+  },
+  {
+   "topic": "Lane property acquisition grant",
+   "what_was_recorded": "A member asked whether the Lane property acquisition was waiting on a grant; timing expected by November, no amount printed.",
+   "figures_as_printed": [],
+   "quote": "mr. ebersole asked what was the time frame for acquisition of the lane property. are we waiting for a grant?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Richard Bursch",
+   "stated_role": "Resident",
+   "topic": "Town board appointment procedures and Conservation Commission reappointment",
+   "quote": "resident richard bursch presented to ask the board to review the current procedures for town board appointments."
+  },
+  {
+   "speaker": "Jan Carrier",
+   "stated_role": "Conservation Commission Administrative Assistant",
+   "topic": "Conservation Commission resignation letters",
+   "quote": "jan carrier, conservation commission administrative assistant, read four letters of resignation from members"
+  },
+  {
+   "speaker": "Dawn Johnson",
+   "stated_role": "",
+   "topic": "Committee filling and reappointment concerns",
+   "quote": "dawn johnson stated when she heard mark murphy had not been reappointed; she thought what did he do wrong?"
+  },
+  {
+   "speaker": "Cliff Worthley",
+   "stated_role": "",
+   "topic": "Veterans' brick walkway update",
+   "quote": "cliff worthley came in to update the board on the veterans' brick walkway."
+  },
+  {
+   "speaker": "Dave Blatt",
+   "stated_role": "Chair of the Green Community Committee",
+   "topic": "Green Community grant and utility incentives update",
+   "quote": "dave blatt, chair of the green community committee, stated he is always looking for volunteers."
+  },
+  {
+   "speaker": "Mr. Holt",
+   "stated_role": "of Sunnyside Solar",
+   "topic": "Community solar garden easement request",
+   "quote": "mr. holt, of sunnyside solar, stated he was here to request a limited easement across the town's property off"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; postponed until after Housing Authority appointment",
+   "quote": "mr. alonzo apologized for the late start this evening and postponed public comment until after the appointment with the housing authority.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Housing Authority vacancy appointment",
+   "resolution": "approved (Paul Doherty appointed)",
+   "quote": "he stated they were here tonight to appoint according to article 3, section 3-1 (f) filling of vacancies.",
+   "tags": [
+    "appointments",
+    "housing authority"
+   ]
+  },
+  {
+   "topic": "Conservation Commission resignations and reappointment process",
+   "resolution": "resignations not accepted; postponed one week",
+   "quote": "he stated he will not accept the resignations this evening, but will postpone for another week in hopes that some of the members reconsider.",
+   "tags": [
+    "appointments",
+    "conservation commission",
+    "resignations"
+   ]
+  },
+  {
+   "topic": "Veterans' brick walkway and Green Community updates",
+   "resolution": "heard",
+   "quote": "cliff worthley came in to update the board on the veterans' brick walkway.",
+   "tags": [
+    "veterans",
+    "green community"
+   ]
+  },
+  {
+   "topic": "7:15 pm Community Solar Garden (Eric & Shelia Holt)",
+   "resolution": "Request for Proposals to be drafted for Board comment",
+   "quote": "ms. speidel will provide a draft request for proposals and get comments from the board.",
+   "tags": [
+    "solar",
+    "easement",
+    "land"
+   ]
+  },
+  {
+   "topic": "Pedlar's License for Daniel E. Patton, Solar City Corporation",
+   "resolution": "passed over; applicant absent",
+   "quote": "this was passed over as the applicant was not present.",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Bond anticipation note sale to Century Bank",
+   "resolution": "approved $3,000,000 note",
+   "quote": "century bank was awarded the bid for a $3 million bond anticipation note and was the low bidder of .25%.",
+   "tags": [
+    "borrowing",
+    "school building project",
+    "treasury"
+   ]
+  },
+  {
+   "topic": "Hazard Mitigation Plan review comments",
+   "resolution": "approved release of comments to MRPC",
+   "quote": "3. review comments to draft hazard mitigation plan & authorize release to mrpc",
+   "tags": [
+    "hazard mitigation",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Traffic Rules & Orders Schedule IV isolated stop signs",
+   "resolution": "no motion recorded; official document prepared from prior vote",
+   "quote": "ms. speidel reported this was the official document that was prepared following the board vote at the last meeting",
+   "tags": [
+    "traffic",
+    "stop signs"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants presented for signature; Lane property timing discussed",
+   "quote": "ms. speidel presented the following warrants to the board; payroll warrant totaling $672,966.91;",
+   "tags": [
+    "warrants",
+    "lane property",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "committee reports- board of health; they are meeting this wednesday;",
+   "tags": [
+    "committee reports",
+    "building reuse",
+    "capital planning",
+    "school"
+   ]
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "liquor license signed; cable renewal committee proposed; Kinder Morgan discussion deferred",
+   "quote": "ms. speidel presented a liquor license for signatures for wine, malt, cordials for kabob-e-licious",
+   "tags": [
+    "liquor license",
+    "solar",
+    "cable license",
+    "Kinder Morgan pipeline"
+   ]
+  },
+  {
+   "topic": "Appointments, reappointments and resignations (JJ Cote)",
+   "resolution": "no action; deferred to next week",
+   "quote": "mr. alonzo stated jj cote had submitted a resignation letter from the conservation commission effective september 18, 2014.",
+   "tags": [
+    "appointments",
+    "resignations",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "motion: p. bertram to adjourn the meeting",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Request for Proposals (community solar garden)",
+   "where": "text",
+   "quote": "ms. speidel will provide a draft request for proposals and get comments from the board."
+  },
+  {
+   "name": "Draft Hazard Mitigation Plan (Montachusett Hazard Mitigation Plan)",
+   "where": "text",
+   "quote": "3. review comments to draft hazard mitigation plan & authorize release to mrpc"
+  },
+  {
+   "name": "Traffic Rules & Orders, Schedule IV (Isolated Stop Signs)",
+   "where": "text",
+   "quote": "4. authorize sign modification to traffic rules & orders; schedule iv, isolated stop signs"
+  },
+  {
+   "name": "Payroll, Payroll Deductions and Accounts Payable warrants",
+   "where": "text",
+   "quote": "ms. speidel presented the following warrants to the board; payroll warrant totaling $672,966.91;"
+  },
+  {
+   "name": "Draft village district bylaw",
+   "where": "text",
+   "quote": "ms. bertram stated the planning board met last night and discussed the draft village district bylaw."
+  },
+  {
+   "name": "Draft housing production plan (MRPC)",
+   "where": "text",
+   "quote": "sam lawton of the mrpc presented a draft housing production plan."
+  },
+  {
+   "name": "Article 3, Section 3-1 (f) Filling of Vacancies",
+   "where": "text",
+   "quote": "he stated they were here tonight to appoint according to article 3, section 3-1 (f) filling of vacancies."
+  },
+  {
+   "name": "Letters of resignation from Conservation Commission members",
+   "where": "text",
+   "quote": "read four letters of resignation from members"
+  },
+  {
+   "name": "JJ Cote resignation letter",
+   "where": "text",
+   "quote": "mr. alonzo stated jj cote had submitted a resignation letter from the conservation commission effective september 18, 2014."
+  },
+  {
+   "name": "Town bank reappointment forms",
+   "where": "text",
+   "quote": "he stated he and mr. murphy had filled out the town bank reappointment forms."
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "housing authority",
+  "conservation commission",
+  "resignations",
+  "solar",
+  "bond anticipation note",
+  "school building project",
+  "hazard mitigation",
+  "traffic stop signs",
+  "warrants",
+  "committee reports",
+  "cable license",
+  "Kinder Morgan pipeline",
+  "town budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

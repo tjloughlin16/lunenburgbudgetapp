@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2013-08-20",
  "docid": "2462",
@@ -12,14 +12,131 @@
  },
  "votes": [
   {
-   "motion": "approve the Fuel Efficiency Vehicle Policy",
+   "motion": "Approve the Fuel Efficiency Vehicle Policy.",
    "moved_by": "J. Londa",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "j. londa made a motion that we approve the fuel efficiency vehicle policy. all in favor."
+   "quote": "j. londa made a motion that we approve the fuel efficiency vehicle policy. all in favor.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09703049999999999
+ "note": "Text is a single OCR page (page 1 only). It starts mid-agenda at item 3, so the call to order, attendance list and items 1-2 are missing. Item numbering repeats (two items numbered 7). The motion records no second and no vote count, only 'All in favor'. The adjournment has no motion recorded. The OCR'd clerk signature is garbled but reads as Joanne McQuaid.",
+ "cost_usd": 0.00345692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kelly Brown",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kelly brown was present to review our progress with the green community designation application."
+  },
+  {
+   "name": "J. Londa",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "j. londa made a motion that we approve the fuel efficiency vehicle policy. all in favor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. Breault will follow up on the possibility and feasibility of a conversion to natural gas.",
+   "quote": "a conversion to natural gas would be beneficial. j.breault will follow up on the possibility and feasibility."
+  },
+  {
+   "decision": "The group needs to assign a contact person to upload the documents; J. Londa or M. Benson were suggested.",
+   "quote": "we will need to assign a contact person from the group to upload the documents,"
+  },
+  {
+   "decision": "The next meeting will be held in September, date to be determined later.",
+   "quote": "the next meeting will be in september, date tbd later."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community grant funding if approved",
+   "what_was_recorded": "If the application is approved, the town would receive $145,000 plus an additional $10,000 for PV generation.",
+   "figures_as_printed": [
+    "$145,000",
+    "$10,000"
+   ],
+   "quote": "if approved we would get $145,000 plus an additional $10,000 for pv generation"
+  },
+  {
+   "topic": "Competitive grants next year",
+   "what_was_recorded": "Next year the town could apply for $200,000 in competitive grants.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "next year we could apply for $200,000 in competitive grants"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Green Community Designation Application progress",
+   "resolution": "reviewed with Kelly Brown; no action recorded",
+   "quote": "kelly brown was present to review our progress with the green community designation application."
+  },
+  {
+   "topic": "Baseline and energy reduction plan",
+   "resolution": "discussed; no action recorded",
+   "quote": "the baseline will probably be the year after the pv was activated on the thms,"
+  },
+  {
+   "topic": "Review of submission information and recommendations",
+   "resolution": "recommendations made; energy audit and natural gas study suggested",
+   "quote": "k. brown reviewed the information to be submitted and made recommendations on"
+  },
+  {
+   "topic": "Submission contact and document upload",
+   "resolution": "discussed; contact person to be assigned",
+   "quote": "we will need to assign a contact person from the group to upload the documents,"
+  },
+  {
+   "topic": "Fuel Efficiency Vehicle Policy",
+   "resolution": "approved",
+   "quote": "j. londa made a motion that we approve the fuel efficiency vehicle policy. all in favor."
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for September, date TBD; adjourned 8:16 P.M.",
+   "quote": "the next meeting will be in september, date tbd later. adjourned at 8:16 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Green Community Designation Application",
+   "where": "text",
+   "quote": "kelly brown was present to review our progress with the green community designation application."
+  },
+  {
+   "name": "Tables 1-4 (supporting information for the application)",
+   "where": "text",
+   "quote": "the information in tables 1-4 is very important especially the supporting data."
+  },
+  {
+   "name": "Fuel Efficiency Vehicle Policy",
+   "where": "text",
+   "quote": "j. londa made a motion that we approve the fuel efficiency vehicle policy. all in favor."
+  }
+ ],
+ "tags": [
+  "green community",
+  "energy reduction",
+  "grant application",
+  "solar PV",
+  "school building",
+  "public safety building",
+  "library",
+  "natural gas",
+  "vehicle policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

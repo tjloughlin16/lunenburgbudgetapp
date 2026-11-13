@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-12-11",
  "docid": "4501",
@@ -11,7 +11,126 @@
   "doc_url": "/docs/meetings/school-building-committee-meeting/2013-12-11-minutes-4501.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a presentation review and discussion of athletic facility challenges and plans, but contain no motions, voting language, or recorded votes.",
- "cost_usd": 0.0810655
+ "dropped_unquoted": 1,
+ "note": "OCR text of a scanned page set (macOS Vision). No motions, votes, or outcomes are recorded; the 7:03 call to order and 9:45 adjournment carry no motion. The attached presentation is referenced but its full content is not in the text beyond slide text on pages 2-6. Attendance line is run together in the OCR, so the eight names after 'Present' are read as present; roles are not stated. Minutes name 'Pete McCauliff' in the discussion and 'Peter McCauliff' in the attendance line; both are recorded as printed.",
+ "cost_usd": 0.00344982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nathan",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "Colleen",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "Mike",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "Mark",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "Loxi",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "Peter McCauliff",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "quote": "present nathan, colleen, dave, mike, mark, loxi peter mccauliff john londa",
+   "role": "not stated"
+  },
+  {
+   "name": "Pete McCauliff",
+   "status": "present",
+   "quote": "pete mccauliff reviewed presentation (attached)",
+   "role": "presenter"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Bus transports to and from MYSA facility",
+   "what_was_recorded": "32 round trip bus transports to and from the MYSA facility are costed at $275 each, totaling $8800.",
+   "figures_as_printed": [
+    "$275 × 32 = $8800",
+    "$275",
+    "$8800"
+   ],
+   "quote": "**$275 × 32 = $8800 • reduced revenue from loss"
+  },
+  {
+   "topic": "Reduced revenue from loss of night games",
+   "what_was_recorded": "Loss of night games is recorded as reduced revenue of $2500.",
+   "figures_as_printed": [
+    "$2500"
+   ],
+   "quote": "of night games = $2500"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Field and athletics plan presentation review",
+   "resolution": "no action recorded",
+   "quote": "review of the presentation and suggested modifications",
+   "tags": [
+    "fields",
+    "LHS athletics",
+    "youth sports",
+    "presentation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "presentation (attached)",
+   "where": "text",
+   "quote": "pete mccauliff reviewed presentation (attached)"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "athletic fields",
+  "LHS front lawn",
+  "Marshall Park",
+  "MYSA Lancaster",
+  "youth soccer",
+  "youth football",
+  "field hockey",
+  "costs"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "pete mccauliff reviewed presentation (attached)"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

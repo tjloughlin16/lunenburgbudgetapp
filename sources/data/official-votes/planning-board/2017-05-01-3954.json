@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-05-01",
  "docid": "3954",
@@ -12,15 +12,98 @@
  },
  "votes": [
   {
-   "motion": "Recommend favorably the changes to the Protective Bylaw as set forth in the Final Draft (Red Line Version) of February 21, 2017",
-   "outcome": "passed 4-0",
+   "motion": "Recommend favorably the changes to the text of the Protective Bylaw as set forth in the document entitled Final Draft (Red Line Version), February 21, 2017.",
+   "moved_by": "Gregory Bittner",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "moved_by": "Bittner",
-   "seconded_by": "D. Prokowiew",
-   "quote": "motion to recommend favorably the changes to the text of the protective bylaw by additions and additions as set forth in the document"
+   "quote": "motion to recommend favorably the changes to the text of the protective bylaw by additions and additions as set forth in the document entitled final draft (red line version), february 21, 2017",
+   "seconded_by": "David Prokowiew"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned document. One board member (Kenneth Chenis) was absent; four members were present and all voted aye.",
- "cost_usd": 0.12421049999999999
+ "note": "Text is OCR from a scanned page; spelling and layout are as read by OCR. The motion as printed says \\\"by additions and additions\\\", which appears to be a typo for deletions and additions; it is recorded as printed in the quote. The vote is recorded only as \\\"all aye\\\" with no count. No public comment, dollar figures, or transfers are recorded. The hearing closed at 6:40 PM with no vote.",
+ "cost_usd": 0.00340492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing on Town Meeting warrant article: recodification of the Protective Bylaw (zoning) text",
+   "resolution": "recommended favorably",
+   "quote": "the hearing was to enact certain changes to the text of the protective bylaw as noted by deletions",
+   "tags": [
+    "zoning",
+    "protective bylaw",
+    "town meeting warrant",
+    "recodification",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Hearing Notice for Warrant Article",
+   "where": "list",
+   "quote": "documents used at meeting: hearing notice for warrant article"
+  },
+  {
+   "name": "FINAL DRAFT (RED LINE VERSION) February 21, 2017 (Protective Bylaw recodification text, on file in the office of the Town Clerk)",
+   "where": "text",
+   "quote": "final draft (red line version) february 21, 2017"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "protective bylaw",
+  "town meeting warrant article",
+  "recodification",
+  "earth removal bylaw",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

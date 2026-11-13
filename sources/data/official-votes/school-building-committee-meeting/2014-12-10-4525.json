@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-12-10",
  "docid": "4525",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "to approve the meeting minutes from November 12, 2014",
+   "motion": "Approve the meeting minutes of November 12, 2014.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": true,
    "quote": "the lunenburg school building committee voted to approve the meeting minutes from november 12, 2014."
   },
   {
-   "motion": "to approve the November 2014 invoices as presented by Joslin, Lesser & Associates",
+   "motion": "Approve the November 2014 invoices as presented by Joslin, Lesser & Associates.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the lunenburg school building committee voted to approve the november 2014 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the november 2014 invoices as presented by joslin, lesser & associates."
   },
   {
-   "motion": "to approve Final GMP at $57,994,017.00 and the following Owner Requested Items to be included in scope: Additional Protective Wood Paneling in the Library, Sod Turf for Athletic Fields with recommended sand base material, and Outdoor Classroom",
+   "motion": "Approve the Final GMP at $57,994,017.00 and the Owner Requested Items (Additional Protective Wood Paneling in the Library, Sod Turf for Athletic Fields with recommended sand base material, Outdoor Classroom) for inclusion in scope.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the lunenburg school building committee voted to approve the following items: 1. final gmp at $57,994,017.00. 2. the following owner requested items were approved to be included in scope: a. additional protective wood paneling in the library b. sod turf for athletic fields with recommended sand base material c. outdoor classroom the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the following items: 1. final gmp at $57,994,017.00."
   },
   {
-   "motion": "not to include Photovoltaic System in GMP scope",
+   "motion": "Not include the Photovoltaic System in the GMP scope; its procurement and addition to scope to be reviewed at a later date.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -45,6 +45,282 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Four votes recorded. The first vote (approval of prior minutes) has no explicit outcome stated—the minutes say they \"voted to approve\" without specifying unanimous or a vote count. No individual movers or seconders are named in the minutes.",
- "cost_usd": 0.1163055
+ "note": "Scanned OCR text with errors (e.g., 'Bullding', 'Mir.', 'Assoclates'). No vote tallies printed; votes recorded as printed ('unanimously approved' for the invoices and GMP items). Attendee list comes from an OCR'd sign-in table: names and affiliations were matched by column order, and status is 'present' inferred from that roster since the minutes do not state attendance explicitly. No mover or seconder is printed for any motion. Adjournment is recorded without a motion.",
+ "cost_usd": 0.008700920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:36 pm by mir. mackin, chairperson of the lunenburg school bullding committee."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, ISBC Member",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "present",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "kerry speidel john londa brian spadafino tim santry"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "kerry speidel john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "present",
+   "quote": "kerry speidel john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools",
+   "status": "present",
+   "quote": "kerry speidel john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "status": "present",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg inga knox robert alger michael kearns jonathan hirst"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappe Architects",
+   "status": "present",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg inga knox robert alger michael kearns jonathan hirst"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates (JLA)",
+   "status": "present",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg inga knox robert alger michael kearns jonathan hirst"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates (JLA)",
+   "status": "present",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg inga knox robert alger michael kearns jonathan hirst"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "Joslin, Lesser + Associates (JLA)",
+   "status": "present",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg inga knox robert alger michael kearns jonathan hirst"
+  },
+  {
+   "name": "Robert Alger",
+   "role": "Joslin, Lesser + Associates (JLA)",
+   "status": "present",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg inga knox robert alger michael kearns jonathan hirst"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction (SDC)",
+   "status": "present",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg inga knox robert alger michael kearns jonathan hirst"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction (SDC)",
+   "status": "present",
+   "quote": "jonathan hirst (sdc) presented an overview of a construction progress."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Further review of the abutter's water and drainage concern will be conducted if the problem continues.",
+   "quote": "further review will be conducted if the problem continues."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Final Guaranteed Maximum Price (GMP)",
+   "what_was_recorded": "Updated budget with Final GMP values per trade was presented; the Final GMP is under the MSBA estimated budget and was approved at the stated figure.",
+   "figures_as_printed": [
+    "$57,994,017.00"
+   ],
+   "quote": "1. final gmp at $57,994,017.00."
+  },
+  {
+   "topic": "Monthly progress invoices",
+   "what_was_recorded": "Monthly progress invoices for work through November 2014 from JLA, Tappe, Shawmut, UTS Testing Services and GAW Aerial Photography were approved; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "voted to approve the november 2014 invoices as presented by joslin, lesser & associates."
+  },
+  {
+   "topic": "Photovoltaic System",
+   "what_was_recorded": "PV system was left out of the GMP scope and is under review by the Business Manager and BOS; no cost is printed.",
+   "figures_as_printed": [],
+   "quote": "voted not to include photovoltaic system in gmp scope."
+  },
+  {
+   "topic": "Owner Requested Items",
+   "what_was_recorded": "Owner items previously removed during value engineering were approved for inclusion in scope; no separate cost is printed.",
+   "figures_as_printed": [],
+   "quote": "additional protective wood paneling in the library, sod turf for athletic fields with recommended sand base material"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Greg Roy",
+   "topic": "abutter water and drainage concern",
+   "quote": "greg roy brought to the group's attention an abutter's concern about water and drainage issues that potentially affect his/her property."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:36 PM",
+   "quote": "the meeting was called to order at 6:36 pm by mir. mackin, chairperson of the lunenburg school bullding committee.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee Minutes",
+   "resolution": "approved November 12, 2014 minutes",
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from november 12, 2014.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals - Invoices",
+   "resolution": "approved November 2014 invoices",
+   "quote": "voted to approve the november 2014 invoices as presented by joslin, lesser & associates.",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals - Commitments",
+   "resolution": "no action",
+   "quote": "there were no monthly commitments presented for this time period.",
+   "tags": [
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Final Construction Guaranteed Maximum Price (GMP) Discussion & Action",
+   "resolution": "approved Final GMP and owner requested items; PV excluded from GMP scope",
+   "quote": "the final gmp is under the msba estimated budget, lsbc reviewed and discussed each line item.",
+   "tags": [
+    "GMP",
+    "budget",
+    "photovoltaic"
+   ]
+  },
+  {
+   "topic": "Construction Activity Update",
+   "resolution": "no action",
+   "quote": "jonathan hirst (sdc) presented an overview of a construction progress.",
+   "tags": [
+    "construction",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; further review if problem continues",
+   "quote": "greg roy brought to the group's attention an abutter's concern about water and drainage issues that potentially affect his/her property.",
+   "tags": [
+    "drainage",
+    "abutter"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "the meeting was adjourned at approximately 8:20 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Monthly progress invoices for work completed through November, 2014",
+   "where": "text",
+   "quote": "presented monthly progress invoices for work completed through november, 2014"
+  },
+  {
+   "name": "Progress photos (School Building Project Website)",
+   "where": "text",
+   "quote": "jla presented progress photos which are also available on the school building project website."
+  },
+  {
+   "name": "November 12, 2014 LSBC Meeting minutes",
+   "where": "text",
+   "quote": "november 12, 2014 lsbc meeting"
+  }
+ ],
+ "tags": [
+  "school building project",
+  "construction",
+  "GMP",
+  "invoices",
+  "photovoltaic",
+  "public comment",
+  "drainage",
+  "Joslin Lesser",
+  "Shawmut"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

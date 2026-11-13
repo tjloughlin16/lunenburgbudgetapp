@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2014-01-14",
  "docid": "2446",
@@ -10,17 +10,143 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01142014-2446",
   "doc_url": "/docs/meetings/green-communities-committee/2014-01-14-minutes-2446.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text of a single page; header line 'Sak it' appears to be an OCR artifact. No motions or votes are recorded: the minutes approval and the meeting adjournment are stated without a motion, second or count, so they are not recorded as votes. Attendance is given only as a 'Present:' list with no absent list. Joanne McQuaid signed as Secretary; the minutes do not say whether she is the same person as 'J McQuaid'. Computed, not printed: the seven building figures sum to $157,000.00, which is $225.00 less than the stated $157,225.00 award. No public comment is recorded.",
+ "cost_usd": 0.00307272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "approve minutes from 10/24/13",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes from 10/24/13 were approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "D. Blatt",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, j.londa, t. burchfield (fincom)"
+  },
+  {
+   "name": "Z.Cutting",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, j.londa, t. burchfield (fincom)"
+  },
+  {
+   "name": "J McQuaid",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, j.londa, t. burchfield (fincom)"
+  },
+  {
+   "name": "J.Londa",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, j.londa, t. burchfield (fincom)"
+  },
+  {
+   "name": "T. Burchfield",
+   "role": "FinCom",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, j.londa, t. burchfield (fincom)"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, joanne mcquaid, secretary"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes record one vote: approval of prior minutes. No motion to adjourn is explicitly stated. All other items (energy reduction plan review, grant application review, next meeting scheduling) are described as discussions and planning, with no motions recorded.",
- "cost_usd": 0.0814395
+ "decisions": [
+  {
+   "decision": "Minutes from 10/24/13 were approved (no motion or vote recorded).",
+   "quote": "minutes from 10/24/13 were approved."
+  },
+  {
+   "decision": "Next meeting set for January 27, 2014 at 6:30 P.M. at the Ritter Building, if available.",
+   "quote": "next meeting set for january 27, 2014 at 6:30 p.m. at the ritter building, if available."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community Grant award",
+   "what_was_recorded": "The Green Community Grant award amount is stated as $157,225.00.",
+   "figures_as_printed": [
+    "$157,225.00"
+   ],
+   "quote": "award amount is $157,225.00. several items need to be confirmed"
+  },
+  {
+   "topic": "Preliminary breakdown of grant funds by building",
+   "what_was_recorded": "Preliminary allocation of grant funds by building: Primary School $81,000.00, Ritter $28,000.00, Public Safety $15,000.00, THMS $10,000.00, Town Hall $10,000.00, Library $8,000.00, Eagle House $5,000.00.",
+   "figures_as_printed": [
+    "$81,000.00",
+    "28,000.00",
+    "$15,000.00",
+    "$10,000.00",
+    "$10,000.00",
+    "$8,000.00",
+    "$5,000.00"
+   ],
+   "quote": "primary school $81,000.00 ritter 28,000.00 public safety $15,000.00"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "minutes of 10/24/13 approved",
+   "quote": "meeting called to order at 6:34 p.m. by d.blatt. minutes from 10/24/13 were approved.",
+   "tags": [
+    "minutes",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Review of Energy Reduction Plan",
+   "resolution": "discussed; no action recorded",
+   "quote": "review of energy reduction plan - the merits of individual projects were evaluated to decide",
+   "tags": [
+    "energy",
+    "project evaluation"
+   ]
+  },
+  {
+   "topic": "Projects to submit for Green Community Grant Application",
+   "resolution": "discussed; open items to confirm; no action recorded",
+   "quote": "review of projects to submit for green community grant application - award amount is $157,225.00.",
+   "tags": [
+    "grant",
+    "Green Communities",
+    "budget allocation"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for January 27, 2014; adjourned 8:16 P.M.",
+   "quote": "next meeting set for january 27, 2014 at 6:30 p.m. at the ritter building, if available.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Energy Reduction Plan",
+   "where": "text",
+   "quote": "review of energy reduction plan - the merits of individual projects were evaluated to decide"
+  },
+  {
+   "name": "Green Community Grant Application",
+   "where": "text",
+   "quote": "review of projects to submit for green community grant application - award amount is $157,225.00."
+  }
+ ],
+ "tags": [
+  "Green Communities",
+  "Green Community Grant",
+  "energy reduction plan",
+  "grant allocation by building",
+  "FinCom",
+  "Ritter Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2010-12-06",
  "docid": "4580",
@@ -12,25 +12,216 @@
  },
  "votes": [
   {
-   "motion": "Approve prior meeting minutes",
+   "motion": "Purchase equipment: two Canon GL-2 camcorders, one portable light kit and assorted audio equipment, as presented in John Gugarty's revised recommendations.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes, read and approved."
+   "procedural": false,
+   "quote": "members voted to purchase the equipment (two canon gl-2 camcorders, one portable light kit and assorted audio equipment --see attached.)"
   },
   {
-   "motion": "Purchase two Canon GL-2 camcorders, one portable light kit and assorted audio equipment",
-   "outcome": "not stated",
+   "motion": "Authorize Martha to pursue an agreement to rent space in either the Brooks House or the public safety building.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, members voted to purchase the equipment (two canon gl-2 camcorders, one portable light kit and assorted audio equipment --see attached.)"
-  },
-  {
-   "motion": "Authorize Martha to pursue an agreement to rent space in either the Brooks House or the public safety building",
-   "outcome": "not stated",
-   "procedural": false,
-   "quote": "after further discussion, members voted to authorize martha to pursue an agreement to rent space in either the brooks house or the public safety building."
+   "quote": "members voted to authorize martha to pursue an agreement to rent space in either the brooks house or the public safety building."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Votes recorded without mover/seconder names or explicit vote counts. Tabling of Purchasing Procedure Policy decision was not recorded as a vote.",
- "cost_usd": 0.10893649999999999
+ "note": "Single-page OCR text. No motion to approve the minutes, no motion to adjourn, and no mover, seconder or vote count is printed; the minutes-approval line is recorded as a topic only, not as a vote. The equipment list referred to as 'attached' is not in the text. The filing stamp reads 'JAN 1: 2011' in the OCR, which may be a misread. Public comment is not recorded.",
+ "cost_usd": 0.00381762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: rhonda lisio, tania fernandez, mike wallmann, fred crellin"
+  },
+  {
+   "name": "Tania Fernandez",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: rhonda lisio, tania fernandez, mike wallmann, fred crellin"
+  },
+  {
+   "name": "Mike Wallmann",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: rhonda lisio, tania fernandez, mike wallmann, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: rhonda lisio, tania fernandez, mike wallmann, fred crellin"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, john dextraze, john gugarty, jo mclaughlin"
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, john dextraze, john gugarty, jo mclaughlin"
+  },
+  {
+   "name": "John Gugarty",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, john dextraze, john gugarty, jo mclaughlin"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, john dextraze, john gugarty, jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Any decision on the Purchasing Procedure Policy was tabled to a future meeting.",
+   "quote": "after a brief discussion, any decision was tabled to a future meeting."
+  },
+  {
+   "decision": "A sub-committee for by-law revision was formed with Rhonda Lisio, Fred Crellin and John Gugarty.",
+   "quote": "sub-committee formed - rhonda lisio, fred crellin, john gugarty"
+  },
+  {
+   "decision": "Members were asked to review the political campaign and Bulletin Board policy recommendations for the next meeting.",
+   "quote": "members are asked to review these for the next meeting."
+  },
+  {
+   "decision": "Members were asked to look through the progress report packet for the next meeting.",
+   "quote": "members are asked to look through this packet for the next meeting."
+  },
+  {
+   "decision": "Jo and John were reminded to keep a log of their hours; further discussion of hours was postponed to a later date.",
+   "quote": "they were reminded to keep a log of their hours."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Rental of Brooks House space",
+   "what_was_recorded": "Jo reported that the former Trudy's Treats space would cost $2,000; whether space was available in the public safety building remained unknown.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "jo reported that the former \"trudy's treats\" would cost $2,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "minutes, read and approved."
+  },
+  {
+   "topic": "Recommendations for equipment acquisition",
+   "resolution": "approved purchase of equipment",
+   "tags": [
+    "equipment",
+    "purchase"
+   ],
+   "quote": "members voted to purchase the equipment (two canon gl-2 camcorders, one portable light kit and assorted audio equipment --see attached.)"
+  },
+  {
+   "topic": "Rental of Brooks House space",
+   "resolution": "authorized Martha to pursue rental agreement",
+   "tags": [
+    "space rental",
+    "Brooks House",
+    "public safety building"
+   ],
+   "quote": "members voted to authorize martha to pursue an agreement to rent space in either the brooks house or the public safety building."
+  },
+  {
+   "topic": "Purchasing Procedure Policy",
+   "resolution": "tabled",
+   "tags": [
+    "policy",
+    "purchasing"
+   ],
+   "quote": "after a brief discussion, any decision was tabled to a future meeting."
+  },
+  {
+   "topic": "Sub-committee for by-law revision",
+   "resolution": "sub-committee formed",
+   "tags": [
+    "by-law",
+    "sub-committee"
+   ],
+   "quote": "sub-committee formed - rhonda lisio, fred crellin, john gugarty"
+  },
+  {
+   "topic": "Policy Recommendations",
+   "resolution": "presented; members to review for next meeting",
+   "tags": [
+    "policy",
+    "campaign",
+    "bulletin board"
+   ],
+   "quote": "john gugarty presented recommendations on political campaign and bulletin board policies."
+  },
+  {
+   "topic": "Update",
+   "resolution": "progress report presented; members to review packet",
+   "tags": [
+    "program schedule",
+    "outreach"
+   ],
+   "quote": "jo presented a progress report that included a tentative program schedule and a listing of community outreach meetings"
+  },
+  {
+   "topic": "Hours",
+   "resolution": "discussed; reminded to keep log; further discussion postponed",
+   "tags": [
+    "hours",
+    "staff log"
+   ],
+   "quote": "they were reminded to keep a log of their hours."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "John Gugarty's revised recommendations for equipment acquisition (with equipment list, 'see attached')",
+   "where": "text",
+   "quote": "members voted to purchase the equipment (two canon gl-2 camcorders, one portable light kit and assorted audio equipment --see attached.)"
+  },
+  {
+   "name": "Progress report packet with tentative program schedule and listing of community outreach meetings",
+   "where": "text",
+   "quote": "members are asked to look through this packet for the next meeting."
+  },
+  {
+   "name": "Political campaign and Bulletin Board policy recommendations (presented by John Gugarty)",
+   "where": "text",
+   "quote": "john gugarty presented recommendations on political campaign and bulletin board policies."
+  }
+ ],
+ "tags": [
+  "public access cable",
+  "equipment purchase",
+  "space rental",
+  "policy",
+  "by-law",
+  "volunteer hours",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

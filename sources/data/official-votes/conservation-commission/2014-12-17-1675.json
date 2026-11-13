@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-12-17",
  "docid": "1675",
@@ -12,19 +12,300 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of November 19 and December 3, 2014",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 11/19 and 12/3.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval ~ 11/19 & 12/3 approved"
-  },
-  {
-   "motion": "Approve Lunenburg Snowriders trail permission and use of Conservation Trails",
-   "outcome": "approved",
-   "procedural": false,
-   "quote": "approval was granted and tom will get a list to the cc office of which trails they use."
   }
  ],
  "dropped_unquoted": 0,
- "note": "No moved_by or seconded_by names are printed in these minutes. The Snowriders approval outcome is stated as 'Approval was granted' but no vote count is provided.",
- "cost_usd": 0.10584950000000001
+ "note": "Text-extracted minutes (not a scan); the header reads APPROVED 1/7/2015. The only recorded vote is approval of the 11/19 and 12/3 minutes, which shows a result (\"Approved\") but no mover, seconder or count. No dollar figures appear, so budget_items and transfers are empty. The extraction prints \"Todd Dw yer\" with a stray space; it is recorded here as Todd Dwyer. The minutes name \"Adam\", \"Walter Godfrey\" and \"Matt\" in passing but do not say whether they attended, so they are not listed as attendees. Attendance lines are the board list as printed; absences are not marked.",
+ "cost_usd": 0.00604982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rich Bursch",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "member; presented on Lunenburg Snowriders trail permission",
+   "status": "present",
+   "quote": "lunenburg snowriders ~ tom bertram ~ trail permission"
+  },
+  {
+   "name": "Matt Charpentier",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Sheila Holt",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Elizabeth McColligan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "elizabeth mccolligan ~ late, had pictures of work done, matt had inspected and all ok."
+  },
+  {
+   "name": "Steve Sears",
+   "role": "of David E. Ross Associates",
+   "status": "present",
+   "quote": "steve sears of david e. ross associates ~ final as built submitted all ok."
+  },
+  {
+   "name": "Janet Morrison",
+   "role": "of North County Land Trust",
+   "status": "present",
+   "quote": "janet morrison of north county land trust ~ nclt needs to assign the conservation restriction to the conservation commission."
+  },
+  {
+   "name": "Daron Massey",
+   "role": "of 300 Holman Street",
+   "status": "present",
+   "quote": "daron massey of 300 holman street spoke about limiting access and hours that the trails would be open to the public"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trail permission granted to the Lunenburg Snowriders; Tom Bertram to send the CC office a list of which trails they use (no recorded vote).",
+   "quote": "approval was granted and tom will get a list to the cc office of which trails they use."
+  },
+  {
+   "decision": "Conservation restriction assignment from North County Land Trust to be reviewed; the Commission will approve and accept the restriction once Town Counsel approves the assignment.",
+   "quote": "will pass assignment on to adam and will approve and accept conservation restriction based on town counsels approval."
+  },
+  {
+   "decision": "Jan to e-mail Adam's comments on the stormwater by-law drafts.",
+   "quote": "jan will e-mail adam's comments."
+  },
+  {
+   "decision": "Owner of 713 R Reservoir Road told an engineered plan and a NOI filing are required; oil tank removal accepted; emergency certification is for 30 days only.",
+   "quote": "spoke with walter godfrey and told him he needs an engineered plan and also file a noi"
+  },
+  {
+   "decision": "Todd Dwyer and Tom Bertram offered to serve as the Commission's representatives on the Open Space Committee.",
+   "quote": "todd dwyer and tom bertram offered to serve as representatives on the open space committee"
+  },
+  {
+   "decision": "Matt to take on the site visit forms.",
+   "quote": "site visit forms ~ matt"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Daron Massey",
+   "stated_role": "of 300 Holman Street",
+   "topic": "limiting trail access and hours (Snowriders item)",
+   "quote": "daron massey of 300 holman street spoke about limiting access and hours that the trails would be open to the public"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "68 Laurel Lane - project update",
+   "resolution": "project update; work inspected by Matt and all OK",
+   "tags": [
+    "hearing",
+    "project update"
+   ],
+   "quote": "late, had pictures of work done, matt had inspected and all ok."
+  },
+  {
+   "topic": "39 South Row Road - project update",
+   "resolution": "final as-built submitted, all OK",
+   "tags": [
+    "hearing",
+    "as-built"
+   ],
+   "quote": "final as built submitted all ok."
+  },
+  {
+   "topic": "548 Northfield Road (Millington Property) - conservation restriction",
+   "resolution": "continued; Town Counsel review before acceptance",
+   "tags": [
+    "hearing",
+    "conservation restriction"
+   ],
+   "quote": "nclt needs to assign the conservation restriction to the conservation commission."
+  },
+  {
+   "topic": "Lunenburg Snowriders - trail permission",
+   "resolution": "approved; trail list to be provided",
+   "tags": [
+    "trails",
+    "permit"
+   ],
+   "quote": "approval was granted and tom will get a list to the cc office of which trails they use."
+  },
+  {
+   "topic": "Minutes approval (11/19 and 12/3)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval ~ 11/19 & 12/3 approved"
+  },
+  {
+   "topic": "Stormwater by-law",
+   "resolution": "drafts distributed and briefly discussed; Jan to e-mail comments",
+   "tags": [
+    "stormwater",
+    "by-law"
+   ],
+   "quote": "drafts of by law and regulations regarding storm water were passed out and briefly talked about."
+  },
+  {
+   "topic": "Open Space Committee recommendations",
+   "resolution": "Todd Dwyer and Tom Bertram offered to serve as representatives",
+   "tags": [
+    "open space"
+   ],
+   "quote": "todd dwyer and tom bertram offered to serve as representatives on the open space committee"
+  },
+  {
+   "topic": "713 R Reservoir Road - oil tank",
+   "resolution": "NOI with engineered plan required; oil tank removal OK",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "oil tank"
+   ],
+   "quote": "spoke with walter godfrey and told him he needs an engineered plan and also file a noi"
+  },
+  {
+   "topic": "322 Townsend Harbor Road",
+   "resolution": "1999 picture reviewed; shows dock not deck",
+   "tags": [
+    "unfinished business",
+    "dock"
+   ],
+   "quote": "brought in picture from 1999 ~ picture shows dock not deck"
+  },
+  {
+   "topic": "40 Hemlock Drive",
+   "resolution": "no new plans submitted; still open",
+   "tags": [
+    "unfinished business"
+   ],
+   "quote": "no new plans submitted from 40 hemlock drive"
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "done (3 OoC and 3 DoA)",
+   "tags": [
+    "signatures"
+   ],
+   "quote": "signatures ~ 3 ooc & 3 doa ~ done"
+  },
+  {
+   "topic": "Commission comment",
+   "resolution": "trail publications available online; site visit forms assigned to Matt",
+   "tags": [
+    "trails",
+    "site visits"
+   ],
+   "quote": "commission comment ~ trail publications ~ available on line"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for January 7, 2015",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meeting ~ january 7 th , 2015"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:16 PM; no motion recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment ~ 10:16 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Drafts of By Law and Regulations regarding Storm Water",
+   "where": "list",
+   "quote": "drafts of by law and regulations regarding storm water were passed out and briefly talked about."
+  },
+  {
+   "name": "Written assignment of conservation restriction (North County Land Trust, 548 Northfield Road)",
+   "where": "text",
+   "quote": "janet will pdf written assignment."
+  },
+  {
+   "name": "Picture from 1999 (322 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "brought in picture from 1999 ~ picture shows dock not deck"
+  },
+  {
+   "name": "Trail Publications",
+   "where": "text",
+   "quote": "commission comment ~ trail publications ~ available on line"
+  },
+  {
+   "name": "Site Visit Forms",
+   "where": "text",
+   "quote": "site visit forms ~ matt"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "hearings",
+  "conservation restriction",
+  "trails",
+  "snowmobile trails",
+  "stormwater by-law",
+  "open space",
+  "wetlands NOI",
+  "oil tank",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "drafts of by law and regulations regarding storm water were passed out"
+ },
+ "dropped_unquoted_by_field": {}
 }

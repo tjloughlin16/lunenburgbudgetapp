@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-09-26",
  "docid": "3866",
@@ -12,39 +12,221 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of 9/12/16",
+   "motion": "Approve the 9/12/16 minutes.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
    "quote": "9/12/16- motion, d. mcquaid, second, k. chenis, all aye."
   },
   {
-   "motion": "Approve minutes of 9/12/16, 8 Massachusetts Avenue",
+   "motion": "Approve the 9/12/16 minutes for 8 Massachusetts Avenue.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
    "quote": "9/12/16, 8 massachusetts avenue- motion, d. mcquaid, second, k. chenis, all aye."
   },
   {
-   "motion": "Approve minutes of 9/12/16, 155 Reservoir Road",
+   "motion": "Approve the 9/12/16 minutes for 155 Reservoir Road.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
    "quote": "9/12/16, 155 reservoir road- motion, d. mcquaid, second, k. chenis, all aye."
   },
   {
-   "motion": "Approve minutes of 9/12/16, 274 Prospect Street",
+   "motion": "Approve the 9/12/16 minutes for 274 Prospect Street.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
    "quote": "9/12/16, 274 prospect street- motion, d. mcquaid, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four procedural votes to approve prior meeting minutes, all passing unanimously. No other votes recorded in these minutes.",
- "cost_usd": 0.08489050000000001
+ "note": "Text extraction, not a scan; all votes are readable. Four minutes-approval motions are recorded with 'all aye' and no numeric count. No motion is recorded for adjournment (7:40 PM) and no public comment section appears. No dollar figures appear in the minutes. The Town Counsel discussion and the Village Center comment are discussion without a motion.",
+ "cost_usd": 0.00539752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Decisions for 8 Massachusetts Avenue and 155 Reservoir Road (approved September 12) were signed this date, to be filed with the Town Clerk and enter a 20-day appeal period.",
+   "quote": "decision approved at the september 12 th meeting and signed this date."
+  },
+  {
+   "decision": "A. Burney to focus on Definitions for the Use Table, with a second draft to be presented end October/beginning November.",
+   "quote": "a. burney to focus on definitions for the use table"
+  },
+  {
+   "decision": "Discussion will be held with the 274 Prospect Street applicant on density; if it remains an issue, the Board can request clarification of the zoning opinion.",
+   "quote": "discussion will be held with the applicant."
+  },
+  {
+   "decision": "Citizens inquiring about a Village Center commerce/economic committee were recommended to approach the Board of Selectmen.",
+   "quote": "it was recommended they approach board of selectmen."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "9/12/16- motion, d. mcquaid, second, k. chenis, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "going through rfp process for the properties.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "applicant hopes to have the first building operational before thanksgiving.",
+   "tags": [
+    "development review"
+   ]
+  },
+  {
+   "topic": "Director's items: endorse decisions",
+   "resolution": "decisions signed, no vote recorded",
+   "quote": "decision approved at the september 12 th meeting and signed this date.",
+   "tags": [
+    "decisions",
+    "appeal period"
+   ]
+  },
+  {
+   "topic": "Definitions and Use Table",
+   "resolution": "first draft presented; second draft expected",
+   "quote": "first draft of a -c presented to the board.",
+   "tags": [
+    "zoning",
+    "use table"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen Town Counsel discussion",
+   "resolution": "discussed, no action",
+   "quote": "considering looking for firms to bid on being town counsel.",
+   "tags": [
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Meeting schedule: 274 Prospect Street continuation",
+   "resolution": "continued to October 24; discussed density issue",
+   "quote": "complete impact reports not expected for the october 24th continuation.",
+   "tags": [
+    "274 Prospect Street",
+    "density"
+   ]
+  },
+  {
+   "topic": "Board comment: Village Center commerce committee",
+   "resolution": "referred to Board of Selectmen",
+   "quote": "inquired about the formation of a commerce/economic committee for the",
+   "tags": [
+    "Village Center"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 9.12.16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 9.12.16 9.12.16- 8 massachusetts avenue"
+  },
+  {
+   "name": "9.12.16- 8 Massachusetts Avenue",
+   "where": "list",
+   "quote": "minutes 9.12.16 9.12.16- 8 massachusetts avenue 9.12.16- 155 reservoir road"
+  },
+  {
+   "name": "9.12.16- 155 Reservoir Road",
+   "where": "list",
+   "quote": "9.12.16- 155 reservoir road 9.12.16- 274 prospect street"
+  },
+  {
+   "name": "9.12.16- 274 Prospect Street",
+   "where": "list",
+   "quote": "9.12.16- 155 reservoir road 9.12.16- 274 prospect street"
+  },
+  {
+   "name": "Decision- 8 Massachusetts Avenue",
+   "where": "list",
+   "quote": "decision- 8 massachusetts avenue decision- 155 reservoir road"
+  },
+  {
+   "name": "Decision- 155 Reservoir Road",
+   "where": "list",
+   "quote": "decision- 8 massachusetts avenue decision- 155 reservoir road"
+  },
+  {
+   "name": "Definitions and Use Table – DRAFT",
+   "where": "list",
+   "quote": "decision- 155 reservoir road definitions and use table - draft"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "development review",
+  "minutes approval",
+  "Definitions and Use Table",
+  "274 Prospect Street",
+  "Town Counsel",
+  "Village Center"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

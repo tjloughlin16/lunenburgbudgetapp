@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-02-18",
  "docid": "2814",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Move up budget discussion with Town Manager on the agenda",
+   "motion": "Move up the budget discussion with the Town Manager on the agenda.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion to move up budget discussion with town manager on the agenda. so moved by gare, harry second, voted all in favor."
   },
   {
-   "motion": "Accept the January 21, 2015 minutes as presented",
+   "motion": "Accept the minutes of January 21, 2015 as presented.",
    "moved_by": "Gare",
    "seconded_by": "Donna",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "gare moved to accept the minutes as presented, donna second; voted: all in favor"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Susan",
    "outcome": "passed",
@@ -37,6 +37,420 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All three votes recorded in these minutes are procedural votes (approval of prior minutes, agenda order, adjournment).",
- "cost_usd": 0.0849445
+ "note": "Text extract, not a scan; votes are recorded as 'all in favor' without tallies, so outcomes are recorded as 'passed'. Kiirja Paananen appears under both Attending and Absent, so status is not stated. The absent line reads 'Terri Burchfield, FinCom representative', which may be one person or two. Public comment shows no speakers. Dates print 'January 21, 2015' and 'February 18, 2015' (agenda) despite a 2016 meeting. The FY2017 table's column headings are garbled in extraction, and the NETWORK MAINTENANCE row is missing a figure.",
+ "cost_usd": 0.00859822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:47 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "Trustee",
+   "status": "not stated",
+   "quote": "absent: kiirja paananen, terri burchfield, fincom representative"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "respectfully submitted, lars widstrand"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "moore - director, lpl; bob ebersole board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "present",
+   "quote": "(bob ebersole left the meeting at 7:11 p.m.)"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "budget discussion with town manager kerry lafleur."
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: kiirja paananen, terri burchfield, fincom representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Trustees agreed to bring the request for higher supplies and materials to the FinCom with their budget request, and to apply for an increase in the supply and materials portion.",
+   "quote": "the trustees need to bring this up to the fincom together with our budget request"
+  },
+  {
+   "decision": "Dick and Martha will represent the library at the FinCom budget meeting on March 3 @ 7 PM.",
+   "quote": "dick and martha will represent the library."
+  },
+  {
+   "decision": "Board members are to fill out the electronic director evaluation and mail it to Dick before the March meeting.",
+   "quote": "everyone on the board has electronic copy, to be filled out and mailed to dick before march meeting!"
+  },
+  {
+   "decision": "Initial thoughts on the Library of Things were postponed to the next meeting.",
+   "quote": "postponed until next meeting"
+  },
+  {
+   "decision": "Agenda items were listed for upcoming meetings, including Access and Use of Library Trust Funds in March and Room Use by for-profit entities in April.",
+   "quote": "access and use of library trust funds--march"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Manager recommended FY2017 budget",
+   "what_was_recorded": "The Town Manager's recommended budget for the library is stated, and the Chair/Trustees discussed raising the supply and materials request.",
+   "figures_as_printed": [
+    "$370,739.00"
+   ],
+   "quote": "town manager recommended budget is for $370,739.00. harry feels that we really need to support the submitted higher request"
+  },
+  {
+   "topic": "Total FY2017 request vs Town Manager recommendation",
+   "what_was_recorded": "Totals from the comparison spreadsheet: request, forecast, Town Manager recommendation and difference.",
+   "figures_as_printed": [
+    "$375,463.00",
+    "$374,836.00",
+    "$370,739.00",
+    "($4,724.00)"
+   ],
+   "quote": "total: $375,463.00 $374,836.00 $370,739.00 ($4,724.00)"
+  },
+  {
+   "topic": "Personnel sub-total",
+   "what_was_recorded": "Personnel sub-total shown identical across request, forecast and recommendation, with no difference.",
+   "figures_as_printed": [
+    "$256,061.00",
+    "$0.00"
+   ],
+   "quote": "personnel sub-total: $256,061.00 $256,061.00 $256,061.00 $0.00"
+  },
+  {
+   "topic": "Expenses sub-total",
+   "what_was_recorded": "Expenses sub-total for request, forecast, recommendation and difference, a reduction of $4,724.00 in the recommendation.",
+   "figures_as_printed": [
+    "$119,402.00",
+    "$118,775.00",
+    "$114,678.00",
+    "($4,724.00)"
+   ],
+   "quote": "expenses subtotal: $119,402.00 $118,775.00 $114,678.00 ($4,724.00)"
+  },
+  {
+   "topic": "Library material line",
+   "what_was_recorded": "Library material is cut in the recommendation by $3,649.00 from the request, the trustees' main concern.",
+   "figures_as_printed": [
+    "$54,000.00",
+    "$51,803.00",
+    "$50,351.00",
+    "($3,649.00)"
+   ],
+   "quote": "library material $54,000.00 $51,803.00 $50,351.00 ($3,649.00)"
+  },
+  {
+   "topic": "Office supplies line",
+   "what_was_recorded": "Office supplies request of $2,000.00 is recommended at $1,000.00, a $1,000.00 difference; trustees had noted this line as lower than anticipated.",
+   "figures_as_printed": [
+    "$2,000.00",
+    "$520.00",
+    "$1,000.00",
+    "($1,000.00)"
+   ],
+   "quote": "office supplies $2,000.00 $520.00 $1,000.00 ($1,000.00)"
+  },
+  {
+   "topic": "Postage line",
+   "what_was_recorded": "Postage is recommended at $275.00 against a request of $350.00, a ($75.00) difference.",
+   "figures_as_printed": [
+    "$350.00",
+    "$354.00",
+    "$275.00",
+    "($75.00)"
+   ],
+   "quote": "postage $350.00 $354.00 $275.00 ($75.00)"
+  },
+  {
+   "topic": "Trustees' request for higher materials and supplies",
+   "what_was_recorded": "Harry said the higher request for materials and supplies should be supported for staff programs, and Donna agreed; no figure beyond the table is stated.",
+   "figures_as_printed": [],
+   "quote": "harry feels that we really need to support the submitted higher request for material and supplies"
+  },
+  {
+   "topic": "Guardian Energy building proposal",
+   "what_was_recorded": "Guardian Energy proposal items were relabeled for clarity and to be resubmitted; the Green Committee pushed back on some items. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "guardian energy came out and with martha relabeled some items for clarity in the proposal"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment o no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Budget discussion with Town Manager",
+   "resolution": "discussed; trustees to press FinCom for higher supplies and materials",
+   "quote": "budget discussion with town manager kerry lafleur.",
+   "tags": [
+    "budget",
+    "town manager",
+    "FY2017"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved",
+   "quote": "gare moved to accept the minutes as presented, donna second; voted: all in favor",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, as per handout",
+   "quote": "director's report, as per handout",
+   "tags": [
+    "director",
+    "report"
+   ]
+  },
+  {
+   "topic": "FY 2017 Budget / Finance Committee",
+   "resolution": "Dick and Martha to represent the library at FinCom",
+   "quote": "fy 2017 budget/finance committee march 3 @ 7 pm",
+   "tags": [
+    "budget",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "Staff: Digital Services Librarian posting",
+   "resolution": "reported; posting next week",
+   "quote": "posting of digital services librarian position will come up next week.",
+   "tags": [
+    "staff",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Commonwealth Catalog and social media",
+   "resolution": "reported",
+   "quote": "commonwealth catalog, interlibrary loans - we now has access from the library web home page",
+   "tags": [
+    "technology",
+    "interlibrary loan"
+   ]
+  },
+  {
+   "topic": "Cultural Outreach / Programs",
+   "resolution": "reported",
+   "quote": "update on the cultural outreach",
+   "tags": [
+    "programs"
+   ]
+  },
+  {
+   "topic": "Educational outreach update",
+   "resolution": "no update",
+   "quote": "no update at this time",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Building & Maintenance",
+   "resolution": "reported; Guardian Energy proposal to be resubmitted",
+   "quote": "building survived the cold snap!",
+   "tags": [
+    "building",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Capital Planning",
+   "resolution": "discussed; interior painting and carpet replacement to be coordinated",
+   "quote": "desirable to coordinate painting of the interior with the replacement of the carpeting",
+   "tags": [
+    "capital",
+    "building"
+   ]
+  },
+  {
+   "topic": "Young Adult Area Report",
+   "resolution": "received, as per handout",
+   "quote": "young adult area report",
+   "tags": [
+    "YA",
+    "report"
+   ]
+  },
+  {
+   "topic": "Children’s Area Report",
+   "resolution": "received, as per handout",
+   "quote": "children's area report",
+   "tags": [
+    "children",
+    "report"
+   ]
+  },
+  {
+   "topic": "Director Evaluation",
+   "resolution": "due by March meeting; trustees to complete forms",
+   "quote": "director evaluation-due by march meeting",
+   "tags": [
+    "director",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "discussed; thank-you letter to Friends planned by next meeting",
+   "quote": "friends of lpl update",
+   "tags": [
+    "friends"
+   ]
+  },
+  {
+   "topic": "Caucus",
+   "resolution": "three names put forth for March 14 caucus",
+   "quote": "caucus: march 14, turkey hill middle school",
+   "tags": [
+    "caucus",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Library of Things",
+   "resolution": "postponed to next meeting",
+   "quote": "initial thoughts re: library of things",
+   "tags": [
+    "library of things"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no additional comments",
+   "quote": "donna will not be available for march meeting",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "listed",
+   "quote": "access and use of library trust funds--march",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:58 p.m.",
+   "quote": "motion to adjourn so moved by dick, second by susan voted all in favor at 7:58 p.m.",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for February 18, 2015",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for february 18, 2015 director's report children's librarian's report"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for february 18, 2015 director's report children's librarian's report"
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for february 18, 2015 director's report children's librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report events and programs calendar"
+  },
+  {
+   "name": "Events and programs calendar",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report events and programs calendar"
+  },
+  {
+   "name": "Attached spread sheet comparing FY2017 Request and FY2017 Town Manager Recommended numbers",
+   "where": "text",
+   "quote": "attached spread sheet which may bring some clarity to the budget number discussion."
+  },
+  {
+   "name": "Budget hand-out distributed to Trustees",
+   "where": "text",
+   "quote": "derived from numbers distributed to the trustees in a budget hand-out"
+  },
+  {
+   "name": "Director’s Report, as per handout",
+   "where": "text",
+   "quote": "director's report, as per handout"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "FY2017",
+  "town manager",
+  "materials",
+  "staffing",
+  "director evaluation",
+  "caucus",
+  "library of things",
+  "building maintenance",
+  "friends of library"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

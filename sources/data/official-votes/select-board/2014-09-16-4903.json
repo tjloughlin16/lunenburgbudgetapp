@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-09-16",
  "docid": "4903",
@@ -12,55 +12,488 @@
  },
  "votes": [
   {
-   "motion": "approve the proposed ambulance rate increase effective October 1, 2014, and request a report of fiscal year 2014 runs",
+   "motion": "Approve the proposed ambulance rate increase effective October 1, 2014, and request a report of fiscal year 2014 runs as part of budget planning.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the proposed rate increase effective october 1, 2014, and request a report of the fiscal year 2014 runs as part of the budget planning process for the upcoming fiscal year vote: all in favor"
+   "quote": "to approve the proposed rate increase effective october 1, 2014, and request a report of the fiscal year 2014 runs"
   },
   {
-   "motion": "approve the stop sign and yield sign proposal for Main Street, Oak Avenue and Highland Street",
+   "motion": "Approve the stop sign and yield sign proposal for Main Street, Oak Avenue and Highland Street as presented by the Police Chief and DPW Director.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the stop sign/ yield sign proposal for main street, oak avenue and highland street as presented by the police chief and dpw director vote: all in favor"
+   "quote": "to approve the stop sign/ yield sign proposal for main street, oak avenue and highland street as presented by the police chief and dpw director"
   },
   {
-   "motion": "approve installation of a stop sign at the intersection of Flat Hill Road and Sunset Lane",
+   "motion": "Approve installation of a stop sign at the intersection of Flat Hill Road and Sunset Lane as presented by the Police Chief and DPW Director.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve installation of a stop sign at the intersection of flat hill road and sunset lane as presented by the police chief and dpw director vote: all in favor"
+   "quote": "to approve installation of a stop sign at the intersection of flat hill road and sunset lane as presented by the police chief and dpw director"
   },
   {
-   "motion": "authorize the transfer of $10,033.44 from Health Insurance to Legal Expenses",
+   "motion": "Authorize the transfer of $10,033.44 from Health Insurance to Legal Expenses.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to authorize the transfer of $10,033.44 from health insurance to legal expenses vote: all in favor"
+   "quote": "to authorize the transfer of $10,033.44 from health insurance to legal expenses"
   },
   {
-   "motion": "appoint Ronald Wilson as Dam Keeper, Richard Petrie as Assistant Dam Keeper, and Kopelman & Paige, P.C. as Legal Counsel",
+   "motion": "Appoint the Dam Keeper (Ronald Wilson), Assistant Dam Keeper (Richard Petrie) and Town Counsel (Kopelman & Paige, P.C.) as presented.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to appoint the dam keeper, assistant dam keeper and town counsel as presented vote: all in favor"
+   "quote": "to appoint the dam keeper, assistant dam keeper and town counsel as presented"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:03 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": true,
-   "quote": "to adjourn the meeting at 10:03 p.m. 2m: j. toale vote: all in favor"
+   "quote": "to adjourn the meeting at 10:03 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision. All votes passed unanimously (All in Favor).",
- "cost_usd": 0.1272545
+ "note": "Text is OCR of a scanned page set with garbled characters and typos (e.g., \"DW Director\" for DPW Director, \"2™:\" for \"2nd:\", \"$383,902,62\" printed with a comma as shown). Quotes were taken from the OCR text as printed. Votes are recorded only as \"All in Favor\" with no counts, so outcome is \"passed\". Vote on warrant/appointments section read from OCR; no vote recorded for the warrant itself. Public comment section includes board member remarks, which were not recorded as public comment. No documents list heading is printed; the memo dated September 15, 2014 is referenced in the text only.",
+ "cost_usd": 0.011589320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Board member",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Public",
+   "status": "present",
+   "quote": "public: carl luck, noting the dam keepers were scheduled to be appointed this evening, wanted to thank the current"
+  },
+  {
+   "name": "Sam Lawton",
+   "role": "Principal Planner, MRC",
+   "status": "present",
+   "quote": "five year plan update on hazard mitigation plan-sam lawton, principal planner, mrc"
+  },
+  {
+   "name": "Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "fire chief sullivan reported the ambulance fees have not been increased in at least four years."
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "ms. speidel reported police chief marino has come tonight with a proposal for this intersection."
+  },
+  {
+   "name": "Rodriguenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "rodriguenz pointed out the road grade also affects the line of sight for vehicles."
+  },
+  {
+   "name": "Mike Sauvageau",
+   "role": "Building Inspector",
+   "status": "present",
+   "quote": "mr. alonzo asked building inspector mike sauvageau who can request a final inspection at the job site?"
+  },
+  {
+   "name": "Heather Scott",
+   "role": "homeowner of 78 Oak Avenue",
+   "status": "present",
+   "quote": "heather scott, homeowner of 78 oak avenue, thanked everyone for taking the time to address this."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Postpone the Housing Authority appointment and the solar farm proposal presentation to the October 7 meeting.",
+   "quote": "the board decided to postpone these items until their october 7 meeting."
+  },
+  {
+   "decision": "Hold a workshop on Selectboard goals.",
+   "quote": "it was decided to hold a workshop for the selectboard goals."
+  },
+  {
+   "decision": "Traffic sign change to be advertised in the local newspaper at least twice before the stop signs are installed.",
+   "quote": "an advertisement announcing the traffic sign change will be placed in the local newspaper at least twice before installing the stop signs."
+  },
+  {
+   "decision": "Town Manager to send an electronic copy of the draft hazard mitigation plan to the Selectboard and other pertinent departments and boards for review.",
+   "quote": "ms. speidel will send an electronic copy of the hazard mitigation plan to them and other pertinent departments and"
+  },
+  {
+   "decision": "Mr. Ebersole requested that Ms. Scott provide copies of the other towns' citations.",
+   "quote": "mr. ebersole requested ms. scott provide copies of the other towns' citations."
+  },
+  {
+   "decision": "Mr. Ebersole requested a draft of the village bylaw from the Planning Board, if available, and any proposed boundaries of the plan.",
+   "quote": "mr. ebersole requested a draft, if available, and any proposed boundaries of the plan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ambulance fee increase revenue",
+   "what_was_recorded": "Fire Chief said fees have not risen in at least four years and an increase could bring in up to $60,000 more revenue; costs of supplies and equipment have risen.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "if fees are increased the town could see an increase of revenue up to $60,000."
+  },
+  {
+   "topic": "Chapter 44 §33B transfer, Health Insurance to Legal Expenses",
+   "what_was_recorded": "Transfer request to move funds from Health Insurance to Legal Expenses, presented to and approved by the Finance Committee.",
+   "figures_as_printed": [
+    "$10,033.44"
+   ],
+   "quote": "the transfer request is to move $10,033.44 from health insurance to legal expenses."
+  },
+  {
+   "topic": "Warrant",
+   "what_was_recorded": "A payment warrant was presented to the Board.",
+   "figures_as_printed": [
+    "$240,031.05"
+   ],
+   "quote": "warrant: a warrant in the amount of $240,031.05 was presented"
+  },
+  {
+   "topic": "FY2014 total expenditures",
+   "what_was_recorded": "Total expenditures ended lower than anticipated, with a remainder reported.",
+   "figures_as_printed": [
+    "$176,429.96",
+    ".5398%"
+   ],
+   "quote": "were lower than anticipated with $176,429.96 or .5398% remaining."
+  },
+  {
+   "topic": "FY2014 total revenue",
+   "what_was_recorded": "Total revenue collected exceeded the budgeted amount.",
+   "figures_as_printed": [
+    "$32,887,387.51",
+    "$207,472.66",
+    "1.13%"
+   ],
+   "quote": "$32,887,387.51 or $207,472.66 above budgeted, or 1.13% more than estimated."
+  },
+  {
+   "topic": "FY2014 surplus",
+   "what_was_recorded": "A surplus was determined at close-out of fiscal year 2014.",
+   "figures_as_printed": [
+    "$383,902,62"
+   ],
+   "quote": "closing out fiscal year 2014, it was determined there was a surplus of $383,902,62."
+  },
+  {
+   "topic": "Fines & Forfeits revenue",
+   "what_was_recorded": "Collections exceeded the original estimate, mainly from court fines for motor vehicle violations.",
+   "figures_as_printed": [
+    "$28,000",
+    "$48,537.50",
+    "73.35%"
+   ],
+   "quote": "the original estimate was $28,000 and actual collections were $48,537.50 or 73.35% higher."
+  },
+  {
+   "topic": "Local Options Meal Tax revenue",
+   "what_was_recorded": "Collections exceeded the estimate; the state reimburses the town and provides no backup, and more research is needed on whether the amount is correct.",
+   "figures_as_printed": [
+    "$66,625",
+    "$84,863.19",
+    "27.37%"
+   ],
+   "quote": "the original estimate was $66,625. actual collections were $84,863.19 or 27.37% higher."
+  },
+  {
+   "topic": "Tax liens redeemed",
+   "what_was_recorded": "Nothing was anticipated, but tax title payment for 163/171 Lancaster Avenue was received.",
+   "figures_as_printed": [
+    "$151,544.72"
+   ],
+   "quote": "nothing was anticipated but $151,544.72 was received."
+  },
+  {
+   "topic": "Motor vehicle excise taxes",
+   "what_was_recorded": "Collections exceeded the estimate, including a late final commitment for fiscal year 2013.",
+   "figures_as_printed": [
+    "$134,565.04"
+   ],
+   "quote": "collections were $134,565.04 higher than estimated"
+  },
+  {
+   "topic": "Penalties and interest",
+   "what_was_recorded": "Collections exceeded the estimate, largely due to the payoff of 163/171 Lancaster Avenue.",
+   "figures_as_printed": [
+    "$24,203.10"
+   ],
+   "quote": "actual collections were $24,203.10 higher than estimated."
+  },
+  {
+   "topic": "Free Cash",
+   "what_was_recorded": "Free Cash is anticipated to be certified at the amount printed, as of June 30, 2014, per the Town Accountant's estimate.",
+   "figures_as_printed": [
+    "$483,320"
+   ],
+   "quote": "it is anticipated free cash will be certified at $483,320 as of june 30, 2014."
+  },
+  {
+   "topic": "Budget adjustments for over-expenditures",
+   "what_was_recorded": "Budget adjustments at the 2014 Annual Town Meeting covered over-expenditures in Legal, Veterans Benefits, Monty Tech Assessment and Snow Removal; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "some over-expenditures such as legal, veterans benefits, monty tech assessment and snow removal."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Health Insurance to Legal Expenses under Chapter 44, §33B, recommended after Finance Committee approval.",
+   "amount_as_printed": "$10,033.44",
+   "outcome": "authorized (passed, All in Favor)",
+   "quote": "to authorize the transfer of $10,033.44 from health insurance to legal expenses"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "Public",
+   "topic": "dam keeper reappointment and recordkeeping",
+   "quote": "public: carl luck, noting the dam keepers were scheduled to be appointed this evening, wanted to thank the current dam keepers for the past year's work and recommend them for reappointment."
+  },
+  {
+   "speaker": "Heather Scott",
+   "stated_role": "homeowner of 78 Oak Avenue",
+   "topic": "building permit and inspections at 78 Oak Avenue",
+   "quote": "heather scott, homeowner of 78 oak avenue, thanked everyone for taking the time to address this."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "public comment",
+    "pipeline",
+    "dam keepers"
+   ],
+   "quote": "mr. alonzo announced the housing authority appointment for 7:00 p.m. is being rescheduled due to lack of quorum."
+  },
+  {
+   "topic": "Five Year Plan Update on Hazard Mitigation Plan (Sam Lawton, MRC)",
+   "resolution": "presented; draft to be reviewed by Selectboard and departments",
+   "tags": [
+    "hazard mitigation",
+    "FEMA",
+    "planning"
+   ],
+   "quote": "mr. lawton presented a brief history of the hazard mitigation plan, noting the mrpc received funding from"
+  },
+  {
+   "topic": "Request to Increase Ambulance Fees",
+   "resolution": "approved, effective October 1, 2014",
+   "tags": [
+    "ambulance fees",
+    "fire department",
+    "revenue"
+   ],
+   "quote": "to approve the proposed rate increase effective october 1, 2014, and request a report of the fiscal year 2014 runs"
+  },
+  {
+   "topic": "Main, Highland and Oak intersections (stop and yield signs)",
+   "resolution": "approved",
+   "tags": [
+    "traffic",
+    "signs",
+    "pedestrian safety"
+   ],
+   "quote": "to approve the stop sign/ yield sign proposal for main street, oak avenue and highland street as presented by the police chief and dpw director"
+  },
+  {
+   "topic": "Flat Hill Road and Sunset Lane stop sign",
+   "resolution": "approved",
+   "tags": [
+    "traffic",
+    "signs",
+    "intersection safety"
+   ],
+   "quote": "to approve installation of a stop sign at the intersection of flat hill road and sunset lane as presented by the police chief and dpw director"
+  },
+  {
+   "topic": "Building permit issue at 78 Oak Avenue",
+   "resolution": "no action; update only",
+   "tags": [
+    "building permit",
+    "building inspection",
+    "contractor",
+    "code enforcement"
+   ],
+   "quote": "ms. speidel reported this was first presented at the august 26 meeting."
+  },
+  {
+   "topic": "Request for Transfer under Chapter 44, §33B (FY2014 close-out)",
+   "resolution": "approved transfer of $10,033.44",
+   "tags": [
+    "transfer",
+    "budget",
+    "FY2014 close-out",
+    "finance"
+   ],
+   "quote": "ms. speidel directed the selectboard to her memo dated september 15, 2014."
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "dam keeper",
+    "legal counsel"
+   ],
+   "quote": "to appoint the dam keeper, assistant dam keeper and town counsel as presented"
+  },
+  {
+   "topic": "Warrant",
+   "resolution": "presented",
+   "tags": [
+    "warrant",
+    "payments"
+   ],
+   "quote": "warrant: a warrant in the amount of $240,031.05 was presented"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports given",
+   "tags": [
+    "committees",
+    "Board of Health",
+    "Building Reuse",
+    "Planning Board",
+    "School Committee",
+    "Sewer Commission"
+   ],
+   "quote": "board of health- mr. ebersole reported the board met on monday; standard operations."
+  },
+  {
+   "topic": "Postponements and Selectboard goals workshop",
+   "resolution": "postponed to October 7; workshop to be held",
+   "tags": [
+    "scheduling",
+    "Selectboard goals"
+   ],
+   "quote": "the board decided to postpone these items until their october 7 meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:03 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn the meeting at 10:03 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo dated September 15, 2014 (Town Manager, Chapter 44 §33B transfer)",
+   "where": "text",
+   "quote": "ms. speidel directed the selectboard to her memo dated september 15, 2014."
+  },
+  {
+   "name": "Free Cash Estimate prepared by the Town Accountant",
+   "where": "text",
+   "quote": "ms. speidel also presented a copy of the free cash estimate prepared by the town accountant."
+  },
+  {
+   "name": "Draft Hazard Mitigation Plan",
+   "where": "text",
+   "quote": "mr. lawton asked the selectboard to provide comments and feedback of the draft back to him within two weeks."
+  },
+  {
+   "name": "Order of Conditions for water level drawdown",
+   "where": "text",
+   "quote": "he asked the town to ensure the order of conditions for water level drawdown is adhered to."
+  },
+  {
+   "name": "Chart of revenues and expenditures, fiscal years 2010-2013 (presented by Fire Chief Sullivan)",
+   "where": "text",
+   "quote": "he presented a chart of revenues and expenditures from fiscal years 2010, 2011, 2012 and 2013"
+  },
+  {
+   "name": "Building permit for siding project at 78 Oak Avenue",
+   "where": "text",
+   "quote": "informed the board that they had pulled a building permit for a siding project on their home"
+  },
+  {
+   "name": "Building Inspector's letter to the contractor identifying deficiencies",
+   "where": "text",
+   "quote": "the building inspector visited the site and wrote a letter to the contractor identifying some deficiencies."
+  },
+  {
+   "name": "Building Inspector's letter to the BBRS in support of the homeowner",
+   "where": "text",
+   "quote": "mr. sauvageau reported he also sent a letter to the bbrs detailing the violations and in support of the homeowner."
+  },
+  {
+   "name": "Warrant in the amount of $240,031.05",
+   "where": "text",
+   "quote": "warrant: a warrant in the amount of $240,031.05 was presented"
+  }
+ ],
+ "tags": [
+  "selectboard",
+  "ambulance fees",
+  "traffic signs",
+  "stop signs",
+  "building permit",
+  "building inspection",
+  "transfer",
+  "FY2014 close-out",
+  "revenue",
+  "appointments",
+  "dam keepers",
+  "hazard mitigation",
+  "pipeline",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

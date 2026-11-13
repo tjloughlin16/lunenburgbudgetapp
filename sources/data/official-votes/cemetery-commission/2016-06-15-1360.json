@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2016-06-15",
  "docid": "1360",
@@ -12,63 +12,327 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from May 25, 2016",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "accepted",
-   "procedural": true,
-   "quote": "minutes from may 25, 2016 were read and accepted."
-  },
-  {
-   "motion": "Place the sum of $35,000.00 onto a warrant article for the special town meeting",
-   "moved_by": "Commissioner Schaff",
-   "seconded_by": "Commissioner Mendoza",
-   "outcome": "passed unanimously",
+   "motion": "Place the sum of $35,000.00 onto a warrant article for the Special Town Meeting.",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lorraine Mendoza",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "commissioner schaff made a motion to place the sum of $35,000.00 onto a warrant artice for the special town meeting. commissioner mendoza seconded the motion and wih no further discussion, the motion passed unanimously."
+   "quote": "commissioner schaff made a motion to place the sum of $35,000.00 onto a warrant artice for the special town meeting. commissioner mendoza seconded the motion"
   },
   {
-   "motion": "Withdraw the bid for road work from Powell Construction for $1,650.00",
-   "moved_by": "Commissioner Schaff",
-   "seconded_by": "Commissioner Mendoza",
-   "outcome": "passed unanimously",
+   "motion": "Withdraw the bid for road work from Powell Construction for $1,650.00 (passed unanimously).",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lorraine Mendoza",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "commissioner schaff made a motion to withdraw the bid for road work from powell construction for $1,650.00. commissioner mendoza 2nded the motion and upon no further discussion, the vote to withdraw the bid was unanimous."
+   "quote": "commissioner schaff made a motion to withdraw the bid for road work from powell construction for $1,650.00. commissioner mendoza 2nded the motion"
   },
   {
-   "motion": "Withdraw the bid of $4,800.00 from M+M Tree Service",
-   "moved_by": "Commissioner Schaff",
-   "seconded_by": "Commissioner Mendoza",
-   "outcome": "passed unanimously",
+   "motion": "Withdraw the bid of $4,800.00 from M+M Tree Service (unanimous).",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lorraine Mendoza",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "commissioner schaff making a motion to withdraw the bid of $4,800.00 from m+m tree service. commissioner mendoza seconded and after no further discussion, a unanimous vote to withdraw the bid was completed."
+   "quote": "commissioner schaff making a motion to withdraw the bid of $4,800.00 from m+m tree service. commissioner mendoza seconded and after no further discussion"
   },
   {
-   "motion": "Withdraw the bid from Affordable Tree Service in the amount of $1,650.00",
-   "moved_by": "Commissioner Mendoza",
-   "seconded_by": "Commissioner Schaff",
-   "outcome": "passed unanimously",
+   "motion": "Withdraw the bid from Affordable Tree Service in the amount of $1,650.00 (passed unanimously).",
+   "moved_by": "Lorraine Mendoza",
+   "seconded_by": "Steve Schaff",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "commissioner mendoza made a motion to withdraw the did from affordable tree service in the amount of $1,650.00 and seconded by commissioner schaff. with no further discussion, the vote passed unanimously"
+   "quote": "commissioner mendoza made a motion to withdraw the did from affordable tree service in the amount of $1,650.00 and seconded by commissioner schaff."
   },
   {
-   "motion": "Withdraw the bid of $15,890.00 from T Bennet Tree Service",
-   "moved_by": "Commissioner Schaff",
-   "seconded_by": "Commissioner Mendoza",
-   "outcome": "passed unanimously",
+   "motion": "Withdraw the bid of $15,890.00 from T Bennet Tree Service (passed unanimously).",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lorraine Mendoza",
+   "outcome": "passed",
    "procedural": false,
    "quote": "commissioner schaff moved to withdraw the bid of $15,890.00 from t bennet tree service. commissioner mendoza seconded and with no further discussion the vote passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Commissioner Schaff",
-   "seconded_by": "Commissioner Mendoza",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lorraine Mendoza",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made by commissioner schaff to adjourn and seconded by commissioner mendoza and with no further discussion the vote was unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; all seven votes legible and recorded with outcomes.",
- "cost_usd": 0.11272449999999999
+ "note": "OCR text with heavy noise: several names and words are garbled (e.g., 'Mendosa', 'DID' for bid, 'ARTICE', 'TOATLING'); quotes were copied as printed. The '$ 9,000.00 LESS' figure is ambiguous and is recorded as printed. The clerk's closing line and the final line about approval at a July 7, 2016 meeting are illegible, so the approval status of these minutes is unclear. The May 25 minutes acceptance has no mover or vote recorded and is listed as a decision, not a vote. Karen Brouchu's attendance status is not stated in the minutes. Vote results are printed as unanimous without a numeric count, recorded as 'passed'. No public comment speakers are recorded. The 'documents_list' entry rests on a sentence naming the balance sheet reviewed by the commission, which has no formal list heading.",
+ "cost_usd": 0.01373682,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt and guest historian, richard mcgrath."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Commissioner; signed as Clerk",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt and guest historian, richard mcgrath."
+  },
+  {
+   "name": "Steve Schaff",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt and guest historian, richard mcgrath."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Supt (Supt of Cemeteries)",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt and guest historian, richard mcgrath."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Guest Historian",
+   "status": "present",
+   "quote": "guest historian, richard mcgrath."
+  },
+  {
+   "name": "Karen Brouchu",
+   "role": "Town Accountant",
+   "status": "not stated",
+   "quote": "had spoken to the town accountant, karen brouchu to get up-to date figures."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes from May 25, 2016 were read and accepted (no motion or vote recorded).",
+   "quote": "minutes from may 25, 2016 were read and accepted."
+  },
+  {
+   "decision": "The commission agreed to ask each of the three niche wall vendors to attend a meeting.",
+   "quote": "the commission agreed to ask each of the vendors to attend a meeting."
+  },
+  {
+   "decision": "Discussion of rules and regulations was tabled until a later date.",
+   "quote": "were tabled until a later date."
+  },
+  {
+   "decision": "The commission placed a freeze in spending against both of its accounts.",
+   "quote": "placed a freeze in spending against their accounts"
+  },
+  {
+   "decision": "Commissioner Schaff was to meet with Karen (Brouchu, Town Accountant) and work out a warrant article for the next Special Town Meeting.",
+   "quote": "commissioner schaff was to meet with karen and work out a warrant aricle"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tomb restoration estimated cost (North Street Cemetery)",
+   "what_was_recorded": "Historian McGrath estimated the total cost of the tomb restoration at $6,000.00, to be paid through grants and donations; the minutes also print a '$ 9,000.00 LESS' figure tied to using an EPDM roof, which is unclear.",
+   "figures_as_printed": [
+    "$6,000.00",
+    "$ 9,000.00"
+   ],
+   "quote": "the total estimated cost to be $6,000.00. $ 9,000.00 less because"
+  },
+  {
+   "topic": "Historical Commission appropriation for tomb project",
+   "what_was_recorded": "McGrath stated the Lunenburg Historical Commission voted to appropriate $500.00 toward the project.",
+   "figures_as_printed": [
+    "$500.00"
+   ],
+   "quote": "the lunenburg historical commission voted to appropriate $500.00 towards the project."
+  },
+  {
+   "topic": "Tomb project donated labor and fundraising",
+   "what_was_recorded": "McGrath stated his labor would be donated and the $6,000.00 would be raised by donations.",
+   "figures_as_printed": [
+    "$6,000.00"
+   ],
+   "quote": "his labor will be donated and the $6,000.00 will be raised by donations."
+  },
+  {
+   "topic": "Niche wall purchase costs",
+   "what_was_recorded": "Commissioner Schaff reported that at Forest Hill Cemetery in Fitchburg all niche purchase costs were the same, as were the niche sizes, and said the cost policy needed further review; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "all costs to purchase were the same -as were the sizes of each niche"
+  },
+  {
+   "topic": "Overspent cemetery accounts",
+   "what_was_recorded": "Chair May said both accounts the cemetery uses were overspent and the commission reviewed a current balance sheet for the Cemetery Trust and Capital Project accounts; no figures printed in the text.",
+   "figures_as_printed": [],
+   "quote": "both accounts the cemetery uses were over-spent"
+  },
+  {
+   "topic": "FY 2016 bills to be paid",
+   "what_was_recorded": "The bottom line was that FY 2016 bills needing payment totalled $8,794.08, which must be included in any warrant article amount.",
+   "figures_as_printed": [
+    "$8,794.08"
+   ],
+   "quote": "an amount of fy 2016 bills that needed to be paid toatling $8,794.08."
+  },
+  {
+   "topic": "Perpetual care account interest",
+   "what_was_recorded": "Town Accountant Karen Brouchu was working on the perpetual care account to determine the interest available for use on a yearly basis; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "karen was working on the perpetual care account to determine the amount of interest available"
+  },
+  {
+   "topic": "Warrant article transfer amount",
+   "what_was_recorded": "The commission decided a figure of $35,000.00 should be placed on the Special Town Meeting warrant article to transfer funds from available cemetery funds.",
+   "figures_as_printed": [
+    "$35,000.00"
+   ],
+   "quote": "it was decided a figure of $35,000.00 should do it."
+  },
+  {
+   "topic": "Withdrawn bid: road work, Powell Construction",
+   "what_was_recorded": "Bid for road work from Powell Construction withdrawn because of overruns within each budget.",
+   "figures_as_printed": [
+    "$1,650.00"
+   ],
+   "quote": "commissioner schaff made a motion to withdraw the bid for road work from powell construction for $1,650.00."
+  },
+  {
+   "topic": "Withdrawn bid: tree work, M+M Tree Service",
+   "what_was_recorded": "Tree work bid from M+M Tree Service withdrawn due to budget overruns.",
+   "figures_as_printed": [
+    "$4,800.00"
+   ],
+   "quote": "commissioner schaff making a motion to withdraw the bid of $4,800.00 from m+m tree service."
+  },
+  {
+   "topic": "Withdrawn bid: tree work, Affordable Tree Service",
+   "what_was_recorded": "Tree work bid from Affordable Tree Service withdrawn due to budget overruns.",
+   "figures_as_printed": [
+    "$1,650.00"
+   ],
+   "quote": "commissioner mendoza made a motion to withdraw the did from affordable tree service in the amount of $1,650.00"
+  },
+  {
+   "topic": "Withdrawn bid: tree work, T Bennet Tree Service",
+   "what_was_recorded": "Bid of $15,890.00 from T Bennet Tree Service withdrawn due to budget overruns.",
+   "figures_as_printed": [
+    "$15,890.00"
+   ],
+   "quote": "commissioner schaff moved to withdraw the bid of $15,890.00 from t bennet tree service."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Warrant article to request a transfer from the Sale of Lots Account into an operating account, to be placed before the next Special Town Meeting; funds drawn from available cemetery funds, not taxation or borrowing.",
+   "amount_as_printed": "$35,000.00",
+   "outcome": "Motion to place $35,000.00 on the warrant article passed unanimously; transfer still requires the Special Town Meeting.",
+   "quote": "commissioner schaff made a motion to place the sum of $35,000.00 onto a warrant artice for the special town meeting."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of May 25, 2016",
+   "resolution": "read and accepted",
+   "quote": "minutes from may 25, 2016 were read and accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Historian Richard McGrath: North Street Cemetery tomb restoration proposal",
+   "resolution": "discussed; no vote recorded",
+   "quote": "who appeared before the commission to further discuss his proposal to restore the north street cemetery tomb.",
+   "tags": [
+    "tomb restoration",
+    "historic preservation",
+    "North Street Cemetery"
+   ]
+  },
+  {
+   "topic": "Niche wall guidelines and vendors",
+   "resolution": "vendors to be invited to a meeting",
+   "quote": "chr may suggested that the commissioners invite the three niche wall vendors to a meeting",
+   "tags": [
+    "niche wall",
+    "vendors",
+    "pricing policy"
+   ]
+  },
+  {
+   "topic": "Rules and regulations",
+   "resolution": "tabled until a later date",
+   "quote": "were tabled until a later date.",
+   "tags": [
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "Spending freeze on cemetery accounts",
+   "resolution": "freeze placed; Superintendent informed",
+   "quote": "placed a freeze in spending against their accounts",
+   "tags": [
+    "spending freeze",
+    "budget"
+   ]
+  },
+  {
+   "topic": "New business: overspent accounts, FY 2016 bills and warrant article",
+   "resolution": "warrant article amount of $35,000.00 approved by motion",
+   "quote": "both accounts the cemetery uses were over-spent",
+   "tags": [
+    "budget overrun",
+    "warrant article",
+    "special town meeting",
+    "perpetual care",
+    "sale of lots"
+   ]
+  },
+  {
+   "topic": "Withdrawal of bids (road and tree work)",
+   "resolution": "four bids withdrawn",
+   "quote": "commissioner schaff made a motion to withdraw the bid for road work from powell construction for $1,650.00.",
+   "tags": [
+    "bids",
+    "withdrawn",
+    "tree work",
+    "road work"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45 PM",
+   "quote": "time of adjournment was 8:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Current balance sheet from both the Cemetery Trust and Capital Project accounts (as of June 15)",
+   "where": "text",
+   "quote": "the commission reviewed a current balance sheet from both the cemetery trust and capital project accounts"
+  },
+  {
+   "name": "Bids solicited by Richard McGrath for the roof work",
+   "where": "text",
+   "quote": "provided bids he had solicited for the roof work."
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "tomb restoration",
+  "niche wall",
+  "budget overrun",
+  "warrant article",
+  "special town meeting",
+  "bid withdrawal",
+  "spending freeze",
+  "perpetual care",
+  "sale of lots account",
+  "FY 2016 bills"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the commission reviewed a current balance sheet"
+ },
+ "dropped_unquoted_by_field": {}
 }

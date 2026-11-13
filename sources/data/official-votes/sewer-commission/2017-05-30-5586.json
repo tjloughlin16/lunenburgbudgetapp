@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-05-30",
  "docid": "5586",
@@ -12,23 +12,146 @@
  },
  "votes": [
   {
-   "motion": "To enter Executive Session to discuss enforcement of the Allocation Agreement with JEG Holdings",
+   "motion": "Enter executive session for litigation strategy regarding enforcement of the Allocation Agreement between the sewer commission and JEG Holdings, returning to regular session afterward.",
    "moved_by": "",
-   "seconded_by": "John",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "john seconded the motion. vote to go into executive session by roll call vote, john, aye, troy, aye, carl aye."
+   "quote": "john seconded the motion. vote to go into executive session by roll call vote, john, aye, troy, aye, carl aye.",
+   "seconded_by": "John"
   },
   {
-   "motion": "To adjourn Executive Session",
+   "motion": "Adjourn executive session and go to the regular open meeting.",
    "moved_by": "John",
-   "seconded_by": "Troy",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "john made the motion, troy seconded. vote to adjourn by roll call: john, aye, troy, aye, carl aye."
+   "quote": "john made the motion, troy seconded. vote to adjourn by roll call: john, aye, troy, aye, carl aye.",
+   "seconded_by": "Troy"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd scan with apparent corruption at opening; mover of first motion not clearly stated in readable text.",
- "cost_usd": 0.1189725
+ "note": "The text is OCR of a scan. The opening motion is truncated (the statute reference is garbled: \"G.L. C. SUAS < <|(a/(3)\"), so the mover is not visible. Outcomes are read from the roll-call tallies, which show three ayes but no printed count. The minutes print no meeting date, and the date 2017-05-30 comes from the request. Barb's surname appears as \"Letebvre\" in the minutes. No public comment section is printed. The minutes do not record a dollar figure for the 29,040gpd capacity, so it is listed only in a budget note.",
+ "cost_usd": 0.0036018200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John",
+   "status": "present",
+   "quote": "john seconded the motion. vote to go into executive session by roll call vote, john, aye, troy, aye, carl aye."
+  },
+  {
+   "name": "Troy",
+   "status": "present",
+   "quote": "troy questioned if the agreement is recorded"
+  },
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl asked for a motion to adjourn executive session and go to the regular open meeting."
+  },
+  {
+   "name": "Jeff",
+   "status": "not stated",
+   "quote": "jeff first reviewed his recollection of events."
+  },
+  {
+   "name": "Bob",
+   "status": "not stated",
+   "quote": "bob noted that there are no late charges or penalties noted on the allocation agreement"
+  },
+  {
+   "name": "Barb Letebvre",
+   "role": "Business Manager for the Sewer Commission",
+   "status": "not stated",
+   "quote": "barb letebvre, business manager for the sewer commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jeff will call the Highfield/JEG counsel to find out their position and advise them there is no guarantee of connection without the Allocation agreement and payment for capacity; the report back is to be made in Executive Session.",
+   "quote": "jeff confirmed that all agreed on the plan to make the call to counsel and that the report back should be done in"
+  },
+  {
+   "decision": "After discussion, it was determined that moving forward on the capacity matter is worth pursuing.",
+   "quote": "jeff asked about moving forward and it was determined that it is worth pursuing."
+  },
+  {
+   "decision": "Jeff to write a letter to the other side's counsel about the property value and their inability to sell it as an ability to connect to sewer.",
+   "quote": "jeff proposed writing a letter to their counsel about the property value and they would be unable to sell it as ability"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Incremental cost added to the Allocation Agreement",
+   "what_was_recorded": "Attendees discussed the estimate and the incremental amount added to the agreement, and that access to sewer raises property value by more than that amount.",
+   "figures_as_printed": [
+    "$57k",
+    "$57,000"
+   ],
+   "quote": "attendees discussed the estimate and the incremental $57k added to the agreement."
+  },
+  {
+   "topic": "Highfield's claimed actual cost of capacity",
+   "what_was_recorded": "Highfield contends the calculation was wrong and that the actual cost was zero; the minutes also note the Fitchburg capacity figure was increased for Highfield Village, so the Town will incur a cost once the John Fitch Highway figure is known.",
+   "figures_as_printed": [
+    "0",
+    "29,040gpd"
+   ],
+   "quote": "highfield's contention is that the calculation was wrong, the actual cost was 0"
+  },
+  {
+   "topic": "Late charges and penalties on the Allocation agreement",
+   "what_was_recorded": "Bob noted there are no late charges or penalties on the Allocation agreement, so the other side may hold on until they sell; Carl suggested a reasonable compromise of paying the allocation over 20 years.",
+   "figures_as_printed": [
+    "20 years"
+   ],
+   "quote": "bob noted that there are no late charges or penalties noted on the allocation agreement"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Allocation Agreement enforcement (JEG Holdings / Highfield Village)",
+   "resolution": "discussed in executive session; agreed to call opposing counsel and report back in executive session",
+   "quote": "jeff confirmed that all agreed on the plan to make the call to counsel and that the report back should be done in",
+   "tags": [
+    "executive session",
+    "litigation",
+    "allocation agreement",
+    "sewer capacity"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Allocation Agreement (between the Sewer Commission and JEG Holdings)",
+   "where": "text",
+   "quote": "pursuant to paragraph 4 of the allocation agreement, we"
+  },
+  {
+   "name": "December 2016 letter (Sewer Commission letter)",
+   "where": "text",
+   "quote": "we sent our letter in december 2016"
+  },
+  {
+   "name": "Fitchburg IMA",
+   "where": "text",
+   "quote": "review the fitchburg ima history"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "allocation agreement",
+  "JEG Holdings",
+  "Highfield Village",
+  "Fitchburg IMA",
+  "sewer capacity"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

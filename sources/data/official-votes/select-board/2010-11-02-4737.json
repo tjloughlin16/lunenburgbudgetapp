@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-11-02",
  "docid": "4737",
@@ -12,56 +12,495 @@
  },
  "votes": [
   {
-   "motion": "Continue the CDBG public hearing to December 7th to finalize documents",
+   "motion": "Continue the CDBG public hearing to December 7 to finalize the documents.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the board voted unanimously to continue the public hearing to december 7ih to finalize the documents",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board voted unanimously to continue the public hearing to december 7ih to finalize the documents."
   },
   {
-   "motion": "Approve the Salvation Army's request to conduct a boot drive on November 27th from 9:00 am to 3:00 pm",
+   "motion": "Approve the Salvation Army request for a voluntary boot drive (road block) on November 27 from 9:00 am to 3:00 pm.",
    "moved_by": "Tom",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "tom motion to approve, steve seconded, voted unanimously"
+   "quote": "tom motion to approve, steve seconded, voted unanimously."
   },
   {
-   "motion": "Approve the contract with Colonial Power Group for Municipal Aggregation consulting",
+   "motion": "Approve the contract with Colonial Power Group as municipal aggregation consultant.",
    "moved_by": "Tom",
    "seconded_by": "Ernie",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "tom move to approve the contract with colonial power, ernie seconded, voted unanimously"
+   "quote": "tom move to approve the contract with colonial power, ernie seconded, voted unanimously."
   },
   {
-   "motion": "Approve a 3% wage increase for the Town Accountant",
+   "motion": "Approve a 3% wage reopener increase for the Town Accountant for this year.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "board of selectmen voted unanimously to approve a 3% increase for this year as she has did not receive an the previous year"
+   "quote": "board of selectmen voted unanimously to approve a 3% increase for this year as she has"
   },
   {
-   "motion": "Remove the special legislation article from the warrant and have it available for spring town meeting",
+   "motion": "Remove the health insurance special legislation article (Article HI) from the Special Town Meeting warrant and hold it for the spring town meeting.",
    "moved_by": "Dave",
    "seconded_by": "Tom",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "dave recommend that we do not put on this warrant and get the information that was requested, tom seconded so long as we have the opportunity to get information from our employees, town counsel and the legislature. board voted unanimously to remove and have available for the spring town meeting"
+   "quote": "dave recommend that we do not put on this warrant and get the information that was requested, tom seconded"
   },
   {
-   "motion": "Adjourn Regular Session and enter Executive Session",
+   "motion": "Adjourn the Regular Session at 8:56 P.M.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:56 p.m."
+  },
+  {
+   "motion": "Enter Executive Session under M.G.L. Chapter 39, §23B(3) for collective bargaining and litigation strategy and non-union negotiations, not returning to Regular Session.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 8:56 p.m. and opened executive session by roll call vote, steve aye, tom aye, paula aye, ernie aye and dave aye"
+   "quote": "opened executive session by roll call vote, steve aye, tom aye, paula aye, ernie aye and dave aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Meeting date header shows 11/9/10, but meeting minutes state it was held 11/2/10 (as per OCR header). Pages 7-8 contain unrelated dental insurance plan information and were excluded. Document is OCR'd macOS Vision scan.",
- "cost_usd": 0.10712350000000001
+ "note": "OCR text from a scanned, multi-page document with many recognition errors (e.g., \"7ih\", \"16%\", \"805\" for BOS, \"MRF'C\"); quotes are copied as printed. Header reads 11/9/10 while the meeting date supplied is 2010-11-02 and the minutes refer to Tuesday, November 2, 2010. Town Manager terms conflict: \"3 years @ 2% increase\" versus \"2.2% salary increase per year.\" Several names appear only in passing (e.g., \"Doreen\", \"Mr. DiNapoli\") and their attendance is not stated. Names from the Chairs meeting report (George Emond, Toby Bakaysa, etc.) were not recorded as attendees of this meeting. Dave's public comment statement appears under the Public Comment heading but he is a board member. The minutes record approval of minutes and warrants as \"reviewed and signed\" without a recorded vote. The Altus Dental flyer pages at the end are attached material, not discussed in the text.",
+ "cost_usd": 0.013878820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Selectman (as referred to as Steve in the minutes)",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Shelly Hatch",
+   "role": "from MRPC",
+   "status": "present",
+   "quote": "shelly hatch from mrpc was present and informed the board of the community development block grant (cdbg) fy11 application"
+  },
+  {
+   "name": "Captain Mark Hager",
+   "role": "Salvation Army Corps Commanding Officer",
+   "status": "present",
+   "quote": "captain mark hager, salvation army corps commanding officer was present with dave macdonald of 155 island road, also a member of the salvation army advisory committee."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "also a member of the Salvation Army Advisory Committee",
+   "status": "present",
+   "quote": "captain mark hager, salvation army corps commanding officer was present with dave macdonald of 155 island road, also a member of the salvation army advisory committee."
+  },
+  {
+   "name": "Mark Cappadona",
+   "role": "from Colonial Power Group (CPG)",
+   "status": "present",
+   "quote": "mark cappadona was present from colonial power group (cpg)."
+  },
+  {
+   "name": "Mr. DiNapoli",
+   "role": "Municipal and Community Services, Unitil",
+   "status": "not stated",
+   "quote": "ernie would like to question mr. dinapoli municipal and community services from unitil"
+  },
+  {
+   "name": "Doreen",
+   "role": "",
+   "status": "not stated",
+   "quote": "doreen noted that an additional item would be the installation of a stairway"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Lions Club roadblock request (November 13) is to be placed on the next week's agenda.",
+   "quote": "this will be placed on the agenda for next week."
+  },
+  {
+   "decision": "The Board will need to provide a support letter for the CDBG housing rehabilitation application, as will the Board of Health and the Building Inspector.",
+   "quote": "board will need to provide a support letter, as will the board of health, the building inspector"
+  },
+  {
+   "decision": "The Town is to review last year's Community Development Strategy and make necessary changes, for presentation at a late November public hearing.",
+   "quote": "the town needs to review the document and make any necessary changes"
+  },
+  {
+   "decision": "Town Manager tentatively scheduled the Permanent Asset/Capital Committee (PACC) appointment for the November 16 Board of Selectmen meeting.",
+   "quote": "kerry has tentatively scheduled pacc for the november 16% board of selectmen meeting"
+  },
+  {
+   "decision": "The United Parish Memorial Drive parking reconfiguration (Planning Board development plan review) is to be placed on next week's agenda.",
+   "quote": "would like to have this on next weeks agenda."
+  },
+  {
+   "decision": "A copy of the QScend website contract and a list of communities using the vendor are to be provided to the board.",
+   "quote": "copy of the contract will be provided to the board as well as a list of communities that utilize this vendor."
+  },
+  {
+   "decision": "Chair would like to revisit the Charter of the Computer Advisory Committee and have changes ready for the spring town meeting.",
+   "quote": "paula would like to revisit the charter of the computer advisory committee and have changes ready for the spring town meeting"
+  },
+  {
+   "decision": "Minutes of the 9/7/10 and 9/14/10 regular sessions and 9/7/10 executive session were reviewed and signed; warrants were reviewed and signed.",
+   "quote": "minutes - board of selectmen regular session for 9/7/10 & 9/14/10 and executive session for 9/7/10 reviewed and signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CDBG housing rehabilitation assistance",
+   "what_was_recorded": "Health and safety housing repairs are available up to a stated amount with no monthly payments and no interest, with a 15-year lien.",
+   "quote": "which is to address any health and safety issues up to $35,000, with no monthly payments, no interest.",
+   "figures_as_printed": [
+    "$35,000"
+   ]
+  },
+  {
+   "topic": "Municipal aggregation consultant payment",
+   "what_was_recorded": "CPG would be paid through the supplier via a per-kWh charge from participants.",
+   "quote": "tom questioned how cpg would receive payment and per mark it would be through the supplier the .001/per kwh charge",
+   "figures_as_printed": [
+    ".001/per Kwh"
+   ]
+  },
+  {
+   "topic": "Town Manager contract",
+   "what_was_recorded": "Three-year contract with a 2% increase as stated in the opening sentence; the terms list says 2.2% salary increase per year.",
+   "quote": "the board of selectmen has signed a contract with the town manager for 3 years @ 2% increase",
+   "figures_as_printed": [
+    "2%",
+    "2.2%"
+   ]
+  },
+  {
+   "topic": "Town Manager contract performance bonus",
+   "what_was_recorded": "A 1.5% performance bonus is payable if a composite evaluation score of 150 or higher is achieved.",
+   "quote": "1.5% performance bonus if score of 150 or higher is achieved on the composite evaluation",
+   "figures_as_printed": [
+    "1.5%",
+    "150"
+   ]
+  },
+  {
+   "topic": "Town Manager contract sick leave and severance",
+   "what_was_recorded": "Sick leave accumulation cap rises from 60 to 90 days; severance pay rises by one month per year to six months in the final year.",
+   "quote": "increase maximum accumulation of sick leave from 60 to 90 days",
+   "figures_as_printed": [
+    "60",
+    "90",
+    "1 month",
+    "6 months"
+   ]
+  },
+  {
+   "topic": "Town Accountant wage reopener",
+   "what_was_recorded": "A 3% increase for the Town Accountant for this year was approved.",
+   "quote": "board of selectmen voted unanimously to approve a 3% increase for this year as she has",
+   "figures_as_printed": [
+    "3%"
+   ]
+  },
+  {
+   "topic": "Payment warrants",
+   "what_was_recorded": "Three payment warrants were reviewed and signed with the amounts printed.",
+   "quote": "warrants - #9 mb 11, 10/28/10 - $812.50, #24 11, 11/2/10 - $284,098.18 and #23 11, 11/3/10 - $306,719.64 reviewed and signed",
+   "figures_as_printed": [
+    "$812.50",
+    "$284,098.18",
+    "$306,719.64"
+   ]
+  },
+  {
+   "topic": "Compost bins DEP grant",
+   "what_was_recorded": "A DEP grant was awarded to purchase compost bins.",
+   "quote": "awarded a dep grant that we applied for in july to purchase compost bins for $750.",
+   "figures_as_printed": [
+    "$750"
+   ]
+  },
+  {
+   "topic": "Website (QScend) funding",
+   "what_was_recorded": "Website vendor funding from unexpended technology appropriations for first-year installation and maintenance.",
+   "quote": "funding will come from unexpended technology appropriations from fy'07 to fy 09 for $15,000",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Staff and member training funding",
+   "what_was_recorded": "Training is not funded within budgets; members were asked to identify training and associated costs.",
+   "quote": "currently there is not funding within budgets for training.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Health insurance cost management",
+   "what_was_recorded": "Discussion of managing health insurance costs aggressively; no figures recorded.",
+   "quote": "we need to be able to manage this cost fairly but aggressively",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Parking lot project costs",
+   "what_was_recorded": "Chair questioned the estimated costs of the Eagle House/senior center parking lot; the designer is developing updated estimates.",
+   "quote": "paula commented that she is having fundamental issue with the parking lot and the costs associated with this project.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Dental insurance plan (attached flyer) annual maximum",
+   "what_was_recorded": "The attached Altus Dental flyer prints an annual maximum per member.",
+   "quote": "the annual maximum is: $1000 per member per calendar year",
+   "figures_as_printed": [
+    "$1000"
+   ]
+  },
+  {
+   "topic": "Dental insurance plan (attached flyer) monthly premiums",
+   "what_was_recorded": "The attached Altus Dental flyer prints monthly premiums for individual, two-person and family coverage.",
+   "quote": "monthly premium: $36.69 individual $73.37 two person $128.42 family",
+   "figures_as_printed": [
+    "$36.69",
+    "$73.37",
+    "$128.42"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Appreciation for school Homecoming activities",
+   "quote": "dave expressed appreciation to the school for the homecoming activities and everyone involved."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "opened at 7:00 P.M.",
+   "quote": "meeting opened at 7:00 p.m. with the pledge of allegiance",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "dave expressed appreciation to the school for the homecoming activities and everyone involved.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "Lions Club request placed on next week's agenda; Veterans invited to next meeting",
+   "quote": "lions club also has requested that they conduct their roadblock from 9:00 am to 2:00 pm on november 13t.",
+   "tags": [
+    "announcements",
+    "Veterans Day"
+   ]
+  },
+  {
+   "topic": "7:30 PM public hearing on CDBG FY11 grant application",
+   "resolution": "hearing continued to December 7",
+   "quote": "the board voted unanimously to continue the public hearing to december 7ih to finalize the documents.",
+   "tags": [
+    "CDBG",
+    "public hearing",
+    "housing rehabilitation",
+    "parking lot"
+   ]
+  },
+  {
+   "topic": "Request from Salvation Army for voluntary road block",
+   "resolution": "approved",
+   "quote": "captain hager submitted a request holding a boot drive on the corners of.",
+   "tags": [
+    "Salvation Army",
+    "road block"
+   ]
+  },
+  {
+   "topic": "Contract for municipal aggregation consultant",
+   "resolution": "approved",
+   "quote": "we received on one response for someone to serve as a consultant to assist the town in preparing bid documents",
+   "tags": [
+    "municipal aggregation",
+    "Colonial Power Group"
+   ]
+  },
+  {
+   "topic": "Contracts (Town Manager and Town Accountant)",
+   "resolution": "Town Manager contract signed; Town Accountant 3% wage reopener approved",
+   "quote": "the board of selectmen has signed a contract with the town manager for 3 years @ 2% increase",
+   "tags": [
+    "town manager contract",
+    "wage reopener"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 9/7/10 & 9/14/10 and executive session for 9/7/10 reviewed and signed.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action",
+   "quote": "dave - finance committee met last week and discussed articles on the special town meeting warrant",
+   "tags": [
+    "committees",
+    "Chairs meeting",
+    "broadband",
+    "GIS",
+    "website"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "no action",
+   "quote": "department updates - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no action; Computer Advisory Committee and website discussed",
+   "quote": "awarded a dep grant that we applied for in july to purchase compost bins for $750.",
+   "tags": [
+    "website QScend",
+    "computer advisory committee",
+    "DEP grant"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles (health insurance special legislation)",
+   "resolution": "removed from warrant; held for spring town meeting",
+   "quote": "dave recommend that we do not put on this warrant and get the information that was requested, tom seconded",
+   "tags": [
+    "health insurance",
+    "special legislation",
+    "Special Town Meeting warrant"
+   ]
+  },
+  {
+   "topic": "Committee appointments, reappointments and resignations",
+   "resolution": "none",
+   "quote": "committee appointments/reappointments/resignations none",
+   "tags": []
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session; no return to regular session",
+   "quote": "opened executive session by roll call vote, steve aye, tom aye, paula aye, ernie aye and dave aye",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Community Development Strategy (last year's), distributed copies",
+   "where": "list",
+   "quote": "distributed copies of last year's strategy, attached."
+  },
+  {
+   "name": "Altus Dental Benefit Highlights, Plus Plan flyer",
+   "where": "list",
+   "quote": "altus dental insurance company, inc. benefit highlights plus plan"
+  },
+  {
+   "name": "Notice of Public Hearing on CDBG grant (Board of Selectmen)",
+   "where": "text",
+   "quote": "the town of lunenburg board of selectmen will hold a public hearing on tuesday, november 2, 2010 at 7:30 p.m."
+  },
+  {
+   "name": "Target Area street list and map",
+   "where": "text",
+   "quote": "shelly provided a listing of the streets and a map of the target area, which is posted on the website"
+  },
+  {
+   "name": "General Bylaw establishing the Computer Advisory Committee",
+   "where": "text",
+   "quote": "provided a copy of the general bylaw establishing the computer advisory committee"
+  },
+  {
+   "name": "Colonial Power Group proposal",
+   "where": "text",
+   "quote": "paula questioned section 3.4 of the proposal"
+  },
+  {
+   "name": "Special Town Meeting Article HI (health insurance special legislation)",
+   "where": "text",
+   "quote": "article hi move that the town vote to authorize the board of selectmen to petition the general court"
+  },
+  {
+   "name": "Payment warrants #9 mb 11, #24 11, #23 11",
+   "where": "text",
+   "quote": "warrants - #9 mb 11, 10/28/10 - $812.50, #24 11, 11/2/10 - $284,098.18 and #23 11, 11/3/10 - $306,719.64 reviewed and signed"
+  }
+ ],
+ "tags": [
+  "CDBG grant",
+  "public hearing",
+  "Salvation Army",
+  "municipal aggregation",
+  "Colonial Power Group",
+  "town manager contract",
+  "town accountant wage",
+  "minutes and warrants",
+  "committee updates",
+  "website QScend",
+  "computer advisory committee",
+  "health insurance special legislation",
+  "Special Town Meeting warrant",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "distributed copies of last year's strategy, attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

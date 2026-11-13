@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-04-23",
  "docid": "2272",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "recommend approval of Article 9, the FY2015 Budget Adjustment Article",
+   "motion": "Recommend approval of Article 9 (FY2015 Budget Adjustment Article).",
    "moved_by": "Terri",
    "seconded_by": "Karin",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "terri made a motion to recommend approval of article 9. karin seconded the motion and the committee voted 5-0 to approve the motion."
   },
   {
-   "motion": "recommend approval of Article 11, funding the DPW Collective Bargaining Agreement costing $25,588.12",
+   "motion": "Recommend approval of Article 11 (Funding the DPW Collective Bargaining Agreement).",
    "moved_by": "Teri",
    "seconded_by": "Karin",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "teri made a motion to recommend approval of this article. karin seconded the motion and the committee approved the motion 5-0."
   },
   {
-   "motion": "accept the minutes of the March 26 meeting as submitted",
+   "motion": "Accept the minutes of the March 26 meeting as submitted.",
    "moved_by": "Karin",
    "seconded_by": "Jay",
    "outcome": "passed 5-0",
@@ -36,7 +36,7 @@
    "quote": "karin made a motion to accept the minutes of the march 26 meeting as submitted and jay seconded the motion. the get filmion 5-0."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin",
    "seconded_by": "Terri",
    "outcome": "passed 5-0",
@@ -45,6 +45,235 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract from macOS Vision. Vote 3 contains garbled text (\"The get Filmion\") but outcome is clear from context.",
- "cost_usd": 0.0914395
+ "note": "OCR of a scanned minutes page (two pages, clerk stamp May 18 2015). Garbled text: the March 26 minutes vote reads \"The get Filmion 5-0\" and was recorded as 5-0 passed; the outcome is inferred from the garbled count. The Article 9 email is dated \"April 16, 2016\" in a 2015 meeting, probably a typo. Chairman spelled \"Mark Ericson\" in the attendance line and \"Mark Erickson\" in the header; \"Terri\" also appears as \"Teri\". Caroline Griffis is listed under Absent but gives a Library report, so her status is taken from the attendance line. \"Jack\" is named in a discussion without a stated role. No public comment section is printed.",
+ "cost_usd": 0.00682112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "member",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "member",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "member",
+   "status": "absent",
+   "quote": "town hall mark ericson, terri burchfield, karin menard, jay simeone, john henshaw jamie toale--bos liaison, kerry speidel, town manager caroline griffis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john and jack discussed future costs the town risks assuming as a result of"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Articles 12 and 13 will be taken up by the committee on May 2, before the Town Meeting, when more information is available.",
+   "quote": "articles 12 and 13 will be taken up by the committee on may 2, before the town meeting, when more information is available."
+  },
+  {
+   "decision": "Four future agenda items were listed: Budget Goals and Opportunities; Pavement Management Program; review of contract commitments (e.g. sick leave buy-back); and criteria for accepting private roads.",
+   "quote": "future agenda items: a. budget goals and opportunities b. pavement management program c. review contract commitments (e.g. sick leave buy-back.) d. criteria for accepting private roads."
+  },
+  {
+   "decision": "Next meeting set for May 14.",
+   "quote": "8. next meeting: may 14."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 9 FY2015 budget adjustments and Pavement Management Program",
+   "what_was_recorded": "A net $10,000 was added to the Pavement Management Program, bringing net PMP to $208,000, which is $42,000 less than the $250,000 per year goal; Chapter 90 increase noted as added DPW resources.",
+   "quote": "$10,000 has been added to the pavement management program. net pmp is now $208,000, $42,000 less than the goal of $250,000 per year.",
+   "figures_as_printed": [
+    "$10,000",
+    "$208,000",
+    "$42,000",
+    "$250,000"
+   ]
+  },
+  {
+   "topic": "Article 11 DPW Collective Bargaining Agreement funding",
+   "what_was_recorded": "Funding the DPW Collective Bargaining Agreement would cost a stated amount.",
+   "quote": "article 11-funding the dpw collective bargaining agreement would cost $25,588.12.",
+   "figures_as_printed": [
+    "$25,588.12"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications: Association of Town Finance Committees workshops",
+   "resolution": "information only, no action",
+   "quote": "the assn. of town finance comm. (aftc) will host three workshops on budgeting,",
+   "tags": [
+    "workshops",
+    "training"
+   ]
+  },
+  {
+   "topic": "Article 9 FY2015 Budget Adjustment Article",
+   "resolution": "recommended for approval 5-0",
+   "quote": "terri made a motion to recommend approval of article 9. karin seconded the motion and the committee voted 5-0 to approve the motion.",
+   "tags": [
+    "warrant article",
+    "FY2015 budget",
+    "pavement"
+   ]
+  },
+  {
+   "topic": "Article 11 DPW Collective Bargaining Agreement",
+   "resolution": "recommended for approval 5-0",
+   "quote": "article 11-funding the dpw collective bargaining agreement would cost $25,588.12.",
+   "tags": [
+    "warrant article",
+    "DPW",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Articles 12 and 13",
+   "resolution": "deferred to May 2 meeting",
+   "quote": "articles 12 and 13 will be taken up by the committee on may 2, before the town meeting,",
+   "tags": [
+    "warrant article",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager's Report: solar panels",
+   "resolution": "information only, no action",
+   "quote": "the town is working with a consultant on the feasibility of putting solar panels on the roofs of",
+   "tags": [
+    "solar",
+    "Unitil",
+    "feasibility"
+   ]
+  },
+  {
+   "topic": "Minutes of March 26 meeting",
+   "resolution": "approved 5-0",
+   "quote": "karin made a motion to accept the minutes of the march 26 meeting as submitted and jay seconded the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department liaison updates",
+   "resolution": "reports received, no action",
+   "quote": "the committee will meet on tuesday, may 5 to follow up on on-going issues",
+   "tags": [
+    "capital planning",
+    "public works",
+    "private roads",
+    "school building",
+    "sewer",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "four items listed for future agendas",
+   "quote": "future agenda items: a. budget goals and opportunities b. pavement management program",
+   "tags": [
+    "budget goals",
+    "pavement",
+    "contracts",
+    "private roads"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for May 14",
+   "quote": "8. next meeting: may 14.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 9:01 pm",
+   "quote": "karin moved to adjourn the meeting, the motion was seconded by terri and approved",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "April 16, 2016 email from Kerry Speidel, subject Article 9-FY2015 Budget Adjustments",
+   "where": "list",
+   "quote": "for specific details see april 16, 2016 email from kerry speidel, subject article 9-fy2015 budget adjustments"
+  },
+  {
+   "name": "Article 9, The FY2015 Budget Adjustment Article",
+   "where": "text",
+   "quote": "article 9, the fy2015 budget adjustment article: for specific details see april 16, 2016 email"
+  },
+  {
+   "name": "Article 11-Funding the DPW Collective Bargaining Agreement",
+   "where": "text",
+   "quote": "article 11-funding the dpw collective bargaining agreement would cost $25,588.12."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "warrant articles",
+  "FY2015 budget",
+  "pavement management",
+  "DPW collective bargaining",
+  "solar panels",
+  "Unitil",
+  "capital planning",
+  "private roads",
+  "school building",
+  "Town Meeting",
+  "liaison reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "for specific details see april 16, 2016 email"
+ },
+ "dropped_unquoted_by_field": {}
 }

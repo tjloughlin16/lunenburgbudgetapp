@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-09-04",
  "docid": "2534",
@@ -12,15 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 6/5/12 as amended",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve the minutes of 6/5/12, as amended.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes from 6/5/12 approved as amended"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded: approval of prior minutes. No moved_by or seconded_by recorded. The minutes mention action items and approvals of demolition delay applications, but these are not recorded as formal votes with outcomes. Meeting adjournment is noted but not recorded as a voted motion.",
- "cost_usd": 0.0824925
+ "note": "OCR text from a macOS Vision scan of a short set of minutes. Only one approval is recorded (minutes of 6/5/12); no mover, seconder or vote count is printed for it, and no other motions are recorded, so no other votes are listed. The Cemetery Dept. building line is cut off in the OCR text after \"site visit by Pat and\". The 70 Lesure Avenue approval is recorded as a result with no motion shown. No public comment, dollar figures or document lists appear in the text. Adjournment is recorded with no motion. The chair is not named.",
+ "cost_usd": 0.00289652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pat Satery",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat satery, becky lantry, richard mcgrath, damon mcquaid"
+  },
+  {
+   "name": "Becky Lantry",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat satery, becky lantry, richard mcgrath, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat satery, becky lantry, richard mcgrath, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: pat satery, becky lantry, richard mcgrath, damon mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Pat to write the September newspaper article.",
+   "quote": "pat to write for september"
+  },
+  {
+   "decision": "Richard to write the October newspaper article.",
+   "quote": "richard to write for october"
+  },
+  {
+   "decision": "Pat to write a letter to the Violettes commending their restoration of the historic barn structure.",
+   "quote": "pat to write a letter to the violettes' commending their restoration of the historic structure."
+  },
+  {
+   "decision": "Demolition delay application for 70 Lesure Avenue recorded as approved.",
+   "quote": "a. 70 lesure avenue - application approved"
+  },
+  {
+   "decision": "Decision on the Cemetery Dept. Building, Holman St. deferred pending a site visit by Pat and another member not named in the text.",
+   "quote": "decision to be made pending site visit by pat and"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes (6/5/12)",
+   "resolution": "approved as amended",
+   "quote": "minutes from 6/5/12 approved as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Newspaper articles",
+   "resolution": "assignments made: Becky submitted July and August; Pat to write September; Richard to write October",
+   "quote": "becky submitted articles for july and august",
+   "tags": [
+    "newspaper articles",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Jones House",
+   "resolution": "no action; owners proceeding with renovations",
+   "quote": "the owners are moving forward with the renovations and keeping in touch",
+   "tags": [
+    "Jones House",
+    "renovation"
+   ]
+  },
+  {
+   "topic": "Montachusett Society for the Preservation of Historic Buildings",
+   "resolution": "no action; awaiting news on Town Hall request",
+   "quote": "town hall request - currently awaiting news from their next meeting",
+   "tags": [
+    "Town Hall",
+    "preservation society"
+   ]
+  },
+  {
+   "topic": "Barn renovation, Lancaster Ave. S. (Violette)",
+   "resolution": "Pat to write a letter of commendation to the Violettes",
+   "quote": "pat to write a letter to the violettes' commending their restoration of the historic structure.",
+   "tags": [
+    "barn",
+    "Violette",
+    "letter"
+   ]
+  },
+  {
+   "topic": "Demolition delay review",
+   "resolution": "70 Lesure Avenue approved; Cemetery Dept. building decision deferred pending site visit",
+   "quote": "a. 70 lesure avenue - application approved",
+   "tags": [
+    "demolition delay",
+    "Lesure Avenue",
+    "Cemetery Dept. building"
+   ]
+  },
+  {
+   "topic": "Town-wide survey",
+   "resolution": "no action; Damon working on it",
+   "quote": "damon is working on it.",
+   "tags": [
+    "town-wide survey"
+   ]
+  },
+  {
+   "topic": "Future projects for consideration",
+   "resolution": "discussed; no action recorded",
+   "quote": "endangered buildings, how do we protect them?",
+   "tags": [
+    "future projects",
+    "endangered buildings"
+   ]
+  },
+  {
+   "topic": "Adjournment and next meeting",
+   "resolution": "meeting adjourned at 7:09pm; next meeting October 2, 2012 at 6:30 in the Ritter Building",
+   "quote": "meeting adjourned @ 7:09pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historic preservation",
+  "demolition delay",
+  "newspaper articles",
+  "town-wide survey",
+  "Jones House",
+  "Ritter Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

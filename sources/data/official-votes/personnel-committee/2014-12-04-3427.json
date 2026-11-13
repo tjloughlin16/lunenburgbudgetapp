@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2014-12-04",
  "docid": "3427",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Elect Cheryl Valera as Chair",
+   "motion": "Elect Cheryl Valera as Chair.",
    "moved_by": "Deb Christen",
    "seconded_by": "Nancy Forest",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "deb christen nominated cheryl valera as chair, nancy forest seconded, vote for ms. valera was 5 for and 0 against."
   },
   {
-   "motion": "Elect Scott Chase as Vice Chair",
+   "motion": "Elect Scott Chase as Vice Chair.",
    "moved_by": "Cheryl Valera",
    "seconded_by": "Deb Christen",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "cheryl valera nominated scott chase as vice chair, deb christen seconded, vote for mr. chase was 5 for and 0 against."
   },
   {
-   "motion": "Elect Lin Vickery as Secretary",
+   "motion": "Elect Lin Vickery as Secretary.",
    "moved_by": "Deb Christen",
    "seconded_by": "Cheryl Valera",
    "outcome": "passed 5-0",
@@ -36,13 +36,13 @@
    "quote": "deb christen nominated lin vickery as secretary, cheryl valera seconded, vote for ms. vickery was 5 for 0 against."
   },
   {
-   "motion": "Approve the minutes of the last Personnel Committee meeting",
+   "motion": "Approve the minutes of the last Personnel Committee meeting.",
    "outcome": "passed",
    "procedural": true,
    "quote": "the committee approved the minutes of the last personnel committee meeting."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Scott",
    "seconded_by": "Lin",
    "outcome": "passed 5-0",
@@ -51,6 +51,200 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR by macOS Vision; readable with no quality issues. All votes clearly recorded with outcomes.",
- "cost_usd": 0.0939065
+ "note": "Text is OCR of a revised minutes document (header reads 'Minutes December 4, 2014 (revised)'); the closing line says corrected at the March 16, 2015 meeting. 'Meeting Posted' and 'Absent' fields are blank. The approval of prior minutes is recorded with no mover, second, or count. Names are spelled inconsistently (Deb/Deborah Christen; Kerry/Kerri Speidel/Spidel). Kathy Herrick left after the officer elections. No dollar figures are printed. No documents list heading appears; the Board of Selectmen charge and Salary Administration By Law are named only in passing.",
+ "cost_usd": 0.0057588199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kathy Herrick",
+   "role": "Town Clerk",
+   "status": "present",
+   "quote": "kathy herrick, cheryl valera, scott chase, lin vickery, kerry speidel, deborah christen,"
+  },
+  {
+   "name": "Cheryl Valera",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "kathy herrick, cheryl valera, scott chase, lin vickery, kerry speidel, deborah christen,"
+  },
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "kathy herrick, cheryl valera, scott chase, lin vickery, kerry speidel, deborah christen,"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "kathy herrick, cheryl valera, scott chase, lin vickery, kerry speidel, deborah christen,"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kathy herrick, cheryl valera, scott chase, lin vickery, kerry speidel, deborah christen,"
+  },
+  {
+   "name": "Deborah Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "kathy herrick, cheryl valera, scott chase, lin vickery, kerry speidel, deborah christen,"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "nancy forest, and jamie toale"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "nancy forest, and jamie toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next Personnel Committee meeting set for February 6, 2015 at 6:30 p.m. at the Lunenburg Library.",
+   "quote": "next personnel committee meeting will be february 6, 2015 at 6:30 p.m. at the lunenburg library"
+  },
+  {
+   "decision": "Kerry Speidel will ask the Town Clerk for the date the minutes were approved.",
+   "quote": "kerry speidel will ask town clerk for the date minutes were approved."
+  },
+  {
+   "decision": "Kerri Spidel will send the Salary Administration By Law to Cheryl.",
+   "quote": "kerri spidel will send this to cheryl."
+  },
+  {
+   "decision": "February 6 agenda set: develop a meeting schedule for the year; review the Board of Selectman proposed charge; review the salary administrative plan and By Law.",
+   "quote": "february 6* agenda items are:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pay scale and job descriptions review",
+   "what_was_recorded": "The committee is charged with reviewing the pay scale and job descriptions, which have not been reviewed in 4 years; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "review pay scale & job descriptions (have not been reviewed in 4 years)"
+  },
+  {
+   "topic": "Benefits and overtime for employees reduced to 36 hours",
+   "what_was_recorded": "Employees reduced to 36 hours a week have pro-rated benefits and no overtime, though their workload has not decreased; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "their benefits are pro-rated and there is no overtime available."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and election of officers",
+   "resolution": "elected Chair, Vice Chair and Secretary",
+   "quote": "kathy called for nominations for the positions of chair, vice chair and secretary",
+   "tags": [
+    "elections",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "1. no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen proposed charge of the Personnel Committee",
+   "resolution": "discussed; no action",
+   "quote": "at the board of selectman meeting on 10/21/14 they approved the following proposed charge of the personnel committee:",
+   "tags": [
+    "charge",
+    "recruitment",
+    "appointments",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Personnel issues raised",
+   "resolution": "discussed; no action",
+   "quote": "employees feel that there are inequities",
+   "tags": [
+    "compensation",
+    "benefits",
+    "union",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "quote": "the committee approved the minutes of the last personnel committee meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled February 6, 2015",
+   "quote": "next personnel committee meeting will be february 6, 2015 at 6:30 p.m. at the lunenburg library",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "February 6 agenda items",
+   "resolution": "listed for next meeting",
+   "quote": "february 6* agenda items are:",
+   "tags": [
+    "agenda",
+    "salary administration"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 pm, 5-0",
+   "quote": "scott moved to adjourn the meeting; lin seconded his motion, and the committee voted 5-0",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Board of Selectman proposed charge of the Personnel Committee (approved 10/21/14)",
+   "where": "text",
+   "quote": "at the board of selectman meeting on 10/21/14 they approved the following proposed charge of the personnel committee:"
+  },
+  {
+   "name": "Salary Administration By Law",
+   "where": "text",
+   "quote": "review salary administration by law - kerri spidel will send this to cheryl."
+  },
+  {
+   "name": "Mass Municipal Association data",
+   "where": "text",
+   "quote": "committee needs to access mass municipal association data."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "officer elections",
+  "committee charge",
+  "compensation",
+  "pay scale",
+  "benefits",
+  "salary administration",
+  "union and non-union",
+  "minutes",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

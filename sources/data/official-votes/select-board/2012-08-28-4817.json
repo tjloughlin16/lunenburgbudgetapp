@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-08-28",
  "docid": "4817",
@@ -12,31 +12,339 @@
  },
  "votes": [
   {
-   "motion": "Appoint Nancy Forest as employee representative to the Personnel Committee",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Steven M. deBettencourt",
-   "outcome": "passed 3-0",
+   "motion": "Appoint Nancy Forest as employee representative to the Personnel Committee.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. deBettencourt",
+   "outcome": "passed, 3 in favor, 0 opposed",
    "procedural": false,
    "quote": "ms. bertram moved to appoint nancy forest as employee representative to the personnel committee. mr. debettencourt seconded. on vote, motion carried, 3 in favor, 0 opposed."
   },
   {
-   "motion": "Include the Weisman's easement request in the warrant for special town meeting to be held on 9/25/12",
-   "moved_by": "Steven M. deBettencourt",
-   "seconded_by": "Paula Bertram",
-   "outcome": "passed 3-0",
+   "motion": "Include the Weisman's easement request in the warrant for special town meeting.",
+   "moved_by": "Mr. deBettencourt",
+   "seconded_by": "Ms. Bertram",
+   "outcome": "passed, 3 in favor, 0 opposed",
    "procedural": false,
    "quote": "mr. debettencourt moved to include the weisman's easement request in the warrant for special town meeting. ms. bertram seconded. on vote, motion carried 3 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Steven M. deBettencourt",
-   "seconded_by": "Paula Bertram",
+   "motion": "Adjourn the regular session.",
+   "moved_by": "Mr. deBettencourt",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. the board voted unanimously to adjourn regular session at 8:09pm."
+   "quote": "being no further business mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. the board voted unanimously to adjourn regular session at 8:09pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR by macOS Vision. Three voting members present: David Matthews, Steven M. deBettencourt, Paula Bertram. Text is complete and readable.",
- "cost_usd": 0.1158325
+ "note": "OCR text from a typed scan (macOS Vision); some words are garbled (e.g., \"Mir. Matthews\", \"Rangely\"/\"Rangeley\", \"2' and 4\\\"\"), and the mapping of the three warrant amounts to the Payroll and Water Department Commitment lines is not clear in the text. The minutes record no vote on approving prior minutes (\"Minutes: None\"). The attached Solar Taxation comparison and any distributed PILOT documents are not in the text. Attendance roles are printed only for some people.",
+ "cost_usd": 0.00976432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met at the ritter administration building, lower level meeting room as scheduled with david matthews, steven m. debettencourt, paula bertram, and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "the board of selectmen met at the ritter administration building, lower level meeting room as scheduled with david matthews, steven m. debettencourt, paula bertram, and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "the board of selectmen met at the ritter administration building, lower level meeting room as scheduled with david matthews, steven m. debettencourt, paula bertram, and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met at the ritter administration building, lower level meeting room as scheduled with david matthews, steven m. debettencourt, paula bertram, and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "absent",
+   "quote": "carl \"ernie\" sund and tom alonzo were absent."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "absent",
+   "quote": "carl \"ernie\" sund and tom alonzo were absent."
+  },
+  {
+   "name": "Jared Otte",
+   "role": "Attorney from Bowditch & Dewey representing Mass PV 1, LLC",
+   "status": "present",
+   "quote": "jared otte, attorney from bowditch & dewey representing mass pv 1, llc, requested that mass pv 1 be allowed to enter into a pilot /net metering agreement with the town similar to epg solar's request."
+  },
+  {
+   "name": "Dave Prokowiew",
+   "status": "present",
+   "quote": "dave prokowiew questioned if there would be an opportunity for public discussion after epg is discussed this evening."
+  },
+  {
+   "name": "Tom Weisman",
+   "role": "11 Rangely Road",
+   "status": "present",
+   "quote": "tom weisman, 11 rangely road, said that he is having a septic system problem and requested that an article be included"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "harald scheid, regional assessor, reviewed with the board his findings regarding the comparison of solar taxation alternatives for a 2mw project."
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "present",
+   "quote": "john londa, director of facilities, spoke to report about the cost of distribution over time."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board stated it would not make any decisions at this meeting on the negotiated PILOT amounts for EPG Solar.",
+   "quote": "he stated that they will not be making any decisions this evening on what the negotiated amounts will be."
+  },
+  {
+   "decision": "Once Mass PV 1 has its permits through the Planning Board, the board would open discussion with Mass PV 1 on a PILOT.",
+   "quote": "once they have their permits in place through the planning board they would open up discussion with mass pv 1 concerning the pilot."
+  },
+  {
+   "decision": "The board will vote on Mass PV's request for a warrant change for STM at its 9/4/12 meeting.",
+   "quote": "the bos will vote on the request made earlier by mass pv for the warrant change for stm at the 9/4/12 bos meeting."
+  },
+  {
+   "decision": "The board will meet the following Tuesday to finalize all warrant information; the warrant stays open until then if Mass PV is to be included.",
+   "quote": "ms. speidel stated that the bos will be meeting next tuesday and that all warrant information will be finalized then."
+  },
+  {
+   "decision": "The board agreed Mr. Weisman's easement request could be accomplished as an article for the STM warrant.",
+   "quote": "mr. matthews stated that they will be able to accomplish that request."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "EPG Solar land valuation and real estate tax",
+   "what_was_recorded": "Scheid estimated the Twin City parcel land valuation and the resulting annual real estate tax on the 43 leased acres.",
+   "figures_as_printed": [
+    "$250,000",
+    "$4,300"
+   ],
+   "quote": "he estimated that the twin city parcel land valuation is at approximately $250,000 which yields approximately $4,300 per year in real estate tax"
+  },
+  {
+   "topic": "Full and Fair Cash Value of solar personal property",
+   "what_was_recorded": "Scheid estimated the 20-year average full and fair cash value of the project's personal property, including the SREC value, per MW per year.",
+   "figures_as_printed": [
+    "$50K-$55K"
+   ],
+   "quote": "would amount to approximately $50k-$55k per mw, per year, which includes the value of the solar renewable energy certificate (srec bill)"
+  },
+  {
+   "topic": "Shrewsbury assessor tax per MW comparison",
+   "what_was_recorded": "Speidel reported Shrewsbury's assessor reached a tax per MW close to EPG's presented figure; about $11K per MW if credits are removed.",
+   "figures_as_printed": [
+    "$14K",
+    "$11K"
+   ],
+   "quote": "had come up with a tax per mw which was much closer to what epg had presented which was approximately $14k per mw."
+  },
+  {
+   "topic": "Electricity distribution cost increase",
+   "what_was_recorded": "Londa reported distribution, transmission and transition costs rose over ten years, with a 6.2% annual increase.",
+   "figures_as_printed": [
+    "less than 7 cents per KWH",
+    "less than 12 cents per KWH",
+    "6.2%"
+   ],
+   "quote": "ten years ago the cost of distribution, transmission, and transition was less than 7 cents per kwh and currently its just less than 12 cents per kwh"
+  },
+  {
+   "topic": "Payment warrants listed",
+   "what_was_recorded": "Three amounts were printed beside the warrant and payroll/commitment entries; the minutes do not clearly map each amount to a warrant, so the pairing is not stated.",
+   "figures_as_printed": [
+    "$565,916.70",
+    "$431,507.50",
+    "$548,318.10"
+   ],
+   "quote": "payroll water department commitment $565,916.70 $431,507.50 $548,318.10"
+  },
+  {
+   "topic": "Summer Street design project funding",
+   "what_was_recorded": "Speidel reported the design now has full funding from appropriations by three communities and the Transportation Bond Bill; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "they now have 100% of funding for the design between the appropriations that the three communities involved had made through the transportation bond bill"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jared Otte",
+   "stated_role": "Attorney from Bowditch & Dewey representing Mass PV 1, LLC",
+   "topic": "Mass PV 1 PILOT/Net Metering request and warrant article",
+   "quote": "requested that mass pv 1 be allowed to enter into a pilot /net metering agreement with the town similar to epg solar's request."
+  },
+  {
+   "speaker": "Dave Prokowiew",
+   "stated_role": "",
+   "topic": "Public discussion after EPG item",
+   "quote": "dave prokowiew questioned if there would be an opportunity for public discussion after epg is discussed this evening."
+  },
+  {
+   "speaker": "Tom Weisman",
+   "stated_role": "11 Rangely Road",
+   "topic": "Septic problem and permanent easement request",
+   "quote": "tom weisman, 11 rangely road, said that he is having a septic system problem and requested that an article be included"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "7:00PM Public Comment",
+   "resolution": "discussed; Weisman easement request accepted for STM warrant",
+   "quote": "jared otte, attorney from bowditch & dewey representing mass pv 1, llc, requested that mass pv 1 be allowed to",
+   "tags": [
+    "public comment",
+    "PILOT",
+    "easement"
+   ]
+  },
+  {
+   "topic": "EPG Solar power purchase agreement and PILOT review",
+   "resolution": "discussed; no decision, PILOT amounts not set",
+   "quote": "harald scheid, regional assessor, reviewed with the board his findings regarding the comparison of solar taxation alternatives for a 2mw project.",
+   "tags": [
+    "solar",
+    "PILOT",
+    "net metering",
+    "taxation"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrants listed; no action recorded",
+   "quote": "action file issues: none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "3. committee reports - ms. bertram informed the board that she will not be attending the upcoming mpo",
+   "tags": [
+    "committees",
+    "school building",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "quote": "4. department reports - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "reported; no action",
+   "quote": "ms. speidel reported on the summer st design project and said that they now have",
+   "tags": [
+    "transportation",
+    "Summer Street",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Appointment to Personnel Committee",
+   "resolution": "appointed Nancy Forest, passed 3-0",
+   "quote": "ms. bertram moved to appoint nancy forest as employee representative to the personnel committee.",
+   "tags": [
+    "appointments",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Weisman easement request for special town meeting warrant",
+   "resolution": "added to special town meeting warrant, passed 3-0",
+   "quote": "mr. debettencourt moved to include the weisman's easement request in the warrant for special town meeting.",
+   "tags": [
+    "easement",
+    "warrant",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned regular session at 8:09PM",
+   "quote": "being no further business mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. the board voted unanimously to adjourn regular session at 8:09pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Comparison of Solar Taxation Alternatives for a 2MW project (Harald Scheid, Regional Assessor), attached",
+   "where": "text",
+   "quote": "harald scheid, regional assessor, reviewed with the board his findings regarding the comparison of solar taxation alternatives for a 2mw project. (see attached)."
+  },
+  {
+   "name": "Warrants 8/21/12, 8/29/12, W 1113, W 12 13",
+   "where": "list",
+   "quote": "warrants: 8/21/12 8/29/12 w 1113 w 12 13"
+  },
+  {
+   "name": "Warrant Article for the upcoming STM relating to the PILOT issue",
+   "where": "text",
+   "quote": "mr. otte also requested that the warrant article for the upcoming stm relating to this issue be revised so as not to be exclusive to epg solar."
+  },
+  {
+   "name": "Weisman easement request for STM warrant article",
+   "where": "text",
+   "quote": "requested that an article be included on the warrant for stm which would grant a permanent easement to 11 rangely road"
+  },
+  {
+   "name": "Mass PV request for warrant change for STM",
+   "where": "text",
+   "quote": "the bos will vote on the request made earlier by mass pv for the warrant change for stm at the 9/4/12 bos meeting."
+  }
+ ],
+ "tags": [
+  "solar",
+  "PILOT",
+  "net metering",
+  "EPG Solar",
+  "Mass PV",
+  "warrant",
+  "special town meeting",
+  "easement",
+  "personnel committee",
+  "electricity costs",
+  "Summer Street",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached)"
+ },
+ "dropped_unquoted_by_field": {}
 }

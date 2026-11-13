@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2013-06-20",
  "docid": "2778",
@@ -12,34 +12,266 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from May 16, 2013",
+   "motion": "Approve the minutes of May 16, 2013.",
    "moved_by": "Jeanne",
    "seconded_by": "Lisa",
-   "outcome": "passed",
+   "outcome": "passed (approved by Jeanne, Lisa and Lars; Dick and Joanne abstained)",
    "procedural": true,
-   "quote": "motion made by jeanne to approve submitted minutes; second by lisa. approved by jean, lisa, and lars. dick (not present at may meeting) and jo anne (not a trustee at the may meeting) abstained",
-   "quote_taken_from_text": true
+   "quote": "motion made by jeanne to approve submitted minutes; second by lisa. approved by jean, lisa, and lars."
   },
   {
-   "motion": "increase the director's salary by 6.7% from $57,500 to $61,352.50 for FY-2014",
+   "motion": "Move the Director's salary to $61,302.00.",
+   "moved_by": "Jeanne",
+   "seconded_by": "Lars",
+   "outcome": "withdrawn",
+   "procedural": false,
+   "quote": "jeanne made a motion, to move salary to $61,302.00, second by lars."
+  },
+  {
+   "motion": "Approve a 6.7% salary increase for Martha, from $57,500 to $61,352.50 for FY-2014.",
    "moved_by": "Lars",
    "seconded_by": "Dick",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "new motion for 6.7% salary increase for martha by l ars (dick second) from $57,500, to $61,352.50 for fy-2014. approved unanimously",
-   "quote_taken_from_text": true
+   "quote": "new motion for 6.7% salary increase for martha by l ars (dick second) from $57,500, to $61,352.50 for fy-2014. approved unanimously."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 8:50 p.m.",
    "moved_by": "Dick",
    "seconded_by": "Lisa",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "adjourn: motion by dick @ 8:50 p.m, lisa second; vo te all in favo",
-   "quote_taken_from_text": true
+   "quote": "motion by dick @ 8:50 p.m, lisa second; vo te all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. Note: The first minutes approval had two abstentions (Dick, Joanne); the salary motion was approved unanimously; adjournment was by all in favor.",
- "cost_usd": 0.1326455
+ "note": "Text extraction has spacing artifacts (e.g., 'McQu aid', 'L ars', 'vo te', 'Jo anne'); quotes copy them as printed. Conflicting salary figures in the minutes: discussion cites a current salary of $59,225.00 raised to $61,302.00, but the approved motion says 'from $57,500' to $61,352.50 (6.7% of $57,500 equals $61,352.50). Recorded as printed, not reconciled. The Jeanne motion for $61,302.00 was withdrawn with no vote. Minutes do not print the roll call for the vote on the minutes approval beyond names. The public comment entry does not name a speaker. Trustee roles are not printed; the Director is not named as such in the attendance. The minutes say the Director's report and the budget spreadsheet were presented separately; both are in the referenced-documents list.",
+ "cost_usd": 0.00616332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "status": "present",
+   "quote": "attending: lisa krowitz, dick mailloux, joanne mcqu aid"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "martha moore, jeanne raboin, lars widstrand"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "meeting called to order at 6:45 pm, by chairperson jeanne raboin."
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "absent",
+   "quote": "absent: kathy murray, robin venezia"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "absent",
+   "quote": "absent: kathy murray, robin venezia"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Director plans a meeting with Steve and Kerry to discuss how to solve the town IT problem.",
+   "quote": "director plans a meeting with steve and kerry"
+  },
+  {
+   "decision": "The cable cutting to the children's area computers will be reported to police as vandalism to public property.",
+   "quote": "will be reported to police"
+  },
+  {
+   "decision": "Martha is planning to meet individually with all staff members for future goals and objectives.",
+   "quote": "martha is planning to meet individually"
+  },
+  {
+   "decision": "The Director's contract is extended to June 30, 2014; the director's evaluation has been signed by all and a new evaluation tool is to be discussed.",
+   "quote": "director's contract extends to june 30"
+  },
+  {
+   "decision": "The open meeting law discussion is moved to the September meeting.",
+   "quote": "moving open meeting law discussion for september"
+  },
+  {
+   "decision": "The September meeting is set for Sept 19, 6:45 p.m.",
+   "quote": "september meeting to be held sept 19, 6:45 p.m."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CWMARS payment",
+   "what_was_recorded": "Discussion of the CWMARS payment, whether it is an invoice or a line item in the budget, and when it is due; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about cwmars payment, invoice vs."
+  },
+  {
+   "topic": "Director's salary",
+   "what_was_recorded": "Discussion of raising the Director's salary from $59,225.00 to $61,302.00, with $59,740.00 noted as expended for FY-2012.",
+   "figures_as_printed": [
+    "$59,225.00",
+    "$61,302.00",
+    "$59,740.00",
+    "FY-2012"
+   ],
+   "quote": "discussion about director's salary of $59,225.00"
+  },
+  {
+   "topic": "Director's salary percentage",
+   "what_was_recorded": "Discussion of a 6.61% increase alone versus 6.7%; at 6.7% the salary would be $61,352.50, and the motion for $61,302.00 was withdrawn.",
+   "figures_as_printed": [
+    "6.61%",
+    "6.7%",
+    "$61,352.50",
+    "$61,302.00"
+   ],
+   "quote": "with 6.7% it will be $61,352.50"
+  },
+  {
+   "topic": "Director's salary increase approved",
+   "what_was_recorded": "A 6.7% salary increase for the Director, from $57,500 to $61,352.50 for FY-2014, was approved unanimously.",
+   "figures_as_printed": [
+    "6.7%",
+    "$57,500",
+    "$61,352.50",
+    "FY-2014"
+   ],
+   "quote": "new motion for 6.7% salary increase for martha by l ars (dick second) from $57,500, to $61,352.50 for fy-2014."
+  },
+  {
+   "topic": "Donations from June 1 book and bake sale",
+   "what_was_recorded": "The June 1 book and bake sale generated donations of $3,170.00.",
+   "figures_as_printed": [
+    "$3,170.00"
+   ],
+   "quote": "book and bake sale generated $3,170.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "June 19 program in the library",
+   "quote": "it's not the hike, program on june 19"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "it's not the hike, program on june 19",
+   "tags": [
+    "public comment",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Approval of minutes for May 16, 2013",
+   "resolution": "approved (3 approve, 2 abstain)",
+   "quote": "motion made by jeanne to approve submitted minutes; second by lisa.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget",
+   "resolution": "discussed; no action",
+   "quote": "discussion about cwmars payment, invoice vs.",
+   "tags": [
+    "budget",
+    "CWMARS",
+    "purchasing"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action; Director to meet with Steve and Kerry",
+   "quote": "director plans a meeting with steve and kerry",
+   "tags": [
+    "IT",
+    "staff",
+    "vandalism",
+    "patrons"
+   ]
+  },
+  {
+   "topic": "Director's Contract",
+   "resolution": "salary increase of 6.7% approved unanimously",
+   "quote": "new motion for 6.7% salary increase for martha by l ars (dick second)",
+   "tags": [
+    "personnel",
+    "salary",
+    "contract",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "open meeting law moved to September; no other action",
+   "quote": "moving open meeting law discussion for september",
+   "tags": [
+    "open meeting law",
+    "donations",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:50 p.m.",
+   "quote": "motion by dick @ 8:50 p.m, lisa second; vo te all in favor",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for June 20",
+   "where": "list",
+   "quote": "lplbot agenda for june 20"
+  },
+  {
+   "name": "Library Director’s Report, including Financial Spreadsheet",
+   "where": "list",
+   "quote": "library director's report, including"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "director salary",
+  "personnel",
+  "staff",
+  "IT",
+  "vandalism",
+  "donations",
+  "open meeting law",
+  "CWMARS"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-03-13",
  "docid": "4506",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from February 13, 2013",
+   "motion": "Approve the minutes of the February 13, 2013 LSBC meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: lsbc moved to approve meeting minutes from the february 13, 2013 lunenburg school building committee (lsbc) meeting."
+   "quote": "motion: lsbc moved to approve meeting minutes from the february 13, 2013"
   },
   {
-   "motion": "Approve Joslin Lesser Invoice Number 4 for OPM Services for February 1–28, 2013",
+   "motion": "Approve Joslin Lesser Invoice Number 4 (OPM Services, February 1-28, 2013).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: the lsbc voted unanimously to approve joslin lesser invoice number 4."
+   "outcome": "passed (unanimous)",
+   "procedural": false,
+   "quote": "the lsbc voted unanimously to approve joslin lesser invoice number 4."
   },
   {
-   "motion": "Approve the award of the design contract",
+   "motion": "Approve the award of the design contract (the minutes' motion text is cut off and does not name the contract).",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "not stated",
@@ -36,23 +36,337 @@
    "quote": "motion: the lsbc moved to approve the award of the design contract for the"
   },
   {
-   "motion": "Approve submission of the Preliminary Design Program (PDP) to the MSBA",
+   "motion": "Approve submission of the Preliminary Design Program (PDP) to the MSBA.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 8-0",
    "procedural": false,
-   "quote": "motion: the lsbc voted unanimously to approve submission of the preliminary design program (pdp) to the msba (of the 8 voting members present, 8 members voted in favor of submitting the pdp to the msba)."
+   "quote": "motion: the lsbc voted unanimously to approve submission of the preliminary"
   },
   {
-   "motion": "Approve Tappé Amendment No. 1 for Geo-Environmental Services in the amount of $11,660.00",
+   "motion": "Approve Tappé Amendment No. 1 for Geo-Environmental Services in the amount of $11,660.00.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion: the lsbc voted to approve tappe' amendment no. 1 for geo-environmental services in the amount of $11,660.00."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: the lsbc voted to approve tappe' amendment no. 1 for geo-environmental"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction via macOS Vision. One motion statement (design contract) is truncated due to OCR.",
- "cost_usd": 0.1361765
+ "note": "OCR text, no attendance marks. Attendee roster (19 names, 19 roles) is printed in two columns; names are matched to roles by order, so the pairings (e.g., John Londa as Director of Facilities, Brian Spadafino as LHS Principal) are inferred and should be checked. The meeting date 2013-03-13 is not printed in the minutes; the minutes only refer to the prior Feb 13, 2013 meeting. The design-contract motion is cut off in the text and no result is printed. The Tappé amendment motion records 'voted to approve' with no count. No adjournment motion or vote is recorded. Text includes the typo 'LSBA' and 'Board of Selectman'. Minutes are marked 'Approved by SBC March 27, 2013'. Agenda sub-numbers (2a-2i) are garbled and not used.",
+ "cost_usd": 0.00954162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg superintendent of schools, LsBu",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "michael mackin, chair of the lunenburg school building committee (lsbc), called the meeting to order at 7:08 pm."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Mark Erikson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erikson mike barney brian frank richard cohen kerry speidel"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMS Principal",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Cesar Dedios",
+   "role": "Senior Associate, Tappé Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The LSBC took the Thomas C. Passios building-use white paper under advisement and recommended that the Board of Selectmen review it and provide direction (no vote recorded).",
+   "quote": "the lsbc took the information under advisement and recommended the board of selectman review and provide direction."
+  },
+  {
+   "decision": "Working Group meetings of LSBC members and/or other participants are to be scheduled in the coming weeks, and bimonthly LSBC meetings are also to be scheduled.",
+   "quote": "working group meetings consisting of members of the lsbc and/or other interested participants will be scheduled in the forthcoming weeks."
+  },
+  {
+   "decision": "Upcoming dates set: March 19 Board of Selectmen meeting on CM-at-Risk; March 27 LSBC meeting to review PDP submission, CM-at-Risk and Preferred Building Option; April 10 LSBC meeting to vote on Preferred Building Option.",
+   "quote": "march 27 - lsbc meeting to review pdp submission, cm-at-risk, preferred building"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tappé Amendment No. 1, Geo-Environmental (Phase One environmental investigation of existing Lunenburg High School)",
+   "what_was_recorded": "JLA presented Tappé Amendment No. 1 for professional services; the LSBC voted to approve it.",
+   "figures_as_printed": [
+    "$11,660.00"
+   ],
+   "quote": "amendment no. 1 for tappé associates in the amount of $11,660.00 for professional services associated with a phase one (1) environmental"
+  },
+  {
+   "topic": "Construction cost range for site and design options",
+   "what_was_recorded": "LSBC asked about costs of each option; Tappé and JLA said it was too early but the options were within the advertised construction cost range.",
+   "figures_as_printed": [
+    "$24M",
+    "$56M"
+   ],
+   "quote": "within the advertised construction cost range of $24m to $56m"
+  },
+  {
+   "topic": "Joslin Lesser Invoice No. 4 for OPM Services",
+   "what_was_recorded": "JLA submitted Invoice No. 4 for OPM Services for February 2013; the LSBC unanimously approved it. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "joslin lesser + associates submitted invoice no. 4 for opm services for the period of"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order 7:08 PM; no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "michael mackin, chair of the lunenburg school building committee (lsbc), called the meeting to order at 7:08 pm."
+  },
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "motion to approve Feb 13 minutes; result not stated",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion: lsbc moved to approve meeting minutes from the february 13, 2013"
+  },
+  {
+   "topic": "Approval of Invoice",
+   "resolution": "approved unanimously (Joslin Lesser Invoice No. 4)",
+   "tags": [
+    "invoice",
+    "OPM"
+   ],
+   "quote": "the lsbc voted unanimously to approve joslin lesser invoice number 4."
+  },
+  {
+   "topic": "Site and design alternatives (addition/adaptive reuse; new facilities)",
+   "resolution": "discussed; no cost data yet; no action",
+   "tags": [
+    "site",
+    "design options"
+   ],
+   "quote": "site and design alternative was discussed highlighting advantages/disadvantages of"
+  },
+  {
+   "topic": "Preliminary Design Program (PDP) submission to MSBA",
+   "resolution": "approved 8-0",
+   "tags": [
+    "MSBA",
+    "PDP"
+   ],
+   "quote": "submission of the pdp to the msba requires the lsbc to approve the submission."
+  },
+  {
+   "topic": "Thomas C. Passios building use",
+   "resolution": "no vote; LSBC recommended Board of Selectmen review",
+   "tags": [
+    "Passios",
+    "building use"
+   ],
+   "quote": "the lsbc took the information under advisement and recommended the board of selectman review and provide direction."
+  },
+  {
+   "topic": "Geo-environmental commitment approval (Tappé Amendment No. 1)",
+   "resolution": "approved $11,660.00 amendment",
+   "tags": [
+    "environmental",
+    "Tappé"
+   ],
+   "quote": "motion: the lsbc voted to approve tappe' amendment no. 1 for geo-environmental"
+  },
+  {
+   "topic": "Working Group meetings",
+   "resolution": "briefed; no action",
+   "tags": [
+    "schedule",
+    "working group"
+   ],
+   "quote": "the need to meet more frequently than once a month will be necessary."
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action",
+   "tags": [
+    "other"
+   ],
+   "quote": "there was no other business discussed."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none offered",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there were no public comments."
+  },
+  {
+   "topic": "Upcoming Meetings and Schedule Milestones",
+   "resolution": "noted; no action",
+   "tags": [
+    "schedule",
+    "CM-at-Risk"
+   ],
+   "quote": "march 19 - board of selectmen meeting to discuss cm-at-risk, 7:00pm (lunenburg"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "heading only; no motion recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "these meeting minutes were prepared by joslin, lesser + associates."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Meeting minutes for the prior meeting held on February 13, 2013",
+   "where": "text",
+   "quote": "joslin, lesser + associates distributed the meeting minutes for the prior meeting held on february 13, 2013."
+  },
+  {
+   "name": "Invoice No. 4 for OPM Services for the period of February 1 thru 28, 2013",
+   "where": "text",
+   "quote": "joslin lesser + associates submitted invoice no. 4 for opm services for the period of"
+  },
+  {
+   "name": "Preliminary Design Program (PDP) submission to the MSBA",
+   "where": "text",
+   "quote": "tappé briefed the lsbc on the forthcoming preliminary design (pdp) program submission to the msba"
+  },
+  {
+   "name": "White paper \"The future of Thomas Elementary School\" (John Londa)",
+   "where": "text",
+   "quote": "briefed the lsba on his recent white paper entitled \"the future of thomas"
+  },
+  {
+   "name": "Amendment No. 1 for Tappé Associates (Geo-Environmental Services)",
+   "where": "text",
+   "quote": "amendment no. 1 for tappé associates in the amount of $11,660.00 for professional services associated with a phase one (1) environmental"
+  },
+  {
+   "name": "Projected Meeting and Milestone Schedule",
+   "where": "text",
+   "quote": "as highlighted on the projected meeting and milestone schedule."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "preliminary design program",
+  "Tappé Associates",
+  "Joslin Lesser + Associates",
+  "OPM invoice",
+  "geo-environmental",
+  "Thomas C. Passios",
+  "CM-at-Risk",
+  "schedule",
+  "meeting minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jla briefed the lsbc of the upcoming meetings/submissions"
+ },
+ "dropped_unquoted_by_field": {}
 }

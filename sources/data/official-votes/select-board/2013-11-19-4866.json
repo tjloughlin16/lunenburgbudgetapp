@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-11-19",
  "docid": "4866",
@@ -12,31 +12,575 @@
  },
  "votes": [
   {
-   "motion": "approve the request for the Voluntary Toll for the LHS Music Program to be held on December 21, 2013 from 8AM-12 Noon in the center of Town and on the corner of Rt. 13 & Whalom Rd. subject to discussion with the Chief of Police",
+   "motion": "Approve the request for a Voluntary Toll for the LHS Music Program on December 21, 2013, 8AM-12 Noon, in the center of Town and at Rt. 13 & Whalom Rd., subject to discussion with the Chief of Police.",
    "moved_by": "Mr. Toale",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. toale moved to approve the request for the voluntary toll for the lhs music program to be held on december 21, 2013 from 8am-12 noon in the center of town and on the corner of rt. 13 & whalom rd. subject to discussion with the chief of police. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. toale moved to approve the request for the voluntary toll for the lhs music program to be held on december 21,"
   },
   {
-   "motion": "make the snow date for the Special Town Meeting Thursday January 9, 2014",
+   "motion": "Make the snow date for the Special Town Meeting Thursday, January 9, 2014.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. ebersole moved to make the snow date for the special town meeting for thursday january 9, 2014. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. ebersole moved to make the snow date for the special town meeting for thursday january 9, 2014."
   },
   {
-   "motion": "adjourn the BOS meeting",
+   "motion": "Adjourn the BOS meeting.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "being no further business ms. bertram moved to adjourn the bos meeting. mr. toale seconded. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "ms. bertram moved to adjourn the bos meeting. mr. toale seconded. on vote motion carried, 4 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are digital text from OCR extraction. Three votes recorded: one substantive (voluntary toll), two procedural (snow date and adjournment). Minutes and warrants are listed but no formal vote to approve them is recorded.",
- "cost_usd": 0.1071645
+ "note": "OCR text from macOS Vision with some garbled words (e.g., 'Mir. Alonzo', 'hear say'). Minutes approval and warrant approval were listed but no vote was recorded. Item 1 heading prints '12/7/13 and/or 12/21/14' while the motion says December 21, 2013. The minutes refer to 'Ms. Alonzo' once, likely meaning Mr. Alonzo. The warrant amounts are printed without clear pairing to warrant numbers.",
+ "cost_usd": 0.014991920000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair Person",
+   "status": "present",
+   "quote": "as scheduled with chair person tom alonzo, vice chairperson paula bertram, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "as scheduled with chair person tom alonzo, vice chairperson paula bertram, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board member (role not printed)",
+   "status": "present",
+   "quote": "as scheduled with chair person tom alonzo, vice chairperson paula bertram, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board member (role not printed)",
+   "status": "present",
+   "quote": "as scheduled with chair person tom alonzo, vice chairperson paula bertram, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with chair person tom alonzo, vice chairperson paula bertram, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "David Matthews",
+   "role": "Board member (role not printed)",
+   "status": "absent",
+   "quote": "not present was david matthews."
+  },
+  {
+   "name": "Les Szabady",
+   "role": "920 Mass Ave",
+   "status": "present",
+   "quote": "les szabady, 920 mass ave, spoke to the bos and said that it was a terrible thing that happened last week."
+  },
+  {
+   "name": "Mary Ulf",
+   "role": "Autumn Rd.",
+   "status": "present",
+   "quote": "mary ulf, autumn rd. spoke to the bos to say that she understood what the chair had just said"
+  },
+  {
+   "name": "Steve Powell",
+   "role": "Winterhill Rd.",
+   "status": "present",
+   "quote": "steve powell, winterhill rd. spoke to the bos to say that the media spins information."
+  },
+  {
+   "name": "Greg Berthiaume",
+   "role": "Chair of the Lunenburg School Committee",
+   "status": "present",
+   "quote": "greg berthiaume, chair of the lunenburg school committee, read a statement from the school committee which stated"
+  },
+  {
+   "name": "Lisa Connors",
+   "role": "Lunenburg",
+   "status": "present",
+   "quote": "lisa connors, lunenburg, spoke to say that she was confused because they are saying it might not be the football team"
+  },
+  {
+   "name": "Tammy Reynolds",
+   "role": "101 Stonefence Rd.",
+   "status": "present",
+   "quote": "tammy reynolds, 101 stonefence rd. spoke to say that by this decision we have just empowered the person who"
+  },
+  {
+   "name": "Rick Hill",
+   "role": "Oak Ave.",
+   "status": "present",
+   "quote": "rick hill, oak ave., stated that he believes that the school committee made a hasty decision by canceling the"
+  },
+  {
+   "name": "Dave Ulf",
+   "role": "Autumn Rd.",
+   "status": "present",
+   "quote": "dave ulf, autumn rd. spoke to say that he thinks the bos and the town manager are giving everyone lip service."
+  },
+  {
+   "name": "Robin Corbett",
+   "role": "Sunset Ave.",
+   "status": "present",
+   "quote": "robin corbett sunset ave. spoke to say that she went to the school committee meeting tonight"
+  },
+  {
+   "name": "Anne Nash",
+   "role": "1790 Mass Ave",
+   "status": "present",
+   "quote": "anne nash, 1790 mass ave spoke and asked why the school committee was here with a prepared statement"
+  },
+  {
+   "name": "Laura McGrath",
+   "role": "Cushing Lane",
+   "status": "present",
+   "quote": "laura mcgrath, cushing lane, spoke to say that in addition to it not being fair to punish the whole team"
+  },
+  {
+   "name": "Stuart Leinson",
+   "role": "494 West Townsend Rd.",
+   "status": "present",
+   "quote": "stuart leinson, 494 west townsend rd. spoke to say that he knew the vigil was supposed to be about peace"
+  },
+  {
+   "name": "Tom Johnson",
+   "role": "11 White Tail Crossing",
+   "status": "present",
+   "quote": "tom johnson, 11 white tail crossing spoke and asked if someone on the school committee does something wrong"
+  },
+  {
+   "name": "Carol Landers",
+   "role": "Shirley MA",
+   "status": "present",
+   "quote": "carol landers, shirley ma, spoke to say that her son is a senior at the high school"
+  },
+  {
+   "name": "Kate Carigan",
+   "role": "Leominster MA",
+   "status": "present",
+   "quote": "kate carigan, leominster ma, spoke to say that although she is not a member of the football team"
+  },
+  {
+   "name": "Jenny Whitcomb",
+   "role": "Houghton's Mill Rd.; representing the Lunenburg Music Aiders",
+   "status": "present",
+   "quote": "jenny whitcomb, houghton's mill rd. came before the bos representing the lunenburg music aiders"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "fire chief patrick sullivan and police chief james marino came before the bos to give an update"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "fire chief patrick sullivan and police chief james marino came before the bos to give an update"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Item 2, the DPW Director's request to establish a road closure date for 11/29/13, was tabled at the DPW Director's request.",
+   "quote": "tabled by request of the dpw director."
+  },
+  {
+   "decision": "Ms. Speidel will get the project description at the School Building Committee meeting Thursday evening and circulate it to the BOS; the School Building Committee will submit the warrant article, and the BOS expects everything in hand at its 12/3/2013 meeting.",
+   "quote": "ms. speidel will obtain the necessary description at the school building committee meeting on thursday evening then circulate it to the bos."
+  },
+  {
+   "decision": "Printing of the warrant moved until just after the 12/3 meeting.",
+   "quote": "ms. speidel added that they will need to move out the printing of the warrant until just after the 12/3 meeting."
+  },
+  {
+   "decision": "No action on the Townsend net metering IMA was needed that evening; the Townsend BOS takes it up 12/3/2013.",
+   "quote": "ms. speidel added that there was no need to act on it this evening."
+  },
+  {
+   "decision": "With the board's OK, Mr. Alonzo will tell the School Committee that the BOS supports the student youth summit proposal and encourage them to take it up.",
+   "quote": "with the boards ok he will contact the school committee to say that the bos is in support of this"
+  },
+  {
+   "decision": "Ms. Bertram's request that the Open Space Committee criteria for disposition of Chapter land be placed on a future BOS agenda.",
+   "quote": "ms. bertram requested that this be placed on a future bos agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Regional dispatch radio frequency reprogramming",
+   "what_was_recorded": "Chief Marino said that a new radio frequency, once programmed, was told to cost approximately the figure printed.",
+   "figures_as_printed": [
+    "$15,000 - $20,000"
+   ],
+   "quote": "they were told it would cost approximately $15,000 - $20,000 to do so."
+  },
+  {
+   "topic": "Regional dispatch savings and staffing funding",
+   "what_was_recorded": "Ms. Speidel said savings from the move to the district stayed in Public Safety to fund a Desk Officer, and that additional Public Safety funding will have to be justified in the budget.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel reminded everyone that with the savings that were realized by going to the district were left in public safety."
+  },
+  {
+   "topic": "Public Safety additional funding in the budget",
+   "what_was_recorded": "Ms. Speidel said the need for additional Public Safety funding will have to be justified during budget work.",
+   "figures_as_printed": [],
+   "quote": "as we work on the budget we will have to justify the need for additional funding within public safety."
+  },
+  {
+   "topic": "Voice over IP phone system",
+   "what_was_recorded": "Chief Marino said a Voice over IP system would help but is very expensive and not requested in this year's Capital Plan.",
+   "figures_as_printed": [],
+   "quote": "it is very expensive and is not being asked for in this year's capital plan."
+  },
+  {
+   "topic": "Capital Plan request for receiver and generator",
+   "what_was_recorded": "Chief Marino asked for Capital Plan funds for a repeater receiver, which he considers a priority, and also asked for a stand-by generator for the Sunny Hill Rd. repeater site.",
+   "figures_as_printed": [],
+   "quote": "chief marino asked for capital plan funds to purchase a receiver for that which he believes should be a priority."
+  },
+  {
+   "topic": "Regional dispatch expansion and assessment",
+   "what_was_recorded": "Ms. Speidel said new member communities would further reduce Lunenburg's assessment, which could supplement Police and Fire, but more time is needed before expansion.",
+   "figures_as_printed": [],
+   "quote": "which would further reduce lunenburg's assessment which could be used to supplement our police & fire dept."
+  },
+  {
+   "topic": "Net metering IMA administrative fee",
+   "what_was_recorded": "No administrative fee was included for the Town because the administrative burden was felt to be very minimal; the IMA sells only excess credits at the purchase price.",
+   "figures_as_printed": [],
+   "quote": "we did not include any administrative fee that the town would have to do because we felt that it was very minimal."
+  },
+  {
+   "topic": "Municipal broadband last mile funding",
+   "what_was_recorded": "Mr. Alonzo reported the last mile is estimated to cost the printed amount, with a bond bill and Federal money being sought to cover it.",
+   "figures_as_printed": [
+    "$100M"
+   ],
+   "quote": "which is estimated to be around $100m to do the last mile."
+  },
+  {
+   "topic": "MRPC pavement management",
+   "what_was_recorded": "Ms. Bertram reported MRPC will update Lunenburg's pavement management for a minimal fee; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "for a minimal fee mrpc will update all of the pavement management for lunenburg."
+  },
+  {
+   "topic": "Lancaster Ave sewer line",
+   "what_was_recorded": "Mr. Ebersole reported the sewer line was privately funded by the Lancaster Ave residents group and accepted; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the sewer line on lancaster ave, which was privately funded by the lancaster ave residents group"
+  },
+  {
+   "topic": "School building project budget",
+   "what_was_recorded": "Ms. Speidel said the School Building Committee group would finalize the project budget at the MSBA meeting; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "where they will be finalizing the budget on the project."
+  },
+  {
+   "topic": "Warrant amounts",
+   "what_was_recorded": "Three warrants were listed with three dollar amounts; the minutes do not clearly pair each amount with a warrant number, so the pairing is not stated.",
+   "figures_as_printed": [
+    "$263,561.15",
+    "$656,620.25",
+    "$132,887.80"
+   ],
+   "quote": "warrants: 11/20/2013 11/18/2013 11/19/2013 #27-14 #11p-14 #26-14 $263,561.15 $656,620.25 $132,887.80"
+  },
+  {
+   "topic": "Regional dispatch service cost",
+   "what_was_recorded": "Chief Sullivan said a direct caller-ID link from mobile phones would take time and money.",
+   "figures_as_printed": [],
+   "quote": "it would be a function of time and money to be able to do that."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Les Szabady",
+   "stated_role": "920 Mass Ave",
+   "topic": "Thanksgiving football game cancellation",
+   "quote": "les szabady, 920 mass ave, spoke to the bos and said that it was a terrible thing that happened last week."
+  },
+  {
+   "speaker": "Mary Ulf",
+   "stated_role": "Autumn Rd.",
+   "topic": "Football team penalty; School Committee",
+   "quote": "mary ulf, autumn rd. spoke to the bos to say that she understood what the chair had just said"
+  },
+  {
+   "speaker": "Steve Powell",
+   "stated_role": "Winterhill Rd.",
+   "topic": "Team support; media coverage",
+   "quote": "steve powell, winterhill rd. spoke to the bos to say that the media spins information."
+  },
+  {
+   "speaker": "Greg Berthiaume",
+   "stated_role": "Chair of the Lunenburg School Committee",
+   "topic": "School Committee statement on game cancellation",
+   "quote": "greg berthiaume, chair of the lunenburg school committee, read a statement from the school committee which stated"
+  },
+  {
+   "speaker": "Lisa Connors",
+   "stated_role": "Lunenburg",
+   "topic": "Game cancellation confusion",
+   "quote": "lisa connors, lunenburg, spoke to say that she was confused because they are saying it might not be the football team"
+  },
+  {
+   "speaker": "Tammy Reynolds",
+   "stated_role": "101 Stonefence Rd.",
+   "topic": "Game cancellation empowers perpetrator",
+   "quote": "tammy reynolds, 101 stonefence rd. spoke to say that by this decision we have just empowered the person who"
+  },
+  {
+   "speaker": "Rick Hill",
+   "stated_role": "Oak Ave.",
+   "topic": "Game cancellation; practice question",
+   "quote": "rick hill, oak ave., stated that he believes that the school committee made a hasty decision by canceling the"
+  },
+  {
+   "speaker": "Dave Ulf",
+   "stated_role": "Autumn Rd.",
+   "topic": "BOS authority and role",
+   "quote": "dave ulf, autumn rd. spoke to say that he thinks the bos and the town manager are giving everyone lip service."
+  },
+  {
+   "speaker": "Robin Corbett",
+   "stated_role": "Sunset Ave.",
+   "topic": "School Committee meeting experience",
+   "quote": "robin corbett sunset ave. spoke to say that she went to the school committee meeting tonight"
+  },
+  {
+   "speaker": "Anne Nash",
+   "stated_role": "1790 Mass Ave",
+   "topic": "School Committee statement at BOS meeting",
+   "quote": "anne nash, 1790 mass ave spoke and asked why the school committee was here with a prepared statement"
+  },
+  {
+   "speaker": "Laura McGrath",
+   "stated_role": "Cushing Lane",
+   "topic": "Presumption of innocence",
+   "quote": "laura mcgrath, cushing lane, spoke to say that in addition to it not being fair to punish the whole team"
+  },
+  {
+   "speaker": "Stuart Leinson",
+   "stated_role": "494 West Townsend Rd.",
+   "topic": "Coaches and game cancellation",
+   "quote": "stuart leinson, 494 west townsend rd. spoke to say that he knew the vigil was supposed to be about peace"
+  },
+  {
+   "speaker": "Tom Johnson",
+   "stated_role": "11 White Tail Crossing",
+   "topic": "Collective responsibility of committee",
+   "quote": "tom johnson, 11 white tail crossing spoke and asked if someone on the school committee does something wrong"
+  },
+  {
+   "speaker": "Carol Landers",
+   "stated_role": "Shirley MA",
+   "topic": "Fair chance for the team",
+   "quote": "carol landers, shirley ma, spoke to say that her son is a senior at the high school"
+  },
+  {
+   "speaker": "Kate Carigan",
+   "stated_role": "Leominster MA",
+   "topic": "Fairness to football team",
+   "quote": "kate carigan, leominster ma, spoke to say that although she is not a member of the football team"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "7:00PM Public Comment",
+   "resolution": "discussion; no action (BOS said the decision rests with the School Committee)",
+   "quote": "mr. alonzo commented on the recent act of racial graffiti",
+   "tags": [
+    "public comment",
+    "school safety",
+    "Thanksgiving game"
+   ]
+  },
+  {
+   "topic": "Announcements: Board & Committee vacancies",
+   "resolution": "noted vacancies on Personnel Committee and PACC",
+   "quote": "board & committee vacancies: mr. alonzo announced that there are still vacancies on the personnel committee",
+   "tags": [
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations: none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Request for Voluntary Toll, LHS Music Program",
+   "resolution": "approved 4-0",
+   "quote": "jenny whitcomb, houghton's mill rd. came before the bos representing the lunenburg music aiders",
+   "tags": [
+    "voluntary toll",
+    "LHS music"
+   ]
+  },
+  {
+   "topic": "Request to establish Road Closure Date, 11/29/13",
+   "resolution": "tabled at DPW Director's request",
+   "quote": "request from dpw director to establish road closure date, 11/29/13: tabled by request of the dpw director.",
+   "tags": [
+    "road closure",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Review transition to Regional Dispatch",
+   "resolution": "update received; no action",
+   "quote": "review transition to regional dispatch with fire chief & police chief: fire chief patrick sullivan and police chief",
+   "tags": [
+    "regional dispatch",
+    "public safety",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Draft Ballot Question; STM snow date; other STM issues",
+   "resolution": "snow date set to 1/9/2014; ballot question not ready, to return 12/3",
+   "quote": "review draft ballot question; establish snow date for stm; other stm issues: ms. speidel stated that in terms of",
+   "tags": [
+    "special town meeting",
+    "ballot question",
+    "warrant",
+    "snow date"
+   ]
+  },
+  {
+   "topic": "IMA with Town of Townsend for sale of net metering credits",
+   "resolution": "no action needed this evening",
+   "quote": "ima with town of townsend for sale of net metering credits: ms. speidel explained that this is the same",
+   "tags": [
+    "net metering",
+    "intermunicipal agreement"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "minutes and warrants listed, no vote recorded; youth summit support expressed; Open Space criteria to future agenda",
+   "quote": "6. minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants",
+    "youth summit",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "board of health - mr. ebersole stated that the boh met last night",
+   "tags": [
+    "committee reports",
+    "septic",
+    "broadband",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports or Department Reports",
+   "resolution": "no report",
+   "quote": "9.town manager reports or department reports: no report",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:06PM, 4-0",
+   "quote": "ms. bertram moved to adjourn the bos meeting. mr. toale seconded. on vote motion carried, 4 in favor, 0 opposed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "IMA with Town of Townsend for Sale of Net Metering Credits",
+   "where": "text",
+   "quote": "ima with town of townsend for sale of net metering credits: ms. speidel explained that this is the same"
+  },
+  {
+   "name": "Open Space Committee guidelines for disposition of Chapter land",
+   "where": "text",
+   "quote": "she had attended a meeting of the open space committee where they talked about guidelines that they had created for disposition of chapter land"
+  },
+  {
+   "name": "DEP report on the Woodlands",
+   "where": "text",
+   "quote": "the boh reviewed the dep report on the woodlands where they had issues with the sewerage treatment plant"
+  },
+  {
+   "name": "School Committee statement on game cancellation",
+   "where": "text",
+   "quote": "read a statement from the school committee which stated"
+  },
+  {
+   "name": "Draft Ballot Question",
+   "where": "text",
+   "quote": "review draft ballot question; establish snow date for stm; other stm issues"
+  },
+  {
+   "name": "Warrant article for the school building project",
+   "where": "text",
+   "quote": "the warrant article will be submitted by the school building committee and they will approve that at their meeting."
+  },
+  {
+   "name": "Youth summit request, No Bullies No Hate",
+   "where": "text",
+   "quote": "who is proposing that a youth summit called"
+  },
+  {
+   "name": "Lunenburg Capital Plan",
+   "where": "text",
+   "quote": "is not being asked for in this year's capital plan."
+  }
+ ],
+ "tags": [
+  "Thanksgiving football game cancellation",
+  "school safety",
+  "public comment",
+  "regional dispatch",
+  "special town meeting",
+  "snow date",
+  "net metering",
+  "open space",
+  "broadband",
+  "voluntary toll",
+  "warrant",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

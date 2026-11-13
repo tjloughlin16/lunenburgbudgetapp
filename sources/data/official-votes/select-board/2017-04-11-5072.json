@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-04-11",
  "docid": "5072",
@@ -12,49 +12,516 @@
  },
  "votes": [
   {
-   "motion": "Approve the Bicycles Battling Cancer ride through Lunenburg on June 17, 2017",
+   "motion": "Approve the Bicycles Battling Cancer ride through Lunenburg on June 17, 2017.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: r. ebersole 2™d: t. alonzo to approve the bicycles battling cancer ride through lunenburg on june 17, 2017 vote: all in favor"
+   "quote": "to approve the bicycles battling cancer ride through lunenburg on june 17, 2017 vote: all in favor"
   },
   {
-   "motion": "Approve the amendment to the Verizon Wireless Lease as presented",
+   "motion": "Approve the amendment to the Verizon Wireless Lease as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the amendment to the verizon wireless lease as presented 2\"d: t. alonzo vote: all in favor"
+   "quote": "to approve the amendment to the verizon wireless lease as presented"
   },
   {
-   "motion": "Approve the Consent to Assignment of the net metering agreement as presented",
+   "motion": "Approve the Embers Pizzeria alteration of premises subject to the applicant going to the Building Commissioner to check on zoning requirements.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the consent to assignment as presented 2\"°: t. alonzo vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "to approve the alteration subject to applicant going to building commissioner to check on zoning requirements"
   },
   {
-   "motion": "Sign the Annual Town Meeting Warrant",
+   "motion": "Approve the Consent to Assignment (net metering agreement, Clean Footprint LLC to Fitchburg Solar, LLC) as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
+   "procedural": false,
+   "quote": "to approve the consent to assignment as presented"
+  },
+  {
+   "motion": "Sign the Annual Town Meeting Warrant.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed, all in favor",
+   "procedural": false,
+   "quote": "to sign the annual town meeting warrant"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:13 p.m.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "motion: r. ebersole to sign the annual town meeting warrant 2'd: t. alonzo vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "R.Ebersole",
-   "seconded_by": "T. Alonzo",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r.ebersole to adjourn the meeting at 8:13 p.m. respectfully submitted, elaikem n",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 8:13 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR artifact noted: discussion describes Bicycles Battling Cancer ride as June 11, 2017, but motion records June 17, 2017. Complete Streets Policy was discussed but no vote was recorded (held for return of absent member Paula Bertram).\"",
- "cost_usd": 0.1946262
+ "dropped_unquoted": 0,
+ "note": "Scanned OCR text with garbled characters (e.g., '2™d', 'Elaikem Noterson', 'Mr. Lemieux' where Ms. Lemieux is clearly meant); quotes were chosen to avoid garbled spans. Votes are recorded only as 'All in Favor' with no numeric tally. The Bicycles ride date is June 11 in the narrative but June 17 in the motion; recorded as printed. Complete Streets and Bylaw Review Committee items had no motion or vote. Documents are named in running text only; no list or heading is printed.",
+ "cost_usd": 0.013461420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member"
+  },
+  {
+   "name": "Mark Walter",
+   "role": "of the American Cancer Society",
+   "status": "present",
+   "quote": "mark walter of the american cancer society presented his request to run the fundraiser"
+  },
+  {
+   "name": "Ken Ricker",
+   "role": "owner, Embers Pizzeria",
+   "status": "present",
+   "quote": "owner ken ricker requested to expand the patio area at embers pizzeria, 84 lakefront avenue from 240 to 640"
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "facilities director john londa and john kluwin of clean footprint llc appeared regarding the request"
+  },
+  {
+   "name": "John Kluwin",
+   "role": "of Clean Footprint LLC",
+   "status": "present",
+   "quote": "facilities director john londa and john kluwin of clean footprint llc appeared regarding the request"
+  },
+  {
+   "name": "Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "land use director burney stated yes there will need to be some work done."
+  },
+  {
+   "name": "Chriztine Foltz",
+   "role": "",
+   "status": "present",
+   "quote": "chriztine foltz, 284 lancaster ave, stated she had just left the middle/high school gym"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark Walter will inform the Police Department of the Bicycles Battling Cancer event for information purposes.",
+   "quote": "mr. walter will inform the police department of the event for information purposes."
+  },
+  {
+   "decision": "Town Manager to separate the total hours over one year from KP-Law invoices (general services vs. litigation) and project the estimated cost to the Town under each of the four legal counsel proposals.",
+   "quote": "the board requested ms. lemieux separate the total hours over one year from kp-law invoices of"
+  },
+  {
+   "decision": "Legal counsel next phase: reinterview the four finalists on April 18.",
+   "quote": "the next phase is reinterviewing the four finalists on april 18"
+  },
+  {
+   "decision": "Complete Streets policy vote held over; discussion to be continued (Ebersole suggested waiting until Ms. Bertram returns).",
+   "quote": "the discussion will be continued."
+  },
+  {
+   "decision": "Mr. Ebersole to pass the Bylaw Review Committee concerns (on meeting frequency and minutes approval timing) on to the committee.",
+   "quote": "mr. ebersole will pass these concerns on to the committee."
+  },
+  {
+   "decision": "Mr. Ebersole to make notes on the bylaw review and forward them to Town Clerk Herrick and committee member Rob Bowen.",
+   "quote": "mr. ebersole stated he would make notes and forward them to town clerk herrick and committee member rob bowen."
+  },
+  {
+   "decision": "Suggested that the Cemetery Commission present on its request at the May meeting.",
+   "quote": "suggestion was made to have the cemetery commission present on their request"
+  },
+  {
+   "decision": "Staff directed not to enter the Town Hall basement until further notice.",
+   "quote": "staff has been advised not to enter the basement until further notice."
+  },
+  {
+   "decision": "Town Hall attic and basement situations to be addressed first.",
+   "quote": "we will address the attic and basement situations first."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant in the amount of $536,284.32.",
+   "figures_as_printed": [
+    "$536,284.32"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $536,284.32."
+  },
+  {
+   "topic": "Legal counsel cost comparison",
+   "what_was_recorded": "Board asked for estimated costs to the Town under each of the four legal counsel proposals; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "project with each of the four proposals what the estimated cost would be for the town"
+  },
+  {
+   "topic": "Legal counsel fee schedules",
+   "what_was_recorded": "Town Manager presented the fee schedules of the four legal firms; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux received 13 out of 16 reference checks back on the firms and presented them as well as their fee"
+  },
+  {
+   "topic": "Lion's Club Pancake Breakfast price",
+   "what_was_recorded": "Pancake breakfast price per person announced in public comment.",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "from 8:00 to 11:00 a.m. $2.00 per person; takeout is available."
+  },
+  {
+   "topic": "Complete Streets technical assistance funding",
+   "what_was_recorded": "A MassDOT score of 80 or above would generate funding for technical assistance for the prioritization plan.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "a score of 80 or above would generate funding of $50,000 for technical assistance which"
+  },
+  {
+   "topic": "Town Hall attic bird waste cleaning",
+   "what_was_recorded": "Restoration company estimate for cleaning attic bird waste.",
+   "figures_as_printed": [
+    "$7,400"
+   ],
+   "quote": "they provided an estimate for cleaning the attic bird waste of $7,400."
+  },
+  {
+   "topic": "Town Hall basement mold remediation",
+   "what_was_recorded": "No cost estimate yet for mold remediation; MIIA claim not covered.",
+   "figures_as_printed": [],
+   "quote": "at this time we do not have a cost estimate for the mold remediation."
+  },
+  {
+   "topic": "Community Compact grants",
+   "what_was_recorded": "Town to receive grants for a cyber security assessment, a citizen communication engagement plan, and stormwater measures.",
+   "figures_as_printed": [
+    "$10,000",
+    "$10,000",
+    "$25,000"
+   ],
+   "quote": "we will receive a grant up to $10,000 for the cost of a cyber security assessment"
+  },
+  {
+   "topic": "Bylaw penalty for handicapped parking violations",
+   "what_was_recorded": "Existing bylaw text sets the fine for violations; Board discussed whether Police can enforce it.",
+   "figures_as_printed": [
+    "$100.00"
+   ],
+   "quote": "the punishment for violations of subparagraphs (a) through (c) shall be $100.00 for each offense."
+  },
+  {
+   "topic": "License and permit fee schedule bylaw",
+   "what_was_recorded": "Bylaw Review Committee recommended repeal of the fee schedule because MGL lists these fees; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. ebersole stated massachusetts general laws lists these fees."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Lion's Club Pancake Breakfast",
+   "quote": "ms. luck stated the lion's club pancake breakfast will be at the eagle house senior center tomorrow morning"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Clerk",
+   "topic": "Boys and Girls Club fundraiser rescheduled",
+   "quote": "mr. alonzo announced the lunenburg boys and girls club"
+  },
+  {
+   "speaker": "Chriztine Foltz",
+   "topic": "Adult gym classes at Middle/High School",
+   "quote": "chriztine foltz, 284 lancaster ave, stated she had just left the middle/high school gym"
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "Vice Chairman",
+   "topic": "Annual Town Meeting and Town Election reminder",
+   "quote": "mr. ebersole reminded all of the annual town meeting on saturday, may 6"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; announcements",
+   "quote": "ms. luck stated the lion's club pancake breakfast will be at the eagle house senior center tomorrow morning",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Resignation of Jim Auge, Board of Health",
+   "resolution": "noted; vacancy to be filled by mutual appointment with Board of Health",
+   "quote": "resignation- jim auge from board of health effective april 3, 2017.",
+   "tags": [
+    "resignation",
+    "board of health",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Request for 2017 Bicycles Battling Cancer Ride",
+   "resolution": "approved",
+   "quote": "mark walter of the american cancer society presented his request to run the fundraiser",
+   "tags": [
+    "appointments",
+    "road event",
+    "cycling"
+   ]
+  },
+  {
+   "topic": "Verizon Wireless Amendment to Lease Agreement",
+   "resolution": "approved",
+   "quote": "ms. lemieux reported the lease agreement has been changed to be consistent with the rfp wording.",
+   "tags": [
+    "lease",
+    "verizon",
+    "telecom"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "Accounts Payable warrant signed; Embers Pizzeria alteration approved with condition",
+   "quote": "the board signed an accounts payable warrant in the amount of $536,284.32.",
+   "tags": [
+    "warrants",
+    "liquor license",
+    "alcohol license"
+   ]
+  },
+  {
+   "topic": "Legal counsel interviews follow-up",
+   "resolution": "continued; Board requested cost breakdown; reinterviews set April 18",
+   "quote": "ms. lemieux referred to compiled evaluation ratings for the four legal counsel firms.",
+   "tags": [
+    "legal counsel",
+    "procurement",
+    "kp-law"
+   ]
+  },
+  {
+   "topic": "Assignment consent, Clean Footprint net metering agreement",
+   "resolution": "approved",
+   "quote": "facilities director john londa and john kluwin of clean footprint llc appeared regarding the request",
+   "tags": [
+    "solar",
+    "net metering",
+    "assignment"
+   ]
+  },
+  {
+   "topic": "Complete Streets policy review and possible vote to adopt",
+   "resolution": "continued; no vote",
+   "quote": "the discussion will be continued.",
+   "tags": [
+    "complete streets",
+    "massdot",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Bylaw Review Committee recommendations",
+   "resolution": "no action; concerns forwarded to committee",
+   "quote": "mr. ebersole drafted a redlined version illustrating the bolded language that is going to be changed",
+   "tags": [
+    "bylaws",
+    "charter",
+    "review committee"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Warrant signatures",
+   "resolution": "approved; five copies signed",
+   "quote": "to sign the annual town meeting warrant",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Committee presentations on town meeting articles",
+   "resolution": "suggested; Cemetery Commission to present at May meeting",
+   "quote": "suggestion was made to have the cemetery commission present on their request",
+   "tags": [
+    "town meeting",
+    "cemetery commission"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports",
+   "quote": "ms. luck reported the school committee meeting last week was cancelled due to illness.",
+   "tags": [
+    "committee reports",
+    "sewer",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Town Manager report: Town Hall indoor air quality and building issues",
+   "resolution": "informational; steps taken, assessment preliminary",
+   "quote": "the board has received a copy of an indoor air quality report for town hall conducted by the department of public health in december 2016",
+   "tags": [
+    "town hall",
+    "mold",
+    "building"
+   ]
+  },
+  {
+   "topic": "Town Manager report: Community Compact grants",
+   "resolution": "informational; scopes of work being prepared",
+   "quote": "ms. lemieux reported she has received notification today from the department of revenue regarding the",
+   "tags": [
+    "grants",
+    "community compact",
+    "cyber security",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Public comment and town meeting reminder",
+   "resolution": "no action",
+   "quote": "chriztine foltz, 284 lancaster ave, stated she had just left the middle/high school gym",
+   "tags": [
+    "public comment",
+    "town meeting",
+    "election"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "adjourned at 8:13 p.m.",
+   "quote": "to adjourn the meeting at 8:13 p.m.",
+   "tags": [
+    "adjournment",
+    "next meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for 2017 Bicycles Battling Cancer Ride (American Cancer Society)",
+   "where": "text",
+   "quote": "mark walter of the american cancer society presented his request to run the fundraiser"
+  },
+  {
+   "name": "Verizon Wireless Lease Agreement amendment (replacing Exhibit 1)",
+   "where": "text",
+   "quote": "ms. lemieux reported the lease agreement has been changed to be consistent with the rfp wording."
+  },
+  {
+   "name": "Accounts Payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $536,284.32."
+  },
+  {
+   "name": "Alteration of Premises for Alcohol License 00004-RS-0636 (Embers Pizzeria)",
+   "where": "text",
+   "quote": "owner ken ricker requested to expand the patio area at embers pizzeria, 84 lakefront avenue from 240 to 640"
+  },
+  {
+   "name": "Compiled evaluation ratings and reference checks for four legal counsel firms, with fee schedules",
+   "where": "text",
+   "quote": "ms. lemieux referred to compiled evaluation ratings for the four legal counsel firms."
+  },
+  {
+   "name": "Assignment Consent for the Net Metering Agreement with Clean Footprint LLC",
+   "where": "text",
+   "quote": "assignment consent for the net metering agreement with clean footprint llc"
+  },
+  {
+   "name": "Draft Complete Streets policy",
+   "where": "text",
+   "quote": "ms. lemieux referred to the draft complete streets policy."
+  },
+  {
+   "name": "Bylaw Review Committee redlined version (drafted by Mr. Ebersole)",
+   "where": "text",
+   "quote": "mr. ebersole drafted a redlined version illustrating the bolded language that is going to be changed"
+  },
+  {
+   "name": "Town Charter section 3-2 part (c), Board of Selectmen Licensing Authority",
+   "where": "text",
+   "quote": "town charter section 3-2 part (c) board of selectmen licensing authority reads:"
+  },
+  {
+   "name": "Indoor air quality report for Town Hall, Department of Public Health, December 2016",
+   "where": "text",
+   "quote": "the board has received a copy of an indoor air quality report for town hall conducted by the department of public health in december 2016"
+  },
+  {
+   "name": "Community Compact Program best practices submittal and grant notice (Department of Revenue)",
+   "where": "text",
+   "quote": "ms. lemieux reported she has received notification today from the department of revenue regarding the"
+  },
+  {
+   "name": "Annual Town Meeting Warrant",
+   "where": "text",
+   "quote": "to sign the annual town meeting warrant"
+  },
+  {
+   "name": "Resignation of Jim Auge from Board of Health",
+   "where": "text",
+   "quote": "mr. toale read mr. auge's resignation aloud."
+  }
+ ],
+ "tags": [
+  "town hall",
+  "appointments",
+  "liquor license",
+  "legal counsel",
+  "solar net metering",
+  "complete streets",
+  "bylaw review",
+  "town meeting",
+  "grants",
+  "warrants",
+  "board of health vacancy",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

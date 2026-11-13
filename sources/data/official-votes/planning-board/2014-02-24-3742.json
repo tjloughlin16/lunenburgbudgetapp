@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-02-24",
  "docid": "3742",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of 2-10-14",
+   "motion": "Approve the minutes of 2-10-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "motion, n. lockwood, to approve 2-10-14, second, d. mcquaid."
   },
   {
-   "motion": "Grant waiver from submission of environmental impact statement (§3.4.3.9)",
+   "motion": "Grant waiver of § 3.4.3.9 (environmental impact statement) for 50 Elmwood Road.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "motion, n. lockwood, to grant waiver, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Grant waiver for dead end street length (§4.2.5.1)",
+   "motion": "Grant waiver of § 4.2.5.1 (650 foot dead-end street length) for 50 Elmwood Road, allowing 750 feet.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, n. lockwood, to grant waiver, second, d. mcquaid, all aye."
+   "quote": "had no issue. motion, n. lockwood, to grant waiver, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Approve Definitive Subdivision Plan at 50 Elmwood Road as submitted",
+   "motion": "Approve the Definitive Subdivision plan for 50 Elmwood Road as submitted.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -44,15 +44,388 @@
    "quote": "motion, d. mcquaid, to approve plan as submitted, second, m. allison, all aye."
   },
   {
-   "motion": "Approve site plan at 305 Leominster Shirley Road",
+   "motion": "Approve 305 Leominster Shirley Road (Force Corporation site plan).",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed 4-1",
+   "outcome": "passed 4 – 1",
    "procedural": false,
    "quote": "motion, n. lockwood, to approve 305 leominster shirley road, second, d. mcquaid, vote passed 4 - 1."
+  },
+  {
+   "motion": "Enter into executive session and not return to regular session; regular session adjourned at 9:50 PM.",
+   "moved_by": "E. Bakaysa",
+   "seconded_by": "N. Lockwood",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion, e. bakaysa, to enter into execu tive session not to return to regular session, second, n. lockwood, all aye."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1313225
+ "dropped_unquoted": 0,
+ "note": "Text is a lightly garbled extraction with stray spacing (e.g., \"execu tive\", \"confer w ith\"); quotes are copied as printed with spacing collapsed. Minutes approval motion records no result. The waiver votes are recorded as \"all aye\" with no count. Planning Director Marion M. Benson was absent. No dollar figures appear in the text. Second public comment and board comments were \"None\" and are not listed as topics.",
+ "cost_usd": 0.010222520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Attorney, Town Counsel",
+   "status": "remote",
+   "quote": "telephone conference w/town counsel re rmd bylaw - discussion with attorney joel bard regarding board question s."
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "Whitman and Bingham Associates, representing the applicant",
+   "status": "present",
+   "quote": "anthony cleaves, whitman and bingham associates, spoke on behalf of joseph russo, property owner for 357 electric avenue."
+  },
+  {
+   "name": "Bill Drumm",
+   "role": "",
+   "status": "not stated",
+   "quote": "anr- 419 sunny hill road, bill drumm- plan accepted for review."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Planning Board to confer with the Board of Health on whether inspection provisions could be a Board of Health regulation rather than a Town Bylaw.",
+   "quote": "planning board to confer w ith board of health"
+  },
+  {
+   "decision": "Town Counsel to research separate regulation of cultivation and retail uses, and the question of a State or local database of licensees.",
+   "quote": "j. bard to research. n. lockwood inquired if the board could dictate to the facility"
+  },
+  {
+   "decision": "Board to hold a public hearing on the draft RMD bylaw on March 24 and to be placed on the Board of Selectmen agenda for April 1, 2014.",
+   "quote": "board would like to hold a public hearing on march 24 th and be on the board of selectmen agenda for april 1, 2014."
+  },
+  {
+   "decision": "An in-house tech meeting to be held for Highfield Village to inform new Town officials; abutters to be notified of the continuation of the hearing; continuation date to be set.",
+   "quote": "it was determined that an in-house tech meeting should be held to inform the new officials of the project."
+  },
+  {
+   "decision": "Owner of 357 Electric Avenue to be scheduled for a Board appointment through the Planning Office.",
+   "quote": "agenda appointment will be set through the planning office."
+  },
+  {
+   "decision": "J. Bilotta-Simeone to attend the School Building Committee working group on March 5 for the Planning Director.",
+   "quote": "j. bilotta-simeone will attend for the planning director."
+  },
+  {
+   "decision": "J. Bilotta-Simeone to work with the Town Manager to try to get the White Tail Crossing developer on the Annual Town Meeting Warrant.",
+   "quote": "j. bilotta-simeone working with town manager to try and get developer on the warrant for annual town meeting."
+  },
+  {
+   "decision": "M. Allison to initiate a meeting between the Agricultural Commission and the Land Boards.",
+   "quote": "have asked m. allison to initiate."
+  },
+  {
+   "decision": "Findings and Directives to be prepared for Board endorsement for 50 Elmwood Road.",
+   "quote": "findings and directives will be prepared for board endorsement."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "RMD bylaw security fee",
+   "what_was_recorded": "The Board noted it would incorporate a fee for extra security measures into the draft RMD bylaw; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "incorporate fee for extra security measures."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Compliment on RMD bylaw work",
+   "quote": "board was complimented on the work it was putting into crafting the rmd bylaw."
+  },
+  {
+   "speaker": "Anthony Cleaves",
+   "stated_role": "Whitman and Bingham Associates, spoke on behalf of Joseph Russo, property owner for 357 Electric Avenue",
+   "topic": "357 Electric Avenue for RMD use",
+   "quote": "anthony cleaves, whitman and bingham associates, spoke on behalf of joseph russo, property owner for 357 electric avenue."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Telephone conference with Town Counsel re RMD bylaw",
+   "resolution": "discussed; Town Counsel to research several questions",
+   "quote": "telephone conference w/town counsel re rmd bylaw - discussion with attorney joel bard regarding board question s.",
+   "tags": [
+    "RMD bylaw",
+    "town counsel",
+    "marijuana"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; appointment to be set through Planning Office",
+   "quote": "agenda appointment will be set through the planning office.",
+   "tags": [
+    "public comment",
+    "RMD"
+   ]
+  },
+  {
+   "topic": "ANR 419 Sunny Hill Road",
+   "resolution": "plan accepted for review",
+   "quote": "anr- 419 sunny hill road, bill drumm- plan accepted for review.",
+   "tags": [
+    "ANR"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motion made; outcome not stated",
+   "quote": "motion, n. lockwood, to approve 2-10-14, second, d. mcquaid.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; Agricultural Commission to seek meeting with Land Boards",
+   "quote": "current chair will be stepping down as he is moving out of lunenburg",
+   "tags": [
+    "committees",
+    "agriculture",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Definitive Subdivision, 50 Elmwood Road",
+   "resolution": "two waivers granted; plan approved and endorsed",
+   "quote": "definitive subdivision, 50 elmwood road - a. cleaves, whitman and bingham associates represented the applicant.",
+   "tags": [
+    "subdivision",
+    "waivers",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Caucus and Annual Town Meeting",
+   "resolution": "noted",
+   "quote": "caucus- march 17, 2014- noted.",
+   "tags": [
+    "town meeting",
+    "election"
+   ]
+  },
+  {
+   "topic": "Draft RMD bylaw",
+   "resolution": "continued discussion; public hearing and Selectmen date planned",
+   "quote": "continued discussion/work on draft rmd bylaw.",
+   "tags": [
+    "RMD bylaw",
+    "special permit",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Highfield Village",
+   "resolution": "continued; in-house tech meeting and abutter notice required; continuation date to be set",
+   "quote": "it was determined that an in-house tech meeting should be held to inform the new officials of the project.",
+   "tags": [
+    "Highfield Village",
+    "sewer",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Force Corporation, 305 Leominster Shirley Road",
+   "resolution": "approved 4 – 1",
+   "quote": "motion, n. lockwood, to approve 305 leominster shirley road, second, d. mcquaid, vote passed 4 - 1.",
+   "tags": [
+    "site plan",
+    "sight distance",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Whites Woods, Mass Ave",
+   "resolution": "no update",
+   "quote": "whites woods, mass ave- no update",
+   "tags": [
+    "development"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom",
+   "resolution": "no update",
+   "quote": "emerald place at lake whalom- no update",
+   "tags": [
+    "development"
+   ]
+  },
+  {
+   "topic": "White Tail Crossing",
+   "resolution": "awaiting snow melt for road inspection; developer on Town Meeting warrant sought",
+   "quote": "j. bilotta-simeone working with town manager to try and get developer on the warrant for annual town meeting.",
+   "tags": [
+    "road acceptance",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "651 Chase Road Solar",
+   "resolution": "noted; work continuing",
+   "quote": "651 chase road solar- work continues to prepare the site.",
+   "tags": [
+    "solar"
+   ]
+  },
+  {
+   "topic": "265 Pleasant Street Solar",
+   "resolution": "noted; work progressing",
+   "quote": "265 pleasant street solar- racking posts installed.",
+   "tags": [
+    "solar"
+   ]
+  },
+  {
+   "topic": "Action file: citizen survey",
+   "resolution": "noted; final summary to come",
+   "quote": "final summary will be provided to the board.",
+   "tags": [
+    "survey"
+   ]
+  },
+  {
+   "topic": "Action file: notices",
+   "resolution": "noted",
+   "quote": "notices- conservation commission- noted",
+   "tags": [
+    "notices",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "march 24, 2014, 6:30 pm, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "discussed; no action recorded",
+   "quote": "continued discussion of more frequent board meetings.",
+   "tags": [
+    "board operations",
+    "meeting frequency"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; regular session adjourned 9:50 PM",
+   "quote": "motion, e. bakaysa, to enter into execu tive session not to return to regular session, second, n. lockwood, all aye.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 2-10-14",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 2-10-14 anr plan, 419 sunny hill road"
+  },
+  {
+   "name": "ANR Plan, 419 Sunny Hill Road",
+   "where": "list",
+   "quote": "anr plan, 419 sunny hill road draft rmd bylaw"
+  },
+  {
+   "name": "Draft RMD Bylaw",
+   "where": "list",
+   "quote": "draft rmd bylaw force corp., 305 leominster shirley road, site plan review approval"
+  },
+  {
+   "name": "Force Corp., 305 Leominster Shirley Road, Site Plan Review Approval",
+   "where": "list",
+   "quote": "force corp., 305 leominster shirley road, site plan review approval"
+  },
+  {
+   "name": "Revised Plan for 305 Leominster Shirley Road showing sight distances",
+   "where": "text",
+   "quote": "revised plan submitted showing sight distances in both directions for each driveway."
+  },
+  {
+   "name": "J. Johnson correspondence on sight distance",
+   "where": "text",
+   "quote": "noted j. johnson's correspondence that the left and right turns out of the existing site exit"
+  },
+  {
+   "name": "Order of Conditions, 50 Elmwood Road (Conservation Commission)",
+   "where": "text",
+   "quote": "voted to issue an order of conditions for the project."
+  },
+  {
+   "name": "Findings and Directives, 50 Elmwood Road",
+   "where": "text",
+   "quote": "findings and directives will be prepared for board endorsement."
+  },
+  {
+   "name": "Citizen survey final summary",
+   "where": "text",
+   "quote": "final summary will be provided to the board."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "RMD bylaw",
+  "marijuana",
+  "special permit",
+  "zoning",
+  "subdivision",
+  "waivers",
+  "ANR",
+  "site plan",
+  "sight distance",
+  "Highfield Village",
+  "solar",
+  "town meeting",
+  "committee reports",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

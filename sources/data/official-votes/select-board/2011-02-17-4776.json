@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-02-17",
  "docid": "4776",
@@ -12,13 +12,302 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the Regular Session at 8:30 P.M.",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the Regular Session.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 8:30 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10265350000000001
+ "note": "OCR text from macOS Vision; several tables (revenue estimates, Capital Planning Committee votes, enrollment) are garbled, so figures were taken only from clean lines. The minutes do not print the members' titles, the presiding officer, or the mover and seconder for the adjournment vote. Some budget figures in the summary tables could not be verified.",
+ "cost_usd": 0.00565482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY2012 revenue estimate, property tax",
+   "what_was_recorded": "The FY2012 property tax estimate is stated, with the New Growth estimate of $350,000 and the 2 1/2% increase.",
+   "quote": "estimate for fy2012 = $18,767,335",
+   "figures_as_printed": [
+    "$18,767,335",
+    "$350,000",
+    "$595,774"
+   ]
+  },
+  {
+   "topic": "State aid: Chapter 70 and Lottery",
+   "what_was_recorded": "Governor's projection shows a slight Chapter 70 increase and a Lottery reduction; a 2% Chapter 70 cut is projected as a concern.",
+   "quote": "7.23% reduction in lottery ($64,672)",
+   "figures_as_printed": [
+    "+$24,149",
+    "7.23%",
+    "$64,672",
+    "$490K",
+    "$89,968"
+   ]
+  },
+  {
+   "topic": "Local receipts: motor vehicle excise commitment",
+   "what_was_recorded": "Commitment #1 was up, and the FY2012 local receipts estimate rises 3.5%.",
+   "quote": "commitment was up $42,407, or 4.97%",
+   "figures_as_printed": [
+    "$42,407",
+    "4.97%",
+    "$12,555",
+    "$6,457",
+    "0.27%"
+   ]
+  },
+  {
+   "topic": "Operating expenses overall",
+   "what_was_recorded": "Operating expenses are projected to increase, with the Lunenburg Public School and Unclassified lines the largest increases.",
+   "quote": "operating expenses are projected to increase",
+   "figures_as_printed": [
+    "$537,744",
+    "2.03%",
+    "$360,349",
+    "$138,587",
+    "$88,043",
+    "$79,816",
+    "$62,099"
+   ]
+  },
+  {
+   "topic": "Health insurance",
+   "what_was_recorded": "A 10% premium increase is estimated, partly offset by a change in the employer contribution.",
+   "quote": "estimating 10% increase in premium",
+   "figures_as_printed": [
+    "10%",
+    "77.5%",
+    "75%"
+   ]
+  },
+  {
+   "topic": "Debt service",
+   "what_was_recorded": "Total debt service decreases, reducing the impact on the General Fund.",
+   "quote": "debt service -$121,933",
+   "figures_as_printed": [
+    "$121,933",
+    "$2897801",
+    "$2,775865"
+   ]
+  },
+  {
+   "topic": "Snow and ice appropriation",
+   "what_was_recorded": "Appropriation request of $250,000, with 10-year and 5-year averages and rising salt and sand costs.",
+   "quote": "appropriation request $250,000",
+   "figures_as_printed": [
+    "$250,000",
+    "$160K",
+    "$200K",
+    "$250K",
+    "$242,059",
+    "$223,672",
+    "$273,629",
+    "$268,230"
+   ]
+  },
+  {
+   "topic": "Retirement assessment",
+   "what_was_recorded": "FY2012 assessment received; the one-payment option saves about 2%.",
+   "quote": "$597,771, which represents an 2.39%",
+   "figures_as_printed": [
+    "$597,771",
+    "2.39%",
+    "$11,500"
+   ]
+  },
+  {
+   "topic": "Police Department appropriation",
+   "what_was_recorded": "FY2012 appropriation request with a 6.22% increase, including one additional officer.",
+   "quote": "6.22% increase, $79,816",
+   "figures_as_printed": [
+    "$1,363,213",
+    "6.22%",
+    "$79,816"
+   ]
+  },
+  {
+   "topic": "Fire Department appropriation",
+   "what_was_recorded": "FY2012 requested appropriation with an 8.00% increase; off-hours per-diem coverage of $25K and weekend coverage of $50K.",
+   "quote": "fy2012 requested appropriation = $838,062",
+   "figures_as_printed": [
+    "$838,062",
+    "$62,099",
+    "8.00%",
+    "$25K",
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Inspectional Services",
+   "what_was_recorded": "FY2012 request for inspectional services with a 4.84% increase.",
+   "quote": "fy2012 request is $191,083, which is an increase",
+   "figures_as_printed": [
+    "$191,083",
+    "$8,822",
+    "4.84%"
+   ]
+  },
+  {
+   "topic": "DPW and Facilities",
+   "what_was_recorded": "FY2012 request with a 6.56% increase; $15,000 for a new MUTCD signs mandate.",
+   "quote": "fy2012 request is $1,429,700, which is an",
+   "figures_as_printed": [
+    "$1,429,700",
+    "$88,043",
+    "6.56%",
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Solid waste and recycling",
+   "what_was_recorded": "FY2012 request for recycling and trash removal; contract expires June 30, 2011 and goes out to bid in March.",
+   "quote": "fy2012 request is $127,500 for",
+   "figures_as_printed": [
+    "$127,500"
+   ]
+  },
+  {
+   "topic": "Council on Aging",
+   "what_was_recorded": "FY2012 request with a 12.74% increase, for increased outreach service hours.",
+   "quote": "fy2012 request is $118,460, which is",
+   "figures_as_printed": [
+    "$118,460",
+    "$13,384",
+    "12.74%"
+   ]
+  },
+  {
+   "topic": "Lunenburg Public Library",
+   "what_was_recorded": "FY2012 request; CWMARS assessment is 50% in operating budget, balance from State Aid.",
+   "quote": "fy2012 request is $346,956",
+   "figures_as_printed": [
+    "$346,956"
+   ]
+  },
+  {
+   "topic": "Lunenburg Public Schools",
+   "what_was_recorded": "Town Manager's preliminary recommendation for schools, an increase of 2.5%, below the Superintendent's recommendation.",
+   "quote": "recommendation is $14,774,297",
+   "figures_as_printed": [
+    "$14,774,297",
+    "2.5%",
+    "$360,349"
+   ]
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "No preliminary assessment received; a 2.5% increase is assumed.",
+   "quote": "assuming 2.5% increased",
+   "figures_as_printed": [
+    "2.5%"
+   ]
+  },
+  {
+   "topic": "Capital Planning Committee recommendation",
+   "what_was_recorded": "Recommended level of capital expenditure, with $389,000 financed over 5 years and the rest paid in cash.",
+   "quote": "recommended level of expenditure is",
+   "figures_as_printed": [
+    "$522,765",
+    "$389,000",
+    "3.500%",
+    "$41,845",
+    "$429,845"
+   ]
+  },
+  {
+   "topic": "Available funds: SBA reimbursement and borrowing",
+   "what_was_recorded": "Available funds include SBA reimbursement and borrowing for the capital plan.",
+   "quote": "sba reimbursement - $559,057",
+   "figures_as_printed": [
+    "$559,057",
+    "$389,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Presentation of FY2012 Preliminary Budget Recommendation",
+   "resolution": "presented, no action",
+   "quote": "1. presentation of fy2012 preliminary budget recommendation - kerry presented that attached powerpoint",
+   "tags": [
+    "budget",
+    "FY2012",
+    "presentation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "attached PowerPoint presentation (Town of Lunenburg, Proposed Annual Budget - FY2012, February 17, 2011)",
+   "where": "list",
+   "quote": "kerry presented that attached powerpoint presentation to the board."
+  }
+ ],
+ "tags": [
+  "FY2012 budget",
+  "preliminary budget",
+  "revenue estimates",
+  "state aid",
+  "expenditures",
+  "schools",
+  "public safety",
+  "capital plan",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry presented that attached powerpoint presentation"
+ },
+ "dropped_unquoted_by_field": {}
 }

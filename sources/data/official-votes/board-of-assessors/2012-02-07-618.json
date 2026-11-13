@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-02-07",
  "docid": "618",
@@ -12,39 +12,179 @@
  },
  "votes": [
   {
-   "motion": "grant two applications for Tax Exemption totaling $1,750.00",
+   "motion": "Grant two applications for Tax Exemption totaling $1,750.00 (41C / Elderly / Veterans).",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "boa reviewed and voted to grant two applications for tax exemption totally $1,750.00.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "boa reviewed and voted to grant two applications for tax exemption totally $1,750.00."
   },
   {
-   "motion": "grant five real estate abatements",
+   "motion": "Grant the five real estate abatement applications listed (69 Riley Road, 91 Mulpus Road, 71 Royal Fern Drive, 444 West Townsend Road, 71 Riley Road).",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted to grant the following 5 abatements: • 69 riley road • 91 mulpus road • 71 royal fern drive • 444 west townsend road • 71 riley road",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "the board voted to grant the following 5 abatements:"
   },
   {
-   "motion": "table two real estate abatement applications for further research and discussion",
+   "motion": "Table two real estate abatement applications for further research and discussion with the Building Official, Michael Sauvageau.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted to table two applications for further research / discussion with the building official, michael sauvageau.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "the board voted to table two applications for further research / discussion with the building official, michael sauvageau."
   },
   {
-   "motion": "meet on Tuesday, March 6th at 6 pm",
+   "motion": "Meet on Tuesday, March 6th at 6 pm.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "board voted to meet on tuesday, march 6th at 6 pm.",
-   "moved_by": "",
-   "seconded_by": ""
+   "procedural": false,
+   "quote": "board voted to meet on tuesday, march 6th at 6 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes, readable. No vote counts recorded for any motion.",
- "cost_usd": 0.1420465
+ "note": "OCR of a scanned page; some words are garbled (e.g., 'Boaro' for Board, '7\\\"' for 7th). The text appears to end mid-sentence at the abatement filing deadline. The minutes print the motor vehicle billing date as 2/24/2011 in a 2012 meeting; recorded as printed. Motions do not name a mover or seconder, and no vote count is printed for the tax exemption, abatement, tabling or meeting-date votes; outcomes are recorded as 'passed' from 'voted to' wording. No adjournment vote is recorded, only the time. No public comment is recorded.",
+ "cost_usd": 0.00440432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board member, matthew j."
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member, matthew j. papini, sr., associate assessor david manzello and louise paquette administrative assistant."
+  },
+  {
+   "name": "David Manzello",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "board member, matthew j. papini, sr., associate assessor david manzello and louise paquette administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "board member, matthew j. papini, sr., associate assessor david manzello and louise paquette administrative assistant."
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "boaro member, louis j. franco not present"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants and payroll, with no separate motion or vote count recorded.",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & payroll."
+  },
+  {
+   "decision": "The Board denied 11 real estate abatement applications, with no vote count recorded.",
+   "quote": "the board denied 11 applications"
+  },
+  {
+   "decision": "The Board wants to accompany David on inspections of the remaining 9 properties; Louise will contact the applicants to set up the appointments.",
+   "quote": "louise will contact the applicants to set up the appointments within the next couple of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax exemption grants",
+   "what_was_recorded": "Two tax exemption applications were granted, totaling the amount printed.",
+   "figures_as_printed": [
+    "$1,750.00"
+   ],
+   "quote": "boa reviewed and voted to grant two applications for tax exemption totally $1,750.00."
+  },
+  {
+   "topic": "First commitment for 2012 total tax",
+   "what_was_recorded": "Louise reported the first 2012 commitment total tax amount, stated with an invoice count of 10,453.",
+   "figures_as_printed": [
+    "$942,761.25"
+   ],
+   "quote": "the first commitment for 2012 total tax of 10,453 invoices is $942,761.25"
+  },
+  {
+   "topic": "7th commitment for 2011",
+   "what_was_recorded": "Louise reported the 7th commitment for 2011 with 253 invoices and a total amount.",
+   "figures_as_printed": [
+    "$6,252.70"
+   ],
+   "quote": "commitment for 2011 with 253 invoices total $6,252.70."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Vouchers, abatements, warrants and payroll",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & payroll.",
+   "tags": [
+    "warrants",
+    "payroll",
+    "vouchers"
+   ]
+  },
+  {
+   "topic": "Tax exemption applications",
+   "resolution": "two granted",
+   "quote": "boa reviewed and voted to grant two applications for tax exemption totally $1,750.00.",
+   "tags": [
+    "tax exemptions",
+    "elderly",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Real estate abatement applications",
+   "resolution": "5 granted, 11 denied, 2 tabled, 9 to be inspected",
+   "quote": "david presented to the board 18 real estate abatement applications for review and approval.",
+   "tags": [
+    "abatements",
+    "real estate",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Motor vehicle bills and commitments",
+   "resolution": "reported, no action",
+   "quote": "louise stated that the first billing for calendar year 2012 motor vehicle bills will be mailed on 2/24/2011.",
+   "tags": [
+    "motor vehicle excise",
+    "commitments",
+    "property tax"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for March 6 at 6 pm",
+   "quote": "board voted to meet on tuesday, march 6th at 6 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "David's power point presentation of each individual property",
+   "where": "text",
+   "quote": "after david's power point presentation of each individual property, the board voted to grant the following 5"
+  }
+ ],
+ "tags": [
+  "property tax",
+  "abatements",
+  "tax exemptions",
+  "motor vehicle bills",
+  "commitments",
+  "board scheduling",
+  "assessors"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

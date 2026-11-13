@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-07-12",
  "docid": "4974",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the toll booth fundraiser for the Boys and Girls Club pending submitting the application",
+   "motion": "Approve the toll booth fundraiser pending submitting the application.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -20,46 +20,282 @@
    "quote": "motion: r. ebersole 2nd: p. bertram to approve the toll booth fundraiser pending submitting the application vote: all in favor"
   },
   {
-   "motion": "Reschedule the Special Town Meeting date to August 22, 2016",
+   "motion": "Reschedule the Special Town Meeting date to August 22, 2016.",
    "moved_by": "R. Ebersole",
    "seconded_by": "I. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: r. ebersole 2'': i. alonzo to reschedule the special town meeting date to august 22, 2016 vote: all in favor"
   },
   {
-   "motion": "Open the warrant for the Special Town Meeting and close it at 4:00 p.m. on Thursday, July 14, 2016",
+   "motion": "Open the warrant for the Special Town Meeting tonight and close it at 4:00 p.m. on Thursday, July 14, 2016.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: r. ebersole 2\"d: p. bertram to open the warrant for the special town meeting tonight and close it at 4:00 p.m. on thursday, july 14, 2016 vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of July 5, 2016",
+   "motion": "Approve the minutes of July 5, 2016.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes of july 5, 2016 were approved."
   },
   {
-   "motion": "Appoint Jamie Toale to the Town Manager Screening Committee",
+   "motion": "Appoint Jamie Toale to the Town Manager Screening Committee.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: p. bertram to appoint jamie toale to the town manager screening committee 2nd.t. alonzo vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:20 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:20 p.m. 2\"°: p. luck vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "motion: p. bertram to adjourn the meeting at 9:20 p.m. 2\"°: p. luck vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcription from macOS Vision. OCR artifacts preserved in names and formatting: I. Alonzo (likely OCR error for T. Alonzo), and non-standard OCR renderings of 2nd (shown as 2'', 2\\\"d, 2\\\") in the vote records. All six votes passed unanimously.\"",
- "cost_usd": 0.1451718
+ "note": "Text is macOS Vision OCR with garbled characters (e.g., \"2'':\", \"2\\\"°:\", \"Solect\", \"I. Alonzo\" as the seconder, likely T. Alonzo but recorded as printed). Vote results are printed only as \"All in Favor\" with no tallies. The minutes-approval line records no motion or mover, so it is marked passed with no mover. Warrant and Form 43 signings are recorded as actions without a vote. The documents_list flag is set from a sentence naming the draft warrant articles as reviewed, not from a formal list.",
+ "cost_usd": 0.00623572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Executive Director of the Boys and Girls Club of Lunenburg",
+   "status": "present",
+   "quote": "michelle belleza, executive director of the boys and girls club of lunenburg, reported there was a board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Clarify at the special town meeting that the Board has the authority to enter into the power purchase agreements.",
+   "quote": "it was decided to clarify at the special town meeting that the board has the authority to enter into these power purchase agreements."
+  },
+  {
+   "decision": "Hire an interim town manager and begin the permanent hiring process simultaneously.",
+   "quote": "it was decided to hire an interim manager and begin the hiring process simultaneously."
+  },
+  {
+   "decision": "Reviewing legal counsel services is to be one of the Board's goals.",
+   "quote": "the board decided reviewing legal counsel services should be one of their goals."
+  },
+  {
+   "decision": "Ms. Lafleur will speak to Attorney Joel Bard about the PILOT-related Article 6 further.",
+   "quote": "ms. lafleur will speak to attorney joel bard about this further."
+  },
+  {
+   "decision": "Mr. Toale will work with Ms. Lafleur to follow up on unfinished business.",
+   "quote": "mr. toale will work with ms. lafleur to follow up on unfinished business."
+  },
+  {
+   "decision": "The Board signed a new Form 43 for reconsideration of the transfer of The Bootlegger restaurant all alcohol license, to be sent to the Alcohol Beverages Control Commission.",
+   "quote": "the board signed a new form 43 for reconsideration of the transfer of the bootlegger restaurant all alcohol"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Special Town Meeting Article 4 - cemetery funds",
+   "what_was_recorded": "Article 4 requests an appropriation from sale of cemetery lots for cemetery care, improvement and embellishment.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "article 4 is a request to appropriate $35,000 from sale of cemetery lots for care, improvement and"
+  },
+  {
+   "topic": "Payroll and accounts payable warrants signed",
+   "what_was_recorded": "The Board signed a payroll warrant and two accounts payable warrants in the amounts printed.",
+   "figures_as_printed": [
+    "$557.810.55",
+    "$477,579.54",
+    "$298,048.21"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $557.810.55; an accounts payable warrant for $477,579.54 and an accounts payable warrant in the amount of $298,048.21."
+  },
+  {
+   "topic": "Special Town Meeting Article 16 - Lanni Orchards APR",
+   "what_was_recorded": "Article 16 appropriates a local contribution toward the Agricultural Preservation Restriction for Lanni Orchards at 292 Chase Road; Ms. Lafleur said the funding comes from the 2016 budget.",
+   "figures_as_printed": [
+    "$58,000"
+   ],
+   "quote": "article 16 appropriates $58,000 for the local contribution towards the agricultural"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michelle Belleza",
+   "stated_role": "Executive Director of the Boys and Girls Club of Lunenburg",
+   "topic": "Teen Center parking lot thanks and toll booth fundraiser request",
+   "quote": "michelle belleza, executive director of the boys and girls club of lunenburg, reported there was a board"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Boys and Girls Club toll booth fundraiser",
+   "resolution": "approved pending application",
+   "quote": "ms. belleza was here tonight to request a toll booth fundraiser",
+   "tags": [
+    "fundraiser",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting date",
+   "resolution": "rescheduled to August 22, 2016",
+   "quote": "ms. lafleur reported town moderator murphy was not available for the special town meeting on august 2nd",
+   "tags": [
+    "special town meeting",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant opened",
+   "resolution": "warrant opened, closes 4:00 p.m. July 14, 2016",
+   "quote": "to open the warrant for the special town meeting tonight and close it at 4:00 p.m. on thursday, july 14,",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Draft Special Town Meeting warrant articles",
+   "resolution": "reviewed; PPA authority to be clarified at town meeting",
+   "quote": "the board reviewed the draft special town meeting warrant articles.",
+   "tags": [
+    "warrant articles",
+    "power purchase agreements",
+    "zoning bylaw",
+    "cemetery",
+    "APR"
+   ]
+  },
+  {
+   "topic": "Minutes of July 5, 2016",
+   "resolution": "approved",
+   "quote": "minutes of july 5, 2016 were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and Form 43 signed",
+   "resolution": "signed",
+   "quote": "the board signed a payroll warrant in the amount of $557.810.55",
+   "tags": [
+    "warrants",
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Town Manager hiring and interim manager",
+   "resolution": "decided to hire an interim manager and start the search at the same time",
+   "quote": "the discussion turned to hiring a new town manager due to ms. lafleur's resignation effective september 5th",
+   "tags": [
+    "town manager",
+    "hiring",
+    "search committee"
+   ]
+  },
+  {
+   "topic": "Desired qualities of a new Town Manager and Board goals",
+   "resolution": "discussed; legal counsel review added as a goal",
+   "quote": "the board moved on to desired qualities of a new town manager.",
+   "tags": [
+    "board goals",
+    "committees",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Appointment to Town Manager Screening Committee",
+   "resolution": "Jamie Toale appointed",
+   "quote": "motion: p. bertram to appoint jamie toale to the town manager screening committee",
+   "tags": [
+    "appointment",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:20 p.m.",
+   "quote": "motion: p. bertram to adjourn the meeting at 9:20 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Special Town Meeting warrant articles",
+   "where": "text",
+   "quote": "the board reviewed the draft special town meeting warrant articles."
+  },
+  {
+   "name": "Form 43 (reconsideration of transfer of The Bootlegger restaurant all alcohol license)",
+   "where": "text",
+   "quote": "the board signed a new form 43 for reconsideration of the transfer of the bootlegger restaurant all alcohol"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "town manager hiring",
+  "toll booth fundraiser",
+  "zoning bylaw",
+  "Whalom overlay",
+  "power purchase agreements",
+  "cemetery funds",
+  "agricultural preservation restriction",
+  "committees",
+  "warrants",
+  "liquor license"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board reviewed the draft special town meeting warrant articles."
+ },
+ "dropped_unquoted_by_field": {}
 }

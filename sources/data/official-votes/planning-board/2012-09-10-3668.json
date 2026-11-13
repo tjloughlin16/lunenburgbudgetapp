@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-09-10",
  "docid": "3668",
@@ -12,23 +12,224 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of August 27, 2012 and Dippin' Donuts Information Meeting August 27, 2012",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin, Jr.",
+   "motion": "Approve the minutes of August 27, 2012 and the Dippin' Donuts Information Meeting of August 27, 2012.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. bilotta-simeone, motion to approve minutes of august 27, 2012, and dippin ' donuts information meeting august 27, 2012, second, mr. bodkin jr., motion passed."
   },
   {
-   "motion": "Approve the Development Plan Review Findings and Directives for Dippin' Donuts at 457 Massachusetts Avenue as read",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin, Jr.",
+   "motion": "Approve the Dippin' Donuts Development Plan Review Findings and Directives as read.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. bilotta-simeone, motion to approve the d evelopment plan review findings and directives as read, second, mr. bodkin jr., motion passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Meeting minutes from September 10, 2012. Two votes recorded: approval of prior minutes (procedural) and approval of development plan review findings and directives (substantive).",
- "cost_usd": 0.08783250000000001
+ "note": "Text extraction splits some words (e.g., 'D evelopment', 'provi de', 'approximat ely'); quotes are copied as extracted. The adjournment is recorded only as a time (8:30 PM) with no motion or vote shown. The public hearing for MASS PV1, LLC is referred to separate minutes and is not covered here. No dollar figures appear in the text.",
+ "cost_usd": 0.005802219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: robert j. saiia, marion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: robert j. saiia, marion m. benson, planning director"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman and Bingham Associates, speaking on behalf of Kevin O’Brien",
+   "status": "present",
+   "quote": "jamie rheault, whitman and bingham associates, speaking on behalf of kevin o'brien, presented a set of plans to the board."
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "alternate rob bowen attended on behalf of planning board representative, mr. bodkin jr."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board requested an overall plan showing the location of all ten subdivisions on one page (Aro Estates).",
+   "quote": "the board requested an overall plan showing the location of all ten subdivisions on one page."
+  },
+  {
+   "decision": "Mr. Bodkin Jr. will provide the MRPC report at the next Board meeting.",
+   "quote": "mr. bodkin jr. will provi de report at next board meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing, MASS PV1, LLC, 651 Chase Road",
+   "resolution": "referred to separate minutes",
+   "tags": [
+    "public hearing",
+    "Chase Road"
+   ],
+   "quote": "public hearing, mass pv1, llc, 651 chase road- see separate minutes."
+  },
+  {
+   "topic": "Appointment: Aro Estates, Howard Street",
+   "resolution": "discussed; Board requested overall plan of ten subdivisions",
+   "tags": [
+    "subdivision",
+    "Aro Estates",
+    "Town Counsel"
+   ],
+   "quote": "the board requested an overall plan showing the location of all ten subdivisions on one page."
+  },
+  {
+   "topic": "Approvals: minutes of August 27, 2012 and Dippin' Donuts Information Meeting",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. bilotta-simeone, motion to approve minutes of august 27, 2012, and dippin ' donuts information meeting august 27, 2012, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "topic": "Dippin' Donuts, Development Plan Review findings and directives",
+   "resolution": "approved as read",
+   "tags": [
+    "development plan review",
+    "Dippin' Donuts",
+    "Massachusetts Avenue",
+    "septic"
+   ],
+   "quote": "ms. bilotta-simeone, motion to approve the d evelopment plan review findings and directives as read, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, School Reconfiguration Committee)",
+   "resolution": "no action; MRPC report deferred to next meeting",
+   "tags": [
+    "committee reports",
+    "MRPC",
+    "school reconfiguration"
+   ],
+   "quote": "mr. bodkin jr. will provi de report at next board meeting."
+  },
+  {
+   "topic": "Planning Director's report: development status reports",
+   "resolution": "no action",
+   "tags": [
+    "development status",
+    "Emerald Place",
+    "Tri Town Landing"
+   ],
+   "quote": "tri town landing, youngs road- progress reports note footings and half of the building foundation completed."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "tags": [
+    "meeting schedule",
+    "master planning"
+   ],
+   "quote": "september 24th- board meeting, ritter memorial building"
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "no action; clarification given",
+   "tags": [
+    "member issues",
+    "Planning Director",
+    "Administrative Assistant"
+   ],
+   "quote": "ms. bilotta-simeone, after reading the news article in the lunenburg ledger, apologized to ms. benson if"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 PM; no motion recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: adjourned 8:30 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed Soil Absorption System Plan No. 12-21, prepared by Whitman & Bingham Associates, 510 Mechanic Street, Leominster, MA, 01453 (dated not stated)",
+   "where": "text",
+   "quote": "the lunenburg planning board finds that the submittal, proposed soil absorption system plan no. 12 -21 was"
+  },
+  {
+   "name": "Weekly Progress Notification Form (attached)",
+   "where": "text",
+   "quote": "the weekly progress notification form (attached) on a weekly basis and submit each monday to the planning office."
+  },
+  {
+   "name": "Set of plans presented by Jamie Rheault to the Board (Aro Estates)",
+   "where": "text",
+   "quote": "presented a set of plans to the board. he will also send a set to town counsel."
+  },
+  {
+   "name": "Overall plan showing location of all ten subdivisions on one page (requested by the Board)",
+   "where": "text",
+   "quote": "the board requested an overall plan showing the location of all ten subdivisions on one page."
+  },
+  {
+   "name": "Dippin' Donuts Development Plan Review Findings and Directives",
+   "where": "text",
+   "quote": "ms. bilotta-simeone, motion to approve the d evelopment plan review findings and directives as read"
+  },
+  {
+   "name": "Lunenburg Ledger news article",
+   "where": "text",
+   "quote": "after reading the news article in the lunenburg ledger, apologized to ms. benson if"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "development plan review",
+  "septic",
+  "Dippin' Donuts",
+  "Aro Estates",
+  "minutes approval",
+  "committee reports",
+  "development status",
+  "Planning Director absence"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

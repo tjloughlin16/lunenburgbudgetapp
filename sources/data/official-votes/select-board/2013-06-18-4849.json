@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-06-18",
  "docid": "4849",
@@ -12,47 +12,526 @@
  },
  "votes": [
   {
-   "motion": "Approve the Class I License for the sale of Motor Vehicles under MGL Chapter 140 for Recreational Dimensions, Inc., d/b/a Central Mass Power Sports",
+   "motion": "Approve the Class I License for the sale of Motor Vehicles under MGL Chapter 140 for Recreational Dimensions, Inc., d/b/a Central Mass Power Sports.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mir. ebersole moved to approve the class i license for the sale of motor vehicles as provided for under mgl chapter 140 for recreational dimensions, inc., d/b/a central mass power sports. mr. toale seconded. on vote motion carried, 4 in favor, o opposed."
+   "quote": "mir. ebersole moved to approve the class i license for the sale of motor vehicles as provided for under mgl chapter 140"
   },
   {
-   "motion": "Approve the Town Manager Goals and Objectives",
+   "motion": "Approve the Town Manager Goals and Objectives.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. matthews motioned to approve the town manager goals and objectives. mr. toale seconded the motion. on vote motion carried, 4 in favor, o opposed."
+   "procedural": false,
+   "quote": "mr. matthews motioned to approve the town manager goals and objectives. mr. toale seconded the motion."
   },
   {
-   "motion": "Ratify the appointments of the Town Manager",
+   "motion": "Ratify the appointments of the Town Manager.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Ebersole",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. matthews moved to ratify the appointments of the town manager. mr. ebersole seconded the motion. on vote motion carried, 4 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. matthews moved to ratify the appointments of the town manager. mr. ebersole seconded the motion."
   },
   {
-   "motion": "Approve all BOS recommendations with the exception of the Registrar of Voters",
+   "motion": "Approve all BOS appointment recommendations with the exception of the Registrar of Voters.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. ebersole moved to approve all bos recommendations with the exception of the registrar of voters. mr. matthews seconded. on vote motion carried, 4 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. ebersole moved to approve all bos recommendations with the exception of the registrar of voters. mr. matthews seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Toal",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "being no further business mr. matthews moved to adjourn the meeting. mr. toal second. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "being no further business mr. matthews moved to adjourn the meeting. mr. toal second."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR artifact: \"Mir. Ebersole\" is a misread of \"Mr. Ebersole\" in the first vote. Two items were tabled (NuGen PPA and EPG Solar PPA) without being voted on. Revenue Anticipation Note renewal required no vote per the minutes.",
- "cost_usd": 0.1152345
+ "note": "OCR scan (macOS Vision) of typed minutes; several OCR errors, e.g. 'Mir.' and 'Nir.' for Mr., 'O opposed' for 0 opposed, 'Mr. Toal' and 'Poyjnous'. Pages 9-10 (appointment lists) are garbled and only partly readable. Mr. Juhl's first name and affiliation are not printed. The minutes print no roles for most board members. Votes were read from 'On vote motion carried, N in favor' lines. No separate vote is recorded on the minutes of June 11, 2013 or on the warrants. Quotes were copied from the OCR text with line breaks collapsed.",
+ "cost_usd": 0.014421220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel present."
+  },
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel present."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel present."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "with paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "absent",
+   "quote": "absent was tom alonzo."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "Chairman of the Board of Water Commissioners",
+   "status": "present",
+   "quote": "dave rogers, 82 highland street, commented on the passing of dick bishop, the longtime moderator of"
+  },
+  {
+   "name": "Ralph Roberts",
+   "role": "Central Mass Power Sports owner",
+   "status": "present",
+   "quote": "ralph roberts, central mass power sports owner, stated that he was a part of a group that acquired the"
+  },
+  {
+   "name": "Shelley McCaie",
+   "role": "Treasurer-Collector",
+   "status": "present",
+   "quote": "shelley mccaie, treasurer-collector, stated that on december 4, 2012, the bos voted to approve emergency appropriations borrowing"
+  },
+  {
+   "name": "Rick Holland",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney rick holland updated the bos on the progress of the solar projects in town."
+  },
+  {
+   "name": "Robert Babcock",
+   "role": "EPG Solar Representative",
+   "status": "present",
+   "quote": "robert babcock, epg solar representative, updated the bos on their project."
+  },
+  {
+   "name": "Dan Poyjonus",
+   "role": "NuGen Capital Representative",
+   "status": "present",
+   "quote": "dan poyjonus, nugen capital representative, gave an update on the 651 chase road project to the bos."
+  },
+  {
+   "name": "Paul Teixeira",
+   "role": "RCAP Solutions",
+   "status": "present",
+   "quote": "mr. paul teixeira, rcap solutions, thanked the bos for their continued support of the eagle heights housing project."
+  },
+  {
+   "name": "Mr. Juhl",
+   "role": "",
+   "status": "present",
+   "quote": "mr. juhl stated to the bos that despite the difficulties at the federal level, the state level still has strong"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw director, stated that the sewer commission did not discuss a waiver of fees at their"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No vote was needed on the $115,000.00 revenue anticipation note renewal because the BOS had already approved the original short-term borrowing.",
+   "quote": "ms. speidel stated that no vote was needed since the bos voted to approve the original short term borrowing."
+  },
+  {
+   "decision": "Item 2, approval of the PPA and/or PILOT Agreement with NuGen, was tabled.",
+   "quote": "2. approve ppa and or pilot agreement with nugen (formerly mass pv1 project): tabled"
+  },
+  {
+   "decision": "Item 3, approval of the revised PPA and/or PILOT Agreement with EPG Solar, was tabled.",
+   "quote": "3. approve revised ppa and/or pilot agreement with epg solar: tabled"
+  },
+  {
+   "decision": "The Eagle Heights concessions would be placed on the BOS agenda for July to start moving the project forward.",
+   "quote": "ms. bertram stated that the bos would put this on their agenda for july and start moving the project forward."
+  },
+  {
+   "decision": "Mr. Ebersole placed a hold on the Registrar of Voters appointment of Shirley McBride, so it was excluded from the approval of BOS recommendations.",
+   "quote": "mr. ebersole placed a hold on registrar of voters shirley mcbride."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revenue anticipation note renewal",
+   "what_was_recorded": "Treasurer-Collector reported a $115,000.00 short-term borrowing for the October 31, 2011 storm maturing June 28, 2013, re-borrowed through a bid won by People's United Bank at .55%.",
+   "figures_as_printed": [
+    "$115,000.00",
+    ".55%"
+   ],
+   "quote": "the note for that short term borrowing of $115,000.00 matures on june 28, 2013 and"
+  },
+  {
+   "topic": "Tax title collections",
+   "what_was_recorded": "Treasurer-Collector reported $45,000.00 collected from the 36 tax title properties, with a further $51,000.00 expected, for just under $100,000.00 total.",
+   "figures_as_printed": [
+    "$45,000.00",
+    "$51,000.00",
+    "just under $100,000.00"
+   ],
+   "quote": "of the 36 properties she has been dealing with she has collected $45,000.00 in taxes from those properties."
+  },
+  {
+   "topic": "Tax title interest rates",
+   "what_was_recorded": "Interest rate charged is 16% once in tax title and 14% prior to tax title.",
+   "figures_as_printed": [
+    "16%",
+    "14%"
+   ],
+   "quote": "ms. mccaie replied that once they are in tax title the rate is 16% and 14% prior to tax title."
+  },
+  {
+   "topic": "FY12 tax title recordings",
+   "what_was_recorded": "For FY12, 19 new tax titles were recorded at the Registry of Deeds for approximately $54,000.00.",
+   "figures_as_printed": [
+    "$54,000.00"
+   ],
+   "quote": "ms. mccaie stated that for fy12, 19 new tax titles were recorded for approximately $54,000.00 at the registry"
+  },
+  {
+   "topic": "Solar contract changes financial impact",
+   "what_was_recorded": "EPG representative said the proposed PPA changes had no financial implications.",
+   "figures_as_printed": [],
+   "quote": "mir. babcock replied there were no financial implications in regards to the changes."
+  },
+  {
+   "topic": "NuGen agreement financial contingencies",
+   "what_was_recorded": "NuGen said its agreement has no financial contingencies but it cannot proceed until the agreement is signed.",
+   "figures_as_printed": [],
+   "quote": "the agreement has no financial contingencies, but they cannot move on them until the agreement is signed off on."
+  },
+  {
+   "topic": "Eagle Heights sewer connection extension",
+   "what_was_recorded": "Sewer Commission agreed a reasonable concession would be for the connection extension at the project to be paid for by the sewer commission.",
+   "figures_as_printed": [
+    "$100.00 per foot"
+   ],
+   "quote": "be paid for by the sewer commission at $100.00 per foot."
+  },
+  {
+   "topic": "Eagle Heights plumbing and electrical permit fees",
+   "what_was_recorded": "Developer would still need to pay at least 85% of the plumbing fees and 87.5% of the electrical fees if the Town waived fees.",
+   "figures_as_printed": [
+    "85%",
+    "87.5%"
+   ],
+   "quote": "ms. speidel stated the developer would still need to pay at least 85% for the plumbing and 87.5% of the electrical."
+  },
+  {
+   "topic": "Eagle Heights long-term lease",
+   "what_was_recorded": "Board asked whether the Town could give the building under a long-term lease for $1.00 instead of donating it.",
+   "figures_as_printed": [
+    "$1.00"
+   ],
+   "quote": "could the town do a long term lease for $1.00."
+  },
+  {
+   "topic": "Developer taxes in other towns",
+   "what_was_recorded": "Developer said taxes paid in Groton are $5,000.00 per year and in Townsend between $5,000 and $10,000.00.",
+   "figures_as_printed": [
+    "$5,000.00",
+    "$5,000-$10,000.00"
+   ],
+   "quote": "he believes in groton the pay $5,000.00 per year"
+  },
+  {
+   "topic": "Eagle Heights expected tax revenue",
+   "what_was_recorded": "Board member said $5,000.00 in taxes is too low for Lunenburg for a 40 unit building.",
+   "figures_as_printed": [
+    "$5,000.00"
+   ],
+   "quote": "she thinks that $5,000.00 is too low for lunenburg and that the town needs to receive some reasonable tax revenue"
+  },
+  {
+   "topic": "Eagle Heights building value",
+   "what_was_recorded": "Town Manager does not believe the building is worth more than $140,000.00 and will check with the appraiser.",
+   "figures_as_printed": [
+    "$140,000.00"
+   ],
+   "quote": "she does not believe the building is worth any more than $140,000.00."
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Three warrant totals were listed under Item 5 with no motion recorded.",
+   "figures_as_printed": [
+    "$647,782.49",
+    "$32,427.74",
+    "$545,201.35"
+   ],
+   "quote": "warrants: 6/17 6/18 6/19 26p-13 67-13 68-13 $647,782.49 $32,427.74 $545,201.35"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "Chairman of the Board of Water Commissioners",
+   "topic": "Passing of Dick Bishop; Well #1 water test update",
+   "quote": "dave rogers, 82 highland street, commented on the passing of dick bishop, the longtime moderator of"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "Board member",
+   "topic": "Cancelled July meeting and next meeting date",
+   "quote": "ms. bertram informed everyone that mr. alonzo cancelled the bos meeting for july"
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "Board member",
+   "topic": "Agricultural Commission first meeting and Senate special election reminder",
+   "quote": "mr. ebersole stated that the agricultural commission will have their first meeting next thursday"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no action; condolences extended on Dick Bishop, water well update received",
+   "quote": "dave rogers, 82 highland street, commented on the passing of dick bishop, the longtime moderator of",
+   "tags": [
+    "public comment",
+    "water well",
+    "condolences"
+   ]
+  },
+  {
+   "topic": "Public hearing: Class I license, Central Mass Power Sports",
+   "resolution": "approved 4-0",
+   "quote": "7:00 p.m. public hearing- recreational dimensions inc., d/b/a central mass power sports for a class i",
+   "tags": [
+    "license",
+    "motor vehicle sales",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Renewal of $115,000.00 revenue anticipation note",
+   "resolution": "no vote needed; re-borrowing to proceed",
+   "quote": "7:15 p.m. renewal of $115,000.00 revenue anticipation note: shelley mccaie, treasurer-collector, stated",
+   "tags": [
+    "borrowing",
+    "treasurer",
+    "MEMA reimbursement"
+   ]
+  },
+  {
+   "topic": "Tax title update",
+   "resolution": "no action; report thanked",
+   "quote": "ms. mccaie provided and update on the tax titles she had been dealing with presently.",
+   "tags": [
+    "tax title",
+    "collections",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Review of solar projects (EPG Solar, NuGen)",
+   "resolution": "no action; contract items tabled",
+   "quote": "7:30 p.m. review of solar projects- epg solar, nugen (formerly mass pv1 project) - attorney rick",
+   "tags": [
+    "solar",
+    "PPA",
+    "NuGen",
+    "EPG Solar",
+    "energy credits"
+   ]
+  },
+  {
+   "topic": "Review of Eagle Heights Housing Project",
+   "resolution": "no action; to July agenda",
+   "quote": "8:00 p.m. review of eagle heights housing project - ms. speidel explained that there has been a long",
+   "tags": [
+    "housing",
+    "senior housing",
+    "Eagle Heights",
+    "concessions"
+   ]
+  },
+  {
+   "topic": "Approve Town Manager Goals and Objectives",
+   "resolution": "approved 4-0",
+   "quote": "1. approve town manager goals and objectives: mr. matthews motioned to approve the town manager",
+   "tags": [
+    "town manager",
+    "goals"
+   ]
+  },
+  {
+   "topic": "Approve PPA and/or PILOT Agreement with NuGen",
+   "resolution": "tabled",
+   "quote": "2. approve ppa and or pilot agreement with nugen (formerly mass pv1 project): tabled",
+   "tags": [
+    "solar",
+    "NuGen",
+    "PPA"
+   ]
+  },
+  {
+   "topic": "Approve revised PPA and/or PILOT Agreement with EPG Solar",
+   "resolution": "tabled",
+   "quote": "3. approve revised ppa and/or pilot agreement with epg solar: tabled",
+   "tags": [
+    "solar",
+    "EPG Solar",
+    "PPA"
+   ]
+  },
+  {
+   "topic": "Annual appointments to boards, committees and offices",
+   "resolution": "Town Manager appointments ratified 4-0; BOS recommendations approved 4-0 except Registrar of Voters (on hold)",
+   "quote": "4. approve annual appointments to boards, committees and/or offices: ms. speidel read her",
+   "tags": [
+    "appointments",
+    "registrar of voters"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes of June 11, 2013 and warrants listed; action file none; no vote recorded",
+   "quote": "5. minutes/warrants/action file issues:",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "board of health: mr. ebersole stated that the boh met yesterday and they covered landlord tenant disputes",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "none",
+   "quote": "7. town manager reports or department reports: none",
+   "tags": [
+    "department reports"
+   ]
+  },
+  {
+   "topic": "Appointments, re-appointments and resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment and announcements (end of meeting)",
+   "resolution": "no action; announcements",
+   "quote": "ms. bertram informed everyone that mr. alonzo cancelled the bos meeting for july",
+   "tags": [
+    "announcements",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:27PM, 4-0",
+   "quote": "meeting adjourned at 9:27pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Certificate of Note 530-1; Certificate and Covenant as to Tax Exempt Status of Note; Certificate of Town Clerk (revenue anticipation note bid documents)",
+   "where": "text",
+   "quote": "and they are the certificate of note 530-1, certificate and covenant as to tax exempt status of note, and the certificate of town clerk."
+  },
+  {
+   "name": "Public Hearing Notice for Recreational Dimensions Inc., d/b/a Central Mass Power Sports",
+   "where": "text",
+   "quote": "ms. bertram read the public hearing notice into record regarding recreational dimensions inc., d/b/a central mass power sports."
+  },
+  {
+   "name": "EPG Solar contract amendment",
+   "where": "text",
+   "quote": "he received from epg solar an amendment to the contract which he has not had a chance to review yet."
+  },
+  {
+   "name": "NuGen contract, section 3.11F",
+   "where": "text",
+   "quote": "the language ms. bertram is looking for is in section 3.11f of the contract with nugen."
+  },
+  {
+   "name": "NuGen PPA, section 3.11C early termination provision",
+   "where": "text",
+   "quote": "mr. poyjonus stated it was in section 3.11c at the bottom of page 6."
+  },
+  {
+   "name": "Eagle Heights concessions list (attached)",
+   "where": "text",
+   "quote": "ms. speidel referenced a number of concessions that the town could make or have made. (see attached)"
+  },
+  {
+   "name": "Town Manager appointment recommendations (attached)",
+   "where": "text",
+   "quote": "ms. speidel read her recommendations for town manager appointments. (see attached)"
+  },
+  {
+   "name": "BOS appointees list (attached)",
+   "where": "text",
+   "quote": "ms. speidel read the bos appointees. (see attached)"
+  },
+  {
+   "name": "Town Manager Goals and Objectives",
+   "where": "text",
+   "quote": "approve town manager goals and objectives: mr. matthews motioned to approve the town manager"
+  },
+  {
+   "name": "Appointment lists attached at end of minutes (Board of Selectmen reappointment list, Town Manager appointments, and others)",
+   "where": "list",
+   "quote": "board of selectmen / reappointment list lunenburg charter section 3-2 (d) fy'14"
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "solar power purchase agreement",
+  "NuGen",
+  "EPG Solar",
+  "energy credits",
+  "tax title",
+  "revenue anticipation note",
+  "Eagle Heights housing",
+  "senior housing",
+  "Class I motor vehicle license",
+  "appointments",
+  "warrants",
+  "water well",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "board of selectmen / reappointment list"
+ },
+ "dropped_unquoted_by_field": {}
 }

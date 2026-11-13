@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-03-19",
  "docid": "1662",
@@ -10,17 +10,112 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03192014-1662",
   "doc_url": "/docs/meetings/conservation-commission/2014-03-19-minutes-1662.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Short extract. The minutes name no members present or absent and record no motions or vote counts; the 'Approved' entry for the 1/15, 2/18 and 3/5 minutes is a status label, not a recorded motion, so no votes are listed. The header is garbled text, and the signature items (DOA, CoC) are abbreviations printed without explanation. The 'APPROVED 4/2/2014' line is the approval date of these minutes.",
+ "cost_usd": 0.00291122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve minutes of 1/15, 2/18, and 3/5",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "approve minutes ~ 1/15, 2/18, 3/5 ~ approved",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Sharon",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "sharon & jan will m eet with jim"
+  },
+  {
+   "name": "Jan",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "sharon & jan will m eet with jim"
+  },
+  {
+   "name": "Jim",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "sharon & jan will m eet with jim"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Poor OCR quality on header; text readable on substantive items. Only one vote recorded: approval of prior minutes. Other items in the minutes are discussions or action items (license agreement review, buffer zone markers letter) but not recorded as motions voted on.",
- "cost_usd": 0.0820305
+ "decisions": [
+  {
+   "decision": "Sharon and Jan will meet with Jim to see if he may have input or updates for the License Agreement (123 Hollis Road).",
+   "quote": "123 hollis road ~ reviewed ~ sharon & jan will m eet with jim"
+  },
+  {
+   "decision": "Jan will send a letter to all applicants, since the approval of placement of markers, directing them to purchase markers at $3.00 each and place them between 30 and 50 feet apart, visible.",
+   "quote": "buffer zone markers ~ jan will send a letter to all applicants"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Buffer zone markers purchase price",
+   "what_was_recorded": "Applicants are to purchase buffer zone markers at a stated unit price.",
+   "figures_as_printed": [
+    "$3.0 0"
+   ],
+   "quote": "purchase markers at $3.0 0 each"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approve Minutes",
+   "resolution": "approved (minutes of 1/15, 2/18, 3/5)",
+   "quote": "approve minutes ~ 1/15, 2/18, 3/5 ~ approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review License Agreement, 123 Hollis Road",
+   "resolution": "reviewed; Sharon and Jan to meet with Jim",
+   "quote": "123 hollis road ~ reviewed ~ sharon & jan will m eet with jim",
+   "tags": [
+    "license agreement",
+    "123 Hollis Road"
+   ]
+  },
+  {
+   "topic": "Signatures, 129 Peninsula Drive and 790 Massachusetts Avenue",
+   "resolution": "129 Peninsula Drive marked DOA; 790 Massachusetts Avenue marked CoC",
+   "quote": "129 peninsula drive ~ doa;",
+   "tags": [
+    "signatures",
+    "129 Peninsula Drive",
+    "790 Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "Buffer zone markers",
+   "resolution": "Jan to send letter to applicants about purchasing and placing markers",
+   "quote": "buffer zone markers ~ jan will send a letter to all applicants",
+   "tags": [
+    "buffer zone",
+    "markers"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "License Agreement (123 Hollis Road)",
+   "where": "text",
+   "quote": "we might want to include in the license"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "license agreement",
+  "buffer zone markers",
+  "signatures",
+  "minutes approval",
+  "123 Hollis Road",
+  "129 Peninsula Drive",
+  "790 Massachusetts Avenue"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

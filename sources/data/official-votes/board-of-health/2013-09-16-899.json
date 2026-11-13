@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2013-09-16",
  "docid": "899",
@@ -12,31 +12,251 @@
  },
  "votes": [
   {
-   "motion": "Approve the variance for offset to property lines at 31 Parmenter Road",
+   "motion": "Approve the variance for offset to property lines at 31 Parmenter Road.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by rabbitt, the variance for offset to property lines was approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the variance for offset to property lines was approved."
   },
   {
-   "motion": "Approve the two possible well locations at 380 Sunset Lane",
+   "motion": "Approve the two possible well locations at 380 Sunset Lane, final location to be determined after Mr. Cleaves meets with the Conservation Commission.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios the two possible well locations were approved. the final location being determined after mr. cleaves meets with the conservation commission. all in favor."
+   "quote": "after discussion and on motion by jewell and second by passios the two possible well locations were approved."
   },
   {
-   "motion": "Approve the variance to property line at 376 Sunset Lane",
+   "motion": "Approve the variance to property line for a new well at 376 Sunset Lane.",
    "moved_by": "Rabbit",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by rabbit and second by shea, the variance to property line was approved. all in favor."
+   "quote": "after discussion and on motion by rabbit and second by shea, the variance to property line was approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1117995
+ "note": "Text is extracted, not scanned. Several names and words carry PDF spacing splits (\"Georg e Emond\", \"Ja ck Rabbitt\", \"of behalf\"); names are recorded in their normal spelling (e.g., Jack Rabbitt), and quotes keep the printed spacing. The minutes give no roll-call tallies; the three motions say only \"All in favor\". No motion or vote is recorded for minutes approval, Title 5 acknowledgments, septic permit signings, the 163 Island Road continuance, or adjournment; these are recorded as decisions or topics only. The text has no public comment section; speakers (Levine, Garreffi, Burke) appear within agenda items. No dollar figures are printed. No documents list heading is printed.",
+ "cost_usd": 0.006008519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, ja ck rabbitt and dave passios."
+  },
+  {
+   "name": "David Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, ja ck rabbitt and dave passios."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, ja ck rabbitt and dave passios."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, ja ck rabbitt and dave passios."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, ja ck rabbitt and dave passios."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "also present, bob ebersole, selectman"
+  },
+  {
+   "name": "Nick Pauling",
+   "role": "of GPR",
+   "status": "present",
+   "quote": "nick pauling of gpr together with owner joe levine met with the board."
+  },
+  {
+   "name": "Joe Levine",
+   "role": "Owner, 163 Island Road",
+   "status": "present",
+   "quote": "owner, joe levine, stated that he does not want the tanks moved from their current location"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi stated that he is not in favor of the reduction in cover (soils) over the tanks"
+  },
+  {
+   "name": "Roland Leger",
+   "role": "representing his mother, the owner of 31 Parmenter Road",
+   "status": "present",
+   "quote": "roland leger met with the board of behalf of his mother, the owner of the property."
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "representing the owner of 380 Sunset Lane",
+   "status": "present",
+   "quote": "anthony cleaves met with the board on behalf of the owner."
+  },
+  {
+   "name": "Arthur Burke",
+   "role": "Owner, 376 Sunset Lane",
+   "status": "present",
+   "quote": "also present was mr. arthur burke, owner of 376 sunset lane."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of July 15, 2013 and August 19, 2013 approved (no vote recorded in the text).",
+   "quote": "minutes approved: july 15, 2013 august 19, 2013"
+  },
+  {
+   "decision": "Title 5 inspection reports for 644 Northfield Road, 811 Chase Road and 108 Sunnyhill Road acknowledged (no vote recorded).",
+   "quote": "title 5 inspection reports acknowledged : 644 northfield road 811 chase road 108 sunnyhill road"
+  },
+  {
+   "decision": "Septic permits signed for 138 Beal Street, 340 NW Townsend Road, 305 Leominster Shirley Road and 811 Chase Road (no vote recorded).",
+   "quote": "septic permits signed : 138 beal street 340 nw townsend road 305 leominster shirley road 811 chase road"
+  },
+  {
+   "decision": "163 Island Road matter continued to the next board meeting on October 7, 2013 at 7:00 pm, so Agent Garreffi can review the current plan (no vote recorded).",
+   "quote": "inasmuch as agent jim garreffi has not had an opportunity to review the current plan, the board continued"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (July 15 and August 19, 2013)",
+   "quote": "minutes approved: july 15, 2013 august 19, 2013",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (644 Northfield Rd, 811 Chase Rd, 108 Sunnyhill Rd)",
+   "quote": "title 5 inspection reports acknowledged : 644 northfield road 811 chase road 108 sunnyhill road",
+   "tags": [
+    "Title 5",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (138 Beal St, 340 NW Townsend Rd, 305 Leominster Shirley Rd, 811 Chase Rd)",
+   "quote": "septic permits signed : 138 beal street 340 nw townsend road 305 leominster shirley road 811 chase road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "163 Island Road septic system (JET I/A, reduced offsets)",
+   "resolution": "continued to October 7, 2013",
+   "quote": "the board continued this matter until their next meeting on october 7",
+   "tags": [
+    "septic",
+    "variance request",
+    "groundwater offset",
+    "injector pump"
+   ]
+  },
+  {
+   "topic": "31 Parmenter Road well offset variance",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the variance for offset to property lines was approved.",
+   "tags": [
+    "well",
+    "variance",
+    "emergency well"
+   ]
+  },
+  {
+   "topic": "380 Sunset Lane new well locations",
+   "resolution": "approved two possible well locations",
+   "quote": "after discussion and on motion by jewell and second by passios the two possible well locations were approved.",
+   "tags": [
+    "well",
+    "Sunset Lane"
+   ]
+  },
+  {
+   "topic": "376 Sunset Lane well property-line variance",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by rabbit and second by shea, the variance to property line was approved.",
+   "tags": [
+    "well",
+    "variance",
+    "Sunset Lane"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 8:30 pm (no motion recorded)",
+   "quote": "having no other business before the board, meeting adjourned at 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised plan for 163 Island Road (septic system, JET I/A)",
+   "where": "text",
+   "quote": "mr. pauling also stated that mr. garreffi had not had an opportunity to see the revised plan that he currently was discussing with the board."
+  },
+  {
+   "name": "Sketch for the new well location, 31 Parmenter Road",
+   "where": "text",
+   "quote": "an application was submitted to agent jim garreffi with a sketch for the new well location."
+  },
+  {
+   "name": "Plan presented to the board, 376 Sunset Lane (new well location)",
+   "where": "text",
+   "quote": "as shown on the plan presented to the board [lunenburg well regulation 4.1]."
+  },
+  {
+   "name": "Lunenburg Well Regulation 4.1",
+   "where": "text",
+   "quote": "location of the proposed new septic system on this lot as well as the surrounding lots [lunenburg well regulation 4.1]."
+  },
+  {
+   "name": "310 CMR 15.284 11.5(b)",
+   "where": "text",
+   "quote": "mr. pauling is requesting a reduction in groundwater offset from four feet to two feet [310 cmr 15.284 11.5(b) and lunenburg regulations article iv, section 4(a)]"
+  },
+  {
+   "name": "Lunenburg Regulations Article IV, Section 4(a)",
+   "where": "text",
+   "quote": "mr. pauling is requesting a reduction in groundwater offset from four feet to two feet [310 cmr 15.284 11.5(b) and lunenburg regulations article iv, section 4(a)]"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic",
+  "Title 5",
+  "wells",
+  "variances",
+  "groundwater offset",
+  "Sunset Lane",
+  "Parmenter Road",
+  "Island Road"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

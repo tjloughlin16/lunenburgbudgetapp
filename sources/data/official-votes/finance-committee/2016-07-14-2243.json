@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-07-14",
  "docid": "2243",
@@ -12,47 +12,332 @@
  },
  "votes": [
   {
-   "motion": "Nominate Terri Burchfield to chair the committee for FY17",
+   "motion": "Nominate Terri Burchfield to chair the committee for FY17.",
    "moved_by": "John",
    "seconded_by": "Jay",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "john moved and jay seconded the motion to nominate terri to chair the committee. there were no other nominations; the committee voted 5-0 in favor."
   },
   {
-   "motion": "Nominate Mark Erickson as vice-chairman for FY17",
+   "motion": "Nominate Mark Erickson as vice-chairman for FY17.",
    "moved_by": "John",
    "seconded_by": "Terri",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "john moved and terri seconded the motion to nominate mark as vice-chairman. there were no other nominations; the committee voted 5-0 in favor."
   },
   {
-   "motion": "Nominate Jay Simeone as secretary for FY17",
+   "motion": "Nominate Jay Simeone as secretary for FY17.",
    "moved_by": "John",
    "seconded_by": "Terri",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "john moved and terri seconded the motion to nominate jay as secretary. after brief observations from terri and john that there are many ways to record meeting minutes, jay accepted the nomination. there were no other nominations; the committee voted 5-0 in favor."
+   "procedural": false,
+   "quote": "jay accepted the nomination. there were no other nominations; the committee voted 5-0 in favor."
   },
   {
-   "motion": "Mark E. be the Finance Committee representative to Town Manager Search Committee",
+   "motion": "That Mark E. be the Finance Committee representative to the Town Manager Search Committee.",
    "moved_by": "John H.",
    "seconded_by": "Jay S.",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "john h. moved and jay s. seconded a motion that mark e. be the finance committee representative; the motion was approved 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay",
    "seconded_by": "Mark",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "jay made and mark seconded a motion to adjourn. the committee approved the motion 5-0 and the meeting adjourned at 8:35."
+   "quote": "jay made and mark seconded a motion to adjourn. the committee approved the motion 5-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; all votes are procedural organizational motions and adjournment. No substantive policy votes recorded with explicit motions.",
- "cost_usd": 0.0901915
+ "note": "Scanned OCR text with artifacts. The Absent line reads \"Pate\" followed by \"None\"; unclear whether anyone was absent, so no absentee is recorded. The liaison item has no recorded vote, only a deferral. The change order approval is reported in the Building Re-use update and is not a motion of this committee. Election votes are not marked procedural. Adjournment time is 8:35. Minutes signed by John Henshaw, August 7, 2016.",
+ "cost_usd": 0.00697592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, hannah anderson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, hannah anderson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, hannah anderson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, hannah anderson, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, hannah anderson, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, director of municipal finance."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Director of Municipal Finance",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, director of municipal finance."
+  },
+  {
+   "name": "George Martin",
+   "role": "a citizen of Lunenburg",
+   "status": "present",
+   "quote": "george martin, a citizen of lunenburg."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee deferred liaison assignments until the July 28 meeting so members have more time to consider which liaison assignments they would like to take on.",
+   "quote": "the committee deferred liaison assignments until the july 28t meeting to give members more time to consider which liaison assignments they would like to take on."
+  },
+  {
+   "decision": "The debt service policy revision will include a separate policy on excluded debt, distinct from the policy on regular debt, with separate, clearly stated limits that are easy to measure and apply.",
+   "quote": "the revision to the debt policy will include a policy on excluded debt as well as, but separate from, the policy on regular debt:"
+  },
+  {
+   "decision": "John will revise his spreadsheet to show historical and projected debt service costs from regular borrowing and debt exclusion overrides through FY21, excluding CIP projects under $300,000.",
+   "quote": "john will revise the spreadsheet he is working on to show historical and projected debt service costs from regular borrowing, debt exclusion overrides through fy21"
+  },
+  {
+   "decision": "John will make the two corrections to the June 9, 2016 minutes and submit the corrected minutes at the next meeting.",
+   "quote": "john will make both corrections and submit the corrected minutes at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Manager's report on FY16 results",
+   "what_was_recorded": "Projected FY16 expenditures are under budget and revenues over budget, which would produce more free cash to help fund the capital budget; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "b. projected fy16 expenditures are under budget and revenues are over budget."
+  },
+  {
+   "topic": "Use of projected surplus for sick leave buyback",
+   "what_was_recorded": "The Town could use some of the projected surplus to buy back unused employee sick leave; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town could also use some of the projected surplus to buy back some unused sick leave"
+  },
+  {
+   "topic": "Debt policy threshold for excluded CIP projects",
+   "what_was_recorded": "The debt service exercise would exclude all Capital Improvement Projects under the stated threshold.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "exclude all capital improvement projects under $300,000 in the capital improvement plan."
+  },
+  {
+   "topic": "Public Access Cable reserve balance",
+   "what_was_recorded": "Committee report says revenues are nearly level with FY2015 and the reserve balance is about the stated amount.",
+   "figures_as_printed": [
+    "$320,000"
+   ],
+   "quote": "revenues are nearly level with fy2015 and the reserve balance is about $320,000."
+  },
+  {
+   "topic": "School building project change order #15",
+   "what_was_recorded": "Minutes report that change order #15 was approved for the stated amount, covering capping, radiator covers, elevator operator costs during the Verizon strike, and excavation/drainage at the maintenance garage.",
+   "figures_as_printed": [
+    "$24,732"
+   ],
+   "quote": "the committee approved change order #15 for $24,732."
+  },
+  {
+   "topic": "Total school project change orders to date",
+   "what_was_recorded": "Change order #15 brings total change order costs to date to the stated figure, which is within the contingency in the budget.",
+   "figures_as_printed": [
+    "$1,058,736"
+   ],
+   "quote": "change order #15 brings total costs of all change orders to date to $1,058,736."
+  },
+  {
+   "topic": "School project contingency in budget",
+   "what_was_recorded": "Total change orders are described as well within the approximately $4,000,000 contingency in the budget.",
+   "figures_as_printed": [
+    "$4,000,000"
+   ],
+   "quote": "this is well within the approximately $4,000,000 amount for contingency in the budget."
+  },
+  {
+   "topic": "Stormwater maintenance cost overrun risk",
+   "what_was_recorded": "Little risk of cost overruns is reported, given the nature of the work and the contingency built into each project.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "there is little risk of cost overruns due to the nature of the work and the 20% contingency built into each project"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "no action; new communications noted",
+   "quote": "mark called the finance committee meeting to order at 7:00 pm",
+   "tags": [
+    "communications",
+    "volunteer appreciation",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Organization of committee for FY17",
+   "resolution": "approved: Terri Burchfield chair, Mark Erickson vice-chair, Jay Simeone secretary",
+   "quote": "organization of the committee for fy17:",
+   "tags": [
+    "elections",
+    "FY17 organization"
+   ]
+  },
+  {
+   "topic": "Department and committee liaison assignments",
+   "resolution": "deferred to July 28 meeting",
+   "quote": "the committee deferred liaison assignments until the july 28t meeting",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Finance Committee representative to Town Manager Search Committee",
+   "resolution": "approved Mark Erickson as representative",
+   "quote": "finance committee representative to town manager search committee: john h. moved",
+   "tags": [
+    "town manager search"
+   ]
+  },
+  {
+   "topic": "Town Manager's report",
+   "resolution": "no action; special town meeting and FY16 finances reported",
+   "quote": "a. there will be a special town meeting on monday, august 22.",
+   "tags": [
+    "special town meeting",
+    "free cash",
+    "sick leave"
+   ]
+  },
+  {
+   "topic": "Revision of debt service cost policy",
+   "resolution": "discussed; guidelines set out; John to revise spreadsheet; Financial Advisor opinion pending",
+   "quote": "the town's current policy sets limits on the amount of regular debt service costs the town may incur",
+   "tags": [
+    "debt policy",
+    "debt exclusion",
+    "bond rating"
+   ]
+  },
+  {
+   "topic": "Review of minutes of June 9, 2016",
+   "resolution": "two corrections noted; corrected minutes to be submitted next meeting",
+   "quote": "review of minutes, june 9, 2016 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received",
+   "quote": "committee and department updates:",
+   "tags": [
+    "PACC",
+    "library",
+    "school building committee",
+    "green task force",
+    "sewer commission",
+    "building re-use"
+   ]
+  },
+  {
+   "topic": "On-going business",
+   "resolution": "reports received; no action",
+   "quote": "a. kerry reported that the pavement management process is finishing its spring/summer paving",
+   "tags": [
+    "pavement management",
+    "stormwater",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for July 28",
+   "quote": "next meeting: thursday",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:35 pm, 5-0",
+   "quote": "adjournment: jay made and mark seconded a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Advocate (latest issue)",
+   "where": "text",
+   "quote": "mark circulated the latest issue of the advocate."
+  },
+  {
+   "name": "Special Town Meeting warrant review (August 22 Special Town Meeting)",
+   "where": "text",
+   "quote": "committee members will receive the warrant review prior to the august 11 meeting"
+  },
+  {
+   "name": "Town Manager's forecast (through FY21)",
+   "where": "text",
+   "quote": "through fy21-the period of the town manager's forecast."
+  },
+  {
+   "name": "Pavement Management debt exclusion plan (approved by Town in May, 2016)",
+   "where": "text",
+   "quote": "it would include projected debt service costs resulting from the pavement management debt"
+  },
+  {
+   "name": "John Henshaw debt service spreadsheet",
+   "where": "text",
+   "quote": "john will revise the spreadsheet he is working on to show historical and projected debt service costs"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY17 organization",
+  "debt policy",
+  "excluded debt",
+  "town manager report",
+  "free cash",
+  "school building project",
+  "change orders",
+  "pavement management",
+  "stormwater",
+  "surplus property",
+  "special town meeting",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

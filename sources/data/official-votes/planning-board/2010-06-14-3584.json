@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-06-14",
  "docid": "3584",
@@ -12,31 +12,140 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session for litigation discussion",
+   "motion": "Enter executive session for purpose of litigation discussion, not to return to general session (roll call: Bodkin, Lockwood, Bakaysa aye).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chair called for executive session for purpose of litigation discussion and not to return to general session. roll call vote, mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa aye."
+   "quote": "chair called for executive session for purpose of litigation discussion and not to return to general session."
   },
   {
-   "motion": "Offer Mr. O'Brien for development on the 189 acres as Aro Estates, not to exceed 50 units",
+   "motion": "Offer Mr. O'Brien development of the 189 acres as submitted as Aro Estates, not to exceed 50 units (counter-offer).",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made, mr. bodkin jr., to offer mr. o'brien for development on the 189 acres as submitted as aro estates, not to exceed 50 units, second, mr. lockwood, roll call vote, mr. bakaysa, aye; mr. lockwood, aye; mr. bodkin jr. aye. motion passed."
+   "quote": "motion made, mr. bodkin jr., to offer mr. o'brien for development on the 189 acres as submitted as aro estates, not to exceed 50 units, second, mr. lockwood"
   },
   {
-   "motion": "Adjourn Executive Session",
+   "motion": "Adjourn executive session at 9:45 PM (roll call: Bakaysa, Lockwood, Bodkin Jr. aye).",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. bakaysa asked for motion to adjourn executive session at 9:45 pm. motion, mr. bodkin jr., second, mr. lockwood, roll call vote, mr. bakaysa, aye; mr. lockwood, aye; mr. bodkin jr., aye."
+   "quote": "mr. bakaysa asked for motion to adjourn executive session at 9:45 pm. motion, mr. bodkin jr., second, mr. lockwood,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0983695
+ "note": "OCR text with header noise (e.g., 'TATEMBURG', 'RPORA', 'ERB', 'AfZ') and a garbled subject line ('Аго Estates'); the body uses 'Aro Estates'. Entering and adjourning executive session record roll-call ayes but no printed result word, so 'passed' is taken from the recorded ayes; no mover is printed for entering executive session. Benson is listed in the header and her statement is recorded, but her attendance is not stated outright. Minutes mix 'lots' and 'units' for the 50 cap. No public comment or dollar figures appear in the text.",
+ "cost_usd": 0.005790719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mr. bakaysa will talk to the select board chair and town manager."
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "motion made, mr. bodkin jr., to offer mr. o'brien for development on the 189 acres as submitted as aro estates"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "second, mr. lockwood, roll call vote, mr. bakaysa, aye"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "ms. bilotta and mr. saiia absent."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "ms. bilotta and mr. saiia absent."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "planning director made statement that she was apprehensive about this offer to settle."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board decided to pursue a counter-offer to the O'Brien settlement offer, with a number not to exceed 50 lots.",
+   "quote": "the board decided to pursue an avenue of a counter-offer."
+  },
+  {
+   "decision": "Mr. Bakaysa will talk to the Select Board Chair and Town Manager; a response will be given to Attorney Winner, Kopelman and Paige, to convey to Attorney Tillotson, Hemenway and Barnes.",
+   "quote": "mr. bakaysa will talk to the select board chair and town manager. a response will be given to attorney winner, kopelman and paige, to convey to attorney tillotson, hemenway and barnes."
+  },
+  {
+   "decision": "Per Attorney Winner, an advisory opinion on the legal effects of a potential new application (Phase 1) was not necessary for response.",
+   "quote": "requesting an advisory opinion as the legal effects of a potential new application was not necessary for response as stated by attorney winner, kopelman and paige."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Aro Estates / O'Brien settlement (litigation)",
+   "resolution": "entered executive session; counter-offer authorized; adjourned 9:45 PM",
+   "quote": "chair called for executive session for purpose of litigation discussion and not to return to general session.",
+   "tags": [
+    "executive session",
+    "litigation",
+    "settlement offer"
+   ]
+  },
+  {
+   "topic": "June 3, 2010 settlement correspondence from O'Brien's counsel (Aro Estates, Phase 1)",
+   "resolution": "counter-offer of up to 50 units approved; response to be sent through Town Counsel",
+   "quote": "the board will counter-offer with a number not to exceed 50 lots.",
+   "tags": [
+    "Aro Estates",
+    "O'Brien",
+    "subdivision",
+    "open space",
+    "counter-offer"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "June 3, 2010 correspondence from Attorney Tillotson, Hemenway & Barnes LLP (representing Kevin O'Brien) re: Aro Estates, Lunenburg; Offer of Settlement, to Kopelman and Paige, P.C., Town Counsel",
+   "where": "list",
+   "quote": "members were given copies of the correspondence which included a proposed phasing plan."
+  },
+  {
+   "name": "Proposed Phasing Plan (original plan with approximately 31.5 acres marked off for open space; 21 lots on 23.9 acres)",
+   "where": "list",
+   "quote": "members were given copies of the correspondence which included a proposed phasing plan."
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "settlement offer",
+  "Aro Estates",
+  "O'Brien",
+  "subdivision",
+  "open space",
+  "counter-offer",
+  "Phase 1"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "members were given copies of the correspondence"
+ },
+ "dropped_unquoted_by_field": {}
 }

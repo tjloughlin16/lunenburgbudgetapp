@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-06-04",
  "docid": "3660",
@@ -12,72 +12,71 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the May 14, 2012 meeting",
+   "motion": "Approve the minutes of 5-14-12; minutes to be signed.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, ms. bilotta-simeone, to approve 5-14-12, second, mr. lockwood, minutes signed."
   },
   {
-   "motion": "Hold approval of the ANR for Daniel Cronin at 1 Turkey Hill Road until the next Board meeting",
+   "motion": "Hold approval of the ANR for Daniel Cronin, 1 Turkey Hill Road, until the next Board meeting.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "ms. bilotta-simeone, motion to hold approval of the anr until the next board meeting, second, mr. lockwood, motion passed."
   },
   {
-   "motion": "Table decision on the EPG Solar Development Plan Review until the Board meets with Town Counsel",
+   "motion": "Table decision on the EPG Solar DPR until the Board meets with Town Counsel, via regular session, executive session, or telephonic conference.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 3-1",
-   "procedural": true,
-   "quote": "mr. lockwood, motion to table decision on dpr until board meets with town counsel, either via regular session, executive session, or telephonic conference. second, mr. bodkin jr. roll call vote - mr. lockwood, aye; mr. bodkin jr., aye; ms. bilotta -simeone, aye; mr. bakaysa, nay",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "mr. lockwood, motion to table decision on dpr until board meets with town counsel, either via regular session, executive session, or telephonic conference."
   },
   {
-   "motion": "Nominate Mr. Bakaysa for Chair",
+   "motion": "Nominate Mr. Bakaysa as Chair.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "mr. bodkin jr., motion to nominate mr. bakaysa, second, ms. bilotta-simeone"
+   "procedural": false,
+   "quote": "chair- mr. bodkin jr., motion to nominate mr. bakaysa, second, ms. bilotta-simeone"
   },
   {
-   "motion": "Nominate Ms. Bilotta-Simeone for Vice Chair",
+   "motion": "Nominate Ms. Bilotta-Simeone as Vice Chair.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "mr. bodkin jr., motion to nominate ms. bilotta-simeone, second, mr. lockwood"
+   "procedural": false,
+   "quote": "vice chair- mr. bodkin jr., motion to nominate ms. bilotta-simeone, second, mr. lockwood"
   },
   {
-   "motion": "Nominate Mr. Bodkin Jr. for Clerk",
+   "motion": "Nominate Mr. Bodkin Jr. as Clerk.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "ms. bilotta-simeone, motion to nominate mr. bodkin jr., second, mr. lockwood"
+   "procedural": false,
+   "quote": "clerk- ms. bilotta-simeone, motion to nominate mr. bodkin jr., second, mr. lockwood"
   },
   {
-   "motion": "Nominate Mr. Bodkin Jr. for MRPC Representative",
+   "motion": "Nominate Mr. Bodkin Jr. as MRPC Representative.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "ms. bilotta-simeone, motion to nominate mr. bodkin jr., second, mr. lockwood"
+   "procedural": false,
+   "quote": "mrpc representative- ms. bilotta-simeone, motion to nominate mr. bodkin jr., second, mr. lockwood"
   },
   {
-   "motion": "Nominate Mr. Lockwood for School Building Committee",
+   "motion": "Nominate Mr. Lockwood as School Building Committee representative.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "ms. bilotta-simeone, motion to nominate mr. lockwood, second, mr. bodkin jr."
+   "procedural": false,
+   "quote": "school building committee- ms. bilotta-simeone, motion to nominate mr. lockwood, second, mr. bodkin jr."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Bakaysa",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "passed",
@@ -86,6 +85,365 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes found and recorded. No scans or illegible text noted.",
- "cost_usd": 0.1070785
+ "note": "Text is extracted from a scan-like PDF with broken word spacing and split lines; quotes were copied with spacing collapsed to single spaces. Page 3 header reads \"Minutes 6-20-12\" while the meeting is dated 2012-06-04; flagged, not corrected. The minutes-approval motion records no result. The five reorganization nominations are followed by one blanket line, \"All above nominations passed,\" so each is recorded as passed on that basis. The DPR tabling vote is recorded as a roll call (3 aye, 1 nay). Dollar figures: none printed; budget items capture bond and fee discussion only.",
+ "cost_usd": 0.01581142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr. nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: robert j. saiia"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "paula bertram, select board member- noted montachusett regional planning commission"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "david prokowiew, 733 west street - requested clarification"
+  },
+  {
+   "name": "Michael Borkowski",
+   "role": "principal, EPG Solar LLC (applicant)",
+   "status": "not stated",
+   "quote": "michael borkowski is listed as principal of epg solar llc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MJTC representative nomination tabled to the next Board meeting because the current representative, Mr. Saiia, was not in attendance.",
+   "quote": "mjtc representative- tabled to next board meeting as mr. saiia, current representative, not in attendance."
+  },
+  {
+   "decision": "Board revised the EPG Solar DPR findings and directives after discussion; the directives set conditions on the applicant.",
+   "quote": "revised findings and directives above are as a result of that discussion."
+  },
+  {
+   "decision": "Chair said the DPR copy requested by an audience member would be provided only once it became official, as it was still in draft form.",
+   "quote": "when they become official - at this point they are still in draft form"
+  },
+  {
+   "decision": "Planning Director Ms. Benson will receive a status update from the Emerald Place developer at the requested meeting.",
+   "quote": "ms. benson will get a status update at that time."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Performance guarantee before construction (removal bond)",
+   "what_was_recorded": "Directive requires the applicant to post a bond with the Town to cover removal costs if the arrays are not removed within six months of ceasing use; no dollar amount is printed. Insurance and maintenance bond are also required with amounts to be set later.",
+   "figures_as_printed": [],
+   "quote": "the applicant shall post a bond with the town to cover the cost of removal"
+  },
+  {
+   "topic": "Monitoring fee",
+   "what_was_recorded": "The minutes state the monitoring fee under the Planning Board's fee system has been paid; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the fee has been paid."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Prokowiew",
+   "stated_role": "733 West Street",
+   "topic": "clarification of Board empowerment under new Solar Bylaw; chain link vs solid fence",
+   "quote": "david prokowiew, 733 west street - requested clarification"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Select Board member",
+   "topic": "Montachusett Regional Planning Commission Third Request for Service Delivery",
+   "quote": "paula bertram, select board member- noted montachusett regional planning commission"
+  },
+  {
+   "speaker": "An individual in the audience",
+   "topic": "request for a copy of the DPR",
+   "quote": "an individual in the audience requested a copy of the dpr."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (5-14-12)",
+   "resolution": "approved; minutes signed",
+   "quote": "motion, ms. bilotta-simeone, to approve 5-14-12, second, mr. lockwood, minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "ANR, Daniel Cronin, 1 Turkey Hill Road",
+   "resolution": "held until next Board meeting",
+   "quote": "anr- daniel cronin, 1 turkey hill road",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "ANR, Alice Heikkila (owner) / EPG Solar (applicant), 651 Chase Road",
+   "resolution": "awaiting revised plan; no action",
+   "quote": "anr- alice heikkila (owner), epg solar (applicant), 651 chase road",
+   "tags": [
+    "ANR",
+    "solar"
+   ]
+  },
+  {
+   "topic": "EPG Solar Development Plan Review, 265 Pleasant Street",
+   "resolution": "findings read into record; decision tabled pending Town Counsel",
+   "quote": "epg solar development plan review- findings and directives read into record.",
+   "tags": [
+    "development plan review",
+    "solar farm",
+    "Pleasant Street",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "noted appointment of new lunenburg fire chief",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; no action",
+   "quote": "mrpc- meeting held may 29th.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "noted; no action",
+   "quote": "highfield village, northfield road - current extension expires june 30, 2012.",
+   "tags": [
+    "extensions",
+    "Highfield Village",
+    "Verizon Wireless"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "developer requesting meeting with ms. benson.",
+   "tags": [
+    "Emerald Place",
+    "development status"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action",
+   "quote": "david prokowiew, 733 west street - requested clarification",
+   "tags": [
+    "public comment",
+    "solar bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "june 18- master planning workshop, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member information and issues: reorganization nominations",
+   "resolution": "nominations made; all passed; MJTC representative tabled",
+   "quote": "reorganization- nominations as follows:",
+   "tags": [
+    "reorganization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:25 PM",
+   "quote": "motion, mr. bakaysa, second, ms. bilotta-simeone, motion passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Geotechnical Investigation Report",
+   "where": "list",
+   "quote": "the following documents were presented for review: o geotechnical investigation report o operations and maintenance manual report o site visit report by goldsmith, prest and ringwall, inc. o spill prevention, containment and countermeasure plan o site plan by solar design associates"
+  },
+  {
+   "name": "Operations and Maintenance Manual Report",
+   "where": "list",
+   "quote": "the following documents were presented for review: o geotechnical investigation report o operations and maintenance manual report o site visit report by goldsmith, prest and ringwall, inc. o spill prevention, containment and countermeasure plan o site plan by solar design associates"
+  },
+  {
+   "name": "Site Visit Report by Goldsmith, Prest and Ringwall, Inc.",
+   "where": "list",
+   "quote": "the following documents were presented for review: o geotechnical investigation report o operations and maintenance manual report o site visit report by goldsmith, prest and ringwall, inc. o spill prevention, containment and countermeasure plan o site plan by solar design associates"
+  },
+  {
+   "name": "Spill Prevention, Containment and Countermeasure Plan",
+   "where": "list",
+   "quote": "the following documents were presented for review: o geotechnical investigation report o operations and maintenance manual report o site visit report by goldsmith, prest and ringwall, inc. o spill prevention, containment and countermeasure plan o site plan by solar design associates"
+  },
+  {
+   "name": "Site Plan by Solar Design Associates",
+   "where": "list",
+   "quote": "the following documents were presented for review: o geotechnical investigation report o operations and maintenance manual report o site visit report by goldsmith, prest and ringwall, inc. o spill prevention, containment and countermeasure plan o site plan by solar design associates"
+  },
+  {
+   "name": "Application for Development Plan Review, submitted November 29, 2011 (194 Electric Avenue)",
+   "where": "text",
+   "quote": "an application for a development plan review was submitted on november 29, 2011 for 194 electric avenue"
+  },
+  {
+   "name": "Order for a Development Plan Review, letter dated January 9, 2012 (Zoning Officer Michael Sauvageau)",
+   "where": "text",
+   "quote": "the order for a development plan review was presented to the planning board by zoning officer/permitting authority michael sauvageau in letter dated january 9, 2012"
+  },
+  {
+   "name": "ANR Plan dated January 18, 2012",
+   "where": "text",
+   "quote": "anr plan dated january 18, 2012"
+  },
+  {
+   "name": "EPG Solar correspondence dated January 18, 2012",
+   "where": "text",
+   "quote": "see attached correspondence from epg solar dated january 18, 2012"
+  },
+  {
+   "name": "Marsden Engineering report, January 9, 2012",
+   "where": "text",
+   "quote": "report (marsden engineering) outlined a list of specifics required for review"
+  },
+  {
+   "name": "Marsden Engineering report, January 23, 2012",
+   "where": "text",
+   "quote": "report (marsden engineering) listed additional information and documentation needed"
+  },
+  {
+   "name": "Environmental Impact Statement (EIS) dated January 20, 2012",
+   "where": "text",
+   "quote": "environmental impact statement (eis) dated january 20, 2012, copy of lease dated october 28, 2011, and conceptual plan dated january 2012"
+  },
+  {
+   "name": "Lease dated October 28, 2011",
+   "where": "text",
+   "quote": "environmental impact statement (eis) dated january 20, 2012, copy of lease dated october 28, 2011, and conceptual plan dated january 2012"
+  },
+  {
+   "name": "Conceptual Plan dated January 2012 (Goldsmith, Prest and Ringwall, Inc.)",
+   "where": "text",
+   "quote": "environmental impact statement (eis) dated january 20, 2012, copy of lease dated october 28, 2011, and conceptual plan dated january 2012"
+  },
+  {
+   "name": "Whitman & Bingham Associates Inc. drainage report, April 4, 2012",
+   "where": "text",
+   "quote": "whitman & bingham associates inc. report (engineer brian milisci [third party reviewer])"
+  },
+  {
+   "name": "Ross Associates report, April 20, 2012",
+   "where": "text",
+   "quote": "april 20, 2012 report (ross associates) on the evaluation of proposed landscaping"
+  },
+  {
+   "name": "Ross Associates report, May 11, 2012",
+   "where": "text",
+   "quote": "may 11, 2012 report (ross associates) of the revised plan"
+  },
+  {
+   "name": "Conservation Commission Order of Conditions dated April 23, 2012",
+   "where": "text",
+   "quote": "conservation commission order of conditions dated april 23, 2012"
+  },
+  {
+   "name": "Historical Commission response letter dated April 5, 2012",
+   "where": "text",
+   "quote": "a response letter dated april 5, 2012 noted that they had no jurisdiction"
+  },
+  {
+   "name": "Letter dated May 14, 2012 from Zoning Officer Michael J Sauvageau",
+   "where": "text",
+   "quote": "in letter dated may 14, 2012, michael j sauvageau, zoning officer, states"
+  },
+  {
+   "name": "Solar Bylaw voted at the Annual Town Meeting, May 5, 2012",
+   "where": "text",
+   "quote": "the newly voted solar bylaw voted at the annual town"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 6.6",
+   "where": "text",
+   "quote": "the application is filed pursuant to the protective bylaw of the town of lunenburg, section 6.6"
+  },
+  {
+   "name": "Landscape plan dated 4/11/12 by Lorayne Black, ASLA",
+   "where": "text",
+   "quote": "a second plan prepared by lorayne black, asla, landscape architect"
+  },
+  {
+   "name": "Petition opposing the project",
+   "where": "text",
+   "quote": "a petition opposing the project was submitted to the planning board."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development plan review",
+  "solar farm",
+  "ANR",
+  "zoning bylaw",
+  "solar bylaw",
+  "reorganization",
+  "public comment",
+  "minutes approval",
+  "Pleasant Street",
+  "town counsel",
+  "abutters"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following documents were presented for review"
+ },
+ "dropped_unquoted_by_field": {}
 }

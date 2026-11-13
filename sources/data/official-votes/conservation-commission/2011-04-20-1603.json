@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-04-20",
  "docid": "1603",
@@ -12,31 +12,230 @@
  },
  "votes": [
   {
-   "motion": "Approve the Notice of Intent and issue an Order of Conditions for construction of retaining wall at 12 Oaks Landing",
+   "motion": "Vote on the Notice of Intent for 12 Oaks Landing (retaining wall within the no-touch zone); the motion text is not printed.",
    "moved_by": "JJ",
    "seconded_by": "Sharon",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "the wall is for the purpose of controlling erosion and sediment in to the lake. it will be no more than 1 to 1½ feet high. jj/sharon unanimous"
+   "quote": "it will be no more than 1 to 1½ feet high. jj/sharon unanimous"
   },
   {
-   "motion": "Issue a Negative Determination of Applicability for project at 1461 Main Street",
+   "motion": "Vote on the Request for Determination of Applicability for 1461 Main Street (leveling area in buffer zone); the motion text is not printed, and the minutes record the result as \"Negative 3\".",
    "moved_by": "Jack",
    "seconded_by": "John",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "the work will consist of removing fallen trees and filling in holes where the stumps were uprooted from the ice storm. negative 3 jack/john unanimous"
   },
   {
-   "motion": "Approve the Notice of Intent and issue an Order of Conditions for construction of single family home with driveway and utilities at 168 Goodrich Street",
+   "motion": "Vote on the Notice of Intent for 168 Goodrich Street (single family home, driveway and utilities); the motion text is not printed.",
    "moved_by": "JJ",
    "seconded_by": "Jack",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "matt suggested that the narrative on project description be included in the order of conditions. jj/jack unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd by macOS Vision. No votes stated on \"Approve Minutes\" (section header only) or on 283 Cross Road (no presentation; item continued).",
- "cost_usd": 0.11934249999999999
+ "note": "Single OCR page; the minutes appear partial. Motions are not written out: votes are shown only as mover/seconder initials and the word 'Unanimous' (e.g. 'JJ/Sharon Unanimous'), so motion text is paraphrased as the hearing item and marked not printed. 'Negative 3' is printed without explanation. No roll call, minutes approval vote, adjournment, or board-member roles are printed. Trailing text 'Infinichor Rucinacc' is OCR noise. The name 'Matt' appears without a surname or role. No dollar figures or public comment section appear in this text.",
+ "cost_usd": 0.00518542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, jack byrne, john lattanzi, mark murphy, sharon jordan, jan carrier"
+  },
+  {
+   "name": "Dan Cyr",
+   "role": "private consultant forester, Bay State Forestry",
+   "status": "present",
+   "quote": "dan is a private consultant forester. dan is a long term forester and has done many high profile jobs."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "of Marsden Engineering, filed Notice of Intent for Carol & Brian O'Hern",
+   "status": "present",
+   "quote": "filed by steve marsden of marsden engineering"
+  },
+  {
+   "name": "Marie Alfredson",
+   "role": "applicant for 1461 Main Street (presented)",
+   "status": "present",
+   "quote": "marie alfredson presented. the work will consist of removing fallen"
+  },
+  {
+   "name": "Nate Mahonen",
+   "role": "of Harrigan Engineering Inc., presented for 168 Goodrich Street",
+   "status": "present",
+   "quote": "nate mahonen presented. nate explained the placement of the driveway"
+  },
+  {
+   "name": "Michelle Marshall",
+   "role": "applicant, 283 Cross Road",
+   "status": "absent",
+   "quote": "no show, continued to next meeting on may 4th."
+  },
+  {
+   "name": "Carol & Brian O'Hern",
+   "role": "applicants, 12 Oaks Landing",
+   "status": "not stated",
+   "quote": "notice of intent filed by steve marsden of marsden engineering for carol & brian o'hern."
+  },
+  {
+   "name": "Knute Alfredson",
+   "role": "co-applicant, 1461 Main Street",
+   "status": "not stated",
+   "quote": "filed by marie & knute alfredson."
+  },
+  {
+   "name": "Matt",
+   "role": "not stated (surname not printed)",
+   "status": "not stated",
+   "quote": "matt suggested that the narrative on project description be included in the order of conditions."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 283 Cross Road Request for Determination of Applicability (Michelle Marshall) was continued to the next meeting on May 4th; no vote was recorded.",
+   "quote": "no show, continued to next meeting on may 4th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Forest planning and timbering discussion (Dan Cyr, Bay State Forestry)",
+   "resolution": "discussion only, no action recorded",
+   "quote": "will talk to us about forest planning and timbering. dan presented an open table discussion on forestry and forest cutting.",
+   "tags": [
+    "forestry",
+    "timber harvest",
+    "management plan"
+   ]
+  },
+  {
+   "topic": "12 Oaks Landing public hearing, Notice of Intent (retaining wall)",
+   "resolution": "approved, unanimous",
+   "quote": "the proposed project is for construction of a retaining wall within the no-touch zone.",
+   "tags": [
+    "wetlands",
+    "Notice of Intent",
+    "retaining wall",
+    "lake erosion"
+   ]
+  },
+  {
+   "topic": "1461 Main Street public hearing, Request for Determination of Applicability",
+   "resolution": "Negative 3 determination, unanimous",
+   "quote": "the proposed project is for leveling an area, within the buffer zone, where trees were uprooted and reseed grass in same area.",
+   "tags": [
+    "wetlands",
+    "buffer zone",
+    "ice storm",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "168 Goodrich Street public hearing, Notice of Intent (single family home)",
+   "resolution": "approved, unanimous",
+   "quote": "nate explained the placement of the driveway and that it will serve two houses (lot 4 & 5).",
+   "tags": [
+    "wetlands",
+    "Notice of Intent",
+    "driveway",
+    "single family home"
+   ]
+  },
+  {
+   "topic": "283 Cross Road public hearing, Request for Determination of Applicability (equestrian riding surface)",
+   "resolution": "continued to May 4th, applicant no-show",
+   "quote": "no show, continued to next meeting on may 4th.",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "sand/clay surface",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Approve Minutes, Signatures, New Business, Action File Items (agenda headings)",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "approve minutes signatures new business action file items",
+   "tags": [
+    "agenda",
+    "minutes",
+    "signatures"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, 12 Oaks Landing (Steve Marsden of Marsden Engineering for Carol & Brian O'Hern)",
+   "where": "text",
+   "quote": "public hearing on a notice of intent filed by steve marsden of marsden"
+  },
+  {
+   "name": "Request for Determination of Applicability, 1461 Main Street (Marie & Knute Alfredson)",
+   "where": "text",
+   "quote": "public hearing on a request for determination of applicability filed by"
+  },
+  {
+   "name": "Notice of Intent, 168 Goodrich Street (Nathan Mahonen of Harrigan Engineering Inc.)",
+   "where": "text",
+   "quote": "public hearing on a notice of intent filed by nathan mahonen of"
+  },
+  {
+   "name": "Request for Determination of Applicability, 283 Cross Road (Michelle Marshall)",
+   "where": "text",
+   "quote": "public hearing on a request for determination of applicability filed by"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearing",
+  "Notice of Intent",
+  "Request for Determination",
+  "forestry",
+  "Ritter Memorial Building",
+  "April 2011"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

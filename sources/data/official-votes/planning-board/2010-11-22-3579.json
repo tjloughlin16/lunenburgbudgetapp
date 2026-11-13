@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-11-22",
  "docid": "3579",
@@ -12,39 +12,247 @@
  },
  "votes": [
   {
-   "motion": "Approve prior minutes from November 8, 2010",
+   "motion": "Approve the minutes signed 11-8-10 and the executive session minutes of 11-8-10.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion mr. saiia, second, mr. bodkin jr., executive 11-8-10, motion, mr. saiia, second, mr. bodkin jr., motion passed"
+   "quote": "motion mr. saiia, second, mr. bodkin jr., executive 11-8-10, motion, mr. saiia, second, mr. bodkin jr., motion passed."
   },
   {
-   "motion": "Approve ANR for 1070 Northfield Road",
+   "motion": "Approve the ANR (approval not required) plan for 1070 Northfield Road.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": false,
-   "quote": "board approved anr for 1070 northfield road, motion, ms. bilotta, second, mr. saiia, motion passed"
+   "quote": "board approved anr for 1070 northfield road, motion, ms. bilotta, second, mr. saiia, motion passed."
   },
   {
-   "motion": "Release CVS Site Improvement Bond",
+   "motion": "Release the CVS Site Improvement Bond.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion to release bond, ms. bilotta, second, mr. bodkin jr., motion passed"
+   "quote": "motion to release bond, ms. bilotta, second, mr. bodkin jr., motion passed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, mr. bodkin jr., second, mr. lockwood, motion passed"
+   "quote": "motion, mr. bodkin jr., second, mr. lockwood, motion passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08900250000000001
+ "note": "Plain extracted text with irregular spacing; collapsed spacing used in quotes. Roll call lists all six members and staff as present. Three motions and one combined minutes approval recorded; no roll-call vote counts printed, only \"Motion passed\". No public comment section and no formal documents list. Dollar figure appears only once ($180,000.00); several items discuss money without figures.",
+ "cost_usd": 0.00650732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair, acting as Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia , thomas w. bodkin jr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus that the Planning Director will point out several issues and post a meeting prior to Special Town Meeting for any opinion, comments or support (no consensus on the Board participating as a Board).",
+   "quote": "post a meeting prior to special town meeting for any opinion, comments or support."
+  },
+  {
+   "decision": "The Planning Board decided to take no position on the Capital Planning Committee police cruiser issue.",
+   "quote": "the planning board decided to take no position."
+  },
+  {
+   "decision": "Board noted that the Tri Town Landing water/sewer arrangement should be settled before any approvals are released in the future.",
+   "quote": "this type of arrangement should be settled before any"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House grant application",
+   "what_was_recorded": "Ms. Bilotta noted a 318 grant of $180,000.00 in connection with the Eagle House grant application.",
+   "figures_as_printed": [
+    "$180,000.00"
+   ],
+   "quote": "ms. bilotta noted the 318 grant for $180,000.00."
+  },
+  {
+   "topic": "Capital Planning requests",
+   "what_was_recorded": "Director reported on the Capital Planning Committee meeting about departmental requests and noted the police cruiser issue.",
+   "figures_as_printed": [],
+   "quote": "director noted the issue pertaining to police cruisers."
+  },
+  {
+   "topic": "CVS Site Improvement Bond",
+   "what_was_recorded": "CVS requested release of its Site Improvement Bond after a waiting period; the Board voted to release it. No bond amount is printed.",
+   "figures_as_printed": [],
+   "quote": "motion to release bond, ms. bilotta, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "topic": "Green Community ground solar field funding",
+   "what_was_recorded": "Director reported preparation of a funding application for a ground solar field at the Town Landfill; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "work being done to prepare for funding application for a ground solar field at"
+  },
+  {
+   "topic": "Tri Town Landing water and sewer fees",
+   "what_was_recorded": "Applicant paid domestic and fire water fees to Fitchburg and Lunenburg; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "applicant has paid the domestic and fire water fees to both fitchburg and lunenburg."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Informational meeting, First Evangelical Congregational Church",
+   "resolution": "see separate minutes",
+   "quote": "informational meeting, first evangelical congregational church: see separate minutes."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "motion mr. saiia, second, mr. bodkin jr., executive 11-8-10, motion, mr. saiia, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "noted medc (massachusetts economic development council) annual meeting and"
+  },
+  {
+   "topic": "Project plan signatures (ANR, 1070 Northfield Road)",
+   "resolution": "approved",
+   "quote": "board approved anr for 1070 northfield road, motion, ms. bilotta, second, mr. saiia, motion passed."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; Planning Board took no position on Capital Planning police cruisers",
+   "quote": "the planning board decided to take no position."
+  },
+  {
+   "topic": "CVS Site Improvement Bond release",
+   "resolution": "approved",
+   "quote": "motion to release bond, ms. bilotta, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "topic": "Green Community Task Force",
+   "resolution": "noted",
+   "quote": "the task force noted its plan to present the application for the green community's act for the fall town meeting of 2012."
+  },
+  {
+   "topic": "Special Town Meeting articles",
+   "resolution": "consensus; Director to post a meeting before Special Town Meeting",
+   "quote": "post a meeting prior to special town meeting for any opinion, comments or support."
+  },
+  {
+   "topic": "Eagle House grant application",
+   "resolution": "noted",
+   "quote": "director noted status of the grant application."
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom development status",
+   "resolution": "noted",
+   "quote": "one multi-family completed. three have been roofed; one will be roofed in december."
+  },
+  {
+   "topic": "Tri Town Landing development status",
+   "resolution": "noted; Board wants water/sewer arrangement settled before future approvals",
+   "quote": "board noted that this type of arrangement should be settled before any"
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action; referred to reports above",
+   "quote": "see above planning director's reports and development status reports"
+  },
+  {
+   "topic": "Master planning",
+   "resolution": "noted next workshop",
+   "quote": "next workshop meeting january 12, 2011."
+  },
+  {
+   "topic": "Data information and general discussion",
+   "resolution": "noted",
+   "quote": "presented to members for viewing, consisting of various data information."
+  },
+  {
+   "topic": "Member data and issues (meeting dates)",
+   "resolution": "noted",
+   "quote": "december meeting date - december 13, 2010."
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:55 PM",
+   "quote": "motion, mr. bodkin jr., second, mr. lockwood, motion passed. adjourned 7:55 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from peer reviewer Marsden Engineering Inc. (CVS final inspection)",
+   "where": "text",
+   "quote": "read into record was a letter from peer reviewer marsden engineering inc., that upon"
+  },
+  {
+   "name": "Data folder of items of interest not on agenda",
+   "where": "text",
+   "quote": "presented to members for viewing, consisting of various data information."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "bond release",
+  "development status",
+  "Tri Town Landing",
+  "Emerald Place",
+  "Green Community",
+  "Eagle House grant",
+  "Special Town Meeting",
+  "water and sewer",
+  "capital planning",
+  "master planning"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

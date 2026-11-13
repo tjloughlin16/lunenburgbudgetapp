@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-08-23",
  "docid": "5523",
@@ -12,23 +12,224 @@
  },
  "votes": [
   {
-   "motion": "charge both betterment projects as one betterment",
+   "motion": "To charge both betterment projects (Pratt and Pleasantview) as one betterment.",
    "moved_by": "Joan P.",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "motion: joan p. to charge both betterment projects as one betterment second: joe a. vote: unanimous"
   },
   {
-   "motion": "adjourn",
+   "motion": "To adjourn at 8:21pm.",
    "moved_by": "Joe A.",
    "seconded_by": "Joan P.",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion - joe a. to adjourn at 8:21pm second: joan p. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned text from macOS Vision; quality is good. Two votes recorded with clear outcomes and movers/seconders.",
- "cost_usd": 0.0805145
+ "note": "OCR text of a single page with no call to order, attendance roll, date header, or approval of minutes. Page opens mid-sentence (\"discuss what has been done so tar with betterments\"), so earlier content is missing. The chair is referred to only as \"He\" and is unnamed. OCR errors appear (e.g., \"chil Lento\" for the signature; \"nandea out an outline or aiscussion items\"). Vote on privilege fees was deferred, not taken. Only two motions appear, both with unanimous results printed. Outcome of the \"charge one\" motion is recorded as passed (unanimous).",
+ "cost_usd": 0.0050994199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joan P.",
+   "status": "present",
+   "quote": "motion: joan p. to charge both betterment projects as one betterment second: joe a."
+  },
+  {
+   "name": "Joe A.",
+   "status": "present",
+   "quote": "motion: joan p. to charge both betterment projects as one betterment second: joe a. vote: unanimous"
+  },
+  {
+   "name": "Barb L.",
+   "status": "present",
+   "quote": "barb l. handed out a summary sheet of project costs."
+  },
+  {
+   "name": "John R.",
+   "status": "not stated",
+   "quote": "john r., who had to leave at 7:30pm, is present"
+  },
+  {
+   "name": "Steve P.",
+   "status": "not stated",
+   "quote": "steve p. will get clarification on payments received after the 30 days."
+  },
+  {
+   "name": "Carl L.",
+   "status": "not stated",
+   "quote": "carl l. will also call the board of health."
+  },
+  {
+   "name": "Jack R.",
+   "status": "not stated",
+   "quote": "jack r. has been on site."
+  },
+  {
+   "name": "Emily Lefto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lefto, minutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Privilege fees for future expansion: the consensus was 3 privilege fees, with the vote deferred until John R. is present.",
+   "quote": "the consensus was 3 privilege fees but the vote will wait until john r., who had to leave at 7:30pm, is present."
+  },
+  {
+   "decision": "Barb L. will contact Wright Pierce about the question on Town administrative costs.",
+   "quote": "there was a question on town administrative costs which barb l. will contact wright pierce about."
+  },
+  {
+   "decision": "Barb L. will check with Counsel on who signs the order assessing betterments (Board of Selectmen or Sewer Commission).",
+   "quote": "barb l. will check with counsel."
+  },
+  {
+   "decision": "A better understanding of the process and timing of a lien release is needed; Barb L. will look into the process.",
+   "quote": "it was determined that a better understanding of the process and timing of a lien release is needed."
+  },
+  {
+   "decision": "Steve P. will get clarification on payments received after the 30 days and update his spreadsheet of potential assessments.",
+   "quote": "steve p. will get clarification on payments received after the 30 days."
+  },
+  {
+   "decision": "A new letter with changed wording will be sent to the Kabobelicious owner and both local and regional Boards of Health; the violation is being turned over to the Board of Health.",
+   "quote": "the violation is being turned over to the board of health and the $25/day fine will continue to accrue."
+  },
+  {
+   "decision": "Carl L. will also call the Board of Health regarding Kabobelicious.",
+   "quote": "carl l. will also call the board of health."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Kabobelicious grease trap fine",
+   "what_was_recorded": "A $25 per day fine against Kabobelicious continues to accrue while the violation goes to the Board of Health.",
+   "figures_as_printed": [
+    "$25/day"
+   ],
+   "quote": "the $25/day fine will continue to accrue"
+  },
+  {
+   "topic": "Project costs summary for betterments",
+   "what_was_recorded": "Barb L. handed out a summary sheet of project costs, reviewed along with costs still to be rectified and costs left to project; no figures printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "barb l. handed out a summary sheet of project costs."
+  },
+  {
+   "topic": "Town administrative costs",
+   "what_was_recorded": "Question on Town administrative costs charged to the Commission; Barb L. to contact Wright Pierce; Commission discussed whether the Town charges these every year.",
+   "figures_as_printed": [],
+   "quote": "there was a question on town administrative costs which barb l. will contact wright pierce about."
+  },
+  {
+   "topic": "Interest rate on betterments",
+   "what_was_recorded": "Need to determine the interest rate to be charged and what can be charged under the new betterment law; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the need to determine the interest rate to be charged and what can be charged per the new betterment law"
+  },
+  {
+   "topic": "Privilege fees for future expansion",
+   "what_was_recorded": "Privilege fees for future expansion discussed; consensus on 3 privilege fees, vote deferred; no dollar amount printed.",
+   "figures_as_printed": [
+    "3 privilege fees"
+   ],
+   "quote": "privilege fees for future expansion were also discussed by the commission."
+  },
+  {
+   "topic": "Potential assessments spreadsheet",
+   "what_was_recorded": "Spreadsheet of potential assessments reviewed, with lots carrying notes discussed; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "a spreadsheet of potential assessments was reviewed and any lots with notes were discussed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Betterments review: project costs and confirmed properties",
+   "resolution": "discussed; action items assigned to Barb L. and Steve P.",
+   "quote": "barb l. handed out a summary sheet of project costs.",
+   "tags": [
+    "betterments",
+    "project costs",
+    "assessments"
+   ]
+  },
+  {
+   "topic": "Privilege fees for future expansion",
+   "resolution": "consensus on 3 fees; vote deferred until John R. present",
+   "quote": "the consensus was 3 privilege fees but the vote will wait until john r., who had to leave at 7:30pm, is present.",
+   "tags": [
+    "privilege fees",
+    "expansion"
+   ]
+  },
+  {
+   "topic": "One betterment or two (Pratt and Pleasantview)",
+   "resolution": "charge as one betterment (passed unanimously)",
+   "quote": "the consensus was to charge one.",
+   "tags": [
+    "betterments",
+    "Pratt",
+    "Pleasantview"
+   ]
+  },
+  {
+   "topic": "Order signing, recording vs. issuing, lien process, 30-day payment",
+   "resolution": "referred to Counsel and staff; no action taken",
+   "quote": "there was a question on who signs the order assessing betterments, the board of selectmen or the sewer commission.",
+   "tags": [
+    "liens",
+    "betterment law",
+    "payment terms"
+   ]
+  },
+  {
+   "topic": "Current business: grease trap issues",
+   "resolution": "letters and referrals to Board of Health; no vote",
+   "quote": "a&d crossroads - there has still been no response.",
+   "tags": [
+    "grease traps",
+    "Board of Health",
+    "enforcement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Summary sheet of project costs (handed out by Barb L.)",
+   "where": "text",
+   "quote": "barb l. handed out a summary sheet of project costs."
+  },
+  {
+   "name": "Spreadsheet of potential assessments",
+   "where": "text",
+   "quote": "a spreadsheet of potential assessments was reviewed and any lots with notes were discussed."
+  },
+  {
+   "name": "Outline of discussion items",
+   "where": "text",
+   "quote": "he nandea out an outline or aiscussion items and"
+  }
+ ],
+ "tags": [
+  "sewer betterments",
+  "assessments",
+  "liens",
+  "privilege fees",
+  "grease traps",
+  "Board of Health",
+  "Sewer Commission"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb l. handed out a summary sheet"
+ },
+ "dropped_unquoted_by_field": {}
 }

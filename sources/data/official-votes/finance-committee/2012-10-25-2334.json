@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-10-25",
  "docid": "2334",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes for the October 11 meeting, as amended",
+   "motion": "Accept the minutes of the October 11 meeting, amended to reflect that JM raised the question of whether the Town was approaching foundation budget figures for the schools.",
    "moved_by": "BL",
    "seconded_by": "SG",
    "outcome": "passed 7-0",
    "procedural": true,
-   "quote": "bl made a motion to accept the minutes for the october 11' meeting, amended to reflect that it was jm who raised the question of whether the town was approaching foundation budget figures for the schools. sg seconded, approved 7-0."
+   "quote": "bl made a motion to accept the minutes for the october 11' meeting, amended to reflect that it was jm who raised the question"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:56.",
    "moved_by": "JM",
    "seconded_by": "SR",
    "outcome": "passed 7-0",
@@ -28,7 +28,250 @@
    "quote": "jm motioned to adjourn at 8:56. sr seconded, approved 7-0."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR is clean and readable. Two votes recorded: approval of prior minutes and adjournment.",
- "cost_usd": 0.0972285
+ "dropped_unquoted": 1,
+ "note": "Text is OCR of a scanned page set with damage: page 2 lines are cut off mid-word (\\\"affects th\\\", \\\"fund i\\\"); the \\\"Sewer and Health Insurance?\\\" line and the numbering around the Town Manager and Next Meetings sections are unclear. Votes were recorded for two motions only (minutes approval and adjournment), both 7-0. No vote is recorded on the Blanchette letter, the service-level invitations or the Verizon payment. \\\"Kerry\\\" and \\\"KS\\\" are referenced but not clearly tied to K. Speidel in the minutes, so that link is not asserted. The 'Washe Luchtr / m8l1d' header text is OCR noise. No documents list is printed.",
+ "cost_usd": 0.00485922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Gregory Berthiaume",
+   "role": "in the audience",
+   "status": "present",
+   "quote": "it was noted by gregory berthiaume, in the audience, that the school committee had begun budget discussions"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ME is sending a letter on behalf of the Committee to Kevin Blanchette expressing concern over the 3% cost of living adjustment for retirees; no vote recorded.",
+   "quote": "me shared the letter he is sending on behalf of the committee to mr. blanchette expressing concern over the 3% cost"
+  },
+  {
+   "decision": "Mark and Kerry will invite Fire, Police and DPW to a November 29 meeting on service levels.",
+   "quote": "mark and kerry will invite fire, police and dpw to a november 29 meeting."
+  },
+  {
+   "decision": "The Board of Assessors will review the Verizon abatement figures and Kerry will report actual numbers at the next meeting.",
+   "quote": "the board of assessors will review to determine actual numbers, and kerry will report them at the next meeting."
+  },
+  {
+   "decision": "JM will forward a link he follows for statistics and benchmarks.",
+   "quote": "jm will forward a link he follows for statistics, benchmarks"
+  },
+  {
+   "decision": "ME will forward GASB 45 information to the Committee.",
+   "quote": "me will forward gasb 45 information"
+  },
+  {
+   "decision": "Kerry will forward fiscal policies to the Committee.",
+   "quote": "kerry will forward fiscal policies."
+  },
+  {
+   "decision": "JM will research the issues around sewers and town buildings.",
+   "quote": "jm will be researching the issues around sewers and town buildings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Verizon tax abatement case",
+   "what_was_recorded": "The Town will owe a abatement payment of $48,000 plus about $18,000 interest, to be confirmed by the Board of Assessors; the Town hopes to pay soon because interest compounds daily.",
+   "figures_as_printed": [
+    "$48,000",
+    "$18,000"
+   ],
+   "quote": "the town will owe $48,000 dollars plus about $18,000 interest."
+  },
+  {
+   "topic": "Solar projects savings",
+   "what_was_recorded": "The Town anticipates saving $200-225,000 per year once the solar credits begin; the credit rate (17.1 or 18.1 cents) is still being discussed with Unitil.",
+   "figures_as_printed": [
+    "$200-225,000",
+    "17.1",
+    "18.1 cent"
+   ],
+   "quote": "town is anticipating saving $200-225,000 per year when the credits begin."
+  },
+  {
+   "topic": "FEMA reimbursement for October storm",
+   "what_was_recorded": "The Town has received part of FEMA reimbursement and has a remaining shortfall; the state DoR requires the Town to fund the deficit, and borrowing may be needed.",
+   "figures_as_printed": [
+    "400,000",
+    "$157,000"
+   ],
+   "quote": "we have received 400,000 and have $157,000 to go."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Gregory Berthiaume",
+   "stated_role": "in the audience",
+   "topic": "School Committee budget discussions and capital plans",
+   "quote": "it was noted by gregory berthiaume, in the audience, that the school committee had begun budget discussions"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting called to order at 7:00 pm."
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action; no public comment",
+   "tags": [
+    "ATFC",
+    "financial policies"
+   ],
+   "quote": "tb attended the association of town finance committees meeting on 10/20 and distributed the new handbook."
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved as amended, 7-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "bl made a motion to accept the minutes for the october 11' meeting, amended to reflect that it was jm who raised the question"
+  },
+  {
+   "topic": "Committee/Department Updates",
+   "resolution": "no action",
+   "tags": [
+    "library",
+    "schools",
+    "sewers",
+    "school building committee",
+    "capital planning"
+   ],
+   "quote": "bl informed the committee that the new library director is martha moore."
+  },
+  {
+   "topic": "Letter to Kevin Blanchette and the Worcester County Retirement Board",
+   "resolution": "letter shared; no vote recorded",
+   "tags": [
+    "retirement",
+    "cost of living adjustment",
+    "state representatives"
+   ],
+   "quote": "me shared the letter he is sending on behalf of the committee to mr. blanchette expressing concern"
+  },
+  {
+   "topic": "Service level discussions",
+   "resolution": "subgroup questions to department heads; invite Fire, Police, DPW to November 29",
+   "tags": [
+    "service levels",
+    "departments",
+    "budget season"
+   ],
+   "quote": "sr reported on the questions the subgroup would like to raise with department heads before we get into the budget"
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "informational; no action",
+   "tags": [
+    "solar",
+    "Verizon abatement",
+    "FEMA",
+    "Tax Recapitulation",
+    "MEMA"
+   ],
+   "quote": "there are 2 solar projects ongoing, on electric avenue and chase road."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled; items assigned",
+   "tags": [
+    "scheduling",
+    "tax recap",
+    "GASB 45"
+   ],
+   "quote": "november 29*, service levels discussion"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Association of Town Finance Committees handbook (new handbook)",
+   "where": "text",
+   "quote": "tb attended the association of town finance committees meeting on 10/20 and distributed the new handbook."
+  },
+  {
+   "name": "Letter to Mr. Kevin Blanchette, Worcester County Retirement Board",
+   "where": "text",
+   "quote": "me shared the letter he is sending on behalf of the committee to mr. blanchette expressing concern over the 3% cost"
+  },
+  {
+   "name": "GASB 45 information",
+   "where": "text",
+   "quote": "me will forward gasb 45 information"
+  },
+  {
+   "name": "Town fiscal policies",
+   "where": "text",
+   "quote": "kerry will forward fiscal policies."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "service levels",
+  "solar credits",
+  "FEMA reimbursement",
+  "Verizon abatement",
+  "retirement COLA",
+  "school budget",
+  "tax recapitulation",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

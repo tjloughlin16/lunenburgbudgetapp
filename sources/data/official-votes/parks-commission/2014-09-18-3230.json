@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2014-09-18",
  "docid": "3230",
@@ -12,6 +12,110 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes contain discussions of a parking lot project but no formal motions or voting outcomes are stated.",
- "cost_usd": 0.0829665
+ "note": "OCR text of a scanned page. No motions, votes, or budget figures are recorded; adjournment is stated without a motion. The line 'minures accepted on: 1/2/4' is OCR-garbled and records no approval vote, so the date is unclear. Michael Masciarelli appears only on the letterhead and in an illegible signature, not in the attendance list, so he is omitted from attendees. Joe Poges is listed as a resident in attendance but no statement is attributed to him. The minutes list the meeting as 5:30pm on the header but convened at 5:38pm.",
+ "cost_usd": 0.0027090200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Robuccio",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: bob robuccio and corinne scouten"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: bob robuccio and corinne scouten"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director: jack rodriquenz"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief: james marino"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager: kerry speidel"
+  },
+  {
+   "name": "Elaine Mroz",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident: elaine mroz and joe poges"
+  },
+  {
+   "name": "Joe Poges",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident: elaine mroz and joe poges"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Action item: Ms. Mroz to get back to DPW Director Jack Rodriquenz by Thursday, 9/25 with additional thoughts on the Marshall Park parking lot project.",
+   "quote": "ms. mroz will get back to dpw director jack rodriquenz by thursday, 9/25 regarding additional thoughts on this project."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Elaine Mroz",
+   "stated_role": "Resident",
+   "topic": "concerns about new parking lot at Marshall Park",
+   "quote": "ms. mroz is an abutter to marshall park on chestnut st and came to discuss concerns regarding"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "New Parking Lot at Marshall Park",
+   "resolution": "discussed; abutter to follow up with DPW Director by 9/25",
+   "quote": "new parking lot at marshall park",
+   "tags": [
+    "parking lot",
+    "Marshall Park",
+    "abutter",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 6:30pm (no motion recorded)",
+   "quote": "time adjourned was 6:30pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Project plans for the new parking lot at Marshall Park (not separately named)",
+   "where": "text",
+   "quote": "the project and plans were reviewed by all ===page ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "Parks Commission",
+  "Marshall Park",
+  "parking lot",
+  "abutter concerns",
+  "DPW",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

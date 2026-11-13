@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-01-25",
  "docid": "3872",
@@ -12,39 +12,236 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR plan for 107 Youngs Road",
+   "motion": "Endorse the ANR plan for 107 Youngs Road.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed all aye",
+   "outcome": "passed (all aye)",
    "procedural": false,
-   "quote": "motion m. allison to endorse plan, second, k. chenis, all aye."
+   "quote": "107 youngs road- motion m. allison to endorse plan, second, k. chenis, all aye."
   },
   {
-   "motion": "Approve driveway access easement location determination for 107 Youngs Road",
+   "motion": "Accept that the driveway access easement location for 107 Youngs Road is acceptable (driveway determination).",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed all aye",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "motion, m. allison, second, k. chenis , all aye."
   },
   {
-   "motion": "Approve minutes from January 11, 2016",
+   "motion": "Approve the minutes of 1-11-16.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "all minutes signed. 1-11-16, motion, k. chenis, second, g. bittner"
+   "quote": "1-11-16, motion, k. chenis, second, g. bittner"
   },
   {
-   "motion": "Approve minutes from January 11, 2016 Unitil Information Meeting",
+   "motion": "Approve the minutes of 1-11-16 Unitil Information Meeting.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "1-11-16 - unitil information meeting, motion, k. chenis, second, m. allison"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1255025
+ "note": "Text is a clean extraction of two pages; no scan issues. No dollar figures appear, so budget_items and transfers are empty. No public comment is recorded. The 107 Youngs Road motions print 'all aye' rather than a count. The minutes-approval motions print no result, so outcome is 'not stated'. The 59 Easter Brook Mylar endorsement and the G. Bittner volunteering are recorded without a motion and are listed as decisions, not votes. The footer 'Minutes/2016/01.11.16' is a file path, not a document, and is not listed.",
+ "cost_usd": 0.004539420000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: david prokowiew"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board endorsed a new Mylar for the 59 Easter Brook Road ANR Plan, dated January 25, 2016, with no change to lot configurations; no motion recorded.",
+   "quote": "board endorsed the mylar with a date of january 25, 2016."
+  },
+  {
+   "decision": "Attorney Knox, appearing on 238 Fire Road, to return on March 8, 2016 after a conflict with the February 8, 2016 appearance; minutes note the Board does not meet March 8 and it was rescheduled to March 14.",
+   "quote": "board consensus was for him to return on march 8, 2016."
+  },
+  {
+   "decision": "G. Bittner volunteered to attend Conservation Commission meetings that might involve large-scale projects (suggested by the Lunenburg Conservation Consultant); no vote recorded.",
+   "quote": "g. bittner would like to volunteer."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plans: 107 Youngs Road and 59 Easter Brook Road",
+   "resolution": "approved (endorsement, driveway determination, Mylar endorsed)",
+   "quote": "107 youngs road- motion m. allison to endorse plan, second, k. chenis, all aye.",
+   "tags": [
+    "ANR",
+    "driveway",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Public hearing: 274 Prospect Street (continued)",
+   "resolution": "continued; see separate minutes",
+   "quote": "public hearing: 274 prospect street (cont'd)- see separate minutes",
+   "tags": [
+    "public hearing",
+    "274 Prospect Street"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (minutes signed; motions recorded for 1-11-16 and Unitil Information Meeting)",
+   "quote": "1-11-16, motion, k. chenis, second, g. bittner",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "school building committee- building 75%± complete. more discussion on contingency fund.",
+   "tags": [
+    "committees",
+    "school building",
+    "storm water",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "definitive subdivision, 50 elmwood road- finishing up construction at lots 2 and 6.",
+   "tags": [
+    "subdivision",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Director's items: Town Meeting and 238 Fire Road hearing",
+   "resolution": "noted warrant closing; Attorney Knox to return March 8 (rescheduled to March 14)",
+   "quote": "board consensus was for him to return on march 8, 2016.",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "238 Fire Road"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Member concerns",
+   "resolution": "no action; G. Bittner offered to volunteer for Conservation Commission large-project meetings; M. Allison suggested a municipal data processing center bylaw",
+   "quote": "m. allison felt that the town should write a bylaw to provide for the establishment of a municipal data processing center under m.g.l. ch. 41, section 23d.",
+   "tags": [
+    "conservation",
+    "bylaw",
+    "data processing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "february 8- highfield village hearing (cont'd) (k. chenis not available for meeting)",
+   "tags": [
+    "schedule",
+    "hearings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 PM (no motion recorded)",
+   "quote": "adjournment: 9:00 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 01/11/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 01/11/16 minutes 01/11/16 unitil information meeting anr plan 107 youngs road"
+  },
+  {
+   "name": "Minutes 01/11/16 Unitil Information Meeting",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 01/11/16 minutes 01/11/16 unitil information meeting anr plan 107 youngs road"
+  },
+  {
+   "name": "ANR Plan 107 Youngs Road",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 01/11/16 minutes 01/11/16 unitil information meeting anr plan 107 youngs road"
+  },
+  {
+   "name": "Separate minutes for the 274 Prospect Street public hearing",
+   "where": "text",
+   "quote": "public hearing: 274 prospect street (cont'd)- see separate minutes"
+  },
+  {
+   "name": "New Mylar for the 59 Easter Brook Road ANR Plan",
+   "where": "text",
+   "quote": "the applicant's engineer requested a new mylar be endorsed by the board."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "driveway determination",
+  "subdivision",
+  "public hearing",
+  "minutes approval",
+  "town meeting warrant",
+  "committee reports",
+  "Conservation Commission",
+  "238 Fire Road",
+  "274 Prospect Street",
+  "Unitil"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

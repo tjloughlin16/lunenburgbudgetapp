@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2017-05-18",
  "docid": "2972",
@@ -12,47 +12,263 @@
  },
  "votes": [
   {
-   "motion": "Elect Elizabeth Murphy as Chair and Paul Doherty as Vice Chair",
+   "motion": "Elect Elizabeth Murphy as Chair and Paul Doherty as Vice Chair (election of officers).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Elizabeth Murphy",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "deborah christen nominated elizabeth murphy as chair and paul doherty as vice chair; elizabeth murphy seconded. roll call followed: deborah christen - yes; elizabeth murphy - yes, paul doherty - yes."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "deborah christen - yes; elizabeth murphy - yes, paul doherty - yes."
   },
   {
-   "motion": "Accept the minutes of the March 16, 2017 meeting",
+   "motion": "Accept the minutes of the March 16, 2017 meeting.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
    "procedural": true,
-   "quote": "paul doherty made a motion to accept the minutes ; elizabeth murphy seconded. all were in favor and the minutes were accepted."
+   "quote": "paul doherty made a motion to accept the minutes"
   },
   {
-   "motion": "Accept the Feb/Mar/Apr 2017 financials",
+   "motion": "Accept the Feb/Mar/Apr 2017 financials.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "paul doherty made a motion to accept the feb/mar/apr 2017 financials ; deborah christen seconded and all were in favor."
+   "quote": "to accept the feb/mar/apr 2017 financials"
   },
   {
-   "motion": "Accept verification that there are no vacated tenant balances older than twelve months as of March 31, 2017 and therefore no unrecoverable debts to write-off",
+   "motion": "Accept verification that there are no vacated tenant balances older than twelve (12) months as of March 31, 2017, and therefore no unrecoverable debts to write off (Resolution 201708).",
    "moved_by": "Paul Doherty",
    "seconded_by": "Deborah A.H. Christen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by paul doherty to accept verification that there are no vacated tenant balances older than twelve (12) months a s of march 31, 2017 and therefore no unrecoverable debts to write-off. seconded, deborah a.h. christen seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "motion made by paul doherty to accept verification that there are no vacated tenant balances"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:12 p.m.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": true,
-   "quote": "paul doherty made a motion to adjourn the meeting at 7:12 p.m. deborah christen seconded, all were in favor, and the meeting was adjourned."
+   "quote": "paul doherty made a motion to adjourn the meeting at 7:12 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1019075
+ "note": "Clean extracted text of a two-page set of minutes. The minutes record no roll-call totals beyond the named yes votes for the officer election, and no dollar figures for the write-off, which was verified as having no balances to write off. Residents were present with comments, but no speakers or comment content are recorded. No separate documents list is printed.",
+ "cost_usd": 0.0066592199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "paul doherty, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Member",
+   "status": "absent",
+   "quote": "linda mcdonald, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "peter proulx executive director"
+  },
+  {
+   "name": "Ben Gold",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "ben gold, recording secretary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Formula Funding award",
+   "what_was_recorded": "A Formula Funding award letter for FY2020 was reported covering 2018 money for a deck and a design for an emergency generator; no dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "formula funding award letter for fy2020 - 2018 money for deck; design for emergency generator."
+  },
+  {
+   "topic": "PMR draft year spending",
+   "what_was_recorded": "Spending was reported under by 10%, with 10% to be taken and the budget changed through a budget revision.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "spending under by 10%."
+  },
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves were reported at 65.58% on the April statement.",
+   "figures_as_printed": [
+    "65.58%"
+   ],
+   "quote": "april statement - page f2 - reserves at 65.58%."
+  },
+  {
+   "topic": "Operating surplus through April",
+   "what_was_recorded": "The authority was reported to be $4,228 to the good through April 30, 2017.",
+   "figures_as_printed": [
+    "$4,228"
+   ],
+   "quote": "$4,228 to the good through april 30, 2017"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Resident comments (speakers not named)",
+   "quote": "residents were present with comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and election of officers",
+   "resolution": "officers elected by roll call",
+   "quote": "as this is the annual meeting, election of officers to be held.",
+   "tags": [
+    "officers",
+    "election",
+    "annual meeting"
+   ]
+  },
+  {
+   "topic": "Approval of March 16, 2017 minutes",
+   "resolution": "approved",
+   "quote": "paul doherty made a motion to accept the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "no action",
+   "quote": "the executive director report:",
+   "tags": [
+    "executive director",
+    "formula funding",
+    "DHCD",
+    "PMR",
+    "certification"
+   ]
+  },
+  {
+   "topic": "Financial report (Feb/Mar/Apr 2017)",
+   "resolution": "accepted",
+   "quote": "three months of financials for review",
+   "tags": [
+    "finance",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "Modernization report",
+   "resolution": "no action",
+   "quote": "building envelope repair - to begin in may.",
+   "tags": [
+    "modernization",
+    "building envelope"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "no action",
+   "quote": "17 of the 18 work orders for april were completed within 72 hours.",
+   "tags": [
+    "work orders",
+    "state-aided housing"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "none",
+   "quote": "7. old business: none",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "New business: write-off of unrecoverable debts (Resolution 201708)",
+   "resolution": "resolution passed",
+   "quote": "resolution to write-off unrecoverable debts",
+   "tags": [
+    "debts",
+    "write-off",
+    "tenant balances"
+   ]
+  },
+  {
+   "topic": "Other correspondence: Public Housing Notices",
+   "resolution": "no action",
+   "quote": "other correspondence: public housing notices",
+   "tags": [
+    "correspondence",
+    "public housing notices"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Formula Funding award letter for FY2020",
+   "where": "text",
+   "quote": "formula funding award letter for fy2020 - 2018 money for deck"
+  },
+  {
+   "name": "April statement (page F2)",
+   "where": "text",
+   "quote": "april statement - page f2 - reserves at 65.58%."
+  },
+  {
+   "name": "Feb/Mar/Apr 2017 financials",
+   "where": "text",
+   "quote": "three months of financials for review"
+  },
+  {
+   "name": "Resolution 201708, Resolution to write-off unrecoverable debts",
+   "where": "text",
+   "quote": "resolution to write-off unrecoverable debts"
+  },
+  {
+   "name": "Public Housing Notices",
+   "where": "text",
+   "quote": "other correspondence: public housing notices"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "annual meeting",
+  "officer election",
+  "financials",
+  "reserves",
+  "debt write-off",
+  "modernization",
+  "state-aided housing",
+  "DHCD",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-06-05",
  "docid": "622",
@@ -12,27 +12,213 @@
  },
  "votes": [
   {
-   "motion": "to appoint Chris as Chairman of the Board",
+   "motion": "Appoint Chris Comeau as Chairman of the Board.",
    "moved_by": "Matt",
    "seconded_by": "Lou",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "a motion was made by matt and seconded by lou to appoint chris as chairman of the board. chris accepted the position and thanked them for their support."
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "a motion was made by matt and seconded by lou to appoint chris as chairman of the board."
   },
   {
-   "motion": "to review the property again as of July 1st to see if the property is still vacant",
-   "outcome": "not stated",
+   "motion": "Review the property at 67 West St. Terrace again as of July 1st to see if it is still vacant.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "after discussion, the board voted to review the property again as of july 1st to see if the property is still vacant."
   },
   {
-   "motion": "to schedule a tentative date of July 10 at 6pm",
+   "motion": "Schedule a tentative meeting date of July 10 at 6pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "chris suggested that we do not schedule a meeting for july 3rd. the board voted to schedule a tentative date of july 10* at 6pm."
+   "procedural": false,
+   "quote": "the board voted to schedule a tentative date of july 10* at 6pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision; readable without major defects. A motion to approve prior minutes, vouchers, abatements and warrants is mentioned as action taken by the board but recorded without explicit motion/vote language (\"Board reviewed and approved\"), so excluded per vote-recording conventions.",
- "cost_usd": 0.11955950000000001
+ "note": "OCR of a scanned page set (two pages). Vote counts are not printed anywhere. The chairman motion has no recorded result. The adjournment has no recorded motion, so it is not listed as a vote. The motion says 'Matt' and 'Lou'; these are taken to be Matthew Papini, Sr. and Louis Franco as printed in the attendance line. Laura Williams is mentioned only as attending a training, not this meeting, so she is not listed as an attendee. The Article 20 'passed' statement refers to a Town Meeting vote, not a board vote, so it is not recorded as a board vote.",
+ "cost_usd": 0.005221019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant"
+  },
+  {
+   "name": "Matthew Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved minutes, current expense vouchers, abatements, warrants, commitments, & payroll.",
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, warrants, commitments, & payroll."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 20 - minimum fair cash value for personal property accounts",
+   "what_was_recorded": "Article 20 proposed accepting a minimum fair cash value of $2,500.00 for personal property accounts to be taxed.",
+   "figures_as_printed": [
+    "$2,500.00"
+   ],
+   "quote": "establishing a minimum fair cash value of $2,500.00 for the personal property accounts to be taxed"
+  },
+  {
+   "topic": "67 West St. Terrace property tax exemption",
+   "what_was_recorded": "The appellant requested an extension of a previously granted property tax exemption; the board decided to re-review the property as of July 1.",
+   "figures_as_printed": [],
+   "quote": "request an extension of the property tax exemption that was previously granted."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Chairman election",
+   "resolution": "motion to appoint Chris Comeau as Chairman made; result not recorded",
+   "quote": "a motion was made by matt and seconded by lou to appoint chris as chairman of the board.",
+   "tags": [
+    "officers",
+    "chairman"
+   ]
+  },
+  {
+   "topic": "Article 20 - personal property minimum fair cash value",
+   "resolution": "no action; discussion of Town Meeting vote",
+   "quote": "lou franco spoke regarding article 20 as follows:",
+   "tags": [
+    "town meeting",
+    "personal property",
+    "article 20"
+   ]
+  },
+  {
+   "topic": "FY13 preliminary billing and Munis/Billtrust update",
+   "resolution": "no action; update given, bills to Collectors by June 15",
+   "quote": "louise gave a brief update on the status of the fy13 preliminary billing.",
+   "tags": [
+    "billing",
+    "munis",
+    "billtrust",
+    "tax collector"
+   ]
+  },
+  {
+   "topic": "Personal Property Assessment project update",
+   "resolution": "no action; update given",
+   "quote": "harald gave an update regarding the personal property assessment project.",
+   "tags": [
+    "personal property",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "67 West St. Terrace exemption appeal",
+   "resolution": "reviewed; property to be reviewed again as of July 1",
+   "quote": "the board discussed the letter and reviewed the dor's fact sheet, taxpayers guide to local property exemptions and the qualification date guidelines.",
+   "tags": [
+    "tax exemption",
+    "appeal",
+    "abc application"
+   ]
+  },
+  {
+   "topic": "Signatures for Prelim FY13 Commitment & Warrant",
+   "resolution": "no action; members to sign before month end",
+   "quote": "for the prelim fy13 commitment & warrant and other docs that may require a signature.",
+   "tags": [
+    "commitment",
+    "warrant",
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "tentative July 10 at 6pm scheduled; no July 3 meeting",
+   "quote": "the board voted to schedule a tentative date of july 10* at 6pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:03 pm; no motion recorded",
+   "quote": "meeting adjourned at 7:03 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Certified letter from The Institute of Professional Practice, Inc. dated May 17, 2012",
+   "where": "text",
+   "quote": "the office is in receipt of a certified letter from the institute of professional practice, inc. dated may 17, 2012 appealing the decision of denial"
+  },
+  {
+   "name": "ABC application for 67 West St. Terrace",
+   "where": "text",
+   "quote": "appealing the decision of denial on the abc application for 67 west st. terrace."
+  },
+  {
+   "name": "DOR fact sheet, Taxpayers Guide to Local Property Exemptions",
+   "where": "list",
+   "quote": "reviewed the dor's fact sheet, taxpayers guide to local property exemptions and the qualification date guidelines."
+  },
+  {
+   "name": "Qualification date guidelines",
+   "where": "list",
+   "quote": "reviewed the dor's fact sheet, taxpayers guide to local property exemptions and the qualification date guidelines."
+  },
+  {
+   "name": "Article 20 (Town Meeting warrant article on Chapter 59, Section 5, Clause 54)",
+   "where": "text",
+   "quote": "to see if the town will vote to accept chapter 59, section 5, clause 54 of the general laws of"
+  },
+  {
+   "name": "Prelim FY13 Commitment & Warrant",
+   "where": "text",
+   "quote": "for the prelim fy13 commitment & warrant and other docs that may require a signature."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "personal property",
+  "tax exemption",
+  "billing",
+  "munis",
+  "article 20",
+  "chairman election",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board discussed the letter and reviewed the dor's fact sheet"
+ },
+ "dropped_unquoted_by_field": {}
 }

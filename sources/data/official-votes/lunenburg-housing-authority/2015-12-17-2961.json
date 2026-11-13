@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2015-12-17",
  "docid": "2961",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes from the October 22, 2015 meeting",
+   "motion": "Accept the minutes of the October 22, 2015 meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Amaryllis Leet",
    "outcome": "passed unanimously",
@@ -20,43 +20,279 @@
    "quote": "deborah christen made a motion to accept the minutes; amaryllis leet second ed. all were in favor, the motion passed unanimously."
   },
   {
-   "motion": "To accept the financial report",
+   "motion": "Accept the financials.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "elizabeth murphy made a motion to accept the financ ials. deborah christen seconded; all were in favor",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "elizabeth murphy made a motion to accept the financ ials. deborah christen seconded; all were in favor."
   },
   {
-   "motion": "To authorize the Executive Director to submit the Capital Improvement Plan (CIP) Formula Funding application to DHCD for year 2016",
+   "motion": "Authorize the Executive Director to submit the Capital Improvement Plan (CIP) Formula Funding application for year 2016 to DHCD, as proposed (Resolution 201506).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Deborah A.H. Christen",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by elizabeth murphy to author ize the executive director to submit the application for capital improvement plan (cip) formula funding, as proposed, to dhcd. seconded, deborah a.h. christen seconded the motion, and the motion was passed by a unanimous vote",
-   "quote_taken_from_text": true
+   "quote": "motion made by elizabeth murphy to author ize the executive director to submit the application for capital improvement plan (cip) formula funding, as proposed, to dhcd."
   },
   {
-   "motion": "To certify compliance with Federal and State lead paint notification procedures for year 2015",
+   "motion": "Certify 2015 compliance with notification procedures for federal and state lead paint laws (Resolution 201507).",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by deborah a.h. christen for certification of compliance with the notification procedures for federal and state lead paint laws. seconded, elizabeth murphy seconded the motion, and the motio n was passed by a unanimous vote",
-   "quote_taken_from_text": true
+   "quote": "motion made by deborah a.h. christen for certification of compliance with the notification procedures for federal and state lead paint laws."
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:10 p.m.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Amaryllis Leet",
    "outcome": "passed",
    "procedural": true,
-   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:10 p.m. amaryllis leet seconded, all were in favor, and the meeting was adjourned",
-   "quote_taken_from_text": true
+   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:10 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Resolution 201508 (Update Reasonable Accommodation Policy) was tabled until the next meeting; no vote was taken.",
- "cost_usd": 0.1068395
+ "note": "Plain-text extraction with line breaks and some split words (e.g. \"financ ials\", \"author ize\", \"ne ed\", \"meeti ng\"); quotes copy these as printed. Resident participation items are unattributed bullets with no named speakers. The minutes name no Executive Director, and \"Evelyn\" is not identified. Resolution 201508 was tabled with no recorded vote. Page F2/F3 financial pages are referenced but not included in this text.",
+ "cost_usd": 0.00623462,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "peter proulx, secretary"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "benjamin gold, recording secretary"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "absent",
+   "quote": "paul doherty, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Resolution 201508, Update the Existing Reasonable Accommodation Policy, was tabled until the next meeting.",
+   "quote": "resolution 201508, update the existing reasonable accommodation policy, was tabled until the next meeting."
+  },
+  {
+   "decision": "Dog waste not being picked up was assigned to Evelyn to address.",
+   "quote": "dog poop not being picked up. evelyn to address."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Financial report notes reserves above 75% on page F2, in very good condition.",
+   "figures_as_printed": [
+    "75%"
+   ],
+   "quote": "page f2 - reserves above 75%; very good condition."
+  },
+  {
+   "topic": "Operating position",
+   "what_was_recorded": "Financial report says the housing authority is $24,000 to the good on page F3.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "page f3 - we are $24,000 to the good"
+  },
+  {
+   "topic": "Utilities",
+   "what_was_recorded": "Financial report says utilities should not rise in December; no figure given.",
+   "figures_as_printed": [],
+   "quote": "utilities shouldn't rise in december."
+  },
+  {
+   "topic": "Subsidy for computer system and roof snow removal",
+   "what_was_recorded": "A small subsidy this year was noted for the computer system and roof snow removal; no amount given.",
+   "figures_as_printed": [],
+   "quote": "small subsidy this year for computer system and roof snow removal."
+  },
+  {
+   "topic": "CIP formula funding from DHCD",
+   "what_was_recorded": "DHCD annual capital development formula funding is described; the amount is not stated in the minutes.",
+   "figures_as_printed": [],
+   "quote": "dhcd will annually provide a given amount of capital development funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Resident items raised before the meeting",
+   "quote": "resident participation prior to meeting:"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened 6:36 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:36 p.m.",
+   "tags": [
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "noted; no action recorded",
+   "quote": "resident participation prior to meeting:",
+   "tags": [
+    "residents",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Approval of October 22, 2015 minutes",
+   "resolution": "approved",
+   "quote": "deborah christen made a motion to accept the minutes; amaryllis leet second ed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action",
+   "quote": "the executive director report:",
+   "tags": [
+    "operations",
+    "keys"
+   ]
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "financials accepted",
+   "quote": "elizabeth murphy made a motion to accept the financ ials.",
+   "tags": [
+    "finances",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "no action",
+   "quote": "facilities report: no vacancies.",
+   "tags": [
+    "facilities",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "none",
+   "quote": "6. old business - none",
+   "tags": []
+  },
+  {
+   "topic": "CIP formula funding application to DHCD (Resolution 201506)",
+   "resolution": "approved; ED authorized to submit",
+   "quote": "motion made by elizabeth murphy to author ize the executive director to submit the application for capital improvement plan (cip) formula funding, as proposed, to dhcd.",
+   "tags": [
+    "DHCD",
+    "capital improvement plan",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Lead paint compliance certification (Resolution 201507)",
+   "resolution": "approved",
+   "quote": "motion made by deborah a.h. christen for certification of compliance with the notification procedures for federal and state lead paint laws.",
+   "tags": [
+    "lead paint",
+    "compliance",
+    "DHCD"
+   ]
+  },
+  {
+   "topic": "Reasonable accommodation policy update (Resolution 201508)",
+   "resolution": "tabled to next meeting",
+   "quote": "resolution 201508, update the existing reasonable accommodation policy, was tabled until the next meeting.",
+   "tags": [
+    "policy",
+    "reasonable accommodation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:10 p.m.",
+   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:10 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution 201506 – Capital Improvement Plan (CIP) Formula Funding to DHCD, year 2016",
+   "where": "list",
+   "quote": "resolution 201506 whereas: dhcd will annually provide a given amount of capital development funding"
+  },
+  {
+   "name": "Resolution 201507 – Certification of 2015 Compliance with Notification Procedures for Federal and State Lead Paint Laws",
+   "where": "list",
+   "quote": "resolution 201507 whereas: the lunenburg housing authority has the ne ed to be in compliance"
+  },
+  {
+   "name": "Resolution 201508 – Update the Existing Reasonable Accommodation Policy",
+   "where": "list",
+   "quote": "resolution 201508, update the existing reasonable accommodation policy, was tabled until the next meeting."
+  },
+  {
+   "name": "Capital Improvement Plan (CIP) application, Formula Funding for year 2016",
+   "where": "text",
+   "quote": "capital improvement plan (cip) formula funding for year 2016 as presented"
+  },
+  {
+   "name": "Financial report pages F2 and F3",
+   "where": "text",
+   "quote": "page f2 - reserves above 75%; very good condition."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "capital improvement plan",
+  "DHCD",
+  "lead paint",
+  "finances",
+  "reserves",
+  "resident concerns",
+  "maintenance",
+  "tenants",
+  "policy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following resolutions were presented:"
+ },
+ "dropped_unquoted_by_field": {}
 }

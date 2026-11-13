@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-07-01",
  "docid": "4893",
@@ -12,31 +12,438 @@
  },
  "votes": [
   {
-   "motion": "Adopt the implementation of the reappointment form for all persons seeking reappointment for their term ending 6/30/2014, providing until 8/15/2014 for them to return the form to the Board of Selectmen's office through the Town Manager",
+   "motion": "Adopt the implementation of the reappointment form for all persons seeking reappointment for terms ending 6/30/2014, with forms due to the BOS office by 8/15/2014.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to adopt the implementation of the reappointment form for all persons who want to seek reappointment for their term ending 6/30/2014 and provide until 8/15/2014 for them to return the form to the board of selectmen's office through the town manager. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to adopt the implementation of the reappointment form for all persons who want to seek reappointment"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Appoint Ken Chenis as Representative to the Montachusett Joint Transportation Committee.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Ms. Bertram",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mr. ebersole moved to appoint ken chenis as representative to the montachusett joint transportation committee."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "ms. bertram moved to adjourn the meeting. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
-  },
-  {
-   "motion": "Appoint Ken Chenis as Representative to the Montachusett Joint Transportation Committee",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "mr. ebersole moved to appoint ken chenis as representative to the montachusett joint transportation committee. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan by macOS Vision. One motion (Mr. Ebersole's motion to defer action on the Town Manager's appointments) was made and seconded but explicitly states \"No vote was taken by the board,\" so it is excluded as a vote.",
- "cost_usd": 0.1087755
+ "note": "OCR text of a scanned page set; several names and words are garbled or truncated (e.g. 'Mir. Alonzo', 'unenburg Housing Authority', 'Ms. Lum'), so quotes avoid those fragments. Three recorded votes, all 5-0. The motion to ratify the Town Manager's appointments was rescinded before any vote; the motion to defer the appointments states no vote was taken, so neither is listed as a vote. Goals tabling date is printed as '718/2014'. Warrant dates for the 2014 meeting are printed as 2015 (7/2/2015, 7/1/2015). Section numbering repeats '6.'. Executive session is printed as 'None'. The 'RECEIVED & FILED' label is read as a documents list because items sit under it; this is an interpretation.",
+ "cost_usd": 0.013314120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "BOS representative to the Committee on Diversity & Acceptance",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, phyllis luck & town manager kerry speidel."
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "representative from the Engineering VHB Inc.",
+   "status": "present",
+   "quote": "trish domigan representative from the engineering vhb inc. came before the board to give an update on the summer street project"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Ebersole rescinded his earlier motion to ratify the Town Manager's appointments (except the Animal Control Officer), and Mr. Toale withdrew his second.",
+   "quote": "after due and diligent discussion, mr. ebersole rescinded his previous motion."
+  },
+  {
+   "decision": "Action on the Town Manager's appointments was to be deferred to the 7/8/2014 BOS meeting; the minutes record that no vote was taken on that motion.",
+   "quote": "no vote was taken by the board on mr. ebersole's motion."
+  },
+  {
+   "decision": "Board asked the Town Manager to clarify the duties of the Field Driver and Technical Advisory Committee, and who the appointing authority is for the Inspector of Animals.",
+   "quote": "the bos would like the town manager to clarify the duties of the field driver, technical advisory committee"
+  },
+  {
+   "decision": "Mr. Ebersole requested that the Town Manager implement the re-appointment form for many of the positions.",
+   "quote": "mr. ebersole requested that the town manager implement the re-appointment form for many of these positions"
+  },
+  {
+   "decision": "The Animal Control Officer is to be given the opportunity to come before the BOS before any non-ratification.",
+   "quote": "ms. bertram suggested that the animal control officer be given the opportunity to come before the bos"
+  },
+  {
+   "decision": "Town Manager said she would like to put the appointment of the Animal Control Officer under the Police Dept. and review that personnel matter before meeting with the person.",
+   "quote": "ms. speidel mentioned that she would like to put the appointment of the animal control officer under the police dept."
+  },
+  {
+   "decision": "Incumbents whose terms ended 6/30/2014 may remain in position for 15 days after that date, and indefinitely if reappointments are not made by then.",
+   "quote": "all incumbents will be able to remain in their positions for 15 days after 6/30/2014"
+  },
+  {
+   "decision": "BOS will interview potential candidates in July, aiming to fill the vacancies in August.",
+   "quote": "bos will conduct interviews of potential candidates in the month of july with the goal of filling the vacancies in august."
+  },
+  {
+   "decision": "Mr. Alonzo recommended that the first interviews be scheduled for the PACC, Personnel Committee, and the COA.",
+   "quote": "mr. alonzo recommended that the interviews that would be scheduled first would be for the pacc, personnel committee, and the coa."
+  },
+  {
+   "decision": "FY2015 Town Manager Goals were tabled to the 7/8/2014 BOS meeting (printed as 718/2014).",
+   "quote": "3. fy2015 town manager goals: tabled until the 718/2014 bos meeting."
+  },
+  {
+   "decision": "FY2015 BOS Goals to be discussed again at the 7/8/2014 BOS meeting.",
+   "quote": "fy2015 bos goals will be discussed again at the 7/8/2014 bos meeting."
+  },
+  {
+   "decision": "Board will contact the Green Energy Community about potential changes to the Energy Conservation Policy; once agreed, the policy goes to the town and school Facilities Directors.",
+   "quote": "there are some things that the bos need to contact the green energy community about concerning potential changes"
+  },
+  {
+   "decision": "Board directed that a letter of thanks be signed by the BOS and sent to Sheila Lumi on her resignation from the Lunenburg Housing Authority.",
+   "quote": "requested that a letter of thanks be signed by the bos"
+  },
+  {
+   "decision": "Hadwin Market transfer of license, returned from the ABCC for a signature, was signed.",
+   "quote": "it has come back from the abcc for a request for a signature. document was signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street project federal funding",
+   "what_was_recorded": "The MPO voted approval of funding for the Summer St. Project in the 2017 TIP.",
+   "figures_as_printed": [
+    "$17.5M"
+   ],
+   "quote": "mpo voted approval for $17.5m for the summer st. project in the 2017 tip"
+  },
+  {
+   "topic": "Summer Street design money",
+   "what_was_recorded": "Design money for the project is in the State Transportation Bond Bill, which is not available to the town at this time.",
+   "figures_as_printed": [],
+   "quote": "the design money for this project has been included in state transportation bond bill which is not"
+  },
+  {
+   "topic": "Chapter 90 money for Summer Street",
+   "what_was_recorded": "The board may need to commit Chapter 90 money to keep the Summer Street project moving.",
+   "figures_as_printed": [],
+   "quote": "at some point this board is going to have to make a commitment to use chapter 90 money"
+  },
+  {
+   "topic": "HSIP crash data",
+   "what_was_recorded": "Crash data from all three communities is needed to receive HSIP (Highway Safety Improvement Plan) funding.",
+   "figures_as_printed": [],
+   "quote": "crash data will need to be gathered from all 3 communities in order to receive hsip funding"
+  },
+  {
+   "topic": "Committee on Diversity & Acceptance proposed budget",
+   "what_was_recorded": "The committee's proposed budget was printed in the received-and-filed section of its report.",
+   "figures_as_printed": [
+    "$30-38,000"
+   ],
+   "quote": "received & filed proposed budget of $30-38,000"
+  },
+  {
+   "topic": "Library book & bake sale",
+   "what_was_recorded": "The Library Board of Trustees book and bake sale raised about this amount for programming beyond its budget.",
+   "figures_as_printed": [
+    "$3600"
+   ],
+   "quote": "their book & bake sale raised approximately $3600"
+  },
+  {
+   "topic": "Safe Routes to School funding",
+   "what_was_recorded": "Joining the Safe Routes to School program would open funding opportunities for sidewalks and bicycle lanes.",
+   "figures_as_printed": [],
+   "quote": "if the town signs on to this program it will open up funding opportunities for sidewalks & bicycle lanes"
+  },
+  {
+   "topic": "Storm water management funding",
+   "what_was_recorded": "A storm water forum discussed the Chesapeake Bay storm water program and funding for storm water management.",
+   "figures_as_printed": [],
+   "quote": "along with funding for storm water management."
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants listed for approval, with amounts as printed.",
+   "figures_as_printed": [
+    "$231,871.84",
+    "$553,331.17",
+    "$355,183.83",
+    "$316,351.04",
+    "$115,316.82",
+    "$254,917.04",
+    "$1,491,042.04"
+   ],
+   "quote": "warrants: 6/25/2014 w#69-14 $231,871.84 6/30/2014 w#1p15 $553,331.17 6/23/2014 w#fy-14ls $355,183.83"
+  },
+  {
+   "topic": "Sewer Commission fee waivers",
+   "what_was_recorded": "A developer requested waivers of many fees for a Whalom building project; the Sewer Commission opposes waiving any fees.",
+   "figures_as_printed": [],
+   "quote": "the sewer commission has officially declared that they are against the waiving of any fees."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Chair",
+   "topic": "Lunenburg Bon Fire thanks and venue",
+   "quote": "7:00pm public comment: mr. alonzo thanked all who were involved with the lunenburg bon fire and stated that it was a great"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (7:00PM)",
+   "resolution": "no action",
+   "quote": "7:00pm public comment: mr. alonzo thanked all who were involved with the lunenburg bon fire",
+   "tags": [
+    "public comment",
+    "bon fire"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; Finance Committee openings announced",
+   "quote": "mr. alonzo announced that there are three openings on the finance committee",
+   "tags": [
+    "finance committee",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Summer Street Project update and contract amendment",
+   "resolution": "update received; contract amendment not before the board",
+   "quote": "receive update on summer street project: review contract amendment",
+   "tags": [
+    "summer street",
+    "MassDOT",
+    "TIP",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Report: Committee on Diversity & Acceptance",
+   "resolution": "report received",
+   "quote": "report: committee on diversity & acceptance: mr. ebersole came before the board as the bos representative",
+   "tags": [
+    "diversity",
+    "school committee",
+    "report"
+   ]
+  },
+  {
+   "topic": "FY2015 Annual Appointments and/or Reappointments",
+   "resolution": "reappointment form adopted 5-0; Town Manager appointments not ratified, deferred",
+   "quote": "2. fy2015 annual appointments and/ or reappointments: mr. alonzo explained the process",
+   "tags": [
+    "appointments",
+    "reappointment",
+    "animal control"
+   ]
+  },
+  {
+   "topic": "FY2015 Town Manager Goals",
+   "resolution": "tabled to next BOS meeting (printed as 718/2014)",
+   "quote": "3. fy2015 town manager goals: tabled until the 718/2014 bos meeting.",
+   "tags": [
+    "goals",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "FY2015 BOS Goals",
+   "resolution": "discussed; to be taken up again 7/8/2014",
+   "quote": "4. fy2015 bos goals: the bos discussed what needs to be done to complete the fy2015 goals",
+   "tags": [
+    "goals",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Energy Conservation Policy",
+   "resolution": "no action; board to contact Green Energy Community",
+   "quote": "5. accept/ adopt energy conservation policy: mr. alonzo noted that this item was reviewed during the 6pm workshop.",
+   "tags": [
+    "energy",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Minutes, Warrants and Action File Issues",
+   "resolution": "minutes and warrants listed; storm water update received",
+   "quote": "6. minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received",
+   "quote": "6. committee report: board of health; building reuse committee; capital planning committee",
+   "tags": [
+    "committees",
+    "school building",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Town Manager and Department Reports",
+   "resolution": "Hadwin Market license transfer signed",
+   "quote": "previously approved a transfer of license for hadwin market",
+   "tags": [
+    "licensing",
+    "ABCC"
+   ]
+  },
+  {
+   "topic": "Appointments, Re-appointments and Resignations",
+   "resolution": "Ken Chenis appointed 5-0; Sheila Lumi resignation noted",
+   "quote": "appointments/ re-appointments/ resignations",
+   "tags": [
+    "appointments",
+    "housing authority",
+    "transportation committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:04PM",
+   "quote": "meeting adjourned at 9:04pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed budget of $30-38,000 (Committee on Diversity & Acceptance)",
+   "where": "list",
+   "quote": "received & filed proposed budget of $30-38,000"
+  },
+  {
+   "name": "Committee Recommendations (Committee on Diversity & Acceptance)",
+   "where": "list",
+   "quote": "received & filed proposed budget of $30-38,000"
+  },
+  {
+   "name": "Energy Conservation Policy",
+   "where": "text",
+   "quote": "5. accept/ adopt energy conservation policy: mr. alonzo noted that this item was reviewed during the 6pm workshop."
+  },
+  {
+   "name": "Summer Street 25% Design Plan",
+   "where": "text",
+   "quote": "the 25% design plan was submitted last december and most of the comments have been received back from massdot"
+  },
+  {
+   "name": "Summer Street contract amendment",
+   "where": "text",
+   "quote": "although we don't have the contract amendment in front of us this evening"
+  },
+  {
+   "name": "Town Manager 2015 Appointment/Re-Appointments",
+   "where": "text",
+   "quote": "ms. speidel presented the town manager 2015 appointment/re-appointments to be ratified as follows:"
+  },
+  {
+   "name": "Reappointment form / questionnaire",
+   "where": "text",
+   "quote": "which would entail filling out a brief questionnaire on why they would like to be reappointed."
+  },
+  {
+   "name": "BOS policy concerning incumbents seeking reappointment (adopted 11/2013)",
+   "where": "text",
+   "quote": "a bos policy concerning incumbents seeking reappointment was adopted in 11/2013 but was not fully publicized"
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "anyone interested in joining should fill out a talent bank form."
+  },
+  {
+   "name": "Warrants (6/25/2014 through 7/1/2015 as printed)",
+   "where": "text",
+   "quote": "warrants: 6/25/2014 w#69-14 $231,871.84 6/30/2014 w#1p15 $553,331.17 6/23/2014 w#fy-14ls $355,183.83"
+  },
+  {
+   "name": "Minutes of 6/17/2014",
+   "where": "text",
+   "quote": "minutes: 6/17/2014 ms. speidel mentioned that the school superintendent is looking to hire a minute recorder"
+  },
+  {
+   "name": "Report from the School Advisory Committee on Acceptance & Diversity",
+   "where": "text",
+   "quote": "the focus of the meeting was on the report from the school advisory committee on acceptance & diversity"
+  },
+  {
+   "name": "Transfer of License for Hadwin Market (ABCC)",
+   "where": "text",
+   "quote": "previously approved a transfer of license for hadwin market"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "reappointments",
+  "animal control officer",
+  "Summer Street",
+  "TIP",
+  "MassDOT",
+  "committee reports",
+  "goals",
+  "energy policy",
+  "warrants",
+  "storm water",
+  "school building project",
+  "licensing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "received & filed"
+ },
+ "dropped_unquoted_by_field": {}
 }

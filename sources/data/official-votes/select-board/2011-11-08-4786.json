@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-11-08",
  "docid": "4786",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to authorize the sale of Bond Anticipation Notes in the amount of $1,300,000, dated November 9, 2011 to mature on June 29, 2012 to Eastern Bank at a rate of 0.80% and to authorize execution of all documents necessary to complete the sale",
+   "motion": "Authorize sale of Bond Anticipation Notes of $1,300,000, dated November 9, 2011, maturing June 29, 2012, to Eastern Bank at 0.80%, and authorize execution of all necessary documents.",
    "moved_by": "Tom",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "tom move to authorize the sale of bond anticipation notes in the amount of $1,300,000, dated november 9, 2011 to mature on june 29, 2012 to eastern bank at a rate of 0.80% and to authorize execution of all documents necessary to complete the sale, steve seconded, voted unanimously to approve."
+   "quote": "tom move to authorize the sale of bond anticipation notes in the amount of $1,300,000, dated november 9, 2011 to mature on june 29, 2012 to eastern bank"
   },
   {
-   "motion": "to reduce the FY12 appropriation for Legal Services from $125,000 by $8,265 to $116,735",
+   "motion": "Recommend approval of the warrant article reducing the FY12 Legal Services appropriation from $125,000 by $8,265 to $116,735.",
    "moved_by": "Tom",
    "seconded_by": "Paula",
    "outcome": "passed unanimously",
@@ -28,13 +28,421 @@
    "quote": "tom recommend approval, paula seconded, voted unanimously."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the Regular Session.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 8:35 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1281705
+ "note": "OCR of a scanned minutes set; many words are garbled (e.g. 'intormation', 'twiliaht', 'Landtill', 'fiyers') and the FY12 revenue/expenditure tables on pages 8-9 are largely unreadable, so their figures are listed as OCR printed them and may be wrong. No roll call is recorded, so attendance is inferred from who spoke or acted. Speaker attributions such as 'Mr. Alonzo' and 'Mr. Matthews' do not match any named member. Pages 6-7 (MPO handout) and 10-11 (Hollis Hills invoice) are attachments. The 11.1.2011 minutes were reviewed and signed, not voted on. The page 5 dates (November 15 and November 22, 2011) appear without context. The first public speaker's name is garbled in the OCR and is recorded as not stated.",
+ "cost_usd": 0.014212720000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave noted that as this is not on our agenda, we will need to schedule discussion on this for a future date"
+  },
+  {
+   "name": "Kerry",
+   "status": "present",
+   "quote": "kerry, next week we are scheduled to meet with the planning board on the summer street overlay and perhaps we could fit this in."
+  },
+  {
+   "name": "Paula",
+   "status": "present",
+   "quote": "paula did investigate after the planning board meeting and met with marion benson, planning director"
+  },
+  {
+   "name": "Tom",
+   "status": "present",
+   "quote": "tom commented that you don't actually stop people, it's voluntary, no requirement to give."
+  },
+  {
+   "name": "Steve",
+   "status": "present",
+   "quote": "steve doesn't have a strong feeling either way, would request that they all have reflective vests on."
+  },
+  {
+   "name": "Ernie",
+   "status": "present",
+   "quote": "ernie, agrees with mr. alonzo but also has safety concerns"
+  },
+  {
+   "name": "John Whelan",
+   "role": "of 526 West Townsend Road",
+   "status": "present",
+   "quote": "john whelan of 526 west townsend road, commented that when he moved into town 10 years ago"
+  },
+  {
+   "name": "Annekje Van de Water",
+   "role": "resident of Lunenburg",
+   "status": "present",
+   "quote": "annekje van de water, resident of lunenburg, daughter is a student @ passios elementary school"
+  },
+  {
+   "name": "George Snow",
+   "role": "Planner, from Montachusett Regional Planning Commission",
+   "status": "present",
+   "quote": "george snow, planner, from montachusett regional planning commission, presented the attached handouts"
+  },
+  {
+   "name": "Gerry Galena",
+   "role": "Casella Waste Management",
+   "status": "present",
+   "quote": "gerry galena was present with representatives from casella to discuss the possibility of providing service monday through friday"
+  },
+  {
+   "name": "Jeff Ugalde",
+   "role": "Treasurer/Tax Collector",
+   "status": "present",
+   "quote": "treasurer/tax collector, jeff ugalde submitted a"
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura caron-gustus, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the large solar farm / Chapter 40A question to be scheduled for a future date with the Planning Board; Kerry to raise it at the Summer Street Overlay meeting if possible.",
+   "quote": "dave noted that as this is not on our agenda, we will need to schedule discussion on this for a future date, one that would involve the planning board."
+  },
+  {
+   "decision": "Kerry to discuss the solar farm question with Town Counsel and the Planning Director.",
+   "quote": "kerry will discuss this with town counsel and the planning director tomorrow."
+  },
+  {
+   "decision": "Board to address the MPO subregion representative name at its meeting the following week.",
+   "quote": "board will address this at their meeting next week."
+  },
+  {
+   "decision": "Board agreed it had no problem with the Casella Monday collection change; Kerry to put it in writing for the board to act on.",
+   "quote": "board overall doesn't have a problem with the change and kerry will put something in writing for the board to act on."
+  },
+  {
+   "decision": "Casella to develop a notification and count plan to present to Kerry for the board, aiming for January 1.",
+   "quote": "casella will develop a plan to present to kerry for the board and would like to shoot for january 1st."
+  },
+  {
+   "decision": "Streetlight update to be placed on the agenda for the next week or the week following.",
+   "quote": "will place on the agenda for next week or the week following."
+  },
+  {
+   "decision": "Storm debris funding discussion added to next week's agenda.",
+   "quote": "add discussion on this to next week's agenda."
+  },
+  {
+   "decision": "Warrants reviewed and signed by the board, and the BAN documents signed by the board.",
+   "quote": "warrants - #10p 12, 11/7/2011 - $654,412.79, #28 12, 11/8/2011 - $294,888.53 and #29 12, 12/11/2011 - $148,805.83 reviewed"
+  },
+  {
+   "decision": "Legal Services article to be taken up after the FY12 Budget Adjustment Article.",
+   "quote": "as such, this article should be taken up after the fy12 budget adjustment article."
+  },
+  {
+   "decision": "Kerry prepared a schedule to review the Special Town Meeting warrant articles at future board meetings.",
+   "quote": "review of warrant articles for special town meeting - kerry prepared a schedule to review the articles at future board meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Boot drive fundraising by Pro Athletics cheering team",
+   "what_was_recorded": "The team needs to raise a stated range to attend cheering competitions in Atlanta and Dallas.",
+   "figures_as_printed": [
+    "$10k",
+    "$15k"
+   ],
+   "quote": "they need to raise between $10k to $15k in order to go to these competitions"
+  },
+  {
+   "topic": "Bond Anticipation Note for DPW Facility Remodeling",
+   "what_was_recorded": "Treasurer submitted a $1,300,000 BAN for the DPW project; about $300,000 already paid; BAN sold to Eastern Bank at 0.80%.",
+   "figures_as_printed": [
+    "$1,300,000.00",
+    "$1,300,000",
+    "about $300,000",
+    "0.80%"
+   ],
+   "quote": "bond anticipation note for the dpw facility remodeling for total $1,300,000.00 for the board's authorization."
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Three warrants were reviewed and signed with the amounts printed.",
+   "figures_as_printed": [
+    "$654,412.79",
+    "$294,888.53",
+    "$148,805.83"
+   ],
+   "quote": "warrants - #10p 12, 11/7/2011 - $654,412.79, #28 12, 11/8/2011 - $294,888.53 and #29 12, 12/11/2011 - $148,805.83 reviewed"
+  },
+  {
+   "topic": "Casella Monday collection change",
+   "what_was_recorded": "Casella's Monday service change would move its hours to 7:00 to 2:00 Monday through Friday; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "would like to change to 7:00 to 2:00 monday through friday."
+  },
+  {
+   "topic": "Storm debris removal cost estimate",
+   "what_was_recorded": "Estimated removal cost range with 75% FEMA reimbursement, leaving a town share; funding not in FY12 budget.",
+   "figures_as_printed": [
+    "$155,000 - $232,500",
+    "75%",
+    "$38,750 - $58,125"
+   ],
+   "quote": "total removal costs would be $155,000 - $232,500. if fema reimburses 75%, the remaining cost to the town would be $38,750 - $58,125."
+  },
+  {
+   "topic": "FEMA-paid bucket truck crew work",
+   "what_was_recorded": "70 hours of bucket truck crew work is being paid 100% by FEMA.",
+   "figures_as_printed": [
+    "70 hours",
+    "100%"
+   ],
+   "quote": "the cost for this 70 hours of work is being paid 100% by fema."
+  },
+  {
+   "topic": "Ice storm and snow and ice funding for debris",
+   "what_was_recorded": "Manager recommended using the snow and ice appropriation and the State reimbursement expected for the 2008 ice storm.",
+   "figures_as_printed": [
+    "12½%"
+   ],
+   "quote": "the 12½% that we're expecting from the state for the reimbursement from the 2008 ice storm"
+  },
+  {
+   "topic": "Legal Services appropriation reduction to fund Hollis Hills bill",
+   "what_was_recorded": "Reduce FY12 Legal Services appropriation from $125,000 by $8,265 to $116,735 to pay the Attorney Dan Hill bill.",
+   "figures_as_printed": [
+    "$125,000",
+    "$8,265",
+    "$116,735"
+   ],
+   "quote": "she suggests reducing the fy12 appropriation for legal services from $125,000, by $8,265, to $116,735."
+  },
+  {
+   "topic": "Attorney Dan Hill bill (Hollis Hills 40B)",
+   "what_was_recorded": "Bill received October 6, 2011, dated July 11, 2011, mostly reimbursable copying costs; the attached invoice total is printed.",
+   "figures_as_printed": [
+    "$8,264.97"
+   ],
+   "quote": "kerry informed the board that on october 6, 2011, she received the attached bill from attorney dan hill"
+  },
+  {
+   "topic": "Article D rescission of Meadow Woods authorization",
+   "what_was_recorded": "Request to rescind remaining authorization from the 2006 Article 16.",
+   "figures_as_printed": [
+    "$456,927.87"
+   ],
+   "quote": "article d is a request to rescind the sum of $456,927.87, the remaining authorization"
+  },
+  {
+   "topic": "FY2012 revenue and expenditure projection table",
+   "what_was_recorded": "A projection table dated 11/8/2011 with total revenue and total expenditure lines; read from garbled OCR.",
+   "figures_as_printed": [
+    "S28,058,924.78",
+    "S29,413,082.74",
+    "$30,028,342.40"
+   ],
+   "quote": "ey2012 revenue expenditure projection actual cs (2)11/8/2011"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reduce FY12 Legal Services appropriation to fund the Hollis Hills legal bill.",
+   "outcome": "Recommended for approval by vote (passed unanimously); to be taken up after the FY12 Budget Adjustment Article.",
+   "amount_as_printed": "$8,265",
+   "quote": "she suggests reducing the fy12 appropriation for legal services from $125,000, by $8,265, to $116,735."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "not stated",
+   "stated_role": "not stated",
+   "topic": "Solar farm on residential land, abutter concern",
+   "quote": "he was advised by senator flanagan that this is not a state issue but a local issue"
+  },
+  {
+   "speaker": "John Whelan",
+   "stated_role": "of 526 West Townsend Road",
+   "topic": "Solar arrays next to residential property",
+   "quote": "john whelan of 526 west townsend road, commented that when he moved into town 10 years ago"
+  },
+  {
+   "speaker": "Annekje Van de Water",
+   "stated_role": "resident of Lunenburg",
+   "topic": "Pro Athletics boot drive request",
+   "quote": "annekje van de water, resident of lunenburg, daughter is a student @ passios elementary school"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Solar farm on residential land (public comment and discussion)",
+   "resolution": "no action; scheduled for future discussion with Planning Board and Town Counsel",
+   "quote": "paula did investigate after the planning board meeting and met with marion benson, planning director",
+   "tags": [
+    "solar farm",
+    "zoning",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Boot drive request, Pro Athletics",
+   "resolution": "discussed; no action recorded; recommendation requested",
+   "quote": "leominster are requesting permission to have a boot drive for saturday, november 1gth",
+   "tags": [
+    "boot drive",
+    "charity",
+    "safety"
+   ]
+  },
+  {
+   "topic": "Announcements (landfill, HHW, Blackboard Connect)",
+   "resolution": "informational",
+   "quote": "last two hhw events held at the devens regional household hazardous products collection center",
+   "tags": [
+    "landfill",
+    "household hazardous waste",
+    "notices"
+   ]
+  },
+  {
+   "topic": "MPO subregion representative (MRPC)",
+   "resolution": "discussed; board to address next week",
+   "quote": "mrpc representative to review mpo sub-region representative - george snow, planner",
+   "tags": [
+    "MPO",
+    "MRPC",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Casella Waste Management Monday collection",
+   "resolution": "board agreed in principle; Kerry to put in writing; counts and plan to follow",
+   "quote": "gerry galena was present with representatives from casella to discuss the possibility of providing service monday through friday",
+   "tags": [
+    "trash",
+    "Casella",
+    "collection schedule"
+   ]
+  },
+  {
+   "topic": "Bond Anticipation Note sale, DPW project",
+   "resolution": "approved unanimously",
+   "quote": "tom move to authorize the sale of bond anticipation notes in the amount of $1,300,000, dated november 9, 2011 to mature on june 29, 2012 to eastern bank",
+   "tags": [
+    "bond",
+    "DPW",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes and warrants reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 11.1.2011 reviewed and signed",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational",
+   "quote": "tom, finance committee meets this thursday.",
+   "tags": [
+    "broadband",
+    "Planning Board",
+    "Tri-Town",
+    "water"
+   ]
+  },
+  {
+   "topic": "Town Manager reports (storm, FEMA, debris)",
+   "resolution": "discussed; debris funding to next week's agenda",
+   "quote": "town manager reports - kerry reviewed the attached summary on the future meeting agenda's.",
+   "tags": [
+    "storm",
+    "FEMA",
+    "debris",
+    "streetlights"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles (Legal Services, Article D)",
+   "resolution": "Legal Services article recommended for approval; schedule of article reviews set",
+   "quote": "review of warrant articles for special town meeting - kerry prepared a schedule to review the articles at future board meetings.",
+   "tags": [
+    "special town meeting",
+    "legal services",
+    "Hollis Hills"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:35 P.M.",
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:35 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Montachusett MPO handout (sub-region selection process)",
+   "where": "list",
+   "quote": "reviewed the mpo sub-region selection process per the attached handout."
+  },
+  {
+   "name": "CD on the Regional Transportation Plan",
+   "where": "list",
+   "quote": "george also presented a cd on the regional transportation plan."
+  },
+  {
+   "name": "Town Manager summary on future meeting agendas",
+   "where": "list",
+   "quote": "kerry reviewed the attached summary on the future meeting agenda's."
+  },
+  {
+   "name": "Attorney Dan Hill bill dated July 11, 2011",
+   "where": "text",
+   "quote": "she received the attached bill from attorney dan hill, and dated july 11, 2011"
+  },
+  {
+   "name": "Bond Anticipation Note for DPW Facility Remodeling",
+   "where": "text",
+   "quote": "submitted a bond anticipation note for the dpw facility remodeling"
+  },
+  {
+   "name": "Warrant Articles schedule for Special Town Meeting",
+   "where": "text",
+   "quote": "kerry prepared a schedule to review the articles at future board meetings."
+  },
+  {
+   "name": "Article 16 of the May 6, 2006 Annual Town Meeting Warrant",
+   "where": "text",
+   "quote": "from article 16 of the may 6, 2006 annual town meeting warrant for engineering"
+  }
+ ],
+ "tags": [
+  "solar farm zoning",
+  "Planning Board",
+  "boot drive",
+  "MPO subregion",
+  "Casella trash collection",
+  "bond anticipation note",
+  "storm debris FEMA",
+  "Legal Services Hollis Hills",
+  "special town meeting warrant",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "presented the attached handouts"
+ },
+ "dropped_unquoted_by_field": {}
 }

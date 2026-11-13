@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-08-10",
  "docid": "3817",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "deny the ANR Plan and waive the reapplication fee for 59 Easter Brook Road",
+   "motion": "Deny the ANR Plan for 59 Easter Brook Road and waive the reapplication fee.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "motion made, k. chenis to deny the anr plan and waive the reapplication fee, second, g. bittner, all aye."
   },
   {
-   "motion": "approve minutes of 07/27/15",
+   "motion": "Approve the minutes of 07/27/15.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, k. chenis, second, d. prokowiew."
+   "quote": "07/27/15 - motion, k. chenis, second, d. prokowiew."
   },
   {
-   "motion": "approve minutes of 07/27/15 for 10 Massachusetts Avenue with amendment to Francis' Dower's name",
+   "motion": "Approve the minutes of 07/27/15 for 10 Massachusetts Avenue, with an amendment to the spelling of Francis Dower's name.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "motion to approve minutes with amendment made to francis' dower's name , k. chenis, second, d. prokowiew."
   },
   {
-   "motion": "endorse Decision for 10 Massachusetts Avenue",
+   "motion": "Endorse the Decision for 10 Massachusetts Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion to endorse decision, k. chenis, second, d. prokowiew, all aye."
   },
   {
-   "motion": "approve Bond in the amount of $149,509.20 for 50 Elmwood Road",
+   "motion": "Approve the Bond in the amount of $149,509.20 for the Definitive Subdivision at 50 Elmwood Road.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion, k. chenis, to approve bond, second, d. prokowiew, all aye."
   },
   {
-   "motion": "release Covenant for 50 Elmwood Road",
+   "motion": "Release the Covenant for the Definitive Subdivision at 50 Elmwood Road.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -61,6 +61,216 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1226465
+ "note": "Text is extracted, not a scan. Vote results are printed as 'all aye' or not at all; no numeric counts. Minutes approval motions (07/27/15) have no printed result. No public comment section and no motion to adjourn is recorded (adjournment time 9:05 PM only). The 583 Reservoir Road endorsement and the 274 Prospect Street hearing are recorded without a motion.",
+ "cost_usd": 0.00609702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: damon mcquaid"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director"
+  },
+  {
+   "name": "Michael Lovewell",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "plan presented to board by applicant michael lovewell."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board did not endorse the ANR plan for 59 Easter Brook Road because the land division did not meet Board of Health requirements; the applicant was made aware and will probably reapply in September.",
+   "quote": "plan was not endorsed by the board. the land division did not meet all board of health requirements."
+  },
+  {
+   "decision": "A. Burney will notify the Town Clerk and the Applicant of the 59 Easter Brook Road ANR denial.",
+   "quote": "a. burney will notify the town clerk and the applicant."
+  },
+  {
+   "decision": "The Board endorsed the ANR plan for 583 Reservoir Road (Parcel A, 810 square feet, conveyed to 583 Reservoir Road); no motion is recorded.",
+   "quote": "plan was endorsed by board."
+  },
+  {
+   "decision": "A. Burney will make revisions to the Site Plan Approval section; the Board will resume review at its August 24 meeting.",
+   "quote": "will make revisions to site plan approval and board will resume review at its august 24"
+  },
+  {
+   "decision": "Set the meeting schedule: August 24 re-review of Site Plan Approval, discussion of Section 6.1 and the 274 Prospect Street hearing; September 14 hearing for Highfield Village; September 28 (no item listed).",
+   "quote": "august 24 - re-review site plan approval, discussion of section 6.1., hearing for 274 prospect street"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Performance bond for 50 Elmwood Road definitive subdivision",
+   "what_was_recorded": "The Board endorsed a bond to insure performance of all conditions of its approval, and the Board approved the bond by motion.",
+   "figures_as_printed": [
+    "$149,509.20"
+   ],
+   "quote": "board endorsed bond in the amount of $149,509.20 to insure the performance of all conditions contained in"
+  },
+  {
+   "topic": "Waiver of reapplication fee for 59 Easter Brook Road ANR plan",
+   "what_was_recorded": "The motion to deny the ANR plan also waived the reapplication fee; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "to deny the anr plan and waive the reapplication fee"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANRs",
+   "resolution": "59 Easter Brook Road denied; 583 Reservoir Road endorsed",
+   "quote": "plan was not endorsed by the board. the land division did not meet all board of health requirements.",
+   "tags": [
+    "ANR",
+    "land division",
+    "Board of Health",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "07/27/15 minutes approved, one with amendment (outcome not printed)",
+   "quote": "07/27/15 - motion, k. chenis, second, d. prokowiew.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "agricultural commission- meeting scheduled for next thursday.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "10 Massachusetts Avenue decision endorsed; 50 Elmwood Road bond approved and covenant released; Tri Town Landing progress noted",
+   "quote": "tri town landing- progress noted.",
+   "tags": [
+    "subdivision",
+    "bond",
+    "covenant release",
+    "decision endorsement"
+   ]
+  },
+  {
+   "topic": "Director's items: Site Plan Approval bylaw update",
+   "resolution": "continued to August 24 meeting",
+   "quote": "board started reviewing the new site plan approval section of the zoning bylaw",
+   "tags": [
+    "zoning bylaw",
+    "site plan approval",
+    "lighting",
+    "parking",
+    "child care"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "august 24 - re-review site plan approval, discussion of section 6.1., hearing for 274 prospect street",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 07/27/15",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 07/27/15 minutes 07/27/15, 10 massachusetts avenue"
+  },
+  {
+   "name": "Minutes 07/27/15, 10 Massachusetts Avenue",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 07/27/15 minutes 07/27/15, 10 massachusetts avenue"
+  },
+  {
+   "name": "Decision, 10 Massachusetts Avenue",
+   "where": "list",
+   "quote": "minutes 07/27/15, 10 massachusetts avenue decision, 10 massachusetts avenue covenant release, 50 elmwood road"
+  },
+  {
+   "name": "Covenant Release, 50 Elmwood Road",
+   "where": "list",
+   "quote": "decision, 10 massachusetts avenue covenant release, 50 elmwood road performance secured by a surety company"
+  },
+  {
+   "name": "Performance Secured by a Surety Company, 50 Elmwood Road",
+   "where": "list",
+   "quote": "covenant release, 50 elmwood road performance secured by a surety company, 50 elmwood road anr plan, 59 easter brook road"
+  },
+  {
+   "name": "ANR Plan, 59 Easter Brook Road",
+   "where": "list",
+   "quote": "performance secured by a surety company, 50 elmwood road anr plan, 59 easter brook road anr plan, 583 reservoir road"
+  },
+  {
+   "name": "ANR Plan, 583 Reservoir Road",
+   "where": "list",
+   "quote": "anr plan, 59 easter brook road anr plan, 583 reservoir road site plan approval working document"
+  },
+  {
+   "name": "Site Plan Approval working document",
+   "where": "list",
+   "quote": "anr plan, 583 reservoir road site plan approval working document"
+  },
+  {
+   "name": "Bond in the amount of $149,509.20, 50 Elmwood Road",
+   "where": "text",
+   "quote": "board endorsed bond in the amount of $149,509.20 to insure the performance of all conditions contained in"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "bond",
+  "covenant release",
+  "site plan approval",
+  "zoning bylaw",
+  "septic",
+  "Board of Health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

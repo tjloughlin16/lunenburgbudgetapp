@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2016-05-26",
  "docid": "2964",
@@ -12,33 +12,32 @@
  },
  "votes": [
   {
-   "motion": "Elizabeth Murphy elected Chair",
+   "motion": "Nominate Elizabeth Murphy as Chair.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "deborah christen nominated elizabeth murphy as chai r, caroline fortin seconded. all were in favor",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Paul Doherty elected Vice Chair",
+   "motion": "Nominate Paul Doherty as Vice Chair.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "deborah christen then nominated paul dohert y as vice chair; elizabeth murphy seconded. all were in favor",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "elizabeth murphy seconded. all were in favor."
   },
   {
-   "motion": "Accept the minutes of the March 17, 2016 meeting",
+   "motion": "Accept the minutes of the March 17, 2016 meeting.",
    "moved_by": "Caroline Fortin",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "caroline fortin made a motion to accept the minutes; deborah christen seconded. all were in favor, the motion passed unanimously."
   },
   {
-   "motion": "Accept the April financial statement",
+   "motion": "Accept the April financial statement.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed",
@@ -46,25 +45,24 @@
    "quote": "elizabeth murphy made a motion to accept the april financial statement. caroline fortin seconded; all were in favor."
   },
   {
-   "motion": "Enter into contract for accounting services with Fenton, Ewald & Associates, P.C. for January 1, 2016 through December 31, 2016",
+   "motion": "Enter into a contract for accounting services with Fenton, Ewald & Associates, P.C. for January 1, 2016 through December 31, 2016 (Resolution 201608).",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Elizabeth Murphy",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah a.h. christen to e nter into contract for accounting services. seconded, elizabeth murphy seconded the motion, and the motio n was passed by a unanimous vot",
+   "quote": "seconded, elizabeth murphy seconded the motion, and the motio n was passed by a unanimous vote",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Revise the replacement fees for move-outs, vandalism, and related maintenance charges",
+   "motion": "Allow the Lunenburg Housing Authority to revise the maintenance fee schedule (Resolution 201609).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by elizabeth murphy to allow the lunen burg housing authority to revise the maintenance fee schedule. seconded, linda mcdonald seconded the motion, and the motion was passed",
-   "quote_taken_from_text": true
+   "quote": "seconded, linda mcdonald seconded the motion, and the motion was passed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:30 p.m.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed",
@@ -74,6 +72,298 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1173605
+ "note": "Clean text extraction with some words split across lines (e.g., 'Dohert y', '$10,6 92', 'Evely n'); quotes avoid the split spots and the figure is recorded as printed. Inconsistencies in the minutes: Paul Doherty is listed as absent but was nominated and recorded as Vice Chair; Linda McDonald is named as seconder of Resolution 201609 but is not listed among attendees. Resolution 201609 records no vote count. Votes described as 'all were in favor' are recorded as passed. No executive session or transfers appear in the text.",
+ "cost_usd": 0.007763319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "peter proulx, executive director"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Asst. Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, asst. executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "absent",
+   "quote": "paul doherty, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "",
+   "status": "not stated",
+   "quote": "seconded, linda mcdonald seconded the motion, and the motion was passed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Denise will resend the letter and password to board members who need it, so board email is in place.",
+   "quote": "denise will resend letter/password to board members who need it."
+  },
+  {
+   "decision": "Board members are to take the Online Ethics Conflict of Interest Training (required every two years) and send completed certificates to Ben.",
+   "quote": "send the completed certificates to ben."
+  },
+  {
+   "decision": "The E.D. will check on ordinances and the lease regarding the loose pit bull raised by a resident.",
+   "quote": "he added he would check on ordinances/lease."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves reported at 68.22%, described as healthy.",
+   "figures_as_printed": [
+    "68.22%"
+   ],
+   "quote": "reserves are at 68.22%; this is healthy"
+  },
+  {
+   "topic": "Revenue vs. budget",
+   "what_was_recorded": "Revenue reported ahead of budget by the amount printed (the figure is split across a line in the extracted text).",
+   "figures_as_printed": [
+    "$10,6 92"
+   ],
+   "quote": "we are ahead of budget in revenue by"
+  },
+  {
+   "topic": "Utilities vs. budget",
+   "what_was_recorded": "Utilities reported below budget by $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "below budget for utilities by $10,000."
+  },
+  {
+   "topic": "Total vs. budget",
+   "what_was_recorded": "Total reported ahead of budget by $6,303.",
+   "figures_as_printed": [
+    "$6,303"
+   ],
+   "quote": "we are ahead of budget in total by $6,303."
+  },
+  {
+   "topic": "Maintenance charges for refrigerators and smoke detectors",
+   "what_was_recorded": "The fee resolution was accepted as amended with a charge for refrigerators and smoke detectors; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "the following resolution was accepted as amended with the charge for refrigerators and smoke detectors."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Residents (unnamed)",
+   "stated_role": "",
+   "topic": "courtyard chairs and outside benches, flowers, kitchen upgrade",
+   "quote": "chairs in the courtyard area are falling apart; can they be replaced."
+  },
+  {
+   "speaker": "Resident (unnamed)",
+   "stated_role": "",
+   "topic": "loose pit bull",
+   "quote": "resident stated that a pit bull ran at her three weeks ago with no collar or leash."
+  },
+  {
+   "speaker": "Resident (unnamed)",
+   "stated_role": "",
+   "topic": "use of grill in common area",
+   "quote": "resident wants to use her grill for the common area"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "discussed; residents directed to office; E.D. to check ordinances/lease",
+   "quote": "resident participation prior to meeting:",
+   "tags": [
+    "residents",
+    "maintenance",
+    "safety"
+   ]
+  },
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened 6:50 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:50 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Elizabeth Murphy elected Chair; Paul Doherty elected Vice Chair",
+   "quote": "deborah christen nominated elizabeth murphy as chai r, caroline fortin seconded",
+   "tags": [
+    "election",
+    "officers"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Minutes of March 17, 2016",
+   "resolution": "approved unanimously",
+   "quote": "the minutes of the march 17, 2016 meeting were presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action; directives given",
+   "quote": "the executive director report:",
+   "tags": [
+    "ethics training",
+    "email"
+   ]
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "April financial statement accepted",
+   "quote": "elizabeth murphy made a motion to accept the april financial statement.",
+   "tags": [
+    "finance",
+    "reserves",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "no action",
+   "quote": "kitchen upgrade to begin next month.",
+   "tags": [
+    "facilities",
+    "kitchen",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "none",
+   "quote": "6. old business: none",
+   "tags": []
+  },
+  {
+   "topic": "Resolution 201608 accounting services",
+   "resolution": "approved; contract with Fenton, Ewald & Associates, P.C. for 2016",
+   "quote": "resolution for accounting services",
+   "tags": [
+    "accounting",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Resolution 201609 maintenance fee schedule",
+   "resolution": "accepted as amended and approved",
+   "quote": "resolution to allow the lunenburg housing authority to revise",
+   "tags": [
+    "fees",
+    "move-outs",
+    "vandalism"
+   ]
+  },
+  {
+   "topic": "Newsletter distribution",
+   "resolution": "no action; newsletter given to board",
+   "quote": "the board members were given a copy of the quarterl y newsletter with seasonal information for the residents",
+   "tags": [
+    "newsletter"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30 p.m.",
+   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 7:30 p.m",
+   "tags": [
+    "procedure"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Quarterly newsletter with seasonal information for residents",
+   "where": "list",
+   "quote": "the board members were given a copy of the quarterl y newsletter with seasonal information for the residents",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Minutes of the March 17, 2016 meeting",
+   "where": "text",
+   "quote": "the minutes of the march 17, 2016 meeting were presented."
+  },
+  {
+   "name": "Resolution 201608 (accounting services)",
+   "where": "text",
+   "quote": "resolution for accounting services"
+  },
+  {
+   "name": "Resolution 201609 (revise replacement fees for move-outs and vandalism)",
+   "where": "text",
+   "quote": "resolution to allow the lunenburg housing authority to revise"
+  },
+  {
+   "name": "Attached list of fees (maintenance fee schedule)",
+   "where": "text",
+   "quote": "that the attached list of fees is revised to meet"
+  },
+  {
+   "name": "April financial statement",
+   "where": "text",
+   "quote": "elizabeth murphy made a motion to accept the april financial statement."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "annual meeting",
+  "election of officers",
+  "financial report",
+  "reserves",
+  "accounting contract",
+  "maintenance fees",
+  "facilities",
+  "resident concerns"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board members were given a copy of the quarterl y newsletter"
+ },
+ "dropped_unquoted_by_field": {}
 }

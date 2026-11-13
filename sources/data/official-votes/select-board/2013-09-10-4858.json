@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-09-10",
  "docid": "4858",
@@ -12,23 +12,378 @@
  },
  "votes": [
   {
-   "motion": "Authorize Town Counsel to participate in the election investigation with a $3,000 budget cap",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
+   "motion": "Approve the Town Manager's request that Town Counsel be authorized to participate in the MGL Chapter 56, Section 60 complaint investigation, with a cap of $3000 for funding.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the town manager's request that town counsel be authorized to participate in the investigation concerning the mgl. chapter 56, section 60 complaint, with a cap of $3000 for funding. mr. matthews seconded. discussion: ms. bertram spoke to say that we have not discussed this as a board and the members may have differing opinions. she thinks that the board needs to review the town charter to see what the board's role would be in this type of situation, and once we get this decision we need to have that discussion. being no further discussion, mir. alonzo called for a vote. on vote, motion carried, 5 in favor, 0 opposed"
+   "quote": "ms. bertram moved to approve the town manager's request that town counsel be authorized to participate in the investigation concerning the mgl. chapter 56, section 60 complaint"
   },
   {
-   "motion": "Enter Executive Session to conduct strategy sessions in preparation for negotiations and contract negotiations with non-union personnel regarding Town Manager employment",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
-   "outcome": "passed 5-0",
+   "motion": "Enter into Executive Session under M.G.L. Chapter 30A, Section 21A (2) for the Town Manager's employment contract renewal, not returning to open session.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. bertram moved to enter into executive session. mr. matthews seconded. roll call vote: ebersole - aye, toale - aye, matthews - aye, bertram - aye, alonzo - aye"
+   "quote": "ms. bertram moved to enter into executive session. mr. matthews seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR-scanned; minor formatting inconsistencies present (e.g., \\\"Mir.\\\" for \\\"Mr.\\\"). One discrepancy noted: the section heading references \\\"MGL Ch. 59, Sect. 60\\\" but the motion text itself states \\\"MGL. Chapter 56, Section 60 Complaint\\\" — the latter is what was voted on.",
- "cost_usd": 0.1376465
+ "note": "OCR text of a 7-page scan with errors (e.g., 'Mir.' for Mr., 'thạt', '3ª'); the header omits the location line and Mr. Alonzo's first name, and the page-7 vote text is intact. Motion text cites 'MGL Chapter 56, Section 60' while the agenda heading cites 'Ch. 59, Sect. 60'. Two votes recorded (the $3000 Town Counsel motion, passed 5-0, and the executive session motion, roll call). No vote is recorded on approving the 9/3/2013 minutes or the warrants, and the 9:05 PM adjournment has no recorded motion. Item numbering repeats '3.' for the committee reports. The 7:00 PM public comment section contains only a board member relaying a resident's complaint; no member of the public spoke.",
+ "cost_usd": 0.012296020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board member",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board member",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board member",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel, Kopelman and Paige, P.C.",
+   "status": "present",
+   "quote": "joel bard, town counsel from kopelman and paige, p.c. was present to answer any question pertaining to"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz along with rich benevento and mike pompili, from world tech engineering were present"
+  },
+  {
+   "name": "Rich Benevento",
+   "role": "representing World Tech Engineering",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz along with rich benevento and mike pompili, from world tech engineering were present"
+  },
+  {
+   "name": "Mike Pompili",
+   "role": "representing World Tech Engineering",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz along with rich benevento and mike pompili, from world tech engineering were present"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Speidel will research what other communities define as liaison between committees and what their duties are.",
+   "quote": "ms. speidel will investigate as to what other communities are doing."
+  },
+  {
+   "decision": "The Board will discuss the road sign inventory and sign placement matter again at a later meeting.",
+   "quote": "the bos will be discussing this matter again at a later meeting."
+  },
+  {
+   "decision": "Ms. Speidel will contact the Assessor for more information on the 925 Mass Ave property owner question.",
+   "quote": "she will contact the assessor for more information on this matter."
+  },
+  {
+   "decision": "Ms. Speidel tasked the Assessor with preparing an appraisal of the Eagle Heights property.",
+   "quote": "ms. speidel has tasked the assessor with putting together an appraisal on that property"
+  },
+  {
+   "decision": "Ms. Speidel intends to put the turf replacement into the Capital Plan.",
+   "quote": "it is ms. speidel's intention to put the replacement into the capital plan"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Counsel budget cap, MGL Ch. 56 Sect. 60 complaint",
+   "what_was_recorded": "Town Manager recommended a budget not to exceed $3000 for Town Counsel's participation; the motion carried with that cap.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "ms. speidel spoke to say that she would recommend a budget not to exceed $3000."
+  },
+  {
+   "topic": "Town Counsel hours estimate",
+   "what_was_recorded": "Town Counsel estimated 5-15 hours of work if the matter is done quickly; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "mr. bard replied that he thought it could be 5-15 hours, if it is done quickly."
+  },
+  {
+   "topic": "Sign program and pavement management software cost",
+   "what_was_recorded": "The sign inventory and pavement management computer program cost $11,700, to be funded from leftover Chapter 90 funds; a board member asked whether that figure included integrating existing data.",
+   "figures_as_printed": [
+    "$11,700"
+   ],
+   "quote": "the cost for this program will be $11,700 and will be funded from left over chapter 90 funds"
+  },
+  {
+   "topic": "Recycled sign metal proceeds",
+   "what_was_recorded": "Proceeds from recycling metal from replaced signs are returned to the Town's General Fund; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "mr. rodriquenz answered that there is and that the money is returned to the town's general fund."
+  },
+  {
+   "topic": "Track and field turf and track replacement cost",
+   "what_was_recorded": "Estimated cost of about $700,000 to replace the turf and resurface the track at the new field; the Capital Plan typically spends $300,000 to $600,000 in one year.",
+   "figures_as_printed": [
+    "$700,000",
+    "$300,000 - $600,000"
+   ],
+   "quote": "he said that we are looking at around $700,000 to pull the turf up, replace with top of the line turf, and resurface the track."
+  },
+  {
+   "topic": "Capital Plan capacity",
+   "what_was_recorded": "Ms. Speidel said the Capital Plan spends between $300,000 and $600,000 in any one year against a $700,000 project, so borrowing within the levy will be needed.",
+   "figures_as_printed": [
+    "$300,000 - $600,000",
+    "$700,000"
+   ],
+   "quote": "the concern with the capital plan is that in any one year we spend between $300,000 - $600,000 and this is a $700,000 project."
+  },
+  {
+   "topic": "Track and field user fees and turf replacement reserve",
+   "what_was_recorded": "Field operations are paid from user fees, which do not cover turf replacement; a prior plan to raise fees and set aside a portion for turf replacement was not carried out.",
+   "figures_as_printed": [],
+   "quote": "the current operations and maintenance of the field is paid for through user fees"
+  },
+  {
+   "topic": "Borrowing within the levy",
+   "what_was_recorded": "Ms. Speidel said the Town will likely need to borrow within the levy in the next couple of years to cover the Town's share of the turf project; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "she believes we will need to borrow within the levy to cover whatever portion of this turf project"
+  },
+  {
+   "topic": "Track and field fee collection question",
+   "what_was_recorded": "Mr. Matthews asked whether any fee has been collected from the Track & Field Association toward future turf and track replacement; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "questioned whether or not any type of fee has been collected from the track & field association for future replacement/maintenance of the turf and track"
+  },
+  {
+   "topic": "Eagle Heights PILOT and appraisal",
+   "what_was_recorded": "Discussion of a possible Payment in Lieu of Taxes (PILOT) arrangement and an appraisal for the Eagle Heights property, alongside possible State grant funding and tax credits; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "has discussed some sort of pilot (payment in lieu of taxes) for that property"
+  },
+  {
+   "topic": "925 Mass Ave environmental retainer",
+   "what_was_recorded": "Ms. Speidel would like to pay the LSP a small retainer to go to DEP for guidance on the privately owned 925 Mass Ave property; no amount was given and it has not moved forward.",
+   "figures_as_printed": [],
+   "quote": "she would like to pay the lsp a small retainer to go to dep (department environmental protection)"
+  },
+  {
+   "topic": "Warrants and payment totals",
+   "what_was_recorded": "Warrants listed for approval with three printed totals.",
+   "figures_as_printed": [
+    "$279,175.13",
+    "$139,424.86",
+    "$642,252.22"
+   ],
+   "quote": "warrants: 09/10 09/11 09/12 #13-14 #14-14 w6-p14 $279,175.13 $139,424.86 $642,252.22"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Ebersole",
+   "topic": "Comcast service complaint relayed from a resident",
+   "quote": "mr. ebersole mentioned that he was contacted from a resident with a complaint about service from comcast"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM): Comcast complaints and liaison definitions",
+   "resolution": "discussed; Ms. Speidel to research liaison definitions in other communities",
+   "quote": "mr. ebersole mentioned that he was contacted from a resident with a complaint about service from comcast",
+   "tags": [
+    "cable",
+    "Comcast",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Announcements: Unitil rate increase hearing",
+   "resolution": "announced; no action",
+   "quote": "mr. alonzo announced that the department of public utilities will be holding a public hearing concerning the unitil rate increase on 9/23/2013 at 7pm",
+   "tags": [
+    "utilities",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "none",
+   "quote": "appointments - none current business",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Counsel for MGL Ch. 56 Sect. 60 election complaint",
+   "resolution": "approved 5-0 with $3000 cap",
+   "quote": "ms. bertram moved to approve the town manager's request that town counsel be authorized to participate in the investigation concerning the mgl. chapter 56, section 60 complaint",
+   "tags": [
+    "election",
+    "Town Counsel",
+    "Town Clerk",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Road sign inventory and pavement management presentation",
+   "resolution": "presented; sign placement to return to a later meeting; no vote",
+   "quote": "mr. rodriquenz began by explaining that the presentation would be given in 3 parts.",
+   "tags": [
+    "DPW",
+    "road signs",
+    "pavement management",
+    "MUTCD",
+    "Route 13"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues (Track & Field turf)",
+   "resolution": "warrants listed; no vote recorded; turf replacement discussed",
+   "quote": "minutes: 9/3/2013 warrants: 09/10 09/11 09/12 #13-14 #14-14 w6-p14 $279,175.13 $139,424.86 $642,252.22",
+   "tags": [
+    "warrants",
+    "turf",
+    "track and field",
+    "Capital Plan",
+    "user fees"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only; no action",
+   "quote": "capital planning committee - mr. toale reported that this board will meet on the 9/25 to start reviewing the input from the capital plans.",
+   "tags": [
+    "committees",
+    "liaisons",
+    "925 Mass Ave",
+    "Eagle Heights",
+    "Lake Shirley",
+    "Primary School",
+    "PACC"
+   ]
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "reports only; no action",
+   "quote": "ms. speidel reported that a meeting with the executive director of the nashoba valley regional dispatch",
+   "tags": [
+    "dispatch",
+    "casino",
+    "Rt. 13"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations and public comment",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations public comment - none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session (Town Manager employment contract renewal)",
+   "resolution": "entered executive session; not returning to open session",
+   "quote": "mr. alonzo stated that he would entertain a motion to go into executive session citing m.g.l. chapter 30a, section 21a (2)",
+   "tags": [
+    "executive session",
+    "Town Manager contract"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:05 PM; no motion recorded",
+   "quote": "regular scheduled meeting adjourned at 9:05pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager memo to the BOS regarding the complaint of Irregularities Concerning the April 30, 2013 Town Election",
+   "where": "text",
+   "quote": "ms. speidel read a memo which she had sent to the bos regarding"
+  },
+  {
+   "name": "Complaint: \"Irregularities Concerning the April 30, 2013 Town Election\"",
+   "where": "text",
+   "quote": "the complaint of \"irregularities concerning the april 30, 2013 town election\""
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "he has reviewed the town charter and there is a provision that states that"
+  },
+  {
+   "name": "Town Clerk reply to the Secretary of State's office",
+   "where": "text",
+   "quote": "the town clerk has replied already to that office, we have seen her reply"
+  },
+  {
+   "name": "Request for Proposal (RFP) for cable service",
+   "where": "text",
+   "quote": "they would have been the only company that responded to the request for proposal (rfp) at that time."
+  },
+  {
+   "name": "Warrants 09/10, 09/11, 09/12 (#13-14, #14-14, W6-P14) and minutes of 9/3/2013",
+   "where": "text",
+   "quote": "minutes: 9/3/2013 warrants: 09/10 09/11 09/12 #13-14 #14-14 w6-p14 $279,175.13 $139,424.86 $642,252.22"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Town Counsel",
+  "election complaint",
+  "DPW",
+  "road signs",
+  "pavement management",
+  "turf and track",
+  "Capital Plan",
+  "Comcast",
+  "Eagle Heights",
+  "925 Mass Ave",
+  "liaisons",
+  "executive session",
+  "Town Manager contract",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

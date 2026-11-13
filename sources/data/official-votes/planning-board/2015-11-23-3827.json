@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-11-23",
  "docid": "3827",
@@ -12,15 +12,225 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 11/9/15",
+   "motion": "Approve the minutes of 11/9/15 (recorded as signed).",
    "moved_by": "D. Prokowiew",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, d. prokowiew, second, g. bittner. k. chenis abstained as he had to recuse himself from a portion of the meeting."
+   "quote": "minutes approval: 11/9/15 signed. motion, d. prokowiew, second, g. bittner. k. chenis abstained as he had to recuse himself from a portion of the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1117265
+ "note": "Only one motion is recorded (approval of the 11/9/15 minutes), and its vote tally is not printed. The ANR endorsements and other board actions are recorded without motions, so they appear as decisions rather than votes. The 175 Northfield Road public hearing and 1 Main Street information meeting are referenced to separate minutes that are not in this text. The adjournment has no recorded motion.",
+ "cost_usd": 0.00551272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, chair tel: (978) 582-4147, ext 5"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "representing applicant",
+   "status": "not stated",
+   "quote": "jamie rheault, whitman & bingham associates, representing applicant"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "McCarty Engineering, on behalf of the property owner Steven Powell, Trustee",
+   "status": "present",
+   "quote": "presented by brian marche tti, mccarty engineering, on behalf of the property owner steven powell,"
+  },
+  {
+   "name": "Edmond Boucher",
+   "role": "on behalf of the property owners Wayne and Marcia Conrad",
+   "status": "present",
+   "quote": "presented by edmond boucher o n behalf of the property owners wayne and marcia conrad."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board endorsed the ANR plan for 155 Reservoir Road after departmental review raised no issues (no motion recorded).",
+   "quote": "plan was sent out for departmental review prior to the board's meeting with no issues being raised. board endorsed plan."
+  },
+  {
+   "decision": "The 404 West Townsend Road ANR mylar will be reprinted with the frontage on Lot 1 labeled and then endorsed by the Board.",
+   "quote": "board member noted frontage on lot 1 was not labeled. mylar will be reprinted with the frontage and endorsed by the board."
+  },
+  {
+   "decision": "A Public Information Meeting for the Unitil site plan application is to be scheduled for December 14, 2015.",
+   "quote": "a public information meeting will be scheduled for december 14, 2015."
+  },
+  {
+   "decision": "The Off-Street Parking Design Standards bylaw will be a warrant article for the May 2016 Annual Town Meeting.",
+   "quote": "bylaw will be a warrant article for may 2016 annual town meeting."
+  },
+  {
+   "decision": "Board members are to contact A. Burney with proposals for the District Local Technical Assistance (Community Compact) application.",
+   "quote": "board members to contact a. burney with proposals."
+  },
+  {
+   "decision": "A. Burney will check the status of the Summer Street project with the DPW Director, at K. Chenis's request for a bicycle lane.",
+   "quote": "a. burney will check status with the dpw director."
+  },
+  {
+   "decision": "Board members suggested the Historical Commission and Open Space Committee be approached for input whenever scenic road hearings are held.",
+   "quote": "d. prokowiew opined that the historical commission and open space committee should be approached for input whenever scenic road hearings are held."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Open Space Ad Hoc Committee: Estate Planning Outreach Grant",
+   "what_was_recorded": "The committee noted the Estate Planning Outreach Grant availability and application form, with grants available up to a stated amount.",
+   "figures_as_printed": [
+    "$350"
+   ],
+   "quote": "noted estate planning outreach grant availability and application form. grants available up to $350."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Unitil site plan review submittal",
+   "resolution": "received; public information meeting to be scheduled for December 14, 2015",
+   "quote": "application is for a new headquarters and maintenance facility to be located at 357 electric avenue"
+  },
+  {
+   "topic": "ANR plans (155 Reservoir Road; 404 West Townsend Road)",
+   "resolution": "155 Reservoir Road endorsed; 404 West Townsend Road mylar to be reprinted and endorsed",
+   "quote": "plan was sent out for departmental review prior to the board's meeting with no issues being raised. board endorsed plan."
+  },
+  {
+   "topic": "Public hearing: 175 Northfield Road",
+   "resolution": "no action; see separate minutes",
+   "quote": "public hearing: 175 northfield road- see separate minutes"
+  },
+  {
+   "topic": "Information meeting: 1 Main Street",
+   "resolution": "no action; see separate minutes",
+   "quote": "information meeting: 1 main street- see separate minutes"
+  },
+  {
+   "topic": "Minutes approval 11/9/15",
+   "resolution": "motion made; result not stated",
+   "quote": "motion, d. prokowiew, second, g. bittner. k. chenis abstained as he had to recuse himself from a portion of the meeting."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "building reuse committee- meeting 11/24/15."
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "definitive subdivision, 50 elmwood road- construction progressing"
+  },
+  {
+   "topic": "Director's items (MRPC technical assistance; bylaw updates)",
+   "resolution": "Parking standards to be a May 2016 warrant article; board to send proposals to Burney",
+   "quote": "bylaw will be a warrant article for may 2016 annual town meeting."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; December 28 no meeting",
+   "quote": "unitil, 357 electric avenue informational meeting (district operations center relocation from fitchburg)"
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "Burney to check Summer Street project status with DPW Director",
+   "quote": "a. burney will check status with the dpw director."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20 PM (no motion recorded)",
+   "quote": "adjournment: 8:20 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 11/9/15",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 11/9/15"
+  },
+  {
+   "name": "Off-Street Parking Design Standards DRAFT 3",
+   "where": "list",
+   "quote": "off-street parking design standards draft 3"
+  },
+  {
+   "name": "ANR Plan, 155 Reservoir Road",
+   "where": "list",
+   "quote": "anr plan, 155 reservoir road"
+  },
+  {
+   "name": "ANR Plan, 404 West Townsend Road",
+   "where": "list",
+   "quote": "anr plan, 404 west townsend road"
+  },
+  {
+   "name": "MRPC’s District Local Technical Assistance Request for Service Delivery",
+   "where": "list",
+   "quote": "mrpc's district local technical assistance request for service delivery"
+  },
+  {
+   "name": "Submittal – Site Plan Review Application (Unitil, 357 Electric Avenue)",
+   "where": "text",
+   "quote": "unitil: submittal - site plan review application - jamie rheault"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan review",
+  "Unitil",
+  "ANR plans",
+  "bylaw update",
+  "off-street parking",
+  "open space grant",
+  "subdivision",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

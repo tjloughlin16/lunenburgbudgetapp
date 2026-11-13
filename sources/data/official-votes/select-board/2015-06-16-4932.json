@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-06-16",
  "docid": "4932",
@@ -12,23 +12,174 @@
  },
  "votes": [
   {
-   "motion": "enter Executive Session to conduct strategy sessions with respect to collective bargaining regarding the Professional Firefighters Collective Bargaining Agreement",
+   "motion": "Enter Executive Session to conduct strategy sessions on collective bargaining (Professional Firefighters Collective Bargaining Agreement) if an open meeting may harm the town's bargaining position and the Chair so declares.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2\"': p. bertram to enter executive session to conduct strategy sessions with respect to collective bargaining (professional firefighters collective bargaining agreement) if"
+   "quote": "to enter executive session to conduct strategy sessions with respect to collective bargaining (professional firefighters collective bargaining agreement)"
   },
   {
-   "motion": "exit Executive Session and enter into Open Session after a five minute recess",
+   "motion": "Exit Executive Session and enter Open Session after a five minute recess.",
    "moved_by": "R. Ebersole",
-   "seconded_by": "",
-   "outcome": "passed 5-0",
+   "seconded_by": "not stated",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole to exit executive session and enter into open session after a five minute recess vote: mr. alonzo-yes, mr. ebersole- yes, ms. bertram- yes, ms. luck-yes, mr. toale- yes"
+   "quote": "to exit executive session and enter into open session after a five minute recess"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from scanned minutes. Contains OCR artifacts; the string '2\\\"'' is OCR corruption, likely intended as '2nd:' (seconded by).",
- "cost_usd": 0.1367925
+ "note": "OCR text of a scanned page set; signature and some motion lines are garbled. Vote tallies are inferred from the individual yes entries printed under each motion (five members, all yes); the minutes print no tally line, so outcomes are recorded as 'passed' without a count. No seconder is printed for the motion to exit executive session. Open-session minutes are not included. The minutes record no public comment and no documents list.",
+ "cost_usd": 0.00397172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board members present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board members present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board members present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram,"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "board members present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "member and phyllis luck, member"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: kerry speidel, town manager; elaine peterson, executive assistant to town manager; attorney mark terry"
+  },
+  {
+   "name": "Elaine Peterson",
+   "role": "Executive Assistant to Town Manager",
+   "status": "present",
+   "quote": "others present: kerry speidel, town manager; elaine peterson, executive assistant to town manager; attorney mark terry"
+  },
+  {
+   "name": "Mark Terry",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "others present: kerry speidel, town manager; elaine peterson, executive assistant to town manager; attorney mark terry"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Terry did not need a formal vote; the Board gave a majority consensus on the firefighter negotiating position, with no vote taken.",
+   "quote": "mr. terry stated he did not need a vote tonight only consensus of the board at this point. there was a majority consensus."
+  },
+  {
+   "decision": "Mr. Terry and Ms. Speidel will follow up after Mr. Terry discusses the proposal with the firefighter representative.",
+   "quote": "mr. terry and ms. speidel will touch base after he discusses with the firefighter representative."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Firefighter detail rate increase",
+   "what_was_recorded": "The firefighters asked for a detail rate increase, which would take the rate to $42.00 per hour and add a small increase for town departments.",
+   "figures_as_printed": [
+    "$42.00 per hour",
+    "$2.00"
+   ],
+   "quote": "the detail rate would go up to $42.00 per hour. they did ask for a small increase on town departments of $2.00."
+  },
+  {
+   "topic": "Call-back pay for ambulance assistance",
+   "what_was_recorded": "Increase in cost to the town from raising call-back pay from two to three hours, estimated at $6,000 to $7,000 per year if all calls are counted, with a realistic figure of $3,000 to $4,000.",
+   "figures_as_printed": [
+    "$6,000 to $7,000",
+    "$3,000 to $4,000"
+   ],
+   "quote": "the increase in costs for the town would be around $6,000 to $7,000 more per year if you counted all calls. a realistic number would be around $3,000 to $4,000."
+  },
+  {
+   "topic": "24/7 EMS coverage",
+   "what_was_recorded": "Discussion of moving the town to 24/7 EMS coverage, estimated to cost $200,000 to $220,000; it would severely reduce on-call events and covers only full-time bargaining unit personnel.",
+   "figures_as_printed": [
+    "$200,000 to $220,000"
+   ],
+   "quote": "the cost of this was estimated to be $200,000 to $220,000."
+  },
+  {
+   "topic": "Intermediate EMT incentive and advanced-level pay",
+   "what_was_recorded": "Current intermediate incentive is a 3% increase plus a $500 stipend for recertification; firefighters asked to raise the incentive to 5% with the stipend rolled in, amounting to a 1.25% to 1.5% increase.",
+   "figures_as_printed": [
+    "3%",
+    "$500",
+    "5%",
+    "1.25% to 1.5%"
+   ],
+   "quote": "the current incentive for the intermediate level right now is a 3% increase plus a $500 stipend which would be for the cost of"
+  },
+  {
+   "topic": "Cost of 1.5% wage increase",
+   "what_was_recorded": "Mr. Terry estimated the 1.5% increase would cost around $3000.",
+   "figures_as_printed": [
+    "$3000",
+    "1.5%"
+   ],
+   "quote": "mr. terry estimated the 1.5% increase will cost around $3000."
+  },
+  {
+   "topic": "Advanced certification training",
+   "what_was_recorded": "Advanced certification training for two personnel was estimated at approximately $5000; Chief Sullivan has a training budget line item.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "looking at advanced certification training, this would include two personnel, at the cost of approximately $5000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: firefighter collective bargaining",
+   "resolution": "discussed in executive session; majority consensus reached, no vote; Terry and Speidel to follow up",
+   "quote": "to enter executive session to conduct strategy sessions with respect to collective bargaining (professional firefighters collective bargaining agreement)",
+   "tags": [
+    "collective bargaining",
+    "firefighters",
+    "executive session",
+    "wages",
+    "EMS",
+    "details"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "executive session",
+  "collective bargaining",
+  "firefighters",
+  "wages",
+  "EMS",
+  "ambulance",
+  "detail rate",
+  "EMT certification"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

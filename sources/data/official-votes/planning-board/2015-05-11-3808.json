@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-05-11",
  "docid": "3808",
@@ -12,48 +12,291 @@
  },
  "votes": [
   {
-   "motion": "Approve release of Lots 2 and 5 from the Covenant at 50 Elmwood Road",
+   "motion": "Approve release of requested Lots 2 and 5 at 50 Elmwood Road from the Covenant.",
    "moved_by": "M. Allison",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion to approve release of requested lots 2 and 5, m. allison, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Approve 02/04/14 Executive minutes",
+   "motion": "Approve the 02/04/14 Executive session minutes.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "02/04/14 executive, motion, j. bilotta-simeone, second, m. allison"
   },
   {
-   "motion": "Approve 04/27/15 minutes",
+   "motion": "Approve the 04/27/15 minutes.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "M. D. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "04/27/15, motion j. bilotta-simeone, second, m. d. mcquaid"
   },
   {
-   "motion": "Approve 04/27/15 Warrant Article Hearing minutes",
+   "motion": "Approve the 04/27/15 Warrant Article Hearing minutes.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "04/27/15 warrant article hearing, motion, j. bilotta-simeone, second, d. mcquaid"
   },
   {
-   "motion": "Send a letter to the Board of Selectmen requesting the first floor meeting room in the Ritter Building be named the Marion Benson Meeting Room",
+   "motion": "Send a letter to the Board of Selectmen requesting the room be named the Marion Benson Meeting Room.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion, j. bilotta-simeone to send a letter to the board of selectmen requesting the room be named the marion benson meeting room, second, d. mcquaid, roll call vote - m. allison, nay; k. chenis, aye; d. mcquaid, aye; j. bilotta -simeone, aye; n. lockwood, aye. vot e passed 4 ",
-   "quote_taken_from_text": true
+   "quote": "motion, j. bilotta-simeone to send a letter to the board of selectmen requesting the room be named the marion benson meeting room, second, d. mcquaid"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.190775
+ "note": "Text extraction is clean but has irregular spacing; quotes are collapsed to single spaces where needed. Outcomes for the three minutes-approval motions are not printed beyond 'All minutes signed.' and are recorded as not stated. The lot-release vote is printed as 'all aye' with no count. No adjournment motion is recorded (only 'ADJOURNED: 8:35 PM'). No dollar figures appear in the text. No public comment is recorded. Michael Crowley's attendance is not stated. Minor items with 'no report' (1249 Massachusetts Avenue, Tri Town Landing, Emerald Place, Housing Production Plan, Notices) are not listed as separate topics.",
+ "cost_usd": 0.0067350199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Michael Crowley",
+   "role": "Developer",
+   "status": "not stated",
+   "quote": "developer michael crowley requested partial release of the covenant to obtain"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney will work with the developer and reviewing engineer to set an appropriate performance bond amount for 50 Elmwood Road.",
+   "quote": "a. burney will work with the developer and reviewing engineer for an appropriate bond amount."
+  },
+  {
+   "decision": "The Board wants to endorse the form the performance bond takes (e.g., surety company, deposit of money).",
+   "quote": "the board wants to endorse the form th at the performance bond takes, e.g., surety company, deposit of money."
+  },
+  {
+   "decision": "The Board will work on improving walkability within the Village Center now that the VCD has passed.",
+   "quote": "now that the vcd has passed, the board will work on improving walkability with in the village center."
+  },
+  {
+   "decision": "The Board will begin focusing on the Master Planning Economic Development Element now that Town Meeting preparation has passed.",
+   "quote": "can begin focusing on this element now that the preparation for"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Performance bond for 50 Elmwood Road lot release",
+   "what_was_recorded": "The bond amount for the remaining lots was to be set with the reviewing engineer, but no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a. burney will work with the developer and reviewing engineer for an appropriate bond amount."
+  },
+  {
+   "topic": "Capital Planning Committee expenditures",
+   "what_was_recorded": "The Capital Planning Committee is meeting monthly to discuss large expenditures; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "committee is trying to meet at least once/month to discuss large expenditures."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "50 Elmwood Road request for lot release",
+   "resolution": "approved release of Lots 2 and 5; bond to be set",
+   "quote": "developer michael crowley requested partial release of the covenant to obtain",
+   "tags": [
+    "subdivision",
+    "covenant",
+    "performance bond",
+    "lot release"
+   ]
+  },
+  {
+   "topic": "Public hearings: 270 Electric Avenue and Highfield Village",
+   "resolution": "see separate minutes",
+   "quote": "highfield village (cont'd)- see separate minutes",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes signed; approval motions recorded",
+   "quote": "minutes approval: all minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "committee is trying to meet at least once/month to discuss large expenditures.",
+   "tags": [
+    "committees",
+    "capital planning",
+    "school building",
+    "open space",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "New business: Annual Town Meeting results and development status",
+   "resolution": "noted; other projects no report",
+   "quote": "the architectural preservation district article passed with minor amendments.",
+   "tags": [
+    "town meeting",
+    "zoning",
+    "village center district"
+   ]
+  },
+  {
+   "topic": "Board discussion of next work items",
+   "resolution": "discussed; walkability work to follow",
+   "quote": "there was board discussion as to what should be undertaken next.",
+   "tags": [
+    "zoning",
+    "parking",
+    "signs",
+    "walkability"
+   ]
+  },
+  {
+   "topic": "Town Election",
+   "resolution": "noted",
+   "quote": "town election, may 16, 2015- noted",
+   "tags": [
+    "election"
+   ]
+  },
+  {
+   "topic": "Definitive Subdivision, 50 Elmwood Road",
+   "resolution": "see above (lot release)",
+   "quote": "definitive subdivision, 50 elmwood road- see above request for lot release",
+   "tags": [
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Action file: Master Planning Economic Development Element and Housing Production Plan",
+   "resolution": "to begin focusing on Economic Development Element",
+   "quote": "can begin focusing on this element now that the preparation for",
+   "tags": [
+    "master plan",
+    "economic development",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "june 8, 6:30 pm, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment: naming Ritter Building meeting room for Marion Benson",
+   "resolution": "passed 4-1; letter to Board of Selectmen",
+   "quote": "motion, j. bilotta-simeone to send a letter to the board of selectmen requesting the room be named the marion benson meeting room, second, d. mcquaid",
+   "tags": [
+    "naming",
+    "Ritter Building",
+    "Marion Benson"
+   ]
+  },
+  {
+   "topic": "Board comment: thanks to departing members",
+   "resolution": "no action",
+   "quote": "k. chenis thanked n. lockwood and j. bilotta-simeone for their service to the board.",
+   "tags": [
+    "service"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "02/04/14 Executive Minutes",
+   "where": "list",
+   "quote": "documents used at meeting: 02/04/14 executive minutes 04/27/15 minutes"
+  },
+  {
+   "name": "04/27/15 Minutes",
+   "where": "list",
+   "quote": "02/04/14 executive minutes 04/27/15 minutes"
+  },
+  {
+   "name": "04/27/15 Warrant Article Hearing Minutes",
+   "where": "list",
+   "quote": "04/27/15 warrant article hearing minutes"
+  },
+  {
+   "name": "Letter dtd 04/28/15, Ernco Development Corp.",
+   "where": "list",
+   "quote": "letter dtd 04/28/15, ernco development corp."
+  },
+  {
+   "name": "Architectural Preservation District Article",
+   "where": "text",
+   "quote": "the architectural preservation district article passed with minor amendments."
+  },
+  {
+   "name": "Village Center District Article",
+   "where": "text",
+   "quote": "the village center district article passed with amendments brought forth by the board"
+  }
+ ],
+ "tags": [
+  "subdivision",
+  "lot release",
+  "covenant",
+  "performance bond",
+  "town meeting",
+  "zoning",
+  "village center district",
+  "committee reports",
+  "planning board",
+  "meeting minutes",
+  "building naming"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

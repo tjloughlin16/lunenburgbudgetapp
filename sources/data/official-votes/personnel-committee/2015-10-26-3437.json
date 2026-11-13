@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2015-10-26",
  "docid": "3437",
@@ -12,7 +12,23 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Approve the minutes of the September 22 meeting, after Lin's spelling corrections.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes were approved after lin makes a few spelling corrections."
+  },
+  {
+   "motion": "Approve each change the BOS and the Finance Committee made to the SAP.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "reviewed the changes that the bos and the finance committee made to the sap and approved each change."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:50 p.m.",
    "moved_by": "Scott",
    "seconded_by": "Deb",
    "outcome": "passed 5-0",
@@ -21,6 +37,173 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "September 22 prior minutes are described as \"approved\" but the minutes do not explicitly record a formal vote with vote count or language like \"so voted\" or \"unanimously approved\". The SAP changes are described as \"approved\" but similarly lack explicit vote recording. Only the adjournment includes explicit vote language (\"voted 5-0\").",
- "cost_usd": 0.0895805
+ "note": "Text is a clean extraction, not a scan. The minutes approval and the SAP approval are recorded in narrative form with no stated motion, mover, seconder or count, so they are recorded with outcome 'passed' and no mover. Jamie Toale's role is not printed. The Old Business heading is not listed as a topic because it has no content and no quotable text beyond its heading. No dollar figures appear in the minutes.",
+ "cost_usd": 0.004151220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cheryl Valera",
+   "role": "Committee Chair (Chairman in header)",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen and jamie toale"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen and jamie toale"
+  },
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen and jamie toale"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen and jamie toale"
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen and jamie toale"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, scott chase, nancy forest, deb christen and jamie toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lin will send the approved minutes to the Town Clerk for publication.",
+   "quote": "lin will send to town clerk for publication."
+  },
+  {
+   "decision": "Cheryl and Lin will attend the special town meeting on November 16.",
+   "quote": "cheryl and lin will attend the special town meeting on november 16 th ."
+  },
+  {
+   "decision": "Cheryl will contact Kathy Herrick regarding an amendment.",
+   "quote": "cheryl will contact kathy herrick regarding amendment"
+  },
+  {
+   "decision": "No Personnel Action Forms needed signing at this meeting.",
+   "quote": "there were no forms to sign"
+  },
+  {
+   "decision": "Listed items for the December Personnel Committee meeting agenda: advice package for anyone doing a budget, recruiting and application forms, DPW Director grade against market analysis data, and Personnel Action Forms.",
+   "quote": "december personnel committee meeting agenda items are:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP salary schedule change",
+   "what_was_recorded": "The committee made one change to the salary schedule as part of the SAP review; no dollar figure is printed.",
+   "quote": "we made one change to the salary schedule."
+  },
+  {
+   "topic": "DPW Director grade",
+   "what_was_recorded": "A future agenda item to discuss the DPW Director pay grade against market analysis data; no dollar figure is printed.",
+   "quote": "discuss dpw director grade in comparison with market analysis data"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "not stated",
+   "topic": "changes the BOS wanted to the SAP",
+   "quote": "a. jamie toale clarified changes the bos wanted made to the sap"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review of September 22 minutes",
+   "resolution": "approved with spelling corrections",
+   "quote": "cheryl valera, committee chair, called meeting to order at 6:32 p.m.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; Jamie Toale clarified BOS changes to the SAP",
+   "quote": "a. jamie toale clarified changes the bos wanted made to the sap",
+   "tags": [
+    "public comment",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "SAP changes from BOS and Finance Committee",
+   "resolution": "approved each change; one salary schedule change made",
+   "quote": "reviewed the changes that the bos and the finance committee made to the sap and approved each change.",
+   "tags": [
+    "SAP",
+    "salary schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "no action; no forms to sign",
+   "quote": "there were no forms to sign",
+   "tags": [
+    "personnel forms"
+   ]
+  },
+  {
+   "topic": "December meeting agenda items",
+   "resolution": "listed for December meeting",
+   "quote": "december personnel committee meeting agenda items are:",
+   "tags": [
+    "agenda",
+    "budget",
+    "recruiting",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 7:50 p.m.",
+   "quote": "scott motioned to adjourn the meeting; deb seconded the motion, and the committee voted 5-0 to adjourn at 7:50 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SAP",
+   "where": "text",
+   "quote": "reviewed the changes that the bos and the finance committee made to the sap and approved each change."
+  },
+  {
+   "name": "Market analysis data (DPW Director grade)",
+   "where": "text",
+   "quote": "discuss dpw director grade in comparison with market analysis data"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP",
+  "salary schedule",
+  "town meeting",
+  "minutes approval",
+  "public comment",
+  "DPW Director grade",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

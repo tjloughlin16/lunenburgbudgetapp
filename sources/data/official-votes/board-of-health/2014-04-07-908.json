@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-04-07",
  "docid": "908",
@@ -12,23 +12,163 @@
  },
  "votes": [
   {
-   "motion": "To approve a building permit for expansion of 129 Peninsula Drive property with a three-bedroom deed restriction",
+   "motion": "Approve the building permit to expand the home, provided a three (3) bedroom deed restriction is placed on the property before the permit is signed.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by rabbitt, the request to have a building permit signed to expand this home was approved"
+   "quote": "on motion by jewell and second by rabbitt, the request to have a building permit signed to expand this home was approved provided a three (3) bedroom deed restriction"
   },
   {
-   "motion": "To approve an addition to 711 West Street property based on the plan as proposed",
+   "motion": "Approve the request for 711 West Street based on the plan as proposed.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by rabbitt, the request was approved based on the plan as proposed. all in favor."
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the request was approved based on the plan as proposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned via macOS Vision. The opening line \"MINUTES APPROVED: February 3, 2014, March 17, 2014\" states minutes were approved but does not indicate a motion was made, so it is not recorded as a vote.",
- "cost_usd": 0.1103535
+ "note": "OCR of a scanned page; page 2 contains a '...' gap. Minutes approval and adjournment (8:45 pm) are recorded without any motion or vote, so they are not listed as votes. The expansion-request paragraph follows the 129 Peninsula Drive heading, but the minutes do not clearly name the property; owners are unnamed. Votes are recorded as 'All in favor' with no count printed, so outcome is 'passed'. No budget figures appear in the text. No public comment section is printed; the applicants and the Worcester speaker appeared before the board and are listed as attendees.",
+ "cost_usd": 0.00414212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "george emond, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "george emond, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "george emond, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "george emond, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Owners (not named in minutes)",
+   "role": "owners seeking home expansion",
+   "status": "present",
+   "quote": "owners, met with the board to discuss the expansion of their home."
+  },
+  {
+   "name": "Steve Negy",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "steve negy, owner of the property, met with the board."
+  },
+  {
+   "name": "Lois Luniewicz",
+   "role": "Director of the Worcester Regional Medical Reserve Corp.",
+   "status": "present",
+   "quote": "lois luniewicz, director of the worcester regional medical reserve corp. met with the board to acquaint them"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of February 3, 2014 and March 17, 2014 recorded as approved; no motion or vote count is printed.",
+   "quote": "minutes approved: february 3, 2014, march 17, 2014"
+  },
+  {
+   "decision": "Title 5 inspection reports for 57 Pratt Street and 40 Brookview Terrace acknowledged.",
+   "quote": "title 5 inspection reports acknowledged: 57 pratt street 40 brookview terrace"
+  },
+  {
+   "decision": "Septic permits signed for 110 Pleasant Street, Lot 2; 160 Burrage Street; and 129 Peninsula Drive.",
+   "quote": "septic permits signed: 110 pleasant street, lot 2 160 burrage street 129 peninsula drive"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (February 3, 2014 and March 17, 2014)",
+   "quote": "minutes approved: february 3, 2014, march 17, 2014",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (57 Pratt Street, 40 Brookview Terrace)",
+   "quote": "title 5 inspection reports acknowledged: 57 pratt street 40 brookview terrace",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (110 Pleasant Street Lot 2, 160 Burrage Street, 129 Peninsula Drive)",
+   "quote": "septic permits signed: 110 pleasant street, lot 2 160 burrage street 129 peninsula drive",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Home expansion request with bedroom deed restriction",
+   "resolution": "approved, subject to three-bedroom deed restriction before permit signed",
+   "quote": "on motion by jewell and second by rabbitt, the request to have a building permit signed to expand this home was approved provided a three (3) bedroom deed restriction",
+   "tags": [
+    "building permit",
+    "bedrooms",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "711 West Street addition",
+   "resolution": "approved as proposed",
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the request was approved based on the plan as proposed.",
+   "tags": [
+    "addition",
+    "residence"
+   ]
+  },
+  {
+   "topic": "Worcester County Volunteer Medical Corp. presentation",
+   "resolution": "no action; speaker thanked, recruiting noted",
+   "quote": "lois luniewicz, director of the worcester regional medical reserve corp. met with the board to acquaint them",
+   "tags": [
+    "medical reserve corps",
+    "public health"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Board of Health Regulations",
+   "where": "text",
+   "quote": "based on the lunenburg board of health regulations, this additional space could meet the definition of a bedroom."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "Title 5",
+  "building permits",
+  "bedroom deed restriction",
+  "medical reserve corps",
+  "public health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

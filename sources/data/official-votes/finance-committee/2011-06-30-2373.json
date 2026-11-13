@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-06-30",
  "docid": "2373",
@@ -12,39 +12,268 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 4/14/2011",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Mark Erickson",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of 4/14/2011.",
+   "moved_by": "BR",
+   "seconded_by": "ME",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "br moved for approval, me second, unanimous."
+   "quote": "minutes from 4/14/2011; br moved for approval, me second, unanimous."
   },
   {
-   "motion": "Approve the minutes from 4/25/2011",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of 4/25/2011.",
+   "moved_by": "BR",
+   "seconded_by": "BL",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "br moved for approval, bl second, unanimous."
+   "quote": "minutes from 4/25/2011: br moved for approval, bl second, unanimous."
   },
   {
-   "motion": "Approve Chapter 44 - 33b transfers",
-   "moved_by": "Marilyn Stokes",
-   "seconded_by": "Barbara Reynolds",
-   "outcome": "passed unanimously",
+   "motion": "Approve the list of Chapter 44 - 33b transfers presented by KS.",
+   "moved_by": "MS",
+   "seconded_by": "BR",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "ms moved for approval, br second, unanimous."
+   "quote": "ks presented a list of chapter 44 - 33b transfers for approval. ms moved for approval, br second, unanimous."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "Marilyn Stokes",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 9:01 PM.",
+   "moved_by": "ME",
+   "seconded_by": "MS",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "me made motion to adjourn at 9:01 pm, ms second, unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted via OCR (macOS Vision). All votes recorded with outcomes stated as unanimous.",
- "cost_usd": 0.1061525
+ "note": "OCR text of a scanned minutes page; some initials are the only identifiers for speakers and movers (BL, MS, ME, BR, KS). Votes are recorded as 'unanimous' with no numeric count. Several attendee roles are not printed and are left blank. ME is a committee member who raised the public-discussion question; no outside member of the public is recorded as speaking. The minutes record no dollar amount for the Chapter 44 - 33b transfers.",
+ "cost_usd": 0.00550802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: brian laffond, marilyn stokes, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: brian laffond, marilyn stokes, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "status": "present",
+   "quote": "present: brian laffond, marilyn stokes, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "quote": "present: brian laffond, marilyn stokes, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "status": "absent",
+   "quote": "absent: john male, martha mcdonald"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "absent: john male, martha mcdonald"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: kerry speidel"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Chapter 44 - 33b transfers",
+   "what_was_recorded": "A list of Chapter 44 - 33b transfers was presented for approval and approved; no amounts are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "ks presented a list of chapter 44 - 33b transfers for approval. ms moved for approval, br second, unanimous."
+  },
+  {
+   "topic": "Annual budget copies",
+   "what_was_recorded": "KS distributed copies of the annual budget as appropriated; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ks distributed copies of the annual budget as appropriated."
+  },
+  {
+   "topic": "Eagle Heights Senior Housing grant",
+   "what_was_recorded": "Application submitted for Eagle Heights Senior Housing; status of the Sec 202 grant expected by September. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "eagle heights senior housing: application submitted; hope to hear by sep on status of sec 202 grant."
+  },
+  {
+   "topic": "Jones House sale",
+   "what_was_recorded": "Jones House was approved for sale at a minimum bid of $80,000; no bids were received and it will be rebid this fall with no minimum.",
+   "figures_as_printed": [
+    "$80,000"
+   ],
+   "quote": "jones house approved for sale at minimum bid of $80,000. no bids received."
+  },
+  {
+   "topic": "MART bus van",
+   "what_was_recorded": "An older van may be sold to the town for $1 as part of the MART bus subsidy discussion.",
+   "figures_as_printed": [
+    "$1"
+   ],
+   "quote": "an older van may be sold to the town for $1 and coa may run a pilot to gauge additional use."
+  },
+  {
+   "topic": "DPW facility renovation warrant (STM)",
+   "what_was_recorded": "DPW facility renovation came in over budget and remains $200k short after re-planning and rebidding; financing would cost roughly $15,000 over 15 years.",
+   "figures_as_printed": [
+    "$200k",
+    "$15,000"
+   ],
+   "quote": "warrant for stm: dpw facility renovation over budget. plans modified and rebid but still $200k short. impact of financing this would be roughly $15,000 over 15 years."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Chapter 44 - 33b transfers list presented by KS",
+   "amount_as_printed": "",
+   "outcome": "approved unanimously",
+   "quote": "ks presented a list of chapter 44 - 33b transfers for approval. ms moved for approval, br second, unanimous."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "ME",
+   "stated_role": "",
+   "topic": "LFC appointing committee meeting on July 7",
+   "quote": "me asked about the lfc appointing committee meeting on july 7."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Discussion",
+   "resolution": "no action; question raised about the July 7 appointing committee meeting",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "me asked about the lfc appointing committee meeting on july 7."
+  },
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes from 4/14/2011; br moved for approval, me second, unanimous."
+  },
+  {
+   "topic": "Communications",
+   "resolution": "documents received; no action",
+   "tags": [
+    "communications",
+    "public hearing"
+   ],
+   "quote": "bl stated that a public hearing is needed for any and all items appearing on a warrant with financial impact and requires a newspaper announcement"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received",
+   "tags": [
+    "Monty Tech",
+    "regional schools"
+   ],
+   "quote": "regional schools: me reported that a recommendation is expected by end of summer"
+  },
+  {
+   "topic": "New Business",
+   "resolution": "transfers approved; annual budget distributed",
+   "tags": [
+    "transfers",
+    "budget"
+   ],
+   "quote": "ks presented a list of chapter 44 - 33b transfers for approval. ms moved for approval, br second, unanimous."
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "reported; no action",
+   "tags": [
+    "town manager",
+    "property",
+    "warrant",
+    "DPW"
+   ],
+   "quote": "vacant main street gas station: dep wants to clean the property but needs property owner permission; he refuses."
+  },
+  {
+   "topic": "Recognition of Marilyn Stokes",
+   "resolution": "no action; thanks recorded",
+   "tags": [
+    "recognition"
+   ],
+   "quote": "the committee thanked marilyn stokes for her contributions to the committee."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled July 14 public hearing on DPW warrant",
+   "tags": [
+    "public hearing",
+    "DPW"
+   ],
+   "quote": "july 14 - public hearing on dpw warrant town hall 7 pm"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:01 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "me made motion to adjourn at 9:01 pm, ms second, unanimous."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Municipal Finance and Taxation Laws, Municipal Advocate, Beacon May, June",
+   "where": "list",
+   "quote": "municipal finance and taxation laws, municipal advocate, beacon may, june"
+  },
+  {
+   "name": "Planning Board Notices from 5/23 and 6/14",
+   "where": "list",
+   "quote": "planning board notices from 5/23 and 6/14"
+  },
+  {
+   "name": "Public Hearing notice for 7/14 DPW STM warrant",
+   "where": "list",
+   "quote": "public hearing notice for 7/14 dpw stm warrant."
+  },
+  {
+   "name": "Annual budget as appropriated",
+   "where": "text",
+   "quote": "ks distributed copies of the annual budget as appropriated."
+  },
+  {
+   "name": "Chapter 44 - 33b transfers list",
+   "where": "text",
+   "quote": "ks presented a list of chapter 44 - 33b transfers for approval."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "transfers",
+  "minutes",
+  "town property",
+  "DPW warrant",
+  "Monty Tech",
+  "regional schools",
+  "appointments",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "bl made several documents available"
+ },
+ "dropped_unquoted_by_field": {}
 }

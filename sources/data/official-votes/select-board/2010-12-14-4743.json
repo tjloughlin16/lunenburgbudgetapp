@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-12-14",
  "docid": "4743",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Recess regular session and enter executive session under M.G.L. Chapter 39, §23B(6) to discuss real property matters",
+   "motion": "Enter executive session under M.G.L. Chapter 39, §23B(6) to consider the purchase, exchange, taking, lease or value of real property.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "recessed regular session at 6:30 p.m. and opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye"
+   "quote": "opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye"
   },
   {
-   "motion": "Approve Verizon New England Inc. petition to locate poles, wires, cables and fixtures on Chase Road",
+   "motion": "Approve the Verizon New England Inc. pole location petition, relocating the new pole out of the property owner's driveway.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -28,15 +28,15 @@
    "quote": "board voted unanimously to approve."
   },
   {
-   "motion": "Approve annual license renewals for fiscal year 2011 as listed",
+   "motion": "Approve the annual license renewals on the revised FY2011 list, subject to the board's hold process.",
    "moved_by": "Steve",
    "seconded_by": "Ernie",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "steve motion to approve, ernie seconded, dave questioned the recent pedlars license and common victuraller's for central mass, and per kerry believe the board approved these until december 2011. dave also questioned the payment of taxes and would like to know if establishments are conforming to their payment plan that may have been issued. tom would also like to know about those who are in arrears and would like to have them come before the board and not that we just approve the licenses overall. would like to keep track over the year and if it's something that happens year after year, would like to know of the habitual establishments that are in arrears. per kerry if they are not paid, then the board can withhold the license as the first meeting of the board is scheduled for january 4, 2011 and if necessary can schedule appointments with these individuals for that meeting. voted unanimously to approve."
+   "quote": "steve motion to approve, ernie seconded, dave questioned the recent pedlars license and common victuraller's for central mass"
   },
   {
-   "motion": "Adjourn regular session and enter executive session under M.G.L. Chapter 39, §23B(2) for labor negotiations strategy session",
+   "motion": "Adjourn Regular Session and enter executive session under M.G.L. Chapter 39, §23B(2) for a strategy session on non-union personnel negotiations and litigation.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 5-0",
@@ -44,7 +44,388 @@
    "quote": "board voted to adjour regular session at 8:09 p.m. and opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction (macOS Vision). Four votes recorded: two procedural votes on executive session (motion not explicitly stated, but roll-call results are clear), one land-use vote (Verizon pole location with no named mover), and one license-renewal vote with named mover and seconder.",
- "cost_usd": 0.13801049999999998
+ "dropped_unquoted": 1,
+ "note": "OCR text of a scanned minutes packet; some names and words are garbled (e.g., 'Steven M debettencourt', 'Verison', 'adjour'). The Verizon pole vote records no mover or seconder. The PUBLIC COMMENT heading has no entries. Old Business and Committee Appointments headings have no items under them. The Town Manager Updates section appears out of order in the OCR. Fee figures on the license list are not tied to specific licenses in the text. The attached FY2011 license list and the Community Choice Aggregation plan pages are included in the text.",
+ "cost_usd": 0.015414420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M debettencourt",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Paul Duboli",
+   "role": "present on behalf of Verison",
+   "status": "present",
+   "quote": "paul duboli, present on behalf of verison informed the board that the pole is currently located"
+  },
+  {
+   "name": "Rob Verge",
+   "role": "Chair, Conservation Commission",
+   "status": "not stated",
+   "quote": "rob verge, chair, conservation commission informed her that the open space plan is in the process"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed a minimum bid for the Jones House project of $85,000, with the proposal to be ready to go out to bid for February 2011 (announced by Paula, no recorded vote).",
+   "quote": "agreed on a minimum bid for the project of $85,000, as the goal is to maintain the significant historical structure."
+  },
+  {
+   "decision": "Licenses will not be released until paperwork, insurance certificates and tax payment agreements are in place with all applicants; the board may call hold on any establishment.",
+   "quote": "noted that licenses would not be released until all paperwork, insurance certificates and tax payment agreements have been reached with all."
+  },
+  {
+   "decision": "If license applicants in arrears are not paid, the board can withhold the license and schedule appointments with them at the January 4, 2011 meeting if necessary.",
+   "quote": "and if necessary can schedule appointments with these individuals for that meeting."
+  },
+  {
+   "decision": "Town Manager asked board members to tell her whether they plan to attend the MMA Annual Meeting in January 2011.",
+   "quote": "kerry asked members of the board to let her know whether they are planning the mma annual meeting"
+  },
+  {
+   "decision": "Chair will follow up with the IT Director on GIS access, as many departments are not using the system.",
+   "quote": "and she will follow up with the it director as many departments are not availing themselves"
+  },
+  {
+   "decision": "Fleet expansion item moved to the January meeting.",
+   "quote": "fleet expansion - kerry asked that we move this to january"
+  },
+  {
+   "decision": "Town Manager suggested the Capital Planning Committee work on an equipment purchasing policy, including useful life of equipment, and present it to the board.",
+   "quote": "suggested that the capital planning committee work on this and present to the board"
+  },
+  {
+   "decision": "Town Manager proposed a public hearing on the Community Choice Aggregation Plan for the second week in January, to be posted on the website and distributed to committees.",
+   "quote": "would propose for the second. week in january and will place on website and distribute to committees."
+  },
+  {
+   "decision": "Town Manager is preparing another grant application for Summer Street design funding.",
+   "quote": "kerry is putting together another application for funding assistance for the design."
+  },
+  {
+   "decision": "Board scheduled the third meeting in January for discussion of closing the Holman Street bridge.",
+   "quote": "sheduled the third meeting in january for discussions on the closing of the holman street bridge."
+  },
+  {
+   "decision": "Chair requested a breakdown of administrative fees for the Parking Lot (Eagle House).",
+   "quote": "paula asked for a breakdown on administrative fees with the parking lot (eagle house)."
+  },
+  {
+   "decision": "Board will not return to Regular Session after executive session.",
+   "quote": "chair announced the board will not return to regular session."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Jones House minimum bid",
+   "what_was_recorded": "Board agreed a minimum bid for the Jones House project of $85,000.",
+   "figures_as_printed": [
+    "$85,000"
+   ],
+   "quote": "agreed on a minimum bid for the project of $85,000, as the goal is to maintain the significant historical structure."
+  },
+  {
+   "topic": "License fees on the FY2011 renewal list",
+   "what_was_recorded": "The renewal list prints several fee amounts beside license categories, without stating which license each applies to.",
+   "figures_as_printed": [
+    "$1,450.00",
+    "$700.00",
+    "$ 60.00",
+    "$ 35.00",
+    "$ 100.00",
+    "$25.00",
+    "$20.00"
+   ],
+   "quote": "limousine license pedlar's license $ 100.00"
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Three warrants were reviewed and signed, with amounts printed for each.",
+   "figures_as_printed": [
+    "$90,000.00",
+    "$443,870.30",
+    "$148,581.78"
+   ],
+   "quote": "warrants - # 32a 11, 12/10/10 - $90,000.00, #32 11, 128/10 - $443,870.30 and #33 11 12/14/10 - $148,581.78"
+  },
+  {
+   "topic": "Weston & Sampson payment request",
+   "what_was_recorded": "Paula questioned the status of a payment request from Weston & Sampson; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "paula also questioned status of the payment request for weston & sampson"
+  },
+  {
+   "topic": "GIS and software spending",
+   "what_was_recorded": "Town Accountant reported the town has spent $112,890.00 on the GIS/software system since 2004 to date; a sewer layer funding request and unused property manager and permitting modules were also raised.",
+   "figures_as_printed": [
+    "$112,890.00"
+   ],
+   "quote": "checked with town accountant and we have expended $112,890.00 since 2004 to date."
+  },
+  {
+   "topic": "Software training costs",
+   "what_was_recorded": "Chairs are looking at training seminars and associated costs; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "many chairs had opportunity to see the qsend website and are looking at training seminars and associated costs."
+  },
+  {
+   "topic": "Sewer layer funding request",
+   "what_was_recorded": "The Sewer Commission is requesting funding for a sewer layer identifying pipe locations; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the sewer commission is requesting funding for a sewer layer which would identify where pipes etc. are located."
+  },
+  {
+   "topic": "Mobility Assistance grant for senior van",
+   "what_was_recorded": "Town is eligible to apply for a grant with MART as co-applicant for a new senior van; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "advised that we are eligible for a grant application and that the montachusett area regional transit (mart) will be a co-applicant"
+  },
+  {
+   "topic": "Fleet costs",
+   "what_was_recorded": "Board asked that fleet plans include all costs associated with the fleet and its funding; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "noted to include all the costs associated with the fleet and funding"
+  },
+  {
+   "topic": "Eagle House parking lot administrative fees",
+   "what_was_recorded": "Paula requested a breakdown of administrative fees for the Parking Lot (Eagle House); no amount printed.",
+   "figures_as_printed": [],
+   "quote": "paula asked for a breakdown on administrative fees with the parking lot (eagle house)."
+  },
+  {
+   "topic": "Capital Improvement Plan funding and equipment",
+   "what_was_recorded": "Concern raised about funding of the Capital Plan and its impact on smaller departments; a sander item was not found in the plan and the board asked about equipment life expectancy; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "kerry noted that some departments are concerned about the funding of the capital plan and this does have an impact on the smaller departments."
+  },
+  {
+   "topic": "Summer Street design proposal from VHB",
+   "what_was_recorded": "Town received a revised VHB proposal for the Summer Street project design, including weekend traffic counts; the federal funding level discussed is up to the 10 million dollar level.",
+   "figures_as_printed": [
+    "$54,300"
+   ],
+   "quote": "she has also received a revised proposal from vhb for $54,300 which includes weekend traffic counts"
+  },
+  {
+   "topic": "Community Choice Aggregation sample electric bill",
+   "what_was_recorded": "The aggregation plan includes a sample residential bill with delivery and supply charges, showing totals of delivery services, supply services and current balance.",
+   "figures_as_printed": [
+    "$56.16",
+    "$37.67",
+    "$93.83"
+   ],
+   "quote": "total current balance $93.83"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Jones House tour and executive session",
+   "resolution": "toured the site; executive session held on real property",
+   "quote": "proceeded with a tour of the jones house @ 42 main street.",
+   "tags": [
+    "Jones House",
+    "executive session",
+    "real property"
+   ]
+  },
+  {
+   "topic": "Announcements: Jones House minimum bid",
+   "resolution": "minimum bid agreed; bid ready for February 2011",
+   "quote": "agreed on a minimum bid for the project of $85,000, as the goal is to maintain the significant historical structure.",
+   "tags": [
+    "Jones House",
+    "bid"
+   ]
+  },
+  {
+   "topic": "Pole location hearing (Verizon)",
+   "resolution": "approved pole relocation",
+   "quote": "board voted unanimously to approve.",
+   "tags": [
+    "Verizon",
+    "pole",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Executive session with Sewer Commission (8:00 PM)",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "8:00 pm - executive session with sewer commission -",
+   "tags": [
+    "sewer",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Annual license renewals",
+   "resolution": "approved",
+   "quote": "steve motion to approve, ernie seconded, dave questioned the recent pedlars license and common victuraller's for central mass",
+   "tags": [
+    "licenses",
+    "tax arrears"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reviewed and signed",
+   "quote": "warrants - # 32a 11, 12/10/10 - $90,000.00, #32 11, 128/10 - $443,870.30 and #33 11 12/14/10 - $148,581.78",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Action file issues",
+   "resolution": "no action; MMA attendance and Weston & Sampson payment raised",
+   "quote": "kerry asked members of the board to let her know whether they are planning the mma annual meeting",
+   "tags": [
+    "MMA",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports only; next Chairs meeting scheduled",
+   "quote": "dave school committee presentation on the budget is scheduled for tomorrow @ 7:00 pm",
+   "tags": [
+    "school budget",
+    "land use",
+    "GIS",
+    "software",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Department updates: Mobility Assistance grant",
+   "resolution": "no action; grant application eligibility reported",
+   "quote": "kerry informed the board that she has been advised that we are eligible for a grant application",
+   "tags": [
+    "grants",
+    "MART",
+    "senior van"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "fleet expansion moved to January; CCA public hearing proposed; Summer Street application; Holman Street bridge meeting scheduled",
+   "quote": "fleet expansion - kerry asked that we move this to january",
+   "tags": [
+    "fleet",
+    "capital plan",
+    "community choice aggregation",
+    "Summer Street",
+    "Holman Street bridge",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Old business and committee appointments",
+   "resolution": "no items recorded",
+   "quote": "old business committee appointments/reappointments/resignations",
+   "tags": [
+    "old business",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session under M.G.L. Chapter 39 §23B(2)",
+   "resolution": "strategy session held; board did not return to Regular Session",
+   "quote": "chair announced the board will not return to regular session.",
+   "tags": [
+    "executive session",
+    "personnel",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "UPDATED LIST FOR FY'2011 (November 23, 2010; Linda H. Douglas to Jeffrey Ugalde) - license renewals",
+   "where": "list",
+   "quote": "chair read the attached revised list and requested the board call"
+  },
+  {
+   "name": "Town of Lunenburg Community Choice Aggregation Plan (final draft)",
+   "where": "text",
+   "quote": "forwarded a copy of the final draft for the community choice aggregation plan which has been reviewed by the state"
+  },
+  {
+   "name": "Capital Improvement Plan Department Requests for FY 2012 - 2020",
+   "where": "text",
+   "quote": "kerry provided a copy of the capital improvement plan department requests for fy 2012 - 2020."
+  },
+  {
+   "name": "Revised proposal from VHB (Summer Street design)",
+   "where": "text",
+   "quote": "she has also received a revised proposal from vhb for $54,300 which includes weekend traffic counts"
+  },
+  {
+   "name": "Warrants #32A 11 (12/10/10), #32 11 (12/10/10) and #33 11 (12/14/10)",
+   "where": "text",
+   "quote": "warrants - # 32a 11, 12/10/10 - $90,000.00, #32 11, 128/10 - $443,870.30 and #33 11 12/14/10 - $148,581.78"
+  },
+  {
+   "name": "Pole Location Hearing notice (Verizon New England Inc.)",
+   "where": "text",
+   "quote": "pole location hearing - notice as follows: you are hereby notified that a public hearing will be held"
+  },
+  {
+   "name": "Software survey to town departments",
+   "where": "text",
+   "quote": "sent out a software survey to all town departments and have received 13 surveys back"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Jones House",
+  "Verizon pole",
+  "licenses",
+  "warrants",
+  "capital plan",
+  "fleet",
+  "Community Choice Aggregation",
+  "Summer Street",
+  "GIS",
+  "grants",
+  "executive session",
+  "Holman Street bridge"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "chair read the attached revised list"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

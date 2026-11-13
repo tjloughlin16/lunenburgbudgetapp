@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-08-07",
  "docid": "1477",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Dave MacDonald",
    "outcome": "passed",
@@ -21,6 +21,156 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. One vote recorded: the motion to adjourn.",
- "cost_usd": 0.0800495
+ "note": "Text is OCR of a scan. The meeting-schedule line is garbled (\"uaust 17h 7:00PM at Town Ha\"); the date appears to be August 17 at 7:00PM at Town Hall, but this is not certain. Adjournment is printed as 7:57AM for a meeting that began at 7:03AM and is scheduled for an evening time, so AM is likely a PM typo; recorded as printed. Only one vote is recorded (adjournment, all in favor, no count). The RFQ selection decisions (HKA disqualified, interviews) are recorded without a motion. Dave Rodgers asked a question under the appointments discussion, not in a Public Comment section (which reads 'None'), so he is not listed as public comment. Dave Rodgers' attendance status is not stated.",
+ "cost_usd": 0.00329992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin, mark erickson"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin, mark erickson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin, mark erickson"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin, mark erickson"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "",
+   "status": "absent",
+   "quote": "members absent: rebecca lantry,"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "not stated",
+   "quote": "dave rodgers asked the board for an update on the status of the passios building and the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Helene Karl Architects (HKA) is disqualified from the selection process for failing to provide the MCPPO Certificate requested in the RFQ.",
+   "quote": "they have been disqualified from the selection process."
+  },
+  {
+   "decision": "Tappe Associates and Drummey Rosane Anderson (DRA) will be invited to interview with the board at the next meeting.",
+   "quote": "tappe and dra will be invited to interview with the board at our next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 7:03AM",
+   "quote": "meeting called to order august 07, 2015 @ 7:03am",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Update on RFQ process",
+   "resolution": "HKA disqualified; Tappe and DRA invited to interview at next meeting",
+   "quote": "the board has received 3 responses to the rfq.",
+   "tags": [
+    "RFQ",
+    "selection",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Next step discussions",
+   "resolution": "suggestion to invite land use director Adam Burney to discuss town statistics; no action recorded",
+   "quote": "dave macdonald suggested that we invite land use director adam burney to attend a",
+   "tags": [
+    "town statistics",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Discussion of appointments with possible interested parties",
+   "resolution": "discussed; board welcomes any interested groups; no action recorded",
+   "quote": "flacc is one group that has expressed interest in the use of one of the buildings.",
+   "tags": [
+    "FLACC",
+    "building reuse",
+    "interested groups"
+   ]
+  },
+  {
+   "topic": "Passios building status question",
+   "resolution": "Ron Albert gave a summary of the board's work",
+   "quote": "ron albert responded with a summary of our work.",
+   "tags": [
+    "Passios building"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting listed (OCR garbled)",
+   "quote": "uaust 17h 7:00pm at town ha",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Meeting adjournment",
+   "resolution": "adjourned at 7:57AM on motion",
+   "quote": "motion to adjourn by mike mackin, second dave macdonald, all in favor.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "RFQ (request for qualifications) responses",
+   "where": "text",
+   "quote": "the board has received 3 responses to the rfq."
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "RFQ",
+  "selection process",
+  "interviews",
+  "appointments",
+  "FLACC",
+  "Passios building",
+  "town statistics"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-01-09",
  "docid": "3931",
@@ -12,15 +12,142 @@
  },
  "votes": [
   {
-   "motion": "Continue hearing to February 13, 2017 at 6:35 PM",
+   "motion": "Continue the public hearing on Site Plan Approval for 691 Chase Road to 6:35 PM, February 13, 2017.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion, k. chenis, second, g. bittner to continue hearing to 6:35 pm, february 13, 2017. all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: a motion to continue the hearing. The document is OCR text from macOS Vision. No votes to approve prior minutes, adjourn the meeting, or enter executive session are recorded.",
- "cost_usd": 0.0842725
+ "note": "OCR text with some misspellings (for example 'Prokowiew', 'middie'). Header time is 6:30 PM but the hearing opened at 6:37 PM. Only one motion (the continuance) is recorded. No minutes approval or other votes appear. No dollar figures are printed.",
+ "cost_usd": 0.00501982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "gregory bittner, clk."
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "kenneth chenis, mbr."
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "david prokowiew, mbr."
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Richard Breau",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "applicant, richard breau made his presentation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board wants the application altered to a single-phase, one-rink project with a modified parking lot; the applicant returns for a modification at construction of the second rink; the current requested waivers remain.",
+   "quote": "the board would like to see this application altered to be a single phase one-rink project with a modified parking lot and that r. breau return to the board for a modification at the time of construction of the second rink"
+  },
+  {
+   "decision": "The Board requested a landscape plan from the applicant.",
+   "quote": "board requested a landscape plan."
+  },
+  {
+   "decision": "The lighting and photometric plan will be part of the modification for the second rink.",
+   "quote": "the lighting and photometric plan would be part of the modification for the second rink."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Applicant financing and waiver requests",
+   "what_was_recorded": "The applicant said many waiver requests are for financial reasons because he and his wife are personally financing the project, which keeps fees down.",
+   "figures_as_printed": [],
+   "quote": "many of the above waivers are being requested for financial reasons as he and his wife are financing this project personally."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: Site Plan Approval, 691 Chase Road (two street hockey rinks)",
+   "resolution": "continued to February 13, 2017",
+   "tags": [
+    "site plan approval",
+    "public hearing",
+    "street hockey rinks",
+    "691 Chase Road"
+   ],
+   "quote": "in order to address concerns, r. breau requested a continuance to the february 13, 2017 board meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Site Plan Approval",
+   "where": "list",
+   "quote": "documents used at hearing: application for site plan approval"
+  },
+  {
+   "name": "Minutes/public hearings 2017/691 Chase Road 01.09.17",
+   "where": "list",
+   "quote": "application for site plan approval minutes/public hearings 2017/691 chase road 01.09.17"
+  },
+  {
+   "name": "Fire Chief's email",
+   "where": "text",
+   "quote": "d. prokowiew referred to the fire chief's email which notes that ambulance access is tight."
+  },
+  {
+   "name": "Legal notice published in the Sentinel & Enterprise (December 26, 2016 and January 2, 2017)",
+   "where": "text",
+   "quote": "with the reading of the legal notice published in the sentinel & enterprise december 26, 2016"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 8.4 (Site Plan Approval) and Section 6.4.3.e)9.a",
+   "where": "text",
+   "quote": "an application for site plan approval under section 8.4. of the protective bylaw of the town of lunenburg"
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "public hearing",
+  "street hockey rinks",
+  "691 Chase Road",
+  "parking",
+  "lighting",
+  "drainage",
+  "waivers",
+  "continued",
+  "zoning"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-05-03",
  "docid": "4754",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve Article 15 request for Town Meeting approval of a 10 year contract for solid waste",
+   "motion": "Approve Article 15 request for Town Meeting approval of a 10 year contract for solid waste.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
@@ -20,23 +20,23 @@
    "quote": "mr. alonzo moved to approve article 15 request for town meeting approval of a 10 year contract for solid waste. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the Lion's Club request for a roadblock on Saturday May 7, 8AM-2PM in the Town Center and on the corner of Whalom Rd./Rt. 13",
+   "motion": "Approve the Lion's Club request for a roadblock on Saturday May 7, 8AM-2PM in the Town Center and on the corner of Whalom Rd./Rt. 13.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mir. alonzo moved to approve the lion's club request for a roadblock on saturday may 7\" , 8am-2pm in the towr center and on the corner of whalom rd./rt. 13. mr. matthews seconded. on vote, motion carried, 4 in favor, o opposed."
+   "quote": "and on the corner of whalom rd./rt. 13. mr. matthews seconded. on vote, motion carried, 4 in favor, o opposed."
   },
   {
-   "motion": "Approve the Auctioneer's License Application for Michael G. Roy doing business as \"Got Stuff\", pending the Police Chief's approval on May 14, 2011",
+   "motion": "Approve the Auctioneer's License Application for Michael G. Roy doing business as \"Got Stuff\", pending the Police Chief's approval, on May 14, 2011.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews motioned to approve the auctioneer's license application for michael g. roy doing business as \"got stuff\", pending the police chiefs approval on may 14, 2011. mr. alonzo seconded. on vote, motion carried, 5 in favor 0 opposed."
+   "quote": "pending the police chiefs approval on may 14, 2011. mr. alonzo seconded. on vote, motion carried, 5 in favor 0 opposed."
   },
   {
-   "motion": "Adjourn the regular scheduled meeting",
+   "motion": "Adjourn the regular scheduled meeting.",
    "moved_by": "Mr. Sund",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed unanimously",
@@ -44,7 +44,546 @@
    "quote": "mr. sund moved to adjourn the regular scheduled meeting. mr. debettencourt seconded. the board voted unanimously to adjourn the regular scheduled meeting at 9:47pm"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan. Minor character recognition issues present (e.g., superscript \\\"th\\\" rendered as quotation mark, \\\"Towr\\\" for \\\"Town\\\", \\\"Mir.\\\" for \\\"Mr.\\\", \\\"O\\\" for \\\"0\\\") but all votes recorded clearly with outcomes stated.",
- "cost_usd": 0.1223745
+ "dropped_unquoted": 2,
+ "note": "OCR text with garbled characters (e.g., \"$1OK\", \"$SK\", \"O opposed\", \"Mir.\", \"Towr\"); quotes use the printed characters. Meeting opened 7:00 PM and adjourned 9:47PM. No vote is recorded for entering executive session: Ms. Bertram asked for a motion, but the only recorded motion is Mr. Sund's motion to adjourn. No approval of prior minutes is recorded (\"Minutes - None\"). The four warrant amounts are printed in a column without clear alignment to the warrant numbers and dates, so they are recorded as printed. Stamps read \"RECEIVED & FILED\" with 2012 dates.",
+ "cost_usd": 0.015172620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with paula bertram, tor alonzo"
+  },
+  {
+   "name": "Tor Alonzo",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with paula bertram, tor alonzo"
+  },
+  {
+   "name": "David Matthews",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Tessa Davis",
+   "role": "representing MassToss",
+   "status": "present",
+   "quote": "tessa davis, representing masstoss was present to report on the findings"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Chairperson of the Sewer Commission",
+   "status": "present",
+   "quote": "robert ebersole, chairperson of the sewer commission spoke to the board about the"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director of the Lunenburg Council on Aging",
+   "status": "present",
+   "quote": "ask doreen noble, director of the lunenburg council on aging to speak about the concept of this van"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairman of the COA",
+   "status": "present",
+   "quote": "pete lincoln, chairman of the coa, spoke and said that the eagle house senior center is the biggest bargain in the town."
+  },
+  {
+   "name": "Michael G. Roy",
+   "role": "applicant, Auctioneer's License Application",
+   "status": "present",
+   "quote": "mr. roy introduced himself to the board, described his auctioneer background and what his intent was"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed that two separate revolving fund accounts (one for the Going Places Van donations) would be the cleaner approach.",
+   "quote": "where it was agreed upon, that two separate accounts would be the cleaner way to go."
+  },
+  {
+   "decision": "No decision on Article 22 (zoning) until after the Planning Board's presentation.",
+   "quote": "no decision will be made on article 22 until after the planning boards presentation."
+  },
+  {
+   "decision": "Collective bargaining articles to be discussed in Executive Session.",
+   "quote": "the collective bargaining articles will be discussed in executive session."
+  },
+  {
+   "decision": "Town Manager proposed deferring the FY11 ongoing-expense appropriation to Fall Town Meeting rather than drawing on the FY12 Stabilization Fund.",
+   "quote": "wait until fall town meeting where they will have the free cash certified and will have a better idea"
+  },
+  {
+   "decision": "Town Manager said there will be no request for a draw on the stabilization fund under the STM warrant.",
+   "quote": "ms. speidel stated that there will be no request for a draw on the stabilization fund under the stm warrant."
+  },
+  {
+   "decision": "Going Places Van article (Article 16) to be passed over, with the van run through the existing MART revolving fund, as suggested by the Town Manager.",
+   "quote": "after all is said and done they will be passing over this article because there have been some changes"
+  },
+  {
+   "decision": "Town Manager to circulate the auctioneer application to the Police Chief for review the next day.",
+   "quote": "ms. speidel replied no, but she would do so tomorrow."
+  },
+  {
+   "decision": "Building Inspector and DPW Director to provide a plan of action for the abandoned Flat Hill Rd building.",
+   "quote": "ms. speidel replied that she has spoken with the building inspector along with the dpw director and they will be"
+  },
+  {
+   "decision": "Ms. Bertram requested that the DPW Building Committee come before the BOS with revisions before going to bid again.",
+   "quote": "ms. bertram requested that before the building committee goes to bid again that they come before the bos with what the revisions are."
+  },
+  {
+   "decision": "Ms. Bertram requested that warrants be received in advance of meetings so the BOS has time to review.",
+   "quote": "ms. bertram requested that warrants be received in advance of the meetings so as the bos has time to review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Solid waste contract bid (Article 15)",
+   "what_was_recorded": "Lowest bid from Casella for a 10-year plan, $58,000 lower than the current contract.",
+   "figures_as_printed": [
+    "$257,000",
+    "$58,000"
+   ],
+   "quote": "the lowest bid came from casella at $257,000 that included a 10 year plan which they agreed to lock in prices for the next 10 years."
+  },
+  {
+   "topic": "Sewer Commission FY2012 budget (Article 14)",
+   "what_was_recorded": "Sewer budget proposed with no rate increase; requested added part-time Technician and part-time assistant, about $85K from retained earnings, a 3.67% expense increase, and a $7K data-sharing fee.",
+   "figures_as_printed": [
+    "$1OK",
+    "$10K",
+    "$85K",
+    "3.67%",
+    "$21K",
+    "$7K"
+   ],
+   "quote": "they would also like to add a part-time assistant to the business manager at a cost of $10k."
+  },
+  {
+   "topic": "FY12 State Aid adjustments",
+   "what_was_recorded": "Final FY12 State Aid spreadsheet nets an additional $108,030; Monty Tech assessment reduced $20,379; Quinn Bill payment of $6,114 zeroed out, leaving a net available amount of $134,523, proposed for the schools appropriation.",
+   "figures_as_printed": [
+    "$108,030",
+    "$20,379",
+    "$6,114",
+    "$134,523"
+   ],
+   "quote": "ms. speidel produced a spread sheet for the final state aid numbers for fy12 which will net an additional $108,030 in"
+  },
+  {
+   "topic": "FY12 total budget recommendation",
+   "what_was_recorded": "Total FY12 recommendation after the Town Accountant's reconciliation, $134,000 higher than the Town Manager's February recommendation.",
+   "figures_as_printed": [
+    "$26,582,575",
+    "$134,000"
+   ],
+   "quote": "the total recommendation for fy12 is $26,582,575, which is $134,000 higher than the original recommendation the town manager made back in february."
+  },
+  {
+   "topic": "FY12 unemployment costs from layoffs",
+   "what_was_recorded": "Anticipated FY12 unemployment costs from layoffs of one teacher and five aides are $53,310; estimated unemployment liability continuing from FY11 is $38,403.",
+   "figures_as_printed": [
+    "$53,310",
+    "$38,403"
+   ],
+   "quote": "anticipated unemployment costs associated with the layoffs which will need to occur in fy12 are $53,310."
+  },
+  {
+   "topic": "FY11 Police/Fire injury overage (STM Article 3)",
+   "what_was_recorded": "Proposed FY11 budget adjustment for police/fire injury costs, original appropriation $5,000.",
+   "figures_as_printed": [
+    "$31,037",
+    "$5,000"
+   ],
+   "quote": "1. police/fire injury: $31,037 - the original appropriation was $5,000, but in late may 2010"
+  },
+  {
+   "topic": "FY11 Snow & Ice deficit (STM Article 3)",
+   "what_was_recorded": "Proposed FY11 Snow & Ice deficit funding; original appropriation $50,000, actual expenditures $318,963.",
+   "figures_as_printed": [
+    "$68,963",
+    "$50,000",
+    "$318,963"
+   ],
+   "quote": "2. snow & ice deficit: $68,963 - the original appropriation for the snow & ice account was $50,000."
+  },
+  {
+   "topic": "Legal expenses funding source (FY11)",
+   "what_was_recorded": "Legal Expenses proposed as a $50,000 funding source; original appropriation $150,000, with $70,000 accrued and paid through March 31, 2011.",
+   "figures_as_printed": [
+    "$50,000",
+    "$150,000",
+    "$70,000"
+   ],
+   "quote": "legal expenses: $50,000 - the original appropriation for legal fees was $150,000."
+  },
+  {
+   "topic": "Warrants and accounts payable",
+   "what_was_recorded": "Warrants total four amounts this week due to two weeks of accounts payable; the printed warrant amounts are $584,328.68, $190,699.11, $247,298.12 and $88,492.61.",
+   "figures_as_printed": [
+    "$584,328.68",
+    "$190,699.11",
+    "$247,298.12",
+    "$88,492.61"
+   ],
+   "quote": "ms. speidel informed the board that there are 2 weeks worth of accounts payables this week due to the fact that some departments enter in their own accounts payable which generates additional warrants."
+  },
+  {
+   "topic": "Storm water management / NPDES permit",
+   "what_was_recorded": "Town has appropriated about $25K per year for storm water management; new NPDES requirements could be far more costly.",
+   "figures_as_printed": [
+    "$25K"
+   ],
+   "quote": "appropriating approximately $25k per year for storm water management"
+  },
+  {
+   "topic": "Going Places Van revolving fund (Article 16)",
+   "what_was_recorded": "Discussion of a $5K revolving fund cap for the Going Places Van donations; the van is MART-owned, so no Town appropriation is requested.",
+   "figures_as_printed": [
+    "$5k",
+    "$5K",
+    "$SK"
+   ],
+   "quote": "ms. noble replied that she would recommend having a revolving fund with the $5k based upon the fact that numerous"
+  },
+  {
+   "topic": "Going Places Van funding request",
+   "what_was_recorded": "Council on Aging director stated she is not asking the Town for money, only an account for donations.",
+   "figures_as_printed": [],
+   "quote": "she clarified that she is not here asking for any money from the town but only for another account for the donations to be put into."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve Fund proposed as a funding source for FY11 STM budget adjustments.",
+   "amount_as_printed": "$50,000",
+   "outcome": "proposed to Town Meeting (STM Article 3); no vote recorded",
+   "quote": "reserve fund: $50,000 - the original appropriation was $50,000 and there have been no draws on this account this"
+  },
+  {
+   "description": "Legal Expenses proposed as a funding source for FY11 STM budget adjustments.",
+   "amount_as_printed": "$50,000",
+   "outcome": "proposed to Town Meeting (STM Article 3); no vote recorded",
+   "quote": "legal expenses: $50,000 - the original appropriation for legal fees was $150,000."
+  },
+  {
+   "description": "Net available State Aid amount proposed to be added to the schools appropriation.",
+   "amount_as_printed": "$134,523",
+   "outcome": "proposed by Town Manager; no vote recorded",
+   "quote": "ms. speidel proposed that this be added to the schools appropriation to help reduce the gap between the superintendent's"
+  },
+  {
+   "description": "Stabilization Fund draw requested by the Superintendent and School Committee to cover FY12 unemployment costs.",
+   "amount_as_printed": "not stated",
+   "outcome": "deferred; Town Manager proposed waiting until Fall Town Meeting",
+   "quote": "the superintendent along with the school committee has requested a draw upon the stabilization fund to cover these costs."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "",
+   "topic": "thanks to Project 582 volunteers",
+   "quote": "ms. bertram thanked the participants of \"project 582\" which was coordinated by the high school students over the past"
+  },
+  {
+   "speaker": "Mr. Sund",
+   "stated_role": "",
+   "topic": "Mark Twain quote on obituaries",
+   "quote": "mr. sund quoted mark twain"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "ms. bertram thanked the participants of \"project 582\" which was coordinated by the high school students over the past",
+   "tags": [
+    "public comment",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "town meeting will be held on saturday may 7\" at 9am at the high school.",
+   "tags": [
+    "town meeting",
+    "yard waste",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "no action",
+   "quote": "appointments current business",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Article 15 Solid Waste contract",
+   "resolution": "approved 5-0 for Town Meeting (10-year contract)",
+   "quote": "mr. alonzo moved to approve article 15 request for town meeting approval of a 10 year contract for solid waste.",
+   "tags": [
+    "solid waste",
+    "warrant article",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Article 13 Solid Waste Enterprise Budget",
+   "resolution": "no action taken",
+   "quote": "no action was taken on the article at this time.",
+   "tags": [
+    "solid waste",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Article 14 FY2012 Sewer Commission budget",
+   "resolution": "discussed; no action recorded",
+   "quote": "robert ebersole, chairperson of the sewer commission spoke to the board about the",
+   "tags": [
+    "sewer",
+    "budget",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "FY12 State Aid and budget reconciliation",
+   "resolution": "discussed; no action recorded",
+   "quote": "ms. speidel produced a spread sheet for the final state aid numbers for fy12 which will net an additional $108,030 in",
+   "tags": [
+    "state aid",
+    "budget",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Zoning articles (Article 22)",
+   "resolution": "deferred pending Planning Board presentation",
+   "quote": "no decision will be made on article 22 until after the planning boards presentation.",
+   "tags": [
+    "zoning",
+    "planning board",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "FY11 budget adjustments (STM Article 3)",
+   "resolution": "discussed; proposed to Town Meeting, no vote",
+   "quote": "ms. speidel stated that she proposes that town meeting approve two budget",
+   "tags": [
+    "FY11",
+    "budget adjustment",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Going Places Van revolving fund (Article 16)",
+   "resolution": "passed over; discussed two separate revolving accounts",
+   "quote": "after all is said and done they will be passing over this article because there have been some changes",
+   "tags": [
+    "council on aging",
+    "revolving fund",
+    "van",
+    "MART"
+   ]
+  },
+  {
+   "topic": "Lion's Club roadblock request",
+   "resolution": "approved 4-0",
+   "quote": "and on the corner of whalom rd./rt. 13. mr. matthews seconded. on vote, motion carried, 4 in favor, o opposed.",
+   "tags": [
+    "roadblock",
+    "license",
+    "event"
+   ]
+  },
+  {
+   "topic": "Auctioneer's License Application, Michael G. Roy",
+   "resolution": "approved 5-0 pending Police Chief approval",
+   "quote": "pending the police chiefs approval on may 14, 2011. mr. alonzo seconded. on vote, motion carried, 5 in favor 0 opposed.",
+   "tags": [
+    "licensing",
+    "auction"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received; no action",
+   "quote": "mr. matthews reported that he had attended the dpw building committee meeting last tuesday.",
+   "tags": [
+    "committee",
+    "DPW building",
+    "broadband",
+    "PACC"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none",
+   "quote": "6. department updates - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "none",
+   "quote": "7. town manager updates - none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "adjourned regular meeting at 9:47PM; no executive session vote recorded",
+   "quote": "mr. sund moved to adjourn the regular scheduled meeting. mr. debettencourt seconded.",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tessa Davis matrix chart of solid waste bids",
+   "where": "text",
+   "quote": "tessa davis, representing masstoss was present to report on the findings which she gave through a matrix chart that she"
+  },
+  {
+   "name": "Spread sheet for final FY12 State Aid numbers",
+   "where": "text",
+   "quote": "ms. speidel produced a spread sheet for the final state aid numbers for fy12 which will net an additional $108,030 in"
+  },
+  {
+   "name": "Town Accountant's reconciliation of the budget",
+   "where": "text",
+   "quote": "the next several sheets contained the town accountant's reconciliation of the budget."
+  },
+  {
+   "name": "Letter from Kopleman & Paige regarding NPDES Permit",
+   "where": "text",
+   "quote": "ms. bertram is concerned with a letter from kopleman & paige regarding the new interstate"
+  },
+  {
+   "name": "Anticipated fee schedule and revenue and expense report for Going Places Van (Doreen Noble)",
+   "where": "text",
+   "quote": "ms. noble has put together an anticipated fee schedule along with revenue and expense report showing what will be expected"
+  },
+  {
+   "name": "Email from MART confirming approval of van advertising signs",
+   "where": "text",
+   "quote": "ms. noble replied that she had received an email from mart confirming approval of the signs."
+  },
+  {
+   "name": "Warrants 22P-11, 58-11, 59-11, 60-11",
+   "where": "text",
+   "quote": "warrants - 22p-11 58-11 59-11 60-11"
+  },
+  {
+   "name": "Article 13, Solid Waste Enterprise Budget",
+   "where": "text",
+   "quote": "article 13, solid waste enterprise budget -ms. speidel explained article 13 to the board"
+  },
+  {
+   "name": "Article 14, FY2012 Budget (Sewer Commission)",
+   "where": "text",
+   "quote": "article 14, fy2012 budget - robert ebersole, chairperson of the sewer commission spoke to the board"
+  },
+  {
+   "name": "Article 15, Solid Waste Contract",
+   "where": "text",
+   "quote": "article 15, solid waste contract - ms. speidel stated that they had recently went out requesting proposals"
+  },
+  {
+   "name": "Article 16, Going Places Revolving Fund (Going Places Van)",
+   "where": "text",
+   "quote": "going places revolving fund (taken out of order)- ms. speidel stated that this would be article 16"
+  },
+  {
+   "name": "Article 22 (zoning warrant article)",
+   "where": "text",
+   "quote": "no decision will be made on article 22 until after the planning boards presentation."
+  },
+  {
+   "name": "STM Article 3 (FY11 budget adjustments)",
+   "where": "text",
+   "quote": "she proposes that town meeting approve two budget adjustments as follows, stm article 3:"
+  },
+  {
+   "name": "Lion's Club Roadblock Request",
+   "where": "text",
+   "quote": "lion's club roadblock request - saturday may 7'h"
+  },
+  {
+   "name": "Auctioneer's License Application, Michael G. Roy, d/b/a \"Got Stuff?\"",
+   "where": "text",
+   "quote": "auctioneer's license application, michael g. roy, d/b/a \"got stuff?, may 6, 2011 (taken out of order)-"
+  }
+ ],
+ "tags": [
+  "town meeting",
+  "solid waste",
+  "sewer commission",
+  "FY2012 budget",
+  "state aid",
+  "schools",
+  "FY11 budget adjustment",
+  "revolving fund",
+  "council on aging",
+  "licenses",
+  "warrants",
+  "stormwater",
+  "broadband",
+  "zoning",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-01-26",
  "docid": "5535",
@@ -12,15 +12,454 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike",
    "seconded_by": "John",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "carl asked for the motion to adjourn. mike made the motion, john seconded. vote taken was unanimous."
+   "quote": "mike made the motion, john seconded. vote taken was unanimous."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; one vote recorded (procedural motion to adjourn). The minutes mention a proposed vote on Private Extension policy changes but note it was postponed to the next meeting because not enough members had reviewed it, so no vote was taken on that item.",
- "cost_usd": 0.0873715
+ "dropped_unquoted": 1,
+ "note": "OCR text with errors and inconsistent names. The attendance line prints \"Chair, Cari Luck\", but the body refers to the chair as \"Carl\" (and once \"Car\"); I did not merge them and recorded the attendance-line name. \"Debbie\" in the body is taken to be Deb Trumbull, and \"Jaime\" is treated as Jamie Rheault. Only one motion is recorded with a vote result (adjournment, unanimous). Other business (invoices \"for approval\", the Private Extension item) has no recorded vote. The minutes end with garbled signature text, and the attendee list does not show who was present at each point beyond the attendance line.",
+ "cost_usd": 0.010100820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cari Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair, cari luck, members- mike nault, john reynolds; business manager, barb lefebvre. minutes clerk, emily lehto."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, cari luck, members- mike nault, john reynolds; business manager, barb lefebvre. minutes clerk, emily lehto."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, cari luck, members- mike nault, john reynolds; business manager, barb lefebvre. minutes clerk, emily lehto."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair, cari luck, members- mike nault, john reynolds; business manager, barb lefebvre. minutes clerk, emily lehto."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes clerk",
+   "status": "present",
+   "quote": "attendees: chair, cari luck, members- mike nault, john reynolds; business manager, barb lefebvre. minutes clerk, emily lehto."
+  },
+  {
+   "name": "Sue Bunish",
+   "role": "",
+   "status": "absent",
+   "quote": "absent - sue bunish"
+  },
+  {
+   "name": "Deb Trumbull",
+   "role": "Guest (minutes also refer to her as Debbie, SWSS)",
+   "status": "present",
+   "quote": "guests = deb trumbull, heather montalvo - swss, bob ebersole, bos liaison"
+  },
+  {
+   "name": "Heather Montalvo",
+   "role": "SWSS",
+   "status": "present",
+   "quote": "debbie and heather from small water systems services (swss) arrived at 6:10pm."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "BOS liaison",
+   "status": "present",
+   "quote": "guests = deb trumbull, heather montalvo - swss, bob ebersole, bos liaison"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham, representing Kevin Hill (applicant)",
+   "status": "present",
+   "quote": "jamie rheault from whitman & bingham is seeking a leominster sewer direct connect to 835 leominster road."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Private Extension policy vote postponed to the next meeting because not enough members had reviewed the revised regulation.",
+   "quote": "not enough members had yet reviewed it, so it was postponed to the next meeting for a vote."
+  },
+  {
+   "decision": "Ugly Omelet site to be revisited with the owners present.",
+   "quote": "it was agreed that this place needed to be visited again with the owners present."
+  },
+  {
+   "decision": "SWSS inspections to be completed every 3 months; restaurants required to pump every 6 months until more is learned.",
+   "quote": "he concluded that inspections with swss should be completed every 3 months and until more is learned, restaurants will be required to pump every 6 months."
+  },
+  {
+   "decision": "Barb to send the SCADA quotes received to the Commissioners for review.",
+   "quote": "carl asked that barb send the quotes received for scada to the commissioners for review."
+  },
+  {
+   "decision": "Commission would like to look into a more efficient way to heat the pump stations to reduce winter costs.",
+   "quote": "the commission would like to look into a more efficient way to heat the stations to reduce costs for winter months."
+  },
+  {
+   "decision": "Unitil proposal: applicant to come before the Commission at the next meeting for approval, provided the peer reviewing engineer comes in first.",
+   "quote": "it was confirmed that he'd come in for that approval at the next meeting, as long as we can get the peer reviewing engineer to come in to review project before him."
+  },
+  {
+   "decision": "Barb to coordinate having Mr. Walsh and Jack Rodriquenz attend the next meeting.",
+   "quote": "asked barb to coordinate getting both mr. walsh and jack rodriquenz at that meeting as well."
+  },
+  {
+   "decision": "Minutes of 1/12/16 to be placed on the 2/9 agenda for acceptance; Carl asked for the word version to make edits before resending.",
+   "quote": "minutes of 1/12/16 were sent out 1/2, but were not put on the agenda. it will be on the 2/9 agenda for acceptance."
+  },
+  {
+   "decision": "Barb to follow up with Adam Burney of the Planning Board on the 274 Prospect timeline and connection permit revenue.",
+   "quote": "barb needs to follow up with adam burney of the planning board about the timeline on 274 prospect"
+  },
+  {
+   "decision": "Working session on regulations review needed.",
+   "quote": "town codification recommendations - it was discussed that we need a working session on regulations review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SWSS inspection fee",
+   "what_was_recorded": "SWSS stated its fee would be an hourly rate; Carl said the program had to remain cost neutral so residents are not funding restaurants.",
+   "figures_as_printed": [
+    "$70/hr"
+   ],
+   "quote": "debbie stated that their fee would be $70/hr. carl stated that this had to remain cost neutral so the residents are not funding the restaurants."
+  },
+  {
+   "topic": "Grease trap fee structure",
+   "what_was_recorded": "Carl reviewed the grease trap fee tiers and said the Commission will step up monitoring compliance.",
+   "figures_as_printed": [
+    "$50",
+    "$100",
+    "$250"
+   ],
+   "quote": "carl reviewed the fee structure - $50 compliant, $100 partial"
+  },
+  {
+   "topic": "Flow Assessment contract renewal",
+   "what_was_recorded": "Flow Assessment agreed to renew its contract for under $10,000, so no bid is needed.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "flow assessment has agreed to renew their contract for under $10,000, so we will not have to go out for bid."
+  },
+  {
+   "topic": "Weston & Sampson connection fee invoice",
+   "what_was_recorded": "One of four invoices presented for approval; the Weston & Sampson connection fee work, with urgency due to a 2/2 court date.",
+   "figures_as_printed": [
+    "$1147.50"
+   ],
+   "quote": "the first was the weston & sampson connection fee work of $1147.50 for which carl and steve had exchanged emails."
+  },
+  {
+   "topic": "Fitchburg invoice (John Fitch Highway)",
+   "what_was_recorded": "An invoice from Fitchburg for the amount expected was received; Fitchburg's assessment for the John Fitch project is not yet known and is unlikely in FY17.",
+   "figures_as_printed": [
+    "$8597.99"
+   ],
+   "quote": "one invoice was from fitchburg for the amount that was expected of $8597.99."
+  },
+  {
+   "topic": "Pool of money for failing septic loans (BOH)",
+   "what_was_recorded": "Carl described a BOH-managed pool of money for loans to people with failing septic systems.",
+   "figures_as_printed": [
+    "$100k"
+   ],
+   "quote": "working with the boh that manages a pool of money of roughly $100k."
+  },
+  {
+   "topic": "Funding program loan terms",
+   "what_was_recorded": "Bob E. clarified loan terms: 10 years under the threshold and 20 years over it.",
+   "figures_as_printed": [
+    "$5k"
+   ],
+   "quote": "bob e. came forward to clarify that on the funding program-time period, the loan is 10 years if the project is under $5k and 20 years if over $5k."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bob E.",
+   "stated_role": "",
+   "topic": "funding program loan terms",
+   "quote": "bob e. came forward to clarify that on the funding program-time period, the loan is 10 years if the project is under $5k and 20 years if over $5k."
+  },
+  {
+   "speaker": "Mike",
+   "stated_role": "",
+   "topic": "grease trap reporting, online posting",
+   "quote": "mike had one more comment on grease trap reporting and introduced the possibility of online reporting where restaurants could just post their reports online."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "FOG workshop with Small Water Systems Services (external interceptor inspections)",
+   "resolution": "discussed; report to be sent; SWSS to email next inspection schedule",
+   "quote": "fog workshop with small water systems services -carl opened the meeting at 6:03pm.",
+   "tags": [
+    "FOG",
+    "grease traps",
+    "SWSS",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Announcements: Troy Daniels resignation; Emily Lehto welcomed; Pleasantview status",
+   "resolution": "noted",
+   "quote": "announcements: troy daniels has resigned from the sewer commission effective immediately.",
+   "tags": [
+    "announcements",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Appointment: 835 Leominster Road (Kevin Hill) direct connect",
+   "resolution": "continued to next meeting; BOH letter and data requested",
+   "quote": "jamie rheault from whitman & bingham is seeking a leominster sewer direct connect to 835 leominster road.",
+   "tags": [
+    "appointment",
+    "sewer connection",
+    "septic",
+    "Leominster Road"
+   ]
+  },
+  {
+   "topic": "Appointment: Unitil proposal at 357 Electric Ave",
+   "resolution": "discussed; approval expected at next meeting if peer reviewer attends",
+   "quote": "the next appointment was also with jamie rheault of whitman & bingham regarding the unitil proposal at 357 electric ave.",
+   "tags": [
+    "appointment",
+    "peer review",
+    "Unitil",
+    "floor drain"
+   ]
+  },
+  {
+   "topic": "Budget FY17",
+   "resolution": "discussed; Barb to follow up on several line items",
+   "quote": "budget fy17 - carl requested that barb go through each line on the proposed budget which she did.",
+   "tags": [
+    "budget",
+    "FY17",
+    "grease trap fees",
+    "electricity",
+    "training"
+   ]
+  },
+  {
+   "topic": "274 Prospect St peer review",
+   "resolution": "discussed; peer reviewer to be invited",
+   "quote": "274 prospect st peer review - carl noted that we'd received the peer review.",
+   "tags": [
+    "peer review",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Town codification recommendations",
+   "resolution": "working session needed",
+   "quote": "town codification recommendations - it was discussed that we need a working session on regulations review.",
+   "tags": [
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Highfield Village",
+   "resolution": "no action; awaiting counsel",
+   "quote": "highfield village - carl noted that there was no new news from counsel.",
+   "tags": [
+    "privilege fees",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects review (vacancies)",
+   "resolution": "noted; appointments to be made by Board of Selectmen and Sewer Commission",
+   "quote": "sewer commission projects review - carl noted that there are openings on the sewer commission",
+   "tags": [
+    "appointments",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Grease traps",
+   "resolution": "continued to next meeting",
+   "quote": "grease traps - sue is out sick and will update at next meeting.",
+   "tags": [
+    "grease traps"
+   ]
+  },
+  {
+   "topic": "Private Extension policy",
+   "resolution": "postponed to next meeting for vote",
+   "quote": "private extension policy- carl asked if we were ready to vote on the changes to the private extension regulation.",
+   "tags": [
+    "regulations",
+    "private extension"
+   ]
+  },
+  {
+   "topic": "SCADA system",
+   "resolution": "new quote requested; quotes to be sent to Commissioners",
+   "quote": "scada system - finally received updated quote from swss.",
+   "tags": [
+    "SCADA",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Funding sources for public projects/individuals",
+   "resolution": "discussed; public hearing expected",
+   "quote": "funding sources for public projects/individuals - sue is driving this",
+   "tags": [
+    "septic",
+    "BOH",
+    "loans"
+   ]
+  },
+  {
+   "topic": "Flow rate/metering",
+   "resolution": "no action; Mike to be included in next flow meter inspection",
+   "quote": "flow rate/metering -mike stated that all is good, but that he wants to be included on the next flow meter inspection.",
+   "tags": [
+    "flow meter",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Pump stations: Francis St generator",
+   "resolution": "work accepted and authorized by Jack; no pump station issues",
+   "quote": "pump stations -francis st generator - barb noted that we'd received a quote for the work which jack had accepted",
+   "tags": [
+    "pump stations",
+    "generator"
+   ]
+  },
+  {
+   "topic": "Business Manager report (CWMP, invoices, billing, website)",
+   "resolution": "noted; four invoices presented for approval, no vote recorded",
+   "quote": "business manager report - cwmp-barb stated work will start in february per a conference call with wright pierce",
+   "tags": [
+    "CWMP",
+    "invoices",
+    "billing",
+    "website",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Minutes of 1/12/16",
+   "resolution": "to be placed on 2/9 agenda for acceptance",
+   "quote": "minutes of 1/12/16 were sent out 1/2, but were not put on the agenda.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "two speakers",
+   "quote": "carl asked for public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:13pm, unanimous",
+   "quote": "carl asked for the motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Original Scope of Work and Contract (SWSS)",
+   "where": "list",
+   "quote": "barb handed out original scope of work and contract and all present reviewed."
+  },
+  {
+   "name": "Grease trap program proposal (SWSS)",
+   "where": "text",
+   "quote": "debbie had a proposal for a grease trap program which was reviewed and she will send copy electronically."
+  },
+  {
+   "name": "Final, counsel-revised Private Extension regulation edition",
+   "where": "text",
+   "quote": "barb noted that she'd sent the final, counsel-revised edition in the package."
+  },
+  {
+   "name": "Graves peer review report",
+   "where": "text",
+   "quote": "carl noted that he'd reviewed the graves peer review report"
+  },
+  {
+   "name": "Spreadsheets on indirect costs and debt service payments",
+   "where": "text",
+   "quote": "barb had spreadsheets for backup on both the indirect costs and debt service payments"
+  },
+  {
+   "name": "Troy Daniels resignation (email)",
+   "where": "text",
+   "quote": "carl read his resignation that he received via email."
+  },
+  {
+   "name": "SWSS email of 1/7 (new SCADA quote)",
+   "where": "text",
+   "quote": "debbie had stated in an email sent 1/7 that swss would give a new quote for less."
+  },
+  {
+   "name": "SCADA quotes",
+   "where": "text",
+   "quote": "carl asked that barb send the quotes received for scada to the commissioners for review."
+  },
+  {
+   "name": "SWSS letter of authorization",
+   "where": "text",
+   "quote": "debbie stated that they do and that they also have a letter of authorization."
+  },
+  {
+   "name": "Minutes of 1/12/16",
+   "where": "text",
+   "quote": "minutes of 1/12/16 were sent out 1/2, but were not put on the agenda."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FOG",
+  "grease traps",
+  "SWSS",
+  "budget FY17",
+  "inspections",
+  "pump stations",
+  "SCADA",
+  "regulations",
+  "private extension",
+  "appointments",
+  "peer review",
+  "Highfield Village",
+  "betterments",
+  "minutes",
+  "workshop"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb handed out original scope of work"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

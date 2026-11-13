@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-03-05",
  "docid": "873",
@@ -10,8 +10,129 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03052012-873",
   "doc_url": "/docs/meetings/board-of-health/2012-03-05-minutes-873.pdf"
  },
- "votes": [],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1107255
+ "votes": [
+  {
+   "motion": "Move forward with approval of the 58 Spring Street Extension septic plan, subject to a determination whether a Presby System together with a Fast pre-treatment system is an allowed use.",
+   "moved_by": "Jewell",
+   "seconded_by": "Rabbitt",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "on motion by jewell an d second by rabbitt it was decided that the board would move forward with approval of the plan"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "The minutes record one motion (Jewell/Rabbitt) with no vote tally or result printed, so its outcome is 'not stated'. No adjournment vote is recorded; the text only says 'Meeting adjourned 7:45 pm'. Text is extracted with odd internal spacing (e.g. 'an d', 'th e', 'questio n'), copied as printed in quotes. The minutes print no dollar figures and no document list. Roles for board members and Chris MacKenzie are not printed and are left blank.",
+ "cost_usd": 0.00300442,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell a nd dave passios"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell a nd dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell a nd dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, jack rabbitt, perry jewell a nd dave passios"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "",
+   "status": "present",
+   "quote": "chris mackenzie met with the board together with th e owner, mr. bill o'neil."
+  },
+  {
+   "name": "Bill O’Neil",
+   "role": "owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board together with th e owner, mr. bill o'neil."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "according to agent jim garreffi, there is a questio n as to whether or not a presby system can be used"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "none",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "none",
+   "quote": "title 5 inspection reports acknowledged : none",
+   "tags": [
+    "title 5"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "none",
+   "quote": "septic permits signed : none",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "58 Spring Street Extension",
+   "resolution": "approved subject to determination on Presby and pre-treatment use (motion; result not stated)",
+   "quote": "on motion by jewell an d second by rabbitt it was decided that the board would move forward with approval of the plan",
+   "tags": [
+    "septic",
+    "variance",
+    "Title 5",
+    "pre-treatment",
+    "groundwater",
+    "well",
+    "lake front"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Septic plan for 58 Spring Street Extension (original Presby system plus 2,000 gallon fast system in place of septic tank; undated)",
+   "where": "text",
+   "quote": "the plan currently be fore the board includes the original presby system and the addition of a 2,000 gallon fast system"
+  }
+ ],
+ "tags": [
+  "septic",
+  "variance",
+  "Title 5",
+  "pre-treatment",
+  "Presby system",
+  "groundwater",
+  "well",
+  "lake front lot"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

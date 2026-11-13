@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-10-28",
  "docid": "1481",
@@ -12,15 +12,174 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "Mark Erickson",
    "seconded_by": "Mike Mackin",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn made by mark erickson, seconded by mike mackin. meeting adjourned at 8:15 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR minutes. One procedural vote recorded: adjournment.",
- "cost_usd": 0.0817445
+ "note": "OCR text from a scanned, three-page minutes document with some errors (e.g., 'preterred', 'Passios is 57,000 s.f. is larger'). The only recorded motion is the motion to adjourn, and the minutes print no vote count, so its outcome is recorded as not stated. The minutes print no dollar figures; square footages and seating capacities are not money and are not recorded as budget items. The minutes name no documents list heading.",
+ "cost_usd": 0.00417732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "committee members present: (jamie toale, ron albert, dave macdonald, mark erickson, mike mackin, rebecca lantry)"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Committee Member; Recording Secretary for this meeting",
+   "status": "present",
+   "quote": "(recording secretary for meeting of 10-28-15)"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee members present: (jamie toale, ron albert, dave macdonald, mark erickson, mike mackin, rebecca lantry)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "motion to adjourn made by mark erickson, seconded by mike mackin. meeting adjourned at 8:15 pm"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "motion to adjourn made by mark erickson, seconded by mike mackin. meeting adjourned at 8:15 pm"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "committee members present: (jamie toale, ron albert, dave macdonald, mark erickson, mike mackin, rebecca lantry)"
+  },
+  {
+   "name": "Charlie Hay",
+   "role": "principal in the firm (Tappe Associates, Architects), presenting",
+   "status": "present",
+   "quote": "mr. charles hay, a principal in the firm, made a presentation to the committee which summarized his firm's work to date on the architectural feasibility study."
+  },
+  {
+   "name": "John Londa",
+   "role": "Public (as printed in closing comments)",
+   "status": "present",
+   "quote": "public - john londa...school committee will release passios/brooks house by august 2016"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next Building Reuse Committee meeting was confirmed for 11-24-15.",
+   "quote": "next building reuse committee meeting was confirmed for 11-24-15."
+  },
+  {
+   "decision": "Charlie Hay will continue refining the planning process, make relative cost comparisons focused on the preferred option, and prepare a matrix relating criteria cost to program.",
+   "quote": "in meantime, ch will continue refining planning process as well as make relative cost"
+  },
+  {
+   "decision": "Members agreed that good publicity about the release of CH work was important, and Reuse Committee members will address FAQs.",
+   "quote": "it was agreed amongst members of the committee that good publicity regarding release of ch work was important."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost comparisons and cost analysis of preferred option",
+   "what_was_recorded": "Charlie Hay will make relative cost comparisons and a cost analysis of the preferred option; no dollar figures were printed.",
+   "quote": "make relative cost comparisons, concentrating on cost analysis of preterred option"
+  },
+  {
+   "topic": "Primary School restoration cost",
+   "what_was_recorded": "Providing adequate parking and program compliance at the Primary School would require a significant amount of work and cost; no dollar figure printed.",
+   "quote": "requiring a significant amount of work and cost"
+  },
+  {
+   "topic": "Cost differentials for one- or two-story additions",
+   "what_was_recorded": "Some discussion of cost differentials for one or two story building additions, including structural and finishes; no dollar figure printed.",
+   "quote": "some discussion about a one or two story building additions and cost differentials for"
+  },
+  {
+   "topic": "Operating costs for Passios/Brooks House",
+   "what_was_recorded": "The School Committee said it will not budget for operating costs for the Passios/Brooks House after release; no dollar figure printed.",
+   "quote": "will not budget for operating costs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Londa",
+   "stated_role": "Public",
+   "topic": "School Committee release of Passios/Brooks House",
+   "quote": "public - john londa...school committee will release passios/brooks house by august 2016..... will not budget for operating costs."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, announcements, and public comment",
+   "resolution": "no action",
+   "quote": "no announcements from the chair no public comments by the committee no public comments by the public"
+  },
+  {
+   "topic": "PAC space needs",
+   "resolution": "reported; no action",
+   "quote": "chairman, jamie toale reported that pac currently uses classroom space at the passios"
+  },
+  {
+   "topic": "Architectural Feasibility Study progress presentation by Tappe Associates",
+   "resolution": "presented; no action recorded",
+   "quote": "mr. charles hay, a principal in the firm, made a presentation to the committee which summarized his firm's work to date on the architectural feasibility study."
+  },
+  {
+   "topic": "Next meeting and next steps",
+   "resolution": "next meeting confirmed for 11-24-15",
+   "quote": "next building reuse committee meeting was confirmed for 11-24-15."
+  },
+  {
+   "topic": "Publicity, FAQs, and committee membership",
+   "resolution": "publicity agreed; membership discussed, no action",
+   "quote": "it was agreed amongst members of the committee that good publicity regarding release of ch work was important."
+  },
+  {
+   "topic": "Closing public comment and adjournment",
+   "resolution": "adjourned 8:15 PM",
+   "quote": "motion to adjourn made by mark erickson, seconded by mike mackin. meeting adjourned at 8:15 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sketch Drawing of PAC space",
+   "where": "text",
+   "quote": "a sketch drawing of their space was forwarded to charlie hay"
+  },
+  {
+   "name": "Matrix relating criteria cost to program",
+   "where": "text",
+   "quote": "ch will also prepare a 'matrix' to show relationship between criteria cost/program."
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "architectural feasibility study",
+  "Tappe Associates",
+  "Town Hall",
+  "Ritter building",
+  "Primary School",
+  "Passios",
+  "PAC space",
+  "cost analysis",
+  "committee membership",
+  "publicity"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-02-10",
  "docid": "4774",
@@ -12,15 +12,284 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the regular session",
+   "motion": "Adjourn the Regular Session.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "being no further business board voted unanimously. to adjourn regular session at 8:41p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Only one vote recorded: adjournment at end of meeting. The lengthy Summer Street Project discussion included extensive debate and questions but no recorded motion or vote.",
- "cost_usd": 0.08692949999999999
+ "note": "OCR text from macOS Vision; some sentences are truncated or garbled (e.g., the Tom B. clarification and Kerry's line about asking the state are cut off mid-sentence). Only one motion appears in the text: the adjournment vote, with no mover or seconder printed. The Summer Street discussion records no motion, so no vote is entered for it. The PUBLIC COMMENT, ANNOUNCEMENTS, APPOINTMENTS, OLD BUSINESS and COMMITTEE APPOINTMENTS headings have no content under them. Paula's board role is not printed.",
+ "cost_usd": 0.007331819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Toby Bakaysa",
+   "role": "member, Planning Board",
+   "status": "present",
+   "quote": "meeting opened at 7:07 p.m. with members of the planning board; toby bakaysa, joanna bilotta, thomas bodkin, robert salia, nathan lockwood and planning director, marion benson."
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "member, Planning Board",
+   "status": "present",
+   "quote": "members of the planning board; toby bakaysa, joanna bilotta, thomas bodkin, robert salia, nathan lockwood and planning director, marion benson."
+  },
+  {
+   "name": "Thomas Bodkin",
+   "role": "member, Planning Board",
+   "status": "present",
+   "quote": "members of the planning board; toby bakaysa, joanna bilotta, thomas bodkin, robert salia, nathan lockwood and planning director, marion benson."
+  },
+  {
+   "name": "Robert Salia",
+   "role": "member, Planning Board",
+   "status": "present",
+   "quote": "members of the planning board; toby bakaysa, joanna bilotta, thomas bodkin, robert salia, nathan lockwood and planning director, marion benson."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "member, Planning Board",
+   "status": "present",
+   "quote": "members of the planning board; toby bakaysa, joanna bilotta, thomas bodkin, robert salia, nathan lockwood and planning director, marion benson."
+  },
+  {
+   "name": "Marion Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "nathan lockwood and planning director, marion benson."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present; jack rodriquenz, dpw director and trish domigan from vhb."
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "from VHB",
+   "status": "present",
+   "quote": "also present; jack rodriquenz, dpw director and trish domigan from vhb."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trish Domigan will provide the Alternatives Analysis work-to-date information to the Planning Board.",
+   "quote": "trish reviewed what has been done to date with regards to the alternatives analysis and will provide this information to the planning board."
+  },
+  {
+   "decision": "Trish Domigan will talk to the state about extending the schedule for the analysis.",
+   "quote": "think there could be a combination and will talk to the state about extending this out"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street/North Street construction cost",
+   "what_was_recorded": "The conceptual design put the construction cost at 6.3 million dollars, and the next-step estimate is printed as 6,300,000, which may change with added amenities.",
+   "figures_as_printed": [
+    "6,300,000",
+    "6.3 million dollars"
+   ],
+   "quote": "conceptual design developed to determine construction cost of 6.3 million dollars"
+  },
+  {
+   "topic": "Preliminary design fee",
+   "what_was_recorded": "The preliminary design fee is stated as $174,000.",
+   "figures_as_printed": [
+    "$174,000"
+   ],
+   "quote": "preliminary design fee is $174,000"
+  },
+  {
+   "topic": "Proposed cost breakdown between the towns",
+   "what_was_recorded": "Proposed shares of preliminary design: Lunenburg $90,644, Fitchburg $14,223, Leominster $19,133.",
+   "figures_as_printed": [
+    "$90,644",
+    "$14,223",
+    "$19,133"
+   ],
+   "quote": "proposed breakdown between the towns is lunenburg - $90,644"
+  },
+  {
+   "topic": "State (EOHED and Mass Development) design contribution",
+   "what_was_recorded": "The state offered to contribute $50k toward the corridor project to advance it to 25% design, with the municipalities covering the balance above $50k.",
+   "figures_as_printed": [
+    "$50k"
+   ],
+   "quote": "are prepared to contribute $50k toward the summer"
+  },
+  {
+   "topic": "State leftover grant funds for preliminary design",
+   "what_was_recorded": "The state offered $50K in leftover grant funds toward preliminary design, with conditions attached.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "they have offered us $50k in left over grant funds to put toward preliminary design"
+  },
+  {
+   "topic": "First design funding amount",
+   "what_was_recorded": "A question was raised whether the first $115,000 for design would unlock funding for the whole project.",
+   "figures_as_printed": [
+    "$115,000"
+   ],
+   "quote": "nathan questioned if the first $115,000 for design will unlock the money for the whole project."
+  },
+  {
+   "topic": "State funding for commitment to a 43D site",
+   "what_was_recorded": "A member said committing to a 43D just to get $50,000 in state funding does not seem viable.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "commit to a 43d just to get $50,000 state funding"
+  },
+  {
+   "topic": "Preliminary design cost after state share",
+   "what_was_recorded": "Preliminary design costs $174,000; applying the state's $50K reduces the amount to $124,000.",
+   "figures_as_printed": [
+    "$174,000",
+    "$50K",
+    "$124,000"
+   ],
+   "quote": "the cost of preliminary design is $174,000. we can apply the state's $50k, reducing the amount to $124,000."
+  },
+  {
+   "topic": "Alternatives Analysis appropriation",
+   "what_was_recorded": "At Special Town Meeting the Town appropriated $56K for an Alternatives Analysis, which could be applied partly to the preliminary design share.",
+   "figures_as_printed": [
+    "$56K"
+   ],
+   "quote": "at special town meeting, the town appropriated $56k for an alternatives analysis."
+  },
+  {
+   "topic": "Remaining local share needed for preliminary design",
+   "what_was_recorded": "After applying the $56K, the Town would need to identify an additional $34K to proceed with preliminary design.",
+   "figures_as_printed": [
+    "$34K"
+   ],
+   "quote": "need to identify an additional $34k in order to proceed with preliminary"
+  },
+  {
+   "topic": "Chapter 90 fund balance",
+   "what_was_recorded": "A small balance remains in this year's Chapter 90 fund, described as sufficient to cover the amount; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we do have a small balance remaining in this year's chapter 90 fund, sufficient to cover this amount."
+  },
+  {
+   "topic": "40R (Tri-Town) state funds in Stabilization Fund",
+   "what_was_recorded": "Funds the Town received from the state for the 40R (Tri-Town) project sit in a Stabilization Fund and need a 2/3 Town Meeting vote to access; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "these funds are currently sitting in a stabilization fund and cannot be accessed without 2/3 majority vote of town meeting."
+  },
+  {
+   "topic": "Risk of losing the $50,000 from communities",
+   "what_was_recorded": "Fitchburg and Leominster have committed to the $50,000; losing it would require reconfirmation from the other communities.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "fitchburg and leominster have bought into the $50,000 and if during this process we lose the $50,000"
+  },
+  {
+   "topic": "MRPC grant for land use work",
+   "what_was_recorded": "The Town applied for and received an MRPC grant for land use planning work; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we applied for and received a grant from mrpc for this work."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Summer Street Project (reconstruction with Leominster and Fitchburg)",
+   "resolution": "discussed; no motion recorded",
+   "quote": "paula reviewed was has been taking place with regards to the reconstruction of summer st.",
+   "tags": [
+    "Summer Street",
+    "preliminary design",
+    "Alternatives Analysis",
+    "43D",
+    "MRPC",
+    "Planning Board",
+    "state funding"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Project Need form (submitted to DOT)",
+   "where": "text",
+   "quote": "submitted a project need form to dot for project"
+  },
+  {
+   "name": "Letters of support from each community and state delegates",
+   "where": "text",
+   "quote": "received letters of support from each community and state delegates"
+  },
+  {
+   "name": "Application to the MRPC District Local Technical Assistance Program",
+   "where": "text",
+   "quote": "has submitted an application for the mrpc district local technical assistance program"
+  },
+  {
+   "name": "Alternatives Analysis",
+   "where": "text",
+   "quote": "at special town meeting, the town appropriated $56k for an alternatives analysis."
+  },
+  {
+   "name": "Plans and site layout to date",
+   "where": "text",
+   "quote": "reviewed the plans and site layout to date involving the three communities"
+  }
+ ],
+ "tags": [
+  "Summer Street",
+  "preliminary design funding",
+  "Alternatives Analysis",
+  "Planning Board",
+  "MRPC",
+  "43D site",
+  "Chapter 90",
+  "state funding",
+  "Leominster",
+  "Fitchburg",
+  "VHB"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

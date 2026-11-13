@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-08-09",
  "docid": "3570",
@@ -12,22 +12,241 @@
  },
  "votes": [
   {
-   "motion": "Approve the Modification as submitted",
-   "moved_by": "Emerick R. Bakaysa",
+   "motion": "Approve the Modification for Emerald Place at Lake Whalom as submitted.",
+   "moved_by": "Chair",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "chair made motion to approve the modification as su bmitted. second, mr. saiia. roll call vote- mr. b odkin jr., nay, ms. bilotta, aye, mr. lockwood, aye, mr. saiia, aye, mr. bakaysa , aye. vote passed 4 to",
+   "quote": "chair made motion to approve the modification as su bmitted. second, mr. saiia. roll call vote- mr. b odkin jr., nay"
+  },
+  {
+   "motion": "Sign the plan for Town of Lunenburg, 1079 Massachusetts Avenue (Jones House), which the Planning Board had approved.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "vote taken, 5 votes affirmative - plan signed."
+  },
+  {
+   "motion": "Enter into Executive Session, not to return to general session, for the purpose of reviewing confidential litigation data.",
+   "moved_by": "",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to en ter into executive session, not to return to genera l session for purpose of reviewing confidential litig ation data, second, mr. saiia"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is a PDF extraction with split words and irregular spacing; quotes reproduce the printed spacing. The Chair is not named in the minutes, so the Modification motion is attributed to \"Chair\". The separate Public Hearing minutes for Emerald Place are referenced but not included. The plan-signature vote records only \"5 votes affirmative\" with no motion wording or mover. The executive session vote shows five ayes with no printed count. Marion M. Benson is listed in the roll call but does not appear in any recorded vote. No public comment section is printed; Mr. Bodkin Jr. speaks as a board member.",
+ "cost_usd": 0.0068574199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, nathan j. lockwood, joanna l . bilotta, thomas w. bodkin jr., robert j. saiia, m arion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, nathan j. lockwood, joanna l . bilotta, thomas w. bodkin jr., robert j. saiia, m arion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, nathan j. lockwood, joanna l . bilotta, thomas w. bodkin jr., robert j. saiia, m arion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, nathan j. lockwood, joanna l . bilotta, thomas w. bodkin jr., robert j. saiia, m arion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, nathan j. lockwood, joanna l . bilotta, thomas w. bodkin jr., robert j. saiia, m arion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, nathan j. lockwood, joanna l . bilotta, thomas w. bodkin jr., robert j. saiia, m arion m. benson"
+  },
+  {
+   "name": "Mr. Crossen",
+   "role": "representing the developer (as described in the minutes)",
+   "status": "not stated",
+   "quote": "mr. crossen responded that the villa height was lower than a clubhouse."
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "Select Board Chair",
+   "status": "not stated",
+   "quote": "select board chair ms. bertram noted t he new location of the line would allow sewer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Highfield Village extension request was tabled until the next meeting; the Chair asked the Director to seek written support for the extension from the Sewer Commission.",
+   "quote": "chair requested d irector seek a written support for this extension by the sewer commission."
+  },
+  {
+   "decision": "Highfield Village extension request tabled until next meeting.",
+   "quote": "request was tabled until next meeting."
+  },
+  {
+   "decision": "Board decided to hold a workshop meeting on an alternate Monday night starting in September (Master Planning).",
+   "quote": "master planning- board decision was to hold a workshop meeting on an alternate monday night starting in september."
+  },
+  {
+   "decision": "Minutes of 7-12-10, Public Hearing Emerald Place at Lake Whalom 7-26-10, 7-26-10, and Executive 7-12-10 tabled to next meeting.",
+   "quote": "minutes tabled to next meeting."
+  },
+  {
+   "decision": "Data information item tabled to next meeting.",
+   "quote": "data information: tabled to next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Purchase price discount for veterans and over-55 buyers (Emerald Place)",
+   "what_was_recorded": "Ms. Bilotta thanked the developer for a 2% purchase price discount offered to returning veterans and buyers of the over 55 units.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "ms. bilotta thanked the developer for the 2% purcha se price discount"
+  },
+  {
+   "topic": "Tax base benefit of developing the Lunenburg parcel",
+   "what_was_recorded": "The Chair said he preferred developing the Lunenburg parcel to benefit the tax base and citizens, rather than the Leominster parcel Lunenburg cannot control.",
+   "figures_as_printed": [],
+   "quote": "he would pr efer to see the lunenburg parcel developed to benefit the tax base"
+  },
+  {
+   "topic": "Commercial parcel traffic and development",
+   "what_was_recorded": "Mr. Lockwood noted development of the commercial parcel would probably bring a net increase in traffic and would be subject to a traffic study at the time of development.",
+   "figures_as_printed": [],
+   "quote": "developme nt of the commercial parcel will probably bring a net increase in traffi c, but will be subject to a traffic study",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Hearing (cont'd), Emerald Place at Lake Whalom - Modification request",
+   "resolution": "approved, 4-1 vote on modification",
+   "quote": "public hearing (cont'd), emerald place at lake whal om- see separate minutes.",
+   "tags": [
+    "Emerald Place",
+    "Lake Whalom",
+    "modification",
+    "zoning"
+   ],
    "quote_taken_from_text": true
   },
   {
-   "motion": "Approve and sign the plan for Town of Lunenburg, 1079 Massachusetts Avenue (Jones House)",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "vote taken, 5 votes affirmative - plan signed."
+   "topic": "Plan signatures - Town of Lunenburg, 1079 Massachusetts Avenue (Jones House)",
+   "resolution": "approved and signed (5 votes affirmative)",
+   "quote": "plan signatures: town of lunenburg, 1079 massachus etts avenue (jones house)- approved by planning board.",
+   "tags": [
+    "plan signature",
+    "Jones House",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "tabled to next meeting",
+   "quote": "minutes tabled to next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Development status reports (Emerald Place, Tri Town Landing, Highfield Village, Master Planning)",
+   "resolution": "noted; Highfield Village extension tabled",
+   "quote": "development status reports:",
+   "tags": [
+    "development status",
+    "Emerald Place",
+    "Tri Town Landing",
+    "Highfield Village",
+    "sewer",
+    "master planning"
+   ]
+  },
+  {
+   "topic": "Data information",
+   "resolution": "tabled to next meeting",
+   "quote": "data information: tabled to next meeting.",
+   "tags": [
+    "data"
+   ]
+  },
+  {
+   "topic": "Executive session (confidential litigation data)",
+   "resolution": "entered executive session",
+   "quote": "executive session called by chair.",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:15 PM",
+   "quote": "adjournment: 9:15 pm",
+   "tags": [
+    "adjournment"
+   ]
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes contain OCR artifacts in places (e.g., \"genera l\" for \"general\", \"litig ation\" for \"litigation\") but are otherwise readable. Three substantive/procedural votes recorded with voting outcomes.",
- "cost_usd": 0.1453975
+ "documents_and_exhibits": [
+  {
+   "name": "Applicant's letter requesting extension (Highfield Village)",
+   "where": "text",
+   "quote": "applicant's letter requesting extension was read."
+  },
+  {
+   "name": "2006 Findings (Emerald Place / Lake Whalom)",
+   "where": "text",
+   "quote": "chair noted the 2006 findings noted kiosks"
+  },
+  {
+   "name": "Section 4.12.1.1 of the bylaw (Lake Whalom Overlay District purpose)",
+   "where": "text",
+   "quote": "mr. bodkin quoted section 4.12.1.1. of the bylaw"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 5.1.6.1",
+   "where": "text",
+   "quote": "section 5.1.6.1.town has option to divide land from"
+  },
+  {
+   "name": "Chapter 40A, MGL",
+   "where": "text",
+   "quote": "unde r chapter 40a, mgl, land used for public purposes",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "Emerald Place at Lake Whalom",
+  "Lake Whalom Overlay District",
+  "modification",
+  "zoning",
+  "plan signature",
+  "Highfield Village",
+  "sewer",
+  "development status",
+  "master planning",
+  "executive session",
+  "traffic",
+  "tax base"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

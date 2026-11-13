@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-06-30",
  "docid": "2557",
@@ -12,6 +12,64 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR minutes with no recorded votes. The meeting adjournment is stated as fact but not documented as a motion with a vote.",
- "cost_usd": 0.08065549999999999
+ "note": "OCR scan with garbled header fragments (e.g. 'RL al al 77 son'); the body text is legible. No votes, motions, approval of prior minutes, or adjournment motion are recorded; the minutes only state 'Meeting Adjourned @ 7:25pm'. Public comment was opened but no speaker is named ('Seeing none'). No documents list is printed.",
+ "cost_usd": 0.0017064200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, damon mcquaid, richard mcgrath"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, damon mcquaid, richard mcgrath"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "damon gave the power point presentation outlining the history of various buildings in then center of town and how they came to be."
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, damon mcquaid, richard mcgrath"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Historic Town Center Visioning Session",
+   "resolution": "presentation only, no action recorded",
+   "quote": "damon gave the power point presentation outlining the history of various buildings in then center of town and how they came to be.",
+   "tags": [
+    "historic preservation",
+    "town center",
+    "presentation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Power point presentation on the history of buildings in the town center",
+   "where": "text",
+   "quote": "damon gave the power point presentation outlining the history of various buildings in then center of town and how they came to be."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "town center history",
+  "visioning session",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

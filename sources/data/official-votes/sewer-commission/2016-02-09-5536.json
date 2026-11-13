@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-02-09",
  "docid": "5536",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of January 12, 2016",
+   "motion": "Approve the minutes of January 12, 2016.",
    "moved_by": "J. Reynolds",
    "seconded_by": "S. Bunish",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j. reynolds, 2nd: s. bunish. vote: all in favor"
+   "quote": "january 12, 2016 - motion: j. reynolds, 2nd: s. bunish. vote: all in favor"
   },
   {
-   "motion": "approve minutes of January 26, 2016",
+   "motion": "Approve the minutes of January 26, 2016.",
    "moved_by": "M. Nault",
    "seconded_by": "J. Reynolds",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: m. nault, 2nd: j. reynolds. vote: all in favor"
+   "quote": "january 26, 2016 - motion: m. nault, 2nd: j. reynolds. vote: all in favor"
   },
   {
-   "motion": "adjourn meeting",
+   "motion": "Adjourn the meeting at 9:43 pm.",
    "moved_by": "J. Reynolds",
    "seconded_by": "M. Nault",
    "outcome": "passed",
@@ -37,6 +37,344 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd via macOS Vision. Minor OCR errors in middle sections; votes section is legible.",
- "cost_usd": 0.0929815
+ "note": "Text is OCR of a scanned page with garbled passages: page 1 begins mid-sentence; the 308 Mass Ave sink sentence and the Funding Sources/Rural Development passage are partly unreadable; the sentence on the support letter timing is garbled, so that decision is recorded with a narrow quote. Attendance is not in a roll call; statuses are inferred from speaking or leaving, and other names are 'not stated'. No public comment section is printed. The minutes print no vote for the 'decided' or 'agreed' items, so those are decisions, not votes. Motion texts for the minutes approvals and adjournment are printed in a list, not as prose.",
+ "cost_usd": 0.00821332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jamie and marc belliveau left the meeting."
+  },
+  {
+   "name": "Marc Belliveau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jamie and marc belliveau left the meeting."
+  },
+  {
+   "name": "Jeff",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jeff explained that the letter structure is structured so the most recent information is"
+  },
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl wanted to have a dialogue about 835 leominster road."
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack provided some history with that area as it relates to leominster sewer."
+  },
+  {
+   "name": "Sue",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sue proposed adding a frequently asked questions section to the website."
+  },
+  {
+   "name": "Mike",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike was there for the beginning of the flow meters inspection by flow assessment."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john wanted to make a clarification on a comment he made during the january 12th meeting."
+  },
+  {
+   "name": "J. Reynolds",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "january 12, 2016 - motion: j. reynolds, 2nd: s. bunish. vote: all in favor"
+  },
+  {
+   "name": "S. Bunish",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "january 12, 2016 - motion: j. reynolds, 2nd: s. bunish. vote: all in favor"
+  },
+  {
+   "name": "M. Nault",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "january 26, 2016 - motion: m. nault, 2nd: j. reynolds. vote: all in favor"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board decided the non-compliance process would start for Donnelly's, with a letter and a $50 fee.",
+   "quote": "it was decided that the non-compliance process would start."
+  },
+  {
+   "decision": "Sue will work on adding a Frequently Asked Questions section to the website, with a disclaimer advising people to refer to their attorney or tax professional.",
+   "quote": "sue will work on this project, it was noted that care must be taken to make sure correct information is posted"
+  },
+  {
+   "decision": "The Sewer Commission asked for a reference on SCADA systems, telemetry and remote monitoring.",
+   "quote": "the sewer commission asked for a reference on scada systems, telemetry and remote monitoring."
+  },
+  {
+   "decision": "The 274 Prospect Street plan will be revised and a copy sent to the Commission.",
+   "quote": "plan will be revised and a copy sent to the commission."
+  },
+  {
+   "decision": "A meeting will be held before the pump station O&M contract bid to discuss and decide the details.",
+   "quote": "a meeting will be held beforehand to discuss and decide on the details."
+  },
+  {
+   "decision": "Online reporting option for the SWSS program to be discussed at the next meeting.",
+   "quote": "it was brought up that an online reporting option should be added. this will be discussed in the next meeting."
+  },
+  {
+   "decision": "At 308 Mass Ave (Crossroads), the inlet pipe is to be fixed, inspected and confirmed with a photograph for the record.",
+   "quote": "this needs to be fixed, inspected and confirmed with a photograph for the record."
+  },
+  {
+   "decision": "The Commission concluded that not being able to install septic on the 11 acre lot at 835 Leominster Road was not a hardship.",
+   "quote": "the commission concluded that not being able to install septic on the 11 acre lot was not a hardship."
+  },
+  {
+   "decision": "No privilege fee will be charged to Highfield Village because the line did not cost the Town any money.",
+   "quote": "the line did not cost the town any money, so a privilege fee cannot be charged."
+  },
+  {
+   "decision": "Carl to update the information provided by the Planning Board for the CWMP and get it to Wright Pierce.",
+   "quote": "carl noted that we need to update the information provided by the planning board and get it to wright pierce."
+  },
+  {
+   "decision": "Wright Pierce is to get back to the Commission with a quote for replacing the cabinet on Mass Ave.",
+   "quote": "wright pierce will get back to us with a quote."
+  },
+  {
+   "decision": "One invoice was approved for payment.",
+   "quote": "one invoice was approved for payment."
+  },
+  {
+   "decision": "Sue and John will work on determining the rural designation area for the Rural Development grant/loan program.",
+   "quote": "we need to determine the rural designation area. sue and john will work on this"
+  },
+  {
+   "decision": "The Commission will send the support letter for the Jamie project after Graves Engineering approves the minor plan changes; the letter is to follow within 2 weeks. The minutes text is garbled at this point.",
+   "quote": "should have that letter within 2 weeks"
+  },
+  {
+   "decision": "A draft annual report will be presented for the Commission to review at the February 23rd meeting.",
+   "quote": "there will be a draft for the commission to review at the meeting on february 23rd."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap non-compliance fees (Donnelly's)",
+   "what_was_recorded": "A $50 fee will accompany the non-compliance letter, and a $25 per day penalty applies if nothing is received within 30 days.",
+   "figures_as_printed": [
+    "$50",
+    "$25 per day"
+   ],
+   "quote": "a $50 fee will be sent. if nothing is received in 30 days there will be a $25 per day penalty."
+  },
+  {
+   "topic": "FY17 budget - loan interest rate",
+   "what_was_recorded": "Loan interest rates were discussed, and whether the rate should be 2% or 5% was still open.",
+   "figures_as_printed": [
+    "2%",
+    "5%"
+   ],
+   "quote": "interest rates for loans were discussed and whether that number should be 2% or 5%."
+  },
+  {
+   "topic": "Highfield Village privilege fee",
+   "what_was_recorded": "Counsel determined that Highfield Village does not have to pay privilege fees because the line did not cost the Town any money.",
+   "figures_as_printed": [],
+   "quote": "the line did not cost the town any money, so a privilege fee cannot be charged."
+  },
+  {
+   "topic": "Invoice payment",
+   "what_was_recorded": "One invoice was approved for payment; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "one invoice was approved for payment."
+  },
+  {
+   "topic": "Flow meter cabinet replacement (Mass Ave)",
+   "what_was_recorded": "Wright Pierce will provide a quote for replacing the cabinet; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "wright pierce will get back to us with a quote."
+  },
+  {
+   "topic": "SCADA systems at other stations",
+   "what_was_recorded": "Discussed whether the expense of SCADA at other stations was worth it; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "it was discussed if it was worth the expense to have scada systems at other stations."
+  },
+  {
+   "topic": "Pump stations O&M contract",
+   "what_was_recorded": "The SWSS contract goes out to bid on 7/1/2016 and the bidding and contract contents, including generator maintenance, were discussed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "it was noted that the swss contract is coming up to bid on 7/1/2016."
+  },
+  {
+   "topic": "Rural Development grant/loan program",
+   "what_was_recorded": "The grant/loan program through Rural Development was discussed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the grant/loan program through rural development was discussed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Large project application (Jamie) and oil/grease separator policy",
+   "resolution": "discussed; Commission to send support letter after Graves Engineering approval; Jamie and Marc Belliveau left the meeting",
+   "quote": "jamie wanted to confirm the process: he would fill out the large project application, providing the commission the estimated flows"
+  },
+  {
+   "topic": "274 Prospect Street project",
+   "resolution": "discussed; plan to be revised and copy sent to Commission; SCADA reference requested",
+   "quote": "the project at 274 prospect street was discussed next."
+  },
+  {
+   "topic": "835 Leominster Road",
+   "resolution": "discussed; Commission concluded no hardship; procedure/policy for similar cases discussed",
+   "quote": "835 leominster road - carl wanted to have a dialogue about 835 leominster road."
+  },
+  {
+   "topic": "CWMP",
+   "resolution": "Carl to update Planning Board information and send to Wright Pierce",
+   "quote": "cwmp - carl noted that we need to update the information provided by the planning board and get it to wright pierce."
+  },
+  {
+   "topic": "Pump Stations O&M Contract",
+   "resolution": "discussed; meeting to be held beforehand to decide details",
+   "quote": "pump stations o&m contract -it was noted that the swss contract is coming up to bid on 7/1/2016."
+  },
+  {
+   "topic": "Budget FY17",
+   "resolution": "discussed; issues remain with 20-year projection and betterment portion; updated spreadsheet in progress",
+   "quote": "budget fy17 -there are still some issues with the projection of the 20 year budget."
+  },
+  {
+   "topic": "Grease Interceptor Inspection Status",
+   "resolution": "heading only; no action recorded",
+   "quote": "grease interceptor inspection status -"
+  },
+  {
+   "topic": "SWSS Program",
+   "resolution": "discussed; online reporting option to be discussed next meeting",
+   "quote": "swss program - the small water proposal that was received january 26th was discussed."
+  },
+  {
+   "topic": "308 Mass Ave (Crossroads) inspection",
+   "resolution": "discussed; inlet pipe to be fixed, inspected and photographed; grease regulations to be considered",
+   "quote": "308 mass ave (crossroads) inspection - the issues from the crossroads inspection were discussed."
+  },
+  {
+   "topic": "Website FAQ section (Sue)",
+   "resolution": "Sue to work on the project",
+   "quote": "sue proposed adding a frequently asked questions section to the website."
+  },
+  {
+   "topic": "Grease Traps (Sue)",
+   "resolution": "non-compliance process started for Donnelly's; $50 fee letter and penalty",
+   "quote": "grease traps (sue) -non-compliance for hadwen market, donnelly's and walmart were discussed."
+  },
+  {
+   "topic": "SCADA Systems",
+   "resolution": "discussed; reference requested; number of saved visits to be determined",
+   "quote": "scada systems -it was discussed if it was worth the expense to have scada systems at other stations."
+  },
+  {
+   "topic": "Funding Sources for Public Projects/Individuals (Sue)",
+   "resolution": "discussed; Sue and John to determine rural designation area",
+   "quote": "the grant/loan program through rural development was discussed."
+  },
+  {
+   "topic": "Flow Rate/Metering (Mike)",
+   "resolution": "noted; flow meter inspection under way; Wright Pierce to quote cabinet replacement",
+   "quote": "flow rate/metering (mike) - mike was there for the beginning of the flow meters inspection by flow assessment."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of January 12 and January 26, 2016",
+   "quote": "minutes approval- john wanted to make a clarification on a comment he made during the january 12th meeting."
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "noted vacancy posting, Highfield Village privilege fee, annual report timeline, invoice approved",
+   "quote": "the sewer commission vacancy has been posted in the ledger and on the bulletin board."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:43 pm",
+   "quote": "to adjourn meeting at 9:43 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "January 8th letter",
+   "where": "text",
+   "quote": "there was a question from the january 8th letter."
+  },
+  {
+   "name": "Draft letter dated September 8th",
+   "where": "text",
+   "quote": "the best way to do that was through a draft letter dated september 8th."
+  },
+  {
+   "name": "Large Project application",
+   "where": "text",
+   "quote": "he would fill out the large project application, providing the commission the estimated flows"
+  },
+  {
+   "name": "Small Water proposal received January 26th",
+   "where": "text",
+   "quote": "the small water proposal that was received january 26th was discussed."
+  },
+  {
+   "name": "Excerpt from an email from counsel",
+   "where": "text",
+   "quote": "an excerpt from an email from counsel was read."
+  },
+  {
+   "name": "Annual Report",
+   "where": "text",
+   "quote": "the annual report is due february 25'."
+  },
+  {
+   "name": "New updated spreadsheet (FY17 budget)",
+   "where": "text",
+   "quote": "a new updated spreadsheet is currently being worked on."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease interceptors",
+  "SCADA",
+  "pump stations",
+  "FY17 budget",
+  "Leominster sewer",
+  "large project",
+  "Highfield Village",
+  "CWMP",
+  "annual report",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

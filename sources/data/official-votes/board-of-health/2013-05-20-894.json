@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2013-05-20",
  "docid": "894",
@@ -12,23 +12,29 @@
  },
  "votes": [
   {
-   "motion": "continue with the board and officers as in the previous year",
+   "motion": "Re-organization: continue with the board and officers as in the previous year.",
    "moved_by": "Dave Passios",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made by dave passios to continue with the board and officers as in our previous year, second by rabbitt, all in favor."
   },
   {
-   "motion": "approve the variances for septic system repair",
+   "motion": "Approve the variances requested for 311 Pleasant Street (sieve analysis and groundwater offset reduction from four feet to three feet).",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by shea and second by jewell, the board approved the variances. all in favor."
+   "quote": "after discussion and on motion by shea and second by jewell, the board approved the variances. all in favor."
   },
   {
-   "motion": "sign the building permit for restroom addition with the requirement of a 3 bedroom deed restriction",
+   "motion": "Sign the building permit for the addition of a restroom at 551 Goodrich Street, with the requirement that a 3 bedroom deed restriction be placed on the property.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "after discussion, the board voted to sign the building permit for the addition of the restroom with the requirement that a 3 bedroom deed restrict be place on the property."
+  },
+  {
+   "motion": "Sign the permit for the addition of the restroom at 551 Goodrich Street.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
    "outcome": "passed",
@@ -36,15 +42,286 @@
    "quote": "on motion by jewell and second by shea, the permit was signed."
   },
   {
-   "motion": "approve the annual request for the use of portable facilities at Shady Point Campground",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the annual request for the use of portable facilities at Shady Point Campground.",
    "outcome": "passed",
    "procedural": false,
    "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at shady point campground."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.13353009999999998
+ "note": "OCR text (macOS Vision) with some garbled words (e.g., 'Board of Heath', 'Mr. Colette', 'Rabbitt' for Rabbit). Most motions record only 'all in favor' or 'unanimously' with no numeric count. The 551 Goodrich vote has no mover recorded. No adjournment motion is recorded though the minutes say 'Meeting adjourned 8:10 PM'. No dollar figures appear in the text.",
+ "cost_usd": 0.00745022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios. also present, bob ebersole, selectmen"
+  },
+  {
+   "name": "David Shea",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios. also present, bob ebersole, selectmen"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios. also present, bob ebersole, selectmen"
+  },
+  {
+   "name": "Jack Rabbit",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios. also present, bob ebersole, selectmen"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios. also present, bob ebersole, selectmen"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "also present, bob ebersole, selectmen"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "the results of the soil testing was received by agent jim garreffi."
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "research done by administrative assistant andrea schnepf as well as agent jim garreffi"
+  },
+  {
+   "name": "Courtney Zivojinovic",
+   "role": "abutter",
+   "status": "present",
+   "quote": "courtney zivojinovic, an abutter, mr. phil moore, and jerry croto, concerned area residents, were"
+  },
+  {
+   "name": "Phil Moore",
+   "role": "concerned area resident",
+   "status": "present",
+   "quote": "courtney zivojinovic, an abutter, mr. phil moore, and jerry croto, concerned area residents, were"
+  },
+  {
+   "name": "Jerry Croto",
+   "role": "concerned area resident",
+   "status": "present",
+   "quote": "courtney zivojinovic, an abutter, mr. phil moore, and jerry croto, concerned area residents, were"
+  },
+  {
+   "name": "Shawn and Katie Collette",
+   "role": "prospective new owners",
+   "status": "present",
+   "quote": "shawn and katie collette met with the board, the prospective new owners of this property."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board allowed the abutter and two area residents who were unaware of the 189 Wildwood Road continuance (Courtney Zivojinovic, Phil Moore, Jerry Croto) to be heard for the record.",
+   "quote": "asked to be heard for the record nonetheless, which request was allowed by the board."
+  },
+  {
+   "decision": "Chairman George Emond signed the Demolition Permit Application for ARO Estates on behalf of the Board of Health.",
+   "quote": "chairman george emond signed the demolition permit application on behalf of the board of heath."
+  },
+  {
+   "decision": "Discussion on the Camp David matter was continued until June 3, 2013. No vote recorded.",
+   "quote": "discussion on this matter was continued until june 3, 2013"
+  },
+  {
+   "decision": "189 Wildwood Road: the Board received a last minute request from the proponents for a further continuance until June 3, 2013 at 7:00 pm. No vote recorded.",
+   "quote": "the board received a last minute request for a further continuance from the proponents until june 3, 2013 at 7:00 pm."
+  },
+  {
+   "decision": "Chairman Emond stated that no decision on the 189 Wildwood Road variance has been made.",
+   "quote": "chairman emond stated that no decision on this variance has been made."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Courtney Zivojinovic",
+   "stated_role": "abutter",
+   "topic": "189 Wildwood Road variance, responsibility for yard damage",
+   "quote": "mr. zivojinovic asked who would be responsible if something happens to his yard as a result of this variance being approved and a residence being constructed on this lot?"
+  },
+  {
+   "speaker": "Phil Moore",
+   "stated_role": "concerned area resident",
+   "topic": "189 Wildwood Road variance, storm water and septic design",
+   "quote": "mr. moore stated that he feels that 100 year storm plan is no longer appropriate that our weather is changing and becoming more dramatic."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "none approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approved: none"
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged",
+   "tags": [
+    "Title 5",
+    "septic"
+   ],
+   "quote": "title 5 inspection reports acknowledged: 43 hemlock terrace 1389 robbs hill road 138 beal street 38 oak street"
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "septic permit signed (311 Pleasant Street)",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed: 311 pleasant street"
+  },
+  {
+   "topic": "Re-organization of the Board",
+   "resolution": "approved: continue board and officers as previous year",
+   "tags": [
+    "reorganization",
+    "officers"
+   ],
+   "quote": "motion made by dave passios to continue with the board and officers as in our previous year, second by rabbitt, all in favor."
+  },
+  {
+   "topic": "ARO Estates",
+   "resolution": "soil test results received within limits; demolition permit application signed",
+   "tags": [
+    "soil testing",
+    "demolition permit"
+   ],
+   "quote": "the results of the soil testing was received by agent jim garreffi. any compounds found were within acceptable limits."
+  },
+  {
+   "topic": "189 Wildwood Road",
+   "resolution": "continued to June 3, 2013 at 7:00 pm (no vote recorded); residents allowed to comment",
+   "tags": [
+    "variance",
+    "continuance",
+    "public comment",
+    "stormwater"
+   ],
+   "quote": "the board received a last minute request for a further continuance from the proponents until june 3, 2013 at 7:00 pm."
+  },
+  {
+   "topic": "Camp David",
+   "resolution": "continued to June 3, 2013",
+   "tags": [
+    "continuance"
+   ],
+   "quote": "discussion on this matter was continued until june 3, 2013"
+  },
+  {
+   "topic": "311 Pleasant Street",
+   "resolution": "variances approved",
+   "tags": [
+    "variance",
+    "septic",
+    "sieve analysis"
+   ],
+   "quote": "after discussion and on motion by shea and second by jewell, the board approved the variances. all in favor."
+  },
+  {
+   "topic": "551 Goodrich Street",
+   "resolution": "building permit signed with 3 bedroom deed restriction required",
+   "tags": [
+    "septic",
+    "building permit",
+    "deed restriction"
+   ],
+   "quote": "the board voted to sign the building permit for the addition of the restroom with the requirement that a 3 bedroom deed restrict be place on the property."
+  },
+  {
+   "topic": "Shady Point Beach and Campground",
+   "resolution": "approved annual portable facilities request",
+   "tags": [
+    "portable toilets",
+    "campground"
+   ],
+   "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at shady point campground."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 43 Hemlock Terrace",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 43 hemlock terrace 1389 robbs hill road 138 beal street 38 oak street"
+  },
+  {
+   "name": "Title 5 inspection report, 1389 Robbs Hill Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 43 hemlock terrace 1389 robbs hill road 138 beal street 38 oak street"
+  },
+  {
+   "name": "Title 5 inspection report, 138 Beal Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 43 hemlock terrace 1389 robbs hill road 138 beal street 38 oak street"
+  },
+  {
+   "name": "Title 5 inspection report, 38 Oak Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 43 hemlock terrace 1389 robbs hill road 138 beal street 38 oak street"
+  },
+  {
+   "name": "Septic permit, 311 Pleasant Street",
+   "where": "list",
+   "quote": "septic permits signed: 311 pleasant street"
+  },
+  {
+   "name": "Soil testing results, ARO Estates",
+   "where": "text",
+   "quote": "the results of the soil testing was received by agent jim garreffi."
+  },
+  {
+   "name": "Demolition Permit Application, ARO Estates",
+   "where": "text",
+   "quote": "chairman george emond signed the demolition permit application on behalf of the board of heath."
+  },
+  {
+   "name": "Building permit for addition of restroom, 551 Goodrich Street",
+   "where": "text",
+   "quote": "the board voted to sign the building permit for the addition of the restroom"
+  },
+  {
+   "name": "Annual request for use of portable facilities, Shady Point Campground",
+   "where": "text",
+   "quote": "the annual request for the use of portable facilities at shady point campground"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variances",
+  "permits",
+  "continuance",
+  "public comment",
+  "stormwater",
+  "reorganization",
+  "portable toilets",
+  "campground",
+  "demolition permit"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

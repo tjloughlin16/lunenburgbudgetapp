@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2010-04-29",
  "docid": "2378",
@@ -12,111 +12,418 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from 3/25/2010",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
+   "motion": "Approve the minutes of 3/25/2010.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 3/25/2010 approved. motion by br, second by jm."
   },
   {
-   "motion": "approve minutes from 4/5/2010 as amended",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Mark Erickson",
+   "motion": "Approve the minutes of 4/5/2010 as amended.",
+   "moved_by": "BR",
+   "seconded_by": "ME",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 4/5/2010 approved as amended. motion by br, second by me."
   },
   {
-   "motion": "approve minutes from 4/6/2010",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Lars Widstrand",
+   "motion": "Approve the minutes of 4/6/2010.",
+   "moved_by": "BR",
+   "seconded_by": "LW",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 4/6/2010 approved. motion by br, second by lw."
   },
   {
-   "motion": "approve minutes from 4/8/2010 as amended",
-   "moved_by": "John Male",
-   "seconded_by": "Lars Widstrand",
+   "motion": "Approve the minutes of 4/8/2010 as amended.",
+   "moved_by": "JM",
+   "seconded_by": "LW",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 4/8/2010 approved as amended. motion by jm, second by lw."
   },
   {
-   "motion": "recommend approval of STM Article 1",
-   "moved_by": "John Male",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Recommend approval of STM Article 1.",
+   "moved_by": "JM",
+   "seconded_by": "BR",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "stm article 1: jm moved to recommend approval, br second. carried 5-0."
   },
   {
-   "motion": "recommend approval of ATM Article 3",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "Lars Widstrand",
+   "motion": "Recommend approval of ATM Article 3.",
+   "moved_by": "ME",
+   "seconded_by": "LW",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "atm article 3: me moved to recommend approval, lw second. carried 5-0."
   },
   {
-   "motion": "recommend approval of ATM Article 4",
-   "moved_by": "John Male",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Recommend approval of ATM Article 4.",
+   "moved_by": "JM",
+   "seconded_by": "BR",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "atm article 4: jm moved to recommend approval, br second. carried 5-0."
   },
   {
-   "motion": "recommend approval of ATM Article 8",
-   "moved_by": "John Male",
-   "seconded_by": "Mark Erickson",
-   "outcome": "withdrawn",
+   "motion": "Recommend approval of ATM Article 8; motion withdrawn pending additional information on assessors impact.",
+   "moved_by": "JM",
+   "seconded_by": "ME",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "atm article 8: jm moved to recommend approval, me second. motion withdrawn pending additional information on assessors impact."
   },
   {
-   "motion": "recommend approval of ATM Article 9",
-   "moved_by": "John Male",
-   "seconded_by": "Lars Widstrand",
+   "motion": "Recommend approval of ATM Article 9.",
+   "moved_by": "JM",
+   "seconded_by": "LW",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "atm article 9: jm moved to recommend approval, lw second. carried 5-0."
   },
   {
-   "motion": "recommend approval of ATM Article 10",
-   "moved_by": "John Male",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Recommend approval of ATM Article 10.",
+   "moved_by": "JM",
+   "seconded_by": "BR",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "atm article 10: jm moved to recommend approval, br second. carried 5-0."
   },
   {
-   "motion": "recommend approval of ATM Article 11",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Mark Erickson",
+   "motion": "Recommend approval of ATM Article 11.",
+   "moved_by": "BR",
+   "seconded_by": "ME",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "atm article 11: br moved to recommend approval, me second. carried 5-0."
   },
   {
-   "motion": "recommend approval of ATM Article 12",
-   "moved_by": "John Male",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Recommend approval of ATM Article 12.",
+   "moved_by": "JM",
+   "seconded_by": "BR",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "atm article 12: jm moved to recommend approval, br second. carried 5-0."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "John Male",
-   "seconded_by": "Mark Erickson",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 9:17 PM.",
+   "moved_by": "JM",
+   "seconded_by": "ME",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion was made by jm and seconded by me to adjourn at 9:17 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR minutes from macOS Vision. Three minutes from prior meetings (3/25, 4/5, 4/6, 4/8/2010) approved at this meeting; outcomes not stated as vote counts but recorded as \"approved.\" No votes recorded on several articles marked \"no action taken\" or \"to be passed over.\"",
- "cost_usd": 0.0959825
+ "note": "OCR text with some garbling (e.g., 'Appronid' and 'RECEIVED & FILED' stamps, 'more that 17'). Attendance is printed; the status of Dave Mathews is not stated in the minutes. Several motions record no vote count or result (ATM Article 8 withdrawn; adjournment). Warrant items marked 'previously voted' (ATM Articles 2 and 13) were not recorded as votes at this meeting. Public comment: minutes say only 'No public discussion'.",
+ "cost_usd": 0.00835262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: brian laffond, barbara reynolds, john male, mark erickson, lars widstrand"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "present: brian laffond, barbara reynolds, john male, mark erickson, lars widstrand"
+  },
+  {
+   "name": "John Male",
+   "role": "",
+   "status": "present",
+   "quote": "present: brian laffond, barbara reynolds, john male, mark erickson, lars widstrand"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "",
+   "status": "present",
+   "quote": "present: brian laffond, barbara reynolds, john male, mark erickson, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "",
+   "status": "present",
+   "quote": "present: brian laffond, barbara reynolds, john male, mark erickson, lars widstrand"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "absent: marilyn stokes, martha mcdonald"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "absent: marilyn stokes, martha mcdonald"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "",
+   "status": "present",
+   "quote": "also present: karen brochu, barb lefebvre, bob ebersole"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "",
+   "status": "present",
+   "quote": "bob ebersole and barb lefebvre presented the sewer enterprise budget."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "bob ebersole and barb lefebvre presented the sewer enterprise budget."
+  },
+  {
+   "name": "Dave Mathews",
+   "role": "",
+   "status": "not stated",
+   "quote": "dave mathews reported that more that 17 positions are being eliminated in the latest budget"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "STM Article 2 passed over (no action recorded beyond the disposition).",
+   "quote": "stm article 2: to be passed over."
+  },
+  {
+   "decision": "ATM Articles 5 and 6 passed over.",
+   "quote": "atm articles 5 & 6: to be passed over."
+  },
+  {
+   "decision": "ATM Article 15 passed over.",
+   "quote": "atm article 15: to be passed over."
+  },
+  {
+   "decision": "ATM Article 7 - no action taken.",
+   "quote": "atm article 7: no action taken"
+  },
+  {
+   "decision": "ATM Article 14 - no action taken.",
+   "quote": "atm article 14: no action taken"
+  },
+  {
+   "decision": "Committee agreed to look into penalties for illegal hookups and noted infeasibility of building its own sewer plant.",
+   "quote": "also discussed infeasibility of building our own plant and a recommendation we look into penalties for illegal hookups."
+  },
+  {
+   "decision": "Next meeting scheduled for Saturday, May 1, 7:30 am, at LHS.",
+   "quote": "saturday, may 1, 7:30 am, lhs."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer enterprise rates and revenue",
+   "what_was_recorded": "Sewer rates for FY11 rose 20%, but revenue is projected to rise 15% because bills are sent quarterly.",
+   "figures_as_printed": [
+    "20%",
+    "15%"
+   ],
+   "quote": "rates for fy11 have increased 20% but since bills don't go out until the end of the quarter, revenue increases 15%."
+  },
+  {
+   "topic": "Sewer late fees",
+   "what_was_recorded": "Late fees increased from $5 to $10.",
+   "figures_as_printed": [
+    "$5",
+    "$10"
+   ],
+   "quote": "late fees are increased from $5 to $10."
+  },
+  {
+   "topic": "Sewer enterprise warrant article appropriation",
+   "what_was_recorded": "Warrant article will appropriate revenues and retained earnings totaling $574,235.26.",
+   "figures_as_printed": [
+    "$482,233.55",
+    "$92,001.71",
+    "$574,235.26"
+   ],
+   "quote": "warrant article will include appropriating $482,233.55 from revenues and $92,001.71 from retained earnings, for a total of $574,235.26."
+  },
+  {
+   "topic": "Sewer inflow and infiltration and Fitchburg/Leominster billing",
+   "what_was_recorded": "A one-time expense to address inflow and infiltration was noted; costs could rise significantly if Fitchburg and Leominster bill on sewer meters, and Fitchburg's rate double-charges residents for capital upgrades. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "concern is that costs could go up significantly if fitchburg and leominster exercise their right to bill based on sewer meters"
+  },
+  {
+   "topic": "FY2010 budget amendment and Meadowwoods expense",
+   "what_was_recorded": "Karen Brochu reported that an FY10 budget amendment is needed, with a transfer from the Sewer Betterment Fund to cover the Meadowwoods expense; no stabilization appropriation is needed now.",
+   "figures_as_printed": [
+    "$188,354.89",
+    "$155,945"
+   ],
+   "quote": "$188,354.89 is needed to amend the fy10 budget, with $155,945 transferred from the sewer betterment fund to cover the meadowwoods expense."
+  },
+  {
+   "topic": "Free cash and snow and ice",
+   "what_was_recorded": "Karen Brochu raised a concern that free cash may not cover snow and ice costs. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "we may not have enough free cash to cover snow and ice."
+  },
+  {
+   "topic": "FY11 omnibus budget",
+   "what_was_recorded": "Town Manager recommends appropriating a FY11 Omnibus Total as of 4/27.",
+   "figures_as_printed": [
+    "$25,844,659"
+   ],
+   "quote": "town manager recommends appropriating $25,844,659 for fy11 omnibus total as of 4/27."
+  },
+  {
+   "topic": "School health care savings",
+   "what_was_recorded": "PEC voted to accept a shift to 77.5/22.5 effective July 1, 2010, potentially reducing health care expense by $111k including schools.",
+   "figures_as_printed": [
+    "$111k"
+   ],
+   "quote": "potentially reducing health care expense by $111k total including schools."
+  },
+  {
+   "topic": "Service level team budget gap",
+   "what_was_recorded": "The budget gap was closed to $26k and then grew by $186k to $212k due to added special needs expense.",
+   "figures_as_printed": [
+    "$26k",
+    "$186k",
+    "$212k"
+   ],
+   "quote": "as of our last meeting, the gap had been closed to $26k. that gap has grown by $186k to $212k due to added special needs expense."
+  },
+  {
+   "topic": "School level funding and unemployment",
+   "what_was_recorded": "Agreement to level fund schools, with additional unemployment expense coming from stabilization. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "dave and mark reported that we had agreed to level fund schools, with additional unemployment expense coming from stabilization."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the Sewer Betterment Fund to cover the Meadowwoods expense (FY10 budget amendment).",
+   "amount_as_printed": "$155,945",
+   "outcome": "Reported by Karen Brochu; no vote recorded.",
+   "quote": "with $155,945 transferred from the sewer betterment fund to cover the meadowwoods expense."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Sewer Enterprise Budget Review",
+   "resolution": "presented; no action recorded",
+   "quote": "bob ebersole and barb lefebvre presented the sewer enterprise budget.",
+   "tags": [
+    "sewer",
+    "enterprise budget",
+    "FY11"
+   ]
+  },
+  {
+   "topic": "Communications and minutes",
+   "resolution": "four sets of minutes approved",
+   "quote": "minutes from 3/25/2010 approved. motion by br, second by jm.",
+   "tags": [
+    "minutes",
+    "ATFC"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action recorded",
+   "quote": "school committee - lars reported that the school committee budget is still not set.",
+   "tags": [
+    "school budget",
+    "health care",
+    "service level team"
+   ]
+  },
+  {
+   "topic": "Old business: FY2010 and FY2011 budget updates",
+   "resolution": "reported; no action recorded",
+   "quote": "fy2010 update - karen brochu reported that $188,354.89 is needed to amend the fy10 budget",
+   "tags": [
+    "FY2010",
+    "FY2011",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Review of warrant articles",
+   "resolution": "recommended approval on several articles; others passed over or no action",
+   "quote": "stm article 1: jm moved to recommend approval, br second. carried 5-0.",
+   "tags": [
+    "warrant articles",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "New business: service level team role and staffing",
+   "resolution": "discussed; suggestions to press Town Manager",
+   "quote": "discussed role of service level team. feedback has been a benefit; however, the role changed to that",
+   "tags": [
+    "service level team",
+    "police overtime",
+    "admin staffing"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "quote": "saturday, may 1, 7:30 am, lhs.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:17 PM",
+   "quote": "motion was made by jm and seconded by me to adjourn at 9:17 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant articles (STM Article 1-2; ATM Articles 2-15)",
+   "where": "text",
+   "quote": "review warrant articles"
+  },
+  {
+   "name": "Sewer enterprise warrant article",
+   "where": "text",
+   "quote": "warrant article will include appropriating $482,233.55 from revenues and $92,001.71 from retained earnings"
+  },
+  {
+   "name": "FY11 Omnibus Total (Town Manager recommendation as of 4/27)",
+   "where": "text",
+   "quote": "town manager recommends appropriating $25,844,659 for fy11 omnibus total as of 4/27."
+  },
+  {
+   "name": "Sewer enterprise budget",
+   "where": "text",
+   "quote": "bob ebersole and barb lefebvre presented the sewer enterprise budget."
+  }
+ ],
+ "tags": [
+  "sewer enterprise",
+  "FY2010 budget amendment",
+  "FY2011 budget",
+  "warrant articles",
+  "Annual Town Meeting",
+  "school budget",
+  "health care",
+  "free cash",
+  "service level team",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

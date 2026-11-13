@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-05-13",
  "docid": "5488",
@@ -10,15 +10,226 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05132014-5488",
   "doc_url": "/docs/meetings/sewer-commission/2014-05-13-minutes-5488.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text. Page 1 begins mid-sentence, so the first item is cut off and its topic is unnamed. The minutes record no motions or votes; the board's actions are authorizations and agreements with no recorded vote, so votes is empty. The Town Meeting approvals were votes of the Town Meeting, not of this board. 'I/l Reduction' is printed that way, probably an OCR reading of 'I/I'. The signature line is garbled ('Chairman wil'). The minutes do not state who was present except that Butch was absent.",
+ "cost_usd": 0.00460652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "To thank Jay Simione for his contributions to the Sewer Commission",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the commission unanimously thanked jay for his contributions to the sewer commission and let him know that we would be very happy to have him back some day."
+   "name": "Carl Luck",
+   "role": "Chairman",
+   "status": "not stated",
+   "quote": "respectfully submitted, carl luck, chairman"
+  },
+  {
+   "name": "Jay Simione",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jay simione farewell: the commission unanimously thanked jay for his contributions to the sewer commission"
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "it was not clear if jack had seen and commented on the plans."
+  },
+  {
+   "name": "Butch",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "butch was absent but may have additional information on"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR of scanned document (macOS Vision)",
- "cost_usd": 0.1135325
+ "decisions": [
+  {
+   "decision": "The Commission agreed to solicit proposals from at least three engineering firms for the Pratt/Lakeview extension, even if not required; Weston Sampson and Wright Pierce to be two, Woodward and Curran suggested by Jay, and Jack's input also sought.",
+   "quote": "commission agreed that even if not required, we would solicit proposals from at least"
+  },
+  {
+   "decision": "Jack was given authority to use the original SCADA quote plus details from Jay to initiate the contract with SWSS and a service provider for data transmission.",
+   "quote": "jack has been given the authority to use the original quote plus details provided by jay to initiate contract"
+  },
+  {
+   "decision": "Jack was given the go-ahead to schedule the major maintenance/check-up on the 10 pump stations with SWSS on a time and material basis.",
+   "quote": "jack has been given the go ahead to schedule the \"major\" maintenance/check-up on the 10"
+  },
+  {
+   "decision": "The Commission unanimously thanked Jay Simione for his contributions and said it would be happy to have him back some day.",
+   "quote": "the commission unanimously thanked jay for his contributions to the sewer commission and"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Meeting: Pratt/Lakeview extension cost per lot",
+   "what_was_recorded": "The average cost for all participants was provided at about $27,000 for each lot, in answer to a resident's question from the floor.",
+   "figures_as_printed": [
+    "~$27,000"
+   ],
+   "quote": "the average for all participants was provided at~$27,000 for each lot."
+  },
+  {
+   "topic": "FY15 budget and Town Meeting",
+   "what_was_recorded": "The FY15 Budget was reported as approved at Town Meeting; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "fy15 budget approved map approved"
+  },
+  {
+   "topic": "SCADA data transmission contract",
+   "what_was_recorded": "Jack was authorized to use the original quote plus Jay's details to start the contract with SWSS and a data transmission provider; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "jack has been given the authority to use the original quote plus details provided by jay to initiate contract"
+  },
+  {
+   "topic": "Generator maintenance and FY15 operation contract",
+   "what_was_recorded": "Major maintenance on the 10 pump stations is to be done with SWSS on a time and material basis, and an updated FY15 operation contract proposal including generator maintenance is to be obtained; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "pump stations with swss on a time and material basis."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "a resident (unnamed)",
+   "stated_role": "resident",
+   "topic": "Pratt/Lakeview extension cost per resident at Town Meeting",
+   "quote": "only question from the floor was from a resident who was not affected by the pratt/lakeview extension project but wanted to know"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Unnamed item continued from prior page (text begins mid-sentence)",
+   "resolution": "no action",
+   "quote": "it was not clear if jack had seen and commented on the plans. no actions or votes taken.",
+   "tags": [
+    "plans",
+    "no action"
+   ]
+  },
+  {
+   "topic": "Town Meeting",
+   "resolution": "reviewed; three warrant articles approved at Town Meeting",
+   "quote": "reviewed three warrant articles that were approved at tm with little to no discussion.",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Highfield Village",
+   "resolution": "informational; hearing postponed, no sewer issues",
+   "quote": "informed the commission that the hearing scheduled by the planning board has been postponed.",
+   "tags": [
+    "highfield village",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "SCADA",
+   "resolution": "authority given to Jack to initiate contract",
+   "quote": "jack has been given the authority to use the original quote plus details provided by jay to initiate contract",
+   "tags": [
+    "scada",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview Extension",
+   "resolution": "agreed to solicit proposals from at least three engineering firms",
+   "quote": "commission agreed that even if not required, we would solicit proposals from at least",
+   "tags": [
+    "pratt/lakeview",
+    "engineering",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "I/l Reduction",
+   "resolution": "reviewed home visit report; next update 5/19",
+   "quote": "reviewed home visit report after the first day and a half of inspections.",
+   "tags": [
+    "inflow and infiltration",
+    "inspections",
+    "sump pumps"
+   ]
+  },
+  {
+   "topic": "Generator Maintenance",
+   "resolution": "Jack given go-ahead to schedule maintenance",
+   "quote": "jack has been given the go ahead to schedule the \"major\" maintenance/check-up on the 10",
+   "tags": [
+    "generators",
+    "pump stations",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Permits to Connect",
+   "resolution": "informational; one permit issued last month",
+   "quote": "permits to connect: 115 fairview rd. issued last month",
+   "tags": [
+    "permits"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "none approved",
+   "quote": "minutes: none approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Jay Simione farewell",
+   "resolution": "Commission thanked Jay unanimously",
+   "quote": "the commission unanimously thanked jay for his contributions to the sewer commission",
+   "tags": [
+    "personnel",
+    "farewell"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned about 8:30",
+   "quote": "the meeting was adjourned at approximately 8:30.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "CWMP (construction techniques as defined in the CWMP)",
+   "where": "text",
+   "quote": "as it would deviate from the construction techniques as defined in the cwmp and would need all the"
+  },
+  {
+   "name": "Home visit report (after first day and a half of inspections)",
+   "where": "text",
+   "quote": "reviewed home visit report after the first day and a half of inspections."
+  },
+  {
+   "name": "Updated proposal for FY15 operation contract",
+   "where": "text",
+   "quote": "he will get an updated proposal for fy15 operation contract which includes generator maintenance."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "SCADA",
+  "inflow and infiltration",
+  "pump stations",
+  "generators",
+  "Pratt/Lakeview extension",
+  "Highfield Village",
+  "Town Meeting",
+  "engineering procurement",
+  "personnel farewell"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

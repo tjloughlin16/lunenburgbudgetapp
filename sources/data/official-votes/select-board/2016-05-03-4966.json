@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-05-03",
  "docid": "4966",
@@ -12,71 +12,627 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of April 5, April 12, and April 19, 2016",
+   "motion": "Approve the minutes of April 5, April 12 and April 19, 2016.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes of april 5, april 12, april 19, 2016 were approved."
   },
   {
-   "motion": "Recommend approval of Articles 27 and 28 with the Board of Selectmen authorized to negotiate the lease",
+   "motion": "Recommend approval of Article 27 and Article 28, with the Board of Selectmen negotiating the lease.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-1",
+   "outcome": "passed, 4 in favor, 1 against",
    "procedural": false,
-   "quote": "motion: p. bertram to recommend approval of article 27 and 28 with the board of selectmen negotiating the lease 2\"°: t. alonzo vote: 4 in favor, 1 against"
+   "quote": "motion: p. bertram to recommend approval of article 27 and 28 with the board of selectmen negotiating the lease"
   },
   {
-   "motion": "Recommend approval of Articles 30 and 31",
+   "motion": "Recommend approval of Article 30 and Article 31.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: p. bertram to recommend approval of article 30 and 31 2\"°: t. alonzo vote: all in favor"
+   "quote": "to recommend approval of article 30 and 31"
   },
   {
-   "motion": "Recommend approval of Article 9",
+   "motion": "Recommend approval of Article 9 (FY 2016 budget adjustment).",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: p. bertram to recommend approval of article 9 2'd. t. alonzo vote: all in favor"
+   "quote": "to recommend approval of article 9"
   },
   {
-   "motion": "Recommend approval of Article 18 in the amount of $275,000",
+   "motion": "Recommend approval of Article 18, FY 2017 Solid Waste Disposal Enterprise Fund, in the amount of $275,000.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: r. ebersole to recommend approval of article 18 in the amount of $275,000 2°: t. alonzo vote: all in favor"
+   "quote": "to recommend approval of article 18 in the amount of $275,000"
   },
   {
-   "motion": "Authorize borrowing according to scenario 1.1 schedule for the pavement management plan",
+   "motion": "Borrow according to the scenario 1.1 schedule for the pavement management plan.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: r. ebersole 2™: p. bertram to borrow according to the scenario 1.1 schedule for the pavement management plan vote: all in favor"
+   "quote": "to borrow according to the scenario 1.1 schedule for the pavement management plan vote: all in favor"
   },
   {
-   "motion": "Accept Donald Bowen's resignation from Zoning Board of Appeals effective April 26, 2016",
+   "motion": "Accept Donald Bowen's resignation from the Zoning Board of Appeals effective April 26, 2016.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2nd: r. ebersole to accept donald bowen's resignation from zoning board of appeals effective april 26, 2016 vote: all in favor"
+   "outcome": "passed, all in favor",
+   "procedural": false,
+   "quote": "to accept donald bowen's resignation from zoning board of appeals effective april 26, 2016"
   },
   {
    "motion": "Adjourn the meeting at 9:41 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:41 p.m. 2nd: t. alonzo vote: all in favor"
+   "quote": "to adjourn the meeting at 9:41 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd document from macOS Vision. Vote format markers have minor OCR artifacts (2\"°:, 2™:, etc.) but all eight votes are clearly recorded with explicit outcomes.",
- "cost_usd": 0.1290755
+ "note": "Text is macOS Vision OCR of a scanned 2016 minutes; some words and names are garbled as printed (e.g., \"Lafluer\", \"DP W\", \"Rodriquenz\", a garbled signature line), and quotes reproduce that text. Votes are recorded as \"All in Favor\" with no roll call except Article 27/28 (4 in favor, 1 against). No votes recorded on Article 45, the yard waste item, or the Summer Street status update. Minutes approval line has no printed mover or seconder.",
+ "cost_usd": 0.015066520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Lori Lehtinen",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident lori lehtinen appeared regarding the annual town meeting article #44 regarding curbside yard waste"
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "Project Manager (VHB)",
+   "status": "present",
+   "quote": "trish domigan, project manager, presented a status update on the summer street project."
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Water Commissioner",
+   "status": "present",
+   "quote": "mark bursch, water commissioner, asked who sponsored this article."
+  },
+  {
+   "name": "John Esposito",
+   "role": "Water Commissioner",
+   "status": "present",
+   "quote": "john esposito, water commissioner, stated he did not believe that mr. alonzo didn't know anything about the"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dp w director rodriquenz and athletic director peter mccauliff came to the podium regarding article 28."
+  },
+  {
+   "name": "Peter McCauliff",
+   "role": "Athletic Director",
+   "status": "present",
+   "quote": "dp w director rodriquenz and athletic director peter mccauliff came to the podium regarding article 28."
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "mr. londa reported he did receive multiple proposals and he was recommending the verizon proposal"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Ebersole recommended the Board of Selectmen be the authority that enters into the lease agreement for the cell tower; Ms. Bertram agreed.",
+   "quote": "mr. ebersole recommended the board of selectmen be the authority that enters into the lease agreement."
+  },
+  {
+   "decision": "Mr. Ebersole recommended a funding plan for the turf field replacement that matches revenue as closely as possible to shorten the borrowing term; Ms. Bertram agreed.",
+   "quote": "he recommended that a funding plan to match the revenue as closely as possible to shorten the term of the borrowing be created"
+  },
+  {
+   "decision": "Mr. Toale announced the next Board meeting is May 10 and the Board hoped to see everyone at town meeting on May 7.",
+   "quote": "mr. toale announced the next board meeting was may 10'\" but he hoped to see everybody at town meeting on"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable and payroll warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant and two payroll warrants and a payroll deduction warrant.",
+   "quote": "the board signed an accounts payable warrant in the amount of $2,121,180.95; two payroll warrants, the first",
+   "figures_as_printed": [
+    "$2,121,180.95",
+    "$941.49",
+    "$654,206.33",
+    "$439,549"
+   ]
+  },
+  {
+   "topic": "Curbside yard waste cost estimate (Article 44)",
+   "what_was_recorded": "Ms. Lehtinen estimated the curbside yard waste service would cost around $20.00 per household per year.",
+   "quote": "ms. lehtinen reported that from her research it would come to around $20.00 per year per household for this service.",
+   "figures_as_printed": [
+    "$20.00"
+   ]
+  },
+  {
+   "topic": "Summer Street project cost",
+   "what_was_recorded": "The projected Summer Street cost was reported to exceed the originally projected cost and was estimated at higher figures with escalation.",
+   "quote": "the projected cost exceeds the $6.9 million cost originally projected.",
+   "figures_as_printed": [
+    "$6.9 million",
+    "$10 million",
+    "$13 million"
+   ]
+  },
+  {
+   "topic": "Summer Street VHB cost reduction",
+   "what_was_recorded": "VHB reported reducing the project price to $8.5 million, or $10 million with utility poles, MassDOT administration and police details.",
+   "quote": "by reviewing all the different design components, vhb has been able to reduce the price of the project down to $8.5 million.",
+   "figures_as_printed": [
+    "$8.5 million",
+    "$10 million"
+   ]
+  },
+  {
+   "topic": "Turkey Hill Middle School ceiling and facia work",
+   "what_was_recorded": "School facilities work at Turkey Hill Middle School was reported at about $30,000 for ceiling and facia work.",
+   "quote": "turkey hill middle school may have $30,000 in ceiling and facia work",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill heated maintenance garage",
+   "what_was_recorded": "A heated maintenance garage at Turkey Hill Middle School was reported at a cost of around $30,000 and will go out for bid.",
+   "quote": "into a heated maintenance garage at the cost of around $30,000.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Lunenburg Water District garage borrowing",
+   "what_was_recorded": "Mr. Bursch stated the water district authorized borrowing for the new maintenance garage.",
+   "quote": "mr. bursch stated they authorized borrowing $1.4 million for the garage.",
+   "figures_as_printed": [
+    "$1.4 million"
+   ]
+  },
+  {
+   "topic": "Cost of Water District study committee article (Article 45)",
+   "what_was_recorded": "Asked whether the study committee article had a cost, Ms. Lafleur said it did not, and it was understood to be a voluntary fact-finding committee with no funding.",
+   "quote": "ms. bertram asked if there was a cost associated with this article and if so, was it in the budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cell tower lease revenue (Article 27)",
+   "what_was_recorded": "Verizon proposal funding stream of $30,000 per year with a 3% annual escalator, starting once a building permit is issued.",
+   "quote": "the funding stream would be $30,000 annually with a 3% annual escalator.",
+   "figures_as_printed": [
+    "$30,000",
+    "3%"
+   ]
+  },
+  {
+   "topic": "Cell tower ten-year revenue",
+   "what_was_recorded": "The first ten years of the cell tower lease would generate revenue of $343,000.",
+   "quote": "the first ten years would generate revenue of $343,000.",
+   "figures_as_printed": [
+    "$343,000"
+   ]
+  },
+  {
+   "topic": "Artificial turf field replacement funding contributions (Article 28)",
+   "what_was_recorded": "The school athletic budget, Lunenburg Youth Soccer Association and Lunenburg Bengals Association contributions, with cell tower revenue, total $77,500 annually.",
+   "quote": "the school through the athletic budget will contribute $25,000 to this replacement plan.",
+   "figures_as_printed": [
+    "$25,000",
+    "$15,000",
+    "$7,500",
+    "$77,500"
+   ]
+  },
+  {
+   "topic": "Artificial turf field annual maintenance",
+   "what_was_recorded": "Maintenance of the turf field (cleaning and respreading pellets twice a year) costs $1500 per year from the athletic budget.",
+   "quote": "the maintenance is $1500 per year and comes from his budget.",
+   "figures_as_printed": [
+    "$1500"
+   ]
+  },
+  {
+   "topic": "T.C. Passios / Brooks House FY 2017 operating costs",
+   "what_was_recorded": "Projected FY 2017 operating costs for the T.C. Passios building: utilities, building maintenance, supplies and labor.",
+   "quote": "utilities costs are just under $50,000, building maintenance costs are $6,100, maintenance supplies cost $8,500 and labor is just under $70,000.",
+   "figures_as_printed": [
+    "just under $50,000",
+    "$6,100",
+    "$8,500",
+    "just under $70,000"
+   ]
+  },
+  {
+   "topic": "T.C. Passios total operating costs",
+   "what_was_recorded": "Total projected operational costs for the building were stated.",
+   "quote": "the total operational costs are projected at $134,328.",
+   "figures_as_printed": [
+    "$134,328"
+   ]
+  },
+  {
+   "topic": "FLLAC rent for T.C. Passios back wing",
+   "what_was_recorded": "FLLAC agreed to an annual rental fee of $95,000 for the same space.",
+   "quote": "fllac has agreed to an annual rental fee of $95,000 for the same space.",
+   "figures_as_printed": [
+    "$95,000"
+   ]
+  },
+  {
+   "topic": "Proposed rents for other T.C. Passios occupants",
+   "what_was_recorded": "Proposed annual rents: Lunenburg Public Schools $15,000, extended day program $20,000, and P.A.C.C. $10,000 (currently paying $6,000).",
+   "quote": "we are also looking to charge rents to three other entities; $15,000 per year to lunenburg public schools, $20,000 for extended day program",
+   "figures_as_printed": [
+    "$15,000",
+    "$20,000",
+    "$10,000",
+    "$6,000"
+   ]
+  },
+  {
+   "topic": "T.C. Passios reserve for unanticipated costs",
+   "what_was_recorded": "The rents would leave a reserve of just under $6,000 for unanticipated expenses; with a reinspection expense the total is just under $10,000.",
+   "quote": "that would leave us with a reserve of just under $6,000 in case of unanticipated expenses.",
+   "figures_as_printed": [
+    "just under $6,000",
+    "$2,750",
+    "just under $10,000"
+   ]
+  },
+  {
+   "topic": "Article 9 FY 2016 budget adjustment: legal expenses deficit",
+   "what_was_recorded": "A $60,000 deficit in legal expenses, mainly from the Hollis Hills and O'Brien Homes lawsuits; $73,000 already spent on O'Brien Homes out of $111,000.",
+   "quote": "the first is a deficit of $60,000 in legal expenses.",
+   "figures_as_printed": [
+    "$60,000",
+    "$73,000",
+    "$111,000"
+   ]
+  },
+  {
+   "topic": "Article 9 total adjustments and funding sources",
+   "what_was_recorded": "Article 9 requires $95,000 of adjustments, funded from the Reserve Fund and Unemployment Compensation; components include the Wiring Inspector, salary reserve and market analysis amounts.",
+   "quote": "a total of $95,000 of adjustments for article 9 is required.",
+   "figures_as_printed": [
+    "$95,000",
+    "$10,000",
+    "$15,000",
+    "$87,000",
+    "$85,000"
+   ]
+  },
+  {
+   "topic": "Solid Waste Enterprise Fund budget (Article 18)",
+   "what_was_recorded": "The current year budget is $265,000; Ms. Lafleur proposed increasing it to $275,000, fully funded through Pay as You Throw.",
+   "quote": "the current year budget is $265,000.",
+   "figures_as_printed": [
+    "$265,000",
+    "$275,000"
+   ]
+  },
+  {
+   "topic": "Pavement management plan debt exclusion (Article 26)",
+   "what_was_recorded": "The $4 million pavement management plan would be financed over seven to twelve years; annual impact on the average homeowner ranges from $2.57 to $139 per year.",
+   "quote": "the annual impact for the average homeowner over the term would be anywhere from $2.57 to $139 per",
+   "figures_as_printed": [
+    "$4 million",
+    "$2.57",
+    "$139"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve Fund transfer toward Article 9 adjustments",
+   "amount_as_printed": "$85,000",
+   "outcome": "recommended as part of Article 9 (all in favor)",
+   "quote": "we would be looking to take $85,000 from there."
+  },
+  {
+   "description": "Unemployment Compensation account used for Article 9 adjustments",
+   "amount_as_printed": "$10,000",
+   "outcome": "recommended as part of Article 9 (all in favor)",
+   "quote": "unemployment compensation has $10,000 in it so we would use the entire amount."
+  },
+  {
+   "description": "Salary Reserve account increase for Fire contract and Police Chief settlements",
+   "amount_as_printed": "$15,000",
+   "outcome": "recommended as part of Article 9 (all in favor)",
+   "quote": "we need to add $15,000 to fund the settlement for the fire collective bargaining contract for"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Clerk",
+   "topic": "Kinder Morgan pipeline suspension",
+   "quote": "mr. alonzo reported that kinder morgan and its subsidiary, tennessee gas pipeline company, has suspended"
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Teacher Appreciation Week and hazardous waste collection",
+   "quote": "ms. luck stated this week is teacher appreciation week and thanked all the teachers in lunenburg who work"
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Chairman",
+   "topic": "Annual town election, census, dog licenses, committee vacancies",
+   "quote": "mr. toale reported the town clerk has announced annual town election ballots are now available"
+  },
+  {
+   "speaker": "Lori Lehtinen",
+   "stated_role": "Resident",
+   "topic": "Curbside yard waste pickup (Article 44)",
+   "quote": "resident lori lehtinen appeared regarding the annual town meeting article #44 regarding curbside yard waste"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "mr. alonzo reported that kinder morgan and its subsidiary, tennessee gas pipeline company, has suspended",
+   "tags": [
+    "pipeline",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointments: gate relocation at 171 Lancaster Avenue",
+   "resolution": "no one presented; no action",
+   "quote": "request to relocate a gate at 171 lancaster avenue-no one presented for this item.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "minutes of april 5, april 12, april 19, 2016 were approved.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "ms. luck reported the school committee met on april 27'h.",
+   "tags": [
+    "committees",
+    "school",
+    "stormwater",
+    "conservation",
+    "planning",
+    "MPO"
+   ]
+  },
+  {
+   "topic": "Resident appearance: yard waste curbside pickup (ATM Article 44)",
+   "resolution": "no action; non-binding town meeting vote suggested",
+   "quote": "resident lori lehtinen appeared regarding the annual town meeting article #44 regarding curbside yard waste",
+   "tags": [
+    "yard waste",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Summer Street project status (ATM Article 29)",
+   "resolution": "status update received",
+   "quote": "trish domigan, project manager, presented a status update on the summer street project.",
+   "tags": [
+    "Summer Street",
+    "roads",
+    "VHB"
+   ]
+  },
+  {
+   "topic": "ATM warrant articles review",
+   "resolution": "recommendations voted on articles listed",
+   "quote": "1. aim warrant articles",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Article 45 Lunenburg Water District Study Committee",
+   "resolution": "discussed; no motion recorded",
+   "quote": "article #45 (lunenburg water district study committee) was discussed first.",
+   "tags": [
+    "water district",
+    "study committee"
+   ]
+  },
+  {
+   "topic": "Articles 27 and 28 cell tower lease and turf field replacement",
+   "resolution": "recommended approval, 4-1, with Selectmen negotiating lease",
+   "quote": "ms. lafleur reported article 27 and 28 had to do with the replacement of existing artificial turf field",
+   "tags": [
+    "cell tower",
+    "turf field",
+    "parks",
+    "lease"
+   ]
+  },
+  {
+   "topic": "Articles 30 and 31 transfer of Brooks House and T.C. Passios",
+   "resolution": "recommended approval",
+   "quote": "ms. lafleur stated articles 30 and 31 are requests to authorize the transfer of school properties",
+   "tags": [
+    "school buildings",
+    "Brooks House",
+    "T.C. Passios"
+   ]
+  },
+  {
+   "topic": "Article 9 FY 2016 budget adjustment",
+   "resolution": "recommended approval, all in favor",
+   "quote": "ms. lafluer reported on article 8 that authorizes payment of prior year bills.",
+   "tags": [
+    "budget",
+    "reserve fund",
+    "legal",
+    "salary reserve"
+   ]
+  },
+  {
+   "topic": "Articles 12 and 13 labor contracts",
+   "resolution": "no action; no settlements yet",
+   "quote": "there are still no contract settlements on article 12, the dpw collective bargaining agreement and on article",
+   "tags": [
+    "labor contracts"
+   ]
+  },
+  {
+   "topic": "Article 18 FY 2017 Solid Waste Enterprise Fund",
+   "resolution": "recommended approval at $275,000",
+   "quote": "the last remaining article to consider is article 18, the fy 2017 solid waste disposal enterprise fund.",
+   "tags": [
+    "solid waste",
+    "Casella",
+    "pay as you throw"
+   ]
+  },
+  {
+   "topic": "Article 26 pavement management plan and sewer betterment roads",
+   "resolution": "borrowing scenario 1.1 approved",
+   "quote": "funding for pavement management plan-article 26",
+   "tags": [
+    "pavement",
+    "betterment",
+    "debt exclusion",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Town Manager report: 2015 Annual Report",
+   "resolution": "report presented",
+   "quote": "ms. lafleur presented the 2015 annual report to the board and stated it was also on",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "ZBA resignation: Donald Bowen",
+   "resolution": "resignation accepted",
+   "quote": "mr. toale read donald bowen's resignation letter from the zoning board of appeals effective april 26, 2016.",
+   "tags": [
+    "appointments",
+    "zoning board of appeals"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:41 p.m.",
+   "quote": "to adjourn the meeting at 9:41 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2015 Annual Report",
+   "where": "text",
+   "quote": "ms. lafleur presented the 2015 annual report to the board and stated it was also on"
+  },
+  {
+   "name": "Pavement management plan (updated last fall)",
+   "where": "text",
+   "quote": "in the pavement management plan that was updated last fall, it was assumed re-pavement of pratt street"
+  },
+  {
+   "name": "Motion sheet for town meeting",
+   "where": "text",
+   "quote": "ms. lafleur referred the board to the motion sheet for town meeting."
+  },
+  {
+   "name": "Parcel map (attached map) for Passios and Brooks House lots",
+   "where": "text",
+   "quote": "she and legal counsel put the attached map together for general reference."
+  },
+  {
+   "name": "Verizon proposal (cell tower)",
+   "where": "text",
+   "quote": "he was recommending the verizon proposal after reviewing all of them."
+  },
+  {
+   "name": "Three quotes for yard waste service",
+   "where": "text",
+   "quote": "she presented three quotes for the service to the board members."
+  }
+ ],
+ "tags": [
+  "town meeting",
+  "warrant articles",
+  "budget",
+  "reserve fund",
+  "school buildings",
+  "T.C. Passios",
+  "Brooks House",
+  "cell tower",
+  "artificial turf field",
+  "pavement management",
+  "sewer betterment",
+  "Summer Street",
+  "water district",
+  "yard waste",
+  "ZBA resignation",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

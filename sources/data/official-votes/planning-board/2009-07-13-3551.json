@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-07-13",
  "docid": "3551",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the shed request at the Village at Flat Hill following Building Official approval of setback distances",
+   "motion": "To approve Mr. Burden's request for sheds in the Village at Flat Hill, following the Building Official's approval of the setback distances.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed 4-0",
@@ -20,16 +20,15 @@
    "quote": "motion, ms. bilotta, second, mr. saiia, passed 4-0."
   },
   {
-   "motion": "approve minutes signed 6/29/09",
+   "motion": "To approve minutes listed as 'Signed 6/29/09'.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Halloran",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "signed 6/29/09, motion, ms. bilotta, second, mr. h allora",
-   "quote_taken_from_text": true
+   "quote": "signed 6/29/09, motion, ms. bilotta, second, mr. h alloran"
   },
   {
-   "motion": "approve Tri Town Landing Public Hearing 6/29/09 minutes",
+   "motion": "To approve the minutes of the Tri Town Landing Public Hearing of 6/29/09.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "not stated",
@@ -37,25 +36,271 @@
    "quote": "tri town landing public hearing 6/29/09, motion, ms. bilotta, second, mr. saiia"
   },
   {
-   "motion": "approve 100 Pleasant Street Information Meeting 6/29/09 minutes",
+   "motion": "To approve the minutes of the Highfield Village Public Hearing of 6/29/09.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Halloran",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "second, mr. halloran, 100 pleasant street information meeting 6/29/09"
+  },
+  {
+   "motion": "To approve the minutes of the 100 Pleasant Street Information Meeting of 6/29/09.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "100 pleasant street information meeting 6/29/09, motion , ms. bilotta, second, mr. saii",
+   "quote": "100 pleasant street information meeting 6/29/09, motion , ms. bilotta"
+  },
+  {
+   "motion": "To adjourn the regular session and go into executive session for the purpose of litigation, not to return to general session.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion, ms. bilotta, second, mr. saiia, vote"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-like with split words and stray spaces (e.g. \"Rob ert\", \"Stre et\"); quotes copied as printed with whitespace collapsed. Four minutes-approval motions are recorded with no result, so outcome is \"not stated\". The adjournment vote lists four ayes but no printed tally, so outcome is \"passed\". The executive-session request is folded into the adjournment motion. Bodkin's roll-call entry says he arrived 8:50 PM. The officers year is printed as \"2090/2010\" (likely a typo for 2009/2010). Burden's appearance is recorded as an appointment, and I treated it as public comment. No document heading exists; the NOTICES and COMMUNICATIONS section is treated as the list.",
+ "cost_usd": 0.010138620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran"
+  },
+  {
+   "name": "James A. Halloran",
+   "role": "Board member",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair, james a. halloran"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member",
+   "status": "present",
+   "quote": "james a. halloran, rob ert j. saiia, joanna l. bilotta"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Board member",
+   "status": "present",
+   "quote": "joanna l. bilotta, thomas w. bodkin, jr. (arrived"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Board member",
+   "status": "present",
+   "quote": "joanna l. bilotta, thomas w. bodkin, jr. (arrived"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "George Burden",
+   "role": "Village at Flat Hill",
+   "status": "present",
+   "quote": "mr. burden requested to comment on flat hill"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Officers and committee assignments for 2009/2010 were listed (Chair Emerick Bakaysa, Vice Chair Joanna Bilotta, Clerk Thomas Bodkin Jr., MRPC Thomas Bodkin Jr., MJTC Robert Saiia, Charter Committee Emerick Bakaysa); no vote is recorded.",
+   "quote": "chair, emerick bakaysa; vice chair, joanna bilotta;"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Kitchen appliance replacement (school stimulus grant)",
+   "what_was_recorded": "The school did not secure a stimulus grant for kitchen appliance replacement; the items were on the FY Capital Plan but were not funded at May 2009 Town Meeting.",
+   "figures_as_printed": [],
+   "quote": "the items were on the fy capital plan, but not funded at may 2009 town meeting."
+  },
+  {
+   "topic": "North Main Street train depot building, Leominster (MJTC report)",
+   "what_was_recorded": "A Montachusett Joint Transportation Committee report said the North Main Street train depot building in Leominster is planned for expansion at a cost of $3 million.",
+   "figures_as_printed": [
+    "$3 million"
+   ],
+   "quote": "at a cost of $3 million."
+  },
+  {
+   "topic": "43D funding",
+   "what_was_recorded": "The state cut funding for 43D out of the budget and the House did not restore it; the Mass Permit Regulatory Office said it is funded as an operating office until July 31, 2009.",
+   "figures_as_printed": [],
+   "quote": "research shows the senate cut funding for 43d out of budget"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "George Burden",
+   "stated_role": "Village at Flat Hill",
+   "topic": "Flat Hill's association with the Town; shed request",
+   "quote": "mr. burden requested to comment on flat hill"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Information Meeting Continuation - 100 Pleasant Street",
+   "resolution": "referred to separate minutes",
+   "quote": "stre et- see separate minutes",
+   "tags": [
+    "100 Pleasant Street",
+    "information meeting"
+   ]
+  },
+  {
+   "topic": "Appointments: George Burden, Village at Flat Hill",
+   "resolution": "approved shed request 4-0, subject to Building Official setbacks",
+   "quote": "chair entert ained a motion to approve the request",
+   "tags": [
+    "Flat Hill",
+    "sheds",
+    "PRA"
+   ],
    "quote_taken_from_text": true
   },
   {
-   "motion": "adjourn regular session and enter executive session for litigation, not to return to general session",
-   "moved_by": "Ms. Bilotta",
-   "seconded_by": "Mr. Saiia",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. saiia, passed 4-0. minutes - approval: signed 6/29/09, motion, ms. bilotta, second, mr. h alloran,",
-   "quote_taken_from_text": true
+   "topic": "Minutes approval",
+   "resolution": "motions made; results not stated",
+   "quote": "signed 6/29/09, motion, ms. bilotta, second, mr. h alloran",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted; on file in Planning Office",
+   "quote": "noted special permit for 69 west street",
+   "tags": [
+    "ZBA",
+    "conservation commission",
+    "orders of conditions"
+   ]
+  },
+  {
+   "topic": "Committee reports (CPC, MJTC)",
+   "resolution": "reported; no action",
+   "quote": "cpc- school informed the town that they did not secure",
+   "tags": [
+    "CPC",
+    "MJTC",
+    "school grant"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business",
+   "resolution": "reported; officers listed; no action",
+   "quote": "2090/2010 officers & committees- chair, emerick bakaysa",
+   "tags": [
+    "officers",
+    "Green Community",
+    "43D",
+    "Lunenburg Village",
+    "40R"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "reported; no action",
+   "quote": "as built submitted; two minor details need to be added.",
+   "tags": [
+    "CVS Electric Avenue",
+    "Highfield Village",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action (see above)",
+   "quote": "unfinished business: see above planning director's reports-",
+   "tags": []
+  },
+  {
+   "topic": "Executive session - litigation",
+   "resolution": "motion to enter executive session for litigation, not returning to general session",
+   "quote": "chair requested a motion to adjourn regular session",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:50 PM",
+   "quote": "regular session adjourned 8:50",
+   "tags": [
+    "adjournment"
+   ]
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes partially scanned with some Unicode encoding artifacts on page 1, but all vote records are clearly readable. Thomas Bodkin Jr. arrived at 8:50 PM, so four members were present for votes (Bakaysa, Halloran, Saiia, Bilotta).",
- "cost_usd": 0.1133545
+ "documents_and_exhibits": [
+  {
+   "name": "Special Permit for 69 West Street (Zoning Board of Appeals), to demolish existing dwelling and construct new",
+   "where": "list",
+   "quote": "noted special permit for 69 west street"
+  },
+  {
+   "name": "Order of Conditions for 40 Hemlock Drive (replacement of failed sewage disposal system)",
+   "where": "list",
+   "quote": "noted order of conditions for 40 hemlock drive for replacement"
+  },
+  {
+   "name": "Order of Conditions for 43 Hemlock Terrace (upgrade of failed septic system)",
+   "where": "list",
+   "quote": "43 hemlock terrace for upgrade of failed septic"
+  },
+  {
+   "name": "Extension Permit for Order of Conditions for 405 West Street",
+   "where": "list",
+   "quote": "noted extension permit for order of"
+  },
+  {
+   "name": "Document containing 36 signatures out of 45 residents for the approval of sheds",
+   "where": "text",
+   "quote": "mr. burden presented a document containing 36 signatures"
+  },
+  {
+   "name": "Letter noting sewer allotment from Fitchburg (Tri Town Landing)",
+   "where": "text",
+   "quote": "applicant submitted a copy of letter noting sewer"
+  },
+  {
+   "name": "43D full application",
+   "where": "text",
+   "quote": "chair reported full application was submitted"
+  },
+  {
+   "name": "40R Report (2009)",
+   "where": "text",
+   "quote": "40r report- director noted the 2009 report has been filed."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "sheds",
+  "Flat Hill",
+  "minutes approval",
+  "43D",
+  "Green Community",
+  "officers",
+  "executive session",
+  "litigation",
+  "school grant",
+  "Tri Town Landing",
+  "Highfield Village",
+  "100 Pleasant Street"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "notices and communications"
+ },
+ "dropped_unquoted_by_field": {}
 }

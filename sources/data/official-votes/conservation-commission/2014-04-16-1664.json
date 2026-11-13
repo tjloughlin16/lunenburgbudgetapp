@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-04-16",
  "docid": "1664",
@@ -12,15 +12,204 @@
  },
  "votes": [
   {
-   "motion": "Issue a Negative 3 determination for removal of eight pine trees at 61 Spring Street",
-   "outcome": "Unanimous",
-   "procedural": false,
+   "motion": "Hearing on Request for Determination of Applicability (Patrick/Pat Kincaid, 61 Spring Street) to remove eight pine trees along the property line, with waddles to be placed along the water line; result as printed.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "negative 3 unanimous"
+   "outcome": "Negative 3 Unanimous",
+   "procedural": false,
+   "quote": "waddles along the water line. negative 3 unanimous"
+  },
+  {
+   "motion": "Hearing on Notice of Intent (Joseph Fortin, 250 Holman Street, Lot 8) for a driveway to service a single family home; approved.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "this was just a refilling, plans show wetlands and nothing has changed. approved unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1040695
+ "dropped_unquoted": 2,
+ "note": "Text is a plain extraction with broken word spacing and garbled header characters; quotes reproduce the printed spacing. No motion, mover, or seconder is printed for any item; the two hearing results ('Negative 3 Unanimous', 'Approved Unanimous') are recorded as printed without a motion text, so they are included as votes with moved_by and seconded_by blank. Call to order, minutes approval, and adjournment carry no recorded motion. The Kincaid hearing time (7:15 PM) precedes the call to order (7:17 PM). Attendance is taken from the member list in the header; no absences are printed. No dollar figures appear in the text. Public comment headings have no recorded content. The document-like references (Request for Determination of Applicability, Notice of Intent, Order of Conditions) are mentioned in passing without a list, so no documents_list is recorded.",
+ "cost_usd": 0.00566662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rich Bursch",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "rich bursch, jj cote, sharon jordan, john lattanzi"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "rich bursch, jj cote, sharon jordan, john lattanzi"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "rich bursch, jj cote, sharon jordan, john lattanzi"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "rich bursch, jj cote, sharon jordan, john lattanzi"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "matt had inspected and stated that the trees"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "Conservation Commission member",
+   "status": "present",
+   "quote": "rich bursch, jj cote, sharon jordan, john lattanzi"
+  },
+  {
+   "name": "Pat Kincaid",
+   "role": "applicant, 61 Spring Street; representing himself",
+   "status": "present",
+   "quote": "pat kincaid presented."
+  },
+  {
+   "name": "Joe Fortin",
+   "role": "applicant, 250 Holman Street; presented",
+   "status": "present",
+   "quote": "joe fortin presented."
+  },
+  {
+   "name": "Joseph Fortin",
+   "role": "visitor, re: 250 Holman Street",
+   "status": "present",
+   "quote": "joseph fortin ~ 204 roosevelt street fitchburg"
+  },
+  {
+   "name": "Stephanie Frey",
+   "role": "visitor",
+   "status": "not stated",
+   "quote": "stephanie frey pat kincaid ~ 61 spring street"
+  },
+  {
+   "name": "Brian Lafferty",
+   "role": "visitor, re: 739-777 Chase Road",
+   "status": "not stated",
+   "quote": "brian lafferty ~ 602 main street concord"
+  },
+  {
+   "name": "Jim Almonte",
+   "role": "visitor, WDA, re: 739-777 Chase Road",
+   "status": "not stated",
+   "quote": "jim almonte ~ wda 31 e main street westboro"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "visitor; Lane property update",
+   "status": "present",
+   "quote": "everything is going along smoothly, article on"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Instructions were given to the applicant to place waddles along the water line when removing the trees at 61 Spring Street.",
+   "quote": "instructions were given to place waddles along the water line."
+  },
+  {
+   "decision": "The hearing on the Notice of Intent for 739-777 Chase Road was continued until May 7; the commission noted Matt Marro would like a third party review of the area bordering a wetland.",
+   "quote": "continued until may 7 th ."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Hearing: 61 Spring Street (Request for Determination of Applicability, Patrick Kincaid)",
+   "resolution": "Negative 3 Unanimous; waddles along water line",
+   "quote": "pat kincaid presented.",
+   "tags": [
+    "wetlands",
+    "tree removal",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "Hearing: 250 Holman Street, Lot 8 (Notice of Intent, Joseph Fortin)",
+   "resolution": "approved, unanimous",
+   "quote": "joe fortin presented.",
+   "tags": [
+    "wetlands",
+    "driveway",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "Hearing: 739-777 Chase Road (Notice of Intent, Empire Management Corporation)",
+   "resolution": "continued to May 7",
+   "quote": "continued until may 7 th .",
+   "tags": [
+    "wetlands",
+    "public water supply well",
+    "stormwater",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Old business: Lane property update (Brandon Kibbe)",
+   "resolution": "update received, no action",
+   "quote": "everything is going along smoothly, article on",
+   "tags": [
+    "Lane property",
+    "land"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "rewriting of p & s, this would require a new filing",
+   "tags": [
+    "regulations",
+    "50 Elmwood Road"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule listed",
+   "quote": "may 7 & 21 september 3 & 17",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:03 PM; no motion recorded",
+   "quote": "adjournment: 9:03 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Conservation Commission",
+  "wetlands",
+  "hearings",
+  "tree removal",
+  "driveway",
+  "public water supply well",
+  "Chase Road",
+  "Lane property",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

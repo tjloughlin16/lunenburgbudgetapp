@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-05-09",
  "docid": "4472",
@@ -12,29 +12,225 @@
  },
  "votes": [
   {
-   "motion": "accept April 11, 2012 meeting minutes with amendment",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes accepted with an amendment noting which members were absent."
-  },
-  {
-   "motion": "appoint Brian Spadafino, new LHS Principal, as an advisor to the Committee effective July 1, 2012",
+   "motion": "Appoint Brian Spadafino, new LHS Principal, as an advisor to the Committee effective July 1, 2012.",
+   "moved_by": "Mike Barney",
+   "seconded_by": "Richard Cohen",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "mike barney moved and richard cohen seconded a motion to appoint brian spadafino, new lhs principal, as an advisor to the committee effective july 1, 2012.",
-   "moved_by": "Mike Barney",
-   "seconded_by": "Richard Cohen"
+   "quote": "mike barney moved and richard cohen seconded a motion to appoint brian spadafino, new lhs principal, as an advisor to the committee effective july 1, 2012."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting (at 8:37 PM).",
+   "moved_by": "Colleen Shapiro",
+   "seconded_by": "Mike Barney",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "colleen shapiro moved and mike barney seconded a motion to adjourn.",
-   "moved_by": "Colleen Shapiro",
-   "seconded_by": "Mike Barney"
+   "quote": "colleen shapiro moved and mike barney seconded a motion to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source: macOS Vision. Three votes recorded; moved_by/seconded_by not stated for prior-minutes approval.",
- "cost_usd": 0.1166005
+ "note": "OCR text from a scanned document. Page 2 begins mid-sentence and the opening of agenda items 5 and 6 is missing, so the interview-question topic is only partly recorded. Motions were recorded without a printed result, so their outcomes are 'not stated'. No roll-call votes are printed. Attendance is printed only as 'absent' markers; unmarked members are recorded as 'not stated'. No public comment section is printed. The footer 'APPROVED ... May 30, 2012' shows these minutes were approved at a later meeting; that approval is not a vote in this text.",
+ "cost_usd": 0.00499722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "loxi jo calmes, superintendent"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative; Secretary",
+   "status": "present",
+   "quote": "colleen shapiro, sc representative"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative, Chair",
+   "status": "absent",
+   "quote": "michael mackin, sc representative, chair - absent"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "absent",
+   "quote": "dave matthews, bos representative - absent"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "not stated",
+   "quote": "nathan lockwood, planning board representative"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative, Vice Chair",
+   "status": "present",
+   "quote": "mark erickson, finance committee representative, vice chair"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "mike barney, citizen-at-large"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen-at-large",
+   "status": "absent",
+   "quote": "brian frank, citizen-at-large - absent"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "richard cohen, citizen-at-large"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry speidel, town manager - absent"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "not stated",
+   "quote": "john londa, director of facilities"
+  },
+  {
+   "name": "Joe Dillon",
+   "role": "Interim LHS Principal",
+   "status": "absent",
+   "quote": "joe dillon, interim lhs principal - absent"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of April 11, 2012 accepted with an amendment noting which members were absent (no motion recorded).",
+   "quote": "minutes accepted with an amendment noting which members were absent."
+  },
+  {
+   "decision": "Discussion of funding tabled until Kerry Speidel is present.",
+   "quote": "discussion of funding tabled until kerry speidel is present."
+  },
+  {
+   "decision": "Project timeline pushed out by 90 days, based on projected July 25, 2012 MSBA approval of the Feasibility Study Agreement.",
+   "quote": "the timeline has been pushed out by 90 days and updated to reflect that based upon projected"
+  },
+  {
+   "decision": "The list of interview questions is to be submitted to MSBA prior to the interviews; content of the questions to be discussed further at the next meeting.",
+   "quote": "some discussion surrounding content of the questions will be discussed further at next meeting on may 30, 2012."
+  },
+  {
+   "decision": "Next meeting set for May 30, 2012 at 6:30 at LHS, in order to tour the facility.",
+   "quote": "next meeting, may 30, 2012, 6:30 at lhs in order to tour facility."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Funding discussion",
+   "what_was_recorded": "Discussion of funding was tabled until the Town Manager is present; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "discussion of funding tabled until kerry speidel is present."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order by Vice Chair",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "called to order by vice chair, mark erickson"
+  },
+  {
+   "topic": "Superintendent's Report",
+   "resolution": "no action; informational report on feasibility study, MSBA meeting and OPM posting",
+   "tags": [
+    "MSBA",
+    "feasibility study",
+    "OPM"
+   ],
+   "quote": "feasibility study passed at town meeting."
+  },
+  {
+   "topic": "Review of April 11, 2012 minutes",
+   "resolution": "accepted with amendment",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes accepted with an amendment noting which members were absent."
+  },
+  {
+   "topic": "Update on next steps",
+   "resolution": "timeline updated; no vote",
+   "tags": [
+    "schedule",
+    "OPM",
+    "designer selection",
+    "funding date"
+   ],
+   "quote": "the timeline has been pushed out by 90 days"
+  },
+  {
+   "topic": "Designer/candidate interview questions and scoring (partial page)",
+   "resolution": "discussed; content deferred to May 30, 2012 meeting",
+   "tags": [
+    "interviews",
+    "scoring",
+    "MSBA"
+   ],
+   "quote": "scoring system - a numeric score sheet using 1-5 will be used, possibly in conjunction with a rubric."
+  },
+  {
+   "topic": "Other Business: appointment of LHS Principal as advisor",
+   "resolution": "motion made; result not recorded",
+   "tags": [
+    "appointment",
+    "LHS"
+   ],
+   "quote": "mike barney moved and richard cohen seconded a motion to appoint brian spadafino, new lhs principal, as an advisor to the committee effective july 1, 2012."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:37 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "adjournment: at 8:37 pm colleen shapiro moved and mike barney seconded a motion to adjourn."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Feasibility Study Agreement (MSBA approval, projected July 25, 2012)",
+   "where": "text",
+   "quote": "projected july 25, 2012, msba approval date of the feasibility study agreement"
+  },
+  {
+   "name": "RFs (as printed; states committee will provide interview questions)",
+   "where": "text",
+   "quote": "rfs states the committee will provide questions prior to interview."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "feasibility study",
+  "OPM selection",
+  "designer selection",
+  "funding",
+  "appointments",
+  "LHS",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

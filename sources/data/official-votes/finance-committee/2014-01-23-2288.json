@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-01-23",
  "docid": "2288",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 1/9/2014 as written",
+   "motion": "Accept the minutes of 1/9/2014 as written.",
    "moved_by": "SR",
    "seconded_by": "JH",
    "outcome": "passed unanimously",
@@ -20,15 +20,15 @@
    "quote": "sr motioned to accept the minutes of 1/9/2014 as written. jh seconded, approved unanimously."
   },
   {
-   "motion": "Authorize expenditures in excess of available appropriations for snow and ice removal in accordance with MGL Chapter 44, Section 3ID, provided that expenditures are approved by the Board of Selectmen",
+   "motion": "In accordance with MGL Chapter 44, Section 3ID, the Finance Committee along with the Town Manager authorize expenditures in excess of available appropriations for snow and ice removal, provided the expenditures are approved by the Board of Selectmen.",
    "moved_by": "BL",
    "seconded_by": "KM",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bl motioned that, in accordance with mgl chapter 44, section 3id, the finance committee along with the town manager, authorize expenditures in excess of available appropriations for snow and ice remova provided that the expenditures are approved by the board of selectmen. km seconded, approved unanimously."
+   "quote": "bl motioned that, in accordance with mgl chapter 44, section 3id, the finance committee along with the town manager, authorize expenditures in excess of available appropriations for snow"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "TB",
    "seconded_by": "BL",
    "outcome": "passed",
@@ -37,6 +37,235 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned minutes; votes are clearly recorded and verifiable.",
- "cost_usd": 0.1116385
+ "note": "OCR text. The Present line reads 'M. Brickson' although the header names Mark Erickson, Chairman and the text refers to 'ME'; recorded as printed. Section numbering is partly garbled (item 5 reads as 'S.'). Some OCR errors in the text ('2id Quarter', '3ID', 'remova') are copied as printed. The snow/ice vote quote is truncated to fit the 200-character limit; the full motion continues past the quote. No public comment section printed. Attendee roles only where printed in the header.",
+ "cost_usd": 0.00708492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Brickson",
+   "status": "present",
+   "quote": "location: present: absent: town hall m. brickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "S. Raboin",
+   "status": "present",
+   "quote": "location: present: absent: town hall m. brickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "T. Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "location: present: absent: town hall m. brickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "J. Henshaw",
+   "status": "present",
+   "quote": "location: present: absent: town hall m. brickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "B. Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "location: present: absent: town hall m. brickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "K. Menard",
+   "status": "present",
+   "quote": "location: present: absent: town hall m. brickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "J. Smith",
+   "status": "absent",
+   "quote": "location: present: absent: town hall m. brickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "Ms. Speidel",
+   "status": "present",
+   "quote": "ms. speidel brought forward a request for the committee to authorize expenditures in excess of available appropriations for now and ice removal."
+  },
+  {
+   "name": "K. Brochu",
+   "status": "present",
+   "quote": "k. brochu presented the 2id quarter financial results, with surpluses trending greater than deficits."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ME will draft the Finance Committee report for the Annual Town Report covering calendar year 2013, with the draft ready for the 2/13/2014 meeting.",
+   "quote": "me will draft report on behalf of the finance committee for the annual town report covering calendar year 2013. he plans to have the draft for the meeting on 2/13/2014."
+  },
+  {
+   "decision": "K. Speidel will attend the Mass Municipal Association meeting this weekend.",
+   "quote": "the mass municipal association meeting is this weekend, k. speidel will attend."
+  },
+  {
+   "decision": "JH will add reserves to the stabilization policy, circulate revised drafts, and incorporate comments received before 2/6 for discussion at the next meeting.",
+   "quote": "john will add reserves to the stabilization policy. he will circulate revised drafts for review."
+  },
+  {
+   "decision": "Budget schedule set: Capital Planning Committee on 2/13; Town Manager's budget recommendations distributed 2/18/2014 with presentation on 2/27/14.",
+   "quote": "the town manager's budget recommendations will be distributed 2/18/2014 with the presentation on 2/27/14."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library Director's budget",
+   "what_was_recorded": "The Library Board of Trustees reviewed the Director's budget, which was coming in close to the target; no dollar figure printed.",
+   "quote": "reviewed the director's budget, which was coming in very close to the target as identified through the state's library organization.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library carpeting capital request",
+   "what_was_recorded": "A capital planning request for carpeting was discussed, including the cost to move books and shelves; no figure printed.",
+   "quote": "he also discussed the capital planning request for carpeting as to it including the cost to move books and shelves.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Green Community grant",
+   "what_was_recorded": "The Green Communities Task Force is preparing its first Green Community grant request for submission next week; no amount printed.",
+   "quote": "the green communities task force is getting their first green community grant request ready for submission next week.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Expenditures in excess of appropriations for snow and ice removal",
+   "what_was_recorded": "A request to authorize spending in excess of available appropriations for snow and ice removal was brought forward and approved; no dollar figure printed.",
+   "quote": "ms. speidel brought forward a request for the committee to authorize expenditures in excess of available appropriations for now and ice removal.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY second quarter financial results",
+   "what_was_recorded": "Second-quarter financial results were presented, with surpluses trending greater than deficits; no figures printed.",
+   "quote": "k. brochu presented the 2id quarter financial results, with surpluses trending greater than deficits.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Debt service spreadsheet",
+   "what_was_recorded": "A debt service spreadsheet covering 2005-2029 will be shared; no dollar figure printed.",
+   "quote": "k. brochu has a debt service spreadsheet that covers 2005-2029 that will be shared.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Non-excluded debt as share of operating budget",
+   "what_was_recorded": "The committee discussed looking back over 10 years at non-excluded debt as a percent of the operating budget; no dollar figure printed.",
+   "quote": "we talked about looking back over 10 years to see what the level of non-excluded debt has been as a % of operating budget.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "no action; drafting assigned to ME",
+   "quote": "me will draft report on behalf of the finance committee for the annual town report covering calendar year 2013.",
+   "tags": [
+    "annual town report",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 1/9/2014",
+   "resolution": "approved as written",
+   "quote": "sr motioned to accept the minutes of 1/9/2014 as written. jh seconded, approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "bl reported that the library board of trustees reviewed the director's budget",
+   "tags": [
+    "library",
+    "council on aging",
+    "green communities",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Town Manager update: snow and ice expenditure authority",
+   "resolution": "approved unanimously; budget schedule reviewed",
+   "quote": "ms. speidel brought forward a request for the committee to authorize expenditures in excess of available appropriations for now and ice removal.",
+   "tags": [
+    "snow and ice",
+    "appropriations",
+    "budget schedule",
+    "second quarter results"
+   ]
+  },
+  {
+   "topic": "5 Year Financial Forecast",
+   "resolution": "discussed; no action",
+   "quote": "roads continue to be the top priority for funding with any monies that come available.",
+   "tags": [
+    "forecast",
+    "roads",
+    "regionalization"
+   ]
+  },
+  {
+   "topic": "Fiscal policies (borrowing and stabilization)",
+   "resolution": "draft under revision; continued",
+   "quote": "jh shared the draft policies regarding borrowing and stabilization.",
+   "tags": [
+    "fiscal policy",
+    "debt",
+    "stabilization reserves"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled 2/13 and 2/27",
+   "quote": "the next meeting will be 2/13 with the capital planning committee, and 2/27 with the town manager's budget review.",
+   "tags": [
+    "schedule",
+    "capital plan"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Municipal fiscal data report compiled by masstaxpayers.org",
+   "where": "text",
+   "quote": "me shared a municipal fiscal data report compiled by masstaxpayers.org."
+  },
+  {
+   "name": "Draft fiscal policies regarding borrowing and stabilization",
+   "where": "text",
+   "quote": "jh shared the draft policies regarding borrowing and stabilization."
+  },
+  {
+   "name": "Debt service spreadsheet covering 2005-2029 (K. Brochu)",
+   "where": "text",
+   "quote": "k. brochu has a debt service spreadsheet that covers 2005-2029 that will be shared."
+  },
+  {
+   "name": "Draft Finance Committee report for the Annual Town Report, calendar year 2013",
+   "where": "text",
+   "quote": "me will draft report on behalf of the finance committee for the annual town report covering calendar year 2013."
+  },
+  {
+   "name": "Town Manager's budget recommendations",
+   "where": "text",
+   "quote": "the town manager's budget recommendations will be distributed 2/18/2014 with the presentation on 2/27/14."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town budget",
+  "snow and ice",
+  "fiscal policy",
+  "debt",
+  "five year forecast",
+  "annual town report",
+  "library",
+  "capital plan",
+  "stabilization"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

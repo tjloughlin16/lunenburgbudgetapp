@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-09-20",
  "docid": "4988",
@@ -12,39 +12,303 @@
  },
  "votes": [
   {
-   "motion": "Approve the Peddler's license for Noelle Richard",
+   "motion": "Approve the peddler's license for Noelle Richard (Nicole Richard d/b/a Solar City).",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2ºd: t. alonzo to approve the peddler's license for noelle richard vote: all in favor"
+   "quote": "to approve the peddler's license for noelle richard"
   },
   {
-   "motion": "Approve the change of manager to Heidi Kane for Mickey Shea's",
+   "motion": "Approve the change of manager to Heidi Kane for Mickey Shea's.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to approve the change of manager to heidi kane for mickey shea's 2\": r. ebersole vote: all in favor"
+   "quote": "to approve the change of manager to heidi kane for mickey shea's"
   },
   {
-   "motion": "Accept the letter to Unitil and authorize the Chair to sign it on behalf of the Board",
+   "motion": "Accept the letter to Unitil and authorize the Chair to sign it on behalf of the Board.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to accept this letter to unitil and authorize the chair to sign it on behalf of the board 2^: r. ebersole vote: all in favor"
+   "quote": "to accept this letter to unitil and authorize the chair to sign it on behalf of the board"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting 2\"d: r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting 2\"d: r. ebersole vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text, macOS Vision. All votes were unanimous (All in Favor).",
- "cost_usd": 0.0931955
+ "note": "OCR text (macOS Vision), single-page scans joined; some characters garbled (e.g. '2ºd', '2\"d', '30*h'). Quotes were copied from the OCR text as printed. The peddler's license applicant is printed as 'Nicole Richard' in the heading and 'Ms. Richard' in the text but as 'Noelle Richard' in the motion; the name is recorded as printed in each place. Votes are recorded as 'All in Favor' with no numeric count. The warrant approvals are stated as 'The Board approved' with no motion or vote printed, so they are recorded as a decision, not a vote. The minutes show no roll call. Public comment was 'none' at both points. No dollar transfers are recorded.",
+ "cost_usd": 0.006405419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "interim town manager david marciello"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member"
+  },
+  {
+   "name": "Nicole Richard",
+   "role": "applicant (d/b/a Solar City peddler's license)",
+   "status": "present",
+   "quote": "ms. richard presented to request a peddler's license for selling solar city."
+  },
+  {
+   "name": "Heidi Kane",
+   "role": "applicant (new manager, Mickey Shea's)",
+   "status": "present",
+   "quote": "heidi kane introduced herself stating she has been in the food and beverage business for twenty years"
+  },
+  {
+   "name": "Robert Herrick",
+   "role": "owner, Mickey Shea's",
+   "status": "not stated",
+   "quote": "ms. kane thanked the board and exited the meeting with owner, robert herrick."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board requested an update from KP Law on the status of the ongoing cases it is handling, and suggested requesting proposals for general counsel from other firms.",
+   "quote": "the board requested an update on where kp law is with the ongoing cases they are handling."
+  },
+  {
+   "decision": "The PAYT trash bag discussion was continued; the Board will take it up again before January.",
+   "quote": "the board will continue this discussion before january."
+  },
+  {
+   "decision": "The Board asked the Interim Town Manager to follow up on the unpaid Kabob-e-licious grease trap check and report back.",
+   "quote": "the board asked mr. marciello to follow up on this matter and report back to them."
+  },
+  {
+   "decision": "The Board approved the accounts payable, payroll and payroll deductions warrants. No motion or vote count is printed for this approval.",
+   "quote": "the board approved an accounts payable warrant in the amount of $139,560.40"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants approved",
+   "what_was_recorded": "The Board approved an accounts payable warrant, a payroll warrant and a payroll deductions warrant, with amounts printed.",
+   "figures_as_printed": [
+    "$139,560.40",
+    "$747,772.16",
+    "$153,094.02"
+   ],
+   "quote": "the board approved an accounts payable warrant in the amount of $139,560.40, a payroll warrant in the amount of $747,772.16 and a payroll deductions warrant in the amount of $153,094.02."
+  },
+  {
+   "topic": "School bus for additional students",
+   "what_was_recorded": "The School Committee reported another bus will be needed to accommodate additional students, at a stated cost.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "another bus will be needed at the cost of $60,000 to accommodate the additional students."
+  },
+  {
+   "topic": "School building project rebates",
+   "what_was_recorded": "The Town will receive an $80,000 rebate on unused steel and a $200,000 rebate on asbestos removal.",
+   "figures_as_printed": [
+    "$80,000",
+    "$200,000"
+   ],
+   "quote": "the town will be getting an $80,000 rebate on unused steel and a $200,000 rebate on the asbestos removal"
+  },
+  {
+   "topic": "School building change order",
+   "what_was_recorded": "A change order of $38,069 was reported, of which $34,400 is for Police Department radio repeaters.",
+   "figures_as_printed": [
+    "$38,069",
+    "$34,400"
+   ],
+   "quote": "there was a change order of $38,069, $34,400 of that is for radio repeaters for the police department"
+  },
+  {
+   "topic": "School building additional furnishings",
+   "what_was_recorded": "Approval for additional furnishings in the stated amount was reported, but that change order was not ready.",
+   "figures_as_printed": [
+    "$9,100.00"
+   ],
+   "quote": "there was also approval for additional furnishings in the amount of $9,100.00 but that change order was not ready."
+  },
+  {
+   "topic": "Kabob-e-licious returned grease trap check",
+   "what_was_recorded": "A $400.00 check from Kabob-e-licious for grease trap non-compliance was returned NSF and is being reversed.",
+   "figures_as_printed": [
+    "$400.00"
+   ],
+   "quote": "i received an nsf notice for the $400.00 check that we took in from kabob-e-licious on 9/8/16"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Legal Counsel Response Time",
+   "resolution": "discussed; update from KP Law requested",
+   "quote": "the board discussed occasions that their legal counsel, kp law, has been slow to respond to ongoing issues",
+   "tags": [
+    "legal counsel",
+    "KP Law"
+   ]
+  },
+  {
+   "topic": "Peddler's License - Nicole Richard d/b/a Solar City",
+   "resolution": "approved",
+   "quote": "ms. richard presented to request a peddler's license for selling solar city.",
+   "tags": [
+    "licensing",
+    "peddler"
+   ]
+  },
+  {
+   "topic": "Change of Manager License - H & Corporation d/b/a Mickey Shea's",
+   "resolution": "approved",
+   "quote": "heidi kane introduced herself stating she has been in the food and beverage business for twenty years",
+   "tags": [
+    "licensing",
+    "manager change"
+   ]
+  },
+  {
+   "topic": "Pay As You Throw (PAYT) trash bags",
+   "resolution": "continued before January",
+   "quote": "mr. toale noted this was a continuation of a previous discussion.",
+   "tags": [
+    "trash",
+    "PAYT"
+   ]
+  },
+  {
+   "topic": "Minutes / Warrants / Action File Issues",
+   "resolution": "warrants approved; Unitil letter approved",
+   "quote": "there were no minutes for approval this evening.",
+   "tags": [
+    "warrants",
+    "solar",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "ms. luck attended the mart meeting on august 30",
+   "tags": [
+    "committee reports",
+    "MART",
+    "schools",
+    "stormwater",
+    "building project"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "Kabob-e-licious follow-up requested",
+   "quote": "mr. marciello presented an inventory of town properties.",
+   "tags": [
+    "town manager",
+    "properties",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment",
+   "quote": "there was none this evening.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:42 p.m.",
+   "quote": "the meeting adjourned at 7:42 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft letter to Unitil on the two circuits moratorium (composed by Facilities Director Londa)",
+   "where": "text",
+   "quote": "mr. toale read the draft letter, composed by facilities director londa, aloud"
+  },
+  {
+   "name": "Memorandum of understanding sent to all Councils on Aging regarding use of MART vans, reporting and insurance",
+   "where": "text",
+   "quote": "understanding sent to all councils on aging regarding the use of mart vans, reporting and insurance"
+  },
+  {
+   "name": "Inventory of town properties (presented by Interim Town Manager David Marciello)",
+   "where": "text",
+   "quote": "mr. marciello presented an inventory of town properties."
+  },
+  {
+   "name": "Violation letter to Kabob-e-licious",
+   "where": "text",
+   "quote": "reported the violation letter to kabob-e-licious was band delivered by a constable on september"
+  },
+  {
+   "name": "Email from Ms. Deming regarding the NSF notice on the $400.00 check",
+   "where": "text",
+   "quote": "he read the email from ms. deming"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "licensing",
+  "peddler license",
+  "manager license",
+  "PAYT trash bags",
+  "Unitil solar",
+  "legal counsel",
+  "school building project",
+  "warrants",
+  "grease trap",
+  "committee reports",
+  "town manager report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

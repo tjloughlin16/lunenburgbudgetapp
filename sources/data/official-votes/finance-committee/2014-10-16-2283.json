@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-10-16",
  "docid": "2283",
@@ -15,29 +15,324 @@
    "motion": "Approve the minutes of the September 11 meeting as corrected.",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Karin Menard",
-   "outcome": "passed 4-0 with two abstentions",
+   "outcome": "passed 4-0 (two abstentions)",
    "procedural": true,
-   "quote": "terri moved that the minutes of the september 11 meeting be approved as corrected. karin seconded the motion. the committee approved the motion 4-0 with two abstentions as the new members had not attended the september 11 meeting."
+   "quote": "terri moved that the minutes of the september 11 meeting be approved as corrected."
   },
   {
    "motion": "Approve the minutes of the September 25 meeting as submitted.",
    "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
-   "outcome": "passed 4-0 with two abstentions",
+   "outcome": "passed 4-0 (two abstentions)",
    "procedural": true,
-   "quote": "karin moved that the minutes of the september 25 meeting be approved as submitted. terri seconded the motion and the committee approved the motion 4-0 with two abstentions for the same reason."
+   "quote": "karin moved that the minutes of the september 25 meeting be approved as submitted."
   },
   {
    "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Terri Burchfield",
-   "outcome": "passed 5-0 with one abstention",
+   "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "jay moved to adjourn the meeting; his motion was seconded by terri. the committee voted 5-0 in favor (the one abstention was caroline who has not formally been sworr in as a fin comm member).",
-   "quote_taken_from_text": true
+   "quote": "jay moved to adjourn the meeting; his motion was seconded by terri."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of macOS Vision scan, readable. Three procedural votes recorded: two to approve prior meeting minutes, one to adjourn.",
- "cost_usd": 0.0843965
+ "note": "OCR text from a scanned document with some garbled passages (for example, the line about material removed on site in the school project report and the Schools/School Building block on page 2), so those readings are uncertain. Public comment: the minutes say 'Public: None' under Communications, and the only speaker recorded is Jamie T., during the Sewer Commission report. Two members (Caroline Griffis and Jay Simeone) abstained on the September minutes because they were new; Caroline did not formally take her oath when the adjournment vote was taken. Votes were recorded with counts; no roll-call detail beyond counts.",
+ "cost_usd": 0.008286819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, caroline griffis, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, caroline griffis, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, caroline griffis, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, caroline griffis, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, caroline griffis, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, caroline griffis, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jamie T.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jamie t. voiced concern that the town make sure that none of the costs of sewer commission capital projects be borne by the town, either directly or indirectly."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will address two issues to prepare for the capital plan: making sure the Planning Board administrative assistant has the information needed for the capital planning spreadsheet, and modifying the Capital Planning Committee web site to match the newly adopted Financial Policies.",
+   "quote": "the committee will address two issues to prepare for the capital plan:"
+  },
+  {
+   "decision": "John will ask Jack R. for more specific details on specs and costs of the proposed new street sweeper.",
+   "quote": "john will ask jack r. for more specific details on specs and costs of the proposed new street sweeper."
+  },
+  {
+   "decision": "Mark suggested that Caroline and Jay each look over the liaison assignments and choose a couple they would be interested in, so the assignments can be divided among the six members.",
+   "quote": "mark suggested to both caroline and jay that each look over the committee liaison assignments"
+  },
+  {
+   "decision": "The committee will change the meeting dates falling on Thanksgiving and Christmas Day.",
+   "quote": "the committee will have to change the meeting dates these two days."
+  },
+  {
+   "decision": "Future agenda items were listed: review of the Pavement Management Plan, budget calendar and department presentation expectations, school construction financing meeting, and OPEB review.",
+   "quote": "d. review opeb (other post-employment benefits)."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Certified free cash",
+   "what_was_recorded": "The State certified free cash from FY 2014 at a stated amount.",
+   "quote": "the state of massachusetts has certified $484,117 as free cash from fy 2014.",
+   "figures_as_printed": [
+    "$484,117"
+   ]
+  },
+  {
+   "topic": "Road sand and salt",
+   "what_was_recorded": "No news on lower quotes; a risk of a $30,000 overspend remains.",
+   "quote": "there remains a risk of a $30,000 overspend.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Street sweeper",
+   "what_was_recorded": "Specs and costs of a proposed new street sweeper are to be requested; no figure printed.",
+   "quote": "john will ask jack r. for more specific details on specs and costs of the proposed new street sweeper.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library electricity costs",
+   "what_was_recorded": "The library will track the effect of higher electricity costs from December on to measure the budget effect; no figure printed.",
+   "quote": "the library will track the effect of higher electricity costs from december on to measure their effect on the budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School building project budget",
+   "what_was_recorded": "As of October 8 the school building project was on schedule and a bit under budget; no figure printed.",
+   "quote": "as of the october 8 school building committee meeting the project is pretty much on schedule and a bit under budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Aerial fly-overs of school project",
+   "what_was_recorded": "Aerial fly-overs documenting the project cost a stated amount per flight; the committee is attentive to cost control.",
+   "quote": "aerial fly-overs to document this major project and which will cost $450 per flight will take 40-50 photos.",
+   "figures_as_printed": [
+    "$450"
+   ]
+  },
+  {
+   "topic": "Asbestos abatement, Middle School",
+   "what_was_recorded": "The FY 2015 capital appropriation for asbestos abatement was insufficient given the bids; no work has taken place in FY2015 and an alternate seven-year approach has been developed.",
+   "quote": "the fy 2015 capital appropriation of $138,000 for asbestos abatement in specific areas of the middle school was insufficient to cover costs in light of the bids that were submitted.",
+   "figures_as_printed": [
+    "$138,000"
+   ]
+  },
+  {
+   "topic": "School construction financing",
+   "what_was_recorded": "Joint discussion planned to structure borrowing to minimize total financing costs; no figure printed.",
+   "quote": "the purpose is to determine how to structure the borrowing to minimize total costs of financing the project given projected cash flow and estimated total costs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Athletic field and track use fees",
+   "what_was_recorded": "Discussion with the Parks Commission about collecting fees for field and track use to accrue maintenance and replacement funds; no figure printed.",
+   "quote": "collecting fees for use of the town athletic fields and tracks as a way to accrue funds for maintenance and/or replacement of the fields and tracks as necessary.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Bounced check fees in schools",
+   "what_was_recorded": "Schools had not been collecting fees for bounced checks; no figure printed.",
+   "quote": "karin reported that schools had not been collecting fees for bounced checks.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer Commission capital costs",
+   "what_was_recorded": "Sewer Commission capital plan to be paid from the Sewer Enterprise fund; a concern that none of its costs fall on the Town, directly or indirectly.",
+   "quote": "the sewer commission will put together a capital plan paid from the sewer enterprise fund and separate from the capital planning process.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "OPEB unfunded liability",
+   "what_was_recorded": "Unfunded liability to pay for retiree post-employment benefits; no mandate to fund retiree medical; report due FY2015. No figure printed.",
+   "quote": "unfunded liability to pay for post-employment benefits.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jamie T.",
+   "stated_role": "",
+   "topic": "Sewer Commission capital costs",
+   "quote": "jamie t. voiced concern that the town make sure that none of the costs of sewer commission capital projects be borne by the town, either directly or indirectly."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and welcome of new members",
+   "resolution": "no action",
+   "quote": "meeting called to order by mark erickson at 7:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted; Meet and Greet sessions and Nov 4 joint discussion noted",
+   "quote": "i. meet and greet sessions with department heads and town officials will kick off the budget process",
+   "tags": [
+    "budget process",
+    "school construction"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "noted (Mark presented in place of Kerry)",
+   "quote": "the state of massachusetts has certified $484,117 as free cash from fy 2014.",
+   "tags": [
+    "free cash",
+    "joint session"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved as corrected (Sept 11) and as submitted (Sept 25)",
+   "quote": "terri moved that the minutes of the september 11 meeting be approved as corrected.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee liaison updates",
+   "resolution": "reported; two capital planning issues to address",
+   "quote": "the committee will address two issues to prepare for the capital plan:",
+   "tags": [
+    "capital planning",
+    "schools",
+    "public works",
+    "library",
+    "school building",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Public safety, Council on Aging, Sewer Commission reports",
+   "resolution": "reported",
+   "quote": "the sewer commission will put together a capital plan paid from the sewer enterprise fund and separate from the capital planning process.",
+   "tags": [
+    "sewer enterprise",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Budget opportunities",
+   "resolution": "discussed",
+   "quote": "karin reported that schools had not been collecting fees for bounced checks.",
+   "tags": [
+    "fees",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future meetings",
+   "quote": "d. review opeb (other post-employment benefits).",
+   "tags": [
+    "OPEB",
+    "pavement management",
+    "budget calendar"
+   ]
+  },
+  {
+   "topic": "Liaison assignments",
+   "resolution": "discussed; new members asked to choose liaison roles",
+   "quote": "mark suggested to both caroline and jay that each look over the committee liaison assignments",
+   "tags": [
+    "liaison assignments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:37 PM",
+   "quote": "jay moved to adjourn the meeting; his motion was seconded by terri.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Beacon (recent issue)",
+   "where": "text",
+   "quote": "the recent issue of the beacon was circulated to the committee."
+  },
+  {
+   "name": "Capital planning spreadsheet (Planning Board)",
+   "where": "text",
+   "quote": "has the information she needs for the spreadsheet for the capital planning process."
+  },
+  {
+   "name": "Town's newly adopted Financial Policies",
+   "where": "text",
+   "quote": "the capital projects and regular borrowing sections of the town's newly adopted financial policies"
+  },
+  {
+   "name": "Updated Pavement Management Plan",
+   "where": "text",
+   "quote": "review the updated pavement management plan-this is to be addressed when the pmp is set."
+  },
+  {
+   "name": "Report on projected OPEB liabilities",
+   "where": "text",
+   "quote": "the town receives a report on projected opeb liabilities every other year."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital planning",
+  "school construction",
+  "budget",
+  "OPEB",
+  "sewer enterprise",
+  "liaison assignments",
+  "minutes approval",
+  "free cash",
+  "asbestos abatement"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the recent issue of the beacon was circulated"
+ },
+ "dropped_unquoted_by_field": {}
 }

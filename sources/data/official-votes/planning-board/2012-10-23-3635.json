@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-10-23",
  "docid": "3635",
@@ -12,6 +12,105 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This executive session minutes document describes a discussion of an incomplete submittal and references previous votes (a Planning Board vote to move to litigation if the Select Board agreed, and a subsequent Select Board vote to pursue litigation). However, it does not record any motion or vote taken during the October 23, 2012 meeting itself. The minutes capture the discussion but do not state that a motion was made, seconded, or voted on during this executive session.",
- "cost_usd": 0.0815635
+ "note": "Text is a partial extraction: no attendance roll call, no motion to enter executive session, no vote, no adjournment, and the discussion ends mid-paragraph. The header lists board members but does not say who attended, so status is \"not stated\". Mentions of past votes (Planning Board and Select Board) are reported history, not votes at this meeting, and are not recorded as votes.",
+ "cost_usd": 0.0028101199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "emerick r. bakaysa , chair"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "joanna l. bilotta -simeone, vice-chair"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "not stated",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "not stated",
+   "quote": "robert j. saiia , mbr."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "not stated",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "not stated",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "developer/applicant, O’Brien Homes",
+   "status": "not stated",
+   "quote": "kevin o'brien, o'brien homes, developer/applicant."
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "of David E. Ross Associates (initial review)",
+   "status": "not stated",
+   "quote": "review of jesse johnson of david e. ross associates initial review noting incomplete submittal."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Aro Estates 1 – 10, Kevin O’Brien, O’Brien Homes, developer/applicant (joint executive session with Board of Selectmen)",
+   "resolution": "discussed; no vote recorded",
+   "quote": "review of jesse johnson of david e. ross associates initial review noting incomplete submittal.",
+   "tags": [
+    "subdivision",
+    "litigation",
+    "executive session",
+    "zoning bylaw"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Submittal cover letter (date-stamped by Town Clerk) for Aro Estates",
+   "where": "text",
+   "quote": "then submittal was delivered to the planning office."
+  },
+  {
+   "name": "Aro Estates new submittal (compared with the 2008 submittal)",
+   "where": "text",
+   "quote": "the new submittal varies little from the 2008 submittal."
+  },
+  {
+   "name": "Zoning bylaw Section 5.6 and the bylaw change of 80,000 feet or 40,000 feet",
+   "where": "text",
+   "quote": "still does not comply with section 5.6."
+  }
+ ],
+ "tags": [
+  "Aro Estates",
+  "executive session",
+  "litigation",
+  "subdivision",
+  "zoning bylaw",
+  "joint meeting with Board of Selectmen"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

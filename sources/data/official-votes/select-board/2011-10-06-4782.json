@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-10-06",
  "docid": "4782",
@@ -12,15 +12,178 @@
  },
  "votes": [
   {
-   "motion": "Adjourn Regular Session",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Adjourn the Regular Session at 8:50 P.M.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "board voted unanimously to adjourn regular session at 8:50 p.m."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:50 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1105145
+ "note": "Partial text: page 1 is only the closing portion of the minutes (opening, roll call and earlier items are absent). Pages 2-16 are attached memo, financial tables and presentation slides, with OCR errors in places. Only one vote is recorded (adjournment) and no mover or seconder is printed. No public comment or transfers are recorded. Board member names are not printed.",
+ "cost_usd": 0.007235719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Anthony Newell",
+   "role": "Dispatcher",
+   "status": "present",
+   "quote": "dispatcher anthony newell presented the attached powerpoint presentation on lunenburg dispatch"
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Chief Administrative Assistant, Board of Selectmen",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura caron-gustus, chief administrative assistant"
+  },
+  {
+   "name": "Kerry A. Speidel",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "from: kerry a. speidel, town manager"
+  },
+  {
+   "name": "Chief Glenny",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "chief glenny believes that it will be necessary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board will make its recommendation on the regional dispatch proposal at its meeting scheduled for October 11, 2011, and asked that the Finance Committee provide its recommendation to the board before the Selectmen's next meeting.",
+   "quote": "board will make their recommendation at their meeting schedule for october 11, 2011 and asked that the finance"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Current dispatch cost",
+   "what_was_recorded": "Town Manager reports the FY2012 cost for dispatch services and the FY2013 projection under the current model.",
+   "quote": "our cost for dispatch services in fy2012 is $294,460, and projected to be $279,179 for fy2013.",
+   "figures_as_printed": [
+    "$294,460",
+    "$279,179"
+   ]
+  },
+  {
+   "topic": "Cost of adding dispatch personnel for EMS 2000",
+   "what_was_recorded": "Town Manager states the additional cost to add personnel to meet Emergency Medical Dispatch requirements and the resulting total.",
+   "quote": "the additional cost to the town to add personnel is $213,001, for a total of $510,180.",
+   "figures_as_printed": [
+    "$213,001",
+    "$510,180"
+   ]
+  },
+  {
+   "topic": "Difference from projected FY2013 cost if personnel are hired",
+   "what_was_recorded": "Memo states the Town would be $309,250 over projected FY2013 costs if it hires additional personnel to meet EMS 2000.",
+   "quote": "town would be $309,250 over project fy2013 costs assuming we hire additional personnel in",
+   "figures_as_printed": [
+    "$309,250"
+   ]
+  },
+  {
+   "topic": "Unemployment liability",
+   "what_was_recorded": "Memo estimates possible unemployment liability to the Town if Dispatchers are not hired by the District, limited to 36% of base salary for up to 99 weeks per employee, with a Year 1 estimate of $59,315.",
+   "quote": "this total unemployment liability could run as high as $59,315 in year 1 assuming none of our 4 dispatchers are picked up by the",
+   "figures_as_printed": [
+    "$59,315",
+    "36%",
+    "99 weeks"
+   ]
+  },
+  {
+   "topic": "Cost sharing among communities",
+   "what_was_recorded": "Discussion that joining the regional dispatch cost is shared equally among the four communities in discussion, with later joiners charged the same; no dollar figure printed in this passage.",
+   "quote": "the cost associated with this opportunity for lunenburg to join the regional dispatch is equally shared among the four communities that are in discussions",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Five Year Projection, Regional Dispatch as proposed",
+   "what_was_recorded": "Attached five-year projection table for regional dispatch as proposed, with year totals for salaries, operations and assessments.",
+   "quote": "five year projection- regional dispatch as proposed",
+   "figures_as_printed": [
+    "579,486",
+    "1,071,020",
+    "1,145,393"
+   ]
+  },
+  {
+   "topic": "Five Year Projection, Regional Dispatch Modified",
+   "what_was_recorded": "Attached modified five-year projection table for regional dispatch with additional staffing, showing year totals.",
+   "quote": "five year projection- regional dispatch, modified",
+   "figures_as_printed": [
+    "952,587",
+    "1,270,235",
+    "1,359,398"
+   ]
+  },
+  {
+   "topic": "Estimated annual assessment by community share",
+   "what_was_recorded": "Attached assessment table lists estimated annual assessments for 5, 4 and 3 community shares.",
+   "quote": "estimated annual assessment: 5 community share",
+   "figures_as_printed": [
+    "139,224",
+    "174,030",
+    "232,040"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Regional Dispatch proposal",
+   "resolution": "discussed; board to make recommendation at October 11, 2011 meeting; Finance Committee asked to report first",
+   "quote": "subject: regional dispatch proposal",
+   "tags": [
+    "regional dispatch",
+    "emergency dispatch",
+    "finance committee"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint presentation on Lunenburg Dispatch, responsibilities and tasks for town departments",
+   "where": "list",
+   "quote": "dispatcher anthony newell presented the attached powerpoint presentation on lunenburg dispatch"
+  },
+  {
+   "name": "Memorandum from Kerry A. Speidel, Town Manager, to Board of Selectmen & Finance Committee, Regional Dispatch Proposal, dated September 30, 2011",
+   "where": "list",
+   "quote": "to: board of selectmen & finance committee"
+  },
+  {
+   "name": "Five Year Projection- Regional Dispatch as proposed (financial statement)",
+   "where": "text",
+   "quote": "five year projection- regional dispatch as proposed"
+  },
+  {
+   "name": "Five Year Projection- Regional Dispatch, Modified (financial statement)",
+   "where": "text",
+   "quote": "five year projection- regional dispatch, modified"
+  },
+  {
+   "name": "Document prepared by the Dispatch Union",
+   "where": "text",
+   "quote": "refer to the attached document prepared by the dispatch union for more detail."
+  }
+ ],
+ "tags": [
+  "regional dispatch",
+  "emergency dispatch",
+  "EMS 2000 mandate",
+  "town budget",
+  "unemployment liability",
+  "finance committee",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dispatcher anthony newell presented the attached powerpoint presentation"
+ },
+ "dropped_unquoted_by_field": {}
 }

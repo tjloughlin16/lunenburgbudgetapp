@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-04-26",
  "docid": "5547",
@@ -12,32 +12,420 @@
  },
  "votes": [
   {
-   "motion": "Close hearing on the revised sewer bylaw and regulation changes",
+   "motion": "Close the public hearing on the revised sewer bylaw and regulation changes.",
    "moved_by": "Sue B.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion - sue b. second - john r. to close hearing on the revised sewer bylaw and regulation changes discussion - car",
-   "quote_taken_from_text": true
+   "quote": "motion - sue b. second - john r. to close hearing on the revised sewer bylaw and regulation changes"
   },
   {
-   "motion": "Use the Invitation for Bid process for next O&M contract for the sewer system",
+   "motion": "Use the Invitation for Bid process for the next O&M contract for the sewer system.",
    "moved_by": "John R.",
    "seconded_by": "Sue B.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: john r. second: sue b. to use the invitation for bid process for next o&m contract for the sewer system vote - unanimous"
+   "quote": "motion: john r. second: sue b. to use the invitation for bid process for next o&m contract for the sewer system"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Accept the Invitation for Bid document with the addendum of transitional support with rate table.",
+   "moved_by": "Mike N.",
+   "seconded_by": "John R.",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "to accept the invitation for bid document with the addendum of transitional support with rate vote: unanimous"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:55pm.",
    "moved_by": "Mike N.",
    "seconded_by": "Sue B.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: mike n. to adjourn at 9:55pm seconded: sue b. vote: unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan, readable. These are machine-extracted minutes. Four votes recorded, all unanimous.",
- "cost_usd": 0.1050025
+ "dropped_unquoted": 0,
+ "note": "OCR text of a scan. Pages break mid-sentence: page 1 ends mid-discussion of Leominster rates, page 2 opens mid-sentence on I/I, and page 3 opens mid-sentence on a floor drain question; the text between pages is missing and some topics are only partly recorded. The motion line reads 'Motion: Mike N. table' before the IFB acceptance text; 'table' is ambiguous and was recorded as an accept motion, moved by Mike N. Votes are printed as 'Unanimous' without counts. No vote is recorded on adopting the bylaw, on signing the Twin City reassessment form, or on the minutes. Attendance is not printed; statuses are inferred from participation.",
+ "cost_usd": 0.00885302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl read from the prepared presentation that is available at the dpw office."
+  },
+  {
+   "name": "Sue B.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion - sue b. second - john r."
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john r. mentioned that there was one comment from 3/29 about training employees."
+  },
+  {
+   "name": "Mike N.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "commission comments - mike n. noted that this is his last televised meeting and thanked"
+  },
+  {
+   "name": "Jack R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack r. stated that over the past years the scope of services has been fine-tuned and tweaked."
+  },
+  {
+   "name": "Colleen Flannigan",
+   "role": "owner of Sean Patrick's",
+   "status": "present",
+   "quote": "colleen flannigan, owner of sean patrick's, asked if everyone was going to start with a clean slate,"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "from Main Street",
+   "status": "present",
+   "quote": "bob ebersole from main street stated that as a homeowner on sewer, he supports the regulation changes."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "from Highland Street",
+   "status": "present",
+   "quote": "dave rodgers from highland street asked about the betterment project."
+  },
+  {
+   "name": "Kevin Olsen",
+   "role": "from Wright Pierce",
+   "status": "present",
+   "quote": "kevin olsen from wright pierce explained the different betterment costs for the areas."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb explained that we need to assign the betterment under the parcel id with school & buildings."
+  },
+  {
+   "name": "Matt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matt replied that no major defects have been found."
+  },
+  {
+   "name": "Bob",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bob came forward to clarify that for twin city, as non-residential the betterment was assessed based on capacity, not land"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Training for the new regulations will be provided as part of the start-up cost; residents are encouraged to call and request it.",
+   "quote": "carl stated that this is part of the start-up cost and that training will be provided."
+  },
+  {
+   "decision": "The new regulations take effect upon publication, and the permit and fees take effect July 1.",
+   "quote": "carl noted that the new regulations will be effective upon publication and that the permit and fees will be effective july1st."
+  },
+  {
+   "decision": "A pay schedule for the transitional coverage, per the same rate table, will be added elsewhere in the bid document.",
+   "quote": "added elsewhere in the document. all agreed and it will be updated."
+  },
+  {
+   "decision": "The former Center Pizza will be told to apply for a waiver of its grease interceptor requirements.",
+   "quote": "the former center pizza will be informed that they should apply for a waiver."
+  },
+  {
+   "decision": "Twin City will be contacted to provide plumbing inspector documentation for its waiver and fine abatement request.",
+   "quote": "has not been received. they will be contacted to provide this."
+  },
+  {
+   "decision": "Barb will send Twin City a letter on the FY16 betterment and the parcel id corrections for Twin City and Greener Living.",
+   "quote": "barb will be sending twin city a letter regarding the fy16 betterment and the correction to the parcel id's for both twin city and greener living."
+  },
+  {
+   "decision": "Minutes were moved to the next meeting.",
+   "quote": "minutes will be moved to next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Betterment figure heard by a resident",
+   "what_was_recorded": "A resident said he had heard a betterment figure of $67,000 at the Board of Selectman meeting.",
+   "figures_as_printed": [
+    "$67,000"
+   ],
+   "quote": "he had heard a figure of $67,000 at the board of selectman meeting."
+  },
+  {
+   "topic": "Cost of a gravity system with pump station for Rolling Acres",
+   "what_was_recorded": "Carl said a gravity system with a pump station would have cost over a million dollars and was not feasible.",
+   "figures_as_printed": [
+    "over a million dollars"
+   ],
+   "quote": "carl explained a gravity system with a pump station would have been over a million dollars and would not have been feasible for six"
+  },
+  {
+   "topic": "Betterment for Area 6",
+   "what_was_recorded": "The Area 6 betterment is now $19,000, lower than the $35,000 once discussed; Carl said $19,000 is a good estimate.",
+   "figures_as_printed": [
+    "$19,000",
+    "$35,000"
+   ],
+   "quote": "he also questioned why the betterment for area 6 was now $19,000 when $35,000 was bandied about."
+  },
+  {
+   "topic": "Enterprise Fund reserve for pump replacement",
+   "what_was_recorded": "Carl said the Enterprise Fund and Retained Earnings are in good shape with about $1.2 million for replacement pumps if needed.",
+   "figures_as_printed": [
+    "$1.2 million"
+   ],
+   "quote": "carl added that they are in good shape with about $1.2 million if something where to happen."
+  },
+  {
+   "topic": "Twin City betterment reassessment",
+   "what_was_recorded": "The Collector's office provided backup for the new Twin City betterment amount.",
+   "figures_as_printed": [
+    "$33,508.83"
+   ],
+   "quote": "collector's had also provided backup to the new amount of $33,508.83."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "from Highland Street",
+   "topic": "betterment project figure",
+   "quote": "dave rodgers from highland street asked about the betterment project. he had heard a figure of $67,000 at the board of selectman meeting."
+  },
+  {
+   "speaker": "Colleen Flannigan",
+   "stated_role": "owner of Sean Patrick's",
+   "topic": "compliance and July 1 permit fee; external grease trap waivers",
+   "quote": "colleen flannigan, owner of sean patrick's, asked if everyone was going to start with a clean slate,"
+  },
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "from Main Street",
+   "topic": "support for sewer regulation changes",
+   "quote": "bob ebersole from main street stated that as a homeowner on sewer, he supports the regulation changes."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "from Highland Street",
+   "topic": "interceptor counts and revenue questions at hearing",
+   "quote": "dave rodgers had several questions. the first was how many internal and external interceptors are there and what will be their revenue."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "from Highland Street",
+   "topic": "CWMP betterment areas and Area 25, Area 6, pump replacement, Leominster rates",
+   "quote": "dave rodgers came forward and wanted to know more about area 25."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "discussed; no action recorded",
+   "quote": "public comment dave rodgers from highland street asked about the betterment project.",
+   "tags": [
+    "public comment",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "7pm public hearing: bylaw and regulation update (ATM Warrant Article 36)",
+   "resolution": "hearing closed by unanimous vote; no adoption vote recorded",
+   "quote": "bylaw change- regulation update process - atm warrant article 36",
+   "tags": [
+    "public hearing",
+    "bylaw",
+    "regulations",
+    "grease traps",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "CWMP update (Warrant Article 35)",
+   "resolution": "discussed with Wright Pierce; no vote recorded",
+   "quote": "cwmp update - warrant article 35",
+   "tags": [
+    "CWMP",
+    "betterment",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Inflow and infiltration (I/I) report",
+   "resolution": "discussed; no action recorded",
+   "quote": "matt replied that no major defects have been found.",
+   "tags": [
+    "inflow",
+    "infiltration",
+    "manholes",
+    "report to state"
+   ]
+  },
+  {
+   "topic": "Twin City waiver request",
+   "resolution": "discussed; former Center Pizza to be told to apply for a waiver",
+   "quote": "twin city waiver request - there is a request for a waiver and an abatement of the noncompliance fine that was assessed.",
+   "tags": [
+    "waiver",
+    "grease interceptor",
+    "noncompliance fine",
+    "Twin City"
+   ]
+  },
+  {
+   "topic": "Pump Stations request for bid FY17",
+   "resolution": "approved Invitation for Bid process and IFB document with transitional support addendum",
+   "quote": "pump stations - request for bid fy17 - there are two options.",
+   "tags": [
+    "pump stations",
+    "bid",
+    "O&M contract"
+   ]
+  },
+  {
+   "topic": "Pump station reports",
+   "resolution": "no issues reported",
+   "quote": "pump station reports - no one had issues with reports.",
+   "tags": [
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview/Pleasantview paving",
+   "resolution": "no updates",
+   "quote": "pratt/lakeview/pleasantview paving - there are no updates.",
+   "tags": [
+    "paving"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "moved to next meeting",
+   "quote": "minutes will be moved to next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Twin City reassessment request",
+   "resolution": "betterment moved to correct parcel id; Commission signature on reassessment form needed; letter to be sent",
+   "quote": "twin city - reassessment request -barb explained that we need to assign the betterment under",
+   "tags": [
+    "Twin City",
+    "reassessment",
+    "betterment",
+    "parcel id"
+   ]
+  },
+  {
+   "topic": "Floor drain and grease/oil separator question (partial text)",
+   "resolution": "not stated",
+   "quote": "concern is whether there is a floor drain and if that will drive the need for grease/oil separator.",
+   "tags": [
+    "floor drain",
+    "grease separator"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "informational; no action",
+   "quote": "there will be an annual town meeting on may 7* at 9am at lunenburg high school.",
+   "tags": [
+    "town meeting",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Commission comments",
+   "resolution": "Mike N. noted his last televised meeting",
+   "quote": "commission comments - mike n. noted that this is his last televised meeting and thanked",
+   "tags": [
+    "commission comments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:55pm",
+   "quote": "motion: mike n. to adjourn at 9:55pm seconded: sue b. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Prepared presentation (bylaw and regulation hearing), available at DPW office",
+   "where": "text",
+   "quote": "carl read from the prepared presentation that is available at the dpw office."
+  },
+  {
+   "name": "Prepared presentation (CWMP update), available at DPW office",
+   "where": "text",
+   "quote": "carl read from the prepared presentation that is available at the dpw office."
+  },
+  {
+   "name": "ATM Warrant Article 36 (bylaw change, regulation update process)",
+   "where": "text",
+   "quote": "bylaw change- regulation update process - atm warrant article 36"
+  },
+  {
+   "name": "Warrant Article 35 (CWMP update)",
+   "where": "text",
+   "quote": "cwmp update - warrant article 35"
+  },
+  {
+   "name": "Section K of the regulations (waivers for interceptors/traps)",
+   "where": "text",
+   "quote": "section k of the regulations was reviewed which covers waivers for interceptors/traps."
+  },
+  {
+   "name": "Invitation for Bid document with addendum of transitional support",
+   "where": "text",
+   "quote": "to accept the invitation for bid document with the addendum of transitional support with rate vote: unanimous"
+  },
+  {
+   "name": "Reassessment form (Twin City betterment)",
+   "where": "text",
+   "quote": "assessors and collectors need the commission to sign the reassessment form in order to put betterments under correct id."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "public hearing",
+  "sewer bylaw",
+  "sewer regulations",
+  "grease traps",
+  "betterment",
+  "CWMP",
+  "warrant articles",
+  "pump stations",
+  "bid process",
+  "Twin City",
+  "reassessment",
+  "Wright Pierce",
+  "Leominster",
+  "I/I"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-02-27",
  "docid": "2290",
@@ -12,23 +12,163 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 1/23/2014 as written",
+   "motion": "Accept the minutes of 1/23/2014 as written.",
    "moved_by": "SR",
-   "seconded_by": "KM",
-   "outcome": "approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "sr motioned to accept the minutes of 1/23/2014 as written. km seconded, approved unanimously."
+   "quote": "sr motioned to accept the minutes of 1/23/2014 as written. km seconded, approved unanimously.",
+   "seconded_by": "KM"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "KM",
-   "seconded_by": "SR",
-   "outcome": "adjourned",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "km motioned to adjourn. sr seconded, meeting adjourned at 9:20 pm."
+   "quote": "km motioned to adjourn. sr seconded, meeting adjourned at 9:20 pm.",
+   "seconded_by": "SR"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; two votes recorded, both procedural.",
- "cost_usd": 0.09482950000000001
+ "dropped_unquoted": 7,
+ "note": "OCR text from a scanned page; the letterhead and received stamp are partly garbled, but the body text is readable. Attendance and both motions are clearly recorded. The minutes print no public comment section, no dollar figures, and no documents list heading. Member roles other than Chairman, Vice-Chairman and Secretary are inferred from the letterhead.",
+ "cost_usd": 0.004727520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "K. Speidel",
+   "role": "Town Manager (per agenda heading)",
+   "status": "present",
+   "quote": "k. speidel presented the recommended 2015 town budget, which is also available for review on the town website."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus to not prepare the Finance Committee contribution to the Annual Report and to focus solely on the Budget letter instead.",
+   "quote": "the consensus was to focus solely on the budget letter instead"
+  },
+  {
+   "decision": "Committee agreed on language for each fiscal policy area; the Capital expenditures portion will be reviewed with the Capital Planning Committee before final recommendations go to the Select Board. JH to circulate revised drafts.",
+   "quote": "will review the portion on capital expenditures with the capital planning committee before finalizing our recommendations to the select board"
+  },
+  {
+   "decision": "JH to incorporate comments received for final review at a later meeting.",
+   "quote": "jh will incorporate comments received for final review at a later meeting."
+  },
+  {
+   "decision": "Committee will meet each Thursday for the next 4 weeks to hear department presentations; schedule to be adjusted to accommodate the postponed Capital Planning presentation and discussion.",
+   "quote": "we will meet each thursday for the next 4 weeks to hear department presentations."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Recommended 2015 Town Budget",
+   "what_was_recorded": "Town Manager presented the recommended 2015 Town Budget; no dollar figures are printed in the minutes.",
+   "quote": "k. speidel presented the recommended 2015 town budget, which is also available for review on the town website.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library expenditures",
+   "what_was_recorded": "A committee member reported the Library is on track for expenditures; no dollar figures are printed.",
+   "quote": "bl reported that the library is on track for expenditures.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "meeting called to order at 7:00 pm. the meeting is televised and available through local cable.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Town Manager budget presentation",
+   "resolution": "presented; no action",
+   "quote": "k. speidel presented the recommended 2015 town budget, which is also available for review on the town website.",
+   "tags": [
+    "town budget",
+    "2015 budget"
+   ]
+  },
+  {
+   "topic": "Minutes of 1/23/2014",
+   "resolution": "approved",
+   "quote": "sr motioned to accept the minutes of 1/23/2014 as written.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; Annual Report not pursued, focus on Budget letter",
+   "quote": "he recommended that we not do the annual report, and the consensus was to focus solely on the budget letter instead.",
+   "tags": [
+    "annual report",
+    "budget letter",
+    "library",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Fiscal policies",
+   "resolution": "continued; drafts to be revised and reviewed",
+   "quote": "jh shared all of the draft policies as amended with all feedback incorporated.",
+   "tags": [
+    "fiscal policies",
+    "capital expenditures"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled weekly department presentations",
+   "quote": "we will meet each thursday for the next 4 weeks to hear department presentations.",
+   "tags": [
+    "meeting schedule",
+    "department presentations"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Recommended 2015 Town Budget",
+   "where": "text",
+   "quote": "k. speidel presented the recommended 2015 town budget, which is also available for review on the town website."
+  },
+  {
+   "name": "Draft fiscal policies (as amended)",
+   "where": "text",
+   "quote": "jh shared all of the draft policies as amended with all feedback incorporated."
+  },
+  {
+   "name": "Budget letter",
+   "where": "text",
+   "quote": "somewhat redundant with the budget letter we submit"
+  },
+  {
+   "name": "Finance Committee contribution for the Annual Report",
+   "where": "text",
+   "quote": "he began working on the finance committee contribution for the annual report"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town budget",
+  "2015 budget",
+  "fiscal policies",
+  "annual report",
+  "budget letter",
+  "department presentations",
+  "capital planning",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 7
+ }
 }

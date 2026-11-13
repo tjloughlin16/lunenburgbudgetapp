@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-02-25",
  "docid": "3723",
@@ -12,15 +12,350 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing to a date to be determined on March 4th",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Nathan J. Lockwood",
+   "motion": "Continue the Hearing to a date to be determined after the March 4 meeting.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
    "procedural": true,
    "quote": "motion to continue the hearing to a date tbd on march 4 th, ms. bilotta-simeone, second, mr. lockwood."
   }
  ],
  "dropped_unquoted": 0,
- "note": "This is a public hearing on a special permit application for 35 Leominster Road. The minutes record one procedural motion to continue the hearing to March 4th, but do not explicitly state the outcome (no vote count, \"passed,\" \"unanimously approved,\" or \"so voted\" language appears). The hearing was recessed following this motion.",
- "cost_usd": 0.0986655
+ "note": "Text extraction has split words and doubled spaces (e.g., \"Mr. B rown\", \"fi re\"); quotes were kept as printed or shortened to avoid them. The minutes record a motion to continue the hearing but no vote count, so outcome is not stated. No dollar figures appear in the minutes. The minutes do not list documents under a heading; documents are only mentioned in the discussion text.",
+ "cost_usd": 0.00892142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair opened the public hearing with the reading of the legal notice published"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "ms. bilotta-simeone responded that this permit is only for 35 leominster road."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "mr. bodkin jr. recused himself from the hearing."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "mr. lockwood asked if the mill would be located inside the barn."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "ms. benson noted citizen letters were submitted to the planning office prior to this evening's hearing."
+  },
+  {
+   "name": "Brian Brown",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "applicant is brian brown, 35 leominster road,"
+  },
+  {
+   "name": "Mr. Sauvageau",
+   "role": "Building Official/Zoning Officer",
+   "status": "present",
+   "quote": "mr. sauvageau, building official/zoning officer gave background, noting home occupation business allowed"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Fire Chief",
+   "status": "not stated",
+   "quote": "chief sullivan noted they do have access to the property."
+  },
+  {
+   "name": "Jeff Mendoza",
+   "role": "Proponent",
+   "status": "present",
+   "quote": "jeff mendoza, 162 lancaster avenue- no issues with project."
+  },
+  {
+   "name": "John Murphy",
+   "role": "Opponent, spoke on behalf of individuals who submitted letter",
+   "status": "present",
+   "quote": "john murphy, 125 lancaster avenue - spoke on behalf of individuals who submitted above letter."
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "Attorney, representing Kent Russell and Aisling Gaughan",
+   "status": "present",
+   "quote": "attorney robert bowen, representing kent russell and aisling gaughan, 73 lancaster avenue"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "present",
+   "quote": "gare thompson, 10 whiting street - devalues houses, thinks a time limit should be placed on clean up."
+  },
+  {
+   "name": "Tom Mulholland",
+   "role": "",
+   "status": "present",
+   "quote": "tom mulholland, 2 leominster"
+  },
+  {
+   "name": "Lucia Kidney",
+   "role": "",
+   "status": "present",
+   "quote": "lucia kidney, 86 lancaster avenue"
+  },
+  {
+   "name": "Bonnie Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "bonnie reynolds, 91 lancaster avenue - inquired as to limitations of work"
+  },
+  {
+   "name": "Richard Leslie",
+   "role": "",
+   "status": "present",
+   "quote": "richard leslie, 89 leominster road- inquired where alternate access is for fire apparatus."
+  },
+  {
+   "name": "Mary Ann Sudolnik",
+   "role": "",
+   "status": "present",
+   "quote": "mary ann sudolnik, 247 highland street - concerned with historic preservation of town center."
+  },
+  {
+   "name": "Rebecca Marshall-Waggett",
+   "role": "",
+   "status": "present",
+   "quote": "rebecca marshall-waggett, 376 mulpus road - asked for clarification on special permit"
+  },
+  {
+   "name": "Aisling Gaughan",
+   "role": "",
+   "status": "present",
+   "quote": "aisling gaughan- concerned with noise level."
+  },
+  {
+   "name": "Robert Beck",
+   "role": "",
+   "status": "present",
+   "quote": "robert beck, 106 houghtons mill road - concerned with property deterioration, noise concerns."
+  },
+  {
+   "name": "Al Dettenrieder",
+   "role": "",
+   "status": "present",
+   "quote": "al dettenrieder, 72 lancaster avenue - timeline for construction?"
+  },
+  {
+   "name": "June Dettenrieder",
+   "role": "",
+   "status": "present",
+   "quote": "june dettenrieder, 72 lancaster avenue- concerned with historic district and how soon lumber can be cleaned up."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Bodkin Jr. recused himself from the Hearing.",
+   "quote": "mr. bodkin jr. recused himself from the hearing."
+  },
+  {
+   "decision": "The Board came to consensus to have draft Findings and Directives prepared for a Board meeting on March 4 at the Ritter Memorial Building, 6:30 PM, since Town Caucus is also March 11.",
+   "quote": "the board came to consensus to have draft findings and directives prepared for a board meeting to be held march 4 th, ritter memorial building, 6:30 pm."
+  },
+  {
+   "decision": "After the March 4 meeting the Board will set a hearing continuation date.",
+   "quote": "subsequent to the meeting on the 4 th, the board will set a hearing continuation date."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jeff Mendoza",
+   "stated_role": "Proponent",
+   "topic": "support for project",
+   "quote": "jeff mendoza, 162 lancaster avenue- no issues with project."
+  },
+  {
+   "speaker": "John Murphy",
+   "stated_role": "Opponent, spoke on behalf of individuals who submitted letter",
+   "topic": "historic property, deterioration, industrial activity, noise and visual pollution",
+   "quote": "john murphy, 125 lancaster avenue - spoke on behalf of individuals who submitted above letter."
+  },
+  {
+   "speaker": "Robert Bowen",
+   "stated_role": "Attorney, representing Kent Russell and Aisling Gaughan",
+   "topic": "disagrees with Building Official; hours, sound, air pollution",
+   "quote": "attorney robert bowen, representing kent russell and aisling gaughan, 73 lancaster avenue"
+  },
+  {
+   "speaker": "Gare Thompson",
+   "stated_role": "",
+   "topic": "devaluation, time limit on clean up, logging trucks parking",
+   "quote": "gare thompson, 10 whiting street - devalues houses, thinks a time limit should be placed on clean up."
+  },
+  {
+   "speaker": "Tom Mulholland",
+   "stated_role": "",
+   "topic": "whether home occupation operator must be property owner",
+   "quote": "tom mulholland, 2 leominster"
+  },
+  {
+   "speaker": "Lucia Kidney",
+   "stated_role": "",
+   "topic": "access for fire equipment",
+   "quote": "lucia kidney, 86 lancaster avenue"
+  },
+  {
+   "speaker": "Bonnie Reynolds",
+   "stated_role": "",
+   "topic": "limitations of work, off-site sale of wood",
+   "quote": "bonnie reynolds, 91 lancaster avenue - inquired as to limitations of work"
+  },
+  {
+   "speaker": "Richard Leslie",
+   "stated_role": "",
+   "topic": "alternate access for fire apparatus",
+   "quote": "richard leslie, 89 leominster road- inquired where alternate access is for fire apparatus."
+  },
+  {
+   "speaker": "Mary Ann Sudolnik",
+   "stated_role": "",
+   "topic": "historic preservation of Town Center",
+   "quote": "mary ann sudolnik, 247 highland street - concerned with historic preservation of town center."
+  },
+  {
+   "speaker": "Rebecca Marshall-Waggett",
+   "stated_role": "",
+   "topic": "clarification of special permit process",
+   "quote": "rebecca marshall-waggett, 376 mulpus road - asked for clarification on special permit"
+  },
+  {
+   "speaker": "Attorney Bowen",
+   "stated_role": "Attorney",
+   "topic": "Board discretion to deny special permit",
+   "quote": "attorney bowen- feels the board has wide discretion to deny special permit"
+  },
+  {
+   "speaker": "Aisling Gaughan",
+   "stated_role": "",
+   "topic": "noise level",
+   "quote": "aisling gaughan- concerned with noise level."
+  },
+  {
+   "speaker": "Lucia Kidney",
+   "stated_role": "",
+   "topic": "property devaluation",
+   "quote": "lucia kidney- concerned with property devaluation."
+  },
+  {
+   "speaker": "Robert Beck",
+   "stated_role": "",
+   "topic": "property deterioration, noise, precedent for other permits",
+   "quote": "robert beck, 106 houghtons mill road - concerned with property deterioration, noise concerns."
+  },
+  {
+   "speaker": "Al Dettenrieder",
+   "stated_role": "",
+   "topic": "timeline for construction",
+   "quote": "al dettenrieder, 72 lancaster avenue - timeline for construction?"
+  },
+  {
+   "speaker": "Bonnie Reynolds",
+   "stated_role": "",
+   "topic": "limiting truck traffic and output off-site",
+   "quote": "bonnie reynolds- can the"
+  },
+  {
+   "speaker": "June Dettenrieder",
+   "stated_role": "",
+   "topic": "historic district; how soon lumber can be cleaned up",
+   "quote": "june dettenrieder, 72 lancaster avenue- concerned with historic district and how soon lumber can be cleaned up."
+  },
+  {
+   "speaker": "Mr. Murphy",
+   "stated_role": "",
+   "topic": "two-year construction timeline not acceptable",
+   "quote": "mr. murphy stated that a two year"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: special permit for saw mill operation and workshop at 35 Leominster Road",
+   "resolution": "continued to a date to be set after the March 4 meeting",
+   "quote": "the special permit is for 35 leominster road for a saw mill operation and workshop.",
+   "tags": [
+    "special permit",
+    "saw mill",
+    "public hearing",
+    "zoning",
+    "35 Leominster Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Legal notice published in the Sentinel and Enterprise on February 11 and February 18, 2013",
+   "where": "text",
+   "quote": "the reading of the legal notice published in the sentinel and enterprise on february 11"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 4.2., Subsection 4.2.3.4.",
+   "where": "text",
+   "quote": "subsection 4.2.3.4. of the protective bylaw of the town of lunenburg"
+  },
+  {
+   "name": "Building Official letter dated March 29, 2012 (Cease and Desist Order)",
+   "where": "text",
+   "quote": "building official letter dated march 29, 2012, which informed mr. b rown that the letter was serving as a"
+  },
+  {
+   "name": "February 13, 2013 electronic mail from Fire Chief Sullivan to Ms. Benson containing Chief Sullivan's Conditions",
+   "where": "text",
+   "quote": "mr. bakaysa noted february 13, 2013 electronic mail from fire chief sullivan to ms. benson"
+  },
+  {
+   "name": "Abutter letter (attached)",
+   "where": "text",
+   "quote": "mr. bakaysa read into record abutter letter (attached)."
+  },
+  {
+   "name": "Correspondence submitted by Attorney Robert Bowen on behalf of Kent Russell and Aisling Gaughan (on file in Planning Office)",
+   "where": "text",
+   "quote": "submitted correspondence to planning board"
+  },
+  {
+   "name": "Citizen letters submitted to the Planning Office",
+   "where": "text",
+   "quote": "ms. benson noted citizen letters were submitted to the planning office prior to this evening's hearing."
+  },
+  {
+   "name": "Applicant's business plan",
+   "where": "text",
+   "quote": "ms. benson asked for a direct timeline in his business plan"
+  }
+ ],
+ "tags": [
+  "special permit",
+  "public hearing",
+  "saw mill",
+  "home occupation",
+  "zoning",
+  "fire safety",
+  "noise",
+  "historic district",
+  "abutters",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

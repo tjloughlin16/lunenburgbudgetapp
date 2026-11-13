@@ -1,0 +1,686 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-11-05",
+ "video_id": "VoPyAF2af28",
+ "video_url": "https://www.youtube.com/watch?v=VoPyAF2af28",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-11-05-VoPyAF2af28.json",
+  "sha256": "4c9e2cd34d7b23718b8a9a1dce0ba3c6660f97566027ad784267fde9558ee00d",
+  "caption_lines": 297,
+  "segments": 2430
+ },
+ "recording": {
+  "duration_s": 6227,
+  "duration": "1:43",
+  "spoken_chars": 84258,
+  "words_approx": 14043
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11052013-4864",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-11-05-agenda-4864.txt",
+   "path": "sources/meetings/select-board/2013-11-05-agenda-4864.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11052013-4864",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-11-05-minutes-4864.txt",
+   "path": "sources/meetings/select-board/2013-11-05-minutes-4864.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:57:58Z",
+  "cost_usd": 0.20689039999999997
+ },
+ "minutes": {
+  "headline": "Select Board set Special Town Meeting for Jan 7 and the special election for Jan 11 on the school project.",
+  "summary": "The board approved a Salvation Army boot drive, heard a police K9 grant proposal with a demonstration, and took committee reports including a school building project update. It reviewed the town manager's and its own goals, set the special town meeting and election dates, and cut the Green Communities task force from seven to five members.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Matthews",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Toll",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Marino",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Lieutenant Luth",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Dave McDonald",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Steven Salon",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Jason Berlet",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 166,
+    "speaker_as_heard": "Dave McDonald",
+    "topic": "Requested permission for the Salvation Army boot drive on 12/14 from 9 to 3 at the center of town and CVS."
+   }
+  ],
+  "tags": [
+   "budget",
+   "debt",
+   "grants",
+   "high-school",
+   "middle-school",
+   "msba",
+   "personnel",
+   "policy",
+   "public-safety",
+   "staffing",
+   "superintendent-report",
+   "tax-rate",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 355,
+    "motion": "Approve the request for the Salvation Army boot drive as described",
+    "moved_by": "unclear",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 4986,
+    "motion": "Set special town meeting for Tuesday January 7 and the special election for Saturday January 11",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5398,
+    "motion": "Reduce the Green Communities task force membership from seven to five",
+    "moved_by": "Mrs Bertram",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6189,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 543,
+    "topic": "Stanton Foundation K9 grant",
+    "what_was_said": "Grant would cover most start-up costs of a police canine program over three years, with a five-year town commitment sought.",
+    "figures_as_heard": [
+     "$225,000"
+    ]
+   },
+   {
+    "t": 706,
+    "topic": "K9 ongoing costs",
+    "what_was_said": "Estimated annual food, veterinary and in-service training costs after the grant, with business partners hoped to offset them.",
+    "figures_as_heard": [
+     "$800",
+     "$500 to $600",
+     "$500"
+    ]
+   },
+   {
+    "t": 2011,
+    "topic": "School project delay cost",
+    "what_was_said": "Each month of delay is projected to add cost to the school building project.",
+    "figures_as_heard": [
+     "$150,000"
+    ]
+   },
+   {
+    "t": 1970,
+    "topic": "School design savings",
+    "what_was_said": "The revised design would cut cost by over a million dollars and lower the per-household impact.",
+    "figures_as_heard": [
+     "over a million dollars",
+     "$80 per household"
+    ]
+   },
+   {
+    "t": 2201,
+    "topic": "MSBA project budget",
+    "what_was_said": "The scope and budget agreement was said to total a figure in the mid-thirties of millions.",
+    "figures_as_heard": [
+     "$ 35 $36 million"
+    ]
+   },
+   {
+    "t": 2790,
+    "topic": "MIIA training credits",
+    "what_was_said": "The town received participation credits last year, and an in-house grant program using them was suggested.",
+    "figures_as_heard": [
+     "$1,000"
+    ]
+   },
+   {
+    "t": 3437,
+    "topic": "Animal control cost",
+    "what_was_said": "The town's current animal control cost was compared with nearby towns for a regional approach.",
+    "figures_as_heard": [
+     "$244,000",
+     "$34,000"
+    ]
+   },
+   {
+    "t": 5735,
+    "topic": "Water warrant",
+    "what_was_said": "Water department warrant for quarterly bills.",
+    "figures_as_heard": [
+     "$533",
+     "6.31"
+    ]
+   },
+   {
+    "t": 5757,
+    "topic": "Accounts payable and payroll warrants",
+    "what_was_said": "Accounts payable and payroll warrants were read, including a negative payroll for a disability retirement.",
+    "figures_as_heard": [
+     "$444,999",
+     "$650,000",
+     "$2,123"
+    ]
+   },
+   {
+    "t": 5978,
+    "topic": "Borrowing term for school",
+    "what_was_said": "A 30-year term would cost the average homeowner more over time than 20 years.",
+    "figures_as_heard": [
+     "$2,640"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 420,
+    "decision": "Board had no objection to the citizens' group putting up Christmas lights at the center of town; no vote needed."
+   },
+   {
+    "t": 1062,
+    "decision": "The K9 grant item was informational only; the board expressed support but no vote was required."
+   },
+   {
+    "t": 5152,
+    "decision": "Warrant to open November 12 and close November 19; draft election question to come next week."
+   },
+   {
+    "t": 6129,
+    "decision": "Town manager to find the senior abatement information and email it to the board."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 145,
+    "topic": "Pledge and board announcements",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 145,
+    "t_end": 480,
+    "topic": "Salvation Army boot drive and Christmas lights",
+    "resolution": "motion made; result not audible",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 480,
+    "t_end": 1680,
+    "topic": "Police K9 grant and demonstration",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1682,
+    "t_end": 2540,
+    "topic": "Committee reports and school building project update",
+    "resolution": "informational",
+    "tags": [
+     "msba",
+     "high-school",
+     "middle-school"
+    ]
+   },
+   {
+    "t_start": 2559,
+    "t_end": 4480,
+    "topic": "Town manager goals status",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "staffing",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4480,
+    "t_end": 4775,
+    "topic": "Board of Selectmen goals status",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4775,
+    "t_end": 5230,
+    "topic": "Special town meeting and election dates",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "msba"
+    ]
+   },
+   {
+    "t_start": 5236,
+    "t_end": 5700,
+    "topic": "Green Communities task force and cable committee membership",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5706,
+    "t_end": 6070,
+    "topic": "Policies manual, warrants, and school borrowing term survey",
+    "resolution": "informational",
+    "tags": [
+     "debt",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 6067,
+    "t_end": 6230,
+    "topic": "Senior abatements, next meeting and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "seniors"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Result of the boot drive vote at 355 was not captured; the mover and tally are unclear.",
+   "Adjournment vote tally not stated beyond the call for ayes.",
+   "Several dollar figures in the warrants were garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 2011,
+    "kind": "condition",
+    "about": "Delay risk to the school project's cost if MSBA approval slips.",
+    "who": "a member",
+    "words_as_heard": "if we get off track every month we're off track every month we're delayed cost us about $150,000 in projected increas is in cost"
+   },
+   {
+    "t": 4107,
+    "kind": "condition",
+    "about": "A member says the selectmen's office needs funding for staff and an HR person.",
+    "who": "a member",
+    "words_as_heard": "if the budget is does not support the staff that we need that we've got to address that"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 769,
+    "name_as_heard": "The K9 grant packet",
+    "kind": "other",
+    "words_as_heard": "it's on page eight in the book",
+    "shown": true
+   },
+   {
+    "t": 2096,
+    "name_as_heard": "Project scope and budget agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "we will be receiving a project scope and budget agreement from the legal staff at the msba",
+    "shown": false
+   },
+   {
+    "t": 2559,
+    "name_as_heard": "Town manager goal status sheet",
+    "kind": "report",
+    "words_as_heard": "I just made some notes on um where I am with with some of the different items",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-project-borrowing",
+    "title": "School project borrowing",
+    "question": "What would a 20-year versus 30-year borrowing for the school project cost the average taxpayer?",
+    "t": 5978,
+    "words_as_heard": "it will cost that homeowner $2,640 more going with a 30-year financing as opposed to a 20-year financing",
+    "data_in_play": [
+     "$2,640",
+     "$80 per household",
+     "$150,000"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "senior-tax-relief",
+    "title": "Senior tax relief",
+    "question": "What abatement programs are available for seniors if taxes rise?",
+    "t": 6087,
+    "words_as_heard": "look into any assistance that might be available in terms of abatements or whatever for seniors",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to set a special town meeting for Tuesday, January 7 and a special election for Saturday, January 11.",
+    "t": 4986
+   },
+   {
+    "line": "The board voted to reduce the Green Communities task force from seven members to five.",
+    "t": 5398
+   },
+   {
+    "line": "The warrant is to open November 12 and close November 19, and a draft election question is due next week.",
+    "t": 5152
+   },
+   {
+    "line": "The board heard a police K9 grant proposal with a demonstration; it was informational and no vote was taken.",
+    "t": 1062
+   },
+   {
+    "line": "A motion on the Salvation Army boot drive was made, but the result is not audible in the recording.",
+    "t": 355
+   }
+  ],
+  "why_it_matters": [
+   "The January dates set when residents will be asked to vote on the school building project, which affects local tax bills through the town's borrowing.",
+   "The minutes record that delay is projected to add cost to the school project and that a 30-year borrowing term would cost the average homeowner more over time than 20 years, so the election question and term bear on what households pay.",
+   "The K9 proposal sought a five-year town commitment for ongoing costs once the grant ends, which would fall on the town budget, mostly taxes, if adopted."
+  ],
+  "watch_next": [
+   "The draft election question, due at the board's next meeting.",
+   "The warrant for the special town meeting, which closes November 19."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:58:06Z",
+   "cost_usd": 0.023863099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11052013-4864",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-11-05-minutes-4864.txt",
+   "path": "sources/meetings/select-board/2013-11-05-minutes-4864.pdf"
+  },
+  "official_sha256": "1bd1a35d0a71a11a4464390b593824d948fed82fb1e19bfba8907ae79397e113",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the dates vote, the task force vote, and most figures and decisions. They differ on the boot drive vote (inaudible in ours), the K9 grant amount ($225,000 vs $25,000), the MIIA credits, and what happens next on senior tax help.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 5,
+   "discrepancy": 7,
+   "only_in_ours": 0,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Salvation Army boot drive vote",
+    "ours": "Approve the request for the Salvation Army boot drive as described — not audible",
+    "official": "mr. toale moved to approve the request for the salvation army boot drive to be held on 12/14/2013, from 9am-3pm, in the lunenburg town center",
+    "note": "Ours could not hear the outcome; official records it passed 4-0, so check the recording or official record for the result.",
+    "t": 355
+   },
+   {
+    "kind": "agree",
+    "about": "Special town meeting and election dates",
+    "ours": "Set special town meeting for Tuesday January 7 and the special election for Saturday January 11 — passed",
+    "official": "ms. bertram moved to set the dates of january 7, 2014 for the special town meeting and january 11, 2014 for the special election.",
+    "note": "Same dates and passed in both; official adds the 4-0 count.",
+    "t": 4986
+   },
+   {
+    "kind": "agree",
+    "about": "Green Communities task force reduced to five",
+    "ours": "Reduce the Green Communities task force membership from seven to five — passed",
+    "official": "ms. bertram moved to reduce the membership of the green communities task force to 5 to insure a quorum. mr. toale",
+    "note": "Same vote and outcome.",
+    "t": 5398
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stanton Foundation K9 grant amount",
+    "ours": "Stanton Foundation K9 grant: $225,000",
+    "official": "this grant is in the amount of $25,000 which will be used for purchasing the dog, training",
+    "note": "$225,000 vs $25,000 may be a caption mishearing of 'twenty-five', but check the recording to confirm.",
+    "t": 543
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MIIA training credits",
+    "ours": "MIIA training credits: $1,000",
+    "official": "last year we received approximately $11,000 in participation credits",
+    "note": "$1,000 vs $11,000; could be a caption error, but check the recording.",
+    "t": 2790
+   },
+   {
+    "kind": "agree",
+    "about": "School project delay cost",
+    "ours": "School project delay cost: $150,000",
+    "official": "every month the project is delayed costs approximately $150,000.",
+    "note": "Same figure; official gives it per month.",
+    "t": 2011
+   },
+   {
+    "kind": "agree",
+    "about": "School design savings",
+    "ours": "School design savings: over a million dollars, $80 per household",
+    "official": "would reduce the cost by over $1m, which will significantly lower the cost to the tax payer.",
+    "note": "Over $1M agrees; the $80 per household figure appears only in ours.",
+    "t": 1970
+   },
+   {
+    "kind": "agree",
+    "about": "MSBA savings",
+    "ours": "MSBA project budget: $ 35 $36 million",
+    "official": "this partnership with the msba will save the town $35m-$36m.",
+    "note": "Same $35M-$36M range; ours labels it a project budget while official says savings.",
+    "t": 2201
+   },
+   {
+    "kind": "caption_error",
+    "about": "Water warrant",
+    "ours": "Water warrant: $533, 6.31",
+    "official": "lunenburg water dept. quarterly bill $5336.31 10/28/2013 #10p-14m $424.63 11/9/2013 #10p-14 $650,217.73",
+    "note": "Garbled digits of $5,336.31.",
+    "official_reading": "$5336.31",
+    "t": 5735
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Accounts payable and payroll warrants",
+    "ours": "Accounts payable and payroll warrants: $444,999, $650,000, $2,123",
+    "official": "lunenburg water dept. quarterly bill $5336.31 10/28/2013 #10p-14m $424.63 11/9/2013 #10p-14 $650,217.73",
+    "note": "$444,999 vs official $444,790.62 differs beyond misheard digits; $650,000 and $2,123 roughly match $650,217.73 and -$2123.15. Check the warrant sheet.",
+    "t": 5757
+   },
+   {
+    "kind": "agree",
+    "about": "Borrowing term cost",
+    "ours": "Borrowing term for school: $2,640",
+    "official": "the net effect would be $2640 more with a 30 year financing as opposed to a 20 year financing.",
+    "note": "Same figure.",
+    "t": 5978
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Animal control cost",
+    "ours": "Animal control cost: $244,000, $34,000",
+    "official": "",
+    "note": "Our minutes have these figures; the official minutes have no animal control cost, so check the recording.",
+    "t": 3437
+   },
+   {
+    "kind": "agree",
+    "about": "Christmas lights decision",
+    "ours": "Board had no objection to the citizens' group putting up Christmas lights at the center of town; no vote needed.",
+    "official": "mr. alonzo replied that he had no objection with this and that a vote from the board was not necessary.",
+    "note": "Same decision.",
+    "t": 420
+   },
+   {
+    "kind": "agree",
+    "about": "K9 grant informational only",
+    "ours": "The K9 grant item was informational only; the board expressed support but no vote was required.",
+    "official": "ms. speidel stated that the bos did not need to vote on or officially accept this grant.",
+    "note": "No vote needed in either record.",
+    "t": 1062
+   },
+   {
+    "kind": "agree",
+    "about": "Warrant open and close dates",
+    "ours": "Warrant to open November 12 and close November 19; draft election question to come next week.",
+    "official": "ms. speidel reminded the bos that the warrant will be placed on next weeks agenda which will make the warrant open on",
+    "note": "Same dates; the draft election question appears only in ours.",
+    "t": 5152
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Senior abatement follow-up",
+    "ours": "Town manager to find the senior abatement information and email it to the board.",
+    "official": "she will ask the assessor to make a presentation on any programs they have available at the next bos meeting.",
+    "note": "Ours says the town manager emails information; official says the Assessor will present at the next meeting. Check the recording.",
+    "t": 6129
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Policies & Procedures tabled",
+    "ours": "",
+    "official": "5. accept bos policies & procedures: tabled to the next bos meeting.",
+    "note": "Tabling is a decision that appears only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Economic development / MRPC on future agenda",
+    "ours": "",
+    "official": "would like this put on a future bos meeting.",
+    "note": "Only the official minutes record this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Council on Aging recommendation",
+    "ours": "",
+    "official": "mr. alonzo recommended contacting the council on aging director for information.",
+    "note": "Only the official minutes record this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Financing term survey",
+    "ours": "",
+    "official": "currently shows that 21 people have responded, 62% prefer a 30 year term, and 38% prefer a 20 year term.",
+    "note": "The survey results are not in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mr Toll",
+    "ours": "Mr Toll (member)",
+    "official": "vice chairperson paula bertram, dave matthews, jamie toate, and town manager kerry speidel.",
+    "note": "Misheard surname of Jamie Toate.",
+    "official_reading": "Jamie Toate",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Dave McDonald",
+    "ours": "Dave McDonald (presenter)",
+    "official": "dave macdonald, lunenburg ma., came before the bos representing the salvation army, to request permission for a boot drive",
+    "note": "Spelling difference only.",
+    "official_reading": "Dave MacDonald",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Jason Berlet",
+    "ours": "Jason Berlet (presenter)",
+    "official": "officer jason berthelette, of the woonsocket r.i. police force gave a short demonstration with the k-9",
+    "note": "Misheard surname.",
+    "official_reading": "Jason Berthelette",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Lieutenant Luth",
+    "ours": "Lieutenant Luth (presenter)",
+    "official": "police lt. mike luth spoke to the board and explained that a generous grant from the stanton foundation has been received",
+    "note": "Same person; official gives the first name, Mike.",
+    "official_reading": "Mike Luth",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Steven Salon",
+    "ours": "Steven Salon (presenter)",
+    "official": "",
+    "note": "The official minutes name no such person, so check the recording to see who this is.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Tom Alonzo and absent member",
+    "ours": "",
+    "official": "absent was robert ebersole",
+    "note": "Our list omits Chair Alonzo and the absent Ebersole; official lists Alonzo as present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:59:59Z",
+   "cost_usd": 0.0587731
+  }
+ }
+}

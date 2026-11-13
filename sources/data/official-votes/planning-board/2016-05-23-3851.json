@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-05-23",
  "docid": "3851",
@@ -12,126 +12,364 @@
  },
  "votes": [
   {
-   "motion": "Elect M. Allison as Chair",
+   "motion": "Elect M. Allison as Chair of the Board.",
    "moved_by": "G. Bittner",
-   "seconded_by": "D. Prokowiew",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "g. bittner made motion for m. allison, second, d. prokowiew, all aye."
+   "procedural": false,
+   "quote": "chair- g. bittner made motion for m. allison, second, d. prokowiew, all aye.",
+   "seconded_by": "D. Prokowiew"
   },
   {
-   "motion": "Elect D. McQuaid as Vice Chair",
+   "motion": "Elect D. McQuaid as Vice Chair.",
    "moved_by": "D. Prokowiew",
-   "seconded_by": "G. Bittner",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "d. prokowiew made motion for d. mcquaid, second, g. bittner, all aye."
+   "procedural": false,
+   "quote": "vice chair- d. prokowiew made motion for d. mcquaid, second, g. bittner, all aye.",
+   "seconded_by": "G. Bittner"
   },
   {
-   "motion": "Elect G. Bittner as Clerk",
+   "motion": "Elect G. Bittner as Clerk.",
    "moved_by": "D. Prokowiew",
-   "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "d. prokowiew made motion for g. bittner, second, d. mcquaid, all aye."
+   "procedural": false,
+   "quote": "clerk- d. prokowiew made motion for g. bittner, second, d. mcquaid, all aye.",
+   "seconded_by": "D. McQuaid"
   },
   {
-   "motion": "Elect D. Prokowiew as MRPC Representative",
+   "motion": "Appoint D. Prokowiew as MRPC Rep.",
    "moved_by": "G. Bittner",
-   "seconded_by": "M. Allison",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "g. bittner made motion for d. prokowiew, second, m. allison, all aye."
+   "procedural": false,
+   "quote": "mrpc rep- g. bittner made motion for d. prokowiew, second, m. allison, all aye.",
+   "seconded_by": "M. Allison"
   },
   {
-   "motion": "Elect K. Chenis as MJTC Representative",
+   "motion": "Appoint K. Chenis as MJTC Rep.",
    "moved_by": "G. Bittner",
-   "seconded_by": "D. Prokowiew",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "g. bittner made motion for k. chenis, second, d. prokowiew, all aye."
+   "procedural": false,
+   "quote": "mjtc rep- g. bittner made motion for k. chenis, second, d. prokowiew, all aye.",
+   "seconded_by": "D. Prokowiew"
   },
   {
-   "motion": "Elect G. Bittner as School Building Committee Representative",
+   "motion": "Appoint G. Bittner as School Building Committee Rep.",
    "moved_by": "D. McQuaid",
-   "seconded_by": "K. Chenis",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "d. mcquaid made motion for g. bittner, second, k. chenis, all aye."
+   "procedural": false,
+   "quote": "school building committee rep- d. mcquaid made motion for g. bittner, second, k. chenis, all aye.",
+   "seconded_by": "K. Chenis"
   },
   {
-   "motion": "Elect D. McQuaid as Building Reuse Committee member",
-   "moved_by": "K. Chenis",
-   "seconded_by": "G. Bittner",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "k. chenis made motion for d. mcquaid, second, g. bittner, all aye."
-  },
-  {
-   "motion": "Elect D. McQuaid as Capital Planning Committee member",
-   "moved_by": "G. Bittner",
-   "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "g. bittner made motion for d. mcquaid, second, d. prokowiew, all aye."
-  },
-  {
-   "motion": "Elect D. Prokowiew as Open Space Committee member",
-   "moved_by": "G. Bittner",
-   "seconded_by": "K. Chenis",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "g. bittner made motion for d. prokowiew, second, k. chenis, all aye."
-  },
-  {
-   "motion": "Elect G. Bittner as Green Community Task Force Liaison/Member",
-   "moved_by": "K. Chenis",
-   "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "k. chenis made motion for g. bittner, second, d. prokowiew, all aye."
-  },
-  {
-   "motion": "Elect M. Allison as Stormwater Task Force Representative",
-   "moved_by": "D. Prokowiew",
-   "seconded_by": "K. Chenis",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "d. prokowiew made motion for m. allison, second, k. chenis, all aye."
-  },
-  {
-   "motion": "Elect M. Allison and G. Bittner as Agricultural Commission members",
+   "motion": "Appoint D. McQuaid to the Building ReUse Committee.",
    "moved_by": "K. Chenis",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "k. chenis made motion for m. allison, g. bittner, second, all aye."
+   "procedural": false,
+   "quote": "building reuse committee- k. chenis made motion for d. mcquaid, second, g. bittner, all aye.",
+   "seconded_by": "G. Bittner"
   },
   {
-   "motion": "Approve minutes from 5/9/16",
-   "moved_by": "D. McQuaid",
-   "seconded_by": "G. Bittner",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, d. mcquaid, second, g. bittner"
+   "motion": "Appoint D. McQuaid to the Capital Planning Committee.",
+   "moved_by": "G. Bittner",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "capital planning committee- g. bittner made motion for d. mcquaid, second, d. prokowiew, all aye.",
+   "seconded_by": "D. Prokowiew"
   },
   {
-   "motion": "Approve minutes for 233 Lancaster Avenue from 5/9/16",
-   "moved_by": "D. McQuaid",
-   "seconded_by": "D. Prokowiew",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, d. mcquaid, second, d. prokowiew"
+   "motion": "Appoint D. Prokowiew to the Open Space Committee.",
+   "moved_by": "G. Bittner",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "open space committee- g. bittner made motion for d. prokowiew, second, k. chenis, all aye.",
+   "seconded_by": "K. Chenis"
   },
   {
-   "motion": "Approve minutes for 39 Massachusetts Avenue from 5/9/16",
+   "motion": "Appoint G. Bittner as Green Community Task Force Liaison/Member.",
+   "moved_by": "K. Chenis",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "green community task force liaison/member- k. chenis made motion for g. bittner, second, d. prokowiew, all aye.",
+   "seconded_by": "D. Prokowiew"
+  },
+  {
+   "motion": "Appoint M. Allison as Stormwater Task Force Rep.",
+   "moved_by": "D. Prokowiew",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "stormwater task force rep- d. prokowiew made motion for m. allison, second, k. chenis, all aye.",
+   "seconded_by": "K. Chenis"
+  },
+  {
+   "motion": "Appoint M. Allison to the Agricultural Commission.",
+   "moved_by": "K. Chenis",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "agricultural commission- k. chenis made motion for m. allison, g. bittner, second, all aye."
+  },
+  {
+   "motion": "Grant the Highfield Village applicant an extension to August 22, 2016, 6:35 PM, on the ZBA special permit dimensional variation for open space request.",
+   "moved_by": "D. M cQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "d. m cquaid, motion, to grant an extension to august 22, 2016, 6:35 pm, second, d. prokowiew, all aye.",
+   "seconded_by": "D. Prokowiew"
+  },
+  {
+   "motion": "Approve the 5/9/16 minutes.",
    "moved_by": "D. McQuaid",
-   "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, d. mcquaid, second, d. prokowiew"
+   "quote": "5/9/16- motion, d. mcquaid, second, g. bittner",
+   "seconded_by": "G. Bittner"
+  },
+  {
+   "motion": "Approve the 233 Lancaster Avenue minutes of 5/9/16.",
+   "moved_by": "D. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "233 lancaster avenue, 5/9/16- motion, d. mcquaid, second, d. prokowiew",
+   "seconded_by": "D. Prokowiew"
+  },
+  {
+   "motion": "Approve the 39 Massachusetts Avenue minutes of 5/9/16.",
+   "moved_by": "D. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "39 massachusetts avenue, 5/9/16- motion, d. mcquaid, second, d. prokowiew",
+   "seconded_by": "D. Prokowiew"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All votes identified and extracted. Twelve board reorganization votes (procedural), one substantive vote granting a project extension, and three procedural votes to approve prior minutes. The last three minutes approval votes do not have explicitly stated outcomes in the minutes.\"",
- "cost_usd": 0.1465135
+ "dropped_unquoted": 0,
+ "note": "Text extraction, not a scan; the minutes read clearly. Minutes-approval motions and the Highfield extension motion show no result beyond \"all aye\" or nothing, so outcome is \"not stated\" where no count is printed. No motion to adjourn is recorded; only the 8:50 PM time appears. No public comment section is printed. 234 Summer Street and 175 Northfield Road are referred to separate minutes not included here.",
+ "cost_usd": 0.007212719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Project engineer, Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "project engineer jamie rheault, whitman & bingham associates, was on hand to inform the board"
+  },
+  {
+   "name": "Attorney Haverty",
+   "role": "Attorney, on behalf of the applicant",
+   "status": "not stated",
+   "quote": "attorney haverty, on behalf of the applicant, requested via email, a continuation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will discuss the Highfield Village project at its next meeting to provide comments to the Zoning Board of Appeals before the July 13th hearing.",
+   "quote": "the board will discuss the project at its next meeting in order to provide comments to the zoning board of appeals prior to the july 13th hearing."
+  },
+  {
+   "decision": "Hearing on Site Plan Approval/Special Permit/Rules and Regulations scheduled for June 27, 2016, 6:35 PM, with a draft to be circulated for feedback.",
+   "quote": "hearing will be scheduled for june 27, 2016, 6:35 pm. draft will be circulated for feedback."
+  },
+  {
+   "decision": "Meeting schedule noted: June 13 meeting to take up 234 Summer Street (cont’d).",
+   "quote": "june 13 - 234 summer street (cont'd)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MJTC Summer Street project",
+   "what_was_recorded": "MJTC reported the Summer Street project was expanded two years due to budget; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "summer street project expanded two years due to budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board reorganization",
+   "resolution": "officers and committee representatives elected or appointed by motion",
+   "quote": "chair- g. bittner made motion for m. allison, second, d. prokowiew, all aye.",
+   "tags": [
+    "reorganization",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Highfield Village (cont'd) public hearing",
+   "resolution": "extension granted to August 22, 2016, 6:35 PM; board to discuss at next meeting",
+   "quote": "highfield village (cont'd) - attorney haverty, on behalf of the applicant, requested via email, a continuation",
+   "tags": [
+    "public hearing",
+    "zoning",
+    "special permit",
+    "open space"
+   ]
+  },
+  {
+   "topic": "234 Summer Street",
+   "resolution": "see separate minutes",
+   "quote": "234 summer street- see separate minutes",
+   "tags": [
+    "separate minutes"
+   ]
+  },
+  {
+   "topic": "175 Northfield Road",
+   "resolution": "see separate minutes",
+   "quote": "175 northfield road- see separate minutes",
+   "tags": [
+    "separate minutes"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made to approve 5/9/16 minutes; all minutes signed; no result printed",
+   "quote": "minutes approval: all minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "building reuse committee- a. burney noted scope of work has been put together.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "reported; work beginning at 270 Electric Avenue storage facility",
+   "quote": "development status reports: work beginning at storage facility at 270 electric avenue.",
+   "tags": [
+    "development"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "39 Massachusetts Avenue and 233 Lancaster Avenue decisions signed; site plan/rules hearing to be scheduled",
+   "quote": "39 massachusetts avenue- decision signed",
+   "tags": [
+    "decisions",
+    "rules and regulations",
+    "site plan approval"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted June 13 and June 27 dates",
+   "quote": "june 27 - hearing for board rules and regulations for special permits and site plan approval",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "noted; Water District new building on Route 2A to apply for site plan approval",
+   "quote": "water district preparing to construct a new building on route 2a; will have to apply to board for site plan approval.",
+   "tags": [
+    "water district",
+    "site plan approval"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50 PM; no motion recorded",
+   "quote": "adjournment: 8:50 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 05/09/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/09/16 minutes 05/0916, 233 lancaster avenue"
+  },
+  {
+   "name": "Minutes 05/0916, 233 Lancaster Avenue",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/09/16 minutes 05/0916, 233 lancaster avenue"
+  },
+  {
+   "name": "Minutes 05/09/16, 39 Massachusetts Avenue",
+   "where": "list",
+   "quote": "minutes 05/09/16, 39 massachusetts avenue decision, 39 massachusetts avenue decision, 233 lancaster avenue"
+  },
+  {
+   "name": "Decision, 39 Massachusetts Avenue",
+   "where": "list",
+   "quote": "decision, 39 massachusetts avenue decision, 233 lancaster avenue"
+  },
+  {
+   "name": "Decision, 233 Lancaster Avenue",
+   "where": "list",
+   "quote": "decision, 39 massachusetts avenue decision, 233 lancaster avenue"
+  },
+  {
+   "name": "Application to the Zoning Board of Appeals for a special permit dimensional variation for open space (Highfield Village)",
+   "where": "text",
+   "quote": "an application was dropped off with the zba administrative assistant this date"
+  },
+  {
+   "name": "Board Rules and Regulations for Special Permits and Site Plan Approval (draft)",
+   "where": "text",
+   "quote": "june 27 - hearing for board rules and regulations for special permits and site plan approval"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "public hearing",
+  "Highfield Village",
+  "special permit",
+  "site plan approval",
+  "open space",
+  "board reorganization",
+  "minutes approval",
+  "committee reports",
+  "rules and regulations",
+  "Summer Street",
+  "Northfield Road"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

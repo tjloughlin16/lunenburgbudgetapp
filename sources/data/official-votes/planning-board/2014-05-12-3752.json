@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-05-12",
  "docid": "3752",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of April 22, 2014",
+   "motion": "Approve the minutes of 4-22-14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "motion, d. mcquaid, to approve 4-22-14, second, n. lockwood."
   },
   {
-   "motion": "Approve the minutes of April 28, 2014",
+   "motion": "Approve the minutes of 4-28-14.",
    "moved_by": "M. Allison",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "motion, m. allison, to approve 4-28-14, second, d. mcquaid."
   },
   {
-   "motion": "Approve the minutes of May 3, 2014",
+   "motion": "Approve the minutes of 5-3-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -36,31 +36,396 @@
    "quote": "motion, n. lockwood, to approve 5-3-14, second, d. mcquaid"
   },
   {
-   "motion": "Endorse the Findings and Directives for 50 Elmwood Road subdivision",
+   "motion": "Endorse the Findings and Directives for the 50 Elmwood Road definitive subdivision.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
-   "outcome": "passed 4-0",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, d. mcquaid, to endorse findings and directives for 50 elmwood road, second, n. lockwood, all aye."
   },
   {
-   "motion": "Send a letter to the Zoning Board of Appeals regarding the 250 Whalom Road development",
-   "moved_by": "A Lockwood",
-   "seconded_by": "M. Allison",
-   "outcome": "withdrawn",
-   "procedural": false,
-   "quote": "motion made, a lockwood, to send letter, second, m. allison."
-  },
-  {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, j. bilotta-simeone to adjourn, second, d. mcquaid, adjourned 9:36 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text. Note: The fifth motion lists \"A Lockwood\" as mover, but context (N. Lockwood withdrew this motion moments later) suggests this is likely an OCR error for N. Lockwood. Minutes are otherwise clear and readable.",
- "cost_usd": 0.12698949999999998
+ "note": "Text is OCR (macOS Vision) of a scanned page set; header is garbled (\\\"Cik.\\\" likely Clerk; \\\"May 289\\\" likely May 28; \\\"A Lockwood\\\" is N. Lockwood). Minutes received and filed JUN 02 2014. Votes on minutes approvals and adjournment record no tally. The 250 Whalom Road letter motion was withdrawn before any vote, so it is recorded as a decision, not a vote. Page 3 text is partly garbled, including a fragment about Whalom Park.",
+ "cost_usd": 0.01012232,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Cik. (header OCR, likely Clerk)",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa, marion m. benson"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "also present: chantell fleck, mrpc"
+  },
+  {
+   "name": "David Warner",
+   "role": "Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "ms/hs project- informal presentation to board by david warner, warner larson landscape architects."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "312 Townsend Harbor Road",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road- where is the roadway in relation to concession stand?"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane-why wouldn't students access student parking from oak avenue?"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "50 Sunset Lane",
+   "status": "present",
+   "quote": "phyllis luck, 50 sunset lane- will light be structured to minimize light pollution?"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "WB",
+   "status": "present",
+   "quote": "wesley flis, wb, was on hand for any questions."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board approved direct contact between the developer and Whitman & Bingham (WB) throughout the Development Plan Review process for the MS/HS project.",
+   "quote": "to streamline communications, board approved direct contact between developer and wb throughout the process."
+  },
+  {
+   "decision": "Board will make a final determination on traffic count locations at its May 27 meeting.",
+   "quote": "the board will make a final determination at their may 27t meeting."
+  },
+  {
+   "decision": "Chair requested that B. Harris (MRPC) come to a Board meeting to discuss the Local Curve Systematic Approach to Safety Program.",
+   "quote": "j. bilotta-simeone requested if b. harris could come to a board meeting to discuss the local curve systematic approach to safety program."
+  },
+  {
+   "decision": "EBI's environmental review letter for 40 Leominster Shirley Road will be forwarded to the Historical Commission for input.",
+   "quote": "ebi's letter will be forwarded to the historical commission for input."
+  },
+  {
+   "decision": "Planning Office to coordinate with the Building Reuse Committee on a workshop with the Planning Board.",
+   "quote": "planning office to coordinate with building reuse committee."
+  },
+  {
+   "decision": "Motion to send a letter to the ZBA on 250 Whalom Road was withdrawn; no letter will be sent.",
+   "quote": "n. lockwood withdrew his motion; no letter will be sent."
+  },
+  {
+   "decision": "Board consensus that MRPC proceed with the draft Contract and Scope for the Housing Production Plan.",
+   "quote": "board reviewed and consensus was for mrpc to proceed with contract and scope."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Building Reuse Committee: annual cost of keeping six buildings running",
+   "what_was_recorded": "D. McQuaid reported the yearly cost to the Town of keeping the six buildings under review running, excluding maintenance.",
+   "figures_as_printed": [
+    "$180,000.00"
+   ],
+   "quote": "the cost per year to the town to keep them running is $180,000.00."
+  },
+  {
+   "topic": "250 Whalom Road residential development and Town budget",
+   "what_was_recorded": "D. McQuaid was concerned with the Town budget and said the development would not generate profit for the Town.",
+   "figures_as_printed": [],
+   "quote": "d. mcquaid was not in complete agreement and concerned with town budget."
+  },
+  {
+   "topic": "MS/HS project concession stand and Booster Club income",
+   "what_was_recorded": "J. Bilotta-Simeone raised concern that the distance of the concession stand from the new field could reduce Booster Club income.",
+   "figures_as_printed": [],
+   "quote": "she noted her concern with possible lack of booster club income derived from the concession stand due to its distance from the proposed new field"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "312 Townsend Harbor Road",
+   "topic": "MS/HS project: roadway, concession stand, parking, Passios",
+   "quote": "paula bertram, 312 townsend harbor road- where is the roadway in relation to concession stand?"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "MS/HS project: student parking access from Oak Avenue",
+   "quote": "carl luck, 50 sunset lane-why wouldn't students access student parking from oak avenue?"
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "MS/HS project: site lighting and light pollution",
+   "quote": "phyllis luck, 50 sunset lane- will light be structured to minimize light pollution?"
+  },
+  {
+   "speaker": "P. Bertram",
+   "stated_role": "",
+   "topic": "Local Curve Systematic Approach to Safety Program and speed limit at 305 Leominster Shirley Road",
+   "quote": "p. bertram noted this program is for signage; e.g. low cost improvements to increase safety on curves."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "50 Elmwood Road subdivision sidewalk waiver",
+   "quote": "carl luck, 50 sunset lane- developer requested waiver as subdivision has less than 10 lots."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing (cont'd), Highfield Village, Northfield Road",
+   "resolution": "referred to separate minutes; continued to June 9, 2014",
+   "quote": "public hearing (cont'd), highfield village, northfield road- see separate minutes",
+   "tags": [
+    "Highfield Village",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "MS/HS Project informal presentation",
+   "resolution": "informal presentation; comprehensive presentation set for June 9, 2014",
+   "quote": "ms/hs project- informal presentation to board by david warner, warner larson landscape architects.",
+   "tags": [
+    "MS/HS project",
+    "site plan",
+    "school",
+    "parking",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 4-22-14, 4-28-14 and 5-3-14",
+   "quote": "minutes approval: all minutes signed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "mrpc, j. bilotta-simeone- mrpc moving its offices across the street from current location.",
+   "tags": [
+    "committee reports",
+    "Building Reuse Committee",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "received; traffic count locations to be decided May 27",
+   "quote": "force corporation, 305 leominster shirley road- j. bilotta-simeone noted that the police chief and dpw director have spoken with the owner.",
+   "tags": [
+    "traffic counts",
+    "Force Corporation",
+    "solar",
+    "White Tail Crossing",
+    "safety program"
+   ]
+  },
+  {
+   "topic": "Definitive Subdivision, 50 Elmwood Road",
+   "resolution": "Findings and Directives endorsed",
+   "quote": "definitive subdivision, 50 elmwood road. findings and directives before board for endorsement.",
+   "tags": [
+    "subdivision",
+    "waivers",
+    "earth removal",
+    "sidewalk waiver"
+   ]
+  },
+  {
+   "topic": "40 Leominster Shirley Road telecommunication tower review",
+   "resolution": "no vote; EBI letter to Historical Commission",
+   "quote": "40 leominster shirley road- ebl consulting completing an environmental review process on behalf of at&t for possible telecommunication tower placement.",
+   "tags": [
+    "telecom tower",
+    "historic properties"
+   ]
+  },
+  {
+   "topic": "Village District Draft Bylaw",
+   "resolution": "discussion; no action",
+   "quote": "village district draft bylaw- c. fleck noted she is reviewing the citizen survey results.",
+   "tags": [
+    "village district bylaw",
+    "envisioning session",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "250 Whalom Road, Lunenburg Village (ZBA)",
+   "resolution": "letter to ZBA withdrawn; no letter sent",
+   "quote": "n. lockwood withdrew his motion; no letter will be sent.",
+   "tags": [
+    "ZBA",
+    "housing",
+    "SHI"
+   ]
+  },
+  {
+   "topic": "Master Plan: Housing Element and Housing Production Plan",
+   "resolution": "consensus to proceed with contract and scope",
+   "quote": "master plan- housing element and housing production plan- mrpc has prepared draft contract and scope for housing production plan for board review.",
+   "tags": [
+    "housing",
+    "master plan",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "tuesday, may 27, 6:30 pm, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "noted; economic development to be raised next meeting",
+   "quote": "member issues: n. lockwood wants to start discussing economic development at next meeting.",
+   "tags": [
+    "economic development"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 4/22/14",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 4/22/14 minutes 4/28/14"
+  },
+  {
+   "name": "Minutes 4/28/14",
+   "where": "list",
+   "quote": "minutes 4/28/14 minutes 5/3/14 mrpc traffic count correspondence"
+  },
+  {
+   "name": "Minutes 5/3/14",
+   "where": "list",
+   "quote": "minutes 4/28/14 minutes 5/3/14 mrpc traffic count correspondence"
+  },
+  {
+   "name": "MRPC Traffic Count Correspondence",
+   "where": "list",
+   "quote": "minutes 5/3/14 mrpc traffic count correspondence chase road solar update"
+  },
+  {
+   "name": "Chase Road Solar Update",
+   "where": "list",
+   "quote": "mrpc traffic count correspondence chase road solar update pleasant street solar update"
+  },
+  {
+   "name": "Pleasant Street Solar Update",
+   "where": "list",
+   "quote": "chase road solar update pleasant street solar update 50 elmwood road subdivision findings and directives"
+  },
+  {
+   "name": "50 Elmwood Road Subdivision Findings and Directives",
+   "where": "list",
+   "quote": "pleasant street solar update 50 elmwood road subdivision findings and directives 40 leominster shirley road, ebi consulting"
+  },
+  {
+   "name": "40 Leominster Shirley Road, EBI Consulting, Invitation to Comment",
+   "where": "list",
+   "quote": "50 elmwood road subdivision findings and directives 40 leominster shirley road, ebi consulting, invitation to comment"
+  },
+  {
+   "name": "Village District Draft Bylaw",
+   "where": "list",
+   "quote": "invitation to comment village district draft bylaw zoning board of appeals letter, 4/29/14, request for comments"
+  },
+  {
+   "name": "Zoning Board of Appeals Letter, 4/29/14, Request for Comments",
+   "where": "list",
+   "quote": "village district draft bylaw zoning board of appeals letter, 4/29/14, request for comments minutes/2014/05.12.14"
+  },
+  {
+   "name": "Minutes/2014/05.12.14",
+   "where": "list",
+   "quote": "zoning board of appeals letter, 4/29/14, request for comments minutes/2014/05.12.14"
+  },
+  {
+   "name": "Traffic Count Request Form",
+   "where": "text",
+   "quote": "they need to send a completed traffic count request form to the board of selectmen for approval"
+  },
+  {
+   "name": "Draft Contract and Scope for Housing Production Plan",
+   "where": "text",
+   "quote": "mrpc has prepared draft contract and scope for housing production plan for board review."
+  },
+  {
+   "name": "Citizen Survey results",
+   "where": "text",
+   "quote": "c. fleck noted she is reviewing the citizen survey results."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "MS/HS school project",
+  "Highfield Village",
+  "50 Elmwood Road subdivision",
+  "subdivision waivers",
+  "village district bylaw",
+  "traffic counts",
+  "solar",
+  "telecom tower",
+  "housing production plan",
+  "ZBA",
+  "250 Whalom Road",
+  "minutes approval",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

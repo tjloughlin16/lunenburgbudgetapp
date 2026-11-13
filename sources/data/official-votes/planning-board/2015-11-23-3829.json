@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-11-23",
  "docid": "3829",
@@ -12,15 +12,136 @@
  },
  "votes": [
   {
-   "motion": "Approve tree removal within the driveway locations for Lots 1 through 5, 175 Northfield Road, under M.G.L. Ch. 40, Section 15C and M.G.L. Ch. 87, Section 3",
+   "motion": "Approve tree removal within the driveway locations for Lots 1 – 5 at 175 Northfield Road.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion, k. chenis, to approve tree removal within the driveway locations for lots 1 - 5, second, d. prokowiew, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0849505
+ "note": "Public hearing minutes. The minutes record a motion with the result printed as \"all aye\" (no count). No vote is recorded for opening or closing the hearing, which is only noted as \"Hearing closed 7:00 PM.\" No dollar figures or public comment section appear in the text. The Tree Warden, John Rodriquenz, is mentioned only as having been consulted earlier and is not recorded as taking part, so he is not listed as an attendee.",
+ "cost_usd": 0.00392192,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Edmond Boucher, PLS",
+   "role": "represented the applicant (Ashoryn LLC)",
+   "status": "present",
+   "quote": "was represented by edmond boucher, pls."
+  },
+  {
+   "name": "Matt Olson",
+   "role": "applicant (Ashoryn LLC)",
+   "status": "not stated",
+   "quote": "the applicant, ashoryn llc (matt olson), 351 east monomonac road, rindge, nh"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A decision will be prepared for Board endorsement on the driveway and tree removal request for Lots 1 through 5 at 175 Northfield Road.",
+   "quote": "decision will be prepared for board endorsement."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: driveways at Lots 1-5, 175 Northfield Road (Scenic Road designation and tree cutting)",
+   "resolution": "tree removal approved by motion; decision to be prepared for endorsement",
+   "quote": "each drive will be approximately 12-15' wide for a single residence.",
+   "tags": [
+    "public hearing",
+    "scenic road",
+    "tree removal",
+    "driveways",
+    "Northfield Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plan of lots dated August 20, 2015",
+   "where": "list",
+   "quote": "plan of lots dated august 20, 2015"
+  },
+  {
+   "name": "Application for Lot 1 under Ch. 40, Section 15",
+   "where": "list",
+   "quote": "application for lot 1 under ch. 40, section 15"
+  },
+  {
+   "name": "Application for Lot 2 under Ch. 40, Section 15",
+   "where": "list",
+   "quote": "application for lot 2 under ch. 40, section 15"
+  },
+  {
+   "name": "Application for Lot 3 under Ch. 40, Section 15",
+   "where": "list",
+   "quote": "application for lot 3 under ch. 40, section 15"
+  },
+  {
+   "name": "Application for Lot 4 under Ch. 40, Section 15",
+   "where": "list",
+   "quote": "application for lot 4 under ch. 40, section 15"
+  },
+  {
+   "name": "Application for Lot 5 under Ch. 40, Section 15",
+   "where": "list",
+   "quote": "application for lot 5 under ch. 40, section 15"
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "scenic road",
+  "tree removal",
+  "driveways",
+  "Northfield Road",
+  "M.G.L. Ch. 40 Sec. 15C",
+  "M.G.L. Ch. 87 Sec. 3"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-02-06",
  "docid": "2784",
@@ -12,6 +12,113 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are recorded in these minutes. The document describes a Personnel Subcommittee meeting with discussions about 360 evaluations and the Library Director's performance evaluation process, and mentions recruiting for open Trustee positions. However, no explicit motion language appears in the text (no \"moved by,\" \"seconded by,\" \"unanimously approved,\" \"so voted,\" or similar procedural language), and no voting outcomes are stated.",
- "cost_usd": 0.0818305
+ "note": "The minutes record no motions or votes. The text says the meeting was adjourned at 7:50 pm but gives no motion to adjourn. Public comment was 'none'. The minutes are a Personnel Subcommittee record of the Library Board of Trustees; attendance lists three members without stated titles. Text is extracted, not scanned.",
+ "cost_usd": 0.00281552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lisa Krowitz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: lisa krowitz, richard mailloux, jeanne raboin"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: lisa krowitz, richard mailloux, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order at 6:54 p.m. in the wallace community room by jeanne raboin."
+  },
+  {
+   "name": "Martha Moore",
+   "role": "LPL Director",
+   "status": "present",
+   "quote": "guest: martha moore, lpl director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "360 evaluation procedure: the current evaluation form and selected questions from 360 review documents will be used, to be given to Trustees at the Feb. 20 meeting.",
+   "quote": "the current evaluation form and selected questions from documents about conducting 360 reviews will be used."
+  },
+  {
+   "decision": "Selected 360 questions, with the Director's job description and LPL mission statement, will be sent to selected town hall staff, all LPL library staff and selected Friends of LPL for feedback, with an option to respond anonymously.",
+   "quote": "will be sent to selected town hall staff, all lpl library staff and selected friends of lpl for feedback."
+  },
+  {
+   "decision": "All evaluation forms to be in by April 1.",
+   "quote": "all evaluation forms to be in april 1."
+  },
+  {
+   "decision": "Trustee chair Jeanne Raboin will send a document seeking volunteers to the Lunenburg Access Cable Channel, LPL web site and Lunenburg Ledger.",
+   "quote": "trustee chair, jeanne raboin, will send a document looking for volunteers to the lunenburg access cable channel."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "360 evaluations presentation",
+   "resolution": "discussed; no action",
+   "quote": "martha moore presented different aspects to 360 evaluations.",
+   "tags": [
+    "360 evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Incorporating 360 evaluation into Library Director's 2013-2014 evaluation",
+   "resolution": "procedure outlined; no vote recorded",
+   "quote": "discussion about how to incorporate the 360 evaluation into the library director's 2013-2014 evaluation.",
+   "tags": [
+    "library director evaluation",
+    "360 evaluation"
+   ]
+  },
+  {
+   "topic": "Open Trustees positions",
+   "resolution": "chair to send volunteer request; no vote",
+   "quote": "brief discussion on recruiting lunenburg residents to run for lpl board of trustees.",
+   "tags": [
+    "trustee recruitment",
+    "volunteers"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Public Library Director’s Performance Eva luation 2013 Instrument",
+   "where": "list",
+   "quote": "lunenburg public library director's performance eva luation 2013 instrument"
+  },
+  {
+   "name": "Lunenburg Public Library Director’s Job Description",
+   "where": "list",
+   "quote": "lunenburg public library director's job description"
+  },
+  {
+   "name": "Lunenburg Public Library Mission Statement",
+   "where": "list",
+   "quote": "lunenburg public library mission statement"
+  }
+ ],
+ "tags": [
+  "personnel subcommittee",
+  "library director evaluation",
+  "360 evaluation",
+  "trustee recruitment",
+  "public library"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents referenced:"
+ },
+ "dropped_unquoted_by_field": {}
 }

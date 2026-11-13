@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-08-03",
  "docid": "4747",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the fund transfers as presented",
+   "motion": "Approve the FY2010 fund transfers as presented.",
    "moved_by": "Tom",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "tom motion to approve the fund transfers as presented, steve seconded, voted unanimously."
   },
   {
-   "motion": "Appoint Steve as Board of Selectmen representative to the DPW Building Committee",
+   "motion": "Appoint Steve deBettencourt as the Board of Selectmen representative to the DPW Building Committee.",
    "moved_by": "Ernie",
    "seconded_by": "Dave",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "ernie motioned to appoint steve, dave seconded, voted unanimously."
   },
   {
-   "motion": "Appoint Jay Simone, Dave MaDonald and Janice Carrier as Citizens at Large representatives to the DPW Building Committee",
+   "motion": "Appoint Jay Simone, Dave MaDonald and Janice Carrier as the Citizens at Large representatives to the DPW Building Committee.",
    "moved_by": "Dave",
    "seconded_by": "Ernie",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "dave move to appoint jay simone, dave madonald and janice carrier as the citizens at large representatives, ernie seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn the Regular Session",
+   "motion": "Adjourn the Regular Session.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -45,6 +45,493 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1422395
+ "note": "OCR text from scanned minutes (macOS Vision); some names and figures garbled (e.g., \"Dave MaDonald\", \"$9.090.98\" in text vs $9,089.98 in the transfer table; revenue total $27,131,536 in text vs $27,131,636.69 in the table). Chapter 90 figures and asphalt price chart are OCR-garbled and their year mapping is unclear. The DPW Building Committee outside appointees and the Planning Board appointee were approved with no vote count recorded. No public comment heading has any content. Attendance taken from the opening line; no roll call. Laura Williams appears only in the signature block.",
+ "cost_usd": 0.018090220000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Board member",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board member",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board member",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hall, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz came before the board and presented the attached power point"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant, Board of Selectmen",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant, board of selectmen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board accepted the resignation of Bonnie Edes from the Council on Aging, with a letter of appreciation to be sent.",
+   "quote": "board accepted bonnie's resignation with regrets, letter expressing board's appreciation to be sent."
+  },
+  {
+   "decision": "Board accepted the resignations of Spencer Matthews and Jaime Giancola from PACC, with letters of appreciation to be sent; two PACC vacancies now exist.",
+   "quote": "board accepted resignations of spencer matthews and jaime giancola from pacc,"
+  },
+  {
+   "decision": "Board approved the DPW Director's recommended DPW appointees (Leigh Mezzetti and Jim Breault) and the Planning Board's appointee (Joanna Bilotta) to the DPW Building Committee. No vote count recorded.",
+   "quote": "approved recommendation of dw director jack rodriquenz to appoint as dpw department"
+  },
+  {
+   "decision": "Board agreed the charge of the DPW Building Committee under item #3 should also include the Board of Selectmen.",
+   "quote": "board noted that under #3 of the charge of the committee should also include"
+  },
+  {
+   "decision": "Jack Rodriquenz to return to the board with a recommendation on the budget number and the pavement plan; Paula asked for it at the August 24 meeting.",
+   "quote": "paula would like to have a recommendation from jack for the august 24"
+  },
+  {
+   "decision": "Jack to check the data on the East Street and Elm Street classification and report back to Kerry.",
+   "quote": "jack was not able to explain without going back to the data but will do this and get back to kerry."
+  },
+  {
+   "decision": "Facilities maintenance asked to take a second look at the Jones House roof leak; the item to go on a future agenda for August 24.",
+   "quote": "per kerry, this is why she has asked our facilities maintenance to take a second look, keeping in mind that this is a short term fix."
+  },
+  {
+   "decision": "Jones House roof item placed on a future agenda, slated for August 24.",
+   "quote": "paula would like to have this also put on a future agenda item, slated for august 24m."
+  },
+  {
+   "decision": "Warrants reviewed and signed: #3P 11 and #3M 11 dated 8/5/10, and the State Primary Warrant for 9/14/2010.",
+   "quote": "#3p 11, 8/5/10 - $495,864.06 and #3m 11, 8/5/10 - $151.78 reviewed and signed."
+  },
+  {
+   "decision": "Chair and Town Manager to decide which work session items will be televised. Board wanted the August 5 and August 10 work sessions televised. No meeting on August 17 unless critical; August 24 is a business session.",
+   "quote": "there will be no meeting scheduled for august 17, 2010 unless something absolutely critical comes up and on august 24th there will be a business session."
+  },
+  {
+   "decision": "Add the IMA status to the pending items, to be addressed in a work session.",
+   "quote": "paula would like to add under pending items, the ima status and this should be addressed in a work session as we will be discussing a contract."
+  },
+  {
+   "decision": "Town Manager's goals to be added to the pending items list.",
+   "quote": "noted that we need to also include \"town manager\" goals under the \"pending items\""
+  },
+  {
+   "decision": "Veterans agent office and phone issues to be addressed by the end of the week.",
+   "quote": "miscommunication was that she expected that he was to let her know what was needed but he never did, this should all be addressed by the end of this week."
+  },
+  {
+   "decision": "Standardized agenda form to be forwarded to other boards and committees as a template.",
+   "quote": "per chair, this will be forwarded to other boards as a template."
+  },
+  {
+   "decision": "Landfill monitoring report placed in the board's action file; Town petitioning the state to move from twice-yearly to annual monitoring.",
+   "quote": "there are no issues as far as the monitoring and will be placed in the board's action file for their review."
+  },
+  {
+   "decision": "Town Manager to speak with town counsel on holding the 925 Mass Ave. tax title property so the grant work can be done before transfer.",
+   "quote": "she will be speaking with town counsel on whether we could hold the property and allow the work to be done on it and"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pavement crack seal estimate",
+   "what_was_recorded": "The pavement plan's crack seal amount is estimated at about $41,000.",
+   "figures_as_printed": [
+    "$41,000"
+   ],
+   "quote": "crack seal amount in this estimate is approximately $41,000."
+  },
+  {
+   "topic": "Pavement annual spending level",
+   "what_was_recorded": "Spending only $400,000 per year keeps roads in failure; the board may need to look at closer to $1 million a year.",
+   "figures_as_printed": [
+    "$400,000",
+    "$1 million"
+   ],
+   "quote": "bottom line is that if we continue to spend only the $400,000 per year, we'll continue to be in failure and may need to look at spending"
+  },
+  {
+   "topic": "Pavement working budget number",
+   "what_was_recorded": "Jack said even one million is low but could be a working number for the next 3 to 5 years.",
+   "figures_as_printed": [
+    "one million"
+   ],
+   "quote": "per jack, would say that even one million is low, but could be a working number for the next 3 to 5 years."
+  },
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "After the first set of transfers, the Snow & Ice deficit remains at $115,866.48.",
+   "figures_as_printed": [
+    "$115,866.48"
+   ],
+   "quote": "first set of transfers were included in the board's packet which will leave the snow & ice deficit at $115,866.48,"
+  },
+  {
+   "topic": "Snow and ice remaining deficit to be funded from free cash",
+   "what_was_recorded": "About $51,000 of the remaining snow and ice deficit is to be funded from free cash via a special town meeting in the fall.",
+   "figures_as_printed": [
+    "$51,000"
+   ],
+   "quote": "approximately $51,000 and we will be asking to appropriate from free cash at a special town meeting held in the fall."
+  },
+  {
+   "topic": "FY2010 revenue versus estimate",
+   "what_was_recorded": "Revenue was estimated at $26,606,682 and actual receipts were $27,131,536.",
+   "figures_as_printed": [
+    "$26,606,682",
+    "$27,131,536"
+   ],
+   "quote": "we were surprised with revenue which was estimated at $26,606,682 and actual was $27,131,536."
+  },
+  {
+   "topic": "Legal expense overage",
+   "what_was_recorded": "Legal Expense overage of $8,783.20 from ongoing court cases; original budget $95,000, settled at $160,000 near Annual Town Meeting, once expected as high as $200,000.",
+   "figures_as_printed": [
+    "$8,783.20",
+    "$95,000",
+    "$200,000",
+    "$160,000"
+   ],
+   "quote": "legal expense- $8,783.20. as you know, we discuss the increase in legal fees due to"
+  },
+  {
+   "topic": "Central Purchasing overage",
+   "what_was_recorded": "Central Purchasing overage of $4,622.98, mainly telephone charges.",
+   "figures_as_printed": [
+    "$4,622.98"
+   ],
+   "quote": "2. central purchasing-$4,622.98. the major account for the overage is due to telephone"
+  },
+  {
+   "topic": "Police Department overage",
+   "what_was_recorded": "Police Department overage of $6,485.11 after a second officer's injury leave.",
+   "figures_as_printed": [
+    "$6,485.11"
+   ],
+   "quote": "3. police department- $6,485.11. the department as a whole was on target prior to the"
+  },
+  {
+   "topic": "Fire Department overage",
+   "what_was_recorded": "Fire Department overage of $9.090.98 from higher call volume and overtime cut at Fall Town Meeting.",
+   "figures_as_printed": [
+    "$9.090.98"
+   ],
+   "quote": "4. fire department- $9.090.98. call volume increased fairly significantly."
+  },
+  {
+   "topic": "BAN interest overage",
+   "what_was_recorded": "Interest on temporary notes of $1,734.34 was not budgeted.",
+   "figures_as_printed": [
+    "$1,734.34"
+   ],
+   "quote": "5:. ban interest-$1,734.34. nothing was budgeted to pay interest on temporary notes."
+  },
+  {
+   "topic": "Chapter 44 section 33B transfer total",
+   "what_was_recorded": "The FY2010 Chapter 44 section 33B transfer schedule totals $30,751.75.",
+   "figures_as_printed": [
+    "$30,751.75"
+   ],
+   "quote": "$ 9,089.98 $ 30,751.75"
+  },
+  {
+   "topic": "Warrant totals",
+   "what_was_recorded": "Payroll and manual warrants of $495,864.06 and $151.78 reviewed and signed.",
+   "figures_as_printed": [
+    "$495,864.06",
+    "$151.78"
+   ],
+   "quote": "#3p 11, 8/5/10 - $495,864.06 and #3m 11, 8/5/10 - $151.78 reviewed and signed."
+  },
+  {
+   "topic": "Tax title gas station property offer",
+   "what_was_recorded": "Owner in bankruptcy offered to sell the 925 Mass Ave. property to the town for $1.00; the state grant requires recouping money from the owner.",
+   "figures_as_printed": [
+    "$1.00"
+   ],
+   "quote": "but willing to sell the property to the town for $1.00."
+  },
+  {
+   "topic": "DPW building project budget cap",
+   "what_was_recorded": "The DPW building committee charge says the project must not exceed the approved budget of $1.1M.",
+   "figures_as_printed": [
+    "$1.1M"
+   ],
+   "quote": "does not go over the approved budget of $1.1m. if at any point, the committee feels"
+  },
+  {
+   "topic": "Asphalt price escalation example",
+   "what_was_recorded": "Example of liquid asphalt price adjustment: a $100 drop per liquid ton yields a $5.50 per ton reduction.",
+   "figures_as_printed": [
+    "$500",
+    "$400",
+    "$100",
+    "$5.50"
+   ],
+   "quote": "-$100 x .055/ton = -$5.50/ton reduction in the price of hma to the town."
+  },
+  {
+   "topic": "Chapter 90 state aid history",
+   "what_was_recorded": "Chapter 90 state aid figures by year shown in the DPW pavement booklet (OCR; year mapping unclear).",
+   "figures_as_printed": [
+    "$377,704.00",
+    "$258,031.00",
+    "$322,432.00",
+    "$321,809.00",
+    "$319,828.00",
+    "$329,794.00"
+   ],
+   "quote": "$377,704.00 $258,031.00 $322,432.00 $321,809.00 $319,828.00 $329,794.00"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY2010 Chapter 44 section 33B budget close-out transfers to cover appropriation overages (legal, central purchasing, police, fire, BAN interest, and others).",
+   "outcome": "approved unanimously",
+   "amount_as_printed": "$30,751.75",
+   "quote": "two separate sets of transfers that she and the accountant have identified to fund deficits within the appropriations in order"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements"
+   ],
+   "quote": "tom announced that next monday is the final band concert; scheduled for 7:00 pm."
+  },
+  {
+   "topic": "Pavement Management Plan",
+   "resolution": "presented; board asked for Jack's recommendation at August 24 meeting; no vote",
+   "tags": [
+    "pavement",
+    "public works",
+    "budget"
+   ],
+   "quote": "pavement management plan - dpw director jack rodriquenz came before the board and presented the attached power point"
+  },
+  {
+   "topic": "FY2010 Budget Adjustments",
+   "resolution": "approved transfers unanimously",
+   "tags": [
+    "budget",
+    "transfers",
+    "snow and ice"
+   ],
+   "quote": "2. fy2010 budget adjustments - kerry reveiwed the fy2010 budget close out memorandum and presented the attached chapter 44,"
+  },
+  {
+   "topic": "FY2010 revenue comparison",
+   "resolution": "discussed; no action",
+   "tags": [
+    "revenue",
+    "budget"
+   ],
+   "quote": "kerry reveiwed the revenue comparision and noted that we were surprised with revenue which was estimated at $26,606,682"
+  },
+  {
+   "topic": "Extension of Alcohol Sales on Sunday",
+   "resolution": "memo reviewed; no action",
+   "tags": [
+    "alcohol licensing"
+   ],
+   "quote": "3. extension of alcohol sales on sunday - kerry reveiwed the attached memo regarding hours of sales for sunday sales."
+  },
+  {
+   "topic": "Minutes and Warrants",
+   "resolution": "reviewed and signed",
+   "tags": [
+    "warrants",
+    "elections"
+   ],
+   "quote": "4. minutes / warrants - #3p 11, 8/5/10 - $495,864.06 and #3m 11, 8/5/10 - $151.78 reviewed and signed."
+  },
+  {
+   "topic": "Action File Items - Jones House roof",
+   "resolution": "referred to facilities maintenance; placed on future agenda",
+   "tags": [
+    "facilities",
+    "town buildings"
+   ],
+   "quote": "action file items - dave questioned the jones house roof and would like to know if there was a small leak that could be repaired"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "informational; no action",
+   "tags": [
+    "unitil",
+    "planning board",
+    "appointments"
+   ],
+   "quote": "paula noted the meeting that she had with unitil represenative john dinapoli"
+  },
+  {
+   "topic": "Manager Updates",
+   "resolution": "informational; no action",
+   "tags": [
+    "regional dispatch",
+    "tax title"
+   ],
+   "quote": "regional dispatch study is continuing to be worked on, she and fire chief scott glenny had an informal meeting with mayor wong"
+  },
+  {
+   "topic": "Selectmen Requests",
+   "resolution": "discussed; items to be addressed by staff",
+   "tags": [
+    "veterans agent",
+    "beach",
+    "agendas",
+    "janitorial",
+    "landfill"
+   ],
+   "quote": "a. office requirements for veteran's agent - as ernie has requested this to be discussed, he wanted it noted"
+  },
+  {
+   "topic": "Future Meeting Schedule",
+   "resolution": "work sessions continued; televising set for Aug 5 and Aug 10; no Aug 17 meeting",
+   "tags": [
+    "work sessions",
+    "televised meetings",
+    "schedule"
+   ],
+   "quote": "paula reviewed the pending items and believes that the work sessions make sense"
+  },
+  {
+   "topic": "DPW Building Committee appointments",
+   "resolution": "appointments made by vote and recommendation",
+   "tags": [
+    "appointments",
+    "building committee"
+   ],
+   "quote": "appointment: dpw building committee - kerry reviewed the attached memo on the dpw building committee."
+  },
+  {
+   "topic": "Resignations",
+   "resolution": "accepted",
+   "tags": [
+    "appointments",
+    "resignations"
+   ],
+   "quote": "2. resignation: bonnie edes, council on aging - board accepted bonnie's resignation with regrets"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:36 P.M.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "being no further business board voted unanimously to adjourn regular session at 10:36 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Power Point Presentation on the Pavement Maintenance Program",
+   "where": "list",
+   "quote": "presented the attached power point presentation on the pavement maintenance program and spreadsheet on roadways in town"
+  },
+  {
+   "name": "Spreadsheet on roadways in town (pavement survey)",
+   "where": "list",
+   "quote": "presented the attached power point presentation on the pavement maintenance program and spreadsheet on roadways in town"
+  },
+  {
+   "name": "Asphalt Patching Program",
+   "where": "text",
+   "quote": "reviewed the asphalt patching program which identifies overview, objectives, policies, responsibilities and procedures."
+  },
+  {
+   "name": "FY2010 Budget Close Out memorandum (July 30, 2010)",
+   "where": "list",
+   "quote": "kerry reveiwed the fy2010 budget close out memorandum and presented the attached chapter 44,"
+  },
+  {
+   "name": "Chapter 44 section 33B transfers",
+   "where": "list",
+   "quote": "two separate sets of transfers that she and the accountant have identified to fund deficits within the appropriations in order"
+  },
+  {
+   "name": "Memo regarding hours of sales for Sunday sales (Extension of Alcohol Sales, July 30, 2010)",
+   "where": "list",
+   "quote": "3. extension of alcohol sales on sunday - kerry reveiwed the attached memo regarding hours of sales for sunday sales."
+  },
+  {
+   "name": "DPW Building Committee memo (July 2, 2010; updated July 16, 2010)",
+   "where": "list",
+   "quote": "appointment: dpw building committee - kerry reviewed the attached memo on the dpw building committee."
+  },
+  {
+   "name": "Budget to actual revenue comparison, FY09 and FY10",
+   "where": "text",
+   "quote": "kerry reveiwed the revenue comparision and noted that we were surprised with revenue which was estimated at $26,606,682"
+  },
+  {
+   "name": "Warrants #3P 11 and #3M 11, 8/5/10",
+   "where": "list",
+   "quote": "#3p 11, 8/5/10 - $495,864.06 and #3m 11, 8/5/10 - $151.78 reviewed and signed."
+  },
+  {
+   "name": "State Primary Warrant, 9/14/2010",
+   "where": "list",
+   "quote": "also state primary warrant scheduled for 9/14/2010@ the t.c.passios elementary school, 1025 massachusetts ave., from 7:00 am - 8:00 pm, reviewed and signed"
+  }
+ ],
+ "tags": [
+  "pavement management",
+  "public works",
+  "FY2010 budget close-out",
+  "chapter 44 transfers",
+  "snow and ice deficit",
+  "revenue",
+  "alcohol sales",
+  "appointments",
+  "resignations",
+  "DPW building committee",
+  "Unitil",
+  "regional dispatch",
+  "veterans agent",
+  "televised work sessions",
+  "landfill",
+  "janitorial",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "presented the attached power point presentation"
+ },
+ "dropped_unquoted_by_field": {}
 }

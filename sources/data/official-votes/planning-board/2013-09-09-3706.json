@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-09-09",
  "docid": "3706",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of 8-26-13",
+   "motion": "Approve the minutes of 8-26-13.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to approve 8-26-13, mr. lockwood, second, mr. mcquaid. minutes signed."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Bakaysa",
    "seconded_by": "Mr. Allison",
    "outcome": "passed",
@@ -29,6 +29,315 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08682050000000001
+ "note": "Extracted text, not a scan. Votes on minutes approval and adjournment have no printed vote count; minutes approval outcome is marked not stated. No public comment section appears. The executive session has separate minutes and no motion is recorded in this text. Ms. Bertram is named without a first name.",
+ "cost_usd": 0.00861592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "ms. bertram, board of sele ctmen, spoke to her role as liaison between the board of selectmen and the planning board.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members will review their individual assignments on the Planning Board Goals, with continued discussion at the September 23, 2013 meeting; members may email Ms. Benson with questions.",
+   "quote": "board members will review their individual"
+  },
+  {
+   "decision": "Board requested that Ms. Benson forward the 40S guidelines to Board members (Tri Town Landing).",
+   "quote": "board requested ms. benson forward 40s guidelines to board members."
+  },
+  {
+   "decision": "Ms. Bilotta-Simeone will ask Ms. Benson to check on the Lunenburg Hazard Mitigation Plan update.",
+   "quote": "ms. bilotta-simeone will request ms. benson check."
+  },
+  {
+   "decision": "Enforcement and penalties for the Rules and Regulations Governing the Subdivision of Land to be an Action Item for the September 23, 2013 meeting; Ms. Bilotta-Simeone will ask Ms. Benson to check surrounding communities' enforcement.",
+   "quote": "this will be an action item for the september 23, 2013 meeting."
+  },
+  {
+   "decision": "Citizen Survey account: IT Director will inform the Planning Office when the account is up and running.",
+   "quote": "it director will inform the planning office when account is up and running."
+  },
+  {
+   "decision": "MRPC to present to the Board on September 23, 2013.",
+   "quote": "will present to the board on september 23, 2013."
+  },
+  {
+   "decision": "Board will determine the October 14 meeting date (a holiday) at its September 23 meeting.",
+   "quote": "board will determine a meeting date at its september 23rd meeting."
+  },
+  {
+   "decision": "Mr. McQuaid requested that Mr. Allison inquire about the basic needs of the Agricultural Commission, to be brought to the Reuse Committee.",
+   "quote": "mr. mcquaid requested that mr. allison inquire of basic needs of the agricultural commission"
+  },
+  {
+   "decision": "Mr. McQuaid asked that anyone who knows where missing old blueprint drawings are get them to the Reuse Committee for scanning.",
+   "quote": "he requested if anyone within town is aware of where they may be, to please get them to the reuse committee for scanning."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Citizen Survey account activation",
+   "what_was_recorded": "The Citizen Survey account will not be activated until payment is received; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "account won't be activated until payment received."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session",
+   "resolution": "separate minutes",
+   "quote": "executive session: separate minutes",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Minutes approval (8-26-13)",
+   "resolution": "approved, minutes signed",
+   "quote": "motion to approve 8-26-13, mr. lockwood, second, mr. mcquaid. minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "committee had discussion as to how number of students was calculated.",
+   "tags": [
+    "school building committee",
+    "MRPC",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Planning Board Goals",
+   "resolution": "continued to September 23, 2013",
+   "quote": "board members will review their individual",
+   "tags": [
+    "planning board goals"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and development status",
+   "resolution": "no action; discussion of Mobil Station sewer line and progress reports",
+   "quote": "highfield village, massachusetts avenue- supplemental draft eis received in planning office.",
+   "tags": [
+    "development",
+    "Mobil Station",
+    "Highfield Village",
+    "Stone Farm",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom",
+   "resolution": "appointment set for September 23, 2013 at 6:45 PM",
+   "quote": "emerald place at lake whalom- appointment at 6:45 pm, september 23, 2013.",
+   "tags": [
+    "development",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Whalom Road LLC/Lunenburg Village hearing",
+   "resolution": "continued to September 25, 2013",
+   "quote": "hearing continued to september 25, 2013.",
+   "tags": [
+    "hearing",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Whites Woods, Phase III; Medical Marijuana Clinic",
+   "resolution": "no report; not discussed",
+   "quote": "whites woods, phase iii, white street- no report",
+   "tags": [
+    "development"
+   ]
+  },
+  {
+   "topic": "MGL Ch 40 §10 public markets",
+   "resolution": "discussion only, no action",
+   "quote": "mr. allison opined this would benefit the agricultural commission.",
+   "tags": [
+    "public markets",
+    "agricultural commission"
+   ]
+  },
+  {
+   "topic": "Lunenburg Hazard Mitigation Plan Update",
+   "resolution": "Chair to ask Ms. Benson to check; no update since September 2012",
+   "quote": "mr. allison noted meeting notice dated june 25, 2013.",
+   "tags": [
+    "hazard mitigation",
+    "flood"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "noted items; MRPC to present September 23; Citizen Survey awaiting payment",
+   "quote": "it director will inform the planning office when account is up and running.",
+   "tags": [
+    "citizen survey",
+    "fee schedules",
+    "town owned land",
+    "subdivision regulations"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set September 23 and October 28; October 14 to be determined",
+   "quote": "board will determine a meeting date at its september 23rd meeting.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "discussion; Reuse Committee and Liaison roles; enforcement item",
+   "quote": "mr. lockwood noted in reviewing bylaws, and rules and regulations, there are no enforcements and/or penalties",
+   "tags": [
+    "liaison",
+    "agricultural commission",
+    "reuse committee",
+    "enforcement",
+    "old primary school",
+    "gas station contamination"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:42 PM",
+   "quote": "motion to adjourn, mr. bakaysa, second, mr. allison, adjourned 8:42 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 8-26-13",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "Planning Board Goals",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "Mobil Station Progress Report",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "Whalom Road LLC Hearing Continuation Notice",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "MGL Ch 40, §10",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "Lunenburg Hazard Mitigation Plan Update",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "Town Owned Land listing",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "Fee Schedules- Harvard and Shirley",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 8-26-13 planning board goals mobil station progress report whalom road llc hearing continuation notice mgl ch 40, §10 lunenburg hazard mitigation plan update town owned land listing fee schedules- harvard and shirley"
+  },
+  {
+   "name": "Meeting Notice dated June 25, 2013 (Lunenburg Hazard Mitigation Plan matrix reference)",
+   "where": "text",
+   "quote": "mr. allison noted meeting notice dated june 25, 2013."
+  },
+  {
+   "name": "2011 Town Report",
+   "where": "text",
+   "quote": "the 2011 town report stated 40 ipads were purchased for the schools"
+  },
+  {
+   "name": "40S guidelines",
+   "where": "text",
+   "quote": "board requested ms. benson forward 40s guidelines to board members."
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "rules and regulations governing the subdivision of land with appropriate enforcement measures/ penalties."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development status",
+  "Mobil Station",
+  "Whalom Road hearing",
+  "hazard mitigation",
+  "subdivision regulations enforcement",
+  "town owned land",
+  "meeting schedule",
+  "liaisons",
+  "agricultural commission",
+  "old primary school",
+  "Chapter 21E contamination",
+  "MGL Ch 40 §10"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-06-16",
  "docid": "1592",
@@ -12,55 +12,271 @@
  },
  "votes": [
   {
-   "motion": "Deny the amended order of conditions",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Deny the Request for an Amended Order of Conditions filed by Gary Lorden for 340 Lancaster Avenue (the minutes print 'Denied amendment').",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "ken/rich denied amendment unanimous"
   },
   {
-   "motion": "Use stone and waddles for replacement wall",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Issue a negative determination on the Request for Determination of Applicability for 47 Cliffview Terrace, with the condition to use stone and waddles.",
+   "moved_by": "Rich",
+   "seconded_by": "Ken",
+   "outcome": "Unanimous (printed as 'Negative 3 Unanimous'; the '3' is not explained in the minutes)",
    "procedural": false,
    "quote": "rich/ken use stone and waddles negative 3 unanimous"
   },
   {
-   "motion": "Use waddles for water main replacement",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Issue a negative determination on the Request for Determination of Applicability for the F & L Right of Way (replacement of an 8\" water main with a 12\" main), with the condition to use waddles.",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "Unanimous (printed as 'Negative 3 Unanimous'; the '3' is not explained in the minutes)",
    "procedural": false,
    "quote": "ken/rich use waddles negative 3 unanimous"
   },
   {
-   "motion": "Approve notice of intent with conditions: boulders for demarcation and 100-foot riverfront restriction",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Approve the Notice of Intent for 811 Chase Road, Lot B, with conditions: boulders for demarcation in back along the property line, exemption only for a 30 foot no touch zone vegetation, and the 100 foot riverfront restriction not to be disturbed.",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "ken/rich unanimous boulders for demarcation in back along property line, exempt only for 30 foot no touch zone vegetation. also the 100 foot restriction around riverfront shall not be disturbed"
+   "quote": "ken/rich unanimous boulders for demarcation in back along property line, exempt only for 30 foot no touch zone vegetation."
   },
   {
-   "motion": "Continue hearing until June 2",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Continue the Notice of Intent for 811 Chase Road, Lot C until June 2.",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "ken/rich continue until june 2 unanimous"
   },
   {
-   "motion": "Approve notice of intent for retaining wall repair and rebuilding",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Action on the Notice of Intent for 60 Laurel Lane (repair and rebuilding of a retaining wall within the waters of Whalom Lake); the minutes print the vote but not the wording of the motion.",
+   "moved_by": "Rich",
+   "seconded_by": "Ken",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "retaining wall within the waters of whalom lake. rich/ken unanimous"
+   "quote": "for repair and rebuilding of a retaining wall within the waters of whalom lake. rich/ken unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes header dated May 19, 2010, not June 16, 2010 as indicated in metadata. Minutes abbreviated in shorthand format without explicit \"moved by/seconded by\" language; names Ken/Rich and Rich/Ken appear to indicate commissioners involved but roles are not clearly stated. Phrase \"Negative 3\" in items 2–3 meaning is unclear; likely OCR artifact from scanned original.",
- "cost_usd": 0.1297849
+ "note": "Date mismatch: the request gives the meeting date as 2010-06-16, but the minutes heading reads \"May 19, 2010\" (and Lot C is continued \"until June 2\"). Recorded as printed. Text is OCR (Vision) with no page footer, no roll call, no call-to-order, no adjournment and no approval-of-minutes vote, so attendance is only the unlabeled name list and the presence status is 'not stated'. Vote lines are shorthand ('Ken/Rich', 'Rich/Ken'); I read the first name as mover and second as seconder, which the minutes do not say outright. 'Negative 3' is printed without explanation. 'waddles' is printed as is (likely 'wattles'). Each vote's outcome is the printed word(s), since the minutes give no motion wording beyond the shorthand. No public comment or budget figures are printed.",
+ "cost_usd": 0.00555022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Lattanzi",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Ken Jones",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Rich Bursch",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Rob Verge",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Gary Lorden",
+   "role": "applicant (Request for an Amended Order of Conditions, 340 Lancaster Avenue)",
+   "status": "not stated",
+   "quote": "filed by gary lorden (chris mackenzie from whitman & bingham)"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "from Whitman & Bingham",
+   "status": "not stated",
+   "quote": "filed by gary lorden (chris mackenzie from whitman & bingham)"
+  },
+  {
+   "name": "Michael Polowski",
+   "role": "filed by (47 Cliffview Terrace)",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by michael polowski for stanley d. randall"
+  },
+  {
+   "name": "Stanley D. Randall",
+   "role": "owner or party for whom filed (47 Cliffview Terrace)",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by michael polowski for stanley d. randall"
+  },
+  {
+   "name": "Leominster Department of Public Works",
+   "role": "filer (F & L Right of Way)",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by leominster department of public works"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "of David Ross Associates, for the Dahlgren Family Trust (811 Chase Road)",
+   "status": "not stated",
+   "quote": "notice of intent filed by neil gorman of david ross associates for the dahlgren family trust"
+  },
+  {
+   "name": "Kent Oldfield",
+   "role": "filer for Sean Flanagan (60 Laurel Lane)",
+   "status": "not stated",
+   "quote": "notice of intent filed by kent oldfield for sean flanagan"
+  },
+  {
+   "name": "Sean Flanagan",
+   "role": "party for whom filed (60 Laurel Lane)",
+   "status": "not stated",
+   "quote": "notice of intent filed by kent oldfield for sean flanagan"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "340 Lancaster Avenue - Request for an Amended Order of Conditions (Gary Lorden)",
+   "resolution": "amendment denied, unanimous",
+   "quote": "ken/rich denied amendment unanimous",
+   "tags": [
+    "wetlands",
+    "amended order of conditions",
+    "septic",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "47 Cliffview Terrace - Request for Determination of Applicability (Michael Polowski for Stanley D. Randall)",
+   "resolution": "negative determination with condition to use stone and waddles, unanimous",
+   "quote": "rich/ken use stone and waddles negative 3 unanimous",
+   "tags": [
+    "wetlands",
+    "determination of applicability",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "F & L Right of Way - Request for Determination of Applicability (Leominster Department of Public Works)",
+   "resolution": "negative determination with condition to use waddles, unanimous",
+   "quote": "ken/rich use waddles negative 3 unanimous",
+   "tags": [
+    "wetlands",
+    "determination of applicability",
+    "water main"
+   ]
+  },
+  {
+   "topic": "811 Chase Road, Lot B - Notice of Intent (Neil Gorman, David Ross Associates, Dahlgren Family Trust)",
+   "resolution": "approved with conditions, unanimous",
+   "quote": "ken/rich unanimous boulders for demarcation in back along property line, exempt only for 30 foot no touch zone vegetation.",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "single family house",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "811 Chase Road, Lot C - Notice of Intent (Neil Gorman, David Ross Associates, Dahlgren Family Trust)",
+   "resolution": "continued until June 2, unanimous",
+   "quote": "ken/rich continue until june 2 unanimous",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "single family house"
+   ]
+  },
+  {
+   "topic": "60 Laurel Lane - Notice of Intent (Kent Oldfield for Sean Flanagan)",
+   "resolution": "unanimous vote; motion wording not printed",
+   "quote": "for repair and rebuilding of a retaining wall within the waters of whalom lake. rich/ken unanimous",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "retaining wall",
+    "Whalom Lake"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised plan (340 Lancaster Avenue; new locations for house, septic system and driveway)",
+   "where": "text",
+   "quote": "the revised plan shows new locations for the house, septic system & driveway."
+  },
+  {
+   "name": "Request for an Amended Order of Conditions (Gary Lorden, 340 Lancaster Avenue)",
+   "where": "text",
+   "quote": "there will be a public hearing on a request for an amended order of conditions"
+  },
+  {
+   "name": "Request for Determination of Applicability (Michael Polowski for Stanley D. Randall, 47 Cliffview Terrace)",
+   "where": "text",
+   "quote": "there will be a public hearing on request for determination of applicability filed by michael"
+  },
+  {
+   "name": "Request for Determination of Applicability (Leominster Department of Public Works, F & L Right of Way)",
+   "where": "text",
+   "quote": "there will be a public hearing on a request for determination of applicability filed by leominster"
+  },
+  {
+   "name": "Notice of Intent (Neil Gorman of David Ross Associates for the Dahlgren Family Trust, 811 Chase Road, Lot B)",
+   "where": "text",
+   "quote": "there will be a public hearing on an notice of intent filed by neil gorman of david ross"
+  },
+  {
+   "name": "Notice of Intent (Neil Gorman of David Ross Associates for the Dahlgren Family Trust, 811 Chase Road, Lot C)",
+   "where": "text",
+   "quote": "there will be a public hearing on an notice of intent filed by neil gorman of david ross"
+  },
+  {
+   "name": "Notice of Intent (Kent Oldfield for Sean Flanagan, 60 Laurel Lane)",
+   "where": "text",
+   "quote": "on a notice of intent filed by kent oldfield for sean flanagan."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "public hearing",
+  "order of conditions",
+  "determination of applicability",
+  "notice of intent",
+  "Whalom Lake",
+  "water main",
+  "riverfront"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

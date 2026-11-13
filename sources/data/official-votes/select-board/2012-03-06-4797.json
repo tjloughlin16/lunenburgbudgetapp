@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-03-06",
  "docid": "4797",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the change of owner of the current Common Victualer License at Mr. Mike's in Lunenburg at 131 Mass Avenue",
+   "motion": "Approve the change of owner of the Common Victualer License at Mr. Mike's, 131 Mass Avenue.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo motioned to approve the change of owner of the current common victualer license at mr. mike's in lunenburg at 131 mass avenue. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed"
+   "quote": "mr. alonzo motioned to approve the change of owner of the current common victualer license at mr. mike's in lunenburg at 131 mass avenue. ms. bertram seconded. on vote, motion carried, 5 in favor"
   },
   {
-   "motion": "approve the All Alcohol License for Elena's Gourmet Grocery Inc.",
+   "motion": "Approve the All Alcohol License for Elena's Gourmet Grocery Inc.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
@@ -28,15 +28,451 @@
    "quote": "mr. alonzo moved to approve the all alcohol license for elena's gourmet grocery inc.. ms. bertram seconded. on vote, motion carried, 5 in favor, o opposed."
   },
   {
-   "motion": "enter Executive Session to discuss strategy with respect to collective bargaining or litigation and to conduct strategy session and negotiations with non-union personnel",
+   "motion": "Enter Executive Session under M.G.L. Chapter 39, Section 23B(3), not to return, for collective bargaining and litigation strategy and non-union negotiations.",
    "moved_by": "Mr. Matthews",
-   "seconded_by": "Ms. Bertram",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. matthews moved that the bos go into executive session, not to return, to discuss strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigating position. also to conduct strategy session in preparation for negotiations with non-union personnel; to actually conduct collective bargaining and contract negotiations with non-union personnel. ms. bertram moved to go into executive session, not to return. mr. meting adored at 850 pinte, motion carried, in favor, 0 opposed."
+   "quote": "mr. matthews moved that the bos go into executive session, not to return, to discuss strategy with respect to collective bargaining or litigation"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document OCR'd via macOS Vision. Text corruption in final section: the executive session outcome line contains garbled text (\"Mr. Meting adored at 850 pinte\") which likely says \"Meeting adjourned at 8:50 p.m.\" The vote count before \"in favor\" is lost to OCR error, though \"0 opposed\" is readable. The word \"seconded\" for Ms. Bertram in vote 3 is printed as \"moved\" in the OCR'd text, but context indicates she is seconding.",
- "cost_usd": 0.141679
+ "note": "OCR of a scanned page set with garbling. The executive-session motion is followed by an unreadable line ('Mr. Meting adored at 850 pinte, motion carried, in favor, 0 opposed'), so the vote count is unclear and no seconder is clear; it is recorded as passed with no count. Ms. Bertram is also shown as having 'moved' the same executive-session motion, which conflicts with Mr. Matthews. The Elena's vote prints the zero as 'O' (taken as 0 opposed). The Budget Working Group paragraph is garbled by OCR, so only its readable fragments are recorded. The warrants were listed 'for approval' but no vote on them is recorded. No vote to approve minutes or adjourn is recorded.",
+ "cost_usd": 0.00920952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, carl \"ernie\" sund, paula bertram, tom alonzo, and town manager kerry speidel present."
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Manager",
+   "status": "present",
+   "quote": "mr. londa stated that the interconnection application process is a lengthy process but continues to move forward."
+  },
+  {
+   "name": "Mike Borkowski",
+   "role": "Managing Partner, EPG Solar",
+   "status": "present",
+   "quote": "mike borkowski & robert babcock, managing partners from epg solar were present to give an overview of the proposed solar project"
+  },
+  {
+   "name": "Robert Babcock",
+   "role": "Managing Partner, EPG Solar",
+   "status": "present",
+   "quote": "mike borkowski & robert babcock, managing partners from epg solar were present to give an overview of the proposed solar project"
+  },
+  {
+   "name": "James Fagan",
+   "role": "spoke on behalf of Global Montello Group Corp.",
+   "status": "present",
+   "quote": "mr. james fagan spoke and said that he was there this evening on behalf of the global montello group corp."
+  },
+  {
+   "name": "Kristin Barnes",
+   "role": "resident, 634 West Street",
+   "status": "present",
+   "quote": "kristin barnes, 634 west street, had questions about the core logs regarding why they were not being planted"
+  },
+  {
+   "name": "Dave Prokowiew",
+   "role": "resident, 733 West Street",
+   "status": "present",
+   "quote": "dave prokowiew, 733 west street, commented that he was excited to hear the suggestion of moving the project."
+  },
+  {
+   "name": "Milree Keeling",
+   "role": "resident",
+   "status": "present",
+   "quote": "milree keeling, asked if epg was purchasing or leasing the land"
+  },
+  {
+   "name": "Bill Belisle",
+   "role": "resident, 642 West Street",
+   "status": "present",
+   "quote": "bill belisle, 642 west street, was concerned about what the geological ramifications might be on his well"
+  },
+  {
+   "name": "Larry Marshall",
+   "role": "proponent, Jones House",
+   "status": "present",
+   "quote": "larry marshall, 985 mass avenue, spoke and said that he and his wife are the proponents on the jones house"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Manager was asked to obtain more information on what the cost to the town would be to implement remote participation under Section 20(d) of the Open Meetings law.",
+   "quote": "mr. matthews requested that the town manager obtain more information on what the cost to the town would be to make this happen."
+  },
+  {
+   "decision": "The Town Manager will take the remote participation cost question to the PACC and the IT Director and report back to the BOS in a few weeks.",
+   "quote": "ms. speidel will bring this information to the pacc meeting and to the it director to see what input they can provide and will report back to the bos in a few weeks."
+  },
+  {
+   "decision": "BOS Policies & Procedures to be revisited after the May Town Meeting.",
+   "quote": "mr. matthews stated that it would be better to look at this again after the may town meeting."
+  },
+  {
+   "decision": "Ms. Bertram will circulate her general comments on the BOS policies and procedures to the other members.",
+   "quote": "she has some general comments that she would like to circulate to the other members through the town"
+  },
+  {
+   "decision": "The Town Manager will put together the written report packet on 263 Elmwood Road and circulate it to the BOS.",
+   "quote": "she will put together the report packet and circulate it to the bos."
+  },
+  {
+   "decision": "The Town Manager will look into the process of establishing a Memorial Day Planning Committee.",
+   "quote": "ms. speidel will look into the process of establishing this committee."
+  },
+  {
+   "decision": "The Town Manager will have the budget reports available online the following day.",
+   "quote": "ms. speidel said she would have them on tomorrow."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unitil interconnection upgrade cost for Borrego Solar 1.5MW array",
+   "what_was_recorded": "Unitil's estimated cost to upgrade its system for a 1.5MW solar array was reported; Borrego then looked at a 1MW system.",
+   "figures_as_printed": [
+    "$902,600"
+   ],
+   "quote": "the estimated cost to upgrade the unitil system for a 1.5mw solar array at $902,600."
+  },
+  {
+   "topic": "Borrego Solar projected town tax on solar project",
+   "what_was_recorded": "The Assessor's office and Borrego were looking at a tax figure for the solar project.",
+   "figures_as_printed": [
+    "$55,000"
+   ],
+   "quote": "they are looking at a tax of $55,000."
+  },
+  {
+   "topic": "EPG Solar personal property taxes to the town",
+   "what_was_recorded": "EPG said the project would pay personal property taxes of over $100,000 per year, a significant financial impact to the town.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "they would be paying personal property taxes to the town which will have a significant impact to the town financially (over $100,000 per year)."
+  },
+  {
+   "topic": "Warrants presented for approval",
+   "what_was_recorded": "Four warrants were listed as presented for approval (AP, AP, Deduction Warrant, Payroll); no approval vote is recorded.",
+   "figures_as_printed": [
+    "$257,494.07",
+    "$31,434.87",
+    "$379.948.39",
+    "$591,886.08"
+   ],
+   "quote": "2. warrants - ap $257,494.07 ap $31,434.87 deduction warrant $379.948.39 payroll $591,886.08"
+  },
+  {
+   "topic": "Sewer fees and Sewer Commission self-funding",
+   "what_was_recorded": "A 15% increase in sewer fees was reported; the Sewer Commission is meant to be self-funded and was using free cash without success.",
+   "figures_as_printed": [
+    "15%"
+   ],
+   "quote": "there is a 15% increase in sewer fees and customers are concerned."
+  },
+  {
+   "topic": "Budget override and state funding",
+   "what_was_recorded": "The Budget Working Group said an override is needed because state funding has been cut and local revenues do not keep pace with inflation (passage of the printed text is garbled by OCR).",
+   "figures_as_printed": [],
+   "quote": "the state average for property tax bills and the override is needed because state funding has been cut significantly"
+  },
+  {
+   "topic": "FY2013 budget override impact",
+   "what_was_recorded": "The board discussed getting information to the public on the $2.2M override impact on the town.",
+   "figures_as_printed": [
+    "$2.2M"
+   ],
+   "quote": "regarding getting the information out to the public so that they can fully understand the $2.2m override impact on the town."
+  },
+  {
+   "topic": "Jones House purchase",
+   "what_was_recorded": "Proponents attended to answer questions on the Jones House purchase before the executive session; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "questions regarding the jones house purchase before executive session this evening."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Selectman",
+   "topic": "Town Caucus reminder",
+   "quote": "ms. bertram reminded everyone that the town caucus will be held on monday, march 19\" at the turkey hill middle school at 7pm."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Selectman",
+   "topic": "Congratulations to basketball team",
+   "quote": "mr. alonzo congratulated the lunenburg high school boys basketball team who played well in the recent tournament"
+  },
+  {
+   "speaker": "Kristin Barnes",
+   "stated_role": "resident, 634 West Street",
+   "topic": "Solar core logs",
+   "quote": "kristin barnes, 634 west street, had questions about the core logs regarding why they were not being planted and how long they will last."
+  },
+  {
+   "speaker": "Dave Prokowiew",
+   "stated_role": "resident, 733 West Street",
+   "topic": "Solar project relocation",
+   "quote": "dave prokowiew, 733 west street, commented that he was excited to hear the suggestion of moving the project."
+  },
+  {
+   "speaker": "Milree Keeling",
+   "stated_role": "resident",
+   "topic": "Solar lease, toxicity, and taxes",
+   "quote": "milree keeling, asked if epg was purchasing or leasing the land, to which mr. borkowski replied that they have a 30 year lease."
+  },
+  {
+   "speaker": "Bill Belisle",
+   "stated_role": "resident, 642 West Street",
+   "topic": "Well and water table impacts",
+   "quote": "bill belisle, 642 west street, was concerned about what the geological ramifications might be on his well"
+  },
+  {
+   "speaker": "Dave Prokowiew",
+   "stated_role": "resident",
+   "topic": "Setbacks and fences in wetlands",
+   "quote": "mr. prokowiew cautioned the bos on the questions they were asking epg on the set back distances and locations of fences in the wetlands."
+  },
+  {
+   "speaker": "Larry Marshall",
+   "stated_role": "proponent, 985 Mass Avenue",
+   "topic": "Jones House purchase",
+   "quote": "larry marshall, 985 mass avenue, spoke and said that he and his wife are the proponents on the jones house"
+  },
+  {
+   "speaker": "Dave Prokowiew",
+   "stated_role": "resident",
+   "topic": "Budget reports online",
+   "quote": "dave prokowiew inquired as to when the budget reports would be available online."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; caucus reminder and congratulations",
+   "quote": "ms. bertram reminded everyone that the town caucus will be held on monday, march 19\" at the turkey hill middle school at 7pm.",
+   "tags": [
+    "caucus",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "7:15 p.m. Borrego Solar negotiations update (Town Solar project at Landfill)",
+   "resolution": "no action; updated",
+   "quote": "john londa, facilities manager updated the bos on the progress of moving toward a contract with borrego solar.",
+   "tags": [
+    "solar",
+    "landfill",
+    "Unitil",
+    "interconnection"
+   ]
+  },
+  {
+   "topic": "7:30 p.m. EPG Solar Project presentation (West & Pleasant Streets)",
+   "resolution": "no action; presentation and public questions",
+   "quote": "mike borkowski & robert babcock, managing partners from epg solar were present to give an overview of the proposed solar project on west & pleasant streets.",
+   "tags": [
+    "solar",
+    "EPG",
+    "abutters",
+    "wetlands",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Change of Owner, Common Victualer License - Mr. Mike's",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo motioned to approve the change of owner of the current common victualer license at mr. mike's in lunenburg at 131 mass avenue.",
+   "tags": [
+    "licensing",
+    "common victualer"
+   ]
+  },
+  {
+   "topic": "Current Business 2: All Alcohol License - Elena's Gourmet Grocery",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved to approve the all alcohol license for elena's gourmet grocery inc.. ms. bertram seconded.",
+   "tags": [
+    "licensing",
+    "alcohol"
+   ]
+  },
+  {
+   "topic": "Current Business 3: Adoption of Section 20(d) of the Open Meetings law (remote participation)",
+   "resolution": "discussed; Town Manager to get cost",
+   "quote": "discussion among the board members about the cost of implementing this law at this time was held.",
+   "tags": [
+    "open meetings",
+    "remote participation",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Current Business 4: BOS Policies & Procedures",
+   "resolution": "deferred until after May Town Meeting",
+   "quote": "mr. matthews stated that it would be better to look at this again after the may town meeting.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Current Business 5: Minutes/Warrants/Action File Issues",
+   "resolution": "no minutes; warrants listed; no action file issues",
+   "quote": "there were no minutes although ms. speidel stated that she had sent an advertisement to town employees seeking someone to record minutes",
+   "tags": [
+    "warrants",
+    "minutes",
+    "recording secretary"
+   ]
+  },
+  {
+   "topic": "Current Business 6: Committee Reports",
+   "resolution": "reports given; Memorial Day committee requested",
+   "quote": "ms. bertram reported that she attended her first mpo meeting on 2/8/12.",
+   "tags": [
+    "MPO",
+    "planning board",
+    "sewer",
+    "Memorial Day",
+    "finance committee",
+    "budget working group"
+   ]
+  },
+  {
+   "topic": "Current Business 7: Department Reports",
+   "resolution": "none",
+   "quote": "7. department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Current Business 8: Town Manager Reports (FY2013 Proposed Budget)",
+   "resolution": "reviewed; to be tweaked before posting",
+   "quote": "ms. speidel had distributed to the bos the town manager's fy2013 proposed budget",
+   "tags": [
+    "budget",
+    "override",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Old Business: Appointments/Re-appointments/Resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": []
+  },
+  {
+   "topic": "Old Business: Jones House purchase questions",
+   "resolution": "no action; questions answered before executive session",
+   "quote": "mr. marshall also said that the historical commission had a question on the sewer connection to the house",
+   "tags": [
+    "Jones House",
+    "sewer",
+    "easement"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered executive session, not to return",
+   "quote": "mr. matthews moved that the bos go into executive session, not to return, to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Unitil report on the generator interconnection impact study",
+   "where": "text",
+   "quote": "they have received a copy of unitil's report on the generator interconnection impact study and the estimated cost"
+  },
+  {
+   "name": "Borrego Solar contract document",
+   "where": "text",
+   "quote": "the contract document is currently with town counsel but cannot move forward until the issue of the size of the system is resolved."
+  },
+  {
+   "name": "Revised EPG Solar plan submitted to Planning Board",
+   "where": "text",
+   "quote": "ms. bertram asked if the revised plan had been submitted to the planning board"
+  },
+  {
+   "name": "Town Manager's FY2013 Proposed Budget information",
+   "where": "text",
+   "quote": "ms. speidel had distributed to the bos the town manager's fy2013 proposed budget"
+  },
+  {
+   "name": "Solar bylaw draft",
+   "where": "text",
+   "quote": "ms. betram also attended a planning board meeting that focused on the solar bylaw draft."
+  },
+  {
+   "name": "Written report on 263 Elmwood Road",
+   "where": "text",
+   "quote": "ms. speidel stated that she contacted the fire chief and he said that there is a written report on this matter."
+  }
+ ],
+ "tags": [
+  "solar",
+  "EPG Solar",
+  "Borrego Solar",
+  "Unitil",
+  "liquor licenses",
+  "common victualer",
+  "budget override",
+  "FY2013 budget",
+  "sewer fees",
+  "remote participation",
+  "Memorial Day",
+  "executive session",
+  "warrants",
+  "Jones House",
+  "planning board",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

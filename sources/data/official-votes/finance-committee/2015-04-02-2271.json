@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-04-02",
  "docid": "2271",
@@ -12,99 +12,525 @@
  },
  "votes": [
   {
-   "motion": "Allocate $129,578 in additional FY16 funding as detailed in the revenue adjustment table",
-   "moved_by": "Karin",
-   "seconded_by": "John",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "karin made a motion to recommend approval to allocate the $129,578 in additional funding as shown in the table on page 2. john seconded the motion. the committee approved the motion 5-0."
-  },
-  {
-   "motion": "Approve FY16 budget in the amount of $32,025,874",
-   "moved_by": "Terri",
-   "seconded_by": "Jay",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri made a motion to recommend approval of the fy16 budget in the amount of $32,025,874. jay seconded the motion. the committee approved the motion 5-0."
-  },
-  {
-   "motion": "Transfer $98,232 to the Stabilization Fund",
-   "moved_by": "Terri",
-   "seconded_by": "Karin",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri made a motion to recommend approval to transfer $98,232 to the stabilization fund. karin seconded the motion. the committee approved the motion 5-0."
-  },
-  {
-   "motion": "Fund FY16 Capital Plan in the amount of $801,578",
-   "moved_by": "Terri",
-   "seconded_by": "Jay",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri made a motion to recommend approval to raise and appropriate or transfer from available funds or borrow a sum of money to fund the fy16 capital plan in the amount of $801,578. jay seconded the motion. the committee approved the motion 5-0."
-  },
-  {
-   "motion": "Raise and appropriate $848,349 for the Sewer Enterprise Fund",
-   "moved_by": "Terri",
-   "seconded_by": "Jay",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri made a motion to recommend approval to raise and appropriate $848,349 for the sewer enterprise fund. jay seconded the motion. the committee approved the motion 5-0."
-  },
-  {
-   "motion": "Appropriate premium amount ($105,975.36) to reduce borrowing authority for Middle & High School construction",
-   "moved_by": "Terri",
-   "seconded_by": "John",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri made a motion to appropriate the premium amount to reduce the borrowing authority. john seconded the motion. the committee approved the motion 5-0."
-  },
-  {
-   "motion": "Rescind remaining borrowing authorization from Article 2 of 11/6/2001 Special Town Meeting for engineering and construction of sewers ($284,263.59)",
-   "moved_by": "Karin",
-   "seconded_by": "Jay",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "karin made a motion to recommend approval to allocate the $129,578 in additional funding as shown in the table on page 2. john seconded the motion. the committee approved the motion 5-0. ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Rescind remaining borrowing authorization from Article 4 of May 7, 2005 Special Town Meeting for engineering and construction of sewers ($28,207)",
-   "moved_by": "Terri",
-   "seconded_by": "Jay",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri made a motion to recommend approval of the fy16 budget in the amount of $32,025,874. jay seconded the motion. the committee approved the motion 5-0. c. stabilization fund, article 15: ter",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Rescind remaining borrowing authorization from Article 4 of October 1, 2002 Special Town Meeting for renovation of heating system of Turkey Hill Middle School ($125,000)",
-   "moved_by": "Karin",
-   "seconded_by": "Terri",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "karin made a motion to recommend approval to allocate the $129,578 in additional funding as shown in the table on page 2. john seconded the motion. the committee approved the motion 5-0. b. the total fy16 budget, article 16:",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Rescind remaining borrowing authorization from Article 4 of May 3, 2003 Special Town Meeting for renovation of heating system of T.C. Passios Elementary School ($56,550)",
-   "moved_by": "Terri",
-   "seconded_by": "Karin",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri made a motion to recommend approval of the fy16 budget in the amount of $32,025,874. jay seconded the motion. the committee approved the motion 5-0. c. stabilization fund, article 15: terri made a motion to recommend ap",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin",
    "seconded_by": "Terri",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "karin moved to adjourn the meeting, the motion was seconded by terri and approved 5-0."
+  },
+  {
+   "motion": "Recommend approval to allocate the $129,578 in additional funding as shown in the table on page 2 (FY16 budget adjustment).",
+   "moved_by": "Karin",
+   "seconded_by": "John",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "karin made a motion to recommend approval to allocate the $129,578 in additional funding as shown in the table on page 2. john seconded the motion."
+  },
+  {
+   "motion": "Recommend approval of the FY16 budget in the amount of $32,025,874 (Article 16).",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "terri made a motion to recommend approval of the fy16 budget in the amount of $32,025,874. jay seconded the motion."
+  },
+  {
+   "motion": "Recommend approval to transfer $98,232 to the stabilization fund (Article 15).",
+   "moved_by": "Terri",
+   "seconded_by": "Karin",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "terri made a motion to recommend approval to transfer $98,232 to the stabilization fund. karin seconded the motion."
+  },
+  {
+   "motion": "Recommend approval to raise and appropriate or transfer from available funds or borrow $801,578 to fund the FY16 capital plan (Article 14).",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "terri made a motion to recommend approval to raise and appropriate or transfer from available funds or borrow a sum of money to fund the fy16 capital plan in the amount of $801,578."
+  },
+  {
+   "motion": "Recommend approval to raise and appropriate $848,349 for the Sewer Enterprise Fund (Article 17).",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "terri made a motion to recommend approval to raise and appropriate $848,349 for the sewer enterprise fund. jay seconded the motion."
+  },
+  {
+   "motion": "Appropriate the $105,975.36 premium amount to reduce the borrowing authority for the Middle & High School construction project (Article 26).",
+   "moved_by": "Terri",
+   "seconded_by": "John",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "terri made a motion to appropriate the premium amount to reduce the borrowing authority. john seconded the motion."
+  },
+  {
+   "motion": "Recommend rescinding the remaining borrowing authorization from Article 2 of the 11/6/2001 Special Town Meeting for engineering and construction of sewers ($284,263.59) (Article 43).",
+   "moved_by": "Karin",
+   "seconded_by": "Jay",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "approval to rescind the remaining borrowing authorization from article 2"
+  },
+  {
+   "motion": "Recommend rescinding the remaining borrowing authorization from Article 4 of the May 7, 2005 Special Town Meeting for engineering and construction of sewers ($28,207) (Article 44).",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "of the may 7, 2005 special town meeting for the engineering and"
+  },
+  {
+   "motion": "Recommend rescinding the remaining borrowing authorization from Article 4 of the October 1, 2002 Special Town Meeting for renovation of the heating system of the Turkey Hill Middle School ($125,000) (Article 45).",
+   "moved_by": "Karin",
+   "seconded_by": "Terri",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "of the october 1, 2002 special town meeting for the renovation of the"
+  },
+  {
+   "motion": "Recommend rescinding the remaining borrowing authorization from Article 4 of the May 3, 2003 Special Town Meeting for renovation of the heating system of the T.C. Passios Elementary School ($56,550) (Article 46).",
+   "moved_by": "Terri",
+   "seconded_by": "Karin",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "of the may 3, 2003 special town meeting for the renovation of the"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1344645
+ "note": "OCR text. Section 3 budget table and section 5.G table are scrambled by extraction, so figure-to-line mapping is uncertain (e.g. DPW shows a $18,000 request but table lines read $9,849.40 and $15,000). Caroline Griffis is listed under 'Absent:' in the attendance block; her name appears only there and in liaison lines. Chair's name is spelled Erickson in the header and Ericson in the present list. No vote recorded approving the March 26 minutes. The 'Public' communications are department requests; no public speakers are recorded as such. Motion descriptions for 5.G items are from the table; their quotes are partial due to interleaved layout. Mark said he would apply for reappointment with Terri: not recorded as a decision.",
+ "cost_usd": 0.014678620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "",
+   "status": "absent",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager caroline griffis"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Fire Dept. Chief",
+   "status": "not stated",
+   "quote": "fire dept. chief sullivan: $48,000 to fund two 12 hour shifts of emts on the"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Department Chief",
+   "status": "not stated",
+   "quote": "police department chief marino requested $26,000 to extend desk coverage to mon-"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW",
+   "status": "not stated",
+   "quote": "dpw: jack rodriquenz requested $18,000 to cover expected vehicle maintenance"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Vice-Chairman of the Library Board of Trustees",
+   "status": "not stated",
+   "quote": "dick mailloux, vice-chairman of the library board of trustees requests an"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark asked the committee to review his draft Finance Committee Report and send any recommendations to him by Monday, as the report is due by Tuesday.",
+   "quote": "he asked the committee to review it and get back to him with any recommendations no later than monday as it is due to be completed no later than tuesday."
+  },
+  {
+   "decision": "Kerry's projection of FY15 deficits and surpluses will be taken up by the committee at the May 23 meeting.",
+   "quote": "kerry projected fy15 deficits and surpluses, and the committee will take this up at the may 23"
+  },
+  {
+   "decision": "John Henshaw will have the March 26 minutes ready for committee review before the April 23 meeting.",
+   "quote": "john will have the minutes of this meeting ready for the finance committee review before the april 23 meeting."
+  },
+  {
+   "decision": "Next meeting set for April 23; the April 2 special meeting takes the place of the April 9 meeting.",
+   "quote": "next meeting: april 23-the special meeting we had on april 2 takes the place of the april 9 meeting."
+  },
+  {
+   "decision": "Future agenda items added: Budget Goals and Opportunities, Pavement Management Program, and review of contract commitments (e.g. sick leave buy-back).",
+   "quote": "a. budget goals and opportunities b. pavement management program c. review contract commitments (e.g. sick leave buy-back.)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Additional revenue from new growth and state aid",
+   "what_was_recorded": "The committee had $129,578 in additional revenue available since the preliminary budget, and departments requested allocations of it.",
+   "figures_as_printed": [
+    "$129,578"
+   ],
+   "quote": "requests for allocation of the $129,578 additional revenue from new growth and changes in state aid"
+  },
+  {
+   "topic": "Fire Department EMT weekend staffing request",
+   "what_was_recorded": "Fire Chief Sullivan requested $48,000 to fund two 12 hour shifts of EMTs on the weekends.",
+   "figures_as_printed": [
+    "$48,000"
+   ],
+   "quote": "fire dept. chief sullivan: $48,000 to fund two 12 hour shifts of emts on the"
+  },
+  {
+   "topic": "Police desk coverage and lock-up requests",
+   "what_was_recorded": "Police Chief Marino requested $26,000 for desk coverage and an additional $10,000 for lock-up; Kerry said the Town routinely runs a deficit in that account.",
+   "figures_as_printed": [
+    "$26,000",
+    "$10,000"
+   ],
+   "quote": "police department chief marino requested $26,000 to extend desk coverage to mon-"
+  },
+  {
+   "topic": "DPW vehicle maintenance request",
+   "what_was_recorded": "DPW requested $18,000 to cover expected vehicle maintenance costs next year.",
+   "figures_as_printed": [
+    "$18,000"
+   ],
+   "quote": "dpw: jack rodriquenz requested $18,000 to cover expected vehicle maintenance"
+  },
+  {
+   "topic": "Library energy costs and state grant eligibility",
+   "what_was_recorded": "The library requested an additional $14,250.60 for electricity and natural gas increases and to qualify for about $12,000 in state grants.",
+   "figures_as_printed": [
+    "$14,250.60",
+    "$12,000"
+   ],
+   "quote": "additional $14,250.60 to cover increases in electricity and natural gas costs for the library"
+  },
+  {
+   "topic": "Monty Tech FY16 assessment",
+   "what_was_recorded": "Chair reported the Monty Tech assessment for FY16 at $832.8 thousand, up partly due to seven additional students from the town.",
+   "figures_as_printed": [
+    "$832.8 thousand"
+   ],
+   "quote": "mark said that the monty tech assessment for fy16 had come in at $832.8"
+  },
+  {
+   "topic": "FY2016 budget adjustment table",
+   "what_was_recorded": "Table dispensing the $129,578 among Fire, Police, DPW, Library, Snow & Ice Removal and stabilization; the Snow & Ice line would increase to $275,000. OCR scrambles the table so figure-to-line mapping is uncertain.",
+   "figures_as_printed": [
+    "$129,578",
+    "$48,000",
+    "$26,000",
+    "$10,000",
+    "$9,849.40",
+    "$14,250.60",
+    "$15,000",
+    "$123,100",
+    "$6,478",
+    "$275,000",
+    "$300,000"
+   ],
+   "quote": "this amount will increase the fy16 snow & ice removal account to $275,000."
+  },
+  {
+   "topic": "Stabilization account increase in budget table",
+   "what_was_recorded": "The table includes a $6,478 amount needed to keep stabilization accounts at 5% of the omnibus budget under the financial policies.",
+   "figures_as_printed": [
+    "$6,478"
+   ],
+   "quote": "stabilization accounts at 5% of the town's omnibus budget"
+  },
+  {
+   "topic": "Town Manager support for budget adjustments",
+   "what_was_recorded": "Kerry supports the budget adjustment requests, including the $6,478 stabilization increase, saying ongoing expenses are funded by recurring revenue.",
+   "figures_as_printed": [
+    "$6,478"
+   ],
+   "quote": "kerry supports these budget adjustment requests made at this meeting, including a $6,478"
+  },
+  {
+   "topic": "Amended capital plan - Town Hall painting funds",
+   "what_was_recorded": "The Capital Planning Committee recommended redirecting $40,000 from premature Town Hall painting to school network technology, a Police speed sign, and street sweeper and dump truck balances.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "as painting town hall is premature, the capital planning committee recommends using that $40,000 to fund an upgrade"
+  },
+  {
+   "topic": "FY16 total budget (Article 16)",
+   "what_was_recorded": "Committee motion to recommend the FY16 budget at $32,025,874.",
+   "figures_as_printed": [
+    "$32,025,874"
+   ],
+   "quote": "terri made a motion to recommend approval of the fy16 budget in the amount of $32,025,874."
+  },
+  {
+   "topic": "Stabilization fund transfer (Article 15)",
+   "what_was_recorded": "Committee motion to recommend transferring $98,232 to the stabilization fund.",
+   "figures_as_printed": [
+    "$98,232"
+   ],
+   "quote": "terri made a motion to recommend approval to transfer $98,232 to the stabilization fund."
+  },
+  {
+   "topic": "FY16 capital plan (Article 14)",
+   "what_was_recorded": "Committee motion to recommend funding the FY16 capital plan at $801,578.",
+   "figures_as_printed": [
+    "$801,578"
+   ],
+   "quote": "terri made a motion to recommend approval to raise and appropriate or transfer from available funds or borrow a sum of money to fund the fy16 capital plan in the amount of $801,578."
+  },
+  {
+   "topic": "Sewer Enterprise Fund (Article 17)",
+   "what_was_recorded": "Committee motion to recommend raising and appropriating $848,349 for the Sewer Enterprise Fund.",
+   "figures_as_printed": [
+    "$848,349"
+   ],
+   "quote": "terri made a motion to recommend approval to raise and appropriate $848,349 for the sewer enterprise fund."
+  },
+  {
+   "topic": "Middle & High School borrowing authority premium (Article 26)",
+   "what_was_recorded": "Committee motion to apply the $105,975.36 in premiums received to reduce borrowing authority.",
+   "figures_as_printed": [
+    "$105,975.36"
+   ],
+   "quote": "project by $105,975.36, the amount the town has received in premiums."
+  },
+  {
+   "topic": "Rescinding unexpended borrowing authorizations (Articles 43-46)",
+   "what_was_recorded": "Four previously authorized, completed projects with unexpended borrowing authority to be rescinded at Town Meeting.",
+   "figures_as_printed": [
+    "$284,263.59",
+    "$28,207",
+    "$125,000",
+    "$56,550"
+   ],
+   "quote": "g. articles 43-46 are previously authorized borrowing articles where the project has been"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to the stabilization fund (Article 15)",
+   "amount_as_printed": "$98,232",
+   "outcome": "recommended, passed 5-0",
+   "quote": "terri made a motion to recommend approval to transfer $98,232 to the stabilization fund. karin seconded the motion."
+  },
+  {
+   "description": "Stabilization account increase within the FY2016 budget adjustment table",
+   "amount_as_printed": "$6,478",
+   "outcome": "included in motion 5.A, passed 5-0",
+   "quote": "increase in the stabilization account as they increase service levels."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications: public requests for allocation of new revenue",
+   "resolution": "requests received; allocation recommended in 5.A",
+   "tags": [
+    "budget",
+    "requests",
+    "fire",
+    "police",
+    "DPW",
+    "library"
+   ],
+   "quote": "requests for allocation of the $129,578 additional revenue from new growth and"
+  },
+  {
+   "topic": "Committee communications: Monty Tech assessment and reappointments",
+   "resolution": "reported, no action",
+   "tags": [
+    "Monty Tech",
+    "assessment"
+   ],
+   "quote": "mark said that the monty tech assessment for fy16 had come in at $832.8"
+  },
+  {
+   "topic": "FY2016 budget public hearing adjustment table",
+   "resolution": "table reviewed; approved via motion 5.A",
+   "tags": [
+    "FY16 budget",
+    "budget adjustment"
+   ],
+   "quote": "this table reflects the result of the finance committee discussion"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; FY15 projections deferred to May 23",
+   "tags": [
+    "town manager",
+    "FY15"
+   ],
+   "quote": "kerry supports these budget adjustment requests made at this meeting, including a $6,478"
+  },
+  {
+   "topic": "Motions on Town Warrant Articles",
+   "resolution": "recommended approval of all listed articles 5-0",
+   "tags": [
+    "warrant articles",
+    "Town Meeting"
+   ],
+   "quote": "5. motions on town warrant articles:"
+  },
+  {
+   "topic": "Draft Finance Committee Report",
+   "resolution": "in progress; members asked for comments by Monday",
+   "tags": [
+    "report"
+   ],
+   "quote": "mark shared his draft finance committee report, in progress given the new information on the fy16"
+  },
+  {
+   "topic": "Minutes of the March 26 meeting",
+   "resolution": "to be ready before April 23 meeting",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of the march 26 meeting: john will have the minutes of this meeting ready"
+  },
+  {
+   "topic": "Committee and department liaison updates",
+   "resolution": "reported; Building Re-Use meeting next week",
+   "tags": [
+    "liaison updates"
+   ],
+   "quote": "8. committee/department liaison updates:"
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future meetings",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "9. future agenda items:"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for April 23",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "next meeting: april 23-the special meeting we had on april 2 takes the place of the april 9 meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 9:05 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "karin moved to adjourn the meeting, the motion was seconded by terri and approved 5-0."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Finance Committee Report",
+   "where": "text",
+   "quote": "mark shared his draft finance committee report, in progress given the new information on the fy16"
+  },
+  {
+   "name": "Amended capital plan",
+   "where": "text",
+   "quote": "c. review of the amended capital plan:"
+  },
+  {
+   "name": "FY2016 budget adjustment table (section 3)",
+   "where": "text",
+   "quote": "this table reflects the result of the finance committee discussion"
+  },
+  {
+   "name": "Minutes of the March 26 meeting",
+   "where": "text",
+   "quote": "minutes of the march 26 meeting: john will have the minutes of this meeting ready"
+  },
+  {
+   "name": "Article 16, total FY16 budget",
+   "where": "text",
+   "quote": "the total fy16 budget, article 16:"
+  },
+  {
+   "name": "Article 15, Stabilization Fund",
+   "where": "text",
+   "quote": "c. stabilization fund, article 15:"
+  },
+  {
+   "name": "Article 14, Capital Plan",
+   "where": "text",
+   "quote": "d. capital plan, article 14:"
+  },
+  {
+   "name": "Article 17, Sewer Enterprise Fund",
+   "where": "text",
+   "quote": "e. sewer enterprise fund, article 17:"
+  },
+  {
+   "name": "Article 26, rescinding borrowing authorization for Middle & High School construction",
+   "where": "text",
+   "quote": "f. article 26: rescinding borrowing authorization for the middle & high school construction"
+  },
+  {
+   "name": "Articles 43-46, previously authorized borrowing articles",
+   "where": "text",
+   "quote": "g. articles 43-46 are previously authorized borrowing articles where the project has been"
+  }
+ ],
+ "tags": [
+  "FY16 budget",
+  "budget adjustment",
+  "warrant articles",
+  "stabilization fund",
+  "snow and ice removal",
+  "Monty Tech",
+  "library",
+  "fire department",
+  "police department",
+  "DPW",
+  "capital plan",
+  "sewer enterprise fund",
+  "borrowing authorization",
+  "special Town Meeting articles"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

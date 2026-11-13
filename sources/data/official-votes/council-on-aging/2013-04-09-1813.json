@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-04-09",
  "docid": "1813",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the March 12, 2013 Council on Aging minutes",
+   "motion": "Approve the March 12, 2013 COA minutes.",
    "moved_by": "Sis Montouri",
    "seconded_by": "Jane Doyle",
    "outcome": "passed 11-0",
@@ -20,23 +20,23 @@
    "quote": "sis montouri motioned to approve the march 12, 2013 coa minutes. jane doyle seconded. on vote, motion carried, 11 in favor, 0 opposed."
   },
   {
-   "motion": "Amend the Meal Site Manager job description as of July 1, 2013 to include the requirement of obtaining the Food Service Certification certificate",
-   "moved_by": "Jane Doyle",
-   "seconded_by": "Pete Lincoln",
+   "motion": "Amend the Meal Site Manager job description, as of July 1, 2013, to include the requirement of obtaining the Food Service Certification certificate.",
+   "moved_by": "Ms. Doyle",
+   "seconded_by": "Mr. Lincoln",
    "outcome": "passed 11-0",
    "procedural": false,
    "quote": "ms. doyle moved to amend the meal site manager job description, as of july 1, 2013, to include the requirement of obtaining the food service certification certificate. mr. lincoln seconded. on vote, motion carried, 11 in favor, 0 opposed."
   },
   {
-   "motion": "Accept the December 11, 2012 Advocacy Subcommittee minutes",
-   "moved_by": "Jane Doyle",
-   "seconded_by": "Deb Seeley",
+   "motion": "Accept the December 11, 2012 Advocacy Subcommittee minutes.",
+   "moved_by": "Ms. Doyle",
+   "seconded_by": "Ms. Seeley",
    "outcome": "passed 11-0",
    "procedural": true,
    "quote": "ms. doyle moved to accept the december 11, 2012 advocacy subcommittee minutes. ms. seeley seconded. on vote, motion carried, 11 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Jim Hays",
    "seconded_by": "Jane Doyle",
    "outcome": "passed 11-0",
@@ -45,6 +45,318 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0892825
+ "note": "Text is a plain extraction with spacing artifacts (e.g., 'reduce d', 'b udget', 'we ll', '$6-8k' run into 'by'); quotes reproduce the printed words with whitespace collapsed. No public comment section is recorded. The March 12 motion names 'Sis Montouri' while the roll call lists 'Sis Montuori'; the recording secretary is 'Sue Doherty' in the roll call and 'Susan Doherty' in the signature block. Minutes header states they were approved at the 5/14/2013 COA meeting. Votes marked procedural include approval of prior minutes and adjournment.",
+ "cost_usd": 0.007916920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "status": "present",
+   "role": "Chairperson",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "role": "Vice-Chairperson",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Doreen Noble",
+   "status": "present",
+   "role": "Director",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Fred Crellin",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Whitney Lacka",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Connie Odea",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "status": "present",
+   "role": "board member",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "status": "present",
+   "role": "Admin. Asst.",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea, deb seeley, joyce wass, and sue doherty (admin. asst.)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Joanne Brazell, who works in the Meal Site on Mondays, will fill the Outreach Coordinator position until Outreach Coordinator Faith Anderson returns from medical leave.",
+   "quote": "joanne brazell, who works in the meal site on mondays, will be filling in at this position until faith returns."
+  },
+  {
+   "decision": "Mr. Lincoln's request that a date be set at the next meeting for the Council on Aging Volunteer Appreciation program (date to be set at next meeting).",
+   "quote": "mr. lincoln requested that a date be set at the next meeting for the council on aging volunteer appreciation program."
+  },
+  {
+   "decision": "Ms. Brown will present the COA Bylaw changes at the May meeting.",
+   "quote": "ms. brown mentioned that she will be presenting the coa bylaw changes at the may meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Outreach payroll and transfer",
+   "what_was_recorded": "Outreach payroll will come strictly from Formula Grant funds until end of FY13, and another $7400 is expected to be transferred into the Outreach line before FY13 ends.",
+   "figures_as_printed": [
+    "$7400"
+   ],
+   "quote": "it is expected that another $7400 will be transferred into the outreach line before the end of this fiscal year."
+  },
+  {
+   "topic": "Santa Buckley Energy line",
+   "what_was_recorded": "More funds were needed to be transferred into the Santa Buckley Energy line due to higher heating costs at the senior center from the harsh winter.",
+   "figures_as_printed": [],
+   "quote": "more funds needed to be transferred into the santa buckley energy line."
+  },
+  {
+   "topic": "Central Purchasing utility account",
+   "what_was_recorded": "The Town Manager will recommend moving all COA utility costs into a Central Purchasing account with the Town in FY14.",
+   "figures_as_printed": [],
+   "quote": "the town manager has informed the coa director that she will be recommending that all coa utility costs be transferred into a \"central purchasing\" account with the town in fy14."
+  },
+  {
+   "topic": "FY14 COA recommended budget reduction",
+   "what_was_recorded": "The Town Manager reduced the COA FY14 recommended budget by a stated amount because utilities will move to a Central Purchasing fund.",
+   "figures_as_printed": [
+    "$6-8k"
+   ],
+   "quote": "the town manager has reduce d the coa fy14 recommended budget by$6-8k due to the fact that the all utilities will be moved to a central purchasing fund."
+  },
+  {
+   "topic": "Copy machine maintenance contract",
+   "what_was_recorded": "Mr. Hays asked whether $1200 would be included in the COA budget for the copy machine maintenance contract, previously paid by Supporters of the Eagle House; Ms. Noble replied yes.",
+   "figures_as_printed": [
+    "$1200"
+   ],
+   "quote": "questioned whether or not $1200 will be in cluded in the coa budget to cover the copy machine maintenance contract."
+  },
+  {
+   "topic": "Town Finance Committee extra Outreach funds",
+   "what_was_recorded": "Extra funds in the Outreach line were approved at the Town Finance Committee meeting, per Ms. Noble's report.",
+   "figures_as_printed": [],
+   "quote": "that extra funds in the outreach line were approved."
+  },
+  {
+   "topic": "Meal Site Manager Serve Safe course reimbursement",
+   "what_was_recorded": "Meal Site Manager paid for an online Serve Safe/Food Safety course with a personal credit card and will not be reimbursed until the course is completed.",
+   "figures_as_printed": [],
+   "quote": "also, she will not be reimbursed for the course until it is completed."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of additional funds into the Outreach line (expected) before end of FY13.",
+   "amount_as_printed": "$7400",
+   "outcome": "expected; not yet made, to occur before end of FY13",
+   "quote": "it is expected that another $7400 will be transferred into the outreach line before the end of this fiscal year."
+  },
+  {
+   "description": "Transfer of more funds into the Santa Buckley Energy line for higher heating costs.",
+   "amount_as_printed": "not stated",
+   "outcome": "described as needed; not an unusual process at this time of year",
+   "quote": "more funds needed to be transferred into the santa buckley energy line."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome",
+   "resolution": "no action; new members welcomed, meeting opened 9:35AM",
+   "tags": [
+    "welcome"
+   ],
+   "quote": "mary lynn conrad (chairperson) welcomed the new board members and opened the meeting at 9:35am."
+  },
+  {
+   "topic": "Minutes of March 12, 2013",
+   "resolution": "approved 11-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "sis montouri motioned to approve the march 12, 2013 coa minutes. jane doyle seconded."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; Outreach and energy transfers, staffing, van drivers, meal site, MCOA appointment, Meal Site certification discussed",
+   "tags": [
+    "director report",
+    "outreach",
+    "staffing",
+    "meal site"
+   ],
+   "quote": "ms. noble reported to the board that she has a copy of the town accountant's financial report"
+  },
+  {
+   "topic": "Meal Site Manager job description (Food Service Certification)",
+   "resolution": "amended, effective July 1, 2013, 11-0",
+   "tags": [
+    "personnel",
+    "meal site",
+    "job description"
+   ],
+   "quote": "ms. doyle moved to amend the meal site manager job description, as of july 1, 2013, to include the requirement"
+  },
+  {
+   "topic": "Town Finance Committee meeting (March 21)",
+   "resolution": "reported; no action",
+   "tags": [
+    "budget",
+    "finance committee"
+   ],
+   "quote": "mary lynn conrad and ms. noble attended the town finance committee meeting to discuss the fy14 coa b udget."
+  },
+  {
+   "topic": "2014 Budget",
+   "resolution": "reported; no action",
+   "tags": [
+    "budget",
+    "utilities",
+    "copy machine"
+   ],
+   "quote": "the town manager has reduce d the coa fy14 recommended budget by$6-8k"
+  },
+  {
+   "topic": "MCOA Board Training",
+   "resolution": "announced; members encouraged to attend",
+   "tags": [
+    "training"
+   ],
+   "quote": "emmett schmarsow will be holding a coa board training session at the eagle house on april 30, 2013."
+  },
+  {
+   "topic": "Advocacy Subcommittee minutes (December 11, 2012)",
+   "resolution": "accepted 11-0; bylaw changes to be presented in May",
+   "tags": [
+    "subcommittee",
+    "bylaws"
+   ],
+   "quote": "ms. doyle moved to accept the december 11, 2012 advocacy subcommittee minutes."
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "notices read; no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "a notice from the town wellness coordinator regarding the relay for life was read."
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "no action; Memorial Day committee, Florida senior centers, CPR training, Volunteer Appreciation date request",
+   "tags": [
+    "memorial day",
+    "cpr",
+    "volunteers"
+   ],
+   "quote": "ms. noble mentioned that ernie sund is looking for help with the memorial day committee"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11-0 at 10:30AM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 10:30am."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Accountant’s Financial Report",
+   "where": "text",
+   "quote": "ms. noble reported to the board that she has a copy of the town accountant's financial report"
+  },
+  {
+   "name": "March 12, 2013 COA minutes",
+   "where": "text",
+   "quote": "sis montouri motioned to approve the march 12, 2013 coa minutes."
+  },
+  {
+   "name": "Meal Site Manager job description",
+   "where": "text",
+   "quote": "ms. doyle moved to amend the meal site manager job description, as of july 1, 2013, to include the requirement"
+  },
+  {
+   "name": "December 11, 2012 Advocacy Subcommittee minutes",
+   "where": "text",
+   "quote": "ms. doyle moved to accept the december 11, 2012 advocacy subcommittee minutes."
+  },
+  {
+   "name": "Notice from the Town Wellness Coordinator regarding the Relay for Life",
+   "where": "text",
+   "quote": "a notice from the town wellness coordinator regarding the relay for life was read."
+  },
+  {
+   "name": "Notice from the American Parkinson’s Association regarding a Walk-A-Thon to be held on June 9",
+   "where": "text",
+   "quote": "a notice from the american parkinson's association was read regarding a walk-a-thon to be held on june 9"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "budget",
+  "outreach",
+  "utilities",
+  "central purchasing",
+  "meal site",
+  "personnel",
+  "training",
+  "CPR",
+  "volunteers",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

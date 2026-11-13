@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-07-18",
  "docid": "1627",
@@ -12,31 +12,234 @@
  },
  "votes": [
   {
-   "motion": "to approve the Notice of Intent for 46 Fire Road for reconstruction of retaining wall system and site grading",
-   "outcome": "passed unanimously",
+   "motion": "Approve the 46 Fire Road item (reconstruction of retaining wall system, Notice of Intent by David Osoff).",
+   "moved_by": "JJ",
+   "seconded_by": "Rich",
+   "outcome": "passed",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "removing one tree that is very close to the house, installing inverted y for drainage down by water. jj/rich approved/unanimous"
+   "quote": "jj/rich approved/unanimous"
   },
   {
-   "motion": "to issue a Positive Determination of Applicability for 97 Island Road for tree removal to access septic tank replacement",
-   "outcome": "passed 3-0",
+   "motion": "Issue a positive determination on the 97 Island Road Request for Determination of Applicability (tree removal), after the hearing was opened with no applicant present.",
+   "moved_by": "JJ",
+   "seconded_by": "Rich",
+   "outcome": "not stated",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "opened hearing, no show, voted a positive 3. jj/rich"
   },
   {
-   "motion": "to issue a Negative Determination of Applicability for 260 R Cross Road for seasonal dock installation",
-   "outcome": "passed 3-0",
+   "motion": "Issue a negative determination on the 260 R Cross Road Request for Determination of Applicability (seasonal dock).",
+   "moved_by": "JJ",
+   "seconded_by": "Sharon",
+   "outcome": "Negative 3 Unanimous",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "mr. hollis has to file with the state because whalom is a great pond. he is to notify us of the decision. jj/sharon negative 3 unanimous"
+   "quote": "jj/sharon negative 3 unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly readable. Format is informal; votes are recorded by outcome (Approved/Unanimous, Positive/Negative determinations) rather than explicit \"moved by, seconded by\" language. Initials (JJ, Rich, Sharon) appear to indicate staff/member assignment to items rather than movers/seconders.",
- "cost_usd": 0.0953185
+ "note": "OCR-style text with broken spacing (e.g., 'Pau ling', 'Ca rrier', 'C onditions'), reproduced as printed. No call to order, no chair named, no approval of prior minutes, no adjournment, and no motion stated for the 235 Island Road or Robbs Hill items. The 97 Island Road result 'Voted a Positive 3' and the 260 R Cross Road result 'Negative 3 Unanimous' are recorded as printed; the minutes do not spell out the exact wording of the motions. No dollar figures appear. No documents list is printed; named application documents are recorded from the text only.",
+ "cost_usd": 0.00623452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "rob verge, jj cote, sharon jordan, mark murphy, richard bursch, karen lefebvre, matt marro, jan ca rrier"
+  },
+  {
+   "name": "David Osoff",
+   "role": "applicant (filed Notice of Intent, 46 Fire Road)",
+   "status": "not stated",
+   "quote": "on a notice of intent filed by david osoff (nicholas pau ling of goldsmith, prest & ringwall)"
+  },
+  {
+   "name": "Nicholas Pau ling",
+   "role": "of Goldsmith, Prest & Ringwall, for David Osoff",
+   "status": "not stated",
+   "quote": "on a notice of intent filed by david osoff (nicholas pau ling of goldsmith, prest & ringwall)"
+  },
+  {
+   "name": "Timothy W./Jacqueline C. Murphy",
+   "role": "applicants (Request for Determination of Applicability, 97 Island Road)",
+   "status": "absent",
+   "quote": "a request for determination of applicability by timothy w./jacqueline c. murphy."
+  },
+  {
+   "name": "Clinton F./Lisa K. Hollis",
+   "role": "applicants (Request for Determination of Applicability, 260 R Cross Road)",
+   "status": "not stated",
+   "quote": "a request for determination of applicability by clinton f./lisa k. hollis."
+  },
+  {
+   "name": "Dave Rawlings",
+   "role": "Eagle Scout",
+   "status": "present",
+   "quote": "dave showed us pictures of the work that he and other volunteers accomplished."
+  },
+  {
+   "name": "Rebecca Blatz",
+   "role": "of 960 Flat Hill Road",
+   "status": "present",
+   "quote": "rebecca blatz of 960 flat hill road came in to express her concern about tree cutting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sharon Jordan and Rob Verge signed off on the Robbs Hill Bridge project after Dave Rawlings showed photos of the volunteer work.",
+   "quote": "sharon and rob signed off on the project."
+  },
+  {
+   "decision": "Mr. Hollis (260 R Cross Road) is to notify the Commission of the state decision on his dock filing, since Whalom is a Great Pond.",
+   "quote": "he is to notify us of the decision."
+  },
+  {
+   "decision": "Matt Marro will look into the tree cutting on Stone Fence Road raised by Rebecca Blatz.",
+   "quote": "matt will look into this further."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rebecca Blatz",
+   "stated_role": "of 960 Flat Hill Road",
+   "topic": "tree cutting on Houghton's Mill Road and Stonefence Road",
+   "quote": "rebecca blatz of 960 flat hill road came in to express her concern about tree cutting on houghton's mill road and stonefence road."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "46 Fire Road public hearing, Notice of Intent (David Osoff)",
+   "resolution": "approved, unanimous",
+   "quote": "7:00pm ~ 46 fire road 12 ~ pursuant to mgl ch 131, s 40 as amended and the town of",
+   "tags": [
+    "notice of intent",
+    "retaining wall",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "97 Island Road public hearing, Request for Determination of Applicability (Murphy)",
+   "resolution": "hearing opened, no applicant present, positive determination voted 3",
+   "quote": "7:15 pm ~ 97 island road ~ pursuant to mgl ch 131, s 40 as amended and the",
+   "tags": [
+    "determination of applicability",
+    "tree removal",
+    "septic"
+   ]
+  },
+  {
+   "topic": "260 R Cross Road public hearing, Request for Determination of Applicability (Hollis)",
+   "resolution": "negative determination, 3 votes unanimous; applicant to report state decision",
+   "quote": "7:30 pm ~ 260 r cross road ~ pursuant to mgl ch 131, s 40 as amended and the",
+   "tags": [
+    "seasonal dock",
+    "great pond",
+    "determination of applicability"
+   ]
+  },
+  {
+   "topic": "Robbs Hill Bridge signoff, Eagle Scout project (Dave Rawlings)",
+   "resolution": "signed off by Sharon and Rob",
+   "quote": "7:40 pm ~ dave rawlings, eagle scout ~ robbs hill bridge signoff",
+   "tags": [
+    "volunteer project",
+    "bridge"
+   ]
+  },
+  {
+   "topic": "235 Island Road possible violation complaint",
+   "resolution": "no action; Matt found nothing out of order",
+   "quote": "7:45 pm ~ 235 island road ~ possible violation",
+   "tags": [
+    "enforcement",
+    "complaint"
+   ]
+  },
+  {
+   "topic": "Public comment: tree cutting on Houghton's Mill Road and Stonefence Road",
+   "resolution": "Matt Marro to look into Stone Fence Road further",
+   "quote": "rebecca blatz of 960 flat hill road came in to express her concern about tree cutting",
+   "tags": [
+    "tree cutting",
+    "public comment",
+    "enforcement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent filed by David Osoff, 46 Fire Road (reconstruction of retaining wall system)",
+   "where": "text",
+   "quote": "on a notice of intent filed by david osoff (nicholas pau ling of goldsmith, prest & ringwall)"
+  },
+  {
+   "name": "2001 Order of Conditions (DEP File #208-0638)",
+   "where": "text",
+   "quote": "replace incomplete work proposed in 2001 order of c onditions (dep file #208-0638)"
+  },
+  {
+   "name": "Request for Determination of Applicability, 97 Island Road, Timothy W./Jacqueline C. Murphy",
+   "where": "text",
+   "quote": "a request for determination of applicability by timothy w./jacqueline c. murphy."
+  },
+  {
+   "name": "Request for Determination of Applicability, 260 R Cross Road, Clinton F./Lisa K. Hollis",
+   "where": "text",
+   "quote": "a request for determination of applicability by clinton f./lisa k. hollis."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "public hearing",
+  "notice of intent",
+  "determination of applicability",
+  "tree cutting",
+  "dock",
+  "Great Pond",
+  "enforcement complaint",
+  "volunteer project"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-11-17",
  "docid": "2822",
@@ -12,23 +12,242 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of October 20, 2016 as amended",
+   "motion": "Accept the minutes of October 20, 2016 as amended.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "gare moved to accept the minutes as amended, harry seconded; voted 'aye' unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn, so moved by gare, seconded harry; voted 'aye' unanimously @ 8:09 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0872985
+ "note": "Minutes are signed by the Secretary and read as complete. Only two votes are recorded, both unanimous with no tallies printed. Public comment reads 'No public comment'; Gare's little libraries and Harry's air-handler remarks were board members, not public speakers. Trust fund discussion records no formal vote. The Director's report hand-out and children's and YA librarian reports are listed but not attached.",
+ "cost_usd": 0.00557012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore"
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, lars widstrand, martha moore"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "absent",
+   "quote": "absent: susan visser, bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: susan visser, bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: susan visser, bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trust fund spending policy carried to the next meeting for further discussion.",
+   "quote": "further discussion on this topic at the next meeting."
+  },
+  {
+   "decision": "Martha Moore to ask the town accountant for clarification on the trust fund balance numbers.",
+   "quote": "martha will ask town accountant for clarification on the numbers."
+  },
+  {
+   "decision": "Out-of-state library card policy reviewed; final review and decision deferred to the next meeting.",
+   "quote": "reviewed and discussed proposed policy, final review and decision at next meeting."
+  },
+  {
+   "decision": "Little libraries (exchange boxes) placed as a discussion point on the next meeting's agenda.",
+   "quote": "it will be a discussion point on the next meeting's agenda."
+  },
+  {
+   "decision": "Director's evaluation timeline set: start early February, evaluations due by the March meeting, salary decision by April, submitted to the town by the May meeting.",
+   "quote": "it will start beginning of february with evaluations due either by email or person by march meeting"
+  },
+  {
+   "decision": "Upcoming agenda: finalize and approve trust fund policy, finalize and approve out-of-state library card policy, and review Donna's child safety research and policy for LPL.",
+   "quote": "trust fund policy, finalize and approve."
+  },
+  {
+   "decision": "Donna Saiia to research child safety and a policy for LPL, for review and possible finalization at a later meeting.",
+   "quote": "donna's research on child safety and policy for lpl."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friends of LPL Fall Book and Bake Sale",
+   "what_was_recorded": "The Fall Book and Bake Sale netted a stated amount reported in the Friends of LPL update.",
+   "figures_as_printed": [
+    "$3,117.50"
+   ],
+   "quote": "the fall book and bake sale netted $3,117.50."
+  },
+  {
+   "topic": "Friends of LPL Hannaford reusable bag sale",
+   "what_was_recorded": "The Hannaford reusable bag sale netted a stated amount reported in the Friends of LPL update.",
+   "figures_as_printed": [
+    "$173.00"
+   ],
+   "quote": "the hannaford reusable bag sale netted $173.00."
+  },
+  {
+   "topic": "Library Trust Funds earned interest spending",
+   "what_was_recorded": "Discussion of how much earned interest to spend versus hold or reinvest; a suggested 80/20 split with spending up to 20%, not necessarily the full 20%.",
+   "figures_as_printed": [
+    "80/20",
+    "80%",
+    "20%"
+   ],
+   "quote": "suggestion of 80/20, i.e. 80% held as cash or reinvested and 20% used."
+  },
+  {
+   "topic": "Library Trust Funds town balance report",
+   "what_was_recorded": "The town's report on current trust asset balances needs clarification; some earnings figures, including the Touchstone fund data, appear incomplete.",
+   "figures_as_printed": [],
+   "quote": "the town's report on the current balances of the total trust assets needs clarification"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment; board members raised little libraries and air-handler noise",
+   "quote": "gare mentioned \"little libraries\", exchange boxes for \"leave a book, take a book\" - to get more people to read."
+  },
+  {
+   "topic": "Approval of minutes of October 20, 2016",
+   "resolution": "approved as amended",
+   "quote": "approval of minutes of october 20, 2016"
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received per hand-out; no action",
+   "quote": "director's report, per distributed hand-out."
+  },
+  {
+   "topic": "Policy for access and use of Library Trust Funds",
+   "resolution": "continued to next meeting",
+   "quote": "policy for access and use of library trust funds"
+  },
+  {
+   "topic": "Library cards for out of state residents",
+   "resolution": "continued to next meeting",
+   "quote": "library cards for out of state residents"
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "received; no action",
+   "quote": "friends of lpl update"
+  },
+  {
+   "topic": "Plans for Director's evaluation",
+   "resolution": "timeline set",
+   "quote": "plans for director's evaluation"
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "noted for future agendas",
+   "quote": "agenda items for upcoming meetings"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:09 p.m.",
+   "quote": "motion to adjourn, so moved by gare, seconded harry; voted 'aye' unanimously @ 8:09 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for November 17, 2016",
+   "where": "list",
+   "quote": "lplbot agenda for november 17, 2016"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "director's report children's librarian's report"
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Proposed policy for library cards for out of state residents",
+   "where": "text",
+   "quote": "reviewed and discussed proposed policy, final review and decision at next meeting."
+  },
+  {
+   "name": "Town's report on current balances of total trust assets",
+   "where": "text",
+   "quote": "the town's report on the current balances of the total trust assets needs clarification"
+  }
+ ],
+ "tags": [
+  "library",
+  "trust funds",
+  "director evaluation",
+  "library cards",
+  "friends of the library",
+  "budget",
+  "building maintenance",
+  "policy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

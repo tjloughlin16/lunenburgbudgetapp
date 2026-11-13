@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-04-29",
  "docid": "4885",
@@ -12,31 +12,422 @@
  },
  "votes": [
   {
-   "motion": "approve the Administration Organizational Plan and recommend Board of Selectmen approval at Annual Town Meeting",
-   "moved_by": "Ebersole",
-   "seconded_by": "Matthews",
+   "motion": "Approve the Administration Organizational Plan and recommend BOS approval at Annual Town Meeting.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve administration organizational plan and to recommend bos approval at annual town meeting. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to approve administration organizational plan and to recommend bos approval at annual town meeting."
   },
   {
-   "motion": "recommend approval at Annual Town Meeting of Article 8, Prior Year Bill in the amount of $570",
-   "moved_by": "Ebersole",
-   "seconded_by": "Bertram",
+   "motion": "Recommend approval at Annual Town Meeting of Article 8 (Prior Year Bill).",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. ebersole moved to recommend approval at annual town meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Bertram",
-   "seconded_by": "Matthews",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Dave Matthews",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded. meeting anourned at 945 in favor, opposed."
+   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Third vote outcome corrupted: text reads \"945 in favor, opposed\" (945 is likely the meeting end time 9:45); vote count not legible.",
- "cost_usd": 0.0959495
+ "note": "OCR scan with garbled text: the pavement management table figures are jumbled (e.g. '($333.000.00)', 'Projis number'); the adjournment vote tally is unreadable ('in favor, opposed' with no counts), so outcome is not stated; the attendance line omits Mr. Alonzo, who spoke and is listed as present from his remarks; the Town Manager's name is printed as 'Kerry, Speidel' and recorded here as Kerry Speidel. No documents list heading is printed; the traffic ordinance distribution sentence is recorded as text only.",
+ "cost_usd": 0.00918872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry, speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry, speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry, speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry, speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "chair paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry, speidel."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "mr. alonzo pointed out that just to maintain where we are the cost is approximately $1m"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "in attendance for this presentation were jack rodriquenz, dpw director, rich benevento, & mike pompili of world tech engineering."
+  },
+  {
+   "name": "Rich Benevento",
+   "role": "World Tech Engineering",
+   "status": "present",
+   "quote": "in attendance for this presentation were jack rodriquenz, dpw director, rich benevento, & mike pompili of world tech engineering."
+  },
+  {
+   "name": "Mike Pompili",
+   "role": "World Tech Engineering",
+   "status": "present",
+   "quote": "in attendance for this presentation were jack rodriquenz, dpw director, rich benevento, & mike pompili of world tech engineering."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Planning Board Member",
+   "status": "present",
+   "quote": "matthew allison, planning board member, spoke his dismay of the lack of professional/technical abilities"
+  },
+  {
+   "name": "Susan Dollery",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan dollery recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board chose to present the Administrative Organizational Plan to Town Meeting for a vote rather than develop a Bylaw.",
+   "quote": "the board has chosen to present this plan at town meeting"
+  },
+  {
+   "decision": "Motion Sheet for Annual Town Meeting articles assigned to individual board members for presentation.",
+   "quote": "the motion sheet for annual town meeting was assigned to board members as follows:"
+  },
+  {
+   "decision": "White Tail Crossing layout public hearing postponed to Fall Town Meeting at the applicant's request.",
+   "quote": "hearing was postponed until the fall town meeting by request of the applicant."
+  },
+  {
+   "decision": "Town Manager Goals rescheduled to the 5/6/2014 BOS meeting.",
+   "quote": "rescheduled to the 5/6/2014 bos meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 8 prior year bill",
+   "what_was_recorded": "One remaining bill for medical testing, in the amount of $570.",
+   "figures_as_printed": [
+    "$570"
+   ],
+   "quote": "ms. speidel informed the board that there is 1 bill remaining for some medical testing in the amount of $570"
+  },
+  {
+   "topic": "Warrants for 4/29/2014",
+   "what_was_recorded": "Warrant W#57-14 listed at a total of $70,513.25.",
+   "figures_as_printed": [
+    "$70,513.25"
+   ],
+   "quote": "4/29/2014 w#57-14 $70,513.25"
+  },
+  {
+   "topic": "Pavement management funding sources and expenses (FY14/FY15)",
+   "what_was_recorded": "DPW Director reviewed a table of road repair funding sources and anticipated FY15 expenses, with several printed amounts; table text is garbled in the OCR.",
+   "figures_as_printed": [
+    "$122,000.00",
+    "$127,000.00",
+    "$116,000.00",
+    "$63,000.00",
+    "$422,000.00",
+    "$850,000.00",
+    "($333.000.00)",
+    "($150,000.00)",
+    "($63,000.00)",
+    "$304,000.00",
+    "($150,000.00)",
+    "($140,000.00)",
+    "$14,000.00"
+   ],
+   "quote": "road repair funding $122,000.00"
+  },
+  {
+   "topic": "Summer Street funding decision",
+   "what_was_recorded": "DPW Director said the Town must decide on funding the $333k for Summer St or the road may need to close; he recommended using Chapter 90 funds if no other source is available.",
+   "figures_as_printed": [
+    "$333k",
+    "($333.000.00)"
+   ],
+   "quote": "regarding the towns funding of the $333k for the summer st. project."
+  },
+  {
+   "topic": "Stabilization and incentive fund balances",
+   "what_was_recorded": "Town Manager said both stabilization funds equal the 5% target; appropriating from the incentive fund would fall below 5%; $99k in zoning incentive funds was received and free cash may equal that amount.",
+   "figures_as_printed": [
+    "5%",
+    "$99k"
+   ],
+   "quote": "we did receive $99k in zoning incentive funds for building 3 in tri town"
+  },
+  {
+   "topic": "Chase Road project cost",
+   "what_was_recorded": "Chase Rd project described as roughly $2.2m, possibly federally fundable if the Town pays for engineering.",
+   "figures_as_printed": [
+    "$2.2m"
+   ],
+   "quote": "mr. benevento spoke to say that the chase rd project is not considered a huge project at $2.2m"
+  },
+  {
+   "topic": "Rt. 12 Sterling project cost increase",
+   "what_was_recorded": "Bertram said a Rt. 12 Sterling project rose from $1.3m to $6.1m, under-funding the 15/18 TIP.",
+   "figures_as_printed": [
+    "$1.3m",
+    "$6.1m"
+   ],
+   "quote": "a road project on rt. 12 in sterling that went from $1.3m to $6.1m"
+  },
+  {
+   "topic": "Future pavement management roads FY16",
+   "what_was_recorded": "A list of future pavement management road projects with estimated costs was presented.",
+   "figures_as_printed": [
+    "$95,000.00",
+    "$187,000.00",
+    "$62,000.00",
+    "$363,000.00",
+    "$188,000.00",
+    "$35,000.00",
+    "$930,000.00"
+   ],
+   "quote": "future pavement management roads fy16 $95,000.00"
+  },
+  {
+   "topic": "Estimated road repair needs",
+   "what_was_recorded": "Estimated road repair needs to reach PCI 100 were presented as approximately $12.3m; the PCI is 67.",
+   "figures_as_printed": [
+    "$12.3m"
+   ],
+   "quote": "estimated road repair needs = approx. $12.3m (amount needed to reach 100 pci rating)"
+  },
+  {
+   "topic": "CIP development project year totals",
+   "what_was_recorded": "Consultant presented CIP project year totals based on formulas, which differ from the DPW Director's numbers.",
+   "figures_as_printed": [
+    "$516,559",
+    "$1,011,367"
+   ],
+   "quote": "project year 2015 totals = $516,559"
+  },
+  {
+   "topic": "Cost to maintain pavement condition",
+   "what_was_recorded": "Alonzo said maintaining current pavement condition costs about $1m, while the chart shows $5.8m over 5 years to raise PCI by .7.",
+   "figures_as_printed": [
+    "$1m",
+    "$5.8m"
+   ],
+   "quote": "mr. alonzo pointed out that just to maintain where we are the cost is approximately $1m and the chart provided in this"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Matthew Allison",
+   "stated_role": "Planning Board Member",
+   "topic": "Administrative Organizational Plan hearing",
+   "quote": "matthew allison, planning board member, spoke his dismay of the lack of professional/technical abilities which has existed on the planning board."
+  },
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "Powell family business expansion",
+   "quote": "mr. matthews congratulated the powell family on the expansion of their business and complimented"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00PM)",
+   "resolution": "no action; congratulations and reminder of Drop In session",
+   "quote": "mr. matthews congratulated the powell family on the expansion of their business and complimented",
+   "tags": [
+    "public comment",
+    "Lane Property"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "annual town meeting will be held on 5/3/2014 at lunenburg high school beginning at 9am",
+   "tags": [
+    "Town Meeting",
+    "events"
+   ]
+  },
+  {
+   "topic": "Public Hearing: Administrative Organizational Plan, Town Charter Section 5-1(b)",
+   "resolution": "approved and recommended for Annual Town Meeting, 5-0",
+   "quote": "mr. ebersole moved to approve administration organizational plan and to recommend bos approval at annual town meeting.",
+   "tags": [
+    "administration",
+    "town charter",
+    "land use",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Public Hearing: Layout of Public Way, White Tail Crossing",
+   "resolution": "postponed to Fall Town Meeting at applicant request",
+   "quote": "hearing was postponed until the fall town meeting by request of the applicant.",
+   "tags": [
+    "public hearing",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Review of Annual Town Meeting warrant articles",
+   "resolution": "Article 8 recommended for approval 5-0; other articles assigned to members",
+   "quote": "article 8- prior year bill: ms. speidel informed the board that there is 1 bill remaining",
+   "tags": [
+    "warrant articles",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen goals (Town Manager goals)",
+   "resolution": "rescheduled to 5/6/2014",
+   "quote": "rescheduled to the 5/6/2014 bos meeting.",
+   "tags": [
+    "goals",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "no action recorded; action file issues none",
+   "quote": "action file issues: none",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "DPW and World Tech Engineering items (dam, intersection, pavement management, Summer St, Chase Rd)",
+   "resolution": "discussed; no vote recorded",
+   "quote": "the dam is in compliance with all inspections and the emergency management plan has been completed.",
+   "tags": [
+    "DPW",
+    "pavement management",
+    "Summer Street",
+    "Chase Road",
+    "TIP",
+    "Chapter 90",
+    "dam"
+   ]
+  },
+  {
+   "topic": "Update on Traffic Ordinance",
+   "resolution": "discussed; public hearing required before adoption",
+   "quote": "before adopting this traffic ordinance the bos will need to have a public hearing.",
+   "tags": [
+    "traffic ordinance",
+    "signs"
+   ]
+  },
+  {
+   "topic": "Update on Sign Inventory",
+   "resolution": "not discussed",
+   "quote": "update on sign inventory, if additional information is available: not discussed",
+   "tags": [
+    "signs"
+   ]
+  },
+  {
+   "topic": "Update on Chase Road and/or Summer Street",
+   "resolution": "discussed under pavement management item",
+   "quote": "discussed under update of pavement management plan",
+   "tags": [
+    "Chase Road",
+    "Summer Street"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned; tally not legible in OCR",
+   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Administrative Organizational Plan",
+   "where": "text",
+   "quote": "ms. speidel then reviewed the draft administrative organizational plan with the board"
+  },
+  {
+   "name": "Public Hearing notice concerning the Administrative Organizational Plan",
+   "where": "text",
+   "quote": "mr. alonzo read into record the public hearing notice concerning the administrative organizational plan"
+  },
+  {
+   "name": "Motion Sheet for Annual Town Meeting",
+   "where": "text",
+   "quote": "the motion sheet for annual town meeting was assigned to board members as follows:"
+  },
+  {
+   "name": "Warrant W#57-14 (4/29/2014)",
+   "where": "text",
+   "quote": "4/29/2014 w#57-14 $70,513.25"
+  },
+  {
+   "name": "Updated Traffic Ordinance / draft Traffic Rules & Orders",
+   "where": "text",
+   "quote": "board members were given copies of the updated traffic ordinance for review."
+  },
+  {
+   "name": "Pavement Management Program Project Overview & Summary of Findings (slide show)",
+   "where": "text",
+   "quote": "mr. benevento & mr. pompili presented their pavement management program project overview & summary of findings to the board"
+  }
+ ],
+ "tags": [
+  "Annual Town Meeting",
+  "warrant articles",
+  "administrative organizational plan",
+  "public hearing",
+  "pavement management",
+  "Chapter 90",
+  "Summer Street",
+  "Chase Road",
+  "TIP",
+  "traffic ordinance",
+  "Lake Shirley Dam",
+  "DPW",
+  "stabilization funds"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

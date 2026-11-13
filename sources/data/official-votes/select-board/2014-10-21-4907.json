@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-10-21",
  "docid": "4907",
@@ -12,40 +12,339 @@
  },
  "votes": [
   {
-   "motion": "Appoint Brian Guenard to the Council on Aging with a term to expire June 30, 2015",
+   "motion": "Appoint Brian Guenard to the Council on Aging with a term to expire June 30, 2015.",
    "moved_by": "R. Ebersole",
    "seconded_by": "J. Toale",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\"d:j. toale to appoint brian guenard to the council on aging with a term to expire june 30, 2015 vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint brian guenard to the council on aging with a term to expire june 30, 2015 vote: all in favor"
   },
   {
-   "motion": "Appoint John Rabbitt and Todd Dwyer to the Conservation Commission with terms to expire June 30, 2016, and Sheila Holt and Matthew Charpentier with terms to expire June 30, 2015",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2°: p. bertram to appoint john rabbitt and todd dwyer to the conservation commission with a term to expire june 30, 2016 and sheila holt and matthew charpentier with a term to expire june 30, 2015 mr. toale stated h",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Rescind the appointment of Rene Lafayette to Personnel Committee and appoint Nancy Forest to the Personnel Committee with a term to expire June 30, 2015",
-   "moved_by": "P. Bertram",
-   "seconded_by": "J. Toale",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram 2\":j. toale to rescind the appointment of rene lafayette to personnel committee and appoint nancy forest to the personnel committee with a term to expire june 30, 2015 vote: all in favor"
-  },
-  {
-   "motion": "Approve the modification to traffic rules for the addition of stop signs at Mulpus Roads and Townsend Harbor Road",
+   "motion": "Appoint John Rabbitt and Todd Dwyer to the Conservation Commission with terms to expire June 30, 2016, and Sheila Holt and Matthew Charpentier with terms to expire June 30, 2015.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\": p. bertram to approve the modification to the traffic rules for the addition of stop signs at mulpus roads and townsend harbor road vote: all in favor"
+   "quote": "to appoint john rabbitt and todd dwyer to the conservation commission with a term to expire june 30, 2016 and sheila holt and matthew charpentier with a term to expire june 30, 2015"
+  },
+  {
+   "motion": "Rescind the appointment of Rene Lafayette to the Personnel Committee and appoint Nancy Forest to the Personnel Committee with a term to expire June 30, 2015.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "J. Toale",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to rescind the appointment of rene lafayette to personnel committee and appoint nancy forest to the personnel committee with a term to expire june 30, 2015"
+  },
+  {
+   "motion": "Approve the modification to the traffic rules for the addition of stop signs at Mulpus Road and Townsend Harbor Road.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the modification to the traffic rules for the addition of stop signs at mulpus roads and townsend harbor road"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:21 p.m.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn the meeting at 8:21 p.m. respectfully submitted, elaine m. peterson executive assistant to the town manager vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR'd by macOS Vision. Text artifacts in \"2nd:\" renderings (shown as \"2\\\"d:\", \"2°:\", \"2\\\":\", \"2°°:\") are OCR anomalies but votes are clearly readable. Item 2 (Personnel Committee charge) and Item 3 (Financial Statements review) involved discussion only, no votes recorded.",
- "cost_usd": 0.1176895
+ "dropped_unquoted": 0,
+ "note": "OCR text of a scanned page set (pages 1-3), not a clean copy. The received stamp reads \"OCT 1 1 2016\" while the minutes are dated October 21, 2014; the meeting date used here is 2014-10-21 as supplied. Pete Lincoln is called \"Chair\" once in the Guenard paragraph, while Thomas Alonzo is the Chair elsewhere; treated as an error in the minutes. Votes are recorded only as \"All in Favor\" with no counts, so outcomes are \"passed\". The adjournment motion's second and vote lines are split across the page break and OCR reads the seconder's ordinal oddly (\"2°°\"). No motion to accept the Q1 financial statements is recorded. No documents list is printed.",
+ "cost_usd": 0.00825952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Member",
+   "status": "present",
+   "quote": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "member not present: phyllis luck"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Hemlock Drive",
+   "status": "present",
+   "quote": "pete lincoln, hemlock drive, reported that at the eagle house senior center they hold a volunteer appreciation day in august."
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "Island Road",
+   "status": "present",
+   "quote": "dave mcdonald, island road, echoed what mr. lincoln said about volunteers."
+  },
+  {
+   "name": "Brian Guenard",
+   "role": "applicant, Council on Aging",
+   "status": "present",
+   "quote": "brian guenard, 238 arbor street, presented to request to be appointed to the council on aging."
+  },
+  {
+   "name": "Matthew Charpentier",
+   "role": "applicant, Conservation Commission",
+   "status": "present",
+   "quote": "matthew charpentier, 5 park st. terrace presented to request to be appointed to the conservation commission."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Neighbor",
+   "status": "present",
+   "quote": "neighbor mike nault spoke favorably of mr. charpentier, stating he would be a good addition to the commission."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "applicant, Conservation Commission",
+   "status": "not stated",
+   "quote": "todd dwyer, 105 west street, is new to lunenburg."
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "applicant, Conservation Commission",
+   "status": "not stated",
+   "quote": "john rabbitt, 314 townsend harbor road, has lived here 28 years."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will review the Personnel Committee bylaw and process and continue the discussion of the added recruiting/interviewing charge at a later meeting or workshop meeting; a suggestion was made to get feedback from the Personnel Committee too.",
+   "quote": "the board will review the bylaw and process and continue the discussion at a later meeting or workshop meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q1 revenues and expenditures against budget",
+   "what_was_recorded": "Revenues were 27.2% of what is expected and expenditures were 36.4% after the first quarter, described as typical.",
+   "figures_as_printed": [
+    "27.2%",
+    "36.4%"
+   ],
+   "quote": "revenues came in at 27.2% of what is expected and expenditures came in at 36.4%."
+  },
+  {
+   "topic": "Motor vehicle excise collections",
+   "what_was_recorded": "Motor vehicle excise collections were 7% higher than last year.",
+   "figures_as_printed": [
+    "7%"
+   ],
+   "quote": "motor vehicle excise collections were 7% higher than last year."
+  },
+  {
+   "topic": "Local options meal tax",
+   "what_was_recorded": "Local options meal tax collection was 41% higher than expected; the receipts are collected by the state and then awarded to the town.",
+   "figures_as_printed": [
+    "41%"
+   ],
+   "quote": "local options meal tax collection was 41% higher than expected."
+  },
+  {
+   "topic": "Real estate tax collections",
+   "what_was_recorded": "Real estate tax collected was 4% higher than last year.",
+   "figures_as_printed": [
+    "4%"
+   ],
+   "quote": "real estate tax collected was 4% higher than last year."
+  },
+  {
+   "topic": "Net metering credits, Chase Road Solar project",
+   "what_was_recorded": "Net metering credits collected on the Chase Road Solar project were $16,795.00.",
+   "figures_as_printed": [
+    "$16,795.00"
+   ],
+   "quote": "net metering credits collected were $16,795.00 on the chase road solar project."
+  },
+  {
+   "topic": "New growth estimate",
+   "what_was_recorded": "The Assessors calculated the new growth estimate at $261,802.",
+   "figures_as_printed": [
+    "$261,802"
+   ],
+   "quote": "new growth estimate was calculated by the assessors at $261,802."
+  },
+  {
+   "topic": "Personal property tax from solar projects",
+   "what_was_recorded": "$77,000 of the new growth is coming from personal property tax related to the two solar projects.",
+   "figures_as_printed": [
+    "$77,000"
+   ],
+   "quote": "$77,000 of that is coming from personal property tax and is related to the two solar projects."
+  },
+  {
+   "topic": "Police lockup and radio watch salary appropriation",
+   "what_was_recorded": "One third of the lockup appropriation has been spent; the town is looking at regional opportunities and has a part-time desk officer to avoid overtime.",
+   "figures_as_printed": [
+    "1/3"
+   ],
+   "quote": "we have spent 1/3 of the appropriation for lockup."
+  },
+  {
+   "topic": "Tree removal over-expenditure",
+   "what_was_recorded": "Tree removal was over expended by $6000 due to the July microburst, with no state or federal reimbursement expected; the Finance Committee has been advised.",
+   "figures_as_printed": [
+    "$6000"
+   ],
+   "quote": "tree removal was over expended by $6000 due to the microburst in july."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "Hemlock Drive",
+   "topic": "volunteer appreciation day",
+   "quote": "pete lincoln, hemlock drive, reported that at the eagle house senior center they hold a volunteer appreciation day in august."
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "Island Road",
+   "topic": "volunteers and Conservation Commission resignation",
+   "quote": "dave mcdonald, island road, echoed what mr. lincoln said about volunteers."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "volunteers"
+   ],
+   "quote": "pete lincoln, hemlock drive, reported that at the eagle house senior center they hold a volunteer appreciation day in august."
+  },
+  {
+   "topic": "Appointment: Council on Aging (Brian Guenard)",
+   "resolution": "appointed",
+   "tags": [
+    "appointments",
+    "Council on Aging"
+   ],
+   "quote": "brian guenard, 238 arbor street, presented to request to be appointed to the council on aging."
+  },
+  {
+   "topic": "Conservation Commission appointment interviews",
+   "resolution": "four appointed",
+   "tags": [
+    "appointments",
+    "Conservation Commission"
+   ],
+   "quote": "matthew charpentier, 5 park st. terrace presented to request to be appointed to the conservation commission."
+  },
+  {
+   "topic": "Personnel Committee appointment rescinded and replaced",
+   "resolution": "appointment rescinded; Nancy Forest appointed",
+   "tags": [
+    "appointments",
+    "Personnel Committee"
+   ],
+   "quote": "she requested the board to rescind his appointment to the personnel committee and in his place appoint nancy forest, payroll and benefits coordinator."
+  },
+  {
+   "topic": "Traffic rules: stop signs at Mulpus Road and Townsend Harbor Road",
+   "resolution": "approved",
+   "tags": [
+    "traffic",
+    "stop signs"
+   ],
+   "quote": "ms. speidel reported this request is in regards to placing the stop signs at mulpus road for northeast bound traffic"
+  },
+  {
+   "topic": "Additional charge to the Personnel Committee",
+   "resolution": "continued to a later meeting or workshop",
+   "tags": [
+    "Personnel Committee",
+    "bylaw"
+   ],
+   "quote": "the board will review the bylaw and process and continue the discussion at a later meeting or workshop meeting."
+  },
+  {
+   "topic": "FY2015 Q1 financial statements",
+   "resolution": "reviewed; no action",
+   "tags": [
+    "financial statements",
+    "budget",
+    "FY2015"
+   ],
+   "quote": "ms. speidel reported the first quarter is typical of our expectations."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY'2015, Q1 Financial Statements",
+   "where": "text",
+   "quote": "3. review fy'2015, q1 financial statements ms. speidel reported the first quarter is typical of our expectations."
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "recruiting/interviewing volunteers via talent bank forms and making recommendations"
+  },
+  {
+   "name": "Personnel Committee bylaw",
+   "where": "text",
+   "quote": "the board will review the bylaw and process and continue the discussion at a later meeting or workshop meeting."
+  },
+  {
+   "name": "Letters from Conservation Commission members",
+   "where": "text",
+   "quote": "mr. alonzo stated although the conservation members could not attend they did send letters."
+  }
+ ],
+ "tags": [
+  "appointments",
+  "Conservation Commission",
+  "Personnel Committee",
+  "Council on Aging",
+  "traffic",
+  "stop signs",
+  "FY2015 financial statements",
+  "Q1 budget",
+  "police lockup",
+  "tree removal",
+  "solar net metering",
+  "public comment",
+  "volunteers"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

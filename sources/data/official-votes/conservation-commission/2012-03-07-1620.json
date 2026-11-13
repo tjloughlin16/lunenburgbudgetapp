@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-03-07",
  "docid": "1620",
@@ -12,39 +12,324 @@
  },
  "votes": [
   {
-   "motion": "Issue negative determination on Request for Determination of Applicability for removal of approximately 15 trees at 140 Flynn Road",
+   "motion": "Negative determination on the Request for Determination of Applicability filed by Andrew F/Patrice A Giles for removal of about 15 trees at 140 Flynn Road.",
    "moved_by": "Rob",
    "seconded_by": "Rich",
-   "outcome": "passed unanimously",
+   "outcome": "Negative 3 Unanimous",
    "procedural": false,
-   "quote": "rob/rich negative 3 unanimous"
+   "quote": "crane will be more than 100 feet from water. rob/rich negative 3 unanimous"
   },
   {
-   "motion": "Approve Notice of Intent for construction of gasoline station/convenience store at 134 Leominster Shirley Road",
+   "motion": "Approve the Notice of Intent filed by SMD Development, LLC for a gasoline station/convenience store within the 100 foot buffer zone at 134 Leominster Shirley Road.",
    "moved_by": "Mark",
    "seconded_by": "Rich",
-   "outcome": "passed unanimously",
+   "outcome": "Approved Unanimous",
    "procedural": false,
-   "quote": "mark/rich approved unanimous"
+   "quote": "green barriers will be placed where needed. mark/rich approved unanimous"
   },
   {
-   "motion": "Issue negative determination on Request for Determination of Applicability for construction of 2 single family homes at 551 Goodrich Street",
+   "motion": "Negative determination on the Request for Determination of Applicability filed by Cornerstone Land Consultants, Inc. for two single family homes at 551 Goodrich Street.",
    "moved_by": "Mark",
    "seconded_by": "Rob",
-   "outcome": "passed unanimously",
+   "outcome": "Negative 3 Unanimous",
    "procedural": false,
-   "quote": "mark/rob negative 3 unanimous"
+   "quote": "wetland areas. mark/rob negative 3 unanimous"
   },
   {
-   "motion": "Issue positive determination on Request for Determination of Applicability for demolition and new construction at 100 Sunset Lane",
+   "motion": "Positive determination on the Request for Determination of Applicability filed by Glen B/Kathleen R Reinhardt for demolition and a new house at 100 Sunset Lane; applicant needs to file a Notice of Intent.",
    "moved_by": "Rich",
    "seconded_by": "Rob",
-   "outcome": "passed unanimously",
+   "outcome": "Positive Determination Unanimous",
    "procedural": false,
    "quote": "need to file no/ rich/rob positive determination unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; one continuation item (8:00 PM, EPG Solar) was cancelled until March 21st and recorded no vote.",
- "cost_usd": 0.1136605
+ "note": "OCR text (macOS Vision) of a 2-page minutes extract; the header reads \"Foun of Lumenburg\" (Town of Lunenburg). Vote lines are shorthand (mover/seconder then result, e.g. \"Rob/Rich Negative 3 Unanimous\") with no \"motion\" wording, so they are recorded as votes with outcomes exactly as printed. Attendance is a bare name list with no present/absent marking, so members are \"not stated\". No minutes approval, adjournment, or budget figures are recorded. Page 2 public comment follows the EPG Solar item, which was cancelled and continued; the comments are not tied to a printed vote.",
+ "cost_usd": 0.0057848199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, richard bursch, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, richard bursch, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, richard bursch, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, richard bursch, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, richard bursch, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, richard bursch, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "from Whitman & Bingham, presented",
+   "status": "present",
+   "quote": "jamie rheault from whitman & bingham presented."
+  },
+  {
+   "name": "Jack Vanooski",
+   "role": "presented",
+   "status": "present",
+   "quote": "jack vanooski presented. there will be a shared"
+  },
+  {
+   "name": "Huggins",
+   "role": "Legal Counsel",
+   "status": "not stated",
+   "quote": "legal counsel huggins and whitten"
+  },
+  {
+   "name": "Whitten",
+   "role": "Legal Counsel",
+   "status": "not stated",
+   "quote": "legal counsel huggins and whitten"
+  },
+  {
+   "name": "Paulette Beardmore",
+   "role": "resident, 282 Pleasant Street",
+   "status": "present",
+   "quote": "paulette beardmore 282 pleasant street noted that there is a 300 year old stone wall going through the"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "resident, 275 Pleasant Street",
+   "status": "present",
+   "quote": "ryan stober 275 pleasant street wanted to know how the stumps were going to be removed."
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "david prokowiew requested that they make the area smaller."
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "resident, 129 Pleasant Street",
+   "status": "present",
+   "quote": "gregory bittner 129 pleasant street had a list of multiple questions and also stated that it would be no"
+  },
+  {
+   "name": "Bill Belisie",
+   "role": "resident, 642 West Street",
+   "status": "present",
+   "quote": "bill belisie 642 west street questioned fencing and why is it exempt because it is restricting wildlife?"
+  },
+  {
+   "name": "Angelina Belisle",
+   "role": "resident, 642 West Street",
+   "status": "present",
+   "quote": "angelina belisle 642 west street"
+  },
+  {
+   "name": "Nina Arnold",
+   "role": "resident, 55 West Street Terrace",
+   "status": "present",
+   "quote": "nina arnold 55 west street terrace"
+  },
+  {
+   "name": "Marilyn Quinn",
+   "role": "resident, 297 Pleasant Street",
+   "status": "present",
+   "quote": "marilyn quinn 297 pleasant street"
+  },
+  {
+   "name": "Dick Beardmore",
+   "role": "resident, 282 Pleasant Street",
+   "status": "present",
+   "quote": "dick beardmore 282 pleasant street questioned plantings"
+  },
+  {
+   "name": "Bob Elder",
+   "role": "resident, 325 Pleasant Street",
+   "status": "present",
+   "quote": "bob elder 325 pleasant street complaint about old well site and excavating"
+  },
+  {
+   "name": "Andrea",
+   "role": "",
+   "status": "present",
+   "quote": "andrea would like to commend the commissioners for all the work they have done on this project"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission requested that the haybales at 551 Goodrich Street be moved and extended to offer more protection for wetland areas.",
+   "quote": "the commission requested that haybales be moved and extended to offer more protection for wetland areas."
+  },
+  {
+   "decision": "The 8:00 PM Notice of Intent hearing for EPG Solar, LLC (solar photovoltaic farm, Off Pleasant & West Streets) was cancelled and continued to March 21.",
+   "quote": "8:00 pm ~ cancelled until march 21st ~off pleasant & west streets ~ continuation~"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paulette Beardmore",
+   "stated_role": "",
+   "topic": "stone wall on property",
+   "quote": "paulette beardmore 282 pleasant street noted that there is a 300 year old stone wall going through the property."
+  },
+  {
+   "speaker": "Ryan Stober",
+   "stated_role": "",
+   "topic": "stump removal",
+   "quote": "ryan stober 275 pleasant street wanted to know how the stumps were going to be removed."
+  },
+  {
+   "speaker": "David Prokowiew",
+   "stated_role": "",
+   "topic": "reduce the area",
+   "quote": "david prokowiew requested that they make the area smaller."
+  },
+  {
+   "speaker": "Gregory Bittner",
+   "stated_role": "",
+   "topic": "list of questions, hardship",
+   "quote": "gregory bittner 129 pleasant street had a list of multiple questions and also stated that it would be no"
+  },
+  {
+   "speaker": "Bill Belisie",
+   "stated_role": "",
+   "topic": "fencing exemption and wildlife",
+   "quote": "bill belisie 642 west street questioned fencing and why is it exempt because it is restricting wildlife?"
+  },
+  {
+   "speaker": "Angelina Belisle",
+   "stated_role": "",
+   "topic": "no comment recorded",
+   "quote": "angelina belisle 642 west street"
+  },
+  {
+   "speaker": "Nina Arnold",
+   "stated_role": "",
+   "topic": "no comment recorded",
+   "quote": "nina arnold 55 west street terrace"
+  },
+  {
+   "speaker": "Marilyn Quinn",
+   "stated_role": "",
+   "topic": "no comment recorded",
+   "quote": "marilyn quinn 297 pleasant street"
+  },
+  {
+   "speaker": "Dick Beardmore",
+   "stated_role": "",
+   "topic": "plantings",
+   "quote": "dick beardmore 282 pleasant street questioned plantings"
+  },
+  {
+   "speaker": "Bob Elder",
+   "stated_role": "",
+   "topic": "old well site and excavating",
+   "quote": "bob elder 325 pleasant street complaint about old well site and excavating"
+  },
+  {
+   "speaker": "Dick Beardmore",
+   "stated_role": "",
+   "topic": "supervision within buffer zone",
+   "quote": "dick beardmore 282 pleasant street will there be supervision when they are working within the 100' buffer"
+  },
+  {
+   "speaker": "Andrea",
+   "stated_role": "",
+   "topic": "commend commissioners; construction sequence",
+   "quote": "andrea would like to commend the commissioners for all the work they have done on this project"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "140 Flynn Road, Request for Determination of Applicability (Giles), tree removal",
+   "resolution": "negative determination, 3 unanimous",
+   "quote": "7:00 pm ~ 140 flynn road ~ pursuant to mgl ch 131, s 40 as amended and the town of lunenburg",
+   "tags": [
+    "RDA",
+    "trees",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "134 Leominster Shirley Road, Notice of Intent (SMD Development), gas station/convenience store",
+   "resolution": "approved unanimous",
+   "quote": "7:15 pm ~ 134 leominster shirley road ~ pursuant to mgl ch 131, s 40 as amended and the town of lunenburg",
+   "tags": [
+    "NOI",
+    "buffer zone",
+    "commercial"
+   ]
+  },
+  {
+   "topic": "551 Goodrich Street, Request for Determination of Applicability (Cornerstone Land Consultants), two homes",
+   "resolution": "negative determination, 3 unanimous; haybales request",
+   "quote": "7:30 pm ~ 551 goodrich street ~ pursuant to mgl ch 131, s 40 as amended and the town of lunenburg",
+   "tags": [
+    "RDA",
+    "housing",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "100 Sunset Lane, Request for Determination of Applicability (Reinhardt), demolition and new house",
+   "resolution": "positive determination, unanimous; applicant to file NOI",
+   "quote": "7:45pm ~ 100 sunset lane ~ pursuant to mgl ch 131, s 40 as amended and the town of lunenburg",
+   "tags": [
+    "RDA",
+    "buffer zone",
+    "residential"
+   ]
+  },
+  {
+   "topic": "Off Pleasant & West Streets, Notice of Intent (EPG Solar), solar farm; continuation",
+   "resolution": "cancelled, continued to March 21; public comment recorded",
+   "quote": "8:00 pm ~ cancelled until march 21st ~off pleasant & west streets ~ continuation~",
+   "tags": [
+    "NOI",
+    "solar",
+    "continuation",
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "request for determination",
+  "notice of intent",
+  "buffer zone",
+  "solar farm",
+  "public comment",
+  "tree removal"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

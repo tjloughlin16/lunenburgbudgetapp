@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-02-19",
  "docid": "4834",
@@ -12,31 +12,413 @@
  },
  "votes": [
   {
-   "motion": "Approve the indoor weekday entertainment license for the Cosimi Corporation d/b/a as the Bootlegger Restaurant",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Sund",
+   "motion": "Approve the indoor weekday entertainment license for the Cosimi Corporation d/b/a as the Bootlegger Restaurant.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Carl (Ernie)Sund",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to approve the indoor weekday entertainment license for the cosimi corporation d/b/a as the bootlegger restaurant. mr. sund seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo moved to approve the indoor weekday entertainment license for the cosimi corporation d/b/a as the bootlegger restaurant. mr. sund seconded."
   },
   {
-   "motion": "Move the annual town elections to April 30th",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Move the Annual Town Elections to April 30 from the third Saturday in May, per the Board of Registrars request.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram motioned to move the elections to april 30\". mr. debettencourt seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram motioned to move the elections to april 30\". mr. debettencourt seconded."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. deBettencourt",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Steven M. deBettencourt",
    "seconded_by": "Ms. Alonzo",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. alonzo seconded. on vote motion carried, 4 in favor, 0 opposed"
+   "quote": "mr. debettencourt moved to adjourn the meeting. ms. alonzo seconded. on vote motion carried, 4 in favor, 0 opposed"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1257715
+ "note": "OCR text (macOS Vision) with typos and line-break artifacts; quotes were copied from the OCR text and whitespace-collapsed. The adjournment motion names \"Ms. Alonzo\" as seconder although the only Alonzo on the board is Tom Alonzo (Mr.); the vote is printed as 4 in favor against five present members, both as printed. The 2/5/13 minutes approval and the warrant vote are not recorded as motions. The Aro Farm vote referenced in public comment occurred at a prior meeting and is not recorded here. Attendance is taken from the opening line; no absences are stated.",
+ "cost_usd": 0.009822420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie)sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie)sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Carl (Ernie)Sund",
+   "role": "",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie)sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie)sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie)sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie)sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "50 Sunset Lane, member of the public",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, spoke to the bos concerning last week's vote."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Island Road, member of the public",
+   "status": "present",
+   "quote": "dave macdonald, island road, started his comments to the bos by extending his condolences"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "50 Sunset Lane, member of the public",
+   "status": "present",
+   "quote": "phyllis luck, 50 sunset lane, spoke to the bos concerning her deep concern"
+  },
+  {
+   "name": "Jane Denike",
+   "role": "347 Highland Street, member of the public",
+   "status": "present",
+   "quote": "jane denike, 347 highland street, spoke to the bos in defense of mr. sund"
+  },
+  {
+   "name": "Lunenburg Police Chief Marino",
+   "role": "Lunenburg Police Chief",
+   "status": "present",
+   "quote": "chief marino introduced mr. lekaditis to the bos. the bos welcomed mr. lekaditis to the police force."
+  },
+  {
+   "name": "Peter Lekaditis",
+   "role": "Reserve Officer",
+   "status": "not stated",
+   "quote": "chief marino introduced mr. lekaditis to the bos. the bos welcomed mr. lekaditis to the police force."
+  },
+  {
+   "name": "Pam French",
+   "role": "representing the applicant (Alex Cosimi, owner of The Bootlegger)",
+   "status": "present",
+   "quote": "pam french spoke to represent alex cosimi, owner of the bootlegger."
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "VHB Engineering",
+   "status": "present",
+   "quote": "update on summer street project, trish domigan, vhb engineering- ms. domigan began by"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "26 Cortland Circle, School Building Committee",
+   "status": "present",
+   "quote": "update on the school building committee activities - mike mackin 26 cortland circle, updated the bos on"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed to set aside the outdoor weekday entertainment licensing question for later and focus on the indoor weekday license only.",
+   "quote": "mr. matthews said they would have to circle back to the issue of outdoor weekday licensing later and they should just focus on weekday license."
+  },
+  {
+   "decision": "Town Manager suggested a Monty Tech representative come to explain the Stabilization Fund request (suggestion, no vote).",
+   "quote": "ms. speidel suggested that a monty tech representative come and explain that situation for the stabilization fund."
+  },
+  {
+   "decision": "Chair stated he had invited State Representatives Benson and DiNatale and Senator Flanagan to attend a BOS meeting on March 5th or 12th.",
+   "quote": "mr. matthews stated that he had invited state representatives benson and dinatale as well as senator flanagan to attend a bos meeting on either march 5th or 12th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Aro Farm property valuation and purchase cost (public comment by Carl (Ernie)Sund)",
+   "what_was_recorded": "Sund said the Town assesses the Aro Farm property at $1.1 million and that the Town would not want to spend $2.1 million to buy it.",
+   "figures_as_printed": [
+    "$1.1 million dollars",
+    "$2.1 million"
+   ],
+   "quote": "the property is assessed by the town as being valued at $1.1 million dollars and we would not want to spend $2.1 million to purchase it."
+  },
+  {
+   "topic": "Jones House sale",
+   "what_was_recorded": "Sund cited the Jones House, appraised at $250,000.00, which the Town sold for only $10,000.00.",
+   "figures_as_printed": [
+    "$250,000.00",
+    "$10,000.00"
+   ],
+   "quote": "despite being appraised at $250,000.00, the town sold it at only $10,000.00."
+  },
+  {
+   "topic": "Warrant payment",
+   "what_was_recorded": "Warrant 2/19/13 W 45-13 was listed with a total of $16,370.41.",
+   "figures_as_printed": [
+    "$16,370.41"
+   ],
+   "quote": "warrants: 2/19/13 w 45-13 $16,370.41"
+  },
+  {
+   "topic": "Quarterly water commissioners water usage billing",
+   "what_was_recorded": "A quarterly water commissioners water usage billing was listed in the amount of $4,540.74.",
+   "figures_as_printed": [
+    "$4,540.74"
+   ],
+   "quote": "quarterly water commissioners water usage billing in the amount of $4,540.74"
+  },
+  {
+   "topic": "Summer Street Project bond money",
+   "what_was_recorded": "Ms. Domigan said she was waiting on Senator Flanagan's office on whether bond money would be released; no figure given.",
+   "figures_as_printed": [],
+   "quote": "she was waiting to hear from senator flanagan's office on whether bond money would be released for the project."
+  },
+  {
+   "topic": "Monty Tech Stabilization Fund",
+   "what_was_recorded": "Monty Tech wants a Stabilization Fund to set money aside for capital items; no amount was given and nothing would be put in immediately.",
+   "figures_as_printed": [],
+   "quote": "monty tech wants to establish the fund so that they could set money aside to maintain capital items."
+  },
+  {
+   "topic": "Annual Town Election date change cost savings",
+   "what_was_recorded": "The Board of Registrars recommended moving the Annual Town Elections to April 30 partly for cost savings; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "for cost saving reasons as well as convenience reasons."
+  },
+  {
+   "topic": "FY2014 budget presentation",
+   "what_was_recorded": "The Town Manager was to present the FY2014 budget at a Finance Committee hearing on February 28; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "the town manager would be presenting the fy2014 budget at the finance committee hearing on thursday, february 28th."
+  },
+  {
+   "topic": "Mixed Use Village District grant application to MRPC",
+   "what_was_recorded": "The Planning Department/Board will submit a District Local Technical Assistance grant application to MRPC seeking funding for a downtown Mixed Use Village District Bylaw study; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "will be submitting a district local technical assistance grant application to mrpc to look for funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "topic": "Boys and Girls Club game show fundraiser",
+   "quote": "mr. alonzo started the meeting with a public comment from the board inregards to the boys and girls club"
+  },
+  {
+   "speaker": "Carl (Ernie)Sund",
+   "stated_role": "",
+   "topic": "Reasons for voting against Aro Farm purchase",
+   "quote": "mr. sund continued the public comments from the board by referencing the previous week's discussion regarding the aro"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Request to reverse Aro Farm Town Meeting vote",
+   "quote": "carl luck, 50 sunset lane, spoke to the bos concerning last week's vote."
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Island Road",
+   "topic": "Aro Farm Town Meeting vote; Sund quote",
+   "quote": "dave macdonald, island road, started his comments to the bos by extending his condolences"
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Denial of citizens' vote on Aro Farm",
+   "quote": "phyllis luck, 50 sunset lane, spoke to the bos concerning her deep concern"
+  },
+  {
+   "speaker": "Jane Denike",
+   "stated_role": "347 Highland Street",
+   "topic": "Defense of Sund; suggested firm Town Meeting policy",
+   "quote": "jane denike, 347 highland street, spoke to the bos in defense of mr. sund"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "",
+   "topic": "Asked board to reconsider Aro Farm Town Meeting vote",
+   "quote": "ms. bertram asked that the board members who voted against sending the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no action; Aro Farm vote discussed",
+   "quote": "mr. alonzo started the meeting with a public comment from the board inregards to the boys and girls club",
+   "tags": [
+    "public comment",
+    "Aro Farm",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Introduction of Reserve Officer Peter Lekaditis",
+   "resolution": "welcomed to police force",
+   "quote": "chief marino introduced mr. lekaditis to the bos. the bos welcomed mr. lekaditis to the police force.",
+   "tags": [
+    "police",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Weekday Entertainment License, Bootlegger Restaurant",
+   "resolution": "approved indoor weekday entertainment license 5-0; outdoor licensing deferred",
+   "quote": "ms. speidel pointed out that the paperwork in front of the bos was for a weekday license, not a weekend license",
+   "tags": [
+    "licensing",
+    "entertainment",
+    "restaurant"
+   ]
+  },
+  {
+   "topic": "Update on Summer Street Project",
+   "resolution": "no action (update)",
+   "quote": "ms. domigan began by addressing the bos with an update that all three communities of lunenburg, leominster and fitchburg have signed off",
+   "tags": [
+    "Summer Street",
+    "roads",
+    "MassDOT",
+    "TIP"
+   ]
+  },
+  {
+   "topic": "Establishment of Stabilization Fund, Monty Tech",
+   "resolution": "no action; would need Town Meeting vote",
+   "quote": "monty tech is interested in establishing a stabilization fund and needs member communities to vote on and approve the establishment of it.",
+   "tags": [
+    "Monty Tech",
+    "stabilization fund",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Request from Board of Registrars to move Annual Town Election date",
+   "resolution": "moved election to April 30, passed 5-0",
+   "quote": "the board of registrars recommends that the annual town elections be moved up to april 30th date",
+   "tags": [
+    "elections",
+    "registrars"
+   ]
+  },
+  {
+   "topic": "Update on School Building Committee activities",
+   "resolution": "no action (update)",
+   "quote": "update on the school building committee activities - mike mackin 26 cortland circle, updated the bos on",
+   "tags": [
+    "school building",
+    "feasibility study",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no vote recorded; action file none",
+   "quote": "action file issues: none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "ms. bertram stated that the planning board held public meetings on the aro farm propeity that",
+   "tags": [
+    "Planning Board",
+    "Aro Farm",
+    "FY2014 budget"
+   ]
+  },
+  {
+   "topic": "Town Manager report / department reports",
+   "resolution": "no action",
+   "quote": "ms. speidel said that the mass municipal association is hosting a series of spring legislative breakfast meetings.",
+   "tags": [
+    "MMA",
+    "grants",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; deBettencourt would not change vote",
+   "quote": "ms. bertram asked that the board members who voted against sending the",
+   "tags": [
+    "public comment",
+    "Aro Farm"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:12 PM, passed 4-0",
+   "quote": "being no further business mr. debettencourt moved to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant 2/19/13 W 45-13",
+   "where": "text",
+   "quote": "warrants: 2/19/13 w 45-13 $16,370.41"
+  },
+  {
+   "name": "District Local Technical Assistance grant application to MRPC (Planning Department/Board)",
+   "where": "text",
+   "quote": "will be submitting a district local technical assistance grant application to mrpc to look for funding"
+  }
+ ],
+ "tags": [
+  "Aro Farm",
+  "public comment",
+  "liquor/entertainment licensing",
+  "Summer Street",
+  "Monty Tech",
+  "elections",
+  "school building committee",
+  "warrants",
+  "FY2014 budget",
+  "grants",
+  "police appointment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

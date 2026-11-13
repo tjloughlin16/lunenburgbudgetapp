@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-12-04",
  "docid": "2537",
@@ -11,7 +11,135 @@
   "doc_url": "/docs/meetings/historical-commission/2012-12-04-minutes-2537.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "OCR text (macOS Vision); no votes recorded. The minutes describe discussions and decisions (e.g., \"It was agreed, this was a good idea\" regarding providing the property inventory to the Building Inspector), but contain no motions with formal voting language (moved by, seconded by, vote count, unanimously approved, carried, failed, or so voted).",
- "cost_usd": 0.0815825
+ "dropped_unquoted": 1,
+ "note": "OCR text of a scanned page; personal names are garbled in places (e.g. 'Patrich latery', 'Rebecca Lanery' vs 'Becky Lantry', 'Pat Slaterry'), so names are recorded as printed. The minutes record no motions or votes at all, including approval of minutes and adjournment, so the votes list is empty. Recorded attendance is from the header line only.",
+ "cost_usd": 0.0028309200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Patrich latery",
+   "role": "",
+   "status": "present",
+   "quote": "present: patrich latery, amory phelps, rebecca lanery, richard micrath, absent damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "",
+   "status": "present",
+   "quote": "present: patrich latery, amory phelps, rebecca lanery, richard micrath, absent damon mcquaid"
+  },
+  {
+   "name": "Rebecca Lanery",
+   "role": "",
+   "status": "present",
+   "quote": "present: patrich latery, amory phelps, rebecca lanery, richard micrath, absent damon mcquaid"
+  },
+  {
+   "name": "Richard Micrath",
+   "role": "",
+   "status": "present",
+   "quote": "present: patrich latery, amory phelps, rebecca lanery, richard micrath, absent damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "",
+   "status": "absent",
+   "quote": "present: patrich latery, amory phelps, rebecca lanery, richard micrath, absent damon mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed that a copy of the Assessors' inventory of properties over 70 years old should be given to the Building Inspector's office so they have advance notice of possible Demolition Delay triggers.",
+   "quote": "it was agreed, this was a good idea."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; no minutes to approve",
+   "quote": "no minutes to approve due to damon mcquaid 's absence.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger articles",
+   "resolution": "reported; article schedule set through February",
+   "quote": "becky lantry has written an article for the lunenburg leger.",
+   "tags": [
+    "newsletter",
+    "publicity",
+    "Bellows Mansion"
+   ]
+  },
+  {
+   "topic": "Jones House project tour",
+   "resolution": "tour arranged for after business meeting",
+   "quote": "amory phelps has arranged a project tour tonight at the close of the business meeting.",
+   "tags": [
+    "Jones House",
+    "site visit"
+   ]
+  },
+  {
+   "topic": "Town-wide inventory of properties",
+   "resolution": "copy to Building Inspector agreed",
+   "quote": "damon mcquaid has contacted to assessors to see if they can give us an inventory list of properties greater than 70 years old.",
+   "tags": [
+    "inventory",
+    "demolition delay",
+    "Assessors"
+   ]
+  },
+  {
+   "topic": "Demolition delay - Padula House",
+   "resolution": "updated; no action",
+   "quote": "the house still needs to be moved for the present needs of powell business plan.",
+   "tags": [
+    "demolition delay",
+    "Padula House"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:00 pm; no motion recorded",
+   "quote": "meeting adjourned @7:00 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Excel program (property inventory of properties greater than 70 years old), from the Assessors",
+   "where": "text",
+   "quote": "they responded with an excel program."
+  },
+  {
+   "name": "Article \"A House for all Ages\" for the Lunenburg Ledger, about the Bellows Mansion/Eagle House",
+   "where": "text",
+   "quote": "titled:\"a house for all ages\" it is about the bellows mansion/eagle house in the center"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "Ledger articles",
+  "Jones House",
+  "town-wide inventory",
+  "demolition delay",
+  "Padula House",
+  "Bellows Mansion",
+  "OCR scan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "zoning-board-of-appeals",
  "meeting_date": "2015-05-27",
  "docid": "5958",
@@ -12,15 +12,114 @@
  },
  "votes": [
   {
-   "motion": "Grant the Special Permit for a Self-Storage Facility at 270 Electric Avenue as requested",
+   "motion": "Grant the Special Permit for a Self-Storage Facility as requested.",
    "moved_by": "James Besarkarski",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "james besarkarski made a motion to grant the special permit for a self-storage facility as requested, paul doherty seconded the motion. the submitted plans are part of the decision and subsequently on file with the zoning board of appeals. all members voted in favor of approving the project."
+   "quote": "james besarkarski made a motion to grant the special permit for a self-storage facility as requested, paul doherty seconded the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of single page; legible. Five voting members present: Raymond E. Beal (Chairman), Donald F. Bowen, James Besarkarski, Alfred Gravelle, and Paul Doherty. Hans Wentrup noted as present but not voting.",
- "cost_usd": 0.0901855
+ "note": "Text is OCR (macOS Vision) of a one-page minutes document. The motion's vote is recorded only as \"All members voted in favor,\" with no count printed. The minutes do not state a separate adjournment vote; adjournment at 8:08 p.m. is stated without a motion. Plans referenced as \"submitted plans\" are not named by title or date.",
+ "cost_usd": 0.00268732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Raymond E, Beal",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board members present: raymond e, beal chairman, donald f. bowen james besarkarski,"
+  },
+  {
+   "name": "Donald F. Bowen",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members present: raymond e, beal chairman, donald f. bowen james besarkarski,"
+  },
+  {
+   "name": "James Besarkarski",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "james besarkarski made a motion to grant the special permit for a self-storage facility as requested, paul doherty seconded the motion."
+  },
+  {
+   "name": "Alfred Gravelle",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members present: raymond e, beal chairman, donald f. bowen james besarkarski,"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "james besarkarski made a motion to grant the special permit for a self-storage facility as requested, paul doherty seconded the motion."
+  },
+  {
+   "name": "Hans Wentrup",
+   "role": "present but not voting",
+   "status": "present",
+   "quote": "hans wentrup was present but not voting."
+  },
+  {
+   "name": "Richard A. Bursch",
+   "role": "Trustee, LTN Realty Trust; applicant",
+   "status": "present",
+   "quote": "others present: richard a. bursch, trustee, ltn realty trust, 308 electric avenue and michelle harvey."
+  },
+  {
+   "name": "Michelle Harvey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others present: richard a. bursch, trustee, ltn realty trust, 308 electric avenue and michelle harvey."
+  },
+  {
+   "name": "Lisa A: Normandin",
+   "role": "Board Secretary",
+   "status": "not stated",
+   "quote": "minutes submitted by lisa a: normandin, board secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The vote was delayed until the May 27, 2015 meeting, and the chair acknowledged a glitch in the abutter mailing.",
+   "quote": "the vote was delayed until the may 27, 2015 meeting and mr. beal acknowledged a glitch in the abutter mailing."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continuance of public hearing: Special Permit for Self-Storage Facility, 270 Electric Avenue",
+   "resolution": "Special Permit granted",
+   "quote": "was seeking a special permit for the construction and operation of a \"self storage facility\"",
+   "tags": [
+    "special permit",
+    "self-storage",
+    "270 Electric Avenue",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Submitted plans (Special Permit, Self-Storage Facility)",
+   "where": "text",
+   "quote": "the submitted plans are part of the decision and subsequently on file with the zoning board of appeals."
+  }
+ ],
+ "tags": [
+  "zoning",
+  "special permit",
+  "self-storage facility",
+  "public hearing continuance",
+  "270 Electric Avenue"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-10-20",
  "docid": "1587",
@@ -12,23 +12,205 @@
  },
  "votes": [
   {
-   "motion": "Issue Negative Determination of Applicability for 76 Peninsula Drive three-car garage addition and tree removal",
+   "motion": "Vote on the Amended Order of Conditions filed by Ron Albert for 69 Island Road, continuation (motion wording not printed).",
+   "moved_by": "Rich",
+   "seconded_by": "Jack",
+   "outcome": "Unanimous",
+   "procedural": false,
+   "quote": "had no objections to the new plans. rich/jack unanimous"
+  },
+  {
+   "motion": "Vote on the Request for Determination of Applicability filed by Wayne/Ruth Cormier for 76 Peninsula Drive, addition of a three-car garage and removal of one tree within the 100' buffer zone (motion wording not printed).",
    "moved_by": "Jack",
    "seconded_by": "Rich",
    "outcome": "Negative 3",
    "procedural": false,
-   "quote": "addition of a three car garage, one tree to be removed within the 100' buffer zone. tree leaning toward houses. jack/rich negative 3"
+   "quote": "tree leaning toward houses. jack/rich negative 3"
   },
   {
-   "motion": "Change the meeting time to 7:00 PM",
+   "motion": "To discuss whether changing the meeting time to 7:00 PM is an option.",
    "moved_by": "Rich",
    "seconded_by": "Jack",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "Unanimous",
+   "procedural": false,
    "quote": "discuss whether it is an option to change meeting time to 7:00 pm. rich/jack unanimous."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-scanned minutes. Vote 2 outcome \"Negative 3\" appears to indicate a Negative Determination of Applicability with 3 commissioners voting. Vote 3 on meeting time change is marked procedural.",
- "cost_usd": 0.1257085
+ "dropped_unquoted": 0,
+ "note": "OCR text from a single page with garbled characters (e.g., '/SLAND ROAD' for Island Road, 'ut in driveway', 'ș 40'); the 69 Island Road description is cut off mid-sentence. Commission members appear only as first names in vote lines (Rich, Jack); no attendance roll is printed. Vote lines give no motion wording, so motions are described from context; '76 Peninsula' result 'Negative 3' is printed without a stated pass/fail outcome. Mover/seconder taken from the 'Rich/Jack' and 'Jack/Rich' order as printed. No dollar figures, no documents list printed.",
+ "cost_usd": 0.00559062,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ron Albert",
+   "role": "applicant (Amended Order of Conditions, 69 Island Road)",
+   "status": "present",
+   "quote": "ron albert presented updated plan"
+  },
+  {
+   "name": "Andrew (Cannavino's son-in-law)",
+   "role": "abutter, as printed",
+   "status": "not stated",
+   "quote": "had no objections to the new plans"
+  },
+  {
+   "name": "Wayne/Ruth Cormier",
+   "role": "applicant (Request for Determination of Applicability, 76 Peninsula Drive)",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by wayne/ruth cormier"
+  },
+  {
+   "name": "Carolyn McCarthy",
+   "role": "applicant (Notice of Intent, 23 Valley Road)",
+   "status": "not stated",
+   "quote": "intent filed by carolyn mccarthy (james rheault of whitman & bingham associates llc)"
+  },
+  {
+   "name": "James Rheault",
+   "role": "of Whitman & Bingham Associates LLC",
+   "status": "not stated",
+   "quote": "intent filed by carolyn mccarthy (james rheault of whitman & bingham associates llc)"
+  },
+  {
+   "name": "Phil Porter",
+   "role": "Wilder Beach Association",
+   "status": "not stated",
+   "quote": "wilder beach association ~ phil porter"
+  },
+  {
+   "name": "Phil",
+   "role": "appeared before the Commission (surname not printed)",
+   "status": "present",
+   "quote": "phil and steve dipace appeared before the commission with more questions regarding whalom lake spillway"
+  },
+  {
+   "name": "Steve DiPace",
+   "role": "appeared before the Commission",
+   "status": "present",
+   "quote": "phil and steve dipace appeared before the commission with more questions regarding whalom lake spillway"
+  },
+  {
+   "name": "Rich",
+   "role": "Commission member (as printed in vote record)",
+   "status": "not stated",
+   "quote": "discuss whether it is an option to change meeting time to 7:00 pm. rich/jack unanimous."
+  },
+  {
+   "name": "Jack",
+   "role": "Commission member (as printed in vote record)",
+   "status": "not stated",
+   "quote": "discuss whether it is an option to change meeting time to 7:00 pm. rich/jack unanimous."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "It was suggested that the Wilder Beach Association file an RDA and come to the next meeting regarding the Whalom Lake spillway (suggestion, no vote recorded).",
+   "quote": "it was suggested that they file an rda and come to our next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Andrew (Cannavino's son-in-law)",
+   "stated_role": "as printed; abutter context",
+   "topic": "69 Island Road amended plans",
+   "quote": "had no objections to the new plans"
+  },
+  {
+   "speaker": "Phil and Steve DiPace",
+   "stated_role": "appeared before the Commission",
+   "topic": "Whalom Lake spillway questions",
+   "quote": "phil and steve dipace appeared before the commission with more questions regarding whalom lake spillway"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "7:30 PM hearing: 69 Island Road, Amended Order of Conditions (continuation), Ron Albert",
+   "resolution": "unanimous vote recorded; motion wording not printed",
+   "quote": "had no objections to the new plans. rich/jack unanimous",
+   "tags": [
+    "wetlands",
+    "amended order of conditions",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "7:40 PM hearing: 76 Peninsula Drive, Request for Determination of Applicability, Wayne/Ruth Cormier",
+   "resolution": "vote recorded as Negative 3; motion wording not printed",
+   "quote": "tree leaning toward houses. jack/rich negative 3",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "tree removal",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "7:50 PM hearing: 23 Valley Road, Notice of Intent, Carolyn McCarthy (continuation)",
+   "resolution": "deleted from schedule",
+   "quote": "propane gas tank excavation will require separate notice of intent. deleted from schedule",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "tree cutting"
+   ]
+  },
+  {
+   "topic": "Open discussion: Wilder Beach Association, Whalom Lake spillway",
+   "resolution": "discussed; suggested RDA filing and return to next meeting; no vote",
+   "quote": "it was suggested that they file an rda and come to our next meeting.",
+   "tags": [
+    "Whalom Lake",
+    "spillway",
+    "Wilder Beach Association",
+    "open discussion"
+   ]
+  },
+  {
+   "topic": "Discussion of changing meeting time to 7:00 PM",
+   "resolution": "unanimous vote to discuss; no change recorded",
+   "quote": "discuss whether it is an option to change meeting time to 7:00 pm. rich/jack unanimous.",
+   "tags": [
+    "meeting time",
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Amended Order of Conditions filed by Ron Albert (69 Island Road)",
+   "where": "text",
+   "quote": "public hearing on an amended order of conditions filed by ron albert"
+  },
+  {
+   "name": "updated plan showing adjustments to the driveway, catch basins and retention pond (Ron Albert)",
+   "where": "text",
+   "quote": "ron albert presented updated plan"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Wayne/Ruth Cormier (76 Peninsula Drive)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by wayne/ruth cormier"
+  },
+  {
+   "name": "Notice of Intent filed by Carolyn McCarthy (23 Valley Road)",
+   "where": "text",
+   "quote": "intent filed by carolyn mccarthy (james rheault of whitman & bingham associates llc)"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "public hearings",
+  "Whalom Lake spillway",
+  "meeting time",
+  "Wetlands Protection Act"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

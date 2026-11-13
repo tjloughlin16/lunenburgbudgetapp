@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-06-18",
  "docid": "3758",
@@ -12,15 +12,212 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the workshop meeting.",
    "moved_by": "N. Lockwood",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion n. lockwood to adjourn, second, k. chenis, adjourned 8:15 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0839265
+ "note": "Workshop minutes with no agenda structure and no roll-call or tally. The only motion recorded is the adjournment, which gives no vote count, so its outcome is 'not stated'. Marion M. Benson appears only in the letterhead and is not recorded as attending, so she is omitted. No dollar figures are printed.",
+ "cost_usd": 0.00482252,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Re-Use Committee Chair",
+   "status": "present",
+   "quote": "also present: re-use committee- chair jamie toale, dave mcdonald, ron albert, dave matthews, amory phelps, deb seeley, steve raboin"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "Re-Use Committee",
+   "status": "present",
+   "quote": "also present: re-use committee- chair jamie toale, dave mcdonald, ron albert, dave matthews, amory phelps, deb seeley, steve raboin"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Re-Use Committee",
+   "status": "present",
+   "quote": "also present: re-use committee- chair jamie toale, dave mcdonald, ron albert, dave matthews, amory phelps, deb seeley, steve raboin"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Re-Use Committee",
+   "status": "present",
+   "quote": "also present: re-use committee- chair jamie toale, dave mcdonald, ron albert, dave matthews, amory phelps, deb seeley, steve raboin"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Re-Use Committee",
+   "status": "present",
+   "quote": "also present: re-use committee- chair jamie toale, dave mcdonald, ron albert, dave matthews, amory phelps, deb seeley, steve raboin"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Re-Use Committee",
+   "status": "present",
+   "quote": "also present: re-use committee- chair jamie toale, dave mcdonald, ron albert, dave matthews, amory phelps, deb seeley, steve raboin"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Re-Use Committee",
+   "status": "present",
+   "quote": "also present: re-use committee- chair jamie toale, dave mcdonald, ron albert, dave matthews, amory phelps, deb seeley, steve raboin"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "Resident",
+   "status": "present",
+   "quote": "resident david rodgers opined passios might have issues of transferring ownership to town."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The revised Village District Bylaw will be forwarded to the Re-Use Committee as it is revised.",
+   "quote": "as the village district bylaw is revised, it will be forwarded to the re -use committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Passios maintenance and repair cost",
+   "what_was_recorded": "The Re-Use Committee reported that Passios has a significant cost to maintain and repair; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "passios- significant cost to maintain and repair."
+  },
+  {
+   "topic": "Survey work for Passios parcel",
+   "what_was_recorded": "Survey work to set the Passios parcel line may be paid for by an interested developer as part of a proposal; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "if there is an interested developer, developer may be willing to pay for survey work as part of their proposal."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "Resident",
+   "topic": "Passios ownership transfer, zoning, parking and possible reuse",
+   "quote": "resident david rodgers opined passios might have issues of transferring ownership to town. what about zoning, frontage, parking?"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Re-Use Committee recommendations for municipal buildings",
+   "resolution": "reported; no action",
+   "quote": "re-use committee chair j. toale noted the committee's recommendations:",
+   "tags": [
+    "re-use committee",
+    "municipal buildings",
+    "Eagle House",
+    "Brooks House",
+    "Ritter Building",
+    "Passios",
+    "Town Hall"
+   ]
+  },
+  {
+   "topic": "Public comment on Passios reuse",
+   "resolution": "no action",
+   "quote": "resident david rodgers opined passios might have issues of transferring ownership to town.",
+   "tags": [
+    "Passios",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Center zoning and Village District Bylaw",
+   "resolution": "discussed; bylaw to be revised and forwarded to Re-Use Committee",
+   "quote": "long term view for town center is for zoning which will open it up for commercial, retail, mixed use, etc.",
+   "tags": [
+    "Village District Bylaw",
+    "Town Center zoning",
+    "overlay districts",
+    "fall special town meeting"
+   ]
+  },
+  {
+   "topic": "Passios parcel transfer and survey",
+   "resolution": "noted; no action",
+   "quote": "the school committee has already voted to move the passios parcel to the town.",
+   "tags": [
+    "Passios",
+    "school committee",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Public charrette planning",
+   "resolution": "discussed; Board input sought on agenda and date",
+   "quote": "the planning board is planning to hold a public charrette in august and would appreciate involvement and co-hosting by the re-use committee.",
+   "tags": [
+    "charrette",
+    "Re-Use Committee",
+    "August"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:15 PM",
+   "quote": "motion n. lockwood to adjourn, second, k. chenis, adjourned 8:15 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Village District Bylaw",
+   "where": "list",
+   "quote": "documents used at workshop: draft village district bylaw"
+  },
+  {
+   "name": "RFP template",
+   "where": "text",
+   "quote": "currently developing go-to-market plan and creating rfp template."
+  }
+ ],
+ "tags": [
+  "workshop",
+  "Re-Use Committee",
+  "Passios",
+  "Village District Bylaw",
+  "Town Center zoning",
+  "municipal buildings",
+  "public charrette",
+  "school parcel",
+  "survey"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at workshop:"
+ },
+ "dropped_unquoted_by_field": {}
 }

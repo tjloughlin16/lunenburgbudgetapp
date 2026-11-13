@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-09-15",
  "docid": "5491",
@@ -12,23 +12,360 @@
  },
  "votes": [
   {
-   "motion": "Move forward with payment #2",
+   "motion": "Move forward with payment #2 (Review of Pay Applications 1, 2)",
    "moved_by": "Mike N",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: mike n to move forward with payment #2 second: john r. vote: unanimous"
   },
   {
-   "motion": "Accept the document 'Residential Grinder Pump Station Specifications' for a simplex submersible grinder pump",
+   "motion": "Accept the document \"Residential Grinder Pump Station Specifications\" for a simplex submersible grinder pump dated 9/14/15",
    "moved_by": "John R.",
    "seconded_by": "Sue B.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: john r. second: sue b. to accept the document \"residential grinder pump station specifications\" for a simplex submersible grinder pump vote: unanimous"
+   "quote": "motion: john r. second: sue b. to accept the document \"residential grinder pump station specifications\" for a simplex submersible grinder pump"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Two votes recorded with explicit motions and unanimous results. The Order of Assessment was signed off on but no formal motion or vote is recorded in the minutes.",
- "cost_usd": 0.08333950000000001
+ "note": "Text is OCR of a scan. Page 1 begins mid-sentence (\"hook up.\") and page 2 is blank, so the start of the meeting (call to order, agenda, roll call, approval of prior minutes, any adjournment) is not in the text. No attendance roll is printed; commissioners are named only as motion makers or assignees, so attendance is recorded as not stated. Only two votes are printed, both unanimous with no roll-call count. No dollar figures are printed anywhere. No public comment section is printed. The \"Pratt/Lakeview\" and \"Pleasantview\" topic quotes are truncated at the point where the minutes continue.",
+ "cost_usd": 0.00701102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike N",
+   "role": "Commission member (role not printed; moved motion)",
+   "status": "not stated",
+   "quote": "motion: mike n to move forward with payment #2"
+  },
+  {
+   "name": "John R.",
+   "role": "Commission member (role not printed; seconded and moved motions)",
+   "status": "not stated",
+   "quote": "motion: john r. second: sue b."
+  },
+  {
+   "name": "Sue B.",
+   "role": "Commission member (role not printed; seconded motion)",
+   "status": "not stated",
+   "quote": "motion: john r. second: sue b."
+  },
+  {
+   "name": "Barb L.",
+   "role": "Commission member (role not printed)",
+   "status": "not stated",
+   "quote": "barb l. will send a memo to the engineer for the applicant with the privilege and connections fees"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "Elm Street applicant (appointment)",
+   "status": "present",
+   "quote": "steve marsden (elm street) had an appointment regarding privilege fees but the issue has been resolved."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sean Patrick's will be sent a certified letter advising on the accumulating fee (non-compliant grease trap customer).",
+   "quote": "sean patrick's will be sent a certified letter advising on the accumulating fee."
+  },
+  {
+   "decision": "The new grinder pump quotes, and the finding that they meet specifications, will be posted on the web; Barb L. and John R. will work on revising the permit to connect application.",
+   "quote": "the new quotes and that they meet specifications will be posted on the web. barb l. and john r. will work on revising application."
+  },
+  {
+   "decision": "Barb L. will send a memo to the engineer for the 339 Electric Ave applicant with the privilege and connections fees and invite them to a meeting on the change of use.",
+   "quote": "barb l. will send a memo to the engineer for the applicant with the privilege and connections fees and invite them to attend a meeting to discuss the change of use."
+  },
+  {
+   "decision": "Wright Pierce, which had provided a quote, was given authorization to work on the grinder pump specifications.",
+   "quote": "it was noted that wright pierce had provided a quote and was given authorization to work on the grinder pump specs."
+  },
+  {
+   "decision": "The order of assessment for 30 Elm St., 40 Elm St., & 7 Riley Rd. was signed off on to record the assessment.",
+   "quote": "the order of assessment was signed off on to record the assessment."
+  },
+  {
+   "decision": "Three Wright Pierce invoices were reviewed and signed.",
+   "quote": "three invoices from wright pierce were reviewed and signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pay applications 1 and 2",
+   "what_was_recorded": "Both pay applications were reviewed; pay application 1 was already processed and the Commission moved forward with payment #2.",
+   "figures_as_printed": [],
+   "quote": "review of pay applications 1, 2 - both pay applications were reviewed. pay application 1 has already been processed."
+  },
+  {
+   "topic": "Grinder pump models and vendor quotations",
+   "what_was_recorded": "Models by E-One and Flygt were found to meet specifications; vendor quotations were discussed, with no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "models by e-one and flygt meet specifications and were discussed."
+  },
+  {
+   "topic": "Manhole inspections for DEP grant",
+   "what_was_recorded": "The Commission reviewed a reduced quote for manhole inspections and DEP approval to begin in spring; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "manhole inspections for dep grant - the commission reviewed the reduced quote provided and dep's approval to begin in spring."
+  },
+  {
+   "topic": "Grease trap non-compliant customers and accumulating fee",
+   "what_was_recorded": "A certified letter will be sent to a customer about an accumulating fee; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "sean patrick's will be sent a certified letter advising on the accumulating fee."
+  },
+  {
+   "topic": "Privilege fees (Elm Street appointment)",
+   "what_was_recorded": "An Elm Street appointment regarding privilege fees was resolved; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "steve marsden (elm street) had an appointment regarding privilege fees but the issue has been resolved."
+  },
+  {
+   "topic": "339 Electric Ave privilege and connections fees",
+   "what_was_recorded": "The applicant's engineer will receive a memo on the privilege and connections fees ahead of a change-of-use meeting; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "barb l. will send a memo to the engineer for the applicant with the privilege and connections fees"
+  },
+  {
+   "topic": "Privilege fee assessment",
+   "what_was_recorded": "The Commission discussed the need for clarification on privilege fee assessment; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "privilege fee assessment - the commission discussed the need for clarification."
+  },
+  {
+   "topic": "Order of assessment (30 Elm St., 40 Elm St., 7 Riley Rd.)",
+   "what_was_recorded": "The order of assessment was signed to record the sewer assessment; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the order of assessment was signed off on to record the assessment."
+  },
+  {
+   "topic": "Wright Pierce invoices",
+   "what_was_recorded": "Three Wright Pierce invoices were reviewed and signed; the amounts are not printed.",
+   "figures_as_printed": [],
+   "quote": "three invoices from wright pierce were reviewed and signed."
+  },
+  {
+   "topic": "Funding sources and tax credit",
+   "what_was_recorded": "The EOCD Septic Grant was discussed along with a tax credit; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the eocd septic grant was discussed along with a tax credit."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Project timelines (opening, text cut off)",
+   "resolution": "discussed",
+   "quote": "the commission discussed the timelines tor the project and noted that since paul s. will not need a pump.",
+   "tags": [
+    "sewer",
+    "timelines"
+   ]
+  },
+  {
+   "topic": "Appointments: Steve Marsden (Elm Street), privilege fees",
+   "resolution": "resolved; no action",
+   "quote": "steve marsden (elm street) had an appointment regarding privilege fees but the issue has been resolved.",
+   "tags": [
+    "privilege fees",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Grease traps: SWSS FY16 proposal, non-compliant customers, deactivation",
+   "resolution": "discussed; certified letter to be sent; policy need noted",
+   "quote": "grease traps - swss fy16 proposal - the commission reviewed and discussed the proposal.",
+   "tags": [
+    "grease traps",
+    "SWSS",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview Sewer Extension project status",
+   "resolution": "discussed; workshop suggested",
+   "quote": "pratt/lakeview sewer extension project - project status - the commission discussed the process of line acceptance",
+   "tags": [
+    "sewer extension",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Review of pay applications 1 and 2",
+   "resolution": "approved payment #2",
+   "quote": "review of pay applications 1, 2 - both pay applications were reviewed. pay application 1 has already been processed.",
+   "tags": [
+    "pay applications",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Grinder pump specifications and vendor quotations",
+   "resolution": "specification document accepted",
+   "quote": "grinder pumps- specifications and vendor quotations - models by e-one and flygt meet specifications and were discussed.",
+   "tags": [
+    "grinder pumps",
+    "specifications",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Pleasantview Sewer Extension: CJP proposal",
+   "resolution": "waiting on DEP approval; no action",
+   "quote": "pleasantview sewer extension project - cjp proposal - the proposal was received",
+   "tags": [
+    "sewer extension",
+    "DEP",
+    "SRF"
+   ]
+  },
+  {
+   "topic": "Wright Pierce activities: grinder pump specs, sewer regulation, manhole inspections",
+   "resolution": "authorization given; reduced quote reviewed",
+   "quote": "it was noted that wright pierce had provided a quote and was given authorization to work on the grinder pump specs.",
+   "tags": [
+    "Wright Pierce",
+    "DEP grant",
+    "sewer regulations"
+   ]
+  },
+  {
+   "topic": "339 Electric Ave, Leominster Monument Co. (change of use)",
+   "resolution": "memo to engineer; meeting to be invited",
+   "quote": "339 electric ave - leominster monument co. - the commission reviewed the reviewing engineer's report",
+   "tags": [
+    "change of use",
+    "connection fees"
+   ]
+  },
+  {
+   "topic": "Highfield Village project",
+   "resolution": "plans reviewed",
+   "quote": "highfield village project - whitman and bingham is now the engineer and the plans were reviewed.",
+   "tags": [
+    "Highfield Village",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Privilege fee assessment",
+   "resolution": "clarification needed",
+   "quote": "privilege fee assessment - the commission discussed the need for clarification.",
+   "tags": [
+    "privilege fees"
+   ]
+  },
+  {
+   "topic": "Order of assessment: 30 Elm St., 40 Elm St., 7 Riley Rd.",
+   "resolution": "signed off to record assessment",
+   "quote": "the order of assessment was signed off on to record the assessment.",
+   "tags": [
+    "assessment",
+    "Elm Street",
+    "Riley Road"
+   ]
+  },
+  {
+   "topic": "SWSS pump stations (Francis St generator) and weekly reports",
+   "resolution": "controller issue reviewed; no issues in reports",
+   "quote": "reports - the weekly reports were reviewed and there were no issues.",
+   "tags": [
+    "pump stations",
+    "generator",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects update: funding, flow metering",
+   "resolution": "discussed",
+   "quote": "funding sources for public projects/individuals - the eocd septic grant was discussed along with a tax credit.",
+   "tags": [
+    "funding",
+    "metering",
+    "septic grant"
+   ]
+  },
+  {
+   "topic": "Business Manager report: invoices, website, public hearing notice",
+   "resolution": "invoices signed; website reviewed; hearing noted",
+   "quote": "business manager report - three invoices from wright pierce were reviewed and signed.",
+   "tags": [
+    "business manager",
+    "invoices",
+    "website",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "no action",
+   "quote": "september 29, 2015 - town hall 7pm regular meeting",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Residential Grinder Pump Station Specifications (dated 9/14/15)",
+   "where": "text",
+   "quote": "to accept the document \"residential grinder pump station specifications\" for a simplex submersible grinder pump"
+  },
+  {
+   "name": "Grease Traps - SWSS FY16 Proposal",
+   "where": "text",
+   "quote": "grease traps - swss fy16 proposal - the commission reviewed and discussed the proposal."
+  },
+  {
+   "name": "Updated handout of non-compliant customers",
+   "where": "text",
+   "quote": "an updated handout of non-compliant customers was reviewed by the commission and discussed."
+  },
+  {
+   "name": "Pleasantview Sewer Extension project - CJP proposal",
+   "where": "text",
+   "quote": "pleasantview sewer extension project - cjp proposal - the proposal was received"
+  },
+  {
+   "name": "Weekly reports (SWSS pump stations)",
+   "where": "text",
+   "quote": "reports - the weekly reports were reviewed and there were no issues."
+  },
+  {
+   "name": "Order of assessment (30 Elm St., 40 Elm St., & 7 Riley Rd.)",
+   "where": "text",
+   "quote": "the order of assessment was signed off on to record the assessment."
+  },
+  {
+   "name": "Pay applications 1 and 2",
+   "where": "text",
+   "quote": "review of pay applications 1, 2 - both pay applications were reviewed."
+  },
+  {
+   "name": "Public hearing notice (Zeda's, 1 Main Street)",
+   "where": "text",
+   "quote": "public hearings notice - zeda's (1 main street) will have a hearing on september 23rd with the zoning board."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "grinder pumps",
+  "grease traps",
+  "sewer extension",
+  "privilege fees",
+  "betterments",
+  "pay applications",
+  "Wright Pierce",
+  "DEP grant",
+  "assessments",
+  "pump stations"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

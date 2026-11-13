@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-05-22",
  "docid": "4808",
@@ -12,56 +12,362 @@
  },
  "votes": [
   {
-   "motion": "elect David Matthews as Chair of the Board of Selectmen",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Paula Bertram",
+   "motion": "Nominate Dave Matthews to serve as Chair of the BOS.",
+   "moved_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo motioned to nominate dave matthews to serve as the chair of the bos. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. alonzo motioned to nominate dave matthews to serve as the chair of the bos. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+   "seconded_by": "Ms. Bertram"
   },
   {
-   "motion": "elect Tom Alonzo as Vice Chair of the Board of Selectmen",
-   "moved_by": "David Matthews",
-   "seconded_by": "Steven M. deBettencourt",
+   "motion": "Nominate Tom Alonzo to serve as Vice Chair of the BOS.",
+   "moved_by": "Mr. Matthews",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. matthews motioned to nominate tom alonzo as vice chair of the bos. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "mr. matthews motioned to nominate tom alonzo as vice chair of the bos. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+   "seconded_by": "Mr. deBettencourt"
   },
   {
-   "motion": "elect Ernie Sund as Clerk of the Board of Selectmen",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Steven M. deBettencourt",
+   "motion": "Nominate Ernie Sund to serve as Clerk of the BOS.",
+   "moved_by": "Ms. Bertram",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "ms. bertram motioned to nominate ernie sund as clerk of the bos. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "ms. bertram motioned to nominate ernie sund as clerk of the bos. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+   "seconded_by": "Mr. deBettencourt"
   },
   {
-   "motion": "accept the Remote Participation Policy with adjustments and Town Counsel verification",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Tom Alonzo",
+   "motion": "Accept the Remote Participation Policy with the adjustments suggested by Mr. Alonzo and verification with Town Counsel, with the adjustment made by Mr. Sund.",
+   "moved_by": "Ms. Bertram",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "ms. bertram motioned to accept the policy with the adjustments suggested by mr. alonzo and verification with the town counsel with adjustment made by mr. sund. mr. alonzo seconded. on vote, motion carried, 3 in favor, 2 opposed (sund & debettencourt)"
+   "quote": "mr. alonzo seconded. on vote, motion carried, 3 in favor, 2 opposed (sund & debettencourt)",
+   "seconded_by": "Mr. Alonzo"
   },
   {
-   "motion": "authorize the issuance of refunding bonds for the 2003 Bond Issue",
-   "moved_by": "Steven M. deBettencourt",
-   "seconded_by": "Ernie Sund",
+   "motion": "Accept the form of vote read into the record to authorize the advanced refunding of the 2003 bond issue, so bids can be solicited.",
+   "moved_by": "Mr. deBetttencourt",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. debetttencourt moved to accept the vote. mr. sund seconded. mr. alonzo questioned if the expected savings w",
-   "quote_taken_from_text": true
+   "quote": "ms. speidel said yes it would be for 10 years. on vote, motion carried, 5 in favor, 0 opposed.",
+   "seconded_by": "Mr. Sund"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Steven M. deBettencourt",
-   "seconded_by": "Paula Bertram",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+   "seconded_by": "Ms. Bertram"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. All votes are clearly recorded in the minutes with motion, second, and voting outcome stated.",
- "cost_usd": 0.14162750000000002
+ "note": "Text is macOS Vision OCR of a 4-page minutes scan; some words are garbled (e.g., 'RECEIVED & TEDED', 'JUNG 8 2012', 'LEVENBURG'), so names and figures were copied as printed. Board members' remarks under the PUBLIC COMMENT heading were not recorded as public comment; only Pat Slattery and Loxi Calmes are recorded as public speakers. The minutes approving prior minutes (3/6/2012 & 5/15/2012) and the warrants are listed with no motion recorded, so no vote was taken from them. The form of vote read into the record for the refunding bonds is referenced but not attached. The Eagle Scout bench item and the reorganization nominations are recorded as stated.",
+ "cost_usd": 0.011357820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "Chairman of the Lunenburg Historical Commission",
+   "status": "present",
+   "quote": "pat slattery, chairman of the lunenburg historical commission thanked the bos and the town manager on their efforts"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "loxi calmes, superintendent of schools invited all to the school's memorial day celebrations."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Speidel to get the goals and evaluation forms to the BOS by the next day, ahead of the Town Manager evaluation.",
+   "quote": "ms. speidel will get them to the bos by tomorrow."
+  },
+  {
+   "decision": "Ms. Speidel to check the 'shall' wording on pg. 2 of the remote participation policy with Town Counsel before the board strikes it, due to ADA requirements.",
+   "quote": "ms. speidel would like to check that with town counsel before the board strikes this"
+  },
+  {
+   "decision": "Board to take the BOS policies and procedures review one or two items at a time, with workshops in July and completion by end of summer.",
+   "quote": "mr. matthews said he would like to have workshops on this in july and have this completed by the end of the summer."
+  },
+  {
+   "decision": "Ms. Bertram to contact VHB to learn when the Summer St. project will be ready, so she can relay the information.",
+   "quote": "she would like to contact vhb and find out when this project is going to be ready so she can relay the information."
+  },
+  {
+   "decision": "The DPW Director to get a repair estimate for the cabinet at Whalom and Electric; the cabinet will not be replaced for now.",
+   "quote": "this will be looked at again and the dpw director will get a repair estimate."
+  },
+  {
+   "decision": "Ms. Speidel to bring a report on the painted walkway around the Whalom rotary to the BOS.",
+   "quote": "ms. speidel said she has a report on that and will get it to the bos."
+  },
+  {
+   "decision": "The town to take care of the lower common bench repair if the Eagle Scout who made it is unable to do the work himself.",
+   "quote": "if he is unable to do that, then the town will take care of it."
+  },
+  {
+   "decision": "A letter to be sent to Barbara Reynolds thanking her for many years of service on the Personnel Board.",
+   "quote": "mr. matthews requested that a letter be sent to barbara reynolds thanking her for many years of service on the personnel board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Refunding bonds, 2003 bond issue: projected interest savings",
+   "what_was_recorded": "Projected savings from refinancing the 2003 building bonds are about $600,000 over the next ten years.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "projected savings will be approximately $600,000. over the next ten years."
+  },
+  {
+   "topic": "Warrants listed under Minutes/Warrants/Action File Issues",
+   "what_was_recorded": "Three warrants were listed with their amounts; no action on them is recorded.",
+   "figures_as_printed": [
+    "$644,737.55",
+    "$1,502,543.37",
+    "$662,193.01"
+   ],
+   "quote": "warrants - 5/21/12 w24p12 $644,737.55 5/22/12 w67-12 $1,502,543.37 5/23/12 w68-12 $662,193.01"
+  },
+  {
+   "topic": "Refunding bonds: tax treatment",
+   "what_was_recorded": "The refunding bonds are exempt, so debt service paid from taxes falls outside Proposition 2 1/2, and lower total debt service reduces the extra taxes needed.",
+   "figures_as_printed": [],
+   "quote": "these bonds are all exempt, so the tax dollars raised to pay the debt service is done outside of proposition 2 ½,"
+  },
+  {
+   "topic": "Whalom and Electric intersection cabinet repair",
+   "what_was_recorded": "The damaged cabinet will not be replaced because of its cost; the DPW Director will get a repair estimate.",
+   "figures_as_printed": [],
+   "quote": "it's not worth replacing due to the cost. this will be looked at again and the dpw director will get a repair estimate."
+  },
+  {
+   "topic": "Summer St. project funding in the TIP",
+   "what_was_recorded": "Concern that the project's high dollar amount would consume all the regional funding and be hard to move out of the appendix.",
+   "figures_as_printed": [],
+   "quote": "ms. bertram is still concerned that the high dollar amount will consume all the funding and that once it is in the appendix"
+  },
+  {
+   "topic": "Sewer Commission budget",
+   "what_was_recorded": "The Sewer Commission is working to keep its budget in line, including inflow and infiltration changes.",
+   "figures_as_printed": [],
+   "quote": "the sewer commission is working on trying to keep their budget in line"
+  },
+  {
+   "topic": "Jones House project costs",
+   "what_was_recorded": "All professional services on the Jones House project, except advertising and legal, were donated.",
+   "figures_as_printed": [],
+   "quote": "all of the professional services, except for advertising and legal, were donated."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Pat Slattery",
+   "stated_role": "Chairman of the Lunenburg Historical Commission",
+   "topic": "Jones House project thanks",
+   "quote": "pat slattery, chairman of the lunenburg historical commission thanked the bos and the town manager on their efforts"
+  },
+  {
+   "speaker": "Loxi Calmes",
+   "stated_role": "Superintendent of Schools",
+   "topic": "School Memorial Day programs and recent vote",
+   "quote": "loxi calmes, superintendent of schools invited all to the school's memorial day celebrations."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "remarks heard, no action",
+   "quote": "mr. matthews began the meeting by congratulating everyone who was elected in the previous saturday's elections and",
+   "tags": [
+    "public comment",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Board Reorganization & Committee/Liaison Assignments",
+   "resolution": "Chair, Vice Chair and Clerk elected 5-0; liaison assignments continued",
+   "quote": "mr. alonzo motioned to nominate dave matthews to serve as the chair of the bos.",
+   "tags": [
+    "reorganization",
+    "officers",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Remote Participation Policy",
+   "resolution": "accepted 3-2 with changes, pending Town Counsel check",
+   "quote": "mr. alonzo suggested an addition to the remote participation policy which would",
+   "tags": [
+    "remote participation",
+    "ADA",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Town Manager's Annual Evaluation",
+   "resolution": "discussed; forms due to BOS members and meeting with Town Manager by June 12",
+   "quote": "ms. speidel said that mr. matthews had indicated that all forms should be",
+   "tags": [
+    "evaluation",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "BOS Policies & Procedures",
+   "resolution": "discussed; workshops planned for July",
+   "quote": "mr. matthews said he would like to have workshops on this in july and have this completed by the end of the summer.",
+   "tags": [
+    "policies",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "Refunding bonds, 2003 bond issue",
+   "resolution": "passed 5-0; bids to be sought, results back to BOS in June",
+   "quote": "mr. matthews stated that the town manager, treasurer, and financial advisor have found a way to refinance bonds from building",
+   "tags": [
+    "debt",
+    "bonds",
+    "refunding"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "minutes and warrants listed; no action recorded",
+   "quote": "minutes: 3/6/2012 & 5/15/2012",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee Report",
+   "resolution": "Sewer Commission and MPO/Summer St. updates; no action",
+   "quote": "ms. bertram said that she had attended the mpo meeting and it looks like the summer st. project, although it scored high,",
+   "tags": [
+    "sewer",
+    "transportation",
+    "MPO",
+    "Summer St."
+   ]
+  },
+  {
+   "topic": "Town Manager Reports",
+   "resolution": "reported; repair estimate and report to follow",
+   "quote": "9. town manager reports - ms. speidel checked with the dpw director about debris which was left at an accident",
+   "tags": [
+    "DPW",
+    "public works",
+    "debris",
+    "cabinet",
+    "bench",
+    "walkway"
+   ]
+  },
+  {
+   "topic": "Appointments/Re-appointments/Resignations",
+   "resolution": "letter of thanks directed",
+   "quote": "mr. matthews requested that a letter be sent to barbara reynolds thanking her for many years of service on the personnel board.",
+   "tags": [
+    "appointments",
+    "thank you letter"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 7:48 p.m.",
+   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Remote Participation Policy",
+   "where": "text",
+   "quote": "mr. alonzo suggested an addition to the remote participation policy which would"
+  },
+  {
+   "name": "BOS Policies & Procedures (revised draft, printed copy for each member)",
+   "where": "text",
+   "quote": "ms. bertram has been working on revising the bos policies and procedures and mr."
+  },
+  {
+   "name": "Form of vote for the refunding bonds, 2003 Bond Issue",
+   "where": "text",
+   "quote": "ms. speidel stated that there is a form of vote that is required to be read should the board so choose to proceed."
+  },
+  {
+   "name": "Warrants 5/21/12 W24P12, 5/22/12 W67-12, 5/23/12 W68-12",
+   "where": "text",
+   "quote": "warrants - 5/21/12 w24p12 $644,737.55 5/22/12 w67-12 $1,502,543.37 5/23/12 w68-12 $662,193.01"
+  },
+  {
+   "name": "Town Manager annual evaluation forms and goals",
+   "where": "text",
+   "quote": "ms. speidel said that mr. matthews had indicated that all forms should be"
+  }
+ ],
+ "tags": [
+  "board reorganization",
+  "remote participation policy",
+  "town manager evaluation",
+  "BOS policies",
+  "refunding bonds",
+  "warrants",
+  "transportation TIP MPO",
+  "Jones House",
+  "public works",
+  "Memorial Day",
+  "schools",
+  "sewer"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. matthews requested that a printed copy be given to each member to review"
+ },
+ "dropped_unquoted_by_field": {}
 }

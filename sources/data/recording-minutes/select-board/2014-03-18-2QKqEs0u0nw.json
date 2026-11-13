@@ -1,0 +1,481 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Board of Selectmen",
+ "meeting_date": "2014-03-18",
+ "video_id": "2QKqEs0u0nw",
+ "video_url": "https://www.youtube.com/watch?v=2QKqEs0u0nw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-03-18-2QKqEs0u0nw.json",
+  "sha256": "9bcc8a7931a69abf3cfd5ef893f0bfabca32b7c8a722b2a69ffeea64c57c74fd",
+  "caption_lines": 224,
+  "segments": 1909
+ },
+ "recording": {
+  "duration_s": 4748,
+  "duration": "1:19",
+  "spoken_chars": 62916,
+  "words_approx": 10486
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03182014-4879",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-03-18-agenda-4879.txt",
+   "path": "sources/meetings/select-board/2014-03-18-agenda-4879.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03182014-4879",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-03-18-minutes-4879.txt",
+   "path": "sources/meetings/select-board/2014-03-18-minutes-4879.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:41:58Z",
+  "cost_usd": 0.1834119
+ },
+ "minutes": {
+  "headline": "Selectmen approved a wine and malt license and appointed one Council on Aging member; land purchase deferred to April 1.",
+  "summary": "The board proclaimed Boys and Girls Club week, held two liquor license hearings, and heard an update on a proposed open-space land purchase and agreement. It interviewed committee candidates and appointed one to the Council on Aging. Reports covered transportation funding, the school project site review, and stormwater, followed by a joint workshop with the planning board.",
+  "attendees": [
+   {
+    "name_as_heard": "Tom Alonso",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Brandon Kibby",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Joanna Pilates meoni",
+    "role": "planning board chair"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1512,
+    "topic": "Committee applicant Jeff Pacheco on public access committee interest"
+   },
+   {
+    "t": 1657,
+    "topic": "Applicant for Agricultural Commission"
+   },
+   {
+    "t": 1786,
+    "topic": "Applicant for Council on Aging"
+   },
+   {
+    "t": 2122,
+    "topic": "Applicant for Council on Aging reappointment, questioned term limits"
+   },
+   {
+    "t": 2549,
+    "topic": "Applicant for Personnel, transportation commission, fence viewer"
+   },
+   {
+    "t": 3209,
+    "topic": "Applicant for public access committee"
+   },
+   {
+    "t": 4579,
+    "topic": "Questions on codified bylaws and traffic rules"
+   }
+  ],
+  "tags": [
+   "high-school",
+   "legal",
+   "middle-school",
+   "personnel",
+   "planning-and-zoning",
+   "roads-and-dpw",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 400,
+    "motion": "Approve change in officer and transfer of stock for Lunenburg Liquors",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1365,
+    "motion": "Approve wine and malt license for kebabalicious",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2036,
+    "motion": "Appoint Debbie Lincoln to the Council on Aging",
+    "outcome": "passed",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3865,
+    "topic": "Summer Street design funding",
+    "what_was_said": "State draft capital plan omits funding to finish the design; delegation was asked to push for release.",
+    "figures_as_heard": [
+     "333 thousand dollars"
+    ]
+   },
+   {
+    "t": 4559,
+    "topic": "Stormwater maintenance",
+    "what_was_said": "The town assumes financial responsibility for stormwater structures on public roads, a concern given limited road funding."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 804,
+    "decision": "Purchase and sale agreement to be taken up April 1 unless urgency requires a posted meeting."
+   },
+   {
+    "t": 2477,
+    "decision": "Pete Lincoln's Council on Aging appointment tabled pending check of bylaw/charter."
+   },
+   {
+    "t": 3082,
+    "decision": "Personnel committee appointment deferred until the PAC and Personnel committee reviews."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 123,
+    "topic": "Pledge and opening comments on caucus",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 123,
+    "t_end": 260,
+    "topic": "Boys and Girls Club proclamation",
+    "resolution": "signed",
+    "tags": []
+   },
+   {
+    "t_start": 270,
+    "t_end": 460,
+    "topic": "Lunenburg Liquors stock transfer hearing",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 465,
+    "t_end": 1070,
+    "topic": "Open space land purchase and sale agreement",
+    "resolution": "deferred to April 1",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1071,
+    "t_end": 1450,
+    "topic": "Kebabalicious wine and malt license hearing",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1489,
+    "t_end": 3440,
+    "topic": "Committee candidate interviews and appointment",
+    "resolution": "one appointed, others deferred",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3441,
+    "t_end": 3540,
+    "topic": "Warrants, minutes, agenda items",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3516,
+    "t_end": 4430,
+    "topic": "Committee reports, MPO, building committee, school project site review",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "roads-and-dpw",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 4434,
+    "t_end": 4724,
+    "topic": "Planning board workshop, stormwater, traffic rules, final comment",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "roads-and-dpw"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Whether warrants were formally voted",
+   "Exact vote counts not stated"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 4559,
+    "kind": "liability or legal",
+    "about": "Town takes on financial responsibility for stormwater structures on public roads",
+    "who": "a member",
+    "words_as_heard": "the town assumes responsibility and financial responsibility for maintaining those structures"
+   },
+   {
+    "t": 3660,
+    "kind": "condition",
+    "about": "Need data to advocate for road funding",
+    "who": "a member",
+    "words_as_heard": "I can only sit at the table and Advocate if I have the data and the information that I need"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 144,
+    "name_as_heard": "the proclamation",
+    "kind": "other",
+    "words_as_heard": "I will read the proclamation that we all agreed to"
+   },
+   {
+    "t": 487,
+    "name_as_heard": "purchase and sale agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "finalized purchase and sale agreement before you for tonight"
+   },
+   {
+    "t": 3948,
+    "name_as_heard": "memorandum from town counsel",
+    "kind": "memo",
+    "words_as_heard": "I did distribute a memorandum"
+   },
+   {
+    "t": 4476,
+    "name_as_heard": "draft stormwater bylaw",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "There is a draft of the bylaw on our website"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stormwater-maintenance-responsibility",
+    "title": "Stormwater maintenance responsibility",
+    "question": "What does the town pay to maintain stormwater structures on new public roads?",
+    "t": 4518,
+    "words_as_heard": "the town assumes responsibility and financial responsibility for maintaining those structures",
+    "data_in_play": [],
+    "existing": "thread:stormwater-fee"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved a wine and malt license for Kebabalicious after a hearing.",
+    "t": 1365
+   },
+   {
+    "line": "The board approved a change of officer and transfer of stock for Lunenburg Liquors.",
+    "t": 400
+   },
+   {
+    "line": "The board appointed one candidate to the Council on Aging; a second Council on Aging appointment was tabled pending a check of the bylaw or charter.",
+    "t": 2036
+   },
+   {
+    "line": "The open-space land purchase and sale agreement was deferred to April 1 unless urgency requires a posted meeting.",
+    "t": 804
+   },
+   {
+    "line": "A personnel committee appointment was deferred until the PAC and Personnel committee reviews, and a report said the state draft capital plan omits funding to finish Summer Street design.",
+    "t": 3865
+   }
+  ],
+  "why_it_matters": [
+   "The open-space purchase would commit town land and money, so the April 1 agreement is where residents may see a proposal that could later reach a Town Meeting vote.",
+   "Stormwater structures on public roads fall to the town budget, mostly taxes, which competes with limited road funding, and the missing state design money for Summer Street leaves that project unfunded for now."
+  ],
+  "watch_next": [
+   "April 1 Select Board meeting, when the open-space purchase and sale agreement is to be taken up.",
+   "The bylaw or charter check that will decide the tabled Council on Aging appointment."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:42:04Z",
+   "cost_usd": 0.023215100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03182014-4879",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-03-18-minutes-4879.txt",
+   "path": "sources/meetings/select-board/2014-03-18-minutes-4879.pdf"
+  },
+  "official_sha256": "5e4009062683dc995bf8519ca01b825a95ff7a5235ed1c6193c22b5aef70dc41",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The three votes and the two tabling decisions agree, and the attendee differences are mostly misheard names. The official minutes record many more items, including the warrant, the site plan review decision and several applicants. The main differences to check are the personnel/PACC deferral reason and our unsupported $333 thousand Summer Street figure.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Lunenburg Liquors officer change and stock transfer vote",
+    "ours": "Approve change in officer and transfer of stock for Lunenburg Liquors — passed",
+    "official": "mr. matthews seconded. on vote, motion carried, 5 in favor 0 opposed",
+    "note": "Both records show the motion passing; official gives 5-0.",
+    "t": 400
+   },
+   {
+    "kind": "agree",
+    "about": "Wine and malt license for Kabob-E-Licious",
+    "ours": "Approve wine and malt license for kebabalicious — passed",
+    "official": "ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed",
+    "note": "Same item and outcome; our 'kebabalicious' is a caption spelling of Kabob-E-Licious.",
+    "t": 1365
+   },
+   {
+    "kind": "agree",
+    "about": "Appointment of Debbie Lincoln to Council on Aging",
+    "ours": "Appoint Debbie Lincoln to the Council on Aging — passed",
+    "official": "mr. ebersole moved to appoint debby lincoln to the council on aging. ms. bertram seconded. on vote, motion carried, 5 in favor, o opposed.",
+    "note": "Same appointment and outcome; name spelling varies slightly.",
+    "t": 2036
+   },
+   {
+    "kind": "agree",
+    "about": "Lane Property purchase and sale agreement tabled to April 1",
+    "ours": "Purchase and sale agreement to be taken up April 1 unless urgency requires a posted meeting.",
+    "official": "it was decided to table the approval of the purchase & sale agreement until the april 1, 2014 bos meeting to allow the contract to be completed",
+    "note": "Both defer to April 1; official also says the BOS will post a meeting if approval is needed sooner.",
+    "t": 804
+   },
+   {
+    "kind": "agree",
+    "about": "Pete Lincoln COA appointment tabled",
+    "ours": "Pete Lincoln's Council on Aging appointment tabled pending check of bylaw/charter.",
+    "official": "mr. alonzo said that this appointment will be tabled for the time being.",
+    "note": "Both tabled; official adds the BOS will review COA bylaws on appointments and term limits.",
+    "t": 2477
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Personnel committee / PACC appointment deferral",
+    "ours": "Personnel committee appointment deferred until the PAC and Personnel committee reviews.",
+    "official": "the bos does not intend to appoint anyone to that committee until after the annual town meeting.",
+    "note": "The committee and the reason for deferral differ (review by committees vs. waiting for Annual Town Meeting over a bylaw revision); check the recording and the committee named.",
+    "t": 3082
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Summer Street funding figure",
+    "ours": "Summer Street design funding: 333 thousand dollars",
+    "official": "ms. bertram added that in regards to the summer st. project, funding for this was not included on the governor's capital improvement",
+    "note": "Official prints no dollar figure and says the funding was not in the Governor's capital plan; check the recording for whether $333K was stated and what it represented.",
+    "t": 3865
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Tom Alonso (chair)",
+    "official": "chairperson tom alonzo",
+    "note": "Same person; captions misspelled the surname.",
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Open Space committee presenter",
+    "ours": "Brandon Kibby (presenter)",
+    "official": "brandon kibbe representing the open space acquisition advisory committee came before the board and informed them",
+    "note": "Same person, surname misheard.",
+    "official_reading": "Brandon Kibbe"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Planning Board chair",
+    "ours": "Joanna Pilates meoni (planning board chair)",
+    "official": "ms. bilotta simeone, chairperson of the planning board spoke to say that the planning board had discussed this and decided",
+    "note": "Same role; name garbled by captions.",
+    "official_reading": "Ms. Bilotta Simeone"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other board members and staff present",
+    "ours": "",
+    "official": "chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel.",
+    "note": "Our attendee list omits the other board members and Town Manager."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrant W#48-14 signed",
+    "ours": "",
+    "official": "w#48-14 signature page signed $124,517.51 $253,975.48",
+    "note": "Warrant signing and its two amounts are not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Site plan review decision for school project",
+    "ours": "",
+    "official": "after due and diligent discussion, board members decided that a full site plan review of the project was not necessary but that it would be helpful to have other land use boards, particularly the planning board, review the project.",
+    "note": "Decision not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Planning Board asked to choose local review or peer reviewer",
+    "ours": "",
+    "official": "ms. bertram requested that the planning board decide how they would like to proceed with this whether it be at the local level or hire a peer reviewer.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other applicants and committee responses (Dupuis, Lafayette, Walker, Bajko)",
+    "ours": "",
+    "official": "the bos will reconnect with mr. lafayette after further review of committee openings.",
+    "note": "Our minutes do not record these applicants or the responses."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Boys & Girls Club Week proclamation signed",
+    "ours": "",
+    "official": "the board then signed it.",
+    "note": "Not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:43:39Z",
+   "cost_usd": 0.0491651
+  }
+ }
+}

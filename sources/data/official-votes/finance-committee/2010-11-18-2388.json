@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2010-11-18",
  "docid": "2388",
@@ -12,55 +12,285 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 10/28/10 as amended",
-   "moved_by": "Martha McDonald",
-   "seconded_by": "John Male",
+   "motion": "Approve the minutes of 10/28/10, as amended.",
+   "moved_by": "MM",
+   "seconded_by": "JM",
    "outcome": "passed",
    "procedural": true,
    "quote": "mm made motion to approve as amended, jm seconded, all approved"
   },
   {
-   "motion": "Recommend purchase of two police cruisers at $24K each from available funds",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "John Male",
+   "motion": "Recommend the request to purchase three cruisers (Capital Planning).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "discussed request to purchase three cruisers; many reasons why it would be cost efficient to buy crown vic's before they go out of production; committee unanimously approved"
+  },
+  {
+   "motion": "Recommend purchase of two police cruisers at $24K each from available funds.",
+   "moved_by": "ME",
+   "seconded_by": "JM",
    "outcome": "passed",
    "procedural": false,
    "quote": "me moved we recommend purchase of two police cruisers at $24k each from available funds - jm seconded - all approved"
   },
   {
-   "motion": "Approve KS worksheet on budget adjustments, plus $12K reduction in health insurance balance appropriation and $21K reduction in salary reserve account",
-   "moved_by": "John Male",
-   "seconded_by": "Mark Erickson",
+   "motion": "Recommend approval of the KS worksheet on budget adjustments, including a $12K reduction in health insurance balance appropriation and a $21K reduction in salary reserve account.",
+   "moved_by": "JM",
+   "seconded_by": "ME",
    "outcome": "passed",
    "procedural": false,
-   "quote": "jm recommended approval of ks worksheet on budget adjustments plus a $12k reduction in health insurance balance appropriation and a $21k reduction in salary reserve account - me seconded - all approved"
+   "quote": "jm recommended approval of ks worksheet on budget adjustments plus a $12k reduction in health insurance balance appropriation and a $21k reduction in salary reserve account"
   },
   {
-   "motion": "Recommend approval of $56K for Summer Street project from available funds",
-   "moved_by": "Mark Erickson",
+   "motion": "Recommend approval of $56K for the Summer Street project from available funds (Article #4).",
+   "moved_by": "ME",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "me recommended approval of $56k for summer street project from available funds - all approved"
+   "quote": "me recommended approval of $56k for summer street project from available funds - all approved."
   },
   {
-   "motion": "Recommend approval of $5K for special revolving fund",
-   "moved_by": "Martha McDonald",
-   "seconded_by": "John Male",
+   "motion": "Recommend approval of $5K for the special revolving fund (Article #5).",
+   "moved_by": "MM",
+   "seconded_by": "JM",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mm recommended approval of $5k for special revolving fund - jm seconded - all approved"
+   "quote": "mm recommended approval of $5k for special revolving fund - jm seconded - all approved."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "John Male",
-   "seconded_by": "Mark Erickson",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 8:50 PM.",
+   "moved_by": "JM",
+   "seconded_by": "ME",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "jm made motion to adjourn at 8:50 pm and me seconded"
+   "quote": "jm made motion to adjourn at 8:50 pm and me seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. All votes recorded with verbatim quotes from the meeting minutes.",
- "cost_usd": 0.1369761
+ "dropped_unquoted": 1,
+ "note": "Scanned OCR text with handwritten marginalia (\"approud 1/13/11\", \"Bile apol\") and a received stamp; OCR errors such as \"Aricle\" were copied as printed. Initials MM, JM, ME and KS are not expanded in the minutes, so KS is not linked to Kerry Speidel. The Capital Planning cruiser vote records no mover or seconder and no vote count beyond \"unanimously approved\". Attendance for Brian Laffond and Barbara Reynolds reads \"arrived late\". Roles for the committee members are not printed beyond membership.",
+ "cost_usd": 0.006917319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond (arrived late), martha mcdonald"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond (arrived late), martha mcdonald"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond (arrived late)"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "marilyn stokes, mark erickson, brian laffond (arrived late), martha mcdonald"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "barbara reynolds (arrived late)"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mike mackin, john male"
+  },
+  {
+   "name": "John Male",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mike mackin, john male"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article #2 passed over (no action taken at this meeting).",
+   "quote": "aricle #2 - pass over."
+  },
+  {
+   "decision": "Next regular FinCom meeting scheduled for 12/9/10.",
+   "quote": "next regular fincom meeting 12/9/10"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fund budget available balance",
+   "what_was_recorded": "Article #1 fund budget is noted as having a $71K available balance.",
+   "figures_as_printed": [
+    "$71K"
+   ],
+   "quote": "article #1 - fund budget; will have a $71k available balance"
+  },
+  {
+   "topic": "Police detail revolving fund",
+   "what_was_recorded": "Discussion of a police detail revolving fund; amount based on the custodial revolving fund of $25K.",
+   "figures_as_printed": [
+    "$25K"
+   ],
+   "quote": "amount based on custodial revolving fund of $25k"
+  },
+  {
+   "topic": "Summer Street Alternatives Study",
+   "what_was_recorded": "Summer Street Alternatives Study discussed at $56K, described as a piece of the overall total design cost to start working.",
+   "figures_as_printed": [
+    "$56K"
+   ],
+   "quote": "discussion on summer street alternatives study for $56k - a piece of the overall total design cost to start working"
+  },
+  {
+   "topic": "Police cruisers",
+   "what_was_recorded": "Two police cruisers recommended for purchase at $24K each from available funds.",
+   "figures_as_printed": [
+    "$24K"
+   ],
+   "quote": "purchase of two police cruisers at $24k each from available funds"
+  },
+  {
+   "topic": "Budget adjustments: health insurance and salary reserve",
+   "what_was_recorded": "Budget adjustment worksheet recommended with a $12K reduction in the health insurance balance appropriation and a $21K reduction in the salary reserve account.",
+   "figures_as_printed": [
+    "$12K",
+    "$21K"
+   ],
+   "quote": "a $12k reduction in health insurance balance appropriation and a $21k reduction in salary reserve account"
+  },
+  {
+   "topic": "DPW request",
+   "what_was_recorded": "Committee discussed a DPW request for $165K for a front end loader and a one ton crew truck with plow.",
+   "figures_as_printed": [
+    "$165K"
+   ],
+   "quote": "discussed dpw request for $165k"
+  },
+  {
+   "topic": "Schools capital planning items",
+   "what_was_recorded": "Schools capital planning items listed with dollar figures for asbestos work, THMS repaving, white boards, and replacement laptops.",
+   "figures_as_printed": [
+    "$15K",
+    "$110K",
+    "$25K",
+    "$50K"
+   ],
+   "quote": "asbestos work $15k, thms repaving $110k, white boards $25k, replacement laptops for obsolete desktops $50k"
+  },
+  {
+   "topic": "High school building feasibility placeholder",
+   "what_was_recorded": "A $600K placeholder for high school building feasibility is listed under Schools capital planning.",
+   "figures_as_printed": [
+    "$600K"
+   ],
+   "quote": "$600k placeholder for high school building feasibility"
+  },
+  {
+   "topic": "Summer Street project funding",
+   "what_was_recorded": "Recommended approval of $56K for the Summer Street project from available funds.",
+   "figures_as_printed": [
+    "$56K"
+   ],
+   "quote": "me recommended approval of $56k for summer street project from available funds"
+  },
+  {
+   "topic": "Special revolving fund",
+   "what_was_recorded": "Recommended approval of $5K for the special revolving fund (Article #5).",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "mm recommended approval of $5k for special revolving fund"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Budget adjustment worksheet: reduction in health insurance balance appropriation and reduction in salary reserve account.",
+   "amount_as_printed": "$12K and $21K",
+   "outcome": "passed",
+   "quote": "jm recommended approval of ks worksheet on budget adjustments plus a $12k reduction in health insurance balance appropriation and a $21k reduction in salary reserve account"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended",
+   "quote": "minutes - reviewed minutes from 10/28/10; mm made motion to approve as amended, jm seconded, all approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports: Capital Planning, Public Safety, Schools",
+   "resolution": "cruisers approved; DPW and school requests discussed",
+   "quote": "capital planning - discussed request to purchase three cruisers",
+   "tags": [
+    "capital planning",
+    "cruisers",
+    "DPW",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Warrant article review",
+   "resolution": "Articles 1, 4 and 5 recommended; Article 2 passed over; Article 3 still in progress",
+   "quote": "new business - warrant article review",
+   "tags": [
+    "warrant articles",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled 12/9/10",
+   "quote": "next meetings - next regular fincom meeting 12/9/10.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:50 PM",
+   "quote": "adjournment - jm made motion to adjourn at 8:50 pm and me seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "KS worksheet on budget adjustments",
+   "where": "text",
+   "quote": "jm recommended approval of ks worksheet on budget adjustments plus a $12k reduction in health insurance balance appropriation"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "warrant articles",
+  "budget",
+  "capital planning",
+  "police cruisers",
+  "Summer Street",
+  "revolving fund",
+  "schools",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

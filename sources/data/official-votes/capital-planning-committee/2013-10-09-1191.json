@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-10-09",
  "docid": "1191",
@@ -10,15 +10,147 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10092013-1191",
   "doc_url": "/docs/meetings/capital-planning-committee/2013-10-09-minutes-1191.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "The minutes record no motions or vote counts at all; the minutes approval is stated only as \"9-25-13 minutes approved.\" and is listed as a decision, not a vote. No adjournment motion is recorded (only \"Adjourned 11:55 AM.\"). No public comment section appears. Minutes list no documents heading. The text is an extracted scan with irregular spacing and some broken words (e.g., \"t wo\", \"W ant\"), and page 1 ends mid-sentence into page 2. Steve Malandrinos (IT Director) is named only as having agreed items with the Chief, not as taking part, so he is not listed as an attendee.",
+ "cost_usd": 0.0038286200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "approval of minutes from September 25, 2013",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "9-25-13 minutes approved."
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Chief, Police Department",
+   "status": "present",
+   "quote": "chief marino noted that as he has been busy with technology issues relating to the move to regional dispatch"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08842449999999999
+ "decisions": [
+  {
+   "decision": "The 9-25-13 minutes were approved (no motion, mover, or vote count recorded).",
+   "quote": "9-25-13 minutes approved."
+  },
+  {
+   "decision": "Chief Marino would prioritize the Police technology requests as 1) IP Cameras, 2) Tablets, 3) Fax Machine and 4) Crime Scene Camera.",
+   "quote": "chief marino would prioritize as , 1) ip cameras, 2) tablets, 3) fax machine and 4) crime scene camera ."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Weapons and ballistic equipment for patrol cars",
+   "what_was_recorded": "Two patrol rifles, two patrol shotguns and three ballistic shields combined come to over $10,000; the Police want to equip two more cars with rifles and shotguns.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "combined items come to over $10,000."
+  },
+  {
+   "topic": "Police vehicle pricing and outfitting",
+   "what_was_recorded": "Chief Marino noted vehicle prices he obtained are for 2014 models and will change to 2015 pricing in spring, leaving less money for outfitting the vehicle.",
+   "figures_as_printed": [],
+   "quote": "chief marino wanted to note that prices may change as prices he currently obtained are for 2014."
+  },
+  {
+   "topic": "Funding for IP cameras",
+   "what_was_recorded": "Mr. Raboin asked whether Regional Dispatch has funds for the IP cameras; Chief Marino knows of none.",
+   "figures_as_printed": [],
+   "quote": "mr. raboin inquired if funds available through regional dispatch for ip cameras."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 9-25-13 minutes",
+   "resolution": "approved",
+   "quote": "9-25-13 minutes approved."
+  },
+  {
+   "topic": "Department returns discussion",
+   "resolution": "noted; no vehicle inventory in Police returns",
+   "quote": "it was noted there was not a vehicle inventory in the police dept. returns."
+  },
+  {
+   "topic": "Police Department technology requests",
+   "resolution": "discussed; priorities set by Chief",
+   "quote": "chief marino would prioritize as , 1) ip cameras, 2) tablets, 3) fax machine and 4) crime scene camera ."
+  },
+  {
+   "topic": "Police facilities requests",
+   "resolution": "discussed; requests noted with FY years",
+   "quote": "dpw request (for fy 17) to develop unused space above police department for record storage."
+  },
+  {
+   "topic": "Police vehicles",
+   "resolution": "discussed; no action recorded",
+   "quote": "requesting one marked patrol vehicle for fy 15."
+  },
+  {
+   "topic": "Radio infrastructure",
+   "resolution": "discussed; no action recorded",
+   "quote": "with the dispatch center being moved to devens, they have a 100 foot tower."
+  },
+  {
+   "topic": "Patrol rifles, shotguns and ballistic shields",
+   "resolution": "discussed; no action recorded",
+   "quote": "two patrol rifles, t wo patrol shotguns, three ballistic shields."
+  },
+  {
+   "topic": "Speed sign trailer",
+   "resolution": "discussed; no action recorded",
+   "quote": "speed sign trailer with traffic data recording system."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Police Dept. returns",
+   "where": "text",
+   "quote": "it was noted there was not a vehicle inventory in the police dept. returns."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "police department",
+  "vehicles",
+  "technology",
+  "radio infrastructure",
+  "regional dispatch",
+  "facilities",
+  "equipment",
+  "speed sign trailer"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

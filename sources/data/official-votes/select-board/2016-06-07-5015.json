@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-06-07",
  "docid": "5015",
@@ -12,15 +12,95 @@
  },
  "votes": [
   {
-   "motion": "Exit Executive Session to enter Open Session",
+   "motion": "To exit Executive Session and enter Open Session.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole 2\": p. bertram to exit executive session to enter open session vote: mr. ebersole- aye, ms. luck- aye, mr. toale- aye, ms. bertram - aye, mr. alonzo-aye"
+   "quote": "to exit executive session to enter open session vote: mr. ebersole- aye, ms. luck- aye, mr. toale- aye, ms. bertram - aye, mr. alonzo-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. One procedural vote recorded, on exiting executive session.",
- "cost_usd": 0.08085149999999999
+ "note": "Excerpt of page 1 only (OCR of a scan). The header is truncated, so the full attendance roster, call to order, date, and any agenda are not in the text. The vote to enter executive session is not in this excerpt. Labor counsel is referred to but not named. Attendance statuses for board members are inferred from their roll-call votes. The OCR text contains artifacts ('2\"' for 'Seconded by', 'Clanem.' for a signature). The meeting date 2016-06-07 was supplied by the request and does not appear in the text.",
+ "cost_usd": 0.0032013199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "bertram, member, phyllis luck, member"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others in attendance: kerry lafleur, town manager; elaine peterson, executive assistant"
+  },
+  {
+   "name": "Elaine Peterson",
+   "role": "Executive Assistant",
+   "status": "present",
+   "quote": "others in attendance: kerry lafleur, town manager; elaine peterson, executive assistant"
+  },
+  {
+   "name": "R. Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "mr. ebersole- aye"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "ms. bertram - aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Toale",
+   "role": "",
+   "status": "present",
+   "quote": "mr. toale- aye"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "mr. alonzo-aye"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Police union contract (FYs 2017, 2018, 2019) - union wage proposal",
+   "what_was_recorded": "The union's first proposal was a cost-of-living increase of 3/3/3% for the three fiscal years, and the union's central issue was pay relative to the current market.",
+   "figures_as_printed": [
+    "3/3/3%"
+   ],
+   "quote": "their first proposal was a 3/3/3% cola increase."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Police union negotiations, FYs 2017-2019 (executive session)",
+   "resolution": "discussed in executive session; exited to open session",
+   "quote": "this session concerned police union negotiations for fys 2017, 2018, and 2019."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "police union",
+  "labor negotiations",
+  "executive session",
+  "compensation",
+  "COLA",
+  "market pay"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

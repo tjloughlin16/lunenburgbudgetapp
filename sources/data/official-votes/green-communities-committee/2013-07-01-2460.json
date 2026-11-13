@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2013-07-01",
  "docid": "2460",
@@ -12,13 +12,181 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from 4/29/2013",
+   "motion": "Approve the minutes of 4/29/2013.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes from 4/29/2013 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record approval of prior minutes at the start of the meeting. No other motions or votes are recorded; the remainder of the document is discussion and presentation of projects and policy matters.",
- "cost_usd": 0.0855695
+ "note": "The minutes are headed \"Green Community Task Force Minutes\" while the board is recorded as Green Communities Committee; item 6 discusses that title. The only recorded vote is approval of the 4/29/2013 minutes, which gives no mover or seconder and no count. The adjournment at 7:37 P.M. is stated without a motion, so it is not recorded as a vote. No public comment section is printed, and no dollar figures appear in the text.",
+ "cost_usd": 0.00464372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan"
+  },
+  {
+   "name": "J. McQuaid",
+   "role": "Member (recorded the minutes, signed Joanne McQuaid)",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan"
+  },
+  {
+   "name": "N. Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: members: d. blatt, j. mcquaid, n. sullivan"
+  },
+  {
+   "name": "J.Breault",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "j. breault noted that at the public safety building the exterior lights"
+  },
+  {
+   "name": "J. Londa",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "j. londa stated that the town would have to reduce the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Energy cost data (oil, diesel, gas) for Town buildings is to be uploaded to the Mass InSight website; the goal is to have all of it by the next meeting so a baseline year can be set and a plan developed. Street lights are excluded because the Town does not own them.",
+   "quote": "all energy cost ( oil, diesel, gas) for the town buildings needs to be uploaded to the mass insight website"
+  },
+  {
+   "decision": "The draft vehicle use/replacement policy was sent to all departments with vehicles and the Town Manager for review; the goal is to replace all non-exempt vehicles within 10 years within the Capital Plan.",
+   "quote": "it was sent to all departments with vehicles and the town manager for review."
+  },
+  {
+   "decision": "Stretch Code will not be increased, because the energy code has been increased significantly in the new building code.",
+   "quote": "because the energy code has been increased signiﬁcantly the stretch code will not be increased."
+  },
+  {
+   "decision": "D. Blatt will speak with the Town Manager about whether the group should be called a \"task force\" or a \"committee\".",
+   "quote": "d.blatt who will speak to the town manager about \"task force\" vs. \"committee\"."
+  },
+  {
+   "decision": "Next meeting set for Wed. 7/31/13 at 6:30 P.M. at the Ritter Building.",
+   "quote": "next meeting wed. 7/31/13 at 6:30 p.m. at the ritter building."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Energy Performance Contract and grant funding for the 20% energy reduction",
+   "what_was_recorded": "D. Blatt asked whether an Energy Performance Contract could count toward the 20% energy reduction and whether the Grant could be used for that measure; J. Londa said the reduction is measured in BTUs, not dollars, and that a solar PV credit might be available. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "d.blatt wondered if an energy performance contract such as is being used in littleton"
+  },
+  {
+   "topic": "Energy audit for the Public Library through Unitil",
+   "what_was_recorded": "J. Breault said an energy audit for the Library may be possible through Unitil, and lighting work at the Library parking lot was to be looked at next. No dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "it may be possible to get an energy audit for the library also through unitil."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes of 4/29/2013",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the minutes from 4/29/2013 were approved."
+  },
+  {
+   "topic": "Green Community Application and project status",
+   "resolution": "review and discussion; no action recorded",
+   "tags": [
+    "green community",
+    "energy",
+    "lighting",
+    "Unitil",
+    "Mass InSight"
+   ],
+   "quote": "d.blatt requested a review of the green community application and status of projects"
+  },
+  {
+   "topic": "Building code and Stretch Code",
+   "resolution": "noted; Stretch Code will not be increased",
+   "tags": [
+    "building code",
+    "stretch code"
+   ],
+   "quote": "d.blatt spoke with the building inspector about the new building code in effect."
+  },
+  {
+   "topic": "Draft vehicle use/replacement policy",
+   "resolution": "presented; sent to departments and Town Manager for review",
+   "tags": [
+    "vehicles",
+    "policy",
+    "energy reduction",
+    "capital plan"
+   ],
+   "quote": "j.londa presented a draft policy for the application regarding the use/replacement of"
+  },
+  {
+   "topic": "Possible energy projects",
+   "resolution": "suggestions noted; no action recorded",
+   "tags": [
+    "DPW heating",
+    "wood burner",
+    "solar PV",
+    "Eagle House"
+   ],
+   "quote": "possible projects: j. breault suggested the heating system at the dpw"
+  },
+  {
+   "topic": "Group title (task force vs. committee)",
+   "resolution": "D. Blatt to speak with Town Manager",
+   "tags": [
+    "governance",
+    "naming"
+   ],
+   "quote": "a discuss about the title of our group was brought up by d.blatt"
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for 7/31/13; adjourned 7:37 P.M.",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "next meeting wed. 7/31/13 at 6:30 p.m. at the ritter building."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft policy for the Application regarding the use/replacement of vehicles",
+   "where": "text",
+   "quote": "j.londa presented a draft policy for the application regarding the use/replacement of"
+  }
+ ],
+ "tags": [
+  "green community",
+  "energy efficiency",
+  "lighting",
+  "Unitil",
+  "energy performance contract",
+  "vehicle policy",
+  "stretch code",
+  "building code",
+  "board title",
+  "Mass InSight"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

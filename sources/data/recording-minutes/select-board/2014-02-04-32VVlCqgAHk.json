@@ -1,0 +1,679 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-02-04",
+ "video_id": "32VVlCqgAHk",
+ "video_url": "https://www.youtube.com/watch?v=32VVlCqgAHk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-02-04-32VVlCqgAHk.json",
+  "sha256": "d3b2b39dd0ae7293b8344beadd723bd0e2b92ed6ebe4ab6d2efc6fce525908f3",
+  "caption_lines": 405,
+  "segments": 3607
+ },
+ "recording": {
+  "duration_s": 8463,
+  "duration": "2:21",
+  "spoken_chars": 123247,
+  "words_approx": 20541
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02042014-4915",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-02-04-agenda-4915.txt",
+   "path": "sources/meetings/select-board/2014-02-04-agenda-4915.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02042014-4915",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-02-04-minutes-4915.txt",
+   "path": "sources/meetings/select-board/2014-02-04-minutes-4915.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:48:15Z",
+  "cost_usd": 0.30758409999999997
+ },
+ "minutes": {
+  "headline": "Board ratified the Green Communities grant, accepted three donated conservation parcels, and opened the town meeting warrant.",
+  "summary": "The Select Board recognized two men for a rescue at a house fire. It heard the Green Communities task force's first-round grant plan and endorsed land valuation criteria from the open space committee and Conservation Commission. It accepted three donated parcels, heard a discouraging update on Eagle Heights senior housing financing, and opened the annual town meeting warrant. It also discussed land use coordination, broadband, and the town manager's second-quarter financial report.",
+  "attendees": [
+   {
+    "name_as_heard": "Chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mrs Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Matthews",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr evasol",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Kerry",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "fire chief",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Mr blood",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Ms Jordan",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "chapter-70",
+   "economic-development",
+   "facilities",
+   "grants",
+   "health-insurance",
+   "housing",
+   "legal",
+   "planning-and-zoning",
+   "public-safety",
+   "state-aid",
+   "technology",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1506,
+    "motion": "Ratify the chair's signing and submission of the Green Communities grant application",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1992,
+    "motion": "Approve the open space land valuation criteria",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2722,
+    "motion": "Endorse the Conservation Commission's land valuation criteria",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3290,
+    "motion": "Accept donation of land at 801 Northfield Road, 781 Page Street and 30 Rennie Street",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5432,
+    "motion": "Open the annual town meeting warrant on February 4th and close it at 4 pm on March 24th",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 8445,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 557,
+    "topic": "Green Communities grant",
+    "what_was_said": "The town received a designation grant and the first-round application asks nothing from the town.",
+    "figures_as_heard": [
+     "157 thousand two 200",
+     "157 000"
+    ]
+   },
+   {
+    "t": 746,
+    "topic": "Public safety building gas conversion study",
+    "what_was_said": "The task force asked for a feasibility study on converting oil heat to natural gas.",
+    "figures_as_heard": [
+     "five thousand dollars"
+    ]
+   },
+   {
+    "t": 988,
+    "topic": "Primary school LED lighting",
+    "what_was_said": "The largest share of grant funding goes to lighting at the primary school.",
+    "figures_as_heard": [
+     "96 000"
+    ]
+   },
+   {
+    "t": 1093,
+    "topic": "DPW waste oil burner",
+    "what_was_said": "A waste oil burner for town vehicle oil was proposed; members questioned the past burner's problems.",
+    "figures_as_heard": [
+     "ten thousand dollars"
+    ]
+   },
+   {
+    "t": 3083,
+    "topic": "Back taxes on donated parcels",
+    "what_was_said": "Donations require abatement of outstanding taxes; the oldest parcel needs state approval.",
+    "figures_as_heard": [
+     "about 400",
+     "eighteen hundred dollars",
+     "twenty six hundred dollars"
+    ]
+   },
+   {
+    "t": 7860,
+    "topic": "Veterans benefits overage",
+    "what_was_said": "The town manager projected a year-end deficit in veterans benefits, with most reimbursed by the state the next year.",
+    "figures_as_heard": [
+     "forty two thousand dollars",
+     "75 percent"
+    ]
+   },
+   {
+    "t": 7986,
+    "topic": "Health insurance savings",
+    "what_was_said": "Fewer covered employees and a lower January renewal produce a surplus that will cover other overages.",
+    "figures_as_heard": [
+     "a hundred and fifty thousand dollars",
+     "twenty thousand dollars"
+    ]
+   },
+   {
+    "t": 5495,
+    "topic": "Warrants",
+    "what_was_said": "Accounts payable and payroll warrants were read out.",
+    "figures_as_heard": [
+     "four hundred thirty two thousand eight hundred thirty six dollars and Thirteen Cents",
+     "1155.09",
+     "532 341.60",
+     "627 320 dollars and eight cents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 6347,
+    "decision": "Board will seek a meeting with the planning board and land use boards on a development checklist and coordination."
+   },
+   {
+    "t": 6803,
+    "decision": "Broadband provider selection process to go on a future agenda, possibly with the IT director."
+   },
+   {
+    "t": 7175,
+    "decision": "Building reuse committee's future charge to be discussed at next week's meeting."
+   },
+   {
+    "t": 5070,
+    "decision": "The Eagle Heights agreement has expired and will not be extended until financing is clearer."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 385,
+    "topic": "Recognition of two men for fire rescue",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 385,
+    "t_end": 1526,
+    "topic": "Announcements and Green Communities grant report",
+    "resolution": "voted to ratify",
+    "tags": [
+     "grants",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 1547,
+    "t_end": 2767,
+    "topic": "Open space and conservation land criteria",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2767,
+    "t_end": 3332,
+    "topic": "Donation of three parcels",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3332,
+    "t_end": 5256,
+    "topic": "Eagle Heights senior housing update",
+    "resolution": "informational",
+    "tags": [
+     "housing"
+    ]
+   },
+   {
+    "t_start": 5256,
+    "t_end": 5495,
+    "topic": "Annual town meeting warrant and schedule",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 5495,
+    "t_end": 5643,
+    "topic": "Warrants and minutes",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5643,
+    "t_end": 6971,
+    "topic": "Land use coordination, earth removal, stormwater, broadband",
+    "resolution": "referred",
+    "tags": [
+     "planning-and-zoning",
+     "technology",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 6971,
+    "t_end": 7571,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7571,
+    "t_end": 8176,
+    "topic": "Town manager second quarter financial report",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 8176,
+    "t_end": 8445,
+    "topic": "Final comments on state budget and condolences",
+    "resolution": "informational",
+    "tags": [
+     "state-aid",
+     "chapter-70"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Fiscal year budget totals were not stated.",
+   "Several readings of warrant amounts are uncertain."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4042,
+    "about": "Board members pressed the Eagle Heights developers on concessions, a PILOT and the vacant building.",
+    "sides": "Board members skeptical against the developers",
+    "words_as_heard": "I'm very concerned about the length of time this is taking the fact that the building remains empty",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 5953,
+    "kind": "safety",
+    "about": "Earth removal on a small residential road would bring many truck trips.",
+    "who": "a member",
+    "words_as_heard": "it's 80 to 100 truck trips a day for two months"
+   },
+   {
+    "t": 6121,
+    "kind": "liability or legal",
+    "about": "Town maintenance burden of stormwater structures and a possible bond.",
+    "who": "a member",
+    "words_as_heard": "should in fact the planning board be looking at some sort of bond or some sort of funding mechanism"
+   },
+   {
+    "t": 4732,
+    "kind": "condition",
+    "about": "Member needs specifics on concessions before supporting the project.",
+    "who": "a member",
+    "words_as_heard": "I need to know specifically what concessions are you looking for"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 406,
+    "name_as_heard": "spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "they have a copy of the spreadsheet"
+   },
+   {
+    "t": 1611,
+    "name_as_heard": "open space guidelines",
+    "kind": "report",
+    "words_as_heard": "the guidelines actually part of the package"
+   },
+   {
+    "t": 5256,
+    "name_as_heard": "schedule in agenda packet",
+    "kind": "agenda",
+    "words_as_heard": "there is a schedule included in your agenda packet"
+   },
+   {
+    "t": 7571,
+    "name_as_heard": "second quarter financial reports memo",
+    "kind": "memo",
+    "words_as_heard": "the second quarter Financial reports"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "eagle-heights-financing",
+    "title": "Eagle Heights financing",
+    "question": "What concessions and costs would the town bear for the senior housing project?",
+    "t": 3813,
+    "words_as_heard": "what is it that you're looking for for concessions from the town",
+    "data_in_play": [
+     "70 percent local preference"
+    ],
+    "existing": "thread:brooks-house"
+   },
+   {
+    "slug": "green-communities-grants",
+    "title": "Green Communities grants",
+    "question": "What do the grant projects cost and save?",
+    "t": 557,
+    "words_as_heard": "almost eighteen thousand dollars a year",
+    "data_in_play": [
+     "157 000",
+     "96 000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to ratify the chair's signing and submission of the Green Communities grant application, whose first round asks nothing from the town.",
+    "t": 1506
+   },
+   {
+    "line": "The board accepted the donation of three parcels of land, with back taxes to be abated and the oldest parcel needing state approval.",
+    "t": 3290
+   },
+   {
+    "line": "The board approved open space land valuation criteria and endorsed the Conservation Commission's criteria for valuing land.",
+    "t": 1992
+   },
+   {
+    "line": "The board opened the annual town meeting warrant on February 4th and set it to close at 4 pm on March 24th.",
+    "t": 5432
+   },
+   {
+    "line": "The Eagle Heights senior housing agreement has expired and will not be extended until financing is clearer.",
+    "t": 5070
+   }
+  ],
+  "why_it_matters": [
+   "The grant work and land donations affect which energy upgrades the town pays for and which land it takes on, and the warrant now open is where residents' town meeting articles are set.",
+   "The stalled Eagle Heights financing leaves the future of that senior housing project unsettled, and a projected veterans benefits deficit would be covered this year by health insurance savings."
+  ],
+  "watch_next": [
+   "The building reuse committee's future charge is to be discussed at next week's board meeting.",
+   "The warrant closes at 4 pm on March 24th, and the board will seek a meeting with the planning board and land use boards."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:48:21Z",
+   "cost_usd": 0.0241331
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02042014-4915",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-02-04-minutes-4915.txt",
+   "path": "sources/meetings/select-board/2014-02-04-minutes-4915.pdf"
+  },
+  "official_sha256": "f00a7dae1f761eb7fd2ee7723a65b5b1ec2c1dd590fa0aa81862748c30f0acf9",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on all five non-procedural votes and on the Eagle Heights and broadband decisions. They differ on the Green Communities grant dollar figures, and the official minutes carry many budget figures and some decisions that our minutes lack.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Ratify Green Communities grant application",
+    "ours": "Ratify the chair's signing and submission of the Green Communities grant application — passed",
+    "official": "mr: ebersole moved to ratify the grant application from the green communities task force. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+    "note": "Both record the ratification passing; official adds the 5-0 tally and movers. Wording differs slightly (chair's signing vs task force application).",
+    "t": 1506
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Open space land criteria title",
+    "ours": "Approve the open space land valuation criteria — passed",
+    "official": "ms. bertram moved to approve the open space land acquisition criteria. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed",
+    "note": "Same vote passed, but ours says 'valuation' criteria and official says 'acquisition' criteria; check the recording for which was voted.",
+    "t": 1992
+   },
+   {
+    "kind": "agree",
+    "about": "Endorse Conservation land valuation criteria",
+    "ours": "Endorse the Conservation Commission's land valuation criteria — passed",
+    "official": "mr. matthews moved to endorse the conservation land valuation criteria. mr. ebersole seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+    "note": "Same motion and outcome.",
+    "t": 2722
+   },
+   {
+    "kind": "agree",
+    "about": "Accept donation of land at 801 Northfield Rd, 781 Page St, 30 Rennie St",
+    "ours": "Accept donation of land at 801 Northfield Road, 781 Page Street and 30 Rennie Street — passed",
+    "official": "ms. bertram moved to accept the donation of land located at 801 northfield road, 781 page street, and 30 rennie street for conservation purposes. mr. matthews seconded.",
+    "note": "Same motion passing; the official excerpt does not show the tally in the quote but is structured as 5-0.",
+    "t": 3290
+   },
+   {
+    "kind": "agree",
+    "about": "Open and close annual town meeting warrant",
+    "ours": "Open the annual town meeting warrant on February 4th and close it at 4 pm on March 24th — passed",
+    "official": "ms. bertram moved to open the warrant for annual town meeting on 2/4/2014, and to close the warrant at 4pm on 3/24/2014. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+    "note": "Same dates and outcome.",
+    "t": 5432
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Green Communities grant amounts",
+    "ours": "Green Communities grant: 157 thousand two 200, 157 000",
+    "official": "total project cost will be $175,750.00 & grant funding will be $154,510.00",
+    "note": "Figures differ beyond a digit misheard (157,000 vs 154,510 grant; project cost 175,750 vs 157,2xx); check the recording and the application.",
+    "t": 557
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public safety building gas conversion study",
+    "ours": "Public safety building gas conversion study: five thousand dollars",
+    "official": "",
+    "note": "Official minutes have no gas conversion study figure.",
+    "t": 746
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Primary school LED lighting",
+    "ours": "Primary school LED lighting: 96 000",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 988
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW waste oil burner",
+    "ours": "DPW waste oil burner: ten thousand dollars",
+    "official": "",
+    "note": "Not in official minutes.",
+    "t": 1093
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Back taxes/abatements on donated parcels",
+    "ours": "Back taxes on donated parcels: about 400, eighteen hundred dollars, twenty six hundred dollars",
+    "official": "the approximate $2600 in abatements does not pose a problem to the town manager's budget",
+    "note": "$2,600 matches, but ours also gives about 400 and 1,800 components not in the official; check how the amount breaks down.",
+    "t": 3083
+   },
+   {
+    "kind": "agree",
+    "about": "Veterans benefits $42k",
+    "ours": "Veterans benefits overage: forty two thousand dollars, 75 percent",
+    "official": "veterans benefits: account is over expended by $14k.",
+    "note": "Official gives $14k over-expended with $42k as potential year-end deficit; the 75 percent is not in the official quote. Appears consistent but verify.",
+    "t": 7860
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance retiree savings",
+    "ours": "Health insurance savings: a hundred and fifty thousand dollars, twenty thousand dollars",
+    "official": "health insurance: due to changes in health insurance for retirees effective 1/1/14, there will be a surplus of approximately",
+    "note": "$150k surplus matches; the twenty thousand figure in ours is not in the official quote.",
+    "t": 7986
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Warrants amounts",
+    "ours": "Warrants: four hundred thirty two thousand eight hundred thirty six dollars and Thirteen Cents, 1155.09, 532 341.60, 627 320 dollars and eight cents",
+    "official": "warrants: 3rd quarter water dept. bills 12/31 #33a14 $1155.09 1/29 #40-14 $532,341.60",
+    "note": "Four amounts match the official's list ($432,836.13, $1155.09, $532,341.60, $627,320.08); official records no approval vote, so check whether the board voted.",
+    "t": 5495
+   },
+   {
+    "kind": "agree",
+    "about": "Eagle Heights agreement expired",
+    "ours": "The Eagle Heights agreement has expired and will not be extended until financing is clearer.",
+    "official": "board members determined that the current agreement has expired and will not extend anything until more information is received",
+    "note": "Same decision; reason slightly differently worded (financing vs more information).",
+    "t": 5070
+   },
+   {
+    "kind": "agree",
+    "about": "Broadband provider selection on future agenda",
+    "ours": "Broadband provider selection process to go on a future agenda, possibly with the IT director.",
+    "official": "he requested that the process, for which we would recommend our buildings choose to pick from, be included on a future bos agenda.",
+    "note": "Same item.",
+    "t": 6803
+   },
+   {
+    "kind": "agree",
+    "about": "Building Reuse Committee future",
+    "ours": "Building reuse committee's future charge to be discussed at next week's meeting.",
+    "official": "requested that this be put on a future bos agenda.",
+    "note": "Same topic, but ours says next week's meeting while official says a future agenda; minor timing difference.",
+    "t": 7175
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting with planning board on development checklist",
+    "ours": "Board will seek a meeting with the planning board and land use boards on a development checklist and coordination.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 6347
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PACC Bylaw placeholder on warrant",
+    "ours": "",
+    "official": "mr. alonzo requested that a place holder be put on the warrant for town meeting for pacc bylaw revisions.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ebersole recommends Juhl contact Assessor for PILOT info",
+    "ours": "",
+    "official": "mr. ebersole recommended that mr. juhl contact the assessor for pilot information as soon as possible",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fines, meals tax, permits, and other revenue/deficit figures",
+    "ours": "",
+    "official": "we have collected $6,590 more than the estimate of $28,000 for fines, majority due to motor vehicle infractions",
+    "note": "Official has many budget figures (fines, meals tax, solar permits, injury leave, snow removal, etc.) not in our figures."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Ebersole name",
+    "ours": "Mr evasol (member)",
+    "official": "chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel.",
+    "note": "Misheard name for Ebersole.",
+    "official_reading": "Ebersole"
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager attendee",
+    "ours": "Kerry (town manager)",
+    "official": "robert ebersole, and town manager kerry speidel.",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Members Alonzo and Toale",
+    "ours": "",
+    "official": "chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel.",
+    "note": "Our list names the chair only as 'Chairman' and omits Toale."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter Mr blood",
+    "ours": "Mr blood (presenter)",
+    "official": "david blatt came before the board this evening to ask for approval and to review the completed grant application",
+    "note": "Likely misheard Blatt.",
+    "official_reading": "Blatt"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:49:59Z",
+   "cost_usd": 0.0640091
+  }
+ }
+}

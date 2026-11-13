@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-11-16",
  "docid": "1614",
@@ -12,23 +12,182 @@
  },
  "votes": [
   {
-   "motion": "Grant the Request for Determination of Applicability for dock replacement and tree removal at 12 Horizon Island Road",
+   "motion": "Determination on the Request for Determination of Applicability filed by John A. Beale at 12 Horizon Island Road (replace a decomposed dock; remove 7 trees outside the 30' no touch zone); minutes record 'Negative 3', 4 yes, 1 no.",
    "moved_by": "JJ",
-   "seconded_by": "Mark",
-   "outcome": "passed 4-1",
-   "procedural": false,
-   "quote": "jj/mark negative 3 4 yes 1 no passed"
-  },
-  {
-   "motion": "Grant the Request for Determination of Applicability for sewage disposal system repair at 919 Chase Road",
-   "moved_by": "Sharon",
-   "seconded_by": "Mark",
    "outcome": "passed",
    "procedural": false,
-   "quote": "sharon/mark unanimous"
+   "quote": "jj/mark negative 3 4 yes 1 no passed",
+   "seconded_by": "Mark"
+  },
+  {
+   "motion": "Determination on the Request for Determination of Applicability filed by Linda A. Bridgman at 919 Chase Road (repair of failing sewage disposal system).",
+   "moved_by": "Sharon",
+   "outcome": "Unanimous",
+   "procedural": false,
+   "quote": "sharon/mark unanimous",
+   "seconded_by": "Mark"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is formatted OCR scan but readable. These are votes on wetlands protection applications (Requests for Determination of Applicability under MGL ch 131, s 40). The attendance list suggests 7 members present for vote 2's unanimous vote. First vote passed 4-1 with one member opposed; actual roll-call names not recorded, only initials in the abbreviated notes.",
- "cost_usd": 0.1287635
+ "note": "Minutes text is partly garbled: the first header line is font-encoded and unreadable, and the text ends abruptly at the 964 Northfield Road informational meeting with no outcome. The attendance line is a header list with no explicit present/absent wording, so those statuses are inferred as present. 'Ric hard Bursch' is recorded as printed, with the stray space from the extraction. The 12 Horizon Island Road vote has no motion sentence; the mover/seconder come from the 'JJ/Mark' notation and the tally is printed as 'Negative 3 4 yes 1 no', which I read as 4-1 with the outcome 'passed'. No dollar figures, public comment section, or document list appear in the text.",
+ "cost_usd": 0.00421792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy, sharon jordan, ric hard bursch, matt marro, jan carrier",
+   "role": ""
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy, sharon jordan, ric hard bursch, matt marro, jan carrier",
+   "role": ""
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy, sharon jordan, ric hard bursch, matt marro, jan carrier",
+   "role": ""
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy, sharon jordan, ric hard bursch, matt marro, jan carrier",
+   "role": ""
+  },
+  {
+   "name": "Ric hard Bursch",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy, sharon jordan, ric hard bursch, matt marro, jan carrier",
+   "role": ""
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy, sharon jordan, ric hard bursch, matt marro, jan carrier",
+   "role": ""
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "rob verge, jj cote, mark murphy, sharon jordan, ric hard bursch, matt marro, jan carrier",
+   "role": ""
+  },
+  {
+   "name": "Jenn Tuomala",
+   "status": "present",
+   "quote": "jenn tuomala presented a copy of the baseline documentation report",
+   "role": "presenter, North County Land Trust item"
+  },
+  {
+   "name": "Janet Morrison",
+   "status": "present",
+   "quote": "janet morrison joined her in explaining any plans to change the conservation restriction",
+   "role": "joined Jenn Tuomala in explaining"
+  },
+  {
+   "name": "John A. Beale",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by john a. beale.",
+   "role": "applicant"
+  },
+  {
+   "name": "Neil Gorman",
+   "status": "present",
+   "quote": "neil gorman presented, presby system, a few trees will have to be removed.",
+   "role": "of David E. Ross Associates"
+  },
+  {
+   "name": "Linda A. Bridgman",
+   "status": "not stated",
+   "quote": "filed by linda a. bridgman (neil gorman of david e. ross associates).",
+   "role": "applicant"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "status": "not stated",
+   "quote": "informational meeting with brandon kibbe",
+   "role": ""
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "North County Land Trust: Baseline Documentation Report, Hawes & Moore/Mooz properties, Hollis Road",
+   "resolution": "reviewed; no vote recorded",
+   "quote": "review of the baseline documentation report on the hawes & moore/mooz properties on hollis road.",
+   "tags": [
+    "conservation restriction",
+    "baseline report",
+    "Hollis Road"
+   ]
+  },
+  {
+   "topic": "12 Horizon Island Road: RDA filed by John A. Beale (dock replacement, tree removal)",
+   "resolution": "passed on recorded vote",
+   "quote": "replace an existing dock that has severely decomposed.",
+   "tags": [
+    "wetlands",
+    "dock",
+    "tree removal",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "919 Chase Road: RDA filed by Linda A. Bridgman (septic system repair)",
+   "resolution": "passed unanimously",
+   "quote": "the proposed project is for repair of an existing failing sewage disposal system.",
+   "tags": [
+    "wetlands",
+    "septic",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "964 Northfield Road: informational meeting with Brandon Kibbe",
+   "resolution": "not stated; minutes end before any action",
+   "quote": "informational meeting with brandon kibbe",
+   "tags": [
+    "informational meeting",
+    "Northfield Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Baseline Documentation Report (Hawes & Moore/Mooz properties, Hollis Road)",
+   "where": "text",
+   "quote": "jenn tuomala presented a copy of the baseline documentation report and went briefly went over the information that it contains."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by John A. Beale (12 Horizon Island Road)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by john a. beale."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Linda A. Bridgman (919 Chase Road)",
+   "where": "text",
+   "quote": "filed by linda a. bridgman (neil gorman of david e. ross associates)."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "request for determination of applicability",
+  "conservation restriction",
+  "dock",
+  "septic",
+  "tree removal"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

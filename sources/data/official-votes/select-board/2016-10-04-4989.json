@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-10-04",
  "docid": "4989",
@@ -12,47 +12,446 @@
  },
  "votes": [
   {
-   "motion": "To discuss strategy with respect to collective bargaining or litigation regarding the UNITIL Petition, and to discuss strategy with respect to litigation regarding the IBPO MOA, and to enter Executive Session.",
+   "motion": "Enter executive session to discuss collective bargaining/litigation strategy (UNITIL Petition) and litigation strategy (IBPO MOA).",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole 2'': t. alonzo to discuss strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigating position (unitil petition), and to discuss strategy with respect to litigation if an open meeting may have a detrimental effect on the litigating position of the public body and the chair declares so (ibpo moa). vote: mr. ebersole-yes, mr. alonzo-yes, mr. toale- yes"
+   "quote": "vote: mr. ebersole-yes, mr. alonzo-yes, mr. toale- yes"
   },
   {
-   "motion": "To support the decision of DPW Director Rodriquenz to not approve the road opening at 72 Leominster Road.",
+   "motion": "Support DPW Director Rodriquenz's decision not to approve the road opening at 72 Leominster Road.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2': p. bertram to support the decision of dpw director rodriquenz to not approve the road opening at 72 leominster road vote: all in favor"
+   "quote": "to support the decision of dpw director rodriquenz to not approve the road opening at 72 leominster road vote: all in favor"
   },
   {
-   "motion": "As the appointing officials, as required by G.L. c. 268A, § 19, the Board has reviewed the matter and the financial interest identified by the municipal employee and determined that the financial interest is not so substantial as to be deemed likely to affect the integrity of the services which the municipality may expect from him.",
+   "motion": "Find, as the appointing officials under G.L. c. 268A, § 19, that the municipal employee's disclosed financial interest is not so substantial as to be likely to affect the integrity of his services.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\"d: t. alonzo as the appointing officials, as required by g.l. c. 268a,§ 19, the board has reviewed the matter and the financial interest identified by the municipal employee and determined that the financial interest is not so substantial as to be deemed likely to affect the integrity of the services which the municipality may expect from him vote: all in favor"
+   "procedural": false,
+   "quote": "as the appointing officials, as required by g.l. c. 268a,§ 19, the board has reviewed the matter and the financial interest identified"
   },
   {
-   "motion": "To authorize the Chair to sign the disclosure.",
+   "motion": "Authorize the Chair to sign the disclosure.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to authorize the chair to sign the disclosure 2^d: r. ebersole vote: all in favor"
+   "procedural": false,
+   "quote": "to authorize the chair to sign the disclosure 2^d: r. ebersole vote: all in favor"
   },
   {
-   "motion": "To accept the recommendation of the Storm Water Task Force and approve the quote from Design Consultants, Inc. and the Massachusetts Watershed Coalition for scope of services ($18,800).",
+   "motion": "Accept the Storm Water Task Force recommendation and approve the quote (Design Consultants, Inc. with the Massachusetts Watershed Coalition).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to accept the recommendation and approve the quote 2nd: p. bertram vote: all in favor"
+   "quote": "to accept the recommendation and approve the quote 2nd: p. bertram vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from scanned minutes via macOS Vision. Minutes approval stated as \"The Board approved minutes\" without a formal motion/vote recorded.",
- "cost_usd": 0.0960515
+ "note": "OCR text from a macOS Vision scan; some characters are garbled (e.g. \"31%\" for \"31st\", \"2'':\" for \"2nd:\"). Executive session vote is printed as individual yeas, not a tally. The 72 Leominster Road and other votes are recorded only as \"All in Favor\" with no count. No motion to adjourn is recorded; the minutes say only \"The meeting adjourned at 9:12 p.m.\" The minutes approval line reads \"October 14 and October 21, 2014,\" which is probably a typo for 2016. The minutes spell the historical society speaker \"Lasko\" and also \"Lasco\" once. The Storm Water approval is recorded as \"the quote\" with no dollar figure in the motion itself.",
+ "cost_usd": 0.011304020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "C. William Lasko",
+   "role": "representing the Lunenburg Historical Society",
+   "status": "present",
+   "quote": "c. william lasko presented on behalf of the lunenburg historical society about concerns they have regarding"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director rodriquenz reminded the board the town has finished pavement on lancaster avenue"
+  },
+  {
+   "name": "Mr. Tocci",
+   "role": "resident seeking gas connection at 72 Leominster Road",
+   "status": "present",
+   "quote": "mr. tocci stated he just moved here in june and didn't intend to be introduced to the town this way."
+  },
+  {
+   "name": "Rich Benevento",
+   "role": "President, World Tech Engineering",
+   "status": "present",
+   "quote": "mr. rodriquenz introduced president rich benevento of world tech engineering."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "property owner, 1134 Northfield Road",
+   "status": "present",
+   "quote": "tanner cole, property owner expressed dissatisfaction at the time it was taking to have the easement drawn up."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney directed the board to the two responses received for the scope of services"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board took the Lunenburg Historical Society's request regarding the parking lot under advisement.",
+   "quote": "the board took the request under advisement and thanked the society members for"
+  },
+  {
+   "decision": "The Board requested that the easement for 1134 Northfield Road be placed on the next meeting agenda, to be signed by the Board and then recorded.",
+   "quote": "the board requested to have the easement for the next meeting."
+  },
+  {
+   "decision": "Mr. Ebersole asked Mr. Marciello to check with Town Counsel on the status of the traffic rules and regulations review; it was suggested to start asking counsel for definitive dates.",
+   "quote": "he requested mr. marciello check with town counsel regarding the status of the traffic rules and regulations review."
+  },
+  {
+   "decision": "The minutes of October 14 and October 21, 2014 and September 6, September 13 and September 20, 2016 were recorded as approved, with no motion or vote recorded.",
+   "quote": "the board approved minutes of october 14 and october 21, 2014, september 6, september 13 and september"
+  },
+  {
+   "decision": "Mr. Marciello asked the Board for feedback on the draft Legal Counsel RFP before it is advertised.",
+   "quote": "he asked for feedback before advertising it."
+  },
+  {
+   "decision": "It was suggested to schedule a public hearing in November about the Kabob-E-Licious letters.",
+   "quote": "it was suggested to schedule a public hearing in november to address this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Gas connection payment, 72 Leominster Road",
+   "what_was_recorded": "Mr. Tocci said he had already paid National Grid for the gas connection.",
+   "figures_as_printed": [
+    "$4850.00"
+   ],
+   "quote": "he has already provided a $4850.00 payment to them."
+  },
+  {
+   "topic": "Complete Streets technical assistance and funding",
+   "what_was_recorded": "Mr. Benevento said technical assistance up to $50,000 is available, and that only six communities have been awarded construction funding out of $12.5 million available to date.",
+   "figures_as_printed": [
+    "$50,000",
+    "$12.5 million"
+   ],
+   "quote": "technical assistance up to $50,000 is available by completing the required documentation."
+  },
+  {
+   "topic": "Storm Water Task Force scope of services bids",
+   "what_was_recorded": "VHB bid $21,300 and DCI with the MA Watershed Coalition bid $18,800 for the scope of services; the Board accepted the low bid.",
+   "figures_as_printed": [
+    "$21,300",
+    "$18,800"
+   ],
+   "quote": "came in at $21,300 and design consultants, inc. (dci) in conjunction with the massachusetts watershed coalition came in at $18,800."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed a payroll deduction warrant, a payroll warrant, an accounts payable warrant and a middle/high school building construction warrant.",
+   "figures_as_printed": [
+    "$506,461.23",
+    "$758,613.05",
+    "$346,600.16",
+    "$2,170,643.92"
+   ],
+   "quote": "the board signed a payroll deduction warrant in the amount of $506,461.23, a payroll warrant in the amount of $758,613.05"
+  },
+  {
+   "topic": "School bus additions",
+   "what_was_recorded": "Three larger capacity buses were added at $15,000 each and a new bus at $56,000; $101,000 is to come from the private tuition line surplus; regular and special education transportation is over $1,000,000.",
+   "figures_as_printed": [
+    "$15,000 per bus",
+    "$56,000",
+    "$101,000",
+    "$1,000,000"
+   ],
+   "quote": "three larger capacity school buses have been added due to increased enrollment at the cost of $15,000 per bus"
+  },
+  {
+   "topic": "Pratt St., Pine Grove Road and Cross Road betterments",
+   "what_was_recorded": "Sewer Commission betterments will be less than $14,000, compared with the previously quoted $23,000.",
+   "figures_as_printed": [
+    "$14,000",
+    "$23,000"
+   ],
+   "quote": "it will be less than $14,000 compared to the previously quoted amount of $23,000."
+  },
+  {
+   "topic": "MART van lease",
+   "what_was_recorded": "MART offered to lease the van to the town for $1 per year if member towns assume auto insurance for the vans.",
+   "figures_as_printed": [
+    "$1 per year"
+   ],
+   "quote": "they are willing to lease the van to the town for $1 per year in order to make that work."
+  },
+  {
+   "topic": "MART insurance reimbursement",
+   "what_was_recorded": "Towns will be reimbursed up to $2000 annually based on invoices for van insurance.",
+   "figures_as_printed": [
+    "$2000"
+   ],
+   "quote": "towns will be reimbursed up to $2000 annually based on invoices."
+  },
+  {
+   "topic": "New growth from Assessors",
+   "what_was_recorded": "Assessors reported $160,000 in new growth not yet certified by DOR; if no action is taken it goes to FY 2018 free cash, and a Special Town Meeting could raise and appropriate it for this fiscal year.",
+   "figures_as_printed": [
+    "$160,000"
+   ],
+   "quote": "mr. marciello stated the assessors have reported $160,000 in new growth but it has not been certified by dor"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "C. William Lasko",
+   "stated_role": "presented on behalf of the Lunenburg Historical Society",
+   "topic": "Historical Society concerns about municipal building reuse and parking",
+   "quote": "c. william lasko presented on behalf of the lunenburg historical society about concerns they have regarding"
+  },
+  {
+   "speaker": "Mr. Tocci",
+   "stated_role": "resident, 72 Leominster Road",
+   "topic": "gas connection and road opening denial",
+   "quote": "mr. tocci stated he just moved here in june and didn't intend to be introduced to the town this way."
+  },
+  {
+   "speaker": "Tanner Cole",
+   "stated_role": "property owner, 1134 Northfield Road",
+   "topic": "delay in easement drafting",
+   "quote": "tanner cole, property owner expressed dissatisfaction at the time it was taking to have the easement drawn up."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session at 6:01 p.m.; minutes kept separately",
+   "tags": [
+    "executive session",
+    "UNITIL",
+    "IBPO"
+   ],
+   "quote": "mr. toale opened the meeting at 6:01 p.m. and declared the need to enter executive session."
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "announcements made, no action",
+   "tags": [
+    "announcements",
+    "elections",
+    "Halloween"
+   ],
+   "quote": "mr. toale announced halloween will be observed on monday, october 31% from 6:00 - 8:00 p.m."
+  },
+  {
+   "topic": "Lunenburg Historical Society letter regarding use of town buildings",
+   "resolution": "taken under advisement",
+   "tags": [
+    "historical society",
+    "municipal building reuse",
+    "parking"
+   ],
+   "quote": "lunenburg historical society letter/resolution regarding use of town buildings"
+  },
+  {
+   "topic": "72 Leominster Road (gas connection)",
+   "resolution": "passed motion supporting DPW denial of road opening",
+   "tags": [
+    "road opening",
+    "gas service",
+    "DPW"
+   ],
+   "quote": "72 leominster road (gas connection)"
+  },
+  {
+   "topic": "Complete Streets presentation, World Tech Engineering",
+   "resolution": "presented, no action",
+   "tags": [
+    "complete streets",
+    "MassDOT",
+    "transportation"
+   ],
+   "quote": "complete streets presentation -world tech engineering"
+  },
+  {
+   "topic": "Kim Cole, 1134 Northfield Road easement",
+   "resolution": "easement requested for next meeting",
+   "tags": [
+    "easement",
+    "property sale",
+    "legal counsel"
+   ],
+   "quote": "kim cole- 1134 northfield road"
+  },
+  {
+   "topic": "Disclosure of non-elected municipal employee financial interest",
+   "resolution": "approved finding; authorized Chair to sign disclosure",
+   "tags": [
+    "conflict of interest",
+    "G.L. c. 268A"
+   ],
+   "quote": "disclosure of non-elected municipal employee of financial interest"
+  },
+  {
+   "topic": "Storm Water Task Force scope of services bid results",
+   "resolution": "approved low-bid quote from DCI with MA Watershed Coalition",
+   "tags": [
+    "storm water",
+    "bids",
+    "consultant"
+   ],
+   "quote": "storm water task force scope of services bid results"
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes recorded as approved; warrants signed",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file",
+    "capital plan"
+   ],
+   "quote": "minutes/ warrants/action file issues"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "tags": [
+    "ZBA",
+    "school committee",
+    "MART",
+    "sewer",
+    "capital planning"
+   ],
+   "quote": "ms. luck reported the zoning board of appeals approved the application of jack rabbitt, 314 townsend harbor road"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "discussed; feedback requested on RFP; Special Town Meeting discussed",
+   "tags": [
+    "RFP",
+    "legal counsel",
+    "liquor license",
+    "new growth",
+    "town-owned land"
+   ],
+   "quote": "mr. marciello stated he had emailed the rfp for legal counsel draft to the board"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no further public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there was no further public comment"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Complete Streets policy",
+   "where": "text",
+   "quote": "he presented a draft complete streets policy and a list of eligible types of projects."
+  },
+  {
+   "name": "List of eligible types of projects (Complete Streets)",
+   "where": "text",
+   "quote": "he presented a draft complete streets policy and a list of eligible types of projects."
+  },
+  {
+   "name": "RFP for Legal Counsel (draft, amended printed version)",
+   "where": "text",
+   "quote": "mr. marciello stated he had emailed the rfp for legal counsel draft to the board but directed them to an amended printed version."
+  },
+  {
+   "name": "Final list of town-owned land inventory",
+   "where": "text",
+   "quote": "ms. bertram asked for more information on the inventory of town- owned land. he directed her to the final list",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Letter hand delivered by constable to Kabob-E-Licious",
+   "where": "text",
+   "quote": "he directed the board to a letter hand delivered by constable to kabob-e-licious following the hearing on"
+  },
+  {
+   "name": "MART memorandum of understanding",
+   "where": "text",
+   "quote": "mart will be sending out a new memorandum of understanding and hopes to have everything in place by november 1st."
+  },
+  {
+   "name": "Disclosure of Non-Elected Municipal Employee of Financial Interest",
+   "where": "text",
+   "quote": "disclosure of non-elected municipal employee of financial interest"
+  },
+  {
+   "name": "Easement for 1134 Northfield Road",
+   "where": "text",
+   "quote": "the board requested to have the easement for the next meeting."
+  },
+  {
+   "name": "MA DOT website link on Complete Streets",
+   "where": "text",
+   "quote": "mr. benevento referred the board to a ma dot website link for more information."
+  }
+ ],
+ "tags": [
+  "executive session",
+  "road opening",
+  "gas service",
+  "complete streets",
+  "easement",
+  "conflict of interest",
+  "storm water",
+  "warrants",
+  "school transportation",
+  "MART",
+  "town-owned land",
+  "new growth",
+  "Town Hall reuse",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he presented a draft complete streets policy and a list of eligible types of projects."
+ },
+ "dropped_unquoted_by_field": {}
 }

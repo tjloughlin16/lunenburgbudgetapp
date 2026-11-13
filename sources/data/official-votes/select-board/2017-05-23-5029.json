@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-05-23",
  "docid": "5029",
@@ -12,56 +12,458 @@
  },
  "votes": [
   {
-   "motion": "Elect Mr. Toale as Chairman of the Board of Selectmen",
+   "motion": "Nominate Mr. Toale for Chair",
    "moved_by": "Ms. Luck",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. luck nominated mr. toale for chair; seconded by mr. mcquaid. vote was unanimously in favor."
   },
   {
-   "motion": "Elect Mr. Ebersole as Vice Chairman of the Board of Selectmen",
+   "motion": "Nominate Mr. Ebersole for Vice Chairman",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Ms. Luck",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. bertram nominated mr. ebersole for vice chairman; seconded by ms. luck. vote was unanimously in favor."
   },
   {
-   "motion": "Elect Ms. Bertram as Clerk of the Board of Selectmen",
+   "motion": "Nominate Ms. Bertram for Clerk",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Mr. McQuaid",
-   "outcome": "passed unanimously",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "mr. ebersole nominated ms. bertram for clerk; seconded by mr. mcquaid. vote was unanimously in"
   },
   {
-   "motion": "Set temporary wiring and plumbing permit fees at $150.00 each",
+   "motion": "Set temporary wiring and plumbing fees at $150.00 each",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"': p. bertram to set temporary wiring and plumbing fees at $150.00 each discussion: david ",
-   "quote_taken_from_text": true
+   "quote": "to set temporary wiring and plumbing fees at $150.00 each"
   },
   {
-   "motion": "Set the cable license hearing date for June 15, 2017",
+   "motion": "Set a new date of June 15, 2017 for the cable license hearing",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to set a new date for june 15, 2017 for the cable license hearing date 2\"d: p. luck vote: all in favor"
+   "quote": "to set a new date for june 15, 2017 for the cable license hearing date"
   },
   {
-   "motion": "Enter Executive Session to conduct strategy sessions in preparation for negotiations with non-union personnel regarding Finance Director contract",
+   "motion": "Enter executive session under MGL c.30A, §21 for strategy sessions in preparation for negotiations with non-union personnel (Finance Director Contract)",
    "moved_by": "P. Bertram",
-   "seconded_by": "R. Ebersole",
+   "seconded_by": "R.Ebersole",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: p. bertram 2nd: r.ebersole to enter executive sos on to conduct strategy sins i preparation for me gotiations with nor anine vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye"
+   "quote": "vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document with some scanning artifacts (e.g., \"Boad\" for \"Board\", \"Sleera\" for \"Selectmen\"). Votes are clearly recorded. Vote on Clerk position (vote 3) has incomplete OCR of the outcome word (\"unanimously in\" with \"favor\" cut off), but outcome is evident from context.",
- "cost_usd": 0.1265795
+ "note": "Scanned OCR text (macOS Vision). Header line garbled; attendance inferred from the header and the five-member roll call on the executive session vote. Clerk nomination vote is cut off and no result is printed. Executive session motion text is garbled; quoted motion is from the OCR. Adjournment at 8:52 p.m. has no recorded motion, so no vote is listed for it. The minutes name no documents list or heading; documents appear only in discussion. Elaine M. Peterson signed the minutes and is not listed as an attendee. Role for Ms. Lemieux is taken from the 'Town Manager Report' and 'Town Manager Goals' headings. Dave Rodgers appears in public comment twice.",
+ "cost_usd": 0.011734020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "Board member",
+   "status": "present",
+   "quote": "vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye"
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "Board member",
+   "status": "present",
+   "quote": "vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "Board member",
+   "status": "present",
+   "quote": "vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the boad of sleera me in the bit mein room, damon toad, armane and tober ole, ice heather lemieux."
+  },
+  {
+   "name": "Eric Short",
+   "role": "",
+   "status": "present",
+   "quote": "eric short, 502 holman street, stated he was disappointed that he wasn't notified of the entertainment license"
+  },
+  {
+   "name": "Eric Blomgren",
+   "role": "",
+   "status": "present",
+   "quote": "eric blomgren, 272 holman street, stated he was shocked that there wasn't any notification or presentation."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, was concerned about the road opening moratorium procedures/policy;"
+  },
+  {
+   "name": "David Passios",
+   "role": "",
+   "status": "present",
+   "quote": "david passios, 56 whiting street, found it troubling to place fees after the fact of approving a permit."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, 45 williams drive, stated she felt criticized about her opposing opinion regarding the town"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board discussed and agreed on Board goals for the next fiscal year: improve public satisfaction and outreach, infrastructure and equipment plan with a capital plan focus, and economic development (needs more defining).",
+   "quote": "the board discussed and agreed on the following goals for the next fiscal year:"
+  },
+  {
+   "decision": "Mr. Toale to work with the Town Manager to update the building data.",
+   "quote": "mr. toale stated he would work with the town manager to update the building data."
+  },
+  {
+   "decision": "Board suggested the Town Manager reduce her goals to three or four and delegate the work to pertinent staff and committees.",
+   "quote": "the board suggested reducing to three or four goals for herself individually and delegating the work out to"
+  },
+  {
+   "decision": "Workshop schedule set: Traffic Rules and Regulations June 20th; Board of Selectmen Policies and Procedures July 11th; Town Buildings/Town Infrastructure August 15th; Economic Development (with Planning Board) September 12th; Board/Committee Goals (with Chairs) October 10th.",
+   "quote": "traffic rules and regulations - june 20th"
+  },
+  {
+   "decision": "Board signed an accounts payable warrant (no vote recorded).",
+   "quote": "the board signed an accounts payable warrant in the amount of $100,804.76."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant for a stated amount.",
+   "figures_as_printed": [
+    "$100,804.76"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $100,804.76."
+  },
+  {
+   "topic": "Temporary wiring and plumbing permit fees",
+   "what_was_recorded": "Interim Building Inspector recommended setting temporary wiring and plumbing fees at $150.00 each, and the Board moved to set them at that amount.",
+   "figures_as_printed": [
+    "$150.00"
+   ],
+   "quote": "the interim building inspector has recommended setting the fees for both at $150.00 after discussing with both wiring and plumbing"
+  },
+  {
+   "topic": "Cost of fees for a profit-making event",
+   "what_was_recorded": "Board member said the Town should not carry the costs and inspectors should not work for nothing for a profit-making event.",
+   "figures_as_printed": [],
+   "quote": "we can't ask the town to carry these costs or the inspectors to work for nothing for a profit-making event"
+  },
+  {
+   "topic": "Lake Shirley Dam inspection fee",
+   "what_was_recorded": "Town Manager reported the Lake Shirley Dam inspection fee is $5,000, with inspection scheduled for November.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "ms. lemieux reported the lake shirley dam inspection is scheduled for november. the fee for that is $5,000."
+  },
+  {
+   "topic": "Lake Shirley spillway calculations report estimate",
+   "what_was_recorded": "A prior contractor submitted a $28,000 estimate for the mandated spillway report; the DPW Director is seeking other estimates.",
+   "figures_as_printed": [
+    "$28,000"
+   ],
+   "quote": "the company that has done it previously has submitted an estimate of $28,000 for that report."
+  },
+  {
+   "topic": "Information Technology grant for e-permitting software",
+   "what_was_recorded": "Town received notification of a $40,000 IT grant award for e-permitting software.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "notification of an information technology grant award of $40,000"
+  },
+  {
+   "topic": "MPO TIP funding",
+   "what_was_recorded": "Board member reported funding is still available for 2018, with the program under-programmed by $1.3 million.",
+   "figures_as_printed": [
+    "$1.3 million"
+   ],
+   "quote": "there is still funding available for 2018; they are under-programmed by $1.3 million."
+  },
+  {
+   "topic": "DLA grant for business/town partnership",
+   "what_was_recorded": "Town received notification of a DLA grant for a business/town partnership; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we also received notification on the dla grant for formation of business/town partnership."
+  },
+  {
+   "topic": "Town Manager budget and finance goal",
+   "what_was_recorded": "Town Manager goals include a balanced budget and implementing auditors' recommendations; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "budget and finances: implementing/managing a balanced budget, implementing the auditors' management letter recommendations"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Entertainment license at 300 Holman Street",
+   "speaker": "Eric Short",
+   "stated_role": "502 Holman Street",
+   "quote": "eric short, 502 holman street, stated he was disappointed that he wasn't notified of the entertainment license"
+  },
+  {
+   "topic": "Entertainment license at 300 Holman Street",
+   "speaker": "Eric Blomgren",
+   "stated_role": "272 Holman Street",
+   "quote": "eric blomgren, 272 holman street, stated he was shocked that there wasn't any notification or presentation."
+  },
+  {
+   "topic": "Road opening moratorium policy wording",
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "quote": "dave rodgers, 82 highland street, was concerned about the road opening moratorium procedures/policy;"
+  },
+  {
+   "topic": "Temporary wiring and plumbing fees",
+   "speaker": "David Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "david passios, 56 whiting street, found it troubling to place fees after the fact of approving a permit."
+  },
+  {
+   "topic": "Town building warrant articles and goals",
+   "speaker": "Katey Adams",
+   "stated_role": "45 Williams Drive",
+   "quote": "katey adams, 45 williams drive, stated she felt criticized about her opposing opinion regarding the town"
+  },
+  {
+   "topic": "Road opening moratorium, goals, Passios parking and playground",
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "quote": "dave rodgers, 82 highland street, stated the word he was looking for regarding the road opening moratorium"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Board reorganization",
+   "resolution": "Chair, Vice Chair and Clerk nominated; Chair and Vice Chair passed unanimously, Clerk vote text cut off",
+   "quote": "mr. toale asked if there were any nominations for chairman.",
+   "tags": [
+    "officers",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Public comment on entertainment license at 300 Holman Street",
+   "resolution": "discussed; suggested to bring to Town Counsel; likely on June 6 agenda",
+   "quote": "it was suggested to bring this to town counsel for guidance and then revisit the license requirements.",
+   "tags": [
+    "entertainment license",
+    "public comment",
+    "Holman Street"
+   ]
+  },
+  {
+   "topic": "Goal setting for Town Manager and Board members",
+   "resolution": "Board goals agreed; previous goals reviewed; Town Manager goals discussed",
+   "quote": "the board discussed and agreed on the following goals for the next fiscal year:",
+   "tags": [
+    "goals",
+    "strategy"
+   ]
+  },
+  {
+   "topic": "Town Manager goals",
+   "resolution": "presented and discussed; Board suggested reducing to three or four goals",
+   "quote": "ms. lemieux presented her town manager goals:",
+   "tags": [
+    "town manager",
+    "goals",
+    "review"
+   ]
+  },
+  {
+   "topic": "Town office space and public buildings",
+   "resolution": "discussed; Board Chair to update building data with Town Manager; workshop suggested",
+   "quote": "mr. toale stated he would work with the town manager to update the building data.",
+   "tags": [
+    "town buildings",
+    "office space"
+   ]
+  },
+  {
+   "topic": "Workshop schedule",
+   "resolution": "dates set for 2017 workshops",
+   "quote": "traffic rules and regulations - june 20th",
+   "tags": [
+    "workshops"
+   ]
+  },
+  {
+   "topic": "Fee schedule for temporary wiring and plumbing permits",
+   "resolution": "approved fees of $150.00 each",
+   "quote": "to set temporary wiring and plumbing fees at $150.00 each",
+   "tags": [
+    "permit fees",
+    "wiring",
+    "plumbing"
+   ]
+  },
+  {
+   "topic": "New date for cable license hearing",
+   "resolution": "approved June 15, 2017 hearing date",
+   "quote": "to set a new date for june 15, 2017 for the cable license hearing date",
+   "tags": [
+    "cable license"
+   ]
+  },
+  {
+   "topic": "Warrants and action file issues",
+   "resolution": "accounts payable warrant signed; Lake Shirley docks and forest management plan reported",
+   "quote": "the board signed an accounts payable warrant in the amount of $100,804.76.",
+   "tags": [
+    "warrant",
+    "Lake Shirley",
+    "forest management",
+    "TIP"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action recorded",
+   "quote": "ms. lemieux reported the lake shirley dam inspection is scheduled for november.",
+   "tags": [
+    "Lake Shirley",
+    "grants",
+    "labor"
+   ]
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "heard from two residents; no action",
+   "quote": "katey adams, 45 williams drive, stated she felt criticized about her opposing opinion regarding the town",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session (Finance Director contract); meeting adjourned 8:52 p.m.",
+   "quote": "vote: ms. bertram-aye, mr. mequaid-aye, ms. luck-aye, mr. ebersole -aye, mr. toale-aye",
+   "tags": [
+    "executive session",
+    "personnel",
+    "contract"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Previous Board Goals",
+   "where": "text",
+   "quote": "previous board goals:"
+  },
+  {
+   "name": "Town Manager Goals",
+   "where": "text",
+   "quote": "ms. lemieux presented her town manager goals:"
+  },
+  {
+   "name": "Board of Selectmen Goals",
+   "where": "text",
+   "quote": "board of selectmen goals:"
+  },
+  {
+   "name": "Board of Selectmen policy Section 1.11, Public Comment",
+   "where": "text",
+   "quote": "his response was section 1.11, public comment: the town manager will ensure that"
+  },
+  {
+   "name": "Section 4.07 Weekday (Public Entertainment License)",
+   "where": "text",
+   "quote": "he then referred to section 4.07 weekday (public entertainment license);"
+  },
+  {
+   "name": "Road opening moratorium procedures/policy",
+   "where": "text",
+   "quote": "dave rodgers, 82 highland street, was concerned about the road opening moratorium procedures/policy;"
+  },
+  {
+   "name": "Fee Schedule for Temporary Wiring & Plumbing Permits",
+   "where": "text",
+   "quote": "review the fee schedule for temporary wiring & plumbing permits"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $100,804.76."
+  },
+  {
+   "name": "Sample thank you letter for the Building Reuse Committee",
+   "where": "text",
+   "quote": "mr. toale submitted a sample thank you letter to the board for the building reuse committee."
+  },
+  {
+   "name": "Development TIP",
+   "where": "text",
+   "quote": "we submitted a development tip that is currently out for public comment."
+  },
+  {
+   "name": "Town manager review form",
+   "where": "text",
+   "quote": "discussion around the town manager review form ensued."
+  },
+  {
+   "name": "Auditors' management letter",
+   "where": "text",
+   "quote": "implementing the auditors' management letter recommendations with the finance director"
+  },
+  {
+   "name": "Mandated Lake Shirley report with spillway calculations",
+   "where": "text",
+   "quote": "there is another mandated report that includes spillway calculations."
+  },
+  {
+   "name": "Emergency action plan (Lake Shirley)",
+   "where": "text",
+   "quote": "find out the status of the emergency action plan."
+  }
+ ],
+ "tags": [
+  "select board",
+  "board reorganization",
+  "entertainment license",
+  "Holman Street",
+  "town goals",
+  "permit fees",
+  "cable license",
+  "Lake Shirley",
+  "grants",
+  "executive session",
+  "warrant"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

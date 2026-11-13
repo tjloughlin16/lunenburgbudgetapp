@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-10-13",
  "docid": "4946",
@@ -12,39 +12,426 @@
  },
  "votes": [
   {
-   "motion": "Appoint Peter MeCarron and Laura Brzozoski to the Cultural Council with a term to expire June 30, 2018",
+   "motion": "Appoint Peter MeCarron and Laura Brzozoski to the Cultural Council with a term to expire June 30, 2018.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to appoint peter mecarron and laura brzozoski to the cultural council with a term to expire june 30, 2018 2\"°: p. luck vote: all in favor"
+   "quote": "to appoint peter mecarron and laura brzozoski to the cultural council with a term to expire june 30, 2018"
   },
   {
-   "motion": "Ratify the appointment of Amanda Koeck as COA Administrative Assistant",
+   "motion": "Ratify the appointment of Amanda Koeck as COA Administrative Assistant.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"°: p. luck to ratify the appointment of amanda koeck as coa administrative assistant vote: all in favor"
+   "quote": "to ratify the appointment of amanda koeck as coa administrative assistant vote: all in favor"
   },
   {
-   "motion": "Recommend approval of the article addressing the Salary Administration Plan as presented with some additional wording changes as discussed tonight",
+   "motion": "Recommend approval of the article addressing the Salary Administration Plan as presented with some additional wording changes as discussed tonight.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d: p. luck to recommend approval of the article addressing the salary administration plan as presented with some additional wording changes as discussed tonight vote: all in favor"
+   "quote": "to recommend approval of the article addressing the salary administration plan as presented with some additional wording changes as discussed tonight vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole to adjourn the meeting 2nd: p. luck vote: all in favor"
+   "quote": "to adjourn the meeting 2nd: p. luck vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text (macOS Vision).",
- "cost_usd": 0.1313785
+ "note": "OCR text from a macOS Vision scan. Some words are garbled and were copied as printed in the quotes (e.g. \"MeCarron\", \"2\"°\", \"2\"d\", \"DP W\", \"Mi. Ebersole\", \"October 20t\"). Vote results are printed only as \"All in Favor\"; no vote counts are recorded. Attendance is not listed in a roll call; attendees are taken from the opening line and from people described as taking part. The Accounts Payable warrant was signed without a recorded motion. The Article 14 and Article 3 discussion records no motion. Page 12 ends with a truncated line.",
+ "cost_usd": 0.013154220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "scheduled with jamie toale, chair; robert ebersole, vice chair; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "scheduled with jamie toale, chair; robert ebersole, vice chair; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "scheduled with jamie toale, chair; robert ebersole, vice chair; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "scheduled with jamie toale, chair; robert ebersole, vice chair; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Peter McCarron",
+   "role": "applicant for the Cultural Council",
+   "status": "present",
+   "quote": "mr. toale asked peter mccarron and laura brzozoski, applicants for the cultural council to come forward first."
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "applicant for the Cultural Council",
+   "status": "present",
+   "quote": "mr. toale asked peter mccarron and laura brzozoski, applicants for the cultural council to come forward first."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz recommended eliminating this program as a daily"
+  },
+  {
+   "name": "Cheryl Valera",
+   "role": "Personnel Committee Chair",
+   "status": "present",
+   "quote": "ms. lafleur introduced cheryl valera, personnel committee chair, to review the proposed"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney was present for questions on any proposed amendments that are related to the"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Sewer Commissioner",
+   "status": "present",
+   "quote": "sewer commissioner troy daniels asked if the boards could have the ability to review what affects"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board supported the DPW Director's decision to discontinue sand for residents at the DPW; he will continue the Sand for Seniors program, and residents should be told in advance whether it will be available this winter.",
+   "quote": "the board supported mr. rodriquenz' decision to discontinue the availability of sand for residents at the dpw."
+  },
+  {
+   "decision": "Article 2 (prior fiscal year bills) to be passed over at STM because there are no such bills.",
+   "quote": "there are no prior fiscal year bills, so we will pass over this article at stm."
+  },
+  {
+   "decision": "Town Manager to reach out to the various boards and committees and request feedback on the codification changes affecting them.",
+   "quote": "ms. lafleur stated she could reach out to the various boards/ committees as the next step in the process and request feedback."
+  },
+  {
+   "decision": "Town Manager to follow up on animal control fees.",
+   "quote": "ms. lafleur will also follow up on animal control fees."
+  },
+  {
+   "decision": "No change to the sprinkler provision; Town Manager to double check with the Fire Chief.",
+   "quote": "it was noted to make no change but ms. lafleur will double check with the fire chief."
+  },
+  {
+   "decision": "Board wishes to discuss further the Boats and Boating chapter, the Lake Whalom bylaw article, Fire Sprinklers and Affordable Housing; Boats and Boating could be taken up next week.",
+   "quote": "ms. lafleur summarized that the board wishes to discuss the following topics further"
+  },
+  {
+   "decision": "Retiree health insurance to be scheduled for an Executive Session with Labor Counsel.",
+   "quote": "ms. lafleur stated it is being scheduled for an executive session with labor counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2016 budget adjustment: state aid increase",
+   "what_was_recorded": "Town Manager reported a $120,092 increase in State Aid revenue, with the component amounts for Chapter 70, Charter Tuition Reimbursement, Smart Growth, School Choice Receiving Tuition and Library.",
+   "figures_as_printed": [
+    "$120,092",
+    "$25,684",
+    "$78,917",
+    "$3,257",
+    "$11,951",
+    "$283"
+   ],
+   "quote": "we did receive an increased $120,092 in state aid revenue. we received $25,684 for chapter 70; $78,917 for charter tuition reimbursement and $3,257 for smart growth 40s."
+  },
+  {
+   "topic": "FY2016 budget adjustment: Cherry Sheet charges and offsets",
+   "what_was_recorded": "Town Manager reported increased Cherry Sheet assessments for Charter Tuition, offset by decreases in Choice Tuition and Mosquito Control, and an increase in Cherry Sheet offsets.",
+   "figures_as_printed": [
+    "$73,084",
+    "$93,940",
+    "$13,320",
+    "$7,593",
+    "$12,234",
+    "$85,318"
+   ],
+   "quote": "charter tuition assessments in the amount of $93,940 are offset by a decrease of the choice tuition assessment ($13,320) and mosquito control ($7,593)."
+  },
+  {
+   "topic": "FY2016 budget adjustment: net revenue and potential surplus",
+   "what_was_recorded": "Town Manager described a net increase in revenue and reduced expenditures producing additional funds available, a possible new growth figure, and a potential surplus range.",
+   "figures_as_printed": [
+    "$34,774",
+    "$17,999",
+    "$52,773",
+    "$18,616",
+    "$2,006",
+    "$2,623",
+    "$20,000",
+    "$53,000",
+    "$73,000"
+   ],
+   "quote": "this leaves a net increase in revenue of $34,774 and net expenditures reduced by $17,999, producing an additional $52,773 available."
+  },
+  {
+   "topic": "Veterans' Benefits budget",
+   "what_was_recorded": "Veterans' Benefits was identified as the biggest area of concern, with $50,000 budgeted and $48,000 in claims to date.",
+   "figures_as_printed": [
+    "$50,000",
+    "$48,000"
+   ],
+   "quote": "the biggest area of concern right now is veterans' benefits. we budgeted $50,000 with claims amounting to $48,000 to date."
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant in the stated amount.",
+   "figures_as_printed": [
+    "$479, 510.53"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $479, 510.53."
+  },
+  {
+   "topic": "Salary plan: longevity pay",
+   "what_was_recorded": "The $5.00 per year longevity bonus reference was removed from the Salary Administration Plan while the percentage remains.",
+   "figures_as_printed": [
+    "$5.00"
+   ],
+   "quote": "section 25. longevity pay. reference to bonus of $5.00 per year has been removed and the"
+  },
+  {
+   "topic": "Salary plan: travel reimbursement rate",
+   "what_was_recorded": "Travel reimbursement changed from a per-mile rate to the IRS-established rate.",
+   "figures_as_printed": [
+    ".405/mile"
+   ],
+   "quote": "section 26. travel reimbursement. changed from .405/mile to rate established by the irs."
+  },
+  {
+   "topic": "Bylaw enforcement penalty",
+   "what_was_recorded": "Recommendation to raise the maximum penalty for bylaw violations.",
+   "figures_as_printed": [
+    "$200",
+    "$300"
+   ],
+   "quote": "the recommendation is to increase the maximum penalty for bylaws violation from $200 to $300."
+  },
+  {
+   "topic": "Peddling and soliciting penalty",
+   "what_was_recorded": "Staff recommends raising the penalty in the peddling and soliciting chapter to the statutory maximum.",
+   "figures_as_printed": [
+    "$100",
+    "$300"
+   ],
+   "quote": "provided that the $100 penalty in § 187-3 is current. it could be increased to the current statutory maximum of $300."
+  },
+  {
+   "topic": "Firearms fine",
+   "what_was_recorded": "Fire Chief confirmed the firearms discharge fine is still $20.00; no change recommended.",
+   "figures_as_printed": [
+    "$20.00"
+   ],
+   "quote": "the fire chief has confirmed the fine is still $20.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Lions' Club Pancake Breakfast announcement",
+   "quote": "ms. luck announced the lions' club pancake breakfast tomorrow morning at the senior center."
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Chair",
+   "topic": "Broadcast technical difficulties, Eagle House Senior Center video",
+   "quote": "mr. toale stated there were some technical difficulties with the broadcast of the eagle house"
+  },
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "Sewer Commissioner",
+   "topic": "Praise for Town Manager and IT director Steve Malandrinos",
+   "quote": "troy daniels praised town manager lafleur on her professionalism and responsiveness to him."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "announcements only, no action",
+   "quote": "ms. luck announced the lions' club pancake breakfast tomorrow morning at the senior center.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "Cultural Council appointments approved; Amanda Koeck appointment ratified",
+   "quote": "to ratify the appointment of amanda koeck as coa administrative assistant vote: all in favor",
+   "tags": [
+    "appointments",
+    "cultural council",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Current Business: Review of Sand for Residents Program",
+   "resolution": "Board supported discontinuing sand for residents; Sand for Seniors continues",
+   "quote": "the board supported mr. rodriquenz' decision to discontinue the availability of sand for residents at the dpw.",
+   "tags": [
+    "DPW",
+    "sand program",
+    "safety",
+    "snow season"
+   ]
+  },
+  {
+   "topic": "Review & Order STM Warrant Articles: Salary Administration Plan",
+   "resolution": "recommended approval with additional wording changes",
+   "quote": "to recommend approval of the article addressing the salary administration plan as presented with some additional wording changes as discussed tonight vote: all in favor",
+   "tags": [
+    "STM warrant",
+    "salary plan",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "STM Articles 1, 2, 3 and 14",
+   "resolution": "Article 2 passed over; Articles 1, 3 and 14 discussed, no vote",
+   "quote": "there are no prior fiscal year bills, so we will pass over this article at stm.",
+   "tags": [
+    "STM warrant",
+    "FY2016 budget",
+    "reserve fund",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Review Editorial & Legal Analysis of Codification",
+   "resolution": "discussed; staff to route changes to boards; further topics carried forward; no vote",
+   "quote": "ms. lafleur referred back to the spreadsheet distributed last week.",
+   "tags": [
+    "bylaws",
+    "codification",
+    "zoning bylaw",
+    "general bylaws"
+   ]
+  },
+  {
+   "topic": "Action File: retiree health insurance",
+   "resolution": "to be scheduled in executive session with labor counsel",
+   "quote": "ms. lafleur stated it is being scheduled for an executive session with labor counsel.",
+   "tags": [
+    "retiree health insurance",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $479, 510.53.",
+   "tags": [
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; no action",
+   "quote": "ms. luck reported the school committee met and facilities director john londa presented his",
+   "tags": [
+    "school committee",
+    "capital planning",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action; Board thanked speaker",
+   "quote": "troy daniels praised town manager lafleur on her professionalism and responsiveness to him.",
+   "tags": [
+    "public comment",
+    "town manager",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "to adjourn the meeting 2nd: p. luck vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Spreadsheet distributed last week (codification review)",
+   "where": "list",
+   "quote": "ms. lafleur referred back to the spreadsheet distributed last week."
+  },
+  {
+   "name": "Editorial & Legal Analysis of Codification",
+   "where": "text",
+   "quote": "review editorial & legal analysis of codification"
+  },
+  {
+   "name": "Salary Administration Plan (proposed changes)",
+   "where": "text",
+   "quote": "to review the proposed changes to the salary administration plan with the board."
+  },
+  {
+   "name": "Charter",
+   "where": "text",
+   "quote": "ms. lafleur stated the charter was reviewed as well and there is one minor recommendation"
+  },
+  {
+   "name": "1958 boat regulations (Attachment 1)",
+   "where": "text",
+   "quote": "waters and includes the 1958 regulations as attachment 1."
+  },
+  {
+   "name": "Subdivision Regulations",
+   "where": "text",
+   "quote": "should be reviewed against the requirements in the subdivision regulations."
+  },
+  {
+   "name": "Accounts Payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $479, 510.53."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "appointments",
+  "cultural council",
+  "council on aging",
+  "DPW",
+  "sand program",
+  "STM warrant articles",
+  "salary administration plan",
+  "FY2016 budget adjustment",
+  "reserve fund",
+  "bylaw codification",
+  "retiree health insurance",
+  "executive session",
+  "accounts payable",
+  "committee reports",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lafleur referred back to the spreadsheet distributed last week"
+ },
+ "dropped_unquoted_by_field": {}
 }

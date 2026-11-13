@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2013-03-21",
  "docid": "2774",
@@ -12,47 +12,220 @@
  },
  "votes": [
   {
-   "motion": "approve the 1/17/13 LPL Board of Trustee minutes as amended",
+   "motion": "Approve the 1/17/13 LPL Board of Trustee minutes as amended.",
    "moved_by": "Lars Widstrand",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "lars widstrand made a motion to approve the 1/17/13 lpl board of trustee minutes as amended; 2 nd by dick mailloux; unanimous approval by all in attendance ( john mara and kathy murray absent)."
+   "quote": "lars widstrand made a motion to approve the 1/17/13 lpl board of trustee minutes as amended; 2 nd by dick mailloux; unanimous approval by all in attendanc",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "approve the 1/31/13 LPL Board of Trustee minutes as amended",
+   "motion": "Approve the 1/31/13 LPL Board of Trustee minutes as amended.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Lars Widstrand",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "dick mailloux made a motion to approve the 1/31/13 lpl board of trustee minutes as amended; 2nd by lar s widstrand; unanimous approval by all in attendance (john mara and kathy murray absent)."
+   "quote": "dick mailloux made a motion to approve the 1/31/13 lpl board of trustee minutes as amended; 2nd by lar s widstrand; unanimous approva",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "approve the 2/21/13 LPL Board of Trustee minutes as presented",
+   "motion": "Approve the 2/21/13 LPL Board of Trustee minutes as presented.",
    "moved_by": "Lars Widstrand",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "lars widstrand made a motion to approve the 2/21/13 lpl board of trustee minutes as presented; 2 nd by robin venezia; unanimous approval by all in attendance (j ohn mara and kathy murray absent)."
+   "quote": "lars widstrand made a motion to approve the 1/17/13 lpl board of trustee minutes as amended; 2 nd by dick mailloux; unanimous approval ",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "approve the 2/21/13 Policy subcommittee minutes as presented",
+   "motion": "Approve the 2/21/13 Policy subcommittee minutes as presented.",
    "moved_by": "Lars Widstrand",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed (approval by Lars Widstrand, Lisa Krowitz, and Robin Venezia; no total count printed)",
    "procedural": true,
-   "quote": "lars widstrand made a motion to approve the 2/21/13 policy subcommittee minutes as presented; 2 nd by dick mailloux; approval by lars widstrand, lisa krowitz, and robin venezia."
+   "quote": "lars widstrand made a motion to approve the 1/17/13 lpl board of trustee minutes as amended; 2 nd by dick mailloux; unanimous approval by all in attendance ( john mara and kath",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "end the meeting",
+   "motion": "End the meeting at 8:41 pm.",
    "moved_by": "John Mara",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "john mara made a motion to end the meeting at 8:41 pm; 2nd by dick mailloux; unanimous approval by all in attendance."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned text with OCR artifacts (spacing inconsistencies in \"2 nd\" and name breaks like \"Lar s\" and \"J ohn\") preserved in quotes as they appear in source.",
- "cost_usd": 0.1206595
+ "note": "Text extraction splits many words (e.g. 'Krowi tz', 'Moor e', 'Evaluatio n'); quotes copy the text as extracted. Only the 2/21/13 Policy subcommittee minutes motion records approval by named members with no total count. No dollar amounts were voted on. The Director's title appears only through the Director's Report; the Director is named as Martha Moore in public comment and the Mission Statement item.",
+ "cost_usd": 0.004905120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: robin venezia, jeanne raboin, lisa krowi tz, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "status": "present",
+   "quote": "attending: robin venezia, jeanne raboin, lisa krowi tz, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: robin venezia, jeanne raboin, lisa krowi tz, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: robin venezia, jeanne raboin, lisa krowi tz, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: robin venezia, jeanne raboin, lisa krowi tz, dick mailloux, lars widstrand, martha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director (as referred to in the Director's Report)",
+   "status": "present",
+   "quote": "martha presented the new library mission statement that she developed."
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "jo hn mara (arrived 7:50)"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "absent",
+   "quote": "absent: kathy murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The LBOT accepted the Library Mission Statement that the Director developed (no motion recorded).",
+   "quote": "martha presented the new library mission statement that she developed. the lbot accepted the mission statement."
+  },
+  {
+   "decision": "The Trustees will complete the Director's evaluation form for Martha covering 10/8/12 through 4/18/13; the Personnel subcommittee will meet to comply with it and finalize the evaluation.",
+   "quote": "which will cover the time period from 10/8/12 through 4/18/13. the personnel subcommittee will m eet to comply and finalize the director's evaluatio n."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Staff payroll surplus",
+   "what_was_recorded": "A surplus in staff payroll was reported, due to a Technology Librarian resignation and reduced Assistant Director hours; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "there is a surplus in the staff payroll due to the resignation of the technology librarian and reduced hours by the assistant director due to family issues."
+  },
+  {
+   "topic": "Fine revenue",
+   "what_was_recorded": "Fine monies are projected at 6K rather than the earlier projected 8K, because Evergreen issues forced fines to be forgiven.",
+   "figures_as_printed": [
+    "6K",
+    "8K"
+   ],
+   "quote": "the fine monies are 6k rather than the projected 8k due to evergreen issues that have forced fines to be forgiven."
+  },
+  {
+   "topic": "Utilities in departmental budgets",
+   "what_was_recorded": "The library is the only Town department that will have utilities in its departmental budget; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "library is the only town department that will have utilities in their departmental budgets."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Lars Widstrand",
+   "topic": "Thanks to Martha Moore for presentation to Town Finance Committee",
+   "quote": "lars widstrand thanked martha moor e for a great presentation to the town finance comm ittee"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "quote": "public comment - lars widstrand thanked martha moor e for a great presentation to the town finance comm ittee",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved four sets of minutes (three Board, one Policy subcommittee)",
+   "quote": "lars widstrand made a motion to approve the 1/17/13 lpl board of trustee minutes as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no vote recorded",
+   "quote": "martha is interviewing applicants for the digital s ervices librarian.",
+   "tags": [
+    "staffing",
+    "budget",
+    "facilities",
+    "programs",
+    "technology",
+    "materials"
+   ]
+  },
+  {
+   "topic": "Other: Director's evaluation and Mission Statement",
+   "resolution": "Mission Statement accepted; evaluation process directed to Personnel subcommittee",
+   "quote": "the lbot accepted the mission statement.",
+   "tags": [
+    "evaluation",
+    "mission statement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:41 pm",
+   "quote": "john mara made a motion to end the meeting at 8:41 pm; 2nd by dick mailloux; unanimous approval by all in attendance.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Library Mission Statement (developed by the Director)",
+   "where": "text",
+   "quote": "martha presented the new library mission statement that she developed."
+  },
+  {
+   "name": "Director's Evaluation form (covering 10/8/12 through 4/18/13)",
+   "where": "text",
+   "quote": "the trustees will complete the director's evaluatio n form for martha"
+  },
+  {
+   "name": "library Tech and Inventory Plan",
+   "where": "text",
+   "quote": "martha met with the town it department head to dis cuss the library tech and inventory plan that she d evised."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "minutes",
+  "director's report",
+  "staffing",
+  "budget",
+  "technology",
+  "Evergreen",
+  "director evaluation",
+  "mission statement"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

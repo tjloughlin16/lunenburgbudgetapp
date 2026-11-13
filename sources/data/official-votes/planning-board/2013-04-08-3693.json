@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-04-08",
  "docid": "3693",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of March 16, 2013",
+   "motion": "Approve the minutes of 3-16-13.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "3-16-13, motion to approve, ms. bilotta-simeone, second, mr. lockwood."
   },
   {
-   "motion": "Approve minutes of March 23, 2013 35 Leominster Road Public Hearing",
+   "motion": "Approve the 3-23-13 minutes for the 35 Leominster Road Public Hearing.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "3-23-13, 35 leominster road public hearing, motion to approve, ms. bilotta-simeone, second, mr. lockwood"
   },
   {
-   "motion": "Approve minutes of March 23, 2013 Aro Estates Public Hearing",
+   "motion": "Approve the 3-23-13 minutes for the Aro Estates Public Hearing.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "3-23-13, aro estates public hearing, motion to approve, ms. bilotta-simeone, second, mr. lockwood"
   },
   {
-   "motion": "Approve minutes of March 25, 2013",
+   "motion": "Approve the minutes of 3-25-13.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -44,7 +44,7 @@
    "quote": "3-25-13, motion to approve, ms. bilotta-simeone, second, mr. lockwood"
   },
   {
-   "motion": "Approve minutes of April 3, 2013 Aro Estates Public Hearing",
+   "motion": "Approve the 4-3-13 minutes for the Aro Estates Public Hearing.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -52,7 +52,7 @@
    "quote": "4-3-13, aro estates public hearing, motion to approve, ms. bilotta-simeone, second, mr. lockwood"
   },
   {
-   "motion": "Release of previously approved Executive Minutes",
+   "motion": "Approve release of previously approved Executive Minutes.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -60,23 +60,177 @@
    "quote": "release of previously approved executive minutes, motion to approve, ms. bilotta-simeone, second, mr. lockwood"
   },
   {
-   "motion": "Extend Highfield Village's Planning Board extension to July 1, 2013, pending outcome of workshop and the Fitchburg IMA",
+   "motion": "Extend Highfield Village's Planning Board extension to July 1, 2013, pending outcome of the April 9 workshop and the Fitchburg IMA.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
    "procedural": false,
-   "quote": "ms. bilotta -simeone made motion to extend highfield village's planning board extension to july 1, 2013, pending outcome of workshop noted above and the fitchburg ima, second, mr. lockwood, motion passed."
+   "quote": "ms. bilotta -simeone made motion to extend highfield village's planning board extension to july 1, 2013",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Close the regular meeting, open the 35 Leominster Road Public Hearing Continuation, not to return to regular session",
+   "motion": "Close the regular meeting and open the 35 Leominster Road Public Hearing Continuation, not to return to regular session.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Lockwood",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, ms. bilotta -simeone to close the regular meeting, open the 35 leominster road public hearing continuation, not to return to regular session, second, mr. lockwood, motion passed."
+   "quote": "motion, ms. bilotta -simeone to close the regular meeting, open the 35 leominster road public hearing continuation"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Eight votes recorded. Six motions to approve prior minutes have no stated outcome; two substantive motions passed. Minutes appear to record the motion and seconder but often omit the recorded vote result for minutes approvals.",
- "cost_usd": 0.09772249999999999
+ "note": "Minutes approval motions are recorded without a printed result, so outcome is 'not stated'. The 35 Leominster Road hearing continuation is covered in separate minutes and is not here. No dollar figures appear in the text (70,000 gpd is a flow rate, not money). No public comment section is printed.",
+ "cost_usd": 0.005009919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "absent",
+   "quote": "absent: thomas w. bodkin jr."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "White Tail Crossing was tabled at Ms. Benson's request, pending resolution of issues before road acceptance at a town meeting.",
+   "quote": "white tail crossing- there are issues that need resolution prior to road acceptance at a town meeting. tabled at ms. benson's request."
+  },
+  {
+   "decision": "Aro Estates hearing continuation scheduled for April 10, 2013 at the Ritter Memorial Building, 6:30 PM.",
+   "quote": "aro estates, howard street- hearing continuation to be held april 10, 2013, ritter memorial building, 6:30 pm"
+  },
+  {
+   "decision": "New England Farms plan to be revised per Conservation Commission input and then reviewed with Jesse Johnson, David Ross Associates.",
+   "quote": "plan being revised per conservation commission input. once revised, will be reviewed with jesse johnson, david ross associates."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved six sets of minutes and executive minutes release (signed)",
+   "quote": "minutes approval: the following minutes were signed.",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "capital planning committee - ms. benson, as capital planning committee chair, noted some changes made by the town",
+   "tags": [
+    "school reconfiguration",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports, new business, development status",
+   "resolution": "Highfield Village extension approved; White Tail Crossing tabled; Aro Estates continued; other items noted",
+   "quote": "highfield village, northfield road - planning director noted sewer commission letter (on file in planning office)",
+   "tags": [
+    "Highfield Village",
+    "Aro Estates",
+    "White Tail Crossing",
+    "New England Farms",
+    "Agricultural Commission",
+    "MRPC",
+    "Master Plan"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action; dates noted",
+   "quote": "april 10 - aro estates hearing (cont'd), ritter building, 6:30 pm",
+   "tags": [
+    "schedule",
+    "Aro Estates",
+    "town election",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Close regular meeting; 35 Leominster Road Public Hearing Continuation",
+   "resolution": "regular meeting closed at 7:05 PM; hearing opened, see separate minutes",
+   "quote": "regular meeting closed at 7:05 pm.",
+   "tags": [
+    "public hearing",
+    "35 Leominster Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sewer Commission letter to EOEA dated April 5, 2013",
+   "where": "text",
+   "quote": "sewer commission letter (on file in planning office) to eoea (executive office of energy and environmental affairs) dated april 5, 2013"
+  },
+  {
+   "name": "Draft Environmental Impact Report (Highfield Village, submitted by the Applicant)",
+   "where": "text",
+   "quote": "which discusses the draft environmental impact report submitted by the applicant."
+  },
+  {
+   "name": "Fitchburg IMA (Intermunicipal Agreement)",
+   "where": "text",
+   "quote": "regarding a new fitchburg ima (intermunicipal agreement) to secure up to an additional 70,000"
+  },
+  {
+   "name": "MRPC contract for economic section of the Master Plan",
+   "where": "text",
+   "quote": "board has received mrpc contract approval for economic section of the master plan."
+  },
+  {
+   "name": "Agricultural Commission Warrant Article for May 2013 Town Meeting",
+   "where": "text",
+   "quote": "board of selectmen approved development of a commission as a warrant article for may 2013 town meeting."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "minutes approval",
+  "Highfield Village",
+  "Aro Estates",
+  "White Tail Crossing",
+  "New England Farms",
+  "35 Leominster Road",
+  "Fitchburg IMA",
+  "sewer",
+  "school reconfiguration",
+  "agricultural commission",
+  "MRPC",
+  "master plan",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

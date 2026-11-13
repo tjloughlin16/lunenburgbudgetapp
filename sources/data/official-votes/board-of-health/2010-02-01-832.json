@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-02-01",
  "docid": "832",
@@ -12,23 +12,159 @@
  },
  "votes": [
   {
-   "motion": "Approve the variance request for 19 Redwood Road",
+   "motion": "Approve the variance request for 19 Redwood Road (offset to groundwater).",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion of jewell and second by rabbitt, the variance request wa pproved. all in favo"
+   "quote": "after discussion and on motion of jewell and second by rabbitt, the variance request wa"
   },
   {
-   "motion": "Approve the variance request for 30 Peninsula Drive",
+   "motion": "Variance requests for 30 Peninsula Drive (offset to groundwater).",
    "moved_by": "Bond",
    "seconded_by": "Rabbit",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "on notion by bond and scond by rabbit, the variance requests"
+   "quote": "and on notion by bond and scond by rabbit, the variance requests"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with significant text corruption. Vote 1 text is cut off mid-word but clearly indicates unanimous passage. Vote 2 outcome incomplete (sentence breaks off). The movers/seconders in vote 2 (Bond, Rabbit) do not appear in the attendance list (Shea, Emond, Jewell, Rabbitt, Daniels), suggesting possible OCR errors; \"Rabbit\" may be OCR for \"Rabbitt\" with the final letter dropped.",
- "cost_usd": 0.12425249999999999
+ "note": "OCR of a poor-quality scan. Many lines are cut off or garbled (e.g., 'wa pproved', 'All in favo', 'Afe apposed', 'Bond'/'Rabbit' for likely board members). The 19 Redwood Road vote count is not legible; outcome recorded as passed from 'the variance request wa[s a]pproved'. The 30 Peninsula Drive motion result is not legible, so outcome is not stated. No adjournment motion is recorded (only 'the meeting was adjourned at 8:00 pm'), and no minutes-approval vote is printed. Page text ends mid-sentence in the Nashoba item. Roles for board members are not printed. The Title 5 address list is OCR-merged ('304 Lancaster Avenue94 White Street') and 94 White Street appears twice; it is recorded once.",
+ "cost_usd": 0.00452202,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Shea",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman dave shea, george emond, perry jewell, jack rabbitt and troy"
+  },
+  {
+   "name": "George Emond",
+   "role": "not printed",
+   "status": "present",
+   "quote": "chairman dave shea, george emond, perry jewell, jack rabbitt and troy"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not printed",
+   "status": "present",
+   "quote": "chairman dave shea, george emond, perry jewell, jack rabbitt and troy"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not printed",
+   "status": "present",
+   "quote": "chairman dave shea, george emond, perry jewell, jack rabbitt and troy"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "not printed",
+   "status": "present",
+   "quote": "chairman dave shea, george emond, perry jewell, jack rabbitt and troy"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner (minutes: 'on behalf of the owner')",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Dan Wolf",
+   "role": "representing the owner (minutes: 'on behalf the owner')",
+   "status": "present",
+   "quote": "dan wolf met with the board on behalf the owner."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Nashoba Associated Board of Health assessment",
+   "what_was_recorded": "Town of Lancaster questioned the yearly fee paid to Nashoba, which Mr. Emond said is based on 2000 census population; a services-based fee was suggested and Mr. Emond opposed it as hard to track.",
+   "figures_as_printed": [],
+   "quote": "the town of lancaster questioned the system used to assess the fee paid to nashoba"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed, no action recorded",
+   "quote": "title 5 inspection reports reviewed: 233 nw townsend road"
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "none signed",
+   "quote": "septic permits signed:"
+  },
+  {
+   "topic": "19 Redwood Road variance (Title 5 failure, small sloping lot)",
+   "resolution": "variance approved",
+   "quote": "19 redwood road dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "topic": "30 Peninsula Drive variance (Title 5 failure, small lot)",
+   "resolution": "variance requests voted; result not legible in text",
+   "quote": "30 peninsula drive dan wolf met with the board on behalf the owner."
+  },
+  {
+   "topic": "Nashoba Associated Board of Health assessments",
+   "resolution": "reported by George Emond, no action recorded",
+   "quote": "george emond reported on the assessment process for the nashoba associated board of"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 233 NW Townsend Road",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 233 nw townsend road"
+  },
+  {
+   "name": "Title 5 inspection report, 168 Sunny Hill Road",
+   "where": "list",
+   "quote": "233 nw townsend road 168 sunny hill road"
+  },
+  {
+   "name": "Title 5 inspection report, 304 Lancaster Avenue",
+   "where": "list",
+   "quote": "168 sunny hill road 304 lancaster avenue94 white street"
+  },
+  {
+   "name": "Title 5 inspection report, 94 White Street",
+   "where": "list",
+   "quote": "304 lancaster avenue94 white street"
+  },
+  {
+   "name": "Title 5 inspection report, 550 Townsend Harbor Road",
+   "where": "list",
+   "quote": "94 white street 550 townsend harbor road"
+  },
+  {
+   "name": "Title 5 inspection report, 612 Townsend Harbor Road",
+   "where": "list",
+   "quote": "94 white street 612 townsend harbor road"
+  },
+  {
+   "name": "Title 5 inspection report, 19 Redwood Road",
+   "where": "list",
+   "quote": "612 townsend harbor road 19 redwood road"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic",
+  "variance",
+  "groundwater offset",
+  "nashoba",
+  "assessments",
+  "permits"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed:"
+ },
+ "dropped_unquoted_by_field": {}
 }

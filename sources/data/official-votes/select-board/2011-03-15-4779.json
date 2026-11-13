@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-03-15",
  "docid": "4779",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the proposal moving forward for the solar farm",
+   "motion": "Accept the proposal moving forward for the solar farm (Request for Proposals: Solar Farm, Youngs Road Landfill).",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Ernie Sund",
    "outcome": "passed unanimously",
@@ -20,15 +20,495 @@
    "quote": "tom move to accept the proposal moving forward for the solar farm, ernie seconded, voted unanimously."
   },
   {
-   "motion": "Enter Executive Session to consider purchase, exchange, lease or value of real estate",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 5-0",
+   "motion": "Enter Executive Session under M.G.L. Chapter 39, §23B(6) to consider the purchase, exchange, lease or value of real estate.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed by roll call (Steve, Tom, Paula, Ernie and Dave aye)",
    "procedural": true,
-   "quote": "opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye"
+   "quote": "adjourned regular session at 8:23 p.m. and opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Paula Bertram listed as absent at meeting start but votes aye in executive session roll call. Minutes were OCR'd; one minor OCR error caught in scanning (\"it\" instead of \"if\" in \"it the chair declares\") but does not affect vote records. No votes recorded for minutes approval or warrant approval despite \"reviewed and signed\" language.",
- "cost_usd": 0.1038405
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR of a scanned page set; some words and figures are misread (for example 'FYI O', 'Superintendants', 'Uniti's', 'MIlA'). Tables on pages 5 and 8-10 are garbled, so table figures are reproduced as read and may be wrong. The minutes do not record a motion approving prior minutes or an adjournment vote. The roll call lists 'Paula aye' although Paula Bertram is recorded absent. The agenda lists the executive session as collective bargaining or litigation under §23B, but the vote cites §23B(6) for real estate. Pavement Management Plan is put at $750,000/year in the minutes and $800,000 per year in the attached budget narrative. The attached pages (5-12) are not labelled as a list of documents.",
+ "cost_usd": 0.01397312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Vice Chair (also called Steve in the minutes)",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Selectman (also called Ernie)",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Selectman (also called Tom)",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Selectman (also called Dave)",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Selectman (as listed in minutes)",
+   "status": "absent",
+   "quote": "steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present, paula bertram absent."
+  },
+  {
+   "name": "John Londa",
+   "role": "School Facilities Director (also advisory member of Green Community Task Force)",
+   "status": "present",
+   "quote": "john londa & dpw director jack rodriquenz were present."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "john londa & dpw director jack rodriquenz were present."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant (recording secretary)",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board signed proclamations for Eagle Scout Awards for Daniel Paquette and Benjamin Grossman.",
+   "quote": "board signed proclamations for eagle scout awards; daniel paquette and benjamin grossman."
+  },
+  {
+   "decision": "Town Manager to provide snow and ice detail broken out by vendor (salt, sand, vehicle repairs, vendors), drawn from the past three years of system data.",
+   "quote": "kerry will provide this level of detail as our system will allow us to pull the detail from over the past three years."
+  },
+  {
+   "decision": "Jones House RFP tabled to a later meeting; Town Manager to press the town attorney to expedite answers to bid-document questions so bidding can go out in April.",
+   "quote": "3. request for proposals: jones house - tabled as kerry is still awaiting a response from kopelman & paige"
+  },
+  {
+   "decision": "Town Manager to send a letter to the trailer parks and condominium entities informing them of the separate price proposal.",
+   "quote": "kerry noted that we need to send them a letter informing them that we're doing this."
+  },
+  {
+   "decision": "Solar farm RFP: John Londa to also contact the Conservation Commission, since only the Board of Selectmen had responded so far.",
+   "quote": "as of today, only the board of selectmen has responded, but he will also contact the conservation commission."
+  },
+  {
+   "decision": "Board to discuss cost increases and the 2½ levy limit increase at its next meeting.",
+   "quote": "next week the board would like to discuss cost increases, 2½ levy limit increase."
+  },
+  {
+   "decision": "Board will not return to Regular Session after Executive Session.",
+   "quote": "chairman announced that the board would not be returning to regular session."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snow & ice expenditures to date (3/10/11)",
+   "what_was_recorded": "Snow and ice spending to date is shown against appropriation, with the total overspent by the amount in parentheses.",
+   "figures_as_printed": [
+    "250,000.00",
+    "296,577.94",
+    "(46,577.94))",
+    "170,000.00",
+    "127,215.07",
+    "122,890.55",
+    "(67,890.55)",
+    "40,550.32",
+    "(23,050.32)"
+   ],
+   "quote": "totals 250,000.00 296,577.94 (46,577.94))"
+  },
+  {
+   "topic": "FY12 snow & ice budget recommendation",
+   "what_was_recorded": "Town Manager recommends continuing a Snow & Ice budget of $250,000, leaving some exposure.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "i have chosen to continue to recommend a snow & ice budget of $250,000."
+  },
+  {
+   "topic": "Snow & ice 10-year and 5-year averages",
+   "what_was_recorded": "Average snow and ice expenditure over 10 years and over 5 years is stated.",
+   "figures_as_printed": [
+    "$223,672",
+    "$268,230"
+   ],
+   "quote": "the average expenditure over 10 years is $223,672, while the average expenditure over 5 years is $268,230."
+  },
+  {
+   "topic": "Federal MUTCD roadway signage mandate",
+   "what_was_recorded": "Compliance with the new federal signage mandate is expected to cost $15,000 in year 1.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "compliance with this mandate is anticipated to cost $15,000 in year 1."
+  },
+  {
+   "topic": "DPW total budget recommendation",
+   "what_was_recorded": "Total DPW spending is recommended at $1,429,700, an increase of $88,043 or 6.56%.",
+   "figures_as_printed": [
+    "$1,429,700",
+    "$88,043",
+    "6.56%"
+   ],
+   "quote": "total spending for the department of public works is recommended at $1,429,700, which represents an increase of $88,043, or a"
+  },
+  {
+   "topic": "Pavement Management Plan funding",
+   "what_was_recorded": "Roads are not funded in the budget; the Pavement Management Plan is estimated at about $750,000 per year, and the budget narrative puts the need at about $800,000 per year.",
+   "figures_as_printed": [
+    "$750,000/year",
+    "$800,000 per year"
+   ],
+   "quote": "management plan is estimated at about $750,000/year and is not in this budget."
+  },
+  {
+   "topic": "Pavement Management Plan need (budget narrative)",
+   "what_was_recorded": "The budget narrative states the roads need about $800,000 per year to be maintained.",
+   "figures_as_printed": [
+    "$800,000 per year"
+   ],
+   "quote": "the plan identified the needs of the town to be about $800,000 per year to properly"
+  },
+  {
+   "topic": "Roads line-item increase requested by Ernie",
+   "what_was_recorded": "Ernie would like the road line item increased by about $100,000 for the next 10 years, recognizing it cannot be done all at once.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "would like to see that line item increased by about $100,000 for the next"
+  },
+  {
+   "topic": "Crack sealing program",
+   "what_was_recorded": "$50,000 for crack sealing is included in the budget.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "there is also $50,000 for crack sealing which is included"
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "Monty Tech assessment certified with a decrease of $20,899 due to one fewer student.",
+   "figures_as_printed": [
+    "$20,899"
+   ],
+   "quote": "will actually see a decrease of $20,899"
+  },
+  {
+   "topic": "Emergency Management stipend",
+   "what_was_recorded": "Stipend assumption to increase from $2,500 to $5,000.",
+   "figures_as_printed": [
+    "$2,500",
+    "$5,000"
+   ],
+   "quote": "emergency management: increase stipend from $2,500 to $5,000"
+  },
+  {
+   "topic": "Health insurance cost shift savings (77.5% to 75%)",
+   "what_was_recorded": "Shifting the town share from 77.5% to 75% is estimated to save the town about $129,277.",
+   "figures_as_printed": [
+    "$129,277"
+   ],
+   "quote": "the cost shift will save about $129,277 savings for the town."
+  },
+  {
+   "topic": "Health insurance annual cost totals",
+   "what_was_recorded": "Annual cost to the town is printed at 77.5% and at 75%, with the difference shown as savings.",
+   "figures_as_printed": [
+    "4,158,934.83",
+    "4,029,657.83",
+    "129,277.00"
+   ],
+   "quote": "4,029,657.83 4,029,657.83 129,277.00"
+  },
+  {
+   "topic": "Solar farm electricity supply and distribution costs",
+   "what_was_recorded": "Town municipal accounts used 2,122,000 KWH in FY10; electricity supply cost $204,896 and distribution cost roughly $180,000.",
+   "figures_as_printed": [
+    "$204,896",
+    "$180,000"
+   ],
+   "quote": "$204,896 and distribution cost was roughly $180,000."
+  },
+  {
+   "topic": "Solar farm rate-payer cost per ratepayer",
+   "what_was_recorded": "Lost distribution revenue of about $180,000 spread across roughly 28,000 ratepayers works out to about $6.42 per ratepayer per year.",
+   "figures_as_printed": [
+    "$180,000",
+    "$6.42"
+   ],
+   "quote": "this works out to roughly $6.42 per year per ratepayer."
+  },
+  {
+   "topic": "Summer Street Alternatives Analysis - town portion",
+   "what_was_recorded": "Lunenburg's portion of the Summer Street work was $56,000, approved at Special Town Meeting; the Alternatives Analysis is $50,000.",
+   "figures_as_printed": [
+    "$56,000",
+    "$50,000"
+   ],
+   "quote": "lunenburg's portion of that was $56,000 which was approved at the special town meeting."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Two warrants reviewed and signed.",
+   "figures_as_printed": [
+    "$669,755.33",
+    "$532,851.33"
+   ],
+   "quote": "warrants - #19p 11, 3/17/11-$669,755.33 and #50 11, 3/16/11 - $532,851.33 reviewed and signed."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Fund the $50,000 Summer Street Alternatives Analysis out of the $56,000 approved at Town Meeting.",
+   "outcome": "stated by Town Manager; no vote recorded",
+   "amount_as_printed": "$50,000",
+   "quote": "the $50,000 for the alternatives analysis will be funded out of the $56,000 that was approved at town"
+  },
+  {
+   "description": "Cover the snow and ice deficit by re-allocating funds within existing budgets.",
+   "outcome": "proposed; no vote recorded",
+   "amount_as_printed": "not stated",
+   "quote": "hoping that we will be able to fund by re-allocating funds within the existing budgets"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ernie",
+   "stated_role": "",
+   "topic": "Prayer for Japan after tsunami",
+   "quote": "ernie would like to \"say an extra prayer\" for those individuals in japan as a result of the recent tsunami that has struck the country."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; prayer for Japan",
+   "quote": "ernie would like to \"say an extra prayer\" for those individuals in japan as a result of the recent tsunami that has struck the country.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements - Town Caucus",
+   "resolution": "noted; caucus March 21, 2011 listed open positions",
+   "quote": "town caucus, monday, march 21, 2011 @ thms cafeteria, 7:00 pm",
+   "tags": [
+    "election",
+    "caucus"
+   ]
+  },
+  {
+   "topic": "Current business - minutes, warrants, action file",
+   "resolution": "minutes and warrants reviewed and signed; proclamations signed",
+   "quote": "warrants - #19p 11, 3/17/11-$669,755.33 and #50 11, 3/16/11 - $532,851.33 reviewed and signed.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reported; no vote",
+   "quote": "dave - school committee meeting last week; discussions on the budget and an override proposal",
+   "tags": [
+    "school budget",
+    "override",
+    "cable",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none",
+   "quote": "3. department updates - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager updates - snow and ice deficit, DPW, DOER",
+   "resolution": "discussed; no vote recorded",
+   "quote": "kerry presented the attached information on the snow and ice deficit that was prepared last week.",
+   "tags": [
+    "snow and ice",
+    "DPW",
+    "solar",
+    "DOER"
+   ]
+  },
+  {
+   "topic": "Old business 1 - RFP Solar Farm",
+   "resolution": "proposal accepted by vote",
+   "quote": "1. request for proposals: solar farm - school facilities director",
+   "tags": [
+    "solar",
+    "RFP",
+    "net metering"
+   ]
+  },
+  {
+   "topic": "Old business 2 - RFP Solid Waste & Recycling",
+   "resolution": "discussed; no vote recorded",
+   "quote": "2. request for proposals: solid waste & recycling - kerry informed the board",
+   "tags": [
+    "solid waste",
+    "recycling",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Old business 3 - RFP Jones House",
+   "resolution": "tabled",
+   "quote": "3. request for proposals: jones house - tabled as kerry is still awaiting a response from kopelman & paige",
+   "tags": [
+    "Jones House",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Old business 4 - Summer Street Alternatives Analysis",
+   "resolution": "discussed; no vote recorded",
+   "quote": "4. summer street alternatives analysis - kerry provided the alternative analysis proposal",
+   "tags": [
+    "Summer Street",
+    "VHB",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Old business 5 - Budget update",
+   "resolution": "discussed; no vote recorded; board asked for assumptions list",
+   "quote": "5. budget update - kerry met with senator flanagan and she expects a resolution from the state",
+   "tags": [
+    "budget FY12",
+    "Monty Tech",
+    "assumptions"
+   ]
+  },
+  {
+   "topic": "Health insurance rates FY12",
+   "resolution": "discussed; no vote; Town Manager considering holding the preliminary number",
+   "quote": "kerry presented the attached information on the health insurance increases for 2012.",
+   "tags": [
+    "health insurance",
+    "GIC",
+    "MIIA"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed April 5, April 12 and April 19, 2011",
+   "quote": "upcoming meeting schedule april 5, 2011 april 12, 2011",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered by roll call; board did not return to regular session",
+   "quote": "m.g.l. chapter 39, §23b to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Snow expenditures to date (3/10/11)",
+   "where": "list",
+   "quote": "snow expenditures to date (3/10/11)"
+  },
+  {
+   "name": "Health Insurance FY12 Estimate, revised 03/15/11",
+   "where": "list",
+   "quote": "health insurance fy12 estimate, revised 03/15/11"
+  },
+  {
+   "name": "GIC's Rates to Increase 2.40% for FY12 - Lowest Increase in Three Years (press release, March 3, 2011)",
+   "where": "list",
+   "quote": "gic's rates to increase 2.40% for fy12 - lowest increase in three years"
+  },
+  {
+   "name": "Budget document, page 13 (snow & ice chart and DPW narrative)",
+   "where": "text",
+   "quote": "within the budget document on page 13 there is a graph that shows the 10 year history of expenditures"
+  },
+  {
+   "name": "FY2012 - 2016 Financial Forecast",
+   "where": "text",
+   "quote": "fy2012 - 2016 financial forecast"
+  },
+  {
+   "name": "Request for Proposals: Solar Farm",
+   "where": "text",
+   "quote": "1. request for proposals: solar farm - school facilities director"
+  },
+  {
+   "name": "Request for Proposals: Solid Waste & Recycling",
+   "where": "text",
+   "quote": "2. request for proposals: solid waste & recycling - kerry informed the board"
+  },
+  {
+   "name": "Request for Proposals: Jones House",
+   "where": "text",
+   "quote": "3. request for proposals: jones house - tabled as kerry is still awaiting a response from kopelman & paige"
+  },
+  {
+   "name": "Summer Street Alternative Analysis proposal submitted by Trish Domigan of VHB",
+   "where": "text",
+   "quote": "kerry provided the alternative analysis proposal that was submitted by trish domigan of"
+  },
+  {
+   "name": "Minutes - Board of Selectmen Regular session for 2/17/11, 3/8/11 and Executive Session for 3/8/11",
+   "where": "text",
+   "quote": "minutes - board of selectmen regular session for 2/17/11, 3/8/11 and executive session for 3/8/11 reviewed and signed"
+  },
+  {
+   "name": "Place holder warrant article for Solid Waste & Recycling (Town Meeting)",
+   "where": "text",
+   "quote": "we have placed a \"place holder\" warrant article on for town meeting"
+  },
+  {
+   "name": "Pavement Management System plan",
+   "where": "text",
+   "quote": "the department recently completed a detailed pavement management system plan"
+  }
+ ],
+ "tags": [
+  "select board",
+  "FY12 budget",
+  "snow and ice",
+  "solar farm",
+  "solid waste RFP",
+  "Jones House",
+  "Summer Street",
+  "health insurance",
+  "pavement management",
+  "executive session",
+  "2011"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry presented the attached information on the snow and ice deficit"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

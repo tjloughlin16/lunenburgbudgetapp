@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-11-24",
  "docid": "1482",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "To approve minutes from 7/6/2015, 8/8/2015, 8/17/2015, and 9/21/2015",
+   "motion": "Approve minutes from 7/6/2015, 8/8/2015, 8/17/2015, and 9/21/2015.",
    "moved_by": "M. Mackin",
    "seconded_by": "M. Erickson",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve minutes from 7/6/2015, 8/8/2015, 8/17/2015, 9/21/215 (m. mackin) 2° (m. erickson) all in favor"
+   "quote": "motion to approve minutes from 7/6/2015, 8/8/2015, 8/17/2015, 9/21/215 (m. mackin) 2° (m."
   },
   {
-   "motion": "To recommend option 4 for the municipal reuse study",
+   "motion": "Recommend option 4 (renovation and partial demolition of the Passios building) to Tappe Associates for detailed cost estimating.",
    "moved_by": "R. Albert",
    "seconded_by": "M. Mackin",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "the motion was made to recommend option 4. (r. albert) 2n° (m. mackin) all in favor."
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Mark Erickson",
    "outcome": "passed",
@@ -37,6 +37,196 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; three votes recorded. The Committee also directed Tappe Associates to prepare a cost estimate (no motion language present), and discussed option 4A (no formal vote recorded).",
- "cost_usd": 0.0836205
+ "note": "Text is OCR of a scanned document with several garbled items: the minutes-approval motion reads '2°' and '2n°' for the second, '9/21/215' for 9/21/2015, 'lappe' for Tappe, and the next meeting date reads 'December 216:30pm' (day and time not clearly separated). The page-2 evaluation matrix is graphic; only bullets and 'N.A.' are legible, so ratings are not recorded beyond the minutes' statement that option 4 rated highest. No dollar figures appear in the text. Votes are recorded as 'all in favor' with no numeric count, so outcomes are recorded as 'passed'.",
+ "cost_usd": 0.00470992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: dave macdonald, rebecca lantry,"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: dave macdonald, rebecca lantry,"
+  },
+  {
+   "name": "Charlie Hay",
+   "role": "representing Tappe Associates",
+   "status": "present",
+   "quote": "charlie hay of lappe associates presented two hand outs labeled"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee gave Tappe Associates direction to prepare a cost estimate to stabilize the Town Hall exterior only.",
+   "quote": "the committee also gave tappe associates direction to do a cost estimate to stabilize the town hall exterior only."
+  },
+  {
+   "decision": "Committee members were instructed to take the draft list of anticipated questions home and attempt to develop responses.",
+   "quote": "the committee members were instructed to take the list home and attempt to develop responses."
+  },
+  {
+   "decision": "The consensus of the board was to keep the option of the Passios building remaining intact (option 4A, use by FLAC) open pending more information.",
+   "quote": "the consensus of the board was that we would keep the option open pending more information."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tappe Associates cost estimate for Town Hall exterior stabilization",
+   "what_was_recorded": "The committee directed Tappe Associates to prepare a cost estimate to stabilize only the Town Hall exterior; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the committee also gave tappe associates direction to do a cost estimate to stabilize the town hall exterior only."
+  },
+  {
+   "topic": "Cost versus return of additional square footage in the Passios building",
+   "what_was_recorded": "Tappe Associates recommended against the additional square footage because the cost versus return of operating and maintaining it is not favorable; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the cost vs. return of operating and maintaining additional square footage is not favorable."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting called to order november 24, 2015 @ 6:32pm"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to approve minutes from 7/6/2015, 8/8/2015, 8/17/2015, 9/21/215 (m. mackin) 2° (m."
+  },
+  {
+   "topic": "Review of feasibility study by Tappe Associates",
+   "resolution": "recommended option 4; cost estimate directed for Town Hall exterior stabilization",
+   "tags": [
+    "feasibility study",
+    "Tappe Associates",
+    "cost estimate",
+    "Passios building"
+   ],
+   "quote": "review progress on feasibility study by tappe associates."
+  },
+  {
+   "topic": "Draft Q&A's about building reuse",
+   "resolution": "no action; members to draft responses",
+   "tags": [
+    "building reuse",
+    "Q&A"
+   ],
+   "quote": "mark erickson generated a list of anticipated questions that the committee should be able to answer"
+  },
+  {
+   "topic": "Use of the Passios Building by FLAC",
+   "resolution": "kept open pending more information",
+   "tags": [
+    "Passios building",
+    "FLAC"
+   ],
+   "quote": "the consensus of the board was that we would keep the option open pending more information."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "december 216:30pm at town hall"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned @ 7:45pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Municipal Study 11/03/15 (handout: graphic depictions of 4 options for reuse)",
+   "where": "list",
+   "quote": "charlie hay of lappe associates presented two hand outs labeled \"lunenburg municipal study 11/03/15 one consisting of graphic depictions of 4 options for reuse"
+  },
+  {
+   "name": "Evaluation matrix handout (rating each option)",
+   "where": "list",
+   "quote": "and the other an evaluation matrix to rate each option."
+  },
+  {
+   "name": "Draft Q&A's about building reuse (list of anticipated questions, attached hand out)",
+   "where": "list",
+   "quote": "mark erickson generated a list of anticipated questions that the committee should be able to answer (see attached hand out)"
+  },
+  {
+   "name": "LUNENBURG MUNICIPAL STUDY - 11/03/15",
+   "where": "list",
+   "quote": "lunenburg municipal study - 11/03/15"
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "Town Hall",
+  "Passios building",
+  "feasibility study",
+  "Tappe Associates",
+  "FLAC",
+  "cost estimate",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "charlie hay of lappe associates presented two hand outs labeled"
+ },
+ "dropped_unquoted_by_field": {}
 }

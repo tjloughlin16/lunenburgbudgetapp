@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-02-16",
  "docid": "1599",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Issue Standard Order of Conditions for septic system upgrade at 897 Northfield Road",
+   "motion": "Adopt the Standard Order of Conditions for the Notice of Intent filed by Neil Gorman for Robert & Judith Brideau at 897 Northfield Road.",
    "moved_by": "Jack",
    "seconded_by": "JJ",
    "outcome": "passed unanimously",
@@ -21,6 +21,266 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd text. One clear vote found: the Standard Order of Conditions for the Notice of Intent at 897 Northfield Road. The notation \\\"Jack/JJ Unanimous\\\" indicates Jack moved and JJ seconded, with unanimous passage. Other items mentioned (Fire Road 27, Tri Town Landing, letter request) were discussed or decided but not recorded as formal motions with votes.",
- "cost_usd": 0.11239550000000001
+ "note": "Text is macOS Vision OCR with some garbled words (e.g., 'Applicabilty', 'chi 131'); quotes copied as printed. The header lists seven members with no absent or remote marking, so they are recorded as present on the basis of that list. Only one vote is recorded (the Brideau Standard Order of Conditions); the minutes show no approval of prior minutes and no adjournment motion. The minutes give no dollar figures. 'Public Discussion None' records no public comment. Several items are recorded as requests or directions without a vote and are listed as decisions.",
+ "cost_usd": 0.00633892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jack byrne, mark murphy, karen lefebvre, jj cote, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jack byrne, mark murphy, karen lefebvre, jj cote, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jack byrne, mark murphy, karen lefebvre, jj cote, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jack byrne, mark murphy, karen lefebvre, jj cote, john lattanzi, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jack byrne, mark murphy, karen lefebvre, jj cote, john lattanzi, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jack byrne, mark murphy, karen lefebvre, jj cote, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jack byrne, mark murphy, karen lefebvre, jj cote, john lattanzi, jan carrier"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "filed the Notice of Intent for Robert & Judith Brideau",
+   "status": "present",
+   "quote": "neil gorman presented. septic tank and pump chamber are located 44' from wetland area"
+  },
+  {
+   "name": "Robert Brideau",
+   "role": "applicant (with Judith Brideau)",
+   "status": "not stated",
+   "quote": "filed by neil gorman for robert & judith brideau."
+  },
+  {
+   "name": "Judith Brideau",
+   "role": "applicant (with Robert Brideau)",
+   "status": "not stated",
+   "quote": "filed by neil gorman for robert & judith brideau."
+  },
+  {
+   "name": "Bruce Perkins",
+   "role": "",
+   "status": "present",
+   "quote": "bruce perkins met with the commission to discuss an outstanding ooc that no coc has been issued on."
+  },
+  {
+   "name": "Bill Cisco",
+   "role": "of Cisco Timber Company; filed the Requests for Determination of Applicability",
+   "status": "not stated",
+   "quote": "filed by bill cisco of cisco timber company. the proposed project is for removing trees along the driveway"
+  },
+  {
+   "name": "Sue Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "sue and perry jewell were in attendance."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "presented the plan for the right of way",
+   "status": "present",
+   "quote": "perry presented a plan to pave a section of an old right of way which abuts conservation property."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "",
+   "status": "present",
+   "quote": "jack rodriquenz was also in attendance and was in favor of this project."
+  },
+  {
+   "name": "Matt",
+   "role": "Tri Town Landing (partial Certificate of Compliance request)",
+   "status": "not stated",
+   "quote": "matt would prefer to wait until spring to inspect the signatures ok"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bruce Perkins must refile a new Notice of Intent to construct the garage at 80 Ruth Street, referring to old DEP #208-0640; a CoC for the old Order of Conditions will issue when the new OoC is issued.",
+   "quote": "he will have to refile and refer to old dep #208-0640 to construct the garage and when an ooc is issued for that we will also issue a coc for the old oog."
+  },
+  {
+   "decision": "Hearings on the Requests for Determination of Applicability at 85 Holman Street (7:15 PM) and 234 Highland Street (7:30 PM) were postponed until 3/2.",
+   "quote": "7:15 pm ~ postponed until 3/2 ~ 85 holman street"
+  },
+  {
+   "decision": "Karen will look over the areas at 85 Holman Street and 234 Highland Street.",
+   "quote": "karen will look over both of these areas."
+  },
+  {
+   "decision": "Jan will send a letter to the Jewells stating the Conservation Commission's position on the right of way paving project on Fire Road 27.",
+   "quote": "jan will send a letter stating the concom's position."
+  },
+  {
+   "decision": "Matt would prefer to wait until spring to inspect the Tri Town Landing site for the partial Certificate of Compliance; signatures were recorded as OK.",
+   "quote": "matt would prefer to wait until spring to inspect the signatures ok"
+  },
+  {
+   "decision": "Jan is to write a letter to Michael F Gromley, 611 Reservoir Road, regarding violations on his property near or in the lake.",
+   "quote": "request that jan write a letter to michael f gromley, 611 reservoir road regarding violations"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "897 Northfield Road - public hearing on Notice of Intent (Brideau, filed by Neil Gorman)",
+   "resolution": "Standard Order of Conditions adopted, unanimous",
+   "quote": "standard order of conditions jack/jj unanimous",
+   "tags": [
+    "wetlands",
+    "septic",
+    "notice of intent",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "80 Ruth Street - informational meeting with Bruce Perkins",
+   "resolution": "refile required; no vote",
+   "quote": "the project is not completed as they never built the garage.",
+   "tags": [
+    "order of conditions",
+    "certificate of compliance",
+    "garage",
+    "refile"
+   ]
+  },
+  {
+   "topic": "85 Holman Street - Request for Determination of Applicability (Bill Cisco)",
+   "resolution": "postponed until 3/2",
+   "quote": "7:15 pm ~ postponed until 3/2 ~ 85 holman street",
+   "tags": [
+    "tree removal",
+    "determination of applicability",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "234 Highland Street - Request for Determination of Applicability (Bill Cisco)",
+   "resolution": "postponed until 3/2",
+   "quote": "7:30 pm ~ postponed until 3/2 ~ 234 highland street",
+   "tags": [
+    "tree removal",
+    "determination of applicability",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Fire Road 27 (Right of Way) - Sue and Perry Jewell",
+   "resolution": "Commission in favor; Jan to send letter",
+   "quote": "the concom was all in favor of improving the area on sunset lane.",
+   "tags": [
+    "right of way",
+    "paving",
+    "abutting conservation land"
+   ]
+  },
+  {
+   "topic": "Request for Partial Certificate of Compliance - Tri Town Landing",
+   "resolution": "signatures OK; inspection deferred to spring",
+   "quote": "matt would prefer to wait until spring to inspect the signatures ok",
+   "tags": [
+    "certificate of compliance",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "New Business - letter to Michael F Gromley re violations",
+   "resolution": "letter requested",
+   "quote": "request that jan write a letter to michael f gromley, 611 reservoir road regarding violations",
+   "tags": [
+    "violations",
+    "lake",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Public Discussion",
+   "resolution": "no comment",
+   "quote": "public discussion none",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent filed by Neil Gorman for Robert & Judith Brideau (897 Northfield Road, septic upgrade)",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent filed by neil gorman for robert & judith"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Bill Cisco of Cisco Timber Company (85 Holman Street)",
+   "where": "text",
+   "quote": "filed by bill cisco of cisco timber company. the proposed project is for removing trees along the driveway"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Bill Cisco of Cisco Timber Company (234 Highland Street)",
+   "where": "text",
+   "quote": "applicabilty filed by bill cisco of cisco timber company. the proposed project is for the removal of 50 to 75 white pines"
+  },
+  {
+   "name": "Request for Partial Certificate of Compliance for Tri Town Landing",
+   "where": "text",
+   "quote": "request for partial certificate of compliance for tri town landing (matt)"
+  },
+  {
+   "name": "Standard Order of Conditions (897 Northfield Road)",
+   "where": "text",
+   "quote": "standard order of conditions jack/jj unanimous"
+  },
+  {
+   "name": "Original Order of Conditions, DEP #208-0640, issued January 16, 2002 (80 Ruth Street)",
+   "where": "text",
+   "quote": "refer to old dep #208-0640 to construct the garage"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "order of conditions",
+  "certificate of compliance",
+  "determination of applicability",
+  "tree removal",
+  "septic",
+  "right of way",
+  "violations",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

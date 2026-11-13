@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2013-05-06",
  "docid": "4611",
@@ -12,39 +12,168 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 8th",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the minutes for april 8th were read and approved.",
+   "motion": "Accept the donation of a carpet from Dave MacDonald pending Selectmen approval, and send a thank-you letter to Mr. MacDonald.",
    "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Accept the donation of a carpet from Dave MacDonald pending Selectmen approval and send a thank-you letter to Mr. MacDonald",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and was passed to accept the donation of a carpet by dave macdonald pending the approval of the selectmen and to send a letter to mr. macdonald thanking him for the donation.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "a motion was made and was passed to accept the donation of a carpet by dave macdonald pending the approval of the selectmen and to send a letter to mr. macdonald thanking him for the donation."
   },
   {
-   "motion": "Hire Mike Wallman and Jamie Rowe at $10/hour for a minimum of 10 hours a week",
+   "motion": "Hire Mike Wallman and Jamie Rowe at $10/hr. for a minimum of 10 hours a week, with additional hours possible with the approval of the Chair and the Programming Coordinator.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and passed to hire mike wallman and jamie rowe at $10/hr. for a minimum of 10 hours a week (with additional hours possible with the approval of the chair and the programming coordinator).",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "a motion was made and passed to hire mike wallman and jamie rowe at $10/hr. for a minimum of 10 hours a week"
   },
   {
-   "motion": "Transfer $3,000 from Vendor expenses to consultant services and transfer $3,000 from vendor expenses to purchase of services/video for the remainder of the fiscal year",
+   "motion": "Transfer $3,000 from Vendor expenses to consultant services and transfer $3,000 from vendor expenses to purchase of services/video for the remainder of the fiscal year.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and passed to transfer $3,000 from vendor expenses to consultant services and transfer $3,000 from vendor expenses to purchase of services/video for the remainder of the fiscal year.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "a motion was made and passed to transfer $3,000 from vendor expenses to consultant services and transfer $3,000 from vendor expenses to purchase of services/video"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Four votes recorded: one to approve prior minutes (procedural), one to accept a carpet donation, one to hire two staff members at $10/hour, and one to transfer funds between budget categories. No movers or seconders named, no vote counts stated, all outcomes listed as \"passed\".",
- "cost_usd": 0.08878549999999999
+ "note": "Single-page OCR (macOS Vision) text; some words may be misread (e.g., \"Chande hisio\", \"JoMcLaughlin\", \"sheep sheering\"). No mover or seconder is printed for any motion, and no vote tallies are printed. The minutes approval and adjournment (9:03pm) are recorded without a stated motion or count, so they are not listed as votes. No documents list or exhibits appear in the text.",
+ "cost_usd": 0.00402882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, chande hisio"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, chande hisio"
+  },
+  {
+   "name": "Chande hisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, chande hisio"
+  },
+  {
+   "name": "JoMcLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jomclaughlin,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ernie will videotape the Memorial Day exercise and Jo will cover the Pops Concert on Friday.",
+   "quote": "ernie will videotape the memorial day exercise and jo will do the pops concert on friday."
+  },
+  {
+   "decision": "The next meeting will be held at the Passios School.",
+   "quote": "the next meeting will be held at the passios school."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Studio furniture purchase",
+   "what_was_recorded": "Jo reported that a 6 ft. and an 8 ft. table had been bought for $127.00.",
+   "figures_as_printed": [
+    "$127.00"
+   ],
+   "quote": "jo reported that a 6 ft. and an 8 ft. table had been purchased for $127.00"
+  },
+  {
+   "topic": "Hiring of Mike Wallman and Jamie Rowe",
+   "what_was_recorded": "Motion to hire two people at $10 per hour for a minimum of 10 hours a week, with extra hours possible with approval.",
+   "figures_as_printed": [
+    "$10/hr.",
+    "10 hours a week"
+   ],
+   "quote": "a motion was made and passed to hire mike wallman and jamie rowe at $10/hr. for a minimum of 10 hours a week"
+  },
+  {
+   "topic": "Budget transfers for the fiscal year",
+   "what_was_recorded": "Two transfers of $3,000 each from Vendor expenses, to consultant services and to purchase of services/video, for the rest of the fiscal year.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "a motion was made and passed to transfer $3,000 from vendor expenses to consultant services and transfer $3,000 from vendor expenses to purchase of services/video"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Vendor expenses to consultant services, and a second transfer from vendor expenses to purchase of services/video, for the remainder of the fiscal year.",
+   "amount_as_printed": "$3,000 and $3,000",
+   "outcome": "passed",
+   "quote": "a motion was made and passed to transfer $3,000 from vendor expenses to consultant services and transfer $3,000 from vendor expenses to purchase of services/video"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "minutes of April 8th read and approved",
+   "quote": "secretary's report: the minutes for april 8th were read and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comments",
+   "resolution": "none offered",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: Studio Update",
+   "resolution": "table purchase reported; carpet donation accepted pending Selectmen approval; four folding chairs donated",
+   "quote": "jo reported that a 6 ft. and an 8 ft. table had been purchased for $127.00",
+   "tags": [
+    "studio",
+    "donations",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Old Business: Programming Update",
+   "resolution": "two staff hired; program ideas discussed; filming reported",
+   "quote": "a motion was made and passed to hire mike wallman and jamie",
+   "tags": [
+    "programming",
+    "hiring",
+    "filming"
+   ]
+  },
+  {
+   "topic": "Old Business: Budget Update",
+   "resolution": "approved two $3,000 transfers from vendor expenses",
+   "quote": "a motion was made and passed to transfer $3,000 from vendor expenses to consultant services",
+   "tags": [
+    "budget",
+    "transfer"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "PACC",
+  "public access television",
+  "studio",
+  "programming",
+  "budget transfer",
+  "donations",
+  "hiring",
+  "Brooks House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

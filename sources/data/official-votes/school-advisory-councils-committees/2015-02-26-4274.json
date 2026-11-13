@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2015-02-26",
  "docid": "4274",
@@ -12,39 +12,210 @@
  },
  "votes": [
   {
-   "motion": "Approve prior meeting minutes",
+   "motion": "Approve the minutes (prior meeting).",
    "moved_by": "Heather Sroka",
    "seconded_by": "Louis Bettencourt",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "heather sroka motioned to approve, louis bettencourt seconded the motion vote: unanimous"
   },
   {
-   "motion": "Accept the Calendar Advisory Committee Recommendation for Fall 2016: 8:30 a.m. start time for Grades 6-12, moving to 9:00 a.m. when fields are completed",
+   "motion": "Accept the Calendar Advisory Committee recommendation: 8:30 a.m. start for Grades 6-12 when the new school opens in Fall 2016, moving to 9:00 a.m. when fields are completed.",
    "moved_by": "Katie McGuire",
    "seconded_by": "Heather Sroka",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "katie mcguire made a motion to accept this recommendation, heather sroka seconded the motion. vote: unanimous"
   },
   {
-   "motion": "Accept guidelines for calendar development process with edits",
+   "motion": "Accept the guidelines with the edits made at the meeting.",
    "moved_by": "Gary Asher",
    "seconded_by": "Katie McGuire",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "gary asher made a motion to accept guidelines with edits, katie mcguire seconded the motion. vote: unanimous"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gary Asher",
    "seconded_by": "Heather Sroka",
    "outcome": "passed",
    "procedural": true,
-   "quote": "gary asher made a motion to adjourn the meeting, heather sroka seconded the motion."
+   "quote": "gary asher made a motion to adjourn the meeting, heather sroka seconded the motion. meeting adjourned at 8:33pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes are clearly stated in the minutes with verbatim outcomes. Minutes are a legible digital document.",
- "cost_usd": 0.0868815
+ "note": "The minutes are headed \"CALENDAR ADVISORY SUB-COMMITTEE MEETING\", not the board name supplied. The roster prints no attendance marks, so status is \"present\" only where a person made or seconded a motion, and \"not stated\" otherwise. No public comment section is printed. Vote results are printed as \"Unanimous\" with no count. The minutes name a guidelines document and a presentation but print no separate list of documents.",
+ "cost_usd": 0.00425202,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Colleen Shapiro",
+   "role": "School Committee",
+   "status": "not stated",
+   "quote": "colleen shapiro - school committee"
+  },
+  {
+   "name": "Ronald Hyatt",
+   "role": "SAC LHS",
+   "status": "not stated",
+   "quote": "ronald hyatt - sac lhs"
+  },
+  {
+   "name": "Dr. Gary Asher",
+   "role": "Former Lunenburg Family Practice, Health Advisory Committee",
+   "status": "present",
+   "quote": "gary asher made a motion to adjourn the meeting, heather sroka seconded the motion."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "SAC LPS",
+   "status": "not stated",
+   "quote": "brandon kibbe - sac lps"
+  },
+  {
+   "name": "Amanda Waltz",
+   "role": "Parent",
+   "status": "not stated",
+   "quote": "amanda waltz - parent"
+  },
+  {
+   "name": "Louis Bettencourt",
+   "role": "Parent",
+   "status": "present",
+   "quote": "louis bettencourt seconded the motion vote: unanimous"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka motioned to approve, louis bettencourt seconded the motion vote: unanimous"
+  },
+  {
+   "name": "Ami Powers",
+   "role": "SAC THMS",
+   "status": "not stated",
+   "quote": "ami powers - sac thms"
+  },
+  {
+   "name": "Katie McGuire",
+   "role": "SAC LHS",
+   "status": "present",
+   "quote": "katie mcguire made a motion to accept this recommendation, heather sroka seconded the motion."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "not stated",
+   "quote": "loxi jo calmes superintendent of schools"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next School Committee presentation on start times is to be updated from Dr. Asher's presentation, with the committee's start-time recommendations added to the last slide.",
+   "quote": "will need to present updated presentation from dr. asher at next school committee meeting. add to the last slide the committee's recommendations on start times."
+  },
+  {
+   "decision": "The Superintendent is to include the edited guidelines with the minutes and with the presentation to the School Committee.",
+   "quote": "made a few edits to guidelines, superintendent to include with minutes, and with presentation to school committee."
+  },
+  {
+   "decision": "Guidelines for developing the school calendar are to add more involvement of student councils and distribute the guidelines to everyone before the calendar review.",
+   "quote": "add to guidelines, the process of developing the calendar - more involvement with student councils - getting the guidelines out to everyone prior to the calendar review."
+  },
+  {
+   "decision": "Listed pending next steps for the start-time proposal (extended discussions with advisory councils, public forums, asking whether to proceed, researching transportation and athletics options) are assigned to the school committee and superintendent.",
+   "quote": "pending issues to work out (school committee, superintendent) - next steps:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Athletics and field use",
+   "what_was_recorded": "Discussion that it would be a significant expense to travel to other fields if the district's fields are not ready, with fields available at the earliest in Fall 2017.",
+   "figures_as_printed": [],
+   "quote": "significant expense to have to travel to other fields if ours are not ready."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of minutes",
+   "resolution": "minutes approved unanimously",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "heather sroka motioned to approve, louis bettencourt seconded the motion vote: unanimous"
+  },
+  {
+   "topic": "Finalize presentation on school start times",
+   "resolution": "discussed; next steps listed for School Committee presentation",
+   "tags": [
+    "school start times",
+    "School Committee",
+    "presentation"
+   ],
+   "quote": "need to discuss what to present to school committee next week for start times."
+  },
+  {
+   "topic": "Calendar Advisory Committee recommendation on start times",
+   "resolution": "recommendation accepted unanimously",
+   "tags": [
+    "school start times",
+    "recommendation",
+    "adolescent health"
+   ],
+   "quote": "fall 2016, for the health of our adolescent students, is when the new school opens to establish an 8:30 a.m start"
+  },
+  {
+   "topic": "Calendar guidelines",
+   "resolution": "accepted with edits, unanimously",
+   "tags": [
+    "school calendar",
+    "guidelines"
+   ],
+   "quote": "made a few edits to guidelines, superintendent to include with minutes, and with presentation to school committee."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:33pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "gary asher made a motion to adjourn the meeting, heather sroka seconded the motion. meeting adjourned at 8:33pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Calendar Advisory Committee Recommendation (school start times)",
+   "where": "text",
+   "quote": "calendar advisory committee recommendation: fall 2016, for the health of our adolescent students, is when the new school opens"
+  },
+  {
+   "name": "Guidelines for developing the school calendar (with edits)",
+   "where": "text",
+   "quote": "made a few edits to guidelines, superintendent to include with minutes, and with presentation to school committee."
+  },
+  {
+   "name": "School start time presentation for the School Committee (updated from Dr. Asher's presentation)",
+   "where": "text",
+   "quote": "will need to present updated presentation from dr. asher at next school committee meeting."
+  }
+ ],
+ "tags": [
+  "school start times",
+  "school calendar",
+  "School Committee",
+  "athletics fields",
+  "transportation",
+  "guidelines",
+  "advisory council"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

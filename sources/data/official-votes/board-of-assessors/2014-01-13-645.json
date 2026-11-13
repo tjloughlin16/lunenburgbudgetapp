@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-01-13",
  "docid": "645",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Send the housing violations case at 912 Massachusetts Avenue to housing court",
+   "motion": "Send the 912 Massachusetts Avenue housing matter to housing court.",
    "moved_by": "Rabbit",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by rabbit and second by shea, the board voted to send this matter to housing court. all in favor."
+   "quote": "on motion by rabbit and second by shea, the board voted to send this matter to housing court. all in favor."
   },
   {
-   "motion": "Approve the variance for the septic system at 100 Canterbury Lane (groundwater offset from 4 feet to 3 feet)",
+   "motion": "Approve the variance for 100 Canterberry Lane (groundwater offset from four feet to three feet).",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
@@ -29,6 +29,163 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned document. Document header states \"LUNENBURG BOARD OF HEALTH\" but the meeting was identified as \"Board Of Assessors\" — these are different boards; the document content is clearly Board of Health minutes, not Assessors.",
- "cost_usd": 0.0834559
+ "note": "The board named in the request is \"Board Of Assessors\", but the minutes are headed \"LUNENBURG BOARD OF HEALTH\"; I recorded them as the Board of Health minutes. Text is OCR (macOS Vision) with stray characters. Both votes say \"All in favor\" with no count, so outcome is \"passed\" without a tally. The motion-maker is spelled \"Rabbit\" in one place and \"Rabbitt\" in another; possibly the same member, not confirmed. The \"Continued to February 3'° at 7:00 pm\" line sits between 40 Page Street and 912 Massachusetts Avenue, so the item it applies to is inferred. No public comment section, budget figures, or document list heading appear.",
+ "cost_usd": 0.00423782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave shea and dave passios"
+  },
+  {
+   "name": "Rabbit",
+   "status": "not stated",
+   "quote": "on motion by rabbit and second by shea, the board voted to send this matter to housing court"
+  },
+  {
+   "name": "Rabbitt",
+   "status": "not stated",
+   "quote": "on motion by jewell and second by rabbitt, the variance was approved."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi conducted a housing inspection at the above address in october, 2013."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of November 18, 2013 recorded as approved (no motion or vote text printed).",
+   "quote": "minutes approved: november 18, 2013"
+  },
+  {
+   "decision": "Title 5 inspection reports for nine addresses acknowledged by the board.",
+   "quote": "title 5 inspection reports acknowledged:"
+  },
+  {
+   "decision": "Septic permits signed for 100 Canterberry Lane and 40 Page Street.",
+   "quote": "septic permits signed:"
+  },
+  {
+   "decision": "40 Page Street item continued to February 3 at 7:00 pm (placement in text is ambiguous; appears directly after 40 Page Street).",
+   "quote": "continued to february 3'° at 7:00 pm"
+  },
+  {
+   "decision": "Agent Garreffi's recommendation to send 912 Massachusetts Avenue to housing court was taken up (see vote).",
+   "quote": "agent garreffi is recommending that this matter be sent to housing court."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved November 18, 2013 minutes (no vote text printed)",
+   "quote": "minutes approved: november 18, 2013",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged nine reports",
+   "quote": "title 5 inspection reports acknowledged:",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed 100 Canterberry Lane permit; 40 Page Street continued to February 3",
+   "quote": "septic permits signed: 100 canterberry lane",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "912 Massachusetts Avenue housing violations",
+   "resolution": "voted to send to housing court",
+   "quote": "agent garreffi is recommending that this matter be sent to housing court.",
+   "tags": [
+    "housing",
+    "lead paint",
+    "housing court"
+   ]
+  },
+  {
+   "topic": "100 Canterberry Lane variance",
+   "resolution": "variance approved",
+   "quote": "on motion by jewell and second by rabbitt, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater offset"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45 pm (no motion text printed)",
+   "quote": "meeting adjourned 7:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports (174 Northfield Road, 70 Turkey Hill Road, 56 White Street, 42 Highland Avenue, 401 Mulpus Road, 4 Lincoln Street, 201 Rolling Acres Road, 15 Hemlock Drive, 568 West Street)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged:"
+  },
+  {
+   "name": "Orders to correct (912 Massachusetts Avenue housing inspection)",
+   "where": "text",
+   "quote": "orders to correct were issued."
+  },
+  {
+   "name": "Letter requesting an update (912 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "agent garreffi send a letter requesting and update with no response."
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic",
+  "Title 5",
+  "housing court",
+  "variance",
+  "housing inspection",
+  "lead paint"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged"
+ },
+ "dropped_unquoted_by_field": {}
 }

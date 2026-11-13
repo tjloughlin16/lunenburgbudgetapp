@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-02-13",
  "docid": "4505",
@@ -12,31 +12,275 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from January 23, 2013",
+   "motion": "Approve the meeting minutes from the January 23, 2013 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "lsbc moved to approve meeting minutes from the january 23, 2013"
+   "quote": "motion: lsbc moved to approve meeting minutes from the january 23, 2013"
   },
   {
-   "motion": "Approve Christine DePalma as a member of the Lunenburg High School project team",
+   "motion": "Approve Christine DePalma as a member of the Lunenburg High School project team.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "the lsbc moved to approve christine depalma as a member of the lunenburg high school project team."
+   "quote": "motion: the lsbc moved to approve christine depalma as a member of the"
   },
   {
-   "motion": "Approve the award of the design contract for the feasibility study/schematic design to Tappé Associates",
+   "motion": "Approve the award of the design contract for the feasibility study/schematic design to Tappé Associates.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "the lsbc moved to approve the award of the design contract for the feasibility study/schematic design to tappé associates."
+   "quote": "motion: the lsbc moved to approve the award of the design contract for the"
   },
   {
-   "motion": "Recommend approval of Joslin, Lesser + Associates Invoice Number 3",
+   "motion": "Recommend approval of Joslin, Lesser + Associates Invoice Number 3.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "the lsbc moved to recommend approval of joslin, lesser + associates invoice number 3."
+   "quote": "motion: the lsbc moved to recommend approval of joslin, lesser + associates invoice number 3."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Motions are recorded but no outcomes (vote counts, unanimous approval, or pass/fail statements) are documented for any motion.",
- "cost_usd": 0.1397525
+ "note": "The minutes are titled Lunenburg School Building Committee (LSBC), not School Building Committee as the request header reads. The attendee header is OCR-scrambled, so names and roles cannot be reliably paired; roles are given only where the body text states them, and header-only names are marked not stated. The minutes do not record attendance explicitly. None of the four motions has a recorded result, so all are outcome not stated. No dollar figures are printed anywhere. The footer stamp \"Approved by SBC March 13, 2013\" is not a vote on this meeting.",
+ "cost_usd": 0.007376219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "not stated",
+   "quote": "loxi jo calmes lunenburg superintendent of schools, lsbc michael mackin colleen shapiro dave matthews nathan lockwood"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "chair",
+   "status": "present",
+   "quote": "michael mackin, chair of the lunenburg school building committee (lsbc), called the meeting to order at 7:05 pm."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "status": "not stated",
+   "quote": "loxi jo calmes lunenburg superintendent of schools, lsbc michael mackin colleen shapiro dave matthews nathan lockwood"
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "not stated",
+   "quote": "loxi jo calmes lunenburg superintendent of schools, lsbc michael mackin colleen shapiro dave matthews nathan lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "status": "not stated",
+   "quote": "loxi jo calmes lunenburg superintendent of schools, lsbc michael mackin colleen shapiro dave matthews nathan lockwood"
+  },
+  {
+   "name": "Mark Erikson",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Mike Barney",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Brian Frank",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Richard Cohen",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Kerry Speide",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "John Londa",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Brian Spadafino",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Tim Santry",
+   "status": "not stated",
+   "quote": "mark erikson mike barney brian frank richard cohen kerry speide john londa brian spadafino tim santry"
+  },
+  {
+   "name": "Charles Hay",
+   "status": "not stated",
+   "quote": "charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Cesar Dedios",
+   "status": "not stated",
+   "quote": "charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Damian Liddiard",
+   "status": "not stated",
+   "quote": "charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Greg Cohan",
+   "status": "present",
+   "quote": "greg cohan stated any expenses expended by the district should be forwarded to joslin, lesser + associates for inclusion"
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "assistant project manager, Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "these meeting minutes were prepared by christine depalma from joslin, lesser + associates."
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "status": "not stated",
+   "quote": "charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Greg Cohan stated that any expenses expended by the District should be forwarded to Joslin, Lesser + Associates for inclusion in the next invoice payment period for approval.",
+   "quote": "greg cohan stated any expenses expended by the district should be forwarded to joslin, lesser + associates for inclusion into the next invoice payment period for approval."
+  },
+  {
+   "decision": "Educational visioning workshops with Frank Locker to be scheduled; the LSBC proposed the beginning of March, and March 6 and 7 were tentatively confirmed.",
+   "quote": "the lsbc proposed that these workshops be scheduled in the beginning of march. march 6 and 7 were tentatively confirmed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Joslin, Lesser + Associates Invoice No. 3 (OPM services)",
+   "what_was_recorded": "OPM invoice for services performed January 1 through January 31, 2013 was submitted, and the LSBC moved to recommend its approval; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "joslin, lesser + associates submitted invoice no. 3 for opm services performed for the"
+  },
+  {
+   "topic": "Forwarding District expenses to OPM for next invoice",
+   "what_was_recorded": "Expenses paid by the District are to be forwarded to Joslin, Lesser + Associates for the next invoice payment period; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "greg cohan stated any expenses expended by the district should be forwarded to joslin, lesser + associates for inclusion into the next invoice payment period for approval."
+  },
+  {
+   "topic": "Design contract award, feasibility study/schematic design",
+   "what_was_recorded": "Award of the design contract for the feasibility study/schematic design to Tappé Associates was moved for approval; no contract amount is printed.",
+   "figures_as_printed": [],
+   "quote": "motion: the lsbc moved to approve the award of the design contract for the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:05 PM",
+   "quote": "michael mackin, chair of the lunenburg school building committee (lsbc), called the meeting to order at 7:05 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "motion to approve January 23, 2013 minutes; result not stated",
+   "quote": "there were not any additional comments or questions on the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Introduction of Christine DePalma, Joslin, Lesser + Associates",
+   "resolution": "motion to approve as project team member; result not stated",
+   "quote": "christine joins the joslin, lesser + associates team as an assistant project manager.",
+   "tags": [
+    "staffing",
+    "Joslin, Lesser + Associates"
+   ]
+  },
+  {
+   "topic": "Design contract award, feasibility study/schematic design",
+   "resolution": "motion to approve award to Tappé Associates; result not stated",
+   "quote": "motion: the lsbc moved to approve the award of the design contract for the",
+   "tags": [
+    "design contract",
+    "Tappé Associates",
+    "feasibility study"
+   ]
+  },
+  {
+   "topic": "Invoice and Commitment Approval",
+   "resolution": "motion to recommend approval of Invoice No. 3; result not stated",
+   "quote": "motion: the lsbc moved to recommend approval of joslin, lesser + associates invoice number 3.",
+   "tags": [
+    "invoice",
+    "OPM"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment; no members of the public present",
+   "quote": "there were no public comments or members of the public present at the meeting.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no other business",
+   "quote": "there was no other business.",
+   "tags": []
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "educational visioning workshops proposed for early March; March 6 and 7 tentatively confirmed",
+   "quote": "the lsbc proposed that these workshops be scheduled in the beginning of march. march 6 and 7 were tentatively confirmed.",
+   "tags": [
+    "educational visioning",
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Christine DePalma resume",
+   "where": "list",
+   "quote": "christine's resume was also shared with the lsbc for review."
+  },
+  {
+   "name": "Meeting minutes for the prior meeting held January 23, 2013",
+   "where": "text",
+   "quote": "joslin, lesser + associates distributed the meeting minutes for the prior meeting held on january 23, 2013."
+  },
+  {
+   "name": "Joslin, Lesser + Associates Invoice No. 3",
+   "where": "text",
+   "quote": "joslin, lesser + associates submitted invoice no. 3 for opm services performed for the"
+  }
+ ],
+ "tags": [
+  "Lunenburg School Building Committee",
+  "Lunenburg High School project",
+  "feasibility study",
+  "schematic design",
+  "OPM invoice",
+  "Joslin, Lesser + Associates",
+  "Tappé Associates",
+  "educational visioning",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "christine's resume was also shared with the lsbc for review."
+ },
+ "dropped_unquoted_by_field": {}
 }

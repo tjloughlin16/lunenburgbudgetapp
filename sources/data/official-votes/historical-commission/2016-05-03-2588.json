@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-05-03",
  "docid": "2588",
@@ -12,15 +12,157 @@
  },
  "votes": [
   {
-   "motion": "Approve April 5, 2016 minutes",
+   "motion": "Approve the April 5, 2016 minutes.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "april, 5 2016 minutes were approved,"
+   "quote": "minutes approval: april, 5 2016 minutes were approved,",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text. One procedural vote recorded: approval of prior minutes. Text states the adjournment but does not record it as a motion voted on.",
- "cost_usd": 0.09659500000000001
+ "note": "OCR text of a single-meeting set of minutes (2 pages). The only approval recorded is of the April 5, 2016 minutes, and it gives no mover, seconder, or vote count. No motion or vote is recorded for adjournment, so it is not listed as a vote. The minutes name no dollar figures and no public comment. The filing stamp reads JUN 17 2016. The two newspaper articles are not named beyond their subject.",
+ "cost_usd": 0.0038036199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, cullen dwyer and lois lewis."
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, cullen dwyer and lois lewis."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, cullen dwyer and lois lewis."
+  },
+  {
+   "name": "Lois Lewis",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, cullen dwyer and lois lewis."
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "absent",
+   "quote": "members absent: richard mcgrath"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order at 6:35 p.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved April 5, 2016 minutes",
+   "quote": "minutes approval: april, 5 2016 minutes were approved,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "received notice, no action",
+   "quote": "notice was received of a conference for massachusetts history organizations scheduled",
+   "tags": [
+    "correspondence",
+    "conference"
+   ]
+  },
+  {
+   "topic": "Demolition delay requests",
+   "resolution": "no action",
+   "quote": "there has been no demolition delay requests received.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Planning Board requests (satellite at 39 Massachusetts Avenue; driveway at 233 Lancaster Avenue)",
+   "resolution": "discussed; Cullen Dwyer to attend Planning Board meeting",
+   "quote": "the planning board will consider at least two requests at the may 9, 2016 meeting: 1) the",
+   "tags": [
+    "planning board",
+    "traffic safety"
+   ]
+  },
+  {
+   "topic": "Bronze markers for historical residences",
+   "resolution": "no action; Becky Lantry developing plan",
+   "quote": "becky lantry is developing a plan to have bronze markers for historical residences",
+   "tags": [
+    "historic markers"
+   ]
+  },
+  {
+   "topic": "Historically Speaking articles deadline",
+   "resolution": "reminder, no action",
+   "quote": "amory phelps reiterated david grossman, the editor of the lunenburg ledger, needs the",
+   "tags": [
+    "newsletter",
+    "publicity"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act newspaper articles",
+   "resolution": "presented for discussion",
+   "quote": "becky lantry presented two newspaper articles concerning the community preservation act for discussion",
+   "tags": [
+    "community preservation act"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:55 p.m.",
+   "quote": "the meeting was adjourned at 7:55 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Newspaper article: a town's favorable implementation of the Community Preservation Act",
+   "where": "list",
+   "quote": "becky lantry presented two newspaper articles concerning the community preservation act for discussion"
+  },
+  {
+   "name": "Newspaper article: a more unfavorable critique of the Community Preservation Act",
+   "where": "list",
+   "quote": "becky lantry presented two newspaper articles concerning the community preservation act for discussion"
+  },
+  {
+   "name": "Notice of A Conference for Massachusetts History Organizations, June 13, 2016, College of the Holy Cross, Worcester",
+   "where": "text",
+   "quote": "notice was received of a conference for massachusetts history organizations scheduled"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "planning board",
+  "community preservation act",
+  "historic markers",
+  "minutes approval",
+  "correspondence",
+  "newsletter"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "becky lantry presented two newspaper articles concerning the community preservation act for discussion"
+ },
+ "dropped_unquoted_by_field": {}
 }

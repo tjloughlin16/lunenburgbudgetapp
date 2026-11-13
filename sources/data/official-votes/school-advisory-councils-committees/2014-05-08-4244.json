@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-05-08",
  "docid": "4244",
@@ -12,6 +12,90 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This document is a meeting notice/agenda, not meeting minutes. No votes are recorded. The text lists agenda items (Call to Order, Review Minutes, Old Business, New Business, Adjourn) but contains no motions, voting outcomes, or records of what was actually decided during the meeting.",
- "cost_usd": 0.08007650000000001
+ "note": "Text is a meeting notice and agenda only (single page). It records no proceedings, motions, votes, discussion, outcomes, or attendance status beyond a single name under the Attendees heading. The board named in the request (\"School Advisory Councils Committees\") differs from the body printed in the text (\"Advisory Committee for Acceptance and Diversity\"); the printed name is used. No documents, exhibits, or money figures are printed.",
+ "cost_usd": 0.0023913199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Calmes",
+   "role": "Advisory Committee Members",
+   "status": "not stated",
+   "quote": "advisory committee members loxi calmes"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no outcome recorded (agenda only)",
+   "quote": "1. call to order 2. review and approve minutes from 10 april 2014",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes from 10 April 2014",
+   "resolution": "no outcome recorded (agenda only)",
+   "quote": "review and approve minutes from 10 april 2014",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Old Business: Review Consolidation of Process & Procedures Committee Recommendations",
+   "resolution": "no outcome recorded (agenda only)",
+   "quote": "review consolidation of process & procedures committee recommendations",
+   "tags": [
+    "old business",
+    "procedures",
+    "recommendations"
+   ]
+  },
+  {
+   "topic": "New Business: Begin Presentation Slide building Bullet Points",
+   "resolution": "no outcome recorded (agenda only)",
+   "quote": "begin presentation slide building bullet points.",
+   "tags": [
+    "new business",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "New Business: Review calendars and time line",
+   "resolution": "no outcome recorded (agenda only)",
+   "quote": "review calendars and time line",
+   "tags": [
+    "new business",
+    "calendar",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "no outcome recorded (agenda only)",
+   "quote": "review calendars and time line 5. adjourn",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "advisory committee",
+  "acceptance and diversity",
+  "agenda",
+  "school",
+  "TC Passios Elementary School",
+  "meeting notice"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

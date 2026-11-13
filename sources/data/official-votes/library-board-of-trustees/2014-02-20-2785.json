@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-02-20",
  "docid": "2785",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve January 16 minutes as amended",
+   "motion": "Approve the January 16 minutes as amended.",
    "moved_by": "Dick",
    "seconded_by": "Robin",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "january 16 minutes as amended; motion by dick, seconded by robin, approval by all present, jeanne abstained."
   },
   {
-   "motion": "Approve November 21 minutes as amended",
+   "motion": "Approve the November 21 minutes as amended.",
    "moved_by": "Dick",
    "seconded_by": "Robin",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "november 21 minutes as amended; motion by dick, seconded by robin, approved by dick, joanne, kathy, lisa and robin. lars abstained."
   },
   {
-   "motion": "Approve Policy subcommittee meeting minutes from November 23, 2013 as amended",
+   "motion": "Approve the Policy subcommittee meeting minutes for November 23, 2013 as amended.",
    "moved_by": "Lars",
    "seconded_by": "Lisa",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "lars moved to approve as amended, lisa second; all approve."
   },
   {
-   "motion": "Accept Personnel Subcommittee meeting minutes as amended",
+   "motion": "Accept the Personnel Subcommittee meeting minutes as amended.",
    "moved_by": "Dick",
    "seconded_by": "Lisa",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "move to accept as amended by dick, second by lisa, all approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Robin",
    "outcome": "passed",
@@ -53,6 +53,224 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11637349999999999
+ "note": "Text-only minutes; no scan. No dollar figures are printed anywhere. Vote counts are not printed for the January 16 or subcommittee approvals (recorded as 'all present'/'all approve'). The November 21 approval lists Joanne and Kathy as approving, though both are recorded absent; Lars abstained; no count is printed, so outcome is 'passed'. Kerry Speidel is named but not recorded as attending this meeting, so is omitted from attendees.",
+ "cost_usd": 0.00553172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, robin venezia, lars widstrand, brian laffond"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, robin venezia, lars widstrand, brian laffond"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, robin venezia, lars widstrand, brian laffond"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, robin venezia, lars widstrand, brian laffond"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, robin venezia, lars widstrand, brian laffond"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, robin venezia, lars widstrand, brian laffond"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "FinCom Representative",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux, martha moore, lisa krowitz, robin venezia, lars widstrand, brian laffond"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: joanne mcquaid, kathy murray"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: joanne mcquaid, kathy murray"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "candidate for the Lunenburg Library Trustees",
+   "status": "not stated",
+   "quote": "susan visser introduced, candidate for the lunenburg library trustees."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "candidate for the Lunenburg Library Trustees",
+   "status": "not stated",
+   "quote": "harry kubetz introduced, candidate for the lunenburg library trustees."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Surveys for the Director's evaluation are to be returned by April 1st, and the Personnel Subcommittee will meet to collate and evaluate all returned information.",
+   "quote": "surveys to be returned by april 1st, personnel subcommittee will meet, collate and evaluate, all returned information."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget 2014 status",
+   "what_was_recorded": "Trustees commented that the budget numbers are holding and the library is in good shape in the current fiscal year; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "general comments that the numbers \"are holding\" and that the lunenburg p ublic library is in \"good shape\" in the current f.y."
+  },
+  {
+   "topic": "E-rate funding for internet",
+   "what_was_recorded": "Brian Laffond asked whether the library or trustees had investigated E-rate funds as a source for paying the cost of internet telecommunications; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "brian laffond raised a question: \"e-rate\" funds for telecommunication. has the library or the trustees investigated this as a source for funding cost of internet?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Susan Visser",
+   "stated_role": "candidate for the Lunenburg Library Trustees",
+   "topic": "introduction as trustee candidate",
+   "quote": "susan visser introduced, candidate for the lunenburg library trustees."
+  },
+  {
+   "speaker": "Harry Kubetz",
+   "stated_role": "candidate for the Lunenburg Library Trustees",
+   "topic": "introduction as trustee candidate",
+   "quote": "harry kubetz introduced, candidate for the lunenburg library trustees."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no action; candidates introduced and caucus discussed",
+   "tags": [
+    "public comment",
+    "trustee election",
+    "caucus"
+   ],
+   "quote": "discussion about the upcoming town caucus march 17 at 7:00 p.m. nominations to be held, two openings on the trustees for three year terms respectively."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved January 16 and November 21 minutes as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "january 16 minutes as amended; motion by dick, seconded by robin, approval by all present, jeanne abstained."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reviewed and discussed",
+   "tags": [
+    "director",
+    "staff",
+    "budget",
+    "collections",
+    "technology"
+   ],
+   "quote": "director's report for february 20, 2014 reviewed and discussed."
+  },
+  {
+   "topic": "Friends of LPL updates",
+   "resolution": "no action",
+   "tags": [
+    "friends of library",
+    "programs"
+   ],
+   "quote": "cultural horizon's and programs continues with the scandinavian (nordic) theme."
+  },
+  {
+   "topic": "Subcommittees",
+   "resolution": "policy and personnel minutes approved; director evaluation format discussed; surveys due April 1",
+   "tags": [
+    "subcommittees",
+    "director evaluation",
+    "personnel"
+   ],
+   "quote": "surveys to be returned by april 1st, personnel subcommittee will meet, collate and evaluate, all returned information."
+  },
+  {
+   "topic": "Other",
+   "resolution": "noted upcoming Town Manager visit, FinCom presentation, and E-rate question",
+   "tags": [
+    "town manager",
+    "fincom",
+    "e-rate",
+    "internet funding"
+   ],
+   "quote": "kerry speidel, town manager, will attend our march 20th meeting"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:26 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn made by dick, second by robin at 8:26 p.m. all approve."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for February 20, 2014",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for february 20, 2014"
+  },
+  {
+   "name": "Library Director’s March 20th Report",
+   "where": "list",
+   "quote": "library director's march 20th report"
+  },
+  {
+   "name": "Cover letter for Director’s Evaluation",
+   "where": "list",
+   "quote": "cover letter for director's evaluation"
+  },
+  {
+   "name": "Director’s Evaluation forms for 2014 evaluation",
+   "where": "list",
+   "quote": "director's evaluation forms for 2014 evaluation"
+  },
+  {
+   "name": "Director’s Report for February 20, 2014",
+   "where": "text",
+   "quote": "director's report for february 20, 2014 reviewed and discussed."
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "director evaluation",
+  "budget 2014",
+  "technology update",
+  "trustee candidates",
+  "town caucus",
+  "e-rate",
+  "subcommittees",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

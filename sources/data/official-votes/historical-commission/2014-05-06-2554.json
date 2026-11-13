@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-05-06",
  "docid": "2554",
@@ -12,23 +12,158 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from 4/8/14",
+   "motion": "Approve the minutes of 4/8/14 as submitted.",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "minutes from 4/8/14 approved as submitted"
-  },
-  {
-   "motion": "approve the release of the Jones house",
-   "outcome": "passed",
-   "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "the commission approves the release of the jones house."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09596850000000001
+ "note": "Text is OCR of the minutes with artifacts (stray characters such as 'al' and 'RL', 'May 31ª'); the board comment sentence reads as printed. Only one vote is recorded: approval of the 4/8/14 minutes, given with no printed motion, mover, second or tally, so outcome is 'passed' from the printed 'approved as submitted'. No motion or vote is recorded for the Jones house release (recorded as a decision), the newspaper assignments, or adjournment (time only). No dollar figures appear. The imaging session is described as a desire, with an attached outline referenced but not included in the text.",
+ "cost_usd": 0.00311992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "jamie toale in attendance to express a desire for the historic commission to work together with the building"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission approved the release of the Jones house, and Becky was directed to notify the town manager.",
+   "quote": "the commission approves the release of the jones house. becky to notify the town manager."
+  },
+  {
+   "decision": "Newspaper article assignments: Damon for June, Richard for July, Amory for August, Becky for September.",
+   "quote": "damon to write for june richard to write for july amory to write for august becky to write for september"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "",
+   "topic": "Coordination with Building Re-Use Committee",
+   "quote": "jamie toale in attendance to express a desire for the historic commission to work together with the building"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 6:32 PM",
+   "quote": "meeting called to order may 6, 2014 @ 6:32 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as submitted",
+   "quote": "minutes from 4/8/14 approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; comment received",
+   "quote": "jamie toale in attendance to express a desire for the historic commission to work together with the building",
+   "tags": [
+    "public comment",
+    "Building Re-Use Committee"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "none",
+   "quote": "correspondence and communications: none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Old business: Jones House inspection tour",
+   "resolution": "release approved; Becky to notify town manager; open house set for May 31",
+   "quote": "the commission approves the release of the jones house. becky to notify the town manager.",
+   "tags": [
+    "Jones House",
+    "open house"
+   ]
+  },
+  {
+   "topic": "Newspaper articles",
+   "resolution": "assignments made for June through September",
+   "quote": "damon to write for june richard to write for july amory to write for august",
+   "tags": [
+    "newspaper articles",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "New business: board comment (imaging session)",
+   "resolution": "no action; imaging session proposed",
+   "quote": "damon expressed his desire for the historic commission to run an imaging session",
+   "tags": [
+    "village district zoning",
+    "town center history"
+   ]
+  },
+  {
+   "topic": "Meeting adjournment",
+   "resolution": "adjourned 8:02pm; next meeting June 3, 2014",
+   "quote": "meeting adjourned @ 8:02pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Outline for the imaging session (attached; referenced in board comment)",
+   "where": "text",
+   "quote": "see attached outline."
+  }
+ ],
+ "tags": [
+  "Historical Commission",
+  "Jones House",
+  "village district zoning",
+  "town center history",
+  "newspaper articles",
+  "Building Re-Use Committee",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

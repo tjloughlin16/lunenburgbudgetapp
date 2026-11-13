@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-07-10",
  "docid": "4812",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "include the Town of Shirley in the Devens Household Hazardous Waste Inter-Municipal Agreement",
+   "motion": "Include the Town of Shirley in the Devens HHW inter-municipal agreement.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
@@ -20,37 +20,357 @@
    "quote": "mr. alonzo moved to include the town of shirley in the devens hhw ima. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed"
   },
   {
-   "motion": "ratify the appointment of James P. Marino to the position of Police Chief",
+   "motion": "Ratify the appointment of James P. Marino as Police Chief, as recommended by the Town Manager.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved to ratify the appointment of james p. marino to the position of police chief as recommended by the town manager. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed"
+   "procedural": false,
+   "quote": "mr. alonzo moved to ratify the appointment of james p. marino to the position of police chief as recommended by the town manager. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "approve the FY2013 Annual Appointments list",
+   "motion": "Approve the FY2013 BOS appointment list as read by the Chair.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved to approve the list as read by the chair. mr. sund seconded. on vote, motion carried, 5 in favor, o opposed"
+   "procedural": false,
+   "quote": "mr. alonzo moved to approve the list as read by the chair. mr. sund seconded. on vote, motion carried, 5 in favor, o opposed."
   },
   {
-   "motion": "designate as special municipal employees members of the MART Advisory Board and Montachusett Regional Planning Committee",
+   "motion": "Designate as special municipal employees the members of the MART Advisory Board and Montachusett Regional Planning Committee.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertrand",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved that the board designate as special municipal employees members of the mart advisory board & montachusett regional planning committee. ms. bertrand seconded. on vote, motion carried, 5 in tavor, 0 opposed"
+   "procedural": false,
+   "quote": "mr. alonzo moved that the board designate as special municipal employees members of the mart advisory board & montachusett regional planning committee. ms. bertrand seconded. on vote, motion carried"
   },
   {
-   "motion": "adjourn regular session",
+   "motion": "Adjourn regular session at 8:20PM.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "being no further business the board voted unanimously to adjourn regular session at 8:20pm"
+   "quote": "being no further business the board voted unanimously to adjourn regular session at 8:20pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Scanned minutes extracted via OCR (macOS Vision). The document shows OCR artifacts in two votes: \"O opposed\" (should be \"0\") in vote 3, and \"tavor\" (should be \"favor\") in vote 4; these are preserved verbatim as they appear in the extracted text.",
- "cost_usd": 0.1187705
+ "dropped_unquoted": 2,
+ "note": "Scanned minutes read by OCR (macOS Vision). The opening item's heading is garbled, so its topic name is inferred from context. The 7:00 PM public comment header has no speakers recorded. No motion to enter executive session appears in the text, so none is recorded as a vote. Warrants and prior minutes were listed without a recorded vote. Attached appointment lists are referenced but not printed in the text. Member name is printed as both Bertram and Bertrand. The 'O opposed' in one vote is OCR for 0. Stamped RECEIVED & FILED AUG 27 2012.",
+ "cost_usd": 0.01022572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Mr. Curley",
+   "status": "not stated",
+   "quote": "mr. curley stated that they will begin again, notify the town of lunenburg formerly, and the 6 month period will begin again from there."
+  },
+  {
+   "name": "James P. Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "the town manager read the notice of appointment of james p. marino, as police chief for the lunenburg police dept."
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief marino spoke and thanked the town manager, bos, along with family, friends and co-workers."
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Town Clerk",
+   "status": "present",
+   "quote": "chief marino took the oath of office which was given by the town clerk, kathy herrick."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Bertram requested that a written opinion from Mr. Curley's counsel be forwarded to the Town Manager on the first right of refusal matter.",
+   "quote": "ms. bertram requested that a written opinion from mr. curley's counsel be forwarded to the town manager on this matter."
+  },
+  {
+   "decision": "Ms. Speidel to get clarification from the Oversight Committee on the impact of Shirley's admission on Lunenburg's assessment.",
+   "quote": "ms. speidel will get clarification from the oversight committee concerning that question."
+  },
+  {
+   "decision": "Review of the proposed Electrical Permit Fee for Solar Arrays was not discussed and was continued to the next meeting.",
+   "quote": "review proposed electrical permit fee for solar arrays - not discussed; continued to next meeting."
+  },
+  {
+   "decision": "Ms. Speidel to generate a prioritized list of tax-title properties for department review by August 31, with a final list for the BOS at the first September meeting; a second list of properties in disrepair not in tax title also to be generated.",
+   "quote": "ms. speidel will generate a list of prioritized properties which will be circulated to various departments for review by august 31% and will have the finalized list for the bos to review at the first meeting in september."
+  },
+  {
+   "decision": "Ms. Speidel to clarify with Town Counsel and DEP the status of the 925 Mass Ave gas station property.",
+   "quote": "ms. speidel will clarify this with town counsel & dep."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payment warrants listed",
+   "what_was_recorded": "Warrants and accounts payable were listed by number and date under the minutes item; no vote on them is recorded.",
+   "figures_as_printed": [
+    "$244,184.72",
+    "$498,895.76",
+    "$344,394.97",
+    "$88,123.78",
+    "$693,110.14",
+    "$46,134.26",
+    "$296,864.75",
+    "$124,399.78"
+   ],
+   "quote": "warrants - m4-12 6/26/12 - $244,184.72"
+  },
+  {
+   "topic": "Devens HHW program fee",
+   "what_was_recorded": "The Devens household hazardous waste program offers collection days at a reasonable fee; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the communities involved can have a household hazardous waste day twice a month for 10 months out of the year at a reasonable fee."
+  },
+  {
+   "topic": "Tax title liens and interest",
+   "what_was_recorded": "Once a lien is placed the Town is said to be guaranteed payment at a 16% interest rate; foreclosure must go through Land Court.",
+   "figures_as_printed": [
+    "100%",
+    "16%"
+   ],
+   "quote": "once a lien is placed on a property the town is 100% guaranteed that they will be paid, in time, by the mortgage holder at an interest rate of 16%."
+  },
+  {
+   "topic": "Regional 911 state grant",
+   "what_was_recorded": "A state grant award of $1.8M was received for the Regional 911 building; a Homeland Security grant application is pending.",
+   "figures_as_printed": [
+    "$1.8M"
+   ],
+   "quote": "a grant award was received from the state for the amount of $1.8m."
+  },
+  {
+   "topic": "FY2013 state budget net increase",
+   "what_was_recorded": "Lunenburg will receive a net increase of $123,673 in FY2013, offset by increased charges; the increase is spread across all categories.",
+   "figures_as_printed": [
+    "$123,673"
+   ],
+   "quote": "in fy2013 lunenburg will receive a net increase of $123,673."
+  },
+  {
+   "topic": "Chapter 70 and General Government aid",
+   "what_was_recorded": "Chapter 70 aid and General Government aid amounts for FY2013 were reported.",
+   "figures_as_printed": [
+    "$5,691,000",
+    "$6,718,000"
+   ],
+   "quote": "chapter 70 money received will be in the amount of $5,691,000."
+  },
+  {
+   "topic": "Tuition assessments increase",
+   "what_was_recorded": "Tuition assessments increased significantly, estimated on enrollment and adjusted during the year.",
+   "figures_as_printed": [
+    "$926,658"
+   ],
+   "quote": "the assessments have increased significantly in terms of tuition assessments at $926,658."
+  },
+  {
+   "topic": "Monty Tech additional funding",
+   "what_was_recorded": "Monty Tech will receive additional funding; it may reduce FY2013 assessments or add the money to its excess and deficiency account.",
+   "figures_as_printed": [
+    "$87,697"
+   ],
+   "quote": "ms. speidel stated that monty tech will receive additional funding in the amount of $87,697."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Property first right of refusal (opening item; heading garbled in OCR)",
+   "resolution": "no action; written opinion requested",
+   "quote": "ms. bertram requested that a written opinion from mr. curley's counsel be forwarded to the town manager on this matter.",
+   "tags": [
+    "property",
+    "legal",
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Revise Devens HHW IMA to include Town of Shirley",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved to include the town of shirley in the devens hhw ima. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed",
+   "tags": [
+    "hazardous waste",
+    "intermunicipal agreement"
+   ]
+  },
+  {
+   "topic": "Electrical permit fee for solar arrays",
+   "resolution": "continued to next meeting",
+   "quote": "review proposed electrical permit fee for solar arrays - not discussed; continued to next meeting.",
+   "tags": [
+    "solar",
+    "permit fees"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no action; minutes abstention change requested",
+   "quote": "mr. alonzo spoke to clarify a technicality on a set of minutes which showed a recusal of a vote and requested that it be changed to an abstention.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "mr. alonzo reported that the finance committee will be meeting this thursday.",
+   "tags": [
+    "committees",
+    "tax title",
+    "solar",
+    "cable"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "no action (none)",
+   "quote": "6. department reports - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "no action",
+   "quote": "ms. speidel reported that she attended the ground breaking ceremony for the regional 911 building at devens which was well attended.",
+   "tags": [
+    "state budget",
+    "grants",
+    "regional dispatch",
+    "education assessments"
+   ]
+  },
+  {
+   "topic": "Ratify appointment of Police Chief",
+   "resolution": "ratified 5-0",
+   "quote": "mr. alonzo moved to ratify the appointment of james p. marino to the position of police chief as recommended by the town manager. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "FY2013 annual appointments and special municipal employees",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved to approve the list as read by the chair. mr. sund seconded. on vote, motion carried, 5 in favor, o opposed.",
+   "tags": [
+    "appointments",
+    "MART",
+    "regional planning"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session; no vote recorded",
+   "quote": "mr. matthews stated that the bos was going into executive session, not to return and read into record m.g.l.",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "BOS appointment list for FY2013",
+   "where": "list",
+   "quote": "mr. matthews read the bos appointment list for fy2013 into record. (see attached)."
+  },
+  {
+   "name": "Town Manager Appointments/Re-Appointments",
+   "where": "list",
+   "quote": "ms. speidel read the town manager appointments/re-appointments into record. (see attached) ",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Minutes of 6/1/2010, 12/7/2010, 6/5/2012, 6/12/2012 and 6/19/2012",
+   "where": "text",
+   "quote": "minutes: 6/1/2010 12/7/2010 6/5/2012 6/12/2012 6/19/2012"
+  },
+  {
+   "name": "Payment warrants (M4-12 6/26/12, WIP13 6/28/12, FY12LS 6/29/12, 75-12 6/27/12, W-1-13 7/3/12, 26P12M 6/29/12, Deduction W, Accts. Payable)",
+   "where": "text",
+   "quote": "warrants - m4-12 6/26/12 - $244,184.72"
+  },
+  {
+   "name": "Devens Household Hazardous Waste Inter-municipal Agreement (first amendment)",
+   "where": "text",
+   "quote": "ms. speidel recommended that the bos approve the first amendment of this inter-municipal agreement to allow the town of shirley to join the program."
+  },
+  {
+   "name": "Phase 1 Environmental report (925 Mass Ave)",
+   "where": "text",
+   "quote": "the phase 1 environmental report indicated that clean up would be required."
+  },
+  {
+   "name": "EPG Solar Findings & Directives",
+   "where": "text",
+   "quote": "where they discussed the epg solar findings & directives, emerald place & tri town landing."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Devens HHW",
+  "Shirley intermunicipal agreement",
+  "tax title liens",
+  "Police Chief appointment",
+  "FY2013 appointments",
+  "state budget FY2013",
+  "Monty Tech funding",
+  "executive session",
+  "2012"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached)"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1,
+  "documents_and_exhibits": 1
+ }
 }

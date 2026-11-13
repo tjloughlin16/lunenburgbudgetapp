@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-01-14",
  "docid": "3682",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 12-10-12 and Executive 10-23-12",
+   "motion": "Approve the minutes of 12-10-12 and Executive 10-23-12 (Executive 10-15-12 not approved; to be discussed).",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
    "outcome": "not stated",
@@ -21,6 +21,298 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "No explicit vote count or outcome (passed/failed) is recorded. The minutes note that Executive 10-15-12 was \"not approved; to be discussed,\" but this is stated separately and not as a recorded motion. No other votes are recorded in the document—development status updates, committee reports, and meeting scheduling do not include recorded motions or votes.",
- "cost_usd": 0.1056495
+ "note": "Text extraction, not a scan. Only one motion is recorded (approval of prior minutes), and the minutes print no result for it, so its outcome is not stated. The adjournment time of 8:00 PM has no recorded motion, so it is not treated as a vote. The minutes have no public comment section and print no dollar figures; the budget items are money discussed without amounts. No document list is printed.",
+ "cost_usd": 0.00708372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Norman & Pamela Vincent",
+   "role": "applicants, 20 Fire Road #19 (ANR)",
+   "status": "not stated",
+   "quote": "anr: norman & pamela vincent, 20 fire road #19, david ross associates - presented by mike martorella of david ross"
+  },
+  {
+   "name": "Mike Martorella",
+   "role": "presenter, David Ross Associates",
+   "status": "present",
+   "quote": "presented by mike martorella of david ross"
+  },
+  {
+   "name": "Mr. O’Brien",
+   "role": "applicant, Aro Estates, Howard Street",
+   "status": "present",
+   "quote": "mr. o'brien noted he had spoken with that office"
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "reviewing engineer",
+   "status": "not stated",
+   "quote": "jesse johnson notes four items still needed for his office to start reviewing the subdivisions."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ANR plan for Norman & Pamela Vincent (Parcel A to be conveyed to Dooling property) accepted for review.",
+   "quote": "parcel a to be conveyed to dooling property. plan accepted for review."
+  },
+  {
+   "decision": "Executive 10-15-12 minutes not approved and to be discussed later.",
+   "quote": "executive 10-15-12 not approved; to be discussed."
+  },
+  {
+   "decision": "A tech meeting for Aro Estates will be scheduled before the public hearing.",
+   "quote": "a tech meeting will be scheduled prior to the public hearing."
+  },
+  {
+   "decision": "Board members requested to examine the peer review policy with Ms. Benson.",
+   "quote": "and requested to examine the policy for peer review with ms. benson."
+  },
+  {
+   "decision": "Right of First Refusal for Aro property was not discussed at this meeting because it was not on the agenda; a Planning Board meeting to discuss it is to be scheduled for January 17.",
+   "quote": "as this spe cific subject was not included in the agenda, mr. bodkin jr. felt it could not be discussed at this evening's meeting."
+  },
+  {
+   "decision": "A Planning Board meeting will be scheduled for Thursday, January 17 for discussion of the Aro property Right of First Refusal.",
+   "quote": "a planning board meeting will be scheduled for thursday, january 17 th for discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Aro Estates review fees",
+   "what_was_recorded": "Administrative and review fees are being charged for the new Aro Estates application, and Mr. O’Brien asked how the review fee amounts were calculated.",
+   "figures_as_printed": [],
+   "quote": "administrative fees and review fees are being charged for this new application."
+  },
+  {
+   "topic": "Aro Estates Tri Party Account refund",
+   "what_was_recorded": "The Tri Party Account from the 2008 Aro application was closed and the money was returned to the applicant, Mr. O’Brien.",
+   "figures_as_printed": [],
+   "quote": "ms. benson noted the tri party account from the previous application of 2008 was closed and monies returned to mr. o'brien, the applicant."
+  },
+  {
+   "topic": "FY2014 Planning Office budget",
+   "what_was_recorded": "The Planning Director reported receiving the request for the FY2014 Planning Office budget from the Town Manager; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. benson noted she has received request for fy2014 planning office budget from town manager."
+  },
+  {
+   "topic": "Solar PILOT agreements",
+   "what_was_recorded": "The Board of Selectmen is awaiting documents from solar developers on power-purchase and payment-in-lieu-of-taxes (PILOT) agreements; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "regarding power -purchase and payment -in-lieu-of- taxes (pilot) agreements",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR plan, Norman & Pamela Vincent, 20 Fire Road #19",
+   "resolution": "plan accepted for review",
+   "quote": "parcel a to be conveyed to dooling property. plan accepted for review.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motion made; 10-15-12 executive minutes not approved, to be discussed",
+   "quote": "mr. bodkin jr., motion to approve 12-10-12 and executive 10-23-12, second, mr. lockwood.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, School Reconfiguration, Capital Planning)",
+   "resolution": "noted",
+   "quote": "mjtc- ms. bilotta-simeone has replaced mr. saiia as board representative.",
+   "tags": [
+    "committees",
+    "schools",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Old business: APR applications",
+   "resolution": "noted; Town Manager to review with Board of Selectmen",
+   "quote": "will be reviewing with the board of selectmen the applications for mario lanni",
+   "tags": [
+    "APR",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Board vacancy applications",
+   "resolution": "noted; applications accepted until January 31",
+   "quote": "noted mr. saiia's resignation and that the vacancy will be filled through a joint appointment by",
+   "tags": [
+    "board vacancy",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Interise program",
+   "resolution": "noted",
+   "quote": "noted information received in the office regarding interise (non -profit organization) program",
+   "tags": [
+    "small business"
+   ]
+  },
+  {
+   "topic": "Solar projects",
+   "resolution": "noted; no Board of Selectmen decision yet",
+   "quote": "unable to make any decisions at this time.",
+   "tags": [
+    "solar",
+    "PILOT",
+    "landfill"
+   ]
+  },
+  {
+   "topic": "New England Farms, 134 Leominster Shirley Road",
+   "resolution": "noted; possible minor redesign",
+   "quote": "applicant working with tennessee gas (tg) regarding work within its",
+   "tags": [
+    "development status",
+    "easement"
+   ]
+  },
+  {
+   "topic": "Aro Estates, Howard Street",
+   "resolution": "review process to begin; public hearing set for January 30",
+   "quote": "drainage calculations have been received.",
+   "tags": [
+    "subdivision",
+    "drainage",
+    "wetlands",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Asian Imperial, 5 Electric Avenue",
+   "resolution": "noted",
+   "quote": "snow removal was clarified with the owner.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom",
+   "resolution": "noted",
+   "quote": "weekly reports note continuing work on villas on carousel lane.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Tri Town Landing, Youngs Road",
+   "resolution": "noted",
+   "quote": "weekly reports note continuing work on building 3.",
+   "tags": [
+    "development status",
+    "fire inspections"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "notices from conservation commission and zoning board of appeals on file in planning office.",
+   "tags": [
+    "notices",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "january 28 - ritter building, board meeting and public hearings for att, 9 chase road",
+   "tags": [
+    "schedule",
+    "public hearings"
+   ]
+  },
+  {
+   "topic": "Member issues: Right of First Refusal, Aro property",
+   "resolution": "deferred to January 17 meeting",
+   "quote": "as this spe cific subject was not included in the agenda, mr. bodkin jr. felt it could not be discussed",
+   "tags": [
+    "right of first refusal",
+    "Board of Selectmen"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:00 PM (no motion recorded)",
+   "quote": "adjournment: 8:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "David Ross Associates letter of December 13, 2012",
+   "where": "text",
+   "quote": "mr. o'brien noted david ross associates letter of december 13, 2012, in which jesse johnson notes four items still needed"
+  },
+  {
+   "name": "Board of Health letter, November 7, 2012",
+   "where": "text",
+   "quote": "a board of health letter was provided to the planning office on november 7, 2012."
+  },
+  {
+   "name": "ORAD (Order of Resource Area Delineation)",
+   "where": "text",
+   "quote": "an existing orad (order of resource area delineation) which delineates the wetlands"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision review",
+  "Aro Estates",
+  "solar",
+  "APR",
+  "board vacancy",
+  "FY2014 budget",
+  "minutes approval",
+  "right of first refusal"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

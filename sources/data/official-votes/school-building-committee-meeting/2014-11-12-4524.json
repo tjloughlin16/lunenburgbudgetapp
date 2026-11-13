@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-11-12",
  "docid": "4524",
@@ -12,37 +12,360 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from October 08, 2014",
+   "motion": "Approve the meeting minutes from October 08, 2014.",
    "outcome": "not stated",
    "procedural": true,
    "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from october 08, 2014."
   },
   {
-   "motion": "Approve the October 2014 invoices as presented by Joslin, Lesser & Associates",
-   "outcome": "unanimously approved",
+   "motion": "Approve the October 2014 invoices as presented by Joslin, Lesser & Associates.",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion: the lunenburg school building committee voted to approve the october 2014 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
   },
   {
-   "motion": "Approve Michael Mackin, Brian Frank, and Colleen Shapiro as representatives of the Work Authorization Sub-committee",
+   "motion": "Approve Michael Mackin, Brian Frank and Colleen Shapiro as representatives of the Work Authorization Sub-committee.",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion: the lunenburg school building committee voted to approve above mentioned members as representatives of the work authorization sub-committee."
   },
   {
-   "motion": "Place the parking lot issue on hold until more information is available",
+   "motion": "Place the Thomas C. Passios Building parking lot relocation subject on hold until more information is available.",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion: the lunenburg school building committee voted to place this subject on hold until more information is available."
   },
   {
-   "motion": "Approve the aerial photography service by Gaw Aerial Photography for 6 flyovers at $450.00 each",
+   "motion": "Approve aerial photography service by Gaw Aerial Photography (six flyovers at $450.00 each).",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion: the lunenburg school building committee voted to approve above aerial photography service by gaw aerial photography."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan, clean and readable. One vote outcome explicitly stated (unanimously approved); four others with no stated outcome.",
- "cost_usd": 0.1012345
+ "dropped_unquoted": 1,
+ "note": "OCR-extracted text, with no readable attendance marks (the 'x' column did not come through). Attendee status is 'not stated' except where the minutes say a person chaired or presented. The roster's name-to-role alignment is inferred from line order and may be off. Motions for the minutes approval, the aerial photo and the parking hold have no printed result, so outcome is 'not stated'. No movers or seconders are printed. The adjournment is not recorded as a motion.",
+ "cost_usd": 0.00708872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "status": "not stated",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "quote": "lunenburg superintendent of schools, lsbc"
+  },
+  {
+   "name": "Michael Mackin",
+   "status": "present",
+   "role": "Lunenburg School Committee, Chair",
+   "quote": "the meeting was called to order at 6:35 pm by mr. mackin, chairperson of the"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "status": "not stated",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "quote": "michael mackin, brian frank & colleen shapiro."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "not stated",
+   "role": "BOS Representative, LSBC Member",
+   "quote": "bos representative, lsbc member"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "status": "not stated",
+   "role": "Planning Board, LSBC Member",
+   "quote": "planning board, lsbc member"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "not stated",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "quote": "finance committee, lsbc vice chair"
+  },
+  {
+   "name": "Mike Barney",
+   "status": "not stated",
+   "role": "Citizen, LSBC Member",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Brian Frank",
+   "status": "not stated",
+   "role": "Citizen, LSBC Member",
+   "quote": "michael mackin, brian frank & colleen shapiro."
+  },
+  {
+   "name": "Greg S. Roy",
+   "status": "not stated",
+   "role": "Citizen, LSBC Member",
+   "quote": "citizen, lsbc member"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "not stated",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "quote": "town manager, lsbc (non-voting member)"
+  },
+  {
+   "name": "John Londa",
+   "status": "not stated",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "quote": "director of facilities, lsbc (non-voting member)"
+  },
+  {
+   "name": "Brian Spadafino",
+   "status": "not stated",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "quote": "lhs principal, lsbc (non-voting member)"
+  },
+  {
+   "name": "Tim Santry",
+   "status": "not stated",
+   "role": "Lunenburg Public Schools",
+   "quote": "lunenburg public schools"
+  },
+  {
+   "name": "Charles Hay",
+   "status": "not stated",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "quote": "principal-in-charge, tappé architects"
+  },
+  {
+   "name": "Damian Liddiard",
+   "status": "not stated",
+   "role": "Project Architect, Tappé Architects",
+   "quote": "project architect, tappé architects"
+  },
+  {
+   "name": "Greg Cohan",
+   "status": "not stated",
+   "role": "Joslin, Lesser + Associates",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "status": "not stated",
+   "role": "Joslin, Lesser + Associates",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Inga Knox",
+   "status": "not stated",
+   "role": "Joslin, Lesser + Associates",
+   "quote": "joslin, lesser + associates"
+  },
+  {
+   "name": "Robert Alger",
+   "status": "not stated",
+   "role": "Joslin, Lesser + Associates",
+   "quote": "rob alger is available to set up time for site visit."
+  },
+  {
+   "name": "Michael Kearns",
+   "status": "not stated",
+   "role": "Shawmut Design & Construction",
+   "quote": "shawmut design & construction"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "status": "present",
+   "role": "Shawmut Design & Construction (SDC)",
+   "quote": "jonathan hirst (sdc) presented an overview of a construction progress."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tappé is to create a comprehensive list of design items that were value engineered out (wood paneling, photovoltaic panels) for review once the final GMP is known.",
+   "quote": "tappe will create a comprehensive list of these items to be ready for review."
+  },
+  {
+   "decision": "JLA is to create and share a schedule of anticipated aerial flyover periods, coordinated with major construction milestones.",
+   "quote": "jla will create and share a schedule with anticipated flyover time periods which"
+  },
+  {
+   "decision": "Main GMP is expected for review December 3, 2014 and to be presented at the December 10, 2014 Committee meeting.",
+   "quote": "main gmp is expected to be ready for review on december 3,2014 & presented to the"
+  },
+  {
+   "decision": "More research is to be done to determine clear property line rules between the Middle/High School and Thomas S. Passios.",
+   "quote": "more research has to be done to determine clear rules for property line between"
+  },
+  {
+   "decision": "Work Authorization Sub-committee formed to expedite review and approval of unforeseen conditions needing immediate repair or installation.",
+   "quote": "work authorization sub-committee was formed in order to expedite a review and"
+  },
+  {
+   "decision": "Next neighborhood meeting to be scheduled for February or March 2015.",
+   "quote": "next neighborhood meeting will be scheduled sometimes in february or march of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly progress invoices (October 2014)",
+   "what_was_recorded": "JLA presented monthly progress invoices for October 2014 work from JLA (OPM), Tappé (Designer), Shawmut (Preconstruction Services and Payment Requisition No.3), UTS Testing Services and Misc. Printing Services; the Committee approved them.",
+   "figures_as_printed": [],
+   "quote": "joslin lesser & associates (jla) presented monthly progress invoices for work"
+  },
+  {
+   "topic": "Monthly commitments",
+   "what_was_recorded": "No monthly commitments were presented; final GMP tabulation work is in progress.",
+   "figures_as_printed": [],
+   "quote": "there were no monthly commitments presented for this time period."
+  },
+  {
+   "topic": "Bid results and Main GMP",
+   "what_was_recorded": "Trade bids came in on or under budget while non-trade bids are still under review; the Main GMP is expected for review December 3, 2014.",
+   "figures_as_printed": [],
+   "quote": "trade bids are on or under budget, non trade bids are in process of review by"
+  },
+  {
+   "topic": "Value-engineered design items that may be added back",
+   "what_was_recorded": "Following the final GMP, wood paneling and photovoltaic panels previously value engineered out may be possible to add back.",
+   "figures_as_printed": [],
+   "quote": "following final gmp number, it may be possible to add some design items that were"
+  },
+  {
+   "topic": "Aerial photography service",
+   "what_was_recorded": "Approved aerial photography from Gaw Aerial Photography for six flyovers at a set price per flyover.",
+   "figures_as_printed": [
+    "$450.00"
+   ],
+   "quote": "aerial photography services for (6) six flyovers @ $450.00 each."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:35 PM",
+   "quote": "the meeting was called to order at 6:35 pm by mr. mackin, chairperson of the",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee Minutes",
+   "resolution": "approved October 08, 2014 minutes",
+   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from october 08, 2014.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals - Invoices",
+   "resolution": "approved October 2014 invoices",
+   "quote": "motion: the lunenburg school building committee voted to approve the october 2014",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals - Commitments",
+   "resolution": "no action",
+   "quote": "there were no monthly commitments presented for this time period.",
+   "tags": [
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Main Bid Package Update & Final GMP Approval Schedule",
+   "resolution": "no action",
+   "quote": "bid opening took place on october 28, 2014 as scheduled. overall the bid opening was",
+   "tags": [
+    "bids",
+    "GMP",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Construction Activity Update",
+   "resolution": "no action",
+   "quote": "jonathan hirst (sdc) presented an overview of a construction progress.",
+   "tags": [
+    "construction"
+   ]
+  },
+  {
+   "topic": "Formation of Work Authorization Committee",
+   "resolution": "approved sub-committee members",
+   "quote": "motion: the lunenburg school building committee voted to approve above mentioned",
+   "tags": [
+    "sub-committee",
+    "unforeseen conditions"
+   ]
+  },
+  {
+   "topic": "Community Outreach Efforts",
+   "resolution": "no action",
+   "quote": "neighborhood meeting was held on november 6. the meeting was successful.",
+   "tags": [
+    "outreach",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Parking Lot at Thomas C. Passios Building",
+   "resolution": "placed on hold",
+   "quote": "motion: the lunenburg school building committee voted to place this subject on hold",
+   "tags": [
+    "parking",
+    "property line"
+   ]
+  },
+  {
+   "topic": "Other Business - Aerial Photo Service",
+   "resolution": "approved aerial photography",
+   "quote": "aerial photography service by gaw aerial photography.",
+   "tags": [
+    "aerial photos",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 7:46 pm",
+   "quote": "the meeting was adjourned at approximately 7:46 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Monthly progress invoices for October 2014 (JLA, Tappé, Shawmut, UTS Testing Services, Misc. Printing Services)",
+   "where": "text",
+   "quote": "joslin lesser & associates (jla) presented monthly progress invoices for work"
+  },
+  {
+   "name": "Proposal and sketches presented by Tappé regarding relocating thirty parking spaces",
+   "where": "text",
+   "quote": "the group reviewed details of the proposal and sketches presented by tappe in regards"
+  },
+  {
+   "name": "Progress photos (also available on the School Building Project Website)",
+   "where": "text",
+   "quote": "jla presented progress photos which are also available on the school building project website."
+  }
+ ],
+ "tags": [
+  "school building project",
+  "construction",
+  "Main GMP",
+  "invoices",
+  "parking lot",
+  "aerial photography",
+  "neighborhood outreach",
+  "work authorization sub-committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

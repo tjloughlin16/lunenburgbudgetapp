@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-01-12",
  "docid": "2193",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 11-28-16",
+   "motion": "Approve the minutes of 11-28-16.",
    "moved_by": "Mark",
    "seconded_by": "John H.",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "mark made a motion to approve the minutes of 11-28-16. john h. seconded. all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mark",
    "seconded_by": "John",
    "outcome": "passed 6-0",
@@ -29,6 +29,231 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0953535
+ "note": "OCR text from a two-page scan; several lines are displaced (committee report text appears after the 'No report' lines, and the attribution of the School Bldg. Comm. and Building Reuse reports is inferred from line order). Pavement management, Parks, and Cemetery entries have no recorded content beyond headings. The minutes approval reads 'All in favor' with no count, recorded as passed. Hannah Anderson's absence and Karen Brochu's guest status are read from the header block, which is scrambled in the OCR.",
+ "cost_usd": 0.005302019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee",
+   "status": "absent",
+   "quote": "hannah anderson karen brochu - town accountant"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "New Finance Committee member",
+   "status": "present",
+   "quote": "new finance committee member cindy testa joined the meeting."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "karen brochu - town accountant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John to present data for debt policy at the next meeting (financial policy for managing debt).",
+   "quote": "financial policy for managing debt policy: john to present data for debt policy at next meeting."
+  },
+  {
+   "decision": "John H. will work with the Police Chief on capital items.",
+   "quote": "john h. will work with the police chief on capital items."
+  },
+  {
+   "decision": "George will work with the Fire Chief on capital items.",
+   "quote": "george will work with the fire chief on capital items."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free cash certification",
+   "what_was_recorded": "Free cash is not yet certified; the estimate given is $912K.",
+   "figures_as_printed": [
+    "$912K"
+   ],
+   "quote": "still waiting for free cash to be certified. estimated at $912k"
+  },
+  {
+   "topic": "Animal Control invoice for care of a pit bull",
+   "what_was_recorded": "The Chairman reported receiving an invoice from the Animal Control officer for the care and custody of a dog.",
+   "figures_as_printed": [
+    "$4525"
+   ],
+   "quote": "received an invoice for care of pit bull from animal control officer in the amount of $4525 to pay for the care and custody of the dog."
+  },
+  {
+   "topic": "School building project credits and spending (reported under School Bldg. Comm. by layout order)",
+   "what_was_recorded": "About $790K in credits expected against a guarantee maximum price of $58M, excluding a $4M owners contingency; $1.2M has been spent and the project is nearing completion.",
+   "figures_as_printed": [
+    "$790K",
+    "$58M",
+    "$4M",
+    "$1.2M"
+   ],
+   "quote": "expecting to receive about $790k in credits against the guarantee maximum price of $58m. does not include owners contingency of $4m."
+  },
+  {
+   "topic": "Capital budget versus capital requests",
+   "what_was_recorded": "Capital requests exceed the capital budget; the committee is spreading out high-cost items and setting aside some capital funding into a stabilization fund for large capital items. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "more capital request than there is capital budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "called to order at 7:00 pm; no board or public comment",
+   "quote": "chairman called the meeting to order at 7:00 pm. non televised.",
+   "tags": [
+    "call to order",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "New communications",
+   "resolution": "reported; no action recorded",
+   "quote": "annual fiscal year report due february 16th, 2017",
+   "tags": [
+    "communications",
+    "animal control",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Town Accountant report",
+   "resolution": "reported; S&P rating affirmed; five year forecast reviewed; ATM meeting schedule adjusted",
+   "quote": "presented a report from s&p global rating. affirmed the town's rating of aa+.",
+   "tags": [
+    "free cash",
+    "credit rating",
+    "five year forecast"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "none",
+   "quote": "4. town manager report: none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved minutes of 11-28-16",
+   "quote": "mark made a motion to approve the minutes of 11-28-16. john h. seconded. all in favor",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "heading only; no content recorded",
+   "quote": "budget goals and opportunities:",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received; capital and debt policy follow-ups assigned",
+   "quote": "7. committee and department updates:",
+   "tags": [
+    "capital planning",
+    "debt policy",
+    "public works",
+    "school building project",
+    "police",
+    "fire"
+   ]
+  },
+  {
+   "topic": "Ongoing business: surplus property sales",
+   "resolution": "discussed; Tax Collector interested in pursuing; no vote recorded",
+   "quote": "sale of surplus properties: tax lien properties. received a letter from a company that buys tax title",
+   "tags": [
+    "tax title properties",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Ongoing business: pavement management, parks, cemetery",
+   "resolution": "listed; no discussion recorded",
+   "quote": "pavement management:",
+   "tags": [
+    "pavement",
+    "parks",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "dates set for February 2 and February 9, 2017",
+   "quote": "9. next meeting: february 2, 2017 february 9, 2017",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 8:50 pm",
+   "quote": "10. adjournment: mark made a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "town budget",
+  "free cash",
+  "capital planning",
+  "school building project",
+  "debt policy",
+  "tax title properties",
+  "meeting schedule",
+  "minutes approval",
+  "animal control",
+  "credit rating"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

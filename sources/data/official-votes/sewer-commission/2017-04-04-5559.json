@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-04-04",
  "docid": "5559",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the General Budget Article as written",
+   "motion": "Accept the General Budget Article as written.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe Anderson",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "john reynolds made a motion to accept the general budget article as written; joe anderson seconded; all voted in favor; motion approved."
   },
   {
-   "motion": "Accept the Reserve Capacity Article as written",
+   "motion": "Accept the Reserve Capacity Article as written.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe Anderson",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "john reynolds made a motion to accept the reserve capacity article as written; joe anderson seconded; all voted in favor; motion approved."
   },
   {
-   "motion": "Approve the Capital Reserve Stabilization Fund Article as written",
+   "motion": "Approve the Capital Reserve Stabilization Fund Article as written.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe Anderson",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "john reynolds made a motion to approve the capital reserve stabilization fund article as written; joe anderson seconded; all voted in favor; motion approved."
   },
   {
-   "motion": "Accept the Municipal Charges Lien Article as written",
+   "motion": "Accept the Municipal Charges Lien Article as written.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe Anderson",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "john reynolds made a motion to accept the municipal charges lien article as written; joe anderson seconded; all voted in favor; motion approved."
   },
   {
-   "motion": "Extend the deadline for Ugly Omelet until 4/17 from 4/5",
+   "motion": "Extend the deadline for Ugly Omelet to 4/17 from 4/5 for the grease trap submittal.",
    "moved_by": "Joan",
    "seconded_by": "John",
    "outcome": "passed",
@@ -53,6 +53,494 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Five votes recorded, all passed. No votes failed or were recorded as \"not stated\".",
- "cost_usd": 0.0875345
+ "note": "OCR text (macOS Vision) with visible errors (e.g., 'tund' for 'fund', 'I/l' for 'I/I', '2\"°'), and the text begins and ends mid-sentence (page 1 starts at 'indirect costs.' and page 2 ends at 'they will be'), so the start and end of the meeting are not in the extract. No roll call or attendance list appears; attendance is inferred only from named motions and remarks. Vote counts are printed only as 'all voted in favor'. No public comment section appears. Page 3 is the clerk's signature only.",
+ "cost_usd": 0.012559320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl noted that if, before town meeting, we learn that payment to fitchburg is imminent, we would not make this transfer."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb provided a 5 page handout for the ytd budget discussion."
+  },
+  {
+   "name": "John Reynolds",
+   "status": "present",
+   "quote": "john reynolds made a motion to accept the general budget article as written; joe anderson seconded; all voted in favor; motion approved."
+  },
+  {
+   "name": "Joe Anderson",
+   "status": "present",
+   "quote": "joe anderson seconded; all voted in favor; motion approved."
+  },
+  {
+   "name": "Joan",
+   "status": "present",
+   "quote": "joan motioned to extend the deadline for ugly omelet until 4/17 from 4/5; john 2nd, all in favor."
+  },
+  {
+   "name": "Melanie Rich",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "melanie rich was welcomed as the new minutes clerk."
+  },
+  {
+   "name": "Heather",
+   "status": "not stated",
+   "quote": "at this meeting, heather recommended that we include our stabilization account"
+  },
+  {
+   "name": "Karen",
+   "status": "not stated",
+   "quote": "also, carl and barb attended a meeting with karen and heather to discuss our proposed articles,"
+  },
+  {
+   "name": "Jack",
+   "status": "not stated",
+   "quote": "jack's proposal for an additional amount of $36,000, leaving balance of $1700 in project funds."
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Chairman of the Lunenburg Water District",
+   "status": "not stated",
+   "quote": "john spoke with mark bursch, chairman of the lunenburg water district."
+  },
+  {
+   "name": "Scott Fitzgerald",
+   "role": "Stiles Company, Inc.",
+   "status": "not stated",
+   "quote": "john will ask scott fitzgerald (stiles company, inc.) to attend a future meeting to discuss the new technology"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will prepare a list of the billing steps that are done and not done, with the reasoning, for the billing outsourcing review.",
+   "quote": "barb will prepare a list of the steps."
+  },
+  {
+   "decision": "John will ask Scott Fitzgerald (Stiles Company, Inc.) to attend a future meeting on the irrigation meter technology; the Water Dept. will be invited.",
+   "quote": "the water dept. will also be invited."
+  },
+  {
+   "decision": "Barb will check with the TM on whether the Commission could keep its own counsel.",
+   "quote": "barb will check with the tm."
+  },
+  {
+   "decision": "No action taken on the FY17 year-end deficit; the Commission will watch closely while closing out the year.",
+   "quote": "no action at this point but time to be watchful in closing"
+  },
+  {
+   "decision": "Carl requested an update on Jack's FOG related visits of restaurant establishments.",
+   "quote": "carl would like an update on jack's fog related visits of restaurant establishments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "General Budget warrant article",
+   "what_was_recorded": "The general budget article total of $745,251 includes stabilization transfers of $14,520 for I/l and $10,285 for Reserve Capacity stabilization.",
+   "figures_as_printed": [
+    "$745,251",
+    "$14,520",
+    "$10,285"
+   ],
+   "quote": "as the $745,251 includes $14,520 for i/l stabilization and $10,285 for reserve capacity stabilization."
+  },
+  {
+   "topic": "Reserve Capacity transfer",
+   "what_was_recorded": "The Reserve Capacity transfer will be at a minimum of $2,879.80, depending on connection requests before Town Meeting.",
+   "figures_as_printed": [
+    "$2,879.80"
+   ],
+   "quote": "meeting. at a minimum it will be $2,879.80."
+  },
+  {
+   "topic": "Capital Reserve Stabilization Fund",
+   "what_was_recorded": "The $15,000 capital line item in the current year budget may be added to the current $26,500 amount if it is not needed for other expense.",
+   "figures_as_printed": [
+    "$15,000",
+    "$26,500"
+   ],
+   "quote": "the $15,000 capital line item of the current year budget that is not expected to be used for capital expense"
+  },
+  {
+   "topic": "I/l project fund balance",
+   "what_was_recorded": "Project fund balance is $44,805, with $7100 already committed and Jack's proposal for an additional $36,000, leaving $1700 in project funds.",
+   "figures_as_printed": [
+    "$44,805",
+    "$7100",
+    "$36,000",
+    "$1700"
+   ],
+   "quote": "the project tund balance is currently at $44,805, with proposed usage of $7100 already committed"
+  },
+  {
+   "topic": "I/l project funds available",
+   "what_was_recorded": "The Commission was told $44,805.35 is in project funds for I/l use, and Carl would prefer all I/l costs come from project funds.",
+   "figures_as_printed": [
+    "$44,805.35"
+   ],
+   "quote": "we have $44,805.35 in project funds for use on c: \\u",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "FY17 year-end deficit (Leominster and Fitchburg)",
+   "what_was_recorded": "Potential year-end deficits in the Sewer Budget reviewed with Leominster and Fitchburg usage and connection fees.",
+   "figures_as_printed": [
+    "$34,396",
+    "$9250"
+   ],
+   "quote": "barb reviewed potential year-end deficits in the sewer budget with leominster and fitchburg usage of $34,396 and connection fees of $9250."
+  },
+  {
+   "topic": "Purchase of Service balance",
+   "what_was_recorded": "Remaining Purchase of Service balance after contract commitments is $35,542.",
+   "figures_as_printed": [
+    "$35,542"
+   ],
+   "quote": "discussion followed on remaining purchase of service balance of $35,542, which is the balance"
+  },
+  {
+   "topic": "Capital line item monies",
+   "what_was_recorded": "Capital line item monies of $63k are available if needed, though the $57k from Highfield is not being anticipated.",
+   "figures_as_printed": [
+    "$63k",
+    "$57k"
+   ],
+   "quote": "commission reviewed capital line item monies available and that we have $63k available if need be"
+  },
+  {
+   "topic": "FY17 potential deficit coverage",
+   "what_was_recorded": "A potential FY17 deficit of $49k could be covered by balances in Purchase of Service ($35k) and Capital ($15k).",
+   "figures_as_printed": [
+    "$49k",
+    "$35k",
+    "$15k"
+   ],
+   "quote": "barb summed up that potential deficit of $49k in fy17 can be covered by balances in purchase of service of $35k and capital of $15k."
+  },
+  {
+   "topic": "FY18 Leominster cost",
+   "what_was_recorded": "Projected FY18 Leominster cost could be $270k against $250k budgeted.",
+   "figures_as_printed": [
+    "$270k",
+    "$250k"
+   ],
+   "quote": "the projected cost for leominster could be $270k, and only $250k was budgeted."
+  },
+  {
+   "topic": "FY18 Fitchburg cost",
+   "what_was_recorded": "Fitchburg budget is $127k; based on percentage of increase it could be $156k.",
+   "figures_as_printed": [
+    "$127k",
+    "$156k"
+   ],
+   "quote": "we have budgeted $127k, and based on percentage of increase could be $156k."
+  },
+  {
+   "topic": "Flow to Bill rolling averages",
+   "what_was_recorded": "Cost if the Town had to pay for water going out would have been $173K.",
+   "figures_as_printed": [
+    "$173K"
+   ],
+   "quote": "$173k is what it would have cost if we had to pay for the water going out;"
+  },
+  {
+   "topic": "Grease trap non-compliance fees (Kabobelicious)",
+   "what_was_recorded": "Kabobelicious still owes a $50 initial non-compliance fee, $525 for non-compliance, and March and April payments of $550.",
+   "figures_as_printed": [
+    "$50",
+    "$525",
+    "$550"
+   ],
+   "quote": "compliance and the march & april payments of $550."
+  },
+  {
+   "topic": "Invoices approved (Kopelman & Paige and City of Fitchburg)",
+   "what_was_recorded": "Invoices for Kopelman & Paige and City of Fitchburg were approved; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "invoices for kopelman & paige and city of fitchburg were approved."
+  },
+  {
+   "topic": "Billing outsourcing cost",
+   "what_was_recorded": "John noted outsourcing billing may cost more than the time it saves; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "john noted that the cost of outsourcing may be more than the time saved."
+  },
+  {
+   "topic": "Irrigation meter software cost",
+   "what_was_recorded": "Possible sharing of the cost of the meter-reading software was discussed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "possibly sharing the cost of the software or some aspect can be discussed"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from available funds into the Reserve Capacity Stabilization Fund (Reserve Capacity Article).",
+   "amount_as_printed": "a sum of money; at a minimum $2,879.80",
+   "outcome": "Article accepted as written; amount left open until Town Meeting.",
+   "quote": "at a minimum it will be $2,879.80."
+  },
+  {
+   "description": "Transfer from Sewer Enterprise retained earnings into a new Capital Reserve Stabilization Fund (Capital Reserve Stabilization Fund Article).",
+   "amount_as_printed": "a sum of money; for now 3% of revenue",
+   "outcome": "Article approved as written.",
+   "quote": "but for now it is for 3% of revenue."
+  },
+  {
+   "description": "I/l Stabilization transfer request.",
+   "amount_as_printed": "not stated",
+   "outcome": "Removed from the articles, as the funds are hoped to be used before year-end.",
+   "quote": "we have removed the i/l stabilization transfer request as we hope to have used these funds before year-end."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "General Budget warrant article",
+   "resolution": "approved as written",
+   "quote": "john reynolds made a motion to accept the general budget article as written; joe anderson seconded; all voted in favor; motion approved.",
+   "tags": [
+    "warrant article",
+    "budget",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Reserve Capacity warrant article",
+   "resolution": "approved as written",
+   "quote": "john reynolds made a motion to accept the reserve capacity article as written; joe anderson seconded; all voted in favor; motion approved.",
+   "tags": [
+    "warrant article",
+    "reserve capacity"
+   ]
+  },
+  {
+   "topic": "Capital Reserve Stabilization Fund warrant article",
+   "resolution": "approved as written",
+   "quote": "john reynolds made a motion to approve the capital reserve stabilization fund article as written; joe anderson seconded; all voted in favor; motion approved.",
+   "tags": [
+    "warrant article",
+    "stabilization",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Municipal Charges Lien warrant article",
+   "resolution": "approved as written",
+   "quote": "john reynolds made a motion to accept the municipal charges lien article as written; joe anderson seconded; all voted in favor; motion approved.",
+   "tags": [
+    "warrant article",
+    "lien",
+    "MGL c.40 s.58"
+   ]
+  },
+  {
+   "topic": "FY17 budget discussion (YTD)",
+   "resolution": "discussed; no action",
+   "quote": "barb provided a 5 page handout for the ytd budget discussion.",
+   "tags": [
+    "FY17 budget",
+    "year-end",
+    "deficit"
+   ]
+  },
+  {
+   "topic": "FY18 budget discussion",
+   "resolution": "discussed; no budget change",
+   "quote": "the projected cost for leominster could be $270k, and only $250k was budgeted.",
+   "tags": [
+    "FY18 budget",
+    "Leominster",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "I/l costs and generator funding",
+   "resolution": "discussed; no decision recorded",
+   "quote": "carl would prefer all i/l come out of project funds.",
+   "tags": [
+    "I/l",
+    "project fund",
+    "generator"
+   ]
+  },
+  {
+   "topic": "Issues update (FOG visits)",
+   "resolution": "update requested",
+   "quote": "carl would like an update on jack's fog related visits of restaurant establishments.",
+   "tags": [
+    "FOG",
+    "restaurants"
+   ]
+  },
+  {
+   "topic": "System maintenance planning (manholes)",
+   "resolution": "discussed; no action recorded",
+   "quote": "the manholes are not the problem.",
+   "tags": [
+    "manholes",
+    "infiltration",
+    "inspection report"
+   ]
+  },
+  {
+   "topic": "Irrigation meter policy and upgrade",
+   "resolution": "John to invite vendor to future meeting",
+   "quote": "john will ask scott fitzgerald (stiles company, inc.) to attend a future meeting to discuss the new technology",
+   "tags": [
+    "irrigation meters",
+    "water district"
+   ]
+  },
+  {
+   "topic": "Flow to Bill usage comparisons",
+   "resolution": "report presented",
+   "quote": "carl provided the rolling averages on the flow to bill usage comparisons report",
+   "tags": [
+    "flow",
+    "manhole contribution"
+   ]
+  },
+  {
+   "topic": "Billing outsource investigation",
+   "resolution": "Barb to prepare list of billing steps",
+   "quote": "barb will prepare a list of the steps.",
+   "tags": [
+    "billing",
+    "staff time",
+    "outsourcing"
+   ]
+  },
+  {
+   "topic": "Town Caucus",
+   "resolution": "write-in campaign planned",
+   "quote": "at caucus, joan was nominated. we will have a write-in campaign for joe.",
+   "tags": [
+    "town caucus",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Minutes help",
+   "resolution": "new Minutes Clerk welcomed",
+   "quote": "melanie rich was welcomed as the new minutes clerk.",
+   "tags": [
+    "staffing",
+    "minutes clerk"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "invoices approved; Ugly Omelet deadline extended; other items discussed",
+   "quote": "invoices for kopelman & paige and city of fitchburg were approved.",
+   "tags": [
+    "permits",
+    "grease trap",
+    "Conrad's waiver",
+    "Kabobelicious",
+    "Ugly Omelet"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "5 page handout for the YTD Budget discussion",
+   "where": "text",
+   "quote": "barb provided a 5 page handout for the ytd budget discussion."
+  },
+  {
+   "name": "YTD budget",
+   "where": "text",
+   "quote": "barb provided the ytd budget for commission review."
+  },
+  {
+   "name": "Flow to Bill Usage Comparisons Report",
+   "where": "text",
+   "quote": "carl provided the rolling averages on the flow to bill usage comparisons report"
+  },
+  {
+   "name": "Manhole inspection report",
+   "where": "text",
+   "quote": "john asked if manhole inspection report is saying that through their new"
+  },
+  {
+   "name": "3/6/17 Interceptor Service Report for Asian Imperial",
+   "where": "text",
+   "quote": "john questioned the 3/6/17 interceptor service report for asian imperial"
+  },
+  {
+   "name": "Ugly Omelet email",
+   "where": "text",
+   "quote": "ugly omelet emailed and said he is working with wind river environmental and needs more time:"
+  },
+  {
+   "name": "Reserve Capacity Article (warrant article)",
+   "where": "text",
+   "quote": "barb read the reserve capacity article: to see if the town will vote to transfer from available funds"
+  },
+  {
+   "name": "Capital Reserve Stabilization Fund Article (warrant article)",
+   "where": "text",
+   "quote": "barb read the capital reserve stabilization fund article: to see if the town will vote, pursuant to general"
+  },
+  {
+   "name": "Municipal Charges Lien Article (warrant article)",
+   "where": "text",
+   "quote": "barb read the municipal charges lien article: to see if the town will vote, pursuant to mgl c."
+  },
+  {
+   "name": "Section of MGL Chapter 40 (copy proposed as Town Meeting handout)",
+   "where": "text",
+   "quote": "john suggested that we have a copy of this section of chapter 40 as a handout at town meeting."
+  },
+  {
+   "name": "Site Plan Approval application, new office at 496 Mass Avenue",
+   "where": "text",
+   "quote": "has proposed a site plan approval before the planning board for a new office at 496 mass avenue"
+  },
+  {
+   "name": "Kabobelicious March grease trap logs",
+   "where": "text",
+   "quote": "march logs were received from kabobelicious, but they still owe the $50 initial non-compliance fee"
+  },
+  {
+   "name": "Lunenburg grease trap regulations",
+   "where": "text",
+   "quote": "john said lunenburg's regulations require monthly reporting on grease traps"
+  },
+  {
+   "name": "Conrad's request for waiver",
+   "where": "text",
+   "quote": "barb received a request for waiver from conrad's today."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY17 budget",
+  "FY18 budget",
+  "infiltration and inflow",
+  "I/l",
+  "Town Meeting articles",
+  "stabilization funds",
+  "reserve capacity",
+  "grease trap",
+  "FOG",
+  "billing",
+  "irrigation meters",
+  "Town Caucus",
+  "minutes clerk",
+  "Leominster",
+  "Fitchburg",
+  "manholes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

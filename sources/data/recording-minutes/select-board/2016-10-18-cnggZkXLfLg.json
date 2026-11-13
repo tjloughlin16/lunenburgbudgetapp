@@ -1,0 +1,640 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2016-10-18",
+ "video_id": "cnggZkXLfLg",
+ "video_url": "https://www.youtube.com/watch?v=cnggZkXLfLg",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2016-10-18-cnggZkXLfLg.json",
+  "sha256": "65d773b4622b9be1aff886267b52a722e66385ef9e3d33da6d87ba2d18741281",
+  "caption_lines": 612,
+  "segments": 4941
+ },
+ "recording": {
+  "duration_s": 12801,
+  "duration": "3:33",
+  "spoken_chars": 172416,
+  "words_approx": 28736
+ },
+ "town_published": [
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10182016-4991",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-10-18-minutes-4991.txt",
+   "path": "sources/meetings/select-board/2016-10-18-minutes-4991.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T16:32:06Z",
+  "cost_usd": 0.4357222
+ },
+ "minutes": {
+  "headline": "Board deferred two solar contracts and opened the Special Town Meeting warrant for November 28.",
+  "summary": "The board heard a facilities director's briefing on risks in two solar contracts and agreed to take no action, leaving a possible special meeting. It heard a Summer Street project update and public comment on ballot Question 2. It deferred the Mart van agreement for more information, opened the special town meeting warrant, and planned town manager finalist interviews.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Landa",
+    "role": "facilities director, presenter"
+   },
+   {
+    "name_as_heard": "Trish domigan",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "interim Town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "selectwoman luck",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 106,
+    "topic": "Lunenburg Family Giftmart asked to use the TCP building December 7 to 10.",
+    "speaker_as_heard": "Kathy Murray"
+   },
+   {
+    "t": 2794,
+    "topic": "Opposition to ballot Question 2 on charter schools, speaking for himself.",
+    "speaker_as_heard": "Mike Mackin",
+    "stated_role": "school committee chairman"
+   },
+   {
+    "t": 3632,
+    "topic": "Support for charter schools and Question 2.",
+    "speaker_as_heard": "Dave Rogers"
+   },
+   {
+    "t": 12615,
+    "topic": "Doubt the solar project can finish by January 8, and Summer Street easement authority."
+   }
+  ],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "facilities",
+   "hiring",
+   "legal",
+   "personnel",
+   "public-comment",
+   "seniors",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 250,
+    "motion": "Approve use of the TCP for the Lunenburg Giftmart as outlined",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 6175,
+    "motion": "Approve the Mart memorandum of understanding as presented (later withdrawn)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8443,
+    "motion": "Open the warrant for the November 28 special town meeting, closing October 25",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8570,
+    "motion": "Declare high school rooftop space surplus and send letter to the commissioner",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 9881,
+    "motion": "Ratify temporary accounting clerk appointment",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 12760,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 608,
+    "topic": "Solar default damages",
+    "what_was_said": "Default damages on the 20-year rooftop solar contract decline over the term.",
+    "figures_as_heard": [
+     "1.2 million",
+     "$129,000"
+    ]
+   },
+   {
+    "t": 1603,
+    "topic": "Net metering credit price",
+    "what_was_said": "Proposed net metering price compared with existing agreements.",
+    "figures_as_heard": [
+     "13.75 cents",
+     "17 cents",
+     "15"
+    ]
+   },
+   {
+    "t": 1931,
+    "topic": "Summer Street construction cost",
+    "what_was_said": "Project cost estimate is updated monthly; design change order assessed to three communities.",
+    "figures_as_heard": [
+     "$9.9 million",
+     "102"
+    ]
+   },
+   {
+    "t": 4554,
+    "topic": "Mart van service assessment",
+    "what_was_said": "Town currently pays an assessment to Mart for the COA van service; insurance costs still being determined.",
+    "figures_as_heard": [
+     "$79,000",
+     "$79,700",
+     "$122,000"
+    ]
+   },
+   {
+    "t": 7291,
+    "topic": "61B Lin property removal",
+    "what_was_said": "Back taxes owed if the town does not exercise first refusal.",
+    "figures_as_heard": [
+     "$12,000"
+    ]
+   },
+   {
+    "t": 8958,
+    "topic": "School building project",
+    "what_was_said": "Project reported under budget.",
+    "figures_as_heard": [
+     "$4.3 million"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1520,
+    "decision": "No action on solar contracts tonight; special meeting likely if materials are ready."
+   },
+   {
+    "t": 6630,
+    "decision": "Mart agreement deferred pending refused-call and workers comp information and finance committee input."
+   },
+   {
+    "t": 6978,
+    "decision": "Legal counsel RFP direction: issue soon with about 45 days to respond."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 106,
+    "topic": "Announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 106,
+    "t_end": 417,
+    "topic": "Giftmart use of TCP",
+    "resolution": "voted",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 417,
+    "t_end": 1860,
+    "topic": "Solar contract risks",
+    "resolution": "referred",
+    "tags": [
+     "contracts-and-unions",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1870,
+    "t_end": 2732,
+    "topic": "Summer Street project update",
+    "resolution": "informational",
+    "tags": [
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2754,
+    "t_end": 4408,
+    "topic": "Ballot Question 2 forum",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 4408,
+    "t_end": 6694,
+    "topic": "Mart van agreement",
+    "resolution": "tabled",
+    "tags": [
+     "seniors",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 6694,
+    "t_end": 7000,
+    "topic": "Legal counsel RFP",
+    "resolution": "no resolution",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 7000,
+    "t_end": 7270,
+    "topic": "Building permit fee waiver",
+    "resolution": "tabled",
+    "tags": [
+     "fees"
+    ]
+   },
+   {
+    "t_start": 7270,
+    "t_end": 7771,
+    "topic": "61B removal",
+    "resolution": "referred",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 8151,
+    "t_end": 8527,
+    "topic": "Special town meeting warrant",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 8527,
+    "t_end": 8798,
+    "topic": "Rooftop surplus letter",
+    "resolution": "voted",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 9300,
+    "t_end": 10240,
+    "topic": "Interim town manager report",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 10240,
+    "t_end": 12615,
+    "topic": "Town manager search",
+    "resolution": "informational",
+    "tags": [
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 12615,
+    "t_end": 12790,
+    "topic": "Public comment and adjournment",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts and outcomes are not in the captions",
+   "Payroll and warrant figures were garbled"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1273,
+    "about": "Point of order that solar risks were not an agenda item",
+    "sides": "a member against the facilities director presenting during public comment",
+    "words_as_heard": "I have a point of order um this is public comment and this is not on the agenda",
+    "kind": "procedural fight"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 608,
+    "kind": "liability or legal",
+    "about": "Default damages on the rooftop solar contract",
+    "who": "the facilities director",
+    "words_as_heard": "the default damages however are substantial"
+   },
+   {
+    "t": 941,
+    "kind": "liability or legal",
+    "about": "No decommissioning bond",
+    "who": "the facilities director",
+    "words_as_heard": "we did not require a decommissioning bond"
+   },
+   {
+    "t": 5083,
+    "kind": "safety",
+    "about": "Unsecured wheelchair incident on the COA van",
+    "who": "a member",
+    "words_as_heard": "somebody didn't secure a wheelchair if that person had got injured"
+   },
+   {
+    "t": 6630,
+    "kind": "condition",
+    "about": "Information wanted before voting on Mart agreement",
+    "who": "a member",
+    "words_as_heard": "we get the information on the number of refused calls we get the workers compensation costs before we vote"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1541,
+    "name_as_heard": "the contract",
+    "kind": "contract or agreement",
+    "words_as_heard": "I got the contract this afternoon"
+   },
+   {
+    "t": 4429,
+    "name_as_heard": "memorandum of understanding",
+    "kind": "contract or agreement",
+    "words_as_heard": "we do have a memorandum of understanding"
+   },
+   {
+    "t": 6694,
+    "name_as_heard": "the proposed RFP",
+    "kind": "other",
+    "words_as_heard": "you have the proposed RFP with the changes"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board opened the warrant for a Special Town Meeting on November 28, with the warrant closing October 25.",
+    "t": 8443
+   },
+   {
+    "line": "The board deferred the Mart van agreement until it has information on refused calls and workers comp and input from the finance committee; the motion was withdrawn.",
+    "t": 6630
+   },
+   {
+    "line": "After a briefing on risks in two solar contracts, the board took no action, with a special meeting likely if materials are ready.",
+    "t": 1520
+   },
+   {
+    "line": "The board voted to declare high school rooftop space surplus and send a letter to the commissioner.",
+    "t": 8570
+   },
+   {
+    "line": "The board directed that a legal counsel RFP be issued soon, with about 45 days to respond.",
+    "t": 6978
+   }
+  ],
+  "why_it_matters": [
+   "The solar contracts and the Mart van agreement both carry long-term costs the town budget, mostly taxes, would pick up, and the Special Town Meeting is where residents may be asked to vote on related spending.",
+   "Rooftop space, the Summer Street project cost and a possible back-tax bill on the 61B property all bear on what the town pays or earns in future years."
+  ],
+  "watch_next": [
+   "The Special Town Meeting on November 28, with the warrant closing October 25.",
+   "The legal counsel RFP, due to be issued soon with about 45 days to respond, and a possible special board meeting on the solar contracts."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T16:32:15Z",
+   "cost_usd": 0.0238811
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10182016-4991",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2016-10-18-minutes-4991.txt",
+   "path": "sources/meetings/select-board/2016-10-18-minutes-4991.pdf"
+  },
+  "official_sha256": "27cb2c79f1dbe3b456d64d077b4b45af46682025ea00b30109b7cd2582627943",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the four voted items: the Giftmart use, the Special Town Meeting warrant, the rooftop surplus and the accounting clerk ratification. They differ on the MART items and on several figures. Ours records an MOU motion (later withdrawn) that the official minutes do not, and the MART cost figures do not match.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 7,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Lunenburg Giftmart use of T.C. Passios building",
+    "ours": "Approve use of the TCP for the Lunenburg Giftmart as outlined — not audible",
+    "official": "to approve use of the t.c. passion building for the lunenburg family giftmart as outlined vote: all in favor",
+    "note": "Same vote in both; ours has TCP for the building and does not give the tally.",
+    "t": 250
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: open Special Town Meeting warrant",
+    "ours": "Open the warrant for the November 28 special town meeting, closing October 25 — not audible",
+    "official": "to open the warrant for a special town meeting on november 28'2016 and close it on tuesday, october 25 at 6:00 p.m.",
+    "note": "Same vote and dates.",
+    "t": 8443
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: declare rooftop space surplus",
+    "ours": "Declare high school rooftop space surplus and send letter to the commissioner — not audible",
+    "official": "that the middle/high school rooftop space be declared surplus and the leasing of that space for the",
+    "note": "Same vote in both.",
+    "t": 8570
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: ratify temporary accounting clerk",
+    "ours": "Ratify temporary accounting clerk appointment — not audible",
+    "official": "to ratify the appointment of shelia craigen as temporary accounting clerk vote: all in favor",
+    "note": "Same vote; official names the appointee.",
+    "t": 9881
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on MART memorandum of understanding",
+    "ours": "Approve the Mart memorandum of understanding as presented (later withdrawn) — not audible",
+    "official": "it was requested to continue this discussion on a future agenda.",
+    "note": "Ours records a motion that was later withdrawn, while the official minutes record no motion and only continued discussion. Check the recording around t=6175 to see if a motion was made.",
+    "t": 6175
+   },
+   {
+    "kind": "agree",
+    "about": "Summer Street construction cost",
+    "ours": "Summer Street construction cost: $9.9 million, 102",
+    "official": "the entire project construction cost is $9.9 million right now.",
+    "note": "Same $9.9 million figure. The stray 102 in ours is probably a caption artifact.",
+    "t": 1931
+   },
+   {
+    "kind": "discrepancy",
+    "about": "$4.3 million school building project figure",
+    "ours": "School building project: $4.3 million",
+    "official": "the funding is coming in $4.3 million under budget.",
+    "note": "Same amount, but the official minutes file it under 'Solar'. Check what the $4.3 million refers to in the recording.",
+    "t": 8958
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MART van service cost figures",
+    "ours": "Mart van service assessment: $79,000, $79,700, $122,000",
+    "official": "mart's costs would be around $89,000. lunenburg's costs would be around $80,000 to $90,000.",
+    "note": "The figures do not match. $79,000 versus $89,000 might be misheard, but $79,700 and $122,000 have no official counterpart. Check the recording.",
+    "t": 4554
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Solar default damages and net metering figures",
+    "ours": "Solar default damages: 1.2 million, $129,000; Net metering credit price: 13.75 cents, 17 cents, 15",
+    "official": "",
+    "note": "The official minutes have no solar default damages or net metering credit prices. Check whether these were discussed and left out.",
+    "t": 608
+   },
+   {
+    "kind": "discrepancy",
+    "about": "61B property figure",
+    "ours": "61B Lin property removal: $12,000",
+    "official": "the town would have to pay for an impartial appraisal of the property",
+    "note": "Ours gives $12,000 for removing the property. The official minutes give no dollar figure and describe an appraisal and the Larkin property. Check the amount and the name.",
+    "t": 7291
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Summer Street change order",
+    "ours": "",
+    "official": "discussion turned to the additional cost of $120,000 due to a change order.",
+    "note": "Our minutes have no $120,000 change order.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "MART lease and reimbursement terms",
+    "ours": "",
+    "official": "the town will lease the vans from mart for $1.00 per year.",
+    "note": "Ours omits the $1 lease, the 20% reimbursement and the $3,500/$2000 claim.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Payroll and accounts payable warrants signed",
+    "ours": "",
+    "official": "a payroll warrant in the amount of $720,200.91; a payroll deductions warrant in the amount of $163,155.11;",
+    "note": "Our minutes have none of the warrant amounts.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Solar contracts decision",
+    "ours": "No action on solar contracts tonight; special meeting likely if materials are ready.",
+    "official": "the board will discuss these further at their next meeting.",
+    "note": "The two are close, but the official minutes say discussion at the next meeting. Ours says a special meeting is likely. The official minutes also say a meeting on October 25 would be cancelled if information is not ready. Check the wording.",
+    "t": 1520
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MART agreement decision",
+    "ours": "Mart agreement deferred pending refused-call and workers comp information and finance committee input.",
+    "official": "it was requested to continue this discussion on a future agenda.",
+    "note": "The substance is consistent: deferral pending information and Finance Committee input. The difference is whether a motion was made, which is flagged above.",
+    "t": 6630
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Legal counsel RFP direction",
+    "ours": "Legal counsel RFP direction: issue soon with about 45 days to respond.",
+    "official": "",
+    "note": "The official minutes have no legal counsel RFP direction.",
+    "t": 6978
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other decisions: easements, 61B feedback, JTC/MRPC volunteers, finalist interviews",
+    "ours": "",
+    "official": "the board requested wording for the easements by the end of march in time for annual town meeting approval.",
+    "note": "Ours has none of these, including the easement wording, 61B feedback, advertising for volunteers and the interview notices.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: facilities director",
+    "ours": "Mr Landa (facilities director, presenter)",
+    "official": "john londa presented an update on contract negotiations for two solar projects",
+    "note": "Misheard surname.",
+    "official_reading": "John Londa",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Trish Domigan",
+    "ours": "Trish domigan (presenter)",
+    "official": "ms. domigan reported the 75% plan, which means it is 90% completed",
+    "note": "Same person; only capitalization differs.",
+    "official_reading": "Trish Domigan",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: interim town manager",
+    "ours": "interim Town manager (town manager)",
+    "official": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello",
+    "note": "Same role. Ours does not give the name, David Marciello.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Selectwoman Luck",
+    "ours": "selectwoman luck (member)",
+    "official": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello",
+    "note": "The same person as Phyllis Luck.",
+    "official_reading": "Phyllis Luck",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees and speakers",
+    "ours": "",
+    "official": "mike mackin, 26 cortland circle, school committee and school building committee chairman, presented on question 2.",
+    "note": "Ours omits Toale, Ebersole, Alonzo, Bertram, Kathy Murray, Mike Mackin and Dave Rodgers.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T16:33:56Z",
+   "cost_usd": 0.058879100000000004
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-01-12",
  "docid": "2338",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the November 10, 2011 minutes",
+   "motion": "Accept the minutes for 11/10/11.",
    "moved_by": "BR",
    "seconded_by": "BL",
    "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to accept; bl seconded; all approved"
+   "quote": "minutes reviewed for 11/10/11; br made motion to accept; bl seconded; all approved"
   },
   {
-   "motion": "approve expenditures in excess of available appropriations for snow and ice",
+   "motion": "Approve expenditures in excess of available appropriations for snow and ice.",
    "moved_by": "JM",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "jm moved we approve expenditures in excess of available appropriations for snow and ice; br seconded, all approved"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 9:51 PM.",
    "moved_by": "JM",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -37,6 +37,287 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes from OCR scan; three votes recorded, all passed unanimously. Initials used as printed (BR=Barbara Reynolds, BL=Brian Laffond, JM=John Male).",
- "cost_usd": 0.1429835
+ "note": "OCR text, 41 pages. Pages 1-2 are the minutes; pages 3-41 are attachments (Selectmen memo on GASB 45, actuarial valuation, override history table, Chapter 44 Sec. 31D form). Some OCR garbling (e.g., '12 2%' likely 12.5%; 'form the' as printed). The Chapter 44 Sec. 31D form's vote block is blank. No public comment is recorded. The Sewer Committee's fee vote is reported by the committee, not a motion of this board, so it is not recorded as a vote. Kerry Speidel's attendance is unclear from the header; status set to not stated. The attachments' many override-history dollar amounts are not transcribed because the table OCR is unreliable.",
+ "cost_usd": 0.01461772,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "John Male",
+   "role": "",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager (per attached memo)",
+   "status": "not stated",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark Erickson will serve as the FinComm representative on the School Building Committee, which MSBA requires to have a FinComm member on its 12-member committee.",
+   "quote": "school building committee - required by msba to have a fincomm representative on 12 member committee; mark erickson will be the fincomm representative"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Solar project revenue (Chase Road)",
+   "what_was_recorded": "Planning Board communication says the Chase Road solar project would yield estimated additional revenue.",
+   "figures_as_printed": [
+    "$42K"
+   ],
+   "quote": "chase road project would yield estimated additional $42k revenues for solar units"
+  },
+  {
+   "topic": "DPW building renovation budget and garage door rebid",
+   "what_was_recorded": "The renovation is expected to come in about $60K under a $1.3M total budget; garage doors were rebid at half the original bid; the $60K must be spent on related project items.",
+   "figures_as_printed": [
+    "$60K",
+    "$1.3M",
+    "$60K"
+   ],
+   "quote": "dpw - building renovation nearly complete; may be moving in next week; project should come in about $60k under"
+  },
+  {
+   "topic": "Schools preliminary budget",
+   "what_was_recorded": "The schools submitted a preliminary budget increased from the prior figure.",
+   "figures_as_printed": [
+    "$16,606K",
+    "$14,908K"
+   ],
+   "quote": "schools - submitted preliminary budget at $16,606k, up from $14,908k"
+  },
+  {
+   "topic": "Sewer fee increase",
+   "what_was_recorded": "Sewer Committee raised fees 20% effective 1/1/12 so it stops using Retained Earnings to cover operating costs; the minimum rate is excluded.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "sewer - committee voted to raise fees as of 1/1/12 by 20% given they do not want to continue to use funds from"
+  },
+  {
+   "topic": "Service Level Team / possible override",
+   "what_was_recorded": "FinComm members on the Service Level Team said the committee supports an override but has not set the amount; a $1.9M override is 10%.",
+   "figures_as_printed": [
+    "$1.9M",
+    "10%"
+   ],
+   "quote": "there is concern for our ability to sell an override; a $1.9m override is 10%"
+  },
+  {
+   "topic": "Snow and ice deficit from October storm clean-up",
+   "what_was_recorded": "The town is overspending the snow and ice account; FEMA disaster assistance reimburses 75%, and a state reimbursement request covers a share of the remaining 25%.",
+   "figures_as_printed": [
+    "75%",
+    "12 2%",
+    "25%"
+   ],
+   "quote": "we are overspending budget due to tree and branch clean-up form the october storm; we will be reimbursed for much of the expenses from federal disaster assistance at rate of 75%"
+  },
+  {
+   "topic": "GASB 45 retiree health insurance cost share",
+   "what_was_recorded": "Town pays 75% of retiree health insurance cost and 75% of the Medicare Plan B cost; the state does not require full funding of the OPEB liability.",
+   "figures_as_printed": [
+    "75%"
+   ],
+   "quote": "for retirees eligible for health insurance, the town pays 75% of cost and 75% of the cost of medicare plan b;"
+  },
+  {
+   "topic": "GASB 45 actuarial liability (attached valuation)",
+   "what_was_recorded": "The attached valuation reports the actuarial liability for benefits as of July 1, 2010.",
+   "figures_as_printed": [
+    "$42,455,413"
+   ],
+   "quote": "the actuarial liability for benefits was $42,455,413, and the actuarial value of assets was"
+  },
+  {
+   "topic": "GASB 45 normal cost (attached valuation)",
+   "what_was_recorded": "The attached valuation gives the normal cost for fiscal year 2011.",
+   "figures_as_printed": [
+    "$1,710,399"
+   ],
+   "quote": "the normal cost for the 2011 fiscal year is $1,710,399."
+  },
+  {
+   "topic": "GASB 45 incremental cost (attached valuation)",
+   "what_was_recorded": "The valuation gives the incremental cost of GASB 45 for fiscal 2011 beyond pay-as-you-go costs.",
+   "figures_as_printed": [
+    "$2,778,605"
+   ],
+   "quote": "the incremental cost of gasb 45 for the 2011 fiscal year beyond the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "information only; no action",
+   "quote": "planning board will hold an information meeting on 1/23/12 on the solar project proposed for the twin city baptist",
+   "tags": [
+    "solar",
+    "planning board",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Minutes review",
+   "resolution": "approved minutes for 11/10/11",
+   "quote": "minutes reviewed for 11/10/11; br made motion to accept; bl seconded; all approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department reports",
+   "resolution": "information only; no action",
+   "quote": "capital planning committee - met today and committee was noting projects they supported and those they don't",
+   "tags": [
+    "DPW",
+    "sewer",
+    "schools",
+    "monty tech",
+    "public safety",
+    "council on aging",
+    "service level team"
+   ]
+  },
+  {
+   "topic": "Snow and ice deficit spending",
+   "resolution": "approved expenditures in excess of appropriations",
+   "quote": "handout: authorization for deficit spend to snow and ice account - we are overspending budget",
+   "tags": [
+    "snow and ice",
+    "deficit",
+    "FEMA reimbursement"
+   ]
+  },
+  {
+   "topic": "GASB 45 OPEB update",
+   "resolution": "information only; no action",
+   "quote": "handout: gasb #45 update - town required to quantify its",
+   "tags": [
+    "GASB 45",
+    "OPEB",
+    "retiree health insurance"
+   ]
+  },
+  {
+   "topic": "School Building Committee representative",
+   "resolution": "Mark Erickson named FinComm representative (no vote recorded)",
+   "quote": "school building committee - required by msba to have a fincomm representative on 12 member committee; mark erickson will be the fincomm representative",
+   "tags": [
+    "school building committee",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "quote": "next meeting - january 26, 2012",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:51 PM",
+   "quote": "jm made a motion to adjourn at 9:51 pm, br seconded; all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "History of Overrides (handout)",
+   "where": "list",
+   "quote": "service level team - handout: history of overrides; fincomm members on service level team voiced that the"
+  },
+  {
+   "name": "Authorization for Deficit Spend to Snow and Ice Account (handout)",
+   "where": "list",
+   "quote": "handout: authorization for deficit spend to snow and ice account - we are overspending budget"
+  },
+  {
+   "name": "GASB #45 Update (handout)",
+   "where": "list",
+   "quote": "handout: gasb #45 update - town required to quantify its"
+  },
+  {
+   "name": "ATFC newsletters",
+   "where": "list",
+   "quote": "atfc newsletters distributed"
+  },
+  {
+   "name": "The Beacon (three issues)",
+   "where": "list",
+   "quote": "three issues of \"the beacon\" distributed"
+  },
+  {
+   "name": "Memo from Kerry A. Speidel, Town Manager, to Board of Selectmen, GASB #45 Update, dated January 3, 2012",
+   "where": "list",
+   "quote": "effective july 1, 2008, the town of lunenburg was required to comply with gasb #45, which"
+  },
+  {
+   "name": "GASB 45 Actuarial Valuation as of July 1, 2010 (Primoris Benefit Advisors, delivered October 2011)",
+   "where": "list",
+   "quote": "gasb 45 actuarial valuation as of july 1, 2010"
+  },
+  {
+   "name": "Chapter 44 Section 31D authorization form (Board of Selectmen, snow and ice expenditures in excess of appropriations)",
+   "where": "list",
+   "quote": "in accordance with massachusetts general law, chapter 44 section 31d, the finance"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "snow and ice deficit",
+  "GASB 45",
+  "OPEB",
+  "override",
+  "school budget",
+  "DPW renovation",
+  "sewer fees",
+  "solar project",
+  "school building committee",
+  "FEMA reimbursement"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout:"
+ },
+ "dropped_unquoted_by_field": {}
 }

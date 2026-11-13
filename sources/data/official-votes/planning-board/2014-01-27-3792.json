@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-01-27",
  "docid": "3792",
@@ -12,33 +12,404 @@
  },
  "votes": [
   {
-   "motion": "extend the Highfield Village application review deadline to April 30, 2014",
+   "motion": "Extend the Highfield Village Planning Board extension to April 30, 2014.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "roll call vote to approve request for extension - j. bilotta-simeone, aye; d. mcquaid, aye; m. allison, nay; n. lockwood, aye. vote passed 3-1."
+   "quote": "motion, n. lockwood to extend to april 3 0, 2014, second, d. mcquaid, discussion - m. allison took exception to the copious extensions"
   },
   {
-   "motion": "approve the January 13, 2014 minutes",
+   "motion": "Approve the minutes of 01-13-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to approve 01-13-14, n. lockwood, second, d. mcquaid . motion to appr",
-   "quote_taken_from_text": true
+   "quote": "motion to approve 01-13-14, n. lockwood, second, d. mcquaid"
   },
   {
-   "motion": "adjourn Regular Session to go into Executive Session not to return to Regular Session",
+   "motion": "Approve the minutes of 01-13-14 Elmwood Road Hearing.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "D. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "elmwood road hearing, n. lockwood, second, d. mcquaid."
+  },
+  {
+   "motion": "Adjourn the Regular Session to go into Executive Session, not to return to Regular Session.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn regular session to go into executive session not to return to regular session , d. mcquaid, second, m. allison. adjourned 9:30 pm",
-   "quote_taken_from_text": true
+   "quote": "motion to adjourn regular session to go into executive session not to return to regular session"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Four votes recorded. Three are procedural (two minutes approvals and adjournment). The Highfield Village extension vote is substantive, recorded as a formal roll call with individual votes named and counted as 3-1.",
- "cost_usd": 0.13099850000000002
+ "dropped_unquoted": 0,
+ "note": "Text is a clean typed extraction with no missing pages. No dollar figures are printed. Chief Marino's attendance is unclear (\"was available for attendance\"), so status is not stated. The 3-1 extension vote is the only recorded vote with a result; the two minutes approvals and the executive session motion have no printed result, so they are marked not stated. The ANR endorsements, Lane Property tabling, Stone Farm tabling, and waiver deferral have no motion in the minutes and are recorded as decisions.",
+ "cost_usd": 0.00904582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa"
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "not stated",
+   "quote": "police chief marino was available for attendance."
+  },
+  {
+   "name": "Sullivan",
+   "role": "Fire Chief",
+   "status": "absent",
+   "quote": "fire chief sullivan not available."
+  },
+  {
+   "name": "John Godfrey",
+   "role": "representing the applicant (Highfield Village)",
+   "status": "present",
+   "quote": "represented by john godfrey."
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "representing the applicant (50 Elmwood Road), Whitman & Bingham Associates, LLC",
+   "status": "present",
+   "quote": "represented by mark piermarini, whitman & bingham associates, llc."
+  },
+  {
+   "name": "J. Johnson",
+   "role": "David E. Ross Associates (reviewer)",
+   "status": "not stated",
+   "quote": "j. johnson provided his comments."
+  },
+  {
+   "name": "S. Jordan",
+   "role": "Conservation Commission",
+   "status": "present",
+   "quote": "s. jordan, conservation commission, noted that the border between proctor park and the subdivision site is about"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "p. bertram, board of selectmen - applicant needs earth removal"
+  },
+  {
+   "name": "B. Ebersole",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "b. ebersole, board of selectmen noted a previous board agenda item"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Planning Board will defer voting on the Form N / roadway waiver request for 50 Elmwood Road until it receives input from the Conservation Commission at its February 5th meeting with the applicant.",
+   "quote": "the planning board will defer voting on the requested waiver until they receive input from the commission"
+  },
+  {
+   "decision": "Board members are to review their information packets for particulars they want in the Zoning Bylaw (marijuana) and provide that to the Planning Office for a draft document.",
+   "quote": "board is to review their information packets for particulars they want in the"
+  },
+  {
+   "decision": "Police Chief Marino will keep the Board informed with his suggestions on marijuana regulation.",
+   "quote": "chief marino will keep the board informed with his suggestions."
+  },
+  {
+   "decision": "Any updates on marijuana provided to the Board will also be provided to both the Fire and Police Chiefs.",
+   "quote": "any updates provided to the board will also be provided to both the fire and police chiefs."
+  },
+  {
+   "decision": "Lane Property tabled due to the absence of E. Bakaysa.",
+   "quote": "lane property- tabled due to absence of e. bakaysa."
+  },
+  {
+   "decision": "Stone Farm Estates tabled.",
+   "quote": "stone farm estates: tabled"
+  },
+  {
+   "decision": "Endorsed the ANR plan for 40 Page Street (Jeffrey Stone).",
+   "quote": "40 page street, jeffrey stone- plan endorsed by board."
+  },
+  {
+   "decision": "Endorsed the ANR plan for 145 Page Street (Katkin Family Revocable Trust).",
+   "quote": "145 page street, katkin family revocable trust- plan endorsed by board."
+  },
+  {
+   "decision": "D. McQuaid will notify the office when he wants the Village Bylaw placed on the agenda.",
+   "quote": "he will notify the office when he wants it placed on the agenda."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "B. Ebersole",
+   "stated_role": "Board of Selectmen",
+   "topic": "improving public communications between boards",
+   "quote": "b. ebersole, board of selectmen noted a previous board agenda item which was how to improve public"
+  },
+  {
+   "speaker": "P. Bertram",
+   "stated_role": "Board of Selectmen",
+   "topic": "sharing plan PDFs with boards and commissions",
+   "quote": "p. bertram and s. jordan both opined that when any town department receives plans"
+  },
+  {
+   "speaker": "S. Jordan",
+   "stated_role": "Conservation Commission",
+   "topic": "wetlands buffer plaques for applicants",
+   "quote": "s. jordan noted plaques are available for applicants before the conservation commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Information meeting: Force Corp., 305 Leominster Shirley Road",
+   "resolution": "continued; see separate minutes, findings and directives to be prepared",
+   "quote": "force corp., 305 leominster shirley road - see separate minutes. findings and",
+   "tags": [
+    "Force Corp",
+    "information meeting"
+   ]
+  },
+  {
+   "topic": "Board discussion with Police and Fire Chiefs on marijuana bylaw",
+   "resolution": "discussed; board to gather bylaw particulars for Planning Office draft",
+   "quote": "chief marino will keep the board informed with his suggestions.",
+   "tags": [
+    "marijuana",
+    "zoning bylaw",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Stone Farm Estates",
+   "resolution": "tabled",
+   "quote": "stone farm estates: tabled",
+   "tags": [
+    "Stone Farm Estates"
+   ]
+  },
+  {
+   "topic": "Highfield Village extension and sewer status",
+   "resolution": "extension to April 30, 2014 passed 3-1",
+   "quote": "represented by john godfrey.",
+   "tags": [
+    "Highfield Village",
+    "extension",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "ANR plans: 40 Page Street and 145 Page Street",
+   "resolution": "endorsed",
+   "quote": "40 page street, jeffrey stone- plan endorsed by board.",
+   "tags": [
+    "ANR",
+    "Page Street"
+   ]
+  },
+  {
+   "topic": "Minutes approval (01-13-14 and 01-13-14 Elmwood Road Hearing)",
+   "resolution": "approved; minutes signed",
+   "quote": "motion to approve 01-13-14, n. lockwood, second, d. mcquaid",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "lunenburg slated for 2017 to start summer street revitalization.",
+   "tags": [
+    "committee reports",
+    "MJTC",
+    "MRPC",
+    "school building",
+    "capital planning",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Planning Director reports: MRPC DLTA and Housing Production Plan",
+   "resolution": "received",
+   "quote": "housing production plan- mrpc has suggested developing a housing production plan through them.",
+   "tags": [
+    "MRPC",
+    "housing"
+   ]
+  },
+  {
+   "topic": "50 Elmwood Road subdivision (revised plan, waiver request)",
+   "resolution": "waiver vote deferred until Conservation Commission input on February 5, 2014",
+   "quote": "represented by mark piermarini, whitman & bingham associates, llc.",
+   "tags": [
+    "50 Elmwood Road",
+    "subdivision",
+    "waiver",
+    "Proctor Park",
+    "earth removal"
+   ]
+  },
+  {
+   "topic": "Development status reports (Whites Woods, Emerald Place, White Tail Crossing, solar projects, Lane Property)",
+   "resolution": "received; Lane Property tabled",
+   "quote": "651 chase road solar - clearing site.",
+   "tags": [
+    "solar",
+    "White Tail Crossing",
+    "Lane Property"
+   ]
+  },
+  {
+   "topic": "Action file: citizen survey",
+   "resolution": "no action; board to address lack of public awareness of online survey",
+   "quote": "citizen survey- no additional surveys received.",
+   "tags": [
+    "citizen survey",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "february 10, 2014, 6:30 pm, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment: communication between boards and commissions",
+   "resolution": "discussed; no action",
+   "quote": "p. bertram and s. jordan both opined that when any town department receives plans",
+   "tags": [
+    "public communication",
+    "website"
+   ]
+  },
+  {
+   "topic": "Board comments: Village Bylaw",
+   "resolution": "no action; D. McQuaid to request agenda placement",
+   "quote": "d. mcquaid noted he has been spending time reviewing the village bylaw information",
+   "tags": [
+    "Village Bylaw"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "motion to adjourn into executive session made; adjourned 9:30 PM",
+   "quote": "motion to adjourn regular session to go into executive session not to return to regular session",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Marijuana Information Packets",
+   "where": "list",
+   "quote": "marijuana information packets minutes 01-13-14"
+  },
+  {
+   "name": "Minutes 01-13-14",
+   "where": "list",
+   "quote": "marijuana information packets minutes 01-13-14"
+  },
+  {
+   "name": "Minutes 01-13-14 Elmwood Road Hearing",
+   "where": "list",
+   "quote": "minutes 01-13-14 elmwood road hearing"
+  },
+  {
+   "name": "Solar Progress Reports",
+   "where": "list",
+   "quote": "solar progress reports 50 elmwood road subdivision- revised plans"
+  },
+  {
+   "name": "50 Elmwood Road Subdivision- Revised Plans",
+   "where": "list",
+   "quote": "solar progress reports 50 elmwood road subdivision- revised plans"
+  },
+  {
+   "name": "145 Page Street ANR",
+   "where": "list",
+   "quote": "145 page street anr 40 page street anr"
+  },
+  {
+   "name": "40 Page Street ANR",
+   "where": "list",
+   "quote": "145 page street anr 40 page street anr"
+  },
+  {
+   "name": "January 22, 2014 review letter from J. Johnson, David E. Ross Associates",
+   "where": "text",
+   "quote": "january 22, 2014 review letter"
+  },
+  {
+   "name": "Revised plan submitted January 13, 2014",
+   "where": "text",
+   "quote": "this review was based on revised plan submitted january 13, 2014."
+  },
+  {
+   "name": "Form N",
+   "where": "text",
+   "quote": "he emphasized the applicant detail the overburden utilizing form n"
+  },
+  {
+   "name": "Findings and Directives",
+   "where": "text",
+   "quote": "findings and directives will be prepared."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "marijuana bylaw",
+  "subdivision extension",
+  "ANR",
+  "50 Elmwood Road",
+  "Highfield Village",
+  "sewer",
+  "solar",
+  "citizen survey",
+  "public communication",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

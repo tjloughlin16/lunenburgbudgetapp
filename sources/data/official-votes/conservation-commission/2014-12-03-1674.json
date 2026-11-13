@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-12-03",
  "docid": "1674",
@@ -12,23 +12,391 @@
  },
  "votes": [
   {
-   "motion": "to take the next three hearings in block form due to time restraints",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Take the next three hearings in block form, due to time restraints.",
    "moved_by": "",
-   "seconded_by": "",
-   "quote": "motion was made and approved to take the next three hearings in block form, due to time restraints. approved"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion was made and approved to take the next three hearings in block form, due to time restraints.",
+   "seconded_by": ""
   },
   {
-   "motion": "to approve the minutes of 11/5/2014",
-   "outcome": "approved",
-   "procedural": true,
+   "motion": "Approve the minutes of 11/5/2014.",
    "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes approval ~ 11/5/2014 ~ approved"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes approval ~ 11/5/2014 ~ approved",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Approve the Notice of Intent for 50 Elmwood Road, Lot 5 (Michael Crowley of Ernco Development, Inc.); no mover or result recorded beyond 'Approved'.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "disturbance zone. approved 7:45 pm ~ 50 elmwood road, lot 6",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Approve the Notice of Intent for 50 Elmwood Road, Lot 6 (Michael Crowley of Ernco Development, Inc.); no mover or result recorded beyond 'Approved'.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "disturbance zone. approved 7:55 pm ~ 50 elmwood road, lot 7",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Approve the Notice of Intent for 50 Elmwood Road, Lot 7 (Michael Crowley of Ernco Development, Inc.); no mover or result recorded beyond 'Approved'.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "disturbance zone. approved 8:05 pm ~ 701 r reservoir road",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "The \"Approved\" designations for individual wetland hearing notices (Lot 5, 6, 7, and determination of applicability items) appear to record Commission determinations rather than formally voted motions, so they are not included. The adjournment at 9:45 PM is noted without a vote. Moved and seconded parties are not named in the minutes.",
- "cost_usd": 0.10730350000000001
+ "note": "Scanned-text extraction with OCR artifacts: 'Todd Dw yer', 'David Ma cDonald', 'Whitman & Bin gham' and 'pub lic' are printed with split words; names are kept as they appear in the text. Attendance is a bare name list at the top with no present/absent marks, so board members are 'not stated'. Votes are recorded only as 'Approved' or 'Negative 3' with no mover, seconder or vote count; the minutes-approval item and hearing approvals are recorded as passed with no mover. The 'Negative 3' determinations are listed as decisions, not votes, because the minutes do not show a motion. No dollar figures appear. The minutes are marked 'APPROVED 12/17/2014'. No documents list is printed.",
+ "cost_usd": 0.00870402,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rich Bursch",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Tom Bertram",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Charpentier",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Todd Dw yer",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Sheila Holt",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, brad kennedy, matt marro, jan carrier"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "status": "present",
+   "quote": "public comment ~ brandon kibbe"
+  },
+  {
+   "name": "Malcolm Parker",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent filed by larry h king. t",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Larry H King",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent filed by larry h king."
+  },
+  {
+   "name": "Michael Crowley",
+   "status": "not stated",
+   "quote": "filed by michael crowley of ernco"
+  },
+  {
+   "name": "Mark Piermarini",
+   "status": "not stated",
+   "quote": "(mark piermarini of whitman"
+  },
+  {
+   "name": "Ronald W/Roberta Wilson",
+   "status": "not stated",
+   "quote": "ronald w/roberta wilson (walter godfrey of godfrey construction llc)"
+  },
+  {
+   "name": "Walter Godfrey",
+   "status": "not stated",
+   "quote": "ronald w/roberta wilson (walter godfrey of godfrey construction llc)"
+  },
+  {
+   "name": "Benjamin Builders, Inc.",
+   "status": "not stated",
+   "quote": "benjamin builders, inc. (gary lorden)"
+  },
+  {
+   "name": "Gary Lorden",
+   "status": "not stated",
+   "quote": "benjamin builders, inc. (gary lorden)"
+  },
+  {
+   "name": "David Ma cDonald",
+   "status": "not stated",
+   "quote": "lunenburg sewer commission (charles caron of caron environmental consulting)"
+  },
+  {
+   "name": "Charles Caron",
+   "status": "not stated",
+   "quote": "lunenburg sewer commission (charles caron of caron environmental consulting)"
+  },
+  {
+   "name": "Richard R. Runtagh",
+   "status": "not stated",
+   "quote": "filed by richard r. runtagh."
+  },
+  {
+   "name": "Douglas Smith-Peterson",
+   "status": "not stated",
+   "quote": "douglas smith-peterson & susan white"
+  },
+  {
+   "name": "Susan White",
+   "status": "not stated",
+   "quote": "douglas smith-peterson & susan white"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "status": "present",
+   "quote": "anthony cleaves showed plans to build 5 more units at stone farm to reach their quota."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "40 Hemlock Drive: the hearing is continued; the applicants agreed to submit new plans and a new hearing will be scheduled.",
+   "quote": "will get new plans to the office and then a new hearing will be scheduled."
+  },
+  {
+   "decision": "322 Townsend Harbor Road: the hearing is left open pending photos to substantiate the old deck.",
+   "quote": "waiting for pictures to substantiate the old deck."
+  },
+  {
+   "decision": "701 R Reservoir Road: positive determination; applicant must file a Notice of Intent with an engineered plan in the same footprint only; a 30-day Emergency Certification to issue after the NOI is filed.",
+   "quote": "positive determination, need to file a notice of intent with engineered plan in same footprint only."
+  },
+  {
+   "decision": "419 Sunnyhill Road: positive determination; applicant will need to file a Notice of Intent.",
+   "quote": "positive determination will need to file notice of intent."
+  },
+  {
+   "decision": "Sewer Extension Project: filing a Notice of Intent is unnecessary under new state regulations.",
+   "quote": "new state regulations make filing for this project unnecessary."
+  },
+  {
+   "decision": "747 Flat Hill Road: determination recorded as 'Negative 3' (no motion text recorded).",
+   "quote": "new private water well. negative 3"
+  },
+  {
+   "decision": "45 Birch Island Way: determination recorded as 'Negative 3' (no motion text recorded).",
+   "quote": "reset granite pieces that are already in place. negative 3"
+  },
+  {
+   "decision": "Brandon Kibbe asked to meet with the Commission again in January on the sign, handicap trail, forestry and open space; the date noted is January 7.",
+   "quote": "brandon would like to meet with us again in january re: sign, handicap trail, forestry, open space, etc."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brandon Kibbe",
+   "stated_role": "",
+   "topic": "Lane Property contract signatures; request to meet in January",
+   "quote": "public comment ~ brandon kibbe ~ re: lane property contract signatures ~ duplicate papers signed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Brandon Kibbe, Lane Property",
+   "resolution": "heard; meeting requested for January",
+   "quote": "public comment ~ brandon kibbe ~ re: lane property contract signatures ~ duplicate papers signed.",
+   "tags": [
+    "public comment",
+    "Lane Property"
+   ]
+  },
+  {
+   "topic": "Hearing: 40 Hemlock Drive (continuation), Malcolm Parker",
+   "resolution": "continued; new plans required",
+   "quote": "the parker's were in agreement and will get new plans to the office",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "erosion",
+    "patio"
+   ]
+  },
+  {
+   "topic": "Hearing: 322 Townsend Harbor Road, Larry H King",
+   "resolution": "no action; awaiting pictures",
+   "quote": "waiting for pictures to substantiate the old deck.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "wall",
+    "dock"
+   ]
+  },
+  {
+   "topic": "Procedure: hearings taken in block form",
+   "resolution": "approved",
+   "quote": "motion was made and approved to take the next three hearings in block form, due to time restraints.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Hearings: 50 Elmwood Road, Lots 5, 6 and 7, Michael Crowley / Ernco Development",
+   "resolution": "approved (each lot)",
+   "quote": "disturbance zone. approved 7:45 pm ~ 50 elmwood road, lot 6",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "single family home",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Request for Determination: 701 R Reservoir Road, Ronald W/Roberta Wilson",
+   "resolution": "positive determination; NOI required",
+   "quote": "positive determination, need to file a notice of intent with engineered plan in same footprint only.",
+   "tags": [
+    "RDA",
+    "demolition",
+    "storm damage"
+   ]
+  },
+  {
+   "topic": "Request for Determination: 419 Sunnyhill Road, Benjamin Builders, Inc.",
+   "resolution": "positive determination; NOI required",
+   "quote": "positive determination will need to file notice of intent.",
+   "tags": [
+    "RDA",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Sewer Extension Project, Lunenburg Sewer Commission",
+   "resolution": "no NOI filing required under new state rules",
+   "quote": "new state regulations make filing for this project unnecessary.",
+   "tags": [
+    "sewer",
+    "low pressure force main",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "Request for Determination: 747 Flat Hill Road, Richard R. Runtagh",
+   "resolution": "recorded as Negative 3",
+   "quote": "new private water well. negative 3",
+   "tags": [
+    "RDA",
+    "private well"
+   ]
+  },
+  {
+   "topic": "Request for Determination: 45 Birch Island Way, Douglas Smith-Peterson & Susan White",
+   "resolution": "recorded as Negative 3",
+   "quote": "reset granite pieces that are already in place. negative 3",
+   "tags": [
+    "RDA",
+    "concrete wall",
+    "granite"
+   ]
+  },
+  {
+   "topic": "Minutes approval: 11/5/2014",
+   "resolution": "approved",
+   "quote": "minutes approval ~ 11/5/2014 ~ approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: stormwater; Stone Farm",
+   "resolution": "no action; discussion",
+   "quote": "anthony cleaves showed plans to build 5 more units at stone farm to reach their quota.",
+   "tags": [
+    "stormwater",
+    "Stone Farm"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "done",
+   "quote": "signatures ~ 1 ooc, 4 doa, 2 coc ~ done",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for December 17, 2014",
+   "quote": "next meeting ~ december 17 th , 2014",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:45 PM (no motion recorded)",
+   "quote": "adjournment ~ 9:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Landscape plan (40 Hemlock Drive)",
+   "where": "text",
+   "quote": "need engineered plan showing changes from landscape plan."
+  },
+  {
+   "name": "Engineered plan (701 R Reservoir Road)",
+   "where": "text",
+   "quote": "need to file a notice of intent with engineered plan in same footprint only."
+  },
+  {
+   "name": "Notice of Intent, 50 Elmwood Road Lots 5-7 (Michael Crowley, Ernco Development, Inc.)",
+   "where": "text",
+   "quote": "a portion of the proposed work is within the 100' buffer zone and riverfront area"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "public hearings",
+  "erosion",
+  "sewer",
+  "stormwater",
+  "minutes approval",
+  "Elmwood Road subdivision",
+  "Conservation Commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2014-03-10",
  "docid": "5339",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "All new applicants provide income documents for verification by the Committee",
+   "motion": "That all new applicants provide income documents for verification by the Committee.",
    "moved_by": "Shelley McCaie",
    "seconded_by": "David Manzello",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "shelley mccaie made a motion that all new applicants provide income documents for verification by the committee. david manzello seconded. on vote 4 in favor, 0 opposed."
   },
   {
-   "motion": "Allow Kathy Herrick to submit the Article to the Board of Selectman on the Committee's behalf",
+   "motion": "To allow Kathy Herrick to submit the Article to the Board of Selectman on the Committee's behalf.",
    "moved_by": "Shelley McCaie",
    "seconded_by": "David Manzello",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "shelley mccaie made a motion to allow kathy herrick to submit the article to the board of selectman on the committee's behalf. david manzello seconded. on vote 4 in favor, o opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "David Manzello",
    "seconded_by": "Shelley McCaie",
    "outcome": "passed 4-0",
@@ -37,6 +37,135 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. The first bullet point describes committee action on applications (1 approved, 1 denied, 4 pending) but records no formal motion or vote; it is not included above.",
- "cost_usd": 0.0867125
+ "note": "OCR text from a scan. Shelley's surname is printed as \"MoCaie\" in the attendance line and as \"McCaie\" in the motions and signature; recorded as printed in each place. \"O opposed\" in two votes is read as a zero. The vote count for the adjournment is printed as 4 in favor with zero opposed; no abstentions or absences noted beyond Jean Larkin. The minutes give no roles for attendees, and no public comment or dollar figures appear. The filing stamp reads February 19, 2015, about eleven months after the meeting date.",
+ "cost_usd": 0.00324812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Doreen Noble",
+   "status": "present",
+   "quote": "present: doreen noble, kathy herrick, david manzello and shelley mocaie. absent: jean larkin"
+  },
+  {
+   "name": "Kathy Herrick",
+   "status": "present",
+   "quote": "present: doreen noble, kathy herrick, david manzello and shelley mocaie. absent: jean larkin"
+  },
+  {
+   "name": "David Manzello",
+   "status": "present",
+   "quote": "present: doreen noble, kathy herrick, david manzello and shelley mocaie. absent: jean larkin"
+  },
+  {
+   "name": "Shelley MoCaie",
+   "status": "present",
+   "quote": "present: doreen noble, kathy herrick, david manzello and shelley mocaie. absent: jean larkin"
+  },
+  {
+   "name": "Jean Larkin",
+   "status": "absent",
+   "quote": "present: doreen noble, kathy herrick, david manzello and shelley mocaie. absent: jean larkin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Six applications were reviewed: one approved, one denied due to physical limitations and openings, and four pending income verification.",
+   "quote": "6 applications were reviewed. the committee approved 1 application, denied 1 application due to"
+  },
+  {
+   "decision": "The Article for Town Meeting will be ready for review at the next Committee meeting.",
+   "quote": "the article will be ready to review at the next committee meeting."
+  },
+  {
+   "decision": "The next Committee meeting is set for Monday, March 24, 2014 at 10:00 a.m. in the Clerk's Office at Town Hall, 17 Main St., Lunenburg, MA.",
+   "quote": "the next meeting will be on monday, march 24, 2014 at 10:00 a.m, in the clerk's office located at the"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Applications review",
+   "resolution": "six reviewed; one approved, one denied, four pending income verification",
+   "quote": "6 applications were reviewed. the committee approved 1 application, denied 1 application due to",
+   "tags": [
+    "applications",
+    "eligibility"
+   ]
+  },
+  {
+   "topic": "Income verification for new applicants",
+   "resolution": "passed 4-0",
+   "quote": "shelley mccaie made a motion that all new applicants provide income documents for verification by the committee.",
+   "tags": [
+    "income verification",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Board of Health inquiry on applicant placement",
+   "resolution": "no action; chair explained placement by applicant preference",
+   "quote": "doreen noble commented that she received a phone call from the board of health questioning the",
+   "tags": [
+    "placement",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Open volunteer positions",
+   "resolution": "no action; discussion only",
+   "quote": "there are still jobs to fill at the board of health, fire department and outdoor custodial work at the",
+   "tags": [
+    "placement",
+    "volunteer positions"
+   ]
+  },
+  {
+   "topic": "Town Meeting article",
+   "resolution": "Kathy Herrick to submit to Board of Selectman, passed 4-0; article to be reviewed at next meeting",
+   "quote": "kathy herrick will formulate the article for town meeting.",
+   "tags": [
+    "town meeting",
+    "article"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for March 24, 2014 at 10:00 a.m.",
+   "quote": "the next meeting will be on monday, march 24, 2014 at 10:00 a.m, in the clerk's office located at the",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3:08 p.m., passed 4-0",
+   "quote": "david manzello moved to adjourn the meeting. shelley mccaie seconded. on vote 4 in favor, o opposed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article for Town Meeting",
+   "where": "text",
+   "quote": "kathy herrick will formulate the article for town meeting."
+  }
+ ],
+ "tags": [
+  "senior property tax work-off",
+  "applications",
+  "income verification",
+  "town meeting article",
+  "placement",
+  "committee meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-11-20",
  "docid": "4250",
@@ -12,26 +12,26 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of November 13, 2014",
+   "motion": "Accept the minutes of 11.13.14",
    "moved_by": "Heather Sroka",
    "seconded_by": "Katie McGuire",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "heather sroka made a motion to accept the minutes of 11.13.14 minutes, katie mcguire second the motion. vote: unanimous."
   },
   {
-   "motion": "Approve the calendar guidelines",
+   "motion": "Approve the calendar guidelines proposed to standardize the calendar",
    "moved_by": "Dr. Gary Asher",
    "seconded_by": "Katie McGuire",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "dr. gary asher made a motion to vote on approving the guidelines. katie mcguire second ed the motion. vote: unanimous"
   },
   {
-   "motion": "Approve the calendar to present to the school committee",
+   "motion": "Vote on the calendar to present to the School Committee",
    "moved_by": "Brandon Kibbe",
    "seconded_by": "Heather Sroka",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "brandon kibbe made motion to vote on the calendar to present to school committee. heather sroka seconded the motion, vote: unanimous"
   },
@@ -39,12 +39,209 @@
    "motion": "Adjourn the meeting",
    "moved_by": "Heather Sroka",
    "seconded_by": "Louis Bettencourt",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "heather sroka made motion to adjourn meeting. louis bettencourt seconded the motion. vote: unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is a legible scan. Four votes recorded, all passed unanimously.",
- "cost_usd": 0.08686650000000001
+ "note": "The minutes are headed \"CALENDAR ADVISORY SUB-COMMITTEE MEETING\", not the board name given in the request. The attendance list has no explicit present marks; names without an absent note are recorded as present because they moved, seconded, or spoke. Votes are recorded only as \"Unanimous\" with no counts. The minutes show a 7:20pm call to order and a 10:02pm adjournment, and the minutes are signed by Ami Powers with no record of approval. The Town Clerk's Office heading is followed by demographic discussion. No public comment section is printed.",
+ "cost_usd": 0.005466619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Colleen Shapiro",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "colleen shapiro - school committee"
+  },
+  {
+   "name": "Ronald Hyatt",
+   "role": "SAC LHS",
+   "status": "absent",
+   "quote": "ronald hyatt - sac lhs-absent"
+  },
+  {
+   "name": "Ashley Wheeler",
+   "role": "SAC LHS",
+   "status": "absent",
+   "quote": "ashley wheeler-sac lhs- absent"
+  },
+  {
+   "name": "Dr. Gary Asher",
+   "role": "Former Lunenburg Family Practice, Health Advisory Committee",
+   "status": "present",
+   "quote": "dr. gary asher - former lunenburg family practice, health advisory committee"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "SAC LPS",
+   "status": "present",
+   "quote": "brandon kibbe - sac lps"
+  },
+  {
+   "name": "Amanda Waltz",
+   "role": "Parent",
+   "status": "present",
+   "quote": "amanda waltz - parent"
+  },
+  {
+   "name": "Louis Bettencourt",
+   "role": "Parent",
+   "status": "present",
+   "quote": "louis bettencourt - parent"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka - school committee"
+  },
+  {
+   "name": "Ami Powers",
+   "role": "SAC THMS",
+   "status": "present",
+   "quote": "ami powers - sac thms"
+  },
+  {
+   "name": "Katie McGuire",
+   "role": "SAC LHS",
+   "status": "present",
+   "quote": "katie mcguire- sac lhs"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "supt. calmes explained the rationale behind this."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meeting of November 24, 2014 cancelled (Continue work on Outline for Final Report).",
+   "quote": "meeting cancelled for november 24, 2014."
+  },
+  {
+   "decision": "Calendar to be presented to the School Committee on December 3rd.",
+   "quote": "december 3rd, present calendar to school committee"
+  },
+  {
+   "decision": "Next meeting set for December 3rd, 7pm at Town Hall to present the calendar.",
+   "quote": "next meeting december 3rd, 7pm town hall to present calendar"
+  },
+  {
+   "decision": "Remaining 2015 meeting dates set: Jan 8, Jan 29, Feb 12, and Feb 26, 2015 at 7:15pm.",
+   "quote": "set remaining meeting dates:"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:20pm",
+   "quote": "meeting called to order at 7:20pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "approved",
+   "quote": "review and approve minutes: heather sroka made a motion to accept the minutes of 11.13.14 minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of Survey Results including Student Feedback",
+   "resolution": "discussed, no action",
+   "quote": "lhs students indicated more would like to start before labor day",
+   "tags": [
+    "survey",
+    "student feedback"
+   ]
+  },
+  {
+   "topic": "Information from Town Clerk's Office",
+   "resolution": "discussed, no action",
+   "quote": "the breakout of our demographics is 70% either 2 working parents",
+   "tags": [
+    "demographics",
+    "working parents"
+   ]
+  },
+  {
+   "topic": "Initial Calendar Recommendations",
+   "resolution": "discussed; guidelines approved by vote",
+   "quote": "the committee discussed the guidelines proposed to standardizing the calendar.",
+   "tags": [
+    "guidelines",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Continue work on Outline for Final Report",
+   "resolution": "no meeting held; November 24 meeting cancelled",
+   "quote": "meeting cancelled for november 24, 2014.",
+   "tags": [
+    "final report"
+   ]
+  },
+  {
+   "topic": "Present calendar to School Committee",
+   "resolution": "vote to present calendar to School Committee; presentation set for December 3rd",
+   "quote": "december 3rd, present calendar to school committee",
+   "tags": [
+    "School Committee",
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Set remaining meeting dates",
+   "resolution": "dates set",
+   "quote": "set remaining meeting dates:",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "meeting adjourned at 10:02pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Survey Results including Student Feedback",
+   "where": "text",
+   "quote": "survey results including student feedback"
+  },
+  {
+   "name": "Guidelines proposed to standardizing the calendar",
+   "where": "text",
+   "quote": "the committee discussed the guidelines proposed to standardizing the calendar."
+  }
+ ],
+ "tags": [
+  "school calendar",
+  "vacation weeks",
+  "February vacation",
+  "snow days",
+  "survey results",
+  "guidelines",
+  "School Committee",
+  "sub-committee",
+  "working parents"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

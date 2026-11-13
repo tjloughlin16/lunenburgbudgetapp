@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2010-09-14",
  "docid": "2512",
@@ -12,31 +12,268 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of the June 7, 2010 meeting as written",
-   "outcome": "approved",
-   "procedural": true,
+   "motion": "Approve the minutes of the June 7, 2010 meeting as written.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes of june 7, 2010 meeting approved as written"
   },
   {
-   "motion": "to approve the demolition of the property at 20 Fire Road 19",
-   "outcome": "unanimous vote",
-   "procedural": false,
+   "motion": "Approve the demolition delay for 86 Lakefront.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "86 lakefront - demo delay approved by commission."
+  },
+  {
+   "motion": "Approve demolition of 20 Fire Road 19, a ca 1955 building of no important historic significance.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "of no important historic significance. ok to demo - unanimous vote"
   },
   {
-   "motion": "to have Pat write a letter regarding the offer to pay for digitizing data for the Commission",
-   "outcome": "not stated",
-   "procedural": false,
+   "motion": "Pat Slattery to write a letter regarding the offer from Emerald Place to pay for digitizing data for the Commission.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "motion made for pat to write a letter re: the offer to pay for digitzing data for commission from emerald place."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one vote outcome not clearly recorded",
- "cost_usd": 0.1154185
+ "note": "Scanned text is OCR from a macOS Vision pass and contains garbled passages, including the Telegram & Gazette sentence, 'digitzing', 'notriled', and 'Chriztine'. The Richard in the 20 Fire Road 19 site visit has no surname or role. No public comment section is printed. The adjournment has no motion recorded. The 'Outcome' for the 86 Lakefront and 20 Fire Road 19 items reflects 'approved' wording without a printed tally. The RECEIVED & FILED stamp reads OCT 18 2011, more than a year after the meeting date.",
+ "cost_usd": 0.00521812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, vera mccarthy, pat slattery, chriztine foltz"
+  },
+  {
+   "name": "Vera McCarthy",
+   "role": "Member; Secretary (signed minutes as Vera A. McCarthy, Secretary)",
+   "status": "present",
+   "quote": "members present: becky lantry, vera mccarthy, pat slattery, chriztine foltz"
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, vera mccarthy, pat slattery, chriztine foltz"
+  },
+  {
+   "name": "Chriztine Foltz",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: becky lantry, vera mccarthy, pat slattery, chriztine foltz"
+  },
+  {
+   "name": "Richard",
+   "role": "not stated (site visit to 20 Fire Road 19 with Chriztine)",
+   "status": "not stated",
+   "quote": "chriztine and richard looked at property and noted it was ca 1955 and"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Election of new officers postponed until the October 4, 2010 meeting.",
+   "quote": "election of new officers postponed until october 4 meeting."
+  },
+  {
+   "decision": "A letter is to be sent to Tania Fernandez advising no openings at this time and thanking her for her interest.",
+   "quote": "letter to be sent advising no openings at this time and thanking her for her"
+  },
+  {
+   "decision": "Chriztine to send a letter to Mike Sauvageau regarding 86 Lakefront.",
+   "quote": "chriztine to send letter to mike sauvageau"
+  },
+  {
+   "decision": "Christine to speak with Marion Benson regarding Ritter.",
+   "quote": "christine to speak with marion benson re: ritter."
+  },
+  {
+   "decision": "Committee will review the letter regarding the Emerald Place digitizing offer.",
+   "quote": "committee will review the letter."
+  },
+  {
+   "decision": "Pat to pursue digitizing.",
+   "quote": "pat to fight for digitizing."
+  },
+  {
+   "decision": "Copy of the ethics, open meetings and conflict of interest materials sent to Richard McGrath.",
+   "quote": "materials on ethics, open meetings and conflict of interest laws distributed. copy sent to richard mcgrath."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Emerald Place offer to pay for digitizing data",
+   "what_was_recorded": "Commission discussed an offer from Emerald Place to pay for digitizing its data; a motion was made for Pat to write a letter about it. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "motion made for pat to write a letter re: the offer to pay for digitzing data for commission from emerald place."
+  },
+  {
+   "topic": "Jones House photo and write-up for old house publications",
+   "what_was_recorded": "Pat has information and costs for inserting a photo and write-up of the Jones House into old house publications. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "pat has information and costs for insertion of photo and write- up for the jones house insertion into old house publications."
+  },
+  {
+   "topic": "Bowen property grant",
+   "what_was_recorded": "Information for the Bowen property to apply for a grant was noted; nothing had been done yet. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "information for bowen property to apply for a grant - nothing done yet"
+  },
+  {
+   "topic": "Telegram & Gazette correspondence about paying for something",
+   "what_was_recorded": "Correspondence from the Telegram & Gazette asked about paying for an item; the OCR text is garbled, and the minutes say the Commission does not pay. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "telegram & gazette asking if we wave to pay for pay foing ation sodom 's way organization - commission does not."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of June 7, 2010",
+   "resolution": "approved as written",
+   "quote": "minutes of june 7, 2010 meeting approved as written",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "discussed; Christine to follow up on Ritter",
+   "quote": "correspondence discussed: eagle house newsletter, telegram & gazette asking if we",
+   "tags": [
+    "correspondence",
+    "newsletter"
+   ]
+  },
+  {
+   "topic": "Demolition delays: 86 Lakefront and 20 Fire Road 19",
+   "resolution": "86 Lakefront delay approved; 20 Fire Road 19 approved for demolition",
+   "quote": "86 lakefront - demo delay approved by commission. chriztine to send",
+   "tags": [
+    "demolition delay",
+    "historic review"
+   ]
+  },
+  {
+   "topic": "Ethics, open meetings and conflict of interest materials",
+   "resolution": "materials distributed; copy sent to Richard McGrath",
+   "quote": "materials on ethics, open meetings and conflict of interest laws distributed. copy sent to richard mcgrath.",
+   "tags": [
+    "training",
+    "ethics"
+   ]
+  },
+  {
+   "topic": "Jones House RFP",
+   "resolution": "noted; no RFP recorded as of meeting date",
+   "quote": "noted: rfp for jones house notriled or recorded as of this meeting date.",
+   "tags": [
+    "Jones House",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Bowen property grant",
+   "resolution": "no action; nothing done yet",
+   "quote": "information for bowen property to apply for a grant - nothing done yet",
+   "tags": [
+    "grants",
+    "Bowen property"
+   ]
+  },
+  {
+   "topic": "Digitizing offer from Emerald Place",
+   "resolution": "motion for Pat to write letter; committee to review",
+   "quote": "motion made for pat to write a letter re: the offer to pay for digitzing data for commission from emerald place.",
+   "tags": [
+    "digitizing",
+    "Emerald Place"
+   ]
+  },
+  {
+   "topic": "Jones House photo and write-up for publications",
+   "resolution": "information and costs reported",
+   "quote": "pat has information and costs for insertion of photo and write- up for the jones house insertion into old house publications.",
+   "tags": [
+    "publications",
+    "Jones House"
+   ]
+  },
+  {
+   "topic": "Application from Tania Fernandez",
+   "resolution": "letter to be sent: no openings at this time",
+   "quote": "application received from tania fernandez showing interest in the historical",
+   "tags": [
+    "membership",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "postponed to October 4 meeting",
+   "quote": "election of new officers postponed until october 4 meeting.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8PM; no motion recorded",
+   "quote": "meeting adjourned @ 8pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Materials on Ethics, Open Meetings and Conflict of Interest Laws",
+   "where": "list",
+   "quote": "materials on ethics, open meetings and conflict of interest laws distributed. copy sent to richard mcgrath."
+  },
+  {
+   "name": "RFP for Jones House",
+   "where": "text",
+   "quote": "noted: rfp for jones house notriled or recorded as of this meeting date."
+  },
+  {
+   "name": "Eagle House newsletter",
+   "where": "text",
+   "quote": "correspondence discussed: eagle house newsletter, telegram & gazette asking if we"
+  },
+  {
+   "name": "Application from Tania Fernandez",
+   "where": "text",
+   "quote": "application received from tania fernandez showing interest in the historical"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "correspondence",
+  "grants",
+  "digitizing",
+  "ethics training",
+  "officers election",
+  "membership applications",
+  "Jones House",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "materials on ethics, open meetings and conflict of interest laws distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

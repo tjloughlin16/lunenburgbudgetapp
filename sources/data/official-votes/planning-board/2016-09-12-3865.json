@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-09-12",
  "docid": "3865",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing to the October 24th Board meeting",
+   "motion": "Continue the public hearing on the special permit and site plan applications for 274 Prospect Street to the October 24 Board meeting.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -21,6 +21,262 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The meeting was a public hearing with extensive discussion and public comment, but only the final motion to continue the hearing was voted on.",
- "cost_usd": 0.0829405
+ "note": "Text extraction of a typed minutes document; no scan problems. One motion, to continue the hearing; the minutes print 'all aye' but no numeric count. The hearing was recessed rather than closed. No dollar figures were printed. Several names are printed with spelling as in the source (e.g., 'Prokowiew'). Citizen comments are recorded as a group and not attributed to individual speakers beyond names.",
+ "cost_usd": 0.00745822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "representing the applicant (Whitman and Bingham Associates (WBA))",
+   "status": "present",
+   "quote": "the applicant was r epresented by wesley flis, whitman and bingham associates (wba)."
+  },
+  {
+   "name": "James Xarras",
+   "role": "identified himself as beneficiary of the Trust",
+   "status": "present",
+   "quote": "james xarras (identified himself as beneficiary of the trust) , 9211 blind pass road, sarasota, fl"
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "citizen (owns property at 4 Kimball Street)",
+   "status": "present",
+   "quote": "lois lewis, 389 sunnyhill road (owns property at 4 kimball street)"
+  },
+  {
+   "name": "Becky Lantry",
+   "role": "citizen",
+   "status": "present",
+   "quote": "becky lantry, 251 west street"
+  },
+  {
+   "name": "Courtney Martineau",
+   "role": "citizen",
+   "status": "present",
+   "quote": "courtney martineau, 30 pond street"
+  },
+  {
+   "name": "Sharon Albert",
+   "role": "citizen",
+   "status": "present",
+   "quote": "sharon albert, 5 pond street"
+  },
+  {
+   "name": "Jill Normandin",
+   "role": "citizen (developed 36 and 38 Kimball Street)",
+   "status": "present",
+   "quote": "jill normandin (developed 36 and 38 kimball street)"
+  },
+  {
+   "name": "Lisa O’Leary",
+   "role": "citizen",
+   "status": "present",
+   "quote": "lisa o'leary, 36 kimball street"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members said they would like to see Community, Public & Fiscal, and Traffic impacts addressed by the applicant.",
+   "quote": "board members would like to see the following impacts addressed: community, public & fiscal, and traffic ."
+  },
+  {
+   "decision": "A. Burney will follow up with Town Counsel on requested information about Board authority over the ownership model (owning/renting units).",
+   "quote": "a. burney will follow up on requested information from town counsel as to board authority over directing ownership model, i.e., owning/renting units."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fiscal impacts in the applicant's impact reports",
+   "what_was_recorded": "The applicant anticipates the fiscal and public services impact to be school children, and the Board discussed combining Community and Fiscal Impacts; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "public services and fiscal impacts- anticipate impact being school children."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "James Xarras",
+   "stated_role": "identified himself as beneficiary of the Trust",
+   "topic": "Presentation is a blueprint; rear of units could be rotated",
+   "quote": "noted this evening's presentation is simply a blueprint of the applicant's intent."
+  },
+  {
+   "speaker": "Lois Lewis",
+   "stated_role": "owns property at 4 Kimball Street",
+   "topic": "Neighborhood effect, density, height, traffic, parking (group comments)",
+   "quote": "comments included: the effect of the development on the neighborhood."
+  },
+  {
+   "speaker": "Becky Lantry",
+   "stated_role": "citizen",
+   "topic": "Neighborhood effect, density, height, traffic, parking (group comments)",
+   "quote": "comments included: the effect of the development on the neighborhood."
+  },
+  {
+   "speaker": "Courtney Martineau",
+   "stated_role": "citizen",
+   "topic": "Neighborhood effect, density, height, traffic, parking (group comments)",
+   "quote": "comments included: the effect of the development on the neighborhood."
+  },
+  {
+   "speaker": "Sharon Albert",
+   "stated_role": "citizen",
+   "topic": "Neighborhood effect, density, height, traffic, parking (group comments)",
+   "quote": "comments included: the effect of the development on the neighborhood."
+  },
+  {
+   "speaker": "Jill Normandin",
+   "stated_role": "developed 36 and 38 Kimball Street",
+   "topic": "Neighborhood effect, density, height, traffic, parking (group comments)",
+   "quote": "comments included: the effect of the development on the neighborhood."
+  },
+  {
+   "speaker": "Lisa O’Leary",
+   "stated_role": "citizen",
+   "topic": "Neighborhood effect, density, height, traffic, parking (group comments)",
+   "quote": "comments included: the effect of the development on the neighborhood."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: special permit and site plan approval, 22-unit townhouse, 274 Prospect Street",
+   "resolution": "continued to October 24 Board meeting",
+   "quote": "the hearing is to hear and discuss applications for special permit under section 4.12. lake whalom overlay district and site plan approval",
+   "tags": [
+    "special permit",
+    "site plan",
+    "townhouse",
+    "Lake Whalom Overlay",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Peer review and impact reports (traffic, community, fiscal)",
+   "resolution": "peer review placed on hold; impacts to be addressed",
+   "quote": "a. burney recommended to the board that continuing peer review be put on \"time out\" while the applicant and the board discuss density and layout.",
+   "tags": [
+    "peer review",
+    "traffic study",
+    "impact reports",
+    "density"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Permit Application",
+   "where": "list",
+   "quote": "documents used at meeting: special permit application site plan approval application wba letter dated 9/12/16 unit rendering"
+  },
+  {
+   "name": "Site Plan Approval Application",
+   "where": "list",
+   "quote": "documents used at meeting: special permit application site plan approval application wba letter dated 9/12/16 unit rendering"
+  },
+  {
+   "name": "WBA letter dated 9/12/16",
+   "where": "list",
+   "quote": "wba letter dated 9/12/16 requesting board clarification as to what the board would like to see for impact reports"
+  },
+  {
+   "name": "Unit rendering",
+   "where": "list",
+   "quote": "unit rendering draft proposed site and grading plan showing a reduction in number of units from 22 to 20 minutes/public hearings 20",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Draft proposed Site and Grading Plan showing a reduction in number of units from 22 to 20",
+   "where": "list",
+   "quote": "draft proposed site and grading plan showing a reduction in number of units from 22 to 20 and unit location altered."
+  },
+  {
+   "name": "Board Rules and Regulations for Site Plan Approval & Special Permits, June 27, 2016",
+   "where": "text",
+   "quote": "impact reports per section 4.1.f.25.h of the board rules and regulations for site plan approval & special permits, june 27, 2016."
+  },
+  {
+   "name": "Graves Engineering Inc. review letter of September 8, 2016",
+   "where": "text",
+   "quote": "wba went over graves engineering inc. review letter of september 8, 2016 (on file in the planning office)"
+  },
+  {
+   "name": "Traffic Impact Report for Emerald Place at Lake Whalom",
+   "where": "text",
+   "quote": "wba opined that the previous traffic impact report done for emerald place at lake whalom should be sufficient."
+  },
+  {
+   "name": "Stormwater Management System Design report and calculations",
+   "where": "text",
+   "quote": "stormwater impact- a stormwater management system design report and calculations has been provided."
+  },
+  {
+   "name": "Plan submitted August 18, 2016",
+   "where": "text",
+   "quote": "these comments refer to the plan submitted on august 18, 2016 and not the draft submitted this evening."
+  },
+  {
+   "name": "Letter from the Building/Zoning Official dated June 16, 2016",
+   "where": "text",
+   "quote": "wba noted a june 1 6, 2016 letter from the building/zoning official to the applicant"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg",
+   "where": "text",
+   "quote": "site plan approval under section 8.4. of the protective bylaw of the town of lunenburg"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "special permit",
+  "site plan",
+  "public hearing",
+  "townhouse",
+  "Lake Whalom Overlay",
+  "traffic",
+  "peer review",
+  "density",
+  "274 Prospect Street"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

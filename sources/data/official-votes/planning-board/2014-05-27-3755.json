@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-05-27",
  "docid": "3755",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Elect J. Bilotta-Simeone as Chair",
-   "moved_by": "N. Lockwood",
+   "motion": "Nominate J. Bilotta-Simeone for Chair.",
+   "moved_by": "",
    "seconded_by": "E. Bakaysa",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to nominate j. bilotta-simeone, n. lockwood, second, e. bakaysa, all aye."
+   "outcome": "all aye",
+   "procedural": false,
+   "quote": "chair- motion to nominate j. bilotta-simeone, n. lockwood, second, e. bakaysa, all aye."
   },
   {
-   "motion": "Elect N. Lockwood as Vice Chair",
-   "moved_by": "J. Bilotta-Simeone",
+   "motion": "Nominate N. Lockwood for Vice Chair.",
+   "moved_by": "",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to nominate n. lockwood, j. bilotta-simeone, second, d. mcquaid, all aye."
+   "outcome": "all aye",
+   "procedural": false,
+   "quote": "vice chair- motion to nominate n. lockwood, j. bilotta-simeone, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Elect D. McQuaid as Clerk",
-   "moved_by": "E. Bakaysa",
+   "motion": "Nominate D. McQuaid for Clerk.",
+   "moved_by": "",
    "seconded_by": "N. Lockwood",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to nominate d. mcquaid, e. bakaysa, second, n. lockwood, all aye."
+   "outcome": "all aye",
+   "procedural": false,
+   "quote": "clerk- motion to nominate d. mcquaid, e. bakaysa, second, n. lockwood, all aye."
   },
   {
-   "motion": "Approve the minutes of May 12, 2014",
+   "motion": "Approve the minutes of 5-12-14.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -44,7 +44,7 @@
    "quote": "motion, j. bilotta-simeone, to approve 5-12-14, second, d. mcquaid."
   },
   {
-   "motion": "Approve the minutes of May 12, 2014 Highfield Village Hearing",
+   "motion": "Approve the minutes of 5-12-14 Highfield Village Hearing.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -52,7 +52,7 @@
    "quote": "motion, j. bilotta-simeone, to approve 5-12-14 highfield village hearing, second, d. mcquaid."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "J. Bilotta-Simeone",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -61,6 +61,356 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Six votes recorded. Officer elections (Chair, Vice Chair, Clerk) all passed unanimously (all aye) with 4 members present. Designated positions for MRPC Representative, MJTC Representative, School Building Committee Representative, and Building Re-Use Committee Representative were assigned by consensus rather than formal motion, so not included.",
- "cost_usd": 0.11441950000000001
+ "note": "Text is OCR-like with stray spaces splitting words (e.g., 'approximate ly', 'Sele ctmen'); figures read as printed. Nomination motions do not label the mover; only the seconder is printed, so moved_by is left blank. Minutes-approval motions and the 'Chair/Vice/Clerk' nominations carry no explicit result beyond 'all aye' where printed. No public comment section appears. No transfers recorded. The executive session attended earlier by the Chair is mentioned but no vote on it is recorded.",
+ "cost_usd": 0.010340420000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, emerick r. bakaysa"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "kenneth chenis, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "kenneth chenis, marion m. benson"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "chantell fleck, mrpc"
+  },
+  {
+   "name": "John Hume",
+   "role": "MRPC Presentation (presenter)",
+   "status": "present",
+   "quote": "mrpc presentation- john hume"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to review the Economic Development Element in a work session before the public forum.",
+   "quote": "board to review element in a work session prior to public forum."
+  },
+  {
+   "decision": "C. Fleck to prepare a letter to the Board of Selectmen noting the HPP and importance of updating the Master Plan, and noting the long-term goal of the Transportation Element.",
+   "quote": "c. fleck will prepare a letter to the board of selectmen"
+  },
+  {
+   "decision": "A Master Plan workshop will be scheduled for June 16, 2014.",
+   "quote": "a master plan workshop will be scheduled for june 16, 2014."
+  },
+  {
+   "decision": "J. Bilotta-Simeone remains MRPC Representative by consensus.",
+   "quote": "mrpc representative- remains j. bilotta-simeone by consensus"
+  },
+  {
+   "decision": "Kenneth Chenis named MJTC Representative by consensus, pending his acceptance.",
+   "quote": "mjtc representative- kenneth chenis by consensus pending k. chenis acceptance."
+  },
+  {
+   "decision": "N. Lockwood remains School Building Committee Representative by consensus.",
+   "quote": "remains n. lockwood by consensus"
+  },
+  {
+   "decision": "D. McQuaid remains Building Re-Use Committee Representative by consensus.",
+   "quote": "building re-use committee representative- remains d. mcquaid by consensus"
+  },
+  {
+   "decision": "Office to confirm whether a Planning Board representative is required for the Capital Planning Committee.",
+   "quote": "office to confirm as to whether or not a representative is required for the capital planning committee."
+  },
+  {
+   "decision": "Board will continue to be a resource for the Agricultural Commission through the Land Use Director, rather than keeping a Board liaison.",
+   "quote": "board wanted to continue being a resource for the agcom through the land use director."
+  },
+  {
+   "decision": "Highfield Village hearing continuation to be opened June 9 and then recessed to June 23.",
+   "quote": "hearing continuation will be opened on june 9 th and then recessed to june 23rd."
+  },
+  {
+   "decision": "Building Re-Use Committee to meet with the Planning Board at its June 23 meeting.",
+   "quote": "the committee will meet with the planning board at its june 23 rd meeting."
+  },
+  {
+   "decision": "Reviewing Engineer and architectural firm to appear before the Board June 9 to go over the MS/HS plan.",
+   "quote": "will be before the board at its june 9th meeting to go over the plan."
+  },
+  {
+   "decision": "Board to follow up on whether the Force Corporation owner took action on the fence and grade.",
+   "quote": "board needs to follow up and see if any action was taken by the owner."
+  },
+  {
+   "decision": "Board had no issues with the administrative changes requested for 651 Chase Road Solar.",
+   "quote": "board had no issues with requested changes."
+  },
+  {
+   "decision": "Board had no issues with the administrative changes requested for 265 Pleasant Street Solar.",
+   "quote": "board had no issues with requested changes."
+  },
+  {
+   "decision": "Draft Village District Bylaw to be provided to the Re-Use Committee Chair before the June 23 joint meeting.",
+   "quote": "draft bylaw will be provided to re-use committee chair prior to the joint meeting of june 23 rd."
+  },
+  {
+   "decision": "C. Fleck to summarize the Citizen Survey for the June 23 meeting.",
+   "quote": "c. fleck will summarize for june 23 rd meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Housing Production Plan conversion to Master Plan Housing Element",
+   "what_was_recorded": "Converting the HPP into a Master Plan Housing Element was estimated at approximately $1,000.00, probably in December; the HPP takes 5-6 months.",
+   "figures_as_printed": [
+    "$1,000.00"
+   ],
+   "quote": "it can be converted into a master plan housing element probably in december"
+  },
+  {
+   "topic": "Transportation Element cost",
+   "what_was_recorded": "The Transportation Element was estimated to take approximately $8,000 to $10,000; the Board was advised to start it in May 2015 using encumbered funds.",
+   "figures_as_printed": [
+    "$8 ,000 - $10,000"
+   ],
+   "quote": "transportation element- takes approximately $8 ,000 - $10,000."
+  },
+  {
+   "topic": "UPWP funding",
+   "what_was_recorded": "The Planning Board may be eligible for additional funding under UPWP, which would be available late summer/early fall.",
+   "figures_as_printed": [],
+   "quote": "planning board may be eligible for additional funding under upwp"
+  },
+  {
+   "topic": "Economic Development Element funding",
+   "what_was_recorded": "The Economic Development Element contract concluded, and funding is not available if the Board wants major reconfiguration of the document; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the contract for the economic development element concluded"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Master Plan: MRPC presentation (Housing, Transportation, Economic Development Elements)",
+   "resolution": "discussed; Master Plan workshop to be scheduled June 16, 2014; no decision on adopting elements",
+   "quote": "mrpc presentation- john hume",
+   "tags": [
+    "master plan",
+    "housing production plan",
+    "transportation element",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Business attraction discussion",
+   "resolution": "discussed; no action",
+   "quote": "e. bakaysa questioned what needs to be done to bring business to lunenburg.",
+   "tags": [
+    "business",
+    "development"
+   ]
+  },
+  {
+   "topic": "Board reorganization",
+   "resolution": "officers nominated by vote; committee representatives by consensus",
+   "quote": "chair- motion to nominate j. bilotta-simeone, n. lockwood, second, e. bakaysa, all aye.",
+   "tags": [
+    "board reorganization",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made to approve 5-12-14 minutes and 5-12-14 Highfield Village Hearing minutes; result not stated",
+   "quote": "motion, j. bilotta-simeone, to approve 5-12-14, second, d. mcquaid.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; MJTC has no current representative",
+   "quote": "a minor change to the building footprint",
+   "tags": [
+    "school building committee",
+    "building re-use",
+    "agricultural commission",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "reports received; Highfield hearing continued to June 9 and recessed to June 23; Chase Road and Pleasant Street solar administrative changes had no Board issues",
+   "quote": "highfield village- in house meeting held may 21 st with c. fleck",
+   "tags": [
+    "development",
+    "highfield village",
+    "solar",
+    "subdivision",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Action file and MRPC traffic count",
+   "resolution": "discussed; no action",
+   "quote": "mrpc traffic count - j. bilotta-simeone would like to request intersection of goodrich street and lancaster avenue.",
+   "tags": [
+    "traffic",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Village District Draft Bylaw and Citizen Survey",
+   "resolution": "survey results reviewed; summary to be given for June 23 meeting",
+   "quote": "village district draft bylaw - c. fleck noted she reviewed the citizen survey results.",
+   "tags": [
+    "village district",
+    "bylaw",
+    "citizen survey",
+    "town center"
+   ]
+  },
+  {
+   "topic": "Notices",
+   "resolution": "noted",
+   "quote": "conservation commission and abutting communities- noted",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule set for June 9, June 16 (Master Plan workshop), and June 23",
+   "quote": "june 9, 6:30 pm, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member resignation",
+   "resolution": "E. Bakaysa's resignation received, effective at the meeting's conclusion",
+   "quote": "e. bakaysa provided a letter of resignation",
+   "tags": [
+    "resignation",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 PM",
+   "quote": "motion, j. bilotta-simeone to adjourn, second, d. mcquaid, adjourned 9:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Economic Development Element",
+   "where": "list",
+   "quote": "documents used at meeting: economic development element"
+  },
+  {
+   "name": "Minutes 5/12/14",
+   "where": "list",
+   "quote": "minutes 5/12/14 minutes 5/12/14 highfield village hearing"
+  },
+  {
+   "name": "Minutes 5/12/14 Highfield Village Hearing",
+   "where": "list",
+   "quote": "minutes 5/12/14 minutes 5/12/14 highfield village hearing"
+  },
+  {
+   "name": "Chase Road Solar- Request for Administrative Changes",
+   "where": "list",
+   "quote": "chase road solar- request for administrative changes"
+  },
+  {
+   "name": "Pleasant Street Solar- Request for Administrative Changes",
+   "where": "list",
+   "quote": "pleasant street solar- request for administrative changes"
+  },
+  {
+   "name": "Village District Draft Bylaw",
+   "where": "list",
+   "quote": "village district draft bylaw notices mrpc traffic count correspondence"
+  },
+  {
+   "name": "Notices",
+   "where": "list",
+   "quote": "village district draft bylaw notices mrpc traffic count correspondence"
+  },
+  {
+   "name": "MRPC Traffic Count Correspondence",
+   "where": "list",
+   "quote": "village district draft bylaw notices mrpc traffic count correspondence"
+  },
+  {
+   "name": "Contract for the Housing Production Plan (HPP)",
+   "where": "text",
+   "quote": "contract has been provided to the town manager for the housing"
+  },
+  {
+   "name": "Citizen Survey results",
+   "where": "text",
+   "quote": "c. fleck noted she reviewed the citizen survey results."
+  },
+  {
+   "name": "Letter of resignation (E. Bakaysa)",
+   "where": "text",
+   "quote": "e. bakaysa provided a letter of resignation"
+  },
+  {
+   "name": "Letter to the Board of Selectmen (C. Fleck)",
+   "where": "text",
+   "quote": "c. fleck will prepare a letter to the board of selectmen"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "master plan",
+  "housing production plan",
+  "transportation element",
+  "economic development element",
+  "board reorganization",
+  "solar administrative changes",
+  "highfield village",
+  "village district bylaw",
+  "member resignation",
+  "school building committee",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

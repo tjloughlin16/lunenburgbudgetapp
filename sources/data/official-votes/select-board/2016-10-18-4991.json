@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-10-18",
  "docid": "4991",
@@ -12,46 +12,535 @@
  },
  "votes": [
   {
-   "motion": "Approve use of the T.C. Passion Building for the Lunenburg Family Giftmart",
+   "motion": "Approve use of the T.C. Passion Building for the Lunenburg Family Giftmart as outlined.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\"d: t. alonzo to approve use of the t.c. passion building for the lunenburg family giftmart as outlined vote: all in favor"
+   "quote": "to approve use of the t.c. passion building for the lunenburg family giftmart as outlined vote: all in favor"
   },
   {
-   "motion": "Declare the Middle/High School rooftop space surplus and request approval from the Commissioner of Elementary and Secondary Education for leasing the space for a solar project",
-   "moved_by": "T. Alonzo",
+   "motion": "Open the warrant for a Special Town Meeting on November 28, 2016 and close it on Tuesday, October 25 at 6:00 p.m.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to open the warrant for a special town meeting on november 28'2016 and close it on tuesday, october 25 at 6:00 p.m."
+  },
+  {
+   "motion": "Declare the Middle/High School rooftop space surplus and send a letter to the Commissioner of Elementary and Secondary Education requesting approval for leasing that space.",
+   "moved_by": "1. Alonzo",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: 1. alonzo 2': p. luck that the middle/high school rooftop space be declared surplus and the leasing of that space for the purpose intended will not interfere with educational programs, and that a letter be sent to the commissioner of elementary and secondary education requesting approval for the leasing of the surplus space on the roof of the lunenburg middle/high school mr. ebersole reque",
-   "quote_taken_from_text": true
+   "quote": "that the middle/high school rooftop space be declared surplus and the leasing of that space for the"
   },
   {
-   "motion": "Ratify the appointment of Shelia Craigen as temporary Accounting Clerk",
+   "motion": "Ratify the emergency appointment of Shelia Craigen as temporary Accounting Clerk.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\"d: p. bertram to ratify the appointment of shelia craigen as temporary accounting clerk vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointment of shelia craigen as temporary accounting clerk vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:33 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 10:33 p.m. vote: all in favor 2''': t. alonzo"
-  },
-  {
-   "motion": "Approve the minutes of November 4, 2014 and October 4, 2016",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes of november 4, 2014 and october 4, 2016 were approved."
+   "quote": "to adjourn the meeting at 10:33 p.m. vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR artifact in vote 3: \"1. Alonzo\" is almost certainly \"T. Alonzo\" (the pattern for all other board members is Letter-period-Name). One motion was made but withdrawn before vote (MART transportation contract): \"Mr. Ebersole withdrew his motion.\"",
- "cost_usd": 0.1389465
+ "dropped_unquoted": 0,
+ "note": "OCR text with some garbling: the Giftmart building is printed \"T.C. Passion Building\" in the motion and \"T.C. Passios\" in the public comment; the minutes date \"November 4, 2014\" is printed as is. The MART contract motion (R. Ebersole, seconded by P. Luck) was withdrawn before any vote, so it is not recorded as a vote. Vote tallies are printed only as \"All in Favor\" with no names or counts. Minutes approval and warrant signing are recorded without a motion or vote. The minutes contain no documents list heading.",
+ "cost_usd": 0.012586120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and interim town manager david marciello"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "presented on behalf of the Lunenburg Family Giftmart",
+   "status": "present",
+   "quote": "kathy murray presented on behalf of the lunenburg family giftmart to request use of the t.c. passios"
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "john londa presented an update on contract negotiations for two solar projects"
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "VHB",
+   "status": "present",
+   "quote": "ms. domigan reported the 75% plan, which means it is 90% completed"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "School Committee and School Building Committee Chairman",
+   "status": "present",
+   "quote": "mike mackin, 26 cortland circle, school committee and school building committee chairman, presented on question 2."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "resident, 82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, spoke of his grandson who lives in fitchburg"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will discuss the Summer Street-area solar contracts further at their next meeting; Solect and Borrego contract negotiations continue with the Interim Town Manager and legal counsel.",
+   "quote": "the board will discuss these further at their next meeting."
+  },
+  {
+   "decision": "Solar projects: the Board requested copies of contracts of other solar projects for comparison before the next meeting.",
+   "quote": "they requested copies of contracts of other solar projects for comparison before the next meeting."
+  },
+  {
+   "decision": "Summer Street project: the Board requested wording for the easements by the end of March in time for Annual Town Meeting approval.",
+   "quote": "the board requested wording for the easements by the end of march in time for annual town meeting approval."
+  },
+  {
+   "decision": "MART contract: discussion to continue on a future agenda; COA Director Doherty and the Finance Committee should be invited; further information on refused calls and workers' compensation cost requested before any vote.",
+   "quote": "it was requested to continue this discussion on a future agenda."
+  },
+  {
+   "decision": "Mr. Marciello to find out whether a previous MART contract has expired.",
+   "quote": "mr. marciello stated he would find out."
+  },
+  {
+   "decision": "Mr. Ebersole wanted the Council on Aging made aware of any claims to be paid, becoming public record as part of the review.",
+   "quote": "mr. ebersole wanted to make sure that the council on aging is made"
+  },
+  {
+   "decision": "Building permit fees for DPW and School Solar installations: the Board took no action.",
+   "quote": "after some discussion, the board took no action."
+  },
+  {
+   "decision": "C.61B Larkin property: the Board requested feedback from the pertinent departments; it was suggested to inform the Lunenburg Water district.",
+   "quote": "the board requested feedback from the pertinent departments."
+  },
+  {
+   "decision": "Montachusett Joint Transportation Committee (BOS) and MRPC representative: the Board decided to advertise for volunteers to represent the Board of Selectmen for both positions.",
+   "quote": "after some discussion it was decided to advertise for volunteers to represent the board of selectmen for both positions."
+  },
+  {
+   "decision": "Minutes of November 4, 2014 and October 4, 2016 were approved, and warrants were signed, without a recorded motion.",
+   "quote": "minutes of november 4, 2014 and october 4, 2016 were approved."
+  },
+  {
+   "decision": "Mr. Toale signed the Certified Copy of Votes letter to the Department of Education.",
+   "quote": "mr. toale signed the letter."
+  },
+  {
+   "decision": "Board to schedule a meeting on October 25 and cancel if the information is not ready.",
+   "quote": "they will schedule a meeting and cancel if the information is not ready by then."
+  },
+  {
+   "decision": "Town Manager interview process: the three finalists will be notified of interview times and formats for the November 8 and 15 meetings.",
+   "quote": "mr. toale stated the three finalists will be notified of their interview times"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street project construction cost",
+   "what_was_recorded": "The entire project construction cost was stated as $9.9 million, and construction phase services are not included in that figure.",
+   "figures_as_printed": [
+    "$9.9 million"
+   ],
+   "quote": "the entire project construction cost is $9.9 million right now."
+  },
+  {
+   "topic": "Summer Street change order",
+   "what_was_recorded": "Discussion of an additional cost from a change order.",
+   "figures_as_printed": [
+    "$120,000"
+   ],
+   "quote": "discussion turned to the additional cost of $120,000 due to a change order."
+  },
+  {
+   "topic": "Summer Street cost sharing",
+   "what_was_recorded": "The project cost will be distributed through all three communities.",
+   "figures_as_printed": [],
+   "quote": "the cost will be distributed through all three communities."
+  },
+  {
+   "topic": "Solar: School Building Committee funding",
+   "what_was_recorded": "School Building Committee reported funding is coming in under budget.",
+   "figures_as_printed": [
+    "$4.3 million"
+   ],
+   "quote": "the funding is coming in $4.3 million under budget."
+  },
+  {
+   "topic": "Ballot Question 2 budget impact",
+   "what_was_recorded": "Mr. Mackin said charter schools have a budget impact on the public school system.",
+   "figures_as_printed": [],
+   "quote": "public schools serve children in thirteen categories of disabilities, charter schools do not. this has a budget impact."
+  },
+  {
+   "topic": "MART van lease",
+   "what_was_recorded": "The Town would lease the vans from MART for a nominal annual fee.",
+   "figures_as_printed": [
+    "$1.00 per year"
+   ],
+   "quote": "the town will lease the vans from mart for $1.00 per year."
+  },
+  {
+   "topic": "MART reimbursement of position salary",
+   "what_was_recorded": "MART will reimburse the Town up to a percentage of the COA position's monthly salary.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "mart will reimburse the town up to 20% of this position's monthly salary."
+  },
+  {
+   "topic": "MART vs Town van operation cost comparison",
+   "what_was_recorded": "Cost estimates for MART operating the van service versus the Town operating it.",
+   "figures_as_printed": [
+    "$89,000",
+    "$80,000 to $90,000"
+   ],
+   "quote": "mart's costs would be around $89,000. lunenburg's costs would be around $80,000 to $90,000."
+  },
+  {
+   "topic": "COA van insurance claim",
+   "what_was_recorded": "The existing bill would be paid and MART would reimburse the Town up to a stated amount.",
+   "figures_as_printed": [
+    "$3,500",
+    "$2000"
+   ],
+   "quote": "mr. marciello stated the existing $3,500 bill would be paid and mart would reimburse the town up to $2000."
+  },
+  {
+   "topic": "Building permit fees for DPW and School Solar installations",
+   "what_was_recorded": "Contract states the contractor is responsible for building permit fees; no action taken.",
+   "figures_as_printed": [],
+   "quote": "he did state the contract states the contractor is responsible for building permit fees."
+  },
+  {
+   "topic": "C.61B Larkin property purchase option",
+   "what_was_recorded": "Town would pay for an impartial appraisal; property owners would pay back taxes.",
+   "figures_as_printed": [],
+   "quote": "the town would have to pay for an impartial appraisal of the property"
+  },
+  {
+   "topic": "Minutes, warrants and payments signed",
+   "what_was_recorded": "Payroll, deductions, accounts payable, construction and void payroll warrants were signed.",
+   "figures_as_printed": [
+    "$720,200.91",
+    "$163,155.11",
+    "$149,702.24",
+    "$985,713.01",
+    "-$338.01"
+   ],
+   "quote": "a payroll warrant in the amount of $720,200.91; a payroll deductions warrant in the amount of $163,155.11;"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kathy Murray",
+   "stated_role": "presented on behalf of the Lunenburg Family Giftmart",
+   "topic": "Request to use T.C. Passios Building for Giftmart event",
+   "quote": "kathy murray presented on behalf of the lunenburg family giftmart to request use of the t.c. passios"
+  },
+  {
+   "speaker": "Mike Mackin",
+   "stated_role": "School Committee and School Building Committee Chairman, speaking as a resident",
+   "topic": "Ballot Question 2 on charter schools",
+   "quote": "mr. mackin stated he was speaking as a resident."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "resident, 82 Highland Street",
+   "topic": "Ballot Question 2 on charter schools",
+   "quote": "he thanked the board and stated he agreed with mr. mackin that the subject needed"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "resident, 82 Highland Street",
+   "topic": "Solar project timing and Summer Street easement",
+   "quote": "dave rodgers, 82 highland street, stated he spoke to facilities director john londa and it would take 60 days"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Lunenburg Family Giftmart request to use T.C. Passios Building",
+   "resolution": "approved use of building",
+   "quote": "kathy murray presented on behalf of the lunenburg family giftmart to request use of the t.c. passios",
+   "tags": [
+    "facilities",
+    "public comment",
+    "charity event"
+   ]
+  },
+  {
+   "topic": "Solar projects contract negotiations update",
+   "resolution": "discussed; to return at next meeting",
+   "quote": "john londa presented an update on contract negotiations for two solar projects",
+   "tags": [
+    "solar",
+    "contracts",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Summer Street project update (VHB)",
+   "resolution": "update only; easement wording requested by end of March",
+   "quote": "ms. domigan reported the 75% plan, which means it is 90% completed",
+   "tags": [
+    "Summer Street",
+    "MassDOT",
+    "easements",
+    "costs"
+   ]
+  },
+  {
+   "topic": "Election ballot questions forum",
+   "resolution": "forum held; no action",
+   "quote": "mr. toale polled the room for interest on each of the four ballot questions.",
+   "tags": [
+    "ballot questions",
+    "charter schools"
+   ]
+  },
+  {
+   "topic": "MART proposal and MOU for COA van",
+   "resolution": "motion withdrawn; continued",
+   "quote": "this item is a transportation service contract by and between mart and the town of lunenburg.",
+   "tags": [
+    "COA",
+    "transportation",
+    "MART",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Request for Proposals for legal counsel",
+   "resolution": "discussed; no vote",
+   "quote": "mr. toale referred the board to the draft request for proposal for legal services.",
+   "tags": [
+    "legal counsel",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Waive building permit fees for DPW and School Solar",
+   "resolution": "no action",
+   "quote": "after some discussion, the board took no action.",
+   "tags": [
+    "permits",
+    "solar",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Notice of removal from C.61B at 200 Reservoir Road",
+   "resolution": "feedback requested from departments",
+   "quote": "mr. marciello stated the town has been notified that the larkin property composed of approximately 20 acres",
+   "tags": [
+    "C.61B",
+    "land",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "MJTC and MRPC representative appointments",
+   "resolution": "advertise for volunteers",
+   "quote": "after some discussion it was decided to advertise for volunteers to represent the board of selectmen for both positions.",
+   "tags": [
+    "appointments",
+    "regional committees"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant",
+   "resolution": "warrant opened, approved",
+   "quote": "to open the warrant for a special town meeting on november 28'2016 and close it on tuesday, october 25 at 6:00 p.m.",
+   "tags": [
+    "special town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Letter to Department of Education re Middle/High School rooftop lease",
+   "resolution": "approved; letter signed",
+   "quote": "that the middle/high school rooftop space be declared surplus and the leasing of that space for the",
+   "tags": [
+    "solar",
+    "school",
+    "surplus property",
+    "Borrego"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "minutes of november 4, 2014 and october 4, 2016 were approved.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only",
+   "quote": "mr. alonzo reported cable advisory committee did not have a quorum at their last meeting.",
+   "tags": [
+    "committees",
+    "school building",
+    "stormwater",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "temporary appointment ratified",
+   "quote": "mr. marciello reported he made an emergency appointment of sheila craigen as temporary",
+   "tags": [
+    "town manager",
+    "personnel",
+    "Kabob-e-licious",
+    "Meadow Wood"
+   ]
+  },
+  {
+   "topic": "Town Manager interview schedule",
+   "resolution": "discussed; schedule reviewed",
+   "quote": "mr. toale stated the three finalists will be notified of their interview times",
+   "tags": [
+    "town manager search",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "Public comment on solar timing and Summer Street easements",
+   "resolution": "comment received; no action",
+   "quote": "dave rodgers, 82 highland street, stated he spoke to facilities director john londa and it would take 60 days",
+   "tags": [
+    "public comment",
+    "solar",
+    "Summer Street"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:33 p.m.",
+   "quote": "to adjourn the meeting at 10:33 p.m. vote: all in favor",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Request for Proposal for Legal Services",
+   "where": "text",
+   "quote": "mr. toale referred the board to the draft request for proposal for legal services."
+  },
+  {
+   "name": "Transportation service contract between MART and the Town of Lunenburg",
+   "where": "text",
+   "quote": "this item is a transportation service contract by and between mart and the town of lunenburg."
+  },
+  {
+   "name": "Cost comparison of Town and MART operating the van service",
+   "where": "text",
+   "quote": "a cost comparison of the town and mart operating the van service was provided."
+  },
+  {
+   "name": "Possible warrant articles for the Special Town Meeting",
+   "where": "text",
+   "quote": "mr. marciello presented some possible warrant articles for the special town meeting."
+  },
+  {
+   "name": "Letter to the Commissioner of Elementary and Secondary Education (Certified Copy of Votes)",
+   "where": "text",
+   "quote": "a letter needs to be sent to the commissioner of elementary and secondary education"
+  },
+  {
+   "name": "Rendering or design of the solar array on the school",
+   "where": "text",
+   "quote": "mr. ebersole requested a rendering or design illustrating how the solar array will look on the school."
+  },
+  {
+   "name": "Copies of contracts of other solar projects",
+   "where": "text",
+   "quote": "they requested copies of contracts of other solar projects for comparison before the next meeting."
+  },
+  {
+   "name": "Draft questions for town manager applicants",
+   "where": "text",
+   "quote": "the board reviewed draft questions for the applicants."
+  },
+  {
+   "name": "Notice of removal from Chapter 61B, 200 Reservoir Road (Larkin property)",
+   "where": "text",
+   "quote": "mr. marciello stated the town has been notified that the larkin property composed of approximately 20 acres"
+  },
+  {
+   "name": "Meeting notes formatting",
+   "where": "text",
+   "quote": "mr. marciello presented meeting notes formatting to the board."
+  }
+ ],
+ "tags": [
+  "select board",
+  "solar",
+  "Summer Street",
+  "MART transportation",
+  "council on aging",
+  "special town meeting",
+  "ballot questions",
+  "charter schools",
+  "town manager search",
+  "warrants",
+  "legal counsel RFP",
+  "C.61B land",
+  "school building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

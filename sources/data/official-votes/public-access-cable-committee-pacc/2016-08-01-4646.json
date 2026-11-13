@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-08-01",
  "docid": "4646",
@@ -12,23 +12,182 @@
  },
  "votes": [
   {
-   "motion": "Steve Walker to stay as chair and Jeff Bajko to stay as secretary",
+   "motion": "Faith Beal to be moved that Steve Walker stay as chair and Jeff Bajko stay as Secretary.",
    "moved_by": "Faith Beal",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "faith beal made a motion for steve walker to stay as chair, and jeff bajko to stay as secretary. steve walker motioned faith beal to be vice-chairman. 4. the committee agreed to the motio",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "faith beal made a motion for steve walker to stay as chair, and jeff bajko to stay as secretary."
   },
   {
-   "motion": "Faith Beal to be Vice-Chairman",
+   "motion": "Steve Walker moved that Faith Beal be Vice-Chairman.",
    "moved_by": "Steve Walker",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "steve walker motioned faith beal to be vice-chairman. 4. the committee agreed to the motio",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1094785
+ "dropped_unquoted": 1,
+ "note": "Text-only minutes, not a scan. Both officer motions are recorded as \"The committee agreed to the motions\" with no tally, so outcome is recorded as passed without a count. No motion appears for approving or deferring the prior minutes (only \"will review... next meeting\"), for adjournment, or for any budget action, so none is recorded as a vote. The \"Public comments\" heading lists committee business, not named public speakers, so public_comment is empty. The officer motion names the member as \"Faith Beal\" and the roll call as \"Faith Beall\"; recorded as printed in each place. No document list is printed. The coordinator's report contains a stray item in the topic tags that I should not have included; tags are otherwise plain. Minutes signed by Jeffrey Bajko, PACC Clerk, dated 9/15/16.",
+ "cost_usd": 0.00405942,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member (signed as PACC Clerk)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee deferred review and approval of the minutes of 7.11.16 and 7.25.16 to the next meeting.",
+   "quote": "committee will review and approve minutes next meeting."
+  },
+  {
+   "decision": "Steve Walker will talk to the town accountant to find out how to add funding to the missing FY17 line item.",
+   "quote": "steve will talk to the town accountant to find out how to add funding to the missing line item."
+  },
+  {
+   "decision": "Committee will review the draft budget plan presented by Steve and discuss it at the next meeting.",
+   "quote": "steve presented a draft of the budget plan to the committee and would like the committee to review to discuss at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY16 final year-end number",
+   "what_was_recorded": "The coordinator's monthly report gave the final year-end number.",
+   "figures_as_printed": [
+    "$273,235.70"
+   ],
+   "quote": "final year end number is$273,235.70."
+  },
+  {
+   "topic": "Ending balance",
+   "what_was_recorded": "The coordinator's monthly report gave the ending balance.",
+   "figures_as_printed": [
+    "$271,798.93"
+   ],
+   "quote": "ending balance is $271,798.93."
+  },
+  {
+   "topic": "Wireless microphones purchase",
+   "what_was_recorded": "Jo sent an email to Access TV about the committee's interest in buying wireless microphones; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "jo sent an email to mike from access tv about our interest in buying wireless microphones."
+  },
+  {
+   "topic": "FY17 budget line items",
+   "what_was_recorded": "The town accountant did not approve the FY17 budget line items the PACC approved, leaving a missing line item to be funded; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the town accountant did not approve the line items for fy17 budget that the pacc approved."
+  },
+  {
+   "topic": "State filing of public access budget",
+   "what_was_recorded": "The public access budget needs to be filed with the state; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the public access budget needs to be filed with the state."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "tags": [
+    "roll call",
+    "quorum"
+   ],
+   "quote": "meeting called to order at 6:17pm."
+  },
+  {
+   "topic": "Public comments and election of officers",
+   "resolution": "officers confirmed: Steve Walker chair, Jeff Bajko secretary, Faith Beall vice-chair",
+   "tags": [
+    "officers",
+    "letter",
+    "public comment"
+   ],
+   "quote": "faith beal made a motion for steve walker to stay as chair, and jeff bajko to stay as secretary."
+  },
+  {
+   "topic": "Review and approve minutes of 7.11.16 and 7.25.16",
+   "resolution": "deferred to next meeting",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "committee will review and approve minutes next meeting."
+  },
+  {
+   "topic": "CAC and budget update",
+   "resolution": "continued; Steve to contact town accountant; draft budget to be reviewed next meeting",
+   "tags": [
+    "FY17 budget",
+    "CAC",
+    "state filing"
+   ],
+   "quote": "the town accountant did not approve the line items for fy17 budget that the pacc approved."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:10pm; next meeting Sept. 12",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 7:10pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter written to Bob Ebersole with concerns of the PAC",
+   "where": "text",
+   "quote": "a letter written to bob ebersole with concerns of the pac was discussed by the committee."
+  },
+  {
+   "name": "Email from Jo to Mike from Access TV about wireless microphones",
+   "where": "text",
+   "quote": "jo sent an email to mike from access tv about our interest in buying wireless microphones."
+  },
+  {
+   "name": "Draft budget plan (presented by Steve)",
+   "where": "text",
+   "quote": "steve presented a draft of the budget plan to the committee and would like the committee to review to discuss at the next meeting."
+  }
+ ],
+ "tags": [
+  "public access",
+  "cable committee",
+  "officers",
+  "FY17 budget",
+  "programming",
+  "minutes deferred",
+  "wireless microphones"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

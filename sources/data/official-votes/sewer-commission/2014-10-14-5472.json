@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-10-14",
  "docid": "5472",
@@ -12,57 +12,475 @@
  },
  "votes": [
   {
-   "motion": "Collect $26,000 from Dan Proctor and release holdbacks at specified milestones for the 42 Highland Avenue private sewer extension",
-   "moved_by": "Mike Nault",
-   "seconded_by": "Dave MacDonald",
+   "motion": "Approve the Highland Ave. milestones per the counsel document: collect $26,000 from Dan and release the Step 2 and Step 3 holdbacks of $8,000 each and Step 4 of $7,600, leaving $2,400 on account for the year's warranty, with Jack's approval.",
+   "moved_by": "Mike",
+   "seconded_by": "Dave",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mike made the motion to collect $26,000 from dan and release the holdback for step 2 of $8,000, and step 3 of $8, 000, step 4 being $7,600, leaving $2,400 on account for the year's warranty with jack's approval. dave s econded. commission discussed com",
-   "quote_taken_from_text": true
+   "quote": "mike made the motion to collect $26,000 from dan and release the holdback for step 2 of $8,000"
   },
   {
-   "motion": "Approve the sewer extension at 42 Highland Avenue according to the plans received",
-   "moved_by": "Troy Daniels",
-   "seconded_by": "Butch Bilotta",
+   "motion": "Approve the sewer extension according to the plans received.",
+   "moved_by": "Troy",
+   "seconded_by": "Butch",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "troy made the motion to approve the sewer extension, according to the plans received, butch seconded. no further discussion. vote taken was unanimous."
+   "quote": "troy made the motion to approve the sewer extension, according to the plans received, butch seconded."
   },
   {
-   "motion": "Accept 214 Cross Road as part of the SRF project",
-   "moved_by": "Dave MacDonald",
-   "seconded_by": "Troy Daniels",
+   "motion": "Accept 214 Cross Road as part of the SRF project.",
+   "moved_by": "Dave",
+   "seconded_by": "Troy",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "dave made the motion to accept 214 cross road as part of the srf proje ct. troy seconded. vote taken was unanimous."
+   "quote": "dave made the motion to accept 214 cross road as part of the srf proje ct. troy seconded."
   },
   {
-   "motion": "Approve the minutes of September 16, 2014",
-   "moved_by": "Troy Daniels",
-   "seconded_by": "Dave MacDonald",
+   "motion": "Approve the minutes of 9/16/14.",
+   "moved_by": "Troy",
+   "seconded_by": "Dave",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "carl confirmed we had the members present and asked that if everyone had reviewed the minutes, he would request a motion to approve the minutes of 9/16/14. troy made the motion, dav e seconded. vote taken was unanimous."
+   "quote": "he would request a motion to approve the minutes of 9/16/14. troy made the motion, dav e seconded. vote taken was unanimous."
   },
   {
-   "motion": "Approve the minutes of September 30, 2014 with amendment removing Mike Nault as attending",
-   "moved_by": "Troy Daniels",
-   "seconded_by": "Dave MacDonald",
+   "motion": "Approve the minutes of 9/30 with the amendment removing Mike Nault as attending.",
+   "moved_by": "Troy",
+   "seconded_by": "Dave",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "troy made the motion to approve the minutes of 9/30 with the amendment removing mik e nault as attending. dave seconded. vote taken was unanimous",
-   "quote_taken_from_text": true
+   "quote": "troy made the motion to approve the minutes of 9/30 with the amendment removing mik e nault as attending. dave seconded."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Troy Daniels",
-   "seconded_by": "Mike Nault",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Troy",
+   "seconded_by": "Mike",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "carl asked for a motion to adjourn. troy made the motion, mike seconded. vote taken was unanimous."
+   "quote": "troy made the motion, mike seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are from a Sewer Commission meeting. All votes recorded with \"Vote taken was unanimous.\" Names appear as listed in the attendee roster at top of minutes.",
- "cost_usd": 0.1308605
+ "note": "Text is a layout-extracted transcript with word-break artifacts (e.g., \"proje ct\", \"Mik e\", \"Dave MacDonal d\"); names and quotes are kept as printed, with double spaces collapsed. Votes are recorded only as \"unanimous\" with no vote counts. Jack, Debbie, Henry Albro, Dan Hill, Ilana, and Terri Burchfield are mentioned but not recorded as attending. The minutes contain no separate documents list heading.",
+ "cost_usd": 0.013821920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair-carl luck; members: dave macdonal d, troy daniels, mike nault, butch bilotta."
+  },
+  {
+   "name": "Dave MacDonal d",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair-carl luck; members: dave macdonal d, troy daniels, mike nault, butch bilotta."
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair-carl luck; members: dave macdonal d, troy daniels, mike nault, butch bilotta."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair-carl luck; members: dave macdonal d, troy daniels, mike nault, butch bilotta."
+  },
+  {
+   "name": "Butch Bilotta",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair-carl luck; members: dave macdonal d, troy daniels, mike nault, butch bilotta."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager: barb lefebvre"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "contractor for the 4 2 Highland Ave. private sewer extension",
+   "status": "present",
+   "quote": "carl introduced dan proctor, contractor for the 4 2 highland ave."
+  },
+  {
+   "name": "Stephen Keating",
+   "role": "Guest, 236 Cross Rd.",
+   "status": "present",
+   "quote": "mr. keating from 236 cross rd. was present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission will not support changing the SSA unless it is shown that septic is not possible; applicant must do perc tests, get a Board of Health letter, then seek Town Meeting approval.",
+   "quote": "carl added that at this poin t unless it is not possible to put in septic, the commission would not support changing the ssa."
+  },
+  {
+   "decision": "Carl asked Mr. Keating to advise when the perc tests are done so Carl can witness them.",
+   "quote": "carl asked that mr. keating advise when the perc tests are done so he can come witness"
+  },
+  {
+   "decision": "Troy to check Town policies and Mass. General Law on disconnecting service and bring a policy on fines to the Commission at the next meeting; a letter then goes to the homeowner and lien holder.",
+   "quote": "troy will ch eck our policies and mass. general law, see if it is written anywhere"
+  },
+  {
+   "decision": "Send a letter to the homeowner and lien holder, and advise the Board of Health regarding 21 John St.",
+   "quote": "then we'll send a letter to the homeowner a nd lien holder."
+  },
+  {
+   "decision": "Jack to complete work on the depressed manhole once 37 Graham St. work is done.",
+   "quote": "jack to complete work on depressed manhole when 37 graham work done."
+  },
+  {
+   "decision": "Barb to send Weston & Sampson a letter asking them to apply what worked in the spring I/I project to the next focus area, with a presentation in December or January.",
+   "quote": "barb w ill send weston & sampson a letter, asking to take what was successful from the spring i/i project"
+  },
+  {
+   "decision": "Carl to review the billing process with Barb this week.",
+   "quote": "business systems and process improvement -carl is going to review billing process with barb this week."
+  },
+  {
+   "decision": "Carl to talk to Terri about the FY16 Capital Plan, which is not on the town's timeline.",
+   "quote": "since the money comes through the enterprise, not t he town. carl will talk to terri."
+  },
+  {
+   "decision": "Terri Burchfield to be added to the distribution list for Commission meeting packages (requested by Dave).",
+   "quote": "dave asked that terri be added to the distribution list for our meeting packages."
+  },
+  {
+   "decision": "Dan Proctor to let the Commission know when the E-one is installed; Dave wants to see the installation.",
+   "quote": "dave asked dan to let them know when the e-one is instal led. he would like to see the installation."
+  },
+  {
+   "decision": "Next meeting set for October 28 at Town Hall; November meeting set for November 18 at the DPW.",
+   "quote": "next meeting is october 28 th at town hall, and for november the meeting will be november 18 th at the dpw."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "42 Highland St. milestone releases and holdback",
+   "what_was_recorded": "Week 1 and 2 releases of $8,000 each, then the balance of $7,600 on completion, leaving $2,400 for the year's warranty.",
+   "figures_as_printed": [
+    "$8,000",
+    "$7,600",
+    "$2,400"
+   ],
+   "quote": "week 1 and 2 releases would be $8,000 each, and when complete th e balance of $7,600, leaving a balance for the year's warrant y of $2,400."
+  },
+  {
+   "topic": "Highland St. street work and erosion control",
+   "what_was_recorded": "Counsel had recommended collecting $24,000 assigned to Street Work; the Commission added Erosion Control at $2,000 because it affects the public way.",
+   "figures_as_printed": [
+    "$24,000",
+    "$2,000"
+   ],
+   "quote": "the commission discussed that the item 'erosion con trol' for $2,000 should be added as it would impact the public way."
+  },
+  {
+   "topic": "Road opening permit versus bond or deposit",
+   "what_was_recorded": "Jack prefers a Road Opening permit like Fitchburg and Leominster use, in place of the bond or deposit; Jack had suggested a $5,000 bond that would rise with job value.",
+   "figures_as_printed": [
+    "$10,000",
+    "$5,000",
+    "$5,000"
+   ],
+   "quote": "barb mentioned jack's preference for a roa d opening permit, such as fitchburg ($10,000) and le ominster ($5,000) do, in place of the bond or deposit."
+  },
+  {
+   "topic": "DPW road opening permit held by Dan Proctor",
+   "what_was_recorded": "Carl asked whether the $2,400 would be enough if the road settled and whether the Commission would have access to Dan's DPW road opening permit; Dan agreed they would.",
+   "figures_as_printed": [
+    "$2,400",
+    "$1,500"
+   ],
+   "quote": "whether we'd have acce ss to the dpw road opening permit of $1,500 that dan has with the dpw."
+  },
+  {
+   "topic": "214 Cross Road added to SRF project",
+   "what_was_recorded": "Highland Ave. contract cost of $36,000 is used as the approximate added cost for the extra 560 feet of pipe to include 214 Cross.",
+   "figures_as_printed": [
+    "$36,000"
+   ],
+   "quote": "since highland ave.'s contra ct was $36,000, we can assume that is approximately the additional cost to include 214 cross."
+  },
+  {
+   "topic": "SRF project cost change",
+   "what_was_recorded": "Costs are up because ledge was discovered, but project cost is down because the system is all low-pressure. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "the costs are up with the discovery of ledge, but proj ect cost down due to being an all low-pressure system."
+  },
+  {
+   "topic": "21 John St. fines and municipal lien",
+   "what_was_recorded": "Unpaid fines appear on the Municipal Lien certificate as monies owed to the Town; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "it does appear on municipal lien certificate as unpaid monies owed to the town."
+  },
+  {
+   "topic": "Privilege fees for FY15 tax bills",
+   "what_was_recorded": "Sewer Orders signed for privilege fees and a $75 recording fee for 70 Lesure Ave.",
+   "figures_as_printed": [
+    "$75"
+   ],
+   "quote": "1) 2 privilege fees for lancaster ave , 2) 6 privilege fees for whites woods- , 3) $75 recording fee for 70 lesure ave."
+  },
+  {
+   "topic": "Quarterly Flow Assessment invoice",
+   "what_was_recorded": "Quarterly invoice for Flow Assessment was initialed by the Chair.",
+   "figures_as_printed": [
+    "$2490"
+   ],
+   "quote": "barb had the q uarterly invoice for $2490 for flow assessment which was initialed by the chair."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Keating",
+   "stated_role": "236 Cross Rd.",
+   "topic": "Pratt St/Lakeview Ave SRF project, parcel history and septic/SSA question",
+   "quote": "mr. keating explain ed the history of the property, with marshes forming off and on th roughout property",
+   "quote_taken_from_text": true
+  }
+ ],
+ "topics": [
+  {
+   "topic": "42 Highland St. private extension",
+   "resolution": "approved milestone releases and approved sewer extension",
+   "quote": "7:00pm 42 highland st. private extension -carl introduced dan proctor, contractor for the 4 2 highland ave.",
+   "tags": [
+    "sewer extension",
+    "holdback",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Pratt St/Lakeview Ave SRF project (Keating parcel)",
+   "resolution": "discussed; applicant to do perc tests and obtain Board of Health letter; no vote",
+   "quote": "pratt st/lakeview ave srf project - mr. keating from 236 cross rd. was present.",
+   "tags": [
+    "SSA expansion",
+    "septic",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "SRF application status",
+   "resolution": "status update; Notice of Intent still pending",
+   "quote": "the srf application will be submitted to the state to morrow, october 15.",
+   "tags": [
+    "SRF project",
+    "state application"
+   ]
+  },
+  {
+   "topic": "214 Cross Road",
+   "resolution": "approved adding 214 Cross Road to SRF project",
+   "quote": "214 cross rd - commission discussed adding this lot into the project",
+   "tags": [
+    "SRF project",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Easements",
+   "resolution": "no action; Wright Pierce to address after SRF filing",
+   "quote": "nothing new on easements. wright pierce will address once the srf application is filed.",
+   "tags": [
+    "easements"
+   ]
+  },
+  {
+   "topic": "I/I Project status – 21 John St",
+   "resolution": "fines policy to be drafted by Troy for next meeting",
+   "quote": "i/i project status - 21 john st - commission discussed whether to continue to fine",
+   "tags": [
+    "fines and liens",
+    "policy"
+   ]
+  },
+  {
+   "topic": "37 Graham St. work",
+   "resolution": "DPW to perform work; no vote",
+   "quote": "37 graham st. work is to commence. per jack, work will be done b y the dpw",
+   "tags": [
+    "DPW",
+    "I/I"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Whalom Luxury Apts",
+   "resolution": "no action; no progress reported",
+   "quote": "whalom luxury apts - carl noted there is no progress since last meeting",
+   "tags": [
+    "fines and liens",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Sewer Commission Projects update – I/I reduction project",
+   "resolution": "Barb to write Weston & Sampson; no vote",
+   "quote": "sewer commission projects update-i/i reduction project - commission discussed getting the next phase going",
+   "tags": [
+    "I/I reduction",
+    "Weston & Sampson",
+    "storm drains"
+   ]
+  },
+  {
+   "topic": "Business Systems and Process Improvement",
+   "resolution": "no action; Carl to review billing with Barb",
+   "quote": "business systems and process improvement -carl is going to review billing process with barb this week.",
+   "tags": [
+    "billing"
+   ]
+  },
+  {
+   "topic": "SWSS",
+   "resolution": "no action; generator estimate still pending",
+   "quote": "swss - barb noted there is no update on the generator esti mate.",
+   "tags": [
+    "SWSS",
+    "generator"
+   ]
+  },
+  {
+   "topic": "FinCom liaison",
+   "resolution": "Terri Burchfield added to distribution list (requested)",
+   "quote": "barb noted that our new fincom liaison is terri burchfield.",
+   "tags": [
+    "FinCom",
+    "distribution list"
+   ]
+  },
+  {
+   "topic": "FY16 Capital Plan",
+   "resolution": "Carl to talk to Terri; no vote",
+   "quote": "fy16 capital plan - carl noted that the commission needs to do a capi tal plan",
+   "tags": [
+    "capital plan",
+    "enterprise"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 9/16/14 and 9/30/14 as revised",
+   "quote": "minutes - carl confirmed we had the members present and asked that if everyone had reviewed the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "privilege fee documents signed; flow assessment invoice initialed; meeting dates set",
+   "quote": "business manager report - barb noted that she needs to start the q2 billing and do nothing else to get them out by 11/1.",
+   "tags": [
+    "billing",
+    "privilege fees",
+    "Q2 billing"
+   ]
+  },
+  {
+   "topic": "Commissioners comments and adjournment",
+   "resolution": "adjourned at 9:10 pm",
+   "quote": "as there were no commissioners comments, carl asked for a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Suggested milestone schedule / document from counsel",
+   "where": "list",
+   "quote": "commiss ion was provided the suggested schedule to review and discu ssed the initial deposit with dan.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Stamped engineer's plans brought by Dan Proctor",
+   "where": "list",
+   "quote": "dave asked about stamped engineer's plans."
+  },
+  {
+   "name": "Henry Albro email verifying the 1 ½ inch line",
+   "where": "list",
+   "quote": "along with henry albro's email verifying th e 1 ½ inch line which the commission reviewed."
+  },
+  {
+   "name": "Conveyance document for homeowner signature",
+   "where": "list",
+   "quote": "and a copy of the conveyance that the homeowner wi ll need to sign"
+  },
+  {
+   "name": "Deposit slip for tri-party account",
+   "where": "text",
+   "quote": "barb p rovided dan a deposit slip to set up the tri-party account",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Wright Pierce map (Tier 1 Analysis-Figure 4-1, Phase I CWMP)",
+   "where": "text",
+   "quote": "explained the map from wright pierce (tier 1 ana lysis-figure 4-1, phase i cwmp) and specifically are a 9."
+  },
+  {
+   "name": "Letter from Mr. Keating to each commissioner after the 9/30 meeting",
+   "where": "text",
+   "quote": "he ha d sent each commissioner a letter after the 9/30 meeting."
+  },
+  {
+   "name": "SRF application",
+   "where": "text",
+   "quote": "the srf application will be submitted to the state to morrow, october 15."
+  },
+  {
+   "name": "Notice of Intent (NOI) for Conservation Commission",
+   "where": "text",
+   "quote": "only other item outstanding is the notic e of intent (noi) to be signed by conservation commission(conscom)."
+  },
+  {
+   "name": "Weston & Sampson proposal",
+   "where": "text",
+   "quote": "inviting weston & sampson to refresh their proposa l for the next step and evaluating the last one."
+  },
+  {
+   "name": "Sewer Orders and privilege fee documents",
+   "where": "text",
+   "quote": "she had privilege fee documents for commissioner's signatures, including sewer orders"
+  },
+  {
+   "name": "Sewer Assessment Statement for Whites Woods",
+   "where": "text",
+   "quote": "one sewer assessment statement to record and lien the units at whites woods ",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Quarterly invoice for Flow Assessment",
+   "where": "text",
+   "quote": "barb had the q uarterly invoice for $2490 for flow assessment which was initialed by the chair."
+  }
+ ],
+ "tags": [
+  "sewer extension",
+  "SRF project",
+  "SSA expansion",
+  "septic",
+  "I/I reduction",
+  "fines and liens",
+  "privilege fees",
+  "billing",
+  "minutes approval",
+  "capital plan",
+  "FinCom",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "commiss ion was provided the suggested schedule to review"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-11-17",
  "docid": "4951",
@@ -12,69 +12,68 @@
  },
  "votes": [
   {
-   "motion": "Approve the Eagle Scout project as presented by Steven Hoffmann",
+   "motion": "Approve the Eagle Scout project as presented by Steven Hoffmann.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2'd: t. alonzo to approve the eagle scout project as presented by steven hoffmann vote: all in favor"
+   "quote": "to approve the eagle scout project as presented by steven hoffmann vote: all in favor"
   },
   {
-   "motion": "Appoint Nancy Gray and Cathy Hennessey as the Board's designees for the Bylaw Review Committee",
+   "motion": "Appoint Nancy Gray and Cathy Hennessey as the Board's designees for the Bylaw Review Committee.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\": t. alonzo to appoint nancy gray and cathy hennessey as the board's designees for the bylaw review committee vote: all in favor"
+   "quote": "to appoint nancy gray and cathy hennessey as the board's designees for the bylaw review committee"
   },
   {
-   "motion": "Adopt the uniform tax rate as recommended by the Regional Assessors office",
+   "motion": "Adopt the uniform tax rate as recommended by the Regional Assessors office.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: r. ebersole to adopt the uniform tax rate as recommended by the regional assessors office mr. toale asked fo",
-   "quote_taken_from_text": true
+   "quote": "to adopt the uniform tax rate as recommended by the regional assessors office"
   },
   {
-   "motion": "Designate the Bylaw Review Committee as Special Municipal Employees",
+   "motion": "Designate the Bylaw Review Committee as Special Municipal Employees.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to designate the bylaw review committee as special municipal employees 2\": p. bertram vote: all in favor"
+   "procedural": false,
+   "quote": "to designate the bylaw review committee as special municipal employees"
   },
   {
-   "motion": "Approve Marco Gonzalez as Manager for the Ixtapa Cantina",
+   "motion": "Approve Marco Gonzalez as Manager for the Ixtapa Cantina.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve marco gonzalez as manager for the ixtapa cantina 2\": t. alonzo vote: all in favor"
+   "quote": "to approve marco gonzalez as manager for the ixtapa cantina"
   },
   {
-   "motion": "Approve transfer of the all alcohol license from Cosimi Corp. to Fifty Mass Ave. LLC",
+   "motion": "Approve transfer of the all alcohol license from Cosimi Corp. to Fifty Mass Ave. LLC.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"': t. alonzo to approve transfer of the all alcohol license from cosimi corp. to fifty mass ave. llc vote: all in favor"
+   "quote": "to approve transfer of the all alcohol license from cosimi corp. to fifty mass ave. llc"
   },
   {
-   "motion": "Approve the Common Victualer license for Fifty Mass Ave. LLC d/b/a The Bootlegger",
+   "motion": "Approve the Common Victualer license for Fifty Mass Ave. LLC d/b/a The Bootlegger.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the common victualer license for fifty mass ave. llc d/b/a the bootlegger 2°°: t. alonzo vote: all in favor"
+   "quote": "to approve the common victualer license for fifty mass ave. llc d/b/a the bootlegger"
   },
   {
-   "motion": "Accept Ms. Lisio's resignation with regrets and thank her for her service to the Town",
+   "motion": "Accept Rhonda Lisio's resignation with regrets and thank her for her service to the Town.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\"°: r. ebersole to accept ms. lisio's resignation with regrets and to thank her for her service to the town vote: all in favor"
+   "procedural": false,
+   "quote": "to accept ms. lisio's resignation with regrets and to thank her for her service to the town vote: all in favor"
   },
   {
    "motion": "Adjourn the meeting at 8:12 p.m.",
@@ -82,10 +81,448 @@
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:12 p.m. 2'd: t. alonzo vote: all in favor"
+   "quote": "to adjourn the meeting at 8:12 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. All votes passed unanimously (\"All in Favor\"). Board signed minutes of October 20, 2015 and several warrants but these administrative record signings are not recorded as formal votes.",
- "cost_usd": 0.09964049999999999
+ "note": "OCR text (macOS Vision) with garbled characters and typos, e.g. 'Marco ronzalez', 'Ms. Latleur', 'Mi. Cosimi', 'Ms. Lafluer'; quotes are checked against the cleaned text where line breaks collapse to single spaces. The minutes call Mr. Bertram 'Ms. Bertram' once and print 'Ms. Alonzo' for the library announcement, which I recorded as printed. The alcohol transfer hearing was suggested for continuation to December 1st, but no vote on that is recorded; the transfer itself was approved by a later motion. No documents list is printed. Attendance lines for Gonzalez and Brambila do not say whether they appeared, so status is 'not stated'.",
+ "cost_usd": 0.013734620000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Paul Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paul bertram, member; phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry lafleur, town manager."
+  },
+  {
+   "name": "Steven Hoffmann",
+   "role": "Eagle Scout project proposal presenter, Troop 1728",
+   "status": "present",
+   "quote": "the eagle scout project proposal from steven hoffmann of troop 1728."
+  },
+  {
+   "name": "Cathy Hennessey",
+   "role": "Bylaw Review Committee applicant",
+   "status": "present",
+   "quote": "cathy hennessey, 30 clifton road, came forward and reported she was asked to serve on the committee."
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Bylaw Review Committee applicant",
+   "status": "present",
+   "quote": "nancy gray, 45 rangeley road, stated she was asked by tim murphy to serve on the committee"
+  },
+  {
+   "name": "Michelle Smith",
+   "role": "Bylaw Review Committee applicant, 19 Redwood Road",
+   "status": "absent",
+   "quote": "michelle smith of 19 redwood road could not"
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "Bylaw Review Committee applicant, former town official",
+   "status": "present",
+   "quote": "mr. toale recognized robert bowen, who requested to be appointed to the bylaw review committee."
+  },
+  {
+   "name": "Sean Morrison",
+   "role": "Applicant, Fifty Mass Ave. LLC (manager on the alcohol license)",
+   "status": "present",
+   "quote": "applicants sean morrison and lance dellogono came forward and stated they were purchasing the business."
+  },
+  {
+   "name": "Lance Dellogono",
+   "role": "Applicant, Fifty Mass Ave. LLC",
+   "status": "present",
+   "quote": "applicants sean morrison and lance dellogono came forward and stated they were purchasing the business."
+  },
+  {
+   "name": "Alan Cosimi",
+   "role": "Present owner of The Bootlegger, 24 Field Road, Leominster",
+   "status": "present",
+   "quote": "alan cosimi, 24 field road, leominster, and present owner of the bootlegger, came forward and confirmed"
+  },
+  {
+   "name": "Elaine Peterson",
+   "role": "Executive Assistant",
+   "status": "not stated",
+   "quote": "executive assistant elaine peterson sent a copy of the letter via email"
+  },
+  {
+   "name": "Nicholas Felici",
+   "role": "Attorney representing Ixtapa Cantina",
+   "status": "present",
+   "quote": "attorney nicholas felici stated he represented ixtapa cantina"
+  },
+  {
+   "name": "Marco Gonzalez",
+   "role": "Proposed manager, Ixtapa Cantina",
+   "status": "not stated",
+   "quote": "attorney nicholas felici stated he represented ixtapa cantina"
+  },
+  {
+   "name": "Jaime Brambila",
+   "role": "Owner, Ixtapa Cantina",
+   "status": "not stated",
+   "quote": "and owner jaime brambila,"
+  },
+  {
+   "name": "Rebecca Boucher",
+   "role": "Associate Regional Assessor of Regional Resource Group",
+   "status": "present",
+   "quote": "rebecca boucher, associate regional assessor of regional resource group, stated she was here to present the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 6:00 pm Executive Session was postponed to a future date.",
+   "quote": "mr. toale reported the 6:00 pm executive session was postponed to a future date."
+  },
+  {
+   "decision": "Mr. Hoffmann was to drop off the Eagle Scout paperwork for Mr. Toale's signature, as beneficiary of the project.",
+   "quote": "mr. hoffmann will drop off the paperwork for mr. toale's signature."
+  },
+  {
+   "decision": "The Conservation Commission disclosures item was rescheduled to another meeting.",
+   "quote": "so this will be rescheduled to another meeting."
+  },
+  {
+   "decision": "Board members indicated they wanted to be informed of the final findings of the pending case (the applicant's OUI case) before the transfer was granted.",
+   "quote": "he would like to be informed of the final findings of the pending case."
+  },
+  {
+   "decision": "Mr. Bowen was to be appointed to the Bylaw Review Committee by the Town Moderator.",
+   "quote": "mr. bowen will be appointed by the town moderator accordingly."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2016 tax levy",
+   "what_was_recorded": "The levy to be raised for fiscal year 2016 was stated by the Assessors' representative.",
+   "quote": "the levy to be raised for fiscal year 2016 is $23,536,237.82.",
+   "figures_as_printed": [
+    "$23,536,237.82"
+   ]
+  },
+  {
+   "topic": "FY2016 tax rate",
+   "what_was_recorded": "The Board of Assessors' calculated rate for all classes of property was stated.",
+   "quote": "residential, commercial, industrial and personal property at $19.62 per thousand.",
+   "figures_as_printed": [
+    "$19.62"
+   ]
+  },
+  {
+   "topic": "Average single family home value",
+   "what_was_recorded": "The average single family home value rose from fiscal year 2015 to fiscal year 2016.",
+   "quote": "increased from $246,347 in fiscal year 2015 to $256,969 for fiscal year",
+   "figures_as_printed": [
+    "$246,347",
+    "$256,969"
+   ]
+  },
+  {
+   "topic": "Average tax bill increase",
+   "what_was_recorded": "The average tax bill rose by 11.7% between fiscal years 2015 and 2016.",
+   "quote": "the average tax bill increased by 11.7% from $4,513.08 in fiscal year 2015 to $5041.73",
+   "figures_as_printed": [
+    "11.7%",
+    "$4,513.08",
+    "$5041.73"
+   ]
+  },
+  {
+   "topic": "School project debt in tax bill",
+   "what_was_recorded": "Of the average tax bill increase, 66% came from debt repayment for the middle/high school project, amounting to $349.48 on the average bill.",
+   "quote": "of this $528.65 increase, 66% results from the debt repayment for the lunenburg middle/high school project, amounting to $349.48 on the average tax bill.",
+   "figures_as_printed": [
+    "$528.65",
+    "66%",
+    "$349.48"
+   ]
+  },
+  {
+   "topic": "Upcoming school project borrowing",
+   "what_was_recorded": "The Town has one more borrowing to do in January 2016, expected to be the bulk of the project less contingency.",
+   "quote": "the town has one additional borrowing to do, sometime in january 2016, ranging between four and six million dollars.",
+   "figures_as_printed": [
+    "four and six million dollars"
+   ]
+  },
+  {
+   "topic": "School construction change orders",
+   "what_was_recorded": "Change order #5 was reported at around $8200.00, bringing the running total of change orders to $170,000 out of a 4 million dollar contingency.",
+   "quote": "total change order is around $8200.00 bringing the running total of change orders to $170,000 out of the 4 million dollar contingency",
+   "figures_as_printed": [
+    "$8200.00",
+    "$170,000",
+    "4 million dollar"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed accounts payable, school construction, payroll and payroll deductions warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $338,946.13; school construction warrant for $2,976,960.20; payroll warrant in the amount of $722,184.63 and payroll deductions warrant in the amount of $152,581.81.",
+   "figures_as_printed": [
+    "$338,946.13",
+    "$2,976,960.20",
+    "$722,184.63",
+    "$152,581.81"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Thanks to residents; committee vacancies",
+   "quote": "mr. toale thanked the town residents who attended the special town meeting last night."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Lions Club Meat Bingo; Boys & Girls Club auction",
+   "quote": "mr. alonzo thanked everyone who attended and supported the lunenburg boys & girls club rockin' auction two weeks"
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Eagle Scout project funding; municipal partnerships conference",
+   "quote": "ms. luck stated boy scout logan marshall is still seeking funding for his eagle scout project"
+  },
+  {
+   "speaker": "Ms. Alonzo",
+   "stated_role": "",
+   "topic": "Public Library ten year anniversary",
+   "quote": "ms. alonzo announced the lunenburg public library is celebrating their ten year anniversary on december 5th"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "no action",
+   "quote": "mr. toale thanked the town residents who attended the special town meeting last night.",
+   "tags": [
+    "public comment",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Eagle Scout Project Proposal",
+   "resolution": "approved",
+   "quote": "mr. hoffmann reported his project is to build a garden and install spotlights for the flagpole at the gazebo.",
+   "tags": [
+    "eagle scout",
+    "flagpole",
+    "common"
+   ]
+  },
+  {
+   "topic": "Bylaw Review Committee Appointments",
+   "resolution": "appointed Nancy Gray and Cathy Hennessey",
+   "quote": "mr. toale moved to the bylaw review committee applicants.",
+   "tags": [
+    "appointments",
+    "bylaw review committee"
+   ]
+  },
+  {
+   "topic": "Transfer of All Alcohol License for The Bootlegger to Fifty Mass Ave. LLC",
+   "resolution": "transfer approved after CORI discussion; common victualer approved",
+   "quote": "mr. toale read the hearing notice aloud",
+   "tags": [
+    "alcohol license",
+    "hearing",
+    "CORI"
+   ]
+  },
+  {
+   "topic": "Tax Classification Hearing",
+   "resolution": "uniform tax rate adopted",
+   "quote": "rebecca boucher, associate regional assessor of regional resource group, stated she was here to present the",
+   "tags": [
+    "tax rate",
+    "hearing",
+    "levy"
+   ]
+  },
+  {
+   "topic": "Bylaw Review Committee: Special Municipal Employee designation",
+   "resolution": "designated as Special Municipal Employees; Bowen to be appointed by Moderator",
+   "quote": "mr. bowen will be appointed by the town moderator accordingly.",
+   "tags": [
+    "bylaw review committee",
+    "special municipal employees"
+   ]
+  },
+  {
+   "topic": "Change of Manager on Alcohol License for Ixtapa Cantina",
+   "resolution": "approved Marco Gonzalez as manager",
+   "quote": "change of manager on alcohol license for ixtapa cantina",
+   "tags": [
+    "alcohol license",
+    "manager"
+   ]
+  },
+  {
+   "topic": "Warrants and prior minutes",
+   "resolution": "signed warrants and October 20 minutes",
+   "quote": "the board signed an accounts payable warrant in the amount of $338,946.13",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "ms. luck reported the school committee met on november",
+   "tags": [
+    "school committee",
+    "MART",
+    "planning board",
+    "finance committee",
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "Resignation of Rhonda Lisio",
+   "resolution": "resignation accepted",
+   "quote": "mr. toale presented rhonda lisio's resignation letter effective",
+   "tags": [
+    "resignation",
+    "PACC",
+    "cable advisory committee"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action",
+   "quote": "ms. alonzo announced the lunenburg public library is celebrating their ten year anniversary on december 5th",
+   "tags": [
+    "public comment",
+    "library"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:12 p.m.",
+   "quote": "to adjourn the meeting at 8:12 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Hearing notice, Lunenburg Licensing Authority public hearing on November 17, 2015 (transfer of All Alcohol Restaurant license)",
+   "where": "text",
+   "quote": "the lunenburg licensing authority will hold a public hearing on november 17, 2015 at 7:15 pm"
+  },
+  {
+   "name": "Certificate of Organization for Fifty Mass Ave. LLC",
+   "where": "text",
+   "quote": "address discrepancies on the certificate of organization for fifty mass. ave. llc"
+  },
+  {
+   "name": "Town CORI Policy",
+   "where": "text",
+   "quote": "in accordance with the town cori policy, the applicant was notified and provided a copy of the cori and the cori policy."
+  },
+  {
+   "name": "CORI report on the applicant",
+   "where": "text",
+   "quote": "the board members reviewed the cori."
+  },
+  {
+   "name": "Letter to the applicant on the CORI finding (sent November 10)",
+   "where": "text",
+   "quote": "executive assistant elaine peterson sent a copy of the letter via email"
+  },
+  {
+   "name": "Tax classification hearing notice (FY2016)",
+   "where": "text",
+   "quote": "the board of selectmen will hold a public hearing on november 17, 2015 at 7:30"
+  },
+  {
+   "name": "Disclosures by Non-elected Municipal Employees of Financial Interest",
+   "where": "text",
+   "quote": "disclosures by non-elected municipal employees of financial interest"
+  },
+  {
+   "name": "Rhonda Lisio resignation letter",
+   "where": "text",
+   "quote": "presented rhonda lisio's resignation letter effective"
+  },
+  {
+   "name": "Eagle Scout project proposal from Steven Hoffmann of Troop 1728",
+   "where": "text",
+   "quote": "the eagle scout project proposal from steven hoffmann of troop 1728."
+  },
+  {
+   "name": "Draft fiscal year 2015 financial audit",
+   "where": "text",
+   "quote": "she received drafts of the fiscal year 2015 financial audit today"
+  },
+  {
+   "name": "Accounts payable and other warrants",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $338,946.13"
+  },
+  {
+   "name": "Minutes of October 20, 2015",
+   "where": "text",
+   "quote": "the board signed the minutes of october 20, 2015."
+  }
+ ],
+ "tags": [
+  "alcohol license",
+  "tax rate",
+  "bylaw review committee",
+  "appointments",
+  "eagle scout",
+  "school construction",
+  "warrants",
+  "resignation",
+  "special municipal employees",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

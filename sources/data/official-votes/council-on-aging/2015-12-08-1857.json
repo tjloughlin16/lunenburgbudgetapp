@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2015-12-08",
  "docid": "1857",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the November 10, 2015 meeting",
+   "motion": "Approve the minutes of the November 10, 2015 meeting.",
    "moved_by": "Betty DiGiacomo",
    "seconded_by": "Ms. Dwyer",
    "outcome": "passed unanimously",
@@ -20,15 +20,322 @@
    "quote": "betty digiacomo motioned to approve the minutes from the november 10, 2015 meeting, ms. dwyer seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:32 a.m.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Dwyer",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. digiacomo moved to adjourn the meeting, ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "at 10:32 a.m. ms. digiacomo moved to adjourn the meeting, ms. dwyer seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0916485
+ "note": "Text is a plain extraction, not a scan; votes are fully recorded. Minutes are marked 'Approved at COA meeting 1/12/16'. No roll-call tallies printed. The minutes print no documents list. Several people named only in passing (e.g., Faith Anderson, Jack Rodriquenz, Kit Walker, Jim Breault, Luke Marshall) were not recorded as taking part, so they are excluded from attendees.",
+ "cost_usd": 0.0069960199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Brian Guenard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), susan doherty (director) jacquelyn dwyer, brian guenard , debbie lincoln, sarah grant, diane nowd, betty digiacomo, kevin mcnally, judy tarbell, cheryl moisan, and jane rabbitt."
+  },
+  {
+   "name": "Cheryl Aubuchon",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: cheryl aubuchon, eagle house supporters, and phyllis luck, board of selectmen."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "guests: cheryl aubuchon, eagle house supporters, and phyllis luck, board of selectmen."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Lincoln suggested that board members think of other projects to discuss at the next COA meeting (re: Eagle Scout project).",
+   "quote": "mr. lincoln suggested that board members think of other projects to discuss at the next coa meeting."
+  },
+  {
+   "decision": "If the Eagle House is closed on the day of a COA meeting, the board will meet the following Tuesday.",
+   "quote": "mr. lincoln commented that if the eagle house is closed on the day of a coa meeting, the board will meet the following tuesday."
+  },
+  {
+   "decision": "Ms. Dwyer asked that copies of the comments and suggestions from the COA board training session be made available.",
+   "quote": "jacquelyn dwyer asked that copies of the comments and suggestions made at the training session be made available."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fiscal Year 2017 COA budget",
+   "what_was_recorded": "The COA budget is due December 31, 2015; Ms. Doherty said it mostly consists of employee wages, Meals on Wheels driver mileage, and training education fees. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the budget for coa will be due december 31, 2015."
+  },
+  {
+   "topic": "Eagle House back-up generator",
+   "what_was_recorded": "A proper back-up generator for the Eagle House was determined to cost around the figure shown; past generator requests were unsuccessful and DPW runs the Eagle House capital plan.",
+   "figures_as_printed": [
+    "$31,000"
+   ],
+   "quote": "it has been determined that a proper back-up generator for the eagle house would cost around $31,000."
+  },
+  {
+   "topic": "Meals on Wheels driver weekly mileage stipend",
+   "what_was_recorded": "Starting January 1, 2016, Meals on Wheels drivers will get a weekly mileage stipend regardless of trips, expected to keep drivers under the income tax threshold.",
+   "figures_as_printed": [
+    "$11.50",
+    "$600"
+   ],
+   "quote": "meals on wheels drivers will be paid a weekly stipend of $11.50 for mileage regardless of how many trips they make, which will keep the drivers under the $600 threshold for income tax."
+  },
+  {
+   "topic": "Meals on Wheels per-trip pay and 2015 driver earnings",
+   "what_was_recorded": "Drivers are currently paid per delivery trip from the Eagle House, and some drivers earned over the stated amount in 2015, leading to income taxation.",
+   "figures_as_printed": [
+    "$15.00",
+    "$1,000"
+   ],
+   "quote": "currently, drivers are being paid $15.00 for each time they deliver meals from the eagle house; therefore some drivers have made over $1,000 in 2015."
+  },
+  {
+   "topic": "Eagle House Supporters fundraising",
+   "what_was_recorded": "Ms. Aubuchon said the Eagle House Supporters raised more money this year than in 2014; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. aubuchon commented that the eagle house supporters raised more money this year than in 2014."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Board of Selectmen",
+   "topic": "Event scheduling overlap and collaborating to advertise events",
+   "quote": "ms. luck commented that the girl scouts held their pancake breakfast on the same day as the christmas boutique at the eagle house"
+  },
+  {
+   "speaker": "Cheryl Aubuchon",
+   "stated_role": "Eagle House Supporters",
+   "topic": "Possible change from Christmas Boutique to Spring Fair",
+   "quote": "cheryl aubuchon of the eagle house supporters said she was entertaining the idea of changing the christmas boutique to a spring fair."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "debbie lincoln said she attended the matinee of the lhs play \"a date with judy\" and said she saw about 15 seniors there.",
+   "tags": [
+    "announcements",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Minutes approval (November 10, 2015)",
+   "resolution": "approved",
+   "quote": "betty digiacomo motioned to approve the minutes from the november 10, 2015 meeting, ms. dwyer seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report: Fiscal Year 2017 Budget",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that she attended the town manager's five-year financial forecast, and shared the document with the rest of the board members.",
+   "tags": [
+    "budget",
+    "FY2017"
+   ]
+  },
+  {
+   "topic": "Property Tax Work-Off Committee",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that the applications are ready, and she has already received 3 completed applications.",
+   "tags": [
+    "property tax work-off",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Building Repair Progress/Furnace",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that she spoke with jack rodriquenz, kit walker, and jim breault about treating the furnace with antifreeze",
+   "tags": [
+    "building repair",
+    "furnace",
+    "generator"
+   ]
+  },
+  {
+   "topic": "RUOK Program/Grant",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that she was invited back for the second round, and that she will know by mid-january whether the grant will be awarded.",
+   "tags": [
+    "grant"
+   ]
+  },
+  {
+   "topic": "Fitchburg State University Community Read",
+   "resolution": "no action",
+   "quote": "for march, which is recognized as women's history month, the council on aging and the lunenburg public library will team up to present a documentary",
+   "tags": [
+    "programs",
+    "library"
+   ]
+  },
+  {
+   "topic": "Current Events",
+   "resolution": "no action",
+   "quote": "some meals on wheels drivers are now being taxed on their income since they were given a raise last summer.",
+   "tags": [
+    "meals on wheels",
+    "programs",
+    "events"
+   ]
+  },
+  {
+   "topic": "COA Board Training",
+   "resolution": "no action",
+   "quote": "mr. lincoln commented that the coa board training session on november 16 was outstanding",
+   "tags": [
+    "training"
+   ]
+  },
+  {
+   "topic": "Recreation Area",
+   "resolution": "no action",
+   "quote": "the shed for outdoor equipment is finished and ready to use.",
+   "tags": [
+    "recreation area",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Notes & Communications",
+   "resolution": "no action",
+   "quote": "ms. doherty reported that the name of the eagle house newsletter has changed from senior spirit to the eagle flyer",
+   "tags": [
+    "newsletter",
+    "communications",
+    "inclement weather"
+   ]
+  },
+  {
+   "topic": "Board Comment",
+   "resolution": "no action",
+   "quote": "mr. lincoln pointed out that this is the first time he's seen a member of the lunenburg board of selectmen at a coa meeting.",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "ms. luck commented that the girl scouts held their pancake breakfast on the same day as the christmas boutique at the eagle house",
+   "tags": [
+    "public comment",
+    "events"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:32 a.m.",
+   "quote": "at 10:32 a.m. ms. digiacomo moved to adjourn the meeting, ms. dwyer seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager’s Five-Year Financial Forecast",
+   "where": "text",
+   "quote": "ms. doherty reported that she attended the town manager's five-year financial forecast, and shared the document with the rest of the board members."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "meals on wheels",
+  "budget",
+  "fy2017",
+  "building repair",
+  "generator",
+  "senior programs",
+  "volunteers",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

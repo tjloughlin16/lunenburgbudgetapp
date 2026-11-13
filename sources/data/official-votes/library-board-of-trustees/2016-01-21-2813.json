@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-01-21",
  "docid": "2813",
@@ -12,43 +12,394 @@
  },
  "votes": [
   {
-   "motion": "accept the December 17, 2015 minutes as presented",
-   "moved_by": "Harry",
-   "seconded_by": "Donna",
-   "outcome": "passed 6-0",
+   "motion": "Accept the minutes of December 17, 2015 as presented.",
+   "moved_by": "Harry Kubetz",
+   "seconded_by": "Donna Saiia",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "harry moved to accept the minutes as presented, don na second. vote by roll call: dick mailloux, harry kubetz, kii rja paananen, donna saiia, susan visser, lars widst rand: all in fav",
-   "quote_taken_from_text": true
+   "quote": "harry moved to accept the minutes as presented"
   },
   {
-   "motion": "approve the presentation of the FY16-17 Draft Budget to Town Manager Kerry LaFleur",
-   "moved_by": "Susan",
-   "seconded_by": "Kiirja",
-   "outcome": "passed 6-0",
+   "motion": "Approve the presentation of the FY16-17 draft budget to Town Manager Kerry LaFleur.",
+   "moved_by": "Susan Visser",
+   "seconded_by": "Kiirja Paananen",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion to approve the presentation of the budget to town manager kerry lafleur. susan made the motion, kiirja second. vote by roll call: dick mailloux, harry kubetz, kiirja paananen, donna saiia, susan visser, lars widstrand : all in favor",
-   "quote_taken_from_text": true
+   "quote": "susan made the motion, kiirja second."
   },
   {
-   "motion": "accept the skateboard prohibition wording into the Child Safety Policy",
-   "moved_by": "Lars",
-   "seconded_by": "Donna",
-   "outcome": "passed 6-0",
+   "motion": "Accept the quoted wording on skateboards and other recreational equipment into the Child Safety Policy.",
+   "moved_by": "Lars Widstrand",
+   "seconded_by": "Donna Saiia",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion to accept the quoted wording (above) into th e child safety policy. so moved by lars, donna sec ond. vote by roll call: dick mailloux, harry kubetz, kii rja paananen, donna saiia, susan visser, lars widst rand: all in fa",
-   "quote_taken_from_text": true
+   "quote": "motion to accept the quoted wording (above)"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Lars",
-   "seconded_by": "Donna",
-   "outcome": "passed 6-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Lars Widstrand",
+   "seconded_by": "Donna Saiia",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn, so moved by lars, second by donn a. vote by roll call: dick mailloux, harry kubetz, kiirja paananen, donna saiia, susan visser, lars widstrand : all in favor at 8:30 p.",
-   "quote_taken_from_text": true
+   "quote": "motion to adjourn, so moved by lars"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09250050000000001
+ "note": "Text is a PDF extraction with split words (e.g., \"v ideo\", \"Viss er\", \"agen da\") and collapsed line breaks; quotes were chosen to avoid split spots. Referenced-documents list names \"LPLBoT Agenda for January 21, 2015\" (year as printed, meeting is 2016). Roll-call votes printed as \"all in favor\" with no count. Adjourn motion prints second as \"Donn a\", recorded here as Donna Saiia. No public comment speakers recorded. Reports, trust funds and room use had no recorded votes.",
+ "cost_usd": 0.00827112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "by chairperson dick mailloux"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "remote",
+   "quote": "harry kubetz participated via video link"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz via remote v ideo link, kiirja paananen"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "kiirja paananen, donna saiia"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "",
+   "status": "present",
+   "quote": "susan made the motion, kiirja second."
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "martha moore - director, lpl"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "present",
+   "quote": "martha moore - director, lpl; bob ebersole"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: gare thompson; terri burchfield, fincom rep resentative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: gare thompson; terri burchfield, fincom rep resentative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Donna Saiia volunteered to create a merged room use policy document, with redlining, for trustee review.",
+   "quote": "donna volunteered to create a merged policy documen"
+  },
+  {
+   "decision": "The new Room Use Policy will be added to the April agenda for discussion.",
+   "quote": "the new room use policy will be added to april"
+  },
+  {
+   "decision": "Dick Mailloux will mail out the director's evaluation form to the trustees.",
+   "quote": "dick will mail out the evaluation form"
+  },
+  {
+   "decision": "Director's evaluations to be completed by 3/17 and turned in to Dick by 3/17; personnel subcommittee to present a summary at the April meeting, with final acceptance at May and completion by June.",
+   "quote": "the evaluations to be complete by 3/17"
+  },
+  {
+   "decision": "Use of Trust Funds to be placed on the March agenda.",
+   "quote": "use of trust funds to be placed on the march"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Operating budget status, January 2016",
+   "what_was_recorded": "Director reported year-to-date spending around 50 percent, on track, with some lines slightly above or below mostly due to quarterly bills.",
+   "figures_as_printed": [
+    "around 50%"
+   ],
+   "quote": "budget - jan-16, ytd at around 50%"
+  },
+  {
+   "topic": "FY16-17 draft budget",
+   "what_was_recorded": "The FY16-17 draft budget was presented per handout and the board voted to present it to the Town Manager.",
+   "figures_as_printed": [],
+   "quote": "fy16-17 draft budget-presented per handout"
+  },
+  {
+   "topic": "Carpeting replacement and painting coordination",
+   "what_was_recorded": "Carpet replacement in the main room should be coordinated with painting to save effort and cost of moving books.",
+   "figures_as_printed": [],
+   "quote": "if performed at the same time, it would save [effort and cost] of moving books."
+  },
+  {
+   "topic": "Library trust funds",
+   "what_was_recorded": "Suggestion to spend 5% of the accumulated interest on approved items such as books.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "one suggestion from martha is to spend 5% of the accumu lated interes",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Lending of non-traditional library items",
+   "what_was_recorded": "Trustees asked to consider financial responsibility for repair or replacement of lent equipment and overall funding.",
+   "figures_as_printed": [],
+   "quote": "finan cial responsibility (if it breaks: repair / replacement)",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "public comment o no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved December 17, 2015 minutes",
+   "quote": "harry moved to accept the minutes as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received and discussed",
+   "quote": "director's report, as per handout",
+   "tags": [
+    "director",
+    "building",
+    "staff",
+    "programs"
+   ]
+  },
+  {
+   "topic": "FY16-17 Draft Budget",
+   "resolution": "approved presentation to Town Manager",
+   "quote": "susan made the motion, kiirja second.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "YA librarian report",
+   "resolution": "distributed and discussed",
+   "quote": "ya librarian report distributed and discussed.",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Children's librarian report",
+   "resolution": "distributed and discussed",
+   "quote": "children's librarian report distributed",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Library Trust Funds",
+   "resolution": "research presented; no vote; use of funds to March agenda",
+   "quote": "the prese nted spreadsheet represents the research results.",
+   "tags": [
+    "trust funds",
+    "budget"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Child Safety Policy",
+   "resolution": "approved wording",
+   "quote": "motion to accept the quoted wording (above)",
+   "tags": [
+    "policy",
+    "child safety"
+   ]
+  },
+  {
+   "topic": "Room use by non-profit entities",
+   "resolution": "continued; merged policy draft assigned, to April agenda",
+   "quote": "the new room use policy will be added to april",
+   "tags": [
+    "policy",
+    "room use"
+   ]
+  },
+  {
+   "topic": "Director's performance evaluation",
+   "resolution": "timeline set; ongoing",
+   "quote": "dick will mail out the evaluation form",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received",
+   "quote": "dick attended meeting at the early onset",
+   "tags": [
+    "friends of library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Town Caucus and elections",
+   "resolution": "informational",
+   "quote": "for the trustees, there will be two ea. three-year positions",
+   "tags": [
+    "elections"
+   ]
+  },
+  {
+   "topic": "Lending of non-traditional library items",
+   "resolution": "discussion; no action",
+   "quote": "for the trustees to ponder: how and what we could",
+   "tags": [
+    "lending",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "board comments o no board comments",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "noted",
+   "quote": "use of trust funds to be placed on the march",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "no action",
+   "quote": "other o no \"other\" items.",
+   "tags": [
+    "other"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:30 p.m.",
+   "quote": "motion to adjourn, so moved by lars",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for January 21, 2015",
+   "where": "list",
+   "quote": "lplbot agenda for january 21, 2015 director's report ya report children's librarian report bpl policy"
+  },
+  {
+   "name": "Director's report",
+   "where": "list",
+   "quote": "lplbot agenda for january 21, 2015 director's report ya report children's librarian report bpl policy"
+  },
+  {
+   "name": "YA report",
+   "where": "list",
+   "quote": "lplbot agenda for january 21, 2015 director's report ya report children's librarian report bpl policy"
+  },
+  {
+   "name": "Children's librarian report",
+   "where": "list",
+   "quote": "lplbot agenda for january 21, 2015 director's report ya report children's librarian report bpl policy"
+  },
+  {
+   "name": "BPL policy",
+   "where": "list",
+   "quote": "lplbot agenda for january 21, 2015 director's report ya report children's librarian report bpl policy"
+  },
+  {
+   "name": "Capital planning handout submitted by DPW",
+   "where": "text",
+   "quote": "per separate handout, submitted by dpw to town for consideration."
+  },
+  {
+   "name": "FY16-17 Draft Budget handout",
+   "where": "text",
+   "quote": "fy16-17 draft budget-presented per handout"
+  },
+  {
+   "name": "Library trust funds research spreadsheet (Doug and Barbara Fleming)",
+   "where": "text",
+   "quote": "the prese nted spreadsheet represents the research results.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Guardian Energy technical report",
+   "where": "text",
+   "quote": "guardian energy has provided a very detailed"
+  },
+  {
+   "name": "LED lights proposal submitted to the Green Committee",
+   "where": "text",
+   "quote": "martha submitted to the green committee, the (final ?) proposal about the led lights."
+  },
+  {
+   "name": "Room Use Policy (merged draft)",
+   "where": "text",
+   "quote": "the new room use policy will be added to april"
+  },
+  {
+   "name": "Director's performance evaluation form",
+   "where": "text",
+   "quote": "dick will mail out the evaluation form"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "FY16-17 budget",
+  "child safety policy",
+  "room use policy",
+  "trust funds",
+  "director evaluation",
+  "lending non-traditional items",
+  "building maintenance",
+  "town caucus",
+  "friends of library"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

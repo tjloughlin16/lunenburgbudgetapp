@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "zoning-board-of-appeals",
  "meeting_date": "2014-09-10",
  "docid": "5936",
@@ -12,6 +12,379 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. This document is a public hearing transcript from a Zoning Board of Appeals meeting. The hearing on a special permit petition was opened and adjourned with continuance scheduled for October 8, 2014, but no motions were voted on during the September 10, 2014 session. Minutes themselves are noted as approved by the chairman but with unclear dating (OCR text \"sues 12/11/2014\").",
- "cost_usd": 0.11462449999999999
+ "note": "No motions, votes, or procedural votes are recorded in this text; the board's agreements are recorded only as agreement, so votes is empty. Meeting date is taken from the minutes body (Wednesday, September 10, 2014); the header reads \"September 30, 2014\". The approval line (\"Approved by Chairman of the Board\") has no clear date (OCR \"sues 12/11/2014\"). The text is OCR: several names and pages are garbled (e.g., engineer's name, petition signature pages 7-12, letter pages), so quotes were copied as OCR printed them. No dollar figures are printed. Attachments at the end have no heading.",
+ "cost_usd": 0.014093420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Donald F. Bowen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board members present: donald f. bowen, chairman, hans wentrup, alfred gravelle, david blatt, sheila lumi and paul doherty."
+  },
+  {
+   "name": "Hans Wentrup",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: donald f. bowen, chairman, hans wentrup, alfred gravelle, david blatt, sheila lumi and paul doherty."
+  },
+  {
+   "name": "Alfred Gravelle",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: donald f. bowen, chairman, hans wentrup, alfred gravelle, david blatt, sheila lumi and paul doherty."
+  },
+  {
+   "name": "David Blatt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: donald f. bowen, chairman, hans wentrup, alfred gravelle, david blatt, sheila lumi and paul doherty."
+  },
+  {
+   "name": "Sheila Lumi",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: donald f. bowen, chairman, hans wentrup, alfred gravelle, david blatt, sheila lumi and paul doherty."
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: donald f. bowen, chairman, hans wentrup, alfred gravelle, david blatt, sheila lumi and paul doherty."
+  },
+  {
+   "name": "Robert Cirillo",
+   "role": "Attorney, counsel for the applicant",
+   "status": "present",
+   "quote": "attorney robert cirillo served as counsel for the applicant. he summarized the"
+  },
+  {
+   "name": "Gary Archer",
+   "role": "applicant",
+   "status": "present",
+   "quote": "gary archer of ayer, ma the applicant approached the board."
+  },
+  {
+   "name": "Huseyin Sevincgil",
+   "role": "engineer",
+   "status": "present",
+   "quote": "their engineer huseyin sevincgil was present to go over the plans."
+  },
+  {
+   "name": "Michael Sauvageau",
+   "role": "Building official/Zoning Officer",
+   "status": "present",
+   "quote": "michael sauvageau building official/zoning officer was there to answer questions and explain the zoning in the area."
+  },
+  {
+   "name": "Marcia K. Luoma",
+   "role": "personal representative for the estate of Edward Riley (property owner)",
+   "status": "not stated",
+   "quote": "the property is owned by marcia k. luoma, personal representative for the estate of edward riley and"
+  },
+  {
+   "name": "Al Luoma",
+   "role": "representative of the Riley property",
+   "status": "present",
+   "quote": "al luoma and his wife marcia (riley) luoma were the representatives of the riley property."
+  },
+  {
+   "name": "Marcia (Riley) Luoma",
+   "role": "representative of the Riley property",
+   "status": "present",
+   "quote": "al luoma and his wife marcia (riley) luoma were the representatives of the riley property."
+  },
+  {
+   "name": "David Riley",
+   "role": "son of the late Edward Riley",
+   "status": "present",
+   "quote": "david riley-27 cross road is the son of the late edward riley."
+  },
+  {
+   "name": "David Rodgers",
+   "role": "public, 82 Highland Street",
+   "status": "present",
+   "quote": "david rodgers, 82 highland street said he has been in town for 42 years and was"
+  },
+  {
+   "name": "David King",
+   "role": "public, 40 Riley Road",
+   "status": "present",
+   "quote": "david king, 40 riley road felt the plan does not conform to the area"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "public, 94 Main Street",
+   "status": "present",
+   "quote": "robert ebersole, 94 main street has no problem with mr. archer or the riley family"
+  },
+  {
+   "name": "Russell Poirier",
+   "role": "public, 724 Massachusetts Avenue",
+   "status": "present",
+   "quote": "russell poirier, 724 massachusetts avenue said that he is part of the riley family"
+  },
+  {
+   "name": "Donald Gurney",
+   "role": "public, 37 Riley Road",
+   "status": "present",
+   "quote": "donald gurney-37 riley road compared the proposal to the kings corner complex in leominster"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "public, 284 Lancaster Avenue",
+   "status": "present",
+   "quote": "tom alonzo-284 lancaster avenue said that this use cannot be granted as a matter of right"
+  },
+  {
+   "name": "Paulette Beardmore",
+   "role": "public, 282 Pleasant Street",
+   "status": "present",
+   "quote": "paulette beardmore-282 pleasant street also spoke very highly of the riley family"
+  },
+  {
+   "name": "Amanda Risch-Fletcher Tilton",
+   "role": "representing Stone Farm LLC and the Stone Farm Condominium residents",
+   "status": "present",
+   "quote": "amanda risch-fletcher tilton of worcester was representing stone farm llc and the stone farm condominium residents."
+  },
+  {
+   "name": "Matthew Costich",
+   "role": "public, 119 Sunnyhill Road",
+   "status": "present",
+   "quote": "matthew costich-119 sunnyhill road is opposed to the project due to traffic concerns."
+  },
+  {
+   "name": "Louise Boyle",
+   "role": "public, 29 Riley Road",
+   "status": "present",
+   "quote": "louise boyle, 29 riley road was opposed to the project; she asked if the applicant was"
+  },
+  {
+   "name": "Lisa A. Normandin",
+   "role": "Board Secretary",
+   "status": "not stated",
+   "quote": "minutes submitted by lisa a. normandin, board secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The hearing was continued to a meeting on October 8, 2014 at 7:00 P.M.",
+   "quote": "a meeting for continuance was scheduled for october 8, 2014 at 7:00 p.m."
+  },
+  {
+   "decision": "All present agreed the new data (traffic study, engineering and lighting) would be submitted one week before the next meeting, October 1, 2014.",
+   "quote": "all present agreed that they could have the new data submitted one week prior to the next meeting which would be october 1, 2014."
+  },
+  {
+   "decision": "The board agreed the traffic study is critical to the decision and is needed by the Planning Board for site development.",
+   "quote": "chairman bowen said that the traffic study was critical in the decision making process"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Applicant's costs to date",
+   "what_was_recorded": "Mr. Luoma said the applicant has spent a significant amount of money on engineering, traffic and legal fees; no figure was printed.",
+   "quote": "he indicated he (mr. archer) has spent a significant amount of money on engineering, traffic and legal fees.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Tax revenue and income from the property",
+   "what_was_recorded": "Attorney Cirillo said the applicant's use would add tax revenue to the Town and provide income; no dollar figure was printed.",
+   "quote": "add tax revenue to the town, provide income and add a service to the community.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Family's upkeep and taxes on the property",
+   "what_was_recorded": "Mr. Luoma said the family has been plowing and paying taxes on the property for over 7 years; no dollar figure was printed.",
+   "quote": "plowing, paying taxes for the property for over 7 years.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Revenue from alternative development",
+   "what_was_recorded": "Mr. Riley's son said his father could have built a 40B project but preferred less revenue for a 55+ community; no dollar figure was printed.",
+   "quote": "he preferred to take less revenue and do a 55+ community",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Opposed; traffic, character, line of sight",
+   "speaker": "David Rodgers",
+   "stated_role": "82 Highland Street",
+   "quote": "david rodgers, 82 highland street said he has been in town for 42 years and was"
+  },
+  {
+   "topic": "Opposed; does not fit area, 24/7 use",
+   "speaker": "David King",
+   "stated_role": "40 Riley Road",
+   "quote": "david king, 40 riley road felt the plan does not conform to the area"
+  },
+  {
+   "topic": "Opposed; change in town character",
+   "speaker": "Robert Ebersole",
+   "stated_role": "94 Main Street",
+   "quote": "robert ebersole, 94 main street has no problem with mr. archer or the riley family"
+  },
+  {
+   "topic": "Prior mixed use should return",
+   "speaker": "Russell Poirier",
+   "stated_role": "724 Massachusetts Avenue",
+   "quote": "russell poirier, 724 massachusetts avenue said that he is part of the riley family"
+  },
+  {
+   "topic": "Compared to Kings Corner; safety, environment",
+   "speaker": "Donald Gurney",
+   "stated_role": "37 Riley Road",
+   "quote": "donald gurney-37 riley road compared the proposal to the kings corner complex in leominster"
+  },
+  {
+   "topic": "Matter of right versus discretionary powers",
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Avenue",
+   "quote": "tom alonzo-284 lancaster avenue said that this use cannot be granted as a matter of right"
+  },
+  {
+   "topic": "Busy corner; would hurt Hadwen Market",
+   "speaker": "Paulette Beardmore",
+   "stated_role": "282 Pleasant Street",
+   "quote": "paulette beardmore-282 pleasant street also spoke very highly of the riley family"
+  },
+  {
+   "topic": "Opposed for Stone Farm LLC and residents",
+   "speaker": "Amanda Risch-Fletcher Tilton",
+   "stated_role": "representing Stone Farm LLC and the Stone Farm Condominium residents",
+   "quote": "amanda risch-fletcher tilton of worcester was representing stone farm llc and the stone farm condominium residents."
+  },
+  {
+   "topic": "Opposed; traffic concerns",
+   "speaker": "Matthew Costich",
+   "stated_role": "119 Sunnyhill Road",
+   "quote": "matthew costich-119 sunnyhill road is opposed to the project due to traffic concerns."
+  },
+  {
+   "topic": "Opposed; whether applicant buys whole parcel",
+   "speaker": "Louise Boyle",
+   "stated_role": "29 Riley Road",
+   "quote": "louise boyle, 29 riley road was opposed to the project; she asked if the applicant was"
+  },
+  {
+   "topic": "In favor; Riley family representatives",
+   "speaker": "Al Luoma",
+   "stated_role": "representative of the Riley property",
+   "quote": "al luoma and his wife marcia (riley) luoma were the representatives of the riley property."
+  },
+  {
+   "topic": "Son of late owner; no accidents at site",
+   "speaker": "David Riley",
+   "stated_role": "27 Cross Road, son of the late Edward Riley",
+   "quote": "david riley-27 cross road is the son of the late edward riley."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Gary Archer special permit, 790 Massachusetts Avenue (gas station, convenience store, drive thru, car wash, sign increase)",
+   "resolution": "continued to October 8, 2014; hearing adjourned 9:35 PM",
+   "quote": "a meeting for continuance was scheduled for october 8, 2014 at 7:00 p.m.",
+   "tags": [
+    "special permit",
+    "gas station",
+    "public hearing",
+    "continuance",
+    "traffic"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Petition to Lunenburg Zoning Board of Appeals (abutters' petition in opposition, 71 signatures)",
+   "where": "list",
+   "quote": "petition to lunenburg zoning board of appeals"
+  },
+  {
+   "name": "Town of Lunenburg Zoning Board of Appeals Notice of Public Hearing (Gary Archer petition)",
+   "where": "text",
+   "quote": "this petition is pursuant to the town of lunenburg, zoning board of appeals, notice of public hearing regarding the petition"
+  },
+  {
+   "name": "Letter from Louise Boyle, 29 Riley Road, dated Sept. 8, 2014",
+   "where": "list",
+   "quote": "i would like to speak in opposition to the above request for a special permit."
+  },
+  {
+   "name": "Village District - Town of Lunenburg, Draft 12-9-13",
+   "where": "list",
+   "quote": "village district - town of lunenburg- draft 12-9-13"
+  },
+  {
+   "name": "Draft Working Map, Lunenburg Village District (MRPC GIS, October 2013)",
+   "where": "list",
+   "quote": "draft working map lunenburg village district"
+  },
+  {
+   "name": "Letter from 44 Riley Rd., dated September 4, 2014",
+   "where": "list",
+   "quote": "subject: 790-792 massachusetts avenue"
+  },
+  {
+   "name": "Letter from homeowner, 54 Riley Road, dated 9/8/2014",
+   "where": "list",
+   "quote": "to: zba from: homeowner 54 rily rans"
+  },
+  {
+   "name": "Letter from George & Lois Donahue, 71 Riley Road (stamped 6 SEP 14)",
+   "where": "list",
+   "quote": "please do not authorize the proposed commercial"
+  },
+  {
+   "name": "Letter from Mary Ann Iannacci, 6 Riley Road, Stone Farm Estates, dated September 6, 2014",
+   "where": "list",
+   "quote": "re: opposition to petition of g. w. archer, inc. requesting a"
+  },
+  {
+   "name": "Letter from Donald G. Gurney, 37 Riley Road, dated September 6, 2014",
+   "where": "list",
+   "quote": "i am enclosing for inclusion in the minutes of the meeting and public hearing of"
+  },
+  {
+   "name": "Letter to the Editor of The Lunenburg Ledger by Donald G. Gurney, dated August 29, 2014 (with photographs)",
+   "where": "list",
+   "quote": "i am writing to urge my fellow lunenburg residents and taxpayers to attend the meeting and public hearing to"
+  },
+  {
+   "name": "Letter from Thomas McDermott and family, 12 Riley Road, dated September 6, 2014",
+   "where": "list",
+   "quote": "we are the mcdermott's and we reside within stone farm estate at 12 riley road."
+  },
+  {
+   "name": "Traffic study (being prepared by Greenman Pedersen, Inc.)",
+   "where": "text",
+   "quote": "said that their firm was preparing the traffic study, the data has been collected and needs to be finalized."
+  },
+  {
+   "name": "Preliminary site plans (MHF Engineering)",
+   "where": "text",
+   "quote": "engineering conducted the preliminary site plans and their engineer huseyin sevincgil was present to go over the plans."
+  }
+ ],
+ "tags": [
+  "zoning board of appeals",
+  "special permit",
+  "gas station",
+  "convenience store",
+  "car wash",
+  "sign",
+  "790 Massachusetts Avenue",
+  "public hearing",
+  "traffic study",
+  "continuance",
+  "abutters"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. gravelle summarized several letters that were submitted to the board prior to the meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

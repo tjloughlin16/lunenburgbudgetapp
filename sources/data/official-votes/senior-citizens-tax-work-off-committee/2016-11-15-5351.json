@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2016-11-15",
  "docid": "5351",
@@ -12,19 +12,166 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the June 23, 2016 meeting",
+   "motion": "Approve the minutes of the June 23, 2016 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to approve the minutes of the june 23, 2016 meeting. all approved, motion carried."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. Mover and seconder names not printed in the minutes. The discussion items in \"Current Business\" (criteria, abatement increase, timesheet review, vacancy discussion, and next meeting date) are conversations, not motions voted on.",
- "cost_usd": 0.0815225
+ "note": "Text extract is readable; no scan issues. Mover and seconder of the two motions are not printed. Decisions on the 2017 abatement amount, application dates, and the Selectmen request were recorded as agreed or decided without a printed motion, so they are listed under decisions, not votes. Roles of attendees are not printed in the minutes.",
+ "cost_usd": 0.00346962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "status": "present",
+   "quote": "meeting called to order by sue doherty at 2:00pm, at lunenburg town hall, 17 main st."
+  },
+  {
+   "name": "Nancy Forest",
+   "status": "present",
+   "quote": "members present: sue doherty, nancy forest, & myleen mallari."
+  },
+  {
+   "name": "Myleen Mallari",
+   "status": "present",
+   "quote": "members present: sue doherty, nancy forest, & myleen mallari."
+  },
+  {
+   "name": "Sheila Craigan",
+   "status": "absent",
+   "quote": "not present: sheila craigan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Before the 2017 application criteria are made public, Ms. Doherty will check with tax professionals to ensure the criteria is correct; applications to be available to the public 12/1/2016, return deadline 1/20/2017.",
+   "quote": "agreed that before the applications are made public, ms. doherty will check with tax professionals to ensure that the criteria is correct."
+  },
+  {
+   "decision": "Leave the property tax work-off abatement at $1,000 for calendar year 2017 (each municipality sets its own amount).",
+   "quote": "decided to leave the amount at $1,000 for calendar year 2017."
+  },
+  {
+   "decision": "Ms. Doherty will ask the Board of Selectmen to announce the committee's one member-at-large vacancy at each televised meeting.",
+   "quote": "ms. doherty will make a request to the board of selectmen that an announcement is made at each of their televised meetings"
+  },
+  {
+   "decision": "Date of the next meeting to be determined.",
+   "quote": "set date for next meeting: to be determined."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Property tax work-off abatement maximum",
+   "what_was_recorded": "The state raised the maximum work-off abatement from $1,000 to $1,500; the board kept the local amount at $1,000 for 2017.",
+   "figures_as_printed": [
+    "$1,000",
+    "$1,500"
+   ],
+   "quote": "the state has increased the maximum abatement from $1,000 to $1,500 in the property tax work-off program"
+  },
+  {
+   "topic": "FY17 allowance for abatement/exemptions",
+   "what_was_recorded": "The total to be charged for the FY17 allowance for abatement/exemptions from the returned 2016 time sheets was reported.",
+   "figures_as_printed": [
+    "$8,372.50"
+   ],
+   "quote": "all 2016 have been returned and the total amount to be charged for the fy17 allowance for abatement/exemptions is $8,372.50"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes (June 23, 2016)",
+   "resolution": "approved",
+   "quote": "a motion was made and seconded to approve the minutes of the june 23, 2016 meeting. all approved, motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Criteria for 2017 applications and programs",
+   "resolution": "discussed; chair to verify criteria with tax professionals before publication",
+   "quote": "applications should be available to the public on 12/1/2016 and the deadline for return will be 1/20/2017.",
+   "tags": [
+    "applications",
+    "2017 program",
+    "criteria"
+   ]
+  },
+  {
+   "topic": "Increase of property tax work-off abatement",
+   "resolution": "kept at $1,000 for calendar year 2017",
+   "quote": "decided to leave the amount at $1,000 for calendar year 2017.",
+   "tags": [
+    "abatement",
+    "state change"
+   ]
+  },
+  {
+   "topic": "Review of returned calendar year 2016 time sheets",
+   "resolution": "no action; total for FY17 allowance noted",
+   "quote": "all 2016 have been returned and the total amount to be charged for the fy17 allowance for abatement/exemptions is $8,372.50",
+   "tags": [
+    "time sheets",
+    "FY17 allowance"
+   ]
+  },
+  {
+   "topic": "Board vacancy (member at large)",
+   "resolution": "chair to request Board of Selectmen announcements",
+   "quote": "ms. doherty will make a request to the board of selectmen that an announcement is made at each of their televised meetings",
+   "tags": [
+    "vacancy",
+    "volunteer recruitment"
+   ]
+  },
+  {
+   "topic": "Set date for next meeting",
+   "resolution": "to be determined",
+   "quote": "set date for next meeting: to be determined.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from the Executive Office of Elder Affairs (state increase to maximum abatement)",
+   "where": "text",
+   "quote": "ms. doherty received an email from the executive office of elder affairs stating that the state has increased the maximum abatement"
+  },
+  {
+   "name": "Calendar year 2016 time sheets",
+   "where": "text",
+   "quote": "all 2016 have been returned and the total amount to be charged for the fy17 allowance for abatement/exemptions is $8,372.50"
+  }
+ ],
+ "tags": [
+  "senior property tax work-off",
+  "abatement",
+  "2017 applications",
+  "time sheets",
+  "board vacancy",
+  "town hall"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

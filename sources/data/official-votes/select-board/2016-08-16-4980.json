@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-08-16",
  "docid": "4980",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Motion by R. Ebersole, seconded by P. Bertram, to adjourn the meeting.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -21,6 +21,231 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: the motion to adjourn. The minutes state the Board signed three warrants (accounts payable, school construction, payroll) but do not record a motion or vote for these signings.",
- "cost_usd": 0.08234749999999999
+ "note": "OCR text (macOS Vision) with some garbled words, e.g. 'preterences' and the signature 'Elainch Peterson'; quotes are copied as OCR printed them. Finance, Planning, ZBA, APDC, Assessors and other committee members are listed in the header and the minutes say 'the Board met with the above listed committee members', so they are recorded as present by inference; no roll call is given. The adjournment vote is recorded only as 'All in Favor' with no count. No public comment section appears. Warrant signing is an administrative act with no motion recorded. The meeting opened at 7:15 p.m. with the Executive Session cancelled.",
+ "cost_usd": 0.004310319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not attending: tom alonzo, member; kerry lafleur, town manager"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not attending: tom alonzo, member; kerry lafleur, town manager"
+  },
+  {
+   "name": "Patty Specht",
+   "role": "Others attending",
+   "status": "present",
+   "quote": "others attending: patty specht, debra hall"
+  },
+  {
+   "name": "Debra Hall",
+   "role": "Others attending",
+   "status": "present",
+   "quote": "others attending: patty specht, debra hall"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair, Finance Committee",
+   "status": "present",
+   "quote": "finance committee: terri burchfield, chair; mark erickson, member; john henshaw, vice chair"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Member, Finance Committee",
+   "status": "present",
+   "quote": "finance committee: terri burchfield, chair; mark erickson, member; john henshaw, vice chair"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice Chair, Finance Committee",
+   "status": "present",
+   "quote": "finance committee: terri burchfield, chair; mark erickson, member; john henshaw, vice chair"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Chair, Planning Board",
+   "status": "present",
+   "quote": "planning board: matthew allison, chair; greg bittner, clerk"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Clerk, Planning Board",
+   "status": "present",
+   "quote": "planning board: matthew allison, chair; greg bittner, clerk"
+  },
+  {
+   "name": "Ray Beal",
+   "role": "Chair, Board of Zoning Appeals",
+   "status": "present",
+   "quote": "board of zoning appeals: ray beal, chair; al gravelle, vice chair"
+  },
+  {
+   "name": "Al Gravelle",
+   "role": "Vice Chair, Board of Zoning Appeals",
+   "status": "present",
+   "quote": "board of zoning appeals: ray beal, chair; al gravelle, vice chair"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Chair, Architectural Preservation District Commission",
+   "status": "present",
+   "quote": "architectural preservation district commission: richard mcgrath, chair, jim laveck. member"
+  },
+  {
+   "name": "Jim Laveck",
+   "role": "Member, Architectural Preservation District Commission",
+   "status": "present",
+   "quote": "architectural preservation district commission: richard mcgrath, chair, jim laveck. member"
+  },
+  {
+   "name": "Lou Pranco",
+   "role": "Chair, Board of Assessors",
+   "status": "present",
+   "quote": "board of assessors: lou pranco, chair; rich letarte, member"
+  },
+  {
+   "name": "Rich Letarte",
+   "role": "Member, Board of Assessors",
+   "status": "present",
+   "quote": "board of assessors: lou pranco, chair; rich letarte, member"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "Public Access Cable Committee",
+   "status": "present",
+   "quote": "public access cable committee: faith beall"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Chair, Sewer Commission",
+   "status": "present",
+   "quote": "sewer commission: carl luck, chair"
+  },
+  {
+   "name": "Maryellen Letarte",
+   "role": "Cultural Council",
+   "status": "present",
+   "quote": "cultural council: maryellen letarte"
+  },
+  {
+   "name": "George Martin",
+   "role": "Town Clockwinder",
+   "status": "present",
+   "quote": "town clockwinder: george martin"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "Library Board of Trustees",
+   "status": "present",
+   "quote": "library board of trustees: richard mailloux"
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "Housing Authority",
+   "status": "present",
+   "quote": "housing authority: liz murphy"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "Parks Commission",
+   "status": "present",
+   "quote": "parks commission: pete mccauliff"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Bertram and Mr. Ebersole will report out on the committee-volunteer suggestions and a proposed template for committees to use.",
+   "quote": "ms. bertram and mr. ebersole took specific notes and will report out on all the suggestions and a proposed template for"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the Board",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a school construction warrant and a payroll warrant, each with a stated amount.",
+   "figures_as_printed": [
+    "$574,486.58",
+    "$1,997,702.35",
+    "$555,439.20"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $574,486.58"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Volunteer recruitment with committee members",
+   "resolution": "discussed; no action taken, except Bertram and Ebersole to report out",
+   "tags": [
+    "volunteers",
+    "committees",
+    "recruitment",
+    "talent bank"
+   ],
+   "quote": "the board met with the above listed committee members and discussed various options for recruiting volunteers by"
+  },
+  {
+   "topic": "Warrant signing",
+   "resolution": "signed warrants",
+   "tags": [
+    "warrants",
+    "accounts payable",
+    "payroll"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $574,486.58, a school construction warrant in the amount"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Talent bank form",
+   "where": "text",
+   "quote": "the talent bank form introduces an applicant and their committee preterences."
+  }
+ ],
+ "tags": [
+  "volunteers",
+  "committees",
+  "talent bank",
+  "warrants",
+  "accounts payable",
+  "payroll",
+  "school construction",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

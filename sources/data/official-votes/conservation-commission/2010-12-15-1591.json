@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-12-15",
  "docid": "1591",
@@ -12,6 +12,126 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a presentation by Gaynor Biegelbach about AmeriCorps conservation projects, a public complaint from Monica Farley regarding hunting on town property, and a complaint from Judith Graves about water issues on a neighboring property. No motions were moved, seconded, or voted on. \"Signatures ~ 4\" appears to refer to document signings rather than a formal vote. \"New Business ~ NONE\" is explicitly stated.",
- "cost_usd": 0.0808095
+ "note": "Single-page OCR text (macOS Vision) of minutes with no roll call, no recorded motions, no adjournment, and no dollar figures. Chair and other members are not named; only Sharon appears by first name. The \"Signatures ~ 4\" agenda line is unexplained. Hunter Orange line has an unmatched quotation mark in the source.",
+ "cost_usd": 0.00311722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gaynor Biegelbach",
+   "role": "from Shirley (Americorps volunteer contact)",
+   "status": "present",
+   "quote": "7:00 pm ~ gaynor biegelbach from shirley will speak to the commission about opportunities"
+  },
+  {
+   "name": "Monica Farley",
+   "role": "not stated",
+   "status": "present",
+   "quote": "monica farley is concerned about hunting on town property, she stated that she walks"
+  },
+  {
+   "name": "Judith Graves",
+   "role": "resident of 21 Beachview Road",
+   "status": "present",
+   "quote": "judith graves of 21 beachview road issued a complaint"
+  },
+  {
+   "name": "Sharon",
+   "role": "not stated (commission member; first name only in minutes)",
+   "status": "present",
+   "quote": "sharon mentioned the stewardship program we hope to have up and running by"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commissioners would like to visit the site at 11 Beachview before commenting further on the water complaint.",
+   "quote": "the commissioners would like to take a look at the site before commenting further."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Gaynor Biegelbach",
+   "stated_role": "from Shirley",
+   "topic": "Americorps volunteer projects for trail repairs and other work",
+   "quote": "gaynor spoke to the commission about the volunteers from"
+  },
+  {
+   "speaker": "Monica Farley",
+   "stated_role": "not stated",
+   "topic": "hunting, trash, etc. on ConCom property (Robbs Hill area and Burrage Street)",
+   "quote": "monica farley is concerned about hunting on town property, she stated that she walks"
+  },
+  {
+   "speaker": "Judith Graves",
+   "stated_role": "resident of 21 Beachview Road",
+   "topic": "water on her property from new house and landscaping at 11 Beachview",
+   "quote": "judith graves of 21 beachview road issued a complaint about water on her property as a result of the new house and landscaping next door"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Americorps volunteer opportunities (Gaynor Biegelbach)",
+   "resolution": "no action; commission receptive, volunteer to contact before work",
+   "quote": "gaynor biegelbach from shirley will speak to the commission about opportunities",
+   "tags": [
+    "volunteers",
+    "trails",
+    "wildlife boxes"
+   ]
+  },
+  {
+   "topic": "Hunting, trash, etc. on ConCom property (Monica Farley)",
+   "resolution": "discussed; no action recorded",
+   "quote": "7:15 pm ~ monica farley ~ hunting, trash, etc. on concom property (robbs hill area and",
+   "tags": [
+    "hunting",
+    "trash",
+    "public land"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "no action recorded (item shown as 4)",
+   "quote": "7:30 pm ~ signatures ~ 4 new business ~ none",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "none",
+   "quote": "7:30 pm ~ signatures ~ 4 new business ~ none",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Public Discussion: water complaint at 11 Beachview (Judith Graves)",
+   "resolution": "commissioners to view site before commenting",
+   "quote": "public discussion ~ judith graves of 21 beachview road issued a complaint",
+   "tags": [
+    "drainage",
+    "water",
+    "site visit"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "conservation commission",
+  "volunteers",
+  "trails",
+  "hunting",
+  "stewardship",
+  "drainage",
+  "public comment",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

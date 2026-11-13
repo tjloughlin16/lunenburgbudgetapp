@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-11-10",
  "docid": "3782",
@@ -12,39 +12,304 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from October 20, 2014 Master Planning Workshop",
+   "motion": "Approve the 322 Flat Hill Community Solar project with significant conditions to be discussed.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "K. Chenis",
+   "outcome": "failed; recorded as Chenis aye, McQuaid nay, Lockwood aye, Bilotta-Simeone abstain",
+   "procedural": false,
+   "quote": "motion, n. lockwood to approve the project with significant conditions to be discussed, second, k. chenis."
+  },
+  {
+   "motion": "Consider acceptance of the withdrawal of the 322 Flat Hill Community Solar application.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "K. Chenis",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion n. lockwood to consider acceptance of withdrawal of application, second, k. chenis, discussion"
+  },
+  {
+   "motion": "Approve the minutes of 10-20-14 Master Planning Workshop.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "10-20-14 master planning workshop, motion d. mcquaid, second, k. chenis"
   },
   {
-   "motion": "approve minutes from October 27, 2014",
+   "motion": "Approve the minutes of 10-27-14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "10-27-14, motion d. mcquaid, second, k. chenis"
   },
   {
-   "motion": "approve minutes from October 27, 2014 322 Flat Hill Community Solar public hearing",
+   "motion": "Approve the minutes of 10-27-14 322 Flat Hill Community Solar.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "10-27-14 322 flat hill community solar, motion d. mcquaid, second, k. chenis"
-  },
-  {
-   "motion": "approve the 322 Flat Hill Community Solar special permit with conditions including that the property cannot be subdivided for the life of the solar",
-   "moved_by": "N. Lockwood",
-   "seconded_by": "K. Chenis",
-   "outcome": "failed 2-1-1",
-   "procedural": false,
-   "quote": "n. lockwood amended his motion to include the conditions noted above plus the property cannot be subdivided for the life of the solar, second, k. chenis."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. The first three approve previous meeting minutes (marked procedural). The fourth vote on the 322 Flat Hill Community Solar special permit application failed with Kenneth Chenis aye, Nathan Lockwood aye, Damon McQuaid nay, and Joanna Bilotta-Simeone abstain (2-1-1). A motion to consider withdrawal of the solar application was made but Lockwood chose to keep his original motion, so no vote was taken on the withdrawal.",
- "cost_usd": 0.049317400000000004
+ "note": "Text is a clean extraction, not a scan. The 322 Flat Hill vote is recorded as aye/nay/abstain without a stated total; the minutes say the project was denied by a failed vote. The withdrawal motion has no recorded result. Minutes-approval motions have no printed result. The Highfield Village extension date reads \"February 9, 2014\" as printed, likely a typo. Highfield Village and the 10-20-14 and 10-27-14 minutes are referenced but not included.",
+ "cost_usd": 0.007711119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "M. Conway",
+   "role": "applicant, 322 Flat Hill Community Solar",
+   "status": "present",
+   "quote": "m. conway requested if he could withdraw his application."
+  },
+  {
+   "name": "Attorney Troyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attorney troyer opined it would be a violation of the open meeting law to withdraw at this point after the hearing has closed."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "the comment made by t. alonzo at the hearing as to his editorial in the ledger"
+  },
+  {
+   "name": "Eric Aubrey",
+   "role": "presenter, Gehrlicher Solar America Corp.",
+   "status": "present",
+   "quote": "eric aubrey, gehrlicher solar america corp., presented"
+  },
+  {
+   "name": "Celeste McCain -Stober",
+   "role": "abutter, 275 Pleasant Street, speaking on behalf of the abutters",
+   "status": "present",
+   "quote": "celeste mccain -stober, 275 pleasant street, speaking on behalf of the abutters, noted that"
+  },
+  {
+   "name": "David Milner",
+   "role": "NuGen",
+   "status": "present",
+   "quote": "j. bilotta-simeone noted to david milner, nugen, that vegetation needs to be fixed at both the pleasant street and chase road sites."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 322 Flat Hill Community Solar decision is to be prepared for Board signature and filing at the Registry of Deeds.",
+   "quote": "decision will be prepared for board signature and filing at registry of deeds."
+  },
+  {
+   "decision": "Board members to review the revised Village District Bylaw draft and send comments to A. Burney; it goes on the November 24th agenda.",
+   "quote": "board members to review and provide comments to a. burney."
+  },
+  {
+   "decision": "A. Burney to put a Scenic Road warrant article together prior to May Town Meeting.",
+   "quote": "a. burney to put warrant article together prior to may town meeting"
+  },
+  {
+   "decision": "A. Burney to contact various boards and commissions for comments on the Economic Development element of the master plan and to talk to them about the master plan purpose and vision.",
+   "quote": "a. burney to contact various boards, commissions"
+  },
+  {
+   "decision": "NuGen to submit a letter requesting an administrative change to the 265 Pleasant Street approval, citing Unitil's conditions.",
+   "quote": "nugen will submit a letter to the board requesting an administrative change to the approval citing unitil's conditions."
+  },
+  {
+   "decision": "Vegetation at the Pleasant Street and Chase Road solar sites is to be fixed; anything dead will be replaced.",
+   "quote": "vegetation needs to be fixed at both the pleasant street and chase road sites."
+  },
+  {
+   "decision": "Board policy to be developed setting a deadline for materials from engineers and developers before Board meetings.",
+   "quote": "board policy will be developed noting a deadline for materials being supplied prior to board meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Board time and money spent on 322 Flat Hill Community Solar application",
+   "what_was_recorded": "D. McQuaid said withdrawing after the funds and time expended would be a disservice to citizens; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "d. mcquaid opined it would be a disservice to the citizens to withdraw at this point after the funds and time expended."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Celeste McCain -Stober",
+   "stated_role": "speaking on behalf of the abutters, 275 Pleasant Street",
+   "topic": "265 Pleasant Street Solar poles",
+   "quote": "celeste mccain -stober, 275 pleasant street, speaking on behalf of the abutters, noted that"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Highfield Village",
+   "resolution": "see separate minutes",
+   "quote": "public hearing: highfield village- see separate minutes",
+   "tags": [
+    "public hearing",
+    "Highfield Village"
+   ]
+  },
+  {
+   "topic": "Public hearing (cont'd): 322 Flat Hill Community Solar",
+   "resolution": "denied by failed vote",
+   "quote": "the project was denied by the fact of a failed vote.",
+   "tags": [
+    "solar",
+    "special permit",
+    "public hearing",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "265 Pleasant Street Solar updated pole information",
+   "resolution": "administrative change to be requested by applicant",
+   "quote": "nugen will submit a letter to the board requesting an administrative change to the approval citing unitil's conditions.",
+   "tags": [
+    "solar",
+    "utility poles",
+    "vegetation"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made; result not stated",
+   "quote": "10-27-14, motion d. mcquaid, second, k. chenis",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports noted",
+   "quote": "capital planning committee, j. bilotta-simeone- committee met with fire chief and reviewed his requests.",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "New business / development status reports",
+   "resolution": "reports noted; Highfield Village extension approved",
+   "quote": "highfield village- board approved extension to february 9, 2014",
+   "tags": [
+    "development status",
+    "subdivision",
+    "road inspection"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "Village District Bylaw to Nov 24 agenda; Scenic Road warrant article and master plan economic development work assigned",
+   "quote": "village district bylaw- revised draft provided to board.",
+   "tags": [
+    "zoning bylaw",
+    "warrant article",
+    "master plan",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "meeting schedule: november 24, 6:30 pm, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "policy to be developed on material deadlines",
+   "quote": "board policy will be developed noting a deadline for materials being supplied prior to board meetings.",
+   "tags": [
+    "board policy",
+    "materials deadline"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes-10-20-14 Master Planning Workshop, 10-27-14, 10-27-14 322 Flat Hill Community Solar",
+   "where": "list",
+   "quote": "minutes-10-20-14 master planning workshop, 10-27-14, 10-27-14 322 flat hill community solar"
+  },
+  {
+   "name": "50 Elmwood Road Progress Form",
+   "where": "list",
+   "quote": "50 elmwood road progress form"
+  },
+  {
+   "name": "Letter, Gehrlicher Solar America Corp., dtd 11/4/14",
+   "where": "list",
+   "quote": "letter, gehrlicher solar america corp., dtd 11/4/14"
+  },
+  {
+   "name": "Draft Village District Bylaw",
+   "where": "list",
+   "quote": "draft village district bylaw"
+  },
+  {
+   "name": "Highfield Village public hearing minutes (separate minutes)",
+   "where": "text",
+   "quote": "public hearing: highfield village- see separate minutes"
+  },
+  {
+   "name": "T. Alonzo editorial in the Ledger",
+   "where": "text",
+   "quote": "the comment made by t. alonzo at the hearing as to his editorial in the ledger"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar",
+  "special permit",
+  "public hearing",
+  "zoning bylaw",
+  "village district",
+  "minutes approval",
+  "development status",
+  "abutters"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

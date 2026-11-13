@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-11-15",
  "docid": "4787",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "adopt a unified tax rate as presented",
+   "motion": "Adopt a unified tax rate as presented (FY12 classification hearing).",
    "moved_by": "Tom",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "tom move to adopt a unified tax rate as presented, steve seconded, voted unanimously."
   },
   {
-   "motion": "recertify the Statement of Interest",
+   "motion": "Recertify the FY2011 Statement of Interest for school building for consideration in FY2012.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "paula moved to recertify the statement of interest, steve seconded, voted unanimously."
   },
   {
-   "motion": "adjourn Regular Session",
+   "motion": "Adjourn the Regular Session at 9:07 P.M.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -37,6 +37,387 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision; three votes recorded with unanimous passage. The adjournment vote does not state who moved and seconded.",
- "cost_usd": 0.1045595
+ "note": "OCR text is noisy: page 4 begins mid-discussion (landfill debris clearing) and page 7 is a fragment of the upcoming-schedule and pending-items list. Pages 5-6 are garbled Board of Assessors tables, so figures are limited to the total levy and one tax rate. The Summer Street discussion on page 2 is printed twice with differing wording. No minutes list of attendance is printed; attendance status is inferred from speaking or voting roles. The 'John' speaker is unidentified (role not stated). Two votes were recorded. Warrant review, minutes review and the SOI signing are not votes.",
+ "cost_usd": 0.011106020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David J. Matthews",
+   "role": "Chairman, Board of Selectmen",
+   "status": "not stated",
+   "quote": "david j. matthews, chairman, board of selectmen."
+  },
+  {
+   "name": "Kerry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "according to kerry, we are out of money at this point"
+  },
+  {
+   "name": "Tom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tom move to adopt a unified tax rate as presented, steve seconded, voted unanimously."
+  },
+  {
+   "name": "Steve",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve seconded, voted unanimously."
+  },
+  {
+   "name": "Paula",
+   "role": "not stated",
+   "status": "present",
+   "quote": "paula moved to recertify the statement of interest, steve seconded, voted unanimously."
+  },
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave noted that this is a major issue, but not an issue that this board can deal with."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john believes that the board of selectmen has more power than they think they do"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "harald scheid, regional assessor was present"
+  },
+  {
+   "name": "Matthew Lapini",
+   "role": "new Assessor",
+   "status": "not stated",
+   "quote": "introduced matthew lapini (new assessor to the"
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "VHB presenter",
+   "status": "present",
+   "quote": "trish domigan from vhb presented a power point presentation of the summer street transportation improvements"
+  },
+  {
+   "name": "Patricia Dornigan",
+   "role": "Senior Project Manager for Vanasse Hangen Brustlin (VHB)",
+   "status": "present",
+   "quote": "patricia dornigan, the senior project manager for vanasse hangen brustlin (vhb) was present"
+  },
+  {
+   "name": "Laura Castelli",
+   "role": "in charge of traffic assessment and analysis, VHB",
+   "status": "present",
+   "quote": "associates, laura castelli, in charge of traffic assessment and analysis"
+  },
+  {
+   "name": "Steve Derdiarian",
+   "role": "landscaping options, VHB",
+   "status": "present",
+   "quote": "and steve derdiarian who worked on landscaping options for the project presented these options to the board."
+  },
+  {
+   "name": "Toby Bakaysa",
+   "role": "Planning Board Chair",
+   "status": "present",
+   "quote": "toby bakaysa (planning board chair) commented on the number of residential projects"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities of Lunenburg Public Schools",
+   "status": "present",
+   "quote": "john londa, director of facilities of lunenburg public schools"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Primary SOI Contact",
+   "status": "not stated",
+   "quote": "primary soi contact name: loxi calmes"
+  },
+  {
+   "name": "David Reif",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "loxito calmes david reif"
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura caron-gustus, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Zoning Official will not act on any solar-array permit until Town Counsel answers the question (stated by Kerry; no vote recorded).",
+   "quote": "the zoning official will not be acting on any permit until that question has been answered by town counsel."
+  },
+  {
+   "decision": "Board will discuss extending the landfill opening (excluding the Thanksgiving day weekend) at its next Tuesday meeting.",
+   "quote": "excluding the thanksgiving day weekend, board will discuss this further on next tuesday."
+  },
+  {
+   "decision": "Board will discuss an option of extending the yard waste landfill dates at its next meeting on November 11th.",
+   "quote": "board will discuss option of extending the dates at their next meeting on november 11th"
+  },
+  {
+   "decision": "Board members asked for specific questions from residents and the Board of Selectmen to be provided within the next week for Town Counsel (requested; not voted).",
+   "quote": "would like to have these provided within the next week so that we can make the best use of town"
+  },
+  {
+   "decision": "Planning Board chair requested approval from the board to contact counsel directly on the solar bylaw question (request; no vote recorded).",
+   "quote": "he requested approval from the board to contact counsel directly and look at the actions that we can do to protect our"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY12 tax levy and estimated tax rates",
+   "what_was_recorded": "Assessor tables for FY2012 show a total levy figure and estimated tax rates by class, which were before the board for the classification hearing.",
+   "figures_as_printed": [
+    "18,865,867",
+    "16.83"
+   ],
+   "quote": "lunenburg board of assessors fiscal year 2012"
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Two warrants were reviewed and signed at the meeting.",
+   "figures_as_printed": [
+    "$151,737.76",
+    "$506.48"
+   ],
+   "quote": "warrants - #30 12, 11/15/11 - $151,737.76 and #9p12ra, 10/31/11 $506.48 reviewed and signed."
+  },
+  {
+   "topic": "Summer Street design funding",
+   "what_was_recorded": "Board hopes to secure 20% state design funds for the Summer Street project so it can move forward; funding status is still pending.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "hopefully, we'll be able to secure 20% design funds in order to move forward"
+  },
+  {
+   "topic": "Summer Street project funding status",
+   "what_was_recorded": "Kerry said the town is out of money at this point, with VHB's conceptual work ending and design money needed before proceeding.",
+   "figures_as_printed": [],
+   "quote": "according to kerry, we are out of money at this point"
+  },
+  {
+   "topic": "Landfill debris clearing costs",
+   "what_was_recorded": "Debris clearing work done before a decision would be at risk, with the town potentially responsible for 100% of those costs.",
+   "figures_as_printed": [
+    "100%"
+   ],
+   "quote": "debris clearing efforts that we were to undertake would be done \"at risk\" and we could potentially be responsible for 100% of those"
+  },
+  {
+   "topic": "Household hazardous waste disposal fees",
+   "what_was_recorded": "Announcement that disposal fees apply at the Devens regional HHW collection events in December.",
+   "figures_as_printed": [],
+   "quote": "fees for disposal are scheduled for wednesday, december"
+  },
+  {
+   "topic": "School building Statement of Interest grant eligibility",
+   "what_was_recorded": "MSBA form states the district has no entitlement to funds and any grant award is at MSBA's sole discretion.",
+   "figures_as_printed": [],
+   "quote": "the district has no entitlement to funds and that the awarding of a grant, if any, is at the sole discretion of the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: Yard Waste Days and HHW events",
+   "resolution": "no action",
+   "quote": "announcements 1. yard waste days - the lunenburg landfill, off of youngs road will be open for consecutive saturdays",
+   "tags": [
+    "landfill",
+    "household hazardous waste"
+   ]
+  },
+  {
+   "topic": "Classification hearing: establish FY12 tax rate",
+   "resolution": "unified tax rate adopted",
+   "quote": "1. 7:00 pm classification hearing, establish tax rate for fy12 - town of lunenburg, public hearing notice",
+   "tags": [
+    "tax rate",
+    "budget",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "Joint session with Planning Board: Summer Street alternative analysis",
+   "resolution": "no action; discussion of design options",
+   "quote": "review alternative analysis for summer redesign, joint session with planning board",
+   "tags": [
+    "Summer Street",
+    "traffic",
+    "planning",
+    "VHB"
+   ]
+  },
+  {
+   "topic": "Review update Statement of Interest, school building",
+   "resolution": "recertified",
+   "quote": "review update statement of interest, school building - john londa, director of facilities",
+   "tags": [
+    "school building",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Solar farms and bylaw questions for Town Counsel",
+   "resolution": "no vote; questions to counsel and Zoning Officer held",
+   "quote": "discussion regarding solar farms - kerry contacted town counsel",
+   "tags": [
+    "solar",
+    "zoning",
+    "planning board",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes and warrants reviewed and signed",
+   "quote": "minutes - board of selectmen regular session for 11/8/11 reviewed and signed",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Landfill debris clearing and extended hours (continued)",
+   "resolution": "deferred to next Tuesday meeting",
+   "quote": "dave noted that if property owners have the ability to clean their property and utilize the landfill they should",
+   "tags": [
+    "landfill",
+    "storm debris"
+   ]
+  },
+  {
+   "topic": "Old business: review warrant articles for Special Town Meeting",
+   "resolution": "heading only; no content recorded",
+   "quote": "1. review warrant articles for special town meeting -",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Committee resignations: Board of Health and Housing Authority",
+   "resolution": "informed; vacancies to be filled by joint meetings",
+   "quote": "kerry informed the board of the resignations of troy daniels and susan szocik.",
+   "tags": [
+    "appointments",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "heading only; no content recorded",
+   "quote": "executive session upcoming meeting schedule",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule and pending items",
+   "resolution": "no action",
+   "quote": "december 6, 2011 1. 7:30 p.m. amory phelps, applicant for historical commission",
+   "tags": [
+    "schedule",
+    "pending items"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:07 P.M.",
+   "quote": "being no further business board voted unanimously to adjourn regular session at 9:07 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Statement of Interest Recertification Information for FY11",
+   "where": "list",
+   "quote": "presented the attached statement of interest recertification information for fy11 for consideration in fy2012."
+  },
+  {
+   "name": "Town of Lunenburg Public Hearing Notice (classification hearing, M.G.L. Chapter 40, §56)",
+   "where": "text",
+   "quote": "town of lunenburg, public hearing notice, the board of"
+  },
+  {
+   "name": "Lunenburg Board of Assessors FY2012 tax rate tables",
+   "where": "text",
+   "quote": "lunenburg board of assessors fiscal year 2012"
+  },
+  {
+   "name": "VHB Power Point presentation on Summer Street Transportation Improvements",
+   "where": "text",
+   "quote": "trish domigan from vhb presented a power point presentation of the summer street transportation improvements"
+  },
+  {
+   "name": "Overlay district bylaw (proposed for STM)",
+   "where": "text",
+   "quote": "questioned the \"overlay district bylaw\" being proposed for the stm"
+  },
+  {
+   "name": "Town bylaws for Development Plan Review",
+   "where": "text",
+   "quote": "in the town's bylaws for development plan review, \"j\" & \"k\" believes"
+  },
+  {
+   "name": "State model solar bylaw",
+   "where": "text",
+   "quote": "tom has read our existing bylaw versus the model that the state now has"
+  },
+  {
+   "name": "Warrant #30 12 and #9P12RA",
+   "where": "text",
+   "quote": "warrants - #30 12, 11/15/11 - $151,737.76 and #9p12ra, 10/31/11 $506.48 reviewed and signed."
+  },
+  {
+   "name": "Minutes of Board of Selectmen regular session 11/8/11",
+   "where": "text",
+   "quote": "minutes - board of selectmen regular session for 11/8/11 reviewed and signed"
+  },
+  {
+   "name": "Warrant Articles for Special Town Meeting",
+   "where": "text",
+   "quote": "1. review warrant articles for special town meeting -"
+  },
+  {
+   "name": "MSBA Statement of Interest Recertification Form",
+   "where": "text",
+   "quote": "statement of interest recertification form, page 1"
+  }
+ ],
+ "tags": [
+  "tax rate",
+  "classification hearing",
+  "Summer Street",
+  "traffic",
+  "solar",
+  "zoning",
+  "Planning Board",
+  "school building",
+  "Statement of Interest",
+  "landfill",
+  "warrants",
+  "appointments",
+  "vacancies",
+  "Town Counsel"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "presented the attached statement of interest recertification information"
+ },
+ "dropped_unquoted_by_field": {}
 }

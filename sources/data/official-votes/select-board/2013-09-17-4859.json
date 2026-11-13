@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-09-17",
  "docid": "4859",
@@ -12,55 +12,432 @@
  },
  "votes": [
   {
-   "motion": "Approve the appointments of Robert Croteau and Bruce Walker as Public Weighers",
-   "moved_by": "Ebersole",
-   "seconded_by": "Bertram",
+   "motion": "Approve the appointments of Robert Croteau and Bruce Walker as Public Weighers (at Keatings).",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve the appointments of robert croteau and bruce walker as public weighers (at keatings). ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to approve the appointments of robert croteau and bruce walker as public weighers (at keatings). ms. bertram seconded."
   },
   {
-   "motion": "Approve the nomination of Shirley Bertone, Tony Bertone, and Judith Tarbell to the Council on Aging",
-   "moved_by": "Toale",
-   "seconded_by": "Bertram",
+   "motion": "Approve the nomination of Shirley Bertone, Tony Bertone, and Judith Tarbell to the Council on Aging.",
+   "moved_by": "Jamie Toale",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. toale moved to approve the nomination of shirley bertone, tony bertone, and judith tarbell to the council on aging. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. toale moved to approve the nomination of shirley bertone, tony bertone, and judith tarbell to the council on aging. ms. bertram seconded."
   },
   {
-   "motion": "Approve the violation findings as presented by the Chair",
-   "moved_by": "Bertram",
-   "seconded_by": "Matthews",
+   "motion": "Approve the violation findings as presented by the Chair (four violations against B & H Corporation).",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the violation findings as presented by the chair. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to approve the violation findings as presented by the chair. mr. matthews seconded."
   },
   {
-   "motion": "Suspend the license of B&H Corporation d/b/a Mickey Shea's to serve alcohol on Friday October 18, 2013 and Saturday October 19, 2013",
-   "moved_by": "Matthews",
-   "seconded_by": "Toale",
+   "motion": "Suspend the liquor license of B&H Corporation d/b/a Mickey Shea's from serving alcohol on Friday October 18, 2013 and Saturday October 19, 2013.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "mr. matthews moved to suspend the license of b&h corporation d/b/a mickey shea's to serve alcohol on friday october 18, 2013 and saturday october 19, 2013. mr. toale seconded. on vote, motion carried, 4 in favor, 1 opposed (alonzo)."
+   "quote": "mr. matthews moved to suspend the license of b&h corporation d/b/a mickey shea's to serve alcohol on friday october 18, 2013 and saturday october 19, 2013. mr. toale seconded."
   },
   {
-   "motion": "Approve all of the Earth Removal Permits identified by the Town Manager",
-   "moved_by": "Bertram",
-   "seconded_by": "Matthews",
+   "motion": "Approve all of the Earth Removal Permits identified by the Town Manager.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram moved to approve all of the earth removal permits identified by the town manager matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Bertram",
-   "seconded_by": "Matthews",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded. on vote, motion carried, 5 in favor, o opposed."
+   "quote": "being no further business ms. bertram moved to adjourn the meeting. mr. matthews seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan.",
- "cost_usd": 0.1502695
+ "note": "OCR text from a scanned page set, with some garbling (e.g., 'Speide!', 'tirst', 'O opposed'). Attachments referenced in the text (hearing notices, Earth Removal Permit list) are not included in the text. The minutes approval (9/10/2013) and warrant approval are listed without a recorded vote. Ebersole's and Bertram's follow-up requests (Ethics Commission contact, workshop, Policies & Procedures) were not put to a vote. The Alonzo/Mickey Shea's suspension motion carried 4-1 with Alonzo opposed.",
+ "cost_usd": 0.013670120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairman of the Council on Aging",
+   "status": "present",
+   "quote": "mary lynn conrad, chairman of the council on aging, spoke to the bos of the merits of the candidates for"
+  },
+  {
+   "name": "Judith Tarbell",
+   "role": "candidate, Council on Aging",
+   "status": "present",
+   "quote": "ms. tarbell introduced herself to the bos and said that she had previously served a full term on the council on"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "candidate, Council on Aging",
+   "status": "present",
+   "quote": "ms. bertone introduced herself to the bos and spoke of the length of time she has lived in lunenburg and how"
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "candidate, Council on Aging",
+   "status": "present",
+   "quote": "mr. bertone introduced himself to the bos and spoke of his volunteer time at the eagle house senior center"
+  },
+  {
+   "name": "Robert Croteau",
+   "role": "Public Weigher appointee",
+   "status": "absent",
+   "quote": "mr. croteau and mr. walker were not present this evening."
+  },
+  {
+   "name": "Bruce Walker",
+   "role": "Public Weigher appointee",
+   "status": "absent",
+   "quote": "mr. croteau and mr. walker were not present this evening."
+  },
+  {
+   "name": "Robert Herrick",
+   "role": "Representing B & H Corporation",
+   "status": "present",
+   "quote": "robert herrick, representing b & h corporation along with lindsey achilla, current manager of record at mickey shea's came before the bos to speak to this license hearing."
+  },
+  {
+   "name": "Lindsey Achilla",
+   "role": "Current Manager of Record at Mickey Shea's",
+   "status": "present",
+   "quote": "robert herrick, representing b & h corporation along with lindsey achilla, current manager of record at mickey shea's came before the bos to speak to this license hearing."
+  },
+  {
+   "name": "David Doneski",
+   "role": "Town Counsel Attorney",
+   "status": "present",
+   "quote": "town counsel attorney david doneski was present and mr. alonzo asked him if the change of manager is"
+  },
+  {
+   "name": "David Rogers",
+   "status": "present",
+   "quote": "david rogers, 82 highland st. spoke to the bos about his concerns with the traffic on highland st."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to research the file to see how long permits #5 and #31 have been inactive.",
+   "quote": "ms. speidel replied not to her recollection but will research the file to see how long #5 & #31 have been"
+  },
+  {
+   "decision": "Town Manager informed the licensee that a letter will be sent requiring him to bring the license to Town Hall to be held during the suspension, with after-hours pickup at the Police station.",
+   "quote": "ms. speidel informed mr. herrick that a letter will be sent him stating that he will need to physically bring his"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant #15-14 was listed for approval with a total amount.",
+   "figures_as_printed": [
+    "$675,441.45"
+   ],
+   "quote": "warrants: #15-14 $675,441.45"
+  },
+  {
+   "topic": "Chapter 90 road and crack sealing work",
+   "what_was_recorded": "The town manager gave the approximate cost of the fall Chapter 90 work.",
+   "figures_as_printed": [
+    "$34,000"
+   ],
+   "quote": "the cost of this work will be approximately $34,000."
+  },
+  {
+   "topic": "Liquor license manager change filing fee",
+   "what_was_recorded": "Herrick said he was told to submit a check for the ABCC filing in 2010, which was returned to him.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "was told by her that he needed a check for $200 made payable to the abcc, which he generated on 3/9/2010."
+  },
+  {
+   "topic": "Town Clerk election food payments",
+   "what_was_recorded": "Ebersole said four payments were made by the Clerk's office for food for elections; Alonzo compared the scale of a prior embezzlement with the food purchase.",
+   "figures_as_printed": [
+    "$450,000",
+    "$600"
+   ],
+   "quote": "equating someone who embezzled $450,000 for his own purpose and someone who purchased $600 worth of food for election workers"
+  },
+  {
+   "topic": "Town Clerk election food payments",
+   "what_was_recorded": "Ebersole said four payments were made by the Clerk's office for food for elections; no dollar total was given.",
+   "figures_as_printed": [],
+   "quote": "four payments were made by the clerks office for food for elections and he"
+  },
+  {
+   "topic": "Fitchburg special counsel and developer",
+   "what_was_recorded": "Speidel said the Fitchburg special counsel is believed to be paid for by the casino developer; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel believes that special counsel is paid for by the developer."
+  },
+  {
+   "topic": "License suspension cost to business and employees",
+   "what_was_recorded": "Board members discussed the financial burden of a suspension on the business and lost wages for employees; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "a 1 day suspension is a financial burden on the business but if you go on to 2 days it would be too severe"
+  },
+  {
+   "topic": "Ritter Building roof and Library painting",
+   "what_was_recorded": "Matthews said the projects are tax dollars at work; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "public comment - mr. matthews noted that the ritter building has been roofed, the library is in the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Town Clerk election food payments and ethics",
+   "speaker": "Mr. Ebersole",
+   "quote": "mr. ebersole spoke to say that contrary to what was published in the lunenburg ledger, he was not the one"
+  },
+  {
+   "topic": "General Bylaws accuracy on Town Website",
+   "speaker": "Mr. Ebersole",
+   "quote": "mr. ebersole said that the general bylaws as posted by the town clerk on the town website are not accurate."
+  },
+  {
+   "topic": "Return to public comment on Town Clerk remarks",
+   "speaker": "Ms. Bertram",
+   "quote": "ms. bertram asked to return to public comment to discuss the prior remarks made by mr. ebersole concerning"
+  },
+  {
+   "topic": "Comparison of Town Clerk matter to prior Superintendent case",
+   "speaker": "Mr. Alonzo",
+   "quote": "mr. alonzo commented to say that he agrees that equating someone who embezzled $450,000 for his own"
+  },
+  {
+   "topic": "Clarifying remarks on accounting systems",
+   "speaker": "Mr. Ebersole",
+   "quote": "mr. ebersole spoke to say duly noted, he did not mean to intend that the scale was the same but wants to"
+  },
+  {
+   "topic": "Building maintenance and tax dollars",
+   "speaker": "Mr. Matthews",
+   "quote": "public comment - mr. matthews noted that the ritter building has been roofed, the library is in the"
+  },
+  {
+   "topic": "Highland St. traffic; Weights and Measures sealers; license in Ray Powell's name",
+   "speaker": "David Rogers",
+   "quote": "david rogers, 82 highland st. spoke to the bos about his concerns with the traffic on highland st."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening)",
+   "resolution": "discussed; no action",
+   "quote": "mr. ebersole said that the general bylaws as posted by the town clerk on the town website are not accurate.",
+   "tags": [
+    "public comment",
+    "town clerk",
+    "ethics",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced; no action",
+   "quote": "m. alonzo announced the schedule and dumping requirements for the lunenburg fall waste days at the",
+   "tags": [
+    "announcements",
+    "waste days",
+    "utilities",
+    "charity"
+   ]
+  },
+  {
+   "topic": "Appointments: Public Weighers and Council on Aging",
+   "resolution": "approved both appointments",
+   "quote": "ms. speidel explained that these are annual appointments for public weighers and these appointments are",
+   "tags": [
+    "appointments",
+    "public weighers",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Hearing: alcoholic beverages license, Mickey Shea's",
+   "resolution": "four violations found; 2-day license suspension approved 4-1",
+   "quote": "hearing_pursuant to mgl c. 138, section 23 to discuss alcoholic beverages license",
+   "tags": [
+    "liquor license",
+    "license violation",
+    "suspension",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Current Business: Earth Removal Permits",
+   "resolution": "approved",
+   "quote": "ms. speidel spoke to say that these permits are renewed every year and she read into record each permit",
+   "tags": [
+    "earth removal",
+    "permits",
+    "gravel"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrant listed; action file issues none; no vote recorded",
+   "quote": "action file issues: none",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "board of health - mr. ebersole reported that the boh met last night and most of their work has been around",
+   "tags": [
+    "committees",
+    "board of health",
+    "building reuse",
+    "capital planning",
+    "library",
+    "sewer",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "reports received; no action",
+   "quote": "ms. speidel reported that this fall, with our chapter 90 allocation, there will be work done on the following areas:",
+   "tags": [
+    "chapter 90",
+    "roads",
+    "flu shots",
+    "casino",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "discussed; no action",
+   "quote": "public comment - mr. matthews noted that the ritter building has been roofed, the library is in the",
+   "tags": [
+    "public comment",
+    "traffic",
+    "weights and measures",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:40PM",
+   "quote": "being no further business ms. bertram moved to adjourn the meeting. mr. matthews seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Alcoholic Beverage License hearing notice, B&H Corporation d/b/a Mickey Shea's, 324 Electric Ave",
+   "where": "text",
+   "quote": "mr. alonzo read into record the hearing notice regarding alcoholic beverage license for b&h"
+  },
+  {
+   "name": "Earth Removal Permits list (attached)",
+   "where": "list",
+   "quote": "review & approval earth removal permits, see attached list: ms. speidel spoke to say that these"
+  },
+  {
+   "name": "Building Inspector/Zoning Officer annual site inspection report",
+   "where": "text",
+   "quote": "he has submitted his report and found that all gravel permits which he had inspected were found to be orderly and"
+  },
+  {
+   "name": "Treasurer/Collector memo on permit holders' taxes",
+   "where": "text",
+   "quote": "the treasurer/collector had sent a memo confirming that."
+  },
+  {
+   "name": "Inter Municipal Agreement (IMA) review with Fitchburg",
+   "where": "text",
+   "quote": "sewer commission- mr. ebersole reported that their major item is the ima (inter municipal agreement) review"
+  },
+  {
+   "name": "General Bylaws as posted on the Town Website",
+   "where": "text",
+   "quote": "mr. ebersole said that the general bylaws as posted by the town clerk on the town website are not accurate."
+  },
+  {
+   "name": "Herrick letter to the ABCC requesting change of manager",
+   "where": "text",
+   "quote": "mr. herrick wrote a letter to the abcc requesting a change in manager from his former"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "liquor license",
+  "license violation",
+  "suspension",
+  "appointments",
+  "earth removal",
+  "warrants",
+  "committee reports",
+  "Chapter 90",
+  "casino",
+  "traffic",
+  "public comment",
+  "town clerk",
+  "ethics"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached list"
+ },
+ "dropped_unquoted_by_field": {}
 }

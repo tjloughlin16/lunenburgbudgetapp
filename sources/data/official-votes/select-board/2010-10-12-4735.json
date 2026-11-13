@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-10-12",
  "docid": "4735",
@@ -12,20 +12,478 @@
  },
  "votes": [
   {
-   "motion": "Appoint Laura Williams as Regional HHW Oversight Committee Representative/Back-up Delegate",
+   "motion": "Appoint Laura Williams as the Regional HHW Oversight Committee back-up delegate (alternate), as recommended by the Town Manager.",
    "moved_by": "Steve",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "steve so moved, voted unanimously."
   },
   {
-   "motion": "Adjourn Regular Session",
+   "motion": "Adjourn the Regular Session at 9:45 P.M.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 9:45 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 9:45 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan, readable. Document includes meeting minutes (pages 1-4) and supplementary materials (construction estimate, petition, tax impact chart, procurement procedures). Two votes recorded: Laura Williams appointment and adjournment.",
- "cost_usd": 0.13371450000000001
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned original, with visible garbling (e.g., \"Steven Mi. deBettencourt\", \"PREMINARY\", \"alocate\"); figures in the attached tables (Hudson Design estimate, tax-impact chart, procurement charts) are OCR and may be misread, and the procurement and IG chart pages were not itemised as budget items. The executive session is listed but no motion to enter, and no result, is recorded. The warrants were 'reviewed and signed' with no motion recorded. The Public Comment header has no content recorded. The Old Business and Appointments headings contain only the single committee appointment item.",
+ "cost_usd": 0.015247420000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with paula bertram, steven mi. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven Mi. deBettencourt",
+   "status": "present",
+   "quote": "with paula bertram, steven mi. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "with paula bertram, steven mi. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with paula bertram, steven mi. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with paula bertram, steven mi. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven mi. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Mark McCluskey",
+   "role": "Hudson Design",
+   "status": "present",
+   "quote": "mark mccluskey from hudson design and coa director, doreen noble were in attendance and"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "mark mccluskey from hudson design and coa director, doreen noble were in attendance and"
+  },
+  {
+   "name": "Shelly Hatch",
+   "role": "MRPC",
+   "status": "not stated",
+   "quote": "shelly hatch from mrpc has been working with the committee in finalizing the documents for submittal to department of housing community development (dhcd)"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz informed the board that the cardboard container dumpster will be removed as of october 20th"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  },
+  {
+   "name": "Sue Burnish",
+   "role": "30 Pleasantview Ave.",
+   "status": "present",
+   "quote": "sue burnish 30 pleasantview ave. has been a resident of 26 years"
+  },
+  {
+   "name": "Rita Hamel",
+   "role": "10 Pleasantview",
+   "status": "present",
+   "quote": "rita hamel, 10 pleasantview noted that sue has been a spearhead for this"
+  },
+  {
+   "name": "Saundra Lane",
+   "role": "of 300 Holman Street",
+   "status": "present",
+   "quote": "saundra lane, of 300 holman street stated that they purposefully put in a pond"
+  },
+  {
+   "name": "Steve Whitman",
+   "status": "present",
+   "quote": "referred to steve whitman for a perspective from his engineering point of view"
+  },
+  {
+   "name": "Linda Whitman",
+   "status": "not stated",
+   "quote": "jack provided the board with a petition that was provided by linda whitman from the residents of holman street"
+  },
+  {
+   "name": "Don Bowen",
+   "status": "not stated",
+   "quote": "both don bowen and att. hill (who has been working with the zba on this project)"
+  },
+  {
+   "name": "Att. Hill",
+   "status": "not stated",
+   "quote": "both don bowen and att. hill (who has been working with the zba on this project)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DPW cardboard container dumpster to be removed from DPW as of October 20th; residents asked to leave cardboard curbside or use the Townsend transfer station.",
+   "quote": "informed the board that the cardboard container dumpster will be removed as of october 20th from the dpw."
+  },
+  {
+   "decision": "Town Manager to schedule two workshops: one on Pleasantview Ave and one on how water works in the Town of Lunenburg.",
+   "quote": "kerry will reach out to schedule these workshops."
+  },
+  {
+   "decision": "Public hearing on the Senior Center grant submittal scheduled for November 2nd.",
+   "quote": "public hearing on this grant submittal has been scheduled for november 2nd"
+  },
+  {
+   "decision": "Mark McCluskey to look into the town's bituminous rate and the town's contract with the vendor.",
+   "quote": "mark will look into this and needs to understand contractually what the town's agreement is with the vendor."
+  },
+  {
+   "decision": "Town Manager to see whether the town can purchase an additional quantity of bituminous from the contractor.",
+   "quote": "kerry will look to see if we're able to purchase an additional quantity from the contractor."
+  },
+  {
+   "decision": "Town Manager to call the DEP representative for an update on the contaminated soil reportedly disposed of in Lunenburg.",
+   "quote": "kerry will place a call to the dep representative that she previously spoke with for an update."
+  },
+  {
+   "decision": "Town Manager to look into TIP funding opportunities (Summer Street engineering) and report back to the board.",
+   "quote": "she will look into the opportunities further and report back to the board."
+  },
+  {
+   "decision": "Town Manager and DPW went ahead with a temporary paving of Pleasantview Ave, which was done the Saturday before the meeting.",
+   "quote": "we decided to move ahead with paving understanding that it would be a temporary solution."
+  },
+  {
+   "decision": "DPW Director to provide information from the Police and Fire Chiefs on Holman Street bridge closure; Town Manager to put together a more formal presentation.",
+   "quote": "jack will provide information from the chief's, and kerry was going to suggest that"
+  },
+  {
+   "decision": "Members asked to respond to the Town Manager individually on emails rather than reply-all.",
+   "quote": "paula noted that when kerry sends out an email, the members should respond to kerry individually and not hit the"
+  },
+  {
+   "decision": "State Election Warrant signed (five copies).",
+   "quote": "state election warrant - five copies signed."
+  },
+  {
+   "decision": "Warrants reviewed and signed.",
+   "quote": "warrants - #19 11, 10/12/10 - $287,486.44, #1vd 11, 10/13/10 - ($1,012.50) and #8p 11, 10/13/10 - $651,039.52 reviewed and signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cardboard container dumpster at DPW",
+   "what_was_recorded": "Town Manager said keeping the cardboard dumpster at DPW costs the town $8,000.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "per kerry this costs the town $8,000 to have this at dpw and whereas it doesn't cost anything more for cardboard recycling curbside"
+  },
+  {
+   "topic": "Senior Center parking lot cost history",
+   "what_was_recorded": "Initial cost estimates were over $800,000 with septic mound removal unknown; current estimate is $360,000 with a 15% contingency.",
+   "figures_as_printed": [
+    "$800,000",
+    "$360,000",
+    "15%"
+   ],
+   "quote": "paula questioned the general costs and per mark initially the costs were coming in in excess of $800,000"
+  },
+  {
+   "topic": "Senior Center parking lot estimate table",
+   "what_was_recorded": "Hudson Design preliminary construction cost estimate for the parking and repaving project: subtotal, 15% contingency and total.",
+   "figures_as_printed": [
+    "$313,839.89",
+    "$47,075.98",
+    "$360,915.87"
+   ],
+   "quote": "eagle house senior center: preminary construction cost estimate"
+  },
+  {
+   "topic": "Senior Center parking lot cost range",
+   "what_was_recorded": "DPW/Senior Center recommendation that the project will be approximately $200,000 to $300,000 regardless of labor or gifts.",
+   "figures_as_printed": [
+    "$200,000 to $300,000"
+   ],
+   "quote": "we will be looking at a project of approximately $200,000 to $300,000."
+  },
+  {
+   "topic": "Senior Center parking lot grant funding",
+   "what_was_recorded": "Officials said the project would be funded through a DHCD grant application, not a request to the Town for money.",
+   "figures_as_printed": [],
+   "quote": "this is not money that we'll be coming to the town of lunenburg looking for"
+  },
+  {
+   "topic": "Holman Street bridge reconstruction",
+   "what_was_recorded": "Reconstruction estimate for the closed Holman Street bridge.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "estimates were about $500,000 for reconstruction because the overall integretity of the"
+  },
+  {
+   "topic": "Holman Street bridge FEMA funding",
+   "what_was_recorded": "FEMA was going to allocate a sum to make the town whole on the bridge damage from the March flooding.",
+   "figures_as_printed": [
+    "$4,916"
+   ],
+   "quote": "structure was compromised and fema was going to alocate $4,916 to \"make us whole\"."
+  },
+  {
+   "topic": "Chapter 90 funds for debt service",
+   "what_was_recorded": "Discussion of using the roughly $400,000 annual Chapter 90 money to pay debt service for road work; state permission and repayment funding questioned.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "utilize the $400,000 that we usually receive in chapter 90 money and use this money towards a debt repayment"
+  },
+  {
+   "topic": "Police grant for bullet proof vests",
+   "what_was_recorded": "Federal Bureau of Justice grant for vests, covering 50% of cost (or 100% with waiver); Police Chief plans 27 vests with a 50% match requested through Capital Planning.",
+   "figures_as_printed": [
+    "$9,450"
+   ],
+   "quote": "received grant in the amount of $9,450 from federal bureau of justice for the purchase of bullet proof vests"
+  },
+  {
+   "topic": "Police training grant",
+   "what_was_recorded": "Grant to send two officers to a domestic violence training program.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "also grant in the amount of $1,000 to send two officers to a training program dealing with domestic violence"
+  },
+  {
+   "topic": "Estimated tax impact of Town Meeting spending",
+   "what_was_recorded": "Town Manager provided a chart of the estimated impact of Town Meeting spending on the fiscal tax bill, with a per-dollar calculation table.",
+   "figures_as_printed": [],
+   "quote": "kerry provided the attached \"estimated impact of town meeting spending on your fiscal tax bill\"."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Three warrants reviewed and signed, with amounts as printed.",
+   "figures_as_printed": [
+    "$287,486.44",
+    "($1,012.50)",
+    "$651,039.52"
+   ],
+   "quote": "warrants - #19 11, 10/12/10 - $287,486.44, #1vd 11, 10/13/10 - ($1,012.50) and #8p 11, 10/13/10 - $651,039.52 reviewed and signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sue Burnish",
+   "stated_role": "30 Pleasantview Ave.",
+   "topic": "Pleasantview Ave roadway, water line and septic concerns",
+   "quote": "sue burnish 30 pleasantview ave. has been a resident of 26 years and there hasn't been anything done to the roadway"
+  },
+  {
+   "speaker": "Rita Hamel",
+   "stated_role": "10 Pleasantview",
+   "topic": "Pleasantview Ave: Sewer Commission and ZBA role if development is delayed",
+   "quote": "rita hamel, 10 pleasantview noted that sue has been a spearhead for this"
+  },
+  {
+   "speaker": "Saundra Lane",
+   "stated_role": "of 300 Holman Street",
+   "topic": "Holman Street bridge closure and truck traffic",
+   "quote": "saundra lane, of 300 holman street stated that they purposefully put in a pond"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action (informational)",
+   "quote": "yard waste days - the lunenburg landfill, off of youngs road will be open for consecutive saturdays october 16th -",
+   "tags": [
+    "announcements",
+    "recycling",
+    "yard waste"
+   ]
+  },
+  {
+   "topic": "Senior Center parking lot",
+   "resolution": "discussed; public hearing scheduled for November 2nd",
+   "quote": "senior center parking lot - mark mccluskey from hudson design and coa director, doreen noble were in attendance and",
+   "tags": [
+    "senior center",
+    "parking",
+    "grant",
+    "CDBG",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Pleasantview Ave update",
+   "resolution": "discussed; workshops to be scheduled",
+   "quote": "pleasantview ave. update - kerry referred back to her presentation at town meeting and had a glimmer of hope",
+   "tags": [
+    "roads",
+    "Pleasantview Ave",
+    "sewer",
+    "water",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Public procurement overview",
+   "resolution": "received (information provided)",
+   "quote": "overview - public procurement - kerry provided the attached information to the board on public procurement in massachusetts",
+   "tags": [
+    "procurement",
+    "laws"
+   ]
+  },
+  {
+   "topic": "State Election Warrant",
+   "resolution": "signed",
+   "quote": "state election warrant - five copies signed.",
+   "tags": [
+    "election"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reviewed and signed",
+   "quote": "warrants - #19 11, 10/12/10 - $287,486.44, #1vd 11, 10/13/10 - ($1,012.50) and #8p 11, 10/13/10 - $651,039.52 reviewed and signed.",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Action file issues",
+   "resolution": "discussed; follow-ups assigned",
+   "quote": "action file issues - tom provided the town manager with an application for the pacc coordinator",
+   "tags": [
+    "action file",
+    "contaminated soil",
+    "electric charging",
+    "Chapter 90",
+    "TIP",
+    "email"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "informational",
+   "quote": "finance committee meets on this thursday.",
+   "tags": [
+    "committees",
+    "DPW Building Committee",
+    "Capital Planning"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none",
+   "quote": "department updates - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager updates: Holman Street bridge, grants, census",
+   "resolution": "discussed; formal presentation to follow",
+   "quote": "town manager updates - kerry referred to dpw director jack rodriquenz for an update on the holman street bridge",
+   "tags": [
+    "Holman Street bridge",
+    "grants",
+    "census",
+    "precincts",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Committee appointments: Regional HHW Oversight Committee delegate",
+   "resolution": "approved (Laura Williams as back-up delegate)",
+   "quote": "kerry recommended the appointment of laura williams as the delegate",
+   "tags": [
+    "appointments",
+    "HHW"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "listed on agenda; no motion or result recorded",
+   "quote": "m.g.l. chapter 39, §23b(2) to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public Procurement in Massachusetts (information provided by Town Manager)",
+   "where": "list",
+   "quote": "kerry provided the attached information to the board on public procurement in massachusetts"
+  },
+  {
+   "name": "Estimated Impact of Town Meeting Spending on your Fiscal Tax Bill",
+   "where": "list",
+   "quote": "kerry provided the attached \"estimated impact of town meeting spending on your fiscal tax bill\"."
+  },
+  {
+   "name": "Eagle House Senior Center: PREMINARY CONSTRUCTION COST ESTIMATE, Project 10-016, Additional Parking and Repaving Project (Hudson Design Group LLC, 10/12/2010)",
+   "where": "text",
+   "quote": "eagle house senior center: preminary construction cost estimate"
+  },
+  {
+   "name": "Proposed Senior Center parking lot plans (before the parking lot committee)",
+   "where": "text",
+   "quote": "reviewed the proposed plans that have been before the parking lot committee"
+  },
+  {
+   "name": "Holman Street bridge petition, October 2010 (PROPOSED HOLMAN STREET BRIDGE REPAIR)",
+   "where": "text",
+   "quote": "jack provided the board with a petition that was provided by linda whitman from the residents of holman street"
+  },
+  {
+   "name": "Office of the Inspector General public procurement charts (August 2010 revision)",
+   "where": "text",
+   "quote": "the following charts were created by the office of the inspector general for local officials to use as a"
+  },
+  {
+   "name": "State Election Warrant",
+   "where": "text",
+   "quote": "state election warrant - five copies signed."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Senior Center parking lot",
+  "Pleasantview Ave",
+  "Holman Street bridge",
+  "Chapter 90 roads",
+  "public procurement",
+  "warrants",
+  "grants",
+  "committee appointments",
+  "recycling",
+  "Leominster water",
+  "tax impact",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry provided the attached information"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

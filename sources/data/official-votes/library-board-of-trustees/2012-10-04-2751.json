@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-10-04",
  "docid": "2751",
@@ -12,34 +12,180 @@
  },
  "votes": [
   {
-   "motion": "Accept the revised FY13 budget of $338,541",
+   "motion": "Accept the revised FY13 budget of $338,541.",
    "moved_by": "John Mara",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "john mara made a motion to accept the revised fy13 budget of $338,541, seconded by dick mailloux, unan imous approval by all in attendance",
-   "quote_taken_from_text": true
+   "quote": "john mara made a motion to accept the revised fy13 budget of $338,541, seconded by dick mailloux, unan imous approval by all in attendance"
   },
   {
-   "motion": "Restore the 4 hours on Wednesday nights at the next possible Wednesday",
+   "motion": "Restore the 4 hours on Wednesday nights at the next possible Wednesday.",
    "moved_by": "Robin Venezia",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "robin venezia made a motion to restore the 4 hours on wednesday nights at the next possible wednesday; seconded by dick mailloux; unanimous approval by all in atte ndance",
-   "quote_taken_from_text": true
+   "quote": "robin venezia made a motion to restore the 4 hours on wednesday nights at the next possible wednesday; seconded by dick mailloux; unanimous approval"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:12 pm.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Lars Widstrand",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "dick mailloux made a motion adjourn at 8:12 pm,; se conded by lars widstrand; unanimous approval by all in attendance",
-   "quote_taken_from_text": true
+   "quote": "dick mailloux made a motion adjourn at 8:12 pm,; se conded by lars widstrand; unanimous approval by all in attendance."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08479049999999999
+ "note": "Text is OCR-like with split words (e.g., 'Marth a', 'Direct or', 'unan imous'); names and quotes are copied as they appear, with names normalized in the name field only. Trustee roles are not stated in the minutes. Terry Hathaway's attendance at this meeting is not stated. Public comment is recorded as 'None'.",
+ "cost_usd": 0.0042593200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "role": "",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, lars widstrand, dick mailloux, john mara, marth a moore"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "quote": "respectfully submitted, lisa krowitz secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "status": "present",
+   "role": "",
+   "quote": "jeanne raboin met with terry hathaway (interim dire ctor) before she departed to discuss ma library sta te aid requirements."
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "role": "",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, lars widstrand, dick mailloux, john mara, marth a moore"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "role": "",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, lars widstrand, dick mailloux, john mara, marth a moore"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "role": "",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, lars widstrand, dick mailloux, john mara, marth a moore"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "role": "New LPL Director",
+   "quote": "martha moore officially start as the new lpl direct or on october 9, 2012"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "absent",
+   "role": "",
+   "quote": "absent: kathy murray"
+  },
+  {
+   "name": "Terry Hathaway",
+   "status": "not stated",
+   "role": "Interim Director",
+   "quote": "jeanne raboin met with terry hathaway (interim dire ctor) before she departed to discuss ma library sta te aid requirements."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jeanne Raboin will send out available dates for the upcoming get-together for Staff, Trustees, and Friends to say goodbye to Terry Hathaway and welcome Martha Moore.",
+   "quote": "jeanne will send out available dates."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY13 library budget increase",
+   "what_was_recorded": "The Special Town Meeting allocated an additional $26,228 to the library for the FY13 budget, and the trustees then accepted a revised FY13 budget of $338,541.",
+   "figures_as_printed": [
+    "$26,228",
+    "$338,541"
+   ],
+   "quote": "at the special town meeting, the town voted to allo cate an additional $26,228 to the library for the f y13 budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Martha Moore start as Director",
+   "resolution": "noted",
+   "quote": "martha moore officially start as the new lpl direct or on october 9, 2012",
+   "tags": [
+    "staffing",
+    "director"
+   ]
+  },
+  {
+   "topic": "MA state aid requirements",
+   "resolution": "documents signed, noted",
+   "quote": "jeanne raboin met with terry hathaway (interim dire ctor) before she departed to discuss ma library sta te aid requirements.",
+   "tags": [
+    "state aid",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "FY13 budget",
+   "resolution": "revised budget accepted",
+   "quote": "john mara made a motion to accept the revised fy13 budget of $338,541, seconded by dick mailloux, unan imous approval by all in attendance",
+   "tags": [
+    "budget",
+    "FY13"
+   ]
+  },
+  {
+   "topic": "Library hours",
+   "resolution": "Wednesday night hours restored",
+   "quote": "robin venezia made a motion to restore the 4 hours on wednesday nights at the next possible wednesday; seconded by dick mailloux; unanimous approval",
+   "tags": [
+    "hours",
+    "service"
+   ]
+  },
+  {
+   "topic": "Other: get-together and book sale",
+   "resolution": "noted",
+   "quote": "there will be an upcoming get together at jeanne ra boin's house for the staff, trustees, and friends",
+   "tags": [
+    "events",
+    "staff"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Commonwealth of Massachusetts Board of Library Commissioners FY13 State Aid to Public Libraries Application and Compliance Form",
+   "where": "list",
+   "quote": "commonwealth of massachusetts board of library comm issioners fy13 state aid to public libraries applic ation and compliance form"
+  },
+  {
+   "name": "Financial Report",
+   "where": "list",
+   "quote": "they signed two necessary documents on 9/27/12. th e two documents were: 1. commonwealth of massachusetts board of library comm issioners fy13 state aid to public libraries applic ation and compliance form 2. financial report"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "state aid",
+  "staffing",
+  "library hours",
+  "trustees"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "they signed two necessary documents on 9/27/12."
+ },
+ "dropped_unquoted_by_field": {}
 }

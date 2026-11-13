@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-01-09",
  "docid": "1177",
@@ -12,21 +12,383 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from December 20, 2012 and January 2, 2013",
+   "motion": "Approve the minutes of December 20, 2012 and January 2, 2013.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "approve minutes- approved december 20, 2012 and january 2, 2013."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. Shapiro",
+   "seconded_by": "Mr. Sund",
    "outcome": "passed",
-   "moved_by": "Colleen Shapiro",
-   "seconded_by": "Carl Sund",
    "procedural": true,
    "quote": "motion to adjourn, ms. shapiro, second, mr. sund, adjourned 12:30 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1145415
+ "note": "Text extraction has stray spacing (e.g., 'Calme s', 'p rinters', '$210,000 .00', 'Chief Sullivan .'), kept as printed. The minutes record no vote counts and no motion for the minutes approval (recorded as 'Approved' with no mover or result count); outcome recorded as passed. Chief Sullivan, Chief Marino, DPW Director Rodriquenz and Superintendent Calmes are named but their attendance is not stated. Public comment section is absent.",
+ "cost_usd": 0.00666352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kerry speidel"
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "Technology Director",
+   "status": "present",
+   "quote": "presentation given by steve malandrinos, technology director."
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Chief (Fire Department)",
+   "status": "not stated",
+   "quote": "the committee requested a second meeting with chief sullivan"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Chief (Police Department)",
+   "status": "not stated",
+   "quote": "chief sullivan noted that chief marino is keeping his cars as backup in the police dept."
+  },
+  {
+   "name": "John Rodriquenz",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "dpw director, john rodriquenz, was to look into leasing of street sweeper."
+  },
+  {
+   "name": "Superintendent Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "chair benson will talk to superintendent calme s regarding training."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Five Year Technology Plan, submitted by the previous Tech Director, was put on hold to give the Technology Director time to review it.",
+   "quote": "as the five year plan was submitted by the previous tech director, it was put on hold to give mr. malandrinos time to review."
+  },
+  {
+   "decision": "Form B will be updated so departments state whether they have technology or building requests.",
+   "quote": "the form b will be updated for this inclusion."
+  },
+  {
+   "decision": "The Technology Director will check the cost difference between Fire Dept and Police Dept Toughbooks.",
+   "quote": "mr. malandrinos to check."
+  },
+  {
+   "decision": "The Technology Director will look for the most cost-effective solution for the Windows 2000 replacement in the schools.",
+   "quote": "mr. malandrinos will see if there is a most cost-effective solution."
+  },
+  {
+   "decision": "The Technology Director will view the mobile media carts at the schools; the Chair will talk to the Superintendent about training.",
+   "quote": "chair benson will talk to superintendent calme s regarding training."
+  },
+  {
+   "decision": "The Committee requested a second meeting with the Fire Chief.",
+   "quote": "the committee requested a second meeting with chief sullivan"
+  },
+  {
+   "decision": "The Chair will bring the possibility of a lease-to-own ambulance purchase to the Town Manager.",
+   "quote": "chair benson will bring up subject to town manager."
+  },
+  {
+   "decision": "The DPW Director will investigate the cost of leasing or outsourcing a street sweeper.",
+   "quote": "the committee would like the dpw director to investigate."
+  },
+  {
+   "decision": "An invitation will be issued to the Selectmen, Town Manager, Finance Committee, DPW Director, and Fire Chief to view the new cruiser models at the Public Safety Building, January 16th, 9:30 AM, and it will be placed on the Lunenburg Scroll.",
+   "quote": "an invitation will be issued to the selectmen, town manager, finance committee, dpw director, and fire chief to view the new cruiser models at the public safety building, january 16th, 9:30 am."
+  },
+  {
+   "decision": "The Chair will contact the DPW Director about the Senior Center parking-lot ramp, to go to the DPW Director for action if approved.",
+   "quote": "chair benson to contact dpw director."
+  },
+  {
+   "decision": "The Committee will ask the Technology and DPW heads to come again before the Committee.",
+   "quote": "committee will request technology and dpw to come again before the committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY14 technology capital request, total",
+   "what_was_recorded": "The total technology request for FY2014 is stated as $54,399.00.",
+   "figures_as_printed": [
+    "$54,399.00"
+   ],
+   "quote": "total technology request for fy2014 is $54,399.00."
+  },
+  {
+   "topic": "Fire Dept technology request",
+   "what_was_recorded": "Fire Dept technology request totals $10,023.00 for 1 computer, 2 Toughbooks and 1 printer.",
+   "figures_as_printed": [
+    "$10,023.00"
+   ],
+   "quote": "fire dept - 1 computer, 2 toughbooks, 1 printer for a total of $10,023.00."
+  },
+  {
+   "topic": "Toughbook price difference",
+   "what_was_recorded": "Committee questioned the difference between Fire Dept Toughbook and Police Dept Toughbook unit prices.",
+   "figures_as_printed": [
+    "$4,500 each",
+    "$6,111 each"
+   ],
+   "quote": "committee questioned cost difference of fire dept toughbooks ($4,500 each) vs. police dept toughbooks ($6,111 each)."
+  },
+  {
+   "topic": "Police Dept technology request",
+   "what_was_recorded": "Police Dept technology request totals $24,173.00.",
+   "figures_as_printed": [
+    "$24,173.00"
+   ],
+   "quote": "3 digital cameras, 1 fax machine for a total of $24,173.00."
+  },
+  {
+   "topic": "Public Safety Building technology request",
+   "what_was_recorded": "Public Safety Building request totals $4,653.00; an internet backup system may cost less than a tape backup ($2,200.00).",
+   "figures_as_printed": [
+    "$4,653.00",
+    "$2,200.00"
+   ],
+   "quote": "public safety building - 2 replacement port switches, 1 tape backup system, 1 firewall for a total of $4,653.00."
+  },
+  {
+   "topic": "Board of Selectmen computer",
+   "what_was_recorded": "One computer for the Board of Selectmen at $900.00.",
+   "figures_as_printed": [
+    "$900.00"
+   ],
+   "quote": "board of selectmen- 1 computer at $900.00."
+  },
+  {
+   "topic": "Board of Health printer",
+   "what_was_recorded": "One printer for the Board of Health at $300.00.",
+   "figures_as_printed": [
+    "$300.00"
+   ],
+   "quote": "board of health- 1 printer at $300.00."
+  },
+  {
+   "topic": "Treasurer's Office technology request",
+   "what_was_recorded": "Treasurer's Office request of 2 computers and 1 printer totals $2,100.00.",
+   "figures_as_printed": [
+    "$2,100.00"
+   ],
+   "quote": "treasurer's office- 2 computers and 1 printer for a total of $2,100.00"
+  },
+  {
+   "topic": "Building Dept printers",
+   "what_was_recorded": "Two printers for the Building Dept total $600.00.",
+   "figures_as_printed": [
+    "$600.00"
+   ],
+   "quote": "building dept- 2 printers for a total of $600.00."
+  },
+  {
+   "topic": "Eagle House technology request",
+   "what_was_recorded": "Eagle House request of 1 computer and 1 fax machine totals $1,300.00.",
+   "figures_as_printed": [
+    "$1,300.00"
+   ],
+   "quote": "eagle house- 1 computer, 1 fax machine for a total of $1,300.00"
+  },
+  {
+   "topic": "Library UPS",
+   "what_was_recorded": "One APC UPS for library servers at $700.00.",
+   "figures_as_printed": [
+    "$700.00"
+   ],
+   "quote": "library- 1 apc ups for servers at $700.00."
+  },
+  {
+   "topic": "Town Clerk computer",
+   "what_was_recorded": "One computer for the Town Clerk at $900.00.",
+   "figures_as_printed": [
+    "$900.00"
+   ],
+   "quote": "town clerk- 1 computer for $900.00."
+  },
+  {
+   "topic": "Town Manager laptop",
+   "what_was_recorded": "One laptop for the Town Manager at $1,350.00.",
+   "figures_as_printed": [
+    "$1,350.00"
+   ],
+   "quote": "town manager- 1 laptop for $1,350.00."
+  },
+  {
+   "topic": "Ritter Building technology request",
+   "what_was_recorded": "Ritter Building request of a backup domain controller and an APC UPS totals $7,400.00.",
+   "figures_as_printed": [
+    "$7,400.00"
+   ],
+   "quote": "ritter building- 1 backup domain controller, and 1 apc ups for a total of $7,400.00"
+  },
+  {
+   "topic": "Windows 2000 building-controls system replacement in schools",
+   "what_was_recorded": "Committee member questioned the $41,400 replacement, which he feels is too costly for a two-year lifespan.",
+   "figures_as_printed": [
+    "$41,400"
+   ],
+   "quote": "mr. raboin questioned the $41,400 windows 2000 replacement that controls building operations in the schools."
+  },
+  {
+   "topic": "Rescue 2 Ambulance replacement",
+   "what_was_recorded": "Fire Chief's priority is replacement of Rescue 2 Ambulance for $215,000.00, amended up from $210,000 to allow a heavier chassis.",
+   "figures_as_printed": [
+    "$215,000.00",
+    "$210,000 .00",
+    "$215,000.00"
+   ],
+   "quote": "the amended price from $210,000 .00 to $215,000.00 would allow the purchase of a heavier chassis."
+  },
+  {
+   "topic": "Senior Center parking-lot ramp",
+   "what_was_recorded": "No plan is in place for the ramp between the parking lots for the Senior Center, listed at $15,000.00.",
+   "figures_as_printed": [
+    "$15,000.00"
+   ],
+   "quote": "the ramp between the parking lots for the senior center at $15,000.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Technology FY14 capital plan",
+   "resolution": "presented; items referred for follow-up; Five Year Plan put on hold",
+   "quote": "technology- presentation given by steve malandrinos, technology director.",
+   "tags": [
+    "technology",
+    "capital plan",
+    "FY14"
+   ]
+  },
+  {
+   "topic": "Fire Department requests (Rescue 2 ambulance, Car 2)",
+   "resolution": "discussed; second meeting with Fire Chief requested; lease-to-own to Town Manager",
+   "quote": "fire department - the committee requested a second meeting with chief sullivan .",
+   "tags": [
+    "fire department",
+    "ambulance",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "DPW street sweeper leasing",
+   "resolution": "DPW Director to investigate",
+   "quote": "dpw director, john rodriquenz, was to look into leasing of street sweeper.",
+   "tags": [
+    "DPW",
+    "equipment",
+    "outsourcing"
+   ]
+  },
+  {
+   "topic": "Police cruiser models viewing invitation",
+   "resolution": "invitation to be issued",
+   "quote": "an invitation will be issued to the selectmen, town manager, finance committee, dpw director, and fire chief to view the new cruiser models",
+   "tags": [
+    "police",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Senior Center ramp",
+   "resolution": "Chair to contact DPW Director",
+   "quote": "ms. shapiro noted there is no plan in place for the ramp between the parking lots for the senior center at $15,000.00.",
+   "tags": [
+    "senior center",
+    "DPW",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Approve minutes",
+   "resolution": "approved",
+   "quote": "approve minutes- approved december 20, 2012 and january 2, 2013.",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 12:30 PM",
+   "quote": "motion to adjourn, ms. shapiro, second, mr. sund, adjourned 12:30 pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY14 Capital Plan for technology",
+   "where": "text",
+   "quote": "the fy14 capital plan for technology was prepared by the previous director, but mr. malandrinos has looked it over ."
+  },
+  {
+   "name": "Five Year Plan (technology), submitted by the previous Tech Director",
+   "where": "text",
+   "quote": "as the five year plan was submitted by the previous tech director, it was put on hold to give mr. malandrinos time to review."
+  },
+  {
+   "name": "Form B",
+   "where": "text",
+   "quote": "when departments submit form b's, they also need to include whether or not they have technology or building requests."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "technology",
+  "FY14 budget",
+  "fire department",
+  "ambulance",
+  "police",
+  "DPW",
+  "senior center",
+  "schools",
+  "vehicles"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

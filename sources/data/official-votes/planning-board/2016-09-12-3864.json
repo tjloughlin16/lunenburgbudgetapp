@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-09-12",
  "docid": "3864",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to close the hearing",
+   "motion": "Close the public hearing on the stormwater management special permit for 155 Reservoir Road.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -21,6 +21,126 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07961349999999999
+ "note": "Text-only minutes with readable votes. The only recorded motion is the procedural motion to close the hearing; no vote on the special permit itself appears, and no continuation or decision is recorded. Some words are split by stray spaces in the source (e.g., \"mana gement\", \"sign -offs\"), so quotes avoid those spots. Ron Koivu is named only as the Applicant in the representation sentence and is not recorded as present. Public comment has no recorded speaker role beyond the address.",
+ "cost_usd": 0.0034258200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Brian Marchetti, PE",
+   "role": "McCarty Engineering Inc., representing the Applicant",
+   "status": "present",
+   "quote": "brian marchetti, pe, mccarty engineering inc., represented the applicant ron koivu, harbor classic homes, llc."
+  },
+  {
+   "name": "Ron Koivu",
+   "role": "Harbor Classic Homes, LLC (Applicant)",
+   "status": "not stated",
+   "quote": "brian marchetti, pe, mccarty engineering inc., represented the applicant ron koivu, harbor classic homes, llc."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road - her property abuts the southwest corner of the site"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "street debris, runoff and drainage from the construction site",
+   "quote": "rhonda lisio, 181 reservoir road - her property abuts the southwest corner of the site"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: stormwater management special permit, 155 Reservoir Road (nine single family lots)",
+   "resolution": "hearing held; closed 7:15 PM on motion",
+   "quote": "hearing closed 7:15 pm",
+   "tags": [
+    "stormwater",
+    "special permit",
+    "public hearing",
+    "Reservoir Road",
+    "residential lots"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special permit Application",
+   "where": "list",
+   "quote": "special permit application"
+  },
+  {
+   "name": "ANR Plan (endorsed by the Planning Board, November 2015, creation of nine lots)",
+   "where": "text",
+   "quote": "the planning board endorsed an anr plan in november 2015 for the creation of nine lots."
+  },
+  {
+   "name": "NOI (Notice of Intent) filed with the EPA for the construction general permit",
+   "where": "text",
+   "quote": "an noi (notice of intent) has been filed with the"
+  },
+  {
+   "name": "Building Official sign-off sheet",
+   "where": "text",
+   "quote": "the building official has a sign-off sheet"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "special permit",
+  "public hearing",
+  "Reservoir Road",
+  "nine lots",
+  "erosion and sediment control",
+  "abutter concerns",
+  "wetlands"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-03-05",
  "docid": "634",
@@ -12,32 +12,280 @@
  },
  "votes": [
   {
-   "motion": "To deny six Real Estate abatement applications and grant twelve",
+   "motion": "To deny the taxpayer's request for an administrative abatement, because a timely application was not filed.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "6 denied, 12 granted",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "they voted to deny six applications seeking re abatements and twelve abatements were granted."
+   "quote": "after much discussion, the board voted to deny this request based on the fact that a timely",
+   "seconded_by": ""
   },
   {
-   "motion": "To deny the administrative abatement request for the property",
+   "motion": "To deny six real estate abatement applications (twelve others granted).",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted to deny this request based on the fact that a timely ===page 2=== application w",
-   "quote_taken_from_text": true
+   "quote": "they voted to deny six applications seeking re abatements and twelve abatements were granted.",
+   "seconded_by": ""
   },
   {
-   "motion": "To meet on Tuesday, April 2 at 6 pm",
+   "motion": "To meet on Tuesday, April 2 at 6 pm.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "board voted to meet on tuesday, april 2° at 6 pm."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "board voted to meet on tuesday, april 2° at 6 pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from macOS Vision. Three votes explicitly recorded as \"voted to\" or \"They voted to\". Approvals of exemptions and abatements mentioned as \"approved\" or \"granted\" without explicit vote language are not included per rules.",
- "cost_usd": 0.10549750000000001
+ "note": "Text is macOS Vision OCR with garbled symbols (e.g., '1°', '2°', '11*', '7'', '25\\\"'); figures and dates are as printed. Most approvals have no motion, mover, seconder, or vote count recorded; the three votes listed are those with 'voted' wording, with outcome taken as passed since no count is printed. The routine approvals, adjournment, and the abatement approvals are not recorded as motions. The signature block reads 'Lauri Paquette' but the printed name is 'Louise Paquette'. Louis J. Franco's role is printed directly after his name, but the grouping with 'Board Members' is ambiguous. David Manzello's role is not printed. The RRG president, Karen Brochu, and Kerry are named but did not attend, so they are not listed as attendees.",
+ "cost_usd": 0.0061159199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: board members, matthew j. papini, sr., louis j. franco,"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "louis j. franco, associate assessor, david manzello, and louise paquette administrative assistant."
+  },
+  {
+   "name": "David Manzello",
+   "role": "not stated",
+   "status": "present",
+   "quote": "associate assessor, david manzello, and louise paquette administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "david manzello, and louise paquette administrative assistant. not present: chairman,"
+  },
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "not present: chairman, chris comeau."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Louise will submit the RRG personal property assessment contract to Kerry for signature and send RRG a copy once it returns from Accountant Karen Brochu.",
+   "quote": "louise will submit to kerry for signature and will provide a copy to rrg upon receiving it back from accountant, karen brochu."
+  },
+  {
+   "decision": "A 41C Elderly Exemption application was denied for gross income over $35,000.",
+   "quote": "a 41c application for elderly exemption was reviewed and denied due to gross income exceeding $35,000."
+  },
+  {
+   "decision": "The Board approved and granted the Elderly exemption under Clause 17D, which looks at assets (below $58,200.00) rather than gross income.",
+   "quote": "the board approved and granted the exemption under clause 17d which does not take gross income into"
+  },
+  {
+   "decision": "A Tax Work Off applicant was granted a $750.00 exemption for FY13.",
+   "quote": "a tax work off applicant was also granted a $750.00 exemption for fy13."
+  },
+  {
+   "decision": "Three Personal Property abatement applications were approved (administrative error / overvalued).",
+   "quote": "all three were approved due to administrative error / overvalued."
+  },
+  {
+   "decision": "David will notify the property owner of the Board's decision and tell him the property will be visited soon to review progress.",
+   "quote": "david stated that he will notify the property owner of the board's decision and will inform him that the property"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2013 and 2012 tax commitments",
+   "what_was_recorded": "The 1st commitment for 2013 total tax and the 2nd commitment for 2012 were reported, with the note that bills increased over the first commitment in 2012.",
+   "figures_as_printed": [
+    "$1,017,685.00",
+    "$7,624.57",
+    "$942,761.25"
+   ],
+   "quote": "2013 total tax is $1,017,685.00 and the 7' commitment for 2012 is $7,624.57."
+  },
+  {
+   "topic": "Prior-year billed total",
+   "what_was_recorded": "Louise stated the total billed on 2/24/2012 was lower than the current bills, which increased.",
+   "figures_as_printed": [
+    "$942,761.25"
+   ],
+   "quote": "the total billed on 2/24/2012 was $942,761.25."
+  },
+  {
+   "topic": "Real estate abatements",
+   "what_was_recorded": "Real estate abatements granted totaled $24,967.36.",
+   "figures_as_printed": [
+    "$24,967.36"
+   ],
+   "quote": "the abatements totaled $24,967.36."
+  },
+  {
+   "topic": "Personal property abatements",
+   "what_was_recorded": "Three personal property abatements were approved and totaled $664.41.",
+   "figures_as_printed": [
+    "$664.41"
+   ],
+   "quote": "all three were approved due to administrative error / overvalued. the abatements totaled $664.41."
+  },
+  {
+   "topic": "Elderly exemption 41C",
+   "what_was_recorded": "The 41C Elderly Exemption application was denied because gross income exceeded the stated limit.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "a 41c application for elderly exemption was reviewed and denied due to gross income exceeding $35,000."
+  },
+  {
+   "topic": "Elderly exemption under Clause 17D",
+   "what_was_recorded": "Exemption granted under Clause 17D, which uses assets rather than gross income; assets must be below the stated amount.",
+   "figures_as_printed": [
+    "$58,200.00"
+   ],
+   "quote": "the board approved and granted the exemption under clause 17d which does not take gross income into"
+  },
+  {
+   "topic": "Tax Work Off exemption",
+   "what_was_recorded": "A Tax Work Off applicant was granted an exemption for FY13.",
+   "figures_as_printed": [
+    "$750.00"
+   ],
+   "quote": "a tax work off applicant was also granted a $750.00 exemption for fy13."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll and minutes.",
+   "tags": [
+    "vouchers",
+    "warrants",
+    "payroll",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Motor vehicle excise and tax commitments report",
+   "resolution": "reported",
+   "quote": "louise reported that the motor vehicle excise tax bills were mailed on february",
+   "tags": [
+    "tax commitments",
+    "excise",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Personal property assessment contract with RRG",
+   "resolution": "contract reviewed; sent for signature",
+   "quote": "the board reviewed the contract agreement for the personal property assessment project submitted by",
+   "tags": [
+    "personal property",
+    "contract",
+    "RRG"
+   ]
+  },
+  {
+   "topic": "Elderly exemption and Tax Work Off",
+   "resolution": "41C denied; 17D exemption granted; Tax Work Off exemption granted",
+   "quote": "a 41c application for elderly exemption was reviewed and denied due to gross income exceeding $35,000.",
+   "tags": [
+    "elderly exemption",
+    "tax work off",
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Real estate and personal property abatements",
+   "resolution": "12 RE granted, 6 RE denied; 3 PP approved",
+   "quote": "they voted to deny six applications seeking re abatements and twelve abatements were granted.",
+   "tags": [
+    "abatements",
+    "real estate",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Administrative abatement request (taxpayer, renovation value)",
+   "resolution": "denied",
+   "quote": "after much discussion, the board voted to deny this request based on the fact that a timely",
+   "tags": [
+    "abatement",
+    "deadlines",
+    "renovation"
+   ]
+  },
+  {
+   "topic": "Abatement filing deadlines (State Tax Form 128)",
+   "resolution": "reviewed; no action",
+   "quote": "the board reviewed the abatement application deadlines designated on state tax form 128.",
+   "tags": [
+    "deadlines",
+    "Form 128"
+   ]
+  },
+  {
+   "topic": "Caucus and election notice",
+   "resolution": "informational; no action",
+   "quote": "louise informed the board that the caucus which will be held on march 11* at thms at 7pm",
+   "tags": [
+    "election",
+    "caucus",
+    "term"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for April 2 at 6 pm",
+   "quote": "board voted to meet on tuesday, april 2° at 6 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Contract Agreement for the Personal Property Assessment project, submitted by Regional Resource Group, Inc.",
+   "where": "text",
+   "quote": "the board reviewed the contract agreement for the personal property assessment project submitted by"
+  },
+  {
+   "name": "41C application for Elderly Exemption",
+   "where": "text",
+   "quote": "a 41c application for elderly exemption was reviewed and denied due to gross income exceeding $35,000."
+  },
+  {
+   "name": "State Tax Form 128",
+   "where": "text",
+   "quote": "the board reviewed the abatement application deadlines designated on state tax form 128."
+  },
+  {
+   "name": "Taxpayer photos taken in June",
+   "where": "text",
+   "quote": "customer presented photos taken in june that clearly did not reflect that"
+  }
+ ],
+ "tags": [
+  "abatements",
+  "tax commitments",
+  "elderly exemption",
+  "tax work off",
+  "personal property assessment",
+  "RRG contract",
+  "election",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

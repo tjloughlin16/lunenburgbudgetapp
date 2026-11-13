@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2010-11-16",
  "docid": "2921",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the October 19, 2010 meeting minutes",
+   "motion": "Approve the minutes of the October 19, 2010 meeting as presented.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Sheila Lumi",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "on a motion by elizabeth murphy, seconded by sheila lumi; the minutes were approved as presented. all were in favor."
   },
   {
-   "motion": "Approve the Financial Report",
+   "motion": "Approve the Financial Report.",
    "moved_by": "Sheila Lumi",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "on a motion by sheila lumi, seconded by elizabeth murphy, the financial report was approved, all in favor."
   },
   {
-   "motion": "Authorize submission of the 4001 Operating Budget for State-Aided Housing for Fiscal Year 2011",
+   "motion": "Resolution 201006: authorize submission of the 4001 Operating Budget for State-Aided Housing for Fiscal Year 2011 to DHCD.",
    "moved_by": "",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
@@ -36,31 +36,225 @@
    "quote": "elizabeth murphy seconded the motion, and the motion was passed y a unanimous vote."
   },
   {
-   "motion": "Authorize the Chair or Executive Director to sign the Contract for Financial Assistance (CFA) for formula funding master CFA for preservation and modernization of state-supported public housing, including subsequent amendments",
+   "motion": "Resolution 201007: authorize the Chair or Executive Director to sign the Contract for Financial Assistance with DHCD for formula funding master CFA (all developments), $158,000.00 grant.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Sheila Lumi",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by elizabeth murphy to authorize the signing of the contract for financial assistance (cfa) by the chair or executive seconded, plan, including any and all subsequent amendments submitted by dhcd, currently being undertaken by the lunenburg housing authority and the department of housing and community development. sheila lumi seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "motion made by elizabeth murphy to authorize the signing of the contract for financial assistance (cfa) by the chair or executive"
   },
   {
-   "motion": "Authorize the Chair or Executive Director to sign the Contract for Financial Assistance (CFA) for hard costs related to heating system replacement at scattered site 705 White Street development using Federal ARRAWAP funding",
+   "motion": "Resolution 201008: authorize the Chair or Executive Director to sign the Contract for Financial Assistance with DHCD to fund hard costs of heating system replacement at 705 White Street ($34,943.00).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Sheila Lumi",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by elizabeth murphy to authorize the signing of the contract for financial assistance (cfa) by the chair or executive housing authority and the department of housing and community seconded, sheila lumi seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "motion made by elizabeth murphy to authorize the signing of the contract for financial assistance (cfa) by the chair or executive housing authority and the department of housing and community"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sheila Lumi",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
    "procedural": true,
-   "quote": "being no further business, on a notion by sheila lumi, seconded by elizabeth murphy, the board voted to adjourn the meeting at 8:25 pm. all were in favor."
+   "quote": "on a notion by sheila lumi, seconded by elizabeth murphy, the board voted to adjourn the meeting at 8:25 pm. all were in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor character errors (e.g., \"y\" for \"by\", \"notion\" for \"motion\"); all votes recorded and readable.",
- "cost_usd": 0.1425455
+ "note": "OCR scan with garbled and partly missing text. Resolution 201006 reads 'Fiscal Year 2001' in one place (title says 2011) and its mover is not legible; the motion wording is partly cut off. The 'Member absent:' line is blank, so no absences are recorded. The 'Sheila Lumi seconded the Motion' sentence appears on both pages 3 and 4. Votes 201007 and 201008 are recorded as passed by unanimous vote with no tally. Public comment speaker is unnamed.",
+ "cost_usd": 0.006573119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Romano",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "members present: member absent: november 16, 2010 john romano, chairperson sheila lumi, member"
+  },
+  {
+   "name": "Sheila Lumi",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: member absent: november 16, 2010 john romano, chairperson sheila lumi, member"
+  },
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: member absent: november 16, 2010 john romano, chairperson sheila lumi, member"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Susan Szocik",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "susan szocik, vice-chairperson"
+  },
+  {
+   "name": "Eugene Capoccia",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present: eugene capoccia, executive director"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Financial Report / subsidy position",
+   "what_was_recorded": "The Housing Authority is ahead of the projected subsidy by a stated amount.",
+   "quote": "he indicated that the housing authority was doing well and are ahead of the subsidy projected by $22,301.",
+   "figures_as_printed": [
+    "$22,301"
+   ]
+  },
+  {
+   "topic": "ARRA federal stimulus funding for furnaces",
+   "what_was_recorded": "ARRA Federal Stimulus Fund will fund five new furnaces for the 705 units; no amount printed.",
+   "quote": "arra federal stimulus fund will be funding the five new furnaces for the 705 units.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Resolution 201007 CFA formula funding grant",
+   "what_was_recorded": "DHCD funding award for preservation and modernization of state-supported public housing.",
+   "quote": "the funding award is a grant in the amount of $158,000.00,",
+   "figures_as_printed": [
+    "$158,000.00"
+   ]
+  },
+  {
+   "topic": "Resolution 201008 heating system replacement at 705 White Street",
+   "what_was_recorded": "DHCD funding award for hard costs of heating system replacement using federal ARRA funding.",
+   "quote": "the funding award is in the amount of $34,943.00,",
+   "figures_as_printed": [
+    "$34,943.00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tenants",
+   "stated_role": "residents",
+   "topic": "Heater models differing between units",
+   "quote": "tenants questioned why the heaters in the units were different."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Tenant questions on heaters",
+   "resolution": "informational; Director explained Rinnai model change",
+   "quote": "the director informed the tenants that the rinnai company which the heaters originate from changed the model",
+   "tags": [
+    "heating",
+    "tenants"
+   ]
+  },
+  {
+   "topic": "Minutes of October 19, 2010",
+   "resolution": "approved as presented",
+   "quote": "on a motion by elizabeth murphy, seconded by sheila lumi; the minutes were approved as presented. all were in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "received; construction over 80% complete",
+   "quote": "the construction is over 80% completed.",
+   "tags": [
+    "construction",
+    "ARRA"
+   ]
+  },
+  {
+   "topic": "Financial Report",
+   "resolution": "approved",
+   "quote": "on a motion by sheila lumi, seconded by elizabeth murphy, the financial report was approved, all in favor.",
+   "tags": [
+    "finance",
+    "subsidy"
+   ]
+  },
+  {
+   "topic": "Resolution 201006 FY2011 4001 Operating Budget",
+   "resolution": "approved",
+   "quote": "elizabeth murphy seconded the motion, and the motion was passed y a unanimous vote.",
+   "tags": [
+    "budget",
+    "DHCD"
+   ]
+  },
+  {
+   "topic": "Resolution 201007 CFA formula funding",
+   "resolution": "approved",
+   "quote": "motion made by elizabeth murphy to authorize the signing of the contract for financial assistance (cfa) by the chair or executive",
+   "tags": [
+    "DHCD",
+    "grant",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Resolution 201008 heating system at 705 White Street",
+   "resolution": "approved",
+   "quote": "motion made by elizabeth murphy to authorize the signing of the contract for financial assistance (cfa) by the chair or executive housing authority and the department of housing and community",
+   "tags": [
+    "heating",
+    "DHCD",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:25 PM",
+   "quote": "on a notion by sheila lumi, seconded by elizabeth murphy, the board voted to adjourn the meeting at 8:25 pm. all were in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution 201006 - 2011 4001 Operating Budget for State-Aided Housing, Fiscal Year 2011 submission to DHCD",
+   "where": "list",
+   "quote": "resolution 201006 whereas: the lunenburg housing authority is required by dhcd to submi"
+  },
+  {
+   "name": "Resolution 201007 - Contract for Financial Assistance, formula funding master CFA (all developments), Work Plan 5001, DHCD Project No. 162015",
+   "where": "list",
+   "quote": "resolution 201007 whereas: the lunenburg housing authority has the need to enter into a contrac"
+  },
+  {
+   "name": "Resolution 201008 - Contract for Financial Assistance, heating system replacement at scattered site 705 White Street, Work Plan 1008, DHCD Project No. 162016",
+   "where": "list",
+   "quote": "resolution 201008 whereas: the lunenburg housing authority has the need to enter into a contract"
+  },
+  {
+   "name": "Financial Report",
+   "where": "text",
+   "quote": "mr. capoccia then proceeded to review the financial report."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "state-aided housing",
+  "DHCD",
+  "budget",
+  "heating",
+  "construction",
+  "federal stimulus",
+  "tenants",
+  "financial assistance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. capoccia then presented the following resolutions"
+ },
+ "dropped_unquoted_by_field": {}
 }

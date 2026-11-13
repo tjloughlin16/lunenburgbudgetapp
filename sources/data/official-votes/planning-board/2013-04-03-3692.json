@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-04-03",
  "docid": "3692",
@@ -12,24 +12,238 @@
  },
  "votes": [
   {
-   "motion": "Accept waiver for Aro Estates 8 from Rules and Regulations Governing the Subdivision of Land, Section 4.10.4.6 regarding drain cover requirements",
+   "motion": "Accept the waiver from Rules and Regulations Governing the Subdivision of Land, Section 4.10.4.6 (three feet of cover over drains) for Aro Estates.",
    "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion made, ms. bilotta-simeone to accept waiver, second, mr. bodkin jr., roll call vote, mr. lockwood, aye; mr. bodkin jr., aye; ms. bilotta -simeone, aye; mr. bakaysa, aye. waiver accepted",
-   "quote_taken_from_text": true
+   "quote": "motion made, ms. bilotta-simeone to accept waiver, second, mr. bodkin jr., roll call vote, mr. lockwood, aye; mr. bodkin jr., aye",
+   "seconded_by": "Thomas W. Bodkin Jr."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Thomas W. Bodkin Jr.",
-   "seconded_by": "Joanna L. Bilotta-Simeone",
+   "motion": "Continue the Aro Estates hearing to Wednesday, April 10, 2013, 6:30 PM, Ritter Memorial Building.",
+   "moved_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion made, mr. bodkin jr. , second, ms. bilotta-simeone, motion passed.",
+   "seconded_by": "Joanna L. Bilotta-Simeone"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn, mr. bodkin jr., second, ms. bilotta-simeone, adjourned 7:25 pm."
+   "quote": "motion to adjourn, mr. bodkin jr., second, ms. bilotta-simeone, adjourned 7:25 pm.",
+   "seconded_by": "Joanna L. Bilotta-Simeone"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0884175
+ "dropped_unquoted": 0,
+ "note": "The minutes contain no dollar figures or transfers. No documents list is printed; documents are named only in the discussion. The J. Johnson review letter is cited, not attached.",
+ "cost_usd": 0.00558382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel Attorney",
+   "status": "present",
+   "quote": "also present: town counsel attorney joel bard and robert oliva of david ross associates"
+  },
+  {
+   "name": "Robert Oliva",
+   "role": "of David Ross Associates",
+   "status": "present",
+   "quote": "town counsel attorney joel bard and robert oliva of david ross associates"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "Whitman & Bingham Associates, representing the Applicant",
+   "status": "present",
+   "quote": "wesley flis, whitman & bingham associates"
+  },
+  {
+   "name": "Mark Johnson",
+   "role": "Applicant's attorney",
+   "status": "present",
+   "quote": "applicant's attorney mark johnson noted meetings taking place"
+  },
+  {
+   "name": "Rennie Shattuck",
+   "role": "resident, 396 Howard Street",
+   "status": "not stated",
+   "quote": "rennie and anne shattuck, 396 howard street - concerned with stormwater drainage onto their property."
+  },
+  {
+   "name": "Anne Shattuck",
+   "role": "resident, 396 Howard Street",
+   "status": "not stated",
+   "quote": "rennie and anne shattuck, 396 howard street - concerned with stormwater drainage onto their property."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Applicant and the Board agreed to extend final action on Aro Estates to April 30, 2013, with the extension to be filed with the Town Clerk.",
+   "quote": "applicant and board agreed on an extension for final action to april 30, 2013."
+  },
+  {
+   "decision": "Board meetings are scheduled for Saturday, April 13, 2013 at 9:00 AM and Monday, April 22, 2013 at 6:30 PM, both at Town Hall, with only Aro Estates Subdivisions 1 – 10 on the agenda.",
+   "quote": "board meetings will be scheduled for saturday, april 13, 2013, 9:00 am, town hall and monday, april 22, 2013, 6:30 pm, town hall."
+  },
+  {
+   "decision": "Mr. Oliva will note the Shattucks' drainage concern to J. Johnson and get input.",
+   "quote": "mr. oliva will note concern to j. johnson and get input."
+  },
+  {
+   "decision": "Changes will be made to the drainage calculations following the in-house meeting and J. Johnson's review letter.",
+   "quote": "changes to drainage calculations will be made."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rennie and Anne Shattuck",
+   "stated_role": "396 Howard Street",
+   "topic": "stormwater drainage onto their property",
+   "quote": "rennie and anne shattuck, 396 howard street - concerned with stormwater drainage onto their property."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Aro Estates hearing continuation",
+   "resolution": "continued to April 10, 2013",
+   "quote": "chair bakaysa opened the hearing continuation for aro estates.",
+   "tags": [
+    "public hearing",
+    "subdivision",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Waiver request, Section 4.10.4.6 (drain cover)",
+   "resolution": "waiver accepted 4-0",
+   "quote": "motion made, ms. bilotta-simeone to accept waiver, second, mr. bodkin jr., roll call vote",
+   "tags": [
+    "waiver",
+    "drainage",
+    "subdivision rules"
+   ]
+  },
+  {
+   "topic": "In-house meeting and plan changes",
+   "resolution": "no action; plan and drainage changes to be made",
+   "quote": "an in house mee ting was held this date with the applicant, project engineer, reviewing engineer and planning director.",
+   "tags": [
+    "engineering review",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Stormwater concern from Howard Street residents",
+   "resolution": "no action; Town Counsel and applicant's attorney handling as civil matter",
+   "quote": "mr. oliva will note concern to j. johnson and get input.",
+   "tags": [
+    "stormwater",
+    "public comment",
+    "Howard Street"
+   ]
+  },
+  {
+   "topic": "Hearing continuation date",
+   "resolution": "continued to April 10, 2013",
+   "quote": "hearing will continue to wednesday, april 10, 2013 , ritter memorial building, 6:30 pm.",
+   "tags": [
+    "public hearing",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Extension of final action",
+   "resolution": "agreed to extend to April 30, 2013",
+   "quote": "applicant and board agreed on an extension for final action to april 30, 2013.",
+   "tags": [
+    "extension",
+    "decision deadline"
+   ]
+  },
+  {
+   "topic": "Future board meeting dates",
+   "resolution": "scheduled April 13 and April 22, 2013",
+   "quote": "board meetings will be scheduled for saturday, april 13, 2013, 9:00 am, town hall and monday, april 22, 2013, 6:30 pm, town hall.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Waiver letter for Aro Estates 8",
+   "where": "text",
+   "quote": "motion made, ms. bilotta-simeone to accept waiver, second, mr. bodkin jr."
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land, Section 4.10.4.6",
+   "where": "text",
+   "quote": "governing the subdivision of land, section 4.10.4.6."
+  },
+  {
+   "name": "J. Johnson review letter dated March 29, 2013",
+   "where": "text",
+   "quote": "j. johnson's review letter dated march 29, 2013"
+  },
+  {
+   "name": "Extension of final action to April 30, 2013 (to be filed with Town Clerk)",
+   "where": "text",
+   "quote": "extension will be filed with the town clerk."
+  },
+  {
+   "name": "Draft Decision (Town Counsel to prepare)",
+   "where": "text",
+   "quote": "town counsel anticipates working on preparing a draft decision."
+  }
+ ],
+ "tags": [
+  "Aro Estates",
+  "Howard Street",
+  "subdivision",
+  "public hearing",
+  "continuance",
+  "waiver",
+  "stormwater drainage",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

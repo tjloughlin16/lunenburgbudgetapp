@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-05-06",
  "docid": "4887",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve Bond Anticipation Note in the amount of $309,000 for School Building Construction Project",
+   "motion": "Approve the Bond Anticipation Note in the amount of $309,000 for the school building project, as proposed by the Treasurer/Collector.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
@@ -20,15 +20,349 @@
    "quote": "mr. ebersole moved to approve the bond anticipation note in the amount of $309,000 as proposed by the treasurer/collector. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "being no further business mr. matthews moved to adjourn the meeting. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed"
+   "quote": "mr. matthews moved to adjourn the meeting. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document; readable",
- "cost_usd": 0.0878235
+ "note": "OCR text, partly garbled: the attendance line is truncated (Mr. Matthews's first name and any roles for Ms. Bertram are not printed); the header for the earth removal item is missing; warrant numbers, dates and amounts are in separate columns so the mapping is unclear; the upcoming meeting list reads 'Mary 20, 2014'. Votes recorded: BAN note (4-0) and adjournment (4-0). No vote is recorded on the minutes of 4/29/2014, the warrants, or the DOR policy. Chairperson Tom Alonzo was absent.",
+ "cost_usd": 0.00865932,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Matthews",
+   "role": "Board of Selectmen member (first name not printed; attendance line truncated)",
+   "status": "present",
+   "quote": "matthews, jamie toale, robert ebersole, & town manager kerry speidel"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "matthews, jamie toale, robert ebersole, & town manager kerry speidel"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "matthews, jamie toale, robert ebersole, & town manager kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "matthews, jamie toale, robert ebersole, & town manager kerry speidel"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "absent",
+   "quote": "absent was chairperson, tom alonzo"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. bertram thanked all who attended annual town meeting and urge all those who did not to please"
+  },
+  {
+   "name": "Shelley McCaie",
+   "role": "Town Treasurer/Collector",
+   "status": "present",
+   "quote": "shelley mccaie, town treasurer/collector came before the bos to request approval for the $309,000 ban note sale"
+  },
+  {
+   "name": "Joanna Bilotta Simeone",
+   "role": "Planning Board Chairperson",
+   "status": "present",
+   "quote": "joanna bilotta simeone, planning board chairperson, spoke to say that town counsel had confirmed"
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "representing the Turkey Hill Family Lions Club",
+   "status": "present",
+   "quote": "dave rogers and lisa normandin representing the turkey hill family lions club announced the upcoming lion's club activities"
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "representing the Turkey Hill Family Lions Club",
+   "status": "present",
+   "quote": "dave rogers and lisa normandin representing the turkey hill family lions club announced the upcoming lion's club activities"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will schedule a workshop to further discuss and incorporate a DOR Certificate of Good Standing requirement, along with other policies needing attention.",
+   "quote": "bos will schedule a workshop for further discussion/incorporation of this policy along with discussion of other policies that also need to be addressed."
+  },
+  {
+   "decision": "The joint session with the Library Board of Trustees on the Gare Thompson appointment was rescheduled to the 5/20/2014 BOS meeting because the Library Board lacked a quorum.",
+   "quote": "joint session was rescheduled to 5/20/2014 bos meeting due to lack of quorum for the library board of trustees."
+  },
+  {
+   "decision": "The Board requested that the Planning Board incorporate basic stipulations (hours of operation, earth removal route, etc.) into the Findings & Directives for the earth removal subdivision approval.",
+   "quote": "request that the planning board incorporate basic stipulations such as hours of operation, earth removal route, etc"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond Anticipation Note sale for school building construction",
+   "what_was_recorded": "The Treasurer/Collector requested approval of a $309,000 BAN note sale for the School Building Project, and the Board approved it.",
+   "figures_as_printed": [
+    "$309,000"
+   ],
+   "quote": "approve ban notesale, $309,000, for school building construction project"
+  },
+  {
+   "topic": "Warrants approved or listed",
+   "what_was_recorded": "Three warrants were listed with amounts; the minutes do not clearly map each warrant number to its date or amount.",
+   "figures_as_printed": [
+    "$253,228.73",
+    "$139,013.72",
+    "$607,380.55"
+   ],
+   "quote": "w#58-14 w#59-14 w#23-p-14 $253,228.73 $139,013.72 $607,380.55"
+  },
+  {
+   "topic": "DOR Certificate of Good Standing fee for meals tax businesses",
+   "what_was_recorded": "Businesses requesting a DOR Certificate of Good Standing pay a fee to the state, as explained by Mr. Ebersole.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "for a $25 fee, businesses can go online to the massachusetts dept. of revenue"
+  },
+  {
+   "topic": "Building Reuse Committee renovation costs",
+   "what_was_recorded": "The committee is gathering data on projected expenses for renovations to various town buildings; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "currently they are bringing data together regarding projected expenses for renovations to various buildings"
+  },
+  {
+   "topic": "MPO Transportation Improvement Program funding",
+   "what_was_recorded": "Ms. Bertram reported TIP funding is tight; the Summer St. project was moved out to 2018 over design funding concerns. No figures are printed.",
+   "figures_as_printed": [],
+   "quote": "funding for the tip is tight due to the sterling project"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "",
+   "topic": "thanks for Annual Town Meeting attendance",
+   "quote": "ms. bertram thanked all who attended annual town meeting and urge all those who did not to please"
+  },
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "thanks for candidates' debate night",
+   "quote": "mr. matthews thanked all who participated in the candidate's debate night."
+  },
+  {
+   "speaker": "Dave Rogers and Lisa Normandin",
+   "stated_role": "representing the Turkey Hill Family Lions Club",
+   "topic": "Lions Club upcoming activities",
+   "quote": "dave rogers and lisa normandin representing the turkey hill family lions club announced the upcoming lion's club activities"
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "review of Traffic Rules & Regulations",
+   "quote": "public comment: mr. ebersole reported that he has reviewed the traffic rules & regulations"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "ms. bertram thanked all who attended annual town meeting and urge all those who did not to please",
+   "tags": [
+    "public comment",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "representative benson will be holding office hours at lunenburg town hall on 5/13/2014",
+   "tags": [
+    "announcements",
+    "yard waste",
+    "road construction"
+   ]
+  },
+  {
+   "topic": "Appointments: Town Treasurer-Collector BAN note sale",
+   "resolution": "approved $309,000 BAN note",
+   "quote": "mr. ebersole moved to approve the bond anticipation note in the amount of $309,000 as proposed by the treasurer/collector.",
+   "tags": [
+    "BAN note",
+    "school building project",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Joint session with Library Board of Trustees",
+   "resolution": "rescheduled to 5/20/2014",
+   "quote": "joint session was rescheduled to 5/20/2014 bos meeting due to lack of quorum for the library board of trustees.",
+   "tags": [
+    "library",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Follow up/wrap up of Annual Town Meeting",
+   "resolution": "no action",
+   "quote": "bos were pleased with the passing of the lane property purchase approval at annual town meeting and thanked all for their",
+   "tags": [
+    "town meeting",
+    "Lane property"
+   ]
+  },
+  {
+   "topic": "Q3 progress; Board of Selectmen goals; Town Manager goals",
+   "resolution": "reviewed, no action",
+   "quote": "ms. speidel reviewed the town manager's goals with the bos",
+   "tags": [
+    "goals",
+    "town manager",
+    "budget",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Earth removal stipulations for subdivision Findings & Directives",
+   "resolution": "Planning Board added conditions; Board requested stipulations",
+   "quote": "ms. bilotta simeone confirmed that they cannot require that an earth removal permit be applied for due to the bylaw.",
+   "tags": [
+    "planning board",
+    "earth removal",
+    "dust",
+    "hours of operation"
+   ]
+  },
+  {
+   "topic": "DOR Certificate of Good Standing for meals tax businesses",
+   "resolution": "workshop to be scheduled",
+   "quote": "bos will schedule a workshop for further discussion/incorporation of this policy",
+   "tags": [
+    "meals tax",
+    "licensing policy",
+    "DOR"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "no action recorded",
+   "quote": "minutes: 4/29/2014 warrants: 5/6/2014 5/7/2014 5/5/2014",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "board of health - mr. ebersole reported that the boh met last night and discussed nitrogen aggregation",
+   "tags": [
+    "board of health",
+    "building reuse",
+    "MPO",
+    "planning board",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public comment (traffic rules)",
+   "resolution": "no action",
+   "quote": "public comment: mr. ebersole reported that he has reviewed the traffic rules & regulations",
+   "tags": [
+    "traffic rules",
+    "overnight parking"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:20PM",
+   "quote": "meeting adjourned at 7:20pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bond Anticipation Note, $309,000 (school building project)",
+   "where": "text",
+   "quote": "mr. ebersole moved to approve the bond anticipation note in the amount of $309,000 as proposed by the treasurer/collector."
+  },
+  {
+   "name": "Warrants W#58-14, W#59-14, W#23-P-14",
+   "where": "text",
+   "quote": "w#58-14 w#59-14 w#23-p-14 $253,228.73 $139,013.72 $607,380.55"
+  },
+  {
+   "name": "Findings & Directives (earth removal project)",
+   "where": "text",
+   "quote": "he suggested referring to this when adding to the findings & directives for this project."
+  },
+  {
+   "name": "Earth removal Bylaw",
+   "where": "text",
+   "quote": "mr. ebersole referenced part of the bylaw that mentions methods of removal, location use of structures, hours of operation"
+  },
+  {
+   "name": "Traffic Rules & Regulations",
+   "where": "text",
+   "quote": "public comment: mr. ebersole reported that he has reviewed the traffic rules & regulations"
+  },
+  {
+   "name": "Board of Selectmen Goals for FY14",
+   "where": "text",
+   "quote": "ms. bertram reviewed board of selectmen goals for fy14 as follows:"
+  },
+  {
+   "name": "Town Manager's Goals",
+   "where": "text",
+   "quote": "ms. speidel reviewed the town manager's goals with the bos"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "BAN note",
+  "school building project",
+  "Annual Town Meeting",
+  "town manager goals",
+  "Planning Board",
+  "earth removal",
+  "meals tax",
+  "committee reports",
+  "traffic rules",
+  "warrants",
+  "library trustees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

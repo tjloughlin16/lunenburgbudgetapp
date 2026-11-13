@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2013-10-28",
  "docid": "5336",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Both jobs the school was looking for help with do not qualify for work under this committee",
+   "motion": "That both jobs the school was looking for help with (cafeteria and Special Education) do not qualify for work under this committee.",
    "moved_by": "David Manzello",
    "seconded_by": "Kathy Herrick",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "david manzello made a motion that both jobs the school was looking for help with do not qualify for work under this committee, kathy herrick seconded. on vote, 4 in favor, 0 opposed."
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "Kathy Herrick",
    "seconded_by": "David Manzello",
    "outcome": "passed 4-0",
@@ -29,6 +29,125 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision. Two votes recorded.",
- "cost_usd": 0.0828415
+ "note": "Text is OCR from a scanned page (macOS Vision), so wording may contain recognition errors; quotes are copied as extracted. Minutes are signed by Shelley McCaie and stamped received and filed Nov 5, 2013. No dollar figures, public comment, or document list appear in the minutes.",
+ "cost_usd": 0.00269882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Doreen Noble",
+   "role": "",
+   "status": "present",
+   "quote": "present: doreen noble, david manzello, kathy herrick, and shelley mccaie. absent: jean larkin."
+  },
+  {
+   "name": "David Manzello",
+   "role": "",
+   "status": "present",
+   "quote": "present: doreen noble, david manzello, kathy herrick, and shelley mccaie. absent: jean larkin."
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "",
+   "status": "present",
+   "quote": "present: doreen noble, david manzello, kathy herrick, and shelley mccaie. absent: jean larkin."
+  },
+  {
+   "name": "Shelley McCaie",
+   "role": "Committee Member",
+   "status": "present",
+   "quote": "shelley mccaie, committee member"
+  },
+  {
+   "name": "Jean Larkin",
+   "role": "",
+   "status": "absent",
+   "quote": "present: doreen noble, david manzello, kathy herrick, and shelley mccaie. absent: jean larkin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The members agreed that a person working in the Special Education department should have appropriate training before working there.",
+   "quote": "doreen felt that a person working in the special education department should have appropriate training before working there."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of candidate time slips",
+   "resolution": "reviewed; one candidate excused from program in future",
+   "quote": "the members in attendance reviewed the time slips submitted by the department heads that worked with the candidates in the program.",
+   "tags": [
+    "time slips",
+    "candidates"
+   ]
+  },
+  {
+   "topic": "Proposed sites and jobs for next year",
+   "resolution": "school jobs ruled not qualifying (passed 4-0)",
+   "quote": "the members in attendance discussed proposed sites and jobs for next year.",
+   "tags": [
+    "school department",
+    "job sites",
+    "eligibility"
+   ]
+  },
+  {
+   "topic": "Number of available slots for next year",
+   "resolution": "no action; department heads asked to submit hours in writing (suggestion)",
+   "quote": "the number of available slots for next year's work-off program remains to be seen.",
+   "tags": [
+    "hours",
+    "department heads"
+   ]
+  },
+  {
+   "topic": "Promoting the program",
+   "resolution": "no action; suggestions noted",
+   "quote": "suggestions were made on how to better promote the program.",
+   "tags": [
+    "promotion",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled November 5, 2013 at 10:00 a.m.",
+   "quote": "the next meeting will be on tuesday, november 5, 2013 at 10:00 a.m. in the clerk's office located at the town hall, 17 main st., lunenburg, ma.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3:02 p.m.",
+   "quote": "meeting adjourned at 3:02 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Time slips submitted by the department heads",
+   "where": "text",
+   "quote": "the members in attendance reviewed the time slips submitted by the department heads that worked with the candidates in the program."
+  }
+ ],
+ "tags": [
+  "senior tax work-off",
+  "candidates",
+  "time slips",
+  "school department",
+  "job eligibility",
+  "program promotion",
+  "volunteer hours"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

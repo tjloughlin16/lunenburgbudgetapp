@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2016-12-06",
  "docid": "1231",
@@ -12,8 +12,8 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "moved_by": "Damon McQuaid",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Damon",
    "seconded_by": "Heather Sroka",
    "outcome": "passed 5-0",
    "procedural": true,
@@ -21,6 +21,217 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0828395
+ "note": "The text is OCR output and the Present roll-call line is garbled (e.g., 'amie loale', 'Karin Chard', 'I On Henshaw'); member attendance is taken from the printed header and the 5-0 vote. The motion names only 'Damon' (first name as printed). The minutes record no vote other than adjournment. Public comment was 'None'.",
+ "cost_usd": 0.00522832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "1. call to order: jamie toale called the meeting to order at 5:00pm."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "6. adjournment - damon made a motion to adjourn and heather sroka seconded."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "karin menard, clerk john henshaw, mbr. damon mcquaid, mbr."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "john henshaw inquired about the potential for lead paint requiring additional work."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "karin menard, clerk john henshaw, mbr. damon mcquaid, mbr."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw director, presented his capital requests for fy2018 and provided"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack Rodriquenz will look into whether insurance would cover fuel tank removal and remediation expense if the tank has leaked.",
+   "quote": "jack said he would look into whether or not insurance would cover any of this expense if it has started to leak."
+  },
+  {
+   "decision": "Jamie wants the Town Hall painting and similar building items placed on the Capital Plan, even if years out, regardless of building reuse committee recommendations.",
+   "quote": "jamie said he would like to see this and similar items on the capital plan, even if years out"
+  },
+  {
+   "decision": "Jack Rodriquenz will work on an engineering plan for the police records room and carport reconfiguration next year.",
+   "quote": "so he will work on it for next year."
+  },
+  {
+   "decision": "Playground equipment at the listed parks will be removed as soon as possible, with the new piece most likely installed at Wallis.",
+   "quote": "will have equipment removed as soon as possible."
+  },
+  {
+   "decision": "John Henshaw will continue work on a consolidating spreadsheet with DPW input, bring it back to the committee for feedback, then move on to the rest; he is also looking at handling an 850k ladder truck.",
+   "quote": "he will bring it back to the committee for feedback and then will move on to the rest."
+  },
+  {
+   "decision": "The committee will continue to push for pavement management updates and numbers, though not critical this year, and review the long-term pavement plan as part of planning.",
+   "quote": "jamie would like to continue to push for pavement management updates"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Center exterior painting",
+   "what_was_recorded": "DPW requested FY2018 funds to prepare and paint the Senior Center exterior; Henshaw asked about lead paint and Jack said it had been inspected with none found.",
+   "figures_as_printed": [
+    "$18,300"
+   ],
+   "quote": "senior center - exterior painting - $18,300 (prepare existing exterior and paint)."
+  },
+  {
+   "topic": "Teen Center exterior painting",
+   "what_was_recorded": "DPW requested FY2018 funds to prepare and paint the Teen Center exterior.",
+   "figures_as_printed": [
+    "$16,750"
+   ],
+   "quote": "teen center - exterior painting - $16,750 (prepare existing exterior and paint)"
+  },
+  {
+   "topic": "Fuel tank farm replacement",
+   "what_was_recorded": "Request to pump, remove and dispose of the current tanks and replace them with two slightly smaller above ground tanks; soil testing and possible remediation could add expense, and a state grant is unfunded.",
+   "figures_as_printed": [
+    "$110,000"
+   ],
+   "quote": "fuel tank farm - $110,000 - this would cover pumping, removing and disposing of"
+  },
+  {
+   "topic": "Playground structure replacement",
+   "what_was_recorded": "Request to install a new playground piece and ground cover meeting safety requirements at one park, most likely Wallis, after removing antiquated equipment.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "playground structure - $12,000 - due to antiquated and equipment that no longer"
+  },
+  {
+   "topic": "Public Safety building automation",
+   "what_was_recorded": "Request to upgrade the Public Safety building to a computerized HVAC control system similar to the Library's.",
+   "figures_as_printed": [
+    "$15,250"
+   ],
+   "quote": "public safety - building automation - $15,250 - current system needs to be"
+  },
+  {
+   "topic": "Pickup replacement vehicle",
+   "what_was_recorded": "A 2005 Ford Pickup is requested for replacement with a Utility Body Truck.",
+   "figures_as_printed": [
+    "$43,124"
+   ],
+   "quote": "2005 ford pickup to be replaced with a utility body truck for $43,124"
+  },
+  {
+   "topic": "Dump truck replacement vehicle",
+   "what_was_recorded": "A 1994 GMC Dump truck 350 is requested for replacement with a Ford Dump truck.",
+   "figures_as_printed": [
+    "$53,767"
+   ],
+   "quote": "1994 gmc dump truck 350 to be replaced with a ford dump truck for $53,767"
+  },
+  {
+   "topic": "Ladder truck (future)",
+   "what_was_recorded": "John Henshaw is looking at how the committee could handle an 850k ladder truck.",
+   "figures_as_printed": [
+    "850k"
+   ],
+   "quote": "john is also looking at how we could handle an 850k ladder truck."
+  },
+  {
+   "topic": "Pavement management and debt exclusion",
+   "what_was_recorded": "Jamie noted that after a 4-year debt exclusion the pavement costs return to one pile, and John said the committee does not want to mortgage the future; no dollar figure given.",
+   "figures_as_printed": [
+    "4 year debt exclusion"
+   ],
+   "quote": "after a 4 year debt exclusion it will all end up back in one pile"
+  },
+  {
+   "topic": "Library carpeting",
+   "what_was_recorded": "A previously approved carpeting request was not started because the cost of moving books was never included; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "previously a request for new carpeting was approved but the cost of moving the books was never"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "1. call to order: jamie toale called the meeting to order at 5:00pm."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none offered",
+   "quote": "2. public comment: none"
+  },
+  {
+   "topic": "DPW Director FY2018 capital requests",
+   "resolution": "presented; no vote",
+   "quote": "jack rodriquenz, dpw director, presented his capital requests for fy2018 and provided"
+  },
+  {
+   "topic": "Other capital discussion (Town Hall, police records, library, pavement)",
+   "resolution": "discussed; no vote",
+   "quote": "jamie said he would like to see this and similar items on the capital plan, even if years out"
+  },
+  {
+   "topic": "Committee discussion",
+   "resolution": "discussed; follow-up assigned to John Henshaw and pavement review",
+   "quote": "jamie would like to continue to push for pavement management updates"
+  },
+  {
+   "topic": "Committee comment",
+   "resolution": "none",
+   "quote": "5. committee comment - none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 6:22pm",
+   "quote": "damon made a motion to adjourn and heather sroka seconded. approved 5-0 to adjourn at 6:22pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Hall painting estimate (attached)",
+   "where": "text",
+   "quote": "wanted to do his due diligence in making sure that an accurate estimate was available (see attached)."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY2018 capital requests",
+  "DPW",
+  "facilities",
+  "vehicles",
+  "fuel tank",
+  "playgrounds",
+  "pavement management",
+  "debt exclusion",
+  "Town Hall",
+  "library",
+  "police station"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

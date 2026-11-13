@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-11-23",
  "docid": "3557",
@@ -12,58 +12,319 @@
  },
  "votes": [
   {
-   "motion": "Accept adding Zone II and Zone III to map",
-   "moved_by": "Joanna L. Bilotta",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Accept adding Zone II and Zone III to the zoning protection map at Annual Town Meeting.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion to accept adding zone ii and zone iii to map at annual town meeting made by ms. bilotta, second, mr. bodkin jr., motion passed 5-0."
+   "quote": "motion to accept adding zone ii and zone iii"
   },
   {
-   "motion": "Approve amended minutes of 10/26/09",
-   "moved_by": "Robert J. Saiia",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the minutes of 10/26/09 as amended.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "approved amended 10/26/09, motion, mr. saiia, secon d, mr. bodkin jr., motion passed",
-   "quote_taken_from_text": true
+   "quote": "approved amended 10/26/09, motion, mr. saiia"
   },
   {
-   "motion": "Approve minutes of 11/9/09",
-   "moved_by": "Robert J. Saiia",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the minutes of 11/9/09.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "approved 11/9/09, motion, mr. saiia, second, mr. bodkin jr., motion passed."
+   "quote": "approved 11/9/09, motion, mr. saiia"
   },
   {
-   "motion": "Approve Executive session minutes of 11/9/09",
-   "moved_by": "Joanna L. Bilotta",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the Town Meeting Articles Public Hearing minutes of 11/9/09.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "approved executive 11/9/09, motion, ms. b ilotta, second, mr. bodkin jr., motion passed",
-   "quote_taken_from_text": true
+   "quote": "motion, ms. bilotta, second, mr. bodkin jr.,"
   },
   {
-   "motion": "Go into Executive Session, not to return to general session",
-   "moved_by": "Joanna L. Bilotta",
-   "seconded_by": "Robert J. Saiia",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "chair asked for motion to go into executive session , not to return to general session. motion, ms. bi lotta, second, mr. saiia, roll call vote- mr. bakaysa, aye ; mr. saiia, aye; ms. bilotta, aye; mr. bodkin jr., aye; mr. lockwood, a",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Adjourn",
-   "moved_by": "Joanna L. Bilotta",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the Executive Session minutes of 11/9/09.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn, ms. bilotta, second, mr. bodkin jr., motion passed"
+   "quote": "approved executive 11/9/09, motion, ms. b"
+  },
+  {
+   "motion": "Enter Executive Session and not return to general session, by roll call.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "chair asked for motion to go into executive session"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to adjourn, ms. bilotta, second, mr. bodkin jr., motion passed, adjourned 8:35 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1275395
+ "dropped_unquoted": 0,
+ "note": "Text is a machine extraction with broken spacing inside words (e.g. \"Ma rion\", \"Pub lic\"); quotes were copied as printed. Roll call lists all five members, and the executive session roll call shows five ayes, but no attendance status is stated explicitly; status 'present' is inferred from the roll call. The executive session vote is recorded as 'passed' with no printed tally. Board decisions on White Tail and 100 Pleasant Street are stated without a recorded motion. No public comment section is printed, and no dollar figures are printed anywhere in the minutes.",
+ "cost_usd": 0.00766152,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "status": "present",
+   "quote": "nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "nathan j. lockwood, ma rion m. benson, planning director"
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "Lunenburg Water District",
+   "status": "present",
+   "quote": "fran mcnamara, lunenburg water district and george allen, water district engineer."
+  },
+  {
+   "name": "George Allen",
+   "role": "Water District Engineer",
+   "status": "present",
+   "quote": "fran mcnamara, lunenburg water district and george allen, water district engineer."
+  },
+  {
+   "name": "Brian Riley",
+   "role": "Attorney",
+   "status": "not stated",
+   "quote": "attorney brian riley advised"
+  },
+  {
+   "name": "David Ross",
+   "role": "Reviewing Engineer",
+   "status": "not stated",
+   "quote": "reviewing engineer david ross"
+  },
+  {
+   "name": "Mr. DeLuca",
+   "status": "not stated",
+   "quote": "board accepted mr. deluca's request"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair made an executive decision not to hold a meeting on 12/28/09; the December meeting will be 12/14/09.",
+   "quote": "chair made executive decision not to hold a meeting"
+  },
+  {
+   "decision": "Planning will continue the same practice regarding peer engineers until it receives the Ethics Commission's response on Attorney Brian Riley's findings.",
+   "quote": "continue the same practice regarding peer engineers"
+  },
+  {
+   "decision": "Chair Bakaysa will present the Special Town Meeting Articles; Green Task Force members will be the supportive persons.",
+   "quote": "for the motion sheet; chair bakaysa to present."
+  },
+  {
+   "decision": "The ANR request by O'Brien Homes, Inc. for 460 Howard Street was cancelled through Mr. O'Brien's attorney and designing engineer.",
+   "quote": "o'brien's attorney and designing engineer."
+  },
+  {
+   "decision": "Board accepted Mr. DeLuca's request for July 2010 compliance to the Development Plan Review for 100 Pleasant Street.",
+   "quote": "board accepted mr. deluca's request"
+  },
+  {
+   "decision": "Board approved the bond write-down for White Tail Crossing based on the reviewing engineer's report (no motion recorded).",
+   "quote": "board approved write-down based on report."
+  },
+  {
+   "decision": "Director to research why the Bengals Convenience store was not a Development Plan Review and the sign procedure question from the Zoning Officer.",
+   "quote": "director to research."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital benefit from Conservation land and Town recreation facilities",
+   "what_was_recorded": "Discussion of money the Town could derive from Conservation land and from recreation facilities such as a swimming pool and club house; no figures printed.",
+   "quote": "mr. lockwood spoke on derived funds from conservation land"
+  },
+  {
+   "topic": "White Tail Crossing bond write-down",
+   "what_was_recorded": "Applicant requested a bond write-down; the Board approved it based on the Reviewing Engineer's report; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "applicant has requested bond write-down."
+  },
+  {
+   "topic": "CVS Tri Party Account",
+   "what_was_recorded": "Paperwork was provided to the Town Treasurer's office to close the Tri Party Account; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "to close tri party account."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments: Lunenburg Water District zone map",
+   "resolution": "approved motion to add Zone II and Zone III to map at Annual Town Meeting",
+   "quote": "fran mcnamara, lunenburg water district and george allen, water district engineer.",
+   "tags": [
+    "water supply",
+    "zoning map",
+    "Zone II"
+   ]
+  },
+  {
+   "topic": "ANR, O'Brien Homes, 460 Howard Street",
+   "resolution": "cancelled by applicant",
+   "quote": "o'brien's attorney and designing engineer.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved four sets of minutes",
+   "quote": "approved amended 10/26/09, motion, mr. saiia",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "capital planning committee - director noted december 8, 2009 for first form b review",
+   "tags": [
+    "capital planning",
+    "regionalization",
+    "green task force"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business",
+   "resolution": "no action; reports received",
+   "quote": "director reported on new potential owner for",
+   "tags": [
+    "Dietrich site",
+    "ethics",
+    "Special Town Meeting",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "no action except White Tail Crossing write-down approved",
+   "quote": "a letter has been sent to the applicant",
+   "tags": [
+    "CVS",
+    "Emerald Place",
+    "Highfield Village",
+    "Stone Farm",
+    "Tri Town Landing",
+    "100 Pleasant Street",
+    "White Tail Crossing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "Director to research",
+   "quote": "director to research.",
+   "tags": [
+    "Conservation Commission",
+    "recreation",
+    "zoning sign procedure"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, not returning to general session",
+   "quote": "chair asked for motion to go into executive session",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Members issues: December meeting dates",
+   "resolution": "December meeting set for 12/14/09; no 12/28/09 meeting",
+   "quote": "chair made executive decision not to hold a meeting",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:35 PM",
+   "quote": "motion to adjourn, ms. bilotta, second, mr. bodkin jr., motion passed, adjourned 8:35 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Zoning Bylaw § 4.9, Water Supply Protection District",
+   "where": "text",
+   "quote": "water supply protection district states"
+  },
+  {
+   "name": "Zoning Protection Map",
+   "where": "text",
+   "quote": "zoning protection map."
+  },
+  {
+   "name": "Letter from the State regarding the Open Space update",
+   "where": "text",
+   "quote": "letter stated a good effort, but listed nine items"
+  },
+  {
+   "name": "Motion Sheet for Special Town Meeting",
+   "where": "text",
+   "quote": "for the motion sheet; chair bakaysa to present."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "water supply protection",
+  "zone II",
+  "ANR",
+  "development status",
+  "special town meeting",
+  "green community",
+  "open space",
+  "regionalization",
+  "executive session",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-09-15",
  "docid": "2820",
@@ -12,23 +12,258 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of June 16, 2016 as amended",
+   "motion": "Accept the minutes of June 16, 2016 as amended.",
    "moved_by": "Gare",
    "seconded_by": "Susan",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "gare moved to accept the minutes as amended, susan seconded; roll call voted: dick mailloux (aye), harry kubetz (aye, via skype), kiirja paananen (aye), donna saiia (aye), gare thompson (aye), susan visser (aye), lars widstrand (aye)"
+   "quote": "gare moved to accept the minutes as amended, susan seconded; roll call voted: dick mailloux (aye), harry kubetz (aye, via skype)"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Lars",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn so moved by gare, seconded by lars by roll call voted: dick mailloux (aye), harry kubetz (aye, via skype), kiirja paananen (aye), donna saiia (aye), gare thompson (aye), susan visser (aye), lars widstrand (aye)"
+   "quote": "motion to adjourn so moved by gare, seconded by lars by roll call voted: dick mailloux (aye), harry kubetz"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0832115
+ "note": "Text is a clean extraction with no scan issues. Vote counts are not printed as totals; the roll calls list seven ayes each, recorded as 'passed'. Dollar figures are limited to the Hannaford fundraiser. Minutes contain some typos, recorded as printed. Harry Kubetz attended remotely via Skype.",
+ "cost_usd": 0.0056021199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:45 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee",
+   "status": "remote",
+   "quote": "attending: dick mailloux, harry kubetz (via skype), kiirja paananen, donna saiia, gare thompson, susan visser"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via skype), kiirja paananen, donna saiia, gare thompson, susan visser"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via skype), kiirja paananen, donna saiia, gare thompson, susan visser"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via skype), kiirja paananen, donna saiia, gare thompson, susan visser"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via skype), kiirja paananen, donna saiia, gare thompson, susan visser"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "absent",
+   "quote": "absent: martha moore - director, lpl (on a well-deserved vacation)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "terri burchfield - fincom representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "President of Friends",
+   "status": "present",
+   "quote": "jeanne raboin, president of friends, friends of the lunenburg public library update:"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustees were asked to browse the Director's Report hand-out and put any questions to Martha for discussion at the October meeting.",
+   "quote": "dick suggested that we browse the hand-out and if any of the trustees have questions, to put them to martha"
+  },
+  {
+   "decision": "Agenda items were set for upcoming meetings, including trust fund access policy, library cards for out-of-state residents, room use by for-profit entities, and a possible program budget line.",
+   "quote": "agenda items for upcoming meetings"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hannaford Helps fundraiser for the Friends",
+   "what_was_recorded": "Hannaford sells reusable bags for $2.00 in October, with $1.00 of each benefiting the Friends.",
+   "figures_as_printed": [
+    "$2.00",
+    "$1.00"
+   ],
+   "quote": "during the month of october, hannaford sells reusable bags for $2.00 of which $1.00 will benefit the friends."
+  },
+  {
+   "topic": "Endowment funds and investments",
+   "what_was_recorded": "The Friends gave an update of the financials of the endowment funds, rate of return, fee structures and investment strategies; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "update of the financials with the endowment funds, rate of return, fee structures and future investment strategies"
+  },
+  {
+   "topic": "Possible program line in budget",
+   "what_was_recorded": "A possible program line in the budget and sources of funding was listed as a future agenda item; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "possible program line in budget/sources of funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jeanne Raboin",
+   "stated_role": "President of Friends",
+   "topic": "Friends of the Library update, financials, fundraisers and events",
+   "quote": "jeanne raboin, president of friends, friends of the lunenburg public library update:"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment: Friends of the Library update",
+   "resolution": "no action; trustees thanked speaker",
+   "quote": "dick and trustees thanked ms. raboin for the detailed update.",
+   "tags": [
+    "friends",
+    "public comment",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes of June 16, 2016",
+   "resolution": "approved as amended",
+   "quote": "gare moved to accept the minutes as amended, susan seconded; roll call voted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; questions deferred to October meeting",
+   "quote": "director's report, per distributed hand-out.",
+   "tags": [
+    "director's report"
+   ]
+  },
+  {
+   "topic": "Young Adult and Children's Area reports",
+   "resolution": "discussed; no action",
+   "quote": "young adult area (y.a.) report - separate handout.",
+   "tags": [
+    "children",
+    "young adult",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "volunteer request noted",
+   "quote": "fall book and bake sale: request for volunteers on the 21st of october to help set up the wallace room",
+   "tags": [
+    "friends",
+    "volunteers",
+    "book sale"
+   ]
+  },
+  {
+   "topic": "Report of August 16, 2016 BOS Meeting",
+   "resolution": "discussed; talent bank form done; cable TV ideas noted",
+   "quote": "put talent bank form on-line and fillable on-line - has been done.",
+   "tags": [
+    "cable tv",
+    "talent bank",
+    "board of selectmen"
+   ]
+  },
+  {
+   "topic": "Library trustee terms",
+   "resolution": "noted; no action",
+   "quote": "library trustee terms: next year (2017) up for elections - harry, susan; gare, lars and kiirja in 2018",
+   "tags": [
+    "elections",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "listed for future meetings",
+   "quote": "agenda items for upcoming meetings",
+   "tags": [
+    "policy",
+    "agenda",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:33 p.m.",
+   "quote": "motion to adjourn so moved by gare, seconded by lars",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for September 15, 2016",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for september 15, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "director's report, per distributed hand-out."
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "children's area (c.a.) report - separate handout to be shared later."
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "young adult area (y.a.) report - separate handout."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "friends of the library",
+  "director's report",
+  "fundraising",
+  "endowment",
+  "trustee elections",
+  "youth programs",
+  "policy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

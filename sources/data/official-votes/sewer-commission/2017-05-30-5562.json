@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-05-30",
  "docid": "5562",
@@ -12,47 +12,377 @@
  },
  "votes": [
   {
-   "motion": "Wait until there is a full Commission before electing officers.",
+   "motion": "Postpone the election of officers until there is a full Commission.",
    "moved_by": "Troy Daniels",
-   "seconded_by": "John Reynolds",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "troy daniels made a motion to wait until there is a full commission; john reynolds seconded; all voted in favor; motion approved."
+   "outcome": "passed, all voted in favor",
+   "procedural": false,
+   "quote": "troy daniels made a motion to wait until there is a full commission; john reynolds seconded; all voted in favor; motion approved.",
+   "seconded_by": "John Reynolds"
   },
   {
-   "motion": "Move forward with procurement of $12,000 for flow isolation and videoing of PVC pipe and rescind the prior vote of the $8,000 cap.",
+   "motion": "Proceed with procurement of $12K for the flow isolation and videoing of the PVC pipe as Jack proposed, and rescind the prior vote of the $8K cap.",
    "moved_by": "Joe",
-   "seconded_by": "John",
    "outcome": "passed 3-1-0",
    "procedural": false,
-   "quote": "joe made a motion to move forward with the procurement of $12k for the flow isolation and videoing of the pvc pipe that jack is proposing and to rescind the prior vote of the $8k cap; john seconded. discussion: carl thinks the bidding process was flawed by not asking all relevant engineers to quote on it and thinks the $7,500 for the tv portion is much more than it should be. voted: 3-1-0; motion passed."
+   "quote": "joe made a motion to move forward with the procurement of $12k for the flow isolation and videoing of the pvc pipe",
+   "seconded_by": "John"
   },
   {
-   "motion": "Authorize $16,000 for the Mass Ave assembly rework.",
+   "motion": "Authorize $16K for the Mass Ave assembly rework.",
    "moved_by": "Joe",
-   "seconded_by": "John",
-   "outcome": "passed",
+   "outcome": "passed, all voted in favor",
    "procedural": false,
-   "quote": "joe made a motion to authorize $16k for the mass ave assembly rework; john seconded; all voted in favor; motion approved."
+   "quote": "joe made a motion to authorize $16k for the mass ave assembly rework; john seconded; all voted in favor; motion approved.",
+   "seconded_by": "John"
   },
   {
    "motion": "Transfer $614.00 from the Enterprise Fund to pay the SRF project.",
-   "moved_by": "Troy",
-   "seconded_by": "John",
-   "outcome": "passed",
+   "moved_by": "Troy Daniels",
+   "outcome": "passed, all voted in favor",
    "procedural": false,
-   "quote": "troy made a motion to transfer $614.00 from the enterprise fund to pay the srf project; john seconded; all voted in favor; motion approved."
+   "quote": "troy made a motion to transfer $614.00 from the enterprise fund to pay the srf project; john seconded; all voted in favor; motion approved.",
+   "seconded_by": "John"
   },
   {
    "motion": "Adjourn the meeting.",
    "moved_by": "Troy",
-   "seconded_by": "John",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "troy motioned to adjourn; john 2nd; all in favor."
+   "quote": "troy motioned to adjourn; john 2nd; all in favor.",
+   "seconded_by": "John"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted via macOS Vision. Two minor OCR artifacts present in body text (Privilege Fee Assessment section and signature) but do not affect vote extraction.",
- "cost_usd": 0.0889115
+ "note": "OCR of a scanned page with garbled passages: page 2 begins mid-sentence (\"work; Jack believed it would be\"), the Privilege Fee Assessment item is largely unreadable, and the closing signature is illegible. The minutes print no roll call or attendance list, so attendance statuses are inferred from speaking and voting and recorded as present or not stated. The 3-1-0 vote does not name the dissenter or abstainer. Election of Officers was postponed, not decided. Minutes were deferred with no vote.",
+ "cost_usd": 0.00653592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Troy Daniels",
+   "role": "",
+   "status": "present",
+   "quote": "troy daniels made a motion to wait until there is a full commission; john reynolds seconded"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "troy daniels made a motion to wait until there is a full commission; john reynolds seconded"
+  },
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl explained the functions; the day to day is the dpw's responsibility"
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack said they hope to start early next week."
+  },
+  {
+   "name": "Joe",
+   "role": "",
+   "status": "present",
+   "quote": "joe left the meeting."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb can pull any invoice for any particular pump station to see what has/has not been done."
+  },
+  {
+   "name": "Greg Bitter",
+   "role": "Planning Board Chair",
+   "status": "present",
+   "quote": "greg bitter, planning board chair, introduced himself and wanted to encourage communications and/or dialogue with the commission."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "380 Electric Ave Car Wash (6:30 pm appointment)",
+   "status": "not stated",
+   "quote": "the 6:30 pm appointment for dan proctor, 380 electric ave car wash, has requested to reschedule."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Small Water Small Water System Services (SWSS) to be invited to the next meeting, as it is supposed to come in quarterly.",
+   "quote": "we need to invite them in to the next meeting."
+  },
+  {
+   "decision": "Jack will email the revised pump station report form to the commission for review.",
+   "quote": "he will email it to the commission for review."
+  },
+  {
+   "decision": "The I/I report will be the first priority.",
+   "quote": "the i/l report will be the first priority."
+  },
+  {
+   "decision": "Barb can pull invoices for any pump station on request; transferring maintenance data into an Excel sheet is not pursued for now.",
+   "quote": "it is not a good use of time to transfer it into an excel sheet for now."
+  },
+  {
+   "decision": "Barb will send annual permit fee letters out the next day; certain accounts get individualized letters, and Kabobelicious is not to be issued a discharge permit for the new year until its money is received.",
+   "quote": "barb will send annual permit fee letters out tomorrow."
+  },
+  {
+   "decision": "Kabobelicious should not be issued a permit to discharge in the new year until the money is received.",
+   "quote": "they should not be issued a permit to discharge in the new year until the money is received."
+  },
+  {
+   "decision": "Invoices were approved for payment.",
+   "quote": "invoices were approved for payment."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Camera and flow isolation contract",
+   "what_was_recorded": "Jack's $12K quote was discussed against the $8K cap the commission had set; the cap was rescinded and procurement at $12K approved.",
+   "quote": "in order to go with the $12k quote that jack received",
+   "figures_as_printed": [
+    "$8K",
+    "$12K"
+   ]
+  },
+  {
+   "topic": "Camera and flow isolation contract - TV portion",
+   "what_was_recorded": "Carl said the $7,500 for the TV portion is much more than it should be.",
+   "quote": "thinks the $7,500 for the tv portion is",
+   "figures_as_printed": [
+    "$7,500"
+   ]
+  },
+  {
+   "topic": "Mass Ave assembly rework",
+   "what_was_recorded": "Commission authorized $16K for the Mass Ave assembly rework.",
+   "quote": "joe made a motion to authorize $16k for the mass ave assembly rework",
+   "figures_as_printed": [
+    "$16K"
+   ]
+  },
+  {
+   "topic": "Purchase of Services budget / infrastructure line item",
+   "what_was_recorded": "Discussion that the infrastructure line item is one line in the Purchase of Services budget, which is a single account; the remaining balance for year-end was to be determined. No figure printed.",
+   "quote": "there was discussion on the infrastructure line item which is only",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Project fund",
+   "what_was_recorded": "Minutes state there is money in the project fund to cover the scope items. No figure printed.",
+   "quote": "there is money to cover the items in the project fund.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "SRF project closeout",
+   "what_was_recorded": "Town Accountant asked for a $614.00 transfer from the Enterprise Fund to close out the SRF project; otherwise a $614 bond would be needed, which Karen did not recommend.",
+   "quote": "barb described the town accountant's request to transfer $614.00 from the enterprise fund to the srf project",
+   "figures_as_printed": [
+    "$614.00",
+    "$614"
+   ]
+  },
+  {
+   "topic": "FY17 Q4 Commitment",
+   "what_was_recorded": "Business Manager reported the FY17 Q4 Commitment was signed.",
+   "quote": "the fy17 q4 commitment was signed ($176,815.87).",
+   "figures_as_printed": [
+    "$176,815.87"
+   ]
+  },
+  {
+   "topic": "Grease trap non-compliance",
+   "what_was_recorded": "A&D Crossroads owes money for non-compliance and Kabobelicious still owes non-compliance penalties; no amounts printed.",
+   "quote": "kabobelicious still owes non-compliance penalties.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the Enterprise Fund to the SRF project fund to close out the SRF project, requested by the Town Accountant.",
+   "outcome": "passed, all voted in favor",
+   "quote": "troy made a motion to transfer $614.00 from the enterprise fund to pay the srf project; john seconded; all voted in favor; motion approved.",
+   "amount_as_printed": "$614.00"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Greg Bitter",
+   "stated_role": "Planning Board Chair",
+   "topic": "Encouraging dialogue with the Commission",
+   "quote": "greg bitter, planning board chair, introduced himself and wanted to encourage communications and/or dialogue with the commission."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointments",
+   "resolution": "Dan Proctor's 6:30 pm appointment rescheduling requested; no action",
+   "quote": "the 6:30 pm appointment for dan proctor, 380 electric ave car wash, has requested to reschedule.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "Greg Bitter introduced himself; no action",
+   "quote": "greg bitter, planning board chair, introduced himself and wanted to encourage communications and/or dialogue with the commission.",
+   "tags": [
+    "public comment",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Election of Officers",
+   "resolution": "Postponed until full Commission",
+   "quote": "troy daniels made a motion to wait until there is a full commission; john reynolds seconded; all voted in favor; motion approved.",
+   "tags": [
+    "elections"
+   ]
+  },
+  {
+   "topic": "Operations & System Supervision - SWSS Contract Renewal",
+   "resolution": "Discussed roles; SWSS to be invited to next meeting",
+   "quote": "small water is supposed to come in quarterly; we need to invite them in to the next meeting.",
+   "tags": [
+    "contracts",
+    "SWSS",
+    "operations"
+   ]
+  },
+  {
+   "topic": "I/I reduction - Manhole Dish Installation",
+   "resolution": "Status reported; work to start early next week; no vote",
+   "quote": "jack said they hope to start early next week.",
+   "tags": [
+    "inflow and infiltration",
+    "manholes"
+   ]
+  },
+  {
+   "topic": "Camera and Flow Isolation Contract",
+   "resolution": "Approved $12K procurement and rescinded $8K cap, passed 3-1-0",
+   "quote": "joe made a motion to move forward with the procurement of $12k for the flow isolation and videoing of the pvc pipe",
+   "tags": [
+    "procurement",
+    "inflow and infiltration",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Scope of Services Preparation",
+   "resolution": "Discussed; I/I report to DEP first priority; consultant needed; no vote",
+   "quote": "the i/l report to dep is needed by december.",
+   "tags": [
+    "inflow and infiltration",
+    "scope of work",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Pump Station Reports",
+   "resolution": "Reports deemed a failure; revised form to be emailed to commission",
+   "quote": "jack said the reports have been a failure",
+   "tags": [
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "System Maintenance Documentation",
+   "resolution": "No transfer to spreadsheet; invoices can be pulled on request",
+   "quote": "it is not a good use of time to transfer it into an excel sheet for now.",
+   "tags": [
+    "maintenance",
+    "records"
+   ]
+  },
+  {
+   "topic": "Mass Ave assembly rework",
+   "resolution": "Authorized $16K",
+   "quote": "joe made a motion to authorize $16k for the mass ave assembly rework; john seconded; all voted in favor; motion approved.",
+   "tags": [
+    "budget",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Grease Trap Compliance Work",
+   "resolution": "Permit fee letters to go out; individual account letters; no permit for Kabobelicious until paid",
+   "quote": "barb will send annual permit fee letters out tomorrow.",
+   "tags": [
+    "grease trap",
+    "compliance",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Privilege Fee Assessment",
+   "resolution": "Text illegible in the minutes; outcome not recoverable",
+   "quote": "privilege fee assessment- barb provided",
+   "tags": [
+    "fees"
+   ]
+  },
+  {
+   "topic": "Business Manager Report / SRF Project Closeout",
+   "resolution": "FY17 Q4 Commitment noted as signed; $614.00 SRF transfer approved",
+   "quote": "the fy17 q4 commitment was signed ($176,815.87).",
+   "tags": [
+    "budget",
+    "SRF",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "Minutes and invoices",
+   "resolution": "Minutes deferred; invoices approved for payment",
+   "quote": "minutes - deferred. invoices were approved for payment.",
+   "tags": [
+    "minutes",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Permits to Connect",
+   "resolution": "Noted; no vote",
+   "quote": "permits to connect - 29 summer street;",
+   "tags": [
+    "permits"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "Noted; next regular meetings June 13 and June 27",
+   "quote": "june 13th - regular meeting (dpw, 520 chase road)",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned at 9:20 p.m.",
+   "quote": "the meeting adjourned at 9:20 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "sewer commission",
+  "inflow and infiltration",
+  "procurement",
+  "contracts",
+  "grease trap",
+  "budget transfer",
+  "pump stations",
+  "elections",
+  "SRF project"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

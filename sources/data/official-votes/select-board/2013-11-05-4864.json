@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-11-05",
  "docid": "4864",
@@ -12,40 +12,425 @@
  },
  "votes": [
   {
-   "motion": "Approve request for Salvation Army Boot Drive on 12/14/2013 from 9AM-3PM in Lunenburg Town center and at CVS intersection in Whalom district",
+   "motion": "Approve the Salvation Army Boot Drive on 12/14/2013, 9AM-3PM, in the Lunenburg Town center and at the CVS intersection in Whalom.",
    "moved_by": "Mr. Toale",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. toale moved to approve the request for the salvation army boot drive to be held on 12/14/2013, from 9am-3pm, in the lunenburg town center and at the cvs intersection in the whalom district. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. toale moved to approve the request for the salvation army boot drive to be held on 12/14/2013, from 9am-3pm, in the lunenburg town center"
   },
   {
-   "motion": "Set dates of January 7, 2014 for Special Town Meeting and January 11, 2014 for Special Election",
+   "motion": "Set January 7, 2014 for the Special Town Meeting and January 11, 2014 for the Special Election.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bertram moved to set the dates of january 7, 2014 for the special town meeting and january 11, 2014 for the special election. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "ms. bertram moved to set the dates of january 7, 2014 for the special town meeting and january 11, 2014 for the special election."
   },
   {
-   "motion": "Reduce the membership of the Green Communities Task Force to 5 to ensure a quorum",
+   "motion": "Reduce the membership of the Green Communities Task Force to 5 to ensure a quorum.",
    "moved_by": "Ms. Bertram",
-   "seconded_by": "",
+   "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bertram moved to reduce the membership of the green communities task force to 5 to insure a quorum. mr. toale discussion: mr. matthews stated that",
-   "quote_taken_from_text": true
+   "quote": "ms. bertram moved to reduce the membership of the green communities task force to 5 to insure a quorum. mr. toale"
   },
   {
-   "motion": "Adjourn the Board of Selectmen meeting",
+   "motion": "Adjourn the BOS meeting.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "being no further business ms. bertram moved to adjourn the bos meeting. mr. matthews seconded. on vote motion carried, 4 in favor, 0 opposed"
+   "quote": "ms. bertram moved to adjourn the bos meeting. mr. matthews seconded. on vote motion carried, 4 in favor, 0 opposed"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The OCR text for the Green Communities Task Force vote shows \"Mr. Toale\" at the line break following the motion, but the word \"seconded\" does not appear explicitly in the provided text, so the seconder is not recorded.",
- "cost_usd": 0.17114449999999998
+ "note": "OCR text from macOS Vision; some names and words are garbled or inconsistent (Toate/Toale for the same member, Betram, Mir., MillA, Ma Broadband). The Green Communities motion's seconder is taken from the words 'Mr. Toale' that follow the motion; the vote result appears later, after discussion. No motion or vote is recorded for approving the 10/15/2013 and 10/22/2013 minutes or the listed warrants. The $314,542.91 figure is unlabeled in the warrants list. The minutes name no documents list heading. Dollar figures are printed as the minutes give them.",
+ "cost_usd": 0.014874320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair Person",
+   "status": "present",
+   "quote": "mr. alonzo asked what the use of the k-9 would be."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toate, and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toate, and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toate",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toate, and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toate, and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "absent",
+   "quote": "absent was robert ebersole"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "representing the Salvation Army",
+   "status": "present",
+   "quote": "dave macdonald, lunenburg ma., came before the bos representing the salvation army, to request permission for a boot drive"
+  },
+  {
+   "name": "Mike Luth",
+   "role": "Police Lt.",
+   "status": "present",
+   "quote": "police lt. mike luth spoke to the board and explained that a generous grant from the stanton foundation has been received"
+  },
+  {
+   "name": "Jason Berthelette",
+   "role": "Officer, of the Woonsocket R.I. Police Force",
+   "status": "present",
+   "quote": "officer jason berthelette, of the woonsocket r.i. police force gave a short demonstration with the k-9"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No board vote was needed for volunteers to decorate the Upper Town Common with Christmas lights; the Chair had no objection.",
+   "quote": "mr. alonzo replied that he had no objection with this and that a vote from the board was not necessary."
+  },
+  {
+   "decision": "The board did not need to vote on or officially accept the Stanton Foundation K-9 grant, per the Town Manager.",
+   "quote": "ms. speidel stated that the bos did not need to vote on or officially accept this grant."
+  },
+  {
+   "decision": "Accept BOS Policies & Procedures was tabled to the next BOS meeting.",
+   "quote": "5. accept bos policies & procedures: tabled to the next bos meeting."
+  },
+  {
+   "decision": "Residents' request for senior tax assistance: Chair recommended contacting the Council on Aging Director.",
+   "quote": "mr. alonzo recommended contacting the council on aging director for information."
+  },
+  {
+   "decision": "Town Manager will ask the Assessor to present on senior programs available at the next BOS meeting.",
+   "quote": "she will ask the assessor to make a presentation on any programs they have available at the next bos meeting."
+  },
+  {
+   "decision": "Economic development team / MRPC information to be placed on a future BOS agenda.",
+   "quote": "would like this put on a future bos meeting."
+  },
+  {
+   "decision": "The warrant for the Special Town Meeting was to be placed on the next week's agenda, opening 11/12/2013 and closing 11/19/2013.",
+   "quote": "ms. speidel reminded the bos that the warrant will be placed on next weeks agenda which will make the warrant open on"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stanton Foundation K-9 grant",
+   "what_was_recorded": "A Stanton Foundation grant of $25,000 to start a K-9 program, covering the dog, training, cruiser conversion, kennel, equipment, vest, food, vet care, a 10% contingency and future skills training; the grant runs 3 years and the Town is asked for a 5-year commitment.",
+   "figures_as_printed": [
+    "$25,000",
+    "10%"
+   ],
+   "quote": "this grant is in the amount of $25,000 which will be used for purchasing the dog, training"
+  },
+  {
+   "topic": "K-9 program estimated annual costs after grant",
+   "what_was_recorded": "Other jurisdictions' estimated costs after the grant: food, veterinary and in-service training.",
+   "figures_as_printed": [
+    "$800",
+    "$5-600",
+    "$500"
+   ],
+   "quote": "lt. luth responded that other jurisdictions costs were estimated as follows: food - $800 ===page 2=== veterinary - $5-600 in-service tr",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "MIIA training participation credits",
+   "what_was_recorded": "About $11,000 received last year in MIIA participation credits, proposed as an in-house grant pool for departments.",
+   "figures_as_printed": [
+    "$11,000"
+   ],
+   "quote": "last year we received approximately $11,000 in participation credits"
+  },
+  {
+   "topic": "Warrants listed",
+   "what_was_recorded": "Warrant amounts listed under Minutes/Warrants/Action File Issues; no approval vote recorded.",
+   "figures_as_printed": [
+    "$5336.31",
+    "$424.63",
+    "$650,217.73",
+    "$444,790.62",
+    "-$2123.15",
+    "$314,542.91"
+   ],
+   "quote": "lunenburg water dept. quarterly bill $5336.31 10/28/2013 #10p-14m $424.63 11/9/2013 #10p-14 $650,217.73"
+  },
+  {
+   "topic": "Police payroll reduction",
+   "what_was_recorded": "A payroll reduction of -$2123.15 reflecting final approval of a Police Officer's disability retirement effective 10/30/2013.",
+   "figures_as_printed": [
+    "-$2123.15"
+   ],
+   "quote": "11/5/2013 #10p-14v -$2123.15"
+  },
+  {
+   "topic": "Cost of delay on school building project",
+   "what_was_recorded": "MSBA project delay is estimated to cost about $150,000 per month.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "every month the project is delayed costs approximately $150,000."
+  },
+  {
+   "topic": "School building design cost reduction",
+   "what_was_recorded": "Design refinements would reduce the cost by over $1M.",
+   "figures_as_printed": [
+    "$1M"
+   ],
+   "quote": "would reduce the cost by over $1m, which will significantly lower the cost to the tax payer."
+  },
+  {
+   "topic": "MSBA partnership savings",
+   "what_was_recorded": "The MSBA partnership is said to save the Town $35M-$36M.",
+   "figures_as_printed": [
+    "$35M-$36M"
+   ],
+   "quote": "this partnership with the msba will save the town $35m-$36m."
+  },
+  {
+   "topic": "Financing term survey",
+   "what_was_recorded": "Online survey on school project financing: 21 responses, 62% for a 30-year term and 38% for a 20-year term.",
+   "figures_as_printed": [
+    "62%",
+    "38%"
+   ],
+   "quote": "currently shows that 21 people have responded, 62% prefer a 30 year term, and 38% prefer a 20 year term."
+  },
+  {
+   "topic": "Average tax bill impact of financing term",
+   "what_was_recorded": "A 30-year financing would add $2640 to an average property tax bill compared with a 20-year term.",
+   "figures_as_printed": [
+    "$2640"
+   ],
+   "quote": "the net effect would be $2640 more with a 30 year financing as opposed to a 20 year financing."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. MacDonald",
+   "stated_role": "representing the Salvation Army",
+   "topic": "thanks for bocce court recognition",
+   "quote": "mr. macdonald thanked mr. matthews for his recognition of the volunteers who built a bocce court at the eagle house"
+  },
+  {
+   "speaker": "a citizen",
+   "topic": "senior tax assistance if taxes rise significantly",
+   "quote": "mr. toale reported that he had received a phone call from a citizen requesting that in light of any vote"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and recognitions",
+   "resolution": "no action",
+   "quote": "mr. matthews acknowledged a group of lunenburg citizens who donated labor and material costs for the construction on",
+   "tags": [
+    "recognition",
+    "bocce court",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Appointment: Salvation Army Boot Drive request",
+   "resolution": "approved 4-0",
+   "quote": "request for boot drive, salvation army: dave macdonald, lunenburg ma., came before the bos representing the",
+   "tags": [
+    "Salvation Army",
+    "boot drive",
+    "permit"
+   ]
+  },
+  {
+   "topic": "Appointment: Police K-9 grant and program",
+   "resolution": "discussion; no vote required",
+   "quote": "explained that a generous grant from the stanton foundation has been received to start a k-9 program",
+   "tags": [
+    "K-9",
+    "police",
+    "grant",
+    "Stanton Foundation"
+   ]
+  },
+  {
+   "topic": "Status update: Town Manager goals",
+   "resolution": "no action",
+   "quote": "status update: town manager goals: ms. speidel reviewed the status of the town manager goals with the bos as follows:",
+   "tags": [
+    "town manager",
+    "goals",
+    "personnel",
+    "finance",
+    "operations"
+   ]
+  },
+  {
+   "topic": "Status update: Board of Selectmen goals",
+   "resolution": "no action",
+   "quote": "status update board of selectmen goals: mr. alonzo reported on the status of the bos goals as follows:",
+   "tags": [
+    "BOS goals",
+    "policies",
+    "town web site"
+   ]
+  },
+  {
+   "topic": "Set date for Special Town Meeting and Special Election",
+   "resolution": "approved 4-0",
+   "quote": "ms. bertram moved to set the dates of january 7, 2014 for the special town meeting and january 11, 2014 for the special election.",
+   "tags": [
+    "special town meeting",
+    "special election",
+    "school building project"
+   ]
+  },
+  {
+   "topic": "Green Communities Task Force membership",
+   "resolution": "approved 4-0 (reduced to 5 members)",
+   "quote": "4. consider reduction in membership green communities task force: ms. speidel explained that this task force",
+   "tags": [
+    "green communities",
+    "task force",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Accept BOS Policies & Procedures",
+   "resolution": "tabled",
+   "quote": "5. accept bos policies & procedures: tabled to the next bos meeting.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no vote recorded",
+   "quote": "minutes: 10/15/2013 10/22/2013",
+   "tags": [
+    "minutes",
+    "warrants",
+    "senior tax relief"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "building reuse committee - mr. toale reported that they met last evening and said that all of the preliminary input",
+   "tags": [
+    "committees",
+    "school building project",
+    "MPO",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "MA Broadband update",
+   "resolution": "no action",
+   "quote": "ma broadband- mr. alonzo reported that ma broadband is at 100% of the poles surveyed and installed.",
+   "tags": [
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "no action",
+   "quote": "9.town manager reports or department reports: ms. speidel reported that the online survey asking what the towns",
+   "tags": [
+    "financing",
+    "school building project",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Appointments, re-appointments, resignations and executive session",
+   "resolution": "no action",
+   "quote": "appointments/re-appointments/resignations: none",
+   "tags": [
+    "appointments"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stanton Foundation K-9 grant",
+   "where": "text",
+   "quote": "a generous grant from the stanton foundation has been received to start a k-9 program with the"
+  },
+  {
+   "name": "Project scope and budget agreement (MSBA)",
+   "where": "text",
+   "quote": "the town will be receiving a project scope and budget agreement from the"
+  },
+  {
+   "name": "Information from MRPC distributed to the Building Re-use Committee",
+   "where": "text",
+   "quote": "we have information from mrpc which was distributed to the building re-use committee"
+  },
+  {
+   "name": "BOS Policies & Procedures Manual",
+   "where": "text",
+   "quote": "finish review of the bos policies & procedures manual."
+  },
+  {
+   "name": "Draft question for the Special Election",
+   "where": "text",
+   "quote": "she will also have a draft of the question for the special election"
+  },
+  {
+   "name": "Talent bank forms (PACC)",
+   "where": "text",
+   "quote": "people interested can pick up talent bank forms"
+  },
+  {
+   "name": "Minutes of 10/15/2013 and 10/22/2013",
+   "where": "text",
+   "quote": "minutes: 10/15/2013 10/22/2013"
+  }
+ ],
+ "tags": [
+  "select board",
+  "school building project",
+  "K-9 program",
+  "Stanton Foundation grant",
+  "Salvation Army",
+  "Green Communities Task Force",
+  "special town meeting",
+  "special election",
+  "school financing",
+  "town manager goals",
+  "BOS goals",
+  "warrants",
+  "MA Broadband",
+  "senior tax relief",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

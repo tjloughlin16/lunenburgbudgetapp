@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-07-07",
  "docid": "4934",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Faith Beall to PACC with term expiring June 30, 2018",
+   "motion": "Appoint Faith Beall to the PACC with a term to expire June 30, 2018.",
    "moved_by": "P. Bertram",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: p. bertram to appoint ms. beall to the pacc with a term to expire june 30, 2018 2: b. ebersole vote: all in favor"
   },
   {
-   "motion": "Sign and send the letter of insufficient notice of right of first refusal",
+   "motion": "Sign and send the letter of insufficient notice (Chapter 61A right of first refusal, White Street property).",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "motion: b. ebersole to sign and send the letter of insufficient notice 2nd: p. bertram vote: all in favor"
   },
   {
-   "motion": "Appoint John Reynolds to the Sewer Commission until the next annual election",
+   "motion": "Appoint John Reynolds to the Sewer Commission until the next annual election.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: b. ebersole 2\"d: p. bertram to appoint john reynolds to the sewer commission until the next annual election vote: mr. ebersole-yes, ms. bertram - yes, ms. luck- yes, mr. toale- yes, mr. luck-yes, mr. nault- yes- mr. daniels- yes, ms. bunish -yes"
+   "quote": "to appoint john reynolds to the sewer commission until the next annual election vote: mr. ebersole-yes, ms. bertram - yes, ms. luck- yes, mr. toale- yes"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
@@ -45,6 +45,281 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, legible. The Reynolds appointment vote shows one member name twice (Mr. Luck) in the roll call, which appears to be a transcription error in the original minutes.",
- "cost_usd": 0.0986985
+ "note": "Text is macOS Vision OCR of a scanned page set; some characters are garbled (for example \"July 1S!\" and \"2\"d\" style marks) and the quotes reflect the OCR text. The Sewer Commission roll call names Mr. Nault, Mr. Daniels and Ms. Bunish without roles; they are recorded as not stated. Remarks under the \"Public Comment:\" heading are by Board members, with no role printed. Vote outcomes are printed as \"All in Favor\" or as a roll of yes votes with no count, so they are recorded as \"passed\". The minutes name Ms. Peterson as the author of the meeting coordination and as the signer; she is not otherwise listed as an attendee.",
+ "cost_usd": 0.00883172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; paula bertram, member; and phyllis luck, member."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; paula bertram, member; and phyllis luck, member."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; paula bertram, member; and phyllis luck, member."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; paula bertram, member; and phyllis luck, member."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "town manager kerry speidel and thomas alonzo, clerk, were not present."
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "town manager kerry speidel and thomas alonzo, clerk, were not present."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Sewer Commissioner Chair",
+   "status": "present",
+   "quote": "mr. toale asked carl luck, sewer commissioner chair, to convene their meeting."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "mr. toale asked mr. reynolds to speak on his application."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "",
+   "status": "present",
+   "quote": "faith beall is present to request appointment to pacc."
+  },
+  {
+   "name": "Mr. Nault",
+   "role": "",
+   "status": "not stated",
+   "quote": "mr. nault- yes- mr. daniels- yes, ms. bunish -yes"
+  },
+  {
+   "name": "Mr. Daniels",
+   "role": "",
+   "status": "not stated",
+   "quote": "mr. nault- yes- mr. daniels- yes, ms. bunish -yes"
+  },
+  {
+   "name": "Ms. Bunish",
+   "role": "",
+   "status": "not stated",
+   "quote": "mr. nault- yes- mr. daniels- yes, ms. bunish -yes"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed to send the letter concerning insufficient notice of right of first refusal, because there was some interest from the Conservation Commission.",
+   "quote": "the board agreed to send the letter because there was some interest from the conservation commission."
+  },
+  {
+   "decision": "The Board agreed to accept the invitation to meet with the Town of Townsend regarding the Kinder Morgan pipeline; a meeting to be coordinated by Ms. Peterson.",
+   "quote": "all agreed it would be a good idea. a meeting will be coordinated by ms. peterson."
+  },
+  {
+   "decision": "Chair to arrange a time for the meeting with Joel Bard of Kopelman & Paige, PC on legal costs and fees.",
+   "quote": "mr. toale will arrange a time for the meeting with mr. bard."
+  },
+  {
+   "decision": "Chair recommended the Building Reuse Committee serve as the reviewing committee for the RFQs (recommendation; no vote recorded).",
+   "quote": "mr. toale recommended the building reuse committee to be the reviewing committee for the rfqs"
+  },
+  {
+   "decision": "Town Manager to follow up on the MRPC brownfields grant for the Mass Avenue gas station property.",
+   "quote": "town manager will be following up on this."
+  },
+  {
+   "decision": "Chair asked newly appointed John Reynolds to see the Town Clerk to be sworn in.",
+   "quote": "mr. toale congratulated mr. reynolds and asked him to see the town clerk to be sworn in."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "Chair presented an accounts payable warrant for signatures.",
+   "figures_as_printed": [
+    "$333,516.81"
+   ],
+   "quote": "mr. toale presented an accounts payable warrant in the amount of $333,516.81 for signatures."
+  },
+  {
+   "topic": "MRPC brownfields assessment grant",
+   "what_was_recorded": "A grant through MRPC for brownfields assessment could possibly be used for cleanup of the Mass Avenue gas station property.",
+   "figures_as_printed": [
+    "$400,000"
+   ],
+   "quote": "there is also a $400,000 grant through mrpc for brownfields assessment that could possibly be used for the cleanup of the mass avenue gas station property."
+  },
+  {
+   "topic": "School Committee donation to Middle School",
+   "what_was_recorded": "A donation was made to the Middle School for computer purchases.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "a $5000 donation was made to the middle school for computer purchases"
+  },
+  {
+   "topic": "MART fares",
+   "what_was_recorded": "MART fares under the revised route: full fare and reduced fare for students, seniors and disabled residents.",
+   "figures_as_printed": [
+    "$1.25",
+    ".60"
+   ],
+   "quote": "the fee is $1.25 for the mart service; students, seniors and disabled residents pay .60."
+  },
+  {
+   "topic": "Legal costs and fees review",
+   "what_was_recorded": "Chair contacted Joel Bard of Kopelman & Paige, PC about reviewing legal costs and fees; Mr. Bard willing to attend a Board meeting. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. toale contacted joel bard at kopelman & paige, pc and spoke to him about reviewing legal costs and fees."
+  },
+  {
+   "topic": "PACC budget restraints",
+   "what_was_recorded": "PACC is reviewing policies and job descriptions and how to work within budget restraints. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "they are continuing to review policies and job descriptions and how to work with budget restraints"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Japanese exchange students, Lake Shirley patrols, Farmer's Market",
+   "quote": "ms. luck reported lunenburg families hosted japanese exchange students recently."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "Lunenburg Water District special meeting on LWD extension",
+   "quote": "mr. ebersole wanted to remind that the lunenburg water district is hosting a special meeting on july 29"
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Northeast Energy Direct Project environmental impact statement comment",
+   "quote": "mr. toale reported there is an environmental impact statement seeking input for the northeast energy direct"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 pm with the pledge of allegiance."
+  },
+  {
+   "topic": "Appointment of Faith Beall to PACC",
+   "resolution": "appointed",
+   "quote": "faith beall is present to request appointment to pacc."
+  },
+  {
+   "topic": "Letter concerning insufficient notice of right of first refusal (Chapter 61A)",
+   "resolution": "letter approved and sent",
+   "quote": "the board agreed to send the letter because there was some interest from the conservation commission."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "resolution": "presented for signatures",
+   "quote": "mr. toale presented an accounts payable warrant in the amount of $333,516.81 for signatures."
+  },
+  {
+   "topic": "Action file issues (MART, legal costs, Kinder Morgan meeting with Townsend)",
+   "resolution": "discussed; Bard meeting to be arranged; Townsend meeting accepted",
+   "quote": "ms. luck reported as of july 1s!, mart has revised the schedule for the new route by adding two more loops,"
+  },
+  {
+   "topic": "Joint meeting with Sewer Commissioners: vacancy due to failure to elect",
+   "resolution": "John Reynolds appointed to Sewer Commission",
+   "quote": "mr. toale asked carl luck, sewer commissioner chair, to convene their meeting."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "board of health - no report; building reuse committee- they met last evening"
+  },
+  {
+   "topic": "Town Manager/Department reports",
+   "resolution": "no action",
+   "quote": "town manager/department reports- none this evening"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:33 p.m.; next meeting July 14",
+   "quote": "meeting was adjourned at 8:33 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the Board to the owner of property located on White Street (insufficient notice of removal from Chapter 61A)",
+   "where": "text",
+   "quote": "the letter from the board to the owner of property located on white street"
+  },
+  {
+   "name": "Accounts payable warrant ($333,516.81)",
+   "where": "text",
+   "quote": "presented an accounts payable warrant in the amount of $333,516.81 for signatures"
+  },
+  {
+   "name": "Request for Quotes for a Building Assessment and Space Needs Study",
+   "where": "text",
+   "quote": "finalized a request for quotes for the preparation of a building assessment and space needs study"
+  },
+  {
+   "name": "2016-2017 Transportation Improvement Program (TIP)",
+   "where": "text",
+   "quote": "reviewed the 2016- 2017 tip which is now out for public comment until july 21"
+  },
+  {
+   "name": "Draft FFY 2016 Unified Planning Work Program (UPWP)",
+   "where": "text",
+   "quote": "the draft ffy 2016 unified planning work program (upwp) is also out for public review and comment."
+  },
+  {
+   "name": "2007 report identifying storm water infrastructures",
+   "where": "text",
+   "quote": "the 2007 report identified all 556 storm water infrastructures in the community"
+  },
+  {
+   "name": "Presentation by Wright-Pierce on Pratt Street",
+   "where": "text",
+   "quote": "a presentation by wright- pierce was made to the public regarding pratt street"
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "PACC",
+  "sewer commission",
+  "chapter 61A",
+  "right of first refusal",
+  "MART",
+  "Kinder Morgan pipeline",
+  "water district",
+  "committee reports",
+  "accounts payable",
+  "brownfields",
+  "legal costs",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

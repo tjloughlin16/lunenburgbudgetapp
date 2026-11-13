@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-05-23",
  "docid": "3853",
@@ -12,15 +12,150 @@
  },
  "votes": [
   {
-   "motion": "to continue the Hearing to June 13, 2016, 6:35 PM, to allow the Board an opportunity to familiarize themselves with the ZBA Decision",
-   "moved_by": "Damon McQuaid",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed",
+   "motion": "Continue the public hearing to June 13, 2016, 6:35 PM, to allow the Board to familiarize itself with the ZBA Decision.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed, all aye (count not stated)",
    "procedural": true,
-   "quote": "d. mcquaid, motion to continue hearing to june 13, 2016 , 6:35 pm, to allow the board an opportunity to familiarize themselves with the zba decision, second, k. chenis; discussion - clarification of proposed conditions - commencing at the property line, the first fifteen (15 ') foot section of fence will be at a height of thirty -six (36\") inches, then eight (8') feet tall for the remainder of the property line and will be solid vinyl, all aye."
+   "quote": "d. mcquaid, motion to continue hearing to june 13, 2016 , 6:35 pm, to allow the board an opportunity to familiarize themselves with the zba decision, second, k. chenis;"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned document with minor OCR artifacts",
- "cost_usd": 0.14092269999999998
+ "note": "Plain text extraction with spacing artifacts (e.g., 'ap plicant', '23 6 Summer Street'); quotes copied as printed. The 'all aye' outcome follows a discussion clause inside the continuance motion, so the count is not stated. Stated roles for D. Piermarini and the applicant's attendance are not given in the minutes. Hearing was continued (minutes also say 'recessed at 7:55 PM'). No dollar figures appear.",
+ "cost_usd": 0.00480122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gary Shepard",
+   "role": "Project engineer, David E. Ross Associates (DER), representing the applicant",
+   "status": "present",
+   "quote": "project engineer gary shepard, david e. ross associates (der) , represented the ap plicant stanley miller, 233 summer street ."
+  },
+  {
+   "name": "Stanley Miller",
+   "role": "applicant, 233 Summer Street",
+   "status": "not stated",
+   "quote": "project engineer gary shepard, david e. ross associates (der) , represented the ap plicant stanley miller, 233 summer street ."
+  },
+  {
+   "name": "Jane & Dino Piermarini",
+   "role": "abutters, 236 Summer Street (letter of opposition)",
+   "status": "not stated",
+   "quote": "jane & dino piermarini, 23 6 summer street- letter of o pposition read into record (on file in planning office)."
+  },
+  {
+   "name": "D. Piermarini",
+   "role": "not stated",
+   "status": "present",
+   "quote": "d. piermarini- inquired if the fence could go all the way to the street by lowering it for the aforementioned fifteen (15) feet."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members felt an eight (8) foot fence on the property was acceptable and asked to see fence detail on the plan showing the height and a solid privacy fence.",
+   "quote": "board members felt it was acceptable to place an eight (8) foot fence on the property and would like to see fence detail on the plan to include the height and a solid privacy fence."
+  },
+  {
+   "decision": "Fence condition clarified: 36-inch fence for the first 15 feet from the property line, then 8-foot solid vinyl for the remainder of the property line.",
+   "quote": "commencing at the property line, the first fifteen (15 ') foot section of fence will be at a height of thirty -six (36\") inches, then eight (8') feet tall"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jane & Dino Piermarini",
+   "stated_role": "abutters, 236 Summer Street (letter of opposition read into record)",
+   "topic": "noise complaints, liability insurance, commercial property sales",
+   "quote": "major concerns were with the possibility of being the recipient of noise complaints from his commercial property, the effect on his liability"
+  },
+  {
+   "speaker": "D. Piermarini",
+   "stated_role": "not stated",
+   "topic": "fence height and location",
+   "quote": "d. piermarini- inquired if the fence could go all the way to the street by lowering it for the aforementioned fifteen (15) feet."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: site plan approval, 234 Summer Street (Map 117, Parcel 0031), replace retail facility with single family home",
+   "resolution": "continued to June 13, 2016",
+   "quote": "the public hearing was to hear and discuss a site plan approval under section 8.4. of the protective bylaw of the town of lunenburg",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "Section 8.4",
+    "residential",
+    "Summer Street"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Plan Appoval Application, 234 Summer Street",
+   "where": "list",
+   "quote": "documents used at hearing: site plan appoval application, 234 summer street"
+  },
+  {
+   "name": "Letter of opposition from Jane & Dino Piermarini, 236 Summer Street (on file in Planning Office)",
+   "where": "text",
+   "quote": "letter of o pposition read into record (on file in planning office)."
+  },
+  {
+   "name": "ZBA Decision",
+   "where": "text",
+   "quote": "familiarize themselves with the zba decision"
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "public hearing",
+  "fence",
+  "abutter opposition",
+  "ZBA",
+  "Summer Street",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

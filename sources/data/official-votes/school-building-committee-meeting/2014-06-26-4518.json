@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-06-26",
  "docid": "4518",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to approve the submission of the 60% Construction Document Estimate to the MSBA",
+   "motion": "Approve the submission of the 60% Construction Document Estimate to the MSBA.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 5-0",
@@ -21,6 +21,192 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd by macOS Vision. One page, readable. Meeting of Lunenburg School Building Committee, 06/26/14. Minutes prepared by Joslin, Lesser + Associates.",
- "cost_usd": 0.0847715
+ "note": "OCR of a one-page minutes scan. The attendance 'x' column is unclear, so attendance status is 'not stated' except the Chair, who is shown as presiding. Names and roles are matched by line position (17 names, 17 roles), which is an inference. The heading says 'Design Document (DD) Submission' but the text describes a 60% CD Phase Estimate. Only one recorded vote (5-0); no moved-by or seconded-by is printed, and no motion to adjourn is recorded. No dollar figures appear in the text. The 'Documents' sentence is the only document reference.",
+ "cost_usd": 0.00536732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:00 pm by mr. mackin, chairperson for the lunenburg school building"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, ISBC Vice Chair",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo nathan lockwood mark erickson"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mike barney brian frank gregs. roy kerry speidel john londa brian spadatino"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mike barney brian frank gregs. roy kerry speidel john londa brian spadatino"
+  },
+  {
+   "name": "GregS. Roy",
+   "role": "Citizen, LS8C Member",
+   "status": "not stated",
+   "quote": "mike barney brian frank gregs. roy kerry speidel john londa brian spadatino"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mike barney brian frank gregs. roy kerry speidel john londa brian spadatino"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mike barney brian frank gregs. roy kerry speidel john londa brian spadatino"
+  },
+  {
+   "name": "Brian Spadatino",
+   "role": "LHS Principal, LS8C (non-voting member)",
+   "status": "not stated",
+   "quote": "mike barney brian frank gregs. roy kerry speidel john londa brian spadatino"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "not stated",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg michael kearns"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Associates",
+   "status": "not stated",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg michael kearns"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg michael kearns"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg michael kearns"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "charles hay damian liddiard greg cohan jeffery luxenberg michael kearns"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All members attending agreed to submit the 60% Construction Document (CD) Estimate to the MSBA; this consensus preceded the recorded 5-0 vote.",
+   "quote": "all members attending the meeting agreed to submit the 60% construction document (cd) estimate to the msba."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Design budget and 60% CD phase estimate",
+   "what_was_recorded": "Members indicated the program, design budget, and schedule were correctly described in the 60% CD phase estimate package; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the lsbc members indicated program, design budget, and schedule were correctly described in the package."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 7:00 pm by mr. mackin, chairperson for the lunenburg school building",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of MSBA Design Document (DD) Submission",
+   "resolution": "approved submission of 60% CD estimate to MSBA, 5-0",
+   "quote": "motion: the lunenburg school building committee voted to approve (5-0) the submission of the 60% construction document estimate to the msba.",
+   "tags": [
+    "MSBA",
+    "design submission",
+    "construction estimate"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action",
+   "quote": "no other business was discussed at the meeting",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 7:45 pm, no recorded motion",
+   "quote": "the meeting was adjourned at approximately 7:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "60% Construction Document (CD) Phase Estimate submission, prepared by Tappe and Joslin Lesser",
+   "where": "list",
+   "quote": "reviewed the 60% construction document (cd) phase estimate submission prepared by tappe and joslin lesser."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "construction estimate",
+  "design submission",
+  "Lunenburg",
+  "60% CD"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the lunenburg school building committee reviewed the 60% construction document (cd) phase estimate submission"
+ },
+ "dropped_unquoted_by_field": {}
 }

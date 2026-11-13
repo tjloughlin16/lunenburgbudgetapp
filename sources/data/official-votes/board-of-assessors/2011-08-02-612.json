@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2011-08-02",
  "docid": "612",
@@ -12,6 +12,205 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes mention that the board \"reviewed and approved\" vouchers, abatements, warrants, payroll and minutes, and \"decided\" to reschedule the next meeting, but no formal motions, seconds, or vote outcomes are stated. A vote on Christopher Comeau's nomination as Chairman is referenced, but it was held at the June meeting, not this August 2, 2011 meeting.",
- "cost_usd": 0.0834165
+ "note": "OCR text with some errors (e.g. \"trom\", \"tair\"). The minutes record approvals of vouchers, abatements, warrants, payroll and minutes as a statement with no motion or vote count, so no vote is recorded. The chairman's acceptance refers to a vote at the June meeting, not this one. The minutes have no public comment section; Mr. Blatt appeared before the board and is recorded as an attendee. No documents list is printed.",
+ "cost_usd": 0.00448712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Manzullo",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "present: associate assessor, david manzullo, chairman, christopher comeau, board member, matthew"
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman appointment: chris comeau officially accepted the nomination which was voted on by the"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member, matthew j. papini, sr., and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "board member, matthew j. papini, sr., and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louis Franco",
+   "role": "",
+   "status": "absent",
+   "quote": "louis franco was unable to attend meeting."
+  },
+  {
+   "name": "Mr. Blatt",
+   "role": "of 438 Lancaster Avenue",
+   "status": "present",
+   "quote": "at 6:30 pm, mr. blatt of 438 lancaster avenue met with the assessors to question the proposed increase"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed that no computer upgrade should occur until after the FY12 actual billing, given the State revaluation year.",
+   "quote": "he strongly urged that this should wait until after the fy12 actual billing; the board agreed."
+  },
+  {
+   "decision": "The Board decided the next meeting will be held on Sept. 13 at 6pm instead of the 6th.",
+   "quote": "the board decided that the next meeting be held on sept. 13 at 6pm instead of the 6th."
+  },
+  {
+   "decision": "The Board offered Mr. Blatt three recommendations: a re-inspection appointment, a square footage check, and a market analysis or appraisal.",
+   "quote": "property owner needs to set up an appointment to have the assessors re-inspect the property (last inspection was in 2007)."
+  },
+  {
+   "decision": "David will provide Mr. Blatt a copy of the State standards that determine the overall grade of properties.",
+   "quote": "mr. blatt requested that he receive a copy of the state standards that determine the overall grade of properties. david will provide this to him."
+  },
+  {
+   "decision": "Chris stated that an inspection of the property will be needed before any changes can be made to the overall grade or values, and Mr. Blatt was told to contact the office to set up an appointment.",
+   "quote": "chris stated once again, that an inspection of the property will be needed before any changes can be made to the overall grade / values."
+  },
+  {
+   "decision": "Louise will post the meeting and send out a reminder and agenda to the Board, due to the holiday.",
+   "quote": "(due to the holiday) louise will post meeting and send out reminder / an agenda to the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental RE bills committed for FY 11",
+   "what_was_recorded": "Fifty supplemental real estate bills for FY 11, for properties owned by Emerald Place Development CO, LLC and Great Bridge Lunenburg, Inc, were committed on 7/29/2011 with a stated total.",
+   "figures_as_printed": [
+    "$88,443.63",
+    "50",
+    "7/29/2011"
+   ],
+   "quote": "50 supplemental re bills for fy 11 for properties owned by emerald place development co, llc and great bridge lunenburg, inc were committed on 7/29/2011 totaling $88,443.63."
+  },
+  {
+   "topic": "Building value effect of property grade change",
+   "what_was_recorded": "David said each change in property grade can potentially increase building values by a set percentage, and the grade is a big driver of value.",
+   "figures_as_printed": [
+    "15%"
+   ],
+   "quote": "with each change in grade potentially increasing building values by 15%."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, abatements, warrants, payroll, minutes",
+   "resolution": "reviewed and approved (no motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, payroll & minutes.",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "abatements",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Chairman appointment",
+   "resolution": "noted; Chris Comeau accepted nomination made at June meeting",
+   "quote": "chairman appointment: chris comeau officially accepted the nomination which was voted on by the",
+   "tags": [
+    "chairman",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Supplemental RE bills",
+   "resolution": "noted",
+   "quote": "louise reported that 50 supplemental re bills for fy 11 for properties owned by emerald place",
+   "tags": [
+    "supplemental tax bills",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Town Hall renovations",
+   "resolution": "noted; office renovation waits on new bathrooms",
+   "quote": "renovations to the office will not begin until after the \"new\" bathrooms",
+   "tags": [
+    "town hall",
+    "renovations"
+   ]
+  },
+  {
+   "topic": "New computers and upgrade timing",
+   "resolution": "no upgrade until after FY12 actual billing",
+   "quote": "he strongly urged that this should wait until after the fy12 actual billing; the board agreed.",
+   "tags": [
+    "computers",
+    "IT",
+    "state revaluation"
+   ]
+  },
+  {
+   "topic": "Revaluation statistics report",
+   "resolution": "reviewed; sales ratio 93.4% meets State guidelines",
+   "quote": "the report showed the sales ratio to be 93.4%, which meets",
+   "tags": [
+    "revaluation",
+    "sales ratio",
+    "DOR"
+   ]
+  },
+  {
+   "topic": "Property grade appeal, 438 Lancaster Avenue (Mr. Blatt)",
+   "resolution": "recommendations to owner; re-inspection required before any grade or value change",
+   "quote": "after a lengthy discussion, the board offered several recommendations:",
+   "tags": [
+    "abatement appeal",
+    "property grade",
+    "inspection",
+    "appraisal"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "moved to Sept. 13 at 6pm",
+   "quote": "the board decided that the next meeting be held on sept. 13 at 6pm instead of the 6th.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Statistic report",
+   "where": "text",
+   "quote": "he explained the statistic report and gave a demonstration updating"
+  },
+  {
+   "name": "State standards for property grade",
+   "where": "text",
+   "quote": "mr. blatt requested that he receive a copy of the state standards that determine the overall grade of properties."
+  },
+  {
+   "name": "Property record card",
+   "where": "text",
+   "quote": "compare it to the square footage listed on the property record card."
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "revaluation",
+  "property grade appeal",
+  "supplemental tax bills",
+  "computers",
+  "town hall renovations",
+  "meeting schedule",
+  "2011"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

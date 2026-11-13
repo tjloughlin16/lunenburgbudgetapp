@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2009-05-21",
  "docid": "2716",
@@ -12,23 +12,213 @@
  },
  "votes": [
   {
-   "motion": "Accept the Secretary's Report as amended",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Accept the Secretary's Report as amended.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion made and passed to accept as amended."
+   "quote": "secretary's report: motion made and passed to accept as amended."
   },
   {
-   "motion": "Accept the Appropriate Library Use Policy as amended",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Accept the Appropriate Library Use Policy (formerly the Patron Behavior Policy) as amended.",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion made and passed to accept the appropriate library use policy as amended."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two votes recorded. Specific vote counts (e.g., 5-0) are not stated in the minutes; both motions are reported as \"passed\" without a tally.",
- "cost_usd": 0.0841765
+ "dropped_unquoted": 1,
+ "note": "Single-page text; page 2 is empty. No dollar figures appear anywhere in the minutes. Two motions record no mover, seconder, or tally. The adjournment at 8:55 pm is stated without a recorded motion, so it is not listed as a vote. No public comment section is printed. The Director's handout and Amy's endowment list are referenced but not reproduced in the text.",
+ "cost_usd": 0.00471352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "new trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, amy sadkin, deb chapdelaine, mike kelly, jeanne raboin"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "new trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, amy sadkin, deb chapdelaine, mike kelly, jeanne raboin"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, amy sadkin, deb chapdelaine, mike kelly, jeanne raboin"
+  },
+  {
+   "name": "Deb Chapdelaine",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, amy sadkin, deb chapdelaine, mike kelly, jeanne raboin"
+  },
+  {
+   "name": "Mike Kelly",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, amy sadkin, deb chapdelaine, mike kelly, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "respectfully submitted, jeanne raboin secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "John Mara",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "attending: noelle bodkin, lisa krowitz, amy sadkin, deb chapdelaine, mike kelly, jeanne raboin absent: john mara"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mike and Amy will work together to provide circulation statistics, such as charting circulation rates against FTEs, for next budget year.",
+   "quote": "trustees agree to he and amy working together to provide these types of statistics for next budget year."
+  },
+  {
+   "decision": "Trustees will look at the Library Account Balances statements quarterly.",
+   "quote": "trustees decide to look at these statements quarterly."
+  },
+  {
+   "decision": "Mike will research vertical phone systems as regards item #3 of Amy's list of proposed endowment items.",
+   "quote": "regarding item #3, mike will research vertical phone systems."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget status",
+   "what_was_recorded": "The Director reported the budget is on track for this fiscal year; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "budget is on track for this fiscal year"
+  },
+  {
+   "topic": "Library account balances",
+   "what_was_recorded": "Discussion about how and why to use the library account balances; trustees decided to review the statements quarterly. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "library account balances: discussion about how and why to use these monies."
+  },
+  {
+   "topic": "Endowment policy and proposed endowment items for FY10",
+   "what_was_recorded": "The Endowment Policy is completed and goes to the Friends of LPL Executive Board; Amy's list of proposed endowment items was distributed. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "please see amy's list of proposed endowment items."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Recognition of departing and new trustees",
+   "resolution": "no action; thanks given and welcome extended",
+   "quote": "and then, a very warm welcome to the new trustees, noelle bodkin and lisa krowitz!",
+   "tags": [
+    "trustees",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Secretary's Report",
+   "resolution": "approved as amended",
+   "quote": "secretary's report: motion made and passed to accept as amended.",
+   "tags": [
+    "minutes",
+    "secretary"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted; circulation statistics assigned; account balances to be reviewed quarterly; presentation discussed",
+   "quote": "director's report: please see amy's handout for details",
+   "tags": [
+    "director",
+    "circulation",
+    "budget",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Endowment Resolution and Investment Policy and Proposed Endowment Items for FY10",
+   "resolution": "informational; Friends to vote June 11, 2009; Mike to research phone systems",
+   "quote": "the trustees are informed that the endowment policy is completed and will be voted on by the friends of lpl executive board at the next meeting (june 11, 2009).",
+   "tags": [
+    "endowment",
+    "friends",
+    "investment policy"
+   ]
+  },
+  {
+   "topic": "Patron Behavior Policy renamed Appropriate Library Use Policy",
+   "resolution": "approved as amended",
+   "quote": "motion made and passed to accept the appropriate library use policy as amended.",
+   "tags": [
+    "policy",
+    "patron behavior"
+   ]
+  },
+  {
+   "topic": "Friends of LPL",
+   "resolution": "informational; reminders of June book and bake sale and July annual meeting",
+   "quote": "a reminder that the june book & bake sale will be held saturday, june 6, from 9-2.",
+   "tags": [
+    "friends",
+    "fundraising",
+    "events"
+   ]
+  },
+  {
+   "topic": "Agenda for June trustees meeting",
+   "resolution": "discussed; officers and committees to be placed on agenda",
+   "quote": "agenda for the june trustees meeting discussed.",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Amy’s handout (Director’s Report)",
+   "where": "list",
+   "quote": "director's report: please see amy's handout for details"
+  },
+  {
+   "name": "Endowment Resolution and Investment Policy and Proposed Endowment Items for FY10 document",
+   "where": "text",
+   "quote": "endowment resolution and investment policy and proposed endowment items for fy10 document"
+  },
+  {
+   "name": "Amy’s list of proposed endowment items",
+   "where": "text",
+   "quote": "please see amy's list of proposed endowment items."
+  },
+  {
+   "name": "Endowment Policy",
+   "where": "text",
+   "quote": "the endowment policy is completed and will be voted on by the friends of lpl executive board"
+  },
+  {
+   "name": "Appropriate Library Use Policy",
+   "where": "text",
+   "quote": "motion made and passed to accept the appropriate library use policy as amended."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "endowment",
+  "policy",
+  "circulation statistics",
+  "budget",
+  "friends of LPL",
+  "fundraising"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "please see amy's handout for details"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

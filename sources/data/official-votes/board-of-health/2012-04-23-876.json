@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-04-23",
  "docid": "876",
@@ -12,24 +12,248 @@
  },
  "votes": [
   {
-   "motion": "Place a deed restriction on 35 Boucher Road limited to three bedrooms",
+   "motion": "Place a deed restriction on 35 Boucher Road limiting the property to three bedrooms; building permit for the addition to be signed once the restriction is signed and recorded.",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by rabbitt, the board voted to place a deed restriction on the property limited same to th ree bedrooms. once the dee",
-   "quote_taken_from_text": true
+   "quote": "after a lengthy discussion and on motion by jewell and second by rabbitt, the board voted to place a deed restriction on the property limited same to th ree bedrooms."
   },
   {
-   "motion": "Approve variances for Lot 1, Sequoia Drive for the well and reserve trenches",
+   "motion": "Approve the variances requested for Lot 1, Sequoia Drive (inter-fingering of reserve trenches and well less than 50 feet from a property line and public way; 39 feet proposed).",
    "moved_by": "Jewell",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by rabbitt, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the variances were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes approval at top and meeting adjournment at end are not recorded with formal motions or voting outcomes.",
- "cost_usd": 0.12133050000000001
+ "note": "Text extracted with stray spaces inside some words (e.g., 'Jac k', 'He lmer', 'th ree'); quotes copy these as printed. Two motions are recorded with 'All in favor' and no count. No motion is recorded for approving the April 2, 2012 minutes or for adjournment at 8:55 pm, so no procedural votes are listed. The Speidel discussion has no motion. The minutes have no public comment section and no documents list.",
+ "cost_usd": 0.00501472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jac k rabbitt and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jac k rabbitt and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "vice- chairman, perry jewell, stated that with an overrid e of this magnitude",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jac k rabbitt and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell, jac k rabbitt and dave passios"
+  },
+  {
+   "name": "Phil Grib",
+   "role": "Contractor",
+   "status": "present",
+   "quote": "contractor phil grib, together with owner ingrid he lmer met with the board to discuss building an"
+  },
+  {
+   "name": "Ingrid Helmer",
+   "role": "owner",
+   "status": "present",
+   "quote": "contractor phil grib, together with owner ingrid he lmer met with the board to discuss building an"
+  },
+  {
+   "name": "Mike Hayes",
+   "role": "property owner",
+   "status": "present",
+   "quote": "the property owner, mike hayes met with the board t o discuss putting and addition onto this home."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Administrator",
+   "status": "present",
+   "quote": "town administrator, kerry speidel, met with the boa rd to discuss the budget and upcoming changes to"
+  },
+  {
+   "name": "Greg Menafo",
+   "role": "owner",
+   "status": "present",
+   "quote": "greg and lori menafo, owners, met with the board to request putting an addition on their home."
+  },
+  {
+   "name": "Lori Menafo",
+   "role": "owner",
+   "status": "present",
+   "quote": "greg and lori menafo, owners, met with the board to request putting an addition on their home."
+  },
+  {
+   "name": "Dan Pierce",
+   "role": "Owner",
+   "status": "present",
+   "quote": "owner dan pierce and chris mackenzie of whitman and bingham met with the board to discuss an"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "of Whitman and Bingham",
+   "status": "present",
+   "quote": "owner dan pierce and chris mackenzie of whitman and bingham met with the board to discuss an"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Building permit at 141 Canterbury Drive signed, subject to the agreed revisions (study and sun room openings over four feet, cased with no doors).",
+   "quote": "the building permit was signed subject to the agreed revisions."
+  },
+  {
+   "decision": "Board allowed the addition at 425 Leominster Road on condition of four-foot cased openings to the existing office and den; no further additions without septic system upgrade.",
+   "quote": "there can be no further additions to this home without the upgrade of the septic system."
+  },
+  {
+   "decision": "Board advised that all land-board positions should be kept equal with hours divided equally among the four administrative assistants; if not all reinstated, each to work 30 hours per week. Town Administrator to take it under advisement.",
+   "quote": "the board advised that all positi ons in the land boards should be equal with all pos itions being retained"
+  },
+  {
+   "decision": "Septic permits listed as signed by the board (no vote recorded).",
+   "quote": "septic permits signed : 3 sequoia drive, lot 3 31 reservoir road 4 sequoia drive, lot 8 sequoia drive, lot 1"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Board of Health Administrative Assistant funding in balanced and override budgets",
+   "what_was_recorded": "The Board noted the Administrative Assistant is not funded in its present form in either the balanced or override budget, and at best is funded at 20 hours per week as a combined position.",
+   "figures_as_printed": [
+    "20 hours per week"
+   ],
+   "quote": "at best, it is funded at 20 hours per week as a combined position."
+  },
+  {
+   "topic": "Land board staffing under balanced budget",
+   "what_was_recorded": "Under the balanced budget, the Board advised each land-board administrative assistant would work 27.5 hours.",
+   "figures_as_printed": [
+    "27.5 hours"
+   ],
+   "quote": "under the balanced budget this would mean that each administr ative assistant would work 27.5 hours."
+  },
+  {
+   "topic": "Land board staffing under override budget",
+   "what_was_recorded": "Vice-Chairman Perry Jewell stated that if the override passes and positions cannot all be reinstated, each administrative assistant would work 30 hours per week.",
+   "figures_as_printed": [
+    "30 hours per week"
+   ],
+   "quote": "with each working 30 hours per week."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "minutes of April 2, 2012 listed as approved; no motion recorded",
+   "quote": "minutes approved: april 2, 2012",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "none",
+   "quote": "title 5 inspection reports acknowledged : none",
+   "tags": [
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "four septic permits signed; no vote recorded",
+   "quote": "septic permits signed : 3 sequoia drive, lot 3 31 reservoir road 4 sequoia drive, lot 8 sequoia drive, lot 1",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "141 Canterbury Drive addition",
+   "resolution": "building permit signed subject to revisions (cased openings, no doors)",
+   "quote": "the building permit was signed subject to the agreed revisions.",
+   "tags": [
+    "building permit",
+    "bedrooms",
+    "septic"
+   ]
+  },
+  {
+   "topic": "425 Leominster Road addition",
+   "resolution": "addition allowed with conditions",
+   "quote": "there can be no further additions to this home without the upgrade of the septic system.",
+   "tags": [
+    "building addition",
+    "septic",
+    "bedrooms"
+   ]
+  },
+  {
+   "topic": "Town Administrator budget and land board staffing",
+   "resolution": "Board advised positions be kept equal; Speidel to take under advisement",
+   "quote": "ms. speidel stated that she would take this under advisement.",
+   "tags": [
+    "budget",
+    "staffing",
+    "land boards",
+    "override"
+   ]
+  },
+  {
+   "topic": "35 Boucher Road addition",
+   "resolution": "deed restriction to three bedrooms approved (passed); permit to follow recording",
+   "quote": "after a lengthy discussion and on motion by jewell and second by rabbitt, the board voted to place a deed restriction on the property limited same to th ree bedrooms.",
+   "tags": [
+    "deed restriction",
+    "bedrooms",
+    "building addition"
+   ]
+  },
+  {
+   "topic": "Lot 1, Sequoia Drive expired septic permit and variances",
+   "resolution": "variances approved",
+   "quote": "after discussion and on motion by jewell and second by rabbitt, the variances were approved.",
+   "tags": [
+    "variance",
+    "septic",
+    "well",
+    "subdivision"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "septic",
+  "Title 5",
+  "building permits",
+  "deed restriction",
+  "variances",
+  "bedroom count",
+  "land board staffing",
+  "budget",
+  "override"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

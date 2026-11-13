@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2013-12-02",
  "docid": "4620",
@@ -12,43 +12,252 @@
  },
  "votes": [
   {
-   "motion": "approve the April 6 and August 20 minutes",
-   "outcome": "approved",
+   "motion": "Approve the April 6 and August 20 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "the april 6' and august 20 minutes were read and approved."
   },
   {
-   "motion": "table the minutes from October 15 of the joint meeting with the Board of Selectmen",
-   "outcome": "tabled",
-   "procedural": true,
-   "quote": "the minutes from oct. 15\" the joint meeting with the board of selectmen) was tabled."
-  },
-  {
-   "motion": "table further discussion of by-law changes until a future meeting",
-   "outcome": "passed unanimously",
+   "motion": "Table further discussion of by-law changes until a future meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion passed unanimously to table further discussion of by-law changes until a future meeting."
   },
   {
-   "motion": "table the ratification of the August votes until the next meeting",
-   "outcome": "passed unanimously",
+   "motion": "Table the ratification of the August votes until the next meeting (Dec. 9).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion passed unanimously to table the ratification of the august votes until the next meeting (dec.9)."
   },
   {
-   "motion": "pay Jason Kearns for 4 hours work for the game",
-   "outcome": "passed unanimously",
+   "motion": "Pay Jason Kearns for 4 hours work for the flag football game filming.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "it was moved and passed unanimously to pay jason kearns for 4 hours work for the game."
   },
   {
-   "motion": "accept the PACC Administrative Coordinator position Evaluation Instrument",
-   "outcome": "passed unanimously",
+   "motion": "Accept the PACC Administrative Coordinator position Evaluation Instrument discussed.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and passed unanimously to accept the instrument that has been discussed."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision; minor character artifacts but votes remain clearly legible.",
- "cost_usd": 0.12330949999999999
+ "dropped_unquoted": 1,
+ "note": "OCR text from macOS Vision with some garbled words (e.g., 'vnen', 'Jake (?)', stray punctuation). Votes are recorded as 'passed unanimously' with no vote counts and no mover or seconder names printed. The adjournment at 9:43pm has no motion recorded. No dollar figures are printed anywhere in the text. A RECEIVED & FILED stamp (DEC 10 2013) appears on page 1; it is not a document list.",
+ "cost_usd": 0.00494542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, troy daniels, fred crellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, troy daniels, fred crellin"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, troy daniels, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, troy daniels, fred crellin"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jo mclaughlin, john dextraze, bob ebersole"
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jo mclaughlin, john dextraze, bob ebersole"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jo mclaughlin, john dextraze, bob ebersole"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of the Oct. 15 joint meeting with the Board of Selectmen were tabled.",
+   "quote": "the minutes from oct. 15\" the joint meeting with the board of selectmen) was tabled."
+  },
+  {
+   "decision": "Troy Daniels will offer suggestions as to specific language on the by-law changes at the next meeting.",
+   "quote": "troy daniels will offer suggestions as to specific language at that meeting."
+  },
+  {
+   "decision": "The exact process and timetable for the Administrative Coordinator evaluation will be determined at a future meeting.",
+   "quote": "the exact process and timetable will be determined at a future"
+  },
+  {
+   "decision": "The next meeting was scheduled for December 9, 2013.",
+   "quote": "the next meeting was scheduled for dec.9th"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payment to Jason Kearns for filming",
+   "what_was_recorded": "The board voted to pay Jason Kearns for 4 hours of work on the flag football game filming, though the game was cancelled; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "it was moved and passed unanimously to pay jason kearns for 4 hours work for the game."
+  },
+  {
+   "topic": "B & H credit",
+   "what_was_recorded": "A budget follow-up item on a B & H credit, with the note that the check is in the mail; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the b & h credit -- \"the check is in the mail\"."
+  },
+  {
+   "topic": "Paying people for community programming",
+   "what_was_recorded": "Rhonda Lisio questioned paying people to do community programming when the goal is to encourage volunteers; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "questioned paying people to do community programming"
+  },
+  {
+   "topic": "Additional part-time vendor for studio programming",
+   "what_was_recorded": "Jo McLaughlin recommended adding Liz Cameron as an additional part-time vendor alongside Mike Wallman; no pay rate printed.",
+   "figures_as_printed": [],
+   "quote": "jo mclaughlin recommended using liz cameron as an additional part-time vendor."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "",
+   "topic": "meeting schedule and handicap accessibility at Eagle House",
+   "quote": "mr. daniels raised questions about the meeting schedule and the lack of handicap accessibility at the eagle house."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "",
+   "topic": "newspaper comments about members",
+   "quote": "ms lisio sought to clear the air about comments made in the newspaper about members."
+  },
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "",
+   "topic": "thanks for patience with open meeting law",
+   "quote": "mr. ebersole thanked the pacc for their patience in dealing with the new open meeting law."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "approved April 6 and August 20 minutes; Oct. 15 minutes tabled",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "the april 6' and august 20 minutes were read and approved."
+  },
+  {
+   "topic": "Public Comments",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "schedule",
+    "accessibility"
+   ],
+   "quote": "mr. daniels raised questions about the meeting schedule and the lack of handicap accessibility at the eagle house."
+  },
+  {
+   "topic": "Old Business: by-law changes and August vote ratification",
+   "resolution": "both tabled",
+   "tags": [
+    "by-laws",
+    "special town meeting",
+    "open meeting law"
+   ],
+   "quote": "a motion passed unanimously to table further discussion of by-law changes until a future meeting."
+  },
+  {
+   "topic": "Programming Update",
+   "resolution": "discussed; Kearns paid for 4 hours; vendor recommendation to Dec. 9 agenda",
+   "tags": [
+    "programming",
+    "studio",
+    "volunteers",
+    "vendors"
+   ],
+   "quote": "the homecoming parade was well-done."
+  },
+  {
+   "topic": "PACC Administrative Coordinator position Evaluation Instrument",
+   "resolution": "accepted instrument; process to be set later",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ],
+   "quote": "a motion was made and passed unanimously to accept the instrument that has been discussed."
+  },
+  {
+   "topic": "New Business",
+   "resolution": "next meeting set for Dec. 9",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "the next meeting was scheduled for dec.9th"
+  },
+  {
+   "topic": "Public Comments (closing)",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "open meeting law"
+   ],
+   "quote": "mr. ebersole thanked the pacc for their patience in dealing with the new open meeting law."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PACC Administrative Coordinator position Evaluation Instrument",
+   "where": "text",
+   "quote": "pacc administrative coordinator position evaluation instrument: a motion was made"
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "cable committee",
+  "programming",
+  "studio",
+  "by-laws",
+  "open meeting law",
+  "volunteers",
+  "personnel evaluation",
+  "payments to vendors",
+  "Eagle House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

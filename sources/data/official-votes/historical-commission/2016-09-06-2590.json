@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2016-09-06",
  "docid": "2590",
@@ -12,19 +12,202 @@
  },
  "votes": [
   {
-   "motion": "Approve the June 7, 2016 minutes",
+   "motion": "Approve the minutes of June 7, 2016.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes were approved for june 7, 2016."
   },
   {
-   "motion": "Rescind the $ 500.00 gift from the Historical Commission for restoration of the receiving tomb",
-   "outcome": "not stated",
+   "motion": "Rescind the specified $500 gift from the Historical Commission for the North Cemetery receiving tomb restoration.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "voted: the specified gift of five hundred dollars ($ 500.00) from the historical commission for this restoration is rescinded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10507749999999999
+ "note": "Text is OCR (macOS Vision) of a 3-page minutes document; no scan defects beyond OCR. The minutes record no motion for adjournment and no public comment section. The vote rescinding the $500 gift is printed as 'Voted:' with no mover, seconder or count, so outcome is recorded as passed on that basis. 'September 13h' and 'Passios School' appear as printed (likely OCR or typo for 13th / a school name) and were left as printed.",
+ "cost_usd": 0.0037537200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Richard McGrath will advise Lance May, Chairman of the Cemetery Department, and the Town Manager of the rescinded gift.",
+   "quote": "richard mcgrath will so advise lance may, chairman of the cemetery department, and the town manager for the board of selectmen."
+  },
+  {
+   "decision": "Richard McGrath will discuss maintenance and preservation of the Town Pound with Jack Rodriquenz, Operations Director, Department of Public Works.",
+   "quote": "richard mcgrath has intended and will discuss the maintenance and preservation of the town pound, an important historical site"
+  },
+  {
+   "decision": "The Building Inspector, Michael Sauvageau, was notified that two properties under the Demolition Delay Plan Review have not complied and a two-year building permit waiting period applies.",
+   "quote": "michael sauvageau, the building inspector, has been so notified."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "North Cemetery receiving tomb restoration gift",
+   "what_was_recorded": "The Historical Commission's specified $500 gift for the receiving tomb restoration was rescinded after the master mason withdrew his offer of services.",
+   "figures_as_printed": [
+    "five hundred dollars ($ 500.00)"
+   ],
+   "quote": "the specified gift of five hundred dollars ($ 500.00) from the historical commission for this restoration is rescinded."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of June 7, 2016",
+   "quote": "minutes were approved for june 7, 2016.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action",
+   "quote": "there was no correspondence.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition delay requests and plan compliance",
+   "resolution": "reported; building inspector notified",
+   "quote": "richard mcgrath reported there have been no new demolition delay requests.",
+   "tags": [
+    "demolition delay",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Town Pound maintenance and preservation",
+   "resolution": "McGrath to discuss with Department of Public Works",
+   "quote": "richard mcgrath has intended and will discuss the maintenance and preservation of the town pound, an important historical site",
+   "tags": [
+    "town pound",
+    "public works"
+   ]
+  },
+  {
+   "topic": "North Cemetery receiving tomb restoration",
+   "resolution": "$500 gift rescinded",
+   "quote": "richard mcgrath updated the ongoing process for the restoration of the receiving tomb at the north cemetery.",
+   "tags": [
+    "cemetery",
+    "restoration",
+    "gift"
+   ]
+  },
+  {
+   "topic": "Architectural Preservation District rules and regulations",
+   "resolution": "reported nearly complete; no action",
+   "quote": "cullen dwyer and richard mcgrath, members of the architectural preservation district commission, reported the commission's rules and regulation are almost completed",
+   "tags": [
+    "architectural preservation district",
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "Building Reuse Committee proposal",
+   "resolution": "reported; no action",
+   "quote": "becky lantry said the building reuse committee will have a presentation for its proposed plan to sell the town buildings",
+   "tags": [
+    "building reuse",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Historically Speaking articles schedule",
+   "resolution": "schedule listed",
+   "quote": "amory phelps listed the schedule for the lunenburg ledger, historically speaking articles:",
+   "tags": [
+    "publications",
+    "lunenburg ledger"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:00 p.m.; next meeting October 4, 2016",
+   "quote": "the meeting adjourned at 8:00 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Delay Plan Review",
+   "where": "text",
+   "quote": "two properties under the demolition delay plan review, 37 burrage street and 203"
+  },
+  {
+   "name": "Architectural Preservation District Commission rules and regulations",
+   "where": "text",
+   "quote": "cullen dwyer and richard mcgrath, members of the architectural preservation district commission, reported the commission's rules and regulation are almost completed"
+  },
+  {
+   "name": "Building Reuse Committee proposed plan to sell the Town buildings",
+   "where": "text",
+   "quote": "becky lantry said the building reuse committee will have a presentation for its proposed plan to sell the town buildings"
+  },
+  {
+   "name": "Lunenburg Ledger, Historically Speaking articles",
+   "where": "text",
+   "quote": "amory phelps listed the schedule for the lunenburg ledger, historically speaking articles:"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "cemetery",
+  "town pound",
+  "architectural preservation district",
+  "building reuse",
+  "town buildings",
+  "publications",
+  "gift rescinded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

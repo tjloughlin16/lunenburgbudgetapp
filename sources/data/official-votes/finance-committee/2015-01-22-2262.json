@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-01-22",
  "docid": "2262",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes",
+   "motion": "Accept the minutes of the January 8, 2015 meeting as submitted.",
    "moved_by": "Terry",
    "seconded_by": "Karin",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "terry made a motion to accept the minutes and karin seconded her motion. the committee voted 5-0 to accept the minutes as submitted."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin",
    "seconded_by": "Jay",
    "outcome": "passed 5-0",
@@ -29,6 +29,331 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor scanning artifacts but readable. Item 7 appears corrupted in OCR and cannot be parsed. Two votes found: approval of prior minutes and adjournment, both procedural.",
- "cost_usd": 0.09713849999999999
+ "note": "OCR of a scanned, multi-page minutes document with scrambled layout. The attendance block is jumbled: Caroline Griffis is listed under the absent-label position, so status is inferred as absent. Item 7 is illegible in the OCR and its content cannot be determined. Capital section lettering (A, C, E) is partly missing, and the Discussion Items table is flattened. Two votes recorded (minutes approval and adjournment), both procedural. The capital horizon item had only general approval, not a motion. Terri Burchfield is called \"Terry\" in the minutes text.",
+ "cost_usd": 0.009599020000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: town hall mark erickson, terri burchfield, karin menard, jay simeone, john henshaw jamie toale--bos liaison, kerry speidel caroline griffis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison; Chairman of the CPC (as presenter)",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers suggested that one of the school's two modular buildings they no longer need"
+  },
+  {
+   "name": "Teresa Hathaway",
+   "role": "Interim Director",
+   "status": "not stated",
+   "quote": "interim director teresa hathaway and dick mailloux, vice-chair of the library board of trustees"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Vice-Chair of the Library Board of Trustees",
+   "status": "not stated",
+   "quote": "interim director teresa hathaway and dick mailloux, vice-chair of the library board of trustees"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The library's request for $15,000 from the reserve fund was not acted on. Kerry asked for more time to work out a plan, and Mark told the library the Town would not let any of its bills go unpaid while the approach is worked out.",
+   "quote": "so kerry would like more time to work out a plan to deal with this issue."
+  },
+  {
+   "decision": "General approval (no recorded motion) for extending the capital project planning horizon from five years to ten years.",
+   "quote": "approval for the extended horizon."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire and Police vehicle maintenance projected overage",
+   "what_was_recorded": "Fire and Police vehicle maintenance is projected over budget by $8,000 - $10,000, though Town-wide vehicle maintenance is not projected over budget.",
+   "figures_as_printed": [
+    "$8,000 - $10,000"
+   ],
+   "quote": "be over budget by $8,000 - $10,000"
+  },
+  {
+   "topic": "Library electricity and natural gas reserve fund request",
+   "what_was_recorded": "The library requested $15,000 from the reserve fund to cover higher electricity and natural gas costs; no transfer was approved.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "requested $15,000 from the reserve fund to cover increases in electricity"
+  },
+  {
+   "topic": "Library state grant minimum budget effect",
+   "what_was_recorded": "Approving a transfer to the library could raise the minimum required library budget for state grants; the estimated FY16 increase in that minimum is $4,000.",
+   "figures_as_printed": [
+    "$4,000"
+   ],
+   "quote": "minimum required would be $4,000."
+  },
+  {
+   "topic": "Veterans' Benefits overage",
+   "what_was_recorded": "Projected FY15 Veterans' Benefits costs are $20,000 over budget; the State reimburses the Town 75% of the cost, but only in the following fiscal year.",
+   "figures_as_printed": [
+    "$20,000",
+    "75%"
+   ],
+   "quote": "projected costs of veterans' benefits in fy15 is $20,000 over budget."
+  },
+  {
+   "topic": "Health care insurance overage",
+   "what_was_recorded": "A potential overage of $12,000 in health care insurance costs, which the Town will try to mitigate within the overall budget.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "there is a potential overage in health care insurance costs of $12,000."
+  },
+  {
+   "topic": "School choice and other overages",
+   "what_was_recorded": "Increased school choice students and other overages create a potential overspend of about $100,000.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the potential for an over spend of about $100,000."
+  },
+  {
+   "topic": "Free cash for FY15 overages",
+   "what_was_recorded": "Free cash will help meet potential FY15 overages but may be lower going into FY16, affecting FY16 capital funding; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town has free cash that will help meet potential overages in fy15"
+  },
+  {
+   "topic": "New capital projects budget",
+   "what_was_recorded": "The budget for new capital projects, including pavement management, is $850,000, being the $1,000,000 total less $150,000 in debt service from borrowing; this may change during the budget process.",
+   "figures_as_printed": [
+    "$850,000",
+    "$1,000,000",
+    "$150,000"
+   ],
+   "quote": "$1,000,000 less $150,000 in debt service costs from borrowing for capital projects."
+  },
+  {
+   "topic": "FY15 capital requests priority ranking",
+   "what_was_recorded": "The top nine of 25 capital requests cost nearly $850,000 in total; the street sweeper, the tenth priority, costs $180,000.",
+   "figures_as_printed": [
+    "$850,000",
+    "$180,000"
+   ],
+   "quote": "the top nine priority projects cost nearly $850,000 in total."
+  },
+  {
+   "topic": "Street sweeper",
+   "what_was_recorded": "The street sweeper is the tenth priority capital item and costs $180,000; the CPC recommends purchasing it through borrowing only if the Town projects sufficient funds in FY15 and beyond.",
+   "figures_as_printed": [
+    "$180,000"
+   ],
+   "quote": "the street sweeper is the tenth priority item and costs $180,000."
+  },
+  {
+   "topic": "DPW backhoe and dump truck borrowing",
+   "what_was_recorded": "The CPC recommends borrowing to finance the DPW backhoe ($120,000) and dump truck ($190,000).",
+   "figures_as_printed": [
+    "$120,000",
+    "$190,000"
+   ],
+   "quote": "the cpc recommends borrowing to finance the backhoe ($120,000) and dump truck ($190,000)"
+  },
+  {
+   "topic": "Minimum borrowing amount for capital projects",
+   "what_was_recorded": "$100,000 is the minimum the Town would use borrowing to fund; the goal was to fund much more expensive projects.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "-$100,000 is the minimum the town would use"
+  },
+  {
+   "topic": "Ladder truck replacement",
+   "what_was_recorded": "Concern that out-year costs of this year's borrowing would constrain the Town's ability to replace the ladder truck for $850,000.",
+   "figures_as_printed": [
+    "$850,000"
+   ],
+   "quote": "truck for $850,000 or other expensive projects."
+  },
+  {
+   "topic": "School FY16 budget increase",
+   "what_was_recorded": "With paraprofessionals added to the FY15 budget, the FY16 school budget as of that meeting is a 9% increase over FY14.",
+   "figures_as_printed": [
+    "9%"
+   ],
+   "quote": "budget for the schools as of that meeting is a 9% increase over fy14."
+  },
+  {
+   "topic": "Green Community LED lighting bids",
+   "what_was_recorded": "The Green Community has bids for LED parking lot lights and has a significant amount of money to spend; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "they have a significant amount of money and are looking for more projects to do."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Library request for reserve fund money to cover higher electricity and natural gas costs from increased utility rates",
+   "amount_as_printed": "$15,000",
+   "outcome": "Not approved; no transfer made. Kerry asked for more time to work out a plan, and the Finance Committee's practice is to approve reserve fund transfers toward the end of the year.",
+   "quote": "requested $15,000 from the reserve fund to cover increases in electricity"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "School modular buildings and library HVAC",
+   "quote": "dave rodgers suggested that one of the school's two modular buildings they no longer need"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "received; no action",
+   "tags": [
+    "public comment",
+    "school modular buildings",
+    "library HVAC",
+    "state foundation budget hearing"
+   ],
+   "quote": "a. public: dave rodgers suggested that one of the school's two modular buildings they no longer need"
+  },
+  {
+   "topic": "Town Manager Updates: reserve fund transfer requests and unanticipated overages",
+   "resolution": "reported; library reserve request deferred, no vote",
+   "tags": [
+    "reserve fund",
+    "library energy costs",
+    "veterans benefits",
+    "health insurance",
+    "school choice",
+    "free cash"
+   ],
+   "quote": "interim director teresa hathaway and dick mailloux, vice-chair of the library board of trustees"
+  },
+  {
+   "topic": "Capital Planning Committee recommendations",
+   "resolution": "presented; general approval for ten-year capital horizon, no vote",
+   "tags": [
+    "capital planning",
+    "borrowing",
+    "backhoe",
+    "dump truck",
+    "street sweeper",
+    "ladder truck"
+   ],
+   "quote": "4. capital planning committee recommendations presented by jamie toale, chairman of the cpc"
+  },
+  {
+   "topic": "Minutes of January 8, 2015 meeting",
+   "resolution": "approved 5-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "5. minutes of the january 8, 2015 meeting: terry made a motion to accept the minutes"
+  },
+  {
+   "topic": "Committee and department liaison updates",
+   "resolution": "reports received; no action recorded",
+   "tags": [
+    "liaison reports",
+    "schools",
+    "Monty Tech",
+    "Green Community",
+    "sewer",
+    "public safety personnel"
+   ],
+   "quote": "6. committee/department liaison updates:"
+  },
+  {
+   "topic": "Item 7 (agenda item, illegible in scan)",
+   "resolution": "not determinable from the scan",
+   "tags": [
+    "illegible"
+   ],
+   "quote": "7. net me 2g hurtine, febrace the togemanser presents tie 2015 budget, and february"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:42 PM",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "8. adjournment: karin moved to adjourn the meeting"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Municipal Financial Data 44th edition, updated for 2014, Massachusetts Taxpayers Foundation",
+   "where": "text",
+   "quote": "mark circulated to the committee a hard copy of the municipal financial data 44t edition"
+  },
+  {
+   "name": "Board of Assessors flyer summarizing the Town of Lunenburg valuation and Tax Summary",
+   "where": "text",
+   "quote": "the board of assessors put out a flyer summarizing the town of lunenburg valuation and tax"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "reserve fund",
+  "library energy costs",
+  "capital planning",
+  "borrowing",
+  "veterans benefits",
+  "health insurance",
+  "school choice",
+  "FY16 budget",
+  "liaison reports",
+  "free cash"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

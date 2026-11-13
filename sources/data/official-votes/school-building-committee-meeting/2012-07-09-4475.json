@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-07-09",
  "docid": "4475",
@@ -12,23 +12,193 @@
  },
  "votes": [
   {
-   "motion": "Accept the interview questions as final",
-   "moved_by": "Loxi Jo Calmes",
-   "seconded_by": "Mark Erickson",
-   "outcome": "passed unanimously",
+   "motion": "Accept the interview questions as final.",
+   "moved_by": "Superintendent Calmes",
+   "seconded_by": "Mr. Erickson",
+   "outcome": "passed",
    "procedural": false,
    "quote": "superintendent calmes moved and mr. erickson seconded a motion to accept the questions as final. approval was unanimous."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Colleen Shapiro",
    "seconded_by": "Mike Barney",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "at 7:32 pm colleen shapiro moved and mike barney seconded a motion to adjourn. vote was unanimous."
+   "quote": "colleen shapiro moved and mike barney seconded a motion to adjourn. vote was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0889475
+ "note": "Single OCR page (page 1 only); no page 2 supplied, so the meeting may be incomplete. The attendance line for John Londa is followed by a separate line reading \"-absent\"; I read it as his absence but the OCR layout is ambiguous. Approval of the May 30 minutes is recorded as approved with no motion, mover, seconder or vote count, so it is listed as a decision, not a vote. No dollar figures appear. Public comment is not recorded. The minutes were approved by SBC on August 22, 2012.",
+ "cost_usd": 0.00408782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "loxi jo calmes, superintendent"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative; Secretary",
+   "status": "present",
+   "quote": "colleen shapiro, sc representative"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative, Chair",
+   "status": "present",
+   "quote": "michael mackin, sc representative, chair"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "present",
+   "quote": "dave matthews, bos representative"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "absent",
+   "quote": "nathan lockwood, planning board representative - absent"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative, Vice Chair",
+   "status": "present",
+   "quote": "mark erickson, finance committee representative, vice chair"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "mike barney, citizen-at-large"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen-at-large",
+   "status": "absent",
+   "quote": "brian frank, citizen-at-large - absent"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "absent",
+   "quote": "richard cohen, citizen-at-large - absent"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry speidel, town manager - absent"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "absent",
+   "quote": "john londa, director of facilities"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal",
+   "status": "present",
+   "quote": "brian spadafino, lhs principal"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The May 30, 2012 minutes were approved (no motion or vote count recorded).",
+   "quote": "the may 30, 2012, minutes were approved."
+  },
+  {
+   "decision": "Future meetings are planned for the second and fourth Wednesday of every month; the next meeting is scheduled for June 25.",
+   "quote": "future meetings are planned for the second and fourth wednesday of every month."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:04 PM by Vice Chair Erickson; Chair arrived 7:05",
+   "quote": "mr. erickson, vice chair, called the meeting to order (mr. mackin, chair, arrived at",
+   "tags": [
+    "call to order",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Approval of May 30, 2012 minutes",
+   "resolution": "approved",
+   "quote": "the may 30, 2012, minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Maintenance and Capital Planning Record Update",
+   "resolution": "no action; submitted to MSBA before July 5, 2012",
+   "quote": "john londa submitted it to msba prior to july 5, 2012, in order to maintain the desired timeline",
+   "tags": [
+    "MSBA",
+    "capital planning",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Interview Questions",
+   "resolution": "accepted as final, unanimous; CM at Risk discussed",
+   "quote": "the group did a final review of the questions.",
+   "tags": [
+    "interview questions",
+    "CM at Risk",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Future meetings",
+   "resolution": "no action; next meeting June 25",
+   "quote": "the next meeting is scheduled for june 25.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:32 PM, unanimous",
+   "quote": "at 7:32 pm colleen shapiro moved and mike barney seconded a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Maintenance and Capital Planning Record Update",
+   "where": "text",
+   "quote": "maintenance and capital planning record update: john londa submitted it to msba prior to"
+  },
+  {
+   "name": "Interview Questions",
+   "where": "text",
+   "quote": "interview questions: the group did a final review of the questions."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "interview questions",
+  "CM at Risk",
+  "capital planning",
+  "meeting schedule",
+  "Lunenburg schools"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-12-16",
  "docid": "2732",
@@ -12,23 +12,249 @@
  },
  "votes": [
   {
-   "motion": "approve November 16, 2010 minutes as amended",
+   "motion": "Approve the November 16, 2010 minutes as amended.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "november 16, 2010 minutes approved as amended"
+   "quote": "november 16, 2010 minutes approved as amended",
+   "seconded_by": ""
   },
   {
-   "motion": "approve the FY12 operating budget for $391,550",
+   "motion": "Approve the FY12 LPL operating budget as presented by the Director for a total of $391,550, with the Director able to adjust for utility and salary variables but the final budget not to exceed $391,550.",
    "moved_by": "Dick",
-   "seconded_by": "Len",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "dick proposed a motion to approve the operating budget for lpl fy12 as presented by the director for a total of $391,550 with the understanding that she may make necessary adjustments to accommodate utility and salary variables but the final budget should not exceed $391,550. len seconded the motion and it was passed unanimously."
+   "quote": "dick proposed a motion to approve the operating budget for lpl fy12 as presented by the director for a total of $391,550",
+   "seconded_by": "Len"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11553350000000001
+ "note": "Clean extracted text, not a scan. Caveats: Jeanne Raboin is listed as absent but signs the minutes as Secretary. No roles are printed for the trustees; Amy's title is not stated, though the minutes refer to a 'Director's Report' and 'the Director' and I have not labelled her. The minutes approval has no mover, seconder, or count. The budget motion is recorded as 'passed unanimously' with no numeric count. The adjournment at 7:30pm has no recorded motion, so it is not listed as a vote. The 'See handout for details' reference names no attached document.",
+ "cost_usd": 0.00610902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "in attendance: john mara, amy sadkin, lisa krowitz, dick mailloux, len smetana and noelle bodkin."
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "in attendance: john mara, amy sadkin, lisa krowitz, dick mailloux, len smetana and noelle bodkin."
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "in attendance: john mara, amy sadkin, lisa krowitz, dick mailloux, len smetana and noelle bodkin."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "in attendance: john mara, amy sadkin, lisa krowitz, dick mailloux, len smetana and noelle bodkin."
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "in attendance: john mara, amy sadkin, lisa krowitz, dick mailloux, len smetana and noelle bodkin."
+  },
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "in attendance: john mara, amy sadkin, lisa krowitz, dick mailloux, len smetana and noelle bodkin."
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "absent",
+   "quote": "absent: kathy murray and jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "status": "absent",
+   "quote": "absent: kathy murray and jeanne raboin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Director will look into soliciting trained library staff from other libraries to fill in on a per diem basis when staff are absent.",
+   "quote": "amy will look into this."
+  },
+  {
+   "decision": "Closure or delayed opening of the library during snow weather is at the Director's discretion, with the public notified via website, local radio and, when possible, the front door.",
+   "quote": "it was determined that closure or delayed opening of the library will be at the director's discretion."
+  },
+  {
+   "decision": "Purchase of a barcode duplicator to bring previously barcoded items into compliance was deemed a worthwhile expense.",
+   "quote": "this was deemed a worthwhile expense."
+  },
+  {
+   "decision": "The library will close on 12/23/10 with Union employees paid; Patty and Jen will be paid for 12/25 and 1/1 accordingly.",
+   "quote": "lpl will be closed on that day and union employees will be paid."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY12 LPL budget proposals (Budget Subcommittee)",
+   "what_was_recorded": "Three FY12 budget proposals prepared by Amy were reviewed: the Trustee Request, Level Funded, and Minimum State Aid; the Town Manager suggested a possible cap for the LPL.",
+   "figures_as_printed": [
+    "$391,550",
+    "(329,791)",
+    "$346,594",
+    "$369,098"
+   ],
+   "quote": "the fy12 lpl trustee request ($391,550) reflects an increase in payroll and utility expenses due to proposed increased"
+  },
+  {
+   "topic": "FY12 Level Funded budget",
+   "what_was_recorded": "The Level Funded option would require an accreditation waiver, a reduction of one staff member, and CWMRS funded from State Aid.",
+   "figures_as_printed": [
+    "(329,791)"
+   ],
+   "quote": "the fy12 level funded (329,791) would require a waiver to maintain accreditation, reduction of 1 staff member"
+  },
+  {
+   "topic": "FY12 Minimum State Aid budget",
+   "what_was_recorded": "The Minimum State Aid option would involve no change in staffing levels or opening hours and would maintain accreditation.",
+   "figures_as_printed": [
+    "$346,594"
+   ],
+   "quote": "fy12 minimum state aid ($346,594 ) would involve no change in staffing levels and opening hours"
+  },
+  {
+   "topic": "Town Manager's suggested budget cap",
+   "what_was_recorded": "The Town Manager had suggested at the Dept. heads meeting a possible budget cap for the LPL that would cover increased staffing but not increased opening hours.",
+   "figures_as_printed": [
+    "$369,098"
+   ],
+   "quote": "the town manager had suggested at the dept. heads meeting a possible budget cap of"
+  },
+  {
+   "topic": "Per diem trained staff substitutes",
+   "what_was_recorded": "Soliciting trained staff from other libraries to fill in on a per diem basis was discussed, at a stated hourly rate.",
+   "figures_as_printed": [
+    "$11-12/per hour"
+   ],
+   "quote": "soliciting trained library staff from other libraries to fill in on a per diem basis ($11-12/per hour)"
+  },
+  {
+   "topic": "Barcode duplicator purchase",
+   "what_was_recorded": "A barcode duplicator can be bought to bring previously barcoded items into compliance with the Mass. Library System autosort requirement; deemed worthwhile.",
+   "figures_as_printed": [
+    "$600 -700"
+   ],
+   "quote": "a barcode duplicator can be purchased for $600 -700"
+  },
+  {
+   "topic": "Mass. Library System non-compliance charge",
+   "what_was_recorded": "Libraries not complying with the barcode placement requirement for the 7/1/2011 autosort change will be charged per item.",
+   "figures_as_printed": [
+    "$0.04/item"
+   ],
+   "quote": "libraries that do not comply will be charged $0.04/item and the items may not be processed as quickly."
+  },
+  {
+   "topic": "Fine Free Day waived fines",
+   "what_was_recorded": "Fines waived during the 5 Year Anniversary party/Fine Free Day.",
+   "figures_as_printed": [
+    "$154.10"
+   ],
+   "quote": "$154.10 in fines was waived."
+  },
+  {
+   "topic": "LSTA grant request",
+   "what_was_recorded": "Director sent a letter of intent to MBLC for an LSTA grant to fund the One Book One Town Reads program for FY12.",
+   "figures_as_printed": [
+    "$7500"
+   ],
+   "quote": "amy sent a letter of intent to mblc for a $7500"
+  },
+  {
+   "topic": "Endowment donation",
+   "what_was_recorded": "Friends of LPL donated to the Endowment account in memory of Margaret Trocano.",
+   "figures_as_printed": [
+    "$881.95"
+   ],
+   "quote": "a donation of $881.95 was received and deposited into the endowment account by the friends of lpl"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "1. public comment: no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of November 16, 2010 minutes",
+   "resolution": "approved as amended",
+   "quote": "november 16, 2010 minutes approved as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; items discussed, no separate votes",
+   "quote": "circulation is up again (10,256). meeting room usage is down slightly.",
+   "tags": [
+    "circulation",
+    "staffing",
+    "budget",
+    "grants",
+    "programs",
+    "closures"
+   ]
+  },
+  {
+   "topic": "FY12 LPL operating budget",
+   "resolution": "approved at $391,550",
+   "quote": "budget subcommittee met and reviewed three budget proposals prepared by amy",
+   "tags": [
+    "FY12 budget",
+    "staffing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Other business: circulation desk TV",
+   "resolution": "progress inquiry; no action",
+   "quote": "an inquiry was made regarding the progress of the installation of a tv at the circulation desk.",
+   "tags": [
+    "technology"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout with FY12 budget proposal details (FY12 LPL Trustee Request, FY12 Level Funded, FY12 Minimum State Aid)",
+   "where": "text",
+   "quote": "(see handout for details)"
+  },
+  {
+   "name": "Letter of intent to MBLC for LSTA grant ('On the Same Page') for FY12",
+   "where": "text",
+   "quote": "amy sent a letter of intent to mblc for a $7500"
+  }
+ ],
+ "tags": [
+  "library",
+  "FY12 budget",
+  "staffing",
+  "grants",
+  "closures",
+  "donations",
+  "barcode",
+  "Evergreen software",
+  "programs"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see handout for details"
+ },
+ "dropped_unquoted_by_field": {}
 }

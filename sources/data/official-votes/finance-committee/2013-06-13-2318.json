@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-06-13",
  "docid": "2318",
@@ -12,31 +12,196 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 5/9/2013",
-   "moved_by": "Steven Raboin",
-   "seconded_by": "Jason Smith",
-   "outcome": "passed",
+   "motion": "Approve minutes of 5/9/2013 as written.",
+   "moved_by": "SR",
+   "seconded_by": "JS",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "sr motioned to approve minutes of 5/9/2013 as written. js seconded, motion carried unanimously."
   },
   {
-   "motion": "Approve the minutes of 5/23/2013",
-   "moved_by": "Steven Raboin",
-   "seconded_by": "Jason Smith",
-   "outcome": "passed",
+   "motion": "Approve minutes of 5/23/2013 as written.",
+   "moved_by": "SR",
+   "seconded_by": "JS",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "sr motioned to approve minutes of 5/23/2013 as written. js seconded, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Brian Laffond",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "TB",
+   "seconded_by": "BL",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "tb motioned to adjourn. bl seconded, meeting adjourned at 8:39 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; legible votes clearly recorded.",
- "cost_usd": 0.1100255
+ "note": "OCR text of a scanned page; no vote tally printed for the adjournment motion. Attendance line lists 'I. Smith' while the header lists 'Jason Smith' and the minutes record 'JS' seconding; recorded here as Jason Smith. '27%' read as June 27th and '40S' as printed, both likely OCR artifacts. Ms. Speidel's role is not stated. No public comment section appears in the minutes. Motion initials (SR, JS, TB, BL) are printed that way and kept as printed.",
+ "cost_usd": 0.00406372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, chairman brian laffond, vice-chairman"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, chairman brian laffond, vice-chairman"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, secretary jason smith steven raboin"
+  },
+  {
+   "name": "Jason Smith",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, t. burchfield, s. raboin, i. smith"
+  },
+  {
+   "name": "Steven Raboin",
+   "status": "present",
+   "quote": "terri burchfield, secretary jason smith steven raboin"
+  },
+  {
+   "name": "JoAnn McQuaid",
+   "role": "Green Communities Task Force presenter",
+   "status": "present",
+   "quote": "joann mcquaid and john londa discussed the history of energy use and cost savings"
+  },
+  {
+   "name": "John Londa",
+   "role": "Green Communities Task Force presenter",
+   "status": "present",
+   "quote": "joann mcquaid and john londa discussed the history of energy use and cost savings"
+  },
+  {
+   "name": "Ms. Speidel",
+   "status": "not stated",
+   "quote": "ms. speidel is hopeful the street light purchase project can still go forward."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Fiscal policies are put on hold until the new members are on board.",
+   "quote": "fiscal policies will be put on hold until our new members are on board."
+  },
+  {
+   "decision": "Possible additional meeting on June 27 if it seems necessary (conditional, not firm).",
+   "quote": "we may meet june 27% if it seems necessary."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Manager update: tax title collections",
+   "what_was_recorded": "The tax title attorney sent out 38 letters to recover delinquent accounts and $48,000 has been returned to date.",
+   "figures_as_printed": [
+    "$48,000"
+   ],
+   "quote": "she also reported that the tax title attorney sent out 38 letters to recover delinquent accounts. $48,000 has been returned to date."
+  },
+  {
+   "topic": "Possible state education funding (40S, Ch. 70)",
+   "what_was_recorded": "A possibility of 40S funding for education costs for Tritown students and additional Ch. 70 funding was mentioned; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "there is also a possibility that there may be 40s funding related to education costs for students from tritown, and additional ch. 70 funding available."
+  },
+  {
+   "topic": "Green Communities savings",
+   "what_was_recorded": "Discussion of whether future energy savings would be set aside for capital use per policy; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "there was some question of whether some of the savings that may be generated in the future would be set aside for capital use per policy."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Green Communities Task Force",
+   "resolution": "discussed; no action",
+   "quote": "joann mcquaid and john londa discussed the history of energy use and cost savings and the future goals of the committee",
+   "tags": [
+    "green communities",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action",
+   "quote": "me noted that new fincom members john henshaw and karin menard will be on board for the july meeting.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Meeting minutes",
+   "resolution": "approved 5/9/2013 and 5/23/2013 minutes as written",
+   "quote": "sr motioned to approve minutes of 5/9/2013 as written. js seconded, motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "sr reported that capital planning committee continues to meet to streamline procedures.",
+   "tags": [
+    "capital planning",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "no action",
+   "quote": "sewer commission bids to outsource maintenance due tomorrow",
+   "tags": [
+    "town manager",
+    "sewer",
+    "street lights",
+    "tax title",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "fiscal policies on hold; possible June 27 meeting",
+   "quote": "we may meet june 27% if it seems necessary.",
+   "tags": [
+    "meeting schedule",
+    "fiscal policy"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:39 pm",
+   "quote": "tb motioned to adjourn. bl seconded, meeting adjourned at 8:39 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "green communities",
+  "minutes approval",
+  "town manager update",
+  "tax title",
+  "state aid",
+  "fiscal policy",
+  "meeting schedule",
+  "membership"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

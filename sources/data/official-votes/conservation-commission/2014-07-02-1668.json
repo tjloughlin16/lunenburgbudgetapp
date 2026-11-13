@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-07-02",
  "docid": "1668",
@@ -12,31 +12,308 @@
  },
  "votes": [
   {
-   "motion": "Issue standard Order of Conditions for septic system upgrade/repair filed by Dan Proctor (Wm. R. Proctor, Inc.)",
-   "outcome": "unanimously approved",
-   "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "issue standard ooc. unanimious"
+   "motion": "Approve the June 4 minutes.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes approval: june 4 th approved"
   },
   {
-   "motion": "Issue Negative 3 Determination of Applicability filed by Coleen O'Connor for sewage system at 17 Horizon Island Road",
-   "outcome": "unanimously approved",
+   "motion": "Issue the standard Order of Conditions for 64 Chestnut Street (Notice of Intent, Dan Proctor).",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "negative 3 unanimous"
+   "quote": "no questions, issue standard ooc. unanimious"
   },
   {
-   "motion": "Issue Negative 3 Determination of Applicability filed by Neil Gorman (David E. Ross, Associates) for sewage system at 167 Island Road",
-   "outcome": "unanimously approved",
+   "motion": "Issue a negative determination for the Request for Determination of Applicability at 17 Horizon Island Road (minutes print 'Negative 3').",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "negative 3 unanimous"
+   "quote": "no questions, negative 3 unanimous"
+  },
+  {
+   "motion": "Issue a negative determination for the Request for Determination of Applicability at 167 Island Road (minutes print 'Negative 3').",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "no questions, negative 3 unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR corruption in header; votes are clearly readable. Hearing continuances at 7:30 PM (63 Peninsula Drive) and 7:45 PM (43 Hemlock Terrace) are not included as formal votes were not recorded—only procedural decisions to continue hearings are noted.",
- "cost_usd": 0.13327450000000002
+ "dropped_unquoted": 0,
+ "note": "Text is extracted from a page with garbled header characters; the minutes are marked APPROVED 8/20/2014. The attendance header lists six members with no present/absent marks, so their status is recorded as not stated. Hearing outcomes are printed as 'Unanimous' or 'Negative 3' with no motion text, mover or seconder; these are recorded as votes with no mover. Call to order, public comment, commission comment and adjournment carry no motion. The minutes print no dollar figures. The Old Business list has no recorded outcome for items other than 145 Page Street.",
+ "cost_usd": 0.00802572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, sharon jordan"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "not stated",
+   "quote": "sharon jordan, mark murphy, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "sharon jordan, mark murphy, jan carrier"
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "for Wm. Proctor, Inc.",
+   "status": "not stated",
+   "quote": "dawn johnson for wm. proctor, inc. 978-343-469 2"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "quote": "mark presented. commission would like more info on pre fab 3-season room"
+  },
+  {
+   "name": "Diane Erickson",
+   "status": "not stated",
+   "quote": "mark & diane erickson 63 peninsula drive 978-582-0850"
+  },
+  {
+   "name": "Eric Pettes",
+   "status": "present",
+   "quote": "eric presented. would use sonar tubes."
+  },
+  {
+   "name": "Stephanie Pettes",
+   "status": "not stated",
+   "quote": "filed by eric/stephanie pettes"
+  },
+  {
+   "name": "Dan Proctor",
+   "status": "not stated",
+   "quote": "dan proctor 978-582-4764"
+  },
+  {
+   "name": "Coleen O’Connor",
+   "status": "not stated",
+   "quote": "filed by coleen o'connor"
+  },
+  {
+   "name": "Neil Gorman",
+   "status": "not stated",
+   "quote": "filed by neil gorman (d avid e. ross, associates)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "63 Peninsula Drive hearing continued to August 6; Commission wants more information on the prefab 3-season room and a site walk.",
+   "quote": "would like more info on pre fab 3-season room and would like to do a site walk"
+  },
+  {
+   "decision": "63 Peninsula Drive hearing continued until August 6.",
+   "quote": "continued until august 6 th ."
+  },
+  {
+   "decision": "Sharon Jordan and Rob Verge to visit 43 Hemlock Terrace site to measure and contact Matt about the distance from water.",
+   "quote": "sharon & rob will visit site to measure and will contact matt."
+  },
+  {
+   "decision": "43 Hemlock Terrace hearing continued until August 6; applicant reminded of 30 ft no-touch and 50 ft no-build limits.",
+   "quote": "reminded eric of 30' no touch and 50' no build."
+  },
+  {
+   "decision": "43 Hemlock Terrace hearing continued until August 6.",
+   "quote": "continued until august 6th"
+  },
+  {
+   "decision": "Sharon Jordan to contact Kerry about 145 Page Street (Right of First Refusal).",
+   "quote": "145 page street~right of first refusal~ sharon will contact kerry"
+  },
+  {
+   "decision": "July 16 meeting cancelled; August, September, October, November and December meeting dates set.",
+   "quote": "meeting schedule: july 16 cancelled october 1 & 15"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:12 PM",
+   "quote": "call to order 7:12 pm:",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "64 Chestnut Street - Notice of Intent, septic upgrade/repair",
+   "resolution": "standard Order of Conditions issued, unanimous",
+   "quote": "7:15 pm ~ 64 chestnut street ~ pursuant to mgl ch 131",
+   "tags": [
+    "hearing",
+    "wetlands",
+    "septic",
+    "Notice of Intent"
+   ]
+  },
+  {
+   "topic": "63 Peninsula Drive - RDA, deck/patio/3-season porch",
+   "resolution": "continued to August 6; site walk requested",
+   "quote": "7:30 pm ~ 63 peninsula drive ~ pursuant to mgl ch 131",
+   "tags": [
+    "hearing",
+    "wetlands",
+    "Request for Determination"
+   ]
+  },
+  {
+   "topic": "43 Hemlock Terrace - NOI, 3-season room addition",
+   "resolution": "continued to August 6",
+   "quote": "7:45 pm ~ 43 hemlock terrace ~ pursuant to mgl ch 131",
+   "tags": [
+    "hearing",
+    "wetlands",
+    "Notice of Intent"
+   ]
+  },
+  {
+   "topic": "17 Horizon Island Road - RDA, failing sewage system",
+   "resolution": "negative determination, unanimous",
+   "quote": "8:00 pm ~ 17 horizon island road ~ pursuant to mgl ch 131",
+   "tags": [
+    "hearing",
+    "wetlands",
+    "septic",
+    "Request for Determination"
+   ]
+  },
+  {
+   "topic": "167 Island Road - RDA, failing sewage system",
+   "resolution": "negative determination, unanimous",
+   "quote": "8:15 pm ~ 167 island road ~ pursuant to mgl ch 131",
+   "tags": [
+    "hearing",
+    "wetlands",
+    "septic",
+    "Request for Determination"
+   ]
+  },
+  {
+   "topic": "Minutes approval, June 4",
+   "resolution": "approved",
+   "quote": "minutes approval: june 4 th approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "Sharon Jordan to contact Kerry on 145 Page Street; other items listed with no action recorded",
+   "quote": "old business: 145 page street~right of first refusal~ sharon will contact kerry",
+   "tags": [
+    "old business",
+    "Page Street",
+    "Middle/High School",
+    "reservoir",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Signatures and announcements",
+   "resolution": "9 signatures; deed to 781 R Page Street received",
+   "quote": "signatures: 9 announcements: received deed to 781 r page street",
+   "tags": [
+    "signatures",
+    "land",
+    "deed"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "July 16 meeting cancelled; schedule set",
+   "quote": "meeting schedule: july 16 cancelled october 1 & 15",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:55 PM (no motion recorded)",
+   "quote": "adjournment: 8:55 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent filed by Dan Proctor (Wm. R. Proctor, Inc.), 64 Chestnut Street",
+   "where": "text",
+   "quote": "a public hearing on a notice o f intent filed by dan proctor (wm. r. proctor, inc. )"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Mark S. /Diane M. Erickson, 63 Peninsula Drive",
+   "where": "text",
+   "quote": "a public hearing on a request for determination of applicability filed by mark s. /diane m. erickson"
+  },
+  {
+   "name": "Notice of Intent filed by Eric/Stephanie Pettes, 43 Hemlock Terrace",
+   "where": "text",
+   "quote": "a public hearing on a notice o f intent filed by eric/stephanie pettes"
+  },
+  {
+   "name": "Plans for 43 Hemlock Terrace (undated in minutes)",
+   "where": "text",
+   "quote": "discrepency in how far from water, plans say 30 feet, eric said 47 feet."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Coleen O’Connor, 17 Horizon Island Road",
+   "where": "text",
+   "quote": "a public meeting on a request for determination of applicability filed by coleen o'connor"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Neil Gorman (David E. Ross, Associates), 167 Island Road",
+   "where": "text",
+   "quote": "filed by neil gorman (d avid e. ross, associates)"
+  },
+  {
+   "name": "Shirley Village Reservoir Aquatic Treatment Master Plan Update Draft",
+   "where": "text",
+   "quote": "shirley village reservoir aquatic treatment master plan update draft"
+  },
+  {
+   "name": "Deed to 781 R Page Street (Old Turnpike Road)",
+   "where": "text",
+   "quote": "received deed to 781 r page street (old turnpike road)"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "Conservation Commission",
+  "public hearings",
+  "Notice of Intent",
+  "Request for Determination",
+  "septic",
+  "Order of Conditions",
+  "minutes approval",
+  "old business",
+  "meeting schedule",
+  "land deed"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

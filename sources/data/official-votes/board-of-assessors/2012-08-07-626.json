@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-08-07",
  "docid": "626",
@@ -12,23 +12,248 @@
  },
  "votes": [
   {
-   "motion": "To have Harald compose a letter to 61A Chapter property owners requiring submission of 2012 IRS Schedule F as evidence of farm income, effective with the October 1, 2013 filing",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes, current expense vouchers, abatements, and payroll.",
    "outcome": "not stated",
-   "procedural": false,
-   "quote": "the board voted to have harald compose a letter to the 61a chapter property owners informing them that commencing with next year's application 10/1/2013 filing, they will be required to submit a copy of the 2012 irs ( schedule f) as evidence of their farm income."
+   "procedural": true,
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, & payroll."
   },
   {
-   "motion": "To meet on Tuesday, September 11, 2012 at 6pm",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Have Harald compose a letter to the 61A Chapter property owners on the new requirement to submit a 2012 IRS Schedule F with next year's application.",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the board voted to have harald compose a letter to the 61a chapter property owners informing them that commencing with next year's application"
+  },
+  {
+   "motion": "Meet on Tuesday, September 11, 2012 at 6pm (next meeting).",
    "outcome": "not stated",
    "procedural": true,
    "quote": "the board reviewed the calendar for the next meeting and voted to meet on tuesday, september 11, 2012 at 6pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted scanned minutes. No movers, seconders, or explicit vote outcomes recorded (e.g., vote counts or 'carried/failed' language). The phrase 'Board reviewed and approved minutes, current expense vouchers, abatements, & payroll' lacks explicit vote markers (no 'so voted', count, or 'unanimously approved') and is not included.",
- "cost_usd": 0.09406450000000001
+ "note": "OCR text, partly garbled: the \"Mahe reviewed and approved the letter\" sentence is unclear (likely a board member's name), so it is not recorded as a vote. The office-hours letter on page 3 is OCR-garbled in places and carries no printed heading; it is dated August 8, 2012 in the text. Most motions give no mover, seconder or count, so outcomes are \"not stated\". Kerry's surname and role are not printed. The adjournment at 7:20 pm has no recorded motion. The minutes are received and filed January 9, 2013. No public comment is recorded. The minutes print no heading for a documents list.",
+ "cost_usd": 0.00689052,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board members, louis franco, matthew papini, sr., harald scheid, regional assessor and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Kerry",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "kerry explained to louise that we are required by mgl to obtain written quotes for services procured between $5,000 - $15,000"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harald will compose a letter stating the new 61A filing requirements, and Louise will have it ready to mail with the Chapter 61A application.",
+   "quote": "harald stated that he will compose a letter stating the new filing requirements and louise will have them ready to be mailed along with the chapter 61a application."
+  },
+  {
+   "decision": "The proposal for the Periodicals / Personal Property project will be re-solicited using the approximate number of accounts, and a new timeframe will be discussed again with Kerry.",
+   "quote": "the board stated that the proposal will need to be re-solicited using the approx. amount of accounts and a new timeframe will need to be discussed once again with kerry."
+  },
+  {
+   "decision": "Harald tabled the 'Omitted Bills' item; it is not an issue at this time for preliminary billing.",
+   "quote": "harald tabled \"omitted bills\""
+  },
+  {
+   "decision": "The Board wants to keep the office hours in operation since 2007, and the letter to Kerry was to be sent as soon as possible.",
+   "quote": "the board stated they would like to maintain the hours which were in operation since 2007."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Procurement quote threshold (Periodicals / Personal Property project)",
+   "what_was_recorded": "Kerry said written quotes are required under MGL for services procured between $5,000 and $15,000, and a project can only be awarded to a vendor supplying a written quote within the timeframe.",
+   "figures_as_printed": [
+    "$5,000 - $15,000"
+   ],
+   "quote": "kerry explained to louise that we are required by mgl to obtain written quotes for services procured between $5,000 - $15,000"
+  },
+  {
+   "topic": "Chapter 61A income requirement",
+   "what_was_recorded": "Harald stated the minimum income agricultural land must produce to stay in Chapter 61A: $500.00 for the first 5 acres and $5.00 for each additional acre.",
+   "figures_as_printed": [
+    "$500.00",
+    "$5.00"
+   ],
+   "quote": "agricultural land must produce income of at least $500.00 for the initial 5 acres, and $5.00 for each additional acre."
+  },
+  {
+   "topic": "Periodicals / Personal Property bid",
+   "what_was_recorded": "The only bid received (from RRC) was based on 264 accounts, but about 485 accounts are on record, so the proposal was flawed; no dollar bid amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the board reviewed the proposal and it was discovered the proposal had incorrect amount of pp accounts and the bid received was based on"
+  },
+  {
+   "topic": "Town Hall office hours (operating cost)",
+   "what_was_recorded": "The attached letter to Kerry says the revised schedule would add 1.5 hours a week and increase overall operating expenses (lights, heat, air conditioning, computers); no dollar figure is printed.",
+   "figures_as_printed": [
+    "1.5 additional hours (4.3%)"
+   ],
+   "quote": "the revised schedule would nevertheless increase overall operating expenses"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes, vouchers, abatements, payroll",
+   "resolution": "approved",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "abatements",
+    "payroll"
+   ],
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, & payroll."
+  },
+  {
+   "topic": "Exemption applications",
+   "resolution": "reported; no action",
+   "tags": [
+    "exemptions"
+   ],
+   "quote": "louise reported that the exemption applications will be mailed within the next couple of weeks."
+  },
+  {
+   "topic": "FY14 Chapter Account Applications",
+   "resolution": "reported; no action",
+   "tags": [
+    "chapter 61A",
+    "applications"
+   ],
+   "quote": "louise reported that the fy14 chapter account applications will be mailed this week."
+  },
+  {
+   "topic": "Chapter 61A farm income criticism and filing rules",
+   "resolution": "letter to property owners ordered; Schedule F required from 2013 filing",
+   "tags": [
+    "chapter 61A",
+    "farm income"
+   ],
+   "quote": "the board voted to have harald compose a letter to the 61a chapter property owners informing them that commencing with next year's application"
+  },
+  {
+   "topic": "Periodicals / Personal Property project bids",
+   "resolution": "re-solicit bids; no award",
+   "tags": [
+    "procurement",
+    "personal property"
+   ],
+   "quote": "the board stated that the proposal will need to be re-solicited using the approx. amount of accounts"
+  },
+  {
+   "topic": "Omitted Bills",
+   "resolution": "tabled",
+   "tags": [
+    "billing"
+   ],
+   "quote": "harald tabled \"omitted bills\""
+  },
+  {
+   "topic": "Current assessment rate",
+   "resolution": "discussed; no action",
+   "tags": [
+    "assessment ratio",
+    "sales"
+   ],
+   "quote": "harald spoke on the current assessment rate."
+  },
+  {
+   "topic": "Office hours letter to Kerry",
+   "resolution": "letter approved and to be sent to Kerry",
+   "tags": [
+    "office hours",
+    "town hall"
+   ],
+   "quote": "louis presented a letter he drafted to kerry on behalf of the board regarding the change in office hours."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set meeting for September 11, 2012 at 6pm",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "the board reviewed the calendar for the next meeting and voted to meet on tuesday, september 11, 2012 at 6pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter to Kerry regarding change in office hours (drafted by Louis Franco for the Board; dated August 8, 2012)",
+   "where": "text",
+   "quote": "louis presented a letter he drafted to kerry on behalf of the board regarding the change in office hours."
+  },
+  {
+   "name": "Letter to Chapter 61A property owners on new filing requirements",
+   "where": "text",
+   "quote": "harald stated that he will compose a letter stating the new filing requirements and louise will have them ready to be mailed along with the chapter 61a application."
+  },
+  {
+   "name": "FY14 Chapter Account Applications",
+   "where": "text",
+   "quote": "louise reported that the fy14 chapter account applications will be mailed this week."
+  },
+  {
+   "name": "Periodicals / Personal Property Project bid proposal",
+   "where": "text",
+   "quote": "louise met with kerry regarding the status of the bids for proposal."
+  },
+  {
+   "name": "2012 IRS Schedule F",
+   "where": "text",
+   "quote": "commencing with next year's application 10/1/2013 filing, they will be required to submit a copy of the 2012 irs ( schedule f) as evidence of their farm income."
+  },
+  {
+   "name": "Exemption applications",
+   "where": "text",
+   "quote": "louise reported that the exemption applications will be mailed within the next couple of weeks."
+  }
+ ],
+ "tags": [
+  "assessing",
+  "chapter 61A",
+  "farm income",
+  "personal property bids",
+  "procurement",
+  "office hours",
+  "exemptions",
+  "assessment ratio",
+  "abatements"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

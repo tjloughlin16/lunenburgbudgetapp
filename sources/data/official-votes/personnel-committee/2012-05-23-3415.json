@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2012-05-23",
  "docid": "3415",
@@ -12,15 +12,126 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting (moved by Deb, seconded by Barbara, as the garbled parenthetical appears to read).",
    "moved_by": "Deb",
    "seconded_by": "Barbara",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "the meeting adjourned (deb 151, barbara 2n°) at 6:16 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned minutes; notation \"(Deb 151, Barbara 2n°)\" contains apparent artifacts; likely represents moved by Deborah and seconded by Barbara based on context and attendees list",
- "cost_usd": 0.0942945
+ "note": "Scanned minutes read by OCR. The adjournment parenthetical is garbled ('Deb 151, Barbara 2n°'); I read it as mover and seconder but no vote tally or result is printed, so outcome is not stated. The signature line OCR reads 'Deborah Chister' above the printed 'Deborah Christen, Secretary'; I used Christen. Rates are printed without a dollar sign. A note says the May 3, 2012 meeting was cancelled due lack of quorum; no action was taken on it. No documents are listed or named.",
+ "cost_usd": 0.00347922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert Rand",
+   "role": "Chair",
+   "status": "present",
+   "quote": "at 6:02 p.m. the chair called the meeting to order. present were chair robert rand, william murray, barbara reynolds, and deborah christen."
+  },
+  {
+   "name": "William Murray",
+   "role": "",
+   "status": "present",
+   "quote": "at 6:02 p.m. the chair called the meeting to order. present were chair robert rand, william murray, barbara reynolds, and deborah christen."
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "at 6:02 p.m. the chair called the meeting to order. present were chair robert rand, william murray, barbara reynolds, and deborah christen."
+  },
+  {
+   "name": "Deborah Christen",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "at 6:02 p.m. the chair called the meeting to order. present were chair robert rand, william murray, barbara reynolds, and deborah christen."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting agenda is to be standard on-going items plus Current Business including discussion on review of progress and assignments of LPC initiatives for 2012, and next meeting agenda.",
+   "quote": "and current business to include discussion on review of progress and assignments of lpc initiatives for 2012, and next meeting agenda."
+  },
+  {
+   "decision": "The next meeting is scheduled for June 6, 2012 at 6:00 p.m. at the Lunenburg Public Library.",
+   "quote": "the next scheduled meeting will be on june 6, 2012 at 6:00 p.m. at the lunenburg public library."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "New hire, Library Assistant (Marabeth Balboni)",
+   "what_was_recorded": "New hire in the Library at Grade 5, Step 1, effective February 2, 2012, with an hourly rate printed.",
+   "figures_as_printed": [
+    "13.06/hour"
+   ],
+   "quote": "new hire - library, marabeth balboni, library assistant, grade 5, step 1, 13.06/hour, effective february 2, 2012."
+  },
+  {
+   "topic": "Reclassification, Accountant to Payroll Coordinator (Nancy Forest)",
+   "what_was_recorded": "Reclassification of Nancy Forest from Accountant to Payroll Coordinator at Grade 10, Step 1, effective April 1, 2012, with an hourly rate printed.",
+   "figures_as_printed": [
+    "20.09/hour"
+   ],
+   "quote": "reclassification - accountant, nancy forest, to payroll coordinator, grade 10, step 1, 20.09/hour, effective april 1, 2012."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment (none)",
+   "quote": "1. public comment: none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Personnel Actions to Review and Approve",
+   "resolution": "no action (none)",
+   "quote": "2. personnel actions to review and approve: none.",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Personnel Change/Hiring Notifications",
+   "resolution": "noted, no vote recorded",
+   "quote": "3. personnel change/hiring notifications: new hire - library, marabeth balboni,",
+   "tags": [
+    "hiring",
+    "reclassification",
+    "library",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Next Meeting Agenda",
+   "resolution": "agenda set for next meeting; next meeting date set",
+   "quote": "1. next meeting agenda: standard on-going (public comment, personnel actions/approvals, personnel change/hiring notifications, and review of previous minutes)",
+   "tags": [
+    "agenda",
+    "LPC initiatives"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "personnel",
+  "hiring",
+  "reclassification",
+  "library",
+  "payroll",
+  "LPC initiatives",
+  "quorum"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

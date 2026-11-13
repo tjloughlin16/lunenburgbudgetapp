@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-02-25",
  "docid": "5481",
@@ -12,23 +12,419 @@
  },
  "votes": [
   {
-   "motion": "to approve the February 11, 2014 meeting minutes",
+   "motion": "Approve the minutes of the 2/11/14 meeting.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "butch made the motion, mike seconded and vote was unanimous to accept the minutes."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Jay",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "butch made the motion that the meeting be adjourned, jay seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These minutes are OCR-extracted; a section containing discussion about Dave MacDonald's role contains garbled text but does not appear to record any vote. The motions to approve prior minutes and to adjourn are the only votes recorded with outcomes.",
- "cost_usd": 0.0979405
+ "note": "Text is OCR of a scanned minutes document with many garbled passages (e.g., the exchange about a ruling near the minutes approval, and fragments at the page 1 start and page 4 to 5 transition). The minutes print no date heading and no roll call, so attendance statuses are inferred from participation. Mr. and Mrs. Misner appeared as a scheduled appointment, not a public comment period, and no public comment section is printed. Only two motions are recorded (approve minutes, adjourn). The invoice approval has no recorded motion. The $8.95 credit paragraph starts mid-thought in the text.",
+ "cost_usd": 0.009971019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl opened the meeting with the wish to show 2 videos on subjects that are important to the sewer commission"
+  },
+  {
+   "name": "Dave Misner",
+   "status": "present",
+   "quote": "carl commenced the regular meeting with the first appointment by introducing dave misner to speak on the 51 joslin st. issue."
+  },
+  {
+   "name": "Diane Misner",
+   "status": "present",
+   "quote": "dave came up and also introduced his wife, diane misner, both of 49 joslin st.."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb noted that it is recorded in the betterment list as 'unbuildable' due to"
+  },
+  {
+   "name": "Butch",
+   "status": "present",
+   "quote": "butch asked if he knew who told you that there wouldn't be a charge."
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "carl asked for more questions, and dave macdonald asked if he was looking to build a home on the lot?"
+  },
+  {
+   "name": "Mike Nault",
+   "status": "present",
+   "quote": "mike nault pointed out that where we assessed them for the 7 lots,"
+  },
+  {
+   "name": "Jay",
+   "status": "present",
+   "quote": "butch made the motion that the meeting be adjourned, jay seconded. vote taken was unanimous."
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "carl introduced jack to update the commission on 4 items on our plate."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "jamie rheault of whitman & bingham came forward, representing the applicant."
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "Wright Pierce",
+   "status": "not stated",
+   "quote": "expects kevin olson of wright pierce to be there to do"
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "Weston & Sampson",
+   "status": "not stated",
+   "quote": "he did talk with pat cotton today and discussed that their concern is with the sump pumps."
+  },
+  {
+   "name": "Debbie",
+   "role": "SWSS",
+   "status": "not stated",
+   "quote": "debbie of swss will adjust it and jack will have them come in when we have a solid proposal."
+  },
+  {
+   "name": "John Denapoli",
+   "status": "not stated",
+   "quote": "jack stated he'd send a message off to john denapoli."
+  },
+  {
+   "name": "Pat Slattery",
+   "status": "not stated",
+   "quote": "dave added that pat slattery is retiring from town government."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack to send the contractor remediation dates for the Lancaster & Whiting manhole: start March 16, weather permitting, and completed dry by 3/31.",
+   "quote": "jack sent message to the contractor that we have set dates for initiation of remediation to be march 16, weather permitting and completed (dry) by 3/31."
+  },
+  {
+   "decision": "Carl requested that Pat Cotton of Weston & Sampson be scheduled to come in to discuss the I/I reduction program.",
+   "quote": "carl stated he appreciated jack's input on this and requested we schedule to have them come in and that we need to get this addressed"
+  },
+  {
+   "decision": "Butch to review the CWMP to see why it reached its conclusions on the Northfield Rd. request.",
+   "quote": "carl asked butch to review the cwmp to see why it came to its conclusions."
+  },
+  {
+   "decision": "Jamie Rheault to review all options with the building inspector, including moving the district line just enough to avoid touching Northfield, and return to the next agenda on the 7-lot parcel.",
+   "quote": "he asked that jamie review all possibilities with the building inspector, including moving the line just enough to squeak a pipe by and not touch northfield."
+  },
+  {
+   "decision": "Carl stated no privilege fee applies unless a connection to sewer is requested.",
+   "quote": "carl said there would be no fee unless there was a request to connect to sewer."
+  },
+  {
+   "decision": "Commission project volunteers: Mike took Flow Meters, Dave took Sunset Ave., Mike and Dave took grease traps together, Carl took the capacity fee policy and business systems.",
+   "quote": "mike wanted to do flow meters. dave took sunset ave."
+  },
+  {
+   "decision": "Carl to take on the capacity fee policy.",
+   "quote": "carl would like to take on the capacity fee policy."
+  },
+  {
+   "decision": "Dave to prepare a written report of what happened with the Unitil equipment incident to give to John Denapoli.",
+   "quote": "dave added that we need to do up a report of exactly what happened to give to john"
+  },
+  {
+   "decision": "Next regular meeting set for 3/11 at the DPW at 7pm.",
+   "quote": "barb re-stated that the next regular meeting would be 3/11 at the dpw 7pm"
+  },
+  {
+   "decision": "Leominster sewer usage invoice recorded as approved at $56,544.61.",
+   "quote": "the amount approved was $56,544.61."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "51 Joslin St. purchase price and P&S",
+   "what_was_recorded": "Mr. Misner said the 2003 auction purchase price was $81,000 and the current purchase and sale agreement is $60,000, a loss; no action taken.",
+   "quote": "they have a p&s for $60,000 currently and are taking a loss, losing about 1/3 of their investment.",
+   "figures_as_printed": [
+    "$81,000",
+    "$60,000"
+   ]
+  },
+  {
+   "topic": "Northfield Rd. sewer connections cost",
+   "what_was_recorded": "Jack estimated each new sewer connection along Northfield could cost the Commission between $3500 and $5000.",
+   "quote": "he is not sure of the ground conditions, but each connection could cost the commission between $3500 and $5000.",
+   "figures_as_printed": [
+    "$3500",
+    "$5000"
+   ]
+  },
+  {
+   "topic": "Prior Commission vote to support a station project",
+   "what_was_recorded": "Jack said the Commission had voted to support twice the $6000 figure; Carl said the vote was enough to do 2 stations, with one done first.",
+   "quote": "he added that the sewer commission had already voted to support not just for the $6000 but voted for twice that.",
+   "figures_as_printed": [
+    "$6000"
+   ]
+  },
+  {
+   "topic": "Leominster sewer usage invoice",
+   "what_was_recorded": "The Leominster sewer usage invoice came in at the expected amount and the approved amount was recorded.",
+   "quote": "the amount approved was $56,544.61.",
+   "figures_as_printed": [
+    "$56,544.61"
+   ]
+  },
+  {
+   "topic": "Flow Assessment invoice",
+   "what_was_recorded": "Flow Assessment invoice for the three months of November, December and January was presented for approval.",
+   "quote": "the second invoice was for flow assessment for $2375.01 the three months of november, december & january.",
+   "figures_as_printed": [
+    "$2375.01"
+   ]
+  },
+  {
+   "topic": "Billing credit on February invoice",
+   "what_was_recorded": "The February invoice, based on the old amount of $8.95, will be credited in full against an $11,000 credit due, plus a small credit to the next bill.",
+   "quote": "the february invoice, based on the old amount of $8.95, will be credited in full due to a credit of $11,000 due, plus a small credit to be applied to our next bill.",
+   "figures_as_printed": [
+    "$8.95",
+    "$11,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Training videos on disposables and fats, oils and grease",
+   "resolution": "videos shown; no action",
+   "quote": "carl opened the meeting with the wish to show 2 videos on subjects that are important to the sewer commission",
+   "tags": [
+    "education",
+    "fats oils grease",
+    "disposables"
+   ]
+  },
+  {
+   "topic": "51 Joslin St. betterment appointment (Misners)",
+   "resolution": "discussed; no action taken",
+   "quote": "carl commenced the regular meeting with the first appointment by introducing dave misner to speak on the 51 joslin st. issue.",
+   "tags": [
+    "betterment",
+    "Joslin St",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Northfield Rd. / 175 Northfield sewer extension request",
+   "resolution": "recommended tabled or denied pending justification; no vote",
+   "quote": "based on these points, carl recommends that this request be tabled or denied at this time pending any new and compelling",
+   "tags": [
+    "sewer service area",
+    "Northfield Rd",
+    "CWMP",
+    "development"
+   ]
+  },
+  {
+   "topic": "Whitman & Bingham 7-lot parcel and sewer district line",
+   "resolution": "to return to next agenda",
+   "quote": "jamie rheault of whitman & bingham came forward, representing the applicant.",
+   "tags": [
+    "sewer service area",
+    "Whitman & Bingham",
+    "Town Meeting warrant"
+   ]
+  },
+  {
+   "topic": "DPW Director operations update (four items)",
+   "resolution": "no action; updates given",
+   "quote": "carl introduced jack to update the commission on 4 items on our plate.",
+   "tags": [
+    "DPW operations",
+    "inflow and infiltration",
+    "generator",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Procurement roles and Jay's involvement",
+   "resolution": "discussed; no action",
+   "quote": "carl stated that we needed to re-group a little and get jack and commission together to get the job done",
+   "tags": [
+    "procurement",
+    "governance",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects for 2014/15 and volunteer assignments",
+   "resolution": "assignments taken by volunteers",
+   "quote": "carl moved on to the next subject of sewer commission projects for 2014/15, which has the scada on the list.",
+   "tags": [
+    "projects",
+    "SCADA",
+    "capacity fee policy"
+   ]
+  },
+  {
+   "topic": "Commissioner term expiring (Jay)",
+   "resolution": "no action",
+   "quote": "carl noted that the town caucus is march 17, 2014 and asked jay, since his term is up in may, if he will re-up.",
+   "tags": [
+    "appointments",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Billing credit on February invoice",
+   "resolution": "noted; no action",
+   "quote": "the february invoice, based on the old amount of $8.95, will be credited in full due to a credit of $11,000 due, plus a small credit to be applied to our next bill.",
+   "tags": [
+    "billing",
+    "credit"
+   ]
+  },
+  {
+   "topic": "Invoices for approval",
+   "resolution": "approved",
+   "quote": "barb had 2 invoices for approval - the first for leominster sewer usage came in at the expected amount.",
+   "tags": [
+    "invoices",
+    "Leominster",
+    "Flow Assessment"
+   ]
+  },
+  {
+   "topic": "Grease trap compliance",
+   "resolution": "noted",
+   "quote": "grease trap compliance - barb noted there is only one restaurant left with the annual permit fee outstanding.",
+   "tags": [
+    "grease traps",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Highfield Village peer review memo",
+   "resolution": "noted",
+   "quote": "administrative matters- highfield village -barb noted that she'd sent a memo to planning board on results of peer review",
+   "tags": [
+    "Highfield Village",
+    "Planning Board",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Approval of 2/11/14 minutes",
+   "resolution": "approved unanimously",
+   "quote": "butch made the motion, mike seconded and vote was unanimous to accept the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Commissioner service concern (Dave MacDonald)",
+   "resolution": "discussed; no action",
+   "quote": "dave asked whether it is a personal vendetta or if it is regarding the job that he is doing.",
+   "tags": [
+    "governance",
+    "commission members"
+   ]
+  },
+  {
+   "topic": "Next meeting date and FinCom budget presentation",
+   "resolution": "informational",
+   "quote": "barb re-stated that the next regular meeting would be 3/11 at the dpw 7pm",
+   "tags": [
+    "schedule",
+    "FinCom",
+    "FY15 budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:05pm",
+   "quote": "butch made the motion that the meeting be adjourned, jay seconded. vote taken was unanimous.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Photos of the sewer plan from around 2000 (handed out by Mr. Misner)",
+   "where": "text",
+   "quote": "mr. misner handed out photos of the sewer plan from around 2000 which showed a sewer connection drawn in."
+  },
+  {
+   "name": "Comprehensive Wastewater Management Plan (CWMP), 2006",
+   "where": "text",
+   "quote": "plan(cwmp) in 2006 and it has been the rule book for decisions to date."
+  },
+  {
+   "name": "Video 'Will it Flush' (City of Spokane, Washington)",
+   "where": "text",
+   "quote": "the first one was entitled 'will it flush' which showcases the breakdown of everything from toilet paper to kitty litter"
+  },
+  {
+   "name": "Video 'Fats, Oils and Grease' (City of Spokane, Washington)",
+   "where": "text",
+   "quote": "the second video called 'fats, oils and grease' was run."
+  },
+  {
+   "name": "SWSS pump station report for w/e 2/8",
+   "where": "text",
+   "quote": "everyone received the swss pump station report for w/e 2/8."
+  },
+  {
+   "name": "Memo to Planning Board on results of peer review (Highfield Village)",
+   "where": "text",
+   "quote": "barb noted that she'd sent a memo to planning board on results of peer review"
+  },
+  {
+   "name": "2/11/14 meeting minutes",
+   "where": "text",
+   "quote": "barb asked if everyone had reviewed the 2/11/14 meeting minutes."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "betterments",
+  "Joslin St",
+  "Northfield Rd",
+  "sewer service area",
+  "CWMP",
+  "DPW operations",
+  "SWSS",
+  "pump stations",
+  "inflow and infiltration",
+  "grease traps",
+  "invoices",
+  "Leominster",
+  "Whitman & Bingham",
+  "commission appointments",
+  "SCADA"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

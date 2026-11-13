@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-09-25",
  "docid": "2282",
@@ -12,15 +12,270 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin",
    "seconded_by": "Terri",
-   "outcome": "passed 4-0",
+   "outcome": "4-0",
    "procedural": true,
    "quote": "karin moved to adjourn the meeting; her motion was seconded by terri. the committee voted 4-0 in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One vote recorded: the motion to adjourn.",
- "cost_usd": 0.0858515
+ "note": "Scanned page OCR text (macOS Vision) with garbled passages, notably the Building Re-Use and PACC entries and some committee-update lines. The only recorded motion is adjournment (4-0). The minutes do not give Kerry's surname or a stated role; the role is inferred only from the heading 'Town Manager Updates', so it is recorded as not stated. Jack Rodriquenz's attendance is not stated. No public comment is recorded beyond 'Public: None.'",
+ "cost_usd": 0.00600402,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mark. erickson, terri burchfield, karin menard, john henshaw"
+  },
+  {
+   "name": "Mike Masciarelli",
+   "role": "Chairperson, Parks Commission",
+   "status": "present",
+   "quote": "mike masciarelli, chairperson and corinne scouten of the parks commission joined the"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Parks Commission",
+   "status": "present",
+   "quote": "mike masciarelli, chairperson and corinne scouten of the parks commission joined the"
+  },
+  {
+   "name": "Kerry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry said she would try to put a rough draft of a schedule for the budget process by the"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jack rodriquenz suggested that the town needs to decide on a long term goal for the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will correct the three errors in the September 11 meeting minutes and re-submit them for approval at the next meeting.",
+   "quote": "there were three errors in the september 11 meeting minutes which john will"
+  },
+  {
+   "decision": "The committee reached general agreement that the budget process should start earlier in FY 2015 than usual.",
+   "quote": "the committee came to a general agreement that the budget process should start earlier"
+  },
+  {
+   "decision": "Kerry will try to put a rough draft of a schedule for the budget process before the next Fin Comm meeting, Thursday, October 16.",
+   "quote": "kerry said she would try to put a rough draft of a schedule for the budget process by the"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reconstruction cost of turf field and track",
+   "what_was_recorded": "The turf field and track are likely to need major reconstruction in the next few years at an estimated cost range, which makes usage fees one way to fund it.",
+   "figures_as_printed": [
+    "$600,000-$800,000"
+   ],
+   "quote": "will need major reconstruction in an estimated cost range of $600,000-$800,000 in the next few years"
+  },
+  {
+   "topic": "Annual accrual for field reconstruction",
+   "what_was_recorded": "Kerry said funds would have to accrue at about $100,000 per year to fund reconstruction of the track and turf field alone.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "kerry said that these funds would have to accrue at about $100,000 per"
+  },
+  {
+   "topic": "Turf field usage fees and comparison",
+   "what_was_recorded": "The turf field usage fee had been $100 per 90 minute session, compared with $150 per 60 minute session at Doyle Field in Leominster, which also covers an on-site person; usage fees have yet to be determined.",
+   "figures_as_printed": [
+    "$100",
+    "90 minute",
+    "$150",
+    "60 minute"
+   ],
+   "quote": "the usage fee for the turf field had been $100 per 90 minute session."
+  },
+  {
+   "topic": "Turf field user fees discontinued after 2012",
+   "what_was_recorded": "Groups using the turf field had paid fees until 2012, but those fees were not charged after 2012.",
+   "figures_as_printed": [],
+   "quote": "had paid fees to use the field until 2012, but these fees were not charged after"
+  },
+  {
+   "topic": "Field upkeep costs unknown",
+   "what_was_recorded": "Kerry said the committee does not know the cost to maintain the fields, including cutting grass, drawing lines, and keeping the track and turf field in repair.",
+   "figures_as_printed": [],
+   "quote": "kerry said that we do not know the cost to maintain the fields: cut the"
+  },
+  {
+   "topic": "DPW tree removal over budget",
+   "what_was_recorded": "Tree removal expenses from the Lake Shirley microburst put DPW over budget in that line, which may affect tree removal through FY 2015.",
+   "figures_as_printed": [],
+   "quote": "tree removal expenses from the lake shirley microburst this past summer put dpw over budget in that line."
+  },
+  {
+   "topic": "Road salt and sand costs",
+   "what_was_recorded": "Costs for road salt and sand have increased and may mean a higher cost than FY 2014; Jack is looking into other suppliers.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "may mean $30,000 higher cost than fy 2014"
+  },
+  {
+   "topic": "Library electricity prices",
+   "what_was_recorded": "The library awaits verification of a projected increase in electricity supply prices as of December, 2014, and is looking into LED bulbs to save electricity.",
+   "figures_as_printed": [
+    "45%"
+   ],
+   "quote": "projected 45% increase in electricity supply prices as of december, 2014"
+  },
+  {
+   "topic": "Asbestos abatement costs at Turkey Hill Middle School",
+   "what_was_recorded": "Costs for asbestos abatement at Turkey Hill Middle School have risen; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "costs for asbestos abatement at turkey hill middle school have risen."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "no action; invitations handed out, Planning Board meeting and The Beacon noted",
+   "quote": "2. communications: a. public: none.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Parks Commission on field funding",
+   "resolution": "discussed; no action recorded; committee to consider long-term goal for fields",
+   "quote": "mike masciarelli, chairperson and corinne scouten of the parks commission joined the",
+   "tags": [
+    "parks",
+    "fields",
+    "usage fees"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "informational; joint Selectmen-Planning Board session noted",
+   "quote": "kerry informed the committee that there would be a joint session between the board of",
+   "tags": [
+    "town manager",
+    "joint session"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "continued; September 11 minutes to be corrected and re-submitted at next meeting",
+   "quote": "there were three errors in the september 11 meeting minutes which john will",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Calendar of events for town budget process",
+   "resolution": "general agreement to start earlier; draft schedule to come by October 16",
+   "quote": "the committee came to a general agreement that the budget process should start earlier",
+   "tags": [
+    "budget calendar",
+    "FY 2015",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received; no action",
+   "quote": "costs for road salt and sand have increased and may mean",
+   "tags": [
+    "DPW",
+    "library",
+    "capital planning",
+    "PACC",
+    "building re-use",
+    "school building",
+    "schools",
+    "Monty Tech",
+    "council on aging",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "listed for future meetings",
+   "quote": "a. review the updated pavement management plan",
+   "tags": [
+    "pavement",
+    "budget calendar",
+    "school construction",
+    "OPEB"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:39 pm by 4-0 vote",
+   "quote": "karin moved to adjourn the meeting; her motion was seconded by terri. the committee voted 4-0 in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Beacon (recent issue)",
+   "where": "text",
+   "quote": "mark circulated the recent issue of the beacon."
+  },
+  {
+   "name": "Updated Pavement Management Plan",
+   "where": "text",
+   "quote": "a. review the updated pavement management plan"
+  },
+  {
+   "name": "September 11 meeting minutes",
+   "where": "text",
+   "quote": "there were three errors in the september 11 meeting minutes which john will"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "parks fields",
+  "turf field fees",
+  "budget calendar",
+  "FY 2015",
+  "DPW",
+  "road salt",
+  "library electricity",
+  "school construction",
+  "OPEB",
+  "pavement management"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

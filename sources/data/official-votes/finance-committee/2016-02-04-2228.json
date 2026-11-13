@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-02-04",
  "docid": "2228",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to postpone the finance committee vote by one week",
+   "motion": "Postpone the finance committee vote on the State Funding Resolution by one week.",
    "moved_by": "John Henshaw",
    "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "john made a motion to postpone the finance committee vote by one week and karin seconded the motion. the committee approved the motion 5-0."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
@@ -29,6 +29,192 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted text from a scanned document. Names taken from member list printed at meeting start; the Chapter 70 presentation section was educational with no votes recorded.",
- "cost_usd": 0.1350525
+ "note": "Text is OCR of a scanned, draft-labelled minutes file (Mn-FY16-160204-Draft). Chapter 70 slide figures are OCR output and some are garbled or inconsistent (e.g., slide 19 prints FY16 Chapter 70 aid as 8,834,483 while slide 18 prints 5,834,483), so the attachment figures are recorded as printed and not verified. The slide-18 figure labels are inferred from line order. Greg's full name appears only in the footer ('c. Greg Berthiaume.'). Two motions are recorded with vote counts; no decisions were recorded without a vote.",
+ "cost_usd": 0.007770619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, town accountant, tom alonzo, board of selectmen clerk."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, karen brochu, town accountant, tom alonzo, board of selectmen clerk."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen Clerk",
+   "status": "present",
+   "quote": "tom alonzo stated that towns and cities fund education in excess of the"
+  },
+  {
+   "name": "Mark D. Abrahams, CPA",
+   "role": "presenter, Chapter 70 workshop; President, The Abrahams Group (per deck)",
+   "status": "present",
+   "quote": "chapter 70 workshop--focus on lunenburg, by mark d. abrahams, cpa"
+  },
+  {
+   "name": "Greg",
+   "role": "not stated (footer reads 'c. Greg Berthiaume.')",
+   "status": "not stated",
+   "quote": "greg observed that if the foundation budget increased the town would not"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Lunenburg FY16 net school spending over foundation budget",
+   "what_was_recorded": "Net school spending in FY16 is reported as a dollar amount and as a percentage over the foundation budget.",
+   "figures_as_printed": [
+    "$3,583,931",
+    "23.4%"
+   ],
+   "quote": "in fy16 lunenburg's net school spending was $3,583,931 or 23.4% over the foundation budget."
+  },
+  {
+   "topic": "Chapter 70 aid at full equity",
+   "what_was_recorded": "Mr. Abrahams said at full equity Lunenburg would receive about $275,000 more in Chapter 70 aid than this year.",
+   "figures_as_printed": [
+    "$275,000"
+   ],
+   "quote": "later noted that at full equity lunenburg would receive about $275,000 more dollars in chapter 70 aid than it will receive this year."
+  },
+  {
+   "topic": "Cost of raising the state foundation budget",
+   "what_was_recorded": "Mr. Abrahams said a Foundation Budget Review Commission increase would raise the local contribution by about $480 million statewide.",
+   "figures_as_printed": [
+    "$480 million"
+   ],
+   "quote": "mr. abrahams said that that would increase the local contribution by about $480 million,"
+  },
+  {
+   "topic": "Local contribution and foundation budget discussion",
+   "what_was_recorded": "Greg said the Town already funds its school budget well above the foundation budget, so a higher foundation budget would not raise its local contribution.",
+   "figures_as_printed": [
+    "23%"
+   ],
+   "quote": "greg observed that if the foundation budget increased the town would not pay any higher local contribution as we are already funding a school budget 23% higher the foundation budget."
+  },
+  {
+   "topic": "FY17 Chapter 70 aid calculation (attached slide)",
+   "what_was_recorded": "The attached FY17 aid calculation slide prints prior year Chapter 70 aid, foundation budget, required district contribution and foundation aid, in that order by line.",
+   "figures_as_printed": [
+    "5,834,483",
+    "15,538,425",
+    "9,289,895",
+    "6,248,530"
+   ],
+   "quote": "5,834,483 15,538,425 9,289,895 6,248,530"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and joint meeting",
+   "resolution": "called to order at 7:00 pm",
+   "tags": [
+    "procedure",
+    "joint meeting"
+   ],
+   "quote": "mark e. called the finance committee meeting to order at 7:00 pm. along with the finance"
+  },
+  {
+   "topic": "Comments",
+   "resolution": "no comments from public or committee",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "comments: public: none and committee: none."
+  },
+  {
+   "topic": "Chapter 70 Workshop, focus on Lunenburg",
+   "resolution": "presented, no action",
+   "tags": [
+    "Chapter 70",
+    "net school spending",
+    "state aid",
+    "education funding"
+   ],
+   "quote": "chapter 70 workshop--focus on lunenburg, by mark d. abrahams, cpa"
+  },
+  {
+   "topic": "State Funding Resolution",
+   "resolution": "vote postponed one week",
+   "tags": [
+    "state funding",
+    "postponement"
+   ],
+   "quote": "john made a motion to postpone the finance committee vote by one week and karin seconded the motion."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:29",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "karin made a motion to adjourn and terri seconded the motion. the committee approved the motion 5-0"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Chapter 70 and Net School Spending, Lunenburg School District FY17 Preliminary Numbers (power point presentation by Mark D. Abrahams, CPA)",
+   "where": "list",
+   "quote": "respectfully submitted by john henshaw february 9, 2016 attachment (1) c. greg berthiaume."
+  },
+  {
+   "name": "Department of Elementary and Secondary Education (DESE) Chapter 70 information",
+   "where": "text",
+   "quote": "source: department of elementary and secondary education [dese]. link to dese information: http://www.doe.mass.edu/finance/chapter70/"
+  }
+ ],
+ "tags": [
+  "Chapter 70",
+  "net school spending",
+  "foundation budget",
+  "state aid",
+  "school funding",
+  "joint meeting",
+  "education"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachment (1)"
+ },
+ "dropped_unquoted_by_field": {}
 }

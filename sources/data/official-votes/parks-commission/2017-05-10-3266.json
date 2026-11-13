@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2017-05-10",
  "docid": "3266",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from April 12, 2017",
-   "moved_by": "Karin",
+   "motion": "Approve the minutes of April 12, 2017.",
+   "moved_by": "Karin Menard",
    "seconded_by": "Pete",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "karin motioned and pete seconded to accept minutes of april 12, 2017. approved 3-0."
   },
   {
-   "motion": "Open the town beach to the public on June 24, 2017",
+   "motion": "Open the town beach to the public on June 24, 2017.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis",
    "outcome": "passed 3-0",
@@ -28,47 +28,47 @@
    "quote": "motion made by karin menard to open the town beach to the public on june 24, 2017. seconded by dennis. approved 3-0."
   },
   {
-   "motion": "Implement beach pass fees for the 2017 season at $50 resident family, $35 resident individual, $75 non-resident family, $50 non-resident individual, $5 daily adult, $3 daily student",
+   "motion": "Implement the listed beach pass fees for the 2017 season (resident family 850, resident individual $35, non resident family $75, non resident individual $50, daily rate $5 adult and $3 student).",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard to implement the following beach pass fees for the 2017 season: 850 - resident family $35 - resident individual $75 - non resident family $50 - non resident individual daily rate - $5 adult, $3 student dennis seconded. approved 3-0"
+   "quote": "motion made by karin menard to implement the following beach pass fees for the 2017 season:"
   },
   {
-   "motion": "Schedule lifeguard training June 19-30, swim lessons session I July 10-21, and swim lessons session II July 24-Aug 4",
+   "motion": "Set Lifeguard Training for June 19 - June 30, Swim Lessons Session I for July 10-21, and Swim Lessons Session II for July 24 - Aug 4.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard for the following: lifeguard training - june 19 - june 30 swim lessons session i - july 10-21 swim lessons session ii - july 24 - aug 4 pete seconded. approved 3-0"
+   "quote": "motion made by karin menard for the following:"
   },
   {
-   "motion": "Allow the Beach Coordinator to organize and run the 2017 Great Cardboard Boat Race",
+   "motion": "Allow the Beach Coordinator to organize and run the 2017 Great Cardboard Boat Race.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard allowing the beach coordinator to organize and run the 2017 great cardboard boat race. pete seconded. approved 3-0"
+   "quote": "motion made by karin menard allowing the beach coordinator to organize and run the 2017 great cardboard boat race."
   },
   {
-   "motion": "Charge Sports Camp a per camper fee of $10 to use the grass annex",
+   "motion": "Charge a per camper fee of $10 to Sports Camp to use the grass annex.",
    "moved_by": "Pete McCauliff",
    "seconded_by": "Dennis",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by pete mccauliff to charge a per camper fee of $10 to sports camp to use the grass annex. dennis seconded. approved 3-0"
+   "quote": "motion made by pete mccauliff to charge a per camper fee of $10 to sports camp to use the grass annex."
   },
   {
-   "motion": "Add a $25 per hour fee to the application for use of the grass annex",
+   "motion": "Add a $25 per hour fee to the application for use of the grass annex.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by karin menard to add a $25 per hour fee to the application for use of the grass annex. pete seconded. approved 3-0."
+   "quote": "motion made by karin menard to add a $25 per hour fee to the application for use of the grass annex."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -77,6 +77,274 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned OCR. One apparent OCR error: \"850\" in the beach pass fees motion is likely \"$50\" (the dollar sign was misread as \"8\" before the \"50\"). All eight votes recorded with outcomes explicitly stated in the minutes.",
- "cost_usd": 0.12363850000000001
+ "note": "OCR of a scanned page set. Header reads 'Denhis Mannone' and 'Chis' appears in the text; quotes use the printed body spelling. The beach resident family fee reads '850' in the OCR, probably '$50', but is recorded as printed. Numbering repeats '2)' and skips 7. The minutes record Pete McCauliff arriving at 7:30pm, but they do not time the votes, so whether he was present for the earlier 3-0 votes cannot be confirmed. No transfers are recorded.",
+ "cost_usd": 0.00798072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "dennis mannone called the meeting to order at 7:07pm."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff (arrived at 7:30pm)."
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff (arrived at 7:30pm)."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff (arrived at 7:30pm)."
+  },
+  {
+   "name": "Steve Deschenes",
+   "role": "parent of High School Baseball player",
+   "status": "present",
+   "quote": "steve deschenes, parent of high school baseball player, asked for an update on the netted backstop at marshall park"
+  },
+  {
+   "name": "Christa Palma",
+   "role": "not stated",
+   "status": "present",
+   "quote": "christa palma and stephanie knight inquired as to the lack of communication."
+  },
+  {
+   "name": "Stephanie Knight",
+   "role": "not stated",
+   "status": "present",
+   "quote": "christa palma and stephanie knight inquired as to the lack of communication."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dan proctor asked if the phillies or babe ruth would be able to play there as well."
+  },
+  {
+   "name": "Gen Nass",
+   "role": "not stated",
+   "status": "present",
+   "quote": "town beach - gen nass was present and addressed the commission about opening"
+  },
+  {
+   "name": "Chris Letarte",
+   "role": "Friends of Wallis Park",
+   "status": "present",
+   "quote": "friends of wallis park - chris and melony letarte were in attendance to discuss"
+  },
+  {
+   "name": "Melony Letarte",
+   "role": "Friends of Wallis Park",
+   "status": "present",
+   "quote": "friends of wallis park - chris and melony letarte were in attendance to discuss"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Turf Complex item was tabled due to time constraints.",
+   "quote": "a) turf complex - tabled due to time constraints."
+  },
+  {
+   "decision": "The Leominster Lacrosse usage item was tabled due to time constraints.",
+   "quote": "b) leominster lacrosse usage - tabled due to time constraints"
+  },
+  {
+   "decision": "Gen Nass was asked to provide more details on swim lesson rates for the next meeting.",
+   "quote": "asked gen to provide more details for our next meeting."
+  },
+  {
+   "decision": "Jack told Chris Letarte to work with the folks in the Wallis Park area and come up with a plan and some ideas for the playground.",
+   "quote": "he told chis to work with the folks in that area and come up with a plan and some ideas."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park netted backstop cost",
+   "what_was_recorded": "Jack Rodriquenz found $20k in his budget to cover the unexpected backstop costs.",
+   "figures_as_printed": [
+    "$20k"
+   ],
+   "quote": "was able to work through his budget to find the $20k to cover these costs."
+  },
+  {
+   "topic": "Beach pass fees for 2017",
+   "what_was_recorded": "The commission set 2017 beach pass fees after noting prices had not been updated in many years.",
+   "figures_as_printed": [
+    "850",
+    "$35",
+    "$75",
+    "$50",
+    "$5 adult",
+    "$3 student"
+   ],
+   "quote": "850 - resident family $35 - resident individual $75 - non resident family $50 - non resident individual"
+  },
+  {
+   "topic": "Swim lesson rates",
+   "what_was_recorded": "Karin Menard said current swim lesson rates did not fully cover the cost of lessons; no new rate was set.",
+   "figures_as_printed": [],
+   "quote": "karin didn't think the current lesson rates fully covered the cost of lessons and"
+  },
+  {
+   "topic": "Field usage fees paid by schools",
+   "what_was_recorded": "Karin Menard said the schools are the only users not paying field usage fees at that field.",
+   "figures_as_printed": [],
+   "quote": "currently the schools are the only ones not paying for field usage at that field."
+  },
+  {
+   "topic": "Field usage fees approved at start of year",
+   "what_was_recorded": "Karin Menard told attendees that field usage fees were approved at the beginning of the year and usage now requires a permit application and usage fees.",
+   "figures_as_printed": [],
+   "quote": "karin also made those in attendance aware that the park commission approved field usage"
+  },
+  {
+   "topic": "Sports Camp per camper fee for grass annex",
+   "what_was_recorded": "Dennis suggested a flat per camper fee because the camp pulls a profit; the commission voted a $10 per camper fee.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "dennis suggested that since this camp pulls a profit that we do a flat per camper fee of $10."
+  },
+  {
+   "topic": "Grass annex hourly fee",
+   "what_was_recorded": "The commission added a $25 per hour fee to the grass annex field usage application.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "motion made by karin menard to add a $25 per hour fee to the application for use of the grass annex."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steve Deschenes",
+   "stated_role": "parent of High School Baseball player",
+   "topic": "Netted backstop at Marshall Park and delay",
+   "quote": "steve deschenes, parent of high school baseball player, asked for an update on the netted backstop at marshall park"
+  },
+  {
+   "speaker": "Christa Palma",
+   "stated_role": "not stated",
+   "topic": "Lack of communication about the field",
+   "quote": "christa palma and stephanie knight inquired as to the lack of communication."
+  },
+  {
+   "speaker": "Stephanie Knight",
+   "stated_role": "not stated",
+   "topic": "Lack of communication about the field",
+   "quote": "christa palma and stephanie knight inquired as to the lack of communication."
+  },
+  {
+   "speaker": "Dan Proctor",
+   "stated_role": "not stated",
+   "topic": "Whether Phillies or Babe Ruth can use the field",
+   "quote": "dan proctor asked if the phillies or babe ruth would be able to play there as well."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (moved to top of agenda)",
+   "resolution": "discussed, no action",
+   "quote": "due to the number of people in attendance, public comment was moved to the top of the agenda."
+  },
+  {
+   "topic": "Review minutes from April 12, 2017",
+   "resolution": "approved 3-0",
+   "quote": "review minutes from april 12, 2017 - karin motioned and pete seconded to accept minutes of april 12, 2017. approved 3-0."
+  },
+  {
+   "topic": "DPW Director / Town Manager Updates",
+   "resolution": "no updates",
+   "quote": "dpw director / town manager updates - no additional updates"
+  },
+  {
+   "topic": "Turf Complex",
+   "resolution": "tabled",
+   "quote": "a) turf complex - tabled due to time constraints."
+  },
+  {
+   "topic": "Leominster Lacrosse usage",
+   "resolution": "tabled",
+   "quote": "b) leominster lacrosse usage - tabled due to time constraints"
+  },
+  {
+   "topic": "Town Beach opening, fees, lessons, boat race",
+   "resolution": "approved opening date, pass fees, lesson dates, boat race",
+   "quote": "town beach - gen nass was present and addressed the commission about opening dates, passes, swim lesson and life guard training."
+  },
+  {
+   "topic": "Baseball and Softball Fields",
+   "resolution": "no updates",
+   "quote": "d) baseball and softball fields- no additional updates."
+  },
+  {
+   "topic": "Policy and procedure discussions for fields, courts and beaches",
+   "resolution": "continued, no action",
+   "quote": "continuation of policy / procedure discussions, fees, schedules and use forms for fields, courts, and beaches"
+  },
+  {
+   "topic": "Friends of Wallis Park playground ideas",
+   "resolution": "no vote; asked to develop a plan",
+   "quote": "friends of wallis park - chris and melony letarte were in attendance to discuss"
+  },
+  {
+   "topic": "Unanticipated Items - Sports Camp grass annex fees",
+   "resolution": "approved per camper fee and hourly fee",
+   "quote": "unanticipated items - dale diamontopolos had submitted a field usage application"
+  },
+  {
+   "topic": "Correspondence and Announcements",
+   "resolution": "no action",
+   "quote": "b) correspondence and announcements - none"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled June 15, 2017 at 7pm",
+   "quote": "next meeting - june 15, 2017 7pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Field usage application for the grass annex (submitted by Dale Diamontopolos)",
+   "where": "text",
+   "quote": "dale diamontopolos had submitted a field usage application for the grass annex next to the turf."
+  },
+  {
+   "name": "Capital Plan for 2018",
+   "where": "text",
+   "quote": "since town meeting approved the capital plan for 2018 that included a play structure for wallis park"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "town beach",
+  "beach passes",
+  "swim lessons",
+  "lifeguard training",
+  "boat race",
+  "fields",
+  "marshall park",
+  "netted backstop",
+  "field usage fees",
+  "wallis park",
+  "playground",
+  "sports camp",
+  "grass annex",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

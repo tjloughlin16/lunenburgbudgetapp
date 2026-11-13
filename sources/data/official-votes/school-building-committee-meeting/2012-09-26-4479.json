@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-09-26",
  "docid": "4479",
@@ -12,23 +12,193 @@
  },
  "votes": [
   {
-   "motion": "Invite the top four firms to interview",
-   "moved_by": "Mr. Barney",
-   "seconded_by": "Mr. Erickson",
+   "motion": "Approve the meeting minutes of March 28, 2012.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "approved meeting minutes from march 28, 2012."
+  },
+  {
+   "motion": "Invite the top four firms (Collaborative Partners, Joslin Lesser Project Management, Dore & Whittier Management Partners, and Skanska Integrated Solutions) to interview with the committee.",
+   "moved_by": "Mike Barney",
+   "seconded_by": "Mark Erickson",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. barney made a motion that the top four firms be invited to interview; mr. erickson seconded the motion. all voted in favor."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Erickson",
-   "seconded_by": "Mr. Barney",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mark Erickson",
+   "seconded_by": "Mike Barney",
    "outcome": "not stated",
    "procedural": true,
    "quote": "at 7:39 mr. erickson made a motion to adjourn. mr. barney seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10343050000000001
+ "note": "OCR text is partly garbled or truncated: the roster lines for John Londa (\"ohn Londa, Director of Facilitie\") and Brian Spadafino (\"LHS Principa\") are cut off, and the minutes call Michael Mackin \"Mike Mackin\" in item 1. Attendance is read from the roster: members not marked absent are recorded as present, which is an inference (Lockwood, Cohen, Londa, Spadafino, Shapiro, Calmes). The minutes-approval line has no motion, mover or count recorded. The adjournment motion has no recorded result. The document carries an \"Approved by SBC March 27, 2013\" stamp dated after this meeting.",
+ "cost_usd": 0.00418492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative, Chair",
+   "status": "present",
+   "quote": "michael mackin, sc representative, chair"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative; Secretary",
+   "status": "present",
+   "quote": "colleen shapiro, sc representative"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "loxi jo calmes, superintendent"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "absent",
+   "quote": "dave matthews, bos representative - absent"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "present",
+   "quote": "nathan lockwood, planning board representative"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative, Vice Chair",
+   "status": "present",
+   "quote": "mr. erickson made a motion to adjourn. mr. barney seconded."
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "mr. barney made a motion that the top four firms be invited to interview"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen-at-large",
+   "status": "absent",
+   "quote": "brian frank, citizen-at-large - absent"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "richard cohen, citizen-at-large"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry speidel, town manager - absent"
+  },
+  {
+   "name": "ohn Londa",
+   "role": "Director of Facilitie (as printed, truncated)",
+   "status": "present",
+   "quote": "ohn londa, director of facilitie"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principa (as printed, truncated)",
+   "status": "present",
+   "quote": "brian spadafino, lhs principa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Interviews with the four finalist firms will be held on October 2 and 4, two per night, with the first presentation at 6:15 and the second at 7:30; each interview allows 45 minutes for presentation, 15 minutes Q&A, and 15 minutes of committee discussion.",
+   "quote": "interviews will be conducted on october 2 and 4. two interviews will take place each night, with the presentation by the first firm to begin at 6:15"
+  },
+  {
+   "decision": "Mr. Londa will prepare a note-taking template for Committee members to use during the interviews.",
+   "quote": "mr. londa will put together a template for committee members to use for note taking during the interviews."
+  },
+  {
+   "decision": "Mr. Londa and Superintendent Calmes will begin checking references for the finalists before the interviews.",
+   "quote": "mr. londa and superintendent calmes will begin checking references for the finalists prior to the interviews."
+  },
+  {
+   "decision": "The finalist chosen by the committee will be determined at the October 10, 2012 School Building Committee meeting, to keep to the planned timeframe and present the OPM selection to the MSBA on November 4, 2012.",
+   "quote": "the finalist chosen by the committee will be determined at the october 10, 2012, school building committee meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:04 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "1. 7:04 pm - called to order by mike mackin, chair."
+  },
+  {
+   "topic": "Approval of minutes from March 28, 2012",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "approved meeting minutes from march 28, 2012."
+  },
+  {
+   "topic": "Review scoring of RES proposals and select finalists",
+   "resolution": "four top-scoring firms invited to interview",
+   "tags": [
+    "OPM selection",
+    "proposals",
+    "scoring"
+   ],
+   "quote": "review scoring of res proposals and select finalists: mr. londa shared tabulation sheets"
+  },
+  {
+   "topic": "Finalize interview schedule",
+   "resolution": "schedule set for October 2 and 4 interviews",
+   "tags": [
+    "interviews",
+    "schedule"
+   ],
+   "quote": "finalize interview schedule: interviews will be conducted on october 2 and 4."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn made at 7:39; outcome not recorded",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "adjournment - at 7:39 mr. erickson made a motion to adjourn. mr. barney seconded."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tabulation sheets (ranked scores of RES proposals, based on Committee Members' scores)",
+   "where": "text",
+   "quote": "mr. londa shared tabulation sheets based upon the scores provided by committee members and using the ranking system previously approved by the committee."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "OPM selection",
+  "MSBA",
+  "consultant interviews",
+  "school construction",
+  "scoring of proposals"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. londa shared tabulation sheets"
+ },
+ "dropped_unquoted_by_field": {}
 }

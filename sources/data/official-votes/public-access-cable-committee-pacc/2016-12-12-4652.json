@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-12-12",
  "docid": "4652",
@@ -10,17 +10,183 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12122016-4652",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2016-12-12-minutes-4652.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "No motions, seconds, or vote counts are recorded in the minutes, so the votes list is empty; the minutes approval and the business plan agreement are recorded as decisions without a motion. The 'Public comments' heading is used for committee discussion items, and only Jo McLaughlin's reclassification request is recorded as public comment. The signature date '1/10/16' appears to be a typo for 2017. Dollar figures are printed only for the ending November balance. Text is plain extracted text, not a scan.",
+ "cost_usd": 0.00345642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the meeting minutes from November 7, 2016",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "review and approve meeting minutes from nov 7 th 2016. 1. committee reviewed and approved the minutes."
+   "name": "Jeff Bajko",
+   "role": "PACC member; signed as PACC Clerk",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member present; PAC coordinator",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09964150000000001
+ "decisions": [
+  {
+   "decision": "The committee decided against setting studio hours for volunteers until the town allocates studio space with a reception area and secure storage for equipment.",
+   "quote": "at the time we decided against it until the town allocates our studio space with a reception area and secure storage for equipment."
+  },
+  {
+   "decision": "Steve Walker will look into Jo McLaughlin's request to reclassify from PAC coordinator to PAC manager, going through the proper channels; Jo recommended speaking with Nancy Forest, town HR representative.",
+   "quote": "steve will look into it and go through the proper channels to reclassify."
+  },
+  {
+   "decision": "The committee reviewed and approved the minutes of Nov 7 2016.",
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "decision": "The committee went through the business plan and agreed on the revisions.",
+   "quote": "the committee went through the business plan and agreed on the revisions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ending November balance",
+   "what_was_recorded": "The coordinator reported the ending November balance.",
+   "quote": "ending nov balance was $297,709.87.",
+   "figures_as_printed": [
+    "$297,709.87"
+   ]
+  },
+  {
+   "topic": "FY17 Budget",
+   "what_was_recorded": "The FY17 Budget was presented to the town accountant, Karen. No dollar figure is printed.",
+   "quote": "fy17 budget was presented to karen, the town accountant.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "New studio table purchase",
+   "what_was_recorded": "Jo bought a new table for the studio. No price is printed.",
+   "quote": "jo bought a new table for the studio.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Christmas background music purchase",
+   "what_was_recorded": "Jo purchased Christmas music for background music on Ch. 8 and 9. No price is printed.",
+   "quote": "jo purchased christmas music for background music on ch. 8 and 9.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Backup drive purchase",
+   "what_was_recorded": "Jo bought a 3 tier byte backup drive. No price is printed.",
+   "quote": "jo bought a 3 tier byte backup drive and down loaded two yule log programs from you tube.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jo McLaughlin",
+   "stated_role": "",
+   "topic": "request to reclassify position from PAC coordinator to PAC manager",
+   "quote": "jo would like to move from pac coordinator to pac manager."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "discussed studio hours (decided against for now); reclassification request referred to Steve Walker",
+   "quote": "steve will look into it and go through the proper channels to reclassify.",
+   "tags": [
+    "studio hours",
+    "volunteers",
+    "staffing",
+    "reclassification"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes from Nov 7 2016",
+   "resolution": "approved",
+   "quote": "committee reviewed and approved the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "reported; no action recorded",
+   "quote": "ending nov balance was $297,709.87.",
+   "tags": [
+    "monthly report",
+    "balance",
+    "studio operations",
+    "Castus"
+   ]
+  },
+  {
+   "topic": "Business and strategic plan update - Finalize",
+   "resolution": "revisions agreed",
+   "quote": "the committee went through the business plan and agreed on the revisions.",
+   "tags": [
+    "business plan",
+    "strategic plan"
+   ]
+  },
+  {
+   "topic": "CAC and Budget update: review ready to release",
+   "resolution": "no action; no CAC meeting this month",
+   "quote": "there is no cac meeting this month.",
+   "tags": [
+    "CAC",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:10pm; next meetings Jan 9 and Feb 6",
+   "quote": "meeting adjourned at 8:10pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY17 Budget",
+   "where": "text",
+   "quote": "fy17 budget was presented to karen, the town accountant."
+  },
+  {
+   "name": "business plan",
+   "where": "text",
+   "quote": "the committee went through the business plan and agreed on the revisions."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "studio",
+  "volunteers",
+  "staffing reclassification",
+  "business plan",
+  "budget",
+  "Castus",
+  "recording meetings",
+  "monthly report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

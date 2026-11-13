@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-01-05",
  "docid": "1469",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 12/1/2014",
+   "motion": "Approve the minutes of 12/1/2014 as submitted.",
    "moved_by": "Mark Erickson",
    "seconded_by": "Dave Matthews",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion to approve by mark erickson, dave matthews second, all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mark Erickson",
    "seconded_by": "Dave Matthews",
    "outcome": "passed",
@@ -29,6 +29,176 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes via macOS Vision. Two votes recorded, both procedural.",
- "cost_usd": 0.0830255
+ "note": "OCR of a single page. Minutes give 'all in favor' with no tally. Attendance and vote counts are as printed; no public comment section is printed.",
+ "cost_usd": 0.00327872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, dave matthews, mike mackin, rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: deb seeley"
+  },
+  {
+   "name": "John Londa",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: john londa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee plans to meet on the first Monday of March.",
+   "quote": "plan to meet first monday of march"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning requests",
+   "what_was_recorded": "The RFQ for feasibility study funding and Town Hall façade painting funding were submitted to the Capital Planning Committee; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the rfq for feasibility study funding and town hall façade painting funding have been submitted for consideration to the capital planning committee"
+  },
+  {
+   "topic": "School building operational expenses",
+   "what_was_recorded": "John Londa supplied updated figures for school building operational expenses; no figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "john londa has supplied updated figures for school building operational expenses."
+  },
+  {
+   "topic": "Cost/revenue data on town buildings",
+   "what_was_recorded": "Jamie Toale and Mark Erickson have been compiling cost and revenue data on all town buildings; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "jamie and mark have been working to compile cost/revenue data on all town buildings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "jamie toale will be attending a library trustees meeting on jan 15\" at 6:45 to discuss the work of"
+  },
+  {
+   "topic": "Minutes approval (12/1/2014)",
+   "resolution": "approved",
+   "quote": "motion to approve by mark erickson, dave matthews second, all in favor."
+  },
+  {
+   "topic": "Planning Board Village Zoning update",
+   "resolution": "no action",
+   "quote": "the planning board has drawn up a working draft and will host public discussions to solicit"
+  },
+  {
+   "topic": "TCP and Brooks property line",
+   "resolution": "no action; members want joint meeting with school committee",
+   "quote": "multiple members of the reuse committee expressed the desire for a joint"
+  },
+  {
+   "topic": "Capital planning update",
+   "resolution": "no action",
+   "quote": "the rfq for feasibility study funding and town hall façade painting funding have been"
+  },
+  {
+   "topic": "Data gathering of cost/revenue expenses",
+   "resolution": "no action",
+   "quote": "john londa has supplied updated figures for school building operational expenses."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set next meeting for first Monday of March",
+   "quote": "plan to meet first monday of march"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:03pm",
+   "quote": "motion to adjourn by mark erickson, dave matthews second, all in favor."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Planning Board Village Zoning working draft",
+   "where": "text",
+   "quote": "the planning board has drawn up a working draft and will host public discussions to solicit"
+  },
+  {
+   "name": "draft Architectural Protection by-law (from the Historic Commission)",
+   "where": "text",
+   "quote": "the planning board is also awaiting a draft architectural protection by-law from the historic commission for comment"
+  },
+  {
+   "name": "draft property line by the middle/high school project engineer",
+   "where": "text",
+   "quote": "mike mackin supplied a draft property line by the middle/high school project engineer"
+  },
+  {
+   "name": "RFQ for feasibility study funding",
+   "where": "text",
+   "quote": "the rfq for feasibility study funding and town hall façade painting funding have been submitted for consideration to the capital planning committee"
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "village zoning",
+  "property line",
+  "school committee",
+  "capital planning",
+  "town buildings",
+  "cost data"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

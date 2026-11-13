@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-04-05",
  "docid": "2347",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "close the Public Hearing on the Proposed Annual Budget FY 2013",
+   "motion": "Close the public hearing on the Proposed Annual Budget FY 2013.",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "bl made motion to close public hearing, br seconded, all approved"
   },
   {
-   "motion": "recommend approval of STM Article 4",
+   "motion": "Recommend approval of STM Article 4 (housekeeping item; monies not borrowed or expended).",
    "moved_by": "BR",
    "seconded_by": "BL",
    "outcome": "passed 6-0",
@@ -28,7 +28,7 @@
    "quote": "br motions to recommend approval, bl seconded, all approved 6-0"
   },
   {
-   "motion": "recommend approval of Revolving Fund articles 1-6",
+   "motion": "Recommend approval of Revolving Fund articles 1-6 (none have increased over prior year).",
    "moved_by": "IM",
    "seconded_by": "SG",
    "outcome": "passed 6-0",
@@ -36,7 +36,7 @@
    "quote": "im made motion to recommend approval of revolving fund articles 1-6 (none have increased over prior year), sg seconded, all in favor, 6-0"
   },
   {
-   "motion": "recommend approval of ATM Article 8 (Town Manager Recommended Budget) in the amount of $27,453,841",
+   "motion": "Recommend approval of ATM Article 8, Town Manager Recommended Budget, in the amount of $27,453,841.",
    "moved_by": "JM",
    "seconded_by": "BR",
    "outcome": "passed 6-0",
@@ -44,7 +44,7 @@
    "quote": "jm made motion to recommend approval in the amount of $27,453,841, br seconded, all approved 6-0"
   },
   {
-   "motion": "recommend approval of ATM Article 9 (Override)",
+   "motion": "Recommend approval of ATM Article 9, Override.",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed 6-0",
@@ -52,7 +52,7 @@
    "quote": "bl made motion to recommend approval, br seconded, all approved 6-0"
   },
   {
-   "motion": "recommend approval of ATM Article 10 (School Feasibility Study)",
+   "motion": "Recommend approval of ATM Article 10, School Feasibility Study.",
    "moved_by": "SG",
    "seconded_by": "BR",
    "outcome": "passed 5-1",
@@ -60,7 +60,7 @@
    "quote": "sg made motion to recommend approval, br seconded, voted approval of 5-1 (bl voted against)"
   },
   {
-   "motion": "recommend approval of ATM Article 12 (Water Department)",
+   "motion": "Recommend approval of ATM Article 12, Water Department.",
    "moved_by": "JM",
    "seconded_by": "BL",
    "outcome": "passed 6-0",
@@ -68,7 +68,7 @@
    "quote": "jm made motion to recommend approval, bl seconded, all in favor 6-0"
   },
   {
-   "motion": "recommend approval of ATM Article 13 (Solid Waste) in the amount of $285K",
+   "motion": "Recommend approval of ATM Article 13, Solid Waste, in the amount of $285K.",
    "moved_by": "BR",
    "seconded_by": "BL",
    "outcome": "passed 6-0",
@@ -76,15 +76,15 @@
    "quote": "br made motion to recommend approval in the amount of $285k, bl seconded, all in favor 6-0"
   },
   {
-   "motion": "recommend approval of ATM Article 14 (Sewer Enterprise Fund) in the amount of $643,726",
+   "motion": "Recommend approval of ATM Article 14, Sewer Enterprise Fund, in the amount of $643,726.",
    "moved_by": "BL",
    "seconded_by": "MM",
-   "outcome": "passed 5-0-1",
+   "outcome": "passed, 5 in favor with one abstention",
    "procedural": false,
    "quote": "bl made motion to recommend approval in the amount of $643,726, mm seconded, sg abstained, 5 in favor with one abstention"
   },
   {
-   "motion": "recommend approval of ATM Article 15 (Capital Plan) in the amount of $464,487",
+   "motion": "Recommend approval of ATM Article 15, Capital Plan, in the amount of $464,487.",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed 6-0",
@@ -92,7 +92,15 @@
    "quote": "bl moves we recommend approval in the amount of $464,487, br seconded, all approved 6-0"
   },
   {
-   "motion": "accept minutes from 3/8/12",
+   "motion": "Accept the minutes of 12/5/11; committee will revise and revote at a later meeting.",
+   "moved_by": "BR",
+   "seconded_by": "SG",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "br made motion to accept, sg seconded, will revise and revote at a later meeting"
+  },
+  {
+   "motion": "Accept the minutes of 3/8/12.",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -100,7 +108,7 @@
    "quote": "bl made motion to accept, br seconded, all approved"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 9:15 pm.",
    "moved_by": "BR",
    "seconded_by": "SG",
    "outcome": "passed 6-0",
@@ -108,7 +116,477 @@
    "quote": "br made motion to adjourn at 9:15 pm, sg seconded, all in favor 6-0"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision extraction. Note: \"IM\" in the Revolving Funds vote appears to be an OCR error for \"JM\" (John Male), as IM does not match any committee member initials listed. Minutes from 12/5/11 had a motion to accept seconded but were deferred for revision and revote—no vote was taken at this meeting, so not recorded.",
- "cost_usd": 0.1495435
+ "dropped_unquoted": 1,
+ "note": "OCR text from scanned pages. Several table and chart figures on pages 6, 7, 10, 11, 12, 15 and 17 are garbled and were not recorded. The tax impact table is only partly readable. The header lists the Finance Committee members without titles. Initials (IM, BL, BR, JM, SG, MM) are as printed; IM may be an OCR error. The Article 10 vote is 5-1 as printed. The call to order is 7:03 PM and the adjournment is 9:15 pm. No public comment is recorded. No transfers are recorded.",
+ "cost_usd": 0.01143122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes respectfully submitted by martha mcdonald"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "member (Finance Committee)",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "John Male",
+   "role": "member (Finance Committee)",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "member (Finance Committee)",
+   "status": "present",
+   "quote": "martha mcdonald, mark erickson, john male, barbara reynolds, scott gile, brian laffond"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry a. speidel, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Articles noted as held, not planned for use, or to be withdrawn (e.g., STM Article 2 not planned; ATM Article 24 to be withdrawn); no vote recorded on these statuses.",
+   "quote": "stm article 2 - do not plan to use"
+  },
+  {
+   "decision": "ATM Article 20 and ATM Article 21 were placed on hold (21 held for amount); no vote recorded.",
+   "quote": "atm article 20 - hold"
+  },
+  {
+   "decision": "ATM Article 24 is to be withdrawn.",
+   "quote": "atm article 24 - to be withdrawn"
+  },
+  {
+   "decision": "Education on pension plans added as a future agenda item.",
+   "quote": "future agenda items - education on pension plans"
+  },
+  {
+   "decision": "Next meeting set for April 26.",
+   "quote": "next meeting - april 26"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Recommended FY2013 operating budget (ATM Article 8)",
+   "what_was_recorded": "Committee moved to recommend the Town Manager Recommended Budget at a stated amount.",
+   "figures_as_printed": [
+    "$27,453,841"
+   ],
+   "quote": "jm made motion to recommend approval in the amount of $27,453,841, br seconded, all approved 6-0"
+  },
+  {
+   "topic": "Solid Waste (ATM Article 13)",
+   "what_was_recorded": "Solid Waste described as level funded; committee recommended the stated amount.",
+   "figures_as_printed": [
+    "$285K"
+   ],
+   "quote": "br made motion to recommend approval in the amount of $285k, bl seconded, all in favor 6-0"
+  },
+  {
+   "topic": "Sewer Enterprise Fund (ATM Article 14)",
+   "what_was_recorded": "Committee recommended the Sewer Enterprise Fund amount, with one abstention.",
+   "figures_as_printed": [
+    "$643,726"
+   ],
+   "quote": "bl made motion to recommend approval in the amount of $643,726, mm seconded, sg abstained, 5 in favor with one abstention"
+  },
+  {
+   "topic": "Capital Plan (ATM Article 15)",
+   "what_was_recorded": "Committee recommended the Capital Plan amount.",
+   "figures_as_printed": [
+    "$464,487"
+   ],
+   "quote": "bl moves we recommend approval in the amount of $464,487, br seconded, all approved 6-0"
+  },
+  {
+   "topic": "Override amount",
+   "what_was_recorded": "The FY2013 override was presented as a total with its stated uses.",
+   "figures_as_printed": [
+    "$2.2M",
+    "$1,131,040",
+    "$14,325",
+    "$36,600",
+    "$82,040",
+    "$31,554",
+    "$5,463",
+    "$25,000",
+    "$500k",
+    "$50k",
+    "$35k",
+    "$277,432"
+   ],
+   "quote": "fy2013 override = $2.2m"
+  },
+  {
+   "topic": "Override allocation to School",
+   "what_was_recorded": "Part of the override is allocated to the School Department.",
+   "figures_as_printed": [
+    "$1,131,040"
+   ],
+   "quote": "$1,131,040 for school department"
+  },
+  {
+   "topic": "Override allocation to Senior Center and Library",
+   "what_was_recorded": "Override funds listed for the Senior Center and the Library.",
+   "figures_as_printed": [
+    "$14,325",
+    "$36,600"
+   ],
+   "quote": "$14,325 for senior center; $36,600 for library"
+  },
+  {
+   "topic": "Override allocation to Reserve Fund, pavement and DPW",
+   "what_was_recorded": "Override funds listed for Reserve Fund, pavement management, crack seal and a DPW laborer.",
+   "figures_as_printed": [
+    "$25,000",
+    "$500k",
+    "$50k",
+    "$35k"
+   ],
+   "quote": "$500k for pavement management program; $50k for crack seal"
+  },
+  {
+   "topic": "Override remainder to Stabilization Fund",
+   "what_was_recorded": "Remaining override amount to be set aside in a new Stabilization Fund.",
+   "figures_as_printed": [
+    "$277,432"
+   ],
+   "quote": "$277,432 remaining to be set aside in new stabilization fund"
+  },
+  {
+   "topic": "Chapter 70 state aid",
+   "what_was_recorded": "Governor's projected Chapter 70 increase over the current year.",
+   "figures_as_printed": [
+    "+$586,714"
+   ],
+   "quote": "big increase (+$586,714) over current year"
+  },
+  {
+   "topic": "Lottery Aid loss",
+   "what_was_recorded": "Town has lost Lottery Aid since FY2009, about 37 percent.",
+   "figures_as_printed": [
+    "$485k"
+   ],
+   "quote": "town has lost $485k in lottery aid since"
+  },
+  {
+   "topic": "FY2013 budget gap",
+   "what_was_recorded": "Requested budgets exceeded available revenue by a stated amount, which must be cut.",
+   "figures_as_printed": [
+    "$1,496,304"
+   ],
+   "quote": "need to cut $1,496,304"
+  },
+  {
+   "topic": "Deficit assigned to schools and other departments",
+   "what_was_recorded": "Deficit split between the School and other departments.",
+   "figures_as_printed": [
+    "$1,131,040",
+    "$365,264"
+   ],
+   "quote": "reduce other departments by $365,264"
+  },
+  {
+   "topic": "School reductions",
+   "what_was_recorded": "School budget cuts including health insurance savings, personnel and programs, materials and fees.",
+   "figures_as_printed": [
+    "$133k",
+    "$850k",
+    "$120k",
+    "$97k"
+   ],
+   "quote": "reduction in personnel/ programs = $850k"
+  },
+  {
+   "topic": "School health insurance savings",
+   "what_was_recorded": "Health insurance renewal savings in the school budget.",
+   "figures_as_printed": [
+    "$133k"
+   ],
+   "quote": "health insurance renewal savings = $133k"
+  },
+  {
+   "topic": "Reduction in materials and supplies",
+   "what_was_recorded": "School materials and supplies reduced.",
+   "figures_as_printed": [
+    "$120k"
+   ],
+   "quote": "reduction in materials & supplies = $120k"
+  },
+  {
+   "topic": "Increased fees",
+   "what_was_recorded": "Fees increased, including athletic fees and school lunch.",
+   "figures_as_printed": [
+    "$97k"
+   ],
+   "quote": "increased fees = $97k"
+  },
+  {
+   "topic": "Debt service increase",
+   "what_was_recorded": "Debt service up, including financing for DPW and FY10 and 11 CIP.",
+   "figures_as_printed": [
+    "$158,542"
+   ],
+   "quote": "up $158,542- includes financing for dpw and fy10 & 11 cip"
+  },
+  {
+   "topic": "Police and Fire IOD",
+   "what_was_recorded": "Huge increase in Police/Fire IOD from FY11 to FY12.",
+   "figures_as_printed": [
+    "$29k",
+    "$75k"
+   ],
+   "quote": "huge increase in police/ fire iod in fy12 [$29k in fy11 to $75k in"
+  },
+  {
+   "topic": "Health insurance renewal",
+   "what_was_recorded": "Health insurance renewal estimate compared with actual rate, described as artificially low.",
+   "figures_as_printed": [
+    "$76k",
+    "$67k"
+   ],
+   "quote": "health insurance renewal +5.4% estimate [$76k]; actual 3.55%"
+  },
+  {
+   "topic": "Retirement assessment",
+   "what_was_recorded": "Retirement assessment increased due to a change in calculation method.",
+   "figures_as_printed": [
+    "$87k",
+    "14.59%"
+   ],
+   "quote": "increase of $87k, or 14.59%, due to adjustment in method of"
+  },
+  {
+   "topic": "DPW budget",
+   "what_was_recorded": "DPW essentially level funded; snow and ice appropriation increased from about $130k to $250k; road maintenance needs about $1M per year.",
+   "figures_as_printed": [
+    "+$4,366",
+    "$130k",
+    "$250k",
+    "$1M"
+   ],
+   "quote": "essentially level funded, +$4,366"
+  },
+  {
+   "topic": "Snow and ice appropriation",
+   "what_was_recorded": "Snow and Ice Appropriation increased over the years.",
+   "figures_as_printed": [
+    "$130k",
+    "$250k"
+   ],
+   "quote": "about $130k to $250k"
+  },
+  {
+   "topic": "Road maintenance need",
+   "what_was_recorded": "Comprehensive Road Management Plan indicates about $1M per year needed to maintain roads.",
+   "figures_as_printed": [
+    "$1M"
+   ],
+   "quote": "about $1m per year to maintain roads"
+  },
+  {
+   "topic": "Senior Center cut",
+   "what_was_recorded": "10% cut to Senior Center and Library; Senior Center cut of $12k.",
+   "figures_as_printed": [
+    "$12k"
+   ],
+   "quote": "discretionary, senior center, cut $12k"
+  },
+  {
+   "topic": "Library state aid at risk",
+   "what_was_recorded": "Library would lose State Aid if a waiver is not granted.",
+   "figures_as_printed": [
+    "$12,078"
+   ],
+   "quote": "if waiver is not granted, the library will lose state aid, $12,078"
+  },
+  {
+   "topic": "Administration and Land Use cuts",
+   "what_was_recorded": "Administration and Land Use offices cut by a stated total, about 7.3 percent.",
+   "figures_as_printed": [
+    "$101,458"
+   ],
+   "quote": "cutting a total of $101,458, or about 7.3%"
+  },
+  {
+   "topic": "Capital target and recommendations",
+   "what_was_recorded": "Long-term capital target of 5% of operational expenditures compared with CPC and TM recommendations.",
+   "figures_as_printed": [
+    "$1,407,256",
+    "$504,387",
+    "$464,487"
+   ],
+   "quote": "5% of operational expenditures = $1,407,256"
+  },
+  {
+   "topic": "CPC capital recommendation",
+   "what_was_recorded": "CPC recommended a capital figure.",
+   "figures_as_printed": [
+    "$504,387"
+   ],
+   "quote": "cpc recommendation = $504,387"
+  },
+  {
+   "topic": "Capital plan total expense",
+   "what_was_recorded": "Total capital expense about $1.2M, partially funded under Chapter 90 (OCR text partly garbled).",
+   "figures_as_printed": [
+    "$1.2M"
+   ],
+   "quote": "total espense $1.2m partinlly funded, chepter 90"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing on Proposed Annual Budget FY 2013",
+   "resolution": "hearing opened and closed",
+   "quote": "public hearing opened - town manager presented proposed annual budget fy 2013 as presented to the bos on 3/13/12",
+   "tags": [
+    "FY2013 budget",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "FY2013 budget presentation by Town Manager",
+   "resolution": "presented, no action",
+   "quote": "re-presented april 5, 2012",
+   "tags": [
+    "FY2013 budget",
+    "Town Manager",
+    "cuts",
+    "override"
+   ]
+  },
+  {
+   "topic": "Review of warrant articles",
+   "resolution": "recommendations voted on several articles; others held or not planned",
+   "quote": "review warrant articles",
+   "tags": [
+    "warrant articles",
+    "town meeting",
+    "revolving funds"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "12/5/11 minutes to be revised and revoted; 3/8/12 minutes approved",
+   "quote": "minutes from 12/5/11 reviewed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Future agenda and next meeting",
+   "resolution": "pension plan education added; next meeting April 26",
+   "quote": "future agenda items - education on pension plans",
+   "tags": [
+    "pension plans",
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:15 pm",
+   "quote": "br made motion to adjourn at 9:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "HANDOUT (not further described)",
+   "where": "list",
+   "quote": "handout - bl made motion to close public hearing"
+  },
+  {
+   "name": "Proposed Annual Budget FY2013, March 13, 2012, re-presented April 5, 2012 (Town Manager, Kerry A. Speidel)",
+   "where": "list",
+   "quote": "re-presented april 5, 2012"
+  },
+  {
+   "name": "The Override Proposal is a 5-Year Plan (Tax Levy and Stabilization Fund table)",
+   "where": "list",
+   "quote": "the override proposal is a 5-year plan"
+  },
+  {
+   "name": "Estimated Impact of $2.2M Override to homeowners by AV (single family residences table)",
+   "where": "list",
+   "quote": "estimated impactof s2.2moverride to homeowners by av"
+  },
+  {
+   "name": "Financial Forecast",
+   "where": "text",
+   "quote": "what was shown in the financial forecast"
+  },
+  {
+   "name": "Comprehensive Road Management Plan",
+   "where": "text",
+   "quote": "comprehensive road management plan indicates we need to spend"
+  },
+  {
+   "name": "Warrant Articles (STM Articles 1-6 and ATM Articles 1-25)",
+   "where": "text",
+   "quote": "review warrant articles"
+  },
+  {
+   "name": "Minutes from 12/5/11",
+   "where": "text",
+   "quote": "minutes from 12/5/11 reviewed"
+  },
+  {
+   "name": "Minutes from 3/8/12",
+   "where": "text",
+   "quote": "minutes from 3/8 12 reviewed"
+  },
+  {
+   "name": "BOS Policy on operating and capital budget levels",
+   "where": "text",
+   "quote": "bos policy: operating budgets should be set at"
+  }
+ ],
+ "tags": [
+  "FY2013 budget",
+  "warrant articles",
+  "town meeting",
+  "override",
+  "school budget",
+  "public works",
+  "library",
+  "senior center",
+  "revolving funds",
+  "capital plan",
+  "sewer enterprise",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

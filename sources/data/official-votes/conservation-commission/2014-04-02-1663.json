@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-04-02",
  "docid": "1663",
@@ -12,6 +12,136 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes show \"MINUTES APPROVAL: March 19, 2014\" but record no motion, seconding, or outcome for that approval. The document header states \"APPROVED 5/7/2014\" (the date these minutes were approved at a subsequent meeting), but the April 2 meeting minutes themselves contain no formal votes—only discussions (one explicitly stating \"No decision was made\") and announcements.",
- "cost_usd": 0.08237649999999999
+ "note": "Text extraction only; no votes recorded in the minutes. The March 19, 2014 minutes approval is listed without a motion or result. Member names appear in an unlabelled header line, so attendance is inferred from that line and roles are not printed. Brandon Kibbe is named only as a future presenter, so he is not listed as an attendee. Header characters are garbled and some words are split by extraction, which affects quote fidelity only. The minutes are marked APPROVED 5/7/2014.",
+ "cost_usd": 0.00393272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "present",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "present",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "jj cote, jack byrne, sharon jordan, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "visitor",
+   "status": "present",
+   "quote": "dan proctor ~ 129 massachusetts avenue"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No decision was taken on acquiring a piece of Dan Proctor's property on Burrage Street; the Commission will discuss it further.",
+   "quote": "no decision was made, will discuss further."
+  },
+  {
+   "decision": "Brandon Kibbe will meet with the Commission on April 16 at 8:00 PM to update everyone on the status of the Lane property.",
+   "quote": "to update everyone on the status of the lane property."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Discussion with Dan Proctor re 323 & 331 Rear Burrage Street",
+   "resolution": "no decision; will discuss further",
+   "quote": "no decision was made, will discuss further.",
+   "tags": [
+    "land acquisition",
+    "Burrage Street",
+    "gravel swap"
+   ]
+  },
+  {
+   "topic": "Minutes approval of March 19, 2014",
+   "resolution": "listed; no action recorded",
+   "quote": "minutes approval: march 19, 2014",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "right to farm bylaw on town meeting warrant",
+   "tags": [
+    "site inspection",
+    "hearings",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "meeting schedule: april 16",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Commission comment: Lane property",
+   "resolution": "update scheduled for April 16",
+   "quote": "to update everyone on the status of the lane property.",
+   "tags": [
+    "Lane property",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:27 PM",
+   "quote": "adjournment: 8:27 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Burrage Street",
+  "Dan Proctor",
+  "land acquisition",
+  "gravel swap",
+  "Lane property",
+  "open space",
+  "site inspection",
+  "Right To Farm",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

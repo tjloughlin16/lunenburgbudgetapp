@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2016-10-20",
  "docid": "3259",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
@@ -21,6 +21,171 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision. One vote recorded: motion to adjourn.",
- "cost_usd": 0.07876449999999999
+ "note": "OCR text from a scanned page (macOS Vision), single page. The attendance line and the adjournment are the only recorded votes; no other motions appear. Pete McCauliff has no role printed. No public comment is recorded. The September 22, 2016 minutes were not present. The Facility Request draft is described in the text but not set out in a list.",
+ "cost_usd": 0.00321842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: dennis mannone, pete mccauliff, karin menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: dennis mannone, pete mccauliff, karin menard"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "",
+   "status": "present",
+   "quote": "attendance: dennis mannone, pete mccauliff, karin menard"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director / Town Manager",
+   "status": "absent",
+   "quote": "3) dpw director / town manager updates - jack rodriquenz not present"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review of the September 22, 2016 minutes was deferred to the next meeting because no minutes were present.",
+   "quote": "2) review minutes of september 22, 2016. - no minutes present - will review next meeting"
+  },
+  {
+   "decision": "Karin Menard will edit the draft Facility Request and Permit Application for the next meeting, including discussion of adding an hourly rate to the facility-requested section.",
+   "quote": "discus- sion around adding hourly rate to facility being requested section and general wording. karin will edit for next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf complex funding from Bengals",
+   "what_was_recorded": "A letter of intent from the Bengals to contribute a yearly amount toward the turf complex was reported; no written agreement from LYSA yet.",
+   "figures_as_printed": [
+    "$7,500 per year"
+   ],
+   "quote": "they do have a letter of intent from the bengals to contribute $7,500 per year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:01",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "1) call to order - 7:01 attendance: dennis mannone, pete mccauliff, karin menard"
+  },
+  {
+   "topic": "Review of minutes of September 22, 2016",
+   "resolution": "deferred to next meeting",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "2) review minutes of september 22, 2016. - no minutes present - will review next meeting"
+  },
+  {
+   "topic": "DPW Director / Town Manager updates",
+   "resolution": "no update; DPW Director absent",
+   "tags": [
+    "DPW"
+   ],
+   "quote": "3) dpw director / town manager updates - jack rodriquenz not present"
+  },
+  {
+   "topic": "Turf complex discussion and update",
+   "resolution": "discussed; no action",
+   "tags": [
+    "turf complex",
+    "LYSA",
+    "Bengals",
+    "cell tower"
+   ],
+   "quote": "a) turf complex discussion and update - pete said turf was no longer being expedited due to weather."
+  },
+  {
+   "topic": "Playground updates",
+   "resolution": "discussed; no action",
+   "tags": [
+    "playground"
+   ],
+   "quote": "b) playground updates and discussion - karin forwarded pictures to jack r"
+  },
+  {
+   "topic": "Facility request and permit policy",
+   "resolution": "continued; Karin to edit draft for next meeting",
+   "tags": [
+    "field use policy",
+    "fees",
+    "permits",
+    "scheduling"
+   ],
+   "quote": "karin shared draft of facility request and permit application."
+  },
+  {
+   "topic": "Other business: unanticipated items",
+   "resolution": "no items recorded",
+   "tags": [
+    "other business"
+   ],
+   "quote": "a) unanticipated items"
+  },
+  {
+   "topic": "Correspondence, announcements and public comment",
+   "resolution": "received and filed",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "b) correspondence, announcements and public comment"
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting set for November 17, 2016",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "6) upcoming meeting schedule - november 17, 2016"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3-0 at 8:18",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "motion to adjourn by karin menard at 8:18, seconded by dennis mannone - 3-0 to adjourn."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Facility Request and Permit Application",
+   "where": "text",
+   "quote": "karin shared draft of facility request and permit application."
+  },
+  {
+   "name": "Letter of intent from the Bengals",
+   "where": "text",
+   "quote": "they do have a letter of intent from the bengals to contribute $7,500 per year."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "turf complex",
+  "playground",
+  "field and facility permits",
+  "fees and scheduling",
+  "LYSA",
+  "cell tower",
+  "meeting minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

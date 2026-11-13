@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-08-27",
  "docid": "3667",
@@ -12,23 +12,229 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of July 23, 2012, EPG Public Hearing Continuation of July 23, 2012, and minutes of July 30, 2012",
+   "motion": "Approve the minutes of July 23, 2012, the EPG Public Hearing Continuation of July 23, 2012, and the minutes of July 30, 2012.",
    "moved_by": "Ms. Bilotta-Simeone",
-   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve minutes of july 23, 2012, epg public hearing continuation of july 23, 2012, and minutes of july 30, 2012, ms. bilotta-simeone, second, mr. bodkin jr., minutes signed."
+   "quote": "motion to approve minutes of july 23, 2012, epg public hearing continuation of july 23, 2012, and minutes of july 30, 2012, ms. bilotta-simeone, second, mr. bodkin jr., minutes signed.",
+   "seconded_by": "Mr. Bodkin Jr."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Bodkin Jr.",
-   "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, mr. bodkin jr., second, mr. saiia, adjourned 7:58 pm."
+   "quote": "motion, mr. bodkin jr., second, mr. saiia, adjourned 7:58 pm.",
+   "seconded_by": "Mr. Saiia"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0909375
+ "note": "Extracted text, not a scan. No vote tallies are printed; the minutes approval and adjournment are recorded with no count, so outcomes are marked from the minutes' own wording (\"minutes signed\", \"adjourned 7:58 PM\"). The minutes name the Revised Site Plan Rendering in text but set out no documents list. Attendance for Mr. Whalen and Attorney Fenton is inferred from their appearance before the board.",
+ "cost_usd": 0.00499082,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair tel: (978) 582-4147, ext 5"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson, planning director"
+  },
+  {
+   "name": "Scott Fenton",
+   "role": "Attorney, Bowditch & Dewey, representing the applicant",
+   "status": "present",
+   "quote": "the applicant was represented by attorney scott fenton, bowditch & dewey."
+  },
+  {
+   "name": "Mr. Whalen",
+   "role": "New West Townsend Road",
+   "status": "present",
+   "quote": "mr. whalen, new west townsend road, was concerned that panels would be visible from his house due to slope of land."
+  },
+  {
+   "name": "Glenn Eaton",
+   "role": "Executive Director, MRPC",
+   "status": "not stated",
+   "quote": "draft agreement prepared by glenn eaton, executive director, mrpc, for planning board technical assistance"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Bakaysa requested a colored rendering of the landscape plan for the September 10th Public Hearing (MASS PV1, LLC applicant).",
+   "quote": "mr. bakaysa requested a colored rendering of the landscape plan for the september 10 th public hearing."
+  },
+  {
+   "decision": "Board noted the Draft Agreement from MRPC for Planning Board technical assistance was under discussion; no decision recorded on whether to enter it.",
+   "quote": "mr. bakaysa noted draft agreement prepared by glenn eaton, executive director, mrpc, for planning board technical assistance to ensure the board is meeting all regulatory req uirements",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MRPC Draft Agreement for Planning Board technical assistance",
+   "what_was_recorded": "Ms. Bilotta-Simeone was concerned with the cost of the proposed MRPC technical assistance agreement and felt training and support should be provided to current staff; no figure was printed.",
+   "quote": "ms. bilotta -simeone was concerned with the cost entailed by this, and felt training and support should be provided to current staff.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Special Town Meeting articles (net metering and PILOT Agreement)",
+   "what_was_recorded": "Noted the September 25, 2012 Special Town Meeting has two articles, one on net metering and one for a PILOT Agreement; no dollar figure printed.",
+   "quote": "noted special town meeting date of september 25, 2012. there are presently two articles; one to approve net metering and one for a pilot agreement.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Whalen",
+   "stated_role": "New West Townsend Road",
+   "topic": "Visibility of solar panels from his house",
+   "quote": "mr. whalen, new west townsend road, was concerned that panels would be visible from his house due to slope of land."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Information meeting at Dippin' Donuts",
+   "resolution": "referred to separate minutes",
+   "quote": "6:30 pm- information meeting, dippin' donuts, 457 massachusetts avenue- see separate minutes.",
+   "tags": [
+    "information meeting"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved (July 23, July 30 and EPG hearing continuation minutes)",
+   "quote": "motion to approve minutes of july 23, 2012, epg public hearing continuation of july 23, 2012, and minutes of july 30, 2012, ms. bilotta-simeone, second, mr. bodkin jr., minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "noted special town meeting date of september 25, 2012. there are presently two articles; one to approve net metering and one for a pilot agreement.",
+   "tags": [
+    "special town meeting",
+    "solar",
+    "PILOT"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "mrpc- meeting scheduled for august 28th.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Planning Director's report: development status",
+   "resolution": "noted",
+   "quote": "asian imperial, 5 electric avenue - update notes work progressing.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "september 10th- mass pv1 public hearing following by board meeting, town hall",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Member issues: continuity of land use planning in Director's absence",
+   "resolution": "discussed; MRPC draft agreement for technical assistance raised, no vote",
+   "quote": "member issues: there was discussion regarding the continuity of land use planning matters in the director's absence.",
+   "tags": [
+    "staffing",
+    "technical assistance",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Appointment: MASS PV1, LLC, Chase Road (solar project)",
+   "resolution": "applicant presented revised project; colored landscape rendering requested for September 10 hearing",
+   "quote": "appointment: mass pv1, llc, chase road- the applicant was represented by attorney scott fenton, bowditch & dewey.",
+   "tags": [
+    "solar",
+    "site plan",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:58 PM",
+   "quote": "motion, mr. bodkin jr., second, mr. saiia, adjourned 7:58 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised Site Plan Rendering (on file in the Planning Office)",
+   "where": "text",
+   "quote": "the revised site plan rendering (on file in the planning office), shows an area a, b, and c."
+  },
+  {
+   "name": "Draft Agreement prepared by Glenn Eaton, Executive Director, MRPC",
+   "where": "text",
+   "quote": "draft agreement prepared by glenn eaton, executive director, mrpc, for planning board technical assistance"
+  },
+  {
+   "name": "Town Counsel correspondence with State Attorney General",
+   "where": "text",
+   "quote": "noted town counsel correspondence with state attorney general reque sting approval of article 17, solar energy systems",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar",
+  "MASS PV1",
+  "Chase Road",
+  "development status",
+  "minutes approval",
+  "special town meeting",
+  "MRPC technical assistance",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

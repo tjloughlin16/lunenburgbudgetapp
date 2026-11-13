@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-08-27",
  "docid": "2252",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the August 11 meeting",
+   "motion": "Approve the minutes of the August 11 meeting.",
    "moved_by": "Jay",
    "seconded_by": "Terri",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "jay made a motion to approve the minutes and terri seconded the motion. the committee approved the minutes 4-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Terri B.",
    "seconded_by": "Jay S.",
    "outcome": "passed 4-0",
@@ -29,6 +29,200 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. Section 6 mentions the committee \"arrived at a consensus\" on the building re-use recommendation, but this is framed as consensus rather than a formal motion vote, so not counted. OCR extracted from macOS Vision.",
- "cost_usd": 0.08605550000000001
+ "note": "OCR text with some garbled characters (e.g. 'ОРЕВ' in the expenditures list, 'Mn-FY16' footers). The minutes print no dollar figures; the budget items carry percentages only. Karin Menard's departure is noted mid-meeting, after which the adjournment vote was 4-0. Minutes are dated as submitted September 8, 2015. No documents list heading is printed; documents are mentioned only in the text.",
+ "cost_usd": 0.005626819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "note: karin departed now."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: kerry lafleur"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Liaison",
+   "status": "absent",
+   "quote": "not present: tom alonzo, bos liaison"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee reached a consensus to recommend that the Board of Selectmen approve one of the vendors who bid on the building re-use plans project (no vote recorded).",
+   "quote": "the committee arrived at a consensus to recommend that the board of selectmen approve one of the vendors who bid on the project"
+  },
+  {
+   "decision": "The committee will meet on Tuesday, September 8 to begin planning for FY16 and beyond.",
+   "quote": "the committee will meet on tuesday, september 8 to begin planning for fy16 and beyond"
+  },
+  {
+   "decision": "Members are to think about the budget process (priorities, actions) for the next meeting.",
+   "quote": "think about the budget process:"
+  },
+  {
+   "decision": "Mark added sale of surplus property to the future agenda.",
+   "quote": "mark has added sale of surplus property to our future agenda."
+  },
+  {
+   "decision": "Mark is arranging a time for the committee to visit the Junior-Senior High School project site.",
+   "quote": "mark is arranging a time when the committee can visit the junior-senior high school project site to see progress to date."
+  },
+  {
+   "decision": "John Henshaw will obtain Dick Mailloux's email address for Terri Burchfield before the Trustees meeting.",
+   "quote": "john will get it for her."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Personnel costs as share of Town expenditures and budget",
+   "what_was_recorded": "Direct wages and salaries were just under half of 2015 actual expenditures and are planned slightly lower in the 2016 budget; with health insurance and benefits, total personnel costs are a bit over 60%.",
+   "figures_as_printed": [
+    "just under 50%",
+    "a bit over 60%"
+   ],
+   "quote": "direct wages and salaries were just under 50% of the actual expenditures in 2015"
+  },
+  {
+   "topic": "Associated employment costs",
+   "what_was_recorded": "Associated costs of employment increase costs to the Town by some 18 percent.",
+   "figures_as_printed": [
+    "18 percent"
+   ],
+   "quote": "associated costs to employment increase costs to the town by some 18 percent."
+  },
+  {
+   "topic": "Growth in personnel costs FY2013-2015",
+   "what_was_recorded": "Wages and salaries (excluding the school department) appear to have grown about 2% per year, so those costs declined relative to total Town revenue.",
+   "figures_as_printed": [
+    "about two percent",
+    "about 2% per year"
+   ],
+   "quote": "wages and salaries appear to have grown by about 2% per year from fy2013-2015"
+  },
+  {
+   "topic": "Long-term capital projects (building re-use, Turkey Hill)",
+   "what_was_recorded": "Building re-use and a potential Turkey Hill renovation, with other capital requests, could divert revenues that would otherwise fund future operating expenses. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the building re-use project and the potential renovation to repurpose turkey"
+  },
+  {
+   "topic": "Revenue limits and overrides",
+   "what_was_recorded": "Proposition 2 1/2 and projected growth constrain revenue growth; a general-fund override and fee-based revenues were discussed. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "structural limits constrain revenue growth (e.g. proposition 2 ½ and"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Comments (public hearing notice; Dick Mailloux contact)",
+   "resolution": "no action",
+   "quote": "terri b. asked john h. for dick mailloux' email address so she can get in"
+  },
+  {
+   "topic": "Town Manager's Report: personnel costs",
+   "resolution": "discussed; no action",
+   "quote": "kerry directed our attention to karen brochu's spreadsheet on personnel costs as a percentage of total town budget"
+  },
+  {
+   "topic": "FY2017 budget process: projections, expenditures, revenues, priorities",
+   "resolution": "discussed; action item for next meeting",
+   "quote": "the fy2017 budget process: projecting revenues and expenditures and setting priorities."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 4-0",
+   "quote": "jay made a motion to approve the minutes and terri seconded the motion."
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "received; reports noted",
+   "quote": "rhonda lisio has circulated a document on how other towns use their public access funds."
+  },
+  {
+   "topic": "Future agenda item: sale of surplus property",
+   "resolution": "added to future agenda",
+   "quote": "mark has added sale of surplus property to our future agenda."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:49",
+   "quote": "terri b. moved to adjourn the meeting and jay s. seconded the motion."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Karen Brochu's spreadsheet on personnel costs as a percentage of total Town budget",
+   "where": "text",
+   "quote": "kerry directed our attention to karen brochu's spreadsheet on personnel costs as a percentage of total town budget"
+  },
+  {
+   "name": "Rhonda Lisio's document on how other towns use their Public Access funds",
+   "where": "text",
+   "quote": "rhonda lisio has circulated a document on how other towns use their public access funds."
+  },
+  {
+   "name": "RFQ documents for building re-use plans",
+   "where": "text",
+   "quote": "the rfq documents are available for public review at town hall."
+  },
+  {
+   "name": "Application for a Pet Service Facility on Electric Ave.",
+   "where": "text",
+   "quote": "an applications for a pet service facility on electric ave."
+  },
+  {
+   "name": "Application for cluster development to develop 66 dwelling units on Northfield Road",
+   "where": "text",
+   "quote": "and an application for cluster development to develop 66 dwelling units on northfield road."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY2017 budget",
+  "personnel costs",
+  "capital projects",
+  "Proposition 2 1/2",
+  "revenue limits",
+  "public hearing",
+  "minutes",
+  "committee updates"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

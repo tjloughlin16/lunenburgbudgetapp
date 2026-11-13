@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2015-05-11",
  "docid": "2574",
@@ -10,17 +10,200 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05112015-2574",
   "doc_url": "/docs/meetings/historical-commission/2015-05-11-minutes-2574.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Scanned OCR text with no vote tallies or motion language; the minutes record approvals and adjournment without a motion, so no votes are extracted. The word \"interdependent\" in the call-to-order paragraph appears as printed and may be an OCR error. Minutes show a RECEIVED & FILED stamp dated JUN 09 2015. No dollar figures appear. No public comment section is printed.",
+ "cost_usd": 0.00370082,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the April 7, 2015 and April 28, 2015 minutes",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "april 7, 2015 minutes and april 28, 2015 minutes were approved."
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Lois Lewis",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
   }
  ],
- "dropped_unquoted": 0,
- "note": "The minutes record one procedural vote to approve prior minutes. The text does not name who moved or seconded this approval, nor does it provide a specific vote count (e.g., 5-0), only that the minutes \"were approved.\"",
- "cost_usd": 0.0102029
+ "decisions": [
+  {
+   "decision": "April 7, 2015 and April 28, 2015 minutes were approved; the minutes record no motion or tally for this.",
+   "quote": "april 7, 2015 minutes and april 28, 2015 minutes were approved."
+  },
+  {
+   "decision": "Cullen Dwyer to look into the Marshall Park stone wall and parking lot matter and report back to the Commission.",
+   "quote": "cullen will look into this matter and report back to the commission."
+  },
+  {
+   "decision": "Becky Lantry to provide the Massachusetts Historical Society an electronic copy of the Village Center District survey.",
+   "quote": "becky will provide the massachusetts historical society an electronic copy of the survey of the village center district prepared by damon mcquaid."
+  },
+  {
+   "decision": "Becky Lantry to submit an article for the Lunenburg Ledger, Historically Speaking, for May.",
+   "quote": "becky will submit an article for the lunenburg ledger, historically speaking, for may."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and bylaw acknowledgement",
+   "resolution": "acknowledged adoption of Village Center and Architectural Preservation District bylaws at Town Meeting",
+   "quote": "meeting called to order at 7:00 p.m. after an acknowledgement of the adoption as interdependent the village center district bylaw",
+   "tags": [
+    "bylaws",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved April 7 and April 28, 2015 minutes",
+   "quote": "april 7, 2015 minutes and april 28, 2015 minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action; none received",
+   "quote": "correspondence and communications: none.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Demolition delay requests",
+   "resolution": "no requests reported",
+   "quote": "richard reported there were no demolition delay requests.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "North Cemetery receiving tomb repair",
+   "resolution": "repair work advised; no action recorded",
+   "quote": "richard advised the members of the necessary repair work for the receiving tomb at the north cemetery.",
+   "tags": [
+    "cemetery",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Plaques for historic homes",
+   "resolution": "information on sizes and materials gathered",
+   "quote": "becky has obtained information for the various sizes and materials for plaques to mark historic homes.",
+   "tags": [
+    "plaques",
+    "historic homes"
+   ]
+  },
+  {
+   "topic": "Village Center District survey to Massachusetts Historical Society",
+   "resolution": "Becky to provide electronic copy",
+   "quote": "becky will provide the massachusetts historical society an electronic copy of the survey of the village center district prepared by damon mcquaid.",
+   "tags": [
+    "survey",
+    "village center"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger article",
+   "resolution": "Becky to submit article for May",
+   "quote": "becky will submit an article for the lunenburg ledger, historically speaking, for may.",
+   "tags": [
+    "newsletter",
+    "publicity"
+   ]
+  },
+  {
+   "topic": "Historic Homes tour",
+   "resolution": "discussed; possible tour for 2016",
+   "quote": "a possible historic homes tour for sometime in 2016 was discussed.",
+   "tags": [
+    "historic homes tour"
+   ]
+  },
+  {
+   "topic": "Marshall Park stone wall and trees",
+   "resolution": "Cullen to look into matter and report back",
+   "quote": "an article in the lunenburg ledger reported that in the summer of 2014 the park and recreation department to expand a parking lot cut down trees",
+   "tags": [
+    "marshall park",
+    "stone wall",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:55 p.m.; no motion recorded",
+   "quote": "the meeting adjourned at 7:55 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Village Center District Bylaw",
+   "where": "text",
+   "quote": "after an acknowledgement of the adoption as interdependent the village center district bylaw and the architectural preservation district bylaw at the town meeting, may 2, 2015."
+  },
+  {
+   "name": "Architectural Preservation District bylaw",
+   "where": "text",
+   "quote": "after an acknowledgement of the adoption as interdependent the village center district bylaw and the architectural preservation district bylaw at the town meeting, may 2, 2015."
+  },
+  {
+   "name": "Survey of the Village Center District prepared by Damon McQuaid",
+   "where": "text",
+   "quote": "becky will provide the massachusetts historical society an electronic copy of the survey of the village center district prepared by damon mcquaid."
+  },
+  {
+   "name": "Lunenburg Ledger, Historically Speaking column",
+   "where": "text",
+   "quote": "becky will submit an article for the lunenburg ledger, historically speaking, for may."
+  },
+  {
+   "name": "Lunenburg Ledger article on Marshall Park parking lot and stone wall",
+   "where": "text",
+   "quote": "an article in the lunenburg ledger reported that in the summer of 2014 the park and recreation department to expand a parking lot cut down trees"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "minutes",
+  "bylaws",
+  "demolition delay",
+  "cemetery",
+  "plaques",
+  "historic homes",
+  "Marshall Park",
+  "stone wall",
+  "survey",
+  "Lunenburg Ledger"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

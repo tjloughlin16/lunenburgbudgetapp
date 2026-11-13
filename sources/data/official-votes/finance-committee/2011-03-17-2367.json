@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-03-17",
  "docid": "2367",
@@ -17,10 +17,146 @@
    "seconded_by": "MM",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "me made motion to adjourn at 9:26 pm and mm seconded"
+   "quote": "adjournment - me made motion to adjourn at 9:26 pm and mm seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction via macOS Vision. The initials ME and MM are printed as such in the minutes; full names are not given for these movers. Present members were Brian Laffond, Martha McDonald, Barbara Reynolds, Mike Mackin, John Male, and Mark Erickson, so MM and ME refer to two of these (MM likely Martha McDonald or Mike Mackin; ME likely Mark Erickson), but the minutes do not spell out full names for the motion participants.",
- "cost_usd": 0.09449850000000001
+ "note": "OCR of a single-page minutes sheet. Numbered items 1-3 are absent from the extracted text (numbering starts at 4 after the public hearing heading). The adjournment motion records no vote count or result. Discussion bullets carry no speaker attribution. The public hearing is recorded as opened with no public speakers listed. Attendance is inferred from the Present, Absent and Also Present lines, which OCR ran together; Marilyn Stokes's absence rests on her name appearing under the Absent label.",
+ "cost_usd": 0.00289872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes respectfully submitted by martha mcdonald"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "location: present: absent: also present: town hall brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson marilyn stokes ker",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "location: present: absent: also present: town hall brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, mark erickson marilyn stokes ker",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Elimination of full day kindergarten",
+   "what_was_recorded": "Committee comment that eliminating full day kindergarten would save a stated amount.",
+   "figures_as_printed": [
+    "$251K"
+   ],
+   "quote": "elimination of full day kindergarten would save $251k"
+  },
+  {
+   "topic": "Private tuition costs",
+   "what_was_recorded": "Committee comment that private tuition is increasing from 10 - 12 students at a stated cost.",
+   "figures_as_printed": [
+    "$750K"
+   ],
+   "quote": "private tuition is increasing from 10 - 12 students for a cost of $750k"
+  },
+  {
+   "topic": "Freezing teacher salaries",
+   "what_was_recorded": "Committee comment that freezing teacher salaries would produce a stated range of savings.",
+   "figures_as_printed": [
+    "$250 - 300K"
+   ],
+   "quote": "if freeze teacher salaries, savings of $250 - 300k"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing",
+   "resolution": "held; closed at 9:18 PM",
+   "quote": "4) public hearing closed at 9:18 pm",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Finance Committee comments and discussion on school budget items",
+   "resolution": "discussed; no action recorded",
+   "quote": "finance committee comments/discussion • elimination of full day kindergarten would save $251k",
+   "tags": [
+    "school budget",
+    "kindergarten",
+    "tuition",
+    "teacher salaries"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled",
+   "quote": "5) next meetings - 3.24.11 budget review, 3.31.11 regular meeting to review warrant articles",
+   "tags": [
+    "meeting schedule",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion made and seconded; result not recorded",
+   "quote": "adjournment - me made motion to adjourn at 9:26 pm and mm seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "school budget",
+  "kindergarten",
+  "private tuition",
+  "teacher salaries",
+  "public hearing",
+  "warrant articles"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

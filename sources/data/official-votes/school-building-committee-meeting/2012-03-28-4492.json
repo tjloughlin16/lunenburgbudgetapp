@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-03-28",
  "docid": "4492",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from 03-14-12 meeting",
+   "motion": "Approve minutes of the 03-14-12 meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -20,16 +20,236 @@
    "quote": "voted to approve minutes from 03-14-12 meeting."
   },
   {
-   "motion": "adjourn",
+   "motion": "Authorize advertisement for OPM and RFS.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Richard Cohen",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "made a motion to authorize advertisement for opm and rfs. richard cohen seconded."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike Barney",
    "seconded_by": "Dave Matthews",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "8:25 mike barney made a motion to adjourn and d ave matthews seconded",
-   "quote_taken_from_text": true
+   "quote": "mike barney made a motion to adjourn"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1166075
+ "dropped_unquoted": 0,
+ "note": "Attendance is not recorded by a roll call; statuses are 'not stated' except members the minutes name as absent or as speaking/moving. The minutes name Michael Mackin in the advisors list and 'Mike Mackin' in item 3. Text is extracted with odd spacing and line breaks, which quotes reproduce as printed. Minutes are marked APPROVED 9-26-12. Item 2 and item 7 votes have no printed result; the minutes state 'Voted to approve' and the motion to adjourn without a count.",
+ "cost_usd": 0.006153219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "loxi jo calmes, superintendent"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "kerry speidel, town manager"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative; Secretary",
+   "status": "not stated",
+   "quote": "colleen shapiro, sc representative"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "present",
+   "quote": "john londa gave brief overview of the study/process."
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative",
+   "status": "not stated",
+   "quote": "michael mackin, sc representative"
+  },
+  {
+   "name": "Joe Dillon",
+   "role": "Interim LHS Principal",
+   "status": "not stated",
+   "quote": "michael mackin, sc representative joe dillon, inter im lhs principal"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "present",
+   "quote": "dave matthews, bos representative"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "absent",
+   "quote": "as several members were not in attendance (nathan lockwood, mark erickson, and newly appointed brian frank)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative",
+   "status": "absent",
+   "quote": "as several members were not in attendance (nathan lockwood, mark erickson, and newly appointed brian frank)"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "newly appointed",
+   "status": "absent",
+   "quote": "as several members were not in attendance (nathan lockwood, mark erickson, and newly appointed brian frank)"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "mike barney made a motion to adjourn"
+  },
+  {
+   "name": "Todd Blake",
+   "role": "Citizen-at-large",
+   "status": "not stated",
+   "quote": "todd blake, citizen-at-large"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "richard cohen seconded."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Formed a FAQ sub-committee of Michael Mackin, Superintendent Calmes and John Londa.",
+   "quote": "mike mackin, superintendent calmes, john londa."
+  },
+  {
+   "decision": "Designated Kerry Speidel as Procurement Administrator.",
+   "quote": "designation of procurement administrator:"
+  },
+  {
+   "decision": "Deferred determining the OPM Selection Committee because several members were absent; Todd Blake had resigned from the committee over a possible conflict of interest.",
+   "quote": "as several members were not in attendance"
+  },
+  {
+   "decision": "Agreed that the entire committee will screen all applicants for OPM and that the sub-committee will interview the finalists.",
+   "quote": "agreement that the entire committee"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Approximate cost breakdown of the feasibility study, based on other local projects",
+   "what_was_recorded": "John Londa gave an approximate cost breakdown: OPM, design firm, site testing, and printing/advertising costs.",
+   "figures_as_printed": [
+    "$125K",
+    "$450K",
+    "$150K",
+    "$25K"
+   ],
+   "quote": "site testing $150k, printing, advertising, etc. $25k."
+  },
+  {
+   "topic": "FAQ list question on total cost",
+   "what_was_recorded": "The generated FAQ list includes the question 'Why $750,000?' with no answer recorded.",
+   "figures_as_printed": [
+    "$750,000"
+   ],
+   "quote": "why another study? what abo ut the other study? why $750,000?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "7:05 pm called to order.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 03-14-12 meeting",
+   "resolution": "approved",
+   "quote": "voted to approve minutes from 03-14-12 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FAQ sub-committee formation",
+   "resolution": "sub-committee formed; FAQ list generated",
+   "quote": "list of faq generated: why another study?",
+   "tags": [
+    "FAQ",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Feasibility study discussion",
+   "resolution": "no action",
+   "quote": "john londa gave brief overview of the study/process.",
+   "tags": [
+    "feasibility study",
+    "MSBA",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Designation of Procurement Administrator",
+   "resolution": "Kerry Speidel designated",
+   "quote": "designation of procurement administrator:",
+   "tags": [
+    "procurement"
+   ]
+  },
+  {
+   "topic": "OPM Selection Committee and advertisement",
+   "resolution": "advertisement authorized; committee formation deferred",
+   "quote": "made a motion to authorize advertisement for opm and rfs. richard cohen seconded.",
+   "tags": [
+    "OPM",
+    "procurement",
+    "RFS"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:25",
+   "quote": "mike barney made a motion to adjourn",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FAQ list (generated at meeting)",
+   "where": "text",
+   "quote": "list of faq generated: why another study?"
+  },
+  {
+   "name": "Feasibility study",
+   "where": "text",
+   "quote": "dave matthews indicated that there is a great deal of information about the study and the opm on the msba website."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "feasibility study",
+  "MSBA",
+  "OPM selection",
+  "procurement",
+  "FAQ",
+  "cost estimates",
+  "Lunenburg schools"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

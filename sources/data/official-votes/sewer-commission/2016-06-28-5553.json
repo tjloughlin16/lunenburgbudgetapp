@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-06-28",
  "docid": "5553",
@@ -12,23 +12,243 @@
  },
  "votes": [
   {
-   "motion": "Accept the bid of 5/18/2016 with the amendment dated 6/28/2016",
-   "moved_by": "John Reynolds",
-   "seconded_by": "Sue Bunish",
-   "outcome": "passed",
+   "motion": "To accept the bid of 5/18/2016 with the amendment dated 6/28/2016 (FY17 Operations & Maintenance contract award).",
+   "moved_by": "John R.",
+   "seconded_by": "Sue B.",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion: john r. second: sue b. to accept the bid of 5/18/2016 with the amendment dated 6/28/2016 vote: unanimous"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Sue Bunish",
-   "seconded_by": "John Reynolds",
-   "outcome": "passed",
+   "motion": "To adjourn the meeting at 8:44pm.",
+   "moved_by": "Sue B.",
+   "seconded_by": "John R.",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion: sue b. to adjourn at 8:44pm second: john r. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. All votes recorded with outcomes.",
- "cost_usd": 0.0804375
+ "note": "Text is OCR of a scan (macOS Vision) with some garbled words (e.g., 'compieted', 'Emilsehto', 'Wiliams'); quotes are copied as OCR printed them. Commission member roles ('Member') are inferred from the 'Members-' heading. The minutes name no documents list. Only two motions are recorded (bid acceptance and adjournment); no vote on approving prior minutes appears.",
+ "cost_usd": 0.00527892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, john reynolds business manager, barb lefebvre. guests - david brambila and dave mcmenemy"
+  },
+  {
+   "name": "Sue Bunish",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, john reynolds business manager, barb lefebvre. guests - david brambila and dave mcmenemy"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, john reynolds business manager, barb lefebvre. guests - david brambila and dave mcmenemy"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair, carl luck, members- sue bunish, john reynolds business manager, barb lefebvre. guests - david brambila and dave mcmenemy"
+  },
+  {
+   "name": "David Brambila",
+   "role": "proprietor",
+   "status": "present",
+   "quote": "david brambila (proprietor) and dave mcmenemy (wind river) were both present."
+  },
+  {
+   "name": "Dave McMenemy",
+   "role": "Wind River",
+   "status": "present",
+   "quote": "david brambila (proprietor) and dave mcmenemy (wind river) were both present."
+  },
+  {
+   "name": "Gary Wiliams",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "gary wiliams will sign and drop off the permit."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Small Water Systems will resubmit its grease trap/interceptor proposal based on a Time and Materials Contract.",
+   "quote": "they will resubmit a proposal based on a time and materials contract."
+  },
+  {
+   "decision": "The Commission will clarify which interceptor inspections need to be done.",
+   "quote": "the commission will clarify which ones need to be done."
+  },
+  {
+   "decision": "Gary Wiliams will sign and drop off the Twin City Baptist waiver permit.",
+   "quote": "gary wiliams will sign and drop off the permit."
+  },
+  {
+   "decision": "A new FY17 contract that includes the clarifications will be requested from Small Water.",
+   "quote": "a new contract that includes the clarifications will be requested."
+  },
+  {
+   "decision": "A formal plan for A and D Crossroads will be sent to the Commission, expected to stop the daily fees.",
+   "quote": "a formal plan will be sent to the commission which will stop the daily fees."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "A and D Crossroads daily fees",
+   "what_was_recorded": "A formal plan from A and D Crossroads is expected to stop the daily fees; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a formal plan will be sent to the commission which will stop the daily fees."
+  },
+  {
+   "topic": "SRF sewer extension paving costs",
+   "what_was_recorded": "The Commission discussed the process, timing and costs to have paving completed; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there was discussion on the process, timing and costs to have paving compieted"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted; two vacancies",
+   "quote": "there are two vacancies on the sewer commission.",
+   "tags": [
+    "vacancies",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Grease Trap Program",
+   "resolution": "discussed; formal plan and resubmitted proposal expected; no vote",
+   "quote": "schematics have been received but no formal action plan.",
+   "tags": [
+    "grease trap",
+    "non-compliance",
+    "permits",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Pump Stations: FY17 Operations & Maintenance contract award",
+   "resolution": "bid accepted with amendment; new contract to be requested",
+   "quote": "contract for fy17 operations & maintenance award - a letter, from small water, with clarifications for concerns raised was",
+   "tags": [
+    "pump stations",
+    "contract",
+    "Small Water"
+   ]
+  },
+  {
+   "topic": "Weekly reports",
+   "resolution": "reviewed; no action",
+   "quote": "weekly reports - the weekly reports were reviewed by the commission and there was discussion on the level of",
+   "tags": [
+    "pump stations",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "SRF Sewer Extension Project",
+   "resolution": "discussed; no action",
+   "quote": "srf sewer extension project - there was discussion on the process, timing and costs to have paving compieted",
+   "tags": [
+    "SRF",
+    "paving",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting August 8, 2016",
+   "resolution": "no action; nothing on the warrant",
+   "quote": "special town meeting august 8, 2016 - the sewer commission has nothing on the warrant.",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Minutes file issues",
+   "resolution": "reviewed; no action",
+   "quote": "minutes file issues - the minutes and what should be included was reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager Report / Action",
+   "resolution": "permits to connect and manhole inspection meeting discussed; SRF PEF deadline discussed; BBQ announced",
+   "quote": "business manager report /action- permits to connect - there are two permits to connect.",
+   "tags": [
+    "permits to connect",
+    "manhole inspections",
+    "SRF PEF",
+    "volunteer BBQ"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "noted",
+   "quote": "july 5, 2016 joint bos-sewer commission meeting, town hall - 7pm joseph anderson appointment",
+   "tags": [
+    "schedule",
+    "joint meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Small Water System Services (grease trap/interceptor proposal)",
+   "where": "text",
+   "quote": "an email received from small water system services was reviewed."
+  },
+  {
+   "name": "Letter from Small Water with clarifications for concerns raised (FY17 O&M contract)",
+   "where": "text",
+   "quote": "a letter, from small water, with clarifications for concerns raised was"
+  },
+  {
+   "name": "Schematics (A and D Crossroads)",
+   "where": "text",
+   "quote": "schematics have been received but no formal action plan."
+  },
+  {
+   "name": "Weekly reports (pump stations)",
+   "where": "text",
+   "quote": "the weekly reports were reviewed by the commission"
+  },
+  {
+   "name": "Bid of 5/18/2016 with amendment dated 6/28/2016",
+   "where": "text",
+   "quote": "to accept the bid of 5/18/2016 with the amendment dated 6/28/2016"
+  },
+  {
+   "name": "Special Town Meeting warrant, August 8, 2016",
+   "where": "text",
+   "quote": "the sewer commission has nothing on the warrant."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease trap",
+  "pump stations",
+  "contracts",
+  "SRF",
+  "paving",
+  "permits to connect",
+  "town meeting",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-07-15",
  "docid": "1690",
@@ -12,47 +12,383 @@
  },
  "votes": [
   {
-   "motion": "To issue a Negative 3 Determination of Applicability for the project at 82 Peninsula Drive",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "negative 3 unanimous",
+   "motion": "Issue a negative determination on the Request for Determination of Applicability for 82 Peninsula Drive, with conditions (erosion control on 30' no touch line, notify before start).",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed, unanimous (count not printed)",
+   "procedural": false,
+   "quote": "control is in place. negative 3 unanimous"
   },
   {
-   "motion": "To continue the hearing on 183 Hemlock Drive and reconvene to discuss actions",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Notice of Intent hearing for 183 Hemlock Drive and reconvene to discuss actions, with a site walk suggested for Saturday, August 1.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous (count not printed)",
+   "procedural": false,
+   "quote": "vote to continue and reconvene to discuss actions. unanimous"
+  },
+  {
+   "motion": "Issue a negative determination on the Request for Determination of Applicability for 41 Hilltop Lane (dock replacement and bank work).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous (count not printed)",
+   "procedural": false,
+   "quote": "plantings will be done on renovated bank. negative 3 unanimous"
+  },
+  {
+   "motion": "Approve the Notice of Intent for 50 Elmwood Road, Lots 1 and 4 (Butterfly Lane), with the homeowners association responsible for checking conditions of areas in question.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed, unanimous (Lots 1 & 4)",
+   "procedural": false,
+   "quote": "check on conditions of areas in question. approved unanimous (1 & 4)"
+  },
+  {
+   "motion": "Approve the minutes of 6/17.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "vote to continue and reconvene to discuss actions. unanimous",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "To issue a Negative 3 Determination of Applicability for the project at 41 Hilltop Lane",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "negative 3 unanimous",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "To approve the Notice of Intent for construction at 50 Elmwood Road, Lots 1 and 4",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "approved unanimous (1 & 4)",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "To approve the minutes of June 17",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes approval ~ 6/17 ~ approved",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "minutes approval ~ 6/17 ~ approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record outcomes without stating who moved or seconded motions. The July 15, 2015 meeting also included a note that for the project at 54 Pine Acres Road there was no show and it was rescheduled for August 5th, and a note at the end for 150 & 164 White Street stating \"no vote taken.\" The 7:00 PM Albert Tyskwicz item records that \"The CC agreed with the plan\" but without explicit vote language, so it is not included.",
- "cost_usd": 0.1177745
+ "note": "Extracted text is garbled in places: stray header characters, words split by spaces (e.g., 'pla n', 'Det ermination', 'Rabbi tt' which is recorded here as Jack Rabbitt), and some lines break mid-phrase. Attendance is a roster line with no present/absent marking, so status is 'not stated'. No movers or seconders are printed. Vote results are given only as 'Unanimous' or 'Negative 3   Unanimous' with no count; the meaning of 'Negative 3' is not explained. The 50 Elmwood Road Lot 4 hearing has no recorded result. Public comment and adjournment headings have no recorded speakers or vote. The header reads 'APPROVED 8-5-2015'.",
+ "cost_usd": 0.010634720000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Tom Bertram",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Ken Jones",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "richard bursch, tom bertram, todd dwyer, jack rabbi tt, brad kennedy, carl luck, ken jones, matt marro, jan carrier"
+  },
+  {
+   "name": "Albert Tyskwicz",
+   "role": "appeared before the commission (replanting plan)",
+   "status": "present",
+   "quote": "albert tyskwicz appeared before the commission with a pla n for replanting."
+  },
+  {
+   "name": "Richard Kissell",
+   "role": "filed by (Request for Determination of Applicability, 82 Peninsula Drive)",
+   "status": "not stated",
+   "quote": "filed by richard kissel l."
+  },
+  {
+   "name": "Daniel/Kim Thomas",
+   "role": "filed by (Notice of Intent, 183 Hemlock Drive)",
+   "status": "not stated",
+   "quote": "filed by daniel/kim thomas."
+  },
+  {
+   "name": "Carol/Bill Hatch",
+   "role": "filed by (Request for Determination of Applicability, 41 Hilltop Lane)",
+   "status": "not stated",
+   "quote": "filed by carol/bill hat ch."
+  },
+  {
+   "name": "Michael Crowley",
+   "role": "of Ernco Construction Inc. / Ernco Development Inc. (50 Elmwood Road, Lots 1 and 4)",
+   "status": "not stated",
+   "quote": "filed by michael crowley of ernco construction inc. (mark piermarini whitman & bingham)."
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "listed with Whitman & Bingham (50 Elmwood Road)",
+   "status": "not stated",
+   "quote": "filed by michael crowley of ernco construction inc. (mark piermarini whitman & bingham)."
+  },
+  {
+   "name": "Micke Dutton",
+   "role": "filed by (Request for Determination of Applicability, 54 Pine Acres Road)",
+   "status": "not stated",
+   "quote": "filed by micke d utton."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Informational Update (Shirley Village Reservoir)",
+   "status": "present",
+   "quote": "informational update ~ joanna bilotta-simeone ~ 240 homes on lake, dues $300 a year only 100"
+  },
+  {
+   "name": "Max Parker",
+   "role": "Max Parker & Engineer (40 Hemlock Drive)",
+   "status": "not stated",
+   "quote": "max parker & engineer ~ would like"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission agreed with Albert Tyskwicz's replanting plan for the Ruth Street violation, which will include 27 plants.",
+   "quote": "with the plan that will include 27 plants."
+  },
+  {
+   "decision": "Matt suggested another site walk on Saturday, August 1 for 183 Hemlock Drive.",
+   "quote": "matt suggested another site walk on saturday, august 1."
+  },
+  {
+   "decision": "The 54 Pine Acres Road hearing was rescheduled to August 5 because of a no-show and a mix-up in dates.",
+   "quote": "no show, mixup in dates reschedule for august 5"
+  },
+  {
+   "decision": "The 40 Hemlock Drive item was requested to be moved to August 5.",
+   "quote": "requested to be moved to august 5"
+  },
+  {
+   "decision": "The chair directed that the 40 Hemlock Drive engineer contact Matt rather than the commission explaining details of the OoC.",
+   "quote": "not necessary, tell max to have engineer contact matt"
+  },
+  {
+   "decision": "For the Shirley Village Reservoir, the applicant was directed to combine drawdown and treatment in one NOI.",
+   "quote": "combine drawdown and treatment in one noi."
+  },
+  {
+   "decision": "On the 150 & 164 White Street Right of First Refusal, Rich will look into further information with the Assessors and other relevant information.",
+   "quote": "rich will look into further information with assessors and any other information that may be relevant to the property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Shirley Village Reservoir association dues",
+   "what_was_recorded": "The informational update reported 240 homes on the lake with annual dues of $300, with only 100 members.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "240 homes on lake, dues $300 a year only 100"
+  },
+  {
+   "topic": "Lane Grant Reimbursement (ongoing business)",
+   "what_was_recorded": "Lane Grant Reimbursement is listed under ongoing business with no figures or discussion recorded.",
+   "figures_as_printed": [],
+   "quote": "lane grant reimbursement"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Ruth Street violation notice (replanting)",
+   "resolution": "commission agreed with replanting plan (27 plants)",
+   "quote": "appeared before the commission with a pla n for replanting. the cc agreed",
+   "tags": [
+    "violation",
+    "replanting"
+   ]
+  },
+  {
+   "topic": "82 Peninsula Drive RDA",
+   "resolution": "negative determination with conditions, unanimous",
+   "quote": "control is in place. negative 3 unanimous",
+   "tags": [
+    "RDA",
+    "wetlands",
+    "house remodel"
+   ]
+  },
+  {
+   "topic": "183 Hemlock Drive NOI",
+   "resolution": "continued; reconvene to discuss actions",
+   "quote": "vote to continue and reconvene to discuss actions. unanimous",
+   "tags": [
+    "NOI",
+    "wetlands",
+    "retaining wall",
+    "site walk"
+   ]
+  },
+  {
+   "topic": "41 Hilltop Lane RDA",
+   "resolution": "negative determination, unanimous",
+   "quote": "plantings will be done on renovated bank. negative 3 unanimous",
+   "tags": [
+    "RDA",
+    "dock"
+   ]
+  },
+  {
+   "topic": "50 Elmwood Road Lot 1 (Butterfly Lane) NOI",
+   "resolution": "approved, unanimous (Lots 1 & 4)",
+   "quote": "check on conditions of areas in question. approved unanimous (1 & 4)",
+   "tags": [
+    "NOI",
+    "new home",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "50 Elmwood Road Lot 4 (Butterfly Lane) NOI",
+   "resolution": "no result recorded",
+   "quote": "no work is proposed in the 30' no disturbance zone.",
+   "tags": [
+    "NOI",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "54 Pine Acres Road RDA (ATV fence)",
+   "resolution": "rescheduled to August 5",
+   "quote": "no show, mixup in dates reschedule for august 5",
+   "tags": [
+    "RDA",
+    "fence",
+    "ATV"
+   ]
+  },
+  {
+   "topic": "Shirley Village Reservoir informational update",
+   "resolution": "informational; applicant directed to combine drawdown and treatment in one NOI",
+   "quote": "combine drawdown and treatment in one noi.",
+   "tags": [
+    "reservoir",
+    "drawdown",
+    "water treatment"
+   ]
+  },
+  {
+   "topic": "40 Hemlock Drive",
+   "resolution": "moved to August 5; engineer to contact Matt",
+   "quote": "not necessary, tell max to have engineer contact matt",
+   "tags": [
+    "OoC",
+    "engineer"
+   ]
+  },
+  {
+   "topic": "Minutes approval 6/17",
+   "resolution": "approved",
+   "quote": "minutes approval ~ 6/17 ~ approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "150 & 164 White Street Right of First Refusal",
+   "resolution": "discussion only, no vote; Rich to gather information",
+   "quote": "everyone expressed their individual opinion~ no vote",
+   "tags": [
+    "right of first refusal",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "listed; no action recorded",
+   "quote": "lane grant reimbursement",
+   "tags": [
+    "regulations",
+    "forest cutting",
+    "budget",
+    "advisory teams",
+    "stormwater bylaw"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "listed; no action recorded",
+   "quote": "signatures ~ ooc(2), coc(3), eo(1)",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "listed: August 5th and 19th",
+   "quote": "meeting schedule ~ august 5th & 19th",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability, 82 Peninsula Drive (filed by Richard Kissell)",
+   "where": "text",
+   "quote": "filed by richard kissel l."
+  },
+  {
+   "name": "Notice of Intent, 183 Hemlock Drive (filed by Daniel/Kim Thomas)",
+   "where": "text",
+   "quote": "filed by daniel/kim thomas."
+  },
+  {
+   "name": "Request for Determination of Applicability, 41 Hilltop Lane (filed by Carol/Bill Hatch)",
+   "where": "text",
+   "quote": "filed by carol/bill hat ch."
+  },
+  {
+   "name": "Notice of Intent, 50 Elmwood Road Lot 1, Butterfly Lane (filed by Michael Crowley of Ernco Construction Inc.)",
+   "where": "text",
+   "quote": "filed by michael crowley of ernco construction inc."
+  },
+  {
+   "name": "Notice of Intent, 50 Elmwood Road Lot 4, Butterfly Lane (filed by Michael Crowley of Ernco Development Inc.)",
+   "where": "text",
+   "quote": "filed by michael crowley of ernco development inc."
+  },
+  {
+   "name": "Request for Determination of Applicability, 54 Pine Acres Road (filed by Micke Dutton)",
+   "where": "text",
+   "quote": "filed by micke d utton."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "hearings",
+  "notice of intent",
+  "request for determination",
+  "replanting",
+  "violation",
+  "reservoir",
+  "right of first refusal",
+  "minutes approval",
+  "site walk",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

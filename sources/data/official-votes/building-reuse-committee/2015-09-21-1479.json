@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-09-21",
  "docid": "1479",
@@ -12,15 +12,124 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Mark Erickson",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by mike mackin, second mark erickson, all in favor."
+   "quote": "motion to adjourn by mike mackin, second mark erickson, all in favor. meeting adjourned @ 7:03pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0869545
+ "note": "OCR text from a single page. Ordinal suffixes were garbled by OCR (e.g. '4*' and '5'' likely mean 4th and 5th), and 'Town Hal' is likely 'Town Hall'; the record is read with those corrections. The minutes print the October 5 date only as 'October 5'' with no quotable line beyond the OCR; the schedule quote uses the November line. Only one motion (adjournment) is recorded, with no roll-call count; the outcome is 'passed' because the minutes say 'all in favor'. Charlie Hay and Kerry Speidel are named only as scheduled for a Sept 22 meeting and are not recorded as taking part in this meeting, so they are omitted from attendees. No dollar figures appear.",
+ "cost_usd": 0.00254672,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Ron Albert",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "role": "Member",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, mike mackin, mark erickson"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "absent",
+   "role": "Member",
+   "quote": "members absent: dave macdonald, rebecca lantry,"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "status": "absent",
+   "role": "Member",
+   "quote": "members absent: dave macdonald, rebecca lantry,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will attempt to meet on the fourth Wednesday of the month going forward, due to member scheduling conflicts.",
+   "quote": "the board will attempt to meet on the 4* wednesday of the month moving forward due"
+  },
+  {
+   "decision": "Future meetings set for October 5, October 28, and November 24, 2015 at 6:30pm at Town Hall.",
+   "quote": "november 24' 6:30pm at town hall"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Update on RFQ process",
+   "resolution": "no action (update)",
+   "quote": "tappe associates anticipate delivery of their final report before the end of december.",
+   "tags": [
+    "RFQ",
+    "Tappe Associates"
+   ]
+  },
+  {
+   "topic": "Next steps: Tappe analysis and DPW input",
+   "resolution": "no action (discussion)",
+   "quote": "of the tappe analysis the board my want to provide input to the dpw discussion as well",
+   "tags": [
+    "DPW",
+    "Tappe Associates"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "board will attempt fourth-Wednesday meetings; dates listed",
+   "quote": "the board will attempt to meet on the 4* wednesday of the month moving forward due",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:03pm",
+   "quote": "meeting adjourned @ 7:03pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "building reuse",
+  "RFQ",
+  "Tappe Associates",
+  "DPW",
+  "meeting schedule",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

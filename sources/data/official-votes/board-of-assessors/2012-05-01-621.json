@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-05-01",
  "docid": "621",
@@ -12,37 +12,243 @@
  },
  "votes": [
   {
-   "motion": "approve prior minutes, current expense vouchers, abatements, warrants, commitments, and payroll",
-   "outcome": "passed",
+   "motion": "Approve the minutes, current expense vouchers, abatements, warrants, commitments, and payroll.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "approved minutes, current expense vouchers, abatements, warrants, commitments, & payroll."
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, warrants,"
   },
   {
-   "motion": "approve the abatement application for The Lancaster Land Trust, Inc. property at 0 Kaleva Road, Map 49, Parcel 2",
-   "outcome": "passed",
+   "motion": "Approve the Lancaster Land Trust abatement application for 0 Kaleva Road (Map 49, Parcel 2), valuing the land as undevelopable under a conservation restriction and applying the Chapter 61B - Recreation Land exemption.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "voted to approve the abatement application by recognizing that the land is encumbered by a conservation restriction and should be valued at lunenburg's undevelopable land rate."
+   "quote": "the board reviewed the documentation and voted to approve the abatement application by recognizing that the land is"
   },
   {
-   "motion": "deny the charitable exemptions application for 463 West Townsend Road, Map 8, Parcel 1",
-   "outcome": "passed",
+   "motion": "Deny the ABC charitable exemption application for 463 West Townsend Road (Map 8, Parcel 1) because the applicant is not the property owner.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "voted to deny application due to the fact that the applicant is not the property owner."
+   "quote": "the board reviewed application and voted to deny application due to the fact that the applicant is not the"
   },
   {
-   "motion": "approve the Personal Property Contract proposal agreement with RRG for Personal Property Assessment Services",
-   "outcome": "passed",
+   "motion": "Sign the two Personal Property Contract proposal documents (one for the Town Manager, one for RRG) in agreement with the proposal.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "voted and signed the (2) documents in agreement of the proposal."
+   "quote": "board reviewed, voted and signed the (2) documents in agreement of the proposal."
   },
   {
-   "motion": "hold the next meeting on Tuesday, June 5th at 6 pm",
-   "outcome": "passed",
+   "motion": "Meet on Tuesday, June 5th at 6 pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "voted to meet on tuesday, june 5th at 6 pm."
+   "quote": "board voted to meet on tuesday, june 5th at 6 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text extracted via OCR from scanned pages. The abatement application for 134 Leominster/Shirley Rd. was administratively denied due to missed statutory deadline (no vote recorded).",
- "cost_usd": 0.1209065
+ "note": "Minutes are OCR text with garbled spots (e.g. the statutory exemption report sentence is cut off mid-line and the signature block is unreadable). The minutes record no mover, seconder or vote counts for any motion; votes are recorded only as \"voted to ...\" so outcomes are marked not stated. Adjournment at 7:45 pm is recorded without a motion and is not listed as a vote. No public comment section is printed.",
+ "cost_usd": 0.00729253,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board member, louis franco,"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, chris comeau, board member, louis franco,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "harald scheid, regional assessor and louise paquette, administrative assistant. board member,"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "harald scheid, regional assessor and louise paquette, administrative assistant. board member,"
+  },
+  {
+   "name": "Matthew Papini, Sr.",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "board member, matthew papini, sr. not present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "An abatement application for 134 Leominster/Shirley Rd. (Map 146, Parcel 26) was deemed denied because it was filed after the February 1st statutory deadline; assessors can take no action on the FY2012 valuation.",
+   "quote": "an abatement application for property located at 134 leominster/shirley rd. - map 146, parcel 26 was"
+  },
+  {
+   "decision": "Louise will send out notifications to the owner of the Kaleva Road property.",
+   "quote": "louise will send out notifications to the owner."
+  },
+  {
+   "decision": "Harald will prepare notifications to the applicants on the denied ABC exemption, to be mailed within the next week.",
+   "quote": "harald will prepare the notifications to the applicants to be mailed within the next week."
+  },
+  {
+   "decision": "Louise will submit the Personal Property Contract documents to the Town Manager for review; upon approval they must be certified by the Town Accountant.",
+   "quote": "louise will submit documents to the town manager for review. upon approval, the document will need be certified by"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 20 minimum fair cash value for personal property",
+   "what_was_recorded": "Article 20 proposes accepting a minimum fair cash value of $2,500.00 for personal property accounts to be taxed; Harald was asked to speak on it at the BOS meeting.",
+   "figures_as_printed": [
+    "$2,500.00"
+   ],
+   "quote": "to see if the town will vote to accept chapter 59, section 5, clause 54 of the general laws of massachusetts establishing a minimum fair cash value of $2,500.00"
+  },
+  {
+   "topic": "Personal Property Assessment services contract with RRG",
+   "what_was_recorded": "Harald presented a Personal Property Contract proposal agreement with a quote for Personal Property Assessment Services from RRG; the minutes print no dollar figure for the quote.",
+   "figures_as_printed": [],
+   "quote": "with a quote for personal property assessment services from rrg. the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes, vouchers, abatements, warrants, commitments, payroll",
+   "resolution": "approved",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "payroll"
+   ],
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, warrants,"
+  },
+  {
+   "topic": "Lancaster Land Trust abatement, 0 Kaleva Road",
+   "resolution": "approved abatement",
+   "tags": [
+    "abatement",
+    "conservation restriction",
+    "Chapter 61B"
+   ],
+   "quote": "the board reviewed the documentation and voted to approve the abatement application"
+  },
+  {
+   "topic": "Late abatement application, 134 Leominster/Shirley Rd",
+   "resolution": "deemed denied (filed late)",
+   "tags": [
+    "abatement",
+    "deadline"
+   ],
+   "quote": "an abatement application for property located at 134 leominster/shirley rd. - map 146, parcel 26 was"
+  },
+  {
+   "topic": "Town Meeting and election reminder; Article 20 personal property minimum",
+   "resolution": "noted; Harald to speak on Article 20",
+   "tags": [
+    "town meeting",
+    "election",
+    "Article 20"
+   ],
+   "quote": "louise reminded the board that the town meeting will be held this saturday"
+  },
+  {
+   "topic": "ABC charitable exemption, 463 West Townsend Road",
+   "resolution": "denied (applicant not owner)",
+   "tags": [
+    "exemptions",
+    "charitable",
+    "ABC"
+   ],
+   "quote": "harald presented an abc application (charitable exemptions) which was on hold for further review"
+  },
+  {
+   "topic": "FY 2012 Statutory Exemption report",
+   "resolution": "submitted electronically; report to accountant",
+   "tags": [
+    "exemptions",
+    "statutory",
+    "reporting"
+   ],
+   "quote": "louise reported that she has electronically submitted the final fy 2012 statutory exemption report to"
+  },
+  {
+   "topic": "Personal Property Assessment project and RRG contract",
+   "resolution": "contract documents signed; to Town Manager for review",
+   "tags": [
+    "personal property",
+    "RRG",
+    "contract"
+   ],
+   "quote": "harald gave an update regarding the personal property assessment project."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled June 5 at 6 pm",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "board voted to meet on tuesday, june 5th at 6 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 20 (accept Chapter 59, Section 5, Clause 54 minimum fair cash value of $2,500.00)",
+   "where": "text",
+   "quote": "to see if the town will vote to accept chapter 59, section 5, clause 54 of the general laws of massachusetts establishing a minimum fair cash value of $2,500.00"
+  },
+  {
+   "name": "Personal Property Contract proposal agreement (one for the Town Manager and one for RRG)",
+   "where": "text",
+   "quote": "he presented a personal property contract proposal agreement (one for the town manager and one for rrg) with a quote"
+  },
+  {
+   "name": "Lancaster Land Trust conservation restriction documentation",
+   "where": "text",
+   "quote": "has submitted documentation (as requested by the"
+  },
+  {
+   "name": "ABC charitable exemption application, 463 West Townsend Road",
+   "where": "text",
+   "quote": "harald presented an abc application (charitable exemptions) which was on hold for further review"
+  },
+  {
+   "name": "Final FY 2012 Statutory Exemption report",
+   "where": "text",
+   "quote": "louise reported that she has electronically submitted the final fy 2012 statutory exemption report to"
+  },
+  {
+   "name": "Form of List",
+   "where": "text",
+   "quote": "along with the application and form of list."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "abatements",
+  "exemptions",
+  "personal property",
+  "RRG contract",
+  "Town Meeting",
+  "Article 20",
+  "FY2012"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

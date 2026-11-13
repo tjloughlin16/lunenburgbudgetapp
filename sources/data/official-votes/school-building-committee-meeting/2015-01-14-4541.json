@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2015-01-14",
  "docid": "4541",
@@ -12,25 +12,299 @@
  },
  "votes": [
   {
-   "motion": "approve the meeting minutes from December 10, 2014",
+   "motion": "Approve the meeting minutes from December 10, 2014.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the lunenburg school building committee voted to approve the meeting minutes from december 10, 2014."
+   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from december 10, 2014."
   },
   {
-   "motion": "approve the December 2014 invoices as presented by Joslin, Lesser & Associates",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the lunenburg school building committee voted to approve the december 2014 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
+   "motion": "Approve the December 2014 invoices as presented by Joslin, Lesser & Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "voted to approve the december 2014 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
   },
   {
-   "motion": "approve the December 2014 Commitments as presented by Joslin, Lesser & Associates",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the lunenburg school building committee voted to approve the december 2014 commitments as presented by joslin, lesser & associates. the motion was unanimously approved."
+   "motion": "Approve the December 2014 Commitments as presented by Joslin, Lesser & Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "mation: the lunenburg school building committee voted to approve the december 2014 commitments"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes OCR'd from scan using macOS Vision; readable. No mover or seconder explicitly named in any motion.",
- "cost_usd": 0.1075665
+ "dropped_unquoted": 1,
+ "note": "OCR text of a three-page minutes document. No attendance status is printed; the roster is a sign-in table, so status is 'not stated' except where the minutes show a person acting. The minutes print no dollar figures; invoice and commitment amounts are referenced but not given. No motion to adjourn is recorded, so no adjournment vote is listed. The minutes record no vote counts for the minutes approval, only 'voted to approve'. The header lists the next meeting as 2/11/15 at 6:30 PM, but item 7 says 4:30 pm. The text says 'Rob Alger' where the roster says Robert Alger. The progress update says 'December 15, 2015', likely a typo for 2014. The text contains the typo 'Mation:'.",
+ "cost_usd": 0.00630322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "nathan lockwood mark erickson mike barney brian frank greg s. roy"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools",
+   "status": "not stated",
+   "quote": "kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "status": "not stated",
+   "quote": "kerry speidel john londa brian spadafino tim santry charles hay"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Architects",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Robert Alger",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "rob alger is available to set up time for site visit."
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst discussion 01/14/15"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "jonathan hirst (sdc) presented an overview of a construction progress."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The topping off ceremony will be added to the agenda for next month's meeting.",
+   "quote": "the ceremony event will be added to the agenda for next month."
+  },
+  {
+   "decision": "The next School Building Committee meeting is set for February 11, 2015 at 4:30 pm, held at the project construction trailer and beginning with a site walk-through.",
+   "quote": "next school building committee meeting will be scheduled for february 11, 2015 at 4:30 pm."
+  },
+  {
+   "decision": "Meeting materials will be sent by email to committee members in full before meetings; only the invoice cover page and meeting notice/agenda will be printed as hard copies, to save paper.",
+   "quote": "with efforts to save paper a full package will be issued via email to all committee members prior to the meeting"
+  },
+  {
+   "decision": "Unitil agreed to provide a license until the town's easement is received.",
+   "quote": "unitil agreed to provide license until easement is received."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly progress invoices",
+   "what_was_recorded": "JLA presented monthly progress invoices for work through December 2014 (OPM, designer, Shawmut payment requisition No.5, testing, printing, aerial photography), which the committee approved; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "presented monthly progress invoices for work completed through december, 2014"
+  },
+  {
+   "topic": "Commitments and Final GMP amendment",
+   "what_was_recorded": "Construction Amendment #3 for Final GMP was presented for record; the December 2014 commitments were approved. No dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "construction amendment #3 for final gmp was presented for record."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:34 PM",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee minutes",
+   "resolution": "approved December 10, 2014 minutes",
+   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from december 10, 2014.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Monthly approvals - invoices and commitments",
+   "resolution": "approved unanimously",
+   "quote": "voted to approve the december 2014 invoices as presented by joslin, lesser & associates. the motion was unanimously approved.",
+   "tags": [
+    "invoices",
+    "commitments",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Construction activity update",
+   "resolution": "no action; progress presented",
+   "quote": "jonathan hirst (sdc) presented an overview of a construction progress.",
+   "tags": [
+    "construction",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Unitil license agreement",
+   "resolution": "no action; Unitil license until easement",
+   "quote": "the town is working on the easement for unitil. unitil agreed to provide license",
+   "tags": [
+    "utilities",
+    "easement"
+   ]
+  },
+  {
+   "topic": "Other/new items",
+   "resolution": "topping off ceremony to next agenda; site walk-through set for February meeting",
+   "quote": "topping off ceremony - the ceremony event will be added to the agenda for",
+   "tags": [
+    "ceremony",
+    "meeting logistics"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 7:45 pm",
+   "quote": "the meeting was adjourned at approximately 7:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Construction Amendment #3 for Final GMP",
+   "where": "text",
+   "quote": "construction amendment #3 for final gmp was presented for record."
+  },
+  {
+   "name": "Progress photos (available on the School Building Project Website)",
+   "where": "text",
+   "quote": "jla presented progress photos which are also available on the school building"
+  },
+  {
+   "name": "Invoice cover page",
+   "where": "text",
+   "quote": "only the invoice cover page and the meeting notice / agenda will be printed as hard copies"
+  },
+  {
+   "name": "Meeting notice / agenda",
+   "where": "text",
+   "quote": "only the invoice cover page and the meeting notice / agenda will be printed as hard copies"
+  }
+ ],
+ "tags": [
+  "school building project",
+  "construction progress",
+  "invoices",
+  "commitments",
+  "Unitil easement",
+  "Joslin Lesser",
+  "Shawmut",
+  "Tappe Architects",
+  "Lunenburg High School",
+  "meeting logistics"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "meeting materials"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

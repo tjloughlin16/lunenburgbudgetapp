@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-02-02",
  "docid": "2194",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mark",
    "seconded_by": "John",
    "outcome": "passed 6-0",
@@ -21,6 +21,245 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from macOS Vision. One vote recorded: adjournment motion at end of meeting.",
- "cost_usd": 0.08150450000000001
+ "note": "Text is OCR of a scan; some words and figures may be misread (e.g., 'Chief\" s', 'TurkeyHill'). Only one recorded vote (adjournment, 6-0). No motions on minutes or other items. Next-meeting line lists two dates (February 9 and February 14, 2017) with no label, recorded as printed. Figures are as the minutes print them.",
+ "cost_usd": 0.00496382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson,/ /george martin,"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson,/ /george martin,"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson,/ /george martin,"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson,/ /george martin,"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson,/ /george martin,"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson,/ /george martin,"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson,/ /george martin,"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "jim marino - police chief, heather lemieux - town manager, members of the board of selectmen,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jim marino - police chief, heather lemieux - town manager, members of the board of selectmen,"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "karen brochu - town accountant, members of the public"
+  },
+  {
+   "name": "Katy Adams",
+   "role": "Public",
+   "status": "present",
+   "quote": "public: katy adams. 45 williams dr. working on improving student safety and security in lunenburg as a"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "School department FY18 budget request",
+   "what_was_recorded": "The School Superintendent's emailed updated recommended budget keeps the FY18 bottom-line request unchanged, a 6% increase over FY17.",
+   "figures_as_printed": [
+    "$19,628,762",
+    "6%"
+   ],
+   "quote": "bottom line total request of $19,628,762 which represents a 6% increase from fy17 is unchanged."
+  },
+  {
+   "topic": "Health insurance",
+   "what_was_recorded": "Health insurance increase is estimated at 2% in the preliminary budget forecast.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "health insurance increase is estimated at 2%."
+  },
+  {
+   "topic": "Police staffing funding request",
+   "what_was_recorded": "A public speaker asked the Town to consider increasing funding to the Police Dept. to add officers, including a School Resource Officer; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. adams is requesting the town give serious consideration to increasing funding to the police dept. to add more officers."
+  },
+  {
+   "topic": "Capital reserve funding",
+   "what_was_recorded": "The Capital Planning committee reported reserving some capital budget funds into a reserve/stabilization fund for large capital items; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "reserve some funds from capital budget into reserve/stabilization fund for large capital"
+  },
+  {
+   "topic": "Financial forecast FY2018-2022",
+   "what_was_recorded": "Preliminary forecast for FY2018-2022 with revenue and expenditure assumptions was presented; the Town Manager asked department heads for level service and above level service budgets, with no target budgets.",
+   "figures_as_printed": [],
+   "quote": "the tm has asked department heads for level service and above level service budgets. no target budgets."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katy Adams",
+   "stated_role": "Public",
+   "topic": "Student safety and police staffing after TurkeyHill Elementary incident",
+   "quote": "public: katy adams. 45 williams dr. working on improving student safety and security in lunenburg as a"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comments",
+   "resolution": "heard public comment",
+   "quote": "ms. adams has consulted with chief marino regarding adding a school resource officer.",
+   "tags": [
+    "public comment",
+    "school safety",
+    "police"
+   ]
+  },
+  {
+   "topic": "New communications",
+   "resolution": "no action",
+   "quote": "town warrant is open. articles to be submitted in writing to the board of selectmen office by 4",
+   "tags": [
+    "warrant",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Town Accountant and Town Manager report (budget schedule and financial forecast)",
+   "resolution": "received report, member discussion",
+   "quote": "the tm will be presenting the new budget at the bos meeting on 2-14-17.",
+   "tags": [
+    "budget",
+    "forecast",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "none",
+   "quote": "4. review of minutes: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities (debt policy)",
+   "resolution": "discussed; policy still in draft",
+   "quote": "financial policy for managing debt: john h. presented a draft policy on debt service.",
+   "tags": [
+    "debt policy",
+    "borrowing",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received",
+   "quote": "met on monday. worked on draft rfp. new tm is a chief procurement",
+   "tags": [
+    "schools",
+    "EMS",
+    "public works",
+    "capital planning",
+    "RFP",
+    "updates"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "quote": "7. next meeting: february 9, 2017",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 8:33 pm",
+   "quote": "the committee approved the motion 6-0 at 8:33 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial forecast for FY2018-2022, with revenue and expenditure assumptions",
+   "where": "list",
+   "quote": "a document was presented showing the financial forecast for fy2018-2022, and revenue and expenditures"
+  },
+  {
+   "name": "Draft debt service policy (John H.)",
+   "where": "text",
+   "quote": "john h. presented a draft policy on debt service."
+  },
+  {
+   "name": "Updated Supt. Recommended budget with FY17 line-item transfers (email from School Supt. Loxi Calms)",
+   "where": "text",
+   "quote": "attached please find an updated supt. recommended budget with all the fy17 budget transfers to date."
+  },
+  {
+   "name": "Spreadsheet on EMS runs (George)",
+   "where": "text",
+   "quote": "george presented a spreadsheet on ems runs showing an increase in runs and increase in the elderly population."
+  },
+  {
+   "name": "Capital budget binder converted to spreadsheet form",
+   "where": "text",
+   "quote": "working on converting capital budget binder into spreadsheet form to put online."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY2018 budget",
+  "school budget",
+  "debt policy",
+  "capital planning",
+  "EMS",
+  "police staffing",
+  "town manager transition",
+  "RFP",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a document was presented showing the financial forecast for fy2018-2022"
+ },
+ "dropped_unquoted_by_field": {}
 }

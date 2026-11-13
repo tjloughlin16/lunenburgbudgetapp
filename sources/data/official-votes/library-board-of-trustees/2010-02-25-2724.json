@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-02-25",
  "docid": "2724",
@@ -12,31 +12,287 @@
  },
  "votes": [
   {
-   "motion": "Approve the January 2010 meeting minutes as amended",
-   "outcome": "approved",
+   "motion": "Approve the minutes of the January 2010 meeting as amended.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from january 2010 meeting approved as amended."
   },
   {
-   "motion": "Accept and submit the FY 2011 Minimum State Aid Request Budget in the amount of $329,791",
-   "outcome": "passed",
+   "motion": "Accept and submit the FY 2011 Minimum State Aid Request Budget of $329,791.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion made and passed to accept and submit the fy 2011 minimum sate aid request budget ($329,791)."
   },
   {
-   "motion": "Accept the bequest and send letter to the estate's lawyer informing the estate that the gift will be placed in the permanent endowment and to make the check to the Friends of Lunenburg Public Library",
-   "outcome": "passed",
+   "motion": "Thankfully accept the Vita Waller bequest of $5,000, place it in the permanent endowment, and send a letter to the estate's lawyer with the check made to the Friends of Lunenburg Public Library.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made and passed to thankfully accept bequest and send letter to the estate's lawyer informing the estate that the gift will be placed in the permanent endowment and to make the check to the friends of lunenburg public library."
+   "quote": "motion made and passed to thankfully accept bequest and send letter to the estate's lawyer informing the estate that the gift will be placed in the permanent endowment"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0894225
+ "note": "Minutes are plain extracted text, not a scan. The minutes approving the January 2010 minutes and accepting the FY 2011 budget and Vita Waller bequest record no mover, seconder or tally. The video game permission and the director's assignments are recorded without a vote. Adjournment at 7:59 p.m. is recorded with no motion. The 'Public Comment' item is a welcome by the Board, not a named public speaker. The minutes refer to handouts but do not list them under a heading. Several items were cut short or are paraphrased in brief.",
+ "cost_usd": 0.008696869999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, noelle bodkin, john mara, deb chapdelaine, lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, noelle bodkin, john mara, deb chapdelaine, lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, noelle bodkin, john mara, deb chapdelaine, lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, noelle bodkin, john mara, deb chapdelaine, lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "Deb Chapdelaine",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, noelle bodkin, john mara, deb chapdelaine, lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, noelle bodkin, john mara, deb chapdelaine, lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary, Trustees of the Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, noelle bodkin, john mara, deb chapdelaine, lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "Jennifer Mason",
+   "role": "LPL Librarian",
+   "status": "present",
+   "quote": "guests: jennifer mason, lpl librarian"
+  },
+  {
+   "name": "Alex Bogdan",
+   "role": "Junior, Lunenburg High School",
+   "status": "present",
+   "quote": "alex bogdan, junior, lunenburg high school"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board gives permission for Alex Bogdan's World Hunger Task Force to hold a public video game tournament at the library during open hours, on April 17 and 19.",
+   "quote": "board gives permission to hold this event during hours that the library is opened; dates will be april 17 and 19"
+  },
+  {
+   "decision": "Amy to review the LPL survey with staff, then report findings and make recommendations to the Board at a later date.",
+   "quote": "amy will review with staff and then report findings and make recommendations to board at a later date."
+  },
+  {
+   "decision": "Jeanne to bring the fundraiser idea for next fall to the next Friends meeting.",
+   "quote": "jeanne will bring to the next friends meeting"
+  },
+  {
+   "decision": "Len and Jeanne to compile the Director's evaluation and have it ready for the April meeting.",
+   "quote": "len and jeanne will compile and have the evaluation ready for the april meeting"
+  },
+  {
+   "decision": "Amy to send the job description to Trustees.",
+   "quote": "amy will send job description to trustees."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 11 Budget - Director's salary",
+   "what_was_recorded": "The Director's salary will increase by 5% in the FY 11 budget.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "director's salary will increase by 5%"
+  },
+  {
+   "topic": "FY 11 Budget - Town departments and School Department funding",
+   "what_was_recorded": "Town departments are level funded, the School Department decreases 1%, and this assures the library meets State Aid requirements without a waiver.",
+   "figures_as_printed": [
+    "1%"
+   ],
+   "quote": "school department which will decrease 1%."
+  },
+  {
+   "topic": "FY 11 Budget - State Aid minimum",
+   "what_was_recorded": "The minimum needed for State Aid is $329, 791, with a 5% decrease in State Aid factored in.",
+   "figures_as_printed": [
+    "$329, 791",
+    "5%"
+   ],
+   "quote": "$329, 791 is the minimum needed for state aid; kerry factored in a 5% decrease in state aid"
+  },
+  {
+   "topic": "FY 11 Budget - three budget scenarios discussed",
+   "what_was_recorded": "The Board discussed three FY 2011 budget levels: Level Service, Minimum State Aid, and 5% less than State Aid requirements; the Minimum State Aid budget was then accepted and submitted.",
+   "figures_as_printed": [
+    "$335,791",
+    "$329, 791",
+    "$313,303"
+   ],
+   "quote": "board discussed the fy 2011 budgets at level service request ($335,791), minimum state aid request ($329, 791) and 5% less than state aid requirements ($313,303)"
+  },
+  {
+   "topic": "Staff longevity and retirement options",
+   "what_was_recorded": "Kerry spoke about retirement options for town employees; LPL has two staff at 5% longevity and one at 3.5%.",
+   "figures_as_printed": [
+    "5%",
+    "3.5%"
+   ],
+   "quote": "lpl has two staff at 5% longevity, 1 at 3.5%"
+  },
+  {
+   "topic": "FY 10 Budget - spending of grant and trust funds",
+   "what_was_recorded": "The library continues to spend Revolving Fund, All-Purpose Trust Funds and miscellaneous funds (LSTA grant) on library materials, expected to close by April; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "continuing to spend monies from revolving fund, all-purpose trust funds and miscellaneous funds (lsta grant) on library materials"
+  },
+  {
+   "topic": "Vita Waller bequest",
+   "what_was_recorded": "A former Lunenburg resident left $5,000 to LPL, accepted and placed in the permanent endowment.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "former lunenburg resident left $5,000 to lpl."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome of new librarian Jennifer (Jen) Mason",
+   "resolution": "no action",
+   "quote": "welcome to jennifer (jen) mason, lpl's new librarian.",
+   "tags": [
+    "staff",
+    "welcome"
+   ]
+  },
+  {
+   "topic": "Minutes of January 2010 meeting",
+   "resolution": "approved as amended",
+   "quote": "minutes from january 2010 meeting approved as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Video game tournament request (Alex Bogdan, World Hunger Task Force)",
+   "resolution": "permission granted for April 17 and 19",
+   "quote": "would like to hold a video game tournament at the library",
+   "tags": [
+    "events",
+    "teens",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "FY 11 Budget",
+   "resolution": "Minimum State Aid budget of $329,791 accepted and submitted",
+   "quote": "motion made and passed to accept and submit the fy 2011 minimum sate aid request budget ($329,791).",
+   "tags": [
+    "budget",
+    "FY 2011",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; survey review assigned to Amy",
+   "quote": "lpl survey: 97 responses; average age was 40-59 yrs.",
+   "tags": [
+    "survey",
+    "staffing",
+    "facilities",
+    "programming",
+    "circulation"
+   ]
+  },
+  {
+   "topic": "Vita Waller Gift",
+   "resolution": "bequest accepted",
+   "quote": "vita waller gift: former lunenburg resident left $5,000 to lpl.",
+   "tags": [
+    "bequest",
+    "endowment",
+    "Friends"
+   ]
+  },
+  {
+   "topic": "Town Caucus",
+   "resolution": "information only",
+   "quote": "town caucus: monday, march 15 at 8 pm; there will be 3 open trustee positions",
+   "tags": [
+    "elections",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "scheduled for April; no form changes",
+   "quote": "no changes were made to the evaluation form; form due back by or on march 18, 2010 meeting",
+   "tags": [
+    "evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Annual Trustee's Symposium",
+   "resolution": "announced",
+   "quote": "annual trustee's symposium is april 10, 2010 at the fiske public library, wrentham, ma.",
+   "tags": [
+    "training"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY 11 Budget handout",
+   "where": "text",
+   "quote": "fy 11 budget (see handout for more detail)"
+  },
+  {
+   "name": "Director's Report handout",
+   "where": "text",
+   "quote": "director's report (see handout for details)"
+  },
+  {
+   "name": "Salary Admin Plan recommended grade/step/salary changes handout",
+   "where": "text",
+   "quote": "please see handout for recommended grade/step/salary changes"
+  }
+ ],
+ "tags": [
+  "library",
+  "FY 2011 budget",
+  "state aid",
+  "bequest",
+  "video game tournament",
+  "director evaluation",
+  "trustees",
+  "staffing",
+  "facilities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2010-08-26",
  "docid": "2382",
@@ -12,47 +12,251 @@
  },
  "votes": [
   {
-   "motion": "approve the April 29, 2010 minutes",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Mark Erickson",
+   "motion": "Approve the minutes of 4/29/2010.",
+   "moved_by": "BR",
+   "seconded_by": "ME",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by br to approve and seconded by me; all approved."
+   "quote": "review of 4/29/2010 minutes; motion by br to approve and seconded by me; all approved."
   },
   {
-   "motion": "accept the July 29, 2010 minutes",
-   "moved_by": "Marilyn Stokes",
-   "seconded_by": "Mike Mackin",
+   "motion": "Accept the minutes of 7/29/2010.",
+   "moved_by": "MS",
+   "seconded_by": "MM",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by ms to accept and seconded by mm; all approved."
+   "quote": "review of 7/29/2010 minutes; motion by ms to accept and seconded by mm; all approved."
   },
   {
-   "motion": "adopt the Committee/Department Liaison Assignments slate",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "Mike Mackin",
+   "motion": "Adopt the slate of committee and department liaison assignments as listed.",
+   "moved_by": "ME",
+   "seconded_by": "MM",
    "outcome": "passed",
    "procedural": false,
    "quote": "me moved to adopt slate as listed below and mm seconded, all approved."
   },
   {
-   "motion": "approve the Final FY2010 transfer",
-   "moved_by": "Mike Mackin",
-   "seconded_by": "Marilyn Stokes",
+   "motion": "Approve the final FY2010 transfer.",
+   "moved_by": "MM",
+   "seconded_by": "MS",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mm made motion to approve, ms seconded, all approved."
+   "quote": "final fy2010 transfer reviewed - mm made motion to approve, ms seconded, all approved."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "Marilyn Stokes",
+   "motion": "Adjourn the meeting at 8:41 PM.",
+   "moved_by": "ME",
+   "seconded_by": "MS",
    "outcome": "not stated",
    "procedural": true,
    "quote": "me made motion to adjourn at 8:41 pm and ms seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1224825
+ "note": "Plain text extraction of a 2010 minutes document, not a scan. Nominations for officers were recorded without a separate vote result, so they are not listed as votes. The minutes do not state how the adjournment motion was resolved. Mark Erickson's attendance status is not printed. Kerry Speidel's role is not printed beyond \"Also Present\". The Monty Tech vote and the public-comment-like discussion of a retired teacher are reports or discussion, not votes or public comment by this board.",
+ "cost_usd": 0.00526322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, marilyn stokes, barbara reynolds, mike mackin"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, marilyn stokes, barbara reynolds, mike mackin"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, marilyn stokes, barbara reynolds, mike mackin"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, marilyn stokes, barbara reynolds, mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, marilyn stokes, barbara reynolds, mike mackin"
+  },
+  {
+   "name": "John Male",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: john male also present: kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: kerry speidel"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "",
+   "status": "not stated",
+   "quote": "school regionalization - mark erickson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to meet with the architect on the small town hall project.",
+   "quote": "small town hall project - town manager to meet with architect."
+  },
+  {
+   "decision": "Town Manager will follow up with the Water District on the Reservoir Road repairs.",
+   "quote": "town manager will follow-up with water district."
+  },
+  {
+   "decision": "BL requested follow-up on earlier discussions on UNITIL assisting with a few tasks at the school.",
+   "quote": "bl requested follow-up on earlier discussions on unitil assisting with few tasks at the school"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW pavement management and crack/seal project",
+   "what_was_recorded": "DPW presented a Pavement Management Plan; $319K is available this year for portions of Lancaster Ave. and New W. Townsend Rd., and a crack/seal project of about $40K is planned.",
+   "figures_as_printed": [
+    "$319K",
+    "$40K"
+   ],
+   "quote": "in the current year we have $319k available to be used on portions of lancaster ave."
+  },
+  {
+   "topic": "Monty Tech revised budget assessment",
+   "what_was_recorded": "Monty Tech certified a revised budget assessment giving Lunenburg a reduction.",
+   "figures_as_printed": [
+    "$2896"
+   ],
+   "quote": "with a $2896 reduction to lunenburg's assessment"
+  },
+  {
+   "topic": "Schools new funds",
+   "what_was_recorded": "The School Committee will decide how new funds of $231K are spent; they will be handled like ARRA funds.",
+   "figures_as_printed": [
+    "$231K"
+   ],
+   "quote": "next school committee will determine how new $231k funds will be spent"
+  },
+  {
+   "topic": "DPW unspent FY2010 funds",
+   "what_was_recorded": "DPW did not spend $15K from its FY2010 budget because it was instructed not to spend, due to overages in the snow and ice line item.",
+   "figures_as_printed": [
+    "$15K"
+   ],
+   "quote": "dpw did not spend $15k from fy2010 budget because they were instructed not to spend due to overages in snow and ice line item."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Final FY2010 transfer, reviewed and approved by motion.",
+   "outcome": "approved",
+   "amount_as_printed": "not printed",
+   "quote": "final fy2010 transfer reviewed - mm made motion to approve, ms seconded, all approved."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and welcome of members",
+   "resolution": "no action",
+   "tags": [
+    "membership"
+   ],
+   "quote": "committee welcomed new member, mike mackin, and returning members, john male"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 4/29/2010 minutes; accepted 7/29/2010 minutes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review of 4/29/2010 minutes; motion by br to approve and seconded by me; all approved."
+  },
+  {
+   "topic": "Reorganization of FY2011 Finance Committee",
+   "resolution": "officers nominated; liaison slate adopted",
+   "tags": [
+    "reorganization",
+    "liaisons"
+   ],
+   "quote": "chairman - br nominated brian laffond, ms seconded"
+  },
+  {
+   "topic": "Committee and department reports",
+   "resolution": "reports received",
+   "tags": [
+    "DPW",
+    "library",
+    "schools",
+    "Monty Tech",
+    "regionalization"
+   ],
+   "quote": "dpw - new pavement management plan presented showing cost for each road"
+  },
+  {
+   "topic": "Town Manager updates and new business",
+   "resolution": "no action",
+   "tags": [
+    "DPW facility",
+    "town hall",
+    "electrical aggregation",
+    "FY2010 spending",
+    "Reservoir Road"
+   ],
+   "quote": "dpw facility update project had first meeting yesterday"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:41 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "me made motion to adjourn at 8:41 pm and ms seconded."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pavement Management Plan (DPW, new)",
+   "where": "text",
+   "quote": "new pavement management plan presented showing cost for each road"
+  },
+  {
+   "name": "Open Meeting Law Workshop handouts (August 5)",
+   "where": "text",
+   "quote": "open meeting law workshop held august 5; handouts from meeting provided."
+  },
+  {
+   "name": "Municipal electrical aggregation feasibility study",
+   "where": "text",
+   "quote": "feasibility study completed and results will be presented to the board next week"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget",
+  "FY2011 reorganization",
+  "liaison assignments",
+  "DPW",
+  "pavement management",
+  "Monty Tech assessment",
+  "schools",
+  "FY2010 transfer",
+  "electrical aggregation",
+  "town hall"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

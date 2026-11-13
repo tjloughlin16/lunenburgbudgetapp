@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2012-08-06",
  "docid": "4597",
@@ -12,56 +12,230 @@
  },
  "votes": [
   {
-   "motion": "to approve the prior minutes",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "the minutes were read and approved",
-   "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "to pursue the use of an Elem. School classroom as a studio, with the rent to be negotiated",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "a motion was made, seconded and passed to broadcast the game a motion was made, seconded and passed to authorize a full page ad (i",
+   "motion": "Pursue the use of an Elementary School classroom as a studio, with the rent to be negotiated.",
    "moved_by": "",
    "seconded_by": "",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "to broadcast the Homecoming game",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made, seconded and passed to broadcast the game",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "á motion was made, seconded and passed to pursue the use of an elem. school classroom as a studio, with the rent to be negotiated."
   },
   {
-   "motion": "to authorize a full page ad (inside cover) in the booster booklet for $200",
+   "motion": "Broadcast the Homecoming game (Oct. 13).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made, seconded and passed to authorize a full page ad (inside cover) in the booster booklet ($200).",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "a motion was made, seconded and passed to broadcast the game"
   },
   {
-   "motion": "to go into executive session",
+   "motion": "Authorize a full page ad (inside cover) in the booster booklet for $200.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "a motion was made, seconded and passed to authorize a full page ad (inside cover) in the booster booklet ($200)."
+  },
+  {
+   "motion": "Go into executive session.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made, seconded and passed to go into executive session.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "a motion was made, seconded and passed to go into executive session."
   },
   {
-   "motion": "to increase the coordinator's position to 28 hours (with benefits) and to raise the salary account for FY 13 to $47,000",
+   "motion": "Increase the coordinator's position to 28 hours (with benefits) and raise the salary account for FY 13 to $47,000.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made, seconded and passed to increase the coordinator's position to 28 hours (with benefits) and to raise the salary account for fy 13 to $47,000.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "a motion was made, seconded and passed to increase the coordinator's position to 28 hours (with benefits) and to raise the salary account for fy 13 to $47,000."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan",
- "cost_usd": 0.1029895
+ "note": "OCR text from macOS Vision with garbled passages: the studio-visit description on page 1 is unreadable, and the end of the executive session motion (\"C to include 1l possible part-time person\") is partly garbled. The Received & Filed stamp (SEP 11 2012) is printed on page 1. The minutes record no motion to approve them, and the adjournment at 945 pm is stated without a recorded motion, so no adjournment vote is listed. Movers and seconders are not named in any motion. The vote counts are not printed; every motion is recorded only as \"passed\".",
+ "cost_usd": 0.00477322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: ernie sund, jo mclaughlin, john dextraze, kerry spiedel"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: ernie sund, jo mclaughlin, john dextraze, kerry spiedel"
+  },
+  {
+   "name": "John Dextraze",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: ernie sund, jo mclaughlin, john dextraze, kerry spiedel"
+  },
+  {
+   "name": "Kerry Spiedel",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: ernie sund, jo mclaughlin, john dextraze, kerry spiedel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the prior meeting were read and approved (no motion recorded).",
+   "quote": "secretary's report: the minutes were read and approved"
+  },
+  {
+   "decision": "CORI forms to be submitted for Brian and Jason.",
+   "quote": "cori forms to be submitted for brian and jason"
+  },
+  {
+   "decision": "Lance will call FATV to reserve a truck for Homecoming if necessary; two announcers are lined up.",
+   "quote": "lance will call fatv to reserve truck (if necessary) 2 announcers are lined up"
+  },
+  {
+   "decision": "In executive session, the board answered that posted hours are needed in the office, with a memo to be sent.",
+   "quote": "5. do we need posted hours in our office? (yes with a memo to be sent)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Benefit cost for 28 hr./week position",
+   "what_was_recorded": "The benefit cost to PACC for a 28 hour per week position was recorded.",
+   "figures_as_printed": [
+    "$5496"
+   ],
+   "quote": "benefit cost to pacc for a 28 hr./week position = $5496."
+  },
+  {
+   "topic": "Full page ad for Team Booster Booklet",
+   "what_was_recorded": "A full page ad for the Team Booster Booklet was priced; the board later authorized a full page ad in the booster booklet.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "full page ad for the team booster booklet = $200"
+  },
+  {
+   "topic": "Full page ad for Sept. Ledger",
+   "what_was_recorded": "A full page ad for the September Ledger was priced.",
+   "figures_as_printed": [
+    "$450"
+   ],
+   "quote": "full page ad for sept. ledger = $450"
+  },
+  {
+   "topic": "Booster booklet inside cover ad authorized",
+   "what_was_recorded": "Motion passed to authorize a full page ad (inside cover) in the booster booklet at the stated price.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "(inside cover) in the booster booklet ($200)."
+  },
+  {
+   "topic": "Salary account for programming coordinator, FY 13",
+   "what_was_recorded": "Motion passed to raise the salary account for FY 13 to a stated amount, alongside increasing the coordinator's position to 28 hours with benefits.",
+   "figures_as_printed": [
+    "$47,000"
+   ],
+   "quote": "to raise the salary account for fy 13 to $47,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "minutes read and approved",
+   "quote": "secretary's report: the minutes were read and approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: Bidding Procedures",
+   "resolution": "in process; award targeted for the September 10 meeting",
+   "quote": "is in process... a different template is needed because service is involved.",
+   "tags": [
+    "bidding",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Old Business: Studio Space",
+   "resolution": "approved pursuing an Elementary School classroom as studio, rent to be negotiated",
+   "quote": "á motion was made, seconded and passed to pursue the use of an elem. school classroom as a studio, with the rent to be negotiated.",
+   "tags": [
+    "studio",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Programming/Budget Update",
+   "resolution": "approved Homecoming broadcast and booster booklet ad; CORI forms and other items noted",
+   "quote": "a motion was made, seconded and passed to authorize a full page ad (inside cover) in the booster booklet ($200).",
+   "tags": [
+    "programming",
+    "budget",
+    "advertising",
+    "Homecoming"
+   ]
+  },
+  {
+   "topic": "Executive session: programming coordinator position",
+   "resolution": "increased coordinator position to 28 hours with benefits; FY 13 salary account raised to $47,000",
+   "quote": "a discussion took place regarding several issues concerning the position of programming",
+   "tags": [
+    "staffing",
+    "executive session",
+    "programming coordinator"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access",
+  "PACC",
+  "studio space",
+  "budget",
+  "staffing",
+  "programming coordinator",
+  "executive session",
+  "Homecoming broadcast",
+  "advertising",
+  "bidding"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2012-07-18",
  "docid": "2469",
@@ -12,15 +12,163 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 6/6/12",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "the minutes from 6/6/12 were approved.",
+   "motion": "Approve the minutes of 6/6/12.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the minutes from 6/6/12 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. No mover or seconder named.",
- "cost_usd": 0.0834615
+ "note": "Single-page text, cleanly extracted. The header reads 'Green Community Task Force' while the board is listed as 'Green Communities Committee'; recorded as the board named in the request. Only one procedural vote is printed: approval of the 6/6/12 minutes, with no mover, seconder or tally. No motion or vote is recorded for adjournment, so none is recorded here. No documents list or exhibits are printed. The observer in the Mass PVI item is unnamed; that item is recorded as an unnamed observer's remark, not a formal public comment period.",
+ "cost_usd": 0.00385812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Members",
+   "status": "present",
+   "quote": "members d. blatt, z. cutting, j. mcquaid"
+  },
+  {
+   "name": "Z. Cutting",
+   "role": "Members",
+   "status": "present",
+   "quote": "members d. blatt, z. cutting, j. mcquaid"
+  },
+  {
+   "name": "J. McQuaid",
+   "role": "Members; Secretary (signed as Joanne McQuaid, Secretary)",
+   "status": "present",
+   "quote": "members d. blatt, z. cutting, j. mcquaid"
+  },
+  {
+   "name": "J. Londa",
+   "role": "Advisors",
+   "status": "present",
+   "quote": "advisors j. londa"
+  },
+  {
+   "name": "M. Benson",
+   "role": "not stated (member, per the minutes' reference to 'other members')",
+   "status": "absent",
+   "quote": "in m.benson's absence no other members were aware of updates."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Look for quick Return on Investment (ROI) renewable energy projects in response to the Planning Board's request for additional sites.",
+   "quote": "we should look for quick return on investment (roi) projects"
+  },
+  {
+   "decision": "D. Blatt will follow up with M. Benson (on possible additional renewable energy sites; Unitil may have a list of solar sites).",
+   "quote": "d. blatt will follow up with m. benson."
+  },
+  {
+   "decision": "D. Blatt will verify with the Board of Selectmen whether the Green Community Act may be on the Fall Special Town meeting.",
+   "quote": "will verify with the board of selectmen."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Landfill solar project - Unitil study",
+   "what_was_recorded": "Unitil will conduct an August study of inverters and project scope at a cost of $12,000.00, payable by Borrego, who has already invested one year of planning and $18,000.00.",
+   "figures_as_printed": [
+    "$12,000.00",
+    "$18,000.00"
+   ],
+   "quote": "the cost will be $12,000.00 payable by borrego who has already invested one year of planning and $18,000.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "an observer at the meeting",
+   "stated_role": "observer at the meeting (unnamed)",
+   "topic": "Mass PVI project and Attorney General",
+   "quote": "however an observer at the meeting indicated that they think masspvi has gone to the attorney general claiming that the new by-laws were making the project unfeasible."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order; approval of prior minutes",
+   "resolution": "approved minutes of 6/6/12",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "the minutes from 6/6/12 were approved."
+  },
+  {
+   "topic": "Solar project updates (Landfill, EPG, Mass PVI)",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "solar",
+    "landfill",
+    "Unitil",
+    "Planning Board"
+   ],
+   "quote": "landfill: j. londa met with borrego and the town manager."
+  },
+  {
+   "topic": "Planning Board request for additional renewable energy sites",
+   "resolution": "discussed; D. Blatt to follow up",
+   "tags": [
+    "renewable energy",
+    "ROI",
+    "wind",
+    "energy conservation"
+   ],
+   "quote": "the planning board is requesting possible additional sites for renewable energy projects within the town."
+  },
+  {
+   "topic": "Town buildings update (cardboard recyclers, lighting)",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "town buildings",
+    "lighting",
+    "schools",
+    "Monty Tech"
+   ],
+   "quote": "j. londa said that cardboard recyclers are being installed at the schools to generate revenue"
+  },
+  {
+   "topic": "Other business (Green Community Act; Building Code)",
+   "resolution": "discussed; D. Blatt to verify with Selectmen",
+   "tags": [
+    "Green Community Act",
+    "Fall Special Town meeting",
+    "Building Code"
+   ],
+   "quote": "the green community act may be on the fall special town meeting."
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting TBA; adjourned 8:04 P.M.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "next meeting tba. meeting adjourned at 8:04 p.m."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "solar",
+  "renewable energy",
+  "landfill solar",
+  "net metering",
+  "energy conservation",
+  "town buildings",
+  "lighting",
+  "Green Community Act",
+  "Planning Board",
+  "Unitil"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

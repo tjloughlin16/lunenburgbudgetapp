@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-06-04",
  "docid": "878",
@@ -12,21 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of April 23, 2012",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes approved: april 23, 2012"
-  },
-  {
-   "motion": "grant an extension on the time to repair until the tenant has vacated at 605 Mulpus Road",
+   "motion": "Grant an extension of time to make the required repairs at 605 Mulpus Road until the tenant has vacated.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by shea, the board voted to grant an extension on the time to repair until the tenant has vacated. the property cannot be re-occupied until the deficiencies have been corrected. all in favor."
+   "quote": "on motion by jewell and second by shea, the board voted to grant an extension on the time to repair until the tenant has vacated."
   },
   {
-   "motion": "affirm the original well permit and grant variances from local well regulations for 11 Spring Street",
+   "motion": "Affirm the original 2003 well permit, including its variances, for 11 Spring Street.",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
    "outcome": "passed",
@@ -34,7 +28,7 @@
    "quote": "on motion by passios and second by jewell, variances granted. all in favor."
   },
   {
-   "motion": "approve variances for groundwater offset and sieve analysis for the septic system at 11 Rangeley Road",
+   "motion": "Approve the variances requested for 11 Rangeley Road.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
    "outcome": "passed",
@@ -42,19 +36,257 @@
    "quote": "on motion by jewell and second by shea, the variances were approved. all in favor."
   },
   {
-   "motion": "appoint George Emond as Chairman, Perry Jewell as Vice-Chairman, and David Shea as Secretary of the Board of Health",
+   "motion": "Appoint George Emond as Chairman, Perry Jewell as Vice-Chairman and David Shea as Secretary of the Board.",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "the board of health voted unanimously to appoint george emond as chairman, perry jewell as vice-chairman and david shea as secretary of the board."
   },
   {
-   "motion": "approve the annual request for the use of portable facilities at Shady Point Campground",
+   "motion": "Approve the annual request for use of portable facilities at Shady Point Campground.",
    "outcome": "passed",
    "procedural": false,
    "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at shady point campground."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1307485
+ "note": "OCR header is garbled (\"LUNENBERGING MENOT BEA.TH\"). The 424 Page Street discussion has no heading in the text (it follows the septic permit list). The 11 Rangeley Road paragraph is cut off mid-sentence (\"for am easement for the\") before its vote. Votes record \"All in favor\" with no counts. The minutes approval and adjournment (8:15 pm) have no motion recorded, so they are not listed as votes. The Scott Patterson attendance is unclear. No public comment section is printed; residents and applicants are recorded under topics.",
+ "cost_usd": 0.00669172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board member",
+   "status": "present",
+   "quote": "george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Mr. Ramondelli",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "mr. ramondelli, owner of the property, together with mr. karapatsas, the prospective buyer of"
+  },
+  {
+   "name": "Mr. Karapatsas",
+   "role": "prospective buyer of the property",
+   "status": "present",
+   "quote": "mr. karapatsas, the prospective buyer of the property met with the board to discuss the replacement of the septic system."
+  },
+  {
+   "name": "Gary Sheppard",
+   "role": "of Ross Associates",
+   "status": "present",
+   "quote": "also present was gary sheppard of ross associates and bob proctor."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present was gary sheppard of ross associates and bob proctor."
+  },
+  {
+   "name": "Marion Brandt",
+   "role": "Owner",
+   "status": "present",
+   "quote": "owner marion brandt met with the board to request and extension of time for the required repairs on the rental property."
+  },
+  {
+   "name": "Scott Patterson",
+   "role": "new owner",
+   "status": "not stated",
+   "quote": "the new owner, scott patterson, would like to install the proposed well"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Administrator",
+   "status": "present",
+   "quote": "town administrator, kerry speidel, met with the board to discuss funding for the department for the upcoming fiscal year."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "steve marsden and bob proctor met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Time was requested at the next Board of Health meeting, so the 424 Page Street discussion is continued to the next meeting.",
+   "quote": "time was requested at the next board of health meeting to continue the discussion."
+  },
+  {
+   "decision": "Board will work with the owner to install an adequate septic system at 424 Page Street, provided the conditions are met.",
+   "quote": "provided that these conditions are met, the board stated that they would be willing to work with the owner to install an adequate system."
+  },
+  {
+   "decision": "Before the board can consider a variance for 424 Page Street, the prospective buyer must provide water usage data from similar establishments and a business plan and use of the property.",
+   "quote": "further, that mr. karapatsas has to provide the board with a business plan and use of the property before they can entertain a variance."
+  },
+  {
+   "decision": "Board position that the 424 Page Street work cannot be treated as a repair because of the change of use.",
+   "quote": "chairman emond stated that it could not be viewed as a repair because of the change of use and that the current system does not fully comply with current title v requirements."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Health department funding and administrative assistant hours (FY budget)",
+   "what_was_recorded": "Administrative assistant hours would be cut from 30 to 26 per week, achieved by reducing a position in the IT department; the administrative position stays standalone rather than shared.",
+   "figures_as_printed": [
+    "30 hours per week",
+    "26 hours per week"
+   ],
+   "quote": "hours for the administrative assistant would be cut from 30 hours per week to 26 hours per week."
+  },
+  {
+   "topic": "Department funding for upcoming fiscal year",
+   "what_was_recorded": "Town Administrator met with the board to discuss department funding for the upcoming fiscal year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "town administrator, kerry speidel, met with the board to discuss funding for the department for the upcoming fiscal year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved (April 23, 2012)",
+   "resolution": "approved (no motion recorded)",
+   "quote": "minutes approved: april 23, 2012",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (no detail printed)",
+   "quote": "title 5 inspection reports acknowledged:",
+   "tags": [
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (list only)",
+   "quote": "septic permits signed:",
+   "tags": [
+    "septic"
+   ]
+  },
+  {
+   "topic": "424 Page Street (septic replacement; drive-thru coffee/donut shop proposal)",
+   "resolution": "continued to next meeting",
+   "quote": "time was requested at the next board of health meeting to continue the discussion.",
+   "tags": [
+    "septic",
+    "Title 5",
+    "variance",
+    "food service"
+   ]
+  },
+  {
+   "topic": "605 Mulpus Road repair extension",
+   "resolution": "extension granted",
+   "quote": "owner marion brandt met with the board to request and extension of time for the required repairs on the rental property.",
+   "tags": [
+    "housing",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "11 Spring Street well permit",
+   "resolution": "original permit and variances affirmed",
+   "quote": "the board issued a permit for a new well in 2003 as part of a replacement septic system.",
+   "tags": [
+    "well",
+    "variance"
+   ]
+  },
+  {
+   "topic": "Kerry Speidel department funding",
+   "resolution": "no action recorded",
+   "quote": "town administrator, kerry speidel, met with the board to discuss funding for the department for the upcoming fiscal year.",
+   "tags": [
+    "budget",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "11 Rangeley Road septic system variances",
+   "resolution": "variances approved",
+   "quote": "steve marsden and bob proctor met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variance",
+    "easement"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "officers elected",
+   "quote": "the board of health voted unanimously to appoint george emond as chairman, perry jewell as vice-chairman and david shea as secretary of the board.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "Shady Point Beach and Camp portable facilities",
+   "resolution": "approved annual request",
+   "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at shady point campground.",
+   "tags": [
+    "portable toilets",
+    "campground"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Septic permits signed: 424 Page Street; 53 Eastern Avenue; Goodrich Street, Lot 3; Goodrich Street, Lot 1; 384 Townsend Harbor Road; 424 Page Street; 11 Rangeley Road; 457 Massachusetts Avenue",
+   "where": "text",
+   "quote": "septic permits signed:"
+  },
+  {
+   "name": "2003 well permit (11 Spring Street), with variances from local well regulations and local upgrade approval from Title 5",
+   "where": "text",
+   "quote": "the board issued a permit for a new well in 2003 as part of a replacement septic system."
+  },
+  {
+   "name": "CMR 10.315 (Title 5)",
+   "where": "text",
+   "quote": "cmr10.315 (title 5) requires a sewage disposal system be designed to handle 1,000 gallon/day."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "Title 5",
+  "variances",
+  "well permit",
+  "food service",
+  "staffing",
+  "officers",
+  "portable toilets",
+  "campground"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

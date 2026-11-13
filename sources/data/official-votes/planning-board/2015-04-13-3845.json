@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-04-13",
  "docid": "3845",
@@ -12,15 +12,134 @@
  },
  "votes": [
   {
-   "motion": "continue the hearing to May 11, 2015 at 6:35 PM",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Continue the public hearing on Highfield Village to May 11, 2015, 6:35 PM.",
+   "moved_by": "M. Allison",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed, all aye",
+   "procedural": false,
    "quote": "m. allison, motion to continue hearing to may 11, 2015, 6:35 pm, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.028226599999999998
+ "note": "Text is a usable typed transcript with no scan problems. The single vote is recorded as 'all aye' with no numeric tally. The minutes name no public comment section and no documents list heading. Budget figures: none printed. Kent Oldfield and Rob Oliva are mentioned but are not recorded as taking part, so they are not listed as attendees.",
+ "cost_usd": 0.00412462,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "John Godfrey",
+   "role": "applicant",
+   "status": "present",
+   "quote": "john godfrey, applicant, noted the project engineer kent oldfield"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "D. McQuaid requested that the applicant provide a comprehensive package the Board can understand.",
+   "quote": "d. mcquaid requested a comprehensive package from the applicant that the board can understand."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing (continued): Highfield Village definitive plan, 66 dwelling units off Northfield Road",
+   "resolution": "continued to May 11, 2015",
+   "quote": "motion to continue hearing to may 11, 2015, 6:35 pm",
+   "tags": [
+    "public hearing",
+    "subdivision",
+    "cluster development",
+    "Highfield Village"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised plans (Highfield Village definitive plan), submitted to Reviewing Engineer Rob Oliva, David E. Ross Associates, week of February 16",
+   "where": "text",
+   "quote": "revised plans were submitted to reviewing engineer rob oliva"
+  },
+  {
+   "name": "April 6, 2015 review letter",
+   "where": "text",
+   "quote": "addressing the outstanding items noted in the april 6, 2015 review letter"
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "definitive plan per the rules and regulations governing"
+  },
+  {
+   "name": "Section 5.6. Cluster Development of the Protective Bylaw of the Town of Lunenburg",
+   "where": "text",
+   "quote": "section 5.6. cluster development of the protective bylaw of the town of lunenburg"
+  },
+  {
+   "name": "Traffic Study (dated about 2005)",
+   "where": "text",
+   "quote": "could the traffic study be redone with current data?"
+  },
+  {
+   "name": "Final EIR (environmental impact report)",
+   "where": "text",
+   "quote": "a. burney noted that the eir had been filed."
+  },
+  {
+   "name": "Sewer plans reviewed by Weston & Sampson",
+   "where": "text",
+   "quote": "they are the firm that reviewed the sewer plans"
+  }
+ ],
+ "tags": [
+  "Highfield Village",
+  "public hearing",
+  "subdivision",
+  "cluster development",
+  "traffic study",
+  "board vacancies",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

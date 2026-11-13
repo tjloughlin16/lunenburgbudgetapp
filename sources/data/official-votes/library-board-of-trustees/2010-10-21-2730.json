@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-10-21",
  "docid": "2730",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve use of the library for a Friends of Lunenburg Public Library mini-golf fundraiser",
+   "motion": "Approve use of the library for a Friends of Lunenburg Public Library mini-golf fundraiser.",
    "moved_by": "Lisa Krowitz",
    "seconded_by": "Noelle Bodkin",
-   "outcome": "passed with one abstention",
+   "outcome": "passed, with one abstention",
    "procedural": false,
    "quote": "motion made by lisa krowitz and seconded by noelle bodkin to approve use of the library for a friends of lunenburg public library \"mini-golf\" fundraiser. passed, with one abstention."
   },
   {
-   "motion": "adjourn meeting at 7:45 pm",
+   "motion": "Adjourn the meeting at 7:45 pm.",
    "moved_by": "Len Smetana",
    "seconded_by": "Dick Mailloux",
    "outcome": "passed",
@@ -29,6 +29,196 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09299750000000001
+ "note": "Text extraction, two pages, no scan. Some words are split by stray spaces (for example \"port f ees\", \"dril l\", \"ba ckups\") and were not corrected in quotes. Votes recorded: one motion with a result and one adjournment; the minutes give no roll-call count for the mini-golf vote beyond \"one abstention\". The Director's Report and FY11 Library Expense Analysis are referenced as \"please see\" documents, not as a printed list. The minutes name Kerry Speidel (Lunenburg Town Manager) and Beverly Guerin, but neither is recorded as taking part in the meeting, so they are not listed as attendees.",
+ "cost_usd": 0.00485012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "Acting Chair",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: john mara"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review of the September 16, 2010 minutes was tabled until the October 21, 2010 meeting.",
+   "quote": "review of september 16, 2010 minutes tabled until october 21, 2010 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Rollstone Bank pledge and memorial donation",
+   "what_was_recorded": "Rollstone Bank completed its 5-year pledge, and a $100 donation was received from Mrs. Norman Cross in memory of Mary Emily Smith-Peterson.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "a donation of $100 was received from mrs. norman cross in memory of mary emily smith -"
+  },
+  {
+   "topic": "Revolving Fund expenditures",
+   "what_was_recorded": "Library expenditures from the Revolving Fund to date were reported.",
+   "figures_as_printed": [
+    "$1,680.47"
+   ],
+   "quote": "library expenditures from revolving fund to date: $1,680.47."
+  },
+  {
+   "topic": "C/W MARS rates and lender credit",
+   "what_was_recorded": "Next year's C/W MARS rates are expected to be 6.5% less than this year due to the switchover to Evergreen; the new formula is based on circulation and holdings rather than port fees, and net lender credit has been eliminated.",
+   "figures_as_printed": [
+    "6.5%"
+   ],
+   "quote": "c/w mar's rates for next year are expected to be 6.5% less than this year due to the switchover to evergreen"
+  },
+  {
+   "topic": "Staff wage increase request",
+   "what_was_recorded": "The town manager notified the director that the FY budget adopted in May 2010 included a wage freeze for non-union employees, so the request for a yearly increase for SalAdmin staff will not go through. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "therefore, the request to provide saladmin staff a yearly increase will not go through."
+  },
+  {
+   "topic": "Phone system service agreement",
+   "what_was_recorded": "The Friends will pay for the service agreement for the new phone system. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "friends will pay for the service agreement for the new phone system."
+  },
+  {
+   "topic": "Lawn aeration and reseeding",
+   "what_was_recorded": "Lakeview aerated and reseeded the front lawn, paid for by the Friends. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "lakeview aerated and reseeded the front lawn (paid for by the friends)"
+  },
+  {
+   "topic": "Friends Book and Bake Sale revenue",
+   "what_was_recorded": "Book and Bake Sale attendance and revenue were down, though the bake sale brought in the most money. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "book and bake sale attendance and revenue were down; however, the bake sale brought in the most money!"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of September 16, 2010 minutes",
+   "resolution": "tabled to October 21, 2010 meeting",
+   "quote": "review of september 16, 2010 minutes tabled until october 21, 2010 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "quote": "2. director's report (please see report for details):",
+   "tags": [
+    "circulation",
+    "budget",
+    "staff",
+    "facilities",
+    "technology",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Friends update",
+   "resolution": "no action",
+   "quote": "3. friend's update: book and bake sale attendance and revenue were down",
+   "tags": [
+    "friends",
+    "fundraising",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Approval of use of building after hours",
+   "resolution": "approved (mini-golf fundraiser), one abstention",
+   "quote": "4. approval of use of building after hours: discussion of policy about use of building after hours.",
+   "tags": [
+    "building use",
+    "friends"
+   ]
+  },
+  {
+   "topic": "Calendar dates",
+   "resolution": "no action",
+   "quote": "5. calendar dates: november 4, 7:30 at town hall - 5-year financial forecast",
+   "tags": [
+    "calendar",
+    "town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "2. director's report (please see report for details):"
+  },
+  {
+   "name": "FY11 Library Expense Analysis",
+   "where": "text",
+   "quote": "budget (please see fy11 library expense analysis for details)"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "director's report",
+  "circulation",
+  "budget",
+  "facilities",
+  "technology",
+  "programs",
+  "Friends of the library",
+  "building use",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

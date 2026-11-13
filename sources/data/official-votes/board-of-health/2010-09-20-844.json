@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-09-20",
  "docid": "844",
@@ -12,39 +12,39 @@
  },
  "votes": [
   {
-   "motion": "To approve the septic variance request for 271 Leominster Shirley Road",
+   "motion": "Approve the septic variance request for 271 Leominster Shirley Road (use of a sieve analysis).",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by shea and seconded by jewell the board unanimously to approve the request."
+   "quote": "after discussion and on motion by shea and seconded by jewell the board unanimously to approve the request."
   },
   {
-   "motion": "To approve the re-permit request for 390 Page Street based on the 2006 plan",
+   "motion": "Approve the re-permit of the lot at 390 Page Street based on the 2006 plan.",
    "moved_by": "Rabbitt",
    "seconded_by": "Jewel",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by rabbitt and second by jewel, the board unanimously voted to approve the request based on the 2006 plan."
+   "quote": "after discussion and on motion by rabbitt and second by jewel, the board unanimously voted to approve the request based on the 2006 plan."
   },
   {
-   "motion": "To approve the tight tank request for 64 Spring Street Extension",
+   "motion": "Approve the tight tank request for 64 Spring Street Extension.",
    "moved_by": "Shea",
    "seconded_by": "Daniels",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by shea and second by daniels, the board voted unanimously to approve the request."
+   "quote": "after discussion and on motion by shea and second by daniels, the board voted unanimously to approve the request."
   },
   {
-   "motion": "To approve the tight tank request and well variance for 25 May Street",
+   "motion": "Approve the tight tank and well variance requests for 25 May Street, with the well moved to 25 feet as a condition.",
    "moved_by": "Daniels",
    "seconded_by": "Jewell",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on motion by daniels and second by jewell, the board unanimously approved the requests."
   },
   {
-   "motion": "To approve the appointment of Ayer Animal Hospital as the Board of Health Veterinarian",
+   "motion": "Approve the appointment of Ayer Animal Hospital as the Board of Health Veterinarian.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -52,15 +52,272 @@
    "quote": "the board voted to approve the appointment of ayer animal hospital as the board of health veterinarian."
   },
   {
-   "motion": "To adopt the use of the 1994 Septic Repair Grant funds for septage-related projects as authorized by DEP and HCD",
+   "motion": "Adopt the use of the funds in the 1994 septic repair grant account as authorized by the DEP and HCD until all funds are disbursed.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted unanimously to adopt the use of the funds in this account as authorizer by the dep and hcd until such time as all that is currently in the fund and that which i still outstanding has been disbursed."
+   "quote": "the board voted unanimously to adopt the use of the funds in this account as authorizer by the dep and hcd",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from scan",
- "cost_usd": 0.1130865
+ "note": "OCR text from scanned pages 1-4; some words garbled (e.g., \"invironmental\", \"Nexus archive\", \"Jewel\", \"Mahonan\"), reproduced as printed in the quotes where used. No approval-of-minutes or adjournment motion is recorded; the meeting is noted as adjourned at 9:12 pm with no vote shown. Vote counts are not printed; \"unanimously\" is recorded as \"passed\". Veterinary vote has no mover or count. Steve Marsden is printed as acting \"on behalf of the owner\" (271 Leominster) and \"on behalf of the new owner\" (390 Page).",
+ "cost_usd": 0.006542119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "David Shea",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "steve marsden met with the board of behalf of the owner."
+  },
+  {
+   "name": "Bruce St. Jean",
+   "role": "",
+   "status": "present",
+   "quote": "bruce st. jean met with the board to execute the enforceable agreement that was"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner of the property."
+  },
+  {
+   "name": "Nathan Mahonen",
+   "role": "Hannigan Engineering, on behalf of the owner",
+   "status": "present",
+   "quote": "nathan mahonen from hannigan engineering met with the board on behalf of the owner."
+  },
+  {
+   "name": "Janet Leavitt",
+   "role": "abutter",
+   "status": "present",
+   "quote": "abutters janet and gary leavitt were also present."
+  },
+  {
+   "name": "Gary Leavitt",
+   "role": "abutter",
+   "status": "present",
+   "quote": "abutters janet and gary leavitt were also present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "For 271 Leominster Shirley Road, the third studio apartment must be removed as the new owner renovates the property.",
+   "quote": "as the new owner renovates this property, the third studio apartment must be"
+  },
+  {
+   "decision": "For 64 Spring Street Extension, the second structure must be stripped and reduced to storage space, and a deed notation is required that there is only one habitable structure on the property.",
+   "quote": "they are requiring a deed notation that there is only one habitable structure on this property."
+  },
+  {
+   "decision": "For 25 May Street, the well is to be moved to 25 feet from the property line as a condition of approval, with a revised plan showing the new location.",
+   "quote": "this was made a condition of the approval and a revised plan showing the new location needs to be made."
+  },
+  {
+   "decision": "The Board asked the engineer to tell the well driller that no deviation from the well location at 25 May Street would be tolerated.",
+   "quote": "the board also asked mr. mahonan to convey to the well driller that no deviation from the well location would be tolerated."
+  },
+  {
+   "decision": "Requests for grant-account money will be submitted to the Board of Health, which will evaluate them and authorize disbursements where the use is acceptable.",
+   "quote": "requests for monies for projects will be submitted to the board of health who will evaluate all requests and authorize disbursements where the use is acceptable."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "1994 state septic repair program",
+   "what_was_recorded": "The Massachusetts Legislature set aside 10 Million Dollars in 1994 for a low-interest loan program to help low-income homeowners repair failed septic systems.",
+   "figures_as_printed": [
+    "10 Million Dollars"
+   ],
+   "quote": "in 1994 the massachusetts legislature set aside 10 million dollars for a program to assist"
+  },
+  {
+   "topic": "Lunenburg Board of Health septic repair grant",
+   "what_was_recorded": "The Lunenburg Board of Health applied for and received a grant that was then loaned to qualified applicants.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "applied for and received a $100,000 grant which was then loaned to"
+  },
+  {
+   "topic": "Remaining 1994 grant account balance",
+   "what_was_recorded": "Most of the money from the 1994 grant has been repaid; the remaining funds are to be disbursed for septage-related uses approved by the DEP and HCD.",
+   "figures_as_printed": [],
+   "quote": "most of the money from the 1994 grant has now been repaid and cmr310.14 has been abandoned."
+  },
+  {
+   "topic": "Use of remaining grant funds for septage-related projects",
+   "what_was_recorded": "The Board proposed disbursing the remaining grant account funds for septage-related maintenance of the sewer system or other related issues, which the DEP and HCD accepted; general capital improvements not tied to groundwater pollution or system expansion would not be an appropriate use.",
+   "figures_as_printed": [],
+   "quote": "to disburse the remaining funds in the grant account for use in septage related maintenance of the sewer system"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. & Mrs. Leavitt",
+   "stated_role": "of 30 May Street, abutters",
+   "topic": "grading and flooding concern for 25 May Street system",
+   "quote": "mr. & mrs. leavitt of 30 may street voiced a concern as to the grading of the property."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed, no action",
+   "tags": [
+    "title 5",
+    "inspection"
+   ],
+   "quote": "title 5 inspection reports reviewed: 178 sunny hill road - fail"
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed: 271 leominster shirley road"
+  },
+  {
+   "topic": "111 Rolling Acres Road - St. Jean enforceable agreement",
+   "resolution": "executed, signed and notarized",
+   "tags": [
+    "septic",
+    "enforceable agreement",
+    "retesting"
+   ],
+   "quote": "the document was signed and notarized and will be recorded with the worcester northern registry of deeds."
+  },
+  {
+   "topic": "271 Leominster Shirley Road septic variance",
+   "resolution": "approved",
+   "tags": [
+    "septic",
+    "variance",
+    "sieve analysis"
+   ],
+   "quote": "after discussion and on motion by shea and seconded by jewell the board unanimously to approve the request."
+  },
+  {
+   "topic": "390 Page Street re-permit",
+   "resolution": "approved based on 2006 plan",
+   "tags": [
+    "septic",
+    "re-permit",
+    "well offset"
+   ],
+   "quote": "after discussion and on motion by rabbitt and second by jewel, the board unanimously voted to approve the request based on the 2006 plan."
+  },
+  {
+   "topic": "64 Spring Street Extension tight tank request",
+   "resolution": "approved with deed notation condition",
+   "tags": [
+    "tight tank",
+    "septic",
+    "deed notation"
+   ],
+   "quote": "after discussion and on motion by shea and second by daniels, the board voted unanimously to approve the request."
+  },
+  {
+   "topic": "25 May Street tight tank and well variance request",
+   "resolution": "approved with conditions",
+   "tags": [
+    "tight tank",
+    "well variance",
+    "grading concern"
+   ],
+   "quote": "on motion by daniels and second by jewell, the board unanimously approved the requests."
+  },
+  {
+   "topic": "Veterinary services",
+   "resolution": "approved Ayer Animal Hospital as Board of Health veterinarian",
+   "tags": [
+    "veterinary",
+    "appointment"
+   ],
+   "quote": "the board voted to approve the appointment of ayer animal hospital as the board of health veterinarian."
+  },
+  {
+   "topic": "1994 septic repair grant funds",
+   "resolution": "adopted use of remaining funds per DEP and HCD",
+   "tags": [
+    "grant",
+    "septage",
+    "DEP",
+    "HCD"
+   ],
+   "quote": "the board voted unanimously to adopt the use of the funds in this account as authorizer by the dep and hcd",
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Enforceable Agreement (111 Rolling Acres Road)",
+   "where": "text",
+   "quote": "met with the board to execute the enforceable agreement that was"
+  },
+  {
+   "name": "2006 plan (390 Page Street)",
+   "where": "text",
+   "quote": "to approve the request based on the 2006 plan."
+  },
+  {
+   "name": "Revised plan showing the new well location (25 May Street)",
+   "where": "text",
+   "quote": "a revised plan showing the new location needs to be made."
+  }
+ ],
+ "tags": [
+  "title 5",
+  "septic",
+  "variance",
+  "tight tank",
+  "well setback",
+  "veterinary",
+  "septage grant",
+  "DEP",
+  "HCD",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

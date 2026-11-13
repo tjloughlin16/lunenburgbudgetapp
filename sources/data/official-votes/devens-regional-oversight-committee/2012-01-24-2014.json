@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "devens-regional-oversight-committee",
  "meeting_date": "2012-01-24",
  "docid": "2014",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes from the December 1, 2011 meeting",
+   "motion": "Accept the minutes of the December 1, 2011 meeting.",
    "moved_by": "Rich",
    "seconded_by": "David",
    "outcome": "passed unanimously",
@@ -20,15 +20,15 @@
    "quote": "motion: rich made the motion to accept the minutes from the december 1, 2011 meeting, david seconded the motion and it passed unanimously."
   },
   {
-   "motion": "form an Operation subcommittee and a Finance subcommittee",
+   "motion": "Form an Operation subcommittee and a Finance subcommittee.",
    "moved_by": "Andy Sheehan",
    "seconded_by": "Donald Lowe",
-   "outcome": "unanimously approved",
+   "outcome": "approved unanimously",
    "procedural": false,
-   "quote": "motion andy sheehan (townsend): made a motion to form an operation subcommittee and a finance subcommittee. seconded by: donald lowe. unanimously approved."
+   "quote": "andy sheehan (townsend): made a motion to form an operation subcommittee and a finance subcommittee. seconded by: donald lowe. unanimously approved."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Tom",
    "seconded_by": "Jim",
    "outcome": "passed unanimously",
@@ -37,6 +37,283 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes, macOS Vision. All three votes clearly recorded with movers, seconders, and outcomes stated.",
- "cost_usd": 0.0962855
+ "note": "Text is OCR of the minutes; the header date line reads 'Approued 3/1512' as OCR'd and is not interpreted. Votes are recorded only as unanimous, with no counts. Some OCR errors appear in the source (e.g. 'tend analysis', 'MassDevelopement'); quotes are copied as OCR'd. The roof item refers to 'Dave', taken as David Blazon. Ayer and Lancaster are listed as unrepresented towns, not as people. Next-meeting dates are listed but not recorded as decisions.",
+ "cost_usd": 0.008451219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blazon",
+   "role": "Devens; Chaired the Meeting",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Lunenburg",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Jim Clyde",
+   "role": "Littleton",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Tessa David",
+   "role": "Program Manager",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Tom Delaney",
+   "role": "Groton",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Rich Nota",
+   "role": "Harvard",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Donald Lowe",
+   "role": "Bolton",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Andy Sheehan",
+   "role": "Townsend",
+   "status": "present",
+   "quote": "david blazon (devens), laura caron-gustus (lunenburg), jim clyde (littleton), tessa david (program manager), tom delaney (groton), rich nota (harvard), donald lowe (bolton), and andy sheehan (townsend)."
+  },
+  {
+   "name": "Dona Neely",
+   "role": "Public present",
+   "status": "present",
+   "quote": "public present: dona neely"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Project and contracts will be managed by the Program Manager; contracts are awarded by the committee.",
+   "quote": "the committee decided that the project and contracts will be managed by the program manager and noted that contracts are awarded by the committee."
+  },
+  {
+   "decision": "Tessa David asked to assume the Administration, Operations and Budget duties with the support of the subcommittees, and to determine the duties and time required for the next meeting.",
+   "quote": "the committee requested that tessa assume the administration, operations and budget duties with the support of the subcommittees."
+  },
+  {
+   "decision": "Tessa's contract to be updated.",
+   "quote": "the committee said her contract should be updated and requested that tessa determine duties necessary"
+  },
+  {
+   "decision": "Tessa to follow up with Ayer and Lancaster on which subcommittee they want to join.",
+   "quote": "tessa will follow up with ayer and lancaster to see which committee they want to participate."
+  },
+  {
+   "decision": "David Blazon to assume MassDevelopment liaison duties.",
+   "quote": "david said he will assume massdevelopement liaison duties."
+  },
+  {
+   "decision": "Members requested that collaboration be conducted to confirm complete financial information.",
+   "quote": "members requested that collaboration be conducted to confirm complete information."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Roof replacement cost estimate",
+   "what_was_recorded": "The updated roof cost estimate was reported at $48,000, with excavation/foundation, materials, and code-compliant roof structure figures given.",
+   "figures_as_printed": [
+    "$48,000",
+    "$3,000 to $5,000",
+    "$1,500",
+    "$41,500"
+   ],
+   "quote": "dave informed the committee that the updated cost estimate for the roof is $48,000."
+  },
+  {
+   "topic": "Waste categories by cost and volume",
+   "what_was_recorded": "Six waste types were reported as 87% of volume and 85% of cost; oil based paint 32% and pesticides 21% of waste collected.",
+   "figures_as_printed": [
+    "87%",
+    "85%",
+    "53%",
+    "32%",
+    "21%"
+   ],
+   "quote": "six types of waste which represent 87% of the waste by volume and 85% by cost."
+  },
+  {
+   "topic": "Financial position and receipts",
+   "what_was_recorded": "A draft profit and loss spreadsheet was based on a MassDevelopment report; the Program Manager reported not all receipts were included in that report.",
+   "figures_as_printed": [],
+   "quote": "dona reported that not all receipts were included in the massdevelopment report."
+  },
+  {
+   "topic": "Key performance indicators",
+   "what_was_recorded": "Proposed KPIs include total costs per load, revenue per load and labor cost to be tracked.",
+   "figures_as_printed": [],
+   "quote": "she proposed total costs/load, revenue/load, average wait time, attendees, loads received and labor cost."
+  },
+  {
+   "topic": "Shirley trash contract and HHW funds",
+   "what_was_recorded": "Shirley BOH member is exploring requesting HHW funds in the town's trash contract, spreading cost over two fiscal years.",
+   "figures_as_printed": [],
+   "quote": "exploring requesting hhw funds in the contract."
+  },
+  {
+   "topic": "Ashby membership funding route",
+   "what_was_recorded": "Ashby Solid Waste Superintendent is exploring a warrant item or a line item in his budget to join the collaborative.",
+   "figures_as_printed": [],
+   "quote": "ashby, john pankosky solid waste superintendent is exploring adding a warrant item for spring town meeting or putting a line item in his budget to join the collaborative."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dona Neely",
+   "stated_role": "Public present",
+   "topic": "contract end and project transition",
+   "quote": "dona stated that most of the functions listed on the front page were complete and confirmed that her contract ended december 31."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Welcome and minutes",
+   "resolution": "approved minutes of December 1, 2011",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "motion: rich made the motion to accept the minutes from the december 1, 2011 meeting"
+  },
+  {
+   "topic": "Operations: collection and participation results",
+   "resolution": "reviewed reports; KPIs proposed for tracking",
+   "tags": [
+    "collection",
+    "participation",
+    "KPIs",
+    "waste"
+   ],
+   "quote": "tessa presented a 6 month waste summary spreadsheet which detailed categories of waste collected"
+  },
+  {
+   "topic": "Management of administrative duties",
+   "resolution": "subcommittees formed; Program Manager asked to assume duties",
+   "tags": [
+    "subcommittees",
+    "duties",
+    "governance"
+   ],
+   "quote": "david proposed the formation of two committees, an operation and a finance subcommittee so the"
+  },
+  {
+   "topic": "Financials: updated budget",
+   "resolution": "draft P&L reviewed; collaboration requested to confirm information",
+   "tags": [
+    "budget",
+    "financials"
+   ],
+   "quote": "tessa recommended and presented a one page draft profit and loss spreadsheet based on massdevelopment finance department report dated 12/31/11."
+  },
+  {
+   "topic": "Facility: roof update",
+   "resolution": "cost estimate reported; no action",
+   "tags": [
+    "facility",
+    "roof"
+   ],
+   "quote": "dave informed the committee that the updated cost estimate for the roof is $48,000."
+  },
+  {
+   "topic": "New member update",
+   "resolution": "reported; no action",
+   "tags": [
+    "membership",
+    "towns"
+   ],
+   "quote": "ashby, john pankosky solid waste superintendent is exploring adding a warrant item for spring town meeting"
+  },
+  {
+   "topic": "Promotion",
+   "resolution": "reported; no action",
+   "tags": [
+    "outreach",
+    "promotion"
+   ],
+   "quote": "tessa presented at a grotonlocal meeting 1/15/12 and at a pepperell rotary meeting 1/12/12"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: tom made a motion to adjourn, jim seconded the motion and it passed unanimously."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "6 Month Waste Summary spreadsheet",
+   "where": "list",
+   "quote": "tessa presented a 6 month waste summary spreadsheet which detailed categories of waste collected"
+  },
+  {
+   "name": "Load and Attendance Statistics",
+   "where": "list",
+   "quote": "she also presented load and attendance statistics which list participation by community."
+  },
+  {
+   "name": "One page draft profit and loss spreadsheet",
+   "where": "list",
+   "quote": "tessa recommended and presented a one page draft profit and loss spreadsheet based on"
+  },
+  {
+   "name": "Updated budget and forecasts documents",
+   "where": "list",
+   "quote": "dona distributed updated budget and forecasts documents and acknowledged"
+  },
+  {
+   "name": "Duties list included in the December 1st meeting minutes",
+   "where": "list",
+   "quote": "the duties list included in the december 1st meeting minutes were reviewed."
+  },
+  {
+   "name": "MassDevelopment Finance Department report dated 12/31/11",
+   "where": "text",
+   "quote": "based on massdevelopment finance department report dated 12/31/11."
+  },
+  {
+   "name": "PowerPoint presentation (Berlin BOH)",
+   "where": "text",
+   "quote": "powerpoint presentation was updated by tessa and dona and presented to the boh committee"
+  },
+  {
+   "name": "Lowell Sun article \"Groton Local Talks Trash\"",
+   "where": "text",
+   "quote": "several news articles have promoted devens hhw including 1/22/12 lowell sun article"
+  }
+ ],
+ "tags": [
+  "household hazardous waste",
+  "Devens",
+  "regional collaborative",
+  "subcommittees",
+  "budget",
+  "roof",
+  "membership",
+  "promotion",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dona distributed updated budget and forecasts documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-07-07",
  "docid": "913",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to approve the variance for groundwater offset from four (4) feet to (3) feet for the septic system at 15 Watt Street",
+   "motion": "Approve the variance for groundwater offset at 15 Watt Street, reducing the required offset from four (4) feet to three (3) feet.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -21,6 +21,128 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned document; text is clear and readable.",
- "cost_usd": 0.10477449999999999
+ "note": "OCR text from page 1 only, with substantial OCR noise (e.g., 'Bullding', stray characters, 'Chairman' Geörge 'Emond'). Only one motion is recorded. The adjournment ('Meeting adjourned 8:45 pm') has no motion or vote recorded. No roll-call votes or prior-minutes approval; minutes approved is 'None'. Dan Proctor's appearance is an applicant presentation, not labelled public comment.",
+ "cost_usd": 0.00363262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, and paul fortin."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, and paul fortin."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, and paul fortin."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "dan proctor' met with the board on behalf of the owner."
+  },
+  {
+   "name": "Barb LeFarve",
+   "role": "Sewer Business Manager",
+   "status": "not stated",
+   "quote": "sewer business manager barb lefarve stated that the commission would be submitting to the state in october"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Pratt Street town sewer extension borrowing",
+   "what_was_recorded": "The minutes note that a borrowing article for the Pratt Street town sewer extension was approved at the May 2014 Town Meeting; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "at the may, 2014 town meeting a borrowing article was approved."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "none approved",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 57 pratt street 40 brookview terrace",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed: 15 watt street 17 horizon island road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "15 Watt Street groundwater offset variance",
+   "resolution": "approved unanimously",
+   "quote": "this system is in failure and in breakout.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "Septic system waivers for Pratt Street town sewer",
+   "resolution": "discussed; no action; chair stated no waivers could be issued without guaranteed funding and a construction contract",
+   "quote": "town sewer is being proposed for the pratt street section of lunenburg.",
+   "tags": [
+    "sewer",
+    "waivers",
+    "septic"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports for 57 Pratt Street and 40 Brookview Terrace",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 57 pratt street 40 brookview terrace"
+  },
+  {
+   "name": "Septic permits for 15 Watt Street and 17 Horizon Island Road",
+   "where": "text",
+   "quote": "septic permits signed: 15 watt street 17 horizon island road"
+  },
+  {
+   "name": "May 2014 Town Meeting Borrowing Article (Pratt Street sewer extension)",
+   "where": "text",
+   "quote": "at the may, 2014 town meeting a borrowing article was approved."
+  }
+ ],
+ "tags": [
+  "septic",
+  "title 5",
+  "variance",
+  "sewer extension",
+  "septic waivers",
+  "permits"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

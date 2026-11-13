@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2016-09-30",
  "docid": "1364",
@@ -12,23 +12,162 @@
  },
  "votes": [
   {
-   "motion": "Award the landscaping bid to Lakeview Landscaping to replace shrubs destroyed by vandalism.",
+   "motion": "Award the shrub replacement bid to the lowest bidder, Lakeview Landscaping.",
    "moved_by": "Vice Chair Mendoza",
    "seconded_by": "Chair Schaff",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on a motion from vice chair mendoza and a second from chair schaff, and upon no further discussion, a unanimous vote was made to award the bid to the lowest bidder, lakeview landscaping."
   },
   {
-   "motion": "Adjourn the meeting.",
+   "motion": "Close the meeting and adjourn.",
    "moved_by": "Commissioner May",
    "seconded_by": "Commissioner Mendoza",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chair schaff asked for a motion to close the meeting with commissioner may making that motion and commissioner mendoza offering a second. there was no further discussion on the motion and it passed unanimously to adjourn the meeting."
+   "quote": "commissioner may making that motion and commissioner mendoza offering a second. there was no further discussion on the motion and it passed unanimously to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. One minor OCR error in header (Vice Chairman listed as \"Dice Chairman\"); names corrected to match usage in motion text.",
- "cost_usd": 0.08293450000000001
+ "note": "OCR text from a scan with inconsistent printing: the header gives 'Lorraine Alendosa, Dice Chairman' while the body names 'Lorraine Mendoza' as Vice Chair; the clerk is 'Lance B. May' in the header and 'Lance D. May' in the signature; 'Barium' appears where 'Columbarium' is likely meant (printed as-is). No public comment is recorded. The bid amounts are not printed. Two votes recorded: the bid award (vote count not printed, recorded as unanimous) and adjournment (passed unanimously). Adjournment time 2:00 pm and call to order 12:00 p.m. are printed.",
+ "cost_usd": 0.00498692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Commissioner (Clerk per header)",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff along with todd holman, (supt"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff along with todd holman, (supt"
+  },
+  {
+   "name": "Steve Schaff",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff along with todd holman, (supt"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Supt of Cemetery's",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff along with todd holman, (supt"
+  },
+  {
+   "name": "Bobby Pearson",
+   "role": "from Leominster Monuments",
+   "status": "present",
+   "quote": "guests included bobby and kelly pearson from leominster monuments and dave fournier and tom"
+  },
+  {
+   "name": "Kelly Pearson",
+   "role": "from Leominster Monuments",
+   "status": "present",
+   "quote": "guests included bobby and kelly pearson from leominster monuments and dave fournier and tom"
+  },
+  {
+   "name": "Dave Fournier",
+   "role": "from Rock of Ages Memorial Corp",
+   "status": "present",
+   "quote": "dave fournier and tom burrington from rock of ages memorial corp."
+  },
+  {
+   "name": "Tom Burrington",
+   "role": "from Rock of Ages Memorial Corp",
+   "status": "present",
+   "quote": "dave fournier and tom burrington from rock of ages memorial corp."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Supt Holman is to contact Lakeview Landscaping to begin replanting the new shrubs and report back to Chair Schaff on the replanting progress and maintenance of the new shrubs.",
+   "quote": "supt holman is to reach out to lakeview to begin the work necessary to replant new shrubs and report back to chair schaff"
+  },
+  {
+   "decision": "The Commissioners will take Rock of Ages plans under advisement and get back to Rock of Ages with further questions.",
+   "quote": "the commissioners decided to take rock of ages plans under advisement and would get back to them for further questions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Shrub replacement bids",
+   "what_was_recorded": "Three bids were received to replace the vandalized shrubs; the lowest bid was awarded to Lakeview Landscaping, but no bid amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "bids were received from gatsby ground services, lakeview landscaping, and novak landscaping."
+  },
+  {
+   "topic": "Shrub replanting cost and insurance",
+   "what_was_recorded": "The Town Insurance will not pay for the vandalism damage, so the Cemetery Commission must pay the replanting cost, with the highway department assisting with the landscaping to hold down cost. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the town insurance would not pay for the damage and the"
+  },
+  {
+   "topic": "Replanting cost responsibility",
+   "what_was_recorded": "The cost to replant the shrubs falls to the Cemetery Commission and the highway department will assist with the landscaping. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the cost to replant the shrubs needs to be paid by the cemetery commission and the highway dept."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Replacement of vandalized shrubs (bids)",
+   "resolution": "awarded to Lakeview Landscaping",
+   "quote": "discussion on the 3 bids that were submitted to replace the shrubs previously destroyed by an act of vandalism.",
+   "tags": [
+    "bids",
+    "landscaping",
+    "vandalism",
+    "shrubs"
+   ]
+  },
+  {
+   "topic": "Niche Wall and Memorial Column design (Rock of Ages)",
+   "resolution": "taken under advisement; consultants suggested placement on new holding tomb building",
+   "quote": "further discussion on the design and development of the new niche wall and memorial column barium",
+   "tags": [
+    "niche wall",
+    "memorial column",
+    "Rock of Ages",
+    "design",
+    "site location"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bids to replace the shrubs (Gatsby Ground Services, Lakeview Landscaping, Novak Landscaping)",
+   "where": "text",
+   "quote": "discussion on the 3 bids that were submitted to replace the shrubs previously destroyed by an act of vandalism."
+  },
+  {
+   "name": "Rock of Ages graphic and photo design for the Niche Wall and Memorial Column",
+   "where": "text",
+   "quote": "rock of ages presented a graphic and photo design for discussion and after further discussion along with"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "shrub replacement",
+  "vandalism",
+  "bids",
+  "landscaping",
+  "niche wall",
+  "memorial column",
+  "Rock of Ages",
+  "Leominster Monuments",
+  "insurance",
+  "holding tomb building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

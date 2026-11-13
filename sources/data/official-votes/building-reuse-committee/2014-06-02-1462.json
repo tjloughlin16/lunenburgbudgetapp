@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2014-06-02",
  "docid": "1462",
@@ -12,15 +12,143 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 5/5/14 as submitted",
+   "motion": "Approve the minutes of 5/5/14 as submitted.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "minutes from 5/5/14 approved as submitted"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Only one vote recorded: approval of prior meeting minutes.",
- "cost_usd": 0.0812055
+ "note": "Text is OCR with errors and clipped line starts (e.g., \"amie\" for Jamie, \"Jeb\" for Deb, \"oning\" for Zoning); quotes are copied as OCR printed them. The minutes approve the 5/5/14 minutes \"as submitted\" but record no motion, mover, second, or vote count, so that approval is recorded as a procedural vote with outcome \"passed\". No motion or vote is recorded for adjournment. No dollar figures appear. Public Comment reads \"None\". The minutes print no documents list.",
+ "cost_usd": 0.00414682,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Ron Albert",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Steve Raboin",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews, mike mackin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jamie Toale is to coordinate with the planning board to schedule a zoning workshop on either 6/18 or 6/2.",
+   "quote": "amie coordinate with the planning board to schedule a workshop on either 6/18 or 6/2"
+  },
+  {
+   "decision": "Damon McQuaid and Ron Albert will create a base CAD file of the existing floor plans and prepare preliminary layouts for the Town Hall task team.",
+   "quote": "damon and ron will work together to create a base cad file of the existing floor plans and put together some preliminary layouts."
+  },
+  {
+   "decision": "Damon McQuaid is working on the historic commission visioning session to be held on 6/30/14.",
+   "quote": "damon is working on the historic commission visioning session to be held on 6/30/14"
+  },
+  {
+   "decision": "The previous proposal by John Joule is to be reviewed for any helpful information for the primary school charter inclusion.",
+   "quote": "the previous proposal by john joule should be reviewed for any helpful information."
+  },
+  {
+   "decision": "An enlarged plan of the property is to be obtained to determine the best way to package and market the property or properties on the primary/ritter sites (minutes state a need, not a recorded decision).",
+   "quote": "ne should get an enlarged plan of the property to determine the best way to package an narket the property or properties on the primary/ritter sites"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Inclusion of the Primary School in our Charter",
+   "resolution": "discussed; prior proposal to be reviewed",
+   "quote": "the previous proposal by john joule should be reviewed for any helpful information."
+  },
+  {
+   "topic": "Historical Commission impact on reuse properties",
+   "resolution": "update received; visioning session in progress",
+   "quote": "damon is working on the historic commission visioning session to be held on 6/30/14"
+  },
+  {
+   "topic": "Zoning Discussion, including Village Zoning and impact on reuse properties",
+   "resolution": "workshop to be scheduled",
+   "quote": "amie coordinate with the planning board to schedule a workshop on either 6/18 or 6/2"
+  },
+  {
+   "topic": "Marketing analysis of existing properties",
+   "resolution": "discussed; more property line and zoning definition needed",
+   "quote": "rick cuddy needs some more concrete definition of property lines and zoning to put"
+  },
+  {
+   "topic": "Town Hall task team update",
+   "resolution": "update received; CAD base file and layouts assigned",
+   "quote": "damon and ron will work together to create a base cad file of the existing floor plans and put together some preliminary layouts."
+  },
+  {
+   "topic": "Meeting Schedule",
+   "resolution": "next meeting set",
+   "quote": "july 7, 2014 @ 6:30pm in town hall."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Previous proposal by John Joule (undated)",
+   "where": "text",
+   "quote": "the previous proposal by john joule should be reviewed for any helpful information."
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "town hall",
+  "zoning",
+  "historic commission",
+  "primary school",
+  "charter",
+  "marketing",
+  "property market analysis",
+  "CAD floor plans"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-04-26",
  "docid": "521",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the Cellars and Foundations section of the Guidelines as written",
+   "motion": "Accept the Cellars and Foundations section of the Guidelines as written.",
    "moved_by": "Jim LaVeck",
    "seconded_by": "Brian Corcoran",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "mr. laveck moved to accept as written, second by mr. corcoran. approved unanimously."
   },
   {
-   "motion": "Accept the Roof section of the Guidelines with minor changes discussed",
+   "motion": "Accept the Roof section of the Guidelines with minor changes discussed.",
    "moved_by": "Jim LaVeck",
    "seconded_by": "Brian Corcoran",
    "outcome": "passed unanimously",
@@ -29,6 +29,175 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes from Architectural Preservation District Commission, 2016-04-26. Two substantive votes recorded. Meeting minutes indicate review and approval of prior minutes was tabled but no motion to table is explicitly recorded, so not counted as a vote. No motion to adjourn is stated.",
- "cost_usd": 0.08145350000000001
+ "note": "Single-page minutes with no dollar figures or transfers. No motion is recorded for approving the prior minutes (tabled), for adjournment at 8:45PM, or for entering the Guidelines discussions beyond the two approval motions. The Selectman's suggestion to bring further bylaw changes to Town Meeting is not recorded as a board decision. The Clerk Cullen Dwyer is listed absent in the roll call but signed as recording clerk.",
+ "cost_usd": 0.00384632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: richard mcgrath, jim laveck, brian corcoran"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: richard mcgrath, jim laveck, brian corcoran"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: richard mcgrath, jim laveck, brian corcoran"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: cullen dwyer, matthew kehrer"
+  },
+  {
+   "name": "Matthew Kehrer",
+   "role": "new member",
+   "status": "absent",
+   "quote": "absent: cullen dwyer, matthew kehrer"
+  },
+  {
+   "name": "Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "selectman ebersole was present to remind committee of town meeting warrant article 42"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Town Clerk",
+   "status": "present",
+   "quote": "kathy herrick, town clerk, was on hand to swear in new member matthew kehrer but left after"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review and approval of the prior meeting's minutes tabled until the next meeting.",
+   "quote": "no review of minutes from prior meeting - review and approval tabled until next meeting."
+  },
+  {
+   "decision": "Multiple changes to the APDC procedural flow chart required for review at the following meeting.",
+   "quote": "multiple changes required for review in the following meeting."
+  },
+  {
+   "decision": "Mr. McGrath will check in with the Building Inspector regarding temporary buildings to advise the Committee on time and size limits.",
+   "quote": "mr. mcgrath will check in with building inspector regarding \"temporary buildings\" to gain"
+  },
+  {
+   "decision": "Next meeting set for Tuesday, May 17 at 7:00PM in the Ritter Building.",
+   "quote": "next meeting to be held on tuesday, may 17 at 7:00pm in the ritter building."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Selectman reminder on Town Meeting Warrant Article 42",
+   "resolution": "no action",
+   "quote": "selectman ebersole was present to remind committee of town meeting warrant article 42",
+   "tags": [
+    "town meeting",
+    "bylaw",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Approval of prior meeting minutes",
+   "resolution": "tabled to next meeting",
+   "quote": "no review of minutes from prior meeting - review and approval tabled until next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment and new business",
+   "resolution": "none taken up",
+   "quote": "no public comment. no new business.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Cellars and Foundations section of Guidelines",
+   "resolution": "approved as written",
+   "quote": "mr. laveck moved to accept as written, second by mr. corcoran. approved unanimously.",
+   "tags": [
+    "guidelines",
+    "cellars and foundations",
+    "design review"
+   ]
+  },
+  {
+   "topic": "Roof section of Guidelines",
+   "resolution": "approved with minor changes discussed",
+   "quote": "mr. laveck moved to accept with minor changes discussed, second by mr. corcoran. approved unanimously.",
+   "tags": [
+    "guidelines",
+    "roof",
+    "design review"
+   ]
+  },
+  {
+   "topic": "APDC procedural flow chart",
+   "resolution": "continued; multiple changes required",
+   "quote": "committee reviewed and discussed apdc procedural flow chart prepared by mr. corcoran.",
+   "tags": [
+    "procedures",
+    "flow chart"
+   ]
+  },
+  {
+   "topic": "Temporary buildings permit limits",
+   "resolution": "no action; chair to consult Building Inspector",
+   "quote": "mr. mcgrath will check in with building inspector regarding \"temporary buildings\" to gain",
+   "tags": [
+    "temporary buildings",
+    "permits",
+    "building inspector"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft of Cellars and Foundations section of the Guidelines, prepared by Brian Corcoran",
+   "where": "text",
+   "quote": "committee reviewed draft of cellars and foundations section of the guidelines prepared by mr. corcoran."
+  },
+  {
+   "name": "Draft of Roof section of the Guidelines, prepared by Jim LaVeck",
+   "where": "text",
+   "quote": "committee reviewed draft of roof section of the guidelines prepared by mr. laveck."
+  },
+  {
+   "name": "APDC procedural flow chart, prepared by Brian Corcoran",
+   "where": "text",
+   "quote": "committee reviewed and discussed apdc procedural flow chart prepared by mr. corcoran."
+  },
+  {
+   "name": "Town Meeting Warrant Article 42 (proposed changes to the Bylaw)",
+   "where": "text",
+   "quote": "selectman ebersole was present to remind committee of town meeting warrant article 42"
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "historic guidelines",
+  "bylaw",
+  "town meeting",
+  "design review",
+  "procedures"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

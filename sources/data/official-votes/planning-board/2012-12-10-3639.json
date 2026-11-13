@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-12-10",
  "docid": "3639",
@@ -12,14 +12,309 @@
  },
  "votes": [
   {
-   "motion": "extend Highfield Village, Northfield Road extension to March 31, 2013 on condition that Applicant is proceeding with Sewer Commission permitting process",
-   "moved_by": "Joanna L. Bilotta-Simeone",
+   "motion": "Approve the minutes of 11-26-12 and Executive 10-23-12 (as printed: 1 1-26-12 and Executive 10 -23-12).",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Lockwood",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes approval: ms. bilotta -simeone, motion to approve 1 1-26-12, and executive 10 -23-12, second, mr. lockwood, motion passed."
+  },
+  {
+   "motion": "Extend the Highfield Village, Northfield Road approval to March 31, 2013, on the condition that the Applicant is proceeding with the permitting process with the Sewer Commission.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion, ms. bilotta-simeone, for board to extend to march 31, 2013 on the condition that the applicant is proceeding with the permitting process with the sewer commission."
+  },
+  {
+   "motion": "Accept the resignation of Board member Robert J. Saiia.",
+   "moved_by": "Ms. Bilotta -Simeone",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion, ms. bilotta -simeone, to accept resignation of board member robert j. saiia."
+  },
+  {
+   "motion": "Replace resigning member Saiia as the Board's representative to MJTC, effective January 1, 2013, with Ms. Bilotta-Simeone.",
+   "moved_by": "Mr. Lockwood",
+   "seconded_by": "Mr. Bakaysa",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion, mr. lockwood , for ms. bilotta-simeone to replace resigning member saiia as the representative to mjtc, effective january 1, 2013, second, mr. bakaysa, motion passed.",
+   "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 3,
- "note": "Four votes recorded. Two show explicit outcomes (passed); two record motions but lack explicit outcome statements or (in one case) a recorded second.",
- "cost_usd": 0.1150385
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with broken word spacing (e.g., 'Lunenbu rg', 'fin ancial'); quotes were kept as printed where possible. The Highfield Village and resignation motions have no recorded second or result, so outcome is 'not stated'. The Aro Estates vote-to-move-ahead request has no recorded motion result and is not listed as a vote. No dollar figures appear in the minutes. The attachment (MRPC Presentation) is referenced but its contents are not in the text.",
+ "cost_usd": 0.0067185199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: robert j. saiia"
+  },
+  {
+   "name": "Brian Milisci",
+   "role": "Whitman and Bingham Associates (W&B)",
+   "status": "present",
+   "quote": "mr. brian milisci, whitman and bingham associates (w&b), presented a letter"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "O’Brien Homes; letter presented on his behalf and he addressed the Board",
+   "status": "present",
+   "quote": "mr. o'brien wanted to go through the letter immediately"
+  },
+  {
+   "name": "John Hume",
+   "role": "presenter, MRPC (Montachusett Regional Planning Commission)",
+   "status": "present",
+   "quote": "presentation by john hume on"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Benson will forward the Whitman and Bingham letter to Ross Associates, request an anticipated review time response, and then notify Mr. O’Brien of the response time.",
+   "quote": "ms. benson will forward the letter received tonight from w&b to ross associates, request an anticipated review time response"
+  },
+  {
+   "decision": "Future public record documents received in the Planning Office regarding Aro Estates will be sent to Town Counsel and Mr. O’Brien simultaneously.",
+   "quote": "those documents will be sent to town counsel and mr. o'brien simultaneously."
+  },
+  {
+   "decision": "Ms. Benson will prepare a response letter accepting Mr. Saiia’s resignation effective January 1, 2013.",
+   "quote": "ms. benson will prepare a response letter from the board accepting mr. saiia's resignation effective january 1, 2013."
+  },
+  {
+   "decision": "Notice of Board vacancy to be posted at official posting locations; Ms. Benson to check with the Town Manager’s office for completed Talent Bank forms.",
+   "quote": "ms. benson will check with the town manager's office to see if there are any completed talent bank forms indicating interest in the planning board."
+  },
+  {
+   "decision": "Board requests financial information from Lanni Orchards and Pierce Farm before sending a letter of support to the Board of Selectmen on the APR applications.",
+   "quote": "prior to sending a letter of support to the board of selectmen."
+  },
+  {
+   "decision": "Ms. Benson to compile a chronological list of Aro Estates events beginning with the partial project submittal to the Planning Office.",
+   "quote": "ms. benson to compile a chronological list of events beginning with the partial project submittal to the planning office."
+  },
+  {
+   "decision": "Board requests a summary from Town Counsel of discussions and actions taken to date on Aro Estates following the October 23, 2012 joint meeting with the Board of Selectmen.",
+   "quote": "board is requesting summarization from town counsel as to discussions/actions taken to date following joint meeting with board of selectmen on october 23, 2012."
+  },
+  {
+   "decision": "Board feels there should be a joint meeting with the Board of Selectmen and Town Counsel on Right of First Refusal on the Aro property.",
+   "quote": "board feels there should be a joint meeting with the board of selectmen and town counsel for discussion as to right of first refusal on the aro property."
+  },
+  {
+   "decision": "Meeting schedule set: January 14 at Town Hall and January 28 at Ritter Memorial Building.",
+   "quote": "meeting schedule: january 14, town hall, and january 28, ritter memorial building."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "MRPC presentation on Lunenburg Priority Development/Preservation Areas",
+   "resolution": "presented",
+   "quote": "presentation by john hume on",
+   "tags": [
+    "MRPC",
+    "regional planning",
+    "priority areas"
+   ]
+  },
+  {
+   "topic": "Aro Estates, Howard Street (W&B response letter)",
+   "resolution": "board to review response; Benson to forward to Ross Associates; discussion continued under Planning Director's reports",
+   "quote": "mr. brian milisci, whitman and bingham associates (w&b), presented a letter",
+   "tags": [
+    "Aro Estates",
+    "Howard Street",
+    "subdivision",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Minutes approval (11-26-12 and Executive 10-23-12)",
+   "resolution": "approved",
+   "quote": "minutes approval: ms. bilotta -simeone, motion to approve 1 1-26-12, and executive 10 -23-12, second, mr. lockwood, motion passed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, School Reconfiguration, Capital Planning)",
+   "resolution": "received",
+   "quote": "form bs and five year plans have been submitted by town departments.",
+   "tags": [
+    "committees",
+    "school reconfiguration",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Highfield Village, Northfield Road extension",
+   "resolution": "motion to extend to March 31, 2013 on condition; result not recorded",
+   "quote": "motion, ms. bilotta-simeone, for board to extend to march 31, 2013 on the condition that the applicant is proceeding with the permitting process with the sewer commission.",
+   "tags": [
+    "Highfield Village",
+    "extension",
+    "Sewer Commission"
+   ]
+  },
+  {
+   "topic": "Member resignation (Saiia) and MJTC representative",
+   "resolution": "resignation accepted; MJTC replacement passed",
+   "quote": "motion, ms. bilotta -simeone, to accept resignation of board member robert j. saiia.",
+   "tags": [
+    "board membership",
+    "MJTC"
+   ]
+  },
+  {
+   "topic": "Board vacancy",
+   "resolution": "notice to be posted; Talent Bank check",
+   "quote": "notice of vacancy will be posted at the official posting location s",
+   "tags": [
+    "board membership",
+    "talent bank"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "APR applications (Lanni Orchards, Pierce Farm)",
+   "resolution": "financial information requested before letter of support",
+   "quote": "board requesting fin ancial information prior to sending a letter of support to the board of selectmen.",
+   "tags": [
+    "agricultural preservation restriction",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Cease & Desist, 35 Leominster Road",
+   "resolution": "no action; special permit application to be filed",
+   "quote": "application for a special permit needs to be filed with the planning board.",
+   "tags": [
+    "enforcement",
+    "zoning",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Development status reports (Asian Imperial, Emerald Place, Tri Town Landing)",
+   "resolution": "noted; progress reports on file",
+   "quote": "progress reports note progression of work.",
+   "tags": [
+    "development status",
+    "Asian Imperial",
+    "Emerald Place",
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "Aro Estates status and Town Counsel coordination",
+   "resolution": "discussed; follow-up assigned to Benson and Town Counsel",
+   "quote": "the board feels they should be following the planning process even while legal strategy is ongoing.",
+   "tags": [
+    "Aro Estates",
+    "Town Counsel",
+    "Board of Selectmen",
+    "Right of First Refusal"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set January 14 and January 28, 2013",
+   "quote": "meeting schedule: january 14, town hall, and january 28, ritter memorial building.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:15 PM",
+   "quote": "adjournment: 10:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MRPC Presentation (John Hume, Lunenburg Priority Development/Preservation Areas)",
+   "where": "list",
+   "quote": "presentation by john hume on lunenbu rg priority development/preservation areas. presentation attached."
+  },
+  {
+   "name": "Whitman and Bingham Associates letter dated December 7, 2012 (response to review letter)",
+   "where": "text",
+   "quote": "was in response to the review letter of october 22, 2012 from jesse johnson, david e. ross associates"
+  },
+  {
+   "name": "David E. Ross Associates review letter dated October 22, 2012 (Jesse Johnson)",
+   "where": "text",
+   "quote": "was in response to the review letter of october 22, 2012 from jesse johnson, david e. ross associates"
+  },
+  {
+   "name": "Talent Bank forms",
+   "where": "text",
+   "quote": "ms. benson will check with the town manager's office to see if there are any completed talent bank forms"
+  },
+  {
+   "name": "Application Form (Board vacancy)",
+   "where": "text",
+   "quote": "the individual will be contacted and asked to complete an application form."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "Aro Estates",
+  "Highfield Village",
+  "board membership",
+  "MRPC",
+  "agricultural preservation restriction",
+  "zoning enforcement",
+  "Town Counsel",
+  "subdivision"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachment"
+ },
+ "dropped_unquoted_by_field": {}
 }

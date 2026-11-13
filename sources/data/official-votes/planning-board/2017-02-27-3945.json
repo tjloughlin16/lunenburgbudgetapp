@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-02-27",
  "docid": "3945",
@@ -12,23 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Accept waivers for Site Plan Approval, with the exception of the horizontal datum requirement",
+   "motion": "Accept the Site Plan Approval waivers requested from the Board Rules and Regulations, with the exception of the horizontal datum, given the scale of the project.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, d. mcquaid, that given the scale of the project, to accept the waivers, with the exception of the horizontal datum, second, d. prokowiew, discussion- none, all aye."
   },
   {
-   "motion": "Close the hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "G. Bittner",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "motion, g. bittner to close the hearing, second, d. mcquaid, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08201149999999999
+ "note": "Text is extracted with split words and odd spacing (e.g., 'Greg ory Roy', 'P rotective'); quotes collapse spacing to single spaces. The waiver motion is recorded as 'all aye' with no numeric count. Minutes do not record any recusal by D. Prokowiew, who disclosed a family-patient connection to Dr. Walker before voting on the waivers. Minutes do not record a result for the Dr. Walker relationship and do not state whether John Walker attended. Documents list heading is printed as 'Documents used at Hearing:'.",
+ "cost_usd": 0.00439072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "John Walker DMD/Walker Orthodontics",
+   "role": "Applicant",
+   "status": "not stated",
+   "quote": "the applicant john walker dmd/walker orthodontics was represented by"
+  },
+  {
+   "name": "Gregory Roy",
+   "role": "representing the applicant, Ducharme & Dillis Civil Design Group, Inc. (DDCDG)",
+   "status": "present",
+   "quote": "g. roy noted the plans were initially set up to correspond with the old septic plans"
+  },
+  {
+   "name": "Jill Normandin",
+   "role": "",
+   "status": "present",
+   "quote": "jill normandin, 321 electric avenue - concerned with removing vegetation in residential/commercial neighborhoods."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus that the Applicant screen the portion of the southwest property line where the parking lot will be, using non-deciduous plantings, rather than the entire line or a board fence.",
+   "quote": "board consensus was the applicant screen the portion of the property line where the parking lot will be with non -deciduous plantings"
+  },
+  {
+   "decision": "G. Roy will set up the plans to use the horizontal datum, which M. Allison said is important for entering data into the GIS.",
+   "quote": "m. allison noted that the horizontal datum is important for entering data into the gis. g. roy will set up."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jill Normandin",
+   "stated_role": "321 Electric Avenue",
+   "topic": "removing vegetation, roadside trees",
+   "quote": "jill normandin, 321 electric avenue - concerned with removing vegetation in residential/commercial neighborhoods."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Disclosure of interest by D. Prokowiew",
+   "resolution": "disclosure noted; no action recorded",
+   "quote": "d. prokowiew disclosed to the board that his family members are patients of dr. walker.",
+   "tags": [
+    "disclosure",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Site Plan Approval public hearing, 119 Massachusetts Avenue (creation of 16-space parking lot)",
+   "resolution": "waivers accepted except horizontal datum; screening consensus reached; hearing closed 8:05 PM",
+   "quote": "the public hearing was to hear and discuss an application for site plan approval under section 8.4.",
+   "tags": [
+    "site plan",
+    "parking lot",
+    "public hearing",
+    "waivers",
+    "screening",
+    "stormwater",
+    "zoning",
+    "Massachusetts Avenue"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Site Plan Approval",
+   "where": "list",
+   "quote": "documents used at hearing: application for site plan approval gei review letter dated february 15, 2017"
+  },
+  {
+   "name": "GEI Review Letter dated February 15, 2017",
+   "where": "list",
+   "quote": "documents used at hearing: application for site plan approval gei review letter dated february 15, 2017"
+  },
+  {
+   "name": "Revised site plan submitted February 8",
+   "where": "text",
+   "quote": "a revised site plan was submitted on february 8 th in response to graves"
+  },
+  {
+   "name": "GEI review letter of February 3",
+   "where": "text",
+   "quote": "in response to graves engineering, inc. (gei) review letter of february 3 rd."
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "parking lot",
+  "public hearing",
+  "waivers",
+  "landscaping and screening",
+  "stormwater",
+  "GIS datum",
+  "119 Massachusetts Avenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2012-01-04",
  "docid": "2466",
@@ -12,15 +12,260 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 11/2/11",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of 11/2/11.",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes from 11/2/11 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0855225
+ "note": "The minutes title the body the Green Community Task Force, not the Green Communities Committee named in the request. The minutes give a 10/18/12 date for the $200,000.00 cost estimate, which is later than this January 2012 meeting, so the printed date may be a typo; it is recorded as printed. Numbering repeats (3 and 4 appear twice). The approval of the 11/2/11 minutes is recorded as \"were approved\" with no motion, mover, seconder or tally, so its outcome is recorded as passed. No absences are stated. The minutes are signed by Joanne McQuaid, who is not separately listed as an attendee. No public comment is recorded. No printed documents list appears; the documents below are named in the discussion text only.",
+ "cost_usd": 0.00547002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Members",
+   "status": "present",
+   "quote": "present: members d. blatt, z.cutting, s.dicampo, j. mcquaid, n.sullivan"
+  },
+  {
+   "name": "Z.Cutting",
+   "role": "Members",
+   "status": "present",
+   "quote": "present: members d. blatt, z.cutting, s.dicampo, j. mcquaid, n.sullivan"
+  },
+  {
+   "name": "S.DiCampo",
+   "role": "Members",
+   "status": "present",
+   "quote": "present: members d. blatt, z.cutting, s.dicampo, j. mcquaid, n.sullivan"
+  },
+  {
+   "name": "J. McQuaid",
+   "role": "Members",
+   "status": "present",
+   "quote": "present: members d. blatt, z.cutting, s.dicampo, j. mcquaid, n.sullivan"
+  },
+  {
+   "name": "N.Sullivan",
+   "role": "Members",
+   "status": "present",
+   "quote": "present: members d. blatt, z.cutting, s.dicampo, j. mcquaid, n.sullivan"
+  },
+  {
+   "name": "M.Benson",
+   "role": "Advisors",
+   "status": "present",
+   "quote": "present: members d. blatt, z.cutting, s.dicampo, j. mcquaid, n.sullivan advisors m.benson, j. londa"
+  },
+  {
+   "name": "J. Londa",
+   "role": "Advisors",
+   "status": "present",
+   "quote": "j. londa stressed that there is indeed a financial impact to the town through savings in energy reduction and grants"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Task Force members are asked to formulate a list of new initiatives, with suggestions including Devens Recycling Center, MassSave/Unitil, and public presentations on energy efficiency, solar projects and wind turbines, and DIY projects.",
+   "quote": "task force members are asked to formulate a list of new initiatives."
+  },
+  {
+   "decision": "D. Blatt will write a series of articles for the Ledger, starting in late March, addressing what is in it for the taxpayer.",
+   "quote": "d. blatt will write a series of articles for the ledger addressing"
+  },
+  {
+   "decision": "The Task Force will make additional public presentations, per the Board of Selectmen directive, to address unanswered questions on the Stretch Code, HERS raters, necessity and cost.",
+   "quote": "our directive from the board of selectmen is to make additional public presentations to address unanswered questions"
+  },
+  {
+   "decision": "Next meeting set for 2/6/12 at 7:00 P.M. at the Ritter Building.",
+   "quote": "next meeting will be 2/6/12 at 7:00 p.m. at the ritter building."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Solar Landfill Project power line upgrade",
+   "what_was_recorded": "The estimated cost to upgrade the power lines for the Solar Landfill Project was reported, with a more accurate cost to follow.",
+   "figures_as_printed": [
+    "$200,000.00"
+   ],
+   "quote": "the estimated cost to upgrade the power lines was $200,000.00 but they will be giving a more accurate cost soon"
+  },
+  {
+   "topic": "THMS solar project savings",
+   "what_was_recorded": "The THMS solar project produced 56 kW at a reported savings.",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "the thms solar project has produced 56 kw of power at a savings of $10,000.00."
+  },
+  {
+   "topic": "MASS PV1 Chase Road PILOT payment",
+   "what_was_recorded": "MASS PV1 is negotiating a Pilot Program agreement under which it would pay the Town in lieu of taxes.",
+   "figures_as_printed": [
+    "$24,000.00"
+   ],
+   "quote": "where they would pay the town $24,000.00 in lieu of taxes."
+  },
+  {
+   "topic": "Energy Performance Contracts",
+   "what_was_recorded": "J. Londa said Energy Performance Contracts could reduce cost with no up-front investment by the Town; the contracted company would receive the financial benefits from revenue generated.",
+   "figures_as_printed": [],
+   "quote": "the town does not have to invest any money up front but the contracted company would get all the financial benefits"
+  },
+  {
+   "topic": "Financial impact of Green Community Act and Stretch Code",
+   "what_was_recorded": "J. Londa stressed a financial impact to the Town through energy-reduction savings and grants; no figures were given.",
+   "figures_as_printed": [],
+   "quote": "j. londa stressed that there is indeed a financial impact to the town through savings in energy reduction and grants"
+  },
+  {
+   "topic": "Task Force funding questions",
+   "what_was_recorded": "Questions were raised about what the Task Force can accomplish without funds and whether money can be matched; no figures were given.",
+   "figures_as_printed": [],
+   "quote": "what can the task force accomplish without funds?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of 11/2/11 minutes",
+   "resolution": "minutes approved",
+   "quote": "meeting called to order at 7:09 p.m. the minutes from 11/2/11 were approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Solar Landfill Project",
+   "resolution": "update, no action",
+   "quote": "borrego has the contract back from town counsel and should hear from unitil by 1/14/12 regarding the interconnect.",
+   "tags": [
+    "solar",
+    "landfill",
+    "interconnect"
+   ]
+  },
+  {
+   "topic": "THMS solar project",
+   "resolution": "update, no action",
+   "quote": "the thms solar project has produced 56 kw of power at a savings of $10,000.00.",
+   "tags": [
+    "solar",
+    "energy savings"
+   ]
+  },
+  {
+   "topic": "Pilgrim Baptist Church solar project",
+   "resolution": "update, no action",
+   "quote": "pilgrim baptist church is going forward with their proposed solar project to the planning board on 1/9/12 and will hold a public hearing on 1/13/12.",
+   "tags": [
+    "solar",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "MASS PV1 Chase Road PILOT agreement",
+   "resolution": "update, no action",
+   "quote": "mass pv1 on chase road is negotiating a financial agreement with the town called the pilot program",
+   "tags": [
+    "solar",
+    "PILOT",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Stretch Code warrants from Lancaster and Townsend",
+   "resolution": "received for review",
+   "quote": "m.benson submitted town warrants from lancaster and townsend regarding the stretch code for our review.",
+   "tags": [
+    "Stretch Code",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Green Community Act public presentations and outreach",
+   "resolution": "discussed; articles to be written",
+   "quote": "our directive from the board of selectmen is to make additional public presentations to address unanswered questions",
+   "tags": [
+    "Green Communities Act",
+    "Stretch Code",
+    "public outreach",
+    "Ledger articles"
+   ]
+  },
+  {
+   "topic": "Questions raised",
+   "resolution": "discussed, no action",
+   "quote": "will the hers raters reduce the work load for the building inspector?",
+   "tags": [
+    "HERS raters",
+    "funding",
+    "education"
+   ]
+  },
+  {
+   "topic": "New initiatives",
+   "resolution": "members to formulate list",
+   "quote": "task force members are asked to formulate a list of new initiatives.",
+   "tags": [
+    "initiatives",
+    "recycling",
+    "energy efficiency"
+   ]
+  },
+  {
+   "topic": "New Business: Energy Performance Contracts",
+   "resolution": "discussed, no action",
+   "quote": "j. londa said without additional funding he could look into energy performance contracts to help reduce cost.",
+   "tags": [
+    "energy performance contracts"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set; adjourned 8:40 P.M.",
+   "quote": "next meeting will be 2/6/12 at 7:00 p.m. at the ritter building.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town warrants from Lancaster and Townsend regarding the Stretch Code",
+   "where": "text",
+   "quote": "m.benson submitted town warrants from lancaster and townsend regarding the stretch code for our review."
+  },
+  {
+   "name": "Development Plan Review",
+   "where": "text",
+   "quote": "the development plan review needs to proceeds through the planning board to the building inspector."
+  },
+  {
+   "name": "Informational sheet on energy produced and savings realized from the THMS solar project",
+   "where": "text",
+   "quote": "an informational sheet on energy produced and savings realized from the thms solar project would reinforce that point."
+  }
+ ],
+ "tags": [
+  "solar",
+  "Green Communities Act",
+  "Stretch Code",
+  "energy savings",
+  "PILOT",
+  "energy performance contracts",
+  "public outreach",
+  "Task Force"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

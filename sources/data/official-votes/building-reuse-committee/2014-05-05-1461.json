@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2014-05-05",
  "docid": "1461",
@@ -12,13 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 7, 2014",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 4/7/14 as submitted.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 4/7/14 approved as submitted"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text; one sentence about Primary School inclusion is incomplete.",
- "cost_usd": 0.0980835
+ "note": "OCR text of a short minutes page with garbled header (\"Ten Te Pal wer\") and typos (\"transter\", \"Historic Commission\" vs \"Historical Commission\"). The only motion-style record is the minutes approval, which has no mover, seconder or stated tally. Adjournment is recorded with no motion. Committee recommendation, officer assignments and assignments are recorded without votes. No dollar figures, no public comment speakers, and no document list heading appear in the text.",
+ "cost_usd": 0.00398832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Member; later Chair (reorganization)",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Member; later Vice Chair (reorganization)",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member; later Secretary (reorganization)",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, deb seeley, dave macdonald, steve raboin, amory phelps, dave matthews,"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: mike mackin,"
+  },
+  {
+   "name": "Rick Cuddy",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: rick cuddy, john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: rick cuddy, john londa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee recommends that the Board of Selectmen include the Primary School in the building reuse charter, after the May 6 BOS meeting (recommendation; no vote recorded).",
+   "quote": "the committee recommends that the board of selectmen include the primary school in our"
+  },
+  {
+   "decision": "Damon McQuaid and Jamie Toale to coordinate a joint meeting with the Planning Board on zoning.",
+   "quote": "damon and jamie should coordinate a joint meeting with the planning board"
+  },
+  {
+   "decision": "Jamie Toale to attend the next Historical Commission meeting to coordinate between the two boards.",
+   "quote": "jamie will attend the next historic commission meeting in an effort to coordinate between"
+  },
+  {
+   "decision": "Rick Cuddy to put together a marketing analysis framework for the buildings under the charter.",
+   "quote": "rick cuddy will put together a framework for the buildings under our charter"
+  },
+  {
+   "decision": "Deb Seeley to work with town employees to determine Town Hall space needs.",
+   "quote": "deb seeley to work with town employees to determine space needs."
+  },
+  {
+   "decision": "Damon McQuaid and Ron Albert to create a base CAD file of the existing Town Hall floor plans and prepare preliminary layouts.",
+   "quote": "damon and ron will work together to create a base cad file of the existing floor plans and put together some"
+  },
+  {
+   "decision": "Board officers: Jamie Toale remains chairperson, Ron Albert becomes vice chair, Damon McQuaid remains secretary.",
+   "quote": "jamie toale to remain chairperson"
+  },
+  {
+   "decision": "Next meeting set for June 2, 2014 at 6:30pm in Town Hall.",
+   "quote": "june 2, 2014 @ 6:30pm in town hall."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting called to order 7:03 PM",
+   "quote": "meeting called to order may 5, 2014 @ 7:03 pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes approval (4/7/14)",
+   "resolution": "approved as submitted",
+   "quote": "minutes from 4/7/14 approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Property ownership transfers and town meeting",
+   "resolution": "no action recorded; table of buildings prepared by Jamie",
+   "quote": "jamie put together a table of the buildings under our charter and the steps required to",
+   "tags": [
+    "property transfer",
+    "town meeting",
+    "charter buildings"
+   ]
+  },
+  {
+   "topic": "Zoning, including Village Zoning and impact on reuse properties",
+   "resolution": "Damon and Jamie to coordinate joint meeting with Planning Board",
+   "quote": "damon and jamie should coordinate a joint meeting with the planning board",
+   "tags": [
+    "zoning",
+    "village zoning",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Historical Commission impact on reuse properties",
+   "resolution": "Jamie to attend next Historical Commission meeting",
+   "quote": "jamie will attend the next historic commission meeting in an effort to coordinate between",
+   "tags": [
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Marketing analysis of existing properties",
+   "resolution": "Rick Cuddy to prepare framework",
+   "quote": "rick cuddy will put together a framework for the buildings under our charter",
+   "tags": [
+    "marketing analysis"
+   ]
+  },
+  {
+   "topic": "Inclusion of Primary School in charter after May 6 BOS meeting",
+   "resolution": "committee recommends BOS include Primary School (no vote recorded)",
+   "quote": "the committee recommends that the board of selectmen include the primary school in our",
+   "tags": [
+    "primary school",
+    "charter",
+    "board of selectmen"
+   ]
+  },
+  {
+   "topic": "Town Hall task team update",
+   "resolution": "Deb Seeley, Damon and Ron assigned space-needs and CAD/layout tasks",
+   "quote": "deb seeley to work with town employees to determine space needs.",
+   "tags": [
+    "town hall",
+    "space needs",
+    "CAD"
+   ]
+  },
+  {
+   "topic": "Board reorganization",
+   "resolution": "officers set: Jamie Toale chair, Ron Albert vice chair, Damon McQuaid secretary",
+   "quote": "jamie toale to remain chairperson",
+   "tags": [
+    "reorganization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting June 2, 2014 at 6:30pm, Town Hall",
+   "quote": "june 2, 2014 @ 6:30pm in town hall.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45pm (no motion recorded)",
+   "quote": "meeting adjourned @ 7:45pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Table of the buildings under our charter and the steps required to transfer ownership to the Board of Selectmen",
+   "where": "text",
+   "quote": "jamie put together a table of the buildings under our charter and the steps required to"
+  },
+  {
+   "name": "Base CAD file of the existing floor plans",
+   "where": "text",
+   "quote": "damon and ron will work together to create a base cad file of the existing floor plans and put together some"
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "town hall",
+  "zoning",
+  "village zoning",
+  "historical commission",
+  "charter",
+  "primary school",
+  "board reorganization",
+  "marketing analysis",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

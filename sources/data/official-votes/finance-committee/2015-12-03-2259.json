@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-12-03",
  "docid": "2259",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the November 12 minutes as corrected",
+   "motion": "Approve the November 12 minutes as corrected.",
    "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "karin made a motion to approve the november 12 minutes as corrected; terri seconded the motion. the committee approved the motion 5-0."
   },
   {
-   "motion": "Approve the minutes of the November 16 meeting as written",
+   "motion": "Approve the minutes of the November 16 meeting as written.",
    "moved_by": "Karin Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "karin made a motion to approve the minutes of the november 16 meeting as written. jay seconded the motion. the committee approved the minutes 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (adjourned at 8:26).",
    "moved_by": "Karin Menard",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
@@ -37,6 +37,273 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision, readable throughout. Three procedural votes recorded: approval of two prior meeting minutes and adjournment.",
- "cost_usd": 0.0872195
+ "note": "OCR of a scanned draft (footer 'Mn-FY16-151203.Draft'); some words garbled and page numbers read '7 of 4'. Item numbering skips 5 (lettered a./b. follow item 4). Votes are recorded as 5-0 in the text. Public comment section absent; Superintendent Calmes's townsfolk invitation was a committee comment, not public comment. Attendance for Calmes and Berthiaume is only stated as future ('will attend'). Minutes are signed Dec 9, 2015.",
+ "cost_usd": 0.005927119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS liaison",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Superintendent Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "superintendent calmes and greg berthiaume will attend."
+  },
+  {
+   "name": "Greg Berthiaume",
+   "role": "School Committee",
+   "status": "not stated",
+   "quote": "superintendent calmes and greg berthiaume will attend."
+  },
+  {
+   "name": "Charley Hay",
+   "role": "Tappé Associates",
+   "status": "not stated",
+   "quote": "the committee got an interim report from charley hay of"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next three meetings are set for December 10 at 7:00, January 14, and January 28.",
+   "quote": "the next three meetings will be december 10 at 7:00, january 14, and january 28."
+  },
+  {
+   "decision": "Mark invited the Superintendent and the School Committee to attend the committee's meeting; the Superintendent and Greg Berthiaume were to attend.",
+   "quote": "mark invited the superintendent and the school committee to attend our meeting."
+  },
+  {
+   "decision": "Next steps on the forecast: Kerry will firm up the revenue estimates, departments will prepare FY17 requests, and the committee is to meet with Capital Planning early in the process (recommended).",
+   "quote": "recommend that the finance committee meet with capital planning early in the process."
+  },
+  {
+   "decision": "Ongoing Business item: the consensus was that there was no need to discuss it at this meeting.",
+   "quote": "the consensus was there was no need to discuss this at this meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Five Year Financial Forecast: FY17 revenue increase",
+   "what_was_recorded": "The forecast projects a revenue increase for FY17.",
+   "figures_as_printed": [
+    "$861,920"
+   ],
+   "quote": "forecasted increase in revenues in fy17: $861,920."
+  },
+  {
+   "topic": "40S funding in target budget",
+   "what_was_recorded": "The Town Manager did not include 40S funds in the forecast but included $150,000 of 40S funding in the target budget.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "but she did include $150,000 of 40s funding in the target budget."
+  },
+  {
+   "topic": "Lunenburg Public Schools increase",
+   "what_was_recorded": "The schools' initial forecast is an increase of seven percent over FY16, most of it for special education and health insurance.",
+   "figures_as_printed": [
+    "$1,200,000"
+   ],
+   "quote": "initial forecast is for an increase of $1,200,000 or seven percent over their fy16 budget."
+  },
+  {
+   "topic": "Public Safety increase",
+   "what_was_recorded": "Public Safety requested an increase just under $49,000 for level services with overtime and lockup funding.",
+   "figures_as_printed": [
+    "$49,000"
+   ],
+   "quote": "public safety department requested an increase just under $49,000 for level"
+  },
+  {
+   "topic": "Radio dispatch decrease",
+   "what_was_recorded": "Radio dispatch is projected to decrease with the same levels of service.",
+   "figures_as_printed": [
+    "$15,100"
+   ],
+   "quote": "radio dispatch is a projected decrease of $15,100 with the same"
+  },
+  {
+   "topic": "Fire Department increase",
+   "what_was_recorded": "The Fire Department forecast an increase to maintain the same service level.",
+   "figures_as_printed": [
+    "$14,000"
+   ],
+   "quote": "fire department forecast an increase of $14,000 to maintain the same service level."
+  },
+  {
+   "topic": "Stormwater system maintenance",
+   "what_was_recorded": "The budget has $40,000 for stormwater maintenance but no identified revenue source for the coming mandate.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "there is $40,000 in the budget for stormwater system maintenance,"
+  },
+  {
+   "topic": "Pavement Management Program funding",
+   "what_was_recorded": "The PMP goal is $1,000,000 per year; it is currently funded at $670,000 annually ($420,000 Chapter 90 and $250,000 operating budget).",
+   "figures_as_printed": [
+    "$1,000,000",
+    "$670,000",
+    "$420,000",
+    "$250,000"
+   ],
+   "quote": "the pmp is currently funded at $670,000"
+  },
+  {
+   "topic": "Borrowing via State House Notes",
+   "what_was_recorded": "Kerry mentioned State House Notes offering low-rate loans for up to $2,000,000, not to exceed five years, and said prudent borrowing is fine.",
+   "figures_as_printed": [
+    "$2,000,000"
+   ],
+   "quote": "state house notes that make available loans at low rates for up to $2,000,000 not to exceed five years in duration."
+  },
+  {
+   "topic": "General Administration audit cost increase",
+   "what_was_recorded": "General Administration increases are due to an increase in the audit cost and contractual obligations; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "general administration increases are due to an increase in the audit cost and"
+  },
+  {
+   "topic": "Expenditure cost assumptions",
+   "what_was_recorded": "Expenditure assumptions include a two to three percent total cost increase, a nine percent retirement assessment increase and a seven percent health insurance increase; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the total increase in costs is two to three percent."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "mark called the meeting to order at 7:00 pm."
+  },
+  {
+   "topic": "Comments",
+   "resolution": "no action",
+   "quote": "mark has the latest issue of the beacon for the committee's review."
+  },
+  {
+   "topic": "Five Year Financial Forecast (presented by Kerry Lafleur)",
+   "resolution": "presented; no vote; next steps noted",
+   "quote": "the five year financial forecast by kerry lafleur."
+  },
+  {
+   "topic": "Minutes of November 12 and November 16 meetings",
+   "resolution": "approved (November 12 as corrected)",
+   "quote": "minutes of the november 12, terri corrected the reference to the police department"
+  },
+  {
+   "topic": "School Committee invitation and Salary Administration Plan review request",
+   "resolution": "invitation extended; request noted",
+   "quote": "mark invited the superintendent and the school committee to attend our meeting."
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received; no action",
+   "quote": "one result of kerry's financial forecast will be that the"
+  },
+  {
+   "topic": "Ongoing Business",
+   "resolution": "no action; no need to discuss at this meeting",
+   "quote": "the consensus was there was no need to discuss this at this meeting."
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "set December 10, January 14, January 28",
+   "quote": "the next three meetings will be december 10 at 7:00, january 14, and january 28."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:26, 5-0",
+   "quote": "karin moved to adjourn the meeting and terri seconded the motion."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Five Year Financial Forecast (PDF on Town Web site)",
+   "where": "text",
+   "quote": "for specifics, click on forecast to link to a pdf file on the town web site."
+  },
+  {
+   "name": "Forecast spreadsheet",
+   "where": "text",
+   "quote": "exceptions are noted in the forecast spreadsheet."
+  },
+  {
+   "name": "Budget planning schedule",
+   "where": "text",
+   "quote": "kerry handed out the budget planning schedule."
+  },
+  {
+   "name": "The Beacon (latest issue)",
+   "where": "text",
+   "quote": "mark has the latest issue of the beacon for the committee's review."
+  },
+  {
+   "name": "Unitil site plan review application and plans (Planning Board)",
+   "where": "text",
+   "quote": "the application and plans are available for review at the planning office."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "five year forecast",
+  "FY17 budget",
+  "Town Manager",
+  "Lunenburg Public Schools",
+  "pavement management",
+  "stormwater",
+  "capital planning",
+  "borrowing",
+  "minutes approval",
+  "Building Re-Use",
+  "Planning Board",
+  "Unitil site plan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-11-21",
  "docid": "3624",
@@ -12,6 +12,75 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The text shows only the meeting header, attendance roster, and a description that this was a workshop/discussion session about zoning articles for the December 5, 2011 Special Town Meeting. No motions, votes, or outcomes are stated in this excerpt.",
- "cost_usd": 0.0804645
+ "note": "Single-page OCR scan of workshop minutes (Nov 21, 2011). No motions, votes, budget figures, public comment, or exhibits appear in the text, and the zoning articles are not named. OCR artifacts in the letterhead and received stamp (e.g., \"ABURG\", \"INCORPORA\", \"IAN 1 1 2012\"); the stamp is read as a January 2012 received date. The Vice Chair's name is printed differently in the letterhead (\"Joanna L. Bilotta\") and the attendance line (\"Joanna L. Bilotta-Simeone\"); the attendance line is used. Attendance status is taken from the \"Present:\" line; no absences are listed.",
+ "cost_usd": 0.00204632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, joanna l. bilotta-simeone, vice chair, robert j. saiia, thomas w. bodkin jr.,"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, joanna l. bilotta-simeone, vice chair, robert j. saiia, thomas w. bodkin jr.,"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, joanna l. bilotta-simeone, vice chair, robert j. saiia, thomas w. bodkin jr.,"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, joanna l. bilotta-simeone, vice chair, robert j. saiia, thomas w. bodkin jr.,"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "nathan j. lockwood, marion m. benson, planning director"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Workshop/discussion of zoning articles for Special Town Meeting",
+   "resolution": "discussed; no action recorded",
+   "quote": "workshop/discussion of zoning articles to be presented at special town meeting december 5, 2011.",
+   "tags": [
+    "zoning",
+    "workshop",
+    "special town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "planning board",
+  "zoning",
+  "special town meeting",
+  "workshop",
+  "2011"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

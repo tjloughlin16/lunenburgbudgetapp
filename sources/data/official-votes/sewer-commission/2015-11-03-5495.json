@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-11-03",
  "docid": "5495",
@@ -12,15 +12,191 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sue",
    "seconded_by": "John",
    "outcome": "passed",
    "procedural": true,
-   "quote": "sue made the motion, john seconded. meeting was adjourned at 7:38pm."
+   "quote": "troy, in absence of the chair, asked for a motion to adjourn. sue made the motion, john seconded. meeting was adjourned at 7:38pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Single vote recorded: procedural motion to adjourn at end of meeting. The minutes contain extensive discussion of grease trap regulations, external interceptor requirements, and account compliance, but record these as consensus discussions (\"All agreed\", \"Commission discussed and based on this agreed\") rather than formal motions voted upon.",
- "cost_usd": 0.0889515
+ "note": "OCR text from a scan (macOS Vision), with probable recognition errors. No date line, attendance list or chair name is printed; attendance is inferred from who spoke. Only one motion is recorded (adjournment). Other agreements are recorded as \"All agreed\" or \"agreed\" without a motion, so they are listed as decisions. No public comment section is printed.",
+ "cost_usd": 0.00530562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Troy",
+   "status": "present",
+   "quote": "troy, in absence of the chair, asked for a motion to adjourn.",
+   "role": "presiding in absence of the chair"
+  },
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl stated that there isn't a policy that can cover every 'may' and that it is more important",
+   "role": ""
+  },
+  {
+   "name": "John",
+   "status": "present",
+   "quote": "john believed that the state's cmr has the requirements, based on amount of liquid and rate of flow.",
+   "role": ""
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb noted how many restaurants took issue with the monthly external requirements",
+   "role": ""
+  },
+  {
+   "name": "Sue",
+   "status": "present",
+   "quote": "sue added that in her opinion, we should leave it to the professionals,",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Take Walmart off the compliance list, based on the DEP and Fire Department review of automotive waste oil.",
+   "quote": "commission discussed and based on this agreed that we could take walmart off our list."
+  },
+  {
+   "decision": "Section VI of the regulations is the best place to add detail on reviewing accounts to see if they still qualify for requirements.",
+   "quote": "determined that section vi was the best section to add details about reviewing accounts to determine if they still qualify for requirements under the regulations."
+  },
+  {
+   "decision": "Monthly inspection requirement applies only to external interceptors; agreed by all.",
+   "quote": "troy confirmed that this only applies to the external interceptors. all agreed."
+  },
+  {
+   "decision": "Back off the external interceptor requirements for now, adopt a policy soon, and drop reporting for now.",
+   "quote": "we should adopt a policy soon, and backoff the external requirements for now."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Charging for external interceptor inspections",
+   "what_was_recorded": "Commission discussed charging $250 and covering inspection costs with the funds; Carl wants the area self-funded, possibly as its own enterprise fund paid by the users rather than sewer customers.",
+   "quote": "commission discussed just charging $250 and covering the costs of inspections with the funds. carl would like this area of",
+   "figures_as_printed": [
+    "$250"
+   ]
+  },
+  {
+   "topic": "Self-funded enterprise fund for interceptor checks",
+   "what_was_recorded": "Carl proposed contracting with SWSS for the checks and making it its own enterprise fund, with costs passed to customers, not sewer customers. No figure printed.",
+   "quote": "do the check and make this its own enterprise fund, passing the costs on to the customers and not the sewer customers.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town-paid camera inspection of a restaurant's lines",
+   "what_was_recorded": "Troy recalled the town paid to camera a restaurant's lines in the past; no figure printed.",
+   "quote": "the town paid to camera the lines and determination going forward was based on the past activity",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Paving on the sewer project contract",
+   "what_was_recorded": "Discussion of whether paving can be removed from the sewer project contract and any legal basis for challenge; no figure printed.",
+   "quote": "discussion turned to the paving responses on the sewer project and whether we actually can remove paving from the contract",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Floor drains and grease interceptor policy for new and existing establishments",
+   "resolution": "discussed; policy to be developed",
+   "quote": "discussion turned to floor drains and whether they are connected to sewer and if so, that should be more the focus.",
+   "tags": [
+    "floor drains",
+    "grease traps",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Monthly inspection requirement for external grease traps/interceptors",
+   "resolution": "external requirements backed off for now; SWSS to identify interceptors",
+   "quote": "first topic to discuss was our requirement for monthly inspection of external grease traps/interceptors and the difficulty of",
+   "tags": [
+    "external interceptors",
+    "inspections",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Removing inactive or seasonal accounts from the compliance list",
+   "resolution": "reviewed; accounts to come off list",
+   "quote": "the commission reviewed those customers, past and present, who needed to come off the list: harley house, twin city, centre pizza, conrads.",
+   "tags": [
+    "compliance list",
+    "accounts"
+   ]
+  },
+  {
+   "topic": "Automotive waste oil",
+   "resolution": "no change to regulations or compliance; Walmart taken off list",
+   "quote": "troy brought up the email he had sent regarding automotive waste oil, and that the dep and fire dept. seem to have it well covered.",
+   "tags": [
+    "waste oil",
+    "DEP",
+    "Fire Department"
+   ]
+  },
+  {
+   "topic": "Adding account review to the regulations",
+   "resolution": "Section VI chosen; Troy to try wording",
+   "quote": "commission discussed where in the regs we could add the issue of taking an account off of the compliance list",
+   "tags": [
+    "regulations",
+    "compliance list"
+   ]
+  },
+  {
+   "topic": "Paving on the sewer project contract",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion turned to the paving responses on the sewer project and whether we actually can remove paving from the contract",
+   "tags": [
+    "sewer project",
+    "paving",
+    "contract"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Troy's email regarding automotive waste oil",
+   "where": "text",
+   "quote": "troy brought up the email he had sent regarding automotive waste oil, and that the dep and fire dept."
+  },
+  {
+   "name": "State CMR (requirements based on amount of liquid and rate of flow)",
+   "where": "text",
+   "quote": "john believed that the state's cmr has the requirements, based on amount of liquid and rate of flow."
+  },
+  {
+   "name": "Sewer Commission regulations (Sections N, J, V, VI)",
+   "where": "text",
+   "quote": "troy noted that the sections in our regs dealing with board of health should be updated."
+  }
+ ],
+ "tags": [
+  "grease traps",
+  "floor drains",
+  "external interceptors",
+  "inspections",
+  "SWSS",
+  "waste oil",
+  "compliance list",
+  "regulations",
+  "sewer project paving",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

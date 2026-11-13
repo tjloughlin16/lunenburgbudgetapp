@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-09-25",
  "docid": "2332",
@@ -12,39 +12,199 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 1, authorizing the Board of Selectmen to negotiate a Power Purchase Agreement on behalf of the town",
-   "moved_by": "Steven Raboin",
-   "seconded_by": "John Male",
-   "outcome": "passed",
+   "motion": "Recommend approval of Article 1 as written, authorizing the Board of Selectmen to negotiate a Power Purchase Agreement on behalf of the town.",
+   "moved_by": "SR",
+   "seconded_by": "JM",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "sr motioned to recommend approval of article 1, as written, authorizing the board of selectmen to negotiate a power purchase agreement on behalf of the town. jm seconded, approval was unanimous."
   },
   {
-   "motion": "Recommend approval of Article 2, allowing a PILOT agreement for the Pleasant Street solar project, subject to participation in a Power Purchase Agreement with Lunenburg as negotiated by the BoS",
-   "moved_by": "John Male",
-   "seconded_by": "Steven Raboin",
-   "outcome": "passed",
+   "motion": "Recommend approval of Article 2 as written, allowing a PILOT agreement for the Pleasant Street solar project, subject to participation in a Power Purchase Agreement with Lunenburg as negotiated by the BoS.",
+   "moved_by": "JM",
+   "seconded_by": "SR",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "jm motioned to recommend approval of article 2, as written, allowing a pilot agreement for the pleasant street solar project, subject to participation in a power purchase agreement with lunenburg as negotiated by the bos. sr seconded, approval was unanimous."
+   "quote": "jm motioned to recommend approval of article 2, as written, allowing a pilot agreement for the pleasant street solar project,"
   },
   {
-   "motion": "Recommend approval of Article 3, allowing a PILOT agreement for the Chase Road solar project, subject to participation in a Power Purchase Agreement with Lunenburg as negotiated by the BoS",
-   "moved_by": "John Male",
-   "seconded_by": "Jason Smith",
-   "outcome": "passed",
+   "motion": "Recommend approval of Article 3 as written, allowing a PILOT agreement for the Chase Road solar project, subject to participation in a Power Purchase Agreement with Lunenburg as negotiated by the BoS.",
+   "moved_by": "JM",
+   "seconded_by": "JS",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "jm motioned to recommend approval of article 3, as written, allowing a pilot agreement for the chase road solar project, subject to participation in a power purchase agreement with lunenburg as negotiated by the bos. js seconded, approval was unanimous."
+   "quote": "jm motioned to recommend approval of article 3, as written, allowing a pilot agreement for the chase road solar project"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Scott Gile",
+   "motion": "Adjourn the meeting at 6:50.",
+   "moved_by": "BL",
+   "seconded_by": "SG",
    "outcome": "passed 7-0",
    "procedural": true,
    "quote": "bl motioned to adjourn at 6:50. sg seconded, approved 7-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Article 4 appears in the minutes as a motion by Terri Burchfield to recommend disapproval, but the motion was withdrawn before a vote; therefore it is not included. Article 5 required no motion or vote. No votes were recorded on approval of prior minutes.",
- "cost_usd": 0.1041495
+ "note": "Single-page OCR extraction of the 9/25/12 minutes. Article 4's disapproval motion was made and then withdrawn, so no vote is recorded on it. The minutes print no document list and no public comment section. Source typo 'rustees' is quoted as-is nowhere; it is paraphrased. Attendee roles for members not given a title in the header are recorded as 'Finance Committee member'.",
+ "cost_usd": 0.005810119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "B. Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "J. Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "S. Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "J. Smith",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "S. Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "T. Burchfield",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 4 (Lunenburg Public Library budget increase) was not voted on; after the motion to disapprove was withdrawn, any recommendation was deferred pending the Trustees presentation.",
+   "quote": "a vote for any recommendation would be deferred pending the trustees presentation"
+  },
+  {
+   "decision": "No Finance Committee recommendation on Article 5 because no financial impact to the Town was evident.",
+   "quote": "as no financial impact to the town was evident, no recommendation was required."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 4 - Lunenburg Public Library budget increase",
+   "what_was_recorded": "Article 4 would increase the Lunenburg Public Library budget, as voted at the Annual Town Meeting, by $35,598; the disapproval motion was withdrawn and the recommendation deferred.",
+   "figures_as_printed": [
+    "$35,598"
+   ],
+   "quote": "seeking to increase the lunenburg public library budget, as voted at the annual town meeting, by $35,598."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Article 1 - Power Purchase Agreement authorization",
+   "resolution": "recommended approval, unanimous",
+   "quote": "article 1: sr motioned to recommend approval of article 1, as written, authorizing the board of selectmen to negotiate a power purchase agreement on behalf of the town.",
+   "tags": [
+    "power purchase agreement",
+    "warrant article",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Article 2 - Pleasant Street solar PILOT agreement",
+   "resolution": "recommended approval, unanimous",
+   "quote": "article 2: jm motioned to recommend approval of article 2, as written, allowing a pilot agreement for the pleasant street solar project",
+   "tags": [
+    "PILOT",
+    "solar",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Article 3 - Chase Road solar PILOT agreement",
+   "resolution": "recommended approval, unanimous",
+   "quote": "article 3: jm motioned to recommend approval of article 3, as written, allowing a pilot agreement for the chase road solar project",
+   "tags": [
+    "PILOT",
+    "solar",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Article 4 - Lunenburg Public Library budget increase",
+   "resolution": "deferred pending Trustees presentation; motion to disapprove withdrawn",
+   "quote": "article 4: tb motioned to recommend disapproval of article 4, as written, seeking to increase the lunenburg public library budget",
+   "tags": [
+    "library budget",
+    "warrant article",
+    "deferred"
+   ]
+  },
+  {
+   "topic": "Article 5 - no financial impact",
+   "resolution": "no recommendation required",
+   "quote": "article 5: as no financial impact to the town was evident, no recommendation was required.",
+   "tags": [
+    "warrant article"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant Article 1 (Power Purchase Agreement authorization)",
+   "where": "text",
+   "quote": "article 1: sr motioned to recommend approval of article 1, as written, authorizing the board of selectmen to negotiate a power purchase agreement"
+  },
+  {
+   "name": "Special Town Meeting warrant Article 2 (Pleasant Street solar PILOT)",
+   "where": "text",
+   "quote": "article 2: jm motioned to recommend approval of article 2, as written, allowing a pilot agreement for the pleasant street solar project"
+  },
+  {
+   "name": "Special Town Meeting warrant Article 3 (Chase Road solar PILOT)",
+   "where": "text",
+   "quote": "article 3: jm motioned to recommend approval of article 3, as written, allowing a pilot agreement for the chase road solar project"
+  },
+  {
+   "name": "Special Town Meeting warrant Article 4 (Lunenburg Public Library budget)",
+   "where": "text",
+   "quote": "article 4: tb motioned to recommend disapproval of article 4, as written, seeking to increase the lunenburg public library budget"
+  },
+  {
+   "name": "Special Town Meeting warrant Article 5",
+   "where": "text",
+   "quote": "article 5: as no financial impact to the town was evident, no recommendation was required."
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "finance committee recommendations",
+  "solar",
+  "PILOT",
+  "power purchase agreement",
+  "library budget",
+  "2012"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2017-04-04",
  "docid": "719",
@@ -12,23 +12,239 @@
  },
  "votes": [
   {
-   "motion": "grant three RE abatements totaling $10,801.18",
-   "outcome": "not stated",
-   "procedural": false,
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, the March 7, 2017 minutes and payroll.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, march 7, 2017 minutes and payroll."
+  },
+  {
+   "motion": "Grant three (3) RE abatements totaling $10,801.18 (FY 17).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "the board reviewed and voted to grant three (3) re abatements totaling $10,801.18"
   },
   {
-   "motion": "meet on May 9, 2017 at 5:45 pm",
-   "outcome": "not stated",
-   "procedural": true,
+   "motion": "Approve eight ABC Charitable Exemption applications for FY18.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board reviewed and approved the following (8) eight 3 abc charitable exemption applications for fy18."
+  },
+  {
+   "motion": "Approve the FY18 mapping service contract with CAl Technologies, Inc.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the board reviewed and approved the contract for the fy18 mapping service cal technologies, inc."
+  },
+  {
+   "motion": "Meet on May 9, 2017 at 5:45 pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "board voted to meet on may 9, 2017 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document. Items described as \"reviewed and approved\" (vouchers, warrants, minutes, payroll, charitable exemption applications, mapping service contract) lack explicit vote language or outcome counts and are not included as recorded votes. The two votes recorded use explicit \"voted\" language.",
- "cost_usd": 0.0857025
+ "note": "OCR text from a scanned page, with some garbling (e.g. 'CAl', 'Lain Paquette' signature, 'Submittea'). No vote counts, movers or seconders are printed for any motion; outcomes are 'passed' only where the minutes say the Board 'voted to' or 'approved'. Richard Letarte's role is ambiguous in the attendance line; listed as Board Member under the 'Board Members' heading. 'Becky' is assumed to be Rebecca Boucher. Harald is referred to but not identified as an attendee. No public comment is recorded. The 'Office of the Board of Assessor' line and the RECEIVED & MLED stamp are not documents lists.",
+ "cost_usd": 0.0054172199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey, richard letarte, regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey, richard letarte, regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey, richard letarte, regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Rebecca Boucher",
+   "role": "Regional Associate Assessor",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey, richard letarte, regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey, richard letarte, regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Louise Paquette will inform Harald of the Board's request for a report on properties still needing inspection and suggest he provide it at the next meeting.",
+   "quote": "louise will inform harald of this request and suggest that he provide this info at the next meeting."
+  },
+  {
+   "decision": "The Board requested the number of properties in the nine/ten year program and how many properties have been inspected since the Measure and List Program began in FY2014.",
+   "quote": "requested the number of properties that fall into the nine/ ten yr. program and wanted to know how many properties have been inspected since the measure and list program began in fy2014."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY17 RE abatements granted",
+   "what_was_recorded": "Three RE abatements were granted totaling $10,801.18, with individual amounts listed by address.",
+   "figures_as_printed": [
+    "$10,801.18",
+    "6699.29",
+    "257.74",
+    "3844.15"
+   ],
+   "quote": "the board reviewed and voted to grant three (3) re abatements totaling $10,801.18"
+  },
+  {
+   "topic": "FY17 supplemental tax bills",
+   "what_was_recorded": "Louise reported 36 supplemental bills totaling $80,445.34 for newly constructed properties will be mailed April 18, 2017.",
+   "figures_as_printed": [
+    "$80,445.34"
+   ],
+   "quote": "36 supplemental bills totaling $80,445.34 for the newly constructed properties will be mailed on april 18, 2017."
+  },
+  {
+   "topic": "FY18 mapping services contract (CAI Technologies)",
+   "what_was_recorded": "Mapping services for FY18 cost $2650.00, an increase of $100.00.",
+   "figures_as_printed": [
+    "$2650.00",
+    "$100.00"
+   ],
+   "quote": "mapping services for fy18 is $2650.00; an increase of $100.00."
+  },
+  {
+   "topic": "Measure & List periodic inspection budget line",
+   "what_was_recorded": "Louise reported the Assessors' budget line item for the Measure & List program was started in Fiscal 14 for three years and is still ongoing; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "louise reported that the assessors' budget line item for the measure & list program for the periodic inspections was initiated in fiscal 14 for three years and it is still ongoing."
+  },
+  {
+   "topic": "Supplemental tax letter to property owners",
+   "what_was_recorded": "A letter explaining the supplemental tax bill was sent to each property owner; the calculation fields are blank in the minutes and no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "a letter was sent to each property owner today that explained the supplemental tax bill as follows:"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening and routine approvals",
+   "resolution": "approved vouchers, abatements, warrants, commitments, March 7 2017 minutes and payroll",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, march 7, 2017 minutes and payroll.",
+   "tags": [
+    "approvals",
+    "minutes",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "RE abatements",
+   "resolution": "granted three abatements totaling $10,801.18",
+   "quote": "the board reviewed and voted to grant three (3) re abatements totaling $10,801.18",
+   "tags": [
+    "abatements",
+    "real estate tax"
+   ]
+  },
+  {
+   "topic": "FY17 RE supplemental bills",
+   "resolution": "reported; letters sent and bills to be mailed April 18, 2017",
+   "quote": "becky reported that a letter was sent to each property owner today that explained the supplemental tax bill",
+   "tags": [
+    "supplemental tax",
+    "new construction"
+   ]
+  },
+  {
+   "topic": "FY18 ABC charitable exemptions",
+   "resolution": "approved eight applications",
+   "quote": "the board reviewed and approved the following (8) eight 3 abc charitable exemption applications for fy18.",
+   "tags": [
+    "charitable exemption",
+    "FY18"
+   ]
+  },
+  {
+   "topic": "FY18 mapping service contract",
+   "resolution": "approved contract with CAI Technologies, Inc.",
+   "quote": "the board reviewed and approved the contract for the fy18 mapping service cal technologies, inc.",
+   "tags": [
+    "mapping",
+    "contract",
+    "vendor"
+   ]
+  },
+  {
+   "topic": "Town Meeting and Town Election dates",
+   "resolution": "reported; no action",
+   "quote": "louise reported that the town meeting will be held on may 6* and town election on may 20t.",
+   "tags": [
+    "town meeting",
+    "election"
+   ]
+  },
+  {
+   "topic": "Periodic inspections and DOR audit",
+   "resolution": "discussed; Board requested data and a report from Harald",
+   "quote": "becky reported that the periodic / cyclical inspections are underway and that the dor audit will take place in fy19.",
+   "tags": [
+    "inspections",
+    "DOR audit",
+    "Measure and List"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "voted to meet May 9, 2017 at 5:45 pm; adjourned 7:32 pm",
+   "quote": "board voted to meet on may 9, 2017 at 5:45 pm. meeting adjourned 7:32 pm.",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter to property owners explaining the FY17 supplemental tax bill",
+   "where": "text",
+   "quote": "a letter was sent to each property owner today that explained the supplemental tax bill as follows:"
+  },
+  {
+   "name": "ABC Charitable Exemption applications for FY18 (eight applications)",
+   "where": "text",
+   "quote": "the board reviewed and approved the following (8) eight 3 abc charitable exemption applications for fy18."
+  }
+ ],
+ "tags": [
+  "abatements",
+  "supplemental tax",
+  "charitable exemptions",
+  "mapping contract",
+  "periodic inspections",
+  "DOR audit",
+  "Town Meeting",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

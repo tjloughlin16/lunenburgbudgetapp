@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-05-06",
  "docid": "5512",
@@ -12,23 +12,82 @@
  },
  "votes": [
   {
-   "motion": "An interceptor will be required to be installed to keep pipes free of obstructions caused by fat, oils, or grease",
+   "motion": "Grease interceptor requirement: where the Sewer Commission deems it necessary to keep pipes free of obstructions caused by fat, oils or grease, an interceptor will be required to be installed (mover not shown in this excerpt).",
    "moved_by": "",
-   "seconded_by": "Mike Nault",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "an interceptor will be required to be installed. seconded by mike nault. vote taken was unanimously approved."
+   "quote": "seconded by mike nault. vote taken was unanimously approved.",
+   "seconded_by": "Mike Nault"
   },
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike",
-   "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mike made the motion, dave seconded. vote taken was unanimous and the meeting was adjourned"
+   "quote": "mike made the motion, dave seconded. vote taken was unanimous and the meeting was adjourned at 6:05pm.",
+   "seconded_by": "Dave"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text; first vote's mover is not explicitly stated — the text starts mid-sentence (\"deemed necessary by the Sewer Commission necessary to keep the pipes...\") so the opening language and motion attribution are incomplete in the extracted text.",
- "cost_usd": 0.0893755
+ "note": "Partial text: only page 1 is provided, a fragment that starts mid-motion. The start of the meeting, the agenda, the full wording and mover of the grease interceptor motion, and the earlier items are missing. The mover of the interceptor motion and the last names of Dave and Carl Luck's role are not printed in this excerpt. No dollar figures, public comment, or document lists appear in the text.",
+ "cost_usd": 0.0019989200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "not stated (appears to run the meeting and signed the minutes)",
+   "status": "present",
+   "quote": "carl asked for a motion to adjourn."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "not stated",
+   "status": "present",
+   "quote": "seconded by mike nault. vote taken was unanimously approved."
+  },
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike made the motion, dave seconded."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Grease interceptor requirement (fat, oils or grease)",
+   "resolution": "approved unanimously",
+   "quote": "seconded by mike nault. vote taken was unanimously approved.",
+   "tags": [
+    "grease interceptor",
+    "fat oils grease",
+    "pipe obstructions"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:05pm",
+   "quote": "mike made the motion, dave seconded. vote taken was unanimous and the meeting was adjourned at 6:05pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "sewer",
+  "grease interceptor",
+  "fat oils grease",
+  "adjournment",
+  "partial minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

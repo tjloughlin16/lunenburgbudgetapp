@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-02-10",
  "docid": "3741",
@@ -12,72 +12,326 @@
  },
  "votes": [
   {
-   "motion": "Accept proposed modification from single 4-plex unit to two 2-plex units for Stone Farm Estates",
+   "motion": "Accept the Stone Farm Estates proposed modification (single 4-plex to two 2-plex units).",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye (roll call)",
    "procedural": false,
    "quote": "motion to accept proposed modification, n. lockwood, second, d. mcquaid, roll call vote - all aye."
   },
   {
-   "motion": "Approve minutes from January 27, 2014",
+   "motion": "Approve the minutes of 1-27-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, n. lockwood, to approve 1-27-14, second, d. mcquaid."
   },
   {
-   "motion": "Approve minutes from January 27, 2014 Leominster Shirley Road Information Meeting",
+   "motion": "Approve the minutes of 1-27-14 Leominster Shirley Road Information Meeting.",
    "moved_by": "N. Lockwood",
    "seconded_by": "McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, n. lockwood to approve 1-27-14 leominster shirley road information meeting, second, mcquaid"
   },
   {
-   "motion": "Approve minutes from January 6, 2014 Warrant Article Hearing",
+   "motion": "Approve the minutes of 1-6-14 Warrant Article Hearing.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, n. lockwood to approve 1-6-14 warrant article hearing, second, d. mcquaid"
   },
   {
-   "motion": "Approve minutes from December 8, 2013",
+   "motion": "Approve the minutes of 12-8-13.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuiaid",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, n. lockwood to approve 12-8-13, second, d. mcquiaid"
   },
   {
-   "motion": "Waive § 3.4.3.6 conditional upon trees included in the plan set in some fashion",
+   "motion": "Waive Rules and Regulations § 3.4.3.6 (tree plan submission) conditional upon trees included in the plan set in some fashion, not necessarily a separate tree plan (50 Elmwood Road).",
    "moved_by": "M. Allison",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "m. allison motion to waive § 3.4.3.6. conditional upon trees included in the plan set in some fashion; does not have to be a separate \"tree plan\", second, d. mcquaid, all aye.",
-   "quote_taken_from_text": true
+   "quote": "m. allison motion to waive § 3.4.3.6. conditional upon trees included in the plan set in some fashion; does not have to be a separate \"tree plan\", second, d. mcquaid, all aye."
   },
   {
-   "motion": "Grant waiver of § 3.4.3.8 from submission of tabular summary for 50 Elmwood Road",
+   "motion": "Grant waiver § 3.4.3.8 (tabular summary) for 50 Elmwood Road.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, d. mcquaid, to grant waiver, second, m. allison, all aye."
   },
   {
-   "motion": "Approve waiver of § 4.9.1 for installation of sidewalks for 50 Elmwood Road",
+   "motion": "Approve waiver § 4.9.1 (sidewalks) for 50 Elmwood Road.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, n. lockwood to approve waiver, second, d. mcquaid, all aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clearly readable and legible. All votes are recorded with explicit outcomes. Two additional waivers for 50 Elmwood Road (§ 3.4.3.9 and § 4.2.5.1) were discussed but no votes were recorded — the board deferred final votes pending further discussion with the Conservation Commission.",
- "cost_usd": 0.1568425
+ "dropped_unquoted": 2,
+ "note": "Text is a clean extraction with some split words and double spaces; quotes were collapsed to single spaces. Several motions to approve minutes and the 12-8-13 approval are recorded with no printed result, so outcome is \"not stated\". The 50 Elmwood Road § 3.4.3.9 and § 4.2.5.1 requests and the 651 Chase Road solar item have no recorded motion. No dollar figures appear in the minutes. Public comment was \"none\" at both points. Adjournment at 8:50 PM is recorded without a motion.",
+ "cost_usd": 0.00677262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa, marion m. benson"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "representing the applicant (Whitman & Bingham Associates)",
+   "status": "present",
+   "quote": "represented by anthony cleaves, whitman & bingham associates."
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "Reviewing Engineer, David E. Ross Associates",
+   "status": "not stated",
+   "quote": "reviewing engineer jesse johnson, david e. ross associates, noted via electronic mail"
+  },
+  {
+   "name": "J. Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director j. rodriquenz and fire chief p. sullivan"
+  },
+  {
+   "name": "P. Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "fire chief p. sullivan provided their comments to the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board wants to hear from the Conservation Commission before voting on the § 3.4.3.9 (environmental impact statement) waiver request for 50 Elmwood Road.",
+   "quote": "board wants to hear from conservation commission before voting on this waiver request."
+  },
+  {
+   "decision": "Board will wait for a revised Force Corporation plan showing sight distances in both directions for each driveway before endorsing approval.",
+   "quote": "board waiting for revised plan showing sight distances in both directions for"
+  },
+  {
+   "decision": "Board wants trees planted both along Elmwood Road and the internal road at 50 Elmwood Road.",
+   "quote": "board wants trees planted both along elmwood road and the internal road ",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Capital Planning Committee report tabled due to the Planning Director's absence.",
+   "quote": "tabled due to m. benson's absence."
+  },
+  {
+   "decision": "Green Community Task Force report tabled due to the Planning Director's absence.",
+   "quote": "green community task force, m. benson- tabled due to m. benson's absence."
+  },
+  {
+   "decision": "Possibly invite the DPW Director and the Town Manager to a future meeting on road maintenance as a financial issue for the Town.",
+   "quote": "possibly invite both the dpw director and the town manager to a future meeting for discussion?"
+  },
+  {
+   "decision": "Board to seek Town Counsel's input on the five-year siting requirement with DPH versus a two-year special permit within Town for the marijuana bylaw.",
+   "quote": "board needs to seek town counsel's input on five year siting requirement with dph vs a two year special permit"
+  },
+  {
+   "decision": "Planning Office will compile a list of questions for Board review and additional questions, then forward the list to Town Counsel.",
+   "quote": "planning office will comp ile list of questions for boar d review/additional"
+  },
+  {
+   "decision": "Board would like a draft marijuana bylaw for the February 24 meeting.",
+   "quote": "board would like draft bylaw for the february 24"
+  },
+  {
+   "decision": "Board to discuss meeting frequency further in March.",
+   "quote": "more discussion in march."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Stone Farm Estates site change",
+   "resolution": "approved modification",
+   "quote": "motion to accept proposed modification, n. lockwood, second, d. mcquaid, roll call vote - all aye.",
+   "tags": [
+    "subdivision",
+    "modification",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved four sets of minutes (outcome not printed)",
+   "quote": "motion, n. lockwood, to approve 1-27-14, second, d. mcquaid.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; two reports tabled",
+   "quote": "tabled due to m. benson's absence.",
+   "tags": [
+    "committees",
+    "DLTA",
+    "regional planning"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and development status (Highfield Village, Force Corporation, 50 Elmwood Road, Whites Woods, Emerald Place, White Tail Crossing, solar projects)",
+   "resolution": "reviewed; waivers granted for 50 Elmwood Road; no action on others",
+   "quote": "board waiting for revised plan showing sight distances in both directions for",
+   "tags": [
+    "subdivision",
+    "waivers",
+    "solar",
+    "roads",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting: marijuana bylaw",
+   "resolution": "discussed; Town Counsel input sought; draft requested for February 24",
+   "quote": "board would like draft bylaw for the february 24",
+   "tags": [
+    "marijuana bylaw",
+    "zoning",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Action file: Citizen Survey",
+   "resolution": "no report",
+   "quote": "citizen survey- no report.",
+   "tags": [
+    "survey"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted schedule",
+   "quote": "march 10, 2014, 6:30 pm, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "discussion; more in March",
+   "quote": "m. allison opined the board should meet more frequently.",
+   "tags": [
+    "meeting frequency"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stone Farm Estates Site Change",
+   "where": "list",
+   "quote": "stone farm estates site change"
+  },
+  {
+   "name": "Minutes 1-27-14",
+   "where": "list",
+   "quote": "minutes 1-27-14. minutes 1-27-14 leominster shirley road information meeting"
+  },
+  {
+   "name": "Minutes 1-27-14 Leominster Shirley Road Information Meeting",
+   "where": "list",
+   "quote": "minutes 1-27-14 leominster shirley road information meeting"
+  },
+  {
+   "name": "50 Elmwood Road Subdivision List of Requested Waivers",
+   "where": "list",
+   "quote": "50 elmwood road subdivision list of requested waivers"
+  },
+  {
+   "name": "Building/Zoning Official letter regarding 651 Chase Road Solar",
+   "where": "list",
+   "quote": "building/zoning official letter regarding 651 chase road solar"
+  },
+  {
+   "name": "Marijuana Information Packets",
+   "where": "list",
+   "quote": "marijuana information packets"
+  },
+  {
+   "name": "Reviewing Engineer electronic mail (Jesse Johnson, David E. Ross Associates)",
+   "where": "text",
+   "quote": "reviewing engineer jesse johnson, david e. ross associates, noted via electronic mail"
+  },
+  {
+   "name": "105 CMR 725.000: Department of Public Health Implementation of an Act for the Humanitarian Medical Use of Marijuana",
+   "where": "text",
+   "quote": "105 cmr 725.000: department of public health im plementation of an act"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "waivers",
+  "Stone Farm Estates",
+  "50 Elmwood Road",
+  "marijuana bylaw",
+  "solar",
+  "stormwater",
+  "minutes approval",
+  "Town Counsel"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 2
+ }
 }

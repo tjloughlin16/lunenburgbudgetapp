@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-05-16",
  "docid": "857",
@@ -12,6 +12,83 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe board actions (approval of portapottie requests, adjournment) but do not explicitly record any motions, seconders, or vote procedures with the required formality.",
- "cost_usd": 0.08886150000000001
+ "note": "No motions, seconds, or vote counts are recorded anywhere in the text, so the votes list is empty. The Port-a-Pottie approval and the septic permit signing are stated as actions without a motion. Adjournment at 7:30 pm is stated without a motion. The \"Minutes Approved\" line at the top is blank. The text is a plain-text extract with no attachments or exhibits.",
+ "cost_usd": 0.00206952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt",
+   "role": "Chairman"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt",
+   "role": ""
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: chairman george emond, perry jewell, jack rabbitt",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board signed septic permits for 193 Page Street, 338 Townsend Harbor Road, and 4 Cove Road.",
+   "quote": "septic permits signed : 193 page street 338 townsend harbor road 4 cove road"
+  },
+  {
+   "decision": "The board approved the seasonal Port-a-Pottie requests from Shady Point and Hickory Hills Home Owner's Association, which are annual requests; no motion is recorded.",
+   "quote": "these requests were approved."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "no action (none listed)",
+   "quote": "title 5 inspection reports reviewed : none",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (three permits)",
+   "quote": "septic permits signed : 193 page street 338 townsend harbor road 4 cove road",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Port-a-Pottie requests",
+   "resolution": "approved",
+   "quote": "these requests were approved.",
+   "tags": [
+    "port-a-pottie",
+    "seasonal permits"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of health",
+  "septic permits",
+  "title 5",
+  "port-a-pottie",
+  "seasonal permits"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

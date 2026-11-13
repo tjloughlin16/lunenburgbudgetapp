@@ -1,0 +1,509 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-09-10",
+ "video_id": "TYjk3juHLNo",
+ "video_url": "https://www.youtube.com/watch?v=TYjk3juHLNo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-09-10-TYjk3juHLNo.json",
+  "sha256": "51687e048f75a18a0aa9c985a3e834c616632a0631b4586b17a9526c840d62cb",
+  "caption_lines": 362,
+  "segments": 3126
+ },
+ "recording": {
+  "duration_s": 7541,
+  "duration": "2:05",
+  "spoken_chars": 112331,
+  "words_approx": 18721
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09102013-4858",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-09-10-agenda-4858.txt",
+   "path": "sources/meetings/select-board/2013-09-10-agenda-4858.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102013-4858",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-09-10-minutes-4858.txt",
+   "path": "sources/meetings/select-board/2013-09-10-minutes-4858.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T19:04:31Z",
+  "cost_usd": 0.2681621
+ },
+ "minutes": {
+  "headline": "Select Board authorized Town Counsel to monitor the state election complaint, with a spending cap; no one opposed.",
+  "summary": "The board approved the town manager's request to let Town Counsel monitor a Secretary of State complaint about the April 2013 town election. It heard a consultant presentation on the sign inventory, a pavement management database and the Chase Road funding application, and discussed saving for turf field replacement. Committee reports covered 925 Mass Ave, Lake Shirley ownership, the old primary school project and the role of a liaison. The board then went into executive session on the town manager's contract.",
+  "attendees": [
+   {
+    "name_as_heard": "Chairman Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr Matthews",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr iol",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Joel Bard",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Jack",
+    "role": "DPW director"
+   },
+   {
+    "name_as_heard": "Rich benavento",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Mike pompilli",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Carrie",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "capital",
+   "elections",
+   "executive-session",
+   "housing",
+   "legal",
+   "personnel",
+   "recreation",
+   "roads-and-dpw",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 871,
+    "motion": "Authorize Town Counsel involvement in the Secretary of State election complaint with a funding cap",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7476,
+    "motion": "Enter executive session for the town manager's employment contract renewal",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 807,
+    "topic": "Town Counsel election complaint",
+    "what_was_said": "Counsel estimated a range of hours and a cap was recommended for the work.",
+    "figures_as_heard": [
+     "5 to 15 hours",
+     "$3,000",
+     "$33,000"
+    ]
+   },
+   {
+    "t": 4453,
+    "topic": "Pavement management database",
+    "what_was_said": "Town manager said setup was paid from leftover Chapter 90 money.",
+    "figures_as_heard": [
+     "11,000 ,700",
+     "$11,700"
+    ]
+   },
+   {
+    "t": 5543,
+    "topic": "Warrant",
+    "what_was_said": "Accounts payable and payroll were read.",
+    "figures_as_heard": [
+     "$279,700",
+     "$642,500"
+    ]
+   },
+   {
+    "t": 5839,
+    "topic": "Turf field replacement",
+    "what_was_said": "A member estimated replacement cost and urged setting money aside.",
+    "figures_as_heard": [
+     "$700,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 6190,
+    "decision": "Parks Commission to be tasked with raising user fees and setting aside part for turf replacement."
+   },
+   {
+    "t": 2941,
+    "decision": "Board to follow up on its traffic rules and orders and sign adoption authority."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 208,
+    "topic": "Pledge, Comcast, liaison definition, hearing notice",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 208,
+    "t_end": 955,
+    "topic": "Town Counsel on election complaint",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "elections"
+    ]
+   },
+   {
+    "t_start": 955,
+    "t_end": 5522,
+    "topic": "Sign inventory, pavement management, Chase Road",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5522,
+    "t_end": 5570,
+    "topic": "Minutes and warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 5570,
+    "t_end": 6293,
+    "topic": "Turf field replacement planning",
+    "resolution": "referred",
+    "tags": [
+     "capital",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 6293,
+    "t_end": 7286,
+    "topic": "Committee reports, Lake Shirley, 925 Mass Ave, liaisons",
+    "resolution": "informational",
+    "tags": [
+     "housing",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 7286,
+    "t_end": 7476,
+    "topic": "Town manager reports",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 7476,
+    "t_end": 7538,
+    "topic": "Executive session",
+    "resolution": "voted",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Dollar cap in the motion rendered unclearly in the captions",
+   "Roll call count for the executive session"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 601,
+    "about": "A member said their recollection of the election differed from the clerk's response.",
+    "sides": "a member and Town Counsel",
+    "words_as_heard": "my recollection of the election is different than the town clerk's response",
+    "kind": "members disagree"
+   },
+   {
+    "t": 5985,
+    "about": "Dispute over turf cost figures.",
+    "sides": "a member and the town manager",
+    "words_as_heard": "please don't because you're throwing numbers out there that's going to mislead",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6396,
+    "about": "Lake Shirley ownership revisited.",
+    "sides": "a member and the chair",
+    "words_as_heard": "believe me this is not being discussed again",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2133,
+    "kind": "liability or legal",
+    "about": "Sign compliance plan protects against tort liability.",
+    "who": "a presenter",
+    "words_as_heard": "having a plan in place even if the signs don't meet the requirements are enough to uh defend the jurisdiction uh against twart liability"
+   },
+   {
+    "t": 6829,
+    "kind": "liability or legal",
+    "about": "Liability for 925 Mass Ave contamination if town takes title.",
+    "who": "the town manager",
+    "words_as_heard": "we would want to know if we took title to that um complete have a complete understanding of what our liability would be"
+   },
+   {
+    "t": 6437,
+    "kind": "liability or legal",
+    "about": "Liability exposure of the town owning Lake Shirley.",
+    "who": "a member",
+    "words_as_heard": "there's a lot ability exposure for the town to own a lake"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 228,
+    "name_as_heard": "memo and notice of complaint",
+    "kind": "memo",
+    "words_as_heard": "read this short memo that I presented to you"
+   },
+   {
+    "t": 1399,
+    "name_as_heard": "the mutcd",
+    "kind": "other",
+    "words_as_heard": "the manual and uniform traffic control devices"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "turf-field-replacement-payment",
+    "title": "Turf replacement payment",
+    "question": "How will the town pay to replace the turf field?",
+    "t": 5590,
+    "words_as_heard": "we're probably looking at replacing it",
+    "data_in_play": [
+     "$700,000"
+    ],
+    "existing": "topic:turf-field-capital-plans"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to let Town Counsel monitor a Secretary of State complaint about the April 2013 town election, with a funding cap; no one opposed.",
+    "t": 871
+   },
+   {
+    "line": "The board asked the Parks Commission to raise user fees and set aside part of the money for turf field replacement.",
+    "t": 6190
+   },
+   {
+    "line": "A consultant presented on the sign inventory, a pavement management database and the Chase Road funding application.",
+    "t": 955
+   },
+   {
+    "line": "The town manager said the pavement database setup was paid from leftover Chapter 90 money.",
+    "t": 4453
+   },
+   {
+    "line": "The board went into executive session on the town manager's contract.",
+    "t": 7476
+   }
+  ],
+  "why_it_matters": [
+   "Legal work on the election complaint is paid from the town budget, mostly taxes, and the cap limits how much that can cost.",
+   "Turf field replacement is a large future cost; setting aside user fees now is meant to reduce what falls on the tax bill later."
+  ],
+  "watch_next": [
+   "The board's follow-up on traffic rules and orders and sign adoption authority.",
+   "The Parks Commission's action on user fees and a turf replacement set-aside."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T19:04:41Z",
+   "cost_usd": 0.021469099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09102013-4858",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-09-10-minutes-4858.txt",
+   "path": "sources/meetings/select-board/2013-09-10-minutes-4858.pdf"
+  },
+  "official_sha256": "922e8e781c863df99979da935ec3c0aa482914807d59df75473664f2cfb9382e",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the main Town Counsel authorization with a $3,000 cap, the $11,700 pavement/sign program, the $700,000 turf estimate and most attendees. Our minutes give a $33,000 figure, the Parks Commission fee decision, the traffic-rules decision and the $279,700/$642,500 warrant totals that differ from or are missing in the official minutes, and the names of two board members differ.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 6,
+   "discrepancy": 3,
+   "only_in_ours": 0,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote authorizing Town Counsel participation in election complaint with funding cap",
+    "ours": "Authorize Town Counsel involvement in the Secretary of State election complaint with a funding cap — passed",
+    "official": "ms. bertram moved to approve the town manager's request that town counsel be authorized to participate in the investigation concerning the mgl. chapter 56, section 60 complaint",
+    "note": "Both record the authorization passing with a cap; the official gives the cap as $3000 and the vote as 5-0.",
+    "t": 871
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town Counsel complaint cap figure",
+    "ours": "Town Counsel election complaint: 5 to 15 hours, $3,000, $33,000",
+    "official": "ms. speidel spoke to say that she would recommend a budget not to exceed $3000.",
+    "note": "The $33,000 looks like a caption garbling of the $3,000 cap; the 5-15 hours estimate matches the official minutes.",
+    "official_reading": "$3,000",
+    "t": 807
+   },
+   {
+    "kind": "caption_error",
+    "about": "Pavement management database cost",
+    "ours": "Pavement management database: 11,000 ,700, $11,700",
+    "official": "the cost for this program will be $11,700 and will be funded from left over chapter 90 funds",
+    "note": "The garbled '11,000 ,700' resolves to the same $11,700 as the official minutes.",
+    "official_reading": "$11,700",
+    "t": 4453
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Warrant totals",
+    "ours": "Warrant: $279,700, $642,500",
+    "official": "warrants: 09/10 09/11 09/12 #13-14 #14-14 w6-p14 $279,175.13 $139,424.86 $642,252.22",
+    "note": "Ours gives two rounded totals that are not the exact printed ones and omits $139,424.86; check the warrant sheet to confirm the exact totals.",
+    "t": 5543
+   },
+   {
+    "kind": "agree",
+    "about": "Turf field replacement cost",
+    "ours": "Turf field replacement: $700,000",
+    "official": "he said that we are looking at around $700,000 to pull the turf up, replace with top of the line turf, and resurface the track.",
+    "note": "Same $700,000 estimate.",
+    "t": 5839
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Parks Commission fees and turf replacement",
+    "ours": "Parks Commission to be tasked with raising user fees and setting aside part for turf replacement.",
+    "official": "the current operations and maintenance of the field is paid for through user fees",
+    "note": "Ours records a new decision tasking the Parks Commission. The official describes a prior fee plan that was not carried out and says Ms. Speidel intends to put the replacement into the Capital Plan. Check the recording and the minutes.",
+    "t": 6190
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Traffic rules and orders follow-up",
+    "ours": "Board to follow up on its traffic rules and orders and sign adoption authority.",
+    "official": "the bos will be discussing this matter again at a later meeting.",
+    "note": "Ours describes a follow-up on traffic rules and adoption authority. The official only says the sign inventory matter will return, with no adoption authority. Check what was decided.",
+    "t": 2941
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ms. Speidel to research liaison duties in other communities",
+    "ours": "",
+    "official": "ms. speidel will investigate as to what other communities are doing.",
+    "note": "Decision recorded only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Assessor to prepare Eagle Heights appraisal",
+    "ours": "",
+    "official": "ms. speidel has tasked the assessor with putting together an appraisal on that property",
+    "note": "Decision recorded only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ms. Speidel to contact Assessor on 925 Mass Ave",
+    "ours": "",
+    "official": "she will contact the assessor for more information on this matter.",
+    "note": "Follow-up recorded only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ms. Speidel intends to put turf replacement in Capital Plan",
+    "ours": "",
+    "official": "it is ms. speidel's intention to put the replacement into the capital plan",
+    "note": "Intention recorded only in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Town Manager name",
+    "ours": "Carrie (town manager)",
+    "official": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel",
+    "note": "First-name mishearing of the Town Manager.",
+    "official_reading": "Kerry Speidel"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Board member Toale",
+    "ours": "Mr iol (member)",
+    "official": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel",
+    "note": "'Mr iol' is a likely mishearing of Jamie Toale.",
+    "official_reading": "Jamie Toale"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: DPW director name",
+    "ours": "Jack (DPW director)",
+    "official": "dpw director jack rodriquenz along with rich benevento and mike pompili, from world tech engineering were present",
+    "note": "Ours gives only the first name.",
+    "official_reading": "Jack Rodriquenz"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendees: engineers",
+    "ours": "Rich benavento (presenter); Mike pompilli (presenter)",
+    "official": "dpw director jack rodriquenz along with rich benevento and mike pompili, from world tech engineering were present",
+    "note": "Spelling differences only.",
+    "official_reading": "Rich Benevento; Mike Pompili"
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Robert Ebersole attendance",
+    "ours": "",
+    "official": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel",
+    "note": "Our list has no Ebersole, and 'Mr iol' may be Toale or Ebersole. The official lists both as present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Comcast service complaint in public comment",
+    "ours": "",
+    "official": "mr. ebersole mentioned that he was contacted from a resident with a complaint about service from comcast",
+    "note": "Not in our minutes."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T19:06:14Z",
+   "cost_usd": 0.049931100000000006
+  }
+ }
+}

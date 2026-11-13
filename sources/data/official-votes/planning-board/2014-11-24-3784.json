@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-11-24",
  "docid": "3784",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the September 9, 2014 minutes",
+   "motion": "Approve the minutes of 9/9/14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "9/9/14, motion, d. mcquaid, second, n. lockwood"
   },
   {
-   "motion": "approve the November 10, 2014 minutes",
+   "motion": "Approve the minutes of 11/10/14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "11/10/14, motion, d. mcquaid, second, k. chenis"
   },
   {
-   "motion": "approve the minutes of the November 10, 2014 Highfield Village Hearing",
+   "motion": "Approve the minutes of the 11-10-14 Highfield Village Hearing.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
    "outcome": "not stated",
@@ -36,21 +36,233 @@
    "quote": "11-10-14 highfield village hearing, motion, d. mcquaid, second, n. lockwood"
   },
   {
-   "motion": "approve the minutes of the November 10, 2014 322 Flat Hill Solar Hearing",
+   "motion": "Approve the minutes of the 11-10-14 322 Flat Hill Solar Hearing.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "11-10-14 322 flat hill solar hearing, motion, d. mcquaid, second, n. lockwood"
-  },
-  {
-   "motion": "endorse the denial of the Special Permit and Development Plan Review for 322 Flat Hill Community Solar",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "322 flat hill community solar- special permit and development plan review denial endorsed by the board."
+   "quote": "11-10-14 322 flat hill solar hearing, motion, d. mcquaid,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes approval votes do not state explicit vote counts; \"All minutes signed\" indicates approval but no vote language like \"so voted\" is recorded for individual motions. The 322 Flat Hill decision shows \"endorsed by the Board\" with no mover or seconder named in the minutes.",
- "cost_usd": 0.1446535
+ "note": "The minutes print four minutes-approval motions with no recorded result, so those outcomes are 'not stated'. No dollar figures appear anywhere in the text, so figures_as_printed is empty throughout. No public comment section is printed. Extraction has broken spacing in places (for example 'r oad', 'Aven ue'), which affects only the quotes that were chosen to avoid those spots.",
+ "cost_usd": 0.00644372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Special Permit and Development Plan Review denial for 322 Flat Hill Community Solar was endorsed by the Board, to be filed with the Town Clerk and entered into a 20-day appeal period.",
+   "quote": "special permit and development plan review denial endorsed by the board."
+  },
+  {
+   "decision": "On the Village District Bylaw draft, retail operations are to stay at 5,000 square feet per floor rather than a total cap.",
+   "quote": "decision was to leave at 5,000 per floor."
+  },
+  {
+   "decision": "Parking requirements will be added to Section 7 of the Village District Bylaw draft, since there is no underlying zoning district to reference.",
+   "quote": "parking requirements will be added to 7."
+  },
+  {
+   "decision": "A. Burney will note the chain question at the Mass Ave exit from Asian Imperial to the Building/Zoning Official.",
+   "quote": "a. burney will note to the building/zoning official."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Right To Farm signs grant",
+   "what_was_recorded": "The Agricultural Commission reported receiving a grant to buy Right To Farm Community signs; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "received a grant to purchase"
+  },
+  {
+   "topic": "Agricultural license plate proceeds",
+   "what_was_recorded": "Reported that proceeds from a possible RMV agricultural license plate go to agricultural ventures and are tax deductible; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "proceeds go to agricultural ventures and are"
+  },
+  {
+   "topic": "Letter of Credit release for Whites Woods (Jacklyn Drive)",
+   "what_was_recorded": "Developer sought road inspection to obtain release of the Letter of Credit; inspection by Hamwey Engineering noted; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "letter of credit; inspected by hamwey engineering inc. (hei) 11/21/14."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "four sets of minutes moved; outcome not recorded",
+   "quote": "9/9/14, motion, d. mcquaid, second, n. lockwood",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "updating regional transportation plan.",
+   "tags": [
+    "committees",
+    "regional planning",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "reported; White Tail Crossing road not yet ready for acceptance",
+   "quote": "developer dan proctor indicated to the office he was prepared for a road inspection.",
+   "tags": [
+    "subdivisions",
+    "road acceptance",
+    "Whites Woods",
+    "White Tail Crossing",
+    "Elmwood Road"
+   ]
+  },
+  {
+   "topic": "Action file: 322 Flat Hill Community Solar",
+   "resolution": "denial endorsed by the Board",
+   "quote": "special permit and development plan review denial endorsed by the board.",
+   "tags": [
+    "solar",
+    "special permit",
+    "appeal"
+   ]
+  },
+  {
+   "topic": "Action file: Village District Bylaw draft",
+   "resolution": "reviewed and discussed; decisions on retail floor cap and parking; hearing timing discussed",
+   "quote": "draft bylaw was reviewed by the board.",
+   "tags": [
+    "zoning",
+    "village district bylaw",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "dates listed; televising discussed",
+   "quote": "the possibility was discussed of televising all meetings.",
+   "tags": [
+    "meetings",
+    "broadcast"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "reported; solar bylaw changes distributed",
+   "quote": "n. lockwood has been working on changes to the solar bylaw and distributed copies to the board.",
+   "tags": [
+    "stormwater",
+    "solar bylaw",
+    "road markings"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "referred to Building/Zoning Official",
+   "quote": "a. burney will note to the building/zoning official.",
+   "tags": [
+    "signage",
+    "enforcement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 11-10-14 Highfield Village Hearing, 11-10-14 322 Flat Hill Solar Hearing, 11-10-14, 9-9-14",
+   "where": "list",
+   "quote": "minutes- 11-10-14 highfield village hearing, 11-10-14 322 flat hill solar hearing, 11-10-14, 9-9-14"
+  },
+  {
+   "name": "50 Elmwood Road Progress Form",
+   "where": "list",
+   "quote": "50 elmwood road progress form"
+  },
+  {
+   "name": "Draft Village District Bylaw",
+   "where": "list",
+   "quote": "draft village district bylaw"
+  },
+  {
+   "name": "Board Decision- 322 Flat Hill Community Solar, Inc.",
+   "where": "list",
+   "quote": "board decision- 322 flat hill community solar, inc."
+  },
+  {
+   "name": "David E. Ross Associates Review Letter, White Tail Crossing",
+   "where": "list",
+   "quote": "david e. ross associates review letter, white tail crossing"
+  },
+  {
+   "name": "Fred Hamwey Engineering Review Letter, White’s Woods",
+   "where": "list",
+   "quote": "fred hamwey engineering review letter"
+  },
+  {
+   "name": "Draft letter to Planning Board regarding a year-round public market",
+   "where": "text",
+   "quote": "reviewed draft letter to planning board regarding a year-round public market."
+  },
+  {
+   "name": "Documents from Salem and Reading (stormwater)",
+   "where": "text",
+   "quote": "provided documents from salem and reading to the board"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivisions",
+  "road acceptance",
+  "solar",
+  "village district bylaw",
+  "zoning",
+  "stormwater",
+  "meeting schedule",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

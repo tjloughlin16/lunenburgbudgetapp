@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2011-12-13",
  "docid": "1781",
@@ -12,6 +12,79 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. These minutes describe discussions on three topics (septic mound/parking, tax assessment levels, and emergency shelter use) but do not record any formal motions or votes taken at the meeting.",
- "cost_usd": 0.0805965
+ "note": "Text is a short subcommittee summary with no motions, votes, or adjournment vote recorded; adjournment at 9:20AM is stated without a motion. The line 'Minutes approved at the 2/14/12 COA Meeting' records a later approval date, not a vote in this meeting. No documents, exhibits, or dollar figures are printed.",
+ "cost_usd": 0.00191792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jane Doyle",
+   "status": "present",
+   "quote": "present: jane doyle, mary lynn conrad, joyce wass and elisabeth montuori."
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "status": "present",
+   "quote": "present: jane doyle, mary lynn conrad, joyce wass and elisabeth montuori."
+  },
+  {
+   "name": "Joyce Wass",
+   "status": "present",
+   "quote": "present: jane doyle, mary lynn conrad, joyce wass and elisabeth montuori."
+  },
+  {
+   "name": "Elisabeth Montuori",
+   "role": "Chairperson, COA Advocacy Subcommittee",
+   "status": "present",
+   "quote": "respectfully submitted, elisabeth montuori, chairperson coa advocacy subcommittee"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Tax assessment levels",
+   "what_was_recorded": "The subcommittee discussed tax assessment levels, with no dollar figure printed.",
+   "quote": "we also discussed tax assessment levels and the use of the eagle house senior center for an emergency shelter.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Septic mound relocation for extended parking",
+   "resolution": "discussed; no action recorded",
+   "quote": "we discussed seeking approval from the coa to move forward and stress the urgency of moving the septic mound for extended parking.",
+   "tags": [
+    "septic",
+    "parking",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Tax assessment levels and emergency shelter use of Eagle House",
+   "resolution": "discussed; no action recorded",
+   "quote": "we also discussed tax assessment levels and the use of the eagle house senior center for an emergency shelter.",
+   "tags": [
+    "tax assessment",
+    "emergency shelter",
+    "Eagle House"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "council on aging",
+  "advocacy subcommittee",
+  "septic mound",
+  "parking",
+  "tax assessment",
+  "emergency shelter",
+  "Eagle House Senior Center"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

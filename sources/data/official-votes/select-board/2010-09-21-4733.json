@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-09-21",
  "docid": "4733",
@@ -12,87 +12,469 @@
  },
  "votes": [
   {
-   "motion": "to sign the consent document for transfer of the Proctor Trust to the Community Foundation of North Central Massachusetts",
+   "motion": "Authorize Tom's motion to sign the Proctor Trust consent document for the board's approval transferring the trust to the Community Foundation.",
    "moved_by": "Tom",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom move to sign the document for the boards approval over to the community foundation, steve seconded, voted unanimously and signed."
   },
   {
-   "motion": "to open the warrant for the November 30 Special Town Meeting",
+   "motion": "Open the warrant for the November 30 Special Town Meeting.",
    "moved_by": "Dave",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "dave motion to open the warrant for the november 30% special town meeting tonight, steve seconded, voted unanimously."
   },
   {
-   "motion": "to close the warrant at 5:00 PM on October 18, 2010",
+   "motion": "Close the Special Town Meeting warrant at 5:00 PM on October 18, 2010.",
    "moved_by": "Tom",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "tom move to close the warrant at 5:00 pm on october 18, 2010, steve seconded, voted unanimously."
   },
   {
-   "motion": "to recommend a yes vote on state ballot Question 1 (Sales Tax on Alcoholic Beverages)",
+   "motion": "Recommend a yes vote on State Ballot Question 1 (sales tax on alcoholic beverages).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "board voted unanimously to recommend a \"yes\" vote on question #1."
+   "quote": "as all three of these ballot questions affect the town the board voted unanimously to recommend a \"yes\" vote on question #1."
   },
   {
-   "motion": "to recommend yes vote on state ballot Question 2 (repeal of Chapter 40B comprehensive permits)",
+   "motion": "Board position on State Ballot Question 2 (Chapter 40B), printed as 'repeal Question #2' (support for the repeal of 40B).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "board voted unanimously to repeal question #2."
   },
   {
-   "motion": "to recommend a no vote on state ballot Question 3 (Sales and Use Tax Rates)",
-   "moved_by": "",
+   "motion": "Recommend a no vote on State Ballot Question 3 (sales and use tax rate reduction to 3%).",
+   "moved_by": "Tom and Steve concurred (no mover printed)",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "voted unanimously for a \"no\" vote on question #3."
+   "quote": "tom and steve also concurred and voted unanimously for a \"no\" vote on question #3."
   },
   {
-   "motion": "to appoint Caroline Griffis to the Cultural Council",
+   "motion": "Appoint Kiirja Paananen and Caroline Griffis to the Cultural Council (motion as printed reads only 'to appoint').",
    "moved_by": "Tom",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom move to appoint, steve seconded, voted unanimously."
   },
   {
-   "motion": "to appoint Kiirja Paananen to the Cultural Council",
+   "motion": "Approve appointing Kiirja Paananen to the Cultural Council.",
    "moved_by": "Tom",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "tom motion to approve appointing kiirja, steve seconded, voted unanimously."
   },
   {
-   "motion": "to adjourn Regular Session",
+   "motion": "Adjourn the Regular Session at 8:28 P.M.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "board voted unanimously to adjourn regular session at 8:28 p.m."
   },
   {
-   "motion": "to enter Executive Session under MGL Chapter 39, §23B(3) for contract deliberations",
+   "motion": "Enter Executive Session under MGL Chapter 39, §23B(3) for contract deliberations, with no return to Regular Session.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "opened executive session by roll call vote; steve aye, tom aye, paula aye, and dave aye, at this time for the purpose of discussing contract deliberations when having in open session would be detrimental to the town's negotiating strategies, mgl chapter 39, §23b (3)."
+   "quote": "opened executive session by roll call vote; steve aye, tom aye, paula aye, and dave aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. Minutes legible. Ken Jones resignation from Conservation Commission stated as \"Board accepted Ken Jones resignation\" without motion/vote language, excluded per rules.",
- "cost_usd": 0.1310515
+ "note": "Text is OCR (macOS Vision) of a scanned 2010 minutes packet, with OCR errors in places (e.g. '$2:5 billion', 'Questign', 'tavor', 'Secrétary'); quotes and figures are copied as they appear in the OCR text. Vote quotes come from the OCR and vote counts are only as printed; votes marked 'unanimously' record no count. The Question 2 vote is printed as 'repeal Question #2' and is recorded as printed. Pages 4-8 are attached Secretary of State ballot-question printouts and an MMA article; they are recorded as attachments named in the text. The public comment section records only a board member's remark, so no public speakers are recorded. The Proctor Trust consent and the minutes/warrants action are not budget transfers; no transfers are recorded.",
+ "cost_usd": 0.011942620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, tom alonzo, dave matthews and town manager kerry speidel present, ernie sund absent."
+  },
+  {
+   "name": "Steven M deBettencourt",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, tom alonzo, dave matthews and town manager kerry speidel present, ernie sund absent."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, tom alonzo, dave matthews and town manager kerry speidel present, ernie sund absent."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, tom alonzo, dave matthews and town manager kerry speidel present, ernie sund absent."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "dave matthews and town manager kerry speidel present, ernie sund absent."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "absent",
+   "quote": "ernie sund absent."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura williams, chief administrative assistant"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "candidate for Cultural Council appointment",
+   "status": "present",
+   "quote": "present was caroline griffis and peter mccarron, chair of lunenburg cultural council."
+  },
+  {
+   "name": "Peter McCarron",
+   "role": "Chair of Lunenburg Cultural Council",
+   "status": "present",
+   "quote": "present was caroline griffis and peter mccarron, chair of lunenburg cultural council."
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "candidate for Cultural Council appointment",
+   "status": "absent",
+   "quote": "peter informed the board that kiirja was not able to attend the board meeting as she attends class."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Warrants #14 11, #15 11 and #6M 11 were reviewed and signed (no vote recorded).",
+   "quote": "#6m 11, 9/23/10 - $2,020.85 reviewed and signed"
+  },
+  {
+   "decision": "The board will discuss the Special Town Meeting articles and recommendations at its October 19 meeting.",
+   "quote": "board will discuss the articles and recommendations for the october 19' board of selectmen meeting."
+  },
+  {
+   "decision": "Paula asked to see the Weston & Sampson invoice before it is placed on the warrant for payment.",
+   "quote": "paula would like to see the invoice from weston & sampson before it's placed on the warrant for payment."
+  },
+  {
+   "decision": "Kerry will make CDs of the Lake Shirley Dam plan to disperse, as the files were too large to send electronically.",
+   "quote": "kerry will have to make cd's of the plan to disperse as they were too large to send electronically."
+  },
+  {
+   "decision": "The board agreed to hold off on the power provider RFP until it hears from Representative Benson; the item goes on the first October agenda for an update.",
+   "quote": "item will be placed on the agenda for the first meeting of october for an update."
+  },
+  {
+   "decision": "Kerry will prepare the budget retrospective covering 10 years back and five years forward, including population, service levels, equipment and technology changes.",
+   "quote": "will do out for 10 years back and five years forward, to also include population and service levels."
+  },
+  {
+   "decision": "The board accepted Ken Jones's resignation from the Conservation Commission, with a letter of appreciation to be sent.",
+   "quote": "board accepted ken jones resignation with regrets, letter to be sent expressing board's appreciation."
+  },
+  {
+   "decision": "The associate member position on the Conservation Commission will be placed on the next agenda.",
+   "quote": "as was not placed on tonight's agenda will be placed on the next agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House Parking Lot CDBG grant application",
+   "what_was_recorded": "A public forum on the CDBG grant application for the Eagle House Parking Lot Project was announced; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "public forum on cdbg grant application for eagle house parking lot project, october 5, 2010 @ 6:00 pm - scheduled to"
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Three warrants were reviewed and signed with the amounts printed for each.",
+   "figures_as_printed": [
+    "$241,130.93",
+    "$568,905.48",
+    "$2,020.85"
+   ],
+   "quote": "no minutes, warrants: #14 11, 9/22/10 - $241,130.93, #15 11, 9/22/10 - $568,905.48 and #6m 11, 9/23/10 - $2,020.85 reviewed and signed"
+  },
+  {
+   "topic": "Weston & Sampson invoice",
+   "what_was_recorded": "Paula wants to see the Weston & Sampson invoice before it goes on the warrant for payment; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "paula would like to see the invoice from weston & sampson before it's placed on the warrant for payment."
+  },
+  {
+   "topic": "DPW Addition RFP budget projection",
+   "what_was_recorded": "Engineers at the prebid conference reportedly said the budget projection was very reasonable; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the engineers were asked on the side about the budget projection and the feed back was that the budget was very reasonable"
+  },
+  {
+   "topic": "Summer Street design funding",
+   "what_was_recorded": "No funding has been set aside for design of Summer Street; state programs were looked at as possible sources. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "summer street, no funding set aside yet for design."
+  },
+  {
+   "topic": "10-year budget retrospective in dollars",
+   "what_was_recorded": "Member Alonzo asked for the 10-year retrospective in actual and inflation-adjusted dollars by department, with staff levels; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "tom would like to see something in actual dollars, adjusted dollars (by inflation) by department, staff levels and basically charting it out"
+  },
+  {
+   "topic": "State Ballot Question 3 revenue impact",
+   "what_was_recorded": "Board discussed the reduction in revenues from Question 3 as potentially very large for the town; the attached MMA article gives state-level figures.",
+   "figures_as_printed": [
+    "$4.8 billion",
+    "$1 billion",
+    "$2:5 billion"
+   ],
+   "quote": "question 3 would reduce collections by about $1 billion"
+  },
+  {
+   "topic": "State Ballot Question 1 revenue impact",
+   "what_was_recorded": "The attached MMA article says Question 1 would reduce tax collections by about the printed amount over a full year.",
+   "figures_as_printed": [
+    "$110 million"
+   ],
+   "quote": "would reduce tax collections by about $110 million over a full year"
+  },
+  {
+   "topic": "Ballot question revenue impacts to the town",
+   "what_was_recorded": "Paula reviewed the reduction in revenues from the ballot questions and said the impacts could be astronomical for the town; no dollar figure is printed in this passage.",
+   "figures_as_printed": [],
+   "quote": "paula reviewed the questions and impacts on the reduction in revenues, these impacts could be astronomical to the town of lunenburg."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "noted; no action",
+   "quote": "tom noted the candidate's debate is scheduled for next monday, september 270 @ 7:00 pm, town hall",
+   "tags": [
+    "candidate debate"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "received and filed",
+   "quote": "public forum on cdbg grant application for eagle house parking lot project, october 5, 2010 @ 6:00 pm",
+   "tags": [
+    "CDBG grant",
+    "public forum",
+    "yard waste"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Assent to Transfer Proctor Trust",
+   "resolution": "approved and signed",
+   "quote": "assent to transfer proctor trust - per kerry, t.d. bank north is requesting",
+   "tags": [
+    "Proctor Trust",
+    "scholarship trust",
+    "consent"
+   ]
+  },
+  {
+   "topic": "Current Business 2: Special Town Meeting warrant dates",
+   "resolution": "warrant opened and closed by vote",
+   "quote": "dates to open and close special town meeting warrant - dave motion to open the warrant",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Current Business 3: State ballot questions",
+   "resolution": "recommended yes on Question 1, repeal of Question 2, no on Question 3",
+   "quote": "state ballot questions - kerry provided the attached information from the secretary of state's office",
+   "tags": [
+    "ballot questions",
+    "Chapter 40B",
+    "state tax"
+   ]
+  },
+  {
+   "topic": "Current Business 4: Minutes, warrants and action file",
+   "resolution": "warrants reviewed and signed; no minutes",
+   "quote": "minutes/warrants/action file issues - no minutes, warrants: #14 11, 9/22/10 - $241,130.93",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Action file: Lake Shirley Dam and invoice",
+   "resolution": "discussed; invoice to come to board before payment; CDs of plan to be made",
+   "quote": "dave/questioned when we will be coming back to the issue on the lake shirley dam.",
+   "tags": [
+    "Lake Shirley Dam",
+    "emergency action plan",
+    "Shirley Fire",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Committee Updates",
+   "resolution": "reported; no action",
+   "quote": "paula attended the planning board meeting last evening; they are discussing the master plan",
+   "tags": [
+    "master plan",
+    "open space",
+    "DPW building",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Department Updates",
+   "resolution": "none",
+   "quote": "department updates - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "reported; no action",
+   "quote": "kerry attended the prebid conference for the dpw addition rfp and spoke with some of the bidders",
+   "tags": [
+    "DPW addition",
+    "Lakefront Road closure",
+    "break-ins",
+    "Summer Street",
+    "IT staffing",
+    "website committee"
+   ]
+  },
+  {
+   "topic": "Old Business 1: Request for Proposals, power provider",
+   "resolution": "held pending legislature; update at first October meeting",
+   "quote": "request for proposals - power provider company - kerry provided a sample proposal",
+   "tags": [
+    "energy RFP",
+    "wind energy",
+    "landfill"
+   ]
+  },
+  {
+   "topic": "Old Business 2: 10-year budget retrospective",
+   "resolution": "scope agreed; Kerry to prepare 10 years back and five forward",
+   "quote": "10 year budget retrospective - kerry noted that member alonzo has requested this",
+   "tags": [
+    "budget retrospective",
+    "staffing",
+    "inflation"
+   ]
+  },
+  {
+   "topic": "Committee Appointments, Reappointments and Resignations",
+   "resolution": "Cultural Council appointments approved; Conservation Commission resignation accepted",
+   "quote": "appointments: kiirja paananen & caroline griffis to cultural council",
+   "tags": [
+    "Cultural Council",
+    "Conservation Commission",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered executive session; no return to regular session",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "non-union personnel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Elections: 2010 Statewide Ballot Question 1 (Secretary of State printout, 9/20/2010)",
+   "where": "list",
+   "quote": "elections: 2010 statewide ballot question 1"
+  },
+  {
+   "name": "Elections: 2010 Statewide Ballot Question 2 (Secretary of State printout, 9/20/2010)",
+   "where": "list",
+   "quote": "elections: 2010 statewide ballot question 2"
+  },
+  {
+   "name": "Elections: 2010. Statewide Ballot Question 3 (Secretary of State printout, 9/20/2010)",
+   "where": "list",
+   "quote": "elections: 2010. statewide ballot question 3"
+  },
+  {
+   "name": "Ballot questions could affect FY11 local aid (MMA article, September 01, 2010)",
+   "where": "list",
+   "quote": "ballot questions could affect fy11 local aid"
+  },
+  {
+   "name": "Warrants #14 11 (9/22/10), #15 11 (9/22/10), #6M 11 (9/23/10)",
+   "where": "text",
+   "quote": "no minutes, warrants: #14 11, 9/22/10 - $241,130.93, #15 11, 9/22/10 - $568,905.48 and"
+  },
+  {
+   "name": "Consent forms (Proctor Trust)",
+   "where": "text",
+   "quote": "school superintendant, school committee and high school principal have all received consent forms."
+  },
+  {
+   "name": "EAP document (Lake Shirley Dam)",
+   "where": "text",
+   "quote": "noted that it's important to include the schematics on the dam within the eap document."
+  },
+  {
+   "name": "Invoice from Weston & Sampson",
+   "where": "text",
+   "quote": "paula would like to see the invoice from weston & sampson before it's placed on the warrant for payment."
+  },
+  {
+   "name": "Sample proposal used by the Town of Concord",
+   "where": "text",
+   "quote": "kerry provided a sample proposal that the town of concord has recently"
+  },
+  {
+   "name": "5 year look back (budget)",
+   "where": "text",
+   "quote": "the 5 year look back that she did previously could be used"
+  },
+  {
+   "name": "Press Release on Citizens Advisory on break-ins",
+   "where": "text",
+   "quote": "press release on citizens advisory on the number of break in's in lunenburg."
+  },
+  {
+   "name": "MassWorks Infrastructure Program information",
+   "where": "text",
+   "quote": "received information from massworks infrastructure program"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Proctor Trust",
+  "special town meeting",
+  "state ballot questions",
+  "Chapter 40B",
+  "Lake Shirley Dam",
+  "DPW addition",
+  "Cultural Council",
+  "IT staffing",
+  "energy RFP",
+  "budget retrospective",
+  "executive session",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry provided the attached information from the secretary of state's office and mma's websites"
+ },
+ "dropped_unquoted_by_field": {}
 }

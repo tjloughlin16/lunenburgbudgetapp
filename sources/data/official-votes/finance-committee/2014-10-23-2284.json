@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-10-23",
  "docid": "2284",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting.",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jay Simeone",
    "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
@@ -20,7 +20,275 @@
    "quote": "jay moved to adjourn the meeting; his motion was seconded by terri. the committee voted 5-0 in favor."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote recorded. OCR text from scanned document; legible.",
- "cost_usd": 0.08136149999999999
+ "dropped_unquoted": 1,
+ "note": "OCR text with artifacts (e.g., 'Kerny', 'ili.', 'lili.', 'Kerny said'); the Town Manager is named only as 'Kerry' with no title or surname, so attendance is inferred from the line 'Kerry informed the committee'. Only one motion is recorded (adjournment, 5-0). No minutes-approval vote and no public comment ('Public: None.'). Q1 revenue and expenditure figures are not printed. Police and Fire chiefs and Jack R. are named but did not take part in this meeting. Documents: no documents list is printed; the October 21, 2014 memo, the 2013 OPEB report, the MSBA Funding Agreement, the Pavement Management Plan, and the Town's Financial Policies appear only in the text.",
+ "cost_usd": 0.00749952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry",
+   "role": "",
+   "status": "present",
+   "quote": "kerry informed the committee that town hall handles checks for all other"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Caroline Griffis will become liaison to the Council on Aging.",
+   "quote": "caroline griffis will become liaison to the council on aging:"
+  },
+  {
+   "decision": "Caroline G. will serve as liaison to the library.",
+   "quote": "caroline g. will serve as liaison to the library."
+  },
+  {
+   "decision": "Jay Simeone will serve as liaison to the Sewer Commission.",
+   "quote": "jay simeone will serve as the liaison to the sewer commission."
+  },
+  {
+   "decision": "Jay Simeone will serve as liaison to the Green Community Task Force.",
+   "quote": "jay simeone will serve as the liaison to the green community"
+  },
+  {
+   "decision": "John Henshaw will follow up on the potential new street sweeper.",
+   "quote": "john will follow up on this."
+  },
+  {
+   "decision": "Future agenda item: discuss OPEB-GASB 45 when the 2015 update on OPEB obligations is issued.",
+   "quote": "discuss opeb-gasb 45 when the 2015 update on opeb obligations is issued."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q1 FY 2015 revenues and expenditures",
+   "what_was_recorded": "Q1 expenditures and revenues were reported as not much different than expectations, with prepaid items pushing expenditures above budget and some revenues typically lower in Q1.",
+   "figures_as_printed": [],
+   "quote": "q1 expenditures and revenues are not much different than expectations"
+  },
+  {
+   "topic": "Prepaid expenditures over budget in Q1",
+   "what_was_recorded": "Q1 expenditures tend to exceed budget because retirement assessment and insurance premiums are pre-paid; Police Lock-Up, Radio Watch, and Veterans' Benefits also exceeded budget.",
+   "figures_as_printed": [],
+   "quote": "q1 expenditures tend to exceed budget as several are pre-paid"
+  },
+  {
+   "topic": "Veterans' benefits",
+   "what_was_recorded": "Seven veterans receive Town benefits, an increase over FY 2014, so expenses may exceed budget throughout FY 2015.",
+   "figures_as_printed": [],
+   "quote": "there are seven veterans the town pays benefits to, an increase over"
+  },
+  {
+   "topic": "Health insurance",
+   "what_was_recorded": "Health insurance costs are at budget, and the Town does not expect the surplus that helped fund FY2014 shortfalls.",
+   "figures_as_printed": [],
+   "quote": "health insurance costs are right at budget."
+  },
+  {
+   "topic": "Health insurance surplus",
+   "what_was_recorded": "The Town Manager does not expect a significant surplus in the health insurance account that helped fund FY2014 budget shortfalls.",
+   "figures_as_printed": [],
+   "quote": "kerry does not expect the significant surplus in this account that"
+  },
+  {
+   "topic": "OPEB annual required contribution",
+   "what_was_recorded": "The 7/1/2012 OPEB report estimated an annual required contribution (ARC) totaling a stated dollar amount.",
+   "figures_as_printed": [
+    "$3,797,396"
+   ],
+   "quote": "estimates an arc totaling $3,797,396."
+  },
+  {
+   "topic": "Town bond rating",
+   "what_was_recorded": "The Town's AA+ bond rating was extended, confirming its ability to borrow at low interest rates.",
+   "figures_as_printed": [],
+   "quote": "the town's aa+ bond rating has been extended, confirming the town's ability"
+  },
+  {
+   "topic": "Bounced check charge",
+   "what_was_recorded": "The Town charges a fee for each bounced check processed by Town Hall.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "the town charges $25 dollars"
+  },
+  {
+   "topic": "Summer Street design phase",
+   "what_was_recorded": "The Town is paying the design phase of Summer Street from Chapter 90 funds to keep it on the TIP list, with a possible state reimbursement.",
+   "figures_as_printed": [],
+   "quote": "the design phase of this project from chapter 90 funds"
+  },
+  {
+   "topic": "MSBA school construction reimbursement",
+   "what_was_recorded": "The signed MSBA Funding Agreement formally notifies that the MSBA will reimburse the Town for a percentage of the reimbursable part of the school construction project.",
+   "figures_as_printed": [
+    "59%"
+   ],
+   "quote": "for 59% if the reimbursable part of the project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "reported; no action",
+   "quote": "the town's aa+ bond rating has been extended, confirming the town's ability",
+   "tags": [
+    "bond rating",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates: FY 2015 Q1 YTD revenues and expenditures",
+   "resolution": "reported",
+   "quote": "summary of fy 2015 q1 ytd revenues and expenditures",
+   "tags": [
+    "FY2015",
+    "revenues",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "Town Manager Updates: review of 2013 OPEB/GASB 45 report",
+   "resolution": "reviewed; no action",
+   "quote": "review of the 2013 report on opeb/gasb 45.",
+   "tags": [
+    "OPEB",
+    "GASB 45"
+   ]
+  },
+  {
+   "topic": "Committee Liaison Updates",
+   "resolution": "reported; liaisons assigned",
+   "quote": "caroline g. will serve as liaison to the library.",
+   "tags": [
+    "liaisons",
+    "capital planning",
+    "public works",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Town Financial Policies",
+   "resolution": "introduced",
+   "quote": "to introduce the town's financial policies mark summarized their",
+   "tags": [
+    "financial policies",
+    "reserves",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Budget Opportunities",
+   "resolution": "reported",
+   "quote": "karin reported that the school committee has just established a policy for charging",
+   "tags": [
+    "bounced checks",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Future Agenda Items",
+   "resolution": "listed for future meetings",
+   "quote": "review the updated pavement management plan, when it is completed.",
+   "tags": [
+    "pavement",
+    "budget presentations",
+    "OPEB",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Meeting Adjourned",
+   "resolution": "adjourned at 8:54 PM",
+   "quote": "jay moved to adjourn the meeting; his motion was seconded by terri.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "October 21, 2014 memo from Kerry to the Board of Selectmen",
+   "where": "text",
+   "quote": "see october 21, 2014 memo from kerry to the board of selectmen for more specific details."
+  },
+  {
+   "name": "2013 report on OPEB/GASB 45",
+   "where": "text",
+   "quote": "review of the 2013 report on opeb/gasb 45."
+  },
+  {
+   "name": "Report of 7/1/2012 on the Town's annual OPEB Cost and Net OPEB obligation",
+   "where": "text",
+   "quote": "the report of 7/1/2012 on the town's annual opeb cost and net opeb"
+  },
+  {
+   "name": "Signed Funding Agreement for the school construction project from the MSBA",
+   "where": "text",
+   "quote": "the town had received the signed funding agreement for the school construction project from the msba"
+  },
+  {
+   "name": "Updated Pavement Management Plan",
+   "where": "text",
+   "quote": "review the updated pavement management plan, when it is completed."
+  },
+  {
+   "name": "Town's Financial Policies",
+   "where": "text",
+   "quote": "to introduce the town's financial policies mark summarized their"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY2015 budget",
+  "town finances",
+  "OPEB",
+  "liaison assignments",
+  "bond rating",
+  "MSBA school construction",
+  "bounced check fee",
+  "financial policies",
+  "Chapter 90",
+  "pavement management",
+  "Q1 revenues and expenditures"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

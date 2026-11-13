@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-02-16",
  "docid": "4958",
@@ -12,55 +12,308 @@
  },
  "votes": [
   {
-   "motion": "Approve the transfer of the General On Premise All Alcohol license as presented",
+   "motion": "Approve the transfer of the General On Premise All Alcohol license from MLMR, Inc. d/b/a Primetime Pub to MIJ, Inc. as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2*:r. ebersole to approve the transfer of the general on premise all alcohol license transfer as presented vote: all in favor"
+   "procedural": false,
+   "quote": "to approve the transfer of the general on premise all alcohol license transfer as presented vote: all in favor"
   },
   {
-   "motion": "Approve the automatic amusement, jukebox, common victualer and weekday entertainment licenses for MIJ, Inc. d/b/a J & M's Sports Bar as presented",
+   "motion": "Approve the automatic amusement, jukebox, common victualer and weekday entertainment licenses for MIJ, Inc. d/b/a J & M's Sports Bar as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2'd. t. alonzo to approve the automatic amusement, jukebox, common victualer and weekday entertainment licenses for mij, inc. d/b/a j & m's sports bar as presented vote: all in favor"
+   "procedural": false,
+   "quote": "to approve the automatic amusement, jukebox, common victualer and weekday entertainment licenses for mij, inc. d/b/a j & m's sports bar as presented"
   },
   {
-   "motion": "Receive and accept the notification of change of hours for Sunday sales for Lunenburg Liquors",
+   "motion": "Receive and accept the notification of change of hours for Sunday sales for Lunenburg Liquors.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2\"d: t.alonzo to receive and accept the notification of change of hours for sunday sales for lunenburg liquors vote: áll in favor"
+   "procedural": false,
+   "quote": "to receive and accept the notification of change of hours for sunday sales for lunenburg liquors"
   },
   {
-   "motion": "Appoint Brian Corcoran to the APDC with a term to expire June 30, 2018",
+   "motion": "Approve the minutes of January 19, 2016.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the board approved minutes of january 19, 2016."
+  },
+  {
+   "motion": "Appoint Brian Corcoran to the APDC with a term to expire June 30, 2018.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint brian corcoran to the apdc with a term to expire june 30, 2018 vote: all in favor"
+  },
+  {
+   "motion": "Approve the Class II Auto Dealer license for KC Sales and Services, LLC located at 1312 Mass Avenue.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the class ii auto dealer license for kc sales and services, llc located at 1312 mass"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:33 p.m.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2\": r. ebersole to appoint brian corcoran to the apdc with a term to expire june 30, 2018 vote: all in favor"
-  },
-  {
-   "motion": "Approve the Class II Auto Dealer license for KC Sales and Services, LLC located at 1312 Mass Avenue",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\"d.r. ebersole to approve the class ii auto dealer license for kc sales and services, llc located at 1312 mass avenue vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting at 7:33 p.m. 2^°: r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 7:33 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Six votes recorded, all unanimous and procedural in nature (license transfers, appointments, adjournment). Minutes approval for January 19, 2016 is mentioned as approved but without a formal recorded motion with identified mover and seconder, so not included as a vote.",
- "cost_usd": 0.1010485
+ "note": "OCR text of a scanned page set (3 pages). Several votes are recorded only as \"All in Favor\" with no counts. The minutes approving the January 19, 2016 minutes name no mover or seconder. The minutes are signed by Elaine M. Peterson, Executive Assistant to the Town Manager, who is not recorded as taking part and is omitted from attendees. Some OCR text is garbled (for example \"2*:\", \"2^°:\", \"Áll\"); quotes were copied as read.",
+ "cost_usd": 0.00643042,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the board of selectmen met in the lunenburg town hall, joseph f. bilotta meeting room, as scheduled with jamie toale, chairman"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "as scheduled with jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and phyllis luck, member."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "robert ebersole, vice chairman; tom alonzo, clerk and phyllis luck, member."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "tom alonzo, clerk and phyllis luck, member."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry lafleur, town manager and paula bertram, member were absent."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "kerry lafleur, town manager and paula bertram, member were absent."
+  },
+  {
+   "name": "Melissa Thibodeau",
+   "role": "applicant",
+   "status": "present",
+   "quote": "melissa thibodeau, applicant, stated she was here for the license transfer hearing."
+  },
+  {
+   "name": "Michael Bartnowski",
+   "role": "applicant",
+   "status": "present",
+   "quote": "applicant michael bartnowski came forward."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board decided to request a cost analysis for processing a license application (license fee survey).",
+   "quote": "it was decided to request a cost analysis for processing a license application."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable and school construction warrants signed",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant and a school construction warrant with the amounts printed.",
+   "figures_as_printed": [
+    "$181,604.51",
+    "$2,543,308.05"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $181,604.51 and a school construction warrant in the amount of $2,543,308.05."
+  },
+  {
+   "topic": "License fee comparison with other towns",
+   "what_was_recorded": "Mr. Toale's calculations put Lunenburg's license fees behind the highest-fee towns by a printed amount and behind the average by a smaller printed amount.",
+   "figures_as_printed": [
+    "$35,000",
+    "$5,000"
+   ],
+   "quote": "if we compare our fees to the highest fees, we would be $35,000 behind. if we were to compare ourselves to the average fees, we would run $5,000 behind."
+  },
+  {
+   "topic": "Common victualer license fee",
+   "what_was_recorded": "Common victualer licenses were the most issued and carried a printed fee; the Town could charge up to a printed higher amount.",
+   "figures_as_printed": [
+    "$25.00",
+    "$100"
+   ],
+   "quote": "the most licenses issued were common victualer (35) and were $25.00. she added the town would be able to charge up $100 for a common victualer license."
+  },
+  {
+   "topic": "School building contingency fund (public comment)",
+   "what_was_recorded": "A resident emailed that contingency money should not be spent on items outside the original project scope; another said the contingency fund is taxpayers' money. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "concerning the school building contingency fund. this person expressed that she did not believe contingency money should be spent on items"
+  },
+  {
+   "topic": "FY2017 budget presentation",
+   "what_was_recorded": "Town Manager presented the FY2017 budget to the Finance Committee; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lafleur presented the fy2017 budget."
+  },
+  {
+   "topic": "MART van service expansion",
+   "what_was_recorded": "Ms. Luck and Ms. Lafleur met with MART to expand van service without adding cost to residents; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "to see if lunenburg could provide more beneficial van transportation services to more of our residents without adding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "school building contingency fund emails",
+   "quote": "ms. luck stated over the weekend ms. lafleur, mr. alonzo and she had received an email from a resident"
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "Chairman",
+   "topic": "absentee voting announcement",
+   "quote": "mr. toale announced absentee ballots are now available for the march 1, 2016 presidential primary"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Clerk",
+   "topic": "Boys and Girls Club fundraiser",
+   "quote": "mr. alonzo reminded all that the boys and girls club \"are you smarter than our sixth graders? fundraiser"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "school building",
+    "elections"
+   ],
+   "quote": "ms. luck stated over the weekend ms. lafleur, mr. alonzo and she had received an email from a resident"
+  },
+  {
+   "topic": "License transfer hearing, MIJ, Inc. from MLMR, Inc. d/b/a Primetime Pub",
+   "resolution": "approved license transfer",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ],
+   "quote": "to approve the transfer of the general on premise all alcohol license transfer as presented"
+  },
+  {
+   "topic": "License approvals for MIJ, Inc. d/b/a J & M's Sports Bar",
+   "resolution": "approved",
+   "tags": [
+    "licenses"
+   ],
+   "quote": "to approve the automatic amusement, jukebox, common victualer and weekday entertainment licenses"
+  },
+  {
+   "topic": "Notification of change of Sunday hours for Lunenburg Liquors",
+   "resolution": "received and accepted",
+   "tags": [
+    "liquor license",
+    "hours"
+   ],
+   "quote": "to receive and accept the notification of change of hours for sunday sales for lunenburg liquors"
+  },
+  {
+   "topic": "License survey discussion (continued)",
+   "resolution": "cost analysis requested",
+   "tags": [
+    "license fees",
+    "budget"
+   ],
+   "quote": "it was decided to request a cost analysis for processing a license application."
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes of January 19, 2016 approved; warrants signed",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "the board approved minutes of january 19, 2016."
+  },
+  {
+   "topic": "Appointment to Architectural Preservation District Commission (APDC)",
+   "resolution": "appointed Brian Corcoran",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "to appoint brian corcoran to the apdc with a term to expire june 30, 2018"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "tags": [
+    "committee reports",
+    "MART",
+    "storm water",
+    "budget"
+   ],
+   "quote": "ms. luck reported school committee meets tomorrow."
+  },
+  {
+   "topic": "Class II Auto Dealer license hearing, 1312 Mass Ave, Michael Bartnowski",
+   "resolution": "approved license",
+   "tags": [
+    "auto dealer license",
+    "hearing"
+   ],
+   "quote": "to approve the class ii auto dealer license for kc sales and services, llc located at 1312 mass"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public hearing notice, License Transfer Hearing, MIJ, Inc. d/b/a J & M's Sports Bar (read aloud)",
+   "where": "text",
+   "quote": "the lunenburg licensing authority will hold a public hearing on february 16, 2016 at 7:00 pm in the town hall"
+  },
+  {
+   "name": "Public hearing notice, Class II Auto Dealer License, Michael Bartnowski d/b/a KC Sales and Services LLC (read aloud)",
+   "where": "text",
+   "quote": "the licensing authority will hold a public hearing on february 16, 2016 at 7:30 p.m. at town hall, 17 main street"
+  },
+  {
+   "name": "FY2017 budget",
+   "where": "text",
+   "quote": "ms. lafleur presented the fy2017 budget."
+  }
+ ],
+ "tags": [
+  "liquor licenses",
+  "license hearings",
+  "license fees",
+  "appointments",
+  "APDC",
+  "school building contingency",
+  "warrants",
+  "committee reports",
+  "MART transportation",
+  "elections",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

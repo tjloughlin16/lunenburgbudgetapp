@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2014-11-25",
  "docid": "3237",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 2-0",
@@ -21,6 +21,144 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR from macOS Vision. Only one vote recorded: the motion to adjourn. The minutes note that earlier minutes were unavailable for approval, so no approval vote occurred.",
- "cost_usd": 0.0827025
+ "note": "Text is OCR from a scanned page (two pages). The signature block is illegible in OCR, so the signatories are not read from it. The foot of the page prints 'Minutes Accepted on: 1/22/15', which is recorded here as printed. No public comment section, no motions other than adjournment, and no documents list appear in the text. Robert Robuccio is listed as a commissioner but not as attending the meeting, so status is 'not stated'.",
+ "cost_usd": 0.0035488200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Masciarelli",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli and corinne scouten"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli and corinne scouten"
+  },
+  {
+   "name": "Robert Robuccio",
+   "role": "Commissioner",
+   "status": "not stated",
+   "quote": "commissioners michael masciarelli, chairman robert robuccio corinne scouten"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "dpw director - jack rodriquenz was unable to attend and provide an update this evening."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes were not available, so approval of the minutes was deferred to the next scheduled meeting.",
+   "quote": "minutes were unavailable for approval and will be approved at the next scheduled meeting."
+  },
+  {
+   "decision": "The Park Commission should meet with Pete Patno to overview the status of the Lunenburg Jr Basketball League and the Town's relationship with the group.",
+   "quote": "the park commission should meet with pete patno to overview status of the two groups' relationship."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf field fees: comparison with Doyle Field in Leominster",
+   "what_was_recorded": "Commissioner Masciarelli reported that Doyle Field in Leominster charges $125 per hour, including an employee on site, with lighting charged extra; long-term contracted rates may be negotiated for season-long users.",
+   "figures_as_printed": [
+    "$125 per hour"
+   ],
+   "quote": "doyle field in leominster charges $125 per hour."
+  },
+  {
+   "topic": "Turf field fees: current fee and proposed increase",
+   "what_was_recorded": "The current published turf fee is $100 per 90 minute session; a proposed increase to $125 per hour was not well received because the Town cannot provide an employee for trash and bathrooms, and the board asked whether $100 per hour could be considered, with lighting/electrical added to the user fee.",
+   "figures_as_printed": [
+    "$100 per 90 minute session",
+    "$125 per hour",
+    "$100 per hour"
+   ],
+   "quote": "our current published fee is $100 per 90 minute session."
+  },
+  {
+   "topic": "Concession stand rental fee",
+   "what_was_recorded": "The current concession stand rental fee is $50 per use, which a small booster club may not cover in one session; how to address this was raised without a decision.",
+   "figures_as_printed": [
+    "$50 per use"
+   ],
+   "quote": "current rental fee is $50 per use."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "continued to next meeting",
+   "quote": "minutes were unavailable for approval and will be approved at the next scheduled meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Marshall Parking Lot Update",
+   "resolution": "no action; DPW Director absent, no update given",
+   "quote": "dpw director - jack rodriquenz was unable to attend and provide an update this evening.",
+   "tags": [
+    "parking",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Lunenburg Junior Basketball",
+   "resolution": "no vote; Park Commission to meet with Pete Patno",
+   "quote": "corinne scouten met with town manager, kerry speidel regarding the lunenburg jr basketball",
+   "tags": [
+    "basketball",
+    "insurance",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "Turf Fees/Usage",
+   "resolution": "discussed; no action recorded",
+   "quote": "mike masciarelli has researched some local area field and facility fees.",
+   "tags": [
+    "turf fees",
+    "field use"
+   ]
+  },
+  {
+   "topic": "Concession Stand Fees/Usage",
+   "resolution": "discussed; no action recorded",
+   "quote": "current rental fee is $50 per use.",
+   "tags": [
+    "concession",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "passed 2-0 at 8:24pm",
+   "quote": "motion to adjourn meeting was made and seconded. vote in favor of adjournment 2-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks commission",
+  "turf fees",
+  "concession fees",
+  "basketball",
+  "insurance",
+  "DPW",
+  "minutes approval deferred"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

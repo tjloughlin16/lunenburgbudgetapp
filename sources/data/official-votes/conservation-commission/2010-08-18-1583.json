@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-08-18",
  "docid": "1583",
@@ -12,6 +12,77 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR extracted text. Minutes record a review and discussion of an RFP for Pleasant Street Property, with actions assigned (Sharon's revisions, Jan passing to Laura), but no formal votes recorded.",
- "cost_usd": 0.0799185
+ "note": "Single-page OCR extract (macOS Vision). The text records a review of the RFP and a follow-up assignment but no motions or votes, so no votes are listed. No call to order, roll call, or approval of prior minutes appears in this extract, so attendance status could not be confirmed beyond the header name list.",
+ "cost_usd": 0.00177492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byme, sharon jordan, mark murphy, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byme, sharon jordan, mark murphy, jan carrier"
+  },
+  {
+   "name": "Jack Byme",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byme, sharon jordan, mark murphy, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byme, sharon jordan, mark murphy, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byme, sharon jordan, mark murphy, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byme, sharon jordan, mark murphy, jan carrier"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jan Carrier will see that the RFP for Pleasant Street Property is passed to Laura to get approval as written.",
+   "quote": "jan will see that it is passed to laura to get approval as written."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and finalize RFP",
+   "resolution": "reviewed; RFP to be passed to Laura for approval as written once dates are inserted",
+   "quote": "reviewed rfp for pleasant street property",
+   "tags": [
+    "RFP",
+    "Pleasant Street property"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "RFP for Pleasant Street Property",
+   "where": "text",
+   "quote": "reviewed rfp for pleasant street property"
+  }
+ ],
+ "tags": [
+  "request for proposals",
+  "Pleasant Street property",
+  "conservation commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

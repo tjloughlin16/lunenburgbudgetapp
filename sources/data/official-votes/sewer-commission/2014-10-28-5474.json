@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-10-28",
  "docid": "5474",
@@ -12,23 +12,422 @@
  },
  "votes": [
   {
-   "motion": "To authorize Jack Rodriquenz and the Chairman or Chair's designee to accept the private extension on Highland Street",
+   "motion": "Authorize Jack Rodriquenz and the Chairman, or the Chair's designee, to accept the private extension on Highland St.",
    "moved_by": "Mike",
    "seconded_by": "Butch",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "mike made the motion to give jack rodriquenz and the chairman, or the chair's designee, authorization to accept the private extension on highland st. butch seconded. vote taken was unanimous."
   },
   {
-   "motion": "To accept the minutes of October 14, 2014",
+   "motion": "Accept the minutes of October 14, 2014.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "butch made the motion to accept the minutes of october 14, mike seconded, vote taken was unanimous."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0863365
+ "dropped_unquoted": 1,
+ "note": "OCR text of a 2-page scan (page 3 has no text). No roll call or attendance list, so attendance is inferred from speech and marked \"not stated\" where unclear. \"Dave\" is never given a surname or role, and \"Dave M.\" and \"Dave Rodgers\" are distinct people. \"Dawn Proctor\" appears once and is probably Dan Proctor, the contractor; not recorded as a separate person. Carl's absence is inferred from the recuperation remarks and not recorded as an attendee. OCR errors include \"claritied\" and \"Rodriquenz\". Only two motions are recorded, both with results. Two invoices were 'approved' with no recorded motion, so they are recorded as decisions.",
+ "cost_usd": 0.009609920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "not stated (appears to chair the meeting)",
+   "status": "present",
+   "quote": "dave noted that since the first appointment was not yet here, we would move on to current"
+  },
+  {
+   "name": "Dave M.",
+   "role": "not stated (Commission member)",
+   "status": "present",
+   "quote": "dave m. reviewed the potential costs."
+  },
+  {
+   "name": "Butch",
+   "role": "not stated (Commission member)",
+   "status": "present",
+   "quote": "butch stated he is still not in favor of any discounts."
+  },
+  {
+   "name": "Mike",
+   "role": "not stated (Commission member)",
+   "status": "present",
+   "quote": "mike made the motion to give jack rodriquenz and the chairman, or the chair's designee, authorization to accept"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated (staff or engineer, named in the minutes)",
+   "status": "not stated",
+   "quote": "jack is making notations and all changes must be to wright pierce by november 14."
+  },
+  {
+   "name": "Matt",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "matt is working with barb & jack on questions and insurance requirements."
+  },
+  {
+   "name": "Troy",
+   "role": "not stated (represented the Commission at the ZBA hearing)",
+   "status": "not stated",
+   "quote": "dave added that troy had done a good job representing the commission."
+  },
+  {
+   "name": "Matt Robichaud",
+   "role": "not stated (requested the private extension at 42 Highland)",
+   "status": "not stated",
+   "quote": "the private extension requested by matt robichaud at 42 highland that dan proctor was contracted for"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "not stated (contractor on the Highland St. private extension)",
+   "status": "not stated",
+   "quote": "the private extension requested by matt robichaud at 42 highland that dan proctor was contracted for"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "not stated (appeared with Jean Larkin and Martha Cheesman)",
+   "status": "present",
+   "quote": "dave rodgers, jean larkin, martha cheesman for the private sewer extension on highland st."
+  },
+  {
+   "name": "Jean Larkin",
+   "role": "resident, 17 Highland",
+   "status": "present",
+   "quote": "jean (17 highland) needed clarification as to what she'd have to pay to participate."
+  },
+  {
+   "name": "Martha Cheesman",
+   "role": "resident, 20 Highland",
+   "status": "present",
+   "quote": "martha cheesman (20 highland) wanted to confirm that the privilege fee is $5775, but after the town takes over the line"
+  },
+  {
+   "name": "Jay",
+   "role": "representative for FinCom",
+   "status": "present",
+   "quote": "jay as representative for fincom asked about a capital plan from the sewer commission."
+  },
+  {
+   "name": "Phyllis",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "phyllis had mentioned their gratitude to the emt's."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to adjust the 1131 Mass Ave water bill to the average of the last 4 bills, per policy, for a one-time lawn-watering waiver.",
+   "quote": "commission agreed to adjust her bill to average of last 4, per policy."
+  },
+  {
+   "decision": "Two invoices, Fitchburg and Wright Pierce, for work between August 30 and September 26, were approved (no motion recorded).",
+   "quote": "two invoices- fitchburg $9573.93 and wright pierce $29,659.59 for work between august 30 and september 26, were approved."
+  },
+  {
+   "decision": "The Commission signed the Letter Agreement for the release of the funds, which already bore Dan Proctor's signature.",
+   "quote": "and needed to be signed by the commission, which it was."
+  },
+  {
+   "decision": "The SWSS 10/1 payment is being held until the generator amount conflict is resolved.",
+   "quote": "we' ve advised that we want the incremental cost, and are holding the 10/1 pmt til resolved."
+  },
+  {
+   "decision": "Barb will check with Linda Carrier about sending something to Carl during his recuperation.",
+   "quote": "barb will check with linda carrier."
+  },
+  {
+   "decision": "Commission will need to meet with members of the ZBA, possibly on 11/18 or sometime before 12/10.",
+   "quote": "dave noted we'll need to meet with members of the zba, possibly on 11/18, or sometime prior to 12/10."
+  },
+  {
+   "decision": "There will be no Capital Plan from the Sewer Commission to FinCom; capital planning will be built into the budget process.",
+   "quote": "so, to clarify, there will be nothing from the sewer commission to fincom on the capital plan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Whalom Luxury Apts betterment",
+   "what_was_recorded": "Commission expects Lorden to pay the full betterment, stated as around $1.5 million; ZBA seemed to want to cut a deal.",
+   "figures_as_printed": [
+    "$1.5million"
+   ],
+   "quote": "that we expect lorden to pay the full betterment (around $1.5million)"
+  },
+  {
+   "topic": "40B reduction",
+   "what_was_recorded": "Discussion that a 40B project can receive only a 25% reduction in betterment, with the rest of the town paying full betterments.",
+   "figures_as_printed": [
+    "25%"
+   ],
+   "quote": "40b's can give a 25% reduction only."
+  },
+  {
+   "topic": "Pratt Street fee",
+   "what_was_recorded": "People on Pratt Street are looking at a fee of $24,000.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "the people on pratt street are looking at a fee of $24,000."
+  },
+  {
+   "topic": "Highland St. betterment and privilege fee",
+   "what_was_recorded": "Jean Larkin had heard of a betterment of $5775 and asked about other costs; the $5775 can be paid with taxes and spread over ten years.",
+   "figures_as_printed": [
+    "$5775"
+   ],
+   "quote": "she'd heard of the betterment of $5775 and asked if there was anything else?"
+  },
+  {
+   "topic": "Highland St. privilege fee if she joins the extension now",
+   "what_was_recorded": "If she helps pay for the private extension, the privilege fee is $5775 because construction costs are split among residents; it is paid with taxes and can be spread over ten years.",
+   "figures_as_printed": [
+    "$5775"
+   ],
+   "quote": "then the privilege fee is $5775 because the construction costs are split"
+  },
+  {
+   "topic": "Highland St. privilege fee after project completion",
+   "what_was_recorded": "If she does the work after the project is completed, the privilege fee jumps to $11,000, the most recent betterment amount.",
+   "figures_as_printed": [
+    "$11,000"
+   ],
+   "quote": "the privilege fee jumps to $11,000, which is the most recent betterment"
+  },
+  {
+   "topic": "Highland St. estimated betterment",
+   "what_was_recorded": "With the project in another area of town, the betterment is estimated at $24,000, and anyone participating after assessment pays the $24,000 privilege fee per the Sewer Assessment bylaw.",
+   "figures_as_printed": [
+    "$24,000"
+   ],
+   "quote": "the betterment is estimated to be $24,000."
+  },
+  {
+   "topic": "Highland St. privilege fee after town takes over the line",
+   "what_was_recorded": "Martha Cheesman asked to confirm the fee; after the town takes over the line, the privilege fee would be $11,551.",
+   "figures_as_printed": [
+    "$5775",
+    "$11,551"
+   ],
+   "quote": "but after the town takes over the line, it will be $11,551."
+  },
+  {
+   "topic": "Future connection fee",
+   "what_was_recorded": "At a future date, a home connecting to sewer would pay a $3000 connection fee plus a contractor to bring a pipe from the property line to the home.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "she would pay the $3000 connection fee and a contractor to come and bring a pipe"
+  },
+  {
+   "topic": "Fitchburg and Wright Pierce invoices",
+   "what_was_recorded": "Two invoices for work between August 30 and September 26 were approved.",
+   "figures_as_printed": [
+    "$9573.93",
+    "$29,659.59"
+   ],
+   "quote": "two invoices- fitchburg $9573.93 and wright pierce $29,659.59 for work between august 30 and september 26, were approved."
+  },
+  {
+   "topic": "SWSS generators payment",
+   "what_was_recorded": "Conflict in amounts because the backup was in units; the Commission wants the incremental cost and is holding the 10/1 payment until resolved. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we' ve advised that we want the incremental cost, and are holding the 10/1 pmt til resolved."
+  },
+  {
+   "topic": "1131 Mass Ave water bill adjustment",
+   "what_was_recorded": "Owner requested a waiver for watering a new lawn; bill adjusted to average of last 4 per policy. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "commission agreed to adjust her bill to average of last 4, per policy."
+  },
+  {
+   "topic": "Release of funds letter agreement",
+   "what_was_recorded": "Letter Agreement for release of funds, mirroring prior terms, was received 10/22 and signed by the Commission. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the letter agreement for the release of the funds, mirroring the terms previously agreed to"
+  },
+  {
+   "topic": "Enterprise Fund and capital planning",
+   "what_was_recorded": "Sewer costs are all on the Enterprise Fund; capital planning will be built into the budget process; the Commission is self-sufficient and should not burden the town. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "dave noted it's all on the enterprise fund, that we'd tried but capital planning will be built into our budget process."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jean Larkin",
+   "stated_role": "resident, 17 Highland",
+   "topic": "Highland St. private sewer extension costs",
+   "quote": "jean (17 highland) needed clarification as to what she'd have to pay to participate."
+  },
+  {
+   "speaker": "Martha Cheesman",
+   "stated_role": "resident, 20 Highland",
+   "topic": "Highland St. privilege fee",
+   "quote": "martha cheesman (20 highland) wanted to confirm that the privilege fee is $5775, but after the town takes over the line"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "not stated",
+   "topic": "Highland St. private sewer extension",
+   "quote": "dave rodgers asked if it was possible if jean wanted to pay the privilege fee of $5775 but not"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointments",
+   "resolution": "no action; moved to current business because first appointment had not arrived",
+   "quote": "dave noted that since the first appointment was not yet here, we would move on to current",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "SRF project, NOI and Whalom Luxury Apts ZBA hearing",
+   "resolution": "discussed, no action",
+   "quote": "srf project - noi (notice of intent) went to the conscom on 10/22, and we are scheduled for the",
+   "tags": [
+    "SRF project",
+    "ZBA",
+    "Whalom Luxury Apts",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "Highland St. private sewer extension (residents appear)",
+   "resolution": "discussed; Commission later authorized acceptance of the line",
+   "quote": "dave introduced dave rodgers, jean larkin, martha cheesman for the private sewer extension on highland st.",
+   "tags": [
+    "Highland St",
+    "private extension",
+    "privilege fee",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "Project status and Highland St. acceptance",
+   "resolution": "acceptance authorized by unanimous vote; Letter Agreement signed",
+   "quote": "project status - barb had a couple other items on the project for the commissioner's consideration",
+   "tags": [
+    "Highland St",
+    "project status",
+    "letter agreement"
+   ]
+  },
+  {
+   "topic": "Victualler's License renewals",
+   "resolution": "list of delinquent food establishments sent to Selectmen",
+   "quote": "we have sent the selectmen a list of food establishments with delinquent",
+   "tags": [
+    "licenses",
+    "sewer bills",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "SWSS generators",
+   "resolution": "10/1 payment held pending resolution",
+   "quote": "we' ve advised that we want the incremental cost, and are holding the 10/1 pmt til resolved.",
+   "tags": [
+    "generators",
+    "SWSS",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/14/14",
+   "resolution": "approved, unanimous",
+   "quote": "butch made the motion to accept the minutes of october 14, mike seconded, vote taken was unanimous.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business manager reports",
+   "resolution": "1131 Mass Ave bill adjusted; invoices approved; hearings noted",
+   "quote": "business manager reports -1131 mass ave - barb advised that the property owner had submitted a",
+   "tags": [
+    "billing",
+    "invoices",
+    "hearings",
+    "1131 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Commissioners comments",
+   "resolution": "no action; Capital Plan to FinCom declined",
+   "quote": "commissioners comments- butch wanted to state that going forward, to avoid problems such as highland st.,",
+   "tags": [
+    "private extension policy",
+    "capital plan",
+    "FinCom",
+    "Enterprise Fund"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SRF Application (submitted 10/15)",
+   "where": "text",
+   "quote": "the srf application was submitted 10/15 on schedule."
+  },
+  {
+   "name": "SRF Project NOI (Notice of Intent), sent to ConsCom 10/22",
+   "where": "text",
+   "quote": "srf project - noi (notice of intent) went to the conscom on 10/22, and we are scheduled for the"
+  },
+  {
+   "name": "Specifications and plan for SRF project, available at DPW",
+   "where": "text",
+   "quote": "a copy of the specifications and plan is here at the dpw for anyone's review and update."
+  },
+  {
+   "name": "Letter Agreement for the release of the funds",
+   "where": "text",
+   "quote": "the letter agreement for the release of the funds, mirroring the terms previously agreed to"
+  },
+  {
+   "name": "Sewer Assessment bylaw and Special Legislation",
+   "where": "text",
+   "quote": "per our sewer assessment bylaw and special legislation"
+  },
+  {
+   "name": "Extension regulation",
+   "where": "text",
+   "quote": "barb noted that, per the extension regulation, that betterment would be reduced"
+  },
+  {
+   "name": "List of food establishments with delinquent payments sent to Selectmen",
+   "where": "text",
+   "quote": "we have sent the selectmen a list of food establishments with delinquent"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "betterment",
+  "privilege fee",
+  "private extension",
+  "Highland St",
+  "Whalom Luxury Apts",
+  "ZBA",
+  "SRF project",
+  "generators",
+  "invoices",
+  "Enterprise Fund",
+  "FinCom",
+  "capital plan",
+  "water bill waiver"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

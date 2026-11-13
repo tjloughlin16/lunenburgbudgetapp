@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2016-05-25",
  "docid": "1359",
@@ -12,23 +12,293 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from September 21, 2015",
+   "motion": "To adjourn the meeting.",
+   "moved_by": "STEVE SCHAFF",
+   "seconded_by": "LORRAINE MENDOZA",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes from september 21, 2015 were read and accepted"
-  },
-  {
-   "motion": "to adjourn",
-   "outcome": "unanimous",
-   "procedural": true,
-   "moved_by": "Steve Schaff",
-   "seconded_by": "Lorraine Mendoza",
-   "quote": "on a motion by steve schaff to adjourn and seconded by lorraine mendoza, the vote was unanimous to adjourn"
+   "quote": "on a motion by steve schaff to adjourn and seconded by lorraine mendoza, the vote was unanimous to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text. Two procedural votes recorded: approval of prior minutes (mover/seconder not stated) and adjournment. No other motions formally voted on are recorded; discussions of projects (tomb restoration, niche wall, tree work) are described as agreements or presentations but without formal motion or vote language.",
- "cost_usd": 0.0912435
+ "note": "OCR of a scanned, handwritten-and-typed minutes document; many words are garbled (e.g., start time '7 p.n.em', '$ 9,000.00 LESS' line, 'GRANT $ AVAILABLE', 'POWEL', 'SUPI'). Figures were copied as printed where legible. The approval block reads 'June 15, 2014' for minutes of a May 25, 2016 meeting, and the signature is illegible in the OCR. The clerk's name appears as Lorraine Mendoza in the body and header variants. No roll-call votes beyond the single adjournment motion are recorded; the minutes state no vote on the tomb proposal or the other items. Public comment: none recorded.",
+ "cost_usd": 0.00883552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "LANCE MAY",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt., and guest historian, richard mcgrath."
+  },
+  {
+   "name": "LORRAINE MENDOZA",
+   "role": "Commissioner; signed as Clerk",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt., and guest historian, richard mcgrath."
+  },
+  {
+   "name": "STEVE SCHAFF",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt., and guest historian, richard mcgrath."
+  },
+  {
+   "name": "TODD HOLMAN",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt., and guest historian, richard mcgrath."
+  },
+  {
+   "name": "RICHARD MCGRATH",
+   "role": "Guest historian; appeared before the commission on the North Street Cemetery tomb proposal",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with todd holman, cemetery supt., and guest historian, richard mcgrath."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of September 21, 2015 were read and accepted (no motion or tally printed).",
+   "quote": "minutes from september 21, 2015 were read and accepted"
+  },
+  {
+   "decision": "Chair asked Richard McGrath for a written proposal with costs of the door, hinges, locks and roofing, and asked whether pressure-treated lumber and paint were included.",
+   "quote": "chrmn may requested a written proposal with the cost of the door, hinges, locks and roofing and wanted to know if the plan was to use pressure treated lumber."
+  },
+  {
+   "decision": "Commissioner Schaff's question of whether the Cemetery Commission or the Town is responsible for approving the project was deferred to a later date.",
+   "quote": "this question would be determined at a later date."
+  },
+  {
+   "decision": "McGrath was asked to return to the next meeting with a written proposal including a cost breakdown for the $5,500.00.",
+   "quote": "mr. mcgath was asked to attend the next meeting with a written proposal that included a cost breakdown for the $5,500.00."
+  },
+  {
+   "decision": "Discussed that a dumpster would not be needed because the Cemetery Commission already has one.",
+   "quote": "discussed was a need for a dumpster and since, the cemetery commission has one, it will not be needed."
+  },
+  {
+   "decision": "Todd Holman will follow up with the tree companies and Powell Excavating to get starting dates.",
+   "quote": "todd will follow up w/ the tree companies and powell excavating to get starting dates."
+  },
+  {
+   "decision": "Todd Holman will follow up with the Highway Superintendent on the offer to pay for hot topping a road in the South Cemetery.",
+   "quote": "todd mentioned that the highway supt offered to pay for the hot topping of a road"
+  },
+  {
+   "decision": "A dedication program was discussed and the board decided to wait until later in the year.",
+   "quote": "a dedication program was discussed and it was decided to wait until later in the year."
+  },
+  {
+   "decision": "A thank-you letter will be sent to the Superintendent of Monty Tech, Dr. Sheila Harrity.",
+   "quote": "a thank-you letter will be sent to the supt @, monty tech, dr. sheila harrity."
+  },
+  {
+   "decision": "All agreed a burial rights agreement needs to be researched to determine a fee structure.",
+   "quote": "all agreed that a burial rights agreement needs to be researched to determine a fee structure."
+  },
+  {
+   "decision": "Chair Lance May will pursue the FY16 year-ending balances for the two cemetery accounts from the Town Accountant's office.",
+   "quote": "further info is needed from the town accountants office for fy 16 year ending balances. chrmn may to pursub."
+  },
+  {
+   "decision": "Todd Holman will seek reimbursement for the flag purchases from the Veteran's Agent.",
+   "quote": "he will seek re-imburshment for the flag purchases from the veteran's agent."
+  },
+  {
+   "decision": "Commissioners were asked to review the cemetery rules and regulations.",
+   "quote": "chrmn may requested that a review of the cemetery rules and regs needs to take place and asked the commissioners to take a look at them."
+  },
+  {
+   "decision": "Todd Holman will seek information on obtaining granite and will paint the overhang areas; he recommended finishing the niche wall in simple marble.",
+   "quote": "todd recommended finshing it in simple marble, (?), and to think about installing 4"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "North Street Cemetery tomb restoration total estimate",
+   "what_was_recorded": "McGrath estimated the total cost of the tomb restoration at $6,000.00, with all materials and work to be donated and paid for through grants and donations; the minutes also print a garbled '$ 9,000.00 LESS' figure tied to replacing the roof with EPDM.",
+   "figures_as_printed": [
+    "$6,000.00",
+    "$ 9,000.00"
+   ],
+   "quote": "the total estimated cost to be $6,000.00."
+  },
+  {
+   "topic": "Historical Commission appropriation",
+   "what_was_recorded": "McGrath stated the Lunenburg Historical Commission voted to appropriate $500.00 toward the tomb project.",
+   "figures_as_printed": [
+    "$500.00"
+   ],
+   "quote": "richard stated that the lunenburg historical commission voted to appropriate $500.00 towards the project."
+  },
+  {
+   "topic": "Tomb restoration amount needed",
+   "what_was_recorded": "Chair May noted that $5,500.00 would be needed, according to McGrath, to do the tomb job; a cost breakdown for that amount was requested.",
+   "figures_as_printed": [
+    "$5,500.00"
+   ],
+   "quote": "as an amount of $5,500.00 will be needed according to richard to do the job."
+  },
+  {
+   "topic": "Roof cost paid by the Cemetery Commission",
+   "what_was_recorded": "McGrath asked that the Cemetery Commission pay for the roof, and would act as a subcontractor who would sub out the roofing job; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. mcgrath asked that the roof be paid for by the cemetery commission."
+  },
+  {
+   "topic": "Head marker restoration grant",
+   "what_was_recorded": "McGrath said the Massachusetts Historical Commission has grant money available for restoring the broken oldest head markers; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the massachusetts historical commission has grant $ available for restoration of these stones."
+  },
+  {
+   "topic": "Cemetery account balances",
+   "what_was_recorded": "The two cemetery accounts' balances were to be reviewed because project spending draws on them; FY16 year-ending balances were still needed from the Town Accountant's office. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "further info is needed from the town accountants office for fy 16 year ending balances."
+  },
+  {
+   "topic": "Burial rights fee structure",
+   "what_was_recorded": "Board agreed a burial rights agreement must be researched to set a fee structure; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "all agreed that a burial rights agreement needs to be researched to determine a fee structure."
+  },
+  {
+   "topic": "Tree work bids, North Cemetery",
+   "what_was_recorded": "Bids for tree work and trimming in the North Cemetery were awarded to Affordable Tree Services, M+M Tree Services and Todd Bennet Tree Company; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "tree work and trimming was discussed for the north cemetery with bids being awarded to affordable tree services"
+  },
+  {
+   "topic": "Excavation bid for secondary road, North Cemetery",
+   "what_was_recorded": "Three bids were obtained for the excavation to finish the proposed secondary road into the North Cemetery, with the bid awarded to Powel Excavating; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "3 bids were obtained with the bid being awarded to powel excavating."
+  },
+  {
+   "topic": "Highway hot topping offer",
+   "what_was_recorded": "The Highway Superintendent offered to pay for hot topping a road in the South Cemetery; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "todd mentioned that the highway supt offered to pay for the hot topping of a road"
+  },
+  {
+   "topic": "Veterans' flags and markers purchase",
+   "what_was_recorded": "Todd Holman discussed buying new flags and markers for veterans' graves at both cemeteries for Memorial Day, and will seek reimbursement from the Veteran's Agent; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "he will seek re-imburshment for the flag purchases from the veteran's agent."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of September 21, 2015",
+   "resolution": "accepted (read and accepted; no motion recorded)",
+   "quote": "minutes from september 21, 2015 were read and accepted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old Business: North Street Cemetery tomb restoration proposal",
+   "resolution": "continued; McGrath asked to return with written cost breakdown",
+   "quote": "who appeared before the commission to discuss his proposal to restore the north street cemetery tomb.",
+   "tags": [
+    "tomb restoration",
+    "North Street Cemetery",
+    "historical commission",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Head marker survey and grant availability",
+   "resolution": "discussed; no action recorded",
+   "quote": "mr. mcgrath, also brought up his efforts to survey the north and south cemetery's oldest head markers and found two dozen broken.",
+   "tags": [
+    "head markers",
+    "grants",
+    "preservation"
+   ]
+  },
+  {
+   "topic": "Superintendent's report: niche wall, tree work, excavation, roads",
+   "resolution": "discussed; follow-ups assigned to Superintendent",
+   "quote": "todd holman, superintendent of cemetery's discussed the following:",
+   "tags": [
+    "niche wall",
+    "tree work",
+    "excavation",
+    "roads",
+    "burial rights"
+   ]
+  },
+  {
+   "topic": "Monty Tech student work and thank-you",
+   "resolution": "thank-you letter to be sent; dedication program deferred to later in year",
+   "quote": "todd reported that the students from monty tech completed the work on the building",
+   "tags": [
+    "Monty Tech",
+    "dedication",
+    "thank you"
+   ]
+  },
+  {
+   "topic": "Cemetery account balances",
+   "resolution": "Chair to pursue FY16 year-ending balances; no action",
+   "quote": "further info is needed from the town accountants office for fy 16 year ending balances. chrmn may to pursub.",
+   "tags": [
+    "cemetery accounts",
+    "finance",
+    "fiscal year"
+   ]
+  },
+  {
+   "topic": "New Business: veterans' flags and markers",
+   "resolution": "discussed; reimbursement to be sought",
+   "quote": "todd discussed the purchase of new flags and markers for the veteran's graves at",
+   "tags": [
+    "veterans",
+    "Memorial Day",
+    "flags"
+   ]
+  },
+  {
+   "topic": "Cemetery rules and regulations review",
+   "resolution": "commissioners asked to review; no action",
+   "quote": "chrmn may requested that a review of the cemetery rules and regs needs to take place and asked the commissioners to take a look at them.",
+   "tags": [
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "Public comment and adjournment",
+   "resolution": "no public comment; adjourned unanimously at 9:25 PM",
+   "quote": "on a motion by steve schaff to adjourn and seconded by lorraine mendoza, the vote was unanimous to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery",
+  "North Street Cemetery",
+  "tomb restoration",
+  "historical commission",
+  "tree work",
+  "excavation",
+  "Monty Tech",
+  "veterans",
+  "cemetery accounts",
+  "rules and regulations",
+  "burial rights",
+  "head markers"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

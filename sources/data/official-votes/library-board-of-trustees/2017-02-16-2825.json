@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2017-02-16",
  "docid": "2825",
@@ -12,47 +12,321 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of January 26, 2016 as amended",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Harry Kubetz",
-   "outcome": "passed",
+   "motion": "Accept the minutes of January 26, 2016 as amended.",
+   "moved_by": "Gare",
+   "seconded_by": "Harry",
+   "outcome": "passed; all voted aye",
    "procedural": true,
    "quote": "gare moved to accept the minutes as amended, harry seconded; all voted \"aye\""
   },
   {
-   "motion": "Approve the FY18 budget as amended",
-   "moved_by": "Susan Visser",
-   "seconded_by": "Gare Thompson",
-   "outcome": "passed",
+   "motion": "Approve the FY18 budget as amended.",
+   "moved_by": "Susan",
+   "seconded_by": "Gare",
+   "outcome": "passed; all voted aye",
    "procedural": false,
    "quote": "susan moved to approve the fy18 budget as amended, gare seconded, all voted \"aye\""
   },
   {
-   "motion": "Accept policy as amended regarding Library Trust Funds usage",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Donna Saiia",
-   "outcome": "passed",
+   "motion": "Accept the Library Trust Funds usage policy as amended.",
+   "moved_by": "Harry",
+   "seconded_by": "Donna",
+   "outcome": "passed; all voted aye",
    "procedural": false,
-   "quote": "motion to accept policy as amended made by harry, donna seconded, all voted \"aye\"."
+   "quote": "motion to accept policy as amended made by harry, donna seconded, all voted \"aye\""
   },
   {
-   "motion": "Accept the Policy on Library Weather Closing",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Lars Widstrand",
+   "motion": "Accept the Policy on Library Weather Closing.",
+   "moved_by": "Gare",
+   "seconded_by": "Lars",
    "outcome": "passed 6-1",
    "procedural": false,
    "quote": "gare moved to accept the policy, lars seconded. dick mailloux, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand voted aye, harry kubetz voted no."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Harry Kubetz",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Gare",
+   "seconded_by": "Harry",
+   "outcome": "passed; all voted aye",
    "procedural": true,
    "quote": "motion to adjourn by gare, seconded by harry, all voted \"aye\"; meeting closed at 8:10 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0868915
+ "dropped_unquoted": 2,
+ "note": "The approval item reads \"January 26, 2016\" in a February 2017 meeting, possibly a typo for 2017; recorded as printed. Vote counts and attendance are as printed; the Weather Closing vote is 6-1 by the minutes' own names. Text is a clean typed transcript, not a scan. The minutes do not print any dollar figures for the LED work, the Guardian option, or the FY18 budget totals.",
+ "cost_usd": 0.006749419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:45 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "respectfully submitted, lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "martha moore - director, lpl; john londa - director of facilities"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of facilities (Facilities Director)",
+   "status": "present",
+   "quote": "martha moore - director, lpl; john londa - director of facilities"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: terri burchfield - fincom representative; bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: terri burchfield - fincom representative; bob ebersole - board of selectmen representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board asked John Londa to investigate the Guardian light fixture option for the main hall.",
+   "quote": "the board asked john to investigate the guardian option."
+  },
+  {
+   "decision": "The board strongly suggested replacing the Martha's office troffers with the correct fixtures rather than using a dimmer.",
+   "quote": "the board strongly suggested replacing the troffers with the correct ones."
+  },
+  {
+   "decision": "The Room Use Policy was deferred to the March meeting.",
+   "quote": "to be discussed at the march meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2017 budget status",
+   "what_was_recorded": "The FY 2017 budget was reported about 67% spent with the year about 68% elapsed, and large bills were coming up.",
+   "figures_as_printed": [
+    "67%",
+    "68%"
+   ],
+   "quote": "fy 2017 budget ~ 67% spent @ 68% into fiscal year, but large bills are coming up."
+  },
+  {
+   "topic": "FY18 budget planning",
+   "what_was_recorded": "Discussion of the total requested numbers and a closer look at the electrical line item in the FY18 budget.",
+   "figures_as_printed": [],
+   "quote": "discussion about total requested numbers and also looking closer at electrical line item"
+  },
+  {
+   "topic": "Library Trust Funds interest spending",
+   "what_was_recorded": "Spending of the interest from trust funds is set at 20%; the board needed more clarification on the Touchstone fund spending rules.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "spending of the interest, 20%"
+  },
+  {
+   "topic": "Friends of LPL fundraising funds",
+   "what_was_recorded": "Funds raised by the Friends ended up under town control and were eventually placed in the Touchstone fund; no dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "friends raised funds that ended up under town control. funds were eventually placed in the touchstone fund."
+  },
+  {
+   "topic": "LED fixture sale option",
+   "what_was_recorded": "The director reported that Guardian is willing to sell its non-fan light fixture solution to the contractor DMH; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "they are willing to sell their light fixture solution that does not incorporate fans to dmh."
+  },
+  {
+   "topic": "FY18 budget presentation to FinCom",
+   "what_was_recorded": "The director was scheduled to present the budget to FinCom on Thursday 02/23 at 7 p.m.; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "martha is meeting with fincom thursday 02/23 at 7 p.m. to present the budget to the town (fincom)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "LED Migration Update",
+   "resolution": "presented; board asked for Guardian option to be investigated",
+   "tags": [
+    "LED lighting",
+    "facilities"
+   ],
+   "quote": "led migration update - john londa, facilities director, visiting to present status of project."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "approval of minutes of january 26, 2016"
+  },
+  {
+   "topic": "Director's Report: FY18 budget",
+   "resolution": "FY18 budget approved as amended",
+   "tags": [
+    "budget",
+    "FY18"
+   ],
+   "quote": "fy 2017 budget ~ 67% spent @ 68% into fiscal year, but large bills are coming up."
+  },
+  {
+   "topic": "Technology update",
+   "resolution": "information only",
+   "tags": [
+    "website"
+   ],
+   "quote": "martha mentioned that the lunenburg public library website will migrate from drupal to wordpress."
+  },
+  {
+   "topic": "Building & Maintenance update",
+   "resolution": "information only",
+   "tags": [
+    "building",
+    "facilities"
+   ],
+   "quote": "temperature monitoring in various places of building and times of day will take place."
+  },
+  {
+   "topic": "Library Trust Funds usage policy",
+   "resolution": "accepted as amended",
+   "tags": [
+    "trust funds",
+    "policy"
+   ],
+   "quote": "motion to accept policy as amended made by harry, donna seconded, all voted \"aye\""
+  },
+  {
+   "topic": "Policy on Library Weather Closing",
+   "resolution": "accepted 6-1",
+   "tags": [
+    "policy",
+    "closings"
+   ],
+   "quote": "gare moved to accept the policy, lars seconded."
+  },
+  {
+   "topic": "Policy for Library Cards for Out of State Residents",
+   "resolution": "no action; decided at December meeting",
+   "tags": [
+    "policy",
+    "library cards"
+   ],
+   "quote": "decided / accepted at december meeting"
+  },
+  {
+   "topic": "Room Use Policy",
+   "resolution": "deferred to March meeting",
+   "tags": [
+    "policy",
+    "room use"
+   ],
+   "quote": "to be discussed at the march meeting."
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "discussed; members to share fundraising ideas",
+   "tags": [
+    "Friends of LPL",
+    "fundraising"
+   ],
+   "quote": "ideas for fundraising ideas that may be applicable, please inform friends."
+  },
+  {
+   "topic": "Upcoming agenda items and trustee caucus",
+   "resolution": "discussed; caucus for candidates",
+   "tags": [
+    "elections",
+    "trustees"
+   ],
+   "quote": "caucus coming up looking for candidates"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:10 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting closed at 8:10 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for February 16, 2017",
+   "where": "list",
+   "quote": "lplbot agenda for february 16, 2017 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "lplbot agenda for february 16, 2017 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "lplbot agenda for february 16, 2017 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "lplbot agenda for february 16, 2017 director's report children's librarian's report ya librarian's report"
+  }
+ ],
+ "tags": [
+  "library",
+  "LED lighting",
+  "FY18 budget",
+  "trust funds",
+  "library policies",
+  "Friends of LPL",
+  "trustee caucus"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

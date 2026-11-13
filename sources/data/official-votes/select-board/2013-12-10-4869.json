@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-12-10",
  "docid": "4869",
@@ -12,87 +12,411 @@
  },
  "votes": [
   {
-   "motion": "Approve the Bond Anticipation Note in the amount of $220,000 for a feasibility study",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Approve the Bond Anticipation Note as provided.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. ebersole moved to approve the bond anticipation note as provided. mr. matthews second. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the ballot question regarding exemption from Proposition 2.5 for school bonds",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Toale",
+   "motion": "Approve the ballot question as printed.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. matthews moved to approve the ballot question as printed. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed"
   },
   {
-   "motion": "Approve the Special Town Meeting warrant as printed",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Ebersole",
+   "motion": "Approve the Special Town Meeting warrant as printed.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Robert Ebersole",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. matthews moved to approve the special town meeting warrant as printed. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the Base License for Lakeview Golf Driving Range",
-   "moved_by": "Mr. Toale",
-   "seconded_by": "Mr. Ebersole",
+   "motion": "Approve the Base License for Lakeview Golf Driving Range.",
+   "moved_by": "Jamie Toale",
+   "seconded_by": "Robert Ebersole",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. toale moved to approve the base license for lakeview golf driving range. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed"
   },
   {
-   "motion": "Approve the Common Victuallers licenses as read",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Ebersole",
+   "motion": "Approve the Common Victuallers licenses as read.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Robert Ebersole",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. matthews moved to approve the common victuallers licenses as read. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the Automatic Amusement Device Licenses as read",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Approve the Automatic Amusement Device Licenses as read.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mir. ebersole moved to approve the automatic amusement device licenses as read. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the Class 1 Motor Vehicle Licenses as read",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Mr. Toale",
+   "motion": "Approve the Class 1 Motor Vehicle Licenses as read.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. matthews moved to approve the class 1 motor vehicle licenses as read. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed"
   },
   {
-   "motion": "Approve the Class 2 Motor Vehicle Licenses as read",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Approve the Class 2 Motor Vehicle Licenses as read.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. ebersole moved to approve the class 2 motor vehicle licenses as read. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the Class 3 Motor Vehicle Licenses as read",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Approve the Class 3 Motor Vehicle Licenses as read.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. ebersole moved to approve the class 3 motor vehicle licenses as read. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "being no further business, mr. ebersole moved to adjourn the meeting. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text from macOS Vision. One apparent OCR error: \"Mir. Ebersole\" (should be \"Mr. Ebersole\") on the Automatic Amusement Device Licenses vote, but quoted verbatim as printed.",
- "cost_usd": 0.10290550000000001
+ "note": "OCR text from a scanned page set; some words are mis-OCR'd (e.g., 'Mir.', 'Spiedel', 'Political: Action Committee'), and quotes were taken as printed. The 'EXECUTIVE SESSION:' heading has no session recorded beneath it. The 'Warrants' figures ($6130.00, $225,258.53) are printed without labels. The license lists are presented 'for BOS approval' but are not labelled as documents. Vote outcomes are taken from 'On vote, motion carried, 4 in favor, 0 opposed.'",
+ "cost_usd": 0.00844942,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair Person",
+   "status": "present",
+   "quote": "with chair person tom alonzo, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "with chair person tom alonzo, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "with chair person tom alonzo, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "with chair person tom alonzo, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with chair person tom alonzo, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Shelley McCaie",
+   "role": "Treasurer-Collector",
+   "status": "present",
+   "quote": "ms. mccaie spoke to the bos to ask their approval for the borrowing of a short term bond anticipation note"
+  },
+  {
+   "name": "Clarence Floyd",
+   "role": "",
+   "status": "present",
+   "quote": "clarence floyd, 720 goodrich st., spoke to the bos concerning questions he had with the proposed new school building"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The IMA with the Town of Townsend for Sale of Net Metering Credits was continued to the 12/17/2013 BOS meeting.",
+   "quote": "ima with town of townsend for sale of net metering credits: continued to the 12/17/2013 bos meeting."
+  },
+  {
+   "decision": "The Chair accepted the resignation of Patrick Slattery, Chairman of the Historical Commission, effective 12/20/2013.",
+   "quote": "mr. alonzo accepted the resignation with regret."
+  },
+  {
+   "decision": "The remaining business license applications and the alcohol licenses were deferred to the 12/17/2013 BOS agenda.",
+   "quote": "the rest of the alcohol licenses will be on the bos 12/17/2013 agenda."
+  },
+  {
+   "decision": "The Town Manager presented the MSBA Project Scope & Budget Reimbursement Rate Certification to the Chairperson for signature.",
+   "quote": "ms. speidel presented to the chairperson for signature the msba project scope & budget reimbursement rate certification."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond anticipation note for feasibility study",
+   "what_was_recorded": "Treasurer-Collector asked approval to borrow a short-term bond anticipation note for the feasibility study; five bids were received and Century Bank had the lowest rate; note due May 15, 2014.",
+   "figures_as_printed": [
+    "$220,000",
+    ".50%",
+    "$452.22"
+   ],
+   "quote": "the note will be due on may 15, 2014 and the total interest paid will be $452.22"
+  },
+  {
+   "topic": "School project cost and ballot question",
+   "what_was_recorded": "The ballot question omits project cost; a separate mailing to residents will present all school building project costs.",
+   "figures_as_printed": [],
+   "quote": "there will be a separate mailing to residents with all costs of the school building project done by the political: action"
+  },
+  {
+   "topic": "MSBA reimbursement rate and total project budget",
+   "what_was_recorded": "The MSBA reimbursement rate for the project is 59.11%, including 1.5% from the 40R development at Tri-Town; total project budget is $72,975,321 with a maximum total facilities grant of $36, 190,870.",
+   "figures_as_printed": [
+    "59.11%",
+    "1.5%",
+    "$72,975,321",
+    "$36, 190,870"
+   ],
+   "quote": "total project budget for the school project which is $72,975,321. with a maximum total facilities grant of $36, 190,870."
+  },
+  {
+   "topic": "Sewer delinquent bills",
+   "what_was_recorded": "Sewer Commission submitted about $53,000 of delinquent sewer bills to the Treasurer/Collector to be added to tax bills.",
+   "figures_as_printed": [
+    "$53,000"
+   ],
+   "quote": "approximately $53,000 worth of delinquent sewer bills to be added to the tax bills"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Two warrants dated 12/10/2013 were listed for approval with two printed amounts.",
+   "figures_as_printed": [
+    "$6130.00",
+    "$225,258.53"
+   ],
+   "quote": "12/10/2013 #w12p-14m 12/10/2013 #w30-14 $6130.00 $225,258.53"
+  },
+  {
+   "topic": "School project principal and interest cost",
+   "what_was_recorded": "Public comment questioned the $36.65M principal figure; Board confirmed $36M principal and the Town Manager said interest over 30 years is about $32M, added to principal for total cost.",
+   "figures_as_printed": [
+    "$36.65M",
+    "$36M",
+    "$32M"
+   ],
+   "quote": "ms. speidel informed mr. floyd that the interest cost over 30 years is approximately $32m which will be added to the"
+  },
+  {
+   "topic": "School project principal confirmation",
+   "what_was_recorded": "Chair Matthews confirmed the $36M principal and that interest must be added to total cost for Special Town Meeting.",
+   "figures_as_printed": [
+    "$36M"
+   ],
+   "quote": "mr. matthews confirmed that the $36m is the principal and we need to add the interest to the total cost for special town"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Clarence Floyd",
+   "stated_role": "720 Goodrich St.",
+   "topic": "school building project costs, interest, debt exclusion wording",
+   "quote": "he was concerned with the amount of $36.65m as being principle only for the town's part of this. he asked what the interest was going to cost the town for a 30 year term and a 20 year term."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: board and committee vacancies",
+   "resolution": "no action",
+   "tags": [
+    "vacancies",
+    "committees"
+   ],
+   "quote": "mr. alonzo announced that there are still vacancies on the personnel committee and on the public access cable committee (pacc)."
+  },
+  {
+   "topic": "Appointments: Bond Anticipation Note review and award",
+   "resolution": "approved 4-0",
+   "tags": [
+    "borrowing",
+    "bond anticipation note",
+    "feasibility study"
+   ],
+   "quote": "ms. mccaie spoke to the bos to ask their approval for the borrowing of a short term bond anticipation note"
+  },
+  {
+   "topic": "Review ballot question",
+   "resolution": "approved 4-0",
+   "tags": [
+    "ballot question",
+    "school building",
+    "debt exclusion"
+   ],
+   "quote": "ms. speidel explained that the ballot question was modified slightly based on the comments that were received by both the msba and the bond counsel."
+  },
+  {
+   "topic": "Review warrant articles on Special Town Meeting warrant",
+   "resolution": "approved 4-0",
+   "tags": [
+    "warrant",
+    "special town meeting"
+   ],
+   "quote": "review warrant articles on special town meeting warrant: ms. speidel explained the changes which were added to the warrant as follows:"
+  },
+  {
+   "topic": "Annual business licenses",
+   "resolution": "approved 4-0 by license category; alcohol licenses deferred to 12/17/2013",
+   "tags": [
+    "licenses",
+    "alcohol",
+    "common victuallers",
+    "motor vehicle"
+   ],
+   "quote": "review & approval annual business licenses: ms speidel reported that the alcohol beverages control commission (abcc) had approved"
+  },
+  {
+   "topic": "IMA with Town of Townsend for sale of net metering credits",
+   "resolution": "continued to 12/17/2013",
+   "tags": [
+    "net metering",
+    "intermunicipal agreement"
+   ],
+   "quote": "ima with town of townsend for sale of net metering credits: continued to the 12/17/2013 bos meeting."
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no action recorded; action file issues none",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "action file issues: none"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received, no action",
+   "tags": [
+    "committees",
+    "sewer",
+    "school building committee",
+    "finance committee"
+   ],
+   "quote": "building reuse committee - mr. toale reported that their primary work was completed and presented last week."
+  },
+  {
+   "topic": "Town Manager reports: MSBA certification and project budget documents",
+   "resolution": "presented to Chairperson for signature",
+   "tags": [
+    "MSBA",
+    "school project",
+    "reimbursement"
+   ],
+   "quote": "ms. speidel presented to the chairperson for signature the msba project scope & budget reimbursement rate certification."
+  },
+  {
+   "topic": "Appointments, re-appointments and resignations: Historical Commission",
+   "resolution": "resignation accepted",
+   "tags": [
+    "resignation",
+    "historical commission"
+   ],
+   "quote": "mr. alonzo read a letter of resignation from patrick slattery, chairman of the historical commission."
+  },
+  {
+   "topic": "Public comment: school building project costs",
+   "resolution": "no action; board responded to questions",
+   "tags": [
+    "public comment",
+    "school project",
+    "interest cost"
+   ],
+   "quote": "clarence floyd, 720 goodrich st., spoke to the bos concerning questions he had with the proposed new school building"
+  },
+  {
+   "topic": "Executive session heading",
+   "resolution": "heading only; no session recorded before adjournment",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "executive session: being no further business, mr. ebersole moved to adjourn the meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 7:52PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 7:52pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "review warrant articles on special town meeting warrant: ms. speidel explained the changes which were added to the warrant as follows:"
+  },
+  {
+   "name": "Ballot question (Shall the Town of Lunenburg be allowed to exempt...)",
+   "where": "text",
+   "quote": "ms. speidel read the ballot question as follows: shall the town of lunenburg be allowed to exempt from the provisions of proposition two-and-one-half"
+  },
+  {
+   "name": "MSBA Project Scope & Budget Reimbursement Rate Certification",
+   "where": "text",
+   "quote": "ms. speidel presented to the chairperson for signature the msba project scope & budget reimbursement rate certification."
+  },
+  {
+   "name": "Project Scope & Budget Agreement for the school building project",
+   "where": "text",
+   "quote": "ms. speidel presented to the chairperson for signature the project scope & budget agreement for the school building"
+  },
+  {
+   "name": "Town Manager's 5 Year Forecast",
+   "where": "text",
+   "quote": "mr. toale reported that they will meet this thursday where they will discuss the town manager's 5 year forecast."
+  },
+  {
+   "name": "Information brochure (school project)",
+   "where": "text",
+   "quote": "he believes that the information brochure states incorrectly what the town's interest cost will be"
+  },
+  {
+   "name": "Warrants #W12P-14M and #W30-14 (12/10/2013)",
+   "where": "text",
+   "quote": "warrants: 12/10/2013 #w12p-14m 12/10/2013 #w30-14 $6130.00 $225,258.53"
+  }
+ ],
+ "tags": [
+  "school building project",
+  "borrowing",
+  "bond anticipation note",
+  "ballot question",
+  "special town meeting",
+  "business licenses",
+  "warrants",
+  "public comment",
+  "appointments",
+  "resignation",
+  "sewer",
+  "MSBA"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

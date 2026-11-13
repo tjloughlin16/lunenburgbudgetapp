@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2010-10-04",
  "docid": "2513",
@@ -10,33 +10,164 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10042010-2513",
   "doc_url": "/docs/meetings/historical-commission/2010-10-04-minutes-2513.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text from a macOS Vision scan with garbled passages: the 86 Lakefront answer reads \"Chriztine reported that it was At access and it would be out of the area...\" and is unreadable, so the answer is not recorded. No motions are recorded anywhere: the minutes approval, the elections and the 8PM adjournment carry no \"moved/seconded\" or vote counts, so votes is empty. The received stamp reads OCT 18 2011, a year after the meeting date. No public comment section is printed. Marion Benson, Kerry Speidel and Chris Skelly are named only as people discussed, not as attendees.",
+ "cost_usd": 0.00376712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "approve the minutes of September 14, 2010 with correction of one typographical error",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of september 14, 2010 meeting approved with correction of one typographical error."
+   "name": "Patrick Slattery",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: patrick slattery, richard mcgrath, chriztine foltz, becky lantry, vera mccarthy."
   },
   {
-   "motion": "table discussion of applying for grant from MASS HISTORIC until next year",
-   "outcome": "passed",
-   "procedural": false,
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: patrick slattery, richard mcgrath, chriztine foltz, becky lantry, vera mccarthy."
+  },
+  {
+   "name": "Chriztine Foltz",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: patrick slattery, richard mcgrath, chriztine foltz, becky lantry, vera mccarthy."
+  },
+  {
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: patrick slattery, richard mcgrath, chriztine foltz, becky lantry, vera mccarthy."
+  },
+  {
+   "name": "Vera McCarthy",
+   "role": "Member; Secretary (signature block)",
+   "status": "present",
+   "quote": "vera mccarthy, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tabled the survey photos / Mass Historic grant project until next year, citing not enough time to put together grant criteria.",
    "quote": "it was decided to table this till next year - not enough time to put together criteria for grant."
   },
   {
-   "motion": "elect Chriztine Foltz as Chair, Becky Lantry as Vice Chair, and Vera McCarthy as Secretary",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "elections were held for positions on the commission: chair - chriztine foltz vice chair - becky lantry - secretary - vera mccarthy"
+   "decision": "Marion Benson to send a letter re: grant money for historic projects; clock tower work in Town Hall noted as a possible recommendation.",
+   "quote": "marion benson to send a letter re: grant money for historic projects."
   },
   {
-   "motion": "adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "meeting adjourned @ 8pm"
+   "decision": "Chriztine Foltz assigned to speak with Chris Skelly and Kerry Speidel about the survey project.",
+   "quote": "chriztine to speak with chris skelly and also to kerry speidel about this project."
+  },
+  {
+   "decision": "Officers elected: Chair Chriztine Foltz, Vice Chair Becky Lantry, Secretary Vera McCarthy.",
+   "quote": "elections were held for positions on the commission: chair - chriztine foltz"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan; votes recorded with outcomes but moved_by and seconded_by not stated in minutes for any votes",
- "cost_usd": 0.0970335
+ "budget_items": [
+  {
+   "topic": "Grant money for historic projects",
+   "what_was_recorded": "Letter to be sent re: grant money for historic projects, with clock tower work in Town Hall a possible recommendation; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "marion benson to send a letter re: grant money for historic projects."
+  },
+  {
+   "topic": "Mass Historic grant for survey photos",
+   "what_was_recorded": "The Commission could apply for a grant from Mass Historic for the survey photos; the project was tabled to next year. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "we could apply for grant from the mass historic."
+  },
+  {
+   "topic": "Emerald Place digitizing donation",
+   "what_was_recorded": "Emerald Place will pay for digitizing of material as a donation; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "also pat reported that emerald place will pay for the digitizing of material as a donation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of September 14, 2010",
+   "resolution": "approved with correction",
+   "quote": "minutes of september 14, 2010 meeting approved with correction of one typographical"
+  },
+  {
+   "topic": "Grant money and clock tower work",
+   "resolution": "letter to be sent (Marion Benson)",
+   "quote": "marion benson to send a letter re: grant money for historic projects."
+  },
+  {
+   "topic": "Survey photos and Mass Historic grant",
+   "resolution": "tabled to next year",
+   "quote": "it was decided to table this till next year - not enough time to put together criteria for grant."
+  },
+  {
+   "topic": "Ethics, Open Meetings and Conflict of Interest materials",
+   "resolution": "no action (received)",
+   "quote": "all members received the paperwork on the ethics, open meetings and conflict of interest laws."
+  },
+  {
+   "topic": "Jones House RFP",
+   "resolution": "no action (filed and recorded)",
+   "quote": "jones house rfp has been filed and recorded."
+  },
+  {
+   "topic": "Emerald Place donations (trash compactors, digitizing)",
+   "resolution": "discussed; no action recorded",
+   "quote": "pat slattery had a discussion with marion benson and kerry speidel re: trash compactors for emerald place that were to be donated."
+  },
+  {
+   "topic": "Demolition delay at 86 Lakefront",
+   "resolution": "question raised; answer reported, no action",
+   "quote": "pat slattery posed a question re: the demo delay at 86 lakefront, a property owned by emerald place."
+  },
+  {
+   "topic": "Ledger article on Adaptive Reuse of Town Buildings",
+   "resolution": "not submitted; missed deadline",
+   "quote": "so we did not make the deadline."
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "elected",
+   "quote": "elections were held for positions on the commission: chair - chriztine foltz"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Paperwork on the Ethics, Open Meetings and Conflict of Interest Laws",
+   "where": "list",
+   "quote": "all members received the paperwork on the ethics, open meetings and conflict of interest laws."
+  },
+  {
+   "name": "Article for the Ledger on Adaptive Reuse of Town Buildings, written by Pat Slattery",
+   "where": "text",
+   "quote": "article for the ledger on adaptive reuse of town buildings as written by pat slattery"
+  },
+  {
+   "name": "Jones House RFP",
+   "where": "text",
+   "quote": "jones house rfp has been filed and recorded."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "grants",
+  "donations",
+  "Emerald Place",
+  "officer elections",
+  "ethics and open meeting law",
+  "Jones House",
+  "Lakefront demolition delay",
+  "Ledger article",
+  "adaptive reuse",
+  "survey"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "all members received the paperwork on the ethics, open meetings and conflict of interest laws."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-04-12",
  "docid": "5545",
@@ -12,39 +12,444 @@
  },
  "votes": [
   {
-   "motion": "Accept Unitil's plans for 357 Electric Ave",
+   "motion": "Accept Unitil's plans for 357 Electric Ave.",
    "moved_by": "Mike N.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion - mike n. to accept unitil's plans for 357 electric ave second - john r. vote - unanimous"
   },
   {
-   "motion": "Send Notice of Violation to Crossroads of $50 fine",
+   "motion": "Send a Notice of Violation to Crossroads with a $50 fine.",
    "moved_by": "Sue B.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: sue b to send notice of violation to crossroads of $50 fine second: john r. vote - unanimous"
   },
   {
-   "motion": "Approve the invoice for Small Water in the amount of $1,152.00",
-   "moved_by": "John R.",
+   "motion": "Approve the Small Water invoice in the amount of $1,152.00.",
+   "moved_by": "John R",
    "seconded_by": "Sue B.",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, unanimous",
+   "procedural": false,
    "quote": "motion - john r to approve the invoice for small water in the amount of $1,152.00 second - sue b. vote - unanimous"
   },
   {
-   "motion": "Adjourn at 9:46pm",
+   "motion": "Adjourn at 9:46pm.",
    "moved_by": "Sue B.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion - sue b. to adjourn at 9:46pm second - john r. vote - unanimous"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction by macOS Vision. All four votes found and verified against the text.",
- "cost_usd": 0.08801350000000001
+ "dropped_unquoted": 1,
+ "note": "OCR text of three pages, collapsed to single spaces for quotes. Page 1 begins mid-discussion (Stewart's), with no heading or header. No attendance roll call, so attendance comes from names in the discussion only. No public comment section. Four motions with recorded votes (three unanimous, one procedural adjournment). Several OCR errors in the text (e.g., 'sated', 'form Grave's', '1, 0000' tank size, 'Mihutes'); quotes use the printed text as-is. Jack Rodriquenz and Jack R. may be the same person; both listed as printed. Crossroads pumping decision had no recorded vote.",
+ "cost_usd": 0.00881232,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl has concern that there is no allocation for flow on the wash station."
+  },
+  {
+   "name": "Mike N.",
+   "status": "present",
+   "quote": "motion - mike n. to accept unitil's plans for 357 electric ave second - john r. vote - unanimous"
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "john r. was present for the inspection at crossroads of the external interceptor along with twin river and small water."
+  },
+  {
+   "name": "Sue B.",
+   "status": "present",
+   "quote": "motion - sue b. to adjourn at 9:46pm second - john r. vote - unanimous"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman and Bingham",
+   "status": "present",
+   "quote": "unitil (357 electric avenue) jamie rheault, whitman and bingham - the intent is to have the plans for unitil's new building"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "jack rodriquenz stated that it is encased in steel reinforced concrete."
+  },
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "richard bursch came to present the plans for his self-storage facility and for approval of the change of use application."
+  },
+  {
+   "name": "Jack R.",
+   "status": "present",
+   "quote": "jack r. was asked for his input."
+  },
+  {
+   "name": "Jimmy",
+   "status": "not stated",
+   "quote": "mike n., john r., and jimmy from small water met prior to the meeting with wright pierce and the fieldtrip"
+  },
+  {
+   "name": "Barb",
+   "status": "not stated",
+   "quote": "barb has updated the website with new information."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, mihutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Crossroads must pump its grease interceptor once a month and be notified two days beforehand.",
+   "quote": "the commission decided that crossroads needs to pump once a month and to be notified two days beforehand"
+  },
+  {
+   "decision": "Stewart's grease trap concerns to be taken into consideration by the Commission.",
+   "quote": "his feedback was appreciated and his concerns will be taken into consideration by the commission."
+  },
+  {
+   "decision": "Lunenburg Storage change-of-use versus connection permit question to be resolved at a later time.",
+   "quote": "this detail will be squared away at a later time."
+  },
+  {
+   "decision": "Wright Pierce to contact CJP about extending its contract for the paving work.",
+   "quote": "wright pierce will contact cjp about extending their contract since some of the paving is"
+  },
+  {
+   "decision": "Wright Pierce to provide two SCADA quotes, committed to be done by May 22.",
+   "quote": "wright pierce will provide two quotes: one for installing a system similar to what there already"
+  },
+  {
+   "decision": "FY17 Operations & Maintenance bid wording to be changed so the bid price section includes bidder's labor rates.",
+   "quote": "the bid price section will be changed to have the bidder's labor rates included"
+  },
+  {
+   "decision": "Twin City betterment reassignment: additional information needed before the Commission can decide.",
+   "quote": "the commission discussed this and concluded that additional information is needed for clarification."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Small Water Systems proposal cost",
+   "what_was_recorded": "Carl noted the proposed cost is still about three times the fees collected, at $19,500, and that the program has enough money to keep running until the contract is resolved.",
+   "figures_as_printed": [
+    "$19,500"
+   ],
+   "quote": "carl did note that the cost is still about 3x the fees collected at $19,500 and that there is all new wording"
+  },
+  {
+   "topic": "Small Water invoice",
+   "what_was_recorded": "The Commission approved an adjusted Small Water invoice covering 16 hours, including the Crossroads trip.",
+   "figures_as_printed": [
+    "$1,152.00"
+   ],
+   "quote": "to approve the invoice for small water in the amount of $1,152.00"
+  },
+  {
+   "topic": "Crossroads violation fine",
+   "what_was_recorded": "A Notice of Violation with a $50 fine was voted to be sent to Crossroads, due within 30 days of notification.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "with a $50 fine will be sent and due in 30 days of notification"
+  },
+  {
+   "topic": "Crossroads per-day fee",
+   "what_was_recorded": "If Crossroads is non-compliant, a per-day fee applies; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "if they are non-compliant, a per day fee kicks in and the"
+  },
+  {
+   "topic": "Permit fee penalty for non-compliance",
+   "what_was_recorded": "Richard Bursch objected to the penalty for non-compliance with permit fees covering the whole year; it was clarified the Permit Fee is billed once a year, so the penalty runs the whole year. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "it was clarified that the permit fee is billed once a year and not quarterly, therefore the penalty runs the whole year."
+  },
+  {
+   "topic": "Connection fees for Unitil building",
+   "what_was_recorded": "Discussion that the wash station water use must be known to calculate connection fees; John R. noted plan acceptance is independent of connection fees. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "it is important to know the gallons used to calculate connection fees"
+  },
+  {
+   "topic": "Pratt/Lakeview/Pleasantview paving and betterment",
+   "what_was_recorded": "Paving to be funded through different sources, which may reduce the betterment; some work depends on the debt exclusion vote on May 21st. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "it may, in some part, reduce the betterment."
+  },
+  {
+   "topic": "Debt exclusion",
+   "what_was_recorded": "Some paving is contingent on the debt exclusion being approved when the Town votes on May 21st. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "contingent on the debt exclusion being approved when the town votes on may 21st"
+  },
+  {
+   "topic": "CWMP rates and capital costs",
+   "what_was_recorded": "Rerouting wastewater from Fitchburg to Leominster is discussed because Leominster's rates are about half of Fitchburg's, reducing operating costs and shifting capacity capital costs to Fitchburg. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "leominster's rates are about half of fitchburg's"
+  },
+  {
+   "topic": "Twin City betterment reassessment",
+   "what_was_recorded": "Twin City paid the betterment but divided the property and sold the lot it was on, and asked that the betterment be reassigned. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "twin city paid the betterment but has now divided the property and sold the lot the betterment was on."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Stewart's grease trap pumping and measurements",
+   "resolution": "discussed; concerns taken into consideration",
+   "quote": "carl made the point that without the measurements in between there is no proof",
+   "tags": [
+    "grease traps",
+    "pumping",
+    "monitoring"
+   ]
+  },
+  {
+   "topic": "Unitil 357 Electric Ave plans",
+   "resolution": "approved",
+   "quote": "motion - mike n. to accept unitil's plans for 357 electric ave second - john r. vote - unanimous",
+   "tags": [
+    "plan review",
+    "Unitil",
+    "wash station",
+    "connection fees"
+   ]
+  },
+  {
+   "topic": "Lunenburg Storage 270 Electric Ave plans and change of use",
+   "resolution": "discussed; change-of-use question to be settled later",
+   "quote": "the commission discussed the change of use application and whether there was a need for it.",
+   "tags": [
+    "plan review",
+    "change of use",
+    "self-storage"
+   ]
+  },
+  {
+   "topic": "Grease trap regulation changes",
+   "resolution": "discussed; applicant found changes logical",
+   "quote": "he thought the changes were logical and made sense.",
+   "tags": [
+    "regulations",
+    "grease traps",
+    "permit fees"
+   ]
+  },
+  {
+   "topic": "Small Water Systems proposal",
+   "resolution": "received, not yet reviewed",
+   "quote": "the proposal was received the afternoon of the meeting so the commission did not have time to review.",
+   "tags": [
+    "Small Water",
+    "contract",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Crossroads grease interceptor inspection",
+   "resolution": "Notice of Violation approved; monthly pumping required",
+   "quote": "john r. was present for the inspection at crossroads of",
+   "tags": [
+    "grease interceptor",
+    "enforcement",
+    "violation"
+   ]
+  },
+  {
+   "topic": "Donnelly's, Lunenburg Schools, Zeda's Pub & Grill",
+   "resolution": "no action",
+   "quote": "donnelly's - carl informed the commission that they have paid last year's permit fee.",
+   "tags": [
+    "permits",
+    "grease traps",
+    "logs"
+   ]
+  },
+  {
+   "topic": "Pratt/Lakeview/Pleasantview paving",
+   "resolution": "discussed; Wright Pierce to contact CJP",
+   "quote": "wright pierce will contact cjp about extending their contract since some of the paving is",
+   "tags": [
+    "paving",
+    "betterment",
+    "debt exclusion"
+   ]
+  },
+  {
+   "topic": "SCADA",
+   "resolution": "Wright Pierce to provide two quotes by May 22",
+   "quote": "wright pierce will provide two quotes: one for installing a system similar to what there already",
+   "tags": [
+    "SCADA",
+    "pump stations",
+    "Wright Pierce"
+   ]
+  },
+  {
+   "topic": "CWMP changes",
+   "resolution": "reviewed",
+   "quote": "the major changes to the cwmp were reviewed.",
+   "tags": [
+    "CWMP",
+    "Fitchburg",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Pump Stations FY17 Operations & Maintenance bid",
+   "resolution": "wording revised",
+   "quote": "jack r. noted that there cannot be an rfp and a bid at the same time.",
+   "tags": [
+    "bid",
+    "pump stations",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Pump station reports",
+   "resolution": "no action; reports fine",
+   "quote": "mike n. reviewed and everything is fine.",
+   "tags": [
+    "pump stations",
+    "generator"
+   ]
+  },
+  {
+   "topic": "Twin City betterment reassessment",
+   "resolution": "additional information needed",
+   "quote": "the commission discussed this and concluded that additional information is needed for clarification.",
+   "tags": [
+    "betterment",
+    "reassessment"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects: website",
+   "resolution": "no action; website updated",
+   "quote": "barb has updated the website with new information.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "the minutes were not received in time for review and will be discussed at the next meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "approved Small Water invoice $1,152.00",
+   "quote": "motion - john r to approve the invoice for small water in the amount of $1,152.00 second - sue b. vote - unanimous",
+   "tags": [
+    "invoice",
+    "Small Water"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and schedule",
+   "resolution": "no action",
+   "quote": "the next sewer commission meeting will be on april 26 at town hall.",
+   "tags": [
+    "public hearing",
+    "warrant articles",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:46pm",
+   "quote": "motion - sue b. to adjourn at 9:46pm second - john r. vote - unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Whitman and Bingham to Lunenburg Storage (minimum flow of 200 gallons; usage calculated at 75 gallons per day)",
+   "where": "text",
+   "quote": "a letter from whitman and bingham that mr. bursch received stated the minimum flow of 200 gallons"
+  },
+  {
+   "name": "Review letter from Jeff at Grave's on Unitil plans",
+   "where": "text",
+   "quote": "the review letter from jeff at grave's was reviewed by the commission."
+  },
+  {
+   "name": "Small Water Systems Proposal",
+   "where": "text",
+   "quote": "the proposal was received the afternoon of the meeting so the commission did not have time to review."
+  },
+  {
+   "name": "Request for Bid FY17 Operations & Maintenance (Pump Stations)",
+   "where": "text",
+   "quote": "pump stations - request for bid fy17 operations & maintenance - jack r. noted that there cannot"
+  },
+  {
+   "name": "Title V calculation (Unitil)",
+   "where": "text",
+   "quote": "it is all contained in the title v calculation that"
+  },
+  {
+   "name": "Violation Notice to Crossroads",
+   "where": "text",
+   "quote": "a violation notice of the interceptor not being to design"
+  },
+  {
+   "name": "Small Water invoice (adjusted, 16 hours)",
+   "where": "text",
+   "quote": "one invoice from small water was received."
+  },
+  {
+   "name": "CWMP revised plan",
+   "where": "text",
+   "quote": "the major changes to the cwmp were reviewed."
+  },
+  {
+   "name": "Bylaw, Grease Traps and CWMP changes (second Public Hearing)",
+   "where": "text",
+   "quote": "this will be the second public hearing on the bylaw, grease traps and cwmp changes and will be televised."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "grease traps",
+  "enforcement",
+  "plan review",
+  "Unitil",
+  "Lunenburg Storage",
+  "SCADA",
+  "CWMP",
+  "pump stations",
+  "paving",
+  "betterment",
+  "invoices",
+  "public hearing",
+  "2016"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

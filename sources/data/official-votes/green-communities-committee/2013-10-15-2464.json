@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2013-10-15",
  "docid": "2464",
@@ -12,15 +12,151 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 9/16/2013",
+   "motion": "Approve the minutes of 9/16/2013.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "the minutes from 9/16/2013 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes approval contains no recorded mover, seconder, or specific vote count — only that the minutes \"were approved.\"",
- "cost_usd": 0.0841895
+ "note": "Text is an OCR (macOS Vision) extraction. No attendance list is printed, so attendee status is 'not stated' throughout. The minutes-approval line records an approval but no mover, seconder or tally; it is recorded as a procedural vote with outcome 'passed'. Adjournment at 8:14 P.M. has no recorded motion, so it is not recorded as a vote. Item 2 says 'Two items have changed the baseline' but only one change (the meter reading) and the projected energy-use correction are described. The minutes give energy quantities (MM BTU, kW per square foot) but no dollar figures, so budget_items is empty. No public comment is recorded. The minutes are signed by Joanne McQuaid, with no chair named.",
+ "cost_usd": 0.00368722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "J. Londa",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "j. londa noted that unitil looked at the primary school records and noticed that the meter was changed in october 2012"
+  },
+  {
+   "name": "J. McQuaid",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "j. mcquaid will confirm an appointment time with the select board."
+  },
+  {
+   "name": "D. Blatt",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "d. blatt will upload the information to the site once everything is complete."
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "minutes author (as printed: Respectfully submitted)",
+   "status": "not stated",
+   "quote": "respectfully submitted, joanne mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J. McQuaid will confirm an appointment time with the Select Board (letters approving Criteria 3 and 4 are still needed).",
+   "quote": "j. mcquaid will confirm an appointment time with the select board."
+  },
+  {
+   "decision": "J. Londa will confer with J. Breault to fill in chart #4.",
+   "quote": "j. londa will confer with j. breault to fill in chart #4"
+  },
+  {
+   "decision": "D. Blatt will upload the information to the site once everything is complete.",
+   "quote": "d. blatt will upload the information to the site once everything is complete."
+  },
+  {
+   "decision": "J. McQuaid will look into doing a display at the Public Library on energy conservation for homeowners, with materials and literature provided by Unitil.",
+   "quote": "in new business j.mcquaid will look into doing a display at the public library on"
+  },
+  {
+   "decision": "The next meeting is set for October 24, 2013 at 6:30 P.M. at the Ritter Building.",
+   "quote": "the next meeting will be october 24,2013 at 6:30 p.m. at the ritter building."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "minutes of 9/16/2013 approved",
+   "quote": "meeting called to order at 6:37 p.m. the minutes from 9/16/2013 were approved.",
+   "tags": [
+    "minutes",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Review of Green Community Application",
+   "resolution": "baseline energy figures revised; no vote recorded",
+   "quote": "review of green community application-two items have changed the baseline",
+   "tags": [
+    "green community",
+    "energy baseline",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Energy Reduction Plan and application criteria review",
+   "resolution": "reviewed for each Town building; no action recorded",
+   "quote": "the energy reduction plan was reviewed for each town building to show potential",
+   "tags": [
+    "energy reduction",
+    "application criteria"
+   ]
+  },
+  {
+   "topic": "Select Board letters for Criteria 3 and 4",
+   "resolution": "follow-up assigned",
+   "quote": "letters are still needed from the select board with approval of criteria 3 and 4.",
+   "tags": [
+    "select board",
+    "green community"
+   ]
+  },
+  {
+   "topic": "New business: library energy display",
+   "resolution": "assigned to J. McQuaid to look into",
+   "quote": "in new business j.mcquaid will look into doing a display at the public library on",
+   "tags": [
+    "public library",
+    "energy conservation",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for October 24, 2013; adjourned 8:14 P.M.",
+   "quote": "the next meeting will be october 24,2013 at 6:30 p.m. at the ritter building.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Green Community Application",
+   "where": "text",
+   "quote": "review of green community application-two items have changed the baseline"
+  },
+  {
+   "name": "Energy Reduction Plan",
+   "where": "text",
+   "quote": "the energy reduction plan was reviewed for each town building to show potential"
+  }
+ ],
+ "tags": [
+  "Green Communities",
+  "energy baseline",
+  "energy reduction",
+  "Unitil",
+  "Select Board",
+  "public library",
+  "application criteria"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

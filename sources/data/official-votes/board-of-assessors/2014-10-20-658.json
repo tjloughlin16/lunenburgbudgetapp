@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-10-20",
  "docid": "658",
@@ -12,31 +12,143 @@
  },
  "votes": [
   {
-   "motion": "Variance for well offset to property line from 50 feet to 38 feet",
+   "motion": "Approve the variance for the well offset to the property line at Lot 7, White Tail Crossing, from 50 feet to 38 feet.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the variance was approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved. all in favor."
   },
   {
-   "motion": "Variances for use of sieve analysis, offset to groundwater from four feet to three feet, and separation less than 12 inches",
+   "motion": "Approve the variances for 59 Rolling Acres Road: use of a sieve analysis, offset to groundwater from four feet to three feet, and separation less than 12 inches.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved."
   },
   {
-   "motion": "Variance for ceiling height of one inch",
+   "motion": "Approve the ceiling height variance of one inch requested for 73 Pine Grove Road.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the variance was approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are Board of Health minutes, not Board of Assessors. The minutes do not record a formal motion to approve prior minutes (October 8) or to adjourn, so only the three recorded variance votes are listed.",
- "cost_usd": 0.0993865
+ "note": "The minutes are headed 'LUNENBURG BOARD OF HEALTH', not Board of Assessors as the requested board name says; recorded as the Board of Health text. No dollar figures, transfers, public comment section, or document list appear. The 'MINUTES APPROVED' and 'SEPTIC PERMITS SIGNED' headings record no motion text, so no vote is recorded for them. Adjournment at 8:00 pm has no motion recorded. Chairman's name is split in the text as 'Georg e Emond'. Attendance status for Garreffi and Marsden's role are not stated.",
+ "cost_usd": 0.00307622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve marsden met with the board."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Roy Hall",
+   "role": "Owner",
+   "status": "present",
+   "quote": "owner roy hall met with the board."
+  },
+  {
+   "name": "Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent garreffi conducted a housing inspection at the above address."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of October 8, 2014",
+   "resolution": "approved",
+   "quote": "minutes approved: october 8, 2014",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged :",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed; Lot 7, White Tail Crossing well setback variance",
+   "resolution": "variance approved",
+   "quote": "a variance is being request for offset to property line from 50 feet to 38 feet.",
+   "tags": [
+    "septic",
+    "variance",
+    "well"
+   ]
+  },
+  {
+   "topic": "59 Rolling Acres Road failed septic system variances",
+   "resolution": "variances approved",
+   "quote": "variances requested are the use of a sieve analysis, offset to groundwater from four feet to three feet and separation less than 12 inches.",
+   "tags": [
+    "septic",
+    "variance",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "73 Pine Grove Road housing code ceiling height variance",
+   "resolution": "variance approved",
+   "quote": "mr. hall is requesting a variance of one (1) inches in ceiling height as there is no feasible way to raise the ceiling.",
+   "tags": [
+    "housing code",
+    "variance"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of health",
+  "septic",
+  "variances",
+  "housing code",
+  "title 5",
+  "well setback"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-07-13",
  "docid": "3813",
@@ -12,63 +12,327 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of May 11, 2015",
+   "motion": "Approve minutes of 5/11/15.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "5/11/15; motion, m. allison, second, k. chenis"
   },
   {
-   "motion": "approve the minutes of May 11, 2015 Highfield Hearing",
+   "motion": "Approve minutes of 5/11/15 Highfield Hearing.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "5/11/15 highfield hearing; motion, m. allison, second, k. chenis"
   },
   {
-   "motion": "approve the minutes of May 11, 2015, 270 Electric Avenue Hearing",
+   "motion": "Approve minutes of 5/11/15 270 Electric Avenue Hearing.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "5/11/15, 270 electric avenue hearing; motion, m. allison, second, k. chenis"
   },
   {
-   "motion": "approve the minutes of June 22, 2015",
+   "motion": "Approve minutes of 6/22/15.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "6/22/15; motion, m. allison, second, g. bittner"
   },
   {
-   "motion": "approve the minutes of July 2, 2015",
+   "motion": "Approve minutes of 7/2/15.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "7/2/15; motion, m. allison, second, g. bittner"
   },
   {
-   "motion": "approve the minutes of July 2, 2015, 270 Electric Avenue Hearing",
+   "motion": "Approve minutes of 7/2/15 270 Electric Avenue Hearing.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "7/2/15, 270 electric avenue hearing; motion, m. allison, second, k. chenis"
   },
   {
-   "motion": "not exercise the right of first refusal on 150 and 164 White Street",
+   "motion": "Not to exercise the Town's right of first refusal on 150 and 164 White Street (Chapter Land).",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "motion, m. allison, to not exercise right of right refusal, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11729049999999999
+ "note": "Text extraction is clean. Minutes-approval motions are recorded with moved and seconded names but no result, so outcome is 'not stated'. The adjournment (9:00 PM) has no recorded motion. No public comment section appears. No dollar figures are printed.",
+ "cost_usd": 0.006289319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "role": "Chair",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "role": "Vice Chair",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "role": "Clerk",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "status": "present",
+   "role": "",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "present",
+   "role": "",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "status": "present",
+   "role": "Land Use Director",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Rob Oliva",
+   "status": "present",
+   "role": "presenter, David Ross Associates",
+   "quote": "205 sunset lane - presented by rob oliva, david ross associates."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board endorsed the 205 Sunset Lane ANR plan creating Parcels A & B; Parcel A to be conveyed with Lot 1 on ANR Plan L-12530, giving lake access to the Lot 1 owner.",
+   "quote": "plan endorsed by board. plan creating parcels a & b."
+  },
+  {
+   "decision": "Board endorsed the 175 Northfield Road ANR plan and noted Northfield Road is a Scenic Road: tree cutting in the right-of-way needs Town permission via a joint hearing with the Planning Board and Tree Warden; driveway permits issued by DPW Director.",
+   "quote": "board noted that as northfield road is a scenic road, town permission will be required for any tree cutting"
+  },
+  {
+   "decision": "270 Electric Avenue Development Plan Review Decision recorded as endorsed.",
+   "quote": "270 electric avenue- development plan review decision endorsed."
+  },
+  {
+   "decision": "Board will inform the Town Manager of the decision not to exercise the right of first refusal on 150 and 164 White Street.",
+   "quote": "will inform town manager of same."
+  },
+  {
+   "decision": "Board to begin discussion of the new Site Plan Approval in late August.",
+   "quote": "board to begin discussion late-august."
+  },
+  {
+   "decision": "Board will continue bylaw review at its next meeting starting with Section 4.2.2.",
+   "quote": "board will continue review at next meeting starting with 4.2.2."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Open Space Ad Hoc Committee, 150 and 164 White Street (Chapter Land)",
+   "what_was_recorded": "Committee felt the dam on the property would be a liability and expense burden; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "would be a liability and expense burden"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANRs",
+   "resolution": "endorsed 205 Sunset Lane and 175 Northfield Road plans",
+   "quote": "plan creating parcels a & b.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "Informational meetings",
+   "resolution": "no action; see separate minutes",
+   "quote": "333 massachusetts avenue- see separate minutes.",
+   "tags": [
+    "informational meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 5/11/15, 6/22/15, 7/2/15 and hearing minutes (motions recorded, no result printed)",
+   "quote": "minutes approval: all minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "put together rfq for architect",
+   "tags": [
+    "committees",
+    "building reuse",
+    "agriculture",
+    "transportation",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "270 electric avenue- development plan review decision endorsed.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Director's items: 150 and 164 White Street right of first refusal",
+   "resolution": "passed, all aye; will inform Town Manager",
+   "quote": "motion, m. allison, to not exercise right of right refusal, second, k. chenis, all aye.",
+   "tags": [
+    "right of first refusal",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Director's items: bylaw updates",
+   "resolution": "continued to next meeting",
+   "quote": "a. burney distributed a new site plan approval for board perusal.",
+   "tags": [
+    "zoning bylaw",
+    "site plan approval",
+    "section 4.2"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "routine annual update letter to registry of deeds",
+   "tags": [
+    "registry of deeds",
+    "town election"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "july 27, august 10, august 24.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "noted",
+   "quote": "g. bittner noted that the green task force is looking for members",
+   "tags": [
+    "farmers market",
+    "green community"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 05/11/15",
+   "where": "list",
+   "quote": "minutes: 05/11/15 05/11/15- highfield village hearing"
+  },
+  {
+   "name": "Minutes 05/11/15- Highfield Village Hearing",
+   "where": "list",
+   "quote": "05/11/15- highfield village hearing"
+  },
+  {
+   "name": "Minutes 05/11/15- 270 Electric Avenue Hearing",
+   "where": "list",
+   "quote": "05/11/15- 270 electric avenue hearing"
+  },
+  {
+   "name": "Minutes 06/22/15",
+   "where": "list",
+   "quote": "05/11/15- 270 electric avenue hearing 06/22/15 07/02/15"
+  },
+  {
+   "name": "Minutes 07/02/15",
+   "where": "list",
+   "quote": "06/22/15 07/02/15 07/02/15- 270 electric avenue hearing"
+  },
+  {
+   "name": "Minutes 07/02/15- 270 Electric Avenue Hearing",
+   "where": "list",
+   "quote": "07/02/15- 270 electric avenue hearing"
+  },
+  {
+   "name": "ANR, 174 Northfield Road",
+   "where": "list",
+   "quote": "anr, 174 northfield road"
+  },
+  {
+   "name": "Letter to Registry of Deeds",
+   "where": "list",
+   "quote": "letter to registry of deeds"
+  },
+  {
+   "name": "270 Electric Avenue Development Plan Review Decision",
+   "where": "list",
+   "quote": "270 electric avenue development plan review decision"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 4.2.",
+   "where": "list",
+   "quote": "protective bylaw of the town of lunenburg, section 4.2."
+  },
+  {
+   "name": "ANR Plan L-12530 (endorsed March 9, 2015)",
+   "where": "text",
+   "quote": "lot 1 shown on anr plan l -12530 endorsed by the board on march 9, 2015."
+  },
+  {
+   "name": "new Site Plan Approval",
+   "where": "text",
+   "quote": "a. burney distributed a new site plan approval for board perusal."
+  },
+  {
+   "name": "RFQ for architect",
+   "where": "text",
+   "quote": "put together rfq for architect"
+  },
+  {
+   "name": "Talent Bank form",
+   "where": "text",
+   "quote": "should fill out a talent bank form"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "scenic road",
+  "right of first refusal",
+  "zoning bylaw",
+  "site plan approval",
+  "minutes approval",
+  "open space",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

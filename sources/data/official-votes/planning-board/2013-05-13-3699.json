@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-05-13",
  "docid": "3699",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from April 8, 2013",
+   "motion": "Approve the minutes of 4-8-13.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "4-8-13, motion to approve, mr. lockwood, second, mr. mcquaid"
   },
   {
-   "motion": "approve minutes from April 8, 2013 regarding 35 Leominster Road Public Hearing",
+   "motion": "Approve the 4-8-13 35 Leominster Road Public Hearing minutes.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "4-8-13, 35 leominster road public hearing, motion to approve, mr. lockwood, second, ms. bilotta-simeone"
   },
   {
-   "motion": "approve minutes from April 10, 2013",
+   "motion": "Approve the minutes of 4-10-13.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "4-10-13, motion to approve, mr. lockwood, second, ms. bilotta-simeone"
   },
   {
-   "motion": "approve minutes from April 10, 2013 regarding Aro Estates Public Hearing",
+   "motion": "Approve the 4-10-13 Aro Estates Public Hearing minutes.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "not stated",
@@ -44,7 +44,7 @@
    "quote": "4-10-13, aro estates public hearing, motion to approve, mr. lockwood, second, ms. bilotta-simeone"
   },
   {
-   "motion": "approve minutes from April 13, 2013 regarding Aro Estates Public Hearing",
+   "motion": "Approve the 4-13-13 Aro Estates Public Hearing minutes.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "not stated",
@@ -52,7 +52,7 @@
    "quote": "4-13-13, aro estates public hearing, motion to approve, mr. lockwood, second, ms. bilotta-simeone"
   },
   {
-   "motion": "approve minutes from April 20, 2013 regarding Aro Estates Public Hearing",
+   "motion": "Approve the 4-20-13 Aro Estates Public Hearing minutes.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "not stated",
@@ -61,6 +61,228 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes state \"were signed\" but record no explicit vote outcome (no \"unanimously approved,\" vote count, or \"so voted\" language). Adjournment time given (7:50 PM) but no motion to adjourn is recorded.",
- "cost_usd": 0.1051855
+ "note": "Plain text extraction, not a scan. Minutes-approval lines record motions and moved/seconded names but no printed result, so outcomes are 'not stated'. No motion is recorded for adjournment or for any other item. No dollar figures appear in the text. The minutes print no public comment section and no documents list.",
+ "cost_usd": 0.00585442,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, matthew allison, marion m. benson"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reorganization did not take place because the Chair was absent.",
+   "quote": "board reorganization: did not take place due to chair bakaysa's absence."
+  },
+  {
+   "decision": "Decision on forming a Master Plan Committee deferred until Chair Bakaysa is available.",
+   "quote": "decision will be deferred until chair bakaysa is available for discussion."
+  },
+  {
+   "decision": "Ms. Benson will ask Town Counsel whether the Chapter Land use is restricted to conservation or can be used for solar.",
+   "quote": "ms. benson will inquire of town counsel."
+  },
+  {
+   "decision": "Ms. Benson to check Chair Bakaysa's availability for a short meeting on May 28, 29, or 30 (reorganization discussed).",
+   "quote": "ms. benson to check on availability of chair bakaysa"
+  },
+  {
+   "decision": "Planning Director will request a Reviewing Engineer check of the New England Farms site digging.",
+   "quote": "planning director will request reviewing engineer check."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Zoning incentive payments from the State (Tri Town Landing)",
+   "what_was_recorded": "Mr. Lockwood asked about the status of State zoning incentive payments; Ms. Benson said the payments are handled between the State and the Town Manager. No figure was printed.",
+   "quote": "mr. lockwood inquired as to current status on zoning incentive payments from the state."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Complaint filed by O'Brien Homes Inc.",
+   "resolution": "noted",
+   "tags": [
+    "litigation",
+    "complaint"
+   ],
+   "quote": "ms. benson noted the complaint filed may 9, 2013 with the lunenburg town clerk, o'brien homes inc., plaintiff v. town of lunenburg and planning board"
+  },
+  {
+   "topic": "New board members",
+   "resolution": "noted",
+   "tags": [
+    "board membership"
+   ],
+   "quote": "board noted the two new members, damon mcquaid and matthew allison."
+  },
+  {
+   "topic": "Board reorganization",
+   "resolution": "did not take place; Chair absent",
+   "tags": [
+    "board reorganization"
+   ],
+   "quote": "board reorganization: did not take place due to chair bakaysa's absence."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "signed",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the following minutes were signed."
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, School Building Committee, Capital Planning Committee)",
+   "resolution": "noted",
+   "tags": [
+    "committees",
+    "school building",
+    "capital plan"
+   ],
+   "quote": "capital planning commit tee- ms. benson, as capital planning committee chair, noted plan passed at may 2013 town meeting."
+  },
+  {
+   "topic": "Planning Director's reports, new business and development status",
+   "resolution": "noted; Chapter Land question referred to Town Counsel",
+   "tags": [
+    "development",
+    "solar",
+    "zoning",
+    "marijuana",
+    "Asian Imperial",
+    "Emerald Place",
+    "Tri Town Landing"
+   ],
+   "quote": "ms. benson will inquire of town counsel."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "tags": [
+    "notices"
+   ],
+   "quote": "notices and communications: 1) open space conference, june 8, 2013, ashburnham ma."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting date not set; upcoming dates listed",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "the next meeting date was not set."
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "noted",
+   "tags": [
+    "board comments",
+    "Center planning",
+    "elderly housing"
+   ],
+   "quote": "mr. lockwood requested an update on status of primary school for elderly housing ."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 7:50 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Complaint filed May 9, 2013, O'Brien Homes Inc. v. Town of Lunenburg and Planning Board",
+   "where": "text",
+   "quote": "ms. benson noted the complaint filed may 9, 2013 with the lunenburg town clerk, o'brien homes inc., plaintiff v. town of lunenburg and planning board"
+  },
+  {
+   "name": "Telegram and Gazette article of May 2, 2013 on State solar goal",
+   "where": "text",
+   "quote": "telegram and gazet te article stating gov. patrick's administration set a new goal"
+  },
+  {
+   "name": "Sentinel and Enterprise article on medical marijuana regulations",
+   "where": "text",
+   "quote": "noted sentinel and enterprise article stating massachusetts officials approved"
+  },
+  {
+   "name": "House Bill #1859 (zoning reform)",
+   "where": "text",
+   "quote": "massplanners will be holding their hearing on house bill #1859 (zoning reform) on may 14, 2013"
+  },
+  {
+   "name": "Email from SelectBoard Chair on TC Passios surplus discussion",
+   "where": "text",
+   "quote": "ms. benson noted email from selectboard chair noting they started"
+  },
+  {
+   "name": "Weekly reports for Tri Town Landing",
+   "where": "text",
+   "quote": "work continues with weekly reports being provided to the planning office."
+  },
+  {
+   "name": "Right To Farm Bylaw (Agricultural Commission draft)",
+   "where": "text",
+   "quote": "hopes to present a right to farm bylaw for fall special town meeting."
+  },
+  {
+   "name": "Open Space Conference notice, June 8, 2013, Ashburnham MA",
+   "where": "text",
+   "quote": "notices and communications: 1) open space conference, june 8, 2013, ashburnham ma."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "development status",
+  "solar",
+  "litigation",
+  "board reorganization",
+  "committee reports",
+  "minutes approval",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-11-23",
  "docid": "4740",
@@ -12,39 +12,582 @@
  },
  "votes": [
   {
-   "motion": "Grant Wine & Malt License to Central Mass Gardens at 621 Chase Road",
-   "moved_by": "Dave",
-   "seconded_by": "Tom",
+   "motion": "Grant the liquor license (Wine & Malt) to Central Mass Gardens, not Alliance Energy LLC d/b/a Mr. Mikes.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Tom Alonzo",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "dave noted that just geographically and for a new value to the town, he would motion to grant license to central mass, tom seconded, dave aye, tom aye, ernie aye; steve and paula no."
+   "quote": "he would motion to grant license to central mass, tom seconded, dave aye, tom aye, ernie aye; steve and paula no."
   },
   {
-   "motion": "Approve Pedlar's License for Richard Woods d/b/a Rick's Foods contingent upon satisfactory CORI check and food service permit",
-   "moved_by": "Ernie",
-   "seconded_by": "Steve",
-   "outcome": "passed",
+   "motion": "Approve the Pedlar's License for Richard Woods d/b/a Rick's Foods, contingent upon satisfactory CORI check and food service permit.",
+   "moved_by": "Ernie Sund",
+   "seconded_by": "Steven M. deBettencourt",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "ernie motion to approve contingent upon satisfactory cori check and food service permit, steve seconded voted unanimously to approve."
   },
   {
-   "motion": "Appoint Michael Wallmann to the PACC Committee",
-   "moved_by": "Dave",
-   "seconded_by": "Tom",
-   "outcome": "passed",
+   "motion": "Appoint Michael Wahlman (printed as Michael Wallmann) to the PACC Committee.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Tom Alonzo",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "dave motion to appoint michael wallmann tom seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn Regular Session",
+   "motion": "Adjourn the Regular Session at 9:45 P.M.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 9:45 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. The Holman Street bridge closure and Summer Street Alternatives Analysis items were discussed but no Board votes were recorded on them in these minutes.",
- "cost_usd": 0.1428375
+ "note": "Text is OCR of a scanned minutes packet (pages 1-5 are the minutes; pages 6-31 are attached documents appended to the text). OCR errors are present: the header reads 'Emie Sund' and 'Town Hail' while the body reads 'Ernie'; I used 'Ernie Sund'. Michael Wahlman is printed as 'Michael Wallmann' in the motion. Dave Matthews is also printed as 'Mathews'. The Executive Session is listed but the minutes record no motion to enter it. The Holman Street, Summer Street, Jones House and aggregation items have discussion but no motion. The Special Town Meeting appropriations and transfers are described as proposals; the minutes record no vote on them. The Pedlar's license vote is recorded as unanimous without a count.",
+ "cost_usd": 0.01927972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hail, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hail, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hail, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hail, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hail, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the town hail, joseph f. bilotta meeting room as scheduled with paula bertram, steven m. debettencourt, emie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Brian Murphy",
+   "role": "of Colonial Power Group",
+   "status": "present",
+   "quote": "brian murphy, of colonial power group was present and noted that the first item that needs to be taken care of is town meeting vote"
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "VHB",
+   "status": "present",
+   "quote": "3. 7:45 pm trish domigan, vhb, summer street alternatives analysis -"
+  },
+  {
+   "name": "Chriztine Foltz",
+   "role": "Historical Commission, 284 Lancaster Ave",
+   "status": "present",
+   "quote": "chriztine foltz of 284 lancaster ave, presented information to"
+  },
+  {
+   "name": "Martha Cheesman",
+   "role": "Chair of the Public Access Cable Committee (PACC)",
+   "status": "present",
+   "quote": "martha cheesman chair of the public access cable committee (pacc) and member fred crellin introduced recently hired coordinators"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "member, PACC",
+   "status": "present",
+   "quote": "martha cheesman chair of the public access cable committee (pacc) and member fred crellin introduced recently hired coordinators"
+  },
+  {
+   "name": "Joann McLaughlin",
+   "role": "Administrative Coordinator, PACC",
+   "status": "present",
+   "quote": "introduced recently hired coordinators joann mclaughlin as administrative coordintor and john gugarty as"
+  },
+  {
+   "name": "John Gugarty",
+   "role": "Production Coordinator, PACC",
+   "status": "present",
+   "quote": "introduced recently hired coordinators joann mclaughlin as administrative coordintor and john gugarty as"
+  },
+  {
+   "name": "Michael Wahlman",
+   "role": "student, 42 Houghtons Mill Road; interested in PACC membership",
+   "status": "present",
+   "quote": "also introduced michael wahlman of 42 houghtons mill road, a student who is interested in"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz came before the board to"
+  },
+  {
+   "name": "Richard Woods",
+   "role": "applicant, Pedlar's License (Rick's Foods)",
+   "status": "not stated",
+   "quote": "mr. richard woods has submitted an application for pedars license to operate"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Liquor licensing: the board said it would ask the State for special legislation to allow more licenses, and Tom Alonzo said he emailed the State Senator and Representative to lobby to remove the quota.",
+   "quote": "tom has sent an email to both the state senator and representative asking them to lobby to remove the cap (quota)"
+  },
+  {
+   "decision": "The Town Manager will check into the Police Special Detail payment terms and report back to the board (COD).",
+   "quote": "kerry will check into this and get back to the board."
+  },
+  {
+   "decision": "The Town Manager will have the DPW Director look into the lane markings and striping on Lancaster Ave, Whalom Road and West Street, and decide whether an engineer should review them.",
+   "quote": "kerry will have dpw director look into this and discuss whether he is comfortable with these corrections or whether we should have an engineer look into these."
+  },
+  {
+   "decision": "The Town Manager will speak with John DiNapoli to see what Unitil can provide to ensure the reported electric issues are addressed.",
+   "quote": "kerry will speak with john dinapoli to see what he could provide us to ensure that these issues are being addressed."
+  },
+  {
+   "decision": "The Town Manager will forward the Talent Bank form from Neil Sullivan to the Green Communities Task Force for the alternate position.",
+   "quote": "office has a talent bank form from neil sullivan and will forward to task force."
+  },
+  {
+   "decision": "The IBPO contract is passed over; no progress will be ready.",
+   "quote": "pass over making progress but no way that anything will be ready."
+  },
+  {
+   "decision": "The Dispatcher's Contract is to be discussed in Executive Session.",
+   "quote": "dispatcher's contract - to be discussed in executive session"
+  },
+  {
+   "decision": "The town will resubmit the MRPC grant application for the Summer Street survey work within the next few days.",
+   "quote": "we will be resubmitting an application within the next few days."
+  },
+  {
+   "decision": "A public hearing on the Aggregation Plan will be scheduled for next month.",
+   "quote": "we should have a public hearing which will be scheduled for next month."
+  },
+  {
+   "decision": "Before any public hearing on the Holman Street closure, the board wants maps and GIS material available to it, and the VHB information, FEMA report and GIS material reviewed.",
+   "quote": "would like to have maps, gis available to the board before the public hearing."
+  },
+  {
+   "decision": "The town will provide the board with the structural reports on the bridge.",
+   "quote": "town does have structural reports on the integrity of the bridge and will be provided to the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street design fee",
+   "what_was_recorded": "Paula estimated the Summer Street design fee at $600,000, and the board discussed how the final streetscape concept could change it.",
+   "figures_as_printed": [
+    "$600,000"
+   ],
+   "quote": "paula estimated design fee is $600,000 and noted that when we get the final street scape concept and whether this would reduce the"
+  },
+  {
+   "topic": "Summer Street Alternatives Analysis cost",
+   "what_was_recorded": "The Alternatives Analysis costs $56,000; the Town Manager asks that it be funded from Free Cash at the Special Town Meeting.",
+   "figures_as_printed": [
+    "$56,000"
+   ],
+   "quote": "the cost is $56,000 and kerry is requesting that this expenditure be funded through a free cash appropriation at the special town"
+  },
+  {
+   "topic": "Summer Street proposal reduction",
+   "what_was_recorded": "Trish said the proposal would be reduced by about $5,000 because Fitchburg wants to be included and the cost of the traffic analysis would be shared.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "proposal will be reduced by about $5,000 as you would be sharing the cost of the traffic analysis."
+  },
+  {
+   "topic": "Free Cash source",
+   "what_was_recorded": "The board noted that free cash is available because of local fees from the TriTown development and Emerald Place.",
+   "figures_as_printed": [],
+   "quote": "noted that the reason we have free cash available is due to the fees that were collected at the local level with respect to the tritown development and emerald place."
+  },
+  {
+   "topic": "VHB agreement compensation and direct-cost upset limit (attached agreement)",
+   "what_was_recorded": "The attached VHB agreement lists a fixed labor fee, estimated direct costs, a total estimated cost, and an initial upset limit for direct costs.",
+   "figures_as_printed": [
+    "$49,500.00",
+    "$5,000.00",
+    "$1,500.00",
+    "$56,000.00"
+   ],
+   "quote": "an initial upset limit for direct costs of $5,000.00 has been established"
+  },
+  {
+   "topic": "Municipal aggregation adder (attached plan)",
+   "what_was_recorded": "The draft aggregation plan sets a maximum adder payable to Colonial Power Group that would fund ongoing program costs.",
+   "figures_as_printed": [
+    "$0.001/kWh"
+   ],
+   "quote": "the electric supply agreement with a competitive supplier will include a maximum of $0.001/kwh adder"
+  },
+  {
+   "topic": "Pearl Brook energy rebates",
+   "what_was_recorded": "Paula reported that Pearl Brook will receive $43,000 in energy efficiency rebates.",
+   "figures_as_printed": [
+    "$43,000"
+   ],
+   "quote": "pearl brook will be receiving $43,000 in energy efficiency rebates."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Warrants totaling the amounts printed were reviewed and signed.",
+   "figures_as_printed": [
+    "$146,813.39",
+    "$672,182.12",
+    "$621,409.04",
+    "$486.90"
+   ],
+   "quote": "warrants - #29 11, 11/24/10 - $146,813.39, #11p 11, 11/24/10 - $672,182.12"
+  },
+  {
+   "topic": "Finance Committee budget recommendations",
+   "what_was_recorded": "The Finance Committee discussed the budget recommendations and the police cruiser at length and voted to recommend two base vehicles.",
+   "figures_as_printed": [],
+   "quote": "finance committee met on thursday and discussed at length the budget recommendations and the police cruiser"
+  },
+  {
+   "topic": "Holman Street bridge repair estimate and FEMA funds",
+   "what_was_recorded": "One repair estimate was about $5,000, and the town has received about $4,000 from FEMA to repair the bridge.",
+   "figures_as_printed": [
+    "$5,000",
+    "$4,000"
+   ],
+   "quote": "per jack we had one estimate at approximately $5,000"
+  },
+  {
+   "topic": "FY2011 budget adjustment and deficits",
+   "what_was_recorded": "The board discussed reducing the Monty Tech assessment and appropriating for the snow and ice and ice storm deficits for the Special Town Meeting.",
+   "figures_as_printed": [
+    "$2,096",
+    "$51,100.02",
+    "$143,591.49"
+   ],
+   "quote": "looking at reducing monty tech assessment by $2,096 and appropriate for remaining snow and ice deficit of $51,100.02 and the ice storm deficit of $143,591.49."
+  },
+  {
+   "topic": "Police Special Detail Fund",
+   "what_was_recorded": "IBPO agreed on $5,000.00 for the Police Special Detail Fund, to be appropriated from Free Cash as a negotiated-agreement requirement.",
+   "figures_as_printed": [
+    "$5,000.00"
+   ],
+   "quote": "ibpo have agreed on the amount of $5,000.00 and this would be appropriated from free cash"
+  },
+  {
+   "topic": "School Custodial Detail revolving cap",
+   "what_was_recorded": "The not-to-exceed cap for the School Custodial Detail revolving account set at the last Annual Town Meeting was $25,000.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "the not to exceed cap established for this fund at the last annual town meeting was $25,000."
+  },
+  {
+   "topic": "Police cruisers purchase",
+   "what_was_recorded": "Two police cruisers would be funded by a $29,000.00 Free Cash appropriation and an $18,716.51 transfer from the Salary Reserve appropriation.",
+   "figures_as_printed": [
+    "$29,000.00",
+    "$18,716.51"
+   ],
+   "quote": "appropriation would be $29,000.00 from free cash and transfer $18,716.51 from salary reserve appropriation for the purchase of two cruisers"
+  },
+  {
+   "topic": "Certified Free Cash (attached spreadsheet)",
+   "what_was_recorded": "The attached spreadsheet shows Free Cash as certified at $239,841.",
+   "figures_as_printed": [
+    "$239,841"
+   ],
+   "quote": "free cash (amount certified $239,841)"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reduce the Monty Tech assessment and appropriate the remainder to the snow and ice deficit and ice storm deficit (FY2011 budget adjustment).",
+   "amount_as_printed": "$2,096",
+   "outcome": "proposed for Special Town Meeting; no vote recorded",
+   "quote": "looking at reducing monty tech assessment by $2,096 and appropriate for remaining snow and ice deficit of $51,100.02"
+  },
+  {
+   "description": "Transfer from Salary Reserve appropriation to fund the purchase of two police cruisers, with a $29,000.00 Free Cash appropriation.",
+   "amount_as_printed": "$18,716.51",
+   "outcome": "proposed for Special Town Meeting; no vote recorded",
+   "quote": "appropriation would be $29,000.00 from free cash and transfer $18,716.51 from salary reserve appropriation for the purchase of two cruisers"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Tom",
+   "stated_role": "",
+   "topic": "Thanksgiving greeting",
+   "quote": "tom wished everyone a special thanksgiving."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "Special Town Meeting attendance",
+   "quote": "dave noted that next week is special town meeting and urged everyone to attend."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "tom wished everyone a special thanksgiving.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Liquor license applications, reconvened public hearing (7:15 PM)",
+   "resolution": "Central Mass Gardens granted 3-2; Mr. Mikes not granted",
+   "quote": "reconvened public hearing on the two liquor license applications from november 16, 2010",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Pedlar's License, Richard Woods d/b/a Rick's Foods (7:30 PM)",
+   "resolution": "approved contingent on CORI check and food service permit",
+   "quote": "pedlar's license for richard woods d/b/a rick's foods",
+   "tags": [
+    "license",
+    "mobile food"
+   ]
+  },
+  {
+   "topic": "Summer Street Alternatives Analysis, VHB (7:45 PM)",
+   "resolution": "continued; $56,000 to be requested from Free Cash at Special Town Meeting",
+   "quote": "3. 7:45 pm trish domigan, vhb, summer street alternatives analysis -",
+   "tags": [
+    "Summer Street",
+    "engineering",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Municipal Aggregation, Colonial Power Group (8:00 PM)",
+   "resolution": "no action; public hearing to be scheduled next month",
+   "quote": "4. 8:00 pm colonial power group - municipal aggregation - kerry provided a copy of the draft municipal aggregation plan which",
+   "tags": [
+    "electric aggregation",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Jones House sale, Historical Commission (8:15 PM)",
+   "resolution": "no action; presented in support of Special Town Meeting article",
+   "quote": "5. 8:15 pm chriztine foltz, historical commission, jones house - chriztine foltz of 284 lancaster ave, presented information to",
+   "tags": [
+    "Jones House",
+    "historic property",
+    "sale"
+   ]
+  },
+  {
+   "topic": "PACC update and coordinator introductions",
+   "resolution": "appointed Michael Wahlman (printed Wallmann) to PACC",
+   "quote": "1. pacc update, introduction of coordinators -martha cheesman chair of the public access cable committee (pacc) and",
+   "tags": [
+    "public access TV",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Holman Street permanent closure at bridge",
+   "resolution": "no action; board wants maps, GIS and structural reports before public hearing",
+   "quote": "request for permanent closure of holman street at bridge - kerry has received a response from both the fire and police",
+   "tags": [
+    "Holman Street",
+    "bridge",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "warrants reviewed and signed; no minutes",
+   "quote": "warrants - #29 11, 11/24/10 - $146,813.39",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action file issues",
+   "resolution": "DPW Director to look into striping and markings",
+   "quote": "tom mentioned that a resident that on lancaster ave and route 2a and questioned the marking on lancaster ave.",
+   "tags": [
+    "traffic markings",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action; Unitil and energy topics discussed",
+   "quote": "dave school committee met last week and in early budget stages.",
+   "tags": [
+    "committees",
+    "Unitil",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "no action",
+   "quote": "5. department updates - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager updates, fleet expansion",
+   "resolution": "no action; staff present for questions",
+   "quote": "a) fleet expansion kerry would like to have staff present in case there are any specific questions.",
+   "tags": [
+    "fleet",
+    "police"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "discussed; Summer Street funding, police detail, cruisers, budget adjustment",
+   "quote": "1. special town meeting warrant articles - kerry provided the attached spreadsheet showing the changes in revenues and",
+   "tags": [
+    "Special Town Meeting",
+    "budget",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Committee appointments: Green Communities Task Force alternate",
+   "resolution": "Talent Bank form forwarded to Task Force",
+   "quote": "green communities task force alternate position; office has a talent bank form from neil sullivan and will forward to task",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session (listed)",
+   "resolution": "listed on agenda; no vote to enter recorded",
+   "quote": "m.g.l. chapter 39, §23b(3) to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "no action",
+   "quote": "november 30, special town meeting",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:45 P.M.",
+   "quote": "being no further business board voted unanimously to adjourn regular session at 9:45 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Summer Street Alternatives Analysis composite (scope of work)",
+   "where": "list",
+   "quote": "attached is the requested alternatives analysis composite."
+  },
+  {
+   "name": "Draft Municipal Aggregation Plan",
+   "where": "list",
+   "quote": "kerry provided a copy of the draft municipal aggregation plan which"
+  },
+  {
+   "name": "Spreadsheet showing changes in revenues and expenditures from the May town meeting",
+   "where": "list",
+   "quote": "kerry provided the attached spreadsheet showing the changes in revenues and"
+  },
+  {
+   "name": "Scope of Work for an Alternatives Analysis",
+   "where": "text",
+   "quote": "asked her to prepare a scope of work for an alternatives analysis, which is one aspect of the project design."
+  },
+  {
+   "name": "Talent Bank form from Neil Sullivan",
+   "where": "text",
+   "quote": "office has a talent bank form from neil sullivan and will forward to task force."
+  },
+  {
+   "name": "Structural reports on the integrity of the bridge",
+   "where": "text",
+   "quote": "town does have structural reports on the integrity of the bridge and will be provided to the board."
+  },
+  {
+   "name": "FEMA report",
+   "where": "text",
+   "quote": "paula would like to see the information from vhb, the fema report, gis to review."
+  },
+  {
+   "name": "Request for Proposal for sale of the Jones House",
+   "where": "text",
+   "quote": "the historical commission recommends the sale of this property and has created a request for proposal to do so"
+  },
+  {
+   "name": "Historical data on Police Special Detail account activity (prior email)",
+   "where": "text",
+   "quote": "kerry provided the board with historical data as to the level of activity in this account in a prior email."
+  },
+  {
+   "name": "Document from Rhonda Newman giving Richard Woods permission to operate at RG Scooters",
+   "where": "text",
+   "quote": "mr. woods also provided a document from rhonda newman, owner of rg scooters giving him permission to operate at her location"
+  },
+  {
+   "name": "Liquor license applications (Alliance Energy LLC d/b/a Mr. Mikes; Central Mass Gardens)",
+   "where": "text",
+   "quote": "reconvened public hearing on the two liquor license applications from november 16, 2010"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "Summer Street",
+  "municipal aggregation",
+  "Jones House",
+  "PACC",
+  "Holman Street",
+  "Special Town Meeting",
+  "warrants",
+  "free cash",
+  "Unitil",
+  "budget",
+  "police",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached is the requested alternatives analysis composite"
+ },
+ "dropped_unquoted_by_field": {}
 }

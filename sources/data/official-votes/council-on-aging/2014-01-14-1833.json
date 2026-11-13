@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2014-01-14",
  "docid": "1833",
@@ -12,25 +12,281 @@
  },
  "votes": [
   {
-   "motion": "Accept the December 10, 2013 COA minutes with corrections",
-   "moved_by": "Connie O'Dea",
-   "seconded_by": "Whitney Lacka",
+   "motion": "Accept the 12/10/2013 COA minutes with corrections.",
+   "moved_by": "Ms. O’Dea",
+   "seconded_by": "Ms. Lacka",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. o'dea moved to accept the 12/10/2013 coa minute s with corrections. ms. lacka seconded. on vote, motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. o'dea moved to accept the 12/10/2013 coa minute s with corrections. ms. lacka seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Accept the FY15 budget as presented",
-   "moved_by": "Shirley Bertone",
-   "seconded_by": "Joyce Wass",
+   "motion": "Accept the FY15 budget as presented.",
+   "moved_by": "Ms. Bertone",
+   "seconded_by": "Ms. Wass",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "ms. bertone moved to accept the fy15 budget as pres ented. ms. wass seconded. on vote, motion carried unanimously",
+   "quote": "ms. bertone moved to accept the fy15 budget as pres ented. ms. wass seconded. on vote, motion carried unanimously."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. O’Dea",
+   "seconded_by": "Ms. Lacka",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "being no further business, ms. o'dea moved to adjou rn the meeting. ms. lacka seconded. on vote, motion carried unanimously.",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0945765
+ "dropped_unquoted": 0,
+ "note": "Text extraction has broken word spacing in places (e.g. 'minute s', 'pres ented', 'adj ourn'); quotes reproduce it as printed. Votes are recorded only as 'carried unanimously' with no tally. No public comment section is printed. The minutes header says they were approved at the 3/11/14 COA meeting; this record is the January 14, 2014 meeting. Budget items in the Director's Report and FY15 discussion are not presented as formal dollar amounts beyond the percentages and rates printed.",
+ "cost_usd": 0.007720619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "mary lynn conrad, (chairperson), barbara brown (vi ce-chairperson), doreen noble"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "mary lynn conrad, (chairperson), barbara brown (vi ce-chairperson), doreen noble"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "mary lynn conrad, (chairperson), barbara brown (vi ce-chairperson), doreen noble"
+  },
+  {
+   "name": "Joyce Wass",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, whitney lacka, shirley bertone, tony bertone, & judy tarbell"
+  },
+  {
+   "name": "Connie O’Dea",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, whitney lacka, shirley bertone, tony bertone, & judy tarbell"
+  },
+  {
+   "name": "Whitney Lacka",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, whitney lacka, shirley bertone, tony bertone, & judy tarbell"
+  },
+  {
+   "name": "Shirley Bertone",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, whitney lacka, shirley bertone, tony bertone, & judy tarbell"
+  },
+  {
+   "name": "Tony Bertone",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, whitney lacka, shirley bertone, tony bertone, & judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "joyce wass, connie o'dea, whitney lacka, shirley bertone, tony bertone, & judy tarbell"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "absent",
+   "quote": "deb seeley, jane doyle, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "absent",
+   "quote": "deb seeley, jane doyle, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "absent",
+   "quote": "deb seeley, jane doyle, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Karen Menard",
+   "role": "Lunenburg Finance Committee member",
+   "status": "present",
+   "quote": "karen menard, lunenburg finance committee member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karen Menard offered to look into the taxation of seniors' Tax Work-Off earnings further and report back to the COA.",
+   "quote": "karen menard offered to look into this further and report back to the coa."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY15 COA budget share of town budget",
+   "what_was_recorded": "The Director said the COA budget is only .4% of the overall budget, with seniors about 25% of the population.",
+   "figures_as_printed": [
+    ".4%",
+    "25%"
+   ],
+   "quote": "is only .4% of the overall budget, with seniors comprising of about 25% of the population."
+  },
+  {
+   "topic": "Director's salary increase",
+   "what_was_recorded": "The FY15 budget includes a 3% contractual increase in the Director's salary.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "including a 3% contractual increase in the director's salary"
+  },
+  {
+   "topic": "Administrative Assistants salary increase",
+   "what_was_recorded": "The FY15 budget includes an approximately 60 cent an hour increase for the Administrative Assistants, depending on union negotiations.",
+   "figures_as_printed": [
+    "60 cents"
+   ],
+   "quote": "approximately 60 cents an hour increase in the administrative assistants salary"
+  },
+  {
+   "topic": "Dietary aides salaries",
+   "what_was_recorded": "Two new dietary aides hired part time were to be paid from the Formula Grant.",
+   "figures_as_printed": [],
+   "quote": "their salaries will be paid out of the formula grant."
+  },
+  {
+   "topic": "Kitchen program dollar amount",
+   "what_was_recorded": "The Senior Center's supplementation of Soup & Salad days makes it necessary to increase the dollar amount in the FY15 budget for the kitchen program.",
+   "figures_as_printed": [],
+   "quote": "increase the dollar amount to the fy15 budget for the kitchen program"
+  },
+  {
+   "topic": "Training line",
+   "what_was_recorded": "The training line increase is for retraining staff when changes occur.",
+   "figures_as_printed": [],
+   "quote": "is for retraining staff members when changes occur."
+  },
+  {
+   "topic": "Taxation of Tax Work-Off earnings",
+   "what_was_recorded": "Discussion concerned taxation on seniors' earnings in the Tax Work-Off Program; the Town Accountant said it follows IRS regulations.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued concerning the taxation on the earnings of the seniors in this program."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome",
+   "resolution": "meeting opened",
+   "quote": "wished everyone a happy new year.",
+   "tags": [
+    "welcome"
+   ]
+  },
+  {
+   "topic": "Minutes of 12/10/2013",
+   "resolution": "approved with corrections",
+   "quote": "ms. o'dea moved to accept the 12/10/2013 coa minute s with corrections. ms. lacka seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational, no action",
+   "quote": "ms. noble stated that the kitchen is doing well",
+   "tags": [
+    "director report",
+    "kitchen",
+    "transportation",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Old Business: Budget FY15",
+   "resolution": "approved as presented",
+   "quote": "ms. noble handed out copies of the coa budget for fy15 to each member.",
+   "tags": [
+    "budget",
+    "FY15"
+   ]
+  },
+  {
+   "topic": "New Business: Tax Work-Off Program",
+   "resolution": "discussed; Karen Menard to look into taxation",
+   "quote": "discussion ensued concerning the taxation on the earnings of the seniors in this program.",
+   "tags": [
+    "tax work-off",
+    "taxation"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Reports",
+   "resolution": "no reports",
+   "quote": "director's evaluation: no reports",
+   "tags": [
+    "subcommittees"
+   ]
+  },
+  {
+   "topic": "Subcommittee Minutes & Agenda Submittals",
+   "resolution": "not discussed",
+   "quote": "subcommittee minutes & agenda submittals : not discussed",
+   "tags": [
+    "subcommittees"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted",
+   "quote": "ms. conrad received a note from former coa board member gloria o'brien saying that she was doing well.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:50AM",
+   "quote": "meeting adjourned at 11:50am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA budget for FY15",
+   "where": "list",
+   "quote": "ms. noble handed out copies of the coa budget for fy15 to each member."
+  },
+  {
+   "name": "Revised Director’s Job Description",
+   "where": "text",
+   "quote": "copies of the revised director's job description and the revised director's evaluation tool were handed out to each member of the coa board."
+  },
+  {
+   "name": "Revised Director’s Evaluation Tool",
+   "where": "text",
+   "quote": "copies of the revised director's job description and the revised director's evaluation tool were handed out to each member of the coa board."
+  },
+  {
+   "name": "Director’s Evaluation Committee meeting minutes of November 4, 2013",
+   "where": "text",
+   "quote": "meeting minutes of the director's evaluation committee were accepted at the december 10, 2013 meeting of the coa."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "FY15 budget",
+  "tax work-off program",
+  "taxation",
+  "kitchen",
+  "transportation",
+  "outreach",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. noble handed out copies of the coa budget for fy15 to each member"
+ },
+ "dropped_unquoted_by_field": {}
 }

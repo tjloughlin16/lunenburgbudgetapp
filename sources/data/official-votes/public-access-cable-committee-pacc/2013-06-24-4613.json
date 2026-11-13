@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2013-06-24",
  "docid": "4613",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes for May 6th",
+   "motion": "Approve the minutes of May 6th.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "the minutes for may 6th were approved."
   },
   {
-   "motion": "to direct Jo to call B&H to see if a $65 extended warranty can be rescinded",
+   "motion": "Direct Jo to call B&H to see if a $65 extended warranty can be rescinded, with the Chair to sign a correcting voucher if needed pending their response.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -29,6 +29,168 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcript from macOS Vision. Two pages. The minutes record two votes: approval of prior minutes (procedural) and a motion on warranty resolution (substantive). Moved-by and seconded-by names are not stated for either vote.",
- "cost_usd": 0.08532050000000001
+ "note": "OCR text with garbled passages: the line beginning 'There agent problem in the idea Altin a bo explore' is unreadable and was not recorded; names such as 'Hiackory Hills' and 'Alumnit Hall of Fame' are OCR errors; 'July 4*' and 'July 16'h' are as printed. No mover, seconder, or vote counts are printed for any motion. Names mentioned only in passing (Dave Macdonald, Mike, Jamie, Brian McCarthy, John Dextraze, Bea Adams, Chief Sullivan, Mandy Lawson, Jason Kearns, Tim Murphy) were not recorded as attendees. No dollar figure is printed beyond $65.",
+ "cost_usd": 0.00422152,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, fred crellin, rhonda lisio"
+  },
+  {
+   "name": "JoMcLaughlin",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: jomclaughlin,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Pending B&H's response, the Chair will sign the appropriate voucher making a correction, if needed.",
+   "quote": "pending their response, the chair will sign the appropriate voucher making a correction (if needed)."
+  },
+  {
+   "decision": "Chair Lance May approved the PACC Coordinator's step increase form for the Personnel Board.",
+   "quote": "lance may, as chair, approved the pacc coordinator's step increase form for the personnel board."
+  },
+  {
+   "decision": "The question of needing two PCs compatible with the dome cameras was carried over to the August meeting.",
+   "quote": "it will be brought up again in the august meeting."
+  },
+  {
+   "decision": "Jo will check whether FATV's tape of the July 4th parade is available.",
+   "quote": "jo will check to see if fatv's tape of the july 4*' parade is available."
+  },
+  {
+   "decision": "The next meeting is set for July 16th at 7:00pm at the Studio.",
+   "quote": "the next meeting will be july 16'h , 7:00pm at the studio."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "B&H extended warranty",
+   "what_was_recorded": "Board directed Jo to call B&H about rescinding a $65 extended warranty; the Chair may sign a correcting voucher pending response.",
+   "figures_as_printed": [
+    "$65"
+   ],
+   "quote": "a motion was made (and passed) to direct jo to call b&h to see if a $65 extended warranty can be rescinded."
+  },
+  {
+   "topic": "Correcting voucher",
+   "what_was_recorded": "The Chair will sign a voucher making a correction, if needed, pending B&H's response.",
+   "figures_as_printed": [],
+   "quote": "pending their response, the chair will sign the appropriate voucher making a correction (if needed)."
+  },
+  {
+   "topic": "PACC Coordinator step increase",
+   "what_was_recorded": "The Chair approved the PACC Coordinator's step increase form for the Personnel Board; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "lance may, as chair, approved the pacc coordinator's step increase form for the personnel board."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "approved minutes of May 6th",
+   "quote": "the minutes for may 6th were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comments",
+   "resolution": "no public comment",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: Studio Update",
+   "resolution": "no action; updates reported",
+   "quote": "dave macdonald's donation of a carpet for the studio has been approved by the selectmen and has been installed.",
+   "tags": [
+    "studio",
+    "donation",
+    "training"
+   ]
+  },
+  {
+   "topic": "Old Business: Programming Update",
+   "resolution": "no action; updates reported",
+   "quote": "there is a gardening show in progress.",
+   "tags": [
+    "programming",
+    "summer events",
+    "religious programming"
+   ]
+  },
+  {
+   "topic": "Old Business: Equipment Update",
+   "resolution": "warranty motion passed; PC need deferred to August",
+   "quote": "there was a discussion of the need for two pc's, compatible with the dome cameras etc.",
+   "tags": [
+    "equipment",
+    "warranty"
+   ]
+  },
+  {
+   "topic": "Jo's Progress Report",
+   "resolution": "no action; report given",
+   "quote": "municipal meetings will be uploaded to youtube starting the week of 6/24.",
+   "tags": [
+    "youtube",
+    "municipal meetings"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "chair approved step increase form",
+   "quote": "lance may, as chair, approved the pacc coordinator's step increase form for the personnel board.",
+   "tags": [
+    "personnel",
+    "staff"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for July 16th; adjourned 9:30 pm",
+   "quote": "the meeting adjourned at 9:30 pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access television",
+  "studio",
+  "equipment",
+  "programming",
+  "warranty",
+  "personnel",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

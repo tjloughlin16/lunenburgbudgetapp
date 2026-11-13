@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-05-20",
  "docid": "2791",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Appoint Gare Thompson to the Library Board seat vacated by Joanne McQuaid",
+   "motion": "Appoint Gare Thompson to the seat vacated by Joanne McQuaid (LPL Trustee vote)",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Robin Venezia",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made by dick mailloux to appoint gare thompson to the seat vacated by joanne mcquaid, seconded by robin venezia. all voted in favor."
   },
   {
-   "motion": "Appoint Gare Thompson to the Library Board seat vacated by Joanne McQuaid",
+   "motion": "Appoint Gare Thompson to the seat vacated by Joanne McQuaid (Board of Selectmen vote)",
    "moved_by": "Bob Ebersole",
    "seconded_by": "Paula Bertram",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made by bob ebersole, bos, to appoint gare thompson to the seat vacated by joanne mcquaid, seconded by paula bertram. all bos members voted in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the LPL Trustee meeting at 7:17 p.m.",
    "moved_by": "Jeanne",
    "seconded_by": "Harry",
    "outcome": "passed",
@@ -37,6 +37,147 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1008185
+ "note": "Text is a single-page extraction with no scan problems. Names vary in the minutes: the chair is \"Jeanne Raboin\" in the attendance line and \"Jean Raboin\"/\"Chairman Jean Raboin\" elsewhere; BOS member Robert Ebersole is \"Bob Ebersole\" in the motion. Vote outcomes are recorded only as \"All voted in favor\" / \"All BOS members voted in favor\", with no counts. Attendance is listed in the header; no absences or remote participation are noted. No public comment section and no dollar figures appear.",
+ "cost_usd": 0.00406572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "chair",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "vice-chair",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "trustee",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "secretary",
+   "status": "present",
+   "quote": "attending: jeanne raboin (chair), dick mailloux (vice-chair), harry kubetz, gare thompson, robin venezia, susan visser, lars widstrand (secretary)"
+  },
+  {
+   "name": "Thomas A. Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "attending from bos: thomas a. alonzo, paula j. bertram, jamie toale, robert ebersole, phyllis luck , kerry speidel (town manager)"
+  },
+  {
+   "name": "Paula J. Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "attending from bos: thomas a. alonzo, paula j. bertram, jamie toale, robert ebersole, phyllis luck , kerry speidel (town manager)"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "attending from bos: thomas a. alonzo, paula j. bertram, jamie toale, robert ebersole, phyllis luck , kerry speidel (town manager)"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen (called Bob Ebersole in the motion)",
+   "status": "present",
+   "quote": "attending from bos: thomas a. alonzo, paula j. bertram, jamie toale, robert ebersole, phyllis luck , kerry speidel (town manager)"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "attending from bos: thomas a. alonzo, paula j. bertram, jamie toale, robert ebersole, phyllis luck , kerry speidel (town manager)"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "attending from bos: thomas a. alonzo, paula j. bertram, jamie toale, robert ebersole, phyllis luck , kerry speidel (town manager)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Gare Thompson to fill Joanne McQuaid's position on the Trustees.",
+   "quote": "decided, gare thompson to fill joanne mcquaid's position."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment of Gare Thompson to vacant trustee seat (joint meeting with Board of Selectmen)",
+   "resolution": "appointed Gare Thompson to fill the vacant seat (unexpired term); BOS also voted to appoint him; minutes note the BOS says the term runs only until the 2015 election",
+   "quote": "consideration of appointment of gare thompson to the vacant seat on the library board of trustees (unexpired term, town charter 3-1(f)2).",
+   "tags": [
+    "appointment",
+    "vacancy",
+    "trustees",
+    "joint meeting",
+    "Board of Selectmen"
+   ]
+  },
+  {
+   "topic": "Chair's presentation on purpose of appearance before BOS",
+   "resolution": "presented by the chair; no action recorded",
+   "quote": "presentation by jean raboin of purpose of lpl trustee appearance before the lunenburg bos @ 7:10 p.m.",
+   "tags": [
+    "joint meeting",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:17 p.m.",
+   "quote": "motion to adjourn lpl trustee meeting by jeanne at 7:17 p.m., seconded by harry. all votes in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for May 20, 2014",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for may 20, 2014"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "appointment",
+  "vacancy",
+  "joint meeting with Board of Selectmen",
+  "term of office"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-04-10",
  "docid": "2532",
@@ -12,6 +12,117 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes document a workshop session describing activities (Town Wide Survey review, photo file work, article publication notification) and meeting logistics (start time 6:35 PM, adjournment at 7:50 PM), but contain no recorded motions, seconded votes, or vote outcomes.",
- "cost_usd": 0.0802965
+ "note": "Workshop session minutes (OCR of a single page). No motions, votes, or dollar figures are recorded; adjournment is stated without a motion. Text has OCR-type errors: 'MHC Fotm B' (likely Form B) and 'Next Meeting will be posted as May 1, 2011' in a 2012 meeting (likely a year typo, not transcribed). Presenter 'Damon McQuaid' appears in the text and is listed in attendance as 'D. McQuaid'. Signed by Patrick J. Slattery; received-and-filed stamp dated MAY 0 2 2012. No roles printed for attendees.",
+ "cost_usd": 0.00271412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "P. Slattery",
+   "status": "present",
+   "quote": "present: p. slattery, b. lantry, d. mcquaid, a. phelps, r. mcgrath"
+  },
+  {
+   "name": "B. Lantry",
+   "status": "present",
+   "quote": "present: p. slattery, b. lantry, d. mcquaid, a. phelps, r. mcgrath"
+  },
+  {
+   "name": "D. McQuaid",
+   "status": "present",
+   "quote": "present: p. slattery, b. lantry, d. mcquaid, a. phelps, r. mcgrath"
+  },
+  {
+   "name": "A. Phelps",
+   "status": "present",
+   "quote": "present: p. slattery, b. lantry, d. mcquaid, a. phelps, r. mcgrath"
+  },
+  {
+   "name": "R. McGrath",
+   "status": "present",
+   "quote": "present: p. slattery, b. lantry, d. mcquaid, a. phelps, r. mcgrath"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members will work independently to provide information updates for the Town Wide Survey, for future review.",
+   "quote": "members will work independently to provide info updates for future review."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "Workshop called to order at 6:35PM",
+   "quote": "workshop was called to order at 6:35pm",
+   "tags": [
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Newsletter article report",
+   "resolution": "no action",
+   "quote": "a. phelps reported that latest article was in the lunenburg ledger.",
+   "tags": [
+    "publicity",
+    "newspaper"
+   ]
+  },
+  {
+   "topic": "Town Wide Survey instruction and files",
+   "resolution": "discussed; members to work independently on updates",
+   "quote": "balance of time was spent on the town wide survey with damon mcquaid providing instruction on downloading information for inclusion on mhc fotm b format.",
+   "tags": [
+    "town wide survey",
+    "MHC Form B",
+    "photos"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 PM; no motion recorded",
+   "quote": "meeting adjourned at 7:50 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Latest article in the Lunenburg Ledger",
+   "where": "text",
+   "quote": "a. phelps reported that latest article was in the lunenburg ledger."
+  },
+  {
+   "name": "MHC Fotm B format (as printed; likely MHC Form B)",
+   "where": "text",
+   "quote": "instruction on downloading information for inclusion on mhc fotm b format."
+  },
+  {
+   "name": "Separate electronic files for Town Wide Survey, one provided to each member",
+   "where": "text",
+   "quote": "he provided separate electronic files to each member."
+  },
+  {
+   "name": "Additional photo files for Town Wide Survey",
+   "where": "text",
+   "quote": "additional photo files will be forthcoming."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "town wide survey",
+  "MHC Form B",
+  "workshop",
+  "newspaper article",
+  "electronic files",
+  "photos"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

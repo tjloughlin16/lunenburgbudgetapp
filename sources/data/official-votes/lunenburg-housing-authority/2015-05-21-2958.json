@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2015-05-21",
  "docid": "2958",
@@ -12,16 +12,23 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes with the correction that Caroline Fortin was absent from the prior meeting",
+   "motion": "Nominate the same slate of officers for the coming year.",
+   "moved_by": "Paul Doherty",
+   "seconded_by": "Caroline Fortin",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "made a motion to nominate the same slate of officers for the coming year; adding they were doing a great job!"
+  },
+  {
+   "motion": "Accept the minutes of the March 26, 2015 meeting with the noted change (Caroline Fortin absent).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Paul Doherty",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "elizabeth murphy made a motion to accept the minute s with that change; paul doherty seconded. all were in favor, the motion passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "made a motion to accept the minute s with that change; paul doherty seconded. all were in favor, the motion passed unanimously."
   },
   {
-   "motion": "accept the financials",
+   "motion": "Accept the financials.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed",
@@ -29,16 +36,219 @@
    "quote": "paul doherty made a motion to accept the financials. caroline fortin seconded; all were in favor."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:50 p.m.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Caroline Fortin",
    "outcome": "passed",
    "procedural": true,
-   "quote": "elizabeth murphy made a motion to adjourn the meeti ng at 6:50 p.m. caroline fortin seconded, all were in favor, and the meeting was adjourned",
-   "quote_taken_from_text": true
+   "quote": "caroline fortin seconded, all were in favor, and the meeting was adjourned."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0900655
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-like extraction: some words are split (e.g., \"Pau l\", \"minute s\", \"pa rking\"), so quotes keep those splits verbatim. Page 3 is blank. The Executive Director is referred to only as \"The E.D.\" and is not named. Residents who spoke are unnamed. The financial acceptance vote records \"all were in favor\" without a printed count. Several figures are unitemized in the text, such as the reserves percentage, which is printed as \"6 6.35%\".",
+ "cost_usd": 0.00621642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair paul doherty, member caroline fortin, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair paul doherty, member caroline fortin, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair paul doherty, member caroline fortin, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "also present: peter proulx, secretary benjamin gold, asst. e.d. denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Asst. E.D.",
+   "status": "present",
+   "quote": "also present: peter proulx, secretary benjamin gold, asst. e.d. denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "also present: peter proulx, secretary benjamin gold, asst. e.d. denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "members absent: deborah a.h. christen, vice chair amaryllis leet, member"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: deborah a.h. christen, vice chair amaryllis leet, member"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "The financial report stated reserves are at 66.35%, the highest of the four.",
+   "figures_as_printed": [
+    "6 6.35%"
+   ],
+   "quote": "reserves are at 6 6.35%, highest of the four"
+  },
+  {
+   "topic": "DHCD snow removal money",
+   "what_was_recorded": "Snow removal money of $1,890 was received from DHCD, and only $400 has been spent.",
+   "figures_as_printed": [
+    "$1,890",
+    "$400"
+   ],
+   "quote": "we received some snow removal money from dhcd, $1,890; we have only spent $400."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "A resident",
+   "topic": "Lighting system in Bldg M",
+   "quote": "a resident asked if the lighting system was being changed."
+  },
+  {
+   "speaker": "A resident",
+   "topic": "Shaky new railing",
+   "quote": "a resident stated that the new railing is shaky, referring to the new piece that was added."
+  },
+  {
+   "speaker": "A resident",
+   "topic": "Outdoor light out back",
+   "quote": "lakeview nursery dug a hole, but nothing else was done."
+  },
+  {
+   "speaker": "A resident",
+   "topic": "Kitchen cabinets and modernization project",
+   "quote": "the project will include removing carpet in the halls and replacing with vct flooring."
+  },
+  {
+   "speaker": "A resident",
+   "topic": "Pine needles in parking lot and walkways",
+   "quote": "a resident stated there were pine needles in the pa rking lot out back and on the walkways."
+  },
+  {
+   "speaker": "A resident",
+   "topic": "Cleanup of porches and halls (Bldgs D & K)",
+   "quote": "the chair suggested a memo to residents on spring cleaning time, etc."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation prior to meeting",
+   "resolution": "no action; E.D. to check on outdoor light owned by Unitil",
+   "quote": "resident participation prior to meeting:",
+   "tags": [
+    "resident concerns",
+    "maintenance",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Call to order and introduction of new Assistant E.D.",
+   "resolution": "quorum declared; meeting opened; new Asst. E.D. introduced",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:36 p.m.",
+   "tags": [
+    "call to order",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Election of officers (annual meeting)",
+   "resolution": "approved same slate of officers",
+   "quote": "made a motion to nominate the same slate of officers for the coming year; adding they were doing a great job!",
+   "tags": [
+    "officers",
+    "annual meeting"
+   ]
+  },
+  {
+   "topic": "Minutes of March 26, 2015 meeting",
+   "resolution": "approved with one correction",
+   "quote": "the minutes of the march 26, 2015 meeting were p resented",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action",
+   "quote": "we needed a new name for our website; north cent ral mas",
+   "tags": [
+    "website",
+    "training",
+    "staffing"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "accepted financials",
+   "quote": "we are incredible good shape.",
+   "tags": [
+    "finance",
+    "reserves",
+    "DHCD funds"
+   ]
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "no action",
+   "quote": "we have two vacancies at this time.",
+   "tags": [
+    "vacancies",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:50 p.m.",
+   "quote": "caroline fortin seconded, all were in favor, and the meeting was adjourned.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Page F3 (financial report spending page)",
+   "where": "text",
+   "quote": "page f3 - spending. we are doing a great job."
+  }
+ ],
+ "tags": [
+  "annual meeting",
+  "officer election",
+  "resident concerns",
+  "maintenance",
+  "financial report",
+  "reserves",
+  "DHCD snow removal funds",
+  "housing authority"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

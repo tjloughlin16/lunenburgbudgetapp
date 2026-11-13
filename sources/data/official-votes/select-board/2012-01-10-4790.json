@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-01-10",
  "docid": "4790",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment by the Town Manager of Mr. Kit Walker to the part-time building maintenance position",
+   "motion": "Ratify the Town Manager's appointment of Mr. Kit Walker to the part-time building maintenance position.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed",
@@ -20,15 +20,312 @@
    "quote": "mr. alonzo made a motion to ratify the appointment by the town manager of mr. kit walker to the part-time building maintenance position. mr. debettencourt seconded the motion. all board members voted in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made by mr. debettencourt to adjourn the meeting. motion was seconded by ms. bertram. all board members approved and motion carried."
+   "quote": "being no further business a motion was made by mr. debettencourt to adjourn the meeting. motion was seconded by ms. bertram. all board members approved and motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. One motion (School Building Committee appointments) was made and seconded but withdrawn before a vote occurred, so not counted. Warrants noted as signed but no explicit vote motion recorded.",
- "cost_usd": 0.1036675
+ "note": "OCR text of a degraded scan with clipped margins: the first attendance line is cut (\\\"teven M. deBettencourt\\\", \\\"presen\\\"), and some dates are truncated (\\\"01/17/1\\\", \\\"17\\\"\\\"\\\"). Attendance is inferred from the opening line and speaking roles; no absences are printed. The Bertram motion on School Building Committee appointments was made and seconded but withdrawn before any vote, so it is not recorded as a vote. Two votes are recorded: the Walker ratification (unanimous, stated as 'All board members voted in favor') and adjournment ('All board members approved'), with no numeric tallies printed.",
+ "cost_usd": 0.00734632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews,"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "teven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Gerry Wilkins",
+   "role": "member of the public, 251 Burrage St",
+   "status": "present",
+   "quote": "gerry wilkins, 251 burrage st asked if the bos would be taking questions after the solar farm presentation."
+  },
+  {
+   "name": "Scott Fenton",
+   "role": "Attorney, representing Mass PV1, LLC",
+   "status": "present",
+   "quote": "attorney scott fenton, who is representing mass pv1, llc explained that he was there this evening to ask for a pilot agreement"
+  },
+  {
+   "name": "Gus Abalo",
+   "role": "from Mass PV1",
+   "status": "present",
+   "quote": "gus abalo, from mass pv1 explained that their purpose is to sell energy back to unitil"
+  },
+  {
+   "name": "Harold Scheid",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "harold scheid, principal assessor, also spoke in saying that the town must explore"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz began his presentation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board decided more information was needed from the Assessors before further conversation on the Mass PV1 PILOT; Principal Assessor Harold Scheid to gather information from PV1 and report back at a later meeting.",
+   "quote": "mr. scheid will gather more information from pv1 and then will present his findings to the bos at a later meeting."
+  },
+  {
+   "decision": "Town Manager to invite Todd Blake and Richard Cohen, who Mr. Alonzo had not met, to the next BOS meeting regarding School Building Committee candidates.",
+   "quote": "ms. speidel said she would invite them to the next bos meeting."
+  },
+  {
+   "decision": "State-Wide Mutual Aid program adoption continued to the 1/17/12 BOS meeting.",
+   "quote": "consider adoption of state-wide mutual aid program - continued to the 1/17/12 bos meeting."
+  },
+  {
+   "decision": "Review of request to extend cell antenna lease by T-Mobile for Town Hall location continued to 1/17/12 meeting.",
+   "quote": "review request to extend cell antenna lase by t-mobile for town hall location- continued to 1/17/12 meeting"
+  },
+  {
+   "decision": "Ratification of Police Sergeant appointment continued (OCR truncated; target date appears to be 01/17/12).",
+   "quote": "ratification of police sergeant appointment, continued to 01/17/1"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Warrant w40-12 dated 1/10/12 was signed by the board in the amount shown.",
+   "figures_as_printed": [
+    "$709,144.78"
+   ],
+   "quote": "warrants - w40-12 (1/10/12) $709,144.78 signed"
+  },
+  {
+   "topic": "Mass PV1 PILOT request for 651 Chase Road solar farm",
+   "what_was_recorded": "Applicant's attorney said property taxes on the project would be higher than the profits coming in, which is why a PILOT agreement was requested; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "his reason for this request is because the taxes that would be assessed on the property would be higher than the profits coming in."
+  },
+  {
+   "topic": "October 29, 2011 ice storm reimbursement",
+   "what_was_recorded": "MEMA notified the Town of a Major Disaster Declaration allowing expense submission for reimbursement; final AshBritt bill still pending; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the town can now go through the process of submitting expenses for reimbursement."
+  },
+  {
+   "topic": "House Bill #3633 Quinn Bill funding",
+   "what_was_recorded": "Town Manager reported a bill to restore funding for the Quinn Bill with a committee hearing; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "house bill #3633 entitled \"restoring funding for the quinn bill\""
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Gerry Wilkins",
+   "stated_role": "251 Burrage St",
+   "topic": "Questions after Solar Farm presentation",
+   "quote": "gerry wilkins, 251 burrage st asked if the bos would be taking questions after the solar farm presentation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "question answered; board to take questions after presentation",
+   "quote": "mr. matthews responded yes and reminded those present that this would be just a preliminary discussion.",
+   "tags": [
+    "public comment",
+    "solar farm"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements - none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "7:00 PM PILOT with Mass PV1, LLC, 651 Chase Road Solar Farm",
+   "resolution": "no vote; Assessors to gather information and report later",
+   "quote": "consideration of pilot with mass pv1, llc, for 651 chase road solar farm - attorney scott fenton,",
+   "tags": [
+    "PILOT",
+    "solar farm",
+    "assessors",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Current Business 1: School Building Committee appointments",
+   "resolution": "motion withdrawn; no appointments made; candidates to be invited",
+   "quote": "discuss appointments to school building committee - ms. speidel explained that the msba",
+   "tags": [
+    "school building committee",
+    "appointments",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Current Business 2: State-Wide Mutual Aid program",
+   "resolution": "continued to 1/17/12",
+   "quote": "consider adoption of state-wide mutual aid program - continued to the 1/17/12 bos meeting.",
+   "tags": [
+    "mutual aid"
+   ]
+  },
+  {
+   "topic": "Current Business 3: Lake Shirley Dam inspection update",
+   "resolution": "presented; no vote",
+   "quote": "update on lake shirley dam inspection, other issues - dpw director jack rodriquenz began his presentation",
+   "tags": [
+    "dam",
+    "Lake Shirley",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Current Business 4: Minutes, warrants, action file",
+   "resolution": "warrant signed; no minutes or action file issues",
+   "quote": "warrants - w40-12 (1/10/12) $709,144.78 signed",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current Business 5: Committee report",
+   "resolution": "received; board asked to look into solar matter further",
+   "quote": "committee report - ms. bertram reported that she attended the planning board meeting the previous",
+   "tags": [
+    "planning board",
+    "solar farm",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "no action",
+   "quote": "department reports - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager reports: street light, October storm, Mulpus Road intersection",
+   "resolution": "updates received; no vote",
+   "quote": "town manager reports: update on street light issue; update on october storm; update on temporary fix to",
+   "tags": [
+    "storm",
+    "traffic",
+    "Christmas tree disposal",
+    "Quinn Bill"
+   ]
+  },
+  {
+   "topic": "Old Business 1: Cell antenna lease by T-Mobile for Town Hall",
+   "resolution": "continued to 1/17/12",
+   "quote": "review request to extend cell antenna lase by t-mobile for town hall location- continued to 1/17/12 meeting",
+   "tags": [
+    "cell antenna",
+    "T-Mobile",
+    "lease"
+   ]
+  },
+  {
+   "topic": "Old Business 2: Approval of annual business licenses",
+   "resolution": "discussed; no action taken; possible revocation hearing considered",
+   "quote": "approval of annual business licenses - ms. speidel reported that there has been no progress on last",
+   "tags": [
+    "business licenses",
+    "revocation"
+   ]
+  },
+  {
+   "topic": "Appointments 1: Police Sergeant ratification",
+   "resolution": "continued",
+   "quote": "ratification of police sergeant appointment, continued to 01/17/1",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Appointments 2: PT building maintenance ratification (Kit Walker)",
+   "resolution": "ratified",
+   "quote": "ratification of pt building maintenance appointment - ms. speidel told the board she was seeking",
+   "tags": [
+    "appointments",
+    "DPW",
+    "ratification"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "House Bill #3633 \"Restoring Funding for the Quinn Bill\"",
+   "where": "text",
+   "quote": "house bill #3633 entitled \"restoring funding for the quinn bill\" and that there will be a hearing on this"
+  },
+  {
+   "name": "Warrant w40-12 (1/10/12)",
+   "where": "text",
+   "quote": "warrants - w40-12 (1/10/12) $709,144.78 signed"
+  }
+ ],
+ "tags": [
+  "solar farm",
+  "PILOT",
+  "school building committee",
+  "appointments",
+  "Lake Shirley dam",
+  "October storm",
+  "business licenses",
+  "warrants",
+  "Quinn Bill",
+  "Planning Board",
+  "cell antenna",
+  "police"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

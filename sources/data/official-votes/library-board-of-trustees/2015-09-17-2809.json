@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2015-09-17",
  "docid": "2809",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve prior meeting minutes from June 18, July 6, and July 14, 2015",
+   "motion": "Approve the minutes of June 18, 2015, July 6, 2015 and July 14, 2015.",
    "moved_by": "Gare Thompson",
    "seconded_by": "Harry Kubetz",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "gare moved that all three outstanding minutes could be approved; harry seconded, voted all in favor"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:20 p.m.",
    "moved_by": "Lars Widstrand",
    "seconded_by": "Susan Visser",
    "outcome": "passed",
@@ -29,6 +29,196 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0836895
+ "note": "Typed minutes, not a scan. Vote tallies are recorded only as 'voted all in favor' with no count. Gare Thompson left at 7:50 p.m. and Harry Kubetz attended via internet. The Director's report refers to a hand-out, which is not itemised in the minutes. Robin Morris is named as a new page but took no part in the minutes, so is not listed as an attendee.",
+ "cost_usd": 0.0047718199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore - director, lpl;"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: dick mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore - director, lpl;"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore - director, lpl;"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore - director, lpl;"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "(gare thompson left the meeting at 7:50 p.m.)"
+  },
+  {
+   "name": "Susan Visser",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore - director, lpl;"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "respectfully submitted, lars widstrand secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz (via internet), kiirja paananen, donna saiia, gare thompson, susan visser, lars widstrand, martha moore - director, lpl;"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "BOS liaison",
+   "status": "present",
+   "quote": "robert ebersole - bos liaison; terri burchfield - fincom liaison"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom liaison",
+   "status": "present",
+   "quote": "robert ebersole - bos liaison; terri burchfield - fincom liaison"
+  },
+  {
+   "name": "Nicole Piermarini",
+   "role": "YA services librarian",
+   "status": "present",
+   "quote": "nicole piermarini, ya services librarian introduced herself and her plans for the ya section."
+  },
+  {
+   "name": "Debbie Lafond",
+   "role": "children’s services librarian",
+   "status": "present",
+   "quote": "debbie lafond, children's services librarian introduced herself and her plans for the children's section."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Donna Saiia will serve on the budget committee, as the Chairman suggested.",
+   "quote": "donna saiia - asking about technology, web presence, computers, will serve on the budget committee as per the chairman's suggestion."
+  },
+  {
+   "decision": "Kiirja Paananen will join the Personnel committee.",
+   "quote": "kiirja paananen will join the personnel committee, per the chairman's and kiirja's agreement."
+  },
+  {
+   "decision": "The marketing committee idea raised by Gare Thompson will be added as a discussion item on an upcoming agenda.",
+   "quote": "the idea will be added as discussion on an upcoming agenda."
+  },
+  {
+   "decision": "The building management system report by Harry and Martha will not be discussed until the new system is installed.",
+   "quote": "the chairman stated that harry's and martha's report on the building management system will not be discussed until the new system is installed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's report: state financial report",
+   "what_was_recorded": "The Director said the next financial report, due the second week of October, deals with what the state requires of the town to spend.",
+   "figures_as_printed": [],
+   "quote": "(financial) due second week of october, which deals with what the state requires of the town to spend."
+  },
+  {
+   "topic": "Library trust funds",
+   "what_was_recorded": "An agenda item for a future meeting was listed for a November update from Martha on library trust funds.",
+   "figures_as_printed": [],
+   "quote": "library trust funds dick: november update from martha?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome of new trustees and FinCom liaison",
+   "resolution": "welcomed; no action",
+   "quote": "welcome to new members of the trustees, kiirja paananen and donna saiia."
+  },
+  {
+   "topic": "Introduction of new staff",
+   "resolution": "introduced; no action",
+   "quote": "martha moore announced the new hires for the library staff:"
+  },
+  {
+   "topic": "Committee assignments",
+   "resolution": "assignments noted; marketing committee idea to future agenda",
+   "quote": "kiirja paananen will join the personnel committee, per the chairman's and kiirja's agreement."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "gare moved that all three outstanding minutes could be approved"
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received and discussed",
+   "quote": "discussed and explained by the director, as per hand-out"
+  },
+  {
+   "topic": "Update on building management system",
+   "resolution": "deferred until new system installed",
+   "quote": "the chairman stated that harry's and martha's report on the building management system will not be discussed until the new system is installed."
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "informational; no action",
+   "quote": "sign up for book and bake sale 9/30."
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "listed for future agendas",
+   "quote": "lunenburg online mail account - should be used in the future as part of the open meeting law."
+  },
+  {
+   "topic": "Motion to adjourn",
+   "resolution": "adjourned at 8:20 p.m.",
+   "quote": "lars moved to adjourn at 8:20 p.m., seconded by susan; voted all in favor."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for September 17, 2015",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for september 17, 2015 director's report"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for september 17, 2015 director's report"
+  },
+  {
+   "name": "Director's hand-out",
+   "where": "text",
+   "quote": "discussed and explained by the director, as per hand-out"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "staffing",
+  "committee assignments",
+  "building management system",
+  "minutes approval",
+  "director's report",
+  "trust funds",
+  "open meeting law"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

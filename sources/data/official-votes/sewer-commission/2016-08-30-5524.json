@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-08-30",
  "docid": "5524",
@@ -12,31 +12,308 @@
  },
  "votes": [
   {
-   "motion": "Finalize the number of betterment units at 97.5",
+   "motion": "Finalize the number of betterment units at 97.5.",
    "moved_by": "Joe A.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "motion: joe a. to finalize the number of betterment units at 97.5 second john r. vote: unanimous"
   },
   {
-   "motion": "Approve the minutes of 8/9/16 as amended",
+   "motion": "Approve the minutes of 8/9/16 as amended.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion: john r. to approve the minutes of 8/9/16 as amended second: joe a. vote: unanimous"
   },
   {
-   "motion": "Adjourn at 8:04pm",
+   "motion": "Motion with no text printed; the minutes record only the mover and seconder, with no result (the text may have been lost in scanning).",
+   "moved_by": "John R.",
+   "seconded_by": "Joe A.",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: john r. second: joe a."
+  },
+  {
+   "motion": "Adjourn at 8:04pm.",
    "moved_by": "Joe A.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion: joe a. to adjourn at 8:04pm second: john r. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one incomplete motion appears at the page break (Motion by John R., second by Joe A.) with no motion text or vote outcome legible, so it is not included.",
- "cost_usd": 0.0878135
+ "note": "OCR text of two pages only; page 1 begins mid-sentence, so earlier minutes content is missing. No attendance or roll call is printed, so attendee status is inferred only where a member moved, seconded or voted. Page 1 contains a 'Motion: John R. Second: Joe A.' with no motion text and no vote result; it is recorded as a motion with outcome 'not stated'. The invoice approval has no recorded motion and is recorded as a decision. 'Vinutes Assistant' is likely an OCR error for 'Minutes Assistant'. The signature line reads 'wil Sato' with no role. No public comment section is printed. No transfers are recorded.",
+ "cost_usd": 0.00747382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe A.",
+   "role": "Commission member (as printed)",
+   "status": "present",
+   "quote": "motion: joe a. to finalize the number of betterment units at 97.5 second john r. vote: unanimous"
+  },
+  {
+   "name": "John R.",
+   "role": "Commission member (as printed)",
+   "status": "present",
+   "quote": "motion: john r. to approve the minutes of 8/9/16 as amended second: joe a. vote: unanimous"
+  },
+  {
+   "name": "Barb L.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "barb l. will discuss this with jack r."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated (memo author; also referred to as Jack R.)",
+   "status": "not stated",
+   "quote": "jack rodriquenz's memo of 8/30 was handed out."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Vinutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, vinutes assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will check with counsel on the timing of recording the betterment liens with the Registry; the Commission discussed releasing a lien once the betterment is paid.",
+   "quote": "barb will check with counsel as to the timing of recording the liens for the betterments with the registry."
+  },
+  {
+   "decision": "A policy for jointly approving T&M invoices by the Sewer Commission and Jack R. was discussed and deferred to a future discussion.",
+   "quote": "developing a policy where t&m invoices will be jointly approved by the sewer commission and jack r. was discussed and will be a subject for future discussion."
+  },
+  {
+   "decision": "Barb L. will discuss with Jack R. getting a quote from Small Water to do only the interceptors in need of inspection.",
+   "quote": "barb l. will discuss this with jack r."
+  },
+  {
+   "decision": "Jack to set up a meeting with Wright Pierce on Graham St and manholes to set top priorities; the Commission wants to be advised of the meeting and to review proposed work before commitment.",
+   "quote": "it was recommended that jack set up a meeting with wright pierce to discuss both graham st and manholes to come up with top priorities."
+  },
+  {
+   "decision": "The Commission wants a comprehensive plan before any action is taken on a temporary meter above the Graham St meter.",
+   "quote": "the commission would like a comprehensive plan before any action is taken."
+  },
+  {
+   "decision": "John R. is to get access to the flow meter data to review it against precipitation records.",
+   "quote": "john r. would like access to the flow meter data to review and check against precipitation records."
+  },
+  {
+   "decision": "Commission discussed having the Dana St. run data looked into and noting in future which days actual data is taken; wants more input on pump station actions and Jack's weekly meetings with SWSS.",
+   "quote": "the commission discussed having the run data for dana st. looked into and having it noted which days the actual data is taken in the future."
+  },
+  {
+   "decision": "Four invoices were reviewed and approved (no motion recorded).",
+   "quote": "invoices - four invoices were reviewed and approved."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Water Dept. rate",
+   "what_was_recorded": "The Lunenburg Water Dept. quarterly rate is to increase from $60 to $63 per quarter.",
+   "figures_as_printed": [
+    "$60/quarter",
+    "$63"
+   ],
+   "quote": "the lunenburg water dept. rate will increase from $60/quarter to $63."
+  },
+  {
+   "topic": "Kabobelicious non-compliance fees",
+   "what_was_recorded": "The owner paid annual and non-compliance fees and will request a hearing on the $25/day fees.",
+   "figures_as_printed": [
+    "$25/day"
+   ],
+   "quote": "she will request a hearing on the $25/day fees."
+  },
+  {
+   "topic": "Small Water Systems invoice (T&M basis)",
+   "what_was_recorded": "The Commission still has concern about paying the Small Water Systems invoice on a time-and-materials basis; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there is still concern with paying on a t&m basis."
+  },
+  {
+   "topic": "I/I reduction manhole remediation budget",
+   "what_was_recorded": "The Commission discussed the budget amounts available for manhole remediation work; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the budget amounts available for the work."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "SRF Sewer Extension Project - Betterment Assessment",
+   "resolution": "approved 97.5 betterment units; lien timing referred to counsel",
+   "quote": "it was the consensus of the group to add 3 potential privilege fee units for a total of 97.5 units.",
+   "tags": [
+    "betterment",
+    "SRF",
+    "liens"
+   ]
+  },
+  {
+   "topic": "Grease Trap Program - Small Water Systems",
+   "resolution": "discussed; T&M invoice policy deferred",
+   "quote": "grease trap program -small water systems - jack rodriquenz's memo of 8/30 was handed out.",
+   "tags": [
+    "grease trap",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Grease Trap/Interceptor Proposal",
+   "resolution": "discussed; Barb L. to talk with Jack R.",
+   "quote": "grease trap/interceptor proposal - there was discussion on the need to get the grease trap program going.",
+   "tags": [
+    "grease trap",
+    "interceptors"
+   ]
+  },
+  {
+   "topic": "A&D Crossroads",
+   "resolution": "no action; plans and pump-out reports still outstanding",
+   "quote": "a&d crossroads- an email has been sent to david brambila requesting engineered plans",
+   "tags": [
+    "A&D Crossroads",
+    "pump-out",
+    "floor drains"
+   ]
+  },
+  {
+   "topic": "Bootleggers remediation",
+   "resolution": "reviewed; issue appears under control",
+   "quote": "bootleggers remediation - the commission reviewed jack's input from the 8/30 memo.",
+   "tags": [
+    "remediation",
+    "grease"
+   ]
+  },
+  {
+   "topic": "Kabobelicious",
+   "resolution": "discussed continued non-compliance",
+   "quote": "kabobelicious- certified letters were sent on 8/29 to the owner and both the local and regional board of health.",
+   "tags": [
+    "non-compliance",
+    "Board of Health",
+    "fees"
+   ]
+  },
+  {
+   "topic": "I/I Reduction - Remediation of Manholes",
+   "resolution": "discussed; Jack to arrange meeting with Wright Pierce",
+   "quote": "i/l reduction- remediation of manholes - jack's input from the 8/30 memo was reviewed.",
+   "tags": [
+    "inflow and infiltration",
+    "manholes",
+    "Graham St",
+    "meters"
+   ]
+  },
+  {
+   "topic": "Pump Stations",
+   "resolution": "weekly reports reviewed; more input requested",
+   "quote": "pump stations - weekly reports were reviewed.",
+   "tags": [
+    "pump stations",
+    "Dana St"
+   ]
+  },
+  {
+   "topic": "Minutes/Action File Issues",
+   "resolution": "noted; Q1 Commitment not ready for signature",
+   "quote": "minutes/action file issues - q1 commitment was not ready for signature.",
+   "tags": [
+    "action file",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Minutes of 8/9/16",
+   "resolution": "approved as amended",
+   "quote": "minutes - there was one edit on the 8/9/16 minutes.",
+   "tags": [
+    "minutes",
+    "LWD liaison"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "four invoices approved",
+   "quote": "invoices - four invoices were reviewed and approved.",
+   "tags": [
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "informational; no action",
+   "quote": "a new site development plan for 274 prospect st. was submitted and the planning board hearing is on 9/12.",
+   "tags": [
+    "site plan",
+    "Planning Board",
+    "water rate"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Jack Rodriquenz memo of 8/30",
+   "where": "text",
+   "quote": "jack rodriquenz's memo of 8/30 was handed out."
+  },
+  {
+   "name": "Revised spreadsheet confirming 94.5 units",
+   "where": "text",
+   "quote": "the revised spreadsheet confirming 94.5 units was reviewed."
+  },
+  {
+   "name": "Email to David Brambila requesting engineered plans and pump-out reports",
+   "where": "text",
+   "quote": "an email has been sent to david brambila requesting engineered plans and missing pump-out reports."
+  },
+  {
+   "name": "Plan received from Bootlegger",
+   "where": "text",
+   "quote": "he had received the plan from bootlegger as requested"
+  },
+  {
+   "name": "Pump station weekly reports",
+   "where": "text",
+   "quote": "pump stations - weekly reports were reviewed."
+  },
+  {
+   "name": "Q1 Commitment",
+   "where": "text",
+   "quote": "q1 commitment was not ready for signature."
+  },
+  {
+   "name": "Site development plan for 274 Prospect St.",
+   "where": "text",
+   "quote": "a new site development plan for 274 prospect st. was submitted and the planning board hearing is on 9/12."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "betterment assessment",
+  "SRF",
+  "grease trap",
+  "inflow and infiltration",
+  "pump stations",
+  "minutes approval",
+  "invoices",
+  "water rate"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

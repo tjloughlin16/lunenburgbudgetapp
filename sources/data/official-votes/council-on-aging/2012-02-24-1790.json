@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-02-24",
  "docid": "1790",
@@ -12,6 +12,66 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a meeting where minor changes were made to job description and evaluation documents, and a decision was made to defer voting until the next meeting when all members could be present. No motions were voted on at this meeting.",
- "cost_usd": 0.0798435
+ "note": "OCR text with many misread words (e.g., 'Louncil', 'sub-L'ommittee', 'joh evaluation', 'tinal'); quotes are copied as OCR printed them. No motions or votes are recorded. The adjournment at 9:20 a.m. is stated without a motion, so it is not recorded as a vote. Header note says minutes approved at 9/11/12 COA meeting. No budget figures, public comment, or document list appear.",
+ "cost_usd": 0.00213332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Seeley",
+   "role": "committee member; signed as Chair, Director's Evaluation Sub-Committee",
+   "status": "present",
+   "quote": "present were committee members deb seeley and jane doyle."
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley and jane doyle."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to wait until the next meeting, when all members are present, to vote on the final revised documents.",
+   "quote": "it was decided to wait until the next meeting for all members to be present to vote on the final revised documents."
+  },
+  {
+   "decision": "Deb Seeley will make the final changes to the job evaluation tool and bring the revised documents to the next meeting for approval.",
+   "quote": "bring the revised documents to the next meeting for approval."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of changes to Director's job description and job evaluation",
+   "resolution": "no vote; minor changes made, final vote deferred to next meeting",
+   "quote": "minor changes were made and it was decided to wait until the next meeting for all members to be present to vote on the final revised documents.",
+   "tags": [
+    "job description",
+    "job evaluation",
+    "director"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised job description and job evaluation tool (final revised documents)",
+   "where": "text",
+   "quote": "bring the revised documents to the next meeting for approval."
+  }
+ ],
+ "tags": [
+  "director evaluation",
+  "job description",
+  "personnel",
+  "council on aging",
+  "sub-committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

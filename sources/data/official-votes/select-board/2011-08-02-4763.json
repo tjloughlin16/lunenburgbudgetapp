@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-08-02",
  "docid": "4763",
@@ -12,23 +12,330 @@
  },
  "votes": [
   {
-   "motion": "Appoint Stephen E. Cullinane as Inspector of Weights & Measures",
+   "motion": "Appoint Stephen E. Cullinane of 46 Goodrich Street as Inspector of Weights & Measures (FY2012 annual appointment), on the Town Manager's recommendation.",
    "moved_by": "Ernie",
    "seconded_by": "Steve",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "he would nominate mr. cullinane. steve seconded, voted unanimously to approve."
+   "quote": "would nominate mr. cullinane. steve seconded, voted unanimously to approve."
   },
   {
-   "motion": "Enter executive session for strategy regarding collective bargaining and negotiations with non-union personnel",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Enter executive session under M.G.L. Chapter 39, §23B(3) for collective bargaining and litigation strategy and for negotiations with non-union personnel, and not return to regular session (opening words of the motion are missing from the text).",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "call vote; steve aye, tom aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3) for the purpose of discussing strategy with respect to collective bargaining"
+   "quote": "call vote; steve aye, tom aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR minutes from macOS Vision scan. Warrants reviewed and signed but no formal vote recorded. All votes extracted are complete with quotes verbatim from the text.",
- "cost_usd": 0.12442149999999999
+ "dropped_unquoted": 1,
+ "note": "OCR text from macOS Vision scan. Page 1 begins mid-sentence in a speaker's remarks on the DPU/Unitil decision; the speaker is not named, so it is recorded as a topic, not public comment. Page 2 begins mid-item (fuel tanks) and the agenda numbering is partly missing (item 6 absent). The executive session motion's opening words are missing; the 4-0 count comes from the roll-call tally on page 3. No call to order, roll call of attendance, or approval of prior minutes is recorded (Minutes: none). \"Laura\" and \"Dan\" are bare first names not linked in the text to a full name or role. The Public Safety spreadsheet on page 7 is garbled; only some figures are legible. Two Fire/Police memos and the Weights & Measures memo are attached/referenced in the text, with no separate list heading.",
+ "cost_usd": 0.01072812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve",
+   "role": "not stated (board member, per roll call)",
+   "status": "present",
+   "quote": "steve aye, tom aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3)"
+  },
+  {
+   "name": "Tom",
+   "role": "not stated (board member, per roll call)",
+   "status": "present",
+   "quote": "steve aye, tom aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3)"
+  },
+  {
+   "name": "Ernie",
+   "role": "not stated (board member, per roll call)",
+   "status": "present",
+   "quote": "steve aye, tom aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3)"
+  },
+  {
+   "name": "Dave",
+   "role": "not stated (board member, per roll call)",
+   "status": "present",
+   "quote": "steve aye, tom aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b(3)"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  },
+  {
+   "name": "Laura",
+   "role": "not stated (gave Town Manager Updates; not linked to Laura Williams in the text)",
+   "status": "present",
+   "quote": "laura provided the following information on the trash/recycling and the regional devens hhw facility:"
+  },
+  {
+   "name": "Kerry A. Speidel",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "from: kerry a. speidel, town manager"
+  },
+  {
+   "name": "Stephen E. Cullinane",
+   "role": "Inspector of Weights & Measures applicant, 46 Goodrich Street",
+   "status": "present",
+   "quote": "stephen e. cullinane of 46 goodrich street, who introduced himself"
+  },
+  {
+   "name": "Todd Whittier",
+   "role": "Inspector of Weights & Measures applicant, 519 Burrage Street; full time firefighter",
+   "status": "present",
+   "quote": "todd whittier, 519 burrage street, full time firefighter introduced himself"
+  },
+  {
+   "name": "Chief Bourgeois",
+   "role": "Chief (Police Department, per text)",
+   "status": "present",
+   "quote": "chief bourgeois came before the board and discussed the overage in the police lock up account"
+  },
+  {
+   "name": "Dan",
+   "role": "not stated (cited on Police lock-up; not confirmed as Chief Bourgeois)",
+   "status": "present",
+   "quote": "dan noted that they've cut back on some training and that they do watch this budget"
+  },
+  {
+   "name": "Scott",
+   "role": "Chief of Department (Fire; letter signed Scott F. Glenny)",
+   "status": "present",
+   "quote": "scott submitted the attached explanation and noted that because of the combined increases in services"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to be prepared to go over the Town Manager goals upon the Town Manager's return from vacation (Chair's direction).",
+   "quote": "chair would like the board to be prepared to go over the town manager goals upon her return from vacation."
+  },
+  {
+   "decision": "Dave to develop a prioritization for the Policies & Procedures work to start for the next meeting, with the documentation prepared as one document.",
+   "quote": "dave would like to come up with a prioritzation to start working on these for the next meeting."
+  },
+  {
+   "decision": "Hard copies of the 2009 Policies & Procedures materials were distributed to the board.",
+   "quote": "hard copies of what the board had received in 2009 were distributed."
+  },
+  {
+   "decision": "Warrants #6 12 (8/2/11) and #7 12 (8/3/11) reviewed and signed.",
+   "quote": "warrants - #6 12, 8/2/11 - $60,029.91 and #7 12, 8/3/11 - $284,752.74 reviewed and signed"
+  },
+  {
+   "decision": "Board asked the staff member to move forward with an item whose subject is cut off in the text (context on the fuel tanks is partial); funding mechanism to be discussed with the Town Manager when she returns.",
+   "quote": "board would like him to move forward with this and will discussing the funding mechanism with the town manager when she returns."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unitil rate increase reduced by DPU (speaker report)",
+   "what_was_recorded": "Speaker reported the DPU approved $4.4 million of the $7.1 million Unitil sought in electricity and gas increases and trimmed storm-related expenses by about 31 percent from $22 million.",
+   "figures_as_printed": [
+    "$7.1 million",
+    "$4.4 million",
+    "31 percent",
+    "almost $7 million",
+    "$22 million"
+   ],
+   "quote": "it was $7.1 million that they were looking to increase and put on the rate payers, and only $4.4 million was"
+  },
+  {
+   "topic": "Inspector of Weights & Measures stipend",
+   "what_was_recorded": "The Local Inspector receives a stipend currently set at $3,000 plus reimbursement for expenses.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "the local inspector receives a stipend, currently set at $3,000 and reimbursement for expenses."
+  },
+  {
+   "topic": "Fire Department payroll overage",
+   "what_was_recorded": "Fire Chief's letter explains the Fire Department payroll overage from more and longer calls; the board discussed the Fire budget increase and how staff payroll is tracked and transferred between lines. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the reason for overage in the fire department payroll is due to an increase in calls and longer"
+  },
+  {
+   "topic": "Police lock-up overage (weekend detainee stay cost)",
+   "what_was_recorded": "Chief Bourgeois said the average stay per weekend in the lock-up is over $2,000; the fee for bail is collected by the bail commissioner, not the town.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "noted that the average stay per weekend is over $2,000."
+  },
+  {
+   "topic": "Police lock-up memo: weekend stay cost",
+   "what_was_recorded": "Chief Bourgeois's July 25, 2011 memo puts a typical weekend detainee stay at approximately $2,425.00, plus food, blankets and gloves.",
+   "figures_as_printed": [
+    "$2,425.00"
+   ],
+   "quote": "a weekend stay costs approximately $2,425.00."
+  },
+  {
+   "topic": "Public Safety Expenditures FY2009-FY2011 spreadsheet",
+   "what_was_recorded": "Spreadsheet of public safety budgets, original, amended and expended amounts, with dollar and percentage overages by department. Table is garbled in the OCR text; only some figures are legible.",
+   "figures_as_printed": [
+    "$ 1,293,626.00",
+    "$ 1,293,267.71",
+    "$ 1,293,079.28",
+    "(546.72)",
+    "-0.04%",
+    "19,845.32",
+    "2.72%",
+    "11,458.50",
+    "0.88%",
+    "(1,645.26)",
+    "-0.22%",
+    "44,400.00",
+    "50,195.33"
+   ],
+   "quote": "total: $ 1,293,626.00 $ 1,293,267.71 $ 1,293,079.28"
+  },
+  {
+   "topic": "Warrants approved for payment",
+   "what_was_recorded": "Two warrants were reviewed and signed, one for $60,029.91 and one for $284,752.74.",
+   "figures_as_printed": [
+    "$60,029.91",
+    "$284,752.74"
+   ],
+   "quote": "warrants - #6 12, 8/2/11 - $60,029.91 and #7 12, 8/3/11 - $284,752.74 reviewed and signed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "DPU decision on Unitil rates (opening remarks, cut off at start of page)",
+   "resolution": "no action",
+   "quote": "the dpu trimmed 31 percent, almost $7 million, off the $22"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; board to prepare Town Manager goals on her return",
+   "quote": "board of selectmen will not be meeting next week."
+  },
+  {
+   "topic": "Appointment of Inspector of Weights & Measures",
+   "resolution": "appointed Stephen E. Cullinane",
+   "quote": "would nominate mr. cullinane. steve seconded, voted unanimously to approve."
+  },
+  {
+   "topic": "Policies & Procedures",
+   "resolution": "prioritization to be prepared for next meeting",
+   "quote": "hard copies of what the board had received in 2009 were distributed."
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reviewed and signed",
+   "quote": "warrants - #6 12, 8/2/11 - $60,029.91 and #7 12, 8/3/11 - $284,752.74 reviewed and signed"
+  },
+  {
+   "topic": "Action file issues",
+   "resolution": "no action (none)",
+   "quote": "action file issues - none"
+  },
+  {
+   "topic": "Committee updates (Green Community Task Force)",
+   "resolution": "no action; memo reviewed; committee members sought",
+   "quote": "dave reveiwed the memo from marion benson on the possibility of a town meeting article for designating lunenburg a green community."
+  },
+  {
+   "topic": "Fuel tanks (item cut off at start of page)",
+   "resolution": "board directed to move forward; funding to be discussed with Town Manager",
+   "quote": "board would like him to move forward with this and will discussing the funding mechanism with the town manager when she returns."
+  },
+  {
+   "topic": "Fire Department budget increase",
+   "resolution": "discussed; no action",
+   "quote": "board had requested reasons as to the increases in the fire department budget."
+  },
+  {
+   "topic": "Police lock-up overage",
+   "resolution": "discussed; no action",
+   "quote": "chief bourgeois came before the board and discussed the overage in the police lock up account"
+  },
+  {
+   "topic": "Town Manager Updates (Devens regional household hazardous waste facility)",
+   "resolution": "informational; no action",
+   "quote": "the devens regional household hazardous waste facility is now open for business"
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "none",
+   "quote": "old business 1. none"
+  },
+  {
+   "topic": "Executive session (collective bargaining and non-union negotiations)",
+   "resolution": "entered executive session; not returning to regular session",
+   "quote": "chairman announced that the board would not be"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum from Kerry A. Speidel, Town Manager, dated July 29, 2011, Subject: Appointment of Inspector of Weights & Measures, July 1, 2011 - June 30, 2012",
+   "where": "text",
+   "quote": "subject: appointment of inspector of weights & measures, july 1, 2011 - june 30, 2012"
+  },
+  {
+   "name": "Letter from Scott F. Glenny, Chief of Department, dated August 1, 2011, on the Fire Department payroll overage",
+   "where": "text",
+   "quote": "the reason for overage in the fire department payroll is due to an increase in calls and longer"
+  },
+  {
+   "name": "Memorandum from Kerry A. Speidel, Town Manager, dated July 29, 2011, Subject: Public Safety Expenditures",
+   "where": "text",
+   "quote": "subject: public safety expenditures"
+  },
+  {
+   "name": "Public Safety Expenditures FY2009 - FY2011 spreadsheet",
+   "where": "text",
+   "quote": "public safety expenditures fy2009 - fy2011"
+  },
+  {
+   "name": "Memorandum from Chief Daniel Bourgeois, dated July 25, 2011, Lock-up information",
+   "where": "text",
+   "quote": "per your request i forward the following information regarding costs"
+  },
+  {
+   "name": "Memorandum from Marion Benson on a possible town meeting article designating Lunenburg a Green Community",
+   "where": "text",
+   "quote": "dave reveiwed the memo from marion benson on the possibility of a town meeting article for designating lunenburg a green community."
+  },
+  {
+   "name": "DPU report (528 pages) on Unitil rate case",
+   "where": "text",
+   "quote": "in their 528 page report, they really did their jobs in analyzing all the data"
+  },
+  {
+   "name": "Policies & Procedures hard copies received by the board in 2009",
+   "where": "text",
+   "quote": "hard copies of what the board had received in 2009 were distributed."
+  },
+  {
+   "name": "Warrants #6 12 (8/2/11) and #7 12 (8/3/11)",
+   "where": "text",
+   "quote": "warrants - #6 12, 8/2/11 - $60,029.91 and #7 12, 8/3/11 - $284,752.74 reviewed and signed"
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "weights and measures appointment",
+  "fire department budget",
+  "police lock-up costs",
+  "public safety expenditures",
+  "Unitil rate case",
+  "warrants",
+  "green community",
+  "household hazardous waste",
+  "executive session",
+  "policies and procedures"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "scott submitted the attached explanation"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

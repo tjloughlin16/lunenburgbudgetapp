@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-04-10",
  "docid": "4242",
@@ -12,6 +12,172 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe discussions, determinations, and recommendations but contain no motions, seconding, or recorded votes. The approval of previous meeting minutes was not conducted (minutes were not available). The meeting concluded with a volunteer action, not a vote.",
- "cost_usd": 0.08115349999999999
+ "note": "No motions, votes, or public comment are recorded in the text. The minutes of 3/27/14 were not available, so none were approved. Budget discussion names no dollar figure. No list of documents or exhibits is printed. The attendance line for Robert Ebersole is printed as 'Robert Ebersole'; the later reference to 'Bob' is taken to be the same person. Whitespace in quotes has been collapsed to single spaces.",
+ "cost_usd": 0.00301762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Berthiaume",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "gregory berthiaume school committee present"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "michael mackin school committee present"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "robert ebersole board of selectmen present"
+  },
+  {
+   "name": "Charlene Stephens",
+   "role": "Community-at-large",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:10pm by charlene stephens."
+  },
+  {
+   "name": "Richard Beardmore",
+   "role": "Community-at-large alternate",
+   "status": "absent",
+   "quote": "richard beardmore community-at-large alternate not present"
+  },
+  {
+   "name": "Nicole Hennessy",
+   "role": "Student Representative",
+   "status": "absent",
+   "quote": "nicole hennessy student representative not present"
+  },
+  {
+   "name": "Casey Voyer",
+   "role": "Student Representative",
+   "status": "absent",
+   "quote": "casey voyer student representative not present"
+  },
+  {
+   "name": "Elizabeth Rawlinson",
+   "role": "Parent",
+   "status": "present",
+   "quote": "elizabeth rawlinson parent present"
+  },
+  {
+   "name": "Darruenee Vann",
+   "role": "Parent",
+   "status": "present",
+   "quote": "darruenee vann parent present"
+  },
+  {
+   "name": "Paul Bertrand",
+   "role": "Parent Alternate",
+   "status": "present",
+   "quote": "paul bertrand parent alternate present"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "also present, loxi calmes, superintendent of schools."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Findings of the committee will be presented to the School Committee at its regularly scheduled meeting on Wednesday, June 4, 2014, in a set format: charge, process, current state, proposed budget, executive summary and recommendations.",
+   "quote": "it was determined that the findings of the committee will be presented to the school committee at their regularly scheduled meeting on wednesday, june 4, 2014."
+  },
+  {
+   "decision": "A similar presentation of the findings will be made to the Board of Selectmen, and Bob (Robert Ebersole) volunteered to make it.",
+   "quote": "bob volunteered to make this presentation."
+  },
+  {
+   "decision": "The brainstormed list of proposed actions was narrowed to six bullet points, with parking lot items carried forward as future actions.",
+   "quote": "we reviewed the previous listing of proposed actions that came out of the brainstorming"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Proposed budget for the committee's work",
+   "what_was_recorded": "The School Committee presentation will include the proposed budget as previously submitted, noting the goal of eliminating user fees; no dollar figure is printed.",
+   "quote": "the proposed budget as previously submitted, noting the goal of eliminating user fees to improve",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of meeting minutes",
+   "resolution": "no action; previous minutes (3/27/14) not available for approval",
+   "quote": "the minutes of the previous meeting (3/27/14) were not available for approval.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Presentation of findings to School Committee",
+   "resolution": "agreed to present findings to School Committee on June 4, 2014",
+   "quote": "it was determined that the findings of the committee will be presented to the school committee",
+   "tags": [
+    "school committee",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Review and narrowing of brainstormed actions",
+   "resolution": "narrowed list to six proposed actions",
+   "quote": "we reviewed the previous listing of proposed actions that came out of the brainstorming",
+   "tags": [
+    "diversity",
+    "acceptance",
+    "curriculum",
+    "training",
+    "scorecard",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Parking lot items and future actions",
+   "resolution": "noted for future consideration; no action",
+   "quote": "parking lot items/future actions",
+   "tags": [
+    "outreach",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Presentation to Board of Selectmen",
+   "resolution": "Bob (Robert Ebersole) volunteered to make presentation",
+   "quote": "it was also felt that after the presentation to the school committee, there should be a similar",
+   "tags": [
+    "selectmen",
+    "collaboration"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Previous listing of proposed actions from the brainstorming activity",
+   "where": "text",
+   "quote": "we reviewed the previous listing of proposed actions that came out of the brainstorming"
+  }
+ ],
+ "tags": [
+  "diversity",
+  "acceptance",
+  "school committee",
+  "board of selectmen",
+  "user fees",
+  "presentation",
+  "Fitchburg State University",
+  "advisory committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

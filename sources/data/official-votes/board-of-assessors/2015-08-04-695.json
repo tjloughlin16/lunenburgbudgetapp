@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-08-04",
  "docid": "695",
@@ -12,6 +12,178 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No formal votes recorded. Minutes describe board approvals and decisions using summary language (\"reviewed and approved,\" \"deemed\") but contain no explicit motion language, vote counts, or formal vote indicators.",
- "cost_usd": 0.0841465
+ "note": "OCR text of a scanned, stamped page (RECEIVED & FILED, Sep 14 2015). No motions, seconds or vote counts are recorded anywhere, so votes is empty; the approvals are recorded as decisions. The signature block reads \"Lauri Paquette\" above the printed name \"Louise Paquette\"; the printed name was used. Only page 1 was provided. Dollar figures are as OCR'd.",
+ "cost_usd": 0.00343142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board member, richard letarte,"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board member, richard letarte,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew Papini, Sr.",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "matthew papini, sr.was not present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and the July 7, 2015 minutes (no motion or vote count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll"
+  },
+  {
+   "decision": "Board deemed account 115-017 (7 Tri Town Drive) abated due to an assessment error.",
+   "quote": "the boa deemed the account 115-017 abated due to the assessment error in the amount of $25,895.27."
+  },
+  {
+   "decision": "Louise Paquette will contact each Board member at the end of the month to set the next meeting date, expected Sept. 1 or 8 at 5:45 pm.",
+   "quote": "louise will contact each member of the board at the end of the month to determine the date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Motor vehicle veteran exemption reimbursement",
+   "what_was_recorded": "Board reviewed and signed a motor vehicle veteran exemption form, to be reimbursed by the State.",
+   "figures_as_printed": [
+    "$142.50"
+   ],
+   "quote": "board reviewed and signed motor vehicle veteran exemption form in the amount of $142.50 to be"
+  },
+  {
+   "topic": "7 Tri Town Drive abatement (preliminary tax)",
+   "what_was_recorded": "Account 115-017 was abated for an assessment error; the abated amount is charged to preliminary tax receipts, not the FY16 overlay account.",
+   "figures_as_printed": [
+    "$25,895.27"
+   ],
+   "quote": "the boa deemed the account 115-017 abated due to the assessment error in the amount of $25,895.27."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals (vouchers, abatements, warrants, commitments, payroll, July 7, 2015 minutes)",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Motor vehicle veteran exemption form",
+   "resolution": "signed",
+   "quote": "board reviewed and signed motor vehicle veteran exemption form in the amount of $142.50 to be",
+   "tags": [
+    "veterans",
+    "exemptions",
+    "state reimbursement"
+   ]
+  },
+  {
+   "topic": "7 Tri Town Drive preliminary tax abatement",
+   "resolution": "abated",
+   "quote": "the boa deemed the account 115-017 abated due to the assessment error in the amount of $25,895.27.",
+   "tags": [
+    "abatement",
+    "preliminary tax",
+    "assessment error"
+   ]
+  },
+  {
+   "topic": "Exemption and Chapter application mailings",
+   "resolution": "reported",
+   "quote": "louise reported that approximately 160 property tax statutory exemption applications and 70 chapter",
+   "tags": [
+    "exemptions",
+    "chapter land",
+    "applications"
+   ]
+  },
+  {
+   "topic": "ATB case, 494 West Townsend Rd",
+   "resolution": "no action; owner has not responded",
+   "quote": "he stated that the property owner has yet to respond to the letter.",
+   "tags": [
+    "ATB",
+    "re-inspection",
+    "appeal"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "to be set by Louise contacting members",
+   "quote": "louise will contact each member of the board at the end of the month to determine the date.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:45 pm (no motion recorded)",
+   "quote": "meeting adjourned at 6:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "July 7, 2015 minutes",
+   "where": "text",
+   "quote": "and july 7, 2015 minutes."
+  },
+  {
+   "name": "Motor vehicle veteran exemption form",
+   "where": "text",
+   "quote": "board reviewed and signed motor vehicle veteran exemption form in the amount of $142.50 to be"
+  },
+  {
+   "name": "Property tax statutory exemption applications",
+   "where": "text",
+   "quote": "louise reported that approximately 160 property tax statutory exemption applications and 70 chapter"
+  },
+  {
+   "name": "FY16 preliminary bill",
+   "where": "text",
+   "quote": "the property owner received a fy16 preliminary bill and was"
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "abatement",
+  "tax exemptions",
+  "veterans exemption",
+  "ATB case",
+  "preliminary tax",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

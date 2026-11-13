@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2014-04-03",
  "docid": "3226",
@@ -12,6 +12,148 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes contain reports (recreation basketball, turf field schedule, Marshall Park baseball field status) and planning discussions (turf field fee structure modification, plantings around memorial bullpen) but no motions, votes, or adjournment motions are explicitly stated.",
- "cost_usd": 0.0817015
+ "note": "Scanned OCR text (macOS Vision) with garbled header and stamp text (\"Aproved\", \"LIB INCORPOR\", \"ENBURG\", \"35°\"). No motions, votes, or roll-call results are recorded in the text, so no votes are listed. Douglas M. McQuaid appears only in the header; the body names only two members present, so his attendance is not stated. Minutes say no previous minutes were approved and the 3/27 meeting was postponed, with no vote recorded.",
+ "cost_usd": 0.00362952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Robuccio",
+   "role": "Chairman (header: Robert Robuccio, Chairman)",
+   "status": "present",
+   "quote": "members present: commissioners bob robuccio and mike masciarelli."
+  },
+  {
+   "name": "Mike Masciarelli",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "members present: commissioners bob robuccio and mike masciarelli."
+  },
+  {
+   "name": "Douglas M. McQuaid",
+   "status": "not stated",
+   "quote": "robert robuccio, chairman michael masciarelli douglas m. mcquaid"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "troy daniels was present at the meeting and stated that the commission has been violating the open meeting law."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bob Robuccio will contact Jack to arrange for the water at the bathrooms to be turned on.",
+   "quote": "water at the bathrooms need to be turned on, bob will contact jack to arrange for turn on."
+  },
+  {
+   "decision": "The commission will discuss the proposed plantings around the Mike Dione Memorial Bullpen at a future meeting.",
+   "quote": "will discuss this matter at a future meeting."
+  },
+  {
+   "decision": "A meeting with the DPW director, LYSA, Pop Warner, LTFA and the School Dept will be scheduled to start discussing the turf field fee structure.",
+   "quote": "meeting with dpw director, lysa, pop warner, ltfa and the school dept will be scheduled to start discussing this matter."
+  },
+  {
+   "decision": "The commission will work to eliminate the alleged Open Meeting Law issue raised in public comment.",
+   "quote": "the commission thanked him for his input and will work to eliminate this issue."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf field fee structure",
+   "what_was_recorded": "The minutes say the turf field fee structure needs to be modified, with no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the turf field fee structure needs to be modified."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "",
+   "topic": "Alleged Open Meeting Law violations",
+   "quote": "troy daniels was present at the meeting and stated that the commission has been violating the open meeting law."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Recreation Basketball",
+   "resolution": "no action; reported no problems",
+   "quote": "bob robuccio reported no problems with the recreation basketball league this winter.",
+   "tags": [
+    "recreation",
+    "basketball"
+   ]
+  },
+  {
+   "topic": "Turf Field",
+   "resolution": "schedule reviewed; water turn-on to be arranged",
+   "quote": "mike masciarelli reviewed turf schedule:",
+   "tags": [
+    "turf field",
+    "scheduling",
+    "water"
+   ]
+  },
+  {
+   "topic": "Marshall Park Baseball Field",
+   "resolution": "no action; field unplayable, alternate arrangements in place",
+   "quote": "bob robuccio reported that marshall park baseball field is still unplayable, alternate arrangements and",
+   "tags": [
+    "baseball",
+    "marshall park",
+    "scheduling",
+    "police association"
+   ]
+  },
+  {
+   "topic": "Mike Dione Memorial Bullpen plantings",
+   "resolution": "continued to a future meeting",
+   "quote": "mike masciarelli reported that a group of parents in the community would like to add some plantings",
+   "tags": [
+    "bullpen",
+    "plantings"
+   ]
+  },
+  {
+   "topic": "Other Business: turf field fee structure",
+   "resolution": "meeting to be scheduled with DPW director and user groups",
+   "quote": "the turf field fee structure needs to be modified.",
+   "tags": [
+    "fees",
+    "turf field"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; commission to address Open Meeting Law concern",
+   "quote": "troy daniels was present at the meeting and stated that the commission has been violating the open meeting law.",
+   "tags": [
+    "public comment",
+    "open meeting law"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Turf Schedule",
+   "where": "text",
+   "quote": "mike masciarelli reviewed turf schedule:"
+  }
+ ],
+ "tags": [
+  "parks",
+  "turf field",
+  "baseball field",
+  "recreation",
+  "fees",
+  "open meeting law",
+  "public comment",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

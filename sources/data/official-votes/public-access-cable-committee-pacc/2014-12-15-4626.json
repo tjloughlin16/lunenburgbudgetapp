@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2014-12-15",
  "docid": "4626",
@@ -12,6 +12,264 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR from macOS Vision. No votes are explicitly recorded with formal voting language (motion by X, seconded by Y; vote counts; \"unanimously approved\"; \"so voted\"; or \"the motion carried/failed\"). The minutes describe elections of officers and committee approvals but do not state these as recorded votes.",
- "cost_usd": 0.10302249999999999
+ "note": "OCR of a two-page scan. No motions, seconds, or vote tallies are recorded anywhere in the text, so the votes list is empty; elections and approvals are recorded as decisions without a vote count. The minutes also do not record a motion to adjourn (only \"Meeting adjourned at 7:38pm.\"). The minutes refer to Jo McLaughlin as both \"Jo\" and \"Joe\" and as \"she\"; the name is recorded as printed in the attendance line. The page carries a \"Feb 28,2015\" line and a \"RECEIVED & FILED APR 07 2015\" town clerk stamp; these are not approval votes. Public comment item B has no named speaker.",
+ "cost_usd": 0.00483152,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jo McLaughlin",
+   "role": "director of Lunenburg Public Access",
+   "status": "present",
+   "quote": "non committee members in attendance were: jo mclaughlin, bob ebersole, john henshaw, pete lincoln and john dextraze."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "non-committee member",
+   "status": "present",
+   "quote": "non committee members in attendance were: jo mclaughlin, bob ebersole, john henshaw, pete lincoln and john dextraze."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "non-committee member",
+   "status": "present",
+   "quote": "non committee members in attendance were: jo mclaughlin, bob ebersole, john henshaw, pete lincoln and john dextraze."
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "former member of the PACC",
+   "status": "present",
+   "quote": "pete lincoln, a former member of the pacc, briefed us on the history of lunenburg's public access channel."
+  },
+  {
+   "name": "John Dextraze",
+   "role": "non-committee member",
+   "status": "present",
+   "quote": "non committee members in attendance were: jo mclaughlin, bob ebersole, john henshaw, pete lincoln and john dextraze."
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "town clerk",
+   "status": "present",
+   "quote": "called to order by the town clerk, kathy herrick."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Chairman (elected)",
+   "status": "present",
+   "quote": "rhonda lisio was elected chairman, steve walker was elected vice-chairman, and jeffrey bajko was elected secretary."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Vice-Chairman (elected)",
+   "status": "present",
+   "quote": "rhonda lisio was elected chairman, steve walker was elected vice-chairman, and jeffrey bajko was elected secretary."
+  },
+  {
+   "name": "Jeffrey Bajko",
+   "role": "Secretary (elected)",
+   "status": "present",
+   "quote": "rhonda lisio was elected chairman, steve walker was elected vice-chairman, and jeffrey bajko was elected secretary."
+  },
+  {
+   "name": "Kerry Spiegel",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "it was approved by the town manager; kerry spiegel."
+  },
+  {
+   "name": "Robert Hague",
+   "role": "of Access/AV, proposed to update the control room",
+   "status": "not stated",
+   "quote": "the committee approved to get an official proposal from robert hague of access/av to update the control room in the town hall."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Rhonda Lisio elected Chairman, Steve Walker elected Vice-Chairman, and Jeffrey Bajko elected Secretary; all members accepted their nominations.",
+   "quote": "rhonda lisio was elected chairman, steve walker was elected vice-chairman, and jeffrey bajko was elected secretary."
+  },
+  {
+   "decision": "The committee approved obtaining an official proposal from Robert Hague of Access/AV to update the control room in the town hall, to be submitted at the February meeting.",
+   "quote": "the committee approved to get an official proposal from robert hague of access/av to update the control room in the town hall."
+  },
+  {
+   "decision": "The board created a master list of policies to be reviewed and approved: producer's agreement, public access equipment rental, political coverage, membership, programming, bulletin board, and purchasing.",
+   "quote": "the board created a master list of policies to be reviewed and approved."
+  },
+  {
+   "decision": "A studio access policy is to be written and discussed at a later date.",
+   "quote": "the pacc discussed a new policy that should be written: studio access policy. it will be discussed at a later date."
+  },
+  {
+   "decision": "The PACC will review, make corrections and approve four policies at the January meeting: bulletin board, purchase, membership, and equipment rental.",
+   "quote": "the pacc will review, make corrections and approve four policies at the january meeting."
+  },
+  {
+   "decision": "New policies will be added when needed.",
+   "quote": "the pacc also decided that new policies will be added when needed."
+  },
+  {
+   "decision": "The committee will review the FY 2015 budget before the next meeting and discuss changes and vote to approve it at that meeting.",
+   "quote": "the committee will review the budget before next meeting."
+  },
+  {
+   "decision": "Members agreed to look at other cities' public access websites and their policies for ideas (recommended by Bob Ebersole).",
+   "quote": "bob ebersole recommended going on other cities public access website and look at their policies to get ideas."
+  },
+  {
+   "decision": "The next meeting agenda is to include policies, FY 2015 budget, open houses, equipment training, and PAC marketing strategies.",
+   "quote": "some of the items the committee will be discussing are policies, fy 2015 budget, open houses,"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2014 operational budget",
+   "what_was_recorded": "Jo McLaughlin presented the FY 2014 operational budget, and after review the PAC was said to be in a good financial situation.",
+   "figures_as_printed": [],
+   "quote": "presented the committee with fy 2014 operational budget. after looking over the fy 2014 budget, the pac is in a good financial situation."
+  },
+  {
+   "topic": "Proposed FY 2015 equipment budget",
+   "what_was_recorded": "Jo recommended increasing the equipment budget from $18,000 to $30,000 due to needed control room improvements in the town hall.",
+   "figures_as_printed": [
+    "$18,000",
+    "$30,000"
+   ],
+   "quote": "joe recommended for increasing the equipment budget from $18,000 to $30,000 due to improvements needed to the control room"
+  },
+  {
+   "topic": "Advertising budget line",
+   "what_was_recorded": "The advertising line item is listed at $3000.00 and could be adjusted.",
+   "figures_as_printed": [
+    "$3000.00"
+   ],
+   "quote": "that line item is listed as $3000.00."
+  },
+  {
+   "topic": "Equipment purchases from FY2014 allotment",
+   "what_was_recorded": "Jo bought 3 new Macbooks and two tripods with allotted FY2014 equipment money, approved by the Town Manager; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "jo bought 3 new macbooks, two tripods with the allotted equipment money from the fy2014"
+  },
+  {
+   "topic": "Final Cut software",
+   "what_was_recorded": "Final Cut software still needs to be purchased for 4 MacBooks; no price printed.",
+   "figures_as_printed": [],
+   "quote": "final cut software still needs to be purchased for 4 macbooks."
+  },
+  {
+   "topic": "Desk and chairs for fire code",
+   "what_was_recorded": "The PAC needs to purchase a desk and four chairs to meet the state's fire code; no price printed.",
+   "figures_as_printed": [],
+   "quote": "the pac needs to purchase a desk and four chairs"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "a former member of the PACC",
+   "topic": "history of Lunenburg's public access channel",
+   "quote": "pete lincoln, a former member of the pacc, briefed us on the history of lunenburg's public access channel. (channel 9)."
+  },
+  {
+   "topic": "programming growth charts in financial packet",
+   "quote": "in the financial packet that joe gave the committee at the beginning of the meeting, she included charts of the increasing programming originating from lunenburg."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Organization Election",
+   "resolution": "Chairman, Vice-Chairman and Secretary elected",
+   "quote": "rhonda lisio was elected chairman, steve walker was elected vice-chairman, and jeffrey bajko was elected secretary.",
+   "tags": [
+    "election",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Financial Overview",
+   "resolution": "FY 2014 budget reviewed; FY 2015 budget to be reviewed and voted at next meeting",
+   "quote": "presented the committee with fy 2014 operational budget.",
+   "tags": [
+    "budget",
+    "FY2015"
+   ]
+  },
+  {
+   "topic": "Equipment needs",
+   "resolution": "Proposal from Robert Hague approved to be sought; desk and chairs being looked into",
+   "quote": "the committee approved to get an official proposal from robert hague of access/av to update the control room in the town hall.",
+   "tags": [
+    "equipment",
+    "control room",
+    "fire code"
+   ]
+  },
+  {
+   "topic": "Discussion of various Policies",
+   "resolution": "Master policy list created; four policies set for January review; studio access policy to be written later",
+   "quote": "the board created a master list of policies to be reviewed and approved.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Public Comments",
+   "resolution": "No action; comments received",
+   "quote": "pete lincoln, a former member of the pacc, briefed us on the history of lunenburg's public access channel.",
+   "tags": [
+    "public comment",
+    "history",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Next meeting agenda",
+   "resolution": "Agenda outlined; to be broadcast at town hall",
+   "quote": "the board discussed next meeting's agenda and once it is approved, will be broadcast at the town hall.",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY 2014 operational budget",
+   "where": "text",
+   "quote": "presented the committee with fy 2014 operational budget. after looking over the fy 2014 budget, the pac is in a good financial situation."
+  },
+  {
+   "name": "Proposed FY 2015 budget",
+   "where": "text",
+   "quote": "joe also presented her proposed fy 2015 budget."
+  },
+  {
+   "name": "Financial packet (charts of Lunenburg programming)",
+   "where": "text",
+   "quote": "in the financial packet that joe gave the committee at the beginning of the meeting, she included charts of the increasing programming originating from lunenburg."
+  },
+  {
+   "name": "Purchase orders for equipment",
+   "where": "text",
+   "quote": "all purchased orders were given to the committee for review."
+  }
+ ],
+ "tags": [
+  "public access",
+  "PACC",
+  "budget",
+  "FY2015 budget",
+  "equipment",
+  "policies",
+  "elections",
+  "town hall control room",
+  "Channel 9"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

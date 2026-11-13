@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-04-14",
  "docid": "3748",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept RMD Bylaw and forward to Town Counsel for review",
+   "motion": "Accept the RMD Bylaw and forward it to Town Counsel for review.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, e. bakaysa, to accept rmd bylaw and forward to town counsel for review, second, d. mcquaid, all aye."
+   "quote": "motion, e. bakaysa, to accept rmd bylaw and forward to town counsel for review"
   },
   {
-   "motion": "Extend Highfield Village project deadline to July 28, 2014",
+   "motion": "Extend the Highfield Village decision period to July 28, 2014.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -28,31 +28,7 @@
    "quote": "motion, d. mcquaid, to extend to july 28, 2014, second, m. allison, all aye."
   },
   {
-   "motion": "Approve minutes of 3-24-14",
-   "moved_by": "N. Lockwood",
-   "seconded_by": "M. Allison",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, n. lockwood, to approve 3-24-14, second, m. allison."
-  },
-  {
-   "motion": "Approve minutes of 3-24-14 Public Hearing",
-   "moved_by": "N. Lockwood",
-   "seconded_by": "D. McQuaid",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, n. lockwood, to approve 3-24-14 public hearing, second, d. mcquaid ."
-  },
-  {
-   "motion": "Approve minutes of 4-7-14 Workshop",
-   "moved_by": "N. Lockwood",
-   "seconded_by": "D. McQuaid",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, n. lockwood, to approve 4-7-14 workshop, second, d. mcquaid."
-  },
-  {
-   "motion": "Extend decision period for Definitive Subdivision at 50 Elmwood Road for 90 days to July 14, 2014",
+   "motion": "Extend the decision period for the 50 Elmwood Road definitive subdivision by 90 days (extension approved to July 14, 2014).",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -60,16 +36,39 @@
    "quote": "motion, d. mcquaid, second, m. allison, all aye."
   },
   {
-   "motion": "Move ahead with MRPC on the Housing Element",
+   "motion": "Approve the minutes of 3-24-14.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "M. Allison",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion, n. lockwood, to approve 3-24-14, second, m. allison."
+  },
+  {
+   "motion": "Approve the minutes of 3-24-14 Public Hearing.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "D. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion, n. lockwood, to approve 3-24-14 public hearing, second, d. mcquaid"
+  },
+  {
+   "motion": "Approve the minutes of 4-7-14 Workshop.",
+   "moved_by": "N. Lockwood",
+   "seconded_by": "D. McQuaid",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion, n. lockwood, to approve 4-7-14 workshop, second, d. mcquaid."
+  },
+  {
+   "motion": "Move ahead with MRPC on the Master Plan Housing Element.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, n. lockwood to move ahead with mrpc on the housing element, second, d. mcq uaid, all aye",
-   "quote_taken_from_text": true
+   "quote": "motion, n. lockwood to move ahead with mrpc on the housing element,"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -78,6 +77,403 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1250155
+ "note": "Text is a page-extracted minutes document with irregular spacing; quotes were copied with spacing collapsed. Discrepancy in the minutes: Highfield Village is recorded as a request for a 90-day extension to July 14, 2014, but the motion extends it to July 28, 2014. The 50 Elmwood Road motion has no printed end date in the motion itself; the end date (July 14, 2014) appears only in the following sentence. No vote counts are printed (votes recorded as \"all aye\" are recorded as passed without a count); the three minutes approvals and the adjournment motion have no printed result for the minutes items, which are recorded as not stated. The Pleasant Street Solar discussion has no motion. Applicants David/Sandra Diperri and Sean Connery are named but the minutes do not say they attended, so they are omitted from attendees. Police Chief J. Marino is requested to attend a later meeting and is not recorded as present.",
+ "cost_usd": 0.012097120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, chair"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood, vice-chair"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "damon mcquaid, clk."
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, mbr."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "also present; chantell fleck, mrpc"
+  },
+  {
+   "name": "J. Godfrey",
+   "role": "project developer",
+   "status": "present",
+   "quote": "j. godfrey, project developer, noted sewer plan"
+  },
+  {
+   "name": "Eric Aubrey",
+   "role": "with Gehrlicher Solar on behalf on the developer",
+   "status": "present",
+   "quote": "e. aubrey noted these are unitil poles."
+  },
+  {
+   "name": "J. Rheault",
+   "role": "Whitman & Bingham Associates, on behalf on the applicant",
+   "status": "present",
+   "quote": "j. rheault, whitman & bingham associates noted the buyer and seller are still working on the transaction."
+  },
+  {
+   "name": "J. Hume",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "j. hume, mrpc, felt it would be benefi cial for the board to proceed with the housing element",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Celeste McCain-Stober",
+   "role": "",
+   "status": "present",
+   "quote": "celeste mccain-stober, 275 pleasant street- opined that the poles were being put up"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road - concerned with the earth removal"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "member of the Conservation Commission and the Open Space and Recreation Committee",
+   "status": "present",
+   "quote": "sharon jordan, 77 burrage street - as a member of both the conservation commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Plan for 115 Fairview Road ANR and Sean Connery ANR for 317 Sunny Hill Road were accepted for review (Connery ANR: Lot 5 changed into Lots 5A and 5B).",
+   "quote": "anr, sean connery, 317 sunny hill road- plan accepted for review."
+  },
+  {
+   "decision": "Board noted the Sewer Commission will review the ANR plan as part of the review process.",
+   "quote": "board noted as part of review process the plan will be reviewed by the sewer commission."
+  },
+  {
+   "decision": "Chair to research the utility pole issue at Pleasant Street Solar.",
+   "quote": "j bilotta -simeone noted she needs to research.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Board requested the name of a contact person at Unitil to provide to DR for research.",
+   "quote": "board requested name of contact person at unitil"
+  },
+  {
+   "decision": "Chair requested a letter be sent to the Pleasant Street Solar developer confirming no more electrical work will be done.",
+   "quote": "requested letter be sent to the developer confirming"
+  },
+  {
+   "decision": "J. Hume to follow up with the Town Manager as to the DLTA portion of the Housing Element; a draft presentation to the Board in about a month.",
+   "quote": "j. hume to follow up with the town manager as to the"
+  },
+  {
+   "decision": "Board requested Police Chief J. Marino attend the April 28th Board meeting to discuss speed/traffic at 305 Leominster Shirley Road.",
+   "quote": "board requesting police chief j. marino come to the april 28th board meeting for discussion of same."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Housing Element cost (Master Plan)",
+   "what_was_recorded": "A Housing Element would normally cost $8,000 to $10,000, but with the DLTA it would be reduced to approximately $4,000, making use of FY2013 encumbered funds.",
+   "figures_as_printed": [
+    "$8,000 - $10,000",
+    "$4 ,000"
+   ],
+   "quote": "a housing element would normally cost $8,000 - $10,000, but in conjunction with"
+  },
+  {
+   "topic": "Open Space Plan conversion to an Element",
+   "what_was_recorded": "The Open Space Plan could be converted into an Element for around $2,000, but it does not fall under the DLTA.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "the open space plan could be converted into an element for around $2,000"
+  },
+  {
+   "topic": "Use of FY2013 encumbered funds",
+   "what_was_recorded": "Discussion on using FY2013 encumbered funds for updating a Master Plan Element; no dollar figure printed for the funds themselves.",
+   "figures_as_printed": [],
+   "quote": "discussion on use of fy2013 encumbered funds for updating an element of"
+  },
+  {
+   "topic": "Peer review by Whitman & Bingham (School Building Committee)",
+   "what_was_recorded": "Whitman & Bingham Associates, the Planning Board's peer reviewing firm, will do a pro bono review; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "has stated they will do a pro bono review."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Celeste McCain-Stober",
+   "stated_role": "275 Pleasant Street",
+   "topic": "Pleasant Street Solar utility poles",
+   "quote": "opined that the poles were being put up on pleasant street because it is more cost"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "312 Townsend Harbor Road",
+   "topic": "Elmwood Road subdivision earth removal; Master Plan; CWMP",
+   "quote": "concerned with the earth removal at the proposed elmwood road subdivision."
+  },
+  {
+   "speaker": "Sharon Jordan",
+   "stated_role": "As a member of both the Conservation Commission and the Open Space and Recreation Committee",
+   "topic": "Lane property acquisition thanks; site visits",
+   "quote": "thanked the board for its recommendation to acquire the lane property on holman street."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Hearing (cont'd): RMD Bylaw warrant article",
+   "resolution": "accepted and forwarded to Town Counsel",
+   "tags": [
+    "RMD bylaw",
+    "warrant article",
+    "marijuana"
+   ],
+   "quote": "motion to accept rmd bylaw - motion, e. bakaysa, to accept rmd bylaw and forward to town counsel for review"
+  },
+  {
+   "topic": "Highfield Village extension request",
+   "resolution": "extended to July 28, 2014",
+   "tags": [
+    "extension",
+    "subdivision",
+    "sewer"
+   ],
+   "quote": "highfield village, extension request - j. godfrey, project developer, noted sewer plan"
+  },
+  {
+   "topic": "ANR, 115 Fairview Road (Diperri)",
+   "resolution": "plan accepted for review; ZBA and Sewer Commission referrals noted",
+   "tags": [
+    "ANR",
+    "septic",
+    "sewer"
+   ],
+   "quote": "parcel a, consisting of 353 sq. ft., is to be"
+  },
+  {
+   "topic": "ANR, 317 Sunny Hill Road (Sean Connery)",
+   "resolution": "plan accepted for review",
+   "tags": [
+    "ANR"
+   ],
+   "quote": "lot 5 being changed into lots 5a and 5b."
+  },
+  {
+   "topic": "Pleasant Street Solar utility poles",
+   "resolution": "discussed; Chair to research; letter to developer requested; no vote",
+   "tags": [
+    "solar",
+    "utility poles",
+    "cease and desist"
+   ],
+   "quote": "pole location was not in the board approved plan."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 3-24-14, 3-24-14 Public Hearing and 4-7-14 Workshop",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion, n. lockwood, to approve 3-24-14, second, m. allison."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; Right to Farm bylaw on the Warrant",
+   "tags": [
+    "committee reports",
+    "right to farm"
+   ],
+   "quote": "it was noted that the right to farm bylaw is on the warrant."
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "50 Elmwood Road extension approved to July 14, 2014; other projects noted",
+   "tags": [
+    "status reports",
+    "extension",
+    "subdivision",
+    "solar"
+   ],
+   "quote": "definitive subdivision, 50 elmwood road - whitman & bingham associates, on behalf on the applicant"
+  },
+  {
+   "topic": "Action file: Master Plan Housing Element",
+   "resolution": "approved moving ahead with MRPC on the Housing Element",
+   "tags": [
+    "master plan",
+    "housing",
+    "MRPC",
+    "DLTA"
+   ],
+   "quote": "action file: master plan, housing element - discussion on use of fy2013 encumbered funds"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "april 28, 6:30 pm, ritter memorial building"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "three speakers heard",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "celeste mccain-stober, 275 pleasant street- opined that the poles were being put up"
+  },
+  {
+   "topic": "Board comment: speed/traffic at 305 Leominster Shirley Road",
+   "resolution": "Police Chief asked to attend April 28 meeting",
+   "tags": [
+    "traffic",
+    "police"
+   ],
+   "quote": "board requesting police chief j. marino come to the april 28th board meeting for discussion of same."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:30 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion n. lockwood to adjourn, second, d. mcquaid, adjourned 8:30 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 3-24-14",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 3-24-14 minutes 3-24-14 public hearing"
+  },
+  {
+   "name": "Minutes 3-24-14 Public Hearing",
+   "where": "list",
+   "quote": "minutes 3-24-14 public hearing minutes 4-7-14 workshop"
+  },
+  {
+   "name": "Minutes 4-7-14 Workshop",
+   "where": "list",
+   "quote": "minutes 3-24-14 public hearing minutes 4-7-14 workshop"
+  },
+  {
+   "name": "115 Fairview Road ANR",
+   "where": "list",
+   "quote": "minutes 4-7-14 workshop 115 fairview road anr 317 sunny hill road anr"
+  },
+  {
+   "name": "317 Sunny Hill Road ANR",
+   "where": "list",
+   "quote": "minutes 4-7-14 workshop 115 fairview road anr 317 sunny hill road anr"
+  },
+  {
+   "name": "Highfield Village Request for Extension",
+   "where": "list",
+   "quote": "317 sunny hill road anr highfield village request for extension"
+  },
+  {
+   "name": "50 Elmwood Road Request for Extension",
+   "where": "list",
+   "quote": "highfield village request for extension 50 elmwood road request for extension"
+  },
+  {
+   "name": "Chase Road Solar Update",
+   "where": "list",
+   "quote": "50 elmwood road request for extension chase road solar update"
+  },
+  {
+   "name": "Pleasant Street Solar Update",
+   "where": "list",
+   "quote": "chase road solar update pleasant street solar update"
+  },
+  {
+   "name": "Draft RMD Bylaw",
+   "where": "list",
+   "quote": "pleasant street solar update draft rmd bylaw"
+  },
+  {
+   "name": "David Ross Associates review 4-2-14, Pleasant Street solar",
+   "where": "list",
+   "quote": "draft rmd bylaw david ross associates review 4-2-14, pleasant street solar"
+  },
+  {
+   "name": "Building/Zoning Official letter 4-14-14, Pleasant Street solar",
+   "where": "list",
+   "quote": "david ross associates review 4-2-14, pleasant street solar building/zoning official letter 4-14-14"
+  },
+  {
+   "name": "Comprehensive Wastewater Management Plan (CWMP)",
+   "where": "text",
+   "quote": "the comprehensive wastewater management plan - a full build out for"
+  },
+  {
+   "name": "EIR (Environmental Impact Report)",
+   "where": "text",
+   "quote": "the eir (environmental impact report)"
+  },
+  {
+   "name": "Right to Farm bylaw (Warrant)",
+   "where": "text",
+   "quote": "it was noted that the right to farm bylaw is on the warrant."
+  },
+  {
+   "name": "Open Space Plan",
+   "where": "text",
+   "quote": "the open space plan could be converted into an element for around $2,000"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "ANR",
+  "solar",
+  "utility poles",
+  "RMD bylaw",
+  "master plan",
+  "housing element",
+  "extensions",
+  "minutes approval",
+  "public comment",
+  "Highfield Village",
+  "sewer",
+  "traffic"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

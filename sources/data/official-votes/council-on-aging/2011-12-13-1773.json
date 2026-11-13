@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2011-12-13",
  "docid": "1773",
@@ -12,31 +12,286 @@
  },
  "votes": [
   {
-   "motion": "Accept the November 8, 2011 COA meeting minutes as presented",
+   "motion": "Accept the November 8, 2011 COA meeting minutes as presented.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to accept the november 8, 2011 coa meeting minutes as presented. all approved, motion carried."
+   "quote": "a motion was made and seconded to accept the november 8, 2011 coa meeting minutes as presented.",
+   "seconded_by": ""
   },
   {
-   "motion": "Follow the process of the Director Evaluation which is in the Council on Aging Bylaws",
+   "motion": "Follow the process of the Director Evaluation set out in the Council on Aging Bylaws.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and seconded to follow the proces s of the director evaluation which is in the counci l on aging bylaws. all approved, motion carried."
+   "quote": "a motion was made and seconded to follow the proces s of the director evaluation which is in the counci l on aging bylaws.",
+   "seconded_by": ""
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
+   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. Moved by and seconded by names not specified in any of the motions. The quote for the Director Evaluation motion preserves OCR spacing artifacts as they appear in the source text (\"proces s\" and \"Counci l\").",
- "cost_usd": 0.0869455
+ "note": "Extracted text with some words split by spacing (e.g., \"proces s\", \"Counci l\"), quoted as printed. Motions to approve minutes and to follow the Director Evaluation process record no mover or seconder by name. Minutes are marked approved at the 1/10/12 COA meeting. No dollar figures appear anywhere in the text.",
+ "cost_usd": 0.005118419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), jane doyle, jim hays, sis montuori, deb seeley, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "absent",
+   "quote": "doreen noble (director), sandy flanagan, barbara brown, and fred crellin."
+  },
+  {
+   "name": "Sandy Flanagan",
+   "role": "",
+   "status": "absent",
+   "quote": "doreen noble (director), sandy flanagan, barbara brown, and fred crellin."
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "absent",
+   "quote": "doreen noble (director), sandy flanagan, barbara brown, and fred crellin."
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "",
+   "status": "absent",
+   "quote": "doreen noble (director), sandy flanagan, barbara brown, and fred crellin."
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guest: lloyd carlson and john male"
+  },
+  {
+   "name": "John Male",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guest: lloyd carlson and john male"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Doreen Noble will be asked to contact the people at the cable station about filming new footage for the Eagle House public access announcements, footage not so date sensitive.",
+   "quote": "doreen will be asked to contact the people at the cable station about filming new footage"
+  },
+  {
+   "decision": "The COA board discussed possibly going into Executive Session on the Director's evaluation after the January 10, 2012 COA meeting; no decision recorded.",
+   "quote": "the coa board spoke about perhaps going into executive session to discuss this issue after the january 10, 2012"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House septic mound removal bids",
+   "what_was_recorded": "The Friends of the Eagle House received two bids for removing the septic mound and voted to award the job to Dan Proctor; no dollar figures were printed.",
+   "quote": "the friends of the eagle house have received two bids for the removal of the septic mound.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Funding of septic mound removal",
+   "what_was_recorded": "Friends of the Eagle House Inc was to meet on December 14 to discuss funding the mound removal; no figure printed.",
+   "quote": "lloyd carlson stated that the friends of the eagle house inc would be meeting on december 14",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "COA Finance Committee budget information",
+   "what_was_recorded": "The COA Finance Committee has not set a meeting date and is still awaiting budget information from the Town Manager; no figures printed.",
+   "quote": "they are still awaiting budget information from the town manager.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Proposed tax rate for seniors over 70",
+   "what_was_recorded": "The COA Advocacy Committee is looking into a new tax rate for Lunenburg citizens over 70 years of age who have lived in the town for 50 years or more; no figures printed.",
+   "quote": "looking into a new tax ra te for lunenburg citizens over 70 years of age who have lived in the town for 50 years or more",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "called to order at 9:30 a.m.",
+   "quote": "pete lincoln, chairperson, called the meeting to order at 9:30 a.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of November 8, 2011",
+   "resolution": "approved as presented",
+   "quote": "a motion was made and seconded to accept the november 8, 2011 coa meeting minutes as presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no report; discussion of janitorial and Eagle House septic mound communication",
+   "quote": "there was no director's report at this meeting.",
+   "tags": [
+    "director",
+    "janitorial",
+    "septic mound",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Old Business: Parking Lot",
+   "resolution": "no action; septic mound bids reported",
+   "quote": "the friends of the eagle house have received two bids for the removal of the septic mound.",
+   "tags": [
+    "parking lot",
+    "septic mound",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Old Business: Janitor for Eagle House",
+   "resolution": "no action; discussed under Director's report",
+   "quote": "janitor for eagle house: discussed under director's report.",
+   "tags": [
+    "janitor",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "New Business: Public Access Eagle House announcements",
+   "resolution": "Director to contact cable station about new footage",
+   "quote": "doreen will be asked to contact the people at the cable station about filming new footage",
+   "tags": [
+    "cable television",
+    "public access",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "approved to follow the process in the COA Bylaws; possible executive session after January 10, 2012",
+   "quote": "a motion was made and seconded to follow the proces s of the director evaluation which is in the counci l on aging bylaws.",
+   "tags": [
+    "director evaluation",
+    "bylaws",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Sub Committee Reports",
+   "resolution": "reported; Sandy Flanagan resigned from the board",
+   "quote": "sandy flanagan gave her resignation as a coa board member.",
+   "tags": [
+    "subcommittees",
+    "resignation",
+    "board development",
+    "finance",
+    "advocacy"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no correspondence read",
+   "quote": "no correspondence was read at this meeting.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "no action; sign-in system progress reported",
+   "quote": "the new computerized sign in system is a work in progress",
+   "tags": [
+    "sign-in system"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:30 a.m.",
+   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Council on Aging Bylaws",
+   "where": "text",
+   "quote": "the director evaluation which is in the counci l on aging bylaws"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "Eagle House",
+  "septic mound",
+  "director evaluation",
+  "bylaws",
+  "public access television",
+  "subcommittees",
+  "sign-in system",
+  "minutes approval",
+  "senior tax rate"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

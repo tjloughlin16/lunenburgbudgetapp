@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-02-07",
  "docid": "4794",
@@ -12,31 +12,288 @@
  },
  "votes": [
   {
-   "motion": "Change the town warrant closing date to 4:00 p.m. on March 26, 2012",
-   "moved_by": "Alonzo",
-   "seconded_by": "Sund",
+   "motion": "Change the closing date of the town warrant for Annual Town Meeting to 4:00 p.m. on March 26, 2012, as recommended by the Town Manager.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved that they change the closing date of the town warrant, as recommended by the town manager to 4:00 p.m. on march 26, 2012. mr. sund seconded. on vote, motion passed, 5 in favor, o opposed."
+   "quote": "mr. alonzo moved that they change the closing date of the town warrant, as recommended by the town manager to 4:00 p.m. on march 26, 2012. mr. sund seconded."
   },
   {
-   "motion": "Approve Class 1 and Class 3 motor vehicle licenses for Central Mass Motor Cycle Ltd and Central Mass Power Sports at 19 Massachusetts Ave",
-   "moved_by": "Alonzo",
-   "seconded_by": "deBettencourt",
+   "motion": "Approve the Class 1 License and the Class 3 License for Central Mass Motor Cycle LTD and Central Mass Power Sports doing business at 19 Massachusetts Ave.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to approve the class 1 license and the class 3 license for central mass motor cycle ltd and central mass power sports doing business at 19 massachusetts ave. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. alonzo moved to approve the class 1 license and the class 3 license for central mass motor cycle ltd and central mass power sports doing business at 19 massachusetts ave."
   },
   {
-   "motion": "Adjourn the regular meeting to enter Executive Session to discuss collective bargaining, litigation strategy, and non-union personnel contract negotiations",
-   "moved_by": "deBettencourt",
-   "seconded_by": "Alonzo",
+   "motion": "Adjourn the regularly scheduled meeting to go into Executive Session under M.G.L. Chapter 39, Section 23B (3).",
+   "moved_by": "Mr. deBettencourt",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mir. debettencourt moved to adjourn the meeting. motion was seconded by mr. alonzo. the board voted unanimously to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor artifacts (letter O for zero in first vote quote, \"Mir.\" for \"Mr.\" in third vote quote) preserved verbatim in quotes.",
- "cost_usd": 0.11132349999999999
+ "note": "OCR text of a 2012 scanned minutes page set; some typos likely from OCR or the original (e.g., 'O opposed' read as zero, 'Mir.', 'Ms Spiedel', warrant '# 47-10'). The warrant closing-date vote is printed as '5 in favor, O opposed' and recorded here as 5-0. Warrants were presented for approval but no approval motion or vote is recorded. Executive session motion text is recorded as adjourning to executive session under M.G.L. Chapter 39, Section 23B (3); the minutes print 'M.G. L.'. No documents list heading is printed.",
+ "cost_usd": 0.00716922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "public comment, 33 West Street",
+   "status": "present",
+   "quote": "david prokowiew, 33 west street, informed the board that he had attended a planning board/green communities task force meeting"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The remote participation under Open Meetings Law Section 20 (d) item will be discussed again at a future meeting (not adopted at this meeting).",
+   "quote": "this item will be discussed again at a future meeting."
+  },
+  {
+   "decision": "Ms. Speidel to finish the BOS Policies & Procedures document and have it put back on the agenda for the following week.",
+   "quote": "ms. speidel said she should be able to finish that up tomorrow and have it put back on the agenda for next week."
+  },
+  {
+   "decision": "Residents who have not had trash picked up under the new schedule are to call the BOS, which will arrange an alternate-day pickup.",
+   "quote": "ms. speidel said that anyone who has not had their trash picked up to call the bos and they will arrange for it to be picked up on an alternate day."
+  },
+  {
+   "decision": "A reverse call will be made to Lunenburg residents about the solid waste schedule change, and it will be published in the Lunenburg Ledger.",
+   "quote": "a \"reverse call\" will be made to lunenburg residents informing them of the schedule change, and it will also be published in the lunenburg ledger."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants presented for approval",
+   "what_was_recorded": "Three warrants were presented for approval, with no approval vote recorded in the minutes.",
+   "figures_as_printed": [
+    "$267,464.97",
+    "$467,603.24",
+    "$547,085.32"
+   ],
+   "quote": "warrants - 2/7/12 w #46-12 $267,464.97 2/1/12 w # 45-12 $467,603.24 2/8/12 w # 47-10 $547,085.32"
+  },
+  {
+   "topic": "Solar project interconnection cost to Unitil",
+   "what_was_recorded": "The developer's power feed study was determined to be a substantial amount of money; the preliminary impact analysis figure is not public, but Ms. Speidel said Unitil is accessing 100% of the interconnection cost with no negotiation.",
+   "figures_as_printed": [],
+   "quote": "it was determined that it would be a substantial amount of money to \"feed it\" to unitil."
+  },
+  {
+   "topic": "Municipal electric aggregation rate with Unitil",
+   "what_was_recorded": "Questions from the public about the new electric rate effective January, which bills received in January did not reflect because they were for December 2011.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel said that there have been some questions regarding the municipal electric aggregation with unitil concerning"
+  },
+  {
+   "topic": "Budget Committee Chapter 70 discussion",
+   "what_was_recorded": "Mr. Alonzo reported the Budget Committee focused its discussion on Chapter 70 changes (state aid); no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. alonzo reported that the budget committee met on friday where they focused their discussion on the chapter 70"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Prokowiew",
+   "stated_role": "33 West Street",
+   "topic": "Solar bylaw amendment and permitting loophole",
+   "quote": "david prokowiew, 33 west street, informed the board that he had attended a planning board/green communities task force meeting"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: solar bylaw",
+   "resolution": "no action",
+   "quote": "public comment - david prokowiew, 33 west street, informed the board that he had attended a planning",
+   "tags": [
+    "solar bylaw",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements - mr. alonzo made an announcement that the friends of the lunenburg public library will be",
+   "tags": [
+    "announcements",
+    "library"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Warrant closing date for Annual Town Meeting",
+   "resolution": "approved change to March 26, 2012 closing date",
+   "quote": "warrant, annual town meeting, may 5, 2012 - revote closing date to 03/26/12 - ms. speidel apologized",
+   "tags": [
+    "warrant",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Current Business 2: BOS Policies & Procedures",
+   "resolution": "continued to next week's agenda",
+   "quote": "bos policies & procedures - ms. bertram had prepared a document by formatting and scanning the text to a",
+   "tags": [
+    "policies",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "Current Business 3: Remote participation under Open Meetings Law Section 20 (d)",
+   "resolution": "discussed; to be discussed at a future meeting",
+   "quote": "request to consider adoption on open meetings law, section 20 (d), remote participation",
+   "tags": [
+    "open meeting law",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Current Business 4: Minutes, warrants, action file",
+   "resolution": "warrants presented for approval; no minutes; no action file issues",
+   "quote": "4. minutes/warrants/action file issues - the following minutes and warrants were presented for approval.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current Business 5: Committee reports",
+   "resolution": "no action",
+   "quote": "5. committee report - mr. sund said that he had attended the prior evening's joint committee meeting",
+   "tags": [
+    "committees",
+    "school building committee",
+    "budget committee"
+   ]
+  },
+  {
+   "topic": "Current Business 6: Department reports (licenses, solid waste, electric aggregation, solar)",
+   "resolution": "two licenses approved; solid waste schedule and electric aggregation questions addressed",
+   "quote": "6. department reports - the town manager presented two license (mass ave motors inc., & chapdelaine truck",
+   "tags": [
+    "licenses",
+    "solid waste",
+    "electric aggregation",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Current Business 7: Town Manager report on regional dispatch",
+   "resolution": "no action",
+   "quote": "7. town manager reports update on regional dispatch- ms. speidel reported that last fall, lunenburg had",
+   "tags": [
+    "regional dispatch",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Old Business: resignation of Sandy Flanagan, COA",
+   "resolution": "resignation read; no action recorded",
+   "quote": "1. resignation: sandy flanagan, coa: mr. matthews read a letter of resignation from council on aging",
+   "tags": [
+    "resignation",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "adjourned to executive session; meeting adjourned at 8:27 p.m.",
+   "quote": "mir. debettencourt moved to adjourn the meeting. motion was seconded by mr. alonzo. the board voted unanimously to adjourn the meeting.",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Local Officials Guide to Zoning & Land Use for Renewable Energy",
+   "where": "text",
+   "quote": "he also said that he had shared a guide with ms speidel and ms. bertram called local officials guide to zoning & land use for renewable energy."
+  },
+  {
+   "name": "Warrant, Annual Town Meeting, May 5, 2012",
+   "where": "text",
+   "quote": "warrant, annual town meeting, may 5, 2012 - revote closing date to 03/26/12 - ms. speidel apologized"
+  },
+  {
+   "name": "BOS Policies & Procedures document",
+   "where": "text",
+   "quote": "bos policies & procedures - ms. bertram had prepared a document by formatting and scanning the text to a"
+  },
+  {
+   "name": "Warrants 2/7/12 W #46-12, 2/1/12 W # 45-12, 2/8/12 W # 47-10 and Presidential Primary warrant",
+   "where": "text",
+   "quote": "warrants - 2/7/12 w #46-12 $267,464.97 2/1/12 w # 45-12 $467,603.24 2/8/12 w # 47-10 $547,085.32"
+  },
+  {
+   "name": "Email to Town Boards and Committees on remote participation",
+   "where": "text",
+   "quote": "ms. speidel had sent out an email to town boards and committees to see who was in favor of this"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "town warrant",
+  "licenses",
+  "solid waste",
+  "electric aggregation",
+  "solar bylaw",
+  "remote participation",
+  "regional dispatch",
+  "executive session",
+  "council on aging"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

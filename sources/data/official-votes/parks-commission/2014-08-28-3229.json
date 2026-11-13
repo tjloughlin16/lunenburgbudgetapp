@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2014-08-28",
  "docid": "3229",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from June 19, 2014",
+   "motion": "Approve the minutes of the 6/19/14 meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 3-0",
@@ -20,15 +20,15 @@
    "quote": "minutes from 6/19/14 meeting were approved, 3-0."
   },
   {
-   "motion": "appoint Mike Masciarelli as the new Chairman",
+   "motion": "Appoint Mike Masciarelli as the new Chairman of the Parks Commission.",
    "moved_by": "Bob Robuccio",
    "seconded_by": "Corinne Scouten",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion made by bob robuccio to appoint mike masciarelli the new chairman. the motion was seconded by corinne scouten. vote 3 - 0 in favor of appointment."
+   "procedural": false,
+   "quote": "motion made by bob robuccio to appoint mike masciarelli the new chairman. the motion was seconded by corinne scouten. vote 3 - 0"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 3-0",
@@ -37,6 +37,207 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted via macOS Vision OCR and are readable. Three votes recorded, all procedural.",
- "cost_usd": 0.0888775
+ "note": "OCR text from a scanned page (macOS Vision); some words garbled (e.g., 'Turt Field', signature block 'Mike Mascare on'). Attendance is taken from the opening roll; the minutes name several other people (Gen Nass, Troy Daniels, Elaine Mroz, Mark Sowerbutts, Jeff Powell, Steve Chow, Dan Proctor, Greg Dupuis, Amanda Moore, Pete) who are discussed but not shown as taking part, so they are not listed as attendees. The mover of the 6/19/14 minutes approval and of the adjournment is not printed. Three votes recorded, all 3-0.",
+ "cost_usd": 0.005336919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Masciarelli",
+   "role": "Commissioner (header: Michael Masciarelli, Chairman; appointed Chairman at this meeting)",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, corinne scouten"
+  },
+  {
+   "name": "Bob Robuccio",
+   "role": "Commissioner (stepped down as Chairman at this meeting)",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, corinne scouten"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, corinne scouten"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director: jack rodriquenz"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Corinne Scouten will record the meeting minutes going forward.",
+   "quote": "corinne will record meeting minutes moving forward."
+  },
+  {
+   "decision": "Mike Masciarelli continues to oversee items relating to the Turf field and track; Bob Robuccio continues to oversee items relating to Marshall Park and the Town Beach.",
+   "quote": "mike will continue to oversee/handle items relating to the turf field and track"
+  },
+  {
+   "decision": "Bob Robuccio will provide a response to resident Troy Daniels on the Open Meeting Law complaint.",
+   "quote": "bob will provide a response to mr. daniels."
+  },
+  {
+   "decision": "DPW Director Jack Rodriquenz will look into the abutter's tree-removal concern at Marshall Park and report back to the commission.",
+   "quote": "jack will be looking into this further and will report back to the commission."
+  },
+  {
+   "decision": "Corinne Scouten will work with DPW Admin Amanda Moore to update the Park Commission web page and contact information.",
+   "quote": "corinne will work with dpw admin amanda moore to make these updates/changes."
+  },
+  {
+   "decision": "Mike Masciarelli will speak with the Bengals and Bob Robuccio will speak with Pete regarding the school, to establish facility use hours for the turf field fee plan.",
+   "quote": "mike will speak with the bengals and bob will speak with pete regarding the school."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf field user fees paid to the town",
+   "what_was_recorded": "The main turf field users (Lunenburg Schools, LYSA Soccer, Bengals Football) had been paying a combined total of $25K in user fees each year, which went to pay down the lease; the lease is now complete and fee collection is unclear.",
+   "figures_as_printed": [
+    "$25K"
+   ],
+   "quote": "had been paying a combined total of $25k in user fees each year."
+  },
+  {
+   "topic": "Turf field and track reconditioning",
+   "what_was_recorded": "Turf field and track will need complete reconditioning, suggested for 2017, with estimated cost possibly near $800K.",
+   "figures_as_printed": [
+    "$800K"
+   ],
+   "quote": "estimated cost may be near $800k."
+  },
+  {
+   "topic": "Future lighting cost",
+   "what_was_recorded": "Lighting cost for the site will be addressed with the new school; a generator is currently on site for night games. No figure given.",
+   "figures_as_printed": [],
+   "quote": "future lighting cost will be addressed in conjunction with the new school."
+  },
+  {
+   "topic": "Softball field erosion project funding",
+   "what_was_recorded": "Little League may fund the erosion project between the softball field and lower Powell field; Dan Proctor feels Little League has the funds. Detailed plans with funding values including labor and materials were requested. No figure given.",
+   "figures_as_printed": [],
+   "quote": "dan proctor has also been consulted and he feels that little league has the funds to complete this project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved 6/19/14 minutes, 3-0",
+   "quote": "minutes from 6/19/14 meeting were approved, 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Park Commission Organization",
+   "resolution": "Mike Masciarelli appointed Chairman 3-0; duties split between Mike and Bob",
+   "quote": "bob robuccio will be stepping down as chairman. motion made by bob robuccio to appoint",
+   "tags": [
+    "officers",
+    "chairman",
+    "duties"
+   ]
+  },
+  {
+   "topic": "Town Beach program and weeds",
+   "resolution": "no action; DPW suggests Beach Director Gen Nass speak to the commission",
+   "quote": "dpw director jack rodriquenz commented that the town beach program ran well this year but",
+   "tags": [
+    "town beach",
+    "weeds"
+   ]
+  },
+  {
+   "topic": "OML Complaint (Troy Daniels)",
+   "resolution": "Chairman verified joint-meeting posting met requirements; Bob to respond to complainant",
+   "quote": "the parks commission received an open meeting law complaint from resident troy daniels.",
+   "tags": [
+    "open meeting law",
+    "complaint",
+    "posting"
+   ]
+  },
+  {
+   "topic": "New Parking Lot at Marshall Park",
+   "resolution": "update received; Jack to look into abutter tree complaint; target Spring 2015",
+   "quote": "dpw director jack rodriquenz offered an update on the new parking area being created at",
+   "tags": [
+    "marshall park",
+    "parking",
+    "trees"
+   ]
+  },
+  {
+   "topic": "Softball Field Improvements/Marshall Park",
+   "resolution": "discussed; detailed plans with funding values requested for any project",
+   "quote": "mark sowerbutts who runs the summer softball league - the comets - would like to see the",
+   "tags": [
+    "softball",
+    "marshall park",
+    "erosion",
+    "little league",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Recordkeeping/Website/Email",
+   "resolution": "Corinne to update website with Amanda Moore; general commission email suggested",
+   "quote": "corinne scouten noted that the park commission link on the lunenburgma.gov site needs some",
+   "tags": [
+    "website",
+    "email",
+    "records"
+   ]
+  },
+  {
+   "topic": "Turf Fee Structure",
+   "resolution": "discussed; Mike and Bob to gather usage information; Finance Committee asks commission to draft a fee plan",
+   "quote": "turt field and concession stand fees need to be re-evaluated and reinforced.",
+   "tags": [
+    "turf field",
+    "fees",
+    "finance committee",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 3-0 at 8:33pm",
+   "quote": "motion to adjourn meeting was made and seconded. vote in favor of adjournment 3-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sketch of erosion correction between softball field and lower Powell field (presented by Steve Chow, Little League President)",
+   "where": "text",
+   "quote": "has presented a sketch to the commission (thru mike masciarelli) on how this can be corrected."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "chairman appointment",
+  "open meeting law",
+  "marshall park",
+  "softball field",
+  "little league",
+  "turf field fees",
+  "reconditioning cost",
+  "parking lot",
+  "website",
+  "town beach"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

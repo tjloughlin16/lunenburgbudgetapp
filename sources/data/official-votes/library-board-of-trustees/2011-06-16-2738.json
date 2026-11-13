@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2011-06-16",
  "docid": "2738",
@@ -12,38 +12,201 @@
  },
  "votes": [
   {
-   "motion": "approve May 19, 2011 minutes",
-   "outcome": "passed unanimously",
+   "motion": "Approve the May 19, 2011 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "may 19, 2011 minutes approved unanimously."
   },
   {
-   "motion": "elect Dick Mailloux as Chairman",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Elect Dick Mailloux as Chairman.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "chairman - dick mailloux elected unanimously."
   },
   {
-   "motion": "elect Regina Raboin as Secretary",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Elect Regina Raboin as Secretary.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "secretary - regina raboin elected unanimously."
   },
   {
-   "motion": "elect Dick Mailloux, Regina Raboin, and Len Smetana to the Personnel Committee",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Elect Dick Mailloux, Regina Raboin and Len Smetana to the Personnel Committee.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "personnel committee - dick mailloux, regina raboin, len smetana elected unanimously."
   },
   {
-   "motion": "elect Noelle Bodkin, John Mara, and Kathy Murray to the Budget Committee",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "budget committee -noelle bodkin, john mara, kathy m urray elected unanimously",
-   "quote_taken_from_text": true
+   "motion": "Elect Noelle Bodkin, John Mara and Kathy Murray to the Budget Committee.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "budget committee -noelle bodkin, john mara, kathy m urray elected unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All five votes are procedural (approval of prior minutes and board officer/committee elections). No moved_by or seconded_by names are recorded in the minutes.",
- "cost_usd": 0.1045655
+ "note": "Text extraction splits some words (e.g., 'Smetan a', 'Maillo ux', 'M urray', 'sta tewide'); quotes copy the text as extracted. Chairman appears as 'Dick Maillo ux' in the attendance line and 'Dick Mailloux' elsewhere; the name 'Len Smetana' is taken from the reorganization section. The signature block reads 'Lisa Krowitz for Jeanne Raboin' while Regina Raboin was elected Secretary. Votes list no mover or seconder and no vote counts beyond 'unanimously'. The Endowment and Policy committee lines have no recorded vote. Adjournment at 8:00 p.m. has no recorded motion, so it is not listed as a vote.",
+ "cost_usd": 0.00443812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, john mara, kathy murray, amy sadkin, len smetan a"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, john mara, kathy murray, amy sadkin, len smetan a"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, john mara, kathy murray, amy sadkin, len smetan a"
+  },
+  {
+   "name": "John Mara",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, john mara, kathy murray, amy sadkin, len smetan a"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, john mara, kathy murray, amy sadkin, len smetan a"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, john mara, kathy murray, amy sadkin, len smetan a"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, john mara, kathy murray, amy sadkin, len smetan a"
+  },
+  {
+   "name": "Regina Raboin",
+   "role": "Secretary",
+   "status": "not stated",
+   "quote": "secretary - regina raboin elected unanimously."
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary (signature block)",
+   "status": "not stated",
+   "quote": "lisa krowitz for jeanne raboin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lisa Krowitz and Len Smetana named as Endowment Representatives; no vote recorded.",
+   "quote": "endownment representatives - lisa krowitz, len smet ana"
+  },
+  {
+   "decision": "Noelle Bodkin and Lisa Krowitz named to the Policy Committee; no vote recorded.",
+   "quote": "policy committee - noelle bodkin, lisa krowitz"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CWMARS subscription discount",
+   "what_was_recorded": "CWMARS gives no discount this year because of the switch to statewide service.",
+   "figures_as_printed": [],
+   "quote": "no discount this year due to switch to sta tewide service."
+  },
+  {
+   "topic": "Friends of the Library June Bake/Book sale",
+   "what_was_recorded": "The Friends raised a sum at the June Bake/Book sale.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "friends raised $2,500 at the june bake/book sale."
+  },
+  {
+   "topic": "FY12 budget office supply line item",
+   "what_was_recorded": "The FY12 office supply line item will be lower because the library and barcodes were purchased in FY11.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "since the library & barcodes were purchased in fy11."
+  },
+  {
+   "topic": "Salary administration plan",
+   "what_was_recorded": "Under the new plan, salary increases were given to all Sr and Jr library assistants; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "salary increases were given to all sr and"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "New Business: minutes and Director's Report",
+   "resolution": "minutes approved; director's report reviewed",
+   "quote": "may 19, 2011 minutes approved unanimously.",
+   "tags": [
+    "minutes",
+    "director's report",
+    "operations"
+   ]
+  },
+  {
+   "topic": "Library Trustees Board Reorganization",
+   "resolution": "officers and committees elected",
+   "quote": "library trustees board reorganization",
+   "tags": [
+    "governance",
+    "elections",
+    "committees"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report (please see report for more detai l)"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "reorganization",
+  "budget",
+  "FY12",
+  "staff",
+  "website",
+  "friends of the library",
+  "CWMARS",
+  "salaries"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2013-05-06",
  "docid": "893",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve March 18, 2013 minutes",
+   "motion": "Approve the minutes of March 18, 2013.",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
    "outcome": "passed",
@@ -21,6 +21,259 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned by macOS Vision. One vote recorded: approval of prior minutes. The remainder of the document discusses inspections, permits, and agenda items that were continued to future meetings with no motions or votes taken.",
- "cost_usd": 0.0832765
+ "note": "OCR text (macOS Vision). No roll-call or vote tallies recorded for the minutes approval beyond 'all in favor'; no motion recorded for adjournment (8:05 PM) or for either continuance, so those are recorded as decisions. Spelling varies within the text: 'Zicvoginovic' in the attendance line and 'Zivoginovic' in the comment paragraph; recorded as printed. The Title 5 list is printed under its heading and is recorded as the documents list. The minutes print no dollar figures.",
+ "cost_usd": 0.005561419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting was opened at 7:00 pm by chairman george emond at the ritter memorial building"
+  },
+  {
+   "name": "David Shea",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios."
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios."
+  },
+  {
+   "name": "Jack Rabbit",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios."
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell, jack rabbit and dave passios."
+  },
+  {
+   "name": "Tim Maginnis",
+   "status": "present",
+   "quote": "tim maginnis and todd cellura met with the board with regard to this property and a requested"
+  },
+  {
+   "name": "Todd Cellura",
+   "status": "present",
+   "quote": "tim maginnis and todd cellura met with the board with regard to this property and a requested"
+  },
+  {
+   "name": "Courtney Zicvoginovic",
+   "role": "abutter",
+   "status": "present",
+   "quote": "also present were courtney zicvoginovic, abutter, and jerry croto, an area resident."
+  },
+  {
+   "name": "Jerry Croto",
+   "role": "an area resident",
+   "status": "present",
+   "quote": "also present were courtney zicvoginovic, abutter, and jerry croto, an area resident."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 89 Wildwood Road variance request was continued to May 20, 2013 at 7:00 pm, because Agent Jim Garreffi had not yet reviewed the revised plan.",
+   "quote": "this matter was continued until may 20, 2013 at 7:00 pm."
+  },
+  {
+   "decision": "The ARO Estates matter was continued to May 20, 2013, pending review of the testing results.",
+   "quote": "this matter was continued until may 20, 2013."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Zivoginovic",
+   "stated_role": "an abutter to the property",
+   "topic": "concern over variance and precedent",
+   "quote": "mr. zivoginovic, an abutter to the property, stated that is he concerned about granting the requested variance"
+  },
+  {
+   "speaker": "Mr. Croto",
+   "stated_role": "an area resident",
+   "topic": "town variance policy and precedent",
+   "quote": "mr. croto stated that he wants to understand the current policy of the town with regard to granting variances."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approved (March 18, 2013)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "march 18, 2013 motion by shea, second by jewell, all in favor."
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (16 reports)",
+   "tags": [
+    "title 5",
+    "septic",
+    "inspections"
+   ],
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (2 permits)",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed: 155 island road 89 wildwood road"
+  },
+  {
+   "topic": "89 Wildwood Road variance request (100 foot wetlands offset)",
+   "resolution": "continued to May 20, 2013",
+   "tags": [
+    "variance",
+    "septic",
+    "wetlands offset",
+    "groundwater"
+   ],
+   "quote": "this matter was continued until may 20, 2013 at 7:00 pm."
+  },
+  {
+   "topic": "ARO Estates",
+   "resolution": "continued to May 20, 2013",
+   "tags": [
+    "testing",
+    "septic"
+   ],
+   "quote": "this matter was continued until may 20, 2013."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "45 Penninsula Drive (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "563 Mass Avenue (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "172 Peninsula Drive (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "160 Burrage Street (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "158 Electric Avenue (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "305 Leominster Shirley Road - Fail (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "585 Page Street (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "55 Brookview Terrace (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "227 Pleasant Street (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "120 Robbs Hill Road (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "405 NW Townsend Road (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "122 Cross Street (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "964 Flat Hill Road (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "145 Pleasant Street (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "129 Pleasant Street (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "291 Lancaster Avenue (Title 5 inspection report)",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 45 penninsula drive 563 mass avenue"
+  },
+  {
+   "name": "155 Island Road (septic permit, signed)",
+   "where": "list",
+   "quote": "septic permits signed: 155 island road 89 wildwood road"
+  },
+  {
+   "name": "89 Wildwood Road (septic permit, signed)",
+   "where": "list",
+   "quote": "septic permits signed: 155 island road 89 wildwood road"
+  },
+  {
+   "name": "Letter from Agent Jim Garreffi requiring revisions to the septic plan",
+   "where": "text",
+   "quote": "he received a letter from agent jim garreffi requiring"
+  },
+  {
+   "name": "Septic plan as submitted and as revised",
+   "where": "text",
+   "quote": "chairman emond read agent garreffi's comments regarding the plan as submitted."
+  },
+  {
+   "name": "Lunenburg 100 foot offset regulation",
+   "where": "text",
+   "quote": "the board explained to mr. maginnis that the purpose of the lunenburg 100 foot offset regulation"
+  },
+  {
+   "name": "DEP Title 5 Regulations",
+   "where": "text",
+   "quote": "he has prepared a fully"
+  }
+ ],
+ "tags": [
+  "septic",
+  "title 5",
+  "variance",
+  "wetlands offset",
+  "groundwater",
+  "permits",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

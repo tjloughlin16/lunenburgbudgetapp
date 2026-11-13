@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-10-24",
  "docid": "1699",
@@ -12,15 +12,139 @@
  },
  "votes": [
   {
-   "motion": "Approve the Lane Property Parking lot Notice of Intent based on negative determination of impact to adjacent wetlands, with waiver for entrance area within 30-foot no-touch area, not to exceed depicted size, final size to be defined at special meeting on 10/28/15",
+   "motion": "Approve the Lane Property Parking lot NOI based on the negative determination of any impact to the adjacent wetlands, with a waiver for the small area at the entrance within the 30 foot no touch area, lot not to exceed the size on the sketch; final size to be defined at a special meeting on 10/28/15.",
    "moved_by": "Carl Luck",
    "seconded_by": "Tom Bertram",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "moved to approve the lane property parking lot noi based on the negative determination of any impact to the adjacent wetlands with a waiver for the small area at the entrance that is within the 30 foot no touch area as shown in the drawing as prepared on site. the parking lot is not to exceed the size depicted on the sketch. final size of the lot to be defined and agreed at a special meeting on 10/28/15. unanimously approved"
+   "quote": "moved to approve the lane property parking lot noi based on the negative determination of any impact to the adjacent wetlands"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0809975
+ "note": "Minutes are marked APPROVED 11/18/2015. Only one motion is recorded (the NOI approval); no adjournment motion is printed, only the time. Attendance line lists 'Eric' by first name only and '2 neighbors' unnamed. 'Mel (Tom) Bertram' is named as representing the Lunenburg Snowriders; it is unclear whether this is the same person as Commission member Tom Bertram, so both entries are kept. No dollar figures appear in the text.",
+ "cost_usd": 0.0032003200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Bertram",
+   "role": "Commission member (also named as representing Lunenburg Snowriders)",
+   "status": "present",
+   "quote": "tom bertram, todd dwyer, brad kennedy, jack rabbitt , carl luck, matt marro (remote), jan carrier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "tom bertram, todd dwyer, brad kennedy, jack rabbitt , carl luck, matt marro (remote), jan carrier"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "tom bertram, todd dwyer, brad kennedy, jack rabbitt , carl luck, matt marro (remote), jan carrier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "tom bertram, todd dwyer, brad kennedy, jack rabbitt , carl luck, matt marro (remote), jan carrier"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "tom bertram, todd dwyer, brad kennedy, jack rabbitt , carl luck, matt marro (remote), jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "Commission member",
+   "status": "remote",
+   "quote": "tom bertram, todd dwyer, brad kennedy, jack rabbitt , carl luck, matt marro (remote), jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "matt marro (remote), jan carrier"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW",
+   "status": "present",
+   "quote": "jack rodriquenz (dpw) went over specifications for gravel packed driveway and parking area."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack rodriquenz, tanner cole, eric, daron massey"
+  },
+  {
+   "name": "Eric",
+   "role": "not stated (first name only)",
+   "status": "present",
+   "quote": "jack rodriquenz, tanner cole, eric, daron massey"
+  },
+  {
+   "name": "Daron Massey",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack rodriquenz, tanner cole, eric, daron massey"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "not stated",
+   "status": "present",
+   "quote": "2 neighbors, bob pease"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Todd Dwyer will draw up the plan and get it to Jan by Monday AM so it can be submitted with the NOI.",
+   "quote": "todd will draw up plan and have to jan by monday am to be"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continuation of public hearing on 300 Holman Street (Lane Property parking area NOI)",
+   "resolution": "NOI approved unanimously with waiver; lot size to be finalized at 10/28/15 special meeting",
+   "quote": "moved to approve the lane property parking lot noi based on the negative determination of any impact to the adjacent wetlands",
+   "tags": [
+    "public hearing",
+    "NOI",
+    "wetlands",
+    "parking lot",
+    "Lane Property"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent (NOI) for the Lane Property parking area",
+   "where": "text",
+   "quote": "public hearing on a notice of intent filed by lunenburg conserva tion commission"
+  },
+  {
+   "name": "Drawing as prepared on site (sketch of parking lot size)",
+   "where": "text",
+   "quote": "as shown in the drawing as prepared on site. the parking"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "Notice of Intent",
+  "Lane Property",
+  "parking lot",
+  "culverts",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

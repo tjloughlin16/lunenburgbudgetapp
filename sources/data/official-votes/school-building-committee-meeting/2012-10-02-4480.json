@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-10-02",
  "docid": "4480",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "Mr. Barney",
    "seconded_by": "Mr. Erickson",
    "outcome": "not stated",
@@ -21,6 +21,151 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are legible. One motion to adjourn is recorded with seconding but no vote outcome stated. No other votes recorded in agenda items 1–5 (call to order, presentations, and discussions). The \"APPROVED 10-10-12\" at the end is the superintendent's approval of the minutes themselves, not a motion voted on in this meeting.",
- "cost_usd": 0.09307549999999999
+ "note": "Brief minutes. The text records agenda headings and times only; the content of the Collaborative Partners and Dore & Whittier presentations and of the discussions is not recorded. The adjournment vote result is not printed. Attendance is printed only as absent for Kerry Speidel and Dave Matthews; other advisors are listed without a status, so they are marked not stated. Michael Mackin is listed as Michael Mackin and called to order as Mike Mackin. Minutes are marked APPROVED 10-10-12, but no approval vote is recorded in this text.",
+ "cost_usd": 0.00302342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "SC Representative, Chair",
+   "status": "present",
+   "quote": "6:09 pm called to order by mike mackin, chair."
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee Representative, Vice Chair",
+   "status": "present",
+   "quote": "mr. erickson seconded."
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen-at-large",
+   "status": "present",
+   "quote": "mr. barney made a motion to adjourn."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "loxi jo calmes, superintendent"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "kerry speidel, town manager- absent"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "SC Representative",
+   "status": "not stated",
+   "quote": "colleen shapiro, sc representative"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities",
+   "status": "not stated",
+   "quote": "john londa, dire ctor of facilities"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal",
+   "status": "not stated",
+   "quote": "brian spadafino, lhs principal"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative",
+   "status": "absent",
+   "quote": "dave matthews, bos representative - absent"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board Representative",
+   "status": "not stated",
+   "quote": "nathan lockwood, planning board representative"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen-at-large",
+   "status": "not stated",
+   "quote": "brian frank, citizen-at-large"
+  },
+  {
+   "name": "Richard Cohen",
+   "role": "Citizen-at-large",
+   "status": "not stated",
+   "quote": "richard cohen, citizen-at-large"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "6:09 pm called to order by mike mackin, chair."
+  },
+  {
+   "topic": "Presentation by Collaborative Partners",
+   "resolution": "no action",
+   "tags": [
+    "presentation",
+    "consultant"
+   ],
+   "quote": "presentation by collaborative partners."
+  },
+  {
+   "topic": "Discussion of prior presentation",
+   "resolution": "no action",
+   "tags": [
+    "discussion"
+   ],
+   "quote": "discussion relative to prior presentation."
+  },
+  {
+   "topic": "Presentation by Dore & Whittier Architects, Inc.",
+   "resolution": "no action",
+   "tags": [
+    "presentation",
+    "architect"
+   ],
+   "quote": "presentation by dore & whittier architects, inc."
+  },
+  {
+   "topic": "Discussion of prior presentations",
+   "resolution": "no action",
+   "tags": [
+    "discussion"
+   ],
+   "quote": "discussion relative to prior presentations."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion made to adjourn; result not printed",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "mr. barney made a motion to adjourn. mr. erickson seconded."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "school building committee",
+  "school construction",
+  "presentations",
+  "architect",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

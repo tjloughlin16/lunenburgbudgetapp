@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-12-14",
  "docid": "3830",
@@ -12,15 +12,290 @@
  },
  "votes": [
   {
-   "motion": "Continue Information Meeting to January 11, 2016 at 6:35 PM",
-   "moved_by": "David Prokowiew",
-   "seconded_by": "Kenneth Chenis",
-   "outcome": "passed unanimously",
+   "motion": "Approve the design submitted for the site as appropriate, i.e. a two-way driveway width of 30 feet each way plus a ten foot rumble strip over the maximum of 24 feet (determination on WBA's driveway-width letter).",
+   "moved_by": "K. Chenis",
+   "seconded_by": "G. Bittner",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion that the design submitted for the site is appropriate ( approve a two-way width of 30 feet each way plus a ten foot rumble strip over the maximum of 24 feet)"
+  },
+  {
+   "motion": "Continue the Information Meeting to January 11, 2016, 6:35 PM.",
+   "moved_by": "D. Prokowiew",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed",
    "procedural": true,
    "quote": "d. prokowiew, motion to continue information meeting to january 11, 2016, 6:35 pm, second, k. chenis, all aye."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1012825
+ "dropped_unquoted": 0,
+ "note": "Text extract only; several words are split or spaced oddly (e.g., 'Cheni s', 'e lectric'), so quotes were chosen to avoid those artifacts. No dollar figures appear in the minutes. Two votes are recorded with 'all aye' and no member-by-member count; outcome recorded as 'passed'. Dimension and capacity figures (45,000 S.F., 65 employees, 2,000 gallon tank) are not dollar figures and are not listed as budget items.",
+ "cost_usd": 0.00718392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, chair"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Project Engineers, representing the applicant (Whitman & Bingham Associates)",
+   "status": "present",
+   "quote": "project engineers, jamie rheault and mark piermarini, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "Project Engineers, representing the applicant (Whitman & Bingham Associates)",
+   "status": "present",
+   "quote": "project engineers, jamie rheault and mark piermarini, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Mark Beliveau",
+   "role": "Legal counsel, Pierce Atwood LLP",
+   "status": "not stated",
+   "quote": "legal counsel, pierce atwood llp, mark beliveau"
+  },
+  {
+   "name": "Christine West",
+   "role": "KITE Architects, Inc.",
+   "status": "present",
+   "quote": "kite architects, inc., christine west"
+  },
+  {
+   "name": "Jacqueline Agel",
+   "role": "Unitil Project Manager",
+   "status": "not stated",
+   "quote": "unitil project manager, jacqueline agel"
+  },
+  {
+   "name": "Ernie Nadeau",
+   "role": "Nadeau Corp., Construction Development & Engineering",
+   "status": "not stated",
+   "quote": "nadeau corp., construction development & engineering, ernie nadeau"
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "reviewing engineer",
+   "status": "present",
+   "quote": "the board asked reviewing engineer jeffrey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus that the Board would like to see an Environmental Impact Statement (EIS); the applicant will submit an EIS, rather than waiving it as the applicant requested.",
+   "quote": "board consensus was that they would like to see an eis."
+  },
+  {
+   "decision": "Applicant will research whether a roof can be put over the transformer storage area, as requested by a member of the public and by D. McQuaid and K. Chenis.",
+   "quote": "d. mcquaid and k. chenis also asked the same; applicant will research."
+  },
+  {
+   "decision": "J. Agel to research whether there were any environmental issues from transformer storage at the Fitchburg site.",
+   "quote": "j. agel to research."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "topic": "support for commercial use; generators on site",
+   "quote": "david rodgers, 82 highland street - supports commercial development in lunenburg."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "topic": "contaminated runoff into wetlands; rear fence type",
+   "quote": "paula bertram, 312 townsend harbor road"
+  },
+  {
+   "speaker": "C. Luck",
+   "topic": "Conservation Commission site walk; DEP NOI comments",
+   "quote": "c. luck, 50 sunset lane - noted that the conservation commission did a site walk"
+  },
+  {
+   "speaker": "John Goguen",
+   "topic": "ice melt and wildlife; hours of operation",
+   "quote": "john goguen, 346 electric avenue"
+  },
+  {
+   "speaker": "Keith Aubin",
+   "topic": "roof over transformer storage area",
+   "quote": "keith aubin, 24 hollis road - inquired if a roof could be put"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and statutory notice",
+   "resolution": "opened the informational meeting; notice read",
+   "quote": "chair d. mcquaid opened the information meeting with the reading of the statutory notice published in the sentinel and",
+   "tags": [
+    "notice",
+    "informational meeting"
+   ]
+  },
+  {
+   "topic": "Applicant project presentation (Unitil, 357 Electric Avenue)",
+   "resolution": "presented; no action",
+   "quote": "the facility will consist of offices, and indoor and outdoor storage",
+   "tags": [
+    "Unitil",
+    "operations center",
+    "zoning",
+    "by-right use"
+   ]
+  },
+  {
+   "topic": "Utilities, drainage, landscaping and architecture",
+   "resolution": "presented; no action",
+   "quote": "the building has been placed diagonal to electric avenue to screen a large portion",
+   "tags": [
+    "utilities",
+    "stormwater",
+    "landscaping",
+    "architecture"
+   ]
+  },
+  {
+   "topic": "Board and public questions on runoff, snow, transformers and public comment",
+   "resolution": "questions answered; applicant to research roof over transformer storage",
+   "quote": "there was board concern with chemical runoff from the poles in outside storage",
+   "tags": [
+    "wetlands",
+    "runoff",
+    "snow storage",
+    "transformers",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Reviewing engineer comments",
+   "resolution": "received review comments; no action",
+   "quote": "he noted his review letter of 12/10/15 (on file in the planning office).",
+   "tags": [
+    "peer review",
+    "stormwater",
+    "sight lines",
+    "noise"
+   ]
+  },
+  {
+   "topic": "Waiver request from Environmental Impact Statement (EIS)",
+   "resolution": "Board consensus to require EIS; applicant to submit EIS",
+   "quote": "d. mcquaid asked if board members were comfortable",
+   "tags": [
+    "EIS",
+    "waiver",
+    "redevelopment"
+   ]
+  },
+  {
+   "topic": "Request for determination on driveway width",
+   "resolution": "approved design two-way width (motion)",
+   "quote": "motion that the design submitted for the site is appropriate ( approve a two-way width of 30 feet each way plus a ten foot rumble strip over the maximum of 24 feet)",
+   "tags": [
+    "driveway width",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Continuation of informational meeting",
+   "resolution": "continued to January 11, 2016, 6:35 PM",
+   "quote": "motion to continue information meeting to january 11, 2016, 6:35 pm",
+   "tags": [
+    "continuation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Unitil, 357 Electric Avenue Application Packet",
+   "where": "list",
+   "quote": "unitil, 357 electric avenue application packet"
+  },
+  {
+   "name": "Statutory notice published in the Sentinel and Enterprise on December 7, 2015",
+   "where": "text",
+   "quote": "reading of the statutory notice published in the sentinel and"
+  },
+  {
+   "name": "Letter dated October 30, 2015 from the Building/Zoning Official",
+   "where": "text",
+   "quote": "in letter dated october 30, 2015"
+  },
+  {
+   "name": "Two WBA letters to the Board (request for determination on driveway width; request for waiver of EIS)",
+   "where": "text",
+   "quote": "wba submitted two letters to the board"
+  },
+  {
+   "name": "Photometric lighting plan",
+   "where": "text",
+   "quote": "a p hotometric light"
+  },
+  {
+   "name": "Landscaping plan submitted with the application packet",
+   "where": "text",
+   "quote": "a landscaping plan was submitted with the application packet"
+  },
+  {
+   "name": "Graves Engineering (GEI) review letter dated December 10, 2015",
+   "where": "text",
+   "quote": "as a result of december 10, 2015 graves engineering"
+  },
+  {
+   "name": "Reviewing engineer review letter of 12/10/15 (on file in the Planning Office)",
+   "where": "text",
+   "quote": "his review letter of 12/10/15 (on file in the planning office)"
+  }
+ ],
+ "tags": [
+  "informational meeting",
+  "Unitil",
+  "357 Electric Avenue",
+  "utility operations center",
+  "site plan",
+  "stormwater",
+  "wetlands",
+  "driveway width",
+  "environmental impact statement",
+  "continued"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

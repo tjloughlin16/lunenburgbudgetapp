@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-10-23",
  "docid": "4826",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve Automatic Amusement Device License for El Dorado Amusement",
+   "motion": "Approve the Automatic Amusement Device License requested for El Dorado Amusement.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
@@ -20,15 +20,15 @@
    "quote": "ms. bertram moved to approve the license requested for el dorado amusement. mr. alonzo seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve one day wine & malt license for North Leominster Rod & Gun Club on November 16, 2012 from 6PM-11PM",
+   "motion": "Approve the one day wine & malt license for the North Leominster Rod & Gun Club on November 16, 2012 from 6PM-11PM.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to approve the one day wine & malt license for the north leominster rod & gun club on november 16, 2012 from 6pm-11pm. ms. bertram seconded. on vote, motion carried, 5 in favor, o opposed."
+   "quote": "mr. alonzo moved to approve the one day wine & malt license for the north leominster rod & gun club on november 16, 2012 from 6pm-11pm. ms. bertram seconded. on vote, motion carried, 5 in favor"
   },
   {
-   "motion": "Approve Abatement of Ambulance Bill LB119640",
+   "motion": "Approve the Abatement of Ambulance Bill LB119640.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
@@ -36,15 +36,15 @@
    "quote": "mr. alonzo moved to approve the abatement of ambulance bill lb119640. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Ratify Town Manager's appointment of Joshua Matthieu to Patrol Officer, effective November 28, 2012",
+   "motion": "Ratify the Town Manager's appointment of Joshua Matthieu to Patrol Officer, effective November 28, 2012.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to ratify the town manager's appointment of joshua matthieu to patrol officer, effective november 28, 2012. mr. sund seconded. on vote, motion carried, 5 in favor, o opposed."
+   "quote": "mr. alonzo moved to ratify the town manager's appointment of joshua matthieu to patrol officer, effective november 28, 2012. mr. sund seconded. on vote, motion carried, 5 in favor"
   },
   {
-   "motion": "Ratify Town Manager's appointment of Ed Cataldo as Alternate Building Inspector",
+   "motion": "Ratify the Town Manager's appointment of Ed Cataldo as Alternate Building Inspector.",
    "moved_by": "Mr. Sund",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
@@ -52,7 +52,7 @@
    "quote": "mr. sund moved to ratify the town manager's appointment mr. cataldo as alternate building inspector. ms. bertram seconded. on vote, motioned carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the regular scheduled meeting (regular session adjourned at 7:56PM).",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Sund",
    "outcome": "passed unanimously",
@@ -61,6 +61,313 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted via macOS Vision; contains typical OCR artifacts (letter O for zero in vote tallies on items 2 and 4)",
- "cost_usd": 0.1170775
+ "note": "OCR scan (macOS Vision) of 2012 minutes; quotes collapse line breaks. Vote counts for the Rod & Gun Club and Matthieu votes read \"O opposed\" (letter O for zero); recorded as 5-0. Warrant amounts appear in a column without a clear pairing to warrant numbers, so the figures are recorded as printed. The executive session heading reads 8:00 PM, but regular session adjourned at 7:56PM, and no motion to enter executive session is printed. The Warrants list is treated as a printed list of documents reviewed; the chronology is a text-only reference.",
+ "cost_usd": 0.010486120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews, paula bertram, steven m. debettencourt, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager kerry speidel present"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "not stated",
+   "quote": "chief jim marino to present joshua matthieu, patrol officer"
+  },
+  {
+   "name": "Mike Padula",
+   "role": "applicant, Right of First Refusal (131 Leominster-Shirley Road)",
+   "status": "present",
+   "quote": "mr. padula spoke to the bos to request removing this portion of land out of chapter 61a."
+  },
+  {
+   "name": "Mike Sauvageau",
+   "role": "Building Inspector/Zoning Officer",
+   "status": "present",
+   "quote": "mike sauvageau, building inspector/zoning officer spoke to the bos regarding the recent complaints"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to relay the Padula Chapter 61A request to the Conservation Commission and Planning Board for their input before the BOS acts on it.",
+   "quote": "ms. speidel will relay this information to the conservation commission and planning board for their input."
+  },
+  {
+   "decision": "Chair Matthews suggested the size of the gun range be documented in case further expansion complaints arise; no vote recorded.",
+   "quote": "mr. matthews suggested that the size of the gun range be documented incase any further complaints of expansion should"
+  },
+  {
+   "decision": "Building Inspector submitted a chronology of his findings on the Rod & Gun Club complaint to the Town Manager.",
+   "quote": "mr. sauvageau has submitted a chronology of his findings to the town manager."
+  },
+  {
+   "decision": "Town Manager to send the Mass PV1 PPA to the BOS later in the week, with discussion hoped for at the next meeting; PILOT timing unknown pending Assessor estimate.",
+   "quote": "she expects to send that to the bos later this week and hopes to discuss"
+  },
+  {
+   "decision": "Board announced it would go into executive session under MGL Chapter 30A, Section 21 (a) 3, not to return to open session.",
+   "quote": "mr. matthews stated that they will be going into executive session, not to return, citing mgl chapter 30a, section 21 (a)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Padula land sale purchase price (131 Leominster-Shirley Road portion)",
+   "what_was_recorded": "Town Manager read the terms of a sale of a 5-acre parcel from Padula Lunenburg LLC to PSG Realty at a stated purchase price.",
+   "figures_as_printed": [
+    "$900,000"
+   ],
+   "quote": "which is the sale from padula lunenburg llc to psg realty 393-435l.i.c at a purchase price of $900,000."
+  },
+  {
+   "topic": "Ambulance Bill LB119640 abatement request",
+   "what_was_recorded": "Abatement of an ambulance bill for a March 23, 2011 date of service, approved by vote.",
+   "figures_as_printed": [
+    "$650.00"
+   ],
+   "quote": "ambulance bill lb119640, date of service of march 23, 2011 in the amount of $650.00."
+  },
+  {
+   "topic": "Warrants listed for approval",
+   "what_was_recorded": "Four warrant amounts are printed under the Warrants heading with no approval motion recorded; the printed text does not clearly pair each amount with a warrant number.",
+   "figures_as_printed": [
+    "$607,945.38",
+    "$317.20",
+    "$666,285.90",
+    "$238,013.11"
+   ],
+   "quote": "w 9p13 w 8p13ma w 24-13 ₩ 23-13 $607,945.38 $317.20 $666,285.90 $238,013.11"
+  },
+  {
+   "topic": "Solar PILOT agreements (EPG and Mass PV1) - estimated land valuation",
+   "what_was_recorded": "Estimated land valuation for the EPG project was sent to Town Counsel for the PILOT; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the estimated valuation of the land associated with the epg project and it was sent to town counsel to be incorporated in the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "not stated",
+   "topic": "Fire Department Annual Open House",
+   "quote": "mr. alonzo thanked the fire department for holding their annual open house the previous weekend."
+  },
+  {
+   "speaker": "Mr. Sund",
+   "stated_role": "not stated",
+   "topic": "Fire Department Annual Open House",
+   "quote": "mr. sund echoed mr. alonzo's comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "7:00PM Public comment",
+   "resolution": "no action; comments on Fire Department open house",
+   "quote": "mr. alonzo thanked the fire department for holding their annual open house the previous weekend.",
+   "tags": [
+    "public comment",
+    "fire department"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; informational announcements",
+   "quote": "mr. sund announced that the lunenburg fire department will be holding a",
+   "tags": [
+    "announcements",
+    "landfill",
+    "fire department"
+   ]
+  },
+  {
+   "topic": "Appointments 1: Chief Jim Marino presents Joshua Matthieu, Patrol Officer",
+   "resolution": "presented; full-time position requested effective November 28, 2012",
+   "quote": "lunenburg police chief introduced joshua matthieu, patrol officer, to the bos.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Appointments 2: Mike Padula, Right of First Refusal, portion of 131 Leominster-Shirley Road",
+   "resolution": "referred to Conservation Commission and Planning Board for input",
+   "quote": "ms. speidel will relay this information to the conservation commission and planning board for their input.",
+   "tags": [
+    "land",
+    "Chapter 61A",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Appointments 3: Video & CD Rentals, Automatic Amusement Device License",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram moved to approve the license requested for el dorado amusement.",
+   "tags": [
+    "licensing",
+    "amusement device"
+   ]
+  },
+  {
+   "topic": "Appointments 4: North Leominster Rod & Gun Club, One Day Liquor License",
+   "resolution": "noise and expansion complaint reviewed; one day wine & malt license approved 5-0",
+   "quote": "mr. sauvageau has submitted a chronology of his findings to the town manager.",
+   "tags": [
+    "licensing",
+    "zoning complaint",
+    "noise"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Abatement of Ambulance Bill LB119640",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved to approve the abatement of ambulance bill lb119640.",
+   "tags": [
+    "abatement",
+    "ambulance"
+   ]
+  },
+  {
+   "topic": "Current Business 2: Power Purchase Agreement and PILOT Agreements for Mass PV1 and EPG Solar",
+   "resolution": "no action; PILOT for EPG expected in one to two weeks; PPA to be discussed at next meeting",
+   "quote": "she expects to send that to the bos later this week and hopes to discuss",
+   "tags": [
+    "solar",
+    "PILOT",
+    "PPA"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no minutes; warrants listed; no action file issues",
+   "quote": "action file issues: none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action; Finance Committee meeting and MPO update noted",
+   "quote": "mr. alonzo reported that the finance committee will be meeting this thursday.",
+   "tags": [
+    "committees",
+    "MPO",
+    "Summer St. project"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports or Department Reports",
+   "resolution": "none",
+   "quote": "5. town manager reports or department reports - none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Appointments/Re-appointments/Resignations 1: Ratify appointment of Joshua Matthieu, Patrol Officer",
+   "resolution": "ratified 5-0",
+   "quote": "mr. alonzo moved to ratify the town manager's appointment of joshua matthieu to patrol officer, effective november 28, 2012.",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Appointments/Re-appointments/Resignations 2: Ratify appointment of Ed Cataldo, Alternate Building Inspector",
+   "resolution": "ratified 5-0",
+   "quote": "mr. sund moved to ratify the town manager's appointment mr. cataldo as alternate building inspector.",
+   "tags": [
+    "appointments",
+    "building inspector"
+   ]
+  },
+  {
+   "topic": "Executive Session (joint with Planning Board)",
+   "resolution": "entered executive session, not to return; no vote recorded",
+   "quote": "mr. matthews stated that they will be going into executive session, not to return, citing mgl chapter 30a, section 21 (a)",
+   "tags": [
+    "executive session",
+    "litigation",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "regular session adjourned unanimously at 7:56PM",
+   "quote": "ms. bertram moved to adjourn the regular scheduled meeting. mr. sund seconded. the board voted unanimously to adjourn regular session at 7:56pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrants dated 10/18/12, 10/15/12, 10/23/12, 10/23/12",
+   "where": "list",
+   "quote": "warrants: 10/18/12 10/15/12 10/23/12 10/23/12"
+  },
+  {
+   "name": "Chronology of findings on North Leominster Rod & Gun Club complaints (submitted by Mike Sauvageau)",
+   "where": "text",
+   "quote": "mr. sauvageau has submitted a chronology of his findings to the town manager."
+  },
+  {
+   "name": "Ambulance bill abatement application (Ambulance Bill LB119640)",
+   "where": "text",
+   "quote": "she stated that the applicant has completed the application and meets the requirements for abatement."
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "amusement license",
+  "ambulance abatement",
+  "solar PILOT",
+  "appointments",
+  "warrants",
+  "zoning complaint",
+  "executive session",
+  "Chapter 61A land",
+  "fire department"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "warrants:"
+ },
+ "dropped_unquoted_by_field": {}
 }

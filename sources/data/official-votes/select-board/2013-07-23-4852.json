@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-07-23",
  "docid": "4852",
@@ -12,23 +12,298 @@
  },
  "votes": [
   {
-   "motion": "Approve the transfers as outlined by the Town Manager under Chapter 44 Section 33b",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "David Matthews",
+   "motion": "Approve the FY13 budget transfers as outlined by the Town Manager under Chapter 44 Section 33b.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the transfers as outlined by the town manager under chapter 44 section 33b. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram moved to approve the transfers as outlined by the town manager under chapter 44 section 33b."
   },
   {
-   "motion": "Appoint Stanley Young as Constable and Jean Larkin to the Senior Tax Workoff Committee",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Jamie Toale",
+   "motion": "Appoint Stanley Young as Constable and Jean Larkin to the Senior Tax Workoff Committee.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Toale",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "ms. bertram moved to appoint stanley young as constable and jean larkin to the senior tax workoff committee. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "ms. bertram moved to appoint stanley young as constable and jean larkin to the senior tax workoff committee."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are from OCR (macOS Vision). Three items under \"CURRENT BUSINESS\" (#1-3) were continued to future meetings with no vote taken. Board of Selectmen Policies & Procedures discussion adjourned \"off air\" with no vote recorded. No executive session held.",
- "cost_usd": 0.0880115
+ "note": "OCR text from a scanned page set (macOS Vision); some words are garbled (e.g., 'Mir. Ebersole', 'Un-employment', 'Keatings'), and quotes were taken as printed. Items 1-3 were continued with no vote recorded. The minutes approval of 7/16/13 and the warrant listed as #5-15 show no recorded vote. The 'Policies & Procedures' discussion occurred off air and is not recorded. The Chapter 44 s.33b transfers were approved by one motion (5-0). The 'Mr. Alonzo' and 'Mr Alonzo' speaker lines are both printed as shown. The minutes give no stated role for the board members. The spread sheets are referenced as 'See attached', but no attachment is included in the text.",
+ "cost_usd": 0.00719732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "as scheduled with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "as scheduled with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "as scheduled with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "as scheduled with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with tom alonzo, paula bertram, david matthews, robert ebersole, jamie toale and town manager kerry speidel."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Current Business items 1-3 (IMA with Town of Townsend; PILOT with NuGen; PILOT with EPG Solar) continued to a future meeting.",
+   "quote": "1. approve ima with town of townsend for resale of net metering credits: continued to a future"
+  },
+  {
+   "decision": "After discussion of the Tri-Town fence, the BOS determined to update the wording in the license to include the fence.",
+   "quote": "after due and diligent discussion the bos determined that they would update the wording in the license to"
+  },
+  {
+   "decision": "Town Manager to obtain an explanation from the Library Director about the returned Library funds.",
+   "quote": "ms. speidel replied that she will get an explanation from the library director concerning this."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY13 budget transfers and deficits",
+   "what_was_recorded": "Town Manager requested transfers under Chapter 44 Section 33b to close out FY13 deficits; Mr. Alonzo questioned whether the total exceeded the 3% or $5,000 limit, and the Town Manager said the transfer is not greater than 3% and the unclassified appropriation is over $2M.",
+   "figures_as_printed": [
+    "$11,654.64",
+    "$591.00",
+    "$289.09",
+    "$685.00",
+    "3%",
+    "$5000",
+    "$11,000",
+    "$2M"
+   ],
+   "quote": "transfer from un-employment expense to legal expense, $11,654.64, from veteran's administration to legal expense $591.00"
+  },
+  {
+   "topic": "Chapter 44 s.33b transfer limit",
+   "what_was_recorded": "Town Manager described the limit under which the BOS and Finance Committee may adjust budgets at fiscal year end.",
+   "figures_as_printed": [
+    "3%",
+    "$5000"
+   ],
+   "quote": "the town can transfer up to 3% or $5000, or which ever is greater."
+  },
+  {
+   "topic": "Library funds returned",
+   "what_was_recorded": "Mr. Alonzo said the Library is returning almost $10,000 from a Special Town Meeting appropriation and asked where it came from.",
+   "figures_as_printed": [
+    "almost $10,000"
+   ],
+   "quote": "now they are returning almost $10,000, and he would like to know where that came from."
+  },
+  {
+   "topic": "Asphalt bid",
+   "what_was_recorded": "The low bidder for the DPW asphalt bid came in at $1 less per ton than past pricing.",
+   "figures_as_printed": [
+    "$1"
+   ],
+   "quote": "the low bidder was keatings at $1 less per ton then we've had in the past."
+  },
+  {
+   "topic": "Sewer pump maintenance contract",
+   "what_was_recorded": "The Sewer Commission finalized a pump maintenance agreement with Small Water Utilities at a bid of $75,000.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "they finalized an agreement with small water utilities which came in with a bid of $75,000."
+  },
+  {
+   "topic": "Warrant approval",
+   "what_was_recorded": "Warrant 7/23/13 #5-15 was listed on the agenda with a total amount; no vote on it is recorded.",
+   "figures_as_printed": [
+    "$173,019.23"
+   ],
+   "quote": "warrants: 7/23/13 #5-15 $173,019.23"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Un-employment Expense to Legal expense, for the Codification of the ByLaws project.",
+   "amount_as_printed": "$11,654.64",
+   "outcome": "Approved 5-0 under the Chapter 44 s.33b motion; contingent on Finance Committee approval per Mr. Alonzo.",
+   "quote": "transfer from un-employment expense to legal expense, $11,654.64"
+  },
+  {
+   "description": "Transfer from Veteran's Administration to Legal expense, for the Codification of the ByLaws project.",
+   "amount_as_printed": "$591.00",
+   "outcome": "Approved 5-0 under the Chapter 44 s.33b motion; contingent on Finance Committee approval per Mr. Alonzo.",
+   "quote": "from veteran's administration to legal expense $591.00"
+  },
+  {
+   "description": "Transfer from Registrar of Graves to Legal Expense, for the Codification of the ByLaws project.",
+   "amount_as_printed": "$289.09",
+   "outcome": "Approved 5-0 under the Chapter 44 s.33b motion; contingent on Finance Committee approval per Mr. Alonzo.",
+   "quote": "from registrar of graves to legal expense $289.09"
+  },
+  {
+   "description": "Transfer from Building Inspector to Inspector of Weights and Measures.",
+   "amount_as_printed": "$685.00",
+   "outcome": "Approved 5-0 under the Chapter 44 s.33b motion; contingent on Finance Committee approval per Mr. Alonzo.",
+   "quote": "also transfer from building inspector $685.00 to inspector of weights and measures."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "band concerts, Farmer's Market, Lunenburg birthday",
+   "quote": "mr. alonzo reminded all of the band concerts being held at the lower common gazebo on monday evenings"
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "Chapter 90 funds",
+   "quote": "mr. ebersole questioned if the governor has released the other half of chapter 90 funds."
+  },
+  {
+   "speaker": "Mr Alonzo",
+   "stated_role": "",
+   "topic": "newspaper article on election day complaint",
+   "quote": "mr alonzo commented on a newspaper article which reported that a complaint had been filed concerning"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; band concert and Farmer's Market announcements",
+   "quote": "mr. alonzo reminded all of the band concerts being held at the lower common gazebo on monday evenings",
+   "tags": [
+    "public comment",
+    "events"
+   ]
+  },
+  {
+   "topic": "Current Business 1-3: IMA and PILOT agreements",
+   "resolution": "continued to a future meeting",
+   "quote": "1. approve ima with town of townsend for resale of net metering credits: continued to a future",
+   "tags": [
+    "net metering",
+    "PILOT",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen Policies & Procedures",
+   "resolution": "discussed off air; no record in minutes",
+   "quote": "mr. alonzo stated that they will be briefly adjourning the regular scheduled meeting and continuing \"off air\" to",
+   "tags": [
+    "policies",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "FY13 Final Budget Report & Request for Budget Transfers",
+   "resolution": "approved 5-0 (transfers contingent on Finance Committee approval)",
+   "quote": "she went on to explain that the books have been closed for fy13, there were a couple of overages, and she",
+   "tags": [
+    "budget",
+    "transfers",
+    "fiscal year close",
+    "Library"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "listed; no vote recorded",
+   "quote": "6. minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; Tri-Town fence license wording to be updated",
+   "quote": "finance committee - mr. toale reported that the committee will be meeting this thursday.",
+   "tags": [
+    "committees",
+    "Tri-Town",
+    "fence",
+    "sewer",
+    "School Building Committee"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "received; no vote",
+   "quote": "ms. speidel reported that she had sent letters to both political committees in lunenburg regarding election workers asking that they have their nominations back to",
+   "tags": [
+    "procurement",
+    "elections",
+    "DPW",
+    "assessors",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Appointments/Re-appointments/Resignations",
+   "resolution": "approved 5-0 (Stanley Young as Constable; Jean Larkin to Senior Tax Workoff Committee)",
+   "quote": "ms. bertram moved to appoint stanley young as constable and jean larkin to the senior tax workoff committee.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action; Chapter 90 question and election complaint clarification",
+   "quote": "mr alonzo commented on a newspaper article which reported that a complaint had been filed concerning",
+   "tags": [
+    "Chapter 90",
+    "elections"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Prepared spread sheets (FY13 final budget report, attached)",
+   "where": "text",
+   "quote": "she reviewed her prepared spread sheets with the bos. (see attached)"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "budget transfers",
+  "fiscal year close",
+  "Chapter 44 s.33b",
+  "Library",
+  "appointments",
+  "committee reports",
+  "Tri-Town fence",
+  "sewer commission",
+  "public comment",
+  "2013"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "she reviewed her prepared spread sheets with the bos"
+ },
+ "dropped_unquoted_by_field": {}
 }

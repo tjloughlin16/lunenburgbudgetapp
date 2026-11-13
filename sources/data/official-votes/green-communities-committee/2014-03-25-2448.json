@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2014-03-25",
  "docid": "2448",
@@ -12,15 +12,174 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 7/1/13, 8/20/13, 9/16/13, 10/15/13, 10/24/13 and 1/27/14",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 7/1/13, 8/20/13, 9/16/13, 10/15/13, 10/24/13 and 1/27/14.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "minutes from: 7/1/13, 8/20/13, 9/16/13, 10/15/13, 10/24/13 and 1/27/14 were approved.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "minutes from: 7/1/13, 8/20/13, 9/16/13, 10/15/13, 10/24/13 and 1/27/14 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes from March 25, 2014. Only one vote recorded: approval of prior minutes with no mover, seconder, or count stated. Remaining items are discussion, reports, and action assignments with no motions put to a vote.",
- "cost_usd": 0.0817965
+ "note": "Scanned text via OCR. Header OCR is garbled: 'achary Cutting' and 'Veal Sullivan' appear; the present line gives 'Z.Cutting' and 'N. Sullivan', which I used. The item numbering repeats '2.'. The minutes approval has no mover, seconder or count printed. Adjournment at 7:55 P.M. is recorded with no motion, so it is not recorded as a vote. No public comment is recorded. The meeting date 2014-03-25 is as printed; the received stamp reads OCT 16 2014.",
+ "cost_usd": 0.00504512,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, n. sullivan"
+  },
+  {
+   "name": "Z.Cutting",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, n. sullivan"
+  },
+  {
+   "name": "J McQuaid",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, n. sullivan"
+  },
+  {
+   "name": "N. Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, z.cutting, j mcquaid, n. sullivan"
+  },
+  {
+   "name": "J. Breault",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "j. breault, j.londa, t. burchfield (fincom), m. conway (visitor)"
+  },
+  {
+   "name": "J.Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "j. breault, j.londa, t. burchfield (fincom), m. conway (visitor)"
+  },
+  {
+   "name": "T. Burchfield",
+   "role": "FinCom",
+   "status": "present",
+   "quote": "j. breault, j.londa, t. burchfield (fincom), m. conway (visitor)"
+  },
+  {
+   "name": "M. Conway",
+   "role": "visitor",
+   "status": "present",
+   "quote": "j. breault, j.londa, t. burchfield (fincom), m. conway (visitor)"
+  },
+  {
+   "name": "Marion Benson",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "marion benson, advisor"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Four Green Communities signs will be posted around Town.",
+   "quote": "four signs will be posted around town."
+  },
+  {
+   "decision": "Standard Operating Procedures for each Town building are to be developed, then approved at the departmental level and sent to the Board of Selectmen for final approval before implementation.",
+   "quote": "standard operating procedures (sop) need to be developed for each town building"
+  },
+  {
+   "decision": "J. McQuaid will prepare a public education display for the Lunenburg Town Library.",
+   "quote": "j. mcquaid will prepare a public education display for the lunenburg"
+  },
+  {
+   "decision": "The next meeting is set for May at 6:30 PM, date to be determined.",
+   "quote": "the next meeting will be in may at 6:30 pm. date tbd."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Communities grant check and signs",
+   "what_was_recorded": "The board received a facsimile of the Grant check and the Green Communities Designated signs from the State; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "accepted the green communities designated signs and facsimile of the grant check."
+  },
+  {
+   "topic": "Energy Reduction Plan grant",
+   "what_was_recorded": "The grant is still under review, with a decision on approvals hoped for in May; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the grant is still under review and hopefully a decision about approvals will be made in may"
+  },
+  {
+   "topic": "State solar rebate program",
+   "what_was_recorded": "Changes to the State Rebate program for solar projects prompted a brief discussion of a solar by-law for medium sized projects; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "in light of changes to the state rebate program for solar projects brief discussion on the need"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "minutes approved",
+   "quote": "meeting called to order at 6:30 p.m. by d.blatt."
+  },
+  {
+   "topic": "State presentation: Green Communities signs and grant check",
+   "resolution": "reported; no action",
+   "quote": "d. blatt reported that he and j.londa attended the presentation by the state and accepted the"
+  },
+  {
+   "topic": "Update of Energy Reduction Plan",
+   "resolution": "no action; grant under review",
+   "quote": "update of energy reduction plan - the grant is still under review"
+  },
+  {
+   "topic": "Town Employee Energy Policy",
+   "resolution": "no action; SOPs to be developed",
+   "quote": "town employee energy policy - standard operating procedures (sop) need to be developed"
+  },
+  {
+   "topic": "Community Education",
+   "resolution": "display to be prepared",
+   "quote": "j. mcquaid will prepare a public education display for the lunenburg"
+  },
+  {
+   "topic": "Solar by-law for medium sized projects",
+   "resolution": "discussed; possible future agenda item",
+   "quote": "in light of changes to the state rebate program for solar projects brief discussion"
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for May; date TBD",
+   "quote": "the next meeting will be in may at 6:30 pm. date tbd."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Materials presented by the State (public education)",
+   "where": "text",
+   "quote": "using the materials that were presented by the state plus general information about the program and grant."
+  },
+  {
+   "name": "Facsimile of the Grant check",
+   "where": "text",
+   "quote": "accepted the green communities designated signs and facsimile of the grant check."
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy reduction plan",
+  "town energy policy",
+  "solar by-law",
+  "community education",
+  "state grant",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

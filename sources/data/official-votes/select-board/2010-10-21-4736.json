@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-10-21",
  "docid": "4736",
@@ -12,47 +12,394 @@
  },
  "votes": [
   {
-   "motion": "to open executive session pursuant to MGL Chapter 39, §23B (3) for discussion of collective bargaining and non-union personnel contract negotiations",
+   "motion": "Enter Executive Session under MGL Chapter 39, §23B (3) for collective bargaining and litigation strategy, and non-union negotiations, by roll call.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "board opened and recessed regular session at 6:18 p.m. to open executive session, in accordance with mgl chapter 39, §23b (3), by roll call vote; tom aye, paula aye, ernie aye and dave aye"
+   "quote": "board opened and recessed regular session at 6:18 p.m. to open executive session, in accordance with mgl chapter 39, §23b (3), by roll call vote; tom aye,"
   },
   {
-   "motion": "to approve one day liquor license for North Leominster Rod & Gun Club for November 12th, 6:00-11:00 p.m.",
+   "motion": "Approve a one-day liquor license for North Leominster Rod & Gun Club, November 12, 6:00 - 11:00 p.m., attendance approx. 80.",
    "moved_by": "Steve",
    "seconded_by": "Tom",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "steve motion to approve, tom seconded voted unanimously."
   },
   {
-   "motion": "to approve Kopelman & Paige representing other communities regarding Devens HHHW facility",
+   "motion": "Approve joint representation by Kopelman & Paige of the other communities in the Devens HHHW Facility agreement.",
    "moved_by": "Dave",
    "seconded_by": "Steve",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "dave motion to approve, steve seconded, voted uanimously to approve."
   },
   {
-   "motion": "to adjourn regular session",
+   "motion": "Adjourn Regular Session and reconvene Executive Session by roll call.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "being no further business board voted unanimously to adjourn regular session at 9:30 p.m."
-  },
-  {
-   "motion": "to reconvene executive session",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "and reconvened executive session at this time by roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one typo preserved in quote (uanimously for unanimously). Mover and seconder for votes 1, 4, and 5 not stated in minutes.",
- "cost_usd": 0.12851469999999998
+ "note": "OCR text (macOS Vision) with garbled words (e.g., 'MIlA', 'uanimously', 'Iown'). Employment contract pages and signature block are partly illegible. Several agenda headings are empty (Appointments, Public Comment, Department Updates). Votes are recorded only for the liquor license, joint representation, executive session entry and adjournment; no vote is recorded on the employment contract, the warrant articles or the solar RFP. Article G's amount is printed as \"$00\". The 1.58 bonus multiple is printed as-is.",
+ "cost_usd": 0.014048520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Vice Chair (as printed in the signature block)",
+   "status": "present",
+   "quote": "(steve arrived at 7:15)"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "member, Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura informed the board that we have received dividends from prior years"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kerry Speidel to provide a compiled list of capital requests, as Steve asked.",
+   "quote": "steve questioned if there is a list of requests that is compiled that could be put together, which kerry will provide."
+  },
+  {
+   "decision": "Kerry Speidel to send out information on what other communities use the QAlert service.",
+   "quote": "kerry will send out information on what other communities utilize this service."
+  },
+  {
+   "decision": "Green Community Task Force to return with information on the solar farm RFP; Kerry not to write the RFP. Kerry to speak with Mr. Marsden.",
+   "quote": "go back to the green community and tell them that they need to come up with information and come back to us"
+  },
+  {
+   "decision": "Water works in Lunenburg (IMAs with neighboring communities) to be added to a future agenda.",
+   "quote": "paula wants to add on a future agenda, how water works in lunenburg (ima's with neighboring communities)."
+  },
+  {
+   "decision": "Board requested an update on hiring a PACC Coordinator.",
+   "quote": "board would like an update on where the town stands in hiring a pacc coordinator."
+  },
+  {
+   "decision": "The November 4 meeting to cover only the 5 year plan discussion; the November 9 meeting to be a pared-down agenda.",
+   "quote": "per paula the meeting on november 4th will only have the discussion of the 5 year plan"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Two warrants were reviewed and signed, with amounts printed.",
+   "figures_as_printed": [
+    "$366,456.30",
+    "$162,791.08"
+   ],
+   "quote": "warrants #20 11, 10/13/10 - $366,456.30 and #21 11, 10/19/10 - $162,791.08 reviewed and signed."
+  },
+  {
+   "topic": "FY budget deficit",
+   "what_was_recorded": "Finance Committee reported the current FY budget shows a deficit of about $46,000 after adjustments, including money not received from the state for the ice storm.",
+   "figures_as_printed": [
+    "$46,000"
+   ],
+   "quote": "shows a deficit of about $46,000 as the town manager is accounting for the money that we didn't get from the state from the ice storm."
+  },
+  {
+   "topic": "Web site vendor costs (Scend)",
+   "what_was_recorded": "Town Manager reported an amount for hosting, maintenance and support, and an annual maintenance cost.",
+   "figures_as_printed": [
+    "$15,000",
+    "$7,200"
+   ],
+   "quote": "has come to an amount of $15,000 for hosting, maintenance, support. would be about $7,200 / year to maintain the site."
+  },
+  {
+   "topic": "MIIA dividends",
+   "what_was_recorded": "Dividends received from prior years: liability dividends and workers compensation dividends.",
+   "figures_as_printed": [
+    "$4,000",
+    "$16,000"
+   ],
+   "quote": "liability in excess of $4,000 and $16,000 from the worker's compensation dividends."
+  },
+  {
+   "topic": "Town Manager salary schedule",
+   "what_was_recorded": "Proposed annual salary for the Town Manager for each contract year.",
+   "figures_as_printed": [
+    "$117,300",
+    "$119,646",
+    "$122,039"
+   ],
+   "quote": "december 1, 2010 to november 30, 2011 $117,300"
+  },
+  {
+   "topic": "Town Manager professional dues cap",
+   "what_was_recorded": "Professional dues, subscriptions and meetings are to be paid subject to appropriation and not to exceed a stated annual amount.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "to approval of board of selectmen and appropriation and not to exceed $5,000 annually."
+  },
+  {
+   "topic": "Town Manager performance bonus",
+   "what_was_recorded": "A performance bonus equal to a stated multiple of base salary is paid for a composite score of 150 or higher.",
+   "figures_as_printed": [
+    "1.58"
+   ],
+   "quote": "the board will pay a 1.58 of base salary as a performance bonus"
+  },
+  {
+   "topic": "Town Manager health coverage contribution",
+   "what_was_recorded": "Town pays a percentage of comprehensive family health coverage.",
+   "figures_as_printed": [
+    "75%"
+   ],
+   "quote": "payment for 75% of comprehensive health coverage for a"
+  },
+  {
+   "topic": "Article B and C union contract funding",
+   "what_was_recorded": "Special Town Meeting articles to raise and appropriate or transfer money to fund police and telecommunications union contracts; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "fund the fy11, fy12 & fy13 police officers collective bargaining agreement dated july 1, 2010 - june 30, 2013 with ibpo"
+  },
+  {
+   "topic": "Article D Summer Street alternatives analysis",
+   "what_was_recorded": "Special Town Meeting article to appropriate money for an alternatives analysis; proposal still awaited; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "article d, still waiting for a proposal on the alternative analysis."
+  },
+  {
+   "topic": "Article G police cruisers",
+   "what_was_recorded": "Special Town Meeting article to raise, transfer or borrow money for new police cruisers; the printed amount is $00.",
+   "figures_as_printed": [
+    "$00"
+   ],
+   "quote": "or borrow the sum of $00 for the purchase of new police cruisers)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comments recorded",
+   "quote": "public comment announcements",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session (opening)",
+   "resolution": "entered executive session",
+   "quote": "board opened and recessed regular session at 6:18 p.m. to open executive session",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "halloween trick-or-treating, sunday, october 31, 2010 from 6:00 - 8:00 p.m.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "One Day Liquor License - North Leominster Rod & Gun Club",
+   "resolution": "approved unanimously",
+   "quote": "steve motion to approve, tom seconded voted unanimously.",
+   "tags": [
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Determination on Joint Representation - Devens HHHW Facility",
+   "resolution": "approved unanimously",
+   "quote": "dave motion to approve, steve seconded, voted uanimously to approve.",
+   "tags": [
+    "legal",
+    "joint representation"
+   ]
+  },
+  {
+   "topic": "Town Manager's Employment Contract",
+   "resolution": "presented; no vote recorded",
+   "quote": "kerry presented the attached employment contract.",
+   "tags": [
+    "town manager",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "no minutes; warrants reviewed and signed; action file items referred to future agendas",
+   "quote": "warrants #20 11, 10/13/10 - $366,456.30 and #21 11, 10/19/10 - $162,791.08 reviewed and signed.",
+   "tags": [
+    "warrants",
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reported; items for future agendas",
+   "quote": "dave - school committee met last night and have begun preliminary discussions on the budget.",
+   "tags": [
+    "committees",
+    "capital planning",
+    "finance committee",
+    "web"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "no items recorded",
+   "quote": "6. department updates -",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Manager updates (MIIA, solar farm RFP, DPW architect, meeting schedule)",
+   "resolution": "reported; solar RFP sent back to Green Community; meeting schedule discussed",
+   "quote": "7. manager updates a) mila general liability / workers compensation insurance updates",
+   "tags": [
+    "insurance",
+    "solar",
+    "design contract",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "discussed; Nov 4 limited to 5 year plan",
+   "quote": "paula discussed the scheduling of pending items; we've discussed going back to two business sessions and two workshops.",
+   "tags": [
+    "meeting schedule",
+    "town clerk"
+   ]
+  },
+  {
+   "topic": "Old business - Special Town Meeting warrant articles",
+   "resolution": "discussed; no votes recorded",
+   "quote": "kerry distributed the list that the office has received.",
+   "tags": [
+    "special town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Committee appointments/reappointments/resignations",
+   "resolution": "no action",
+   "quote": "1. re-precincting committee (if needed) - no action",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session (closing)",
+   "resolution": "returned to Regular Session, then reconvened in Executive Session",
+   "quote": "chairman announced that the board will be returning to regular session.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule (tentative)",
+   "resolution": "listed",
+   "quote": "upcoming meeting schedule (tentative) november 2, 2010",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant articles list (draft articles 10-18-10), including Articles A-N, 1 and O",
+   "where": "list",
+   "quote": "kerry distributed the list that the office has received."
+  },
+  {
+   "name": "Employment Agreement between the Town of Lunenburg and Kerry A. Speidel as Town Manager, dated 21 October 2010",
+   "where": "list",
+   "quote": "kerry presented the attached employment contract."
+  },
+  {
+   "name": "Lena Lane Acceptance Plan of Land in Lunenburg, MA, prepared for Gerard A. Albert, November 26, 2008, by Whitman & Bingham Associates, LLC",
+   "where": "list",
+   "quote": "lena lane acceptance plan of land in lunenburg, ma prepared for gerard a. albert, november 26, 2008, by whitman &"
+  },
+  {
+   "name": "Warrants #20 11 (10/13/10) and #21 11 (10/19/10)",
+   "where": "text",
+   "quote": "warrants #20 11, 10/13/10 - $366,456.30 and #21 11, 10/19/10 - $162,791.08 reviewed and signed."
+  },
+  {
+   "name": "Pavement management plan",
+   "where": "text",
+   "quote": "board discussed that this was the discussion that was had during the presentation of the pavement management plan"
+  },
+  {
+   "name": "Wind energy bill (legislature)",
+   "where": "text",
+   "quote": "in the wind energy bill that was going through the legislature there was a change from 1% to 2%"
+  },
+  {
+   "name": "Current evaluation form (Attachment A) to the Town Manager agreement",
+   "where": "text",
+   "quote": "receives a composite score of 150 or higher, using the current evaluation form"
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "town manager contract",
+  "executive session",
+  "collective bargaining",
+  "liquor license",
+  "special town meeting",
+  "solar",
+  "sewer",
+  "budget",
+  "meeting schedule",
+  "pavement",
+  "web site"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "kerry distributed the list that the office has received."
+ },
+ "dropped_unquoted_by_field": {}
 }

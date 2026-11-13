@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-05-19",
  "docid": "2818",
@@ -12,31 +12,295 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of April 21, 2016 as amended",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Susan Visser",
-   "outcome": "passed 5-0-1",
+   "motion": "Accept the minutes of April 21, 2016 as amended.",
+   "moved_by": "Gare",
+   "seconded_by": "Susan",
+   "outcome": "passed (all in favor; Donna Saiia abstaining)",
    "procedural": true,
    "quote": "gare moved to accept the minutes as amended, susan seconded; voted: all in favor with donna saiia abstaining as she was not in attendance at the meeting."
   },
   {
-   "motion": "Accept the Director's Contract including the salary of $67,725 per annum effective June 30, 2016",
-   "moved_by": "Dick Mailloux",
-   "seconded_by": "Gare Thompson",
-   "outcome": "passed",
+   "motion": "Accept the Director’s Contract including the salary of $67,725 per annum effective June 30, 2016.",
+   "moved_by": "Dick",
+   "seconded_by": "Gare",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "dick moved to accept the director's contract including the salary of $67,725 per annum effective june 30, 2016, gare seconded; voted: all in favor"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Susan Visser",
-   "seconded_by": "Gare Thompson",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Susan",
+   "seconded_by": "Gare",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "motion to adjourn so moved by susan, seconded by gare voted: all in favor at 8:07 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09916149999999999
+ "dropped_unquoted": 1,
+ "note": "Minutes are brief: Director's Report items are headings only, with the handout figures not printed in the text. Votes on the minutes and the contract are recorded only as 'all in favor' with no count. Donna Saiia is listed as attending but abstained on the April minutes because she was not present at that meeting. The meeting room is 'Sudolnik meeting room' on page 1 and 'Sudolnik Conference Room' on page 2. No transfers were recorded. The Room Use item was tabled without a vote recorded.",
+ "cost_usd": 0.0059998199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:50 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "respectfully submitted, harry kubetz trustee of lunenburg public library"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, donna saiia, martha moore - director,"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, donna saiia, martha moore - director,"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, donna saiia, martha moore - director,"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, donna saiia, martha moore - director,"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, donna saiia, martha moore - director,"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "LPL",
+   "status": "absent",
+   "quote": "absent: lars widstrand, lpl; bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: lars widstrand, lpl; bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: lars widstrand, lpl; bob ebersole - board of selectmen representative, terri burchfield - fincom representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Room Use by for-profit entities (BPL Policies) was tabled until the October 20, 2016 Trustee meeting.",
+   "quote": "tabled until october 20, 2016 trustee meeting"
+  },
+  {
+   "decision": "Martha will email the various Library of Things policies to the Trustees and representatives.",
+   "quote": "martha will email the various policies to the trustees and representatives"
+  },
+  {
+   "decision": "Dick and Susan will meet with Martha to sign the Director’s contract on June 9, 2016 in the evening.",
+   "quote": "dick and susan will meet with martha to sign the contract on june 9, 2016 in the evening"
+  },
+  {
+   "decision": "Suggested that Bob Ebersole be consulted about the FY 2016 salaries overage question.",
+   "quote": "suggestion that bob ebersole be consulted"
+  },
+  {
+   "decision": "Placed items on upcoming agendas: Policy for access and use of Library Trust Funds (September), Room Use by for-profit entities (October), and establishing a Marketing/Technology sub committee.",
+   "quote": "agenda items for upcoming meetings o policy for access and use of library trust funds - september"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2017 Budget",
+   "what_was_recorded": "The FY 2017 library budget total was reported in the Director’s Report; the minutes note there is no 'Program' line in it and that a Program line would help fund programs.",
+   "figures_as_printed": [
+    "$370,739.00"
+   ],
+   "quote": "fy 2017 budget - $370,739.00"
+  },
+  {
+   "topic": "FY 2016 overages (underspending)",
+   "what_was_recorded": "Discussion of FY 2016 underspending of nearly $36,000 and a question whether the Salaries overage could be moved to other budget lines.",
+   "figures_as_printed": [
+    "$36,000"
+   ],
+   "quote": "discussion about fy 2016 overages (underspending) of nearly $36,000"
+  },
+  {
+   "topic": "Director’s salary FY 2017",
+   "what_was_recorded": "The board accepted the Director’s Contract including a salary for the Director, effective June 30, 2016.",
+   "figures_as_printed": [
+    "$67,725"
+   ],
+   "quote": "including the salary of $67,725 per annum effective"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment o no public comment agenda items",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes of April 21, 2016",
+   "resolution": "approved as amended",
+   "quote": "gare moved to accept the minutes as amended, susan seconded; voted: all in favor with donna saiia abstaining",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director’s Report",
+   "resolution": "discussed; no action recorded",
+   "quote": "director's report, as per handout o fy 2017 budget - $370,739.00",
+   "tags": [
+    "budget",
+    "staff",
+    "programs",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "noted; no action recorded",
+   "quote": "friends of lpl update o uptown stroll will be on may 21 (lunenburg election day)",
+   "tags": [
+    "friends of the library",
+    "events"
+   ]
+  },
+  {
+   "topic": "Director’s Contract FY 2017",
+   "resolution": "approved",
+   "quote": "dick moved to accept the director's contract including the salary of $67,725 per annum effective june 30, 2016",
+   "tags": [
+    "personnel",
+    "director contract"
+   ]
+  },
+  {
+   "topic": "Room Use by for-profit entities (BPL Policies)",
+   "resolution": "tabled until October 20, 2016",
+   "quote": "room use by for-profit entities (bpl policies) o tabled until october 20, 2016 trustee meeting",
+   "tags": [
+    "policy",
+    "room use"
+   ]
+  },
+  {
+   "topic": "Library of Things",
+   "resolution": "no action; Director to email policies",
+   "quote": "there is no singular policy for different items such as e-readers, wii, telescopes, & volleyball kits",
+   "tags": [
+    "policy",
+    "library of things"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "board comments o no board comments",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Agenda Items for upcoming meetings",
+   "resolution": "noted for future agendas",
+   "quote": "agenda items for upcoming meetings o policy for access and use of library trust funds - september",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:07 p.m.",
+   "quote": "adjourn o motion to adjourn so moved by susan, seconded by gare voted: all in favor at 8:07 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for May 21, 2016",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for may 21, 2016"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "director's report contract for the director of the lunenburg public library"
+  },
+  {
+   "name": "Contract for the Director of the Lunenburg Public Library",
+   "where": "list",
+   "quote": "director's report contract for the director of the lunenburg public library"
+  },
+  {
+   "name": "Children’s librarian’s report & handouts",
+   "where": "list",
+   "quote": "children's librarian's report & handouts ya librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "children's librarian's report & handouts ya librarian's report"
+  },
+  {
+   "name": "On Your Mark, Get Set, READ",
+   "where": "list",
+   "quote": "on your mark, get set, read olympic reading log"
+  },
+  {
+   "name": "Olympic Reading Log",
+   "where": "list",
+   "quote": "on your mark, get set, read olympic reading log"
+  },
+  {
+   "name": "Children’s Area Report (separate handout)",
+   "where": "text",
+   "quote": "children's area report - separate handout."
+  },
+  {
+   "name": "Impact of school construction on LPL parking (separate handouts, maps)",
+   "where": "text",
+   "quote": "impact of school construction on lpl parking - separate handouts (maps)"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "director contract",
+  "personnel",
+  "parking",
+  "library policy",
+  "friends of the library",
+  "youth",
+  "trust funds"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

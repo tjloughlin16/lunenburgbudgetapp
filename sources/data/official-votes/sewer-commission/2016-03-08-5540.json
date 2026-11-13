@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-03-08",
  "docid": "5540",
@@ -12,27 +12,332 @@
  },
  "votes": [
   {
-   "motion": "To approve the sewer bylaw article as presented on 3/8/2016",
+   "motion": "Approve the sewer bylaw article as presented on 3/8/2016.",
    "moved_by": "John R.",
    "seconded_by": "Sue B.",
-   "outcome": "passed unanimously",
+   "outcome": "unanimous",
    "procedural": false,
    "quote": "motion: john r. second: sue b. to approve the sewer bylaw article as presented on 3/8/2016 vote was unanimous"
   },
   {
-   "motion": "To approve the minutes from the February 23 regular meeting and the February 29 workshop",
+   "motion": "Approve the minutes of the February 23 regular meeting and the February 29 workshop.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the minutes from the february 23\" regular meeting and the february 29* workshop were presented and approved by the commission."
+   "quote": "were presented and approved by the commission"
   },
   {
-   "motion": "To adjourn at 9:15pm",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 9:15pm.",
+   "outcome": "unanimous",
    "procedural": true,
    "quote": "to adjourn at 9:15pm respectively submitted, til lat emily lehto, minutes assistant vote unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; Vote 3's quote includes signature block text due to OCR line scrambling.",
- "cost_usd": 0.1434455
+ "note": "Page 1 is OCR text with garbled passages, notably the opening paragraph and some words in the warrant-article and Wright Pierce sections; quotes were taken from the readable text. The minutes end mid-sentence on page 1 (\"Barb had sent minutes of 11/29/11 to the\") and continue on page 2. No attendance roll, no public comment section, and no documents list is printed. The minutes-approval motion has no recorded mover or vote count. The adjournment motion has no recorded mover. Attendance status for named people is not stated.",
+ "cost_usd": 0.00758702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  },
+  {
+   "name": "John R.",
+   "status": "not stated",
+   "quote": "motion: john r. second: sue b. to approve the sewer bylaw article as presented on 3/8/2016"
+  },
+  {
+   "name": "Sue B.",
+   "status": "not stated",
+   "quote": "motion: john r. second: sue b. to approve the sewer bylaw article as presented on 3/8/2016"
+  },
+  {
+   "name": "Mike N",
+   "status": "not stated",
+   "quote": "mike n did not have a chance to review the paperwork barb had sent him for the o& m contract"
+  },
+  {
+   "name": "Barb",
+   "status": "not stated",
+   "quote": "barb noted that we were able to get the missing manholes for meadowwoods into gis"
+  },
+  {
+   "name": "Carl",
+   "status": "not stated",
+   "quote": "carl reviewed the proposed fincom presentation for 3/17."
+  },
+  {
+   "name": "Wright Pierce",
+   "role": "consultant, conference call",
+   "status": "remote",
+   "quote": "there was a conference call with wright pierce to discuss the cwmp and issues associated with it."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The hearing on the grease trap/interceptor program changes and the sewer bylaw article is to be scheduled for the televised meetings on March 29 and April 26.",
+   "quote": "is to be scheduled for the televised meetings on march 29 and april 26"
+  },
+  {
+   "decision": "Letters will be sent to the restaurants to let them know about the hearing, and the hearing will be posted in the Ledger.",
+   "quote": "the hearing will be posted in the ledger next week and will note both the grease trap regulation and bylaw change discussion."
+  },
+  {
+   "decision": "One more grease trap workshop is to be scheduled for March 15.",
+   "quote": "there will be one more workshop scheduled for march 15'h."
+  },
+  {
+   "decision": "If Donnelly's does not respond, Barb will send the notice out certified.",
+   "quote": "if they don't respond, barb will send the notice out certified."
+  },
+  {
+   "decision": "Small Water System Services is to send a quote for the Grease Trap Program by the next meeting, and is asked to justify the SCADA System and show how it saves the Town money.",
+   "quote": "small water system services (swss) should be sending a quote for the grease trap program by the next meeting."
+  },
+  {
+   "decision": "Members present did not think an additional SCADA vendor's quote would be necessary.",
+   "quote": "the members present did not think an additional vendor's quote would be necessary."
+  },
+  {
+   "decision": "Mike N will contact Dave MacDonald, who worked with him on the previous bid, about the O&M contract for the Pump Stations; completion is expected by April 15.",
+   "quote": "contact dave macdonald who had worked with him on the previous bid"
+  },
+  {
+   "decision": "The Sewer Commission will ask the town to accept revisions to amend the CWMP.",
+   "quote": "the sewer commission will be asking the town to accept revisions to amend the cwmp."
+  },
+  {
+   "decision": "Carl will send a copy of the FinCom budget presentation to Commission members once it is finalized.",
+   "quote": "he will send a copy for the commission members to review once it is finalized."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Rerouting from Fitchburg Sewer to Leominster Sewer",
+   "what_was_recorded": "The Commission discussed a potential rerouting that would cost $2 million, and how it would be funded.",
+   "figures_as_printed": [
+    "$2 million"
+   ],
+   "quote": "it would cost $2 million and discussion followed as to how this would be funded."
+  },
+  {
+   "topic": "Fees for establishments with external grease interceptors",
+   "what_was_recorded": "New fees for external grease interceptor establishments should cover the Commission's cost of inspections six times a year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the new fees for establishments with an external grease interceptor should cover the commission's expense of doing inspections 6 times a year."
+  },
+  {
+   "topic": "SWSS quote and SCADA System cost savings",
+   "what_was_recorded": "Small Water System Services is to send a Grease Trap Program quote and justify the SCADA System's savings to the Town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission would also like them to justify the scada system and show how it saves the town money."
+  },
+  {
+   "topic": "Enterprise Fund graph for FinCom presentation",
+   "what_was_recorded": "Carl showed a graph of the Enterprise Fund (retained earnings, debt service, betterments income, expense over income); no figure printed.",
+   "figures_as_printed": [],
+   "quote": "he showed the graph of the enterprise fund which shows retained earnings, debt services, income from betterments"
+  },
+  {
+   "topic": "Donnelly's unpaid annual fee",
+   "what_was_recorded": "Donnelly's has not paid its annual grease trap fee; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "donnelly's has not paid their annual fee and is missing one log."
+  },
+  {
+   "topic": "Costs to connect to sewer",
+   "what_was_recorded": "The Ledger may call Barb for information on costs to connect to sewer; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ledger may be calling barb for more information regarding costs to connect to sewer."
+  },
+  {
+   "topic": "Septic Repair Loan program",
+   "what_was_recorded": "One applicant so far for the Septic Repair Loan program; no loan amount printed.",
+   "figures_as_printed": [],
+   "quote": "there has been one applicant so far for the septic repair loan program."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Stabilization fund transfer, proposed as a Town Meeting warrant article.",
+   "amount_as_printed": "",
+   "outcome": "not stated",
+   "quote": "the stabilization fund transfer, the budget transfer to operate the sewer enterprise fund for fy17"
+  },
+  {
+   "description": "Budget transfer to operate the Sewer Enterprise Fund for FY17, proposed as a Town Meeting warrant article.",
+   "amount_as_printed": "",
+   "outcome": "not stated",
+   "quote": "the stabilization fund transfer, the budget transfer to operate the sewer enterprise fund for fy17"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Sewer bylaw article",
+   "resolution": "approved unanimously",
+   "quote": "motion: john r. second: sue b. to approve the sewer bylaw article as presented on 3/8/2016 vote was unanimous",
+   "tags": [
+    "bylaw",
+    "vote"
+   ]
+  },
+  {
+   "topic": "Grease Trap/Interceptor Program status",
+   "resolution": "continued; hearing to be scheduled",
+   "quote": "the workshop from march 7* was discussed. there will be one more workshop scheduled for march 15'h.",
+   "tags": [
+    "grease trap",
+    "regulations",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Compliance status and fee assessment",
+   "resolution": "no action; certified notice if no response",
+   "quote": "donnelly's and crossroads were both sent letters notifying them of non-compliance.",
+   "tags": [
+    "compliance",
+    "fees",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Administration of Grease Trap Program/SCADA",
+   "resolution": "quote requested from SWSS",
+   "quote": "small water system services (swss) should be sending a quote for the grease trap program by the next meeting.",
+   "tags": [
+    "SCADA",
+    "grease trap",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Pump Stations O&M RFP status and weekly reports",
+   "resolution": "no action; completion expected by April 15",
+   "quote": "there were no comments on the weekly reports.",
+   "tags": [
+    "pump stations",
+    "RFP",
+    "weekly reports"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant articles",
+   "resolution": "discussed; CWMP revisions to go to town",
+   "quote": "the sewer commission will be asking the town to accept revisions to amend the cwmp.",
+   "tags": [
+    "warrant articles",
+    "CWMP",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Wright Pierce project updates - CWMP",
+   "resolution": "discussed; funding unresolved",
+   "quote": "the potential rerouting from fitchburg sewer to leominster sewer was discussed by the commission.",
+   "tags": [
+    "CWMP",
+    "Wright Pierce",
+    "rerouting"
+   ]
+  },
+  {
+   "topic": "Manhole inspections",
+   "resolution": "no action; inspections to start March 21",
+   "quote": "wright pierce is set to commence inspections on march 21",
+   "tags": [
+    "manholes",
+    "GIS",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Budget presentation to Finance Committee",
+   "resolution": "reviewed; copy to members when final",
+   "quote": "carl reviewed the proposed fincom presentation for 3/17.",
+   "tags": [
+    "FinCom",
+    "enterprise fund",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects",
+   "resolution": "updates only, no action",
+   "quote": "there are now three companies: small water system services, wright pierce and woodard and curran.",
+   "tags": [
+    "website",
+    "septic loan",
+    "SCADA",
+    "Rural Development"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "were presented and approved by the commission",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sewer bylaw article as presented on 3/8/2016",
+   "where": "text",
+   "quote": "to approve the sewer bylaw article as presented on 3/8/2016"
+  },
+  {
+   "name": "Revised grease trap regulations",
+   "where": "text",
+   "quote": "commission reviewed the revised regulations."
+  },
+  {
+   "name": "Proposed FinCom presentation for 3/17",
+   "where": "text",
+   "quote": "carl reviewed the proposed fincom presentation for 3/17."
+  },
+  {
+   "name": "Weekly reports",
+   "where": "text",
+   "quote": "there were no comments on the weekly reports."
+  },
+  {
+   "name": "O&M contract paperwork for the Pump Stations",
+   "where": "text",
+   "quote": "the paperwork barb had sent him for the o& m contract for the pump stations"
+  },
+  {
+   "name": "SCADA manual sent to Woodard and Curran",
+   "where": "text",
+   "quote": "scada - woodard and curran has been sent the manual."
+  },
+  {
+   "name": "Minutes of 11/29/11",
+   "where": "text",
+   "quote": "barb had sent minutes of 11/29/11 to the"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease trap program",
+  "sewer bylaw",
+  "CWMP",
+  "SCADA",
+  "pump stations",
+  "warrant articles",
+  "Wright Pierce",
+  "enterprise fund",
+  "FinCom budget",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

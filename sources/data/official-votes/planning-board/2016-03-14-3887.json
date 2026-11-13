@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-03-14",
  "docid": "3887",
@@ -12,24 +12,245 @@
  },
  "votes": [
   {
-   "motion": "not have the stormwater plan reengineered and accept the engineering review",
-   "moved_by": "Kenneth Chenis",
-   "seconded_by": "David Prokowiew",
+   "motion": "To not have the stormwater plan reengineered and to accept the engineering review.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, k. chenis, to not have the stormwater plan reengineered and to accept the engineering review, second, d. prokowiew; discussion- g. bittner noted there needs to be better communication between boards/commissions. all aye."
+   "quote": "motion, k. chenis, to not have the stormwater plan reengineered and to accept the engineering review, second, d. prokowiew; discussion- g. bittner noted there needs to be better communication"
   },
   {
-   "motion": "approve the site development application for Unitil with conditions: construction hours of 7:00 AM – 5:00 PM Monday through Saturday (no Sundays and holidays), applicant to abide by all local and State regulations, to abide by approvals and conditions of other Town Boards/Commissions, and to build to the approved plan amended to March 8, 2016",
-   "moved_by": "Kenneth Chenis",
-   "seconded_by": "Gregory Bittner",
+   "motion": "To approve the site development application for Unitil, as amended to add construction hours of 7:00 AM – 5:00 PM Monday through Saturday (no Sundays and holidays), applicant to abide by all local and State regulations and by approvals and conditions of other Town Boards/Commissions, and to build to the approved plan amended to March 8, 2016.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "G. Bittner",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, k. chenis to amend motion to inclu de construction hours of 7:00 am - 5:00 pm, monday through saturday, no sundays and holidays ; applicant to abide by all local and state regulations; to abide by approvals and conditions of other town boards/commissions; to build to the approved plan amended to march 8, 2016. second, g. bittner. all aye",
-   "quote_taken_from_text": true
+   "quote": "motion, k. chenis to amend motion to inclu de construction hours of 7:00 am - 5:00 pm, monday through saturday, no sundays and holidays ; applicant to abide by all local"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes appear to be text extracted from a PDF. Both votes recorded are substantive planning decisions (not procedural). The second vote followed discussion that required amending the original approval motion to include specific conditions.",
- "cost_usd": 0.1343365
+ "note": "The minutes record one 'All aye' after the amended site development motion, with no separate result for the original motion; it is recorded here as a single vote. Vote tallies are not printed (only 'All aye'). The minutes also contain 'inclu de' and 'mo ve' with split words, copied as printed. The Information Meeting closed at 8:20 PM; no motion to close is recorded. Jeffrey Walsh is described but not recorded as present.",
+ "cost_usd": 0.00550272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: matthew allison"
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "Project Engineer, Whitman & Bingham Associates (WBA); representing the applicant",
+   "status": "present",
+   "quote": "mark piermarini and jamie rheault, project engineers, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Project Engineer, Whitman & Bingham Associates (WBA); representing the applicant",
+   "status": "present",
+   "quote": "mark piermarini and jamie rheault, project engineers, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Mark Beliveau",
+   "role": "Legal Counsel, Pierce Atwood LLP; representing the applicant",
+   "status": "present",
+   "quote": "mark beliveau, legal counsel, pierce atwood llp"
+  },
+  {
+   "name": "Jacqueline Agel",
+   "role": "Unitil Project Manager; representing the applicant",
+   "status": "present",
+   "quote": "jacqueline agel, unitil project manager"
+  },
+  {
+   "name": "Michael Dowhan",
+   "role": "Veri Waterman Associates; representing the applicant",
+   "status": "present",
+   "quote": "michael dowhan, veri waterman associates"
+  },
+  {
+   "name": "Ernie Nadeau",
+   "role": "Nadeau Construction; representing the applicant",
+   "status": "present",
+   "quote": "ernie nadeau, nadeau construction"
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Reviewing Engineer, Graves Engineering, Inc. (GEI)",
+   "status": "not stated",
+   "quote": "reviewing engineer jeffrey walsh, graves engineering , inc. (gei) issued a march 8, 2016 letter"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "attending on behalf of the Conservation Commission, not representing the Commission as a whole",
+   "status": "present",
+   "quote": "carl luck ( not representing the commission as a whole, but attending on behalf on the conservation commission)"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "resident, 312 Townsend Harbor Road",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road - agreed with c. luck."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Findings will note that the Plan as submitted complies with both the existing Section 8.4. and the proposed Section 8.4.",
+   "quote": "it will be noted in the findings that the plan as submitted is in compliance with both the existing section 8.4. and the proposed section 8.4."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stormceptors cost for Unitil stormwater treatment",
+   "what_was_recorded": "Applicant's attorney said Unitil would need two stormceptors at an approximate total cost of $70,000, in the context of the Conservation Commission's request to consider them.",
+   "figures_as_printed": [
+    "$70,000"
+   ],
+   "quote": "attorney beliveau noted unitil would need two of them at a total cost of approximately $70,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "not representing the Commission as a whole, but attending on behalf on the Conservation Commission",
+   "topic": "TSS removal and stormwater plan re-review",
+   "quote": "carl luck ( not representing the commission as a whole, but attending on behalf on the conservation commission), 50 sunset lane- the commission was ready to mo ve forward"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "topic": "reducing sediment; storm filters as alternative to stormceptors",
+   "quote": "paula bertram, 312 townsend harbor road - agreed with c. luck. any way to reduce sediment should be considered."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Stormwater TSS removal and request to re-engineer the stormwater plan",
+   "resolution": "Motion to not re-engineer the plan and accept the GEI engineering review passed",
+   "quote": "motion, k. chenis, to not have the stormwater plan reengineered and to accept the engineering review, second, d. prokowiew",
+   "tags": [
+    "stormwater",
+    "TSS",
+    "stormceptors",
+    "GEI review"
+   ]
+  },
+  {
+   "topic": "Site development application for Unitil, 357 Electric Avenue",
+   "resolution": "approved with conditions as amended",
+   "quote": "motion, k. chenis to amend motion to inclu de construction hours of 7:00 am - 5:00 pm, monday through saturday, no sundays and holidays",
+   "tags": [
+    "site plan",
+    "conditions",
+    "construction hours",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Signage and landscape plans",
+   "resolution": "no Board concerns; landscape submittal met landscape policy and stormwater goals",
+   "quote": "landscaping rendering distributed to board. submittal meets both the board's landscape policy and stormwater goals.",
+   "tags": [
+    "signage",
+    "landscaping"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plan amended to 3/8/16",
+   "where": "list",
+   "quote": "documents used at meeting: plan amended to 3/8/16 landscape plan signage plan gei review letter dtd march 8, 2016"
+  },
+  {
+   "name": "Landscape plan",
+   "where": "list",
+   "quote": "documents used at meeting: plan amended to 3/8/16 landscape plan signage plan gei review letter dtd march 8, 2016"
+  },
+  {
+   "name": "Signage plan",
+   "where": "list",
+   "quote": "documents used at meeting: plan amended to 3/8/16 landscape plan signage plan gei review letter dtd march 8, 2016"
+  },
+  {
+   "name": "GEI Review Letter dtd March 8, 2016",
+   "where": "list",
+   "quote": "documents used at meeting: plan amended to 3/8/16 landscape plan signage plan gei review letter dtd march 8, 2016"
+  },
+  {
+   "name": "Revised plans (including Sheet 6, Petrol Barrier)",
+   "where": "text",
+   "quote": "attorney beliveau distributed revised plans which included items raised at the february 22 nd meeting."
+  },
+  {
+   "name": "Signage handout",
+   "where": "text",
+   "quote": "signage handout distributed to board. no board concerns."
+  },
+  {
+   "name": "Landscaping rendering",
+   "where": "text",
+   "quote": "landscaping rendering distributed to board. submittal meets both the board's landscape policy and stormwater goals."
+  },
+  {
+   "name": "Stormwater Management Plan",
+   "where": "text",
+   "quote": "the commission requested the stormwater management plan be looked at again for any possible enhancements to increase the tss"
+  },
+  {
+   "name": "Proposed Section 8.4. Site Plan Approval",
+   "where": "text",
+   "quote": "if the new section 8.4. site plan approval is adopted at may 2016 town meeting, that would become applicable"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "information meeting",
+  "Unitil",
+  "357 Electric Avenue",
+  "site development",
+  "stormwater",
+  "stormceptors",
+  "landscaping",
+  "signage",
+  "findings",
+  "conditions"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

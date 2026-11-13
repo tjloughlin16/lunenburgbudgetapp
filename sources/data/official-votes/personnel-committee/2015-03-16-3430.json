@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2015-03-16",
  "docid": "3430",
@@ -12,22 +12,231 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of the last Personnel Committee meeting",
+   "motion": "Approve the minutes of the last Personnel Committee meeting with some corrections.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the committee approved the minutes of the last personnel committee meeting with some corrections."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:11 pm.",
+   "moved_by": "Lin Vickery",
+   "seconded_by": "Nancy Forest",
    "outcome": "passed 4-0",
    "procedural": true,
-   "moved_by": "Lin",
-   "seconded_by": "Nancy",
    "quote": "lin moved to adjourn the meeting; nancy seconded the motion, and the committee voted 4- 0 to adjourn at 8:11 pm",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1114475
+ "dropped_unquoted": 1,
+ "note": "Text extraction is readable and complete; no scan issues. The minutes record one motion to approve prior minutes without a mover, seconder or count (recorded as passed, no count printed). Adjournment is the only motion with a mover, seconder and count (4-0). The minutes print no dollar figures. Minor garbling in the source: \"10-12 employees 50 on-call fire fighters\" and the name \"Kerri\" in item 4c versus \"Kerry Speidel\" in attendance. Kerry Speidel's role is not printed.",
+ "cost_usd": 0.004742720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cheryl Valera",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "cheryl valera, committee chair, called the meeting to order at 6:30 p.m."
+  },
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: cheryl valera, scott chase, lin vickery, kerry speidel and nancy forest"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: cheryl valera, scott chase, lin vickery, kerry speidel and nancy forest"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, scott chase, lin vickery, kerry speidel and nancy forest"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: cheryl valera, scott chase, lin vickery, kerry speidel and nancy forest"
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: deb christen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lin will submit corrected December 4, 2014 minutes to Kathy Herrick, Town Clerk.",
+   "quote": "lin will be submitting corrected minutes to kathy herrick, town clerk."
+  },
+  {
+   "decision": "The 2015 Personnel Committee meeting schedule was set for nine Thursday dates, April 2 through December 3, 2015.",
+   "quote": "the 2015 personnel committee meetings will be on the following dates:"
+  },
+  {
+   "decision": "The committee will begin by setting a framework from an advising and counsel standpoint on the recruitment and appointment process.",
+   "quote": "personnel committee will begin by setting a framework from an advising and counsel standpoint"
+  },
+  {
+   "decision": "Nancy Forest will create a spreadsheet with employee name, grade, step, hours and send it to the Personnel Committee.",
+   "quote": "nancy will create a spreadsheet with employee name, grade, step, hours and send to the personnel committee."
+  },
+  {
+   "decision": "Next meeting set for April 2, 2015 at 6:30 p.m. at the Lunenburg Library.",
+   "quote": "next personnel committee meeting will be april 2, 2015 at 6:30 p.m. at the lunenburg library"
+  },
+  {
+   "decision": "April 2 agenda set: Personnel Action Forms discussion and continued discussion of salary and benefits.",
+   "quote": "a. personnel action forms discussion"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Salary administration plan, pay scale and benefits for non-union and union employees",
+   "what_was_recorded": "Committee discussed reviewing the pay scale, job descriptions and benefits for both groups, with pay scales not reviewed in 4 years; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "review pay scale & job descriptions (have not been reviewed in 4 years)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order; review of December 4, 2014 minutes",
+   "resolution": "minutes reviewed, corrections noted",
+   "quote": "reviewed minutes of december 4, 2014 meeting and needed to make some minor corrections.",
+   "tags": [
+    "minutes",
+    "corrections"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "3. no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "2015 committee meeting schedule",
+   "resolution": "schedule set",
+   "quote": "develop personnel committee schedule for the year.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen proposed charge for Personnel Committee (recruitment and appointment process)",
+   "resolution": "discussed; framework to be set",
+   "quote": "review the board of selectmen proposed charge for personnel committee",
+   "tags": [
+    "charge",
+    "recruitment",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Salary administrative plan and by-law review",
+   "resolution": "discussed; spreadsheets begun, continued to April 2",
+   "quote": "review salary administrative plan & by law",
+   "tags": [
+    "salary",
+    "benefits",
+    "union",
+    "compensation"
+   ]
+  },
+  {
+   "topic": "Employee data spreadsheet",
+   "resolution": "assigned to Nancy Forest",
+   "quote": "nancy will create a spreadsheet with employee name, grade, step, hours and send to the personnel committee.",
+   "tags": [
+    "spreadsheet",
+    "employee data"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved with corrections",
+   "quote": "the committee approved the minutes of the last personnel committee meeting with some corrections.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for April 2, 2015",
+   "quote": "next personnel committee meeting will be april 2, 2015 at 6:30 p.m. at the lunenburg library",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "April 2 agenda items",
+   "resolution": "set",
+   "quote": "a. personnel action forms discussion",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:11 pm, 4-0",
+   "quote": "lin moved to adjourn the meeting; nancy seconded the motion, and the committee voted 4- 0 to adjourn at 8:11 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Board of Selectmen proposed charge for Personnel Committee",
+   "where": "text",
+   "quote": "review the board of selectmen proposed charge for personnel committee"
+  },
+  {
+   "name": "List of committees used in benchmarking (held by Kerri)",
+   "where": "text",
+   "quote": "kerri has a list of committees that were used in benchmarking."
+  },
+  {
+   "name": "Personnel Action Forms",
+   "where": "text",
+   "quote": "a. personnel action forms discussion"
+  },
+  {
+   "name": "Employee spreadsheet (name, grade, step, hours)",
+   "where": "text",
+   "quote": "nancy will create a spreadsheet with employee name, grade, step, hours and send to the personnel committee."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "salary administration",
+  "benefits",
+  "compensation",
+  "union and non-union employees",
+  "board charge",
+  "recruitment and appointments",
+  "meeting schedule",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

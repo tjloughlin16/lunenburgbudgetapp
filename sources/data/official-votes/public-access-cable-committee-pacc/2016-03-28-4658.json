@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-03-28",
  "docid": "4658",
@@ -12,39 +12,225 @@
  },
  "votes": [
   {
-   "motion": "approve meeting minutes from 1.4.16, 2.22.16, and 3.7.16",
+   "motion": "Approve the meeting minutes from 1.4.16, 2.22.16, and 3.7.16.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "committee reviewed and approved all meeting minutes."
+   "quote": "committee reviewed and approved all meeting minutes.",
+   "seconded_by": ""
   },
   {
-   "motion": "add Emily to the vendor list when she graduates",
+   "motion": "Add Emily to the vendor list when she graduates.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion to add emily to the vendor list when she graduates was approved."
+   "quote": "a motion to add emily to the vendor list when she graduates was approved.",
+   "seconded_by": ""
   },
   {
-   "motion": "move forward with the purchase of a 2-channel cactus server channel",
+   "motion": "Move forward with the purchase of a 2-channel cactus server channel.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the committee approved to move forward with the purchase of a 2-channel cactus server channel."
+   "quote": "the committee approved to move forward with the purchase of a 2-channel cactus server channel.",
+   "seconded_by": ""
   },
   {
-   "motion": "repair the latronix and return it for future use",
-   "moved_by": "Faith",
-   "seconded_by": "",
-   "outcome": "approved",
+   "motion": "Repair the latronixs and return them to the PAC for future use.",
+   "moved_by": "Faith Beall",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "faith made a motion to repair the latronixs and return to us for future use (?) and the committee approved."
+   "quote": "faith made a motion to repair the latronixs and return to us for future use (?) and the committee approved.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. Minutes are legible. No adjournment vote explicitly stated (meeting adjourned but no motion recorded).",
- "cost_usd": 0.08644750000000001
+ "note": "Typed minutes signed by the clerk dated 5/24/2016. No vote tallies are printed; mover and seconder are not printed for the minutes approval, vendor motion, or Letronix purchase approval. No motion is recorded for adjournment, so it is not listed as a vote. Public comment was \"No public comments,\" so no speakers are listed. Equipment names are spelled as printed (cactus/castus, latronixs). Attendance is taken from the roll call only.",
+ "cost_usd": 0.00435212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Joe Atmonavhet",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were joe atmonavhet, and jo mclaughlin (late arrival)."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member (late arrival)",
+   "status": "present",
+   "quote": "non-members present were joe atmonavhet, and jo mclaughlin (late arrival)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee to review and continue finalizing the strategic plan so Steve can present it to the CAC, which will use the final plan to negotiate with Comcast.",
+   "quote": "steve presented the committee with the most updated strategic plan to the pacc to review and continue to finalize so he can present it to the cac."
+  },
+  {
+   "decision": "Steve asked the committee to look over the spreadsheet and work with the numbers to see whether improvements can be made.",
+   "quote": "steve would like the committee to look over the spreadsheet and work with the numbers to see if improvements can be made."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Coordinator's monthly spending",
+   "what_was_recorded": "The coordinator reported the total spent in March.",
+   "figures_as_printed": [
+    "Six thousand dollars"
+   ],
+   "quote": "six thousand dollars was spent in march."
+  },
+  {
+   "topic": "Coordinator salary",
+   "what_was_recorded": "John Kearns is nearing his annual salary figure of 15,000, at around 9000.",
+   "figures_as_printed": [
+    "15,000",
+    "9000"
+   ],
+   "quote": "john kearns is closing in on his 15,000 annual salary: around 9000."
+  },
+  {
+   "topic": "Vendor rate for taping meetings",
+   "what_was_recorded": "The going rate for a vendor to help cover taping of meetings is stated.",
+   "figures_as_printed": [
+    "$10.00"
+   ],
+   "quote": "the going rate for a vendor is $10.00."
+  },
+  {
+   "topic": "Letronix system repair",
+   "what_was_recorded": "Holding the system for repair; the repair cost is estimated at around nine hundred dollars.",
+   "figures_as_printed": [
+    "nine hundred dollars"
+   ],
+   "quote": "holding the system for repair. the cost would be around nine hundred dollars."
+  },
+  {
+   "topic": "Castus system purchase and rental",
+   "what_was_recorded": "If the committee approves purchase of a new castus system, the PAC would not be charged for rental service; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "if the committee approves the purchase of a new castus system, the pac would not be charged for rental service."
+  },
+  {
+   "topic": "Telvue system cost",
+   "what_was_recorded": "The Telvue system is priced in a range, with a separate figure for technical support.",
+   "figures_as_printed": [
+    "$33,000",
+    "$2,400"
+   ],
+   "quote": "telvue system is in the $33,000 range and $2,400 for technical support."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call / public comments",
+   "resolution": "no public comments received",
+   "quote": "public comments: 1. no public comments",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "approved",
+   "quote": "committee reviewed and approved all meeting minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "reported; vendor motion approved",
+   "quote": "six thousand dollars was spent in march.",
+   "tags": [
+    "coordinator",
+    "vendors",
+    "spending"
+   ]
+  },
+  {
+   "topic": "Update of business, strategic plan and CAC",
+   "resolution": "continued; committee to review plan and spreadsheet",
+   "quote": "steve presented the committee with the most updated strategic plan to the pacc to review and continue to finalize so he can present it to the cac.",
+   "tags": [
+    "strategic plan",
+    "CAC",
+    "Comcast"
+   ]
+  },
+  {
+   "topic": "Letronix equipment update",
+   "resolution": "approved purchase of 2-channel server channel; approved repair of Letronix",
+   "quote": "holding the system for repair. the cost would be around nine hundred dollars.",
+   "tags": [
+    "equipment",
+    "Letronix",
+    "Telvue",
+    "Castus"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:35pm; next meeting May 2",
+   "quote": "meeting adjourned at 7:35pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Strategic plan (most updated version)",
+   "where": "text",
+   "quote": "steve presented the committee with the most updated strategic plan to the pacc to review and continue to finalize so he can present it to the cac."
+  },
+  {
+   "name": "Spreadsheet",
+   "where": "text",
+   "quote": "steve would like the committee to look over the spreadsheet and work with the numbers to see if improvements can be made."
+  },
+  {
+   "name": "Program analysis and calendar",
+   "where": "text",
+   "quote": "program analysis and calendar were presented."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "equipment purchase",
+  "Letronix",
+  "Comcast negotiations",
+  "strategic plan",
+  "vendors",
+  "coordinator report",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

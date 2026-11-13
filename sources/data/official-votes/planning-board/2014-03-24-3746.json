@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-03-24",
  "docid": "3746",
@@ -12,23 +12,218 @@
  },
  "votes": [
   {
-   "motion": "continue the public hearing to April 14, 2014 at 6:30 PM at Town Hall",
+   "motion": "Continue the public hearing to April 14, 2014, 6:30 PM, at Town Hall.",
    "moved_by": "M. Allison",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "m. allison, motion to continue hearing to april 14, 2014, 6:30 pm, town hall, second, d. mcquaid. all aye."
   },
   {
-   "motion": "return to Regular Session",
+   "motion": "Return to Regular Session.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "M. Allison",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "e. bakaysa, motion to return to regular session, second, m. allison, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0958445
+ "note": "Text is a readable extraction with some spacing artifacts inside words (e.g., 'wil l', 'dist ricts'); quotes were chosen to avoid those. No vote on the bylaw text itself is recorded; only the continuance and return to regular session were voted. No dollar figures appear. Some board items are discussion-direction rather than recorded votes and were logged as decisions.",
+ "cost_usd": 0.00618592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: joanna l. bilotta -simeone, chair, nathan j. lockwood , vice chair, damon mcquaid, emerick r. bakaysa,"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood , vice chair, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "damon mcquaid, clk."
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, matthew allison"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson, planning director"
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "also present: chantell fleck, mrpc"
+  },
+  {
+   "name": "Celeste McCain-Stober",
+   "role": "",
+   "status": "present",
+   "quote": "celeste mccain-stober, 275 pleasant street- opined that the special permit should be able to accept/reject siting"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue - opined that the residential district"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane - asked for"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 200-foot setback in 4.16.7 will be edited so the Board may waive it if it renders an otherwise viable parcel unusable.",
+   "quote": "section will be edited to note that if the 200 foot setback renders an otherwise viable parcel unusable, the board may waiver the 200 foot setback."
+  },
+  {
+   "decision": "Section 4.16.4.2 will be revised to include processing.",
+   "quote": "4.16.4.2. will be revised to include processing."
+  },
+  {
+   "decision": "Cultivation will be changed to Commercial and Office Park/Industrial by special permit.",
+   "quote": "change to commercial and office park/industrial by special permit."
+  },
+  {
+   "decision": "Sections 4.16.9.1 and 4.16.9.2 will be combined.",
+   "quote": "combine 4.16.9.1. and 4.16.9.2."
+  },
+  {
+   "decision": "C. Fleck was directed to research an annual reporting requirement for each facility.",
+   "quote": "c. fleck to research."
+  },
+  {
+   "decision": "N. Lockwood requested Town Counsel guidance on limiting the special permit to the current owner and transfer on new ownership.",
+   "quote": "n. lockwood requesting town counsel guidance."
+  },
+  {
+   "decision": "Clarification of the Section 4.16.11 waiver scope (applies to 4.16.8 and 4.16.7) will be added to the bylaw.",
+   "quote": "clarification will be added."
+  },
+  {
+   "decision": "Section 4.16.4.1 to be revised so retail, processing and cultivation are allowed in Commercial Districts by special permit.",
+   "quote": "4.16.4.1. will be revised to"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Celeste McCain-Stober",
+   "stated_role": "",
+   "topic": "special permit siting in residential neighborhoods",
+   "quote": "celeste mccain-stober, 275 pleasant street- opined that the special permit should be able to accept/reject siting"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "topic": "residential setbacks, processing facilities, Section 4.16.11 waivers",
+   "quote": "tom alonzo, 284 lancaster avenue - opined that the residential district"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "topic": "allowable districts for cultivation",
+   "quote": "carl luck, 50 sunset lane - asked for"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing on zoning amendment adding Section 4.16 Registered Marijuana Dispensary",
+   "resolution": "hearing opened; continued to April 14, 2014",
+   "quote": "chair opened the public hearing at 6:35 pm with the reading of the legal notice published in the sentinel & enterprise on march",
+   "tags": [
+    "zoning",
+    "marijuana",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Board discussion of draft Section 4.16 edits",
+   "resolution": "edits noted; Town Counsel guidance requested on owner transfer",
+   "quote": "m. allison - requested clarification on 4.16.7., para 2, as to",
+   "tags": [
+    "zoning bylaw",
+    "setbacks",
+    "siting"
+   ]
+  },
+  {
+   "topic": "Public comment on Section 4.16",
+   "resolution": "comments taken; no vote",
+   "quote": "j. bilotta-simeone opened for public comment.",
+   "tags": [
+    "public comment",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Continuance of hearing",
+   "resolution": "continued to April 14, 2014, 6:30 PM",
+   "quote": "m. allison, motion to continue hearing to april 14, 2014, 6:30 pm, town hall, second, d. mcquaid. all aye.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint presentation handout (on file in the Planning Office)",
+   "where": "list",
+   "quote": "j. bilotta-simeone went through the powerpoint presentation handout (on file in the planning office)."
+  },
+  {
+   "name": "Draft Zoning Bylaw Section 4.16. Registered Marijuana Dispensary",
+   "where": "text",
+   "quote": "the public hearing was to amend the zoning bylaw by adding to the current section 4.0. use"
+  },
+  {
+   "name": "105 CMR 725.000 (Department of Public Health regulations)",
+   "where": "text",
+   "quote": "the board's bylaw (below) supplements the state's department of public health 105 cmr 725.000."
+  },
+  {
+   "name": "Ballot Question 3, Law Proposed by Initiative Petition (November 6, 2012 State Election)",
+   "where": "text",
+   "quote": "at the november 6, 2012 state election, for ballot question 3, law proposed by initiative petition"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "marijuana",
+  "registered marijuana dispensary",
+  "public hearing",
+  "town meeting article",
+  "bylaw",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "j. bilotta-simeone went through the powerpoint presentation handout"
+ },
+ "dropped_unquoted_by_field": {}
 }

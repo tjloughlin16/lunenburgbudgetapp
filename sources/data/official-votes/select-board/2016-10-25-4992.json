@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-10-25",
  "docid": "4992",
@@ -12,49 +12,473 @@
  },
  "votes": [
   {
-   "motion": "Appoint Dave MacDonald to the Personnel Committee with a term to expire June 30, 2019",
+   "motion": "Appoint Dave MacDonald to the Personnel Committee with a term to expire June 30, 2019.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'': t. alonzo to appoint dave macdonald to the personnel committee with a term to expire june 30, 2019 vote: all in favor"
+   "quote": "to appoint dave macdonald to the personnel committee with a term to expire june 30, 2019 vote: all in favor"
   },
   {
-   "motion": "Close the Special Town Meeting Warrant",
+   "motion": "Authorize Chairman Toale to sign the MART agreement and keep the service as is.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to authorize chairman toale to sign the mart agreement and keep the service as is"
+  },
+  {
+   "motion": "Close the Special Town Meeting Warrant.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: t. alonzo to close the special town meeting warrant 2\"%.p. bertram vote: all in favor",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to close the special town meeting warrant"
   },
   {
-   "motion": "Approve the solar net metering agreement between the Town of Lunenburg and Clean Footprint LUC",
+   "motion": "Approve the solar net metering agreement between the Town of Lunenburg and Clean Footprint LLC.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2^°. p. bertram to approve the solar net metering agreement between the town of lunenburg and clean footprint luc mr. alonzo asked if town counsel had reviewed the agreement. mr. londa confirmed. vote: all in favor"
+   "quote": "to approve the solar net metering agreement between the town of lunenburg and clean footprint luc"
   },
   {
-   "motion": "Authorize the Interim Town Manager to execute the contract pending approval from Town Counsel",
+   "motion": "Amended motion: authorize the Interim Town Manager to execute the Solect Energy contract pending approval from Town Counsel (amended from a motion to sign the contract as outlined by Mr. Londa).",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "ms. bertram amended her motion to authorize the interim town manger to execute the contract pending approval from town counsel; mr. ebersole accepted that change and seconded vote: ms. bertram- aye, mr. toale- aye, mr. ebersole-aye, ms. luck - aye, mr. alonzo- no"
+   "quote": "vote: ms. bertram- aye, mr. toale- aye, mr. ebersole-aye, ms. luck - aye, mr. alonzo- no"
   },
   {
    "motion": "Adjourn the meeting at 9:14 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:14 p.m. 2\"°: t. alonzo vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 9:14 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR'd document (macOS Vision). Minor OCR variations in formatting characters (e.g., \"2''\" vs \"2°\" for \"2nd\") and one apparent typo: \"Town Manger\" for \"Town Manager\" on the Solect Energy motion. All votes are clearly readable.",
- "cost_usd": 0.1461175
+ "dropped_unquoted": 0,
+ "note": "OCR text of printed minutes; some words and characters are garbled (e.g. 'Pinance', 'Manger', 'Article /', seconders printed as '2'' or '2\"%.'), so seconders are taken as the printed names. The minutes print 'June 31, 2017' for a June date; recorded as printed in the quoted text only where needed. The Solect vote is recorded on Ms. Bertram's amended motion. Remarks by board members under the two 'Public Comment' headings are treated as board discussion, not public comment; John Baker is the only non-member speaker. The minutes record that the Minutes of October 11, 2016 were approved, but with no motion or vote count printed, so that is a decision rather than a vote.",
+ "cost_usd": 0.01251402,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member and"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "David Marciello",
+   "role": "Interim Town Manager",
+   "status": "absent",
+   "quote": "not present: interim town manager david marciello"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "mr. toale asked dave macdonald, 155 island road, to come forward regarding his request to be appointed to"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "coa director sue doherty presented to answer questions regarding the mart van service in lunenburg."
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "COA Chair",
+   "status": "present",
+   "quote": "coa chair pete lincoln stated he has been involved with the council on aging for ten years."
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "finance committee chair burchfield stated their public hearing for the special town meeting will be on"
+  },
+  {
+   "name": "John Londa",
+   "role": "Lunenburg School Facilities Director",
+   "status": "present",
+   "quote": "lunenburg school facilities director john londa presented terms for the solar net metering agreement with"
+  },
+  {
+   "name": "John Baker",
+   "role": "public commenter, 53 Chase Road",
+   "status": "present",
+   "quote": "john baker, 53 chase road, who has experience in the court system spoke against voting in favor of question 4"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of October 11, 2016 approved; no warrants or action file issues. No motion or vote count is printed.",
+   "quote": "minutes of october 11, 2016 were approved."
+  },
+  {
+   "decision": "Where the Article 1 surplus funds go was deferred to a later discussion.",
+   "quote": "mr. toale asked where we want that surplus to go. this will be discussed at a later time."
+  },
+  {
+   "decision": "Board will interview all three Town Manager candidates on November 8.",
+   "quote": "the board will interview all three candidates on november 8"
+  },
+  {
+   "decision": "Candidates will make a presentation on economic development on the 15th.",
+   "quote": "the candidates will make a presentation on economic development on the"
+  },
+  {
+   "decision": "Each member chose four interview questions; Mr. Toale will send a list showing who is asking each question.",
+   "quote": "mr. toale will send a list showing who is asking each question."
+  },
+  {
+   "decision": "Town Manager Report deferred to the next meeting because some members did not receive it.",
+   "quote": "some board members did not receive it so it will be deferred until the next meeting"
+  },
+  {
+   "decision": "Ms. Bertram will follow up on the status of 225 Pleasant Street.",
+   "quote": "ms. bertram stated the meeting went so late that she did not get to see the entire agenda but will follow up on that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 1 new growth (FY17 budget amendment)",
+   "what_was_recorded": "New growth submitted to the Department of Revenue exceeds the original estimate by $187,955 and could be applied toward Summer Street costs.",
+   "figures_as_printed": [
+    "$487,955",
+    "$187,955",
+    "$300,000"
+   ],
+   "quote": "new growth has been submitted to the department of revenue in the amount of $487,955"
+  },
+  {
+   "topic": "Summer Street encumbrance",
+   "what_was_recorded": "A memo says the former Town Manager encumbered funds at the end of last fiscal year for anticipated Summer Street costs.",
+   "figures_as_printed": [
+    "$196,000"
+   ],
+   "quote": "encumbered $196,000 at the end of last fiscal year in anticipation of the additional costs for summer street."
+  },
+  {
+   "topic": "Article 2 appraisal for 200 Reservoir Road",
+   "what_was_recorded": "A fair market appraisal for the property would cost the Town between $10,000 and $12,000.",
+   "figures_as_printed": [
+    "$10,000 - $12,000"
+   ],
+   "quote": "a fair market appraisal costing $10,000 - $12,000 would be needed to be done for the town."
+  },
+  {
+   "topic": "Article 3 Police Union contract",
+   "what_was_recorded": "Article 3 funds the first year of the Police Union contract with no additional cost for the first year.",
+   "figures_as_printed": [],
+   "quote": "article 3 funds the first year of the police union contract, there is no additional cost for the first year."
+  },
+  {
+   "topic": "Article 6 cemetery care appropriation",
+   "what_was_recorded": "Article 6 appropriates money from the sale of cemetery lots account for cemetery care; it was mistakenly deleted from the August warrant.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "article 6 appropriates $35,000 from the sale of cemetery lots account"
+  },
+  {
+   "topic": "Articles 7 and 8 salary plan",
+   "what_was_recorded": "Salary administration plan changes have no financial impact.",
+   "figures_as_printed": [],
+   "quote": "there is no financial impact of these changes."
+  },
+  {
+   "topic": "Article 9 Public Access Cable budget",
+   "what_was_recorded": "Article 9 increases the Public Access Cable budget by a stated amount.",
+   "figures_as_printed": [
+    "$110,142.36"
+   ],
+   "quote": "article 9 amends the public access cable budget by increasing it by $110,142.36."
+  },
+  {
+   "topic": "Solar net metering credit price (Clean Footprint)",
+   "what_was_recorded": "Sale price per net metering credit with a 2% annual escalator over a twenty year contract.",
+   "figures_as_printed": [
+    "$.1375",
+    "2%"
+   ],
+   "quote": "the sale price is $.1375 per net metering credit and has a 2% annual escalator."
+  },
+  {
+   "topic": "Solar estimated savings (Clean Footprint)",
+   "what_was_recorded": "Expected savings per kilowatt hour and estimated first-year savings to the Town.",
+   "figures_as_printed": [
+    "$.65",
+    "$49,754"
+   ],
+   "quote": "it is expected to save the town $.65 per kilowatt hour and there is an estimated savings of $49,754 the first year."
+  },
+  {
+   "topic": "Solect Energy contract rate risk",
+   "what_was_recorded": "Risk that the rate increases if construction is not substantially complete before January 8, 2017.",
+   "figures_as_printed": [
+    "two additional cents"
+   ],
+   "quote": "such as the rate increasing two additional cents."
+  },
+  {
+   "topic": "MART extra driver training",
+   "what_was_recorded": "Extra driver training for the MART van, compared with the current budget through June 2017.",
+   "figures_as_printed": [
+    "$350"
+   ],
+   "quote": "the extra driver training ($350 for two drivers)"
+  },
+  {
+   "topic": "History/social studies curriculum project (School Committee)",
+   "what_was_recorded": "A K-12 curriculum realignment project took two years and cost a stated amount over two fiscal years.",
+   "figures_as_printed": [
+    "$19,360"
+   ],
+   "quote": "cost $19,360 over two fiscal years"
+  },
+  {
+   "topic": "Charter school cost per student",
+   "what_was_recorded": "Approximate cost per student for the 38 students attending charter schools.",
+   "figures_as_printed": [
+    "$11,650"
+   ],
+   "quote": "the cost per student is approximately $11,650."
+  },
+  {
+   "topic": "School choice cost per student",
+   "what_was_recorded": "Cost per student for about 50 students opting for school choice outside Lunenburg.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "the cost per student is $5,000."
+  },
+  {
+   "topic": "MPO FY17 and FY18 funding (Summer Street TIP)",
+   "what_was_recorded": "Montachusett Planning Organization has $2.6 million available for FY17; options adjust Summer Street TIP amounts for FY17 and FY18.",
+   "figures_as_printed": [
+    "$2.6 million",
+    "$1.1 million",
+    "$8.8 million",
+    "$3.7 million",
+    "$6.1 million"
+   ],
+   "quote": "there is $2.6 million available for fy17 and there are a couple of different ways to address that."
+  },
+  {
+   "topic": "Route 202 resurfacing proposal, Winchendon",
+   "what_was_recorded": "MRPC presented a new resurfacing proposal not on the TIP.",
+   "figures_as_printed": [
+    "$2.3 million"
+   ],
+   "quote": "mrpc transportation director brad harris presented a $2.3 million proposal for resurfacing work"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Baker",
+   "stated_role": "53 Chase Road, who has experience in the court system",
+   "topic": "Opposing Question 4 on the election ballot",
+   "quote": "john baker, 53 chase road, who has experience in the court system spoke against voting in favor of question 4"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment",
+   "resolution": "no action; John Baker spoke against Question 4",
+   "tags": [
+    "public comment",
+    "ballot question"
+   ],
+   "quote": "john baker, 53 chase road, who has experience in the court system spoke against voting in favor of question 4"
+  },
+  {
+   "topic": "Appointment: Dave MacDonald to Personnel Committee",
+   "resolution": "appointed, term to June 30, 2019",
+   "tags": [
+    "appointment",
+    "Personnel Committee"
+   ],
+   "quote": "to appoint dave macdonald to the personnel committee with a term to expire june 30, 2019 vote: all in favor"
+  },
+  {
+   "topic": "MART van proposal / MOU (continued)",
+   "resolution": "approved; Chairman authorized to sign MART agreement and keep service as is",
+   "tags": [
+    "MART",
+    "transportation",
+    "Council on Aging",
+    "contract"
+   ],
+   "quote": "to authorize chairman toale to sign the mart agreement and keep the service as is"
+  },
+  {
+   "topic": "Close the Special Town Meeting Warrant",
+   "resolution": "closed",
+   "tags": [
+    "Special Town Meeting",
+    "warrant"
+   ],
+   "quote": "to close the special town meeting warrant"
+  },
+  {
+   "topic": "Special Town Meeting warrant articles review",
+   "resolution": "reviewed; Article 1 surplus discussion deferred; Article 5 wording questioned",
+   "tags": [
+    "Special Town Meeting",
+    "warrant articles",
+    "budget"
+   ],
+   "quote": "mr. toale directed the board to the draft warrant."
+  },
+  {
+   "topic": "Solar agreements",
+   "resolution": "Clean Footprint agreement approved; Solect contract authorized pending Town Counsel approval (4-1)",
+   "tags": [
+    "solar energy",
+    "contract",
+    "electricity"
+   ],
+   "quote": "vote: ms. bertram- aye, mr. toale- aye, mr. ebersole-aye, ms. luck - aye, mr. alonzo- no"
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes of October 11 approved; no warrants or action file issues",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of october 11, 2016 were approved."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received, no action",
+   "tags": [
+    "committee reports",
+    "School Committee",
+    "stormwater",
+    "MPO",
+    "Planning Board",
+    "Conservation Commission"
+   ],
+   "quote": "mr. toale reported building reuse committee is working towards the warrant article for special town meeting"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "deferred to next meeting",
+   "tags": [
+    "Town Manager"
+   ],
+   "quote": "some board members did not receive it so it will be deferred until the next meeting"
+  },
+  {
+   "topic": "Town Manager interview schedule",
+   "resolution": "schedule set; interviews November 8, presentation on the 15th",
+   "tags": [
+    "Town Manager search",
+    "interviews"
+   ],
+   "quote": "the board will interview all three candidates on november 8"
+  },
+  {
+   "topic": "Closing public comment (Board remarks)",
+   "resolution": "no action; follow-up on 225 Pleasant Street",
+   "tags": [
+    "traffic",
+    "speeding",
+    "225 Pleasant Street"
+   ],
+   "quote": "mr. ebersole reported there were several people who told him about people speeding and ways to slow traffic"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:14 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn the meeting at 9:14 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Special Town Meeting warrant",
+   "where": "text",
+   "quote": "mr. toale directed the board to the draft warrant."
+  },
+  {
+   "name": "Memo on former Town Manager Lafleur's encumbrance for Summer Street",
+   "where": "text",
+   "quote": "a memo noted that former town manager lafleur had encumbered $196,000 at the end of last fiscal year"
+  },
+  {
+   "name": "Town Manager report (emailed by Mr. Marciello)",
+   "where": "text",
+   "quote": "mr. toale stated mr. marciello emailed his report to the board members."
+  },
+  {
+   "name": "Solar net metering agreement with Clean Footprint, LLC",
+   "where": "text",
+   "quote": "presented terms for the solar net metering agreement with clean footprint, llc."
+  },
+  {
+   "name": "Solect Energy LLC contract",
+   "where": "text",
+   "quote": "reached a consensus on the terms for the solect energy llc contract"
+  },
+  {
+   "name": "MART agreement",
+   "where": "text",
+   "quote": "to authorize chairman toale to sign the mart agreement and keep the service as is"
+  },
+  {
+   "name": "VHB consultant Domigan's October 18 presentation (Summer Street)",
+   "where": "text",
+   "quote": "based on vhb consultant domigan's october 18 presentation."
+  }
+ ],
+ "tags": [
+  "Special Town Meeting",
+  "warrant articles",
+  "solar energy",
+  "MART van transportation",
+  "Council on Aging",
+  "Personnel Committee appointment",
+  "Town Manager search",
+  "committee reports",
+  "budget",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

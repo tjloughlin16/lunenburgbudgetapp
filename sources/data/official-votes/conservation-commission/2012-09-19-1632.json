@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-09-19",
  "docid": "1632",
@@ -12,31 +12,267 @@
  },
  "votes": [
   {
-   "motion": "Approve the Notice of Intent for two family house lot development and close the public hearing",
+   "motion": "Issue a negative determination (Negative 3) on the Request for Determination of Applicability for 97 Island Road, Timothy W./Jacquelin e C. Murphy.",
+   "moved_by": "JJ",
+   "seconded_by": "Sharon",
+   "outcome": "Negative 3 Unanimous",
+   "procedural": false,
+   "quote": "tank is more than 100 feet from high water mark. jj/sharon negative 3 unanimous"
+  },
+  {
+   "motion": "Approve and close the Notice of Intent for 71 Main Street (S.J. Peacock Builders, Inc.).",
    "moved_by": "Rob",
    "seconded_by": "Sharon",
-   "outcome": "passed",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "a motion was made to approve and close. rob/sharon unanimous"
   },
   {
-   "motion": "Approve the Notice of Intent for single family home construction and close the public hearing",
+   "motion": "Approve and close the Notice of Intent for 4 Sequoia Drive, Lot 8 (Dennis LeBlanc).",
    "moved_by": "JJ",
    "seconded_by": "John",
-   "outcome": "passed",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "a motion was made to approve and close. jj/ john unanimous"
   },
   {
-   "motion": "Issue a Negative 3 determination for the septic system installation",
+   "motion": "Issue a Negative 3 determination on the Request for Determination of Applicability for 457 Massachusetts Avenue (Jamie Rheault).",
    "moved_by": "Sharon",
    "seconded_by": "Mark",
-   "outcome": "passed",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "a motion was made for a negative 3. sharon/mark unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three formal motions recorded. The first application (97 Island Road) shows \"Negative 3 Unanimous\" but does not explicitly state \"A motion was made,\" so it is not included as a formal recorded motion.",
- "cost_usd": 0.1278015
+ "note": "Text is a single page (PAGE 1 only) and ends after the 457 Massachusetts Avenue hearing: no adjournment, no approval of prior minutes, and no closing record. Attendance is a roster line with no present/absent marks, so members are recorded as 'not stated'. The 97 Island Road and 457 Massachusetts Avenue entries record a result ('Negative 3 Unanimous') with mover/seconder initials but no explicit 'motion was made' wording; they are recorded as votes because the minutes print the mover/seconder and result. No dollar figures appear.",
+ "cost_usd": 0.00553492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy,"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy,"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy,"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy,"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy,"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy,"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "not stated",
+   "quote": "richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "role": "",
+   "status": "not stated",
+   "quote": "richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "not stated",
+   "quote": "richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "not stated",
+   "quote": "richard bursch, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "presented; represented the applicant (457 Massachusetts Avenue)",
+   "status": "present",
+   "quote": "anthony cleaves presented."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "represented the applicant",
+   "status": "present",
+   "quote": "chris mackenzie represented the applicant and outlined the area of work"
+  },
+  {
+   "name": "Mr. Peacock",
+   "role": "applicant (S.J. Peacock Builders, Inc.)",
+   "status": "present",
+   "quote": "mr. peacock indicated a willingness to work with anna regarding the stone wall and water flow."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "of 91 Main Street; abutter",
+   "status": "present",
+   "quote": "anna lockwood of 91 main street noted that entire lot was not represented on the plan"
+  },
+  {
+   "name": "Janet Cragin",
+   "role": "of 3 Oak Avenue",
+   "status": "present",
+   "quote": "janet cragin of 3 oak avenue inquired about the water table."
+  },
+  {
+   "name": "Jean Larkin",
+   "role": "",
+   "status": "present",
+   "quote": "jean larkin inquired about weeds in the pond"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "of Whitman & Bingham Associates; applicant",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by jamie rheault"
+  },
+  {
+   "name": "Dennis LeBlanc",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "notice of intent filed by dennis leblanc."
+  },
+  {
+   "name": "Timothy W./Jacquelin e C. Murphy",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by timothy w./jacquelin e c. murphy"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anna Lockwood",
+   "stated_role": "of 91 Main Street",
+   "topic": "71 Main Street: lot not fully shown on plan, slope, distance from pond, old stone wall",
+   "quote": "anna lockwood of 91 main street noted that entire lot was not represented on the plan"
+  },
+  {
+   "speaker": "Janet Cragin",
+   "stated_role": "of 3 Oak Avenue",
+   "topic": "71 Main Street: water table",
+   "quote": "janet cragin of 3 oak avenue inquired about the water table."
+  },
+  {
+   "speaker": "Jean Larkin",
+   "stated_role": "",
+   "topic": "71 Main Street: weeds in the pond",
+   "quote": "jean larkin inquired about weeds in the pond"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "97 Island Road, Request for Determination of Applicability (Murphy)",
+   "resolution": "negative determination, Negative 3 Unanimous",
+   "quote": "tank is more than 100 feet from high water mark. jj/sharon negative 3 unanimous",
+   "tags": [
+    "wetlands",
+    "septic",
+    "tree removal",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "71 Main Street, Notice of Intent (S.J. Peacock Builders, Inc.)",
+   "resolution": "approved and closed, unanimous",
+   "quote": "a motion was made to approve and close. rob/sharon unanimous",
+   "tags": [
+    "wetlands",
+    "buffer zone",
+    "two-family house",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "4 Sequoia Drive, Lot 8, Notice of Intent (Dennis LeBlanc)",
+   "resolution": "approved and closed, unanimous",
+   "quote": "a motion was made to approve and close. jj/ john unanimous",
+   "tags": [
+    "wetlands",
+    "single family home",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "457 Massachusetts Avenue, Request for Determination of Applicability (Jamie Rheault)",
+   "resolution": "negative determination, Negative 3 Unanimous",
+   "quote": "a motion was made for a negative 3. sharon/mark unanimous",
+   "tags": [
+    "wetlands",
+    "septic system",
+    "coffee shop conversion",
+    "RDA"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Timothy W./Jacquelin e C. Murphy (97 Island Road)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by timothy w./jacquelin e c. murphy"
+  },
+  {
+   "name": "Notice of Intent filed by S.J. Peacock Builders, Inc. (71 Main Street)",
+   "where": "text",
+   "quote": "notice of intent filed by s.j. peacock bu ilders, inc."
+  },
+  {
+   "name": "Notice of Intent filed by Dennis LeBlanc (4 Sequoia Drive, Lot 8)",
+   "where": "text",
+   "quote": "notice of intent filed by dennis leblanc."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Jamie Rheault of Whitman & Bingham Associates (457 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by jamie rheault"
+  },
+  {
+   "name": "plan (lot plan for 71 Main Street, as referenced by Anna Lockwood)",
+   "where": "text",
+   "quote": "entire lot was not represented on the plan"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "public hearing",
+  "notice of intent",
+  "request for determination",
+  "buffer zone",
+  "septic",
+  "abutters",
+  "Conservation Commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

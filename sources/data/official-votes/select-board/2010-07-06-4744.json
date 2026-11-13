@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-07-06",
  "docid": "4744",
@@ -12,34 +12,403 @@
  },
  "votes": [
   {
-   "motion": "Appoint Tom Alonzo, Lynne Klaft, Lars Widstrand, and Gare Thompson to the Municipal Web Services Task Force",
+   "motion": "Appoint the recommended applicants (Tom Alonzo, Lynne Klaft, Lars Widstrand and Gare Thompson) to the Municipal Web Services Task Force.",
    "moved_by": "Ernie",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "ernie motion to appoint the recommended applicants to the task force, steve seconded, voted unanimously."
   },
   {
-   "motion": "Appoint Doreen Noble as the employee representative to the Personnel Committee",
+   "motion": "Appoint Doreen Noble as the employee representative to the Personnel Committee.",
    "moved_by": "Tom A.",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "tom a., move to appoint doreen noble as the employee representative to the personnel committee, voted unanimously."
   },
   {
-   "motion": "Adjourn Regular Session",
+   "motion": "Adjourn the regular session at 8:42 P.M.",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 8:42 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:42 p.m."
   },
   {
-   "motion": "Enter Executive Session pursuant to MGL Chapter 39, §23B (3) to discuss strategy with respect to collective bargaining or litigation",
-   "outcome": "passed",
+   "motion": "Open executive session under MGL Chapter 39, §23B (3) by roll call vote.",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "opened executive session by roll call vote at this time"
+   "quote": "opened executive session by roll call vote at this time."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extracted via macOS Vision, nine pages. The minutes record four votes: two committee appointments, adjournment, and entry to executive session. No minutes-approval vote is explicitly stated (minutes were \"reviewed and signed\" but no motion language recorded).",
- "cost_usd": 0.12383349999999999
+ "dropped_unquoted": 1,
+ "note": "OCR scan (macOS Vision) with misspellings in the source (e.g., 'Mariboro', 'towm', 'feasibilty', 'July 20h'); quotes copy the OCR text as printed. Votes: only two motions carry a printed result ('voted unanimously'); the executive-session opening is a roll call with no count. The minutes record no approval vote for prior minutes. The Gazebo and DPW committee tablings are recorded without a motion. Attachments on pages 5-10 (Web Services Task Force notice, Article XVII bylaw, two memos, Talent Bank form) are unlabeled; the documents list has no printed heading.",
+ "cost_usd": 0.013174820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven m debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "respectully submitted laura williams, chief administrative assistant"
+  },
+  {
+   "name": "John Baker",
+   "status": "present",
+   "quote": "john baker, 53 chase road came before the board regarding his past request for the board to reconsider their decision on health"
+  },
+  {
+   "name": "Brian Murphy",
+   "role": "of Colonial Power Group, Inc.",
+   "status": "present",
+   "quote": "she spoke with brian murphy of colonial power group, inc. and he came before the board to discuss what they have done with other communities in massachusetts."
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director of the COA",
+   "status": "present",
+   "quote": "doreen noble, director of the coa came before the board regarding the employee designee to the personnel committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus not to offer health insurance benefits to elected officials, following the Finance Committee chair's emailed view; no vote recorded.",
+   "quote": "paula believes the consensus stands not to offer health insurance benefits to elected officials."
+  },
+  {
+   "decision": "Board consensus to conduct a feasibility study on municipal electric aggregation; an RFP for a consultant was viewed as premature.",
+   "quote": "was a consensus of the board to conduct the feasibilty study"
+  },
+  {
+   "decision": "Board asked that a letter be sent to Ways and Means supporting the Municipal Utility Bill and asking that it be expedited out of committee; Paula to work with Kerry on the draft.",
+   "quote": "board would like a letter sent to the ways and means expressing our support and that this be expedited out of committee before the end of the month."
+  },
+  {
+   "decision": "Workshop scheduled for August 10 at 6:00 PM with Unitil, Police and Fire Chiefs on emergency planning; Unitil asked to return September 7 for a public overview.",
+   "quote": "scheduled a workshop on august 10° @ 6:00 pm, also attending will be the police and fire chiefs"
+  },
+  {
+   "decision": "Request to use Gazebo for benefit concert (Mike Barney) tabled.",
+   "quote": "request to use gazebo for benefit concert - mike barney - tabled."
+  },
+  {
+   "decision": "DPW Facility Building Committee appointments tabled to the July 20 meeting.",
+   "quote": "discussion tabled to july 20h meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Three warrants were reviewed and signed, with totals printed for each.",
+   "figures_as_printed": [
+    "$208,476.98",
+    "$614,004.79",
+    "$494,757.49"
+   ],
+   "quote": "warrants - #74 10, 6/30/10 - $208,476.98, #1 11, 7/6/10 - $614,004.79 and #1p 11, 7/8/10 - $494,757.49 reviewed and signed"
+  },
+  {
+   "topic": "Ice storm reimbursement shortfall",
+   "what_was_recorded": "The state no longer funds the 12.5% reimbursement for the December 08 Ice Storm, leaving a $150,000.00 shortfall; the manager expects local receipts overage to cover it without using stabilization.",
+   "figures_as_printed": [
+    "$150,000.00",
+    "12½"
+   ],
+   "quote": "leaves us with the need to make up $150,000.00."
+  },
+  {
+   "topic": "Health insurance for elected officials cost",
+   "what_was_recorded": "The chair cited a potential FY'11 deficit of $150,000 as reason the benefit cannot be reinstated now.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "the potential deficit of $150,000 for fy'11 cannot at this time justify reinstating the benefit"
+  },
+  {
+   "topic": "Cuts to elected officials' stipends over time",
+   "what_was_recorded": "A member recounted that the amount for board members was cut from $1500 to $100 a year over the years.",
+   "figures_as_printed": [
+    "$1500",
+    "$100 a year"
+   ],
+   "quote": "started with $1500 and now reduced to $100 a year."
+  },
+  {
+   "topic": "Municipal electric aggregation savings",
+   "what_was_recorded": "Colonial Power said savings could be a few dollars a month for ratepayers and generation is about half of the bill; no town cost noted.",
+   "figures_as_printed": [
+    "a few dollars a month",
+    "about half"
+   ],
+   "quote": "savings vary depending upon the use, could be a few dollars a month back in everyone's pocket"
+  },
+  {
+   "topic": "Consultant fee structure for aggregation",
+   "what_was_recorded": "The consultant's fee would be paid through the rate structure as a percentage, with their costs figured into the rate.",
+   "figures_as_printed": [
+    "a percentage"
+   ],
+   "quote": "the way the fee is structured is through the rate structure and they receive a percentage, their costs are figured into the rate."
+  },
+  {
+   "topic": "Energy bad debt in supply costs",
+   "what_was_recorded": "Discussion that at least 2% of the cost of energy supply comes from bad debt.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "at least 2% of the cost of energy supply comes from bad debt"
+  },
+  {
+   "topic": "State sales tax change (MMA/District Advisory discussion)",
+   "what_was_recorded": "Reported discussion of a proposed sales tax reduction from 6.25 to 3%.",
+   "figures_as_printed": [
+    "6.25 to 3%"
+   ],
+   "quote": "other questions are the sales tax reduction from 6.25 to 3% and the alcohol"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Baker",
+   "stated_role": "53 Chase Road",
+   "topic": "request to reconsider health insurance for a board member",
+   "quote": "john baker, 53 chase road came before the board regarding his past request for the board to reconsider their decision on health"
+  },
+  {
+   "speaker": "John Baker",
+   "stated_role": "53 Chase Road",
+   "topic": "thanks board for health insurance debate",
+   "quote": "john baker of 53 chase road expressed appreciation to the board for debating this issue and noted that it's a good thing that the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Discussion",
+   "resolution": "comment received; no action",
+   "quote": "tom acknowledged pe teacher, sandy laserte and fred hobbs were recognized by the alumni association.",
+   "tags": [
+    "recognition",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational",
+   "quote": "mema advising caution during the extremely hot weather, tips will be placed on the scroll.",
+   "tags": [
+    "MEMA",
+    "Unitil",
+    "outage",
+    "band concert"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "warrants reviewed and signed; no minutes approval recorded",
+   "quote": "minutes - board of selectmen regular session for 6/15/10, 6/22/10, workshop session for 6/22/10 & executive session",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee updates (Unitil, Municipal Utility Bill, Open Meeting Law)",
+   "resolution": "informational; letter to Ways and Means to be drafted",
+   "quote": "paula informed the board that she and kerry met with todd black and john dinapoli from unitil",
+   "tags": [
+    "Unitil",
+    "vegetation management",
+    "Open Meeting Law",
+    "Municipal Utility Bill"
+   ]
+  },
+  {
+   "topic": "Manager updates",
+   "resolution": "informational",
+   "quote": "application has been to the state to declare the housing at the tri-town development as affordable housing.",
+   "tags": [
+    "housing",
+    "cleaning contract",
+    "ice storm",
+    "ABCC",
+    "Emerald Place"
+   ]
+  },
+  {
+   "topic": "Gazebo use request (benefit concert)",
+   "resolution": "tabled",
+   "quote": "request to use gazebo for benefit concert - mike barney - tabled.",
+   "tags": [
+    "gazebo",
+    "event"
+   ]
+  },
+  {
+   "topic": "Health insurance for elected officials",
+   "resolution": "consensus not to offer benefit",
+   "quote": "health insurance for elected officials - chair noted that this issue is something that she has struggled with",
+   "tags": [
+    "health insurance",
+    "elected officials",
+    "budget"
+   ]
+  },
+  {
+   "topic": "DPW Facility Building Committee appointments",
+   "resolution": "tabled to July 20",
+   "quote": "dpw facility building committee - kerry reviewed the attached bylaw",
+   "tags": [
+    "building committee",
+    "appointments",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Municipal Web Services Task Force appointments",
+   "resolution": "appointed four applicants",
+   "quote": "municipal web services task force - kerry circulated a letter of interest for the web services task force",
+   "tags": [
+    "web services",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Employee member to Personnel Committee",
+   "resolution": "appointed Doreen Noble",
+   "quote": "employee member to personnel committee - doreen noble, director of the coa came before the board",
+   "tags": [
+    "personnel committee",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted",
+   "quote": "july 13, work session july 20, business session",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered; board not returning to regular session",
+   "quote": "mgl chapter 39, §23b (3) to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Municipal Web Services Task Force notice (letter of interest and charge)",
+   "where": "list",
+   "quote": "municipal web services task force the town of lunenburg seeks residents interested in serving on a task force to evaluate existing municipal"
+  },
+  {
+   "name": "Article XVII Building Committee bylaw",
+   "where": "list",
+   "quote": "article xvii building committee section 1. there shall be a separate committee appointed for each town building project."
+  },
+  {
+   "name": "Memorandum from Kerry A. Speidel, Building Committee, July 2, 2010",
+   "where": "list",
+   "quote": "article 27, section of the town bylaws call for the appointment of a building committee for each town building project."
+  },
+  {
+   "name": "Talent Bank form (Thomas Albert)",
+   "where": "list",
+   "quote": "talent bank form act now - serve your community"
+  },
+  {
+   "name": "Memorandum from Kerry A. Speidel, Municipal Electric Aggregation, July 2, 2010",
+   "where": "list",
+   "quote": "about a year ago, rob bowen, a member of the municipal utilities task force [mutf], came before you to present the concept"
+  },
+  {
+   "name": "Health insurance plans information (attached)",
+   "where": "text",
+   "quote": "kerry provided information on the plans (attached)."
+  },
+  {
+   "name": "Email from Brian Laffond, Chair of the Finance Committee",
+   "where": "text",
+   "quote": "reviewed the email from brian laffond, chair of the finance committee which concurs with the majority of the board of selectmen."
+  },
+  {
+   "name": "Information from the Massachusetts Municipal Association (printed as MIMA)",
+   "where": "text",
+   "quote": "provided the board with information from the massachusetts municipal association (mima)."
+  },
+  {
+   "name": "Notice from Unitil of electrical service interruption",
+   "where": "text",
+   "quote": "notice from unitil of a service interruption in order to complete required modifications and improvements"
+  },
+  {
+   "name": "ABCC notice on Sunday sales opt-in (MGL c13, §33B)",
+   "where": "text",
+   "quote": "abcc notice, authorizing local licensing authorities to sell alcoholic beverages at 10:00 am on sundays."
+  },
+  {
+   "name": "Division of Energy Resources, Guide to Municipal Electric Aggregation in Massachusetts",
+   "where": "text",
+   "quote": "division of energy resources, guide to municipal electric aggregation in massachusetts"
+  },
+  {
+   "name": "Warrants #74 10 (6/30/10), #1 11 (7/6/10) and #1P 11 (7/8/10)",
+   "where": "text",
+   "quote": "warrants - #74 10, 6/30/10 - $208,476.98, #1 11, 7/6/10 - $614,004.79 and #1p 11, 7/8/10 - $494,757.49 reviewed and signed"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "health insurance for elected officials",
+  "municipal electric aggregation",
+  "Unitil",
+  "appointments",
+  "ice storm reimbursement",
+  "budget",
+  "open meeting law",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

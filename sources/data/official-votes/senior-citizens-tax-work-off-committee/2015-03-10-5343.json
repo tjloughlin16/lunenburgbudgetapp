@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2015-03-10",
  "docid": "5343",
@@ -10,21 +10,138 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03102015-5343",
   "doc_url": "/docs/meetings/senior-citizens-tax-work-off-committee/2015-03-10-minutes-5343.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scan. The header reads 'Town of Kunenburg' and 'Aproved' (likely Lunenburg and Approved). The header names 'Jean Larkins' while the body names 'Jean Larkin'; recorded as printed in the body. No motions, seconds, or tallies are printed for the minutes approval, the officer selection, or the adjournment, so the votes list is empty. No dollar figures or money discussion appear. No public comment is recorded. The minutes do not say when Doreen Noble arrived. The 'Reviewed program rules & guidelines' document is named only in passing, so it is listed as text.",
+ "cost_usd": 0.00331732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "To approve the minutes of February 19, 2015",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of february 19, 2015 were reviewed and aproved."
+   "name": "Doreen Noble",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: kathryn herrick, jean larkin, sheila craigen, myleen mallari, doreen noble arrived later."
   },
   {
-   "motion": "To elect Doreen Noble as Chairman, Sheila Craigen as Vice Chairman, and Myleen Mallari as Clerk",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "officers voted as follows: doreen noble, chairman, sheila craigen, vice chairman. myleen mallari, clerk."
+   "name": "Kathryn Herrick",
+   "role": "Town Clerk",
+   "status": "present",
+   "quote": "meeting called to order by town clerk, kathryn herrick at 10:10 am, town hall."
+  },
+  {
+   "name": "Jean Larkin",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: kathryn herrick, jean larkin, sheila craigen, myleen mallari, doreen noble arrived later."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "officers voted as follows: doreen noble, chairman, sheila craigen, vice chairman."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "officers voted as follows: doreen noble, chairman, sheila craigen, vice chairman."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan. No vote counts recorded. Neither motion states who moved or seconded. The adjournment (10:35 AM) is noted but not recorded as an explicit motion.",
- "cost_usd": 0.0952985
+ "decisions": [
+  {
+   "decision": "Officers named: Doreen Noble as Chairman, Sheila Craigen as Vice Chairman, and Myleen Mallari as Clerk, recorded as 'voted as follows' with no motion or tally printed.",
+   "quote": "officers voted as follows: doreen noble, chairman, sheila craigen, vice chairman."
+  },
+  {
+   "decision": "No CORI check required for those already in the program; CORI check to be initiated for new applicants, especially School and Senior Center applicants.",
+   "quote": "no cori check will be required of those already in the program but cori check will be initiated on new applicants especially for school and senior center applicants."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and swearing in",
+   "resolution": "called to order; members sworn in",
+   "quote": "sheila craigen, myleen mallari and jean larkin were sworn in.",
+   "tags": [
+    "call to order",
+    "swearing in"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "officers named (no motion recorded)",
+   "quote": "officers voted as follows: doreen noble, chairman, sheila craigen, vice chairman.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Minutes of February 19, 2015",
+   "resolution": "approved (no motion recorded)",
+   "quote": "minutes of february 19, 2015 were reviewed and aproved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Program rules and CORI checks",
+   "resolution": "reviewed; CORI policy stated",
+   "quote": "reviewed program rules & guidelines, no cori check will be required of those already in the program",
+   "tags": [
+    "CORI checks",
+    "program rules"
+   ]
+  },
+  {
+   "topic": "General discussion: participant applications and placements",
+   "resolution": "discussed, no action",
+   "quote": "general discussion: status of participant applications and placements, promotion of program. seventeen positions, nine applications received, seven currently working.",
+   "tags": [
+    "placements",
+    "applications",
+    "promotion"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for May 14, 2015",
+   "quote": "next meeting will be may 14, 2015 (thursday) at 1:00 pm in town hall.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:35 AM (no motion recorded)",
+   "quote": "meeting adjourned at 10:35 am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "program rules & guidelines",
+   "where": "text",
+   "quote": "reviewed program rules & guidelines, no cori check will be required of those already in the program"
+  }
+ ],
+ "tags": [
+  "senior citizen tax work-off",
+  "CORI checks",
+  "officer elections",
+  "participant placements",
+  "minutes",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "reviewed program rules & guidelines"
+ },
+ "dropped_unquoted_by_field": {}
 }

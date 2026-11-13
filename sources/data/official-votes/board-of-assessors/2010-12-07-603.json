@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2010-12-07",
  "docid": "603",
@@ -12,31 +12,275 @@
  },
  "votes": [
   {
-   "motion": "to approve abatements, expense vouchers, commitments, warrants, and minutes from the meeting held November 16, 2010",
+   "motion": "Meet on January 4, 2011 at 6:00 pm (next meeting date).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on november 16, 2010"
-  },
-  {
-   "motion": "to approve 7 statutory exemption applications totaling $4,900.00 and deny 1 exemption application",
-   "outcome": "7 passed, 1 failed",
-   "procedural": false,
-   "quote": "the board reviewed and approved 7 applications totally $4,900.00 and 1 application was denied."
-  },
-  {
-   "motion": "to approve and sign the 2011 Tax Map Maintenance contract for $2,400.00",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "the board approved and signed the contract for a total of $2,400.00 for these services."
-  },
-  {
-   "motion": "to meet on January 4, 2011 at 6:00 pm",
-   "outcome": "not stated",
    "procedural": true,
    "quote": "the board voted to meet on january 4, 2011 at 6:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. No names given for movers or seconders on any votes.",
- "cost_usd": 0.14281
+ "note": "OCR of a scanned typed document. Header reads 'Che MP.' and the signature line OCRs as 'Lauri Taquette' (typed name is Louise Paquette). Approvals are recorded as 'reviewed and approved' with no motion, mover, or tally, so they are listed as decisions, not votes. Only one vote is recorded (the next meeting date, outcome taken as passed from 'The Board voted'), with no mover or count printed. Adjournment at 7:15 pm is stated with no motion. No public comment section is printed. 'Mr. Franco Rossi' is named only as the contact at Cartographic Associates, not as a participant.",
+ "cost_usd": 0.00566482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis J. Franco",
+   "status": "present",
+   "role": "Board Member",
+   "quote": "present: board members: louis j. franco & matthew j. papini, sr., regional assessor, harald scheid"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "status": "present",
+   "role": "Board Member",
+   "quote": "present: board members: louis j. franco & matthew j. papini, sr., regional assessor, harald scheid"
+  },
+  {
+   "name": "Harald Scheid",
+   "status": "present",
+   "role": "Regional Assessor",
+   "quote": "present: board members: louis j. franco & matthew j. papini, sr., regional assessor, harald scheid"
+  },
+  {
+   "name": "Louise Paquette",
+   "status": "present",
+   "role": "Administrative Assistant",
+   "quote": "and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Chris Comeau",
+   "status": "present",
+   "role": "Chairman",
+   "quote": "chris comeau, chairman, arrived at 6:45pm."
+  },
+  {
+   "name": "David Manzello",
+   "status": "not stated",
+   "role": "Associate Assessor & Tax Work-Off Committee Member",
+   "quote": "louise was informed by david manzello, associate assessor & tax work-off committee member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes of the November 16, 2010 meeting (no separate motion recorded).",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from"
+  },
+  {
+   "decision": "Board approved and signed the 2011 Tax Map Maintenance contract with Cartographic Associates, Inc. for $2,400.00.",
+   "quote": "the board approved and signed the contract for a total of $2,400.00 for these services."
+  },
+  {
+   "decision": "Board approved 7 statutory exemption applications totaling $4,900.00 and denied 1 application.",
+   "quote": "the board reviewed and approved 7 applications totally $4,900.00 and 1 application was denied."
+  },
+  {
+   "decision": "Louise to forward the signed tax map contract back to Franco Rossi, Vice President of Cartographic Associates.",
+   "quote": "louise stated that she will be in touch with mr. franco rossi, vice president and will forward the signed contract back to him."
+  },
+  {
+   "decision": "Board to decide next month what action to take on the one outstanding Chapter application; Louise to speak with David on projected FY12 tax amounts and the roll-back tax for that property.",
+   "quote": "the board will decide next month on what kind of action they plan to take."
+  },
+  {
+   "decision": "Scheduling of the Ashby Regional Assessors Meeting deferred (Harald suggested waiting, as the Board members are new).",
+   "quote": "harald suggested that we wait off for this."
+  },
+  {
+   "decision": "Louise to contact Linda Bradley at CSC (Community Software Consortium) to update Board Member names on the website ASAP.",
+   "quote": "louise will contact linda bradley from csc (community software consortium) to make these changes asap."
+  },
+  {
+   "decision": "Louise to speak with David Manzello regarding projected FY12 tax amounts and the roll-back tax for the outstanding Chapter property.",
+   "quote": "louise will speak with david regarding the projected fy12 tax amounts along with the roll-back tax for this property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2011 Tax Map Maintenance contract (Cartographic Associates, Inc.)",
+   "what_was_recorded": "Board approved and signed the tax map maintenance contract for processing data recorded July 1, 2010 through June 30, 2011.",
+   "figures_as_printed": [
+    "$2,400.00"
+   ],
+   "quote": "the board approved and signed the contract for a total of $2,400.00 for these services."
+  },
+  {
+   "topic": "Statutory exemption applications",
+   "what_was_recorded": "Board approved 7 exemption applications totaling $4,900.00 and denied 1.",
+   "figures_as_printed": [
+    "$4,900.00"
+   ],
+   "quote": "the board reviewed and approved 7 applications totally $4,900.00 and 1 application was denied."
+  },
+  {
+   "topic": "Exemptions granted to date vs. last year",
+   "what_was_recorded": "161 exemptions granted to date totaling $93,030.00, compared with $95,264.00 at this time last year.",
+   "figures_as_printed": [
+    "$93,030.00",
+    "$95,264.00"
+   ],
+   "quote": "louise reported to date 161 exemptions were granted totaling $93,030.00. last year at this time the total was $95,264.00."
+  },
+  {
+   "topic": "FY12 budget requests",
+   "what_was_recorded": "Department Heads met on the FY 12 Budget; all departments to prepare full salary and budget line item requests by early January 2011. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "kerry speidel met with the department heads regarding the fy 12 budget."
+  },
+  {
+   "topic": "Roll-back tax on outstanding Chapter property",
+   "what_was_recorded": "Louise to review projected FY12 tax amounts and the roll-back tax for a property that did not return its Chapter application; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "louise will speak with david regarding the projected fy12 tax amounts along with the roll-back tax for this property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening and attendance",
+   "resolution": "meeting opened 6:05 pm; Chairman arrived 6:45 pm",
+   "quote": "the meeting opened at 6:05 pm.",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Routine approvals (abatements, vouchers, commitments, warrants, minutes)",
+   "resolution": "approved",
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from",
+   "tags": [
+    "abatements",
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Tax process and DOR new growth",
+   "resolution": "no action; status reported",
+   "quote": "harald informed the board that we are in good shape and moving along well in the tax process.",
+   "tags": [
+    "tax rate",
+    "DOR",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Tax Work-Off program",
+   "resolution": "discussed; program viable next year",
+   "quote": "the tax work-off program was discussed.",
+   "tags": [
+    "tax work-off"
+   ]
+  },
+  {
+   "topic": "FY12 budget with Department Heads",
+   "resolution": "no action; reported",
+   "quote": "kerry speidel met with the department heads regarding the fy 12 budget.",
+   "tags": [
+    "FY12 budget"
+   ]
+  },
+  {
+   "topic": "Ashby Regional Assessors Meeting",
+   "resolution": "deferred",
+   "quote": "harald suggested that we wait off for this.",
+   "tags": [
+    "regional assessors"
+   ]
+  },
+  {
+   "topic": "2011 Tax Map Maintenance contract",
+   "resolution": "approved and signed",
+   "quote": "louise presented to the board the 2011 tax map maintenance contract from cartographic associates, inc.",
+   "tags": [
+    "contracts",
+    "tax maps"
+   ]
+  },
+  {
+   "topic": "Sales and foreclosure trends",
+   "resolution": "no action; reported",
+   "quote": "harald spoke about the decrease in valid sales and an increase of foreclosed properties.",
+   "tags": [
+    "sales",
+    "foreclosures"
+   ]
+  },
+  {
+   "topic": "FY12 Chapter applications",
+   "resolution": "decision deferred to next month",
+   "quote": "louise reported that all but one chapter application for fy12 has been received in the office.",
+   "tags": [
+    "chapter land",
+    "roll-back tax"
+   ]
+  },
+  {
+   "topic": "Abatement process and inspections",
+   "resolution": "discussed",
+   "quote": "harald explained to the board that the re",
+   "tags": [
+    "abatements",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Board member names on website",
+   "resolution": "directed staff to update",
+   "quote": "louis franco requested that we look into updating the board members names on our website.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "voted to meet January 4, 2011 at 6:00 pm; adjourned 7:15 pm",
+   "quote": "the board voted to meet on january 4, 2011 at 6:00 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2011 Tax Map Maintenance contract from Cartographic Associates, Inc.",
+   "where": "text",
+   "quote": "louise presented to the board the 2011 tax map maintenance contract from cartographic associates, inc."
+  },
+  {
+   "name": "Chapter reminder letter (mailed October 12, 2010)",
+   "where": "text",
+   "quote": "louise stated that a reminder letter was mailed on october 12, 2010"
+  },
+  {
+   "name": "Final Chapter Notice letter (mailed November 8, 2010)",
+   "where": "text",
+   "quote": "a final chapter notice letter was mailed on november 8, 2010"
+  },
+  {
+   "name": "Chapter application for FY12",
+   "where": "text",
+   "quote": "louise reported that all but one chapter application for fy12 has been received in the office."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "exemptions",
+  "tax rate",
+  "tax map maintenance",
+  "abatements",
+  "chapter land",
+  "tax work-off",
+  "FY12 budget",
+  "Munis",
+  "December 2010"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

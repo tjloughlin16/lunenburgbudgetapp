@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-06-14",
  "docid": "4759",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve Class II License for Shawn Sawyer, d/b/a Dr. Auto Sales & Service, at 541 Chase Road",
+   "motion": "Approve the Class II license application of Shawn Sawyer, d/b/a Dr. Auto Sales & Service, following the 7:15 PM hearing.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -20,7 +20,23 @@
    "quote": "paula motion to approve license, steve seconded voted unanimously."
   },
   {
-   "motion": "Approve Recycling/Solid Waste Contract with Casella Waste Services, Auburn MA",
+   "motion": "Find that RNDC (RG Scooters) violated Town License Commission Regulations section 1.13 (4) and MGL Chapter 138, Section 63A, and issue a suspension for June 29, 30, July 1, 2 and 3rd.",
+   "moved_by": "Dave",
+   "seconded_by": "Tom",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "dave move to find that a violation of the towns license commission regulations, section 1.13 (4) and mgl chapter 138, section 63a,"
+  },
+  {
+   "motion": "Amend the RNDC suspension to five days, to be served July 6 and 7.",
+   "moved_by": "Dave",
+   "seconded_by": "Tom",
+   "outcome": "passed 4-1",
+   "procedural": false,
+   "quote": "dave amend the motion to five days to be served to july 6'h, 7ih tom seconded, paula yes, steve yes, tom yes and dave yes, ernie no as he believes the first dates were accurate."
+  },
+  {
+   "motion": "Approve the Recycling/Solid Waste Contract with Casella Waste Services, Auburn MA.",
    "moved_by": "Steve",
    "seconded_by": "Tom",
    "outcome": "passed unanimously",
@@ -28,31 +44,405 @@
    "quote": "steve motion to approve, tom seconded, voted unanimously."
   },
   {
-   "motion": "Approve request for Kopelman & Paige joint representation for review of Regional Dispatch IMA",
+   "motion": "Consent to joint representation by Kopelman & Paige of Lunenburg and Lancaster on the proposed Regional Dispatch agreement, and sign the Determination form.",
    "moved_by": "Steve",
    "seconded_by": "Ernie",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "steve so moved, ernie seconded."
+   "quote": "kerry would like the board to consider and hopefully approve the request for joint representation for lunenburg and lancaster, steve so moved, ernie seconded."
   },
   {
-   "motion": "Find violation of License Commission Regulations Section 1.13(4) and MGL Chapter 138 Section 63A and suspend RNDC Inc. d/b/a RG Scooters for five days commencing July 6",
-   "moved_by": "Dave",
-   "seconded_by": "Tom",
-   "outcome": "passed 4-1",
-   "procedural": false,
-   "quote": "dave amend the motion to five days to be served to july 6'h, 7ih tom seconded, paula yes, steve yes, tom yes and dave yes, ernie no"
-  },
-  {
-   "motion": "Adjourn from Regular Session and enter Executive Session pursuant to M.G.L. Chapter 39, §23B (3) for discussion of collective bargaining or litigation strategy",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the Regular Session at 9:08 P.M. and enter Executive Session under M.G.L. Chapter 39, §23B (3).",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 9:08 p.m. and opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye"
+   "quote": "board voted unanimously to adjourn regular session at 9:08 p.m. and opened executive session by roll call vote; steve aye, tom aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; quality readable. Minutes approval and warrant approval noted as \"reviewed and signed\" without explicit vote recorded.",
- "cost_usd": 0.1185485
+ "note": "OCR text from macOS Vision, with garbled words (e.g. \"Class Il\", \"tuture\", \"qustioned\", \"Dave Public Safety\" opening line). Page 2 opens mid-sentence; page 3 breaks off mid-list of hearing testimony; page 3 to 4 skips agenda items 3 and the start of item 4, so only the tail of item 4 is captured. The original RNDC suspension motion has no recorded result; only the amendment tally (4-1) is printed. The joint representation motion has no recorded result. \"Dan\" and \"Chief Dan\" appear in the discussion without a surname; likely the same person as Chief Bourgeois but this is not confirmed, so Dan is not listed separately. Roles for Board members are not printed; \"Board member\" is inferred. Attachments referenced on page 6 (notice of hearing letter) appear as a page of the minutes.",
+ "cost_usd": 0.01380922,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "Board member (chairman per minutes)",
+   "status": "present",
+   "quote": "steve aye, tom aye, paula aye, ernie aye and dave aye"
+  },
+  {
+   "name": "Paula",
+   "role": "Board member",
+   "status": "present",
+   "quote": "steve aye, tom aye, paula aye, ernie aye and dave aye"
+  },
+  {
+   "name": "Steve",
+   "role": "Board member",
+   "status": "present",
+   "quote": "steve aye, tom aye, paula aye, ernie aye and dave aye"
+  },
+  {
+   "name": "Tom",
+   "role": "Board member",
+   "status": "present",
+   "quote": "steve aye, tom aye, paula aye, ernie aye and dave aye"
+  },
+  {
+   "name": "Ernie",
+   "role": "Board member",
+   "status": "present",
+   "quote": "steve aye, tom aye, paula aye, ernie aye and dave aye"
+  },
+  {
+   "name": "Kerry",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager updates kerry attended the public hearing at dpu on the municipal aggregation"
+  },
+  {
+   "name": "Chief Bourgeois",
+   "role": "Chief (police)",
+   "status": "present",
+   "quote": "chief bourgeois noted in summary that he will have sgt. gammel present testimony"
+  },
+  {
+   "name": "Sgt. Gammel",
+   "role": "Sergeant, Lunenburg Police Department",
+   "status": "present",
+   "quote": "sgt gammel reviewed the brief summary of the police report, attached."
+  },
+  {
+   "name": "Attorney Pusateri",
+   "role": "representing RNDC Incorporated",
+   "status": "present",
+   "quote": "attorney pusateri was present to represent rndc incorporated"
+  },
+  {
+   "name": "Shawn Sawyer",
+   "role": "applicant, d/b/a Dr. Auto Sales & Service",
+   "status": "present",
+   "quote": "shawn was present and informed the board of his plans"
+  },
+  {
+   "name": "Kathryn Herrick",
+   "role": "Town Clerk",
+   "status": "not stated",
+   "quote": "sworn in by town clerk kathryn herrick."
+  },
+  {
+   "name": "Rhonda Newman",
+   "role": "owner, RG Scooters",
+   "status": "not stated",
+   "quote": "scooter's owner rhonda newman hindered the"
+  },
+  {
+   "name": "Gerry Galena",
+   "role": "General Manager of Casella Waste Services",
+   "status": "present",
+   "quote": "gerry galena, general manager of casella waste services was present."
+  },
+  {
+   "name": "Tessa David",
+   "role": "Director, NORSWC",
+   "status": "not stated",
+   "quote": "according to tessa, we will continue with the single stream recycling"
+  },
+  {
+   "name": "Chief Glenny",
+   "role": "Chief (regional dispatch)",
+   "status": "not stated",
+   "quote": "chief glenny came before the board on the regional dispatch and a draft of the regional agreement."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board asked to be included on the invitation list for future Public Safety memorial services.",
+   "quote": "board would like to be included on the invitation list in the tuture."
+  },
+  {
+   "decision": "Minutes of the 6/7/11 regular and executive sessions reviewed and signed.",
+   "quote": "minutes - board of selectmen regular and executive session for 6/7/11 reviewed and signed."
+  },
+  {
+   "decision": "Warrant #68 11 reviewed and signed.",
+   "quote": "warrants - #68 11, 6/14/11 - $359,705.85 reviewed and signed."
+  },
+  {
+   "decision": "Kerry to confirm with Rob Bowen that he is still interested in the MART Advisory Board appointment.",
+   "quote": "kerry will confirm with him that he is still interested"
+  },
+  {
+   "decision": "Paula to check with the Planning Board on the TriTown update.",
+   "quote": "paula will check with the planning board on the update for tritown."
+  },
+  {
+   "decision": "Kerry to get something in writing on the Planning Board workshop method raised with the Town Clerk.",
+   "quote": "kerry had discussion with the town clerk and will get something in writing"
+  },
+  {
+   "decision": "TriTown parking allowance per unit to be placed under updates at Kerry's next meeting.",
+   "quote": "kerry will place under updates for her next meeting."
+  },
+  {
+   "decision": "DPW Building Committee to come before the board next week on a possible Special Town Meeting and the dollar amount needed.",
+   "quote": "per kerry the committee would like to come before the board next week and discuss the"
+  },
+  {
+   "decision": "Chief Glenny to return next week to go over the regional dispatch presentation.",
+   "quote": "would like to have chief glenny come back next week to go over the presentation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "RG Scooters license penalty recommendation",
+   "what_was_recorded": "Tom recommended a $100 fine under the guidelines plus a suspension of 3-5 days; the board later set a five-day suspension.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "he would recommend a fine of $100 in accordance with our guidelines"
+  },
+  {
+   "topic": "Theft reported in police report",
+   "what_was_recorded": "The police report describes a stolen camera bag with a camera and items worth over $50.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "camera bag containing a camera and over $50 worth of items from emily"
+  },
+  {
+   "topic": "Warrant #68 11",
+   "what_was_recorded": "Warrant reviewed and signed at a total of $359,705.85.",
+   "figures_as_printed": [
+    "$359,705.85"
+   ],
+   "quote": "warrants - #68 11, 6/14/11 - $359,705.85 reviewed and signed."
+  },
+  {
+   "topic": "Pratt Street parcel sale",
+   "what_was_recorded": "Parcels were bid out and valued at less than $25,000, so a negotiated sale may be possible for additional parcels.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "they are valued at less than $25,000, so we may be able to sell off"
+  },
+  {
+   "topic": "DPW Renovation bid overrun",
+   "what_was_recorded": "The first bid was about $600,000 over budget and the latest bid is about $150K over.",
+   "figures_as_printed": [
+    "$600,000",
+    "$150K"
+   ],
+   "quote": "tom questioned how much the first bid was over and according to steve about $600,000 and this one was about $150k over."
+  },
+  {
+   "topic": "DPW Renovation appropriation",
+   "what_was_recorded": "Bids remain over the appropriated amount, and the project may need a Special Town Meeting appropriation; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "are still over the amount that has been appropriated."
+  },
+  {
+   "topic": "Regional Dispatch financial impact",
+   "what_was_recorded": "Board questioned the financial impacts of the regional dispatch agreement; the flat assessment per community was described without a figure.",
+   "figures_as_printed": [],
+   "quote": "dave qustioned the financial impacts of the document"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements (Public Safety memorial service)",
+   "resolution": "noted; board asked to be on invitation list",
+   "quote": "board would like to be included on the invitation list in the tuture.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "7:15 PM Class II licensing hearing, Shawn Sawyer, Dr. Auto Sales & Service",
+   "resolution": "approved license",
+   "quote": "7:15 pm class il licensing hearing for shawn sawyer, d/b/a/ dr. auto sales & service",
+   "tags": [
+    "licensing",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "7:30 PM public hearing, alcohol license, 84 Lakefront Avenue, RNDC Inc., d/b/a RG Scooters Bar & Grille",
+   "resolution": "violation found; five-day suspension set (amended)",
+   "quote": "2. 7:30 pm public hearing, alcohol beverages license, 84 lakefront avenue, rndc, inc., d/b/a rg scooters bar & grille",
+   "tags": [
+    "licensing",
+    "alcohol",
+    "police",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Recycling/Solid Waste Contract with Casella Waste Services",
+   "resolution": "approved",
+   "quote": "1. approve: recycling/solid waste contract with casella waste services, auburn ma",
+   "tags": [
+    "recycling",
+    "solid waste",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Joint Representation Agreement, Regional Dispatch IMA",
+   "resolution": "discussed; joint representation motion, result not recorded",
+   "quote": "2. approve: joint representation agreement for review of regional dispatch, ima",
+   "tags": [
+    "regional dispatch",
+    "legal",
+    "IMA"
+   ]
+  },
+  {
+   "topic": "Committee liaison and appointments (item partly missing)",
+   "resolution": "discussed; follow-up assigned",
+   "quote": "a. mart advisory board - current appointment to the mart advisory board is rob bowen",
+   "tags": [
+    "appointments",
+    "sewer",
+    "MART"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, action file issues",
+   "resolution": "minutes and warrant reviewed and signed; updates requested",
+   "quote": "5. minutes - board of selectmen regular and executive session for 6/7/11 reviewed and signed.",
+   "tags": [
+    "minutes",
+    "warrant",
+    "land",
+    "dam",
+    "TriTown"
+   ]
+  },
+  {
+   "topic": "Committee updates (Planning Board, DPW Renovation)",
+   "resolution": "updates; Special Town Meeting discussed",
+   "quote": "6. committee updates - paula has information on the planning board",
+   "tags": [
+    "planning board",
+    "DPW",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "no action recorded",
+   "quote": "7. department updates -",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager updates (municipal aggregation)",
+   "resolution": "update only",
+   "quote": "8. town manager updates kerry attended the public hearing at dpu on the municipal aggregation",
+   "tags": [
+    "municipal aggregation",
+    "DPU",
+    "electricity"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "adjourned regular session; entered executive session, not returning",
+   "quote": "board voted unanimously to adjourn regular session at 9:08 p.m. and opened executive session by roll call vote; steve aye, tom aye",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of hearing letter to RNDC, Inc., d/b/a RG Scooters, dated May 12, 2011 (signed Kerry A. Speidel, Town Manager)",
+   "where": "list",
+   "quote": "re: alcoholic beverages license, 84 lakefront avenue- notice of hearing"
+  },
+  {
+   "name": "Police report dated March 22, 2011, Incident #11-183-OF",
+   "where": "list",
+   "quote": "the hearing concerns incidents set forth in the police report dated march 22, 2011, incident #11-183-of."
+  },
+  {
+   "name": "Lunenburg Licensing Commission License Regulations (adopted April 6, 2010)",
+   "where": "text",
+   "quote": "the lunenburg licensing commission adopted license regulations on april 6, 2010."
+  },
+  {
+   "name": "Alcoholic beverages license #063600004, 84 Lakefront Avenue",
+   "where": "text",
+   "quote": "#063600004, at 84 lakefront avenue, lunenburg."
+  },
+  {
+   "name": "License application submitted by Shawn M Sawyer, d/b/a Dr. Auto Sales & Service",
+   "where": "text",
+   "quote": "license application submitted by shawn m sawyer, d/b/a dr. auto sales & service."
+  },
+  {
+   "name": "Recycling/Solid Waste Contract with Casella Waste Services",
+   "where": "text",
+   "quote": "approve: recycling/solid waste contract with casella waste services, auburn ma"
+  },
+  {
+   "name": "Presentation made among participating communities on the Regional Dispatch",
+   "where": "text",
+   "quote": "provided a copy of the presentation that was made yesterday among the communities that are participating."
+  },
+  {
+   "name": "Draft regional agreement (Regional Dispatch IMA)",
+   "where": "text",
+   "quote": "a draft of the regional agreement."
+  },
+  {
+   "name": "Determination form (joint representation, Kopelman & Paige)",
+   "where": "text",
+   "quote": "to sign a \"determination\" form accordingly"
+  },
+  {
+   "name": "Warrant #68 11, 6/14/11",
+   "where": "text",
+   "quote": "warrants - #68 11, 6/14/11 - $359,705.85 reviewed and signed."
+  },
+  {
+   "name": "Minutes of Board of Selectmen Regular and Executive Session, 6/7/11",
+   "where": "text",
+   "quote": "minutes - board of selectmen regular and executive session for 6/7/11 reviewed and signed."
+  },
+  {
+   "name": "Recycling flyers for households (being written)",
+   "where": "text",
+   "quote": "flyers are being written and will be available for all households"
+  }
+ ],
+ "tags": [
+  "licensing hearing",
+  "alcohol license",
+  "police",
+  "RG Scooters suspension",
+  "recycling contract",
+  "Casella",
+  "regional dispatch",
+  "joint representation",
+  "DPW renovation",
+  "special town meeting",
+  "planning board",
+  "TriTown",
+  "Lake Shirley Dam",
+  "municipal aggregation",
+  "executive session",
+  "warrant"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "sgt gammel reviewed the brief summary of the police report, attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-02-25",
  "docid": "4634",
@@ -10,27 +10,307 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02252015-4634",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2015-02-25-minutes-4634.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text with no recorded motions or votes; the minutes state approvals (\"Meeting minutes were approved\", budget \"approved\") without a motion, second, or count, so none are recorded as votes and they appear under decisions. Garbled OCR fragments: 'As Pa Api ,2015' signature line, a 'RECEIVED & FILED APR 07 2015 / Lunenburg Town Clerk' stamp mid-text, and 'Mar 9t' printed as in the source. No dollar figures are printed anywhere in the minutes. Speaker for the first public comment is printed only as 'Rhonda'; the second commenter is unnamed.",
+ "cost_usd": 0.00526032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "to approve the meeting minutes of December 15, 2014",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "review and approve meeting minutes of december 15, 2014: a) meeting minutes were approved."
+   "name": "Jeff Bajko",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
   },
   {
-   "motion": "to approve the budget for January and February",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "coordinator's monthly budget report: a) february is the month the pac gets its payment from comcast. the committee reviewed the budget for january and february and approved the budget."
+   "name": "Rhonda Lisio",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
   },
   {
-   "motion": "to approve the FY 2015 budget",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "review and approve budget for fy 2015: a) the committee reviewed the fy 2015 budget and approved it."
+   "name": "Steve Walker",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non committee member",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, john henshaw, and pete linclon."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Non committee member",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, john henshaw, and pete linclon."
+  },
+  {
+   "name": "Pete Linclon",
+   "role": "Non committee member",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin, john henshaw, and pete linclon."
   }
  ],
- "dropped_unquoted": 0,
- "note": "The minutes are OCR-read from a scanned document. No vote counts or mover/seconder names are recorded. Three approval votes are clearly indicated by section headers and approval statements.",
- "cost_usd": 0.12588749999999999
+ "decisions": [
+  {
+   "decision": "Minutes of December 15, 2014 were approved (no motion or vote recorded).",
+   "quote": "meeting minutes were approved."
+  },
+  {
+   "decision": "Committee approved the budget for January and February (no motion or vote recorded).",
+   "quote": "the committee reviewed the budget for january and february and approved the budget."
+  },
+  {
+   "decision": "Committee approved the FY 2015 budget (no motion or vote recorded).",
+   "quote": "the committee reviewed the fy 2015 budget and approved it."
+  },
+  {
+   "decision": "Proposed FY 2016 budget to be presented to the Finance Committee on March 19th.",
+   "quote": "presentation of the proposed fy 2016 will be presented to the finance committee on march"
+  },
+  {
+   "decision": "Jo to present a capital planning chart at the next meeting.",
+   "quote": "jo will present a capital planning chart at the next meeting."
+  },
+  {
+   "decision": "Policy work assigned: Jeff to reformat one policy; Steve to revise the bulletin board policy and send to Jeff, presenting at next meeting; Jo to rewrite the purchasing policy; equipment rental policy to be formatted for next meeting.",
+   "quote": "jo will re write the purchasing policy and present to the committee for review."
+  },
+  {
+   "decision": "Membership policies: get the software for updates to keep current.",
+   "quote": "membership policies: get the software for updates to keep current."
+  },
+  {
+   "decision": "Producer certification to be offered so community members are trained before they have access to equipment.",
+   "quote": "producer certification should be offered for the community to get trained before they have"
+  },
+  {
+   "decision": "Listed as a planning item: start paying people in 2017 due to lack of volunteers.",
+   "quote": "start paying people in 2017 due to lack of volunteers."
+  },
+  {
+   "decision": "Further volunteer recruitment effort suggested (training, broadcast, newspaper ads, Facebook ads, bulletins).",
+   "quote": "more effort was suggested for trying to get volunteers: training, broadcast, newspaper ads,"
+  },
+  {
+   "decision": "Next meeting set for Mar 9 (printed as 'Mar 9t') for budget review.",
+   "quote": "next meeting is mar 9t for budget review."
+  },
+  {
+   "decision": "PAC positions to be filled as hired as needed.",
+   "quote": "pac positions will be as hired as needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast payment and monthly budget",
+   "what_was_recorded": "February is the month the PAC receives its payment from Comcast; the committee reviewed the January and February budget.",
+   "figures_as_printed": [],
+   "quote": "february is the month the pac gets its payment from comcast."
+  },
+  {
+   "topic": "Sports programming charges",
+   "what_was_recorded": "Jason has been running the Sports programming and has incurred the largest charge; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "jason has been running the sports programming for pac and has incurred the largest charge."
+  },
+  {
+   "topic": "FY 2015 budget",
+   "what_was_recorded": "Committee reviewed and approved the FY 2015 budget; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the committee reviewed the fy 2015 budget and approved it."
+  },
+  {
+   "topic": "Control room renovation",
+   "what_was_recorded": "Waiting on a proposal from A/C access by John to renovate the control room in town hall; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "waiting for a proposal from a/c access by john to renovate the control room in town hall"
+  },
+  {
+   "topic": "FY 2016 budget planning",
+   "what_was_recorded": "Proposed FY 2016 budget to be presented to the Finance Committee; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "presentation of the proposed fy 2016 will be presented to the finance committee on march"
+  },
+  {
+   "topic": "Paying volunteers",
+   "what_was_recorded": "Listed item to start paying people in 2017; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "start paying people in 2017 due to lack of volunteers."
+  },
+  {
+   "topic": "Open house mugs",
+   "what_was_recorded": "Mugs were ordered for the open house on Feb 26th; no price printed.",
+   "figures_as_printed": [],
+   "quote": "mugs were ordered for open house which is feb 26th."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda",
+   "stated_role": "",
+   "topic": "regular meeting schedule, minutes and agenda by email",
+   "quote": "rhonda suggests that regular meetings should not be schedule due to lack of members."
+  },
+  {
+   "topic": "lack of help for PACC",
+   "quote": "concern about lack of help to continue the success of the pacc."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no action; comments on meeting schedule and lack of help",
+   "quote": "concern about lack of help to continue the success of the pacc.",
+   "tags": [
+    "public comment",
+    "volunteers",
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes of December 15, 2014",
+   "resolution": "approved",
+   "quote": "meeting minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Role of public access in the community",
+   "resolution": "discussed; no action",
+   "quote": "accessible communication is the chain to the community. it is a place for town folks to be",
+   "tags": [
+    "community",
+    "Channel 9",
+    "content"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly budget report",
+   "resolution": "budget approved",
+   "quote": "the committee reviewed the budget for january and february and approved the budget.",
+   "tags": [
+    "budget",
+    "Comcast"
+   ]
+  },
+  {
+   "topic": "Review and approve budget for FY 2015",
+   "resolution": "approved",
+   "quote": "the committee reviewed the fy 2015 budget and approved it.",
+   "tags": [
+    "budget",
+    "FY2015"
+   ]
+  },
+  {
+   "topic": "Planning for FY 2016 budget",
+   "resolution": "discussed; presentation to Finance Committee March 19th",
+   "quote": "jo will present a capital planning chart at the next meeting.",
+   "tags": [
+    "budget",
+    "FY2016",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Review and approve policies: bulletin board, purchase, membership, equipment rental",
+   "resolution": "continued; assigned for reformatting and rewriting before next meeting",
+   "quote": "jo will re write the purchasing policy and present to the committee for review.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Ideas for volunteering at Lunenburg's PAC",
+   "resolution": "discussed; no action",
+   "quote": "try to recruit high school students to help volunteer to run equipment at games.",
+   "tags": [
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Marketing ideas for Lunenburg's PAC",
+   "resolution": "discussed; no action",
+   "quote": "personally contact people to volunteer to run equipment and join the pac.",
+   "tags": [
+    "marketing",
+    "volunteers",
+    "open house"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "next meeting Mar 9 for budget review; adjourned 7:47pm",
+   "quote": "adjourned at 7:47pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bulletin board policy",
+   "where": "text",
+   "quote": "steve will make changes on bulletin board policy, send it to jeff for formatting and will present it"
+  },
+  {
+   "name": "Purchasing policy",
+   "where": "text",
+   "quote": "jo will re write the purchasing policy and present to the committee for review."
+  },
+  {
+   "name": "Membership policies",
+   "where": "text",
+   "quote": "membership policies: get the software for updates to keep current."
+  },
+  {
+   "name": "Equipment rental policy",
+   "where": "text",
+   "quote": "the equipment rental policy will be formatted for next meeting."
+  },
+  {
+   "name": "FY 2015 budget",
+   "where": "text",
+   "quote": "the committee reviewed the fy 2015 budget and approved it."
+  },
+  {
+   "name": "Budget for January and February",
+   "where": "text",
+   "quote": "the committee reviewed the budget for january and february and approved the budget."
+  },
+  {
+   "name": "Proposed FY 2016 budget",
+   "where": "text",
+   "quote": "presentation of the proposed fy 2016 will be presented to the finance committee on march"
+  },
+  {
+   "name": "Capital planning chart",
+   "where": "text",
+   "quote": "jo will present a capital planning chart at the next meeting."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "Channel 9",
+  "Comcast",
+  "budget",
+  "FY2015",
+  "FY2016",
+  "policies",
+  "volunteers",
+  "marketing",
+  "open house",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

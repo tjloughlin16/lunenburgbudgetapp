@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-05-10",
  "docid": "2763",
@@ -12,42 +12,215 @@
  },
  "votes": [
   {
-   "motion": "Accept Amy's resignation effective Friday, June 1",
+   "motion": "Accept Amy's resignation as of Friday June 1.",
    "moved_by": "John Mara",
    "seconded_by": "Len Smetana",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (Kathy Murray absent)",
    "procedural": false,
-   "quote": "john mara made a motion to accept amy's resignation as of friday june 1; seconded by len smetana, unan imous approva",
-   "quote_taken_from_text": true
+   "quote": "john mara made a motion to accept amy's resignation as of friday june 1; seconded by len smetana, unan imous approval, except for kathy murray who was absent."
   },
   {
-   "motion": "Authorize the Chair to contract with BiblioTemps to hire an interim director who is a certified librarian with experience, and request names and resumes for discussion prior to the May 17th meeting",
+   "motion": "Authorize the Chair to contract with BiblioTemps to hire an Interim Director (with date to be decided) who is a certified librarian with experience, and request names and resumes before the May 17 meeting if possible.",
    "moved_by": "John Mara",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (Kathy Murray absent)",
    "procedural": false,
-   "quote": "john mara made a motion that we as the lbot authori ze the chair to contract with bibliotemps to hire a n interim director (with date to be decided) that is a certif i",
-   "quote_taken_from_text": true
+   "quote": "john mara made a motion that we as the lbot authori ze the chair to contract with bibliotemps to hire a n interim director (with date to be decided)"
   },
   {
-   "motion": "Transfer $5600 from account line item #521025 (Heating Charges) and line item 521011 (Electricity Charges) to line item #531003 (Contracted Services)",
+   "motion": "Transfer $5600 from line item #521025 (Heating Charges) and line item 521011 (Electricity Charges) to line item #531003 (Contracted Services) for hiring an Interim Director.",
    "moved_by": "John Mara",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (Kathy Murray absent)",
    "procedural": false,
-   "quote": "john mara made a motion to transfer $5600 from acco unt line item #521025 (heating charges) and line it em 521011 (electricity charges) to line item #531003 (contrac ted services) for purposes of hiring an interim dir ector",
-   "quote_taken_from_text": true
+   "quote": "john mara made a motion to transfer $5600 from acco unt line item #521025 (heating charges)"
   },
   {
-   "motion": "End the meeting at 8:43 pm",
+   "motion": "End the meeting at 8:43 pm.",
    "moved_by": "John Mara",
    "seconded_by": "Dick Mailloux",
-   "outcome": "passed",
+   "outcome": "passed, unanimous (Kathy Murray absent)",
    "procedural": true,
    "quote": "john mara made a motion to end the meeting at 8:43 pm; seconded by dick mailloux; unanimous approval"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All four votes were unanimous with Kathy Murray noted absent from each vote. This appears to be a scanned document with legible vote records.",
- "cost_usd": 0.1404015
+ "note": "Text is OCR-like with split words (e.g. \"Maillo ux\", \"Ma ra\", \"unan imous\", \"CWM ARS\") and double spaces; quotes copy these as printed. The attendance line spells the trustee \"Dick Maillo ux\" while motions spell \"Dick Mailloux\"; recorded here as \"Dick Mailloux\". The Resignation motion's outcome is printed as unanimous except for absent Kathy Murray, with no numeric count. The minutes name Patty Dupont, Sherri Freeman, Jen, Jillian and Kelly Jo Woodside, who are not recorded as taking part, so they are not listed as attendees. Public comment is printed as \"None\". No documents list or exhibits are printed.",
+ "cost_usd": 0.0056278199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, jeanne raboin, amy sadkin, len smetana, john ma ra"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "respectfully submitted, lisa krowitz secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, jeanne raboin, amy sadkin, len smetana, john ma ra"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chair of the LBOT",
+   "status": "present",
+   "quote": "jeanne raboin, chair of the lbot, will be the emerg"
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, jeanne raboin, amy sadkin, len smetana, john ma ra"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, jeanne raboin, amy sadkin, len smetana, john ma ra"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick maillo ux, jeanne raboin, amy sadkin, len smetana, john ma ra"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "absent",
+   "quote": "absent: kathy murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Patty Dupont takes over scheduling, is the point person for the building, continues payroll, and remains lead on cataloguing.",
+   "quote": "patty dupont will take over scheduling, she will be the point person for the building"
+  },
+  {
+   "decision": "Sherri Freeman takes over the bills, with Excel billing files moved from Amy's computer to hers.",
+   "quote": "sherri freeman will take over the bills."
+  },
+  {
+   "decision": "Jen is the contact person for Evergreen and maintains building alarm codes, phone codes and email access.",
+   "quote": "jen will be the contact person for evergreen."
+  },
+  {
+   "decision": "Remaining staff increase desk hours to cover for Patty, Sherri and Jen.",
+   "quote": "remaining staff will increase desk hours"
+  },
+  {
+   "decision": "Jeanne Raboin, Chair of the LBOT, is emergency contact, signs payroll every 2 weeks and signs bills every week.",
+   "quote": "jeanne raboin, chair of the lbot, will be the emerg"
+  },
+  {
+   "decision": "John Mara will update the Excel files with staff hours from Patty and bills from Sherri.",
+   "quote": "john mara will update the excel files with the staf f hours from patty and bills from sherri."
+  },
+  {
+   "decision": "Amy will download fine information from CWMARS before the start of the Evergreen transition, move her desktop files to a thumb drive and/or hard drive, and give building keys, petty cash and file cabinet keys to Jeanne.",
+   "quote": "amy will download fine information from current cwm ars prior to friday may 25"
+  },
+  {
+   "decision": "John Mara will send the job descriptions for the Library Director and the search notes from the previous Library Director search six years ago.",
+   "quote": "john will send the job descriptions"
+  },
+  {
+   "decision": "Amy will review and update her job description based on her current responsibilities.",
+   "quote": "amy will review her job description and update the description based on her current responsibilities."
+  },
+  {
+   "decision": "The process should take at least 8 weeks from advertisement to hire, with an Interim Library Director sought within 2-3 weeks, aiming for the first week of June.",
+   "quote": "the process should take at least 8 weeks from ad to"
+  },
+  {
+   "decision": "The Board will consider asking one library staff member and one member of the Friends to be part of the selection process.",
+   "quote": "the board will consider asking one library staff"
+  },
+  {
+   "decision": "John Mara will not attend the next meeting, scheduled for May 17, 2012 at 6:45 pm.",
+   "quote": "john mara will not be at the next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Transfer for Interim Director hiring",
+   "what_was_recorded": "A $5600 transfer from heating and electricity line items to Contracted Services to pay for hiring an Interim Director.",
+   "figures_as_printed": [
+    "$5600",
+    "#521025",
+    "521011",
+    "#531003"
+   ],
+   "quote": "john mara made a motion to transfer $5600 from acco unt line item #521025 (heating charges)"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from line item #521025 (Heating Charges) and line item 521011 (Electricity Charges) to line item #531003 (Contracted Services) for hiring an Interim Director.",
+   "amount_as_printed": "$5600",
+   "outcome": "passed, unanimous (Kathy Murray absent)",
+   "quote": "john mara made a motion to transfer $5600 from acco unt line item #521025 (heating charges)"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Resignation of the Library Director",
+   "resolution": "resignation accepted as of June 1; transition duties assigned",
+   "quote": "john mara made a motion to accept amy's resignation as of friday june 1",
+   "tags": [
+    "resignation",
+    "staffing",
+    "transition",
+    "Evergreen"
+   ]
+  },
+  {
+   "topic": "Interim Director discussion",
+   "resolution": "Chair authorized to contract with BiblioTemps; $5600 transfer approved",
+   "quote": "amy presented information on bibliotemps, which is an employment service of mls",
+   "tags": [
+    "interim director",
+    "BiblioTemps",
+    "staffing",
+    "budget transfer"
+   ]
+  },
+  {
+   "topic": "Library Director search discussion",
+   "resolution": "no vote; search steps and assignments discussed",
+   "quote": "the process should take at least 8 weeks from ad to",
+   "tags": [
+    "director search",
+    "hiring",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "meeting ended 8:43 pm",
+   "quote": "john mara will not be at the next meeting",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "library",
+  "director resignation",
+  "interim director",
+  "staffing",
+  "budget transfer",
+  "Evergreen transition",
+  "director search",
+  "open meeting law"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

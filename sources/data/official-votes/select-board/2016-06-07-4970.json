@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-06-07",
  "docid": "4970",
@@ -12,71 +12,421 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session under Chapter 30A, § 21A(3) to discuss strategy with respect to litigation in the Caron-Gustus case",
+   "motion": "Enter Executive Session under Chapter 30A, § 21A (3) to discuss litigation strategy (Caron-Gustus case), and upon adjournment enter Open Session.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: t. alonzo 2nd.r. ebersole to enter executive session and upon adjournment to enter into open session vote: mr. ebersole-aye, mr. alonzo-aye, mr. toale-aye"
   },
   {
-   "motion": "Allow use of the parking lot at the Historical Society, 10 School Street for the 50th anniversary dedication and cornerstone laying event on July 31",
+   "motion": "Allow use of the Historical Society parking lot at 10 School Street for the 50th anniversary dedication.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d: t. alonzo to allow use of the parking lot for the 50# anniversary dedication vote: all in favor"
+   "quote": "to allow use of the parking lot for the 50# anniversary dedication vote: all in favor"
   },
   {
-   "motion": "Nominate Jamie Toale as Chairman",
+   "motion": "Nominate Jamie Toale as Chairman.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to nominate jamie toale as chairman 2nd: t. alonzo vote: all in favor"
+   "procedural": false,
+   "quote": "to nominate jamie toale as chairman 2nd: t. alonzo vote: all in favor"
   },
   {
-   "motion": "Nominate Tom Alonzo as Clerk",
+   "motion": "Nominate Bob Ebersole as Vice Chairman.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to nominate bob ebersole as vice chairman"
+  },
+  {
+   "motion": "Nominate Tom Alonzo as Clerk.",
    "moved_by": "R. Ebersole",
    "seconded_by": "J. Toale",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to nominate tom alonzo as clerk 2\": j. toale vote: all in favor"
+   "procedural": false,
+   "quote": "to nominate tom alonzo as clerk 2\": j. toale vote: all in favor"
   },
   {
-   "motion": "Authorize the Chair to sign Budget revision requests #10, #11, #12, and #13 as presented",
+   "motion": "Authorize the Chair to sign the Budget Revision Requests as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: r. ebersole to authorize the chair to sign the budget revision requests as presented vote: all in favor"
+   "quote": "to authorize the chair to sign the budget revision requests as presented vote: all in favor"
   },
   {
-   "motion": "Appoint Colleen Shapire to the School Building Committee",
+   "motion": "Appoint Colleen Shapire (as printed) to the School Building Committee.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to appoint colleen shapire to the school building committee 2\"°: t. alonzo vote: all in favor"
+   "quote": "to appoint colleen shapire to the school building committee"
   },
   {
-   "motion": "Accept the resignation of Karin Menard from the Finance Committee, effective May 25, 2016",
+   "motion": "Accept the resignation of Karin Menard from the Finance Committee.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to accept the resignation of karin menard from the finance committee 2\": r. ebersole vote: all in favor"
+   "quote": "to accept the resignation of karin menard from the finance committee"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion:t. alonzo to adjourn the meeting 2^d: r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting 2^d: r. ebersole vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from scanned minutes shows OCR artifacts in quoted sections (2\\\"d, 2\\\"°, 2^d as corruptions of 2nd; 50# instead of 50th; Shapire instead of Shapiro in the motion text). Vice Chairman nomination by T. Alonzo to nominate Bob Ebersole excluded because OCR formatting corrupted the connection between the motion and its vote outcome, making a clean verbatim quote impossible.\"",
- "cost_usd": 0.2087424
+ "note": "Text is macOS Vision OCR with garbled characters (e.g., '2\"d', 'Mir. Toale', 'Mi. Ebersole', 'Shapire'); quotes copied as printed. Vice Chairman motion has no printed second; the Clerk motion's second is printed as J. Toale; the Vice Chairman motion's second is left blank. Votes printed as 'All in Favor' with no count, so outcome is 'passed'. Minutes of May 10, 2016 approval and the warrants signing have no printed motion, so they are recorded as decisions/budget items. Public Comment heading contains remarks by Board members (Alonzo, Ebersole, Toale), recorded as printed. Executive session minutes are stated to be separate and are not in this text.",
+ "cost_usd": 0.00979552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town manager"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town manager"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town manager"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk and kerry lafleur, town manager"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member; phyllis luck, member"
+  },
+  {
+   "name": "Chuck Venezia",
+   "role": "Members",
+   "status": "present",
+   "quote": "members chuck venezia and bill tyler presented to request permission to use the parking lot"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Members",
+   "status": "present",
+   "quote": "members chuck venezia and bill tyler presented to request permission to use the parking lot"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "school committee chair mike mackin presented budget revision requests which cover all of the current"
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lafleur stated john londa was here to update the board and explain why it was important to act in a timely manner"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board approved the minutes of May 10, 2016 (no motion printed).",
+   "quote": "the board approved minutes of may 10, 2016."
+  },
+  {
+   "decision": "The APR proposal for Lanni Orchards is to be forwarded to the Conservation Commission, Planning Board and Agricultural Commission for review and recommendation, then return to the Board.",
+   "quote": "this proposal will be forwarded to conservation commission, planning board and agricultural commission for review and recommendation."
+  },
+  {
+   "decision": "The Board continued the Power Purchase Agreement discussion to the next meeting.",
+   "quote": "the board continued this discussion to the next meeting."
+  },
+  {
+   "decision": "Mr. Ebersole offered to call some of the people who spoke at the town meeting for feedback by the next Board meeting.",
+   "quote": "mi. ebersole offered to call some of the people who spoke to this at that town meeting for feedback by the next board meeting."
+  },
+  {
+   "decision": "Chair Toale will check with Executive Assistant Peterson for a date for the FY 2017 goal-setting workshop everyone can attend, and will work with her on the volunteer appreciation social date in July.",
+   "quote": "he will check with executive assistant peterson for a date that everyone will be present."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lanni Orchards APR purchase - Town contribution",
+   "what_was_recorded": "The Town was asked to contribute 10% of the appraised property value, which the minutes put at $58,000; any Town contribution needs Special Town Meeting approval.",
+   "figures_as_printed": [
+    "10%",
+    "$580,000",
+    "$58,000"
+   ],
+   "quote": "the town has been asked to contribute 10% of the property value ($580,000) or $58,000."
+  },
+  {
+   "topic": "Power purchase agreement - Borrego Solar proposal savings",
+   "what_was_recorded": "Savings to the Town from the proposed Borrego Solar 650 kw project were estimated at around $56,000 per year for 20 years.",
+   "figures_as_printed": [
+    "$56,000"
+   ],
+   "quote": "savings for the town would be around $56,000 per year for 20 years."
+  },
+  {
+   "topic": "Budget Revision Request #10",
+   "what_was_recorded": "BRR#10 in the amount of $31,540 covers ADA compliance for humidity sensor mountings; the Board authorized the Chair to sign the BRRs as presented.",
+   "figures_as_printed": [
+    "$31,540"
+   ],
+   "quote": "brr#10 is in the amount of $31,540 that covers some ada compliance"
+  },
+  {
+   "topic": "Budget Revision Request #11",
+   "what_was_recorded": "BRR#11 in the amount of $16,999 covers added electrical service, electronic door hardware revisions, and walk-in freezer alarm electrical and sensor work.",
+   "figures_as_printed": [
+    "$16,999"
+   ],
+   "quote": "brr#11 is in the amount of $16,999, for adding electrical service"
+  },
+  {
+   "topic": "Budget Revision Request #12",
+   "what_was_recorded": "BRR #12 in the amount of $7,127 covers electrical/data wireless for the outdoor classroom; the majority of the work was donated by the power company.",
+   "figures_as_printed": [
+    "$7,127"
+   ],
+   "quote": "brr #12 is in the amount of $7,127 for providing electrical/data wireless for the outdoor classroom."
+  },
+  {
+   "topic": "Budget Revision Request #13",
+   "what_was_recorded": "BRR #13 totals $768,768 across site digital sign, new maintenance garage, added classroom-wing cooling, and stadium wheelchair lift enclosure.",
+   "figures_as_printed": [
+    "$768,768",
+    "$56,415",
+    "$181,197",
+    "$528,815",
+    "$2,341"
+   ],
+   "quote": "brr #13 in the total amount of $768,768, is in various amounts; $56,415 for the added site digital sign,"
+  },
+  {
+   "topic": "School construction contingency",
+   "what_was_recorded": "No further change orders known; $3,168,612 remains in the construction contingency.",
+   "figures_as_printed": [
+    "$3,168,612"
+   ],
+   "quote": "leaving $3,168,612 remaining in the construction contigency"
+  },
+  {
+   "topic": "Accounts payable and payroll warrants",
+   "what_was_recorded": "Two accounts payable warrants and one payroll warrant were signed.",
+   "figures_as_printed": [
+    "$787,364.50",
+    "$450,833.58",
+    "$770,431.27"
+   ],
+   "quote": "an accounts payable warrant of $787,364.50, another accounts payable warrant of $450,833.58 and a payroll warrant of $770,431.27 were signed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Kinder Morgan withdrawal, graduates, Memorial Day",
+   "quote": "mr. alonzo reported we have official notice that kinder morgan/tennessee gas pipeline has withdrawn its certificate of application."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "Thanks to voters for reelection and debt exclusion",
+   "quote": "mr. ebersole thanked all those who voted to reelect him and those who voted in favor of the debt exclusion"
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Thanks to voters, Memorial Day Committee, Honor Guard",
+   "quote": "mir. toale thanked the voters for his reelection and the debt exclusion approval."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session entry (litigation, Caron-Gustus case)",
+   "resolution": "entered executive session",
+   "quote": "motion: t. alonzo 2nd.r. ebersole to enter executive session and upon adjournment to enter into open session",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Public comment and Board remarks",
+   "resolution": "no action",
+   "quote": "mr. alonzo reported we have official notice that kinder morgan/tennessee gas pipeline has withdrawn",
+   "tags": [
+    "public comment",
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "Historical Society 50th anniversary dedication parking lot",
+   "resolution": "approved parking lot use",
+   "quote": "to allow use of the parking lot for the 50# anniversary dedication vote: all in favor",
+   "tags": [
+    "Historical Society",
+    "event permit"
+   ]
+  },
+  {
+   "topic": "Board reorganization (Chair, Vice Chair, Clerk)",
+   "resolution": "officers nominated; all in favor",
+   "quote": "to nominate jamie toale as chairman 2nd: t. alonzo vote: all in favor",
+   "tags": [
+    "reorganization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "FY 2017 BOS & Town Manager goals",
+   "resolution": "date to be set",
+   "quote": "mr. toale stated the next item was to set the date for the town manager's and board of selectmen's fy 2017",
+   "tags": [
+    "goal setting"
+   ]
+  },
+  {
+   "topic": "Date for Volunteer Appreciation Social",
+   "resolution": "Chair to check dates",
+   "quote": "he also will work with her on the volunteer appreciation social date for some time in july.",
+   "tags": [
+    "volunteer social"
+   ]
+  },
+  {
+   "topic": "Notice of Commonwealth's proposed APR acquisition, Lanni Orchards, 294 Chase Road",
+   "resolution": "no action; referred to committees",
+   "quote": "this proposal will be forwarded to conservation commission, planning board and agricultural commission for review and recommendation.",
+   "tags": [
+    "agricultural preservation restriction",
+    "Lanni Orchards",
+    "public announcement"
+   ]
+  },
+  {
+   "topic": "Power purchase agreement - how to proceed",
+   "resolution": "continued to next meeting",
+   "quote": "the board continued this discussion to the next meeting.",
+   "tags": [
+    "solar",
+    "power purchase agreement",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Budget Revision Requests #10-#13 and school construction progress",
+   "resolution": "authorized Chair to sign",
+   "quote": "to authorize the chair to sign the budget revision requests as presented vote: all in favor",
+   "tags": [
+    "school building project",
+    "budget revision"
+   ]
+  },
+  {
+   "topic": "School Building Committee appointment (Colleen Shapiro)",
+   "resolution": "appointed",
+   "quote": "to appoint colleen shapire to the school building committee",
+   "tags": [
+    "appointments",
+    "school building project"
+   ]
+  },
+  {
+   "topic": "Finance Committee resignation (Karin Menard)",
+   "resolution": "resignation accepted",
+   "quote": "to accept the resignation of karin menard from the finance committee",
+   "tags": [
+    "appointments",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants; committee reports",
+   "resolution": "minutes approved; warrants signed; reports received",
+   "quote": "the board approved minutes of may 10, 2016.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "to adjourn the meeting 2^d: r. ebersole vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Town Meeting minutes",
+   "where": "text",
+   "quote": "the board has asked the annual town meeting minutes be checked for what was said"
+  },
+  {
+   "name": "Letter requesting former School Committee member Colleen Shapiro be appointed to the School Building Committee",
+   "where": "text",
+   "quote": "mr. toale asked mr. mackin to comment on the letter requesting former school committee member"
+  },
+  {
+   "name": "Budget Revision Requests #10, #11, #12, #13",
+   "where": "text",
+   "quote": "presented budget revision requests which cover all of the current change orders approved by the school building committee"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "board reorganization",
+  "solar",
+  "power purchase agreement",
+  "agricultural preservation restriction",
+  "school building project",
+  "budget revision requests",
+  "appointments",
+  "warrants",
+  "Historical Society",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

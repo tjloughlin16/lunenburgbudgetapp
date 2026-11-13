@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-02-09",
  "docid": "2758",
@@ -12,41 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Accept the February 1, 2012 minutes",
+   "motion": "Approve the minutes of February 1, 2012.",
    "moved_by": "Mr. Mara",
-   "seconded_by": "Mir. Smetana",
+   "seconded_by": "Mr. Smetana",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion made by mr. mara to accept february 1, 2012 minutes, seconded by mir. smetana, passed unanimously."
   },
   {
-   "motion": "Provide a written reprimand in lieu of suspension to Ms. Freeman and place in her personnel file",
+   "motion": "Amendment to the first motion: provide a written reprimand in lieu of suspension to Ms. Freeman and place it in her personnel file.",
    "moved_by": "Ms. Krowitz",
    "seconded_by": "Mr. Mara",
    "outcome": "failed 1-6",
    "procedural": false,
-   "quote": "amendment to first motion made by ms. krowitz and seconded by mr. mara to provide a written reprimand in lieu of suspension to ms. freeman and to place in her personnel file. amendment was open to discussion. board voted one (1) in favor (ms. krowitz) and six (6) opposed (ms. bodkin, mr. mara, mr. mailloux, ms. murray, ms. raboin, mr. smetana) to this amendment. amendment denied."
+   "quote": "amendment to first motion made by ms. krowitz and seconded by mr. mara to provide a written reprimand in lieu of suspension"
   },
   {
-   "motion": "Suspend Ms. Freeman for two (2) working days and require participation in conflict resolution",
+   "motion": "Second amendment to the first motion: suspend Ms. Freeman for two (2) working days and direct her to participate in conflict resolution or a similar program.",
    "moved_by": "Ms. Bodkin",
    "seconded_by": "Mr. Mailloux",
-   "outcome": "failed 1-5-1",
+   "outcome": "not stated (vote printed as 1-5-1; no result word recorded)",
    "procedural": false,
-   "quote": "second amendment to first motion made by ms. bodkin and seconded by mr. mailloux to suspend ms. freeman for two (2) working days based on the complaint and testimony of february 9, 2012 and directs ms. freeman to participate in a conflict resolution and/or completion of a similar program to be identified by the lunenburg public library board of trustees. second amendment was open for discussion. board voted one (1) in favor (ms. bodkin), five (5) opposed (mr. mara, mr. mailloux, ms. murray, ms. raboin, mr. smetana) and one (1) abstention (ms. krowitz). second amendment first m",
-   "quote_taken_from_text": true
+   "quote": "second amendment to first motion made by ms. bodkin and seconded by mr. mailloux to suspend ms. freeman for two (2) working days"
   },
   {
-   "motion": "Suspend Ms. Sherri Freeman for five (5) working days and require participation in conflict resolution",
+   "motion": "Suspend Ms. Sherri Freeman for five (5) working days based on the complaint and testimony of February 9, 2012, and direct her to participate in conflict resolution and/or a similar program.",
    "moved_by": "Mr. Mailloux",
    "seconded_by": "Ms. Raboin",
    "outcome": "passed 5-1-1",
    "procedural": false,
-   "quote": "motion made by mr. mailloux and seconded by ms. raboin to suspend ms. sherri freeman for five (5) working days based on the complaint and testimony of february 9, 2012 and directs ms. freeman to participate in a conflict resolution and/or completion of a similar program as identified by the lunenburg public library board of trustees. the motion was opened for discussion. amendment to first motion made by ms. krowitz and seconded by mr. mara to provide a written reprimand in lieu of suspension to ms. freeman and to place in her personnel file. amendment was open to discussion. board voted one (1) in favor (ms. krowitz) and six (6) opposed (ms. bodkin, mr. mara, mr. mailloux, ms. murray, ms. raboin, mr. smetana) to this amendment. amendment denied. first motion placed back on table for discussion. second amendment to first motion made by ms. bodkin and seconded by mr. mailloux to suspend ms. freeman for two (2) working days based on the complaint and testimony of february 9, 2012 and directs ms. freeman to participate in a conflict resolution and/or completion of a similar program to be identified by the lunenburg public library board of trustees. second amendment was open for discussion. board voted one (1) in favor (ms. bodkin), five (5) opposed (mr. mara, mr. mailloux, ms. murray, ms. raboin, mr. smetana) and one (1) abstention (ms. krowitz). second amendment first motion placed back on table for discussion. board voted five (5) in favor (mr. mara, mr. mailloux, ms. murray, ms. raboin, mr. smetana), one (1) against, (ms. krowitz) one (1) abstention (ms. bodkin). motion passed. 5. mr. ",
-   "quote_taken_from_text": true
+   "quote": "motion made by mr. mailloux and seconded by ms. raboin to suspend ms. sherri freeman for five (5) working days based on the complaint and testimony of february 9, 2012"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 11:44 pm.",
    "moved_by": "Mr. Mailloux",
    "seconded_by": "Mr. Mara",
    "outcome": "passed",
@@ -55,6 +53,242 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Text quality is generally good. One minor transcription note: the minutes print \"Mir. Smetana\" in the vote on approval of prior minutes (line 1), which appears to be an OCR artifact for \"Mr. Smetana.\"",
- "cost_usd": 0.1665005
+ "note": "OCR text with errors: 'Mir.' printed for Mr. Smetana, 'Ms. Sackin' for Ms. Sadkin, 'Dacember'; recorded names are corrected in fields but quotes are as printed. The second amendment (Bodkin, 1 in favor, 5 opposed, 1 abstention) is followed by no printed result word, so its outcome is recorded as not stated. The minutes contain no public comment section and no dollar figures. Attendance is taken from the 'Attending:' line; no one is marked absent. The letter and affidavit are appended pages of the minutes. Item 3 sub-items a and c-m are partly garbled in OCR.",
+ "cost_usd": 0.011719720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "LPL Trustees Chair",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "LPL Director",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, richard mailloux (lpl trustees chair), john mara, kathy murray, jeanne raboin, amy sadkin (lpl director)"
+  },
+  {
+   "name": "Marc Terry",
+   "role": "Town of Lunenburg Labor Counsel",
+   "status": "present",
+   "quote": "len smetana, marc terry (town of lunenburg labor counsel); sherri freeman, john flick (ms. freeman's attorney)"
+  },
+  {
+   "name": "Sherri Freeman",
+   "role": "Lunenburg Public Library employee (subject of public hearing)",
+   "status": "present",
+   "quote": "ms. sadkin, lunenburg public library director, and ms. sherri freeman, were witnesses"
+  },
+  {
+   "name": "John Flick",
+   "role": "Ms. Freeman's Attorney",
+   "status": "present",
+   "quote": "len smetana, marc terry (town of lunenburg labor counsel); sherri freeman, john flick (ms. freeman's attorney)"
+  },
+  {
+   "name": "Patricia Dupont",
+   "role": "Lunenburg Public Library Assistant Director",
+   "status": "present",
+   "quote": "patricia dupont (lunenburg public library assistant director)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board declined to view the December 20, 2011 video, though it had the right to do so.",
+   "quote": "however, board does have right to view video, board declined doing this."
+  },
+  {
+   "decision": "The Board decided not to pursue a recap of the case's basic facts, as these are already in the February 1, 2012 minutes.",
+   "quote": "board decides not to pursue this, as these are in the february 1, 2012 minutes."
+  },
+  {
+   "decision": "Mr. Terry will draft a letter to Ms. Freeman, circulate it to the Board through the Chair for comments (directed only to Mr. Terry), and Mr. Mailloux will send it to Ms. Freeman.",
+   "quote": "mr. terry informs board that he will draft letter to ms. freeman, will circulate to board, through the chair, for comments"
+  },
+  {
+   "decision": "The Board will discuss resources for conflict resolution and related programs at its February 16, 2012 meeting.",
+   "quote": "board will discuss resources for conflict resolution and related programs at february 16, 2012 board meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes from February 1, 2012",
+   "resolution": "approved unanimously",
+   "quote": "motion made by mr. mara to accept february 1, 2012 minutes, seconded by mir. smetana, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of Public Hearing regarding potential termination of Sherri Freeman",
+   "resolution": "no action; Board declined to view video and did not recap facts",
+   "quote": "review of public hearing: regarding potential termination of lunenburg public library employee, ms. sherri freeman.",
+   "tags": [
+    "hearing procedure",
+    "video"
+   ]
+  },
+  {
+   "topic": "Public Hearing regarding potential termination of Sherri Freeman",
+   "resolution": "hearing held; testimony and evidence received from witnesses and counsel",
+   "quote": "public hearing: regarding potential termination of lunenburg public library employee, ms. sherri freeman.",
+   "tags": [
+    "public hearing",
+    "testimony",
+    "evidence"
+   ]
+  },
+  {
+   "topic": "Board deliberation on discipline",
+   "resolution": "five-day suspension passed 5-1-1; written reprimand amendment failed 1-6; two-day suspension amendment result not stated",
+   "quote": "mr. mailloux reviewed board's options.",
+   "tags": [
+    "deliberation",
+    "suspension",
+    "amendments"
+   ]
+  },
+  {
+   "topic": "Letter to Ms. Freeman",
+   "resolution": "Terry to draft letter; Chair to circulate; Mailloux to send",
+   "quote": "mr. terry informs board that he will draft letter to ms. freeman, will circulate to board, through the chair, for comments",
+   "tags": [
+    "letter"
+   ]
+  },
+  {
+   "topic": "Resources for conflict resolution",
+   "resolution": "deferred to February 16, 2012 meeting",
+   "quote": "board will discuss resources for conflict resolution and related programs at february 16, 2012 board meeting.",
+   "tags": [
+    "conflict resolution"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:44 pm",
+   "quote": "mr. mailloux makes motion, seconded by mr. mara to adjourn meeting at 11:44 pm. motion passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Public Library's Appropriate Use Policy",
+   "where": "list",
+   "quote": "mr. terry entered the following items as evidence: lunenburg public library's appropriate use policy and"
+  },
+  {
+   "name": "Ms. Patricia Dupont's affidavit of February 1, 2012",
+   "where": "list",
+   "quote": "ms. patricia dupont's affidavit of february 1, 2012,"
+  },
+  {
+   "name": "Ms. Sadkin's December 20, 2011 email to Mr. Mailloux",
+   "where": "list",
+   "quote": "ms. sadkin's december 20, 2011 email to mr. mailloux,"
+  },
+  {
+   "name": "Copy of January 19, 2012 Personnel Action Letter to Lunenburg board of Trustees",
+   "where": "list",
+   "quote": "copy of january 19, 2012 personnel action letter to lunenburg board of trustees and ms. freeman's"
+  },
+  {
+   "name": "Ms. Freeman's Statement to Charges of Insubordination to Board",
+   "where": "list",
+   "quote": "statement to charges of insubordination to board."
+  },
+  {
+   "name": "Ms. Freeman's Personnel File, including Performance Reviews (2007-2010), Requests for Approval of Personnel Action (2008-2011), Notification of Hiring New Personnel (January 17, 2007) and Employee Performance Appraisal Self-Evaluation (2008-2009)",
+   "where": "list",
+   "quote": "mr. flick entered the following evidence: ms. freeman's personnel file, including performance reviews"
+  },
+  {
+   "name": "Ms. Freeman's cell phone call records of December 20, 2011",
+   "where": "list",
+   "quote": "as well as ms. freeman's cell phone call records of december 20, 2011."
+  },
+  {
+   "name": "Ms. Sadkin's April 27, 2010 email to Mr. John Mara (then Board of Trustee chair)",
+   "where": "text",
+   "quote": "mr. terry gave ms. sadkin's april 27, 2010 email to mr. john mara (then board of trustee chair) to board"
+  },
+  {
+   "name": "Board Secretary's February 1, 2012 notes",
+   "where": "text",
+   "quote": "copies of approved february 1, 2012 minutes and board secretary's february 1, 2012 notes given to mr."
+  },
+  {
+   "name": "December 20, 2011 video",
+   "where": "text",
+   "quote": "mr. terry spoke about the december 20, 2011 video."
+  },
+  {
+   "name": "Notice of Intent to Terminate letter dated February 3, 2012 (Town Manager Kerry Speidel)",
+   "where": "text",
+   "quote": "re: notice of intent to terminate"
+  },
+  {
+   "name": "Town Charter Section 3-72",
+   "where": "text",
+   "quote": "(see town charter section 3-72)."
+  },
+  {
+   "name": "Town Charter Section 7-9",
+   "where": "text",
+   "quote": "pursuant to section 7-9 of the town charter, you have the right to request a public"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "public hearing",
+  "suspension",
+  "employee discipline",
+  "library trustees",
+  "insubordination",
+  "Sherri Freeman"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. terry entered the following items as evidence"
+ },
+ "dropped_unquoted_by_field": {}
 }

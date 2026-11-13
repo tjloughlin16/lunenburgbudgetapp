@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-09-22",
  "docid": "4944",
@@ -12,47 +12,426 @@
  },
  "votes": [
   {
-   "motion": "Approve the license for two automatic amusement devices (1 crane and 1 video game) for Lineage Vapors, LLC",
+   "motion": "Approve the license for two automatic amusement devices (1 crane and 1 video game) as presented for Lineage Vapors, LLC.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the license for two automatic amusement devices (1 crane and 1 video game) as presented for lineage vapors, llc vote: all in favor"
+   "quote": "motion: t. alonzo 2nd. p. bertram to approve the license for two automatic amusement devices (1 crane and 1 video game) as presented for lineage vapors, llc"
   },
   {
-   "motion": "Open the warrant for the Special Town Meeting of November 16",
+   "motion": "Open the warrant for the Special Town Meeting of November 16.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "to open the warrant for the special town meeting of november 16 2'd: t. alonzo vote: all in favor"
+   "procedural": false,
+   "quote": "motion: r. ebersole to open the warrant for the special town meeting of november 16 2'd: t. alonzo vote: all in favor"
   },
   {
-   "motion": "Authorize the tollbooth fundraiser",
+   "motion": "Authorize the Turkey Hill Family Lions Club tollbooth fundraiser as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to authorize the tollbooth fundraiser as presented 2\"d: p. bertram vote: all in favor"
+   "quote": "motion: t. alonzo to authorize the tollbooth fundraiser as presented 2\"d: p. bertram vote: all in favor"
   },
   {
-   "motion": "Establish a stormwater task force with the membership composed as presented",
+   "motion": "Establish a storm water task force with the membership composed as presented.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to establish a storm water task force with the membership composed as presented 2\"d: r. ebersole vote: all in favor"
+   "quote": "motion: p. bertram to establish a storm water task force with the membership composed as presented 2\"d: r. ebersole vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:27 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "to adjourn the meeting at 9:27 p.m. 2\"d: r. ebersole vote: all in favor"
+   "quote": "motion: p. bertram to adjourn the meeting at 9:27 p.m. 2\"d: r. ebersole vote: all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-scanned document. All votes passed unanimously. The minutes refer to warrants presented for signatures (school construction, payroll, accounts payable, payroll deductions) but record these as presentations only, not as motions voted upon.",
- "cost_usd": 0.1308755
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned 8-page minutes document. ACO budget table is badly garbled: column assignment of figures is uncertain, so only totals and legible figures are recorded as printed. Several words are OCR-misread (e.g., 'Lafluer', 'Latleur', 'teed'). Votes are recorded only as 'All in Favor' with no counts printed. The minutes of September 8, 2015 and warrants were presented for signatures; no vote is recorded on approving the minutes. Some quotes run across page breaks and were collapsed to single spaces.",
+ "cost_usd": 0.011746520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck, member and town manager kerry lafleur."
+  },
+  {
+   "name": "Sean McGonagle",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager sean mcgonagle was present and requested to have a crane machine and a video game"
+  },
+  {
+   "name": "Jim Cote",
+   "status": "present",
+   "quote": "jim cote, 431 mulpus road, asked about any updates on the availability for solar for residents."
+  },
+  {
+   "name": "Police Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino stated the supervision of the aco falls under him."
+  },
+  {
+   "name": "Ms. Comeau",
+   "role": "ACO",
+   "status": "present",
+   "quote": "mr. alonzo thanked aco comeau for participating in the process and her helpful information."
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "not stated",
+   "quote": "john londa, facilities director, reported on the passios school facilities plan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Animal Control Services day-to-day operations to transfer to the Police Chief, effectively immediately, per a proposal the Police Chief and Town Manager agree on; no vote recorded.",
+   "quote": "transfer day-to-day operations of animal control services to the police chief, effectively immediately"
+  },
+  {
+   "decision": "Police Chief to review the Animal Control proposal.",
+   "quote": "police chief to review proposal"
+  },
+  {
+   "decision": "Police Chief asked to address adoption fees while drafting the animal control policies.",
+   "quote": "mr. ebersole asked the chief to add something to address adoption fees while drafting the policies."
+  },
+  {
+   "decision": "Town Manager to check with the Planning Board for any other Special Town Meeting warrant items.",
+   "quote": "ms. lafleur stated she still needs to check with the planning board for any other items."
+  },
+  {
+   "decision": "Stormwater Task Force membership to be circulated to pertinent boards and personnel and posted on the town website.",
+   "quote": "it will be circulated to all the pertinent boards and personnel and posted on the town website."
+  },
+  {
+   "decision": "Town Manager to report back on the Charter Review committee timeline.",
+   "quote": "ms. lafleur will report back on that as well."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ACO budget (292 - Animal Control) FY2013-FY2016 table",
+   "what_was_recorded": "Town Manager presented the current ACO budget table; the printed table is OCR-garbled and column assignment is uncertain, with totals as legible.",
+   "figures_as_printed": [
+    "11,580",
+    "2,800",
+    "7,500",
+    "1,000",
+    "1,200",
+    "13,000",
+    "12,500",
+    "12,750",
+    "$ 24,580",
+    "24,080",
+    "24,330",
+    "25,300",
+    "13,300"
+   ],
+   "quote": "ms. lafleur presented the current budget for aco"
+  },
+  {
+   "topic": "ACO stipend and cost neutrality",
+   "what_was_recorded": "Proposed changes described as cost neutral; ACO paid a stipend of $1000 per month, about twelve hours per month at $20 per hour, with no change.",
+   "figures_as_printed": [
+    "$1000",
+    "$20"
+   ],
+   "quote": "the proposed changes to implement would be cost neutral. the aco is paid by a stipend of $1000 per month averaging to about twelve hours per month at $20 per hour."
+  },
+  {
+   "topic": "ACO personal funds and budget increase",
+   "what_was_recorded": "ACO said she often uses personal money to care for dogs; she said the budget would have to be increased if someone else takes the job. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the budget will have to be increased if someone else picks up the job."
+  },
+  {
+   "topic": "ACO charge for dog care",
+   "what_was_recorded": "ACO said she will charge the town a per-day fee for dog care, though the actual cost is usually more.",
+   "figures_as_printed": [
+    "$3"
+   ],
+   "quote": "she will charge the town $3 per day for care"
+  },
+  {
+   "topic": "Passios School operating and demolition cost",
+   "what_was_recorded": "Facilities Director reported the annual operating cost and the estimated demolition cost of Passios School.",
+   "figures_as_printed": [
+    "$200,000",
+    "one million dollars"
+   ],
+   "quote": "it typically costs around $200,000 per year to operate passios. it would cost approximately one million dollars to demolish it."
+  },
+  {
+   "topic": "Turkey Hill Middle School renovation option",
+   "what_was_recorded": "Option 1 renovation estimated cost reported as $22 million.",
+   "figures_as_printed": [
+    "$22 million"
+   ],
+   "quote": "this would cost an estimated $22 million for asbestos abatement, roof repair, hvac, window replacement and electrical work."
+  },
+  {
+   "topic": "Energy rebates for new middle/high school",
+   "what_was_recorded": "Facilities Director pursuing rebates from Unitil and National Grid; MSBA to receive a share of the rebates.",
+   "figures_as_printed": [
+    "53%"
+   ],
+   "quote": "msba will receive 53% of the rebates."
+  },
+  {
+   "topic": "Sewer extension betterment assessment",
+   "what_was_recorded": "Sewer Commission said final pavement and betterment assessment will begin in spring; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "final pavement and betterment assessment will begin in the spring."
+  },
+  {
+   "topic": "Warrants presented for signature",
+   "what_was_recorded": "School construction, payroll, accounts payable and payroll deductions warrants presented for signatures.",
+   "figures_as_printed": [
+    "$3,053,290.84",
+    "$684,778.10",
+    "$795,252.63",
+    "$143, 331.24"
+   ],
+   "quote": "a warrant for school construction in the amount of $3,053,290.84, a payroll warrant in the amount of $684,778.10, an accounts payable warrant in the amount of $795,252.63 and a payroll deductions warrant in the amount of $143, 331.24 were presented for signatures."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "Boston Post Cane presentation date correction and Farmers' Market",
+   "quote": "ms. luck wanted to correct the date for the presentation of the boston post cane to sarah powell to october 19 at 2:00 p.m."
+  },
+  {
+   "speaker": "Jim Cote",
+   "topic": "Solar availability and Nexamp proposal",
+   "quote": "jim cote, 431 mulpus road, asked about any updates on the availability for solar for residents."
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "Member",
+   "topic": "Library Story Hour praise",
+   "quote": "ms. bertram stated she attended the story hour at the library with her grandchildren and it was a wonderful program for the kids."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening public comment and vacancy announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "vacancies",
+    "solar"
+   ],
+   "quote": "ms. luck wanted to correct the date for the presentation of the boston post cane"
+  },
+  {
+   "topic": "Appointment: Lineage Vapors, LLC amusement device license",
+   "resolution": "approved license for two amusement devices",
+   "tags": [
+    "licensing",
+    "hearing"
+   ],
+   "quote": "lineage vapors, llc - license application for (2) automatic amusement devices"
+  },
+  {
+   "topic": "Animal Control Services (ACO) review",
+   "resolution": "discussed; operations to Police Chief; Chief to review proposal; no vote",
+   "tags": [
+    "animal control",
+    "policy",
+    "police"
+   ],
+   "quote": "ms. lafleur delivered the first part of the presentation."
+  },
+  {
+   "topic": "Open warrant for Special Town Meeting Nov. 16",
+   "resolution": "warrant opened, closes Oct. 5 at 4:00 P.M.",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ],
+   "quote": "ms. lafleur proposed opening the warrant this evening and closing it on monday, october 5 at 4:00 p.m."
+  },
+  {
+   "topic": "Turkey Hill Family Lions Club tollbooth request",
+   "resolution": "authorized",
+   "tags": [
+    "fundraiser",
+    "permit"
+   ],
+   "quote": "mr. toale read the request from lions club president lisa normandin"
+  },
+  {
+   "topic": "Mission statement and membership for Stormwater Task Force",
+   "resolution": "mission statement read; task force established",
+   "tags": [
+    "stormwater",
+    "task force"
+   ],
+   "quote": "ms. bertram read the draft mission statement aloud:"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes and warrants presented for signature; proclamations signed",
+   "tags": [
+    "warrants",
+    "signatures",
+    "bylaws"
+   ],
+   "quote": "minutes of september 8, 2015 were presented for signatures."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "tags": [
+    "committees",
+    "schools",
+    "sewer",
+    "conservation"
+   ],
+   "quote": "mr. ebersole reported the board of health will be meeting with this board on october 6"
+  },
+  {
+   "topic": "Town Manager or department report",
+   "resolution": "none given",
+   "tags": [
+    "town manager"
+   ],
+   "quote": "there was no town manager or department report this evening."
+  },
+  {
+   "topic": "Closing public comment",
+   "resolution": "no action",
+   "tags": [
+    "library",
+    "public comment"
+   ],
+   "quote": "public comment: ms. bertram stated she attended the story hour"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:27 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn the meeting at 9:27 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lineage Vapors, LLC - License Application for (2) Automatic Amusement Devices",
+   "where": "text",
+   "quote": "lineage vapors, llc - license application for (2) automatic amusement devices"
+  },
+  {
+   "name": "Current ACO budget (292 - Animal Control), FY2013-FY2016 table",
+   "where": "text",
+   "quote": "ms. lafleur presented the current budget for aco"
+  },
+  {
+   "name": "Town Bylaw, Article IX, Section 1A, Dog Restraint",
+   "where": "text",
+   "quote": "ms. lafleur moved on to the town bylaw, article ix, section 1a, dog restraint."
+  },
+  {
+   "name": "Special Town Meeting warrant (Nov. 16) - open warrant",
+   "where": "text",
+   "quote": "2. open warrant for special town meeting for nov. 16"
+  },
+  {
+   "name": "Turkey Hill Family Lions Club tollbooth request (Sept. 26)",
+   "where": "text",
+   "quote": "mr. toale read the request from lions club president lisa normandin"
+  },
+  {
+   "name": "Draft mission statement for the Stormwater Task Force",
+   "where": "text",
+   "quote": "ms. bertram read the draft mission statement aloud"
+  },
+  {
+   "name": "Passios School facilities plan",
+   "where": "text",
+   "quote": "john londa, facilities director, reported on the passios school facilities plan"
+  },
+  {
+   "name": "Minutes of September 8, 2015",
+   "where": "text",
+   "quote": "minutes of september 8, 2015 were presented for signatures."
+  },
+  {
+   "name": "Warrants: school construction, payroll, accounts payable and payroll deductions",
+   "where": "text",
+   "quote": "a warrant for school construction in the amount of $3,053,290.84"
+  },
+  {
+   "name": "Eagle Scout Ceremony proclamations",
+   "where": "text",
+   "quote": "mr. toale presented two proclamations for signatures for an eagle scout ceremony on october"
+  }
+ ],
+ "tags": [
+  "animal control",
+  "amusement device license",
+  "special town meeting",
+  "warrant",
+  "tollbooth fundraiser",
+  "stormwater task force",
+  "school facilities",
+  "committee reports",
+  "budget",
+  "solar",
+  "police",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

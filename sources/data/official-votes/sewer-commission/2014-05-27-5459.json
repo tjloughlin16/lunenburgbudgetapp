@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-05-27",
  "docid": "5459",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Elect Carl Luck as Chairman",
+   "motion": "Elect Carl Luck as Chair.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, unanimous",
+   "procedural": false,
    "quote": "dave nominated carl luck as chair, troy seconded, vote taken was unanimous."
   },
   {
-   "motion": "Elect Dave MacDonald as Vice-Chairman",
+   "motion": "Elect Dave MacDonald as Vice-Chair.",
    "moved_by": "Mike",
    "seconded_by": "Troy",
    "outcome": "passed 4-1",
-   "procedural": true,
-   "quote": "mike nominated dave macdonald as vice-chair, troy seconded, vote taken was 4 in favor, 1 opposed."
+   "procedural": false,
+   "quote": "mike nominated dave macdonald as vice-chair, troy seconded, vote taken was 4 in favor, 1 opposed"
   },
   {
-   "motion": "Elect Mike Nault as Clerk",
+   "motion": "Elect Mike Nault as Clerk.",
    "moved_by": "Dave",
    "seconded_by": "Troy",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, unanimous",
+   "procedural": false,
    "quote": "dave nominated mike nault as clerk, troy seconded, vote taken was unanimous."
   },
   {
-   "motion": "Approve minutes of August 13, 2013",
+   "motion": "Approve draft minutes of August 13, 2013.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "august 13, 2013 - butch made the motion, mike seconded, carl, mike and butch voted to approve."
   },
   {
-   "motion": "Approve minutes of March 25, 2014",
+   "motion": "Approve draft minutes of March 25, 2014.",
    "moved_by": "Butch",
    "seconded_by": "Dave",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "march 25, 2014 -butch made the motion to approve, dave seconded, carl, dave and butch voted to approve."
   },
   {
-   "motion": "Approve minutes of May 13, 2014",
+   "motion": "Approve draft minutes of May 13, 2014.",
    "moved_by": "Dave",
    "seconded_by": "Mike",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "may 13, 2014 -dave made the motion, mike seconded, carl, mike and butch voted to approve."
   },
   {
-   "motion": "Approve minutes of April 29, 2014",
+   "motion": "Approve draft minutes of April 29, 2014.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
    "outcome": "passed",
@@ -68,15 +68,379 @@
    "quote": "april 29, 2014-butch made the motion, mike seconded, carl, mike and butch voted to approve."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Troy",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "butch made the motion to adjourn, troy seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document OCR'd using macOS Vision.",
- "cost_usd": 0.1421945
+ "note": "OCR text from a scanned page (macOS Vision); several words are garbled (e.g. 'aro Letebvre', 'Car & Jack', 'planse', 'I/1' for I/I), and the capacity-fee passage is broken across pages 1-2. Minutes-approval dates print 'April 29, 2014' but the handout reads 'Draft minutes 4/29/13'. Butch's surname is not printed. Vote counts for the four minutes approvals list only the members who voted, with no printed tally. No public comment is recorded. Meeting date 2014-05-27 is taken from the request; the minutes themselves print no date line.",
+ "cost_usd": 0.009992220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Troy Daniels",
+   "role": "newest Commission member",
+   "status": "present",
+   "quote": "the newest commission member, troy daniels, was introduced"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "new officers: carl luck, chairman, dave macdonald, vice-chairman, and mike nault, clerk."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "new officers: carl luck, chairman, dave macdonald, vice-chairman, and mike nault, clerk."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "new officers: carl luck, chairman, dave macdonald, vice-chairman, and mike nault, clerk."
+  },
+  {
+   "name": "Butch",
+   "role": "",
+   "status": "present",
+   "quote": "butch made the motion to adjourn, troy seconded. vote taken was unanimous."
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "not stated",
+   "quote": "car & jack met with kevin olson of wright pierce last week."
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "of Wright Pierce",
+   "status": "not stated",
+   "quote": "car & jack met with kevin olson of wright pierce last week."
+  },
+  {
+   "name": "Kerry",
+   "role": "",
+   "status": "not stated",
+   "quote": "carl had spoken with kerry, and a full rfp is not necessary on horizontal work"
+  },
+  {
+   "name": "Lisa",
+   "role": "for ZBA",
+   "status": "not stated",
+   "quote": "per lisa for zba, there is a meeting on this project 5/28 7pm town hall."
+  },
+  {
+   "name": "Marjorie",
+   "role": "Planning office",
+   "status": "not stated",
+   "quote": "per marjorie in the planning office."
+  },
+  {
+   "name": "aro Letebvre",
+   "role": "Business Manager",
+   "status": "not stated",
+   "quote": "aro letebvre, business manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to meet Wednesday, 6/4 at 5pm at the DPW to review the Lakeview/Pratt engineering scope.",
+   "quote": "commission agreed to meet wednesday, 6/4 at 5pm at the dpw."
+  },
+  {
+   "decision": "Full RFP not required for the horizontal work; follow Mass. procurement as a guide.",
+   "quote": "a full rfp is not necessary on horizontal work, but that we should follow mass. procurement as"
+  },
+  {
+   "decision": "Commissioners agreed it would be good to get an outside engineering vendor as well; consensus that advertising could only help.",
+   "quote": "commissioners agreed it would be good to get an 'outsider as well."
+  },
+  {
+   "decision": "Carl gave the go-ahead by email to the generator maintenance time-and-materials work.",
+   "quote": "carl gave the go-ahead via email, cc'g butch."
+  },
+  {
+   "decision": "A letter will be sent to food service permittees with an invoice and a copy of the policy and the report forms; the forms will be checked to make clear they go to the Commission office.",
+   "quote": "a letter will be sent, with an invoice and a copy of the policy and the report forms."
+  },
+  {
+   "decision": "SWSS to attend the June 10 meeting with its FY15 proposal, sent the Friday before if possible, and a generator report.",
+   "quote": "we need to have swss come to the next meeting, june 10."
+  },
+  {
+   "decision": "Invoices from Fitchburg, Leominster, Wright Pierce, Koppelman & Paige (2), and Weston & Sampson approved for payment.",
+   "quote": "fitchburg, leominster, wright pierce, koppelman & paige(2), and weston & sampson were all approved for payment."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Food service establishment annual permit fees",
+   "what_was_recorded": "Annual permit fees for food service establishments are due 7/1, at $50, $100 or $250 depending on compliance.",
+   "figures_as_printed": [
+    "$50",
+    "$100",
+    "$250"
+   ],
+   "quote": "fees are $50 if we have all pumping, inspection reports, or $100 or $250 depending on your"
+  },
+  {
+   "topic": "Proposed fee for non-responding permittees",
+   "what_was_recorded": "It was proposed to bill $50 for now, depending on whether permittees send reports in response to the letter.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "it was proposed to bill $50 for now, depending if they send reports in in response to letter."
+  },
+  {
+   "topic": "Annual fee for Tier 3 permittees",
+   "what_was_recorded": "Most permittees are in Tier 3 (fully non-compliant), so the annual fee would be $250.",
+   "figures_as_printed": [
+    "$250"
+   ],
+   "quote": "most permittees are in tier 3, fully non-compliant, and the fee would be $250."
+  },
+  {
+   "topic": "Wastewater capacity fee policy",
+   "what_was_recorded": "Capacity Fee Policy drafted so new users help fund capacity costs; fee due when the betterment is assessed. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "carl has crafted a capacity fee policy which was sent to the commission, so that new users help fund capacity costs."
+  },
+  {
+   "topic": "Generator maintenance proposal",
+   "what_was_recorded": "Proposal for time and materials to get the SWSS generators running was received and the work has commenced; a new proposal is needed for the new fiscal year. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we received the proposal for time and materials to get the generators up and running"
+  },
+  {
+   "topic": "Police detail cost during inspections",
+   "what_was_recorded": "Cost of the police detail during inspections is a concern and its frequency may be revisited. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cost of the police detail during the inspections is a concern, and the frequency may be re-visited."
+  },
+  {
+   "topic": "Fourth quarter commitment and billing",
+   "what_was_recorded": "Fourth quarter commitment was signed and 691 bills were sent out 5/22/14.",
+   "figures_as_printed": [
+    "$150,722.94"
+   ],
+   "quote": "4th quarter commitment of $150,722.94 was signed. 691 bills were sent out 5/22/14."
+  },
+  {
+   "topic": "Invoices approved for payment",
+   "what_was_recorded": "Invoices from Fitchburg, Leominster, Wright Pierce, Koppelman & Paige (2), and Weston & Sampson were approved for payment. No amounts printed.",
+   "figures_as_printed": [],
+   "quote": "fitchburg, leominster, wright pierce, koppelman & paige(2), and weston & sampson were all approved for payment."
+  },
+  {
+   "topic": "Wright Pierce invoice for Town Meeting work",
+   "what_was_recorded": "Wright Pierce's invoice completes Task Order #4 for preparation for Town Meeting. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "wright pierce's invoice completes task order #4 for preparation for town meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "New member introduction (Troy Daniels)",
+   "resolution": "noted",
+   "quote": "the newest commission member, troy daniels, was introduced",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Seasonal water and grease trap reminders",
+   "resolution": "informational",
+   "quote": "pool filling, gardening, lawn sprinkling, and seeding new lawns will be starting up.",
+   "tags": [
+    "public notice",
+    "grease traps"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "elected Carl Luck Chair, Dave MacDonald Vice-Chair, Mike Nault Clerk",
+   "quote": "dave nominated carl luck as chair, troy seconded, vote taken was unanimous.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "Inflow/infiltration reduction, Whalom area",
+   "resolution": "report received; report expected next week; done by June 1",
+   "quote": "inflow/infiltration work is going on in the whalom area.",
+   "tags": [
+    "inflow infiltration",
+    "Whalom"
+   ]
+  },
+  {
+   "topic": "SCADA system",
+   "resolution": "in progress (procurement)",
+   "quote": "scada system) - jack is proceeding with procurement.",
+   "tags": [
+    "SCADA"
+   ]
+  },
+  {
+   "topic": "Lakeview/Pratt sewer extension engineering",
+   "resolution": "engineer search; consider outside quote; meeting 6/4",
+   "quote": "for the 2 sewer extensions approved at town meeting, the next step is to find",
+   "tags": [
+    "sewer extension",
+    "engineering",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "SWSS generator maintenance",
+   "resolution": "go-ahead given by email; work commenced",
+   "quote": "we received the proposal for time and materials to get the generators up and",
+   "tags": [
+    "SWSS",
+    "generators"
+   ]
+  },
+  {
+   "topic": "Capacity Fee Policy",
+   "resolution": "discussed; draft policy to be sent with letter",
+   "quote": "carl has crafted a capacity fee policy which was sent to the commission",
+   "tags": [
+    "capacity fee",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Business systems and process improvement",
+   "resolution": "in progress",
+   "quote": "carl stated that he is working on these, starting with minutes from",
+   "tags": [
+    "business systems"
+   ]
+  },
+  {
+   "topic": "Flow rate and metering",
+   "resolution": "SWSS asked to attend June 10 with FY15 proposal",
+   "quote": "mike noted that he's been monitoring the flow meters and that he plans to go to the next",
+   "tags": [
+    "flow meters",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Quarterly commitment, billing and pump station reports",
+   "resolution": "noted",
+   "quote": "4th quarter commitment of $150,722.94 was signed.",
+   "tags": [
+    "billing",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "four sets of minutes approved",
+   "quote": "minutes -carl asked if everyone had reviewed the minutes and were prepared to accept.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business manager reports and invoices",
+   "resolution": "noted; invoices approved for payment",
+   "quote": "continuation hearing was moved to 6/23 per marjorie in the planning office.",
+   "tags": [
+    "Highfield Village",
+    "Lunenburg Village",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:19pm",
+   "quote": "butch made the motion to adjourn, troy seconded. vote taken was unanimous.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Wastewater Capacity Charge Policy draft 5/27/14",
+   "where": "list",
+   "quote": "new handouts- wastewater capacity charge policy draft 5/27/14, draft minutes 4/29/13"
+  },
+  {
+   "name": "Draft minutes 4/29/13",
+   "where": "list",
+   "quote": "new handouts- wastewater capacity charge policy draft 5/27/14, draft minutes 4/29/13"
+  },
+  {
+   "name": "I/1 project status email 5/19/14",
+   "where": "list",
+   "quote": "meeting package: i/1 project status email 5/19/14, sewer extension scope of services email 5/16/14, srf timeline of 5/20/14,"
+  },
+  {
+   "name": "Sewer Extension Scope of Services email 5/16/14",
+   "where": "list",
+   "quote": "meeting package: i/1 project status email 5/19/14, sewer extension scope of services email 5/16/14, srf timeline of 5/20/14,"
+  },
+  {
+   "name": "SRF timeline of 5/20/14",
+   "where": "list",
+   "quote": "meeting package: i/1 project status email 5/19/14, sewer extension scope of services email 5/16/14, srf timeline of 5/20/14,"
+  },
+  {
+   "name": "Generator proposal and email 5/2/14",
+   "where": "list",
+   "quote": "generator proposal and email 5/2/14; draft minutes: 8/13/13, 3/25/14, and 5/13/14;"
+  },
+  {
+   "name": "Draft minutes 8/13/13, 3/25/14, and 5/13/14",
+   "where": "list",
+   "quote": "generator proposal and email 5/2/14; draft minutes: 8/13/13, 3/25/14, and 5/13/14;"
+  },
+  {
+   "name": "SWSS Pump station reports 4/19, 4/26, 5/3 & 5/10/14",
+   "where": "list",
+   "quote": "swss pump station reports 4/19, 4/26, 5/3 & 5/10/14."
+  },
+  {
+   "name": "Weston & Sampson email (I/I status)",
+   "where": "text",
+   "quote": "per weston & sampson email received today"
+  },
+  {
+   "name": "Wright Pierce draft scope",
+   "where": "text",
+   "quote": "kevin had provided a draft scope"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "officer election",
+  "capacity fee",
+  "inflow infiltration",
+  "Whalom",
+  "SWSS contract",
+  "generators",
+  "flow metering",
+  "engineering procurement",
+  "Lakeview Pratt extension",
+  "invoices",
+  "minutes approval",
+  "grease trap fees"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents in meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

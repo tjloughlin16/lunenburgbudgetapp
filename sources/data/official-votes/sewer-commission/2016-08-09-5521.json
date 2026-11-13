@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-08-09",
  "docid": "5521",
@@ -12,47 +12,325 @@
  },
  "votes": [
   {
-   "motion": "Send a letter to the Board of Health and Kabobalicous stating they no longer have the right to discharge into the sewer system",
+   "motion": "Send a letter to the Board of Health and Kabobelicious stating they no longer have the right to discharge into the sewer system.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion: joan p. send a letter to the board of health and kabobalicous that they no longer have right to discharge into the sewer system discussion: the commission discussed what the letter would state. second: john r. vote: unanimous"
+   "quote": "motion: joan p. send a letter to the board of health and kabobalicous that they no longer have right to discharge into the sewer system"
   },
   {
-   "motion": "Approve sewer commission minutes of 8/25/2015",
+   "motion": "Approve sewer commission minutes of 8/25/2015.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed unanimous (Joan P. abstained)",
    "procedural": true,
    "quote": "motion - john r. to approve sewer commission minutes of 8/25/2015 second - carl l. vote - unanimous (joan p. abstained)"
   },
   {
-   "motion": "Approve sewer commission minutes of 9/15/15",
+   "motion": "Approve sewer commission minutes of 9/15/15.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed unanimous (Joan P. abstained)",
    "procedural": true,
    "quote": "motion - john r. to approve sewer commission minutes of 9/15/15 second - carl l. vote - unanimous (joan p. abstained)"
   },
   {
-   "motion": "Approve joint meeting minutes of 7/19/16",
+   "motion": "Approve joint meeting minutes of 7/19/16.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "motion - joan p. to approve joint meeting minutes of 7/19/16 second: john r. vote: unanimous"
   },
   {
-   "motion": "Approve sewer commission minutes of 7/26/16",
+   "motion": "Approve sewer commission minutes of 7/26/16.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "motion: joan p. to approve sewer commission minutes of 7/26/16 second: john r. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of scanned minutes (macOS Vision)",
- "cost_usd": 0.1081545
+ "note": "OCR text from a macOS Vision scan; some words are garbled (for example \"form\" for \"from\", \"Kabobalicous\" vs \"Kabobelicious\", \"Assistan\"). No roll call or attendance list, so attendance status is inferred only from participation. No adjournment time or vote to adjourn recorded. No public comment recorded. The \"Upcoming Sewer Commission Activities\" heading has no content under it. Page 2 signature is garbled. No dollar figures appear anywhere in the text.",
+ "cost_usd": 0.00627562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion - joan p. to approve joint meeting minutes of 7/19/16 second: john r. vote: unanimous"
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: joan p. send a letter to the board of health and kabobalicous that they no longer have right to discharge into the sewer system"
+  },
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl asked john if he would agree to be the liaison to the water department. john agreed to do so."
+  },
+  {
+   "name": "Barb L.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "barb l. will expedite a report form wind river and send a letter to bootlegger's regarding repair."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistan",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb L. will expedite a report from Wind River and send a letter to Bootlegger's regarding repair of the crack in the tank.",
+   "quote": "barb l. will expedite a report form wind river and send a letter to bootlegger's regarding repair."
+  },
+  {
+   "decision": "Ratta, Sheldon, Wind River and Small Water Systems Services will be contacted for grease trap external inspection quotes.",
+   "quote": "ratta, sheldon, wind river and small water systems services will be contacted."
+  },
+  {
+   "decision": "Wright Pierce and Weston and Sampson will be asked to discuss with the Commission and provide quotes; Flow Assessment will be contacted for more insight, on inflow/outflow.",
+   "quote": "wright pierce and weston and sampson will be asked to discuss with commission and for quotes."
+  },
+  {
+   "decision": "John R. agreed to serve as the Commission's liaison to the Water Department (Lunenburg Water District outreach).",
+   "quote": "carl asked john if he would agree to be the liaison to the water department. john agreed to do so."
+  },
+  {
+   "decision": "The Fitchburg invoice was approved by the Commission (no motion recorded).",
+   "quote": "there was one from fitchburg that was approved by the commission."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SWSS invoice follow-up",
+   "what_was_recorded": "The Commission discussed the SWSS invoice and the issues still of concern; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the invoice and the issues that were still of concern."
+  },
+  {
+   "topic": "Manhole cover repair cost (I/I reduction)",
+   "what_was_recorded": "The Commission discussed the cost of repairing manhole covers and whether repair brings a gain; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the cost of repairing manhole covers and if there is a gain in doing so."
+  },
+  {
+   "topic": "Grease trap external inspections",
+   "what_was_recorded": "The Commission discussed getting quotes for external grease trap inspections; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "external inspections rfq - the commission discussed getting quotes."
+  },
+  {
+   "topic": "SRF project betterment calculations",
+   "what_was_recorded": "A spreadsheet of calculated betterments was reviewed and discussed; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a spreadsheet of calculated betterments was reviewed and discussed."
+  },
+  {
+   "topic": "SRF project final cost reporting",
+   "what_was_recorded": "Final cost reporting has not yet been completed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "final cost reporting - this has not yet been completed."
+  },
+  {
+   "topic": "Business manager report - invoices and billing",
+   "what_was_recorded": "One Fitchburg invoice was approved; Q1 billing has not been completed; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "business manager report - invoices - there was one from fitchburg that was approved by the commission."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Pump out at Bootlegger's and tank crack",
+   "resolution": "discussed; Barb L. to get report and send letter",
+   "quote": "john r. attended the pump out at bootlegger's and gave the commission a summary.",
+   "tags": [
+    "Bootlegger's",
+    "tank crack",
+    "pump out"
+   ]
+  },
+  {
+   "topic": "Meeting logistics",
+   "resolution": "discussed, no action",
+   "quote": "the commission discussed meeting earlier and sitting at the table as oppose to the stage for the televised",
+   "tags": [
+    "meetings",
+    "televised"
+   ]
+  },
+  {
+   "topic": "Grease trap program - external inspections RFQ",
+   "resolution": "quotes to be sought from four firms",
+   "quote": "grease trap program - external inspections rfq - the commission discussed getting quotes.",
+   "tags": [
+    "grease trap",
+    "RFQ"
+   ]
+  },
+  {
+   "topic": "SWSS invoice follow-up",
+   "resolution": "discussed; Time and Materials spreadsheet handed out",
+   "quote": "the commission discussed the invoice and the issues that were still of concern.",
+   "tags": [
+    "SWSS",
+    "invoice"
+   ]
+  },
+  {
+   "topic": "SWSS time and materials",
+   "resolution": "no update",
+   "quote": "swss time &materials - there is no update yet.",
+   "tags": [
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Kabobelicious non-compliance",
+   "resolution": "motion passed unanimously to send letter",
+   "quote": "motion: joan p. send a letter to the board of health and kabobalicous that they no longer have right to discharge into the sewer system",
+   "tags": [
+    "Kabobelicious",
+    "discharge",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "I/I reduction - prioritized list of operations remediation",
+   "resolution": "discussed; manhole cover repair cost and gain considered",
+   "quote": "the commission discussed the cost of repairing manhole covers and if there is a gain in doing so.",
+   "tags": [
+    "inflow and infiltration",
+    "manhole covers"
+   ]
+  },
+  {
+   "topic": "Inflow/outflow data review and action plan",
+   "resolution": "discussed; firms asked for quotes and input",
+   "quote": "wright pierce and weston and sampson will be asked to discuss with commission and for quotes.",
+   "tags": [
+    "flow meters",
+    "billing comparison",
+    "inflow"
+   ]
+  },
+  {
+   "topic": "Pump stations",
+   "resolution": "reports reviewed, no issues; new-member tour discussed",
+   "quote": "the reports were reviewed and no issues were noted.",
+   "tags": [
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Outreach to Lunenburg Water District",
+   "resolution": "John R. agreed to be liaison",
+   "quote": "carl asked john if he would agree to be the liaison to the water department. john agreed to do so.",
+   "tags": [
+    "water district",
+    "liaison"
+   ]
+  },
+  {
+   "topic": "SRF project - betterment calculation work",
+   "resolution": "discussed; workshop with Weston and Sampson to be scheduled",
+   "quote": "a spreadsheet of calculated betterments was reviewed and discussed.",
+   "tags": [
+    "SRF",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved four sets of minutes",
+   "quote": "minutes - minutes for 8/25/15, 9/15/15, 7/19/16 and 7/26/16 were reviewed by the commission.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "Fitchburg invoice approved; one permit to connect; Q1 billing not complete",
+   "quote": "business manager report - invoices - there was one from fitchburg that was approved by the commission.",
+   "tags": [
+    "invoices",
+    "permits",
+    "billing"
+   ]
+  },
+  {
+   "topic": "SWSS O&M contract",
+   "resolution": "no action; revised contract reported as signed",
+   "quote": "swss o&m contract- the revised contract, which was approved at last meeting, was signed.",
+   "tags": [
+    "SWSS",
+    "O&M contract"
+   ]
+  },
+  {
+   "topic": "Upcoming Sewer Commission Activities",
+   "resolution": "heading only, no content recorded",
+   "quote": "upcoming sewer commission activities",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Time and Materials Spreadsheet (SWSS)",
+   "where": "text",
+   "quote": "a time and materials spreadsheet was handed out along with the invoice that was discussed."
+  },
+  {
+   "name": "SWSS invoice",
+   "where": "text",
+   "quote": "the commission discussed the invoice and the issues that were still of concern."
+  },
+  {
+   "name": "Updated Q4 flow to billing comparison spreadsheet",
+   "where": "text",
+   "quote": "an updated q4 flow to billing comparison spreadsheet was reviewed and discussed."
+  },
+  {
+   "name": "Spreadsheet of calculated betterments (SRF)",
+   "where": "text",
+   "quote": "a spreadsheet of calculated betterments was reviewed and discussed."
+  },
+  {
+   "name": "Report from Wind River (tank crack)",
+   "where": "text",
+   "quote": "barb l. will expedite a report form wind river and send a letter to bootlegger's regarding repair."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease trap",
+  "inflow and infiltration",
+  "SRF",
+  "minutes approval",
+  "Kabobelicious",
+  "Bootlegger's",
+  "pump stations",
+  "water district",
+  "SWSS",
+  "invoices"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a time and materials spreadsheet was handed out"
+ },
+ "dropped_unquoted_by_field": {}
 }

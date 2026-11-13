@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-11-20",
  "docid": "1197",
@@ -12,15 +12,337 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of November 13, 2013",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 11-13-13.",
+   "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "11-13-13 minutes approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The remainder of the minutes records the committee's preliminary prioritization discussion and priority assignments to capital projects (shown with vote tallies in parentheses, e.g., \"three 1's, two 2's\"), but these are not recorded as formal motions with outcomes. No motion to adjourn was explicitly recorded despite the meeting ending.",
- "cost_usd": 0.0853585
+ "note": "Minutes are clean extracted text, two pages. No motions are recorded for the priority assignments; the priority numbers are reported with member tallies (e.g. \"three 3's, two 2's\") and are recorded here as decisions without a vote. The minutes approval has no mover, seconder or count, so its outcome is recorded as \"passed\" from the word \"approved\". The 11:30 AM adjournment is not recorded as a motion. No documents list, public comment or transfers are printed.",
+ "cost_usd": 0.0059386199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Revise DPW Facilities: shift Senior Center ADA Ramp to FY16, and Sprinkler and HVAC Repairs to FY15 along with tiles and carpeting for Senior Center and Library.",
+   "quote": "revise dpw facilities to shift senior center ada ramp to fy16, and sprinkler and hvac repairs to fy15"
+  },
+  {
+   "decision": "Committee put in a placeholder figure of $50,000 for Senior Center and Library flooring at priority 3, pending DPW prioritization.",
+   "quote": "committee put in a figure of $50,000 for senior center and library flooring with a priority of 3."
+  },
+  {
+   "decision": "Delete Historical Commission's $85,000 Town Hall 5-Yr Renovation Plan and keep only painting at FY15 at $40,000.",
+   "quote": "delete historical commission's $85,000 and put in only painting at fy15 figure of $40,000."
+  },
+  {
+   "decision": "Road rehab ($800,000) deleted; does not come out of the Capital Plan.",
+   "quote": "road rehab- $800,000- delete- does not come out of capital plan"
+  },
+  {
+   "decision": "Town Hall 5-Yr Renovation Plan ($85,000) deleted.",
+   "quote": "town hall 5-yr renovation plan- $85,000- delete"
+  },
+  {
+   "decision": "Committee asked the DPW Director to prioritize Facilities and provide quotes.",
+   "quote": "committee would like dpw director to prioritize facilities and provide quotes."
+  },
+  {
+   "decision": "Town Hall chimney work treated as N/A, previously budgeted in FY2014.",
+   "quote": "town hall chimney- n/a - previously budgeted in fy2014"
+  },
+  {
+   "decision": "Town Hall roof treated as N/A; minor work can be absorbed in the operating budget.",
+   "quote": "town hall roof- n/a - determined minor work can be absorbed in operating budget"
+  },
+  {
+   "decision": "Committee assigned priority numbers to the listed DPW, Fire, Historical Commission, Police and School items, recorded as member tallies; no motion is recorded for these.",
+   "quote": "ritter hvac- $21,000- committee priority of 3 (three 3's, two 2's)"
+  },
+  {
+   "decision": "Committee asked the IT Director to return for discussion and prioritization of both School and Town Technology.",
+   "quote": "committee would like it director to return for discussion/prioritization of both school and town technology."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Center and Library flooring",
+   "what_was_recorded": "Committee put in a placeholder figure of $50,000 at priority 3.",
+   "quote": "committee put in a figure of $50,000 for senior center and library flooring with a priority of 3.",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Town Hall chimney work",
+   "what_was_recorded": "Chimney funds were appropriated for FY14, so are in place if needed.",
+   "quote": "funds for chimney work at town hall were appropriated for fy14 ($18,500), so are in place if needed.",
+   "figures_as_printed": [
+    "$18,500"
+   ]
+  },
+  {
+   "topic": "Historical Commission Town Hall work",
+   "what_was_recorded": "The $85,000 item is deleted and only painting at the FY15 figure of $40,000 is kept.",
+   "quote": "delete historical commission's $85,000 and put in only painting at fy15 figure of $40,000.",
+   "figures_as_printed": [
+    "$85,000",
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Road rehab",
+   "what_was_recorded": "Road rehab item deleted; it does not come out of the Capital Plan.",
+   "quote": "road rehab- $800,000- delete- does not come out of capital plan",
+   "figures_as_printed": [
+    "$800,000"
+   ]
+  },
+  {
+   "topic": "Town Hall 5-Yr Renovation Plan",
+   "what_was_recorded": "Item deleted.",
+   "quote": "town hall 5-yr renovation plan- $85,000- delete",
+   "figures_as_printed": [
+    "$85,000"
+   ]
+  },
+  {
+   "topic": "Marshall Park",
+   "what_was_recorded": "Priority of 2 assigned.",
+   "quote": "marshall park- $37,000- committee priority of 2 (three 2's, one 3).",
+   "figures_as_printed": [
+    "$37,000"
+   ]
+  },
+  {
+   "topic": "Street Sweeper",
+   "what_was_recorded": "Priority of 3 assigned.",
+   "quote": "street sweeper- $180,000- committee priority of 3 (three 3's, two 2's)",
+   "figures_as_printed": [
+    "$180,000"
+   ]
+  },
+  {
+   "topic": "Asphalt Roller",
+   "what_was_recorded": "Priority of 2 assigned.",
+   "quote": "asphalt roller, $35,000- committee priority of 2 (three 2's, two 3's)",
+   "figures_as_printed": [
+    "$35,000"
+   ]
+  },
+  {
+   "topic": "Public Safety Building epoxy floors",
+   "what_was_recorded": "Priority of 1 assigned.",
+   "quote": "public safety building epoxy floors- $12,000- committee priority of 1",
+   "figures_as_printed": [
+    "$12,000"
+   ]
+  },
+  {
+   "topic": "Ritter HVAC",
+   "what_was_recorded": "Priority of 3 assigned.",
+   "quote": "ritter hvac- $21,000- committee priority of 3 (three 3's, two 2's)",
+   "figures_as_printed": [
+    "$21,000"
+   ]
+  },
+  {
+   "topic": "Replace Engine 1 (Fire)",
+   "what_was_recorded": "Priority of 1 assigned; S. Raboin asked how many fires the engine was used at over the past year.",
+   "quote": "replace engine 1- $550,000- committee priority of 1.",
+   "figures_as_printed": [
+    "$550,000"
+   ]
+  },
+  {
+   "topic": "Replace Car 2 (Fire)",
+   "what_was_recorded": "Priority of 2 assigned.",
+   "quote": "replace car 2- $30,000- committee priority of 2.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Town Hall painting (Historical Commission)",
+   "what_was_recorded": "Priority of 3 assigned.",
+   "quote": "town hall painting- $40,000- committee priority of 3 (four 3's, one 2)",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Marked vehicle (Police)",
+   "what_was_recorded": "Priority of 1 assigned.",
+   "quote": "marked vehicle- $46,000- committee priority of 1.",
+   "figures_as_printed": [
+    "$46,000"
+   ]
+  },
+  {
+   "topic": "Rifles, shotguns and shields (Police)",
+   "what_was_recorded": "Priority of 1 assigned.",
+   "quote": "two rifles, two shotguns and three shields- $14,000- committee priority of 1 (four 1's, one 2)",
+   "figures_as_printed": [
+    "$14,000"
+   ]
+  },
+  {
+   "topic": "Speed sign with recording system (Police)",
+   "what_was_recorded": "Priority of 3 assigned.",
+   "quote": "speed sign w/recording system- $17,900- committee priority of 3 (four 3's, one 2)",
+   "figures_as_printed": [
+    "$17,900"
+   ]
+  },
+  {
+   "topic": "Radio infrastructure (Police)",
+   "what_was_recorded": "Priority of 1 assigned.",
+   "quote": "radio infrastructure- $40,000- committee priority of 1 (four 1's, one 2)",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Upgrade control system, Primary School",
+   "what_was_recorded": "Priority of 1.5 assigned.",
+   "quote": "upgrade control system- primary school- $14,000- committee priority of 1.5",
+   "figures_as_printed": [
+    "$14,000"
+   ]
+  },
+  {
+   "topic": "Asbestos abatement Phase 1, THMS",
+   "what_was_recorded": "Priority of 1 assigned.",
+   "quote": "asbestos abatement (ph 1)- thms- $138,000- committee priority of 1",
+   "figures_as_printed": [
+    "$138,000"
+   ]
+  },
+  {
+   "topic": "Shade structure, THMS",
+   "what_was_recorded": "Priority of 3 assigned.",
+   "quote": "shade structure- thms- $41,766- committee priority of 3",
+   "figures_as_printed": [
+    "$41,766"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 11-13-13 minutes",
+   "resolution": "approved",
+   "quote": "11-13-13 minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Preliminary prioritization: DPW facilities, projects and vehicles",
+   "resolution": "priorities assigned; DPW Director asked to prioritize facilities and provide quotes",
+   "quote": "revise dpw facilities to shift senior center ada ramp to fy16, and sprinkler and hvac repairs to fy15",
+   "tags": [
+    "DPW",
+    "facilities",
+    "vehicles",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Fire Department requests",
+   "resolution": "priorities assigned",
+   "quote": "replace engine 1- $550,000- committee priority of 1.",
+   "tags": [
+    "fire",
+    "vehicles"
+   ]
+  },
+  {
+   "topic": "Historical Commission and Town Hall items",
+   "resolution": "painting kept at $40,000; renovation plan deleted; chimney and roof marked N/A",
+   "quote": "town hall painting- $40,000- committee priority of 3 (four 3's, one 2)",
+   "tags": [
+    "Town Hall",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Police Department requests",
+   "resolution": "priorities assigned",
+   "quote": "marked vehicle- $46,000- committee priority of 1.",
+   "tags": [
+    "police",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "School Department requests",
+   "resolution": "priorities assigned",
+   "quote": "asbestos abatement (ph 1)- thms- $138,000- committee priority of 1",
+   "tags": [
+    "schools"
+   ]
+  },
+  {
+   "topic": "IT Director follow-up",
+   "resolution": "IT Director asked to return for discussion and prioritization",
+   "quote": "committee would like it director to return for discussion/prioritization of both school and town technology.",
+   "tags": [
+    "technology",
+    "IT"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital planning",
+  "prioritization",
+  "DPW",
+  "facilities",
+  "fire",
+  "police",
+  "schools",
+  "Town Hall",
+  "technology",
+  "FY14-FY16 capital plan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-11-10",
  "docid": "5496",
@@ -12,39 +12,362 @@
  },
  "votes": [
   {
-   "motion": "Accept the Change of Use for 339 Electric Ave, which included the Petlift Machine",
+   "motion": "To accept the Change of Use for 339 Electric Ave, which included the Petlift Machine.",
    "moved_by": "Mike N.",
    "seconded_by": "Troy D.",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: mike n. seconded: troy d. to accept the change of use for 339 electric ave, which included the petlift machine vote unanimous"
   },
   {
-   "motion": "Assess a privilege fee in the sum of $11,551.47 for 339 Electric Avenue",
+   "motion": "To assess a privilege fee in the sum of $11,551.47 for 339 Electric Avenue.",
    "moved_by": "Mike N.",
    "seconded_by": "Sue B.",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion: mike n. to assess a privilege fee in the sum of $11,551.47 seconded: sue b. vote unanimous"
   },
   {
-   "motion": "Approve minutes from 11/3 Special Meeting",
+   "motion": "To approve minutes from the 11/3 Special Meeting.",
    "moved_by": "Troy D.",
    "seconded_by": "John R.",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: troy d. to approve minutes from 11/3 special meeting second: john r. vote: unanimous"
   },
   {
-   "motion": "Adjourn at 9:34 pm",
+   "motion": "To adjourn at 9:34 pm.",
    "moved_by": "Troy D.",
    "seconded_by": "Mike N.",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: troy d. to adjourn at 9:34 pm second: mike n. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned document (macOS Vision). Some OCR errors visible in other sections of the minutes, but votes are clearly readable.",
- "cost_usd": 0.09440849999999999
+ "note": "OCR text (macOS Vision) of minutes; page 1 begins mid-sentence and several words are garbled (e.g., 'racility', 'tilter', 'Minutes Assistar', 'mily Lehto'), so the clerk's name is truncated as printed. No attendance roll, no public comment section, and no documents list are printed. Votes are printed as 'Unanimous' without numeric counts, so outcome is recorded as 'passed'. The grinder pump task order and CWMP proposal are described as approved with no motion or vote recorded, so they appear as decisions. Board members' roles and attendance are not stated.",
+ "cost_usd": 0.00797172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Stan Dill",
+   "role": "from Twin City Baptist Church",
+   "status": "present",
+   "quote": "stan dill and janna moritz from twin city baptist church came to request a waiver from grease trap requirements."
+  },
+  {
+   "name": "Janna Moritz",
+   "role": "from Twin City Baptist Church",
+   "status": "present",
+   "quote": "stan dill and janna moritz from twin city baptist church came to request a waiver from grease trap requirements."
+  },
+  {
+   "name": "Peter Dulchinos",
+   "role": "Meadowwoods Trailer Park",
+   "status": "present",
+   "quote": "peter dulchinos came before the commission to request a waiver for reconnection fees."
+  },
+  {
+   "name": "Nick",
+   "role": "not stated",
+   "status": "present",
+   "quote": "nick explained that a standard drain is used and very little hair gets"
+  },
+  {
+   "name": "Mike N.",
+   "role": "Commission member as printed (not stated)",
+   "status": "not stated",
+   "quote": "motion: mike n. seconded: troy d. to accept the change of use for 339 electric ave, which included the petlift machine vote unanimous"
+  },
+  {
+   "name": "Troy D.",
+   "role": "Commission member as printed (not stated)",
+   "status": "not stated",
+   "quote": "motion: troy d. to adjourn at 9:34 pm second: mike n. vote: unanimous"
+  },
+  {
+   "name": "Sue B.",
+   "role": "Commission member as printed (not stated)",
+   "status": "not stated",
+   "quote": "seconded: sue b. vote unanimous"
+  },
+  {
+   "name": "John R.",
+   "role": "Commission member as printed (not stated)",
+   "status": "not stated",
+   "quote": "second: john r. vote: unanimous"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "mily lehto, minutes assistar"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Twin City Baptist grease trap matter put on hold until the disconnect is resolved and Twin City is compliant; the Commission will decide on the fees later and notify Twin City in writing.",
+   "quote": "the commission agreed that everything would be put on hold until this is resolved and twin city becomes compliant."
+  },
+  {
+   "decision": "Disconnected 3-bay sink cannot be kept onsite and must be moved to storage; Twin City must notify the Commission and get the plumbing inspector to sign off on the plumbing permit.",
+   "quote": "the commission noted that the disconnected 3bay sink cannot be kept onsite and must be moved to storage."
+  },
+  {
+   "decision": "No interest in revisiting the Meadowwoods reconnection fee for Lot 26; no waiver granted.",
+   "quote": "the commission agreed that they have no interest in revisiting the reconnection fee."
+  },
+  {
+   "decision": "The privilege fee for 339 Electric Avenue will be voted on at the same time as the change of use.",
+   "quote": "the commission decided to vote at the same time to assess the privilege fee for 339 electric avenue for the additional usage."
+  },
+  {
+   "decision": "Pratt/Lakeview connection permit to be updated with pump specifications, and the manufacturer and model number added.",
+   "quote": "the permit still needs to be updated with the pump specifications and the commission would like to make sure the manufacturer and model number are also added to the permit."
+  },
+  {
+   "decision": "Grinder pump task order from Wright Pierce approved (no motion recorded).",
+   "quote": "the sewer commission approved the task order for $2000."
+  },
+  {
+   "decision": "CWMP update proposal approved (no motion recorded) and to be put on the ATM.",
+   "quote": "the proposal was discussed and would cost $19000. it was approved by the commission and it will be put on the atm for"
+  },
+  {
+   "decision": "Highfield Village public hearing continued to January 11, 2016; whether it is assessed privilege fees or betterments to go on a future agenda.",
+   "quote": "the highfield village hearing will be continued to january 11, 2016."
+  },
+  {
+   "decision": "Mass 1 pump station ceiling crack to be checked to see whether insurance will cover it.",
+   "quote": "mass 1 has a crack in the ceiling and it will be checked to see if insurance will cover it."
+  },
+  {
+   "decision": "Agreed that all data needed for the billed-versus-flow gallons question was present.",
+   "quote": "it was agreed that all needed data was present."
+  },
+  {
+   "decision": "Business systems item: will be advertised to town employees to add hours for minute-taking help.",
+   "quote": "it will be advertised to town employees to add hours."
+  },
+  {
+   "decision": "Irrigation meter new-technology item deferred to the next meeting.",
+   "quote": "irrigation meter discussion-new technology - will be discussed at next meeting."
+  },
+  {
+   "decision": "EOCD grant matter to be followed up on.",
+   "quote": "there is no other update. the eocd will be followed up on."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "339 Electric Ave privilege fee",
+   "what_was_recorded": "Commission moved to assess a privilege fee for the additional usage at 339 Electric Avenue.",
+   "figures_as_printed": [
+    "$11,551.47"
+   ],
+   "quote": "to assess a privilege fee in the sum of $11,551.47 seconded: sue b. vote unanimous"
+  },
+  {
+   "topic": "Wright Pierce grinder pump task order",
+   "what_was_recorded": "Task order for the grinder pump approved at a stated price.",
+   "figures_as_printed": [
+    "$2000"
+   ],
+   "quote": "the sewer commission approved the task order for $2000."
+  },
+  {
+   "topic": "Wright Pierce CWMP update proposal",
+   "what_was_recorded": "CWMP update proposal discussed and approved at a stated cost, to go on the ATM.",
+   "figures_as_printed": [
+    "$19000"
+   ],
+   "quote": "the proposal was discussed and would cost $19000."
+  },
+  {
+   "topic": "Invoices for approval",
+   "what_was_recorded": "Two invoices listed: Kopelman and Paige invoice and CJP Pay Req. #3.",
+   "figures_as_printed": [
+    "$1,139",
+    "$136,153.09"
+   ],
+   "quote": "one from kopelman and paige for $1,139 and another invoice from cjp for"
+  },
+  {
+   "topic": "CJP Pay Req. #3",
+   "what_was_recorded": "CJP pay requisition number 3 listed for approval.",
+   "figures_as_printed": [
+    "$136,153.09"
+   ],
+   "quote": "pay req. #3 in the amount of $136,153.09."
+  },
+  {
+   "topic": "Meadowwoods reconnection fee",
+   "what_was_recorded": "Reconnection fee will be charged for Lot 26 because the old trailer was removed and a new one brought in; waiver requested and refused. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "but because lot 26 had the old trailer removed and a new one brought in there will be a reconnection fee."
+  },
+  {
+   "topic": "Twin City Baptist fees",
+   "what_was_recorded": "Applicant asked what to do about the fees while submitting monthly reports; fees put on hold. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "janna confirmed that until then they would submit reports monthly and she asked what to do about the fees."
+  },
+  {
+   "topic": "Pratt/Lakeview paving cost",
+   "what_was_recorded": "Paving response: most residents contacted did not respond, and most of those who did did not want paving to be their cost. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "out of the eighty residents contacted only eleven have responded and of that eight did not want paving to be their cost."
+  },
+  {
+   "topic": "Highfield Village privilege fees or betterments",
+   "what_was_recorded": "Discussed whether Highfield Village would be assessed privilege fees or betterments; to a future agenda. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "whether they would be assessed privilege fees or betterments."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Change of Use, 339 Electric Ave (Petlift)",
+   "resolution": "approved change of use; privilege fee of $11,551.47 assessed",
+   "quote": "to accept the change of use for 339 electric ave, which included the petlift machine"
+  },
+  {
+   "topic": "Twin City Baptist request for waiver - grease trap non-compliance fees",
+   "resolution": "fees and matter on hold until compliant",
+   "quote": "twin city baptist request for waiver - grease trap non-compliance fees"
+  },
+  {
+   "topic": "Meadowwoods Trailer Park request for waiver - reconnection fee",
+   "resolution": "no waiver; no interest in revisiting fee",
+   "quote": "peter dulchinos, meadowwoods trailer park- request for waiver - reconnection fee"
+  },
+  {
+   "topic": "Pratt/Lakeview project status - connections and paving response",
+   "resolution": "noted; permit to be updated",
+   "quote": "pratt/lakeview project status- connections, paving response"
+  },
+  {
+   "topic": "Pleasantview Ave project schedule",
+   "resolution": "noted; construction to start November 12",
+   "quote": "pleasantview ave project schedule - construction is to commence on november 12th."
+  },
+  {
+   "topic": "Wright Pierce contracts (grinder pump, CWMP update)",
+   "resolution": "task order approved; CWMP proposal approved to go on ATM",
+   "quote": "wright pierce - contracts - 1) grinder pump - the sewer commission approved the task order for $2000."
+  },
+  {
+   "topic": "Flow rate/metering",
+   "resolution": "discussed; data present",
+   "quote": "flow rate/metering - the commission discussed ways to get a handle on number of gallons billed versus gallons of flow."
+  },
+  {
+   "topic": "Business systems and process improvement",
+   "resolution": "discussed; advertise for help with minutes",
+   "quote": "business systems and process improvement - it was discussed brining someone else in to do the minutes."
+  },
+  {
+   "topic": "Irrigation meter discussion - new technology",
+   "resolution": "continued to next meeting",
+   "quote": "irrigation meter discussion-new technology - will be discussed at next meeting."
+  },
+  {
+   "topic": "Permits to connect",
+   "resolution": "noted; nine permits",
+   "quote": "permits to connect - there are nine permits to connect."
+  },
+  {
+   "topic": "Minutes of 11/3 special meeting",
+   "resolution": "approved",
+   "quote": "motion: troy d. to approve minutes from 11/3 special meeting second: john r. vote: unanimous"
+  },
+  {
+   "topic": "Pump station reports review",
+   "resolution": "noted; Mass 1 ceiling crack to be checked",
+   "quote": "pump station reports review -weeks ending 10/24, 10/31/15"
+  },
+  {
+   "topic": "Business Manager report (public hearing notices, invoices)",
+   "resolution": "noted; invoices listed for approval",
+   "quote": "business manager report"
+  },
+  {
+   "topic": "Website updates",
+   "resolution": "no update",
+   "quote": "website updates - no update."
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "next regular meeting set for November 24, 2015",
+   "quote": "there will be a regular meeting at town hall on november 24, 2015 at 7pm."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:34 pm",
+   "quote": "motion: troy d. to adjourn at 9:34 pm second: mike n. vote: unanimous"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Peer review (sewer comments)",
+   "where": "text",
+   "quote": "there were no other concerns, relative to sewer, in the peer review."
+  },
+  {
+   "name": "Pump station reports, weeks ending 10/24 and 10/31/15",
+   "where": "text",
+   "quote": "pump station reports review -weeks ending 10/24, 10/31/15 - maintenance at the francis street and mass 1 pump stations"
+  },
+  {
+   "name": "Minutes of 11/3 Special Meeting",
+   "where": "text",
+   "quote": "the special meeting from november 3rd was discussed and the minutes reviewed."
+  },
+  {
+   "name": "Public Hearing Notices",
+   "where": "text",
+   "quote": "public hearing notices-the highfield village hearing will be continued to january 11, 2016."
+  },
+  {
+   "name": "Invoice from Kopelman and Paige ($1,139)",
+   "where": "text",
+   "quote": "one from kopelman and paige for $1,139 and another invoice from cjp for"
+  },
+  {
+   "name": "CJP Pay Req. #3",
+   "where": "text",
+   "quote": "pay req. #3 in the amount of $136,153.09."
+  },
+  {
+   "name": "Pratt/Lakeview connection permits (pump specifications, manufacturer and model)",
+   "where": "text",
+   "quote": "the permit still needs to be updated with the pump specifications and the commission would like to make sure the manufacturer and model number are also added to the permit."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "privilege fee",
+  "change of use",
+  "grease trap",
+  "reconnection fee",
+  "waiver",
+  "Pratt/Lakeview",
+  "paving",
+  "Wright Pierce",
+  "CWMP",
+  "grinder pump",
+  "permits to connect",
+  "invoices",
+  "pump stations",
+  "public hearings",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-03-28",
  "docid": "3599",
@@ -12,47 +12,228 @@
  },
  "votes": [
   {
-   "motion": "approve minutes signed 3-14-11",
-   "moved_by": "Ms. Bilotta",
-   "seconded_by": "Mr. Bodkin Jr.",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. bodkin jr."
-  },
-  {
-   "motion": "approve executive session minutes from 3-14-11",
-   "moved_by": "Ms. Bilotta",
-   "seconded_by": "Mr. Bodkin Jr.",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. bodkin jr."
-  },
-  {
-   "motion": "approve executive session minutes from 3-21-11",
+   "motion": "Approve minutes of 3-21-11 (motion by Mr. Saiia, second by Mr. Bodkin Jr.); no result recorded.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, mr. saiia, second, mr. bodkin jr."
+   "quote": "3-21-11, motion, mr. saiia, second, mr. bodkin jr."
   },
   {
-   "motion": "accept extension for Highfield Village on Northfield Road to June 30, 2011",
+   "motion": "Accept extension for Highfield Village on Northfield Road, extending approval to June 30, 2011.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion to accept extension for highfield village on northfield road , ms. bilotta, second, mr. saiia. extension approval to june 30, 2011."
+   "quote": "motion to accept extension for highfield village on northfield road , ms. bilotta, second, mr. saiia."
   },
   {
-   "motion": "adjourn to Executive Session, not to return to General Session",
+   "motion": "Adjourn to Executive Session, not to return to General Session.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion to adjourn to executive session, not to return to general session, ms. bilotta, second, mr. saiia, roll call vote, mr. saiia, aye; mr. lockwood, aye; mr. bodkin jr., aye; ms. bilotta, aye; mr. bakaysa, aye."
+   "quote": "motion to adjourn to executive session, not to return to general session, ms. bilotta, second, mr. saiia, roll call vote, mr. saiia, aye; mr. lockwood, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1329865
+ "note": "Text is extracted with spacing errors (e.g. 'Rober t J.', 'Landin g'); quotes were copied with spacing collapsed where the source has doubled spaces. The minutes-approval line lists motions for 3-14-11 and 3-21-11 with no result, so only the 3-21-11 motion is recorded as a vote. The adjournment line at the end records no motion. No public comment section is printed. The Highfield extension is recorded as an approval with no vote count. Dollar figure appears only as '1.5 million' with no dollar sign.",
+ "cost_usd": 0.00730242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia, mbr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin jr., nathan j. lockwood, marion m."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "David LeRoy",
+   "role": "presenter, David Ross Associates",
+   "status": "present",
+   "quote": "david ross associates - david leroy presented."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "ANR applicant, 125 Howard",
+   "status": "not stated",
+   "quote": "anr - harry kubetz, 125 howard, david ross associates - david leroy presented."
+  },
+  {
+   "name": "Mr. Caselden",
+   "role": "",
+   "status": "not stated",
+   "quote": "mr. caselden is seeking invoices pertaining to water and sewer ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director will discuss the Emerald Place lease-to-own tax question with the Assessors.",
+   "quote": "director will discuss with the assessors."
+  },
+  {
+   "decision": "Superintendent Calmes will determine whether the school-age children noted for Emerald Place are already in the school system.",
+   "quote": "superintendent calmes will determine if noted children are already in the system."
+  },
+  {
+   "decision": "Mr. Caselden was directed to the correct department for Tri Town Landing water and sewer invoices.",
+   "quote": "he was directed to the correct department."
+  },
+  {
+   "decision": "ANR (Harry Kubetz, 125 Howard) will be sent through the accepted procedure to departments.",
+   "quote": "anr will be sent through the accepted procedure to departments."
+  },
+  {
+   "decision": "Mr. Bodkin will compose a letter to the Board of Selectmen about the unoccupied gas station at 925 Mass Avenue.",
+   "quote": "mr . bodkin will compose a letter addressing the board of selectmen.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW Building Committee general contractor bids",
+   "what_was_recorded": "Vice Chair Bilotta reported the 1.5 million budget and that sub-bids came in higher than expected.",
+   "figures_as_printed": [
+    "1.5 million"
+   ],
+   "quote": "noted was the 1.5 million budget and sub-bids were higher than expected."
+  },
+  {
+   "topic": "Emerald Place lease-to-own and tax revenues",
+   "what_was_recorded": "Questions were raised on how the lease-to-own procedure will affect tax revenues; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "how it will pertain to tax revenues ."
+  },
+  {
+   "topic": "Tri Town Landing water and sewer invoices",
+   "what_was_recorded": "Mr. Caselden sought invoices pertaining to water and sewer charges; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "mr. caselden is seeking invoices pertaining to water and sewer ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions recorded for prior minutes; no result stated",
+   "quote": "3-21-11, motion, mr. saiia, second, mr. bodkin jr."
+  },
+  {
+   "topic": "Appointment: ANR, 125 Howard (Harry Kubetz)",
+   "resolution": "sent through accepted procedure to departments",
+   "quote": "anr will be sent through the accepted procedure to departments."
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, DPW Building Committee, Capital Planning Committee)",
+   "resolution": "reports received; no action",
+   "quote": "noted was the 1.5 million budget and sub-bids were higher than expected."
+  },
+  {
+   "topic": "Planning Director's reports and new business (Summer Street, Green Community Task Force, public hearing reminder)",
+   "resolution": "reports received; no action",
+   "quote": "public hearing, 4-11-11, zoning articles - chair reminded board of public hearing"
+  },
+  {
+   "topic": "Development status reports (Highfield Village, Emerald Place, Tri Town Landing)",
+   "resolution": "Highfield Village extension approved to June 30, 2011; others no new action",
+   "quote": "motion to accept extension for highfield village on northfield road , ms. bilotta, second, mr. saiia."
+  },
+  {
+   "topic": "Unfinished/old business: Annual Town Meeting and CLURPA",
+   "resolution": "noted Town Meeting date; CLURPA fact sheet reviewed, Board asked to review outline",
+   "quote": "director submitted a fact sheet to the board on the comprehensive land use reform and partnership act (clurpa)."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "reviewed; no action",
+   "quote": "april 11, planning board meeting & public hearings, town hall"
+  },
+  {
+   "topic": "Data information",
+   "resolution": "reviewed",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing"
+  },
+  {
+   "topic": "Member information: 925 Mass Ave. unoccupied gas station",
+   "resolution": "workshop with Board of Selectmen suggested; Bodkin to write letter",
+   "quote": "mr . bodkin will compose a letter addressing the board of selectmen.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "voted to adjourn to executive session, not returning to general session",
+   "quote": "motion to adjourn to executive session, not to return to general session, ms. bilotta, second, mr. saiia, roll call vote, mr. saiia, aye; mr. lockwood, aye"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45 PM; no motion recorded",
+   "quote": "adjournment: 7:45 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data folder containing items of interest not on agenda",
+   "where": "list",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing"
+  },
+  {
+   "name": "CLURPA fact sheet (Comprehensive Land Use Reform and Partnership Act)",
+   "where": "list",
+   "quote": "director submitted a fact sheet to the board on the comprehensive land use reform and partnership act (clurpa)."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "ANR",
+  "development status",
+  "Highfield Village",
+  "Emerald Place",
+  "Tri Town Landing",
+  "Town Meeting",
+  "CLURPA",
+  "green energy",
+  "925 Mass Ave",
+  "executive session",
+  "master plan"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "data folder containing items of interest not on agenda presented to members for viewing"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-05-24",
  "docid": "520",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the meeting on April 26, 2016",
+   "motion": "Approve the minutes of the 4-26-16 meeting as read.",
    "moved_by": "McGrath",
    "seconded_by": "LaVeck",
    "outcome": "passed",
@@ -20,15 +20,147 @@
    "quote": "mcgrath made a motion to approve the minutes as read, and laveck seconded the motion. the board voted approval."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:50 PM.",
    "moved_by": "LaVeck",
    "seconded_by": "Corcoran",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn: laveck, second: corcoran, unanimous vote to adjourn at 8:50 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The tabling of the unapproved minutes from 3-29-16 was not counted as a vote, as the minutes record only that McGrath tabled the approval without recording a vote on the tabling motion.",
- "cost_usd": 0.0817145
+ "note": "Minutes name no dollar figures or money matters, and no public comment speakers. Attendance is taken from the header roster and from members' named participation; the minutes state no explicit roll call. The vote on the 4-26-16 minutes records no count. The adjournment vote is recorded as unanimous without a count.",
+ "cost_usd": 0.00394552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair: richard mcgrath vice chair: jim laveck"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "laveck seconded the motion. the board voted approval."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk; recording clerk",
+   "status": "present",
+   "quote": "respectfully submitted, cullen dwyer, recording clerk"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "motion to adjourn: laveck, second: corcoran, unanimous vote to adjourn at 8:50 pm"
+  },
+  {
+   "name": "Matthew Kehrer",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member: matthew kehrer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the unapproved minutes from the 3-29-16 meeting was tabled until the next meeting.",
+   "quote": "mcgrath tabled their approval until the next meeting."
+  },
+  {
+   "decision": "Richard (McGrath) will prepare forms for Certificate to Alter applications to be reviewed and approved before the next meeting.",
+   "quote": "richard will prepare forms for applications to be reviewed and approved before the next meeting."
+  },
+  {
+   "decision": "The board agreed to read the design guidelines over and discuss them at the next meeting.",
+   "quote": "the board agreed to read these over and discuss them at the next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "4-26-16 minutes approved; 3-29-16 minutes tabled",
+   "quote": "minutes from the meeting on 4-26-16 were reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment: none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "no action; APD bylaw operational, applications to begin",
+   "quote": "the apdc will begin accepting applications for certificates to alter.",
+   "tags": [
+    "bylaw",
+    "certificate to alter",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "discussed flow chart and design guidelines; continued to next meeting",
+   "quote": "the board reviewed the latest draught of the flow chart prepared by corcoran.",
+   "tags": [
+    "flow chart",
+    "stone walls",
+    "design guidelines",
+    "bylaw sections 7 and 8",
+    "section 9"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:50 PM",
+   "quote": "unanimous vote to adjourn at 8:50 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Design guidelines contributed by members under section 9 of the bylaw (roofs, cellars and foundations, temporary buildings, alternate versions of sections 1 and 2)",
+   "where": "list",
+   "quote": "hard copies were distributed covering topics of roofs, cellars and foundations, temporary buildings, and alternate versions of sections 1 and 2 of the guidelines."
+  },
+  {
+   "name": "APD bylaw",
+   "where": "text",
+   "quote": "the apd bylaw is now operational."
+  },
+  {
+   "name": "Flow chart, latest draft prepared by Corcoran",
+   "where": "text",
+   "quote": "the board reviewed the latest draught of the flow chart prepared by corcoran."
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "certificate to alter",
+  "APD bylaw",
+  "design guidelines",
+  "flow chart",
+  "stone walls",
+  "demolition",
+  "applications",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "hard copies were distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

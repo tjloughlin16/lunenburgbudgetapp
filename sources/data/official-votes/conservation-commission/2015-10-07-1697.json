@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-10-07",
  "docid": "1697",
@@ -12,31 +12,320 @@
  },
  "votes": [
   {
-   "motion": "approve the Notice of Intent for 338 Sunset Lane",
-   "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the 338 Sunset Lane Notice of Intent continuation (Cole), with the conditions listed; the motion text is not printed.",
    "procedural": false,
+   "outcome": "passed unanimous (count not printed)",
    "quote": "contour will not extend into beach area. approved unanimous"
   },
   {
-   "motion": "issue a Negative Determination of Applicability for 50 Sunset Lane",
-   "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the 50 Sunset Lane Request for Determination of Applicability (Luck), adding wattles at the 30' No Touch Zone; the motion text is not printed.",
    "procedural": false,
-   "quote": "add wattles at 30' no touch zone, approved negative 3"
+   "outcome": "Approved Negative 3 (as printed; count unclear)",
+   "quote": "carl presented. add wattles at 30' no touch zone, approved negative 3"
   },
   {
-   "motion": "grant annual permission for the Lunenburg Snow Riders to use conservation property trails for snowmobiles",
-   "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Grant the Lunenburg Snow Riders annual permission for use of specific trails for snowmobiles, rather than perpetual permission.",
    "procedural": false,
+   "outcome": "passed unanimous (count not printed)",
    "quote": "annual permission approved unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision); outcome on second vote reads \"Approved Negative 3\" which may indicate a Negative Determination but phrasing is unclear. Names of movers and seconders not recorded in minutes.",
- "cost_usd": 0.11525149999999999
+ "note": "Text is OCR output with garbled passages (e.g., 'wil be ta sing the min', stray line 'aman Sunday, October 1e,'). No attendance roster is printed, so attendee status is inferred only from presenting or speaking. Three votes are recorded only as outcomes ('Approved Unanimous', 'Approved Negative 3'); no motions, movers, or seconders are printed. 'Approved Negative 3' is unclear and is recorded as printed. The minutes approval list and the adjournment have no recorded vote. The 701 vs 713 Reservoir Road address correction appears as printed. Lines are merged in places, so some item-to-result attachments are inferred from position.",
+ "cost_usd": 0.00776212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Christopher",
+   "role": "representing the applicant, Christopher Environmental Associates (324 Mulpus Road NOI)",
+   "status": "present",
+   "quote": "tom christopher presented."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "of Whitman & Bingham Associates LLC, representing the applicant (338 Sunset Lane)",
+   "status": "present",
+   "quote": "chris mackenzie presented."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "applicant (50 Sunset Lane RDA)",
+   "status": "present",
+   "quote": "carl presented."
+  },
+  {
+   "name": "Al Futterman",
+   "role": "NRWA",
+   "status": "present",
+   "quote": "7:45 pm ~ al futterman ~ nrwa ~ presentation"
+  },
+  {
+   "name": "Mel Bertram",
+   "role": "Lunenburg Snow Riders presenter",
+   "status": "present",
+   "quote": "mel bertram presented."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "joanna bilotta-simeone stated that she wil be ta sing the min"
+  },
+  {
+   "name": "Justine Morgan",
+   "role": "member of the public, 701 Reservoir Road",
+   "status": "present",
+   "quote": "justine morgan of 701 reservoir road wanted to correct the"
+  },
+  {
+   "name": "Alton/Elizabeth Cole",
+   "role": "applicant, Cole Family Really Trust (338 Sunset Lane NOI)",
+   "status": "not stated",
+   "quote": "on an notice of intent filed by alton/elizabeth cole of cole family really trust"
+  },
+  {
+   "name": "Ron Wilson",
+   "role": "applicant on a previous NOI (713 Reservoir Road correction)",
+   "status": "not stated",
+   "quote": "address on a previous noi for ron wilson. it should be 713 not 701."
+  },
+  {
+   "name": "Matt",
+   "role": "named with assigned follow-up actions (first name only as printed)",
+   "status": "not stated",
+   "quote": "matt and jan will work on enforcement order"
+  },
+  {
+   "name": "Todd",
+   "role": "named as drawing up a parking plan (first name only as printed)",
+   "status": "not stated",
+   "quote": "todd will draw up plan for parking area on holman street."
+  },
+  {
+   "name": "Kerry",
+   "role": "requested a ConCom member for the Storm Water Task Force",
+   "status": "not stated",
+   "quote": "kerry has requested a member of the concom serve on the newly formed storm water task force."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hearing on the 324 Mulpus Road Notice of Intent (Christopher) continued until November 18th at 7:00 PM.",
+   "quote": "continued until november 18th at 7:00 pm."
+  },
+  {
+   "decision": "Luck (392 Sunset Lane) will file a Request for Determination of Applicability.",
+   "quote": "392 sunset lane ~ luck ~ will file an rda"
+  },
+  {
+   "decision": "Matt and Jan will work on an Enforcement Order for 183 Hemiock Drive.",
+   "quote": "matt and jan will work on enforcement order"
+  },
+  {
+   "decision": "Matt will contact Neil at David Ross regarding 192 Peninsula Drive.",
+   "quote": "192 peninsula drive ~ semerjian ~ matt will contact neil at david ross"
+  },
+  {
+   "decision": "Matt will follow through with his discussion with Ron Wilson on clean boat signage at 701 Reservoir Road.",
+   "quote": "701 reservoir road ~ wilson ~ signage for clean boats ~ matt will follow through with his discussion with ron."
+  },
+  {
+   "decision": "Todd will draw up a plan for the parking area on Holman Street (Lane property).",
+   "quote": "todd will draw up plan for parking area on holman street."
+  },
+  {
+   "decision": "Commission favours annual rather than perpetual snowmobile permission, as in the past.",
+   "quote": "would prefer annual permission as it has been in the past."
+  },
+  {
+   "decision": "Al (NRWA) will send information on his presentation by e-mail.",
+   "quote": "al will send information on presentation by e-mail."
+  },
+  {
+   "decision": "A Commission member volunteered for the Storm Water Task Force and will contact Kerry for a list of requirements.",
+   "quote": "volunteered. he will contact kerry for a list of requirements, etc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Snow Riders reimbursement grants",
+   "what_was_recorded": "Reimbursement grants received by the Lunenburg Snow Riders will expire on December 31st; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "reimbursement grants received by the lunenburg snow riders will expire on december 31s!"
+  },
+  {
+   "topic": "US Forest Service Redesign grant (NRWA)",
+   "what_was_recorded": "NRWA, with the Merrimack River Watershed Council, described a US Forest Service Redesign grant project for riparian buffers; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "we have a us forest service redesign grant project called"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joanna Bilotta-Simeone",
+   "stated_role": "not stated",
+   "topic": "open house at the Harley site",
+   "quote": "joanna bilotta-simeone stated that she wil be ta sing the min"
+  },
+  {
+   "speaker": "Justine Morgan",
+   "stated_role": "of 701 Reservoir Road",
+   "topic": "correcting address on Ron Wilson NOI",
+   "quote": "justine morgan of 701 reservoir road wanted to correct the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; open house notice and address correction",
+   "quote": "joanna bilotta-simeone stated that she wil be ta sing the min",
+   "tags": [
+    "public comment",
+    "Harley site"
+   ]
+  },
+  {
+   "topic": "Hearing: 324 Mulpus Road NOI (Christopher), riverfront buffer tree removal",
+   "resolution": "continued to November 18th at 7:00 PM",
+   "quote": "continued until november 18th at 7:00 pm.",
+   "tags": [
+    "hearing",
+    "notice of intent",
+    "riverfront buffer",
+    "61A"
+   ]
+  },
+  {
+   "topic": "Hearing: 338 Sunset Lane NOI continuation (Cole), new home and shoreline repair",
+   "resolution": "approved unanimously with conditions",
+   "quote": "contour will not extend into beach area. approved unanimous",
+   "tags": [
+    "hearing",
+    "notice of intent",
+    "shoreline",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Public meeting: 50 Sunset Lane RDA (Luck), loam and permeable pavers",
+   "resolution": "approved with wattles added (printed as Approved Negative 3)",
+   "quote": "carl presented. add wattles at 30' no touch zone, approved negative 3",
+   "tags": [
+    "RDA",
+    "stormwater",
+    "No Touch Zone"
+   ]
+  },
+  {
+   "topic": "Presentation: Al Futterman, NRWA, riparian forest buffer grant",
+   "resolution": "no action; presentation information to follow by e-mail",
+   "quote": "al will send information on presentation by e-mail.",
+   "tags": [
+    "NRWA",
+    "presentation",
+    "grant",
+    "riparian buffers"
+   ]
+  },
+  {
+   "topic": "Lunenburg Snow Riders annual trail permitting on Conservation land",
+   "resolution": "annual permission approved unanimously",
+   "quote": "annual permission approved unanimous",
+   "tags": [
+    "snowmobiles",
+    "trail permits",
+    "gates",
+    "ATV traffic"
+   ]
+  },
+  {
+   "topic": "Violations review",
+   "resolution": "assigned follow-up actions; no vote recorded",
+   "quote": "392 sunset lane ~ luck ~ will file an rda",
+   "tags": [
+    "enforcement",
+    "violations",
+    "RDA",
+    "Enforcement Order"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "no action recorded; meeting dates listed for approval (September 16th, Oct 21st, Nov 4th, Nov 18th)",
+   "quote": "minutes approval ~ september 16th",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Commission comment: Storm Water Task Force",
+   "resolution": "a member volunteered; no vote recorded",
+   "quote": "kerry has requested a member of the concom serve on the newly formed storm water task force.",
+   "tags": [
+    "stormwater",
+    "task force"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "listed; no motion or vote recorded",
+   "quote": "volunteered. he will contact kerry for a list of requirements, etc. adjournment",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, 324 Mulpus Road, filed by Thomas Christopher of Christopher Environmental Associates",
+   "where": "text",
+   "quote": "a notice of intent filed by thomas christopher of christopher environmental associates."
+  },
+  {
+   "name": "Application for 61A (324 Mulpus Road)",
+   "where": "text",
+   "quote": "has filed an application for 61a."
+  },
+  {
+   "name": "Notice of Intent, 338 Sunset Lane, filed by Alton/Elizabeth Cole of Cole Family Really Trust (continuation)",
+   "where": "text",
+   "quote": "on an notice of intent filed by alton/elizabeth cole of cole family really trust"
+  },
+  {
+   "name": "Request for Determination of Applicability, 50 Sunset Lane, filed by Carl Luck",
+   "where": "text",
+   "quote": "request for determination of applicability filed by carl luck."
+  },
+  {
+   "name": "Previous Notice of Intent for Ron Wilson (701/713 Reservoir Road)",
+   "where": "text",
+   "quote": "address on a previous noi for ron wilson. it should be 713 not 701."
+  },
+  {
+   "name": "US Forest Service Redesign grant project 'Expanding Riparian Forest Buffers in Threatened Watersheds'",
+   "where": "text",
+   "quote": "we have a us forest service redesign grant project called"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "RDA",
+  "hearings",
+  "violations",
+  "trail permits",
+  "snowmobiles",
+  "stormwater",
+  "NRWA",
+  "public comment",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

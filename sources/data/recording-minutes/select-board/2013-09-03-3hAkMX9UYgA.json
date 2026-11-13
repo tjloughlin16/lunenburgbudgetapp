@@ -1,0 +1,460 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2013-09-03",
+ "video_id": "3hAkMX9UYgA",
+ "video_url": "https://www.youtube.com/watch?v=3hAkMX9UYgA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2013-09-03-3hAkMX9UYgA.json",
+  "sha256": "27b94275ce9cd19315cb382b55c19b97fd525050f024c627f4c0b51d0b95e475",
+  "caption_lines": 183,
+  "segments": 1586
+ },
+ "recording": {
+  "duration_s": 3830,
+  "duration": "1:03",
+  "spoken_chars": 53235,
+  "words_approx": 8872
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09032013-4857",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-09-03-agenda-4857.txt",
+   "path": "sources/meetings/select-board/2013-09-03-agenda-4857.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032013-4857",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-09-03-minutes-4857.txt",
+   "path": "sources/meetings/select-board/2013-09-03-minutes-4857.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T19:06:14Z",
+  "cost_usd": 0.2325517
+ },
+ "minutes": {
+  "headline": "Select Board appointed Gregory Roy to the school building committee and certified the 820-student design enrollment.",
+  "summary": "The board interviewed two candidates for one school building committee vacancy and appointed Mr. Roy for his construction skills. It heard a report on the MSBA conference call and voted unanimously to certify the high school design enrollment. Routine committee reports, warrants, casino-impact planning and an open-space property question filled the rest.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Mackin",
+    "role": "chair of the school building committee"
+   },
+   {
+    "name_as_heard": "Mr. Matthews",
+    "role": "member, school committee representative"
+   },
+   {
+    "name_as_heard": "Mr. Ebersol",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "superintendent",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Paula",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "capital",
+   "enrollment",
+   "facilities",
+   "high-school",
+   "msba"
+  ],
+  "votes": [
+   {
+    "t": 1303,
+    "motion": "Appoint Gregory Roy to the open position on the school building committee",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2130,
+    "motion": "Accept and endorse the MSBA design enrollment certification of 820 students",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3810,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3402,
+    "topic": "Sewer connection fees, Lunenburg Village",
+    "what_was_said": "Connection fees paid to Leominster rose after the project was approved, leaving a possible shortfall for the sewer enterprise fund.",
+    "figures_as_heard": [
+     "250 dollars per household",
+     "close to fifty thousand dollars"
+    ]
+   },
+   {
+    "t": 2428,
+    "topic": "Warrants",
+    "what_was_said": "Water billing, payroll, payroll deduction and accounts payable warrants were read.",
+    "figures_as_heard": [
+     "five thousand five hundred twenty dollars and three cents",
+     "five hundred sixty nine thousand seven hundred twenty three dollars and eight cents",
+     "two hundred seventy seven thousand seven hundred sixty four dollars and sixty eight cents",
+     "two hundred thirty thousand one hundred forty seven dollars and fifteen cents"
+    ]
+   },
+   {
+    "t": 3716,
+    "topic": "Casino host payment example",
+    "what_was_said": "The town manager described Tewksbury's proposed annual public safety payment from a casino.",
+    "figures_as_heard": [
+     "two million dollar annual payment"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3676,
+    "decision": "Board agreed to put the Leominster casino project on a future agenda to hear residents."
+   },
+   {
+    "t": 3065,
+    "decision": "Board wants a fall workshop with the cable committee on coverage policy and resident programming."
+   },
+   {
+    "t": 42,
+    "decision": "A reminder letter will be sent to boards that have not posted minutes."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 212,
+    "topic": "Posting of board minutes, Unitil hearing notice, public comment",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 212,
+    "t_end": 1428,
+    "topic": "School building committee candidate interviews and appointment",
+    "resolution": "voted",
+    "tags": [
+     "msba",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 1428,
+    "t_end": 2428,
+    "topic": "MSBA design enrollment certification",
+    "resolution": "voted",
+    "tags": [
+     "msba",
+     "high-school",
+     "enrollment"
+    ]
+   },
+   {
+    "t_start": 2428,
+    "t_end": 2506,
+    "topic": "Warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 2506,
+    "t_end": 2777,
+    "topic": "Action file: Saunders Lane property, town audit",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2777,
+    "t_end": 3480,
+    "topic": "Committee reports including TC Passios reuse, sewer connection fees",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3488,
+    "t_end": 3780,
+    "topic": "Town manager report: Leominster casino",
+    "resolution": "informational",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 3780,
+    "t_end": 3830,
+    "topic": "Closing, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote counts for the Roy appointment and enrollment certification were given only as aye with no opposed."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2130,
+    "about": "Members criticised the MSBA for declining to meet in public.",
+    "sides": "two members against the MSBA process",
+    "words_as_heard": "local Aid formula is voodoo and hidden information",
+    "kind": "charged language"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 3256,
+    "kind": "liability or legal",
+    "about": "Possible sewer connection fee shortfall if the zoning amendment triggers new fees.",
+    "who": "a member",
+    "words_as_heard": "there could be a shortfall"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1965,
+    "name_as_heard": "design enrollment certification",
+    "kind": "contract or agreement",
+    "words_as_heard": "Lunenburg High School design enrollment certification"
+   },
+   {
+    "t": 1635,
+    "name_as_heard": "projections from August 13th",
+    "kind": "report",
+    "words_as_heard": "the information that the superintendent provided to us on August 13th"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "sewer-connection-fees",
+    "title": "Sewer connection fees",
+    "question": "How much would the higher Leominster connection fee cost the sewer fund for Lunenburg Village?",
+    "t": 3402,
+    "words_as_heard": "it's about close to fifty thousand dollars which is a for the sewer Enterprise fund",
+    "data_in_play": [
+     "250 dollars per household",
+     "close to fifty thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to certify the MSBA design enrollment for the high school project, accepting the figure as heard in the certification.",
+    "t": 2130
+   },
+   {
+    "line": "The board appointed Gregory Roy to the open seat on the school building committee after interviewing two candidates.",
+    "t": 1303
+   },
+   {
+    "line": "The board heard that Leominster sewer connection fees rose after approval, leaving a possible shortfall for the sewer enterprise fund.",
+    "t": 3402
+   },
+   {
+    "line": "The board agreed to put the Leominster casino project on a future agenda to hear residents.",
+    "t": 3676
+   },
+   {
+    "line": "The board wants a fall workshop with the cable committee on coverage policy and resident programming.",
+    "t": 3065
+   }
+  ],
+  "why_it_matters": [
+   "The enrollment certification sets the size the state reimburses for the school project, which shapes the cost residents may later be asked to approve.",
+   "A sewer fee shortfall would fall on sewer enterprise fund users or, if covered another way, on the town budget, mostly taxes."
+  ],
+  "watch_next": [
+   "A future Select Board agenda item to hear residents on the Leominster casino project.",
+   "A fall workshop between the board and the cable committee."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T19:06:21Z",
+   "cost_usd": 0.021681100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032013-4857",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2013-09-03-minutes-4857.txt",
+   "path": "sources/meetings/select-board/2013-09-03-minutes-4857.pdf"
+  },
+  "official_sha256": "f9edc302c9e58082319928be81e6994691d99a67cf5e64673252d8881fe15c0c",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on both votes (Roy's appointment and the MSBA enrollment certification) and on the casino item going to a future agenda. They differ on the figures and follow-ups each one carries.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 1,
+   "discrepancy": 0,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Appointment of Gregory Roy to school building committee",
+    "ours": "Appoint Gregory Roy to the open position on the school building committee — passed",
+    "official": "mr. matthews moved to appoint gregory roy to the open position on the school building committee. toale seconded.",
+    "note": "Same appointment and outcome; official adds 5-0 tally and mover/seconder.",
+    "t": 1303
+   },
+   {
+    "kind": "agree",
+    "about": "MSBA design enrollment certification vote",
+    "ours": "Accept and endorse the MSBA design enrollment certification of 820 students — passed",
+    "official": "mr. matthews moved to accept and endorse the msba design enrollment certification for the town of lunenburg, lunenburg high school.",
+    "note": "Same vote and outcome; the 820 figure is not in the official text, which gives 5-0.",
+    "t": 2130
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant amounts",
+    "ours": "five thousand five hundred twenty dollars and three cents, five hundred sixty nine thousand seven hundred twenty three dollars and eight cents, two hundred seventy seven thousand seven hundred sixty four dollars and sixty eight cents, two hundred thirty thousand one hundred forty seven dollars and fifteen cents",
+    "official": "$5520.03 $230,147.15 $277,764.68 $569,723.08",
+    "note": "Same four figures; only the order differs and the cents on one are misheard (.08 matches).",
+    "official_reading": "$5520.03, $230,147.15, $277,764.68, $569,723.08",
+    "t": 2428
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "820 student enrollment figure",
+    "ours": "MSBA design enrollment certification of 820 students",
+    "official": "",
+    "note": "The official minutes give no enrollment number; check the certification document.",
+    "t": 2130
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer connection fees $250 per household, near $50,000",
+    "ours": "Sewer connection fees, Lunenburg Village: 250 dollars per household, close to fifty thousand dollars",
+    "official": "",
+    "note": "Official minutes mention the sewer privilege fee and connection fees but print no figures.",
+    "t": 3402
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Casino host payment example",
+    "ours": "Casino host payment example: two million dollar annual payment",
+    "official": "",
+    "note": "Official minutes print no dollar figure for the casino discussion.",
+    "t": 3716
+   },
+   {
+    "kind": "agree",
+    "about": "Leominster casino on a future agenda",
+    "ours": "Board agreed to put the Leominster casino project on a future agenda to hear residents.",
+    "official": "it will be placed as an agenda item at a future bos meeting.",
+    "note": "Both place it on a future agenda; official adds that it follows Speidel's discussion with the Planning Director.",
+    "t": 3676
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fall workshop with cable committee",
+    "ours": "Board wants a fall workshop with the cable committee on coverage policy and resident programming.",
+    "official": "",
+    "note": "Official minutes only record that Mr. Alonzo will ask PACC about YouTube availability; no workshop is recorded.",
+    "t": 3065
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reminder letter to boards not posting minutes",
+    "ours": "A reminder letter will be sent to boards that have not posted minutes.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 42
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Alonzo to ask PACC about YouTube availability",
+    "ours": "",
+    "official": "stated that they will ask that question to pacc",
+    "note": "Our minutes do not record this follow-up.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager to check on town audit status",
+    "ours": "",
+    "official": "she will investigate further with the town accountant as to where they stand now.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Roy reminded to be sworn in",
+    "ours": "",
+    "official": "mr. alonzo reminded mr. roy to visit the town clerks office as soon as possible to be sworn in.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: board members and town manager",
+    "ours": "Mr. Matthews (member, school committee representative); Mr. Ebersol (member); town manager (town manager); Paula (presenter); Dave (presenter)",
+    "official": "alonzo, paula bertram, dave matthews, jamie toale, robert ebersole, and town manager kerry speidel.",
+    "note": "Ebersol is a misspelling of Ebersole; Paula and Dave are board members Bertram and Matthews, not presenters. Jamie Toale and Alonzo are not in our list.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "School building committee chair Mackin",
+    "ours": "Mr. Mackin (chair of the school building committee)",
+    "official": "mr. alonzo asked mike mackin, school building committee chairperson, if the school department and the",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Superintendent present",
+    "ours": "superintendent (superintendent)",
+    "official": "school superintendent loxi jo calmes spoke and thanked the msba for the phone conference information",
+    "note": "Same attendee; official names her.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T19:07:32Z",
+   "cost_usd": 0.0428931
+  }
+ }
+}

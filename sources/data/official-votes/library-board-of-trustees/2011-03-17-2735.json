@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2011-03-17",
  "docid": "2735",
@@ -12,19 +12,219 @@
  },
  "votes": [
   {
-   "motion": "Approve February 17 minutes as amended",
+   "motion": "Approve the February 17 minutes as amended.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "february 17 minutes unanimously approved as amended."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion made and passed to adjourn at 7:34 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08404049999999999
+ "note": "Text is a plain extraction; page 2 contains only the header 'Trustees, Lunenburg Public Library' with no content. The minutes do not name the mover or seconder of either motion, and the Library Director is not named. The minutes say 'Please see report for more details' but print no list of documents.",
+ "cost_usd": 0.0045219200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kathy Murray and Lisa Krowitz agreed to have their names submitted to Town Caucus on March 21, 2011.",
+   "quote": "kathy murray and lisa krowitz agree to have their names submitted to town caucus."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Staff salaries and budget status",
+   "what_was_recorded": "Staff salaries had a little adjustment from last month and were reconciled with town figures; salaries are still a little under, and the rest of the budget is on track.",
+   "figures_as_printed": [],
+   "quote": "staff salaries little adjustment from last month, reconciled with town figures"
+  },
+  {
+   "topic": "Summer part-time hire pay rate",
+   "what_was_recorded": "Someone was just hired for part-time summer work at an hourly rate, approved by Kerry.",
+   "figures_as_printed": [
+    "12.08 per hour"
+   ],
+   "quote": "just hired someone for part -time summer work, 12.08 per hour, kerry approved."
+  },
+  {
+   "topic": "Local aid and state aid",
+   "what_was_recorded": "The figure recommended at the last trustees meeting was accepted, and local aid may not be funded at the recommended level; the Town Manager asked the board to consider using state aid to support additional hours.",
+   "figures_as_printed": [],
+   "quote": "kerry sent information that local aid may not be funded at recommended level."
+  },
+  {
+   "topic": "State aid money for FY 2011",
+   "what_was_recorded": "State aid of $6,551.68 is due to Lunenburg and will be placed into the library; the library will have received $12,000+ this year.",
+   "figures_as_printed": [
+    "$6,551.68",
+    "$12,000+"
+   ],
+   "quote": "$6,551.68 is due to come to lunenburg and will be placed into the library."
+  },
+  {
+   "topic": "Revolving fund article for Town Meeting warrant",
+   "what_was_recorded": "A $12,000 revolving fund article was submitted to the Town Meeting warrant for FY12.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "$12,000 revolving fund article submitted to the town meeting warrant for fy12."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "1. no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "February 17 minutes",
+   "resolution": "approved as amended",
+   "quote": "february 17 minutes unanimously approved as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget report to Financial Committee",
+   "resolution": "reported, no action",
+   "quote": "budget report to financial committee went well",
+   "tags": [
+    "budget",
+    "town finance"
+   ]
+  },
+  {
+   "topic": "Town Caucus",
+   "resolution": "names submitted",
+   "quote": "kathy murray and lisa krowitz agree to have their names submitted to town caucus.",
+   "tags": [
+    "town caucus",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, discussed",
+   "quote": "director's report (please see report for more details.)",
+   "tags": [
+    "director",
+    "circulation",
+    "facilities",
+    "programs",
+    "staffing",
+    "technology",
+    "historical records"
+   ]
+  },
+  {
+   "topic": "State aid money for FY 2011",
+   "resolution": "noted",
+   "quote": "$6,551.68 is due to come to lunenburg and will be placed into the library.",
+   "tags": [
+    "state aid",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Staffing levels and scheduling",
+   "resolution": "discussed, no action",
+   "quote": "primary issue: to have enough people in the pm, goal is to have 4 all day long, more in afternoon if possible",
+   "tags": [
+    "staffing",
+    "scheduling",
+    "time-off"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report (please see report for more details.)"
+  },
+  {
+   "name": "Budget report to Financial Committee",
+   "where": "text",
+   "quote": "budget report to financial committee went well"
+  },
+  {
+   "name": "Revolving fund article submitted to the Town Meeting warrant for FY12",
+   "where": "text",
+   "quote": "$12,000 revolving fund article submitted to the town meeting warrant for fy12."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "state aid",
+  "staffing",
+  "town caucus",
+  "facilities",
+  "circulation",
+  "programs",
+  "historical records",
+  "town meeting",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-10-02",
  "docid": "2535",
@@ -12,13 +12,205 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 9/4/12",
+   "motion": "Approve the minutes of 9/4/12 as submitted.",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 9/4/12 approved as submitted"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-read minutes. Only the approval of prior minutes is recorded as a formal vote. Other items listed (applications approved, etc.) lack the voting language (\"moved,\" \"seconded,\" \"voted\") that distinguishes a formal motion from an assignment or status item.",
- "cost_usd": 0.0846265
+ "note": "OCR text with garbled names (e.g., 'Fichard Merat', 'Amd) phals', 'Pat sattery', 'Damon Moluid'); names are reproduced as printed. The minutes record one approval (prior minutes) with no mover, seconder or count. No motion or vote is recorded for adjournment (7:20pm) or for the demolition delay approvals, which are reported as status only. No public comment section is printed. Attendance roles are not printed.",
+ "cost_usd": 0.00387392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pat sattery",
+   "status": "present",
+   "quote": "members present: pat sattery, becky lanty, fichard merat, amd) phals, damon moluid"
+  },
+  {
+   "name": "Becky Lanty",
+   "status": "present",
+   "quote": "members present: pat sattery, becky lanty, fichard merat, amd) phals, damon moluid"
+  },
+  {
+   "name": "Fichard Merat",
+   "status": "present",
+   "quote": "members present: pat sattery, becky lanty, fichard merat, amd) phals, damon moluid"
+  },
+  {
+   "name": "Amd) phals",
+   "status": "present",
+   "quote": "members present: pat sattery, becky lanty, fichard merat, amd) phals, damon moluid"
+  },
+  {
+   "name": "Damon Moluid",
+   "status": "present",
+   "quote": "members present: pat sattery, becky lanty, fichard merat, amd) phals, damon moluid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Newspaper article schedule assigned: Richard October (cemetery article already submitted), Amory November, Becky December, Damon January, Pat February, Richard March.",
+   "quote": "amory to write on endangered buildings for november"
+  },
+  {
+   "decision": "Damon to prioritize old and endangered structures and distribute them to others in a working format.",
+   "quote": "damon to prioritize old and endangered structures and distribute to others in a working format."
+  },
+  {
+   "decision": "Becky to submit the cemetery Form E's to Mass Historical.",
+   "quote": "becky to submit them to mass historical"
+  },
+  {
+   "decision": "Becky to look into the benefits of pursuing a community preservation act.",
+   "quote": "becky to look into the benefits of pursuing a community preservation act."
+  },
+  {
+   "decision": "Members to make time to clean out file drawers in the Ritter building.",
+   "quote": "make time to clean out file draws in the ritter building"
+  },
+  {
+   "decision": "Demolition delay: Round Road application reported as approved.",
+   "quote": "a. round road - application approved"
+  },
+  {
+   "decision": "Demolition delay: Spring Street Extension application reported as approved.",
+   "quote": "c. spring street extension - application approved"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2013 Survey & Planning Grant",
+   "what_was_recorded": "Correspondence noticed a 2013 Survey & Planning Grant from the State of Massachusetts; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "notice of 2013 survey & planning grant from the state of massachusetts"
+  },
+  {
+   "topic": "Town Hall repainting cost",
+   "what_was_recorded": "The 2014 Requisition may not cover the cost of painting the building; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "2014 requisition may not cover the cost of painting the building"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as submitted",
+   "quote": "minutes from 9/4/12 approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted",
+   "quote": "notice of 2013 survey & planning grant from the state of massachusetts",
+   "tags": [
+    "grant",
+    "state"
+   ]
+  },
+  {
+   "topic": "Old business: newspaper articles",
+   "resolution": "monthly writing assignments set through March",
+   "quote": "richard has submitted his cemetery article for october",
+   "tags": [
+    "newspaper articles",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Jones House",
+   "resolution": "no action; visit suggested",
+   "quote": "the owners are moving forward with the renovations and keeping in touch.",
+   "tags": [
+    "Jones House",
+    "renovation"
+   ]
+  },
+  {
+   "topic": "Montachusett Society town hall request",
+   "resolution": "awaiting news",
+   "quote": "town hall request - currently awaiting news from their october meeting",
+   "tags": [
+    "Town Hall",
+    "Montachusett Society"
+   ]
+  },
+  {
+   "topic": "Town Hall repainting",
+   "resolution": "no action; funding concern noted",
+   "quote": "2014 requisition may not cover the cost of painting the building",
+   "tags": [
+    "Town Hall",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Demolition delay review",
+   "resolution": "two applications approved; one awaiting town demo package",
+   "quote": "awaiting official demo package from the town",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Town wide survey",
+   "resolution": "tasks assigned; cemetery Form E's to be submitted",
+   "quote": "damon to prioritize old and endangered structures and distribute to others in a working format.",
+   "tags": [
+    "survey",
+    "cemeteries"
+   ]
+  },
+  {
+   "topic": "Future projects for consideration",
+   "resolution": "Becky to research community preservation act",
+   "quote": "becky to look into the benefits of pursuing a community preservation act.",
+   "tags": [
+    "community preservation act"
+   ]
+  },
+  {
+   "topic": "Ritter building file cleanup",
+   "resolution": "directed; no vote",
+   "quote": "make time to clean out file draws in the ritter building",
+   "tags": [
+    "Ritter building",
+    "records"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of 2013 Survey & Planning Grant from the State of Massachusetts",
+   "where": "list",
+   "quote": "notice of 2013 survey & planning grant from the state of massachusetts"
+  },
+  {
+   "name": "Form E's for the town Cemeteries",
+   "where": "text",
+   "quote": "richard submitted form e's for the town cemeteries. becky to submit them to mass historical"
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "newspaper articles",
+  "demolition delay",
+  "town hall",
+  "cemeteries",
+  "community preservation act",
+  "Jones House",
+  "state grant",
+  "Ritter building"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

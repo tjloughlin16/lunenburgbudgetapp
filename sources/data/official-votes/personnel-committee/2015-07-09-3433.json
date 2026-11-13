@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2015-07-09",
  "docid": "3433",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Nancy Forest",
    "seconded_by": "Lin Vickery",
    "outcome": "passed 3-0",
@@ -21,6 +21,179 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. Section 4d states \"Personnel Action Forms: COA acting Director approved, Firefighter EMTs approved,\" but no formal motion, seconding, or vote tally is documented for these approvals, so they are not counted as votes.",
- "cost_usd": 0.07978550000000001
+ "note": "Only one motion is recorded (adjournment, 3-0). The minutes record no vote approving the April and May minutes, and the Personnel Action Forms are recorded as approved without a vote. Jamie Toale's role is not stated. Dollar figures do not appear in the text; the cost analyses are described without amounts. The minutes were submitted July 23, 2015 for the July 9, 2015 meeting.",
+ "cost_usd": 0.00420272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cheryl Valera",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, nancy forest and jamie toale"
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, nancy forest and jamie toale"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, nancy forest and jamie toale"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: cheryl valera, lin vickery, nancy forest and jamie toale"
+  },
+  {
+   "name": "Scott Chase",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "absent: scott chase and deb christen"
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: scott chase and deb christen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Personnel Action Forms for the COA acting Director and the Firefighter EMTs were approved, with no recorded vote.",
+   "quote": "personnel action forms: coa acting director approved, firefighter emts approved."
+  },
+  {
+   "decision": "Cheryl will ask Scott to present the annual step increase analysis at the next meeting.",
+   "quote": "cheryl will request scott to present analysis next meeting."
+  },
+  {
+   "decision": "Lin will send the minutes to the Town Clerk for publication.",
+   "quote": "lin will send to town clerk for publication."
+  },
+  {
+   "decision": "The August agenda was set: review the cost analysis of an annual step increase prepared by Scott, and Personnel Action Forms.",
+   "quote": "august agenda items are:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Vacation cost analysis",
+   "what_was_recorded": "Cheryl reviewed her vacation cost analysis, and only 2 people were said to be affected positively, one of them a retiring COA employee.",
+   "quote": "cheryl reviewed her vacation cost analysis. only 2 people are affected positively."
+  },
+  {
+   "topic": "Annual step increase cost analysis",
+   "what_was_recorded": "A cost analysis of doing an annual step increase for town employees, prepared by Scott, is to be reviewed at the August meeting; it was not reviewed in July.",
+   "quote": "review cost analysis of doing an annual step increase for town employees prepared by scott"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and prior minutes",
+   "resolution": "minutes reviewed; sent to Town Clerk for publication",
+   "quote": "cheryl valera, committee chair, called meeting to order at 6:35 p.m. reviewed minutes of april 2nd & may 14 th meetings.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old business and public comment",
+   "resolution": "no action",
+   "quote": "2. no old business 3. no public comment",
+   "tags": [
+    "old business",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Salary Administration Plan",
+   "resolution": "continued; no vote taken",
+   "quote": "continuation of discussion regarding salary administration plan",
+   "tags": [
+    "salary administration plan",
+    "vacation",
+    "step increases"
+   ]
+  },
+  {
+   "topic": "Paid time off analysis",
+   "resolution": "reviewed",
+   "quote": "review paid time off analysis that cheryl prepared",
+   "tags": [
+    "paid time off",
+    "vacation"
+   ]
+  },
+  {
+   "topic": "Annual step increase analysis",
+   "resolution": "deferred to next meeting",
+   "quote": "cheryl will request scott to present analysis next meeting.",
+   "tags": [
+    "step increases"
+   ]
+  },
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "approved",
+   "quote": "personnel action forms: coa acting director approved, firefighter emts approved.",
+   "tags": [
+    "personnel action forms"
+   ]
+  },
+  {
+   "topic": "August agenda",
+   "resolution": "set agenda items",
+   "quote": "august agenda items are:",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 pm",
+   "quote": "nancy moved to adjourn the meeting; lin seconded the motion, and the committee voted 3-0 to adjourn at 8:15 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Salary Administration Plan",
+   "where": "text",
+   "quote": "continuation of discussion regarding salary administration plan"
+  },
+  {
+   "name": "Paid time off analysis prepared by Cheryl Valera",
+   "where": "text",
+   "quote": "review paid time off analysis that cheryl prepared"
+  },
+  {
+   "name": "Cost analysis of an annual step increase for town employees, prepared by Scott",
+   "where": "text",
+   "quote": "review cost analysis of doing an annual step increase for town employees prepared by scott"
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "salary administration plan",
+  "paid time off",
+  "vacation",
+  "step increases",
+  "personnel action forms",
+  "town employees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

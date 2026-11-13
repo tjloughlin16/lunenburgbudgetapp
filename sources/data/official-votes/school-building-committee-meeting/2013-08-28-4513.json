@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-08-28",
  "docid": "4513",
@@ -12,31 +12,342 @@
  },
  "votes": [
   {
-   "motion": "approve the meeting minutes from July 24, 2013",
+   "motion": "Approve the minutes of the July 24, 2013 meeting.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: the isbc moved to approve the meeting minutes from the july 24, 2013 meeting. the motion passed unanimously."
+   "quote": "motion: the isbc moved to approve the meeting minutes from the july 24, 2013 meeting. the motion passed unanimously.",
+   "seconded_by": ""
   },
   {
-   "motion": "approve Budget Revision Request # 1",
+   "motion": "Approve Budget Revision Request # 1.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: the lsbc moved to approve budget revision request # 1. the motion passed unanimously."
+   "quote": "motion: the lsbc moved to approve budget revision request # 1. the motion passed unanimously.",
+   "seconded_by": ""
   },
   {
-   "motion": "approve the July 2013 invoices for Joslin, Lesser + Associates and Tappe Associates",
+   "motion": "Approve the July 2013 invoices for Joslin, Lesser + Associates and Tappe Associates.",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: the isbc moved to approve the july 2013 invoices for joslin, lesser + associates and tappe associates. the motion passed unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: the isbc moved to approve the july 2013 invoices for joslin, lesser + associates and tappe associates. the motion passed unanimously.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. Three votes recorded, all passed unanimously; mover and seconder not identified by name in the minutes.",
- "cost_usd": 0.0931955
+ "note": "OCR text of a two-page scan. The attendee roster is a column of names followed by a column of roles; the pairing is inferred by order (20 names, 20 roles), and the minutes do not state who attended, so roster status is 'not stated'. The text says 'ISBC' where 'LSBC' is evidently meant; movers and seconders are not printed. Section labels 2c and 2d are missing from the extracted text (the page runs from 2b to 2e). The Town Meeting/Town Vote paragraph is the only substantive project update recorded. Adjournment is stated without a motion. Michael Mackin appears as 'Mike Mackin' in the upcoming meetings paragraph.",
+ "cost_usd": 0.00765892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chairperson of the Lunenburg School Building Committee (LSBC)",
+   "status": "present",
+   "quote": "michael mackin, chairperson of the lunenburg school building committee (lsbc), called the meeting to meeting minutes t",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank kerry speidel"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank kerry speidel"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank kerry speidel"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank kerry speidel"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank kerry speidel"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank kerry speidel"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMS Principal",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan"
+  },
+  {
+   "name": "Cesar Dedios",
+   "role": "Senior Associate, Tappé Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "john londa brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan"
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "christine depalma from jla presented for approval budget revision request # 1 and copies of joslin,"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "christine depalma jeffery luxenberg ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Ron Simoneau",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Craig Gabri",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Steve Ham",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "ron simoneau michael kearns craig gabri steve ham"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "loxi jo calmes, mike mackin, charles hay, and greg cohan continue to meet with various committee and boards in town."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Meeting and Town Vote will both occur in early January 2014; the dates will be confirmed by the Town Manager.",
+   "quote": "following discussion, it was determined that the town meeting and town vote would both occur in early january 2014. the dates will be confirmed by the town manager."
+  },
+  {
+   "decision": "The next LSBC meeting is set for Monday, September 30, 2013 at 7:00pm.",
+   "quote": "the next lsbc meeting will be held on monday, september 30 at 7:00pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget Revision Request # 1 (MSBA budget category shift)",
+   "what_was_recorded": "The Other budget line item is short of the required value, so $23,000 moves from the Architect category to Other to fund Schematic Design Phase Pre-Construction services for Shawmut.",
+   "figures_as_printed": [
+    "$25,000",
+    "$48,000",
+    "$23,000"
+   ],
+   "quote": "item (which is currently $25,000) and the required line item value (which is $48,000) to fund the"
+  },
+  {
+   "topic": "July 2013 invoices for Joslin, Lesser + Associates and Tappe Associates",
+   "what_was_recorded": "The LSBC approved the July 2013 invoices from JLA and Tappé Associates; no dollar amounts are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "motion: the isbc moved to approve the july 2013 invoices for joslin, lesser + associates and tappe"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Budget Revision Request # 1: shift from the Architect budget category to the Other budget category to cover the Shawmut Schematic Design pre-construction gap.",
+   "outcome": "passed (approved, passed unanimously)",
+   "amount_as_printed": "$23,000",
+   "quote": "to do this, $23,000 will be shifted from the architect budget category to the other budget category."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:05 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "michael mackin, chairperson of the lunenburg school building committee (lsbc), called the meeting to meeting minutes t",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "approved the July 24, 2013 minutes",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "motion: the isbc moved to approve the meeting minutes from the july 24, 2013 meeting. the motion passed unanimously."
+  },
+  {
+   "topic": "Monthly Approvals",
+   "resolution": "approved Budget Revision Request # 1 and July 2013 invoices",
+   "tags": [
+    "budget",
+    "invoices",
+    "MSBA"
+   ],
+   "quote": "motion: the lsbc moved to approve budget revision request # 1. the motion passed unanimously."
+  },
+  {
+   "topic": "Project update: MA CHPS green features, Town Meeting and Town Vote timing",
+   "resolution": "discussed; Town Meeting and Town Vote set for early January 2014, dates to be confirmed",
+   "tags": [
+    "MA CHPS",
+    "Town Meeting",
+    "schedule",
+    "green building"
+   ],
+   "quote": "following discussion, it was determined that the town meeting and town vote would both occur in early january 2014."
+  },
+  {
+   "topic": "Upcoming Meetings",
+   "resolution": "no action; next meeting set for September 30",
+   "tags": [
+    "outreach",
+    "schedule"
+   ],
+   "quote": "the next lsbc meeting will be held on monday, september 30 at 7:00pm."
+  },
+  {
+   "topic": "Community Outreach Efforts",
+   "resolution": "no action",
+   "tags": [
+    "outreach",
+    "website",
+    "social media"
+   ],
+   "quote": "twitter and facebook pages have been created for the project."
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no other business",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "there was no other business."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there was no public comment."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:12pm (no motion recorded)",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting was adjourned at 8:12pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Meeting minutes from the July 24, 2013 meeting (in the meeting packet distributed by Joslin, Lesser + Associates)",
+   "where": "list",
+   "quote": "the lsbc reviewed the meeting minutes (distributed by joslin, lesser + associates within the meeting packet) from the prior meeting held on july 24, 2013."
+  },
+  {
+   "name": "Budget Revision Request # 1",
+   "where": "list",
+   "quote": "christine depalma from jla presented for approval budget revision request # 1 and copies of joslin,"
+  },
+  {
+   "name": "Joslin, Lesser + Associates and Tappe Associates July 2013 Invoices",
+   "where": "list",
+   "quote": "copies of joslin, lesser + associates and tappe associates july 2013 invoices"
+  },
+  {
+   "name": "Project website and Frequently Asked Questions page",
+   "where": "text",
+   "quote": "a frequently asked questions page was recently added."
+  },
+  {
+   "name": "Project Twitter and Facebook pages",
+   "where": "text",
+   "quote": "twitter and facebook pages have been created for the project."
+  },
+  {
+   "name": "Video documenting existing conditions at the high school",
+   "where": "text",
+   "quote": "the district is also creating a video that will document existing conditions at the high school."
+  },
+  {
+   "name": "Design boards on display at school open houses",
+   "where": "text",
+   "quote": "(design boards will be on display)"
+  }
+ ],
+ "tags": [
+  "school building project",
+  "MSBA",
+  "budget revision",
+  "invoices",
+  "Town Meeting",
+  "MA CHPS green building",
+  "community outreach",
+  "Lunenburg High School",
+  "Lunenburg Middle School"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the lsbc reviewed the meeting minutes"
+ },
+ "dropped_unquoted_by_field": {}
 }

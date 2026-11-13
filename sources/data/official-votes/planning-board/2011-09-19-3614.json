@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-09-19",
  "docid": "3614",
@@ -12,15 +12,197 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bakaysa",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn, mr. saiia, second, mr. bakaysa, adjournment 8:55 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0867465
+ "note": "Workshop minutes with no recorded roll-call votes; the only motion (adjourn) has no result printed, so outcome is not stated. Most agenda items were tabled for lack of quorum. Extraction artifacts: 'Jennifer Sic iliano' and 'wa ter' are spaced; the name is recorded as Jennifer Siciliano. The header spells the Vice-Chair 'Joanna' while the roll call says 'Joanne'; the roll-call spelling is used. 'MPRC' appears once for MRPC.",
+ "cost_usd": 0.00471842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "emerick r. bakaysa, robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Joanne Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "joanne bilotta-simeone, nathan j. lockwood, thomas w. bodkin jr."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "joanne bilotta-simeone, nathan j. lockwood, thomas w. bodkin jr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "absent",
+   "quote": "joanne bilotta-simeone, nathan j. lockwood, thomas w. bodkin jr."
+  },
+  {
+   "name": "Chantell Fleck",
+   "role": "from MRPC",
+   "status": "present",
+   "quote": "chantell fleck from mrpc reviewed the summer street revitalization district"
+  },
+  {
+   "name": "Jennifer Siciliano",
+   "role": "from MRPC",
+   "status": "present",
+   "quote": "jennifer sic iliano from mrpc presented a full explanation on low impact"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of 3-30-11 tabled to the next workshop due to lack of quorum.",
+   "quote": "3-30-11 tabled to next workshop due to lack of quorum."
+  },
+  {
+   "decision": "Remaining agenda items tabled due to lack of quorum.",
+   "quote": "remaining agenda items below were tabled due to lack of quorum."
+  },
+  {
+   "decision": "Copies of the Summer Street draft bylaw to be supplied to absent members, and discussion on the proposed Overlay to be held at a later meeting.",
+   "quote": "director benson noted that copies will be supplied to the absent members and discussion will be held on the proposed overlay."
+  },
+  {
+   "decision": "Director Benson to serve as the in-kind donation for the housing grant.",
+   "quote": "director noted she will serve as the in kind donation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant – Housing and Planned Production",
+   "what_was_recorded": "Letters were requested for the grant and the Planning Director noted she will serve as the in-kind donation; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "director noted she will serve as the in kind donation."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 3-30-11",
+   "resolution": "tabled, lack of quorum",
+   "tags": [
+    "minutes",
+    "quorum"
+   ],
+   "quote": "3-30-11 tabled to next workshop due to lack of quorum."
+  },
+  {
+   "topic": "Draft Bylaw for Summer Street (Summer Street Revitalization District)",
+   "resolution": "discussed, no action",
+   "tags": [
+    "bylaw",
+    "summer street",
+    "zoning",
+    "MRPC"
+   ],
+   "quote": "chantell fleck from mrpc reviewed the summer street revitalization district"
+  },
+  {
+   "topic": "Model Low Impact Development (LID) Bylaw",
+   "resolution": "presented, no action",
+   "tags": [
+    "low impact development",
+    "bylaw",
+    "MRPC"
+   ],
+   "quote": "recommendation is for lunenburg to write a zoning bylaw."
+  },
+  {
+   "topic": "Grant – Housing and Planned Production",
+   "resolution": "discussed, letters requested",
+   "tags": [
+    "grant",
+    "housing"
+   ],
+   "quote": "director noted she will serve as the in kind donation."
+  },
+  {
+   "topic": "Remaining agenda items (Subsidized Housing Inventory Report; MGL Ch. 41 Sec. 81-D; CLURPA; Table I-1; master planning procedures; October meeting dates)",
+   "resolution": "tabled, lack of quorum",
+   "tags": [
+    "master plan",
+    "housing inventory",
+    "quorum"
+   ],
+   "quote": "remaining agenda items below were tabled due to lack of quorum."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Bylaw for Summer Street 9/11/11 (Summer Street Revitalization District proposed bylaw)",
+   "where": "text",
+   "quote": "draft bylaw for summer street 9/11/11 - chantell fleck from mrpc reviewed the summer street revitalization district"
+  },
+  {
+   "name": "PowerPoint presentation on Low Impact Development (paper copy)",
+   "where": "text",
+   "quote": "she supplied a powerpoint paper copy and a map showing"
+  },
+  {
+   "name": "Map showing Lunenburg water areas",
+   "where": "text",
+   "quote": "she supplied a powerpoint paper copy and a map showing"
+  },
+  {
+   "name": "Model Low Impact Development (LID) Bylaw",
+   "where": "text",
+   "quote": "a copy of a model lid bylaw was also presented."
+  },
+  {
+   "name": "Booklet showing renderings of different designs (in preparation)",
+   "where": "text",
+   "quote": "she is also preparing a booklet showing renderings of different designs."
+  },
+  {
+   "name": "Subsidized Housing Inventory Report",
+   "where": "text",
+   "quote": "subsidized housing inventory report"
+  },
+  {
+   "name": "Table I-1 Planning Goals and Policies",
+   "where": "text",
+   "quote": "table i-1 planning goals and policies"
+  }
+ ],
+ "tags": [
+  "master plan",
+  "low impact development",
+  "summer street bylaw",
+  "housing grant",
+  "quorum",
+  "workshop",
+  "MRPC"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

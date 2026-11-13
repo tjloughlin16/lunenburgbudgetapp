@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2017-02-23",
  "docid": "5756",
@@ -12,21 +12,183 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the January 26, 2017 meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the january 26, 2017, meeting were accepted."
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Allison",
-   "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn was made at 7:40 pm by matt allison, seconded by jack rabbitt, all voted in favor."
+   "quote": "motion to adjourn was made at 7:40 pm by matt allison, seconded by jack rabbitt, all voted in favor.",
+   "seconded_by": "Jack Rabbitt"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0907305
+ "note": "Only one motion (adjournment) is recorded with a vote; its tally is 'all voted in favor' with no count. The minutes say the January 26, 2017 minutes 'were accepted' but record no motion or tally, so that is listed as a decision, not a vote. No presiding officer is named. No dollar figures appear in the text. Some words in the text are split by spacing breaks (e.g., 'Tas k', 'Con trol'); quotes avoid those spans.",
+ "cost_usd": 0.00412602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present. also in attendance was"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present. also in attendance was"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present. also in attendance was"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Lunenburg Land Use Director",
+   "status": "present",
+   "quote": "also in attendance was lunenburg land use director, adam burney."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Reservoir Rd. resident",
+   "status": "present",
+   "quote": "during public comment, reservoir rd. resident rhonda lisio expressed concern over stormwater"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the January 26, 2017 meeting were accepted (no motion or tally recorded).",
+   "quote": "minutes of the january 26, 2017, meeting were accepted."
+  },
+  {
+   "decision": "Jack Rabbitt will meet again with Superintendent of Schools Calmes and report on agreed educational outreach actions at the April 13 SWTF meeting.",
+   "quote": "he will meet with her again and report at the swtf april 13 meeting on the agreed upon specific"
+  },
+  {
+   "decision": "Board suggested the Reservoir Rd. resident take her construction runoff concerns to DPW Director Rodriquenz and the Planning Board.",
+   "quote": "further, it was suggested she take her concerns to dpw director rodriquenz and to the planning board for further action."
+  },
+  {
+   "decision": "Next meeting set for Thursday, March 9, 2017 at 6:30 pm at the Ritter building, upper conference room; further meeting dates set for the first and second quarters.",
+   "quote": "next meeting will be thursday, march 9, 2017, at 6:30 pm, at the ritter building, upper conference room."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Compact grants for stormwater best practices",
+   "what_was_recorded": "Upon acceptance the Town becomes eligible for grants to help develop the best practices over two years; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "upon acceptance, the town becomes eligible for grants to aid in the development of these best practices over the next two years."
+  },
+  {
+   "topic": "Capital cost of switching from sand/salt to salt for winter roads",
+   "what_was_recorded": "Holden's DPW director reported no capital expenditures were needed for the switch; salt treats roads in half the time of sand/salt.",
+   "figures_as_printed": [],
+   "quote": "when i inquired as to capital expenditures needed for this transition, the holden"
+  },
+  {
+   "topic": "SWTF mission: estimated program cost and ongoing funding source",
+   "what_was_recorded": "The SWTF mission statement calls for the plan to establish the estimated cost of the program and an ongoing funding source; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "establish the estimated cost of the program, as well as provide for the creation of an ongoing funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Reservoir Rd. resident",
+   "topic": "stormwater runoff and construction crew housekeeping on Reservoir Rd.",
+   "quote": "during public comment, reservoir rd. resident rhonda lisio expressed concern over stormwater"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Community Compact Cabinet Best Practice program",
+   "resolution": "announced; no action",
+   "quote": "it was announced that the board of selectmen have voted to apply to become a massachusetts",
+   "tags": [
+    "community compact",
+    "best practices",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Minutes of January 26, 2017",
+   "resolution": "accepted",
+   "quote": "minutes of the january 26, 2017, meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Central Mass Regional Stormwater Coalition report",
+   "resolution": "reported; no action",
+   "quote": "phyllis reported on the central mass regional stormwater coalition steering committee meeting she",
+   "tags": [
+    "regional coalition",
+    "winter road treatment",
+    "MS4 permit"
+   ]
+  },
+  {
+   "topic": "Educational outreach with Superintendent of Schools",
+   "resolution": "reported; to report again April 13",
+   "quote": "jack rabbitt reported that he has met, for the second time, with superintendent of schools calmes.",
+   "tags": [
+    "education outreach",
+    "schools"
+   ]
+  },
+  {
+   "topic": "SWTF overall mission discussion",
+   "resolution": "discussed; no action",
+   "quote": "there was a discussion on the overall mission of the swtf, which is:",
+   "tags": [
+    "mission",
+    "stormwater plan"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; referred to DPW Director and Planning Board",
+   "quote": "during public comment, reservoir rd. resident rhonda lisio expressed concern over stormwater",
+   "tags": [
+    "public comment",
+    "construction runoff"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:40 pm",
+   "quote": "motion to adjourn was made at 7:40 pm by matt allison, seconded by jack rabbitt, all voted in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town of Lunenburg Community Compact Best Practice submittal (Stormwater)",
+   "where": "text",
+   "quote": "in its submittal, the town specified the following for stormwater best practice:"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "community compact",
+  "regional coalition",
+  "education outreach",
+  "public comment",
+  "mission statement",
+  "winter road treatment",
+  "Ritter Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

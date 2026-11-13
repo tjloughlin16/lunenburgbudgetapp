@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2012-01-24",
  "docid": "617",
@@ -12,25 +12,187 @@
  },
  "votes": [
   {
-   "motion": "to grant two applications for Tax Deferral (41A / Elderly Persons)",
+   "motion": "Grant two applications for Tax Deferral (41A / Elderly Persons).",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "boa reviewed and voted to grant two applications for tax deferral (41a / elderly persons)."
+   "quote": "boa reviewed and voted to grant two applications for tax deferral (41a / elderly persons).",
+   "seconded_by": ""
   },
   {
-   "motion": "to grant Personal Property administrative abatements for the listed addresses",
+   "motion": "Grant 17 Personal Property administrative abatements, listed in the minutes (48 Youngs Rd. through 148 Flynn Rd.).",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board voted to grant the following pp administrative abatements:"
+   "quote": "the board voted to grant the following pp administrative abatements:",
+   "seconded_by": ""
   },
   {
-   "motion": "to meet on Tuesday, February 7 at 6pm",
+   "motion": "Meet on Tuesday, Feb. 7 at 6pm.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the board voted to meet on tuesday, feb. 7' at 6pm."
+   "quote": "the board voted to meet on tuesday, feb. 7' at 6pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1178965
+ "note": "Scanned page read via OCR (macOS Vision) and the text is garbled in places: the 17-item abatement list has stray bullets and blank lines, and the meeting date is shown as 'Feb. 7''. Board member attendance is not recorded; only David Manzello (Associate Assesser) appears, from the signature block and his presentation. The abatement vote shows no mover, seconder or count. Outcomes of 'passed' are taken from 'voted to grant' / 'voted to meet' wording, since no count is printed. 'Reviewed and approved' vouchers/payroll is recorded as a decision, not a vote, because no motion or count is stated.",
+ "cost_usd": 0.00385732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Manzello",
+   "role": "Associate Assesser",
+   "status": "present",
+   "quote": "david presented to the board 17 personal property abatement applications for review and approval."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board reviewed and approved current expense vouchers, abatements, warrants and payroll (approval recorded without a stated vote).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & payroll."
+  },
+  {
+   "decision": "The omitted RE bills are to be reported: an 'omitted' State report will be filed with the DOR at a later date.",
+   "quote": "an \"omitted\" state report will be filed with the dor at a later date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY12 committed amounts (Real Estate and Personal Property)",
+   "what_was_recorded": "The FY12 committed amount for Real Estate and for Personal Property was reported after the Actual RE and PP bills were mailed in December.",
+   "figures_as_printed": [
+    "$18,385,645.04",
+    "$478,542.30"
+   ],
+   "quote": "the committed amount for fy 12 real estate is $18,385,645.04 and personal property is $478,542.30."
+  },
+  {
+   "topic": "Omitted RE bills",
+   "what_was_recorded": "Two additional Real Estate bills totaling $5,015.34 were omitted in error from the Actual RE commitment.",
+   "figures_as_printed": [
+    "$5,015.34"
+   ],
+   "quote": "david reported that there were two additional re bills totally $5,015.34 omitted in error from the actual re commitment."
+  },
+  {
+   "topic": "Personal Property database error",
+   "what_was_recorded": "The personal property database erroneously added $2,000.00 in values to some accounts that had no changes reported, which led to the administrative abatements.",
+   "figures_as_printed": [
+    "$2,000.00"
+   ],
+   "quote": "it has been discovered that the personal property database erroneously added $2,000.00"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants and payroll",
+   "resolution": "approved (no vote recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants & payroll.",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "FY12 Real Estate and Personal Property commitments",
+   "resolution": "reported, no action",
+   "quote": "the committed amount for fy 12 real estate is $18,385,645.04 and personal property is $478,542.30.",
+   "tags": [
+    "commitments",
+    "real estate",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Omitted RE bills and DOR report",
+   "resolution": "reported; State report to be filed later",
+   "quote": "an \"omitted\" state report will be filed with the dor at a later date.",
+   "tags": [
+    "omitted bills",
+    "DOR"
+   ]
+  },
+  {
+   "topic": "Tax deferral applications (41A / Elderly Persons)",
+   "resolution": "two granted",
+   "quote": "boa reviewed and voted to grant two applications for tax deferral (41a / elderly persons).",
+   "tags": [
+    "tax deferral",
+    "elderly",
+    "41A"
+   ]
+  },
+  {
+   "topic": "Abatement application deadline",
+   "resolution": "informational, no action",
+   "quote": "deadline for filing is wednesday, february 18.",
+   "tags": [
+    "abatements",
+    "deadline"
+   ]
+  },
+  {
+   "topic": "Personal Property administrative abatements (17)",
+   "resolution": "granted",
+   "quote": "the board voted to grant the following pp administrative abatements:",
+   "tags": [
+    "personal property",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for Tuesday, Feb. 7 at 6pm",
+   "quote": "the board voted to meet on tuesday, feb. 7' at 6pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:02 pm (no motion recorded)",
+   "quote": "meeting adjourned at 7:02 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax deferral applications (41A / Elderly Persons)",
+   "where": "text",
+   "quote": "boa reviewed and voted to grant two applications for tax deferral (41a / elderly persons)."
+  },
+  {
+   "name": "Personal Property abatement applications (17)",
+   "where": "text",
+   "quote": "david presented to the board 17 personal property abatement applications for review and approval."
+  },
+  {
+   "name": "Actual FY12 RE & PP commitment",
+   "where": "text",
+   "quote": "actual fy12 re & pp were mailed in december."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "personal property",
+  "real estate",
+  "abatements",
+  "tax deferral",
+  "commitments",
+  "omitted bills",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

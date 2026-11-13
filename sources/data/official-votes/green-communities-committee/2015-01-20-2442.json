@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2015-01-20",
  "docid": "2442",
@@ -12,23 +12,271 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from December 23, 2014",
-   "outcome": "approved",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "the minutes from 12/23/14 were approved."
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the minutes of 12/23/14.",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "meeting adjourned at 7:45 pm to join selectman's meeting."
+   "quote": "the minutes from 12/23/14 were approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan. Two procedural votes recorded: approval of prior minutes and adjournment. No other motions or votes with recorded outcomes appear in the minutes.",
- "cost_usd": 0.08517949999999999
+ "dropped_unquoted": 1,
+ "note": "Scanned text via OCR with artifacts: garbled names (J.L.onda for J. Londa), hyphenated line breaks, and a signature rendered as 'Joanne he Said'. The only motion-like item is approval of the 12/23/14 minutes, which records no mover, seconder or tally; it is included as procedural with outcome 'passed'. Adjournment has no recorded motion, so it is not a vote. Sullivan arrived at 7:15 PM. The minutes have no public comment section, so observer remarks are not recorded as public comment. Cutting and Breault appear in the header only, with no attendance status.",
+ "cost_usd": 0.0059145199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: d. blatt, a.burney, m.conway, j.londa, mcquaid, n. sullivan (at 7:15 pm)"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "present: d. blatt, a.burney, m.conway, j.londa, mcquaid, n. sullivan (at 7:15 pm)"
+  },
+  {
+   "name": "Michael Conway",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, a.burney, m.conway, j.londa, mcquaid, n. sullivan (at 7:15 pm)"
+  },
+  {
+   "name": "John Londa",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "present: d. blatt, a.burney, m.conway, j.londa, mcquaid, n. sullivan (at 7:15 pm)"
+  },
+  {
+   "name": "Joanne McQuaid",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: d. blatt, a.burney, m.conway, j.londa, mcquaid, n. sullivan (at 7:15 pm)"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, a.burney, m.conway, j.londa, mcquaid, n. sullivan (at 7:15 pm)"
+  },
+  {
+   "name": "Zachary Cutting",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "zachary cutting, member"
+  },
+  {
+   "name": "James Breault",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "james breault, advisor"
+  },
+  {
+   "name": "Maryellen Ramstack",
+   "role": "Observer",
+   "status": "present",
+   "quote": "observers: maryellen ramstack, dick mailloux (library), venezia (library), jay simeone (finance)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Observer (Library)",
+   "status": "present",
+   "quote": "observers: maryellen ramstack, dick mailloux (library), venezia (library), jay simeone (finance)"
+  },
+  {
+   "name": "Venezia",
+   "role": "Observer (Library)",
+   "status": "present",
+   "quote": "observers: maryellen ramstack, dick mailloux (library), venezia (library), jay simeone (finance)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Observer (Finance)",
+   "status": "present",
+   "quote": "observers: maryellen ramstack, dick mailloux (library), venezia (library), jay simeone (finance)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The bid for the Public Safety and Library lighting work will go to Di-Rock, who will also look at the timer replacement at the same time as the exterior lights.",
+   "quote": "the bid will go to di-rock and have them look at the timer replacement at the same time as the exterior lights."
+  },
+  {
+   "decision": "The GCTF will review the Library quotes and Return on Investment once available and submit them to the DOER.",
+   "quote": "the gctf will review the quotes and return on investment (rol) once available and submit them to the doer."
+  },
+  {
+   "decision": "Eagle House interior lighting work does not need to go out to bid, but a Unitil-approved vendor must be used.",
+   "quote": "a. burney noted that the work does not need to go out to bid but we will need to use a unitil ap-"
+  },
+  {
+   "decision": "The Town Manager is to contact MassSave for an energy assessment for attic insulation.",
+   "quote": "the town manger needs to contact masssave for an energy assessment for attic insulation."
+  },
+  {
+   "decision": "Members are to review the GCTF webpage material and make suggestions for changes.",
+   "quote": "the members need to review the material and make suggestions for changes."
+  },
+  {
+   "decision": "J. Londa is to start the draft of the next Quarterly Report.",
+   "quote": "j.l.onda updated us on the baseline. another quarterly report is due soon. he will start the draft copy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public Safety and Library lighting retrofit quotes",
+   "what_was_recorded": "Three retrofit quotes were obtained for existing fixtures, excluding new timers; the lowest, from Di-Rock, was $9,800.",
+   "figures_as_printed": [
+    "$16,683",
+    "$17,300",
+    "$9,800"
+   ],
+   "quote": "j. londa obtained 3 quotes for both: guardian $16,683,"
+  },
+  {
+   "topic": "Library building heating system and energy management system",
+   "what_was_recorded": "Replacing the 10-year-old furnace and the building energy management system was estimated at approximately $70,000.",
+   "figures_as_printed": [
+    "$70,000"
+   ],
+   "quote": "j. londa noted that it would cost approximately $70,000 to re-"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order; approval of 12/23/14 minutes",
+   "resolution": "minutes approved",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "meeting called to order at 6:32 p.m. the minutes from 12/23/14 were approved."
+  },
+  {
+   "topic": "Public Safety and Library Project update",
+   "resolution": "bid to Di-Rock",
+   "tags": [
+    "lighting",
+    "quotes",
+    "public safety",
+    "library"
+   ],
+   "quote": "public safety and library project update- j. londa obtained 3 quotes for both: guardian $16,683,"
+  },
+  {
+   "topic": "Library new interior project",
+   "resolution": "GCTF to review quotes and ROI, submit to DOER",
+   "tags": [
+    "library",
+    "lighting",
+    "heating",
+    "energy management"
+   ],
+   "quote": "the gctf will review the quotes and return on investment (rol) once available and submit them to the doer."
+  },
+  {
+   "topic": "Eagle House interior lighting",
+   "resolution": "no vote; Town Manager to contact MassSave",
+   "tags": [
+    "eagle house",
+    "lighting",
+    "insulation",
+    "Unitil"
+   ],
+   "quote": "eagle house- interior lighting: d. blatt made a survey of the existing lights"
+  },
+  {
+   "topic": "Solar By Law",
+   "resolution": "no action; timing update only",
+   "tags": [
+    "solar",
+    "bylaw",
+    "planning board"
+   ],
+   "quote": "solar by law - a. burney said that the planning board will not even have it on their agenda until"
+  },
+  {
+   "topic": "GCTF webpage",
+   "resolution": "members to review and suggest changes",
+   "tags": [
+    "website",
+    "cable access"
+   ],
+   "quote": "gctf webpage - j. mcquaid noted that the content is 2-3 years old"
+  },
+  {
+   "topic": "New items: baseline, quarterly report, road signs, DOER questionnaire",
+   "resolution": "no vote; Londa to draft quarterly report",
+   "tags": [
+    "quarterly report",
+    "DOER",
+    "road signs",
+    "baseline"
+   ],
+   "quote": "new items - j.l.onda updated us on the baseline."
+  },
+  {
+   "topic": "Meeting with Town Manager; GCTF mission and authority",
+   "resolution": "discussed; no vote",
+   "tags": [
+    "town manager",
+    "quorum",
+    "mission",
+    "energy policy"
+   ],
+   "quote": "d. blatt meet with the town manager."
+  },
+  {
+   "topic": "Re-organization: chair step-down and secretary resignation",
+   "resolution": "announced; no vote",
+   "tags": [
+    "leadership",
+    "chair",
+    "resignation"
+   ],
+   "quote": "re-organization- d. blatt noted that he needs to step down as chair."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45 PM; no new meeting date set",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 7:45 pm to join selectman's meeting. no new meeting date set."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Solar By Law",
+   "where": "text",
+   "quote": "solar by law - a. burney said that the planning board will not even have it on their agenda until"
+  },
+  {
+   "name": "Quarterly Report",
+   "where": "text",
+   "quote": "another quarterly report is due soon."
+  }
+ ],
+ "tags": [
+  "Green Communities",
+  "energy efficiency",
+  "lighting",
+  "library",
+  "Eagle House",
+  "heating system",
+  "solar bylaw",
+  "DOER",
+  "leadership change",
+  "quorum"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

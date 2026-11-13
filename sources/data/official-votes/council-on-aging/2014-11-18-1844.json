@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2014-11-18",
  "docid": "1844",
@@ -12,32 +12,328 @@
  },
  "votes": [
   {
-   "motion": "approve the October 14, 2014 Council on Aging minutes",
+   "motion": "Accept the October 14, 2014 COA minutes.",
    "moved_by": "Ms. Seeley",
    "seconded_by": "Ms. Lincoln",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. seeley moved to accept the october 14, 2014 council on aging (coa) minutes. ms. lincoln seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "waive the certification requirement for the Director position",
+   "motion": "Waive the requirement in the Director's job description that the Director be certified.",
    "moved_by": "Ms. Seeley",
    "seconded_by": "Ms. Lincoln",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ms. seeley moved to waive the requirement in the director's job description which states that the director needs to be certified. ms. lincoln seconded after due diligent discussion among t",
-   "quote_taken_from_text": true
+   "quote": "ms. seeley moved to waive the requirement in the director's job description which states that the director needs to be certified. ms. lincoln seconded"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Mr. Guenard",
    "seconded_by": "Ms. Tarbell",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. guenard moved to adjourn the coa meeting. ms. tarbell seconded. on vote, motion carried unanimously"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision; all three votes recorded with full details.",
- "cost_usd": 0.1087605
+ "dropped_unquoted": 1,
+ "note": "OCR text (macOS Vision) of a two-page scan; a few words may be misread. Only the minutes-approval, director-certification and adjournment motions are recorded as votes, all unanimous, with the vote counts not printed beyond 'unanimously'. The minutes name 'Ms. Lincoln' (seconder) without a first name; read as Debbie Lincoln, and 'Mr. Lincoln' as Pete Lincoln. The footer spells the attendance clerk as Susan Doherty while the attendance line says Sue Doherty. Public comment reads 'None'. The text prints no attendance status other than 'Present' for the listed members.",
+ "cost_usd": 0.007331619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice-chairperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice-chairperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice-chairperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), deb seeley (vice-chairperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally, jacquelyn dwyer, sarah grant, diane nowd, cheryl moisan,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally, jacquelyn dwyer, sarah grant, diane nowd, cheryl moisan,"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally, jacquelyn dwyer, sarah grant, diane nowd, cheryl moisan,"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally, jacquelyn dwyer, sarah grant, diane nowd, cheryl moisan,"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally, jacquelyn dwyer, sarah grant, diane nowd, cheryl moisan,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally, jacquelyn dwyer, sarah grant, diane nowd, cheryl moisan,"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally, jacquelyn dwyer, sarah grant, diane nowd, cheryl moisan,"
+  },
+  {
+   "name": "Brian Guenard",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "brian guenard & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "brian guenard & sue doherty (admin. asst.)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director Noble cancelled all further Dine Around activities until further notice, after finding only half of participants were Lunenburg residents/regular clients and observing intoxication at functions.",
+   "quote": "ms. noble has cancelled all further dine around activities until further notice."
+  },
+  {
+   "decision": "Director sent a letter to the Lunenburg bus trip coordinator: stop representing trips as run by the Town/COA/Eagle House, all further postings suspended, materials returned, no further disruption of others' information.",
+   "quote": "all further postings of her trips have been suspended"
+  },
+  {
+   "decision": "Director will contact the Town Manager about extending the temporary Outreach Coordinator's time.",
+   "quote": "ms. noble will contact the town manager regarding extending the temporary outreach coordinator's time."
+  },
+  {
+   "decision": "Senior van may be used for a Quilting Bus Trip only after senior center operating hours and only if a van driver is willing to come in after hours.",
+   "quote": "ms. noble responded that this would only be possible after senior center operating hours and only if one of the van drivers was willing to come in after hours to do so."
+  },
+  {
+   "decision": "Board members volunteered to participate in task groups (Advocacy, Communication, Public Relations) as needed.",
+   "quote": "board members discussed the roles of individual task groups as follows and members volunteered to participate as needed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Property Tax Work-off Program",
+   "what_was_recorded": "Twelve people participated; each will receive a deduction off the property tax bill of between the amounts stated; program restarts January 2015.",
+   "figures_as_printed": [
+    "$750-$1000"
+   ],
+   "quote": "there were 12 people who participated and they will be receiving anywhere between $750-$1000 deducted off of their property tax bill."
+  },
+  {
+   "topic": "Funding for additional COA staff",
+   "what_was_recorded": "Director hopes funding can be made available to hire another All Purpose staff person, but feels the biggest need is another Meal Site Coordinator; Finance Committee wants next year's budget prepared by end of January.",
+   "figures_as_printed": [],
+   "quote": "ms. noble is hoping that funding could be made available to the coa to hire another \"all purpose\" staff person but she feels the biggest need at this time is hiring another meal site coordinator."
+  },
+  {
+   "topic": "Eagle House tile flooring/carpeting",
+   "what_was_recorded": "New flooring was installed at the Eagle House as part of the FY2015 Capital Plan process; no cost figure printed.",
+   "figures_as_printed": [],
+   "quote": "new tile flooring/carpeting has been installed at the eagle house. this was all part of the fy2015 capital plan process."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "noted",
+   "quote": "mr. lincoln thanked ms. doherty for setting up and working the veteran's day reception",
+   "tags": [
+    "announcements",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Minutes approval (October 14, 2014)",
+   "resolution": "approved",
+   "quote": "ms. seeley moved to accept the october 14, 2014 council on aging (coa) minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "COA General Orientation/Discussion",
+   "resolution": "not discussed",
+   "quote": "1. coa general orientation/discussion: not discussed",
+   "tags": [
+    "orientation"
+   ]
+  },
+  {
+   "topic": "New COA member Brian Guenard",
+   "resolution": "welcomed; members introduced",
+   "quote": "mr. lincoln welcomed new coa board member brian guenard.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "COA appointment and re-appointment process",
+   "resolution": "discussed; no action",
+   "quote": "all people interested in appointment to a board or committee need to submit a talent bank",
+   "tags": [
+    "appointments",
+    "board of selectmen",
+    "terms"
+   ]
+  },
+  {
+   "topic": "Director's certification requirement",
+   "resolution": "waiver approved",
+   "quote": "ms. seeley moved to waive the requirement in the director's job description which states that the director needs to be certified.",
+   "tags": [
+    "director",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Bus trips and trip coordinator",
+   "resolution": "discussed; director acted; van use answered",
+   "quote": "ms. noble explained to the board on how the senior bus trips have operated in the past",
+   "tags": [
+    "bus trips",
+    "vendors",
+    "senior van"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "reported",
+   "quote": "ms. noble had attended some of the dine around clubs functions in ms. anderson's absence",
+   "tags": [
+    "dine around",
+    "outreach",
+    "eagle house",
+    "budget",
+    "property tax",
+    "training",
+    "holiday open house",
+    "phone calls"
+   ]
+  },
+  {
+   "topic": "Task groups",
+   "resolution": "discussed; volunteers noted",
+   "quote": "board members discussed the roles of individual task groups as follows and members volunteered to participate as needed",
+   "tags": [
+    "task groups",
+    "advocacy",
+    "communication",
+    "public relations"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "mr. lincoln read a congressional update notice from congresswoman niki tsongas.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Board comment (Building Committee)",
+   "resolution": "noted",
+   "quote": "ms. seeley informed the board that she is still a member of the building committee and updated the board on that committee's activities.",
+   "tags": [
+    "building committee",
+    "passios building"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:00AM",
+   "quote": "meeting adjourned at 11:00am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Congressional update notice from Congresswoman Niki Tsongas",
+   "where": "text",
+   "quote": "mr. lincoln read a congressional update notice from congresswoman niki tsongas."
+  },
+  {
+   "name": "Letter from Director Noble to the Lunenburg bus trip coordinator",
+   "where": "text",
+   "quote": "ms. noble sent a letter to the trip coordinator informing"
+  },
+  {
+   "name": "Director's job description",
+   "where": "text",
+   "quote": "ms. seeley moved to waive the requirement in the director's job description which states that the director needs to be certified."
+  },
+  {
+   "name": "Talent bank forms (2 at Town Hall)",
+   "where": "text",
+   "quote": "currently there are 2 talent bank forms at town hall from people interested in the coa"
+  },
+  {
+   "name": "Reappointment form",
+   "where": "text",
+   "quote": "incumbents will receive a reappointment form prior"
+  },
+  {
+   "name": "Dine Around attendance lists",
+   "where": "text",
+   "quote": "after research of the attendance lists it was found that only half of the participants actually are lunenburg residents/regular clients"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "bus trips",
+  "dine around",
+  "director",
+  "appointments",
+  "board of selectmen",
+  "budget",
+  "property tax work-off",
+  "task groups",
+  "minutes approval",
+  "Eagle House",
+  "senior van"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

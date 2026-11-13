@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-01-18",
  "docid": "6163",
@@ -12,23 +12,378 @@
  },
  "votes": [
   {
-   "motion": "Continue the Notice of Intent by Gougen Construction for work at 675 Reservoir Road to February 1, 2017 at 7 PM.",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
+   "motion": "Continue the public hearing on the Gougen Construction Notice of Intent for 675 Reservoir Road to February 1, 2017 at 7 PM.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "this was continued to february 1, 2017 at 7 pm by a motion of kj, a second of bp and a unanimous vote."
   },
   {
-   "motion": "Adjourn the meeting.",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
+   "motion": "Issue an administrative hearing for 43 Island Road.",
+   "moved_by": "BP",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "bp moved t o issue an administrative hearing."
+  },
+  {
+   "motion": "Adjourn the meeting at 9 PM.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "the meeting adjourned at 9 pm by a motion of kj and a second by bp and unanimous vote to approve."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes clearly record two formal votes. One motion by BP to issue an administrative hearing on 43 Island Road is mentioned but no vote outcome is stated — the text says \"The Commission agreed\" but does not record a formal motion, second, or vote tally, so it is not included.",
- "cost_usd": 0.08483349999999999
+ "note": "Text is a layout extraction with words split mid-word (e.g. \"Bur sch\", \"remind er\", \"t o\"); quotes keep those splits as printed. Minutes list approval of 12/21/16 and 1/4/17 with no motion recorded, so no vote is recorded for it. The 43 Island Road motion has no result printed. Carl Luck appears only in the letterhead, not in the body, so he is not listed as an attendee. Greg Bittner's address is printed as 219 Pleasant Street in public comment and 129 Pleasant Street later. The \"Billotta\" and \"Bilotta\" spellings of the meeting room both appear. The documents list is recorded as printed based on the sentence about literature passed out, since no list heading is printed.",
+ "cost_usd": 0.011175220000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order - meeting called at 7pm, chairman bur sch presiding. members bertram, and vice chair dwye r were absent."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "members bertram, and vice chair dwye r were absent."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "",
+   "status": "absent",
+   "quote": "members bertram, and vice chair dwye r were absent."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "this was continued to february 1, 2017 at 7 pm by a motion of kj, a second of bp and a unanimous vote."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "announcements jr noted that rain barrels are still available."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "the meeting adjourned at 9 pm by a motion of kj and a second by bp and unanimous vote to approve."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted that the engineer is on track to meet the 2/1/17 deadline to provide an \"as built\" plan."
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "of the Planning Board",
+   "status": "present",
+   "quote": "greg bittner of the planning board and 129 pleasant stre et."
+  },
+  {
+   "name": "Michael Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "michael jeffreys 1170 mass. ave re: proposal for a marijuana facility."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "paula bertram from the board of selectmen and greg bittner of the planning board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MM will send a reminder letter about the fine to Greg Bittner's matter (219 Pleasant Street).",
+   "quote": "mm will send a remind er letter of the fine."
+  },
+  {
+   "decision": "MM will update the commission on any timetables in the Order.",
+   "quote": "mm will update on any timetables in th e order."
+  },
+  {
+   "decision": "The Commission agreed MM should start a checklist on each enforcement action moving forward.",
+   "quote": "the commission agreed that may be a method they want mm to start moving forward."
+  },
+  {
+   "decision": "Minutes of all prior enforcement discussions are to be made available (requested).",
+   "quote": "it was also requested that minutes be available for all prior discussions."
+  },
+  {
+   "decision": "Chair recommends reconvening the notice of intent/administrative hearing for 183 Hemlock Dr on 2/1 and considering assessment of fines at that meeting.",
+   "quote": "chair recommends a notice of intent/administrative hearing reconvening on 2/1 and that assessment of fines be considered at that meeting."
+  },
+  {
+   "decision": "MM will remind Mr. Cleaves regarding Emerald Place Beach Erosion.",
+   "quote": "mm will remind mr. cl eaves."
+  },
+  {
+   "decision": "Forest Stewardship Grant goals are to be submitted to MM by end of next week, one sheet for each individual parcel.",
+   "quote": "goals to be submitted to mm by end of next week . it was noted by the chair it should be one sheet for each indivi dual parcel."
+  },
+  {
+   "decision": "Commission review of its wetland regulations will resume March 29, 2017 at 7 PM in the Ritter Memorial Land Use Building, after section 10.20.",
+   "quote": "will be resuming review on march 29, 2017 at 7 pm in the ritter memorial land use building."
+  },
+  {
+   "decision": "Mel Bertram will supply no ATV signs for the Holman St property program.",
+   "quote": "mel bertram will be supplying no atv signs."
+  },
+  {
+   "decision": "Jack Rodriquenz will put together a presentation of what the town does regarding stormwater.",
+   "quote": "jac k rodriquenz will be putting together a presentatio n of what the town does regarding stormwater.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "675 Reservoir Road additional erosion-control fine",
+   "what_was_recorded": "An additional fine of $300 per day for three days, totalling $900, was reported as assessed for erosion control issues.",
+   "figures_as_printed": [
+    "$300 per day",
+    "$900"
+   ],
+   "quote": "it was reported that an additional fine for three days at $300 per day ($900) has been assessed for erosion control issues."
+  },
+  {
+   "topic": "675 Reservoir Road initial fine",
+   "what_was_recorded": "The additional fine was noted as separate from the initial fine, which is printed as $ 7,200.",
+   "figures_as_printed": [
+    "$ 7,200"
+   ],
+   "quote": "this is separate from the initial fine of $ 7,200."
+  },
+  {
+   "topic": "183 Hemlock Dr fines",
+   "what_was_recorded": "The chair recommended that assessment of fines be considered at the 2/1 meeting; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "chair recommends a notice of intent/administrative hearing reconvening on 2/1 and that assessment of fines be considered at that meeting."
+  },
+  {
+   "topic": "121 Peninsula double fee",
+   "what_was_recorded": "MM asked whether the applicant has to pay a double fee; no decision was made. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "mm requested if the applicant has to pay a double f ee."
+  },
+  {
+   "topic": "Greg Bittner fine status",
+   "what_was_recorded": "A public inquiry about the status of a fine at 219 Pleasant Street; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "greg bittner 219 pleasant street was inquiring ab out the status of the fining."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "219 Pleasant Street",
+   "topic": "status of a fine",
+   "quote": "greg bittner 219 pleasant street was inquiring ab out the status of the fining."
+  },
+  {
+   "speaker": "Michael Jeffreys",
+   "stated_role": "1170 Mass. Ave",
+   "topic": "proposed marijuana facility and ecological concerns",
+   "quote": "michael jeffreys 1170 mass. ave re: proposal for a marijuana facility. wanted to introduce himself to the commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7 PM; Vice Chair Dwyer and Bertram absent",
+   "quote": "call to order - meeting called at 7pm, chairman bur sch presiding. members bertram, and vice chair dwye r were absent.",
+   "tags": [
+    "attendance",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements jr noted that rain barrels are still available.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; reminder letter on fine to be sent",
+   "quote": "public comment - greg bittner 219 pleasant street was inquiring ab out the status of the fining.",
+   "tags": [
+    "public comment",
+    "fines"
+   ]
+  },
+  {
+   "topic": "Open meeting law and public records training materials",
+   "resolution": "literature distributed and reviewed; no action",
+   "quote": "chairman bursch passed out the revised open meeting law and mullins rule literature",
+   "tags": [
+    "open meeting law",
+    "training"
+   ]
+  },
+  {
+   "topic": "Public hearing: Gougen Construction NOI, 675 Reservoir Road",
+   "resolution": "continued to February 1, 2017",
+   "quote": "this was continued to february 1, 2017 at 7 pm by a motion of kj, a second of bp and a unanimous vote.",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Current business: signatures and certificates of compliance",
+   "resolution": "listed; no action recorded",
+   "quote": "1. signatures on documents to be issued.",
+   "tags": [
+    "certificates of compliance"
+   ]
+  },
+  {
+   "topic": "Enforcement",
+   "resolution": "discussed several enforcement files; administrative hearing motion for 43 Island Road; fines and checklist discussed",
+   "quote": "43 island road continuation from 11/2/16 - still awaiting a response from hannigan.",
+   "tags": [
+    "enforcement",
+    "fines",
+    "administrative hearing"
+   ]
+  },
+  {
+   "topic": "New business: wetland regulations review",
+   "resolution": "review continued to March 29, 2017",
+   "quote": "will be resuming review on march 29, 2017 at 7 pm in the ritter memorial land use building.",
+   "tags": [
+    "regulations",
+    "wetlands",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Old business: Forest Stewardship Grant implementation",
+   "resolution": "goals due to MM by end of next week",
+   "quote": "goals to be submitted to mm by end of next week . it was noted by the chair it should be one sheet for each indivi dual parcel.",
+   "tags": [
+    "forest stewardship",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Approval of minutes 12/21/16 and 1/4/17",
+   "resolution": "listed; no motion recorded",
+   "quote": "approval of minutes 12/21/16, 1/4/17",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports: Holman St property and stormwater",
+   "resolution": "reported; no action",
+   "quote": "mel bertram will be supplying no atv signs.",
+   "tags": [
+    "Holman St",
+    "ATV",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "reported; no action",
+   "quote": "338 sunset - see above",
+   "tags": [
+    "woodlands",
+    "certificates of compliance",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for February 1, 2017",
+   "quote": "meeting schedule- next meeting for february 1, 2017 at 7:00 pm in ritter memorial building 960 mass ave",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9 PM, unanimous",
+   "quote": "by a motion of kj and a second by bp and unanimous vote to approve.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised open meeting law and Mullins rule literature",
+   "where": "list",
+   "quote": "chairman bursch passed out the revised open meeting law and mullins rule literature"
+  },
+  {
+   "name": "Notice of Intent by Gougen Construction for work at 675 Reservoir Road",
+   "where": "text",
+   "quote": "continued notice of intent by gougen construction for work at 675 reservoir road"
+  },
+  {
+   "name": "Application and supporting documents for the Gougen Construction hearing",
+   "where": "text",
+   "quote": "application and sup porting documents are available for review"
+  },
+  {
+   "name": "Remediation plan for 675 Reservoir Road",
+   "where": "text",
+   "quote": "chair noted march 1 is the dea dline for the remediation plan."
+  },
+  {
+   "name": "As-built plan for 338 Sunset Lane",
+   "where": "text",
+   "quote": "mm noted that the engineer is on track to meet the 2/1/17 deadline to provide an \"as built\" plan."
+  },
+  {
+   "name": "Minutes of 12/21/16 and 1/4/17",
+   "where": "text",
+   "quote": "approval of minutes 12/21/16, 1/4/17"
+  },
+  {
+   "name": "Conservation Commission wetland regulations",
+   "where": "text",
+   "quote": "will be resuming review on march 29, 2017 at 7 pm in the ritter memorial land use building."
+  },
+  {
+   "name": "Presentation on what the town does regarding stormwater",
+   "where": "text",
+   "quote": "jac k rodriquenz will be putting together a presentatio n of what the town does regarding stormwater.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "enforcement",
+  "fines",
+  "notice of intent",
+  "erosion control",
+  "open meeting law",
+  "forest stewardship",
+  "stormwater",
+  "regulations",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "chairman bursch passed out the revised open meeting law and mullins rule literature"
+ },
+ "dropped_unquoted_by_field": {}
 }

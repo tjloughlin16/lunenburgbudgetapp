@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2015-06-10",
  "docid": "4546",
@@ -12,23 +12,233 @@
  },
  "votes": [
   {
-   "motion": "Approve the May 2015 invoices as presented by Joslin, Lesser & Associates, Tappe Architects, Shawmut Design & Construction, and UTS Testing Services",
+   "motion": "Approve the May 2015 invoices as presented by Joslin, Lesser & Associates (OPM, Tappe Architects, Shawmut Payment Requisition No.10, UTS Testing Services).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: the lunenburg school building committee voted to approve the may,2015 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the may,2015 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
   },
   {
-   "motion": "Approve the meeting minutes from May 13, 2015",
+   "motion": "Approve the meeting minutes from May 13, 2015.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion : the lunenburg school building committee voted to approve the meeting minutes from may 13, 2015. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from may 13, 2015. the motion was unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Two votes recorded. No mover or seconder is identified in the minutes for either motion. The adjournment at 8:30 pm is noted but no formal vote on adjournment is recorded.",
- "cost_usd": 0.0750765
+ "dropped_unquoted": 11,
+ "note": "Page 1 layout is scrambled: header fields, role lines and the Business section are out of order, so role mapping for the roster is taken from the affiliation in parentheses. Attendance is inferred: names marked with a leading × are shown as absent, and unmarked names are shown as present. The minutes print no dollar figures. Vote movers and seconders are not printed. Adjournment has no recorded motion.",
+ "cost_usd": 0.006904019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:18 pm by mr. mackin, chairperson of the lunenburg school building committee."
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools (LSBC)",
+   "status": "present",
+   "quote": "tim santry lunenburg public schools (lsbc)"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "(Tappé)",
+   "status": "present",
+   "quote": "charles hay (tappé) × jen littlefield tappe architects (tappé)"
+  },
+  {
+   "name": "Jen Littlefield",
+   "role": "Tappe Architects (Tappé)",
+   "status": "absent",
+   "quote": "× jen littlefield tappe architects (tappé)"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "(Tappé)",
+   "status": "absent",
+   "quote": "× damian liddiard (tappé)"
+  },
+  {
+   "name": "Stuart Lesser",
+   "role": "(JLA)",
+   "status": "present",
+   "quote": "stuart lesser (jla) × jeffery luxenberg (jla)"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "(JLA)",
+   "status": "absent",
+   "quote": "stuart lesser (jla) × jeffery luxenberg (jla)"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "(JLA)",
+   "status": "present",
+   "quote": "inga knox (jla) and jonathan hirst (shawmut) presented a construction update to the committee."
+  },
+  {
+   "name": "Robert Alger",
+   "role": "(JLA)",
+   "status": "absent",
+   "quote": "inga knox (jla) × robert alger (jla)"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "(SDC)",
+   "status": "absent",
+   "quote": "× michael kearns (sdc)"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "(Shawmut)",
+   "status": "present",
+   "quote": "inga knox (jla) and jonathan hirst (shawmut) presented a construction update to the committee."
+  },
+  {
+   "name": "Philip Conroy",
+   "role": "(SDC)",
+   "status": "absent",
+   "quote": "jonathan hirst (sdc) × philip conroy (sdc)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting to be held July 15, 2015 at 4:30 pm, with a site walk.",
+   "quote": "next meeting will be held on july 15 2015 at 4:30pm with a site walk through"
+  },
+  {
+   "decision": "Reported to the committee that the Re-use Committee approved the proposed property line plan for the TCP building (a decision of that committee, not a vote of this one).",
+   "quote": "the re-use committee approved the proposed property line plan which be used as the tcp building is marked for possible reuse."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly progress invoices and commitments",
+   "what_was_recorded": "JLA presented monthly progress invoices for work through May 2015 for JLA (OPM), Tappe Architects (Designer), Shawmut (Payment Requisition No.10) and UTS Testing Services (April/May 2015); the committee approved the May 2015 invoices. No dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "joslin lesser & associates (jla) presented monthly progress invoices for work completed through may, 2015"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:18 PM by Mr. Mackin",
+   "quote": "the meeting was called to order at 7:18 pm by mr. mackin, chairperson of the lunenburg school building committee.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Business: new committee member introduced",
+   "resolution": "Greg Bittner introduced as new member; no action",
+   "quote": "greg bittner, new lsb committee member was introduced.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Construction activity update",
+   "resolution": "presented, no action recorded",
+   "quote": "inga knox (jla) and jonathan hirst (shawmut) presented a construction update to the committee.",
+   "tags": [
+    "construction"
+   ]
+  },
+  {
+   "topic": "Monthly invoices and commitments",
+   "resolution": "approved May 2015 invoices",
+   "quote": "the lunenburg school building committee voted to approve the may,2015 invoices as presented by joslin, lesser & associates. the motion was unanimously approved.",
+   "tags": [
+    "invoices",
+    "payments",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee minutes",
+   "resolution": "approved May 13, 2015 minutes",
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from may 13, 2015.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Re-use of TCP building and Brooks House",
+   "resolution": "reviewed lot line and property line concepts; Re-use Committee approved plan",
+   "quote": "the committee reviewed a proposed lot line and property line concepts as they relate to the tcp building property allocation.",
+   "tags": [
+    "property line",
+    "TCP building",
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "LHS murals",
+   "resolution": "noted for the record; no action",
+   "quote": "the project team is looking in to reusing one actual mural from the existing school and digital images of other murals.",
+   "tags": [
+    "LHS murals",
+    "design"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at approximately 8:30 pm",
+   "quote": "the meeting was adjourned at approximately 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of May 13, 2015 LSBC Meeting",
+   "where": "list",
+   "quote": "reviewed minutes from the following meetings:"
+  },
+  {
+   "name": "Monthly progress invoices through May 2015 (JLA, Tappe Architects, Shawmut Payment Requisition No.10, UTS Testing Services April/May 2015)",
+   "where": "text",
+   "quote": "joslin lesser & associates (jla) presented monthly progress invoices for work completed through may, 2015"
+  },
+  {
+   "name": "Proposed lot line and property line concepts for the TCP building",
+   "where": "text",
+   "quote": "the committee reviewed a proposed lot line and property line concepts as they relate to the tcp building property allocation."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "construction update",
+  "invoices",
+  "minutes approval",
+  "property line",
+  "TCP building",
+  "Brooks House",
+  "LHS murals",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the lunenburg school building committee reviewed minutes from the following meetings:"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 11
+ }
 }

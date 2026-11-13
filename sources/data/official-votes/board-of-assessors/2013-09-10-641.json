@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-09-10",
  "docid": "641",
@@ -12,31 +12,217 @@
  },
  "votes": [
   {
-   "motion": "utilize the calculation method of the home's value for personal property tax purposes",
+   "motion": "Board votes to utilize the calculation method of the home's value (based on a percentage of the home's value) to value contents of summer/second homes for personal property.",
+   "moved_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "after discussion the board voted to utilize the calculation method of the home's value."
+   "quote": "after discussion the board voted to utilize the calculation method of the home's value. a vote was taken to postpone"
   },
   {
-   "motion": "postpone the amount of the percentage until reviewing the summer / second home value report at the next meeting",
+   "motion": "Postpone setting the percentage amount for the summer/second home personal property calculation until review of the summer/second home value report at the next meeting.",
+   "moved_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "a vote was taken to postpone the amount of the percentage until reviewing the summer / second home value report at the next meeting."
   },
   {
-   "motion": "postpone the review of the Chapter 61 Forest Land FY 15 applications until the next meeting",
+   "motion": "Postpone review of the two new Chapter 61 Forest Land FY 15 applications and Forest Management Plans until the next meeting.",
+   "moved_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "moved_by": "",
-   "seconded_by": "",
    "quote": "the board voted to postpone the review of these applications until the next meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; significant garbling in first section (veteran exemption paragraph) renders some passages unreadable. Three votes identified with explicit \"voted\" or \"vote was taken\" language. No vote outcomes, movers, or seconders recorded in minutes. Minutes also mention \"reviewed and approved\" several items but without explicit vote language; these were not counted per instructions.",
- "cost_usd": 0.0948215
+ "note": "The OCR text is badly garbled in places: the header reads \"Ole me\", the exemption-review sentence is unreadable, \"July g'\" and \"statec\" are corrupted, and the Aro paragraph breaks off mid-sentence (\"The Board agreed that this would be\"). Votes record no movers, seconders, or vote counts, so outcomes are \"not stated\". The adjournment at 7:04 pm has no recorded motion. Judith Aro is discussed only as a phone caller, not as a meeting participant. The minutes name no documents list.",
+ "cost_usd": 0.00471962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, chris comeau, & matt papini, sr., harald scheid, regional assessor"
+  },
+  {
+   "name": "Chris Comeau",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, chris comeau, & matt papini, sr., harald scheid, regional assessor"
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "matt papini, sr., harald scheid, regional assessor, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "matt papini, sr., harald scheid, regional assessor, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "louise presented (102) statutory exemption applications to the board for review."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved minutes, current expense vouchers, abatements, warrants, commitments and payroll (no motion recorded).",
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, warrants, commitments"
+  },
+  {
+   "decision": "Applicant found eligible for a Veterans exemption; the exemption credit is to be posted once the new owner pays the taxes in full.",
+   "quote": "the exemption credit will need to be posted once the new owner pays the taxes in full;"
+  },
+  {
+   "decision": "Board reviewed and approved a current Chapter 61 renewal Forest Management Plan for 78.27 acres at 331 & 341 Mulpus Rd (no motion recorded); plan effective through 2023.",
+   "quote": "the board however reviewed and approved a current chapter 61 application and \"renewal\" forest management plan for 78.27 acres located at 331 & 341 mulpus rd."
+  },
+  {
+   "decision": "Chairman Louis Franco signed the Chapter 61 / 61 A recertification; Louise to mail the certificate to the property owner and to the Department of Conservation & Recreation.",
+   "quote": "chairman, louis franco signed the recertification for the chapter 61 / 61 a forest lands and louise will mail certificate to the property owner and to the"
+  },
+  {
+   "decision": "Harald Scheid to call the Aro's and check on the status of the property regarding the roll-back tax.",
+   "quote": "harald made a suggestion that he would call the aro's and check on the status of the property."
+  },
+  {
+   "decision": "Harald Scheid to present a tax rate setting schedule at the next meeting.",
+   "quote": "harald will present a tax rate setting schedule for the next meeting."
+  },
+  {
+   "decision": "Louise Paquette to check whether there are any plans for a Special Town Meeting.",
+   "quote": "louise will check to see if there are any plans for a special town meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Judith Aro roll-back tax",
+   "what_was_recorded": "Harald prepared the roll-back tax figure with 5% interest, to be paid within 30 days, for fiscal years 2013, 2012, 2011, 2010 and 2009; the Aros were waiting on a potential buyer before paying.",
+   "figures_as_printed": [
+    "5%",
+    "30 days",
+    "2013, 2012, 2011, 2010 & 2009"
+   ],
+   "quote": "harald prepared the rollback figure along with 5% interest to be paid within 30 days for fiscal years:"
+  },
+  {
+   "topic": "Summer/second home personal property valuation",
+   "what_was_recorded": "Board may value home contents as a percentage of the home's value; the example range given was 3-5%, and the exact percentage was postponed.",
+   "figures_as_printed": [
+    "3-5%"
+   ],
+   "quote": "the value can be a certain percentage of the value of the home. (i.e. 3-5% of the total"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of routine items",
+   "resolution": "approved (no motion recorded): minutes, expense vouchers, abatements, warrants, commitments, payroll",
+   "quote": "board reviewed and approved minutes, current expense vouchers, abatements, warrants, commitments",
+   "tags": [
+    "vouchers",
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Statutory exemption applications (102)",
+   "resolution": "reviewed; one Veterans exemption granted, credit to be posted when taxes are paid in full",
+   "quote": "and she owned it on july 1, 2013; so she is entitled to receive a veterans exemption.",
+   "tags": [
+    "exemptions",
+    "veterans"
+   ]
+  },
+  {
+   "topic": "Personal property project update",
+   "resolution": "discussed; Board chose home-value calculation method, percentage postponed; about 41 businesses remain to inspect; project expected complete by October",
+   "quote": "personal property project update: harald reported that there are approximately 41 remaining businesses",
+   "tags": [
+    "personal property",
+    "summer homes",
+    "second homes"
+   ]
+  },
+  {
+   "topic": "Chapter 61 Forest Land applications",
+   "resolution": "two new FY 15 applications postponed to next meeting; renewal plan for 78.27 acres approved",
+   "quote": "louise reported that two \"new\" chapter 61 forest land fy 15 applications and forest management",
+   "tags": [
+    "chapter 61",
+    "forest land"
+   ]
+  },
+  {
+   "topic": "Judith Aro roll-back tax status",
+   "resolution": "Harald to call the Aros to check property status",
+   "quote": "louise informed the board that the office had received a phone call from judith aro regarding the status",
+   "tags": [
+    "roll-back tax",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Tax rate setting schedule",
+   "resolution": "Harald to present schedule at next meeting",
+   "quote": "harald will present a tax rate setting schedule for the next meeting.",
+   "tags": [
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting",
+   "resolution": "Louise to check whether any plans exist",
+   "quote": "louise will check to see if there are any plans for a special town meeting",
+   "tags": [
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:04 pm (no motion recorded); next meeting Tuesday, October 1, 2013 at 6pm",
+   "quote": "next meeting will be held on tuesday, october 1, 2013 at 6pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Chapter 61 renewal Forest Management Plan for 78.27 acres at 331 & 341 Mulpus Rd (management plan began 1982, effective through 2023)",
+   "where": "text",
+   "quote": "the board however reviewed and approved a current chapter 61 application and \"renewal\" forest management plan for 78.27 acres located at 331 & 341 mulpus rd."
+  },
+  {
+   "name": "Summer / second home value report",
+   "where": "text",
+   "quote": "until reviewing the summer / second home value report at the next meeting."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "personal property",
+  "summer homes",
+  "chapter 61",
+  "forest land",
+  "statutory exemptions",
+  "veterans exemption",
+  "roll-back tax",
+  "tax rate",
+  "special town meeting",
+  "2013"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2010-09-28",
  "docid": "5372",
@@ -12,23 +12,110 @@
  },
  "votes": [
   {
-   "motion": "To not reconsider the decision to deny deferral of betterments and to withhold further permits until a two-year payment plan is established",
+   "motion": "Recommendation that Barb tell Kerry Speidel and Jeff Ugalde that no further occupancy permits be issued until a payment plan is in place, advise Town Counsel the Commission will not reconsider the 9/15/10 denial of betterment deferral, and ask Counsel for a 'hold harmless' caveat, with the payment plan spanning no longer than two years.",
    "moved_by": "Butch Bilotta",
    "seconded_by": "Dave MacDonald",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call 4-0)",
    "procedural": false,
-   "quote": "butch bilotta made the motion, dave macdonald seconded. discussion followed and determined that the commission requested that the payment plan span no longer than two (2) years be added to the recommendation. vote taken by roll call: jay simeone, yes; butch bilotta, yes; dave macdonald, yes; and carl luck, yes. vote was unanimous."
+   "quote": "vote taken by roll call: jay simeone, yes; butch bilotta, yes; dave macdonald, yes; and carl luck, yes. vote was unanimous."
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the executive session.",
    "moved_by": "Butch Bilotta",
    "seconded_by": "Dave MacDonald",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (roll call 4-0)",
    "procedural": true,
-   "quote": "carl asked for a motion to adjourn. butch bilotta made the motion, dave macdonald seconded. vote taken by roll call: jay simeone, yes; butch bilotta, yes; dave macdonald, yes; and carl luck, yes. vote to adjourn unanimous."
+   "quote": "dave macdonald seconded. vote taken by roll call: jay simeone, yes; butch bilotta, yes; dave macdonald, yes; and carl luck, yes. vote to adjourn unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision.",
- "cost_usd": 0.04607120000000001
+ "note": "OCR text from a scanned page, one page only. No recorded motion to enter executive session at 8:05 P.M. The minutes print no signature after \"Respectiully submitted,\" and no record of a return to open session. Minutes name Jeff Blake (Counsel), Kerry Speidel and Jeff Ugalde, who did not take part, so they are not listed as attendees. No dollar figures appear in the text.",
+ "cost_usd": 0.00433582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Butch Bilotta",
+   "status": "present",
+   "quote": "butch bilotta, david macdonald & jay simeone present."
+  },
+  {
+   "name": "David MacDonald",
+   "status": "present",
+   "quote": "butch bilotta, david macdonald & jay simeone present."
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "butch bilotta, david macdonald & jay simeone present."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "vice-chairman luck opened executive session at 8:05 p.m, stating the purpose of this executive session"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "chairman, robert ebersole, had recused himself."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb advised that she had spoken with counsel, jeff blake of kopelman & paige"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission asked that Barb communicate the occupancy-permit hold to Kerry Speidel and Jeff Ugalde, and that Barb tell Town Counsel the Commission will not reconsider the denial of the betterment deferral.",
+   "quote": "they asked that barb communicate this to kerry speidel and jeff ugalde."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stone Farm betterments owed",
+   "what_was_recorded": "Stone Farm was allowed occupancy permits while betterments remained owed; no dollar amount is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "stone farm had recently been allowed occupancy permits with outstanding betterments owed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Stone Farm case status",
+   "resolution": "discussed; recommendation to Barb and Counsel passed 4-0; adjourned",
+   "quote": "vice-chairman luck opened executive session at 8:05 p.m, stating the purpose of this executive session",
+   "tags": [
+    "executive session",
+    "Stone Farm",
+    "betterments",
+    "payment plan",
+    "legal counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Chapter 40, Section 57",
+   "where": "text",
+   "quote": "referred us to chapter 40, section 57, authorizing the town to set up a payment plan"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "Stone Farm",
+  "betterments",
+  "deferral denial",
+  "occupancy permits",
+  "payment plan",
+  "town counsel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

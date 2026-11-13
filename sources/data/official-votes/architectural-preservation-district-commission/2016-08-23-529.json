@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-08-23",
  "docid": "529",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from July 19th, 2016",
+   "motion": "Accept the minutes of July 19th, 2016.",
    "moved_by": "McGrath",
    "seconded_by": "LaVeck",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "mcgrath motioned to accept them and laveck seconded the motion. the motion carried unanimously."
   },
   {
-   "motion": "Approve the application with amendments",
+   "motion": "Approve the application with amendments.",
    "moved_by": "McGrath",
    "seconded_by": "LaVeck",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "mcgrath motioned to approve the application with amendments. laveck seconded and the motion carried."
   },
   {
-   "motion": "Accept the latest version of the guidelines",
+   "motion": "Accept the latest version of the guidelines.",
    "moved_by": "McGrath",
    "seconded_by": "LaVeck",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "mcgrath motioned to accept them. laveck seconded and the motion carried."
   },
   {
-   "motion": "Institute a policy to have the APDC meet on the second Tuesday of each month",
+   "motion": "Institute a policy to have the APDC meet on the second Tuesday of each month.",
    "moved_by": "McGrath",
    "seconded_by": "Corcoran",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "mcgrath motioned to institute a policy to have the apdc meet on the second tuesday of each month. corcoran seconded and the motion carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "McGrath",
    "seconded_by": "Corcoran",
    "outcome": "passed unanimously",
@@ -53,6 +53,151 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0871445
+ "note": "Text is a clean extract with no scan problems. No roll call; Keher is marked absent in the header, and Dwyer's attendance is not stated. The minutes name Mina Scholten and Kehrer but neither appeared, so they are not listed as attendees. No dollar figures appear. The documents are referenced in the text only; no documents list is printed.",
+ "cost_usd": 0.00335672,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order: mcgrath called the meeting to order at 7:03"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "laveck presented the latest version of the guidelines."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "cullen dwyer, clerk"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "corcoran submitted the application form."
+  },
+  {
+   "name": "Matthew Keher",
+   "role": "Member",
+   "status": "absent",
+   "quote": "matthew keher, member- absent"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The APDC Chair took no further action on the Mina Scholten window-replacement contact, because the APDC guidelines and certificate application procedures were incomplete and the alteration was not very problematic.",
+   "quote": "the apdc chair did not take further action on the matter."
+  },
+  {
+   "decision": "Staff or members were to get Kehrer's section of the guidelines on Sheathing incorporated into the guidelines and ready for review at the next meeting.",
+   "quote": "plans were made to get kehrer's section of the guidelines on sheathing incorporated into the guidelines and ready for review at the next meeting."
+  },
+  {
+   "decision": "The next meeting was scheduled for Tuesday September 13th.",
+   "quote": "next meeting scheduled for tuesday september 13th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved",
+   "quote": "minutes from july 19th, 2016 were reviewed. mcgrath motioned to accept",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old Business: application form",
+   "resolution": "approved with amendments",
+   "quote": "corcoran submitted the application form. after discussion, mcgrath motioned to approve the",
+   "tags": [
+    "application",
+    "certificate to alter"
+   ]
+  },
+  {
+   "topic": "Old Business: guidelines",
+   "resolution": "accepted latest version",
+   "quote": "laveck presented the latest version of the guidelines. mcgrath motioned to accept them.",
+   "tags": [
+    "guidelines"
+   ]
+  },
+  {
+   "topic": "Meeting schedule policy",
+   "resolution": "approved second Tuesday monthly meeting policy",
+   "quote": "mcgrath motioned to institute a policy to have the apdc meet on the second tuesday of each",
+   "tags": [
+    "meetings",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Scholten window replacement at 3 Oak Ave",
+   "resolution": "no action by Chair; discussed how to learn and prepare",
+   "quote": "the apdc chair did not take further action on the matter.",
+   "tags": [
+    "windows",
+    "enforcement",
+    "3 Oak Ave"
+   ]
+  },
+  {
+   "topic": "Sheathing guidelines section",
+   "resolution": "continued to next meeting",
+   "quote": "plans were made to get kehrer's section of the guidelines on sheathing incorporated",
+   "tags": [
+    "guidelines",
+    "sheathing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:04PM",
+   "quote": "adjournment: at 8:04pm, mcgrath motioned to adjourn. the motion was seconded by corcoran",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application form (submitted by Corcoran)",
+   "where": "text",
+   "quote": "corcoran submitted the application form. after discussion, mcgrath motioned to approve the"
+  },
+  {
+   "name": "Latest version of the APDC guidelines (presented by LaVeck)",
+   "where": "text",
+   "quote": "laveck presented the latest version of the guidelines. mcgrath motioned to accept them."
+  },
+  {
+   "name": "Kehrer's section of the guidelines on Sheathing",
+   "where": "text",
+   "quote": "plans were made to get kehrer's section of the guidelines on sheathing incorporated into the guidelines"
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "certificate to alter",
+  "guidelines",
+  "windows",
+  "sheathing",
+  "meeting schedule",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-05-18",
  "docid": "4637",
@@ -12,25 +12,234 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from April 6, 2015",
+   "motion": "Approve the minutes of April 6, 2015, with recommended changes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "committee reviewed and approved minutes with recommended changes."
   },
   {
-   "motion": "Approve the bid from Access A/V to upgrade the control room in Town hall",
+   "motion": "Approve the bid from Access A/V to upgrade the control room in Town Hall.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "committee approved and voted for the bid from access a/v to upgrade the control room in town hall."
   },
   {
-   "motion": "Approve $2500 from vendor line to service line for Jason's salary",
+   "motion": "Approve $2500 transfer from the vendor line to the service line for Jason’s salary.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "committee reviewed and approved $2500 from vender line to service line for jason's salary."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10259650000000001
+ "note": "Minutes are extracted text with no vote counts or movers recorded for any motion; the three approvals are recorded only as 'approved' or 'voted for', so outcomes are marked passed without a count. The minutes are signed 'Jeffrey Bajko 5/18/15 Approved.' The minutes name Kerri Spiedal, Emily Bodkin and Jason, who are discussed but not recorded as taking part, so they are not listed as attendees. No documents list is printed.\"",
+ "cost_usd": 0.00418752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, and steve walker."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non committee member",
+   "status": "present",
+   "quote": "non committee members present were jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Bulletin Board Policy will be emailed to Jo and the committee for review, with changes made and discussed at the next meeting.",
+   "quote": "the policy will be emailed to jo and the rest of the committee for review."
+  },
+  {
+   "decision": "PACC will evaluate Jo and submit its evaluation to the personnel committee, which will decide compensation.",
+   "quote": "pacc will evaluate jo and submit its evaluation to the personal committee, which will decide compensation."
+  },
+  {
+   "decision": "Jo is to submit quotes with emails showing attempts to request a quote when a third quote cannot be obtained.",
+   "quote": "include emails attempting to request a quote."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "AV system improvement quote from Unique Media systems",
+   "what_was_recorded": "Unique Media systems quoted $24,069 for the AV system improvement.",
+   "figures_as_printed": [
+    "$24,069"
+   ],
+   "quote": "quote from unique media systems: $24,069."
+  },
+  {
+   "topic": "Recorder add-on not included in Unique Media price",
+   "what_was_recorded": "The recorder is not included in the Unique Media price; it would cost an additional $1300.00.",
+   "figures_as_printed": [
+    "$1300.00"
+   ],
+   "quote": "recorder is not included into the price of unique media system provider. the price would be $1300.00."
+  },
+  {
+   "topic": "Access A/V bid for control room upgrade",
+   "what_was_recorded": "The committee approved the Access A/V bid to upgrade the Town Hall control room; no dollar figure is printed for it.",
+   "figures_as_printed": [],
+   "quote": "committee approved and voted for the bid from access a/v to upgrade the control room in town hall."
+  },
+  {
+   "topic": "Summer video contest prize",
+   "what_was_recorded": "The winner of the summer student video contest will receive a $250 prize.",
+   "figures_as_printed": [
+    "$250"
+   ],
+   "quote": "winner will receive $250 and will be announce the first week of school."
+  },
+  {
+   "topic": "Three new cameras purchased",
+   "what_was_recorded": "Jo purchased three new cameras at a total cost of $5854.14.",
+   "figures_as_printed": [
+    "$5854.14"
+   ],
+   "quote": "jo purchased three new cameras. total cost: $5854.14."
+  },
+  {
+   "topic": "Ending balance at end of April",
+   "what_was_recorded": "The ending balance at the end of April was 290,336.35.",
+   "figures_as_printed": [
+    "290,336.35"
+   ],
+   "quote": "ending balance at the end of april is 290,336.35"
+  },
+  {
+   "topic": "Ending balance as of May 18",
+   "what_was_recorded": "The ending balance as of May 18 was 288,589.13.",
+   "figures_as_printed": [
+    "288,589.13"
+   ],
+   "quote": "ending balance as of may 18 th is 288,589.13"
+  },
+  {
+   "topic": "Salary line transfer for Jason",
+   "what_was_recorded": "The committee approved moving $2500 from the vendor line to the service line for Jason’s salary.",
+   "figures_as_printed": [
+    "$2500"
+   ],
+   "quote": "committee reviewed and approved $2500 from vender line to service line for jason's salary."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Move funds from the vendor line to the service line for Jason’s salary.",
+   "amount_as_printed": "$2500",
+   "outcome": "approved",
+   "quote": "committee reviewed and approved $2500 from vender line to service line for jason's salary."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Issue with last meeting posting",
+   "quote": "issue with last meeting posting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "one comment noted about last meeting posting",
+   "quote": "issue with last meeting posting.",
+   "tags": [
+    "public comment",
+    "posting"
+   ]
+  },
+  {
+   "topic": "Review and approve April 6, 2015 minutes",
+   "resolution": "approved with recommended changes",
+   "quote": "committee reviewed and approved minutes with recommended changes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly budget report",
+   "resolution": "reviewed; AV quotes, equipment, balances and transfer approved",
+   "quote": "jo informed us that she needed 3 quotes for av system improvement proposals.",
+   "tags": [
+    "budget",
+    "AV equipment",
+    "volunteers",
+    "video contest",
+    "balances"
+   ]
+  },
+  {
+   "topic": "Bulletin Board Policy",
+   "resolution": "sent to committee for review; to be discussed next meeting",
+   "quote": "the policy will be emailed to jo and the rest of the committee for review.",
+   "tags": [
+    "policy",
+    "bulletin board"
+   ]
+  },
+  {
+   "topic": "Salaries, payment and evaluation of PAC staff",
+   "resolution": "discussed; no action recorded",
+   "quote": "jo is under the administration payment policy.",
+   "tags": [
+    "salaries",
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Cable access committee discussion",
+   "resolution": "discussed; no action recorded",
+   "quote": "committee that is looking into renegotiating cable contract with comcast.",
+   "tags": [
+    "cable contract",
+    "Comcast",
+    "10 year business plan"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bulletin Board Policy (draft)",
+   "where": "text",
+   "quote": "the policy will be emailed to jo and the rest of the committee for review."
+  }
+ ],
+ "tags": [
+  "public access",
+  "cable committee",
+  "AV equipment",
+  "budget",
+  "staff salaries",
+  "bulletin board policy",
+  "Comcast contract",
+  "volunteers",
+  "video contest"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

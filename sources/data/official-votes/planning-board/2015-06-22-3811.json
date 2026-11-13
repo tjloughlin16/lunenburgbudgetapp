@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-06-22",
  "docid": "3811",
@@ -12,39 +12,298 @@
  },
  "votes": [
   {
-   "motion": "Driveway at 302 West Street is in an acceptable location",
+   "motion": "That the driveway at 302 West Street is in an acceptable location under Protective Bylaw Section 6.4.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, all aye",
+   "procedural": false,
    "quote": "motion that driveway is in an acceptable location, d. prokowiew, second, g. bittner, all aye."
   },
   {
-   "motion": "Continue the hearing to Thursday, July 2, 2015, 7:00 PM, Town Hall",
+   "motion": "Continue the 270 Electric Avenue public hearing to Thursday, July 2, 2015, 7:00 PM, Town Hall.",
    "moved_by": "M. Allison",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed, all aye",
+   "procedural": false,
    "quote": "motion m. allison to continue the hearing to thursday, july 2, 2015, 7:00 pm, town hall, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Approve the June 8, 2015 minutes",
+   "motion": "Approve the minutes of 6/8/15.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion m. allison, second, g. bittner"
+   "quote": "6/8/15, motion m. allison, second, g. bittner"
   },
   {
-   "motion": "Approve the June 8, 2015 270 Electric Avenue Hearing minutes",
+   "motion": "Approve the 270 Electric Avenue hearing minutes of 6/8/15.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion m. allison, second, g. bittner"
+   "quote": "6/8/15, 270 electric avenue hearing, motion m. allison, second, g. bittner"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Scanned document of good quality. 164 White Street ANR was endorsed but no vote recorded; 175 Northfield Road plan was accepted but no formal vote recorded. Meeting adjourned at 7:35 PM with no adjournment vote recorded.",
- "cost_usd": 0.11061950000000001
+ "dropped_unquoted": 1,
+ "note": "The minutes record no public comment section and no dollar figures. Vote counts appear only as 'all aye'. Minutes approvals record a motion with no result. Adjournment is recorded without a motion. Some text has spacing artifacts (e.g., 'Pla n', '13 th') that were copied as printed.",
+ "cost_usd": 0.00689342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Allan Foster",
+   "role": "Property owner",
+   "status": "present",
+   "quote": "property owner allan foster presented plan."
+  },
+  {
+   "name": "E. Boucher",
+   "role": "PLS, on behalf of the property owners",
+   "status": "present",
+   "quote": "plan presented by e. boucher, pls on behalf of the property owners."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Plan for 302 West Street endorsed by the Board.",
+   "quote": "302 west street- plan endorsed by board."
+  },
+  {
+   "decision": "Board endorsed the 164 White Street ANR plan but will hold it until the Town decides whether to make an offer on the Chapter land.",
+   "quote": "the board endorsed the anr pla n, but will hold onto it until the town has made"
+  },
+  {
+   "decision": "The 175 Northfield Road plan (ten lots) was accepted for departmental review.",
+   "quote": "plan accepted for departmental review."
+  },
+  {
+   "decision": "Board will review the 150 and 164 White Street ROFR packet and make its recommendation at its July 13 meeting.",
+   "quote": "board will review packet and make its recommendation based on planning goals at its july 13 th meeting."
+  },
+  {
+   "decision": "Board will review and discuss bylaw updates on July 13.",
+   "quote": "board to review and discuss on july 13th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Agricultural Commission grant for Right to Farm signs",
+   "what_was_recorded": "The Agricultural Commission reported a grant was received for Right to Farm signs at the Town line.",
+   "figures_as_printed": [],
+   "quote": "grant received for right to farm signs at town line."
+  },
+  {
+   "topic": "Developer bond on Definitive Subdivision, 50 Elmwood Road",
+   "what_was_recorded": "The subdivision was waiting on a bond from the developer.",
+   "figures_as_printed": [],
+   "quote": "waiting for bond from the developer."
+  },
+  {
+   "topic": "Right of First Refusal on Chapter 61A land at 150 and 164 White Street",
+   "what_was_recorded": "The Town Manager asked the Board for a recommendation on whether the Town should attempt to purchase the Chapter 61A land.",
+   "figures_as_printed": [],
+   "quote": "town should attempt to purchase the property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANRs: 302 West Street, 164 White Street, 175 Northfield Road",
+   "resolution": "302 West Street driveway found acceptable; 164 White Street endorsed but held pending Town ROFR decision; 175 Northfield Road accepted for departmental review",
+   "quote": "302 west street- plan endorsed by board.",
+   "tags": [
+    "ANR",
+    "driveway",
+    "subdivision",
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "Public hearing: 270 Electric Avenue",
+   "resolution": "continued to July 2, 2015 (hearing not opened)",
+   "quote": "due to the absence of k. chenis, the hearing was not opened.",
+   "tags": [
+    "public hearing",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "6/8/15 minutes and 6/8/15 hearing minutes moved; 5/11/15 minutes left unsigned",
+   "quote": "5/11/15, not signed due to absence of k. chenis",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received, no action",
+   "quote": "meeting june 25th for discussion of 150 and 164 white street chapter land.",
+   "tags": [
+    "committees",
+    "MRPC",
+    "school building",
+    "reuse",
+    "open space",
+    "agriculture",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "received, no action",
+   "quote": "waiting for bond from the developer.",
+   "tags": [
+    "subdivision",
+    "Tri Town Landing",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "ROFR review scheduled July 13; Housing Production Plan noted as approved; special permits noted",
+   "quote": "received zoning board of appeals special permit.",
+   "tags": [
+    "ROFR",
+    "housing production plan",
+    "40B",
+    "special permit",
+    "bylaw updates"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meetings set for July 2, 13, and 27",
+   "quote": "meeting schedule: july 2, 13, and 27",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "discussion only; use table for bylaw review suggested",
+   "quote": "m. allison noted an open house sign for the elmwood road subdivision.",
+   "tags": [
+    "bylaw review",
+    "use table",
+    "Elmwood Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "06/08/15 Minutes",
+   "where": "list",
+   "quote": "documents used at meeting: 06/08/15 minutes 06/08/15 270 electric avenue hearing minutes"
+  },
+  {
+   "name": "06/08/15 270 Electric Avenue Hearing Minutes",
+   "where": "list",
+   "quote": "documents used at meeting: 06/08/15 minutes 06/08/15 270 electric avenue hearing minutes"
+  },
+  {
+   "name": "ANR, 302 West Street",
+   "where": "list",
+   "quote": "anr, 302 west street anr, 164 white street"
+  },
+  {
+   "name": "ANR, 164 White Street",
+   "where": "list",
+   "quote": "anr, 302 west street anr, 164 white street"
+  },
+  {
+   "name": "ANR, Oak Ave/Northfield Road",
+   "where": "list",
+   "quote": "anr, oak ave/northfield road 150 & 164 white street, rofr"
+  },
+  {
+   "name": "150 & 164 White Street, ROFR",
+   "where": "list",
+   "quote": "anr, oak ave/northfield road 150 & 164 white street, rofr"
+  },
+  {
+   "name": "Tri Town Landing Weekly Progress Report",
+   "where": "list",
+   "quote": "150 & 164 white street, rofr tri town landing weekly progress report"
+  },
+  {
+   "name": "Notice of Right of First Refusal (from A. Foster)",
+   "where": "text",
+   "quote": "a. foster has provided the town a notice of right of first refusal"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 6.4",
+   "where": "text",
+   "quote": "under protective bylaw of the town of lunenburg , §6.4."
+  },
+  {
+   "name": "Housing Production Plan (HPP)",
+   "where": "text",
+   "quote": "housing production plan (hpp)- the state has approved"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "public hearing",
+  "Chapter 61A",
+  "right of first refusal",
+  "zoning",
+  "bylaw review",
+  "subdivision",
+  "minutes approval",
+  "driveway"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

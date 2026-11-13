@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-09-11",
  "docid": "1800",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to accept the minutes of the August 14, 2012 Council on Aging meeting",
+   "motion": "Approve the minutes of the August 14, 2012 COA meeting.",
    "moved_by": "Jane Doyle",
    "seconded_by": "Jim Hays",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "jane doyle motioned to accept the minutes of the august 14, 2012 coa meeting. jim hays seconded. all approved, motion carried."
   },
   {
-   "motion": "to approve all FY12 Sub-Committee minutes as presented",
+   "motion": "Approve all Sub-Committee minutes as presented (Director's Evaluation and Bylaw Sub-Committees).",
    "moved_by": "Jane Doyle",
    "seconded_by": "Sis Montouri",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "jane doyle motioned to approve all sub-committee minutes as presented. sis montouri seconded. all approved, motion carried."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Sis Montouri",
    "seconded_by": "Jane Doyle",
    "outcome": "passed",
@@ -37,6 +37,278 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded, all procedural (approving prior minutes and adjournment). All passed unanimously.",
- "cost_usd": 0.0872675
+ "note": "Text is a clean extraction with no scan issues. Votes were recorded only as 'All approved, motion carried' with no tally, so outcomes are 'passed'. No public comment section; the State Rep discussion is a guest round table, not public comment. The minutes spell Montuori/Montouri inconsistently and the secretary as 'Sue Doherty' (attendance) and 'Susan Doherty' (signature block); names are kept as printed. Several people named in the text (Gerry Beloin, Ruth Swiecicki, Chris McCarthy, Gil Anderson, Faith Anderson, Hoyt (Bill) Anderson, Gloria O'Brien, Kevin Szocik) did not take part in the meeting and are not listed as attendees. Barbara Brown, Jane Doyle, Deb Seeley, Fred Crellin, Jim Hays, Sis Montuori, Joyce Wass are listed without printed roles. No dollar amounts were decided in any recorded vote.",
+ "cost_usd": 0.00790532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Fred Crellin",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), doreen noble (director), barbara brown, jane doyle, deb seeley, fred crellin, jim hays, sis montuori, joyce wass, and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "absent",
+   "quote": "excused: pete lincoln (vice-chairperson)"
+  },
+  {
+   "name": "Jen Benson",
+   "role": "State Rep. (guest)",
+   "status": "present",
+   "quote": "guest: state rep. jen benson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director Doreen Noble will negotiate with the Town Manager to increase the Eagle House van/building staff hours to 10-14 hours per week.",
+   "quote": "ms. noble will negotiate with the town manager on having his hours increased at the eagle house to 10-14 hrs. per week."
+  },
+  {
+   "decision": "Director will advertise for two per diem drivers, in-house first and public if no qualified applicants.",
+   "quote": "ms. noble stated that she will be advertising for two \"per deim\" drivers beginning with an \"in house\" advertisement then it will go public if there are no qualified applicants."
+  },
+  {
+   "decision": "Director will advertise for one or two per diem Meal Site Coordinators for kitchen back-up, in-house first and public if no qualified applicants.",
+   "quote": "ms. noble will be advertising for one or two \"per deim\" coordinators in order to have back up in the kitchen."
+  },
+  {
+   "decision": "FY13 COA sub-committee assignments were set as listed (Board Development, Bylaw, Advocacy, Finance, Directors Evaluation).",
+   "quote": "coa sub-committee re-assignments for fy13 are as follows:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Kitchen equipment replacement (refrigerator, steam table, oven) and salad bar",
+   "what_was_recorded": "Capitol Planning approved $10K for replacing kitchen equipment; a vendor will send replacement quotes, including for a new salad bar.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "capitol planning has approved $10k for the replacement of the kitchen refrigerator, steam table, & oven."
+  },
+  {
+   "topic": "Farmer's Market coupons (MOC elder nutrition program)",
+   "what_was_recorded": "Income-eligible residents each received $25 worth of Farmer's Market coupons this summer; MOC gave 12 more coupons for distribution.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "participants received $25 worth of coupons which could be used at participating farmers markets for fresh produce."
+  },
+  {
+   "topic": "Lunenburg Relief Day fundraising for the COA",
+   "what_was_recorded": "Relief Day funds for the COA reached $5K, with one later $100 check; the $12K goal has not been reached.",
+   "figures_as_printed": [
+    "$5K",
+    "$100",
+    "$12K"
+   ],
+   "quote": "ms. noble stated that funds collected for the coa on lunenburg relief day amounted to $5k. one more check was received after the event in the amount of $100."
+  },
+  {
+   "topic": "FY13 Formula Grant",
+   "what_was_recorded": "The FY13 Formula Grant is about $14.5K, used for Outreach Salary and Meals on Wheels mileage; the director hopes to use $4K of it for stairs between the parking lots.",
+   "figures_as_printed": [
+    "$14.5K",
+    "$4K"
+   ],
+   "quote": "this year the grant is for approximately $14.5k and is used for outreach salary and meals on wheels mileage."
+  },
+  {
+   "topic": "Concrete ramp between upper and lower parking lots (AmeriRamp)",
+   "what_was_recorded": "AmeriRamp judged a concrete ramp not worth doing given the project's expense; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "he came to the conclusion that it was not worth doing considering the expense of the project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and welcome",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "mary lynn conrad (chairperson) opened the meeting at 9:34am"
+  },
+  {
+   "topic": "Guest State Rep. Jen Benson - round table on state legislature and elder issues",
+   "resolution": "discussed; no action",
+   "tags": [
+    "state legislature",
+    "elder issues",
+    "formula grants",
+    "elder nutrition",
+    "health care"
+   ],
+   "quote": "the board thanked rep. benson for making time to come to speak at this meeting."
+  },
+  {
+   "topic": "Approval of August 14, 2012 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "jane doyle motioned to accept the minutes of the august 14, 2012 coa meeting. jim hays seconded. all approved, motion carried."
+  },
+  {
+   "topic": "Director's report (finance/informational)",
+   "resolution": "informational; no action",
+   "tags": [
+    "staffing",
+    "volunteers",
+    "meal site",
+    "facilities",
+    "grants",
+    "nutrition"
+   ],
+   "quote": "finance/informational report: ms. noble thanked the coa board members for participating in 2012 volunteer recognition ceremony/cookout"
+  },
+  {
+   "topic": "Old Business: Eagle House recreation area, Lunenburg Relief Day, FY13 Formula Grant",
+   "resolution": "no action",
+   "tags": [
+    "eagle house",
+    "fundraising",
+    "formula grant",
+    "bocce court"
+   ],
+   "quote": "ms. noble stated that funds collected for the coa on lunenburg relief day amounted to $5k."
+  },
+  {
+   "topic": "Approval of FY12 sub-committee minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "sub-committees"
+   ],
+   "quote": "jane doyle motioned to approve all sub-committee minutes as presented. sis montouri seconded. all approved, motion carried."
+  },
+  {
+   "topic": "FY13 sub-committee assignments",
+   "resolution": "assignments set",
+   "tags": [
+    "sub-committees",
+    "board development",
+    "bylaws",
+    "advocacy",
+    "finance"
+   ],
+   "quote": "coa sub-committee re-assignments for fy13 are as follows:"
+  },
+  {
+   "topic": "Correspondence from former board member Gloria O'Brien",
+   "resolution": "read to board; no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "sis montouri received a note from former coa board member gloria o'brien which she read to the board."
+  },
+  {
+   "topic": "General discussion: Eagle House group name change",
+   "resolution": "no action; state agency reply noted",
+   "tags": [
+    "eagle house",
+    "name change"
+   ],
+   "quote": "friends of the eagle house inc. have changed their name to \"supporters of the eagle house inc.\""
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:20 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 11:20 a.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA monthly financial page",
+   "where": "list",
+   "quote": "the coa monthly financial page was distributed to members for review."
+  },
+  {
+   "name": "Sub-committee minutes (Director's Evaluation Sub-Committee and Bylaw Sub-Committee, dated 1/18/12 through 3/2/12)",
+   "where": "list",
+   "quote": "the following sub-commit tee minutes were submitted for approval:"
+  },
+  {
+   "name": "Note from former COA Board member Gloria O’Brien",
+   "where": "list",
+   "quote": "sis montouri received a note from former coa board member gloria o'brien which she read to the board."
+  },
+  {
+   "name": "Annual report to Executive Office of Elder Affairs",
+   "where": "text",
+   "quote": "ms. noble also said that the annual report to executive office of elder affairs has been completed."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "elder services",
+  "state legislature",
+  "staffing",
+  "grants",
+  "kitchen equipment",
+  "meal site",
+  "fundraising",
+  "eagle house",
+  "minutes",
+  "sub-committees"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the coa monthly financial page was distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

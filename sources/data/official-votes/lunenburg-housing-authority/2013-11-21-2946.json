@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2013-11-21",
  "docid": "2946",
@@ -12,32 +12,192 @@
  },
  "votes": [
   {
-   "motion": "To approve the Financial Report as presented",
-   "moved_by": "Paul Doherty",
+   "motion": "Approve the minutes of the October 17, 2013 meeting as presented.",
+   "moved_by": "Elizabeth Murphy",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": true,
-   "quote": "financial report including a review of accounts payable was accepted , on a motion by paul doherty; seconded by deborah christen, financial was approved as presented",
-   "quote_taken_from_text": true
+   "quote": "on a motion by elizabeth m urphy, seconded by deborah christen; the minutes were approved as presented. all were in favor."
   },
   {
-   "motion": "To write off $1,230.00 as uncollectible debts as of August 31, 2013",
+   "motion": "Accept the Financial Report including the review of accounts payable, approving it as presented.",
    "moved_by": "Paul Doherty",
-   "seconded_by": "Sheila Lumi",
+   "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "resolved, motion made by paul doherty to write off $1,230.00 as of august 31, 2013 as uncollectible debts. seconded, sheila lumi seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "financial report including a review of accounts payable was accepted , on a motion by paul doherty; seconded by deborah christen, financial was approved as presented."
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Write off $1,230.00 owed by vacated tenants as of August 31, 2013 as uncollectible debts (Resolution 201315).",
+   "moved_by": "Paul Doherty",
+   "seconded_by": "Sheila Lumi",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "resolved, motion made by paul doherty to write off $1,230.00 as of august 31, 2013 as uncollectible debts."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
    "procedural": true,
-   "quote": "with no other business, on a motion by paul doherty, seconded by elizabeth murphy, the board voted to adjourn the meeting at 7:15 p.m. all were in favor."
+   "quote": "on a motion by paul doherty, seconded by elizabeth murphy, the board voted to adjourn the meeting at 7:15 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0877295
+ "dropped_unquoted": 0,
+ "note": "Text extract with stray spacing artifacts (e.g., 'M urphy', 'o f'); names and quotes are kept as printed where they matter. The Executive Director is not named, so it is not clear whether he is Eugene Capoccia; that is not stated. The minutes say 'see attached list' for the vacated-tenant list, but the list itself is not in the text. Vote counts are not printed as numbers for the financial report or adjournment; outcomes reflect 'approved' and 'all were in favor'.",
+ "cost_usd": 0.00849114,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chairperson deborah a.h. christen, vice chair paul doherty, member amaryllis leet, member sheila lumi, member"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chairperson deborah a.h. christen, vice chair paul doherty, member amaryllis leet, member sheila lumi, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chairperson deborah a.h. christen, vice chair paul doherty, member amaryllis leet, member sheila lumi, member"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chairperson deborah a.h. christen, vice chair paul doherty, member amaryllis leet, member sheila lumi, member"
+  },
+  {
+   "name": "Sheila Lumi",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chairperson deborah a.h. christen, vice chair paul doherty, member amaryllis leet, member sheila lumi, member"
+  },
+  {
+   "name": "Eugene Capoccia",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Write-off of unrecoverable tenant debts",
+   "what_was_recorded": "Tenants who vacated owing rent owed $1,230.00 as of August 31, 2013; staff could not collect, and the amount was written off.",
+   "figures_as_printed": [
+    "$1,230.00",
+    "August 31, 2013"
+   ],
+   "quote": "resolved, motion made by paul doherty to write off $1,230.00 as of august 31, 2013 as uncollectible debts."
+  },
+  {
+   "topic": "Financial report and bills for payments",
+   "what_was_recorded": "The Executive Director presented the Financial Report with the bills for payments, including review of accounts payable; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the executive director then presented the financial report along with the bills for payments."
+  },
+  {
+   "topic": "Rent collections and occupancy",
+   "what_was_recorded": "Occupancy and rent collections were reported at 100 percent.",
+   "figures_as_printed": [
+    "100 percent"
+   ],
+   "quote": "collections, remains at 100 percent."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of minutes",
+   "resolution": "minutes of October 17, 2013 approved as presented",
+   "quote": "minutes of the october 17, 2013 meeting were presented.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "received; no action",
+   "quote": "the executive director then presented his report. everything seems to be working well with our new maintenance person, keith kennedy.",
+   "tags": [
+    "staffing",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Financial report and bills",
+   "resolution": "approved as presented",
+   "quote": "the executive director then presented the financial report along with the bills for payments.",
+   "tags": [
+    "finance",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Facilities report",
+   "resolution": "received; no action",
+   "quote": "there is no modernization activity to report at this time.",
+   "tags": [
+    "facilities",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "Resolution 201315 write-off of unrecoverable debts",
+   "resolution": "passed unanimously",
+   "quote": "resolved, motion made by paul doherty to write off $1,230.00 as of august 31, 2013 as uncollectible debts.",
+   "tags": [
+    "tenant debt",
+    "write-off"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:15 p.m.",
+   "quote": "on a motion by paul doherty, seconded by elizabeth murphy, the board voted to adjourn the meeting at 7:15 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution 201315, Resolution to Write-Off Unrecoverable Debts",
+   "where": "text",
+   "quote": "mr. capoccia the presented the following resolution:"
+  },
+  {
+   "name": "Attached list of vacated tenants owing rent as of August 31, 2013",
+   "where": "text",
+   "quote": "vacating owed $1,230.00 as o f august 31, 2013 ( see attached list )"
+  },
+  {
+   "name": "Financial Report with bills for payments",
+   "where": "text",
+   "quote": "the executive director then presented the financial report along with the bills for payments."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "tenant debt write-off",
+  "financial report",
+  "rent collections",
+  "minutes approval",
+  "maintenance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached list"
+ },
+ "dropped_unquoted_by_field": {}
 }

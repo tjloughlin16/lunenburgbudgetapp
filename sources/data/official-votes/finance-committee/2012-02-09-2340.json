@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-02-09",
  "docid": "2340",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to accept the minutes of December 5, 2011",
+   "motion": "Accept the minutes of 12/5/11.",
    "moved_by": "BR",
    "seconded_by": "JM",
    "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to accept; jm seconded; all approved"
+   "quote": "minutes reviewed for 12/5/11; br made motion to accept; jm seconded; all approved"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 8:58 PM.",
    "moved_by": "SG",
    "seconded_by": "BR",
    "outcome": "passed",
@@ -29,6 +29,200 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision is clear and readable. One set of minutes reviewed (12/5/11) was voted to accept; January minutes were marked for editing with no vote recorded. Meeting adjourned by motion.",
- "cost_usd": 0.0843375
+ "note": "OCR text from macOS Vision with layout garbling (stray words such as 'Eudisa' and '110110'); some initials used for members (BR, JM, SG, ME). Votes recorded only as 'all approved' and 'all in favor', so no tallies are printed. Page 2 is the Fiscal 13 Budget Hearings schedule with no minutes text; it is the same document as the Schedule for Hearings handout. The Town Manager and Town Accountant did not attend, but neither is named as a person. No public comment section appears in the text.",
+ "cost_usd": 0.00499212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, chairman"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, vice-chairman"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "martha mcdonald, secretary"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, john male, barbara reynolds, scott gile"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of 1/26/12 were reviewed and deferred for editing; no approval taken.",
+   "quote": "minutes reviewed for 1/26/12; will edit"
+  },
+  {
+   "decision": "Hearing schedule handout noted as guidance for Department Heads; the minutes say each Department Head should be asked to discuss where departments will endure the most pain with a balanced budget.",
+   "quote": "ask each department head to discuss where the departments will endure the most pain with a balanced budget"
+  },
+  {
+   "decision": "FinCom is putting together a five-year chronology of steps taken to balance the budget; next Service Level Team meeting February 27.",
+   "quote": "fincom putting together five year chronology of steps taken to balance budget; next meeting february 27"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School building (high school) condition and cost",
+   "what_was_recorded": "Schools report says bringing the high school, built in 1955, up to standard would require $11M.",
+   "figures_as_printed": [
+    "$11M"
+   ],
+   "quote": "reviewed conditions of current buildings, i.e. high school built in 1955 and would require $11m to bring up to standard"
+  },
+  {
+   "topic": "School budget target",
+   "what_was_recorded": "Service Level Team said the school budget should be level service minus $1.2M.",
+   "figures_as_printed": [
+    "$1.2M"
+   ],
+   "quote": "school budget should be level service minus $1.2m"
+  },
+  {
+   "topic": "MSBA reimbursement rate",
+   "what_was_recorded": "Schools report says the MSBA formula starts at 53% reimbursement, with hopes of reaching 60%.",
+   "figures_as_printed": [
+    "53%",
+    "60%"
+   ],
+   "quote": "formula starts at 53% reimbursement and you can qualify for additional percentage points; hoping to get up to 60%"
+  },
+  {
+   "topic": "MSBA feasibility and design study funding",
+   "what_was_recorded": "Feasibility and design study cost must be funded by the town until the project is approved; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "feasibility and design study cost must be funded by town until project is approved"
+  },
+  {
+   "topic": "Sewer rate increase",
+   "what_was_recorded": "Fitchburg sewer rate increase is much higher than the town's 20% increase.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "sewer - fitchburg rate increase much higher than our 20% increase"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:02 PM",
+   "quote": "meeting called to order by the chairman at 7:02 pm; town manager did not attend due to a conflict",
+   "tags": [
+    "call to order",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted, no action",
+   "quote": "linda douglas is ready for fy11 town report inputs; all deadlines needed by 2/24/12",
+   "tags": [
+    "town report",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Minutes Review",
+   "resolution": "12/5/11 approved; 1/26/12 to be edited",
+   "quote": "minutes reviewed for 12/5/11; br made motion to accept; jm seconded; all approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee/Department Reports",
+   "resolution": "reports received, no action",
+   "quote": "library - one additional hire made for 8 hours; handout: library updates",
+   "tags": [
+    "library",
+    "schools",
+    "MSBA",
+    "DPW",
+    "service level team",
+    "sewer",
+    "monty tech"
+   ]
+  },
+  {
+   "topic": "New Business - hearing schedule",
+   "resolution": "handout reviewed, no action recorded",
+   "quote": "handout: schedule for hearings from town manager; should provide guidance to department heads on how to target their presentations",
+   "tags": [
+    "budget hearings",
+    "fiscal 13",
+    "department heads"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:58 PM",
+   "quote": "sg made a motion to adjourn at 8:58 pm, br seconded; all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Library Updates (handout)",
+   "where": "list",
+   "quote": "handout: library updates"
+  },
+  {
+   "name": "Schedule for Hearings from Town Manager (handout)",
+   "where": "list",
+   "quote": "handout: schedule for hearings from town manager; should provide guidance to department heads on how to target their presentations"
+  },
+  {
+   "name": "The Beacon, February issue",
+   "where": "text",
+   "quote": "february issue of \"the beacon\""
+  },
+  {
+   "name": "FY11 Town Report inputs",
+   "where": "text",
+   "quote": "linda douglas is ready for fy11 town report inputs"
+  }
+ ],
+ "tags": [
+  "fiscal 13 budget",
+  "budget hearings",
+  "school budget",
+  "MSBA building project",
+  "sewer rates",
+  "town report",
+  "minutes",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout:"
+ },
+ "dropped_unquoted_by_field": {}
 }

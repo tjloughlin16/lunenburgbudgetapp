@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-03-03",
  "docid": "690",
@@ -12,19 +12,254 @@
  },
  "votes": [
   {
-   "motion": "Grant two exemption applications totaling $1,150.00",
-   "outcome": "passed",
+   "motion": "Grant two Exemption applications totaling $1,150.00.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the board reviewed and voted to grant (2) two exemption applications totaling $1,150.00."
   },
   {
-   "motion": "Affirm denial of abatement application from Centro GA, Lunenburg Crossing LLC",
-   "outcome": "passed",
+   "motion": "Affirm the denial of the abatement application from Centro GA, Lunenburg Crossing LLC of 301 Massachusetts Ave (not to grant the abatement).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "after reviewing, the board voted to affirm their denial to not grant the abatement."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR'd from a scan (macOS Vision); voting language is clear and readable.",
- "cost_usd": 0.09946749999999999
+ "note": "OCR text, with errors that limit the reading. No vote counts or motion movers/seconders are printed for any item; the two \"voted\" items are recorded without a motion, so outcomes are 'not stated'. Dates are inconsistent: the agenda line reads 'Feb. 3,, 2014 minutes', the next-meeting line reads 'Tuesday, April 7, 2014, 2015', and the meeting is dated 2015. The signature block reads 'Lauri Requette' above the printed name 'Louise Paquette'. The abatement totals row is garbled in OCR, so the figures are recorded as printed. A line about a 'reelection for a three year term' is unreadable. The commitment numbers ('18 Commitment', '1° Commitment') are OCR-garbled and recorded as printed. Harald Scheid's role and attendance are not stated. No public comment is recorded.",
+ "cost_usd": 0.00577792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting opened at 5:45 pm. present: chairman, louis franco, board members, matt papini, sr.,"
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, matt papini, sr.,"
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Assessor",
+   "status": "present",
+   "quote": "christopher comeau, assessor, george bourgault and louise paquette, administrative assistant."
+  },
+  {
+   "name": "George Bourgault",
+   "role": "not stated",
+   "status": "present",
+   "quote": "christopher comeau, assessor, george bourgault and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "george bourgault and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "george bourgault under the advisement of harald scheid, requested that the board review again"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Granted 9 Real Estate and 1 Personal Property abatement applications, with the abated amounts listed in the abatement table.",
+   "quote": "granted: (9) nine real estate applications & (1) personal property applications"
+  },
+  {
+   "decision": "Denied the abatement applications for properties at 73 Pine Grove Road and 64 Pine Grove Road.",
+   "quote": "two applications for properties located at 73 pine grove road and 64 pine grove road were denied by the board."
+  },
+  {
+   "decision": "Louise will contact the previous owner about the procedure for releasing the Chapter 61B recording on the 90 West Townsend Road property.",
+   "quote": "louise will contact the previous owner regarding the procedure in releasing the chapter 61b recording."
+  },
+  {
+   "decision": "The Abatement Notification and Findings for the Centro GA application will be mailed to the applicant within the next week.",
+   "quote": "louise reported that the abatement notification and findings will be mailed to the applicant within the next week."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Roll-back taxes on 90 West Townsend Road (Chapter 61B)",
+   "what_was_recorded": "The Collector received roll-back taxes committed on 12/23/14 for the property at 90 West Townsend Road.",
+   "figures_as_printed": [
+    "$4,712.38"
+   ],
+   "quote": "louise reported that the collector has received the roll-back taxes committed on 12/23/14 in the amount of $4,712.38 for the property located at 90 west townsend road."
+  },
+  {
+   "topic": "Exemption applications",
+   "what_was_recorded": "The Board granted two Exemption applications totaling this amount.",
+   "figures_as_printed": [
+    "$1,150.00"
+   ],
+   "quote": "the board reviewed and voted to grant (2) two exemption applications totaling $1,150.00."
+  },
+  {
+   "topic": "MVE commitment for 2015",
+   "what_was_recorded": "The 2015 MVE commitment includes 10,823 invoices totaling the stated amount, mailed February 24, 2015.",
+   "figures_as_printed": [
+    "$1,134,116.25"
+   ],
+   "quote": "the 18 commitment for 2015 includes 10,823 invoices totaling $1,134,116.25."
+  },
+  {
+   "topic": "MVE commitment for 2014 (7th commitment)",
+   "what_was_recorded": "The 7th commitment for 2014 includes 325 invoices totaling the stated amount, mailed February 24, 2015.",
+   "figures_as_printed": [
+    "$8,723.37"
+   ],
+   "quote": "includes 325 invoices totaling $8,723.37."
+  },
+  {
+   "topic": "Centro GA abatement valuation",
+   "what_was_recorded": "The Board felt the value of about $76.00 per square foot for the property is conservative and supported by strip center sales.",
+   "figures_as_printed": [
+    "$76.00"
+   ],
+   "quote": "they felt that the value for this property at approximately $76.00 per square foot is conservative"
+  },
+  {
+   "topic": "Abatements granted (totals)",
+   "what_was_recorded": "Abatement table totals for the granted real estate and personal property applications, with individual amounts listed by account.",
+   "figures_as_printed": [
+    "$71.45",
+    "$825.48",
+    "$814.00",
+    "$770.80",
+    "$1,121.70",
+    "$1,236.61",
+    "$1,367.18",
+    "$261.24",
+    "$1,185.30",
+    "7,392.52",
+    "$ 7,653.76"
+   ],
+   "quote": "$1,185.30 7,392.52 total"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals (prior minutes, vouchers, abatements, warrants, commitments, payroll)",
+   "resolution": "not stated",
+   "quote": "feb. 3,, 2014 minutes, current expense vouchers, abatements, warrants, commitments & payroll.",
+   "tags": [
+    "minutes",
+    "vouchers",
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Chapter 61B Recreational Land releases and re-recordings",
+   "resolution": "presented; no vote recorded",
+   "quote": "louise presented (2) two chapter 61b recreational land releases and re-recordings for applications that",
+   "tags": [
+    "Chapter 61B",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Roll-back taxes, 90 West Townsend Road",
+   "resolution": "reported; Louise to contact previous owner",
+   "quote": "louise will contact the previous owner regarding the procedure in releasing the chapter 61b recording.",
+   "tags": [
+    "roll-back taxes",
+    "Chapter 61B"
+   ]
+  },
+  {
+   "topic": "Exemption applications",
+   "resolution": "granted (2), totaling $1,150.00",
+   "quote": "the board reviewed and voted to grant (2) two exemption applications totaling $1,150.00.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "MVE bills and commitments",
+   "resolution": "informational; no action",
+   "quote": "louise informed the board that the mve bills for the 1° commitment for 2015 and 7th commitment for",
+   "tags": [
+    "motor vehicle excise",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Reconsideration of Centro GA abatement (301 Massachusetts Ave)",
+   "resolution": "denial affirmed",
+   "quote": "after reviewing, the board voted to affirm their denial to not grant the abatement.",
+   "tags": [
+    "abatement",
+    "commercial property"
+   ]
+  },
+  {
+   "topic": "Monthly real estate and personal property abatement applications",
+   "resolution": "9 real estate and 1 personal property granted; 2 denied",
+   "quote": "george presented (11) eleven real estate abatement applications and (1) one personal property",
+   "tags": [
+    "abatement",
+    "real estate",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Abatement notification for Centro GA",
+   "resolution": "to be mailed within a week",
+   "quote": "louise reported that the abatement notification and findings will be mailed to the applicant within the next week.",
+   "tags": [
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set; adjourned 7:20 pm",
+   "quote": "meeting adjourned at 7:20 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Abatement Notification and Findings",
+   "where": "text",
+   "quote": "louise reported that the abatement notification and findings will be mailed to the applicant within the next week."
+  },
+  {
+   "name": "MVE bills for the 2015 and 2014 commitments",
+   "where": "text",
+   "quote": "louise informed the board that the mve bills for the 1° commitment for 2015 and 7th commitment for"
+  }
+ ],
+ "tags": [
+  "abatements",
+  "exemptions",
+  "Chapter 61B",
+  "motor vehicle excise",
+  "commitments",
+  "roll-back taxes",
+  "real estate",
+  "personal property",
+  "assessors"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2014-04-07",
  "docid": "1460",
@@ -12,31 +12,229 @@
  },
  "votes": [
   {
-   "motion": "Recommend the BOS add the old primary school to the committee charter",
+   "motion": "Recommend that the BOS add the old primary school to the committee charter.",
    "moved_by": "Dave MacDonald",
    "seconded_by": "Deb Seeley",
-   "outcome": "passed 7-0",
+   "outcome": "7-0",
    "procedural": false,
    "quote": "dave macdonald made a motion (deb seeley 21°) to recommend the bos add the old primary school to the committee charter. committee votes 7-0 in favor."
   },
   {
-   "motion": "Approve minutes from 3/3/13",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
+   "motion": "Approve the minutes from 3/3/13 as submitted.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 3/3/13 approved as submitted"
   },
   {
-   "motion": "Nominate Dave Matthews as a new member as citizen at large",
+   "motion": "Nominate Dave Matthews as a new member as citizen at large.",
    "moved_by": "Dave MacDonald",
    "seconded_by": "Damon McQuaid",
-   "outcome": "passed 7-0",
+   "outcome": "7-0",
    "procedural": false,
    "quote": "dave macdonald made a motion (damon mcquaid 2\"d) to nominate dave matthews as a new member as citizen at large. committee votes 7-0 in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. Some OCR artifacts present (\"21°\" and \"2\"d\" for \"2nd\"), but all votes are legible.",
- "cost_usd": 0.0897975
+ "note": "OCR text of a scanned page set with noise: stray header text (\"So see off it al\"), seconder names garbled (\"21°\" and \"2\\\"d\"), and \"Passios\" likely misread. Minutes approved are dated 3/3/13 for a 2014 meeting; this is printed as-is. The minutes approval has no mover or seconder recorded. The adjournment at 9:03pm has no recorded vote. The flow chart on page 2 is OCR text only. Votes are recorded as 7-0 with seven members present.",
+ "cost_usd": 0.00544302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, damon mcquaid, deb seeley, dave macdonald, steve raboin,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, damon mcquaid, deb seeley, dave macdonald, steve raboin,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, damon mcquaid, deb seeley, dave macdonald, steve raboin,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, damon mcquaid, deb seeley, dave macdonald, steve raboin,"
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, damon mcquaid, deb seeley, dave macdonald, steve raboin,"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "steve raboin, mike mackin, amory phelps"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "steve raboin, mike mackin, amory phelps"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: ron albert"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: dave matthews, rick cuddy, john londa"
+  },
+  {
+   "name": "Rick Cuddy",
+   "role": "realtor; guest advisor volunteer",
+   "status": "present",
+   "quote": "rick cuddy (realtor) has volunteered to serve as a guest advisor."
+  },
+  {
+   "name": "John Londa",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: dave matthews, rick cuddy, john londa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee organized into a Town Hall sub committee (Dave MacDonald, Deb Seeley, Damon McQuaid, Ron Albert) with goals to develop plans and identify funding sources; an RFP for building sales team to be announced with goals to develop a marketing strategy, fill in the RFP template and identify zoning needs.",
+   "quote": "town hall sub committee team: dave macdonald, deb seeley, damon mcquaid, ron albert"
+  },
+  {
+   "decision": "Next meeting set for May 5, 2014 at 6:30pm in Town Hall.",
+   "quote": "may 5, 2014 @ 6:30pm in town hall."
+  },
+  {
+   "decision": "Rick Cuddy volunteered to serve as a guest advisor.",
+   "quote": "rick cuddy (realtor) has volunteered to serve as a guest advisor."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Funding sources for building reuse",
+   "what_was_recorded": "A Town Hall sub committee goal is to identify funding sources, such as sale of other facilities; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "goals: develop plans, identify funding sources such as sale of other facilities."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Londa",
+   "topic": "School building timeline and Passios building",
+   "quote": "john londa: points out that the school building process will last about 2.5 years before the passios building will be completely unoccupied"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:02 PM",
+   "quote": "meeting called to order april 7, 2014 @ 7:02 pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public comment: old primary school",
+   "resolution": "recommended to BOS to add old primary school to charter, passed 7-0",
+   "quote": "dave macdonald made a motion (deb seeley 21°) to recommend the bos add the old primary school to the committee charter. committee votes 7-0 in favor.",
+   "tags": [
+    "public comment",
+    "charter",
+    "old primary school"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes from 3/3/13 approved as submitted",
+   "quote": "minutes from 3/3/13 approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current business: new BOS goals and committee organization",
+   "resolution": "discussed; sub committee teams and goals set out; non-voting member role and flow chart discussed",
+   "quote": "new goals set out by the bos",
+   "tags": [
+    "goals",
+    "sub committees",
+    "town hall",
+    "RFP",
+    "organization"
+   ]
+  },
+  {
+   "topic": "Recruiting new members",
+   "resolution": "Dave Matthews nominated as citizen at large, passed 7-0; Rick Cuddy volunteered as guest advisor",
+   "quote": "dave macdonald made a motion (damon mcquaid 2\"d) to nominate dave matthews as a new member as citizen at large. committee votes 7-0 in favor.",
+   "tags": [
+    "membership",
+    "recruiting",
+    "guest advisor"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for May 5, 2014 at 6:30pm in Town Hall",
+   "quote": "may 5, 2014 @ 6:30pm in town hall.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board / public comment: school building timeline",
+   "resolution": "noted; no action recorded",
+   "quote": "john londa: points out that the school building process will last about 2.5 years before the passios building will be completely unoccupied",
+   "tags": [
+    "public comment",
+    "school building",
+    "Passios building"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:03pm; no vote recorded",
+   "quote": "meeting adjourned @ 9:03pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Building ReUse Committee Decision Making Process flow chart (attached outline, page 2)",
+   "where": "text",
+   "quote": "see attached flow chart outline"
+  }
+ ],
+ "tags": [
+  "building reuse",
+  "town hall",
+  "old primary school",
+  "committee charter",
+  "membership",
+  "sub committees",
+  "RFP",
+  "minutes approval",
+  "school building",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached flow chart outline"
+ },
+ "dropped_unquoted_by_field": {}
 }

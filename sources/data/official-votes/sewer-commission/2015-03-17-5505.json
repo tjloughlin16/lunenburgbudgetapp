@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2015-03-17",
  "docid": "5505",
@@ -12,59 +12,560 @@
  },
  "votes": [
   {
-   "motion": "Approve and accept easements for sewer purposes over portions of Lakeview Avenue, Sunset Avenue, and Harris Avenue",
+   "motion": "Approve and accept the sewer easements granted by land owners over portions of Lakeview Avenue, Sunset Avenue and Harris Avenue, per the plan dated December 5, 2014.",
    "moved_by": "Dave",
    "seconded_by": "Butch",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dave stated 'so moved', butch seconded. vote taken was unanimous."
   },
   {
-   "motion": "Submit the placeholder for the Pleasant View extension after it has been updated and approved by Carl",
+   "motion": "Approve and sign the Order of Taking by eminent domain of a permanent sewer easement at 40 Lakeview Avenue (112-40), award no damages, and authorize Town Counsel to record it within thirty days.",
    "moved_by": "Dave",
    "seconded_by": "Butch",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "dave made the motion to take out the highlighted section and clarify with c ounsel. he then revised the motion to state that we submit the placeholder for the pleasant view extension after it has been u pdated and approved by carl. butch seconded. vote taken wa s unanimo",
-   "quote_taken_from_text": true
+   "quote": "dave made the motion to accept , butch seconded ."
   },
   {
-   "motion": "Put forward the Reserve Capacity Fee Stabilization Fund as Article 3",
+   "motion": "Remove the highlighted SRF-conditional clause from the Pleasant View placeholder and submit the placeholder for the Pleasant View extension only after it has been updated and approved by Carl.",
+   "moved_by": "Dave",
+   "seconded_by": "Butch",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "dave made the motion to take out the highlighted section and clarify with c ounsel."
+  },
+  {
+   "motion": "Put the Reserve Capacity Fee Stabilization Fund forward as Article 3 on the Town Meeting warrant.",
    "moved_by": "Mike",
    "seconded_by": "Butch",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mike made the motion for article 3, butch seconded. vote taken was unanimous."
+   "quote": "mike made the motion for article 3, butch seconded."
   },
   {
-   "motion": "Authorize $1,000 to update the manhole mapping in town",
+   "motion": "Update the manhole mapping in town for $1000 (Pat's formal quote).",
    "moved_by": "Dave",
    "seconded_by": "Butch",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "dave made the motion to update the manhole mapping in town for $1 000, butch seconded. vote taken was unanimous",
-   "quote_taken_from_text": true
+   "quote": "dave made the motion to update the manhole mapping in town for $1 000, butch seconded."
   },
   {
-   "motion": "Dig a hole and cap the pipe at 37 Graham Street for $3,500",
+   "motion": "Dig a hole and cap the pipe at 37 Graham for $3500.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "butch made a motion to dig a hole and cap the pipe for $3500. mike seconded . discussion continued with carl stating that the com mission should hear from jack as it is on the opera tions side. dave wants elizabeth street fixed and the pipe cut at 37 graham. carl is still not comfortable for the comm ission to be making an operations decision without jack being present. but ch noted there was an open motion. vote taken, 3 for, 1 aga",
+   "quote": "butch made a motion to dig a hole and cap the pipe for $3500. mike seconded ."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mike",
+   "seconded_by": "Dave",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "carl asked for a motion to adjourn. mike made the motion, dave seconded."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Extracted text with broken word spacing and no page-level vote tallies except the 37 Graham motion (3 for, 1 against); other motions are recorded as unanimous without a count. No public comment section is printed. Jack Rodriquenz, Kerry, Jeff Blake, Joe Z and Al Packard are mentioned but do not appear as taking part, so they are not listed as attendees. Meeting was at DPW conference room, 520 Chase Rd.",
+ "cost_usd": 0.016700620000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair, carl luck,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair, dave macdonald; members, mike nault, bu tch bilotta"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "members, mike nault, bu tch bilotta, business manager, barb lefebvre."
+  },
+  {
+   "name": "Butch Bilotta",
+   "role": "Member",
+   "status": "present",
+   "quote": "members, mike nault, bu tch bilotta, business manager, barb lefebvre."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "barb lefebvre. abse nt: troy"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "absent",
+   "quote": "barb lefebvre. abse nt: troy"
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "of Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson and matt corbin of wright pierce"
+  },
+  {
+   "name": "Matt Corbin",
+   "role": "of Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson and matt corbin of wright pierce"
+  },
+  {
+   "name": "Bob Eber sole",
+   "status": "present",
+   "quote": "carl summarized the pleasantview issue for bob eber sole who had"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Wright Pierce will run the bid opening meeting.",
+   "quote": "carl asked wright pierce to find two pumps that would technically work and then negotiate with e-one."
+  },
+  {
+   "decision": "Kevin Flygt budget bid to be prepared and compared, before the neighborhood meeting.",
+   "quote": "kevin will talk to flygt and do a budget bid, then compare."
+  },
+  {
+   "decision": "Kevin will check on estimated betterments; the Commission will check with counsel whether it can do them.",
+   "quote": "kevin will check but meanwhile we can check with ou r counsel whether it is something we can do",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mike",
-   "seconded_by": "Dave",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mike made the motion, dave seconded. vote taken was unanimous an d the meeting was adjourned at 9:55pm",
+   "decision": "Barb will advise counsel to take out the SRF-conditional clause and clarify the placeholder works with or without SRF.",
+   "quote": "barb will advise counsel that we want to take out that clause"
+  },
+  {
+   "decision": "Carl will check with Kerry on the change order and bond interest.",
+   "quote": "carl will check wit h kerry on the change order and what the bond interest may be."
+  },
+  {
+   "decision": "Kevin will look again at the DEP grant criteria.",
+   "quote": "kevin said they would take another look, get more guidance on the criteria."
+  },
+  {
+   "decision": "The Weston & Sampson manhole project quote of $25,000 is passed over until the next meeting.",
+   "quote": "commission wanted to pass over it unti l the next meeting.",
    "quote_taken_from_text": true
+  },
+  {
+   "decision": "SWSS was skipped on the agenda for lack of time.",
+   "quote": "swss was skipped over since it was getting late"
+  },
+  {
+   "decision": "Barb asked for a quote for an above-ground cabinet for the Mass Ave flow meter.",
+   "quote": "barb has asked for a quote for the above-ground cabinet."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Seven votes recorded. All voting members present except Troy Daniels (absent); Business Manager Barb Lefebvre did not vote.",
- "cost_usd": 0.19212439999999997
+ "budget_items": [
+  {
+   "topic": "Pratt St/Lakeview Ave SRF construction cost estimate",
+   "what_was_recorded": "Wright Pierce handed out the latest cost estimate with a bottom line figure.",
+   "quote": "matt h anded out the latest cost estimate with bottom line of $1,888,000 .",
+   "figures_as_printed": [
+    "$1,888,000"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Water main replacement cost (Pleasant View)",
+   "what_was_recorded": "A quick number for 600 feet of 8-inch water main was given; water would be ineligible for SRF.",
+   "quote": "of $175 per linear foot",
+   "figures_as_printed": [
+    "$175"
+   ]
+  },
+  {
+   "topic": "Grinder pump savings",
+   "what_was_recorded": "Kevin said negotiating through FRMahoney could save per pump.",
+   "quote": "we could save $2-300 per pump.",
+   "figures_as_printed": [
+    "$2-300"
+   ]
+  },
+  {
+   "topic": "Unitil pavement cost share",
+   "what_was_recorded": "Dave said Unitil should share pavement costs, starting at 50%.",
+   "quote": "that unitil should share in pavement costs, start with 50%.",
+   "figures_as_printed": [
+    "50%"
+   ]
+  },
+  {
+   "topic": "Estimated betterments for interim financing",
+   "what_was_recorded": "Carl asked for input on sending out estimated betterments to help with interim financing; no figure given.",
+   "quote": "carl asked for kevin's input on sending out estimated betterments",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Change order threshold and bond interest",
+   "what_was_recorded": "DEP must approve any change order over $100k; the bond interest cost was to be checked.",
+   "quote": "approve anything over $100k as a change order",
+   "figures_as_printed": [
+    "$100k"
+   ]
+  },
+  {
+   "topic": "DEP Tech Assistance grant",
+   "what_was_recorded": "Matt said DEP would give out the full grant amount until it is gone, and the fund was reduced.",
+   "quote": "t he full $30,000 until it's gone.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "DEP grant fund size",
+   "what_was_recorded": "The DEP fund was reduced from its original size.",
+   "quote": "the fund, originally at $2.7million was reduced to $400,000.",
+   "figures_as_printed": [
+    "$2.7million",
+    "$400,000"
+   ]
+  },
+  {
+   "topic": "Lunenburg income and DEP grant match",
+   "what_was_recorded": "Median income for Lunenburg compared with statewide average; town would have to contribute 25% if above the threshold.",
+   "quote": "with the statewide average at $66-6 8k, by being above the town would",
+   "figures_as_printed": [
+    "$76,000",
+    "$66-6 8K",
+    "25%"
+   ]
+  },
+  {
+   "topic": "CWMP update budget",
+   "what_was_recorded": "Commission had budgeted $20,000 in FY16; Wright Pierce said the update could cost no more than the stated cap.",
+   "quote": "commission had budgeted $20,000 in fy16.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "CWMP update cost cap",
+   "what_was_recorded": "Kevin estimated the CWMP update could be a bit more but no more than the stated amount.",
+   "quote": "but no more than $ 40,000.",
+   "figures_as_printed": [
+    "$ 40,000"
+   ]
+  },
+  {
+   "topic": "Town-wide manhole project quote",
+   "what_was_recorded": "Weston & Sampson submitted a quote for the Town-wide Manhole Project; passed over.",
+   "quote": "for the t own-wide manhole project for $25,000.",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "Manhole plotting quote",
+   "what_was_recorded": "Pat's formal quote for the Manhole Plotting job; authorized at $1000.",
+   "quote": "formal quote from pat for the manhole plotting job for $1000",
+   "figures_as_printed": [
+    "$1000"
+   ]
+  },
+  {
+   "topic": "37 Graham St liner quote",
+   "what_was_recorded": "Weston & Sampson quoted a liner to seal off 37 Graham St.",
+   "quote": "for a liner to seal off 37 graham st from weston & sampson for $4750.",
+   "figures_as_printed": [
+    "$4750"
+   ]
+  },
+  {
+   "topic": "37 Graham St dig-up estimate",
+   "what_was_recorded": "Jack estimated digging it up to disconnect at $3500.",
+   "quote": "jack had provided an estimate of $3500",
+   "figures_as_printed": [
+    "$3500"
+   ]
+  },
+  {
+   "topic": "Insurance savings",
+   "what_was_recorded": "Town saved 2% on the cost of insurance due to pump station monitoring and grease trap reports.",
+   "quote": "saved 2% on the cost of insurance.",
+   "figures_as_printed": [
+    "2%"
+   ]
+  },
+  {
+   "topic": "Second SCADA unit cost",
+   "what_was_recorded": "Mike thought the SCADA estimate was high since later installs should be cheaper.",
+   "quote": "$9000 est imate for the 2 nd scada was high",
+   "figures_as_printed": [
+    "$9000"
+   ]
+  },
+  {
+   "topic": "Easement damages",
+   "what_was_recorded": "Order of Taking awards no damages to the property owner.",
+   "quote": "further to award no damages to the property owner",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Betterment for 40 Lakeview Avenue",
+   "what_was_recorded": "Commission determined it is better to assess betterments that can be collected, since the Town cannot collect taxes on the owners-unknown property.",
+   "quote": "commission discussed and determined to be better to assess",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Pratt St/Lakeview Ave SRF construction bid (Wright Pierce)",
+   "resolution": "discussed; bid schedule reviewed; no vote",
+   "quote": "regarding the pratt st/lakeview ave srf project.",
+   "tags": [
+    "SRF",
+    "bid",
+    "Wright Pierce"
+   ]
+  },
+  {
+   "topic": "Pleasant View Ave betterment and SRF modification",
+   "resolution": "discussed; no action on water main; warrant placeholder handled later",
+   "quote": "carl summarized the pleasantview issue for bob eber sole who had",
+   "tags": [
+    "Pleasant View",
+    "betterment",
+    "SRF",
+    "water main"
+   ]
+  },
+  {
+   "topic": "Grinder pump vendor comparison",
+   "resolution": "discussed; Wright Pierce to find two pumps and negotiate with E-one",
+   "quote": "carl asked wright pierce to find two pumps that would technically work and then negotiate with e-one.",
+   "tags": [
+    "grinder pumps",
+    "E-one",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "DEP Tech Assistance Grant and CWMP update",
+   "resolution": "discussed; Wright Pierce to give CWMP cost; Carl to check with Kerry and Jack",
+   "quote": "dep tech assistance grant solicitation - carl would like a grant to help us do more on",
+   "tags": [
+    "DEP grant",
+    "CWMP",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Grant of Easement vote",
+   "resolution": "approved unanimously; commissioners signed 14 easement documents",
+   "quote": "dave stated 'so moved', butch seconded. vote taken was unanimous.",
+   "tags": [
+    "easements",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Eminent domain request, 40 Lakeview Avenue (112-40)",
+   "resolution": "Order of Taking approved unanimously and signed",
+   "quote": "eminent domain request for 40 lakeview avenue (112- 40)",
+   "tags": [
+    "eminent domain",
+    "easement",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant articles and placeholders",
+   "resolution": "Pleasant View placeholder revised; Article 3 stabilization fund approved",
+   "quote": "which need to be submitted to kerry on 3/23.",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "SWSS presentation",
+   "resolution": "skipped for lack of time",
+   "quote": "swss was skipped over since it was getting late",
+   "tags": [
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Town-wide manhole project and manhole mapping",
+   "resolution": "$25,000 quote passed over; $1000 mapping approved",
+   "quote": "for the t own-wide manhole project for $25,000.",
+   "tags": [
+    "manholes",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "I/I reduction project and 37 Graham St",
+   "resolution": "dig and cap approved 3-1; Elizabeth St issue discussed",
+   "quote": "we hadn't yet received a package from weston & sampson to start the i/i job.",
+   "tags": [
+    "I/I reduction",
+    "37 Graham St",
+    "Elizabeth St"
+   ]
+  },
+  {
+   "topic": "Flow rate and metering, Mass Ave",
+   "resolution": "discussed; quote requested for above-ground cabinet",
+   "quote": "barb noted that flow assessment is coming out on th ursday",
+   "tags": [
+    "flow metering",
+    "Mass Ave"
+   ]
+  },
+  {
+   "topic": "Annual Town report submittal",
+   "resolution": "no action; expected by end of month",
+   "quote": "barb noted we'd received the request,",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Town Caucus and joint executive session notice",
+   "resolution": "informational",
+   "quote": "carl stated that there were no candidates for nomin ation.",
+   "tags": [
+    "caucus",
+    "executive session",
+    "Hollis Hills"
+   ]
+  },
+  {
+   "topic": "Minutes for review",
+   "resolution": "no action; no minutes available",
+   "quote": "barb noted that there were no minutes for review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "informational; FinCom FY16 budget presentation 3/19",
+   "quote": "barb reminded the commission of the fy16 budget",
+   "tags": [
+    "FinCom",
+    "FY16 budget",
+    "business manager"
+   ]
+  },
+  {
+   "topic": "Commissioners comments",
+   "resolution": "discussed; Carl to consider non-televised meeting for Small Water",
+   "quote": "dave stated that as far as small water",
+   "tags": [
+    "Small Water",
+    "SCADA"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:55pm",
+   "quote": "carl asked for a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bid schedule (Pratt St/Lakeview Ave construction bid)",
+   "where": "list",
+   "quote": "kevin provided a copy of the bid schedule to review"
+  },
+  {
+   "name": "Latest cost estimate (bottom line $1,888,000)",
+   "where": "list",
+   "quote": "matt h anded out the latest cost estimate with bottom line of $1,888,000",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Easements & Rights of Way Survey plan dated December 5, 2014, prepared by Lighthouse Land Surveying LLC (mylar and paper copies)",
+   "where": "list",
+   "quote": "matt also provided one mylar and 2-3 paper co pies of the 12/5/14 plan"
+  },
+  {
+   "name": "Comparison of grinder pumps research",
+   "where": "list",
+   "quote": "matt had done rese arch on the comparison of grinder pumps"
+  },
+  {
+   "name": "Most recent FinCom handout",
+   "where": "list",
+   "quote": "barb provided the most recent fi ncom handout that carl had provided."
+  },
+  {
+   "name": "Order of Taking, 40 Lakeview Avenue (112-40)",
+   "where": "text",
+   "quote": "carl asked for discussion on the verbiage in the order of taking document"
+  },
+  {
+   "name": "14 Easement documents",
+   "where": "text",
+   "quote": "commissioners signed off on the 14 easement documents."
+  },
+  {
+   "name": "Pleasant View placeholder (warrant article #2)",
+   "where": "text",
+   "quote": "commission first discus sed the pleasant view placeholder, #2."
+  },
+  {
+   "name": "Article 3, Reserve Capacity Fee Stabilization Fund",
+   "where": "text",
+   "quote": "mike made the motion for article 3, butch seconded."
+  },
+  {
+   "name": "DEP Tech Assistance Grant Solicitation",
+   "where": "text",
+   "quote": "dep tech assistance grant solicitation - carl would like a grant to help us do more on"
+  },
+  {
+   "name": "Jack's email of 3/17",
+   "where": "text",
+   "quote": "barb noted that per jack's ema il of 3/17"
+  },
+  {
+   "name": "Public records request for Aro Estates",
+   "where": "text",
+   "quote": "completed the public records request for aro estates"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "SRF",
+  "Pratt St/Lakeview Ave",
+  "Wright Pierce",
+  "Pleasant View",
+  "grinder pumps",
+  "easements",
+  "eminent domain",
+  "town meeting warrant",
+  "I/I reduction",
+  "manholes",
+  "37 Graham St",
+  "CWMP",
+  "DEP grant",
+  "FY16 budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "matt h anded out the latest cost estimate"
+ },
+ "dropped_unquoted_by_field": {}
 }

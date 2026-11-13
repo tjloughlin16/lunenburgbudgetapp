@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-04-08",
  "docid": "2787",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Jeanne",
    "outcome": "not stated",
@@ -20,7 +20,91 @@
    "quote": "motion to adjourn made by dick, seconded by jeanne at 7:48 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One motion recorded. No outcome stated in the minutes.",
- "cost_usd": 0.08124050000000001
+ "dropped_unquoted": 1,
+ "note": "The minutes are headed as a Personnel Sub-committee meeting of the Trustees of Lunenburg Public Library, not a full board meeting. The only recorded motion is the adjournment, and its result is not printed. The text is extracted PDF text with broken words and odd spacing, so quotes were chosen from clean spans. No dollar figures appear. Minutes are marked 'Approved 4/17/14'.",
+ "cost_usd": 0.00264122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux,"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee; signs the minutes as Secretary",
+   "status": "present",
+   "quote": "attending: jeanne raboin, dick mailloux,"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: lisa krowitz"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Both the existing and future Director goals would be presented at the next board meeting, and the board would then finalize the Director's goals for the coming year.",
+   "quote": "it was decided that both would be presented at the next board meeting"
+  },
+  {
+   "decision": "Jeanne will compile the trustee and invited evaluation responses into final form and list the comments for the board to consider at its next meeting.",
+   "quote": "jeanne will put the responses into final form"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "evaluations noted and read; responses to be compiled for next meeting",
+   "quote": "evaluations submitted by lpl trustees and others",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Director's goals (existing and future)",
+   "resolution": "to be presented at next board meeting for finalization",
+   "quote": "discussion of the existing and future goals",
+   "tags": [
+    "director goals",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:48 p.m.",
+   "quote": "motion to adjourn made by dick, seconded by jeanne at 7:48 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Completed LPL Director Evaluations",
+   "where": "list",
+   "quote": "referenced documents: completed lpl director evaluations"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "personnel subcommittee",
+  "director evaluation",
+  "director goals",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

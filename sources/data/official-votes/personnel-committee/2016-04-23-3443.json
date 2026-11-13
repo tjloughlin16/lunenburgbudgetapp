@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2016-04-23",
  "docid": "3443",
@@ -12,15 +12,109 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
-   "moved_by": "Deb",
-   "seconded_by": "Lin",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the committee's last two meetings, March 3 and April 7, 2016.",
+   "moved_by": "",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "deb motioned to adjourn, lin seconded, and all were in favor."
+   "quote": "we reviewed and approved the minutes of our last two meetings, march 3 & april 7, 2016.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Deb Christen",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "deb motioned to adjourn, lin seconded, and all were in favor.",
+   "seconded_by": "Lin Vickery"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes from macOS Vision. Minutes approval mentioned but no formal vote recorded (just \"approved\"). One procedural vote recorded: adjournment.",
- "cost_usd": 0.0813705
+ "note": "OCR scan of handwritten or low-quality minutes. The Present/Absent lines are garbled and unreadable, so attendance is inferred from the body text; Nancy Forest's status is not stated. Meeting Posted and Location fields are blank. The approval of minutes records no mover, seconder, or count. The body says 'all were in favor' only for adjournment. Public comment is not mentioned.",
+ "cost_usd": 0.00277432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Chase",
+   "role": "Committee Vice-Chair",
+   "status": "present",
+   "quote": "scott chase, committee vice-chair, called meeting to order at 1:05 p.m."
+  },
+  {
+   "name": "Lin Vickery",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "deb motioned to adjourn, lin seconded, and all were in favor."
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deb motioned to adjourn, lin seconded, and all were in favor."
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "nancy forest, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee changed its next meeting from May 5, 2016 to May 12, 2016.",
+   "quote": "changed our next meeting which. was scheduled on may 5, 2016 to may 12 2016."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comparison of Lunenburg job titles and salaries with surrounding towns",
+   "what_was_recorded": "The committee began mapping Lunenburg's job titles and salaries against like jobs in surrounding towns as part of the SAP job description review; no dollar figures were printed.",
+   "quote": "we began to map lunenburg's job titles and salaries with like jobs from surrounding towns. a discussion was had.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of SAP job descriptions",
+   "resolution": "discussed, no action",
+   "quote": "we began to map lunenburg's job titles and salaries with like jobs from surrounding towns. a discussion was had.",
+   "tags": [
+    "job descriptions",
+    "compensation",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes (March 3 and April 7, 2016)",
+   "resolution": "approved",
+   "quote": "we reviewed and approved the minutes of our last two meetings, march 3 & april 7, 2016.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Change of next meeting date",
+   "resolution": "rescheduled from May 5, 2016 to May 12, 2016",
+   "quote": "changed our next meeting which. was scheduled on may 5, 2016 to may 12 2016.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "personnel",
+  "job descriptions",
+  "salaries",
+  "SAP",
+  "meeting schedule",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-10-14",
  "docid": "4905",
@@ -12,63 +12,417 @@
  },
  "votes": [
   {
-   "motion": "Approve transfer of alcohol license from Victory Distributors, Inc. d/b/a Hannaford Food and Drug to Victory Distributors, LLC and change of manager to Marc Bonneau",
+   "motion": "Approve the transfer of alcohol license from Victory Distributors, Inc. d/b/a Hannaford Food and Drug to Victory Distributors, LLC, and approve the change of manager to Marc Bonneau.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2º: j. toale to approve the transfer of license request by victory distributors, inc. d/b/a hannaford food and drug to victory distributors, llc and approve the change of manager to marc bonneau vote: all in favor"
+   "quote": "to approve the transfer of license request by victory distributors, inc. d/b/a hannaford food and drug to victory distributors, llc"
   },
   {
-   "motion": "Approve peddler's license for Daniel E. Patton, Solar City Corporation",
+   "motion": "Approve a peddler's license for Daniel E. Patton for Solar City Corporation.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve a peddler's license for daniel e. patton for solar city corporation 2\"°: j. toale vote: all in favor"
+   "quote": "to approve a peddler's license for daniel e. patton for solar city corporation"
   },
   {
-   "motion": "Approve change of Sunday opening hours to 10:00 a.m. for JK Waterfront, Inc. d/b/a On the Rocks",
+   "motion": "Approve a one day wine and malt license for the North Leominster Rod and Gun Club at 1501 Lancaster Avenue for November 14, 6:00 to 11:00 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
-   "outcome": "passed 4-1",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\": j. toale to approve the request to change the hours to 10:00 a.m. on sundays for jk waterfront, inc. d/b/a on the rocks vote: 4 in favor, 1 opposed (alonzo)"
+   "quote": "to approve the one day wine and malt license to the north leominster rod and gun club at 1501"
   },
   {
-   "motion": "Approve change of Sunday opening hours to 10:00 a.m. for KJ Waterfront, Inc. d/b/a Embers Pizzeria",
+   "motion": "Approve changing the hours to 10:00 a.m. on Sundays for JK Waterfront, Inc. d/b/a On the Rocks.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
-   "outcome": "passed 4-1",
+   "outcome": "passed 4 in favor, 1 opposed (Alonzo)",
    "procedural": false,
-   "quote": "motion: p. bertram 2\"*: j. toale to approve the request to change the hours to 10:00 a.m, on sundays for kj waterfront, inc. d/b/a embers pizzeria vote: 4 in favor, 1 opposed (alonzo)"
+   "quote": "to approve the request to change the hours to 10:00 a.m. on sundays for jk waterfront, inc. d/b/a on the rocks vote: 4 in favor, 1 opposed (alonzo)"
   },
   {
-   "motion": "Approve Turkey Hill Lions Club fundraiser roadblock request for November 15 from 8:00 a.m. to 2:00 p.m.",
+   "motion": "Approve changing the hours to 10:00 a.m. on Sundays for KJ Waterfront, Inc. d/b/a Embers Pizzeria.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "J. Toale",
+   "outcome": "passed 4 in favor, 1 opposed (Alonzo)",
+   "procedural": false,
+   "quote": "to approve the request to change the hours to 10:00 a.m, on sundays for kj waterfront, inc. d/b/a embers pizzeria vote: 4 in favor, 1 opposed (alonzo)"
+  },
+  {
+   "motion": "Approve the Turkey Hill Lions Club road block request for the Town Center fundraiser (minutes print November 15, 8:00 am to 2 pm).",
    "moved_by": "J. Toale",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. toale 2\"d:r. ebersole to approve the turkey hill lions club road block request for november 15\" from 8:00 am to 2 pm vote: all in favor"
+   "quote": "to approve the turkey hill lions club road block request for november"
   },
   {
-   "motion": "Adopt resolution authorizing Town Manager to sign SRF grant application for sewer installation project",
+   "motion": "Adopt a resolution authorizing the Town Manager to sign the SRF application for the work as read.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2°:j. toale to adopt a resolution to authorize town manager to sign the srf application for the work as read vote: all in favor"
+   "quote": "to adopt a resolution to authorize town manager to sign the srf application for the work as read"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:54 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:54 p.m. 2°°: j. toale vote: all in favor"
+   "quote": "to adjourn the meeting at 8:54 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR from macOS Vision. Some ordinal indicators (\"2nd\") rendered with OCR artifacts (2º, 2\"°, 2\"d, 2\", 2\"*, 2°:, 2°°). All votes readable and verbatim quotes preserved exactly as OCR rendered them.",
- "cost_usd": 0.1362605
+ "dropped_unquoted": 0,
+ "note": "OCR text of a scanned minutes page; the received stamp reads OCT 1 1 2016 while the meeting is dated October 14, 2014. Printed inconsistencies recorded as printed: Turkey Hill roadblock listed for November 14 in the heading but November 15 in the motion; Summer Street amount heading $230,351.57 vs body $230,251.57; Sunday-hours items name JK Waterfront in one motion and KJ Waterfront in the other. Several items show a motion and second with 'All in Favor' or a count; I treated those as recorded votes. Some text is garbled by OCR (e.g., Hannaford 'Jail fa' header, odd symbols for 2nd), so quotes avoid those characters where possible.",
+ "cost_usd": 0.00901702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Member",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, member; phyllis luck, member and town manager kerry speidel present."
+  },
+  {
+   "name": "Attorney Hawkins",
+   "role": "Attorney, representing Victory Distributors (applicant)",
+   "status": "present",
+   "quote": "attorney hawkins introduced herself and the proposed manager marc bonneau."
+  },
+  {
+   "name": "Marc Bonneau",
+   "role": "proposed manager, Hannaford Food and Drug Lunenburg store",
+   "status": "present",
+   "quote": "attorney hawkins introduced herself and the proposed manager marc bonneau."
+  },
+  {
+   "name": "Dan Patton",
+   "role": "applicant, Solar City Corporation (peddler's license)",
+   "status": "present",
+   "quote": "dan patton introduced himself stating he recently moved to lunenburg and lives on lancaster avenue."
+  },
+  {
+   "name": "Ken Ricker",
+   "role": "Owner, JK Waterfront, Inc. d/b/a On the Rocks",
+   "status": "present",
+   "quote": "owner ken ricker explained he wanted to open early on sundays to offer brunches"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "presented for the Lion's Club",
+   "status": "present",
+   "quote": "jan carrier presented for the lion's club and stated they will be wearing reflective vests"
+  },
+  {
+   "name": "Celeste McCain-Stober",
+   "role": "resident, 275 Pleasant Street; former applicant for a Planning Board appointment",
+   "status": "present",
+   "quote": "celeste mccain-stober, 275 pleasant street, who had applied for a planning board appointment expressed her impressions of the appointment process."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Alonzo recommended contacting the Police on Mr. Patton's daily locations (peddler's license).",
+   "quote": "mr. alonzo recommended contacting the police on his daily locations."
+  },
+  {
+   "decision": "For future license requests, a representative should attend; Mr. Alonzo asked that the Rod and Gun Club be informed of this.",
+   "quote": "mr. alonzo concurred and asked that they be informed of this for the future."
+  },
+  {
+   "decision": "The Board concurred in proceeding with the Summer Street 75% design contract amendment, with Chapter 90 money proposed as the funding source.",
+   "quote": "she wanted to ensure the board wants to move forward. the board concurred."
+  },
+  {
+   "decision": "The November Election warrant was signed, and accounts payable warrants were signed.",
+   "quote": "the november election warrant was signed."
+  },
+  {
+   "decision": "Clinton Bench was assigned to take the MRTA letter back to the MBTA to look at and try to gather usage data.",
+   "quote": "the action item is that clinton bench will take that mrta letter back to mbta to look at and try to gather usage data."
+  },
+  {
+   "decision": "Chair accepted the resignations of John Byrne, JJ Cote, Sharon Jordan, John Latanzi and Robert Verge from the Conservation Commission, with regret.",
+   "quote": "as chair, mr. alonzo accepted their resignations with regret."
+  },
+  {
+   "decision": "Chair accepted the resignation of Jennifer Peters-Ayers from the Council on Aging.",
+   "quote": "mr. alonzo accepted the resignation and thanked her for applying."
+  },
+  {
+   "decision": "Interested residents were directed to fill out a talent bank form and submit it to Town Hall for the vacant boards.",
+   "quote": "should fill out a talent bank form and submit it to town hall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street 75% design contract amendment (Chapter 90)",
+   "what_was_recorded": "The contract amendment for design is $287,550, with Lunenburg's share stated as $230,251.57, proposed to be funded with Chapter 90 money; the agenda heading prints $230,351.57.",
+   "figures_as_printed": [
+    "$230,351.57",
+    "$287,550",
+    "$230,251.57"
+   ],
+   "quote": "the amendment is in the amount of $287,550; lunenburg's amount is $230,251.57."
+  },
+  {
+   "topic": "Accounts payable warrants",
+   "what_was_recorded": "Two accounts payable warrants were signed: one for $82,564.21 and one for the new school for $2,094,459.52.",
+   "figures_as_printed": [
+    "$82,564.21",
+    "$2,094,459.52"
+   ],
+   "quote": "an accounts payable warrant in the amount of $82,564.21 and an accounts payable warrant for the new school in the amount of $2,094,459.52 was signed"
+  },
+  {
+   "topic": "State Revolving Fund sewer grant application",
+   "what_was_recorded": "The Sewer Commission is filing an SRF grant application for a sewer installation project approved at Town Meeting; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel reported the sewer commission is in the process of filing a grant application with the state"
+  },
+  {
+   "topic": "Stabilization fund and financial policy",
+   "what_was_recorded": "Ms. Bertram suggested working toward a 5% stabilization fund without using Tri-Town funds; financial policy discussed.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "ms. bertram suggested working towards achieving a 5% stabilization fund without using tri-town funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Celeste McCain-Stober",
+   "stated_role": "275 Pleasant Street, who had applied for a Planning Board appointment",
+   "topic": "Board appointment process",
+   "quote": "celeste mccain-stober, 275 pleasant street, who had applied for a planning board appointment expressed her impressions of the appointment process."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Site visit, former Jones House, 42 Main Street",
+   "resolution": "visited site, no action",
+   "quote": "the board visited the site of the former jones house at 42 main street.",
+   "tags": [
+    "site visit"
+   ]
+  },
+  {
+   "topic": "Public comment and member reports (MMA, Passios School)",
+   "resolution": "no action",
+   "quote": "mr. ebersole reported talking to people about the passios school and wanted to have further discussion on whether to sell the property or not.",
+   "tags": [
+    "public comment",
+    "school property"
+   ]
+  },
+  {
+   "topic": "Hannaford alcohol license transfer and manager change",
+   "resolution": "approved",
+   "quote": "to approve the transfer of license request by victory distributors, inc. d/b/a hannaford food and drug to victory distributors, llc",
+   "tags": [
+    "liquor license",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "Peddler's license, Daniel E. Patton, Solar City Corporation",
+   "resolution": "approved",
+   "quote": "to approve a peddler's license for daniel e. patton for solar city corporation",
+   "tags": [
+    "peddler license",
+    "solar"
+   ]
+  },
+  {
+   "topic": "One day wine and malt license, North Leominster Rod & Gun Club",
+   "resolution": "approved",
+   "quote": "to approve the one day wine and malt license to the north leominster rod and gun club at 1501",
+   "tags": [
+    "liquor license",
+    "one-day license"
+   ]
+  },
+  {
+   "topic": "Sunday 10:00 a.m. hours, JK Waterfront d/b/a On the Rocks",
+   "resolution": "approved 4-1",
+   "quote": "to approve the request to change the hours to 10:00 a.m. on sundays for jk waterfront, inc. d/b/a on the rocks vote: 4 in favor, 1 opposed (alonzo)",
+   "tags": [
+    "liquor license",
+    "Sunday hours"
+   ]
+  },
+  {
+   "topic": "Sunday 10:00 a.m. hours, KJ Waterfront d/b/a Embers Pizzeria",
+   "resolution": "approved 4-1",
+   "quote": "to approve the request to change the hours to 10:00 a.m, on sundays for kj waterfront, inc. d/b/a embers pizzeria vote: 4 in favor, 1 opposed (alonzo)",
+   "tags": [
+    "liquor license",
+    "Sunday hours"
+   ]
+  },
+  {
+   "topic": "Turkey Hill Lions Club fundraiser roadblock, Town Center",
+   "resolution": "approved",
+   "quote": "to approve the turkey hill lions club road block request for november",
+   "tags": [
+    "road block",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "SRF grant application resolution, sewer project",
+   "resolution": "adopted resolution authorizing Town Manager to sign",
+   "quote": "to adopt a resolution to authorize town manager to sign the srf application for the work as read",
+   "tags": [
+    "sewer",
+    "grant",
+    "state revolving fund"
+   ]
+  },
+  {
+   "topic": "PY 2015 Board of Selectmen and Town Manager goals",
+   "resolution": "discussed, no action",
+   "quote": "mr. alonzo opened the discussion by stating there should be a complete revamp of the appointment and",
+   "tags": [
+    "goals",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen appointments and reappointment policy",
+   "resolution": "discussed, no action",
+   "quote": "review/discussion of board of selectmen appointments & reappointment policy",
+   "tags": [
+    "appointments",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Summer Street 75% design contract amendment",
+   "resolution": "Board concurred to proceed",
+   "quote": "she wanted to ensure the board wants to move forward. the board concurred.",
+   "tags": [
+    "Summer Street",
+    "Chapter 90",
+    "design"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrants signed",
+   "quote": "the november election warrant was signed.",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "committee reports: board of health- no report; building reuse committee- no report; capital planning - no",
+   "tags": [
+    "committee reports",
+    "MPO",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Resignations from Conservation Commission and Council on Aging",
+   "resolution": "accepted",
+   "quote": "resignations from conservation commission - john byrne, jj cote, sharon jordan, john latanzi and",
+   "tags": [
+    "resignations",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:54 p.m.",
+   "quote": "to adjourn the meeting at 8:54 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resolution authorizing the Town Manager to sign the SRF grant application (in the packet)",
+   "where": "text",
+   "quote": "there is a resolution in the packet"
+  },
+  {
+   "name": "Contract amendment for the Summer Street project (design)",
+   "where": "text",
+   "quote": "it is time to execute a contract amendment to the summer street project (for design)"
+  },
+  {
+   "name": "Letter from MRTC urging the MBTA to reconsider Fitchburg commuter rail weekend service suspension",
+   "where": "text",
+   "quote": "they reviewed a letter from mrtc urging the mbta to reconsider that or provide bus service during those weekends."
+  },
+  {
+   "name": "Wachusett Corridor Smart Growth Plan (available on MRPC website)",
+   "where": "text",
+   "quote": "there was a presentation on the wachusett corridor smart growth plan which is available on the mrpc website."
+  },
+  {
+   "name": "Talent bank form",
+   "where": "text",
+   "quote": "should fill out a talent bank form and submit it to town hall."
+  }
+ ],
+ "tags": [
+  "liquor licenses",
+  "Sunday hours",
+  "peddler license",
+  "road block",
+  "sewer SRF grant",
+  "Summer Street design",
+  "Chapter 90",
+  "warrants",
+  "appointments policy",
+  "committee vacancies",
+  "resignations",
+  "goals"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

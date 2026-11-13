@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2017-03-16",
  "docid": "2826",
@@ -12,39 +12,466 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of February 16, 2017 as amended",
+   "motion": "Approve the minutes of February 16, 2017, as amended.",
    "moved_by": "Gare",
    "seconded_by": "Donna",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve minutes as amended by gare, seconded by donna. gare, lars, kirja, donna, harry, susan, and dick voted aye by roll-call."
   },
   {
-   "motion": "Do not change the budget line for electricity per John Londa's numbers at this time",
+   "motion": "Do not change the library budget line for electricity per John Londa's numbers at this time.",
    "moved_by": "Gare",
    "seconded_by": "Kirja",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "gare moved that we do not change our budget line for electricity per john londa's numbers at this time, kirja seconded. gare, lars, kiirja, donna, harry, susan, and dick voted aye by roll-call."
+   "quote": "gare moved that we do not change our budget line for electricity per john londa's numbers at this time, kirja seconded."
   },
   {
-   "motion": "Accept the warrant article for Library Revolving Fund",
+   "motion": "Accept the warrant article for upcoming Town Meeting: Library Revolving Fund (Harry Kubetz abstained, not having a copy of the article).",
    "moved_by": "Susan",
    "seconded_by": "Gare",
-   "outcome": "passed 6-0 with 1 abstention",
-   "procedural": true,
-   "quote": "susan made motion to accept the article, gare seconded. gare, lars, kirja, donna, susan, and dick voted aye by roll-call. harry abstained since did not have a copy of the warrant article available to view."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "susan made motion to accept the article, gare seconded. gare, lars, kirja, donna, susan, and dick voted aye by roll-call."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "",
+   "motion": "Adjourn the meeting at 8:01 p.m.",
    "seconded_by": "Susan",
-   "outcome": "passed 7-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "moves to adjourn @ 8:01, seconded by susan. gare, lars, kirja, donna, harry, susan, and dick voted aye by roll-call."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text extracted from scanned meeting minutes (macOS Vision). Four votes recorded: approval of prior minutes, a substantive decision on electricity budget, approval of warrant article, and adjournment. The adjourn motion does not name who moved it.",
- "cost_usd": 0.0885225
+ "note": "Text is macOS Vision OCR with errors (e.g., 'Approva:', 'Meeling minutes', 'Kiirja', 'instailed', 'Sudolnik' spellings). Roll-call votes list the aye voters by name without printed totals, so outcomes are recorded as 'passed'. Harry Kubetz abstained on the warrant article. Public comment: 'No public, no comment' with no speakers recorded. No dollar figures are printed anywhere in the minutes. Attendance lines for Kirja Paananen, Donna Salia, Gare Thompson, and Susan Visser carry no printed role.",
+ "cost_usd": 0.01065342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz - remote by face time!, kirja paananen, donna salia, gare thompson, susan visser,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "current trustee",
+   "status": "remote",
+   "quote": "harry kubetz - remote by face time!"
+  },
+  {
+   "name": "Kirja Paananen",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz - remote by face time!, kirja paananen, donna salia, gare thompson, susan visser,"
+  },
+  {
+   "name": "Donna Salia",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz - remote by face time!, kirja paananen, donna salia, gare thompson, susan visser,"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz - remote by face time!, kirja paananen, donna salia, gare thompson, susan visser,"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz - remote by face time!, kirja paananen, donna salia, gare thompson, susan visser,"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "lars widstrand, martha moore - director, lpl"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: terri burchfield - fincom representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "bob ebersole - board of selectmen representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Seek another opportunity for the Town Manager to meet the Trustees, since she could not attend.",
+   "quote": "we will seek another opportunity for her to come and meet the trustees."
+  },
+  {
+   "decision": "Martha Moore to check with Town Hall staff on who the commissioners are for the Town Trust Funds.",
+   "quote": "martha will check with town hall staff."
+  },
+  {
+   "decision": "Martha Moore to request from the owner of DMH a scope of work/contract, a detailed report of installed items, and a copy of the invoice for the library project.",
+   "quote": "martha has requested that the owner of dmh will send her: scope of work/ contract with dmh, detailing the project."
+  },
+  {
+   "decision": "Martha Moore to ask the Green Committee how much of the LED grant was earmarked for the library LED upgrade versus how much was spent.",
+   "quote": "martha will also ask the green committee for how much money in the led grant was ear-marked for the library led upgrade, vs. how much was spent."
+  },
+  {
+   "decision": "Martha Moore to check with the town accountant whether the DMH invoice has been paid and request a hold on payment until outstanding issues are resolved.",
+   "quote": "martha will check with town accountant to see if the invoice from dmh has been paid, and request a hold on payment until all outstanding issues are resolved."
+  },
+  {
+   "decision": "Once paperwork is collected, Martha Moore to contact Guardian to review the main hall up-lights and look for a solution.",
+   "quote": "martha will contact guardian to review the main hall up-lights and investigate if they have a solution"
+  },
+  {
+   "decision": "Nicole and Martha Moore to investigate public computer problems and contact FireFly Computing for corrective action.",
+   "quote": "nicole and martha are investigating and will contact firefly computing for corrective action."
+  },
+  {
+   "decision": "Martha Moore to investigate other internet options because Comcast's response has been poor.",
+   "quote": "martha is investigating other options, since comcast's response to requests for corrective actions has matched the level of internet stability and wi-fi access."
+  },
+  {
+   "decision": "Room Use Policy moved to the April meeting.",
+   "quote": "moved to april meeting"
+  },
+  {
+   "decision": "Set the personnel sub-committee meeting for the director evaluation for Thursday 3/30 at 6:30 p.m. with Dick, Kirja, Gare and Harry.",
+   "quote": "thursday 3/30 @ 6:30 p.m. participants: dick, kiirja, gare, harry."
+  },
+  {
+   "decision": "Harry Kubetz to sign a form in the town clerk's office regarding the trustee caucus candidacy.",
+   "quote": "harry kubetz, current trustee. harry needs to sign a form in the town clerk's office."
+  },
+  {
+   "decision": "Draft from the personnel sub-committee for the director evaluation to be brought for discussion at a future meeting.",
+   "quote": "resulting draft from personnel sub-committee meeting for dir eval will be brought for discussion."
+  },
+  {
+   "decision": "Continue tracking the LED upgrade project on upcoming agendas.",
+   "quote": "continue tracking of led upgrade project."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2017 Budget",
+   "what_was_recorded": "Budget trends reported as fine with the numbers, with the end-of-year situation being reviewed; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "budget trends: we are doing fine with the numbers, looking at end-of year situation."
+  },
+  {
+   "topic": "FY2018 Budget",
+   "what_was_recorded": "Martha presented the FY2018 budget to the Finance Committee, which was well received; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "martha presented the budget to the fincom during their meeting. it was well received."
+  },
+  {
+   "topic": "Electricity budget line",
+   "what_was_recorded": "Discussed a proposed reduction in the electricity budget line by John Londa; the board voted not to change the line at this time, with no figures printed.",
+   "figures_as_printed": [],
+   "quote": "a discussion ensued regarding the proposed (by john londa) reduction in the budget line concerning electricity."
+  },
+  {
+   "topic": "Proposed use of Available Trust Funds",
+   "what_was_recorded": "Discussion of spending Touchstone gains on the trust funds; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "discussion regarding the spending of touchstone gains on the funds."
+  },
+  {
+   "topic": "LED grant earmark for library upgrade",
+   "what_was_recorded": "Martha to ask the Green Committee how much of the LED grant was earmarked for the library upgrade versus spent; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "martha will also ask the green committee for how much money in the led grant was ear-marked for the library led upgrade, vs. how much was spent."
+  },
+  {
+   "topic": "DMH invoice for LED project",
+   "what_was_recorded": "Martha to check whether the DMH invoice has been paid and request a hold on payment until outstanding issues are resolved; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "martha will check with town accountant to see if the invoice from dmh has been paid, and request a hold on payment until all outstanding issues are resolved."
+  },
+  {
+   "topic": "Library Revolving Fund warrant article",
+   "what_was_recorded": "Warrant article for a Library Revolving Fund accepted for Town Meeting; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "approval of warrant article for upcoming town meeting: library revolving fund"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "no public, no comment...",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager Introduction",
+   "resolution": "no action; another visit to be sought",
+   "quote": "the town manager could not come to this meeting.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes, February 16, 2017",
+   "resolution": "approved as amended",
+   "quote": "motion to approve minutes as amended by gare, seconded by donna.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted",
+   "quote": "notice: martha will be on vacation last week of march",
+   "tags": [
+    "director"
+   ]
+  },
+  {
+   "topic": "FY2017 Budget",
+   "resolution": "noted; no action",
+   "quote": "budget trends: we are doing fine with the numbers, looking at end-of year situation.",
+   "tags": [
+    "budget",
+    "FY2017"
+   ]
+  },
+  {
+   "topic": "FY2018 Budget / Finance Committee update",
+   "resolution": "noted",
+   "quote": "martha presented the budget to the fincom during their meeting. it was well received.",
+   "tags": [
+    "budget",
+    "FY2018",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Proposed use of Available Trust Funds",
+   "resolution": "discussed; Martha to check with Town Hall staff",
+   "quote": "dick states that we need to know who the commissioners are for the [town] trust funds.",
+   "tags": [
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Staff news",
+   "resolution": "noted",
+   "quote": "pj collection was great success: 60+ pairs of pajamas were donated.",
+   "tags": [
+    "staff",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Continuous book sale",
+   "resolution": "noted",
+   "quote": "continuous book sale going really well.",
+   "tags": [
+    "book sale"
+   ]
+  },
+  {
+   "topic": "Programs",
+   "resolution": "noted",
+   "quote": "a multitude of programs in planning as well as currently running were described by martha.",
+   "tags": [
+    "programs"
+   ]
+  },
+  {
+   "topic": "Technology",
+   "resolution": "Nicole and Martha to contact FireFly Computing; Martha to look at other internet options",
+   "quote": "problems with the public computers were described.",
+   "tags": [
+    "technology",
+    "internet"
+   ]
+  },
+  {
+   "topic": "LED Migration Update",
+   "resolution": "discussed; Martha to gather documents, check invoice, and contact Guardian",
+   "quote": "dmh and john londa regard the project as \"completed\".",
+   "tags": [
+    "LED",
+    "DMH"
+   ]
+  },
+  {
+   "topic": "Library walk-through re LED Migration",
+   "resolution": "noted; clarification needed on fixtures",
+   "quote": "the trustees walked through the library and took a dim view of the main hall up-lights.",
+   "tags": [
+    "LED",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Electricity budget line",
+   "resolution": "passed; electricity budget line unchanged",
+   "quote": "gare moved that we do not change our budget line for electricity per john londa's numbers at this time, kirja seconded.",
+   "tags": [
+    "budget",
+    "electricity"
+   ]
+  },
+  {
+   "topic": "Room Use Policy",
+   "resolution": "moved to April meeting",
+   "quote": "moved to april meeting",
+   "tags": [
+    "room use policy"
+   ]
+  },
+  {
+   "topic": "Warrant Article: Library Revolving Fund",
+   "resolution": "approved; Harry Kubetz abstained",
+   "quote": "approval of warrant article for upcoming town meeting: library revolving fund",
+   "tags": [
+    "warrant article",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "noted; evaluations received by Dick",
+   "quote": "all received by dick from the trustees.",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "noted; no meeting held",
+   "quote": "the latest meeting did not have a quorum; meeting was not held.",
+   "tags": [
+    "friends group"
+   ]
+  },
+  {
+   "topic": "Caucus - potential trustee candidates",
+   "resolution": "noted; Harry to sign form",
+   "quote": "harry kubetz, current trustee. harry needs to sign a form in the town clerk's office.",
+   "tags": [
+    "trustee election",
+    "caucus"
+   ]
+  },
+  {
+   "topic": "Personnel sub-committee meeting date",
+   "resolution": "date and participants set",
+   "quote": "thursday 3/30 @ 6:30 p.m. participants: dick, kiirja, gare, harry.",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "noted; email log-in issues with Town IT",
+   "quote": "dick - about mailchimp, a library in new york used constant contact for informational mailings;",
+   "tags": [
+    "communications",
+    "email"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "listed for next meeting",
+   "quote": "continue tracking of led upgrade project.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:01 p.m.",
+   "quote": "moves to adjourn @ 8:01, seconded by susan.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for March 16, 2017",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for march 16, 2017-"
+  },
+  {
+   "name": "Director's report",
+   "where": "list",
+   "quote": "director's report children's librarian's report"
+  },
+  {
+   "name": "Children's librarian's report",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "YA librarian's report",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Warrant Article: Library Revolving Fund",
+   "where": "text",
+   "quote": "approval of warrant article for upcoming town meeting: library revolving fund"
+  },
+  {
+   "name": "Minutes of February 16, 2017 (cited as minutes of 2/16/17)",
+   "where": "text",
+   "quote": "(see minutes of 2/16/17)"
+  },
+  {
+   "name": "Scope of work / contract with DMH",
+   "where": "text",
+   "quote": "scope of work/ contract with dmh, detailing the project."
+  },
+  {
+   "name": "Detailed report of installed LED work (DMH)",
+   "where": "text",
+   "quote": "a detailed report of what has been installed and where."
+  },
+  {
+   "name": "DMH invoice for the library project",
+   "where": "text",
+   "quote": "a copy of the invoice for the library project."
+  }
+ ],
+ "tags": [
+  "library",
+  "LED lighting",
+  "DMH",
+  "budget",
+  "FY2017",
+  "FY2018",
+  "electricity",
+  "trust funds",
+  "warrant article",
+  "Library Revolving Fund",
+  "director evaluation",
+  "trustee caucus",
+  "technology",
+  "internet",
+  "programs",
+  "Town Manager",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

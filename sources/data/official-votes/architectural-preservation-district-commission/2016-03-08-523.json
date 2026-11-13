@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-03-08",
  "docid": "523",
@@ -12,15 +12,126 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the meeting on 1-4-16",
-   "outcome": "approved",
+   "motion": "Approve the minutes of the meeting on 1-4-16.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "minutes from the meeting on 1-4-16 were voted on and approved",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "minutes from the meeting on 1-4-16 were voted on and approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. No movers or seconders are named in these minutes. The adjournment at 8:40PM is not explicitly recorded as a vote.",
- "cost_usd": 0.0793295
+ "note": "Text is a clean extraction of a single page. Attendance is not stated as a roll call, so statuses are inferred from the minutes text where a person is shown taking part. No mover, seconder, or vote count is printed for the minutes approval, only \"voted on and approved\". No dollar figures or public comment appear. The adjournment at 8:40PM is recorded without a motion, so it is not listed as a vote.",
+ "cost_usd": 0.0029555199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "richard mcgrath opened the meeting and called the board to order at 7:08pm"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "jim laveck suggested that the apdc build its own website, explaining the powers and duties of the apdc."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk; Recording Clerk, Lunenburg APDC",
+   "status": "present",
+   "quote": "cullen dwyer, recording clerk, lunenburg apdc"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "the committee welcomed new member brian corcoran"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Richard McGrath will contact the assessor's office for existing information and photographs and recover the existing materials gathered for the Survey of Historical and Architectural Resources.",
+   "quote": "richard mcgrath will contact the assessor's office for existing information and photographs"
+  },
+  {
+   "decision": "Board members will each individually draft Lunenburg's guidelines for sections I and II, using the Ipswich guidelines as a model, and compare drafts at the next meeting.",
+   "quote": "the board members will each individually draught lunenburg's guidelines for sections i and ii, and compare draughts at the next meeting"
+  },
+  {
+   "decision": "Next meeting set for 3-29-16.",
+   "quote": "next meeting set for 3-29-16"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and welcome of new member",
+   "resolution": "no action",
+   "quote": "the committee welcomed new member brian corcoran"
+  },
+  {
+   "topic": "Approval of minutes of 1-4-16",
+   "resolution": "approved",
+   "quote": "minutes from the meeting on 1-4-16 were voted on and approved"
+  },
+  {
+   "topic": "Report from building inspector on permits",
+   "resolution": "no action",
+   "quote": "richard mcgrath reported on his visit to the building inspector, who told him that all work requires a building permit other than repairs"
+  },
+  {
+   "topic": "Proposal for APDC website",
+   "resolution": "no action",
+   "quote": "jim laveck suggested that the apdc build its own website, explaining the powers and duties of the apdc."
+  },
+  {
+   "topic": "Review of Ipswich APDC guidelines as model",
+   "resolution": "continued; members to draft sections I and II and compare at next meeting",
+   "quote": "the board discussed the guidelines from the ipswich apdc. they provide a valuable framework."
+  },
+  {
+   "topic": "Lunenburg APDC bylaw and application process",
+   "resolution": "discussed; no action recorded",
+   "quote": "the board then turned to the lunenburg apdc bylaw and discussed the details of the application process"
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for 3-29-16",
+   "quote": "next meeting set for 3-29-16"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ipswich APDC guidelines",
+   "where": "text",
+   "quote": "the board discussed the guidelines from the ipswich apdc. they provide a valuable framework."
+  },
+  {
+   "name": "Lunenburg APDC bylaw",
+   "where": "text",
+   "quote": "the board then turned to the lunenburg apdc bylaw and discussed the details of the application process"
+  },
+  {
+   "name": "Survey of Historical and Architectural Resources (work in progress)",
+   "where": "text",
+   "quote": "recover the existing materials gathered for lunenburg's survey of historical and architectural resources (work in progress)"
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "design guidelines",
+  "APDC bylaw",
+  "building permits",
+  "historic survey",
+  "meeting minutes",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-02-12",
  "docid": "1811",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the January 8, 2013 COA minutes",
+   "motion": "Approve the January 8, 2013 COA minutes.",
    "moved_by": "Pete Lincoln",
    "seconded_by": "Joyce Wass",
    "outcome": "passed 5-0",
@@ -21,6 +21,295 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of scanned minutes. One vote recorded: approval of prior minutes.",
- "cost_usd": 0.0844145
+ "note": "Text is OCR (macOS Vision) of minutes marked 'Approved at 3/12/13 COA Meeting'. The January 8, 2013 minutes approval vote is recorded (5-0) even though Pete Lincoln questioned whether a quorum existed; the minutes do not resolve that. No vote is recorded on adjournment or on the Friday-hours matter; the Friday decision is recorded as a suggestion the Chairperson and Mr. Crellin agreed with. The attendance line reads 'Sue Doherty' while the signature reads 'Susan Doherty'; names kept as printed in each place. Representative Benson and Chief Sullivan are mentioned but not recorded as attending.",
+ "cost_usd": 0.00684552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director),"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "",
+   "status": "present",
+   "quote": "fred crellin, jim hays, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "COA Board member",
+   "status": "present",
+   "quote": "coa board member jim hays, who currently sits as an advisor on the supporters of the eagle house inc."
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "",
+   "status": "present",
+   "quote": "fred crellin, jim hays, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "fred crellin, jim hays, joyce wass and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: deb seeley, barbara brown, jane doyle, & sis montuori"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: deb seeley, barbara brown, jane doyle, & sis montuori"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: deb seeley, barbara brown, jane doyle, & sis montuori"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: deb seeley, barbara brown, jane doyle, & sis montuori"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel (town manager), stephen raboin (lunenburg finance committee), & connie o'dea"
+  },
+  {
+   "name": "Stephen Raboin",
+   "role": "Lunenburg Finance Committee",
+   "status": "not stated",
+   "quote": "kerry speidel (town manager), stephen raboin (lunenburg finance committee), & connie o'dea"
+  },
+  {
+   "name": "Connie O'dea",
+   "role": "",
+   "status": "not stated",
+   "quote": "kerry speidel (town manager), stephen raboin (lunenburg finance committee), & connie o'dea"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The COA Director is to decide whether to reopen on Fridays, provide more Outreach hours, or provide transportation on Fridays; a statistics-based report will be compiled and distributed to the board later. Ms. Conrad and Mr. Crellin agreed with this suggestion.",
+   "quote": "mr. lincoln suggested that the coa director make the decision on whether or not to reopen on fridays,"
+  },
+  {
+   "decision": "Board training sessions for new members will be conducted in house with the Director and the Chairperson rather than through the Executive Office of Elder Affairs sessions.",
+   "quote": "after discussing board training sessions, it was decided to conduct these \"in house\" with the director and the chairperson."
+  },
+  {
+   "decision": "The Chairperson is asked to write an editorial to the Lunenburg Ledger on behalf of the board thanking the Police, Fire, and DPW departments for their work during the recent blizzard.",
+   "quote": "pete lincoln requested that the coa chairperson write an editorial to the lunenburg ledger on behalf of the"
+  },
+  {
+   "decision": "The Administrative Assistant will check with the Town Clerk for clarification on whether there was a quorum for the January 2013 minutes.",
+   "quote": "the administrative assistant will check with the town clerk for clarification on this matter."
+  },
+  {
+   "decision": "The 1/15/13 COA Finance Committee Meeting Minutes are to be voted on at the next COA meeting.",
+   "quote": "fred crellin distributed copies of the 1/15/13 coa finance committee meeting minutes for board members to"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY14 COA budget target",
+   "what_was_recorded": "The Town Manager had given the COA Director a target number for the FY14 COA budget, which could include reopening on Fridays or adding staff hours; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "she had previously given the coa director a \"target\" number to work with for the fy14 coa budget which included the possible ideas of reopening on fridays or adding more staff"
+  },
+  {
+   "topic": "Cost of reopening on Fridays",
+   "what_was_recorded": "A board member said $8k to reopen on Fridays is a small amount out of the Town's Budget.",
+   "figures_as_printed": [
+    "$8k"
+   ],
+   "quote": "and that $8k to reopen on fridays is a small amount out of the town's"
+  },
+  {
+   "topic": "Cost of extended hours",
+   "what_was_recorded": "The Town Manager voiced concern that the expense of keeping the building open for extended hours.",
+   "figures_as_printed": [],
+   "quote": "the town manager voiced concerns that the expense comes with keeping the building open for extended"
+  },
+  {
+   "topic": "State grant money for senior centers",
+   "what_was_recorded": "Representative Benson reportedly told the board there were no state grant monies for senior centers.",
+   "figures_as_printed": [],
+   "quote": "there were no grant monies being given to any senior centers in the state."
+  },
+  {
+   "topic": "Office copy machine and software maintenance contracts",
+   "what_was_recorded": "Possibility of adding the office copy machine and MySenior Center software maintenance contracts to the COA budget was questioned.",
+   "figures_as_printed": [],
+   "quote": "adding the office copy machine and the mysenior center software maintenance contracts into the coa budget."
+  },
+  {
+   "topic": "Meals on Wheels driver stipends",
+   "what_was_recorded": "Quarterly stipends for Meals on Wheels drivers were processed by the Director.",
+   "figures_as_printed": [],
+   "quote": "all meals on wheels driver's quarterly stipends have been processed by the director."
+  },
+  {
+   "topic": "Outside breakfast price advertised",
+   "what_was_recorded": "A flyer from the Golden Living Center in Fitchburg advertised a 99 Cent Breakfast on March 26.",
+   "figures_as_printed": [
+    "99 Cent"
+   ],
+   "quote": "sent a flyer for posting advertising 99 cent breakfast to be held"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and FY14 COA budget discussion with Town Manager",
+   "resolution": "discussed; board asked to decide budget items for Town Manager",
+   "quote": "ms. speidel spoke to the board regarding the fy14 coa budget.",
+   "tags": [
+    "FY14 budget",
+    "Town Manager",
+    "senior center hours"
+   ]
+  },
+  {
+   "topic": "Minutes of January 8, 2013 meeting",
+   "resolution": "approved 5-0 (quorum question raised)",
+   "quote": "pete lincoln motioned to approve the january 8, 2013 coa minutes.",
+   "tags": [
+    "minutes",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted",
+   "quote": "all meals on wheels driver's quarterly stipends have been processed by the director.",
+   "tags": [
+    "meals",
+    "food program",
+    "blizzard",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "noted; no action",
+   "quote": "town finance committee meeting: ms. noble stated that she was not sure when the coa will be called",
+   "tags": [
+    "finance committee",
+    "2014 budget"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "in-house board training decided; sample board agreement distributed",
+   "quote": "regional coa board trainings: ms. noble informed the coa board that the executive office of elder",
+   "tags": [
+    "board training",
+    "board agreement"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Report",
+   "resolution": "minutes to be voted on at next meeting",
+   "quote": "fred crellin distributed copies of the 1/15/13 coa finance committee meeting minutes",
+   "tags": [
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted",
+   "quote": "the golden living center located in fitchburg sent a flyer for posting advertising 99 cent breakfast to be held",
+   "tags": [
+    "correspondence",
+    "flyer"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "Director to decide on Friday options after statistics report",
+   "quote": "mr. lincoln suggested that the coa director make the decision on whether or not to reopen on fridays,",
+   "tags": [
+    "Friday hours",
+    "outreach",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:55AM (no vote recorded)",
+   "quote": "meeting adjourned at 10:55am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Council on Aging Services for Seniors Board Agreement (Sample Board Agreement)",
+   "where": "text",
+   "quote": "ms. noble distributed copies of \"council on aging services for seniors\" board"
+  },
+  {
+   "name": "1/15/13 COA Finance Committee Meeting Minutes",
+   "where": "text",
+   "quote": "fred crellin distributed copies of the 1/15/13 coa finance committee meeting minutes for board members to"
+  },
+  {
+   "name": "Golden Living Center flyer advertising 99 Cent Breakfast",
+   "where": "text",
+   "quote": "the golden living center located in fitchburg sent a flyer for posting advertising 99 cent breakfast to be held"
+  },
+  {
+   "name": "January 8, 2013 COA minutes",
+   "where": "text",
+   "quote": "pete lincoln motioned to approve the january 8, 2013 coa minutes."
+  },
+  {
+   "name": "MySenior Center software statistics",
+   "where": "text",
+   "quote": "the director is currently retrieving statistics from the mysenior center software to aide in the town manager's"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "FY14 budget",
+  "senior center hours",
+  "Friday opening",
+  "volunteers",
+  "board training",
+  "minutes approval",
+  "Eagle House",
+  "meals program",
+  "quorum"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. noble distributed copies of"
+ },
+ "dropped_unquoted_by_field": {}
 }

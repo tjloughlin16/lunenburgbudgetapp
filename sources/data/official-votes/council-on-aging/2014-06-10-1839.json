@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2014-06-10",
  "docid": "1839",
@@ -12,39 +12,379 @@
  },
  "votes": [
   {
-   "motion": "Accept the May 13, 2014 COA minutes",
-   "outcome": "passed unanimously",
+   "motion": "Accept the May 13, 2014 COA minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to accept the may 13, 2014 coa minutes. on vote, motion carried unanimously."
   },
   {
-   "motion": "Change the title of COA Bylaws to COA Policies & Procedures",
-   "outcome": "passed unanimously",
+   "motion": "Change the title of COA Bylaws to COA Policies & Procedures.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and seconded to change the title of coa bylaws to coa p olicies & procedures. on vote, motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "a motion was made and seconded to change the title of coa bylaws to coa p olicies & procedures. on vote, motion carried unanimously."
   },
   {
-   "motion": "Change the title of COA sub-committees to Task Group",
-   "outcome": "passed unanimously",
+   "motion": "Change the title of COA sub-committees to Task Group.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made and seconded to change the title of coa sub-committees to task group. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend to the Board of Selectmen the appointments of Pete Lincoln, Susan Andrews, Caroline Griffis, Kevin McNally, and Diane Nowd to the Council on Aging Board",
-   "outcome": "passed unanimously",
+   "motion": "Recommend to the Board of Selectmen the appointments of Pete Lincoln, Susan Andrews, Caroline Griffis, Kevin McNally, and Diane Nowd to the Council on Aging Board.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made and seconded to recommend to the board of selectmen the appointments of pete lincoln, susan andrews, caroline griffis, kevin mcnally, and diane nowd to the council on aging board. on vote , motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "a motion was made and seconded to recommend to the board of selectmen the appointments of pete lincoln, susan andrews"
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "being no further business a motion was made and seconded to adjourn the meeting. on vote, motion carried unanimously"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes do not name the individuals who moved or seconded any motions. Two agenda items (re-appointment of Jane Doyle & Barbara Brown, and slate of officers for FY15) involved discussion but no formal votes—they were tabled or no action was taken.",
- "cost_usd": 0.1067815
+ "note": "Minutes text is an extraction with split words and odd spacing; quotes preserve the printed text. Vote tallies are not printed; unanimous votes recorded as 'passed'. Mover and seconder are not named in the minutes. The minutes header says they were approved at the 7/8/2014 COA meeting.",
+ "cost_usd": 0.007907919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Barbara Brown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "barbara brown (vice-chairperson), doreen noble (d irector), jane doyle, joyce wass"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "barbara brown (vice-chairperson), doreen noble (d irector), jane doyle, joyce wass"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "",
+   "status": "present",
+   "quote": "barbara brown (vice-chairperson), doreen noble (d irector), jane doyle, joyce wass"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "",
+   "status": "present",
+   "quote": "barbara brown (vice-chairperson), doreen noble (d irector), jane doyle, joyce wass"
+  },
+  {
+   "name": "Connie O’Dea",
+   "role": "",
+   "status": "present",
+   "quote": "connie o'dea, shirley bertone, tony bertone, judy tarbell, deb seeley, debbie lincoln"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "",
+   "status": "present",
+   "quote": "connie o'dea, shirley bertone, tony bertone, judy tarbell, deb seeley, debbie lincoln"
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "",
+   "status": "present",
+   "quote": "connie o'dea, shirley bertone, tony bertone, judy tarbell, deb seeley, debbie lincoln"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, deb seeley, debbie lincoln & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, deb seeley, debbie lincoln & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "judy tarbell, deb seeley, debbie lincoln & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "judy tarbell, deb seeley, debbie lincoln & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "absent",
+   "quote": "mary lynn conrad (chairperson)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Guest",
+   "status": "present",
+   "quote": "pete lincoln & chair moves class participants"
+  },
+  {
+   "name": "Christine Lattanzi",
+   "role": "Chair Moves class participant",
+   "status": "present",
+   "quote": "christine lattanzi, chair moves class participant, read a letter"
+  },
+  {
+   "name": "Mary Ann Sudolnick",
+   "role": "",
+   "status": "not stated",
+   "quote": "mary ann sudolnick & betty carbone"
+  },
+  {
+   "name": "Betty Carbone",
+   "role": "",
+   "status": "not stated",
+   "quote": "mary ann sudolnick & betty carbone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board determined it needs more time to review the Chair Moves letter; the matter will be discussed again at a future COA meeting.",
+   "quote": "they need more time to review the matter, and it will be discussed again at a future coa meeting."
+  },
+  {
+   "decision": "Slate of COA Officers for FY15 tabled until the August COA meeting.",
+   "quote": "discussion/vote for slate of coa officers for fy15 tabled until the august coa meeting."
+  },
+  {
+   "decision": "No action taken on the request for re-appointment of Jane Doyle and Barbara Brown.",
+   "quote": "no action was taken by the coa board on this request."
+  },
+  {
+   "decision": "Director to distribute the completed End of Year report to board members at the August meeting.",
+   "quote": "ms. noble will distribute the completed report to coa board members at the august meeting."
+  },
+  {
+   "decision": "Director to check with the Police and Fire Departments on whether 8/19/2014 or 8/26/2014 is better for the cookout.",
+   "quote": "she will check with them to see which date is better for them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chair Moves room rental / vendor fee",
+   "what_was_recorded": "The Director suggested a fee of $200 per month to the vendor, which participants said would raise their cost.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "suggested fee by the director of $200 per month to the vendor would result in participants paying a higher fee."
+  },
+  {
+   "topic": "Vendor fees at the senior center",
+   "what_was_recorded": "The manicurist and line dance instructor pay $1 per fee; Zumba Gold and Body, Mind, & Balance classes will be $2.",
+   "figures_as_printed": [
+    "$1",
+    "$2"
+   ],
+   "quote": "currently the manicurist & line dance instructor pay a fee of $1"
+  },
+  {
+   "topic": "Grant or donor funding for the Chair Moves class",
+   "what_was_recorded": "Board discussed looking into grant funding or asking Supporters of the Eagle House Inc. for funding to pay for the class; no figure stated.",
+   "figures_as_printed": [],
+   "quote": "or by asking the supporters of the eagle house inc. for funding"
+  },
+  {
+   "topic": "Capital Planning approvals",
+   "what_was_recorded": "Capital Planning approved rug replacement in the newer building and floor tile replacement in the older section of the Eagle House; no figure stated.",
+   "figures_as_printed": [],
+   "quote": "capital planning has approved rug replacement"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Christine Lattanzi",
+   "stated_role": "Chair Moves class participant",
+   "topic": "Letter on Chair Moves room rental dispute",
+   "quote": "christine lattanzi, chair moves class participant, read a letter"
+  },
+  {
+   "speaker": "Pete Lincoln",
+   "stated_role": "",
+   "topic": "Whether the Director's Evaluation is helpful",
+   "quote": "pete lincoln asked ms. noble if she felt that doing a director"
+  },
+  {
+   "speaker": "Doreen Noble",
+   "stated_role": "",
+   "topic": "Response on Director's Evaluation",
+   "quote": "ms. noble replied yes but felt that there were"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and minutes approval",
+   "resolution": "approved May 13, 2014 minutes",
+   "quote": "a motion was made and seconded to accept the may 13, 2014 coa minutes. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Appointment: Senior Center exercise program (Chair Moves)",
+   "resolution": "continued to a future meeting",
+   "quote": "they need more time to review the matter, and it will be discussed again at a future coa meeting.",
+   "tags": [
+    "chair moves",
+    "room rental fee",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; report to be distributed in August",
+   "quote": "ms. noble reported on the following:",
+   "tags": [
+    "director",
+    "senior center",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Set date for COA cookout/volunteer recognition ceremony",
+   "resolution": "discussed; Director to check dates with Police and Fire",
+   "quote": "board members discussed two possible dates for the annual coa cookout",
+   "tags": [
+    "cookout",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Change title of COA Bylaws to COA Policies",
+   "resolution": "approved",
+   "quote": "a motion was made and seconded to change the title of coa bylaws to coa p olicies & procedures. on vote, motion carried unanimously.",
+   "tags": [
+    "bylaws",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Change title of sub-committees to Task Group",
+   "resolution": "approved",
+   "quote": "a motion was made and seconded to change the title of coa sub-committees to task group. on vote, motion carried unanimously.",
+   "tags": [
+    "bylaws",
+    "task group"
+   ]
+  },
+  {
+   "topic": "Re-appointment request of Jane Doyle and Barbara Brown",
+   "resolution": "no action",
+   "quote": "no action was taken by the coa board on this request.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Recommend new COA board members to Selectmen",
+   "resolution": "approved recommendation",
+   "quote": "a motion was made and seconded to recommend to the board of selectmen the appointments of pete lincoln, susan andrews",
+   "tags": [
+    "appointments",
+    "selectmen"
+   ]
+  },
+  {
+   "topic": "Slate of COA officers for FY15",
+   "resolution": "tabled until August meeting",
+   "quote": "discussion/vote for slate of coa officers for fy15 tabled until the august coa meeting.",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "Committee and end-of-year reports",
+   "resolution": "received",
+   "quote": "had met once on 5/28/14 for the purpose of",
+   "tags": [
+    "committees",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Director evaluation discussion",
+   "resolution": "no action; board discussed process",
+   "quote": "this evaluation process is not helpful and should be left to the professionals at town hall",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "notices & communications: none",
+   "tags": []
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "discussed; no action",
+   "quote": "ms. noble mentioned that the 2 coa meetings",
+   "tags": [
+    "meeting cancellations",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "pete lincoln asked ms. noble if she felt that doing a director",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:37AM",
+   "quote": "being no further business a motion was made and seconded to adjourn the meeting. on vote, motion carried unanimously",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director’s End of Year Draft Report",
+   "where": "text",
+   "quote": "director's end of year draft report which included"
+  },
+  {
+   "name": "Letter written by the Chair Moves participants (read at meeting)",
+   "where": "text",
+   "quote": "christine lattanzi, chair moves class participant, read a letter"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "chair moves dispute",
+  "director evaluation",
+  "appointments",
+  "officers",
+  "bylaws",
+  "fees",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

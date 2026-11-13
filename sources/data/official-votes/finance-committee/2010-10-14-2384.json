@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2010-10-14",
  "docid": "2384",
@@ -12,31 +12,259 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of September 9, 2010 as amended",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Martha McDonald",
+   "motion": "Approve the 9/9/10 minutes as amended.",
+   "moved_by": "BR",
+   "seconded_by": "MM",
    "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to approve as amended, mm seconded, all approved"
+   "quote": "reviewed minutes from 9/9/10; br made motion to approve as amended, mm seconded, all approved."
   },
   {
-   "motion": "Transfer funds from Salary Reserve to settle Fire and Police Chief contracts",
-   "moved_by": "Martha McDonald",
-   "seconded_by": "Mark Erickson",
+   "motion": "Transfer funds from Salary Reserve to settle the Fire and Police Chief contracts.",
+   "moved_by": "MM",
+   "seconded_by": "ME",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mm made motion to transfer funds, me seconded, all approved"
+   "quote": "mm made motion to transfer funds, me seconded, all approved."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "Martha McDonald",
+   "motion": "Adjourn the meeting at 8:43 PM.",
+   "moved_by": "ME",
+   "seconded_by": "MM",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "me made motion to adjourn at 8:43 pm and mm seconded"
+   "quote": "me made motion to adjourn at 8:43 pm and mm seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd via macOS Vision. All votes are clearly recorded and readable.",
- "cost_usd": 0.1060535
+ "note": "OCR text from a single page; the minutes are stamped received 11/03/2010 and signed 10/28/10. Votes are recorded as \"all approved\" with no numeric count, and mover/seconder appear only as initials (BR, MM, ME), kept as printed. The meals tax estimate reads \"$6OK\", likely an OCR error for $60K; kept as printed. Attendance labels are stacked in the OCR, so Kerry Speidel's status (\"Also Present\") is inferred as present. No public comment is recorded.",
+ "cost_usd": 0.0053398199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "role": "",
+   "status": "absent",
+   "quote": "john male, marilyn stokes"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "absent",
+   "quote": "john male, marilyn stokes"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "john male, marilyn stokes kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meeting schedule set: no meeting on 11/11; next meetings on 10/28, 11/4 and 11/18, with a public hearing for the Special Town Meeting on 11/4 at 7 pm.",
+   "quote": "no meeting 11/11; next meetings 10/28, 11/4, 11/18."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital requests",
+   "what_was_recorded": "Capital Planning reported all capital requests received, many returning from prior year, with totals of $2.3M.",
+   "figures_as_printed": [
+    "$2.3M"
+   ],
+   "quote": "many are returning requests from prior year; totals $2.3m."
+  },
+  {
+   "topic": "Holman Street Bridge repair",
+   "what_was_recorded": "Holman Street Bridge has been closed since last March and needs $500K in repairs.",
+   "figures_as_printed": [
+    "$500K"
+   ],
+   "quote": "holman street bridge has been closed since last march and requires $500k to repair"
+  },
+  {
+   "topic": "School regionalization savings and cost sharing",
+   "what_was_recorded": "Committee found no significant savings in a merger; cost sharing would be by enrollment with Lunenburg share estimated at 29.1%.",
+   "figures_as_printed": [],
+   "quote": "committee has found there would be no significant savings in a merger"
+  },
+  {
+   "topic": "Fire and Police Chief contract settlements",
+   "what_was_recorded": "Transfer requested from Salary Reserve to settle the Chief's contracts: fire $2,330 and police $2,987, including $746 and $2,241 salary.",
+   "figures_as_printed": [
+    "$2,330",
+    "$2,987",
+    "$746",
+    "$2,241"
+   ],
+   "quote": "request for transfer from salary reserve to settle chief's contracts for fire for $2,330 and police for $2,987 ($746 quinn and $2,241 salary)"
+  },
+  {
+   "topic": "Meals tax revenue",
+   "what_was_recorded": "New .75% meals tax started slowly with $1700 in the first two months, then averaged $4900 per month; estimate of $6OK annually expected to be reached.",
+   "figures_as_printed": [
+    "$1700",
+    "$4900",
+    "$6OK"
+   ],
+   "quote": "new meals tax of .75% started out slow with revenues of $1700 in first 2 months, next three months averaged $4900"
+  },
+  {
+   "topic": "Police grants",
+   "what_was_recorded": "Two grants awarded to Lunenburg Police: $9,450 for bullet-proof vests and $1,000 for advanced Domestic Violence training for 2 officers.",
+   "figures_as_printed": [
+    "$9,450",
+    "$1,000"
+   ],
+   "quote": "two grants awarded to lunenburg police - $9,450 for bullet-proof vests; $1,000 for advanced training for domestic"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Salary Reserve to settle the Fire and Police Chief contracts.",
+   "amount_as_printed": "fire for $2,330 and police for $2,987",
+   "outcome": "passed (MM motion, all approved)",
+   "quote": "request for transfer from salary reserve to settle chief's contracts for fire for $2,330 and police for $2,987 ($746 quinn and $2,241 salary)"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 9/9/10",
+   "resolution": "approved as amended",
+   "quote": "reviewed minutes from 9/9/10; br made motion to approve as amended, mm seconded, all approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Capital Planning, DPW, School Regionalization)",
+   "resolution": "no action",
+   "quote": "capital planning - met 10/12; all capital requests received and starting to compile; many are returning requests",
+   "tags": [
+    "capital planning",
+    "DPW",
+    "regionalization"
+   ]
+  },
+  {
+   "topic": "Fire and Police Chief contracts",
+   "resolution": "transfer approved",
+   "quote": "bos has settled contracts for both fire and police chief",
+   "tags": [
+    "salary reserve",
+    "police",
+    "fire",
+    "transfer"
+   ]
+  },
+  {
+   "topic": "Town Manager updates: meals tax, police grants, recycling",
+   "resolution": "no action",
+   "quote": "new meals tax of .75% started out slow with revenues of $1700 in first 2 months",
+   "tags": [
+    "meals tax",
+    "grants",
+    "recycling"
+   ]
+  },
+  {
+   "topic": "Town Manager updates: year-to-date reports",
+   "resolution": "no action",
+   "quote": "6) town manager updates - handout: revenues/expenditures year-to-date; ytd budget report",
+   "tags": [
+    "year-to-date budget"
+   ]
+  },
+  {
+   "topic": "Next meetings and Special Town Meeting",
+   "resolution": "no action",
+   "quote": "7) next meetings - special town meeting 11/30",
+   "tags": [
+    "special town meeting",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:43 PM",
+   "quote": "me made motion to adjourn at 8:43 pm and mm seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Contract for Police Chief",
+   "where": "list",
+   "quote": "handout: contract for police chief, contract for fire chief;"
+  },
+  {
+   "name": "Contract for Fire Chief",
+   "where": "list",
+   "quote": "handout: contract for police chief, contract for fire chief;"
+  },
+  {
+   "name": "Revenues/Expenditures Year-to-Date",
+   "where": "list",
+   "quote": "6) town manager updates - handout: revenues/expenditures year-to-date; ytd budget report"
+  },
+  {
+   "name": "YTD Budget Report",
+   "where": "list",
+   "quote": "6) town manager updates - handout: revenues/expenditures year-to-date; ytd budget report"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "minutes",
+  "salary reserve transfer",
+  "police chief contract",
+  "fire chief contract",
+  "capital planning",
+  "DPW",
+  "Holman Street Bridge",
+  "school regionalization",
+  "meals tax",
+  "police grants",
+  "special town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout"
+ },
+ "dropped_unquoted_by_field": {}
 }

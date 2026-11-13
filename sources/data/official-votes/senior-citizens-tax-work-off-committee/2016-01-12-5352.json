@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2016-01-12",
  "docid": "5352",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approval of November 17, 2015 minutes",
+   "motion": "Approve the November 17, 2015 minutes.",
    "moved_by": "Jean",
    "seconded_by": "Sue",
    "outcome": "not stated",
@@ -21,6 +21,137 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One vote recorded: the approval of prior minutes with movers and seconders named but no voting outcome explicitly stated. The text mentions \"members unanimously agree\" regarding application modifications, but this is presented as a consensus from discussion rather than a formal motion voted upon. No vote is recorded for the adjournment.",
- "cost_usd": 0.08550350000000001
+ "note": "Single OCR page. The minutes record one motion (approval of the November 17, 2015 minutes) with no result printed, so its outcome is not stated. The line 'members unanimously agree.' appears as a fragment with no motion before it and was not recorded as a vote; the surrounding text may be missing from the OCR. The adjournment has no recorded motion. Myleen's surname is not printed. The minutes list no dollar figures and no public comment.",
+ "cost_usd": 0.0031538200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "member (called the meeting to order)",
+   "status": "present",
+   "quote": "meeting called to order by sue doherty at 11:04 am, at eagle house senior center."
+  },
+  {
+   "name": "Jean Larkin",
+   "role": "member",
+   "status": "present",
+   "quote": "members present: jean larkin, sheila craigen and sue doherty."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "member (recorded the minutes)",
+   "status": "present",
+   "quote": "members present: jean larkin, sheila craigen and sue doherty."
+  },
+  {
+   "name": "Myleen",
+   "role": "member",
+   "status": "absent",
+   "quote": "myleen could not attend so her assistant, sally deming, sat in her place."
+  },
+  {
+   "name": "Sally Deming",
+   "role": "assistant to Myleen, sat in her place",
+   "status": "present",
+   "quote": "myleen could not attend so her assistant, sally deming, sat in her place."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sue will contact the Town Manager for consultation on the applications.",
+   "quote": "sue stated that she will contact the town manager for consultation."
+  },
+  {
+   "decision": "Sue will contact the applicants and the departments to let them know the program is on hold.",
+   "quote": "sue stated she will also contact the applicants and the departments to let them know the program is on hold."
+  },
+  {
+   "decision": "Members agreed the application itself could be modified to obtain more specific information.",
+   "quote": "all members agree that the application itself could be modified to obtain more specific information."
+  },
+  {
+   "decision": "Sue will keep members updated and schedule the next meeting accordingly.",
+   "quote": "sue will keep members updated and will schedule the next meeting accordingly."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of November 17, 2015 minutes",
+   "resolution": "motion made; result not stated",
+   "quote": "approval of november 17, 2015 minutes motioned by jean and second by sue.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Review of calendar year 2015 program",
+   "resolution": "no action; no outstanding issues",
+   "quote": "minimal discussion on 2015 program, there are no outstanding issues.",
+   "tags": [
+    "2015 program",
+    "review"
+   ]
+  },
+  {
+   "topic": "Board member vacancy",
+   "resolution": "noted; one opening remains",
+   "quote": "sue mentioned there is still one opening for the tax work-off program.",
+   "tags": [
+    "vacancy",
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Department requests",
+   "resolution": "reported; thirteen requests, fourteen applications received",
+   "quote": "sue stated there are thirteen department requests. to date, fourteen applications have been received.",
+   "tags": [
+    "department requests",
+    "advertising"
+   ]
+  },
+  {
+   "topic": "Review/Approval of 2016 Applicants",
+   "resolution": "discussed; two applicants may not qualify; program placed on hold pending Town Manager consultation",
+   "quote": "sue stated that she reviewed all applications. she feels there are two that may not qualify.",
+   "tags": [
+    "2016 applicants",
+    "eligibility",
+    "application form"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:55",
+   "quote": "meeting adjourned at 11:55",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2016 applications (program applicants)",
+   "where": "text",
+   "quote": "all applications were distributed and discussion began."
+  }
+ ],
+ "tags": [
+  "senior tax work-off program",
+  "2016 applicants",
+  "department requests",
+  "board vacancy",
+  "program on hold",
+  "Eagle House Senior Center"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

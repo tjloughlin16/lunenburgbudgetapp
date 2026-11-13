@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-03-05",
  "docid": "4835",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the Common Victualer License for PP Group LLC d/b/a Bangkok Hill",
+   "motion": "Approve the Common Victualer License for PP Group LLC d/b/a Bangkok Hill.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
@@ -20,15 +20,353 @@
    "quote": "mr. alonzo made a motion to approve the common victualer license for pp group llc. d/b/a s bangkok hill. mr. sund seconded. on vote motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business, mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR minutes, March 5, 2013 Board of Selectmen meeting. There was extensive discussion of the Whalom Lake permit bylaw but no motion or vote recorded. Minutes for 2/12/13 and 2/19/13 were filed but no vote on approval is stated.",
- "cost_usd": 0.0932985
+ "note": "Text is macOS Vision OCR with garbled tokens (e.g., \"Mrs. Bertam\", \"Mir. Sund\", \"tound\", \"Mr: deBettencourt\", \"d/b/a s\"); quotes copied as printed. Page 4 Planning Board item is truncated (\"awmill on 35 Leominster Roac\"), so its content is not recorded. Two motions were recorded (approve license, adjourn). No vote is recorded on Whalom Lake, the minutes of 2/12/13 and 2/19/13, or the warrants; the minutes list them without a motion. Recording Secretary attendance is not explicitly stated beyond the signature block. Board members' roles are not printed in the minutes.",
+ "cost_usd": 0.008855219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. pilotta meeting room at town hall as scheduled with dave matthews, tom alonzo, carl (ernie)sund, paula bertram and steven m. debettencourt"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. pilotta meeting room at town hall as scheduled with dave matthews, tom alonzo, carl (ernie)sund, paula bertram and steven m. debettencourt"
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. pilotta meeting room at town hall as scheduled with dave matthews, tom alonzo, carl (ernie)sund, paula bertram and steven m. debettencourt"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. pilotta meeting room at town hall as scheduled with dave matthews, tom alonzo, carl (ernie)sund, paula bertram and steven m. debettencourt"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. pilotta meeting room at town hall as scheduled with dave matthews, tom alonzo, carl (ernie)sund, paula bertram and steven m. debettencourt"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "absent was town manager kerry speidel."
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "spoke on behalf of the Bangkok Hill Restaurant",
+   "status": "present",
+   "quote": "mr. rob bowen spoke on behalf of the bangkok hill restaurant stating that although they are not in possession of a liquor license, bangkok hill"
+  },
+  {
+   "name": "Police Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino spoke to say that there was confusion about the bylaw that anyone can apply for a permit"
+  },
+  {
+   "name": "Members of Boy Scout Troop 1728",
+   "status": "present",
+   "quote": "members of boy scout troop 1728 came forward and said that they are attending this evenings meeting as part"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Alonzo said he would personally check with Town Counsel on whether the Board could stop issuing individual Whalom Lake permits or add liability language to them.",
+   "quote": "mr. alonzo stated that he would personally check with town counsel to see if they could either cease issuing"
+  },
+  {
+   "decision": "Ms. Bertram said she would e-mail her specific budget line-item questions directly to the Town Manager and the Finance Committee.",
+   "quote": "ms. bertram stated that she had many questions about specific line items but would e-mail them directly to the town manager and the finance committee."
+  },
+  {
+   "decision": "The public was asked to submit a picture of Lunenburg for the town report cover, to be sent to Linda Douglas.",
+   "quote": "the photo should be sent to linda douglas at ldouglas@lunenburgonline.com."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Recycling revenue from school paper and cardboard",
+   "what_was_recorded": "Paper and cardboard recycling at the schools was expected to generate a small revenue for the town, with KLT Industries paying per ton into the general fund.",
+   "figures_as_printed": [
+    "$120.00",
+    "$8.00 per ton",
+    "15 tons"
+   ],
+   "quote": "which will generate a small revenue of about $120.00 for the town. klt industries pays the town $8.00"
+  },
+  {
+   "topic": "Capital Plan figure and street sweeper cost",
+   "what_was_recorded": "The Capital Planning Committee's Capital Plan figure was about $500k, and adding a new street sweeper could raise it to about $700k.",
+   "figures_as_printed": [
+    "$500k",
+    "$700k"
+   ],
+   "quote": "the capital planning committee had worked out a figure of approximately $500k for"
+  },
+  {
+   "topic": "Street sweeper purchase versus outsourcing",
+   "what_was_recorded": "Outsourcing street sweeping was considered instead of buying a new street sweeper at a possible cost stated in the minutes.",
+   "figures_as_printed": [
+    "$185,000.00"
+   ],
+   "quote": "opposed to purchasing a new street sweeper at the possible cost of $185,000.00."
+  },
+  {
+   "topic": "Warrants approved or listed",
+   "what_was_recorded": "Three warrants were listed under the Minutes/Warrants/Action File Issues item with their printed amounts.",
+   "figures_as_printed": [
+    "$433,487.36",
+    "$249,004.67",
+    "$591,581.55"
+   ],
+   "quote": "warrants: 47-13 $433,487.36 46-13 $249,004.67 18p-13 $591,581.55"
+  },
+  {
+   "topic": "Costs at the Public Safety Building and Fire Fighter Education",
+   "what_was_recorded": "Ms. Bertram recognized Fire Chief Sullivan's ideas for offsetting costs at the Public Safety Building; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. bertram stated that she wanted to recognize fire chief sullivan's creative thinking on ways to offset costs at"
+  },
+  {
+   "topic": "Balanced budget",
+   "what_was_recorded": "Mr. Matthews said the budget was balanced as required by law; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. matthews also said that the budget was a balanced budget as enforced by law."
+  },
+  {
+   "topic": "Liability cost of rescue or recovery on town lakes",
+   "what_was_recorded": "Mr. Sund raised who would pay for a rescue or recovery on the lakes if an accident happened; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the town had to do a rescue and recovery mission who would be responsible for paying for that."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "town report cover photo request",
+   "quote": "mr. matthews began the meeting by requesting from the public a picture of lunenburg be submitted for the cover"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "congratulations to Boys and Girls Club fundraiser",
+   "quote": "mr. alonzo started the public discussion from the board by congratulating the boys and girls club for their"
+  },
+  {
+   "speaker": "Mr. Sund",
+   "stated_role": "",
+   "topic": "school recycling bins and revenue",
+   "quote": "mr. sund stated that joanne mcquiad from the green communities task force has negotiated for paper and cardboard recycling bins"
+  },
+  {
+   "speaker": "Mr. Sund",
+   "stated_role": "",
+   "topic": "not seeking another BOS term",
+   "quote": "mr. sund continued his public comments by announcing he will not be seeking another term as a member of the"
+  },
+  {
+   "speaker": "Mr. deBettencourt",
+   "stated_role": "",
+   "topic": "not seeking another BOS term",
+   "quote": "mr: debettencourt continued the public comments from the board and also announced that he will not be seeking"
+  },
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "Town Caucus and April 30 election reminder",
+   "quote": "mr. matthews reminded the citizens of lunenburg that there was a town caucus monday, march 11th and the"
+  },
+  {
+   "speaker": "Rob Bowen",
+   "stated_role": "",
+   "topic": "thanks to outgoing members; girls ski team congratulations",
+   "quote": "rob bowen spoke thanking mr. debettencourt and mr. sund for their time on the bos."
+  },
+  {
+   "speaker": "Mr. Matthews",
+   "stated_role": "",
+   "topic": "State Delegation visit at next BOS meeting",
+   "quote": "mr. matthews stated that the next bos meeting the state delegation of senator flanagan and representative"
+  },
+  {
+   "speaker": "Members of Boy Scout Troop 1728",
+   "stated_role": "",
+   "topic": "attending meeting for merit badge",
+   "quote": "members of boy scout troop 1728 came forward and said that they are attending this evenings meeting as part"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no action; announcements and remarks",
+   "quote": "mr. matthews began the meeting by requesting from the public a picture of lunenburg be submitted for the cover",
+   "tags": [
+    "public comment",
+    "town report"
+   ]
+  },
+  {
+   "topic": "Common Victualer License, Bangkok Hill Restaurant",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo made a motion to approve the common victualer license for pp group llc. d/b/a s bangkok hill.",
+   "tags": [
+    "licensing",
+    "restaurant",
+    "food permit"
+   ]
+  },
+  {
+   "topic": "Request for Permit to Ride on Whalom Lake",
+   "resolution": "discussed; Alonzo to check with Town Counsel; no vote recorded",
+   "quote": "request for permit to ride on whalom lake- police chief marino spoke to say that there was",
+   "tags": [
+    "Whalom Lake",
+    "bylaw",
+    "liability",
+    "ice safety",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "FY2014 Budget Discussion",
+   "resolution": "discussed; no action",
+   "quote": "1. fy2014 budget discussion - ms. bertram stated that she had many questions about specific line items",
+   "tags": [
+    "budget",
+    "FY2014",
+    "capital plan",
+    "street sweeper"
+   ]
+  },
+  {
+   "topic": "Minutes, Warrants and Action File Issues",
+   "resolution": "listed; no vote recorded",
+   "quote": "minutes: 2/12/13 2/19/13 warrants: 47-13 $433,487.36",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports only; no action",
+   "quote": "committee reports -ms. bertram stated that she could not attend the last planning board meeting but she did",
+   "tags": [
+    "planning board",
+    "MRPC",
+    "finance committee",
+    "MPO"
+   ]
+  },
+  {
+   "topic": "Old Business and Appointments",
+   "resolution": "none",
+   "quote": "old business - none appointments/re-appointments/resignations - none.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment (later in meeting)",
+   "resolution": "no action; reminders and announcements",
+   "quote": "mr. matthews stated that the next bos meeting the state delegation of senator flanagan and representative",
+   "tags": [
+    "public comment",
+    "state delegation",
+    "Boy Scouts"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 7:52 pm",
+   "quote": "being no further business, mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of 2/12/13",
+   "where": "text",
+   "quote": "minutes: 2/12/13 2/19/13 warrants: 47-13 $433,487.36"
+  },
+  {
+   "name": "Minutes of 2/19/13",
+   "where": "text",
+   "quote": "minutes: 2/12/13 2/19/13 warrants: 47-13 $433,487.36"
+  },
+  {
+   "name": "Warrants 47-13, 46-13 and 18P-13",
+   "where": "text",
+   "quote": "warrants: 47-13 $433,487.36 46-13 $249,004.67 18p-13 $591,581.55"
+  },
+  {
+   "name": "Food Permit (Board of Health)",
+   "where": "text",
+   "quote": "he already had a food permit and provided a copy of it to the bos."
+  },
+  {
+   "name": "Bylaw on permits to ride on Whalom Lake",
+   "where": "text",
+   "quote": "there was confusion about the bylaw that anyone can apply for a permit to ride on whalom lake"
+  },
+  {
+   "name": "Capital Plan request",
+   "where": "text",
+   "quote": "why the purchase of a new street sweeper was left out of the capital plan request."
+  }
+ ],
+ "tags": [
+  "select board",
+  "FY2014 budget",
+  "capital plan",
+  "street sweeper",
+  "Whalom Lake",
+  "lake bylaw",
+  "town liability",
+  "common victualer license",
+  "Bangkok Hill",
+  "recycling revenue",
+  "board vacancies",
+  "2013 town election",
+  "town caucus",
+  "town report",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

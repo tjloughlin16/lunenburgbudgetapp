@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-08-22",
  "docid": "2322",
@@ -12,23 +12,221 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of 8/8/2013 as written",
-   "moved_by": "Steven Raboin",
-   "seconded_by": "Jason Smith",
+   "motion": "Approve the minutes of 8/8/2013 as written.",
+   "moved_by": "SR",
+   "seconded_by": "JS",
    "outcome": "passed",
    "procedural": true,
    "quote": "sr motioned to approve minutes of 8/8/2013 as written. js seconded, motion carried."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Steven Raboin",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "TB",
+   "seconded_by": "SR",
    "outcome": "passed",
    "procedural": true,
    "quote": "tb motioned to adjourn. sr seconded, meeting adjourned at 9:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from scanned document. One abstention noted on minutes approval (BL abstained), but no count provided—outcome recorded as stated in minutes: \"motion carried.\"",
- "cost_usd": 0.1036365
+ "note": "OCR of a scanned page with garbled words (e.g. \"stabilizatio\"/\"und\", \"nsued\") and a line break inside \"Public Access Cable Committee\"; quotes were chosen to avoid the damaged spans. The minutes say Laffond abstained because he \"was not present\" for the 8/8 minutes, yet he is listed as present in the Present line; recorded as present per that line. The 8/8 minutes vote records no tally beyond \"motion carried\" and one abstention. Adjournment outcome is taken from \"meeting adjourned at 9:00 pm\". The \"Next meetings\" item is numbered 8 in the text and the Regional Dispatch Center sentence has no printed heading.",
+ "cost_usd": 0.00494552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, j. smith, b. laffond, k. menard"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, j. smith, b. laffond, k. menard"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, j. smith, b. laffond, k. menard"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, j. smith, b. laffond, k. menard"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, j. smith, b. laffond, k. menard"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, j. smith, b. laffond, k. menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, j. smith, b. laffond, k. menard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "JH will make adjustments to the draft stabilization fund policy based on the evening's discussion.",
+   "quote": "he will make adjustments based on the tonight's discussion."
+  },
+  {
+   "decision": "Consensus that free cash be prioritized to replenish the stabilization fund first, then applied against infrastructure (roadwork or other capital projects).",
+   "quote": "the consensus around free cash was that it be prioritized"
+  },
+  {
+   "decision": "SR will draft a Capital policy for the next meeting.",
+   "quote": "he will draft a capital policy for the next meeting."
+  },
+  {
+   "decision": "The Committee will schedule a visit to the Regional Dispatch Center.",
+   "quote": "the committee will schedule a visit to the regional dispatch center."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging state formula grant",
+   "what_was_recorded": "KM said the state formula grant for the Council on Aging is computed from the share of elderly residents, and the amount was given as a figure.",
+   "figures_as_printed": [
+    "37%",
+    "$16,500"
+   ],
+   "quote": "37% of lunenburg residents are elderly, which means the formula grant from the state amounts to $16,500."
+  },
+  {
+   "topic": "Fire Department turnout gear grant",
+   "what_was_recorded": "SR reported the Fire Department received a grant against turnout gear in its capital plan and wanted to amend its current-year request; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the fire department had received a grant against the turnout gear on their capital plan"
+  },
+  {
+   "topic": "Public Access Cable Committee balance",
+   "what_was_recorded": "JH reported that the Public Access Cable Committee reported a balance.",
+   "figures_as_printed": [
+    "$238,000"
+   ],
+   "quote": "access cable committee reported a $238,000 balance."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "no action; no communications received",
+   "quote": "2. no communications",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Meeting minutes",
+   "resolution": "approved 8/8/2013 minutes as written",
+   "quote": "sr motioned to approve minutes of 8/8/2013 as written.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received, no action",
+   "quote": "sr reported that capital planning is set for the beginning of the budget process",
+   "tags": [
+    "capital planning",
+    "fire department",
+    "school building committee",
+    "council on aging",
+    "cable access"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no updates; Town Manager on vacation",
+   "quote": "no updates as the town manager is on vacation.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Fiscal policies",
+   "resolution": "draft stabilization fund policy to be revised; free cash consensus reached; capital policy to be drafted",
+   "quote": "jh presented a draft stabilization fund policy.",
+   "tags": [
+    "fiscal policy",
+    "stabilization fund",
+    "free cash",
+    "capital policy"
+   ]
+  },
+  {
+   "topic": "Future items",
+   "resolution": "continued",
+   "quote": "fiscal policy discussions continue.",
+   "tags": [
+    "fiscal policy"
+   ]
+  },
+  {
+   "topic": "Regional Dispatch Center visit",
+   "resolution": "to be scheduled",
+   "quote": "the committee will schedule a visit to the regional dispatch center.",
+   "tags": [
+    "site visit",
+    "dispatch"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "calendar set; School Building Committee presentation 9/26",
+   "quote": "will be school building committee presentation.",
+   "tags": [
+    "school building committee",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 pm",
+   "quote": "tb motioned to adjourn. sr seconded, meeting adjourned at 9:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft stabilization fund policy",
+   "where": "text",
+   "quote": "jh presented a draft stabilization fund policy."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "fiscal policy",
+  "stabilization fund",
+  "free cash",
+  "capital planning",
+  "school building committee",
+  "council on aging",
+  "cable access",
+  "minutes approval",
+  "2013"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2011-04-14",
  "docid": "2736",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept minutes as amended",
+   "motion": "Accept the minutes as amended.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Len Smetana",
    "outcome": "passed unanimously",
@@ -20,21 +20,203 @@
    "quote": "motion made by dick mailloux and seconded by len smetana, passed unanimously to accept minutes as amended."
   },
   {
-   "motion": "have Amy obtain more information and report to Board at May meeting",
+   "motion": "Have Amy obtain more information on Freegal Music and report to the Board at the May meeting.",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion made and passed unanimously to have amy obtain more information and report to board at may meeting."
   },
   {
-   "motion": "transfer up to $200 from postage, sewer, and water to Postage account",
+   "motion": "Take money out of postage, sewer, and then water of up to $200 and place it into the Postage account (FY 2011 budget adjustment).",
    "moved_by": "Kathy Murray",
    "seconded_by": "Dick Mailloux",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by kathy murray and seconded by dick mailloux to take money out of 1st postage, 2nd sewer, and then 3rd water of up to $200 and place into postage account - passed unanimously."
+   "quote": "motion made by kathy murray and seconded by dick mailloux to take money out of 1st postage, 2nd sewer, and then 3rd water of up to $200"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11229249999999999
+ "note": "Text extraction of a single-page minutes document, not a scan. Votes recorded: minutes approval, Freegal follow-up, and the $200 budget adjustment. The Freegal motion names no mover or seconder. No motion is recorded for adjournment (meeting adjourned 7:25 pm), so no adjournment vote is listed. Public comment: \"No public comment.\" Roles for most attendees are not printed.",
+ "cost_usd": 0.0047103200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "respectfully submitted, jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Amy will ask the Friends to pay for lawn care (Lakeview) and removal of dead shrubs; the Town will do mowing.",
+   "quote": "amy will ask friends to pay for lawn care (lakeview) and removal of dead shrubs; town will do mowing."
+  },
+  {
+   "decision": "Lion's Club offered to do mulch and students needing community service hours will do raking (accepted as reported; no vote recorded).",
+   "quote": "lion's club offered to do mulch; students needing community service hours will do raking"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Freegal Music service",
+   "what_was_recorded": "The library pays upfront for the Freegal music service, then patrons download for free; the board asked Amy to get more information.",
+   "quote": "a music service where the library pays upfront, then free to patron to download"
+  },
+  {
+   "topic": "Salaries and library materials expenditures",
+   "what_was_recorded": "Salaries differ because of three pay periods; library materials expenditure is up due to big purchases.",
+   "quote": "budget: salaries a bit different due to 3 pay periods; library materials expenditure is up due to big purchases."
+  },
+  {
+   "topic": "FY 2011 budget adjustment for mileage (postage, sewer, water)",
+   "what_was_recorded": "Mileage increased, estimated at probably $100 more; the board moved up to $200 from postage, sewer and water into the Postage account.",
+   "figures_as_printed": [
+    "$100",
+    "$200"
+   ],
+   "quote": "budget adjustment fy 2011: mileage increased"
+  },
+  {
+   "topic": "Materials expenditure projection",
+   "what_was_recorded": "Library materials expenditures will probably be about $65,000 this year.",
+   "figures_as_printed": [
+    "$65,000"
+   ],
+   "quote": "materials expenditures will probably be about $65,000 this year."
+  },
+  {
+   "topic": "Lawn care costs at Lakeview",
+   "what_was_recorded": "Amy will ask the Friends to pay for lawn care and removal of dead shrubs; no dollar figure given.",
+   "quote": "amy will ask friends to pay for lawn care (lakeview) and removal of dead shrubs"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY 2011 budget adjustment moving money out of postage, sewer and water into the Postage account (mileage increase).",
+   "amount_as_printed": "up to $200",
+   "outcome": "passed unanimously",
+   "quote": "motion made by kathy murray and seconded by dick mailloux to take money out of 1st postage, 2nd sewer, and then 3rd water of up to $200"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved as amended",
+   "quote": "motion made by dick mailloux and seconded by len smetana, passed unanimously to accept minutes as amended.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Freegal Music",
+   "resolution": "Amy to obtain more information and report at May meeting",
+   "quote": "motion made and passed unanimously to have amy obtain more information and report to board at may meeting.",
+   "tags": [
+    "freegal",
+    "music service",
+    "digital resources"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; budget adjustment approved",
+   "quote": "director's report (please see report for more details)",
+   "tags": [
+    "director's report",
+    "circulation",
+    "budget",
+    "facilities",
+    "programs",
+    "CWMARS"
+   ]
+  },
+  {
+   "topic": "State budget and Town Manager/Fin Comm recommendations",
+   "resolution": "discussion, no action",
+   "quote": "state budget looking good, should help with town hall projections; discussion about town manager and fin comm recommendations and budget.",
+   "tags": [
+    "town budget",
+    "state budget",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Town Meeting agenda",
+   "resolution": "no action",
+   "quote": "nothing yet about town meeting agenda and potential questions for lpl.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Town election",
+   "resolution": "noted",
+   "quote": "town election may 21, 2011",
+   "tags": [
+    "town election"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report (please see report for more details)"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget adjustment",
+  "FY2011",
+  "Freegal",
+  "director's report",
+  "facilities",
+  "CWMARS",
+  "Town Meeting",
+  "town election",
+  "materials spending"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-08-24",
  "docid": "3819",
@@ -12,23 +12,264 @@
  },
  "votes": [
   {
-   "motion": "approve the August 10, 2015 minutes with amendment",
+   "motion": "Sign the minutes with amendment (08/10/15 minutes).",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bitter",
-   "outcome": "passed",
+   "outcome": "passed, all aye excepting D. McQuaid (absent for this vote)",
    "procedural": true,
    "quote": "motion to sign minutes with amendment, m. allison, second, g. bitter, all aye excepting d. mcquaid who was absent."
   },
   {
-   "motion": "enter into Executive Session, not to return to Regular Session",
+   "motion": "Enter into Executive Session, not to return to Regular Session.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "motion to enter into executive session, not to return to regular session. m. allison, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded: approval of prior meeting minutes and entry into executive session. The text mentions that the Board voted at a prior meeting to waive an ANR resubmittal fee, but that is referenced as a past action, not a vote taken at this 08/24/2015 meeting.",
- "cost_usd": 0.09181349999999999
+ "note": "Minutes are a single text extract with typos and spacing artifacts; quotes are collapsed to single spaces. The Present line lists D. McQuaid as present, but the minutes approval vote says he was absent for that vote; status is recorded as present per the attendance line. The minutes approval and executive session votes give no numeric tally, only \"all aye\". The ANR plan acceptances and the tabling of Section 6.1 are recorded without a motion. Adjournment at 9:37 PM is recorded without a motion. The 274 Prospect Street public hearing is in separate minutes and is not covered here. The seconder \"G. Bitter\" is printed that way (likely Gregory Bittner) and is kept as printed.",
+ "cost_usd": 0.00610082,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Board member",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Edmond McSweeney",
+   "role": "property owner, presenting ANR plans",
+   "status": "present",
+   "quote": "presented by property owner edmond mcsweeney."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Plan for 466 West Townsend Road accepted for review (no recorded motion).",
+   "quote": "d. mcquaid requested the anr process be placed on a future board agenda for discussion. plan accepted for review."
+  },
+  {
+   "decision": "ANR Plan process placed on a future Board agenda for discussion at the request of D. McQuaid.",
+   "quote": "d. mcquaid requested the anr process be placed on a future board agenda for discussion."
+  },
+  {
+   "decision": "Plan for 90 West Townsend Road accepted for review (no recorded motion).",
+   "quote": "90 west townsend road- presented by property owner edmond mcsweeney. plan accepted for review."
+  },
+  {
+   "decision": "Section 6.1 tabled to beginning October.",
+   "quote": "section 6.1. - tabled to beginning october."
+  },
+  {
+   "decision": "A. Burney to make changes to Site Plan Approval and the Board to re-review at its September 14th meeting.",
+   "quote": "a. burney will make changes and board will re-review at its september 14th meeting."
+  },
+  {
+   "decision": "A. Burney to put together a draft rules and regulations booklet (site plan approval and special permits) for Board review at the end of September.",
+   "quote": "a. burney will put together a draft rules and regulations booklet for board review for the end of september"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ANR resubmittal fee waiver, Easter Brook Road",
+   "what_was_recorded": "Board member noted the Board at its last meeting voted to waive the ANR Plan resubmittal fee for Easter Brook Road and said future fee waivers should wait until the ANR is resubmitted; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "noted that at the last board meeting the board voted to waive the anr plan resubmittal fee for easter brook road."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANRs: 466 West Townsend Road and 90 West Townsend Road",
+   "resolution": "plans accepted for review; ANR process placed on future agenda",
+   "quote": "d. mcquaid requested the anr process be placed on a future board agenda for discussion. plan accepted for review.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "West Townsend Road"
+   ]
+  },
+  {
+   "topic": "Public hearing: 274 Prospect Street",
+   "resolution": "no action here; see separate minutes",
+   "quote": "public hearing: 274 prospect street- see separate minutes",
+   "tags": [
+    "public hearing",
+    "274 Prospect Street"
+   ]
+  },
+  {
+   "topic": "Minutes approval (08/10/15)",
+   "resolution": "approved with amendment, signed",
+   "quote": "motion to sign minutes with amendment, m. allison, second, g. bitter, all aye excepting d. mcquaid who was absent.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "still discussing location of right-to-farm signs.",
+   "tags": [
+    "committees",
+    "Right-to-Farm signs",
+    "CPTC"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "reported, no action",
+   "quote": "tri town landing- decks completed, hallway drywall completed.",
+   "tags": [
+    "Definitive Subdivision",
+    "Tri Town Landing",
+    "Elmwood Road"
+   ]
+  },
+  {
+   "topic": "Director's items: 339 Electric Avenue",
+   "resolution": "reported; applicant must appear before ZBA",
+   "quote": "special permit granted by zoning board of appeals (zba) in 2009 has expired.",
+   "tags": [
+    "339 Electric Avenue",
+    "special permit",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Bylaw updates: Site Plan Approval",
+   "resolution": "continued; Burney to revise, re-review Sept 14; Section 6.1 tabled to October",
+   "quote": "board reviewed changes made to site plan approval as a result of discussion at the previous board meeting.",
+   "tags": [
+    "bylaw",
+    "site plan approval",
+    "parking bylaw",
+    "lighting bylaw"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "september 14 - hearings for highfield village and 339 electric avenue",
+   "tags": [
+    "schedule",
+    "Highfield Village"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "discussion, no action",
+   "quote": "noted having the building/zoning official following up on the enforcement of board conditions for site plan approvals.",
+   "tags": [
+    "enforcement",
+    "Bay State Roads",
+    "community fair"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session, not returning to regular session; adjourned 9:37 PM",
+   "quote": "motion to enter into executive session, not to return to regular session. m. allison, second, k. chenis, all aye.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 08/10/15",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 08/10/15 anr plan, 60 west townsend road"
+  },
+  {
+   "name": "ANR Plan, 60 West Townsend Road",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 08/10/15 anr plan, 60 west townsend road"
+  },
+  {
+   "name": "ANR Plan, 466 West Townsend Road",
+   "where": "list",
+   "quote": "anr plan, 466 west townsend road site plan approval working document"
+  },
+  {
+   "name": "Site Plan Approval working document",
+   "where": "list",
+   "quote": "anr plan, 466 west townsend road site plan approval working document"
+  },
+  {
+   "name": "sample parking bylaw",
+   "where": "text",
+   "quote": "a. burney distributed a sample parking bylaw to board members and suggested"
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land (Section 3.2)",
+   "where": "text",
+   "quote": "required by section 3.2. of the rules and regulations governing the subdivision of land."
+  },
+  {
+   "name": "RFQ responses for study of Town buildings",
+   "where": "text",
+   "quote": "met august 17th to review rfq responses for study of town buildings."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "site plan approval",
+  "bylaw update",
+  "zoning",
+  "public hearing",
+  "development status",
+  "executive session",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

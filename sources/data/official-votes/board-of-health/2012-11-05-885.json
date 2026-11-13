@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2012-11-05",
  "docid": "885",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve variances to Title 5 and Local Regulations for 54 Spring Street septic system and send a letter to 61 Spring Street recommending water testing.",
+   "motion": "Request for variances at 54 Spring Street (Chris Mac Kenzie, on behalf of owner) approved, and send a letter to 61 Spring Street recommending a water test.",
    "moved_by": "Dave Shea",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by dave shea and seconded by jack rabbitt, the request was approved and also send a letter to 61 spring street recommending that he have a water test performed since his septic system is close to the point where he believes his well is. all in favor."
+   "quote": "on motion by dave shea and seconded by jack rabbitt, the request was approved and also send a letter to 61 spring street recommending that he have a water test performed"
   },
   {
-   "motion": "Approve variances to Title 5 and local regulations for 994 Northfield Road (Maplewood Golf Course) septic system.",
+   "motion": "Requests for variances at 994 Northfield Road (Maplewood Golf Course) approved.",
    "moved_by": "Perry Jewell",
    "seconded_by": "David Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on a motion by perry jewell, seconded by david passios, the requests were approved. all in favor."
+   "quote": "on a motion by perry jewell, seconded by david passios, the requests were approved. all in"
   },
   {
-   "motion": "Send the letter to Planning Board and applicant regarding Aro Estates Subdivisions as written.",
+   "motion": "Send the draft letter to the Planning Board and the submitter for Aro Estates as written.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "David Shea",
    "outcome": "passed",
@@ -37,6 +37,174 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted via macOS Vision. All votes recorded with outcomes stated.",
- "cost_usd": 0.0845785
+ "note": "Text is OCR (macOS Vision) and contains apparent OCR errors (e.g., heading reads \"54 STREET - VARIANCE REQUEST.\", \"constructior\", \"fryolater\"); quotes were taken as printed. Three motions carry \"All in favor\" with no numeric count, so outcome is recorded as \"passed\". The adjournment at 8:15 PM has no motion recorded, so it is not listed as a vote. No dollar figures appear in the text. No public comment section is printed; applicants appeared before the board as attendees.",
+ "cost_usd": 0.00398512,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "george emond, david shea, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "David Shea",
+   "status": "present",
+   "quote": "george emond, david shea, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "george emond, david shea, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "george emond, david shea, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "george emond, david shea, perry jewell, jack rabbitt and dave passios"
+  },
+  {
+   "name": "Chris Mac Kenzie",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "chris mac kenzie met with the board on behalf of the owner to request variances to title v and"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "Soilsmith Designs",
+   "status": "present",
+   "quote": "doug smith, soilsmith designs and william gustus (purchasing the property) met with the"
+  },
+  {
+   "name": "William Gustus",
+   "role": "Purchasing the property",
+   "status": "present",
+   "quote": "doug smith, soilsmith designs and william gustus (purchasing the property) met with the"
+  },
+  {
+   "name": "Jim Gareffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim gareffi reviewed the plans and his review found no problems with the design as it applies to board of health jurisdiction."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for 69 Graham Street, 146 Youngs Road, 779 West Street and 124 Northfield Road were acknowledged.",
+   "quote": "title 5 inspection reports acknowledged: 69 graham street 146 youngs road 779 west street 124 northfield road"
+  },
+  {
+   "decision": "Septic permits for 54-58 Spring Street and 994 Northfield Road were signed.",
+   "quote": "septic permits signed: 54-58 spring street 994 northfield road"
+  },
+  {
+   "decision": "More research will be done to locate the possible wells near 61 Spring Street.",
+   "quote": "more research will be done to locate these wells."
+  },
+  {
+   "decision": "Chairman Emond will contact DEP the next day for clarification on the definition of a snack bar and the Title V flow for it.",
+   "quote": "he will contact dep tomorrow for clarification."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "no action (none approved)",
+   "quote": "minutes approved: none title 5 inspection reports acknowledged:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 69 graham street 146 youngs road 779 west street 124 northfield road",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed: 54-58 spring street 994 northfield road",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "54 Spring Street variance request",
+   "resolution": "approved; letter to 61 Spring Street on water test",
+   "quote": "chris mac kenzie met with the board on behalf of the owner to request variances to title v and",
+   "tags": [
+    "variance",
+    "well",
+    "septic"
+   ]
+  },
+  {
+   "topic": "994 Northfield Road (Maplewood Golf Course) variance requests",
+   "resolution": "approved; chairman to contact DEP on snack bar definition",
+   "quote": "on a motion by perry jewell, seconded by david passios, the requests were approved. all in",
+   "tags": [
+    "variance",
+    "septic",
+    "golf course",
+    "snack bar"
+   ]
+  },
+  {
+   "topic": "Aro Estate subdivisions (Howard Street)",
+   "resolution": "approved; draft letter to Planning Board sent",
+   "quote": "motion was made by jack rabbitt and seconded by david shea to send the letter as written. all in favor.",
+   "tags": [
+    "subdivision",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned 8:15 PM (no motion recorded)",
+   "quote": "meeting adjourned 8:15 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plans for the proposed Aro Estates on Howard Street",
+   "where": "text",
+   "quote": "plans for the proposed aro estates on howard street had been submitted to the board."
+  },
+  {
+   "name": "Draft letter to the Planning Board and the submitter (Aro Estates)",
+   "where": "text",
+   "quote": "the chairman has prepared a draft letter to the planning board and the submitter for the boards review."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "title 5",
+  "variance",
+  "well water",
+  "subdivision",
+  "golf course",
+  "snack bar"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

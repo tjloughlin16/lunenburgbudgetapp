@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-03-15",
  "docid": "5069",
@@ -12,23 +12,570 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment of Kayla Ledger to full-time police officer effective April 21, 2017",
+   "motion": "Ratify the appointment of Kayla Ledger as full-time police officer effective April 21, 2017.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: p. bertram 2nd: t. alonzo to ratify the appointmentof kayla ledger to full-time police officer effective april 21, 2017 vote: all in favor"
+   "quote": "to ratify the appointmentof kayla ledger to full-time police officer effective april 21, 2017 vote: all in favor"
   },
   {
    "motion": "Adjourn the meeting at 8:50 p.m.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion:t. alonzo to adjourn the meeting at 8:50 p.m. 2nd. p.bertram vote: all in favor"
+   "quote": "to adjourn the meeting at 8:50 p.m. 2nd. p.bertram vote: all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0993035
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned, stamped minutes page set with many transcription errors (e.g., 'Seretti'/'Serreti', '12/31/2106', 'Lonzo', 'Lemiuex', 'appointmentof'). Quotes copied as printed. Only two motions are recorded with votes (ratification of Kayla Ledger appointment and adjournment); no vote is recorded on the net metering proposal, legal services, or other items. Votes printed as 'All in Favor' with no count. Public comment heading contains only board member remarks. Vote on the ratification is recorded with 'Vote: All in Favor' with no count.",
+ "cost_usd": 0.013073520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the board of selectmen met in middle school collaborative room d132, with jamie toale, chairman; tom"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "the board of selectmen met in middle school collaborative room d132, with jamie toale, chairman; tom"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "the board of selectmen met in middle school collaborative room d132, with jamie toale, chairman; tom"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "and town manager heather lemieux"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman and phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman and phyllis luck, member"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "others attending: karen brochu, finance director; john londa, facilities director; frank seretti, powers and"
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "others attending: karen brochu, finance director; john londa, facilities director; frank seretti, powers and"
+  },
+  {
+   "name": "Frank Seretti",
+   "role": "Powers and Sullivan (auditor)",
+   "status": "present",
+   "quote": "frank serreti of powers & sullivan thanked the finance director and the treasurer/collector as well as the rest"
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino presented kayla ledger who has been a reserve police officer."
+  },
+  {
+   "name": "Kayla Ledger",
+   "role": "Officer (appointee, full-time police officer)",
+   "status": "present",
+   "quote": "officer ledger stated she appreciated the opportunity to work in lunenburg."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to meet with the audit team, review each management letter item and see where the town can improve, including rating item severity as Mr. Alonzo requested.",
+   "quote": "ms. lemieux stated she would meet with the team, review each item and see where we can improve."
+  },
+  {
+   "decision": "Facilities Director Londa will return with an amended net metering credit distribution proposal, moving the split closer to 50/50.",
+   "quote": "mr. londa will return with an amended distribution proposal."
+  },
+  {
+   "decision": "Transition of legal counsel services is to be effective July 1.",
+   "quote": "transition of legal counsel services would be effective on july 1sl"
+  },
+  {
+   "decision": "Ms. Peterson is checking whether all four legal firms can attend a session on April 18.",
+   "quote": "ms. peterson is checking if all four firms can attend april 18"
+  },
+  {
+   "decision": "Land Use Director and Town Manager decided to re-advertise the Building Commissioner position after interviews with two of four applicants; Interim Building Commissioner Garry Rhodes stays until the process is finalized.",
+   "quote": "the land use director and ms. lemieux felt it was in the best interest of the town to re-advertise for this position."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Audit: receivables",
+   "what_was_recorded": "Audit reported the Town's total receivables and the portion tied to special assessments and MSBA school projects.",
+   "figures_as_printed": [
+    "$16.9 million",
+    "$6.3 million",
+    "$6.4 million",
+    "$3 million",
+    "$3.4 million"
+   ],
+   "quote": "the town had $16.9 million receivables in total, of which $6.3 million was special assessments"
+  },
+  {
+   "topic": "Audit: OPEB and net pension liability",
+   "what_was_recorded": "Audit reported additional OPEB and net pension obligations and the resulting liability totals.",
+   "figures_as_printed": [
+    "$2.0 million",
+    "$20.8 million",
+    "$2.8 million",
+    "$15.3 million"
+   ],
+   "quote": "the town recognized an additional $2.0 million of obligations as of june 30, 2016; liability totalled $20.8 million."
+  },
+  {
+   "topic": "Audit: long-term debt",
+   "what_was_recorded": "Audit reported outstanding long-term debt for governmental and sewer activities and new borrowing.",
+   "figures_as_printed": [
+    "$44.2 million",
+    "$38.2 million",
+    "$1.1 million",
+    "$3.5 million",
+    "$641,000",
+    "$800,000",
+    "$4.1 million",
+    "$8.4 million",
+    "$1.2 million"
+   ],
+   "quote": "the town has $44.2 million outstanding for governmental activities ($38.2"
+  },
+  {
+   "topic": "Audit: debt refunding savings",
+   "what_was_recorded": "Audit reported a refunding of existing debt that saved the town money in future payments.",
+   "figures_as_printed": [
+    "$1.7 million",
+    "$174,000"
+   ],
+   "quote": "you also refunded $1.7 million of existing debt; this saved the town $174,000 in future debt payments."
+  },
+  {
+   "topic": "Audit: general fund surplus and revenue",
+   "what_was_recorded": "Audit reported a general fund surplus driven by revenue over budget and expenditures under budget.",
+   "figures_as_printed": [
+    "$1 million",
+    "$643,000",
+    "$401,000",
+    "$206,000",
+    "$290,000"
+   ],
+   "quote": "a $1 million surplus was created that was due to a revenue surplus totalling"
+  },
+  {
+   "topic": "Audit: fund balances",
+   "what_was_recorded": "Audit reported year-end general fund and total fund balances and their restricted, committed and assigned parts.",
+   "figures_as_printed": [
+    "$3.0 million",
+    "$4.3 million",
+    "$487,000",
+    "$250,000",
+    "$638,000"
+   ],
+   "quote": "at the end of the year, your general fund was $3.0 million, while total fund balance reached $4.3 million."
+  },
+  {
+   "topic": "Audit: unassigned balance and stabilization",
+   "what_was_recorded": "Audit said unassigned fund balance is about 9% of the operating budget, close to the 10% credit agencies recommend, including stabilization funds.",
+   "figures_as_printed": [
+    "$3 million",
+    "9%",
+    "$1.7 million",
+    "$1.5 million",
+    "$100,000",
+    "$228,000"
+   ],
+   "quote": "the unassigned $3 million fund balance is about 9% of your operating budget."
+  },
+  {
+   "topic": "Audit: federal awards",
+   "what_was_recorded": "Audit reported about $924,000 in federal spending and the breakdown by program.",
+   "figures_as_printed": [
+    "$924,000",
+    "$175,000",
+    "$692,000",
+    "$49,000",
+    "$7,000",
+    "$750,000"
+   ],
+   "quote": "the town spent about $924,000; $175,000 for the school lunch program, $692,000 for education grants, $49,000 for"
+  },
+  {
+   "topic": "Audit: other funds and capital additions",
+   "what_was_recorded": "Audit reported sewer, betterments and solid waste fund figures and capital asset additions.",
+   "figures_as_printed": [
+    "$216,000",
+    "$432,000",
+    "$8,400",
+    "$33 million",
+    "$30 million",
+    "1.3 million",
+    "$500,000",
+    "$1.2 million"
+   ],
+   "quote": "you added $33 million to your governmental capital assets."
+  },
+  {
+   "topic": "Management letter: ambulance receivables",
+   "what_was_recorded": "Auditor recommended writing off uncollectible ambulance receivables; receivables increased and part is not expected to be collected.",
+   "figures_as_printed": [
+    "$75,000",
+    "$711,000",
+    "$159,000",
+    "$194,000"
+   ],
+   "quote": "receivables increased by $75,000 in 2016 and totaled $711,000 at year's end; a $159,000 increase from the prior year."
+  },
+  {
+   "topic": "Net metering: FY18 energy cost projection",
+   "what_was_recorded": "Facilities Director estimated FY18 town and school electricity budget before and after net metering and solar.",
+   "figures_as_printed": [
+    "$400,000",
+    "$275,000 - $290,000"
+   ],
+   "quote": "projection total for the town and school combined is around $400,000 before the nexamp net metering"
+  },
+  {
+   "topic": "Grant: regional animal control building",
+   "what_was_recorded": "Regionalization and Efficiency grant awarded to Fitchburg as lead community, for design of a regional animal control building.",
+   "figures_as_printed": [
+    "$42,257"
+   ],
+   "quote": "as lead community that includes lunenburg and townsend was awarded in the amount of $42,257."
+  },
+  {
+   "topic": "Grant: E-Permitting software (not awarded)",
+   "what_was_recorded": "Efficiency grant application for E-Permitting software was not awarded; the town plans to resubmit under the IT Grant.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "we had submitted a separate grant application in the amount of $100,000 for e-permitting software under the"
+  },
+  {
+   "topic": "MS4 stormwater annual report costs",
+   "what_was_recorded": "Costs of the MS4 annual report are within budget and will not exceed the printed amount.",
+   "figures_as_printed": [
+    "$2,200"
+   ],
+   "quote": "the associated costs are within the budget and will not exceed $2,200."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant and a school construction warrant.",
+   "figures_as_printed": [
+    "$190,042.07",
+    "$129,192.04"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $190,042.07 and a school construction warrant in the amount of $129,192.04."
+  },
+  {
+   "topic": "Quarterly report: property tax collections",
+   "what_was_recorded": "Taxes collected to date as a share of the levy.",
+   "figures_as_printed": [
+    "$12,025,247.48 (48.83%)"
+   ],
+   "quote": "taxes: at this time we have collected $12,025,247.48 (48.83%) of the levy."
+  },
+  {
+   "topic": "Quarterly report: state aid collections",
+   "what_was_recorded": "State aid collected to date as a share of the estimate.",
+   "figures_as_printed": [
+    "$3,805,586.00 (49.32%)"
+   ],
+   "quote": "we have collected $3,805,586.00 (49.32%) of our state aid estimate."
+  },
+  {
+   "topic": "Quarterly report: total expenditures",
+   "what_was_recorded": "Expended or encumbered amount as a share of the budgeted expenditures, as printed with a date typo.",
+   "figures_as_printed": [
+    "$18,102,555.30 (49%)"
+   ],
+   "quote": "we have expended/encumbered $18,102,555.30 (49%) of our budgeted expenditures as of"
+  },
+  {
+   "topic": "Quarterly report: wiring inspector shortfall",
+   "what_was_recorded": "Wiring inspector account is at 67.8% spent; an additional appropriation will be needed before fiscal year end.",
+   "figures_as_printed": [
+    "$13,550.62 (67.8%)",
+    "$5,076"
+   ],
+   "quote": "we will need an additional appropriation of $5,076 prior to the close of the fiscal year."
+  },
+  {
+   "topic": "Quarterly report: animal control overspend",
+   "what_was_recorded": "Animal control spending is up due to care of two pit bulls pending a court case; an adjustment is needed before year end.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "an adjustment of about $10,000 will need to be made prior to close of the fiscal year."
+  },
+  {
+   "topic": "Quarterly report: snow removal deficit",
+   "what_was_recorded": "Snow removal appropriation is in deficit and will need a supplemental appropriation once final costs are known.",
+   "figures_as_printed": [
+    "$14,646.28"
+   ],
+   "quote": "there is a deficit balance of $14,646.28 in the appropriation as of december 31st."
+  },
+  {
+   "topic": "Quarterly report: unemployment compensation",
+   "what_was_recorded": "Full unemployment appropriation remains available as there are no open claims.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "the full appropriation of $10,000 is still available as there are no open claims at this time."
+  },
+  {
+   "topic": "Quarterly report: temporary loans deficit",
+   "what_was_recorded": "An internal transfer is planned to eliminate a deficit in the temporary loans account.",
+   "figures_as_printed": [
+    "$5,213.60"
+   ],
+   "quote": "to eliminate the $5,213.60 deficit in the temporary loans account."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Internal transfer from serial loans interest to interest temporary loans to eliminate the deficit in the temporary loans account.",
+   "amount_as_printed": "$5,213.60",
+   "outcome": "Described as planned by the Finance Director; no vote recorded.",
+   "quote": "there will be an internal transfer from serial loans interest to interest temporary loans to eliminate the $5,213.60 deficit in the temporary loans account."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Lunenburg Boys and Girls Club game show; Selectman not seeking reelection",
+   "quote": "mr. alonzo gave a shout out to the lunenburg ledger which has been in business for twenty years."
+  },
+  {
+   "speaker": "Mr. Toale",
+   "topic": "Girls' high school basketball championship and season",
+   "quote": "mr. toale reported he attended the girls' high school basketball championship last saturday at wpi where"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; announcements and remarks",
+   "quote": "mr. alonzo gave a shout out to the lunenburg ledger which has been in business for twenty years.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointment by Town Manager: Kayla Ledger, full-time police officer",
+   "resolution": "ratified appointment",
+   "quote": "police chief marino presented kayla ledger who has been a reserve police officer.",
+   "tags": [
+    "police",
+    "appointment",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Powers & Sullivan audit for year ending June 30, 2016",
+   "resolution": "received; questions and discussion, no vote",
+   "quote": "powers & sullivan- audit for year ending june 30, 2016",
+   "tags": [
+    "audit",
+    "finance",
+    "management letter"
+   ]
+  },
+  {
+   "topic": "Net Metering Credits Distribution Recommendations",
+   "resolution": "continued; Facilities Director to return with amended proposal",
+   "quote": "mr. londa will return with an amended distribution proposal.",
+   "tags": [
+    "net metering",
+    "solar",
+    "energy",
+    "Clean Footprint"
+   ]
+  },
+  {
+   "topic": "Legal services follow-up: references and non-price proposals",
+   "resolution": "continued; references pending, firm sessions being scheduled",
+   "quote": "follow up discussion on legal services: report on references and evaluation of non-price proposals",
+   "tags": [
+    "legal services",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Update on MS4 Permit",
+   "resolution": "no action; report and costs reported",
+   "quote": "the associated costs are within the budget and will not exceed $2,200.",
+   "tags": [
+    "stormwater",
+    "MS4",
+    "permit"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants signed; letters of appreciation signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $190,042.07",
+   "tags": [
+    "warrants",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action; reports from MPO, MRPC, Planning Board, Cable Advisory Committee, Finance Committee, School Building Committee",
+   "quote": "mr. alonzo reported cable advisory committee met.",
+   "tags": [
+    "committees",
+    "transportation",
+    "cable",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported; Building Commissioner position to be re-advertised",
+   "quote": "we received notification that the grant request submitted by the city of fitchburg",
+   "tags": [
+    "grants",
+    "regionalization",
+    "IT",
+    "building commissioner"
+   ]
+  },
+  {
+   "topic": "Quarterly Financial Report",
+   "resolution": "received; third quarter report expected mid-April",
+   "quote": "ms. brochu reported everything in this report goes to the end of december.",
+   "tags": [
+    "quarterly report",
+    "finance",
+    "budget"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Powers & Sullivan audit for year ending June 30, 2016",
+   "where": "text",
+   "quote": "powers & sullivan- audit for year ending june 30, 2016"
+  },
+  {
+   "name": "Management letter (Management Letter Items)",
+   "where": "text",
+   "quote": "management letter items"
+  },
+  {
+   "name": "Report on Federal Award Programs",
+   "where": "text",
+   "quote": "report on federal award programs"
+  },
+  {
+   "name": "Town's NPDES PII Small MS4 General Permit Annual Report",
+   "where": "text",
+   "quote": "in response to the notification that the town's npdes pii small ms4 general permit"
+  },
+  {
+   "name": "Evaluation forms for legal services firms",
+   "where": "text",
+   "quote": "the board was sent evaluation forms to fill out and return to her"
+  },
+  {
+   "name": "Accounts payable warrant ($190,042.07)",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $190,042.07"
+  },
+  {
+   "name": "School construction warrant ($129,192.04)",
+   "where": "text",
+   "quote": "a school construction warrant in the amount of $129,192.04."
+  },
+  {
+   "name": "Letters of appreciation to Amory Phelps and Peggy Stewart",
+   "where": "text",
+   "quote": "there were two letters of appreciation signed, one to amory phelps and the other to peggy stewart."
+  },
+  {
+   "name": "W-9 for Fitchburg Solar, LLC",
+   "where": "text",
+   "quote": "he has requested a w-9 on fitchburg solar, llc."
+  },
+  {
+   "name": "Contract with Clean Footprint",
+   "where": "text",
+   "quote": "the contract with clean footprint does allow for assignment of the contract by both the buyer and the seller."
+  },
+  {
+   "name": "Transportation Improvement Plan (TIP), 2018-2022",
+   "where": "text",
+   "quote": "they went through several scenarios for the next transportation improvement plan (tip),"
+  },
+  {
+   "name": "Fitchburg/Leominster System maps and schedules",
+   "where": "text",
+   "quote": "they were giving out fitchburg/leominster system maps and schedules"
+  },
+  {
+   "name": "E-Permitting software grant application ($100,000)",
+   "where": "text",
+   "quote": "we had submitted a separate grant application in the amount of $100,000 for e-permitting software under the"
+  },
+  {
+   "name": "Quarterly Financial Report",
+   "where": "text",
+   "quote": "ms. brochu reported everything in this report goes to the end of december."
+  }
+ ],
+ "tags": [
+  "audit",
+  "net metering",
+  "solar",
+  "legal services",
+  "MS4 stormwater permit",
+  "warrants",
+  "grants",
+  "quarterly financial report",
+  "police appointment",
+  "committees",
+  "transportation",
+  "building commissioner",
+  "cable contract"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

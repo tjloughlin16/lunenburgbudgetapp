@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-01-07",
  "docid": "4913",
@@ -12,31 +12,141 @@
  },
  "votes": [
   {
-   "motion": "approve the 2014 Business Licenses as presented",
-   "moved_by": "Ebersole",
-   "seconded_by": "Toale",
+   "motion": "Approve the 2014 Business Licenses as presented.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve the 2014 business licenses as presented. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to approve the 2014 business licenses as presented. mr. toale seconded. on vote, motion carried,"
   },
   {
-   "motion": "approve the MSBA Project Scope and Budget Agreement and authorize the Chair to sign the document on behalf of the Board",
-   "moved_by": "Matthews",
-   "seconded_by": "Ebersole",
+   "motion": "Approve the MSBA Project Scope and Budget Agreement and authorize the Chair to sign the document on behalf of the Board.",
+   "moved_by": "Dave Matthews",
+   "seconded_by": "Robert Ebersole",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the msba project scope and budget agreement and to authorize the chair to sign the document on behalf of the board. mr. ebersole seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. matthews moved to approve the msba project scope and budget agreement and to authorize the chair to sign the document on behalf of the board. mr. ebersole seconded."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Bertram",
-   "seconded_by": "Matthews",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Dave Matthews",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the meeting. mr. matthews seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "being no further business, ms. bertram moved to adjourn the meeting. mr. matthews seconded. on vote, motion carried,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0848835
+ "note": "OCR text from a scanned page; a few words are garbled (e.g., 'espectfully Submitte' and a 'RECEIVED & FILED' stamp). The adjournment vote is printed as 4-0 although five members are listed as present; the minutes do not say who was absent. No vote was recorded on the Donnelly matter. The minutes name the Town Manager's November letter and the MSBA agreement only in the text; no documents list is printed.",
+ "cost_usd": 0.0035139200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the board of selectmen met in the cafeteria at the lunenburg high school as scheduled with chairperson tom alonzo,"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board member",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board member",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "vice chairperson paula bertram, dave matthews, jamie toale, and robert ebersole."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager kerry speidel was"
+  },
+  {
+   "name": "John Donnelly",
+   "role": "business owner (member of the public who addressed the Board)",
+   "status": "present",
+   "quote": "mr. john donnelly asked if he could address the board."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Past due taxes and business license approval",
+   "what_was_recorded": "Public comment concerned the Board's decision not to approve a business owner's licenses contingent on payment of past due taxes; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "contingent upon payment of past due taxes was fair to him as a business owner."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. John Donnelly",
+   "topic": "Past due taxes and denial of business licenses",
+   "quote": "he requested that in the future, the letter include a due date."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "2014 Business Licenses (with public comment from John Donnelly)",
+   "resolution": "approved 5-0",
+   "quote": "mr. ebersole moved to approve the 2014 business licenses as presented. mr. toale seconded. on vote, motion carried,",
+   "tags": [
+    "business licenses",
+    "past due taxes",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approve & Authorize BOS Chair to sign MSBA Project Scope and Budget Agreement",
+   "resolution": "approved 5-0",
+   "quote": "2. approve & authorize bos chair to sign msba project scope and budget agreement: ms. speidel advised",
+   "tags": [
+    "MSBA",
+    "school building project",
+    "agreement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the Town Manager in November regarding past due taxes",
+   "where": "text",
+   "quote": "he received a letter from the town manager in november advising him of the past due taxes, but that the letter did not state a due date."
+  },
+  {
+   "name": "MSBA Project Scope and Budget Agreement",
+   "where": "text",
+   "quote": "ms. speidel advised the board that it would need to approve the project scope and budget agreement with the msba"
+  }
+ ],
+ "tags": [
+  "business licenses",
+  "past due taxes",
+  "MSBA",
+  "school building project",
+  "public comment",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

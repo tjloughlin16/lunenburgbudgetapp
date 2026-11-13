@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2013-01-14",
  "docid": "4623",
@@ -12,13 +12,138 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from January 7",
+   "motion": "Approve the minutes of the Jan. 7 meeting.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the minutes from jan. 7* were read and approved."
+   "quote": "the minutes from jan. 7* were read and approved.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes, marked ===OCR macOS Vision===. One procedural vote recorded: approval of prior minutes.",
- "cost_usd": 0.0913735
+ "note": "OCR text of a handwritten or typed page with garbled header fragments (\"LoM\", \"AK h\"). The date of the Jan. 7 minutes carries an asterisk (\"Jan. 7*\") and the next-meeting date reads \"Feb. 4h\", likely Feb. 4th. The motion approving the Jan. 7 minutes shows no mover, seconder or count, so it is recorded as passed with those fields blank. The adjournment at 9:25 pm has no recorded motion and is not listed as a vote. The Town Manager left during the Salary-Admin. Plan discussion.",
+ "cost_usd": 0.0033157200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: lance may, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: ernie sund, kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Mgr.",
+   "status": "present",
+   "quote": "salary-admin. plan (town mgr. kerry speidel joined us for this discussion)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Recommended that pay be for 5.6 hours Monday - Friday under the Salary-Admin. Plan (recommendation; no vote recorded).",
+   "quote": "it was recommended that pay be for 5.6 hours monday - friday."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Studio internet service",
+   "what_was_recorded": "The studio internet line will carry no additional charge.",
+   "figures_as_printed": [],
+   "quote": "there will be no additional charge for internet."
+  },
+  {
+   "topic": "Salary-Admin. Plan pay",
+   "what_was_recorded": "Recommended pay basis of 5.6 hours Monday through Friday; no dollar figure printed.",
+   "figures_as_printed": [
+    "5.6 hours"
+   ],
+   "quote": "it was recommended that pay be for 5.6 hours monday - friday."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Secretary's Report",
+   "resolution": "approved Jan. 7 minutes",
+   "quote": "the minutes from jan. 7* were read and approved.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Public Comments",
+   "resolution": "no comments",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: Studio Update",
+   "resolution": "no action",
+   "quote": "the mobile studio equipment has been installed and the initial training was held.",
+   "tags": [
+    "studio",
+    "equipment",
+    "training",
+    "internet"
+   ]
+  },
+  {
+   "topic": "New Business: Salary-Admin. Plan",
+   "resolution": "discussed; committee continued working on policies",
+   "quote": "salary-admin. plan (town mgr. kerry speidel joined us for this discussion)",
+   "tags": [
+    "personnel",
+    "salary administration",
+    "vacation",
+    "supervision"
+   ]
+  },
+  {
+   "topic": "New Business: Benefits",
+   "resolution": "discussed; no action",
+   "quote": "benefits (vacations, sick days etc. are pro-rated = 70% of full-time employees)",
+   "tags": [
+    "benefits",
+    "personnel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access",
+  "studio",
+  "salary administration",
+  "personnel policy",
+  "benefits",
+  "internet service",
+  "Brooks House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

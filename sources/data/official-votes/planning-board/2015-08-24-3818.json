@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-08-24",
  "docid": "3818",
@@ -12,15 +12,239 @@
  },
  "votes": [
   {
-   "motion": "to continue the hearing to September 28 at 6:35 PM",
+   "motion": "Continue the public hearing on the 274 Prospect Street special permit to September 28th, 6:35 PM.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "motion, m. allison, to continue to september 28th, 6:35 pm, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The hearing on the 274 Prospect Street special permit application was recessed and continued; no substantive vote on the application itself appears in these minutes.",
- "cost_usd": 0.0861865
+ "note": "Text is extracted from a typed minutes document with some words split by stray spaces (e.g., \"remai ning\", \"c oncerned\"); quotes were copied as printed. The minutes record one motion (continuance) and no vote on the permit itself. No dollar figures appear. The hearing was recessed at 8:10 PM and continued; no decision on the application was recorded.",
+ "cost_usd": 0.005721219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair d. mcquaid opened the hearing with the reading of the statutory notice published in the sentinel and enterprise on august"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Mark Piermarini",
+   "role": "Project Engineer, Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "presentation by project engineer mark piermarini, whitman & bingham associates"
+  },
+  {
+   "name": "Daniel Gardner",
+   "role": "Developer (Greener Living Luxury Homes)",
+   "status": "present",
+   "quote": "developer daniel gardner (greener living luxury homes) and m. piermarini noted thirty (30) feet from foundation to ridge."
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Reviewing Engineer",
+   "status": "present",
+   "quote": "reviewing engineer jeffrey walsh noted his initial review letter of august 14, 2015."
+  },
+  {
+   "name": "Wayne Travis",
+   "role": "24 Kimball Street",
+   "status": "present",
+   "quote": "wayne travis, 24 kimball street - inquired if parking would be restricted on kimball street."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "389 Sunny Hill Road",
+   "status": "present",
+   "quote": "lois lewis, 389 sunny hill road - as a property owner on kimball street, she is concerned with the increase in parking"
+  },
+  {
+   "name": "Lynn Major",
+   "role": "Town Beach employee",
+   "status": "present",
+   "quote": "lynn major, town beach employee"
+  },
+  {
+   "name": "Jill Normandin",
+   "role": "36 & 38 Kimball Street",
+   "status": "present",
+   "quote": "jill normandin, 36 & 38 kimball street- concerned with having a"
+  },
+  {
+   "name": "Sharron Albert",
+   "role": "5 Pond Street",
+   "status": "present",
+   "quote": "sharron albert, 5 pond street- concerned with the proposed project changing the neighborhood aspect of the area"
+  },
+  {
+   "name": "Brad Kennedy",
+   "role": "17 Crocker Avenue; member of the Conservation Commission",
+   "status": "present",
+   "quote": "brad kennedy, 17 crocker avenue - as a member of the conservation commission he noted that"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "312 Townsend Harbor Road",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road- the proposed project doesn"
+  },
+  {
+   "name": "Kimberly Kingerski",
+   "role": "8 & 32 Kimball Street",
+   "status": "present",
+   "quote": "kimberly kingerski, 8 & 32 kimball street- the proposed project is not beneficial to the community."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board identified issues to be addressed at the continuation: density and the overriding bylaw, sewer capacity for three-bedroom units, whether the Lake Whalom Overlay District overrides Section 5.0 Dimensional Regulations, traffic (possible widening of Kimball and Pond), and drainage and C type soils. The applicant's engineer agreed to remove the proposed dock from Sheet #2.",
+   "quote": "there was board discussion as to what issues they wanted addressed for the continuation."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Wayne Travis",
+   "stated_role": "24 Kimball Street",
+   "topic": "parking restrictions on Kimball Street",
+   "quote": "wayne travis, 24 kimball street - inquired if parking would be restricted on kimball street."
+  },
+  {
+   "speaker": "Lois Lewis",
+   "stated_role": "389 Sunny Hill Road; property owner on Kimball Street",
+   "topic": "parking, population, emergency services demand",
+   "quote": "lois lewis, 389 sunny hill road - as a property owner on kimball street, she is concerned with the increase in parking"
+  },
+  {
+   "speaker": "Lynn Major",
+   "stated_role": "Town Beach employee",
+   "topic": "parking and traffic from Town Beach users",
+   "quote": "concerned with parking and traffic as individuals using the town beach park along roadway during the summer months."
+  },
+  {
+   "speaker": "Jill Normandin",
+   "stated_role": "36 & 38 Kimball Street",
+   "topic": "high-volume development, Town Beach, traffic, property values, sewer capacity",
+   "quote": "impacts to traffic and property values, and sewer capacity."
+  },
+  {
+   "speaker": "Sharron Albert",
+   "stated_role": "5 Pond Street",
+   "topic": "neighborhood character and children crossing from Town Beach",
+   "quote": "concerned with the proposed project changing the neighborhood aspect of the area, and traffic"
+  },
+  {
+   "speaker": "Brad Kennedy",
+   "stated_role": "17 Crocker Avenue; member of the Conservation Commission",
+   "topic": "possible dock/marina, Conservation Commission approval",
+   "quote": "he is c oncerned with individuals wanting a dock/marina."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "312 Townsend Harbor Road",
+   "topic": "character of community, sediment in Town Beach swimming area",
+   "quote": "she encouraged the board to listen to the residents."
+  },
+  {
+   "speaker": "Kimberly Kingerski",
+   "stated_role": "8 & 32 Kimball Street",
+   "topic": "project not beneficial to community",
+   "quote": "the proposed project is not beneficial to the community."
+  },
+  {
+   "speaker": "Jill Normandin",
+   "stated_role": "36 & 38 Kimball Street",
+   "topic": "scale of project and time to learn about it",
+   "quote": "would like to see it scaled down. wants more time to learn about the development."
+  },
+  {
+   "speaker": "Lois Lewis",
+   "stated_role": "389 Sunny Hill Road",
+   "topic": "whether a traffic study is appropriate",
+   "quote": "would a traffic study be appropriate?"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: special permit under Section 4.12, Lake Whalom Overlay District, 22 townhouse units at 274 Prospect Street (Map 98, Parcel 10)",
+   "resolution": "continued to September 28, 2015 at 6:35 PM",
+   "quote": "special permit under section 4.12. lake whalom overlay district",
+   "tags": [
+    "special permit",
+    "public hearing",
+    "townhouses",
+    "Lake Whalom"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Initial review letter dated August 14, 2015 (Reviewing Engineer Jeffrey Walsh)",
+   "where": "text",
+   "quote": "reviewing engineer jeffrey walsh noted his initial review letter of august 14, 2015."
+  },
+  {
+   "name": "Sheet #2, Grading and Drainage (site plan)",
+   "where": "text",
+   "quote": "sheet #2, grading and drainage, indicates proposed dock."
+  },
+  {
+   "name": "Conservation Commission Notice of Intent approval",
+   "where": "text",
+   "quote": "received a notice of intent approval from the conservation commission"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "special permit",
+  "townhouses",
+  "Lake Whalom Overlay District",
+  "274 Prospect Street",
+  "public hearing",
+  "stormwater",
+  "traffic",
+  "sewer",
+  "parking",
+  "continued"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

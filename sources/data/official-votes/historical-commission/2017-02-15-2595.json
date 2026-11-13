@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2017-02-15",
  "docid": "2595",
@@ -12,19 +12,170 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from January 3, 2017",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes were approved for january 3, 2017."
-  },
-  {
-   "motion": "The Historical Commission will submit its advisory letter to the Board of Selectmen, the Building Reuse Committee, and all the town boards, commissions and committees directly or indirectly affected by the sale of these historic buildings and relocation of offices to the Passios School",
+   "motion": "Advisory letter: the Historical Commission will submit its advisory letter to the Board of Selectmen, the Building Reuse Committee, and all town boards, commissions and committees affected by the sale of the historic buildings and relocation of offices to the Passios School.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "voted: the historical commission will submit its advisory letter to the board of selectmen and the building reuse committee and to all the town boards, commissions and committees that are either directly or are indirectly affected by the sale of these historic buildings and relocation of the offices to the passios school."
+   "quote": "voted: the historical commission will submit its advisory letter to the board of selectmen and the building reuse committee and to all the town boards, commissions"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Both votes recorded without moved_by/seconded_by attribution or vote counts. No explicit adjournment motion recorded.",
- "cost_usd": 0.0959335
+ "note": "The minutes record no roll-call or vote tallies. The minutes approval is recorded without a motion, so it is listed as a decision, not a vote. The advisory-letter 'Voted:' line has no mover, seconder or count, so its outcome is recorded as passed on the word 'Voted'. The 'Historical Commission Report' and the explanatory budget are mentioned in the text, not in a documents list.",
+ "cost_usd": 0.0036101199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "member, Historical Commission",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "member, Historical Commission",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member, Historical Commission",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "member, Historical Commission",
+   "status": "present",
+   "quote": "becky lantry, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "guest",
+   "status": "present",
+   "quote": "a guest, jennifer sanderson, attended the meeting and expressed interest for membership in the historical commission."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "town manager",
+   "status": "not stated",
+   "quote": "the town manager, heather lemieux, provided a proposed explanatory budget for the historical commission."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of January 3, 2017 were approved (no motion or tally recorded).",
+   "quote": "minutes were approved for january 3, 2017."
+  },
+  {
+   "decision": "Richard McGrath will take photos of the demolition-delay properties before demolition.",
+   "quote": "richard mcgrath will take photos before demolition."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall, Ritter Building and Primary School sale",
+   "what_was_recorded": "The Building Reuse Committee is moving toward a potential sale of the buildings, and questions about their value and assessment remain open; no figures are printed.",
+   "quote": "questions, for instance, still continue about the sale process, the value and assessment of these town buildings",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Historical Commission explanatory budget",
+   "what_was_recorded": "The town manager provided a proposed explanatory budget for the Historical Commission; no figures are printed in the minutes.",
+   "quote": "the town manager, heather lemieux, provided a proposed explanatory budget for the historical commission.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "received; Historical Commission Report submitted",
+   "quote": "becky lantry has submitted a historical commission report for the town.",
+   "tags": [
+    "correspondence",
+    "report"
+   ]
+  },
+  {
+   "topic": "Building Reuse Committee: sale and relocation of town offices",
+   "resolution": "reported; advisory letter voted",
+   "quote": "becky lantry, as a member of the building reuse committee, reported the building",
+   "tags": [
+    "town hall",
+    "building reuse",
+    "passios school",
+    "sale"
+   ]
+  },
+  {
+   "topic": "Bronze markers for National Register of Historic Places",
+   "resolution": "discussed; no action recorded",
+   "quote": "becky lantry clarified the historical commission plan to offer bronze markers for the national register of historic places",
+   "tags": [
+    "markers",
+    "national register",
+    "village district"
+   ]
+  },
+  {
+   "topic": "Demolition delay requests",
+   "resolution": "reported; no action recorded",
+   "quote": "richard mcgrath reported there have been no new demolition delay requests.",
+   "tags": [
+    "demolition delay",
+    "properties"
+   ]
+  },
+  {
+   "topic": "Town cemeteries",
+   "resolution": "advised a tour and report in suitable weather",
+   "quote": "richard mcgrath advised in more suitable weather conditions the town cemeteries should be toured",
+   "tags": [
+    "cemeteries",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger Historically Speaking articles",
+   "resolution": "scheduled articles for April through July",
+   "quote": "the lunenburg ledger historically speaking articles are scheduled for:",
+   "tags": [
+    "ledger",
+    "articles",
+    "outreach"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Historical Commission Report",
+   "where": "text",
+   "quote": "becky lantry has submitted a historical commission report for the town."
+  },
+  {
+   "name": "Proposed explanatory budget for the Historical Commission",
+   "where": "text",
+   "quote": "the town manager, heather lemieux, provided a proposed explanatory budget for the historical commission."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "building reuse",
+  "town hall sale",
+  "passios school",
+  "demolition delay",
+  "markers",
+  "cemeteries",
+  "ledger articles",
+  "budget",
+  "membership"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

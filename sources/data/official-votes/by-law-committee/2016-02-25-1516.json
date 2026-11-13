@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2016-02-25",
  "docid": "1516",
@@ -12,15 +12,148 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Rob Bowen",
-   "seconded_by": "Nancy Gray",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "the Chair",
+   "seconded_by": "Vice Chair",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by the chair at 6:34pm. second by vice chair: meeting adjourned."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR scanned (macOS Vision) and appear clearly legible. One motion to adjourn is the only formally recorded vote; section 2 lists officer appointments but records them as assignments rather than voted motions.",
- "cost_usd": 0.10479750000000002
+ "note": "Single-page OCR text (macOS Vision) with visible typos as printed (e.g., \"Committe\", \"Dratt\"). Only one motion (adjournment) is recorded; it has no printed vote count, so outcome is inferred from \"Meeting adjourned.\" Officer election and meeting schedule are recorded without a vote. The attached draft letter is referenced but not included in the text. Board is named \"Bylaw Review Committee\" in the header.",
+ "cost_usd": 0.00356342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Bowen",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attending: rob bowen, kathy herrick, nancy gray, cathy hennessy, michelle smith."
+  },
+  {
+   "name": "Kathy Herrick",
+   "status": "present",
+   "quote": "attending: rob bowen, kathy herrick, nancy gray, cathy hennessy, michelle smith."
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "attending: rob bowen, kathy herrick, nancy gray, cathy hennessy, michelle smith."
+  },
+  {
+   "name": "Cathy Hennessy",
+   "status": "present",
+   "quote": "attending: rob bowen, kathy herrick, nancy gray, cathy hennessy, michelle smith."
+  },
+  {
+   "name": "Michelle Smith",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "attending: rob bowen, kathy herrick, nancy gray, cathy hennessy, michelle smith."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee officers named: Rob Bowen as Chair, Nancy Gray as Vice Chair, Michelle Smith as Secretary. No vote recorded; each member to be approved through the Conflict of Interest site.",
+   "quote": "committee appointments include: a. rob bowen-chair b. nancy gray-vice chair c. michelle smith-secretary"
+  },
+  {
+   "decision": "Chair recommended drafting a letter to the various departments inviting input on desired bylaw changes, with responses requested within 30 days.",
+   "quote": "chair recommended we draft a letter inviting the various departments of the bylaw review and seek their input for changes they would like to see."
+  },
+  {
+   "decision": "Committee agreed to meet bi-weekly on Thursdays at 6pm at the 2nd Floor of 17 Main St.; next meeting March 10, 2016.",
+   "quote": "group agreed to meet bi-weekly thursday meeting at 6pm 2nd floor of 17 main st. next meeting to be held march 10, 2016."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:08pm",
+   "quote": "meeting called to order 6:08pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Swear in and Elect Officers",
+   "resolution": "officers named (Chair, Vice Chair, Secretary); no vote recorded",
+   "quote": "committee appointments include: a. rob bowen-chair b. nancy gray-vice chair c. michelle smith-secretary",
+   "tags": [
+    "officers",
+    "appointments",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Distribute Bylaws & Charter",
+   "resolution": "discussed review schedule and scope; draft letter to departments recommended",
+   "quote": "kathy herrick shared that the bylaws must be reviewed once every 10 years per the town charter.",
+   "tags": [
+    "bylaws",
+    "town charter",
+    "code review",
+    "town meeting",
+    "zoning",
+    "fee schedules"
+   ]
+  },
+  {
+   "topic": "Adopt Meeting Schedule",
+   "resolution": "agreed to meet bi-weekly on Thursdays at 6pm",
+   "quote": "group agreed to meet bi-weekly thursday meeting at 6pm 2nd floor of 17 main st.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public/Committee Comment",
+   "resolution": "no public comment",
+   "quote": "no public comment as no one additional was present.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 6:34pm",
+   "quote": "motion to adjourn by the chair at 6:34pm. second by vice chair: meeting adjourned.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Dratt letter (draft letter to departments, as printed)",
+   "where": "list",
+   "quote": "e. dratt letter attached to minutes."
+  },
+  {
+   "name": "Bylaws & Charter",
+   "where": "text",
+   "quote": "kathy herrick shared that the bylaws must be reviewed once every 10 years per the town charter."
+  }
+ ],
+ "tags": [
+  "bylaws",
+  "bylaw review",
+  "town charter",
+  "officers",
+  "meeting schedule",
+  "town meeting",
+  "code codification",
+  "draft letter to departments"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dratt letter attached to minutes."
+ },
+ "dropped_unquoted_by_field": {}
 }

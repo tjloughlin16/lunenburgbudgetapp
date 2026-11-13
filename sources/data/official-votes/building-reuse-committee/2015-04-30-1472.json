@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-04-30",
  "docid": "1472",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave MacDonald",
    "seconded_by": "Ron Albert",
    "outcome": "passed",
@@ -21,6 +21,160 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes state a meeting date conflict: header says 4/6/2015, call to order says April 30, 2015. OCR-extracted text; one vote recorded.",
- "cost_usd": 0.0820525
+ "note": "Minutes are OCR text. The heading reads \"Meeting Minutes 4/6/2015\" but the call to order and the meeting date are April 30, 2015. No minutes-approval vote, no vote on the Passios options, and no dollar figure for demolition or contingency funds appear in the text. The only recorded motion is adjournment. Minutes name no documents, and page 2 has no signature block.",
+ "cost_usd": 0.0032639200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "role": "",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin,"
+  },
+  {
+   "name": "Ron Albert",
+   "status": "present",
+   "role": "",
+   "quote": "ron albert explained that typically, for an effective rfp process, and clear boundary and set of parameters is ideal."
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "role": "",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "role": "",
+   "quote": "dave macdonald suggested that the school committee make the decision if they want / need the passios property."
+  },
+  {
+   "name": "Mike Mackin",
+   "status": "present",
+   "role": "",
+   "quote": "mike mackin responded that it has always been the plan that the school committee would turn over the parcel to the town."
+  },
+  {
+   "name": "Rebecca Lantry",
+   "status": "present",
+   "role": "",
+   "quote": "rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "role": "",
+   "quote": "rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "absent",
+   "role": "",
+   "quote": "members absent: deb seeley"
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "present",
+   "role": "",
+   "quote": "dave rodgers expressed his opinion that the passios building should be torn down and retained"
+  },
+  {
+   "name": "Dr. Berthiaume",
+   "status": "present",
+   "role": "",
+   "quote": "dr. berthiaume asked if a potential developer could determine a boundary line based on their needs."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The discussion on the Passios property and parking will be continued after the results of the town meeting are known.",
+   "quote": "it was decided that this conversation will be continued after the results of the town meeting are known."
+  },
+  {
+   "decision": "The School Building Committee will check with MSBA about the limit of work line for the school project and how it relates to the discussion.",
+   "quote": "the school building committee will check with msba about the limit of work line for the school project and how that relates to this discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Passios building demolition funding",
+   "what_was_recorded": "Presented as an option that the Passios building could be demolished using left-over school project contingency funds if adequate funds remain; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "the passios building could be demolished using left over fund from the school project contingency if there are adequate funds remaining"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Passios building demolition or retention",
+   "quote": "dave rodgers expressed his opinion that the passios building should be torn down and retained"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "meeting called to order april 30, 2015 @ 6:35pn"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "Passios building"
+   ],
+   "quote": "dave rodgers expressed his opinion that the passios building should be torn down and retained"
+  },
+  {
+   "topic": "Workshop with School Committee",
+   "resolution": "continued until after town meeting results",
+   "tags": [
+    "school project",
+    "parking",
+    "Passios building",
+    "MSBA",
+    "town center"
+   ],
+   "quote": "school committee has supplied a new plan by the landscape architect showing a proposed location for expansion parking for the school project."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for May 18 at 6:30pm at Town Hall",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "may 18\"', 6:30pm at town hall"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned @ 7:50pm"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Passios building",
+  "school project",
+  "parking",
+  "MSBA",
+  "town center redevelopment",
+  "RFP",
+  "demolition",
+  "contingency funds"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

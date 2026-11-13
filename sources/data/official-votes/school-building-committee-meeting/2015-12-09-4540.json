@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2015-12-09",
  "docid": "4540",
@@ -12,61 +12,559 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from November 12, 2015",
-   "outcome": "unanimously approved",
+   "motion": "Approve the meeting minutes of November 12, 2015",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "voted to approve the meeting minutes from november 12, 2015. the motion was unanimously approved"
+   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from november 12, 2015. the motion was unanimously approved."
   },
   {
-   "motion": "Approve October 2015 invoices as presented by Joslin, Lesser (JLA-NV5)",
-   "outcome": "unanimously approved",
-   "procedural": false,
-   "quote": "voted to approve the october, 2015 invoices as presented by joslin, lesser (jla-nv5). the motion was unanimously approved"
-  },
-  {
-   "motion": "Authorize proceeding with electrical installations as presented by Joslin, Lesser (JLA-NV5)",
-   "outcome": "unanimously approved",
-   "procedural": false,
-   "quote": "voted on authorization to proceed with the electrical installations as presented by joslin, lesser (jla-nv5). the motion was unanimously approved"
-  },
-  {
-   "motion": "Authorize proceeding with Millwork and Electrical scope of work as presented by Joslin Lesser (JLA-NV5)",
+   "motion": "Approve the October, 2015 invoices as presented by Joslin, Lesser (JLA-NV5)",
    "outcome": "passed",
    "procedural": false,
-   "quote": "voted for authorization to proceed with millwork and electrical scope of work as presented by joslin lesser (jla-nv5). greg bittner opposed to proceeding with the millwork portion of this item"
+   "quote": "motion: the lunenburg school building committee voted to approve the october, 2015 invoices as presented by joslin, lesser (jla-nv5). the motion was unanimously approved."
   },
   {
-   "motion": "Authorize proceeding with electrical scope of work as presented by Joslin Lesser (JLA-NV5)",
-   "outcome": "unanimously approved",
+   "motion": "Authorization to proceed with the electrical installations for the Outdoor Study Area as presented by Joslin, Lesser (JLA-NV5)",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "voted for authorization to proceed electrical scope of work as presented by joslin lesser (jla-nv5). the motion was unanimously approved"
+   "quote": "motion: the lunenburg school building committee voted on authorization to proceed with the electrical installations as presented by joslin, lesser (jla-nv5). the motion was unanimously approved."
   },
   {
-   "motion": "Authorize proceeding on design work for added cooling to understand actual cost",
-   "outcome": "unanimously approved",
+   "motion": "Authorization to proceed with Millwork and Electrical scope of work as presented by Joslin Lesser (JLA-NV5)",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "voted for authorization to proceed on design work for added cooling in order to understand actual cost for this system. the motion was unanimously approved"
+   "quote": "motion: the lunenburg school building committee voted for authorization to proceed with millwork and electrical scope of work as presented by joslin lesser (jla-nv5)."
   },
   {
-   "motion": "Approve BRR of $25,000 for Testing Services as presented by Joslin Lesser (JLA-NV5)",
-   "outcome": "unanimously approved",
+   "motion": "Authorization to proceed with Electrical scope of work for the Site Digital Sign as presented by Joslin Lesser (JLA-NV5)",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "voted to approve a brr of $25,000 for testing services as presented by joslin lesser (jla-nv5). the motion was unanimously approved"
+   "quote": "voted for authorization to proceed electrical scope of work as presented by joslin lesser (jla-nv5). the motion was unanimously approved."
+  },
+  {
+   "motion": "Authorization to proceed on design work for added cooling to understand the actual cost of this system",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "authorization to proceed on design work for added cooling in order to understand actual cost for this system. the motion was unanimously approved."
+  },
+  {
+   "motion": "Approve a BRR of $25,000 for Testing Services as presented by Joslin Lesser (JLA-NV5)",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: the lunenburg school building committee voted to approve a brr of $25,000 for testing services as presented by joslin lesser (jla-nv5). the motion was unanimously approved."
   },
   {
    "motion": "Approve Change Order #6 as presented by Shawmut, Tappe Architects and Joslin Lesser (JLA-NV5)",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "voted to approve change order #6 as presented by shawmut, tappe architects and joslin lesser (jla-nv5). the motion was unanimously approved"
+   "quote": "motion: the lunenburg school building committee voted to approve change order #6 as presented by shawmut, tappe architects and joslin lesser (jla-nv5). the motion was unanimously approved."
   },
   {
-   "motion": "Grant Authorization to Proceed with Art Room Modifications work pending final approval of cost",
-   "outcome": "unanimously approved",
+   "motion": "Grant Authorization to Proceed with CR-68C Art Room modifications pending final approval of total cost in the next Change Order Package in January, 2016",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "voted to grant authorization to proceed with this work pending final approval of total cost which will be included in the next change order package in january, 2016. the motion was unanimously approved"
+   "quote": "motion: the lunenburg school building committee voted to grant authorization to proceed with this work pending final approval of total cost which will be included in the next change order package in january, 2016."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision). Votes are clearly readable. No moved_by or seconded_by recorded in minutes—all motions attributed generically to \"The Lunenburg School Building Committee voted\". No motion to adjourn recorded (meeting was simply adjourned at 9:40 pm).",
- "cost_usd": 0.14632050000000002
+ "note": "OCR text of a scanned page set. The attendance roster is printed as separate columns of names and roles, and the OCR does not align them reliably, so roster names are recorded without roles (except Mackin, whose role is stated in the call-to-order text) and with status 'not stated'; the minutes do not state who was present. Vote on the Millwork and Electrical authorization records an opposition but no result. Public comment speakers are not named. Some OCR errors appear in the source (e.g. 'intentional', 'maintanace'); quotes follow the OCR text.",
+ "cost_usd": 0.010107620000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chairperson of the Lunenburg School Building Committee",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:35 pm by mr. mackin, chairperson of the lunenburg school building committee."
+  },
+  {
+   "name": "Greg Bittner",
+   "status": "present",
+   "quote": "greg bittner opposed to proceeding with the millwork portion of this item."
+  },
+  {
+   "name": "Joslin Lesser (JLA-NV5)",
+   "role": "OPM; presenting firm",
+   "status": "present",
+   "quote": "joslin lesser (jla-nv5) presented monthly progress invoices for work completed through november, 2015"
+  },
+  {
+   "name": "Tappe Architects",
+   "role": "Designer; presenting firm",
+   "status": "present",
+   "quote": "joslin lesser (jla-nv5), tappe architects and shawmut design & construction presented change order #6 package"
+  },
+  {
+   "name": "Shawmut Design & Construction",
+   "role": "Construction manager; presenting firm",
+   "status": "present",
+   "quote": "joslin lesser (jla-nv5), tappe architects and shawmut design & construction presented change order #6 package"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "not stated",
+   "quote": "greg bittner mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Mike Barney",
+   "status": "not stated",
+   "quote": "greg bittner mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Brian Frank",
+   "status": "not stated",
+   "quote": "greg bittner mark erickson mike barney brian frank"
+  },
+  {
+   "name": "Greg S. Roy",
+   "status": "not stated",
+   "quote": "greg s. roy kerry lafleur john londa brian spadafino"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "status": "not stated",
+   "quote": "greg s. roy kerry lafleur john londa brian spadafino"
+  },
+  {
+   "name": "John Londa",
+   "status": "not stated",
+   "quote": "greg s. roy kerry lafleur john londa brian spadafino"
+  },
+  {
+   "name": "Brian Spadafino",
+   "status": "not stated",
+   "quote": "greg s. roy kerry lafleur john londa brian spadafino"
+  },
+  {
+   "name": "Tim Santry",
+   "status": "not stated",
+   "quote": "tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Charles Hay",
+   "status": "not stated",
+   "quote": "tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Jen Littlefield",
+   "status": "not stated",
+   "quote": "tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Damian Liddiard",
+   "status": "not stated",
+   "quote": "tim santry charles hay jen littlefield damian liddiard"
+  },
+  {
+   "name": "Stuart Lesser",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Inga Knox",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Robert Alger",
+   "status": "not stated",
+   "quote": "stuart lesser jeffery luxenberg inga knox robert alger"
+  },
+  {
+   "name": "Michael Kearns",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst philip conroy david eichenthal"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst philip conroy david eichenthal"
+  },
+  {
+   "name": "Philip Conroy",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst philip conroy david eichenthal"
+  },
+  {
+   "name": "David Eichenthal",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst philip conroy david eichenthal"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "carl luck phyllis m. luck"
+  },
+  {
+   "name": "Phyllis M. Luck",
+   "status": "not stated",
+   "quote": "carl luck phyllis m. luck"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No decision was made on which local share option the project should follow; the local share and contingency scope adds will be reviewed further at the January and February 2016 meetings.",
+   "quote": "there was no decision made as to what local share option should the project follow."
+  },
+  {
+   "decision": "January and February 2016 meetings will be televised or recorded for later broadcast.",
+   "quote": "it has been decided that january and february 2016 meetings will be televised or recorded for later broadcast."
+  },
+  {
+   "decision": "Mural relocation and digital mural reproduction to be reviewed at the following meeting in January, 2016.",
+   "quote": "this item was decided to review at the following meeting in january, 2016."
+  },
+  {
+   "decision": "Maintenance garage to be reviewed at the following meeting in January, 2016.",
+   "quote": "this item was decided to review at the following meeting in january, 2016."
+  },
+  {
+   "decision": "Site digital sign concerns to be reviewed later, after other potentially less costly options are investigated by Committee members and the Design Team.",
+   "quote": "these will be reviewed at a later date, when other, potentially less costly options are investigated by both, committee members and the design team."
+  },
+  {
+   "decision": "Artificial turf vs. sod, and the existing turf field replacement, to be further reviewed at upcoming meetings; existing turf replacement to be presented and voted on separately by the Town.",
+   "quote": "these items will be further reviewed at upcoming meetings."
+  },
+  {
+   "decision": "Demolition of the Passios building to be reviewed further with the Reuse Committee and presented to the Town.",
+   "quote": "demolition of passios building will be reviewed further with the reuse committee and presented to the town."
+  },
+  {
+   "decision": "The Chairman requested that the Town Manager have bond counsel review all potential scope items to ensure they are within the authority of the Warrant; Town Manager to report by the next meeting.",
+   "quote": "the chairman requested that the town manager have bond counsel review all potential scope items to ensure the items are within the authority of the warrant"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Contingency projection study (worst-case assumptions)",
+   "what_was_recorded": "The projection assumed changes are not MSBA-reimbursable and unforeseen change orders at 2% of the GMP, which is likely to be considerably lower given current progress and change order value.",
+   "figures_as_printed": [
+    "2%",
+    "0.3%",
+    "70%"
+   ],
+   "quote": "projected unforeseen change orders to be at 2% of the gmp (likely to be considerably lower based on the current progress, about 70% completion"
+  },
+  {
+   "topic": "Testing Services BRR",
+   "what_was_recorded": "The Committee approved a BRR of $25,000 for Testing Services.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "motion: the lunenburg school building committee voted to approve a brr of $25,000 for testing services"
+  },
+  {
+   "topic": "Outdoor Study Area final design cost",
+   "what_was_recorded": "Final design for the Outdoor Study Area came in at a higher cost than the GMP allowance; the site contractor Powell is looking to donate all construction except electrical.",
+   "figures_as_printed": [],
+   "quote": "final design came in at a higher cost. however the site contractor, powell, is looking to"
+  },
+  {
+   "topic": "Murals digital reproduction pricing",
+   "what_was_recorded": "Shawmut is pricing the digital mural reproduction; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "shawmut is in process of pricing this item. this item was decided to review at the following meeting in january, 2016."
+  },
+  {
+   "topic": "Maintenance garage pricing",
+   "what_was_recorded": "Shawmut is pricing the new maintenance garage; the item was value engineered at design stage; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "construction of new maintanace building was concidered at design stage of the school project, however it was value engineered."
+  },
+  {
+   "topic": "Site digital sign cost",
+   "what_was_recorded": "Committee voiced concern about the cost of the sign; a simpler monochrome sign was suggested.",
+   "figures_as_printed": [],
+   "quote": "the cost for the sign was a concern, it was noted that color sign is probably not what the town is looking for."
+  },
+  {
+   "topic": "Artificial turf vs. sod lifecycle cost",
+   "what_was_recorded": "Turf must be replaced every fifteen to twenty years, adding a significant lump sum cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "however it has to be replace every fifteen to twenty years which adds a significant lump sum cost."
+  },
+  {
+   "topic": "Millwork software and monitor cost",
+   "what_was_recorded": "Concerns were voiced about the high cost of the software and monitor for the design; to be reviewed later.",
+   "figures_as_printed": [],
+   "quote": "concerns were voiced about high cost for the software and monitor for this design."
+  },
+  {
+   "topic": "Town share and contingency use",
+   "what_was_recorded": "A concern was raised about increasing the town share from the 2013 presentation, given the project can be built without doing so.",
+   "figures_as_printed": [],
+   "quote": "there was a concern about increasing town share from what was presented in 2013"
+  },
+  {
+   "topic": "Monthly invoices",
+   "what_was_recorded": "The Committee approved October, 2015 invoices for the OPM, designer, construction payment requisition No.16 and testing services; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "joslin lesser (jla-nv5) presented monthly progress invoices for work completed through november, 2015"
+  },
+  {
+   "topic": "Change Order No. 6",
+   "what_was_recorded": "The Committee approved Change Order #6; amounts not printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "motion: the lunenburg school building committee voted to approve change order #6 as presented by shawmut"
+  },
+  {
+   "topic": "Art Room CR-68C cost",
+   "what_was_recorded": "Authorization to proceed given, with final total cost to be approved in the January 2016 Change Order Package; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "pending final approval of total cost which will be included in the next change order package in january, 2016."
+  },
+  {
+   "topic": "Public comment on tax impact",
+   "what_was_recorded": "A public commenter said tax increases are unfavorable to a community of limited funds and asked that less contingency be spent.",
+   "figures_as_printed": [],
+   "quote": "tax increase no matter how small is not favorable to the community of limited funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Contingency spending and tax increase",
+   "quote": "it was noted that it is a benefit to community to spend as less contingency funds as possible for the new building to be built to specifications."
+  },
+  {
+   "topic": "Transparency and website updates",
+   "quote": "a concern was voiced about transparency of the school construction. the paper updated and website updates did not note contingency scope adds discussed in this meeting"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and next meeting",
+   "resolution": "no action",
+   "tags": [
+    "call to order",
+    "schedule"
+   ],
+   "quote": "the meeting was called to order at 6:35 pm by mr. mackin, chairperson of the lunenburg school building committee."
+  },
+  {
+   "topic": "Approval of November 12, 2015 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from november 12, 2015."
+  },
+  {
+   "topic": "Monthly invoices",
+   "resolution": "approved",
+   "tags": [
+    "invoices",
+    "payments"
+   ],
+   "quote": "joslin lesser (jla-nv5) presented monthly progress invoices for work completed through november, 2015"
+  },
+  {
+   "topic": "Contingency projection study and local share",
+   "resolution": "reviewed; no decision on local share",
+   "tags": [
+    "contingency",
+    "local share",
+    "MSBA"
+   ],
+   "quote": "the committee reviewed presented projection. there was no decision made as to what local share option should the project follow."
+  },
+  {
+   "topic": "Outdoor Study Area electrical",
+   "resolution": "approved",
+   "tags": [
+    "outdoor study area",
+    "electrical"
+   ],
+   "quote": "outdoor study area (classroom): this space was included in the gmp as an allowance."
+  },
+  {
+   "topic": "Relocation of murals and digital mural reproduction",
+   "resolution": "continued to January 2016",
+   "tags": [
+    "murals",
+    "pricing"
+   ],
+   "quote": "relocation of existing murals & a digital mural reproduction: this work was reviewed."
+  },
+  {
+   "topic": "Maintenance garage",
+   "resolution": "continued to January 2016",
+   "tags": [
+    "maintenance garage",
+    "site"
+   ],
+   "quote": "maintenance garage: existing maintenance garage used by the school is to be demolished as part of new site plan."
+  },
+  {
+   "topic": "Millwork and electrical authorization",
+   "resolution": "motion made; Greg Bittner opposed millwork portion; outcome not stated",
+   "tags": [
+    "millwork",
+    "electrical",
+    "software cost"
+   ],
+   "quote": "construction team is looking for authorization to proceed on the electrical and millwork scope of work only."
+  },
+  {
+   "topic": "Site digital sign",
+   "resolution": "electrical approved; sign concerns deferred",
+   "tags": [
+    "site sign",
+    "electrical"
+   ],
+   "quote": "site digital sign: this items and its need for the school were discussed by the"
+  },
+  {
+   "topic": "Added cooling design work",
+   "resolution": "approved",
+   "tags": [
+    "cooling",
+    "design"
+   ],
+   "quote": "authorization to proceed on design work for added cooling in order to understand actual cost for this system."
+  },
+  {
+   "topic": "Artificial turf vs. sod athletic fields",
+   "resolution": "no decision; continued",
+   "tags": [
+    "athletic field",
+    "turf"
+   ],
+   "quote": "change sod to artificial turf at the new athletic field & replace artificial turf at the"
+  },
+  {
+   "topic": "Passios building demolition and parking lot",
+   "resolution": "continued; Reuse Committee review",
+   "tags": [
+    "Passios",
+    "demolition",
+    "parking"
+   ],
+   "quote": "demolition of thomas c passios and passios parking lot reconfiguration: a discussion"
+  },
+  {
+   "topic": "Flashing school zone signal lights",
+   "resolution": "discussed; continued",
+   "tags": [
+    "traffic",
+    "safety"
+   ],
+   "quote": "install flashing signal lights for school zone at adjacent streets due to increased"
+  },
+  {
+   "topic": "Testing Services BRR",
+   "resolution": "approved",
+   "tags": [
+    "testing",
+    "BRR"
+   ],
+   "quote": "motion: the lunenburg school building committee voted to approve a brr of $25,000 for testing services"
+  },
+  {
+   "topic": "Change Order No. 6",
+   "resolution": "approved",
+   "tags": [
+    "change order"
+   ],
+   "quote": "monthly approvals - change order no.6"
+  },
+  {
+   "topic": "Art Room modifications CR-68C",
+   "resolution": "authorization to proceed granted",
+   "tags": [
+    "art room",
+    "change request"
+   ],
+   "quote": "monthly approvals - art room modifications"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "transparency"
+   ],
+   "quote": "it was noted that it is a benefit to community to spend as less contingency funds as possible"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 9:40 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting was adjourned at approximately 9:40 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Edited projection study (contingency projection, excel work document)",
+   "where": "list",
+   "quote": "edited projection study is attached."
+  },
+  {
+   "name": "Change Order No. 6 package and description of items",
+   "where": "list",
+   "quote": "description of items included in change order no. 6 is attached."
+  },
+  {
+   "name": "PCI log",
+   "where": "list",
+   "quote": "all items have been previously incorporated in the pci log which was distributed to the committee."
+  },
+  {
+   "name": "CR-68C change request (Art Room storage and kiln modifications)",
+   "where": "text",
+   "quote": "presented cr-68c, a change request which for modifications of the art room storage"
+  },
+  {
+   "name": "Payment Requisition No.16 (Shawmut Design & Construction)",
+   "where": "text",
+   "quote": "shawmut design & construction (payment requisition no.16), uts testing services"
+  },
+  {
+   "name": "Warrant passed by voters",
+   "where": "text",
+   "quote": "to ensure the items are within the authority of the warrant passed by voters."
+  }
+ ],
+ "tags": [
+  "school building project",
+  "contingency",
+  "change orders",
+  "MSBA",
+  "local share",
+  "artificial turf",
+  "murals",
+  "public transparency",
+  "Joslin Lesser",
+  "Shawmut"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "edited projection study is attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

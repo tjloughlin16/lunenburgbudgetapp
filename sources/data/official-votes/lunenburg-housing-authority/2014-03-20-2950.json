@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2014-03-20",
  "docid": "2950",
@@ -12,40 +12,357 @@
  },
  "votes": [
   {
-   "motion": "Approve Resolution 201402, Certification of Compliance with State Lead Laws",
+   "motion": "Approve Resolution 201402 (Certification of Compliance with State Lead Laws).",
    "moved_by": "Paul Doherty",
    "seconded_by": "Deborah A.H. Christen",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "paul doherty made a motion to approve resolution 201402, the motion was seconded by deborah a.h. christen, the motion was unanimously approved."
   },
   {
-   "motion": "Approve Resolution 201403 for Accounting Services",
+   "motion": "Approve Resolution 201403 (Accounting Services).",
    "moved_by": "Paul Doherty",
    "seconded_by": "Sheila Lumi",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "paul doherty made a motion to approve resolution 201403, the motion was seconded by sheila lumi, the motion was unanimously approved."
   },
   {
-   "motion": "Approve Resolution 201404, Amendment #2 to the Contract for Financial Assistance between the Lunenburg Housing Authority and the Department of Community and Development 5001",
+   "motion": "Approve Resolution 201404 (Amendment #2 to the Contract for Financial Assistance with the Department of Community and Development).",
    "moved_by": "Paul Doherty",
    "seconded_by": "Deborah A.H. Christen",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "paul doherty made a motion to approve resolution 201404, the motion was seconded by deborah a.h. christen, the motion was unanimously approved."
   },
   {
-   "motion": "Accept the minutes of the January 23, 2014 Monthly Meeting",
+   "motion": "Accept the minutes of the January 23, 2014 Monthly Meeting as presented.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Paul Doherty",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "deborah a.h. christen made a motion to accept the minutes as presented, seconded by paul doherty; the motion was unanimous ly approved",
-   "quote_taken_from_text": true
+   "quote": "deborah a.h. christen made a motion to accept the minutes as presented, seconded by paul doherty"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Deborah A.H. Christen",
+   "seconded_by": "Paul Doherty",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "seconded by paul doherty, the meeting adjourned at 7:22 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0890115
+ "dropped_unquoted": 0,
+ "note": "Plain-text extraction with broken word spacing (e.g., 'au thority', 'Fin ancial'); quotes collapse whitespace and avoid split words. Votes are recorded as unanimous with no tally printed. The Executive Director is referenced but not named, so is not listed as an attendee. Public comment speakers are identified only as 'A resident'. No dollar figures appear in the minutes.",
+ "cost_usd": 0.006838019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: elizabeth murphy, chair deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member sheila lumi, member paul doherty, member"
+  },
+  {
+   "name": "Sheila Lumi",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member sheila lumi, member paul doherty, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member sheila lumi, member paul doherty, member"
+  },
+  {
+   "name": "Eugene Capoccia",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary peter proulx"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present: eugene capoccia, secretary peter proulx"
+  },
+  {
+   "name": "Susan Honeycutt",
+   "role": "from the fee accounting firm of Fenton & Ewald",
+   "status": "present",
+   "quote": "susan honeycutt from the fee accounting firm of fenton & ewald."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Executive Director will look into organic materials for pesticide, herbicide and fertilizer treatments and will get information on the chemicals being used.",
+   "quote": "stated that he will look into organic materials"
+  },
+  {
+   "decision": "The Director of Facilities Management will schedule a meeting with all residents to discuss planting and its management.",
+   "quote": "would schedule a meeting with all of the residents"
+  },
+  {
+   "decision": "The Executive Director will follow up to make sure the stairways get cleaned.",
+   "quote": "stated that he will follow up to make sure they get cleaned"
+  },
+  {
+   "decision": "The Executive Director will follow up to make sure the exterior doors are addressed.",
+   "quote": "stated that he will follow up to make sure they are addressed"
+  },
+  {
+   "decision": "The Executive Director said the planting boxes will be replanted this year and a buffer installed between the family and elderly apartments.",
+   "quote": "the boxes will be replanted this year and that a buffer will be installed"
+  },
+  {
+   "decision": "The Board reviewed and executed the Year End Financial Statements Certification, the Budget Certification, the Administrative Fee Certification and the Highest Salary Certification.",
+   "quote": "and the highest salary certification."
+  },
+  {
+   "decision": "Checks and statements were reviewed and signed by the Board.",
+   "quote": "checks and statements were reviewed and signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fiscal year 2013 financial review",
+   "what_was_recorded": "Susan Honeycutt reviewed the housing authority's financial situation for FY2013 and said a positive balance was achieved in the utility accounts for the first time ever; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "for the fiscal year ending december 31, 2013."
+  },
+  {
+   "topic": "Financial Report for period ending February 28, 2014",
+   "what_was_recorded": "The Executive Director presented and reviewed the Financial Report with the Board; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "for the period ending february 28, 2014 and reviewed the document"
+  },
+  {
+   "topic": "Kitchen cabinet and flooring replacement funding",
+   "what_was_recorded": "A resident asked about funding to replace kitchen cabinets and flooring; the Executive Director said funding is in place but installation will take time under State procurement law. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "there is funding in place but that it will take some time"
+  },
+  {
+   "topic": "Resolution 201403 Accounting Services",
+   "what_was_recorded": "Board approved Resolution 201403 for Accounting Services; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "resolution 201403 for accounting services"
+  },
+  {
+   "topic": "Resolution 201404 Contract for Financial Assistance amendment",
+   "what_was_recorded": "Board approved Amendment #2 to the Contract for Financial Assistance with the Department of Community and Development; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "resolution 201404 to approve amendment #2 to the"
+  },
+  {
+   "topic": "Year end financial certifications",
+   "what_was_recorded": "Board executed the Budget Certification and Administrative Fee Certification among other year end certifications; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "and the highest salary certification."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "A resident",
+   "stated_role": "resident",
+   "topic": "status of planting boxes",
+   "quote": "a resident requested a status as to the plan for"
+  },
+  {
+   "speaker": "A resident",
+   "stated_role": "resident",
+   "topic": "organic materials and chemical lists",
+   "quote": "a resident asked if it would be possible to use organic materials for"
+  },
+  {
+   "speaker": "A resident",
+   "stated_role": "resident",
+   "topic": "planting maintenance after John",
+   "quote": "a resident noted that john used to water all of the residents planting"
+  },
+  {
+   "speaker": "A resident",
+   "stated_role": "resident",
+   "topic": "funding for kitchen cabinets and flooring",
+   "quote": "a resident inquired as to the availability of"
+  },
+  {
+   "speaker": "A resident",
+   "stated_role": "resident",
+   "topic": "stairway cleaning",
+   "quote": "a resident noted that the stairways need to be"
+  },
+  {
+   "speaker": "A resident",
+   "stated_role": "resident",
+   "topic": "exterior doors not opening or closing properly",
+   "quote": "a resident stated that the exterior doors do not"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Resident participation",
+   "resolution": "discussed; Executive Director to follow up on several items",
+   "quote": "resident participation: a. a resident requested a status as to the plan for",
+   "tags": [
+    "residents",
+    "grounds",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 6:38 p.m.",
+   "quote": "the chair opened the meeting at 6:38 p.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "FY2013 financial review by fee accountant",
+   "resolution": "reviewed; no action",
+   "quote": "susan honeycutt from the fee accounting firm of fenton & ewald.",
+   "tags": [
+    "finance",
+    "audit"
+   ]
+  },
+  {
+   "topic": "Financial Report period ending February 28, 2014",
+   "resolution": "reviewed; checks and statements signed",
+   "quote": "for the period ending february 28, 2014 and reviewed the document",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Hallway cleaning and plantings",
+   "resolution": "discussed; no action",
+   "quote": "suggested a non-profit type approach such as the",
+   "tags": [
+    "grounds",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Resolution 201402 State Lead Laws compliance",
+   "resolution": "approved",
+   "quote": "resolution 201402 certification of compliance",
+   "tags": [
+    "resolution",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Resolution 201403 Accounting Services",
+   "resolution": "approved",
+   "quote": "resolution 201403 for accounting services",
+   "tags": [
+    "resolution",
+    "accounting"
+   ]
+  },
+  {
+   "topic": "Resolution 201404 Contract amendment #2",
+   "resolution": "approved",
+   "quote": "resolution 201404 to approve amendment #2 to the",
+   "tags": [
+    "resolution",
+    "state funding"
+   ]
+  },
+  {
+   "topic": "Year end financial certifications",
+   "resolution": "executed",
+   "quote": "the board reviewed and executed the year end",
+   "tags": [
+    "finance",
+    "certifications"
+   ]
+  },
+  {
+   "topic": "New business and correspondence",
+   "resolution": "no action",
+   "quote": "9. no new business. 10. no correspondence.",
+   "tags": []
+  },
+  {
+   "topic": "Approval of January 23, 2014 minutes",
+   "resolution": "approved",
+   "quote": "the chair presented the minutes of the january 23, 2014 monthly meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:22 p.m.",
+   "quote": "the meeting adjourned at 7:22 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Report for the period ending February 28, 2014",
+   "where": "text",
+   "quote": "for the period ending february 28, 2014 and reviewed the document"
+  },
+  {
+   "name": "Resolution 201402 Certification of Compliance with State Lead Laws",
+   "where": "text",
+   "quote": "resolution 201402 certification of compliance"
+  },
+  {
+   "name": "Resolution 201403 for Accounting Services",
+   "where": "text",
+   "quote": "resolution 201403 for accounting services"
+  },
+  {
+   "name": "Resolution 201404 Amendment #2 to the Contract for Financial Assistance with the Department of Community and Development",
+   "where": "text",
+   "quote": "resolution 201404 to approve amendment #2 to the"
+  },
+  {
+   "name": "Year End Financial Statements Certification, Budget Certification, Administrative Fee Certification and Highest Salary Certification",
+   "where": "text",
+   "quote": "and the highest salary certification."
+  },
+  {
+   "name": "Minutes of the January 23, 2014 Monthly Meeting",
+   "where": "text",
+   "quote": "the chair presented the minutes of the january 23, 2014 monthly meeting."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "financial report",
+  "audit",
+  "resolutions",
+  "resident concerns",
+  "grounds maintenance",
+  "procurement",
+  "year end certifications"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

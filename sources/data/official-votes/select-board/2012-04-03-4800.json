@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-04-03",
  "docid": "4800",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Brian Frank to the School Building Committee",
+   "motion": "Appoint Brian Frank to the School Building Committee.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Alonzo",
    "outcome": "passed 5-0",
@@ -20,16 +20,15 @@
    "quote": "ms. bertram made a motion to appoint brian frank to the school building committee. mr. alonzo seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Ratify the appointment of Rob Guenard to the position of Heavy Equipment Operator/Laborer, DPW, based upon the finalization of his permits and licenses",
+   "motion": "Ratify the appointment of Rob Guenard to the position of Heavy Equipment Operator/Laborer, DPW, based upon finalization of his permits and licenses.",
    "moved_by": "Mr. Sund",
    "seconded_by": "Mr. deBettencourt",
-   "outcome": "passed 5-0",
+   "outcome": "passed S-0",
    "procedural": false,
-   "quote": "mr. sund moved to ratify the appointment of mr. guenard to the dpw based upon the finalization of his permits and licenses. mr. debettencourt seconded the motion. on vote, motion carried s in favor, 0 opposed.",
-   "quote_taken_from_text": true
+   "quote": "mr. sund moved to ratify the appointment of mr. guenard to the dpw based upon the finalization of his permits and licenses. mr. debettencourt seconded the motion."
   },
   {
-   "motion": "Go into executive session under M.G.L. Chapter 39, Section 23B(3), to discuss strategy with respect to collective bargaining or litigation, and to conduct strategy session in preparation for negotiations with non-union personnel",
+   "motion": "Go into executive session under M.G.L. Chapter 39, Section 23B (3).",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
@@ -38,6 +37,336 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted document. Three votes recorded: two substantive appointments and one procedural motion to enter executive session.",
- "cost_usd": 0.1005405
+ "note": "OCR text of a scanned page with a clerk stamp (received and filed APR 1 1 2012). The Guenard ratification count reads 'S in favor, 0 opposed' in the OCR; likely a 5, recorded here as printed. The minutes and warrants were 'presented for approval' with no approval vote recorded. No motion to adjourn is recorded; 'Meeting adjourned at 8:20PM' follows the executive session motion. Attendance is taken from the opening line and the body of the minutes; Susan Doherty's attendance is not stated.",
+ "cost_usd": 0.010274220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews,"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo, carl"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "steven m. debettencourt, paula bertram, tom alonzo,"
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "",
+   "status": "present",
+   "quote": "and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "and town manager kerry speidel present."
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "Director of the Boys and Girls Club of Lunenburg",
+   "status": "present",
+   "quote": "michelle belleza, director of the boys and girls club of lunenburg, asked the board to proclaim the month of april"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "School Building Committee candidate",
+   "status": "present",
+   "quote": "mr. frank introduced himself and said that he has lived in the town for 3 years"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "school superintendent loxi jo calmes, along with school committee member mike mackin and director of school facilities john londa were present"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school superintendent loxi jo calmes, along with school committee member mike mackin and director of school facilities john londa were present"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of School Facilities",
+   "status": "present",
+   "quote": "school superintendent loxi jo calmes, along with school committee member mike mackin and director of school facilities john londa were present"
+  },
+  {
+   "name": "Clarence Floyd",
+   "role": "720 Goodrich St.",
+   "status": "present",
+   "quote": "clarence floyd, 720 goodrich st., had questions pertaining to articles on the warrant for town meeting."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to prepare a Charge for the Memorial Day Committee by the next BOS meeting.",
+   "quote": "she has not had a chance to put together a charge for the committee but will do so by the next bos meeting."
+  },
+  {
+   "decision": "Town Manager to speak again with the BOH Chairperson about the information requested on proposed departmental changes.",
+   "quote": "ms. speidel will speak to the boh chairperson about this matter again."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2013 Budget & Override",
+   "what_was_recorded": "The Board voted a total of $2.2M for the override but has not yet voted the specific distribution, which the ballot question and Town Meeting vote will reference.",
+   "figures_as_printed": [
+    "$2.2M"
+   ],
+   "quote": "while the board voted on a total amount of $2.2m, it did not vote on the specific distribution."
+  },
+  {
+   "topic": "$750,000 Feasibility & Schematic Design article",
+   "what_was_recorded": "School officials presented detailed information on the $750,000 feasibility and schematic design article for the proposed school building project.",
+   "figures_as_printed": [
+    "$750,000"
+   ],
+   "quote": "were present to provide more detailed information on the $750,000 feasibility & schematic design article for the proposed school building project."
+  },
+  {
+   "topic": "Cost items and reimbursement rate for the $750,000 project",
+   "what_was_recorded": "Discussion covered the items attached to the $750,000 cost of the project and the reimbursement rate; no figure beyond the $750,000 was printed.",
+   "figures_as_printed": [
+    "$750,000"
+   ],
+   "quote": "discussion about the items attached to the $750,000 cost of the project and the reimbursement rate ensued."
+  },
+  {
+   "topic": "Warrants presented for approval",
+   "what_was_recorded": "Three warrants were presented for approval, with printed totals of $612,269.21, $145,595.51 and $294,776.01; no approval vote is recorded.",
+   "figures_as_printed": [
+    "$612,269.21",
+    "$145,595.51",
+    "$294,776.01"
+   ],
+   "quote": "2. warrants - 3/29/12 - w# 20 p 12 $612,269.21 3/28/12 - w# 57 12 $145,595.51 4/3/12 - w# 58 12 $294,776.01"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "voter registration reminder",
+   "quote": "mr. alonzo reminded eligible residents that they could register to vote up until april 13, 2012 until 8pm."
+  },
+  {
+   "speaker": "Clarence Floyd",
+   "stated_role": "720 Goodrich St.",
+   "topic": "requested amended warrant articles copy",
+   "quote": "clarence floyd, 720 goodrich st., had questions pertaining to articles on the warrant for town meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Proclamation: Boys & Girls Club of Lunenburg Month",
+   "resolution": "proclamation read into the record",
+   "quote": "mr. matthews read the proclamation into the record.",
+   "tags": [
+    "proclamation",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment: voter registration reminder",
+   "resolution": "no action",
+   "quote": "mr. alonzo reminded eligible residents that they could register to vote up until april 13, 2012 until 8pm.",
+   "tags": [
+    "public comment",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Interview candidate Brian Frank for School Building Committee",
+   "resolution": "appointed 5-0",
+   "quote": "ms. bertram made a motion to appoint brian frank to the school building committee.",
+   "tags": [
+    "appointments",
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "FY2013 Budget & Override; preliminary information on future school building project",
+   "resolution": "presentation received; discussion; no vote",
+   "quote": "were present to provide more detailed information on the $750,000 feasibility & schematic design article",
+   "tags": [
+    "FY2013 budget",
+    "override",
+    "school building project"
+   ]
+  },
+  {
+   "topic": "Review & Recommendations on Town Meeting Warrant Articles",
+   "resolution": "discussed and numbering reviewed; no vote; override ballot reference discussed",
+   "quote": "would be looking to send the warrant to the printer by april 11, 2012.",
+   "tags": [
+    "town meeting warrant",
+    "override"
+   ]
+  },
+  {
+   "topic": "Establishment of Memorial Day Committee",
+   "resolution": "discussed; charge to be prepared by next meeting; no vote",
+   "quote": "ms. speidel has researched the towns by-laws and charter to see if any process/requirement is required to form this committee",
+   "tags": [
+    "memorial day committee"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "minutes and warrants presented for approval; no vote recorded; action file none",
+   "quote": "the following minutes and warrants were presented for approval.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee Report",
+   "resolution": "Finance Committee public hearing reminder; school building committee none; no action",
+   "quote": "mr. alonzo reminded everyone that the finance committee will have a public hearing on the budget on thursday evening at 7pm.",
+   "tags": [
+    "committee reports",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Department Reports",
+   "resolution": "none",
+   "quote": "6. department reports - none",
+   "tags": [
+    "department reports"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports",
+   "resolution": "none",
+   "quote": "7. town manager reports- none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Ratify appointment of Rob Guenard, Heavy Equipment Operator/Laborer, DPW",
+   "resolution": "ratified S-0 (count printed as S in favor)",
+   "quote": "mr. sund moved to ratify the appointment of mr. guenard to the dpw based upon the finalization of his permits and licenses.",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Accept resignation of Todd Blake from School Building Committee",
+   "resolution": "email of resignation reported; no vote recorded",
+   "quote": "mr. matthews stated that an email had been received from todd blake informing them of his resignation from the school building committee.",
+   "tags": [
+    "resignation",
+    "school building committee"
+   ]
+  },
+  {
+   "topic": "Public comment: Clarence Floyd on warrant articles",
+   "resolution": "Town Manager to provide finalized copy at end of week; no vote",
+   "quote": "clarence floyd, 720 goodrich st., had questions pertaining to articles on the warrant for town meeting.",
+   "tags": [
+    "public comment",
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered executive session 5-0; meeting adjourned 8:20PM",
+   "quote": "under m.g. l. chapter 39, section 23b (3), to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "non-union negotiations"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Slide packets: Statement of Interest, OPM Responsibilities, Projected Costs and Tentative Timeline",
+   "where": "list",
+   "quote": "slide packets which included statement of interest, opm responsibilities, projected costs and tentative timeline were distributed to the board"
+  },
+  {
+   "name": "FY2013 Town Manager's Override Budget",
+   "where": "text",
+   "quote": "this will need to be done as both the ballot question and town meeting vote will reference the document known as the"
+  },
+  {
+   "name": "Town Meeting warrant (final draft)",
+   "where": "text",
+   "quote": "the final draft of the warrant will be available at the end of the week."
+  },
+  {
+   "name": "Organizational chart of Town Hall and Ritter building employees positions and hours",
+   "where": "text",
+   "quote": "ms. speidel prepared an organizational chart showing town hall and ritter building employees positions and hours"
+  },
+  {
+   "name": "Warrants 3/29/12 W# 20 P 12; 3/28/12 W# 57 12; 4/3/12 W# 58 12",
+   "where": "text",
+   "quote": "2. warrants - 3/29/12 - w# 20 p 12 $612,269.21 3/28/12 - w# 57 12 $145,595.51 4/3/12 - w# 58 12 $294,776.01"
+  },
+  {
+   "name": "Minutes 1/10/12",
+   "where": "text",
+   "quote": "the following minutes and warrants were presented for approval. 1. minutes: 1/10/12"
+  },
+  {
+   "name": "Proclamation: April is Boys & Girls Club of Lunenburg Month",
+   "where": "text",
+   "quote": "announcements - proclamation: april is boys & girls club of lunenburg month"
+  },
+  {
+   "name": "$750,000 Feasibility & Schematic Design article for the proposed school building project",
+   "where": "text",
+   "quote": "on the $750,000 feasibility & schematic design article for the proposed school building project."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "FY2013 budget",
+  "override",
+  "town meeting warrant",
+  "memorial day committee",
+  "appointments",
+  "executive session",
+  "warrants",
+  "public comment",
+  "proclamation",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "slide packets which included"
+ },
+ "dropped_unquoted_by_field": {}
 }

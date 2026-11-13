@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-07-09",
  "docid": "3664",
@@ -12,31 +12,322 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of June 25, 2012",
+   "motion": "Approve the minutes of June 25, 2012.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Saiia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to approve minutes of june 25, 2012, ms. bilotta-simeone, second, mr. saiia, minutes signed."
   },
   {
-   "motion": "accept the trash compactor and dog park at Emerald Place",
+   "motion": "Amended motion to accept only the trash compactor and the dog park at Emerald Place, as proposed changes.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Saiia",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "ms. bilotta-simeone amended her motion to only accept the trash compactor and the dog park, second, mr. saiia, all aye."
+   "quote": "ms. bilotta-simeone amended her motion to only accept the trash compactor and the dog park, second, mr. saiia, all"
   },
   {
-   "motion": "adjourn",
+   "motion": "Reappoint Mr. Saiia as the MJTC Representative in the board reorganization.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to reappoint mr. saiia, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:08 PM.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Saiia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, ms. bilotta-simeone, second, mr. saiia, adjourned 8:08 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1145405
+ "dropped_unquoted": 0,
+ "note": "Plain-text extraction with irregular spacing and line breaks; quotes were collapsed where needed. The minutes record no dollar figures and no public comment section. The original Emerald Place motion died for lack of a second and was not voted on. The amended motion records only 'all aye' with no count. The EPG Solar DPR vote was taken at the June 25 meeting and is not recorded as a vote here. Pat Slattery's name is shown with the minutes' stray space corrected.",
+ "cost_usd": 0.00847562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, vice-chair"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia, nathan j. lockwood, marion"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia, nathan j. lockwood, marion"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Mr. Whalen",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mr. whalen called point of order for clarification as to whether this was an approval of the project"
+  },
+  {
+   "name": "Mr. Rheault",
+   "role": "Whitman & Bingham",
+   "status": "present",
+   "quote": "mr. rheault noted that it is to the developers' disadvantage to relocate to the main parcel"
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "project architect",
+   "status": "not stated",
+   "quote": "pat slatt ery- project architect"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "to oversee site work",
+   "status": "not stated",
+   "quote": "steve marsden- to oversee site work"
+  },
+  {
+   "name": "Pete Pelletier",
+   "role": "contractor",
+   "status": "not stated",
+   "quote": "pete pelletier- contractor"
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "reviewing engineer",
+   "status": "not stated",
+   "quote": "jesse johnson- reviewing engineer"
+  },
+  {
+   "name": "Michael Sauvageau",
+   "role": "Zoning/Building Official",
+   "status": "not stated",
+   "quote": "letter from michael sauvageau, zoning/building official also"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Development Plan Review for EPG Solar was signed; the DPR directs the applicant to come back under the special permitting process.",
+   "quote": "epg solar - development plan review (dpr) signed."
+  },
+  {
+   "decision": "The Chair responded that the DPR directs the applicant to return under the special permitting process.",
+   "quote": "mr. bakaysa responded the dpr directs the applicant to come back under the special permitting process."
+  },
+  {
+   "decision": "Ms. Benson is to obtain model bylaws on broadband, following the MRPC report; she was also suggested to correspond with the Board of Selectmen.",
+   "quote": "ms. benson to obtain model bylaws."
+  },
+  {
+   "decision": "Mr. Bodkin Jr. requested that discussion of the beach-parcel relocation be tabled so specific language could be drafted to bar re-adding the unit to the beach without a Board modification; the developer does not want a deed restriction.",
+   "quote": "mr. bodkin jr. requested discussion be tabled in order to come up wit h specific language"
+  },
+  {
+   "decision": "The Chair would like the 790 Massachusetts Avenue zoning question reviewed by the Town.",
+   "quote": "mr. bakaysa would also like this"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Emerald Place villa relocation: developer financial benefit and unit pricing",
+   "what_was_recorded": "Members discussed whether relocating a villa from the beach parcel to the main parcel benefits the developer financially, and counsel said the unit would be priced less on the main parcel; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "he was of the opinion that it is to the developers' financial benefit to relocate from the beach to the main parcel."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes of June 25, 2012",
+   "resolution": "approved, minutes signed",
+   "quote": "motion to approve minutes of june 25, 2012, ms. bilotta-simeone, second, mr. saiia, minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Notices and communications: ZBA hearing notice, 68 Oak Avenue",
+   "resolution": "noted",
+   "quote": "director noted zoning board of appeals notice of public hearing for 68 oak avenue",
+   "tags": [
+    "zoning",
+    "notice"
+   ]
+  },
+  {
+   "topic": "Committee reports: MJTC, MRPC, School Reconfiguration Committee",
+   "resolution": "noted; Benson to obtain model bylaws",
+   "quote": "school reconfiguration committee- interviews in process for project manager position.",
+   "tags": [
+    "broadband",
+    "committee"
+   ]
+  },
+  {
+   "topic": "Planning Director's report: Performance Trans Inc. and 790 Massachusetts Avenue zoning map",
+   "resolution": "noted; Chair wants Town review of zoning map",
+   "quote": "the company is considering purchasing the land and building occupied by padula brothers john deere",
+   "tags": [
+    "zoning",
+    "zoning map",
+    "change of use"
+   ]
+  },
+  {
+   "topic": "Old business: EPG Solar development plan review",
+   "resolution": "DPR signed",
+   "quote": "epg solar - development plan review (dpr) signed.",
+   "tags": [
+    "site plan",
+    "special permit",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Development status: Asian Imperial, 5 Electric Avenue",
+   "resolution": "noted; project proceeding, work approved to date",
+   "quote": "the project is proceeding well and all work completed to date is approved.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Development status: Emerald Place at Lake Whalom, proposed changes",
+   "resolution": "amended motion passed, all aye: trash compactor and dog park accepted; villa relocation tabled",
+   "quote": "motion, ms. bilotta-simeone to accept proposed change of villa relocation, trash compactor, and dog park, as presented, second, mr. lockwood.",
+   "tags": [
+    "over-55",
+    "dog park",
+    "trash compactor",
+    "villa relocation",
+    "density"
+   ]
+  },
+  {
+   "topic": "Development status: Tri Town Landing, Youngs Road",
+   "resolution": "noted; Building 3 construction may proceed",
+   "quote": "reviewing engineer notes plans are consistent with approved plans and okay for construction.",
+   "tags": [
+    "development status",
+    "water"
+   ]
+  },
+  {
+   "topic": "Development status: New England Farms, 134 Leominster Shirley Road (ZBA action)",
+   "resolution": "noted; ZBA granted special permit with sign conditions",
+   "quote": "the zba wanted the sign size reduced and also felt the number of signs requested to be excessive.",
+   "tags": [
+    "gas station",
+    "signs",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "july 23rd, board meeting, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board reorganization: MJTC representative",
+   "resolution": "Mr. Saiia reappointed",
+   "quote": "to reappoint mr. saiia, second, mr. bodkin jr., motion passed.",
+   "tags": [
+    "reorganization",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:08 PM",
+   "quote": "motion, ms. bilotta-simeone, second, mr. saiia, adjourned 8:08 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Zoning Board of Appeals notice of public hearing for 68 Oak Avenue",
+   "where": "text",
+   "quote": "director noted zoning board of appeals notice of public hearing for 68 oak avenue"
+  },
+  {
+   "name": "Letter from Michael Sauvageau, Zoning/Building Official, stating an error in the Town's Zoning Map",
+   "where": "text",
+   "quote": "letter from michael sauvageau, zoning/building official also"
+  },
+  {
+   "name": "ANR endorsed by the Planning Board in the 1980's (790 Massachusetts Avenue)",
+   "where": "text",
+   "quote": "mr. rheault noted an anr endorsed by the planning board in the 1980's showed"
+  },
+  {
+   "name": "Whitman & Bingham correspondence summarizing proposed updates to Emerald Place internal layout",
+   "where": "text",
+   "quote": "correspondence summarizing proposed updates to internal layout"
+  },
+  {
+   "name": "Report from Pat Slattery, project architect, Asian Imperial",
+   "where": "text",
+   "quote": "from mr. slattery stating he has visited"
+  },
+  {
+   "name": "EPG Solar Development Plan Review (DPR)",
+   "where": "text",
+   "quote": "epg solar - development plan review (dpr) signed."
+  },
+  {
+   "name": "Plan Sheet G01.00, Project #64450, on file in ZBA office (New England Farms)",
+   "where": "text",
+   "quote": "project #64450, sheet number g01.00 on file in zba office."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan review",
+  "development status",
+  "zoning",
+  "zoning map",
+  "Emerald Place",
+  "EPG Solar",
+  "Asian Imperial",
+  "Tri Town Landing",
+  "New England Farms",
+  "790 Massachusetts Avenue",
+  "broadband",
+  "board reorganization"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

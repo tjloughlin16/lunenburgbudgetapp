@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-10-07",
  "docid": "2561",
@@ -12,39 +12,223 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from September 2, 2014",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes from 09/02/2014 were approved as submitted.",
+   "motion": "Approve the minutes of 09/02/2014 as submitted.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes from 09/02/2014 were approved as submitted."
   },
   {
-   "motion": "Approve demolition by neglect for 90 West Townsend Road",
+   "motion": "Demolition by neglect finding for 90 West Townsend Road.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed by majority",
    "procedural": false,
-   "quote": "the commission voted by a majority for demolition by neglect.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "the commission voted by a majority for demolition by neglect."
   },
   {
-   "motion": "Vote that the 1988 mobile home at 1790 Massachusetts Avenue Lot 33 does not warrant protection under the demolition delay bylaw",
+   "motion": "Finding that the 1988 unlivable mobile home at 1790 Massachusetts Avenue Lot 33 does not warrant protection under the demolition delay bylaw.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the commission voted this 1988 unlivable mobile home did not warrant protection under the demolition delay bylaw.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "the commission voted this 1988 unlivable mobile home did not warrant protection under the demolition delay bylaw."
   },
   {
-   "motion": "Approve Cullen Dwyer for appointment to the Historical Commission",
+   "motion": "Recommend the appointment of Cullen Dwyer to the Historical Commission.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the commission unanimously approved and recommends his appointment.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "the commission unanimously approved and recommends his appointment."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. No moved_by or seconded_by recorded. Adjournment mentioned but with no explicit vote language (\"Meeting adjourned at 8:15 p.m.\"). The denial of the 75 Holman Street demolition delay request is described as an agreed-upon outcome (\"it was agreed... Request was denied\") but lacks explicit motion or vote language, so not included per the rules against inferring votes from discussions.",
- "cost_usd": 0.0936715
+ "note": "Text is macOS Vision OCR with some errors (e.g., 'hidden treasurers', 'November 4*', dates with stray quote marks). Votes on 90 West Townsend Road and 1790 Massachusetts Avenue record no mover, seconder, or count. No adjournment motion is recorded; the minutes only state the meeting was adjourned at 8:15 p.m. The minutes' line 'Minutes from 09/11/2014 were amended Richard McGrath was present.' is garbled and is not recorded as a separate vote.",
+ "cost_usd": 0.00465562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, lois lewis."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, lois lewis."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, lois lewis."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: becky lantry, amory phelps, richard mcgrath, lois lewis."
+  },
+  {
+   "name": "Stephen Schaff",
+   "role": "Commissioner, Cemetery Commission",
+   "status": "present",
+   "quote": "present from the cemetery commission were commissioners stephen schaff and lance d. may."
+  },
+  {
+   "name": "Lance D. May",
+   "role": "Commissioner, Cemetery Commission",
+   "status": "present",
+   "quote": "present from the cemetery commission were commissioners stephen schaff and lance d. may."
+  },
+  {
+   "name": "Greg Bingham",
+   "role": "not stated",
+   "status": "present",
+   "quote": "greg bingham in attendance."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "applicant for Historical Commission membership",
+   "status": "present",
+   "quote": "cullen dwyer present to express his interest in joining the historical commission."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Lunenburg Land Use Director",
+   "status": "not stated",
+   "quote": "adam burney, lunenburg land use director, invited to attend next meeting of the historical commission november 4"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Request to demolish 75 Holman Street was denied with prejudice, after the Commission agreed there were alternatives to demolition (Demolition Delay Bylaw, Section 2, Demolition Plan Review d) 3).",
+   "quote": "request was denied with prejudice."
+  },
+  {
+   "decision": "Becky Lantry will send notice of the 1790 Massachusetts Avenue Lot 33 finding to the building inspector.",
+   "quote": "becky will send notice to building inspector."
+  },
+  {
+   "decision": "Richard McGrath to write the Lunenburg Ledger 'Historically Speaking' article for November; Becky Lantry to write it for December.",
+   "quote": "richard to write for november becky to write for december"
+  },
+  {
+   "decision": "Commission expressed interest in participating in the Freedom's Way Heritage Area's May 2015 'hidden treasurers' program.",
+   "quote": "commission expressed interest to participate in the freedom's way heritage area's"
+  },
+  {
+   "decision": "Adam Burney, Lunenburg Land Use Director, was invited to attend the Historical Commission's November 4 meeting.",
+   "quote": "adam burney, lunenburg land use director, invited to attend next meeting of the historical commission november 4"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and site viewing",
+   "resolution": "no action",
+   "quote": "meeting called to order at 6:30 p.m. after a viewing of 75 holman street, the north"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 09/02/2014 minutes; 09/11/2014 minutes amended",
+   "quote": "minutes from 09/02/2014 were approved as submitted."
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "noted",
+   "quote": "letter from freedom's way heritage area to sponsor a free public program for area's"
+  },
+  {
+   "topic": "Demolition delay: 75 Holman Street",
+   "resolution": "denied with prejudice",
+   "quote": "request was denied with prejudice."
+  },
+  {
+   "topic": "Demolition delay: 90 West Townsend Road",
+   "resolution": "voted for demolition by neglect (majority)",
+   "quote": "the commission voted by a majority for demolition by neglect."
+  },
+  {
+   "topic": "Demolition delay: 1790 Massachusetts Avenue Lot 33",
+   "resolution": "voted not protected under demolition delay bylaw",
+   "quote": "the commission voted this 1988 unlivable mobile home did not warrant protection under the demolition delay bylaw."
+  },
+  {
+   "topic": "Lunenburg Ledger articles, Historically Speaking",
+   "resolution": "assigned authors for November and December",
+   "quote": "lunenburg ledger newspaper articles, historically speaking."
+  },
+  {
+   "topic": "Freedom's Way hidden treasurers program",
+   "resolution": "expressed interest in participating",
+   "quote": "commission expressed interest to participate in the freedom's way heritage area's"
+  },
+  {
+   "topic": "Scenic road designation: Flat Hill Road and Northfield Road",
+   "resolution": "discussed; Planning Board requested a letter",
+   "quote": "discussion designating flat hill road and northfield road and classification as scenic"
+  },
+  {
+   "topic": "Appointment of Cullen Dwyer",
+   "resolution": "approved and recommended for appointment",
+   "quote": "the commission unanimously approved and recommends his appointment."
+  },
+  {
+   "topic": "Invitation to Land Use Director Adam Burney",
+   "resolution": "invited to November 4 meeting",
+   "quote": "adam burney, lunenburg land use director, invited to attend next meeting of the historical commission november 4"
+  },
+  {
+   "topic": "Solar farm at 322 Flat Hill Road",
+   "resolution": "noted Planning Board meeting October 14",
+   "quote": "planning board meeting october 14\" considering solar farm 322 flat hill road."
+  },
+  {
+   "topic": "Jones House historical plaque",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion of plaque identifying the jones house as an important historical site."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Freedom's Way Heritage Area to sponsor a free public program for area's \"hidden treasurers\" May 16 and 17, 2015",
+   "where": "list",
+   "quote": "letter from freedom's way heritage area to sponsor a free public program for area's"
+  },
+  {
+   "name": "Letters from building inspector and fire department in regard to 75 Holman Street for demolition request",
+   "where": "list",
+   "quote": "letters from building inspector and fire department in regard to 75 holman street for demolition request."
+  },
+  {
+   "name": "Lunenburg Ledger newspaper articles, Historically Speaking",
+   "where": "text",
+   "quote": "lunenburg ledger newspaper articles, historically speaking."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "demolition by neglect",
+  "scenic roads",
+  "Freedom's Way",
+  "appointments",
+  "newspaper articles",
+  "historic plaque",
+  "solar farm",
+  "cemetery"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence and communications"
+ },
+ "dropped_unquoted_by_field": {}
 }

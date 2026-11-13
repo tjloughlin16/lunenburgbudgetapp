@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "zoning-board-of-appeals",
  "meeting_date": "2015-03-25",
  "docid": "5975",
@@ -12,15 +12,144 @@
  },
  "votes": [
   {
-   "motion": "Approve the Special Permit for Dimensional Variation",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Approve the Special Permit for Dimensional Variation for 53 Oak Avenue.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "the board voted unanimously to approve the special permit for dimensional variation."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, one vote recorded. No votes on approval of prior minutes or adjournment are stated.",
- "cost_usd": 0.0834125
+ "note": "Text is OCR of a scanned page set with some garbled passages (e.g., '40, 0000 square feet', 'REFLED'); quotes were taken from the OCR text. The minutes state the hearing was held 'Wednesday, March 11, 2015' while the minutes are dated March 25, 2015. The approval vote records no mover or seconder and no per-member count beyond 'unanimously'. The 'Approved by Chairman of the Board' line is unsigned, so no approval of these minutes is recorded.",
+ "cost_usd": 0.00412602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Raymond Beal",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board members present: raymond beal, chairman, donald f. bowen; hans wentrup, alfred gravelle, paul doherty and james besarkarski (present but not voting)."
+  },
+  {
+   "name": "Donald F. Bowen",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members present: raymond beal, chairman, donald f. bowen; hans wentrup, alfred gravelle, paul doherty and james besarkarski (present but not voting)."
+  },
+  {
+   "name": "Hans Wentrup",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members present: raymond beal, chairman, donald f. bowen; hans wentrup, alfred gravelle, paul doherty and james besarkarski (present but not voting)."
+  },
+  {
+   "name": "Alfred Gravelle",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members present: raymond beal, chairman, donald f. bowen; hans wentrup, alfred gravelle, paul doherty and james besarkarski (present but not voting)."
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board members present: raymond beal, chairman, donald f. bowen; hans wentrup, alfred gravelle, paul doherty and james besarkarski (present but not voting)."
+  },
+  {
+   "name": "James Besarkarski",
+   "role": "Board Member, present but not voting",
+   "status": "present",
+   "quote": "board members present: raymond beal, chairman, donald f. bowen; hans wentrup, alfred gravelle, paul doherty and james besarkarski (present but not voting)."
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "Board secretary",
+   "status": "present",
+   "quote": "lisa normandin, board secretary read the application into the public record."
+  },
+  {
+   "name": "Sharon S. Vincent",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the applicant sharon s. vincent, 43 oak avenue, lunenburg, ma 01462 was seeking a"
+  },
+  {
+   "name": "Gary Vincent",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others present: sharon & gary vincent and brian swift, abutter to the property."
+  },
+  {
+   "name": "Brian Swift",
+   "role": "abutter to the property, 63 Oak Avenue",
+   "status": "present",
+   "quote": "others present: sharon & gary vincent and brian swift, abutter to the property."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed, by poll of the Chairman, that the common lot merger doctrine does not apply to the property (no motion recorded).",
+   "quote": "alfred gravelle, donald bowen, hans wentrup and paul doherty all agreed that it does not apply in this case."
+  },
+  {
+   "decision": "Chairman clarified that granting the Special Permit does not mean the parcel is considered a building lot; a building permit would be sought through the building department.",
+   "quote": "raymond beal reaffirmed the fact that if the special permit for dimensional variation were to be granted this was in no way indicating that the parcel was considered a building"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brian Swift",
+   "stated_role": "immediate abutter, 63 Oak Avenue",
+   "topic": "support for applicant moving forward with property",
+   "quote": "felt that the vincent's should be able to move forward with the property."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Special Permit for Dimensional Variation, 53 Oak Avenue (Sharon S. Vincent, applicant)",
+   "resolution": "approved",
+   "quote": "was seeking a special permit for dimensional variation to maintain the grandfathered status on a parcel",
+   "tags": [
+    "zoning",
+    "special permit",
+    "grandfathered lot",
+    "merger doctrine",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Document on grandfathered lots and plan protections, prepared by Donald J. Schmidt, Department of Housing and Community Development, November 2009",
+   "where": "text",
+   "quote": "accessed a document with regard to grandfathered lots and plan protections."
+  },
+  {
+   "name": "Property record card (assessor's office)",
+   "where": "text",
+   "quote": "the property record card was changed in the assessor's office and it changed the amount of land"
+  },
+  {
+   "name": "Deed to the vacant parcel",
+   "where": "text",
+   "quote": "six months later mrs. vincent had the deed corrected and the property"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "special permit",
+  "dimensional variation",
+  "grandfathered lot",
+  "merger doctrine",
+  "53 Oak Avenue",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

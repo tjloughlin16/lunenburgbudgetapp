@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-07-05",
  "docid": "527",
@@ -12,31 +12,222 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes as presented for the 6-14-16 meeting",
-   "moved_by": "Jim LaVeck",
+   "motion": "Accept the minutes as presented for the 6-14-16 meeting.",
+   "moved_by": "LaVeck",
    "seconded_by": "",
-   "outcome": "unanimously accepted",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "laveck motioned to accept minutes as presented for the 6-14-16 meeting. unanimously accepted."
   },
   {
-   "motion": "Accept the flow-chart with minor revisions",
-   "moved_by": "Cullen Dwyer",
-   "seconded_by": "Jim LaVeck",
-   "outcome": "motion carried",
+   "motion": "Accept the flow-chart with the minor revisions proposed.",
+   "moved_by": "Dwyer",
+   "seconded_by": "LaVeck",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dwyer motioned to accept it with the minor revisions, laveck seconded and the motion carried."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Brian Corcoran",
-   "seconded_by": "Cullen Dwyer",
-   "outcome": "motion carried unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Corcoran",
+   "seconded_by": "Dwyer",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "corcoran motioned to adjourn, dwyer seconded and the motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08035550000000001
+ "dropped_unquoted": 1,
+ "note": "Minutes are plain text with no dollar figures, no public comment section, and no roll call. Three motions were recorded with results. Matthew Kehrer appears only in the header member list and is not named in the attendance line, so his status is not stated.",
+ "cost_usd": 0.0038315199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "7:07 meeting called to order by chair richard mcgrath with jim laveck, cullen dwyer and brian corcoran present."
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "7:07 meeting called to order by chair richard mcgrath with jim laveck, cullen dwyer and brian corcoran present."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "7:07 meeting called to order by chair richard mcgrath with jim laveck, cullen dwyer and brian corcoran present."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "7:07 meeting called to order by chair richard mcgrath with jim laveck, cullen dwyer and brian corcoran present."
+  },
+  {
+   "name": "Matthew Kehrer",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "member: matthew kehrer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dwyer agreed to provide the revisions the board required to the draft guidelines on demolition by neglect.",
+   "quote": "the board required revisions, which mr. dwyer agreed to provide."
+  },
+  {
+   "decision": "The board noted the project described for 10 Whiting rd as having met with its approval; McGrath had requested a proposal from the owner but had not yet heard back.",
+   "quote": "the project as described has met with the board's approval."
+  },
+  {
+   "decision": "McGrath will complete the application form, after the board reviewed its requirements.",
+   "quote": "reviewed requirements for the application form, which mcgrath will complete."
+  },
+  {
+   "decision": "Corcoran agreed to draw up a form for a Certificate to alter.",
+   "quote": "corcoran agreed to draw up a form for a certificate to alter."
+  },
+  {
+   "decision": "LaVeck agreed to speak to Steve Malandrinos to get a web page for the APDC where the public could review the guidelines and contact the board.",
+   "quote": "laveck agreed to speak to steve malandrinos to get a web page for the apdc"
+  },
+  {
+   "decision": "The board set a goal of having a draft of the guidelines available to the public by September.",
+   "quote": "the board set a goal for september to have a draught of the guidelines available the public."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes (6-14-16 meeting)",
+   "resolution": "approved",
+   "quote": "laveck motioned to accept minutes as presented for the 6-14-16 meeting. unanimously accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Demolition by neglect guidelines",
+   "resolution": "revisions required; Dwyer to provide",
+   "quote": "reviewed draft of guidelines on demo by neglect. the board required revisions, which mr. dwyer agreed to provide.",
+   "tags": [
+    "demolition by neglect",
+    "guidelines"
+   ]
+  },
+  {
+   "topic": "Flow-chart",
+   "resolution": "accepted with minor revisions",
+   "quote": "dwyer motioned to accept it with the minor revisions, laveck seconded and the motion carried.",
+   "tags": [
+    "flow-chart"
+   ]
+  },
+  {
+   "topic": "Guideline sections on windows, doors and sheathing",
+   "resolution": "discussed; no action",
+   "quote": "discussed progress on the guideline sections covering windows and doors, and sheathing.",
+   "tags": [
+    "guidelines",
+    "windows",
+    "doors",
+    "sheathing"
+   ]
+  },
+  {
+   "topic": "10 Whiting rd property",
+   "resolution": "no action; awaiting owner proposal",
+   "quote": "mcgrath reported that he had requested a proposal from the owner at 10 whiting rd, but had still not heard back from him as yet.",
+   "tags": [
+    "10 Whiting rd",
+    "entry vestibule"
+   ]
+  },
+  {
+   "topic": "Application form",
+   "resolution": "McGrath to complete",
+   "quote": "reviewed requirements for the application form, which mcgrath will complete.",
+   "tags": [
+    "application form"
+   ]
+  },
+  {
+   "topic": "Certificate to alter form",
+   "resolution": "Corcoran to draft",
+   "quote": "corcoran agreed to draw up a form for a certificate to alter.",
+   "tags": [
+    "certificate to alter"
+   ]
+  },
+  {
+   "topic": "APDC web page",
+   "resolution": "LaVeck to pursue",
+   "quote": "laveck agreed to speak to steve malandrinos to get a web page for the apdc",
+   "tags": [
+    "web page",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Public draft of guidelines",
+   "resolution": "goal set for September",
+   "quote": "the board set a goal for september to have a draught of the guidelines available the public.",
+   "tags": [
+    "guidelines",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for July 19, 2016 at 7PM",
+   "quote": "next meeting: set for tuesday july 19th at 7pm",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft of guidelines on Demo by neglect",
+   "where": "text",
+   "quote": "reviewed draft of guidelines on demo by neglect. the board required revisions"
+  },
+  {
+   "name": "Most recent version of flow-chart, presented by Mr. Corcoran",
+   "where": "text",
+   "quote": "reviewed most recent version of flow-chart, presented by mr. corcoran."
+  },
+  {
+   "name": "Application form",
+   "where": "text",
+   "quote": "reviewed requirements for the application form, which mcgrath will complete."
+  },
+  {
+   "name": "Form for a Certificate to alter",
+   "where": "text",
+   "quote": "corcoran agreed to draw up a form for a certificate to alter."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural guidelines",
+  "demolition by neglect",
+  "certificate to alter",
+  "application form",
+  "flow-chart",
+  "web page",
+  "10 Whiting rd"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

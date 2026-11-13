@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-02-01",
  "docid": "1619",
@@ -12,39 +12,282 @@
  },
  "votes": [
   {
-   "motion": "Issue a Negative Determination of Applicability for the Bootlegger Restaurant septic tank modification project",
-   "moved_by": "Jack Byre",
-   "seconded_by": "Sharon Jordan",
-   "outcome": "passed",
+   "motion": "Negative determination on the Request for Determination of Applicability filed by Bootlegger Restaurant (connection to existing septic tank as grease trap), printed as 'Negative 3'.",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "jack/sharon negative 3 unanimous"
+   "quote": "using existing septic tank. pump up to sewer. jack/sharon negative 3 unanimous"
   },
   {
-   "motion": "Issue a Negative Determination of Applicability for construction of a house at 238 Prospect Street, Lot 6",
-   "moved_by": "Mark Murphy",
-   "seconded_by": "Jack Byre",
-   "outcome": "passed",
+   "motion": "Negative determination on the Request for Determination of Applicability by Hilltop Realty Trust for a house at 238 Prospect Street, Lot 6, printed as 'Negative 3'.",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "mark/jack negative 3 unanimous"
+   "quote": "driveway cut, no problem. mark/jack negative 3 unanimous"
   },
   {
-   "motion": "Issue a Negative Determination of Applicability for construction of a house at 240 Prospect Street, Lot 7",
-   "moved_by": "Mark Murphy",
-   "seconded_by": "Jack Byre",
-   "outcome": "passed",
+   "motion": "Negative determination on the Request for Determination of Applicability by Hilltop Realty Trust for a house at 240 Prospect Street, Lot 7, printed as 'Negative 3'.",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "mark/jack negative 3 unanimous"
+   "quote": "driveway cut, no problem. mark/jack negative 3 unanimous"
   },
   {
-   "motion": "Issue a Negative Determination of Applicability for construction of a house at 246 Prospect Street, Lot 8",
-   "moved_by": "Mark Murphy",
-   "seconded_by": "Jack Byre",
-   "outcome": "passed",
+   "motion": "Negative determination on the Request for Determination of Applicability by Hilltop Realty Trust for a house at 246 Prospect Street, Lot 8, printed as 'Negative 3'.",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "mark/jack negative 3 unanimous"
+   "quote": "no problem. mark/jack negative 3 unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR'd from a scan. One line at the end reads \"Moved until February 15~ Approve Minutes ~ December 21, 2011 & January 18, 2012\" but due to OCR artifacts and unclear phrasing, no reliable verbatim quote starting with motion language could be extracted from it.",
- "cost_usd": 0.1265165
+ "note": "OCR of a scanned page 1 and 2; the approval stamp reads 'approved 5-16-12'. The attendance lines list names with no roles or present/absent marks, so status is 'not stated'. Vote entries are shorthand ('Jack/Sharon Negative 3 Unanimous'); the minutes do not say which name moved or seconded, nor what 'Negative 3' denotes, so no mover or seconder is recorded and the motion text is my reading. Two lots (6 and 7) carry identical vote wording, so their quotes are the same string. Some OCR errors are present ('Unitil', 'Mike Borowski' vs 'Mike Borkowski', 'February 3ra'); the minutes give no dollar figures.",
+ "cost_usd": 0.00848502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ju Cote",
+   "status": "not stated",
+   "quote": "ju cote, jack byre, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "Jack Byre",
+   "status": "not stated",
+   "quote": "ju cote, jack byre, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "not stated",
+   "quote": "ju cote, jack byre, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "not stated",
+   "quote": "ju cote, jack byre, john lattanzi, sharon jordan"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "not stated",
+   "quote": "mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "not stated",
+   "quote": "mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Cal Goldsmith",
+   "status": "present",
+   "quote": "cal goldsmith presented modified plans from original filing."
+  },
+  {
+   "name": "Mike Borkowski",
+   "role": "of EPG Solar, LLC",
+   "status": "present",
+   "quote": "tiled by mike borkowski of epg solar, llc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Notice of Intent for the solar photovoltaic farm (EPG Solar, LLC, off Pleasant & West Streets) continued to March 7 at 7:00 PM, with the commission wanting an alternative analysis.",
+   "quote": "the meeting was continued until march 7 @ 7:00 pm."
+  },
+  {
+   "decision": "Commission stated it will not allow anything within the 30' no-touch area.",
+   "quote": "we have not and will not allow anything within the 30' area."
+  },
+  {
+   "decision": "Commissioners who can attend agreed to walk the land with a wetland specialist at Pleasant Street, with the applicant to meet Jack (DPW) and Steve Marsden.",
+   "quote": "whoever of the commissioners can make it will meet on pleasant street at 8 am on friday, february 3ra"
+  },
+  {
+   "decision": "Applicant EPG agreed to an escrow account to cover the independent civil engineer's cost.",
+   "quote": "epg said that would be no problem."
+  },
+  {
+   "decision": "Approval of minutes for December 21, 2011 and January 18, 2012 moved to February 15.",
+   "quote": "moved until february 15~ approve minutes ~ december 21, 2011 & january 18, 2012"
+  },
+  {
+   "decision": "Signatures marked OK for 3 Certificates of Compliance and 2 Determinations of Applicability.",
+   "quote": "ok signatures ~ 3 certificate of compliance and 2 determination of applicability"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Escrow account for independent civil engineer",
+   "what_was_recorded": "Matt stated an escrow account should be set up to cover the cost of the independent civil engineer reporting to the commission; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "matt stated that there should be an escrow account set up to cover the cost of the independent civil engineer that will be reporting to the conservation commission."
+  },
+  {
+   "topic": "State grants for solar project",
+   "what_was_recorded": "Mike said no state grants are available for the project, only a Federal Investment Tax Credit; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "mike stated that there are no state grants available for this project, only a"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Kristen B Burns",
+   "topic": "water runoff and flooding on West Street",
+   "quote": "kristen b burns ~ 634 west street ~ water running off of area into her yard ~ concerned about flooding."
+  },
+  {
+   "speaker": "Ryan L Stober",
+   "topic": "swale and year-round water on Pleasant Street",
+   "quote": "ryan l stober ~ 275 pleasant street ~ swale visible and water runs all year."
+  },
+  {
+   "speaker": "Gregory P Bittner",
+   "topic": "work within the buffer zone",
+   "quote": "gregory p bittner ~ 129 pleasant street ~ why did you go within the buffer zone?"
+  },
+  {
+   "speaker": "Angelina M BeLisle",
+   "topic": "flooding on West Street",
+   "quote": "angelina m belisle ~ 642 west street ~ concerned about flooding."
+  },
+  {
+   "speaker": "???",
+   "topic": "drainage from houses on Pleasant Street",
+   "quote": "??? ~ ??? pleasant street ~ concerned about drainage from houses on pleasant street"
+  },
+  {
+   "speaker": "Marilyn B Quinn",
+   "topic": "second swale and chain link fence",
+   "quote": "marilyn b quinn ~ 297 pleasant street ~ there is another swale and a chain link fence would be unsightly."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "RDA, Bootlegger Restaurant, 50 Massachusetts Avenue (7:00 PM)",
+   "resolution": "negative determination, unanimous",
+   "quote": "7:00 pm ~ 50 massachusetts avenue ~ pursuant to mgl ch 131, s 40 as amended and the town of",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "restaurant",
+    "septic"
+   ]
+  },
+  {
+   "topic": "RDA, Hilltop Realty Trust, 238 Prospect Street, Lot 6 (7:10)",
+   "resolution": "negative determination, unanimous",
+   "quote": "7:10 ~ 238 prospect street, lot 6 ~ pursuant to mgl ch 131, s 40 as amended and the town of",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "Lake Whalom",
+    "residential"
+   ]
+  },
+  {
+   "topic": "RDA, Hilltop Realty Trust, 240 Prospect Street, Lot 7 (7:20)",
+   "resolution": "negative determination, unanimous",
+   "quote": "7:20 pm ~240 prospect street, lot 7 ~ pursuant to mgl ch 131, s 40 as amended and the town of",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "Lake Whalom",
+    "residential"
+   ]
+  },
+  {
+   "topic": "RDA, Hilltop Realty Trust, 246 Prospect Street, Lot 8 (7:30)",
+   "resolution": "negative determination, unanimous",
+   "quote": "7:30 pm ~ 246 prospect street, lot 8 ~ pursuant to mgl ch 131, s 40 as amended and the town of",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "Lake Whalom",
+    "residential"
+   ]
+  },
+  {
+   "topic": "NOI, EPG Solar solar PV farm, off Pleasant & West Streets (7:40 PM)",
+   "resolution": "continued to March 7, 2012 at 7:00 PM",
+   "quote": "7:40 pm ~ ~ off pleasant & west streets ~ pursuant to mgl ch 131, s 40 as amended and the town of",
+   "tags": [
+    "solar",
+    "NOI",
+    "wetlands",
+    "30 foot no-touch zone",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "heard six comments; no action recorded",
+   "quote": "kristen b burns ~ 634 west street ~ water running off of area into her yard",
+   "tags": [
+    "public comment",
+    "flooding",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Minutes, signatures, workshops and conferences",
+   "resolution": "minutes moved to February 15; signatures marked OK; workshop and Keystone notices noted",
+   "quote": "moved until february 15~ approve minutes ~ december 21, 2011 & january 18, 2012",
+   "tags": [
+    "minutes",
+    "signatures",
+    "workshops"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Bootlegger Restaurant",
+   "where": "text",
+   "quote": "request for determination of applicability filed by bootlegger restaurant."
+  },
+  {
+   "name": "Request for Determination of Applicability by Hilltop Realty Trust (238 Prospect Street Lot 6, 240 Prospect Street Lot 7, 246 Prospect Street Lot 8)",
+   "where": "text",
+   "quote": "request for determination of applicability by hilltop realty trust."
+  },
+  {
+   "name": "Notice of Intent filed by Mike Borkowski of EPG Solar, LLC",
+   "where": "text",
+   "quote": "notice of intent tiled by mike borkowski of epg solar, llc"
+  },
+  {
+   "name": "Modified plans from original filing (solar farm)",
+   "where": "text",
+   "quote": "cal goldsmith presented modified plans from original filing."
+  },
+  {
+   "name": "Certificates of Compliance (3) and Determinations of Applicability (2) for signature",
+   "where": "text",
+   "quote": "ok signatures ~ 3 certificate of compliance and 2 determination of applicability"
+  },
+  {
+   "name": "Minutes of December 21, 2011 and January 18, 2012",
+   "where": "text",
+   "quote": "approve minutes ~ december 21, 2011 & january 18, 2012"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "request for determination",
+  "notice of intent",
+  "solar farm",
+  "drainage",
+  "public comment",
+  "continuance",
+  "Lake Whalom",
+  "buffer zone",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "cal goldsmith presented modified plans from original filing."
+ },
+ "dropped_unquoted_by_field": {}
 }

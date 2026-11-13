@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-03-02",
  "docid": "1791",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the final job description and job evaluation tools",
+   "motion": "Accept the final job description and job evaluation tools.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -21,6 +21,104 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. One vote recorded; no vote count stated. Moved-by and seconded-by not recorded in minutes.",
- "cost_usd": 0.08427950000000001
+ "note": "OCR text with visible errors (e.g., \"Vilnutes\", \"contused\", \"Intormation\"); quotes copy the text as OCR'd. The chair's signature is illegible and no chair name is legible, so none is recorded. The vote has no printed count, mover or seconder; outcome \"passed\" is taken from the words \"voted to accept\". The header reads \"Minutes Approved at 9/11/12 COA Meeting\". No dollar figures, public comment or adjournment vote appear.",
+ "cost_usd": 0.00338052,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Seeley",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, jane doyle, fred crellin and jim hays."
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, jane doyle, fred crellin and jim hays."
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, jane doyle, fred crellin and jim hays."
+  },
+  {
+   "name": "Jim Hays",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members deb seeley, jane doyle, fred crellin and jim hays."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Sub-Committee agreed that its assignment was complete and the results would be reported at the next COA meeting.",
+   "quote": "the sub-committee agreed that their assignment was complete and the results would be reported at the next coa meeting."
+  },
+  {
+   "decision": "Information on how the documents were developed, the relationship between the job description and the evaluation tool, and how to use the rating scale will be given at the COA meeting.",
+   "quote": "will be given at the coa meeting on how the documents were developed, the relationship between the job description and the evaluation tool"
+  },
+  {
+   "decision": "The process of conducting the actual evaluation will be determined by the COA.",
+   "quote": "the process of conducting the actual evaluation will be determined by the coa"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Final review of job description and job evaluation tools",
+   "resolution": "accepted by vote",
+   "quote": "minor changes were made to the documents and the committee voted to accept the final job description and job evaluation tools.",
+   "tags": [
+    "job description",
+    "evaluation tools"
+   ]
+  },
+  {
+   "topic": "Rating scale concerns",
+   "resolution": "information to be given at COA meeting",
+   "quote": "discussion was held regarding the rating scale and there was concern that the",
+   "tags": [
+    "rating scale"
+   ]
+  },
+  {
+   "topic": "Conduct of the actual evaluation and sub-committee assignment",
+   "resolution": "assignment complete; results reported to COA",
+   "quote": "the process of conducting the actual evaluation will be determined by the coa",
+   "tags": [
+    "evaluation process",
+    "sub-committee"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Job description",
+   "where": "list",
+   "quote": "review the final changes to the job description and job evaluation discussed at the previous meetings."
+  },
+  {
+   "name": "Job evaluation tools",
+   "where": "list",
+   "quote": "voted to accept the final job description and job evaluation tools."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "director evaluation",
+  "job description",
+  "rating scale",
+  "personnel",
+  "senior center"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the purpose of the meeting was to review the final changes"
+ },
+ "dropped_unquoted_by_field": {}
 }

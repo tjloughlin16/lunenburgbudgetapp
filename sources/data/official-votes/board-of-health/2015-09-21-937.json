@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2015-09-21",
  "docid": "937",
@@ -12,48 +12,268 @@
  },
  "votes": [
   {
-   "motion": "approve septic system variances for 338 Sunset Lane: reduction in offset to wetlands from 100 feet to 54 feet and trenches within trenches",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Board poll on whether members would look favorably on variances for the Microfast septic system at 338 Sunset Lane: reduction in wetlands offset from 100 feet to 54 feet, and trenches within trenches.",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "after much discussion the board took a vote to see if the members would look favorably on variances fo r this system, namely a reduction in the offset to we tlands from 100 feet to 54 feet and trenches within trenches. george emond voted no, all other board members were in fav",
-   "quote_taken_from_text": true
+   "quote": "george emond voted no, all other board members were in favor with the understanding that when a revised plan was submitted it would not deviate"
   },
   {
-   "motion": "approve septic system variances for 136 Sunny Hill Road: reduction in groundwater offset from 4 feet to 3 feet and sieve analysis",
+   "motion": "Request the variances for 136 Sunny Hill Road (groundwater offset from four feet to three feet, and a sieve analysis).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
-   "outcome": "passed 4-0",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "after discussion and on motion by jewell and second by passios, the variances were requested. all in favor."
   },
   {
-   "motion": "approve septic system variances for 32 Boucher Road",
+   "motion": "Approve the variances for 32 Boucher Road.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
-   "outcome": "passed 4-0",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved. all in favor."
   },
   {
-   "motion": "approve septic system variance for 129 Rolling Acres Road: reduction in groundwater offset from 4 feet to 3 feet",
+   "motion": "Approve the variance for 129 Rolling Acres Road (groundwater offset from four feet to three feet).",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
-   "outcome": "passed 4-0",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "after discussion and on motion by passios and second by jewell the variance was approved. all in favor."
   },
   {
-   "motion": "approve septic system variances for 140 Flynn Road: property line offset from 50 to 15 feet and offset to septic system of 85 feet",
+   "motion": "Approve the variances for the new well at 140 Flynn Road (property line offset from 50 to 15 feet; offset to septic system 85 feet).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
-   "outcome": "passed 4-0",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "after discussion and on motion by jewell and second by passios, the variances were approved. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "No procedural votes (approval of prior minutes, adjournment) were formally recorded with vote language.",
- "cost_usd": 0.1227635
+ "note": "Plain-text extraction, not a scan; votes are readable. Words are split in places (e.g., 'own ers', 'fo r'), so some quotes were chosen to avoid broken words. The 90 West Townsend owner is printed as 'Ed McSweney' and then 'Mr. Sweeney'. No roll call beyond the 338 Sunset Lane poll; the 'all in favor' votes give no numeric count. No dollar figures appear. The minutes list no motion for the minutes approval, the Title 5 acknowledgment, or the adjournment at 9:05 pm.",
+ "cost_usd": 0.00774622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Ed McSweney",
+   "role": "owner of the property (90 West Townsend Road)",
+   "status": "present",
+   "quote": "ed mcsweney, the owner of the property met with the board."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owners of 647-649 Reservoir Road and the owner of 136 Sunny Hill Road and 129 Rolling Acres Road",
+   "status": "present",
+   "quote": "mr. proctor stated that what is being proposed is not a shared system."
+  },
+  {
+   "name": "Jeff Viviano",
+   "role": "prospective owner of the property (338 Sunset Lane)",
+   "status": "present",
+   "quote": "jeff viviano, the prospective owner of the property"
+  },
+  {
+   "name": "Alton Cole",
+   "role": "current owner",
+   "status": "present",
+   "quote": "also present was the current owner, alton cole, as well as carl luck and sally luck."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member of the Conservation Commission",
+   "status": "present",
+   "quote": "carl luck also lives on lake shirley"
+  },
+  {
+   "name": "Sally Luck",
+   "role": "abutter at 352",
+   "status": "present",
+   "quote": "sally luck, abutter at 352"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent jim garreffi stated that ms. luck has a drilled well"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner (32 Boucher Road)",
+   "status": "present",
+   "quote": "doug smith met with the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The August 24, 2015 minutes were listed as approved; the minutes record no motion or tally for this.",
+   "quote": "minutes approved: august 24, 2015"
+  },
+  {
+   "decision": "Title 5 inspection reports for five properties were acknowledged by the board.",
+   "quote": "title 5 inspection reports acknowledged : 54 woodland avenue 250 lancaster avenue"
+  },
+  {
+   "decision": "For 90 West Townsend Road, the members stated they would not have a problem with the well variance request when it is submitted.",
+   "quote": "the members of the board stated that they would not have a problem with the request when it was submitted."
+  },
+  {
+   "decision": "By consensus, the board indicated the 647-649 Reservoir Road variance request would be denied if an official request were made.",
+   "quote": "it was the consensus of the board that should this request would be denied"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sally Luck",
+   "stated_role": "abutter at 352",
+   "topic": "opposes 338 Sunset Lane variances; well concern",
+   "quote": "sally luck, abutter at 352 is not in favor of granted the requested variances."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "member of the Conservation Commission",
+   "topic": "Conservation Commission septic comment; enforce regulations",
+   "quote": "mr. luck stated that the conservation commission has no comment on septic system matters."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval, August 24, 2015",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approved: august 24, 2015"
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "tags": [
+    "Title 5",
+    "septic"
+   ],
+   "quote": "title 5 inspection reports acknowledged : 54 woodland avenue 250 lancaster avenue"
+  },
+  {
+   "topic": "90 West Townsend Road – preliminary variance discussion",
+   "resolution": "no action; board had no objection in principle",
+   "tags": [
+    "variance",
+    "well",
+    "subdivision"
+   ],
+   "quote": "ed mcsweney, the owner of the property met with the board."
+  },
+  {
+   "topic": "647-649 Reservoir Road – preliminary variance discussion",
+   "resolution": "consensus to deny if formal request made",
+   "tags": [
+    "variance",
+    "septic",
+    "easement"
+   ],
+   "quote": "chairman emond stated that the board has a regulation that states that the septic system must be on the lot it serves."
+  },
+  {
+   "topic": "338 Sunset Lane – preliminary variance discussion",
+   "resolution": "poll favorable 3-1 on variances for Microfast system",
+   "tags": [
+    "variance",
+    "wetlands",
+    "nitrates",
+    "Lake Shirley"
+   ],
+   "quote": "jeff viviano, the prospective owner of the property"
+  },
+  {
+   "topic": "136 Sunny Hill Road – variance request",
+   "resolution": "approved, all in favor",
+   "tags": [
+    "variance",
+    "groundwater offset"
+   ],
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "topic": "32 Boucher Road – variance request",
+   "resolution": "approved, all in favor",
+   "tags": [
+    "variance",
+    "septic"
+   ],
+   "quote": "doug smith met with the board"
+  },
+  {
+   "topic": "129 Rolling Acres Road – variance request",
+   "resolution": "approved, all in favor",
+   "tags": [
+    "variance",
+    "groundwater offset"
+   ],
+   "quote": "this is a small lot, the system is in failure."
+  },
+  {
+   "topic": "140 Flynn Road – well placement variances",
+   "resolution": "approved, all in favor",
+   "tags": [
+    "variance",
+    "well",
+    "setbacks"
+   ],
+   "quote": "agent jim garreffi discussed this property with the board."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handouts describing the Microfast system (provided by Jeff Viviano)",
+   "where": "list",
+   "quote": "mr. viviano provided handouts describing the system and how it works."
+  },
+  {
+   "name": "Revised plan for 338 Sunset Lane",
+   "where": "text",
+   "quote": "with the understanding that when a revised plan was submitted it would not deviate from what was discussed at the meeting."
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic variances",
+  "Title 5",
+  "wells",
+  "wetlands",
+  "Lake Shirley",
+  "September 2015"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. viviano provided handouts describing the system"
+ },
+ "dropped_unquoted_by_field": {}
 }

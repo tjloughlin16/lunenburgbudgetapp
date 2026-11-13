@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2014-08-12",
  "docid": "1841",
@@ -12,24 +12,225 @@
  },
  "votes": [
   {
-   "motion": "to accept the July 8, 2014 COA minutes",
+   "motion": "Accept the July 8, 2014 COA minutes.",
    "moved_by": "Ms. Seeley",
    "seconded_by": "Ms. Tarbell",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. seeley moved to accept the july 8, 2014 coa m inutes. ms. tarbell seconded. on vote, motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. seeley moved to accept the july 8, 2014 coa m inutes. ms. tarbell seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "to adjourn the COA meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Ms. Lincoln",
-   "seconded_by": "Ms. Di'Giacomo",
-   "outcome": "passed unanimously",
+   "seconded_by": "Ms. Di’Giacomo",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. lincoln moved to adjourn the coa meeting. ms. di'giacomo seconded. on vote, motion carried unanimously"
+   "quote": "being no further business, ms. lincoln moved to adjourn the coa meeting. ms. di'giacomo seconded. on vote, motion carried unanimously"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0949305
+ "dropped_unquoted": 1,
+ "note": "Text is an extraction with broken and doubled spacing inside words (quotes reproduce it as printed). The chair appears as \"Pete Lincoln\" in the call to order and \"Pete Linclon (Chairperson)\" in the attendance list; the attendance spelling is used. The adjournment motion is attributed to \"Ms. Lincoln\" with no first name, so it is not matched to Debbie Lincoln. Minutes header says approved at the 10/14/2014 COA meeting. No dollar figures are printed. Votes are recorded for minutes approval and adjournment only.",
+ "cost_usd": 0.00540872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Linclon",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "pete linclon (chairperson), deb seeley (vice-chai rperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "pete linclon (chairperson), deb seeley (vice-chai rperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "pete linclon (chairperson), deb seeley (vice-chai rperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "pete linclon (chairperson), deb seeley (vice-chai rperson), doreen noble (director), judy tarbell,"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "not stated",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Su e Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "debbie lincoln, betty digiacomo, kevin mcnally & su e doherty (admin. asst.)"
+  },
+  {
+   "name": "Jennifer Ayers",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "excused: jennifer ayers"
+  },
+  {
+   "name": "Connie O’Dea",
+   "role": "guest",
+   "status": "not stated",
+   "quote": "guests: connie o'dea & sarah grant"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "guest",
+   "status": "not stated",
+   "quote": "guests: connie o'dea & sarah grant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair suggested the Director prepare a quarterly budget report for board review (suggestion; no vote recorded).",
+   "quote": "mr. lincoln suggested that it would be helpful to the board if ms. noble could prepare a quarterly bud get report for review."
+  },
+  {
+   "decision": "Chair requested the Director invite local legislators to a future COA meeting, perhaps in November (no vote recorded).",
+   "quote": "mr. lincoln requested that ms. noble invite our local legislatures to a future coa meeting perhaps in november."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY15 COA budget overview",
+   "what_was_recorded": "The Director's report included an FY15 COA budget overview covering the Formula Grant, salaries and other funding sources; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "fy15 coa budget overview (including formula grant, salaries & other sources of funding)"
+  },
+  {
+   "topic": "FY15 Formula Grant",
+   "what_was_recorded": "The FY15 Formula Grant was reported as completed and mailed; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the fy15 formula grant has been completed and mail ed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "COA general orientation and discussion",
+   "resolution": "discussion only; no action",
+   "quote": "coa general orientation/discussion: mr. lincoln began orientation discussion with the coa board members",
+   "tags": [
+    "orientation",
+    "board governance",
+    "task groups"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "received; no action",
+   "quote": "ms. noble prepared a report for the board which explained the following:",
+   "tags": [
+    "director report",
+    "senior center",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "ms. seeley moved to accept the july 8, 2014 coa m inutes. ms. tarbell seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes",
+    "vote"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "received; no action",
+   "quote": "notices & communications:",
+   "tags": [
+    "training",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "discussion; one request to invite legislators",
+   "quote": "mr. lincoln requested that ms. noble invite our local legislatures to a future coa meeting perhaps in november.",
+   "tags": [
+    "board comment",
+    "legislators"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:58AM",
+   "quote": "meeting adjourned at 10:58am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report (Ms. Noble)",
+   "where": "text",
+   "quote": "ms. noble prepared a report for the board which explained the following:"
+  },
+  {
+   "name": "Informational flyer on Adult Matters program, Fitchburg Senior Center",
+   "where": "text",
+   "quote": "an informational flyer was received concerning a pr ogram being held at the fitchburg senior center cal led adult matters"
+  },
+  {
+   "name": "Notice from Executive Office of Elder Affairs re COA Board Training, Groton Senior Center 10/17/14",
+   "where": "text",
+   "quote": "notice was received from the executive office of el der affairs concerning coa board training to be he ld at the groton"
+  },
+  {
+   "name": "Annual Report for Executive Office of Elder Affairs (due 9/1/2014)",
+   "where": "text",
+   "quote": "annual report for executive office of elder affair s is being prepared and is due by 9/1/2014"
+  },
+  {
+   "name": "COA portion of the Lunenburg Town Report",
+   "where": "text",
+   "quote": "the director will begin working on the coa portion of the lunenburg town report soon"
+  },
+  {
+   "name": "FY15 Formula Grant",
+   "where": "text",
+   "quote": "the fy15 formula grant has been completed and mail ed"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "orientation",
+  "director report",
+  "budget",
+  "formula grant",
+  "board governance",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

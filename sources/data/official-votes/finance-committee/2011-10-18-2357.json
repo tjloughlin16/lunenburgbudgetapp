@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-10-18",
  "docid": "2357",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn at 9:00 PM",
+   "motion": "Adjourn the meeting at 9:00 pm.",
    "moved_by": "BL",
    "seconded_by": "ME",
    "outcome": "passed",
@@ -21,6 +21,112 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One vote recorded: adjournment. No prior minutes approval or other votes recorded.",
- "cost_usd": 0.08376650000000001
+ "note": "Single OCR'd page. Agenda numbering runs 1) then 3), so item 2 is missing from the text. The minutes record only one motion (adjournment) and no discussion of the forecast's contents. Attendance is taken from the Present/Absent lines. The minutes state that Martha McDonald submitted them. A \"RECEIVED & FILED\" stamp dated JAN 30 2012 appears on the page.",
+ "cost_usd": 0.0028796200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, scott gile"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, scott gile"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, scott gile"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, mark erickson, scott gile"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "barbara reynolds, john male"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "barbara reynolds, john male"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel, town manager, presented the town of lunenburg five year financial forecast, fiscal years 2013 - 2017"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Five Year Financial Forecast, FY2013-2017",
+   "what_was_recorded": "Town Manager Kerry Speidel presented the Five Year Financial Forecast at the joint meeting; the minutes print no dollar figures for it.",
+   "figures_as_printed": [],
+   "quote": "kerry speidel, town manager, presented the town of lunenburg five year financial forecast, fiscal years 2013 - 2017"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting called to order at 7:00 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting called to order by the chairman at 7:00 pm"
+  },
+  {
+   "topic": "Joint meeting with Board of Selectmen: Five Year Financial Forecast FY2013-2017",
+   "resolution": "presented; no action recorded",
+   "tags": [
+    "joint meeting",
+    "forecast",
+    "town manager",
+    "selectmen"
+   ],
+   "quote": "joint meeting held with the board of selectmen and finance committee"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "bl made a motion to adjourn at 9:00 pm, me seconded; all in favor"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town of Lunenburg Five Year Financial Forecast, Fiscal Years 2013 - 2017",
+   "where": "text",
+   "quote": "presented the town of lunenburg five year financial forecast, fiscal years 2013 - 2017"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "joint meeting",
+  "selectmen",
+  "five year forecast",
+  "town manager",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

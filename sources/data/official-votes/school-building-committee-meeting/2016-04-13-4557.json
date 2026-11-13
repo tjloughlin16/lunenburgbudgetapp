@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2016-04-13",
  "docid": "4557",
@@ -12,55 +12,333 @@
  },
  "votes": [
   {
-   "motion": "approve the meeting minutes from March 23, 2016 upon submission of amended content",
-   "outcome": "not stated",
+   "motion": "Approve the March 23, 2016 LSBC meeting minutes upon submission of amended content (NV5 to amend and resubmit).",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "lunenburg school building committee voted to approve the meeting minutes from march 23, 2016 upon submission of amended content."
   },
   {
-   "motion": "approve the March 2016 invoices as presented",
-   "outcome": "passed unanimously",
+   "motion": "Approve the March 2016 invoices as presented by NV5.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "the lunenburg school building committee voted to approve the march, 2016 invoices as presented by nv5 (nv5). the motion was unanimously approved."
   },
   {
-   "motion": "approve Change Order No. 10 for Exterior/Interior Signage (Add $26,500.00)",
-   "outcome": "approved with 1 opposing",
+   "motion": "Approve Change Order No. 10 as presented by Shawmut and NV5.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed, one opposing vote",
    "procedural": false,
    "quote": "the lunenburg school building committee voted to approve change order no. 10 as presented by shawmut and nv5. the motion was approved with (1) one opposing vote."
   },
   {
-   "motion": "approve Change Order No. 11, Furnish and Install New Maintenance Garage (Add $56,415.00)",
-   "outcome": "passed unanimously",
+   "motion": "Approve Change Order No. 11 (Furnish and Install New Maintenance Garage, add $56,415.00) as presented by Shawmut and NV5.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "the lunenburg school building committee voted to approve change order no. 11 as presented by shawmut and nv5. the motion was unanimously approved."
   },
   {
-   "motion": "approve Change Order No. 12, Provide Added Cooling to Classroom Wings (Add $528,815.00)",
-   "outcome": "approved with 1 opposing",
+   "motion": "Approve Change Order No. 12 (Provide Added Cooling to Classroom Wings, add $528,815.00) as presented by Shawmut and NV5.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed, one opposing vote",
    "procedural": false,
    "quote": "the lunenburg school building committee voted to approve change order no. 12 as presented by shawmut and nv5. the motion was approved with (1) one opposing vote."
   },
   {
-   "motion": "approve Change Order No. 13, Stadium Wheelchair Lift Enclosure, with condition that description be changed to 'Stadium Wheelchair Lift Enclosure' in lieu of 'Wheelchair Lift Enclosure at Football field'",
-   "outcome": "passed unanimously",
+   "motion": "Approve Change Order No. 13 provided the description is changed to 'Stadium Wheelchair Lift Enclosure' for final signatures.",
    "moved_by": "",
-   "seconded_by": "",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "the lunenburg school building committee voted to approve change order no. 13 provided that the description on the all change order documentation will be changed to say \"stadium wheelchair lift enclosure\" in lieu of \"wheelchair lift enclosure at football field\". the team will make that change for final signatures. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve change order no. 13 provided that the description on the all change order documentation will be changed"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Meeting date 2016-04-13. No movers or seconders explicitly named in the minutes; all votes attributed to \"the Lunenburg School Building Committee.\"",
- "cost_usd": 0.13652750000000002
+ "dropped_unquoted": 1,
+ "note": "Text is OCR of a 4-page scan; the attendee table is column-scrambled, so roles were matched to names by order and the attendance status is not stated for anyone except the chair, who called the meeting to order. The Change Order No. 10 heading and description are cut off at the top of page 3, so no dollar figure is recorded for it. Mover and seconder are not printed for any motion. Vote counts are printed only as 'one opposing vote' or 'unanimously approved'. The adjournment has no recorded motion, so it is not listed as a vote.",
+ "cost_usd": 0.00706872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair; called the meeting to order as Chairperson of the LSBC",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the lunenburg school building committee."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro tom alonzo greg bittner"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "name loxi jo calmes michael mackin colleen shapiro tom alonzo greg bittner mark erickson"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mike barney brian frank greg s. roy kerry lafleur john londa"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mike barney brian frank greg s. roy kerry lafleur john londa"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mike barney brian frank greg s. roy kerry lafleur john londa"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mike barney brian frank greg s. roy kerry lafleur john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mike barney brian frank greg s. roy kerry lafleur john londa"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay jen littlefield stuart lesser"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay jen littlefield stuart lesser"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay jen littlefield stuart lesser"
+  },
+  {
+   "name": "Jen Littlefield",
+   "role": "Tappe Architects",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay jen littlefield stuart lesser"
+  },
+  {
+   "name": "Stuart Lesser",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay jen littlefield stuart lesser"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "jeffery luxenberg inga knox robert alger rob juusola"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "jeffery luxenberg inga knox robert alger rob juusola"
+  },
+  {
+   "name": "Robert Alger",
+   "role": "NV5; available to set up site visits",
+   "status": "not stated",
+   "quote": "rob alger is available to set up time for site visit."
+  },
+  {
+   "name": "Rob Juusola",
+   "role": "NV5",
+   "status": "not stated",
+   "quote": "jeffery luxenberg inga knox robert alger rob juusola"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst philip conroy"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst philip conroy"
+  },
+  {
+   "name": "Philip Conroy",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst philip conroy"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "NV5 will amend and resubmit the meeting minutes from March 23, 2016 (public comment section correction).",
+   "quote": "there was a comment on public comment section of the meeting minutes. nv5 will amend and resubmit the meeting minutes from march 23, 2016."
+  },
+  {
+   "decision": "The description on Change Order No. 13 will be changed to 'Stadium Wheelchair Lift Enclosure' by the team for final signatures.",
+   "quote": "the team will make that change for final signatures."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly invoices",
+   "what_was_recorded": "NV5 presented monthly progress invoices for work through March 2016 (OPM, Designer, Shawmut Payment Requisition No.20, and a piano service invoice); the committee approved them. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "nv5 (nv5) presented monthly progress invoices for work completed through march, 2016"
+  },
+  {
+   "topic": "Change Order No. 11, New Maintenance Garage",
+   "what_was_recorded": "Change Order No. 11 adds a new 30'x40' metal maintenance building, approved.",
+   "figures_as_printed": [
+    "$56,415.00"
+   ],
+   "quote": "furnish and install new maintenance garage (add $56,415.00)"
+  },
+  {
+   "topic": "Change Order No. 12, Added Cooling to Classroom Wings",
+   "what_was_recorded": "Change Order No. 12 adds cooling for perimeter classrooms in the A and D-wings, approved with one opposing vote.",
+   "figures_as_printed": [
+    "$528,815.00"
+   ],
+   "quote": "provide added cooling to classroom wings (add $528,815.00)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:34 PM",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the lunenburg school building committee.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Business: next meeting",
+   "resolution": "noted next meeting May 11, 2016",
+   "quote": "next meeting will be held on may 11, 2016 at 6:30pm at thomas c. passios",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "no report this meeting",
+   "quote": "no chair's report this meeting",
+   "tags": [
+    "chair"
+   ]
+  },
+  {
+   "topic": "Approval of March 23, 2016 minutes",
+   "resolution": "approved upon amended content",
+   "quote": "lunenburg school building committee voted to approve the meeting minutes from march 23, 2016 upon submission of amended content.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Monthly invoices",
+   "resolution": "approved",
+   "quote": "the lunenburg school building committee voted to approve the march, 2016 invoices as presented by nv5 (nv5).",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Change Orders 10 to 13",
+   "resolution": "approved (CO 10 and 12 with one opposing vote; CO 11 and 13 unanimous)",
+   "quote": "the lunenburg school building committee voted to approve change order no. 11 as presented by shawmut and nv5. the motion was unanimously approved.",
+   "tags": [
+    "change orders",
+    "construction costs"
+   ]
+  },
+  {
+   "topic": "Construction Activity Update",
+   "resolution": "presented slideshow, no action",
+   "quote": "a construction update image slideshow was presented at the meeting.",
+   "tags": [
+    "construction",
+    "update"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 6:55 pm",
+   "quote": "the meeting was adjourned at approximately 6:55 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Construction update image slideshow",
+   "where": "text",
+   "quote": "a construction update image slideshow was presented at the meeting."
+  },
+  {
+   "name": "Payment Requisition No.20 (Shawmut Design & Construction)",
+   "where": "text",
+   "quote": "shawmut design & construction (payment requisition no.20) and service invoice from blanchard piano service invoice."
+  },
+  {
+   "name": "Change order documentation (Change Order No. 13)",
+   "where": "text",
+   "quote": "the description on the all change order documentation will be changed"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "construction",
+  "change orders",
+  "invoices",
+  "minutes approval",
+  "Turkey Hill",
+  "LMHS project",
+  "NV5",
+  "Shawmut",
+  "Tappe Architects",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

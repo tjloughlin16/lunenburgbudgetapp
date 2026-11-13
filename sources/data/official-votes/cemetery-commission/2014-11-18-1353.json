@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2014-11-18",
  "docid": "1353",
@@ -12,39 +12,215 @@
  },
  "votes": [
   {
-   "motion": "open the meeting",
-   "moved_by": "Commissioner Schaff",
-   "seconded_by": "Commissioner Lance May",
-   "outcome": "carried",
+   "motion": "Open the meeting.",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lance May",
+   "outcome": "passed",
    "procedural": true,
    "quote": "commissioner schaff made a motion to open the meeting with commissioner lance may seconding his motion. the vote carried to open the meeting"
   },
   {
-   "motion": "award the bid to Walts Drive Way for $2,800.00",
+   "motion": "Award the crack-filling bid for the roadways in the North and South Cemetery to Walts Drive Way for $2,800.00.",
    "moved_by": "Steve Schaff",
    "seconded_by": "Lance May",
-   "outcome": "unanimously passed",
+   "outcome": "passed",
    "procedural": false,
    "quote": "steve schaff made a motion to award the bid to walts drive way for $2,800.00, lance may seconded his motion and with no further discussion, the vote was unanimous."
   },
   {
-   "motion": "increase the week-end /overtime fee from $300.00 to $500.00",
+   "motion": "Increase the week-end/overtime burial fee from $300.00 to $500.00.",
    "moved_by": "Steve Schaff",
    "seconded_by": "Lance May",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "steve schaff made a motion to increase the week-end /overtime fee from $300.00 to $500.00. lance may seconded the motion and with no further discussion the motion to increase this fee was passed unanimously."
+   "quote": "steve schaff made a motion to increase the week-end /overtime fee from $300.00 to $500.00. lance may seconded the motion"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Steve Schaff",
    "seconded_by": "Lance May",
-   "outcome": "carried unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "steve schaff made a motion to adjourn and lance may seconded... with no further discussion, an unanimous motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcription (macOS Vision); vote sections are legible and verbatim quotes confirmed.",
- "cost_usd": 0.1347765
+ "note": "Text is OCR from a scan (macOS Vision). Header and some words are garbled (e.g., 'Kunenbburg', 'Mouember'); the board name and date were read from the body text. The commissioner Steve Schaff appears as 'Stebe Schaff' in the attendance sentence and as 'Steve Schaff' in motions and signature; recorded here as 'Steve Schaff'. Vote outcomes are 'passed' where the minutes say 'unanimous' or 'carried' without a numeric count. No public comment speakers are named. No documents list is printed.",
+ "cost_usd": 0.00446732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "with commissioners lance may and stebe schaff present. supt of cemetery's greg wingham was"
+  },
+  {
+   "name": "Steve Schaff",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "with commissioners lance may and stebe schaff present. supt of cemetery's greg wingham was"
+  },
+  {
+   "name": "Daryl Demers",
+   "role": "Commissioner",
+   "status": "absent",
+   "quote": "commissioner daryl demers did not attend due to work conflicts."
+  },
+  {
+   "name": "Greg Wingham",
+   "role": "Supt of Cemetery's",
+   "status": "present",
+   "quote": "supt of cemetery's greg wingham was present and commissioner daryl demers did not attend due to work conflicts."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Greg Wingham to follow up on the clean-up of the Holman Street property after the Lunenburg Historical Commission hearing results.",
+   "quote": "greg was to follow-up on the property's clean-up."
+  },
+  {
+   "decision": "Greg Wingham to follow up with Shepard's Service and speak to Glen Shepherd on pricing for the Ferris lawnmower update, noting state bidding procedures would have to be followed.",
+   "quote": "he will follow up with shepard's service and speak to glen shepherd on the pricing-as the"
+  },
+  {
+   "decision": "Niche wall costs to be discussed at another meeting once Monty Tech's commitment is known; a construction timetable to be set once Monty Tech's availability is known.",
+   "quote": "this would have to be discussed at another meeting. a time table to begin the project should be established once, we know of"
+  },
+  {
+   "decision": "Greg Wingham to send a letter to Monty Tech to get their commitment for the niche wall project, then follow up with Barbara Reynolds, the Lunenburg Representative to the Monty Tech School Board.",
+   "quote": "greg is to send a letter to monty tech to get their commitment to do the project and then"
+  },
+  {
+   "decision": "Greg Wingham to follow up on excavating bids required to pour a footing for the niche wall.",
+   "quote": "greg is also to follow-up on excavating bids that will be required to pour a footing."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Crack filling of roadways, North and South Cemetery bids",
+   "what_was_recorded": "Three bids were reviewed for crack filling; the commission then voted to award the bid to Walts Drive Way.",
+   "figures_as_printed": [
+    "$3,300.00",
+    "$3,503.80",
+    "$2,800.00"
+   ],
+   "quote": "black dawg of nh submitted a bid for $3,300.00, prescott landscaping submitted a bid for $3,503.80 and walts drive way submitted a bid for $2,800.00."
+  },
+  {
+   "topic": "Ferris lawnmower update",
+   "what_was_recorded": "Greg Wingham suggested updating the Ferris lawnmower at some point and will get pricing from Shepard's Service; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "he will follow up with shepard's service and speak to glen shepherd on the pricing-as the"
+  },
+  {
+   "topic": "Niche wall materials and labor",
+   "what_was_recorded": "Proposed costs for material and labor were discussed, but no figures were printed and the matter was deferred pending Monty Tech's commitment.",
+   "figures_as_printed": [],
+   "quote": "proposed costs were discussed for material and labor. but, with-out knowing how much monty tech's commitment would be,"
+  },
+  {
+   "topic": "Week-end or overtime burial fee",
+   "what_was_recorded": "Greg Wingham proposed raising the week-end or overtime burial fee, citing increases at other area cemeteries; the commission voted to raise it.",
+   "figures_as_printed": [
+    "$300",
+    "$500.00"
+   ],
+   "quote": "he suggested the fee should be increased from $300 to $500.00-as other"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening of meeting",
+   "resolution": "opened by vote",
+   "quote": "commissioner schaff made a motion to open the meeting with commissioner lance may seconding his motion. the vote carried",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Crack filling of North and South Cemetery roadways",
+   "resolution": "bid awarded to Walts Drive Way",
+   "quote": "discussion taking place on the crack filling of road ways in the north and south cemetery and reviewing 3 bids.",
+   "tags": [
+    "roads",
+    "bids",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Holman Street property",
+   "resolution": "follow-up assigned to Superintendent",
+   "quote": "discussion on the hearing results from the lunenburg historical commission on the holman street property took place",
+   "tags": [
+    "property",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Ferris lawnmower",
+   "resolution": "follow-up assigned to Superintendent; no action",
+   "quote": "discussion followed on the current condition of the ferris lawnmower",
+   "tags": [
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Niche wall construction",
+   "resolution": "continued; letter to Monty Tech assigned",
+   "quote": "the plans and building of a niche wall was discussed by greg",
+   "tags": [
+    "niche wall",
+    "Monty Tech",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Week-end or overtime burial fee",
+   "resolution": "fee increased from $300 to $500.00",
+   "quote": "greg requested that the commission look the current fee structure for week-end or overtime burials",
+   "tags": [
+    "fees",
+    "burials"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:00 pm",
+   "quote": "time of adjournment was 10:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Bids for crack filling of roadways (Black Dawg Of NH, Prescott Landscaping, Walts Drive Way)",
+   "where": "text",
+   "quote": "reviewing 3 bids. black dawg of nh submitted a bid for $3,300.00, prescott landscaping"
+  },
+  {
+   "name": "Letter to Monty Tech requesting commitment for niche wall project",
+   "where": "text",
+   "quote": "greg is to send a letter to monty tech to get their commitment to do the project and then"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "crack filling",
+  "bids",
+  "niche wall",
+  "Monty Tech",
+  "burial fees",
+  "equipment",
+  "Holman Street"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

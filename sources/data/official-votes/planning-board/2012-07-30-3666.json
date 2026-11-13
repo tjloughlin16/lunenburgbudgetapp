@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-07-30",
  "docid": "3666",
@@ -12,15 +12,166 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the Special Permit for EPG Solar as submitted by Chair Bakaysa.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
+   "procedural": false,
+   "quote": "motion, ms. bilotta -simeone to approve the special permit as submitted by chair bakaysa, second, mr. bodkin jr., roll call vote, mr. saiia, aye"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr., adjourned 7:00 pm."
+   "quote": "adjournment: motion, ms. bilotta-simeone, second, mr. bodkin jr., adjourned 7:00 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1077225
+ "dropped_unquoted": 0,
+ "note": "Attendance conflicts: Nathan J. Lockwood is listed both as present and as absent, so his status is recorded as not stated. Robert J. Saiia's attendance is inferred from his roll call vote; the minutes do not list him as present. The minutes print no vote count for the special permit, so outcome is 'passed'. The adjournment motion has no recorded result. The page numbering repeats 'Page 2' on pages 2 through 4. No dollar figures, public comment or document list heading appear in the text.",
+ "cost_usd": 0.005920119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, vice-chair"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "mr. saiia, aye; mr. bodkin jr., aye"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "not stated",
+   "quote": "nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Mead",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney mead noted that under section 14, even if an appeal has been filed, an applicant can construct at their own risk."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed landscaping changes will be discussed in the field and will adhere to what was discussed at the July 23 Public Hearing Continuation, with the O&M Agreement covering plant maintenance and Coir Logs.",
+   "quote": "the o&m agreement will cover plant maintenance and coir logs."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Special Permit - EPG Solar, 265 Pleasant Street",
+   "resolution": "approved special permit (roll call, all aye); findings and 49-67 directives read into record",
+   "quote": "special permit- epg solar, 265 pleasant street - as the procedural history portion of the special permit",
+   "tags": [
+    "solar",
+    "special permit",
+    "zoning",
+    "EPG Solar",
+    "265 Pleasant Street"
+   ]
+  },
+  {
+   "topic": "Certificate of Granting of Special Permit",
+   "resolution": "read into record",
+   "quote": "mr. bakaysa read into record the certificate of granting of special permit.",
+   "tags": [
+    "special permit",
+    "certificate",
+    "Chapter 40A"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:00 PM",
+   "quote": "adjournment: motion, ms. bilotta-simeone, second, mr. bodkin jr., adjourned 7:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Development Plan Review (DPR) written decision, issued June 13, 2012",
+   "where": "text",
+   "quote": "the planning board approved that application by written decision issued on june"
+  },
+  {
+   "name": "Zoning Bylaw Section 4.15 (Solar Energy Systems)",
+   "where": "text",
+   "quote": "section 4.15.4.3 of the zoning bylaw states:"
+  },
+  {
+   "name": "Overview Plan submitted July 23, 2012",
+   "where": "text",
+   "quote": "the applicant shall submit a final plan of record consistent with the overview plan submitted to the planning board"
+  },
+  {
+   "name": "Landscaping and Screening Plan",
+   "where": "text",
+   "quote": "the applicant shall review the last landscaping and screening plan to add screening for the complete fence"
+  },
+  {
+   "name": "Draft O&M plan",
+   "where": "text",
+   "quote": "a draft o&m plan has been provided and a final plan will be provided as set forth in the directives below."
+  },
+  {
+   "name": "SPCC plan",
+   "where": "text",
+   "quote": "a spcc plan has been submitted to the planning board"
+  },
+  {
+   "name": "Conservation Commission Order of Conditions",
+   "where": "text",
+   "quote": "the applicant shall show that a storm water pollution prevention plan and a copy of the order of conditions have"
+  },
+  {
+   "name": "Certificate of Granting of Special Permit (G.L. c. 40A, s. 11)",
+   "where": "text",
+   "quote": "mr. bakaysa read into record the certificate of granting of special permit."
+  }
+ ],
+ "tags": [
+  "solar",
+  "special permit",
+  "zoning bylaw",
+  "EPG Solar",
+  "265 Pleasant Street",
+  "development plan review",
+  "decision"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2015-03-10",
  "docid": "1849",
@@ -12,24 +12,300 @@
  },
  "votes": [
   {
-   "motion": "Accept the February 10, 2015 Council on Aging minutes",
-   "moved_by": "Sarah Grant",
-   "seconded_by": "Betty DiGiacomo",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the February 10, 2015 Council on Aging meeting.",
+   "moved_by": "Ms. Grant",
+   "seconded_by": "Ms. DiGiacomo",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. grant moved to accept the february 10, 2015 c ouncil on aging minutes. ms. digiacomo seconded. on vote, motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. grant moved to accept the february 10, 2015 c ouncil on aging minutes."
   },
   {
-   "motion": "Adjourn the COA meeting",
-   "moved_by": "Brian Guenard",
-   "seconded_by": "Jacquelyn Dwyer",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the Council on Aging meeting.",
+   "moved_by": "Mr. Guenard",
+   "seconded_by": "Ms. Dwyer",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. guenard moved to adjourn the coa meeting. ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "mr. guenard moved to adjourn the coa meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0853575
+ "note": "Text is OCR-style with split words and odd spacing (e.g., 'C ouncil', 'Directo r', 'budg et'); quotes copied as printed. Header says minutes were approved at the April 14, 2015 COA meeting. Only two motions appear, both approval and adjournment, passed unanimously with no counts printed. No transfers and no public comment were recorded. Some attendee quotes are shared attendance lines. Roles are given only where printed.",
+ "cost_usd": 0.00763332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), doreen noble (directo r)"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "status": "present",
+   "quote": "present: pete lincoln (chairperson), doreen noble (directo r), debbie lincoln"
+  },
+  {
+   "name": "Sarah Grant",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "present",
+   "quote": "betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "status": "present",
+   "quote": "jacqu elyn dwyer, brian guenard & sue doherty"
+  },
+  {
+   "name": "Brian Guenard",
+   "status": "present",
+   "quote": "jacqu elyn dwyer, brian guenard & sue doherty"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst",
+   "status": "present",
+   "quote": "brian guenard & sue doherty (admin. ass t)"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "not present: deb seeley (vice chair) & kevin mcnally"
+  },
+  {
+   "name": "Kevin McNally",
+   "status": "absent",
+   "quote": "not present: deb seeley (vice chair) & kevin mcnally"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Noble will begin the procedures and criteria to determine the next Boston Post Cane recipient, after a brief period out of respect for Ms. Pepin.",
+   "quote": "and ms. noble will begin that process."
+  },
+  {
+   "decision": "Ms. Doherty will obtain the board re-appointment forms from the Selectmen's office and distribute them at the April COA meeting.",
+   "quote": "ms. doherty will get hold of the re-appointment"
+  },
+  {
+   "decision": "COA board photos will be rescheduled to the April meeting.",
+   "quote": "coa board photos will be rescheduled to the april meeting."
+  },
+  {
+   "decision": "Ms. Dwyer will begin working on the Eagle House Facebook page, with pictures and information to be submitted to her for posting.",
+   "quote": "would like pictures and information submitted to her for posting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY16 COA budget request",
+   "what_was_recorded": "Director presented the COA FY16 budget request to FinCom on February 26 and stressed that the COA makes up only a small share of the town's municipal budget.",
+   "figures_as_printed": [
+    ".5%"
+   ],
+   "quote": "makes up .5% of the towns overall municipal budg"
+  },
+  {
+   "topic": "FY15 COA budget overspend",
+   "what_was_recorded": "The FY15 COA budget has gone over due to staffing issues.",
+   "figures_as_printed": [],
+   "quote": "the fy15 coa budget has gone over due to staffing issues"
+  },
+  {
+   "topic": "Nutrition program funding",
+   "what_was_recorded": "The Town Manager had designated $5000 toward the nutrition program but readjusted that amount in FY16 to $500 to fund appropriate staffing.",
+   "figures_as_printed": [
+    "$5000",
+    "$500"
+   ],
+   "quote": "had designated $5000 towards improving"
+  },
+  {
+   "topic": "Eagle House Supporters petty cash fund",
+   "what_was_recorded": "The Eagle House Supporters Inc. provides a petty cash fund for the Director for Soup & Sandwich day and salad bar day at the meal site.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "the eagle house supporters inc. provides a $200"
+  },
+  {
+   "topic": "Eagle Scout walkway cost",
+   "what_was_recorded": "Board members discussed the practicality of the Eagle Scout walkway, raising concerns about the cost of concrete and snow and ice removal.",
+   "figures_as_printed": [],
+   "quote": "board members discussed the practicality of this"
+  },
+  {
+   "topic": "Non-discretionary funding",
+   "what_was_recorded": "The Director explained that the COA falls into non-discretionary funding with the Police and Fire Depts., which require most of that funding, leaving the COA with less.",
+   "figures_as_printed": [],
+   "quote": "the director explained that the coa falls into"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (February 10, 2015 minutes)",
+   "quote": "ms. grant moved to accept the february 10, 2015 c ouncil on aging minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "photos rescheduled to April meeting",
+   "quote": "coa board photos will be rescheduled to the april meeting.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Director's report: budget, repairs, post cane, Eagle Scout walkway, funding",
+   "resolution": "discussed; no action recorded",
+   "quote": "ms. noble presented the coa fy16 budget request to the lunenburg finance committee",
+   "tags": [
+    "budget",
+    "FY16",
+    "building repair",
+    "Boston Post Cane",
+    "Eagle Scout",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Expiring COA terms renewal",
+   "resolution": "re-appointment forms to be distributed at April meeting",
+   "quote": "ms. doherty will get hold of the re-appointment",
+   "tags": [
+    "appointments",
+    "terms"
+   ]
+  },
+  {
+   "topic": "Wish list for Supporters of Eagle House Inc.",
+   "resolution": "discussed; no action recorded",
+   "quote": "they also discussed contacting monty tech for help with any construction needs",
+   "tags": [
+    "wish list",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Volunteer recognition gathering",
+   "resolution": "noted; members encouraged to attend March 31",
+   "quote": "mr. lincoln reminded the coa board members that the selectmen volunteer recognition gathering has been",
+   "tags": [
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Eagle House Senior Center informational pamphlet",
+   "resolution": "reviewed; additions suggested",
+   "quote": "would also like to look into the possibility of having this inserted in the lunenburg ledger",
+   "tags": [
+    "pamphlet",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Task groups reports",
+   "resolution": "reports received; no action recorded",
+   "quote": "members from all three coa task groups met with",
+   "tags": [
+    "task groups",
+    "elder legislation",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted; warrant article deadline",
+   "quote": "ms. noble has received notification that all",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "noted",
+   "quote": "ms. dwyer informed all that she will begin",
+   "tags": [
+    "Facebook",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment : none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:20AM",
+   "quote": "mr. guenard moved to adjourn the coa meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Current updated Eagle House Informational pamphlet",
+   "where": "list",
+   "quote": "copies of the current updated eagle house informati onal pamphlet were distributed to board members for review"
+  },
+  {
+   "name": "COA FY16 budget request (presented to Finance Committee February 26)",
+   "where": "text",
+   "quote": "ms. noble presented the coa fy16 budget request to the lunenburg finance committee"
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "Eagle House",
+  "senior center",
+  "FY16 budget",
+  "nutrition program",
+  "Boston Post Cane",
+  "Eagle Scout walkway",
+  "task groups",
+  "volunteer recognition",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "copies of the current updated eagle house informati onal pamphlet were distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-12-13",
  "docid": "5532",
@@ -12,35 +12,34 @@
  },
  "votes": [
   {
-   "motion": "Issue a credit based on the bill adjustment policy using the last 12 months usage for irrigation meter, contingent upon receiving signoff by plumbing inspector that irrigation meter was installed.",
+   "motion": "Issue a credit based on the bill adjustment policy using the last 12 months usage, amended to be contingent on plumbing inspector signoff that the irrigation meter was installed.",
    "moved_by": "John",
    "seconded_by": "Joan",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "john made a motion to issue a credit based on the bill adjustment policy using the last 12 months usage, joan seconded. amended to be contingent upon receiving signoff by plumbing inspector that irrigation meter was installed. vote taken was unanimous."
+   "quote": "john made a motion to issue a credit based on the bill adjustment policy using the last 12 months usage, joan"
   },
   {
-   "motion": "Suspend the daily fine pending receipt and approval of detailed plans on 12/14, with condition that if complete acceptable plans are not received by the 10th, fines restart retroactive to the 14th.",
+   "motion": "Suspend the daily fine on Crossroads pending receipt and approval of the detailed plans on 12/14 (amended: fines restart retroactive to the 14th if acceptable plans are not in by the 10th).",
    "moved_by": "John",
    "seconded_by": "Richard",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "john made the motion that we suspend the daily fine pending receipt and approval of the detailed plans on 12/14. richard seconded. carl added that if we don't have complete, acceptable plans by the 10\"h that we restart fines retroactive to the 14*. taken on the amended motion was unanimous. commi",
-   "quote_taken_from_text": true
+   "quote": "john made the motion that we suspend the daily fine pending receipt and approval of the detailed plans on 12/14. richard seconded."
   },
   {
-   "motion": "Approve the Letter of Agreement for Pet Supplies and advise the Building Department that the Sewer Commission approves of the project, contingent upon Pet Supplies signing the Letter of Agreement and incorporating Fitchburg's concerns.",
+   "motion": "Approve the Pet Supplies Letter of Agreement and advise the Building Department that the Sewer Commission approves the project, contingent on Pet Supplies signing the Letter of Agreement incorporating Fitchburg's concerns.",
    "moved_by": "Richard",
    "seconded_by": "John",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "carl asked for a motion to approve the letter of agreement and advise the building department that the sewer commission approves of the project, contingent upon pet supplies signing the letter of agreement, incorporating fitchburg's concerns. richard so moved, john seconded. vote taken was unanimous."
+   "quote": "richard so moved, john seconded. vote taken was unanimous."
   },
   {
    "motion": "Send the bill to Highfield Village to call in their monies due.",
    "moved_by": "John",
    "seconded_by": "John",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "john made the motion to send the bill to highfield village to call in their monies due; seconded by john; vote taken was unanimous."
   },
@@ -50,10 +49,447 @@
    "seconded_by": "John",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "joan made the motion that we hire the minutes clerk as contractor; john seconded. discussion followed regarding interim town manager and payroll's preference to hire an employee, and he town votina adainst us hirina someone a few years ago."
+   "quote": "joan made the motion that we hire the minutes clerk as contractor; john seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with corrupted text near end. Final vote on minutes clerk motion appears incomplete in minutes record (states \"Vote was 1 for\" with no full outcome). Four other votes recorded clearly with outcomes.",
- "cost_usd": 0.0882665
+ "note": "OCR text, garbled in places. Page 1 starts mid-sentence. The minutes clerk vote is cut off (\"Vote was 1 for\") so the outcome is not stated. The Highfield Village motion prints John as both mover and seconder; recorded as printed. No roll call and no approval-of-minutes or adjournment vote is legible (adjournment at 9:48 p.m. appears only in garbled text), so no procedural votes are recorded. Documents are mentioned in discussion but no documents list heading is printed.",
+ "cost_usd": 0.009984820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave McMenemy",
+   "role": "(Wind River), Crossroads Violation item",
+   "status": "present",
+   "quote": "dave mcmenemy (wind river) was present; preliminary plans were received"
+  },
+  {
+   "name": "John",
+   "role": "",
+   "status": "present",
+   "quote": "john made the motion that we suspend the daily fine pending receipt and approval of the detailed plans on 12/14. richard seconded."
+  },
+  {
+   "name": "Joan",
+   "role": "",
+   "status": "present",
+   "quote": "joan pointed out that the current grease trap regulation"
+  },
+  {
+   "name": "Richard",
+   "role": "",
+   "status": "present",
+   "quote": "richard so moved, john seconded. vote taken was unanimous."
+  },
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl asked for a motion to approve the letter of agreement and advise the building department"
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb read from the letter sent to brambila on 11/22"
+  },
+  {
+   "name": "Jack",
+   "role": "DPW",
+   "status": "present",
+   "quote": "jack has proposals for two manhole i/i (inflow/infiltration) projects."
+  },
+  {
+   "name": "Mr. Grautski",
+   "role": "",
+   "status": "not stated",
+   "quote": "mr. grautski suggested that we take the non-summer months to determine"
+  },
+  {
+   "name": "Ron",
+   "role": "",
+   "status": "not stated",
+   "quote": "barb will send ron information on the requirements for"
+  },
+  {
+   "name": "Grady",
+   "role": "engineer",
+   "status": "not stated",
+   "quote": "grady is the engineer; rodenhiser is"
+  },
+  {
+   "name": "Rodenhiser",
+   "role": "handling installation",
+   "status": "not stated",
+   "quote": "grady is the engineer; rodenhiser is"
+  },
+  {
+   "name": "Brambila",
+   "role": "",
+   "status": "not stated",
+   "quote": "barb read from the letter sent to brambila on 11/22"
+  },
+  {
+   "name": "Jeff Murawski",
+   "role": "of Fitchburg",
+   "status": "not stated",
+   "quote": "jeff murawski of fitchburg is copied on this letter"
+  },
+  {
+   "name": "Rich Bursch",
+   "role": "",
+   "status": "not stated",
+   "quote": "per rich bursch, seth"
+  },
+  {
+   "name": "Seth",
+   "role": "",
+   "status": "not stated",
+   "quote": "per rich bursch, seth"
+  },
+  {
+   "name": "Adam",
+   "role": "",
+   "status": "not stated",
+   "quote": "barb read a couple excerpts of emails from adam,"
+  },
+  {
+   "name": "Kerry",
+   "role": "previous Town Manager",
+   "status": "not stated",
+   "quote": "since kerry (previous town manager) was in favor of hiring as"
+  },
+  {
+   "name": "Melanie Rich",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "melanie rich, minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed a letter should go out immediately to Crossroads confirming the vote, stating the total of fines and due dates, addressing floor drains and sink connections, with an invoice showing the amount due.",
+   "quote": "it was determined that we should send a letter out immediately, confirming tonight's vote and should"
+  },
+  {
+   "decision": "Carl will help get a letter out to Crossroads, adding that monthly pumping and reporting must continue.",
+   "quote": "carl will help getting a letter out to crossroads and will add that"
+  },
+  {
+   "decision": "The grease trap fine schedule (assessed every 2 weeks) was agreed to be excessive and placed on the next Regulation review list.",
+   "quote": "carl noted that it will be put on the next regulation review list."
+  },
+  {
+   "decision": "Commission will send a letter to Asian Imperial requiring pump-out in 3 months (by March 6, 2017), with the report due within 30 days, reminding them DPW needs 48 hours' notice.",
+   "quote": "commission will send a letter, requiring asian pump out in 3 months, or by march 6, 2017, and they must submit the report"
+  },
+  {
+   "decision": "Barb will send the BOS a copy of the Kabobelicious letter and copy of the email.",
+   "quote": "barb will send the bos a copy of the letter and copy of the email."
+  },
+  {
+   "decision": "Commissioners agreed that, because Kabobelicious did not pay on time, the 20% discount for on-time payments goes away.",
+   "quote": "commissioners were all in agreement that because she did not pay on time, the 20% discount for on-time payments goes away."
+  },
+  {
+   "decision": "Warning letters to be sent to Conrad's and Donnelly's.",
+   "quote": "warning letters need to be sent to conrad's & donnelly's."
+  },
+  {
+   "decision": "Commission approved of the notice provided by counsel (Highfield Village).",
+   "quote": "commission approved of the notice provided by counsel."
+  },
+  {
+   "decision": "Pet Supplies Letter of Agreement will attach the Fitchburg letter and include it by reference.",
+   "quote": "we will attach the fitchburg letter and include it by reference in the letter agreement."
+  },
+  {
+   "decision": "SRF Betterments Abatement Request tabled to the next meeting.",
+   "quote": "srf betterments abatement request: tabled to the next meeting."
+  },
+  {
+   "decision": "Barb will send Ron information on the requirements for irrigation meters to his email.",
+   "quote": "barb will send ron information on the requirements for"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Irrigation meter installation cost",
+   "what_was_recorded": "Commission discussed the cost to install an irrigation meter, based on John's experience; no figure printed.",
+   "quote": "discussed cost to install irrigation meter based on john's experience.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Bill adjustment credit (irrigation)",
+   "what_was_recorded": "Commission voted a credit under the bill adjustment policy based on the last 12 months usage; no credit amount printed.",
+   "quote": "john made a motion to issue a credit based on the bill adjustment policy using the last 12 months usage, joan",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Manhole I/I dishes project",
+   "what_was_recorded": "DPW's least expensive manhole I/I fix, up to 40 dishes, at a cost not to exceed the figure printed.",
+   "quote": "can do up to 40 at a cost not to exceed $6k.",
+   "figures_as_printed": [
+    "$6K"
+   ]
+  },
+  {
+   "topic": "Sewer line camera inspection (I/I)",
+   "what_was_recorded": "Camera inspection of lines on Whalom Road was proposed 2-3 years ago at the printed cost, to be done in spring; money is not available this year so a subset was suggested.",
+   "quote": "the cost is $48k and should be done in spring.",
+   "figures_as_printed": [
+    "$48K"
+   ]
+  },
+  {
+   "topic": "Crossroads daily fines",
+   "what_was_recorded": "Daily fines on Crossroads were suspended pending plans, with fines to restart retroactive to the 14th if plans are not acceptable by the 10th; no dollar amount printed.",
+   "quote": "carl added that if we don't have complete, acceptable plans by the",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grease trap fine schedule",
+   "what_was_recorded": "Current Grease Trap regulation fine schedule (every 2 weeks) was agreed to be excessive; no dollar amount printed.",
+   "quote": "states that fines should be assessed every 2 weeks.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Kabobelicious on-time payment discount",
+   "what_was_recorded": "The 20% on-time payment discount was removed because payment was late.",
+   "quote": "the 20% discount for on-time payments goes away.",
+   "figures_as_printed": [
+    "20%"
+   ]
+  },
+  {
+   "topic": "Progressive discipline immediate fee",
+   "what_was_recorded": "Regulations provide an immediate fee for any violation; the printed amount is noted.",
+   "quote": "an immediate $50 fee for any violation.",
+   "figures_as_printed": [
+    "$50"
+   ]
+  },
+  {
+   "topic": "Highfield Village amounts owed",
+   "what_was_recorded": "Commission voted to send the bill calling in monies due from Highfield Village; no amount printed.",
+   "quote": "john made the motion to send the bill to highfield village to call in their monies due",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "SRF betterments abatement",
+   "what_was_recorded": "SRF betterments abatement request was tabled; no amount printed.",
+   "quote": "srf betterments abatement request: tabled to the next meeting.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Minutes clerk pay and hiring status",
+   "what_was_recorded": "Discussed hiring the minutes clerk as a contractor versus an employee given headcount concerns; no dollar figure printed.",
+   "quote": "discussion followed regarding interim town manager and payroll's preference to hire an employee, and",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Irrigation meter bill adjustment credit",
+   "resolution": "approved credit, contingent on plumbing inspector signoff",
+   "quote": "commission reviewed bill adjustment policy and determined that they could credit based on",
+   "tags": [
+    "water",
+    "billing",
+    "irrigation"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements - none tonight",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment - none tonight",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Crossroads violation",
+   "resolution": "daily fine suspended pending detailed plans; letter to follow",
+   "quote": "crossroads violation: dave mcmenemy (wind river) was present; preliminary plans were received",
+   "tags": [
+    "violation",
+    "fines",
+    "Crossroads",
+    "floor drains"
+   ]
+  },
+  {
+   "topic": "DPW operations: manhole and sewer I/I projects",
+   "resolution": "discussed; no action recorded",
+   "quote": "jack has proposals for two manhole i/i (inflow/infiltration) projects.",
+   "tags": [
+    "DPW",
+    "inflow infiltration",
+    "manholes",
+    "camera inspection"
+   ]
+  },
+  {
+   "topic": "Pet Supplies proposal",
+   "resolution": "Letter of Agreement approved, contingent on Pet Supplies signing",
+   "quote": "pet supplies proposal: jack noted that there had been lots of discussions",
+   "tags": [
+    "Pet Supplies",
+    "Fitchburg",
+    "letter of agreement"
+   ]
+  },
+  {
+   "topic": "Asian Imperial Restaurant grease pump-out",
+   "resolution": "letter to require pump-out by March 6, 2017",
+   "quote": "they have violated the grease trap regulations, p. 5 of appendix c of the sewer use",
+   "tags": [
+    "grease trap",
+    "pumping",
+    "Asian Imperial"
+   ]
+  },
+  {
+   "topic": "Kabobelicious payments and permits",
+   "resolution": "20% on-time discount removed; BOS hearing 12/27",
+   "quote": "kabobelicious: no payments received.",
+   "tags": [
+    "fines",
+    "licenses",
+    "Kabobelicious"
+   ]
+  },
+  {
+   "topic": "Progressive Discipline Action Policy",
+   "resolution": "discussed; warning letters to be sent",
+   "quote": "progressive discipline action policy: joan provided a handout",
+   "tags": [
+    "policy",
+    "discipline",
+    "warning letters"
+   ]
+  },
+  {
+   "topic": "Ugly Omelet pump-out and repair",
+   "resolution": "noted; repair underway",
+   "quote": "at the ugly omelet, a pumpout occurred 12/6 satisfying the last",
+   "tags": [
+    "grease trap",
+    "pumping",
+    "repair"
+   ]
+  },
+  {
+   "topic": "Highfield Village",
+   "resolution": "bill to be sent to call in monies due",
+   "quote": "highfield village: commission approved of the notice provided by counsel.",
+   "tags": [
+    "Highfield Village",
+    "collections"
+   ]
+  },
+  {
+   "topic": "SRF Betterments Abatement Request",
+   "resolution": "tabled to the next meeting",
+   "quote": "srf betterments abatement request: tabled to the next meeting.",
+   "tags": [
+    "abatement",
+    "SRF"
+   ]
+  },
+  {
+   "topic": "Minutes clerk hire",
+   "resolution": "motion on the table; vote count cut off in minutes",
+   "quote": "minutes clerk: joan made the motion that we hire the minutes clerk as contractor; john seconded.",
+   "tags": [
+    "personnel",
+    "headcount",
+    "minutes clerk"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter sent to Brambila on 11/22",
+   "where": "text",
+   "quote": "barb read from the letter sent to brambila on 11/22"
+  },
+  {
+   "name": "Bill adjustment policy",
+   "where": "text",
+   "quote": "commission reviewed bill adjustment policy and determined that they could credit based on"
+  },
+  {
+   "name": "Requirements on the web regarding irrigation meters",
+   "where": "text",
+   "quote": "barb advised that there requirements on the web"
+  },
+  {
+   "name": "Letter of Agreement (Pet Supplies)",
+   "where": "text",
+   "quote": "carl asked for a motion to approve the letter of agreement and advise the building department"
+  },
+  {
+   "name": "Fitchburg letter",
+   "where": "text",
+   "quote": "john noted fitchburg's concerns and the letter received from them."
+  },
+  {
+   "name": "Grease Trap Regulations, p. 5 of Appendix C of the Sewer Use Regs",
+   "where": "text",
+   "quote": "they have violated the grease trap regulations, p. 5 of appendix c of the sewer use"
+  },
+  {
+   "name": "Progressive Discipline Action Policy handout (provided by Joan)",
+   "where": "text",
+   "quote": "joan provided a handout that incorporated information from the last"
+  },
+  {
+   "name": "Schematics (sink and interceptor connections)",
+   "where": "text",
+   "quote": "commissioners reviewed the schematics to confirm"
+  },
+  {
+   "name": "Emails from Adam",
+   "where": "text",
+   "quote": "barb read a couple excerpts of emails from adam,"
+  },
+  {
+   "name": "Notice provided by counsel (Highfield Village)",
+   "where": "text",
+   "quote": "commission approved of the notice provided by counsel."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "grease trap",
+  "violations",
+  "fines",
+  "DPW",
+  "inflow infiltration",
+  "pump-out",
+  "Crossroads",
+  "Pet Supplies",
+  "Highfield Village",
+  "minutes clerk",
+  "personnel",
+  "irrigation credit",
+  "discipline policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-01-13",
  "docid": "688",
@@ -12,43 +12,234 @@
  },
  "votes": [
   {
-   "motion": "to approve December 2, 2014 minutes, current expense vouchers, abatements, warrants, commitments & payroll",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "board reviewed and approved december 2, 2014 minutes, current expense vouchers, abatements, warrants, commitments & payroll."
-  },
-  {
-   "motion": "to grant abatements totaling $15,126.82",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "the board reviewed and granted the abatements totaling $15,126.82 on the following:"
-  },
-  {
-   "motion": "to grant the Chapter 61B application for 210 Island Rd",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "boa granted application."
-  },
-  {
-   "motion": "to grant the increase of acreage in Chapter 61B from 21.59 acres to 25.59 acres",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "boa reviewed and granted the increase of acreage."
-  },
-  {
-   "motion": "to approve the remaining three Chapter 61B applications and one Chapter 61A application",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "boa reviewed and approved the remaining three chapter 61b applications and one chapter 61a application."
-  },
-  {
-   "motion": "to meet next on Tuesday, February 3, 2015 at 5:45 pm",
+   "motion": "Board to meet next on Tuesday, February 3, 2015 at 5:45 pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the board voted to meet next on tuesday, february 3, 2015 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. Clear text; all votes have outcomes recorded. No moved_by or seconded_by names provided in minutes.",
- "cost_usd": 0.14436349999999998
+ "note": "Scanned OCR text, not a clean extraction. The abatement table is garbled (tax-abated amounts and bill numbers run together), so only the printed total is recorded as a figure. The minutes' signature block reads \"Laurie Paquette\" above \"Louise Paquette\"; the body names Louise Paquette. The Board's approval of the prior minutes, abatements and warrants, and its grants of the Chapter 61B/61A applications, are recorded without a motion, mover, seconder or vote count, so they are listed as decisions, not votes. The adjournment at 6:45 pm is recorded without a motion, so it is not listed as a vote. The February meeting vote has no mover, seconder or count. No public comment section is printed. The \"Louisiana\" tag above is an error and should be ignored.",
+ "cost_usd": 0.005499619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Papini, Sr.",
+   "status": "present",
+   "quote": "present: board members, matt papini, sr., christopher comeau,",
+   "role": "Board Member"
+  },
+  {
+   "name": "Christopher Comeau",
+   "status": "present",
+   "quote": "present: board members, matt papini, sr., christopher comeau,",
+   "role": "Board Member"
+  },
+  {
+   "name": "Harald Scheid",
+   "status": "present",
+   "quote": "regional assessor harald scheid and louise paquette, administrative assistant.",
+   "role": "Regional Assessor"
+  },
+  {
+   "name": "Louise Paquette",
+   "status": "present",
+   "quote": "regional assessor harald scheid and louise paquette, administrative assistant.",
+   "role": "Administrative Assistant"
+  },
+  {
+   "name": "Louis Franco",
+   "status": "absent",
+   "quote": "chairman, louis franco was not present.",
+   "role": "Chairman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved the December 2, 2014 minutes, current expense vouchers, abatements, warrants, commitments and payroll (no motion recorded).",
+   "quote": "board reviewed and approved december 2, 2014 minutes, current expense vouchers, abatements, warrants, commitments & payroll."
+  },
+  {
+   "decision": "Board reviewed and granted five RE abatements, four prepared by the office for administrative errors, totaling $15,126.82.",
+   "quote": "the board reviewed and granted the abatements totaling $15,126.82 on the following:"
+  },
+  {
+   "decision": "Chapter 61B application for 210 Island Rd (Map 23, Lot 24) granted on the revised application; Harald to notify the applicant and prepare lien.",
+   "quote": "boa granted application. harald will notify them of the boards' decision and prepare lien."
+  },
+  {
+   "decision": "Chapter 61B acreage increase for Drumm, William, 255 Sunny Hill Rd granted (21.59 to 25.59 acres); Harald to notify Mr. Dunn and request check for recording.",
+   "quote": "boa reviewed and granted the increase of acreage. harald to notify mr. dunn of decision and request check for recording."
+  },
+  {
+   "decision": "Remaining three Chapter 61B applications and one Chapter 61A application approved.",
+   "quote": "boa reviewed and approved the remaining three chapter 61b applications and one chapter 61a application."
+  },
+  {
+   "decision": "Harald to contact the owner of 422 Mulpus Road and suggest reclassifying from 61B to 61A; a new chapter lien will be recorded under the trust name either way.",
+   "quote": "he stated that he will contact property owner and suggest that the chapter classification be changed to 61a."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PP and RE bills committed (FY15)",
+   "what_was_recorded": "Louise reported 185 personal property bills were committed in a stated amount.",
+   "figures_as_printed": [
+    "$606,744.48"
+   ],
+   "quote": "185 pp bills were committed in the amount of $606,744.48 and 5055 re bills"
+  },
+  {
+   "topic": "RE bills total (FY15)",
+   "what_was_recorded": "Louise reported the 5055 real estate bills, including exempts, totaled a stated amount.",
+   "figures_as_printed": [
+    "$20, 397, 163.82"
+   ],
+   "quote": "5055 re bills (including exempts) totaled $20, 397, 163.82."
+  },
+  {
+   "topic": "FY15 tax rate",
+   "what_was_recorded": "The FY15 tax rate was stated.",
+   "figures_as_printed": [
+    "$18.32"
+   ],
+   "quote": "tax rate for fy15 is $18.32."
+  },
+  {
+   "topic": "Abatements granted",
+   "what_was_recorded": "Total of five RE abatements granted; four prepared by the office for administrative errors, including a DOR cost-table flaw affecting three concrete block foundation properties. The printed table lists individual tax-abated amounts that are garbled in the text.",
+   "figures_as_printed": [
+    "$15,126.82"
+   ],
+   "quote": "the board reviewed and granted the abatements totaling $15,126.82 on the following:"
+  },
+  {
+   "topic": "FY16 Assessor's Administration budget target",
+   "what_was_recorded": "The Town Manager's FY16 target budget for Assessor's Administration, at current revenue levels, was presented; it excludes possible increases to the Assistant Assessor and Admin Clerical salary lines.",
+   "figures_as_printed": [
+    "$148, 361.00"
+   ],
+   "quote": "the total assessor's administration budget target is $148, 361.00."
+  },
+  {
+   "topic": "FY16 salary increases not included",
+   "what_was_recorded": "Louise explained the FY16 expenditure figure does not include possible increases for the Assistant Assessor and Admin Clerical salary lines. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "louise explained that the expenditure does not include the possible increases for the assistant assessor & admin clerical salary administrative line items"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes, vouchers, warrants and payroll",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "warrants",
+    "payroll"
+   ],
+   "quote": "board reviewed and approved december 2, 2014 minutes, current expense vouchers, abatements, warrants, commitments & payroll."
+  },
+  {
+   "topic": "FY15 Real Estate and Personal Property bills",
+   "resolution": "reported",
+   "tags": [
+    "tax bills",
+    "FY15",
+    "tax rate"
+   ],
+   "quote": "louise reported that the actual fy15 real estate and personal property bills were mailed on december 26, 2014."
+  },
+  {
+   "topic": "RE abatement applications",
+   "resolution": "granted",
+   "tags": [
+    "abatements"
+   ],
+   "quote": "the board reviewed and granted the abatements totaling $15,126.82 on the following:"
+  },
+  {
+   "topic": "Chapter 61B/61A applications",
+   "resolution": "granted or approved",
+   "tags": [
+    "chapter 61A",
+    "chapter 61B",
+    "open space"
+   ],
+   "quote": "boa granted application. harald will notify them of the boards' decision and prepare lien."
+  },
+  {
+   "topic": "Personal property forms of list",
+   "resolution": "reported",
+   "tags": [
+    "personal property"
+   ],
+   "quote": "louise reported that 474 personal property forms of list have been prepared and mailed."
+  },
+  {
+   "topic": "FY16 proposed budget update",
+   "resolution": "presented, no action recorded",
+   "tags": [
+    "FY16 budget",
+    "budget target"
+   ],
+   "quote": "harald presented an update of the fy16 proposed budget detail spreadsheet which was forwarded to him by the town manager."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "next meeting set for February 3, 2015",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "the board voted to meet next on tuesday, february 3, 2015 at 5:45 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY16 proposed budget detail spreadsheet",
+   "where": "text",
+   "quote": "harald presented an update of the fy16 proposed budget detail spreadsheet which was forwarded to him by the town manager."
+  },
+  {
+   "name": "Five RE abatement applications",
+   "where": "text",
+   "quote": "harald presented five re abatement applications; four which were prepared by the office due to"
+  },
+  {
+   "name": "Chapter 61B revised application, 210 Island Rd (Map 23, Lot 24)",
+   "where": "text",
+   "quote": "the application was revised and states as follows: 1) recreational land open to public;"
+  },
+  {
+   "name": "Chapter 61B application, Drumm, William, 255 Sunny Hill Rd (Map 92, Lot 35)",
+   "where": "text",
+   "quote": "application indicated that he wishes to increase the acreage in chapter from 21.59 acres to 25.59 acres."
+  },
+  {
+   "name": "Chapter 61B application, 422 Mulpus Road",
+   "where": "text",
+   "quote": "the application indicates agricultural use not recreational."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "chapter 61A",
+  "chapter 61B",
+  "personal property",
+  "tax bills",
+  "tax rate",
+  "FY15",
+  "FY16 budget",
+  "Louisiana"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald presented an update of the fy16 proposed budget detail spreadsheet"
+ },
+ "dropped_unquoted_by_field": {}
 }

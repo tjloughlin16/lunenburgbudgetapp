@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-08-13",
  "docid": "1818",
@@ -12,25 +12,361 @@
  },
  "votes": [
   {
-   "motion": "Approve the June 11, 2013 minutes with correction",
-   "moved_by": "Jane Doyle",
-   "seconded_by": "Joyce Wass",
-   "outcome": "passed 5-0",
+   "motion": "Approve the June 11, 2013 minutes, with a correction to New Business.",
+   "moved_by": "Ms. Doyle",
+   "seconded_by": "Ms. Wass",
+   "outcome": "passed, 5 in favor, 0 opposed",
    "procedural": true,
-   "quote": "ms. doyle moved to approve the june 11, 2013 minute s, with correction. ms. wass seconded. on vote, motion carried, 5 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to approve the june 11, 2013 minute s, with correction. ms. wass seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Adjourn the COA meeting",
-   "moved_by": "Jane Doyle",
-   "seconded_by": "Joyce Wass",
-   "outcome": "passed 5-0",
+   "motion": "Adjourn the COA meeting.",
+   "moved_by": "Ms. Doyle",
+   "seconded_by": "Ms. Wass",
+   "outcome": "passed, 5 in favor 0 opposed",
    "procedural": true,
-   "quote": "ms. doyle moved to adjourn the coa meeting. ms. wa ss seconded. on vote motion carried, 5 in favor 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to adjourn the coa meeting. ms. wa ss seconded. on vote motion carried, 5 in favor 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0877445
+ "note": "Text is extracted from a scan-like source with broken words and stray spaces (for example \"Pe rspective\", \"Wa ss\"); quotes copy the printed spacing. The header says the minutes were approved at the 9/10/13 COA meeting. Only two motions are recorded (minutes approval and adjournment), both 5-0. No public comment section is printed. Guests are listed in the attendance line and are recorded as present. The $8500 transfer was reported as completed with no vote recorded.",
+ "cost_usd": 0.00885442,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson)"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "respectfully submitted barbara brown vice chairperson"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle, connie o'dea, joyce wass."
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle, connie o'dea, joyce wass."
+  },
+  {
+   "name": "Connie O’Dea",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle, connie o'dea, joyce wass."
+  },
+  {
+   "name": "Joyce Wass",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle, connie o'dea, joyce wass."
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "absent",
+   "quote": "excused: deb seeley, whitney lacka, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Whitney Lacka",
+   "status": "absent",
+   "quote": "excused: deb seeley, whitney lacka, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "absent",
+   "quote": "excused: deb seeley, whitney lacka, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Marion Benson",
+   "role": "Director Lunenburg Planning Board",
+   "status": "present",
+   "quote": "marion benson, director lunenburg planning board, lloyd carlson (supporters of eagle house)"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Supporters of Eagle House",
+   "status": "present",
+   "quote": "marion benson, director lunenburg planning board, lloyd carlson (supporters of eagle house)"
+  },
+  {
+   "name": "Tony Bertoni",
+   "status": "present",
+   "quote": "tony and shirley bertoni, judy tarbell, (pe rspective coa board members)"
+  },
+  {
+   "name": "Shirley Bertoni",
+   "status": "present",
+   "quote": "tony and shirley bertoni, judy tarbell, (pe rspective coa board members)"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "Pe rspective COA Board Members",
+   "status": "present",
+   "quote": "tony and shirley bertoni, judy tarbell, (pe rspective coa board members)"
+  },
+  {
+   "name": "Karen Menard",
+   "role": "FinCom",
+   "status": "present",
+   "quote": "karen menard (fincom), and brook hansel (student)."
+  },
+  {
+   "name": "Brook Hansel",
+   "role": "Student",
+   "status": "present",
+   "quote": "karen menard (fincom), and brook hansel (student)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Reorganize Sub-Committees was tabled to the September meeting.",
+   "quote": "reorganize sub-committees: tabled to september meeting."
+  },
+  {
+   "decision": "MART Representative item was continued to the September meeting.",
+   "quote": "mart representative: continued to september meeting."
+  },
+  {
+   "decision": "Whether the Advocacy Committee presented a year-end report for FY13 is to be investigated further.",
+   "quote": "this will be investigated further."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Utilities moved to Public Works budget",
+   "what_was_recorded": "$8500 for Utilities was transferred from the COA budget to the Public Works budget and will be paid through their account in the future.",
+   "figures_as_printed": [
+    "$8500"
+   ],
+   "quote": "from the coa budget and will be paid though their account in the future."
+  },
+  {
+   "topic": "State funding for the COA",
+   "what_was_recorded": "State funding rose from $10,500 when Ms. Noble started as Director to $16,800 now.",
+   "figures_as_printed": [
+    "$10,500",
+    "$16,800"
+   ],
+   "quote": "when ms. noble started as director, state funding was $10,500 and is now $16,800."
+  },
+  {
+   "topic": "Breakfast Program fee",
+   "what_was_recorded": "The Breakfast Program starting October 1 may charge a fee of $1 to $1.25, not yet set; the fee will be underwritten by Formula Grant.",
+   "figures_as_printed": [
+    "$1 to $1.25"
+   ],
+   "quote": "the final dollar amount for this program may be $1 to $1.25, but has not been set yet."
+  },
+  {
+   "topic": "FY13 budget surplus",
+   "what_was_recorded": "There is a surplus from the FY13 budget of 98 cents.",
+   "figures_as_printed": [
+    "98 cents"
+   ],
+   "quote": "there is a surplus from the fy13 budget of 98 cents."
+  },
+  {
+   "topic": "FY14 budget and Formula Grant",
+   "what_was_recorded": "The FY14 budget is commencing and the Formula Grant is being worked on; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the fy14 budget is commencing and the formula grant is being worked on."
+  },
+  {
+   "topic": "Bocci court funding",
+   "what_was_recorded": "Ms. Noble said some of the funds for the volunteer Bocci Court could come out of the FY13 budget; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. noble said that some of these funds could come out of the fy13 budget."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Utilities costs moved from the COA budget to the Public Works budget, paid through the Public Works account.",
+   "outcome": "Reported at the meeting as already transferred; no vote recorded.",
+   "amount_as_printed": "$8500",
+   "quote": "from the coa budget and will be paid though their account in the future."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "opened at 10:30AM; no action",
+   "quote": "ms. conrad (chairperson) opened the meeting at 10:30am.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of June 11, 2013",
+   "resolution": "approved with correction",
+   "quote": "ms. wass seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "5 Year Plan for Municipality (Marion Benson, Planning Director)",
+   "resolution": "presented citizens survey; COA thanked presenter; no action",
+   "quote": "the coa board thanked ms. benson for her presentation.",
+   "tags": [
+    "master plan",
+    "survey",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; no action",
+   "quote": "farmer's market coupons have been distributed to 50 seniors and moc nutrition will give us any",
+   "tags": [
+    "director report",
+    "utilities",
+    "outreach",
+    "nutrition",
+    "state funding",
+    "breakfast program"
+   ]
+  },
+  {
+   "topic": "Old Business: Recreation Area Behind Eagle House",
+   "resolution": "discussed; Bocci Court proposed; no action recorded",
+   "quote": "ms. noble said that some of these funds could come out of the fy13 budget.",
+   "tags": [
+    "Eagle House",
+    "Bocci court",
+    "FY13 budget"
+   ]
+  },
+  {
+   "topic": "Old Business: Building Re-Use Committee",
+   "resolution": "report read; discussed",
+   "quote": "refurbishing the passios building for town offices.",
+   "tags": [
+    "building re-use",
+    "town offices"
+   ]
+  },
+  {
+   "topic": "Old Business: MART Representative",
+   "resolution": "continued to September meeting",
+   "quote": "mart representative: continued to september meeting.",
+   "tags": [
+    "MART"
+   ]
+  },
+  {
+   "topic": "New Business: 5 Year Plan for Municipality",
+   "resolution": "discussed out of order after Minutes; see earlier item",
+   "quote": "discussed out of order after minutes.",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "New Business: Volunteer Recognition Report",
+   "resolution": "reported; no action",
+   "quote": "was recognized posthumously for her many years of service.",
+   "tags": [
+    "volunteers",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "New Business: FY13 Budget Report",
+   "resolution": "reported surplus; no action",
+   "quote": "there is a surplus from the fy13 budget of 98 cents.",
+   "tags": [
+    "FY13 budget",
+    "surplus"
+   ]
+  },
+  {
+   "topic": "New Business: FY14 Budget",
+   "resolution": "reported; Formula Grant in progress",
+   "quote": "the fy14 budget is commencing and the formula grant is being worked on.",
+   "tags": [
+    "FY14 budget",
+    "formula grant"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Reports/Minutes",
+   "resolution": "Reorganize Sub-Committees tabled to September; Advocacy report to be investigated",
+   "quote": "reorganize sub-committees: tabled to september meeting.",
+   "tags": [
+    "sub-committees",
+    "advocacy",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "thank-you note read; no action",
+   "quote": "ms. conrad read a thank you note from ms. montou",
+   "tags": [
+    "correspondence",
+    "Christmas tree decorating"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "offers of loaned decorations; no action",
+   "quote": "ms. conrad offered the loan of her \"masks\" for the halloween season.",
+   "tags": [
+    "decorations",
+    "volunteers",
+    "student recognition"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:45AM",
+   "quote": "meeting adjourned at 11:45am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Citizens Survey for the Lunenburg Master Plan (sample, not final draft)",
+   "where": "text",
+   "quote": "ms. benson passed out a citizens survey for the lunenburg master plan"
+  },
+  {
+   "name": "Report from Deb Seeley, COA Representative to the Building Re-Use Committee",
+   "where": "text",
+   "quote": "ms. noble read a report from deb seeley,"
+  },
+  {
+   "name": "Thank you note from Ms. Montou(ri)",
+   "where": "text",
+   "quote": "ms. conrad read a thank you note from ms. montou"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "budget",
+  "utilities transfer",
+  "state funding",
+  "formula grant",
+  "minutes approval",
+  "master plan",
+  "Eagle House",
+  "volunteers",
+  "sub-committees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

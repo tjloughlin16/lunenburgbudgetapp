@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-02-06",
  "docid": "2550",
@@ -10,17 +10,204 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02062014-2550",
   "doc_url": "/docs/meetings/historical-commission/2014-02-06-minutes-2550.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "No motions or votes are recorded anywhere in the minutes, including approval of the 1/16/14 minutes and adjournment; approvals are recorded only as stated outcomes. Text is OCR with artifacts (e.g., 'RL DTM al' on page 1). 'Beck' in the Newspaper Articles item is presumably Becky Lantry, not a separate attendee. The Marshalls and the Jones house are subjects of discussion, not attendees. No dollar figures appear in the minutes.",
+ "cost_usd": 0.00377662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Minutes from January 16, 2014 approved as submitted",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes from 1/16/14 approved as submitted",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Becky Lantry",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction via macOS Vision. One vote recorded: approval of prior minutes. No other motions or votes identified in the document.",
- "cost_usd": 0.0833555
+ "decisions": [
+  {
+   "decision": "Minutes of 1/16/14 approved as submitted (no motion or vote recorded).",
+   "quote": "minutes from 1/16/14 approved as submitted"
+  },
+  {
+   "decision": "Damon McQuaid to make minor updates to the Form B's and prepare them for submittal.",
+   "quote": "town wide survey damon to make minor updates to the form b's and prepare them for submittal."
+  },
+  {
+   "decision": "Newspaper articles assigned: Richard McGrath and Damon McQuaid for March, Amory Phelps for April, Becky (Beck) for May.",
+   "quote": "newspaper articles richard and damon to write for march"
+  },
+  {
+   "decision": "Becky Lantry to update the Annual Town Report draft per comments made and submit the final copy to the town clerk.",
+   "quote": "she will update the draft per the comments made and submit the finial copy to the town clerk."
+  },
+  {
+   "decision": "Cemetery Commission Letter deferred to the next meeting.",
+   "quote": "cemetery commission letter to be discussed next meeting"
+  },
+  {
+   "decision": "Commission needs to weigh in on the Marshalls' request for a Certificate of Compliance and get an answer back to the town manager.",
+   "quote": "the commission needs to weigh in on the subject and get an answer back to the town manager."
+  },
+  {
+   "decision": "Richard McGrath plans to survey required work at the town pound and Fish Street cemetery and develop a remediation plan.",
+   "quote": "he plans to do a survey of required work and develop a plan for remediation."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order 6:10 PM",
+   "quote": "meeting called to order february 6, 2014 @ 6:10 pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes Approval",
+   "resolution": "approved 1/16/14 minutes as submitted",
+   "quote": "minutes from 1/16/14 approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comment and Correspondence",
+   "resolution": "no action; none received",
+   "quote": "public comment: none correspondence and communications: none",
+   "tags": [
+    "public comment",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Wide Survey",
+   "resolution": "Form B's to be updated and submitted",
+   "quote": "town wide survey damon to make minor updates to the form b's and prepare them for submittal.",
+   "tags": [
+    "town-wide survey",
+    "form B"
+   ]
+  },
+  {
+   "topic": "Old Business: Newspaper Articles",
+   "resolution": "authors assigned for March, April, May",
+   "quote": "newspaper articles richard and damon to write for march",
+   "tags": [
+    "newspaper articles"
+   ]
+  },
+  {
+   "topic": "Old Business: Annual Town Report",
+   "resolution": "draft presented; Becky to finalize and submit to town clerk",
+   "quote": "becky presented a draft to the commission.",
+   "tags": [
+    "annual town report"
+   ]
+  },
+  {
+   "topic": "Old Business: Cemetery Commission Letter",
+   "resolution": "continued to next meeting",
+   "quote": "cemetery commission letter to be discussed next meeting",
+   "tags": [
+    "cemetery",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "New Business: Jones house / Marshall Certificate of Compliance",
+   "resolution": "Commission to weigh in and respond to town manager; no vote recorded",
+   "quote": "review of the work done of the jones house.",
+   "tags": [
+    "Jones house",
+    "certificate of compliance",
+    "land development agreement"
+   ]
+  },
+  {
+   "topic": "New Business: Town pound and Fish Street cemetery",
+   "resolution": "Richard to survey repairs and develop remediation plan",
+   "quote": "richard has noted that the town pound and the fish street cemetery are in states of disrepair.",
+   "tags": [
+    "town pound",
+    "cemetery",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "no action; none",
+   "quote": "board and public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Meeting Adjournment",
+   "resolution": "adjourned 6:55pm; next meeting March 4, 2014",
+   "quote": "meeting adjourned @ 6:55pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form B's (Town Wide Survey)",
+   "where": "text",
+   "quote": "damon to make minor updates to the form b's and prepare them for submittal."
+  },
+  {
+   "name": "Annual Town Report draft",
+   "where": "text",
+   "quote": "becky presented a draft to the commission."
+  },
+  {
+   "name": "Cemetery Commission Letter",
+   "where": "text",
+   "quote": "cemetery commission letter to be discussed next meeting"
+  },
+  {
+   "name": "Land Development Agreement between the Marshalls and the Town",
+   "where": "text",
+   "quote": "the marshalls are looking for a certificate of compliance for their land development agreement with the town."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "town-wide survey",
+  "annual town report",
+  "newspaper articles",
+  "Jones house",
+  "certificate of compliance",
+  "cemeteries",
+  "town pound",
+  "repairs"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

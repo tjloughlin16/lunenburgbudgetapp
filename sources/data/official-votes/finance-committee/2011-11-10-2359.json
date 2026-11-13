@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-11-10",
  "docid": "2359",
@@ -12,47 +12,269 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the October 27, 2011 meeting as submitted",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "John Male",
+   "motion": "Accept the minutes of the 10/27/11 meeting as submitted.",
+   "moved_by": "BL",
    "outcome": "passed",
    "procedural": true,
-   "quote": "bl made a motion to accept the minutes of the 10/27/11 meeting as submitted; jm seconded; all approved"
+   "quote": "bl made a motion to accept the minutes of the 10/27/11 meeting as submitted; jm seconded; all approved",
+   "seconded_by": "JM"
   },
   {
-   "motion": "Accept the salary reserve transfer request for $7,320 buyback of sick and vacation time for retiring sergeant Ernest Gould",
-   "moved_by": "John Male",
-   "seconded_by": "Brian Laffond",
+   "motion": "Accept the salary reserve transfer requested ($7,320 buy back of sick and vacation time for retiring sergeant Ernest Gould).",
+   "moved_by": "JM",
    "outcome": "passed",
    "procedural": false,
-   "quote": "jm made motion to accept the transfer requested, bl seconded, all approved"
+   "quote": "jm made motion to accept the transfer requested, bl seconded, all approved",
+   "seconded_by": "BL"
   },
   {
-   "motion": "Recommend approval in the amount of $8,265 for Attorney Dan Hill expenses",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "John Male",
+   "motion": "Recommend approval in the amount of $8265 for Attorney Dan Hill expenses (Article A).",
+   "moved_by": "BL",
    "outcome": "passed",
    "procedural": false,
-   "quote": "bl moves we recommend approval in the amount of $8265 for attorney dan hill expenses, jm seconded, all approved"
+   "quote": "bl moves we recommend approval in the amount of $8265 for attorney dan hill expenses, jm seconded, all approved",
+   "seconded_by": "JM"
   },
   {
-   "motion": "Rescind the $456,927.87 in previously authorized borrowing",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "John Male",
+   "motion": "Recommend rescinding the $456,927.87 borrowing authorization (Article D housekeeping item).",
+   "moved_by": "BL",
    "outcome": "passed",
    "procedural": false,
-   "quote": "bl recommends we rescind the $456,927.87, jm seconded, all approved"
+   "quote": "bl recommends we rescind the $456,927.87, jm seconded, all approved",
+   "seconded_by": "JM"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "John Male",
+   "motion": "Adjourn the meeting at 9:51 pm.",
+   "moved_by": "BL",
    "outcome": "passed",
    "procedural": true,
-   "quote": "bl made a motion to adjourn at 9:51 pm, jm seconded; all in favor"
+   "quote": "bl made a motion to adjourn at 9:51 pm, jm seconded; all in favor",
+   "seconded_by": "JM"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0871325
+ "note": "OCR text from a two-page scan with noise (e.g. 'noved.', garbled received stamps). The attendance block lists 'Absent:' and 'Attendees:' together, so which names were absent is read from the layout: Barbara Reynolds and Scott Gile are listed as absent; Karen Brochu's status is not stated. Initials (BL, JM) are printed as such and not expanded. Article D and Article A votes are recorded as 'all approved' following a recommendation, not a 'motion' label; they are recorded as votes with outcome 'passed'. Vote quotes were checked against the OCR text with line breaks collapsed.",
+ "cost_usd": 0.00521372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, mark erickson, john male"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, mark erickson, john male"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes respectfully submitted by martha mcdonald"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: brian laffond, martha mcdonald, mark erickson, john male"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: attendees: barbara reynolds, scott gile karen brochu"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: attendees: barbara reynolds, scott gile karen brochu"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "",
+   "status": "not stated",
+   "quote": "absent: attendees: barbara reynolds, scott gile karen brochu"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee requested a schedule of the maximum sick leave/buy back amounts for eligible time.",
+   "quote": "committee requested schedule of the maximum sick leave/buy back amounts for eligible time"
+  },
+  {
+   "decision": "No action taken tonight on Article E.",
+   "quote": "article e - we have $22k additional funds in new growth estimate monies; will not take action tonight"
+  },
+  {
+   "decision": "Capital Planning's next meeting will cover the Library and Council on Aging requests.",
+   "quote": "the next meeting will cover the library and council on aging requests"
+  },
+  {
+   "decision": "Town Accountant proposed using the current year's legal budget for the Attorney Dan Hill invoice.",
+   "quote": "propose using current year's legal budget"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Salary reserve transfer for retiring sergeant buy back",
+   "what_was_recorded": "A salary reserve transfer request for a buy back of sick and vacation time for a retiring sergeant was handed out and approved; the committee asked for a schedule of maximum buy back amounts.",
+   "figures_as_printed": [
+    "$7,320"
+   ],
+   "quote": "request for $7,320 buy back of sick and vacation time for retiring sergeant, ernest gould"
+  },
+  {
+   "topic": "Supplemental tax collections",
+   "what_was_recorded": "Supplemental tax collections year to date were reported against budget.",
+   "figures_as_printed": [
+    "$88K",
+    "$50K"
+   ],
+   "quote": "supplemental tax collections are at $88k ytd compared to budget of $50k"
+  },
+  {
+   "topic": "Unplanned expenses - oil tank removal",
+   "what_was_recorded": "An unplanned expense of $6K to remove an oil tank at a closed gas station was reported.",
+   "figures_as_printed": [
+    "$6K"
+   ],
+   "quote": "including $6k to remove oil tank at closed gas station"
+  },
+  {
+   "topic": "Article A - Attorney Dan Hill expenses",
+   "what_was_recorded": "The board recommended approval of $8265 for Attorney Dan Hill's expenses, an invoice received after fiscal year end that must be approved at Town Meeting.",
+   "figures_as_printed": [
+    "$8265"
+   ],
+   "quote": "bl moves we recommend approval in the amount of $8265 for attorney dan hill expenses"
+  },
+  {
+   "topic": "Article D - rescind borrowing authorization",
+   "what_was_recorded": "The board recommended rescinding an amount approved to be borrowed but not needed.",
+   "figures_as_printed": [
+    "$456,927.87"
+   ],
+   "quote": "bl recommends we rescind the $456,927.87, jm seconded, all approved"
+  },
+  {
+   "topic": "Article E - New Growth Estimate monies",
+   "what_was_recorded": "Additional New Growth Estimate funds were noted; no action taken tonight.",
+   "figures_as_printed": [
+    "$22K"
+   ],
+   "quote": "we have $22k additional funds in new growth estimate monies; will not take action tonight"
+  },
+  {
+   "topic": "Storm clean-up",
+   "what_was_recorded": "Storm debris clean-up on private and public land was estimated at a range of cost.",
+   "figures_as_printed": [
+    "$155K - 232K"
+   ],
+   "quote": "storm debris on private and public land estimated to cost $155k - 232k to clean-up"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Salary reserve transfer to buy back sick and vacation time for retiring sergeant Ernest Gould",
+   "outcome": "approved",
+   "amount_as_printed": "$7,320",
+   "quote": "jm made motion to accept the transfer requested, bl seconded, all approved"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and review of minutes",
+   "resolution": "minutes of 10/27/11 approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "bl made a motion to accept the minutes of the 10/27/11 meeting as submitted; jm seconded; all approved"
+  },
+  {
+   "topic": "Committee/Department Reports",
+   "resolution": "reports received; no action",
+   "tags": [
+    "capital planning",
+    "Monty Tech",
+    "service levels",
+    "school reconfiguration"
+   ],
+   "quote": "capital planning - met last week and discussed requests from police and fire departments"
+  },
+  {
+   "topic": "Town Accountant's Quarterly Report",
+   "resolution": "salary reserve transfer approved; revenues report received",
+   "tags": [
+    "salary reserve",
+    "revenues",
+    "expenditures"
+   ],
+   "quote": "handout: salary reserve transfer request; request for $7,320 buy back of sick and vacation time"
+  },
+  {
+   "topic": "Town Manager Updates",
+   "resolution": "Article A recommended; Article D rescission recommended; Article E no action; other items discussed",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "storm clean-up",
+    "FY13 budget",
+    "DPW facility",
+    "service levels"
+   ],
+   "quote": "article a - bl moves we recommend approval in the amount of $8265 for attorney dan hill expenses"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:51 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "bl made a motion to adjourn at 9:51 pm, jm seconded; all in favor"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Salary Reserve Transfer Request",
+   "where": "list",
+   "quote": "handout: salary reserve transfer request; request for $7,320 buy back of sick and vacation time"
+  },
+  {
+   "name": "Revenues and Expenditures Report through 9/30/11",
+   "where": "list",
+   "quote": "handout: revenues and expenditures report through 9/30/11"
+  },
+  {
+   "name": "Warrant for STM",
+   "where": "list",
+   "quote": "handout: warrant for stm going to print tomorrow"
+  },
+  {
+   "name": "Worksheet looking at service, variable, metric and performance",
+   "where": "list",
+   "quote": "handout: worksheet looking at service, variable, metric and performance"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "special town meeting warrant",
+  "salary reserve",
+  "capital planning",
+  "storm clean-up",
+  "DPW facility",
+  "service levels",
+  "budget",
+  "tax collections"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout"
+ },
+ "dropped_unquoted_by_field": {}
 }

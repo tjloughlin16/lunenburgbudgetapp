@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2014-12-01",
  "docid": "921",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve variance for 154 West Street septic system to allow three foot offset to groundwater instead of four feet",
+   "motion": "Approve the variance for 154 West Street (three foot offset to groundwater instead of four feet).",
    "moved_by": "Shea",
    "seconded_by": "Passios",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "after discussion and on motion by shea and second by passios, the variance was approved. all in favor."
   },
   {
-   "motion": "Approve variances for 14 Broadmeadow Drive septic system to allow offset to groundwater from 4 feet to 3 feet and foundation to leach field from 20 feet to 15.5 feet",
+   "motion": "Approve the variances for 14 Broadmeadow Drive (offset to groundwater from 4 feet to 3 feet; foundation to leach field from 20 feet to 15.5 feet).",
    "moved_by": "Passios",
    "seconded_by": "Shea",
    "outcome": "passed",
@@ -29,6 +29,200 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Text quality is reasonable but some OCR artifacts visible (e.g., \"septicipermit\" for \"septic permit\"). No votes recorded for approval of prior minutes or adjournment—both stated as fact without motion language.",
- "cost_usd": 0.08725450000000001
+ "note": "Text is OCR (macOS Vision) with many garbled words (e.g., \"Mir. Brogdan\", \"Broadan\", \"noiother\", \"falled title 5\"); quotes copy the OCR text as printed. No motion is printed for minutes approval or adjournment, so they are recorded as topics/decisions, not votes. The variance votes print \"All in favor\" with no count. No dollar figures, transfers, or public comment section appear. No document list heading is printed; the Title 5 reports and septic permits appear under acknowledgement/signing headings and are recorded as list items.",
+ "cost_usd": 0.00438952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, dave shea, perry jewell and dave passios"
+  },
+  {
+   "name": "Lee Brogdan",
+   "role": "property owner",
+   "status": "present",
+   "quote": "the property owner, lee brogdan met with the board to discuss finishing the space over his"
+  },
+  {
+   "name": "Jay Beiry",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "jay beiry and doug smith met with the board of behalf of the owner."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "jay beiry and doug smith met with the board of behalf of the owner."
+  },
+  {
+   "name": "Mike Hayes",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "mike hayes, owner of the property, met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for 47 Highland Street, 918 Chase Road and 500 Holman Street were acknowledged.",
+   "quote": "title 5 inspection reports acknowledged: 47 highland street 918 chase road 500 holman street"
+  },
+  {
+   "decision": "Septic permits for 14 Broadmeadow Drive and 754 West Street were signed.",
+   "quote": "septic permits signed: 14 broadmeadow drive 754 west street"
+  },
+  {
+   "decision": "Board advised Mr. Brogdan (591 Townsend Harbor Road) that he can consolidate existing bedrooms and add the space over the garage, or increase the septic system size for the added bedroom.",
+   "quote": "after discussion, the board advised that mir. brogdan can consolidate existing bedrooms and add"
+  },
+  {
+   "decision": "Mr. Brogdan will research his options and return to the board when he is ready.",
+   "quote": "mr, brogdan advised that he will research his options and come back to the board when he is ready:"
+  },
+  {
+   "decision": "Board suggested Mr. Hayes (425 Leominster Road) explore the feasibility of expanding his septic system to accommodate a fourth bedroom.",
+   "quote": "after discussion, the board suggested that mr. hayes explore the feasibility"
+  },
+  {
+   "decision": "Minutes of November 3, 2014 and November 17, 2014 shown as approved; no motion or vote count is printed.",
+   "quote": "minutes approved: november 3, 2014 november 17, 2014"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (no motion or count printed)",
+   "quote": "minutes approved: november 3, 2014 november 17, 2014",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 47 highland street 918 chase road 500 holman street",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed: 14 broadmeadow drive 754 west street",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "591 Townsend Harbor Road (finishing space over garage)",
+   "resolution": "no action; applicant to research options and return",
+   "quote": "after discussion, the board advised that mir. brogdan can consolidate existing bedrooms and add",
+   "tags": [
+    "bedrooms",
+    "septic",
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "154 West Street variance",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by shea and second by passios, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "groundwater offset"
+   ]
+  },
+  {
+   "topic": "14 Broadmeadow Drive variances",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by passios and second by shea, the variances were approved",
+   "tags": [
+    "variance",
+    "Presby system",
+    "failed Title 5"
+   ]
+  },
+  {
+   "topic": "425 Leominster Road (garage with finished space above)",
+   "resolution": "no action; applicant to explore expanding system",
+   "quote": "after discussion, the board suggested that mr. hayes explore the feasibility",
+   "tags": [
+    "bedrooms",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 pm",
+   "quote": "having noiother business before the board, meeting adjourned at 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 47 Highland Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 highland street 918 chase road 500 holman street"
+  },
+  {
+   "name": "Title 5 inspection report, 918 Chase Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 highland street 918 chase road 500 holman street"
+  },
+  {
+   "name": "Title 5 inspection report, 500 Holman Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 highland street 918 chase road 500 holman street"
+  },
+  {
+   "name": "Septic permit, 14 Broadmeadow Drive",
+   "where": "list",
+   "quote": "septic permits signed: 14 broadmeadow drive 754 west street"
+  },
+  {
+   "name": "Septic permit, 754 West Street",
+   "where": "list",
+   "quote": "septic permits signed: 14 broadmeadow drive 754 west street"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variance",
+  "bedroom count",
+  "septic permits",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged"
+ },
+ "dropped_unquoted_by_field": {}
 }

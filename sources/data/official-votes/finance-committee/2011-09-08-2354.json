@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-09-08",
  "docid": "2354",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes from August 11, 2011",
+   "motion": "Accept the minutes of the 8.11.11 meeting.",
    "moved_by": "BL",
    "seconded_by": "MM",
    "outcome": "passed",
    "procedural": true,
-   "quote": "bl moves we accept minutes, mm seconds, all approved"
+   "quote": "reviewed minutes from 8.11.11 meeting; bl moves we accept minutes, mm seconds, all approved"
   },
   {
-   "motion": "accept the minutes from August 25, 2011 as submitted",
-   "moved_by": "BL",
+   "motion": "Accept the minutes of the 8.25.11 meeting as submitted.",
+   "moved_by": "BL.",
    "seconded_by": "MM",
    "outcome": "passed",
    "procedural": true,
-   "quote": "bl. moves we accept minutes as submitted, mm seconds, all approved"
+   "quote": "reviewed minutes from 8.25.11 meeting; bl. moves we accept minutes as submitted, mm seconds, all approved"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 9:35 pm.",
    "moved_by": "JM",
    "seconded_by": "BL",
    "outcome": "passed",
@@ -36,7 +36,277 @@
    "quote": "jm made motion to adjourn at 9:35 pm, bl seconded, all approved"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR via macOS Vision",
- "cost_usd": 0.10071150000000001
+ "dropped_unquoted": 6,
+ "note": "OCR text, not a scan. Page 1 has a garbled line near the bottom (\"no...r.an\") that could not be read. The minutes print no vote tallies beyond \"all approved\". Kerry Speidel's title is not printed. No public comment section appears in the text. The minutes name no documents list.",
+ "cost_usd": 0.006481819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [
+  {
+   "decision": "Regional dispatch to be re-examined on Thursday, October 6 with additional data: current costs, Lunenburg adding a second dispatcher, regionalizing with two dispatchers, and regionalizing with three dispatchers.",
+   "quote": "on thursday, october 6 we will relook at additional data on regional dispatch (look at current costs, lunenburg adding a second dispatcher"
+  },
+  {
+   "decision": "Regional Dispatch removed from the Committee Report list.",
+   "quote": "regional dispatch - remove from committee report list"
+  },
+  {
+   "decision": "Next meeting set for September 22, with the Pavement Management Plan presented and a draft of the annual calendar.",
+   "quote": "next meeting - september 22 with pavement management plan presented and draft of annual calendar"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Regional dispatch proposal costs and savings",
+   "what_was_recorded": "Costs will rise due to new regulations and added call volume, and the committee said it needs savings data before deciding.",
+   "figures_as_printed": [],
+   "quote": "ks pointed out costs will increase due to new regulations and added call volume"
+  },
+  {
+   "topic": "Hurricane Irene storm expenditures and reimbursement",
+   "what_was_recorded": "The town spent $12.6K on the storm, mostly staff overtime, and expects 75% of expenditures to be reimbursed under the state of emergency.",
+   "figures_as_printed": [
+    "$12.6K",
+    "75%"
+   ],
+   "quote": "spent $12.6k for the storm, primarily for overtime for staff called in"
+  },
+  {
+   "topic": "Ice storm reimbursement",
+   "what_was_recorded": "A 12.5% reimbursement is in the governor's budget, worth $120K, and must still pass the House and Senate.",
+   "figures_as_printed": [
+    "12.5%",
+    "$120K"
+   ],
+   "quote": "12.5% reimbursement is back in governor's budget ($120k)"
+  },
+  {
+   "topic": "Mass Avenue gas station abandoned property tanks",
+   "what_was_recorded": "Clean Harbor is to pump and dispose of fuel in the tanks at a cost of $5K, and KS will ask to pay for it from the reserve.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "clean harbor scheduled tomorrow to pump and dispose of gas in tanks at a cost of $5k"
+  },
+  {
+   "topic": "Police injured-on-duty insurance",
+   "what_was_recorded": "The annual cost of this insurance has risen from $25K to $75K because of the town's losses, and few companies carry this coverage.",
+   "figures_as_printed": [
+    "$25K",
+    "$75K"
+   ],
+   "quote": "cost has increased from $25k to $75k annually due to our losses"
+  },
+  {
+   "topic": "DPW project change order",
+   "what_was_recorded": "A change order of $26K adds load-bearing walls missed on the plan, paid from the established project contingency funds; the doors out for rebid are expected to cost less.",
+   "figures_as_printed": [
+    "$26K"
+   ],
+   "quote": "requires change order of $26k to add some load- bearing walls; money will come out of established project contingency fund",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Summer Street project grant design costs",
+   "what_was_recorded": "Senator Flanagan committed to an amendment to have 20% design costs included in the grant plan.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "senator flanagan committed to make amendment to have 20% design costs in grant plan"
+  },
+  {
+   "topic": "Debt service levels",
+   "what_was_recorded": "JM requested an updated projection of debt service levels.",
+   "figures_as_printed": [],
+   "quote": "jm requested updated projection on debt service levels"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Regional dispatch proposal",
+   "resolution": "continued; further data review set for October 6",
+   "quote": "2) review regional dispatch proposal - bl noted we need additional information, particularly savings data",
+   "tags": [
+    "regional dispatch",
+    "savings",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted",
+   "quote": "association of town finance committee members annual meeting on october 15 in franklin, ma",
+   "tags": [
+    "training",
+    "association"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 8.11.11 and 8.25.11 meetings",
+   "quote": "reviewed minutes from 8.11.11 meeting; bl moves we accept minutes, mm seconds, all approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; Regional Dispatch removed from list; no action",
+   "quote": "service level team - tentatively scheduled to meet next week but waiting to hear from schools",
+   "tags": [
+    "school regionalization",
+    "reconfiguration committee",
+    "council on aging",
+    "service level team"
+   ]
+  },
+  {
+   "topic": "FY11 end-of-year close",
+   "resolution": "reported; no action",
+   "quote": "fy11 end of year close not yet fully completed but is near; ks recommended some changes to the process",
+   "tags": [
+    "FY11",
+    "year-end close"
+   ]
+  },
+  {
+   "topic": "Hurricane Irene costs",
+   "resolution": "reported; no action",
+   "quote": "spent $12.6k for the storm, primarily for overtime for staff called in",
+   "tags": [
+    "storm costs",
+    "reimbursement",
+    "emergency"
+   ]
+  },
+  {
+   "topic": "Ice storm reimbursement",
+   "resolution": "reported; no action",
+   "quote": "12.5% reimbursement is back in governor's budget ($120k)",
+   "tags": [
+    "state aid",
+    "reimbursement"
+   ]
+  },
+  {
+   "topic": "Mass Avenue gas station",
+   "resolution": "reported; KS to request reserve funds for tank cleanup",
+   "quote": "clean harbor scheduled tomorrow to pump and dispose of gas in tanks at a cost of $5k",
+   "tags": [
+    "abandoned property",
+    "reserve fund",
+    "environmental"
+   ]
+  },
+  {
+   "topic": "Police injured-on-duty insurance",
+   "resolution": "reported; no action",
+   "quote": "cost has increased from $25k to $75k annually due to our losses",
+   "tags": [
+    "insurance",
+    "police"
+   ]
+  },
+  {
+   "topic": "DPW project change order",
+   "resolution": "reported; no action",
+   "quote": "requires change order of $26k to add some load- bearing wall",
+   "tags": [
+    "DPW",
+    "change order",
+    "contingency"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Street paving",
+   "resolution": "reported; no action",
+   "quote": "street paving - will finish both ends of lancaster avenue and new west townsend road",
+   "tags": [
+    "paving",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Debt service projection",
+   "resolution": "requested; no action",
+   "quote": "jm requested updated projection on debt service levels",
+   "tags": [
+    "debt service"
+   ]
+  },
+  {
+   "topic": "Summer Street project",
+   "resolution": "reported; no action",
+   "quote": "senator flanagan committed to make amendment to have 20% design costs in grant plan",
+   "tags": [
+    "grant",
+    "design costs",
+    "state"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for September 22",
+   "quote": "next meeting - september 22 with pavement management plan presented and draft of annual calendar",
+   "tags": [
+    "scheduling",
+    "pavement management",
+    "annual calendar"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:35 pm",
+   "quote": "jm made motion to adjourn at 9:35 pm, bl seconded, all approved",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Regional dispatch proposal",
+   "where": "text",
+   "quote": "2) review regional dispatch proposal - bl noted we need additional information, particularly savings data"
+  },
+  {
+   "name": "Inner-Municipal Agreement (marked-up copy given to KS)",
+   "where": "text",
+   "quote": "bl had a few questions for ks about the language in the inner-municipal agreement and he gave ks a marked up copy"
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "next meeting - september 22 with pavement management plan presented and draft of annual calendar"
+  },
+  {
+   "name": "Draft annual calendar",
+   "where": "text",
+   "quote": "next meeting - september 22 with pavement management plan presented and draft of annual calendar"
+  }
+ ],
+ "tags": [
+  "regional dispatch",
+  "finance committee",
+  "FY11 close",
+  "storm costs",
+  "insurance",
+  "DPW project",
+  "paving",
+  "debt service",
+  "school regionalization",
+  "grants",
+  "Mass Avenue property"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 6
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-12-11",
  "docid": "4830",
@@ -12,31 +12,270 @@
  },
  "votes": [
   {
-   "motion": "Approve the Voluntary Toll Booth request from Salvation Army to be held on December 15, 2012",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Sund",
+   "motion": "Approve the Voluntary Toll Booth request from Salvation Army to be held on December 15, 2012.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Carl (Ernie) Sund",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo moved to approve the voluntary toll booth request from salvation army to be held on december 15, 2012. mr. sund seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the CORI Policy as written",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Approve the CORI Policy as written.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram moved to approve the cori policy as written. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Go into Executive Session to discuss strategy with respect to collective bargaining or litigation",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Mr. Sund",
-   "outcome": "passed 4-0",
+   "motion": "Go into Executive Session and adjourn the regular session.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Carl (Ernie) Sund",
+   "outcome": "4 in favor 1 recused (Bertram)",
    "procedural": true,
    "quote": "mr. alonzo moved to go into executive session. mr. sund seconded. on vote, motion carried to adjourn regular session, 4 in favor 1 recused (bertram)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. Three votes recorded: Salvation Army toll booth approval, CORI Policy adoption, and Executive Session entry (with one member recused).",
- "cost_usd": 0.0915965
+ "note": "Text is macOS Vision OCR with garbled spellings and line breaks (e.g. 'CORt', 'Tow f Hall', 'Marc Terry' vs 'Mark Terry'); quotes copy the OCR text. No chair is named in the text. No recorded vote on approving the 12/4/12 minutes or on invoking the Rule of Necessity. The regular session ended at 8:35PM per the minutes. Executive session content is not in the minutes. Attached statement by Mr. Sund is referenced but not included in the text.",
+ "cost_usd": 0.007602019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, steven m. debettencourt, carl (ernie) sund, and paula bertram."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, steven m. debettencourt, carl (ernie) sund, and paula bertram."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, steven m. debettencourt, carl (ernie) sund, and paula bertram."
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, steven m. debettencourt, carl (ernie) sund, and paula bertram."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, steven m. debettencourt, carl (ernie) sund, and paula bertram."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present was town manager kerry speidel."
+  },
+  {
+   "name": "Mark Terry",
+   "role": "Labor Counsel for the Town of Lunenburg",
+   "status": "present",
+   "quote": "mark terry, labor counsel for the town of lunenburg, was present to assist and answer questions regarding the draft"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Four members (Sund, Alonzo, Matthews, deBettencourt) chose to invoke the Rule of Necessity to address the retiree health coverage eligibility issue; no vote is recorded.",
+   "quote": "sund, mr. alonzo, mr. matthews, and mr. debettencourt chose to invoke the rule of necessity by stating the following:"
+  },
+  {
+   "decision": "Ms. Bertram recused herself from the retiree health coverage discussion due to a conflict as a former Town employee and elected official.",
+   "quote": "she does not feel she can participate in this discussion impartially and recused herself from this matter."
+  },
+  {
+   "decision": "Board agreed it needs to adopt CORI procedures fairly quickly and specify the circumstances that determine when CORI checks are run.",
+   "quote": "board members were in agreement that they need to adopt procedures fairly quickly and that they need to specify what circumstances determine what their procedures will be regarding cori checks."
+  },
+  {
+   "decision": "Mr. Matthews is to look into the unlit flag in the center of Town, which must either be taken down or lit at night.",
+   "quote": "mr. matthews is looking into this matter."
+  },
+  {
+   "decision": "Ms. Bertram will reach out to Brad Harris (MRPC) and then Arthur Frost (MassDOT) before Project Need Forms are filled out for the TIP roads.",
+   "quote": "before project need forms are filled out, ms. bertram will reach out to brad harris, transportation director at mrpc"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Two warrants listed under Minutes/Warrants/Action File Issues, dated 12/10/12 and 12/11/12, with their amounts.",
+   "figures_as_printed": [
+    "$8059.07",
+    "$288,709.18"
+   ],
+   "quote": "w#12p13m $8059.07 w# 33-13 $288,709.18"
+  },
+  {
+   "topic": "FY capital requests",
+   "what_was_recorded": "Capital Planning committee reported this year's department requests total $2M, a work in progress.",
+   "figures_as_printed": [
+    "$2M"
+   ],
+   "quote": "he stated that this year's requests total $2m and that this is a work in progress."
+  },
+  {
+   "topic": "Solar credits and PILOT agreements",
+   "what_was_recorded": "Board discussed working with Unitil to get the cash value of the solar credits back to the Town; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they are trying to work with unitil to get the cash value of the credits back to the town for maximum use to the town and tax payers."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matthews",
+   "topic": "Tree Lighting Ceremony thanks",
+   "quote": "mr. matthews thanked the public for coming out for the tree lighting ceremony and also thanked all who were involved in the decorations at the upper common."
+  },
+  {
+   "speaker": "Mr. Sund",
+   "topic": "Tree Lighting broadcast on Facebook",
+   "quote": "mr. sund added that the local cable access channel had recorded this event and that it can currently be seen on facebook."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00PM)",
+   "resolution": "no action",
+   "quote": "mr. matthews thanked the public for coming out for the tree lighting ceremony and also thanked all who were involved",
+   "tags": [
+    "public comment",
+    "tree lighting"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Voluntary Toll Booth, Salvation Army",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved to approve the voluntary toll booth request from salvation army to be held on december 15, 2012.",
+   "tags": [
+    "toll booth",
+    "permit"
+   ]
+  },
+  {
+   "topic": "Current Business 2: Solar PPA and PILOT agreements (Solar and Mass PV1, EPG Solar)",
+   "resolution": "no action; update only, nothing decided",
+   "quote": "mr. matthews stated that there was no new information regarding these items.",
+   "tags": [
+    "solar",
+    "PPA",
+    "PILOT",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Current Business 3: CORI Policy",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram moved to approve the cori policy as written. mr. debettencourt seconded.",
+   "tags": [
+    "CORI",
+    "policy",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants listed; flag issue under review by Mr. Matthews; no minutes vote recorded",
+   "quote": "action file issues: ms. bertram pointed out that the flag in the center of town is not lit as is required by law",
+   "tags": [
+    "minutes",
+    "warrants",
+    "flag"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "mr. alonzo reported that he participated in a conference call regarding the mass broadband fiber project progress.",
+   "tags": [
+    "broadband",
+    "capital planning",
+    "TIP",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "none",
+   "quote": "6. town manager reports or department reports - none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Executive Session: retiree health coverage and Rule of Necessity",
+   "resolution": "Rule of Necessity invoked by four members; Bertram recused; motion to enter executive session carried 4-0 with 1 recused",
+   "quote": "executive session - mr. matthews stated that they will be going into executive session to discuss a retiree",
+   "tags": [
+    "executive session",
+    "retiree health",
+    "conflict of interest",
+    "Rule of Necessity"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft CORI Policy (distributed to the BOS)",
+   "where": "text",
+   "quote": "mark terry, labor counsel for the town of lunenburg, was present to assist and answer questions regarding the draft"
+  },
+  {
+   "name": "State model CORI policy",
+   "where": "text",
+   "quote": "mr. terry said that there is a \"model policy\" which the state has provided, to which labor counsel has suggested some"
+  },
+  {
+   "name": "Tax Classification Document (signed)",
+   "where": "text",
+   "quote": "tax classification document - signed"
+  },
+  {
+   "name": "Warrants 12/10/12 and 12/11/12",
+   "where": "text",
+   "quote": "w#12p13m $8059.07 w# 33-13 $288,709.18"
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "cross-referenced these roads with the pavement management plan."
+  },
+  {
+   "name": "District Local Technical Assistance Program report (MRPC)",
+   "where": "text",
+   "quote": "gave a report on the district local technical assistance program."
+  }
+ ],
+ "tags": [
+  "CORI policy",
+  "solar PPA and PILOT",
+  "Rule of Necessity",
+  "conflict of interest",
+  "retiree health coverage",
+  "executive session",
+  "warrants",
+  "tree lighting",
+  "broadband",
+  "TIP transportation",
+  "toll booth",
+  "planning board vacancy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

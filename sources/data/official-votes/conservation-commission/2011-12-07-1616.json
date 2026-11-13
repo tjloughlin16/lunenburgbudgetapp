@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-12-07",
  "docid": "1616",
@@ -12,39 +12,253 @@
  },
  "votes": [
   {
-   "motion": "to issue a Negative Determination of Applicability",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "Unanimous",
-   "procedural": true,
-   "quote": "negative 3 jj/jack unanimous"
+   "motion": "Negative 3 determination for replacement of a wooden stockade fence at 386 Sunset Lane (Richard Tremblay), fence exempt in the 30 ft no-touch zone.",
+   "moved_by": "JJ",
+   "seconded_by": "Jack",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "it can go down to water's edge. negative 3 jj/jack unanimous"
   },
   {
-   "motion": "to issue a Negative Determination of Applicability",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "Unanimous",
-   "procedural": true,
-   "quote": "negative 3 jack/jj unanimous"
+   "motion": "Negative 3 determination for replacement of a wooden stockade fence at 392 Sunset Lane (Carl A. Luck).",
+   "moved_by": "Jack",
+   "seconded_by": "JJ",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "installed by neighbor. negative 3 jack/jj unanimous"
   },
   {
-   "motion": "to issue a Negative Determination of Applicability",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "Unanimous",
-   "procedural": true,
-   "quote": "negative 3 jj/jack unanimous"
+   "motion": "Waive replication for the driveway crossing at 146 Elmwood Road, Lot 2 (Ronald LaPointe), area too small at 6 square feet.",
+   "moved_by": "JJ",
+   "seconded_by": "Jack",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "waived replication, only 6 square feet. jj/jack unanimous"
   },
   {
-   "motion": "to approve the Notice of Intent",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "Unanimous",
-   "procedural": true,
-   "quote": "john/sharon unanimous"
+   "motion": "Negative 3 determination for site grading for a septic system at 146 Elmwood Road, Lot 1 (Rocco LaStella).",
+   "moved_by": "JJ",
+   "seconded_by": "Jack",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "chris mackenzie presented. negative 3 jj/jack unanimous"
+  },
+  {
+   "motion": "Approve the Notice of Intent for upgrade of a failed septic system at 58 Spring Street Extension (Kevin MacNeill), installing a Presby system.",
+   "moved_by": "John",
+   "seconded_by": "Sharon",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "will install a presby system. john/sharon unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Page 1 only. The minutes record five votes on Conservation Commission determinations (Negative Determinations of Applicability and approval of Notice of Intent applications). All votes show unanimous approval. The names appearing in the minutes (JJ, Jack, John, Sharon) are printed but not explicitly assigned to moved_by or seconded_by roles. The final agenda item (123 Hollis Road) is discussion only, with no vote recorded.",
- "cost_usd": 0.1293395
+ "dropped_unquoted": 0,
+ "note": "Page 1 is the only page and the text starts with garbled extraction characters (\"gÉãÇ Éy _âÇxÇuâÜz\"), and the minutes end mid-meeting with no adjournment, so later items may be missing. Votes are recorded only as \"Negative 3\" or \"Unanimous\" with a mover/seconder pair written as \"JJ/Jack\" style; no per-member tallies are printed, and the outcome for each is recorded as unanimous. Attendance is taken from the header roster, which does not say \"present\"; the status is inferred. The minutes contain no public comment section, and the applicants and their engineers are recorded as presenters, not public speakers. No dollar figures appear in the text.",
+ "cost_usd": 0.00714862,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "matt stated that it is exempt, citing section 10.02, in the 30' no touch zone."
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Richard Tremblay",
+   "status": "present",
+   "quote": "richard tremblay explained fence placement along pr operty line."
+  },
+  {
+   "name": "Carl A. Luck",
+   "status": "present",
+   "quote": "carl presented. fence will be placed within 6\" of fence that was recently installed by neighbor."
+  },
+  {
+   "name": "Jenn Tuomola",
+   "status": "present",
+   "quote": "jenn presented corrected reports"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "status": "present",
+   "quote": "chris mackenzie presented. area too small for replication, waived replication, only 6 square feet."
+  },
+  {
+   "name": "Ronald LaPointe",
+   "status": "not stated",
+   "quote": "notice of intent filed by ronald lapointe (chris mackenzie of whitman & bingham)."
+  },
+  {
+   "name": "Rocco LaStella",
+   "status": "not stated",
+   "quote": "filed by rocco lastella (chris mackenzie of whitman & bingham)"
+  },
+  {
+   "name": "Kevin MacNeill",
+   "status": "not stated",
+   "quote": "filed by kevin macneill (chris mackenzie of whitman & bingham)."
+  },
+  {
+   "name": "Jim Lattanzi",
+   "status": "present",
+   "quote": "dicussed deed restrictions and what could be done t o release some of them."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Deed-restriction release at 123 Hollis Road will need to work with North County Land Trust (discussion, no vote recorded).",
+   "quote": "will need to work with north county land trust."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "386 Sunset Lane, RDA (Richard Tremblay), fence replacement",
+   "resolution": "Negative 3 determination, unanimous",
+   "quote": "filed by richard tremblay. the proposed project is for replacement of a wooden stockade fence along t he property line.",
+   "tags": [
+    "fence",
+    "RDA",
+    "no-touch zone"
+   ]
+  },
+  {
+   "topic": "392 Sunset Lane, RDA (Carl A. Luck), fence replacement",
+   "resolution": "Negative 3 determination, unanimous",
+   "quote": "filed by carl a. luck. the proposed project is for replacement of a wooden stockade fence",
+   "tags": [
+    "fence",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "North County Land Trust, signatures and corrected reports",
+   "resolution": "corrected reports presented, no action recorded",
+   "quote": "jenn presented corrected reports",
+   "tags": [
+    "land trust",
+    "reports"
+   ]
+  },
+  {
+   "topic": "146 Elmwood Road, Lot 2, NOI (Ronald LaPointe), driveway crossing",
+   "resolution": "replication waived, unanimous",
+   "quote": "notice of intent filed by ronald lapointe (chris mackenzie of whitman & bingham).",
+   "tags": [
+    "NOI",
+    "driveway",
+    "wetland crossing",
+    "replication"
+   ]
+  },
+  {
+   "topic": "146 Elmwood Road, Lot 1, RDA (Rocco LaStella), site grading for septic",
+   "resolution": "Negative 3 determination, unanimous",
+   "quote": "filed by rocco lastella (chris mackenzie of whitman & bingham)",
+   "tags": [
+    "RDA",
+    "septic",
+    "site grading"
+   ]
+  },
+  {
+   "topic": "58 Spring Street Extension, NOI (Kevin MacNeill), failed septic upgrade",
+   "resolution": "approved, Presby system, unanimous",
+   "quote": "filed by kevin macneill (chris mackenzie of whitman & bingham).",
+   "tags": [
+    "NOI",
+    "septic",
+    "Presby system"
+   ]
+  },
+  {
+   "topic": "123 Hollis Road (Jim Lattanzi), deed restrictions",
+   "resolution": "discussed, no action recorded",
+   "quote": "dicussed deed restrictions and what could be done t o release some of them.",
+   "tags": [
+    "deed restrictions",
+    "land trust"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability, 386 Sunset Lane, filed by Richard Tremblay",
+   "where": "text",
+   "quote": "request for determination of appli cability filed by richard tremblay"
+  },
+  {
+   "name": "Request for Determination of Applicability, 392 Sunset Lane, filed by Carl A. Luck",
+   "where": "text",
+   "quote": "request for determination of appli cability filed by carl a. luck"
+  },
+  {
+   "name": "Notice of Intent, 146 Elmwood Road Lot 2, filed by Ronald LaPointe",
+   "where": "text",
+   "quote": "notice of intent filed by ronald lapointe (chris mackenzie of whitman & bingham)."
+  },
+  {
+   "name": "Request for Determination of Applicability, 146 Elmwood Road Lot 1, filed by Rocco LaStella",
+   "where": "text",
+   "quote": "request for determination of applicability filed by rocco lastella (chris mackenzie of whitman & bingham)"
+  },
+  {
+   "name": "Notice of Intent, 58 Spring Street Extension, filed by Kevin MacNeill",
+   "where": "text",
+   "quote": "notice of intent filed by kevin macneill (chris mackenzie of whitman & bingham)"
+  },
+  {
+   "name": "Corrected reports (North County Land Trust)",
+   "where": "text",
+   "quote": "jenn presented corrected reports"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "determinations",
+  "RDA",
+  "NOI",
+  "fences",
+  "septic systems",
+  "deed restrictions",
+  "land trust"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

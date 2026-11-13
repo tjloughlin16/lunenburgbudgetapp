@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2013-04-25",
  "docid": "2775",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the March 21, 2013 meeting minutes",
+   "motion": "Approve the minutes of the March 21, 2013 meeting.",
    "moved_by": "John Mara",
    "seconded_by": "Robin Venezia",
-   "outcome": "unanimous approval",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "john mara made a motion to approve the 3/21/13 lpl board of trustee minutes; second by robin venezia; unanimous approval by all in attendance"
   },
   {
-   "motion": "Transfer $4,900.00 from Salary Line Item to Services Line Item for Technology consultant",
-   "moved_by": "Lisa Krowitz",
+   "motion": "Transfer $4,900.00 from the Salary Line Item to the Services Line Item for the technology consultant.",
+   "moved_by": "Lisa",
    "seconded_by": "John Mara",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion by lisa to transfer from salary line item to services line item for technology consultant the sum of $4,900.00. second by john mara. motion passed unanimously by all present."
   },
   {
-   "motion": "Close the library during Town Meeting (Saturday)",
+   "motion": "Close the library during Town Meeting (Saturday).",
    "moved_by": "John Mara",
    "seconded_by": "Kathy Murray",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "john mara made a motion to close the library during town meeting (saturday). kathy murray second. motion passed unanimously by all present."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jeanne Raboin",
    "seconded_by": "Lars Widstrand",
    "outcome": "passed unanimously",
@@ -45,6 +45,328 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0877235
+ "note": "Text extracted from a two-page minutes document, not a scan. Vote tallies are printed only as \"unanimous\" or \"unanimously\"; no numeric counts. Public comment was \"None\". Jeanne Raboin arrived at 6:56 p.m. Martha Moore's title is not printed in the minutes. Several people are mentioned but did not take part (Sandy Altucher, Tom Corbett, Patty, Steve M, Karma Toussignant, Joanne McQuaid, June Cola Stoke) and are not listed as attendees. A few quotes are shortened excerpts with odd spacing collapsed.",
+ "cost_usd": 0.00654022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lisa Krowitz",
+   "role": "temporary Chairperson",
+   "status": "present",
+   "quote": "meeting called to order at 6:51 pm, by temporary chairperson lisa krowitz."
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, martha moore, kathy murray, jeanne raboin (6:56 p.m.), robin venezia, lars widstrand"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, martha moore, kathy murray, jeanne raboin (6:56 p.m.), robin venezia, lars widstrand"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, martha moore, kathy murray, jeanne raboin (6:56 p.m.), robin venezia, lars widstrand"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Regular Chairperson",
+   "status": "present",
+   "quote": "regular chairperson jeanne raboin continued the meeting after arriving."
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, martha moore, kathy murray, jeanne raboin (6:56 p.m.), robin venezia, lars widstrand"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Temporary Secretary",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, martha moore, kathy murray, jeanne raboin (6:56 p.m.), robin venezia, lars widstrand"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "finance committee",
+   "status": "present",
+   "quote": "brian laffond (finance committee)"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "absent",
+   "quote": "absent: dick mailloux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Martha will buy a used sorting table from ROI industries for sorting external library lending in/out-going material.",
+   "quote": "martha will buy a used sorting table from roi industries for sorting external library lending in/out-going material."
+  },
+  {
+   "decision": "Martha will compare previous kWh numbers with current numbers to check electricity use and determine reasons for the increase in the Unitil bill.",
+   "quote": "martha will compare previous kwh numbers with current to make sure we are not"
+  },
+  {
+   "decision": "Martha will call the HS guidance counselor, Karma Toussignant, about a new page to be hired to replace Alex and Jeff's summer absence.",
+   "quote": "martha will call hs guidance counselor karma toussignant for new page to be hired to replace alex"
+  },
+  {
+   "decision": "Robin Venezia will email the Policies Update Subcommittee update before the next meeting.",
+   "quote": "no update this meeting. robin will email update before next meeting."
+  },
+  {
+   "decision": "The Trustee Personnel Subcommittee will discuss and merge the submitted director evaluations before the 5/16 monthly meeting, meeting during the week of May 6th.",
+   "quote": "trustee personnel subcommittee will discuss submitted evaluations and merge them before monthly meeting on 5/16"
+  },
+  {
+   "decision": "The next meeting date was set for 5/16/13.",
+   "quote": "date for next meeting set for 5/16/13."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Technology consultant (Tom Corbett) pay",
+   "what_was_recorded": "Consultant pay of up to $4,900.00 is to be billed to the Library during the current fiscal year, and a transfer was approved to cover it.",
+   "figures_as_printed": [
+    "$ 4,900.00",
+    "$4,900.00"
+   ],
+   "quote": "tom corbett's consulting pay - up to $ 4,900.00 to be billed to the library during the current f. y."
+  },
+  {
+   "topic": "State Aid",
+   "what_was_recorded": "A next state aid check of $6k was on its way, bringing the total to $ 11,708.00; past and current state aid spending was discussed.",
+   "figures_as_printed": [
+    "$6k",
+    "$ 11,708.00"
+   ],
+   "quote": "state aid: next check for $6k on its way for total of $ 11,708.00."
+  },
+  {
+   "topic": "Library painting",
+   "what_was_recorded": "Discussion of how much the allocated $40,000.00 would accomplish; front facade painting plus caulking only, with Job Corps as one possible source of painters.",
+   "figures_as_printed": [
+    "$40,000.00"
+   ],
+   "quote": "painting of library - discussion about how much the allocated $40,000.00 will accomplish."
+  },
+  {
+   "topic": "Electrical costs (Unitil)",
+   "what_was_recorded": "Discussion of the Unitil electrical cost on the budget spread sheet; staff will compare kWh usage with earlier bills.",
+   "figures_as_printed": [],
+   "quote": "discussion about unitil electrical cost per the budget spread sheet - suggestion made to compare kwh usage"
+  },
+  {
+   "topic": "Used sorting table purchase",
+   "what_was_recorded": "Martha will buy a used sorting table from ROI industries; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "martha will buy a used sorting table from roi industries for sorting external library lending in/out-going material."
+  },
+  {
+   "topic": "Front entry power assist doors",
+   "what_was_recorded": "Martha has contacted Eagle House for leads on parts, installation sources and cost ideas; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "power assist doors for front entry - martha has had contact with eagle house for leads on source(s) for"
+  },
+  {
+   "topic": "Trust funds",
+   "what_was_recorded": "Discussion of which trust funds can spend only interest and which can have principal spent; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about existing trust funds; which funds can spend only interest vs. which can have principals spent"
+  },
+  {
+   "topic": "Current materials spending",
+   "what_was_recorded": "A spread sheet for current materials spending was presented; no figures printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "spread sheet for current materials spending presented."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from Salary Line Item to Services Line Item for Technology consultant (Tom Corbett).",
+   "amount_as_printed": "$4,900.00",
+   "outcome": "passed unanimously",
+   "quote": "motion by lisa to transfer from salary line item to services line item for technology consultant the sum of $4,900.00."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 6:51 pm; chair continued after Jeanne Raboin arrived",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting called to order at 6:51 pm, by temporary chairperson lisa krowitz."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment o none."
+  },
+  {
+   "topic": "Approval of minutes (March 21, 2013)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "john mara made a motion to approve the 3/21/13 lpl board of trustee minutes; second by robin venezia; unanimous approval"
+  },
+  {
+   "topic": "Director's Report: staff, financials, facilities",
+   "resolution": "discussed; transfer approved",
+   "tags": [
+    "staffing",
+    "budget",
+    "facilities",
+    "technology"
+   ],
+   "quote": "sandy altucher, new hire, digital services librarian - reference, e-books, troubleshooter on technology."
+  },
+  {
+   "topic": "Update on filled staff position",
+   "resolution": "no action; covered in director's presentation",
+   "tags": [
+    "staffing"
+   ],
+   "quote": "covered by martha's presentation."
+  },
+  {
+   "topic": "Budget",
+   "resolution": "no action; covered in director's presentation and discussion",
+   "tags": [
+    "budget"
+   ],
+   "quote": "covered by martha's presentation and ensuing discussions."
+  },
+  {
+   "topic": "Programs",
+   "resolution": "discussed",
+   "tags": [
+    "programs",
+    "Friends of the Library"
+   ],
+   "quote": "feedback from a lot of patrons that the programs are being very much appreciated."
+  },
+  {
+   "topic": "Evergreen software",
+   "resolution": "discussed",
+   "tags": [
+    "technology",
+    "CWMARS"
+   ],
+   "quote": "new version of evergreen has been installed today (4/25/13)."
+  },
+  {
+   "topic": "Open Meeting Law",
+   "resolution": "discussed",
+   "tags": [
+    "open meeting law",
+    "training"
+   ],
+   "quote": "kathy murray participated in march 28 open meeting law training seminar in ayer."
+  },
+  {
+   "topic": "Town Elections / Town Meeting",
+   "resolution": "voted to close library during Town Meeting Saturday; write-in candidate noted",
+   "tags": [
+    "town election",
+    "town meeting"
+   ],
+   "quote": "town meeting - john mara made a motion to close the library during town meeting (saturday)."
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "no action; personnel subcommittee to merge evaluations",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ],
+   "quote": "jeanne has received all evaluation forms except from two trustees."
+  },
+  {
+   "topic": "Review of Staff Positions",
+   "resolution": "discussed; no decision recorded",
+   "tags": [
+    "staffing",
+    "union negotiations"
+   ],
+   "quote": "non-union staff will be negotiated for by town personnel committee"
+  },
+  {
+   "topic": "Policies Update Subcommittee",
+   "resolution": "no update; Robin Venezia to email update",
+   "tags": [
+    "policies"
+   ],
+   "quote": "no update this meeting. robin will email update before next meeting."
+  },
+  {
+   "topic": "LPL Website and IT Update",
+   "resolution": "discussed; new domain name noted",
+   "tags": [
+    "website",
+    "technology"
+   ],
+   "quote": "new url for library: lunenburglibrary.org will be the reserved/purchased domain name"
+  },
+  {
+   "topic": "Other: trustee service thanks; next meeting date",
+   "resolution": "John Mara thanked; next meeting set for 5/16/13",
+   "tags": [
+    "trustees",
+    "meeting schedule"
+   ],
+   "quote": "date for next meeting set for 5/16/13."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:16 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned at 8:16 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Spread sheet for current materials spending",
+   "where": "text",
+   "quote": "spread sheet for current materials spending presented."
+  },
+  {
+   "name": "Budget spread sheet (electrical cost)",
+   "where": "text",
+   "quote": "discussion about unitil electrical cost per the budget spread sheet - suggestion made to compare kwh usage"
+  },
+  {
+   "name": "Martha's presentation",
+   "where": "text",
+   "quote": "covered by martha's presentation."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "state aid",
+  "staffing",
+  "technology",
+  "facilities",
+  "personnel",
+  "open meeting law",
+  "town meeting",
+  "programs"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

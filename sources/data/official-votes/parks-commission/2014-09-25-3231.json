@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2014-09-25",
  "docid": "3231",
@@ -12,6 +12,116 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a call to order, a discussion regarding turf field fees between the Finance Committee and Parks Commissioners, and an adjournment. No formal motions, voting language, or outcomes are stated. The \"Minutes accepted on: 10/2/14\" notation at the end is a signature line, likely recording approval at a subsequent meeting rather than a vote during this 9/25/2014 meeting.",
- "cost_usd": 0.0816615
+ "note": "Machine OCR (macOS Vision) of a scanned page set; signature block and header text are garbled. No motions or votes are recorded, including for adjournment, so the votes list is empty. The minutes say they were accepted on 10/2/14, but no vote on that approval appears in this text. Robert Robuccio appears only in the letterhead and signature block, not as attending, so he is omitted from attendees. No figures or documents are printed.",
+ "cost_usd": 0.0029375200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Masciarelli",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli and corinne scouten"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli and corinne scouten"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director: jack rodriquenz"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman, Finance Committee",
+   "status": "present",
+   "quote": "mark erickson, chairman, teresa burchfield, john henshaw, karin menard"
+  },
+  {
+   "name": "Teresa Burchfield",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, chairman, teresa burchfield, john henshaw, karin menard"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, chairman, teresa burchfield, john henshaw, karin menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, chairman, teresa burchfield, john henshaw, karin menard"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel, town manager"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "jamie toale, selectman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Parks Commission told the Finance Committee that research and review has begun and that it will meet soon to address the turf field and other field cost items (a commitment, not a recorded vote).",
+   "quote": "the parks commission assured the finance committee that research and review has begun and that we will be meeting soon to address these items."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf Field reconditioning cost and field fees",
+   "what_was_recorded": "Finance Committee voiced concerns about the upcoming Turf Field reconditioning and its cost, and about future expenses at other properties and fields; no dollar figures were printed.",
+   "quote": "concerns about the upcoming reconditioning and its cost were voiced by the finance committee.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Discussion Regarding Turf Field Fees",
+   "resolution": "no action; discussion only, Parks Commission said research and review has begun",
+   "quote": "discussion regarding turf field fees",
+   "tags": [
+    "turf field",
+    "fees",
+    "finance committee",
+    "reconditioning"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:35pm (no motion recorded)",
+   "quote": "time adjourned was 7:35pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks commission",
+  "turf field",
+  "turf field fees",
+  "finance committee",
+  "field reconditioning",
+  "joint discussion",
+  "2014"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2010-05-19",
  "docid": "1579",
@@ -12,47 +12,208 @@
  },
  "votes": [
   {
-   "motion": "Deny the amended Order of Conditions for 340 Lancaster Avenue filed by Gary Lorden",
-   "moved_by": "Ken/Rich",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "To deny the amendment (amended Order of Conditions request, 340 Lancaster Avenue, Gary Lorden).",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "ken/rich denied amendment unanimous"
+   "quote": "system & driveway. ken/rich denied amendment unanimous"
   },
   {
-   "motion": "Approve the Request for Determination of Applicability for 47 Cliffview Terrace using stone for railroad tie wall replacement",
-   "moved_by": "Rich/Ken",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Negative determination for 47 Cliffview Terrace, using stone and waddles.",
+   "moved_by": "Rich",
+   "seconded_by": "Ken",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "rich/ken use stone and waddles negative 3 unanimous"
   },
   {
-   "motion": "Approve the Request for Determination of Applicability for F & L Right of Way for water main replacement",
-   "moved_by": "Ken/Rich",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Negative determination for the F & L Right of Way water main replacement, using waddles.",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ken/rich use waddles negative 3 unanimous"
   },
   {
-   "motion": "Approve the Notice of Intent for 811 Chase Road, Lot B for single family house, well, driveway and septic system with conditions on boulders and riverfront vegetation",
-   "moved_by": "Ken/Rich",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "On the Notice of Intent for 811 Chase Road, Lot B, with conditions: boulders for demarcation in back along property line, exemption only for 30 foot no touch zone vegetation, and the 100 foot riverfront restriction not to be disturbed.",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "ken/rich unanimous boulders for demarcation in back along property line, exempt only for 30 foot no touch zone vegetation. also the 100 foot restriction around riverfront shall not be disturbed"
+   "quote": "ken/rich unanimous boulders for demarcation in back along property line"
   },
   {
-   "motion": "Continue the Notice of Intent hearing for 811 Chase Road, Lot C until June 2",
-   "moved_by": "Ken/Rich",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "To continue the 811 Chase Road, Lot C Notice of Intent hearing until June 2.",
+   "moved_by": "Ken",
+   "seconded_by": "Rich",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ken/rich continue until june 2 unanimous"
+  },
+  {
+   "motion": "On the Notice of Intent for repair and rebuilding of a retaining wall within the waters of Whalom Lake, 60 Laurel Lane (decision wording not printed).",
+   "moved_by": "Rich",
+   "seconded_by": "Ken",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "waters of whalom lake. rich/ken unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Document is OCR-scanned (macOS Vision). Votes 2–3 contain garbled text ('Negative 3' contradicts 'Unanimous'; 'waddles' likely OCR error for 'wattles'); outcome marked passed based on 'Unanimous' keyword. Vote 6 records only the vote indicator 'Unanimous' without explicit action verb, but context indicates approval of the application.",
- "cost_usd": 0.1480555
+ "dropped_unquoted": 0,
+ "note": "OCR of a single page (page 1 only); the minutes appear incomplete: no call to order, no approval of prior minutes, no adjournment, and no public comment are recorded. The attendance list has no present/absent labels, so status is 'not stated'. Votes are shorthand 'X/Y' pairs with an outcome word; I read the first name as moved and the second as seconded, which the minutes do not state outright. 'Negative 3' is unexplained (possibly a vote count or condition count) and is recorded as printed. No motion wording or result is printed for the 60 Laurel Lane item beyond 'Rich/Ken Unanimous', so the motion is paraphrased from the agenda entry. No dollar figures appear.",
+ "cost_usd": 0.005263219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Lattanzi",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Ken Jones",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Rich Bursch",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Rob Verge",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "not stated",
+   "quote": "john lattanzi,, mark murphy, jj cote, ken jones, rich bursch, rob verge, jan carrier"
+  },
+  {
+   "name": "Gary Lorden",
+   "role": "filed by (applicant, 340 Lancaster Avenue)",
+   "status": "not stated",
+   "quote": "filed by gary lorden (chris mackenzie from whitman & bingham)"
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "from Whitman & Bingham",
+   "status": "not stated",
+   "quote": "filed by gary lorden (chris mackenzie from whitman & bingham)"
+  },
+  {
+   "name": "Michael Polowski",
+   "role": "filed by, for Stanley D. Randall (47 Cliffview Terrace)",
+   "status": "not stated",
+   "quote": "filed by michael polowski for stanley d. randall"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "of David Ross Associates for the Dahlgren Family Trust (811 Chase Road)",
+   "status": "not stated",
+   "quote": "filed by neil gorman of david ross associates for the dahlgren family trust"
+  },
+  {
+   "name": "Kent Oldfield",
+   "role": "filed by, for Sean Flanagan (60 Laurel Lane)",
+   "status": "not stated",
+   "quote": "filed by kent oldfield for sean flanagan"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "340 Lancaster Avenue, Request for Amended Order of Conditions (Gary Lorden)",
+   "resolution": "amendment denied, unanimous",
+   "quote": "system & driveway. ken/rich denied amendment unanimous",
+   "tags": [
+    "wetlands",
+    "amended order of conditions",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "47 Cliffview Terrace, Request for Determination of Applicability (Stanley D. Randall)",
+   "resolution": "negative determination, unanimous",
+   "quote": "replacement of railroad tie wall with new ties or stone. rich/ken use stone and waddles negative 3 unanimous",
+   "tags": [
+    "wetlands",
+    "determination of applicability",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "F & L Right of Way, Request for Determination of Applicability (Leominster DPW)",
+   "resolution": "negative determination, unanimous",
+   "quote": "ken/rich use waddles negative 3 unanimous",
+   "tags": [
+    "wetlands",
+    "determination of applicability",
+    "water main"
+   ]
+  },
+  {
+   "topic": "811 Chase Road, Lot B, Notice of Intent (Dahlgren Family Trust)",
+   "resolution": "voted unanimously with conditions",
+   "quote": "ken/rich unanimous boulders for demarcation in back along property line",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "single family house",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "811 Chase Road, Lot C, Notice of Intent (Dahlgren Family Trust)",
+   "resolution": "continued to June 2",
+   "quote": "ken/rich continue until june 2 unanimous",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "60 Laurel Lane, Notice of Intent (Sean Flanagan)",
+   "resolution": "voted unanimously",
+   "quote": "waters of whalom lake. rich/ken unanimous",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "retaining wall",
+    "Whalom Lake"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearing",
+  "notice of intent",
+  "determination of applicability",
+  "order of conditions",
+  "Lunenburg",
+  "Whalom Lake"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

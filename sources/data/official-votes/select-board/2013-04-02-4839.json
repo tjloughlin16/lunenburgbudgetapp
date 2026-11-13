@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-04-02",
  "docid": "4839",
@@ -12,63 +12,472 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Officer Sean Connery and Officer Jack Hebert to the positions of Acting Police Sergeant",
-   "moved_by": "Carl (Ernie) Sund",
-   "seconded_by": "Paula Bertram",
+   "motion": "Ratify the Town Manager's appointment of Officer Sean Connery and Officer Jack Hebert as Acting Police Sergeant.",
+   "moved_by": "Mr. Sund",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. sund motioned to ratify the town manager's appointment of officer connery and officer hebert to the positions of acting police sergeant. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. sund motioned to ratify the town manager's appointment of officer connery and officer hebert to the positions of acting police sergeant. ms. bertram seconded."
   },
   {
-   "motion": "Approve the request for a Road Block on April 27, 2013 to help support the Lion's Club",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Carl (Ernie) Sund",
+   "motion": "Approve the Lion's Club request for a road block on April 27, 2013.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. alonzo motioned to approve the request for a road block on april, 27, 2013 to help support the lion's club. mr. sund seconded the motion. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. alonzo motioned to approve the request for a road block on april, 27, 2013 to help support the lion's club. mr. sund seconded the motion."
   },
   {
-   "motion": "Approve the new sign in memory of Nance Ware in front of the Ritter Memorial Building",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Paula Bertram",
+   "motion": "Approve the new sign in memory of Nance Ware in front of the Ritter Memorial Building.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "mr. alonzo motioned to approve the new sign in memory of nance ware in front of the ritter memorial building. ms. bertram seconded. on vote motion carried, 5 in favor, o opposed."
   },
   {
-   "motion": "Recommend the CM at Risk method as the construction method for a new school to the School Building Committee",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Carl (Ernie) Sund",
+   "motion": "Recommend the CM at Risk method as the construction method for a new school to the School Building Committee.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mi. alonzo motioned to recommend the cm at risk method as the construction method for a new school to the school building committee. mr. sund seconded the motion. on vote motion carried, 5 in favor, 0 ! opposed."
+   "quote": "mi. alonzo motioned to recommend the cm at risk method as the construction method for a new school to the school building committee. mr. sund seconded the motion."
   },
   {
-   "motion": "Approve Article 7 - to hear and/or accept the regular written reports of the Town Officers and Committees",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Paula Bertram",
+   "motion": "Designate the Board of Health as the main contact and final approval for the Mosquito Control Budget.",
+   "moved_by": "Mr. Sund",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo motioned to approve the position of article 7. ms. bertram seconded the motion. on vote motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. sund motioned that the bos designate the board of health to be the main contact and the final approval for the mosquito control budget. ms. bertram seconded."
   },
   {
-   "motion": "Designate the Board of Health to be the main contact and the final approval for the Mosquito Control Budget",
-   "moved_by": "Carl (Ernie) Sund",
-   "seconded_by": "Paula Bertram",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "mr. sund motioned that the bos designate the board of health to be the main contact and the final approval for the mosquito control budget. ms. bertram seconded. on vote motion carried, 5 in favor, 0 opposed."
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Steven M. deBettencourt",
-   "seconded_by": "Paula Bertram",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. deBettencourt",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. n vote motion carried, 5 in favor, 0 opposer"
+   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. bertram seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes appear to be OCR'd by macOS Vision; OCR-related artifacts noted in quotes (e.g., \"Mi.\" for \"Mr.\", \"opposer\" for \"opposed\", \"O\" for \"0\"). All votes successfully extracted with verbatim quotes.",
- "cost_usd": 0.11867649999999999
+ "note": "OCR scan with garbled or partly illegible passages: 'Mi. Alonzo', 'O opposed', a stray '!' in the CM at Risk vote, and the adjournment tally is cut off ('5 in favor, 0 opposer'); adjournment outcome recorded as passed 5-0 from the legible count. No motion or vote is recorded to enter the 6:00 PM executive session. Upcoming schedule lists 'April 23, 2016', likely a typo. Board members' roles are not printed beyond 'Board of Selectmen' in the heading, so no role is given for them.",
+ "cost_usd": 0.01539422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager"
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with dave matthews, tom alonzo, carl (ernie) sund, steven m. debettencourt, paula bertram and town manager"
+  },
+  {
+   "name": "Katrina Sweitzer",
+   "role": "Lunenburg Town Civic Forum",
+   "status": "present",
+   "quote": "katrina sweitzer, lunenburg town civic forum, stated that there will be a selectmen candidates debate"
+  },
+  {
+   "name": "Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino spoke to the bos in regards to filling two vacancies on the lunenburg police force."
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "Lunenburg Memorial Fund",
+   "status": "present",
+   "quote": "lisa normandin, lunenburg memorial fund, stated that the blank space at the top of the board was meant"
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "President of the Lunenburg Memorial Fund",
+   "status": "present",
+   "quote": "president of the lunenburg memorial fund spoke to the bos and explained the purpose of the luneburg memorial fund."
+  },
+  {
+   "name": "Jeff Luxenberg",
+   "role": "representing Joslin, Lesser and Assoc.",
+   "status": "present",
+   "quote": "jeff luxenberg and greg cohen representing joslin, lesser and assoc., stated that they were attending"
+  },
+  {
+   "name": "Greg Cohen",
+   "role": "representing Joslin, Lesser and Assoc.",
+   "status": "present",
+   "quote": "jeff luxenberg and greg cohen representing joslin, lesser and assoc., stated that they were attending"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, asked ms. speidel if the information passed out to the bos include the"
+  },
+  {
+   "name": "Joanna Bilotta Simeone",
+   "role": "266 Sunset Lane",
+   "status": "present",
+   "quote": "joanna bilotta simeone, 266 sunset lane, asked if there was a way to start saving for a new school now"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager Speidel directed that any other articles involving budget numbers be held until the following week, and that the firm numbers be brought to the next BOS meeting.",
+   "quote": "ms. speidel continued by stating any other articles involving budget numbers should be held until the following week."
+  },
+  {
+   "decision": "Warrant ARTICLE 8 (prior year expenses) to be passed over because no prior expenses were held by the town.",
+   "quote": "ms. speidel stated that at the moment no prior expenses were held by the town and that article 8 may be passed over."
+  },
+  {
+   "decision": "The Hollis Hills Project to be discussed in Executive Session at 6PM before the regular BOS meeting on April 9.",
+   "quote": "this item will be discussed at executive session at 6pm before the regular bos meeting on april 9"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 70 state aid",
+   "what_was_recorded": "Town Manager expects a minimum Chapter 70 aid increase of $25 per student, yielding about $40,200.00 more, and revised the town budget estimate to reflect it.",
+   "figures_as_printed": [
+    "$25",
+    "$40,200.00"
+   ],
+   "quote": "minimum increase in aid for chapter 70 of $25 per student that would result in an increase of chapter 70 funding to the town of lunenburg in the amount of $40,200.00"
+  },
+  {
+   "topic": "Free cash and stabilization",
+   "what_was_recorded": "Last free cash certification was $572,129.00; Town Manager recommended transferring $286,958.00 to stabilization to reach 5%, funding $139,000.00 of capital from free cash, leaving a $146,171.00 balance; no appropriation recommended from the remainder.",
+   "figures_as_printed": [
+    "$572,129.00",
+    "$286,958.00",
+    "5%",
+    "$139,000.00",
+    "$146,171.00"
+   ],
+   "quote": "the last free cash certification was $572,129.00, and ms. speidel recommended that the town"
+  },
+  {
+   "topic": "FY2014 budget deficit",
+   "what_was_recorded": "Town Manager expected the budget deficit to be around $80,000.00 and was not sure the Town can cover it as in past years.",
+   "figures_as_printed": [
+    "$80,000.00"
+   ],
+   "quote": "ms. speidel stated that she expected the deficit in the budget to be around $80,000.00 and"
+  },
+  {
+   "topic": "School choice tuition cost",
+   "what_was_recorded": "Choice cost is based on $5,000 per student; charter cost is based on actual tuition at the school. Choice and charter assessments have risen significantly over five years.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "ms. speidel stated that choice was based on $5,000 per student and that charter was based on actual"
+  },
+  {
+   "topic": "Debt service",
+   "what_was_recorded": "Town will pay about $2.9 million in debt service over the next two fiscal years; all but $611,000.00 this year and $678,000 next year has a dedicated funding source.",
+   "figures_as_printed": [
+    "$2.9 million",
+    "$611,000.00",
+    "$678,000"
+   ],
+   "quote": "ms. speidel stated that over the next two fiscal years the town will be paying about $2.9 million in debt service."
+  },
+  {
+   "topic": "Street light purchase and LED conversion",
+   "what_was_recorded": "Consultant estimated the Town could save about $25,000.00 per year after purchase and maintenance; LED conversion would cost between $125k and Unitil grant amount unclear; payback 4 to 4.5 years without grant; an additional 40% savings was stated.",
+   "figures_as_printed": [
+    "$25,000.00",
+    "$125k"
+   ],
+   "quote": "the town could be saving about $25,000.00 per year. if the town decided to convert to led lights the conversion project would cost between $125k-"
+  },
+  {
+   "topic": "Warrant 53-13 Accounts Payable",
+   "what_was_recorded": "Accounts payable warrant 53-13 was listed for approval.",
+   "figures_as_printed": [
+    "$28,829.69"
+   ],
+   "quote": "warrants: accounts payable 53-13 $28,829.69"
+  },
+  {
+   "topic": "CM at Risk MSBA reimbursement and pre-construction costs",
+   "what_was_recorded": "MSBA would provide an additional 1% reimbursement for the CM at Risk approach; up-front pre-construction costs could cost the Town .5%.",
+   "figures_as_printed": [
+    "1%",
+    ".5%"
+   ],
+   "quote": "the msba will provide a 1% additional reimbursement it you use the cm approach"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Free cash transfer to the stabilization fund to bring it to 5% of the fund minimum under the Town's financial policy.",
+   "amount_as_printed": "$286,958.00",
+   "outcome": "recommended by Town Manager; no vote recorded",
+   "quote": "recommended that the town transfer the amount of $286,958.00 to the stabilization fund"
+  },
+  {
+   "description": "Additional capital items to be funded from free cash in the FY2014 budget.",
+   "amount_as_printed": "$139,000.00",
+   "outcome": "recommended in budget; no vote recorded",
+   "quote": "ms. speidel also recommended in her budget that an additional $139,000.00 of capital items be funded"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Katrina Sweitzer",
+   "stated_role": "Lunenburg Town Civic Forum",
+   "topic": "Selectmen candidates debate",
+   "quote": "katrina sweitzer, lunenburg town civic forum, stated that there will be a selectmen candidates debate"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "School choice and charter school budget figures",
+   "quote": "dave passios, 56 whiting street, asked ms. speidel if the information passed out to the bos include the"
+  },
+  {
+   "speaker": "Joanna Bilotta Simeone",
+   "stated_role": "266 Sunset Lane",
+   "topic": "Saving now for a new school",
+   "quote": "joanna bilotta simeone, 266 sunset lane, asked if there was a way to start saving for a new school now"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Long-term debt service and accelerating payments",
+   "quote": "dave passios brought to the attention of the bos that the long term debt service is dragging on the"
+  },
+  {
+   "speaker": "Ms. Billotta Simone",
+   "stated_role": "",
+   "topic": "Televising School Building Committee meetings",
+   "quote": "ms. billotta simone stated that the school building committee meetings should be televised"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "noted",
+   "quote": "katrina sweitzer, lunenburg town civic forum, stated that there will be a selectmen candidates debate",
+   "tags": [
+    "public comment",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Proclamation: National Boys and Girls Club Week",
+   "resolution": "read",
+   "quote": "mr. matthews read a proclamation making april 8-12, 2013 national boys and girls club week in",
+   "tags": [
+    "proclamation"
+   ]
+  },
+  {
+   "topic": "Acting Police Sergeant appointments (taken out of order)",
+   "resolution": "ratified 5-0",
+   "quote": "police chief marino spoke to the bos in regards to filling two vacancies on the lunenburg police force.",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Lion's Club spring roadblock request",
+   "resolution": "approved 4-0",
+   "quote": "7:25 p.m. - lion's club, request for spring roadblock, april 27, 2013",
+   "tags": [
+    "road block",
+    "events"
+   ]
+  },
+  {
+   "topic": "Lunenburg Memorial Fund sign request",
+   "resolution": "approved 5-0",
+   "quote": "7:30 p.m. - memorial fund, request for a sign at ritter memorial building: dawn johnson,",
+   "tags": [
+    "sign",
+    "memorial fund"
+   ]
+  },
+  {
+   "topic": "School Building Committee: CM at Risk construction method",
+   "resolution": "recommended CM at Risk 5-0",
+   "quote": "7:40 p.m. - school building committee, cm at risk: project time table, related matters: jeff luxenberg and greg cohen",
+   "tags": [
+    "school building",
+    "construction"
+   ]
+  },
+  {
+   "topic": "2013 Annual Town Meeting warrant articles",
+   "resolution": "Article 7 approved 5-0; Article 8 passed over; Article 9 held for budget numbers",
+   "quote": "1.2013 annual town meeting, vote on warrant articles",
+   "tags": [
+    "town meeting",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Mosquito Control budget support",
+   "resolution": "Board of Health designated final approval 5-0",
+   "quote": "2. declaration of support for fy2014 mosquito control budget.",
+   "tags": [
+    "mosquito control",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "FY2014 budget discussion",
+   "resolution": "discussed; no action",
+   "quote": "3. fy2014 budget discussion - ms. speidel said that the budget committee had their public hearing on",
+   "tags": [
+    "budget",
+    "chapter 70",
+    "free cash",
+    "school choice",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "3/26/2013 minutes and warrant 53-13 listed; Hollis Hills set for Executive Session April 9",
+   "quote": "4. minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants",
+    "hollis hills"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "5. committee reports- mr. matthews stated that the school building committee will be voting on the",
+   "tags": [
+    "committees",
+    "school building",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Manager report: street lights from Unitil",
+   "resolution": "discussed; no action",
+   "quote": "6. town manager reports or department reports- ms. speidel updated the bos on the issue",
+   "tags": [
+    "street lights",
+    "unitil"
+   ]
+  },
+  {
+   "topic": "Old business and public comment",
+   "resolution": "none",
+   "quote": "old business - none public comment - none.",
+   "tags": [
+    "no business"
+   ]
+  },
+  {
+   "topic": "Executive session (6PM)",
+   "resolution": "held; no motion or vote recorded in minutes",
+   "quote": "executive session - conducted at 6pm",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "being no further business mr. debettencourt moved to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the Building Inspector in support of the sign",
+   "where": "text",
+   "quote": "mr. matthews stated that the bos had a letter from the building inspector in support of the sign."
+  },
+  {
+   "name": "Paper with the warrants in the correct order (2013 Annual Town Meeting)",
+   "where": "text",
+   "quote": "ms. speidel stated that she had provided the bos a paper with the warrants in the correct order as they"
+  },
+  {
+   "name": "Slide with budget numbers for School Choice and Charter Schools",
+   "where": "text",
+   "quote": "dave passios, 56 whiting street, asked ms. speidel if the information passed out to the bos include the"
+  },
+  {
+   "name": "Last free cash certification ($572,129.00)",
+   "where": "text",
+   "quote": "the last free cash certification was $572,129.00, and ms. speidel recommended that the town"
+  },
+  {
+   "name": "Warrant 53-13, Accounts Payable ($28,829.69)",
+   "where": "text",
+   "quote": "warrants: accounts payable 53-13 $28,829.69"
+  },
+  {
+   "name": "Application to the Office of the Inspector General (CM at Risk)",
+   "where": "text",
+   "quote": "cm at risk is an approach where the town submits an application to the office of the inspector"
+  },
+  {
+   "name": "Scope and Budget Agreement (MSBA)",
+   "where": "text",
+   "quote": "the msba will then approve the project in a \"scope and budget agreement\" on october"
+  }
+ ],
+ "tags": [
+  "school building",
+  "CM at Risk",
+  "town meeting warrants",
+  "FY2014 budget",
+  "free cash",
+  "school choice",
+  "debt service",
+  "street lights",
+  "police appointments",
+  "mosquito control",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

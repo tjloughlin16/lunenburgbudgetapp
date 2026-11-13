@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-02-14",
  "docid": "1788",
@@ -12,32 +12,294 @@
  },
  "votes": [
   {
-   "motion": "accept the January 10, 2012 COA meeting minutes as corrected",
+   "motion": "Accept the January 10, 2012 COA meeting minutes as corrected.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to accept the january 10, 2012 coa meeting minutes as corrected. all approved, motion carried."
+   "quote": "a motion was made and seconded to accept the january 10, 2012 coa meeting"
   },
   {
-   "motion": "accept the Board Development and Advocacy Committee December 2012 minutes as presented",
+   "motion": "Accept the Board Development and Advocacy Committee December 2012 minutes as presented.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to accept the january 10, 2012 coa meeting minutes as corrected. all approved, motion carried. director's report: financ",
-   "quote_taken_from_text": true
+   "quote": "a motion was made and seconded to accept the board development and advocacy committee december 2012"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made and seconded to adjourn the meeting. all approved, motion carried."
+   "quote": "a motion was made and seconded to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three procedural votes recorded. No individual movers or seconders named in minutes.",
- "cost_usd": 0.0838565
+ "note": "Minutes are headed 'Minutes approved at the 3/13/2012 COA Meeting', so they were approved at a later meeting. Motions record no mover or seconder names and no roll-call counts, only 'All approved, motion carried'. The Board Development and Advocacy minutes are dated 'December 2012', which does not fit a February 2012 meeting; printed as-is. The minutes have no public comment section. Some words are split in the text (e.g., 'mi nutes', 'H omeowner'); quotes avoid those spots.",
+ "cost_usd": 0.00638332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Doreen Noble",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "present : pete lincoln (chairperson), mary lynn conrad (vice chair), doreen noble (director), barbara brown,"
+  },
+  {
+   "name": "Fred Crellin",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Jane Doyle",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Jim Hays",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Sis Montuori",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "fred crellin, jane doyle, jim hays, sis montuori, joyce wass, and susan doherty (admin. asst.)"
+  },
+  {
+   "name": "Deb Seeley",
+   "status": "absent",
+   "quote": "excused: deb seeley guest:"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "representing the Friends of the Eagle House Inc.",
+   "status": "present",
+   "quote": "lloyd carlson, who was in attendance representing the friends of the eagle house inc., reported that the"
+  },
+  {
+   "name": "John Male",
+   "role": "guest",
+   "status": "present",
+   "quote": "guest: lloyd carlson and john male"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed they liked the COA Bylaws language on term limits that allows the term limit policy to be waived by vote of the COA.",
+   "quote": "board members agreed that they liked the language in the coa bylaws concerning term limits which allows"
+  },
+  {
+   "decision": "Director Doreen Noble will schedule a meeting with the Town Manager on the FY13 COA budget as soon as possible.",
+   "quote": "she will schedule a meeting with her a.s.a.p."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MARTAP grant for transportation program",
+   "what_was_recorded": "A $850.00 MARTAP grant has been applied for; if received it will improve the transportation program with new safety equipment for the van.",
+   "figures_as_printed": [
+    "$850.00"
+   ],
+   "quote": "the martap grant for $850.00 which if received will"
+  },
+  {
+   "topic": "Executive Office of Elder Affairs Service Incentive Grant",
+   "what_was_recorded": "The Service Incentive Grant was not applied for due to time constraints and illness.",
+   "figures_as_printed": [],
+   "quote": "due to time constraints and illness the executive office of elder affairs service incentive grant was not applied for."
+  },
+  {
+   "topic": "Finance report and Meals on Wheels mileage reimbursement",
+   "what_was_recorded": "The director did not anticipate upcoming financial problems but was two weeks behind on processing Meals on Wheels mileage reimbursement.",
+   "figures_as_printed": [],
+   "quote": "doreen reported that she did not anticipate any upcoming financial problems"
+  },
+  {
+   "topic": "FY13 COA budget",
+   "what_was_recorded": "A meeting with the Town Manager on the FY13 COA budget was cancelled twice; a public presentation of the FY13 COA budget is set for March 8, 2012.",
+   "figures_as_printed": [],
+   "quote": "there will be a public presentation on march 8, 2012 at 7pm at lunenburg town hall where the coa budget for fy13 will be presented."
+  },
+  {
+   "topic": "Mature Homeowner's Discount",
+   "what_was_recorded": "Information shared on a discount on homeowners insurance available to elder homeowners.",
+   "figures_as_printed": [],
+   "quote": "a significant discount on the homeowners insurance"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and term limits discussion",
+   "resolution": "discussed; no vote",
+   "quote": "after introductions a discussion was held concerning term limits for council on aging board members.",
+   "tags": [
+    "term limits",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Minutes of January 10, 2012",
+   "resolution": "approved as corrected",
+   "quote": "a motion was made and seconded to accept the january 10, 2012 coa meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational report, no action",
+   "quote": "doreen reported that she did not anticipate any upcoming financial problems",
+   "tags": [
+    "finance",
+    "grants",
+    "meal site",
+    "intern"
+   ]
+  },
+  {
+   "topic": "Parking Lot (Eagle House septic mound)",
+   "resolution": "reported; work delayed to spring",
+   "quote": "reported that the seeding and finish work on the septic mound removal at the eagle house will have to wait until spring to be completed.",
+   "tags": [
+    "eagle house",
+    "septic",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "not discussed",
+   "quote": "not discussed at this meeting.",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "FY13 COA Budget",
+   "resolution": "reported; public presentation scheduled March 8, 2012",
+   "quote": "there will be a public presentation on march 8, 2012 at 7pm at lunenburg town hall where the coa budget for fy13 will be presented.",
+   "tags": [
+    "budget",
+    "FY13"
+   ]
+  },
+  {
+   "topic": "Memorial Day Committee",
+   "resolution": "discussed under Director's Report",
+   "quote": "discussed under director's report",
+   "tags": [
+    "memorial day committee"
+   ]
+  },
+  {
+   "topic": "Friends of the Eagle House Inc.",
+   "resolution": "not discussed",
+   "quote": "not discussed at this meeting.",
+   "tags": [
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Sub Committee Reports",
+   "resolution": "Board Development minutes approved; Financial Committee minutes distributed; insurance discount shared",
+   "quote": "a motion was made and seconded to accept the board development and advocacy committee december 2012",
+   "tags": [
+    "subcommittees",
+    "minutes",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no correspondence read",
+   "quote": "no correspondence was read at this meeting.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "informational; director vacation noted",
+   "quote": "doreen informed the board that she will be on vacation from june 23, 2012 to july 9, 2012.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:25AM",
+   "quote": "a motion was made and seconded to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA Bylaws (term limits language)",
+   "where": "text",
+   "quote": "board members agreed that they liked the language in the coa bylaws concerning term limits which allows"
+  },
+  {
+   "name": "January 10, 2012 COA meeting minutes",
+   "where": "text",
+   "quote": "a motion was made and seconded to accept the january 10, 2012 coa meeting"
+  },
+  {
+   "name": "Board Development and Advocacy Committee December 2012 minutes",
+   "where": "text",
+   "quote": "a motion was made and seconded to accept the board development and advocacy committee december 2012"
+  },
+  {
+   "name": "COA Financial Committee minutes",
+   "where": "text",
+   "quote": "for the board to review and approve at the march 2012 coa"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "FY13 budget",
+  "grants",
+  "term limits",
+  "meal site",
+  "transportation",
+  "minutes approval",
+  "subcommittees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

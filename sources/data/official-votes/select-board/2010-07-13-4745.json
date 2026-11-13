@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-07-13",
  "docid": "4745",
@@ -12,13 +12,249 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the work session",
+   "motion": "Adjourn the Work Session at 8:24 P.M.",
+   "moved_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "being no further business board voted unanimously to adjourn work session at 8:24 p.m."
+   "quote": "being no further business board voted unanimously to adjourn work session at 8:24 p.m.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; one procedural vote to adjourn recorded with explicit vote language. Minutes from the prior session (7/6/10) and warrants were reviewed and signed but without explicit vote language (no motion, no tally stated).",
- "cost_usd": 0.1000965
+ "note": "OCR text is noisy (garbled header and some words, e.g. 'OfFerimen Fret SEne'). The meeting is headed 'WORK SESSION MINUTES' and the minutes refer to the Board of Selectmen. The Goal Progress Sheets on pages 3-6 are dated 7/13/2009, not 2010, which may be a typo. No motion to approve minutes or to sign warrants was recorded as a vote; the only recorded vote is the procedural adjournment, and its mover and seconder are not printed. Board member roles are not printed. No public comment section appears. Pat Slattery is mentioned but not recorded as present.",
+ "cost_usd": 0.007255019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Website: the committee is established and will meet with the top three website hosting vendors; Ernie will provide a link for the committee to review.",
+   "quote": "ernie will provide a link for the committee to review, which provides service to a florida website, which he finds easy to navigate."
+  },
+  {
+   "decision": "Goal #4: items 5 and 6 (Personnel Training for Effective Customer Service; Employee Retreat/Seminar for Team Building) to be removed from the goal.",
+   "quote": "items 5 & 6; consider personnel training for effective customer service and consider & recommend employee retreat/seminar for team building to be removed from goal #4."
+  },
+  {
+   "decision": "Goal #4: Kerry will provide the board with a list of employees who by law may have a contract; the rest will move under the Salary Administration Plan.",
+   "quote": "kerry will provide the board with a list of employees who by law are allowed to have a contract"
+  },
+  {
+   "decision": "Goal #3: quarterly status of ongoing legal issues to be ongoing rather than a goal; the citizen newsletter is to be looked at bi-annually.",
+   "quote": "provide quarterly status of all ongoing legal issues should be ongoing and not"
+  },
+  {
+   "decision": "Goal #4: Kerry will check with labor counsel on the legality of department head evaluations of employees, and will work with union negotiations to incorporate evaluation language into contracts.",
+   "quote": "kerry will check with labor counsel as to the legality, particularly if the evaluation doesn't have an impact on their compensation."
+  },
+  {
+   "decision": "Goal #2: the board expects the Town Manager to hold conversations and document recommendations on changing processes; the board wants department metrics across all departments, including smaller ones such as the Planning Board.",
+   "quote": "would expect that the manager have conversations and document the recommendations on changing processes"
+  },
+  {
+   "decision": "PAYT: the board would like to pursue solar-powered trash compactors and recycle containers, with Kerry to ask Emerald Place to purchase a couple.",
+   "quote": "board would like to pursue this."
+  },
+  {
+   "decision": "Town Hall renovation: Kerry will take the draft plan back to Pat Slattery to see whether it will work and, if so, price the project.",
+   "quote": "kerry still needs to take this back to pat slattery to see if it's going to work and if so, pricing the project out."
+  },
+  {
+   "decision": "Warrant W/P 10 (6/30/10): Kerry will look into the Sani-tank invoice questions raised by Paula and respond to the board.",
+   "quote": "kerry will look into this and respond to the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant W/P 10 (6/30/10)",
+   "what_was_recorded": "The board reviewed and signed warrant W/P 10 dated 6/30/10 at the stated total.",
+   "figures_as_printed": [
+    "$152,532.09"
+   ],
+   "quote": "warrants - #1 w/p 10, 6/30/10 - $152,532.09 reviewed and signed"
+  },
+  {
+   "topic": "Sani-tank invoice, Whalom piping project",
+   "what_was_recorded": "Paula questioned an invoice for a piping project in Whalom and why the town is paying for any component tied to Emerald Place; Kerry will look into it.",
+   "figures_as_printed": [],
+   "quote": "paula questioned an invoice (sani-tank) for piping project in whalom"
+  },
+  {
+   "topic": "PAYT vendor monthly charges",
+   "what_was_recorded": "Vendors were reportedly charging about $60 a month three years ago and now charge less; the actual fee and participation count are not yet known.",
+   "figures_as_printed": [
+    "$60/month"
+   ],
+   "quote": "three years ago vendors were charging about $60/month and now we're hearing that they're charging less per month"
+  },
+  {
+   "topic": "PAYT fees and contract",
+   "what_was_recorded": "Kerry is not ready to propose a fee increase; the Waste Management contract expires June 2011.",
+   "figures_as_printed": [],
+   "quote": "currently kerry is not ready to propose to raise the fees, noted that the contract expires june 2011"
+  },
+  {
+   "topic": "Website hosting vendors",
+   "what_was_recorded": "The three website hosting vendors were discussed; the minutes say their prices are similar, with no figures printed.",
+   "figures_as_printed": [],
+   "quote": "virtual town hall and egov are the two that are widely used within massachusetts and prices are similar."
+  },
+  {
+   "topic": "Town Hall renovation cost",
+   "what_was_recorded": "The renovation is not yet priced; carpeting may be donated and the plumbing and electrical inspectors would do the work on an hourly basis.",
+   "figures_as_printed": [],
+   "quote": "have a person willing to donate carpeting, our plumbing and electrical inspector's would be doing the work on an hourly basis."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY'2011 Town Manager Goals",
+   "resolution": "discussed; no vote recorded",
+   "quote": "1. fy'2011 town manager goals - as attached.",
+   "tags": [
+    "goals",
+    "website",
+    "metrics",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "PAYT Program",
+   "resolution": "no final recommendation; continued",
+   "quote": "kerry not ready to make a final recommendation at this time as she is still attempting to get a better idea",
+   "tags": [
+    "PAYT",
+    "trash",
+    "waste management"
+   ]
+  },
+  {
+   "topic": "Town Hall Renovation",
+   "resolution": "draft plan presented; no vote recorded",
+   "quote": "kerry presented a draft renovation plan for the board to review.",
+   "tags": [
+    "town hall",
+    "renovation"
+   ]
+  },
+  {
+   "topic": "Minutes of 7/6/10",
+   "resolution": "reviewed and signed",
+   "quote": "minutes - board of selectmen regular and executive session for 7/6/10 reviewed and signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reviewed and signed; question on Sani-tank invoice referred to Town Manager",
+   "quote": "warrants - #1 w/p 10, 6/30/10 - $152,532.09 reviewed and signed",
+   "tags": [
+    "warrants",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed; no action",
+   "quote": "july 20, 2010 business session",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY'2011 Town Manager Goals",
+   "where": "list",
+   "quote": "1. fy'2011 town manager goals - as attached."
+  },
+  {
+   "name": "Chief Administrative & Financial Officer's Goal Progress Sheet (Goals 1-4, dated 7/13/2009)",
+   "where": "list",
+   "quote": "chief administrative & financial officer's goal progress sheet"
+  },
+  {
+   "name": "Draft Town Hall renovation plan",
+   "where": "text",
+   "quote": "kerry presented a draft renovation plan for the board to review."
+  },
+  {
+   "name": "Warrant W/P 10, 6/30/10",
+   "where": "text",
+   "quote": "warrants - #1 w/p 10, 6/30/10 - $152,532.09 reviewed and signed"
+  },
+  {
+   "name": "Board of Selectmen Regular and Executive Session minutes for 7/6/10",
+   "where": "text",
+   "quote": "minutes - board of selectmen regular and executive session for 7/6/10 reviewed and signed."
+  },
+  {
+   "name": "Perform Operational Review and Analysis (report example)",
+   "where": "text",
+   "quote": "suggested a report as in perform operational review and analysis"
+  }
+ ],
+ "tags": [
+  "Town Manager goals",
+  "FY2011 budget",
+  "PAYT",
+  "town hall renovation",
+  "personnel",
+  "website",
+  "warrants",
+  "work session",
+  "performance evaluations",
+  "department metrics"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "fy'2011 town manager goals - as attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

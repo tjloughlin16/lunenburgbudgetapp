@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-11-07",
  "docid": "1635",
@@ -12,47 +12,302 @@
  },
  "votes": [
   {
-   "motion": "Issue Negative Determination of Applicability for removal of seven trees and cosmetic wall repair at 45 Spring Street",
+   "motion": "Negative determination (Negative 3) on the Request for Determination at 45 Spring Street: remove seven trees and do a cosmetic fix to the wall only.",
    "moved_by": "JJ",
    "seconded_by": "R",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous (Negative 3)",
    "procedural": false,
    "quote": "seven trees to be removed and cosmetic fix to wall only. jj/r negative 3 unanimous"
   },
   {
-   "motion": "Close public hearing and approve Notice of Intent for demolition and reconstruction at 43 Island Road",
+   "motion": "Close the hearing and approve the Notice of Intent at 43 Island Road (demolition of house, new 3-bedroom house and septic system).",
    "moved_by": "Sharon",
    "seconded_by": "JJ",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "updated plans received on 11-14-12. sharon/jj closed and approved unanimous"
   },
   {
-   "motion": "Close hearing and approve amendment to Order of Conditions at 56 Brookview Terrace",
+   "motion": "Close the hearing and approve the amendment to the Order of Conditions for 56 Brookview Terrace.",
    "moved_by": "Rich",
    "seconded_by": "Sharon",
-   "outcome": "passed 7-1",
+   "outcome": "Approved; JJ opposed",
    "procedural": false,
    "quote": "rich/sharon to close and approve amendment to ooc. approved jj opposed."
   },
   {
-   "motion": "Close hearing and ratify amended Enforcement Order incorporating remedial changes at 56 Brookview Terrace",
+   "motion": "Close the hearing and ratify the amended Enforcement Order at 56 Brookview Terrace to incorporate all remedial changes to the OoC.",
    "moved_by": "Rich",
    "seconded_by": "Sharon",
-   "outcome": "passed 7-1",
+   "outcome": "Approved; JJ opposed",
    "procedural": false,
    "quote": "rich/sharon to close and ratified enforcement order to incorporate all remedial changes to the ooc. approved jj opposed."
   },
   {
-   "motion": "Close public hearing and approve Notice of Intent for demolition of cottage and construction of garage at 136-150 Sunset Lane",
+   "motion": "Close the hearing and approve the Notice of Intent at 136-150 Sunset Lane (demolish cottage, build garage, gravel driveway).",
    "moved_by": "Sharon",
    "seconded_by": "JJ",
-   "outcome": "passed unanimously",
+   "outcome": "Unanimous",
    "procedural": false,
    "quote": "septic system & tank will be decommissioned. sharon/jj unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Five votes recorded on Conservation Commission applications and orders. Vote notations are abbreviated (no prior minutes votes, adjourn votes, or executive session votes recorded). All votes relate to environmental determinations and order approvals.",
- "cost_usd": 0.1358875
+ "note": "Minutes are a clean typed text with no scan issues. Attendance is not marked present or absent; the header lists eight names only, so attendance status is recorded as not stated. The 45 Spring Street vote line ('JJ/R Negative 3 Unanimous') is read as a motion by JJ seconded by R; 'Negative 3' is printed without explanation. The 43 Island Road entry cites updated plans received 11-14-12, which is after the 2012-11-07 meeting date. The 56 Brookview Terrace votes show 'Approved' and 'JJ opposed' with no count printed. No dollar figures appear in the text. No documents list is printed.",
+ "cost_usd": 0.00592852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, john lattanzi, sharon jordan, mark murphy, richard bursch, matt marro, jan carrier"
+  },
+  {
+   "name": "David  McPartlan",
+   "role": "applicant (Request for Determination of Applicability)",
+   "status": "not stated",
+   "quote": "there will be a public hearing on a request for determination of applicability filed by david mcpartlan."
+  },
+  {
+   "name": "Michael Pirolli",
+   "role": "applicant (Notice of Intent)",
+   "status": "not stated",
+   "quote": "filed by michael pirolli (william hannigan of hannigan engineering, inc.)"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "of Hannigan Engineering, Inc.; presenter",
+   "status": "present",
+   "quote": "bill hannigan presented. ron albert, architect was also present."
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Architect",
+   "status": "present",
+   "quote": "bill hannigan presented. ron albert, architect was also present."
+  },
+  {
+   "name": "Steven Wnuk",
+   "role": "of 39 Island Road; public comment",
+   "status": "present",
+   "quote": "steven wnuk of 39 island road questioned how this would affect drainage on to his"
+  },
+  {
+   "name": "Susan Bisceglia",
+   "role": "applicant (Notice of Intent)",
+   "status": "present",
+   "quote": "vin & susan bisceglia and robert oliva presented."
+  },
+  {
+   "name": "Vin Bisceglia",
+   "role": "applicant (Notice of Intent)",
+   "status": "present",
+   "quote": "vin & susan bisceglia and robert oliva presented."
+  },
+  {
+   "name": "Robert Oliva",
+   "role": "of David Ross Associates, Inc.; presenter",
+   "status": "present",
+   "quote": "vin & susan bisceglia and robert oliva presented."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "named as outlining green space buffer plantings",
+   "status": "not stated",
+   "quote": "with the caveat green space buffer plantings outlined by mike nault and whitman & bingham"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sharon Jordan volunteered to be the liaison for the Hickory Hills Lake Association (604 B Grant).",
+   "quote": "hickory hills lake association ~ 604 b grant ~ sharon volunteered to be the liaison"
+  },
+  {
+   "decision": "Commission not interested in 137 Leominster Shirley Road for conservation land; it should stay commercial.",
+   "quote": "137 leominster shirley road ~ commission not interested for conservation land, should stay commercial"
+  },
+  {
+   "decision": "Commission not interested in 1501 Lancaster Avenue for conservation land; it should stay commercial.",
+   "quote": "1501 lancaster avenue ~ commission not interested for conservation land, should stay commercial"
+  },
+  {
+   "decision": "Commission not interested in 419 Sunnyhill Road for conservation land; the majority is inaccessible wetlands not connected to other conservation land.",
+   "quote": "419 sunnyhill road ~ commission not interested for conservation land, the majority of this land is inaccessible wetlands"
+  },
+  {
+   "decision": "Hearing on the 56 Brookview Terrace Enforcement Order continued to December 5 at 8:00 PM to review the Request for Determination regarding the shed.",
+   "quote": "hearing will be continued again to review the request for determination regarding the shed. december 5 @ 8:00 pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steven Wnuk",
+   "stated_role": "of 39 Island Road",
+   "topic": "drainage effect on his property from 43 Island Road project",
+   "quote": "steven wnuk of 39 island road questioned how this would affect drainage on to his"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "45 Spring Street - Request for Determination of Applicability (David McPartlan), 7:00 PM",
+   "resolution": "negative determination, unanimous",
+   "quote": "seven trees to be removed and cosmetic fix to wall only. jj/r negative 3 unanimous",
+   "tags": [
+    "tree removal",
+    "wall",
+    "deck",
+    "100 ft buffer"
+   ]
+  },
+  {
+   "topic": "43 Island Road - Notice of Intent (Michael Pirolli), 7:15 PM",
+   "resolution": "closed and approved, unanimous",
+   "quote": "updated plans received on 11-14-12. sharon/jj closed and approved unanimous",
+   "tags": [
+    "septic",
+    "house demolition",
+    "drainage",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "56 Brookview Terrace - Enforcement Order continuation, 7:30 PM",
+   "resolution": "amendments to Order of Conditions and Enforcement Order approved (JJ opposed); hearing continued to December 5",
+   "quote": "hearing will be continued again to review the request for determination regarding the shed. december 5 @ 8:00 pm.",
+   "tags": [
+    "enforcement order",
+    "order of conditions",
+    "buffer plantings"
+   ]
+  },
+  {
+   "topic": "136-150 Sunset Lane - Notice of Intent (Susan Bisceglia), 7:45 PM",
+   "resolution": "approved, unanimous",
+   "quote": "septic system & tank will be decommissioned. sharon/jj unanimous",
+   "tags": [
+    "garage",
+    "driveway",
+    "100 ft buffer",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Lake Association liaison, 8:00 PM",
+   "resolution": "Sharon Jordan volunteered as liaison",
+   "quote": "hickory hills lake association ~ 604 b grant ~ sharon volunteered to be the liaison",
+   "tags": [
+    "liaison",
+    "lake association"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal (three properties), 8:15 PM",
+   "resolution": "not interested; all three remain commercial or not pursued",
+   "quote": "419 sunnyhill road ~ commission not interested for conservation land, the majority of this land is inaccessible wetlands",
+   "tags": [
+    "right of first refusal",
+    "conservation land"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability (David McPartlan, 45 Spring Street)",
+   "where": "text",
+   "quote": "there will be a public hearing on a request for determination of applicability filed by david mcpartlan."
+  },
+  {
+   "name": "Notice of Intent (Michael Pirolli, 43 Island Road)",
+   "where": "text",
+   "quote": "there will be a public hearing on a notice of intent filed by michael pirolli (william hannigan of hannigan engineering, inc.)"
+  },
+  {
+   "name": "Updated plans received 11-14-12 (43 Island Road)",
+   "where": "text",
+   "quote": "updated plans received on 11-14-12."
+  },
+  {
+   "name": "Enforcement Order (56 Brookview Terrace)",
+   "where": "text",
+   "quote": "there will be a public hearing on an enforcement order."
+  },
+  {
+   "name": "Order of Conditions (56 Brookview Terrace) and amendment",
+   "where": "text",
+   "quote": "the commission approved an amendment to both the order of conditions and the enforcement order."
+  },
+  {
+   "name": "Request for Determination regarding the shed (56 Brookview Terrace)",
+   "where": "text",
+   "quote": "hearing will be continued again to review the request for determination regarding the shed."
+  },
+  {
+   "name": "Notice of Intent (Susan Bisceglia, 136-150 Sunset Lane)",
+   "where": "text",
+   "quote": "filed by susan bisceglia (robert oliva of david ro ss associates, inc.)"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "enforcement order",
+  "septic",
+  "hearings",
+  "right of first refusal",
+  "tree removal",
+  "buffer zone"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

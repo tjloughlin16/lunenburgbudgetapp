@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2014-10-30",
  "docid": "3236",
@@ -12,23 +12,194 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the October 2, 2014 meeting",
-   "outcome": "passed 3-0",
+   "motion": "Approve the minutes of the 10/2/14 meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "minutes from 10/2/14 meeting were approved, 3-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 3-0",
+   "motion": "Adjourn the meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion to adjourn meeting was made and seconded. vote in favor of adjournment 3-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of handwritten minutes. Two procedural votes recorded: approval of prior minutes and adjournment. No names given for movers or seconders, only vote counts.",
- "cost_usd": 0.0823895
+ "note": "Scanned OCR text with some garbled characters. The turf lighting estimate prints as \"$6 $10k\", which may be an OCR or typing error for a range; reported as printed. Motions carry no mover or seconder names. The signature block is partly illegible. Minutes were accepted on 1/22/15. No public comment section is printed. No documents list or exhibits are printed.",
+ "cost_usd": 0.00450852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Masciarelli",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, corinne scouten"
+  },
+  {
+   "name": "Bob Robuccio",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, corinne scouten"
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioners: mike masciarelli, bob robuccio, corinne scouten"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director: jack rodriquenz"
+  },
+  {
+   "name": "Jeff Bingham",
+   "role": "LTAFA",
+   "status": "present",
+   "quote": "jeff bingham from ltafa reported that the recent miles for myles. seemed to be successful."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack Rodriquenz will follow up on the turf drainage with the school project.",
+   "quote": "jack will follow up on this with the school project."
+  },
+  {
+   "decision": "Corinne Scouten will draw up the outstanding fee bills.",
+   "quote": "corinne will draw up bills."
+  },
+  {
+   "decision": "Bob Robuccio will check whether MIAA pays for field use for playoffs, and who they pay.",
+   "quote": "bob robuccio will see if miaa pays for field use for playoffs."
+  },
+  {
+   "decision": "Jack Rodriquenz will get a price to top dress the Reservoir Fitzgerald Field.",
+   "quote": "jack will get a price to have this done."
+  },
+  {
+   "decision": "The Bengals should be asked to help pay for the Fitzgerald Field top dressing.",
+   "quote": "we should ask the bengals to help pay for this."
+  },
+  {
+   "decision": "Concession fees should be restructured.",
+   "quote": "concession fees should be restructured."
+  },
+  {
+   "decision": "DPW will do the Vets Walkway brick install if no volunteer is found.",
+   "quote": "vets walkway brick install - dpw can do it if there's no volunteer."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turf lighting underground wire repair",
+   "what_was_recorded": "Best guess cost to run new lines for the damaged turf lights, as printed.",
+   "figures_as_printed": [
+    "$6 $10k"
+   ],
+   "quote": "best guess on cost to run new lines is $6 $10k."
+  },
+  {
+   "topic": "Turf lighting funding source",
+   "what_was_recorded": "The School Building Contingency Fund would provide funding up front for the turf lighting work, with the final source to be discussed.",
+   "figures_as_printed": [],
+   "quote": "the school building contingency fund for the school project would provide funding up front"
+  },
+  {
+   "topic": "Turf drainage re-routing contingency",
+   "what_was_recorded": "Question raised whether the school project budget has contingency money to cover re-routing the turf drainage.",
+   "figures_as_printed": [],
+   "quote": "is there contingency money in the school project budget to help cover the re-routing of this drainage?"
+  },
+  {
+   "topic": "Outstanding Lunenburg Bengals field fees",
+   "what_was_recorded": "Outstanding fees to be invoiced to the Lunenburg Bengals, plus possible cost to fix Fitzgerald Field.",
+   "figures_as_printed": [
+    "$5,000",
+    "$5,000"
+   ],
+   "quote": "lunenburg bengals: 2013 = $5,000 plus 2014 = $5,000 plus possible cost to fix fitzgerald field."
+  },
+  {
+   "topic": "Outstanding LYSA field fees",
+   "what_was_recorded": "Outstanding fees to be invoiced to LYSA for 2013 Fall and 2014 Spring.",
+   "figures_as_printed": [
+    "$5,000",
+    "$5,000"
+   ],
+   "quote": "lysa: 2013 fall = $5,000 plus 2014 spring = $5,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "meeting convened at 7:03pm. in attendance were:"
+  },
+  {
+   "topic": "Review/Approve Minutes",
+   "resolution": "approved 3-0 (minutes of 10/2/14)",
+   "quote": "minutes from 10/2/14 meeting were approved, 3-0."
+  },
+  {
+   "topic": "Turf Lighting",
+   "resolution": "discussed; no action; cost and funding source left open",
+   "quote": "dpw director - jack rodriquenz reported that the underground wires for lights at the turf were"
+  },
+  {
+   "topic": "Turf Plaques",
+   "resolution": "reported; no action",
+   "quote": "plaques are up at the turf - both on the monument and on the building."
+  },
+  {
+   "topic": "Turf Drainage",
+   "resolution": "discussed; Jack to follow up with school project",
+   "quote": "jack will follow up on this with the school project."
+  },
+  {
+   "topic": "Other Turf Items",
+   "resolution": "discussed; wall to be restructured before school roadway",
+   "quote": "the wall behind the bleachers needs to be taken out and replaced."
+  },
+  {
+   "topic": "Turf Fees/Usage",
+   "resolution": "discussed; bills and top dressing price to follow",
+   "quote": "the bengals sent their usage dates to pete mccauliff not the park commission."
+  },
+  {
+   "topic": "Other",
+   "resolution": "discussed; no action",
+   "quote": "is there a national organization that jr. basketball can get insurance coverage under?"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 3-0 at 8:50pm",
+   "quote": "time adjourned was 8:50pm."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "turf",
+  "lighting",
+  "drainage",
+  "school project",
+  "field fees",
+  "Bengals",
+  "LYSA",
+  "DPW",
+  "Fitzgerald Field",
+  "parks commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

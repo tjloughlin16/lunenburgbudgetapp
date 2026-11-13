@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-08-13",
  "docid": "2251",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve total of $18,065.34 in Chapter 44 Section 33B transfers",
+   "motion": "Approve the total of $18,065.34 in Chapter 44 §33B transfers as presented.",
    "moved_by": "Terri B.",
    "seconded_by": "John H.",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "terri b. made a motion to approve the total of $18,065.34 in chapter 44 §33b transfers as presented, and john h. seconded the motion. the committee approved the motion 4-0."
   },
   {
-   "motion": "Approve the July 23 meeting minutes as amended",
+   "motion": "Approve the minutes as amended (point 4.b. corrected).",
    "moved_by": "Terri",
    "seconded_by": "Jay",
    "outcome": "passed 4-0",
@@ -28,15 +28,275 @@
    "quote": "terri made a motion to approve the minutes as amended and jay seconded the motion. the committee approved the amended minutes 4-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Terri B.",
    "seconded_by": "Jay S.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "terri b. moved to adjourn the meeting and jay s. seconded the motion. the board voted 4-0 in favor"
+   "quote": "terri b. moved to adjourn the meeting and jay s. seconded the motion. the board voted 4-0 in favor; the meeting adjourned at 8:46."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0864785
+ "note": "Text is OCR (macOS Vision) of a 3-page scan. Page 3 table column assignments (FY15 vs FY16) and the two unlabeled bottom rows are inferred from layout, not labeled in the text. Signature date is garbled and a received/filed stamp overlaps it. Vote results are recorded for all three motions. The committee gave no vote for the site visit, RFQ, or the action items, so those are recorded as decisions.",
+ "cost_usd": 0.00736762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "absent",
+   "quote": "absent: karin menard also present: karen brochu, tom alonzo"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Also Present; presented the Chapter 44, Section 33B transfers",
+   "status": "present",
+   "quote": "chapter 44, section 33b transfers-karen brochu"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: karen brochu, tom alonzo"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Finance Committee opted to visit the Junior-Senior High School project as a group; Mark will try to schedule a date and time.",
+   "quote": "the finance committee opted to visit the junior-senior high school project as a group."
+  },
+  {
+   "decision": "The committee will continue the initiatives begun in FY15, e.g. a ten year planning horizon and parameters on borrowing.",
+   "quote": "the committee will continue the initiatives begun in fy15,"
+  },
+  {
+   "decision": "The committee sent out requests for quotations (RFQ) to qualify bidders for Building Re-Use; one prospective bidder did not qualify and two remain.",
+   "quote": "the committee sent out requests for quotations (rfq) to qualify bidders the three bidders interested in the project."
+  },
+  {
+   "decision": "Action items noted on the payroll table: KSL to begin working on the financial forecast; add FTE count; gather historical data on salaries; document efficiency measures.",
+   "quote": "-ksl begin working on financial forecast."
+  },
+  {
+   "decision": "Send the RFQ for Building Re-Use to Jay Simeone.",
+   "quote": "send rfq building reuse to vay simeone."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 44 §33B transfers",
+   "what_was_recorded": "The committee approved a total of Chapter 44 §33B transfers presented by Karen Brochu, and the chair signed the approving form.",
+   "figures_as_printed": [
+    "$18,065.34"
+   ],
+   "quote": "terri b. made a motion to approve the total of $18,065.34 in chapter 44 §33b transfers as presented, and john h. seconded the motion."
+  },
+  {
+   "topic": "Payroll and benefits as % of budget, FY15 actuals vs FY16 budgeted",
+   "what_was_recorded": "A table compares FY15 actuals with FY16 budgeted for total expenditures, Series 5100 payroll, health, life, Medicare, retirement and the resulting percentages, with % change column.",
+   "figures_as_printed": [
+    "$ 31,652,723.47",
+    "$ 15,347,725.68",
+    "48.49%",
+    "$ 3,379,289.79",
+    "$ 9,832.50",
+    "$ 219,228.68",
+    "$ 3,608,350.97",
+    "$ 18,956,076.65",
+    "59.89%",
+    "$ 831,727.00",
+    "$ 19,787,803.65",
+    "62.52%",
+    "$ 34,870,030.36",
+    "$ 16,112,197.00",
+    "46.21%",
+    "$ 3,725,591.00",
+    "$ 21,191.00",
+    "$ 217,551.00",
+    "$ 3,964,333.00",
+    "$ 20,076,530.00",
+    "57.58%",
+    "$ 967,652.00",
+    "$ 21,044,182.00",
+    "60.35%",
+    "10.16%",
+    "4.98%",
+    "10.25%",
+    "115.52%",
+    "-0.77%",
+    "5.91%",
+    "16.34%",
+    "6.35%"
+   ],
+   "quote": "fy15 actuals $ 31,652,723.47 $ 15,347,725.68"
+  },
+  {
+   "topic": "State assessments and transfers to other funds",
+   "what_was_recorded": "The table lists State Assessments and Transfers to Other Funds (Capital Project/Stabilization) for FY15 and FY16 with percent changes; the note says these are included in total expenditures.",
+   "figures_as_printed": [
+    "$ 1,199,824.00",
+    "621,753.74",
+    "$ 1,230,111.00",
+    "619,756.36",
+    "2.52%",
+    "-0.32%"
+   ],
+   "quote": "state assessments transfers to other funds (capital project/stabilization) $ 1,199,824.00"
+  },
+  {
+   "topic": "Expenditure totals excluding state assessments and transfers",
+   "what_was_recorded": "The table gives totals excluding State Assessments and Transfers for FY15 and FY16 with percentages of salaries to total budget.",
+   "figures_as_printed": [
+    "$ 29,831,145.73",
+    "$ 19,787,803.65",
+    "66.33%",
+    "$ 33,020,163.00",
+    "$ 21,044,182.00",
+    "63.73%"
+   ],
+   "quote": "$ 29,831,145.73 $ 19,787,803.65 66.33%"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Chapter 44 §33B transfers, total presented by Karen Brochu",
+   "outcome": "approved 4-0",
+   "amount_as_printed": "$18,065.34",
+   "quote": "approve the total of $18,065.34 in chapter 44 §33b transfers as presented"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "no action; no public comment",
+   "tags": [
+    "comments",
+    "public comment"
+   ],
+   "quote": "meeting called to order by mark e. at 7:00 pm."
+  },
+  {
+   "topic": "Chapter 44 §33B transfers",
+   "resolution": "approved 4-0",
+   "tags": [
+    "transfers",
+    "budget"
+   ],
+   "quote": "chapter 44, section 33b transfers-karen brochu"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended 4-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mark e. corrected point 4.b. in the minutes to show"
+  },
+  {
+   "topic": "FY2017 budget process discussion",
+   "resolution": "discussion, no action",
+   "tags": [
+    "FY2017 budget",
+    "revenues",
+    "override"
+   ],
+   "quote": "5. committee discussion on the fy2017 budget process:"
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received; no action",
+   "tags": [
+    "DPW",
+    "capital planning",
+    "schools",
+    "Monty Tech",
+    "sewer",
+    "school building",
+    "building re-use"
+   ],
+   "quote": "6. committee updates: committee/department"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:46",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "terri b. moved to adjourn the meeting and jay s. seconded the motion."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Payroll as % of Budget table (FY15 Actuals vs FY16 Budgeted)",
+   "where": "list",
+   "quote": "payroll as % of budget total expenditures per budget report"
+  },
+  {
+   "name": "Chapter 44, Section 33B transfers form",
+   "where": "text",
+   "quote": "mark e. signed the form approving the transfers."
+  },
+  {
+   "name": "The Beacon (latest issue)",
+   "where": "text",
+   "quote": "mark e. passed out the latest issue of the beacon."
+  },
+  {
+   "name": "Application to build 22 Housing units (public hearing August 24)",
+   "where": "text",
+   "quote": "on application to build 22 housing units."
+  },
+  {
+   "name": "Requests for quotations (RFQ) to qualify bidders for Building Re-Use",
+   "where": "text",
+   "quote": "the committee sent out requests for quotations (rfq) to qualify bidders"
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "the pavement management plan."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY2017 budget",
+  "Chapter 44 transfers",
+  "payroll and benefits",
+  "expenditures",
+  "capital planning",
+  "school building project",
+  "building re-use RFQ",
+  "sewer",
+  "minutes",
+  "override"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "payroll as % of budget"
+ },
+ "dropped_unquoted_by_field": {}
 }

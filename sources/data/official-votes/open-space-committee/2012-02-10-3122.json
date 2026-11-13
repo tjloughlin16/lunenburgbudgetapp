@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2012-02-10",
  "docid": "3122",
@@ -12,6 +12,91 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document a meeting of the Open Space Ad Hoc Committee where items were discussed (review of farmers list, potential meeting with local farmers regarding Agricultural Commission and Right to Farm Bylaws) but no motions, seconds, or voting outcomes are stated. The meeting simply adjourned at 10:00 AM with no formal votes taken.",
- "cost_usd": 0.0799355
+ "note": "Short minutes with no recorded motions or votes, including no motion to adjourn (only the 10:00 AM adjournment time is printed). No attendee roles, public comment, budget figures, or documents list are printed. Attendance for each member is taken from the single \"Present:\" line.",
+ "cost_usd": 0.00204422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Brockelman",
+   "status": "present",
+   "quote": "present: richard brockelman, janice carrier, sharon jordan, robert verge, brandon kibbe, marion m. benson"
+  },
+  {
+   "name": "Janice Carrier",
+   "status": "present",
+   "quote": "present: richard brockelman, janice carrier, sharon jordan, robert verge, brandon kibbe, marion m. benson"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "present: richard brockelman, janice carrier, sharon jordan, robert verge, brandon kibbe, marion m. benson"
+  },
+  {
+   "name": "Robert Verge",
+   "status": "present",
+   "quote": "present: richard brockelman, janice carrier, sharon jordan, robert verge, brandon kibbe, marion m. benson"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "status": "present",
+   "quote": "present: richard brockelman, janice carrier, sharon jordan, robert verge, brandon kibbe, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "status": "present",
+   "quote": "present: richard brockelman, janice carrier, sharon jordan, robert verge, brandon kibbe, marion m. benson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee was to set a meeting date with the local farmers to discuss the Agricultural Commission and Right to Farm Bylaws and gather their input; no date was set at this meeting.",
+   "quote": "the committee was to set a meeting date with the local farmers to discuss the agricultural commission, right to farm bylaws and gather their input."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of list of farmers",
+   "resolution": "no action",
+   "quote": "committee reviewed a list of the farmers.",
+   "tags": [
+    "farmers",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Meeting with local farmers on Agricultural Commission and Right to Farm Bylaws",
+   "resolution": "discussed; no meeting date set",
+   "quote": "these items were discussed, but no meeting dat e set at this time",
+   "tags": [
+    "agriculture",
+    "right to farm",
+    "bylaws"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "list of the farmers",
+   "where": "text",
+   "quote": "committee reviewed a list of the farmers."
+  }
+ ],
+ "tags": [
+  "open space",
+  "agriculture",
+  "farmers",
+  "right to farm",
+  "bylaws",
+  "Agricultural Commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

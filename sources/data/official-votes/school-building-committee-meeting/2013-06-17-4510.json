@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2013-06-17",
  "docid": "4510",
@@ -12,25 +12,305 @@
  },
  "votes": [
   {
-   "motion": "approve the meeting minutes from the May 8, 2013 meeting",
-   "outcome": "passed unanimously",
+   "motion": "Approve the meeting minutes from the May 8, 2013 meeting.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: the isbc moved to approve the meeting minutes from the may 8, 2013 meeting. the motion passed unanimously."
+   "quote": "motion: the isbc moved to approve the meeting minutes from the may 8, 2013 meeting. the motion passed unanimously.",
+   "seconded_by": ""
   },
   {
-   "motion": "approve the Joslin, Lesser + Associates and Tappe Associates May 2013 invoices",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Joslin, Lesser + Associates and Tappe Associates May 2013 invoices.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: the lsbc moved to approve the joslin, lesser + associates and tappe associates may 2013 invoices. the motion passed unanimously."
+   "quote": "motion: the lsbc moved to approve the joslin, lesser + associates and tappe associates may 2013 invoices. the motion passed unanimously.",
+   "seconded_by": ""
   },
   {
-   "motion": "establish a Construction Manager at Risk Prequalification/Selection Committee",
-   "outcome": "not stated",
+   "motion": "Unidentified motion; the minutes give only the subject line 'Lunenburg High school project' and say it passed unanimously (motion text cut off in OCR).",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "the school building committee voted to establish a construction manager at risk prequalification/selection committee."
+   "quote": "lunenburg high school project. the motion passed unanimously.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Establish a Construction Manager at Risk Prequalification/Selection Committee with members Dave Matthews, Mark Erickson, John Londa, Greg Cohan and Charles Hay.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the school building committee voted to establish a construction manager at risk",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1102435
+ "note": "OCR text, two pages, messy. The attendee roster is a column-separated list, so role-to-name pairing is inferred by line order (16 printed roles plus one garbled role line for Mackin); statuses are 'not stated' for roster members because the minutes do not record attendance, and 'present' for Mackin and the people who presented. The 2d heading is missing: a motion line 'Lunenburg High school project. the motion passed unanimously.' appears with no motion text, so it is recorded with the motion marked unidentified. The minutes contain no roll call and no adjournment motion. No public comment is recorded. Dollar figures are absent; no amounts are printed for the invoices.",
+ "cost_usd": 0.0066183200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Chairperson, Lunenburg School Building Committee (LSBC)",
+   "status": "present",
+   "quote": "michael mackin, chairperson of the lunenburg school building committee (lsbc), called the meeting to"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "michael mackin colleen shapiro dave matthews nathan lockwood"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "michael mackin colleen shapiro dave matthews nathan lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "michael mackin colleen shapiro dave matthews nathan lockwood"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank kerry speidel john londa"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank kerry speidel john londa"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank kerry speidel john londa"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank kerry speidel john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "mark erickson mike barney brian frank kerry speidel john londa"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "LMS Principal",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "present",
+   "quote": "charles hay from tappé associates, provided the school building committee with an update on the project's design."
+  },
+  {
+   "name": "Cesar Dedios",
+   "role": "Senior Associate, Tappé Associates",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Associates",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "greg cohan from jla presented for approval copies of joslin, lesser + associates and tappe associates may 2013 invoices."
+  },
+  {
+   "name": "Christine DePalma",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "brian spadafino tim santry charles hay cesar dedios damian liddiard greg cohan christine depalma jeffery luxenberg"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee thanked Rich Cohen for his service, will recruit a new member, and will provide the MSBA with an updated membership list once confirmed.",
+   "quote": "the lsbc thanked rich for his service and will begin to recruit a new member and will provide the msba with an updated membership list once confirmed."
+  },
+  {
+   "decision": "The Committee will vote at its July meeting to approve the CM at Risk contract for the top-ranked firm.",
+   "quote": "the school building committee will vote to approve the cm at risk contract to the top-ranked firm at its july meeting."
+  },
+  {
+   "decision": "The Committee plans a public forum on the project in the Fall of 2013.",
+   "quote": "the school building committee plans to hold a public forum on the project in the fall of 2013."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "May 2013 invoices from Joslin, Lesser + Associates and Tappe Associates",
+   "what_was_recorded": "The committee approved the May 2013 invoices from JLA and Tappe Associates; the minutes print no dollar amounts.",
+   "figures_as_printed": [],
+   "quote": "greg cohan from jla presented for approval copies of joslin, lesser + associates and tappe associates may 2013 invoices."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 PM by Chairperson Michael Mackin",
+   "quote": "michael mackin, chairperson of the lunenburg school building committee (lsbc), called the meeting to",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Meeting Minutes",
+   "resolution": "approved unanimously (May 8, 2013 minutes)",
+   "quote": "joslin, lesser + associates (jla) distributed the meeting minutes from the prior meeting held on may 8,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Project Invoices",
+   "resolution": "approved unanimously (May 2013 JLA and Tappe invoices)",
+   "quote": "greg cohan from jla presented for approval copies of joslin, lesser + associates and tappe associates may 2013 invoices.",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Design Status Update",
+   "resolution": "presented; no action recorded",
+   "quote": "charles hay from tappé associates, provided the school building committee with an update on the project's design.",
+   "tags": [
+    "design",
+    "schematic plans",
+    "massing"
+   ]
+  },
+  {
+   "topic": "Construction Manager Prequalification/Selection Committee (2e)",
+   "resolution": "committee established; CM at Risk contract vote set for July meeting",
+   "quote": "the school building committee voted to establish a construction manager at risk",
+   "tags": [
+    "construction manager at risk",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Lunenburg High School project item (heading cut off in OCR)",
+   "resolution": "motion passed unanimously; subject unclear",
+   "quote": "lunenburg high school project. the motion passed unanimously.",
+   "tags": [
+    "Lunenburg High School"
+   ]
+  },
+  {
+   "topic": "Rich Cohen resignation letter (2f)",
+   "resolution": "resignation received; committee thanked him; no vote recorded",
+   "quote": "due to a conflict of interest, rich cohen, lsbc member, submitted his resignation to the lsbc",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Upcoming Meetings (2g)",
+   "resolution": "informational; no action",
+   "quote": "lsbc meeting - july 24, 2013",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Community Outreach Efforts (2h)",
+   "resolution": "public forum planned for Fall 2013; no vote",
+   "quote": "the school building committee plans to hold a public forum on the project in the fall of 2013.",
+   "tags": [
+    "community outreach",
+    "public forum"
+   ]
+  },
+  {
+   "topic": "Other Business (2i)",
+   "resolution": "none",
+   "quote": "there was no other business.",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:51pm; no motion recorded",
+   "quote": "the meeting was adjourned at 7:51pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Initial massing diagrams (Tappé Associates)",
+   "where": "text",
+   "quote": "mr. hay also distributed some initial massing diagrams and explained that the concepts shown begin to define"
+  },
+  {
+   "name": "Updated schematic plans (Tappé Associates)",
+   "where": "text",
+   "quote": "mr. hay reviewed updated plans with the committee and welcomed feedback."
+  },
+  {
+   "name": "Meeting minutes from May 8, 2013",
+   "where": "text",
+   "quote": "distributed the meeting minutes from the prior meeting held on may 8, 2013."
+  },
+  {
+   "name": "Joslin, Lesser + Associates and Tappe Associates May 2013 Invoices",
+   "where": "text",
+   "quote": "greg cohan from jla presented for approval copies of joslin, lesser + associates and tappe associates may 2013 invoices."
+  },
+  {
+   "name": "Rich Cohen, LSBC Member - Resignation Letter",
+   "where": "text",
+   "quote": "rich cohen, lsbc member - resignation letter"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "Lunenburg High School",
+  "school construction project",
+  "design",
+  "construction manager at risk",
+  "MSBA",
+  "invoices",
+  "membership",
+  "community outreach"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. hay also distributed some initial massing diagrams"
+ },
+ "dropped_unquoted_by_field": {}
 }

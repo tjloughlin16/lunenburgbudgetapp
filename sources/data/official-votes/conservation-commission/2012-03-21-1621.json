@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-03-21",
  "docid": "1621",
@@ -12,47 +12,271 @@
  },
  "votes": [
   {
-   "motion": "Issue a Negative Determination of Applicability for fiber optic cable installation at Leominster Shirley Road by Cornell Robinson of Massachusetts Broadband",
-   "moved_by": "Sharon Jordan",
-   "seconded_by": "Rob Verge",
-   "outcome": "passed unanimously",
+   "motion": "Vote on the Request for Determination of Applicability filed by Comell Robinson of Massachusetts Broadband (fiber optic cable, Negative 3 determination).",
+   "moved_by": "Sharon",
+   "seconded_by": "Rob",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "sharon/rob negative 3 unanimous"
   },
   {
-   "motion": "Issue a Negative Determination of Applicability for dock and mooring system at 69 Island Road by Donna C Albert",
-   "moved_by": "Mark Murphy",
-   "seconded_by": "Sharon Jordan",
-   "outcome": "passed unanimously",
+   "motion": "Vote on the Request for Determination of Applicability filed by Donna C Albert for 69 Island Road (removable dock and mooring; Negative 3 determination).",
+   "moved_by": "Mark",
+   "seconded_by": "Sharon",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "mark/sharon negative 3 unanimous"
   },
   {
-   "motion": "Issue a Standard Order of Conditions for sewage disposal system replacement at 220 Page Street by Peter McCarron",
-   "moved_by": "Sharon Jordan",
-   "seconded_by": "Rob Verge",
-   "outcome": "passed unanimously",
+   "motion": "Vote on the Notice of Intent filed by Peter McCarron for 220 Page Street, after Matt recommended a standard OoG.",
+   "moved_by": "Sharon",
+   "seconded_by": "Rob",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "sharon/rob unanimous"
+   "quote": "matt recommended a standard oog. sharon/rob unanimous"
   },
   {
-   "motion": "Issue a Standard Order of Conditions for septic system repair at 167 Townsend Harbor Road by Henry Chevrette",
-   "moved_by": "Rob Verge",
-   "seconded_by": "Sharon Jordan",
-   "outcome": "passed unanimously",
+   "motion": "Vote on the Notice of Intent filed by Henry Chevrette for 167 Townsend Harbor Road (repair of septic system), standard OoC.",
+   "moved_by": "Rob",
+   "seconded_by": "Sharon",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "standard ooc rob/sharon unanimous"
   },
   {
-   "motion": "Issue an Order of Conditions for new home construction at 100 Sunset Lane by Glen Reinhardt",
-   "moved_by": "Sharon Jordan",
-   "seconded_by": "Mark Murphy",
-   "outcome": "passed unanimously",
+   "motion": "Vote on the Notice of Intent filed by Glen Reinhardt for 100 Sunset Lane (demolition of cottage and new single family home); minutes record only the result.",
+   "moved_by": "Sharon",
+   "seconded_by": "Mark",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "sharon/mark unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. The phrase \"Negative 3\" in two votes appears to be OCR noise for \"Negative Determination.\" The solar farm project (Off Pleasant & West Streets) was continued to April 4 with no vote recorded.",
- "cost_usd": 0.1029245
+ "note": "OCR text from a scanned page. The header prints the town as \"Lumenburg\" and the applicant as \"Comell Robinson\", which likely are OCR or print errors for Lunenburg and Cornell; quotes are kept as printed. The attendance block is an unlabelled list of names, so status is recorded as not stated. The vote lines give only mover/seconder names and the result, with no motion wording, so motion text is paraphrased from the agenda item and marked as such. No procedural votes (minutes approval, adjournment) appear. The stamp \"approved 5-16-12\" appears in the header. No dollar figures appear.",
+ "cost_usd": 0.00703362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jack Byrne",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rob verge, jj cote, jack byrne, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Mike Turgeon",
+   "role": "from Jacob's Engineering",
+   "status": "present",
+   "quote": "mike turgeon, tess pagnelli and others from jacob's engineering presented."
+  },
+  {
+   "name": "Tess Pagnelli",
+   "role": "from Jacob's Engineering",
+   "status": "present",
+   "quote": "mike turgeon, tess pagnelli and others from jacob's engineering presented."
+  },
+  {
+   "name": "Comell Robinson",
+   "role": "filer, Massachusetts Broadband",
+   "status": "not stated",
+   "quote": "filed by comell robinson of massachusetts broadband"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "presenter, 69 Island Road",
+   "status": "present",
+   "quote": "ron albert presented."
+  },
+  {
+   "name": "Donna C Albert",
+   "role": "filer, 69 Island Road",
+   "status": "not stated",
+   "quote": "request for determination of applicability filed by donna c albert"
+  },
+  {
+   "name": "Peter McCarron",
+   "role": "filer, 220 Page Street",
+   "status": "not stated",
+   "quote": "notice of intent filed by peter mccarron"
+  },
+  {
+   "name": "Henry Chevrette",
+   "role": "filer, 167 Townsend Harbor Road",
+   "status": "not stated",
+   "quote": "notice of intent filed by henry chevrette"
+  },
+  {
+   "name": "Glen Reinhardt",
+   "role": "filer and presenter, 100 Sunset Lane",
+   "status": "present",
+   "quote": "glen presented plan for nol."
+  },
+  {
+   "name": "Conrad Nuthmann",
+   "role": "Neighbor",
+   "status": "present",
+   "quote": "neighbor, conrad nuthmann, questioned where the utilities were coming into the house."
+  },
+  {
+   "name": "Cal Goldsmith",
+   "role": "presenter, EPG Solar, LLC",
+   "status": "present",
+   "quote": "new plans were presented and explained by cal goldsmith."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The EPG Solar, LLC Notice of Intent hearing (Off Pleasant & West Streets) was continued until April 4th.",
+   "quote": "continued until april 4th."
+  },
+  {
+   "decision": "Matt and Cal were to meet with Jamie Rheault next week on the drainage comments for the EPG Solar project.",
+   "quote": "matt and cal will meet with jamie next week"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Conrad Nuthmann",
+   "stated_role": "Neighbor",
+   "topic": "utility lines at 100 Sunset Lane",
+   "quote": "neighbor, conrad nuthmann, questioned where the utilities were coming into the house."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Request for Determination, 7:00 PM, Massachusetts Broadband fiber optic cable in roadway right of way",
+   "resolution": "approved, Negative 3, unanimous",
+   "quote": "filed by comell robinson of massachusetts broadband"
+  },
+  {
+   "topic": "Request for Determination, 7:10 PM, 69 Island Road, dock system and mooring",
+   "resolution": "approved, Negative 3, unanimous",
+   "quote": "installation of a removable dock system and raft/boat mooring within 50 feet of the shore"
+  },
+  {
+   "topic": "Notice of Intent, 7:20 PM, 220 Page Street, failed sewage disposal system replacement",
+   "resolution": "approved, standard OoG, unanimous",
+   "quote": "the proposed project is for replacement of a failed sewage disposal system."
+  },
+  {
+   "topic": "Notice of Intent, 7:27 PM, 167 Townsend Harbor Road, septic system repair",
+   "resolution": "approved, standard OoC, unanimous",
+   "quote": "the proposed project is for repair of a septic system."
+  },
+  {
+   "topic": "Notice of Intent, 7:35 PM, 100 Sunset Lane, cottage demolition and new single family home",
+   "resolution": "approved, unanimous",
+   "quote": "proposed project is for demolition of existing cottage and construction of a new single family home"
+  },
+  {
+   "topic": "Notice of Intent continuation, 7:50 PM, EPG Solar solar photovoltaic farm, off Pleasant & West Streets",
+   "resolution": "continued until April 4th",
+   "quote": "continued until april 4th."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Comell Robinson of Massachusetts Broadband (fiber optic cable installation)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by comell robinson of massachusetts broadband."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Donna C Albert (69 Island Road)",
+   "where": "text",
+   "quote": "request for determination of applicability filed by donna c albert"
+  },
+  {
+   "name": "Notice of Intent filed by Peter McCarron (220 Page Street)",
+   "where": "text",
+   "quote": "notice of intent filed by peter mccarron"
+  },
+  {
+   "name": "Notice of Intent filed by Henry Chevrette (167 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "notice of intent filed by henry chevrette"
+  },
+  {
+   "name": "Notice of Intent filed by Glen Reinhardt (100 Sunset Lane)",
+   "where": "text",
+   "quote": "notice of intent filed by glen reinhardt"
+  },
+  {
+   "name": "Notice of Intent filed by EPG Solar, LLC (solar photovoltaic farm), with new plans",
+   "where": "text",
+   "quote": "notice of intent filed by epg solar, llc"
+  },
+  {
+   "name": "New plans for EPG Solar, LLC, presented by Cal Goldsmith",
+   "where": "text",
+   "quote": "new plans were presented and explained by cal goldsmith."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "determinations",
+  "notices of intent",
+  "solar",
+  "broadband",
+  "septic",
+  "docks",
+  "public hearing",
+  "continuation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

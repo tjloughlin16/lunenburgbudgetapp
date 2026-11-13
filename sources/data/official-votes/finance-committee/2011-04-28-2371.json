@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-04-28",
  "docid": "2371",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to approve a $100K transfer for police/fire injured personnel and snow and ice deficit expenses",
+   "motion": "Recommend approval of Special Town Meeting Article #3 as outlined, for a $100K transfer.",
    "moved_by": "ME",
    "seconded_by": "MM",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "me recommends approval as outlined for $100k transfer, mm seconds, all approved."
   },
   {
-   "motion": "to rescind the Quinn Bill and replace with an educational fund equal to 50%",
+   "motion": "Approve Annual Town Meeting Article #8 (Quinn Bill): rescind the Quinn Bill and replace it with an educational fund equal to 50%.",
    "moved_by": "ME",
    "seconded_by": "MS",
    "outcome": "passed",
@@ -29,6 +29,224 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; names in votes appear as initials (ME, MM, MS) rather than full names",
- "cost_usd": 0.09747549999999999
+ "note": "OCR of a DRAFT minutes page 1 of 2; page 2 contains only a date and initials. Attendance labels (Present/Absent/Also Present) are jumbled, so status is recorded as not stated for board and staff names. Motions are identified only by initials (ME, MM, MS), which are not mapped to names; the chair is not named. Votes are printed as \"all approved\" and \"all in favor\" with no count. Several warrant articles (#2, #9, #11, #13, #14) have no motion recorded.",
+ "cost_usd": 0.00608112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Male",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "also present: town hall john male kerry speidel brian laffond, martha mcdonald"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "also present: town hall john male kerry speidel brian laffond, martha mcdonald"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson, marilyn stokes"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson, marilyn stokes"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson, marilyn stokes"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson, marilyn stokes"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson, marilyn stokes"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, mark erickson, marilyn stokes"
+  },
+  {
+   "name": "Michael Stokes",
+   "role": "IT expert and Lunenburg resident",
+   "status": "present",
+   "quote": "michael stokes, it expert and lunenburg resident, commented that town it department has done a good job"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director, Council on Aging",
+   "status": "present",
+   "quote": "doreen noble, director, council on aging and deb sealy, finance committee member for coa, discussed and answered"
+  },
+  {
+   "name": "Deb Sealy",
+   "role": "Finance Committee member for COA",
+   "status": "present",
+   "quote": "doreen noble, director, council on aging and deb sealy, finance committee member for coa, discussed and answered"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "School budget gap",
+   "what_was_recorded": "The schools' gap is reported at $324K, and the school is reducing expenses to cover it.",
+   "figures_as_printed": [
+    "$324K"
+   ],
+   "quote": "schools - gap is now $324k and school is reducing expenses to cover."
+  },
+  {
+   "topic": "Council on Aging van",
+   "what_was_recorded": "A van valued at $58K was awarded to the town through the DOT Mobility Assistance Program; the town would cover gas and operator salaries while MART covers insurance and maintenance checks.",
+   "figures_as_printed": [
+    "$58K"
+   ],
+   "quote": "a new van (value $58k) we were awarded by the dot mobility assistance program"
+  },
+  {
+   "topic": "Council on Aging revolving fund request",
+   "what_was_recorded": "The town warrant includes a request for a revolving fund of $5000; no money is spent until funds are collected.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "the town warrant includes a request for a revolving fund in the amount of $5000"
+  },
+  {
+   "topic": "Special Town Meeting Article #3 reserve fund and snow/ice transfer",
+   "what_was_recorded": "Additional expenses of $31K for police/fire injured personnel and $69K for snow and ice would be covered by a $50K reserve fund and a $50K legal under-run, for a $100K transfer.",
+   "figures_as_printed": [
+    "$31K",
+    "$69K",
+    "$50K",
+    "$100K"
+   ],
+   "quote": "additional expenses of $31k for police/fire injured personnel and $69k for snow and ice deficit would be covered by reserve fund of $50k"
+  },
+  {
+   "topic": "Quinn Bill unreimbursed state portion",
+   "what_was_recorded": "The state's unreimbursed portion under the Quinn Bill is equal to $65K.",
+   "figures_as_printed": [
+    "$65K"
+   ],
+   "quote": "the state unreimbursed portion is equal to $65k"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Special Town Meeting Article #3: $100K transfer covering police/fire injured-personnel expenses and the snow and ice deficit, funded by a $50K reserve fund and a $50K legal under-run.",
+   "outcome": "approved (all approved)",
+   "amount_as_printed": "$100K",
+   "quote": "me recommends approval as outlined for $100k transfer, mm seconds, all approved."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Michael Stokes",
+   "stated_role": "IT expert and Lunenburg resident",
+   "topic": "Town IT equipment use, metrics, and full-day kindergarten value",
+   "quote": "michael stokes, it expert and lunenburg resident, commented that town it department has done a good job"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public discussion",
+   "resolution": "no action; public comment only",
+   "quote": "michael stokes, it expert and lunenburg resident, commented that town it department has done a good job",
+   "tags": [
+    "public comment",
+    "IT",
+    "kindergarten"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; no action",
+   "quote": "dpw - park division supervisor resignation and employee on medical leave are creating personnel constraints.",
+   "tags": [
+    "DPW",
+    "schools",
+    "budget gap"
+   ]
+  },
+  {
+   "topic": "Old Business - Council on Aging revolving fund for van",
+   "resolution": "discussed; no vote recorded",
+   "quote": "old business - council on aging revolving fund for van - handout: ridership estimates",
+   "tags": [
+    "council on aging",
+    "van",
+    "revolving fund",
+    "MART"
+   ]
+  },
+  {
+   "topic": "Review Warrant Articles (Special and Annual Town Meeting)",
+   "resolution": "Article #3 and Article #8 recommended for approval; Articles #9, #11 not finalized; others discussed without a motion",
+   "quote": "review warrant articles - special town meeting articles:",
+   "tags": [
+    "warrant articles",
+    "special town meeting",
+    "annual town meeting",
+    "Quinn Bill",
+    "police contract",
+    "sewer enterprise",
+    "recycling enterprise"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ridership estimates handout",
+   "where": "list",
+   "quote": "old business - council on aging revolving fund for van - handout: ridership estimates"
+  },
+  {
+   "name": "Article #3 handout on additional expenses and reserve fund transfer",
+   "where": "list",
+   "quote": "article #3 - handout - additional expenses of $31k for police/fire injured personnel and $69k for snow and ice"
+  },
+  {
+   "name": "Special and Annual Town Meeting warrant articles",
+   "where": "text",
+   "quote": "review warrant articles - special town meeting articles:"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "warrant articles",
+  "special town meeting",
+  "annual town meeting",
+  "council on aging",
+  "van",
+  "revolving fund",
+  "Quinn Bill",
+  "reserve fund transfer",
+  "school budget gap",
+  "police contract",
+  "sewer enterprise fund",
+  "recycling enterprise fund",
+  "IT",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout: ridership estimates"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-01-03",
  "docid": "4832",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Paul Doherty to the Lunenburg Housing Authority Board",
+   "motion": "Appoint Paul Doherty to the Lunenburg Housing Authority Board.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "ms. bertram made a motion to appoint paul doherty to the lunenburg housing authority board. motion was seconded by mr. debettencourt. all board members approved and motion carried."
   },
   {
-   "motion": "Appoint Luke DiRenzo as Constable",
+   "motion": "Appoint Luke DiRenzo as Constable.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed",
@@ -28,15 +28,295 @@
    "quote": "ms. bertram made a motion to appoint luke direnzo as constable. motion was seconded by mr. debettencourt. all board members approved and motion carried."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Steven M. deBettencourt",
    "seconded_by": "Paula Bertram",
    "outcome": "passed",
    "procedural": true,
-   "quote": "being no further business a motion was made by mr. debettencourt to adjourn the meeting. motion was seconded by ms. bertram. all board members approved and motion carried."
+   "quote": "a motion was made by mr. debettencourt to adjourn the meeting. motion was seconded by ms. bertram. all board members approved and motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision; text is readable and votes are clearly stated.",
- "cost_usd": 0.1054505
+ "note": "Text is OCR from a scanned page set (macOS Vision). Some words may be garbled: the absent member's name reads 'Car] \"Ernie\" Sund' in the OCR, and the minutes print 'MILA' in one place and 'MIIA' in another. Votes were recorded by voice (\"All board members approved and motion carried\") with no numeric count, so outcome is 'passed'. The 'Respectfully submitted' line is the only evidence of the recording secretary's role; the minutes do not say she was present. Public comment is 'None'.",
+ "cost_usd": 0.0063173199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "absent",
+   "quote": "tom alonzo and car] \"ernie\" sund were absent."
+  },
+  {
+   "name": "Car] \"Ernie\" Sund",
+   "status": "absent",
+   "quote": "tom alonzo and car] \"ernie\" sund were absent."
+  },
+  {
+   "name": "Gene Capuccia",
+   "role": "Lunenburg Housing Authority Director",
+   "status": "present",
+   "quote": "housing authority director gene capuccia thanked the board of selectmen along with the town's inspectional services"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "applicant for appointment to Housing Authority",
+   "status": "present",
+   "quote": "paul doherty, applicant for appointment to housing authority - of 214 townsend harbor rd came before the board"
+  },
+  {
+   "name": "Luke DiRenzo",
+   "role": "applicant, requesting appointment to position of Constable",
+   "status": "present",
+   "quote": "luke direnzo, requesting appointment to position of constable - of 105 chestnut st came before the"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Bertram will update the BOS Policies and Procedures outline; the board will then meet between regular BOS meetings to work on the policy, targeting early February, before presenting it to the Board again.",
+   "quote": "after discussion it was decided that after ms. bertram has had a chance to update the outline they would meet again"
+  },
+  {
+   "decision": "The Board began the process of revoking Central Mass Power Sport's license for Class 1 & Class 3 Automotive, starting on the next business day, for failing to submit renewal paperwork.",
+   "quote": "the board saw fit to begin the process of revoking their license for class 1 & class 3 automotive on the next business day."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ICMA CPM 101 performance measurement database",
+   "what_was_recorded": "The ICMA performance measurement database is offered to members for purchase at a yearly cost; no money is in the budget for it.",
+   "figures_as_printed": [
+    "$995.00"
+   ],
+   "quote": "this is a data base that is available to members of the icma for purchase at a cost of $995.00 per year."
+  },
+  {
+   "topic": "Proposed use of MILA insurance savings for CPM 101 purchase",
+   "what_was_recorded": "The Town Manager proposed using insurance-provider savings, about $7000, to pay for the performance measurement purchase, which has no budget money.",
+   "figures_as_printed": [
+    "$7000"
+   ],
+   "quote": "she would like to use monies from the savings that have been incurred through initiatives with the town's insurance provider, mila, which add up to approximately $7000 for this purchase"
+  },
+  {
+   "topic": "DPW renovation garage door bids",
+   "what_was_recorded": "Re-bid garage doors for the DPW renovation came in well below the original bid; the project is reported to be completely within budget.",
+   "figures_as_printed": [
+    "$66,000",
+    "$31,000"
+   ],
+   "quote": "the original bid was for approximately $66,000. the lowest bid this time came from a local company with a good reputation and was for $31,000"
+  },
+  {
+   "topic": "Insurance savings from early payment",
+   "what_was_recorded": "The Town received savings from making one early payment to its property, casualty and workers' compensation insurance on July 1 of 2011.",
+   "figures_as_printed": [
+    "$23,329"
+   ],
+   "quote": "the town received $23,329 in savings simply by making one early payment to the property, casualty and worker's compensation insurance on july 1ª of 2011."
+  },
+  {
+   "topic": "MIIA grants and rewards",
+   "what_was_recorded": "The Town received grants and rewards from MIIA for taking part in free training and optional building inspections.",
+   "figures_as_printed": [
+    "$7329"
+   ],
+   "quote": "there was also $7329 in grants/rewards from miia received by the town by taking part in free training sessions and optional building inspections."
+  },
+  {
+   "topic": "October ice storm federal reimbursement",
+   "what_was_recorded": "Federal reimbursement is awaited; amounts submitted were for debris removal and for monitoring.",
+   "figures_as_printed": [
+    "$626,000",
+    "$58,000"
+   ],
+   "quote": "$626,000 was submitted for debris removal and $58,000. was submitted for monitoring."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Three warrants were signed with the amounts as printed.",
+   "figures_as_printed": [
+    "$132,361.30",
+    "$141,563.90",
+    "$610,118.38"
+   ],
+   "quote": "warrants - 01/3/12 (3-12) $132,361.30, 01/04/12 (39-12) $141,563.90 and 01/05/12 w#14p $610,118.38 signed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements (recycling awards)",
+   "resolution": "noted, no action",
+   "quote": "mr. matthews announced that the central mass municipal recycling council gave the town of lunenburg two",
+   "tags": [
+    "recycling",
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Appointment: Lunenburg Housing Authority vacant seat",
+   "resolution": "approved appointment of Paul Doherty",
+   "quote": "ms. bertram made a motion to appoint paul doherty to the lunenburg housing authority board.",
+   "tags": [
+    "appointment",
+    "housing authority"
+   ]
+  },
+  {
+   "topic": "Appointment: Constable (Luke DiRenzo)",
+   "resolution": "approved appointment of Luke DiRenzo",
+   "quote": "ms. bertram made a motion to appoint luke direnzo as constable.",
+   "tags": [
+    "appointment",
+    "constable"
+   ]
+  },
+  {
+   "topic": "BOS Policies and Procedures",
+   "resolution": "continued; Ms. Bertram to update outline, work session early February",
+   "quote": "after discussion it was decided that after ms. bertram has had a chance to update the outline",
+   "tags": [
+    "policy",
+    "board procedures"
+   ]
+  },
+  {
+   "topic": "GASB #45 Valuation Update",
+   "resolution": "no action",
+   "quote": "ms.speidel explained that the gasb #45 requirement came into affect for the town of lunenburg on july 1, 2008.",
+   "tags": [
+    "GASB 45",
+    "retiree health insurance",
+    "liability"
+   ]
+  },
+  {
+   "topic": "CM 101 Performance Measurement initiative",
+   "resolution": "no action; discussed purchase and funding source",
+   "quote": "review cm 101, performance measurement, initiative - according to ms. speidel",
+   "tags": [
+    "performance measurement",
+    "ICMA",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no minutes; warrants signed; no action file issues",
+   "quote": "warrants - 01/3/12 (3-12) $132,361.30, 01/04/12 (39-12) $141,563.90 and 01/05/12 w#14p $610,118.38 signed",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Report: DPW Building Committee",
+   "resolution": "noted; garage door contract to be finalized",
+   "quote": "ms. speidel reported that the dpw building committee opened bids again on the garage doors",
+   "tags": [
+    "DPW",
+    "building project",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Department Reports",
+   "resolution": "none",
+   "quote": "6. department reports - none",
+   "tags": []
+  },
+  {
+   "topic": "Town Manager Reports",
+   "resolution": "noted, no action",
+   "quote": "ms. speidel updated the board on the eagle heights project.",
+   "tags": [
+    "insurance savings",
+    "storm reimbursement",
+    "Eagle Heights",
+    "Mulpus Road",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Annual License Renewals",
+   "resolution": "begin revocation of Central Mass Power Sport license",
+   "quote": "central mass power sport, 19 massachusetts avenue, has not submitted the completed",
+   "tags": [
+    "licensing",
+    "automotive"
+   ]
+  },
+  {
+   "topic": "Old Business: Committee appointments",
+   "resolution": "none",
+   "quote": "committee appointments/re-appointments/resignations - none",
+   "tags": []
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "BOS Policies and Procedures",
+   "where": "text",
+   "quote": "ms. speidel produced a paper copy of the bos policies and procedures and"
+  },
+  {
+   "name": "Warrants 01/3/12 (3-12), 01/04/12 (39-12), 01/05/12 w#14P",
+   "where": "list",
+   "quote": "warrants - 01/3/12 (3-12) $132,361.30, 01/04/12 (39-12) $141,563.90 and 01/05/12 w#14p $610,118.38 signed"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "housing authority",
+  "constable",
+  "policies and procedures",
+  "GASB 45",
+  "performance measurement",
+  "warrants",
+  "DPW",
+  "insurance savings",
+  "storm reimbursement",
+  "licensing",
+  "2012"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "warrants - 01/3/12 (3-12) $132,361.30, 01/04/12 (39-12) $141,563.90 and 01/05/12 w#14p $610,118.38 signed"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-12-10",
  "docid": "2260",
@@ -12,23 +12,282 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the December 3, 2015 meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Approve the minutes of the December 3, 2015 meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "terri made a motion to approve the minutes of the december 3, 2015 meeting. jay seconded the motion. the motion carried 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "terri moved to adjourn the meeting and jay seconded the motion. the board voted 5-0 in favor"
+   "quote": "terri moved to adjourn the meeting and jay seconded the motion. the board voted 5-0 in favor; the meeting adjourned at 9:16."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes, legible. Two votes recorded.",
- "cost_usd": 0.0842185
+ "note": "Draft minutes (file marked Draft; received and filed Jan 19 2016) with OCR text. Some passages are garbled or cut off: the item 4a analysis sentence ends mid-thought, and item 4d says \"Both Loxi said\" where the speaker is unclear. Greg G. and Loxi C. are named only by initials in 4b and their roles are not printed. The item 3c and 4 remarks are discussion with no motion; only two motions were recorded (minutes approval and adjournment), both 5-0.",
+ "cost_usd": 0.00656032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS liaison; also referred to as Selectman",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Greg Berthiaume",
+   "role": "School Committee (role not printed)",
+   "status": "present",
+   "quote": "greg berthiaume called the school committee to order at 7:00."
+  },
+  {
+   "name": "Superintendent Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "workshop with superintendent calmes and members of the school committee"
+  },
+  {
+   "name": "Greg G.",
+   "role": "School Committee (role not printed)",
+   "status": "present",
+   "quote": "both greg g. and loxi c. spoke about the need for more specialists to provide"
+  },
+  {
+   "name": "Loxi C.",
+   "role": "School Committee (role not printed)",
+   "status": "present",
+   "quote": "both greg g. and loxi c. spoke about the need for more specialists to provide"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "selectman bob ebersole noted that the management of town departments is a challenge when the ability to meet real public needs is constrained by lack of revenues."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "not printed",
+   "status": "present",
+   "quote": "carl luck stated that it is up to the individual department whether to build in a wish list of requirements"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Both committees expressed interest in seeing a Chapter 70 presentation, and a possible open School Committee meeting could be used to schedule it so both committees attend.",
+   "quote": "both committees were interested in seeing the presentation."
+  },
+  {
+   "decision": "Set the next meetings: January 14 to hear the presentation of the FY2015 audited report; January 28 tentatively to receive the capital plans recommendation.",
+   "quote": "january 14 hearing a presentation of the audited report on fy2015."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State House notes financing program",
+   "what_was_recorded": "Mark described the State House notes program for relatively small loans of three years or less, the vehicle used to finance the back hoe, dump truck, and sweeper.",
+   "figures_as_printed": [
+    "$5,000,000"
+   ],
+   "quote": "mark briefly described the state house notes program as a vehicle to finance relatively small (less than $5,000,000) loans for terms of three years or less."
+  },
+  {
+   "topic": "School expenditures as share of Town expenditures",
+   "what_was_recorded": "John's analysis showed annual school expenditures net of Chapter 70 aid and Monty Tech stayed nearly the same share of total Town expenditures from FY2011 to FY2015.",
+   "figures_as_printed": [
+    "38.5%",
+    "40.8%"
+   ],
+   "quote": "annual school department expenditures ranged from 38.5% of total town expenditures for the same fiscal year to 40.8% of total town expenditures."
+  },
+  {
+   "topic": "Chapter 70 state aid",
+   "what_was_recorded": "Discussion that Chapter 70 aid recently increased, is aid to the Town not earmarked for schools, and that the town practice is to earmark increases to the schools; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "greg said there recently had been an increase in chapter 70 state aid, but also that chapter 70 state aid was aid to the town, and that it"
+  },
+  {
+   "topic": "School and town fees",
+   "what_was_recorded": "Loxi said the fee burden was pretty high; Karin said Lunenburg is less expensive than other towns in the area; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "loxi stated that the fee burden was pretty high, though karin said that lunenburg is less expensive than other towns in the area."
+  },
+  {
+   "topic": "Building project contingency",
+   "what_was_recorded": "With the building project 70% complete, total contingency expenditures were reported as under $200,000.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "but with 70% of the building project completed, total contingency expenditures are under $200,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Selectman",
+   "topic": "budgets are controversial and contentious",
+   "quote": "selectman tom alonzo observed that by their nature budgets are controversial and the process can be contentious."
+  },
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "Selectman",
+   "topic": "managing departments with constrained revenues",
+   "quote": "selectman bob ebersole noted that the management of town departments is a challenge when the ability to meet real public needs is constrained by lack of revenues."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "not printed",
+   "topic": "department wish lists and budget realism",
+   "quote": "carl luck stated that it is up to the individual department whether to build in a wish list of requirements"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "no action; FY15 audit presentation expected January 14; State House notes described",
+   "quote": "mark called the meeting to order at 7:00 pm.",
+   "tags": [
+    "call to order",
+    "audit",
+    "state house notes"
+   ]
+  },
+  {
+   "topic": "Workshop with Superintendent Calmes and School Committee",
+   "resolution": "discussed; no action; joint presentation on Chapter 70 floated",
+   "quote": "workshop with superintendent calmes and members of the school committee",
+   "tags": [
+    "school budget",
+    "chapter 70",
+    "special services",
+    "budget process"
+   ]
+  },
+  {
+   "topic": "Minutes of December 3, 2015",
+   "resolution": "approved 5-0",
+   "quote": "terri made a motion to approve the minutes of the december 3, 2015 meeting. jay seconded the motion. the motion carried 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and priority setting process",
+   "resolution": "discussed; no action",
+   "quote": "emphasis on facts and narratives.",
+   "tags": [
+    "budget process",
+    "priority based budget"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received",
+   "quote": "jamie toale and i have been in touch regarding setting up meetings now that kerry has issued the five-year financial forecast.",
+   "tags": [
+    "committee reports",
+    "capital planning",
+    "forecast"
+   ]
+  },
+  {
+   "topic": "Next two meetings",
+   "resolution": "scheduled",
+   "quote": "january 14 hearing a presentation of the audited report on fy2015.",
+   "tags": [
+    "schedule",
+    "audit",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:16 pm, 5-0",
+   "quote": "terri moved to adjourn the meeting and jay seconded the motion. the board voted 5-0 in favor; the meeting adjourned at 9:16.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Five-year financial forecast (issued by Kerry)",
+   "where": "text",
+   "quote": "jamie toale and i have been in touch regarding setting up meetings now that kerry has issued the five-year financial forecast."
+  },
+  {
+   "name": "Audited reports for FY15 / audited report on FY2015",
+   "where": "text",
+   "quote": "the audited reports for fy15 will be presented to the finance committee, probably at our january 14 meeting."
+  },
+  {
+   "name": "Chapter 70 presentation",
+   "where": "text",
+   "quote": "loxi said that a couple of years ago the town had someone give a presentation on chapter 70 that was a very helpful explanation of this"
+  },
+  {
+   "name": "Capital plans recommendation",
+   "where": "text",
+   "quote": "january 28-tentatively receive the capital plans recommendation."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "school budget",
+  "chapter 70",
+  "state house notes",
+  "budget process",
+  "priority based budget",
+  "audit",
+  "capital planning",
+  "contingency",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

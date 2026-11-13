@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-10-17",
  "docid": "1634",
@@ -11,7 +11,161 @@
   "doc_url": "/docs/meetings/conservation-commission/2012-10-17-minutes-1634.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No formal votes recorded. Minutes contain discussion notes on enforcement orders and a request for determination of applicability, with a decision to continue one item to November 7th, but no motions with stated outcomes are recorded.",
- "cost_usd": 0.0826605
+ "dropped_unquoted": 1,
+ "note": "The minutes are truncated: they end at the 8:30 PM agenda item with no content, no adjournment, and no closing. No motions, votes, or roll-call results are recorded in the text, so the votes list is empty. Attendance is taken from the header list of members; no roles or chair are printed. Statements by parties in the enforcement items are recorded as discussion, not as public comment, because no public comment section is printed. No dollar figures appear. No documents list or exhibits are printed.",
+ "cost_usd": 0.0032270199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "present",
+   "quote": "jj cote, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "jj cote, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "present",
+   "quote": "jj cote, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "jj cote, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Karen Lefebvre",
+   "role": "",
+   "status": "present",
+   "quote": "jj cote, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "jj cote, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "jj cote, john lattanzi, sharon jordan, mark murphy, karen lefebvre, matt marro, jan carrier"
+  },
+  {
+   "name": "Jon Broc",
+   "role": "",
+   "status": "present",
+   "quote": "jon & tamera broc were in attendance and made aware that any future work in and around wetlands"
+  },
+  {
+   "name": "Tamera Broc",
+   "role": "",
+   "status": "present",
+   "quote": "jon & tamera broc were in attendance and made aware that any future work in and around wetlands"
+  },
+  {
+   "name": "Nick Pirro",
+   "role": "",
+   "status": "present",
+   "quote": "nick pirro, prit & jay pital and sheron brown were present."
+  },
+  {
+   "name": "Prit Pital",
+   "role": "owner",
+   "status": "present",
+   "quote": "prit & jay pital (owners) have offered to clean up the area."
+  },
+  {
+   "name": "Jay Pital",
+   "role": "owner",
+   "status": "present",
+   "quote": "prit & jay pital (owners) have offered to clean up the area."
+  },
+  {
+   "name": "Sheron Brown",
+   "role": "tenant",
+   "status": "present",
+   "quote": "nick pirro, prit & jay pital and sheron brown were present."
+  },
+  {
+   "name": "David McPartlan",
+   "role": "applicant, filed Request for Determination of Applicability",
+   "status": "present",
+   "quote": "request for determination of applicability filed by david mcpartlan."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continued the 45 Spring Street public hearing on the Request for Determination of Applicability until November 7th, 7:00 PM.",
+   "quote": "continued until november 7th, 7:00 pm."
+  },
+  {
+   "decision": "Commissioners decided to walk the site at 45 Spring Street to look at the situation before the continued hearing.",
+   "quote": "the commissioners decided that they wanted to take a walk thru and look at the situation."
+  },
+  {
+   "decision": "Matt (Matt Marro) will re-check the 1480 Lancaster Avenue area and speak with the owners about finalizing the cleanup.",
+   "quote": "matt will check the area again and speak with them about finalizing the cleanup."
+  },
+  {
+   "decision": "Owners of 788 Page Street were told that any future work in and around wetlands requires a filing with the ConCom.",
+   "quote": "made aware that any future work in and around wetlands requires a filing with the concom."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "788 Page Street enforcement order",
+   "resolution": "discussed; area stabilized, cleanup of cleared area required; no vote recorded",
+   "quote": "788 page street ~ enforcement order ~ area is all stabilized, cleared area to clean up."
+  },
+  {
+   "topic": "1480 Lancaster Avenue enforcement order",
+   "resolution": "continued; Matt to re-check area and speak with owners",
+   "quote": "matt will check the area again and speak with them about finalizing the cleanup."
+  },
+  {
+   "topic": "2 Oak Ridge Road / 6 Oak Ridge Road enforcement order",
+   "resolution": "discussed; three options laid out to parties; no decision recorded",
+   "quote": "matt stated that they have three options: 1) consider waiver of liability for agreement of all parties"
+  },
+  {
+   "topic": "45 Spring Street Request for Determination of Applicability (public hearing)",
+   "resolution": "continued to November 7, 2012, 7:00 PM; site walk",
+   "quote": "continued until november 7th, 7:00 pm."
+  },
+  {
+   "topic": "2 emergency orders for beaver dams",
+   "resolution": "listed on agenda; no discussion recorded",
+   "quote": "8:15 pm ~ 2 emergency orders for beaver dams"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "enforcement orders",
+  "public hearing",
+  "request for determination of applicability",
+  "beaver dams",
+  "emergency orders",
+  "site walk"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

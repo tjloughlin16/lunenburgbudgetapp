@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2010-09-14",
  "docid": "4732",
@@ -12,47 +12,503 @@
  },
  "votes": [
   {
-   "motion": "Approve one-day beer and wine license for the Library's Oktoberfest Event",
-   "moved_by": "Ernie",
-   "seconded_by": "Tom",
-   "outcome": "voted unanimously",
+   "motion": "Approve the one day beer and wine license for the Library's Oktoberfest event.",
+   "moved_by": "Ernie Sund",
+   "seconded_by": "Tom Alonzo",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "ernie move to approve the one day license, tom seconded voted unanimously."
   },
   {
-   "motion": "Approve forwarding community wish list requests to departments",
-   "moved_by": "Tom",
-   "seconded_by": "",
+   "motion": "Approve forwarding the community wish list requests to departments.",
+   "moved_by": "Tom Alonzo",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "tom motion to approve forwarding requests to departments, passed unanimously."
   },
   {
-   "motion": "Approve Chapter 44, Section 3B Budget Transfer for FY2010",
-   "moved_by": "Tom",
-   "seconded_by": "",
-   "outcome": "voted unanimously",
+   "motion": "Approve the Ch.44, S3B budget transfer for FY2010 (correction).",
+   "moved_by": "Tom Alonzo",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "tom motion to approve, voted unanimously."
   },
   {
-   "motion": "Set Special Town Meeting for November 30",
+   "motion": "Set the Special Town Meeting for November 30, 2010.",
    "moved_by": "Steve",
-   "seconded_by": "",
-   "outcome": "approved unanimously",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "he motioned to set town meeting for november 30, approved unanimously."
+   "quote": "as steve voiced concern on whether we would have free cash certified in time, he motioned to set town meeting for november 30, approved unanimously."
   },
   {
-   "motion": "Adjourn the Regular Session",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "voted unanimously",
+   "motion": "Adjourn the Regular Session.",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 10.24 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 10.24 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR macOS Vision scan, readable. Minutes state warrants were reviewed and signed but no formal motion/vote recorded. The Minutes section indicates \"None\" were approved that evening.",
- "cost_usd": 0.1143315
+ "note": "OCR of scanned pages; some names and words are garbled (e.g., 'Emie' for Ernie, 'Altematives', 'Engineerng', 'reveiwed'). Page 5 schedule table and page 6 Summer Street map are fragmentary OCR, so their dates and labels may be incomplete. Votes are recorded only where the minutes print a motion with a result. No vote is recorded for the Summer Street project, the Lake Shirley EAP, or the Town Manager goals revision. Warrants were 'reviewed and signed' without a motion. The Committee Appointments and Executive Session headings have nothing printed under them. The Ch.44 transfer amount is not printed. Mr. Juhl, Dennis Levesque, Jack Rodriquenz and others are mentioned but did not appear as speakers. The documents list heading is taken from the sentence 'Reviewed the attached plan.' rather than a labelled list.",
+ "cost_usd": 0.01276562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "member of Historical Commission",
+   "status": "present",
+   "quote": "rebecca lantry, member of historical commission clarification on the jones house and comments within the sentinel as it was"
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "P.E., VHB Engineerng (Summer Street Project)",
+   "status": "present",
+   "quote": "2. trish domigan, p.e., vhb engineerng (summer street project) - to date all of trish's services have been donated, free of"
+  },
+  {
+   "name": "Mark Mitsch",
+   "role": "Weston & Sampson",
+   "status": "present",
+   "quote": "3. mark mitsch, weston & sampson, lake shirley eap& o&m manual - operations mtc. and draft operations plan were provided"
+  },
+  {
+   "name": "Carolyn Sabol",
+   "role": "Friends of the Library (applicant, One Day Beer & Wine License)",
+   "status": "not stated",
+   "quote": "one day beer & wine license for library's oktoberfest event - carolyn sabol, and jean cooke friends of the library, for a"
+  },
+  {
+   "name": "Jean Cooke",
+   "role": "Friends of the Library (applicant, One Day Beer & Wine License)",
+   "status": "not stated",
+   "quote": "one day beer & wine license for library's oktoberfest event - carolyn sabol, and jean cooke friends of the library, for a"
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board concurred that using Tri Town project funds for the Summer Street project is appropriate, stressed the need for an agreement among the communities, and Paula would support placing the project on the town meeting warrant.",
+   "quote": "paula concurred that using these funds is appropriate expenditure and would support placing this on town meeting warrant to move"
+  },
+  {
+   "decision": "Town Manager to investigate other office space options for the Lunenburg community coordinator, since Town Hall areas are set aside for town departments.",
+   "quote": "as such the town manager is going to be investigating other options."
+  },
+  {
+   "decision": "Staff directed to take the Historical Commission's recommendations into account; the RFP for the Jones House has not been released.",
+   "quote": "kerry informed her that we haven't released the rfp and we were going to take the recommendations from the historical commission."
+  },
+  {
+   "decision": "Town Manager to forward the Lake Shirley Emergency Action Plan to board members, who had not yet seen it.",
+   "quote": "she will forward to board members."
+  },
+  {
+   "decision": "Lake Shirley dam maintenance to be addressed this year using funds within the budget; tree removal on private property to proceed after checking for easements.",
+   "quote": "kerry and jack have heard loud and clear and there are maintenance funds within the budget and this will be addressed this year."
+  },
+  {
+   "decision": "Town Manager goals revised: remove the regionalization item under goal #2 and add an organizational chart with job descriptions and salary qualifications under goal #4.",
+   "quote": "provide organizational chart of all departments (exc.school) w/job descriptions & salary qualifications under goal #4."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Jones House sale price reported in the Sentinel",
+   "what_was_recorded": "Rebecca Lantry said the Sentinel reported the Jones House as sold for $10,000, which she called a misnomer because the property will be put out to bid.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "as it was reported sold for $10,000 which is a total misnomer"
+  },
+  {
+   "topic": "Jones House porch roof repair",
+   "what_was_recorded": "Facilities director estimated the porch roof repair at $1200; the tenant had agreed to make the repair the prior year but did not.",
+   "figures_as_printed": [
+    "$1200"
+   ],
+   "quote": "kerry had our facilities director investigate necessary repairs and has a cost estimate of $1200 to make a repair to the porch roof where"
+  },
+  {
+   "topic": "Library Oktoberfest beer and wine tasting ticket prices",
+   "what_was_recorded": "Event cost is $20 per person in advance and $25 at the door, with serving trays auctioned to raise endowment funds.",
+   "figures_as_printed": [
+    "$20",
+    "$25"
+   ],
+   "quote": "cost will be $20 per person ahead of time and $25 at the door."
+  },
+  {
+   "topic": "Summer Street project construction cost",
+   "what_was_recorded": "VHB reported a construction cost estimate for the Summer Street project; a board member called it a price tag without funding opportunities.",
+   "figures_as_printed": [
+    "6.3 Million",
+    "6.3 million dollars"
+   ],
+   "quote": "6.3 million dollar construction cost per the estimates."
+  },
+  {
+   "topic": "Summer Street design services funding",
+   "what_was_recorded": "VHB's design services have been donated to date, and funding for design services is not currently available; the board must decide whether to contribute.",
+   "figures_as_printed": [],
+   "quote": "at this point funding for design services is currently not available."
+  },
+  {
+   "topic": "Summer Street cost split among communities",
+   "what_was_recorded": "A board member objected that the $460K share falls mostly on Lunenburg; VHB said the split was based on construction in each town and linear feet.",
+   "figures_as_printed": [
+    "$460K"
+   ],
+   "quote": "the $460k seems like we're taking the lion's share and noted that we're down hill from leominster."
+  },
+  {
+   "topic": "Tri Town project funds for Summer Street",
+   "what_was_recorded": "Town Manager recommended using remaining Tri Town project funds for the Summer Street project as the area most impacted.",
+   "figures_as_printed": [],
+   "quote": "as you know we've received funds for the tri town project and her recommendation would be to use some of these funds"
+  },
+  {
+   "topic": "Special Town Meeting timing and free cash",
+   "what_was_recorded": "Concern that free cash would not be certified in time for an earlier Special Town Meeting date.",
+   "figures_as_printed": [],
+   "quote": "as steve voiced concern on whether we would have free cash certified in time"
+  },
+  {
+   "topic": "Lake Shirley dam maintenance funds",
+   "what_was_recorded": "Maintenance funds are within the budget and dam repairs will be addressed this year.",
+   "figures_as_printed": [],
+   "quote": "there are maintenance funds within the budget and this will be addressed this year."
+  },
+  {
+   "topic": "Regionalization proposed budgets",
+   "what_was_recorded": "Superintendents presented proposed budgets to the regionalization committee; the final analysis showed more spending on the Lunenburg side, including legacy costs.",
+   "figures_as_printed": [],
+   "quote": "dave attended regionalization committee meeting last night and the superintendent's presented proposed budgets."
+  },
+  {
+   "topic": "Salt bid",
+   "what_was_recorded": "Salt cost increased 25%; last year's bid was $64.12 per ton and this year's bids came in at $48.56 per ton, through the Shrewsbury consortium.",
+   "figures_as_printed": [
+    "$64.12 per ton",
+    "$48.56 per ton",
+    "25%"
+   ],
+   "quote": "last year the bid $64.12 per ton and this year we received bids for $48.56 per ton."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Three warrants were reviewed and signed with the amounts shown.",
+   "figures_as_printed": [
+    "$123,685.33",
+    "$620,201.73",
+    "$180,180.35"
+   ],
+   "quote": "warrants - #13 11, 9/8/10 - $123,685.33, #6p 11, 9/16/10 - $620,201.73 and #12 11, 9/7/10 -$180,180.35 reviewed and signed"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Ch.44, S3B budget transfer, FY2010 (correction), adjustments omitted at end of fiscal year.",
+   "outcome": "approved unanimously",
+   "amount_as_printed": "not stated",
+   "quote": "ch.44, s3b budget transfer, fy2010 (correction) - end of fiscal year town accountant brought to you the adjustments for fy10"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Rebecca Lantry",
+   "stated_role": "member of Historical Commission",
+   "topic": "Jones House sale, historic preservation, and maintenance",
+   "quote": "rebecca lantry, member of historical commission clarification on the jones house and comments within the sentinel as it was"
+  },
+  {
+   "speaker": "Dave Matthews",
+   "stated_role": "",
+   "topic": "Boy Scouts 9-11 ceremony and Kevin's Gate",
+   "quote": "dave expressed appreciation to the boy scouts on their 9-11 ceremony, noted that it was both educational and a reminder for"
+  },
+  {
+   "speaker": "Ernie Sund",
+   "stated_role": "",
+   "topic": "Ceremony and Kevin's Gate",
+   "quote": "ernie also acknowledged the ceremony and kevin's gate as this is a beautiful addition to the community."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "topic": "Athletic complex area",
+   "quote": "tom noted that that whole area is such a wonderful athletic complex."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; Jones House concerns raised and answered by Town Manager",
+   "quote": "dave expressed appreciation to the boy scouts on their 9-11 ceremony, noted that it was both educational and a reminder for",
+   "tags": [
+    "public comment",
+    "Jones House",
+    "ceremonies"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational",
+   "quote": "state reps candidate's debate hosted by the lunenburg civic forum, on monday sept 27m@7:00 pm, town hall.",
+   "tags": [
+    "announcements",
+    "events"
+   ]
+  },
+  {
+   "topic": "Appointments: one day beer and wine license",
+   "resolution": "approved",
+   "quote": "ernie move to approve the one day license, tom seconded voted unanimously.",
+   "tags": [
+    "licenses",
+    "library"
+   ]
+  },
+  {
+   "topic": "Appointments: Summer Street project (VHB)",
+   "resolution": "discussed; board concurred on warrant placement and inter-community agreement; no vote recorded",
+   "quote": "board concurred and stressed the need to get an agreement in place between the communities.",
+   "tags": [
+    "Summer Street",
+    "roads",
+    "funding",
+    "Tri Town"
+   ]
+  },
+  {
+   "topic": "Appointments: Lake Shirley EAP and O&M Manual (Weston & Sampson)",
+   "resolution": "discussed; EAP to be forwarded to members; no vote recorded",
+   "quote": "mark mitsch, weston & sampson, lake shirley eap& o&m manual - operations mtc. and draft operations plan were provided",
+   "tags": [
+    "dam",
+    "Lake Shirley",
+    "emergency action plan",
+    "Shirley"
+   ]
+  },
+  {
+   "topic": "Current business: community wish list",
+   "resolution": "approved forwarding requests to departments",
+   "quote": "tom motion to approve forwarding requests to departments, passed unanimously.",
+   "tags": [
+    "wish list",
+    "departments"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "no minutes; warrants reviewed and signed",
+   "quote": "warrants - #13 11, 9/8/10 - $123,685.33, #6p 11, 9/16/10 - $620,201.73 and #12 11, 9/7/10 -$180,180.35 reviewed and signed",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "informational",
+   "quote": "dave attended regionalization committee meeting last night and the superintendent's presented proposed budgets.",
+   "tags": [
+    "regionalization",
+    "computer advisory committee",
+    "fire vehicle",
+    "DPW building committee",
+    "planning board",
+    "broadband",
+    "PACC",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none",
+   "quote": "4. department updates - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Manager updates: salt bid",
+   "resolution": "informational",
+   "quote": "recently went out to bid for salt; mentioned previously that the cost of salt has increased 25%",
+   "tags": [
+    "salt",
+    "DPW",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Old business: Ch.44 budget transfer FY2010",
+   "resolution": "approved unanimously",
+   "quote": "ch.44, s3b budget transfer, fy2010 (correction) - end of fiscal year town accountant brought to you the adjustments for fy10",
+   "tags": [
+    "budget transfer",
+    "fiscal year"
+   ]
+  },
+  {
+   "topic": "Old business: Special Town Meeting schedule",
+   "resolution": "set for November 30, 2010",
+   "quote": "as steve voiced concern on whether we would have free cash certified in time, he motioned to set town meeting for november 30, approved unanimously.",
+   "tags": [
+    "special town meeting",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Old business: Town Manager's annual goals",
+   "resolution": "revised; no vote recorded",
+   "quote": "3. town manager's annual goals - remove investigate regionalizing services with other towns where applicable under goal #2 and",
+   "tags": [
+    "town manager goals",
+    "regionalization"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed",
+   "quote": "september 21, october 5, october 12 and october 19.",
+   "tags": [
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:24 P.M.",
+   "quote": "being no further business board voted unanimously to adjourn regular session at 10.24 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Summer Street Transportation Improvements plan (VHB)",
+   "where": "list",
+   "quote": "reviewed the attached plan. city of"
+  },
+  {
+   "name": "VHB proposal for Summer Street design services, based on construction cost estimate",
+   "where": "list",
+   "quote": "paula questioned what the costs would be for the design and trish referred to the attached proposal which was based upon the"
+  },
+  {
+   "name": "Special Town Meeting scenario and potential articles",
+   "where": "list",
+   "quote": "per attached scenario and potential articles kerry's preference would be 11/16/10."
+  },
+  {
+   "name": "Lake Shirley draft operations plan and O&M Manual",
+   "where": "text",
+   "quote": "draft operations plan were provided electronically."
+  },
+  {
+   "name": "Lake Shirley Emergency Action Plan (EAP), originally by Dubois & King",
+   "where": "text",
+   "quote": "provided the update for the eap which was originally written by dubois & king."
+  },
+  {
+   "name": "Order of Conditions",
+   "where": "text",
+   "quote": "tom would recommend that the order of conditions be incorporated into the operations and maintenance plan."
+  },
+  {
+   "name": "Jones House RFP",
+   "where": "text",
+   "quote": "kerry informed her that we haven't released the rfp and we were going to take the recommendations from the historical commission."
+  },
+  {
+   "name": "Schedule 19 annual report to the State",
+   "where": "text",
+   "quote": "most of the information has been taken right off of the schedule 19 which is an annual report to the state."
+  },
+  {
+   "name": "MRPC TIP",
+   "where": "text",
+   "quote": "trish also met with mrpc to discuss the tip for this region and this project is very substantial for their target"
+  },
+  {
+   "name": "General bylaws Article 12",
+   "where": "text",
+   "quote": "reviewed article 12 of the general bylaws; noted that it would behoove us to"
+  },
+  {
+   "name": "DPW Building Committee RFP for design services",
+   "where": "text",
+   "quote": "steve noted that the dpw building committee has finalized the rfp for design services and a pre-bid conference is sheduled"
+  },
+  {
+   "name": "Town Manager's Annual Goals",
+   "where": "text",
+   "quote": "3. town manager's annual goals - remove investigate regionalizing services with other towns where applicable under goal #2 and"
+  },
+  {
+   "name": "Sentinel newspaper article on the Jones House sale",
+   "where": "text",
+   "quote": "comments within the sentinel as it was"
+  }
+ ],
+ "tags": [
+  "Summer Street project",
+  "Lake Shirley dam",
+  "Jones House",
+  "special town meeting",
+  "budget transfer",
+  "warrants",
+  "salt bid",
+  "regionalization",
+  "broadband",
+  "public comment",
+  "licenses"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "reviewed the attached plan."
+ },
+ "dropped_unquoted_by_field": {}
 }

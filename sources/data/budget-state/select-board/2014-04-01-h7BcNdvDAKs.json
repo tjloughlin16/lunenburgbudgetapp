@@ -1,0 +1,76 @@
+{
+ "board": "Selectmen Meeting",
+ "board_slug": "select-board",
+ "meeting_date": "2014-04-01",
+ "source": {
+  "sha256": "8e84c4b632a9b26036b60feee5a88afb339bb0ed3a42e9699dc4eb39fb325d28",
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-04-01-h7BcNdvDAKs.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "32 m476 125",
+    "fiscal_year": 2015,
+    "kind": "budget_total",
+    "scope": "town",
+    "statement": "Total projected revenues for FY15 stated.",
+    "status": "announced",
+    "t": 5024,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "5.47%",
+    "fiscal_year": 2015,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "State aid up, nearly all in Chapter 70.",
+    "status": "announced",
+    "t": 5089,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2014,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Supplemental appropriation from free cash proposed to cover FY14 deficits.",
+    "status": "proposed",
+    "t": 1681,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "116,000",
+    "fiscal_year": 2015,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Amount left unallocated between revenue and recommended expenditures.",
+    "status": "announced",
+    "t": 5196,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "new positions",
+    "condition": null,
+    "fiscal_year": 2015,
+    "prediction": "Zero health insurance increase cannot continue, so new positions are not sustainable",
+    "scope": "town",
+    "t": 5689,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "h7BcNdvDAKs",
+ "video_url": "https://www.youtube.com/watch?v=h7BcNdvDAKs",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-12T18:40:25Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

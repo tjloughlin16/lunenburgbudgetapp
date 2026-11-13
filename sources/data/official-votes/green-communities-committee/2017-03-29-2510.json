@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2017-03-29",
  "docid": "2510",
@@ -12,37 +12,272 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from December 20, 2016",
-   "outcome": "approved unanimously",
+   "motion": "Approve the minutes of the December 20, 2016 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "minutes from december 20, 2016 meeting were reviewed and approved unanimously."
   },
   {
-   "motion": "Ask selectmen to investigate whether net metering credits can be used to purchase street lights",
+   "motion": "Ask selectmen to investigate whether net metering credits can be used to purchase the street lights.",
    "moved_by": "G. Bittner",
    "seconded_by": "N. Sullivan",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion was made by g. bittner, seconded by n. sullivan to ask selectmen to investigate whether net metering credits can be used to purchase the street lights."
+   "quote": "motion was made by g. bittner, seconded by n. sullivan to ask selectmen to investigate whether net metering credits can be used to purchase"
   },
   {
-   "motion": "Request energy audits by Unitil for all town buildings",
+   "motion": "Request energy audits by Unitil for all town buildings.",
    "moved_by": "D. Blatt",
    "seconded_by": "N. Sullivan",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "a motion was made by d. blatt, seconded by n. sullivan to request energy audits by unitil for all town buildings."
+   "quote": "a motion was made by d. blatt, seconded by n. sullivan to request energy audits by unitil for all"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "G. Bittner",
    "seconded_by": "L. Murphy",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "g. bittner motioned to adjourn, l. murphy seconded the motion at 7:45 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision; votes are clearly readable and recorded.",
- "cost_usd": 0.1072185
+ "dropped_unquoted": 1,
+ "note": "OCR text of a handwritten or typed minutes page set, with some OCR errors (header 'Greg Bitter 40', 'Liaisor'); body names Greg Bittner. Adam Burney and Jim Breault appear only in the header, not in the Present line, so status is 'not stated'. The motion approving the December 20, 2016 minutes has no mover or second recorded. Two motions have no outcome printed, so outcome is 'not stated'. Minutes are signed 'Respectfully Submitted, Elizabeth Murphy', and a received stamp dated NOV 13 2017 appears. No dollar amounts are set out as a documents list.",
+ "cost_usd": 0.0061549199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "david blatt, chairman"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "present: david blatt, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "present: david blatt, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux"
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "present: david blatt, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux"
+  },
+  {
+   "name": "John Londa",
+   "role": "Liaison",
+   "status": "present",
+   "quote": "present: david blatt, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "",
+   "status": "present",
+   "quote": "present: david blatt, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "adam burney, advisor"
+  },
+  {
+   "name": "Jim Breault",
+   "role": "Liaison",
+   "status": "not stated",
+   "quote": "jim breault, liaison"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "D. Blatt will ask the Dept. of Energy Resources whether the remaining funding can be used to buy one bulb as a trial.",
+   "quote": "d.blatt will ask the dept. of energy resources if we can use the remaining funding to purchase a bulb as a trial."
+  },
+  {
+   "decision": "Next steps for first round: DOER visits projects and gives final approval; the balance is returned if DOER does not allow the bulb trial.",
+   "quote": "next steps for first round projects- doer visits projects and gives final approval."
+  },
+  {
+   "decision": "H. Lemieux will contact John DiNapoli for energy assessments.",
+   "quote": "h. lemieux will contact john dinapoli for energy assessments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Replacement quiet bulb for library lighting",
+   "what_was_recorded": "J. Londa found a quiet bulb that may satisfy the Library Trustees at a stated unit cost; remaining funding is enough for one bulb.",
+   "figures_as_printed": [
+    "$220"
+   ],
+   "quote": "at a cost of $220 per bulb."
+  },
+  {
+   "topic": "Balance of first round funding",
+   "what_was_recorded": "The board said it will return the remaining balance in this year's funding round if DOER does not allow the bulb trial.",
+   "figures_as_printed": [
+    "$382.13"
+   ],
+   "quote": "we will return the balance of $382.13 in this year's funding round if doer does not allow us to use"
+  },
+  {
+   "topic": "City of Fitchburg street light purchase from Unitil",
+   "what_was_recorded": "Fitchburg bought 3080 street lights from Unitil for a stated total, about $17 per light, before converting them to LED.",
+   "figures_as_printed": [
+    "$300,000",
+    "$17"
+   ],
+   "quote": "at a cost of $300,000, ($17 per light) in order to convert to led."
+  },
+  {
+   "topic": "City of Fitchburg LED conversion cost and rebate",
+   "what_was_recorded": "Fitchburg spent a stated amount converting the lights to LED, including networking, and received a rebate from Unitil.",
+   "figures_as_printed": [
+    "$1,000,000",
+    "$275,000"
+   ],
+   "quote": "$1,000,000 was spent to convert the lights to led, including networking the lights. a $275,000 rebate was awarded by unitil."
+  },
+  {
+   "topic": "Fitchburg annual street light cost per light",
+   "what_was_recorded": "Annual cost per light fell from a stated amount under Unitil ownership, to a lower amount under City ownership, to a lowest amount after LED conversion.",
+   "figures_as_printed": [
+    "$157",
+    "$90",
+    "$35"
+   ],
+   "quote": "the annual costs went from $157 per light when unitil owned, to $90 when the city owned them, to $35 after led conversion."
+  },
+  {
+   "topic": "Lunenburg street light annual cost",
+   "what_was_recorded": "Lunenburg has 333 street lights with an annual cost of $122 per light; the FY 18 budget projects $129 per light.",
+   "figures_as_printed": [
+    "$122",
+    "$129"
+   ],
+   "quote": "with annual costs of $122 per light. our fy 18 budget projects a cost of $129 per light."
+  },
+  {
+   "topic": "Cost to purchase Lunenburg street lights from Unitil",
+   "what_was_recorded": "Purchasing the street lights is likely to cost about one year's lighting bill; net metering credits were suggested as the payment source.",
+   "figures_as_printed": [],
+   "quote": "it is likely to cost the equivalent of one years lighting bill to purchase the lights."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of December 20, 2016",
+   "resolution": "approved unanimously",
+   "quote": "minutes from december 20, 2016 meeting were reviewed and approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "First Funding Round Projects",
+   "resolution": "reported; DOER final approval and bulb trial pending",
+   "quote": "first funding round projects were reviewed, j. londa reported the last projects were fully",
+   "tags": [
+    "first round",
+    "library lighting",
+    "energy efficiency incentives"
+   ]
+  },
+  {
+   "topic": "Decision-making authority for public building projects",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion was had regarding the decision making process and authority to implement projects",
+   "tags": [
+    "governance",
+    "public buildings"
+   ]
+  },
+  {
+   "topic": "Street light conversion and LED costs",
+   "resolution": "motion to ask selectmen to investigate net metering",
+   "quote": "l. murphy shared information from the city of fitchburg regarding their costs and experiences in",
+   "tags": [
+    "street lights",
+    "LED",
+    "Unitil",
+    "net metering"
+   ]
+  },
+  {
+   "topic": "New projects for FY18",
+   "resolution": "motion requesting Unitil energy audits for all town buildings",
+   "quote": "new projects for fy18- discussion was had regarding future projects at specific buildings.",
+   "tags": [
+    "FY18",
+    "energy audits",
+    "grant round"
+   ]
+  },
+  {
+   "topic": "Energy Conservation Measure report",
+   "resolution": "presented; no action recorded",
+   "quote": "john londa presented an annual report from the building inspector of new construction and",
+   "tags": [
+    "energy report",
+    "HERS",
+    "new construction"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45 PM",
+   "quote": "g. bittner motioned to adjourn, l. murphy seconded the motion at 7:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Report from the Building Inspector of New Construction and HERS ratings",
+   "where": "text",
+   "quote": "john londa presented an annual report from the building inspector of new construction and"
+  },
+  {
+   "name": "Information from the City of Fitchburg on costs and experiences converting streetlights to LED",
+   "where": "text",
+   "quote": "l. murphy shared information from the city of fitchburg regarding their costs and experiences in"
+  },
+  {
+   "name": "List of potential projects for 2018 funding",
+   "where": "text",
+   "quote": "below is a list of potential projects for 2018"
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy efficiency",
+  "street lights",
+  "LED conversion",
+  "Unitil",
+  "grant funding",
+  "energy audits",
+  "public buildings",
+  "library lighting",
+  "FY18 budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-05-14",
  "docid": "1816",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the April 9, 2013 Council on Aging minutes",
-   "moved_by": "Ms. Montuori",
+   "motion": "Approve the April 9, 2013 COA minutes.",
+   "moved_by": "Ms. Montouri",
    "seconded_by": "Mr. Lincoln",
    "outcome": "passed 11-0",
    "procedural": true,
    "quote": "ms. montouri moved to approve the april 9, 2013 coa minutes. mr. lincoln seconded. on vote, motion carried, 11 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn the Council on Aging meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Wass",
    "outcome": "passed 11-0",
@@ -29,6 +29,276 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0866155
+ "note": "Minutes header reads 'Minutes approved at 6/11/13 COA meeting'. Mr. Crellin is listed as present, but the minutes also say he 'would not be able to attend this meeting' (under the June reminder; likely the June meeting). Spelling varies (Montouri/Montuori). Only two votes are recorded (minutes approval and adjournment), both 11-0. No public comment is recorded. No documents list heading is printed.",
+ "cost_usd": 0.007421419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), pete lincoln (vice-chairperson), doreen noble (director),"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Connie Odea",
+   "role": "member",
+   "status": "present",
+   "quote": "barbara brown, fred crellin, jane doyle, jim hays, sis montuori, whitney lacka, connie odea,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "member",
+   "status": "present",
+   "quote": "deb seeley, joyce wass, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "member",
+   "status": "present",
+   "quote": "joyce wass, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "joyce wass, & sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Stephen Raboin",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "guest: stephen raboin (lunenburg finance committee)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Special Needs Students program at the meal site is put on hold until the staff-per-student ratio is fixed.",
+   "quote": "the program will be put on hold."
+  },
+  {
+   "decision": "Ruth Swiecicki and Joanne Brazell agreed to share the Meal Site Manager duties until October 2013.",
+   "quote": "have agreed to share the duties until october 2013."
+  },
+  {
+   "decision": "The COA BBQ/Volunteer Recognition Ceremony is set for the first Monday in August, 8/5/13.",
+   "quote": "the first monday in august which will be 8/5/13."
+  },
+  {
+   "decision": "The slate of new COA officers (Chairperson Mary Lynn Conrad, Vice Chair Barbara Brown, 1 year each) is to be voted on at the June meeting.",
+   "quote": "officers which will be voted on at the june meeting as follows:"
+  },
+  {
+   "decision": "End-of-year sub-committee reports are due at the June meeting.",
+   "quote": "all end of year sub-committee reports are due at the june meeting."
+  },
+  {
+   "decision": "The porch swing stays on the porch and is not moved to Pearl Brook Housing.",
+   "quote": "it would not be appropriate to do so."
+  },
+  {
+   "decision": "The Director will arrange for a Clinton Youth COA group to visit a Lunenburg COA meeting.",
+   "quote": "she could arrange for them to come to a lunenburg coa meeting to talk to members about this program."
+  },
+  {
+   "decision": "No Finance report was given at this meeting; a final FY13 finance report is to be available at the first August COA meeting.",
+   "quote": "there would not be a finance report."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Senior Center utilities",
+   "what_was_recorded": "Beginning in FY14, Senior Center utilities will be paid through a DPW general fund, ending the separate COA 541 account reports at meetings.",
+   "figures_as_printed": [],
+   "quote": "beginning in fy14, all senior center utilities will be paid through a general fund at the dpw"
+  },
+  {
+   "topic": "COA budget",
+   "what_was_recorded": "The COA budget was reported as passed at the May Town Meeting with no opposition.",
+   "figures_as_printed": [],
+   "quote": "the coa budget passed at the may town meeting with no opposition."
+  },
+  {
+   "topic": "FY14 vouchers and purchase orders",
+   "what_was_recorded": "The Director was working on FY14 vouchers and purchase orders due for submission.",
+   "figures_as_printed": [],
+   "quote": "which need to be submitted by wednesday."
+  },
+  {
+   "topic": "FY13 finance report",
+   "what_was_recorded": "No finance report was given because funds were being shifted between lines at year end; end-of-year bills were being consolidated with the Town Accountant.",
+   "figures_as_printed": [],
+   "quote": "there would not be a finance report."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved April 9, 2013 minutes 11-0",
+   "quote": "ms. montouri moved to approve the april 9, 2013 coa minutes. mr. lincoln seconded. on vote, motion carried, 11 in favor, 0 opposed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; no finance report; Memorial Day, meal site, SHINE and program updates",
+   "quote": "ms. noble reported that due to it being the end of the fiscal year",
+   "tags": [
+    "director",
+    "finance",
+    "meal site",
+    "volunteers",
+    "SHINE"
+   ]
+  },
+  {
+   "topic": "Old Business: MCOA Board Training and COA BBQ",
+   "resolution": "BBQ date set for 8/5/13; training discussed under Director's Report",
+   "quote": "the first monday in august which will be 8/5/13.",
+   "tags": [
+    "training",
+    "BBQ",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "New Business: annual meeting reminder, FY14 officer slate, BDC report",
+   "resolution": "slate presented, vote deferred to June meeting",
+   "quote": "officers which will be voted on at the june meeting as follows:",
+   "tags": [
+    "officers",
+    "annual meeting"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Report: revised COA Bylaws",
+   "resolution": "presented for board signatures",
+   "quote": "ms. brown presented the revised coa bylaws for board members to sign.",
+   "tags": [
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "informational",
+   "quote": "ms. noble stated that there will be a new law",
+   "tags": [
+    "correspondence",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "porch swing stays; recruitment ad and meeting time discussed; Youth COA visit offered",
+   "quote": "it would not be appropriate to do so.",
+   "tags": [
+    "recruitment",
+    "bench and swing",
+    "youth program"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:26AM, 11-0",
+   "quote": "mr. lincoln moved to adjourn the coa meeting. ms. wass seconded. on vote motion carried, 11 in favor 0 opposed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA minutes of April 9, 2013",
+   "where": "text",
+   "quote": "approve the april 9, 2013 coa minutes."
+  },
+  {
+   "name": "SHINE (Serving Health Insurance Needs of Elders) Memorandum of Understanding",
+   "where": "text",
+   "quote": "memorandum of understanding was received"
+  },
+  {
+   "name": "Revised COA Bylaws",
+   "where": "text",
+   "quote": "ms. brown presented the revised coa bylaws for board members to sign."
+  },
+  {
+   "name": "FY13 Board Development Committee end of year report",
+   "where": "text",
+   "quote": "presented the board with the fy13 board development committee end of year report early."
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "there were 2 talent bank forms"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "meal site",
+  "budget",
+  "finance report",
+  "volunteers",
+  "officers",
+  "bylaws",
+  "SHINE",
+  "recruitment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

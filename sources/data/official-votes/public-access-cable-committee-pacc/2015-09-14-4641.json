@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-09-14",
  "docid": "4641",
@@ -12,19 +12,265 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of August 10 with recommended changes",
+   "motion": "Approve the minutes of August 10 with recommended changes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "pacc voted and approved the minutes of august 10 with recommended changes."
   },
   {
-   "motion": "accept the Purchasing Procedure",
+   "motion": "Accept the Purchasing Procedure, which had been reviewed by Town Manager Kerry LaFleur.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "the committee voted unanimously to accept the purchasing procedure, which had been reviewed by town manager kerry lafleur."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. Names of mover and seconder not stated in the minutes for either vote.",
- "cost_usd": 0.0846205
+ "note": "Minutes are extracted text with no recorded roll-call vote counts. The minutes approval has no mover or seconder and no count, so it is recorded as passed. The adjournment has no motion recorded and is not listed as a vote. Public comment was 'None'. The minutes have no documents list heading, so documents_list is printed false; the submitted overview, draft, financials and job description are recorded as text references only. Jo McLaughlin and Jeffrey Bajko are named but their attendance is not stated. The Acton demonstration report is an action item, not a recorded vote.",
+ "cost_usd": 0.004705920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rhonda Lisio",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were: rhonda lisio, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were: rhonda lisio, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were: rhonda lisio, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Coordinator",
+   "status": "not stated",
+   "quote": "jo mclaughlin will set up a training meeting."
+  },
+  {
+   "name": "Jeffrey Bajko",
+   "role": "PACC Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, jeffrey bajko, pacc clerk 11/9/15."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "PACC will send the Local Public Access TV Programming Coordinator job description information to the Personnel Committee to review and format.",
+   "quote": "pacc will send the information to the personnel committee, where they will review and format it."
+  },
+  {
+   "decision": "Discussion of the Local Public Access TV Programming Coordinator job description was tabled to enable Jo to review it.",
+   "quote": "further discussion was tabled to enable jo to review it."
+  },
+  {
+   "decision": "Jo will check out the Leightronix demonstration in Acton and report back on the HD channel vs equipment purchase.",
+   "quote": "she will check out the demonstration in acton and report back."
+  },
+  {
+   "decision": "The PACC will create a wish list of space needs for the studio, office, archives, and accessibility.",
+   "quote": "the pacc needs to create a wish list of space needs for the studio, office, archives, and accessibility."
+  },
+  {
+   "decision": "Rhonda will ask the Space Re-use Committee for updates on their planning.",
+   "quote": "rhonda will ask the space re-use committee"
+  },
+  {
+   "decision": "Jo will meet with John to assess space needs.",
+   "quote": "jo will also meet with john to assess needs."
+  },
+  {
+   "decision": "Jo McLaughlin will set up a training meeting for staff on the Tricaster.",
+   "quote": "jo mclaughlin will set up a training meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY15 ending balance",
+   "what_was_recorded": "The coordinator reported the FY15 ending balance.",
+   "figures_as_printed": [
+    "$265,970.11"
+   ],
+   "quote": "ending balance for fy 15 was $265,970.11."
+  },
+  {
+   "topic": "August FY16 ending monthly balance",
+   "what_was_recorded": "The coordinator reported the ending monthly balance for August FY16.",
+   "figures_as_printed": [
+    "$260,542.53"
+   ],
+   "quote": "ending monthly balance for august fy 16 was $260,542.53."
+  },
+  {
+   "topic": "Ten years of PAC financials",
+   "what_was_recorded": "Ten years of PAC financials (FY04 to FY15) were emailed to CAC with a summary of revenue and expenses; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ten years of pac financials (fy04 - fy15) were also emailed to cac with a summary of revenue and expenses."
+  },
+  {
+   "topic": "HD channel vs purchase of equipment",
+   "what_was_recorded": "Jo submitted an overview comparing Telvue and Leightronix equipment options for the HD channel; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "jo submitted an overview comparing telvue and leightronix."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call",
+   "resolution": "meeting started 6:08 p.m.; members present recorded",
+   "quote": "meeting started at 6:08 p.m.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no public comment",
+   "quote": "public comments: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and approval of last meeting minutes",
+   "resolution": "approved with recommended changes",
+   "quote": "pacc voted and approved the minutes of august 10 with recommended changes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "received; no action recorded",
+   "quote": "ending balance for fy 15 was $265,970.11.",
+   "tags": [
+    "reports",
+    "budget",
+    "staffing",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Local Public Access TV Programming Coordinator job description",
+   "resolution": "tabled; sent to Personnel Committee",
+   "quote": "further discussion was tabled to enable jo to review it.",
+   "tags": [
+    "staffing",
+    "job description"
+   ]
+  },
+  {
+   "topic": "HD channel vs purchase of equipment",
+   "resolution": "continued; Acton demonstration to be checked",
+   "quote": "jo submitted an overview comparing telvue and leightronix.",
+   "tags": [
+    "equipment",
+    "HD channel"
+   ]
+  },
+  {
+   "topic": "Purchasing procedure",
+   "resolution": "approved unanimously",
+   "quote": "the committee voted unanimously to accept the purchasing procedure, which had been reviewed by town manager kerry lafleur.",
+   "tags": [
+    "purchasing",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Business plan",
+   "resolution": "rough draft reviewed; goals and strategies worked on",
+   "quote": "a rough draft in the format used by westborough was submitted by jo for review and comment.",
+   "tags": [
+    "business plan"
+   ]
+  },
+  {
+   "topic": "Space needs",
+   "resolution": "wish list to be created; inquiries and needs assessment assigned",
+   "quote": "the pacc needs to create a wish list of space needs for the studio, office, archives, and accessibility.",
+   "tags": [
+    "space needs"
+   ]
+  },
+  {
+   "topic": "CAC requests",
+   "resolution": "noted; PACC to submit business plan",
+   "quote": "the cable advisory committee wants the pacc to submit a business plan.",
+   "tags": [
+    "CAC",
+    "business plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:52 p.m.; next meeting October 5, 2015",
+   "quote": "the meeting adjourned at 7:52 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Purchasing Procedure",
+   "where": "text",
+   "quote": "the committee voted unanimously to accept the purchasing procedure, which had been reviewed by town manager kerry lafleur."
+  },
+  {
+   "name": "Local Public Access TV Programming Coordinator Job Description",
+   "where": "text",
+   "quote": "local public access tv programming coordinator job description: 1. pacc will send the information to the personnel committee"
+  },
+  {
+   "name": "Overview comparing Telvue and Leightronix",
+   "where": "text",
+   "quote": "jo submitted an overview comparing telvue and leightronix."
+  },
+  {
+   "name": "Business plan rough draft in the format used by Westborough",
+   "where": "text",
+   "quote": "a rough draft in the format used by westborough was submitted by jo for review and comment."
+  },
+  {
+   "name": "Ten years of PAC financials (FY04 – FY15)",
+   "where": "text",
+   "quote": "ten years of pac financials (fy04 - fy15) were also emailed to cac with a summary of revenue and expenses."
+  },
+  {
+   "name": "Minutes of August 10",
+   "where": "text",
+   "quote": "pacc voted and approved the minutes of august 10 with recommended changes."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "cable committee",
+  "budget",
+  "equipment",
+  "business plan",
+  "staffing",
+  "space needs",
+  "purchasing",
+  "CAC"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

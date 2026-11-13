@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2015-10-28",
  "docid": "1700",
@@ -12,15 +12,113 @@
  },
  "votes": [
   {
-   "motion": "accept the plan as Todd presented and allow Todd & Matt to approve field changes regarding drainage issues",
+   "motion": "Accept the plan as Todd presented and allow Todd & Matt to approve field changes regarding drainage issues, etc. (Holman Street continued hearing, Lane Property)",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "a motion was made to accept the plan as todd presented and to allow todd & matt to approve field changes in regard to drainage issues, etc. approved unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. No procedural votes (minutes approval, adjournment, or executive session entry) are formally recorded as voted.",
- "cost_usd": 0.0903095
+ "note": "The minutes are a short text with no roll call, so attendance status is not stated for anyone. The page header contains garbled characters (likely a logo or encoding artifact), which were ignored. The vote's mover and seconder are not printed. The adjournment at 7:50 PM has no recorded motion, so no procedural vote is listed. No dollar figures, public comment, or document list appear in the text.",
+ "cost_usd": 0.0025067200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jack Rabbitt",
+   "status": "not stated",
+   "quote": "jack rabbitt, carl luck, brad kennedy, todd dwyer, tom bertram",
+   "role": ""
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "jack rabbitt, carl luck, brad kennedy, todd dwyer, tom bertram",
+   "role": ""
+  },
+  {
+   "name": "Brad Kennedy",
+   "status": "not stated",
+   "quote": "jack rabbitt, carl luck, brad kennedy, todd dwyer, tom bertram",
+   "role": ""
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "not stated",
+   "quote": "jack rabbitt, carl luck, brad kennedy, todd dwyer, tom bertram",
+   "role": ""
+  },
+  {
+   "name": "Tom Bertram",
+   "status": "not stated",
+   "quote": "jack rabbitt, carl luck, brad kennedy, todd dwyer, tom bertram",
+   "role": ""
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "not stated",
+   "quote": "paula & tom bertram of the lunenburg snow riders",
+   "role": "of the Lunenburg Snow Riders"
+  },
+  {
+   "name": "Jan",
+   "status": "not stated",
+   "quote": "jan stated she had fire chief pat sullivan look at plans",
+   "role": ""
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "call to order ~ 7:00 pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Continued public hearing, Notice of Intent, 0 Holman Street (Lane Property)",
+   "resolution": "approved plan with authority for field changes",
+   "quote": "this continued hearing will be to discuss and finalize the plans",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "public hearing",
+    "parking area",
+    "culverts",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 PM (no motion recorded)",
+   "quote": "adjournment ~ 7:50 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "Holman Street",
+  "Lane Property",
+  "parking area",
+  "culverts",
+  "drainage",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

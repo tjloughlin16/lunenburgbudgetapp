@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2014-05-08",
  "docid": "3227",
@@ -12,23 +12,184 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from 4/3/2014",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "motion": "Approve the minutes of the 4/3/2014 meeting.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 3-0",
+   "procedural": true,
    "quote": "commissioners approved meeting minutes from 4/3/2014. vote 3-0."
   },
   {
-   "motion": "Appropriate funds for the usage of the school facilities",
-   "outcome": "passed 3-0",
-   "procedural": false,
+   "motion": "Appropriate the funds for the usage of the school facilities (Jr Basketball invoice).",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 3-0",
+   "procedural": false,
    "quote": "commission voted 3-0 to appropriate the funds for the usage of the school facilities."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source: macOS Vision. All votes recorded.",
- "cost_usd": 0.0812415
+ "note": "Scanned OCR text with garbled header names (Robert Robuccio / Michael Mascarei) and inconsistent spellings (Cliff Worhtly in roll call, Cliff Worthy in body; Mike Maciarelli in body). Vote entries have no mover or seconder printed. The item labelled 'Public Comment' names only Jack and Mike, apparently commissioners, with no stated role. The minutes say the meeting adjourned at 9:05 but record no motion, so no adjournment vote is listed. Next meeting is printed as 'Thursday June 19\"h 7:00 pm @ DPW'. Attendance status for Jack Rodiquenz and Dan Proctor is inferred from their presentations, not from an explicit roll call.\"",
+ "cost_usd": 0.0048793199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Robuccio",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting convened at 7 o'clock, member's present commissioners bob robuccio, mike maciarelli and doug mcquaid."
+  },
+  {
+   "name": "Mike Maciarelli",
+   "role": "commissioner",
+   "status": "present",
+   "quote": "meeting convened at 7 o'clock, member's present commissioners bob robuccio, mike maciarelli and doug mcquaid."
+  },
+  {
+   "name": "Doug McQuaid",
+   "role": "commissioner",
+   "status": "present",
+   "quote": "meeting convened at 7 o'clock, member's present commissioners bob robuccio, mike maciarelli and doug mcquaid."
+  },
+  {
+   "name": "Jack Rodiquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack rodiquenz, dan proctor and cliff worhtly."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dan proctor presented a list of little league projects to the commission."
+  },
+  {
+   "name": "Cliff Worthy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "cliff worthy attended the meeting and reviewed the jr basketball invoice for school usage."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Little League agreed to keep the commission and DPW informed about contributions and projects in the future.",
+   "quote": "little league has agreed to keep the commission and dpw informed in the future."
+  },
+  {
+   "decision": "The Park Commission agreed to send a letter to document its concerns about the 16 foot access road between the snack bar and the turf field.",
+   "quote": "has agreed to send a letter to document our concerns."
+  },
+  {
+   "decision": "The Park Commission agreed to inform the school department that relocating the red garage to the track and field facility is unacceptable.",
+   "quote": "has also agreed to inform the school dept that this move is un-acceptable."
+  },
+  {
+   "decision": "The Park Commission will advise the school department to find a new location for the red garage.",
+   "quote": "the park commission will advise the school dept to find a new location to place the garage."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Jr Basketball invoice for school usage",
+   "what_was_recorded": "A $2,000 check was deposited to the revolving account and the commission voted to appropriate funds for use of school facilities.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "deposited a $2,000 check to the revolving account."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jack and Mike",
+   "stated_role": "not stated",
+   "topic": "school building committee access road and red garage relocation",
+   "quote": "public comment: jack and mike brought up concerns after a recent new school building committee"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of minutes of 4/3/2014",
+   "resolution": "approved 3-0",
+   "quote": "commissioners approved meeting minutes from 4/3/2014. vote 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Little League projects presentation (dugouts, T-Ball field parking)",
+   "resolution": "no action",
+   "quote": "dan proctor presented a list of little league projects to the commission.",
+   "tags": [
+    "little league",
+    "projects"
+   ]
+  },
+  {
+   "topic": "Little League contribution documentation project",
+   "resolution": "Little League agreed to keep commission and DPW informed",
+   "quote": "jack presented the commission and little league with a project document to ensure that all contributions",
+   "tags": [
+    "little league",
+    "documentation",
+    "finances"
+   ]
+  },
+  {
+   "topic": "New parking area off Chestnut St",
+   "resolution": "informational, no action",
+   "quote": "jack also informed the commission that the construction of the new parking area off chestnut st will",
+   "tags": [
+    "parking",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Jr Basketball invoice for school usage",
+   "resolution": "appropriated funds 3-0",
+   "quote": "cliff worthy attended the meeting and reviewed the jr basketball invoice for school usage.",
+   "tags": [
+    "invoice",
+    "school facilities"
+   ]
+  },
+  {
+   "topic": "Public comment: school building committee access road and red garage relocation",
+   "resolution": "letter to be sent; school dept to be advised",
+   "quote": "public comment: jack and mike brought up concerns after a recent new school building committee",
+   "tags": [
+    "school building committee",
+    "access road",
+    "red garage"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Project document ensuring all contributions for projects are documented (available at the DPW office)",
+   "where": "list",
+   "quote": "jack presented the commission and little league with a project document to ensure that all contributions"
+  },
+  {
+   "name": "Jr Basketball invoice for school usage",
+   "where": "text",
+   "quote": "cliff worthy attended the meeting and reviewed the jr basketball invoice for school usage."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "little league",
+  "school facilities",
+  "invoice",
+  "parking",
+  "school building committee",
+  "DPW",
+  "2014"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jack presented the commission and little league with a project document"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2009-11-02",
  "docid": "830",
@@ -12,6 +12,128 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes describe inspections, permits signed, and discussions (floor drain regulation, H1N1 grant and vaccine availability) but contain no motions or voting language. The meeting adjournment at 7:50 pm is stated as fact, not as a voted motion.",
- "cost_usd": 0.0805775
+ "note": "Single page of OCR text (page 1 only); no votes are recorded. The Minutes Approved header has no vote, and the adjournment at 7:50 pm has no motion. The OCR has errors and clipped text: the first letter of the floor drain paragraph is missing (\"fter discussion\"), \"HINI\" and \"H1NI\" likely mean H1N1, \"innoculant\" and \"NABH\" are as printed, and \"Lunenburg Tater District\" is as printed. Attendance is inferred from the Present line; no public comment is recorded.",
+ "cost_usd": 0.0037427199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Shea",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, dave shea, vice chairman george emond, members perry jewel and jack rabbitt"
+  },
+  {
+   "name": "George Emond",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "present: chairman, dave shea, vice chairman george emond, members perry jewel and jack rabbitt"
+  },
+  {
+   "name": "Perry Jewel",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman, dave shea, vice chairman george emond, members perry jewel and jack rabbitt"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman, dave shea, vice chairman george emond, members perry jewel and jack rabbitt"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "administrative assistant andrea schnepf advised that the town of lunenburg has been awarded grant funds"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Francis McNamara, Superintendent of the Lunenburg Tater District, will be invited to the Board of Health meeting of December 7, 2009 at 7:00 pm to discuss the floor drain regulation request.",
+   "quote": "it was agreed that mr. mcnamara would be invited to the board health meeting to be held on december 7, 2009 at 7:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Region 2 grant funds (Emergency Planning)",
+   "what_was_recorded": "The Town of Lunenburg was awarded grant funds through Region 2, Emergency Planning; no amount was printed and more information was to follow.",
+   "figures_as_printed": [],
+   "quote": "awarded grant funds through region 2, emergency planning."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "reviewed",
+   "quote": "title 5 inspection reports reviewed: 502 holman street",
+   "tags": [
+    "title 5",
+    "septic",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed: 80 cross road 91 maple parkway",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Floor drain regulation",
+   "resolution": "invite Francis McNamara to a future meeting",
+   "quote": "correspondence was received from francis mcnamara, superintendent of the lunenburg tater district, requesting that the board review implementing a floor drain regulation",
+   "tags": [
+    "floor drain regulation",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "H1N1 Region 2 grant and vaccine availability",
+   "resolution": "informational; no action recorded",
+   "quote": "administrative assistant andrea schnepf advised that the town of lunenburg has been awarded grant funds through region 2, emergency planning.",
+   "tags": [
+    "H1N1",
+    "grants",
+    "emergency planning",
+    "vaccine"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 502 Holman Street",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 502 holman street"
+  },
+  {
+   "name": "Septic permits signed for 80 Cross Road, 91 Maple Parkway, 20 Johnson Street, 23 Maple Parkway",
+   "where": "list",
+   "quote": "septic permits signed: 80 cross road 91 maple parkway"
+  },
+  {
+   "name": "Correspondence from Francis McNamara, Superintendent of the Lunenburg Tater District, requesting review of a Floor Drain Regulation",
+   "where": "text",
+   "quote": "correspondence was received from francis mcnamara, superintendent of the lunenburg tater district, requesting that the board review implementing a floor drain regulation"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic permits",
+  "floor drain regulation",
+  "H1N1",
+  "grants",
+  "emergency planning",
+  "vaccine"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed:"
+ },
+ "dropped_unquoted_by_field": {}
 }

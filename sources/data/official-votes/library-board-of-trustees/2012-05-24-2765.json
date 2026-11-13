@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-05-24",
  "docid": "2765",
@@ -12,33 +12,213 @@
  },
  "votes": [
   {
-   "motion": "The Chair to contact BiblioTemps to make an offer to Teresa Hathaway for Interim Director",
+   "motion": "For the Chair to contact BiblioTemps to make an offer to Teresa Hathaway for Interim Director.",
    "moved_by": "John Mara",
    "seconded_by": "Lars Widstrand",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "john mara made a motion for the chair to contact to bibliotemps to make an offer to teresa hathaway fo r interim director. lars widstrand seconded the motion, unan imous approval by the trustees presen",
-   "quote_taken_from_text": true
+   "quote": "john mara made a motion for the chair to contact to bibliotemps to make an offer to teresa hathaway"
   },
   {
-   "motion": "The Chair to negotiate an hourly rate between $28 to $32/hour for the Interim Director and a 20% fee for BiblioTemps",
+   "motion": "For the Chair to negotiate an hourly rate between $28 and $32/hour for the Interim Director and a 20% fee for BiblioTemps.",
    "moved_by": "John Mara",
    "seconded_by": "Lars Widstrand",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "john mara made a motion for the chair to contact to bibliotemps to make an offer to teresa hathaway fo r interim director. lars widstrand seconded the motion, unan imous approval by the trustees present. • john mara made a mo",
-   "quote_taken_from_text": true
+   "quote": "john mara made a motion for the chair to negotiate an hourly rate between $28 to $32/hour"
   },
   {
-   "motion": "To adjourn",
+   "motion": "To adjourn at 9:15 pm.",
    "moved_by": "Jeanne Raboin",
-   "seconded_by": "Dick M ailloux",
-   "outcome": "unanimously approved",
+   "seconded_by": "Dick Mailloux",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion made by jeanne raboin and seconded by dick m ailloux to adjourn at 9:15 pm; passed unanimously b y the trustees present."
+   "quote": "motion made by jeanne raboin and seconded by dick m ailloux to adjourn at 9:15 pm; passed unanimously"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd with minor formatting artifacts (spacing in \"Dick M ailloux\" and \"b y\"). Three votes recorded: two substantive motions and one procedural adjournment, all unanimously approved.",
- "cost_usd": 0.1213895
+ "note": "Text is an extracted copy with broken words and split spacing (e.g. 'Trust ees', 'unan imous'); quotes copy it as printed with double spaces collapsed. Dick Mailloux appears as 'Dick Maillo ux' in the attendance line and 'Dick M ailloux' in the adjournment motion; the Chair is not named. Vote tallies are not printed beyond 'unanimous approval by the Trustees present'. Public comment was 'None'. No documents list is printed; the exit interview questions were sent to the Board before the meeting but no document is named beyond that description.",
+ "cost_usd": 0.005183619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeanne Raboin",
+   "status": "present",
+   "quote": "attending: jeanne raboin, lisa krowitz, dick maillo ux, robin venezia, lars widstrand, john mara",
+   "role": "not stated"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "secretary, trustees of lunenburg public library",
+   "role": "Secretary, Trustees of Lunenburg Public Library"
+  },
+  {
+   "name": "Dick Maillo ux",
+   "status": "present",
+   "quote": "attending: jeanne raboin, lisa krowitz, dick maillo ux, robin venezia, lars widstrand, john mara",
+   "role": "not stated"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: jeanne raboin, lisa krowitz, dick maillo ux, robin venezia, lars widstrand, john mara",
+   "role": "Trustee (newly seated)"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: jeanne raboin, lisa krowitz, dick maillo ux, robin venezia, lars widstrand, john mara",
+   "role": "Trustee (newly seated)"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: jeanne raboin, lisa krowitz, dick maillo ux, robin venezia, lars widstrand, john mara",
+   "role": "not stated"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "absent",
+   "quote": "absent: kathy murray",
+   "role": "not stated"
+  },
+  {
+   "name": "Amy",
+   "status": "present",
+   "quote": "amy indicated that the director should manage the library.",
+   "role": "Library Director (resigning)"
+  },
+  {
+   "name": "Teresa Hathaway",
+   "status": "present",
+   "quote": "bibliotemps recommended two candidates for interim director, teresa hathaway and carol chamberlain.",
+   "role": "candidate for Interim Director"
+  },
+  {
+   "name": "Carol Chamberlain",
+   "status": "present",
+   "quote": "bibliotemps recommended two candidates for interim director, teresa hathaway and carol chamberlain.",
+   "role": "candidate for Interim Director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The swearing in of new Trustees was tabled because the three newly elected Trustees had already completed it before the meeting; Robin Venezia and Lars Widstrand were welcomed to the Board.",
+   "quote": "this was tabled since the three newly elected trust ees had completed this prior to the meeting"
+  },
+  {
+   "decision": "Minimum requirements for the Interim Director set: work at least 32 hours and be available to start immediately, preferably before Amy leaves on June 1, 2012.",
+   "quote": "the director work a minimum of 32 hours"
+  },
+  {
+   "decision": "BiblioTemps 5-day probation period noted for the Interim Director.",
+   "quote": "bibliotemps allows for a 5-da y probation period with the interim director",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Jeanne Raboin will contact BiblioTemps as soon as possible.",
+   "quote": "jeanne will contact bibliotemps as soon as possible"
+  },
+  {
+   "decision": "The Board thanked Amy for her service; Amy left the meeting.",
+   "quote": "the board thanked amy for her service."
+  },
+  {
+   "decision": "The Board will need to reorganize at the June meeting.",
+   "quote": "the board will need to reorganize at the june meeti ng",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Interim Director hourly rate",
+   "what_was_recorded": "The Chair was directed to negotiate an hourly rate for the Interim Director within a stated range.",
+   "figures_as_printed": [
+    "$28 to $32/hour"
+   ],
+   "quote": "john mara made a motion for the chair to negotiate an hourly rate between $28 to $32/hour"
+  },
+  {
+   "topic": "BiblioTemps agency fee",
+   "what_was_recorded": "The Chair was directed to negotiate a fee of 20% for BiblioTemps.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "and a 20% fee for bibliotemps"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment; none offered",
+   "quote": "public comment • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Swearing in of New Trustees",
+   "resolution": "tabled; already completed before meeting",
+   "quote": "this was tabled since the three newly elected trust ees had completed this prior to the meeting",
+   "tags": [
+    "trustees",
+    "swearing in"
+   ]
+  },
+  {
+   "topic": "Exit Interview for Library Director",
+   "resolution": "no action; board thanked director and she left",
+   "quote": "the board thanked amy for her service.",
+   "tags": [
+    "library director",
+    "resignation",
+    "exit interview"
+   ]
+  },
+  {
+   "topic": "Interim Director Interviews",
+   "resolution": "approved offer to Teresa Hathaway and negotiating rate and fee",
+   "quote": "bibliotemps recommended two candidates for interim director, teresa hathaway and carol chamberlain.",
+   "tags": [
+    "interim director",
+    "hiring",
+    "BiblioTemps"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "noted reorganization needed at June meeting",
+   "quote": "the board will need to reorganize at the june meeti ng",
+   "tags": [
+    "reorganization"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Suggested Exit Interview Questions",
+   "where": "text",
+   "quote": "exit interview questions that she had sent t o the board"
+  }
+ ],
+ "tags": [
+  "library director resignation",
+  "interim director hiring",
+  "BiblioTemps",
+  "exit interview",
+  "trustee swearing in",
+  "board reorganization",
+  "hourly rate",
+  "personnel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

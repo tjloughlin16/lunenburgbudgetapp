@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-07-14",
  "docid": "3760",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the June 16, 2014 meeting minutes",
+   "motion": "Approve minutes of 6-16-14.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "motion, d. mcquaid, to approve 6-16-14, second, k. chenis"
   },
   {
-   "motion": "Approve the June 18, 2014 meeting minutes",
+   "motion": "Approve minutes of 6-18-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "K. Chenis",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "motion, n. lockwood, to approve 6-18-14, second, k. chenis"
   },
   {
-   "motion": "Approve the June 23, 2014 meeting minutes",
+   "motion": "Approve minutes of 6-23-14.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -36,7 +36,7 @@
    "quote": "motion, n. lockwood, to approve 6-23-14, second, d. mcquaid"
   },
   {
-   "motion": "Approve the June 23, 2014 Highfield continuation meeting minutes",
+   "motion": "Approve minutes of 6-23-14 Highfield continuation.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -44,7 +44,7 @@
    "quote": "motion, n. lockwood to approve 6-23-14 highfield continuation, second d. mcquaid"
   },
   {
-   "motion": "Approve temporary signage from Spirit Halloween at 301 Massachusetts Avenue",
+   "motion": "Approve temporary signage (banner) for Spirit Halloween at the vacant Fashion Bug space, 301 Massachusetts Avenue, to be removed on or before November 10th.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -52,15 +52,344 @@
    "quote": "motion, n. lockwood to approved temporary signage, second, d. mcquaid, all aye."
   },
   {
-   "motion": "Enter into executive session to discuss strategy regarding O'Brien Homes vs Town of Lunenburg litigation, not to return to regular session",
+   "motion": "Enter executive session to discuss strategy with respect to litigation of O'Brien Homes vs Town of Lunenburg, not returning to regular session.",
    "moved_by": "N. Lockwood",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, n. lockwood to enter into executive session to discuss strategy with respect to litigation of o'brien homes vs town of lunenburg, not to return to regular session, second, d. mcquaid, all aye."
+   "quote": "motion, n. lockwood to enter into executive session to discuss strategy with respect to litigation of o'brien homes vs town of lunenburg, not to return to regular session, second, d. mcquaid, all aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes recorded one vote outcome explicitly (\"all aye\" for two procedural motions), but four minutes-approval motions contain no stated outcome.",
- "cost_usd": 0.0942325
+ "note": "Text is clean extracted text, not a scan. Vote results for the four minutes approvals are recorded as motions with no outcome printed, so they are marked not stated. The 301 Massachusetts Avenue signage and executive session votes say only \"all aye\" with no numeric count. Subdivision waiver grants and the #17 denial are recorded as Granted/Not Granted without a stated motion, so they are listed as decisions, not votes. No motion to adjourn is recorded; only the 10:15 PM adjournment time is printed. No dollar figures or transfers appear in the minutes.",
+ "cost_usd": 0.009035419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis"
+  },
+  {
+   "name": "Celeste McCain -Stober",
+   "role": "candidate for Board vacancy; also spoke as resident of 275 Pleasant Street",
+   "status": "present",
+   "quote": "candidates celeste mccain -stober and matthew allison presented themselves to the board."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "candidate for Board vacancy",
+   "status": "present",
+   "quote": "candidates celeste mccain -stober and matthew allison presented themselves to the board."
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "Reviewing Engineer, Whitman and Bingham Associates (WBA)",
+   "status": "present",
+   "quote": "reviewing engineer anthony cleaves, whitman and bingham associates (wba) noted that he"
+  },
+  {
+   "name": "S. Smith",
+   "role": "Nitsch Engineering",
+   "status": "present",
+   "quote": "s. smith, nitsch engineering noted underground drain systems have been included"
+  },
+  {
+   "name": "D. Warner",
+   "role": "not stated",
+   "status": "present",
+   "quote": "d. warner noted that u nder the m sba"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ANR plan for Mulpus Brook Acres Realty Trust, 300 Holman Street, accepted for review.",
+   "quote": "plan accepted for review."
+  },
+  {
+   "decision": "Subdivision waivers granted, with a directive on shallow piping cover (#10) and a directive that insulation is required above pipe where 4 ft of cover is not provided (#19).",
+   "quote": "#11 - section 5.2.1.4. - granted"
+  },
+  {
+   "decision": "Waiver #17 (Section 5.6.1.3) not granted: granite curbing will be required for Oak Avenue; research still needed for Massachusetts Avenue.",
+   "quote": "#17 - section 5.6.1.3. - not granted"
+  },
+  {
+   "decision": "Directive that insulation will be required above the pipe at any location where 4 ft of cover is not provided.",
+   "quote": "note a directive that insulation will be required above the pipe"
+  },
+  {
+   "decision": "Directive that if possible, any piping with shallow cover areas (<2-ft) should be lowered to increase cover.",
+   "quote": "note a directive that if possible, any piping with shallow cover areas (<2-ft) should be lowered to increase cover."
+  },
+  {
+   "decision": "Letter to be sent to the Force Corporation developer noting the Board's appreciation for work done above and beyond the Special Permit.",
+   "quote": "letter will be sent to the developer noting the board's appreciation"
+  },
+  {
+   "decision": "Office to check whether curbing is required in front of the green area at Force Corporation, 305 Leominster Shirley Road.",
+   "quote": "office will check to see if that is required under the design bylaw."
+  },
+  {
+   "decision": "Access to 651 Chase Road Solar site to be coordinated for the reviewing engineer.",
+   "quote": "coordination will be made for access by the reviewing engineer."
+  },
+  {
+   "decision": "Office to review project Directives for 275 Pleasant Street concerns about field management.",
+   "quote": "office will review project directives."
+  },
+  {
+   "decision": "Internal meeting to be scheduled with the White Tail Crossing developer, Planning Consultant, and Board Chair.",
+   "quote": "internal meeting to be scheduled with developer"
+  },
+  {
+   "decision": "Village District charrette to be held July 30th; advertised in the Ledger, on the Scroll and on the web.",
+   "quote": "advertise in ledger, put on scroll and web."
+  },
+  {
+   "decision": "Board to further discuss Economic Development Element feedback, including a possible joint meeting with other Town Boards, at its July 25th meeting.",
+   "quote": "board will further discuss at their july 25th meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Building Committee funding",
+   "what_was_recorded": "The School Building Committee is preparing to move forward with funding; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "preparing to move forward with funding."
+  },
+  {
+   "topic": "Emerald Place at Lake Whalom bond release",
+   "what_was_recorded": "The developer will appear on July 28th to request release of the Bond; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "developer appearing at the july 28th board meeting to request release of the bond."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Celeste McCain -Stober",
+   "stated_role": "",
+   "topic": "Management of open fields at 265 Pleasant Street solar site",
+   "quote": "concerned with management of the fields"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointments: Board vacancy candidates",
+   "resolution": "candidates presented; joint appointment set for July 15",
+   "quote": "candidates celeste mccain -stober and matthew allison presented themselves to the board.",
+   "tags": [
+    "appointment",
+    "board vacancy"
+   ]
+  },
+  {
+   "topic": "ANR Plan, Mulpus Brook Acres Realty Trust, 300 Holman Street",
+   "resolution": "accepted for review",
+   "quote": "plan accepted for review.",
+   "tags": [
+    "ANR",
+    "land division"
+   ]
+  },
+  {
+   "topic": "MS/HS continued review and waivers",
+   "resolution": "waivers granted in part; #17 not granted; directives issued",
+   "quote": "remaining outstanding items of 100 point wba review (on file in planning office) were addressed.",
+   "tags": [
+    "MS/HS project",
+    "waivers",
+    "engineering review",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Minutes approval (6-16-14, 6-18-14, 6-23-14, 6-23-14 Highfield continuation)",
+   "resolution": "motions made; results not printed",
+   "quote": "motion, d. mcquaid, to approve 6-16-14, second, k. chenis",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports noted",
+   "quote": "preparing to move forward with funding.",
+   "tags": [
+    "committees",
+    "school building"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "noted; several follow-up items assigned to office",
+   "quote": "highfield village- extension expires july 28, 2014.",
+   "tags": [
+    "development status",
+    "subdivision",
+    "solar",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Action file: 301 Massachusetts Avenue temporary signage",
+   "resolution": "approved temporary signage",
+   "quote": "motion, n. lockwood to approved temporary signage, second, d. mcquaid, all aye.",
+   "tags": [
+    "signage",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Village District Draft Bylaw",
+   "resolution": "action plan reviewed; charrette set for July 30th",
+   "quote": "advertise in ledger, put on scroll and web.",
+   "tags": [
+    "village district",
+    "bylaw",
+    "charrette"
+   ]
+  },
+  {
+   "topic": "Member issues: Economic Development Element",
+   "resolution": "to be discussed July 25th",
+   "quote": "n. lockwood noted the economic development element being previously sent to various town boards",
+   "tags": [
+    "economic development",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "july 21, 6:30 pm, ritter building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive session: O'Brien Homes litigation",
+   "resolution": "entered executive session, not returning to regular session",
+   "quote": "motion, n. lockwood to enter into executive session to discuss strategy with respect to litigation of o'brien homes vs town of lunenburg, not to return to regular session, second, d. mcquaid, all aye",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:15 PM; no motion recorded",
+   "quote": "adjournment: 10:15 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 6-16-14",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 6-16-14 minutes 6-18-14"
+  },
+  {
+   "name": "Minutes 6-18-14",
+   "where": "list",
+   "quote": "minutes 6-18-14 minutes 6-23-14 minutes 6-23-14 highfield continuation"
+  },
+  {
+   "name": "Minutes 6-23-14",
+   "where": "list",
+   "quote": "minutes 6-18-14 minutes 6-23-14 minutes 6-23-14 highfield continuation"
+  },
+  {
+   "name": "Minutes 6-23-14 Highfield continuation",
+   "where": "list",
+   "quote": "minutes 6-18-14 minutes 6-23-14 minutes 6-23-14 highfield continuation"
+  },
+  {
+   "name": "ANR Plan- Mulpus Brook Acres Realty Trust, 300 Holman Street",
+   "where": "list",
+   "quote": "anr plan- mulpus brook acres realty trust, 300 holman street minutes"
+  },
+  {
+   "name": "MS/HS Requested Waivers",
+   "where": "list",
+   "quote": "ms/hs requested waivers"
+  },
+  {
+   "name": "Force Corp- Reviewing Engineer Report",
+   "where": "list",
+   "quote": "force corp- reviewing engineer report"
+  },
+  {
+   "name": "Pleasant St and Chase Rd Solars- Reviewing Engineer Report",
+   "where": "list",
+   "quote": "pleasant st and chase rd solars- reviewing engineer report"
+  },
+  {
+   "name": "White Tail Crossing- Reviewing Engineer Report",
+   "where": "list",
+   "quote": "white tail crossing- reviewing engineer report"
+  },
+  {
+   "name": "301 Massachusetts Avenue- Request for Temporary Signage",
+   "where": "list",
+   "quote": "301 massachusetts avenue- request for temporary signage"
+  },
+  {
+   "name": "Requested waiver letter from Warner Larson Landscape Architects dated July 14, 2014",
+   "where": "text",
+   "quote": "wba went through the requested waiver letter from warner larson landscape architects dated july 14, 2014."
+  },
+  {
+   "name": "WBA review letter (100 point review, on file in Planning Office)",
+   "where": "text",
+   "quote": "remaining outstanding items of 100 point wba review (on file in planning office) were addressed."
+  },
+  {
+   "name": "Economic Development Element",
+   "where": "text",
+   "quote": "n. lockwood noted the economic development element being previously sent to various town boards"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "MS/HS school project",
+  "subdivision waivers",
+  "ANR plan",
+  "solar",
+  "signage",
+  "village district bylaw",
+  "executive session",
+  "litigation",
+  "minutes approval",
+  "appointments",
+  "stormwater"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

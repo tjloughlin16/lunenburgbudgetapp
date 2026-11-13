@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-04-24",
  "docid": "3942",
@@ -12,47 +12,191 @@
  },
  "votes": [
   {
-   "motion": "Grant waiver for plan scale of 1\"=40' with inclusion of a single page showing site overview with surrounding properties",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Grant waiver of Section 4.1.f.2 (plan scale 1\"=40') with the inclusion of a single page showing a site overview of surrounding properties.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "k. chenis, motion to grant waiver with the inclusion of a single page that has a site overview showing the surrounding properties, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Grant waiver for Photometric Plan based on Notes A and B on Plan Sheet P1 noting Board requirements",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Grant waiver of Section 4.1.f.22 (photometric plan) based on Notes A and B on Plan Sheet P1 noting Board requirements.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "k. chenis, motion to grant waiver based on notes a and b on plan sheet p1 noting board requirements, second, g. bittner, all aye."
   },
   {
-   "motion": "Waive requirement for Level of Service Analysis, Trip Generation, and Community Impacts reports",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Waive Section 4.1.h impact reports: Level of Service Analysis, Trip Generation, and Community Impacts.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "k. chenis, motion to waive level of service analysis, trip generation, and community impacts, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Waive requirement for vertical datum",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Waive the requirement for vertical datum (NAVD 1988).",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "k. chenis, motion to waive requirement for vertical datum, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Continue hearing to May 8, 2017 at 6:30 PM at Town Hall",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Continue the public hearing to May 8, 2017, 6:30 PM, Town Hall.",
    "moved_by": "G. Bittner",
    "seconded_by": "D. Prokowiew",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "motion, g. bittner to continue hearing to may 8, 2017, 6:30 pm, town hall, second, d. prokowiew, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Five votes recorded, all passed unanimously (all aye). Minutes are OCR'd; text is readable. Minutes include a Mullin Rule certification on page 4 indicating Chair Matthew Allison missed this hearing session.",
- "cost_usd": 0.0969165
+ "note": "OCR text, with artifacts (e.g., 'G. Bitiner', 'rax', 'Prokowiew' spelled as printed). Vote counts are not printed; votes are recorded as 'all aye' with four members listed present, so outcome is recorded as 'passed' without a count. Member roles are taken from the letterhead. The Mullin Rule certification page (page 4) concerns Matthew Allison, who was absent and certifies review of the hearing evidence; it is not a vote. No dollar figures or public comment section appear in the text.",
+ "cost_usd": 0.00578782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "representing the Applicant, Lunenburg Water District (Whitman & Bingham Associates)",
+   "status": "present",
+   "quote": "the applicant, lunenburg water district, was represented by anthony cleaves, whitman & bingham associates."
+  },
+  {
+   "name": "Jeff Walsh",
+   "role": "peer reviewer, Graves Engineering Inc.",
+   "status": "present",
+   "quote": "j. walsh noted that he understood the reasoning behind this request, but stated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus that the NAVD 1988 vertical datum could be waived but not the NAD 1983 horizontal datum; the Applicant will pick three control points for the horizontal datum.",
+   "quote": "board consensus was that the navd 1988 vertical could be waived, but not the nad 1983 horizontal. the applicant will pick three control points for the horizontal datum."
+  },
+  {
+   "decision": "Applicant to provide a plan showing buildings within 200 feet and existing driveway openings within 300 feet of the site's property lines (review letters #5 and #6).",
+   "quote": "applicant will provide a plan showing buildings within 200 feet and existing driveway openings within 300 feet of the site's property lines as noted in review letter #5 and #6."
+  },
+  {
+   "decision": "Applicant to confer with the Fire Chief and then request the maximum height anticipated for the proposed radio antenna; a design for the antenna must be submitted.",
+   "quote": "the applicant will confer with the fire chief and then request the maximum height they anticipate."
+  },
+  {
+   "decision": "Applicant to revise the wick drain depth (or use clean sand instead of stone) to satisfy the groundwater offset (review item #10).",
+   "quote": "a. cleaves will revise."
+  },
+  {
+   "decision": "Applicant to relocate stormwater contours, as the 98 contour was shown too close to Massachusetts Avenue (review item #13).",
+   "quote": "the applicant will relocate contours; the 98 contour was shown too close."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: Site Plan Approval, office and garage for Lunenburg Water District, 496 Massachusetts Avenue (Map 073, Parcel 0004)",
+   "resolution": "waivers granted in part; hearing continued to May 8, 2017",
+   "quote": "the hearing was to hear and discuss an application for site plan approval under section 8.4.",
+   "tags": [
+    "site plan approval",
+    "public hearing",
+    "water district",
+    "waivers",
+    "stormwater",
+    "peer review"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Plan Approval Application",
+   "where": "list",
+   "quote": "documents used at hearing: site plan approval application"
+  },
+  {
+   "name": "Minutes/public hearings 2017/496 Massachusetts Avenue 04.24.17",
+   "where": "list",
+   "quote": "minutes/public hearings 2017/496 massachusetts avenue 04.24.17"
+  },
+  {
+   "name": "Review letter of April 14, 2017 (Graves Engineering Inc., peer review by Jeff Walsh)",
+   "where": "text",
+   "quote": "a. cleaves went through the review letter of april 14, 2017 (on file in the planning office)"
+  },
+  {
+   "name": "Plan Sheet P1",
+   "where": "text",
+   "quote": "proposed light locations are shown on plan sheet p1."
+  },
+  {
+   "name": "Board Rules and Regulations for Site Plan Approval & Special Permits",
+   "where": "text",
+   "quote": "board rules and regulations for site plan approval & special permits"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Subsection 5.3.1.3",
+   "where": "text",
+   "quote": "protective bylaw of the town of lunenburg, subsection 5.3.1.3. specifies a maximum height of 55 feet."
+  },
+  {
+   "name": "Mullin Rule Certification (G.L. c39 Section 23D)",
+   "where": "text",
+   "quote": "mullin rule certification g.l. c39 section 23d"
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "public hearing",
+  "Lunenburg Water District",
+  "496 Massachusetts Avenue",
+  "waivers",
+  "stormwater",
+  "peer review",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

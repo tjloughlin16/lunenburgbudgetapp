@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-03-20",
  "docid": "4799",
@@ -12,39 +12,385 @@
  },
  "votes": [
   {
-   "motion": "Renew the T-Mobile antenna lease as presented",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Renew the T-Mobile antenna lease as presented by the Town Manager.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "ms. bertram made a motion that they renew the lease as presented by the town manager. mr. debettencourt seconded the motion. on vote, motion carried 5 in favor, 0 opposed."
   },
   {
-   "motion": "Forward the $2.2M override question to the Town Clerk for inclusion on the ballot for the Annual Town Election",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Forward an Override Question to the Town Clerk for the Annual Town Election ballot in the amount of $2.2M.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "a motion was made by mr. alonzo that the board forward an override question to the town clerk for inclusion on the ballot for the annual town election in the amount of $2.2m. ms. bertram seconded the motion. mr: debettencourt confirmed that the vote was solely to establish a ballot question. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "a motion was made by mr. alonzo that the board forward an override question to the town clerk for inclusion on the ballot for the annual town election in the amount of $2.2m."
   },
   {
-   "motion": "Support the $2.2M override as presented",
-   "moved_by": "Mr. Alonzo",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Support the $2.2M override as presented tonight and various times by the Town Manager.",
+   "moved_by": "Tom Alonzo",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "mr. alonzo made a motion to support the $2.2m override as presented tonight and various times by the town manager. ms. bertram seconded the motion. on vote, motion carried, 3 in favor, 2 opposed [debettencourt, sund]"
+   "quote": "mr. alonzo made a motion to support the $2.2m override as presented tonight and various times by the town manager. ms. bertram seconded the motion."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "Steven M. deBettencourt",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. bertram motioned to adjourn the meeting. mr. debettencourt seconded the motion. all board members were in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1186055
+ "note": "Text is OCR of a scanned 2012 minutes document. Some words are garbled (e.g., 'Muncipal', 'Sara' vs 'Sarah' Sankowich). The minutes name Dave Prokowiew twice with different addresses (West St, and 733 West St.); recorded as one attendee with the first quote. Three votes recorded (T-Mobile lease, override ballot question, support motion) plus adjournment; the executive session entry has no recorded motion to enter, and the minutes/warrants item is presented with no recorded vote. The 3-2 vote is recorded as printed with names in brackets [deBettencourt, Sund]. Page 6 is a Unitil slide page printed at the end.",
+ "cost_usd": 0.010591820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "board member (Selectman)",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "board member (Selectman)",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "board member (Selectman)",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "board member (Selectman)",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "board member (Selectman)",
+   "status": "present",
+   "quote": "david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager kerry speidel present."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  },
+  {
+   "name": "John DiNapoli",
+   "role": "Muncipal & Community Services Manager for Unitil",
+   "status": "present",
+   "quote": "john dinapoli, muncipal & community services manager for unitil began the presentation of their 2012"
+  },
+  {
+   "name": "Sarah Sankowich",
+   "role": "System Arborist, Unitil",
+   "status": "present",
+   "quote": "ms. sankowich presented unitil's 2012 vegetation management program plans for lunenburg."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "jack rodriquenz, dpw director recognized and thanked all who were involved in the building rehab project at the dpw."
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "DPW Building Committee Chair",
+   "status": "present",
+   "quote": "dave mcdonald, dpw building committee chair, also thanked all involved in the project."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "loxi jo calmes, school superintendent spoke and explained that this includes the price of a project"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "resident",
+   "status": "present",
+   "quote": "mike mackin, 26 cortland circle, said that at the town caucus which was held on 3/19/12 there were no candidates"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "former member of the Lunenburg Board of Health",
+   "status": "present",
+   "quote": "troy daniels, 94 main st, had questions on the property assessments and wanted to know if they were projected to"
+  },
+  {
+   "name": "Brent Benson",
+   "role": "resident",
+   "status": "present",
+   "quote": "brent benson, flathill rd, read a letter in support of the $2.2m override."
+  },
+  {
+   "name": "Dave Prokowiew",
+   "role": "resident",
+   "status": "present",
+   "quote": "dave prokowiew, west st, asked about options to increase revenues if this is not done."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Remote Participation at Public Meetings Policy continued to 04/17/12, pending input from the Public Access Cable Committee.",
+   "quote": "remote participation at public meetings policy, continued to 04/17/12, pending input from the public"
+  },
+  {
+   "decision": "Positions for Fire Chief and Police Chief to be advertised internally and externally at the same time (suggested after discussion, no vote recorded).",
+   "quote": "after discussion it was suggested that the positions be advertised internally and externally at the same time."
+  },
+  {
+   "decision": "Town Manager to amend the Fire/Police Chief advertisement to include the salary range.",
+   "quote": "ms. speidel said she will amend the advertisement to include the salary range because it will have"
+  },
+  {
+   "decision": "Executive session continued to the 4/3/12 BOS meeting.",
+   "quote": "executive session continued to 4/3/12 bos meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unitil 2012 vegetation management funding",
+   "what_was_recorded": "Unitil reported increased funding in Massachusetts for its vegetation work, and about 35 miles of work scheduled in Lunenburg.",
+   "figures_as_printed": [
+    "$1.2M"
+   ],
+   "quote": "they have increased funding in massachusetts to $1.2m and that the work that will be done includes"
+  },
+  {
+   "topic": "DPW building rehab close-out savings",
+   "what_was_recorded": "Savings from the DPW building project allowed a portion of the allocated budget to be returned to the Town.",
+   "figures_as_printed": [
+    "$44,194.",
+    "$1.3 M"
+   ],
+   "quote": "$44,194., out of the $1.3 m which was allocated for this project, to be turned back to the town of lunenburg."
+  },
+  {
+   "topic": "T-Mobile antenna lease rent",
+   "what_was_recorded": "T-Mobile pays about $32,000 per year, rising 3% yearly; the renewal proposes a flat monthly rate in year one, then 3% increases.",
+   "figures_as_printed": [
+    "approximately $32,000 per year",
+    "3%",
+    "$2687.83 per month"
+   ],
+   "quote": "currently they pay rental fees to the town of approximately $32,000 per year on a monthly basis which increases"
+  },
+  {
+   "topic": "FY2013 budget override",
+   "what_was_recorded": "The $2.2M override would be allocated over five years; State aid of about $485,000 was hoped to be reinstated; the override was described as an increase of a little more than 11% in tax burden.",
+   "figures_as_printed": [
+    "$2.2M",
+    "approximate $485,000",
+    "11%"
+   ],
+   "quote": "specifically on how the $2.2m would be allocated through a five year period, and what the town"
+  },
+  {
+   "topic": "School building feasibility and schematic design study",
+   "what_was_recorded": "The School Building Committee set a figure for the feasibility and schematic design study; MSBA reimbursement still to be determined.",
+   "figures_as_printed": [
+    "$750,000"
+   ],
+   "quote": "came up with a number for the feasibility and schematic design study of $750,000."
+  },
+  {
+   "topic": "Fire and Police Chief advertisements",
+   "what_was_recorded": "Town Manager will add the salary range to the advertisement; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel said she will amend the advertisement to include the salary range because it will have"
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "Accounts payable warrant presented for approval.",
+   "figures_as_printed": [
+    "$117084.74"
+   ],
+   "quote": "warrants - accounts payable w56-12 (3/20/12) $117084.74"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike Mackin",
+   "stated_role": "",
+   "topic": "School Committee vacancy and candidacy petitions",
+   "quote": "mike mackin, 26 cortland circle, said that at the town caucus which was held on 3/19/12 there were no candidates"
+  },
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "former member of the Lunenburg Board of Health",
+   "topic": "property assessments and combined Conservation/BOH positions",
+   "quote": "troy daniels, 94 main st, had questions on the property assessments and wanted to know if they were projected to"
+  },
+  {
+   "speaker": "Brent Benson",
+   "stated_role": "",
+   "topic": "support for the $2.2M override",
+   "quote": "brent benson, flathill rd, read a letter in support of the $2.2m override."
+  },
+  {
+   "speaker": "Dave Prokowiew",
+   "stated_role": "",
+   "topic": "options to increase revenues without the override",
+   "quote": "dave prokowiew, west st, asked about options to increase revenues if this is not done."
+  },
+  {
+   "speaker": "Dave Prokowiew",
+   "stated_role": "",
+   "topic": "how volunteer and paid positions are advertised",
+   "quote": "dave prokowiew, 733 west st., questioned how volunteer and paid positions are advertised."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "mr. matthews opened the meeting and thanked the people who attended the town caucus."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "announcements - none appointments"
+  },
+  {
+   "topic": "Unitil Vegetation Management Plan update",
+   "resolution": "presented; board thanked presenters",
+   "quote": "7:00 pm update from unitil on vegetation management plan, john dinapoli & sarah sankowich, system"
+  },
+  {
+   "topic": "DPW Building Committee close-out report",
+   "resolution": "presented; board thanked committee",
+   "quote": "7:30 pm dpw building committee, close out report - jack rodriquenz, dpw director recognized and thanked all"
+  },
+  {
+   "topic": "Remote Participation at Public Meetings Policy",
+   "resolution": "continued to 04/17/12",
+   "quote": "remote participation at public meetings policy, continued to 04/17/12, pending input from the public"
+  },
+  {
+   "topic": "T-Mobile antenna lease renewal",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram made a motion that they renew the lease as presented by the town manager. mr. debettencourt seconded"
+  },
+  {
+   "topic": "FY2013 Budget & Override",
+   "resolution": "ballot question approved 5-0; support motion passed 3-2",
+   "quote": "3. fy2013 budget & override - ms. speidel reminded the board that tonight's meeting is the meeting that was"
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "presented for approval; no vote recorded",
+   "quote": "4. minutes/warrants/action file issues - the following minutes and warrants were presented for approval."
+  },
+  {
+   "topic": "Committee report: School Building Committee",
+   "resolution": "no action; Superintendent to present more detail at next meeting",
+   "quote": "update on school building committee activities - mr. matthews said that the school building"
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "quote": "6. department reports - none"
+  },
+  {
+   "topic": "Town Manager report: Fire and Police Chief recruitment",
+   "resolution": "discussed; advertise internally and externally together",
+   "quote": "recruitment process for new fire chief & police chief-ms. speidel informed the board that both the"
+  },
+  {
+   "topic": "Old business and appointments",
+   "resolution": "none",
+   "quote": "old business - none appointments/re-appointments/resignations - none"
+  },
+  {
+   "topic": "Board and public discussion (Assessor/Treasurer part-time position, volunteer advertising)",
+   "resolution": "no action",
+   "quote": "ms. bertram said she was approached by a citizen with questions about the position that is opening up in the assessor's"
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "continued to 4/3/12",
+   "quote": "executive session -under m.g. l. chapter 39, section 23b (3)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:50 PM",
+   "quote": "meeting adjourned at 9:50pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "T-Mobile lease renewal information (attached)",
+   "where": "list",
+   "quote": "ms. speidel recommends that the board approve the renewal of the lease with t-mobile. (see attached information)"
+  },
+  {
+   "name": "Schedule for recruitment and job description, Fire Chief and Police Chief positions (attached)",
+   "where": "list",
+   "quote": "ms. speidel drafted a schedule for recruitment and job description for the board to review. (see attached)"
+  },
+  {
+   "name": "Vegetation Management Program- 2012 Lunenburg (Unitil slides)",
+   "where": "list",
+   "quote": "vegetation management program- 2012 lunenburg"
+  },
+  {
+   "name": "Sample override ballot language (sent by email to the Board)",
+   "where": "text",
+   "quote": "she also provided the board via email with a sample of the language that would be appropriate to act upon."
+  },
+  {
+   "name": "FY2013 budget & override slide presentation",
+   "where": "text",
+   "quote": "she provided this information with a slide presentation."
+  },
+  {
+   "name": "DPW Building Committee slide program",
+   "where": "text",
+   "quote": "he then followed with a slide program about the project."
+  },
+  {
+   "name": "Warrants — Accounts Payable w56-12 (3/20/12)",
+   "where": "text",
+   "quote": "warrants - accounts payable w56-12 (3/20/12) $117084.74"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "FY2013 budget",
+  "override",
+  "ballot question",
+  "T-Mobile lease",
+  "Unitil vegetation management",
+  "DPW building",
+  "school building committee",
+  "fire chief recruitment",
+  "police chief recruitment",
+  "warrants",
+  "public comment",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attached information)"
+ },
+ "dropped_unquoted_by_field": {}
 }

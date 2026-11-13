@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2016-10-24",
  "docid": "4649",
@@ -10,8 +10,118 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10242016-4649",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2016-10-24-minutes-4649.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Approve for inclusion in the Warrant for the upcoming Special Town Meeting a request that the Town appropriate an additional $110,142.36 from PEG fund revenues, beyond the $74,030.76 appropriated at May 2016 Town Meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "by motion at the pacc meeting last night, the following was approved for inclusion the warrant for the upcoming special town meeting"
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "These minutes report a finance matter that was approved at a prior PACC meeting (\"last night\") but do not record any votes taken at this October 24, 2016 meeting itself. The motion described occurred at a different meeting.",
- "cost_usd": 0.0810435
+ "note": "Minutes are short, text-only, with no tally or mover recorded. The one approval (Finance Report) is described as taken at a PACC meeting \"last night,\" not at this meeting; no mover, seconder or vote count is printed. No roll-call vote, adjournment, or approval of prior minutes is recorded. Printed figures contain typos (\"$184.173.12\", \"$100,000,00\"); they are recorded as printed. The arithmetic reconciles to $184,173.12 ($74,030.76 + $110,142.36 = $184,173.12; $84,173.12 + $100,000 = $184,173.12) but the minutes do not state this. The minutes are signed by Steve Walker (Chair) and Jeffrey Bajko (Clerk), dated 11/11/16.",
+ "cost_usd": 0.00286422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member (Clerk, per signature block)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member; Chair, PACC (per signature block)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin and terri burchfield."
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin and terri burchfield."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Additional FY17 appropriation from PEG fund",
+   "what_was_recorded": "PACC asks the Town to appropriate an additional $110,142.36 from PEG fund revenues, beyond the $74,030.76 appropriated at May 2016 Town Meeting, split among salary increases, capital expenditures, catastrophic-failure reserves and studio improvements.",
+   "figures_as_printed": [
+    "$110,142.36",
+    "$74,030.76",
+    "$10,142.36",
+    "$50,000",
+    "$25,000",
+    "$25,000"
+   ],
+   "quote": "pacc asks that the town will appropriate an additional $110,142.36 from the public education government access and cable related fund revenues, beyond the $74,030.76 appropriated at the may 2016 town meeting"
+  },
+  {
+   "topic": "Total FY17 PACC appropriation and split",
+   "what_was_recorded": "The minutes state the total FY17 appropriation, with operational expense and capital expense shares; the printed total and capital figure contain typographical errors (decimal and comma misplacement).",
+   "figures_as_printed": [
+    "$184.173.12",
+    "$84,173.12",
+    "$100,000,00"
+   ],
+   "quote": "this will bring the total appropriation for fy17 to $184.173.12..of this total, operational expense are $84,173.12 and capital expenses are $100,000,00."
+  },
+  {
+   "topic": "Source of funds / town budget impact",
+   "what_was_recorded": "The minutes state all of the funding comes from the PEG reserve fund and has no impact on the Town's budget.",
+   "figures_as_printed": [],
+   "quote": "note that all of this comes from the peg reserve fund, and has no impact on the town's budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Finance Report: additional PEG-funded appropriation for Special Town Meeting warrant",
+   "resolution": "approved for inclusion in warrant",
+   "quote": "pacc asks that the town will appropriate an additional $110,142.36 from the public education government access and cable related fund revenues",
+   "tags": [
+    "finance",
+    "PEG fund",
+    "warrant",
+    "special town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant for the upcoming Special Town Meeting",
+   "where": "text",
+   "quote": "the following was approved for inclusion the warrant for the upcoming special town meeting"
+  }
+ ],
+ "tags": [
+  "PEG fund",
+  "special town meeting",
+  "appropriation",
+  "FY17",
+  "cable access budget",
+  "emergency finance meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

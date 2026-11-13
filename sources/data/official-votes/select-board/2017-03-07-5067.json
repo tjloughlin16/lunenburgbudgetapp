@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-03-07",
  "docid": "5067",
@@ -12,39 +12,469 @@
  },
  "votes": [
   {
-   "motion": "Approve the request to add two pool tables to Bad Larry's",
+   "motion": "Approve the request to add two pool tables to Bad Larry's (automatic amusement license).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d: p. bertram to approve the request to add two pool tables to bad larry's vote: all in favor"
+   "quote": "to approve the request to add two pool tables to bad larry's vote: all in favor"
   },
   {
-   "motion": "Appoint Jennifer Sanderson to the Historical Commission with a term to expire June 30, 2020",
+   "motion": "Accept Amory Phelps's resignation from the Historical Commission and send a letter of thanks.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to accept ms. phelps resignation and send a letter of thanks to her vote: all in favor"
+  },
+  {
+   "motion": "Appoint Jennifer Sanderson to the Historical Commission with a term to expire June 30, 2020.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint ms. sanderson to the historical commission with a term to expire june 30, 2020 vote: all in favor"
+  },
+  {
+   "motion": "Appoint Myleen Mallari as Tax Custodian.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint ms. mallari as tax custodian 2nd. r. ebersole vote: all in favor"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:31 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram 2\"°: r. ebersole to appoint ms. sanderson to the historical commission with a term to expire june 30, 2020 vote: all in favor"
-  },
-  {
-   "motion": "Appoint Myleen Mallari as Tax Custodian",
-   "moved_by": "P. Bertram",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion:p. bertram to appoint ms. mallari as tax custodian 2nd. r. ebersole vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "P. Bertram",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:31 p.m. 2n°: r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 8:31 p.m."
   }
  ],
  "dropped_unquoted": 1,
- "note": "OCR scan; March 7, 2017 Lunenburg Board of Selectmen meeting. 4 of 5 members present (Tom Alonzo absent). All votes recorded as \"All in Favor.\"",
- "cost_usd": 0.1081115
+ "note": "OCR text from macOS Vision of the 7 March 2017 Select Board minutes. Several names and words are garbled by OCR (for example 'Mi.', 'Mir.', 'Ms. Bertam', 'billards', 'dolaars', 'RFPS'); quotes are kept as printed. Votes are recorded only as 'All in Favor', so no numeric tallies exist. The second 'PUBLIC COMMENT' section contains Board member questions rather than outside speakers. The signature block reads 'Claire m. Peterson' then 'Elaine M. Peterson', which looks like an OCR artifact. The minutes print no documents list or heading.",
+ "cost_usd": 0.011220220000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: tom alonzo, clerk"
+  },
+  {
+   "name": "Adam Wernick",
+   "role": "Owner/manager",
+   "status": "present",
+   "quote": "owner/manager adam wernick presented on behalf of the license application."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "candidate",
+   "status": "present",
+   "quote": "ms. sanderson presented and stated she would like to be on the historical commission."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Town Treasurer/Collector",
+   "status": "present",
+   "quote": "the board thanked ms. mallari for coming in and ms. lemieux commended ms. mallari for coming"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members are to submit any further legal services questions in writing to the Town Manager so they can be sent to the firms before the second round of interviews.",
+   "quote": "board members submit any further questions in writing to her so they can be sent to the firms and be answered before the second round of interviews."
+  },
+  {
+   "decision": "Board members are to submit their evaluations of the legal firms to the Town Manager; the Town Manager will call three references listed by the firms plus one community similar in size to Lunenburg.",
+   "quote": "the board should submit their evaluations of the legal firms and submit them to ms. lemieux."
+  },
+  {
+   "decision": "The Town Manager will call the three references listed by the firms plus one community similar in size to Lunenburg that is not on their list.",
+   "quote": "ms. lemieux will call the three references listed by the firms plus one community similar in size to lunenburg that they work for"
+  },
+  {
+   "decision": "The Board signed a letter of appreciation for Peggy Stewart, Head Accounting Clerk.",
+   "quote": "the board signed a letter of appreciation for her."
+  },
+  {
+   "decision": "Ms. Bertram asked for the actual value of each tax title property and the potential legal cost of foreclosure; Mr. Ebersole suggested adding assessed value, square footage/acreage, whether there is a building, and the original date of taking.",
+   "quote": "ms. bertram stated she would like to know the actual value of each property and the potential legal cost of going through foreclosure."
+  },
+  {
+   "decision": "An update on the MS4 permit was requested from the DPW Director for the next agenda.",
+   "quote": "an update on the permit was requested from the dpw director on the next agenda."
+  },
+  {
+   "decision": "The Town Manager will follow up on the warranty and leak questions about the new school's solar panels.",
+   "quote": "ms. lemieux will follow up on this."
+  },
+  {
+   "decision": "Ms. Bertram offered to provide the Town Manager a template she created from notes taken at the strategic planning workshop.",
+   "quote": "ms. bertam offered to provide a template she created from notes taken from that workshop meeting to ms. lemieux."
+  },
+  {
+   "decision": "The Board signed an accounts payable warrant and payroll warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $849,668.05, a payroll warrant in the amount of $1066.02, another payroll warrant in the amount of $742,267.92 and a payroll deductibles warrant in the amount of $527,510.83."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pancake breakfast ticket price",
+   "what_was_recorded": "Ms. Luck announced a pancake breakfast at Eagle House Senior Center, priced per person.",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "it is $2.00 per person and takeout is available."
+  },
+  {
+   "topic": "Tax title properties on hand",
+   "what_was_recorded": "The Treasurer has more than $1.7 million in tax title properties that can proceed to sale under M.G.L. Chapter 60, §52.",
+   "figures_as_printed": [
+    "$1.7 million"
+   ],
+   "quote": "we currently have in excess of $1.7 million in tax title properties that the treasurer can proceed with"
+  },
+  {
+   "topic": "Foreclosure cost",
+   "what_was_recorded": "Ms. Lemieux said hiring a tax title attorney to reach the foreclosure stage costs thousands of dollars per parcel.",
+   "figures_as_printed": [
+    "thousands of dolaars per parcel"
+   ],
+   "quote": "it takes thousands of dolaars per parcel to get to the foreclosure stage"
+  },
+  {
+   "topic": "Tax title sale proceeds",
+   "what_was_recorded": "Any amount taken from a tax title sale is Free Cash; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "the benefit to the town is any amount taken from that sale is free cash."
+  },
+  {
+   "topic": "Complete Streets technical assistance",
+   "what_was_recorded": "Scores of 80 points or more make the town eligible for up to $50,000 in technical assistance for a Prioritization Plan.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "scores of 80 points or more are then eligible for up to $50,000 in technical assistance"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant and three payroll-related warrants in the amounts printed.",
+   "figures_as_printed": [
+    "$849,668.05",
+    "$1066.02",
+    "$742,267.92",
+    "$527,510.83"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $849,668.05, a payroll warrant in the amount of $1066.02, another payroll warrant in the amount of $742,267.92 and a payroll deductibles warrant in the amount of $527,510.83."
+  },
+  {
+   "topic": "School technology funding",
+   "what_was_recorded": "The $36,000 for technology removed from the school Capital Plan will come from 40S funding if the state furnishes those funds.",
+   "figures_as_printed": [
+    "$36,000"
+   ],
+   "quote": "supt. calmes reported the $36,000 for technology removed from the capital plan will be taken from 40s funding"
+  },
+  {
+   "topic": "School electricity line item change",
+   "what_was_recorded": "Facilities Director Londa requested a $5,000 line item change from electricity to supplies, since electricity costs fell with energy efficiencies.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "facilities director londa requested a line item change of $5,000 from electricity which expense has been reduced due to energy efficiencies."
+  },
+  {
+   "topic": "School food services deficit",
+   "what_was_recorded": "Food services has a deficit of over $20,000 from unpaid lunch bills; $3,000 has been collected so far.",
+   "figures_as_printed": [
+    "over $20,000",
+    "$3,000"
+   ],
+   "quote": "food services has a deficit of over $20,000 due to unpaid lunch bills."
+  },
+  {
+   "topic": "Conservation enforcement fine",
+   "what_was_recorded": "The Conservation Commission issued an enforcement fine for a significant violation at 675 Reservoir Road.",
+   "figures_as_printed": [
+    "$9,000"
+   ],
+   "quote": "an enforcement fine of $9,000 was issued"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item change from electricity to supplies at the school, requested by Facilities Director Londa and reported in the School Committee report.",
+   "amount_as_printed": "$5,000",
+   "outcome": "Reported to the Board by the School Committee; no Board vote or action recorded.",
+   "quote": "facilities director londa requested a line item change of $5,000 from electricity which expense has been reduced due to energy efficiencies."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "pancake breakfast reminder and town newspaper",
+   "quote": "ms. luck reminded all of the pancake breakfast at eagle house senior center tomorrow morning."
+  },
+  {
+   "speaker": "Mi. Toale",
+   "stated_role": "Chairman",
+   "topic": "rabies vaccination clinic and 2017 licenses",
+   "quote": "mi. toale announced the rabies vaccination clinic for dogs and cats on april 15 from 10:00 a.m. to 12 noon"
+  },
+  {
+   "speaker": "Mir. Toale",
+   "stated_role": "Chairman",
+   "topic": "committee vacancies",
+   "quote": "mir. toale announced the following vacancies on committees"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "Member",
+   "topic": "new school solar panels and roof warranty",
+   "quote": "ms. bertram stated she wasn't aware of the new school's solar panels being placed on the flat part of the roof."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "Vice Chairman",
+   "topic": "Building Inspector replacement status",
+   "quote": "mr. ebersole asked about the status of the building inspector replacement."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment",
+   "resolution": "no action; announcements by members",
+   "quote": "the meeting commenced at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Automatic amusement license, Bad Larry's",
+   "resolution": "approved two pool tables",
+   "quote": "automatic amusement license -bad larry's - two billards tables",
+   "tags": [
+    "licensing",
+    "amusement devices"
+   ]
+  },
+  {
+   "topic": "Legal services RFPs and interviews",
+   "resolution": "continued; questions to Town Manager, references to be called",
+   "quote": "follow up discussion on legal services rfps/interviews",
+   "tags": [
+    "legal services",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Resignation of Amory Phelps, Historical Commission",
+   "resolution": "accepted",
+   "quote": "resignation -amory phelps from historical commission effective september 16, 2016",
+   "tags": [
+    "appointments",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Appointment of Jennifer Sanderson, Historical Commission",
+   "resolution": "appointed, term to June 30, 2020",
+   "quote": "to appoint jennifer sanderson who has attended a meeting already.",
+   "tags": [
+    "appointments",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Head Accounting Clerk resignation",
+   "resolution": "letter of appreciation signed",
+   "quote": "mr. toale read aloud peggy stewart's resignation letter dated the 16* of february effective march 31, 2017.",
+   "tags": [
+    "personnel",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Town Manager report: Community Compact and IT",
+   "resolution": "no action; Board input requested",
+   "quote": "ms. lemieux gave an update on the community compact.",
+   "tags": [
+    "community compact",
+    "IT",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Complete Streets",
+   "resolution": "no action; draft policy to come to Board for adoption",
+   "quote": "ms. lemieux spoke with the dpw director about proceeding to the next step in applying for the complete streets funding",
+   "tags": [
+    "complete streets",
+    "grants"
+   ]
+  },
+  {
+   "topic": "DLTA application",
+   "resolution": "no action; discussed splitting into two applications",
+   "quote": "ms. lemieux reported notification from mrc for requests for applications for district local technical assistance",
+   "tags": [
+    "DLTA",
+    "economic development",
+    "brownfields"
+   ]
+  },
+  {
+   "topic": "Department head meeting",
+   "resolution": "informational",
+   "quote": "ms. lemieux reported the first department head meeting occurred on tuesday",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrants signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $849,668.05",
+   "tags": [
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational; MS4 permit update requested",
+   "quote": "ms. luck reported the school committee met on february 15th.",
+   "tags": [
+    "school committee",
+    "stormwater",
+    "MPO",
+    "conservation",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Public comment (second section)",
+   "resolution": "no action; board questions",
+   "quote": "ms. bertram stated she wasn't aware of the new school's solar panels being placed on the flat part of the roof.",
+   "tags": [
+    "solar panels",
+    "building inspector"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:31 p.m.",
+   "quote": "to adjourn the meeting at 8:31 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Amory Phelps resignation letter (Historical Commission)",
+   "where": "text",
+   "quote": "mr. toale read ms. phelps resignation letter from the historical commission."
+  },
+  {
+   "name": "Letter of recommendation from Historical Commission Chair Lantry",
+   "where": "text",
+   "quote": "mi. toale stated he had a letter of recommendation from historical commission chair lantry to appoint"
+  },
+  {
+   "name": "Peggy Stewart resignation letter dated the 16* of February, effective March 31, 2017",
+   "where": "text",
+   "quote": "mr. toale read aloud peggy stewart's resignation letter dated the 16* of february effective march 31, 2017."
+  },
+  {
+   "name": "Draft Complete Streets Policy",
+   "where": "text",
+   "quote": "to review a draft complete streets policy that once finalized, will be presented to the board for adoption."
+  },
+  {
+   "name": "Community Compact application",
+   "where": "text",
+   "quote": "she submitted the community compact application"
+  },
+  {
+   "name": "Requests for applications for District Local Technical Assistance (DLTA)",
+   "where": "text",
+   "quote": "ms. lemieux reported notification from mrc for requests for applications for district local technical assistance"
+  },
+  {
+   "name": "RFPs for the municipal buildings",
+   "where": "text",
+   "quote": "mr. toale reported the rfps for the municipal buildings have been advertised and a couple have been"
+  },
+  {
+   "name": "Accounts payable warrant ($849,668.05)",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $849,668.05"
+  },
+  {
+   "name": "Notice of Intent for 675 Reservoir Road",
+   "where": "text",
+   "quote": "discussion ensued on a continued notice of intent for 675 reservoir road."
+  }
+ ],
+ "tags": [
+  "licensing",
+  "appointments",
+  "resignation",
+  "tax title",
+  "tax custodian",
+  "free cash",
+  "legal services",
+  "community compact",
+  "complete streets",
+  "DLTA",
+  "warrants",
+  "school budget",
+  "committee reports",
+  "stormwater",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

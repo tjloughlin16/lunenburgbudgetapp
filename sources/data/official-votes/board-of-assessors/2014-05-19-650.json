@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-05-19",
  "docid": "650",
@@ -12,37 +12,264 @@
  },
  "votes": [
   {
-   "motion": "Approve variance for septic system at 30 Eastern Avenue",
+   "motion": "Approve the variance for 30 Eastern Avenue (reduced required depth to soil for a Presby system).",
    "moved_by": "Jewel",
-   "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewel and second by passios, the variance was approved. all in favor."
+   "quote": "after discussion and on motion by jewel and second by passios, the variance was approved. all in favor.",
+   "seconded_by": "Passios"
   },
   {
-   "motion": "Approve variance for septic system at 83 Sandy Cove Road",
+   "motion": "Approve the variance for 83 Sandy Cove Road.",
    "moved_by": "Jewell",
-   "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by passios, the variance was approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by passios, the variance was approved. all in favor.",
+   "seconded_by": "Passios"
   },
   {
-   "motion": "Approve conditional permit for artesian well at 43 Hemlock Terrace",
+   "motion": "Grant the request for an artesian well at 43 Hemlock Terrace with the conditions stated by the Chairman.",
    "moved_by": "Passios",
-   "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by passios and second by jewell, the request was granted with the above conditions. all in favor."
+   "quote": "after discussion and on motion by passios and second by jewell, the request was granted with the above conditions. all in favor.",
+   "seconded_by": "Jewell"
   },
   {
-   "motion": "Approve annual request for use of portable facilities at Sandy Point Campground",
+   "motion": "Approve the annual request for use of portable facilities at Sandy Point Campground.",
+   "moved_by": "not stated",
    "outcome": "passed",
    "procedural": false,
-   "quote": "unanimously approved the annual request for the use of portable facilities at sandy point campground."
+   "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Document header states 'LUNENBURG BOARD OF HEALTH' not 'Board Of Assessors' as provided. Name spelling varies in OCR ('Jewel' in first motion, 'Jewell' elsewhere).",
- "cost_usd": 0.10082550000000001
+ "note": "The header names the Board of Assessors, but the minutes themselves are headed LUNENBURG BOARD OF HEALTH (Chairman George Emond and members Perry Jewell and Dave Passios). Recorded as the Board of Health minutes; the board name in the header may be a filing error. Text is macOS Vision OCR, so names and spelling vary (Jewel/Jewell, Rabbit/Rabbitt, benonite). Motions for 30 Eastern Avenue, 83 Sandy Cove Road and 43 Hemlock Terrace are recorded with 'All in favor' and no numeric count. The Sandy Point motion has no named mover or seconder. The adjournment at 8:45 pm has no recorded motion, so it is not listed as a vote. No dollar figures appear in the text.",
+ "cost_usd": 0.00437662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "george emond, perry jewell, and dave passios."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Member",
+   "status": "present",
+   "quote": "george emond, perry jewell, and dave passios."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "george emond, perry jewell, and dave passios."
+  },
+  {
+   "name": "Brad Mitchell",
+   "role": "representing The Mass Farm Bureau",
+   "status": "present",
+   "quote": "mr. mitchell explained the definition of nuisance complaint with a"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "administrative assistant andrea schnepf invited brad mitchell from the mass farm bureau to speak at"
+  },
+  {
+   "name": "Anne Meilleur",
+   "role": "complainant",
+   "status": "not stated",
+   "quote": "ms. anne meilleur filed a complaint with the board of health with regard to odor from cows at 173"
+  },
+  {
+   "name": "Brad Turner",
+   "role": "owner of 47 Highland Street",
+   "status": "present",
+   "quote": "brad and peggy turner, owners of the property, met with the board to request a dog grooming facility at"
+  },
+  {
+   "name": "Peggy Turner",
+   "role": "owner of 47 Highland Street",
+   "status": "present",
+   "quote": "brad and peggy turner, owners of the property, met with the board to request a dog grooming facility at"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the owner of 30 Eastern Avenue",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner of 83 Sandy Cove Road",
+   "status": "present",
+   "quote": "dan proctor met with the board of behalf of the owner."
+  },
+  {
+   "name": "Eric Pettes",
+   "role": "owner of 43 Hemlock Terrace",
+   "status": "present",
+   "quote": "eric pettes, owner of the property met with the board."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi asked for a survey of the property."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board acknowledged the Title 5 inspection reports for 13 listed properties (916 Chase Road through 1392 Lancaster Avenue).",
+   "quote": "title 5 inspection reports acknowledged:"
+  },
+  {
+   "decision": "Septic permits were signed for 30 Eastern Avenue and 83 Sandy Cove Road.",
+   "quote": "septic permits signed: 30 eastern avenue 83 sandy cove road"
+  },
+  {
+   "decision": "The Board has no objection to a dog grooming facility at 47 Highland Street, but the permission is personal to the Turners and does not run with the land to a new owner or occupant.",
+   "quote": "the board as no objections to the dog grooming facility, however, the ability to run this facility stays"
+  },
+  {
+   "decision": "For 43 Hemlock Terrace the Chairman required a property survey before approval and conditioned the permit on the well being more than 50 feet from septic systems and property lines and on a 20 foot casing sealed with bentonite and cement.",
+   "quote": "he further conditioned approval of the permit on the well including a 20 foot casing, sealed with benonite and"
+  },
+  {
+   "decision": "The Board thanked Mr. Mitchell for his attendance and for his expertise and information on the odor complaint.",
+   "quote": "the board thanked mr. mitchell for his attendance at the meeting and for providing his expertise and"
+  },
+  {
+   "decision": "Chairman Emond thanked Jack Rabbitt for his efforts on behalf of the Board of Health; no vote recorded.",
+   "quote": "chairman george emond thanked jack rabbitt for all of his efforts on behalf of the board of health."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "no minutes approved",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (13 properties)",
+   "quote": "title 5 inspection reports acknowledged:",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed (2 properties)",
+   "quote": "septic permits signed: 30 eastern avenue 83 sandy cove road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Recognition of Jack Rabbitt",
+   "resolution": "no action (thanks recorded)",
+   "quote": "chairman george emond thanked jack rabbitt for all of his efforts on behalf of the board of health.",
+   "tags": [
+    "recognition"
+   ]
+  },
+  {
+   "topic": "173 Highland Street odor complaint (cows)",
+   "resolution": "continued; complainant asked to continue to next meeting; no vote recorded",
+   "quote": "ms. anne meilleur filed a complaint with the board of health with regard to odor from cows at 173",
+   "tags": [
+    "odor",
+    "nuisance complaint",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "47 Highland Street dog grooming facility",
+   "resolution": "no objection, conditioned on personal use by applicants",
+   "quote": "brad and peggy turner, owners of the property, met with the board to request a dog grooming facility at",
+   "tags": [
+    "dog grooming",
+    "water supply"
+   ]
+  },
+  {
+   "topic": "30 Eastern Avenue variance (failed septic system)",
+   "resolution": "variance approved",
+   "quote": "after discussion and on motion by jewel and second by passios, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic",
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "83 Sandy Cove Road variance (failed septic system)",
+   "resolution": "variance approved",
+   "quote": "after discussion and on motion by jewell and second by passios, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic"
+   ]
+  },
+  {
+   "topic": "43 Hemlock Terrace artesian well",
+   "resolution": "granted with conditions",
+   "quote": "after discussion and on motion by passios and second by jewell, the request was granted with the above conditions. all in favor.",
+   "tags": [
+    "well",
+    "survey",
+    "setback"
+   ]
+  },
+  {
+   "topic": "Shady Point Beach and Campground portable facilities",
+   "resolution": "approved annual request",
+   "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at",
+   "tags": [
+    "campground",
+    "portable toilets"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout in accordance with MGL Chapter 111 125A (provided by Brad Mitchell)",
+   "where": "text",
+   "quote": "mr. mitchell further provided a handout in accordance with mgl chapter 111 125a."
+  },
+  {
+   "name": "Title 5 inspection reports (13 properties)",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged:"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "Title 5",
+  "variance",
+  "well",
+  "odor complaint",
+  "dog grooming",
+  "campground",
+  "permits"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

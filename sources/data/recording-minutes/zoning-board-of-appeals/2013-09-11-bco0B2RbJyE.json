@@ -1,0 +1,228 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "zoning-board-of-appeals",
+ "board": "Zoning Board of Appeals",
+ "video_title": "Zoning Board",
+ "meeting_date": "2013-09-11",
+ "video_id": "bco0B2RbJyE",
+ "video_url": "https://www.youtube.com/watch?v=bco0B2RbJyE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/zoning-board-of-appeals/2013-09-11-bco0B2RbJyE.json",
+  "sha256": "b21b80c10def9f60b7beddaa6b003d05ef2e515775b2f4667080d2d25bf6c96a",
+  "caption_lines": 240,
+  "segments": 1926
+ },
+ "recording": {
+  "duration_s": 5087,
+  "duration": "1:24",
+  "spoken_chars": 66821,
+  "words_approx": 11136
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09112013-5892",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2013-09-11-agenda-5892.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2013-09-11-agenda-5892.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09112013-5893",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/zoning-board-of-appeals/2013-09-11-agenda-5893.txt",
+   "path": "sources/meetings/zoning-board-of-appeals/2013-09-11-agenda-5893.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T19:04:27Z",
+  "cost_usd": 0.2191764
+ },
+ "minutes": {
+  "headline": "ZBA granted a used-car special permit at 93 Whum Road, 4-1, conditioned on tax payments and site cleanup",
+  "summary": "The board continued its hearing on a petition to sell used cars at 93 Whum Road. It read letters from the Treasurer/Tax Collector and the Board of Health, questioned the applicant, and granted the permit with conditions. It then heard and granted a dimensional special permit for a new house on New West Townsend Road, and adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Bowen (Donald F Bowen)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Lisa",
+    "role": "clerk who read letters and applications"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "legal",
+   "planning-and-zoning",
+   "public-safety"
+  ],
+  "votes": [
+   {
+    "t": 2809,
+    "motion": "Grant a special permit for used car sales at 93 Whum Road based on the enumerated conditions",
+    "moved_by": "a member",
+    "outcome": "passed 4-1",
+    "procedural": false
+   },
+   {
+    "t": 3871,
+    "motion": "Amend the cited bylaw reference on the Smith/Hawkins application to section 8321 B4",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4827,
+    "motion": "Grant special permit for a dimensional variation of 7 ft as requested and shown on the plan",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5063,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 100,
+    "topic": "Back real estate and personal property taxes owed at 93 Whum Road",
+    "what_was_said": "The Treasurer's letter reported taxes owed and a payment plan on which only some payments had been made.",
+    "figures_as_heard": [
+     "37687 54",
+     "$519.99",
+     "$1,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3067,
+    "decision": "Permit conditions agreed: tax compliance, security fence and shrubbery, no equipment yard, three trucks at a time for repair, three sanders, Board of Health conditions and standard conditions."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 17,
+    "t_end": 283,
+    "topic": "Letters from Treasurer and Board of Health read",
+    "resolution": "informational",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 284,
+    "t_end": 3500,
+    "topic": "93 Whum Road used car special permit hearing and decision",
+    "resolution": "voted, granted 4-1",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3501,
+    "t_end": 4990,
+    "topic": "Smith/Hawkins dimensional special permit, New West Townsend Road",
+    "resolution": "voted, granted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4991,
+    "t_end": 5084,
+    "topic": "Closing and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3108,
+    "about": "One member opposed the used-car permit over unpaid taxes and unfinished cleanup.",
+    "sides": "one member against; the chair and four members for",
+    "words_as_heard": "I'm not satisfied with what has been done as yet",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2024,
+    "kind": "condition",
+    "about": "Permit made conditional on tax payment compliance.",
+    "who": "the chair",
+    "words_as_heard": "we can condition or direct uh the uh financial situation that this board would require that you are in compliance"
+   },
+   {
+    "t": 1934,
+    "kind": "liability or legal",
+    "about": "Applicant behind on tax payment agreement.",
+    "who": "the chair",
+    "words_as_heard": "we've had several of these Le letters over the continuations of these meetings"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 78,
+    "name_as_heard": "Treasurer/tax collector letter",
+    "kind": "letter or email",
+    "words_as_heard": "This first letter is dated September 10th 2013",
+    "shown": true
+   },
+   {
+    "t": 141,
+    "name_as_heard": "Board of Health letter",
+    "kind": "letter or email",
+    "words_as_heard": "the lunberg Board of Health from James griffy dated September 11th",
+    "shown": true
+   },
+   {
+    "t": 3583,
+    "name_as_heard": "Smith Hawkins application",
+    "kind": "application or permit",
+    "words_as_heard": "This is an applic for a special permit for dimensional variation",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Zoning Board of Appeals granted a special permit for used car sales at 93 Whum Road, 4-1, with conditions.",
+    "t": 2809
+   },
+   {
+    "line": "Conditions include tax compliance, a security fence and shrubbery, no equipment yard, a limit of three trucks at a time for repair, and Board of Health conditions.",
+    "t": 3067
+   },
+   {
+    "line": "The Treasurer/Tax Collector's letter reported back taxes owed at the property and a payment plan on which only some payments had been made.",
+    "t": 100
+   },
+   {
+    "line": "The board amended the bylaw section cited on the Smith/Hawkins application, then granted a 7 ft dimensional special permit for a new house on New West Townsend Road.",
+    "t": 4827
+   }
+  ],
+  "why_it_matters": [
+   "The Whum Road permit ties a new commercial use to payment of back property taxes, which touches how unpaid taxes at a single property are handled and the neighborhood's exposure to a used car and repair operation.",
+   "The New West Townsend Road permit allows a house to be built closer to the lot lines than the zoning bylaw otherwise permits."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T19:04:35Z",
+   "cost_usd": 0.0211151
+  }
+ }
+}

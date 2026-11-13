@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-11-03",
  "docid": "659",
@@ -12,15 +12,151 @@
  },
  "votes": [
   {
-   "motion": "allow the change from four (4) stools and a counter to four (4) chairs and a table at 455 Massachusetts Avenue (Dippen Donuts)",
+   "motion": "To allow the change from four (4) stools and a counter to four (4) chairs and a table at 455 Massachusetts Avenue (Dippen Donuts).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by jewell and second by passios, the board voted to allow the change from four (4) stools and a counter to four (4) chairs and a table. all in favor."
+   "quote": "on motion by jewell and second by passios, the board voted to allow the change from four (4) stools and a counter to four (4) chairs and a table. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Minutes for Board of Health (header says \"Board of Health\" though you noted it as \"Board of Assessors\"). One formal vote recorded. Other sections (237 Cross Street, 7 Ruth Street) describe board decisions but do not explicitly record motions or votes; language is \"it was so agreed\" and \"the board advised,\" not formal vote language.",
- "cost_usd": 0.08964950000000001
+ "note": "The header reads \"Board Of Assessors\" but the minutes print \"LUNENBURG BOARD OF HEALTH\" throughout; recorded here as Board of Health. The text is an OCR extraction with garbled fragments (e.g., \".iI.:\", \"3X.:\", \"tener of this poise\") and the TITLES list ends in \"...\" so it is incomplete. One motion is recorded with a vote result (\"All in favor\"). The 237 Cross Street and 7 Ruth Street items are consensus/advisory with no motion. Adjournment at 7:45 pm is recorded with no motion. No dollar figures appear in the text.",
+ "cost_usd": 0.00346252,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios. also present, bob ebersole."
+  },
+  {
+   "name": "Paulo Adilson",
+   "role": "owner",
+   "status": "present",
+   "quote": "paulo and sara adilson, owners, met with the board."
+  },
+  {
+   "name": "Sara Adilson",
+   "role": "owner",
+   "status": "present",
+   "quote": "paulo and sara adilson, owners, met with the board."
+  },
+  {
+   "name": "Tom Curtin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tom curtin met with the board to discuss finishing the second floor of his home."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi advised that finishing this space would create the potential for an additional"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "At 237 Cross Street, the board agreed to sign the second-floor finishing permit with a three-bedroom deed restriction, and the permit was signed.",
+   "quote": "after discussion, it was so agreed and the permit was signed."
+  },
+  {
+   "decision": "At 7 Ruth Street, the board advised it would sign the permit for finishing the space over the garage if the space was one large room without partitions (a closet and bathroom allowed).",
+   "quote": "the board advised that they would sign the permit if the space over the garage was one large room without partitions"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "none approved",
+   "quote": "minutes approved: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Titles inspection reports acknowledged",
+   "resolution": "acknowledged (four properties listed)",
+   "quote": "titles inspection reports acknowledger: 754 west street 141 elm street 16 hemlock drive 249 arbor street",
+   "tags": [
+    "title inspection",
+    "reports"
+   ]
+  },
+  {
+   "topic": "455 Massachusetts Avenue - Dippen Donuts seating change",
+   "resolution": "approved seating change (stools and counter to table and four chairs) by vote",
+   "quote": "on motion by jewell and second by passios, the board voted to allow the change from four (4) stools and a counter to four (4) chairs and a table. all in favor.",
+   "tags": [
+    "septic",
+    "seating change",
+    "water usage",
+    "food service"
+   ]
+  },
+  {
+   "topic": "237 Cross Street septic permit",
+   "resolution": "permit signed with three-bedroom deed restriction",
+   "quote": "after discussion, it was so agreed and the permit was signed.",
+   "tags": [
+    "septic",
+    "bedroom",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "7 Ruth Street space over garage",
+   "resolution": "advisory: board would sign permit if one large room without partitions",
+   "quote": "the board advised that they would sign the permit if the space over the garage was one large room without partitions",
+   "tags": [
+    "septic",
+    "bedroom",
+    "in-law apartment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Water meter readings, April 2014 through October 2014",
+   "where": "text",
+   "quote": "chairman george emond reviewed water meter readings from april, 2014 through october, 2014."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic permits",
+  "seating change",
+  "deed restriction",
+  "bedroom count",
+  "water usage",
+  "title inspection reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-09-13",
  "docid": "2330",
@@ -12,23 +12,350 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of 8/9/2012",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Scott Gile",
+   "motion": "Approve the minutes of 8/9/2012.",
+   "moved_by": "TB",
+   "seconded_by": "SG",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "tb motioned to approve, sg seconded. approved 6-0"
   },
   {
-   "motion": "adjourn at 8:55",
-   "moved_by": "Scott Gile",
-   "seconded_by": "Steven Raboin",
+   "motion": "Adjourn the meeting at 8:55.",
+   "moved_by": "SG",
+   "seconded_by": "SR",
    "outcome": "passed 7-0",
    "procedural": true,
    "quote": "sg motioned to adjourn at 8:55. sr seconded, approved 7-0."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0984025
+ "dropped_unquoted": 1,
+ "note": "Scanned text from macOS Vision OCR. Exhibit pages (valuation and appropriations) have garbled labels and symbols (e.g., 'aye?', '£. - g', 'Funded Ratio = b. + a.'), and figures were read by position, so exhibit figures are as read and not verified. The $684,989 figure sits on the July 1, 2012 payment line; which member unit it belongs to is not clear. Two procedural votes are recorded; no vote was recorded on the pension presentation or other items. Initials (TB, SG, SR) are used for movers and seconders as printed. The header shows 'Mark Suchen' with no stated role, so not listed as an attendee. The public comment speaker is not named. Tom Alonzo, Rep. Benson, Mr. Rodriguez and Karen are mentioned but not recorded as taking part, so not listed as attendees.",
+ "cost_usd": 0.01067202,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "John Male",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Scott Gile",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Steven Raboin",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "m. erickson, b. laffond, j. male, s. gile, j. smith, s. raboin, t. burchfield"
+  },
+  {
+   "name": "Kevin Blanchett",
+   "role": "Chairman and CEO of the Worcester Regional Retirement System (WRRS)",
+   "status": "present",
+   "quote": "kevin blanchett, chairman and ceo of the worcester regional retirement system (wrrs), presented some history"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The question on whether the School Department transferred Capital article funds to pay School salaries was referred to the School Committee, and Mark E will also check with the Town Manager.",
+   "quote": "the question was referred to the school committee, but mark e will also check with the town manager."
+  },
+  {
+   "decision": "Karen will present the sewer cost reconciliation numbers at the first meeting in October (Oct. 11).",
+   "quote": "karen will present the numbers at the first meeting in october (oct. 11)."
+  },
+  {
+   "decision": "A public hearing on the special town meeting warrant articles is scheduled for September 20; the committee will meet at 6:30 on September 25 to discuss recommendations if necessary.",
+   "quote": "we will have a public hearing on the special town meeting warrant articles."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "WRRS pension funding and billing transition",
+   "what_was_recorded": "Kevin Blanchett described how the retirement system is funded and the tapering of the transition to actuarial billing to ease town budget effects; no dollar figure was printed in the narrative.",
+   "figures_as_printed": [],
+   "quote": "the transition to actuarial billing and its effect on the town portion of the pension liability has been tapered to ease effects on town budgets in the short term."
+  },
+  {
+   "topic": "WRRS valuation exhibit, Lunenburg member unit (as of January 1, 2010)",
+   "what_was_recorded": "Attached exhibit page shows Lunenburg's valuation figures: payroll, pensions, normal cost, unfunded liability, funded ratio and appropriation lines.",
+   "figures_as_printed": [
+    "$4,909,225",
+    "$38,424",
+    "$853,819",
+    "$12,197",
+    "$143,774",
+    "$17,972",
+    "$300,530",
+    "$610,756",
+    "419,771",
+    "$190,985",
+    "$10,674,822",
+    "8,022,192",
+    "1,011,441",
+    "88,160",
+    "$20,097,145",
+    "$10,093,204",
+    "$10,003,941",
+    "50.2%",
+    "203.8%",
+    "$595,713",
+    "$0"
+   ],
+   "quote": "valuation results as of january 1, 2010"
+  },
+  {
+   "topic": "WRRS valuation exhibit, whole system (as of January 1, 2010)",
+   "what_was_recorded": "Attached exhibit page shows the whole-system valuation figures for comparison with Lunenburg.",
+   "figures_as_printed": [
+    "$241,992,607",
+    "$37,900,202",
+    "$14,110",
+    "$5,583,375",
+    "$25,969",
+    "$12,337,781",
+    "$28,380,595",
+    "$8,379,107",
+    "$447,237,663",
+    "345,279,655",
+    "52,704,189",
+    "5,442,779",
+    "$863,002,067",
+    "$413,976,785",
+    "$449,025,282",
+    "48.0%",
+    "185.6%",
+    "$33,072,000"
+   ],
+   "quote": "valuation results as of january 1, 2010"
+  },
+  {
+   "topic": "FY12 annual appropriation",
+   "what_was_recorded": "Attached page shows the FY12 appropriation by member unit (Member Unit column first, then Worcester Regional column).",
+   "figures_as_printed": [
+    "$171,308",
+    "437,963",
+    "$609,271",
+    "$8,942,193",
+    "22,861,407",
+    "1,060,480",
+    "207,920",
+    "$33,072,000"
+   ],
+   "quote": "annual appropriations for fiscal years 2012 and 2013"
+  },
+  {
+   "topic": "FY13 appropriation under salary allocation method",
+   "what_was_recorded": "Attached page shows FY13 calculation under the salary allocation method using 2011 salaries.",
+   "figures_as_printed": [
+    "$4,356,748.04",
+    "228,749,418.29",
+    "$171,358",
+    "471,078",
+    "0",
+    "$642,436",
+    "$8,997,083",
+    "24,733,758",
+    "1,108,202",
+    "217,277",
+    "$35,056,320"
+   ],
+   "quote": "below are the calcuations for fy13 under both the salary allocation method (using 2011 member unit salaries) and the"
+  },
+  {
+   "topic": "FY13 appropriation under actuarial method",
+   "what_was_recorded": "Attached page shows FY13 calculation under the actuarial method.",
+   "figures_as_printed": [
+    "$206,609",
+    "603,036",
+    "0",
+    "0",
+    "$809,645",
+    "$8,997,083",
+    "24,733,758",
+    "1,108,202",
+    "217,277",
+    "$35,056,320"
+   ],
+   "quote": "below are the calcuations for fy13 under both the salary allocation method (using 2011 member unit salaries) and the"
+  },
+  {
+   "topic": "FY13 phase-in appropriation and July 1, 2012 payment",
+   "what_was_recorded": "Attached page shows the FY13 phase-in total (66.67% salary allocation plus 33.33% actuarial) and a figure printed for a total appropriation paid on July 1, 2012.",
+   "figures_as_printed": [
+    "$428,312",
+    "269,855",
+    "$698,167",
+    "$35,056,320",
+    "$684,989"
+   ],
+   "quote": "fy13 = 66.67% of the salary allocation method plus 33.33% of the actuarial method."
+  },
+  {
+   "topic": "School Capital article funds used for salaries",
+   "what_was_recorded": "A public question asked whether the School Department moved Capital article funds to pay School budget salaries; referred to the School Committee.",
+   "figures_as_printed": [],
+   "quote": "the question was raised as to whether the school department transferred funds from the capital article to fund salaries"
+  },
+  {
+   "topic": "Sewer cost reconciliation for town building connections and debt service",
+   "what_was_recorded": "Committee is awaiting a reconciliation of costs to connect town buildings to sewer and related debt service; figures to be presented in October.",
+   "figures_as_printed": [],
+   "quote": "we are still waiting on a sewer cost reconciliation on the costs to connect town buildings and debt service."
+  },
+  {
+   "topic": "Vocational school funding legislation",
+   "what_was_recorded": "Concern was raised about legislation that could change funding mechanisms for vocational schools; awaiting details from Rep. Benson.",
+   "figures_as_printed": [],
+   "quote": "me also raised some concern regarding legislation that could change funding mechanisms for vocational schools"
+  },
+  {
+   "topic": "Betterments for road repairs and drainage",
+   "what_was_recorded": "Discussed with DPW the potential to use betterments to fund road repairs and drainage issues.",
+   "figures_as_printed": [],
+   "quote": "among items discussed was the potential to use betterments for road repairs and drainage issues."
+  },
+  {
+   "topic": "Use of Lunenburg Relief Day funds",
+   "what_was_recorded": "Council on Aging discussed how to use funds received through the Lunenburg Relief Day; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "where they were discussing the use of funds received through the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "School Department transfer of Capital article funds to pay salaries",
+   "quote": "the question was raised as to whether the school department transferred funds from the capital article to fund salaries"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Education on Pension Plans",
+   "resolution": "presented, no action",
+   "quote": "kevin blanchett, chairman and ceo of the worcester regional retirement system (wrrs), presented some history",
+   "tags": [
+    "pensions",
+    "WRRS",
+    "retirement"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "referred to School Committee",
+   "quote": "the question was referred to the school committee, but mark e will also check with the town manager.",
+   "tags": [
+    "school budget",
+    "capital article",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review minutes of 8/9/2012",
+   "resolution": "approved 6-0",
+   "quote": "tb motioned to approve, sg seconded. approved 6-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee/Department updates",
+   "resolution": "reports, no action",
+   "quote": "sg spoke with mr. rodriguez of the dpw. among items discussed was the potential to use betterments for road",
+   "tags": [
+    "DPW",
+    "betterments",
+    "sewer",
+    "school building committee",
+    "vocational schools"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "there was no report from the town manager.",
+   "tags": [
+    "town manager",
+    "regional dispatch"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "public hearing scheduled",
+   "quote": "we will have a public hearing on the special town meeting warrant articles.",
+   "tags": [
+    "special town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:55, approved 7-0",
+   "quote": "sg motioned to adjourn at 8:55. sr seconded, approved 7-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Worcester Regional Contributory Retirement System, Valuation Results as of January 1, 2010 (LUNENBURG - 360)",
+   "where": "list",
+   "quote": "valuation results as of january 1, 2010"
+  },
+  {
+   "name": "Worcester Regional Contributory Retirement System, Annual Appropriations for Fiscal Years 2012 and 2013 (LUNENBURG - 360)",
+   "where": "list",
+   "quote": "annual appropriations for fiscal years 2012 and 2013"
+  },
+  {
+   "name": "Data comparing Lunenburg against the whole of the membership (distributed by WRRS)",
+   "where": "text",
+   "quote": "he also distributed data comparing lunenburg against the whole of the membership."
+  }
+ ],
+ "tags": [
+  "pensions",
+  "WRRS retirement system",
+  "appropriations",
+  "school budget",
+  "capital article",
+  "sewer costs",
+  "betterments",
+  "vocational schools",
+  "special town meeting",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "calculations for the annual appropriations for fiscal years 2012 and 2013 are shown on the back side of this exhibit."
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

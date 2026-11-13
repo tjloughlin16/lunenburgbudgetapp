@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2016-06-16",
  "docid": "2819",
@@ -12,39 +12,360 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of May 19, 2016 as presented",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Susan Visser",
+   "motion": "Accept the minutes of May 19, 2016 as presented.",
+   "moved_by": "Gare",
+   "seconded_by": "Susan",
    "outcome": "passed",
    "procedural": true,
-   "quote": "gare moved to accept the minutes as presented, susan seconded; voted: all in favor, lars abstained"
+   "quote": "gare moved to accept the minutes as presented, susan seconded; voted: all in favor, lars abstained was not present at the meeting"
   },
   {
-   "motion": "Keep the board organization as was last year",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Gare Thompson",
+   "motion": "Keep the board organization as it was last year (Chair Dick, Vice-Chair Susan, Secretary Lars, and the listed subcommittees).",
+   "moved_by": "Harry",
+   "seconded_by": "Gare",
    "outcome": "passed",
    "procedural": false,
    "quote": "harry moved that we keep the organization as was last year, gare second; voted all in favor"
   },
   {
-   "motion": "The director can carry over one week of vacation",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Donna Saiia",
+   "motion": "Allow the director to carry over one week of vacation.",
+   "moved_by": "Gare",
+   "seconded_by": "Donna",
    "outcome": "passed",
    "procedural": false,
    "quote": "gare moved that the director can carry over one week of vacation per. donna second; voted all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Harry Kubetz",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Gare",
+   "seconded_by": "Harry",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn so moved by gare, seconded by harry voted: all in favor"
+   "quote": "motion to adjourn so moved by gare, seconded by harry voted: all in favor at 7:58 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08415349999999999
+ "note": "Text extract is readable and complete through the signature. Minutes say 'Lars abstained was not present at the meeting' on the minutes vote, which is internally inconsistent; recorded as printed with the count 'all in favor'. Meeting room is printed both as 'Sudolnik meeting room' and 'Sudolnik Conference Room'. A '$$' placeholder appears instead of a figure. No roll-call counts are printed for any vote.",
+ "cost_usd": 0.00639222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "acting Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Susan Visser",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director, LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kiirja paananen, gare thompson, susan visser, lars widstrand, donna saiia, martha moore - director, lpl;"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: terri burchfield - fincom representative; bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: terri burchfield - fincom representative; bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Anne Gilman",
+   "role": "Representative of Lunenburg Ledger",
+   "status": "not stated",
+   "quote": "representative of lunenburg ledger, anne gilman is covering for the ledger. we may see her at future meetings as well."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The borrowing policy for the Library of things was moved to the September meeting.",
+   "quote": "borrowing policy - questions from last meeting, actually moved to september meeting."
+  },
+  {
+   "decision": "Policy for access and use of Library Trust Funds scheduled for the October meeting.",
+   "quote": "policy for access and use of library trust funds - october"
+  },
+  {
+   "decision": "Room use by for-profit entities (BPL policies) scheduled for the October meeting.",
+   "quote": "room use by for-profit entities (bpl policies) - october"
+  },
+  {
+   "decision": "Martha will check with Wachusett and Simmons College regarding the new hire after the candidate declined.",
+   "quote": "martha will check with wachusett, simmons college."
+  },
+  {
+   "decision": "Martha will discuss how books are selected for purchasing for the YA, Children and Adult sections.",
+   "quote": "martha will discuss how books are selected for purchasing for ya, children and adult sections"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2016 budget overage",
+   "what_was_recorded": "The board discussed the FY 2016 overage and how to spend it within the fiscal year; purchases listed include a spinner shelf, a camera and alarm system, folding tables, adjustable-height tables and a separate Overdrive account, with no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about overage and how to spend it within the fy."
+  },
+  {
+   "topic": "Library purchases from overage",
+   "what_was_recorded": "Larger purchases were reported, including a spinner shelf for the YA room, with no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "larger tickets: \"spinner shelf\" purchased for ya-room"
+  },
+  {
+   "topic": "Friends of LPL book and bake sale",
+   "what_was_recorded": "The Friends reported the proceeds of the book and bake sale.",
+   "figures_as_printed": [
+    "$3,295.72"
+   ],
+   "quote": "book and bake sale $3,295.72"
+  },
+  {
+   "topic": "Friends donation to YA book collection",
+   "what_was_recorded": "A donation of money to the YA book collection was reported, with the amount printed only as a placeholder.",
+   "figures_as_printed": [
+    "$$"
+   ],
+   "quote": "met first monday of month, $$ to ya book collection has been donated"
+  },
+  {
+   "topic": "Possible program line in budget",
+   "what_was_recorded": "The director touched base with Karen about adding a program line in the budget categories; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "touched base with karen about what will need to happen, in order to fit it into the budget"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anne Gilman",
+   "stated_role": "Representative of Lunenburg Ledger",
+   "topic": "Newspaper coverage of board meetings",
+   "quote": "representative of lunenburg ledger, anne gilman is covering for the ledger. we may see her at future meetings as well."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "press"
+   ],
+   "quote": "representative of lunenburg ledger, anne gilman is covering for the ledger. we may see her at future meetings as well."
+  },
+  {
+   "topic": "Welcome Re-elected Members",
+   "resolution": "no action",
+   "tags": [
+    "trustees"
+   ],
+   "quote": "welcome re-elected members"
+  },
+  {
+   "topic": "Approval of Minutes of May 19, 2016",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "gare moved to accept the minutes as presented, susan seconded; voted: all in favor"
+  },
+  {
+   "topic": "Board of Trustees Reorganization",
+   "resolution": "kept organization as last year",
+   "tags": [
+    "governance",
+    "subcommittees"
+   ],
+   "quote": "harry moved that we keep the organization as was last year, gare second; voted all in favor"
+  },
+  {
+   "topic": "Director's Report - FY 2016 budget and staff",
+   "resolution": "discussed; no action",
+   "tags": [
+    "budget",
+    "staffing",
+    "director"
+   ],
+   "quote": "discussion about overage and how to spend it within the fy."
+  },
+  {
+   "topic": "Programs",
+   "resolution": "discussed; no action",
+   "tags": [
+    "programs",
+    "summer"
+   ],
+   "quote": "deb and martha are scheduling programs for the summer, but keeping a lower profile since participation wanes during the summer"
+  },
+  {
+   "topic": "Building & Maintenance, staff parking, capital planning",
+   "resolution": "discussed; no action",
+   "tags": [
+    "facilities",
+    "lighting",
+    "parking",
+    "capital"
+   ],
+   "quote": "no news on interior lighting project, have met with jim, kit and john londa to decide what lights to get updated."
+  },
+  {
+   "topic": "Young Adult and Children's area reports",
+   "resolution": "received as separate handouts",
+   "tags": [
+    "reports",
+    "youth services"
+   ],
+   "quote": "young adult area report - separate handout."
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "noted",
+   "tags": [
+    "friends",
+    "fundraising"
+   ],
+   "quote": "book and bake sale $3,295.72"
+  },
+  {
+   "topic": "Director's comments re: evaluation",
+   "resolution": "no action",
+   "tags": [
+    "director",
+    "evaluation"
+   ],
+   "quote": "director's comments re: evaluation"
+  },
+  {
+   "topic": "Director's vacation carryover",
+   "resolution": "approved one week carryover",
+   "tags": [
+    "personnel",
+    "vacation"
+   ],
+   "quote": "gare moved that the director can carry over one week of vacation per. donna second; voted all in favor"
+  },
+  {
+   "topic": "LPL Trustee meeting dates for 2016/2017",
+   "resolution": "calendar distributed",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "distributed calendar marked up with dates for next year."
+  },
+  {
+   "topic": "Library of things borrowing policy",
+   "resolution": "moved to September meeting",
+   "tags": [
+    "policy",
+    "library of things"
+   ],
+   "quote": "borrowing policy - questions from last meeting, actually moved to september meeting."
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "scheduled",
+   "tags": [
+    "agenda planning",
+    "policy"
+   ],
+   "quote": "policy for access and use of library trust funds - october"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:58 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn so moved by gare, seconded by harry voted: all in favor at 7:58 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for June 16, 2016",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for june 16, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Director’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for june 16, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Children’s librarian’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for june 16, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "YA librarian’s report",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for june 16, 2016 director's report children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Young Adult Area Report (separate handout)",
+   "where": "text",
+   "quote": "young adult area report - separate handout."
+  },
+  {
+   "name": "Children’s Area Report (separate handout to be shared later)",
+   "where": "text",
+   "quote": "children's area report - separate handout to be shared later."
+  },
+  {
+   "name": "Calendar marked up with dates for next year",
+   "where": "text",
+   "quote": "distributed calendar marked up with dates for next year."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "personnel",
+  "trustees",
+  "friends of the library",
+  "facilities",
+  "programs",
+  "policy",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

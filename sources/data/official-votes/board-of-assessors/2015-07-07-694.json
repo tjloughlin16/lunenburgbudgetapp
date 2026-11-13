@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-07-07",
  "docid": "694",
@@ -12,15 +12,263 @@
  },
  "votes": [
   {
-   "motion": "Reiterate the factor amount of 55.12 percent on the estimated preliminary bills",
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, payroll and June 2, 2015 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and june 2, 2015 minutes."
+  },
+  {
+   "motion": "Reiterate the factor amount of 55.12 percent on the estimated preliminary bills.",
    "moved_by": "Matt",
    "seconded_by": "Rich",
    "outcome": "not stated",
    "procedural": false,
    "quote": "matt motioned to reiterate the factor amount of 55.12 percent on the estimated preliminary bills; seconded by rich."
+  },
+  {
+   "motion": "Approve the CAI Technologies, Inc. contract for mapping services for FY2016.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "boa reviewed and approved cal technologies, inc. contract for mapping services for fy2016."
+  },
+  {
+   "motion": "Accept the recommendation of valuation increases of up to 3% on single family homes and a 10% valuation increase on condos.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the boa approved to accept the recommendation of valuation increases up to 3% to the single family homes and a 10% valuation increase on condos."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record one formal motion with moved_by and seconded_by language, but the outcome of the vote is not explicitly stated. Other actions (approval of current vouchers, abatements, warrants, etc.; approval of the CAI Technologies contract; approval of the sales analysis) are described as \"approved\" or \"reviewed and approved\" but are not recorded as formal motions voted on.",
- "cost_usd": 0.20587249999999999
+ "note": "Text is macOS Vision OCR with many garbled characters (e.g. 'CAl', 'tax impart', 'Respegitully'); quotes were taken from the readable text. Attendance line lists 'Board Members' then names, so Richard Letarte's and George Bourgault's roles are ambiguous; Richard's role is shown as printed after his name. Harald is named as acting but not in the attendance line. The 'Board reviewed and approved' items and the CAI approval have no printed mover, seconder or count. Pages 2-17 (school project update and sales analysis tables) are appended with 'RECEIVED & FILED' stamps but no list heading. No public comment section appears in the minutes. The minutes state the adjournment at 7:40 pm but record no motion for it.",
+ "cost_usd": 0.01932552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, matt papini, sr.,"
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, matt papini, sr.,"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "richard letarte, associate assessor, george bourgault and louise paquette, administrative assistant."
+  },
+  {
+   "name": "George Bourgault",
+   "role": "not stated",
+   "status": "present",
+   "quote": "richard letarte, associate assessor, george bourgault and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "george bourgault and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "harald was in communication with the town accountant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed that Harald and George should meet the 494 West Townsend Road applicant on-site, review the assessment and reach a resolution before the ATB meeting.",
+   "quote": "after much discussion, the board agreed that harald & george should meet with him on-site, review the assessment and come to a resolution / mutual agreement prior to the atb meeting."
+  },
+  {
+   "decision": "Louise is to request an adjustment transfer of monies in the FY16 budget to cover the CAI mapping contract increase.",
+   "quote": "louise will need to request an adjustment transfer in monies in the fy16 budget to accommodate this increase."
+  },
+  {
+   "decision": "It was decided that the preliminary bills be inflated by a factor of 55.12 percent, once the FY2016 debt figure for the new High School was obtained.",
+   "quote": "it was decided that the preliminary bills be inflated by a factor of 55.12 percent."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Preliminary bill inflation factor",
+   "what_was_recorded": "The preliminary estimated bills were inflated by a factor tied to the FY2016 debt figure for the new High School, reiterated at 55.12 percent.",
+   "figures_as_printed": [
+    "55.12 percent"
+   ],
+   "quote": "it was decided that the preliminary bills be inflated by a factor of 55.12 percent."
+  },
+  {
+   "topic": "CAI Technologies mapping contract",
+   "what_was_recorded": "The mapping contract expense increased by $150.00, from $2,400 in FY15 to $2,550 in FY16.",
+   "figures_as_printed": [
+    "$150.00",
+    "$2,400",
+    "$2,550"
+   ],
+   "quote": "it was noted that the contract expense increased $150.00; costs in fy15 was $2,400. and costs in fy16 is $2,550."
+  },
+  {
+   "topic": "School building project reimbursement",
+   "what_was_recorded": "The Town has received reimbursement from the Massachusetts School Building Authority to date.",
+   "figures_as_printed": [
+    "$8,829,589"
+   ],
+   "quote": "to date the town has received reimbursement in the amount of $8,829,589 from the massachusetts school building"
+  },
+  {
+   "topic": "School project Town share and borrowing",
+   "what_was_recorded": "The Town's net share of the school project is approximately $35M, and the Town has borrowed $29,605,000 to date.",
+   "figures_as_printed": [
+    "$35M",
+    "$29,605,000"
+   ],
+   "quote": "the town's share of this project, net of the grant the town has received from the ma school building authority, is approximately $35m."
+  },
+  {
+   "topic": "FY2016 tax impact of school project",
+   "what_was_recorded": "The FY2016 tax impact of the school project on the average homeowner is printed as $351.26.",
+   "figures_as_printed": [
+    "$351.26"
+   ],
+   "quote": "the fy2016 tax impact of this project on the average homeowner is: $351.26"
+  },
+  {
+   "topic": "Average assessed valuation FY2015",
+   "what_was_recorded": "The average assessed valuation in Lunenburg for FY2015 is printed as $246,347.",
+   "figures_as_printed": [
+    "$246,347"
+   ],
+   "quote": "the average assessed valuation in lunenburg for fy2015 is: $246,347."
+  },
+  {
+   "topic": "Planned additional school borrowing",
+   "what_was_recorded": "The Town expects to borrow about an additional $5M in January 2016, with debt service appearing on the FY2017 tax bill.",
+   "figures_as_printed": [
+    "$5M"
+   ],
+   "quote": "the town expects to borrow the remainder of the town's share of the project costs, about an additional $5m, in january 2016."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Adjustment transfer in the FY16 budget to cover the CAI Technologies mapping contract increase of $150.00.",
+   "outcome": "Louise to request it; no transfer approved or recorded in these minutes.",
+   "amount_as_printed": "not stated",
+   "quote": "louise will need to request an adjustment transfer in monies in the fy16 budget to accommodate this increase."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll and minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and june 2, 2015 minutes.",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY16 preliminary real estate bills and tax factor",
+   "resolution": "factor of 55.12 percent reiterated (motion, no result recorded)",
+   "quote": "matt motioned to reiterate the factor amount of 55.12 percent on the estimated preliminary bills; seconded by rich.",
+   "tags": [
+    "preliminary bills",
+    "tax factor",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "School building project update and tax impact letter",
+   "resolution": "no action; letter reported as sent to taxpayers",
+   "quote": "louise stated that a letter regarding the update on school building project along with information regarding the tax impart was sent to each taxpayer.",
+   "tags": [
+    "school building project",
+    "tax impact"
+   ]
+  },
+  {
+   "topic": "Omitted and revised assessments report (Ch. 59 Sect. 75)",
+   "resolution": "report noted; no omitted or revised bills in FY15",
+   "quote": "louise reported that there were no omitted or revised bills in fy15.",
+   "tags": [
+    "omitted bills",
+    "revised bills",
+    "General Laws Chapter 59"
+   ]
+  },
+  {
+   "topic": "CAI Technologies mapping services contract FY2016",
+   "resolution": "approved",
+   "quote": "boa reviewed and approved cal technologies, inc. contract for mapping services for fy2016.",
+   "tags": [
+    "mapping",
+    "contract",
+    "budget"
+   ]
+  },
+  {
+   "topic": "ATB case, 494 West Townsend Road",
+   "resolution": "Harald and George to meet owner on-site before ATB",
+   "quote": "george spoke with the board regarding the upcoming atb case for the property located at 494 west townsend road.",
+   "tags": [
+    "abatement",
+    "ATB",
+    "solar farm"
+   ]
+  },
+  {
+   "topic": "2014 sales analysis and valuation changes",
+   "resolution": "approved valuation increases of up to 3% single family and 10% condos",
+   "quote": "the boa approved to accept the recommendation of valuation increases up to 3% to the single family homes and a 10% valuation increase on condos.",
+   "tags": [
+    "sales analysis",
+    "valuation",
+    "condos"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Update on School Building Project, June 2015",
+   "where": "text",
+   "quote": "update on school building project, june 2015"
+  },
+  {
+   "name": "2014 sales analysis assessment ratios and valuations",
+   "where": "text",
+   "quote": "george stated that he has been working on 2014 sales analysis assessment rations & valuations."
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "preliminary tax bills",
+  "tax factor",
+  "school building project",
+  "mapping contract",
+  "abatement",
+  "ATB",
+  "sales analysis",
+  "valuation",
+  "FY16"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

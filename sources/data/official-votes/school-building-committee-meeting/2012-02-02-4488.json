@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2012-02-02",
  "docid": "4488",
@@ -12,39 +12,186 @@
  },
  "votes": [
   {
-   "motion": "Mike Mackin elected as Committee Chair",
+   "motion": "Elect Mike Mackin as Chair of the School Building Committee.",
    "moved_by": "Colleen Shapiro",
    "seconded_by": "Dave Matthews",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "colleen shapiro nominated mike mackin as chair. dave matthews seconded. vote: unanimous."
   },
   {
-   "motion": "Colleen Shapiro elected as Committee Secretary",
+   "motion": "Elect Colleen Shapiro as Secretary of the committee.",
    "moved_by": "Dave Matthews",
    "seconded_by": "Mike Mackin",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "dave matthews nominated colleen shapiro as secretary. mike mackin seconded. vote: unanimous."
   },
   {
-   "motion": "Mark Erickson elected as Committee Vice Chair",
+   "motion": "Elect Mark Erickson as Vice Chair of the committee.",
    "moved_by": "Dave Matthews",
    "seconded_by": "Colleen Shapiro",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "dave matthews nominated mark erickson as vice chair, colleen shapiro seconded. vote: unanimous."
   },
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:25.",
    "moved_by": "Mr. Erickson",
    "seconded_by": "Mr. Matthews",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "at 8:25 mr. erickson moved and mr. matthews seconded a motion to adjourn the meeting. vote: unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; four votes recorded, all procedural and unanimous.",
- "cost_usd": 0.0841715
+ "note": "Single OCR'd page; no roll call or explicit attendance record, so attendance is inferred from participation. The MSBA reimbursement discussion has no dollar figures. Mr. Londa's role is not printed. Some OCR garbling in the meeting-date notation (\"2\"' and 4''\"). Minutes are marked APPROVED March 14, 2012.",
+ "cost_usd": 0.00368162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kathy Herrick",
+   "role": "Town Clerk",
+   "status": "present",
+   "quote": "all members sworn in by town clerk, kathy herrick, at 7:00"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "colleen shapiro nominated mike mackin as chair. dave matthews seconded."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "dave matthews nominated colleen shapiro as secretary. mike mackin seconded."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "dave matthews nominated colleen shapiro as secretary. mike mackin seconded."
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "dave matthews nominated mark erickson as vice chair, colleen shapiro seconded."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "superintendent calmes updated the committee on status with msba."
+  },
+  {
+   "name": "Mr. Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. londa updated the committee on the msba process."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee to meet twice monthly on alternate Wednesdays (2nd and 4th Wednesdays), at Brooks House at 7 pm unless otherwise noted; dates February 29, March 14, 28, April 11, 25 tentatively set; next meeting February 8, 2012 at LHS auditorium in conjunction with School Committee.",
+   "quote": "committee will meet twice monthly on the alternate wednesdays from school committee in the coming months"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MSBA reimbursement points",
+   "what_was_recorded": "Mr. Londa explained opportunities to earn additional MSBA reimbursement points depending on maintenance practices and building options; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "he explained the opportunities for earning additional reimbursement points depending on our maintenance practices"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Election of officers",
+   "resolution": "Chair, Secretary and Vice Chair elected unanimously",
+   "tags": [
+    "officers",
+    "election"
+   ],
+   "quote": "colleen shapiro nominated mike mackin as chair. dave matthews seconded. vote: unanimous."
+  },
+  {
+   "topic": "Member introductions",
+   "resolution": "no action",
+   "tags": [
+    "introductions"
+   ],
+   "quote": "committee members introduced themselves stating their background relevant to the committee."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "dates tentatively set; next meeting February 8, 2012",
+   "tags": [
+    "schedule",
+    "meetings"
+   ],
+   "quote": "committee will meet twice monthly on the alternate wednesdays from school committee in the coming months"
+  },
+  {
+   "topic": "MSBA status",
+   "resolution": "informational update",
+   "tags": [
+    "MSBA",
+    "project status"
+   ],
+   "quote": "vote was taken by msba on january 25, 2012 to move forward with lunenburg."
+  },
+  {
+   "topic": "MSBA process and reimbursement points",
+   "resolution": "informational update",
+   "tags": [
+    "MSBA",
+    "reimbursement"
+   ],
+   "quote": "mr. londa updated the committee on the msba process."
+  },
+  {
+   "topic": "FAQ list and community communication",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "communication",
+    "FAQ",
+    "feasibility study"
+   ],
+   "quote": "discussion surrounding creating a list of faq. first on the list: didn't we already do a feasibility study?"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:25",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "at 8:25 mr. erickson moved and mr. matthews seconded a motion to adjourn the meeting. vote: unanimous."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Feasibility Study",
+   "where": "text",
+   "quote": "didn't we already do a feasibility study?"
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "MSBA",
+  "officer elections",
+  "meeting schedule",
+  "feasibility study",
+  "FAQ",
+  "communication"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

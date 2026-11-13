@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-04-05",
  "docid": "4963",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve Article 15 (FY 2017 Operating Budget) as presented",
+   "motion": "To approve Article 15 as presented (FY 2017 Operating Budget).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: t. alonzo to approve article 15 as presented 2nd: p. luck vote: all in favor"
   },
   {
-   "motion": "Approve Article 17 (transfer to Stabilization Fund) as presented",
+   "motion": "To approve Article 17 as presented (transfer to the Stabilization Fund).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "motion: t. alonzo to approve article 17 as presented 2nd. p. bertram vote: all in favor"
   },
   {
-   "motion": "Make a recommendation at town meeting on Article 18 (Solid Waste Enterprise Fund)",
+   "motion": "To make a recommendation at town meeting on Article #18 (Solid Waste Enterprise Fund).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to make a recommendation at town meeting on article #18 2nd. p. bertram vote: all in favor"
+   "quote": "to make a recommendation at town meeting on article #18 2nd. p. bertram vote: all in favor"
   },
   {
-   "motion": "Recommend approval of $25,000 for the Water Department/Enterprise Fund",
+   "motion": "To recommend approval of $25,000 for the Water Department/Enterprise Fund (Article 19).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -44,39 +44,39 @@
    "quote": "motion: t. alonzo 2nd. p. bertram to recommend approval of $25,000 for the water department/enterprise fund vote: all in favor"
   },
   {
-   "motion": "Make a recommendation at town meeting on Article 21 (Inflow/Infiltration Stabilization Fund)",
+   "motion": "To make a recommendation at town meeting on Article #21 (Inflow/Infiltration Stabilization Fund).",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: t. alonzo to make a recommendation at town meeting on article #21"
+  },
+  {
+   "motion": "To make a recommendation at town meeting on Article #43 (Conservation Commission article).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to make a recommendation at town meeting on article #21 motion: t. alonzo to make a recommendation at town meeting on article #43 2nd. p. bertram vote: all in favor"
+   "quote": "to make a recommendation at town meeting on article #43 2nd. p. bertram vote: all in favor"
   },
   {
-   "motion": "Make a recommendation at town meeting on Article 43",
+   "motion": "To make a recommendation at town meeting on Article 44 (bi-monthly yard waste pickup).",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to make a recommendation at town meeting on article #43 2nd. p. bertram vote: all in favor"
+   "quote": "motion: t. alonzo to make a recommendation at town meeting on article 44"
   },
   {
-   "motion": "Make a recommendation at town meeting on Article 44 (bi-monthly yard waste pickup)",
+   "motion": "To accept Dave Macdonald's resignation with regret from the Lunenburg Storm Water Task Force.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to make a recommendation at town meeting on article 44 2\"d. p. bertram vote: all in favor"
+   "quote": "to accept dave macdonald's resignation with regret vote: all in favor"
   },
   {
-   "motion": "Accept Dave Macdonald's resignation from the Stormwater Task Force with regret",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "P. Bertram",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: t. alonzo 2\"d. p. bertram to accept dave macdonald's resignation with regret vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting at 5:52 p.m.",
+   "motion": "To adjourn the meeting at 5:52 P.M.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -85,6 +85,264 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR artifact: quotation marks and apostrophes have scan artifacts ('2\"d' for '2nd', '2\"d.' for '2nd.'); the original clerk's signature is cut off in the transcription.",
- "cost_usd": 0.13701049999999998
+ "note": "OCR (macOS Vision) of a two-page scan; text is garbled in places. Chairman's name reads 'amie Toale' in the OCR and is recorded as printed. Article 21 has a motion with no second or vote result printed; the 'All in Favor' lines that follow appear to belong to Article 43 and a repeated line, so Article 21 is recorded as 'not stated'. The minutes say the meeting opened early because members would attend a Kinder Morgan pipeline public hearing (OCR garbled). The March 15 minutes were 'presented for approval' with no motion recorded. The Finance Committee member who confirmed the Article 15 figure is unnamed. No executive session recorded.",
+ "cost_usd": 0.010372820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "amie Toale",
+   "status": "present",
+   "quote": "amie toale, chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "amie toale, chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "amie toale, chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "amie toale, chairman; tom alonzo, clerk; paula bertram, member and phyllis luck, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman, and kerry lafleur, town manage"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman, and kerry lafleur, town manage"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, stated there was an article submitted by the conservation commission"
+  },
+  {
+   "name": "Greg Bittner",
+   "status": "present",
+   "quote": "greg bittner, 129 pleasant street, submitted a talent bank form"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will schedule the Planning Board, Conservation Commission, Sewer Commission and Agricultural Commission to come before it to present their articles.",
+   "quote": "the board will be scheduling the planning board, conservation commission, sewer commission and agricultural commission to come before them to present their articles."
+  },
+  {
+   "decision": "Ms. Bertram asked that the petitioner for Article 44 be invited to come before the Board to present it further.",
+   "quote": "ms. bertram asked that the person who submitted the petition for article 44 (bi-monthly yard waste pickup)"
+  },
+  {
+   "decision": "Ms. Bertram requested an update on the Pleasant Street town property on the next agenda (April 12).",
+   "quote": "ms. bertram requested an update on the pleasant street town property on that agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2017 Operating Budget (Article 15)",
+   "what_was_recorded": "Mr. Alonzo asked whether the amount listed was the Finance Committee's approved figure; a Finance Committee member confirmed it was.",
+   "figures_as_printed": [
+    "$33,802,328"
+   ],
+   "quote": "the amount listed, $33,802,328, was the amount the finance committee had approved"
+  },
+  {
+   "topic": "Transfer to Stabilization Fund (Article 17)",
+   "what_was_recorded": "Article 17 requests a transfer of $99,851 to the Stabilization Fund; the Board approved it as presented.",
+   "figures_as_printed": [
+    "$99,851"
+   ],
+   "quote": "article 17 requests a transfer of $99,851 to the stabilization fund."
+  },
+  {
+   "topic": "Water Enterprise Fund (Article 19)",
+   "what_was_recorded": "Article 19 requests $25,000 be placed in the Water Department/Water Enterprise Fund for FY 2017; the Board recommended approval.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "article 19 requests to place $25,000 in the lunenburg water department/water enterprise fund for fy 2017."
+  },
+  {
+   "topic": "Inflow/Infiltration Stabilization Fund (Article 21)",
+   "what_was_recorded": "Article 21 creates an Inflow/Infiltration Stabilization Fund and places $14,520 into it.",
+   "figures_as_printed": [
+    "$14,520"
+   ],
+   "quote": "article 21 creates an inflow/infiltration stabilization fund and places $14,520 into it."
+  },
+  {
+   "topic": "Warrants presented for signatures",
+   "what_was_recorded": "An accounts payable warrant, a payroll warrant and a deductions warrant were presented for signatures.",
+   "figures_as_printed": [
+    "$309,182.83",
+    "$715,980.37",
+    "$453,350.45"
+   ],
+   "quote": "an accounts payable warrant in the amount of $309,182.83, a payroll warrant in the amount of $715,980.37 and a deductions warrant in the amount of $453,350.45 were presented for signatures."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to the Stabilization Fund (Article 17), recommended at Annual Town Meeting",
+   "amount_as_printed": "$99,851",
+   "outcome": "Board voted to approve Article 17 as presented, all in favor",
+   "quote": "article 17 requests a transfer of $99,851 to the stabilization fund."
+  },
+  {
+   "description": "Placement into the Water Department/Water Enterprise Fund (Article 19)",
+   "amount_as_printed": "$25,000",
+   "outcome": "Board voted to recommend approval, all in favor",
+   "quote": "article 19 requests to place $25,000 in the lunenburg water department/water enterprise fund for fy 2017."
+  },
+  {
+   "description": "Placement into new Inflow/Infiltration Stabilization Fund (Article 21)",
+   "amount_as_printed": "$14,520",
+   "outcome": "motion recorded; no result stated",
+   "quote": "article 21 creates an inflow/infiltration stabilization fund and places $14,520 into it."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Conservation Commission article in the warrant",
+   "quote": "carl luck, 50 sunset lane, stated there was an article submitted by the conservation commission, is it in the warrant?"
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "129 Pleasant Street",
+   "topic": "talent bank form for Green Community Task Force",
+   "quote": "greg bittner, 129 pleasant street, submitted a talent bank form for appointment to the green community task force."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ATM warrant articles",
+   "resolution": "recommendations made on Articles 15, 17, 18, 19, 21, 43 and 44; Article 21 result not recorded",
+   "quote": "mr. toale started with article 15, which funds the fy 2017 operating budget.",
+   "tags": [
+    "annual town meeting",
+    "warrant articles",
+    "FY2017 budget"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes of March 15 presented for approval; warrants presented for signatures; no vote on minutes recorded",
+   "quote": "minutes of march 15, 2016 were presented for approval.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Resignation from Storm Water Task Force",
+   "resolution": "accepted with regret",
+   "quote": "to accept dave macdonald's resignation with regret vote: all in favor",
+   "tags": [
+    "resignation",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; talent bank form received; Conservation Commission article confirmed in warrant; no vote",
+   "quote": "greg bittner, 129 pleasant street, submitted a talent bank form for appointment to the green community task force.",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Accounts payable, payroll and deductions warrants (March 2016)",
+   "where": "list",
+   "quote": "an accounts payable warrant in the amount of $309,182.83, a payroll warrant in the amount of $715,980.37 and a deductions warrant in the amount of $453,350.45 were presented for signatures."
+  },
+  {
+   "name": "Five warrants for Annual Town Meeting",
+   "where": "list",
+   "quote": "mr. toale presented five warrants for annual town meeting for signatures and posting."
+  },
+  {
+   "name": "Letter of resignation from Lunenburg Storm Water Task Force (Dave MacDonald)",
+   "where": "text",
+   "quote": "mr. toale read the following letter: due to personal reasons, it's with a heavy heart that i am submitting my"
+  },
+  {
+   "name": "Article 15 (FY 2017 Operating Budget)",
+   "where": "text",
+   "quote": "mr. toale started with article 15, which funds the fy 2017 operating budget."
+  },
+  {
+   "name": "Article 17 (transfer to Stabilization Fund)",
+   "where": "text",
+   "quote": "article 17 requests a transfer of $99,851 to the stabilization fund."
+  },
+  {
+   "name": "Article 18 (Solid Waste Enterprise Fund)",
+   "where": "text",
+   "quote": "article 18 requests approval of a sum of money to operate the solid waste enterprise fund."
+  },
+  {
+   "name": "Article 19 (Water Enterprise Fund, $25,000)",
+   "where": "text",
+   "quote": "article 19 requests to place $25,000 in the lunenburg water department/water enterprise fund for fy 2017."
+  },
+  {
+   "name": "Article 21 (Inflow/Infiltration Stabilization Fund)",
+   "where": "text",
+   "quote": "article 21 creates an inflow/infiltration stabilization fund and places $14,520 into it."
+  },
+  {
+   "name": "Article 43 (Conservation Commission article)",
+   "where": "text",
+   "quote": "carl luck, 50 sunset lane, stated there was an article submitted by the conservation commission"
+  },
+  {
+   "name": "Petition for Article 44 (bi-monthly yard waste pickup)",
+   "where": "text",
+   "quote": "ms. bertram asked that the person who submitted the petition for article 44 (bi-monthly yard waste pickup)"
+  },
+  {
+   "name": "Talent bank form for Green Community Task Force (Greg Bittner)",
+   "where": "text",
+   "quote": "greg bittner, 129 pleasant street, submitted a talent bank form for appointment to the green community task force."
+  }
+ ],
+ "tags": [
+  "annual town meeting",
+  "warrant articles",
+  "FY2017 budget",
+  "stabilization fund",
+  "water enterprise fund",
+  "solid waste enterprise fund",
+  "inflow infiltration",
+  "warrants",
+  "resignation",
+  "public comment",
+  "talent bank",
+  "2016"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "an accounts payable warrant in the amount of $309,182.83"
+ },
+ "dropped_unquoted_by_field": {}
 }

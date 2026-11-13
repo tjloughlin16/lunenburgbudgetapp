@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-02-07",
  "docid": "5064",
@@ -12,21 +12,20 @@
  },
  "votes": [
   {
-   "motion": "Amend the closing of the Annual Town Meeting Warrant to Thursday, March 23* at 4:00 p.m.",
+   "motion": "Amend the closing date and time of the Annual Town Meeting Warrant to Thursday, March 23 at 4:00 p.m.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: r. ebersole 2'd. t. alonzo to amend the closing of the annual town meeting warrant to thursday, march 23* at 4:00 p.m. vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Melanie Rich as Sewer Commission Board Clerk",
+   "motion": "Ratify the Town Manager's appointment of Melanie Rich as Sewer Commission Board Clerk.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "failed 2-2-1",
+   "outcome": "failed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd. p. luck to ratify the town manager appointment discussion ensued on whom sewer department business manager barb lefebvre reports to and to",
-   "quote_taken_from_text": true
+   "quote": "motion: r. ebersole 2nd. p. luck to ratify the town manager appointment"
   },
   {
    "motion": "Adjourn the meeting at 9:35 p.m.",
@@ -34,10 +33,270 @@
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:35 p.m. 2\": p. luck vote: all in favor"
+   "quote": "to adjourn the meeting at 9:35 p.m. 2\": p. luck vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision",
- "cost_usd": 0.1279205
+ "note": "Text is OCR output (macOS Vision) of a scanned page set. Some marks look garbled and are recorded as printed: the second-motion marker reads 2'd. or 2\\\": and the payroll figure prints as $512.481.01. The minutes print no public comment section. The Town Manager appointment vote tally is recorded by name (aye, no, abstained) with no printed numeric count, so outcome is 'failed'. The minutes do not print a vote on signing the warrants or the minutes.",
+ "cost_usd": 0.008266619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: adam burney, land use director; greg bittner and damon mcquaid, planning board members;"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Planning Board members",
+   "status": "present",
+   "quote": "also present: adam burney, land use director; greg bittner and damon mcquaid, planning board members;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Planning Board members",
+   "status": "present",
+   "quote": "also present: adam burney, land use director; greg bittner and damon mcquaid, planning board members;"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw director and carl luck, sewer commission chairman"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Sewer Commission Chairman",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw director and carl luck, sewer commission chairman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager Lemieux will write a letter of support to MRPC for TIP Amendment #3 (Route 13/Chase Road resurfacing project).",
+   "quote": "ms. lemieux will write a letter of support to mrpc for tip amendment #3"
+  },
+  {
+   "decision": "The debt exclusion road list is to be updated at future intervals and provided to the Board twice annually.",
+   "quote": "mr. toale asked for the debt exclusion road list to be updated at future intervals and provided to the board twice annually."
+  },
+  {
+   "decision": "Notices of the paving schedule will be placed on public access and the website, and mailed to affected residents.",
+   "quote": "in order to inform residents of the paving schedule, notices will be placed on public access, the website and notices will be mailed to affected residents."
+  },
+  {
+   "decision": "Ms. Lemieux, Mr. Burney and Mr. Rodriquenz will work on a draft Complete Streets policy and present it at a future meeting.",
+   "quote": "ms. lemieux, mr. burney and mr. rodriquenz will work on a draft policy and present at a future meeting."
+  },
+  {
+   "decision": "The plan is to issue five Requests for Proposals, one for the sale of each town-owned building.",
+   "quote": "the plan is to put out five requests for proposals (for sale of each building)."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable and Payroll Deductions warrants",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant and a Payroll Deductions Warrant.",
+   "quote": "the board signed an accounts payable warrant in the amount of $495,496.40 and a payroll deductions warrant in the amount of $512.481.01.",
+   "figures_as_printed": [
+    "$495,496.40",
+    "$512.481.01"
+   ]
+  },
+  {
+   "topic": "Route 13/Chase Road resurfacing funding (MPO TIP)",
+   "what_was_recorded": "MPO advanced the Route 13/Chase Road resurfacing project and increased its funding by approximately $1 million dollars, with a reduction in FFY2018 funding.",
+   "quote": "increased the funding amount by approximately $1 million dollars (with a corresponding reduction in funding for ffy2018)",
+   "figures_as_printed": [
+    "$1 million dollars"
+   ]
+  },
+  {
+   "topic": "FY2016 main road spending",
+   "what_was_recorded": "DPW reported that $537,000 was spent in FY2016 on main roads.",
+   "quote": "$537,000 was spent in fy2016 on main roads.",
+   "figures_as_printed": [
+    "$537,000"
+   ]
+  },
+  {
+   "topic": "Spring construction season road projects",
+   "what_was_recorded": "The spring construction season will amount to $1.7 million dollars, including the Chase Road and Summer Street projects.",
+   "quote": "the spring construction season will amount to $1.7 million dollars",
+   "figures_as_printed": [
+    "$1.7 million dollars"
+   ]
+  },
+  {
+   "topic": "Debt exclusion funds used on stormwater",
+   "what_was_recorded": "Debt exclusion funds used on stormwater expenses totaled $87,947.32.",
+   "quote": "debt exclusion funds used on stormwater expenses totaled $87,947.32.",
+   "figures_as_printed": [
+    "$87,947.32"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roads Workshop",
+   "resolution": "discussed; MPO TIP letter and paving list follow-up directed",
+   "quote": "roads workshop ms. bertram reported on the metropolitan planning organization (mpo) meeting, specifically transportation",
+   "tags": [
+    "roads",
+    "MPO",
+    "paving",
+    "stormwater",
+    "sidewalks"
+   ]
+  },
+  {
+   "topic": "Complete Streets",
+   "resolution": "general agreement to move forward; draft policy to be prepared",
+   "quote": "there was a brief discussion on the program and general agreement to move forward.",
+   "tags": [
+    "complete streets",
+    "walkability",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Community Compact and Related Grant Programs",
+   "resolution": "three best practices chosen",
+   "quote": "the three chosen were citizen engagement",
+   "tags": [
+    "community compact",
+    "grants",
+    "best practices",
+    "cyber security"
+   ]
+  },
+  {
+   "topic": "Draft RFPs for the Sale of Town Owned Buildings",
+   "resolution": "discussed; five RFPs planned; evaluation committee and wording still under discussion",
+   "quote": "mr. toale outlined the schedule and stated the plan is to put out five requests for proposals (for sale of each building).",
+   "tags": [
+    "town buildings",
+    "sale",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Amend Closing Date/Time of Annual Town Meeting Warrant",
+   "resolution": "approved",
+   "quote": "to amend the closing of the annual town meeting warrant to thursday, march 23* at 4:00 p.m.",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Appointment (Sewer Commission Board Clerk)",
+   "resolution": "ratification failed for lack of majority",
+   "quote": "ms. lemieux informed the board that she had appointed melanie rich as sewer commission board clerk",
+   "tags": [
+    "appointments",
+    "sewer commission",
+    "performance evaluations"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants signed; minutes of January 17 and 24, 2017 signed",
+   "quote": "the board signed minutes of january 17 and 24, 2017.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Debt exclusion roads list (updated)",
+   "where": "list",
+   "quote": "dpw director rodriquenz provided handouts to the board and updated the debt exclusion roads list, the pavement management plan, provided a five year paving history and available funding."
+  },
+  {
+   "name": "Pavement management plan",
+   "where": "list",
+   "quote": "dpw director rodriquenz provided handouts to the board and updated the debt exclusion roads list, the pavement management plan, provided a five year paving history and available funding."
+  },
+  {
+   "name": "Five year paving history",
+   "where": "list",
+   "quote": "dpw director rodriquenz provided handouts to the board and updated the debt exclusion roads list, the pavement management plan, provided a five year paving history and available funding."
+  },
+  {
+   "name": "Available funding summary",
+   "where": "list",
+   "quote": "dpw director rodriquenz provided handouts to the board and updated the debt exclusion roads list, the pavement management plan, provided a five year paving history and available funding."
+  },
+  {
+   "name": "TIP Amendment #3 (Route 13/Chase Road resurfacing project)",
+   "where": "text",
+   "quote": "ms. lemieux will write a letter of support to mrpc for tip amendment #3"
+  },
+  {
+   "name": "Draft RFPs for the Sale of Town Owned Buildings",
+   "where": "text",
+   "quote": "discussion on draft rfp's for the sale of town owned buildings"
+  }
+ ],
+ "tags": [
+  "selectboard",
+  "roads",
+  "paving",
+  "complete streets",
+  "community compact",
+  "town buildings sale",
+  "town meeting warrant",
+  "appointments",
+  "sewer commission",
+  "warrants",
+  "stormwater"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dpw director rodriquenz provided handouts to the board"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-08-10",
  "docid": "4640",
@@ -12,15 +12,243 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the July 6 meeting with recommended changes",
+   "motion": "Approve the minutes of the July 6 meeting with recommended changes.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "pacc voted and approved the minutes with recommended changes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote is explicitly recorded in these minutes. The adjournment is stated as a fact (\"Meeting adjourned at 7:50\") with no recorded motion or vote. The purchasing policy review will be voted on at the next meeting, not this one.",
- "cost_usd": 0.08130549999999999
+ "note": "Text is a plain extraction with no motion wording, mover, seconder, or vote count for the minutes approval; recorded as passed without counts. Adjournment and the Sept./Oct. next-meeting list record no vote. Clerk signature reads \"Jeffrey Bajko, PACC Clerk\"; may be the same person as Jeff Bajko present. Quotes with doubled spaces are collapsed to single spaces per the rules. No document list is printed.",
+ "cost_usd": 0.00424162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio,"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio,"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "steve walker, and faith beall."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jo will review the PAC coordinator job description and submit it to the PACC committee.",
+   "quote": "jo will review and submit to the pacc committee."
+  },
+  {
+   "decision": "The updated purchasing policy will be presented at the next meeting for final approval.",
+   "quote": "the finalized copy will be presented at the next meeting for approval."
+  },
+  {
+   "decision": "Committee will review the website and bring questions on the HD channel question to the next meeting.",
+   "quote": "committee will bring questions to next meeting."
+  },
+  {
+   "decision": "Committee is waiting for the PAC coordinator job description format from town hall.",
+   "quote": "committee is still waiting for format from town hall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beginning balance for FY16",
+   "what_was_recorded": "The coordinator reported the beginning balance for FY16.",
+   "figures_as_printed": [
+    "$271,273.03"
+   ],
+   "quote": "beginning balance for fy16 is $271,273.03."
+  },
+  {
+   "topic": "Ending balance for July 2015",
+   "what_was_recorded": "The coordinator reported the ending balance for July 2015.",
+   "figures_as_printed": [
+    "268,697.27"
+   ],
+   "quote": "ending balance for july 2015 is 268,697.27."
+  },
+  {
+   "topic": "HD channel vs. purchase of equipment",
+   "what_was_recorded": "The committee continued discussion of whether to buy equipment to offer HD programming or use the HD channel; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "continue discussion of hd channel vs. purchase of equipment to offer programming in hd"
+  },
+  {
+   "topic": "Financial reports for past four years",
+   "what_was_recorded": "Four years of financial reports were presented to the committee; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "financial reports for the past four years were presented to the committee."
+  },
+  {
+   "topic": "Stillman's farm country fair fundraiser",
+   "what_was_recorded": "A farm fair was held to raise money for the Lunenburg Lion Club; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "to raise money for the lunenburg's lion club"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "General public comment",
+   "quote": "public comments: 1. no comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Roll call",
+   "resolution": "meeting called to order at 6:02pm",
+   "quote": "meeting started at 6:02pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "quote": "public comments: 1. no comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes from July 6 meeting",
+   "resolution": "approved with recommended changes",
+   "quote": "pacc voted and approved the minutes with recommended changes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "presented; balances, calendars, local content and equipment items reported",
+   "quote": "beginning balance for fy16 is $271,273.03.",
+   "tags": [
+    "coordinator report",
+    "budget",
+    "programming"
+   ]
+  },
+  {
+   "topic": "PAC coordinator's job description",
+   "resolution": "continued; Jo to review and submit",
+   "quote": "jo will review and submit to the pacc committee.",
+   "tags": [
+    "staffing",
+    "job description"
+   ]
+  },
+  {
+   "topic": "HD channel vs. purchase of equipment",
+   "resolution": "continued to next meeting",
+   "quote": "continue discussion of hd channel vs. purchase of equipment to offer programming in hd",
+   "tags": [
+    "HD",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "Updated purchasing policy",
+   "resolution": "reviewed and changed; final copy to next meeting for approval",
+   "quote": "the pacc reviewed the policy and made changes.",
+   "tags": [
+    "purchasing policy"
+   ]
+  },
+  {
+   "topic": "Cable Access Committee update",
+   "resolution": "financial reports presented; CAC requests noted",
+   "quote": "financial reports for the past four years were presented to the committee.",
+   "tags": [
+    "CAC",
+    "Comcast",
+    "business plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50",
+   "quote": "meeting adjourned at 7:50.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "Sept. 14, 2015 and Oct 5, 2015 listed",
+   "quote": "sept. 14, 2015 2. oct 5, 2015",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "July PAC calendar",
+   "where": "text",
+   "quote": "july's pac calendar was presented and showed comcast station was shut down"
+  },
+  {
+   "name": "August PAC calendar",
+   "where": "text",
+   "quote": "august pac calendar was presented and showed the station is very busy."
+  },
+  {
+   "name": "FY16 PO's",
+   "where": "text",
+   "quote": "fy16 po's were presented."
+  },
+  {
+   "name": "PAC coordinator job description",
+   "where": "text",
+   "quote": "jo will review and submit to the pacc committee."
+  },
+  {
+   "name": "Updated purchasing policy",
+   "where": "text",
+   "quote": "discuss the updated purchasing policy."
+  },
+  {
+   "name": "Financial reports for the past four years",
+   "where": "text",
+   "quote": "financial reports for the past four years were presented to the committee."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "budget",
+  "FY16",
+  "purchasing policy",
+  "HD programming",
+  "Cable Access Committee",
+  "coordinator",
+  "Comcast",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

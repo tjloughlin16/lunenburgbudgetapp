@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2014-05-15",
  "docid": "2790",
@@ -12,39 +12,182 @@
  },
  "votes": [
   {
-   "motion": "Accept Martha Moore's FY13 Director's Evaluation as revised",
+   "motion": "Accept Martha Moore's FY13 Director's Evaluation as revised.",
    "moved_by": "Richard Mailloux",
    "seconded_by": "Lisa Krowitz",
-   "outcome": "passed",
+   "outcome": "unanimous",
    "procedural": false,
    "quote": "motion made by richard mailloux and seconded by lisa krowitz to accept martha moore's fy13 director's evaluation as revised. unanimous."
   },
   {
-   "motion": "Recommend a 3% salary increase ($1,840.00), resulting in $63,192 for FY14",
+   "motion": "Recommend a 3% salary increase ($1,840.00), resulting in $63,192 for FY14.",
    "moved_by": "Richard Mailloux",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed",
+   "outcome": "unanimous",
    "procedural": false,
    "quote": "motion made by richard mailloux and seconded by robin venezia to recommend a 3% salary increase ($1,840.00), resulting in $63,192 for fy14. unanimous."
   },
   {
-   "motion": "Amend the library director's contract to reflect FY14 date, salary, and vacation-time carry over changes",
+   "motion": "Amend the library director's contract to reflect the date, salary and vacation-time carry over changes.",
    "moved_by": "Lisa Krowitz",
    "seconded_by": "Richard Mailloux",
-   "outcome": "passed",
+   "outcome": "unanimous",
    "procedural": false,
    "quote": "motion made by lisa krowitz and seconded by richard mailloux to amend library director's contract to reflect the date, salary and vacation-time carry over changes. unanimous."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:09 pm.",
    "moved_by": "Richard Mailloux",
    "seconded_by": "Robin Venezia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion made by richard mailloux and seconded by robin venezia to adjourn at 8:09 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09411549999999999
+ "note": "Minutes are clean extracted text with no scan problems. Votes on the evaluation, salary and contract were recorded as unanimous; the adjournment motion has no recorded result. The minutes give no list of documents used at the meeting.",
+ "cost_usd": 0.00379952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: lisa krowitz, richard mailloux, jeanne raboin, robin venezia"
+  },
+  {
+   "name": "Richard Mailloux",
+   "status": "present",
+   "quote": "attending: lisa krowitz, richard mailloux, jeanne raboin, robin venezia"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Chair",
+   "status": "present",
+   "quote": "jeanne raboin, chair board of trustees, lunenburg public library"
+  },
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "quote": "attending: lisa krowitz, richard mailloux, jeanne raboin, robin venezia"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "not stated",
+   "quote": "to accept martha moore's fy13 director's evaluation as revised."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Evaluation revisions were made: page 1 date, page 6 spelling, page 8 added sentence, page 11 closing sentence, page 12 final paragraph, and page 13 list formatting.",
+   "quote": "page 1 - date changed from 2012 to 2013"
+  },
+  {
+   "decision": "Contract amendments were made: all dates changed to reflect FY14, salary changed to $63,192.00, and unused vacation carry-over changed to 10 days.",
+   "quote": "salary changed to $63,192.00"
+  },
+  {
+   "decision": "Chair action items assigned: revise director's FY13 evaluation, revise director's contract, email Town Manager Kerry Speidel about whom to notify of the salary increase, and set a date with the director for presentation of evaluation and salary.",
+   "quote": "email town manager, kerry speidel to inquire about whom to notify concerning library director's salary increase."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's salary recommendation",
+   "what_was_recorded": "Recommended director salary of $63,192, a 3% increase of $1,840.00 per year.",
+   "figures_as_printed": [
+    "$63,192",
+    "3%",
+    "$1,840.00/year"
+   ],
+   "quote": "recommendation: $63,192. this reflects a 3% increase ($1,840.00/year)."
+  },
+  {
+   "topic": "Director's salary motion",
+   "what_was_recorded": "Motion to recommend a 3% salary increase of $1,840.00, resulting in $63,192 for FY14.",
+   "figures_as_printed": [
+    "3%",
+    "$1,840.00",
+    "$63,192"
+   ],
+   "quote": "to recommend a 3% salary increase ($1,840.00), resulting in $63,192 for fy14."
+  },
+  {
+   "topic": "Director's contract salary",
+   "what_was_recorded": "Director's contract salary amended to $63,192.00.",
+   "figures_as_printed": [
+    "$63,192.00"
+   ],
+   "quote": "salary changed to $63,192.00"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "approved as revised",
+   "quote": "a. lk asked a question about the \"n's\" that were kept in the evaluation tool.",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Salary Recommendation",
+   "resolution": "recommended 3% increase to $63,192",
+   "quote": "rm compiled a list of ma library director's salaries with similar town",
+   "tags": [
+    "salary",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Director's contract",
+   "resolution": "amended",
+   "quote": "a. all dates changed to reflect fy14",
+   "tags": [
+    "contract",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "LPL Chair action items",
+   "resolution": "assigned to chair",
+   "quote": "a. revise director's fy13 evaluation",
+   "tags": [
+    "action items"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Evaluation (FY13)",
+   "where": "text",
+   "quote": "accept martha moore's fy13 director's evaluation as revised."
+  },
+  {
+   "name": "Director's contract",
+   "where": "text",
+   "quote": "director's contract: reviewed and the following amendments made"
+  },
+  {
+   "name": "List of MA library director's salaries with similar town populations (from MBLC web site)",
+   "where": "text",
+   "quote": "rm compiled a list of ma library director's salaries with similar town"
+  }
+ ],
+ "tags": [
+  "library board",
+  "director evaluation",
+  "salary",
+  "director contract",
+  "personnel",
+  "FY14"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

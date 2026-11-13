@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-05-07",
  "docid": "2372",
@@ -12,47 +12,169 @@
  },
  "votes": [
   {
-   "motion": "Approve warrant article #11",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "Marilyn Stokes",
-   "outcome": "passed unanimously",
+   "motion": "Approve warrant article #11 at 0/.5/1% (as recommended by ME)",
+   "moved_by": "ME",
+   "seconded_by": "MS",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "me recommends approval at 0/.5/1%; ms seconds; all approved."
+   "quote": "#11 - me recommends approval at 0/.5/1%; ms seconds; all approved."
   },
   {
    "motion": "Approve warrant article #13",
-   "moved_by": "Martha McDonald",
-   "seconded_by": "Marilyn Stokes",
-   "outcome": "passed unanimously",
+   "moved_by": "MM",
+   "seconded_by": "MS",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mm made motion to approve; ms seconds; all approved."
+   "quote": "#13 - mm made motion to approve; ms seconds; all approved."
   },
   {
-   "motion": "Amend warrant article #14 to draw from Retained Earnings to $65,490.55 (reduction of $20K)",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "Martha McDonald",
-   "outcome": "passed unanimously",
+   "motion": "Amend warrant article #14 to draw from Retained Earnings $65,490.55 (reduction of $20K)",
+   "moved_by": "ME",
+   "seconded_by": "MM",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "me made motion to amend draw from retained earnings to $65,490.55 (reduction of $20k); mm seconds; all approved."
+   "quote": "#14 - me made motion to amend draw from retained earnings to $65,490.55 (reduction of $20k); mm seconds; all approved."
   },
   {
-   "motion": "Approve new vendor, Casella, with 10 year contract",
-   "moved_by": "Marilyn Stokes",
-   "seconded_by": "John Male",
-   "outcome": "passed unanimously",
+   "motion": "Approve warrant article #15, new vendor Casella with a 10 year contract",
+   "moved_by": "MS",
+   "seconded_by": "JM",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "new vendor, casella, with 10 year contract - ms recommends approval; jm seconds; all approved."
+   "quote": "#15 - new vendor, casella, with 10 year contract - ms recommends approval; jm seconds; all approved."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Martha McDonald",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 8:43 AM",
+   "moved_by": "BR",
+   "seconded_by": "MM",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by br at 8:43 am; mm seconds; all approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Articles #16, #17, and #18 were passed over (not voted on). All votes were unanimous.",
- "cost_usd": 0.0946525
+ "note": "OCR scan of the minutes (macOS Vision). Votes are recorded only as \"all approved\" with no numeric counts or roll call. Initials (ME, MS, MM, JM, BR) are used in the text and are not expanded in the minutes, so they are kept as printed. The minutes do not say what the \"0/.5/1%\" rate applies to. Item #15 is noted as a new vendor contract with no dollar figure printed. The minutes contain no list of documents.",
+ "cost_usd": 0.00387782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, marilyn stokes, mark erickson"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, marilyn stokes, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, marilyn stokes, mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, marilyn stokes, mark erickson"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, marilyn stokes, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, marilyn stokes, mark erickson"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mike mackin, john male, marilyn stokes, mark erickson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Warrant articles #16, #17 and #18 were passed over without action.",
+   "quote": "#16 - pass over. #17 - pass over. #18 - pass over."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant article #14 Retained Earnings draw",
+   "what_was_recorded": "The draw from Retained Earnings was amended to $65,490.55, a reduction of $20K.",
+   "figures_as_printed": [
+    "$65,490.55",
+    "$20K"
+   ],
+   "quote": "#14 - me made motion to amend draw from retained earnings to $65,490.55 (reduction of $20k); mm seconds; all approved."
+  },
+  {
+   "topic": "Warrant article #11 rate",
+   "what_was_recorded": "Approval was recommended at a rate of 0/.5/1%, as printed.",
+   "figures_as_printed": [
+    "0/.5/1%"
+   ],
+   "quote": "#11 - me recommends approval at 0/.5/1%; ms seconds; all approved."
+  },
+  {
+   "topic": "Affordability of added services",
+   "what_was_recorded": "JM remarked that small added services to the Library and Council on Aging cannot be afforded, while MM noted a reduction of services in the schools.",
+   "figures_as_printed": [],
+   "quote": "jm commented that we are adding a small amount of services to the library, council on aging, etc. when we cannot afford"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Remaining warrant articles and Special Town Meeting articles",
+   "resolution": "Articles #11, #13, #14 and #15 approved (#14 amended to $65,490.55); #16, #17 and #18 passed over",
+   "quote": "review and discussion of remaining warrant articles and special town meeting articles:",
+   "tags": [
+    "warrant articles",
+    "special town meeting",
+    "retained earnings",
+    "vendor contract"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:43 AM",
+   "quote": "motion to adjourn by br at 8:43 am; mm seconds; all approved.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant articles #11, #13, #14, #15, #16, #17 and #18 (remaining warrant articles and Special Town Meeting articles)",
+   "where": "text",
+   "quote": "review and discussion of remaining warrant articles and special town meeting articles:"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "warrant articles",
+  "special town meeting",
+  "retained earnings",
+  "Casella contract",
+  "schools",
+  "library",
+  "council on aging"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

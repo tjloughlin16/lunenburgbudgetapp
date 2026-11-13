@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-05-07",
  "docid": "4844",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Endorse Concept B as the main concept plan for the Summer Street project moving forward",
+   "motion": "Endorse Concept B as the main concept plan for the Summer Street project moving forward.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
@@ -20,40 +20,381 @@
    "quote": "ms. bertram made a motion to endorse concept b as the main concept plan for the summer street project moving forward. mr. matthews seconded. on vote motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Elect Tom Alonzo as Chairman of the Board of Selectmen",
+   "motion": "Elect Mr. Alonzo as Chairman of the BOS.",
    "moved_by": "Mr. Matthews",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. matthews nominated mr. alonzo to be the chairman of the bos. ms. bertram seconded. on vote motion carried, 5 in tavor, 0 opposed."
   },
   {
-   "motion": "Elect Paula Bertram as Vice Chair of the Board of Selectmen",
+   "motion": "Elect Ms. Bertram as Vice Chair of the BOS.",
    "moved_by": "Mr. Toale",
    "seconded_by": "Mr. Ebersole",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. toale nominated ms. bertram for the position of vice chair. mi. ebersole seconded. on vote motion carried, 5 in favor, 0 opposed.",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "mr. toale nominated ms. bertram for the position of vice chair. mi. ebersole seconded."
   },
   {
-   "motion": "Elect David Matthews as Clerk of the Board of Selectmen",
+   "motion": "Elect Mr. Matthews as Clerk of the BOS.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. Toale",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "ms. bertram nominated mr. matthews for the position of clerk of the bos. mr. toale seconded. on vote motion carried, 5 in favor, 0 opposed."
+   "procedural": false,
+   "quote": "ms. bertram nominated mr. matthews for the position of clerk of the bos. mr. toale seconded. on vote motion carried,"
   },
   {
-   "motion": "Enter into executive session to discuss strategy with respect to collective bargaining or litigation",
+   "motion": "Enter executive session under M.G.L. Chapter 30A, Section 21A (9) to discuss strategy with respect to collective bargaining or litigation.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. alonzo moved to enter into executive session citing m.g.l. chapter 30a, section 21a (9), to discuss strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigating position, and the chair so declares. roll call vote: matthews - aye, bertram - aye, toale - aye, ebersole - aye, & alonzo - aye"
+   "quote": "roll call vote: matthews - aye, bertram - aye, toale - aye, ebersole - aye, & alonzo - aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcription from macOS Vision, five votes recorded",
- "cost_usd": 0.1033635
+ "note": "OCR text from a scanned page set; several words are garbled (e.g., \"tavor\", \"Mi. Ebersole\", \"Mir. Matthews\"), and a paragraph on page 5 (Eagle Heights) has overlapping OCR noise, so the figures were taken from the clean line only. The warrant amounts are paired to dates by column order as the OCR presents them. The minutes do not record a result for the minutes approval or warrant items. The Sewer Commission sentence in Committee Reports is cut off mid-sentence in the source. The 2-1 Planning Board vote on 35 Leominster Rd is a Planning Board vote reported by a member, not a Select Board vote, so it is not recorded as one. No documents list is printed.",
+ "cost_usd": 0.009200119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen; Chair for the past two years (per minutes)",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with david matthews"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, robert ebersole, jamie toale and town manager kerry speidel"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, robert ebersole, jamie toale and town manager kerry speidel"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, robert ebersole, jamie toale and town manager kerry speidel"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, robert ebersole, jamie toale and town manager kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "tom alonzo, paula bertram, robert ebersole, jamie toale and town manager kerry speidel"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  },
+  {
+   "name": "Trish Domigan",
+   "role": "VHB Engineering",
+   "status": "present",
+   "quote": "7:30 p.m. - trish domigan, vhb engineering, update on summer street project; select design option -"
+  },
+  {
+   "name": "Ray Morin",
+   "role": "48 Youngs Road; co-owner of the property on Youngs Road",
+   "status": "present",
+   "quote": "ray morin, 48 youngs road, stated that he was co-owner of the property on youngs road"
+  },
+  {
+   "name": "Joe Smalley",
+   "role": "Daewoo North",
+   "status": "present",
+   "quote": "joe smalley, daewoo north, asked if the plan is set in stone or are the entrances and exits negotiable."
+  },
+  {
+   "name": "Dave Pacillo",
+   "role": "co- owner of a Hair Salon located at 91 Summer St.",
+   "status": "present",
+   "quote": "dave pacillo, co- owner of a hair salon located at 91 summer st., stated that he prefers concept b."
+  },
+  {
+   "name": "Mr. Dion",
+   "role": "236 Summer Street",
+   "status": "present",
+   "quote": "mr. dion, 236 summer street, asked the bos how the project would be financed"
+  },
+  {
+   "name": "Sharon Leblanc",
+   "role": "171 Summer Street",
+   "status": "present",
+   "quote": "sharon leblanc, 171 summer street, asked if what ms. bertram was referring to was a date to end the project"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed that Concept B would be the best design for the area, before the formal motion to endorse it.",
+   "quote": "they were in agreement that concept b would be the best design for this area."
+  },
+  {
+   "decision": "Liaison assignments for the year were set out: Matthews to School Building Committee; Bertram to Planning Board; Alonzo to MassBroadband Committee and Finance Committee Appointments; Toale to Finance Committee and Capital Planning Commission; Ebersole to Sewer Commission and PACC.",
+   "quote": "liaisons for the year will be as follows:"
+  },
+  {
+   "decision": "Building Reuse (Passios Building) committee to be an Ad Hoc Committee from the BOS.",
+   "quote": "mr. matthews answered that it would be an ad hoc committee from the bos."
+  },
+  {
+   "decision": "Mr. Matthews to come back the following week with a plan for the Building Reuse committee.",
+   "quote": "mr. matthews stated he would come back the following week with a plan and encouraged people from the town to join the committee."
+  },
+  {
+   "decision": "Ms. Speidel to look into whether the Town can put up its own street lights, since the poles are owned by Verizon, and bring back an answer.",
+   "quote": "ms. speidel stated she would have to look into that question further and bring back an answer."
+  },
+  {
+   "decision": "Town to go back out to bid on the Municipal Electric Aggregation Program in the next week, as the new 6 month period begins June 1.",
+   "quote": "the town would be going back out to bid on the municipal electric aggregation program in the next week"
+  },
+  {
+   "decision": "Board to take a couple of weeks to think about goals before moving forward with goals and evaluations.",
+   "quote": "mr. alonzo agreed and said the bos should take a couple weeks to think about goals before they move forward with goals and evaluations."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant totals were listed for 5/09, 5/08 and 5/07 with their warrant numbers, paired by column order in the text.",
+   "figures_as_printed": [
+    "$621,072.38",
+    "$146,703.88",
+    "$458,032.35"
+   ],
+   "quote": "warrants: 5/09 5/08 5/07 #23-p131 #60-13 #59-13 $621,072.38 $146,703.88 $458,032.35"
+  },
+  {
+   "topic": "Unitil street light sale price",
+   "what_was_recorded": "Unitil's sale price for street lamps was reported as about double what Fitchburg paid per street lamp; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. speidel reported that unitil had sent a sale price to the consultant and it was about double what the city of fitchburg"
+  },
+  {
+   "topic": "Green Community grant for LED street lights",
+   "what_was_recorded": "Stretch Code approval was said to make the Town eligible for grant money to buy LED street lights, reducing operating cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "and receiving grant money that could be used to purchase led lights for the street lights"
+  },
+  {
+   "topic": "Municipal Electric Aggregation Program bid",
+   "what_was_recorded": "Consultant Colonial Power Group expected a bid slightly better than Unitil's rate; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they expected to bring a bid back that was slightly better than unitil's rate."
+  },
+  {
+   "topic": "Eagle Heights senior housing design",
+   "what_was_recorded": "The design for the senior housing project was described as in a $400,000.00-500,000.00 price range; RCAP Solutions offered to finance the design if the Town confirms partial financing.",
+   "figures_as_printed": [
+    "$400,000.00-500,000.00"
+   ],
+   "quote": "project would be in the $400,000.00-500,000.00 price range for a senior housing project."
+  },
+  {
+   "topic": "Summer Street utility relocation costs",
+   "what_was_recorded": "MassDOT offers to pay 50% of relocation costs for utilities but will not pay for underground utilities.",
+   "figures_as_printed": [
+    "50%"
+   ],
+   "quote": "massdot offers to pay for 50% of any relocation costs in concerns to utilities"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ray Morin",
+   "stated_role": "co-owner of the property on Youngs Road",
+   "topic": "Summer Street plan access and trucking business",
+   "quote": "ray morin, 48 youngs road, stated that he was co-owner of the property on youngs road and his property has egress to"
+  },
+  {
+   "speaker": "Joe Smalley",
+   "stated_role": "Daewoo North",
+   "topic": "Whether the plan is set and green space effect on car display",
+   "quote": "joe smalley, daewoo north, asked if the plan is set in stone or are the entrances and exits negotiable."
+  },
+  {
+   "speaker": "Dave Pacillo",
+   "stated_role": "co- owner of a Hair Salon located at 91 Summer St.",
+   "topic": "Prefers Concept B; power lines and train yard",
+   "quote": "dave pacillo, co- owner of a hair salon located at 91 summer st., stated that he prefers concept b."
+  },
+  {
+   "speaker": "Mr. Dion",
+   "stated_role": "236 Summer Street",
+   "topic": "Project financing and trees placed in driveways",
+   "quote": "mr. dion, 236 summer street, asked the bos how the project would be financed"
+  },
+  {
+   "speaker": "Sharon Leblanc",
+   "stated_role": "171 Summer Street",
+   "topic": "Meaning of the 2014-2017 TIP date for the project",
+   "quote": "sharon leblanc, 171 summer street, asked if what ms. bertram was referring to was a date to end the project"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM) - welcome and proclamation",
+   "resolution": "no action",
+   "quote": "mr. matthews opened up the meeting by thanking everyone who came to town meeting",
+   "tags": [
+    "public comment",
+    "proclamation",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Summer Street Project - select design concept",
+   "resolution": "approved Concept B 5-0",
+   "quote": "7:30 p.m. - trish domigan, vhb engineering, update on summer street project; select design option -",
+   "tags": [
+    "Summer Street",
+    "MassDOT",
+    "roads",
+    "Leominster",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Board reorganization and liaison assignments",
+   "resolution": "elected Chair, Vice Chair and Clerk; liaisons assigned",
+   "quote": "board reorganization; liaison assignments - mr. matthews explained that after every town election",
+   "tags": [
+    "reorganization",
+    "liaisons",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Building Reuse Committee (Passios Building)",
+   "resolution": "no action; Matthews to return with plan",
+   "quote": "mr. matthews explained that there was a need for an ad hoc committee regarding",
+   "tags": [
+    "Passios Building",
+    "ad hoc committee",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no action recorded",
+   "quote": "minutes: april 23, 2013",
+   "tags": [
+    "minutes",
+    "warrants",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "mr. ebersole updated the bos and the public that at town meeting the sewer commission",
+   "tags": [
+    "sewer",
+    "Planning Board",
+    "Finance Committee",
+    "sawmill"
+   ]
+  },
+  {
+   "topic": "Town Manager reports (street lights, electric aggregation, Eagle Heights)",
+   "resolution": "no action; staff to report back",
+   "quote": "ms. speidel reported that unitil had sent a sale price to the consultant",
+   "tags": [
+    "street lights",
+    "Unitil",
+    "electric aggregation",
+    "Eagle Heights",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Appointments, re-appointments, resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations - none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment - goals session",
+   "resolution": "no action; board to think about goals",
+   "quote": "mr. ebersole asked if there would be a session to set goals to complete projects",
+   "tags": [
+    "goals",
+    "evaluations"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session 5-0",
+   "quote": "executive session - being no further business, mr. alonzo moved to enter into executive session",
+   "tags": [
+    "executive session",
+    "litigation",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proclamation recognizing Tuesday, May 7, 2013 National Teacher's Day in Lunenburg",
+   "where": "text",
+   "quote": "reading a proclamation that recognized tuesday, may 7, 2013 national teacher's day in lunenburg"
+  },
+  {
+   "name": "Invitations to abutting properties regarding the Summer Street Project",
+   "where": "text",
+   "quote": "ms. speidel stated that invitations were sent to all of the abutting properties to the project"
+  },
+  {
+   "name": "Warrants 5/09, 5/08 and 5/07 (#23-P131, #60-13, #59-13)",
+   "where": "text",
+   "quote": "warrants: 5/09 5/08 5/07 #23-p131 #60-13 #59-13 $621,072.38 $146,703.88 $458,032.35"
+  },
+  {
+   "name": "Town's Master Plan",
+   "where": "text",
+   "quote": "within the context of the town's master plan for a more"
+  }
+ ],
+ "tags": [
+  "Summer Street project",
+  "MassDOT",
+  "Concept B",
+  "board reorganization",
+  "liaisons",
+  "Passios Building",
+  "building reuse committee",
+  "warrants",
+  "street lights",
+  "Unitil",
+  "municipal electric aggregation",
+  "Eagle Heights housing",
+  "Sewer Commission",
+  "Planning Board",
+  "executive session",
+  "public comment",
+  "Town Meeting",
+  "Green Community"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

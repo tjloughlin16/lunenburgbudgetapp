@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-10-08",
  "docid": "4861",
@@ -12,15 +12,275 @@
  },
  "votes": [
   {
-   "motion": "to enter into executive session to discuss non-union personnel contract negotiations and Town Manager's employment contract renewal",
-   "moved_by": "Toale",
-   "seconded_by": "Ebersole",
-   "outcome": "passed 3-0",
+   "motion": "Enter into Executive Session under M.G.L. Chapter 30A, Section 21A (2) to discuss non-union personnel contract negotiations and the Town Manager's employment contract renewal, not returning to open session.",
+   "moved_by": "Jamie Toale",
+   "seconded_by": "Robert Ebersole",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. toale moved to enter into executive session; mr. ebersole seconded. roll call vote; ebersole-aye, toale-aye and alonzo-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text; one vote recorded. Meeting adjourned without a recorded vote motion.",
- "cost_usd": 0.1120635
+ "note": "OCR text from a scanned page set (macOS Vision). Only one motion is recorded (entry into executive session, roll call 3 ayes); the minutes approval, warrant approval and adjournment have no recorded motion, so they are not listed as votes. The roll-call result is printed as individual ayes, not as a count, so outcome is 'passed'. The 7:00PM public comment period is printed as 'None'; the three public speakers listed were heard during the casino agenda item. Warrant figures are printed without a clear date-to-amount mapping. Public comment is recorded from the casino item only. Board member roles for Toale and Ebersole are not printed. Recognized officers and fire personnel from the Whalom incident are not listed as attendees because they did not appear before the board.",
+ "cost_usd": 0.00731332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair Person",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chair person tom alonzo, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chair person tom alonzo, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chair person tom alonzo, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chair person tom alonzo, jamie toale, robert ebersole, and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "absent",
+   "quote": "not present: vice chairperson paula bertram & dave matthews"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "",
+   "status": "absent",
+   "quote": "not present: vice chairperson paula bertram & dave matthews"
+  },
+  {
+   "name": "Jonathan Silverstein",
+   "role": "Attorney, Kopelman and Paige",
+   "status": "present",
+   "quote": "ms. speidel introduced attorney jonathan silverstein from kopelman and paige and explained that mr. silverstein specializes"
+  },
+  {
+   "name": "James Marino",
+   "role": "Lunenburg Police Chief",
+   "status": "present",
+   "quote": "lunenburg police chief james marino spoke to the board about a car accident which happened at the"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Highway Superintendent",
+   "status": "present",
+   "quote": "jack rodriquenz, highway superintendent spoke to the board and suggested that if the town is eligible to"
+  },
+  {
+   "name": "Marion Benson",
+   "role": "Planning Board Director",
+   "status": "present",
+   "quote": "marion benson, planning board director, spoke to say that her first concern is that we should be designated as"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to present the Lunenburg Women's Club with a proclamation at a future BOS meeting for its 100th anniversary.",
+   "quote": "could present them with a proclamation at a future bos meeting. the board agreed to do so"
+  },
+  {
+   "decision": "BOS Policies & Procedures to be placed as a Workshop item on a future agenda, date TBA.",
+   "quote": "bos policies & procedures: to be placed as a workshop item on a future agenda tba."
+  },
+  {
+   "decision": "The BOS must sign and submit to the ABCC new Form 43's marked 'for reconsideration' for The Lakeview Club and PP Group LLC d/b/a Bangkok Hill.",
+   "quote": "the bos must sign and submit to the abcc new form 43's marked \"for reconsideration\""
+  },
+  {
+   "decision": "The board will keep the public posted as the Mass Live! casino surrounding community issue progresses.",
+   "quote": "the board will keep everyone posted as they progress with this issue"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants approved/listed",
+   "what_was_recorded": "Warrant totals for three warrant dates are printed under Minutes/Warrants/Action File Issues; the minutes do not state which total goes with which date.",
+   "figures_as_printed": [
+    "$660,736.36",
+    "$424,727.47",
+    "$372,322.33"
+   ],
+   "quote": "warrants: #w8p-14 #w18-14 #w19-14 10/7/2013 10/8/2013 10/9/2013 $660,736.36 $424,727.47 $372,322.33"
+  },
+  {
+   "topic": "Casino gaming license fees",
+   "what_was_recorded": "Counsel reported the gaming license fee for Category 1 and Category 2 facilities as printed.",
+   "figures_as_printed": [
+    "$85M",
+    "$25M"
+   ],
+   "quote": "the license fee for category 1 facilities is $85m and the fee for category 2 facilites is $25m."
+  },
+  {
+   "topic": "School building project debt service",
+   "what_was_recorded": "The Finance Committee asked the Town Manager for more information on existing debt service while considering the school building project; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "asked her to provide them with additional information on existing debt service as a part of contemplating the school building project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jack Rodriquenz",
+   "stated_role": "Highway Superintendent",
+   "topic": "Casino surrounding community funds for road upkeep",
+   "quote": "jack rodriquenz, highway superintendent spoke to the board and suggested that if the town is eligible to receive funding that it be used for upkeep of the roads"
+  },
+  {
+   "speaker": "Marion Benson",
+   "stated_role": "Planning Board Director",
+   "topic": "Surrounding community designation and traffic mitigation",
+   "quote": "marion benson, planning board director, spoke to say that her first concern is that we should be designated as"
+  },
+  {
+   "speaker": "James Marino",
+   "stated_role": "Police Chief",
+   "topic": "Support for Town Manager's approach to casino project",
+   "quote": "police chief marino spoke to say that he fully supports the town manager's path in this project"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements and proclamation request",
+   "resolution": "announcements made; board agreed to a Women's Club proclamation at a future meeting",
+   "quote": "announcements : mr. alonzo announced that the lunenburg fire dept. will hold an open house on",
+   "tags": [
+    "announcements",
+    "proclamation"
+   ]
+  },
+  {
+   "topic": "Recognition of police and fire actions at Whalom lake accident",
+   "resolution": "recognized; officers to receive commendations at a later date",
+   "quote": "lunenburg police chief james marino spoke to the board about a car accident which happened at the",
+   "tags": [
+    "public safety",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Mass Live! Casino review and surrounding community designation",
+   "resolution": "discussed with Town Counsel; board to keep public posted",
+   "quote": "7:00 pm - review of mass live! casino project (leominster) and surrounding community designation",
+   "tags": [
+    "casino",
+    "surrounding community",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "BOS Policies & Procedures",
+   "resolution": "to be a workshop item on a future agenda, TBA",
+   "quote": "bos policies & procedures: to be placed as a workshop item on a future agenda tba.",
+   "tags": [
+    "policies"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "warrants listed; action file issues none; no motion recorded",
+   "quote": "action file issues: none",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports given by members; no action",
+   "quote": "board of health - mr. ebersole reported that the boh met last evening",
+   "tags": [
+    "committees",
+    "broadband",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Town Manager reports: ABCC Form 43s",
+   "resolution": "Form 43s to be signed and resubmitted to ABCC marked for reconsideration",
+   "quote": "the bos must sign and submit to the abcc new form 43's marked \"for reconsideration\"",
+   "tags": [
+    "liquor licenses",
+    "ABCC"
+   ]
+  },
+  {
+   "topic": "Appointments, re-appointments, resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments-resignations none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session by roll call, not returning to open session",
+   "quote": "being no further business mr. alonzo asked for a motion to enter into executive",
+   "tags": [
+    "executive session",
+    "town manager contract"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form 43 applications from the ABCC for The Lakeview Club and PP Group LLC d/b/a Bangkok Hill",
+   "where": "text",
+   "quote": "ms. speidel provided the board with two form 43's applications from the abcc (alcohol beverage control commission)"
+  },
+  {
+   "name": "RFA-2 application (Gaming Commission)",
+   "where": "text",
+   "quote": "receipt by the commission of the rfa-2 application."
+  },
+  {
+   "name": "Surrounding Community Agreement",
+   "where": "text",
+   "quote": "able to negotiate a surrounding community agreement and has been granted an extension"
+  },
+  {
+   "name": "Traffic study",
+   "where": "text",
+   "quote": "the traffic study for today may not be the traffic study for future years to come"
+  }
+ ],
+ "tags": [
+  "casino",
+  "surrounding community",
+  "public safety",
+  "liquor licenses",
+  "ABCC",
+  "executive session",
+  "town manager contract",
+  "broadband",
+  "school building",
+  "committee reports",
+  "warrants",
+  "proclamation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

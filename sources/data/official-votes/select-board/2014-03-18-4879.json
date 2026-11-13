@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-03-18",
  "docid": "4879",
@@ -12,31 +12,428 @@
  },
  "votes": [
   {
-   "motion": "Approve the change of officer and transfer of stock for Vasta Inc. d/b/a Lunenburg Liquors, 433 Electric Avenue",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Dave Matthews",
+   "motion": "Approve the change of officer and transfer of stock as requested for Vasta Inc. d/b/a Lunenburg Liquors, 433 Electric Avenue.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the change of officer and transfer of stock as requested for vasta inc. d/b/a lunenburg liquors, 433 electric avenue. mr. matthews seconded. on vote, motion carried, 5 in favor 0 opposed"
+   "quote": "mr. matthews seconded. on vote, motion carried, 5 in favor 0 opposed"
   },
   {
-   "motion": "Approve Wine & Malt Beverage License for Tarrum Williams d/b/a Kabob-E-Licious, 165 Mass Avenue",
-   "moved_by": "Dave Matthews",
-   "seconded_by": "Paula Bertram",
+   "motion": "Approve the Wine & Malt Beverage License for Tarrum Williams d/b/a Kabob-E-Licious located at 165 Mass Avenue.",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the wine & malt beverage license for tarrum williams d/b/a kabob-e-licious located at 165 mass avenue. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed"
+   "quote": "ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed"
   },
   {
-   "motion": "Appoint Debby Lincoln to the Council on Aging",
-   "moved_by": "Robert Ebersole",
-   "seconded_by": "Paula Bertram",
+   "motion": "Appoint Debby Lincoln to the Council on Aging.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. ebersole moved to appoint debby lincoln to the council on aging. ms. bertram seconded. on vote, motion carried, 5 in favor, o opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. All votes recorded with outcomes. Note: The third vote shows 'O opposed' as printed in the OCR (likely a typo for '0'); quoted verbatim as it appears.",
- "cost_usd": 0.0947125
+ "note": "OCR text (macOS Vision) of a received-and-filed scan; some characters garbled (e.g., 'O' for 0 in the Debby Lincoln vote count, 'Tarrnum', 'Kabob-E-Licous' as printed, 'Vir.' for Mr.). Page 3 opens mid-sentence and contains stray fragments (e.g., 'valks on this property on April 19 & April 26'). Vote outcome for Debby Lincoln recorded as 5-0 from '5 in favor, O opposed'. No motions recorded for tabling, proclamation signing, warrant signing, or minutes; these are recorded as decisions. No public comment speakers appear in the public comment sections; only board members spoke there.",
+ "cost_usd": 0.013045520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with chairperson tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted, susan doherty, recording secretary"
+  },
+  {
+   "name": "Anastasia Halkiadakis",
+   "role": "representing Lunenburg Liquors",
+   "status": "present",
+   "quote": "anastasia halkiadakis representing lunenburg liquors came before the board and explained that her husband is no longer part of the"
+  },
+  {
+   "name": "Tarrum Williams",
+   "role": "owner of Kabob-E-Licious",
+   "status": "present",
+   "quote": "tarrum williams, owner of kabob-e-licous spoke to the board to say that she understands the change in her license application"
+  },
+  {
+   "name": "Jeffrey Bajko",
+   "status": "present",
+   "quote": "jeffrey bajko, 14 charlton st., came before the bos to ask for appointment to the public access cable commission (pacc)."
+  },
+  {
+   "name": "Maureen Dupuis",
+   "status": "present",
+   "quote": "maureen dupuis, 173 highland st., came before the bos to ask for appointment to the agricultural committee."
+  },
+  {
+   "name": "Deborah Lincoln",
+   "status": "present",
+   "quote": "deborah lincoln, 46 hemlock dr., came before the bos and expressed her interest to being appointed to the council on aging (coa)."
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "pete lincoln, 46 hemlock dr., came before the board and stated that he was here to reapply for a slot on the coa."
+  },
+  {
+   "name": "Rene' M. Lafayette",
+   "status": "present",
+   "quote": "rene' m. lafayette, 48 williams dr., came before the board seeking appointment to a town committee."
+  },
+  {
+   "name": "Steve Walker",
+   "status": "present",
+   "quote": "steve walker, 227 pleasant st., came before the board seeking appointment to the pacc."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "representing the Open Space Acquisition Advisory Committee",
+   "status": "present",
+   "quote": "brandon kibbe representing the open space acquisition advisory committee came before the board and informed them"
+  },
+  {
+   "name": "Ms. Bilotta Simeone",
+   "role": "Chairperson of the Planning Board",
+   "status": "present",
+   "quote": "ms. bilotta simeone, chairperson of the planning board spoke to say that the planning board had discussed this and decided"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the Lane Property Purchase & Sale Agreement was tabled to the April 1, 2014 BOS meeting; the BOS will post a meeting if approval is needed sooner.",
+   "quote": "it was decided to table the approval of the purchase & sale agreement until the april 1, 2014 bos meeting to allow the contract to be completed"
+  },
+  {
+   "decision": "Pete Lincoln's COA reappointment was tabled, and the BOS will review the COA Bylaws on appointments and term limits.",
+   "quote": "mr. alonzo said that this appointment will be tabled for the time being."
+  },
+  {
+   "decision": "The BOS does not intend to appoint anyone to the PACC until after Annual Town Meeting, because of a Bylaw revision on the warrant.",
+   "quote": "the bos does not intend to appoint anyone to that committee until after the annual town meeting."
+  },
+  {
+   "decision": "Maureen Dupuis was told that Agricultural Committee openings will be announced to the public when available.",
+   "quote": "informed her that when an opening is available it will be announced to the public."
+  },
+  {
+   "decision": "The BOS will reconnect with Mr. Lafayette after further review of committee openings.",
+   "quote": "the bos will reconnect with mr. lafayette after further review of committee openings."
+  },
+  {
+   "decision": "The BOS agreed that Steve Walker's experience would be welcomed on the PACC; he was thanked and not appointed in the minutes.",
+   "quote": "the bos were in agreement that mr. walkers experience would be welcomed on the pacc"
+  },
+  {
+   "decision": "Board decided a full site plan review of the school project was not necessary, but other Land Use Boards, particularly the Planning Board, should review it.",
+   "quote": "after due and diligent discussion, board members decided that a full site plan review of the project was not necessary but that it would be helpful to have other land use boards, particularly the planning board, review the project."
+  },
+  {
+   "decision": "The Planning Board was asked to decide whether to review the project at the local level or hire a Peer Reviewer.",
+   "quote": "ms. bertram requested that the planning board decide how they would like to proceed with this whether it be at the local level or hire a peer reviewer."
+  },
+  {
+   "decision": "The Board signed the Boys & Girls Club Week proclamation.",
+   "quote": "the board then signed it."
+  },
+  {
+   "decision": "Warrant W#48-14 dated 3/18/2014 was signed (signature page signed).",
+   "quote": "warrants: 3/18/2014 w#48-14 signature page signed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrant W#48-14 (3/18/2014)",
+   "what_was_recorded": "The warrant's signature page was signed; two dollar amounts are printed alongside the warrant entry.",
+   "figures_as_printed": [
+    "$124,517.51",
+    "$253,975.48"
+   ],
+   "quote": "w#48-14 signature page signed $124,517.51 $253,975.48"
+  },
+  {
+   "topic": "Lane Property purchase and appraisal",
+   "what_was_recorded": "The board discussed the Purchase & Sale agreement and the appraisal process; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "after due and diligent discussion among the board concerning the purchase & sale agreement and appraisal process"
+  },
+  {
+   "topic": "Summer St. project funding",
+   "what_was_recorded": "Funding for the Summer St. project was not in the Governor's Capital Improvement plan; legislators are advocating for it, and residents were asked to contact representatives.",
+   "figures_as_printed": [],
+   "quote": "ms. bertram added that in regards to the summer st. project, funding for this was not included on the governor's capital improvement"
+  },
+  {
+   "topic": "Missed state funding opportunities",
+   "what_was_recorded": "Ms. Bertram said a project lost its chance at funding this year and the Town is missing funding opportunities; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "they have lost the opportunity for that project to be funded this year."
+  },
+  {
+   "topic": "School Building Committee costs",
+   "what_was_recorded": "The School Building Committee discussed green house sizes and costs and reducing spending wherever possible; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "green house sizes and costs"
+  },
+  {
+   "topic": "Middle/High School peer review cost",
+   "what_was_recorded": "Staff said the earlier Primary School review was done pro bono by David Ross & Assoc.; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "according to staff in the land use departments the review which was conducted on the primary school project was done"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "7:00PM Public Comment (caucus thanks; Boys & Girls Club Week proclamation)",
+   "resolution": "proclamation signed",
+   "quote": "and the board then signed it.",
+   "tags": [
+    "proclamation",
+    "town caucus",
+    "election"
+   ]
+  },
+  {
+   "topic": "Announcements: Committee Vacancies",
+   "resolution": "no discussion",
+   "quote": "1. committee vacancies: no discussion",
+   "tags": [
+    "committee vacancies"
+   ]
+  },
+  {
+   "topic": "Public Hearing: Vasta Inc. d/b/a Lunenburg Liquors (new officer/director, transfer of stock)",
+   "resolution": "approved",
+   "quote": "mr. alonzo read into record the notice of public hearing concerning the application submitted by vasta inc.",
+   "tags": [
+    "liquor license",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public Hearing: Tarrnum Williams d/b/a Kabob-E-Licious (Wine & Malt Beverage)",
+   "resolution": "approved as Wine & Malt Beverage License; BYOB license forfeit requested",
+   "quote": "ms. speidel spoke to inform the board that the applicant had applied for wine & malt beverage with cordials/liqueurs permit",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "7:30PM Interviews for committee appointments",
+   "resolution": "Debby Lincoln appointed to COA; Pete Lincoln tabled; others pending or not appointed",
+   "quote": "mr. ebersole moved to appoint debby lincoln to the council on aging.",
+   "tags": [
+    "committee appointments",
+    "council on aging",
+    "PACC",
+    "agricultural committee"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Lane Property Purchase & Sale Agreement (taken out of order)",
+   "resolution": "tabled to April 1, 2014",
+   "quote": "it was decided to table the approval of the purchase & sale agreement until the april 1, 2014 bos meeting to allow the contract to be completed",
+   "tags": [
+    "land acquisition",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Current Business 2: FY2015 Town Manager's Recommended Budget",
+   "resolution": "no discussion",
+   "quote": "2. review/discussion fy2015 town manager's recommended budget: no discussion",
+   "tags": [
+    "budget FY2015"
+   ]
+  },
+  {
+   "topic": "Current Business 3: Warrant Articles for Annual Town Meeting",
+   "resolution": "updated list presented",
+   "quote": "ms. speidel presented the board with an updated list of warrant articles for annual town meeting.",
+   "tags": [
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Current Business 4: Minutes, warrants, action file",
+   "resolution": "minor minutes change noted; warrant signed; no action file issues",
+   "quote": "mr. ebersole asked for a minor change to the comment about the pacc bylaw amendment.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Current Business 5: Committee reports",
+   "resolution": "reports received",
+   "quote": "finance committee - mr. toale reported that they will be meeting this thursday evening.",
+   "tags": [
+    "committee reports",
+    "school building",
+    "summer st"
+   ]
+  },
+  {
+   "topic": "Current Business 6: Town Manager and department reports (peer review, Dover Amendment)",
+   "resolution": "full site plan review not needed; other boards to review",
+   "quote": "ms. speidel reported that she had received a response from town counsel regarding a peer review concerning the middle/high school building project.",
+   "tags": [
+    "peer review",
+    "dover amendment",
+    "school building",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Appointments/re-appointments/resignations",
+   "resolution": "none",
+   "quote": "appointments/re-appointments/resignations: none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Public comment (bylaws codification, traffic rules, storm water)",
+   "resolution": "workshop to be scheduled",
+   "quote": "mr. ebersole requested an update on the bylaws codification from the town manager",
+   "tags": [
+    "bylaws",
+    "traffic rules",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Adjournment and upcoming meeting schedule",
+   "resolution": "schedule listed",
+   "quote": "upcoming meeting schedule",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Review & Approve Purchase & Sale Agreement; Lane Property",
+   "where": "text",
+   "quote": "review & approve purchase & sale agreement; lane property"
+  },
+  {
+   "name": "Updated list of Warrant Articles for Annual Town Meeting",
+   "where": "text",
+   "quote": "ms. speidel presented the board with an updated list of warrant articles for annual town meeting."
+  },
+  {
+   "name": "Warrant W#48-14 (3/18/2014)",
+   "where": "text",
+   "quote": "warrants: 3/18/2014 w#48-14 signature page signed"
+  },
+  {
+   "name": "Boys & Girls Club Week proclamation",
+   "where": "text",
+   "quote": "the board then signed it."
+  },
+  {
+   "name": "Public Hearing notice, Vasta Inc. d/b/a Lunenburg Liquors",
+   "where": "text",
+   "quote": "mr. alonzo read into record the notice of public hearing concerning the application submitted by vasta inc."
+  },
+  {
+   "name": "Wine & Malt Beverage with Cordials/Liqueurs Permit application (Kabob-E-Licious)",
+   "where": "text",
+   "quote": "ms. speidel spoke to inform the board that the applicant had applied for wine & malt beverage with cordials/liqueurs permit"
+  },
+  {
+   "name": "Council on Aging Bylaw",
+   "where": "text",
+   "quote": "the coa bylaw which states that they make recommendations to the bos for appointments"
+  },
+  {
+   "name": "Bylaw revision on the Annual Town Meeting Warrant",
+   "where": "text",
+   "quote": "there is a bylaw revision on the annual town meeting warrant"
+  },
+  {
+   "name": "Town Counsel response on Peer Review (Dover Amendment)",
+   "where": "text",
+   "quote": "town counsel advised that under the dover amendment"
+  },
+  {
+   "name": "David Ross & Assoc. peer review of Primary School project",
+   "where": "text",
+   "quote": "david ross & assoc. also did approximately 10 other reviews on this project between 5/2002 and 8/2005"
+  },
+  {
+   "name": "Draft Traffic Rules and Regulations",
+   "where": "text",
+   "quote": "the dpw director had circulated a draft of the traffic rules and regulations to the police department for"
+  },
+  {
+   "name": "Governor's Capital Improvement plan",
+   "where": "text",
+   "quote": "funding for this was not included on the governor's capital improvement"
+  },
+  {
+   "name": "PACC Bylaw amendment (minutes of 3/11/2014 comment)",
+   "where": "text",
+   "quote": "mr. ebersole asked for a minor change to the comment about the pacc bylaw amendment."
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor licenses",
+  "committee appointments",
+  "town meeting warrant",
+  "land acquisition",
+  "school building project",
+  "peer review",
+  "dover amendment",
+  "FY2015 budget",
+  "public hearings"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

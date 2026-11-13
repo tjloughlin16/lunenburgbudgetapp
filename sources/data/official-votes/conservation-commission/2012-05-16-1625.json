@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-05-16",
  "docid": "1625",
@@ -10,17 +10,207 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05162012-1625",
   "doc_url": "/docs/meetings/conservation-commission/2012-05-16-minutes-1625.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "The header line is garbled (non-Latin characters) and the attendance is a bare name list with no status wording, so status is recorded as present from the header roster. The minutes record no motions or votes, no adjournment, no outcome for the public hearing, no public comment, and no dollar figures. The 'All minutes approved' line has no motion or vote, so it is recorded as a decision. Phone numbers printed for trail contacts were left out.",
+ "cost_usd": 0.00439182,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the minutes from 12/21/11, 1/18/12, 2/1/12, 3/7&21/12, 4/4,18/12, 5/2/12",
-   "outcome": "passed",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes to be approved ~ 12/21/11, 1/18/12, 2/1/12, 3/7&21/12, 4/4,18/12, 5/2/12 all minutes approved"
+   "name": "Rob Verge",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, richard bursch, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, richard bursch, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, richard bursch, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, richard bursch, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, richard bursch, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, richard bursch, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "present",
+   "quote": "rob verge, jj cote, richard bursch, john lattanzi, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "David Meredith",
+   "role": "applicant for Request for Determination of Applicability",
+   "status": "not stated",
+   "quote": "public hearing on a request for determination of applicability by david meredith."
   }
  ],
- "dropped_unquoted": 0,
- "note": "One vote recorded. No mover or seconder named. The hearing on the Request for Determination of Applicability was held but no vote on it is stated in these minutes.",
- "cost_usd": 0.0837465
+ "decisions": [
+  {
+   "decision": "All minutes listed (12/21/11 through 5/2/12) were approved, without a recorded motion or vote.",
+   "quote": "minutes to be approved ~ 12/21/11, 1/18/12, 2/1/12, 3/7&21/12, 4/4,18/12, 5/2/12 all minutes approved"
+  },
+  {
+   "decision": "Two ANRs were passed on to Matt.",
+   "quote": "2 anr's ~ passed on to matt"
+  },
+  {
+   "decision": "Trail-related contact information was to be passed on to Sharon.",
+   "quote": "need to be passed on to sharon"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: Request for Determination of Applicability, 338 Townsend Harbor Road (David Meredith)",
+   "resolution": "hearing noticed; no outcome recorded",
+   "quote": "public hearing on a request for determination of applicability by david meredith.",
+   "tags": [
+    "wetlands",
+    "public hearing",
+    "RDA",
+    "dock",
+    "deck"
+   ]
+  },
+  {
+   "topic": "FYI correspondence and handouts",
+   "resolution": "handed out for review",
+   "quote": "all of the above handed out for review",
+   "tags": [
+    "correspondence",
+    "handouts"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "minutes to be approved ~ 12/21/11, 1/18/12, 2/1/12, 3/7&21/12, 4/4,18/12, 5/2/12 all minutes approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Signatures on COA and DOA",
+   "resolution": "done",
+   "quote": "signatures ~ coa and doa ~ done",
+   "tags": [
+    "permits",
+    "signatures"
+   ]
+  },
+  {
+   "topic": "ANR plans",
+   "resolution": "passed on to Matt",
+   "quote": "2 anr's ~ passed on to matt",
+   "tags": [
+    "ANR",
+    "land division"
+   ]
+  },
+  {
+   "topic": "Trail steward and trail maps contacts",
+   "resolution": "to be passed on to Sharon",
+   "quote": "need to be passed on to sharon",
+   "tags": [
+    "trails",
+    "trail maps"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tennessee Gas 5 Year Vegetation Management Plan & 2012 Yearly Operational Plan",
+   "where": "list",
+   "quote": "tennessee gas 5 year vegetation management plan & 2012 yearly operational plan"
+  },
+  {
+   "name": "Trustees of Reservations @ Doyle Community Park & Center",
+   "where": "list",
+   "quote": "trustees of reservations @ doyle community park & center"
+  },
+  {
+   "name": "FY13 DCS Grant Round Announcement",
+   "where": "list",
+   "quote": "fy13 dcs grant round announcement"
+  },
+  {
+   "name": "Alteration of Regional Review/Automatic Review of Local & Regional Projects",
+   "where": "list",
+   "quote": "alteration of regional review/automatic review of local & regional projects"
+  },
+  {
+   "name": "WANTED Handout/Farmer's Handout",
+   "where": "list",
+   "quote": "wanted handout/farmer's handout"
+  },
+  {
+   "name": "N R W A Workshop on Conservation Restriction Monitoring",
+   "where": "list",
+   "quote": "n r w a workshop on conservation restriction monitoring"
+  },
+  {
+   "name": "Lancaster Land Trust Info",
+   "where": "list",
+   "quote": "lancaster land trust info"
+  },
+  {
+   "name": "Tennessee Gas Herbicide Application Notification",
+   "where": "list",
+   "quote": "tennessee gas herbicide application notification"
+  },
+  {
+   "name": "Request for Determination of Applicability by David Meredith (338 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "public hearing on a request for determination of applicability by david meredith."
+  },
+  {
+   "name": "COA and DOA (signed)",
+   "where": "text",
+   "quote": "signatures ~ coa and doa ~ done"
+  },
+  {
+   "name": "2 ANRs",
+   "where": "text",
+   "quote": "2 anr's ~ passed on to matt"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "public hearing",
+  "Request for Determination of Applicability",
+  "Townsend Harbor Road",
+  "correspondence",
+  "minutes approval",
+  "ANR",
+  "trails"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "f y i"
+ },
+ "dropped_unquoted_by_field": {}
 }

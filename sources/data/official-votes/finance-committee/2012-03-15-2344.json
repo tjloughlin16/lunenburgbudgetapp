@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-03-15",
  "docid": "2344",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 9:07 PM.",
    "moved_by": "BR",
    "seconded_by": "SG",
    "outcome": "passed",
@@ -21,6 +21,353 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One vote recorded: motion to adjourn. No votes on budget presentations themselves are recorded in these minutes; the document contains only the presentations themselves with no recorded motions or votes on their acceptance or approval.",
- "cost_usd": 0.1081825
+ "note": "OCR text, with garbled passages in the attendance line and many budget-table pages (pages 5-12, 18, 20-22). Figures from those pages were read only where legible; treat them as provisional. The agenda numbering skips item 2. The attendance block is ambiguous: the OCR shows the present names followed by a bare \"Brian Laffond\" and \"Kerry Speidel\" with no status label, so their status is recorded as not stated. Attendee names are the clean committee-roster spellings, since the attendance line itself is garbled. The adjournment vote is recorded as \"all in favor\" with no count. No other motions, votes, or public comment appear. The Monty Tech and School Department presentations are described only by their handouts, and the handout text is the slide deck content.",
+ "cost_usd": 0.012544120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "math mconal, mark rickson, john male, barbara reynolds, scot gle brian laffond kerry speidel"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "not stated",
+   "quote": "math mconal, mark rickson, john male, barbara reynolds, scot gle brian laffond kerry speidel"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes respectfully submitted by martha mcdonald"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "status": "present",
+   "quote": "math mconal, mark rickson, john male, barbara reynolds, scot gle"
+  },
+  {
+   "name": "John Male",
+   "status": "present",
+   "quote": "math mconal, mark rickson, john male, barbara reynolds, scot gle"
+  },
+  {
+   "name": "Scott Gile",
+   "status": "present",
+   "quote": "math mconal, mark rickson, john male, barbara reynolds, scot gle"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "not stated",
+   "quote": "math mconal, mark rickson, john male, barbara reynolds, scot gle brian laffond kerry speidel"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Monty Tech per-pupil foundation budget FY13",
+   "what_was_recorded": "Monty Tech's FY13 foundation budget per pupil was calculated at a figure up from the FY12 figure.",
+   "figures_as_printed": [
+    "$14,804.24",
+    "$14,163"
+   ],
+   "quote": "monty tech's foundation budget per pupil for fy13 has been calculated to be $14,804.24 (increase from $14,163 in fy12)"
+  },
+  {
+   "topic": "Monty Tech total foundation budget FY13",
+   "what_was_recorded": "Total FY13 foundation budget for Monty Tech as printed.",
+   "figures_as_printed": [
+    "$14,804.24",
+    "$21,362,521"
+   ],
+   "quote": "for a total foundation budget of $14,804.24 x 1,443 = $21,362,521"
+  },
+  {
+   "topic": "Lunenburg foundation budget example",
+   "what_was_recorded": "Example foundation budget for Lunenburg at the per-student rate.",
+   "figures_as_printed": [
+    "$14,804.24/ student",
+    "$1,021,493"
+   ],
+   "quote": "example: lunenburg has a foundation enrollment of 69 students x $14,804.24/ student = $1,021,493 foundation budget"
+  },
+  {
+   "topic": "Required Minimum Net School Spending increase",
+   "what_was_recorded": "Required minimum net school spending increased by the printed percent and dollar amount.",
+   "figures_as_printed": [
+    "$1,435,825",
+    "7.21%"
+   ],
+   "quote": "required minimum net school spending increased by 7.21% or $1,435,825"
+  },
+  {
+   "topic": "State Aid Chapter 70 increase",
+   "what_was_recorded": "State Aid Chapter 70 increased by the printed percent and dollar amount.",
+   "figures_as_printed": [
+    "$826,246",
+    "6.4%"
+   ],
+   "quote": "state aid chapter 70 increased by 6.4% or $826,246"
+  },
+  {
+   "topic": "Required minimum district contributions increase",
+   "what_was_recorded": "Required minimum district contributions increased by the printed percent and dollar amount.",
+   "figures_as_printed": [
+    "$609,679",
+    "8.68%"
+   ],
+   "quote": "required minimum district contributions increased by 8.68% or $609,679"
+  },
+  {
+   "topic": "Transportation aid revenue",
+   "what_was_recorded": "Estimated state aid transportation revenue and its change from the FY12 budget.",
+   "figures_as_printed": [
+    "$705,058",
+    "$36,479",
+    "$668,579"
+   ],
+   "quote": "estimated state aid transportation revenue of $705,058 increase of $36,479 from fy12 budget ($668,579)"
+  },
+  {
+   "topic": "School building assistance reimbursement",
+   "what_was_recorded": "School building assistance reimbursement stated to remain level.",
+   "figures_as_printed": [
+    "$948,213"
+   ],
+   "quote": "remains level at $948,213"
+  },
+  {
+   "topic": "School funds used to offset assessment",
+   "what_was_recorded": "Grant funds assumed for salaries and benefits.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "assumes approximately $300,000 in grant funds for salaries and benefits"
+  },
+  {
+   "topic": "Monty Tech dual enrollment course cost",
+   "what_was_recorded": "Cost per dual enrollment course at Mount Wachusett Community College partnership.",
+   "figures_as_printed": [
+    "$30/course"
+   ],
+   "quote": "the cost is $30/course"
+  },
+  {
+   "topic": "FY13 level service budget table",
+   "what_was_recorded": "School budget level service figures for FY11 actuals, FY12, and FY13 non-personnel increases as printed.",
+   "figures_as_printed": [
+    "320,502",
+    "299,425",
+    "16,626,574",
+    "14,908,820",
+    "14,387,171"
+   ],
+   "quote": "fy13 non-personnel increases tuitions 320,502 ed jobs funding 299,425"
+  },
+  {
+   "topic": "Anticipated Chapter 70 increase (House 1)",
+   "what_was_recorded": "Anticipated revenue from House 1 Chapter 70 increase.",
+   "figures_as_printed": [
+    "$586,000"
+   ],
+   "quote": "house 1 chapter 70 +$586,000"
+  },
+  {
+   "topic": "Revolving funds FY12",
+   "what_was_recorded": "Revolving fund balances listed for FY12.",
+   "figures_as_printed": [
+    "$326,000",
+    "$428,231",
+    "$397,000",
+    "$100,000"
+   ],
+   "quote": "revolving funds fy12 • choice - $326,000 • non-resident - $428,231"
+  },
+  {
+   "topic": "Circuit Breaker funds",
+   "what_was_recorded": "Circuit Breaker funds anticipated for FY13 at current level of funding.",
+   "figures_as_printed": [
+    "$525,000",
+    "$397,000"
+   ],
+   "quote": "anticipate approximately $525,000 in cb funds for fy13 at current level of funding."
+  },
+  {
+   "topic": "Closing the 1.2M gap - health insurance savings",
+   "what_was_recorded": "Health insurance renewal savings used toward closing the gap.",
+   "figures_as_printed": [
+    "$133,000"
+   ],
+   "quote": "health insurance renewal savings - $133,000"
+  },
+  {
+   "topic": "Closing the 1.2M gap - materials and personnel",
+   "what_was_recorded": "Reductions proposed in materials/supplies and personnel/programs to close the gap.",
+   "figures_as_printed": [
+    "$120,000",
+    "$850,000"
+   ],
+   "quote": "materials/supplies - $120,000"
+  },
+  {
+   "topic": "Central office materials cut",
+   "what_was_recorded": "Materials and supplies reduced at central office.",
+   "figures_as_printed": [
+    "25K"
+   ],
+   "quote": "materials and supplies reduced by 25k"
+  },
+  {
+   "topic": "Lunch fee increase",
+   "what_was_recorded": "Lunch fee increase per meal and per year per student.",
+   "figures_as_printed": [
+    "$0.25/meal",
+    "$45.00/yr./student"
+   ],
+   "quote": "lunch fees increase $0.25/meal ($45.00/yr./student)"
+  },
+  {
+   "topic": "Bussing fee",
+   "what_was_recorded": "Proposed bussing fee per day and per year, with a family maximum.",
+   "figures_as_printed": [
+    "$1 per day per student",
+    "$180 per year",
+    "$500.00"
+   ],
+   "quote": "$1 per day per student = $180 per year"
+  },
+  {
+   "topic": "Athletics reductions",
+   "what_was_recorded": "Athletics reductions described as a dollar figure.",
+   "figures_as_printed": [
+    "$25K"
+   ],
+   "quote": "reductions in athletics = $25k"
+  },
+  {
+   "topic": "Facilities materials and supplies cut",
+   "what_was_recorded": "Materials and supplies reduced for facilities programs.",
+   "figures_as_printed": [
+    "$61K"
+   ],
+   "quote": "reduce materials and supplies to program by $61k"
+  },
+  {
+   "topic": "School maintenance materials cut and capital items",
+   "what_was_recorded": "Proposed cut of materials with listed capital items canceled or not replaced, each with a printed cost.",
+   "figures_as_printed": [
+    "$61,000",
+    "$6,000",
+    "$8,600",
+    "$6,500"
+   ],
+   "quote": "replacement of upholstered chairs that do not meet fire code. ($8,600)"
+  },
+  {
+   "topic": "Grounds maintenance and emergency expenditure reductions",
+   "what_was_recorded": "Reduction in grounds maintenance funds and emergency expenditure funds.",
+   "figures_as_printed": [
+    "$3,600",
+    "-$2500"
+   ],
+   "quote": "reduction in funds for grounds maintenance $3,600, reduction in funds for emergency expenditure -$2500"
+  },
+  {
+   "topic": "Facilities user fee revenue",
+   "what_was_recorded": "Revenue from facilities users proposed to help pay for outsourcing grounds maintenance.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "to raise $30,000 to help pay for out sourcing grounds maintenance"
+  },
+  {
+   "topic": "MSBA maintenance reimbursement at risk",
+   "what_was_recorded": "Maximum MSBA maintenance reimbursement on a project, which the cuts would likely reduce to near zero.",
+   "figures_as_printed": [
+    "$35M",
+    "$700,000"
+   ],
+   "quote": "the reimbursement rate is scaled so a town could earn up to 2% which on a $35m project would be $700,000."
+  },
+  {
+   "topic": "Grant funds managed by Director of Instructional Services",
+   "what_was_recorded": "Grants currently held or applied for by the district, with printed amounts.",
+   "figures_as_printed": [
+    "$85,000",
+    "$35,000",
+    "$5,000",
+    "$59,000"
+   ],
+   "quote": "title i grant ($85,000.) title iia grant ($35,000.)"
+  },
+  {
+   "topic": "Supplies and materials reduction at Turkey Hill Middle School",
+   "what_was_recorded": "Supplies and materials reduced by a printed amount at the middle school.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "reduction of $10,000 of supplies and materials"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 PM; no action",
+   "quote": "meeting called to order by the chairman at 7:00 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Department Budget Presentations",
+   "resolution": "Monty Tech and School Department presented handouts; no vote recorded",
+   "quote": "department budget presentations • monty tech - handout • school department - handout",
+   "tags": [
+    "budget",
+    "schools",
+    "Monty Tech",
+    "FY13"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:07 PM",
+   "quote": "motion to adjourn at 9:07 pm by br; seconded by sg; all in favor",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Monty Tech - HANDOUT (Monty Tech FY2013 Tentative Educational Plan)",
+   "where": "list",
+   "quote": "• monty tech - handout"
+  },
+  {
+   "name": "School Department - HANDOUT",
+   "where": "list",
+   "quote": "• school department - handout"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY13 budget",
+  "school budget",
+  "Monty Tech",
+  "Lunenburg Public Schools",
+  "Chapter 70",
+  "budget cuts",
+  "budget presentations"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "department budget presentations"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-10-04",
  "docid": "5024",
@@ -12,23 +12,165 @@
  },
  "votes": [
   {
-   "motion": "not stated",
+   "motion": "Motion on the Unitil solar facility petition before the Department of Public Utilities; wording not printed in the minutes.",
    "moved_by": "R. Ebersole",
-   "seconded_by": "T. Alonzo",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: r. ebersole 2: t. alonzo vote: ms. luck-aye, mr. alonzo-aye, mr. ebersole-aye, mr. toale-aye"
+   "quote": "motion: r. ebersole 2: t. alonzo vote: ms. luck-aye, mr. alonzo-aye, mr. ebersole-aye, mr. toale-aye",
+   "seconded_by": "T. Alonzo"
   },
   {
-   "motion": "Town detail rates remain at time and a half for all Town projects, contracted or not, and private details be charged at the overtime rate of sergeant",
+   "motion": "To propose that Town detail rates remain at time and a half for all Town projects, contracted or not, and private details be charged at the overtime rate of sergeant (as amended by Mr. Ebersole from the original proposal).",
    "moved_by": "R. Ebersole",
-   "seconded_by": "T. Alonzo",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "to propose the town detail rates remain at time and a half for all town projects, contracted or not, and private details be charged at the overtime rate of sergeant vote: ms. luck- aye, mr. alonzo- aye, mr. ebersole- aye, mr. toale-aye"
+   "quote": "mr. ebersole changed the motion to propose the town detail rates remain at time and a half for all town projects, contracted or not",
+   "seconded_by": "T. Alonzo"
+  },
+  {
+   "motion": "To exit Executive Session and return to Open Session after brief recess.",
+   "moved_by": "R. Ebersole",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "to exit executive session and return to open session after brief recess vote: ms. luck-aye, mr. alonzo-aye, mr. ebersole- aye, mr. toale- aye",
+   "seconded_by": "T. Alonzo"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan: first motion statement is missing from the OCR output (appears between seconder and vote result). All three votes passed unanimously 4-0.",
- "cost_usd": 0.1411065
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) with garbled characters, e.g. ordinal markers \"2™'\" and \"2°\" for \"2nd\", and a garbled signature. The first 4-0 vote has no motion wording printed, so the motion description is a placeholder. The meeting date 2016-10-04 comes from the request; the extracted text does not print it. No public comment section is printed. The minutes print no document list heading.",
+ "cost_usd": 0.005064319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Marciello",
+   "role": "Interim Town Manager",
+   "status": "present",
+   "quote": "others present: interim town manager david marciello, elaine peterson, executive assistant to town manager"
+  },
+  {
+   "name": "Elaine Peterson",
+   "role": "Executive Assistant to Town Manager",
+   "status": "present",
+   "quote": "others present: interim town manager david marciello, elaine peterson, executive assistant to town manager"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member"
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck entered the meeting."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "vote: ms. luck-aye, mr. alonzo-aye, mr. ebersole-aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "status": "present",
+   "quote": "vote: ms. luck-aye, mr. alonzo-aye, mr. ebersole-aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale reported the police union and town manager lafleur had met regarding the ibpo contract without legal"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Toale to present the detail-rate offer to the union.",
+   "quote": "mr. toale will present the offer to the union."
+  },
+  {
+   "decision": "The Board approved various Executive Session minutes (no motion or vote recorded).",
+   "quote": "the board approved various executive session minutes."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police detail rates (IBPO contract)",
+   "what_was_recorded": "Private detail rate is currently $42 per hour and the sergeant overtime rate is $54 per hour; the union proposed charging the sergeant overtime rate for private details.",
+   "figures_as_printed": [
+    "$42 per hour",
+    "$54 per hour"
+   ],
+   "quote": "private details are currently charged $42 per hour. the union would like to charge the sergeant overtime rate (currently $54 per hour)"
+  },
+  {
+   "topic": "Town detail pay rate",
+   "what_was_recorded": "The Town currently pays time and a half of the officer's normal hourly pay, and the Board proposed keeping the Town rate at time and a half.",
+   "figures_as_printed": [],
+   "quote": "currently the town pays time and a half of the officer's normal hourly pay."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Unitil solar facility petition at DPU",
+   "resolution": "discussed; a motion was recorded (wording not printed), passed 4-0",
+   "quote": "fitchburg gas and electric (unitil) has filed a petition for approval of a request to purchase, own and operate a solar facility",
+   "tags": [
+    "solar",
+    "Unitil",
+    "DPU",
+    "intervention"
+   ]
+  },
+  {
+   "topic": "IBPO police contract detail rates",
+   "resolution": "proposal approved 4-0 to present to union; Mr. Toale to present offer",
+   "quote": "mr. toale reported the police union and town manager lafleur had met regarding the ibpo contract without legal",
+   "tags": [
+    "police",
+    "IBPO contract",
+    "detail rates",
+    "overtime"
+   ]
+  },
+  {
+   "topic": "Executive Session minutes and exit from Executive Session",
+   "resolution": "various Executive Session minutes approved; returned to open session",
+   "quote": "the board approved various executive session minutes.",
+   "tags": [
+    "executive session",
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Petition for Approval (Fitchburg Gas and Electric / Unitil request to purchase, own and operate a solar facility, filed with the Department of Public Utilities)",
+   "where": "text",
+   "quote": "fitchburg gas and electric (unitil) has filed a petition for approval of a request to purchase, own and operate a solar facility"
+  },
+  {
+   "name": "Email from Deborah Ecker of KP Law",
+   "where": "text",
+   "quote": "deborah ecker of kp law sent an email stating fitchburg gas and electric (unitil) has filed a"
+  },
+  {
+   "name": "Memorandum of Agreement (Police Union / Town IBPO contract)",
+   "where": "text",
+   "quote": "came up with a memorandum of agreement. the last remaining item to resolve was the detail rate"
+  }
+ ],
+ "tags": [
+  "police detail rates",
+  "IBPO contract",
+  "Unitil solar petition",
+  "executive session",
+  "pavement management",
+  "Select Board 2016"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

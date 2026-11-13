@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2011-09-07",
  "docid": "1610",
@@ -12,47 +12,255 @@
  },
  "votes": [
   {
-   "motion": "Issue Negative Determination of Applicability for Bernhard Jeleniewski at 56 Laurel Lane",
-   "moved_by": "JJ",
-   "seconded_by": "Sharon",
-   "outcome": "passed",
+   "motion": "Determination on the Request for Determination of Applicability filed by Bernhard Jeleniewski at 56 Laurel Lane (deck and support wall replacement), recorded as Negative.",
+   "moved_by": "JJ Cote",
+   "seconded_by": "Sharon Jordan",
+   "outcome": "Negative 3 Unanimous",
    "procedural": false,
-   "quote": "jj/sharon negative 3 unanimous"
+   "quote": "drainage to stop the erosion. jj/sharon negative 3 unanimous"
   },
   {
-   "motion": "Issue Negative Determination of Applicability for K & G Developers at 390 Page Street",
-   "moved_by": "Sharon",
-   "seconded_by": "Mark",
-   "outcome": "passed",
+   "motion": "Determination on the Request for Determination of Applicability filed by K & G Developers at 390 Page Street (single family dwelling), recorded as Negative.",
+   "moved_by": "Sharon Jordan",
+   "seconded_by": "Mark Murphy",
+   "outcome": "Negative 3 Unanimous",
    "procedural": false,
-   "quote": "sharon/mark negative 3 unanimous"
+   "quote": "sharon/mark negative 3 unanimous (letter to be sent also, outlining conditions)"
   },
   {
-   "motion": "Issue Negative Determination of Applicability for Ray Croteau at 228 Northfield Road",
-   "moved_by": "Mark",
-   "seconded_by": "Sharon",
-   "outcome": "passed",
+   "motion": "Determination on the Request for Determination of Applicability filed by Ray Croteau at 228 Northfield Road (inground swimming pool), recorded as Negative.",
+   "moved_by": "Mark Murphy",
+   "seconded_by": "Sharon Jordan",
+   "outcome": "Negative 3 Unanimous",
    "procedural": false,
-   "quote": "mark/sharon negative 3 unanimous"
+   "quote": "matt approved the changes. mark/sharon negative 3 unanimous"
   },
   {
-   "motion": "Continue the hearing for Emerald Place Development Co., LLC at 1 Lakefront Avenue to October 5 at 7:15 PM",
-   "moved_by": "Sharon",
-   "seconded_by": "JJ",
-   "outcome": "passed",
+   "motion": "Continue the Request for Determination of Applicability filed by Emerald Place Development Co., LLC at 1 Lakefront Avenue to October 5 at 7:15.",
+   "moved_by": "Sharon Jordan",
+   "seconded_by": "JJ Cote",
+   "outcome": "passed, Unanimous (printed as Continue)",
    "procedural": false,
    "quote": "sharon/jj continue unanimous"
   },
   {
-   "motion": "Approve Sunrise Stables Pony Express Harvest Ride in accordance with Land Use Policy",
-   "moved_by": "Mark",
-   "seconded_by": "Sharon",
-   "outcome": "passed",
+   "motion": "Approve the Sunrise Stables Pony Express Harvest Ride in accordance with Land Use Policy.",
+   "moved_by": "Mark Murphy",
+   "seconded_by": "Sharon Jordan",
+   "outcome": "passed (printed as Approved)",
    "procedural": false,
-   "quote": "mark/sharon approved"
+   "quote": "jan will send letter. mark/sharon approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is readable. Minutes record votes in shorthand notation (X/Y for moved/seconded, followed by outcome). No votes recorded for approval of prior minutes, adjournment, or executive session.",
- "cost_usd": 0.12320249999999999
+ "note": "Text is a single-page extraction with a garbled header line (font-encoded characters) above the title; the minutes name no motion wording, so votes are taken from the printed mover/seconder and result notations (e.g. 'JJ/Sharon Negative 3 Unanimous'), with 'Negative' recorded as printed. No vote is recorded on approving prior minutes, adjournment or the Keating's enforcement direction. No public comment section is printed; applicants who presented are listed as attendees. No dollar figures appear. Headings for Old Business, Action File Items, Unfinished Business, Approve Minutes and Signatures have no content under them.",
+ "cost_usd": 0.00843422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Verge",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "JJ Cote",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "status": "present",
+   "quote": "matt stated that there was altered color of the runoff."
+  },
+  {
+   "name": "Jan Carrier",
+   "status": "present",
+   "quote": "attendees: rob verge, jj cote, sharon jordan, mark murphy, matt marro, jan carrier"
+  },
+  {
+   "name": "Bernhard Jeleniewski",
+   "role": "applicant (Request for Determination of Applicability filer)",
+   "status": "present",
+   "quote": "bernhard presented with pictures that showed severe erosion of the banking"
+  },
+  {
+   "name": "Ray Croteau",
+   "role": "applicant (Request for Determination of Applicability filer)",
+   "status": "not stated",
+   "quote": "fi led by ray croteau (ed snyder of snyder pools).",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Ed Snyder",
+   "role": "of Snyder Pools",
+   "status": "not stated",
+   "quote": "fi led by ray croteau (ed snyder of snyder pools).",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Jay Hoag",
+   "role": "of KBS Building Systems, Inc.",
+   "status": "absent",
+   "quote": "jay was at another meeting and could not get here in time."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Keating's detention basin: after Matt Marro reported altered runoff color, the commission directed that an enforcement hearing be scheduled, copies be sent to the DEP and EPA, and a letter be sent to Keating's to appear at the September 21 hearing.",
+   "quote": "should schedule an enforcement hearing. copies to be sent to the dep and epa."
+  },
+  {
+   "decision": "Letter to be sent to K & G Developers outlining the conditions attached to the 390 Page Street determination (15 foot easement in the deed; bark mulch near the street).",
+   "quote": "(letter to be sent also, outlining conditions)"
+  },
+  {
+   "decision": "Jan Carrier will send a letter on the Sunrise Stables approval.",
+   "quote": "approval given in accordance with land use policy. jan will send letter."
+  },
+  {
+   "decision": "Property of Mark Flagg at 1263 and 1275 Massachusetts Avenue to be inspected for apparent encroachment on Town land in the rear and a water and wetlands concern from the neighbor at 1249 Massachusetts Avenue.",
+   "quote": "needs to be inspected. it looks like he has encroached on town own land in the rear."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "7:00 PM, 56 Laurel Lane: public hearing, Request for Determination of Applicability by Bernhard Jeleniewski (deck and retaining wall)",
+   "resolution": "negative determination, Negative 3 Unanimous",
+   "quote": "bernhard presented with pictures that showed severe erosion of the banking",
+   "tags": [
+    "wetlands",
+    "erosion",
+    "deck",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "7:15 PM, 390 Page Street: continuation of public hearing, Request for Determination of Applicability by K & G Developers (single family dwelling)",
+   "resolution": "negative determination with conditions, Negative 3 Unanimous",
+   "quote": "commissioners requested a 15 foot easement be written into the deed for the back land.",
+   "tags": [
+    "wetlands",
+    "single family dwelling",
+    "deed easement"
+   ]
+  },
+  {
+   "topic": "7:30 PM, 228 Northfield Road: public hearing, Request for Determination of Applicability by Ray Croteau (inground pool)",
+   "resolution": "negative determination, Negative 3 Unanimous",
+   "quote": "plans were revised from a previous hearing and matt approved the changes.",
+   "tags": [
+    "wetlands",
+    "swimming pool"
+   ]
+  },
+  {
+   "topic": "7:45 PM, 1 Lakefront Avenue: public hearing, Request for Determination of Applicability by Emerald Place Development Co., LLC (floating dock)",
+   "resolution": "continued to October 5 at 7:15, Unanimous",
+   "quote": "jay was at another meeting and could not get here in time.",
+   "tags": [
+    "wetlands",
+    "dock",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "8:00 PM, Keating's detention basin",
+   "resolution": "enforcement hearing to be scheduled; letters and copies to DEP and EPA directed, no vote recorded",
+   "quote": "matt stated that there was altered color of the runoff.",
+   "tags": [
+    "enforcement",
+    "runoff",
+    "detention basin"
+   ]
+  },
+  {
+   "topic": "New Business: Sunrise Stables Pony Express Harvest Ride",
+   "resolution": "approved in accordance with Land Use Policy",
+   "quote": "approval given in accordance with land use policy.",
+   "tags": [
+    "land use policy",
+    "event approval"
+   ]
+  },
+  {
+   "topic": "New Business: Mark Flagg property, 1263 and 1275 Massachusetts Avenue",
+   "resolution": "to be inspected; no vote recorded",
+   "quote": "needs to be inspected. it looks like he has encroached on town own land in the rear.",
+   "tags": [
+    "encroachment",
+    "inspection",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Old Business, Action File Items, Unfinished Business, Approve Minutes, Signatures",
+   "resolution": "headings only; no content, motion or vote recorded",
+   "quote": "action file items unfinished business ~ approve minutes ~ signatures",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Determination of Applicability filed by Bernhard Jeleniewski (56 Laurel Lane)",
+   "where": "text",
+   "quote": "there will be a public hearing on a request for determination of applicability filed by bernhard jeleniewski."
+  },
+  {
+   "name": "Request for Determination of Applicability filed by K & G Developers (390 Page Street)",
+   "where": "text",
+   "quote": "filed by k & g devel opers. the proposed project is for a single family dwelling"
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Ray Croteau (228 Northfield Road)",
+   "where": "text",
+   "quote": "fi led by ray croteau (ed snyder of snyder pools).",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Request for Determination of Applicability filed by Emerald Place Development Co., LLC (1 Lakefront Avenue)",
+   "where": "text",
+   "quote": "filed by emerald place development co., llc(jay hoag, kbs building systems, inc.)"
+  },
+  {
+   "name": "Town of Lunenburg Wetlands Protection and Municipal Bylaws",
+   "where": "text",
+   "quote": "pursuant to mgl ch 131, s 40 as amended and the town of lunenburg wetlands protection and municipal bylaws"
+  },
+  {
+   "name": "Land Use Policy",
+   "where": "text",
+   "quote": "approval given in accordance with land use policy."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "request for determination of applicability",
+  "public hearing",
+  "erosion",
+  "enforcement",
+  "continuance",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2016-10-03",
  "docid": "961",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve variance for sieve analysis and offset of tank to cellar wall for 21 May Street, without requirement for use of FAST or JET system, with requirement that all wells within 100 feet be tested",
+   "motion": "Approve the 21 May Street septic variance (sieve analysis and tank offset) without a FAST or JET system requirement, but with testing of all wells within 100 feet.",
    "moved_by": "Passios",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by passios and second by fortin, the variance was approved without the requirement for use of a fast or jet system but with the requirement that all wells within 100 feet be tested. all in favor."
+   "quote": "on motion by passios and second by fortin, the variance was approved without the requirement for use of a fast or jet system but with the requirement that all wells within 100 feet be tested."
   },
   {
-   "motion": "Approve variances for 1024, 1034, and 1048 Northfield Road with requirement that proposed forced mains are self-draining and buried deep enough to prevent lines from freezing",
+   "motion": "Approve the 1024/1034/1048 Northfield Road variances, with the requirement that the forced mains be self-draining and buried deep enough to prevent freezing.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios the variances were approved with the requirement that the proposed forced mains are self-draining and are buried deep enough to prevent the lines from freezing. all in favor."
+   "quote": "on motion by jewell and second by passios the variances were approved with the requirement that the proposed forced mains are self-draining"
   },
   {
-   "motion": "Approve request to move septic tank for 126 Youngs Road to improve construction of system",
+   "motion": "Approve the request to move the septic tank at 126 Youngs Road ten feet closer to the well (additional variance).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -37,6 +37,111 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Three votes recorded, all septic permit variances. No approval of prior minutes or procedural votes recorded with a motion.",
- "cost_usd": 0.08628350000000001
+ "note": "Single OCR'd text of two pages. The 'MINUTES APPROVED:' heading has nothing under it, so no minutes-approval vote is recorded. No roll-call or vote count is printed; each vote is recorded only as 'All in favor'. No public comment section is printed; applicants appeared before the board. Steve Anderson is named only as an owner and is not recorded as taking part. Jim Garreffi's presence is not stated.",
+ "cost_usd": 0.0035895199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave passios and paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave passios and paul fortin"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave passios and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "george emond, perry jewell, dave passios and paul fortin"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner; system installer",
+   "status": "present",
+   "quote": "dan proctor met with the board of behalf of the owner."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi is recommending replacement of the septic system with a fast or jet system"
+  },
+  {
+   "name": "Ron Smith",
+   "role": "one of the owners of the property",
+   "status": "present",
+   "quote": "ron smith, one of the owners of the property (steve anderson is also an owner) met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for 31 Rangeley Road, 199 Cross Road, 1417 Mass Avenue and 106 Pratt Street were acknowledged.",
+   "quote": "title 5 inspection reports acknowledged:"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged:",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "21 May Street septic variance",
+   "resolution": "variance approved with conditions",
+   "quote": "the variance was approved without the requirement for use of a fast or jet system but with the requirement that all wells within 100 feet be tested.",
+   "tags": [
+    "septic",
+    "variance",
+    "wells"
+   ]
+  },
+  {
+   "topic": "1024/1034/1048 Northfield Road septic permits",
+   "resolution": "variances approved with conditions",
+   "quote": "the variances were approved with the requirement that the proposed forced mains are self-draining",
+   "tags": [
+    "septic",
+    "variance",
+    "forced main"
+   ]
+  },
+  {
+   "topic": "126 Youngs Road tank relocation",
+   "resolution": "approved",
+   "quote": "the movement of the tank would require an additional variance as the tank will now be ten (10) feet closer to the well.",
+   "tags": [
+    "septic",
+    "variance",
+    "well setback"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "septic",
+  "variance",
+  "title 5",
+  "well setback",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

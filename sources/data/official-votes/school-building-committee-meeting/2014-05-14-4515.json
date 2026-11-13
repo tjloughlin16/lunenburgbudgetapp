@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-05-14",
  "docid": "4515",
@@ -12,19 +12,291 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from April 9, 2014",
+   "motion": "Approve the minutes of the April 9, 2014 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion: the lunenburg school bullding committee voted to approve the minutes from the april 9, 2014. the motion was unanimously approved."
   },
   {
-   "motion": "approve the April 2014 Invoices as presented by Joslin, Lesser + Associates",
+   "motion": "Approve the April 2014 invoices as presented by Joslin, Lesser + Associates.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: the lunenburg school building committee voted to approve the april 2014 invoices as presented by joslin, lesser + associates. the motion was unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scan; votes are clear and complete.",
- "cost_usd": 0.1064215
+ "note": "OCR of a scanned two-page set; the attendance sign-in table is garbled (the 'x' column is unreadable, so presence is 'not stated' except where the minutes say a person spoke or presided). Two votes recorded, both unanimous with no mover or seconder printed. Adjournment has no recorded motion. Public comment: 'There was no public comment.' Stray OCR text ('192') appears near it and is ignored. Some typos are OCR errors (e.g. 'Bullding', 'Untit', 'practically' as printed). Attendee quotes share one name-block line where the sign-in list does not separate names by row.",
+ "cost_usd": 0.008088419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:38 pm by mr. mackin, chairperson for the lunenburg school building committee."
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "present",
+   "quote": "loxi calmes, superintendent of schools inquired about the dese material requested by diane sullivan"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, ISBC Member",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, ISBC (non-voting member)",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-vating member)",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Associates",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Associates",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "present",
+   "quote": "greg cohan briefed the lsbc on the discussions from the april 30, 2014 msba meeting."
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "greg cohan introduced jonathan hirst, shawmut's new project manager."
+  },
+  {
+   "name": "Steve Hamm",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin colleen shapiro dave matthews nathan lockwood mark erickson mike barney brian frank greg s. roy kerry speidel john londa brian spadafino charles hay damian liddiard greg cohan jeffery luxenberg michael kearns jonathan hirst steve hamm"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Until the MSBA Project Funding agreement is signed, all invoices are reviewed for content, work scope and hours but not issued for payment.",
+   "quote": "untit the msba project funding agreement is signed, all invoices will be reviewed for content, work scope and hours but not issued for payment."
+  },
+  {
+   "decision": "Shawmut will investigate the practicality of using the modular structure at the rear of the TCP as a site work trailer location.",
+   "quote": "shawmut will investigate the practically of its use."
+  },
+  {
+   "decision": "Superintendent Loxi Calmes was to provide her recommendations on the DESE material, with the expectation that Tappé and the OPM would check it before submission.",
+   "quote": "loxi was to provide her recommendations with the expectations the material would checked by the designer and opm before submission."
+  },
+  {
+   "decision": "Search for a replacement for Christine DePalma would commence immediately.",
+   "quote": "search for her would commence immediately."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monthly progress invoices (OPM, Designer, Preconstruction services)",
+   "what_was_recorded": "JLA presented April 2014 monthly progress invoices from JLA (OPM), Tappé (Designer) and Shawmut (Preconstruction services); invoices were approved but not issued for payment pending the MSBA agreement. No dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "joslin lesser + associates (jla) presented monthly progress invoices for work completed for through april"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the meeting was called to order at 6:38 pm by mr. mackin, chairperson for the lunenburg school building committee.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee Minutes",
+   "resolution": "approved April 9, 2014 minutes",
+   "quote": "the lunenburg school building committee voted to approve the april 2014 invoices as presented by jo",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Monthly Approvals",
+   "resolution": "approved April 2014 invoices (not for payment)",
+   "quote": "joslin lesser + associates (jla) presented monthly progress invoices for work completed for through april",
+   "tags": [
+    "invoices",
+    "OPM",
+    "designer"
+   ]
+  },
+  {
+   "topic": "Update from April 30, 2014 MSBA Meeting",
+   "resolution": "briefing; MSBA decision due by June 4, 2014",
+   "quote": "greg cohan briefed the lsbc on the discussions from the april 30, 2014 msba meeting.",
+   "tags": [
+    "MSBA",
+    "design changes"
+   ]
+  },
+  {
+   "topic": "Early Release Package No. 1",
+   "resolution": "discussed; site trailer location under investigation",
+   "quote": "greg cohan introduced jonathan hirst, shawmut's new project manager.",
+   "tags": [
+    "early release",
+    "site work",
+    "Shawmut"
+   ]
+  },
+  {
+   "topic": "Community Outreach Efforts",
+   "resolution": "abutters meeting proposed for June 25th; details to next meeting",
+   "quote": "project team proposed an abutter's meeting for june 25th.",
+   "tags": [
+    "abutters",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "DESE material follow-up; JLA staff resignation noted; search to begin",
+   "quote": "loxi calmes, superintendent of schools inquired about the dese material requested by diane sullivan",
+   "tags": [
+    "DESE",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 7:43pm (no motion recorded)",
+   "quote": "the meeting was adjourned at approximately 7:43pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resume for Jonathan Hirst",
+   "where": "list",
+   "quote": "resume for jonathan hirst was distributed to all members prior to the meeting."
+  },
+  {
+   "name": "Presentation of the Design changes (with explanations), shared with Board Members by the District, OPM and Designer",
+   "where": "text",
+   "quote": "district, opim and designer shared with the board members a presentation of the design changes with explanations."
+  },
+  {
+   "name": "DESE material requested by Diane Sullivan and being prepared by Tappe",
+   "where": "text",
+   "quote": "loxi calmes, superintendent of schools inquired about the dese material requested by diane sullivan"
+  },
+  {
+   "name": "MSBA Project Funding agreement",
+   "where": "text",
+   "quote": "untit the msba project funding agreement is signed, all invoices will be reviewed for content, work scope and hours but not issued for payment."
+  }
+ ],
+ "tags": [
+  "school building committee",
+  "Lunenburg",
+  "MSBA",
+  "invoices",
+  "Early Release Package",
+  "Shawmut",
+  "Joslin Lesser",
+  "Tappe Associates",
+  "DESE",
+  "abutters",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "resume for jonathan hirst was distributed to all members prior to the meeting."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-02-25",
  "docid": "4530",
@@ -12,6 +12,73 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. This is a program agenda and technical specifications document, not a record of voting actions. No motions or voting outcomes appear in the text.",
- "cost_usd": 0.0848055
+ "note": "This is not minutes of a School Building Committee meeting. It is a TMP Consulting Engineers memo dated 25 February 2014 setting out a program meeting agenda for Lunenburg Middle/High School systems (electrical, HVAC, plumbing/fire protection). No attendees, motions, votes, decisions, dollar figures, transfers, or public comment are printed. The OCR is noisy, with stray marginal annotations (e.g. 'Questioned', 'John', 'Need follaw up meehing', 'Sort out Talkie Polie Fit walkie situation') that are garbled and were not interpreted. The 'KJA/ SPS/KJC-TMP' line is a typist reference, not an attendee.",
+ "cost_usd": 0.00295032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Electrical systems",
+   "resolution": "no action; program items listed for the owners meeting",
+   "quote": "electrical systems 1. main electric service: a. a new primary service will be extended from utility co services",
+   "tags": [
+    "electrical",
+    "design program",
+    "school building"
+   ]
+  },
+  {
+   "topic": "HVAC systems",
+   "resolution": "no action; program items listed for the owners meeting",
+   "quote": "hvac systems 1. central plant: a. three gas fired condensing hot water boilers at 40% each",
+   "tags": [
+    "HVAC",
+    "design program",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Plumbing and fire protection systems",
+   "resolution": "no action; program items listed for the owners meeting",
+   "quote": "plumbing/fire protection systems - ael 1. fire protection: ===page 5=== 25 february 2014 page ",
+   "tags": [
+    "plumbing",
+    "fire protection",
+    "design program"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Middle/High School Program Meeting Agenda - 2014 (TMP Consulting Engineers memo, 25 February 2014)",
+   "where": "text",
+   "quote": "lunenburg middle/high school program meeting agenda - 2014"
+  },
+  {
+   "name": "2577MM03_Owners Meeting Agenda.docx",
+   "where": "text",
+   "quote": "h: \\ 13-2577\\memo\\2577mm03_owners meeting agenda.docx"
+  }
+ ],
+ "tags": [
+  "Lunenburg Middle/High School",
+  "design program",
+  "electrical",
+  "HVAC",
+  "plumbing",
+  "fire protection",
+  "security alarm",
+  "engineering memo"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-02-01",
  "docid": "6164",
@@ -12,42 +12,485 @@
  },
  "votes": [
   {
-   "motion": "continue Gougen Construction Notice of Intent for 675 Reservoir Road to February 15th",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the meeting was continued by motion of td and a second by kj to february15th."
+   "motion": "Approve the Allan amendment to the Order of Conditions with the recommendations written in.",
+   "moved_by": "TD",
+   "seconded_by": "CL",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "td mo tioned for approval of the amendment with the recommendations written in. cl s econded and the commission voted unanimously."
   },
   {
-   "motion": "continue enforcement case at 183 Hemlock Drive to April 19, 2017",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
+   "motion": "Continue the 554 Lancaster Avenue insignificant change request to the March 1st meeting to await the calculations.",
+   "moved_by": "JR",
+   "seconded_by": "CL",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "continued to april 19, 2017 by motion of kj and a s econd of bp",
+   "procedural": false,
+   "quote": "the commission v oted to continue to the march 1st meeting to await the calculations. this was approved by a motion of jr and a second by cl.",
    "quote_taken_from_text": true
   },
   {
-   "motion": "approve minutes from December 21, 2016, January 4, 2017, and January 18, 2017 as amended",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Bob Pease",
+   "motion": "Continue the 675 Reservoir Road continued Notice of Intent to February 15.",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the meeting was continued by motion of td and a second by kj to february15th."
+  },
+  {
+   "motion": "Continue the 43 Island Road administrative hearing to the 15th.",
+   "moved_by": "BP",
+   "seconded_by": "CL",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "continued to the 15 th by motion of bp and a second by cl."
+  },
+  {
+   "motion": "Continue the 183 Hemlock Drive enforcement matter to April 19, 2017.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "continued to april 19, 2017 by motion of kj and a s econd of bp."
+  },
+  {
+   "motion": "Approve the minutes of 12/21/16, 1/4/17 and 1/18/17 as amended.",
+   "moved_by": "CL",
+   "seconded_by": "BP",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "cl moved to approve as amended. bp seconded and the commission voted unanimously to approve all minute s",
    "quote_taken_from_text": true
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Carl Luck",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "KJ",
+   "seconded_by": "CL",
    "outcome": "passed",
    "procedural": true,
-   "quote": "adjournment - the meeting adjourned at 10:03 pm wit h a motion of kj and a second by c",
-   "quote_taken_from_text": true
+   "quote": "the meeting adjourned at 10:03 pm wit h a motion of kj and a second by cl"
   }
  ],
- "dropped_unquoted": 3,
- "note": "Minutes are readable; all votes extracted.",
- "cost_usd": 0.1235575
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-like with split words and irregular spacing; quotes reproduce the printed spacing. No roll-call tallies are recorded: votes are recorded only as 'voted unanimously' or as a motion with a second, so continuance motions are marked 'not stated'. The 392 Sunset Lane RDA has no recorded vote. Date typos in the text: 'March 1st, 2016' (Gougen item, likely 2017) and 'February15th'. Matthew S. Marro's role is taken from the header layout ('Conservation Administrator' printed beside the roster). Public comment was 'none' at the open; no speakers recorded for the close.",
+ "cost_usd": 0.01238932,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "status": "present",
+   "quote": "richard bursch, chair -present",
+   "role": "Chair"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "todd dwyer ,vice-chair-present",
+   "role": "Vice-Chair"
+  },
+  {
+   "name": "Bob Pease",
+   "status": "present",
+   "quote": "bob pease-present lunenburg, ma 01462",
+   "role": "Member"
+  },
+  {
+   "name": "Tom Bertram",
+   "status": "absent",
+   "quote": "tom bertram-absent carl luck-present",
+   "role": "Member"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "carl luck representing himself as an applicant and not a member:",
+   "role": "Member; representing himself as applicant for 392 Sunset Lane"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "jack rabbitt -present",
+   "role": "Member"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "status": "present",
+   "quote": "matthew s. marro,( - present)",
+   "role": "Conservation Administrator"
+  },
+  {
+   "name": "Kenneth Jones",
+   "status": "present",
+   "quote": "kenneth jones-present",
+   "role": "Member"
+  },
+  {
+   "name": "John Dombrowski",
+   "status": "present",
+   "quote": "john dombrowski representing abutter richard trembl ay",
+   "role": "representing abutter Richard Tremblay (Attny.)"
+  },
+  {
+   "name": "Michael and Michelle Allan",
+   "status": "present",
+   "quote": "the allen's represented themselves.",
+   "role": "applicants (91 Reservoir Road)"
+  },
+  {
+   "name": "Tom Christopher",
+   "status": "present",
+   "quote": "tom christopher represented the applicant and noted",
+   "role": "represented the applicant (Sunshine Nominee Trust, 554 Lancaster Avenue)"
+  },
+  {
+   "name": "Chris Hanson",
+   "status": "present",
+   "quote": "chris hanson and chuck caron represented paul gouge n",
+   "role": "represented Paul Gougen (675 Reservoir Road)",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Chuck Caron",
+   "status": "present",
+   "quote": "chris hanson and chuck caron represented paul gouge n",
+   "role": "represented Paul Gougen (675 Reservoir Road)",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Paul Gougen",
+   "status": "present",
+   "quote": "mr gougen stated he did not work within the 50 foot buffer zone.",
+   "role": "applicant (Gougen Construction)"
+  },
+  {
+   "name": "Mr. Thomas",
+   "status": "present",
+   "quote": "mr. thomas indicated he is working on securing the services of a stone mason",
+   "role": "not stated (183 Hemlock Drive enforcement)"
+  },
+  {
+   "name": "Mr. Hannigan",
+   "status": "present",
+   "quote": "mr. hannigan noted that they can ap pear at the next meeting.",
+   "role": "not stated (43 Island Road administrative hearing)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Carl Luck agreed to place wattles along the top of the work area to prevent sheet flow into the work area (392 Sunset Lane).",
+   "quote": "cl agreed to place wattles along the top of the work are to prevent sh eet flow"
+  },
+  {
+   "decision": "A site walk was scheduled for February 11 at 9:15 AM for the 675 Reservoir Road matter, after the commission proposed a different remediation plan with more plantings.",
+   "quote": "a site walk has been scheduled for the eleventh of february at 9:15 am."
+  },
+  {
+   "decision": "The chair requested that JR submit a couple of photos of the Emerald Place Beach Erosion site.",
+   "quote": "rb did request that jr submit a couple of photos of the site."
+  },
+  {
+   "decision": "Mr. Thomas (183 Hemlock Drive) will have the wall removed by April 15, 2017, at the commission's request.",
+   "quote": "mr. thomas will have the wall removed in april 15, 2017 at the requ est by the commission."
+  },
+  {
+   "decision": "The commission asked the Conservation Administrator to talk to Adam to add a request for 3000 for bridge and trail funding to the budget.",
+   "quote": "the commission asked mm to talk to adam to add a request for 3000 for bridge and trail funding."
+  },
+  {
+   "decision": "Asked that a letter be sent to the Gilchrest St neighborhood about ATV traffic (Holman St property program).",
+   "quote": "and asked a letter be sent to the neigh borhood."
+  },
+  {
+   "decision": "At the chair's request, the engineer will submit revised volume calculations for the 554 Lancaster Avenue basin.",
+   "quote": "he will also have the engineer at the chair's request submit rev ised volume calculations."
+  },
+  {
+   "decision": "Carl Luck recused from the 338 Sunset Lane continuation.",
+   "quote": "they will app ear on february 15, 2017. note : cl recused."
+  },
+  {
+   "decision": "Mr. Hanson noted a site inspection will be scheduled for the 43 Island Road matter the following week.",
+   "quote": "a site inspection will be scheduled next week"
+  },
+  {
+   "decision": "An administrative hearing on Emerald Place Beach Erosion is to be scheduled for February 15, 2017.",
+   "quote": "rb noted that an adminis trative hearing is to be scheduled for february 15, 2017."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "183 Hemlock Drive - stone mason cost",
+   "what_was_recorded": "Mr. Thomas said he is saving a sum of money for securing a stone mason's services.",
+   "figures_as_printed": [
+    "2500 dollars"
+   ],
+   "quote": "is saving 2500 dollar s for the securing of the services.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Annual budget - Bridge and trail funding",
+   "what_was_recorded": "Budget was reported level funded; the commission asked that a request of 3000 for bridge and trail funding be added.",
+   "figures_as_printed": [
+    "3000"
+   ],
+   "quote": "the commission asked mm to talk to adam to add a request for 3000 for bridge and trail funding."
+  },
+  {
+   "topic": "Budget draft",
+   "what_was_recorded": "The budget was reported as level funded and the draft was submitted.",
+   "figures_as_printed": [],
+   "quote": "level funded mm noted the draft was submit ted."
+  },
+  {
+   "topic": "Forest Stewardship Grant implementation",
+   "what_was_recorded": "Discussion of the Forest Stewardship Grant implementation; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "forest stewardship grant implementa tion"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, announcements, public comment",
+   "resolution": "opened at 7:00 PM; no announcements or public comment",
+   "quote": "call to order at 7:00 pm chairman bursch presiding",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "RDA request, 392 Sunset Lane (Carl Luck)",
+   "resolution": "heard; applicant agreed to wattles; no vote recorded",
+   "quote": "carl luck representing himself as an applicant and not a member:",
+   "tags": [
+    "wetlands",
+    "dock",
+    "retaining wall",
+    "abutter"
+   ]
+  },
+  {
+   "topic": "Amendment to Order of Conditions, 91 Reservoir Road (Allan)",
+   "resolution": "amendment approved unanimously with recommendations",
+   "quote": "td mo tioned for approval of the amendment with the recommendations written in.",
+   "tags": [
+    "wetlands",
+    "swimming pool",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Insignificant change, 554 Lancaster Avenue (Sunshine Nominee Trust)",
+   "resolution": "continued to March 1, 2017 to await calculations",
+   "quote": "the commission v oted to continue to the march 1st meeting to await the calculations.",
+   "tags": [
+    "detention basin",
+    "stormwater"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Continued Notice of Intent, 675 Reservoir Road (Gougen Construction)",
+   "resolution": "continued to February 15, 2017 (minutes also refer to March 1); site walk set for February 11",
+   "quote": "the meeting was continued by motion of td and a second by kj to february15th.",
+   "tags": [
+    "wetlands",
+    "riverfront",
+    "violation",
+    "single family home"
+   ]
+  },
+  {
+   "topic": "Administrative hearing, 43 Island Road",
+   "resolution": "continued to the 15th",
+   "quote": "continued to the 15 th by motion of bp and a second by cl.",
+   "tags": [
+    "administrative hearing"
+   ]
+  },
+  {
+   "topic": "Enforcement, 183 Hemlock Drive (reconvened)",
+   "resolution": "continued to April 19, 2017; wall removal set for April 15, 2017",
+   "quote": "continued to april 19, 2017 by motion of kj and a s econd of bp.",
+   "tags": [
+    "enforcement",
+    "stone wall",
+    "DEP referral"
+   ]
+  },
+  {
+   "topic": "Current business: signatures, certificates of compliance, enforcement",
+   "resolution": "reviewed list; 121 Peninsula set for March 1, 2017",
+   "quote": "mm noted it will be on for hearing on march 1, 20 17",
+   "tags": [
+    "certificate of compliance",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "338 Sunset Lane continuation",
+   "resolution": "continued to February 15, 2017; Carl Luck recused",
+   "quote": "they will app ear on february 15, 2017. note : cl recused.",
+   "tags": [
+    "wall",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Emerald Place Beach Erosion",
+   "resolution": "administrative hearing to be scheduled for February 15, 2017",
+   "quote": "rb noted that an adminis trative hearing is to be scheduled for february 15, 2017.",
+   "tags": [
+    "erosion",
+    "beach"
+   ]
+  },
+  {
+   "topic": "New business: hunting regulations on Conservation Lands",
+   "resolution": "continued to March workshop on March 29, 2017",
+   "quote": "continued to march workshop on march 29, 2017 at 7pm.",
+   "tags": [
+    "hunting",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Old business: Forest Stewardship Grant implementation",
+   "resolution": "no action; awaiting responses",
+   "quote": "mm still awaiting some responses but will send in what he ha s.",
+   "tags": [
+    "grant",
+    "forestry"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 12/21/16, 1/4/17 and 1/18/17 minutes as amended",
+   "quote": "cl moved to approve as amended. bp seconded and the commission voted unanimously to approve all minute s",
+   "tags": [
+    "minutes"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Committee reports: Holman St property program and Stormwater Committee",
+   "resolution": "reported; letter to Gilchrest St neighborhood requested; committee still seeking members",
+   "quote": "bp showed the commissi on signs prohibiting motorized atv traffic in areas",
+   "tags": [
+    "ATV",
+    "stormwater committee"
+   ]
+  },
+  {
+   "topic": "Agent's report: woodlands, annual report, budget, hearings",
+   "resolution": "reported; budget request of 3000 to be added; two new hearings to be outlined",
+   "quote": "annual report -mm asked if there was anything the c ommission wanted to emphasize on the report.",
+   "tags": [
+    "annual report",
+    "budget",
+    "hearings"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for February 15, 2017 at 7:00 PM",
+   "quote": "next meeting for february 15,2017 at 7:00 pm in billotta meeting room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:03 PM",
+   "quote": "the meeting adjourned at 10:03 pm wit h a motion of kj and a second by cl",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a determination form; dated sketch; dated photos signed and dated January 2017 (392 Sunset Lane, from the applicant)",
+   "where": "list",
+   "quote": "documents presented for consideration were a request for a determi nation form a dated sketch and dated photos signed and dated january 2017 from the applicant."
+  },
+  {
+   "name": "Letter by the applicant (91 Reservoir Road, Allan)",
+   "where": "list",
+   "quote": "documents presented for consideration was a letter by the applicant. also presented was a modified engineers plan dated december 2016."
+  },
+  {
+   "name": "Modified engineers plan dated December 2016 (91 Reservoir Road)",
+   "where": "list",
+   "quote": "documents presented for consideration was a letter by the applicant. also presented was a modified engineers plan dated december 2016."
+  },
+  {
+   "name": "Original order of conditions file for the lot (91 Reservoir Road)",
+   "where": "list",
+   "quote": "the original order of condi tions file for the lot was also presented at the meeting."
+  },
+  {
+   "name": "Letter by the applicant (554 Lancaster Avenue, Sunshine Nominee Trust)",
+   "where": "list",
+   "quote": "documents presented for consideration was a letter by the applicant ."
+  },
+  {
+   "name": "Original order of conditions file for the original configurations and amendment (554 Lancaster Avenue)",
+   "where": "list",
+   "quote": "the original order of conditions file for the original configurations"
+  },
+  {
+   "name": "Original Notice of Intent file and all enforcement documents (183 Hemlock Drive)",
+   "where": "list",
+   "quote": "the original notice of intent file and all enforcement documents was presented for consideration."
+  },
+  {
+   "name": "Suggested replication plan (675 Reservoir Road, provided by Chris Hanson)",
+   "where": "text",
+   "quote": "mr. hanson provided a suggested replication plan ."
+  },
+  {
+   "name": "Ortho photos of pre-existing conditions (675 Reservoir Road)",
+   "where": "text",
+   "quote": "mr. hanson presente d ortho photos of pre-existing conditions."
+  },
+  {
+   "name": "Report reviewed by Chuck Caron (675 Reservoir Road)",
+   "where": "text",
+   "quote": "chuck caron reviewed the report."
+  },
+  {
+   "name": "Photos passed out by Tom Christopher (554 Lancaster Avenue)",
+   "where": "text",
+   "quote": "he pass ed out photos."
+  },
+  {
+   "name": "Annual Report",
+   "where": "text",
+   "quote": "annual report -mm asked if there was anything the c ommission wanted to emphasize on the report."
+  },
+  {
+   "name": "Budget draft",
+   "where": "text",
+   "quote": "level funded mm noted the draft was submit ted."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "enforcement",
+  "hearings",
+  "order of conditions",
+  "stormwater",
+  "budget",
+  "minutes approval",
+  "continuances",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration were"
+ },
+ "dropped_unquoted_by_field": {}
 }

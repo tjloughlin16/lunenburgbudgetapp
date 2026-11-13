@@ -1,0 +1,600 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-09-02",
+ "video_id": "AhTsAd9zgHM",
+ "video_url": "https://www.youtube.com/watch?v=AhTsAd9zgHM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-09-02-AhTsAd9zgHM.json",
+  "sha256": "159458baea8fd16c4c78e2f93e58cb2d24e6327bb38cec15f1afba7884d94fd6",
+  "caption_lines": 276,
+  "segments": 2299
+ },
+ "recording": {
+  "duration_s": 5752,
+  "duration": "1:35",
+  "spoken_chars": 75535,
+  "words_approx": 12589
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09022014-4901",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-09-02-agenda-4901.txt",
+   "path": "sources/meetings/select-board/2014-09-02-agenda-4901.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09022014-4901",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-09-02-minutes-4901.txt",
+   "path": "sources/meetings/select-board/2014-09-02-minutes-4901.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:18:39Z",
+  "cost_usd": 0.2170262
+ },
+ "minutes": {
+  "headline": "Select Board adopted the Finance Committee's written financial policies and appointed four to the Council on Aging.",
+  "summary": "The board ratified two reserve police officers, approved a Boys and Girls Club voluntary toll, and interviewed a Council on Aging candidate. It heard the Finance Committee chair present new written financial policies, which were accepted with no opposition. It also discussed expanding MART bus service, electricity aggregation rates and the old school property question.",
+  "attendees": [
+   {
+    "name_as_heard": "Mark Erickson",
+    "role": "Finance Committee chair, presenter"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "the police chief",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Josh tossey",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 286,
+    "topic": "Police chief reported on Lake Shirley patrols and introduced a new police dog (official, not public comment)."
+   },
+   {
+    "t": 1018,
+    "topic": "Boys and Girls Club representative requested a voluntary toll on October 4.",
+    "speaker_as_heard": "Marcy Foreman",
+    "stated_role": "Boys and Girls Club representative"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "debt",
+   "executive-session",
+   "free-cash",
+   "msba",
+   "personnel",
+   "policy",
+   "public-safety",
+   "town-departments",
+   "transportation"
+  ],
+  "votes": [
+   {
+    "t": 949,
+    "motion": "Ratify appointments of two reserve police officers",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1106,
+    "motion": "Approve the voluntary toll for the Boys and Girls Club as requested",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2769,
+    "motion": "Adopt and approve the financial policies recommended by the finance committee",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3307,
+    "motion": "Appoint four named members to the Council on Aging",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5728,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2013,
+    "topic": "Stabilization funds policy",
+    "what_was_said": "Policy sets a minimum for stabilization funds as a share of the omnibus budget, with the general fund at a lower minimum.",
+    "figures_as_heard": [
+     "five percent",
+     "four percent",
+     "1.4 million",
+     "135 000"
+    ]
+   },
+   {
+    "t": 2156,
+    "topic": "General reserve fund",
+    "what_was_said": "The finance committee reserve stays at its current level.",
+    "figures_as_heard": [
+     "fifty thousand dollars"
+    ]
+   },
+   {
+    "t": 2220,
+    "topic": "Free cash policy",
+    "what_was_said": "Free cash priorities: replenish stabilization, then roads and signage, then one-time items; a transfer into stabilization was noted for FY15.",
+    "figures_as_heard": [
+     "75 000"
+    ]
+   },
+   {
+    "t": 2307,
+    "topic": "Capital expenditure threshold",
+    "what_was_said": "Defines a capital item and debt exclusion process; a board member questioned whether the threshold is too low.",
+    "figures_as_heard": [
+     "ten thousand dollars"
+    ]
+   },
+   {
+    "t": 2433,
+    "topic": "Regular borrowing limit",
+    "what_was_said": "Debt service on non-excluded debt should stay under a share of the budget or levy.",
+    "figures_as_heard": [
+     "three percent",
+     "four percent"
+    ]
+   },
+   {
+    "t": 3844,
+    "topic": "MART bus service",
+    "what_was_said": "The town pays into the transportation assessment, and a share could be redirected to MART to fund extended bus trips.",
+    "figures_as_heard": [
+     "66 000",
+     "33 000",
+     "32 000",
+     "thirty two thousand"
+    ]
+   },
+   {
+    "t": 4426,
+    "topic": "Accounts payable warrants",
+    "what_was_said": "Two warrants were read, the second tied to the school building project.",
+    "figures_as_heard": [
+     "162 733.47",
+     "three hundred nineteen thousand one hundred forty eight dollars and fifty cents"
+    ]
+   },
+   {
+    "t": 4679,
+    "topic": "Summer Street project funding",
+    "what_was_said": "Highway safety funds for the project are in question pending crash data.",
+    "figures_as_heard": [
+     "445 955 dollars"
+    ]
+   },
+   {
+    "t": 5035,
+    "topic": "Electric aggregation rate",
+    "what_was_said": "Current rate is expected to rise sharply; a fixed rate or blended contract was proposed.",
+    "figures_as_heard": [
+     "7.7 cents",
+     "14 cents",
+     "11.59 cents",
+     "fifteen dollars a month"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3549,
+    "decision": "Town manager to confirm remaining public access candidates and bring appointments back next week."
+   },
+   {
+    "t": 4384,
+    "decision": "Board to refine the MART quote request, include disabled riders, and consider a public hearing on bus needs; no vote of support taken."
+   },
+   {
+    "t": 5076,
+    "decision": "Electric aggregation consultants to be invited to next week's meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 286,
+    "topic": "Pledge, announcements, Lake Shirley advisory",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 286,
+    "t_end": 699,
+    "topic": "Police chief report and new police dog",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 699,
+    "t_end": 1018,
+    "topic": "Reserve police officer appointments",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1018,
+    "t_end": 1128,
+    "topic": "Boys and Girls Club voluntary toll",
+    "resolution": "voted",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 1128,
+    "t_end": 1529,
+    "topic": "Council on Aging candidate interview",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 1529,
+    "t_end": 1802,
+    "topic": "Board and committee vacancies update",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1802,
+    "t_end": 3241,
+    "topic": "Finance committee financial policies",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "free-cash",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 3241,
+    "t_end": 3761,
+    "topic": "Board appointments, Council on Aging and public access",
+    "resolution": "voted; public access deferred",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3761,
+    "t_end": 4426,
+    "topic": "MART bus service expansion",
+    "resolution": "no vote; more work needed",
+    "tags": [
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 4426,
+    "t_end": 4596,
+    "topic": "Warrants and charter school concerns",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 4596,
+    "t_end": 5014,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "msba"
+    ]
+   },
+   {
+    "t_start": 5014,
+    "t_end": 5581,
+    "topic": "Town manager report: electric aggregation",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5581,
+    "t_end": 5749,
+    "topic": "Final comments on old school property and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "msba"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts were not given beyond ayes and no opposition.",
+   "Captions for the school property discussion are partly garbled.",
+   "The final lines after adjournment are unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 3161,
+    "kind": "condition",
+    "about": "A member would vote against appropriating free cash to supplement a budget at town meeting.",
+    "who": "a member",
+    "words_as_heard": "somebody makes an attempt to appropriate free cash to supplement a budget and at that point I would be voting against it"
+   },
+   {
+    "t": 5622,
+    "kind": "liability or legal",
+    "about": "A member was concerned that delay on the old school property is stalling village district planning.",
+    "who": "a member",
+    "words_as_heard": "I'm very concerned that we are not moving forward"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1529,
+    "name_as_heard": "memo on board and committee appointments",
+    "kind": "memo",
+    "words_as_heard": "I did put together another memo today to give you a most recent update"
+   },
+   {
+    "t": 1822,
+    "name_as_heard": "financial policies",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "summary of the work that we've been doing to formally document our financial policies"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "capital-project-threshold",
+    "title": "Capital project threshold",
+    "question": "Is the capital item threshold too low for the town's budget size?",
+    "t": 2871,
+    "words_as_heard": "ten thousand dollars is a pretty low Threshold at this point",
+    "data_in_play": [
+     "ten thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board adopted the financial policies recommended by the Finance Committee, with no opposition recorded.",
+    "t": 2769
+   },
+   {
+    "line": "The board appointed four named members to the Council on Aging.",
+    "t": 3307
+   },
+   {
+    "line": "The board ratified two reserve police officer appointments and approved a voluntary toll for the Boys and Girls Club.",
+    "t": 949
+   },
+   {
+    "line": "On MART bus service, the board took no vote of support and will refine its quote request, include disabled riders, and consider a public hearing.",
+    "t": 4384
+   },
+   {
+    "line": "The town manager is to invite electric aggregation consultants to next week's meeting, as the current rate is expected to rise.",
+    "t": 5076
+   }
+  ],
+  "why_it_matters": [
+   "The adopted policies set the town's rules for reserves, free cash use, capital items and borrowing limits, which shape how future budgets and debt exclusion requests reach voters.",
+   "Redirecting part of the town's transportation assessment to MART, and the electric aggregation rate, could change what residents pay or the services they get, but neither has been decided."
+  ],
+  "watch_next": [
+   "Next week's meeting: electric aggregation consultants are to be invited, and the town manager is to bring back public access appointments.",
+   "A refined MART quote request and a possible public hearing on bus needs."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:18:45Z",
+   "cost_usd": 0.024113100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09022014-4901",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-09-02-minutes-4901.txt",
+   "path": "sources/meetings/select-board/2014-09-02-minutes-4901.pdf"
+  },
+  "official_sha256": "24b674386437c7a28e97087fe2975a873e994127dbf00b4eb0ca4ca43809d669",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The four votes agree and most figures match, with only a misspelled chair name differing. Several figures in our minutes (stabilization, accounts payable warrants, free cash $75,000) are not in the official minutes, which also record other decisions we lack.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Adopt financial policies recommended by FinCom",
+    "ours": "Adopt and approve the financial policies recommended by the finance committee — passed",
+    "official": "mr. toale moved to adopt and approve the financial policies recommended by the finance committee. ms. bertram seconded",
+    "note": "Same vote and outcome; official gives 5-0.",
+    "t": 2769
+   },
+   {
+    "kind": "agree",
+    "about": "Council on Aging appointments",
+    "ours": "Appoint four named members to the Council on Aging — passed",
+    "official": "mr. ebersole moved to appoint jacquelyn dwyer, sarah grant, cheryl moisan, and diane nowd to the council on aging.",
+    "note": "Four appointees, passed 5-0 in official.",
+    "t": 3307
+   },
+   {
+    "kind": "agree",
+    "about": "Boys and Girls Club voluntary toll",
+    "ours": "Approve the voluntary toll for the Boys and Girls Club as requested — passed",
+    "official": "mr. ebersole moved to approve the voluntary toll as requested. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed.",
+    "note": "Same vote; official adds date October 4, 2014.",
+    "t": 1106
+   },
+   {
+    "kind": "agree",
+    "about": "Ratify reserve police officers",
+    "ours": "Ratify appointments of two reserve police officers — passed",
+    "official": "ms. bertram moved to ratify the positions of vernon p. beauvais and jacob a. lachance to reserve police officer.",
+    "note": "Two officers, passed in both.",
+    "t": 949
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance committee chair name",
+    "ours": "Mark Erickson (Finance Committee chair, presenter)",
+    "official": "mark ericson, chairperson of the finance committee (fincom) came before the board and gave a brief synopsis",
+    "note": "Spelling differs; same person.",
+    "official_reading": "Mark Ericson"
+   },
+   {
+    "kind": "agree",
+    "about": "Capital expenditure threshold",
+    "ours": "Capital expenditure threshold: ten thousand dollars",
+    "official": "he also questioned how the fincom came to the $10,000 figure regarding capital projects.",
+    "note": "Same $10,000 figure.",
+    "t": 2307
+   },
+   {
+    "kind": "agree",
+    "about": "Electric aggregation rate 7.7 cents",
+    "ours": "Electric aggregation rate: 7.7 cents, 14 cents, 11.59 cents, fifteen dollars a month",
+    "official": "the town is in a contract now through 11/30/2014 at the rate of 7.7 cents per kw hr which is lower than the basic service",
+    "note": "7.7 cents matches; other figures not in the official excerpt.",
+    "t": 5035
+   },
+   {
+    "kind": "agree",
+    "about": "Summer Street HSIP funding",
+    "ours": "Summer Street project funding: 445 955 dollars",
+    "official": "project's eligibility for the hsip (highway safety improvement program) funds which currently stand at $445,955.00.",
+    "note": "Same amount.",
+    "t": 4679
+   },
+   {
+    "kind": "agree",
+    "about": "MART bus service figures",
+    "ours": "MART bus service: 66 000, 33 000, 32 000, thirty two thousand",
+    "official": "mart mentioned that the town is charged approximately $66k through the transportation fund, $33k of that goes to mart & another",
+    "note": "Same $66K/$33K/$32K split.",
+    "t": 3844
+   },
+   {
+    "kind": "agree",
+    "about": "MART: no vote of support",
+    "ours": "Board to refine the MART quote request, include disabled riders, and consider a public hearing on bus needs; no vote of support taken.",
+    "official": "bos will not vote on a quote of support until more information has been gathered.",
+    "note": "Both say no vote; official does not mention a public hearing.",
+    "t": 4384
+   },
+   {
+    "kind": "agree",
+    "about": "Electric aggregation consultants at next meeting",
+    "ours": "Electric aggregation consultants to be invited to next week's meeting.",
+    "official": "ms.speidel would like to have the consultants come to the next bos meeting to report on this issue.",
+    "note": "Same decision.",
+    "t": 5076
+   },
+   {
+    "kind": "agree",
+    "about": "Public access/PACC appointments postponed",
+    "ours": "Town manager to confirm remaining public access candidates and bring appointments back next week.",
+    "official": "after due diligent discussion the bos decided to postpone appointments to the pacc until such time that talent bank candidates have",
+    "note": "Same decision; official gives no 'next week' timing in the quote.",
+    "t": 3549
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Stabilization funds policy figures",
+    "ours": "Stabilization funds policy: five percent, four percent, 1.4 million, 135 000",
+    "official": "",
+    "note": "Official excerpt has no stabilization figures; check the full official minutes for the policy figures.",
+    "t": 2013
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Accounts payable warrants",
+    "ours": "Accounts payable warrants: 162 733.47, three hundred nineteen thousand one hundred forty eight dollars and fifty cents",
+    "official": "",
+    "note": "Warrant amounts are not in the official record; check whether the warrants were approved and the amounts.",
+    "t": 4426
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "General reserve fund and borrowing limit",
+    "ours": "General reserve fund: fifty thousand dollars; Regular borrowing limit: three percent, four percent",
+    "official": "",
+    "note": "Official has no figures for these policy items.",
+    "t": 2156
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash policy figure",
+    "ours": "Free cash policy: 75 000",
+    "official": "because free cash is non-recurring revenue, it should not be used to fund any personnel, program, or initiative that",
+    "note": "Official gives the principle but no $75,000 figure.",
+    "t": 2220
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Registrar of Voters, Conservation Commission, FinCom screening committee",
+    "ours": "",
+    "official": "mr. alonzo requested that the town manager contact the town moderator to begin the process of a screening committee for the fincom.",
+    "note": "Official records these decisions; ours does not.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ambulance fee increase deferred",
+    "ours": "",
+    "official": "3. request to increase ambulance fees: to be discussed at a future bos meeting",
+    "note": "Deferral not in ours.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:20:19Z",
+   "cost_usd": 0.055945100000000005
+  }
+ }
+}

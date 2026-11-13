@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2016-03-31",
  "docid": "1489",
@@ -12,23 +12,196 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the March 10, 2016 meeting",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the 3/10/16 meeting.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "chair entertained motion to approve minutes. seconded by ms. hennessy. all attending voted to approve minutes.",
-   "moved_by": "",
    "seconded_by": "Ms. Hennessy"
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 7:23pm.",
+   "moved_by": "K. Herrick",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by k. herrick at 7:23pm. second by vice chair. all attending voted to adjourn.",
-   "moved_by": "K. Herrick",
-   "seconded_by": ""
+   "seconded_by": "Vice Chair"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; minor typos in original (\"Adjourm\" instead of \"Adjourn\", \"Second\" instead of \"Seconded\") do not affect quoted passages. For vote 1, the minutes say \"Chair entertained motion\" but do not name who moved it. For vote 2, the minutes name only the position \"Vice Chair\" rather than the individual's name.",
- "cost_usd": 0.1032545
+ "note": "OCR text from macOS Vision with some garbled characters (e.g., '6рт', 'Adjourm'). The minutes head the body 'Bylaw Review Committee', not 'By Law Committee'; recorded as printed. Items 8b ('move to amend') and 8c ('move to amend to refer to Massachusetts General Law') name motions but record no mover, second, or vote, so they are not listed as votes. The Chair and Vice Chair are not named in the text. The mover of the 3/10/16 minutes approval is not printed. Only two votes are recorded, both procedural. No dollar figures appear in the text.",
+ "cost_usd": 0.00454572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Bowen",
+   "role": "",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Cathy Hennessy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Michelle Smith",
+   "role": "",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of each meeting, after approval, are to be sent to the committee's designated address (IKlaft@lunenburgonline.Com).",
+   "quote": "minutes of each meeting after approval should be sent to iklaft@lunenburgonline.com"
+  },
+  {
+   "decision": "Committee recommended inferring a timeline for town committee minutes review and posting under Article 2, Section 2, with transmission of approved minutes following state law.",
+   "quote": "articles 2-bylaw committee recommendation in section 2 to infer a timeline for town committee minutes review and posting."
+  },
+  {
+   "decision": "Committee recommended comparing the Charter to the ByLaws.",
+   "quote": "recommendation to compare charter to bylaws."
+  },
+  {
+   "decision": "Committee recommended amending Article 5 language referring to 'man' or 'men' to gender-neutral language.",
+   "quote": "article s-recommend amending language reference to \"man\" or \"men\" to. gender neutral language."
+  },
+  {
+   "decision": "Chair will follow up with the Police and Highway Departments on enforceable Public Ways language in Article 5.",
+   "quote": "chair will follow-up with police and highway departments around enforceable public ways language."
+  },
+  {
+   "decision": "Articles 6-9 to be reviewed at the next meeting, April 14.",
+   "quote": "plan to review articles 6-9 at next meeting april 14."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Collection of fees and licenses",
+   "what_was_recorded": "Committee spent time discussing the collection of fees and licenses; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "committee spent time discussing collection of fees and licenses."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order 6:04pm; no action",
+   "quote": "meeting called to order 6:04pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "3. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes distribution address",
+   "resolution": "directed that approved minutes be sent to the listed address",
+   "quote": "minutes of each meeting after approval should be sent to iklaft@lunenburgonline.com",
+   "tags": [
+    "minutes",
+    "posting"
+   ]
+  },
+  {
+   "topic": "Approval of 3/10/16 minutes",
+   "resolution": "approved",
+   "quote": "review of 3/10/16 meeting minutes. chair entertained motion to approve minutes.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Final letter to Town departments",
+   "resolution": "reviewed; distributed via department mailboxes",
+   "quote": "reviewed final letter prepared and distributed by k. herrick via mailboxes to each town department.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Town Charter copies",
+   "resolution": "copies shared with each member; no action",
+   "quote": "chairman shared copies of town charter with each member.",
+   "tags": [
+    "charter"
+   ]
+  },
+  {
+   "topic": "Review of Bylaws and Charter",
+   "resolution": "continued; recommendations and follow-ups recorded, Articles 6-9 set for April 14",
+   "quote": "review of bylaws & charter.",
+   "tags": [
+    "bylaws",
+    "charter",
+    "gender-neutral language",
+    "fees and licenses",
+    "public ways"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:23pm",
+   "quote": "motion to adjourn by k. herrick at 7:23pm. second by vice chair. all attending voted to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "chairman shared copies of town charter with each member."
+  },
+  {
+   "name": "Final letter prepared and distributed by K. Herrick",
+   "where": "text",
+   "quote": "reviewed final letter prepared and distributed by k. herrick via mailboxes to each town department."
+  },
+  {
+   "name": "Bylaws and Charter (Article 2, Article 5, Articles 6-9)",
+   "where": "text",
+   "quote": "review of bylaws & charter."
+  }
+ ],
+ "tags": [
+  "bylaws",
+  "charter",
+  "minutes approval",
+  "public comment",
+  "gender-neutral language",
+  "fees and licenses",
+  "public ways",
+  "bylaw review committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

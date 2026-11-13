@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-09-16",
  "docid": "2729",
@@ -12,47 +12,369 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from June 17, 2010 as amended",
-   "outcome": "passed unanimously",
+   "motion": "To accept the minutes of June 17, 2010 as amended.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion made and passed unanimously to accept minutes from june 17, 2010 as amended."
   },
   {
-   "motion": "Transfer negative balance of the Dickinson and Taylor Book Funds to the Billings Cultural Trust for FY10",
-   "outcome": "Passed",
+   "motion": "To transfer the negative balance of the Dickinson and Taylor Book Funds to the Billings Cultural Trust for FY10.",
    "moved_by": "John Mara",
    "seconded_by": "Noelle Bodkin",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion made by john mara and seconded by noelle bodkin to transfer negative balance of the dickinson and taylor book funds to the billings cultural trust for fy10. passed."
   },
   {
-   "motion": "Reclassify Jen Mason's position starting September 27, 2010 to Staff Librarian – Technical Services Librarian",
-   "outcome": "Passed",
+   "motion": "To reclassify Jen Mason's position starting September 27, 2010 to Staff Librarian – Technical Services Librarian.",
    "moved_by": "Jeanne Raboin",
    "seconded_by": "Noelle Bodkin",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion made by jeanne raboin and seconded by noelle bodkin to reclassify jen mason's position starting september 27, 2010 to staff librarian -technical services librarian. passed."
   },
   {
-   "motion": "Close library on May 7, 2011 for Town Meeting and close December 23, 2010 if Town Hall decides to close",
-   "outcome": "Passed",
+   "motion": "To close the library on May 7, 2011 for Town Meeting and to close December 23, 2010 if Town Hall decides to close.",
    "moved_by": "Kathy Murray",
    "seconded_by": "Lisa Krowitz",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion made by kathy murray and seconded by lisa krowitz to close on may 7, 2011 for town meeting and close december 23, 2010 if town hall decides to close. passed."
   },
   {
-   "motion": "Adjourn meeting",
-   "outcome": "Passed",
+   "motion": "To adjourn the meeting at 8:30 pm.",
    "moved_by": "John Mara",
    "seconded_by": "Len Smetana",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion made by john mara and seconded by len smetana to a djourn meeting at 8:30 pm. passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09176250000000001
+ "note": "Clean extracted text, no scan issues. Page 3 is empty. The minutes contain no public comment section. The text lists no dollar amount for the Dickinson and Taylor transfer or for the FY11 Direct Energy invoice. Trustee roles are not printed except the Secretary and the stand-in chair; the minutes give no roles for the other attendees.",
+ "cost_usd": 0.007584219999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "John Mara",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Kathy Murray",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, john mara, kathy murray, jeanne raboin, amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "Trustee chair (stand-in for October 21, 2010 meeting)",
+   "status": "present",
+   "quote": "len smetana will stand in as trustee chair for the october 21, 2010 meeting."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee",
+   "status": "absent",
+   "quote": "absent: dick mailloux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Trustees meetings continue on the third Thursday of each month at 6:30 pm, September through June, with no meetings in July and August (FY 2011 schedule).",
+   "quote": "trustees meetings will continue to be held on the third (3 rd) thursday of each month, at 6:30 pm,"
+  },
+  {
+   "decision": "Len Smetana will stand in as Trustee chair for the October 21, 2010 meeting.",
+   "quote": "len smetana will stand in as trustee chair for the october 21, 2010 meeting."
+  },
+  {
+   "decision": "John asked that all Trustees update their contact information.",
+   "quote": "john asked that all trustees update their contact information."
+  },
+  {
+   "decision": "Amy will send an email to Kerry Speidel with a copy of the reclassification vote to the Trustees.",
+   "quote": "kerry speidel will get a copy of the vote; amy will send email to kerry and copy trus tees."
+  },
+  {
+   "decision": "Step increases for the 3 Senior Library Assistants, retroactive to their anniversary date, to be sent as a standard action without a Trustee vote.",
+   "quote": "amy requests to send step increase for the 3 senior library assistants, (retroactive to their anniversary date); this is a standard action, so trustee vote not required."
+  },
+  {
+   "decision": "Second Junior Library Assistant position will soon be posted.",
+   "quote": "second junior library assistant position will soon be posted."
+  },
+  {
+   "decision": "Trustees to review the Friends' Endowment Fund request and send suggested changes to Amy.",
+   "quote": "lpl endowment fund: friends request that trustees review and send suggested"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning Board requests",
+   "what_was_recorded": "Two requests were submitted to the Capital Planning Board: reupholstering 50% of the furniture and replacing carpeting in Main Hall; 15 desktop PCs and a staff color laser printer were submitted for FY12 (no figure printed).",
+   "figures_as_printed": [
+    "$12, 750",
+    "$15,000"
+   ],
+   "quote": "reupholstering 50% of the furniture for $12, 750 and replacing carpeting in main hall for $15,000"
+  },
+  {
+   "topic": "FY11 Direct Energy invoice",
+   "what_was_recorded": "Amy gave an overview of the FY11 Direct Energy invoice; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "amy reviewed the fy10 budget and also provided an overview of the fy11 direct energy invoice."
+  },
+  {
+   "topic": "FY11 estimated Cherry Sheet State Aid",
+   "what_was_recorded": "FY11 estimated Cherry Sheet State Aid was reported.",
+   "figures_as_printed": [
+    "$12, 138"
+   ],
+   "quote": "fy11 estimated cherry sheet state aid is $12, 138."
+  },
+  {
+   "topic": "Friends paint of study rooms and Community Room",
+   "what_was_recorded": "Friends will pay to paint two study rooms and the Community Room, paid from the Endowment Fund (no figure printed).",
+   "figures_as_printed": [],
+   "quote": "friends will pay to have two (2) study rooms and the community room to be painted; this will come out of the endowment fund."
+  },
+  {
+   "topic": "Returned salaries",
+   "what_was_recorded": "LPL returned salaries to the town.",
+   "figures_as_printed": [
+    "$4,000"
+   ],
+   "quote": "lpl returned $4,000 in salaries to town;"
+  },
+  {
+   "topic": "FY10 library materials total",
+   "what_was_recorded": "Total library materials spending for FY10 was reported.",
+   "figures_as_printed": [
+    "$62, 459"
+   ],
+   "quote": "total library materials fy10 $62, 459."
+  },
+  {
+   "topic": "Unpaid Direct Energy bill",
+   "what_was_recorded": "An unpaid bill to Direct Energy was covered by State Aid.",
+   "figures_as_printed": [
+    "$716.81"
+   ],
+   "quote": "unpaid bill of $716.81 to direct energy covered by stat aid."
+  },
+  {
+   "topic": "FY11 estimated library salaries",
+   "what_was_recorded": "Estimated salaries for FY11 were reported after a Junior Library Assistant hire.",
+   "figures_as_printed": [
+    "$233, 199"
+   ],
+   "quote": "estimated salaries for fy11 $233, 199."
+  },
+  {
+   "topic": "Staff reclassification pay rates",
+   "what_was_recorded": "Re-class request moved Jen Mason from Step 1, Level 4 to Step 1, Level 6 (hourly rates as printed); the Trustees passed the reclassification.",
+   "figures_as_printed": [
+    "$15.91",
+    "$18.39"
+   ],
+   "quote": "re-class request from jen mason: from step 1, level 4 ($15.91) to step 1, level 6 ($18.39)."
+  },
+  {
+   "topic": "Salary administration",
+   "what_was_recorded": "No raises this year; step increases for three Senior Library Assistants were sent as a standard action.",
+   "figures_as_printed": [],
+   "quote": "salary admin committee (robert rand): there will be no raises this year;"
+  },
+  {
+   "topic": "Defibrillator purchase",
+   "what_was_recorded": "A portable defibrillator was purchased and mounted; the price was paid by Friends from the Endowment Fund.",
+   "figures_as_printed": [
+    "$1,817.44"
+   ],
+   "quote": "price of $1,817.44 paid for by friends from endowment fund."
+  },
+  {
+   "topic": "Oktoberfest ticket prices",
+   "what_was_recorded": "Friends Oktoberfest tickets to benefit the Endowment Fund were priced in advance and at the door.",
+   "figures_as_printed": [
+    "$20",
+    "$25"
+   ],
+   "quote": "tickets are $20 in advance, $25 at the door."
+  },
+  {
+   "topic": "Public fax machine cost",
+   "what_was_recorded": "Cost of the public fax machine for outgoing pages was set per page; Friends buy paper and toner, the Town pays the phone line.",
+   "figures_as_printed": [
+    "$1/page"
+   ],
+   "quote": "cost would be $1/page for outgoing only with a blank header."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of the negative balance of the Dickinson and Taylor Book Funds to the Billings Cultural Trust for FY10.",
+   "amount_as_printed": "not printed",
+   "outcome": "passed",
+   "quote": "motion made by john mara and seconded by noelle bodkin to transfer negative balance of the dickinson and taylor book funds to the billings cultural trust for fy10. passed."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "approved as amended",
+   "quote": "motion made and passed unanimously to accept minutes from june 17, 2010 as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Trustees meeting schedule FY 2011",
+   "resolution": "schedule set; chair stand-in named",
+   "quote": "trustees meetings will continue to be held on the third (3 rd) thursday of each month, at 6:30 pm,",
+   "tags": [
+    "schedule",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Trustee contact information",
+   "resolution": "Trustees asked to update contact information",
+   "quote": "john asked that all trustees update their contact information.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no vote",
+   "quote": "director's report (please see report for more detail)",
+   "tags": [
+    "director report",
+    "budget",
+    "facilities",
+    "programs",
+    "staff"
+   ]
+  },
+  {
+   "topic": "Library account balances",
+   "resolution": "transfer approved",
+   "quote": "library account balances: motion made by john mara and seconded by noelle bodkin to transfer negative balance",
+   "tags": [
+    "budget",
+    "transfer",
+    "endowment"
+   ]
+  },
+  {
+   "topic": "Staffing and reclassification",
+   "resolution": "reclassification approved; step increases noted",
+   "quote": "staffing/reclassification: re-class request from jen mason: from step 1, level 4 ($15.91) to step",
+   "tags": [
+    "staffing",
+    "salary"
+   ]
+  },
+  {
+   "topic": "LPL 5-year anniversary",
+   "resolution": "no action; celebration planned",
+   "quote": "lpl 5-year anniversary is on december 6, 2010; will celebrate with an amnesty day (fine-free), birthday cake and cider.",
+   "tags": [
+    "programs",
+    "anniversary"
+   ]
+  },
+  {
+   "topic": "LPL calendar closures",
+   "resolution": "approved",
+   "quote": "lpl calendar: discussion about the days lpl will be closed for december 2010 and may 2011;",
+   "tags": [
+    "calendar",
+    "closures"
+   ]
+  },
+  {
+   "topic": "LPL Endowment Fund",
+   "resolution": "Trustees to review and send suggested changes",
+   "quote": "lpl endowment fund: friends request that trustees review and send suggested",
+   "tags": [
+    "endowment",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Director's personal goal",
+   "resolution": "no action; reported",
+   "quote": "director's personal goal: learn more about researching, writing and applying for grants;",
+   "tags": [
+    "director",
+    "grants",
+    "training"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report (please see report for more detail)"
+  },
+  {
+   "name": "10 year capital plan",
+   "where": "text",
+   "quote": "(please refer to 10 year capital plan)"
+  },
+  {
+   "name": "Budget",
+   "where": "text",
+   "quote": "please see budget for additional information."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "staffing",
+  "endowment fund",
+  "calendar",
+  "meeting schedule",
+  "capital planning",
+  "Friends of the Library"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

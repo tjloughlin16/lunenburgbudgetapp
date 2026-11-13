@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2014-09-10",
  "docid": "4522",
@@ -12,37 +12,389 @@
  },
  "votes": [
   {
-   "motion": "Approve the meeting minutes from August 13, 2014",
-   "outcome": "not stated",
+   "motion": "Approve the meeting minutes of August 13, 2014.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: the lunenburg school building committee voted to approve the meeting minutes from august 13, 2014."
+   "quote": "the lunenburg school building committee voted to approve the meeting minutes from august 13, 2014."
   },
   {
-   "motion": "Approve the August 2014 invoices as presented by Joslin, Lesser & Associates",
-   "outcome": "passed",
+   "motion": "Approve the August 2014 invoices as presented by Joslin, Lesser & Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: the lunenburg school building committee voted to approve the august 2014 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the august 2014 invoices as presented by joslin, lesser & associates. the motion was unanimously approved."
   },
   {
-   "motion": "Approve the iGMP2 commitment as presented by Joslin, Lesser & Associates",
-   "outcome": "passed",
+   "motion": "Approve the iGMP2 as presented by Joslin, Lesser & Associates.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: the lunenburg school building committee voted to approve the igmp2 as presented by joslin, lesser & associates. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the igmp2 as presented by joslin, lesser & associates. the motion was unanimously approved."
   },
   {
-   "motion": "Approve additional services for site permitting fees for Tappe Architects",
-   "outcome": "passed",
+   "motion": "Approve the additional services request on behalf of Tappe Architects for site permitting fees, as a contract amendment to TA's contract.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: the lunenburg school building committee voted to approve the additional services requested presented by joslin, lesser & associates on behalf of tappe architects' (ta) to ta's contract for permitting fees. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee voted to approve the additional services requested presented by joslin, lesser & associates on behalf of tappe architects' (ta)"
   },
   {
-   "motion": "Appoint Brian Frank as LSBC representative for the sub-trade pre-qualification process",
-   "outcome": "passed",
+   "motion": "Appoint Brian Frank (printed as Brain Frank) to represent the LSBC during the pre-qualification process.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: the lunenburg school building committee (lsbc) voted in favor for brain frank to represent lsbc during the pre-qualification process. the motion was unanimously approved."
+   "quote": "the lunenburg school building committee (lsbc) voted in favor for brain frank to represent lsbc during the pre-qualification process. the motion was unanimously approved."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-scanned document (macOS Vision). Minutes state outcomes only for votes 2–5; vote 1 records the motion without stating a result. Moved by and seconded by names not recorded in any vote.",
- "cost_usd": 0.1020225
+ "dropped_unquoted": 1,
+ "note": "OCR text of a typed minutes packet with several garbled words (e.g., 'Brain Frank', 'Yelolow', 'Requisions', 'Landscpe'); the name and role columns are unaligned in the OCR, so roles were mapped by row order. The roster's 'x' and numbered columns are unlabelled, so attendance status is 'not stated' except where a person chaired or presented. No mover or seconder is printed for any motion. No vote is recorded for adjournment. Public comment reads 'No Public Comment'.",
+ "cost_usd": 0.00840382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "Lunenburg Superintendent of Schools, LSBC",
+   "status": "not stated",
+   "quote": "loxi jo calmes michael mackin"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Lunenburg School Committee, Chair",
+   "status": "present",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Lunenburg School Committee, LSBC Member",
+   "status": "not stated",
+   "quote": "colleen shapiro tom alonzo"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS Representative, LSBC Member",
+   "status": "not stated",
+   "quote": "tom alonzo nathan lockwood"
+  },
+  {
+   "name": "Nathan Lockwood",
+   "role": "Planning Board, LSBC Member",
+   "status": "not stated",
+   "quote": "nathan lockwood mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee, LSBC Vice Chair",
+   "status": "not stated",
+   "quote": "mark erickson mike barney"
+  },
+  {
+   "name": "Mike Barney",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "mike barney brian frank"
+  },
+  {
+   "name": "Brian Frank",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "brain frank was appointed to represent the lsbc"
+  },
+  {
+   "name": "Greg S. Roy",
+   "role": "Citizen, LSBC Member",
+   "status": "not stated",
+   "quote": "greg s. roy kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "kerry speidel john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "Director of Facilities, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "john londa brian spadafino"
+  },
+  {
+   "name": "Brian Spadafino",
+   "role": "LHS Principal, LSBC (non-voting member)",
+   "status": "not stated",
+   "quote": "john londa brian spadafino"
+  },
+  {
+   "name": "Tim Santry",
+   "role": "Lunenburg Public Schools",
+   "status": "not stated",
+   "quote": "tim santry charles hay"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "Principal-in-Charge, Tappé Architects",
+   "status": "not stated",
+   "quote": "tim santry charles hay"
+  },
+  {
+   "name": "Damian Liddiard",
+   "role": "Project Architect, Tappé Architects",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan"
+  },
+  {
+   "name": "Greg Cohan",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "damian liddiard greg cohan"
+  },
+  {
+   "name": "Jeffery Luxenberg",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "jeffery luxenberg inga knox"
+  },
+  {
+   "name": "Inga Knox",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "jeffery luxenberg inga knox"
+  },
+  {
+   "name": "Robert Alger",
+   "role": "Joslin, Lesser + Associates",
+   "status": "not stated",
+   "quote": "rob alger is available to set up time for site visit."
+  },
+  {
+   "name": "Michael Kearns",
+   "role": "Shawmut Design & Construction",
+   "status": "present",
+   "quote": "michael kearns from shawmut design & construction presented a construction"
+  },
+  {
+   "name": "Jonathan Hirst",
+   "role": "Shawmut Design & Construction",
+   "status": "not stated",
+   "quote": "michael kearns jonathan hirst"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Joslin, Lesser & Associates will obtain pricing for 50 aerial fly-overs through the project duration.",
+   "quote": "jla will obtain pricing for 50 fly-overs through out the project"
+  },
+  {
+   "decision": "Ground breaking ceremony scheduled for October 18 at 1:15 PM, following a town parade, with an invitation to go out via post cards, Facebook, website and the Lunenburg Ledger.",
+   "quote": "the ceremony is scheduled for october 18th at 1:15pm."
+  },
+  {
+   "decision": "Next Abutters'/Neighborhood Meeting scheduled for November 6 at 6:30 PM.",
+   "quote": "next abutters'/neighborhood meetings is scheduled for:"
+  },
+  {
+   "decision": "Construction Payment Requisitions to be submitted as hard copy with yellow cover pages for each sub-trade; JLA to issue a calendar of review and value dates to the LSBC on completion.",
+   "quote": "jla is working on creating a calendar with expected construction payment"
+  },
+  {
+   "decision": "JLA will provide a schedule of the Main Bid process as soon as it is available for distribution.",
+   "quote": "jla will provide a schedule of main bid process as soon as it is available for"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Aerial photo service (fly-overs)",
+   "what_was_recorded": "JLA to obtain pricing for 50 fly-overs; the board wants them for about $450.00.",
+   "figures_as_printed": [
+    "$450.00"
+   ],
+   "quote": "would like to be able to get 50 fly-overs for about $450.00."
+  },
+  {
+   "topic": "Monthly invoices for August 2014",
+   "what_was_recorded": "JLA presented monthly progress invoices for work through August 2014 for OPM, designer, and preconstruction services and Payment Requisition No.1; approved without a figure printed.",
+   "figures_as_printed": [],
+   "quote": "presented monthly progress invoices for work completed through august, 2014"
+  },
+  {
+   "topic": "iGMP2 structural steel commitment",
+   "what_was_recorded": "JLA noted the total value for iGMP2 is lower than previously estimated by at least $300K; final GMP expected in November 2014.",
+   "figures_as_printed": [
+    "$300K"
+   ],
+   "quote": "jla noted that the total value for igmp2 is lower than previously estimated by at least $300k."
+  },
+  {
+   "topic": "Gas line relocation",
+   "what_was_recorded": "Gas line relocation work is in progress; its cost will be rolled into the final GMP. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cost will be rolled in the final"
+  },
+  {
+   "topic": "Permitting fees additional services (Tappe Architects)",
+   "what_was_recorded": "Additional services request for site permitting fees, excluded from the design contract at award, approved as a contract amendment. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "request for additional services for site permitting fees. permitting was excluded from design contract at time of award."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:34 PM by Mr. Mackin",
+   "quote": "the meeting was called to order at 6:34 pm by mr. mackin, chairperson of the",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Approval of School Building Committee Minutes",
+   "resolution": "approved minutes of August 13, 2014",
+   "quote": "the lunenburg school building committee reviewed minutes from the following",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals - Invoices",
+   "resolution": "approved August 2014 invoices",
+   "quote": "presented monthly progress invoices for work completed through august, 2014",
+   "tags": [
+    "invoices",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Monthly Approvals - Commitments",
+   "resolution": "approved iGMP2",
+   "quote": "presented a list of monthly commitments to the lunenburg school building committee",
+   "tags": [
+    "commitments",
+    "GMP",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Additional Service Request for permitting",
+   "resolution": "approved additional services for Tappe permitting fees",
+   "quote": "jla presented tappe architects' (ta) request for additional services for site",
+   "tags": [
+    "contract amendment",
+    "permitting"
+   ]
+  },
+  {
+   "topic": "Status of Main Bid Package Pre-Qualifications",
+   "resolution": "no action",
+   "quote": "joslin lesser & associates explained the sub trade pre-qualification process.",
+   "tags": [
+    "bid",
+    "pre-qualification"
+   ]
+  },
+  {
+   "topic": "Construction Activity Update",
+   "resolution": "no action",
+   "quote": "michael kearns from shawmut design & construction presented a construction",
+   "tags": [
+    "construction",
+    "site work"
+   ]
+  },
+  {
+   "topic": "Main Bid Package Pre-Qualification Committee Member Selection",
+   "resolution": "Brian Frank appointed to represent LSBC",
+   "quote": "joslin lesser and associates (jla) began the sub-trade prequalification process for the main bid.",
+   "tags": [
+    "bid",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Community Outreach Efforts",
+   "resolution": "no action",
+   "quote": "an abutter's / neighborhood meeting was held on september 4, 2014.",
+   "tags": [
+    "community outreach",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action; aerial photo pricing, ground breaking, Passios reuse noted",
+   "quote": "aerial photo service - jla will obtain pricing for 50 fly-overs through out the project",
+   "tags": [
+    "ground breaking",
+    "photos",
+    "Passios building"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned approximately 8:03 pm (no vote recorded)",
+   "quote": "the meeting was adjourned at approximately 08:03 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Updated Projected Cash Flow Chart (September 2014)",
+   "where": "text",
+   "quote": "updated projected cash flow chart will be available in september 2014."
+  },
+  {
+   "name": "Calendar of expected Construction Payment Requisition review and value dates",
+   "where": "text",
+   "quote": "jla is working on creating a calendar with expected construction payment"
+  },
+  {
+   "name": "Construction Payment Requisitions with yellow cover pages",
+   "where": "text",
+   "quote": "all construction payment requisions are going to be submitted as a"
+  },
+  {
+   "name": "Schedule of Main Bid process",
+   "where": "text",
+   "quote": "jla will provide a schedule of main bid process as soon as it is available for"
+  },
+  {
+   "name": "Invitation to bid (expected Friday 09/12/14)",
+   "where": "text",
+   "quote": "it is expected to send invitation to bid on friday 09/12/14."
+  },
+  {
+   "name": "Video of David Wagner presentation on the landscape design",
+   "where": "text",
+   "quote": "a previous video from david wagner presentation on the landscape design for the"
+  }
+ ],
+ "tags": [
+  "school building project",
+  "construction",
+  "invoices",
+  "pre-qualification",
+  "bid package",
+  "community outreach",
+  "ground breaking",
+  "Passios building reuse",
+  "Joslin Lesser",
+  "Shawmut",
+  "Tappe Architects"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

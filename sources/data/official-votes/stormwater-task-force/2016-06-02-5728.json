@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2016-06-02",
  "docid": "5728",
@@ -12,6 +12,160 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This document is a Notice of Meeting and Agenda for June 2, 2016, not actual meeting minutes. It lists planned agenda items (including \"MINUTES APPROVAL of April 14 & 28, 2016, meetings\" at item 5) but contains no record of votes taken or their outcomes. No votes are recorded in this text.",
- "cost_usd": 0.0796355
+ "note": "Text is an OCR scan of a posted meeting notice and agenda for the 2 June 2016 meeting. It records no proceedings: no motions, votes, discussion outcomes, attendance, or public comment speakers. Attendees are listed only from the letterhead roster, so status is 'not stated'. Stamp/OCR noise at the foot ('15CBTVT', 'Y S 1 2016', 'BY:53116 1012') is unreadable and was ignored. Minutes of April 14 & 28 are referred to but not included. Ed Himlan and Mrs. Foyle of LHS are named in agenda items only and are not recorded as taking part.",
+ "cost_usd": 0.00330012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "storm water task force phyllis luck, chair vice-chair matt allison, member"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matt allison, member sarah cammer, member jack rabbitt, member"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "sarah cammer, member jack rabbitt, member jack rodriquenz, member"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jack rabbitt, member jack rodriquenz, member 17 main st."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jack rabbitt, member jack rodriquenz, member 17 main st."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval of April 14 & 28, 2016",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "minutes approval of april 14 & 28, 2016, meetings",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Selection of new Vice Chair/Clerk; quorum; BOH member replacement",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "discussion of selection of new vice chair/clerk; quorum issues; boh member replacement",
+   "tags": [
+    "governance",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Meeting with Ed Himlan of Mass Watershed Coalition",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "discussion of meeting with ed himlan of mass watershed coalition",
+   "tags": [
+    "watershed",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Member areas of focus for the MS4 Permit",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "update from members on the areas of focus for the ms4 permit:",
+   "tags": [
+    "MS4 permit",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Invitation to join Central Mass Regional Stormwater Coalition",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "update on invitation to join central mass regional stormwater coalition",
+   "tags": [
+    "regional coalition"
+   ]
+  },
+  {
+   "topic": "Town Clean-up subcommittee formation",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "7. town clean-up subcommittee formation",
+   "tags": [
+    "clean-up",
+    "subcommittee"
+   ]
+  },
+  {
+   "topic": "319 Grant",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "discussion of 319 grant",
+   "tags": [
+    "grant"
+   ]
+  },
+  {
+   "topic": "Stormwater issues on roads scheduled to be paved this spring",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "what can be done to eliminate potential stormwater issues on roads scheduled to be paved this spring?",
+   "tags": [
+    "roads",
+    "paving",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting noted as Thursday June 30, 2016",
+   "quote": "next meeting scheduled for thursday june 30, at 6:30 pm, ritter building, upper conference room",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Member issues: summer vacations and July/August schedule",
+   "resolution": "members asked to report planned absences by email; July and August dates listed",
+   "quote": "planned vacations: please advise via email meetings which you will be unable to attend over the summer.",
+   "tags": [
+    "attendance",
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MS4 Permit",
+   "where": "text",
+   "quote": "update from members on the areas of focus for the ms4 permit:"
+  },
+  {
+   "name": "319 Grant",
+   "where": "text",
+   "quote": "discussion of 319 grant"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "319 grant",
+  "watershed coalition",
+  "clean-up subcommittee",
+  "road paving",
+  "meeting schedule",
+  "agenda only"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

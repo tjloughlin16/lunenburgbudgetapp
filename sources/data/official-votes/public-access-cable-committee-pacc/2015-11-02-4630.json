@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-11-02",
  "docid": "4630",
@@ -10,45 +10,291 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11022015-4630",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2015-11-02-minutes-4630.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Meeting date supplied as 2015-11-02, but the minutes head the meeting \"Nov 5th, 2015\", name the next meeting as Dec 7th, and are signed 12/8/15. No motions, mover, seconder or vote counts are recorded anywhere in the text; approvals and agreements are stated as outcomes only, so the votes list is empty and those items appear under decisions. Text is extracted from a two-page document with the coordinator's report items numbered 1-15 across the page break.",
+ "cost_usd": 0.00546492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the coordinator's job description with recommended changes",
-   "outcome": "passed",
-   "procedural": false,
+   "name": "Jeff Bajko",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, steve walker and faith beall."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, steve walker and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, steve walker and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were jeff bajko, rhonda lisio, steve walker and faith beall."
+  },
+  {
+   "name": "Jo",
+   "role": "",
+   "status": "not stated",
+   "quote": "jo presented a draft of space needed to the building reuse committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Coordinator job description approved with recommended changes and sent to the town human resource department for final approval.",
    "quote": "approved with recommended changes and sent to the town human resource department for final approval."
   },
   {
-   "motion": "Approve submission of the new studio space draft to the building reuse committee",
-   "outcome": "passed",
-   "procedural": false,
+   "decision": "PACC approved submission of the new studio space proposal to the building reuse committee.",
    "quote": "pacc approved of the submisal of the new studio space to the building reuse committee."
   },
   {
-   "motion": "Approve Telvue product demonstration of HD server",
-   "outcome": "passed",
-   "procedural": false,
+   "decision": "Jeff to rewrite the studio space proposal and submit it to PACC and the reuse committee.",
+   "quote": "jeff will rewrite and submit to pacc and reuse committee"
+  },
+  {
+   "decision": "Committee approved a product demo from Telvue (HD server) for PACC.",
    "quote": "telvue wants to do a product demo for pacc. (hd server) and the committee approved."
   },
   {
-   "motion": "Adopt the agreed mission statement for PACC",
-   "outcome": "passed",
-   "procedural": false,
+   "decision": "Jo to provide a clearer report of reallocation of funds on production for each show, as an Excel sheet at the next meeting.",
+   "quote": "this will be provided next meeting in an excel sheet by jo."
+  },
+  {
+   "decision": "PACC wants meetings taped over sports to be checked; the minutes record this as a stated want.",
+   "quote": "pacc wants to make sure that meetings are being taped over sports."
+  },
+  {
+   "decision": "Committee agreed on the PACC mission statement: Develop, modernize, establish, and operate the Town of Lunenburg's Public and Government (PG) Access Channel(s) to reflect what matters to Lunenburg.",
    "quote": "the committee agreed on the following statement for our pacc mission statement:"
   },
   {
-   "motion": "Wait on Castus system decision until after Telvue product demonstration",
-   "outcome": "passed",
-   "procedural": false,
+   "decision": "Steve Walker to become Chairman of PACC.",
+   "quote": "steve will become the chairman."
+  },
+  {
+   "decision": "Each member to bring five points to the next discussion of strategic planning, following Steve's five bullet points.",
+   "quote": "steve presented five bullet points and wants each member to bring five points as well to discuss."
+  },
+  {
+   "decision": "PACC decided to wait on the Castus system until after Telvue gives a demo of its HD server.",
    "quote": "the pacc decided to wait until after telvue gives a demo of their hd server."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "meeting adjourned at 8:04."
+   "decision": "Committee asked Jo to directly ask the school whether it wants an educational channel.",
+   "quote": "committee asked jo to directly ask the school if they want an educational channel."
+  },
+  {
+   "decision": "Jo to video tape at the Eagle House.",
+   "quote": "jo is going to video tape at the eagle house."
+  },
+  {
+   "decision": "Committee would like to thank Rhonda Lisio for her service and asked her to reconsider leaving; she declined.",
+   "quote": "pacc asked for her to reconsider. she politely refused."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1200945
+ "budget_items": [
+  {
+   "topic": "Coordinator's starting balance",
+   "what_was_recorded": "The minutes print the starting balance figure for the coordinator's monthly report.",
+   "quote": "end of starting balance was $265,970.11",
+   "figures_as_printed": [
+    "$265,970.11"
+   ]
+  },
+  {
+   "topic": "Coordinator's ending balance for October",
+   "what_was_recorded": "The minutes print the ending balance for October in the coordinator's monthly report.",
+   "quote": "ending balance of october $276,246.55",
+   "figures_as_printed": [
+    "$276,246.55"
+   ]
+  },
+  {
+   "topic": "Mobile unit from Dracut",
+   "what_was_recorded": "A mobile unit from Dracut costing $130,000 was displayed at the video show.",
+   "quote": "a $130,000 mobile unit from dracut was displayed at the video show.",
+   "figures_as_printed": [
+    "$130,000"
+   ]
+  },
+  {
+   "topic": "Drone",
+   "what_was_recorded": "Steve received information about a drone priced at $10,000.",
+   "quote": "steve received information about a drone- $10,000. (itv)",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Cost of taping sports",
+   "what_was_recorded": "The minutes say taping of sports is expensive and PACC wants meetings taped over sports.",
+   "quote": "taping of sports is expensive.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Reallocation of production funds for each show",
+   "what_was_recorded": "PACC wants a clearer report of how production funds are reallocated for each show, to be provided in an Excel sheet; no figures printed.",
+   "quote": "pacc would like a clearer report of reallocation of funds on production for each show.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "chair of PACC",
+   "topic": "stepping down as chair and leaving the committee",
+   "quote": "rhonda lisio announced that she will be stepping down as the chair of pacc and leaving the committee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "announced; no action",
+   "quote": "rhonda lisio announced that she will be stepping down as the chair of pacc and leaving the committee.",
+   "tags": [
+    "leadership change"
+   ]
+  },
+  {
+   "topic": "Review and approval of coordinator's job description",
+   "resolution": "approved with recommended changes; sent to town HR",
+   "quote": "review and approval of coordinators job description",
+   "tags": [
+    "coordinator",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Review draft studio space",
+   "resolution": "approved submission of studio space proposal to building reuse committee",
+   "quote": "review draft studio space:",
+   "tags": [
+    "studio space"
+   ]
+  },
+  {
+   "topic": "Future of PACC",
+   "resolution": "members committed; Steve to become Chairman",
+   "quote": "steve, faith, and jeff are still committed to the pacc.",
+   "tags": [
+    "leadership change"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "reported; items noted, Excel report requested",
+   "quote": "coordinator's monthly report:",
+   "tags": [
+    "budget",
+    "coordinator",
+    "production"
+   ]
+  },
+  {
+   "topic": "Discussion of mission statement",
+   "resolution": "agreed on mission statement",
+   "quote": "discussion of mission statement:",
+   "tags": [
+    "mission statement"
+   ]
+  },
+  {
+   "topic": "Strategic planning",
+   "resolution": "members to bring five points each",
+   "quote": "steve presented five bullet points and wants each member to bring five points as well to discuss.",
+   "tags": [
+    "strategic planning"
+   ]
+  },
+  {
+   "topic": "Discussion of Castus system",
+   "resolution": "deferred until Telvue HD server demo",
+   "quote": "discussion of castus system:",
+   "tags": [
+    "Castus",
+    "Telvue"
+   ]
+  },
+  {
+   "topic": "CAC update",
+   "resolution": "noted; business plan deadline set; school to be asked about educational channel",
+   "quote": "contract with comcast is due 2017.",
+   "tags": [
+    "Comcast",
+    "CAC",
+    "educational channel"
+   ]
+  },
+  {
+   "topic": "PACC comments",
+   "resolution": "thanks to Rhonda Lisio; she declined to reconsider",
+   "quote": "the committee would like to thank rhonda for her service, but is disappointed that she is leaving.",
+   "tags": [
+    "leadership change"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:04; next meeting Dec 7th",
+   "quote": "meeting adjourned at 8:04.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Coordinator's job description",
+   "where": "text",
+   "quote": "review and approval of coordinators job description"
+  },
+  {
+   "name": "Draft studio space (draft of space needed)",
+   "where": "text",
+   "quote": "jo presented a draft of space needed to the building reuse committee."
+  },
+  {
+   "name": "Coordinator's monthly report",
+   "where": "text",
+   "quote": "coordinator's monthly report:"
+  },
+  {
+   "name": "Excel sheet report of reallocation of production funds",
+   "where": "text",
+   "quote": "this will be provided next meeting in an excel sheet by jo."
+  },
+  {
+   "name": "Rewritten studio space proposal",
+   "where": "text",
+   "quote": "jeff will rewrite and submit to pacc and reuse committee"
+  }
+ ],
+ "tags": [
+  "PACC",
+  "public access TV",
+  "studio space",
+  "coordinator",
+  "budget",
+  "mission statement",
+  "Castus",
+  "Telvue",
+  "Comcast",
+  "leadership change"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

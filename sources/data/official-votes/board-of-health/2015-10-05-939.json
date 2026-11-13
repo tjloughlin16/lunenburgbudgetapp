@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2015-10-05",
  "docid": "939",
@@ -12,15 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve variances for 223 Pleasant Street including sieve analysis and groundwater offset reduction",
+   "motion": "Approve the variance of septic offset to a property line at 90 West Townsend Road, from 50 feet to approximately 25 feet.",
+   "moved_by": "Passios",
+   "seconded_by": "Jewell",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "after discussion and on motion by passios and secon d by jewell, the variance of offset to property lin e from 50 feet to approximately 25 feet was approved."
+  },
+  {
+   "motion": "Approve the variances for 223 Pleasant Street (sieve analysis, groundwater offset from 4 feet to 2 feet, and septic tank-to-cellar distance from ten feet to six feet).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by passios, the variances were approved. all in favor."
   },
   {
-   "motion": "Grant request to retain old shallow well for irrigation purposes at 466 W. Townsend Road with conditions",
+   "motion": "Grant the request to keep the second shallow well at 466 W. Townsend Road, with the stated conditions (one spigot, deed notice that the well is for irrigation only).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -28,23 +36,163 @@
    "quote": "on motion by jewell and second by fortin, the request to keep the second shallow well was granted with the above conditions. all in favor."
   },
   {
-   "motion": "Approve variances for 727 West Street including groundwater offset reduction and sieve analysis",
+   "motion": "Grant the variances requested for 727 West Street (groundwater offset from four feet to three feet and a sieve analysis).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios, the variances were requested. all in favor."
+   "quote": "after discussion and on motion by jewell and second by passios, the variances were requested. all in favor."
   },
   {
-   "motion": "Approve variances for 570 Leominster Road including groundwater offset reduction from 4 feet to 3 feet",
+   "motion": "Approve the variances for 570 Leominster Road (groundwater offset from 4 feet to 3 feet).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved. all in favor."
   }
  ],
- "dropped_unquoted": 1,
- "note": "The September 21, 2015 minutes are listed as \"MINUTES APPROVED\" but no motion language is provided in the text. Minutes are duplicated on pages 3-4. No motion to adjourn is recorded despite the meeting ending at 8:45 pm.",
- "cost_usd": 0.0935805
+ "dropped_unquoted": 3,
+ "note": "The minutes text is printed twice (pages 1-2 and again as pages 3-4) with identical content; recorded once. No motion or mover is printed for approval of the September 21, 2015 minutes or for adjournment at 8:45 pm, so neither is recorded as a vote. The 727 West Street motion reads \"the variances were requested\" as printed. The text prints \"Mr. Sweeney\" once and \"McSweney\" elsewhere; \"Ed McSweney\" is used as printed in the heading. No dollar figures appear. No documents list is printed.",
+ "cost_usd": 0.004454919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios a nd paul fortin"
+  },
+  {
+   "name": "Ed McSweney",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "ed mcsweney, the owner of the property met with the board."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "on behalf of the owners",
+   "status": "present",
+   "quote": "chris mackenzie and bob proctor met with the board on behalf of the owners."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "on behalf of the owners",
+   "status": "present",
+   "quote": "chris mackenzie and bob proctor met with the board on behalf of the owners."
+  },
+  {
+   "name": "John Romano",
+   "role": "prospective owner",
+   "status": "present",
+   "quote": "the prospective owner, john romano, met with the board."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board of behalf of the own er."
+  },
+  {
+   "name": "Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent garreffi stated that he believes that this is a reasonable solution for the failed system."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Title 5 inspection reports for 38-40 Goodrich Street, 84 Houghtons Mills (needs tank), and 389 Page Street were acknowledged, with no recorded vote.",
+   "quote": "title 5 inspection reports acknowledged"
+  },
+  {
+   "decision": "A working session on the Septic System Loan Program guidelines and required documents was scheduled for November 9 at 7:00.",
+   "quote": "after discussion, a date of november 9"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of September 21, 2015",
+   "resolution": "listed as approved; no motion recorded",
+   "quote": "minutes approved: september 21, 2015",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "90 West Townsend Road preliminary variance discussion",
+   "resolution": "well offset variance approved",
+   "quote": "90 west townsend road - preliminary variance discus sion",
+   "tags": [
+    "variance",
+    "well",
+    "septic"
+   ]
+  },
+  {
+   "topic": "466 W. Townsend Road",
+   "resolution": "request to keep second shallow well granted with conditions",
+   "quote": "466 w. townsend road",
+   "tags": [
+    "well",
+    "arsenic",
+    "irrigation"
+   ]
+  },
+  {
+   "topic": "Septic System Loan Program",
+   "resolution": "working session scheduled for November 9 at 7:00",
+   "quote": "septic system loan program",
+   "tags": [
+    "septic loan program"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "septic",
+  "title 5",
+  "variances",
+  "well",
+  "septic loan program",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 3
+ }
 }

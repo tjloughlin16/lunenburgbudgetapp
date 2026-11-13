@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2015-05-20",
  "docid": "5344",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approval of March minutes",
+   "motion": "Approve the March minutes.",
    "moved_by": "Jean",
    "seconded_by": "Sheila",
    "outcome": "not stated",
@@ -20,14 +20,171 @@
    "quote": "approval of march minutes motioned by jean and second by sheila."
   },
   {
-   "motion": "that Myleen no longer take minutes",
+   "motion": "That Myleen no longer take minutes (at Myleen's request).",
    "moved_by": "Doreen",
    "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "doreen motioned (per myleen request) that myleen no longer take minutes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11214350000000001
+ "note": "Text is macOS Vision OCR. The signature block is garbled ('nager', 'Sheila Craigeh'); the attendance line gives 'Sheila Craigen'. The approval of the March minutes is recorded as moved and seconded with no result. The adjournment at 1:32 pm has no recorded motion, so it is not listed as a vote. The 'members approved' line for Sheila taking minutes has no recorded motion or count, so it is listed as a decision. 'June 30°2015' is copied as OCR printed it. Roles are 'not stated' unless the minutes print them.",
+ "cost_usd": 0.00391182,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Doreen Noble",
+   "status": "present",
+   "quote": "meeting called to order by doreen noble at 1:02 pm, at town hall.",
+   "role": "not stated"
+  },
+  {
+   "name": "Kathryn Herrick",
+   "status": "present",
+   "quote": "members present : kathryn herrick, myleen mallari, jean larkin and sheila craigen.",
+   "role": "member"
+  },
+  {
+   "name": "Myleen Mallari",
+   "status": "present",
+   "quote": "members present : kathryn herrick, myleen mallari, jean larkin and sheila craigen.",
+   "role": "member"
+  },
+  {
+   "name": "Jean Larkin",
+   "status": "present",
+   "quote": "members present : kathryn herrick, myleen mallari, jean larkin and sheila craigen.",
+   "role": "member"
+  },
+  {
+   "name": "Sheila Craigen",
+   "status": "present",
+   "quote": "members present : kathryn herrick, myleen mallari, jean larkin and sheila craigen.",
+   "role": "member; volunteered to take minutes"
+  },
+  {
+   "name": "Sue Doherty",
+   "status": "present",
+   "quote": "sue doherty also present as a spectator.",
+   "role": "spectator"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sheila volunteered to take minutes, and the members approved her doing so (no recorded motion or count).",
+   "quote": "doreen asked for volunteers. sheila volunteered to take minutes and members approved."
+  },
+  {
+   "decision": "Myleen and Sheila's appointments run until June 30, 2015; they will submit requests for reappointment.",
+   "quote": "myleen and sheila appointment good until june 30°2015 and will submit request for reappointment."
+  },
+  {
+   "decision": "Jean Larkin will seek appointment for one more year.",
+   "quote": "jean larkin will seek appointment for one more year."
+  },
+  {
+   "decision": "Kathy will not seek reappointment.",
+   "quote": "kathy will not be seeking reappointment."
+  },
+  {
+   "decision": "Doreen will not seek reappointment; she has submitted a request for early retirement, date to be determined.",
+   "quote": "doreen will not be seeking reappointment. doreen announced that she has submitted request for early retirement with the date to be determined."
+  },
+  {
+   "decision": "Sue Doherty will be named interim; Sue may apply for the COA director position.",
+   "quote": "sue doherty will be named interim. sue may apply for the coa director position."
+  },
+  {
+   "decision": "Kathy's suggestion of Lynne Klaft as a potential new member was noted; no new people were assigned.",
+   "quote": "potential new members suggestion made by kathy for lynne klaft."
+  },
+  {
+   "decision": "No new people to be assigned.",
+   "quote": "assignment: no new people to be assigned."
+  },
+  {
+   "decision": "The committee was unable to set a date and time for the next meeting.",
+   "quote": "committee was unable to set a date and time for the next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of March minutes",
+   "resolution": "motion made; result not recorded",
+   "quote": "approval of march minutes motioned by jean and second by sheila.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current member status",
+   "resolution": "Myleen stops taking minutes; Sheila volunteered as minute-taker",
+   "quote": "current member status: doreen motioned (per myleen request) that myleen no longer take minutes.",
+   "tags": [
+    "membership",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Member terms and reappointment",
+   "resolution": "reappointment plans noted; Doreen retiring; Sue Doherty to be named interim",
+   "quote": "doreen will not be seeking reappointment. doreen announced that she has submitted request for early retirement with the date to be determined.",
+   "tags": [
+    "reappointment",
+    "retirement",
+    "interim"
+   ]
+  },
+  {
+   "topic": "Discussion of potential members",
+   "resolution": "Lynne Klaft suggested; no action",
+   "quote": "discussion of potential members: potential new members suggestion made by kathy for lynne klaft.",
+   "tags": [
+    "potential members"
+   ]
+  },
+  {
+   "topic": "Assignment",
+   "resolution": "no new people assigned",
+   "quote": "assignment: no new people to be assigned.",
+   "tags": [
+    "assignment"
+   ]
+  },
+  {
+   "topic": "Brief overview of program",
+   "resolution": "no discussion",
+   "quote": "brief overview of program: no discussion on the program.",
+   "tags": [
+    "program"
+   ]
+  },
+  {
+   "topic": "Date and time of next meeting",
+   "resolution": "not set",
+   "quote": "date and time of next meeting: committee was unable to set a date and time for the next meeting.",
+   "tags": [
+    "next meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "senior tax work-off program",
+  "committee membership",
+  "reappointment",
+  "retirement",
+  "minutes",
+  "interim appointment",
+  "COA director"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

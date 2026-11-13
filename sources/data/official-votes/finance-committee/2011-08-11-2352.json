@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-08-11",
  "docid": "2352",
@@ -12,39 +12,207 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from 5/7 meeting",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Brian Laffond",
+   "motion": "Approve the 5/7 meeting minutes.",
+   "moved_by": "BR",
+   "seconded_by": "BL",
    "outcome": "passed",
    "procedural": true,
    "quote": "br made motion to approve minutes from 5/7 meeting; bl seconded; all approved."
   },
   {
-   "motion": "approve 6/30 meeting minutes as amended",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Approve the 6/30 meeting minutes as amended.",
+   "moved_by": "BL",
+   "seconded_by": "BR",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion made by bl to approve 6/30 meeting minutes as amended; seconded by br; all approved."
   },
   {
-   "motion": "approve 7/14 meeting minutes as amended",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Brian Laffond",
+   "motion": "Approve the 7/14 meeting minutes as amended.",
+   "moved_by": "BR",
+   "seconded_by": "BL",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion made by br to approve 7/14 meeting minutes as amended; seconded by bl; all approved."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Brian Laffond",
+   "motion": "Adjourn the meeting at 8:42 PM.",
+   "moved_by": "BR",
+   "seconded_by": "BL",
    "outcome": "passed",
    "procedural": true,
    "quote": "br made motion to adjourn at 8:42 pm and bl seconds, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned document. Four votes recorded: three motions to approve prior meeting minutes, one to adjourn. All procedural, all unanimous.",
- "cost_usd": 0.0958505
+ "note": "The OCR text is noisy. The meeting date is not clearly printed in the text (the header reads as garbled '9/8/11' and a filing stamp reads SEP 09 2011); the 2011-08-11 date comes from the user, consistent with the 'Next meeting - August 25' line. Votes are recorded as 'all approved' with no counts, so outcomes are 'passed'. Page 2 and 3 are a Capital Planning Committee memo included with the minutes, not Finance Committee actions. No public comment section is printed.",
+ "cost_usd": 0.0056703199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson john male"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barbara Reynolds (BR) will investigate where the FinComm mailbox is now located, after it was moved.",
+   "quote": "fincomm mailbox has been moved; br will investigate where it is located."
+  },
+  {
+   "decision": "The committee agreed that service levels should be established now, before budget season, and Dave Matthews will address the future of the team with the BOS.",
+   "quote": "fincomm agrees that having service levels and establishing now before budget season would be good idea"
+  },
+  {
+   "decision": "Directed that the Town Manager be asked to schedule a review with John Londa, Facilities Manager, on the Green Energy Taskforce.",
+   "quote": "green energy taskforce - ask town manager to schedule review with john londa, facilities manager"
+  },
+  {
+   "decision": "Pavement Management Plan presentation placed on future agenda, tentatively for 9/8.",
+   "quote": "pavement management plan presentation - tentative 9/8"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Plan inclusion threshold (CPC packet)",
+   "what_was_recorded": "The CPC packet states that all items costing $10,000.00 or more belong on the FY Capital Plan.",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "all items with a cost equal to, or greater than $10,000.00, shall be included on the fy capital plan."
+  },
+  {
+   "topic": "Useful-life threshold for Capital Plan (CPC packet)",
+   "what_was_recorded": "The CPC packet states that items with useful life over three years costing more than $10,000.00 belong on the FY Capital Plan.",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "all items with useful life of over three years costing more than $10,000.00 shall be included on the fy capital plan."
+  },
+  {
+   "topic": "Form E notification threshold for operating-budget capital purchases",
+   "what_was_recorded": "The CPC packet lists Form E as the notification form for capital purchases taken from the operating budget over $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "form e notification form for capital purchase from operating budget (over $10,000)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications",
+   "resolution": "BR to investigate mailbox location",
+   "quote": "fincomm mailbox has been moved; br will investigate where it is located.",
+   "tags": [
+    "mailbox",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Review minutes",
+   "resolution": "approved 5/7, 6/30 as amended, 7/14 as amended",
+   "quote": "br made motion to approve minutes from 5/7 meeting; bl seconded; all approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee assignments",
+   "resolution": "no action; question raised on dispatch committee representation",
+   "quote": "two committees are currently on hold; question whether we will need representation on regional dispatch committee.",
+   "tags": [
+    "committee assignments",
+    "regional dispatch"
+   ]
+  },
+  {
+   "topic": "Committee/Department reports",
+   "resolution": "received; no action recorded",
+   "quote": "capital planning - handout - marion benson letter outlining cpc schedule timeline and packet for fy2013",
+   "tags": [
+    "capital planning",
+    "service levels",
+    "school regionalization",
+    "reports"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "none",
+   "quote": "6) new business - none",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "Pavement presentation tentatively 9/8; Green Energy review requested; next meeting August 25",
+   "quote": "pavement management plan presentation - tentative 9/8",
+   "tags": [
+    "pavement management",
+    "green energy",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:42 PM",
+   "quote": "br made motion to adjourn at 8:42 pm and bl seconds, all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Planning Committee letter from Marion Benson outlining CPC schedule timeline and packet for FY2013 (HANDOUT); the attached pages set out the CPC schedule and the FY2013 packet contents",
+   "where": "list",
+   "quote": "capital planning - handout - marion benson letter outlining cpc schedule timeline and packet for fy2013"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "minutes approval",
+  "capital planning",
+  "service levels",
+  "school regionalization",
+  "pavement management",
+  "green energy",
+  "regional dispatch",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout"
+ },
+ "dropped_unquoted_by_field": {}
 }

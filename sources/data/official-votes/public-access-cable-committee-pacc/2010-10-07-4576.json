@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2010-10-07",
  "docid": "4576",
@@ -12,6 +12,111 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe discussions and updates (studio space, candidates for coordinator, subcommittee creation), but contain no formal motions or voting language. Prior minutes from September 13 are noted as awaiting distribution and vote at the next meeting, but no votes occurred at this meeting.",
- "cost_usd": 0.0813175
+ "note": "OCR text from a scanned page with no vote recorded anywhere; the adjournment at 8:26 and the Sept 13 minutes deferral are not stated as motions, so no votes are listed. Some OCR characters look off (e.g., \"XlI\" likely Article XII; \"September 13°\" and \"Oct 7°\" read as degree marks). No dollar figures appear. The New Business quote is truncated at the line break to keep it verbatim in one line. The Received & Filed stamp reads OCT 18 2010.",
+ "cost_usd": 0.00249652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Martha Cheesman",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: martha cheesman, tania fernandez, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Tania Fernandez",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: martha cheesman, tania fernandez, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: martha cheesman, tania fernandez, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: martha cheesman, tania fernandez, rhonda lisio, fred crellin"
+  },
+  {
+   "name": "Mike Wallmann",
+   "role": "a student at L.H.S. interested in joining PACC",
+   "status": "present",
+   "quote": "mike wallmann, a student at l.h.s. interested in joining pacc, was introduced."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of the September 13 meeting will be distributed and voted on at the next meeting, because the printer problem prevented distribution.",
+   "quote": "they will be distributed and voted on at the next meeting."
+  },
+  {
+   "decision": "Four coordinator candidates were selected to be interviewed, and an attempt will be made to contact them and schedule interviews on Oct. 14th.",
+   "quote": "four candidates were selected to be interviewed. they are jo mclaughlin, john gugarty, timothy daoust, and jason kearns."
+  },
+  {
+   "decision": "An attempt will be made to contact the candidates and schedule interviews on Oct. 14th.",
+   "quote": "an attempt will be made to contact them and schedule interviews on oct. 14th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Updates: studio space and Drawing with Mark",
+   "resolution": "no action; discussed",
+   "quote": "martha reported that she had met with kerry speidel and found that the town hall space for a potential studio was apparently spoken for.",
+   "tags": [
+    "studio space",
+    "Town Hall",
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Minutes of September 13",
+   "resolution": "continued to next meeting",
+   "quote": "they will be distributed and voted on at the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Candidates for coordinator",
+   "resolution": "four candidates selected for interview",
+   "quote": "four candidates were selected to be interviewed. they are jo mclaughlin, john gugarty, timothy daoust, and jason kearns.",
+   "tags": [
+    "coordinator hiring",
+    "interviews"
+   ]
+  },
+  {
+   "topic": "New business: subcommittee on Article XII",
+   "resolution": "discussed; no action recorded",
+   "quote": "there was discussion about the creation of a subcommittee to study article xli and",
+   "tags": [
+    "subcommittee",
+    "bylaws"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "PACC",
+  "public access cable",
+  "studio space",
+  "coordinator hiring",
+  "interviews",
+  "minutes",
+  "subcommittee",
+  "Article XII"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

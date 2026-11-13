@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-02-18",
  "docid": "2230",
@@ -12,23 +12,295 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of February 11, 2016",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Jay Simeone",
+   "motion": "Approve the minutes of the February 11, 2016 meeting.",
+   "moved_by": "Karin",
+   "seconded_by": "Jay",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "karin made a motion to approve these minutes, and jay seconded the motion. the committee approved the motion by a vote of 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "terri made a motion to adjourn and jay seconded the motion. the committee approved the motion 5-0 at 8:47."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract, macOS Vision. All text is legible and votes are clearly recorded.",
- "cost_usd": 0.08447349999999999
+ "note": "OCR text of a draft (footers read 'Draft'); some words are garbled by OCR (e.g., 'Fiance', 'Finay', 'Tunding'), and figures are as OCR'd. The minutes state they are an overview and point to attached presentations for detail. Votes are recorded in the minutes text; only two motions appear, both procedural.",
+ "cost_usd": 0.00621632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, jay simeone, karin menard, john henshaw"
+  },
+  {
+   "name": "Finay Leafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "finay leafleur, town manager, karen brochu, town financial manager/director of municipal"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Financial Manager/Director of Municipal",
+   "status": "present",
+   "quote": "finay leafleur, town manager, karen brochu, town financial manager/director of municipal"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police department fy17 budget presentation by chief marino. lieutenant mike luth was also present."
+  },
+  {
+   "name": "Mike Luth",
+   "role": "Lieutenant",
+   "status": "present",
+   "quote": "lieutenant mike luth was also present."
+  },
+  {
+   "name": "Pat Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "fire department fiscal 2017 budget presentation by fire chief pat sullivan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John's proposal to consider at a future meeting issues with potential consequences on future Town budgets was accepted, to be placed on a subsequent agenda after the Town budget process is done.",
+   "quote": "mark said we could put this on a subsequent agenda after the town budget process is done."
+  },
+  {
+   "decision": "Next meeting set for Thursday, February 25, at which the Department of Public Works and the Land Use will give presentations on FY17 budgets.",
+   "quote": "the department of public works and the land use will give presentations on fy17 budgets"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police FY17 recommended budget",
+   "what_was_recorded": "The police FY17 recommended budget is stated as a dollar amount and percentage over the FY16 recap; the budget is essentially level funded.",
+   "figures_as_printed": [
+    "$31,000",
+    "2.2%"
+   ],
+   "quote": "the fy17 recommended budget is $31,000, or 2.2% higher than the fy16 recap."
+  },
+  {
+   "topic": "Police funding for additional officers",
+   "what_was_recorded": "No funding was provided for the additional officers the police chief requested.",
+   "figures_as_printed": [],
+   "quote": "there is no funding for additional officers which chief marino has requested."
+  },
+  {
+   "topic": "Police records retention room",
+   "what_was_recorded": "A records retention room was a capital projects request that was not approved for FY17.",
+   "figures_as_printed": [],
+   "quote": "the department needs a records retention room that was a capital projects request, but was not approved for fy17."
+  },
+  {
+   "topic": "Narcan cost",
+   "what_was_recorded": "Narcan prices are rising and may strain future police budgets; funds for Narcan are currently built into the police budget.",
+   "figures_as_printed": [],
+   "quote": "narcan has become so common that the price is starting to creep up."
+  },
+  {
+   "topic": "Fire FY17 recommended budget",
+   "what_was_recorded": "The fire FY17 recommended budget is stated as a dollar amount and percentage over FY16 recap.",
+   "figures_as_printed": [
+    "$23,700",
+    "3.1%"
+   ],
+   "quote": "the fy17 recommended budget is $23,700, or 3.1% higher than fy16 recap."
+  },
+  {
+   "topic": "Ambulance fees",
+   "what_was_recorded": "Ambulance fees are returned to the general fund.",
+   "figures_as_printed": [
+    "$282,000"
+   ],
+   "quote": "note: the $282,000 in ambulance fees goes back to the general fund."
+  },
+  {
+   "topic": "EMS supplies",
+   "what_was_recorded": "EMS supplies typically exceed the budgeted level and would be paid for by shifting funding from other line items if funds are available.",
+   "figures_as_printed": [],
+   "quote": "ems supplies typically exceed the budgeted level and would be paid for by shifting"
+  },
+  {
+   "topic": "Mandated fire training not funded",
+   "what_was_recorded": "Mandated training is not funded in the fire budget, risking retention of call staff who must train on their own time.",
+   "figures_as_printed": [],
+   "quote": "because mandated training is not funded in this budget, this risks retention of call staff"
+  },
+  {
+   "topic": "School busing bid",
+   "what_was_recorded": "The only bid to provide school busing for FY17 came from the current provider and would be an increase of $40,000; the service is mandated.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "the only bid to provide busing for the schools for fy17 was from the current provide and it would be an increase of $40,000."
+  },
+  {
+   "topic": "CW Mars library fees",
+   "what_was_recorded": "Library trustees are concerned about an increase in CW Mars fees because the state is not funding them at prior levels, so member libraries must make up the difference.",
+   "figures_as_printed": [],
+   "quote": "the board of trustees have some concern over the increase in cw mars fees."
+  },
+  {
+   "topic": "State aid (chapter 70 and UGGA)",
+   "what_was_recorded": "A message asked that responses on increased chapter 70 and UGGA state aid in the governor's budget be forwarded to Representative Benson's office.",
+   "figures_as_printed": [],
+   "quote": "mark related a message from kerry asking that responses to increased chapter 70 and ugga state aid to"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and broadcast notice",
+   "resolution": "no action",
+   "quote": "mark e. called the finance committee meeting to order at 7:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Comments: public and new communications",
+   "resolution": "public: none; future agenda item agreed",
+   "quote": "john suggested that at a future meeting the committee consider a few issues that have potential",
+   "tags": [
+    "public comment",
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Police Department FY17 budget presentation",
+   "resolution": "presented; no action",
+   "quote": "police department fiscal 2017 budget presentation by police chief jim marino",
+   "tags": [
+    "police",
+    "FY17 budget"
+   ]
+  },
+  {
+   "topic": "Fire Department FY17 budget presentation",
+   "resolution": "presented; no action",
+   "quote": "fire department fiscal 2017 budget presentation by fire chief pat sullivan",
+   "tags": [
+    "fire",
+    "EMS",
+    "FY17 budget"
+   ]
+  },
+  {
+   "topic": "Message on state aid responses",
+   "resolution": "discussed; no action",
+   "quote": "mark related a message from kerry asking that responses to increased chapter 70 and ugga state aid to",
+   "tags": [
+    "state aid",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Review of minutes of February 11, 2016",
+   "resolution": "approved 5-0",
+   "quote": "karin made a motion to approve these minutes, and jay seconded the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "no discussion",
+   "quote": "budget goals and opportunities: there was no discussion at this meeting.",
+   "tags": [
+    "budget goals"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received; no action",
+   "quote": "the pacc postponed its meeting of monday, february 8 due to the snow storm.",
+   "tags": [
+    "committee reports",
+    "schools",
+    "libraries"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for February 25",
+   "quote": "the department of public works and the land use will give presentations on fy17 budgets",
+   "tags": [
+    "scheduling",
+    "DPW",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:47",
+   "quote": "terri made a motion to adjourn and jay seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Police Department FY17 Budget Presentation",
+   "where": "list",
+   "quote": "attachments: police department fy17 budget presentation fire department fy17 budget presentation"
+  },
+  {
+   "name": "Fire Department FY17 Budget Presentation",
+   "where": "list",
+   "quote": "attachments: police department fy17 budget presentation fire department fy17 budget presentation"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY17 budget",
+  "police budget",
+  "fire budget",
+  "EMS",
+  "state aid",
+  "school busing",
+  "libraries",
+  "minutes",
+  "draft minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {}
 }

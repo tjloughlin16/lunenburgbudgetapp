@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-06-17",
  "docid": "4892",
@@ -12,31 +12,291 @@
  },
  "votes": [
   {
-   "motion": "Approve the Town Manager's recommendation to appoint Maureen Dupuis to the Agricultural Commission",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Toale",
+   "motion": "Approve the Town Manager's recommendation to appoint Maureen Dupuis to the Agricultural Commission.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. ebersole moved to approve the town manager's recommendation to appoint maureen dupuis to the agricultural commission. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed"
   },
   {
-   "motion": "Authorize the Chair of the Board of Selectmen to sign the Project Scope and Budget Agreement with the MSBA",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Toale",
+   "motion": "Authorize the Chair of the Board of Selectmen to sign the Project Scope and Budget Agreement with the MSBA.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Jamie Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. ebersole moved for the bos to authorize the chair of the board of selectmen to sign the project scope and budget agreement with the msba. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. ebersole moved for the bos to authorize the chair of the board of selectmen to sign the project scope and budget agreement with the msba."
   },
   {
-   "motion": "Adjourn the regular scheduled meeting",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Toale",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the regular scheduled meeting.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Jamie Toale",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. ebersole moved to adjourn the regular scheduled meeting. mr. toale seconded. roll call vote, toale-aye, ebersole-aye, luck-aye, alonzo-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision, no missing pages or sections. Three substantive votes recorded, with all motions carried unanimously by the four members present.",
- "cost_usd": 0.0924335
+ "note": "Text is OCR of a scanned page with errors (e.g., 'UNENBURG TOWA', 'rocedures', '1r. Alonzo', '7/8/201', 'Ms. Bertram' for Vice Chair Bertran). The minutes call Kerry Speide 'Ms. Speidel'. The warrant dates and amounts are jumbled, so their pairing is unclear. No separate vote to enter executive session is recorded; the executive session is listed at 6:00 PM although the meeting opened at 7:01 PM and adjourned at 7:29PM. Ms. Doherty's and Maureen Dupuis's attendance is not stated. Roll call outcome is recorded as passed without a printed count.",
+ "cost_usd": 0.00872862,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, jamie toale,"
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, jamie toale,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "robert ebersole, phyllis luck & town manager kerry speide"
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "robert ebersole, phyllis luck & town manager kerry speide"
+  },
+  {
+   "name": "Kerry Speide",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "phyllis luck & town manager kerry speide"
+  },
+  {
+   "name": "Paula Bertran",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent was vice chair paula bertran"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Chairperson of the school committee",
+   "status": "present",
+   "quote": "mike mackin, chairperson of the school committee spoke to the bos and said that if there were any questions he is here to answer them."
+  },
+  {
+   "name": "Susan Dulery",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan dulery, recording secretary"
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "BOS Minute Recorder",
+   "status": "not stated",
+   "quote": "tonight was ms. doherty's last night as the bos minute recorder and the board recognized and thanked her"
+  },
+  {
+   "name": "Maureen Dupuis",
+   "status": "not stated",
+   "quote": "mr. alonzo congratulated ms. dupuis and reminded her that she would need to be sworn in by the town clerk."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After discussion the board agreed to begin the joint-meeting evening's policy discussions with the Storm Water item, restricting it to one item.",
+   "quote": "after discussion the board agreed to begin these discussions with the storm water item."
+  },
+  {
+   "decision": "A workshop was set to discuss the FinCom and IT Director sections of the BOS Policies and Procedures on 7/1/2014 at 6PM.",
+   "quote": "a workshop will be set to discuss the fincom and it director sections of the bos policies and procedures for 7/1/2014 at 6pm."
+  },
+  {
+   "decision": "Chair asked the board, except Ms. Luck, to compile the Town Manager and BOS goals for discussion at the next BOS meeting.",
+   "quote": "mr. alonzo requested that board, with the exception of ms. luck, compile the town manager and bos"
+  },
+  {
+   "decision": "Board to enter executive session under M.G.L. Chapter 30A, Section 21A [9] on the O'Brien Lawsuit, not returning to open session.",
+   "quote": "mr. alonzo stated that the board will be entering executive session, not to return citing"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants approved for payment",
+   "what_was_recorded": "Three warrants were listed under Minutes/Warrants/Action File Issues; the minutes print the dates and amounts in a jumbled order, so the pairing of each date to each warrant is unclear.",
+   "quote": "warrants: 6/16/2014 w#26p-14 $741,058.10 6/18/2014 w#67 6/17/2014 $394,692.12 w#66-14 $454,069.10",
+   "figures_as_printed": [
+    "$741,058.10",
+    "$394,692.12",
+    "$454,069.10"
+   ]
+  },
+  {
+   "topic": "School lunch program deficit",
+   "what_was_recorded": "School Committee reported a deficit in the school lunch program that was discussed, with how to deal with it.",
+   "quote": "$9000 deficit in the school lunch program was discussed and how to deal with this",
+   "figures_as_printed": [
+    "$9000"
+   ]
+  },
+  {
+   "topic": "Storm water underwater retention system maintenance cost",
+   "what_was_recorded": "School Building Committee was gathering information on the maintenance cost of an underwater storm water retention system; no figure printed.",
+   "quote": "storm water, installing an underwater retention system, gathering information on maintenance cost for this",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "7:00pm public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "announcements: mr. alonzo announced that the town fair & bon fire will be held this saturday from 4-9pm at the high school",
+   "tags": [
+    "announcements",
+    "town fair"
+   ]
+  },
+  {
+   "topic": "Appointments: Maureen Dupuis to Agricultural Commission",
+   "resolution": "approved",
+   "quote": "mr. ebersole moved to approve the town manager's recommendation to appoint maureen dupuis to the agricultural commission.",
+   "tags": [
+    "appointments",
+    "agricultural commission"
+   ]
+  },
+  {
+   "topic": "MSBA Project Scope and Budget Agreement",
+   "resolution": "authorized Chair to sign",
+   "quote": "request to authorize chair to sign project scope and budget agreement with msba:",
+   "tags": [
+    "MSBA",
+    "school building project"
+   ]
+  },
+  {
+   "topic": "BOS Policies and Procedures",
+   "resolution": "workshop set for 7/1/2014",
+   "quote": "a workshop will be set to discuss the fincom and it director sections of the bos policies and procedures for 7/1/2014 at 6pm.",
+   "tags": [
+    "policies and procedures"
+   ]
+  },
+  {
+   "topic": "Appointments process and FY15 appointments",
+   "resolution": "no discussion",
+   "quote": "further discussion on appointments process and/ or fy15 appointments: none",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "FY15 Town Manager Goals",
+   "resolution": "continued to next meeting",
+   "quote": "mr. alonzo requested that board, with the exception of ms. luck, compile the town manager and bos",
+   "tags": [
+    "town manager goals",
+    "FY15"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no minutes; warrants listed; Park Commission vacancy advertising discussed",
+   "quote": "action file issues: mr. ebersole questioned what the process was for the vacancy on the park commission position.",
+   "tags": [
+    "warrants",
+    "minutes",
+    "park commission"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "building reuse committee: mr. toale reported that this committee has a joint meeting with the planning board scheduled for",
+   "tags": [
+    "committee reports",
+    "planning board",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "noted; objection deadline 6/30/2014",
+   "quote": "ms. speidel informed the board that a letter was received from the massachusetts state lottery commission notifying the town that embers pizzeria is applying for a keno license.",
+   "tags": [
+    "KENO license",
+    "liquor/lottery licensing"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "recognized recorder's departure",
+   "quote": "tonight was ms. doherty's last night as the bos minute recorder and the board recognized and thanked her",
+   "tags": [
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Adjournment and executive session",
+   "resolution": "adjourned; executive session on O'Brien lawsuit",
+   "quote": "mr. alonzo stated that the board will be entering executive session, not to return citing",
+   "tags": [
+    "executive session",
+    "O'Brien lawsuit"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrants W#26P-14, W#67, W#66-14",
+   "where": "list",
+   "quote": "warrants: 6/16/2014 w#26p-14 $741,058.10 6/18/2014 w#67 6/17/2014 $394,692.12 w#66-14 $454,069.10"
+  },
+  {
+   "name": "Project Scope and Budget Agreement with MSBA",
+   "where": "text",
+   "quote": "request to authorize chair to sign project scope and budget agreement with msba: mike mackin"
+  },
+  {
+   "name": "Massachusetts State Lottery Commission letter re Embers Pizzeria KENO license",
+   "where": "text",
+   "quote": "a letter was received from the massachusetts state lottery commission notifying the town that embers pizzeria is applying for a keno license."
+  },
+  {
+   "name": "Draft document compiled by MRPC",
+   "where": "text",
+   "quote": "move forward with some of the recommendations in the draft document which was compiled by mrpc"
+  },
+  {
+   "name": "Site Plan Approval Bylaw and Sign Bylaw",
+   "where": "text",
+   "quote": "review site plan approval bylaw and sign bylaw is under review"
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "appointments",
+  "MSBA school building project",
+  "policies and procedures",
+  "FY15 town manager goals",
+  "warrants",
+  "KENO license",
+  "committee reports",
+  "executive session",
+  "O'Brien lawsuit",
+  "Park Commission vacancy",
+  "town fair"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "warrants:"
+ },
+ "dropped_unquoted_by_field": {}
 }

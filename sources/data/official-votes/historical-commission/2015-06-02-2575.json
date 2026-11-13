@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2015-06-02",
  "docid": "2575",
@@ -10,17 +10,158 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06022015-2575",
   "doc_url": "/docs/meetings/historical-commission/2015-06-02-minutes-2575.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) of a two-page minutes document. No motions or vote counts are recorded; \"Minutes were approved for May 11, 2015\" gives no motion, mover, or tally, so it is logged as a topic, not a vote. No dollar figures, no public comment, and no documents list or exhibits appear. Adjournment at 7:47 p.m. is recorded without a motion.",
+ "cost_usd": 0.00275982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve the minutes from May 11, 2015",
-   "outcome": "approved",
-   "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes were approved for may 11, 2015."
+   "name": "Becky Lantry",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "becky lantry, amory phelps, lois lewis, richard mcgrath and cullen dwyer."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan; only one vote recorded — the approval of prior minutes. No vote counts given. No other motions recorded as voted on, including adjournment (which is stated as a fact, not a vote).",
- "cost_usd": 0.0793825
+ "decisions": [
+  {
+   "decision": "The inquiry about the history of 75 Highland Street was referred to the Historical Society.",
+   "quote": "an inquiry for the history of the property at 75 highland street was referred to the historical society."
+  },
+  {
+   "decision": "Becky will discuss with the Town Manager the process for Board of Selectmen appointments to the Architectural Preservation District Commission.",
+   "quote": "becky will discuss with kerry speidel, the town manager, the process for appointments to be made by the board of selectmen to the architectural preservation district commission."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of May 11, 2015",
+   "quote": "minutes were approved for may 11, 2015.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and communications",
+   "resolution": "no action (none)",
+   "quote": "correspondence and communications: none.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Article for Town Report",
+   "resolution": "no action (noted)",
+   "quote": "becky has submitted an article for the town report.",
+   "tags": [
+    "town report"
+   ]
+  },
+  {
+   "topic": "Inquiry on 75 Highland Street history",
+   "resolution": "referred to Historical Society",
+   "quote": "an inquiry for the history of the property at 75 highland street was referred to the historical society.",
+   "tags": [
+    "property history",
+    "referral"
+   ]
+  },
+  {
+   "topic": "Architectural Preservation District Commission appointments",
+   "resolution": "Becky to discuss process with Town Manager",
+   "quote": "becky will discuss with kerry speidel, the town manager, the process for appointments to be made by the board of selectmen to the architectural preservation district commission.",
+   "tags": [
+    "appointments",
+    "historic district"
+   ]
+  },
+  {
+   "topic": "Demolition delay requests",
+   "resolution": "no action (none received)",
+   "quote": "richard reported there were no demolition delay requests.",
+   "tags": [
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Cemetery Project Report",
+   "resolution": "no action (noted, not finalized)",
+   "quote": "although the cemetery project report has not been finalized, richard advised this proposal, that involves substantial repairs, will be completed shortly",
+   "tags": [
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Signs and markers",
+   "resolution": "no action (report)",
+   "quote": "richard spoke about some of the work he has done with signs and markers in the town",
+   "tags": [
+    "signs",
+    "markers"
+   ]
+  },
+  {
+   "topic": "Third grade historical tour",
+   "resolution": "no action (scheduled)",
+   "quote": "the third grade elementary school historical tour of the upper and lower common and the town pound is scheduled for june, 4, 2015.",
+   "tags": [
+    "school tour",
+    "education"
+   ]
+  },
+  {
+   "topic": "Lunenburg Ledger Historically Speaking articles",
+   "resolution": "assigned authors by month",
+   "quote": "lunenburg ledger, historically speaking articles: june, cullen july, amory august, lois",
+   "tags": [
+    "newspaper articles"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "cemetery",
+  "town report",
+  "school tour",
+  "signs and markers",
+  "demolition delay",
+  "historic district appointments",
+  "newspaper articles",
+  "referral"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

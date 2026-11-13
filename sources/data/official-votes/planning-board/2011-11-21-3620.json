@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-11-21",
  "docid": "3620",
@@ -12,15 +12,214 @@
  },
  "votes": [
   {
-   "motion": "adjourn",
+   "motion": "Approve the 11-7-11 minutes as printed.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion ms. bilotta -simeone, approve 11 -7-11 minutes, second, mr. saiia, motion passed, minutes approved."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, mr. bodkin jr., second, ms. bilotta-simeone, all aye."
+   "quote": "motion, mr. bodkin jr., second, ms. bilotta-simeone, all aye. adjourned 8:30 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Two votes recorded: approval of prior minutes (procedural) and adjournment (procedural).",
- "cost_usd": 0.0103293
+ "dropped_unquoted": 0,
+ "note": "Text is a summary-style extraction, not a full transcript. Only two motions are recorded (minutes approval and adjournment); no vote is recorded on the Mass PV1 solar farm, Stone Farm, or MMA items. The minutes-approval motion reads \"approve 11 -7-11 minutes\" as printed, which is likely a date typo; kept as printed. No dollar figures appear. Kelly Brown (DOER) is quoted secondhand and is not recorded as present, so she is omitted. The Summer Street presentation is mentioned in text only.",
+ "cost_usd": 0.00638472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Scott Fenton",
+   "role": "Attorney, Bowditch & Dewey, representing the Applicant",
+   "status": "present",
+   "quote": "attorney scott fenton, bowditch & dewey, representing the applic ant noted that the applicant meets"
+  },
+  {
+   "name": "Mr. Whalen",
+   "role": "resident, 526 West Townsend Road",
+   "status": "present",
+   "quote": "mr. whalen, 526 west townsend road- inquired as to what was the allowable bylaw permitting the solar fa rm."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Select Board member, speaking as a private citizen; 312 Townsend Harbor Road",
+   "status": "present",
+   "quote": "paula bertram (select board member, but speaking as a private citi zen), 312 townsend harbor road- believes solar farms are not allowed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Bakaysa will confer with the Town Manager on November 22 after a conference call with Town Counsel, the Planning Director, and the Zoning Official on zoning for the Mass PV1, LLC solar farm; questions from the audience go to the Town Manager.",
+   "quote": "mr. bakaysa to confer with town manager november 22 nd following"
+  },
+  {
+   "decision": "The Massachusetts Municipal Association (MMA) office item was tabled.",
+   "quote": "office- massachusetts municipal association (mma)- tabled"
+  },
+  {
+   "decision": "Set the next Planning Board meeting for December 12, 2011 at Town Hall.",
+   "quote": "december- 12-12-11, planning board meeting, town hall."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Whalen",
+   "stated_role": "526 West Townsend Road",
+   "topic": "solar farm allowed under zoning bylaw",
+   "quote": "mr. whalen, 526 west townsend road- inquired as to what was the allowable bylaw permitting the solar fa rm."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Select Board member, but speaking as a private citizen; 312 Townsend Harbor Road",
+   "topic": "solar farm not allowed under zoning bylaw",
+   "quote": "paula bertram (select board member, but speaking as a private citi zen), 312 townsend harbor road- believes solar farms are not allowed"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "motion ms. bilotta -simeone, approve 11 -7-11 minutes, second, mr. saiia, motion passed, minutes approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business: Special Town Meeting and Horizon Christian Fellowship",
+   "resolution": "no action; referred to public hearing minutes of same date",
+   "quote": "special town meeting, 12-5-11- see public hearing minutes this date.",
+   "tags": [
+    "town meeting",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Mass PV1, LLC solar farm, 651 Chase Road",
+   "resolution": "no action; Chair to confer with Town Manager after Town Counsel call",
+   "quote": "mass pv1, llc, 651 chase road -solar farm - mr. bakaysa to confer with town manager november 22 nd following",
+   "tags": [
+    "solar farm",
+    "zoning",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Stone Farm condominium documents",
+   "resolution": "informational; Town Counsel response reported",
+   "quote": "stone farm - town counsel has responded that the developer's requested revisions to the condominium documents are",
+   "tags": [
+    "condominium",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Summer Street transportation improvements",
+   "resolution": "informational; presentation received",
+   "quote": "the office received a copy of the presentation given by vanasse hangen brustlin, inc. on november 15 th",
+   "tags": [
+    "transportation",
+    "summer street"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force",
+   "resolution": "informational; meeting held",
+   "quote": "green community task force - informational meeting held november 17 th with a representative from the state",
+   "tags": [
+    "green communities",
+    "stretch code"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "December 12, 2011 meeting set",
+   "quote": "december- 12-12-11, planning board meeting, town hall.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Massachusetts Municipal Association (MMA) office item",
+   "resolution": "tabled",
+   "quote": "office- massachusetts municipal association (mma)- tabled",
+   "tags": [
+    "mma"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:30 PM",
+   "quote": "motion, mr. bodkin jr., second, ms. bilotta-simeone, all aye. adjourned 8:30 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Presentation by Vanasse Hangen Brustlin, Inc. on November 15 regarding transportation improvements (Summer Street)",
+   "where": "text",
+   "quote": "the office received a copy of the presentation given by vanasse hangen brustlin, inc. on november 15 th regarding transportation improvements."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar farm",
+  "zoning",
+  "public comment",
+  "minutes",
+  "transportation",
+  "stretch code",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

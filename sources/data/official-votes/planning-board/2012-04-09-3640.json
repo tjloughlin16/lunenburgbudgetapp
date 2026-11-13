@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-04-09",
  "docid": "3640",
@@ -12,6 +12,203 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes document only the public hearing on Town Meeting Articles 19 and 17 regarding solar energy zoning amendments. No motions, vote counts, or outcomes are stated in the text.",
- "cost_usd": 0.0944565
+ "note": "The minutes record a public hearing only; no motions, votes, or closing vote on the articles appear, so votes is empty. Start time is printed inconsistently: 'Time: 7:15 PM' in the header versus 'Chair opened the Public Hearing at 7:10 PM' in the body. Speaker Blatt cites '4.19.4.9', while the draft section is 4.15.4.9 as printed in the bylaw text; recorded as printed. The minutes contain no dollar figures; budget items are bylaw fee, surety and removal-cost provisions. Text has broken spacing and line breaks, collapsed in quotes.",
+ "cost_usd": 0.008024419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: emerick r. bakaysa, c hair, joanna l. bilotta -simeone, vice chair, robert j. saiia, thomas w. bodkin, jr.,"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: emerick r. bakaysa, c hair, joanna l. bilotta -simeone, vice chair, robert j. saiia, thomas w. bodkin, jr.,"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "members present: emerick r. bakaysa, c hair, joanna l. bilotta -simeone, vice chair, robert j. saiia, thomas w. bodkin, jr.,"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "members present: emerick r. bakaysa, c hair, joanna l. bilotta -simeone, vice chair, robert j. saiia, thomas w. bodkin, jr.,"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "John Londa",
+   "role": "public speaker, Autumn Road",
+   "status": "present",
+   "quote": "john londa, autumn road- he felt the bylaw had a lot of protection for putting arrays on residential structures, but no coverage"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "public speaker, West Street",
+   "status": "present",
+   "quote": "david prokowiew, west street - requested surveillance equipment/cameras be added to lighting section of the bylaw."
+  },
+  {
+   "name": "David Blatt",
+   "role": "public speaker, Lancaster Avenue",
+   "status": "present",
+   "quote": "david blatt, lancaster avenue - specify under 4.19.4.9. design standards a. and e. security cameras ip (internal protocol)"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "public speaker, Townsend Harbor Road",
+   "status": "present",
+   "quote": "paula bertram, townsend harbor road - suggested use definition of abandonment in state model"
+  },
+  {
+   "name": "John Whalen",
+   "role": "public speaker, West Townsend Road",
+   "status": "present",
+   "quote": "feels residential district should not be included in large-scale solar."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will discuss with Town Counsel whether there is a gap in coverage between small-scale and large-scale solar installations (raised by John Londa).",
+   "quote": "the board will discuss this with town counsel to see if there is a gap in coverage."
+  },
+  {
+   "decision": "The Board will look at an agreement with the utility so that an installation no longer connected to the grid is considered to have ceased operation (abandonment question from David Prokowiew).",
+   "quote": "board will look at an agreement with the utility that when it is no longer connected to the grid it will be considered to have ceased operation."
+  },
+  {
+   "decision": "The Board will inquire of Town Counsel about the security camera request raised by David Blatt.",
+   "quote": "board will inquire of town counsel."
+  },
+  {
+   "decision": "Interference and vibration/harmonics language from the UNITIL interconnection document will be added to Section 4.15.4.9 Design Standards, J. Noise.",
+   "quote": "will be added to \"4.15.4.9. design standards, j. noise\"."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Application fees and tri-party escrow account (Section 4.15.4.6)",
+   "what_was_recorded": "Draft bylaw text read into the minutes requires a required fee and a tri-party escrow account for engineering review, monitoring and inspection fees; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "an application for a development plan review shall be accompanied by the required fee and a tri-party account (in-house escrow"
+  },
+  {
+   "topic": "Financial surety for removal cost (Section 4.15.4.12)",
+   "what_was_recorded": "Draft bylaw text read into the minutes caps the surety for removal cost at a percentage of the cost of removal; no dollar amounts are printed.",
+   "figures_as_printed": [
+    "125 percent"
+   ],
+   "quote": "in no event to exceed more than 125 percent of the cost of removal and compliance with the additional requirements set forth herein"
+  },
+  {
+   "topic": "Cost of removing an abandoned installation (Section 4.15.4.11)",
+   "what_was_recorded": "Draft bylaw text read into the minutes says the Town's removal cost is charged to the property owner as a tax lien; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "the cost for the removal will be charged to the property owner in accordance with the provisions of g.l. 139, section 3a as a tax lien on the property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Londa",
+   "stated_role": "Autumn Road",
+   "topic": "gap in coverage between small- and large-scale solar",
+   "quote": "he felt the bylaw had a lot of protection for putting arrays on residential structures, but no coverage for between small- and large-scale"
+  },
+  {
+   "speaker": "David Prokowiew",
+   "stated_role": "West Street",
+   "topic": "surveillance cameras and abandonment of installations",
+   "quote": "requested surveillance equipment/cameras be added to lighting section of the bylaw."
+  },
+  {
+   "speaker": "David Blatt",
+   "stated_role": "Lancaster Avenue",
+   "topic": "security cameras monitored by police and fire",
+   "quote": "specify under 4.19.4.9. design standards a. and e. security cameras ip (internal protocol) monitored over the internet by the police and/or fire department."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Townsend Harbor Road",
+   "topic": "abandonment definition and siting by overlay district",
+   "quote": "feels strongly that siting should be through overlay districts voted on at town meeting versus siting by special permit."
+  },
+  {
+   "speaker": "John Whalen",
+   "stated_role": "West Townsend Road",
+   "topic": "residential districts and inverter interference",
+   "quote": "feels residential district should not be included in large-scale solar."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing on Zoning Bylaw solar energy amendments (Articles 19 and 17)",
+   "resolution": "hearing held; public comment taken; closed 8:45 PM; no vote recorded",
+   "quote": "article 19 to see if the town will vote to delete from the current section 6.6. in the zoning bylaw",
+   "tags": [
+    "public hearing",
+    "zoning bylaw",
+    "solar energy",
+    "town meeting articles"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Legal notice published in the Sentinel & Enterprise on March 26, 2012 and April 2, 2012",
+   "where": "text",
+   "quote": "reading of the legal notice published in the sentinel & enterprise on march 26, 2012 and april 2, 2012."
+  },
+  {
+   "name": "Article 19 (delete Section 6.6.7 Solar Energy Systems from the Zoning Bylaw)",
+   "where": "text",
+   "quote": "article 19 to see if the town will vote to delete from the current section 6.6. in the zoning bylaw"
+  },
+  {
+   "name": "Article 17 (add Section 4.15 Solar Energy Systems to the Zoning Bylaw)",
+   "where": "text",
+   "quote": "article 17 to see if the town will vote to amend the zoning bylaw by adding to the current bylaw section 4.0."
+  },
+  {
+   "name": "Section 4.15 Solar Energy Systems (proposed zoning bylaw text)",
+   "where": "text",
+   "quote": "the purpose of this section is to provide siting for solar photovoltaic energy systems for power generations for all, home,"
+  },
+  {
+   "name": "Interconnection document with UNITIL",
+   "where": "text",
+   "quote": "referred to an interconnection document with unitil that made reference to interference, vibration harmonics, that"
+  }
+ ],
+ "tags": [
+  "zoning bylaw",
+  "solar energy",
+  "public hearing",
+  "town meeting articles",
+  "large-scale solar",
+  "special permit",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

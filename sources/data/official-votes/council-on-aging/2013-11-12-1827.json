@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-11-12",
  "docid": "1827",
@@ -12,50 +12,393 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the October 8, 2013 COA meeting",
+   "motion": "Approve the minutes of the October 8, 2013 COA meeting.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. Seeley",
-   "outcome": "passed 9-0",
+   "outcome": "passed, 9 in favor, 0 opposed",
    "procedural": true,
-   "quote": "ms. doyle moved to approve the minutes of the oct ober 8, 2013 coa meeting. ms. seeley seconded. on vote, motion carried, 9 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to approve the minutes of the oct ober 8, 2013 coa meeting."
   },
   {
-   "motion": "approve the 11/4/2013 COA Finance Committee meeting",
-   "moved_by": "Ms. O'Dea",
+   "motion": "Approve the 11/4/2013 COA Finance Committee meeting minutes.",
+   "moved_by": "Ms. O’Dea",
    "seconded_by": "Ms. Tarbell",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. o'dea moved to approve the 11/4/2013 coa financ e committee meeting. ms. tarbell seconded. motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. o'dea moved to approve the 11/4/2013 coa financ e committee meeting."
   },
   {
-   "motion": "accept the 10/8/2013 & 11/4/2013 Finance Committee minutes",
+   "motion": "Accept the 10/8/2013 and 11/4/2013 Finance Committee minutes.",
    "moved_by": "Ms. Seeley",
    "seconded_by": "Ms. Tarbell",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. seeley moved for the coa to accept the 10/8/201 3 & 11/4/2013 finance committee minutes. ms. tarbell seconded. motion carried unanimously",
-   "quote_taken_from_text": true
+   "quote": "ms. seeley moved for the coa to accept the 10/8/201 3 & 11/4/2013 finance committee minutes."
   },
   {
-   "motion": "accept the 10/8/2013 Director's Evaluation Committee minutes",
+   "motion": "Accept the 10/8/2013 Director’s Evaluation Committee minutes.",
    "moved_by": "Ms. Seeley",
    "seconded_by": "Ms. Tarbell",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. seeley moved for the coa to accept the 10/8/2013 director's evaluation committee minutes. ms. tarbell seconded. motion carried unanimously."
+   "quote": "ms. seeley moved for the coa to accept the 10/8/2013 director's evaluation committee minutes."
   },
   {
-   "motion": "adjourn the COA meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Ms. Seeley",
    "seconded_by": "Ms. Lacka",
-   "outcome": "passed 9-0",
+   "outcome": "passed, 9 in favor 0 opposed",
    "procedural": true,
-   "quote": "ms. seeley moved to adjourn the coa meeting. ms. lacka seconded. on vote motion carried, 9 in favor 0 opposed."
+   "quote": "ms. seeley moved to adjourn the coa meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1036415
+ "note": "Text is OCR-style extraction with stray spacing (e.g., \"B rown\", \"Oct ober\", \"Financ e\", \"201 3\"); quotes keep that spacing as printed. Header says minutes approved 12/10/2013 and amended 3/11/2014; no amended text is shown. No public comment section is printed; Pete Lincoln's remarks appear under General Discussion and are not recorded as public comment. Vote counts are as printed; the adjournment vote's \"9 in favor 0 opposed\" is printed without a comma. No transfers are recorded.",
+ "cost_usd": 0.01025742,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson),"
+  },
+  {
+   "name": "Barbara B rown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "barbara b rown (vice-chairperson)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle,"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley, connie o'dea, whitney lacka,"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley, connie o'dea, whitney lacka,"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley, connie o'dea, whitney lacka,"
+  },
+  {
+   "name": "Connie O’Dea",
+   "role": "",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley, connie o'dea, whitney lacka,"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley, connie o'dea, whitney lacka,"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "",
+   "status": "present",
+   "quote": "shirley bertone, tony bertone, judy tarbell and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "",
+   "status": "present",
+   "quote": "shirley bertone, tony bertone, judy tarbell and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "shirley bertone, tony bertone, judy tarbell and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "shirley bertone, tony bertone, judy tarbell and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "karin menard (lunenburg finance committee)"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "pete lincoln mentioned the new bocce court behind"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "loxi calmes, school superintendent, and"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Chair School Building Committee",
+   "status": "present",
+   "quote": "mike mackin (chair school building committee)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Doyle will bring updated evaluation tools to the December COA meeting.",
+   "quote": "ms. doyle will bring updated \"tools\" for aiding in this evaluation to the december coa"
+  },
+  {
+   "decision": "The COA Policies and Procedures will be reviewed by the Director with the COA Administrative Assistant, as a continuing work in progress.",
+   "quote": "the outdated coa policies and procedures will be reviewed by herself"
+  },
+  {
+   "decision": "The possible name change of the Eagle House Senior Center was deferred to another COA meeting.",
+   "quote": "t his topic will be discussed again at another coa meeting.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Board members were reminded to submit their subcommittee agendas and minutes in a timely manner.",
+   "quote": "board members were reminded about submitting their agendas and minutes in a timely manner"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA FY14 budget status",
+   "what_was_recorded": "Director reported the COA has used about 40.9% of its FY14 budget, leaving a remainder of approximately $62,106.00.",
+   "figures_as_printed": [
+    "40.9%",
+    "$62,106.00"
+   ],
+   "quote": "ms. noble reported that the coa has used approximately 40.9% of"
+  },
+  {
+   "topic": "Dietary Assistant salary",
+   "what_was_recorded": "Salary for the Dietary Assistant hired for the Meal Site 2 days per week will be paid from the Formula Grant; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "salary for this position will be paid out of the formula grant."
+  },
+  {
+   "topic": "Proposed Middle/High School project costs and tax impact",
+   "what_was_recorded": "School Building Committee presentation covered anticipated project costs and estimated tax impact on residents' homes; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "anticipated costs of the project along with the estimated tax impact on resident's homes."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened at 10:30AM",
+   "quote": "ms. conrad (chairperson) opened the meeting at 10:30am.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of October 8, 2013 meeting",
+   "resolution": "approved 9-0",
+   "quote": "ms. doyle moved to approve the minutes of the oct ober 8, 2013 coa meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report: finance",
+   "resolution": "informational, no action",
+   "quote": "ms. noble reported that the coa has used approximately 40.9% of",
+   "tags": [
+    "budget",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Director's Report: MCOA conference",
+   "resolution": "informational, no action",
+   "quote": "ms. noble reported on the mcoa (massachusetts councils on aging) conference",
+   "tags": [
+    "training"
+   ]
+  },
+  {
+   "topic": "MCOA Board Training",
+   "resolution": "discussed, no action",
+   "quote": "ms. conrad commented on the training saying that it",
+   "tags": [
+    "training"
+   ]
+  },
+  {
+   "topic": "Boston Post Cane",
+   "resolution": "informational, no action; notification to begin in December",
+   "quote": "according to town records, ms. marion pepin will be",
+   "tags": [
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Building Reuse Committee",
+   "resolution": "discussed, letter drafted, no action",
+   "quote": "of the lists of town depts. to potentially be moved to the passios building.",
+   "tags": [
+    "building reuse",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "COA Policies and Procedures",
+   "resolution": "continued, work in progress",
+   "quote": "the outdated coa policies and procedures will be reviewed by herself",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Recreation area behind Eagle House",
+   "resolution": "informational, no action",
+   "quote": "additions of picnic tables and benches.",
+   "tags": [
+    "eagle house",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Proposed Middle/High School building project presentation",
+   "resolution": "presented, board thanked presenters, no action",
+   "quote": "to display the plans and answer any questions",
+   "tags": [
+    "school building project",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Senior Center name change",
+   "resolution": "continued to another meeting",
+   "quote": "t his topic will be discussed again at another coa meeting.",
+   "tags": [
+    "senior center",
+    "name"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Joint meeting with COA Finance Committee",
+   "resolution": "11/4/2013 minutes approved; 10/8/2013 and 11/4/2013 minutes accepted",
+   "quote": "ms. o'dea moved to approve the 11/4/2013 coa financ e committee meeting.",
+   "tags": [
+    "finance committee",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation Committee",
+   "resolution": "10/8/2013 minutes accepted; evaluation tools to come in December",
+   "quote": "ms. seeley moved for the coa to accept the 10/8/2013 director's evaluation committee minutes.",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Subcommittee minutes and agenda submittals",
+   "resolution": "reminder given",
+   "quote": "board members were reminded about submitting their agendas and minutes in a timely manner",
+   "tags": [
+    "subcommittees"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "none",
+   "quote": "correspondence : none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General discussion",
+   "resolution": "discussed, no action",
+   "quote": "discussion ensued among the board members about the",
+   "tags": [
+    "food bank",
+    "bocce court"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 12:20PM",
+   "quote": "ms. seeley moved to adjourn the coa meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA Finance Committee minutes of 11/4/2013",
+   "where": "text",
+   "quote": "ms. o'dea moved to approve the 11/4/2013 coa financ e committee meeting."
+  },
+  {
+   "name": "Finance Committee minutes of 10/8/2013 and 11/4/2013",
+   "where": "text",
+   "quote": "ms. seeley moved for the coa to accept the 10/8/201 3 & 11/4/2013 finance committee minutes."
+  },
+  {
+   "name": "Director’s Evaluation Committee minutes of 10/8/2013",
+   "where": "text",
+   "quote": "ms. seeley moved for the coa to accept the 10/8/2013 director's evaluation committee minutes."
+  },
+  {
+   "name": "Letter to the Building Reuse Committee",
+   "where": "text",
+   "quote": "informing them of why there is no"
+  },
+  {
+   "name": "COA Policies and Procedures",
+   "where": "text",
+   "quote": "the outdated coa policies and procedures will be reviewed by herself"
+  },
+  {
+   "name": "Updated “tools” for the Director's evaluation",
+   "where": "text",
+   "quote": "ms. doyle will bring updated \"tools\" for aiding in this evaluation to the december coa"
+  },
+  {
+   "name": "Plans for the proposed Middle/High School Building Project",
+   "where": "text",
+   "quote": "to display the plans and answer any questions"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "eagle house",
+  "school building project",
+  "FY14 budget",
+  "Formula Grant",
+  "minutes approval",
+  "director evaluation",
+  "Boston Post Cane",
+  "bocce court",
+  "food bank",
+  "subcommittees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

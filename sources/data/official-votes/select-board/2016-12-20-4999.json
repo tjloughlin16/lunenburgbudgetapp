@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-12-20",
  "docid": "4999",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the Change of Manager to Jennifer Moore and the Change of Officers for Victory Distributors, LLC d/b/a Hannaford Supermarket & Pharmacy #8388",
+   "motion": "Approve the Change of Manager to Jennifer Moore and the Change of Officers as submitted for Victory Distributors, LLC d/b/a Hannaford Supermarket & Pharmacy #8388.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d: p. bertram to approve the change of manager to jennifer moore and the change of officers as submitted for victory distributors, llc d/b/a hannaford supermarket & pharmacy #8388 vote: all in favor"
+   "quote": "to approve the change of manager to jennifer moore and the change of officers as submitted for victory distributors, llc d/b/a hannaford supermarket & pharmacy #8388 vote: all in favor"
   },
   {
-   "motion": "Approve the license renewals for Whalom Gas, 1 Whalom Road, for a common victualer and automatic amusement devices",
+   "motion": "Approve the license renewals for Whalom Gas.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -28,31 +28,272 @@
    "quote": "motion: r. ebersole to approve the license renewals for whalom gas 2\"d: p. bertram vote: all in favor"
   },
   {
-   "motion": "Approve the proclamation dedicating the Mulpus Brook Multi-Purpose Bridge in memory of Peter Charpentier",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
+   "motion": "Approve the proclamation honoring Peter Charpentier and ratifying the Conservation Commission vote to dedicate the Mulpus Brook Multi-Purpose Bridge.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. ebersole motioned to approve the proclamation and ms. bertram seconded. vote: all in favor"
   },
   {
-   "motion": "Accept Ray Beal's resignation from Zoning Board of Appeals effective December 31, 2016",
-   "moved_by": "R. Ebersole",
+   "motion": "Accept Ray Beal's resignation from Zoning Board of Appeals effective December 31, 2016.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r.ebersole 2\"°: p. bertram to accept ray beal's resignation from zoning board of appeals effective december 31, 2016 vote: all in favor"
+   "procedural": false,
+   "quote": "to accept ray beal's resignation from zoning board of appeals effective december 31, 2016 vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:13 p.m.",
    "moved_by": "P. Bertram",
-   "seconded_by": "R. Ebersole",
+   "seconded_by": "REbersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:13 p.m. 2nd: rebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 8:13 p.m. 2nd: rebersole vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. Some degradation in text (particularly in the Fire Department paragraph, lines 3-4 of page 3), but votes are clearly recorded and readable.",
- "cost_usd": 0.0987315
+ "note": "Text is OCR (macOS Vision) of a scanned set of minutes; some lines are garbled, notably the Fire Department/SAFER paragraph on page 3, which is unreadable and not recorded. Votes are recorded only as 'All in Favor' with no numeric count. The approval of the November 8 minutes and the warrants were recorded without a motion. Public comment is recorded as none. Minor OCR artifacts (e.g. '2\"d', 'REbersole') are reproduced as printed.",
+ "cost_usd": 0.00585632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Acting Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and acting town manager adam burney"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: tom alonzo, clerk"
+  },
+  {
+   "name": "Jennifer Moore",
+   "role": "new manager on record, Victory Distributors, LLC d/b/a Hannaford Supermarket & Pharmacy #8388",
+   "status": "present",
+   "quote": "jennifer moore, the new manager on record presented for the request."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "312 Townsend Harbor Road, Lunenburg Snow Riders Club",
+   "status": "present",
+   "quote": "tom bertram, 312 townsend harbor road, presented a report on the lunenburg snow riders club trail work."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board approved and signed the November 8, 2016 minutes (no motion recorded).",
+   "quote": "the board approved and signed november 8, 2016 minutes."
+  },
+  {
+   "decision": "The Board decided to hold the Complete Streets / paving workshop on February 14.",
+   "quote": "the board decided to hold this workshop on february 14'h"
+  },
+  {
+   "decision": "Mr. Burney will contact Mr. Rodriquenz (MRPC) about Complete Streets assistance.",
+   "quote": "mr. burney will contact mr. rodriquenz."
+  },
+  {
+   "decision": "Mr. Toale suggested February 28 for review of the nine legal services REP responses; Mr. Ebersole suggested a 6:00 p.m. start and Mr. Burney suggested booking a school room for presentations.",
+   "quote": "he suggested february 28h for review of them. mr. ebersole suggested starting at 6:00 p.m."
+  },
+  {
+   "decision": "Mr. Ebersole asked the Board to review use of town property and set a policy; a suggestion was to review the full policy and procedures in March or April 2017.",
+   "quote": "mr. ebersole requested reviewing use of town property and setting a policy."
+  },
+  {
+   "decision": "Mr. Ebersole stated he wanted the Board to review the earth removal bylaw to address permitting and filling in.",
+   "quote": "mr. ebersole stated he wanted the board to review the earth removal bylaw to address permitting and filling in."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable and payroll/school construction warrants signed",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant, a voided Payroll Warrant, a reissued Payroll Warrant and a School Construction warrant.",
+   "figures_as_printed": [
+    "$163,183.75",
+    "-$939.46",
+    "$927.45",
+    "$437,259.62"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $163,183.75; a voided payroll warrant in the amount of -$939.46, a reissued payroll warrant in the amount of $927.45 and a school construction warrant in the amount of $437,259.62"
+  },
+  {
+   "topic": "2013 Recreational Trails Program grant",
+   "what_was_recorded": "The 2013 RTP grant, issued through DCR and funded by a federal gas tax, amounted to $24,259.",
+   "figures_as_printed": [
+    "$24,259"
+   ],
+   "quote": "he began with the 2013 recreational trails program (rtp) grant amounting to $24,259."
+  },
+  {
+   "topic": "2015 Recreational Trails Program grant",
+   "what_was_recorded": "The 2015 RTP grant is almost entirely dedicated to the Lane Property off Holman Street.",
+   "figures_as_printed": [
+    "$34,799"
+   ],
+   "quote": "the 2015 rtp grant in the amount of $34,799 is almost entirely dedicated to the lane property off holman street."
+  },
+  {
+   "topic": "Town Hall lead paint scraping, removal and painting (Capital Plan request)",
+   "what_was_recorded": "A Capital Plan request to scrape, remove lead paint and repair and paint Town Hall has an estimated cost stated by the Town Hall reuse discussion.",
+   "figures_as_printed": [
+    "$87,750"
+   ],
+   "quote": "the estimated cost is $87,750."
+  },
+  {
+   "topic": "MPO TIP funding available next year",
+   "what_was_recorded": "About $2 million will be available in next year's TIP because a project fell off the list; Chase Road was suggested as a candidate.",
+   "figures_as_printed": [
+    "$2 million"
+   ],
+   "quote": "there will be $2 million dollars available in next year's tip because a project has fallen off the list."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments: Hannaford change of manager and officers",
+   "resolution": "approved",
+   "quote": "victory distributors, llc d/b/a hannaford supermarket & pharmacy #8388 change of manager",
+   "tags": [
+    "liquor license",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Current business: license renewal, Whalom Gas",
+   "resolution": "approved",
+   "quote": "mr. burney presented a license renewal for whalom gas, 1 whalom road, for a common victualer and",
+   "tags": [
+    "license"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, action file; Complete Streets and paving list; legal services REP review; budget process",
+   "resolution": "approved minutes and warrants; workshop dates set",
+   "quote": "the board approved and signed november 8, 2016 minutes.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "paving",
+    "complete streets",
+    "legal services",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Update on 2013 and 2015 DCR Recreational Trails grants and request to dedicate Mulpus Brook bridge",
+   "resolution": "proclamation approved",
+   "quote": "tom bertram, 312 townsend harbor road, presented a report on the lunenburg snow riders club trail work.",
+   "tags": [
+    "trails",
+    "grant",
+    "proclamation",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "ms. luck reported the school visioning steering committee met last night.",
+   "tags": [
+    "committee reports",
+    "storm water",
+    "zoning",
+    "MPO",
+    "building reuse",
+    "library",
+    "cannabis"
+   ]
+  },
+  {
+   "topic": "Resignation of Ray Beal from Zoning Board of Appeals",
+   "resolution": "accepted",
+   "quote": "resignation: ray beal from zoning board of appeals effective december 31, 2016. (revd. 12/19/2016)",
+   "tags": [
+    "appointment",
+    "zoning board"
+   ]
+  },
+  {
+   "topic": "Public comment and other remarks (earth removal bylaw)",
+   "resolution": "no action",
+   "quote": "there was no public comment or announcements.",
+   "tags": [
+    "earth removal",
+    "bylaw",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:13 p.m.",
+   "quote": "to adjourn the meeting at 8:13 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proclamation honoring Peter Charpentier and ratifying the Conservation Commission vote to dedicate the Mulpus Brook Multi-Purpose Bridge (December 20, 2016)",
+   "where": "text",
+   "quote": "mr. toale read the proclamation aloud:"
+  },
+  {
+   "name": "Ray Beal's resignation letter from the Zoning Board of Appeals",
+   "where": "text",
+   "quote": "mr. toale read mr. beal's resignation letter aloud."
+  }
+ ],
+ "tags": [
+  "select board",
+  "licenses",
+  "proclamation",
+  "recreational trails grant",
+  "complete streets",
+  "storm water",
+  "legal services REP",
+  "building reuse",
+  "town hall repair",
+  "zoning board resignation",
+  "MPO transportation",
+  "earth removal bylaw",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

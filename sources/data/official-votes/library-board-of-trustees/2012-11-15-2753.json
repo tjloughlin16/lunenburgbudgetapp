@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2012-11-15",
  "docid": "2753",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "close the library on December 24th",
+   "motion": "Close the library on December 24.",
    "moved_by": "Lars Widstrand",
    "seconded_by": "Dick Mailloux",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "lars widstrand made a motion to close the library o n december 24 th , seconded by dick mailloux, unanimous approval by all in attendance",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "lars widstrand made a motion to close the library o n december 24 th , seconded by dick mailloux, unanimous approval by all in attendance."
   },
   {
-   "motion": "open the library on December 31st from 10 am to 2 pm",
+   "motion": "Open the library on December 31 from 10 am to 2 pm.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Kathy Murray",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "dick mailloux made a motion to open the library on december 31 st from 10 am to 2 pm, seconded by kathy murray, unanimous approval by all in attendance."
   },
   {
-   "motion": "end the meeting at 8:55 pm",
+   "motion": "End the meeting at 8:55 pm.",
    "moved_by": "Dick Mailloux",
    "seconded_by": "Robin Venezia",
    "outcome": "passed",
@@ -38,6 +37,219 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Approval of prior minutes was tabled, not voted on at this meeting.",
- "cost_usd": 0.0842895
+ "note": "Text extraction has spacing artifacts (e.g., 'Ma rtha', 'approv al', 'o n December'); quotes copied with those artifacts and spaces collapsed. 'Jeanne Rabo in' read as Jeanne Rabo. No Chair is named and no roles are printed for most attendees. The minutes record vote unanimity but no numeric count. Approval of minutes was tabled, not voted. Public comment was 'None'. No documents list or exhibits are printed.",
+ "cost_usd": 0.0054927199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robin Venezia",
+   "status": "present",
+   "role": "Board member (listed under Attending)",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, lars widstrand, ma rtha moore"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "role": "Secretary, Trustees of Lunenburg Public Library",
+   "quote": "respectfully submitted, lisa krowitz secretary, trustees of lunenburg public library"
+  },
+  {
+   "name": "Jeanne Rabo",
+   "status": "present",
+   "role": "Board member (listed under Attending)",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, lars widstrand, ma rtha moore"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "role": "Board member (listed under Attending)",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, lars widstrand, ma rtha moore"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "role": "Board member (listed under Attending)",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, lars widstrand, ma rtha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "role": "Board member (listed under Attending)",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, lars widstrand, ma rtha moore"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "role": "not stated (presented the Director's Report)",
+   "quote": "attending: robin venezia, lisa krowitz, jeanne rabo in, kathy murray, dick mailloux, lars widstrand, ma rtha moore"
+  },
+  {
+   "name": "Brian Laffond",
+   "status": "present",
+   "role": "Finance Committee Member",
+   "quote": "brian laffond (finance committee member)"
+  },
+  {
+   "name": "John Mara",
+   "status": "absent",
+   "role": "not stated",
+   "quote": "absent: john ma ra"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the meeting notes was tabled until the next meeting.",
+   "quote": "approval of meeting notes t abled until the next meeting."
+  },
+  {
+   "decision": "Martha will check with the staff to see whether anyone would be interested in participating in the Policy Subcommittee.",
+   "quote": "martha will check with the staff to see if anyone w ould be interested in participating in the policy s ubcommittee"
+  },
+  {
+   "decision": "Lars, Robin, Lisa, and Martha will review the policy for collection boxes and review website policies for completeness after the New Year.",
+   "quote": "lars, robin, lisa, and martha will review the follo wing after the new year:"
+  },
+  {
+   "decision": "Martha will work on obtaining quotes for painting the exterior of the LPL and fixing some broken siding.",
+   "quote": "martha will work on obtaining quot es for painting the exterior of the lpl and fixing some broken siding."
+  },
+  {
+   "decision": "Martha will contact Jean Proctor and the Lunenburg Turkey Hill Gardeners about the LPL Garden and Water feature.",
+   "quote": "martha will contact jean proctor and the lunenburg turkey hill gardeners about the lpl garden and wate r feature"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friends of the Library gift for carpet cleaning",
+   "what_was_recorded": "The Friends gave the library a sum to clean the carpets.",
+   "figures_as_printed": [
+    "$1358"
+   ],
+   "quote": "the friend's gave lpl $1358 to clean the carpets"
+  },
+  {
+   "topic": "Bulb fundraiser",
+   "what_was_recorded": "The Bulb fundraiser raised a sum for the library.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "the bulb fundraiser raised $1000"
+  },
+  {
+   "topic": "FY13 budget restoration and staffing/hours",
+   "what_was_recorded": "Staff and library hours were restored to FY12 levels after the FY13 budget was restored; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "financials: since the fy13 budget was restored the staff and library hours have been restored to the f y12 levels."
+  },
+  {
+   "topic": "Capital planning request",
+   "what_was_recorded": "Martha did not request capital planning spending this year and wants to research the library's capital needs; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "martha did not request spending this year for capital planning."
+  },
+  {
+   "topic": "Exterior painting and siding repair",
+   "what_was_recorded": "Martha will obtain quotes for painting the exterior and fixing broken siding; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "martha will work on obtaining quot es for painting the exterior of the lpl and fixing some broken siding."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "noted; called to order at 6:50 pm",
+   "quote": "meeting called to order at 6:50 pm",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "tabled until the next meeting",
+   "quote": "approval of minutes - approval of meeting notes t abled until the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted; staffing, facilities, programs, capital planning reported",
+   "quote": "new lillacs were planted by the lion's club",
+   "tags": [
+    "director",
+    "staffing",
+    "facilities",
+    "programs",
+    "technology",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Upcoming holidays closures",
+   "resolution": "approved closure Dec 24 and Dec 31 open 10 am to 2 pm",
+   "quote": "lars widstrand made a motion to close the library o n december 24 th , seconded by dick mailloux, unanimous approval by all in attendance.",
+   "tags": [
+    "holidays",
+    "hours"
+   ]
+  },
+  {
+   "topic": "Friends of the Library update",
+   "resolution": "noted",
+   "quote": "the friend's gave lpl $1358 to clean the carpets",
+   "tags": [
+    "friends of the library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Sub-Committee Meetings",
+   "resolution": "Martha to check for policy subcommittee volunteers; policy review after New Year",
+   "quote": "martha will check with the staff to see if anyone w ould be interested in participating in the policy s ubcommittee",
+   "tags": [
+    "policy",
+    "subcommittee"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "Martha to contact Jean Proctor and Turkey Hill Gardeners about garden and water feature",
+   "quote": "martha will contact jean proctor and the lunenburg turkey hill gardeners about the lpl garden and wate r feature",
+   "tags": [
+    "garden",
+    "old business"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:55 pm",
+   "quote": "dick mailloux made a motion to end the meeting at 8 :55 pm; seconded by robin venezia; unanimous approv al by all in attendance.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "library",
+  "trustees",
+  "director's report",
+  "staffing",
+  "holiday closures",
+  "friends of the library",
+  "fundraising",
+  "facilities",
+  "capital planning",
+  "policy subcommittee",
+  "website",
+  "garden"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-02-20",
  "docid": "2551",
@@ -12,6 +12,127 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe decisions the Commission reached (e.g., \"The Commission has decided that the demolition delay by-law will apply\") and findings they made, but do not record formal motions, vote counts, or outcomes such as \"so voted,\" \"unanimously approved,\" or \"carried/failed.\"",
- "cost_usd": 0.08140549999999999
+ "note": "OCR text (macOS Vision) with stray header artifacts (\"RL\", \"DIM Al\"). No motions or votes recorded, including no vote to approve prior minutes or to adjourn. No public comment section content and no dollar figures. Applicants are unnamed (\"he\"). Call to order at 6:00PM is recorded; the next meeting line is also recorded.",
+ "cost_usd": 0.0029468199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "members present: becky lantry, richard mcgrath, amory phelps, damon mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission decided that the demolition delay by-law will apply to the barn at 133 Leominster-Shirley Road.",
+   "quote": "the commission has decided that the demolition delay by-law will apply to this"
+  },
+  {
+   "decision": "Pending more information on the move, the Commission will consider releasing the demolition delay before the six-month period for the barn at 133 Leominster-Shirley Road.",
+   "quote": "the commission will entertain the release of the demolition delay before the six month"
+  },
+  {
+   "decision": "Becky will contact the barn applicant asking him to attend the next meeting to provide more information about the planned move.",
+   "quote": "becky will contact the applicant asking that he attend our"
+  },
+  {
+   "decision": "The Commission found the demolition request for 305 Leominster-Shirley Road incomplete and deferred a decision.",
+   "quote": "the commission has found that the demolition request is incomplete and does not contain"
+  },
+  {
+   "decision": "Becky will ask the 305 Leominster-Shirley Road applicant to provide photos and approximate construction dates at the next meeting.",
+   "quote": "becky will ask that the applicant provide that information to our next meeting for"
+  },
+  {
+   "decision": "Damon will contact the building inspector to work out a way to streamline demolition requests between the building department and the Historic Commission.",
+   "quote": "he will contact the building inspector and work out"
+  },
+  {
+   "decision": "Next meeting set for March 4, 2014 at 6:00pm in the Ritter Building.",
+   "quote": "next meeting scheduled for march 4, 2014 @ 6:00pm in the ritter building"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Demolition Request for Barn at 133 Leominster-Shirley Road",
+   "resolution": "no vote; demolition delay by-law applies; applicant asked to attend next meeting",
+   "quote": "the applicant has submitted a letter stating that he plans to dismantle the barn",
+   "tags": [
+    "demolition delay",
+    "barn",
+    "relocation"
+   ]
+  },
+  {
+   "topic": "Demolition Request for house and out buildings at 305 Leominster-Shirley Road",
+   "resolution": "found incomplete; applicant to supply information at next meeting",
+   "quote": "the commission has found that the demolition request is incomplete and does not contain",
+   "tags": [
+    "demolition request",
+    "incomplete application"
+   ]
+  },
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "Damon to contact building inspector on streamlining process",
+   "quote": "damon noted a break down in communication between the building department and the historic",
+   "tags": [
+    "building department",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Meeting Adjournment",
+   "resolution": "adjourned at 7:00pm; no vote recorded",
+   "quote": "meeting adjourned @ 7:00pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Applicant's letter regarding plans to dismantle and relocate the barn at 133 Leominster-Shirley Road (undated)",
+   "where": "text",
+   "quote": "the applicant has submitted a letter stating that he plans to dismantle the barn"
+  },
+  {
+   "name": "Demolition delay by-law",
+   "where": "text",
+   "quote": "the commission has decided that the demolition delay by-law will apply to this"
+  }
+ ],
+ "tags": [
+  "demolition delay",
+  "demolition requests",
+  "barn",
+  "house",
+  "Leominster-Shirley Road",
+  "building department",
+  "by-law"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

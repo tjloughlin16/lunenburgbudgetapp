@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2016-03-07",
  "docid": "950",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "The variance for 55 Cove Road's septic system was approved",
+   "motion": "Approve the requested variance reducing the groundwater offset from five feet to four feet so the system can be a gravity system.",
    "moved_by": "Auge",
    "seconded_by": "Jewell",
    "outcome": "passed",
@@ -21,6 +21,148 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes list \"MINUTES APPROVED:\" and end with \"Meeting adjourned at 7: 50 pm\" but neither action has a recorded motion, moved-by, seconded-by, or vote outcome. Only the 55 Cove Road variance has a formal motion and vote recorded.",
- "cost_usd": 0.0859875
+ "note": "OCR text from macOS Vision of a scanned page; some line breaks and punctuation are imperfect (e.g., \"7: 50 pm\"). The minutes list \"MINUTES APPROVED:\" with no motion or result recorded, and the adjournment has no recorded motion or vote, so neither is recorded as a vote. The variance paragraph does not print the property address; it follows the 55 COVE ROAD entry. The Administrative Assistant and Chairman are referred to by title only, so they are not listed as attendees. Attendance is not recorded as absences.",
+ "cost_usd": 0.00308342,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "the board of health met at 7:00 pm at the ritter memorial building present: george emond, perry jewell, dave passios and jim auge"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "the board of health met at 7:00 pm at the ritter memorial building present: george emond, perry jewell, dave passios and jim auge"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "the board of health met at 7:00 pm at the ritter memorial building present: george emond, perry jewell, dave passios and jim auge"
+  },
+  {
+   "name": "Jim Auge",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member jim auge reported that there has not been a meeting since his last report."
+  },
+  {
+   "name": "Kevin Richie",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "kevin richie met with the board of behalf of the owner. chris kimball, owner of the property was also"
+  },
+  {
+   "name": "Chris Kimball",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "chris kimball, owner of the property was also present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The septic repair loan application will be reviewed at the next meeting together with any others that apply.",
+   "quote": "chairman advised that the application will be reviewed at the next meeting together with any others that apply."
+  },
+  {
+   "decision": "Staff will contact the Lunenburg Senior Center to have the loan program added to its newsletter.",
+   "quote": "contact will be made to the lunenburg senior center for addition to their newsletter."
+  },
+  {
+   "decision": "Dave Passios will provide updated information for the newspaper about the septic repair loan program.",
+   "quote": "mr. passios will provide updated information for the newspaper."
+  },
+  {
+   "decision": "Jim Auge will continue to keep the Board updated on the Stormwater Task Force.",
+   "quote": "mr. auge will continue to keep the board updated."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Septic repair loan program",
+   "what_was_recorded": "One applicant to date for the septic repair loan program; the application was available for review. No dollar figures are printed.",
+   "quote": "administrative assistant advised that there is one applicant to date for the loan program.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 9 pleasant street 672 northfield road 19 mass avenue",
+   "tags": [
+    "title 5",
+    "septic",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed: 516 nw townsend road, lot 1 508 nw townsend road, lot 2 272 west townsend road",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Groundwater offset variance (Kevin Richie for owner Chris Kimball)",
+   "resolution": "variance approved",
+   "quote": "after discussion and on motion by auge and second by jewell, the requested variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "groundwater",
+    "septic",
+    "gravity system",
+    "well to public water"
+   ]
+  },
+  {
+   "topic": "Stormwater Task Force",
+   "resolution": "no action; report received",
+   "quote": "board member jim auge reported that there has not been a meeting since his last report.",
+   "tags": [
+    "stormwater",
+    "regionalization"
+   ]
+  },
+  {
+   "topic": "Septic repair loan program",
+   "resolution": "continued to next meeting; outreach discussed",
+   "quote": "chairman advised that the application will be reviewed at the next meeting together with any others that apply.",
+   "tags": [
+    "loan program",
+    "septic repair",
+    "publicity"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Septic repair loan program application (one applicant to date)",
+   "where": "text",
+   "quote": "there is one applicant to date for the loan program. the application was available for review."
+  }
+ ],
+ "tags": [
+  "septic",
+  "title 5",
+  "variance",
+  "groundwater",
+  "stormwater",
+  "loan program",
+  "public notice",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

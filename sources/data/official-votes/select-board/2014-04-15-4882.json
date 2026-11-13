@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2014-04-15",
  "docid": "4882",
@@ -12,49 +12,388 @@
  },
  "votes": [
   {
-   "motion": "Approve the voluntary toll request by Lunenburg Boys & Girls Club for June 14, 2014",
+   "motion": "Approve the request for a Voluntary Toll by the Lunenburg Boys & Girls Club on 6/14/2014 in the center of Town and at Electric Avenue & Whalom Road.",
    "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the request for the voluntary toll by the lunenburg boys & girls club on 6/14/2014 in the center of town and at the intersection of electric avenue & whalom road. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "ms. bertram moved to approve the request for the voluntary toll by the lunenburg boys & girls club on 6/14/2014 in the center of town",
+   "seconded_by": "Mr. Toale"
   },
   {
-   "motion": "Approve the transfer of liquor license from RNDC, Inc. to KJ Waterfront, Inc. at 84 Lakefront Avenue",
+   "motion": "Approve the request to transfer the Liquor License from RNDC, Inc. to KJ Waterfront, Inc., located at 84 Lakefront Avenue.",
    "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Toale",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve the request for the voluntary toll by the lunenburg boys & girls club on 6/14/2014 in the center of town and at the intersection of electric avenue & whalom road. mr. toale seconded.",
-   "quote_taken_from_text": true
+   "quote": "ms. bertram moved to approve the request to transfer the liquor license from rndc, inc. to kj waterfront, inc., located at 84 lakefront avenue. mr. toale seconded.",
+   "seconded_by": "Mr. Toale"
   },
   {
-   "motion": "Continue the public hearing on Fitchburg Gas & Electric pole location until May 13, 2014 at 7:15 PM",
+   "motion": "Continue the Public Hearing on the Fitchburg Gas & Electric (Unitil) pole location petition until 5/13/2014 at 7:15PM.",
    "moved_by": "Mr. Ebersole",
-   "seconded_by": "Ms. Bertram",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mr. ebersole moved to continue this public hearing until 5/13/2014, at 7:15pm, for further consideration at that time. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed"
-  },
-  {
-   "motion": "Appoint Dave Matthews to the Building Reuse Committee as a Community at Large Member",
-   "moved_by": "Mr. Toale",
-   "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. toale moved that dave matthews be appointed by the bos to serve on the building reuse committee as a community at large member. ms. bertram seconded. discussion: mr. ebersole requested that it be n",
-   "quote_taken_from_text": true
+   "quote": "mr. ebersole moved to continue this public hearing until 5/13/2014, at 7:15pm, for further consideration at that time. ms. bertram seconded.",
+   "seconded_by": "Ms. Bertram"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Appoint Dave Matthews to serve on the Building Reuse Committee as a Community at Large Member.",
+   "moved_by": "Mr. Toale",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "mr. toale moved that dave matthews be appointed by the bos to serve on the building reuse committee as a community at large member. ms. bertram seconded.",
+   "seconded_by": "Ms. Bertram"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Ebersole",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "ms. bertram moved to adjourn the meeting. mr. ebersole seconded. on vote, motion carried, 4 in favor, 0 opposed."
+   "quote": "adjournment: being no further business ms. bertram moved to adjourn the meeting. mr. ebersole seconded.",
+   "seconded_by": "Mr. Ebersole"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source noted at head of minutes. All five votes recorded with outcomes. Chairperson Alonzo present but never moved or seconded a motion; Board had four voting members present (Matthews absent).",
- "cost_usd": 0.029176699999999996
+ "note": "Text is a macOS Vision OCR of a scanned minutes page; some words are garbled and quotes were copied as printed, including apparent typos (e.g., '4/29/2104', 'Mir.', 'Aaministrative', 'to for permission'). The minutes list the 4/8/2014 minutes and warrant 4/15/2014 (W#54-16) without a recorded approval vote. Agenda numbering skips items 3-4 and includes a stray fragment ('support this Warrant Article at Annual Town Meeting'). Motions on the liquor license and toll are recorded with 4-0 counts; the Unitil hearing continuance and Matthews appointment also show 4-0.",
+ "cost_usd": 0.007120369999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "with chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "with chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with chairperson tom alonzo, vice chair paula bertram, jamie toale, robert ebersole, & town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "absent",
+   "quote": "absent was dave matthews"
+  },
+  {
+   "name": "Kenneth Ricker",
+   "role": "applicant, Embers Pizzeria",
+   "status": "present",
+   "quote": "kenneth ricker came before the board to request the liquor license transfer."
+  },
+  {
+   "name": "John Baker",
+   "role": "public comment, 53 Chase Rd.",
+   "status": "present",
+   "quote": "john baker, 53 chase rd., spoke in support of this request and complimented mr. ricker on his other establishments."
+  },
+  {
+   "name": "Jim Dee",
+   "role": "Representing Unitil",
+   "status": "present",
+   "quote": "jim dee, representing unitil came before the board to for permission to install 6 sole owned poles"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Sewer Commissioner, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane spoke to commend the town manager on the idea of the land use director"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 19 (Administrative Reorganization, Land Use Departments) to remain on the 4/22/2014 BOS agenda, with a Public Hearing to be scheduled for 4/29/2014.",
+   "quote": "it will remain on the 4/22/2014 bos agenda and then a public hearing for this item will be scheduled for 4/29/2014."
+  },
+  {
+   "decision": "Gravel Removal Bylaw to remain on the existing list of outstanding Action File issues.",
+   "quote": "mr. ebersole requested that the gravel removal bylaw remain on the existing list of outstanding issues to be"
+  },
+  {
+   "decision": "Lake Shirley Dam Inspections update to be placed on the 4/29/2014 BOS agenda.",
+   "quote": "ms. speidel replied that this item will be on the 4/29/2104 bos agenda."
+  },
+  {
+   "decision": "Town Manager to forward the MassDOT email reply on the Chase Rd. question to Ms. Bertram.",
+   "quote": "ms. speidel replied that she has a reply via email from massdot and will forward it to ms. bertram."
+  },
+  {
+   "decision": "Chair requested that the BOS send a letter to the State Delegation on the Summer St. design money.",
+   "quote": "mr. alonzo requested that the bos send a letter to the state delegation concerning this issue."
+  },
+  {
+   "decision": "Town Manager to follow up on whether a pole was installed on Pleasant St. street without BOS approval.",
+   "quote": "she will follow up on this issue."
+  },
+  {
+   "decision": "Board members reminded to complete Town Manager evaluation forms and schedule a discussion with the Town Manager, ideally after Annual Town Meeting and before the Town Election.",
+   "quote": "mr. alonzo reminded board members to complete their town manager evaluation forms and to schedule an appointment"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY14 Budget Amendments (Article 9) - Snow Removal deficit",
+   "what_was_recorded": "Town Manager reported that snow removal invoices are all processed, the deficit now stands at $229,000, and the projected deficit is $8715.",
+   "figures_as_printed": [
+    "$229,000",
+    "$8715"
+   ],
+   "quote": "all invoices have been processed relative to the snow removal operation and the deficit now is $229,000 and the projected deficit is $8715."
+  },
+  {
+   "topic": "Warrant for 4/15/2014",
+   "what_was_recorded": "The warrant W#54-16 dated 4/15/2014 was listed under Minutes/Warrants/Action File with a total amount.",
+   "figures_as_printed": [
+    "$362,370.60"
+   ],
+   "quote": "warrants: 4/15/2014 w#54-16 $362,370.60"
+  },
+  {
+   "topic": "Summer St. project design money (MassDOT / State)",
+   "what_was_recorded": "Ms. Bertram reported that if the state design money is not released, the cost to Lunenburg would be approximately $333,000.",
+   "figures_as_printed": [
+    "$333,000"
+   ],
+   "quote": "is not released the cost to lunenburg will be approximately $333,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Robert Ebersole",
+   "topic": "Support for Planning Board on solar farm pole placement",
+   "quote": "mr. ebersole spoke in support of the planning board and their efforts to clarify the pleasant st. & west st. solar farm's"
+  },
+  {
+   "speaker": "John Baker",
+   "stated_role": "53 Chase Rd.",
+   "topic": "Support for liquor license transfer",
+   "quote": "john baker, 53 chase rd., spoke in support of this request and complimented mr. ricker on his other establishments."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Commend Land Use Director idea; Sewer Commission link",
+   "quote": "carl luck, 50 sunset lane spoke to commend the town manager on the idea of the land use director"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no action",
+   "quote": "mr. ebersole spoke in support of the planning board and their efforts to clarify the pleasant st. & west st. solar farm's",
+   "tags": [
+    "public comment",
+    "solar farm",
+    "poles"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced that representative jennifer benson will be holding district office hours on 5/13/2014 from 5:30pm-6:30pm at",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Voluntary toll request, Lunenburg Boys & Girls Club",
+   "resolution": "approved 4-0",
+   "quote": "ms. bertram moved to approve the request for the voluntary toll by the lunenburg boys & girls club on 6/14/2014 in the center of town",
+   "tags": [
+    "permits",
+    "special event",
+    "toll"
+   ]
+  },
+  {
+   "topic": "Liquor license transfer hearing, RNDC to KJ Waterfront (Embers Pizzeria)",
+   "resolution": "approved 4-0",
+   "quote": "ms. bertram moved to approve the request to transfer the liquor license from rndc, inc. to kj waterfront, inc., located at 84 lakefront avenue. mr. toale seconded.",
+   "tags": [
+    "liquor license",
+    "public hearing",
+    "restaurant",
+    "outdoor seating"
+   ]
+  },
+  {
+   "topic": "Public hearing, Unitil pole location, Chase Road / West Townsend Road",
+   "resolution": "continued to 5/13/2014 at 7:15PM",
+   "quote": "mr. ebersole moved to continue this public hearing until 5/13/2014, at 7:15pm, for further consideration at that time.",
+   "tags": [
+    "public hearing",
+    "utility poles",
+    "solar farm",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Warrant articles for Annual Town Meeting (Article 9, Article 19)",
+   "resolution": "discussed; no vote; Article 19 public hearing set for 4/29/2014",
+   "quote": "ms. speidel reviewed a draft document regarding the",
+   "tags": [
+    "warrant articles",
+    "Annual Town Meeting",
+    "budget amendment",
+    "snow removal",
+    "land use director",
+    "administrative reorganization"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and Action File issues",
+   "resolution": "no action; Action File items carried forward",
+   "quote": "action file issues: mr. ebersole requested that the gravel removal bylaw remain on the existing list of outstanding issues to be",
+   "tags": [
+    "minutes",
+    "warrants",
+    "action file",
+    "gravel removal bylaw",
+    "Lake Shirley Dam"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "discussed; no vote; letter to State Delegation requested",
+   "quote": "mr. alonzo requested that the bos send a letter to the state delegation concerning this issue.",
+   "tags": [
+    "committee reports",
+    "MassDOT",
+    "Summer St.",
+    "Planning Board",
+    "Elmwood Rd",
+    "earth removal",
+    "school advisory committee"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "no report",
+   "quote": "6. town manager reports or department reports: no report",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Appointment of Dave Matthews to Building Reuse Committee",
+   "resolution": "appointed 4-0",
+   "quote": "mr. toale moved that dave matthews be appointed by the bos to serve on the building reuse committee as a community at large member. ms. bertram seconded.",
+   "tags": [
+    "appointments",
+    "Building Reuse Committee"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session: none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Public comment (close)",
+   "resolution": "no action",
+   "quote": "carl luck, 50 sunset lane spoke to commend the town manager on the idea of the land use director",
+   "tags": [
+    "public comment",
+    "land use director",
+    "sewer commission"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:26PM, 4-0",
+   "quote": "meeting adjourned at 8:26pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Public Hearing - Request to Transfer Liquor License from RNDC, Inc. to KJ Waterfront, Inc., 84 Lakefront Avenue",
+   "where": "text",
+   "quote": "mr. alonzo read into record the notice of public hearing for the request to transfer the liquor license from rndc, inc. to kj waterfront, inc., 84"
+  },
+  {
+   "name": "Notice of Public Hearing - Petition from Fitchburg Gas & Electric (Unitil), Pole Location, Chase Road/West Townsend Rd.",
+   "where": "text",
+   "quote": "mr alonzo read into record the notice of public hearing for the petition from fitchburg gas & electric (unitil), pole location, chase road/west townsend rd."
+  },
+  {
+   "name": "Draft Administrative Organization Plan (Land Use Departments)",
+   "where": "text",
+   "quote": "ms. speidel reviewed a draft document regarding the"
+  },
+  {
+   "name": "Article 9 - FY14 Budget Amendments (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 9- fy14 budget amendments: ms. speidel mentioned that she is not ready for the board to vote on this"
+  },
+  {
+   "name": "Article 19 - Administrative Reorganization, Land Use Departments (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 19 - administrative reorganization, land use departments: ms. speidel reviewed a draft document"
+  },
+  {
+   "name": "Warrant W#54-16, 4/15/2014",
+   "where": "text",
+   "quote": "warrants: 4/15/2014 w#54-16 $362,370.60"
+  },
+  {
+   "name": "Permit issued for Chase Rd. and Pleasant St. solar field properties",
+   "where": "text",
+   "quote": "the permit issued for both the chase rd. property & the pleasant st. property specifically states that there will"
+  },
+  {
+   "name": "Marijuana Dispensary Bylaw warrant article",
+   "where": "text",
+   "quote": "they closed the public hearing regarding the warrant article concerning the marijuana dispensary bylaw"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "public hearing",
+  "utility poles",
+  "solar farm",
+  "Unitil",
+  "warrant articles",
+  "Annual Town Meeting",
+  "budget amendment",
+  "snow removal deficit",
+  "appointments",
+  "MassDOT",
+  "Summer St.",
+  "Town Manager",
+  "land use director",
+  "Planning Board",
+  "Building Reuse Committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

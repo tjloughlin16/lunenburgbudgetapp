@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2009-12-17",
  "docid": "2722",
@@ -12,39 +12,248 @@
  },
  "votes": [
   {
-   "motion": "Approve November 19, 2009 minutes as amended",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "november 19, 2009 minutes approved as amended.",
+   "motion": "Approve the November 19, 2009 minutes as amended.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "november 19, 2009 minutes approved as amended."
   },
   {
-   "motion": "Accept December 9, 2009 minutes as written",
-   "outcome": "accepted",
-   "procedural": true,
-   "quote": "december 9, 2009 minutes accepted as written.",
+   "motion": "Accept the December 9, 2009 minutes as written.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "december 9, 2009 minutes accepted as written."
   },
   {
-   "motion": "Use up to $1,000 out of All-Purpose Trust Funds for staff travel mileage",
+   "motion": "Use up to $1,000 out of All-Purpose Trust Funds for staff travel mileage.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made and passed to use up to $1,000 out of all-purpose trust funds for staff travel mileage.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "motion made and passed to use up to $1,000 out of all-purpose trust funds for staff travel mileage."
   },
   {
-   "motion": "Accept Operational Safety Policy as amended",
+   "motion": "Accept the Operational Safety Policy as amended.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made and passed to accept policy as amended.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "motion made and passed to accept policy as amended."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0860975
+ "note": "Minutes are typed text, not a scan. Attendance is a single line; no roles are printed for trustees, and the minutes name staff (Kate, Sherri, Karen, Sherry, Amy) without saying whether 'Amy' is the trustee Amy Sadkin, so no roles were assigned. Movers and seconders are not printed for any motion. The adjournment at 8:08 pm is recorded without a motion, so it is not listed as a vote. Only the attendance list is treated as people taking part; Sandy Mailloux, Gordon Wetmore, Laurie and staff named in passing are not listed as attendees.",
+ "cost_usd": 0.00519242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Mara",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  },
+  {
+   "name": "Mike Kelly",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  },
+  {
+   "name": "Len Smetana",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  },
+  {
+   "name": "Amy Sadkin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  },
+  {
+   "name": "Noelle Bodkin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  },
+  {
+   "name": "Deb Chapdelaine",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary, Lunenburg Public Library Board of Trustees",
+   "status": "present",
+   "quote": "attending: john mara, mike kelly, len smetana, amy sadkin, noelle bodkin, lisa krowitz, deb chapdelaine, jeanne raboin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "LPL will keep two staff members in attendance during all open hours, per the insurance carrier's position that no fixed staffing number is required.",
+   "quote": "lpl will always have two (2) staff members in attendance during open hours."
+  },
+  {
+   "decision": "Kate and Sherri will each work 5 additional hours a week until the new Technology/Reference position is hired.",
+   "quote": "kate and sherri will each work 5 additional hours until new position hired."
+  },
+  {
+   "decision": "Policy Sub-group to meet in January 2010 (reported by Noelle; no action recorded).",
+   "quote": "noelle tells board that the policy sub-group will be meeting january 2010."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY10 library budget cut",
+   "what_was_recorded": "The FY10 library budget is set at $303,099, an 8.2% cut of $27,163 from the original appropriation; line-item cuts are on the November budget sheet.",
+   "figures_as_printed": [
+    "$303,099",
+    "8.2%",
+    "$27, 163"
+   ],
+   "quote": "new budget for fy10 is $303,099 representing an 8.2% cut ($27, 163) from original appropriation."
+  },
+  {
+   "topic": "Staff travel mileage from trust funds",
+   "what_was_recorded": "The board approved using up to $1,000 from All-Purpose Trust Funds for staff travel mileage.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "motion made and passed to use up to $1,000 out of all-purpose trust funds for staff travel mileage."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Staff travel mileage paid from All-Purpose Trust Funds",
+   "amount_as_printed": "$1,000",
+   "outcome": "approved (motion passed)",
+   "quote": "motion made and passed to use up to $1,000 out of all-purpose trust funds for staff travel mileage."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Sandy Mailloux",
+   "stated_role": "not stated",
+   "topic": "thank you note read aloud by John",
+   "quote": "john read a thank you note from sandy mailloux."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; thank you note read",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "john read a thank you note from sandy mailloux."
+  },
+  {
+   "topic": "New Business: minutes approval",
+   "resolution": "approved (Nov 19 as amended; Dec 9 as written)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "november 19, 2009 minutes approved as amended."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "budget",
+    "staffing",
+    "technology",
+    "programming",
+    "facilities"
+   ],
+   "quote": "director's report (please see full report for details):"
+  },
+  {
+   "topic": "Staff travel mileage",
+   "resolution": "approved $1,000 from trust funds",
+   "tags": [
+    "trust funds",
+    "travel"
+   ],
+   "quote": "motion made and passed to use up to $1,000 out of all-purpose trust funds for staff travel mileage."
+  },
+  {
+   "topic": "Policy Review: Operational Safety Policy",
+   "resolution": "accepted as amended",
+   "tags": [
+    "policy",
+    "safety"
+   ],
+   "quote": "motion made and passed to accept policy as amended."
+  },
+  {
+   "topic": "Staff Recognition",
+   "resolution": "no action; gifts delivered",
+   "tags": [
+    "staff"
+   ],
+   "quote": "staff recognition gifts were delivered."
+  },
+  {
+   "topic": "Other: farewell to Mike Kelly",
+   "resolution": "no action; accolades and thanks",
+   "tags": [
+    "trustees",
+    "resignation"
+   ],
+   "quote": "accolades, thanks and a very fond farewell to mike kelly, and his wonderful wife, laurie, as he resigns from the lpl board of trustees to head to south carolina."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY10 Library Expense Analysis Nov-09 MONTH #5 (budget sheet)",
+   "where": "text",
+   "quote": "please see budget sheet fy10 library expense analysis nov-09 month #5 for detailed line item cuts."
+  },
+  {
+   "name": "Director's Report (full report)",
+   "where": "text",
+   "quote": "director's report (please see full report for details):"
+  },
+  {
+   "name": "Computer Network report",
+   "where": "text",
+   "quote": "please see computer network report for details."
+  },
+  {
+   "name": "Thank you note from Sandy Mailloux",
+   "where": "text",
+   "quote": "john read a thank you note from sandy mailloux."
+  },
+  {
+   "name": "Operational Safety Policy",
+   "where": "text",
+   "quote": "operational safety policy: motion made and passed to accept policy as amended."
+  }
+ ],
+ "tags": [
+  "library",
+  "FY10 budget",
+  "budget cut",
+  "trust funds",
+  "staffing",
+  "policy",
+  "trustee resignation",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "please see budget sheet fy10 library expense analysis nov-09 month #5"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-07-09",
  "docid": "4850",
@@ -12,39 +12,365 @@
  },
  "votes": [
   {
-   "motion": "Approve request for Boot Drive for Lunenburg Field Hockey team on July 27, 2013 from 9 a.m. to 1 p.m. in center of Town",
-   "moved_by": "Mr. Ebersole",
-   "seconded_by": "Mr. Toale",
+   "motion": "Approve the request for the Boot Drive for the Lunenburg Field Hockey team on July 27, 2013 from 9 a.m. - 1 p.m. in the center of Town.",
+   "moved_by": "Robert Ebersole",
+   "seconded_by": "Jamíe Toale",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved to approve the request for the boot drive for the lunenburg field hockey team on july 27, 2013 from 9 a.m. - 1 p.m. in the center of town. mr. toale seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. ebersole moved to approve the request for the boot drive for the lunenburg field hockey team on july 27, 2013 from 9 a.m. - 1 p.m. in the center of town. mr. toale seconded."
   },
   {
-   "motion": "Approve amendment to Household Hazardous Waste IMA to include membership for Town of Ashby",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Approve the amendment to the Household Hazardous Waste IMA to include membership for the Town of Ashby.",
+   "moved_by": "David Matthews",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved to approve the amendment to the household hazardous waste ima to include membership for the town of ashby. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "mr. matthews moved to approve the amendment to the household hazardous waste ima to include membership for the town of ashby."
   },
   {
-   "motion": "Approve Disclosure, Determination and Consent pursuant to MA Rules of Professional Conduct for dual representation related to IMA for resale of net metering credits to Town of Townsend",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. Matthews",
+   "motion": "Approve Disclosure, Determination and Consent pursuant to MA Rules of Professional Conduct for dual representation related to IMA for the resale of net metering credits to the Town of Townsend.",
+   "moved_by": "Paula Bertram",
+   "seconded_by": "David Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram moved to approve disclosure, determination and consent pursuant to ma rules of professional conduct for dual representation related to ima for the resale of net metering credits to the town of townsend. mr. matthews seconded. on vote, motion carried, 5 in favor, 0 opposed"
+   "quote": "ms. bertram moved to approve disclosure, determination and consent pursuant to ma rules of professional conduct for dual representation"
   },
   {
-   "motion": "Enter into Executive Session to discuss Police Union Contract",
-   "moved_by": "Mr. Matthews",
-   "seconded_by": "Ms. Bertram",
+   "motion": "Enter into Executive Session to discuss the Police Union Contract under M.G.L. Chapter 30A, Section 21A(9), not returning to open session.",
+   "moved_by": "David Matthews",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "mr. matthews moved to enter into executive session. ms. bertram seconded. on vote, motion carried, 5 in favor, o opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Machine-read OCR copy. One typo in the final vote where \"O\" (letter) appears instead of \"0\" (zero), reproduced verbatim. Two items were tabled (Common Victualler's License for Kabob-E-Licious, NuGen PPA/PILOT, EPG Solar PPA/PILOT) but were not voted on—they were postponed without a recorded motion or vote.",
- "cost_usd": 0.09646750000000001
+ "note": "OCR text (macOS Vision) with visible errors (e.g., \"Mir.\" for Mr., \"Mis.\" for Mrs., \"O opposed\"); the warrant table is jumbled so warrant numbers cannot be reliably matched to amounts; some lines are garbled (crosswalk discussion). Member roles are not printed beyond names. No adjournment, minutes-approval, or Town Manager transfer votes appear in the text. Page 6 ends the executive session entry.",
+ "cost_usd": 0.00921102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "alonzo, paula bertram, david matthews, robert ebersole, jamíe toale and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "alonzo, paula bertram, david matthews, robert ebersole, jamíe toale and town manager kerry speidel."
+  },
+  {
+   "name": "David Matthews",
+   "status": "present",
+   "quote": "alonzo, paula bertram, david matthews, robert ebersole, jamíe toale and town manager kerry speidel."
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "alonzo, paula bertram, david matthews, robert ebersole, jamíe toale and town manager kerry speidel."
+  },
+  {
+   "name": "Jamíe Toale",
+   "status": "present",
+   "quote": "alonzo, paula bertram, david matthews, robert ebersole, jamíe toale and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "alonzo, paula bertram, david matthews, robert ebersole, jamíe toale and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Chair of the Green Communities Task Force",
+   "status": "present",
+   "quote": "dave blatt, chair of the green communities task force came before the bos to speak on the activities of this committee."
+  },
+  {
+   "name": "Marybeth Holtz",
+   "role": "representing the Lunenburg Field Hockey Team",
+   "status": "present",
+   "quote": "marybeth holtz and tina spadafore representing the lunenburg field hockey team spoke to the bos concerning the need to raise money for new"
+  },
+  {
+   "name": "Tina Spadafore",
+   "role": "representing the Lunenburg Field Hockey Team",
+   "status": "present",
+   "quote": "marybeth holtz and tina spadafore representing the lunenburg field hockey team spoke to the bos concerning the need to raise money for new"
+  },
+  {
+   "name": "Tarrnum Williams d/b/a Kabob-E-Licious",
+   "role": "applicant for Common Victualler's License",
+   "status": "absent",
+   "quote": "the applicant from kabob-e-licious was not present this evening."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Request for Common Victualler's License from Tarrnum Williams d/b/a Kabob-E-Licious tabled until 7/16/13 BOS meeting, with the applicant asked to attend.",
+   "quote": "request tabled until 7/16/13 bos meeting."
+  },
+  {
+   "decision": "Approve PPA and/or PILOT Agreement with NuGen (formerly Mass PV1 project) tabled until 7/16/13 BOS meeting.",
+   "quote": "recommended that the bos should have the ima signed before a ppa is signed item tabled until 7/16/13 bos meeting."
+  },
+  {
+   "decision": "Approve revised PPA and/or PILOT Agreement with EPG Solar tabled until 7/16/13 BOS meeting.",
+   "quote": "the developer will not sign the pilot until the lease is approved item tabled until 7/16/13 bos meeting."
+  },
+  {
+   "decision": "Town Manager to address the election officials appointments at the next BOS meeting, after July 15, with the political parties contacted first.",
+   "quote": "ms. speidel replied that she is planning to do this at the next bos meeting because by law, it cannot be done"
+  },
+  {
+   "decision": "Board accepted the resignation of Ernie Sund from the Green Communities Task Force and Memorial Day Committee, and asked that a thank-you letter be sent.",
+   "quote": "mr. alonzo said that they accept mr. sund's resignation with regret and requested that a letter be sent to mr."
+  },
+  {
+   "decision": "Bertram requested that a meeting be scheduled concerning policies in the near future.",
+   "quote": "ms. bertram requested that a meeting be scheduled concerning policies in the near future."
+  },
+  {
+   "decision": "Ebersole requested that all meetings be posted online and outside on the bulletin board.",
+   "quote": "mr. ebersole requested that all meetings be posted online for convenience, as well as outside on the bulletin board."
+  },
+  {
+   "decision": "Bertram requested that the fence issue at Tri Town be discussed/reviewed again at a future BOS meeting.",
+   "quote": "ms. bertram requested that the fence issue at tri town be discussed/reviewed again at a future bos meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Household Hazardous Waste IMA – Lunenburg annual assessment",
+   "what_was_recorded": "Lunenburg pays an annual assessment of $5,354 under a formula based on equalized property valuation and population; Ashby would pay both capital and operating assessments under the same formula.",
+   "figures_as_printed": [
+    "$5,354"
+   ],
+   "quote": "lunenburg pays an annual assessment of $5,354 which is based upon a formula which takes into account both equalized property valuation (50%) and population"
+  },
+  {
+   "topic": "Codification of By Laws",
+   "what_was_recorded": "Money is available for codification of the By Laws; one bid was received, higher than the Town Manager had hoped.",
+   "figures_as_printed": [
+    "$16,000"
+   ],
+   "quote": "one bid has been received in the amount of $16,000."
+  },
+  {
+   "topic": "Public Safety Building lighting upgrade",
+   "what_was_recorded": "A lighting upgrade at the Public Safety Building cost $22,000, with Unitil paying 50% of that cost and a payback of about 3.5 years.",
+   "figures_as_printed": [
+    "$22,000"
+   ],
+   "quote": "a lighting upgrade is being done at the public safety building which cost $22,000. and unitil will be paying"
+  },
+  {
+   "topic": "FY14 state budget net revenue",
+   "what_was_recorded": "Legislature approved the FY14 budget; the net result for Lunenburg was additional revenue just under $50,000.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the net result for the town of lunenburg was additional revenue of an amount just under $50,000."
+  },
+  {
+   "topic": "Chapter 70 revenue increase",
+   "what_was_recorded": "Chapter 70 revenue increased by approximately $95,000 and may need to be reconciled; nothing can be spent until appropriated at Special Town Meeting.",
+   "figures_as_printed": [
+    "$95,000"
+   ],
+   "quote": "chapter 70 revenue increased by approximately $95,000 and ms. speidel feels that this is something that may need to be"
+  },
+  {
+   "topic": "Pavement application on four roads",
+   "what_was_recorded": "The new pavement application on four Lunenburg roads cost approximately $6,000 per location; Mulpus Rd. is next as funds become available.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "each location cost approximately $6,000. to repair."
+  },
+  {
+   "topic": "MA Broadband / IT Bond Fund",
+   "what_was_recorded": "The Governor's Administration is proposing an addition of $40M to the IT Bond Fund, per MA Broadband.",
+   "figures_as_printed": [
+    "$40M"
+   ],
+   "quote": "governor's administration is proposing an addition of $40m in the it bond fund"
+  },
+  {
+   "topic": "Warrants listed for approval",
+   "what_was_recorded": "Warrant amounts were listed under Minutes/Warrants/Action File Issues; the printed list is jumbled in the text, so the pairing of warrant numbers and amounts cannot be confirmed.",
+   "figures_as_printed": [
+    "$75,037.59",
+    "$405,352.24",
+    "$32,462.59",
+    "$433,580.72",
+    "$732,393.97",
+    "$120,809.16",
+    "$549,335.54"
+   ],
+   "quote": "7/1/13 70-13 69-13 1wp-13 71-13 1-14 2-14 1p-14 $75,037.59 $405,352.24 $32,462.59 $433,580.72 $732,393.97 $120,809.16 $549,335.54"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Matthews",
+   "topic": "Thanks to Turkey Hill Garden Club",
+   "quote": "mr. matthews thanked the turkey hill garden club for the great job they have done with the upper town"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Thanks to Town Band; Gazebo concerts",
+   "quote": "mr. alonzo thanked the town band for the wonderful concert they put on at the gazebo"
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Town Beach hours",
+   "quote": "mr. alonzo announced that the town beach is now open monday - friday from 10 a.m. - 7 p.m."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "Farmer's Market moved to Sundays",
+   "quote": "mr. alonzo announced the farmer's market has been moved from mondays to sundays at the ritter building"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (7:00 PM)",
+   "resolution": "no action",
+   "quote": "mr. matthews thanked the turkey hill garden club for the great job they have done with the upper town"
+  },
+  {
+   "topic": "Common Victualler's License – Kabob-E-Licious",
+   "resolution": "tabled to 7/16/13",
+   "quote": "request tabled until 7/16/13 bos meeting."
+  },
+  {
+   "topic": "Green Communities Task Force update",
+   "resolution": "no action; board thanked Mr. Blatt",
+   "quote": "dave blatt, chair of the green communities task force came before the bos to speak on the activities of this committee."
+  },
+  {
+   "topic": "Boot Drive request – Lunenburg Field Hockey",
+   "resolution": "approved 5-0",
+   "quote": "mr. ebersole moved to approve the request for the boot drive for the lunenburg field hockey team on july 27, 2013 from 9 a.m. - 1 p.m. in the center of town. mr. toale seconded."
+  },
+  {
+   "topic": "NuGen PPA / PILOT agreement",
+   "resolution": "tabled to 7/16/13",
+   "quote": "recommended that the bos should have the ima signed before a ppa is signed item tabled until 7/16/13 bos meeting."
+  },
+  {
+   "topic": "EPG Solar revised PPA / PILOT",
+   "resolution": "tabled to 7/16/13",
+   "quote": "the developer will not sign the pilot until the lease is approved item tabled until 7/16/13 bos meeting."
+  },
+  {
+   "topic": "Household Hazardous Waste IMA amendment – Town of Ashby",
+   "resolution": "approved 5-0",
+   "quote": "mr. matthews moved to approve the amendment to the household hazardous waste ima to include membership for the town of ashby."
+  },
+  {
+   "topic": "Disclosure and consent for dual representation – net metering IMA with Townsend",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram moved to approve disclosure, determination and consent pursuant to ma rules of professional conduct for dual representation"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no action recorded; election officials and crosswalk discussed",
+   "quote": "minutes/warrants/action file issues"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "board of health - mr. ebersole stated that there are no new topics."
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "no action",
+   "quote": "ms. speidel reported that we are in the process of"
+  },
+  {
+   "topic": "Resignation – Ernie Sund",
+   "resolution": "accepted; letter to be sent",
+   "quote": "mr. alonzo said that they accept mr. sund's resignation with regret and requested that a letter be sent to mr."
+  },
+  {
+   "topic": "Public comment (second period)",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced the farmer's market has been moved from mondays to sundays at the ritter building"
+  },
+  {
+   "topic": "Executive session – Police Union Contract",
+   "resolution": "entered executive session 5-0",
+   "quote": "mr. matthews moved to enter into executive session. ms. bertram seconded. on vote, motion carried, 5 in favor, o opposed."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Final PPA (NuGen)",
+   "where": "text",
+   "quote": "she had received the final ppa this afternoon at 2 p.m. and decided not to send it to the bos for review"
+  },
+  {
+   "name": "Disclosure, Determination and Consent pursuant to MA Rules of Professional Conduct",
+   "where": "text",
+   "quote": "ms. speidel asked the bos to approve the disclosure, determination and consent so that town counsel can work on the"
+  },
+  {
+   "name": "Household Hazardous Waste IMA (amendment for Town of Ashby)",
+   "where": "text",
+   "quote": "mr. matthews moved to approve the amendment to the household hazardous waste ima to include membership for the town of ashby."
+  },
+  {
+   "name": "Request for Common Victualler's License, Tarrnum Williams d/b/a Kabob-E-Licious, 165 Mass Ave",
+   "where": "text",
+   "quote": "request for common victualler's license, tarrnum williams d/b/a kabob-e-licious, 165"
+  },
+  {
+   "name": "Resignation letter submitted by Ernie Sund",
+   "where": "text",
+   "quote": "mr. alonzo read a resignation letter submitted by ernie sund."
+  },
+  {
+   "name": "Minutes of 6/18/13 and warrants (6/26/13 through 7/3/13)",
+   "where": "text",
+   "quote": "minutes/warrants/action file issues"
+  },
+  {
+   "name": "IMA with Fitchburg (added capacity)",
+   "where": "text",
+   "quote": "high field village continues to be on their agenda which interplays with the ima with fitchburg concerning added capacity."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Green Communities",
+  "solar PPA and PILOT",
+  "net metering",
+  "household hazardous waste",
+  "Ashby",
+  "Townsend",
+  "licensing",
+  "field hockey boot drive",
+  "budget and state aid",
+  "pavement",
+  "broadband",
+  "regional dispatch",
+  "appointments and resignations",
+  "executive session",
+  "police union contract"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

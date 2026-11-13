@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-12-06",
  "docid": "4789",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to abate ambulance bill LB119675 in the amount of $199.97",
+   "motion": "Abate ambulance bill LB119675 in the amount of $199.97.",
    "moved_by": "Ernie",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -20,15 +20,328 @@
    "quote": "ernie move to abate in the amount of $199.97, steve seconded, voted unanimously."
   },
   {
-   "motion": "to adjourn Regular Session",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Adjourn the Regular Session at 8:20 P.M.",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 8:20 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:20 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted from OCR of scanned document; two votes recorded",
- "cost_usd": 0.0940085
+ "note": "OCR text (macOS Vision) of a scanned document; several passages are garbled or cut (page 2 begins mid-item 5 on School Building Committee and enrollments; the storm cleanup paragraph has broken words and a repeated line). Item 5 on the agenda is missing its heading. No roll call is printed, so member attendance is inferred from participation. The ambulance abatement vote is recorded as \"voted unanimously\" with no count. The page 8 rate table has no labels and was not transcribed. Attached memos (DPW staffing, electric aggregation) are dated December 6, 2011 and were not recorded as separate agenda items.",
+ "cost_usd": 0.00847122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ernie",
+   "role": "Select Board member (as printed, no surname)",
+   "status": "present",
+   "quote": "ernie noted the lack of abutting cities not being on the attached list"
+  },
+  {
+   "name": "Dave",
+   "role": "Select Board member (as printed, no surname)",
+   "status": "present",
+   "quote": "dave commented that we had another applicant in a couple of weeks ago"
+  },
+  {
+   "name": "Steve",
+   "role": "Select Board member (as printed, no surname)",
+   "status": "present",
+   "quote": "steve questioned whether there is currently a work order system in place"
+  },
+  {
+   "name": "Kerry A. Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "from: kerry a. speidel, town manager"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz provided an update on the storm cleanup"
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "applicant for appointment to Historical Commission",
+   "status": "present",
+   "quote": "amory phelps, applicant for appointment to historical commission - of 123 leominster road came before the board for"
+  },
+  {
+   "name": "Laura Caron-Gustus",
+   "role": "Chief Administrative Assistant (minutes author)",
+   "status": "not stated",
+   "quote": "respectfully submitted, laura caron-gustus, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Historical Commission appointment deferred until a full board is present to make the appointment.",
+   "quote": "the members would like for a full board to be present before making their appointment."
+  },
+  {
+   "decision": "Statewide mutual aid agreement to be taken up again in January so people can come in to speak to the board.",
+   "quote": "she would like to address this again in january in order to be able to schedule people to come in to discuss with the board"
+  },
+  {
+   "decision": "Town Manager to contact neighboring communities not on the mutual aid list about their intentions.",
+   "quote": "kerry will contact our neighbors that are not on the list and question what their intentions are"
+  },
+  {
+   "decision": "Town Manager to check into the ambulance billing increase information requested from the Fire Chief.",
+   "quote": "was requested previously from the fire chief. kerry will check into this."
+  },
+  {
+   "decision": "Warrants and the second quarterly water billing commitment were reviewed and signed; no minutes were before the board.",
+   "quote": "#34 12, 12/7/11 - $158,633.40 & #12p12, 12/8/11 - $671,355.74, also second quarterly water billing commitment reveiwed and signed.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Town Manager to schedule tree trimming and signage installation at Mulpus Road / Townsend Harbor Road intersection with the DPW Director.",
+   "quote": "kerry will schedule tree trimming and installation of signage with the dpw director."
+  },
+  {
+   "decision": "Ernie requested a project list from the DPW Director; Town Manager's draft to be submitted during the budget process.",
+   "quote": "kerry does have a draft and it was her intent that during the budget process, this will be submitted."
+  },
+  {
+   "decision": "Board agreed to contract out DPW workload duties or use part-time seasonal labor again next season, as done this past year.",
+   "quote": "this was the process that we did this past year and agreed that we would follow this again next season."
+  },
+  {
+   "decision": "Town Manager stated intent to include funding for a FT Building Maintenance position in the FY13 budget and at least one additional Highway Division staff member.",
+   "quote": "it is my intent to include funding for a ft building maintenance position in the fy13 budget"
+  },
+  {
+   "decision": "Town Manager asked Colonial Power to prepare the electric supply contract documents for signature.",
+   "quote": "as such, i have asked colonial power to prepare the contract documents for signature."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "T-Mobile cell antenna lease renewal (Town Hall)",
+   "what_was_recorded": "T-Mobile is looking for a 20% decrease in the rent; the town is on the high end of what other communities receive.",
+   "figures_as_printed": [
+    "20%"
+   ],
+   "quote": "noted that they are looking for a 20% decrease in the rent."
+  },
+  {
+   "topic": "Ambulance bill abatement LB119675",
+   "what_was_recorded": "Balance due of the ambulance bill after Medicare payment, abated.",
+   "figures_as_printed": [
+    "$199.97"
+   ],
+   "quote": "request to abate ambulance bill, bill number lb119675 - $199.97 applicant received service in march 2011"
+  },
+  {
+   "topic": "Warrants and water billing commitment",
+   "what_was_recorded": "Warrant totals reviewed and signed for three warrants.",
+   "figures_as_printed": [
+    "$215,646.58",
+    "$158,633.40",
+    "$671,355.74"
+   ],
+   "quote": "warrants; #33 12, 12/6/11 - $215,646.58, #34 12, 12/7/11 - $158,633.40 &"
+  },
+  {
+   "topic": "October storm debris cleanup (AshBritt, O'Brien)",
+   "what_was_recorded": "Original high-end debris cost projection was $250,000; the estimate is likely to double, and the town expects a substantial cost it must raise, possibly at spring town meeting. FEMA reimbursement anticipated.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "high end cost projection then was at $250,000."
+  },
+  {
+   "topic": "Municipal electric aggregation - supplier bid",
+   "what_was_recorded": "Indicative 1-year lock bid from ConEdison Solutions recommended at 7.41 cents per kWh.",
+   "figures_as_printed": [
+    "7.41 cents per kWh"
+   ],
+   "quote": "a 1-year lock from conedison solutions at a rate of 7.41 cents per kwh."
+  },
+  {
+   "topic": "Municipal electric aggregation - Unitil comparison",
+   "what_was_recorded": "Unitil bid 8.175 cents per kWh for Dec 2011-May 2012; the 0.765 cent savings is about $7 per month for the average household.",
+   "figures_as_printed": [
+    "8.175 cents per kWh",
+    "0.765 cents per kWh",
+    "$7 per month"
+   ],
+   "quote": "this savings of 0.765 cents per kwh translates into a savings of approximately $7 per month for the average household."
+  },
+  {
+   "topic": "Municipal electric aggregation - town building rate",
+   "what_was_recorded": "Town currently receives 6.96 cents per kWh under its municipal building aggregation plan.",
+   "figures_as_printed": [
+    "6.96 cents per kWh"
+   ],
+   "quote": "the town receives a rate of 6.96 cents per kwh under its municipal"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements (Chanel 9 program, Giftmart, tree lighting)",
+   "resolution": "no action",
+   "quote": "ernie - new program on chanel 9 cable station exploring the cowdrey conservation land later this evening and again later in the",
+   "tags": [
+    "announcements",
+    "Giftmart"
+   ]
+  },
+  {
+   "topic": "Appointments - Historical Commission applicant Amory Phelps",
+   "resolution": "interviewed; appointment deferred until full board present",
+   "quote": "amory phelps, applicant for appointment to historical commission - of 123 leominster road came before the board for",
+   "tags": [
+    "appointments",
+    "Historical Commission"
+   ]
+  },
+  {
+   "topic": "Cell antenna lease extension request - T-Mobile, Town Hall",
+   "resolution": "continued; Town Manager still reviewing with Town Counsel",
+   "quote": "review request to extend cell antenna lease by t-mobile for town hall location",
+   "tags": [
+    "lease",
+    "T-Mobile",
+    "Town Hall"
+   ]
+  },
+  {
+   "topic": "Statewide Mutual Aid Agreement adoption",
+   "resolution": "continued to January",
+   "quote": "request to adopt statewide mutual aid agreement - board will review the attached information",
+   "tags": [
+    "mutual aid",
+    "DPW",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Ambulance bill abatement LB119675",
+   "resolution": "approved",
+   "quote": "ernie move to abate in the amount of $199.97, steve seconded, voted unanimously.",
+   "tags": [
+    "ambulance billing",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Minutes / Warrants / Action File issues",
+   "resolution": "no minutes; warrants and water commitment signed",
+   "quote": "minutes/ warrants/ action file issues - no minutes.",
+   "tags": [
+    "warrants",
+    "water billing"
+   ]
+  },
+  {
+   "topic": "Department Reports - DPW storm cleanup",
+   "resolution": "informational update; no action recorded",
+   "quote": "department reports - dpw director jack rodriquenz provided an update on the storm cleanup",
+   "tags": [
+    "storm cleanup",
+    "FEMA",
+    "DPW",
+    "debris"
+   ]
+  },
+  {
+   "topic": "DPW staffing and workload",
+   "resolution": "discussed; project list requested",
+   "quote": "ernie requested a project list from the dpw director on all the projects that they are involved with",
+   "tags": [
+    "DPW staffing",
+    "vacancies",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "Street light issue (Unitil)",
+   "resolution": "continued; future update",
+   "quote": "update on street light issue - kerry has continued to work with unitil on this, will provide future update.",
+   "tags": [
+    "street lights",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "October storm update",
+   "resolution": "no action recorded",
+   "quote": "update on october storm -",
+   "tags": [
+    "storm"
+   ]
+  },
+  {
+   "topic": "Temporary fix Mulpus Road / Townsend Harbor Road intersection",
+   "resolution": "Town Manager to schedule tree trimming and signage",
+   "quote": "update on temporary fix to mulpus road / townsend harbor road intersection",
+   "tags": [
+    "roads",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Old business - Historical Commission committee appointment",
+   "resolution": "no action recorded",
+   "quote": "1. historical commission -",
+   "tags": [
+    "appointments",
+    "Historical Commission"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "none",
+   "quote": "executive session none",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum: DPW Staffing Levels (Kerry A. Speidel, Town Manager, December 6, 2011)",
+   "where": "list",
+   "quote": "subject: dpw staffing levels"
+  },
+  {
+   "name": "Memorandum: Municipal Electric Aggregation (Kerry A. Speidel, Town Manager, December 6, 2011)",
+   "where": "list",
+   "quote": "subject: municipal electric aggregation"
+  },
+  {
+   "name": "Statewide Mutual Aid Agreement (DPW and Public Safety Mutual Aid Agreements), attached information",
+   "where": "text",
+   "quote": "board will review the attached information that they received tonight."
+  },
+  {
+   "name": "Warrants #33 12, #34 12, #12P12 and second quarterly water billing commitment",
+   "where": "text",
+   "quote": "warrants; #33 12, 12/6/11 - $215,646.58, #34 12, 12/7/11 - $158,633.40 &"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "ice storm debris cleanup",
+  "FEMA",
+  "DPW staffing",
+  "mutual aid",
+  "cell antenna lease",
+  "ambulance billing abatement",
+  "warrants",
+  "municipal electric aggregation",
+  "Historical Commission appointment",
+  "Giftmart"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "board will review the attached information that they received tonight."
+ },
+ "dropped_unquoted_by_field": {}
 }

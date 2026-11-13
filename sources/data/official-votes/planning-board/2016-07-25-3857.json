@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-07-25",
  "docid": "3857",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for 238 Fire Road 16",
+   "motion": "Endorse the ANR Plan for 238 Fire Road 16 (J&A Realty Trust); K. Chenis recused himself.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, d. mcquaid, second, d. prokowiew, to endorse the anr plan, all aye."
+   "quote": "by endorsing this anr plan, the board has determined vital access. motion, d. mcquaid, second, d. prokowiew, to endorse the anr plan, all aye."
   },
   {
-   "motion": "Endorse the ANR Plan for 331 Burrage Street",
+   "motion": "Endorse the ANR Plan for 331 Burrage Street (Daniel Proctor).",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, d. mcquaid, second, d. prokowiew, to endorse the anr plan, all aye."
+   "quote": "the lot cannot be a grandfathered lot. motion, d. mcquaid, second, d. prokowiew, to endorse the anr plan, all aye."
   },
   {
-   "motion": "Endorse the ANR Plan for 200 Reservoir Road",
+   "motion": "Endorse the ANR Plan for 200 Reservoir Road (Estate of Vera Barney), dividing the property into five lots.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, d. mcquaid, second, d. prokowiew, to endorse the anr plan, all aye."
+   "quote": "dividing the property into five lots . motion, d. mcquaid, second, d. prokowiew, to endorse the anr plan, all aye."
   },
   {
-   "motion": "Endorse the ANR Plan for 1026 & 1042 Northfield Road",
+   "motion": "Endorse the ANR Plan for 1026 & 1042 Northfield Road (Ronald Smith, Lucy Hawkins, Steven Anderson), creating a five-lot subdivision.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -44,32 +44,323 @@
    "quote": "motion, k. chenis, second, d. prokowiew, to endorse the anr plan, all aye."
   },
   {
-   "motion": "Support the warrant articles regarding the Whalom Overlay District",
+   "motion": "That the Board support the zoning warrant articles regarding the Whalom Overlay District for the 8/22/16 Special Town Meeting (one blanket vote for all Whalom articles).",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, d. mcquaid, that the board support the warrant article s regarding the whalom overlay district, second, d. prokowiew, all aye",
-   "quote_taken_from_text": true
+   "quote": "motion, d. mcquaid, that the board support the warrant article s regarding the whalom overlay district, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Sign the minutes of June 27, 2016",
+   "motion": "To sign the minutes of June 27, 2016.",
    "moved_by": "D. McQuaid",
    "seconded_by": "G. Bittner",
-   "outcome": "passed",
+   "outcome": "passed, all aye (K. Chenis abstained)",
    "procedural": true,
-   "quote": "motion, d. mcquaid, to sign minutes of june 27, 2016, second, g. bittner, all aye."
+   "quote": "motion, d. mcquaid, to sign minutes of june 27, 2016, second, g. bittner, all aye. (k. chenis abstained.)"
   },
   {
-   "motion": "M. Allison to be the Board's representative to the Town Manager Search Committee",
+   "motion": "For M. Allison to be the Board's representative to the Town Manager Search Committee (roll call vote).",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
    "outcome": "passed 4-1",
-   "procedural": true,
-   "quote": "motion, k. chenis, for m. allison to be the board's representative to the committee, second, g. bittner . motion, d. prokowiew, for d. mcquaid, to be the board's representative, second, d. mcquaid. roll call vote for m. allison - d. prokowiew, aye; k. chenis, aye; g. bittner, aye; d. mcquaid, nay; m. allison, aye. vote passed 4 -1."
+   "procedural": false,
+   "quote": "roll call vote for m. allison - d. prokowiew, aye; k. chenis, aye; g. bittner, aye; d. mcquaid, nay; m. allison, aye. vote passed 4 -1."
+  },
+  {
+   "motion": "To send a letter to the ZBA noting that the applicant at 8 Massachusetts Avenue is operating without Planning Board approval.",
+   "moved_by": "D. Prokowiew",
+   "seconded_by": "G. Bittner",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion, d. p rokowiew, to send a letter to the zba noting that the applicant is operating without planning board approval, second, g. bittner, all aye.",
+   "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1341405
+ "dropped_unquoted": 0,
+ "note": "Text-extracted minutes, not a scan. Votes recorded only where a motion and result are printed. The Town Manager Search Committee item shows two motions (K. Chenis for M. Allison; D. Prokowiew for D. McQuaid, seconded by D. McQuaid as printed); only the M. Allison motion went to a roll call (4-1), so only that is recorded as a vote. No public comment section and no dollar figures are printed. No motion is recorded for adjournment. The 1026 Northfield Road public hearing is held in separate minutes and is not summarized here.",
+ "cost_usd": 0.00910752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Attorney Knox",
+   "role": "Attorney, representing the property owner",
+   "status": "present",
+   "quote": "attorney knox, representing the property owner, presented the plan."
+  },
+  {
+   "name": "S. Dillis",
+   "role": "Ducharme & Dillis, representing the property owner",
+   "status": "present",
+   "quote": "s. dillis , ducharme & dillis, r epresenting the property owner, presented the plan."
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "David Ross Associates, representing the property owner",
+   "status": "present",
+   "quote": "neil gorman, david ross associates, representing the property owner, presented the plan"
+  },
+  {
+   "name": "Ron Smith",
+   "role": "property owner",
+   "status": "present",
+   "quote": "presented by property owner ron smith."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members to provide five short-term and five long-term goals to A. Burney by August 22nd, for discussion at the September 12th meeting; possible subcommittees of two for research to follow.",
+   "quote": "board members will provide their five short -term and five long-term goals to a. burney by august 22nd for discussion at the board's september 12th meeting."
+  },
+  {
+   "decision": "G. Bittner and A. Burney to track subjects brought up at Board meetings so they are addressed at an appropriate future meeting.",
+   "quote": "g. bittner suggested he and a. burney keep track of subjects that are brought forth at board meetings"
+  },
+  {
+   "decision": "A. Burney to write a short item for the Lunenburg Ledger notifying the public that the Board will work on a new Whalom Overlay District.",
+   "quote": "a. burney will do a short item to the lunenburg ledger to notify the public"
+  },
+  {
+   "decision": "A. Burney to check whether the Building/Zoning Official is available to meet with members individually and then attend the August 8th Board meeting.",
+   "quote": "a. burney to check with the building/zoning official to see if he is available to meet individually and then come to the august 8th board meeting."
+  },
+  {
+   "decision": "August 8 meeting will invite the Building/Zoning Official to attend.",
+   "quote": "will invite building/zoning official to attend."
+  },
+  {
+   "decision": "August 22 meeting to be an abbreviated agenda to accept the Highfield Village withdrawal and any zoning warrant article discussion, followed by the 7:00 PM Special Town Meeting.",
+   "quote": "abbreviated agenda to accept highfield village withdrawal and any zoning warrant article discussion"
+  },
+  {
+   "decision": "Enforcement of landscaping requirements at the Pleasant Street solar site referred to the Building/Zoning Official through enforcement.",
+   "quote": "a. burn ey noted this would be an enforcement issue through the building/zoning official.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community Task Force bids",
+   "what_was_recorded": "Items sent out for bid did not receive acceptable bids and were re-sent for new bids; no dollar figure printed.",
+   "quote": "sent out items for bid; did not receive acceptable bids.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "50 Elmwood Road developer bond reduction",
+   "what_was_recorded": "The developer for 50 Elmwood Road is expected to ask the Board for a bond reduction within a few months as road work is mostly complete; no dollar figure printed.",
+   "quote": "the developer for 50 elmwood road will approach the board for a bond reduction within the next few months",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR plans",
+   "resolution": "four plans endorsed (K. Chenis recused on 238 Fire Road)",
+   "quote": "by endorsing this anr plan, the board has determined vital access.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Public hearing: 1026 Northfield Road and Zoning Warrant Articles (Whalom)",
+   "resolution": "1026 Northfield Road heard in separate minutes; Board supported Whalom Overlay District warrant articles by blanket vote",
+   "quote": "(the board took one blanket vote for all whalom articles .)",
+   "tags": [
+    "zoning",
+    "warrant articles",
+    "Whalom Overlay District"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes of June 27, 2016 signed",
+   "quote": "all minutes signed. motion, d. mcquaid, to sign minutes of june 27, 2016",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received, no action",
+   "quote": "green community task force (gctf) - sent out items for bid; did not receive acceptable bids.",
+   "tags": [
+    "committees",
+    "Green Community",
+    "Farmers Market",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "received, no action",
+   "quote": "the owner anticipates the first building receiving occupancy this fall.",
+   "tags": [
+    "development",
+    "storage units",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Director's items: Town Manager Search Committee representative",
+   "resolution": "M. Allison chosen as Board representative by 4-1 roll call",
+   "quote": "town manager search committee, board representative- m. allison, d. mcquaid and g. bittner noted their desire to serve on the search committee.",
+   "tags": [
+    "Town Manager",
+    "search committee"
+   ]
+  },
+  {
+   "topic": "Director's items: Board goals",
+   "resolution": "members to submit goals by August 22; discussion set for September 12",
+   "quote": "board goals- board members will provide their five short -term and five long-term goals to a. burney by august 22nd",
+   "tags": [
+    "board goals",
+    "Rules and Regulations",
+    "Whalom Overlay District"
+   ]
+  },
+  {
+   "topic": "Director's items: Building/Zoning Official meeting",
+   "resolution": "A. Burney to check availability; invite for August 8",
+   "quote": "the board would like to meet with the building/zoning official to better understand",
+   "tags": [
+    "Building Official",
+    "zoning enforcement"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; August 8 and August 22 meetings set",
+   "quote": "august 8- 6:30 pm, ritter memorial building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "letter to ZBA voted; Pleasant Street landscaping referred to enforcement",
+   "quote": "it was noted that 8 massachusetts avenue received a zoning board of appeals (zba) special permit for an auto detailing shop.",
+   "tags": [
+    "ZBA",
+    "site plan",
+    "Pleasant Street solar",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:25 PM (no motion recorded)",
+   "quote": "adjournment: 9:25 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 06/27/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 06/27/16 anr plan, 238 fire road 16"
+  },
+  {
+   "name": "ANR Plan, 238 Fire Road 16",
+   "where": "list",
+   "quote": "minutes 06/27/16 anr plan, 238 fire road 16 anr plan, 331 burrage street"
+  },
+  {
+   "name": "ANR Plan, 331 Burrage Street",
+   "where": "list",
+   "quote": "anr plan, 238 fire road 16 anr plan, 331 burrage street anr plan, 200 reservoir road"
+  },
+  {
+   "name": "ANR Plan, 200 Reservoir Road",
+   "where": "list",
+   "quote": "anr plan, 331 burrage street anr plan, 200 reservoir road anr plan, 1026 & 1042 northfield road"
+  },
+  {
+   "name": "ANR Plan, 1026 & 1042 Northfield Road",
+   "where": "list",
+   "quote": "anr plan, 200 reservoir road anr plan, 1026 & 1042 northfield road draft 2014 board goals"
+  },
+  {
+   "name": "DRAFT 2014 Board Goals",
+   "where": "list",
+   "quote": "anr plan, 1026 & 1042 northfield road draft 2014 board goals"
+  },
+  {
+   "name": "Zoning Warrant Articles, 8/22/16 STM",
+   "where": "text",
+   "quote": "zoning warrant articles, 8/22/16 stm- see separate minutes."
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "a. burney suggested one of the priorities be the updating of the rules and regulations governing the subdivision of land."
+  },
+  {
+   "name": "Lake Whalom Overlay District Bylaw",
+   "where": "text",
+   "quote": "d. mcquaid reminded the board of the importance of a new lake whalom overlay district bylaw."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "subdivision",
+  "zoning warrant articles",
+  "Whalom Overlay District",
+  "Town Manager Search Committee",
+  "board goals",
+  "development status",
+  "site plan",
+  "enforcement",
+  "minutes approval",
+  "2016"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

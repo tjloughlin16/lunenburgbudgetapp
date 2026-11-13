@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-01-30",
  "docid": "1180",
@@ -12,23 +12,270 @@
  },
  "votes": [
   {
-   "motion": "the Capital Planning Committee recommends the Utility Vehicle for the patrol car",
-   "moved_by": "Carl Sund",
+   "motion": "Recommend the Utility Vehicle for the patrol car (Police Vehicles).",
+   "moved_by": "Carl (Ernie) Sund",
    "seconded_by": "Steve Raboin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. sund made motion that the capital planning committee recommends the utility vehicle for the patrol car, second, mr. raboin. all aye."
-  },
-  {
-   "motion": "approve the minutes of January 16, 2013",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "approved minutes - january 16, 2013"
+   "quote": "mr. sund made motion that the capital planning committee recommends the utility vehicle for the patrol car, second, mr. raboin."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.145662
+ "note": "Two-page minutes (pages 1-2) with a single recorded motion, reported as \"All aye\" with no numeric count, so outcome is recorded as \"passed\". The approval of the January 16, 2013 minutes and the 11:15 AM adjournment are listed but no motion is recorded, so they are not entered as votes. Public comment is not recorded. No documents list or exhibits are printed. Attendance for Kerry Speidel and Colleen Shapiro is recorded as absent; no roles are printed for them.",
+ "cost_usd": 0.00628162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "ms. benson will request additional information from 1) school dept with director facilites and grounds and it director"
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "mr. sund made motion that the capital planning committee recommends the utility vehicle for the patrol car, second, mr. raboin."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "mr. sund made motion that the capital planning committee recommends the utility vehicle for the patrol car, second, mr. raboin."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "dennis mannone, jr., mbr."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: kerry speidel, colleen shapiro"
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kerry speidel, colleen shapiro"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Police vehicles item cancelled due to inclement weather; rescheduling date to be determined.",
+   "quote": "police vehicles, public safety facility building - cancelled due to inclement weather."
+  },
+  {
+   "decision": "Police Marked Car remains on the plan.",
+   "quote": "police dept- marked car- remain on plan"
+  },
+  {
+   "decision": "Street Sweeper stays deleted from the plan; committee recommends repair/out-sourcing.",
+   "quote": "recommend repair/out-sourcing."
+  },
+  {
+   "decision": "Road Rehab: take off the bottom line.",
+   "quote": "take off the bottom line"
+  },
+  {
+   "decision": "ADA Ramp remains deleted from the plan from the previous prioritization.",
+   "quote": "ada ramp- deleted from plan in previous prioritization."
+  },
+  {
+   "decision": "Fire Car 2 remains deleted from the plan.",
+   "quote": "fire car 2- deleted from plan in previous prioritization"
+  },
+  {
+   "decision": "Repainting of Town Hall: $30,000 deducted for painting; Historical Commission asked to prioritize if items are separated.",
+   "quote": "deducted $30,000 for painting."
+  },
+  {
+   "decision": "Committee requested a price estimate on chimney and roof work and asked whether the chimney and roof could be done in separate years.",
+   "quote": "committee looking for a price estimate on chimney and roof work."
+  },
+  {
+   "decision": "Portable Radios remain deleted from the plan.",
+   "quote": "portable radios- deleted from plan in previous prioritization."
+  },
+  {
+   "decision": "ATV deleted from the plan, for future consideration.",
+   "quote": "atv- deleted from plan in previous prioritization."
+  },
+  {
+   "decision": "Shotguns deleted from the plan; did not meet Capital threshold.",
+   "quote": "shotguns- deleted from plan in previous prioritization."
+  },
+  {
+   "decision": "School Dept Floor replacement remains on the plan at a new figure of $16,000.",
+   "quote": "floor replacement- remain on plan with new figure of $16,000."
+  },
+  {
+   "decision": "Fire Dept Ambulance remains on the plan; committee requested mileage on the present ambulance.",
+   "quote": "ambulance- remain on plan."
+  },
+  {
+   "decision": "School Dept Mobile Media Carts remain on the plan, with discussion of possibly half this FY and half next FY.",
+   "quote": "remain on plan with discussion of possibly ½ this fy and ½ next fy."
+  },
+  {
+   "decision": "School Dept HVAC remains on the plan.",
+   "quote": "hvac- remain on plan."
+  },
+  {
+   "decision": "School Dept Asbestos remains on the plan.",
+   "quote": "asbestos- remain on plan."
+  },
+  {
+   "decision": "Committee would like a project list from the DPW.",
+   "quote": "committee would like a project list from the dpw."
+  },
+  {
+   "decision": "Townsend Hbr Rd & Mulpus Rd intersection reconfiguration left on the plan until more investigation.",
+   "quote": "reconfigure townsend hbr rd & mulpus rd intersection- leave on until more investigation."
+  },
+  {
+   "decision": "4-way flasher on Lancaster Ave @ Goodrich St left on the plan until further information.",
+   "quote": "4-way flasher on lancaster ave @ goodrich st- leave on until further information."
+  },
+  {
+   "decision": "Committee will ask the DPW Director for his dollar estimate of street sweeper costs for comparison.",
+   "quote": "committee will ask dpw director for his dollar estimate for comparison."
+  },
+  {
+   "decision": "Ms. Benson will request additional information from the School Dept (Director Facilities and Grounds and IT Director), the Historical Commission (breakdown), and the Fire Dept (low-cost ambulance alternative).",
+   "quote": "ms. benson will request additional information from 1) school dept with director facilites and grounds and it director"
+  },
+  {
+   "decision": "Next meeting scheduled for Thursday, February 7th, 9:30 AM, at the Ritter Memorial Building.",
+   "quote": "next meeting scheduled for thursday, february 7th, 9:30 am, ritter memorial building."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police vehicles – cost questions",
+   "what_was_recorded": "The Chair of the Board of Selectmen asked for details on additional purchasing and maintenance cost; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "chair, board of selectmen looking for details - additional cost in purchasing and maintenance?"
+  },
+  {
+   "topic": "Repainting of Town Hall and chimney/roof repair",
+   "what_was_recorded": "The plan was reduced by $30,000 for painting, and the committee asked for a price estimate on the chimney and roof work.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "deducted $30,000 for painting."
+  },
+  {
+   "topic": "School Dept floor replacement",
+   "what_was_recorded": "The floor replacement figure was set at $16,000, with a manufacturer contribution of $4,000.",
+   "figures_as_printed": [
+    "$16,000",
+    "$4,000"
+   ],
+   "quote": "floor replacement- remain on plan with new figure of $16,000."
+  },
+  {
+   "topic": "Street sweeper cost analysis",
+   "what_was_recorded": "Mr. Sund's analysis of the current street sweeper: age, mileage, hours, maintenance, labor, vehicle cost, interest, insurance and annual and per-season cost, compared with contractor rates; estimated savings of $5000/year at $100/hour, possibly less given the sweeper's age.",
+   "figures_as_printed": [
+    "$5000/year",
+    "$40/hour",
+    "$7400 /year",
+    "$182,000",
+    "$9800",
+    "$1200",
+    "$11,000",
+    "$23,400",
+    "$95 - to $125 /hour",
+    "$100/hour"
+   ],
+   "quote": "using $100/hour, there would be a savings of $5000/year."
+  },
+  {
+   "topic": "Street sweeper annual cost to run",
+   "what_was_recorded": "The minutes total the cost to run the sweeper for one season at $23,400.",
+   "figures_as_printed": [
+    "$23,400"
+   ],
+   "quote": "equals $23,400 to run sweeper for one season."
+  },
+  {
+   "topic": "Fire Dept ambulance",
+   "what_was_recorded": "The committee asked whether a less expensive ambulance is available; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "is there a less exp ensive ambulance available?"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Police Vehicles, Public Safety Facility Building",
+   "resolution": "cancelled due to weather; committee recommended utility vehicle for patrol car",
+   "quote": "police vehicles, public safety facility building - cancelled due to inclement weather.",
+   "tags": [
+    "police",
+    "vehicles",
+    "public safety facility"
+   ]
+  },
+  {
+   "topic": "General Review/Preliminary Prioritization",
+   "resolution": "prioritized items; several remain on plan, deleted, or left on pending information",
+   "quote": "general review/preliminary prioritization-",
+   "tags": [
+    "prioritization",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Street sweeper cost analysis",
+   "resolution": "no action; committee to ask DPW Director for estimate",
+   "quote": "mr. sund did some checking regarding street sweepers.",
+   "tags": [
+    "DPW",
+    "street sweeper",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Next meeting and information requests",
+   "resolution": "next meeting scheduled; Chair to request additional information",
+   "quote": "next meeting scheduled for thursday, february 7th, 9:30 am, ritter memorial building.",
+   "tags": [
+    "schedule",
+    "information requests"
+   ]
+  },
+  {
+   "topic": "Approved Minutes – January 16, 2013",
+   "resolution": "listed on agenda; no motion or vote recorded",
+   "quote": "approved minutes - january 16, 2013",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital planning",
+  "prioritization",
+  "police",
+  "DPW",
+  "street sweeper",
+  "school dept",
+  "fire dept",
+  "ambulance",
+  "town hall repainting",
+  "floor replacement",
+  "cost analysis"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

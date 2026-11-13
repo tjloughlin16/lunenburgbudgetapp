@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-01-11",
  "docid": "3871",
@@ -12,31 +12,256 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing for Highfield Village to February 8, 2016 at 6:35 PM.",
-   "moved_by": "Kenneth Chenis",
-   "seconded_by": "David Prokowiew",
+   "motion": "Continue the Highfield Village public hearing to February 8, 2016, 6:35 PM.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "D. Prokowiew",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis, motion to continue to february 8, 2016, 6:35 pm, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Sign the December 14, 2015 minutes.",
-   "moved_by": "Kenneth Chenis",
-   "seconded_by": "David Prokowiew",
+   "motion": "Sign the 12/14/15 minutes.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": true,
    "quote": "k. chenis, motion to sign 12/14/15 minutes, second, d. prokowiew, minutes signed."
   },
   {
-   "motion": "Sign the December 14, 2015 Unitil Information Meeting minutes.",
-   "moved_by": "Kenneth Chenis",
-   "seconded_by": "Matthew Allison",
+   "motion": "Sign the 12/14/15 Unitil Information Meeting minutes.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
    "quote": "k. chenis, motion to sign 12/14/15 unitil information meeting, second, m. allison, minutes signed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. ANR plan endorsements (203 West Townsend Road, 790-792 Massachusetts Avenue, 107 Youngs Road) are noted as \"endorsed\" but do not record formal motions with movers and seconders, so are not counted as votes.",
- "cost_usd": 0.0861755
+ "note": "Text extraction has split and misspelled words (for example \"Lar ry\", \"wi th\", \"on e acre\", \"13 th\"); quotes copy the printed text as-is. No public comment section is printed. The ANR endorsements are recorded as \"Plan endorsed by Board\" with no motion or count, so they are listed as decisions, not votes. The adjournment has no motion printed. No dollar figures appear in the minutes.",
+ "cost_usd": 0.00545572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Mark Horgan",
+   "role": "presenter, Horgan Construction",
+   "status": "present",
+   "quote": "203 west townsend road - presented by mark horgan, horgan construction."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "presenter, Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "presented by jamie rheault, whitman & bingham associates"
+  },
+  {
+   "name": "Larry Sabean",
+   "role": "presenter, Hannigan Engineering",
+   "status": "present",
+   "quote": "lar ry sabean, hannigan engineering"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ANR plan for 203 West Townsend Road endorsed by the Board after no issues were raised in departmental review.",
+   "quote": "no issues were raised with departmental review. plan endorsed by board."
+  },
+  {
+   "decision": "ANR plan for 790-792 Massachusetts Avenue endorsed by the Board, dividing the property into three lots after the May 2015 rezoning.",
+   "quote": "plan endorsed by board."
+  },
+  {
+   "decision": "ANR plan for 107 Youngs Road to be sent out for departmental review.",
+   "quote": "plan will be sent out for departmental review."
+  },
+  {
+   "decision": "M. Allison recused himself from the 790-792 Massachusetts Avenue item as to a possible financial interest in the property.",
+   "quote": "m. allison recused himself as to a possible financial interest in the property"
+  },
+  {
+   "decision": "M. Allison designated as the Planning Board's representative to the Storm Water Task Force.",
+   "quote": "m. allison will be the planning board's representative."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan 203 West Townsend Road",
+   "resolution": "endorsed",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "stormwater"
+   ],
+   "quote": "no issues were raised with departmental review. plan endorsed by board."
+  },
+  {
+   "topic": "ANR Plan 790-792 Massachusetts Avenue",
+   "resolution": "endorsed",
+   "tags": [
+    "ANR",
+    "rezoning",
+    "recusal"
+   ],
+   "quote": "the site was rezoned at may 2015 town meeting from commercial to limited business/residential."
+  },
+  {
+   "topic": "ANR Plan 107 Youngs Road",
+   "resolution": "sent to departmental review",
+   "tags": [
+    "ANR",
+    "common drive",
+    "septic"
+   ],
+   "quote": "plan will be sent out for departmental review."
+  },
+  {
+   "topic": "Public hearing: Highfield Village (continued)",
+   "resolution": "continued to February 8, 2016",
+   "tags": [
+    "public hearing",
+    "continuance"
+   ],
+   "quote": "applicant requested continuance to february 8, 2016."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to sign 12/14/15 minutes, second, d. prokowiew, minutes signed."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "tags": [
+    "committees"
+   ],
+   "quote": "meeting january 21st to discuss improvements to farmers' market."
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "no action",
+   "tags": [
+    "development status"
+   ],
+   "quote": "tri town landing- work continues."
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "no action",
+   "tags": [
+    "town meeting",
+    "stormwater",
+    "warrant"
+   ],
+   "quote": "m. allison will be the planning board's representative."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "notices & communications: noted"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "february 8- highfield village hearing (cont'd)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:58 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 8:58 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 12/14/15",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 12/14/15 minutes 12/14/15 unitil information meeting"
+  },
+  {
+   "name": "Minutes 12/14/15 Unitil Information Meeting",
+   "where": "list",
+   "quote": "minutes 12/14/15 unitil information meeting"
+  },
+  {
+   "name": "ANR Plan 203 West Townsend Road",
+   "where": "list",
+   "quote": "anr plan 203 west townsend road"
+  },
+  {
+   "name": "ANR Plan 790-792 Massachusetts Avenue",
+   "where": "list",
+   "quote": "anr plan 790-792 massachusetts avenue"
+  },
+  {
+   "name": "ANR Plan 107 Youngs Road",
+   "where": "list",
+   "quote": "anr plan 107 youngs road"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "Highfield Village",
+  "public hearing",
+  "minutes",
+  "town meeting",
+  "stormwater",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

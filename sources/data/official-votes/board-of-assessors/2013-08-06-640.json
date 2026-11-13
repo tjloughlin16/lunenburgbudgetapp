@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-08-06",
  "docid": "640",
@@ -12,25 +12,227 @@
  },
  "votes": [
   {
-   "motion": "Approve the Chapter 61B classification application for Michael Conway of 322 Flat Hill Rd",
-   "outcome": "not stated",
+   "motion": "Approve current expense vouchers, abatements, warrant, and payroll.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrant, and payroll."
+  },
+  {
+   "motion": "Approve the Chapter 61B continuation application of Michael Conway, 322 Flat Hill Rd.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "board of assessors reviewed the application and acknowledgment and voted to approve the application."
   },
   {
-   "motion": "Accept the Chapter 61B lien for 994 Northfield Rd under new ownership (Settlers Crossing Golf Course)",
-   "outcome": "not stated",
+   "motion": "Accept the Chapter 61B lien under the new ownership of 994 Northfield Rd (Settlers Crossing Golf Course), with the release of the former lien.",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the board reviewed all the documents including the \"new\" chapter 61b lien and release of the former lien and voted to accept the lien under the new ownership."
   },
   {
-   "motion": "Meet on Tuesday, September 10 at 6 pm",
-   "outcome": "not stated",
+   "motion": "Meet on Tuesday, September 10 at 6 pm (next meeting).",
+   "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on tuesday, september 10 at 6 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract from scanned minutes. Three votes recorded; none have an explicit outcome count or unanimous language — all marked \"not stated\".",
- "cost_usd": 0.0853055
+ "note": "OCR text of a typed minutes page with several misreadings (e.g., 'Lauri Faquett' for the signature, 'on on9/26/2012', '61 B', 'Sr.and'). Motions carry no mover, seconder, or tally; the two Chapter 61B approvals are recorded only as 'voted to approve' / 'voted to accept'. Harald Scheid's attendance is described only as not attending the full meeting. No public comment section appears. The two 'Board reviewed and approved' and 'voted to meet' items are recorded as votes with outcome passed but no count.\"}]",
+ "cost_usd": 0.00464412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis J. Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board member, matthew j. papini, sr.and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board member, matthew j. papini, sr.and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board member, matthew j. papini, sr.and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "not stated",
+   "quote": "harald scheid regional assessor was not able to attend the full meeting."
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "board member christopher comeau away on vacation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chris (Board Member Christopher Comeau) is to review the July minutes and vote on them at the next meeting.",
+   "quote": "chris will need to review and vote on them at the next meeting."
+  },
+  {
+   "decision": "Louise to prepare a letter for the Registry of Deed recording for the Conway Chapter 61B continuation and send a $150.00 check.",
+   "quote": "louise will prepare a letter for the registry of deed recording and send the check in the amount of $150.00."
+  },
+  {
+   "decision": "Louise to contact the owners of 994 Northfield Rd and request a $150.00 check for the release and new recording.",
+   "quote": "louise will contact the owners and request a check in the amount of $150.00 for the release and new recording."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Motor vehicle excise (MVE) tax bills mailed",
+   "what_was_recorded": "Four MVE tax bills and the Farm & Dealer MVE commitment were reported mailed out in the past month.",
+   "figures_as_printed": [
+    "$48,007.59",
+    "$7,608.25"
+   ],
+   "quote": "louise reported that the 4 mve tax bills totaling $48,007.59 and the farm & dealer mve commitment totaled $7,608.25 were mailed out this past month."
+  },
+  {
+   "topic": "Chapter 61B continuation lien for 322 Flat Hill Rd (Conway)",
+   "what_was_recorded": "Louise to send a $150.00 check for the Registry of Deed recording of the continuation lien and release.",
+   "figures_as_printed": [
+    "$150.00"
+   ],
+   "quote": "louise will prepare a letter for the registry of deed recording and send the check in the amount of $150.00."
+  },
+  {
+   "topic": "Chapter 61B lien release and new recording for 994 Northfield Rd",
+   "what_was_recorded": "Louise to request a $150.00 check from the owners for the release and new recording.",
+   "figures_as_printed": [
+    "$150.00"
+   ],
+   "quote": "louise will contact the owners and request a check in the amount of $150.00 for the release and new recording."
+  },
+  {
+   "topic": "Roll-Back Tax payment by Judith & John Aro",
+   "what_was_recorded": "The Aros decided to delay paying back the Roll-Back Tax; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "judith & john aro of 400 howard street were in touch with the office and decided to delay paying back the roll-back tax"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, abatements, warrant, payroll",
+   "resolution": "approved",
+   "tags": [
+    "vouchers",
+    "abatements",
+    "payroll"
+   ],
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrant, and payroll."
+  },
+  {
+   "topic": "July minutes",
+   "resolution": "approved by Louis; Chris to review and vote at next meeting",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "louis approved the july minutes and chris will need to review and vote on them at the next meeting."
+  },
+  {
+   "topic": "Roll-Back Tax delay by Aro, 400 Howard Street",
+   "resolution": "noted",
+   "tags": [
+    "roll-back tax"
+   ],
+   "quote": "judith & john aro of 400 howard street were in touch with the office and decided to delay paying back the roll-back tax"
+  },
+  {
+   "topic": "MVE tax bills mailed",
+   "resolution": "noted",
+   "tags": [
+    "motor vehicle excise"
+   ],
+   "quote": "louise reported that the 4 mve tax bills totaling $48,007.59"
+  },
+  {
+   "topic": "Chapter 61B continuation, Michael Conway, 322 Flat Hill Rd",
+   "resolution": "approved",
+   "tags": [
+    "Chapter 61B",
+    "liens"
+   ],
+   "quote": "board of assessors reviewed the application and acknowledgment and voted to approve the application."
+  },
+  {
+   "topic": "Chapter 61B lien, 994 Northfield Rd (Settlers Crossing Golf Course)",
+   "resolution": "lien accepted under new ownership",
+   "tags": [
+    "Chapter 61B",
+    "liens",
+    "golf course"
+   ],
+   "quote": "the board reviewed all the documents including the \"new\" chapter 61b lien and release of the former lien"
+  },
+  {
+   "topic": "Statutory exemption process",
+   "resolution": "noted",
+   "tags": [
+    "exemptions"
+   ],
+   "quote": "louise reported that the statutory exemption process is underway and that approx. 165 applications were mailed out."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for September 10 at 6 pm",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "board voted to meet on tuesday, september 10 at 6 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Michael Conway of 322 Flat Hill Rd.",
+   "where": "text",
+   "quote": "we are in receipt of a letter from michael conway of 322 flat hill rd."
+  },
+  {
+   "name": "Chapter 61B application and Acknowledgement of Rights and Obligations (Michael Conway)",
+   "where": "text",
+   "quote": "has completed the application and signed the acknowledgement of the rights and obligations under chapter 61b."
+  },
+  {
+   "name": "Chapter 61B continuation lien and release of the lien filed under Abby Guinard",
+   "where": "text",
+   "quote": "harald prepared the lien for the continuation of this property under chapter 61 b as well as the release of the lien"
+  },
+  {
+   "name": "Chapter 61B Chapter Lien application and Acknowledgement of Rights and Obligations (994 Northfield Rd)",
+   "where": "text",
+   "quote": "louise reported that we are also in receipt of the 61b chapter lien application and acknowledgement of"
+  },
+  {
+   "name": "Statutory exemption applications",
+   "where": "text",
+   "quote": "louise reported that the statutory exemption process is underway and that approx. 165 applications were mailed out."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "Chapter 61B",
+  "abatements",
+  "motor vehicle excise",
+  "statutory exemptions",
+  "liens",
+  "vouchers",
+  "roll-back tax"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

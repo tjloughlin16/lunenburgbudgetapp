@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-03-08",
  "docid": "1792",
@@ -12,6 +12,71 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a Bylaw Committee review and discussion of proposed changes to COA bylaws, with a statement that the Committee \"recommended the following changes to the COA Board,\" but no formal motions or voting outcomes are recorded in this document. The header indicates these minutes were later \"Approved at 9/11/12 COA Meeting,\" suggesting any formal vote on these proposals occurred at that separate meeting, not in this 3/08/2012 committee meeting.",
- "cost_usd": 0.0819855
+ "note": "Minutes of the By-Law Committee (not a full COA meeting). No motion or vote is recorded; the committee's recommendations are listed as proposed bylaw text. The header says \"Minutes Approved at 9/11/12 COA Meeting\", but no approval vote appears in this text. The attached job description is referenced but not included. No attendance status, no discussion detail, and no dollar figures are printed.",
+ "cost_usd": 0.0020173200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Barbara Brown",
+   "status": "not stated",
+   "quote": "members: barbara brown, jim hays and fred crellin",
+   "role": "Members"
+  },
+  {
+   "name": "Jim Hays",
+   "status": "not stated",
+   "quote": "members: barbara brown, jim hays and fred crellin",
+   "role": "Members"
+  },
+  {
+   "name": "Fred Crellin",
+   "status": "not stated",
+   "quote": "members: barbara brown, jim hays and fred crellin",
+   "role": "Members"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The By-Law Committee recommended proposed changes to the COA bylaws (membership, meetings, director's evaluation, other committees) to the COA Board.",
+   "quote": "after discussion, the committee recommended the following changes to the coa board:"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "COA By-Laws review",
+   "resolution": "Committee recommended changes to the COA Board",
+   "quote": "the by-law committee met on march 8\" to review the coa by-laws.",
+   "tags": [
+    "bylaws",
+    "membership",
+    "meetings",
+    "director evaluation",
+    "committees"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA job description (attached, referenced for Article IV Section 1)",
+   "where": "text",
+   "quote": "(see attached job description)"
+  }
+ ],
+ "tags": [
+  "bylaws",
+  "council on aging",
+  "membership",
+  "meeting schedule",
+  "director evaluation",
+  "standing committees"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

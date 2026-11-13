@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2015-06-09",
  "docid": "1852",
@@ -12,33 +12,366 @@
  },
  "votes": [
   {
-   "motion": "Accept the May 12, 2015 Council on Aging minutes",
-   "moved_by": "Sarah Grant",
-   "seconded_by": "Jacquelyn Dwyer",
-   "outcome": "passed unanimously",
+   "motion": "Approve the May 12, 2015 Council on Aging minutes.",
+   "moved_by": "Ms. Grant",
+   "seconded_by": "Ms. Dwyer",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. grant moved to accept the may 12, 2015 counci l on aging minutes. ms. dwyer seconded. on vote, motion carried unanimo usl",
-   "quote_taken_from_text": true
+   "quote": "ms. grant moved to accept the may 12, 2015"
   },
   {
-   "motion": "Nominate Pete Lincoln to Chairperson of the Council on Aging for a 1 year term",
-   "moved_by": "Kevin McNally",
-   "seconded_by": "Debbie Lincoln",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "mr. mcnally moved to nominate pete lincoln to chair person of the council on aging for a 1 year term. ms. lincoln seconded. on vote, motion carried unanimously",
-   "quote_taken_from_text": true
+   "motion": "Nominate Pete Lincoln as Chairperson of the Council on Aging for a 1-year term.",
+   "moved_by": "Mr. McNally",
+   "seconded_by": "Ms. Lincoln",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. mcnally moved to nominate pete lincoln to chair"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Sarah Grant",
-   "seconded_by": "Jacquelyn Dwyer",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the COA meeting.",
+   "moved_by": "Ms. Grant",
+   "seconded_by": "Ms. Dwyer",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. grant moved to adjourn the coa meeting. ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "ms. grant moved to adjourn the coa meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clean and readable. All votes are stated with explicit motion, mover, seconder, and outcome.",
- "cost_usd": 0.0847265
+ "note": "Text extraction splits some words and names (e.g., \"Judy Tarbe ll\", \"Counci l\", \"Directo r\"); quotes avoid those splits. Votes are recorded only as \"carried unanimously\" with no tallies, so outcomes are \"passed\". The vice chair nomination was not voted on at this meeting. No document heading is printed; the documents_list entry rests on the sentence about distributed sign-up lists.",
+ "cost_usd": 0.00820422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "pete lincoln (chairperson), doreen noble"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "excused herself from the rest of the meeting"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd, betty"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "not stated",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd, betty"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "not stated",
+   "status": "present",
+   "quote": "debbie lincoln, sarah grant, diane nowd, betty"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, cheryl moisan"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "not stated",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, cheryl moisan"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "betty digiacomo, kevin mcnally, cheryl moisan"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "diane nowd, judith tarbell, deborah lincoln"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jacquelyn dwyer, brian guenard"
+  },
+  {
+   "name": "Brian Guenard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jacquelyn dwyer, brian guenard"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst",
+   "status": "present",
+   "quote": "brian guenard & sue doherty"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "COA Board Member",
+   "status": "absent",
+   "quote": "resignation of coa board member deb seeley"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "potential new COA board member",
+   "status": "present",
+   "quote": "jane rabbitt (potential new coa board member)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Nominate Jacquelyn Dwyer as Vice Chairperson; the nomination will be voted on at the August 2015 COA meeting.",
+   "quote": "the board decided to nominate jacquelyn dwyer to vice chairperson"
+  },
+  {
+   "decision": "Boston Post Cane recipient determination procedure continued to August 2015 pending further discussion with the Board of Selectmen.",
+   "quote": "this will be continued to the august 2015 coa meeting."
+  },
+  {
+   "decision": "The Board of Selectmen will be contacted about designating a liaison to the COA.",
+   "quote": "the board of selectmen will be contacted concerning designating a liaison to the coa."
+  },
+  {
+   "decision": "Task group assignments to be discussed again at a future COA meeting; board as a whole to handle issues, with an individual member assigned to research as needed.",
+   "quote": "this will be discussed again at a future coa meeting."
+  },
+  {
+   "decision": "Procuring a booth at the Lion's Club fair discussion continued to the August COA meeting.",
+   "quote": "discussion on this will be held again at the august coa meeting."
+  },
+  {
+   "decision": "Election of a new board member to be placed on the August agenda.",
+   "quote": "mr. lincoln requested that election of a new board member be placed on the august agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA year-end budget",
+   "what_was_recorded": "Ms. Noble reported that she had been working with the Town Accountant's office to rectify the COA budget, and that $150 will be left in the COA accounts.",
+   "figures_as_printed": [
+    "$150"
+   ],
+   "quote": "there will be $150 left in the coa accounts"
+  },
+  {
+   "topic": "FY2016 budget",
+   "what_was_recorded": "The FY2016 budget is ready, and Ms. Noble will review it with Ms. Doherty; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the fy2016 budget is ready to go"
+  },
+  {
+   "topic": "Supporters of Eagle House parking lot fund",
+   "what_was_recorded": "The Supporters' treasurer reported about $8000 remaining in the parking lot fund, and most donors agreed to let donations be redesignated for other senior center uses.",
+   "figures_as_printed": [
+    "$8000"
+   ],
+   "quote": "they have approximately $8000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: remembrance of Bob Upton",
+   "resolution": "moment of silence observed",
+   "quote": "remembrance of bob upton",
+   "tags": [
+    "announcements",
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Minutes approval, May 12, 2015",
+   "resolution": "approved",
+   "quote": "ms. grant moved to accept the may 12, 2015",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "reported; budget, building repair and Eagle Scout walkway updates",
+   "quote": "ms. noble reported that all of the year end",
+   "tags": [
+    "budget",
+    "building repair",
+    "director"
+   ]
+  },
+  {
+   "topic": "Resignation of COA board member Deb Seeley",
+   "resolution": "noted",
+   "quote": "resignation of coa board member deb seeley",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Wish list for Supporters of Eagle House Inc.",
+   "resolution": "reported",
+   "quote": "wish list for submission to supporters of eagle house inc.",
+   "tags": [
+    "fundraising",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "COA volunteers for Chicken BBQ, July 23",
+   "resolution": "volunteers signed up",
+   "quote": "coa volunteers for thursday july 23",
+   "tags": [
+    "volunteers",
+    "events"
+   ]
+  },
+  {
+   "topic": "COA volunteer cookout, August 17",
+   "resolution": "volunteers signed up",
+   "quote": "coa volunteer cookout monday august 17",
+   "tags": [
+    "volunteers",
+    "events"
+   ]
+  },
+  {
+   "topic": "Slate of COA officers FY16",
+   "resolution": "chair elected; vice chair nomination deferred to August",
+   "quote": "discussion/vote for slate of coa officers fy16",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Task groups",
+   "resolution": "discussed; to be revisited",
+   "quote": "task groups (suggestions):",
+   "tags": [
+    "task groups"
+   ]
+  },
+  {
+   "topic": "Advocacy task group",
+   "resolution": "continued to August",
+   "quote": "advocacy (charge of task group is to deal with elder issues within lunenburg)",
+   "tags": [
+    "advocacy",
+    "Boston Post Cane"
+   ]
+  },
+  {
+   "topic": "Communication task group",
+   "resolution": "discussed; no action",
+   "quote": "mr. lincoln remarked on the council on aging eagle house information flyer",
+   "tags": [
+    "communication",
+    "flyer"
+   ]
+  },
+  {
+   "topic": "Public relations task group",
+   "resolution": "continued to August",
+   "quote": "a brief discussion was held regarding procuring a booth",
+   "tags": [
+    "public relations",
+    "fair"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "notices & communications",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "reminder given; new member election requested for August agenda",
+   "quote": "mr. lincoln requested that election of a new board member",
+   "tags": [
+    "board comment",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment : none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:52AM",
+   "quote": "meeting adjourned at 10:52am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA volunteer sign-up list, Chicken BBQ (Thursday July 23, 4-6PM)",
+   "where": "list",
+   "quote": "a list was distributed, by request of coa outreac h coordinator faith anderso",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "COA volunteer sign-up list, Volunteer Cookout (Monday August 17, 11AM-2PM)",
+   "where": "list",
+   "quote": "a list was distributed for coa board members"
+  },
+  {
+   "name": "COA \"wish list\" presented to Supporters of Eagle House Inc.",
+   "where": "text",
+   "quote": "which included plans for a new shed and benches"
+  },
+  {
+   "name": "Council on Aging Eagle House information flyer",
+   "where": "text",
+   "quote": "council on aging eagle house information flyer"
+  },
+  {
+   "name": "Changes to the Boston Post Cane recipient determination procedure",
+   "where": "text",
+   "quote": "made to the boston post cane recipient determination procedure"
+  },
+  {
+   "name": "Lunenburg Town Charter (charge of the Council on Aging)",
+   "where": "text",
+   "quote": "in the lunenburg town charter"
+  },
+  {
+   "name": "FY2016 budget",
+   "where": "text",
+   "quote": "the fy2016 budget is ready to go"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "Eagle House",
+  "officers election",
+  "volunteers",
+  "budget",
+  "building repair",
+  "task groups",
+  "annual meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a list was distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

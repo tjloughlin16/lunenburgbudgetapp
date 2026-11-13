@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2009-10-15",
  "docid": "2720",
@@ -12,31 +12,231 @@
  },
  "votes": [
   {
-   "motion": "Accept September minutes as revised",
+   "motion": "Accept the September minutes as revised.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion made and passed to accept september minutes as revised.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "minutes: motion made and passed to accept september minutes as revised."
   },
   {
-   "motion": "Accept Technology Services Librarian job description",
+   "motion": "Accept the Technology Services Librarian job description.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made and passed to accept technology services librarian job description.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "motion made and passed to accept technology services librarian job description."
   },
   {
-   "motion": "Appropriate $1,000.00 for staff development and professional organization memberships",
+   "motion": "Appropriate $1,000.00 for staff development and professional organization memberships.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made and passed to appropriate $1,000.00 for staff development and professional organization memberships.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "motion made and passed to appropriate $1,000.00 for staff development and professional organization memberships."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All three votes passed; no vote counts or names of movers and seconders are recorded in the minutes.",
- "cost_usd": 0.0841845
+ "note": "Plain text minutes, not a scan; all votes readable. Minutes do not record the mover or seconder of any motion, and no vote tallies are printed, so outcomes are recorded as 'passed' from the words 'motion made and passed'. The minutes do not expand CAFO and do not give the roles of several trustees. The Director's Report is referenced ('Please see printed report') but no list of documents used is printed. Adjournment at 8:32 p.m. is recorded without a motion.",
+ "cost_usd": 0.00417662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, mike kelly, noelle bodkin john mara, deb chapdelaine"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, mike kelly, noelle bodkin john mara, deb chapdelaine"
+  },
+  {
+   "name": "Mike Kelly",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, mike kelly, noelle bodkin john mara, deb chapdelaine"
+  },
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, mike kelly, noelle bodkin john mara, deb chapdelaine"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, mike kelly, noelle bodkin john mara, deb chapdelaine"
+  },
+  {
+   "name": "Deb Chapdelaine",
+   "status": "present",
+   "quote": "attending: amy sadkin, len smetana, mike kelly, noelle bodkin john mara, deb chapdelaine"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "lisa krowitz, jeanne raboin"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "jeanne raboin, secretary"
+  },
+  {
+   "name": "John Londa",
+   "role": "Guest",
+   "status": "present",
+   "quote": "john londa presented information about a grant opportunity to place solar panels on town building roofs, including the library."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Londa will get back to John Mara about the solar panels grant opportunity.",
+   "quote": "john londa will get back to john mara about the solar panels grant opportunity; john mara will send solar panels contract to trustees for review."
+  },
+  {
+   "decision": "John Mara will send the solar panels contract to the Trustees for review.",
+   "quote": "john mara will send solar panels contract to trustees for review."
+  },
+  {
+   "decision": "Jeanne Raboin will speak to the Friends about the joint Friends/Trustees meeting.",
+   "quote": "jeanne raboin will speak to the friends about the joint friends/trustees meeting."
+  },
+  {
+   "decision": "Amy Sadkin will arrange Sandy's retirement gift and find out the best day for a reception.",
+   "quote": "amy sadkin will arrange for sandy's gift and find out best day for a reception."
+  },
+  {
+   "decision": "Friends, Trustees and Staff will all chip in for a retirement gift for Sandy; Friends will arrange a small reception in her honor.",
+   "quote": "friends, trustees and staff will all chip-in for the gift. friends will arrange a small reception in her honor"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Solar panel grant opportunity",
+   "what_was_recorded": "The solar program is described as requiring no up-front costs for the town or library, with the company owning the panels and bearing installation cost.",
+   "figures_as_printed": [],
+   "quote": "there are no up-front costs for the town or library."
+  },
+  {
+   "topic": "Solar power sale rate",
+   "what_was_recorded": "The rate to the town would be sold back below the Unitil rate; a possible 10 KW system was mentioned, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "rate to town would be sold back below unitil's rate."
+  },
+  {
+   "topic": "Additional state budget cuts",
+   "what_was_recorded": "The Director reported that CAFO will announce additional budget cuts at the December 1 town meeting.",
+   "figures_as_printed": [],
+   "quote": "cafo will announce additional budget cuts at december 1 town meeting."
+  },
+  {
+   "topic": "Friends October Book and Bake Sale proceeds",
+   "what_was_recorded": "The Friends' October Book and Bake Sale made approximately $2,430.00.",
+   "figures_as_printed": [
+    "$2, 430.00"
+   ],
+   "quote": "5. friends october book and bake sale: made approximately $2, 430.00"
+  },
+  {
+   "topic": "Staff development and professional memberships",
+   "what_was_recorded": "The Trustees voted to appropriate $1,000.00 for staff development and professional organization memberships.",
+   "figures_as_printed": [
+    "$1,000.00"
+   ],
+   "quote": "motion made and passed to appropriate $1,000.00 for staff development and professional organization memberships."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Solar panel grant opportunity",
+   "resolution": "presented by John Londa; contract to be reviewed by Trustees",
+   "quote": "john londa presented information about a grant opportunity to place solar panels on town building roofs, including the library.",
+   "tags": [
+    "solar",
+    "grant",
+    "energy",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "September minutes",
+   "resolution": "approved as revised",
+   "quote": "minutes: motion made and passed to accept september minutes as revised.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "presented; no vote recorded",
+   "quote": "amy presented october's director's report (please see printed report for details)",
+   "tags": [
+    "director",
+    "staff",
+    "facilities",
+    "technology",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Friends October Book and Bake Sale",
+   "resolution": "reported",
+   "quote": "5. friends october book and bake sale: made approximately $2, 430.00",
+   "tags": [
+    "friends",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Job description",
+   "resolution": "approved",
+   "quote": "motion made and passed to accept technology services librarian job description.",
+   "tags": [
+    "personnel",
+    "job description"
+   ]
+  },
+  {
+   "topic": "Other: budget requests and Friends of LPL",
+   "resolution": "$1,000 appropriated; retirement gift and joint Friends/Trustees meeting planned",
+   "quote": "budget requests: motion made and passed to appropriate $1,000.00 for staff development and professional organization memberships.",
+   "tags": [
+    "budget",
+    "staff development",
+    "friends",
+    "retirement",
+    "endowment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "October Director's Report",
+   "where": "text",
+   "quote": "amy presented october's director's report (please see printed report for details)"
+  },
+  {
+   "name": "Technology Services Librarian job description",
+   "where": "text",
+   "quote": "motion made and passed to accept technology services librarian job description."
+  },
+  {
+   "name": "Solar panels contract",
+   "where": "text",
+   "quote": "john mara will send solar panels contract to trustees for review."
+  }
+ ],
+ "tags": [
+  "solar energy",
+  "grant",
+  "library budget",
+  "director's report",
+  "staff retirement",
+  "Friends of LPL",
+  "job description",
+  "endowment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

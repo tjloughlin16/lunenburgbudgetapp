@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-04-26",
  "docid": "3567",
@@ -12,31 +12,268 @@
  },
  "votes": [
   {
-   "motion": "Approve Zoning Articles Public Hearing minutes from April 12, 2010",
-   "moved_by": "Mr. Lockwood",
-   "seconded_by": "Mr. Saiia",
-   "outcome": "passed",
+   "motion": "Approve (sign) the minutes of 4/12/10.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, mr. lockwood, second, mr. saiia."
+   "quote": "motion, mr. saiia, second, mr. bod kin jr.,"
   },
   {
-   "motion": "The Planning Board recommends against the zoning changes in Article 23 and Article 24",
+   "motion": "Approve (sign) the Zoning Articles Public Hearing minutes of 4/12/10.",
+   "moved_by": "Mr. Lockwood",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "signed zoning articles public hearing, 4/12/10, motion, mr. lockwood, second, mr. saiia."
+  },
+  {
+   "motion": "The Planning Board recommends against the zoning changes in Article 23 and Article 24.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Ms. Bilotta",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "motion, mr. bodkin jr., second, ms. bilotta, as follows: the planning board recommends against the zoning changes in article 23 and article 24."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:00 PM.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion, ms. bilotta, second, mr. saiia, adjourned 9 :00 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.14221850000000003
+ "dropped_unquoted": 0,
+ "note": "Text is legible, but the letterhead glyphs are garbled, so member roles (Chair, Vice-Chair, etc.) are not recorded. Roll call names all six members as present; no roles are printed. Motions on the 4/12/10 minutes, the zoning recommendation and adjournment record no counts or results, so outcomes are 'not stated'. The footer reads 'Minutes/2010/4-12-10', which differs from the 4/26/10 meeting date. No public comment section is printed. No documents list is printed.",
+ "cost_usd": 0.00676062,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Marion M. Benson",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus that the Planning Board will not recommend Article 23 (950 Massachusetts Avenue zoning change) to be passed.",
+   "quote": "not recommend article 23 to be passed."
+  },
+  {
+   "decision": "Board consensus that the Planning Board will not recommend Article 24 (3 Lancaster Avenue zoning change) to be passed.",
+   "quote": "board will not recommend article 24"
+  },
+  {
+   "decision": "Consensus that growth from proposed elderly housing and large projects warrants a new study/envision to plan for overall zoning changes.",
+   "quote": "a new study/envision be creat ed to plan for overall zoning changes"
+  },
+  {
+   "decision": "Consensus that enlargement of the DPW facility is part of the Master Plan; Planning Board comment on need appropriate, no comment on monies.",
+   "quote": "enlargement is part of the mas ter plan"
+  },
+  {
+   "decision": "Capital Planning Committee to support Article 3, DPW Renovations (committee report).",
+   "quote": "capital planning committee to support article 3, dp w renovations."
+  },
+  {
+   "decision": "ANR for 84 Lakefront was incorrect as presented; a corrective plan is to follow.",
+   "quote": "anr incorrect as presented; corrective plan to foll ow."
+  },
+  {
+   "decision": "Chair requested a site meeting on May 10, 2010 at 5:00 PM to view Emerald Place at Lake Whalom and Tri Town Landing; Director to process.",
+   "quote": "chair requested site meeting on may 10, 2010, 5:00 pm, to view two projects"
+  },
+  {
+   "decision": "Planning Board Approval for Article 25 (Accept Town Way, Lena Lane) was done by closure of the project.",
+   "quote": "planning board approval was done by closure of the project."
+  },
+  {
+   "decision": "United Solutions: Development Plan Review Approval with Directives will be filed.",
+   "quote": "development plan review approval with directives will be filed."
+  },
+  {
+   "decision": "Planning Board Chair will read and give reasoning on Articles 18, 19 and 20 at Town Meeting; CPC Chair will comment on Article 13.",
+   "quote": "article 19 zoning correction- planning board chair"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 3, DPW Facility renovation (money discussed)",
+   "what_was_recorded": "Planning Board commented on the need for the DPW facility renovation but made no comment on the monies; no dollar figure printed.",
+   "quote": "but no comment on the monies."
+  },
+  {
+   "topic": "Article 13 FY '11 Capital Plan",
+   "what_was_recorded": "Comment on the FY '11 Capital Plan to be made by the CPC Chair; no dollar figure printed.",
+   "quote": "comment will be ma de from cpc chair."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (signed) 4/12/10 minutes",
+   "quote": "motion, mr. saiia, second, mr. bod kin jr.,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "ANR 84 Lakefront",
+   "resolution": "corrective plan to follow",
+   "quote": "anr incorrect as presented; corrective plan to foll ow.",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Committee reports (CPC, MJTC, MRPC)",
+   "resolution": "reported; CPC to support Article 3",
+   "quote": "capital planning committee to support article 3, dp w renovations.",
+   "tags": [
+    "committee reports",
+    "capital planning",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / May 2010 Annual Town Meeting articles",
+   "resolution": "discussed; Board will not recommend Articles 23 and 24; Article 25 closed",
+   "quote": "article 25, accept town way, lena lane- director r eporte",
+   "tags": [
+    "annual town meeting",
+    "zoning",
+    "warrant articles"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "reported (Emerald Place, Tri Town Landing, United Solutions)",
+   "quote": "emerald place at lake whalom- director gave status report.",
+   "tags": [
+    "development",
+    "fire protection"
+   ]
+  },
+  {
+   "topic": "Member data and issues: site meeting",
+   "resolution": "site meeting requested for May 10, 2010",
+   "quote": "chair requested site meeting on may 10, 2010, 5:00 pm, to view two projects",
+   "tags": [
+    "site visit"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action (see above)",
+   "quote": "unfinished business: see above",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:00 PM",
+   "quote": "motion, ms. bilotta, second, mr. saiia, adjourned 9 :00 pm.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 3, DPW Facility (May 2010 Annual Town Meeting)",
+   "where": "text",
+   "quote": "article 3, dpw facility- questioned was planning b oard role in article."
+  },
+  {
+   "name": "Article 13 FY '11 Capital Plan",
+   "where": "text",
+   "quote": "comment will be ma de from cpc chair."
+  },
+  {
+   "name": "Article 18 Frontage",
+   "where": "text",
+   "quote": "article 18 frontage- planning board chair will rea d and give reasoning."
+  },
+  {
+   "name": "Article 19 Zoning Correction",
+   "where": "text",
+   "quote": "article 19 zoning correction- planning board chair"
+  },
+  {
+   "name": "Article 20 Zoning Map",
+   "where": "text",
+   "quote": "article 20 zoning map- planning board chair will r ead and give reasoning."
+  },
+  {
+   "name": "Article 23 Zoning Change, 950 Massachusetts Avenue",
+   "where": "text",
+   "quote": "article 23 zoning change, 950 massachusetts avenue"
+  },
+  {
+   "name": "Article 24 Zoning Change, 3 Lancaster Avenue",
+   "where": "text",
+   "quote": "article 24 zoning change, 3 lancaster avenue"
+  },
+  {
+   "name": "Article 25, Accept Town Way, Lena Lane",
+   "where": "text",
+   "quote": "article 25, accept town way, lena lane- director r eporte",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "ANR plan for 84 Lakefront",
+   "where": "text",
+   "quote": "anr incorrect as presented; corrective plan to foll ow."
+  },
+  {
+   "name": "TIP list (MJTC)",
+   "where": "text",
+   "quote": "reported that the tip list has new amendments."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "annual town meeting",
+  "zoning",
+  "warrant articles",
+  "ANR",
+  "development status",
+  "site visit",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

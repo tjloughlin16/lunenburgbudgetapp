@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-09-18",
  "docid": "4820",
@@ -12,32 +12,397 @@
  },
  "votes": [
   {
-   "motion": "Appoint Shelley McCaie to the position of Treasurer-Collector, effective 10/08/12",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Paula Bertram",
+   "motion": "Appoint Shelley A. McCaie to the position of Treasurer-Collector.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. alonzo moved to appoint shelley mccaie to the position of treasurer-collector. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed."
   },
   {
-   "motion": "Extend the appointment of Myleen Mallari as Acting Treasurer-Collector to 10/07/12",
-   "moved_by": "Tom Alonzo",
-   "seconded_by": "Paula Bertram",
+   "motion": "Extend the appointment of Myleen Mallari as Acting Treasurer-Collector to 10/07/12.",
+   "moved_by": "Mr. Alonzo",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "mr. alonzo moved to extend the appointment of myleen mallari as acting treasurer-collector to 10/07/12. ms. bertram seconded. on vote, motion carried, 4 in favor, 0 opposed"
   },
   {
-   "motion": "Adjourn the regular meeting",
-   "moved_by": "Carl Sund",
-   "seconded_by": "Paula Bertram",
-   "outcome": "passed unanimously",
+   "motion": "Ratify the appointment of Benjamin R. Campbell to the position of Reserve Police Officer.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "unanimous",
+   "procedural": false,
+   "quote": "unanimously ratified the appointment of benjamin r. campbell to the position of reserve police officer."
+  },
+  {
+   "motion": "Adjourn the regular session.",
+   "moved_by": "Mr. Sund",
+   "seconded_by": "Ms. Bertram",
+   "outcome": "unanimous",
    "procedural": true,
-   "quote": "mr. sund motioned to adjourn the meeting. unanimously to adjourn regular session at 8:31pm. upcoming meeting schedule september 2",
-   "quote_taken_from_text": true
+   "quote": "mr. sund motioned to adjourn the meeting. unanimously to adjourn regular session at 8:31pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Three votes recorded. Minutes section lists prior meeting minutes (8/28/12, 8/14/12, 8/7/12) but with no explicit motion language to approve them. Benjamin R. Campbell's Reserve Police Officer appointment is reported as previously ratified in executive session with no motion recorded in the regular meeting. Board member Steven M. deBettencourt was absent.",
- "cost_usd": 0.1167095
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned page set (macOS Vision). Some words are garbled (for example 'clectric', 'aide', 'a proved', 'collapsed'), and the text is out of order in places: the seconder line 'Ms. Bertram seconded. The board voted' for the adjournment appears after the meeting schedule. No vote is recorded for entering executive session, for approving the 8/28/12, 8/14/12 and 8/7/12 minutes, or for the warrant W 16-13. Votes shown are only those the minutes print with a result.",
+ "cost_usd": 0.007562019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "",
+   "status": "present",
+   "quote": "as scheduled with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "as scheduled with david matthews, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "",
+   "status": "absent",
+   "quote": "absent was steven m. debettencourt"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "Vice Chair of the Library Board",
+   "status": "present",
+   "quote": "richard mailloux, vice chair of the library board and robin venezia, library trustee, spoke on stm article 4"
+  },
+  {
+   "name": "Robin Venezia",
+   "role": "Library Trustee",
+   "status": "present",
+   "quote": "richard mailloux, vice chair of the library board and robin venezia, library trustee, spoke on stm article 4"
+  },
+  {
+   "name": "Toby Bakaysa",
+   "role": "Chairperson of the Planning Board",
+   "status": "present",
+   "quote": "toby bakaysa, chairperson of the planning board updated the bos on the status of the project on 651 chase rd."
+  },
+  {
+   "name": "Michael Borkowski",
+   "role": "EPG Solar",
+   "status": "present",
+   "quote": "michael borkowski, epg solar spoke and questioned the special permit being issued for the chase rd. project."
+  },
+  {
+   "name": "John Whalen",
+   "role": "526 West Townsend Rd",
+   "status": "present",
+   "quote": "john whalen, 526 west townsend rd spoke and said that he had read a document on solar power purchase agreements,"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "129 Pleasant St",
+   "status": "present",
+   "quote": "greg bittner, 129 pleasant st asked it the town has the ability to solicit ppa's from entities outside of town."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board was in agreement with Mr. Matthews that it supports the Library but could not support STM Article 4.",
+   "quote": "they were all in agreement with mr. matthews that they support the library but could not support article 4."
+  },
+  {
+   "decision": "Articles 1, 2 and 3 of the Special Town Meeting remain under discussion in Executive Session because the Town is still negotiating with two developers.",
+   "quote": "articles 1, 2, & 3 are still being discussed in executive session due to the fact that they are still negotiating with two"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "STM Article 4 Library supplemental appropriation",
+   "what_was_recorded": "Article 4 asks for a supplemental appropriation to the 2012 Annual Town Meeting Library amount; the board could not support it.",
+   "figures_as_printed": [
+    "$35,598"
+   ],
+   "quote": "asks for the town to vote a supplemental appropriation of $35,598 to the amount appropriated at the 2012 annual town meeting"
+  },
+  {
+   "topic": "Library funding loss and State aid",
+   "what_was_recorded": "Library said that if the budget cuts stand it will lose the appropriation and an extra amount in State aid.",
+   "figures_as_printed": [
+    "$35,598",
+    "$12,000"
+   ],
+   "quote": "if the budget cuts stand they will lose $35,598 and an extra $12,000 in state aide."
+  },
+  {
+   "topic": "Library share of Town budget",
+   "what_was_recorded": "Library said its services cost about 1% of the Town budget.",
+   "figures_as_printed": [
+    "1%"
+   ],
+   "quote": "for all of the services they provide it is approximately 1% of the town budget."
+  },
+  {
+   "topic": "State cherry sheet revenue",
+   "what_was_recorded": "Matthews said the State number coming back to the Town and School was a stated amount.",
+   "figures_as_printed": [
+    "$123,673"
+   ],
+   "quote": "the number coming back from the state was $123,673 between the town and the school."
+  },
+  {
+   "topic": "State assessment change",
+   "what_was_recorded": "The State took a stated amount from the Town last year due to Choice and Charter assessment changes.",
+   "figures_as_printed": [
+    "$105,000"
+   ],
+   "quote": "the state took $105,000 from the town based on"
+  },
+  {
+   "topic": "PILOT payment requests",
+   "what_was_recorded": "PILOT requests were in a per-megawatt range, still lower than the Regional Assessor's lower assessment.",
+   "figures_as_printed": [
+    "12K. per MW",
+    "15K per MW"
+   ],
+   "quote": "requests are in the range of 12k. per mw - 15k per mw which is still lower than the lower assessment"
+  },
+  {
+   "topic": "Solar project savings to taxpayers (2MW)",
+   "what_was_recorded": "Savings for a 2MW facility over the next 20 years were stated as a range.",
+   "figures_as_printed": [
+    "$3.8M",
+    "$4.2M"
+   ],
+   "quote": "range from approximately $3.8m to as much as $4.2m over the next 20 years"
+  },
+  {
+   "topic": "Projected annual savings year 1 to year 20",
+   "what_was_recorded": "Sund said projected savings start near one figure in year 1 and rise to another by year 20, an extra amount over time; he believes about $140,000 could help the Library.",
+   "figures_as_printed": [
+    "$142,000",
+    "$235,000",
+    "$100,000",
+    "$140,000"
+   ],
+   "quote": "projected savings could be $142,000 in year 1 and as you get into year 20 its up towards"
+  },
+  {
+   "topic": "Projected PPA savings per year and over 20 years",
+   "what_was_recorded": "Speidel said the agreement would net a projected annual savings range and a 20-year range.",
+   "figures_as_printed": [
+    "$140,000",
+    "$180,000",
+    "$3.7M",
+    "$4.2M"
+   ],
+   "quote": "projected savings of between $140,000 & $180,000 per year, or over the 20 years between $3.7m & $4.2m"
+  },
+  {
+   "topic": "Warrant",
+   "what_was_recorded": "The minutes print a warrant entry with a dollar amount.",
+   "figures_as_printed": [
+    "$40,061.61"
+   ],
+   "quote": "warrants : 9/18/12 w 16-13 $40,061.61"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Richard Mailloux",
+   "stated_role": "Vice Chair of the Library Board",
+   "topic": "STM Article 4 Library supplemental appropriation",
+   "quote": "mr. mailloux explained that the cuts made to the library budget at annual town meeting put the library in a tremendous"
+  },
+  {
+   "speaker": "Robin Venezia",
+   "stated_role": "Library Trustee",
+   "topic": "Library waiver letter",
+   "quote": "ms. venezia stated that if they do need to submit for the waiver they will need town input to write a letter"
+  },
+  {
+   "speaker": "Michael Borkowski",
+   "stated_role": "EPG Solar",
+   "topic": "Chase Rd special permit and net metering cap",
+   "quote": "michael borkowski, epg solar spoke and questioned the special permit being issued for the chase rd. project."
+  },
+  {
+   "speaker": "John Whalen",
+   "stated_role": "526 West Townsend Rd",
+   "topic": "Solar PPA net metering concerns",
+   "quote": "john whalen, 526 west townsend rd spoke and said that he had read a document on solar power purchase agreements,"
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "129 Pleasant St",
+   "topic": "Soliciting PPAs and taxation of solar projects",
+   "quote": "greg bittner, 129 pleasant st asked it the town has the ability to solicit ppa's from entities outside of town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive Session",
+   "resolution": "entered; no vote recorded",
+   "tags": [
+    "executive session",
+    "real property",
+    "negotiation"
+   ],
+   "quote": "the board of selectmen met in the joseph f. bilotta meeting room, town hall as scheduled with david matthews"
+  },
+  {
+   "topic": "Regular session opening and public comment",
+   "resolution": "opened after executive session at 7:20 PM",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "regular meeting opened after executive session at 7:20 pm with the pledge of allegiance."
+  },
+  {
+   "topic": "Review Special Town Meeting Warrant Articles",
+   "resolution": "discussed; no action recorded on Article 4",
+   "tags": [
+    "special town meeting",
+    "library",
+    "solar",
+    "PILOT",
+    "PPA",
+    "net metering",
+    "Chase Rd"
+   ],
+   "quote": "1. review special town meeting warrant articles - richard mailloux, vice chair of the library board and"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "2. minutes/warrants/action file issues"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action recorded",
+   "tags": [
+    "finance committee",
+    "school committee",
+    "enrollment",
+    "pension"
+   ],
+   "quote": "3. committee reports - mr. alonzo reported that the finance committee had a meeting on thursday"
+  },
+  {
+   "topic": "Department reports",
+   "resolution": "none",
+   "tags": [
+    "departments"
+   ],
+   "quote": "4. department reports - none"
+  },
+  {
+   "topic": "Town Manager reports",
+   "resolution": "announcement read; no action recorded",
+   "tags": [
+    "traffic",
+    "road closure",
+    "Shirley"
+   ],
+   "quote": "5. town manager reports - ms. speidel read an announcement from the town of shirley"
+  },
+  {
+   "topic": "Appointments, re-appointments and resignations",
+   "resolution": "three items; appointments voted",
+   "tags": [
+    "appointments",
+    "treasurer-collector",
+    "police"
+   ],
+   "quote": "appointments/re-appointments/resignations (taken out of order)"
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed; adjourned",
+   "tags": [
+    "schedule",
+    "special town meeting"
+   ],
+   "quote": "september 25, 2012 - special town meeting"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting Warrant Articles",
+   "where": "text",
+   "quote": "1. review special town meeting warrant articles - richard mailloux, vice chair of the library board and"
+  },
+  {
+   "name": "STM Article 4",
+   "where": "text",
+   "quote": "stm article 4 which asks for the town to vote a supplemental appropriation of"
+  },
+  {
+   "name": "Document on Solar Power Purchase Agreements",
+   "where": "text",
+   "quote": "had read a document on solar power purchase agreements,"
+  },
+  {
+   "name": "Highlight sheet from the Worcester Retirement Pension Board presentation",
+   "where": "text",
+   "quote": "mr. matthews requested that the bos be given the highlight sheet from the worcester retirement pension board"
+  },
+  {
+   "name": "Finding & Directives for 651 Chase Rd",
+   "where": "text",
+   "quote": "will finalize the finding & directives this coming monday night."
+  },
+  {
+   "name": "Town of Shirley announcement on Catacunemaug Rd construction",
+   "where": "text",
+   "quote": "ms. speidel read an announcement from the town of shirley regarding road"
+  }
+ ],
+ "tags": [
+  "select board",
+  "special town meeting",
+  "library budget",
+  "solar PPA",
+  "PILOT",
+  "net metering",
+  "Chase Rd",
+  "appointments",
+  "treasurer-collector",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

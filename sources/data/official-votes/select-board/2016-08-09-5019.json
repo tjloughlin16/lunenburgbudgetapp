@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-08-09",
  "docid": "5019",
@@ -12,15 +12,172 @@
  },
  "votes": [
   {
-   "motion": "Adjourn from Executive Session and enter Open Session after a brief recess",
+   "motion": "To adjourn from executive session and enter open session after a brief recess.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: r. ebersole 2nd: t. alonzo to adjourn from executive session and enter open session after a brief recess vote: mr. alonzo- aye, ms. luck-aye, mr. ebersole-aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR from macOS Vision. One procedural vote recorded; other discussions (police union rates, firefighter contract negotiations, health insurance) noted consensus or decisions without formal motions or recorded votes.",
- "cost_usd": 0.08554049999999999
+ "note": "Executive session minutes only; they end at the motion to leave executive session, so the open-session portion is not in this text. The attendance line lists Paula Bertram as a member present, but the recorded vote shows only four members (Alonzo, Luck, Ebersole, Toale). Text is OCR: the header reads 'A SAALEN' and the signature block reads 'Claire m. Peterson' above 'Elaine M. Peterson'; the filing date appears as 'August 26\"'. No documents list is printed.",
+ "cost_usd": 0.00474532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members attending: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and town manager kerry lafleur"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members attending: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and town manager kerry lafleur"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members attending: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and town manager kerry lafleur"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "members attending: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and town manager kerry lafleur"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "members attending: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and town manager kerry lafleur"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "members attending: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; paula bertram, member, phyllis luck, member and town manager kerry lafleur"
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "others attending: attorney robert bowen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "General consensus was not to agree to the police union's request for a higher private detail rate and a higher rate for strike details.",
+   "quote": "general consensus was to not agree to that increase."
+  },
+  {
+   "decision": "The Board decided not to conduct performance reviews.",
+   "quote": "performance reviews were discussed. it was decided not to do so."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police union private detail rate increase",
+   "what_was_recorded": "The police union requested an increase in private detail rates from $42.00 to the Sergeant's new over-time rate, plus a higher rate for strike details.",
+   "figures_as_printed": [
+    "$42.00"
+   ],
+   "quote": "one additional request for an increase of private detail rates from $42.00 to the sergeant's new over-time rate"
+  },
+  {
+   "topic": "Unitil suit damages and possible repayment",
+   "what_was_recorded": "Discussion of Town property damage claims and of possibly repaying FEMA/MEMA or the insurance company if the Town receives restitution from Unitil; no dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued about the possibility of having to pay back fema/mema and/or the insurance company"
+  },
+  {
+   "topic": "Employee and retiree health insurance",
+   "what_was_recorded": "The Public Employee Committee proposed a three-year extension, eliminating Medicare Part B reimbursement for spouses, and capping retiree reimbursement at a fixed dollar amount; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "they also proposed eliminating medicare part b reimbursement for spouses and capping reimbursement for retirees at a fixed dollar amount."
+  },
+  {
+   "topic": "Unitil property damage claims",
+   "what_was_recorded": "Counsel conceded the Senior Center pipe-freeze damage claim fails and said Unitil has not addressed the loss of a generator; no dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "lastly, unitil argues the town's property damage claims fail."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Unitil lawsuit report",
+   "resolution": "reported by counsel; no action recorded",
+   "quote": "attorney bowen reported on the unitil suit.",
+   "tags": [
+    "litigation",
+    "Unitil",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Police union private detail rates",
+   "resolution": "consensus not to agree to increase",
+   "quote": "ms. lafleur reported the police union had one additional request for an increase of private detail rates",
+   "tags": [
+    "police",
+    "union",
+    "private details"
+   ]
+  },
+  {
+   "topic": "Firefighter union contract",
+   "resolution": "discussed; early negotiation request noted, no action recorded",
+   "quote": "the firefighter's union contract expires at the end of this fiscal year. they have requested to begin negotiations early.",
+   "tags": [
+    "fire",
+    "union",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Performance reviews",
+   "resolution": "decided not to conduct",
+   "quote": "performance reviews were discussed. it was decided not to do so.",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Health insurance coverage",
+   "resolution": "no action",
+   "quote": "the board took no action.",
+   "tags": [
+    "health insurance",
+    "retirees",
+    "personnel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Unitil motion for summary judgment",
+   "where": "text",
+   "quote": "unitil has filed a motion for summary judgment and divided their argument into four parts."
+  }
+ ],
+ "tags": [
+  "executive session",
+  "Unitil litigation",
+  "police union",
+  "fire union",
+  "health insurance",
+  "personnel",
+  "legal"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

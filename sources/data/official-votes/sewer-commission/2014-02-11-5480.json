@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-02-11",
  "docid": "5480",
@@ -12,31 +12,357 @@
  },
  "votes": [
   {
-   "motion": "approve peer-reviewed sewer plans for Highfield Village development, Maple Parkway and White Street sewers, with memo to Planning Board of concerns",
+   "motion": "Approve the peer-reviewed plans for the Highfield Village development, and Maple Parkway and White Street sewers, with a memo to the Planning Board of concerns that must be addressed to the Town's satisfaction.",
    "moved_by": "Mike",
    "seconded_by": "Butch",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "mike made the motion to approve of the peer-reviewed plans for the highfield village development, and maple parkway and white street sewers, with a memo to the planning board of concerns that must be addressed to the town's satisfaction. butch seconded. vote taken was unanimous."
+   "quote": "mike made the motion to approve of the peer-reviewed plans for the highfield village development, and maple parkway and white street sewers"
   },
   {
-   "motion": "no further connections allowed until manhole situation on Lancaster Ave is fixed, except emergency situations authorized by Jack Rodriquenz",
+   "motion": "No further sewer connections until the manhole situation is fixed, other than emergency connections Jack Rodriquenz can still authorize.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "butch made the motion that no further connections will be allowed until the situation with the manhole is fixed, other than emergency situations for which jack rodriquenz can still authorize connections. mike seconded the motion and the vote taken was unanimous."
+   "quote": "butch made the motion that no further connections will be allowed until the situation with the manhole is fixed"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Butch",
    "seconded_by": "Mike",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "carl asked for a motion to adjourn. butch made the motion, mike seconded. vote taken was unanimous."
+   "quote": "butch made the motion, mike seconded. vote taken was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcript from macOS Vision, clearly readable with no scanning issues or missing pages noted.",
- "cost_usd": 0.0895765
+ "note": "OCR text with no roll call, so attendance is inferred from who spoke or acted; roles other than Jamie Rheault's firm are not printed. Votes are recorded only as unanimous, with no separate counts. Public comment is not recorded as a separate section; the Northfield applicant appeared under Appointments. The minutes' signature block names no individual. The Minutes of 1/23/14 approval is recorded without a motion, so it is listed as a decision.",
+ "cost_usd": 0.00830122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl reviewed the issue before the commission."
+  },
+  {
+   "name": "Mike",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike noted that the woodlands had also come forward, so we've had inquiries further down northfield."
+  },
+  {
+   "name": "Butch",
+   "role": "not stated",
+   "status": "present",
+   "quote": "butch asked what happens if town meeting okays putting it down the middle of northfield rd."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb displayed the plans that had been signed off by weston & sampson and received on february 10."
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack confirmed that no sewer stub was installed and property received no"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "other than emergency situations for which jack rodriquenz can still authorize connections"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham",
+   "status": "present",
+   "quote": "7:00pm jamie rheault, whitman & bingham - 175 northfield rd -"
+  },
+  {
+   "name": "Jay",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "since jay is not at the meeting, we cannot determine"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Northfield Rd. (175 Northfield / Lot 37) request continued to the next meeting, with the full Commission present; Jamie Rheault to write a letter.",
+   "quote": "carl said we can discuss at the next meeting. jamie will write a letter."
+  },
+  {
+   "decision": "Carl stated the Commission would correct the map at Town Meeting so the entire lot is shown in the SSA.",
+   "quote": "we will be going to the town meeting and correct the map."
+  },
+  {
+   "decision": "Commission agreed that anyone with a failed system should be allowed to hook up at Jack's discretion.",
+   "quote": "commission discussed and agreed that anyone with a failed system should be allowed to hook up at jack's discretion."
+  },
+  {
+   "decision": "Workshop on Private Sewer Extensions to be put on the agenda in March.",
+   "quote": "carl noted that the workshop on private sewer extensions should be put on the agenda in march."
+  },
+  {
+   "decision": "Barb to check whether the town has a policy on missed meetings.",
+   "quote": "barb can check and see if there is a town policy."
+  },
+  {
+   "decision": "Barb to look at the next quarter and next month's Fitchburg usage and bring it to the next meeting.",
+   "quote": "barb will do so, along with the next month's usage and bring to the next meeting."
+  },
+  {
+   "decision": "Barb to go through the years' agendas and provide a first draft of the CY2013 Annual Report for Carl's review.",
+   "quote": "barb will go through the years agendas and provide a first draft for his review."
+  },
+  {
+   "decision": "No credit to be made on the 18 Florence St. January bill; Barb to tell the owner.",
+   "quote": "no credit will be made on the january bill. barb will let her know."
+  },
+  {
+   "decision": "Commission approved and initialed the Minutes of the 1/23/14 Budget workshop, as amended.",
+   "quote": "the commission approved and initialed the minutes of the 1/23/14 budget workshop, as amended."
+  },
+  {
+   "decision": "Barb reminded the Commissioners not to discuss sewer issues outside of the public meeting, even without a quorum.",
+   "quote": "barb reminded the commission not to discuss sewer issues outside of the public meeting, even when there is"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitchburg IMA flow statement",
+   "what_was_recorded": "The 2013 flow-meter reading was about one-third of last January's billed usage, and the current period showed a 20% increase that Carl asked be checked against the next quarter.",
+   "figures_as_printed": [
+    "1012.8ccf",
+    "1233.33ccf"
+   ],
+   "quote": "the reading for 2013 was 1012.8ccf which is 1/3 of the usage from the january billing last year."
+  },
+  {
+   "topic": "Fitchburg IMA adder",
+   "what_was_recorded": "Fitchburg may propose an adder for extra cost, but it should not come close to the previous charge; Fitchburg has not yet responded.",
+   "figures_as_printed": [
+    "$1.65"
+   ],
+   "quote": "shouldn't be close to the previous charge of $1.65, so the discussion is not yet over."
+  },
+  {
+   "topic": "Q3 Commitment",
+   "what_was_recorded": "Q3 sewer commitment, with bills mailed 2/7, signed by the Sewer Commission.",
+   "figures_as_printed": [
+    "$163,803.40"
+   ],
+   "quote": "the amount is $163,803.40 which was signed by the sewer commission."
+  },
+  {
+   "topic": "Orders of Assessment",
+   "what_was_recorded": "Commission signed two Orders of Assessment, replacing the commitments, for Lancaster Ave and Jacklyn Dr./Janet Lane.",
+   "figures_as_printed": [
+    "$40,430.18",
+    "$46,205.92"
+   ],
+   "quote": "sewer commissioners signed an order of assessment for lancaster ave for $40,430.18 and another for jacklyn dr./janet lane for $46,205.92."
+  },
+  {
+   "topic": "Northfield Rd. lot development",
+   "what_was_recorded": "Discussion of money: the owner would make less revenue with fewer lots under the SSA restriction; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "carl understood that it's an issue of money and they won't make as much with less lots"
+  },
+  {
+   "topic": "18 Florence St. credit request",
+   "what_was_recorded": "Owner requested a credit; none will be made on the January bill because a silent toilet leak still sent flow down the pipes.",
+   "figures_as_printed": [],
+   "quote": "no credit will be made on the january bill. barb will let her know."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: Jamie Rheault, Whitman & Bingham, 175 Northfield Rd.",
+   "resolution": "continued to next meeting",
+   "quote": "7:00pm jamie rheault, whitman & bingham - 175 northfield rd -",
+   "tags": [
+    "Northfield Rd",
+    "sewer district",
+    "CWMP",
+    "SSA map"
+   ]
+  },
+  {
+   "topic": "Highfield Village plans",
+   "resolution": "approved with memo to Planning Board",
+   "quote": "highfield village -carl confirmed that the planning board had issued an extension to the development until",
+   "tags": [
+    "Highfield Village",
+    "peer review",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Lancaster Ave manhole",
+   "resolution": "no further connections until manhole fixed, emergency exception",
+   "quote": "lancaster ave - neither carl nor barb had heard of any work being done on the manhole by elliott from jack.",
+   "tags": [
+    "Lancaster Ave",
+    "connections",
+    "manhole"
+   ]
+  },
+  {
+   "topic": "Fitchburg IMA",
+   "resolution": "continued; next quarter usage to next meeting",
+   "quote": "fitchburg ima - barb noted that we'd sent joe our first statement of flow using the flow meters.",
+   "tags": [
+    "Fitchburg",
+    "IMA",
+    "flow meters"
+   ]
+  },
+  {
+   "topic": "Town Meeting schedule",
+   "resolution": "no action; caucus date changed to March 17",
+   "quote": "town meeting schedule- barb stated that since she sent out the condensed schedule in the package that the",
+   "tags": [
+    "Town Meeting",
+    "caucus"
+   ]
+  },
+  {
+   "topic": "42 Highland St. sewer access letter",
+   "resolution": "no action; connection requires extension",
+   "quote": "next item on the agenda was the letter sent on 42 highland st. sewer access - the prospective buyer needed",
+   "tags": [
+    "Highland St",
+    "sewer access",
+    "extension"
+   ]
+  },
+  {
+   "topic": "CY2013 Annual Report",
+   "resolution": "draft to be prepared for Carl's review",
+   "quote": "cy2013 annual report submission- barb noted the deadline of 2/25.",
+   "tags": [
+    "annual report",
+    "deadline"
+   ]
+  },
+  {
+   "topic": "Q3 Commitment",
+   "resolution": "signed",
+   "quote": "barb had the q3 commitment ready for commission signature.",
+   "tags": [
+    "commitment",
+    "billing"
+   ]
+  },
+  {
+   "topic": "18 Florence St. credit request",
+   "resolution": "no credit on January bill",
+   "quote": "last on the agenda was a request for credit received today from the owner of 18 florence st.",
+   "tags": [
+    "credit",
+    "leak"
+   ]
+  },
+  {
+   "topic": "Administrative matters",
+   "resolution": "no action; Orders of Assessment signed; 1/23/14 minutes approved; next meeting 2/25/14",
+   "quote": "administrative matters - zba hearing 2/12/14 - 51 joslin st - barb gave a brief description",
+   "tags": [
+    "ZBA",
+    "51 Joslin St",
+    "open meeting law",
+    "orders of assessment",
+    "SWSS",
+    "FinCom"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Jamie Rheault's 2 options plans (one with sewer access on Northfield, one without)",
+   "where": "text",
+   "quote": "jamie handed out his 2 options - one with sewer access on northfield and the other without access."
+  },
+  {
+   "name": "Plans signed off by Weston & Sampson, received February 10",
+   "where": "text",
+   "quote": "barb displayed the plans that had been signed off by weston & sampson and received on february 10."
+  },
+  {
+   "name": "Jack's email of concerns, condensed by Barb into a list",
+   "where": "text",
+   "quote": "jack had also sent an email which barb had condensed to a list of the concerns which the commissioners reviewed as well."
+  },
+  {
+   "name": "Condensed Town Meeting schedule in the package",
+   "where": "text",
+   "quote": "barb stated that since she sent out the condensed schedule in the package that the"
+  },
+  {
+   "name": "Handout on open meeting violation decisions, in meeting packages",
+   "where": "text",
+   "quote": "she had included a handout in the meeting packages of decisions regarding open meeting violations."
+  },
+  {
+   "name": "Email from owner of 18 Florence St. requesting credit",
+   "where": "text",
+   "quote": "barb handed out the copy of the email."
+  },
+  {
+   "name": "CWMP (Comprehensive Wastewater Management Plan)",
+   "where": "text",
+   "quote": "the commission is trying to hold to the master plan and it was clear in the cwmp that we did not wish to sewer northfield."
+  },
+  {
+   "name": "Original WMP by Wright Pierce",
+   "where": "text",
+   "quote": "we had gone back to the cwmp and to wright pierce who did the original wmp"
+  },
+  {
+   "name": "Fitchburg IMA",
+   "where": "text",
+   "quote": "he'd check the ima, as barb had not included the adder."
+  },
+  {
+   "name": "Q3 Commitment",
+   "where": "text",
+   "quote": "barb had the q3 commitment ready for commission signature."
+  },
+  {
+   "name": "Two Orders of Assessment (Lancaster Ave; Jacklyn Dr./Janet Lane)",
+   "where": "text",
+   "quote": "barb had 2 order of assessments to be signed by sc."
+  },
+  {
+   "name": "Minutes of the 1/23/14 Budget workshop",
+   "where": "text",
+   "quote": "the commission approved and initialed the minutes of the 1/23/14 budget workshop, as amended."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "Northfield Rd",
+  "Highfield Village",
+  "Lancaster Ave",
+  "Fitchburg IMA",
+  "Town Meeting",
+  "sewer extensions",
+  "commitments and assessments",
+  "open meetings law",
+  "CWMP",
+  "annual report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

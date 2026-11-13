@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-11-18",
  "docid": "2731",
@@ -12,31 +12,243 @@
  },
  "votes": [
   {
-   "motion": "accept September 16, 2010 minutes",
+   "motion": "Accept the September 16, 2010 minutes.",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motioned made and passed unanimously to accept september 16, 2010 minutes."
   },
   {
-   "motion": "accept October 21, 2010 minutes as amended",
+   "motion": "Accept the October 21, 2010 minutes as amended.",
    "outcome": "passed, one abstention",
    "procedural": true,
    "quote": "motioned made and passed, with one abstention, to accept october 21, 2010 minutes as amended."
   },
   {
-   "motion": "accept new Lunenburg Public Library Meeting Rooms Policy",
+   "motion": "Accept the new Lunenburg Public Library Meeting Rooms Policy.",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion made and passed unanimously to accept new poli cy."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 7:46 pm.",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion made and passed unanimously to adjourn at 7:46 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0973615
+ "note": "Plain-text extraction, no roll-call or mover names printed; vote outcomes are as printed ('passed unanimously', 'one abstention' with no count). Minutes name Kate McCaron, Kerry, Jillian Fleet, Peg Paints, Jen, and CW Mars without them being listed as attendees; not recorded as attendees. Amy Sadkin's role is not printed in the minutes.",
+ "cost_usd": 0.005019119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Noelle Bodkin",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len"
+  },
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len"
+  },
+  {
+   "name": "Kathy Murray",
+   "status": "present",
+   "quote": "attending: noelle bodkin, lisa krowitz, dick mailloux, john mara, kathy murray, jeanne raboin, amy sadkin, len"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "respectfully submitted, jeanne raboin, secretary"
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "amy sadkin, len smetana"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "amy sadkin, len smetana"
+  },
+  {
+   "name": "Steven Flaherty",
+   "role": "Lunenburg High School Student Council",
+   "status": "present",
+   "quote": "guest: steven flaherty, lunenburg high school student council"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to the school social meeting sponsored by the LHS Student Council at the library, to be held in the 1st or 2nd week in December, chaperoned by student council advisers; Steven Flaherty will work with Kate McCaron to organize it.",
+   "quote": "board agrees to this proposal and steven will work with kate mccaron to organize the event."
+  },
+  {
+   "decision": "A draft library budget request will be created and passed to Kerry with a note that it still needs Trustee approval; the budget request is due December 22, 2010, and a budget subcommittee will meet before the next Trustees meeting.",
+   "quote": "budget request due december 22, 2010. will create a draft, pass on to kerry with note saying still needs approval by trustees."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's report: utilities and municipal rate",
+   "what_was_recorded": "Utilities were a little over, and the library's municipal rate will increase due to the new sewage rates; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "utilities a little over (probably due to parking lights and air conditioning)"
+  },
+  {
+   "topic": "Director's report: Friends pledge and State Aid",
+   "what_was_recorded": "North Middlesex completed its final pledge to the Friends of LPL and a State Aid installment will arrive soon.",
+   "figures_as_printed": [
+    "$3,333.33",
+    "$6, 068.79"
+   ],
+   "quote": "north middlesex completed final pledge to the friends of lpl of $3,333.33 and the state aid installment of $6, 068.79 will arrive soon."
+  },
+  {
+   "topic": "Friends Oktoberfest proceeds",
+   "what_was_recorded": "Friends Oktoberfest netted a little over $800 for the Endowment.",
+   "figures_as_printed": [
+    "$800"
+   ],
+   "quote": "friends oktoberfest netted a little over $800 for the endowment"
+  },
+  {
+   "topic": "Town Manager's preliminary FY 2012 budget: tax rate",
+   "what_was_recorded": "The state average tax rate is a 9% decrease, and a level-service budget was presented.",
+   "figures_as_printed": [
+    "9%"
+   ],
+   "quote": "tax rate state average is 9% decrease."
+  },
+  {
+   "topic": "Level-service budget: paraprofessional staff person",
+   "what_was_recorded": "Proposed additional paraprofessional staff person at 19 hours per week, no benefits.",
+   "figures_as_printed": [
+    "$13/hour"
+   ],
+   "quote": "additional paraprofessional staff person; 19 hours at $13/hour, no benefits."
+  },
+  {
+   "topic": "Level-service budget: Friday hours",
+   "what_was_recorded": "Adding 4 Friday hours (10 am-2 pm) at a stated cost per hour, split between staff and utilities.",
+   "figures_as_printed": [
+    "$100/hr",
+    "$80",
+    "$20"
+   ],
+   "quote": "add friday hours: 4 hours, 10 am-2 pm. cost - $100/hr: $80 for staff, $20 for utilities."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steven Flaherty",
+   "stated_role": "Lunenburg High School Student Council",
+   "topic": "school social meeting at the library",
+   "quote": "steven flaherty proposed a school social meeting sponsored by the lhs student council to be held at lunenburg public library either the 1st or 2nd week in december."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: school social meeting",
+   "resolution": "agreed to proposal",
+   "quote": "board agrees to this proposal and steven will work with kate mccaron to organize the event.",
+   "tags": [
+    "school social",
+    "teens",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved September 16 and October 21, 2010 minutes (as amended)",
+   "quote": "motioned made and passed unanimously to accept september 16, 2010 minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received",
+   "quote": "circulation is slightly lower for october 2010 at 9,833 (fy11 oct)",
+   "tags": [
+    "director",
+    "circulation",
+    "budget",
+    "staffing",
+    "facilities",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Policy Sub-Committee Recommendations: Meeting Rooms Policy",
+   "resolution": "approved",
+   "quote": "motion made and passed unanimously to accept new poli cy.",
+   "tags": [
+    "policy",
+    "meeting rooms"
+   ]
+  },
+  {
+   "topic": "Town Manager's 5-year Plan and Preliminary FY 2012 Budget",
+   "resolution": "discussed; budget request to be drafted by December 22, 2010",
+   "quote": "presented a level-service budget",
+   "tags": [
+    "FY2012 budget",
+    "level service",
+    "staffing",
+    "CW Mars"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY2012 MBLC Legislative Agenda",
+   "where": "list",
+   "quote": "amy distributed the fy2012 mblc legislative agenda"
+  },
+  {
+   "name": "Director's Report",
+   "where": "text",
+   "quote": "director's report (please see report for more detail)"
+  },
+  {
+   "name": "Lunenburg Public Library Meeting Rooms Policy",
+   "where": "text",
+   "quote": "discussion about the new lunenburg public library meeting rooms policy"
+  },
+  {
+   "name": "Town Manager's 5-year Plan and Preliminary FY 2012 Budget",
+   "where": "text",
+   "quote": "town manager's 5-year plan and preliminary fy 2012 budget"
+  }
+ ],
+ "tags": [
+  "library",
+  "FY2012 budget",
+  "level-service budget",
+  "meeting rooms policy",
+  "school social",
+  "staffing",
+  "facilities",
+  "public comment",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "amy distributed the fy2012 mblc legislative agenda"
+ },
+ "dropped_unquoted_by_field": {}
 }

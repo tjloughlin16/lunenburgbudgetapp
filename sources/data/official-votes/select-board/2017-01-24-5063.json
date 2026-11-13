@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-01-24",
  "docid": "5063",
@@ -12,47 +12,370 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing for the pole petition on Northfield Road to February 14 at 7:05 p.m.",
+   "motion": "Continue the Northfield Road pole petition hearing to February 14 at 7:05 p.m.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to continue the hearing to february 14 at 7:05 p.m. 2°°: t. alonzo vote: all in favor"
+   "procedural": false,
+   "quote": "to continue the hearing to february 14 at 7:05 p.m."
   },
   {
-   "motion": "Continue the pole petition for Burrage Street to February 14 at 7:10 p.m.",
+   "motion": "Continue the Burrage Street pole petition to February 14 at 7:10 p.m. (time amended from 7:15 p.m.)",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to continue the pole petition for burrage street to february 14* at 7:15 p.m. mr. toale requested the time be amended to 7:10 p.m. mr. ebersole amended. 2nd: r. ebersole vote: all in favor"
+   "procedural": false,
+   "quote": "to continue the pole petition for burrage street to february 14* at 7:15 p.m."
   },
   {
    "motion": "Approve the renewal of the Class II Auto Dealer License for Nutting Frame and Body Co.",
    "moved_by": "T. Alonzo",
-   "seconded_by": "R. Ebersole",
+   "seconded_by": "R.Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\": r.ebersole to approve the renewal of the class ii auto dealer license for nutting frame and body co. vote: all in favor"
+   "quote": "to approve the renewal of the class ii auto dealer license for nutting frame and body co."
   },
   {
-   "motion": "The Board provides a letter of support for both applications to the Town Manager",
+   "motion": "That the Board provides a letter of support for both grant applications (Efficiency and Regionalization Grant Program) to the Town Manager.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion:r. ebersole 2nd: t. alonzo that the board provides a letter of support for both applications to the town manager vote: all in favor"
+   "quote": "that the board provides a letter of support for both applications to the town manager"
   },
   {
-   "motion": "Enter into Executive Session and adjourn afterwards",
+   "motion": "Enter into Executive Session (M.G.L.c.30A §21, litigation strategy, Unitil Ice Storm) and adjourn afterwards.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion:r. ebersole 2\"°: t. alonzo to enter into executive session and adjourn afterwards vote: ms. luck-aye, mr. alonzo-aye, mr. ebersole-aye, mr. toale-aye"
+   "quote": "to enter into executive session and adjourn afterwards vote: ms. luck-aye, mr. alonzo-aye, mr. ebersole-aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document. Vote 3 shows OCR artifacts in the \"2nd:\" field (\"2\\\":\" instead of \"2nd:\"); the seconder is R. Ebersole based on context. Vote 5 records individual aye votes rather than a simple \"all in favor.\"",
- "cost_usd": 0.1375885
+ "note": "OCR text from scanned pages (macOS Vision). Some marks are garbled, e.g. seconder lines (\"2°°:\", \"2\\\"°:\"), \"Class Il\", \"postoned\", and the recorder's signature. Seconders were read from legible text. The executive session vote is recorded as four named ayes (Ms. Luck, Mr. Alonzo, Mr. Ebersole, Mr. Toale), with Ms. Bertram absent; no printed count, so outcome is \"passed\". Executive Session minutes are stated to be separate and are not in this text. Minutes are headed \"Board of Selectmen\".",
+ "cost_usd": 0.011869220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member and town manager heather lemieux"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "resident, 45 Williams Drive",
+   "status": "present",
+   "quote": "katie adams, 45 williams drive, commented on student safety and the recently proposed marijuana greenhouse project."
+  },
+  {
+   "name": "Jeff Smith",
+   "role": "appointment, Cemetery Commission/DPW Regulations",
+   "status": "absent",
+   "quote": "7:45 pm jeff smith - cemetery commission/dpw regulations"
+  },
+  {
+   "name": "Nuttings Body & Frame Co.",
+   "role": "licensee",
+   "status": "absent",
+   "quote": "7:30 pm class il auto dealer license renewal request; nuttings body & frame co."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Manager performance review form is to be updated before it is needed again, and the Board's goals to be reviewed at the same time, to be addressed at a future workshop meeting.",
+   "quote": "this will be addressed at a future workshop meeting."
+  },
+  {
+   "decision": "After discussion, prioritizing best practices for the Community Compact was added to the February 7 agenda.",
+   "quote": "the board added prioritizing best practices for the community compact to the february 7"
+  },
+  {
+   "decision": "Board members were asked to submit any questions on the Legal Services proposals to the Town Manager, to be compiled for the next meeting.",
+   "quote": "she asked the board members to submit any questions to her to compile by the next meeting."
+  },
+  {
+   "decision": "The Town Manager offered to prepare a list of questions for the February 28 meeting on Legal Services presentations.",
+   "quote": "she offered to create a list of questions in preparation for the february 28"
+  },
+  {
+   "decision": "The late Class II auto dealer license renewal was allowed; the Board stated it would expect the applicant to appear before the Board if this happens again.",
+   "quote": "if this happens in the future the board would expect the applicant to appear before the board."
+  },
+  {
+   "decision": "The Jeff Smith appointment (Cemetery Commission/DPW Regulations) was not heard; the Board asked to reschedule him for another night.",
+   "quote": "the board asked to reschedule mr. smith for another night."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School FY18 budget (reported by Ms. Luck from School Committee)",
+   "what_was_recorded": "Superintendent Calmes said the FY18 school budget will rise over FY17 by a stated amount to a stated total.",
+   "figures_as_printed": [
+    "$1,172,864",
+    "$19,628,762"
+   ],
+   "quote": "the fy18 budget will reflect a $1,172,864 increase over fy17 with a total budget of $19,628,762."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed four warrants: payroll, payroll deductions, Middle/High School construction, and accounts payable.",
+   "figures_as_printed": [
+    "$726,019.98",
+    "$160,394.54",
+    "$732,083.42",
+    "$629,014.82"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $726,019.98; a payroll deductions warrant in the amount of $160,394.54; a middle/high school construction warrant in the amount of $732,083.42 and an accounts payable warrant in the amount of $629,014.82."
+  },
+  {
+   "topic": "Free cash certification",
+   "what_was_recorded": "Town Manager said free cash should be certified by the MA Dept. of Revenue by the end of the week; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "she reported free cash should be certified by the ma dept. of revenue by the end of the week."
+  },
+  {
+   "topic": "School resource police officer funding request (public comment)",
+   "what_was_recorded": "Katie Adams requested additional funding for a school resource police officer; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "she requested additional funding to provide for this position."
+  },
+  {
+   "topic": "Community Compact IT Grant",
+   "what_was_recorded": "Entering the Community Compact by February 15 would make the town eligible for the IT Grant due April 15; no grant amount printed.",
+   "figures_as_printed": [],
+   "quote": "as that would make the town eligible for the it grant that is due april 15."
+  },
+  {
+   "topic": "Efficiency and Regionalization Grant - permitting software",
+   "what_was_recorded": "Individual efficiency application grant funding goes up to a figure described as the approximate cost of implementing the permitting software.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "for an individual application efficiency measure, grant funding goes up to $100,000, which is the approximate cost of the implementation of that software."
+  },
+  {
+   "topic": "Efficiency and Regionalization Grant - multi-jurisdictional (Regional Animal Control)",
+   "what_was_recorded": "Multi-jurisdictional grant funding goes up to a stated amount, which could cover the first year's costs, a new kennel and possibly an Animal Control vehicle.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "for the multi-jurisdictional application, grant funding goes up to $200,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "burning permits",
+   "quote": "ms. luck reported burning permits are available through may 18."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "Vice Chairman",
+   "topic": "Women's March in Boston",
+   "quote": "mr. ebersole stated he and other people from lunenburg attended the women's march in boston on saturday."
+  },
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "registered pharmacist, 45 Williams Drive",
+   "topic": "student safety, marijuana greenhouse project, school resource officer funding",
+   "quote": "katie adams, 45 williams drive, commented on student safety and the recently proposed marijuana greenhouse project."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard comment; no action",
+   "quote": "ms. luck reported burning permits are available through may 18.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment 7:05 PM - pole petition, Northfield Road",
+   "resolution": "hearing continued to February 14",
+   "quote": "he opened the hearing for the pole petition on northfield road.",
+   "tags": [
+    "pole petitions"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "ms. luck reported the strategic framework steering committee meeting was postoned to february 6 due to the weather.",
+   "tags": [
+    "committees",
+    "school budget"
+   ]
+  },
+  {
+   "topic": "Pole petition, Burrage Street",
+   "resolution": "hearing continued to February 14 at 7:10 p.m.",
+   "quote": "mr. toale opened the pole petition hearing for burrage street at 7:15 p.m.",
+   "tags": [
+    "pole petitions"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "no minutes; warrants signed; action file item deferred to workshop",
+   "quote": "there were no minutes for approval.",
+   "tags": [
+    "warrants",
+    "town manager review"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "ms. lemieux reported she has met with the fire and police chiefs, the dpw director, land use director,",
+   "tags": [
+    "town manager report",
+    "legal services",
+    "police union",
+    "building commissioner"
+   ]
+  },
+  {
+   "topic": "7:30 PM Class II Auto Dealer License Renewal - Nuttings Body & Frame Co.",
+   "resolution": "renewal approved",
+   "quote": "the licensee was not present for the renewal request.",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Community Compact and Efficiency and Regionalization grants",
+   "resolution": "letter of support approved; prioritizing best practices added to February 7 agenda",
+   "quote": "that the board provides a letter of support for both applications to the town manager",
+   "tags": [
+    "community compact",
+    "grants"
+   ]
+  },
+  {
+   "topic": "7:45 PM Jeff Smith - Cemetery Commission/DPW Regulations",
+   "resolution": "appointment not heard; to be rescheduled",
+   "quote": "mr. smith did not appear for his appointment.",
+   "tags": [
+    "cemetery",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "reviewed; no action",
+   "quote": "mr. toale reviewed the upcoming meeting schedule for the board.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no further comment",
+   "quote": "there was no further comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session - Unitil Ice Storm litigation",
+   "resolution": "entered executive session and adjourned at 7:53 p.m.",
+   "quote": "executive session m.g.l.c.30a §21; to discuss strategy with respect to litigation",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo from Executive Asst. Peterson on why the renewal was late",
+   "where": "list",
+   "quote": "the board read a memo from executive asst. peterson on why the renewal was late."
+  },
+  {
+   "name": "Police Union Memorandum of Understanding",
+   "where": "text",
+   "quote": "the police union memorandum of understanding was received by her today"
+  },
+  {
+   "name": "Legal Services Request for Proposals (eight responses)",
+   "where": "text",
+   "quote": "the town received eight responses to the legal services request for proposals"
+  },
+  {
+   "name": "Public Access Cable Committee's proposed business plan",
+   "where": "text",
+   "quote": "reviewed the public access cable committee's proposed business plan to be presented during negotiations"
+  },
+  {
+   "name": "Town Manager performance review form",
+   "where": "text",
+   "quote": "ms. luck asked about town manager performance reviews and updating the form before it is needed again."
+  },
+  {
+   "name": "Warrants (payroll, payroll deductions, Middle/High School construction, accounts payable)",
+   "where": "text",
+   "quote": "the board signed a payroll warrant in the amount of $726,019.98; a payroll deductions warrant"
+  }
+ ],
+ "tags": [
+  "pole petitions",
+  "auto dealer license",
+  "community compact",
+  "grants",
+  "school budget",
+  "warrants",
+  "free cash",
+  "public comment",
+  "executive session",
+  "litigation",
+  "town manager report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board read a memo from executive asst. peterson"
+ },
+ "dropped_unquoted_by_field": {}
 }

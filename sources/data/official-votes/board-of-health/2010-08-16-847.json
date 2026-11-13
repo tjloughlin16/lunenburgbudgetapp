@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-08-16",
  "docid": "847",
@@ -12,6 +12,165 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes list \"Minutes Approved:\" as a header but do not record a motion, seconder, or outcome. Discussions of inspections, permits, and a barn/kennel request are documented, but no votes on these items are noted. The meeting adjourned at 7:55 pm with no adjournment vote recorded.",
- "cost_usd": 0.0815675
+ "note": "Text is macOS Vision OCR of a single page; spellings may be imperfect. No motions, votes, or roll-call results are recorded; the adjournment at 7:55 pm is stated without a motion. The heading 'Minutes Approved:' carries no approval vote. The Sewer Commission chairman is spelled 'Ebersol' and then 'Ebersole' in the same text; recorded here as printed in the first instance. Board members' roles beyond Chairman are not printed.",
+ "cost_usd": 0.00365302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "",
+   "status": "present",
+   "quote": "chairman george emond, perry jewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Gary Burton",
+   "role": "Owner (125 Howard Street)",
+   "status": "present",
+   "quote": "owner gary burton met with the board to explore the options to either expand the existing septic"
+  },
+  {
+   "name": "Bob Ebersol",
+   "role": "Chairman of the Sewer Commission",
+   "status": "present",
+   "quote": "bob ebersol, chairman of the sewer commission, met with the board to discuss the system"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Emond will contact DEP about the 125 Howard Street septic expansion or second-system options and report back to Mr. Burton and the Board.",
+   "quote": "chairman george emond stated that he will contact dep and report back to mr. burton as well as the board."
+  },
+  {
+   "decision": "The septic destruction permit discussion was continued so the Board has time to review the permit and create a permitting process.",
+   "quote": "this discussion was continued to give the board time to review the permit and create a permitting process."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed",
+   "resolution": "reviewed; no action recorded",
+   "quote": "title 5 inspection reports reviewed: 158 rolling acres road - fail 230 west street 445 leominster road",
+   "tags": [
+    "Title 5",
+    "septic inspections"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed: lot 7 white tail crossing lot 8 white tail crossing pilgrim church - beal street",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "125 Howard Street barn/kennel request",
+   "resolution": "Chairman to contact DEP and report back",
+   "quote": "owner gary burton met with the board to explore the options to either expand the existing septic",
+   "tags": [
+    "septic",
+    "barn",
+    "kennel",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Septic destruction permit",
+   "resolution": "continued",
+   "quote": "this discussion was continued to give the board time to review the permit and create a permitting process.",
+   "tags": [
+    "septic destruction",
+    "sewer connection",
+    "permit process"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report - 158 Rolling Acres Road (Fail)",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 158 rolling acres road - fail 230 west street 445 leominster road"
+  },
+  {
+   "name": "Title 5 inspection report - 230 West Street",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 158 rolling acres road - fail 230 west street 445 leominster road"
+  },
+  {
+   "name": "Title 5 inspection report - 445 Leominster Road",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 158 rolling acres road - fail 230 west street 445 leominster road"
+  },
+  {
+   "name": "Title 5 inspection report - 1436 Lancaster Avenue",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 158 rolling acres road - fail 230 west street 445 leominster road"
+  },
+  {
+   "name": "Title 5 inspection report - 285 Lancaster Avenue",
+   "where": "list",
+   "quote": "title 5 inspection reports reviewed: 158 rolling acres road - fail 230 west street 445 leominster road"
+  },
+  {
+   "name": "Septic permit - Lot 7 White Tail Crossing",
+   "where": "list",
+   "quote": "septic permits signed: lot 7 white tail crossing lot 8 white tail crossing pilgrim church - beal street"
+  },
+  {
+   "name": "Septic permit - Lot 8 White Tail Crossing",
+   "where": "list",
+   "quote": "septic permits signed: lot 7 white tail crossing lot 8 white tail crossing pilgrim church - beal street"
+  },
+  {
+   "name": "Septic permit - Pilgrim Church, Beal Street",
+   "where": "list",
+   "quote": "septic permits signed: lot 7 white tail crossing lot 8 white tail crossing pilgrim church - beal street"
+  },
+  {
+   "name": "Septic permit - 238 West Street (Miller)",
+   "where": "list",
+   "quote": "septic permits signed: lot 7 white tail crossing lot 8 white tail crossing pilgrim church - beal street"
+  },
+  {
+   "name": "System Abandonment Permit",
+   "where": "text",
+   "quote": "met with the board to discuss the system abandonment permit. it was stated that the sewer commission gives permission"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "septic permits",
+  "barn/kennel request",
+  "septic destruction",
+  "sewer commission",
+  "DEP"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed:"
+ },
+ "dropped_unquoted_by_field": {}
 }

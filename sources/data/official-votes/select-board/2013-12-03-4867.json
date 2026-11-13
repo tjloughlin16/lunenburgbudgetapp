@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-12-03",
  "docid": "4867",
@@ -12,40 +12,563 @@
  },
  "votes": [
   {
-   "motion": "approve and execute the Intermunicipal Agreement for sewer with the City of Fitchburg",
-   "moved_by": "Ebersole",
-   "seconded_by": "Bertram",
+   "motion": "Approve and execute the Intermunicipal Agreement for sewer with the City of Fitchburg.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved that the board of selectmen approve and execute the intermunicipal agreement for sewer with the city of fitchburg. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "moved that the board of selectmen approve and execute the intermunicipal agreement for sewer with the city of fitchburg. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "recommend approval of Article 1 for construction of the Lunenburg Middle/High School",
-   "moved_by": "Ebersole",
-   "seconded_by": "Matthews",
+   "motion": "Recommend approval of Warrant Article 1 (school construction project article).",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "Mr. Matthews",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. ebersole moved that the board of selectmen approve and execute the intermunicipal agreement for sewer with the city of fitchburg. ms. bertram seconde",
-   "quote_taken_from_text": true
+   "quote": "mr. ebersole moved that the board of selectmen recommend approval of this article. mr. matthews seconded."
   },
   {
-   "motion": "appoint Bob Ebersole to the School Committee's Advisory Committee for Tolerance & Diversity",
-   "moved_by": "Matthews",
-   "seconded_by": "Bertram",
+   "motion": "Appoint Bob Ebersole to the School Committee's Advisory Committee for Tolerance & Diversity.",
+   "moved_by": "Mr. Matthews",
+   "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. matthews moved to appoint bob ebersole to the school committee's advisory committee for tolerance & diversity. ms. bertram seconded. on vote, motion carried, 5 in tavor, 0 opposed"
+   "quote": "mr. matthews moved to appoint bob ebersole to the school committee's advisory committee for tolerance & diversity. ms. bertram seconded."
   },
   {
-   "motion": "adjourn the Board of Selectmen meeting",
-   "moved_by": "Bertram",
-   "seconded_by": "Matthew",
+   "motion": "Adjourn the Board of Selectmen meeting.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. Matthew",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "ms. bertram moved to adjourn the bos meeting. mr. matthew seconded. on vote motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. One apparent typo in printed minutes: \"tavor\" instead of \"favor\" in vote #3; \"Matthew\" instead of \"Matthews\" in vote #4 (should be Dave Matthews per attendees list).",
- "cost_usd": 0.1607915
+ "note": "OCR text of scanned minutes (macOS Vision), with several OCR errors (for example 'Mir.', 'tavor', 'AAt', '$2,110.461', '$1:5M', 'Mr. Matthew'). The recording secretary's name is truncated in the text ('isan Doherty'). Only four motions with recorded votes appear; the ballot question, Townsend IMA, and Articles 2 and 3 had no motion. The warrant totals are printed in sequence without explicit pairing to warrant dates, so the pairing is by printed order only. Some attendance roles are not printed and were left blank.",
+ "cost_usd": 0.01824492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair Person",
+   "status": "present",
+   "quote": "with chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "with chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Chairperson Building Reuse Committee",
+   "status": "present",
+   "quote": "jamie toale, chairperson building reuse committee, came before the bos to present a power point presentation"
+  },
+  {
+   "name": "Robert Ebersole",
+   "status": "present",
+   "quote": "with chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with chair person tom alonzo, vice chairperson paula bertram, dave matthews, jamie toale, robert ebersole and town manager kerry speidel."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Chair, Sewer Commission",
+   "status": "present",
+   "quote": "carl luck, chair of the sewer commission came before the bos to present a power point review of the ima"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Building Reuse Committee",
+   "status": "present",
+   "quote": "dave macdonald, building reuse committee replied that when we send out the rfp hopefully they will keep the original"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Building Reuse Committee",
+   "status": "present",
+   "quote": "ron albert, building reuse committee, explained to the bos that you can put an rfp out and ask the developer"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Building Reuse Committee/Planning Board",
+   "status": "present",
+   "quote": "damon mcquaid, building reuse committee/planning board, we have talked at our meetings about trying to develop a"
+  },
+  {
+   "name": "Pat Slattery",
+   "role": "Chairman, Historical Commission",
+   "status": "present",
+   "quote": "pat slattery, chairman, historical commission, spoke to say that yes there were specific requirements for the jones"
+  },
+  {
+   "name": "isan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "isan doherty, recording secreta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Land Donation Policy and Pleasant Street Property Proposal review continued to a future BOS meeting.",
+   "quote": "continued to a future bos meeting."
+  },
+  {
+   "decision": "Ballot question bypassed until next week's meeting.",
+   "quote": "mr. alonzo stated that they will be bypassing this until next week's meeting."
+  },
+  {
+   "decision": "Town Manager to check what can be done about adding the dollar amount to the ballot question.",
+   "quote": "mr. matthews requested that the town manager check to see what can be done."
+  },
+  {
+   "decision": "Board agreed to keep the Building Reuse Committee until after Town Meeting.",
+   "quote": "mr. alonzo replied that they would like to keep them until after town meeting."
+  },
+  {
+   "decision": "Board declared it will support the 30 year bond term.",
+   "quote": "mr. alonzo declared that they will support the 30 year bond."
+  },
+  {
+   "decision": "Board will wait to make a recommendation on Warrant Articles 2 and 3 (Zoning) at Special Town Meeting.",
+   "quote": "mr. alonzo said if there is no objection they will wait to make a recommendation at special town meeting."
+  },
+  {
+   "decision": "Financing recommendation to be placed on next week's meeting agenda after the survey results.",
+   "quote": "replied the financing recommendation should be put on next weeks meeting when we have the final results of"
+  },
+  {
+   "decision": "Board agreed to keep the order of the warrant articles, with Article 1 remaining at #1.",
+   "quote": "mr. alonzo stated that he is fine with the order of the articles right now."
+  },
+  {
+   "decision": "Townsend net metering IMA held; board to wait for the Townsend BOS action that evening.",
+   "quote": "ms. speidel stated that the townsend bos is taking this matter up at their meeting this evening and we should wait on this issue."
+  },
+  {
+   "decision": "Town Manager to review the Townsend draft and get clarification on the questions raised.",
+   "quote": "she will look into this tomorrow and if this is the correct draft she will get clarification on those questions."
+  },
+  {
+   "decision": "Chair asked Town Manager to make sure tax-clearance requirements for license renewals are clear to all establishments.",
+   "quote": "he asked the town manager to please make sure that this is clear to all of the establishments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer IMA capacity and John Fitch Highway upgrade cost",
+   "what_was_recorded": "The John Fitch Highway line upgrade has a total cost of $2,110,461, with Lunenburg's share set at 13.41% or $283,013.",
+   "figures_as_printed": [
+    "$2,110,461",
+    "13.41%",
+    "$283,013"
+   ],
+   "quote": "for a total cost of $2,110,461. lunenburg's share will be 13.41% or $283,013."
+  },
+  {
+   "topic": "Sewer IMA rate and connection fees",
+   "what_was_recorded": "Lunenburg will pay the same rate as Fitchburg residents, currently $7.30; Fitchburg connection fees have increased.",
+   "figures_as_printed": [
+    "$7.30"
+   ],
+   "quote": "lunenburg will pay the same rate as fitchburg residents, which is currently $7.30."
+  },
+  {
+   "topic": "Sewer IMA Fitchburg connection fee",
+   "what_was_recorded": "Fitchburg's connection fees have increased to $2000.",
+   "figures_as_printed": [
+    "$2000"
+   ],
+   "quote": "unfortunately fitchburg's connection fees have increased to $2000."
+  },
+  {
+   "topic": "Sewer IMA loan cost and total project cost",
+   "what_was_recorded": "Total projected project cost and 20-year loan; projected annual loan cost is $138,682 on the Fitchburg side and $18,597 from Lunenburg.",
+   "figures_as_printed": [
+    "$2,110.461",
+    "$138,682",
+    "$18,597"
+   ],
+   "quote": "the projected annual cost of the loan is $138,682 per year on the fitchburg side and $18,597 per year from lunenburg."
+  },
+  {
+   "topic": "Eagle House operating cost",
+   "what_was_recorded": "Cost to run the Eagle House is approximately $21,000 per year plus average maintenance costs.",
+   "figures_as_printed": [
+    "$21,000"
+   ],
+   "quote": "cost to run the eagle house is approximately $21,000 per year and it requires average"
+  },
+  {
+   "topic": "Brooks House operating cost",
+   "what_was_recorded": "The current tenant covers the annual operating cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the current tenant at the brooks house covers the annual operating cost and no maintenance or repair is"
+  },
+  {
+   "topic": "Ritter Building operating cost and repairs",
+   "what_was_recorded": "Ritter operating cost about $20,000 per year; $20,000 to $65,000 in repairs over 3-5 years, included in an unapproved Capital Plan.",
+   "figures_as_printed": [
+    "$20,000",
+    "$20,000 - $65,000"
+   ],
+   "quote": "operation costs at the ritter building are approximately $20,000 per year."
+  },
+  {
+   "topic": "T.C. Passios Building operating cost, income, repair and demolition",
+   "what_was_recorded": "Passios costs $120,000 per year to run and generates $36,000 in short-term tenant income; long-term repair estimated at $2.5M; demolition about $933,550 due to asbestos; partial abatement or construction about $875 per square foot or up to about $500,000.",
+   "figures_as_printed": [
+    "$120,000",
+    "$36,000",
+    "$2.5M",
+    "$933,550",
+    "$875 per square foot",
+    "$500,000"
+   ],
+   "quote": "it costs $120,000 per year to run this building and it's currently generating $36,000 in income from"
+  },
+  {
+   "topic": "Town Hall operating cost, rental revenue and renovation range",
+   "what_was_recorded": "Town Hall costs about $30,000 per year to operate and earns about $32,000 per year from a cell transmitter rental; renovation plans range from $2M to $10M.",
+   "figures_as_printed": [
+    "$30,000",
+    "$32,000",
+    "$2M - $10M"
+   ],
+   "quote": "town hall costs approximately $30,000 per year to operate and derives approximately $32,000 per year in"
+  },
+  {
+   "topic": "Town Hall renovation estimates and Ashland comparison",
+   "what_was_recorded": "The 1990 renovation plan estimate is $5M plus; a partial fit-out was put at $1:5M - $2.5M as printed; Ashland's Town Hall reconfiguration cost about $5M.",
+   "figures_as_printed": [
+    "$5M plus",
+    "$1:5M - $2.5M",
+    "$5M"
+   ],
+   "quote": "the estimated price for that renovation would be $5m plus."
+  },
+  {
+   "topic": "Standard & Poors rating upgrade savings",
+   "what_was_recorded": "Town's financial advisor said the upgrade could mean a savings of a tenth of 1% on an interest rate.",
+   "figures_as_printed": [
+    "a tenth of 1%"
+   ],
+   "quote": "he said that it could mean as much as a savings of a tenth of 1% on an interest rate."
+  },
+  {
+   "topic": "School project total cost discussed for appropriation",
+   "what_was_recorded": "Discussion that the full appropriation would be $72M even though only the Town's share would be borrowed.",
+   "figures_as_printed": [
+    "$72M"
+   ],
+   "quote": "mr. ebersole said so this means that part of the discussion is that it would be $72m, because technically we have to"
+  },
+  {
+   "topic": "MSBA grant share in Article 1",
+   "what_was_recorded": "Article 1 caps any MSBA grant at the lesser of 59.11% of eligible approved project costs or the maximum grant amount.",
+   "figures_as_printed": [
+    "59.11%"
+   ],
+   "quote": "lesser of (1) fifty-nine point eleven percent (59.11%) of eligible, approved project costs, as determined by the msba"
+  },
+  {
+   "topic": "Passios cost if school use returns",
+   "what_was_recorded": "Matthews said bringing the Passios building back for school use could cost $8M plus.",
+   "figures_as_printed": [
+    "$8M plus"
+   ],
+   "quote": "this could cost $8m plus to bring back for school usage."
+  },
+  {
+   "topic": "Comparable high school project costs",
+   "what_was_recorded": "North Middlesex new high school at about $88.6M; Ayer/Shirley renovation at $56M.",
+   "figures_as_printed": [
+    "$88.6M",
+    "$56M"
+   ],
+   "quote": "north middlesex is looking to build a new high school which will house 870 students, 180,000-190,000 sq. ft, at a cost of approximately $88.6m."
+  },
+  {
+   "topic": "Net metering credits and administrative costs with Townsend",
+   "what_was_recorded": "Ms. Bertram said the draft says Lunenburg would invoice Townsend despite an understanding of no administrative costs; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "her other concern was that we were not going to have administrative costs, but on page 4 section 5.1 (a) it states that"
+  },
+  {
+   "topic": "Warrant totals",
+   "what_was_recorded": "Three warrants listed with totals, in printed order: #W12-P14, #W28-14, #W29-14.",
+   "figures_as_printed": [
+    "$627,412.20",
+    "$546,049.33",
+    "$148,043.21"
+   ],
+   "quote": "#w12-p14 #w28-14 #w29-14 $627,412.20 $546,049.33 $148,043.21"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Pat Slattery",
+   "stated_role": "Chairman, Historical Commission",
+   "topic": "Ritter Building historic criteria and demolition",
+   "quote": "pat slattery, chairman, historical commission, spoke to say that yes there were specific requirements for the jones"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and opening remarks",
+   "resolution": "no action",
+   "tags": [
+    "remarks",
+    "press releases"
+   ],
+   "quote": "mr. alonzo began the meeting by thanking all who attended the tree lighting ceremony the previous evening"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "vacancies",
+    "forums"
+   ],
+   "quote": "mr. alonzo announced that there are still vacancies on the personnel committee and on the public access cable committee"
+  },
+  {
+   "topic": "Sewer IMA with City of Fitchburg",
+   "resolution": "approved",
+   "tags": [
+    "sewer",
+    "Fitchburg",
+    "IMA"
+   ],
+   "quote": "7:00 pm sewer ima w/city of fitchburg; carl luck, chair, sewer commission: carl luck, chair of the sewer"
+  },
+  {
+   "topic": "Land Donation Policy and Pleasant Street Property Proposal",
+   "resolution": "continued",
+   "tags": [
+    "land donation",
+    "Pleasant Street",
+    "Conservation Commission"
+   ],
+   "quote": "7:15 pm review land donation policy & pleasant street property proposal w/conservation commission: continued to a future bos meeting."
+  },
+  {
+   "topic": "Building Reuse Committee status update",
+   "resolution": "received; no action",
+   "tags": [
+    "Town Hall",
+    "building reuse",
+    "surplus buildings"
+   ],
+   "quote": "7:30 pm status update from building reuse committee: jamie toale, chairperson building reuse committee, came"
+  },
+  {
+   "topic": "Ballot question for school project",
+   "resolution": "bypassed to next meeting",
+   "tags": [
+    "ballot question",
+    "school project",
+    "MSBA"
+   ],
+   "quote": "1. review & approve ballot question - ms. speidel read the ballot question as follows:"
+  },
+  {
+   "topic": "Warrant articles and recommendations",
+   "resolution": "Article 1 recommended; Articles 2 and 3 held to Special Town Meeting",
+   "tags": [
+    "warrant",
+    "school project",
+    "zoning",
+    "medical marijuana"
+   ],
+   "quote": "2. review & order warrant articles; make recommendations on warrant articles: ms. speidel began by saying"
+  },
+  {
+   "topic": "IMA with Town of Townsend for net metering credits",
+   "resolution": "held pending Townsend BOS action",
+   "tags": [
+    "net metering",
+    "Townsend",
+    "IMA"
+   ],
+   "quote": "3. ima with town of townsend for sale of net metering credits: ms. speidel stated that the townsend bos is taking"
+  },
+  {
+   "topic": "Appointment to School Committee Advisory Committee for Tolerance & Diversity",
+   "resolution": "approved",
+   "tags": [
+    "appointment",
+    "tolerance",
+    "diversity"
+   ],
+   "quote": "4. bos appointment to (school committee's) advisory committee for tolerance & diversity: mr. ebersole spoke to"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "listed; no action file issues",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "5. minutes/warrants/action file issues"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "tags": [
+    "committee reports",
+    "Finance Committee",
+    "Library",
+    "PACC",
+    "School Building Committee"
+   ],
+   "quote": "6. committee report: board of health; building reuse committee; capital planning committee; finance"
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "received",
+   "tags": [
+    "Finance Committee forecast",
+    "site visit",
+    "aggregation",
+    "bond rating"
+   ],
+   "quote": "9.town manager reports or department reports: ms. speidel stated that the finance committee is meeting on"
+  },
+  {
+   "topic": "Appointments, resignations and executive session",
+   "resolution": "no action; none",
+   "tags": [
+    "appointments",
+    "executive session"
+   ],
+   "quote": "appointments/re-appointments/resignations: none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:12PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "regular scheduled meeting adjourned at 9:12pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of 11/12/2013",
+   "where": "list",
+   "quote": "minutes: 11/12/2013 11/19/2013 (to be amended)"
+  },
+  {
+   "name": "Minutes of 11/19/2013 (to be amended)",
+   "where": "list",
+   "quote": "minutes: 11/12/2013 11/19/2013 (to be amended)"
+  },
+  {
+   "name": "Warrant dated 12/15/2013",
+   "where": "list",
+   "quote": "warrants: 12/15/2013 12/3/2013 12/4/2013 #w12-p14 #w28-14 #w29-14"
+  },
+  {
+   "name": "Warrant dated 12/3/2013",
+   "where": "list",
+   "quote": "warrants: 12/15/2013 12/3/2013 12/4/2013 #w12-p14 #w28-14 #w29-14"
+  },
+  {
+   "name": "Warrant dated 12/4/2013",
+   "where": "list",
+   "quote": "warrants: 12/15/2013 12/3/2013 12/4/2013 #w12-p14 #w28-14 #w29-14"
+  },
+  {
+   "name": "Power Point review of the IMA (Intermunicipal Agreement) with the City of Fitchburg",
+   "where": "text",
+   "quote": "carl luck, chair of the sewer commission came before the bos to present a power point review of the ima"
+  },
+  {
+   "name": "Building Reuse Committee Power Point presentation",
+   "where": "text",
+   "quote": "came before the bos to present a power point presentation concerning their findings on buildings which they had reviewed in"
+  },
+  {
+   "name": "Police Dept. and Lunenburg Public School press releases",
+   "where": "text",
+   "quote": "mr. alonzo read two press releases (police dept. & lunenburg public school) regarding the racial spray painting incident"
+  },
+  {
+   "name": "Ballot question language (MSBA)",
+   "where": "text",
+   "quote": "shall the town of lunenburg be allowed to exempt from the provisions of proposition two-and-one-half, so called,"
+  },
+  {
+   "name": "Warrant Article 1 text",
+   "where": "text",
+   "quote": "ms. speidel read article 1 as follows: to see if the town will vote to appropriate, borrow or transfer from available funds,"
+  },
+  {
+   "name": "School Building Committee flyer",
+   "where": "text",
+   "quote": "she had included the flyer the school building committee had put together."
+  },
+  {
+   "name": "Townsend net metering IMA draft",
+   "where": "text",
+   "quote": "ms. bertram voiced concern about page 2 of the draft concerning the purchase and sale of net metering credits."
+  },
+  {
+   "name": "Schedule Z",
+   "where": "text",
+   "quote": "her understanding was that the schedule z is done twice a year so townsend would be listed on the schedule z"
+  },
+  {
+   "name": "Planning Board zoning articles (Medical Marijuana Treatment Center and moratorium)",
+   "where": "text",
+   "quote": "submitted by the planning board to amend the zoning bylaw to create a new sub-section entitled"
+  },
+  {
+   "name": "5 Year Financial Forecast",
+   "where": "text",
+   "quote": "for the purpose of receiving the 5 year financial forecast and there will be a formal invitation"
+  },
+  {
+   "name": "Consultant Agreement for the Municipal Aggregation Program",
+   "where": "text",
+   "quote": "consultant agreement for the municipal aggregation program which was approved"
+  }
+ ],
+ "tags": [
+  "sewer IMA",
+  "Fitchburg",
+  "Town Hall",
+  "Building Reuse Committee",
+  "school building project",
+  "ballot question",
+  "warrant articles",
+  "zoning",
+  "medical marijuana",
+  "net metering",
+  "Townsend",
+  "bond financing",
+  "bond rating",
+  "appointments",
+  "minutes and warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "minutes/warrants/action file issues"
+ },
+ "dropped_unquoted_by_field": {}
 }

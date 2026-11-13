@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2011-10-04",
  "docid": "614",
@@ -12,37 +12,211 @@
  },
  "votes": [
   {
-   "motion": "approve abatements, expense vouchers, commitments, warrants, and minutes from September 13, 2011",
+   "motion": "Approve abatements, expense vouchers, commitments, warrants, and minutes of the September 13, 2011 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on september 13, 2011"
   },
   {
-   "motion": "approve the statutory exemption applications (18 applications for $12,020.00)",
+   "motion": "Approve 18 statutory exemption applications totaling $12,020.00.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board reviewed and approved 18 applications totally $12,020.00"
+   "quote": "the board reviewed and approved 18 applications totally $12,020.00 and one application was tabled for review at the next meeting."
   },
   {
-   "motion": "table the exemption application until all members are present",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Table one statutory exemption application until all members are present (applicant personally known to the Chairman; Chairman abstained).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "a motion was made to table the application until all members are present."
   },
   {
-   "motion": "approve three new Chapter Account applications for FY13",
+   "motion": "Approve the three new Chapter Account applications for FY13 (Annette Alatalo; Fairlane Homes Realty Trust; LeMac Realty Trust).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "board reviewed and voted to approve the applications."
   },
   {
-   "motion": "meet on Tuesday, November 1, 2011 at 6:00pm",
+   "motion": "Meet on Tuesday, November 1, 2011 at 6:00pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the board voted to meet on tuesday, november 1, 2011 at 6:00pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted by macOS Vision. No votes recorded with specific vote counts. No movers or seconders named in any motion.",
- "cost_usd": 0.1262845
+ "note": "OCR text with artifacts: 'successtul' (successful), signature rendered as 'Lavise' and 'Gaguette' (likely Louise Paquette, printed name OCR'd as 'Louise Raquette'). Minutes do not record vote counts or movers/seconders for any motion. The abatement/minutes approval and exemption approval are recorded only as 'approved' without a motion, so they are listed as passed with no mover. Chairman's abstention on the tabled exemption is noted in the text but no tally is given. No public comment section appears. Adjournment has no recorded motion, so it is not listed as a vote.",
+ "cost_usd": 0.00452602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Comeau",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board member, louis j. franco, regional assessor harald scheid"
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board member, louis j. franco, regional assessor harald scheid"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chris comeau, chairman; board member, louis j. franco, regional assessor harald scheid"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "and louise paquette, administrative assistant"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "not present: board member, matthew j. papini, sr.,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Louise Paquette to forward the signed Chapter 61/61A Certificate: one to the State, one to the applicant, one kept in the office.",
+   "quote": "louise will forward the certificate to the state, one to the applicant and one to be retained in the office."
+  },
+  {
+   "decision": "Land Classification Liens to be prepared and presented at the next month's meeting.",
+   "quote": "the land classification liens will be prepared and presented at next month's meeting."
+  },
+  {
+   "decision": "A reminder notice to be mailed the next day to approx. 12 property owners who have not returned FY13 applications on time.",
+   "quote": "a reminder notice will be mailed tomorrow to approx. 12 property owners who have failed to return the application timely."
+  },
+  {
+   "decision": "Board suggested that applicants' supporting income documentation be provided to the office next year for FY14.",
+   "quote": "the board suggested that supporting documentation verifying the applicants income be provided to the office next year for fy14."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption applications approved",
+   "what_was_recorded": "The Board approved 18 statutory exemption applications with a combined total amount, and one application was tabled.",
+   "figures_as_printed": [
+    "$12,020.00"
+   ],
+   "quote": "the board reviewed and approved 18 applications totally $12,020.00 and one application was tabled for review at the next meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Abatements, expense vouchers, commitments, warrants, minutes",
+   "resolution": "approved",
+   "tags": [
+    "abatements",
+    "warrants",
+    "minutes"
+   ],
+   "quote": "board reviewed and approved abatements, expense vouchers, commitments, warrants, and minutes from the meeting held on september 13, 2011"
+  },
+  {
+   "topic": "Statutory exemption applications",
+   "resolution": "18 approved; one tabled until all members present",
+   "tags": [
+    "exemptions",
+    "tabled"
+   ],
+   "quote": "the board reviewed and approved 18 applications totally $12,020.00 and one application was tabled for review at the next meeting."
+  },
+  {
+   "topic": "New FY13 Chapter Account applications",
+   "resolution": "approved three applications; land classification liens to follow next month",
+   "tags": [
+    "chapter 61",
+    "chapter 61B",
+    "forest land",
+    "recreational land"
+   ],
+   "quote": "board reviewed and voted to approve the applications."
+  },
+  {
+   "topic": "FY13 application mailing and chapter account count",
+   "resolution": "no action; reminder notice to be mailed",
+   "tags": [
+    "chapter accounts",
+    "mailing"
+   ],
+   "quote": "a reminder notice will be mailed tomorrow to approx. 12 property owners who have failed to return the application timely."
+  },
+  {
+   "topic": "Chapter 61A income documentation",
+   "resolution": "Board suggested income documentation be requested starting FY14",
+   "tags": [
+    "chapter 61A",
+    "income verification"
+   ],
+   "quote": "the board suggested that supporting documentation verifying the applicants income be provided to the office next year for fy14."
+  },
+  {
+   "topic": "Assessment finalization and tax rate setting schedule",
+   "resolution": "no action; update received",
+   "tags": [
+    "tax rate",
+    "certification",
+    "Bureau of Local Assessment"
+   ],
+   "quote": "he expects to hear from the bureau of local assessment"
+  },
+  {
+   "topic": "Next meeting date and adjournment",
+   "resolution": "meeting set for November 1, 2011; adjourned 7:25 pm",
+   "tags": [
+    "meeting schedule",
+    "adjournment"
+   ],
+   "quote": "the board voted to meet on tuesday, november 1, 2011 at 6:00pm. meeting adjourned at 7:25 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Forest Management Plan (Plan Period 2012-2021), Annette Alatalo, 250 Howard St",
+   "where": "text",
+   "quote": "forest management plan has been submitted and approved by the state with a plan period of 2012-2021"
+  },
+  {
+   "name": "Certificate for Chapter 61/61A Forest Lands",
+   "where": "text",
+   "quote": "chris comeau, chairman signed the certificate for chapter 61/61a forest lands"
+  },
+  {
+   "name": "Land Classification Liens",
+   "where": "text",
+   "quote": "the land classification liens will be prepared and presented at next month's meeting."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "exemptions",
+  "chapter 61 land classification",
+  "chapter accounts",
+  "abatements",
+  "tax rate setting",
+  "board minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

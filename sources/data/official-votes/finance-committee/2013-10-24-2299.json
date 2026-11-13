@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2013-10-24",
  "docid": "2299",
@@ -12,15 +12,221 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "KM",
    "seconded_by": "SR",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "km motioned to adjourn. sr seconded, meeting adjourned at 8:59 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-read. One vote recorded: the motion to adjourn. No vote count is stated in the minutes; passage is indicated by the statement that the meeting adjourned.",
- "cost_usd": 0.08036650000000001
+ "note": "Text is OCR of a scanned page with some errors (e.g., 'recelve', 'November 20*h', 'DW'). The minutes record only one motion (adjournment) and give no vote count or result, so outcome is 'not stated'. No public comment section is printed. The minutes print no documents list heading; documents named in the discussion are listed as 'text'. Jason Smith is recorded as absent. Mike Mackin's and Karen Brochu's roles are not printed.\"",
+ "cost_usd": 0.00440182,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "town hall m. erickson, s. raboin, t. burchfield, j. henshaw, b. laffond, k. menard j. smith"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike mackin was present and commented that he was working with the msba and engineers to identify savings and get"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karen brochu was present to answer questions."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry speidel reported on the surrounding communities agreement if the leominster casino project goes forward."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The November 14 meeting will be a capital policy discussion; JH will draft the capital policy, and the questions to address are how much on capital and how it is funded.",
+   "quote": "november 14\" will be capital policy discussion. jh will draft. questions will be how much on capital and how funded?"
+  },
+  {
+   "decision": "The Town Manager will present the Financial Forecast on December 12; December 19 is set aside for the public hearing for the Special Town Meeting.",
+   "quote": "december 12* the town manager will present the financial forecast. december 19* will be set aside for the public hearing for the special town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "No change to the Monty Tech assessment this year, but the town will be charged a sum in 2015 for 2014.",
+   "figures_as_printed": [
+    "50,000"
+   ],
+   "quote": "there will be no change this year, but there will be a 50,000 charge to the town in 2015 for 2014."
+  },
+  {
+   "topic": "New growth estimate",
+   "what_was_recorded": "New growth was estimated at 250,000 but is closer to 285,000 in the first quarter financials.",
+   "figures_as_printed": [
+    "250,000",
+    "285,000"
+   ],
+   "quote": "new growth was estimated at 250,000 but is closer to 285,000."
+  },
+  {
+   "topic": "Leominster casino surrounding communities agreement",
+   "what_was_recorded": "The town will receive an annual payment under the surrounding communities agreement if the Leominster casino project goes forward.",
+   "figures_as_printed": [
+    "5,000"
+   ],
+   "quote": "the town will recelve an annual 5,000 payment."
+  },
+  {
+   "topic": "School building project contingency",
+   "what_was_recorded": "Mike Mackin said 1,000,000 had been removed from the school building project contingency.",
+   "figures_as_printed": [
+    "1,000,000"
+   ],
+   "quote": "mike mackin said 1,000,000 had been removed from contingency."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order at 7:02 pm."
+  },
+  {
+   "topic": "Communications: Monty Tech assessment letter",
+   "resolution": "no action",
+   "quote": "me reviewed letter from monty tech regarding their assessment. there will be no change this year, but there will be a"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "sr reported that capital planning is moving along. the building reuse committee expects to be ready to present"
+  },
+  {
+   "topic": "Town Manager update: first quarter financials and new growth",
+   "resolution": "no action",
+   "quote": "1st quarter financials presented. karen brochu was present to answer questions."
+  },
+  {
+   "topic": "Town Manager update: surrounding communities casino agreement",
+   "resolution": "no action",
+   "quote": "kerry speidel reported on the surrounding communities agreement if the leominster casino project goes forward."
+  },
+  {
+   "topic": "Bond rating",
+   "resolution": "no action",
+   "quote": "our bond rating has come in as a high grade bond rating, which is very exciting and timely."
+  },
+  {
+   "topic": "School Building presentation review",
+   "resolution": "no action",
+   "quote": "mike mackin said 1,000,000 had been removed from contingency."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "no action",
+   "quote": "december 12* the town manager will present the financial forecast. december 19* will be set aside for the public hearing for the special town meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:59 pm",
+   "quote": "km motioned to adjourn. sr seconded, meeting adjourned at 8:59 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Monty Tech regarding their assessment",
+   "where": "text",
+   "quote": "me reviewed letter from monty tech regarding their assessment."
+  },
+  {
+   "name": "1st quarter financials",
+   "where": "text",
+   "quote": "1st quarter financials presented."
+  },
+  {
+   "name": "Surrounding communities agreement (Leominster casino project)",
+   "where": "text",
+   "quote": "kerry speidel reported on the surrounding communities agreement if the leominster casino project goes forward."
+  },
+  {
+   "name": "Application to be designated a Green Community",
+   "where": "text",
+   "quote": "tb reported that the green communities task force will have the application to be designated a green community in on time."
+  },
+  {
+   "name": "Financial Forecast",
+   "where": "text",
+   "quote": "the town manager will present the financial forecast"
+  },
+  {
+   "name": "School Building Presentation",
+   "where": "text",
+   "quote": "school building presentation review"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Monty Tech assessment",
+  "school building project",
+  "casino agreement",
+  "new growth",
+  "bond rating",
+  "capital planning",
+  "Special Town Meeting",
+  "town manager update"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

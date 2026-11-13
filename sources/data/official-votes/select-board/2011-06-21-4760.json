@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-06-21",
  "docid": "4760",
@@ -12,55 +12,424 @@
  },
  "votes": [
   {
-   "motion": "Certify that the Board of Selectmen approves the Conservation Restriction to North County Land Trust Inc. pursuant to MGL Chapter 14, Section 52",
+   "motion": "Approve the Conservation Restriction to North County Land Trust Inc. and certify it at a public meeting held June 21, 2011, pursuant to MGL Chapter 14, Section 52.",
    "moved_by": "Tom",
    "seconded_by": "Paula",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "tom motioned to certify that at a public meeting duly held on june 21, 2011 the board of selectmen approve the foregoing conservation restriction to north county land trust inc., pursuant to mgl chapter 14, section 52, paula seconded, voted unanimously to approve."
+   "quote": "tom motioned to certify that at a public meeting duly held on june 21, 2011 the board of selectmen approve the foregoing conservation restriction"
   },
   {
-   "motion": "Approve holding a special town meeting on Monday July 18th to open the warrant this evening and close on June 24th at 12:00 noon",
+   "motion": "Approve holding a special town meeting on Monday July 18, opening the warrant that evening and closing it June 24 at 12:00 noon.",
    "moved_by": "Tom",
-   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "tom move that the board approve holding a special town meeting on monday july 18\", to open the warrant this evening and close on june 24@12:00, noon."
+   "quote": "tom move that the board approve holding a special town meeting on monday july 18"
   },
   {
-   "motion": "Ratify the town manager appointments as recommended, with the exception of the Technical Advisory Committee",
-   "moved_by": "Paula",
-   "seconded_by": "Tom",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "paula motion to ratify the appointments as recommended by the town manager with the exception of the technical advisory committee, tom seconded, voted unanimously to approve."
-  },
-  {
-   "motion": "Approve the Board of Selectmen appointments, including retaining Kopelman & Paige as Town Counsel",
-   "moved_by": "Tom",
-   "seconded_by": "Paula",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "tom move to approve, paula seconded, voted unanimously."
-  },
-  {
-   "motion": "Appoint DPW Director Jack Rodriquenz to serve on the Survey Board in lieu of Town Surveyor",
+   "motion": "Appoint DPW Director Jack Rodriquenz to the Survey Board in lieu of the Town Surveyor.",
    "moved_by": "Ernie",
    "seconded_by": "Tom",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "ernie motioned to appoint the dpw director, jack rodriquenz to serve on the survey board in lieu of town surveyor, tom seconded, voted unanimously."
   },
   {
-   "motion": "Adjourn the Regular Session",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "motion": "Ratify the FY'2012 Town Manager appointments/re-appointments as recommended, with the exception of the Technical Advisory Committee.",
+   "moved_by": "Paula",
+   "seconded_by": "Tom",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "paula motion to ratify the appointments as recommended by the town manager with the exception of the technical advisory committee, tom seconded, voted unanimously to approve."
+  },
+  {
+   "motion": "Approve the Town Counsel arrangement with Kopelman & Paige, which continues at rates reduced by $5.00 per hour (subject inferred from surrounding discussion; motion text says only 'to approve').",
+   "moved_by": "Tom",
+   "seconded_by": "Paula",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "tom move to approve, paula seconded, voted unanimously."
+  },
+  {
+   "motion": "Adjourn the Regular Session at 9:15 P.M.",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 9:15 p.m."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 9:15 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision). Two votes show \"not stated\" outcome or missing mover/seconder details as printed in the minutes. The second vote (special town meeting) has outcome not recorded.",
- "cost_usd": 0.12986550000000002
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR of a scanned page set; some OCR errors appear (e.g., 'enroli', 'wednesdya', 'Markk', 'July 31s!'), and quotes are copied as printed. The Town Counsel motion reads only 'Tom move to approve', so its subject is inferred from the surrounding discussion. The special town meeting motion has no second or result printed. The Public Comment and Executive Session headings have no entries under them. Warrants are listed as reviewed and signed, not as a vote.",
+ "cost_usd": 0.013181520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "with paula bertram, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present"
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "with paula bertram, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "with paula bertram, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present"
+  },
+  {
+   "name": "Dave Matthews",
+   "status": "present",
+   "quote": "with paula bertram, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with paula bertram, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "absent",
+   "quote": "steven m. debettencourt absent"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "dpw director jack rodriquenz expressed appreciation to the turkey hill gardeners"
+  },
+  {
+   "name": "Janet Morrison",
+   "role": "Executive Director, North County Land Trust",
+   "status": "present",
+   "quote": "janet morrison, executive director, north county land trust - present to request the board approve a conservation"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Chairman, DPW Building Committee",
+   "status": "present",
+   "quote": "chairman dave macdonald presented and reviewed the attached information of"
+  },
+  {
+   "name": "Milree Keeling",
+   "status": "present",
+   "quote": "milree keeling and greg berthiume were present with brendan grady"
+  },
+  {
+   "name": "Greg Berthiume",
+   "status": "present",
+   "quote": "milree keeling and greg berthiume were present with brendan grady"
+  },
+  {
+   "name": "Brendan Grady",
+   "role": "Chair of the School Regionalization Planning Committee",
+   "status": "present",
+   "quote": "chair of the school regionalization planning committee was present to review the steps that the committee has made to this point."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board will hold on the FY'2012 appointments to the Technical Advisory Committee pending further information.",
+   "quote": "board will hold on the appointments to the technical advisory committee for further information."
+  },
+  {
+   "decision": "Board members will check their schedules and get back to the Chief on availability for a proposed July 19 (5:45) meeting on the Nashoba Valley dispatch proposal.",
+   "quote": "board will check their schedules and get back to her on their availability."
+  },
+  {
+   "decision": "Board members are asked to submit their Town Manager evaluations to Dave by July 1 so he can tabulate them for discussion at the July 12 meeting.",
+   "quote": "dave has requested that the board submit their town manager evaluations to him by july 1st"
+  },
+  {
+   "decision": "Paula suggested going out to bid for Town Counsel next year, and Tom concurred.",
+   "quote": "paula would like to suggest that we go out to bid next year, to which tom concurs"
+  },
+  {
+   "decision": "Board concurred that the Survey Board process is a good opportunity to address the number of properties in foreclosure, including the Peninsula Drive property Paula raised.",
+   "quote": "board concurred that this is a good opportunity to get in process as there are a number of properties in foreclosure."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW addition/renovation funding gap",
+   "what_was_recorded": "After going out to bid twice, the DPW project is short of its funding, and the committee sought additional funding.",
+   "figures_as_printed": [
+    "$192K"
+   ],
+   "quote": "where they are at right now, having gone out to bid twice, is out by $192k"
+  },
+  {
+   "topic": "DPW project financial impact",
+   "what_was_recorded": "Kerry estimated the financial impact of the additional DPW funding at about $15,000 per year.",
+   "figures_as_printed": [
+    "$15,000/year"
+   ],
+   "quote": "according to kerry, the financial impact on this would be about $15,000/year"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Three warrants were reviewed and signed, with totals as printed.",
+   "figures_as_printed": [
+    "$321,339.44",
+    "$314,192.43",
+    "$720,456.59"
+   ],
+   "quote": "warrants - #69 11, 6/21/11 - $321,339.44, #70 11, 6/22/11 - $314,192.43 and #26 p11, 6/23/11 - $720,456.59 reviewed and signed."
+  },
+  {
+   "topic": "Town Counsel rates",
+   "what_was_recorded": "Kopelman & Paige has reduced its rates by $5.00 per hour from what the town had been paying.",
+   "figures_as_printed": [
+    "$5.00 per hour"
+   ],
+   "quote": "have reduced their rates by $5.00 per hour of what we had been paying."
+  },
+  {
+   "topic": "DPW crew from MCI Shirley",
+   "what_was_recorded": "The DPW crew arrangement with MCI Shirley is expected to save the town a large amount of work cost.",
+   "figures_as_printed": [
+    "tens of thousands of dollars"
+   ],
+   "quote": "will save us tens of thousands of dollars worth of work."
+  },
+  {
+   "topic": "Nashoba Valley dispatch startup costs",
+   "what_was_recorded": "Paula asked for more financial information, including startup costs and how they will move forward; the draft agreement's detailed budget breakdown is blank.",
+   "figures_as_printed": [],
+   "quote": "paula is questioning if there is additional financial information that the board could review, startup costs"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "dpw director jack rodriquenz expressed appreciation to the turkey hill gardeners for the great job that they do with the town",
+   "tags": [
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Conservation restriction, North County Land Trust",
+   "resolution": "approved unanimously",
+   "quote": "tom motioned to certify that at a public meeting duly held on june 21, 2011 the board of selectmen approve the foregoing conservation restriction",
+   "tags": [
+    "conservation restriction",
+    "land trust",
+    "open space"
+   ]
+  },
+  {
+   "topic": "DPW Building Committee update",
+   "resolution": "motion to hold special town meeting July 18 made; no result recorded",
+   "quote": "tom move that the board approve holding a special town meeting on monday july 18",
+   "tags": [
+    "DPW building",
+    "special town meeting",
+    "funding"
+   ]
+  },
+  {
+   "topic": "School regionalization committee update",
+   "resolution": "no action; committee to return by end of summer",
+   "quote": "expect to get a revised model back by the end of this month and would like to ensure that all their",
+   "tags": [
+    "school regionalization",
+    "MSBA"
+   ]
+  },
+  {
+   "topic": "Survey Board appointment (hazardous structure)",
+   "resolution": "DPW Director appointed in place of Town Surveyor, passed unanimously",
+   "quote": "ernie motioned to appoint the dpw director, jack rodriquenz to serve on the survey board in lieu of town surveyor, tom seconded, voted unanimously.",
+   "tags": [
+    "survey board",
+    "hazardous property",
+    "foreclosure"
+   ]
+  },
+  {
+   "topic": "Request for Special Town Meeting; Open Warrant",
+   "resolution": "no separate action recorded",
+   "quote": "request for special town meeting; open warrant -",
+   "tags": [
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "FY'2012 annual appointments",
+   "resolution": "ratified except Technical Advisory Committee, which was held",
+   "quote": "paula motion to ratify the appointments as recommended by the town manager with the exception of the technical advisory committee, tom seconded, voted unanimously to approve.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Counsel (Kopelman & Paige)",
+   "resolution": "approved unanimously; rates reduced",
+   "quote": "tom move to approve, paula seconded, voted unanimously.",
+   "tags": [
+    "town counsel",
+    "legal services"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "none on agenda",
+   "quote": "minutes - none warrants - #69 11, 6/21/11 - $321,339.44",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reviewed and signed",
+   "quote": "#26 p11, 6/23/11 - $720,456.59 reviewed and signed.",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "no issues",
+   "quote": "action file issues - none",
+   "tags": [
+    "action file"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "informational",
+   "quote": "mass broadband institute has submitted a change in the routing, now 2a be covered from fitchburg",
+   "tags": [
+    "broadband",
+    "PACC",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Department updates",
+   "resolution": "none recorded",
+   "quote": "6. department updates -",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "informational",
+   "quote": "kerry was advised that the dpw director has worked out an agreement with markk trembley of mci",
+   "tags": [
+    "MCI crew",
+    "cemeteries",
+    "Lake Shirley Dam",
+    "roads",
+    "Fourth of July"
+   ]
+  },
+  {
+   "topic": "Nashoba Valley Regional Emergency Dispatch proposal",
+   "resolution": "discussion; meeting date pending board availability",
+   "quote": "her recommendation is for 5:45 on july 19, board will check their schedules and get back to her on",
+   "tags": [
+    "emergency dispatch",
+    "regional agreement"
+   ]
+  },
+  {
+   "topic": "Town Manager evaluations",
+   "resolution": "evaluations due to Dave by July 1; discussed July 12",
+   "quote": "dave has requested that the board submit their town manager evaluations to him by july 1st",
+   "tags": [
+    "town manager evaluation"
+   ]
+  },
+  {
+   "topic": "Committee appointments/reappointments/resignations",
+   "resolution": "listed; no separate action recorded",
+   "quote": "1. fy'2012 annual appointments -",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive session and upcoming meeting schedule",
+   "resolution": "no executive session recorded; next meeting July 12, 2011",
+   "quote": "executive session upcoming meeting schedule july 12, 2011",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Attached information of the project costs (DPW addition/renovation), presented by Chairman Dave MacDonald",
+   "where": "list",
+   "quote": "chairman dave macdonald presented and reviewed the attached information of the project costs"
+  },
+  {
+   "name": "Attached proposed timetable and article language (special town meeting)",
+   "where": "list",
+   "quote": "dave m., reviewed the attached proposed timetable and article language."
+  },
+  {
+   "name": "Attached list of Town Manager Appointments/Re-Appointments",
+   "where": "list",
+   "quote": "kerry read the attached list of"
+  },
+  {
+   "name": "Attached Board of Selectmen Appointment/Re-Appointment list",
+   "where": "list",
+   "quote": "dave read the attached board of selectmen appointment/re-appointment list"
+  },
+  {
+   "name": "Draft agreement (Nashoba Valley Regional Emergency Dispatch)",
+   "where": "text",
+   "quote": "the draft agreement talks about a detailed budget breakdown that is blank."
+  },
+  {
+   "name": "Application for Conservation Restriction, signed by the Conservation Commission",
+   "where": "text",
+   "quote": "only an application, which has been signed by the conservation commission"
+  },
+  {
+   "name": "Conservation Restriction to North County Land Trust Inc.",
+   "where": "text",
+   "quote": "approve the foregoing conservation restriction to north county land trust inc."
+  },
+  {
+   "name": "Warrants #69 11, 6/21/11; #70 11, 6/22/11; #26 P11, 6/23/11",
+   "where": "text",
+   "quote": "#26 p11, 6/23/11 - $720,456.59 reviewed and signed."
+  }
+ ],
+ "tags": [
+  "conservation restriction",
+  "DPW building project",
+  "special town meeting",
+  "school regionalization",
+  "survey board",
+  "hazardous property",
+  "appointments",
+  "town counsel",
+  "emergency dispatch",
+  "warrants",
+  "town manager"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "chairman dave macdonald presented and reviewed the attached information"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

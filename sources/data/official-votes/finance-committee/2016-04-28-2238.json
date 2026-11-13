@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-04-28",
  "docid": "2238",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of March 24 meeting",
+   "motion": "Approve the minutes of March 24.",
    "moved_by": "Terri",
    "seconded_by": "Jay",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "terri moved to accept the minutes; jay seconded the motion, which was approved 5-0."
+   "quote": "march 24: terri moved to accept the minutes; jay seconded the motion, which was approved 5-0."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin",
    "seconded_by": "Terri",
    "outcome": "passed 5-0",
@@ -29,6 +29,330 @@
   }
  ],
  "dropped_unquoted": 3,
- "note": "Clean OCR; all votes clearly recorded with outcomes. Articles 12 & 13, 26, 27 & 28, 29, and 44 had no motions voted on—they were tabled or passed over.",
- "cost_usd": 0.1007405
+ "note": "OCR text of a three-page minutes document. The warrant-article table is jumbled in extraction, so vote and description quotes are reassembled by collapsing line breaks. Article 30 & 31 vote text is partly interleaved. The printed figure '$3,00,000' is recorded as printed and looks like a typo; the minutes do not say what the two School Bldg. Committee figures measure. The Q3/FY16 Financials attachment is named but its contents are not in the text. Minutes signed May 25, 2016 and received May 31, 2016.",
+ "cost_usd": 0.00951882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark will add the Financial Policy for Debt Service to subsequent Finance Committee agendas.",
+   "quote": "mark said he will add financial policy for debt service to subsequent finance committee agendas."
+  },
+  {
+   "decision": "Articles 12 & 13 passed over because the collective bargaining agreements have not been finalized.",
+   "quote": "have not yet been finalized."
+  },
+  {
+   "decision": "Committee wants more information on the financing option for Article 27 & 28 before making a recommendation (Article 26 status).",
+   "quote": "the committee wants to find out more about the financing option before making a recommendation."
+  },
+  {
+   "decision": "Committee agreed to await the Town Meeting presentation before making a recommendation on Articles 27 & 28.",
+   "quote": "the committee agreed to await the presentation at town meeting before making a recommendation."
+  },
+  {
+   "decision": "Committee needs more information on costs before making a recommendation on Article 44 (curbside yard waste).",
+   "quote": "about the costs before making a recommendation."
+  },
+  {
+   "decision": "Budget Goals and Opportunities discussion tabled to the May 12 meeting.",
+   "quote": "the committee agreed to table our discussion to the may 12 meeting."
+  },
+  {
+   "decision": "Next meeting set for Saturday, May 7 at 8:15 am at Lunenburg High School, before and reconvening through the Annual Town Meeting.",
+   "quote": "next meeting: saturday, may 7t, at 8:15 am at lunenburg high school before the annual town meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town debt policy as a percent of Town budget",
+   "what_was_recorded": "Mark reviewed the need to review the Town debt policy, one section of the Town's Financial Policies; no figures printed.",
+   "quote": "mark reviewed the need for the committee to review the policy on town debt as a percent of town budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School committee signage capital request",
+   "what_was_recorded": "School committee notice to Capital Planning Committee on a signage capital request to replace an aging sign.",
+   "quote": "improvement request related to signage costing $22,222 to replace an aging sign.",
+   "figures_as_printed": [
+    "$22,222"
+   ]
+  },
+  {
+   "topic": "Fire fighter union agreement and chief's salary (Articles 9 & 10)",
+   "what_was_recorded": "Article recommended; no dollar figure printed.",
+   "quote": "fire fighter's union agreement and adjustment of the vote terri made",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Funding for Public Employee and Police Officer agreements (Articles 12 & 13)",
+   "what_was_recorded": "Article passed over pending finalized agreements; no figure printed.",
+   "quote": "funding of the public employee's and police officers",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Solid Waste Enterprise Fund (Article 18)",
+   "what_was_recorded": "Budget increase of $10,000 to $275,000 in FY17, recorded as having no effect on the budget.",
+   "quote": "solid waste enterprise fund budget $10,000 increase to terri made a moti",
+   "figures_as_printed": [
+    "$10,000",
+    "$275,000"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Debt exclusion override for road maintenance (Article 26)",
+   "what_was_recorded": "Debt exclusion override to fund road maintenance; no figure printed.",
+   "quote": "debt exclusion override to fund road maintenance on",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Turf field and track renovation financing (Articles 27 & 28)",
+   "what_was_recorded": "Renovation funding discussed; financing option unclear; no figure printed.",
+   "quote": "funding for renovation of the turf field and track.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Summer Street easements (Article 29)",
+   "what_was_recorded": "Financial effect described as uncertain; no figure printed.",
+   "quote": "the financial effect is uncertain.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Curbside yard waste costs (Article 44)",
+   "what_was_recorded": "Committee needs cost information before a recommendation; no figure printed.",
+   "quote": "about the costs before making a recommendation.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Water District independence (Article 45)",
+   "what_was_recorded": "No direct financial effect.",
+   "quote": "no direct financial effect.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library overdue fees and revolving account",
+   "what_was_recorded": "Changes to overdue charges could increase the library revolving account and library funding; no figure printed.",
+   "quote": "this could increase the funds in the library revolving account, which would increase funding for the library in addition to the town's appropriation.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library lighting grant",
+   "what_was_recorded": "Library received a grant for a lighting project; no amount printed.",
+   "quote": "the library has gotten a grant for a lighting project to be fulfilled by the green communities task force.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School Building Committee change orders and totals",
+   "what_was_recorded": "Change orders approved; a wheel chair lift at the stadium was approved as a change order. The minutes print 'just over $1,000,000' and 'just under $3,00,000' without saying what each figure measures. The second figure appears to be a typo as printed.",
+   "quote": "just over $1,000,000, remain just under $3,00,000.",
+   "figures_as_printed": [
+    "$1,000,000",
+    "$3,00,000"
+   ]
+  },
+  {
+   "topic": "Wheel chair lift change order at the stadium",
+   "what_was_recorded": "Change order approved for a wheel chair lift at the stadium.",
+   "quote": "approved a change order for wheel chair lift at the stadium--$2341.",
+   "figures_as_printed": [
+    "$2341"
+   ]
+  },
+  {
+   "topic": "FY16 Third Quarter financial statements",
+   "what_was_recorded": "Expenditures on track with budget and revenues a bit higher than planned; no dollar figures printed.",
+   "quote": "fy16 is coming in well: expenditures are on track with the budget and revenues are a bit higher than planned for in the budget.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "School committee line item transfer from the operating budget to the capital budget for the signage project.",
+   "outcome": "Reported as planned by the school committee; no committee action recorded.",
+   "amount_as_printed": "",
+   "quote": "they will do a line item transfer from the operating budget to the capital budget for this project."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "mark called the finance committee meeting to order at 7:00 pm.",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Comments: public and new communications",
+   "resolution": "noted; no action",
+   "quote": "mark announced three association of town finance committee meetings on may 5'h, 12th, and 19th.",
+   "tags": [
+    "communications",
+    "school signage"
+   ]
+  },
+  {
+   "topic": "Town debt policy review",
+   "resolution": "to be added to future agendas",
+   "quote": "mark reviewed the need for the committee to review the policy on town debt as a percent of town budget.",
+   "tags": [
+    "debt policy",
+    "financial policies"
+   ]
+  },
+  {
+   "topic": "Remaining Annual Town Meeting warrant articles",
+   "resolution": "recommendations made on Articles 9 & 10, 18, and 30 & 31; others passed over, deferred or awaiting information",
+   "quote": "the committee, with background information provided by kerry, took up the remaining articles on the annual town meeting warrant.",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "FY16 Third Quarter financial statements",
+   "resolution": "received; no action",
+   "quote": "kerry distributed the fy16 third quarter financial statements.",
+   "tags": [
+    "financials",
+    "FY16 budget"
+   ]
+  },
+  {
+   "topic": "Review of minutes (March 24)",
+   "resolution": "approved 5-0",
+   "quote": "march 24: terri moved to accept the minutes; jay seconded the motion, which was approved 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "tabled to May 12 meeting",
+   "quote": "the committee agreed to table our discussion to the may 12 meeting.",
+   "tags": [
+    "budget goals"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "received; no action",
+   "quote": "pacc will meet on monday, may 2.",
+   "tags": [
+    "library",
+    "schools",
+    "school building",
+    "capital planning",
+    "solid waste"
+   ]
+  },
+  {
+   "topic": "On-going business",
+   "resolution": "no discussion",
+   "quote": "on-going business: no discussion.",
+   "tags": [
+    "ongoing business"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for May 7 at 8:15 am",
+   "quote": "next meeting: saturday, may 7t, at 8:15 am at lunenburg high school before the annual town meeting",
+   "tags": [
+    "town meeting",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:36 on a 5-0 vote",
+   "quote": "karin made a motion to adjourn and terri seconded the motion. the committee approved the motion 5-0 at 9:36.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Q3/FY16 Financials",
+   "where": "list",
+   "quote": "attachments (1) q3/fy16 financials"
+  },
+  {
+   "name": "Annual Town Meeting Warrant",
+   "where": "text",
+   "quote": "took up the remaining articles on the annual town meeting warrant."
+  },
+  {
+   "name": "Town's Financial Policies (Town debt policy section, adopted by the Board of Selectmen in FY2015)",
+   "where": "text",
+   "quote": "the town debt policy is one section in the town's financial policies adopted by the board of selectmen in"
+  },
+  {
+   "name": "The Beacon (April edition)",
+   "where": "text",
+   "quote": "mark circulated the april edition of the beacon."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Annual Town Meeting",
+  "warrant articles",
+  "debt policy",
+  "FY16 budget",
+  "capital planning",
+  "solid waste",
+  "library",
+  "school building",
+  "union agreements",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (1)"
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 3
+ }
 }

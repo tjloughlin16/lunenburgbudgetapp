@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2016-01-19",
  "docid": "525",
@@ -11,7 +11,161 @@
   "doc_url": "/docs/meetings/architectural-preservation-district-commission/2016-01-19-minutes-525.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe board discussions and agreements (e.g., \"the board agreed that it should consider specific topics,\" \"Mr McGrath resolved to learn...\") but contain no explicit motions, seconds, voting language (\"voted,\" \"unanimously approved,\" \"so voted,\" \"motion carried/failed\"), or stated outcomes that constitute a recordable vote.",
- "cost_usd": 0.0802175
+ "dropped_unquoted": 1,
+ "note": "The minutes record no votes: approval of minutes was deferred, and adjournment is stated without a motion. No dollar figures, transfers, or public comment appear. The header reads \"Approved: 2-9-16\", which is the approval date printed on the minutes. The text contains a typo (\"design design\"), reproduced in quotes as printed.",
+ "cost_usd": 0.00340752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "richard mcgrath- chair jim laveck- vice chair cullen dwyer- recording clerk"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "richard mcgrath- chair jim laveck- vice chair cullen dwyer- recording clerk"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Recording Clerk",
+   "status": "present",
+   "quote": "mr. dwyer presented notes on his own reflections from the site visit"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the previous meeting's minutes was deferred to the next meeting because Mr. Dwyer could not print them out.",
+   "quote": "mr. dwyer was not able to print out the minutes from the previous meeting, so approval of minutes was forestalled until next meeting."
+  },
+  {
+   "decision": "The board agreed that Mr. Dwyer's notes on his site-visit reflections would be helpful moving forward.",
+   "quote": "which the board agreed would be helpful moving forward."
+  },
+  {
+   "decision": "The board recognized that repairs and improvements affecting overall appearance but needing no building permit fall under exemption 6b of the bylaw; Mr. McGrath resolved to learn what needs or does not need a building permit.",
+   "quote": "mr mcgrath resolved to learn what needs or does not need a building permit."
+  },
+  {
+   "decision": "The board agreed to consider specific topics (roofs; facades and sides visible from the public way) before drafting design guidelines for the APD.",
+   "quote": "the board agreed that it should consider specific topics before drafting design design guidelines for the apd"
+  },
+  {
+   "decision": "For design guidelines on signs, the board must first review the Village District Bylaw.",
+   "quote": "for design guidelines regarding signs, the board must first review the village district bylaw to"
+  },
+  {
+   "decision": "Design guidelines will be written to cover the majority of cases, with the APDC retaining the right to make exceptions to preserve a building's unique historical character.",
+   "quote": "the apdc will retain the right to make exceptions to preserve the unique historical character of a building."
+  },
+  {
+   "decision": "The appeals process in section 13 of the bylaw requires further research.",
+   "quote": "the appeals process described in section 13 of the bylaw is still unclear to the board, and requires further research."
+  },
+  {
+   "decision": "The board will meet again at 7PM in the Ritter Building on 2-9-16.",
+   "quote": "the board will meet again at 7pm in the ritter building on 2-9-16"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "minutes approval deferred to next meeting",
+   "quote": "mr. dwyer was not able to print out the minutes from the previous meeting, so approval of minutes was forestalled until next meeting.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Site-visit ideas and reflections (APD site visit 1-16-16)",
+   "resolution": "discussed; reflections noted for future use",
+   "quote": "members discussed ideas generated from the apd site-visit on 1-16-16.",
+   "tags": [
+    "site visit",
+    "APD"
+   ]
+  },
+  {
+   "topic": "Building permit exemptions under bylaw 6b",
+   "resolution": "no action; McGrath to research permit requirements",
+   "quote": "the board recognized that many repairs and improvements that would effect the overall appearance of the building would not require a building permit",
+   "tags": [
+    "building permit",
+    "bylaw exemption"
+   ]
+  },
+  {
+   "topic": "Topics for design guidelines (roofs, facades)",
+   "resolution": "agreed topics to consider before drafting guidelines",
+   "quote": "the board agreed that it should consider specific topics before drafting design design guidelines for the apd",
+   "tags": [
+    "design guidelines",
+    "roofs",
+    "facades"
+   ]
+  },
+  {
+   "topic": "Design guidelines for signs",
+   "resolution": "board to review Village District Bylaw first",
+   "quote": "for design guidelines regarding signs, the board must first review the village district bylaw to",
+   "tags": [
+    "signs",
+    "design guidelines"
+   ]
+  },
+  {
+   "topic": "Exceptions to guidelines and appeals process",
+   "resolution": "appeals process to be researched further",
+   "quote": "the appeals process described in section 13 of the bylaw is still unclear to the board, and requires further research.",
+   "tags": [
+    "appeals",
+    "exceptions"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30PM; no motion recorded",
+   "quote": "8:30pm meeting adjourned.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Reflections from Site Visit, 1-16-16",
+   "where": "text",
+   "quote": "(see supporting document \"reflections from site visit, 1-16-16\")"
+  },
+  {
+   "name": "Village District Bylaw",
+   "where": "text",
+   "quote": "the board must first review the village district bylaw to"
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "design guidelines",
+  "site visit",
+  "building permits",
+  "bylaw",
+  "signs",
+  "appeals",
+  "roofs",
+  "facades"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see supporting document"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

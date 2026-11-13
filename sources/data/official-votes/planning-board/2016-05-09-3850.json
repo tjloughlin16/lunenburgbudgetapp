@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-05-09",
  "docid": "3850",
@@ -12,15 +12,110 @@
  },
  "votes": [
   {
-   "motion": "to close the hearing",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Close the public hearing on the driveway request at 233 Lancaster Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "G. Bittner",
+   "outcome": "passed (all aye)",
+   "procedural": true,
    "quote": "motion, k. chenis to close hearing, second, g. bittner, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08791449999999999
+ "note": "Text is a clean extract of a single-page hearing minutes. Only one recorded motion (closing the hearing). The minutes record no vote or decision on the driveway itself. The hearing opened at 6:35 PM and closed at 6:45 PM; no public comment is recorded. The minutes say the application width is incorrect, and cite Ch. 40, Section 15C in the hearing notice but Ch. 40, Section 15 in the document list. Joseph White's attendance is not stated; he was represented by Daniel Proctor.",
+ "cost_usd": 0.00273262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Daniel Proctor",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "daniel proctor of 1529 massachusetts avenue"
+  },
+  {
+   "name": "Joseph White",
+   "role": "applicant and property owner",
+   "status": "not stated",
+   "quote": "joseph white , 334 sunny hill road"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: driveway at 233 Lancaster Avenue (Scenic Road and shade tree cutting)",
+   "resolution": "hearing closed at 6:45 PM; no decision recorded",
+   "quote": "to hear and discuss a request to construct a driveway at 233 lancaster avenue, map 081, parcel 00 05",
+   "tags": [
+    "public hearing",
+    "driveway",
+    "scenic road",
+    "tree removal",
+    "233 Lancaster Avenue"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application under Ch. 40, Section 15",
+   "where": "list",
+   "quote": "application under ch. 40, section 15"
+  },
+  {
+   "name": "Driveway Design Plan",
+   "where": "text",
+   "quote": "driveway design plan shows five retention basins"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "driveway",
+  "scenic road",
+  "shade trees",
+  "233 Lancaster Avenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

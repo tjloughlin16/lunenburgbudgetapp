@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-10-28",
  "docid": "3711",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Extend approval of Highfield Village project to January 31, 2014",
+   "motion": "Extend the Highfield Village approval to January 31, 2014.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion for extension approval to january 31, 2014, mr. lockwood, second, mr. mcquaid, roll call vote - mr. lockwood, aye; mr. bakaysa, aye; mr. mcquaid, aye"
+   "quote": "motion for extension approval to january 31, 2014, mr. lockwood, second, mr. mcquaid, roll call vote"
   },
   {
-   "motion": "Approve minutes of October 7, 2013",
+   "motion": "Approve the 10-7-13 minutes.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Bakaysa",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "motion to approve 10-7-13, mr. lockwood, second, mr. bakaysa"
   },
   {
-   "motion": "Approve minutes of September 23, 2013",
+   "motion": "Approve the 9-23-13 minutes.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Allison",
    "outcome": "not stated",
@@ -36,23 +36,353 @@
    "quote": "motion to approve 9-23-13, mr. lockwood, second mr. allison"
   },
   {
-   "motion": "Approve minutes of Force Corp. Information Meeting of September 23, 2013",
+   "motion": "Approve the Force Corp. Information Meeting 9-23-13 minutes.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. McQuaid",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to approve force corp. information meeting 9 -23-13, mr. lockwood, second, mr. mcquaid"
+   "quote": "motion to approve force corp. information meeting 9 -23-13, mr. lockwood, second, mr. mcquaid."
   },
   {
-   "motion": "Leave regular session, enter executive session, and not return to regular session",
+   "motion": "Leave Regular Session and enter Executive Session, not returning to Regular Session.",
    "moved_by": "Mr. Allison",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to leave regular session, enter into executive session, not to return to regular session, mr. allison, second, mr. lockwood , roll call vote - mr. allison, aye; mr. bakaysa, aye"
+   "quote": "motion to leave regular session, enter into executive session, not to return to regular session, mr. allison, second, mr. lockwood"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1142045
+ "note": "Text is a PDF extraction with broken word spacing in places (for example \"wi ll\", \"b uilding\", \"d raft\", \"25 th\"); quotes avoid those spans. Only the Highfield roll call shows a printed count (4-1). The executive session roll call lists five ayes with no count printed, so outcome is \"passed\". Minutes approvals print no result. Adjournment at 8:20 PM is recorded without a motion, so it is not listed as a vote. The document list reads \"615/517 Leominster Road\" while the body says 615/617; printed as found. Carol Thomas is mentioned but did not attend.",
+ "cost_usd": 0.010238520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta -simeone, emerick r. bakaysa,"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "joanna l. bilotta -simeone, emerick r. bakaysa,"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "nathan j. lockwood , damon mcquaid, matthew allison, marion m."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, marion m."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, marion m."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "ms. benson noted that the board's previous consultant, carol thomas, celebrated her 90th birthday."
+  },
+  {
+   "name": "Kent Oldfield",
+   "role": "Project Engineer",
+   "status": "present",
+   "quote": "project engineer kent oldfield provided copies of most recent mepa"
+  },
+  {
+   "name": "Mr. Smith",
+   "role": "developer",
+   "status": "present",
+   "quote": "the developer mr. smith noted the plan has gone through several iterations over the years."
+  },
+  {
+   "name": "Mr. Sauvageau",
+   "role": "Building Commissioner/Zoning Official",
+   "status": "not stated",
+   "quote": "ms. benson to inquire of mr. sauvageau."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Oldfield to send the Definitive plan as a PDF to Ms. Benson, who will forward it to Mr. Allison.",
+   "quote": "mr. oldfield wi ll pdf definitive to ms. benson and she will forward to mr. allison."
+  },
+  {
+   "decision": "Ms. Benson to ask Mr. Sauvageau whether the 35 Leominster Road building permit extension should have come to the Board first.",
+   "quote": "ms. benson to inquire of mr. sauvageau."
+  },
+  {
+   "decision": "Ms. Benson to research a sunset clause for the medical marijuana clinic moratorium and provide a draft moratorium warrant article for the November 25 Board meeting.",
+   "quote": "ms. benson also to research sunset clause."
+  },
+  {
+   "decision": "Mr. Bakaysa to represent the Board in negotiations on the Holman Street property.",
+   "quote": "mr. bakaysa to represent board in negotiations."
+  },
+  {
+   "decision": "A public hearing on the 615/617 Leominster Road driveway application is set for the November 25, 2013 Board meeting.",
+   "quote": "a public hearing will be held at the november 25, 2013 board meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School building greenhouse cost",
+   "what_was_recorded": "The proposed greenhouse is not in the state reimbursement, so the Town bears the entire expense, approximately $350,000.00.",
+   "figures_as_printed": [
+    "$350,000.00"
+   ],
+   "quote": "mr. allison inquired if the proposed greenhouse was included in the state reimbursement."
+  },
+  {
+   "topic": "School building tax impact on residents",
+   "what_was_recorded": "Figures on possible taxes to residents were given: a median home would pay $525/yr on 30-year financing or $650/yr on 20-year financing.",
+   "figures_as_printed": [
+    "$250-280,000",
+    "$525/yr",
+    "$650/yr"
+   ],
+   "quote": "median cost of home $250-280,000 - would pay $525/yr in increased tax"
+  },
+  {
+   "topic": "40R density bonus payment",
+   "what_was_recorded": "A 40R Density Bonus Payment Contract was signed with DHCD and the Town Manager anticipates funds to follow; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "payment contract signed and executed between dhcd and the town of lunenburg."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board comment",
+   "resolution": "noted, no action",
+   "quote": "ms. benson noted that the board's previous consultant, carol thomas, celebrated her 90th birthday.",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Highfield Village extension and MEPA",
+   "resolution": "extension to January 31, 2014 approved 4-1",
+   "quote": "motion for extension approval to january 31, 2014",
+   "tags": [
+    "Highfield Village",
+    "extension",
+    "MEPA",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions made; results not printed",
+   "quote": "motion to approve 10-7-13, mr. lockwood, second, mr. bakaysa",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "capital planning committee, ms. benson- committee meeting october 30th with presentation from the dpw director.",
+   "tags": [
+    "committees",
+    "school building",
+    "Green Community",
+    "Building Reuse"
+   ]
+  },
+  {
+   "topic": "Planning Director reports and development status",
+   "resolution": "noted",
+   "quote": "force corp., 305 leominster shirley road- office still awaiting revised plans per peer review.",
+   "tags": [
+    "development status",
+    "permits"
+   ]
+  },
+  {
+   "topic": "615/617 Leominster Road driveway application",
+   "resolution": "public hearing set for November 25, 2013",
+   "quote": "a public hearing will be held at the november 25, 2013 board meeting",
+   "tags": [
+    "driveway",
+    "public hearing",
+    "Leominster Road"
+   ]
+  },
+  {
+   "topic": "35 Leominster Road building permit extension",
+   "resolution": "referred back to Benson for inquiry",
+   "quote": "ms. benson to inquire of mr. sauvageau.",
+   "tags": [
+    "building permit",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Citizen survey, 40R payment, and cell tower collocation",
+   "resolution": "noted",
+   "quote": "section 6409 of the federal middle class tax relief and job creation act of 2012",
+   "tags": [
+    "citizen survey",
+    "40R",
+    "wireless",
+    "Section 6409"
+   ]
+  },
+  {
+   "topic": "Action file",
+   "resolution": "assignments made",
+   "quote": "ms. benson also to research sunset clause.",
+   "tags": [
+    "medical marijuana",
+    "moratorium",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "november 25- scenic road public hearing followed by board meeting",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Holman Street property",
+   "resolution": "Bakaysa assigned to represent Board",
+   "quote": "mr. bakaysa to represent board in negotiations.",
+   "tags": [
+    "Holman Street",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session, not returning to regular session",
+   "quote": "motion to leave regular session, enter into executive session, not to return to regular session, mr. allison, second, mr. lockwood",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 10-7-13",
+   "where": "list",
+   "quote": "minutes 10-7-13 minutes 9-23-13"
+  },
+  {
+   "name": "Minutes 9-23-13",
+   "where": "list",
+   "quote": "minutes 9-23-13 minutes force corp. information meeting 9-23-13"
+  },
+  {
+   "name": "Minutes Force Corp. Information Meeting 9-23-13",
+   "where": "list",
+   "quote": "minutes force corp. information meeting 9-23-13 highfield village mepa certificate"
+  },
+  {
+   "name": "Highfield Village MEPA Certificate",
+   "where": "list",
+   "quote": "highfield village mepa certificate whites woods weekly progress reports"
+  },
+  {
+   "name": "Whites Woods Weekly Progress Reports",
+   "where": "list",
+   "quote": "whites woods weekly progress reports mobil station weekly progress reports"
+  },
+  {
+   "name": "Mobil Station Weekly Progress Reports",
+   "where": "list",
+   "quote": "mobil station weekly progress reports mobil station letter of release"
+  },
+  {
+   "name": "Mobil Station Letter of Release",
+   "where": "list",
+   "quote": "mobil station letter of release scenic road application- 615/517 leominster road"
+  },
+  {
+   "name": "Scenic Road Application- 615/517 Leominster Road",
+   "where": "list",
+   "quote": "scenic road application- 615/517 leominster road 35 leominster road- building permit extension"
+  },
+  {
+   "name": "35 Leominster Road- Building Permit Extension",
+   "where": "list",
+   "quote": "35 leominster road- building permit extension 40r density bonus payment contract"
+  },
+  {
+   "name": "40R Density Bonus Payment Contract",
+   "where": "list",
+   "quote": "40r density bonus payment contract 621 chase road- new cingular wireless pcs, llc (at&t), building permit application"
+  },
+  {
+   "name": "621 Chase Road- New Cingular Wireless PCS, LLC (AT&T), Building Permit Application",
+   "where": "list",
+   "quote": "621 chase road- new cingular wireless pcs, llc (at&t), building permit application 270 electric avenue- new cingular wireless pcs, llc (at&t), building permit application"
+  },
+  {
+   "name": "270 Electric Avenue- New Cingular Wireless PCS, LLC (AT&T), Building Permit Application",
+   "where": "list",
+   "quote": "270 electric avenue- new cingular wireless pcs, llc (at&t), building permit application mrpc trail inventory update"
+  },
+  {
+   "name": "MRPC Trail Inventory Update",
+   "where": "list",
+   "quote": "270 electric avenue- new cingular wireless pcs, llc (at&t), building permit application mrpc trail inventory update"
+  },
+  {
+   "name": "Definitive plan (PDF)",
+   "where": "text",
+   "quote": "mr. oldfield wi ll pdf definitive to ms. benson and she will forward to mr. allison."
+  },
+  {
+   "name": "Overview presented to the Board at its August 12, 2013 meeting",
+   "where": "text",
+   "quote": "an overview that was presented to the board at its august 12, 2013 meeting"
+  },
+  {
+   "name": "Smart Growth information",
+   "where": "text",
+   "quote": "ms. benson noted smart growth information provided to school superintendent."
+  },
+  {
+   "name": "Draft letter prepared for Town Counsel (Green Community)",
+   "where": "text",
+   "quote": "draft letter prepared for town counsel confirming same."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "Highfield Village",
+  "extensions",
+  "sewer commission",
+  "40R",
+  "wireless towers",
+  "Section 6409",
+  "Leominster Road",
+  "school building greenhouse",
+  "medical marijuana moratorium",
+  "Green Community",
+  "Holman Street",
+  "executive session",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2016-10-03",
  "docid": "5526",
@@ -12,31 +12,242 @@
  },
  "votes": [
   {
-   "motion": "Adopt the Final Betterment Assessment Order assessing $1,322,760.92 in sewer betterments and $41,992.41 in privilege fees",
+   "motion": "Adopt the Order Assessing Final Sewer Betterments: final betterments by uniform unit method totaling $1,364,753.33, with $1,322,760.92 certified to the Assessors for commitment and $41,992.41 reserved as privilege fees.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe Anderson",
-   "outcome": "Passed Unanimous",
+   "outcome": "passed unanimous",
    "procedural": false,
    "quote": "john reynolds made the motion, joe anderson seconded, passed unanimous."
   },
   {
-   "motion": "Invite the owner of Crossroads Plaza to a hearing on November 8, 2016",
+   "motion": "John invites the owner of Crossroads Plaza to come in for a hearing at the 10/25/16 town hall meeting, amended by Carl Luck to make the hearing date 11/8/16.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe Anderson",
-   "outcome": "Passed unanimously",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "john invites the owner of crossroads plaza come in for a hearing at the 10/25/16 town hall meeting. carl luck amended the motion to make the date 11/8/16 for the hearing. passed unanimously"
+   "quote": "motion: john reynolds (joe anderson seconded) john invites the owner of crossroads plaza come in for a hearing at the 10/25/16 town hall meeting."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe Anderson",
-   "outcome": "Passed unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion: john reynolds, joe anderson seconded, motion to adjourn. passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned original; extracted via OCR (macOS Vision).",
- "cost_usd": 0.1251155
+ "note": "OCR text from a scanned page; the minutes are a single page. The date line reads \"October 3th\" and the signature block is garbled (\"Jalaters 11/66/16\"), so the signature and date of approval are not reliably readable. Members are listed as attendees but no roles are printed. No public comment section is recorded. The Crossroads motion was amended from 10/25/16 to 11/8/16 with no separate vote recorded on the amendment.",
+ "cost_usd": 0.005864319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "attendees: carl luck, john reynolds, joe anderson"
+  },
+  {
+   "name": "John Reynolds",
+   "status": "present",
+   "quote": "attendees: carl luck, john reynolds, joe anderson"
+  },
+  {
+   "name": "Joe Anderson",
+   "status": "present",
+   "quote": "attendees: carl luck, john reynolds, joe anderson"
+  },
+  {
+   "name": "Richard St. Cyr",
+   "role": "potential member",
+   "status": "present",
+   "quote": "guests: richard st. cyr (potential member), bob ebersole (liaison/selectman)"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Liaison/selectman",
+   "status": "present",
+   "quote": "guests: richard st. cyr (potential member), bob ebersole (liaison/selectman)"
+  },
+  {
+   "name": "Seema",
+   "status": "absent",
+   "quote": "kabobelicious - seema did not attend the meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners signed the Order of Assessment; Carl Luck to take it to the Clerk's office for notarizing.",
+   "quote": "commissioners signed the order of assessment. carl will take it to the clerk's office for notarizing."
+  },
+  {
+   "decision": "Bob Ebersole to announce the change to the rate at the Selectmen meeting on Tuesday 10/4/16.",
+   "quote": "bob will announce the change to the rate at the selectmen meeting on tuesday 10/4/16"
+  },
+  {
+   "decision": "Confirm with Jack that he can have somebody inspect the next build to ensure interceptors are the correct size and grease traps are to code.",
+   "quote": "need to confirm with jack that he can have somebody inspect the next build"
+  },
+  {
+   "decision": "Board of Health liaison to be discussed at the next meeting.",
+   "quote": "next meeting we need to discuss who will be the liaison to the board of health."
+  },
+  {
+   "decision": "Barb to meet a candidate for the Minutes Clerk opening the following day.",
+   "quote": "barb is meeting with a candidate tomorrow."
+  },
+  {
+   "decision": "Carl Luck to do more work and research on the Sewer Rate Relief Fund FY17.",
+   "quote": "carl will do some more work and research for the sewer rate relief fund fy17"
+  },
+  {
+   "decision": "Q1 Commitment was signed and invoices were approved.",
+   "quote": "q1 commitment was signed, invoices approved."
+  },
+  {
+   "decision": "Next meeting scheduled for 10/11/16, contingent on Seema's availability, to also discuss Goals for 2017.",
+   "quote": "next meeting scheduled for 10/11/16 - meeting on 10/11 will be contingent upon seema's availability."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Final betterment assessment (SRF Betterments)",
+   "what_was_recorded": "The final betterment order totals $1,364,753.33 at 97.5 units; $1,322,760.92 is assessed as betterments, $41,992.41 is reserved as privilege fees, and unpaid amounts bear 5% interest.",
+   "quote": "in the total amount of $1,364,753.33, representing 97.5 units at $13,997.47 per unit, with the amount of $1,322,760.92 to be assessed as",
+   "figures_as_printed": [
+    "$1,364,753.33",
+    "97.5 units",
+    "$13,997.47 per unit",
+    "$1,322,760.92",
+    "$41,992.41",
+    "5%"
+   ]
+  },
+  {
+   "topic": "Privilege fees reserve",
+   "what_was_recorded": "Of the total, $41,992.41 is to be reserved and collected as privilege fees in the future.",
+   "quote": "and the amount of $41,992.41 to be reserved, and collected as privilege fees in the future",
+   "figures_as_printed": [
+    "$41,992.41"
+   ]
+  },
+  {
+   "topic": "Q1 Commitment and invoices",
+   "what_was_recorded": "The Q1 Commitment was signed and invoices were approved; no amounts are printed.",
+   "quote": "q1 commitment was signed, invoices approved.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer Rate Relief Fund FY17",
+   "what_was_recorded": "Carl Luck will do further work and research on the Sewer Rate Relief Fund FY17; no amount is printed.",
+   "quote": "carl will do some more work and research for the sewer rate relief fund fy17",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "SRF Betterments - final betterment assessment order",
+   "resolution": "approved; order signed and certified",
+   "quote": "acting as sewer commissioners pursuant to general laws chapter 80 and general laws chapter 83, sections 14",
+   "tags": [
+    "betterments",
+    "sewer project",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "DPW Operations - grease trap external interceptor inspections",
+   "resolution": "follow-up, no vote",
+   "quote": "grease traps-external interceptor inspections, need to confirm with jack that he can have somebody inspect the next build",
+   "tags": [
+    "grease traps",
+    "DPW",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Crossroads non-compliance",
+   "resolution": "owner invited to hearing, date amended to 11/8/16",
+   "quote": "crossroads- discussed crossroads non-compliance.",
+   "tags": [
+    "enforcement",
+    "hearing",
+    "Crossroads"
+   ]
+  },
+  {
+   "topic": "Board of Health liaison",
+   "resolution": "deferred to next meeting",
+   "quote": "board of health - next meeting we need to discuss who will be the liaison to the board of health.",
+   "tags": [
+    "appointments",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Minutes Clerk opening",
+   "resolution": "no action; candidate meeting planned",
+   "quote": "minutes clerk opening - barb is meeting with a candidate tomorrow.",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Sewer Rate Relief Fund FY17",
+   "resolution": "continued; Carl Luck to research",
+   "quote": "sewer rate relief fund fy17- carl will do some more work and research for the sewer rate relief fund fy17",
+   "tags": [
+    "rate relief",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Minutes/Action File Issues",
+   "resolution": "no action; Q1 Commitment signed and invoices approved",
+   "quote": "minutes/action file issues-q1 commitment was signed, invoices approved.",
+   "tags": [
+    "commitment",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Next meeting and 2017 goals",
+   "resolution": "next meeting scheduled 10/11/16",
+   "quote": "next meeting scheduled for 10/11/16 - meeting on 10/11 will be contingent upon seema's availability.",
+   "tags": [
+    "meeting schedule",
+    "goals"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Order Assessing Final Sewer Betterments",
+   "where": "text",
+   "quote": "described in an order assessing final sewer betterments in the total amount of"
+  },
+  {
+   "name": "Schedule attached to the Order Assessing Final Sewer Betterments",
+   "where": "text",
+   "quote": "betterments on those properties listed on the schedule attached to said order"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "betterments",
+  "DPW",
+  "grease traps",
+  "Crossroads",
+  "hearing",
+  "board of health",
+  "rate relief",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

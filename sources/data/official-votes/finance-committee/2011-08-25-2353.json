@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-08-25",
  "docid": "2353",
@@ -12,15 +12,229 @@
  },
  "votes": [
   {
-   "motion": "adjourn",
-   "moved_by": "Brian Laffond",
-   "seconded_by": "Barbara Reynolds",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "BL",
    "outcome": "passed",
    "procedural": true,
-   "quote": "bl made motion to adjourn at 7:50 pm and br seconds, all in favor."
+   "quote": "bl made motion to adjourn at 7:50 pm and br seconds, all in favor.",
+   "seconded_by": "BR"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0934705
+ "dropped_unquoted": 1,
+ "note": "The minutes header reads 'Minutes 9/8/11' and the text says the next meeting is September 8, with a received-and-filed stamp of SEP 09 2011. The substance (the email 'tomorrow evening's meeting' and the agenda notice) matches the meeting date given, 2011-08-25, so this record is for that meeting. OCR is noisy in places (e.g., 'the phoned mens?!' and 'Capplan/procedures/plan' on page 2-3). Attendance layout is ambiguous: 'Present:' and 'Absent:' labels precede the names, and John Male is printed alone above the four other names; I marked him absent by inference. The only recorded vote is the adjournment motion; the minutes record no motion approving prior minutes. The Reserve Fund item was announced for the next meeting, not voted. The CPC memo and Kerry Speidel email are appended pages, not part of the minutes' own text. Handout references are inline, not under a heading.",
+ "cost_usd": 0.00629262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "location: present: absent: town hall john male brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "location: present: absent: town hall john male brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "location: present: absent: town hall john male brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "location: present: absent: town hall john male brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "location: present: absent: town hall john male brian laffond, martha mcdonald, barbara reynolds, mark erickson"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "i am unavailable for tomorrow evening's meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meeting set for September 8, with the Accountant report to be requested for it.",
+   "quote": "next meeting - september 8 - ask for accountant report"
+  },
+  {
+   "decision": "Committee requested information on the Sewer Committee's reorganization since Town Meeting, with a report to the Town Manager considered satisfactory.",
+   "quote": "requesting information on how sewer committee has reorganized since town meeting; a report to the town manager would be satisfactory"
+  },
+  {
+   "decision": "Committee asked for a master fiscal calendar showing when all activities occur, such as Town Meetings and warrant articles due.",
+   "quote": "me would like a master fiscal calendar to show when all activities occur"
+  },
+  {
+   "decision": "Committee asked for an update on the Town Hall renovations, including cost incurred versus budget.",
+   "quote": "br requested an update on the town hall renovations and cost incurred vs. budget"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Planning capital plan threshold",
+   "what_was_recorded": "The CPC packet states that items costing $10,000.00 or more belong on the FY Capital Plan.",
+   "figures_as_printed": [
+    "$10,000.00"
+   ],
+   "quote": "all items with a cost equal to, or greater than $10,000.00, shall be included on the fy capital plan."
+  },
+  {
+   "topic": "925 Mass Ave abandoned gas station underground storage tanks",
+   "what_was_recorded": "Town estimates the cost of pumping the tanks, to be liened to the property, at $5k; not budgeted anywhere, to be presented as a possible Reserve Fund expense at the next meeting.",
+   "figures_as_printed": [
+    "$5k"
+   ],
+   "quote": "we estimate the cost of this work at $5k."
+  },
+  {
+   "topic": "Town Hall renovations",
+   "what_was_recorded": "BR asked for an update on Town Hall renovations and cost incurred versus budget; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "br requested an update on the town hall renovations and cost incurred vs. budget"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order by the chairman at 7:03 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action",
+   "quote": "communications - none",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Review minutes",
+   "resolution": "no action",
+   "quote": "review minutes - none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received; Monty Tech, Regional Dispatch, Service Level Team, School Regionalization, School Reconfiguration noted",
+   "quote": "capital planning - fy2013 schedules have gone out - handout",
+   "tags": [
+    "capital planning",
+    "DPW",
+    "monty tech",
+    "regional dispatch",
+    "sewer",
+    "school regionalization"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "noted; one candidate submitted for Fin Comm (Robert Alario)",
+   "quote": "town accountant update will be available at the end of the month",
+   "tags": [
+    "town accountant",
+    "town manager",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "requests noted for future meetings",
+   "quote": "pavement management plan presentation - scheduled for 9/22",
+   "tags": [
+    "pavement management",
+    "green energy",
+    "sewer",
+    "fiscal calendar",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "next meeting set for September 8",
+   "quote": "next meeting - september 8 - ask for accountant report",
+   "tags": [
+    "next meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:50 PM, passed",
+   "quote": "bl made motion to adjourn at 7:50 pm and br seconds, all in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY2013 Capital Planning schedules (handout)",
+   "where": "text",
+   "quote": "capital planning - fy2013 schedules have gone out - handout"
+  },
+  {
+   "name": "DPW updates from Town Manager and DPW Director, handout",
+   "where": "text",
+   "quote": "dpw - handouts - updates from town manager and dpw director outlining demolition of present building"
+  },
+  {
+   "name": "Town Manager update, handout",
+   "where": "text",
+   "quote": "town manager update submitted in handout"
+  },
+  {
+   "name": "CPC Schedule timeline memo from Marion M. Benson, Chair, to All Department Heads",
+   "where": "text",
+   "quote": "to: all department heads from: marion m. benson, chair cpc schedule timeline is as follows:"
+  },
+  {
+   "name": "Email from Kerry Speidel, Wednesday, August 24, 2011 9:22 AM",
+   "where": "text",
+   "quote": "i am unavailable for tomorrow evening's meeting, but wanted to provide you with some updates."
+  },
+  {
+   "name": "Finance Committee Meeting Notification and Agenda - August 25, 2011 (email)",
+   "where": "text",
+   "quote": "here is the meeting notice and agenda for the lunenburg finance committee meeting of august 25, 2011."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital planning",
+  "regional dispatch",
+  "school regionalization",
+  "DPW building",
+  "reserve fund",
+  "underground storage tanks",
+  "town hall renovation",
+  "sewer committee",
+  "budget calendar",
+  "FY2013 budget",
+  "fin comm appointments"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-01-16",
  "docid": "1178",
@@ -12,15 +12,193 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of January 9, 2013",
+   "motion": "Approve the minutes of 01-09-13.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "approve minutes 01-09-13- minutes approved."
+   "quote": "approve minutes 01-09-13- minutes approved.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record only one formal vote: approval of prior minutes. The remaining items (Council on Aging, DPW, Fire, Police, School projects) are listed as preliminary prioritization decisions—deletion, removal, or retention on the capital plan—but the minutes do not record these as motions voted upon. No vote on adjournment is recorded.",
- "cost_usd": 0.0862935
+ "note": "Minutes are a clean text extract. No motions or seconds are recorded for the prioritization decisions; those are recorded as committee actions without votes. The approval of the 01-09-13 minutes is recorded as \"Minutes approved\" with no mover, seconder, or count. No public comment section is printed. Chief Marino and the IT Director are referenced but are not recorded as taking part.",
+ "cost_usd": 0.00628672,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "carl (ernie) sund, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Council on Aging gas generator deleted from the capital plan.",
+   "quote": "council on aging- gas generator- delete from plan"
+  },
+  {
+   "decision": "DPW road rehab removed from the plan, to be funded by other means; street sweeper, Townsend Harbor Road/Mulpus Road intersection and Lancaster Avenue 4-way flasher sent back for more information.",
+   "quote": "road rehab- remove from plan. will be funded by other means."
+  },
+  {
+   "decision": "ADA ramp at Eagle House removed from the plan pending further resolution; pickup with plow and Holman Street/West Street building demolition remain on the plan.",
+   "quote": "ada ramp between parking lots at eagle house- no schematic available. remove from plan pending further resolution."
+  },
+  {
+   "decision": "Fire Department: Rescue 2 ambulance and equipment remain on the plan; Car 2 (fire car) deleted from the plan.",
+   "quote": "replace car 2 (fire car)- delete from plan."
+  },
+  {
+   "decision": "Historical Commission repaint of Town Hall and chimney rebuild remain on the plan.",
+   "quote": "repaint town hall & rebuild chimney- remain on plan."
+  },
+  {
+   "decision": "Police: portable radios, ATV and speed sign with recording system removed from the plan; patrol cars and pistols & holsters remain; shotguns to be handled under the Department budget.",
+   "quote": "shotguns- dollar amount not sufficient for capital plan. should be under department budget."
+  },
+  {
+   "decision": "School Department: HVAC controls, mobile media carts, and asbestos remediation remain on the plan; cafe and teachers' lunchroom floor replacement remains with a new figure.",
+   "quote": "floor replacement in café & teachers' lunchroom- remain on plan. new figure of $16,000.00."
+  },
+  {
+   "decision": "Chair Benson will contact the Police Chief to reschedule the police vehicle viewing.",
+   "quote": "chair benson will contact police chief marino to reschedule vehicle viewing."
+  },
+  {
+   "decision": "Committee would like to meet again with the IT Director and make a site visit to the Public Works Facility.",
+   "quote": "committee would like to meet again with it director and also a site visit to the public works facility."
+  },
+  {
+   "decision": "Committee noted it is requesting mileage and hours on any Town-owned vehicle listed on a Form B; Form B to be revised for the next FY.",
+   "quote": "form b will be revised for the next fy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Department floor replacement in Cafe and Teachers' Lunchroom",
+   "what_was_recorded": "The committee kept the floor replacement on the plan with a new figure.",
+   "figures_as_printed": [
+    "$16,000.00"
+   ],
+   "quote": "floor replacement in café & teachers' lunchroom- remain on plan. new figure of $16,000.00."
+  },
+  {
+   "topic": "Police Department shotguns",
+   "what_was_recorded": "The dollar amount was judged not sufficient for the Capital Plan and the item should go under the Department budget; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "shotguns- dollar amount not sufficient for capital plan."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approve minutes of 01-09-13",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "approve minutes 01-09-13- minutes approved."
+  },
+  {
+   "topic": "Police vehicles viewing",
+   "resolution": "postponed due to snowstorm; Chair to reschedule",
+   "tags": [
+    "police",
+    "vehicles"
+   ],
+   "quote": "due to snowstorm, viewing was postponed and meeting was delayed until 10 am."
+  },
+  {
+   "topic": "Form B mileage and hours for Town-owned vehicles",
+   "resolution": "noted; Form B to be revised next FY",
+   "tags": [
+    "vehicles",
+    "form B"
+   ],
+   "quote": "committee noted they are requesting mileage and hours on any town -owned vehicle that is listed on a form b."
+  },
+  {
+   "topic": "Preliminary prioritization of capital plan items",
+   "resolution": "items kept, deleted, removed, or sent back for more information by department",
+   "tags": [
+    "capital plan",
+    "prioritization"
+   ],
+   "quote": "pickup w/plow- remain on plan."
+  },
+  {
+   "topic": "Discussion: next steps",
+   "resolution": "Chair to reschedule vehicle viewing; committee to meet with IT Director and visit Public Works Facility",
+   "tags": [
+    "IT",
+    "public works"
+   ],
+   "quote": "committee would like to meet again with it director and also a site visit to the public works facility."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 12:45 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment- adjourned 12:45 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form B",
+   "where": "text",
+   "quote": "committee noted they are requesting mileage and hours on any town -owned vehicle that is listed on a form b."
+  }
+ ],
+ "tags": [
+  "capital plan",
+  "prioritization",
+  "police",
+  "fire",
+  "public works",
+  "school",
+  "historical commission",
+  "council on aging",
+  "vehicles",
+  "snowstorm postponement"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

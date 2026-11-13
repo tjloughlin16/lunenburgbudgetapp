@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2014-10-15",
  "docid": "2453",
@@ -12,21 +12,226 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 3/25/14 and 7/15/14",
+   "motion": "Approve the minutes of 3/25/14 and 7/15/14.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes from 3/25/14 and 7/15/14 were approved."
   },
   {
-   "motion": "Approve and submit the $2,500.00 feasibility study quote to the DOER for the Public Safety Building oil to gas conversion",
+   "motion": "Approve and submit the $2,500.00 quote to prepare a feasibility study for the Public Safety Building oil to gas conversion to the DOER.",
    "moved_by": "N. Sullivan",
-   "seconded_by": "J. McQuaid",
+   "seconded_by": "J.McQuaid",
    "outcome": "passed",
    "procedural": false,
    "quote": "n. sullivan proposed that we approve and submit the quote to the doer. j.mcquaid seconded. approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from scan",
- "cost_usd": 0.1041695
+ "note": "OCR text of a single-page scan with garbled header and signature lines. Board is titled 'Green Communities Task Force' in the header. No vote on adjournment is recorded (adjournment time given with no motion). Minutes are stamped received and filed Dec 30 2014. The minutes name no public comment. The first vote records no mover or seconder. Zachary Cutting appears only in the header and is not in the present list. James Breault is referenced in the text, but his attendance is not stated.",
+ "cost_usd": 0.00443262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "M.Conway",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "J.Londa",
+   "role": "Advisor",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "McQuaid",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "N. Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: d. blatt, m.conway, j.londa, mcquaid, n. sullivan"
+  },
+  {
+   "name": "Zachary Cutting",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "zachary cutting, member"
+  },
+  {
+   "name": "James Breault",
+   "role": "Advisor",
+   "status": "not stated",
+   "quote": "the quote that j. breault received for all the town buildings was higher than estimated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "J.McQuaid will confer with the DPW about the installation of the Green Community signs.",
+   "quote": "j.mcquaid will confer with the dpw about the installation of the green community signs."
+  },
+  {
+   "decision": "J.Londa will look into a Request For Proposal for a solar installation on the new school complex.",
+   "quote": "j.londa looking into a request for proposal for a solar installation on the new school complex."
+  },
+  {
+   "decision": "Quarterly Reviews and an Annual Report are to be submitted to DOER, and updated reports on Town oil usage are needed.",
+   "quote": "updated reports on oil usage by the town are needed. we need to submit quarterly reviews and an annual report to doer."
+  },
+  {
+   "decision": "The next meeting date was set as TBD.",
+   "quote": "next meeting date: tbd. meeting adjourned 7:32 p.m."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public Safety Building feasibility study quote",
+   "what_was_recorded": "The quote to prepare a feasibility study on the Public Safety Building oil to gas conversion came in at $2,500.00 and was approved for submission to the DOER.",
+   "figures_as_printed": [
+    "$2,500.00"
+   ],
+   "quote": "the quote to prepare it came in at $2,500.00. it would detail the scope of work, cost and possible savings."
+  },
+  {
+   "topic": "Grant application projects and funds",
+   "what_was_recorded": "No grant funds had been received from the DOER; the quote for all Town buildings was higher than the grant estimate while school building projects came in under budget, and rebates still need to be added.",
+   "figures_as_printed": [],
+   "quote": "j. londa stated no funds have been received by town hall from the doer."
+  },
+  {
+   "topic": "School complex lighting incentives and MSBA contributions",
+   "what_was_recorded": "Utility incentives for energy-efficient lighting in the new school complex could reduce MSBA contributions by the percentage saved in incentives.",
+   "figures_as_printed": [],
+   "quote": "the msba will most likely reduce their contributions by the percentage of what was saved in incentives."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "approved minutes of 3/25/14 and 7/15/14",
+   "quote": "meeting called to order at 6:33 p.m. the minutes from 3/25/14 and 7/15/14 were approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Update of grant application projects",
+   "resolution": "no action",
+   "quote": "update of grant application projects - air compressor and vfd drive projects are completed",
+   "tags": [
+    "grant",
+    "DOER",
+    "energy projects"
+   ]
+  },
+  {
+   "topic": "Feasibility study for Public Safety Building oil to gas conversion",
+   "resolution": "approved",
+   "quote": "feasibility study for the public safety building oil to gas conversion",
+   "tags": [
+    "feasibility study",
+    "Public Safety Building",
+    "oil to gas"
+   ]
+  },
+  {
+   "topic": "Unitil and National Grid incentives",
+   "resolution": "discussed; no action",
+   "quote": "unitil and national grid incentives - the companies meet with j.londa, j. breault and d.blatt",
+   "tags": [
+    "utility incentives",
+    "school building",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Updating planned projects and oil usage reports",
+   "resolution": "no action",
+   "quote": "j. londa suggested we may need to update our planned projects depending on the outcome of",
+   "tags": [
+    "planned projects",
+    "Building Re-Use Committee",
+    "DOER reporting"
+   ]
+  },
+  {
+   "topic": "Primary School",
+   "resolution": "passed over",
+   "quote": "primary school- discussion passed over.",
+   "tags": [
+    "Primary School"
+   ]
+  },
+  {
+   "topic": "Other: net metering, solar RFP, Green Community signs",
+   "resolution": "no action; assignments noted",
+   "quote": "other- the state has approved an increase in net metering.",
+   "tags": [
+    "net metering",
+    "solar",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting TBD; adjourned 7:32 P.M.",
+   "quote": "next meeting date: tbd. meeting adjourned 7:32 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Building Re-Use Committee's report to the Select Board",
+   "where": "text",
+   "quote": "the building re-use committee's report to the select board"
+  },
+  {
+   "name": "Quarterly Reviews (DOER)",
+   "where": "text",
+   "quote": "we need to submit quarterly reviews and an annual report to doer."
+  },
+  {
+   "name": "Annual Report (DOER)",
+   "where": "text",
+   "quote": "we need to submit quarterly reviews and an annual report to doer."
+  },
+  {
+   "name": "Request For Proposal for a solar installation on the new school complex",
+   "where": "text",
+   "quote": "j.londa looking into a request for proposal for a solar installation on the new school complex."
+  }
+ ],
+ "tags": [
+  "green communities",
+  "DOER grant",
+  "energy efficiency",
+  "feasibility study",
+  "school building",
+  "solar",
+  "net metering",
+  "Public Safety Building",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

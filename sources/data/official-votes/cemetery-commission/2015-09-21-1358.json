@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2015-09-21",
  "docid": "1358",
@@ -12,15 +12,114 @@
  },
  "votes": [
   {
-   "motion": "to close the meeting and adjourn",
-   "moved_by": "STEVE SCHAFF",
-   "seconded_by": "LORRAINE MENDOZA",
-   "outcome": "passed unanimously",
+   "motion": "Close the meeting and adjourn.",
+   "moved_by": "Steve Schaff",
+   "seconded_by": "Lorraine Mendoza",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "a motion was made by steve schaff to close the meeting and seconded by lorraine mendoza to adjourn. the vote was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are OCR-scanned minutes. Only one vote is recorded: the motion to adjourn. The discussion of Richard McGrath's cemetery restoration proposal involved questions and information requests but no formal motion or vote was taken on the proposal itself.",
- "cost_usd": 0.0832835
+ "note": "OCR text of a scanned page with a received-and-filed stamp dated May 26, 2016; the stamp and header contain OCR noise (e.g., 'Stephen Schatt' in the header vs. 'STEVE SCHAFF' in the body; 'Mendosa' vs. 'MENDOZA'). Body names were used. Only one recorded vote (adjournment, unanimous, no count printed). No documents or exhibits are named. The minutes record the cost and funding discussion but no motion on the tomb proposal.",
+ "cost_usd": 0.00323872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with guest,"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Member; Clerk",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with guest,"
+  },
+  {
+   "name": "Steve Schaff",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present were lance may, lorraine mendoza and steve schaff with guest,"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Guest, Historian; appeared to discuss his proposal to restore the North Street Cemetery tomb",
+   "status": "present",
+   "quote": "with guest, historian, richard mcgrath."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Richard McGrath agreed to collect the requested information on funding, timetable, workers, bonding/liability, grant writing and donations, and return to the Commission.",
+   "quote": "richard would collect this information and get back to the commission"
+  },
+  {
+   "decision": "The question of additional bids was raised and deferred, with the determination to be made at a later date.",
+   "quote": "a question on addt'l bids was raised with the determination to be made at a later"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "North Street Cemetery tomb restoration estimated cost",
+   "what_was_recorded": "The total estimated cost of the proposed tomb restoration was stated as $15,000.00.",
+   "quote": "the total estimated cost to be $15,000.00.",
+   "figures_as_printed": [
+    "$15,000.00"
+   ]
+  },
+  {
+   "topic": "Funding of tomb restoration work",
+   "what_was_recorded": "Richard McGrath stated the materials and work would be donated and paid for through grants and donations; the Commission asked how and when grants and donations would be applied for and made available.",
+   "quote": "he stated all of the materials and work would be donated and paid for thru grants and donations.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Bond or liability coverage",
+   "what_was_recorded": "Chair May inquired about securing information on a bond or liability coverage that might be required; no amount was printed.",
+   "quote": "chair may inquired about securing info on a bond or liability coverage that might",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Historian's proposal to restore the North Street Cemetery tomb",
+   "resolution": "discussed; follow-up information requested from presenter",
+   "quote": "who appeared before the commission to discuss his proposal to restore the north street cemetery tomb.",
+   "tags": [
+    "North Street Cemetery",
+    "tomb restoration",
+    "grants and donations",
+    "bonding"
+   ]
+  },
+  {
+   "topic": "Review of prior minutes",
+   "resolution": "no action; no minutes available to review",
+   "quote": "no minutes were available to review.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery",
+  "North Street Cemetery",
+  "tomb restoration",
+  "historic preservation",
+  "grants and donations",
+  "estimated cost",
+  "bond and liability",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-06-10",
  "docid": "3726",
@@ -12,32 +12,161 @@
  },
  "votes": [
   {
-   "motion": "approve requested waiver to the Plan",
-   "moved_by": "Ms. Bilotta-Simeone",
+   "motion": "Enter into Hearing Session and then return to Regular Session.",
+   "moved_by": "Ms. Bilot ta-Simeone",
+   "seconded_by": "Mr. Lockwood",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "motion, ms. bilot ta-simeone, second, mr. lockwood, roll call vote - mr. allison, aye; mr. mcquaid, aye;"
+  },
+  {
+   "motion": "Approve the requested waiver to the Plan.",
+   "moved_by": "Ms. Bilotta -Simeone",
    "seconded_by": "Mr. Allison",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion, ms. bilotta-simeone, to approve overall modification, second, mr. mcquaid, roll call vote, mr. allison, aye; mr. mcquaid, aye; mr. lockwood, aye; ms. bilotta-simeone, aye; mr. bakaysa, aye. motion,",
-   "quote_taken_from_text": true
+   "quote": "motion, ms. bilotta -simeone, to approve requested waiver to the plan, second, mr. allison, roll call vote"
   },
   {
-   "motion": "approve overall modification",
+   "motion": "Approve the overall modification.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. McQuaid",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion, ms. bilotta-simeone, to approve overall modification, second, mr. mcquaid, roll call vote, mr. allison, aye; mr. mcquaid, aye; mr. lockwood, aye; ms. bilotta-simeone, aye; mr. bakaysa, aye."
+   "quote": "motion, ms. bilotta-simeone, to approve overall modification, second, mr. mcquaid, roll call vote"
   },
   {
-   "motion": "close Hearing and return to Regular Session",
+   "motion": "Close the Hearing and return to Regular Session.",
    "moved_by": "Mr. Allison",
    "seconded_by": "Ms. Bilotta-Simeone",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion, mr. allison, to close hearing and return to regular session, second, ms. bilotta-simeone, all aye."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0887145
+ "dropped_unquoted": 0,
+ "note": "Two-page extract of the minutes. Votes are recorded by roll call, and the minutes print no dollar figures. Chief Sullivan is mentioned only as having responded in writing to Ms. Benson, so he is not listed as an attendee.",
+ "cost_usd": 0.00428452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair tel: (978) 582-4147, ext 5"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta -simeone, nathan j. lockwood , damon mcquaid, matthew allison, marion m."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, mbr."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "John White",
+   "role": "Property owner/applicant (RIW Realty Trust, Trustee)",
+   "status": "present",
+   "quote": "property owner /applicant is riw realt y trust, john white, trustee."
+  },
+  {
+   "name": "William Hannigan",
+   "role": "Hannigan Engineering, Inc.; representing the applicant",
+   "status": "present",
+   "quote": "william hannigan, hannigan engineering, inc. represented mr. white."
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "David E. Ross Associates, Inc. (reviewer)",
+   "status": "present",
+   "quote": "jesse johnson, david e. ross associates, inc., noted his review letter dated june 5, 2013."
+  },
+  {
+   "name": "Carl Flinkstrom",
+   "role": "Proponent, 3 Mays Field Road",
+   "status": "present",
+   "quote": "carl flinkstrom, 3 mays field road, spoke in favor of waiver."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Flinkstrom",
+   "stated_role": "Proponents",
+   "topic": "support for the waiver",
+   "quote": "carl flinkstrom, 3 mays field road, spoke in favor of waiver."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Modification to Development Plan Review and Special Permit, 221 White Street (Whites Woods, Phase III)",
+   "resolution": "approved waiver and overall modification",
+   "quote": "the hearing is to hear and discuss a modification to a development plan review and special permit under section 5.5.",
+   "tags": [
+    "public hearing",
+    "special permit",
+    "Whites Woods",
+    "waiver",
+    "Phase III"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Review of Waivers – Modification letter updated May 22, 2013",
+   "where": "text",
+   "quote": "their review of waivers - modification letter updated may 22, 2013."
+  },
+  {
+   "name": "Review letter dated June 5, 2013 (David E. Ross Associates, Inc.)",
+   "where": "text",
+   "quote": "jesse johnson, david e. ross associates, inc., noted his review letter dated june 5, 2013."
+  },
+  {
+   "name": "Public hearing notice published in the Sentinel and Enterprise, May 27, 2013 and June 3, 2013",
+   "where": "text",
+   "quote": "reading of the notice published in the sentinel and enterprise ma y 27, 2013 and june"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "special permit",
+  "site plan modification",
+  "Whites Woods",
+  "waiver",
+  "housing units",
+  "sprinklers",
+  "sewer allocation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

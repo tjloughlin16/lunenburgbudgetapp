@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-11-13",
  "docid": "2285",
@@ -12,15 +12,302 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Terri",
-   "seconded_by": "Jay",
-   "outcome": "approved 5-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri Burchfield",
+   "seconded_by": "Jay Simeone",
+   "outcome": "passed 5-0",
    "procedural": true,
    "quote": "terri moved to adjourn the meeting, seconded by jay and approved 5-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "This is an OCR scan of Finance Committee minutes. Only one formal vote is recorded: the adjournment motion at the end of the meeting. Other items (such as the committee's approval of payment of invoices) are mentioned without explicit mover, seconder, or vote counts and are not included as recorded votes.",
- "cost_usd": 0.10273650000000001
+ "note": "OCR text of a three-page typed minutes document, with some OCR artifacts (e.g., 'ill.', 'il..') and mixed bullet formatting. The director's surname is spelled 'Doreen Noble' in the header and 'Doreen Nobel' in the body; recorded here as printed in the header. Only one motion with a recorded vote (adjournment, 5-0) appears in the text; the invoice payment approval is recorded as an approval without a motion or vote count. No public comment is recorded ('A. Public: None.'). Attendee roles for Caroline Griffis, Jay Simeone and Karin Menard are not printed beyond the Finance Committee member listing.",
+ "cost_usd": 0.007354319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, caroline griffis, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, caroline griffis, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, caroline griffis, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, caroline griffis, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, caroline griffis, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee",
+   "status": "absent",
+   "quote": "absent: karin menard"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "also present: jamie toale--bos liaison, kerry speidel--town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: jamie toale--bos liaison, kerry speidel--town manager"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "meet & greet: council on aging director doreen noble, chief of police jim marino, fire chief pat sullivan"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Chief of Police",
+   "status": "present",
+   "quote": "meet & greet: council on aging director doreen noble, chief of police jim marino, fire chief pat sullivan"
+  },
+  {
+   "name": "Pat Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "meet & greet: council on aging director doreen noble, chief of police jim marino, fire chief pat sullivan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Fin Comm decided to acquire two copies of the updated Finance Committee Handbook CD (no vote recorded).",
+   "quote": "the fin comm decided to get two of these cds."
+  },
+  {
+   "decision": "The committee approved payment of invoices to date for the new school construction project (no motion or vote recorded).",
+   "quote": "the committee approved payment of invoices to date."
+  },
+  {
+   "decision": "The committee will do six or fewer aerial photography flights timed to document construction progress, with cost not to exceed $2,500.",
+   "quote": "the committee will do six or fewer aerial photography flights timed to document progress."
+  },
+  {
+   "decision": "Chair directed that department heads, in their budget presentations, explain effects on service levels and/or show trends or compare to similar towns.",
+   "quote": "mark said during their budget presentations department heads should:"
+  },
+  {
+   "decision": "Financial forecast presentation by Kerry Speidel to be held Thursday November 20 or Thursday, December 4 (date not fixed).",
+   "quote": "mark said kerry would present her financial forecast thursday november 20 or thursday, december 4."
+  },
+  {
+   "decision": "Future agenda items listed: review of updated Pavement Management Plan; Meet and Greet on Land Use, DPW; review of contract commitments related to OPEB.",
+   "quote": "6. future agenda items: a. review the updated pavement management plan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Technology FY16 department requests",
+   "what_was_recorded": "Technology FY16 requests from all departments are reported as totaling $64,900.",
+   "figures_as_printed": [
+    "$64,900"
+   ],
+   "quote": "technology fy16 requests total $64,900 from all departments;"
+  },
+  {
+   "topic": "Fire Department FY16 request",
+   "what_was_recorded": "Fire Department FY16 request total is reported as $60,000.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "fire department fy16 request total is $60,000."
+  },
+  {
+   "topic": "Aerial photography flights",
+   "what_was_recorded": "Aerial photography of the school construction project is to cost no more than $2,500.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "cost will not exceed $2,500."
+  },
+  {
+   "topic": "Council on Aging MART transportation funding",
+   "what_was_recorded": "MART funds the Council on Aging transportation service at $3,000 per month.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "mart funds the transportation service at $3,000 per month, covering costs."
+  },
+  {
+   "topic": "Council on Aging share of Town Budget",
+   "what_was_recorded": "The Council on Aging is reported as about half of one percent of the Town Budget.",
+   "figures_as_printed": [
+    "half of one percent"
+   ],
+   "quote": "the council on aging is about half of one percent of the town budget."
+  },
+  {
+   "topic": "Fire Department capital requests",
+   "what_was_recorded": "Fire Department major capital requests and repairs over the next five years have an estimated cost of about $1.8 million.",
+   "figures_as_printed": [
+    "$1.8 million"
+   ],
+   "quote": "repairs over the next five years have an estimated cost about $1.8 million."
+  },
+  {
+   "topic": "Police body armor and Tasers",
+   "what_was_recorded": "Body armor is an unfunded mandate, though half the cost may be covered by a grant; increased need for Tasers noted. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the pd is mandated to have body armor for policemen. this is unfunded, though half the cost may be covered by a grant."
+  },
+  {
+   "topic": "Sewer project funding",
+   "what_was_recorded": "The current sewer project is funded by the State Revolving Fund and is on schedule; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the current sewer project funded by the state revolving fund (srf) is on schedule."
+  },
+  {
+   "topic": "New school construction budget status",
+   "what_was_recorded": "The new school construction project is reported on schedule and on budget; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the new school construction project is on schedule and on budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "meeting called to order by mark at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "two Handbook CDs to be obtained; The Beacon circulated",
+   "quote": "the fin comm decided to get two of these cds.",
+   "tags": [
+    "communications",
+    "handbook"
+   ]
+  },
+  {
+   "topic": "Meet & Greet: Council on Aging, Police and Fire budget presentations",
+   "resolution": "heard department overviews; presentation times estimated (COA 20 min, PD 45 min, FD 45 min)",
+   "quote": "meet & greet: council on aging director doreen noble, chief of police jim marino, fire chief pat sullivan",
+   "tags": [
+    "FY2015 budget",
+    "meet and greet",
+    "council on aging",
+    "police",
+    "fire"
+   ]
+  },
+  {
+   "topic": "Financial forecast scheduling",
+   "resolution": "forecast presentation tentatively set for November 20 or December 4",
+   "quote": "mark said kerry would present her financial forecast thursday november 20 or thursday, december 4.",
+   "tags": [
+    "forecast",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Committee/Department Liaison Updates",
+   "resolution": "reports received",
+   "quote": "5. committee/department liaison updates:",
+   "tags": [
+    "liaison reports",
+    "schools",
+    "sewer",
+    "public works",
+    "library",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Future Agenda Items",
+   "resolution": "listed for future agendas",
+   "quote": "6. future agenda items: a. review the updated pavement management plan.",
+   "tags": [
+    "future agenda",
+    "pavement",
+    "OPEB"
+   ]
+  },
+  {
+   "topic": "Meeting adjournment",
+   "resolution": "adjourned 5-0 at 9:29 PM",
+   "quote": "terri moved to adjourn the meeting, seconded by jay and approved 5-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Police Department Budget Memo FY2015",
+   "where": "list",
+   "quote": "police department budget memo fy2015 gives supporting detail."
+  },
+  {
+   "name": "Finance Committee Handbook (updated by the Association of Town Finance Committees, on CD)",
+   "where": "text",
+   "quote": "the association of town finance committees updated the finance committee handbook on cd;"
+  },
+  {
+   "name": "The Beacon",
+   "where": "text",
+   "quote": "mark circulated the beacon to the committee."
+  },
+  {
+   "name": "Financial forecast (Kerry Speidel)",
+   "where": "text",
+   "quote": "mark said kerry would present her financial forecast thursday november 20 or thursday, december 4."
+  },
+  {
+   "name": "Updated Pavement Management Plan",
+   "where": "text",
+   "quote": "a. review the updated pavement management plan."
+  }
+ ],
+ "tags": [
+  "FY2015 budget",
+  "FY2016 budget",
+  "budget presentations",
+  "meet and greet",
+  "council on aging",
+  "police department",
+  "fire department",
+  "staffing",
+  "school construction",
+  "sewer",
+  "technology requests",
+  "aerial photography",
+  "pavement management",
+  "OPEB",
+  "handbook",
+  "liaison reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "police department budget memo fy2015 gives supporting detail."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-05-07",
  "docid": "2239",
@@ -12,13 +12,264 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Summer Street easements tied to Summer Street construction",
+   "motion": "Recommend approval of Article 26, the Prop. 2½ debt exclusion override to fund the pavement management plan.",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Terri Burchfield",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "and terri seconded his motion."
+  },
+  {
+   "motion": "Recommend approval of Articles 27 and 28 (Article 28: borrowing authorization to renovate/replace turf field and track).",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "4-0. karin recused after the presentation herself because of the"
+  },
+  {
+   "motion": "Recommend approval of Article 29 (Authorize Summer Street easements tied to Summer Street construction).",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed 5-0",
    "procedural": false,
    "quote": "recommend approval tied to summer street construction by a vote of 5-0."
+  },
+  {
+   "motion": "Recommend approval of Article 35 (pertaining to the comprehensive Wastewater Master Plan).",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "by a vote of 4-0 (four members now present.)"
   }
  ],
- "dropped_unquoted": 4,
- "note": "OCR scan, readable. Minutes record five votes: two warrant articles (21&22, 26) moved and seconded before the ATM; three articles (27&28, 29, 35) recommended by committee vote at the ATM itself with no named mover/seconder. Karin Menard recused from articles 27&28 due to conflict of interest.",
- "cost_usd": 0.1294615
+ "dropped_unquoted": 2,
+ "note": "OCR of a draft (Minutes-Mn-16507-Draft.docx); the layout is two-column and interleaved, so vote quotes are stitched with line breaks collapsed and some quotes are shorter spans taken from the same line. The chairman's name is printed \"Mark Ericson\" in the attendance line and \"Mark Erickson\" in the header; the header spelling was used. The last line of page 2 (\"Apored he may moved to are treme er seconded the motion\") is unreadable, so no vote was recorded from it. Karin Menard's departure is printed as 1:35, which may be a typo. Article 26's description and Article 35's \"pretents to the comprehensive\" wording were matched from the layout and are partly garbled. No votes are recorded for the call to order or the recess. No public comment is recorded. No dollar figures are printed.",
+ "cost_usd": 0.008988420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark ericson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, vice-chairman"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "john henshaw, secretary"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "finance committee: mark erickson, chairman terri burchfield, vice-chairman john henshaw, secretary karin menard jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "finance committee: mark erickson, chairman terri burchfield, vice-chairman john henshaw, secretary karin menard jay simeone"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager kerry lafleur-briefly preceding town meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karin Menard recused herself from the committee's recommendation on Articles 27 and 28 because of the appearance of a conflict of interest, given her association with Lunenburg Youth Soccer; she later left the meeting.",
+   "quote": "4-0. karin recused after the presentation herself because of the"
+  },
+  {
+   "decision": "Chairman recessed the meeting at 8:45 to resume when the moderator calls the ATM to order; the meeting was recalled at 9:00, coterminous with the ATM.",
+   "quote": "mark recessed the meeting at 8:45. the meeting will resume when the moderator calls the atm to"
+  },
+  {
+   "decision": "Articles 36 through 45 were noted as having no direct financial effect; no committee vote on them is recorded.",
+   "quote": "word change on a sewer by-law."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Inflow-infiltration fund and reserve transfer (Articles 21 and 22)",
+   "what_was_recorded": "Warrant articles with a direct financial effect were reviewed; Article 21 establishes an inflow-infiltration fund and Article 22 transfers funds to the reserve capacity stabilization fund, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "21: establish an inflow-infiltration fund."
+  },
+  {
+   "topic": "Prop. 2½ debt exclusion override for pavement management plan (Article 26)",
+   "what_was_recorded": "Article 26 is a Prop. 2½ debt exclusion override to fund the pavement management plan; no dollar amount is printed.",
+   "figures_as_printed": [
+    "Prop. 2½"
+   ],
+   "quote": "prop. 2½ debt exclusion override to fund pavement management plan."
+  },
+  {
+   "topic": "Borrowing authorization for turf field and track (Article 28)",
+   "what_was_recorded": "Article 28 is a borrowing authorization to renovate or replace the turf field and track; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "28: borrowing authorization to renovate/replace turf field and track."
+  },
+  {
+   "topic": "Regular and excluded debt evaluation",
+   "what_was_recorded": "Committee discussed evaluating current and potential regular and excluded debt to inform revising the Town's debt policy and its debt limit; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "mark suggested it would be valuable to evaluate current and potential regular debt and"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer funds to the reserve capacity stabilization fund (Article 22).",
+   "amount_as_printed": "not stated",
+   "outcome": "Finance Committee recommended approval 5-0 (vote recorded for Articles 21 and 22)",
+   "quote": "22: transfer funds to the reserve capacity stabilization fund."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 8:15 am, preceding Annual Town Meeting",
+   "quote": "1. mark called the meeting to order at 8:15 am. preceding annual town meeting",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Warrant articles with direct financial effect (21, 22, 26)",
+   "resolution": "recommended approval of Articles 21 and 22 (5-0) and Article 26 (5-0)",
+   "quote": "review warrant articles with a direct financial effect, but that had not been approved and the",
+   "tags": [
+    "warrant articles",
+    "stabilization fund",
+    "inflow-infiltration",
+    "debt exclusion",
+    "pavement management"
+   ]
+  },
+  {
+   "topic": "Regular and excluded debt, preparatory to post-ATM meeting",
+   "resolution": "discussed; no action",
+   "quote": "mark suggested it would be valuable to evaluate current and potential regular debt and",
+   "tags": [
+    "debt",
+    "debt policy",
+    "debt limit"
+   ]
+  },
+  {
+   "topic": "Recess and reconvene coterminous with ATM",
+   "resolution": "recessed at 8:45; recalled at 9:00",
+   "quote": "mark recessed the meeting at 8:45. the meeting will resume when the moderator calls the atm to",
+   "tags": [
+    "recess",
+    "Annual Town Meeting"
+   ]
+  },
+  {
+   "topic": "Finance Committee recommendations at ATM (Articles 27-45)",
+   "resolution": "recommended approval of 27 and 28 (4-0, Karin recused), 29 (5-0), and 35 (4-0); Articles 36-45 no direct financial effect",
+   "quote": "6. finance committee recommendations at the atm:",
+   "tags": [
+    "turf field",
+    "Summer Street",
+    "wastewater",
+    "zoning by-laws",
+    "conflict of interest",
+    "yard waste",
+    "water district"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 21: Establish an inflow-infiltration fund.",
+   "where": "text",
+   "quote": "21: establish an inflow-infiltration fund."
+  },
+  {
+   "name": "Article 22: Transfer funds to the reserve capacity stabilization fund.",
+   "where": "text",
+   "quote": "22: transfer funds to the reserve capacity stabilization fund."
+  },
+  {
+   "name": "Article 26: Prop. 2½ debt exclusion override to fund pavement management plan.",
+   "where": "text",
+   "quote": "prop. 2½ debt exclusion override to fund pavement management plan."
+  },
+  {
+   "name": "Article 27 and 28 (Article 28: Borrowing authorization to renovate/replace turf field and track).",
+   "where": "text",
+   "quote": "28: borrowing authorization to renovate/replace turf field and track."
+  },
+  {
+   "name": "Article 29: Authorize Summer Street easements tied to Summer Street construction.",
+   "where": "text",
+   "quote": "authorize summer street easements-"
+  },
+  {
+   "name": "Article 35: comprehensive Wastewater Master Plan.",
+   "where": "text",
+   "quote": "wastewater master plan."
+  },
+  {
+   "name": "Article 36: Word change on a sewer by-law.",
+   "where": "text",
+   "quote": "word change on a sewer by-law."
+  },
+  {
+   "name": "Articles 38 and 39: Word change on a zoning by-law.",
+   "where": "text",
+   "quote": "word change on a zoning by-law."
+  },
+  {
+   "name": "Articles 41 & 42: Definition clarifications - farming and agriculture.",
+   "where": "text",
+   "quote": "definition clarifications - farming and"
+  },
+  {
+   "name": "Article 43: Changes, additions to wetland by-laws.",
+   "where": "text",
+   "quote": "changes, additions to wetland by-"
+  },
+  {
+   "name": "Article 44: Study of Town sentiment on providing yard waste disposal services for residents.",
+   "where": "text",
+   "quote": "study of town sentiment on providing"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Annual Town Meeting",
+  "warrant articles",
+  "debt exclusion",
+  "debt policy",
+  "stabilization fund",
+  "turf field",
+  "Summer Street",
+  "wastewater master plan",
+  "zoning by-laws",
+  "conflict of interest",
+  "recess"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 1,
+  "documents_and_exhibits": 1
+ }
 }

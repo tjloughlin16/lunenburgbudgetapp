@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2010-05-17",
  "docid": "850",
@@ -12,6 +12,93 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR scan of agenda only, not meeting minutes. The text shows agenda items (appointments, new business, permits, unfinished business) with no recorded motions, seconds, or vote results.",
- "cost_usd": 0.08034649999999999
+ "note": "The text is only the printed agenda (one OCR page). It contains no minutes of discussion, no votes, no attendance record, no public comment and no dollar figures, so the record of what happened is empty. Robert B. Bowen is listed as an appointment, but nothing shows whether he appeared.",
+ "cost_usd": 0.0019498200000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert B. Bowen",
+   "status": "not stated",
+   "quote": "7:00 pm - robert b. bowen - smoking in apartments and condos",
+   "role": "Appointment listed on agenda"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Discussion",
+   "resolution": "listed on agenda; no outcome recorded",
+   "quote": "public discussion appointments",
+   "tags": [
+    "public discussion"
+   ]
+  },
+  {
+   "topic": "Appointment: Robert B. Bowen - Smoking in Apartments and Condos",
+   "resolution": "listed on agenda; no outcome recorded",
+   "quote": "7:00 pm - robert b. bowen - smoking in apartments and condos",
+   "tags": [
+    "smoking",
+    "apartments",
+    "condos",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "New Business: Correspondence, Porta-Toilet Business, Septic Permits",
+   "resolution": "listed on agenda; no outcome recorded",
+   "quote": "new business correspondence porta-toilet business septic permits",
+   "tags": [
+    "correspondence",
+    "porta-toilet",
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Title 5 Inspection Reports",
+   "resolution": "listed on agenda; no outcome recorded",
+   "quote": "title 5 inspection reports 122 cross street 225 hollis road 40 brookview terrace",
+   "tags": [
+    "title 5",
+    "septic",
+    "inspection reports"
+   ]
+  },
+  {
+   "topic": "Action File Items",
+   "resolution": "listed on agenda; no outcome recorded",
+   "quote": "action file items: unfinished business meadow woods",
+   "tags": [
+    "action file"
+   ]
+  },
+  {
+   "topic": "Unfinished Business: Meadow Woods",
+   "resolution": "listed on agenda; no outcome recorded",
+   "quote": "unfinished business meadow woods",
+   "tags": [
+    "unfinished business",
+    "meadow woods"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of health",
+  "agenda",
+  "smoking",
+  "septic permits",
+  "title 5",
+  "porta-toilet",
+  "meadow woods"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

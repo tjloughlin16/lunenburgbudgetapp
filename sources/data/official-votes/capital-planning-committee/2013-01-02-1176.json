@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-01-02",
  "docid": "1176",
@@ -12,6 +12,188 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe an informational meeting with the Department of Public Works and discussions of capital requests, but no motions are stated to have been voted on. The Fire Department item was \"tabled until meeting of January 9, 2013\" (postponed, not voted on). The Technology Department was to be \"placed on the January 9t meeting agenda\" (scheduled, not voted on). Adjournment is mentioned by time only, with no recorded motion or vote.",
- "cost_usd": 0.08251950000000001
+ "note": "OCR scan (macOS Vision) with stray artifacts (e.g., 'INITIALS SPR', 'TEMBURG'). No motions or votes are recorded in the text, so the votes list is empty. Adjournment at 10:41 AM is noted without a motion. No public comment section or document list appears.",
+ "cost_usd": 0.00595883,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, colleen shapiro, steve raboin, dennis mannone, jr."
+  },
+  {
+   "name": "Carl (Ernie) Sund",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: carl (ernie) sund, kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: carl (ernie) sund, kerry speidel"
+  },
+  {
+   "name": "John Rodriquenz",
+   "role": "Director (Department of Public Works)",
+   "status": "present",
+   "quote": "mr. rodriquenz explained the road rehabilitation plan."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee noted that Mr. Rodriquenz may need to come in before the Committee again, and he would be invited to other meetings with Department Heads when a building/maintenance request is presented.",
+   "quote": "the committee noted that mr. rodriquenz may need to come in before the committee again."
+  },
+  {
+   "decision": "The Director will look into the pros and cons of leasing the street sweeper.",
+   "quote": "leasing was also discussed and the director will look into the pros and cons."
+  },
+  {
+   "decision": "The Fire Department item was tabled until the meeting of January 9, 2013.",
+   "quote": "fire department- tabled until meeting of january 9. 2013."
+  },
+  {
+   "decision": "The Technology Department was placed on the January 9, 2013 meeting agenda at 9:00 AM at the Ritter.",
+   "quote": "the technology department will be placed on the january 9t meeting agenda for"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Road Rehabilitation Plan",
+   "what_was_recorded": "Road repair and reconstruction is guided by a plan at $800,000.00 per year, noted as a capital need but not included in the FY Plan.",
+   "figures_as_printed": [
+    "$800,000.00/year"
+   ],
+   "quote": "is the guideline for all road repairs and/or reconstruction cost at $800,000.00/year"
+  },
+  {
+   "topic": "Street Sweeper",
+   "what_was_recorded": "Street sweeper requested for FY14; outsourcing found very expensive; present sweeper would be a trade-in with little value due to age.",
+   "figures_as_printed": [
+    "$180,000.00"
+   ],
+   "quote": "the street sweeper is requested for fy14 at $180,000.00."
+  },
+  {
+   "topic": "Townsend Harbor/Mulpus Road intersection",
+   "what_was_recorded": "Engineering study done at the intersection due to safety concerns.",
+   "figures_as_printed": [
+    "$30,000.00"
+   ],
+   "quote": "an engineering study was done at townsend harbor/mulpus road (cost is $30,000.00)."
+  },
+  {
+   "topic": "Lancaster/Goodrich Street intersection",
+   "what_was_recorded": "Request for a four-way flasher; landscaping removal on private property would be needed, and the owner objects.",
+   "figures_as_printed": [
+    "$35,000.00"
+   ],
+   "quote": "the owner does not want any removal/trimming of landscaping done on the property (cost is $35,000.00)."
+  },
+  {
+   "topic": "ADA ramp/walkway, Teen Center to Eagle House",
+   "what_was_recorded": "ADA-compliant ramp/walkway to connect upper and lower level parking; earlier engineered parking plan had high cost and physical problems.",
+   "figures_as_printed": [
+    "$15,000.00"
+   ],
+   "quote": "there were many physical problems related to the other plans (cost $15,000.00)"
+  },
+  {
+   "topic": "1-Ton pick-up with plow",
+   "what_was_recorded": "Vehicle requested under a rotation plan to replace a 1994 truck; would not increase the DPW fleet.",
+   "figures_as_printed": [
+    "$42,000.00"
+   ],
+   "quote": "additional requests explained by mr. rodriquenz are 1-ton pick-up with plow (cost $42,000.00)"
+  },
+  {
+   "topic": "Demolition of cemetery and park buildings",
+   "what_was_recorded": "Demolition of the cemetery building on Holman Street and the park building on West Street, no longer needed after the new DPW Building.",
+   "figures_as_printed": [
+    "$34,000.00"
+   ],
+   "quote": "new dpw building (cost $34,000.00)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "DPW Form B requests (general introduction)",
+   "resolution": "informational; no action; Director may return",
+   "quote": "general introduction of dpw form b requests concerning all",
+   "tags": [
+    "DPW",
+    "Form B",
+    "capital requests"
+   ]
+  },
+  {
+   "topic": "Fire Department",
+   "resolution": "tabled to January 9, 2013",
+   "quote": "fire department- tabled until meeting of january 9. 2013.",
+   "tags": [
+    "fire department",
+    "vehicle"
+   ]
+  },
+  {
+   "topic": "Technology Department",
+   "resolution": "placed on January 9, 2013 agenda",
+   "quote": "the technology department will be placed on the january 9t meeting agenda for",
+   "tags": [
+    "technology"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Road Rehabilitation Plan",
+   "where": "text",
+   "quote": "mr. rodriquenz explained the road rehabilitation plan."
+  },
+  {
+   "name": "DPW Form B requests",
+   "where": "text",
+   "quote": "general introduction of dpw form b requests concerning all"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "DPW",
+  "road rehabilitation",
+  "street sweeper",
+  "intersections",
+  "ADA",
+  "vehicles",
+  "building demolition",
+  "fire department",
+  "technology department"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

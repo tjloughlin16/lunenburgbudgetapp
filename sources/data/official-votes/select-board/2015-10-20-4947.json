@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-10-20",
  "docid": "4947",
@@ -12,40 +12,52 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of the Lake Whalom bylaw",
+   "motion": "Approve minutes of October 6, 2015 (no motion text printed)",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the board approved minutes of october 6, 2015."
+  },
+  {
+   "motion": "Recommend approval of the Lake Whalom bylaw (motor vehicles, recreational and snow vehicles)",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: r. ebersole to recommend approval of the lake whalom bylaw mr. ebersole asked",
-   "quote_taken_from_text": true
+   "quote": "to recommend approval of the lake whalom bylaw"
   },
   {
-   "motion": "Recommend approval of the bylaw licensing pawn brokers",
+   "motion": "Make a recommendation on the marijuana public consumption bylaw at the special town meeting",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to make a recommendation on this bylaw at the special town meeting"
+  },
+  {
+   "motion": "Recommend approval of the bylaw licensing pawnbrokers, buyers and sellers, or dealers in metal",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to recommend approval of the bylaw licensing pawn brokers 2\"d: t. alonzo vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to recommend approval of the bylaw licensing pawn brokers"
   },
   {
-   "motion": "Make a recommendation at town meeting on Article 1 regarding collective bargaining agreement with Professional Firefighters",
+   "motion": "Make a recommendation at town meeting on Article 1 (collective bargaining agreement, Professional Firefighters)",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to make a recommendation at town meeting on article 1 2\"': r. ebersole vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to make a recommendation at town meeting on article 1"
   },
   {
-   "motion": "Recommend transferring $50,000 to the Veteran's Benefits Account and the remainder to the Reserve Fund",
+   "motion": "Recommend transferring $50,000 to the Veteran's Benefits Account and the remainder to the Reserve Fund (budget adjustment article)",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to recommend transferring $50,000 to the veteran's benefits account and the remainder to the reserve fund 2\"°: t. alonzo vot",
-   "quote_taken_from_text": true
+   "quote": "to recommend transferring $50,000 to the veteran's benefits account and the remainder to the reserve"
   },
   {
    "motion": "Recommend approval of the budget adjustment article",
@@ -53,40 +65,31 @@
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to recommend approval of the bylaw licensing pawn brokers 2\"d: t. alonzo vote: all i",
-   "quote_taken_from_text": true
+   "quote": "to recommend approval of the budget adjustment article"
   },
   {
-   "motion": "Recommend Article 12 for approval regarding Nexamp community solar project authority",
+   "motion": "Recommend Article 12 (alternative energy / net metering purchase authority) for approval",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to recommend article 12 for approval 2\"°: r. ebersole vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to recommend article 12 for approval"
   },
   {
-   "motion": "Recommend transferring $2,623 into the Stabilization Fund",
+   "motion": "Recommend transferring $2,623 into the Stabilization Fund (Article 14)",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to recommend transferring $50,000 to the veteran's benefits account and the remainder to the r",
-   "quote_taken_from_text": true
+   "quote": "to recommend transferring $2,623 into the stabilization fund"
   },
   {
-   "motion": "Approve the amendment to the employee agreement for Karen Brochu, Director of Municipal Finance",
+   "motion": "Approve the amendment to the employee agreement for Director of Municipal Finance Karen Brochu",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve the amendment to the employee agreement 2nd. t. alonzo vote: all in favor"
-  },
-  {
-   "motion": "Approve the minutes of October 6, 2015",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the board approved minutes of october 6, 2015."
+   "quote": "to approve the amendment to the employee agreement"
   },
   {
    "motion": "Adjourn the meeting",
@@ -94,10 +97,477 @@
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting 2nd.p. luck vote: all in favor"
+   "quote": "to adjourn the meeting"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text was OCR'd using macOS Vision. Several second fields contain OCR artifacts (special characters replacing 'nd') but these have been preserved as they appear verbatim in the source.",
- "cost_usd": 0.1566775
+ "dropped_unquoted": 0,
+ "note": "Text is OCR (macOS Vision) of scanned minutes; several words are garbled and quotes are copied as printed. The payroll-warrant sentence on page 3 is unreadable apart from the $680,094.54 figure, so no approval motion is recorded for it, only that the Board signed the warrant. Vote tallies are printed only as \"All in Favor\", with no counts. Seconder and some motion labels are OCR-garbled (e.g., \"2°d\", \"2\"'\", \"25°.\") and are recorded as read. The Board approved the October 6, 2015 minutes without a printed motion or tally; it is recorded as a procedural vote with outcome \"passed\" and no mover. Spellings \"Misbah\" and \"Lafluer\" appear once each in the text and are recorded as Misbach and Lafleur.",
+ "cost_usd": 0.013883120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; tom alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; tom alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; tom alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; tom alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chair; robert ebersole, vice chair; tom alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "and town manager kerry lafleur."
+  },
+  {
+   "name": "Joe Fiori",
+   "role": "representing Nexamp",
+   "status": "present",
+   "quote": "joe fiori and eric misbach of nexamp were present this evening regarding the community solar project marketing."
+  },
+  {
+   "name": "Eric Misbach",
+   "role": "representing Nexamp",
+   "status": "present",
+   "quote": "joe fiori and eric misbach of nexamp were present this evening regarding the community solar project marketing."
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Resident, 129 Pleasant Street; fairly new member of the School Building Committee",
+   "status": "present",
+   "quote": "greg bittner stated he is a fairly new member of the school building committee"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief marino stated stolen property is brought to pawn shops frequently."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board passed over the codification project item for the evening because some open items are still pending.",
+   "quote": "so the board will pass over that for this evening."
+  },
+  {
+   "decision": "A link to the Nexamp solar sign-up will be posted on the town website for ease of sign up.",
+   "quote": "a link will be posted on the town website for ease of sign up."
+  },
+  {
+   "decision": "The Board signed the employment agreement amendment for Karen Brochu.",
+   "quote": "the board signed the agreement."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School Building Committee contingency spending",
+   "what_was_recorded": "Ms. Luck reported $162,912 has been spent to date on contingency, with a separate sheet of possible expenses adding up to another $70,000.",
+   "figures_as_printed": [
+    "$162,912",
+    "$70,000"
+   ],
+   "quote": "to date, $162,912 has been spent."
+  },
+  {
+   "topic": "School Building Committee discretionary items list",
+   "what_was_recorded": "A final discretionary items sheet totaled $4,251,000, including artificial turf for the new athletic field, replacing the existing field for $675,000, and demolishing the Passios Building for $1.5 million.",
+   "figures_as_printed": [
+    "$4,251,000",
+    "$675,000",
+    "$1.5 million"
+   ],
+   "quote": "demolishing the passios building for $1.5 million"
+  },
+  {
+   "topic": "Veteran's Benefits deficit",
+   "what_was_recorded": "Veteran's Benefits is projected to run a $48,000 deficit, the full amount budgeted for the year, and the Town Manager asked the Board to consider additional appropriation.",
+   "figures_as_printed": [
+    "$48,000"
+   ],
+   "quote": "we will have a deficit of $48,000, which is what was budgeted for the entire year."
+  },
+  {
+   "topic": "New Growth and additional revenue (FY16 budget update)",
+   "what_was_recorded": "New Growth of $360,856 was submitted to the state but not yet approved; with additional state aid minus cherry sheet charges, $93,629 in additional revenue is available.",
+   "figures_as_printed": [
+    "$360,856",
+    "$93,629"
+   ],
+   "quote": "new growth has been submitted to the state in the amount of $360,856, but not yet approved."
+  },
+  {
+   "topic": "Additional revenue available",
+   "what_was_recorded": "Total additional revenue available was stated as $93,629.",
+   "figures_as_printed": [
+    "$93,629"
+   ],
+   "quote": "there is additional revenue of $93,629 available."
+  },
+  {
+   "topic": "Stabilization Fund appropriation",
+   "what_was_recorded": "Town Manager proposed moving $2,623 into the Stabilization Fund to reflect increased spending and conform to the Stabilization Fund policy.",
+   "figures_as_printed": [
+    "$2,623"
+   ],
+   "quote": "she proposed moving $2,623 into this fund which would represent the increased spending and conform to the stabilization fund policy."
+  },
+  {
+   "topic": "Director of Municipal Finance employment agreement",
+   "what_was_recorded": "The amended employment agreement for Karen Brochu provides $9,259 for the position, already included in the FY16 budget.",
+   "figures_as_printed": [
+    "$9,259"
+   ],
+   "quote": "provides $9,259 for this position."
+  },
+  {
+   "topic": "Payroll warrant signed",
+   "what_was_recorded": "The Board signed a payroll warrant in the amount shown; the sentence is garbled in the scan and only the amount is legible.",
+   "figures_as_printed": [
+    "$680,094.54"
+   ],
+   "quote": "warrant for $680,094.54."
+  },
+  {
+   "topic": "Community solar electric bill savings",
+   "what_was_recorded": "The Nexamp community solar project could provide a 15% savings on residents' electric bills, with no sign-up costs and no service or cancellation fees.",
+   "figures_as_printed": [
+    "15%"
+   ],
+   "quote": "could provide a 15% savings on residents' electric bill"
+  },
+  {
+   "topic": "Community solar fees",
+   "what_was_recorded": "Nexamp stated there are no sign up costs and no service or cancellation fees for residents.",
+   "figures_as_printed": [],
+   "quote": "there are no sign up costs and no service or cancellation fees."
+  },
+  {
+   "topic": "Local Options Meal Tax estimate",
+   "what_was_recorded": "The FY'15 average Local Options Meal Tax was $24,600; based on that average the FY16 estimate could be increased by $11,000.",
+   "figures_as_printed": [
+    "$24,600",
+    "$11,000"
+   ],
+   "quote": "the average for fy'15 was $24,600."
+  },
+  {
+   "topic": "Investment income estimate",
+   "what_was_recorded": "The current investment income estimate is $15,300; collections are at 257.31% due to bond proceeds for the school project.",
+   "figures_as_printed": [
+    "$15,300",
+    "257.31%"
+   ],
+   "quote": "investment income: the current estimate is $15,300."
+  },
+  {
+   "topic": "Tax lien revenue",
+   "what_was_recorded": "Taxes and state aid collections included $70,791 in tax lien revenue.",
+   "figures_as_printed": [
+    "$70,791"
+   ],
+   "quote": "including $70,791 in tax lien revenue"
+  },
+  {
+   "topic": "FY16 first quarter revenue collections",
+   "what_was_recorded": "The town had collected 27.43% of preliminary estimates through September 30, 2015.",
+   "figures_as_printed": [
+    "27.43%"
+   ],
+   "quote": "the town has collected 27.43% of preliminary estimates through september 30, 2015."
+  },
+  {
+   "topic": "Salary Reserve Account",
+   "what_was_recorded": "Retirement buybacks have expended 63.3% of the Salary Reserve Account.",
+   "figures_as_printed": [
+    "63.3%"
+   ],
+   "quote": "which has expended 63.3% of the salary reserve account."
+  },
+  {
+   "topic": "Wiring Inspector account",
+   "what_was_recorded": "The Wiring Inspector account has expended 65.1% of its appropriation, tied to fees, and will probably need adjustment at year end.",
+   "figures_as_printed": [
+    "65.1%"
+   ],
+   "quote": "the wiring inspector account has expended 65.1% of the appropriation to date."
+  },
+  {
+   "topic": "Net metering credit revenue",
+   "what_was_recorded": "The town has collected 34.75% of the net metering credits estimate.",
+   "figures_as_printed": [
+    "34.75%"
+   ],
+   "quote": "the town has collected 34.75% of the net metering credits estimate."
+  },
+  {
+   "topic": "Solar panels for new school roof (PPA)",
+   "what_was_recorded": "Ms. Lafleur said the town could not afford the capital outlay for the school solar panels; a Power Purchase Agreement would mean the school does not own the equipment.",
+   "figures_as_printed": [],
+   "quote": "the town could not afford the capital outlay for the solar panels."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to Veteran's Benefits Account, with remainder to Reserve Fund (recommended to town meeting)",
+   "amount_as_printed": "$50,000",
+   "outcome": "passed 'All in Favor' as a recommendation to town meeting",
+   "quote": "to recommend transferring $50,000 to the veteran's benefits account and the remainder to the reserve"
+  },
+  {
+   "description": "Transfer into the Stabilization Fund (Article 14, recommended to town meeting)",
+   "amount_as_printed": "$2,623",
+   "outcome": "passed 'All in Favor' as a recommendation to town meeting",
+   "quote": "to recommend transferring $2,623 into the stabilization fund"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "fairly new member of the School Building Committee",
+   "topic": "school construction contingency list and solar panels PPA",
+   "quote": "greg bittner stated he is a fairly new member of the school building committee and wanted to discuss the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening announcements by Board members)",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "stormwater",
+    "fundraiser"
+   ],
+   "quote": "ms. luck announced that she, ms. lafleur and land use director adam burney attended a stormwater"
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "tags": [
+    "school building",
+    "conservation",
+    "library",
+    "sewer"
+   ],
+   "quote": "ms. luck attended the school building committee meeting."
+  },
+  {
+   "topic": "Current Business 1: Review/Comment on Marketing Plan for Community Solar Project",
+   "resolution": "reviewed; Board thanked presenters",
+   "tags": [
+    "solar",
+    "nexamp",
+    "residents"
+   ],
+   "quote": "ms. lafleur reported joe fiori and eric misbach of nexamp were present this evening regarding the community solar project marketing."
+  },
+  {
+   "topic": "Current Business 2: Review & Order STM Warrant Articles",
+   "resolution": "recommended approval of bylaws and articles; Article 1, 3, 12, 14 recommended",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "bylaws",
+    "budget adjustment"
+   ],
+   "quote": "ms. lafleur asked the board if they would like to reorder the articles for the special town meeting."
+  },
+  {
+   "topic": "Codification project",
+   "resolution": "passed over for the evening",
+   "tags": [
+    "codification"
+   ],
+   "quote": "so the board will pass over that for this evening."
+  },
+  {
+   "topic": "Employment agreement, Director of Municipal Finance Karen Brochu",
+   "resolution": "approved amendment; Board signed agreement",
+   "tags": [
+    "personnel",
+    "finance"
+   ],
+   "quote": "ms. lafleur presented the employment agreement for newly appointed director of municipal finance, karen brochu."
+  },
+  {
+   "topic": "Warrants and water commitment signing",
+   "resolution": "Board signed payroll warrant and water commitment copy",
+   "tags": [
+    "warrants",
+    "water"
+   ],
+   "quote": "ms. lafleur requested the board sign another copy of the 1\" quarter lunenburg water commitment"
+  },
+  {
+   "topic": "Approval of minutes of October 6, 2015",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the board approved minutes of october 6, 2015."
+  },
+  {
+   "topic": "Town Manager Report: pending agenda list and FY16 first quarter revenues/expenditures",
+   "resolution": "no action; Board asked to review spreadsheet",
+   "tags": [
+    "town manager",
+    "revenues",
+    "expenditures",
+    "agenda"
+   ],
+   "quote": "ms. lafleur referred to the board of selectmen pending agenda items list that was updated as of yesterday."
+  },
+  {
+   "topic": "Public Comment: Greg Bittner and water district report",
+   "resolution": "discussed; Bittner to meet superintendent; no action",
+   "tags": [
+    "school building",
+    "solar",
+    "water district",
+    "intermunicipal agreement"
+   ],
+   "quote": "greg bittner stated he is a fairly new member of the school building committee and wanted to discuss the"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn the meeting"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY16 First Quarter Revenues/ Expenditures Report (prepared by Town Accountant Brochu)",
+   "where": "list",
+   "quote": "ms. lafleur directed the board to the fy16 first quarter revenues/ expenditures report"
+  },
+  {
+   "name": "Board of Selectmen pending agenda items list (updated as of yesterday)",
+   "where": "text",
+   "quote": "ms. lafleur referred to the board of selectmen pending agenda items list that was updated as of yesterday."
+  },
+  {
+   "name": "Spreadsheet of line item detail",
+   "where": "text",
+   "quote": "she asked the board to review the spreadsheet's line item detail"
+  },
+  {
+   "name": "Marketing Plan for Community Solar Project",
+   "where": "text",
+   "quote": "review/comment on marketing plan for community solar project"
+  },
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "the warrant will be finalized this week and goes to the printer on monday."
+  },
+  {
+   "name": "Lake Whalom bylaw (motor vehicles, recreational and snow vehicles)",
+   "where": "text",
+   "quote": "to recommend approval of the lake whalom bylaw"
+  },
+  {
+   "name": "Bylaw restricting public consumption of marijuana or tetrahydrocannabinol",
+   "where": "text",
+   "quote": "chief marino moved on to the bylaw that restricts the public consumption of marijuana or"
+  },
+  {
+   "name": "Bylaw licensing pawnbrokers, buyers and sellers, or dealers in metal",
+   "where": "text",
+   "quote": "to recommend approval of the bylaw licensing pawn brokers"
+  },
+  {
+   "name": "Article 1 collective bargaining agreement with the Professional Firefighters",
+   "where": "text",
+   "quote": "collective bargaining agreement with the professional firefighters"
+  },
+  {
+   "name": "Article 3 (amends amounts voted for the FY'2016 Budget)",
+   "where": "text",
+   "quote": "for article 3 which amends amounts voted for the fy'2016 budget"
+  },
+  {
+   "name": "Article 12 (alternative energy / net metering purchase authority, 2012 September Special Town Meeting Article 1 reference)",
+   "where": "text",
+   "quote": "to recommend article 12 for approval"
+  },
+  {
+   "name": "Article 14 (Stabilization Fund appropriation)",
+   "where": "text",
+   "quote": "article 14 which is the request to appropriate into the stabilization fund"
+  },
+  {
+   "name": "Employment agreement for Director of Municipal Finance Karen Brochu",
+   "where": "text",
+   "quote": "ms. lafleur presented the employment agreement for newly appointed director of municipal finance, karen brochu."
+  },
+  {
+   "name": "School Building Committee contingency spending report and discretionary items sheet",
+   "where": "text",
+   "quote": "there was a report presented on contingency spending."
+  },
+  {
+   "name": "1st Quarter Lunenburg Water Commitment",
+   "where": "text",
+   "quote": "sign another copy of the 1\" quarter lunenburg water commitment"
+  },
+  {
+   "name": "Codification project open items",
+   "where": "text",
+   "quote": "there were some open items on the codification project that are still pending"
+  }
+ ],
+ "tags": [
+  "town meeting",
+  "special town meeting",
+  "warrant articles",
+  "bylaws",
+  "Lake Whalom",
+  "marijuana bylaw",
+  "pawnbrokers",
+  "community solar",
+  "Nexamp",
+  "school building committee",
+  "budget",
+  "Veteran's Benefits",
+  "Stabilization Fund",
+  "personnel",
+  "town manager report",
+  "water district"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lafleur directed the board to the fy16 first quarter revenues/ expenditures report"
+ },
+ "dropped_unquoted_by_field": {}
 }

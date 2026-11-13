@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-03-05",
  "docid": "2267",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the February 24 meeting",
+   "motion": "Approve the minutes of the February 24 meeting as submitted.",
    "moved_by": "Terri Burchfield",
    "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "terri made a motion to approve the minutes, karin seconded her motion and the committee approved the minutes as submitted 5-0."
   },
   {
-   "motion": "Approve the minutes from the February 26 meeting",
+   "motion": "Approve the minutes of the February 26 meeting as submitted.",
    "moved_by": "Karin Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "karin made a motion to approve the minutes, jay seconded her motion and the committee approved the minutes as submitted 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 5-0",
@@ -37,6 +37,281 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. All votes recorded are procedural (approval of prior minutes, adjournment). No substantive votes on budget items or other matters were taken at this meeting.",
- "cost_usd": 0.0833845
+ "note": "Scanned OCR text (macOS Vision). The Library section contains a garbled OCR line (\"53634786 Toh isanagers proiete avage steve me intry level necessary...\") so the minimum-level figure for state aid is not legible and is not recorded. The attendance block is laid out in label/value columns; Caroline Griffis is placed under \"Absent\" by that layout and is recorded as absent on that inference, though the minutes do not state it in a sentence. Jamie Toale and Kerry Speidel are listed under \"Also Present\". Minutes printed no document list. The Future Agenda change was a consensus (\"The committee concurs\") with no recorded motion, so it is a decision, not a vote. Public comment: \"Public: None.\" Minutes were submitted by John Henshaw March 11, 2015.",
+ "cost_usd": 0.00603622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager caroline griffis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "BOS Liaison",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale--bos liaison, kerry speidel, town manager"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director (Library)",
+   "status": "present",
+   "quote": "library fy16 budget presentation by martha moore, director"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "presenter, Council on Aging",
+   "status": "present",
+   "quote": "council on aging (coa) fy16 budget presentation by doreen noble"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "presenter, School Department",
+   "status": "present",
+   "quote": "school department fy16 budget presentation by loxi calmes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee concurred that the standing agenda item \"Budget Opportunities\" be renamed \"Budget Goals and Opportunities\" to broaden it to ongoing discussion of trade-offs, priorities and goals before and during the budget process. No formal vote is recorded.",
+   "quote": "mark proposed that the standing item on the agenda, \"budget opportunities\" be changed to"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library FY16 budget request",
+   "what_was_recorded": "The Library submitted an FY16 budget request that is a dollar increase over FY15 projected expenditures and over the Town Manager's preliminary FY16 figure.",
+   "quote": "the library submitted an fy16 budget request of $379,735, a $26,530 increase over fy15 projected expenditures and $16,252 more than the town manager's preliminary fy16 budget",
+   "figures_as_printed": [
+    "$379,735",
+    "$26,530",
+    "$16,252"
+   ]
+  },
+  {
+   "topic": "Library state aid",
+   "what_was_recorded": "State aid to local public libraries is tied to a minimum level that the Library's budget must reach; the aid is roughly $12,000 in state grants. The minutes' text at this point is garbled in the extraction, so the minimum-level figure is not legible.",
+   "quote": "this aid amounts to roughly $12,000 in grants from the state, a key source of",
+   "figures_as_printed": [
+    "$12,000"
+   ]
+  },
+  {
+   "topic": "Council on Aging FY16 budget",
+   "what_was_recorded": "The COA submitted an FY16 budget that is above FY15 and above the Town Manager's preliminary budget; the COA budget is about one half of one percent of the total Town budget.",
+   "quote": "the coa summited an fy16 budget of $107,214, $12,652 above fy15, and $3,404 above the town manager's preliminary budget, $103,810.",
+   "figures_as_printed": [
+    "$107,214",
+    "$12,652",
+    "$3,404",
+    "$103,810"
+   ]
+  },
+  {
+   "topic": "COA share of Town budget",
+   "what_was_recorded": "The COA budget is described as about one half of one percent of the total Town budget.",
+   "quote": "the coa budget amounts to about ½ of one percent of the total town budget.",
+   "figures_as_printed": [
+    "½ of one percent"
+   ]
+  },
+  {
+   "topic": "COA MOC Nutrition line reduction",
+   "what_was_recorded": "The difference between the COA budget and the preliminary budget is a reduction in the MOC Nutrition line, which may affect meal quality and nutritional value.",
+   "quote": "a $4,500 reduction in the moc nutrition line from $5,000 to $500.",
+   "figures_as_printed": [
+    "$4,500",
+    "$5,000",
+    "$500"
+   ]
+  },
+  {
+   "topic": "School personnel additions",
+   "what_was_recorded": "The School Department recommends adding or reinstating personnel at a stated total cost, not including health insurance.",
+   "quote": "the cost of all recommended personnel additions is $549,119, not including health insurance costs.",
+   "figures_as_printed": [
+    "$549,119"
+   ]
+  },
+  {
+   "topic": "School Department FY16 budget",
+   "what_was_recorded": "The School Department submitted an FY16 budget that is a stated increase over FY15 projected expenditures, a percent increase.",
+   "quote": "accordingly, the school department submitted a fy16 budget of $18,273,840. this would be $1,518,977 more than projected expenditures in fy15, a 9.1% increase.",
+   "figures_as_printed": [
+    "$18,273,840",
+    "$1,518,977",
+    "9.1%"
+   ]
+  },
+  {
+   "topic": "School Town Manager preliminary budget",
+   "what_was_recorded": "The Town Manager's preliminary FY16 budget for the schools is a stated amount, an increase over FY15 by a stated dollar and percent figure.",
+   "quote": "is $17,398,402, which would be an increase of $643,539 or a 3.8% increase over fy15.",
+   "figures_as_printed": [
+    "$17,398,402",
+    "$643,539",
+    "3.8%"
+   ]
+  },
+  {
+   "topic": "Total general fund revenue increase",
+   "what_was_recorded": "The total projected increase in general fund revenue from FY15 to FY16 is recorded for reference.",
+   "quote": "the total projected increase in general fund revenue from fy15 to fy16 is $1,149,553, 3.2%.",
+   "figures_as_printed": [
+    "$1,149,553",
+    "3.2%"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and communications",
+   "resolution": "no action; Citizens' Caucus notice and FY16 presentations posting noted",
+   "quote": "the citizens' caucus will take place on monday, march 16t at 7:00 at turkey hill middle",
+   "tags": [
+    "communications",
+    "citizens caucus"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no action; none reported",
+   "quote": "3. town manager updates: none.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Library FY16 budget presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "library fy16 budget presentation by martha moore, director",
+   "tags": [
+    "library",
+    "FY16 budget"
+   ]
+  },
+  {
+   "topic": "Council on Aging FY16 budget presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "council on aging (coa) fy16 budget presentation by doreen noble",
+   "tags": [
+    "council on aging",
+    "FY16 budget"
+   ]
+  },
+  {
+   "topic": "School Department FY16 budget presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "school department fy16 budget presentation by loxi calmes.",
+   "tags": [
+    "school department",
+    "FY16 budget"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved February 24 and February 26 minutes, 5-0 each",
+   "quote": "terri made a motion to approve the minutes, karin seconded her motion and the committee approved the minutes as submitted 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department liaison updates",
+   "resolution": "no action; meeting dates announced",
+   "quote": "mark announced that the school building committee will meet next week and the building re-use",
+   "tags": [
+    "liaison updates"
+   ]
+  },
+  {
+   "topic": "Future agenda",
+   "resolution": "agenda item renamed by consensus",
+   "quote": "mark proposed that the standing item on the agenda, \"budget opportunities\" be changed to",
+   "tags": [
+    "agenda",
+    "budget goals"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "no action; March 12 meeting scheduled for Sewer Enterprise and DPW budgets",
+   "quote": "march 12, sewer enterprise and dpw will present their budgets and effects service levels.",
+   "tags": [
+    "sewer enterprise",
+    "DPW",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 8:30 PM",
+   "quote": "karin moved to adjourn the meeting, her motion was seconded by jay and approved",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY16 department budget presentations and supporting documents (posted on the Finance Committee website)",
+   "where": "text",
+   "quote": "all department fy16 budget presentations and supporting documents will be posted on the finance committee website shortly after the presentations are made."
+  }
+ ],
+ "tags": [
+  "FY16 budget",
+  "library",
+  "council on aging",
+  "school department",
+  "minutes approval",
+  "agenda change",
+  "town budget",
+  "state aid"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

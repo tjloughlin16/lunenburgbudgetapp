@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-06-13",
  "docid": "3854",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of 5/23/16",
+   "motion": "Approve the minutes of 5/23/16.",
    "moved_by": "D. McQuaid",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "5/23/16- motion, d. mcquaid, second, g. bittner"
   },
   {
-   "motion": "to approve the minutes of 234 Summer Street from 5/23/16",
+   "motion": "Approve the 234 Summer Street minutes of 5/23/16.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "234 summer street, 5/23/16- motion, d. mcquaid, second, d. prokowiew"
   },
   {
-   "motion": "to approve the minutes of 175 Northfield Road from 5/23/16",
+   "motion": "Approve the 175 Northfield Road minutes of 5/23/16.",
    "moved_by": "D. McQuaid",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
@@ -36,15 +36,227 @@
    "quote": "175 northfield road, 5/23/16- motion, d. mcquaid, second, g. bittner"
   },
   {
-   "motion": "not to hold a meeting on July 11 due to lack of member availability",
+   "motion": "Not to hold a July 11 meeting due to lack of member availability.",
    "moved_by": "G. Bittner",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "july 11 - motion, g. bittner, not to hold a meeting due to lack of member availability, second, d. mcquaid, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11789949999999999
+ "note": "OCR text from a scanned page set. Three minutes-approval motions and the July 11 motion are recorded with no printed vote result; the July 11 motion is recorded as 'all aye', which is reported as passed. No public comment section appears. No dollar figures appear. No adjournment motion is recorded; the adjournment time is printed only. Some OCR misreads are possible (e.g., quote and asterisk marks around dates).",
+ "cost_usd": 0.006647119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "damon mcquaid, vice chair"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney will prepare a draft letter to the Zoning Board of Appeals on Highfield Village for Board finalization at the June 27 meeting.",
+   "quote": "a. burney will prepare a draft letter for board finalization at its june 27\" meeting."
+  },
+  {
+   "decision": "Input on the Highfield Village letter will be sought from the Conservation Commission, Open Space Committee, and Sewer Commission.",
+   "quote": "input will also be sought from the conservation commission, open space committee, and sewer commission."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: 234 Summer Street",
+   "resolution": "referred to separate minutes",
+   "quote": "public hearing: 234 summer street- see separate minutes",
+   "tags": [
+    "public hearing",
+    "234 Summer Street"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions recorded; results not stated",
+   "quote": "minutes approval: all minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "stormwater task force- with board of selectmen approval, the task force is looking to reconfigure",
+   "tags": [
+    "stormwater",
+    "bylaws",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Development status: 270 Electric Avenue",
+   "resolution": "noted",
+   "quote": "development status reports: 270 electric avenue-",
+   "tags": [
+    "development status",
+    "270 Electric Avenue"
+   ]
+  },
+  {
+   "topic": "Director's items: 175 Northfield Road",
+   "resolution": "noted; decision signed",
+   "quote": "175 northfield road- decision signed. will be registered with the town clerk and enter into an appeal",
+   "tags": [
+    "175 Northfield Road",
+    "appeal"
+   ]
+  },
+  {
+   "topic": "Director's items: Highfield Village letter to ZBA",
+   "resolution": "discussed; draft letter assigned to A. Burney",
+   "quote": "highfield village-board discussion ensued regarding content of a letter to the zoning board of appeals",
+   "tags": [
+    "Highfield Village",
+    "zoning board of appeals",
+    "open space",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Site plan approval / special permit / rules and regulations",
+   "resolution": "hearing date noted",
+   "quote": "site plan approval/special permit/rules and regulations- noted hearing date of june 27, 2016.",
+   "tags": [
+    "site plan approval",
+    "special permit",
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "July 11 meeting not held",
+   "quote": "july 11 - motion, g. bittner, not to hold a meeting due to lack of member availability, second, d. mcquaid, all aye.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "discussed",
+   "quote": "board comment/concerns: g. bittner would like the board to compile a list of its top ten goals.",
+   "tags": [
+    "goals",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 PM",
+   "quote": "adjournment: 8:30 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 05/23/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/23/16 234 summer street, minutes 05/23/16 175 northfield road, minutes 05/23/16 175 northfield road, decision 234 summer street, application highfield village, zoning board of appeals application"
+  },
+  {
+   "name": "234 Summer Street, Minutes 05/23/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/23/16 234 summer street, minutes 05/23/16 175 northfield road, minutes 05/23/16 175 northfield road, decision 234 summer street, application highfield village, zoning board of appeals application"
+  },
+  {
+   "name": "175 Northfield Road, Minutes 05/23/16",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/23/16 234 summer street, minutes 05/23/16 175 northfield road, minutes 05/23/16 175 northfield road, decision 234 summer street, application highfield village, zoning board of appeals application"
+  },
+  {
+   "name": "175 Northfield Road, Decision",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/23/16 234 summer street, minutes 05/23/16 175 northfield road, minutes 05/23/16 175 northfield road, decision 234 summer street, application highfield village, zoning board of appeals application"
+  },
+  {
+   "name": "234 Summer Street, Application",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/23/16 234 summer street, minutes 05/23/16 175 northfield road, minutes 05/23/16 175 northfield road, decision 234 summer street, application highfield village, zoning board of appeals application"
+  },
+  {
+   "name": "Highfield Village, Zoning Board of Appeals Application",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 05/23/16 234 summer street, minutes 05/23/16 175 northfield road, minutes 05/23/16 175 northfield road, decision 234 summer street, application highfield village, zoning board of appeals application"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg (Section 5.6)",
+   "where": "text",
+   "quote": "section 5.6. of the protective bylaw of the town of lunenburg."
+  },
+  {
+   "name": "Preliminary Plan (Highfield Village)",
+   "where": "text",
+   "quote": "with the board's approval of the preliminary plan."
+  },
+  {
+   "name": "Board Rules and Regulations for Site Plan Approval and Special Permits",
+   "where": "text",
+   "quote": "june 27- hearing for board rules and regulations for site plan approval and special permits"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning board of appeals",
+  "Highfield Village",
+  "open space",
+  "site plan approval",
+  "special permit",
+  "stormwater bylaw",
+  "meeting schedule",
+  "minutes approval",
+  "234 Summer Street",
+  "175 Northfield Road",
+  "270 Electric Avenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

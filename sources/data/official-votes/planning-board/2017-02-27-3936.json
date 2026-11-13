@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-02-27",
  "docid": "3936",
@@ -12,21 +12,251 @@
  },
  "votes": [
   {
-   "motion": "Accept the plan for 119 Massachusetts Avenue with specified screening in compliance with the parking bylaw and horizontal datum",
+   "motion": "Accept the plan as submitted for 119 Massachusetts Avenue, as amended to include screening in compliance with the parking bylaw between the two proposed Maples and to provide the horizontal datum.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "d. mcquaid , motion amended to inc lude screening in compliance with the parking bylaw between the two proposed maples on the northwest side of the parking lot and to provide the horizontal datum, d. prokowiew, second as amended, all aye ."
-  },
-  {
-   "motion": "Accept the minutes from January 9, 2017",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "all minutes accepted."
+   "quote": "motion made, d. mcquaid, to accept the plan as submitted, second, d. prokowiew"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. Minutes approval vote (procedural) does not record moved_by or seconded_by in the minutes. ANR plan at Martha McDonald address states plan was endorsed but does not record a formal motion with mover and seconder, so not included as a vote.",
- "cost_usd": 0.1146745
+ "note": "Text is a clean extraction, not a scan. Only one motion with a recorded vote appears (119 Massachusetts Avenue, 'all aye', no numeric count). The ANR endorsement and the minutes acceptance are recorded without a motion, so they are decisions, not votes. The 5 Electric Avenue, 274 Prospect Street and 691 Chase Road hearings are noted as continued 'see separate minutes' and are not covered here. No dollar figures appear.",
+ "cost_usd": 0.00535852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "applicant, 221 Goodrich Street",
+   "status": "not stated",
+   "quote": "anr plan: martha mcdonald, 221 goodrich street - plan presented by david e. ross associates."
+  },
+  {
+   "name": "David E. Ross Associates",
+   "role": "presented the ANR plan",
+   "status": "not stated",
+   "quote": "plan presented by david e. ross associates."
+  },
+  {
+   "name": "Jill Normandin",
+   "role": "developer of 9 Pond Avenue",
+   "status": "present",
+   "quote": "jill normandin, developer of 9 pond avenue - concerned with what residents feel is appropriate in the lake whalom overlay district"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ANR Plan for 221 Goodrich Street endorsed by the Board, with the Board noting the endorsement rests on lot frontage and lot size, not the Title 5 inspection.",
+   "quote": "anr plan endorsed by board."
+  },
+  {
+   "decision": "All minutes presented for approval (01/09/17 minutes, 01/09/17 Asian Imperial 5 Electric Avenue, and 01/09/17 691 Chase Road) were accepted, with a pen change made to the 1/9/17 minutes.",
+   "quote": "all minutes accepted. pen change made to 1/9/17 minutes."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jill Normandin",
+   "stated_role": "developer of 9 Pond Avenue",
+   "topic": "Lake Whalom Overlay District",
+   "quote": "jill normandin, developer of 9 pond avenue - concerned with what residents feel is appropriate in the lake whalom overlay district"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plan, 221 Goodrich Street",
+   "resolution": "endorsed by Board",
+   "quote": "anr plan: martha mcdonald, 221 goodrich street - plan presented by david e. ross associates.",
+   "tags": [
+    "ANR",
+    "Title 5",
+    "frontage",
+    "lot size"
+   ]
+  },
+  {
+   "topic": "Public hearings",
+   "resolution": "119 Massachusetts Avenue plan accepted as amended; other hearings continued to separate minutes",
+   "quote": "119 massachusetts avenue - see separate minutes",
+   "tags": [
+    "public hearing",
+    "parking",
+    "screening",
+    "site plan"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "m. allison accepted public comment out of order.",
+   "tags": [
+    "public comment",
+    "Lake Whalom Overlay"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "all minutes accepted",
+   "quote": "all minutes accepted. pen change made to 1/9/17 minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "presentation made to finance committee and board of selectmen.",
+   "tags": [
+    "stormwater",
+    "farmers market",
+    "Ritter Building",
+    "school building",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "no action",
+   "quote": "the common drive provision was accidentally deleted from the zoning bylaw and will be on the warrant.",
+   "tags": [
+    "zoning bylaw",
+    "annual town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "citizens party caucus, march 20, 2017- g. bittner plans to seek reelection.",
+   "tags": [
+    "caucus",
+    "election"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "march 13 - 274 prospect street and town counsel",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Pending items",
+   "resolution": "no action",
+   "quote": "definitions and use table - work in progress",
+   "tags": [
+    "definitions",
+    "use table",
+    "ownership model",
+    "complete streets"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "upon adoption of complete street policies, the board should consider including some of the language in the rules and regulations governing the subdivision of land.",
+   "tags": [
+    "communication",
+    "complete streets",
+    "subdivision rules"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:05 PM",
+   "quote": "adjournment: 9:05 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 01.09.17",
+   "where": "list",
+   "quote": "minutes- 01.09.17"
+  },
+  {
+   "name": "Minutes 01.09.17, Asian Imperial, 5 Electric Avenue",
+   "where": "list",
+   "quote": "01.09.17, asian imperial, 5 electric avenue"
+  },
+  {
+   "name": "Minutes 01.09.17, 691 Chase Road",
+   "where": "list",
+   "quote": "01.09.17, 691 chase road"
+  },
+  {
+   "name": "ANR Plan, 221 Goodrich Street",
+   "where": "list",
+   "quote": "anr plan, 221 goodrich street"
+  },
+  {
+   "name": "Zoning Bylaw (common drive provision)",
+   "where": "text",
+   "quote": "the common drive provision was accidentally deleted from the zoning bylaw and will be on the warrant."
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "the board should consider including some of the language in the rules and regulations governing the subdivision of land."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "public hearing",
+  "119 Massachusetts Avenue",
+  "parking screening",
+  "zoning bylaw",
+  "town meeting",
+  "minutes approval",
+  "Lake Whalom Overlay",
+  "complete streets"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

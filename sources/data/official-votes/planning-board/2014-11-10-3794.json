@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-11-10",
  "docid": "3794",
@@ -12,15 +12,202 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Close the public hearing on the 322 Flat Hill Community Solar special permit and development plan review.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
-   "quote": "motion to close hearing, d. mcquaid, second, k. chenis. hearing closed 8:50 pm"
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion to close hearing, d. mcquaid, second, k. chenis."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.022593600000000002
+ "note": "Continued public hearing; the minutes record one motion to close the hearing with no vote count or result printed. Abutter M. Allison recused himself but no recusal vote is recorded. No decision on the special permit is recorded. The applicant's commitments (scope limitation agreement, screening, move to Zone 2, 50 kW limit) are applicant statements, not board decisions. No dollar figures appear. Some quoted lines contain irregular spacing as printed.",
+ "cost_usd": 0.005901419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Michael Conway",
+   "role": "Applicant / Owner",
+   "status": "present",
+   "quote": "applicant michael conway noted his letter dated november 7, 2014 (on file in planning office)"
+  },
+  {
+   "name": "Douglas Troyer",
+   "role": "Attorney for the Ramstacks",
+   "status": "present",
+   "quote": "douglas troyer, attorney for the ramstacks"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "wesley flis, whitman & bingham associates, presented"
+  },
+  {
+   "name": "Chuck Courtemanche",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "chuck courtemanche, 41 cortland circle - opposed to commercial entity on flat hill road."
+  },
+  {
+   "name": "Greg Kelly",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "greg kelly, 45 cortland c ircle- voiced many issues with m. conway's letter referencing the november 6 th meeting."
+  },
+  {
+   "name": "James Targove",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "james targove, 35 cortland circle - inquired if plans submitted to the planning board were different than those submitted to the zba."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue - voiced issue with n. lockwood's ledger editorial"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "Public comment",
+   "status": "present",
+   "quote": "michael mackin, 26 cortland circle- asked the board to keep in mind the precedence this will set for the bylaw"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chuck Courtemanche",
+   "stated_role": "41 Cortland Circle",
+   "topic": "opposed to commercial solar on Flat Hill Road",
+   "quote": "chuck courtemanche, 41 cortland circle - opposed to commercial entity on flat hill road."
+  },
+  {
+   "speaker": "Greg Kelly",
+   "stated_role": "45 Cortland Circle",
+   "topic": "issues with applicant's letter; requested denial",
+   "quote": "he has no confidence in m. conway's facts and requested the board deny the application."
+  },
+  {
+   "speaker": "James Targove",
+   "stated_role": "35 Cortland Circle",
+   "topic": "plans submitted to Planning Board vs ZBA",
+   "quote": "james targove, 35 cortland circle - inquired if plans submitted to the planning board were different than those submitted to the zba."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Avenue",
+   "topic": "Ledger editorial and Open Meeting Law; solar bylaw",
+   "quote": "voiced issue with n. lockwood's ledger editorial opining it was in conflict with the open meeting law."
+  },
+  {
+   "speaker": "Michael Mackin",
+   "stated_role": "26 Cortland Circle",
+   "topic": "precedent for bylaw; enforcement",
+   "quote": "asked the board to keep in mind the precedence this will set for the bylaw and that the bylaw needs to be properly enforced."
+  },
+  {
+   "speaker": "Douglas Troyer",
+   "stated_role": "Attorney for the Ramstacks",
+   "topic": "site location, noise study, Ramstacks no further talks with applicant",
+   "quote": "he also noted that the ramstacks has no interest in any further conversations with m. conway."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing (continued) on 322 Flat Hill Community Solar special permit and development plan review",
+   "resolution": "hearing closed; no decision recorded",
+   "quote": "public hearing was to hear and discuss a special permit and development plan review under sections 4.15. and 8.4. of the protective bylaw of the town of lunenburg",
+   "tags": [
+    "solar",
+    "special permit",
+    "public hearing",
+    "abutters",
+    "noise",
+    "Flat Hill Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter, 11/7/14, from Michael Conway, Flat Hill Community Solar, Inc., 322 Flat Hill Road",
+   "where": "list",
+   "quote": "letter, 11/7/14, from michael conway, flat hill community solar, inc., 322 flat hill road"
+  },
+  {
+   "name": "Letter, 11/10/14, from Whitman & Bingham Associates",
+   "where": "list",
+   "quote": "letter, 11/10/14, from whitman & bingham associates"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Sections 4.15. and 8.4.",
+   "where": "text",
+   "quote": "special permit and development plan review under sections 4.15. and 8.4. of the protective bylaw of the town of lunenburg"
+  },
+  {
+   "name": "Plans submitted to the ZBA",
+   "where": "text",
+   "quote": "inquired if plans submitted to the planning board were different than those submitted to the zba."
+  },
+  {
+   "name": "N. Lockwood's Ledger editorial",
+   "where": "text",
+   "quote": "voiced issue with n. lockwood's ledger editorial opining it was in conflict with the open meeting law."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "solar",
+  "special permit",
+  "public hearing",
+  "abutters",
+  "noise",
+  "vegetative screening",
+  "Flat Hill Road",
+  "zoning bylaw"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

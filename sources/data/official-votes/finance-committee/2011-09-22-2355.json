@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-09-22",
  "docid": "2355",
@@ -13,14 +13,412 @@
  "votes": [
   {
    "motion": "Adjourn the meeting at 9:30 p.m.",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "Brian Laffond",
+   "moved_by": "BR",
    "outcome": "passed",
    "procedural": true,
-   "quote": "br made motion to adjourn at 9:30 p.m., bl seconded, all approved"
+   "quote": "br made motion to adjourn at 9:30 p.m., bl seconded, all approved",
+   "seconded_by": "BL"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes from page 1 are legible. Pages 2–14 are OCR'd attachments (budget reports and financial documents referenced in the minutes).",
- "cost_usd": 0.12058749999999999
+ "note": "OCR text of a scanned, received-and-filed minutes packet. Attendance is set out as three labelled lines (Present / Absent / Also Present); the mapping of Male and McDonald to absent is positional and inferred. Agenda items 1 and 2 are missing from the OCR. Several tables are garbled (inspector table on page 4, the Chapter 44 §33B table on page 5, the revenue table on page 6, and Town Hall figures), so figures from those are as legible in OCR. Only one vote is recorded (adjournment). Transfer approval is shown only by signature blocks with illegible dates. Attachments (Final Report, Draft Calendar, Town Hall update) are referenced but their contents are the packet pages that follow.",
+ "cost_usd": 0.012245320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, barbara reynolds"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "minutes respectfully submitted by brian laffond"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, barbara reynolds"
+  },
+  {
+   "name": "John Male",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "john male, martha mcdonald"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "john male, martha mcdonald"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry speidel, scott gile"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "not stated",
+   "status": "present",
+   "quote": "kerry speidel, scott gile"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Pavement Management Plan presentation was postponed until more committee members are available.",
+   "quote": "pavement management plan presentation was postponed until more committee members are available."
+  },
+  {
+   "decision": "The committee will establish a different rhythm for committee reports, giving members the opportunity to update the committee rather than a required report.",
+   "quote": "3) committee reports - we will establish a different rhythm: provide opportunity to update committee, not necessity."
+  },
+  {
+   "decision": "Next meetings set: October 6, 2011 special meeting on Regional Dispatch; October 13, 2011 regular meeting with Green Energy Task Force presentation; October 18, 2011 5 Year Plan presentation by the Town Manager; October 27, 2011 regular meeting with Pavement Management Plan presentation.",
+   "quote": "october 6, 2011 for special meeting on regional dispatch"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2011 total revenues vs projection",
+   "what_was_recorded": "Total FY2011 revenues came in short of projection by a stated amount and percentage.",
+   "figures_as_printed": [
+    "$27,356,270.72",
+    "$117,496",
+    "0.43%"
+   ],
+   "quote": "total revenues for fy2011 came in at $27,356,270.72, which was $117,496 or 0.43% short of"
+  },
+  {
+   "topic": "Real estate tax collections",
+   "what_was_recorded": "Real estate tax collections were described as strong, with a stated collection rate and year-end uncollected amount.",
+   "figures_as_printed": [
+    "$17,691,058",
+    "98.93%",
+    "$191,375",
+    "$228,736"
+   ],
+   "quote": "real estate tax collections remain strong, at $17,691,058, which represents a"
+  },
+  {
+   "topic": "Local receipts shortfall",
+   "what_was_recorded": "Local receipts came in short of the projection.",
+   "figures_as_printed": [
+    "$112,085",
+    "3.36%",
+    "$3,339,522"
+   ],
+   "quote": "local receipts came in $112,085, or 3.36%, short of the $3,339,522 projection."
+  },
+  {
+   "topic": "Motor vehicle excise",
+   "what_was_recorded": "Motor vehicle excise collections fell below the estimate.",
+   "figures_as_printed": [
+    "$1,213,066",
+    "$1,179,520",
+    "$33,546"
+   ],
+   "quote": "the estimate used for motor vehicle excise tax collections was $1,213,066, while collections"
+  },
+  {
+   "topic": "Tax commitments issued late",
+   "what_was_recorded": "Two commitments totaling a stated amount were issued in June and due in FY2012.",
+   "figures_as_printed": [
+    "$71,561.76"
+   ],
+   "quote": "of two commitments, totaling $71,561.76. these bills were processed"
+  },
+  {
+   "topic": "School department revenue",
+   "what_was_recorded": "School Department revenue came in below estimate due to one fewer Pre-K classroom.",
+   "figures_as_printed": [
+    "$110,000",
+    "$83,634",
+    "$26,366"
+   ],
+   "quote": "the estimate used for school department revenue was $110,000, while collections were"
+  },
+  {
+   "topic": "Investment income",
+   "what_was_recorded": "Investment income came in well below estimate; the estimate may need lowering for FY12.",
+   "figures_as_printed": [
+    "$50,000",
+    "$22,392"
+   ],
+   "quote": "the estimate used for investment income was $50,000, while collections were $22,392."
+  },
+  {
+   "topic": "Building permit receipts",
+   "what_was_recorded": "Building permit receipts were strong, creating an expenditure issue for inspector fees.",
+   "figures_as_printed": [
+    "$15,422",
+    "about 6%"
+   ],
+   "quote": "remained strong at $15,422, or about 6%, over the original estimate."
+  },
+  {
+   "topic": "State aid shortfall",
+   "what_was_recorded": "State aid came in below anticipation based on the Cherry Sheet.",
+   "figures_as_printed": [
+    "$38,386"
+   ],
+   "quote": "state aid came in at $38,386 less than anticipated, based upon the cherry sheet."
+  },
+  {
+   "topic": "FY2011 department turn backs",
+   "what_was_recorded": "Departments turned back a total amount, mostly unexpended unemployment expense from the Stabilization Fund supplemental appropriation.",
+   "figures_as_printed": [
+    "$145,785",
+    "$117,164",
+    "$28,621",
+    "$4,441",
+    "$24,180"
+   ],
+   "quote": "all departments turned back a total of $145,785, after accounting for final"
+  },
+  {
+   "topic": "Telephone expense overage",
+   "what_was_recorded": "Town-wide telephone expense exceeded the original appropriation; a transfer covers part of the overage, the rest from other Central Purchasing lines.",
+   "figures_as_printed": [
+    "$5,185.99",
+    "$30,000",
+    "$38,699.20",
+    "$8,699.20",
+    "$42,595.15",
+    "$39,440.11"
+   ],
+   "quote": "the original appropriation of $30,000 was insufficient to meet the expense, which was $38,699.20."
+  },
+  {
+   "topic": "Final transfer requests for overages",
+   "what_was_recorded": "Final set of transfer requests needed to cover overages in Plumbing Inspection and Central Purchasing.",
+   "figures_as_printed": [
+    "$10,859.75"
+   ],
+   "quote": "the final set of transfer requests total$10,859.75 and are needed to cover"
+  },
+  {
+   "topic": "Gas, Plumbing and Electrical Inspector budgets",
+   "what_was_recorded": "Inspector fees are a percentage of permit fees; actuals exceeded budgets, with a deficit in Plumbing Inspector budget to close.",
+   "figures_as_printed": [
+    "7,500",
+    "8,440",
+    "(940)",
+    "12,710",
+    "(5,210)",
+    "17,500",
+    "24,882",
+    "(7,382)",
+    "$4,996.66"
+   ],
+   "quote": "each of these inspectors receives a percentage of the fee collected rather than a flat fee, which"
+  },
+  {
+   "topic": "Revenue deficit calculation",
+   "what_was_recorded": "Calculation of revenue deficit showing budget, actual and variance for local receipts and state aid, with closeouts and a court judgement deficit.",
+   "figures_as_printed": [
+    "$3,339,522.00",
+    "$3,227,436.70",
+    "$(112,085.30)",
+    "$6,127,433.00",
+    "$6,089,047.44",
+    "$ (38,385.56)",
+    "$145,785.07",
+    "$33,852.25",
+    "$90,000.00",
+    "$119,166.46"
+   ],
+   "quote": "$6,127,433.00 $6,089,047.44 $ (38,385.56)"
+  },
+  {
+   "topic": "Charter and choice tuition and reimbursement variances",
+   "what_was_recorded": "Charter and choice tuition assessments, reimbursements and school choice revenue differed from Cherry Sheet estimates because of enrollment changes.",
+   "figures_as_printed": [
+    "$325,360.00",
+    "$259,434.00",
+    "$65,926.00",
+    "$284,958.00",
+    "$355,494.00",
+    "($70,536.00)",
+    "$39,759.00",
+    "$3,262.00",
+    "($36,497.00)",
+    "$26,279.00",
+    "$21,806.00",
+    "($4,473.00)",
+    "$393,693.00",
+    "$370,139.00",
+    "($23,554.00)",
+    "$23,820.00"
+   ],
+   "quote": "original estimates are based upon pre-enrollment data as of march 15th of the prior fiscal year."
+  },
+  {
+   "topic": "Monty Tech withdrawal cost",
+   "what_was_recorded": "Superintendent is investigating cost of buy-out from Monty Tech and buy-in to Nashoba Valley; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "investigating implications (including cost of \"buy-out\") of"
+  },
+  {
+   "topic": "Library FY11 result",
+   "what_was_recorded": "Library reported FY11 came in under budget; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "fy11 came in under budget."
+  },
+  {
+   "topic": "Town Hall renovations project budget",
+   "what_was_recorded": "Town Hall renovation budget line items, subtotal, added carpet upgrade and net amount.",
+   "figures_as_printed": [
+    "51,252.14",
+    "9,600.00",
+    "4,100.00",
+    "5,000.00",
+    "5,200.00",
+    "6,881.00",
+    "7,346.00",
+    "11,200.00",
+    "49,327.00",
+    "1,000.00",
+    "925.14"
+   ],
+   "quote": "town hall renovations project budget:"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Final set of transfer requests to cover Plumbing Inspection and Central Purchasing overages",
+   "amount_as_printed": "$10,859.75",
+   "outcome": "not stated",
+   "quote": "the final set of transfer requests total$10,859.75 and are needed to cover"
+  },
+  {
+   "description": "Transfer to cover town-wide Telephone Expenses in FY11 (Central Purchasing)",
+   "amount_as_printed": "$5,185.99",
+   "outcome": "not stated",
+   "quote": "a total of $5,185.99 is needed to cover town-wide telephone expenses in fy11."
+  },
+  {
+   "description": "Transfer to close deficit in Plumbing Inspector budget",
+   "amount_as_printed": "$4,996.66",
+   "outcome": "not stated",
+   "quote": "a total of $4,996.66 is needed to be transferred to close the deficit in the plumbing inspector's"
+  },
+  {
+   "description": "Chapter 44 §33B transfer table (small transfers among appropriations; amounts partly garbled in OCR, includes Tax Collector, Town Accountant, Council on Aging, Library, Legal, Veterans Benefits, Plumbing Inspector, Central Purchasing, Band Concerts lines)",
+   "amount_as_printed": "$5,185.19; 4.28; 520.82; 4,436.20; 560.46; 1,486.79; 2,338.84; 1,360.36; 152.00; total 12,8577F (garbled)",
+   "outcome": "not stated; signature blocks for Board of Selectmen chair and Finance Committee chairman present, dates not legible",
+   "quote": "name of appropriation funds are transferred from | amount | name of appropriation funds are transferred to"
+  },
+  {
+   "description": "Chapter 44 §33B transfers from Health Insurance and Medicare Expense to Police, Fire, Veterans Benefits and Public Buildings lines",
+   "amount_as_printed": "$10,000.00; $2,500.00; $10,000.00; $2,500.00; $8,500.00; $10,000.00",
+   "outcome": "not stated; signature blocks for Board of Selectmen chair and Finance Committee chairman present",
+   "quote": "medicare expense $10,000.00 public buildings, utilities"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; no minutes were available for approval",
+   "quote": "no minutes were available for approval",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Library, Monty Tech, Service Level Team)",
+   "resolution": "updates received; committee to use a different reporting rhythm",
+   "quote": "3) committee reports - we will establish a different rhythm: provide opportunity to update committee, not necessity.",
+   "tags": [
+    "committee reports",
+    "library",
+    "Monty Tech",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Pavement Management Plan presentation",
+   "resolution": "postponed",
+   "quote": "pavement management plan presentation was postponed until more committee members are available.",
+   "tags": [
+    "pavement",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Town Manager updates (FY11 final report, draft calendar, Town Hall renovations, paving projects)",
+   "resolution": "presented; Town Manager updates received",
+   "quote": "town manager updates - ks presented:",
+   "tags": [
+    "budget",
+    "FY11 close out",
+    "town hall",
+    "paving",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "dates set",
+   "quote": "october 6, 2011 for special meeting on regional dispatch",
+   "tags": [
+    "schedule",
+    "regional dispatch"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:30 p.m., approved",
+   "quote": "br made motion to adjourn at 9:30 p.m., bl seconded, all approved",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Final Report on FY11 (memo from Kerry A. Speidel, dated September 13, 2011, FY2011 Budget Close Out)",
+   "where": "list",
+   "quote": "final report on fy11 (see attachment)"
+  },
+  {
+   "name": "Draft Calendar",
+   "where": "list",
+   "quote": "draft calendar (see attachment)"
+  },
+  {
+   "name": "Update on Town Hall Renovations",
+   "where": "list",
+   "quote": "update on town hall renovations (see attachment)"
+  },
+  {
+   "name": "CHAPTER 44 § 33B TRANSFERS (transfer tables in packet)",
+   "where": "text",
+   "quote": "chapter 44 § 33b transfers"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY2011 close out",
+  "budget transfers",
+  "revenue shortfall",
+  "inspector fees",
+  "tuition and charter",
+  "Town Hall renovations",
+  "Monty Tech",
+  "library",
+  "pavement",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "town manager updates - ks presented:"
+ },
+ "dropped_unquoted_by_field": {}
 }

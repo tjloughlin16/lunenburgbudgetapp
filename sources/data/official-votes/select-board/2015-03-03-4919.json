@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-03-03",
  "docid": "4919",
@@ -12,15 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of September 16, 2014",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes of september 16, 2014 were presented and approved."
-  },
-  {
-   "motion": "Support the proclamation for Boys and Girls Club Week from March 22 to March 28, 2015",
+   "motion": "To support the proclamation for Boys and Girls Club Week from March 22 to March 28, 2015.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
@@ -28,31 +20,31 @@
    "quote": "motion: p. bertram to support the proclamation for boys and girls club week from march 22 to march 28, 2015 2nd: j. toale vote: all in favor"
   },
   {
-   "motion": "Adopt the Domestic Violence Leave Policy and Workplace Violence Policy",
+   "motion": "To adopt the Domestic Violence Leave Policy & Workplace Violence Policy.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to adopt the domestic violence leave policy & workplace violence policy 2\": j. toale vote: all in favor"
+   "quote": "motion: p. bertram to adopt the domestic violence leave policy & workplace violence policy"
   },
   {
-   "motion": "Authorize the emergency expenditure/deficit spending for library pipe damage as requested by the Town Manager",
+   "motion": "To authorize the emergency expenditure/deficit spending as requested by the Town Manager under M.G.L. Chapter 44, §31(d).",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2°°: j. toale to authorize the emergency expenditure/deficit spending as requested by the town manager vote: all in favor"
+   "quote": "to authorize the emergency expenditure/deficit spending as requested by the town manager vote: all in favor"
   },
   {
-   "motion": "Appoint Jean Larkin, Shelia Craigen, and Myleen Mallari to the Senior Tax Work Off Committee with a term to expire June 30, 2015",
+   "motion": "To appoint Jean Larkin, Shelia Craigen and Myleen Mallari to the Senior Tax Work Off Committee with a term to expire June 30, 2015.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram to appoint jean larkin, shelia craigen and myleen mallari to the senior tax work off committee with a term to expire june 30, 2015 2*d: j. toale vote: all in favor"
+   "procedural": false,
+   "quote": "motion: p. bertram to appoint jean larkin, shelia craigen and myleen mallari to the senior tax work off committee with a term to expire june 30, 2015"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "J. Toale",
    "outcome": "passed",
@@ -61,6 +53,315 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is OCR'd minutes from macOS Vision. All votes recorded with clear motion, second, and outcome. No votes recorded as failed.",
- "cost_usd": 0.1004375
+ "note": "Text is OCR of scanned minutes with visible errors (e.g., garbled \"2°°\" and \"2\\\": J. Toale\" lines, stray characters, some dates truncated). Votes are recorded only as \"All in Favor\" with no tally, so outcomes are recorded as \"passed\". The approval of the September 16, 2014 minutes and the warrant signing have no recorded motion, so they are listed as decisions, not votes. No transfers are recorded.",
+ "cost_usd": 0.00916382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Thomas Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "",
+   "status": "present",
+   "quote": "thomas alonzo, chair; paula bertram, vice chair; jamie toale, clerk, robert ebersole, phyllis luck"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "and town manager kerry speidel present"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board will act on the cable license negotiation item (appointing a committee to conduct a public hearing) at its next meeting.",
+   "quote": "the board will act on this item at their next meeting."
+  },
+  {
+   "decision": "Town Manager to contact the Public Access Cable Committee to ascertain interest in serving on the committee.",
+   "quote": "ms. speidel will contact the public access cable committee to ascertain interest in serving on the committee."
+  },
+  {
+   "decision": "Town Manager asked Mr. Burney to prepare a memo outlining the storm water and village district bylaw workshop issues, timetable, responsibilities and expected costs.",
+   "quote": "ms. speidel asked mr. burney to put together a memo outlining all of these issues such as timetable and who is doing what, expected costs, etc."
+  },
+  {
+   "decision": "Town Manager requested DPW obtain a comprehensive report on the Library heating system's issues and what DPW has done to maintain it, and a quote for replacement.",
+   "quote": "ms. speidel requested dpw obtain a comprehensive report on the system's issues and what dpw has done to date to maintain the current system."
+  },
+  {
+   "decision": "Chair will send the draft Selectmen's goal list to the other members in advance of discussion.",
+   "quote": "mr. alonzo will send out the draft goal list to the other members in advance of discussion."
+  },
+  {
+   "decision": "Board signed the accounts payable warrant presented by the Chair.",
+   "quote": "the board signed the warrant."
+  },
+  {
+   "decision": "The minutes of September 16, 2014 were approved (no motion or tally recorded).",
+   "quote": "minutes of september 16, 2014 were presented and approved."
+  },
+  {
+   "decision": "Board will discuss the farmers market with the Agricultural Commission at a future meeting.",
+   "quote": "the board will discuss this further with the agricultural commission at a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Chair presented the accounts payable warrant, which the Board then signed.",
+   "figures_as_printed": [
+    "$392,934.55"
+   ],
+   "quote": "mr. alonzo presented the accounts payable warrant in the amount of $392,934.55."
+  },
+  {
+   "topic": "Library burst-pipe damage",
+   "what_was_recorded": "Damage to Library materials from the burst pipes was totaled.",
+   "figures_as_printed": [
+    "$4,600.00"
+   ],
+   "quote": "the damage to library materials due to the burst pipes totaled $4,600.00."
+  },
+  {
+   "topic": "MIIA insurance credits",
+   "what_was_recorded": "The total annual MIIA credit available to the town was stated, with at least half eligible this year.",
+   "figures_as_printed": [
+    "$11,000"
+   ],
+   "quote": "the total credit available to the town is $11,000, of which the town would be eligible for at least half of this amount this year"
+  },
+  {
+   "topic": "High school roof leak repairs",
+   "what_was_recorded": "School Committee reported money already spent on roof leak mitigation with no success so far.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "$10,000 has been spent to mitigate these leaks so far with no success."
+  },
+  {
+   "topic": "State local aid (Governor's budget)",
+   "what_was_recorded": "Town Manager reported expected state aid increases ahead of the Governor's budget release.",
+   "figures_as_printed": [
+    "2.4%",
+    "3.6%"
+   ],
+   "quote": "chapter 70 will receive an increase of 2.4% and unrestricted general government aid will have a 3.6% increase"
+  },
+  {
+   "topic": "Regional dispatch consolidation (Berlin)",
+   "what_was_recorded": "Berlin's dispatch equipment replacement cost was reported as part of the regional dispatch feasibility discussion.",
+   "figures_as_printed": [
+    "$250,000",
+    "$400,000"
+   ],
+   "quote": "berlin needs all their equipment replaced in the amount of $250,000 to $400,000."
+  },
+  {
+   "topic": "FY'16 budget expenditure report",
+   "what_was_recorded": "A member requested an expenditure report excluding prior years' encumbrances to show appropriated versus expended amounts; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "he requested an expenditure report that excludes prior years' encumbrances in order to show what was appropriated and what was expended."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "thanks to departing members; encouraging citizens to serve",
+   "quote": "mr. ebersole wanted to follow up on several of the board's comments tonight regarding appointed or elected people leaving their terms for various reasons"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements and Boys and Girls Club Week proclamation",
+   "resolution": "proclamation approved",
+   "tags": [
+    "proclamation",
+    "announcements",
+    "boys and girls club"
+   ],
+   "quote": "mr. alonzo read the proclamation aloud:"
+  },
+  {
+   "topic": "Domestic Violence Leave Policy & Workplace Violence Policy",
+   "resolution": "adopted",
+   "tags": [
+    "policy",
+    "personnel",
+    "MIIA credits"
+   ],
+   "quote": "ms. speidel requested the board approve two policies."
+  },
+  {
+   "topic": "FY'16 Budget discussion",
+   "resolution": "no action; discussed goal setting and services",
+   "tags": [
+    "budget",
+    "FY16",
+    "goal setting"
+   ],
+   "quote": "2. discuss/review fy'16 budget"
+  },
+  {
+   "topic": "Workshop with Planning Board",
+   "resolution": "date confirmed; topics identified",
+   "tags": [
+    "planning board",
+    "village district bylaw",
+    "storm water"
+   ],
+   "quote": "ms. speidel confirmed the planning board is available on march 10"
+  },
+  {
+   "topic": "Emergency expenditure for Library burst pipes",
+   "resolution": "emergency declared; deficit spending authorized",
+   "tags": [
+    "library",
+    "emergency",
+    "deficit spending",
+    "insurance claim"
+   ],
+   "quote": "ms. speidel reported the library suffered significant damage due to burst pipes on february 17"
+  },
+  {
+   "topic": "Cable license renewal committee",
+   "resolution": "continued to next meeting",
+   "tags": [
+    "cable",
+    "Comcast",
+    "committee"
+   ],
+   "quote": "ms. speidel reported it is time to begin the negotiation process with comcast for renewal of the cable license."
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes approved; warrant signed",
+   "tags": [
+    "minutes",
+    "warrant",
+    "goals"
+   ],
+   "quote": "minutes of september 16, 2014 were presented and approved."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "tags": [
+    "committees",
+    "Board of Health",
+    "Finance Committee",
+    "School Committee",
+    "Planning Board",
+    "Sewer Commission"
+   ],
+   "quote": "mr. ebersole announced george emond will not be running for reelection to the board of health"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "tags": [
+    "state aid",
+    "regional dispatch",
+    "volunteer appreciation"
+   ],
+   "quote": "town manager report- ms. speidel reported governor baker will be releasing his budget tomorrow."
+  },
+  {
+   "topic": "Appointments to Senior Tax Work Off Committee",
+   "resolution": "appointed three members",
+   "tags": [
+    "appointments",
+    "senior tax work off"
+   ],
+   "quote": "ms. speidel requested the board appoint jean larkin, (citizen representative)"
+  },
+  {
+   "topic": "Final public comment and adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn the meeting"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Domestic Violence Leave Policy & Workplace Violence Policy",
+   "where": "text",
+   "quote": "review / approve domestic violence leave policy & workplace violence policy"
+  },
+  {
+   "name": "Accounts payable warrant ($392,934.55)",
+   "where": "text",
+   "quote": "mr. alonzo presented the accounts payable warrant in the amount of $392,934.55."
+  },
+  {
+   "name": "Draft village district bylaw",
+   "where": "text",
+   "quote": "discussing the draft village district bylaw and storm water management"
+  },
+  {
+   "name": "Architectural preservation bylaw",
+   "where": "text",
+   "quote": "they also discussed the architectural preservation bylaw."
+  },
+  {
+   "name": "Expenditure report excluding prior years' encumbrances",
+   "where": "text",
+   "quote": "he requested an expenditure report that excludes prior years' encumbrances in order to show what was appropriated and what was expended."
+  },
+  {
+   "name": "Draft goal list",
+   "where": "text",
+   "quote": "mr. alonzo will send out the draft goal list to the other members in advance of discussion."
+  },
+  {
+   "name": "Warrant article for town meeting",
+   "where": "text",
+   "quote": "ms. bertram asked what has to be ready for the deadline for the warrant article for town meeting."
+  }
+ ],
+ "tags": [
+  "select board",
+  "FY16 budget",
+  "emergency expenditure",
+  "library",
+  "cable license",
+  "policies",
+  "appointments",
+  "committee reports",
+  "town manager report",
+  "state aid",
+  "regional dispatch"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

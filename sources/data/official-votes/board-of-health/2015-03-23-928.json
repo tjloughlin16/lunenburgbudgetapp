@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2015-03-23",
  "docid": "928",
@@ -12,23 +12,135 @@
  },
  "votes": [
   {
-   "motion": "require Ms. Cassidy to prepare a schedule of work to be completed, dates for completion and a description of the violations repaired",
+   "motion": "Require Ms. Cassidy to prepare a schedule of work to be completed, dates for completion and a description of the violations repaired (1382 Mass Avenue).",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by passios and second by jewell, the boar d voted to require ms. cassidy to prepare a schedul e of work to be completed, dates for completion and a description of the violations repaired. all in favor."
+   "quote": "on motion by passios and second by jewell, the boar d voted to require ms. cassidy to prepare a schedul e of work to be completed"
   },
   {
-   "motion": "allow additional time to correct any outstanding violations",
+   "motion": "Allow additional time to correct any outstanding violations (828 Lancaster Avenue).",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passios, the boar d voted to allow additional time to correct any outstanding violations. all in favor."
+   "quote": "on motion by jewell and second by passios, the boar d voted to allow additional time to correct any outstanding violations."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR artifacts preserved in quotes: \"boar d\" for \"board\", \"schedul e\" for \"schedule\" (line break collapsed to space). Minutes list prior minutes as \"MINUTES APPROVED\" without recorded motion language, so not included as a vote. Meeting adjournment stated as fact without recorded motion.",
- "cost_usd": 0.1075305
+ "note": "Text extraction, not a scan. Some words are split mid-word by extraction artifacts (e.g. \"boar d\", \"schedul e\", \"hous ing\"); quotes keep the printed spacing. Minutes list 'MINUTES APPROVED' but record no motion or vote, and the adjournment at 7:40 pm has no motion recorded, so neither is entered as a vote. No dollar figures appear. No public comment section is printed; Ms. Cassidy appeared on an open housing complaint and is listed as an attendee, not as public comment. No documents list or exhibits are printed.",
+ "cost_usd": 0.00428972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "according to agent jim garreffi,"
+  },
+  {
+   "name": "Mary Cassidy",
+   "status": "present",
+   "quote": "mary cassidy met with the board to discuss an open housing complaint."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection reports for 843 Chase Road, 79 Beachview Road and 484 Holman were acknowledged (no vote recorded).",
+   "quote": "title 5 inspection reports acknowledged : 843 chase road 79 beachview road 484 holman"
+  },
+  {
+   "decision": "Septic permit for 1382 Mass Avenue was signed (no vote recorded).",
+   "quote": "septic permits signed : 1382 mass avenue"
+  },
+  {
+   "decision": "Minutes of January 5, 2015 and March 2, 2015 recorded as approved (no motion or vote recorded).",
+   "quote": "minutes approved: january 5, 2015 march 2, 2015"
+  },
+  {
+   "decision": "Chairman Emond asked for a schedule of the necessary work at 1382 Mass Avenue with a description of how the problems are to be resolved, to be discussed with Agent Garreffi and completed once the snow has melted.",
+   "quote": "chairman emond stated that he would like a schedule prepared for the necessary work with a description of how the problems are to be resolved."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (no motion recorded)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approved: january 5, 2015 march 2, 2015"
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "tags": [
+    "Title 5",
+    "septic"
+   ],
+   "quote": "title 5 inspection reports acknowledged : 843 chase road 79 beachview road 484 holman"
+  },
+  {
+   "topic": "Septic permit signing, 1382 Mass Avenue",
+   "resolution": "signed",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed : 1382 mass avenue"
+  },
+  {
+   "topic": "Housing complaint, 1382 Mass Avenue (Cassidy)",
+   "resolution": "owner directed to prepare schedule of work",
+   "tags": [
+    "housing code",
+    "enforcement"
+   ],
+   "quote": "mary cassidy met with the board to discuss an open housing complaint."
+  },
+  {
+   "topic": "Housing violations, 828 Lancaster Avenue",
+   "resolution": "additional time granted to correct violations",
+   "tags": [
+    "housing code",
+    "enforcement"
+   ],
+   "quote": "on motion by jewell and second by passios, the boar d voted to allow additional time to correct any outstanding violations."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of health",
+  "Title 5",
+  "septic",
+  "housing code enforcement",
+  "minutes approval",
+  "housing violations"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

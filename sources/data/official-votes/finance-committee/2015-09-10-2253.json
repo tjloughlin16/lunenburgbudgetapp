@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-09-10",
  "docid": "2253",
@@ -12,15 +12,233 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Terri B.",
    "seconded_by": "Jay S.",
+   "outcome": "passed 4-0",
+   "procedural": true,
    "quote": "terri b. moved to adjourn the meeting and jay s. seconded the motion. the board voted 4-0 in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted text, readable. Four members present (Mark Erickson, Terri Burchfield, Jay Simeone, John Henshaw); vote count of 4-0 matches attendance.",
- "cost_usd": 0.0899235
+ "note": "Text is OCR from a scanned set of minutes, with typos carried into the source (e.g. 'ourseives', 'was the spreadsheet was not yet ready'). Only one recorded vote (adjournment, 4-0). Public comment: 'Public--None.' Attendee roles are given only where the minutes print them; Jay Simeone's role is not printed. Several items are discussion without a motion, so they are recorded as decisions or budget items instead of votes.",
+ "cost_usd": 0.00515972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark. Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: mark. erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "absent",
+   "quote": "not present: karin menard"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "status": "absent",
+   "quote": "not present: kerry lafleur, karen brochu, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Karen Brochu",
+   "status": "absent",
+   "quote": "not present: kerry lafleur, karen brochu, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "absent",
+   "quote": "not present: kerry lafleur, karen brochu, tom alonzo, bos liaison"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will work on the school department expenditure spreadsheet and bring what he has before the next meeting.",
+   "quote": "john will work on the spreadsheet and see what he can come up with prior to the next meeting."
+  },
+  {
+   "decision": "John Henshaw will bring the printed copy of the minutes to the September 24 meeting, and the committee will review the minutes of both meetings then.",
+   "quote": "john did not bring the printed copy of the minutes. he will bring the copy to the next meeting on september 24"
+  },
+  {
+   "decision": "Sale of surplus property was added to future agendas.",
+   "quote": "mark has added sale of surplus property to our future agendas."
+  },
+  {
+   "decision": "Committee members were asked to familiarize themselves with the priority-driven budget article for discussion at the September 24 meeting.",
+   "quote": "mark suggested we familiarize ourseives with her article for a discussion at the september 24 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2017 revenue growth constraint",
+   "what_was_recorded": "Annual revenue growth, historically 3.5% to 3.8%, limits opportunities to pursue new initiatives.",
+   "figures_as_printed": [
+    "3.5%",
+    "3.8%"
+   ],
+   "quote": "the annual growth of revenues (historically it ranges from 3.5% to 3.8%) limits opportunities to pursue new initiatives."
+  },
+  {
+   "topic": "Change order #3 (parking lot)",
+   "what_was_recorded": "Change order #3 of $49,000 corrected a drainage problem with the initial paving of the parking lot and made other less costly changes.",
+   "figures_as_printed": [
+    "$49,000"
+   ],
+   "quote": "change order #3 in the amount of $49,000 is to correct a drainage problem with the initial paving of the parking lot"
+  },
+  {
+   "topic": "Change orders 1 and 2 and total change orders",
+   "what_was_recorded": "Change orders 1 and 2 totalled $88,800; total change orders are nearly $140,000.",
+   "figures_as_printed": [
+    "$88,800",
+    "nearly $140,000"
+   ],
+   "quote": "change orders 1 & 2 amounted to $88,800; total change orders total nearly $140,000."
+  },
+  {
+   "topic": "Contingency fund remainder",
+   "what_was_recorded": "Unexpended contingency fund monies will be spent on the schools, as they will be what remains from the new school building project. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "unexpended monies in the contingency fund will be spent on the schools as they will be what remain from the new school building project."
+  },
+  {
+   "topic": "Capital plan horizon and borrowing",
+   "what_was_recorded": "Committee discussed extending the capital plan horizon to 15 or more years and when to borrow versus buy capital equipment with cash. No amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "the committee met and discussed extending the horizon for the capital plan to 15 or more years, and when to borrow compared with purchasing capital equipment with cash."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "no action; Board of Selectmen booth and ATFC meeting noted",
+   "quote": "meeting called to order by mark e. at 7:02 pm.",
+   "tags": [
+    "call to order",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Town Manager's Report",
+   "resolution": "no report",
+   "quote": "there was no town manager report; kerry did not attend this meeting.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "FY2017 budget process discussion",
+   "resolution": "discussed; article circulated for September 24 discussion",
+   "quote": "committee discussion on the fy2017 budget process",
+   "tags": [
+    "FY2017 budget",
+    "priority-driven budget",
+    "revenue growth"
+   ]
+  },
+  {
+   "topic": "School department expenditure spreadsheet",
+   "resolution": "not ready; John Henshaw to prepare for next meeting",
+   "quote": "john has begun to look at school department expenditures over time but was the spreadsheet was not yet ready",
+   "tags": [
+    "schools",
+    "spending over time"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to September 24 meeting",
+   "quote": "john did not bring the printed copy of the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "received; change orders and capital plan reported",
+   "quote": "committee/department dpw-john h. capital planning-john h.",
+   "tags": [
+    "DPW",
+    "capital planning",
+    "change orders",
+    "sewer",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "surplus property added to future agendas; pavement management plan listed",
+   "quote": "mark has added sale of surplus property to our future agendas.",
+   "tags": [
+    "surplus property",
+    "pavement"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted",
+   "quote": "the next two meetings will be september 24th and october 8th.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:21 pm, 4-0",
+   "quote": "terri b. moved to adjourn the meeting and jay s. seconded the motion. the board voted 4-0 in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Anatomy of a Priority-Driven Budget Process (GFOA article, www.gfoa.org)",
+   "where": "list",
+   "quote": "terri handed out copies of anatomy of a priority-driven budget process, an article published by the government finance officers association"
+  },
+  {
+   "name": "School department expenditures spreadsheet (John Henshaw)",
+   "where": "text",
+   "quote": "john has begun to look at school department expenditures over time but was the spreadsheet was not yet ready for committee review."
+  }
+ ],
+ "tags": [
+  "FY2017 budget",
+  "priority-driven budgeting",
+  "school spending",
+  "capital planning",
+  "change orders",
+  "new school building",
+  "minutes",
+  "surplus property",
+  "pavement management"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "terri handed out copies of"
+ },
+ "dropped_unquoted_by_field": {}
 }

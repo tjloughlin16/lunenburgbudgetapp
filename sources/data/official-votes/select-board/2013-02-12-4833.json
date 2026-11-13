@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2013-02-12",
  "docid": "4833",
@@ -12,31 +12,471 @@
  },
  "votes": [
   {
-   "motion": "Authorize the transfer of Liquor License from Bangkok Hill to PP Group LLC d/b/a Bangkok Hill",
+   "motion": "Authorize the transfer of Liquor License from Bangkok Hill to PP Group LLC d/b/a Bangkok Hill.",
    "moved_by": "Mr. Sund",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. sund moved to authorize the transfer of liquor license from bangkok hill to pp group llc d/b/a bangkok hill. mr. debettencourt seconded. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "mr. sund moved to authorize the transfer of liquor license from bangkok hill to pp group llc d/b/a bangkok hill."
   },
   {
-   "motion": "Ratify the Appointments of Stan Barney and Peter Lekaditis to Reserve Police Officers",
+   "motion": "Ratify the Appointments of Stan Barney and Peter Lekaditis as Reserve Police Officers.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "ms. bertram moved to ratify the appointments of stan barney and peter lekaditis to reserve police officers. mr. debettencourt seconded. on vote motion carried, 4 in favor, o opposed."
+   "procedural": false,
+   "quote": "ms. bertram moved to ratify the appointments of stan barney and peter lekaditis to reserve police officers."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote motion carried, 4 in favor, 0 opposed."
+   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. bertram seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Text is readable OCR output; three votes recorded, all passed.",
- "cost_usd": 0.0969625
+ "dropped_unquoted": 1,
+ "note": "OCR scan (macOS Vision) with garbled passages: the Warrants figures, the CORI item and some attendance/agenda lines are partly unreadable; \"$S4,450\" is printed as OCR returned it and is uncertain. Votes recorded: 3 (liquor transfer, reserve police ratification, adjournment), each with the count printed as \"4 in favor, 0 opposed\" (the ratification count's \"O opposed\" is an OCR reading). The prior week's land-purchase vote is discussed in public comment but is not a motion in these minutes. No motion is recorded for approving the 2/5/13 minutes or the warrants. Mr. Alonzo's and Ms. Bertram's comments on reconsideration are not motions. No transfers recorded. The CORI handout is referenced but no list of documents is printed.",
+ "cost_usd": 0.010682220000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "(Ernie) Sund",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "(ernie) sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "(ernie) sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "(ernie) sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "acting Chairperson",
+   "status": "present",
+   "quote": "tom alonzo announced that the boys & girls club of lunenburg will be holding a fundraiser at lunenburg high school"
+  },
+  {
+   "name": "David Matthews",
+   "role": "Selectman",
+   "status": "absent",
+   "quote": "not present was david matthews"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "(ernie) sund, paula bertram, steven m. debettencourt and town manager kerry speidel."
+  },
+  {
+   "name": "Betty McDonald",
+   "role": "member of the public, Island Road",
+   "status": "present",
+   "quote": "betty mcdonald, island road spoke to the bos concerning the public's right to vote being taken away at last weeks"
+  },
+  {
+   "name": "Dave McDonald",
+   "role": "member of the public, Island Road",
+   "status": "present",
+   "quote": "dave mcdonald, island road, spoke to the bos concerning last weeks meeting."
+  },
+  {
+   "name": "John Whalen",
+   "role": "member of the public, 526 West Townsend Road",
+   "status": "present",
+   "quote": "john whalen, 526 west townsend road, spoke to the bos saying that he agrees with mir. mcdonald."
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "member of the public, Sunnyhill Road",
+   "status": "present",
+   "quote": "lars widstrand, sunnyhill road, spoke to the bos and stated that he witnessed something last week"
+  },
+  {
+   "name": "Jane Denike",
+   "role": "member of the public, 347 Highland Street",
+   "status": "present",
+   "quote": "jane denike, 347 highland street, spoke to the bos in support of the mr. sund and mr. debettencourt."
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "mr. robert bowen, representing the applicant, explained that this is a transfer of the liquor license"
+  },
+  {
+   "name": "Khamphet Savanpanyadeth",
+   "role": "representing PP Group LLC",
+   "status": "present",
+   "quote": "khamphet savanpanyadeth, representing pp group llc said that this is his first time applying for a liquor license"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The CORI handout (Administrative Regulations) stays on the agenda for the next meeting for further discussion; board members to review it. No vote needed as the procedures are the Town Manager's to adopt.",
+   "quote": "board members will review the handout and it will remain on the agenda for the next meeting for further discussion."
+  },
+  {
+   "decision": "Town Counsel directed by the Town Manager to advise Mass PV1 that the Town is willing to purchase 100% of the credits at the original price.",
+   "quote": "ms. speidel has directed town counsel to advise mass pv1 that we are willing to purchase 100% at the original price of"
+  },
+  {
+   "decision": "The Council on Aging's request to hold the Whitney Lacka appointment was recorded; the appointment was held.",
+   "quote": "ms. speidel informed the board that the council on aging has asked to hold on this appointment."
+  },
+  {
+   "decision": "Town Manager to check on whether an earlier Annual Town Election would keep newly elected officials from taking office before the original date.",
+   "quote": "ms. speidel will check into this matter for clarification."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Legal fees with the developer and parcel",
+   "what_was_recorded": "Ms. Speidel gave the rough amount spent in legal fees over the last couple of years on this developer and parcel, in answer to Mr. Whalen.",
+   "figures_as_printed": [
+    "$60k",
+    "$70k"
+   ],
+   "quote": "ms. speidel replied roughly between $60k and $70k."
+  },
+  {
+   "topic": "Average tax bill and education spending",
+   "what_was_recorded": "Ms. Speidel gave the average tax bill and average education spending in answer to a question about revenue from 165 more properties.",
+   "figures_as_printed": [
+    "$4k",
+    "$10k"
+   ],
+   "quote": "ms. speidel responded that the average tax bill is around $4k per year and the average spending on education is probably"
+  },
+  {
+   "topic": "Budget shortfall",
+   "what_was_recorded": "Ms. Bertram said the Town is already facing a shortfall in its budget.",
+   "figures_as_printed": [
+    "$226k"
+   ],
+   "quote": "we are already facing a $226k shortfall in our budget"
+  },
+  {
+   "topic": "Proposed $2.1m purchase as a Debt Exclusion",
+   "what_was_recorded": "Ms. Denike said a $2.1m purchase funded by a Debt Exclusion would affect taxpayers much like an Override.",
+   "figures_as_printed": [
+    "$2.1m"
+   ],
+   "quote": "ms. denike went on to say that $2.1m in a debt exclusion is essentially an"
+  },
+  {
+   "topic": "Mass PV1 solar credit price offer",
+   "what_was_recorded": "Mass PV1 withdrew the previously specified credit price and proposed new rates; the first 500 kW at $0.09 and the rest at $0.154; the credit value cited as rising from $0.171 to $0.1989.",
+   "figures_as_printed": [
+    "$0.9 kW",
+    "$0.154",
+    "$0.09",
+    "$0.171",
+    "$0.1989"
+   ],
+   "quote": "mass pv1 is no longer willing to sell the credits at the previously specified price of $0.9 kw and sent a new proposal"
+  },
+  {
+   "topic": "EPG 1 MW project credit calculation",
+   "what_was_recorded": "Ms. Speidel reviewed the value of credit, initial purchase price, savings per kWh and annual savings for the 1 MW EPG Project.",
+   "figures_as_printed": [
+    "$0.1989",
+    "$0.1132",
+    "$0.0578",
+    "1.8%",
+    "$85,700",
+    "23%",
+    "$18,018",
+    "$103,718"
+   ],
+   "quote": "initial credit purchase price is $0.1132, a savings of $0.0578 per kwh"
+  },
+  {
+   "topic": "Town buying the first 500 kW of credits",
+   "what_was_recorded": "Ms. Speidel said the Town buying the 500 kW at $0.09 would save the Town a figure as printed by the OCR (uncertain), with total revenue/savings of $90,486 on 2 MW with PILOT.",
+   "figures_as_printed": [
+    "$0.09",
+    "$S4,450",
+    "$90,486"
+   ],
+   "quote": "ms. speidel said that she will first assume that mass pv1 will sell the town the 500 kw at $0.09 which will save the"
+  },
+  {
+   "topic": "Additional 5 MW purchase and original credit value",
+   "what_was_recorded": "Ms. Speidel gave the added savings if the Town bought another 5 MW and the annual savings if the credit value returned to $0.171.",
+   "figures_as_printed": [
+    "$22,450",
+    "$0.171",
+    "$8500"
+   ],
+   "quote": "if the town were to buy another 5 mw the additional savings would be $22,450 but we would have the added"
+  },
+  {
+   "topic": "Total revenue/savings with 2 MW and PILOT",
+   "what_was_recorded": "Ms. Speidel gave the total revenue/savings if the Town bought 500 kW.",
+   "figures_as_printed": [
+    "$90,486"
+   ],
+   "quote": "the total revenue/savings generated would be $90,486."
+  },
+  {
+   "topic": "Warrants approved for payment list",
+   "what_was_recorded": "Warrants 43-13 and 44-13 and a warrant listed as 17 P were listed on the agenda with amounts; no vote is recorded.",
+   "figures_as_printed": [
+    "$635,302.66",
+    "$248,015.50",
+    "$308,078.72"
+   ],
+   "quote": "warrants: 17 p 43-13 44-13 $635,302.66 $248,015.50 $308,078.72"
+  },
+  {
+   "topic": "Broadband last-mile connection cost",
+   "what_was_recorded": "Mr. Sund reported on fiber connection; the DPW Building's cost was too soon to estimate. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "and it's too soon for an estimate as to what the cost would be to connect that building."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Betty McDonald",
+   "stated_role": "Island Road",
+   "topic": "public's right to vote taken away at last week's meeting",
+   "quote": "betty mcdonald, island road spoke to the bos concerning the public's right to vote being taken away at last weeks"
+  },
+  {
+   "speaker": "Dave McDonald",
+   "stated_role": "Island Road",
+   "topic": "last week's vote and the right to vote",
+   "quote": "dave mcdonald, island road, spoke to the bos concerning last weeks meeting."
+  },
+  {
+   "speaker": "John Whalen",
+   "stated_role": "526 West Townsend Road",
+   "topic": "urged the BOS to reconsider the vote; Town Meeting; legal fees and tax impact",
+   "quote": "john whalen, 526 west townsend road, spoke to the bos saying that he agrees with mir. mcdonald."
+  },
+  {
+   "speaker": "Lars Widstrand",
+   "stated_role": "Sunnyhill Road",
+   "topic": "criticism of last week's vote on land acquisition",
+   "quote": "lars widstrand, sunnyhill road, spoke to the bos and stated that he witnessed something last week"
+  },
+  {
+   "speaker": "Jane Denike",
+   "stated_role": "347 Highland Street",
+   "topic": "support for Mr. Sund and Mr. deBettencourt; representative democracy",
+   "quote": "jane denike, 347 highland street, spoke to the bos in support of the mr. sund and mr. debettencourt."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "7:00PM Public Comment",
+   "resolution": "no action; speakers heard on last week's vote on land purchase and Town Meeting",
+   "quote": "7:00pm public comment",
+   "tags": [
+    "public comment",
+    "Town Meeting",
+    "land purchase"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; Boys & Girls Club fundraiser announced",
+   "quote": "tom alonzo announced that the boys & girls club of lunenburg will be holding a fundraiser at lunenburg high school",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Transfer of Liquor License, Bangkok Hill to PP Group LLC d/b/a Bangkok Hill (public hearing)",
+   "resolution": "approved transfer 4-0",
+   "quote": "mr. alonzo read into record the notice of public hearing for the transfer of liquor license, bangkok hill to pp group llc d/b/a",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Power Purchase Agreement and PILOT Agreement for Solar (Mass PV1 and EPG Solar)",
+   "resolution": "discussed; no vote recorded",
+   "quote": "review and/or execute power purchase agreement and pilot agreement for solar for mass pv1 and/or",
+   "tags": [
+    "solar",
+    "PILOT",
+    "Mass PV1",
+    "EPG Solar",
+    "credits"
+   ]
+  },
+  {
+   "topic": "Revenue & Expenditure Assumptions for 5 Year Forecast, FY14-18",
+   "resolution": "discussed; no action",
+   "quote": "further discussion, revenue & expenditure assumptions for 5 year forecast, fy1418-",
+   "tags": [
+    "budget",
+    "FY14",
+    "forecast"
+   ]
+  },
+  {
+   "topic": "Policies & Procedures: CORI",
+   "resolution": "continued to next meeting",
+   "quote": "policies & procedures: cori - ms. speidel stated that back in december the bos met with labor counsel",
+   "tags": [
+    "CORI",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "listed; no vote recorded",
+   "quote": "minutes/warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported",
+   "quote": "committee reports - mr. sund reported that the capital planning committee met last thursday",
+   "tags": [
+    "capital planning",
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports or Department Reports",
+   "resolution": "discussed; decision requested next week on Annual Town Election date",
+   "quote": "town manager reports or department reports - ms. speidel reported that there will be a special state election",
+   "tags": [
+    "election",
+    "special election",
+    "Town Caucus"
+   ]
+  },
+  {
+   "topic": "Reserve Police Officers appointments",
+   "resolution": "ratified 4-0",
+   "quote": "reserve police officers: stan barney, peter lekaditis - ms. speidel stated that chief marino requested",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Council on Aging appointment (Whitney Lacka)",
+   "resolution": "held at Council on Aging's request",
+   "quote": "council on aging: whitney lacka - ms. speidel informed the board that the council on aging has asked to hold on",
+   "tags": [
+    "appointments",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action; thanks to DPW for snow storm work",
+   "quote": "mr. debettencourt thanked the dpw workers for their dedicated work during the recent snow storm",
+   "tags": [
+    "DPW",
+    "snow storm"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:37PM",
+   "quote": "being no further business mr. debettencourt moved to adjourn the meeting. ms. bertram seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Public Hearing for the Transfer of Liquor License, Bangkok Hill to PP Group LLC d/b/a Bangkok Hill",
+   "where": "text",
+   "quote": "mr. alonzo read into record the notice of public hearing for the transfer of liquor license, bangkok hill to pp group llc d/b/a"
+  },
+  {
+   "name": "Power Purchase Agreement and PILOT Agreement for Solar for Mass PV1 and/or PILOT Agreement for EPG Solar",
+   "where": "text",
+   "quote": "review and/or execute power purchase agreement and pilot agreement for solar for mass pv1 and/or"
+  },
+  {
+   "name": "Calculation of Value Credits (1 MW EPG Project)",
+   "where": "text",
+   "quote": "ms. speidel reviewed the calculation of value credits with the bos regarding the 1 mw epg project stating the"
+  },
+  {
+   "name": "CORI Policy (approved by BOS in December)",
+   "where": "text",
+   "quote": "ms. speidel stated that back in december the bos met with labor counsel, reviewed, and approved the cori policy."
+  },
+  {
+   "name": "CORI Administrative Regulations handout",
+   "where": "text",
+   "quote": "which are included in the handout to the bos this evening"
+  },
+  {
+   "name": "Capital Planning Recommendation hard copy",
+   "where": "text",
+   "quote": "is aware of the totals of the capital planning recommendation and is currently awaiting the hard copy"
+  },
+  {
+   "name": "Email from Dave McDonald to Mr. Sund",
+   "where": "text",
+   "quote": "he had sent mr. sund an email which took him 3.5 hours to compose which mr. sund did not reply to."
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "public comment",
+  "Town Meeting",
+  "land purchase",
+  "liquor license",
+  "solar",
+  "PILOT",
+  "Mass PV1",
+  "EPG Solar",
+  "FY14 budget",
+  "CORI",
+  "town election",
+  "appointments",
+  "reserve police",
+  "Council on Aging",
+  "legal fees",
+  "debt exclusion"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

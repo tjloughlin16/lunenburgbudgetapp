@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2013-11-04",
  "docid": "901",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Grant variance at 21 Sandy Cove Road to allow Presby system with reduced groundwater offset",
+   "motion": "Grant a variance to reduce the groundwater offset for a proposed Presby system at 21 Sandy Cove Road.",
    "moved_by": "Shea",
    "seconded_by": "Jewell",
    "outcome": "passed",
@@ -20,15 +20,158 @@
    "quote": "after discussion and on motion by shea and second by jewell, the variance was granted. all in favor."
   },
   {
-   "motion": "Approve variance at 331 Mulpus Road to allow bedroom increase and reserve system design",
+   "motion": "Approve a variance to design the system at 331 Mulpus Road with the reserve system between the trenches.",
    "moved_by": "Jewell",
    "seconded_by": "Shea",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by shea, the variance for was approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by shea, the variance for was approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two septic system variances voted and approved. The \"MINUTES APPROVED\" notation for October 7, 2013 minutes lacks explicit motion/second language and vote outcome, so was not included as a recorded vote.",
- "cost_usd": 0.09033150000000001
+ "note": "Text is clean extracted text with no scan problems. The chairman's name is split as \"Georg e Emond\" in the opening line; it is recorded as George Emond. The MINUTES APPROVED line records no motion or vote count. Both variances carry \"All in favor\" with no numeric tally, so outcome is \"passed\". The 331 Mulpus Road motion text is garbled in the source (\"the variance for was approved\"). The adjournment at 7:45 pm has no motion stated and is not recorded as a vote. No dollar figures appear in the minutes.",
+ "cost_usd": 0.0038736200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt."
+  },
+  {
+   "name": "David Shea",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, david shea, perry jewell and jack rabbitt."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "bob proctor met with the board of behalf of the owner."
+  },
+  {
+   "name": "Chris Mossman",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "chris mossman met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of October 7, 2013 recorded as approved (no motion or vote text printed).",
+   "quote": "minutes approved: october 7, 2013"
+  },
+  {
+   "decision": "Title 5 inspection reports for 644 Northfield Road, 811 Chase Road and 108 Sunnyhill Road acknowledged.",
+   "quote": "title 5 inspection reports acknowledged : 644 northfield road 811 chase road 108 sunnyhill road"
+  },
+  {
+   "decision": "Septic permits signed for 138 Beal Street, 340 NW Townsend, 305 Leominster Shirley Road and 811 Chase Road.",
+   "quote": "septic permits signed : 138 beal street 340 nw townsend 305 leominster shirley road 811 chase road"
+  },
+  {
+   "decision": "Chairman directed that a discussion for the Woodlands be placed on the agenda for the next Board of Health meeting.",
+   "quote": "chairman emond requested that a discussion for the woodlands be placed on the agenda for the next board of health meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of October 7, 2013",
+   "resolution": "approved (no motion recorded)",
+   "quote": "minutes approved: october 7, 2013",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged : 644 northfield road 811 chase road 108 sunnyhill road",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits",
+   "resolution": "signed",
+   "quote": "septic permits signed : 138 beal street 340 nw townsend 305 leominster shirley road 811 chase road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "21 Sandy Cove Road variance (Presby system, well setback)",
+   "resolution": "variance granted",
+   "quote": "after discussion and on motion by shea and second by jewell, the variance was granted. all in favor.",
+   "tags": [
+    "variance",
+    "well",
+    "groundwater offset"
+   ]
+  },
+  {
+   "topic": "331 Mulpus Road variance (bedroom increase, failed system)",
+   "resolution": "variance approved",
+   "quote": "after discussion and on motion by jewell and second by shea, the variance for was approved.",
+   "tags": [
+    "variance",
+    "septic design",
+    "bedrooms"
+   ]
+  },
+  {
+   "topic": "Woodlands discussion request",
+   "resolution": "placed on next agenda",
+   "quote": "chairman emond requested that a discussion for the woodlands be placed on the agenda for the next board of health meeting.",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection reports (644 Northfield Road, 811 Chase Road, 108 Sunnyhill Road)",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged : 644 northfield road 811 chase road 108 sunnyhill road"
+  },
+  {
+   "name": "Septic permits (138 Beal Street, 340 NW Townsend, 305 Leominster Shirley Road, 811 Chase Road)",
+   "where": "text",
+   "quote": "septic permits signed : 138 beal street 340 nw townsend 305 leominster shirley road 811 chase road"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic",
+  "variance",
+  "well setback",
+  "septic permits",
+  "groundwater offset",
+  "Ritter Memorial Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

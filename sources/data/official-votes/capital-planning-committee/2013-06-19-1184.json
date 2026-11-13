@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2013-06-19",
  "docid": "1184",
@@ -12,6 +12,135 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Minutes state \"Minutes approved- June 6, 2013\" but record no voting language (no motion, no outcome, no \"so voted\" or \"unanimously approved\"). No other votes recorded in the document.",
- "cost_usd": 0.0824155
+ "note": "Minutes record no motions or votes: the approval of the June 6, 2013 minutes and the 10:40 AM adjournment are stated without a motion, second, or count, so votes is empty. Form changes are listed as agreed without a recorded vote and are treated as decisions. No dollar figures appear in the text.",
+ "cost_usd": 0.00293192,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Marion M. Benson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Steve Raboin",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Colleen Shapiro",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: chair, marion m. benson, jamie toale, steve raboin, colleen shapiro, dennis mannone, jr."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "absent: town manager kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to the listed changes to Forms C, B-1, B-3 and E (e.g., adding 'Pertinent Specifications' to Form C, adding a 'Used Equipment' box to Form B-1, retitling Form B-3 'Building Projects and Maintenance').",
+   "quote": "change #6 to \"alternatives reviewed\"."
+  },
+  {
+   "decision": "Ms. Benson will review the Form B-3 with the DPW Director.",
+   "quote": "ms. benson will review form with dpw director."
+  },
+  {
+   "decision": "At the next meeting the Committee will work on the cover letter to departments/commissions and set the calendar.",
+   "quote": "at the next meeting, the committee will work on the cover letter to departments/commissions and set the calendar."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved June 6, 2013 minutes (no vote recorded)",
+   "quote": "minutes approved- june 6, 2013.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Continued review of forms",
+   "resolution": "forms revised; Ms. Benson to review Form B-3 with DPW Director",
+   "quote": "continued review of forms:",
+   "tags": [
+    "forms",
+    "Form B",
+    "Form C",
+    "Form D",
+    "Form E",
+    "Five Year Plan"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form B-1",
+   "where": "list",
+   "quote": "documents used during meeting: form b-1, form b-2, form b-3, form c, form d, form e, five year plan."
+  },
+  {
+   "name": "Form B-2",
+   "where": "list",
+   "quote": "documents used during meeting: form b-1, form b-2, form b-3, form c, form d, form e, five year plan."
+  },
+  {
+   "name": "Form B-3",
+   "where": "list",
+   "quote": "documents used during meeting: form b-1, form b-2, form b-3, form c, form d, form e, five year plan."
+  },
+  {
+   "name": "Form C",
+   "where": "list",
+   "quote": "documents used during meeting: form b-1, form b-2, form b-3, form c, form d, form e, five year plan."
+  },
+  {
+   "name": "Form D",
+   "where": "list",
+   "quote": "documents used during meeting: form b-1, form b-2, form b-3, form c, form d, form e, five year plan."
+  },
+  {
+   "name": "Form E",
+   "where": "list",
+   "quote": "documents used during meeting: form b-1, form b-2, form b-3, form c, form d, form e, five year plan."
+  },
+  {
+   "name": "Five Year Plan",
+   "where": "list",
+   "quote": "documents used during meeting: form b-1, form b-2, form b-3, form c, form d, form e, five year plan."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "forms review",
+  "Five Year Plan",
+  "capital requests",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used during meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

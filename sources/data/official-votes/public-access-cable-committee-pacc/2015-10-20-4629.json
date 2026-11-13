@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2015-10-20",
  "docid": "4629",
@@ -12,6 +12,85 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes document an informational meeting where a vendor demonstrated video server options. The meeting ended with a simple statement \"Adjourned: 7:58pm\" with no formal motion or vote to adjourn.",
- "cost_usd": 0.07831550000000001
+ "note": "No motions, votes, or decisions are recorded; adjournment at 7:58pm is printed without a motion. The minutes spell the vendor \"cactus\" once and \"Castus\" elsewhere; recorded as printed. The clerk signature is dated 12/8/15, about seven weeks after the meeting. The minutes contain no dollar figures, no public comment section, and no list of documents.",
+ "cost_usd": 0.0020626200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were steve walker, jeff bajko, rhonda lisio, and faith beall."
+  },
+  {
+   "name": "Jeff Bajko",
+   "role": "Committee member; PACC Clerk (signature block as Jeffrey Bajko, PACC Clerk)",
+   "status": "present",
+   "quote": "committee members present were steve walker, jeff bajko, rhonda lisio, and faith beall."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were steve walker, jeff bajko, rhonda lisio, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "committee members present were steve walker, jeff bajko, rhonda lisio, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin and robert haigh of access\\av."
+  },
+  {
+   "name": "Robert Haigh",
+   "role": "of Access\\AV; presenter demonstrating the cactus video server",
+   "status": "present",
+   "quote": "robert haigh attended to demonstrate the cactus video server."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Castus video server charges",
+   "what_was_recorded": "The minutes state that the Castus server carries a five year warranty and has no additional charges for software updates or annual service contracts; no dollar figures are printed.",
+   "quote": "there are no additional charges for software updates or annual service contracts.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Access TV: Castus video server demonstration",
+   "resolution": "presented, no action recorded",
+   "quote": "robert haigh attended to demonstrate the cactus video server.",
+   "tags": [
+    "video server",
+    "demonstration",
+    "Access\\AV",
+    "Castus"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access TV",
+  "video server",
+  "Castus",
+  "Access\\AV",
+  "demonstration",
+  "warranty",
+  "no votes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

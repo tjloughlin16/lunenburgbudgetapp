@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-05-10",
  "docid": "2350",
@@ -12,31 +12,231 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of March 27, 2012",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Approve the minutes of March 27, 2012.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed 5-0",
+   "procedural": true,
    "quote": "minutes of march 27, 2012 were approved 5-0."
   },
   {
-   "motion": "Approve Reserve Fund transfer of $12,147.50 to Veteran's Benefits",
-   "outcome": "passed 6-0",
-   "procedural": false,
+   "motion": "Recommend approval of a Reserve Fund transfer submitted by the Town Manager of $12,147.50 to Veteran's Benefits.",
    "moved_by": "Brian L.",
    "seconded_by": "Barbara R.",
+   "outcome": "passed 6-0",
+   "procedural": false,
    "quote": "motion made by brian l. / seconded by barbara r. accepted unanimously: 6-0."
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed 6-0",
-   "procedural": true,
+   "motion": "Adjourn the meeting at 8:37 PM.",
    "moved_by": "SG",
    "seconded_by": "BR",
-   "quote": "sg made a motion to adjourn at 8:37 pm, br seconded; all in favor: 6-0."
+   "outcome": "passed 6-0",
+   "procedural": true,
+   "quote": "made a motion to adjourn at 8:37 pm, br seconded; all in favor: 6-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Three votes recorded: approval of prior minutes, a Reserve Fund transfer, and adjournment.",
- "cost_usd": 0.0884565
+ "note": "The minutes are marked DRAFT (OCR text, Vision extraction) and were received and filed June 15, 2012. The attendance block is ambiguous in the OCR: Karen Brochu's name appears with no clear Present/Absent label, so status is 'not stated'. The minutes-approval vote (March 27, 2012) has no mover or seconder printed. The April 5, April 26, and May 5 minutes were tabled with no recorded vote, so they are recorded as a decision. The minutes list no documents, exhibits, or public comment. The minutes were submitted by Brian P. Laffond.",
+ "cost_usd": 0.00485152,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile, martha mcdonald (arrived 7:40)"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile, martha mcdonald (arrived 7:40)"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary (arrived 7:40)",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile, martha mcdonald (arrived 7:40)"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile, martha mcdonald (arrived 7:40)"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile, martha mcdonald (arrived 7:40)"
+  },
+  {
+   "name": "Scott Gile",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mark erickson, brian laffond, john male, barbara reynolds, scott gile, martha mcdonald (arrived 7:40)"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "absent: attendees: town hall mark erickson, brian laffond, john male, barbara reynolds, scott gile, martha mcdonald (arrived 7:40) karen brochu"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of April 5, April 26, and May 5, 2012 were tabled so the recommendations made in them can be re-worded.",
+   "quote": "minutes of april 5, april 26, and may 5, 2012 were tabled to re-word recommendations made."
+  },
+  {
+   "decision": "The Town Manager, Town Accountant and Sewer Enterprise Admin will meet to finalize the Town's share of Sewer Start-up expenses and the transfers made to the Sewer Enterprise Fund.",
+   "quote": "town manager, town accountant and sewer enterprise admin will meet to finalize."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer start-up total obligation",
+   "what_was_recorded": "The total obligation for the Town's share of sewer start-up expenses must be calculated and was estimated at $1.2M.",
+   "figures_as_printed": [
+    "$1.2M"
+   ],
+   "quote": "the total obligation must be calculated - estimated at $1.2m"
+  },
+  {
+   "topic": "Sewer Enterprise Fund retained earnings",
+   "what_was_recorded": "Retained earnings in the Sewer Enterprise Fund were approximately $450K.",
+   "figures_as_printed": [
+    "~$450K"
+   ],
+   "quote": "there is currently ~$450k in retained earnings."
+  },
+  {
+   "topic": "Sewer connection fee",
+   "what_was_recorded": "The connection fee to connect to sewer is currently $2000 for Lunenburg residents.",
+   "figures_as_printed": [
+    "$2000"
+   ],
+   "quote": "currently $2000 for lunenburg residents."
+  },
+  {
+   "topic": "Sewer connection fee share to Fitchburg or Leominster",
+   "what_was_recorded": "About $1800 of the connection fee goes to Fitchburg or Leominster fees.",
+   "figures_as_printed": [
+    "~$1800"
+   ],
+   "quote": "currently ~$1800 of that goes to fitchburg or leominster fees."
+  },
+  {
+   "topic": "Reserve Fund transfer to Veteran's Benefits",
+   "what_was_recorded": "The committee recommended approval of a Reserve Fund transfer submitted by the Town Manager to Veteran's Benefits, approved 6-0.",
+   "figures_as_printed": [
+    "$12,147.50"
+   ],
+   "quote": "recommend approval of a reserve fund transfer submitted by the town manager of $12,147.50 to veteran's benefits."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserve Fund transfer submitted by the Town Manager to Veteran's Benefits",
+   "amount_as_printed": "$12,147.50",
+   "outcome": "passed 6-0 (recommended for approval)",
+   "quote": "recommend approval of a reserve fund transfer submitted by the town manager of $12,147.50 to veteran's benefits."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:02 PM",
+   "quote": "meeting called to order by the chairman at 7:02 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action; Talent Bank forms received and member terms noted",
+   "quote": "3 talent bank forms have been submitted.",
+   "tags": [
+    "talent bank",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Minutes review",
+   "resolution": "March 27, 2012 minutes approved 5-0; April 5, April 26, and May 5, 2012 minutes tabled",
+   "quote": "minutes of march 27, 2012 were approved 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department liaison reports",
+   "resolution": "reported; no action recorded",
+   "quote": "capital planning - a request to fund painting of town hall was received, off schedule.",
+   "tags": [
+    "sewer",
+    "capital planning",
+    "school building committee",
+    "DPW",
+    "public safety",
+    "library",
+    "Monty Tech"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting review",
+   "resolution": "discussed; no action",
+   "quote": "scott g. stated that he was impressed by the competence and quality of the individuals who presented at the budget reviews",
+   "tags": [
+    "town meeting",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Reserve Fund transfer",
+   "resolution": "approved 6-0 (recommendation)",
+   "quote": "recommend approval of a reserve fund transfer submitted by the town manager of $12,147.50 to veteran's benefits.",
+   "tags": [
+    "reserve fund",
+    "veterans benefits"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:37 PM, 6-0",
+   "quote": "made a motion to adjourn at 8:37 pm, br seconded; all in favor: 6-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "3 Talent Bank forms",
+   "where": "text",
+   "quote": "3 talent bank forms have been submitted."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "sewer",
+  "sewer enterprise fund",
+  "reserve fund",
+  "veterans benefits",
+  "town meeting",
+  "school building committee",
+  "public safety",
+  "library",
+  "Monty Tech",
+  "talent bank",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

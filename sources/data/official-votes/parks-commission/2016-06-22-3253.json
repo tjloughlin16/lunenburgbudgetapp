@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2016-06-22",
  "docid": "3253",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the June 2, 2016 meeting minutes",
+   "motion": "Approve the June 2, 2016 minutes.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 2-0",
    "procedural": true,
-   "quote": "june 2, 2016 minutes - approved 2-0"
+   "quote": "2) june 2, 2016 minutes - approved 2-0"
   },
   {
-   "motion": "Approve hiring of an as-needed part-time seasonal life guard employee",
+   "motion": "Approve as presented the hiring of an as-needed part-time seasonal employee to cover life guard duties.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
    "outcome": "passed 2-0",
@@ -29,6 +29,193 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. Text appears complete and readable. Board Reorganization section (item 3) describes election of officers but does not record an explicit motion or vote.",
- "cost_usd": 0.0816765
+ "note": "Text is OCR output with hyphenated line breaks and a stray 'repproved' header artifact; some words may be misread (e.g., 'bond council', 'Surfside'). Adjournment at 9:00 and next meeting July 21, 2016 are printed but no adjournment motion is recorded. The lifeguard motion records 2-0 with four people listed as attending; the minutes do not say whether Gen Nass, whose grandson is the proposed hire, recused or abstained. No documents list is printed.",
+ "cost_usd": 0.0048238199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, jack rodriquenz, gen nass"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, jack rodriquenz, gen nass"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, jack rodriquenz, gen nass"
+  },
+  {
+   "name": "Gen Nass",
+   "role": "Beach Director",
+   "status": "present",
+   "quote": "5) town beach - gen nass, beach director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reorganized with Dennis Mannone as Chair and Karin Menard as Clerk (no vote recorded).",
+   "quote": "3) board reorganization - chair: dennis mannone, clerk: karin menard"
+  },
+  {
+   "decision": "Beach fees and the possible extension to a 9-week season starting in 2017 were tabled until winter.",
+   "quote": "since the summer season is already upon us, discussion was tabled on both matters until the winter."
+  },
+  {
+   "decision": "Parks Commissioners will review the Christians Law and Gen Nass's proposal on life jackets at the town beach.",
+   "quote": "parks commissioners will review law and gen nass's proposal."
+  },
+  {
+   "decision": "Weed control for the roped swim area to be researched for next year; Conservation Commission may be preliminarily contacted, with Lake Shirley Improvement Corporation's weed-control contact as a starting point.",
+   "quote": "we can re- search for next year and can preliminarily contact conservation commission to see if they need to be involved.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Board of Health access to the town beach outside opening hours: they call the office and DPW opens the gate on request.",
+   "quote": "they just need to call the office and someone from the dpw will go down and open the gate when requested."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town beach family fees",
+   "what_was_recorded": "Current family beach pass fees start at $40, and swim lessons are capped at $30 per family per session; fees have not been reviewed in many years and the item was tabled.",
+   "figures_as_printed": [
+    "$40",
+    "$30"
+   ],
+   "quote": "current family fees start at $40 for beach passes and swim lessons are capped at $30 per family per session."
+  },
+  {
+   "topic": "Marshall Park field work quote",
+   "what_was_recorded": "Surfside has given a quote for Marshall Park work, but the board is waiting on a sketch; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "b) waiting on surfside gave quote but waiting on sketch."
+  },
+  {
+   "topic": "DPW usage fees",
+   "what_was_recorded": "Checks for usage fees from the Bengals and Little League are still awaited; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "waiting on checks for usage fees from the bengals and little league."
+  },
+  {
+   "topic": "Turf complex financing",
+   "what_was_recorded": "Town Manager is working with bond counsel on the turf complex project; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "town manager is working with bond council."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:06",
+   "quote": "1) call to order - 7:06",
+   "tags": [
+    "meeting admin"
+   ]
+  },
+  {
+   "topic": "June 2, 2016 Minutes",
+   "resolution": "approved 2-0",
+   "quote": "2) june 2, 2016 minutes - approved 2-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Board Reorganization",
+   "resolution": "Chair Dennis Mannone and Clerk Karin Menard named",
+   "quote": "3) board reorganization - chair: dennis mannone, clerk: karin menard",
+   "tags": [
+    "board reorganization"
+   ]
+  },
+  {
+   "topic": "Turf Complex Update",
+   "resolution": "no action; timing uncertain, bond counsel involved",
+   "quote": "4) turf complex update and discussion - town manager is working with bond council.",
+   "tags": [
+    "turf complex",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Town Beach",
+   "resolution": "part-time life guard hire approved 2-0; fees and season length tabled to winter; other items referred or noted",
+   "quote": "5) town beach - gen nass, beach director",
+   "tags": [
+    "town beach",
+    "lifeguards",
+    "beach fees",
+    "life jackets",
+    "weed control",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Marshall Park Update",
+   "resolution": "no action; parking lot nothing to report; field quote awaiting sketch",
+   "quote": "6) marshall park update",
+   "tags": [
+    "Marshall Park",
+    "Babe Ruth"
+   ]
+  },
+  {
+   "topic": "DPW Director Update",
+   "resolution": "no action; awaiting usage-fee checks",
+   "quote": "7) dpw director update - waiting on checks for usage fees from the bengals and little league.",
+   "tags": [
+    "DPW",
+    "usage fees"
+   ]
+  },
+  {
+   "topic": "Public / Board Comment",
+   "resolution": "noted resignation of Bob Robuccio effective 6/22/16",
+   "quote": "8) public / board comment - bob robuccio resigned from the parks commission effective 6/22/16",
+   "tags": [
+    "resignation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter of disclosure (as advised by the Ethics Commission)",
+   "where": "text",
+   "quote": "ms. nass also forwarded a letter of disclosure as advised by the ethics commission as well as the disclosure by non elected municipal."
+  },
+  {
+   "name": "Disclosure by Non Elected Municipal Employee of Financial Interest and Determination by Appointing Authority form",
+   "where": "text",
+   "quote": "employee of financial interest and determination by appointing authority form."
+  },
+  {
+   "name": "Gen Nass's proposal (life jacket use at town beach)",
+   "where": "text",
+   "quote": "parks commissioners will review law and gen nass's proposal."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "town beach",
+  "lifeguard hiring",
+  "beach fees",
+  "turf complex",
+  "Marshall Park",
+  "board reorganization",
+  "resignation",
+  "weed control",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

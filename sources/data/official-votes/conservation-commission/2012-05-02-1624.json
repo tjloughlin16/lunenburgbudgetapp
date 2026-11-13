@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2012-05-02",
  "docid": "1624",
@@ -10,8 +10,105 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05022012-1624",
   "doc_url": "/docs/meetings/conservation-commission/2012-05-02-minutes-1624.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Negative determination on the Request for Determination of Applicability by James A. Shearer for removal of four trees within 100' of the water at 455 Townsend Harbor Road (minutes print only 'Negative').",
+   "moved_by": "Sharon",
+   "outcome": "passed unanimously, 3 votes (as printed: 'Negative 3 Unanimous')",
+   "procedural": false,
+   "quote": "plan presented of trees to be removed. very clear & concise. contractor will use crane to lift trees over house. sharon/rich negative 3 unanimous",
+   "seconded_by": "Rich"
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "Scanned OCR minutes. Text describes a public hearing on a Request for Determination of Applicability but the motion and vote outcome are compressed into unclear shorthand: \"Sharon/Rich Negative 3 Unanimous\". No clear motion statement, moved_by/seconded_by, or unambiguous outcome recorded. Unable to extract as a formal vote.",
- "cost_usd": 0.0905485
+ "note": "Single-page OCR scan of partial minutes. Header is garbled (a stray 'approved' fragment) and the attendance line gives names with no present/absent marking. The minutes do not print the motion text or a mover/seconder beyond the shorthand 'Sharon/Rich'; the mover and seconder are inferred from that shorthand and the outcome is printed as 'Negative 3 Unanimous'. No call to order, approval of prior minutes, or adjournment appears on this page, and no public comment is recorded. Later pages, if any, were not provided.",
+ "cost_usd": 0.00253272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "JJ Cote",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, richard bursch, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, richard bursch, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "John Lattanzi",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, richard bursch, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Mark Murphy",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, richard bursch, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, richard bursch, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, richard bursch, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "",
+   "status": "not stated",
+   "quote": "jj cote, richard bursch, john lattanzi, mark murphy, sharon jordan, matt marro, jan carrier"
+  },
+  {
+   "name": "James A. Shearer",
+   "role": "applicant (Request for Determination of Applicability)",
+   "status": "not stated",
+   "quote": "public hearing on a request for determination of applicability by james a. shearer."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: Request for Determination of Applicability, 455 Townsend Harbor Road (James A. Shearer)",
+   "resolution": "negative determination, unanimous (3)",
+   "quote": "7:00pm ~ 455 townsend harbor road ~ pursuant to mgl ch 131, s 40 as amended and the town of lunenburg wetlands protection and municipal bylaws there will be a public hearing",
+   "tags": [
+    "wetlands",
+    "tree removal",
+    "public hearing",
+    "RDA"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plan of trees to be removed (455 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "plan presented of trees to be removed. very clear & concise."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "tree removal",
+  "Townsend Harbor Road",
+  "public hearing",
+  "Request for Determination of Applicability"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-04-14",
  "docid": "2370",
@@ -12,63 +12,231 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from January 13, 2011",
-   "moved_by": "John Male",
-   "seconded_by": "Barbara Reynolds",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of January 13, 2011.",
+   "moved_by": "JM",
+   "seconded_by": "BR",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "jm moved for approval, br second, unanimous"
+   "quote": "minutes from january 13, 2011: jm moved for approval, br second, unanimous"
   },
   {
-   "motion": "approve the minutes from February 24, 2011 as amended",
-   "moved_by": "John Male",
-   "seconded_by": "Barbara Reynolds",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of February 24, 2011, as amended.",
+   "moved_by": "JM",
+   "seconded_by": "BR",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "jm moved for approval as amended, br second, unanimous"
+   "quote": "minutes from february 24, 2011: jm moved for approval as amended, br second, unanimous"
   },
   {
-   "motion": "approve the minutes from March 10, 2011",
-   "moved_by": "John Male",
-   "seconded_by": "Barbara Reynolds",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of March 10, 2011.",
+   "moved_by": "JM",
+   "seconded_by": "BR",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "jm move for approval, br second, unanimous"
+   "quote": "minutes from march 10, 2011: jm move for approval, br second, unanimous"
   },
   {
-   "motion": "approve the minutes from March 17, 2011",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of March 17, 2011.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "br moved for approval, jm second, unanimous"
+   "quote": "minutes from march 17, 2011: br moved for approval, jm second, unanimous"
   },
   {
-   "motion": "approve the minutes from March 24, 2011",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of March 24, 2011.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "br moved for approval, jm second, unanimous"
+   "quote": "minutes from march 24, 2011: br moved for approval, jm second, unanimous"
   },
   {
-   "motion": "approve the minutes from March 31, 2011",
-   "moved_by": "Barbara Reynolds",
-   "seconded_by": "John Male",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of March 31, 2011.",
+   "moved_by": "BR",
+   "seconded_by": "JM",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "br moved for approval, jm second, unanimous"
+   "quote": "minutes from march 31, 2011: br moved for approval, jm second, unanimous"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "John Male",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 9:25 PM.",
+   "moved_by": "ME",
+   "seconded_by": "JM",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "me made motion to adjourn at 9:25 pm and jm second, all in tavor"
+   "quote": "me made motion to adjourn at 9:25 pm and jm second, all in tavor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. Text is clear and readable; one minor OCR artifact ('tavor' for 'favor' in adjournment motion).",
- "cost_usd": 0.1040255
+ "note": "OCR text of a scanned minutes page. Item 7 is missing from the text (page 1 jumps from item 6 to item 8). The attendance headings (Present/Absent/Also Present) are not legible in the OCR, so status for Marilyn Stokes, Mike Mackin, Kerry Speidel and Dave Mathews is 'not stated'; Dave Mathews appears only as 'DM' in the text. The signature/approval block is garbled, so approval of these minutes cannot be confirmed. The adjournment says 'all in tavor' (OCR of 'favor'), quoted as printed. Votes are recorded by initials only (JM, BR, ME, DM) and are mapped to full names from the attendance list. No documents list or exhibits are printed.",
+ "cost_usd": 0.00437802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, john male, mark erickson"
+  },
+  {
+   "name": "Martha McDonald",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, john male, mark erickson"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, john male, mark erickson"
+  },
+  {
+   "name": "John Male",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, john male, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "quote": "minutes respectfully submitted by mark erickson"
+  },
+  {
+   "name": "Marilyn Stokes",
+   "status": "not stated",
+   "quote": "marilyn stokes, mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "status": "not stated",
+   "quote": "marilyn stokes, mike mackin"
+  },
+  {
+   "name": "Kerry Speidel",
+   "status": "not stated",
+   "quote": "kerry speidel, dave mathews"
+  },
+  {
+   "name": "Dave Mathews",
+   "status": "not stated",
+   "quote": "kerry speidel, dave mathews"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Health care costs gap (service level team)",
+   "what_was_recorded": "Schools agreed to cover the difference between the Town Manager's and superintendent's recommended budgets.",
+   "quote": "schools agreed to cover the $610 difference between tm and superintendant's recommended budgets.",
+   "figures_as_printed": [
+    "$610"
+   ]
+  },
+  {
+   "topic": "State budget impact on town",
+   "what_was_recorded": "The House Ways and Means and Senate budget actions were estimated to increase the town's amount by a stated sum.",
+   "quote": "estimated increase to town of $131,208.",
+   "figures_as_printed": [
+    "$131,208"
+   ]
+  },
+  {
+   "topic": "Quinn bill",
+   "what_was_recorded": "Quinn bill reimbursement described as 50% from the state, not likely; impact to the town estimated.",
+   "quote": "quinn bill: 50% from state if and when we get it, though not likely. impact to town is $65k.",
+   "figures_as_printed": [
+    "50%",
+    "$65k"
+   ]
+  },
+  {
+   "topic": "Other budget pressures (snow and ice, legal)",
+   "what_was_recorded": "Snow and ice and legal costs were listed as budget impacts; police injury costs were said to be more than expected with no figure given.",
+   "quote": "other budget impacts: snow and ice $51k, legal $90k, police injury more than expected.",
+   "figures_as_printed": [
+    "$51k",
+    "$90k"
+   ]
+  },
+  {
+   "topic": "Stabilization fund for unemployment",
+   "what_was_recorded": "Use of the stabilization fund for unemployment was described as underspent and possibly needing re-appropriation; the town may defer consideration to the fall STM. No amount printed.",
+   "quote": "dm pointed out that use of stabilization for unemployment is underspent and may need to be re-appropriated.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public discussion",
+   "resolution": "no action; public discussion none",
+   "quote": "2) public discussion: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review minutes",
+   "resolution": "approved six sets of minutes",
+   "quote": "minutes from january 13, 2011: jm moved for approval, br second, unanimous",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action; workshop notices listed",
+   "quote": "atfc: may 5 workshop in amherst: municipal finance/budget 5:00-7:00",
+   "tags": [
+    "training",
+    "ATFC"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "monty tech: br reported that the monty tech superintendants dinner was very nice.",
+   "tags": [
+    "Monty Tech",
+    "health care",
+    "regionalization",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no action; budget impacts reviewed",
+   "quote": "house w & m met yesterday on budget. senate voted to support budget as minimum.",
+   "tags": [
+    "state budget",
+    "Quinn bill",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:25 PM",
+   "quote": "me made motion to adjourn at 9:25 pm and jm second, all in tavor.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "minutes approval",
+  "health care costs",
+  "state budget",
+  "Quinn bill",
+  "stabilization",
+  "regionalization",
+  "Monty Tech",
+  "sewer commission",
+  "budget impacts"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

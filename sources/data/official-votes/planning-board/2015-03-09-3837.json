@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-03-09",
  "docid": "3837",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve language of the VCD with amendments noted to Sections 4.17.8.c8 and 4.17.5.c1",
+   "motion": "Approve language of the Village Center District (VCD) bylaw with amendments noted to Sections 4.17.8.c8 and 4.17.5.c1.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion, d. mcquaid, to approve language of the vcd with amendments noted to sections 4.17.8.c8 and 4.17.5.c1, second, m. allison, all aye."
   },
   {
-   "motion": "Approve Article to amend the Zoning Bylaw by adding §§ 3.1.o) to § 3.1.",
+   "motion": "Approve the article to amend the Zoning Bylaw by adding §§ 3.1.o) to § 3.1.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion, d. mcquaid, to approve article to amend the zoning bylaw by adding §§ 3.1.o) to § 3.1., second, m. allison, all aye."
   },
   {
-   "motion": "Approve Article amending § 3.2.1.",
+   "motion": "Approve the article amending § 3.2.1.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion, d. mcquaid, to approve article amending § 3.2.1., second, m. allison, all aye."
   },
   {
-   "motion": "Approve Article amending § 4.16.",
+   "motion": "Approve the article amending § 4.16.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion, d. mcquaid, to approve article amending § 4.16., second, m. allison, all aye."
   },
   {
-   "motion": "Approve amending the Zoning Map",
+   "motion": "Approve the article amending the Zoning Map.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion, d. mcquaid, to approve amending the zoning map, second, m. allison, all aye."
   },
   {
-   "motion": "Approve minutes of 02/23/15",
+   "motion": "Approve the 02/23/15 Board minutes.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "02/23/15, d. mcquaid, motion to approve, second, m. allison, minutes signed."
   },
   {
-   "motion": "Approve 02/23/15 Highfield Hearing minutes",
+   "motion": "Approve the 02/23/15 Highfield Hearing minutes.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -68,7 +68,7 @@
    "quote": "02/23/15 highfield hearing, d. mcquaid, motion to approve, second, m. allison, minutes signed."
   },
   {
-   "motion": "Approve 08/14/14 Charrette minutes",
+   "motion": "Approve the 08/14/14 Charrette minutes.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -76,7 +76,7 @@
    "quote": "08/14/14 charrette, d. mcquaid, motion to approve, second, m. allison, minutes signed."
   },
   {
-   "motion": "Approve 03/02/15 minutes",
+   "motion": "Approve the 03/02/15 Board minutes.",
    "moved_by": "D. McQuaid",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -84,7 +84,220 @@
    "quote": "03/02/15, d. mcquaid, motion to approve, second, m. allison, minutes signed."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes passed with \"all aye\" (unanimous). The 02/04/14 Executive minutes were not signed and no vote was recorded. No motion to adjourn is recorded, only the adjournment time.",
- "cost_usd": 0.0220234
+ "dropped_unquoted": 1,
+ "note": "Text-only minutes, no scan. Vote outcomes for the five warrant-article motions are recorded as \"all aye\" and are entered as passed. The four minutes approvals say \"minutes signed\"; they are entered as passed on that basis, with no count printed. No motion is recorded for the ANR endorsement or for adjournment, so neither is entered as a vote. No dollar figures appear in the minutes. The minutes do not label a public comment period; P. Bertram is recorded only as making a suggestion during discussion, and their role is not stated. Printed typos kept verbatim: \"Historic al Commission\" and \"02/04/14\" for the Executive minutes date.",
+ "cost_usd": 0.00618362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta-simeone"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: nathan j. lockwood, damon mcquaid, kenneth chenis, matthew allison, adam r. burney"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "p. bertram suggested a map being available for residents."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board endorsed the ANR plan for Vito & Virginia Piccirillo, 205 Sunset Lane (no motion recorded).",
+   "quote": "anr- board endorsement: vito & virginia piccirillo, 205 sunset lane. plan endorsed by board."
+  },
+  {
+   "decision": "A joint meeting with the Historical Commission and Board members on the Architectural Preservation District (APD) Bylaw is to be posted for Thursday, March 19, 7:00 PM, location TBD.",
+   "quote": "a joint meeting will be posted for thursday, march 19 th, 7:00 pm, location tbd."
+  },
+  {
+   "decision": "The 02/04/14 Executive minutes were left unsigned because a quorum of that meeting's attendees was not available.",
+   "quote": "02/04/14 executive- not signed. quorum of 02/04/14 board meeting attendees not available."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "P. Bertram",
+   "stated_role": "not stated",
+   "topic": "Scenic Road map for residents",
+   "quote": "p. bertram suggested a map being available for residents."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Board Endorsement, 205 Sunset Lane",
+   "resolution": "endorsed",
+   "quote": "anr- board endorsement: vito & virginia piccirillo, 205 sunset lane. plan endorsed by board.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Public Hearing: Board Warrant Articles (VCD, Zoning Bylaw, Zoning Map)",
+   "resolution": "approved",
+   "quote": "public hearing: board warrant articles- see separate minutes.",
+   "tags": [
+    "warrant articles",
+    "zoning bylaw",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Joint discussion on Architectural Preservation District (APD) Bylaw with Historical Commission",
+   "resolution": "joint meeting to be posted for March 19",
+   "quote": "a joint meeting will be posted for thursday, march 19 th, 7:00 pm, location tbd.",
+   "tags": [
+    "APD bylaw",
+    "historic preservation",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "four sets approved and signed; 02/04/14 Executive not signed",
+   "quote": "02/04/14 executive- not signed. quorum of 02/04/14 board meeting attendees not available.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "agricultural commission, m. allison- next meeting march 19th.",
+   "tags": [
+    "committees",
+    "reports"
+   ]
+  },
+  {
+   "topic": "New business and development status reports",
+   "resolution": "noted",
+   "quote": "town caucus, march 16, 7 pm, thms- noted",
+   "tags": [
+    "town meeting",
+    "development status"
+   ]
+  },
+  {
+   "topic": "Action file (250 Whalom Road, 36 Summer Street, Scenic Road, master planning)",
+   "resolution": "noted",
+   "quote": "250 whalom road, whalom luxury apartments- zoning board of appeals decision filed with town clerk.",
+   "tags": [
+    "ZBA",
+    "Whalom Road",
+    "Summer Street",
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "saturday, may 2- town meeting",
+   "tags": [
+    "schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Member issues: request for weekly meetings and meeting format",
+   "resolution": "discussed; no action",
+   "quote": "m. allison requested the board meet weekly.",
+   "tags": [
+    "meeting schedule",
+    "board operations"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan 205 Sunset Lane",
+   "where": "list",
+   "quote": "anr plan 205 sunset lane 02/23/15 minutes"
+  },
+  {
+   "name": "02/23/15 Minutes",
+   "where": "list",
+   "quote": "anr plan 205 sunset lane 02/23/15 minutes"
+  },
+  {
+   "name": "02/23/15 Highfield Hearing Minutes",
+   "where": "list",
+   "quote": "02/23/15 highfield hearing minutes 08/14/14 minutes"
+  },
+  {
+   "name": "08/14/14 Minutes",
+   "where": "list",
+   "quote": "02/23/15 highfield hearing minutes 08/14/14 minutes"
+  },
+  {
+   "name": "03/02/15 Minutes",
+   "where": "list",
+   "quote": "03/02/15 minutes draft village district bylaw"
+  },
+  {
+   "name": "Draft Village District Bylaw",
+   "where": "list",
+   "quote": "03/02/15 minutes draft village district bylaw"
+  },
+  {
+   "name": "Draft Architectural Preservation District Bylaw",
+   "where": "list",
+   "quote": "draft architectural preservation district bylaw"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning bylaw",
+  "warrant articles",
+  "Village Center District",
+  "Architectural Preservation District",
+  "ANR",
+  "minutes approval",
+  "town meeting",
+  "meeting schedule",
+  "scenic road"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2014-12-16",
  "docid": "1211",
@@ -12,23 +12,230 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the Tuesday, December 9 CPC meeting",
+   "motion": "Approve the minutes of the Tuesday, December 9 CPC meeting as submitted.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "the committee approved the minutes of the tuesday, december 9 cpc meeting as submitted, 5-0.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "the committee approved the minutes of the tuesday, december 9 cpc meeting as submitted, 5-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Joanna",
+   "seconded_by": "Heather",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "joanna moved to adjourn the meeting; heather seconded the motion, and the committee voted 5-0 to adjourn at 5:52 pm.",
-   "moved_by": "Joanna",
-   "seconded_by": "Heather"
+   "quote": "joanna moved to adjourn the meeting; heather seconded the motion, and the committee voted 5-0 to adjourn at 5:52 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-transcribed minutes. Two votes recorded: approval of prior minutes and adjournment, both procedural.",
- "cost_usd": 0.0857985
+ "note": "OCR text with scrambled layout. The attendance block is jumbled: the labels 'Meeting Posted / Location / Present / Also Present / Absent' are separated from their values. Kerry Speidel is placed after 'Absent:' by inference, so status is marked absent with that caveat; Loxi Calmes and John Londa are read as 'Also Present'. Roles for Calmes, Londa and Speidel are not stated. The priority table header reads 'There' (likely 'Three') from OCR. The mover of the approval of the December 9 minutes is not printed. A stray 'c. Marjorie Boggio' line at the page foot is not recorded as an attendee. Item 2 says 'No public comment.'",
+ "cost_usd": 0.00440692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., joanna bilotta-simeone, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Dennis Mannone, Jr.",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "dennis mannone, jr., joanna bilotta-simeone, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Joanna Bilotta-Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "dennis mannone, jr., joanna bilotta-simeone, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "dennis mannone, jr., joanna bilotta-simeone, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "dennis mannone, jr., joanna bilotta-simeone, heather sroka, jamie toale, john henshaw."
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "not stated",
+   "status": "present",
+   "quote": "loxi calmes and john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john londa and loxi calmes showed the cpc the asbestos situation at thms."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "loxi calmes and john londa kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Pavement Management Plan is taken out of the Capital Planning process and will be funded from the operating budget and Chapter 90.",
+   "quote": "jamie confirmed that the pavement management plan was being taken out of the capital planning"
+  },
+  {
+   "decision": "The CPC will discuss at its next meeting how to handle approved capital funds for school asbestos abatement that were not spent.",
+   "quote": "action: the cpc will discuss at the next meeting."
+  },
+  {
+   "decision": "Each member should come to the next meeting with a priority list prepared, to arrive at a committee-wide priority list.",
+   "quote": "the cpc decided that each member should come to the next meeting with a priority list prepared to discuss"
+  },
+  {
+   "decision": "General sense of the CPC is that it would not borrow for any capital purchases as of now.",
+   "quote": "the general sense of the cpc was that we would not borrow for any capital purchases as of now."
+  },
+  {
+   "decision": "Next meeting set for Tuesday, December 23 at 4:30 in the Bilotta Meeting Room at Town Hall, subject to Jamie speaking with Kerry on additional time.",
+   "quote": "the next meeting is slated to be tuesday, december 23 at 4:30 in the bilotta meeting room at town hall,"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Improvement Project priorities total",
+   "what_was_recorded": "Recap of capital project priorities after the THMS tour: Priority One had 6 projects at $1,095,928, Priority Two 10 projects at $426,550, Priority Three (printed as 'There' by OCR) 9 projects at $242,132, for 25 projects totalling $1,764,610. The minutes say the priorities did not change.",
+   "figures_as_printed": [
+    "$1,095,928",
+    "$426,550",
+    "$242,132",
+    "$1,764,610"
+   ],
+   "quote": "total cost $1,095,928 $426,550 $242,132 $1,764,610"
+  },
+  {
+   "topic": "Unspent approved funds for school asbestos abatement",
+   "what_was_recorded": "A question about what the school would do with approved asbestos abatement funds that had not been spent led to a discussion of handling unspent approved capital funds generally; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "a question regarding what the school would do with the funds voted on for the schools to do the asbestos abatement turned into"
+  },
+  {
+   "topic": "Pavement Management Plan funding",
+   "what_was_recorded": "The Pavement Management Plan is removed from the Capital Planning process and funded from the operating budget and Chapter 90; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "that the pmp would be funded from the operating budget and chapter 90."
+  },
+  {
+   "topic": "Borrowing threshold for capital equipment",
+   "what_was_recorded": "A schedule of projected available regular borrowing funds for financing capital equipment purchases costing $100,000 or more was circulated; the general sense was not to borrow for capital purchases now.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "john circulated a format of a schedule of projected available regular borrowing funds for financing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no public comment",
+   "quote": "meeting called to order by jamie toale at 4:31 pm.",
+   "tags": [
+    "call to order",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Tour of Turkey Hill Middle School asbestos situation",
+   "resolution": "toured, no action",
+   "quote": "tour of th middle school to better understand the asbestos abatement situation there.",
+   "tags": [
+    "asbestos",
+    "Turkey Hill Middle School",
+    "site tour"
+   ]
+  },
+  {
+   "topic": "Capital Improvement Project priorities recap",
+   "resolution": "no change to priorities",
+   "quote": "the capital improvement project priorities did not change after committee's tour of thms",
+   "tags": [
+    "capital priorities",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Approval of December 9 minutes",
+   "resolution": "approved 5-0",
+   "quote": "the committee approved the minutes of the tuesday, december 9 cpc meeting as submitted, 5-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "CPC discussion and action items",
+   "resolution": "Pavement plan removed from process; unspent funds to next meeting; members to bring priority lists; no borrowing for now",
+   "quote": "jamie confirmed that the pavement management plan was being taken out of the capital planning",
+   "tags": [
+    "pavement management",
+    "unspent funds",
+    "priority list",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled for December 23 at 4:30 pm, subject to confirmation",
+   "quote": "the next meeting is slated to be tuesday, december 23 at 4:30 in the bilotta meeting room at town hall,",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 5:52 pm",
+   "quote": "joanna moved to adjourn the meeting; heather seconded the motion, and the committee voted 5-0 to adjourn at 5:52 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Improvement Project Priorities",
+   "where": "text",
+   "quote": "the capital improvement project priorities did not change after committee's tour of thms"
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "jamie confirmed that the pavement management plan was being taken out of the capital planning"
+  },
+  {
+   "name": "Schedule of projected available regular borrowing funds (format circulated by John)",
+   "where": "text",
+   "quote": "john circulated a format of a schedule of projected available regular borrowing funds for financing"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "asbestos abatement",
+  "Turkey Hill Middle School",
+  "capital priorities",
+  "borrowing",
+  "pavement management",
+  "Chapter 90",
+  "unspent funds",
+  "school facilities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

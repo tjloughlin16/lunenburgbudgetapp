@@ -1,0 +1,76 @@
+{
+ "board": "Selectmen Meeting",
+ "board_slug": "select-board",
+ "meeting_date": "2015-03-17",
+ "source": {
+  "sha256": "b5a845ec52f8cbe18d0c1ccfc8837fc38e8a87727aad04cc1cfac524b69ca09e",
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-03-17-CsOMlcQ4M1g.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "two hundred and ninety two thousand one hundred and seventy one dollars",
+    "fiscal_year": 2016,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Governor's budget state aid for the town is higher than the manager's recommendation.",
+    "status": "announced",
+    "t": 3682,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "ninety thousand eight hundred and ten dollars",
+    "fiscal_year": 2016,
+    "kind": "state_aid",
+    "scope": "school",
+    "statement": "Governor's budget adds Chapter 70 aid.",
+    "status": "announced",
+    "t": 3723,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "183 618",
+    "fiscal_year": 2016,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Governor's budget includes smart growth 40S payment, not guaranteed.",
+    "status": "announced",
+    "t": 3723,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2016,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "FY15 40S payment received is used via free cash to offset the FY16 budget.",
+    "status": "announced",
+    "t": 4274,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "40S funds",
+    "condition": "if used in the operating budget",
+    "fiscal_year": 2017,
+    "prediction": "Using the 40S money in the operating budget would create a big hole for fiscal 17.",
+    "scope": "school",
+    "t": 3868,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "CsOMlcQ4M1g",
+ "video_url": "https://www.youtube.com/watch?v=CsOMlcQ4M1g",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-12T17:54:37Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

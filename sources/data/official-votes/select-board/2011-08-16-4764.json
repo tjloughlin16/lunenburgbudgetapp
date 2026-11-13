@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-08-16",
  "docid": "4764",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "adopt the Town Manager Goals for 2012",
+   "motion": "Adopt the Town Manager Goals for 2012 (FY2012 goals as listed).",
    "moved_by": "Tom",
    "seconded_by": "Steve",
    "outcome": "passed unanimously",
@@ -20,19 +20,284 @@
    "quote": "tom move to officially adopt the town manager goals for 2012, steve seconded, voted unanimously."
   },
   {
-   "motion": "adjourn Regular Session at 8:15 P.M.",
+   "motion": "Adjourn Regular Session at 8:15 P.M. and open Executive Session under M.G.L. Chapter 39, §23B (roll call: Steve, Tom, Paula, Ernie and Dave all aye).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "board voted unanimously to adjourn regular session at 8:15 p.m."
-  },
-  {
-   "motion": "open Executive Session pursuant to M.G.L. Chapter 39 §23B to discuss collective bargaining and litigation strategy and conduct non-union personnel negotiations",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "opened executive session by roll call vote; steve aye, tom aye, paula aye, ernie aye and dave aye, in accordance with m.g.l. chapter 39, §23b for the purpose of discussing strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigation position. also, to conduct strategy sessions in preparation for negotiations with non-union personnel; to actually conduct collective bargaining and contract negotiations with non-union personnel."
+   "quote": "being no further business board voted unanimously to adjourn regular session at 8:15 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1126455
+ "note": "OCR text from macOS Vision with errors (e.g., 'F.Mi.' for P.M., 'Ill' for III, 'meetign', 'propertys'); quotes are copied as printed. No roll-call votes are recorded on approving minutes or warrants; these are recorded only as 'reviewed and signed', so no vote entries were made for them. The Regional Dispatch discussion and the Jones House consensus have no motion. Under PUBLIC COMMENT the remarks are by board members Tom and Ernie; no member of the public is recorded speaking, so public_comment is empty. The fire chief, Scott Glenny (addressee of the Clean Harbors quote), and staff named only in discussion are not recorded as attending. Pages 5-11 of the text are attachments (527 CMR excerpts and a Clean Harbors quote) with no heading printed.",
+ "cost_usd": 0.01229452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Ernie Sund",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair, dave matthews provided the following to board members based upon previous"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, steven m. debettencourt, ernie sund, tom alonzo, dave matthews and town manager kerry speidel present."
+  },
+  {
+   "name": "Laura Williams",
+   "role": "Chief Administrative Assistant",
+   "status": "not stated",
+   "quote": "laura williams, chief administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Warrants #4P 12 (8/18/11) and #8 12 (8/9/11) reviewed and signed.",
+   "quote": "warrants - #4p 12, 8/18/11 - $459,489.48 and #8 12, 8/9/11 - $914,485.91 reviewed and signed."
+  },
+  {
+   "decision": "Regular session minutes for 8/2/11 and Executive Session minutes for 8/2/11 reviewed and signed.",
+   "quote": "minutes - board of selectmen regular session for 8/2/11 and executive session for 8/2/11 reviewed and signed."
+  },
+  {
+   "decision": "Town Manager to present the Chapter 90 / DPW information to the board the following week, as the DPW Director was on vacation.",
+   "quote": "as the dpw director is on vacation this week, she will get the information for the board next week."
+  },
+  {
+   "decision": "Town Manager asked the Senior Center Director to look at alternatives for the Senior Center parking lot project.",
+   "quote": "kerry asked the director of the senior center to look at alternatives to come up with a creative solution."
+  },
+  {
+   "decision": "Town Manager to follow up with the Finance Committee on the 925 Massachusetts Ave tank work, intended to be completed before Labor Day.",
+   "quote": "she will follow up with the finance committee and it's her intention to have this done before labor day."
+  },
+  {
+   "decision": "Consensus to re-advertise the Jones House for 90 days without a minimum bid; Town Manager to present the timetable next week.",
+   "quote": "consensus of the board is to go out for 90 days, without a minimum bid. kerry will present the timetable"
+  },
+  {
+   "decision": "First policies workshop set for September 6 (instead of a televised meeting); board members to receive a list the next week to focus on Section F of the board's policies.",
+   "quote": "first workshop on this will be on the 6 of september instead of a televised meeting, board members will have a list next week to focus on"
+  },
+  {
+   "decision": "Tentative workshop set for September 8 at 6:00 pm at the Public Safety Complex on the Regional Dispatch proposal; Town Manager to provide Harvard's Q&A document to the board.",
+   "quote": "tentative workshop scheduled for september 8'h @6:00 pm at the public safety complex to discuss the regional dispatch proposal."
+  },
+  {
+   "decision": "Board Chairman announced the Board would not return to Regular Session after Executive Session.",
+   "quote": "chairman announced that the board would not be returning to regular session."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Electronic recycling fundraiser fee (LHS Class of 2012)",
+   "what_was_recorded": "Electronic items dropped off at the high school will be recycled for an approximate per-volume charge.",
+   "figures_as_printed": [
+    "$5 per cubic foot"
+   ],
+   "quote": "recycled for approximately $5 per cubic foot."
+  },
+  {
+   "topic": "Warrants reviewed and signed",
+   "what_was_recorded": "Two warrants were reviewed and signed, with their printed totals.",
+   "figures_as_printed": [
+    "$459,489.48",
+    "$914,485.91"
+   ],
+   "quote": "warrants - #4p 12, 8/18/11 - $459,489.48 and #8 12, 8/9/11 - $914,485.91 reviewed and signed."
+  },
+  {
+   "topic": "MRPC grant for Senior Center parking lot",
+   "what_was_recorded": "The town did not receive the MRPC grant for the Senior Center parking lot; no dollar figure is printed and the board discussed the project cost and local funding.",
+   "figures_as_printed": [],
+   "quote": "town received notice that we did not receive the mrpc grant for the senior center parking lot."
+  },
+  {
+   "topic": "Senior Center parking lot septic system removal cost",
+   "what_was_recorded": "Septic system removal was called the largest cost aspect of the parking lot project; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "dave commented that the septic system removal seemed to be the largest aspect of the project"
+  },
+  {
+   "topic": "925 Massachusetts Ave tank draining quote",
+   "what_was_recorded": "A Clean Harbors quote to drain the tanks was about $5,000; the Finance Committee would be asked to earmark this from the Reserve Fund.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "one from clean harbors about $5,000 to come in, clean out the tanks"
+  },
+  {
+   "topic": "Clean Harbors Quote #1266746 summary (925 Massachusetts Ave)",
+   "what_was_recorded": "The attached Clean Harbors quote summary shows task estimates and an estimated quote total; final billing depends on actual quantities.",
+   "figures_as_printed": [
+    "$3,035.00",
+    "$150.00",
+    "$1,700.00",
+    "$4,885.00"
+   ],
+   "quote": "task 3: total labor, equipment, and material $1,700.00"
+  },
+  {
+   "topic": "Jones House minimum bid and land value",
+   "what_was_recorded": "The building was offered at a minimum bid of $80,000 and the land value alone was $120,000, yet no bid was received.",
+   "figures_as_printed": [
+    "$80,000",
+    "$120,000"
+   ],
+   "quote": "we offered the building at a minimum bid of $80,000 and the land value alone in $120,000 and yet we didn't receive a bid."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Request to earmark the 925 Massachusetts Ave tank-draining cost from the Reserve Fund, to be presented to the Finance Committee.",
+   "amount_as_printed": "about $5,000",
+   "outcome": "proposed; Finance Committee to consider, not approved in the minutes",
+   "quote": "request that this money be earmarked to come from the reserve fund as a source of funding."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "tom expressed appreciation to the turkey hill gardeners on the work that has been done over the weekend"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "the lunenburg high school senior class of 2012 will host an annual electronic recycling fundraiser in the high school parking lot,"
+  },
+  {
+   "topic": "FY2012 Town Manager Goals",
+   "resolution": "adopted unanimously",
+   "quote": "tom move to officially adopt the town manager goals for 2012, steve seconded, voted unanimously."
+  },
+  {
+   "topic": "Minutes, warrants, action file (Chapter 90), affordable housing",
+   "resolution": "minutes and warrants signed; Chapter 90 update to come next week",
+   "quote": "minutes - board of selectmen regular session for 8/2/11 and executive session for 8/2/11 reviewed and signed."
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "no action",
+   "quote": "ernie, capital planning met and is streamlining some of the process and forms that were redundant"
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "no action; Senior Center to look at alternatives; ABCC appeal settled",
+   "quote": "town received notice that we did not receive the mrpc grant for the senior center parking lot."
+  },
+  {
+   "topic": "925 Massachusetts Ave tanks",
+   "resolution": "Reserve Fund request to go to Finance Committee; no vote recorded",
+   "quote": "update 925 massachusetts ave. - tanks - fire chief indicated that he believes he has statutory authority to enter onto the"
+  },
+  {
+   "topic": "Policies standardization and prioritization",
+   "resolution": "first workshop set for September 6",
+   "quote": "policies - standardized format & prioritization - board would like to have the documents standardized into one document."
+  },
+  {
+   "topic": "Jones House schedule and re-bid",
+   "resolution": "re-advertise 90 days without minimum bid (consensus)",
+   "quote": "update jones house, schedule - we had put out an rfp that had restrictions on the property and a minimum bid and no bids"
+  },
+  {
+   "topic": "Executive session (collective bargaining / litigation)",
+   "resolution": "entered by roll call vote; no return to regular session",
+   "quote": "1. m.g.l. chapter 39, §23b to discuss strategy with respect to collective bargaining or litigation if an open meeting may have"
+  },
+  {
+   "topic": "Upcoming meeting schedule and Regional Dispatch",
+   "resolution": "workshop tentatively set for September 8",
+   "quote": "tentative workshop scheduled for september 8'h @6:00 pm at the public safety complex to discuss the regional dispatch proposal."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "527 CMR: Board of Fire Prevention Regulations, excerpts re 925 Massachusetts Ave (RE: 925 MASSAVE)",
+   "where": "list",
+   "quote": "527 cmr: board of fire prevention regulations re: 925 massave"
+  },
+  {
+   "name": "Clean Harbors Environmental Services, Inc. Quote #1266746 dated August 9, 2011",
+   "where": "list",
+   "quote": "quote #1266746 dear mr. glenny:"
+  },
+  {
+   "name": "FY2012 Town Manager Goals (provided by Chair Dave Matthews)",
+   "where": "text",
+   "quote": "fy2012 town manager goals - chair, dave matthews provided the following to board members based upon previous"
+  },
+  {
+   "name": "Warrants #4P 12 (8/18/11) and #8 12 (8/9/11)",
+   "where": "text",
+   "quote": "warrants - #4p 12, 8/18/11 - $459,489.48 and #8 12, 8/9/11 - $914,485.91 reviewed and signed."
+  },
+  {
+   "name": "Town Counsel information on fire chief's authority at 925 Massachusetts Ave",
+   "where": "text",
+   "quote": "provided information from town counsel that we had received a couple of years ago"
+  },
+  {
+   "name": "Jones House RFP (with property restrictions and minimum bid)",
+   "where": "text",
+   "quote": "we had put out an rfp that had restrictions on the property and a minimum bid and no bids"
+  },
+  {
+   "name": "Harvard Q&A document on regional dispatch",
+   "where": "text",
+   "quote": "harvard has a q& a document which is quite a volume of information and kerry will provide this to the board."
+  },
+  {
+   "name": "IMA (regional dispatch intergovernmental agreement)",
+   "where": "text",
+   "quote": "the ima has been reviewed by town counsel, will prepare informational packets"
+  }
+ ],
+ "tags": [
+  "board of selectmen",
+  "town manager goals",
+  "budget",
+  "warrants",
+  "Chapter 90",
+  "Senior Center",
+  "925 Massachusetts Ave",
+  "fire department",
+  "Jones House",
+  "policies",
+  "regional dispatch",
+  "executive session",
+  "town center zoning",
+  "planning board",
+  "reserve fund"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "527 cmr: board of fire prevention regulations"
+ },
+ "dropped_unquoted_by_field": {}
 }

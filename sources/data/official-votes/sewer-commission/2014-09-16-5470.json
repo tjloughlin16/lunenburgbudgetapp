@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2014-09-16",
  "docid": "5470",
@@ -12,56 +12,461 @@
  },
  "votes": [
   {
-   "motion": "proceed with generator work based on a better quote",
-   "moved_by": "Carl",
-   "seconded_by": "Troy",
+   "motion": "Proceed with the SWSS generator work based on a quote with better numbers.",
+   "moved_by": "Carl Luck",
+   "seconded_by": "Troy Daniels",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "carl made the motion to proceed based on a quote with better numbers. t roy seconded. vote taken was unanimous",
-   "quote_taken_from_text": true
+   "quote": "carl made the motion to proceed based on a quote with better numbers."
   },
   {
-   "motion": "request Dan Proctor obtain a bond for work on town-owned property, approved by Jack Rodriguez",
-   "moved_by": "Dave",
-   "seconded_by": "Mike",
+   "motion": "Request that Dan Proctor obtain a bond for the amount of work on town-owned property, as approved by Jack Rodriquenz (name as printed: Jack Rodriquen z).",
+   "moved_by": "Dave MacDonald",
+   "seconded_by": "Mike Nault",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "dave made the motion to request dan proctor obtain a bond for the amount of work on town-owned property and approved by jack rodriquen z. mike seconded. vote taken was 4 for, 1 against. motion p assed."
+   "quote": "dave made the motion to request dan proctor obtain a bond for the amount of work on town-owned property"
   },
   {
-   "motion": "accept the change of use for 909 Mass Ave, provided the Commission gets notice from the plumber that the sink has been disconnected",
-   "moved_by": "Dave",
-   "seconded_by": "Mike",
+   "motion": "Accept the change of use for 909 Mass Ave, providing the Commission gets notice from the plumber that the sink has been disconnected.",
+   "moved_by": "Dave MacDonald",
+   "seconded_by": "Mike Nault",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "dave made the motion to accept the change of use, providing the commission gets notice from the plumber that it has been disconnected. mike seconded. vote taken was unanimous."
+   "quote": "dave made the motion to accept the change of use, providing the commission gets notice"
   },
   {
-   "motion": "allow the Chairman to sign Temporary Access Agreements",
-   "moved_by": "Troy",
-   "seconded_by": "Dave",
+   "motion": "Allow the Chairman to sign Temporary Access Agreements.",
+   "moved_by": "Troy Daniels",
+   "seconded_by": "Dave MacDonald",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "troy made the motion to allow chairman to sign temp orary access agreements. dave seconded. vote taken was un animous."
+   "quote": "troy made the motion to allow chairman to sign"
   },
   {
-   "motion": "accept the minutes of August 26, 2014",
-   "moved_by": "Troy",
-   "seconded_by": "Dave",
+   "motion": "Accept the minutes of 8/26/14.",
+   "moved_by": "Troy Daniels",
+   "seconded_by": "Dave MacDonald",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "troy made the motion to accept the minutes of 8/26 /14, dave seconded. vote taken was unanimous."
+   "quote": "troy made the motion to accept the minutes of 8/26 /14, dave seconded."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Troy",
-   "seconded_by": "Mike",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Troy Daniels",
+   "seconded_by": "Mike Nault",
    "outcome": "passed",
    "procedural": true,
-   "quote": "carl asked for a motion to adjourn. troy made the motion, mike seco nded. meeting was adjourned at 9:57pm"
+   "quote": "carl asked for a motion to adjourn. troy made the motion"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes clearly stated in minutes. Two time discrepancies noted in document: CALL TO ORDER stated as 7:00pm but ADJOURNMENT listed as 8:35 pm (contradicts later statement of 9:57pm when meeting actually adjourned); these are in the source and reported as found.",
- "cost_usd": 0.119366
+ "note": "Text extraction, not a scan; votes are readable. Extraction artifacts (split words, doubled spaces) were normalized in quotes. Internal conflict: the minutes print the adjournment as 9:57pm in the body and 8:35 pm under ADJOURNMENT; both are recorded as printed. The motion to adjourn has no printed count, so its outcome is recorded from the statement that the meeting was adjourned. The minutes do not print the names of a presiding officer or the role of Carl Luck beyond a reference to \"Chairman\". Jack Rodriquenz, Kevin Olson, Pat, Dick Heaton and Wright Pierce are mentioned but did not appear, so they are not listed as attendees.",
+ "cost_usd": 0.012520520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chairman (as referenced in minutes)",
+   "status": "present",
+   "quote": "carl made the motion to proceed based on a quote with better numbers."
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "dave made the motion to accept the change of use, providing the commission gets notice"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "troy made the motion to accept the minutes of 8/26 /14, dave seconded."
+  },
+  {
+   "name": "Mike Nault",
+   "status": "present",
+   "quote": "mike seconded. vote taken was 4 for, 1 against."
+  },
+  {
+   "name": "Butch Bilotta",
+   "status": "not stated",
+   "quote": "carl luck, dave macdonald, troy daniels, mike nault, butch bilotta"
+  },
+  {
+   "name": "Debbie Trumbull",
+   "role": "SWSS",
+   "status": "present",
+   "quote": "debbie & bruce trumbull, al packard"
+  },
+  {
+   "name": "Bruce Trumbull",
+   "role": "SWSS",
+   "status": "present",
+   "quote": "debbie & bruce trumbull, al packard"
+  },
+  {
+   "name": "Al Packard",
+   "role": "SWSS",
+   "status": "present",
+   "quote": "debbie & bruce trumbull, al packard"
+  },
+  {
+   "name": "Dan Proctor",
+   "status": "present",
+   "quote": "dan proctor explained the project to connect 42 hig hlan",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "DJ Layhe",
+   "role": "Harley House Décor (applicant)",
+   "status": "present",
+   "quote": "change of use dj layhe & ernest beland for harley house"
+  },
+  {
+   "name": "Ernest Beland",
+   "role": "Harley House Décor (applicant)",
+   "status": "present",
+   "quote": "mr. beland said he could disconnect"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Business Manager for the Sewer Commission",
+   "status": "present",
+   "quote": "barb quickly reviewed the remaining items"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission will require a copy of the contract and leave it to the DPW director to determine the town portion of the bond for work on town property.",
+   "quote": "will require a copy of the contract"
+  },
+  {
+   "decision": "Policy should require stubs for 17 and 20 Highland for future connections.",
+   "quote": "policy should require stubs for 17 and 20 highland"
+  },
+  {
+   "decision": "Covenant, bonds and warranty will be required for the 42 Highland St private extension; all work to be complete before snow.",
+   "quote": "we will need the covenant, bonds, warranty."
+  },
+  {
+   "decision": "Hold a workshop with Wright Pierce on the SRF project before the next meeting on 9/30, starting at 6pm.",
+   "quote": "we would like to have a workshop with wright pierce before the next meeting on 9/30"
+  },
+  {
+   "decision": "Barb to check whether Lorden had ever signed something agreeing to the fees.",
+   "quote": "agreeing to the fees. barb to check."
+  },
+  {
+   "decision": "Staff to compile a chronology of events for the ZBA/Hollis Hills/Lorden fee matters.",
+   "quote": "we need to compile a chronology of events."
+  },
+  {
+   "decision": "Carl to check with Jack on the Weston & Sampson I/I report from 2011.",
+   "quote": "carl suggested he check with jack."
+  },
+  {
+   "decision": "Barb to send the YTD FY15 budget to the Commissioners by email for review.",
+   "quote": "barb had the ytd fy15 budget and will send to the commissioners via email"
+  },
+  {
+   "decision": "FY16 Capital Plan to be discussed at the next meeting.",
+   "quote": "fy16 capital plan will be discussed at the next meeting."
+  },
+  {
+   "decision": "Invoices to be reviewed by the Commission at the meeting on September 30.",
+   "quote": "which the commission can review at the meeting on september 30."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SWSS generator work estimate",
+   "what_was_recorded": "An estimate for generator work did not match the per-station quotes; the Commission wants a better quote with detail to match the total.",
+   "figures_as_printed": [
+    "$9250"
+   ],
+   "quote": "the estimate received for $9250"
+  },
+  {
+   "topic": "Pratt St/Lakeview SRF pumps cost to homeowners",
+   "what_was_recorded": "Pumps will add a cost to homeowners.",
+   "figures_as_printed": [
+    "$5k"
+   ],
+   "quote": "pumps will add $5k to homeowners"
+  },
+  {
+   "topic": "Pratt St/Lakeview SRF cost to connect",
+   "what_was_recorded": "Carl stated the cost to connect should be close to the figure printed.",
+   "figures_as_printed": [
+    "$20k"
+   ],
+   "quote": "cost to connect should be close to $20k"
+  },
+  {
+   "topic": "Pratt St/Lakeview betterment",
+   "what_was_recorded": "Betterment on project cost may be less without the cost of the pump; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "b etterment on cost of project may be less without cost of pump.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Sewer Rate Relief Fund FY15",
+   "what_was_recorded": "FYI: the fund applies only if projects are done without SRF funding and comes as a grant, not a low-interest loan; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "fund is applicable only if projects are done without srf funding"
+  },
+  {
+   "topic": "42 Highland St private extension privilege fee",
+   "what_was_recorded": "Neighboring homes that participated would pay 50% of the privilege fee; 42 Highland may have to pay the full betterment if a new line goes in later.",
+   "figures_as_printed": [
+    "50%"
+   ],
+   "quote": "that they would pay 50%"
+  },
+  {
+   "topic": "42 Highland St bond amount",
+   "what_was_recorded": "Discussion of the town's bond portion; Troy's position is that it should equal the cost of the contract; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "it should be for the cost of the contract"
+  },
+  {
+   "topic": "Sewer fees (ZBA)",
+   "what_was_recorded": "ZBA work session may be held to discuss sewer fees; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "to discuss sewer fees"
+  },
+  {
+   "topic": "I/I reduction project proposal",
+   "what_was_recorded": "An updated proposal is needed from Pat for the other half of the I/I project; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "need an updated proposal from pat"
+  },
+  {
+   "topic": "Invoices and YTD FY15 budget",
+   "what_was_recorded": "Invoices and the YTD FY15 budget to be reviewed; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "which the commission can review at the meeting on september 30."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments: SWSS (generator work, pump station reports, SCADA)",
+   "resolution": "approved proceeding on generator work based on a better quote; SCADA remote access to be pursued with Verizon",
+   "quote": "debbie & bruce trumbull, al packard",
+   "tags": [
+    "SWSS",
+    "generator",
+    "SCADA",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Private extension request - 42 Highland St",
+   "resolution": "approved bond request for town portion, passed 4-1",
+   "quote": "dan proctor explained the project to connect 42 hig hlan",
+   "tags": [
+    "private extension",
+    "bond",
+    "Highland St"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "909 Mass Ave change of use (Harley House Décor)",
+   "resolution": "accepted change of use, conditioned on plumber notice of sink disconnection",
+   "quote": "909 mass ave. -change of use",
+   "tags": [
+    "change of use",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Pratt St/Lakeview Ave SRF project layout review",
+   "resolution": "discussed; Chairman authorized to sign temporary access agreements; workshop with Wright Pierce set for 9/30",
+   "quote": "pratt st/lakeview ave srf project -layout review",
+   "tags": [
+    "SRF project",
+    "Wright Pierce",
+    "easements",
+    "soil borings"
+   ]
+  },
+  {
+   "topic": "I/I project status - fine assessment follow-up",
+   "resolution": "no action; updates on fines and repairs",
+   "quote": "fine assessment follow-up",
+   "tags": [
+    "I/I",
+    "fines"
+   ]
+  },
+  {
+   "topic": "Sewer Rate Relief Fund FY15",
+   "resolution": "FYI only, no action",
+   "quote": "fyi only, fund is applicable only if projects are done without srf funding",
+   "tags": [
+    "rate relief fund",
+    "SRF"
+   ]
+  },
+  {
+   "topic": "September ZBA hearings",
+   "resolution": "discussed; Barb to check Lorden fee agreement; chronology to be compiled",
+   "quote": "september zba hearings - september 24, 2014",
+   "tags": [
+    "ZBA",
+    "sewer fees",
+    "Whalom",
+    "Hollis Hills"
+   ]
+  },
+  {
+   "topic": "Sewer Commission projects update - I/I reduction",
+   "resolution": "discussed; Carl to check with Jack on 2011 report; no vote",
+   "quote": "troy had questions on the weston & sampson i/i",
+   "tags": [
+    "I/I",
+    "Whalom"
+   ]
+  },
+  {
+   "topic": "Privately funded extension policy update",
+   "resolution": "discussed; processes to define covenants and warranty",
+   "quote": "privately funded extension policy update",
+   "tags": [
+    "extension policy",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "FY16 Capital Plan",
+   "resolution": "deferred to next meeting",
+   "quote": "fy16 capital plan will be discussed at the next meeting.",
+   "tags": [
+    "capital plan",
+    "FY16"
+   ]
+  },
+  {
+   "topic": "Minutes of 8/26/14",
+   "resolution": "accepted",
+   "quote": "regarding the minutes of 8/26, troy stated",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:57pm",
+   "quote": "meeting was adjourned at 9:57pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Change of Use application (909 Mass Ave), received 9/15",
+   "where": "text",
+   "quote": "change of use application was received 9/15."
+  },
+  {
+   "name": "Letters sent 8/28/14 with fines",
+   "where": "text",
+   "quote": "letters were sent out 8/28/14 with fines."
+  },
+  {
+   "name": "Memo submitted by Carl on behalf of the Commission (ZBA)",
+   "where": "text",
+   "quote": "carl had submitted a memo on behalf of the commission"
+  },
+  {
+   "name": "Weston & Sampson I/I report from 2011",
+   "where": "text",
+   "quote": "troy had questions on the weston & sampson i/i"
+  },
+  {
+   "name": "Temporary Access Agreement",
+   "where": "text",
+   "quote": "authorization for temporary access agreement"
+  },
+  {
+   "name": "Minutes of 8/26/14",
+   "where": "text",
+   "quote": "regarding the minutes of 8/26, troy stated"
+  },
+  {
+   "name": "SWSS pump station reports",
+   "where": "text",
+   "quote": "swss pump station reports"
+  },
+  {
+   "name": "YTD FY15 budget",
+   "where": "text",
+   "quote": "barb had the ytd fy15 budget and will send to the commissioners via email"
+  },
+  {
+   "name": "Invoices for Commission review (meeting of September 30)",
+   "where": "text",
+   "quote": "which the commission can review at the meeting on september 30."
+  },
+  {
+   "name": "FY16 Capital Plan",
+   "where": "text",
+   "quote": "fy16 capital plan will be discussed at the next meeting."
+  },
+  {
+   "name": "Planning Board joint meeting notice on Economic Development Element",
+   "where": "text",
+   "quote": "joint meeting notice on"
+  },
+  {
+   "name": "Bylaw and regulations (privately funded extension)",
+   "where": "text",
+   "quote": "after reviewing bylaw and regulations, troy"
+  },
+  {
+   "name": "Privately Funded Extension Policy",
+   "where": "text",
+   "quote": "privately funded extension policy update"
+  },
+  {
+   "name": "Generator estimate/quote (SWSS)",
+   "where": "text",
+   "quote": "the estimate received for $9250"
+  },
+  {
+   "name": "SRF application (submittal 10/15)",
+   "where": "text",
+   "quote": "project is on schedule for submittal of the"
+  },
+  {
+   "name": "Covenant, bonds and warranty (42 Highland St extension)",
+   "where": "text",
+   "quote": "we will need the covenant, bonds, warranty."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "SWSS",
+  "generator",
+  "private extension",
+  "change of use",
+  "SRF project",
+  "Pratt St Lakeview",
+  "I/I",
+  "ZBA",
+  "bonds",
+  "budget",
+  "minutes approval",
+  "pump stations",
+  "easements"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

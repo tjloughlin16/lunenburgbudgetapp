@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2014-09-15",
  "docid": "656",
@@ -12,39 +12,212 @@
  },
  "votes": [
   {
-   "motion": "Approve septic system variances for 79 West Street Terrace",
+   "motion": "Approve the requested variances for the septic replacement at 79 West Street Terrace (offset and number of test holes).",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
-   "quote": "the variances were approved unanimously:"
+   "quote": "after reviewing the plan with the engineer and recommendation by the board agent, the variances were approved unanimously"
   },
   {
-   "motion": "Approve septic system variance for 73 Pine Grove",
+   "motion": "Approve the requested variance for the replacement system at 73 Pine Grove (offset from 4 feet to 3 feet).",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
-   "quote": "approved the requested variance unanimously"
+   "quote": "the board determined that the plan was the best possible solution and approved the requested variance unanimously"
   },
   {
-   "motion": "Approve septic system variances for 71 Brookview Terrace",
+   "motion": "Approve the requested variances at 71 Brookview Terrace (distance from leach area to wetlands and reduced number of test holes).",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
-   "quote": "vartances approved unanimously"
+   "quote": "requested variances were the distance from the leach area to wetlands and reduction of number of test holes required. vartances approved unanimously."
   },
   {
-   "motion": "Approve prior meeting minutes",
-   "outcome": "approved",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of the prior meeting.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document header indicates Board of Assessors but content is Board of Health meeting minutes. Text is OCR'd with some garbling at page breaks. No mover or seconder names recorded in any votes. Postponement of well regulations discussion mentioned but not recorded as a formal vote.",
- "cost_usd": 0.0951775
+ "note": "Board field says Board Of Assessors, but the minutes are headed LUNENBURG BOARD OF HEALTH; recorded as the Board of Health text. OCR is noisy: page 1 has garbled fragments (e.g., 25 Eastern Avenue passage, stray words) and some lines are unreadable, so quotes use the legible text. No vote tallies beyond 'unanimously'; no movers or seconders are printed. Variance votes are recorded as 'passed unanimously' with no count. No dollar figures appear in the text ('5pm' and '5ppm' refer to nitrate levels, not money).",
+ "cost_usd": 0.00417282,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Member",
+   "status": "present",
+   "quote": "members in attendance: george emond perry jewell david passios paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Member",
+   "status": "present",
+   "quote": "members in attendance: george emond perry jewell david passios paul fortin"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members in attendance: george emond perry jewell david passios paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members in attendance: george emond perry jewell david passios paul fortin"
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "representing the owner (79 West Street Terrace)",
+   "status": "present",
+   "quote": "bob proctor met with the board of behalf of the owner."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner (73 Pine Grove; 71 Brookview Terrace)",
+   "status": "present",
+   "quote": "chris mackenzie and dan proctor met with the board of behalf of the owner."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner (73 Pine Grove)",
+   "status": "present",
+   "quote": "chris mackenzie and dan proctor met with the board of behalf of the owner."
+  },
+  {
+   "name": "Mr. LaFortune",
+   "role": "owner of the property (25 Eastern Avenue)",
+   "status": "present",
+   "quote": "mr. lafortune, owner of the property, met with the board."
+  },
+  {
+   "name": "Paul Bertrand",
+   "role": "owner of the property (684 Flat Hill Road)",
+   "status": "present",
+   "quote": "paul bertrand, owner of the property, met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the Well Regulations modification was postponed until the October meeting.",
+   "quote": "discussion of well regulations modification postponed until october meeting."
+  },
+  {
+   "decision": "Septic system permits were signed.",
+   "quote": "septid systent permits were signed"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "79 West Street Terrace septic variances",
+   "resolution": "variances approved unanimously",
+   "quote": "bob proctor met with the board of behalf of the owner.",
+   "tags": [
+    "septic",
+    "variance",
+    "high water table"
+   ]
+  },
+  {
+   "topic": "73 Pine Grove replacement septic variance",
+   "resolution": "variance approved unanimously",
+   "quote": "the board determined that the plan was the best possible solution and approved the requested variance unanimously",
+   "tags": [
+    "septic",
+    "variance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "71 Brookview Terrace septic variances",
+   "resolution": "variances approved unanimously",
+   "quote": "requested variances were the distance from the leach area to wetlands and reduction of number of test holes required.",
+   "tags": [
+    "septic",
+    "variance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "25 Eastern Avenue well and nitrate discussion",
+   "resolution": "no vote; owner to pursue drilling a new well",
+   "quote": "the owner will pursue drilling a new well as the best solution.",
+   "tags": [
+    "well",
+    "nitrates",
+    "septic setback"
+   ]
+  },
+  {
+   "topic": "684 Flat Hill Road well replacement update",
+   "resolution": "update received; no action",
+   "quote": "the well driller is on the property and is currently drilling the new well.",
+   "tags": [
+    "well",
+    "water supply"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Well Regulations modification",
+   "resolution": "postponed to October meeting",
+   "quote": "discussion of well regulations modification postponed until october meeting.",
+   "tags": [
+    "well regulations"
+   ]
+  },
+  {
+   "topic": "Septic system permits",
+   "resolution": "signed",
+   "quote": "septid systent permits were signed",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "reviewed",
+   "quote": "title 5 inspection reports were reviewed.",
+   "tags": [
+    "title 5",
+    "inspection"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 Inspection Reports",
+   "where": "text",
+   "quote": "title 5 inspection reports were reviewed."
+  },
+  {
+   "name": "Well Regulations (modification)",
+   "where": "text",
+   "quote": "discussion of well regulations modification postponed until october meeting."
+  }
+ ],
+ "tags": [
+  "septic variances",
+  "wells",
+  "water table",
+  "Title 5",
+  "board of health",
+  "permits"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports were reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

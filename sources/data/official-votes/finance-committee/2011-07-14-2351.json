@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2011-07-14",
  "docid": "2351",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to recommend approval of Article 1 regarding the payment of additional $200,000",
+   "motion": "Recommend approval of Article 1 of the warrant for the Special Town Meeting.",
    "moved_by": "BL",
    "seconded_by": "BR",
    "outcome": "not stated",
@@ -20,15 +20,220 @@
    "quote": "bl moves to recommend approval of article 1 and br seconds the motion."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 8:20 PM.",
    "moved_by": "BL",
    "seconded_by": "BR",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "bl made motion to adjourn at 8:20 pm and br seconds, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1211135
+ "note": "OCR text of a single-page-pair minutes sheet. Votes on the FY2012 chair/vice-chair/secretary nominations are not recorded, and the result of the Article 1 motion is not stated. Initials \"BL\", \"BR\" and \"MM\" are used as printed; \"MM\" could mean Martha McDonald or Mike Mackin, so the seconder is not assigned. Mike Mackin and Marilyn Stokes are named only in the closing thanks and are not recorded as attendees. The Town Manager update is a report of state action and carries no vote. The \"Wallacher\" and received-stamp text are OCR artefacts, not minutes content.",
+ "cost_usd": 0.0052935199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Laffond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson john male kerry speidel"
+  },
+  {
+   "name": "Martha McDonald",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson john male kerry speidel"
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson john male kerry speidel"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson john male kerry speidel"
+  },
+  {
+   "name": "John Male",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson john male kerry speidel"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "brian laffond, martha mcdonald, barbara reynolds, mark erickson john male kerry speidel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Finance Committee members were reassigned to town boards: Capital Planning (Brian Laffond), DPW (Martha McDonald), Library, Monty Tech, Sewer (John Male), School Regionalization and School Reconfiguration, with Public Safety and School left open.",
+   "quote": "library - barbara reynolds monty tech - barbara reynolds public safety - open"
+  },
+  {
+   "decision": "The Pavement Management Plan item was rescheduled to when Kerry and Jack are both present.",
+   "quote": "pavement management plan - reschedule when kerry and jack are both here."
+  },
+  {
+   "decision": "Energy review data is to be requested and summarized.",
+   "quote": "will ask for this data to be summarized."
+  },
+  {
+   "decision": "The Finance Committee web page is to be developed because it was missing from the new town website.",
+   "quote": "finance committee page was missing; it is on the site map and needs to be developed."
+  },
+  {
+   "decision": "Performance measures are to be put in the budget and reviewed at the appropriate time.",
+   "quote": "performance measures will be put in the budget; review at appropriate time."
+  },
+  {
+   "decision": "The next meeting is set for July 18, 2011, a special Town Meeting at LHS at 7 PM.",
+   "quote": "next meeting - july 18 - special town meeting - lhs 7 pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW facility project estimated cost",
+   "what_was_recorded": "HK Architects of Groton estimated the DPW project cost at $1.1M.",
+   "figures_as_printed": [
+    "$1.1M"
+   ],
+   "quote": "hk architects of groton estimated the project costs at $1.1m"
+  },
+  {
+   "topic": "DPW facility bids",
+   "what_was_recorded": "Bids for the DPW project came in at $1.4M.",
+   "figures_as_printed": [
+    "$1.4M"
+   ],
+   "quote": "bids came in at $1.4m"
+  },
+  {
+   "topic": "Separating DPW buildings",
+   "what_was_recorded": "Separating the buildings is said to save $250K in septic and electrical costs.",
+   "figures_as_printed": [
+    "$250K"
+   ],
+   "quote": "separating buildings saves $250k in septic and electrical costs"
+  },
+  {
+   "topic": "DPW project annual debt cost",
+   "what_was_recorded": "Additional annual cost of the DPW project is stated as $23.5K for 15 years at 4% interest.",
+   "figures_as_printed": [
+    "$23.5K",
+    "15 years",
+    "4%"
+   ],
+   "quote": "additional costs of dpw project per year is $23.5k for 15 years at 4% interest."
+  },
+  {
+   "topic": "Paying off additional debt",
+   "what_was_recorded": "BL recommended paying off an additional $200,000 as soon as possible to avoid conflict with future school loans.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "bl recommended paying off additional $200,000 as soon as possible to avoid conflict with future school loans"
+  },
+  {
+   "topic": "FY12 state budget",
+   "what_was_recorded": "Town Manager reported the Governor signed the FY12 budget with no changes from what the committee voted on; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "governor signed fy12 budget on monday; no changes from what we voted on in the budget"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order by the chairman at 7:00 pm."
+  },
+  {
+   "topic": "Presentation of Article 3, DPW Facility Study Proposal (public hearing)",
+   "resolution": "presented; hearing closed 7:35 PM",
+   "quote": "presentation of article 3, dpw facility study proposal"
+  },
+  {
+   "topic": "Reorganize Finance Committee for FY2012",
+   "resolution": "nominations recorded; no result stated",
+   "quote": "mark erickson nominated for chairman by bl; seconded by br."
+  },
+  {
+   "topic": "Old business: warrant article for Special Town Meeting",
+   "resolution": "motion to recommend Article 1; result not stated",
+   "quote": "bl moves to recommend approval of article 1 and br seconds the motion."
+  },
+  {
+   "topic": "Reassign Finance Committee members to town boards",
+   "resolution": "assignments listed",
+   "quote": "capital planning - brian laffond"
+  },
+  {
+   "topic": "New communications: town website",
+   "resolution": "Finance Committee page to be developed",
+   "quote": "me visited new town website (www.lunenburgma.gov) but finance committee page was missing"
+  },
+  {
+   "topic": "Town Manager updates",
+   "resolution": "informational; no action",
+   "quote": "governor signed fy12 budget on monday"
+  },
+  {
+   "topic": "Future agenda items",
+   "resolution": "energy data and pavement plan deferred",
+   "quote": "pavement management plan - reschedule when kerry and jack are both here."
+  },
+  {
+   "topic": "Next meeting and farewell",
+   "resolution": "next meeting set July 18",
+   "quote": "next meeting - july 18 - special town meeting - lhs 7 pm"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:20 PM",
+   "quote": "bl made motion to adjourn at 8:20 pm and br seconds, all in favor."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant Article 1, Special Town Meeting",
+   "where": "text",
+   "quote": "review warrant article for special town meeting"
+  },
+  {
+   "name": "Article 3, DPW Facility Study Proposal",
+   "where": "text",
+   "quote": "presentation of article 3, dpw facility study proposal"
+  },
+  {
+   "name": "FY12 budget",
+   "where": "text",
+   "quote": "governor signed fy12 budget on monday"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "DPW facility",
+  "special town meeting",
+  "warrant article",
+  "committee reorganization",
+  "committee assignments",
+  "town website",
+  "debt",
+  "FY12 budget",
+  "energy",
+  "pavement management"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

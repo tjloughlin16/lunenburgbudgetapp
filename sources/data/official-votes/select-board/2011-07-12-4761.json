@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2011-07-12",
  "docid": "4761",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the Eagle Scout Project as presented by Alan Parker",
+   "motion": "Approve the Eagle Scout Project as presented by Alan Parker.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram motioned to approve the eagle scout project as presented by alan parker. mr. debettencourt seconded mr. alonzo questioned what the time line would be.",
-   "quote_taken_from_text": true
+   "quote": "ms. bertram motioned to approve the eagle scout project as presented by alan parker. mr. debettencourt seconded"
   },
   {
-   "motion": "Approve the Auctioneer's Permit Application for Michael Roy",
+   "motion": "Approve the Auctioneer's Permit Application for Michael Roy.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
@@ -29,41 +28,428 @@
    "quote": "mr. alonzo moved to approve the auctioneer's permit application for michael roy. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   },
   {
-   "motion": "Approve the FY2011 budget transfers as submitted by the Town Manager",
+   "motion": "Approve the FY2011 year-end budget transfers as submitted by the Town Manager.",
    "moved_by": "Ms. Bertram",
    "seconded_by": "Mr. deBettencourt",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "ms. bertram motioned to approve the transfers as submitted by the town manager. mr. debettencourt seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "ms. bertram motioned to approve the transfers as submitted by the town manager. mr. debettencourt seconded"
   },
   {
-   "motion": "Support the MRPC grant application for pre-disaster mitigation funding",
+   "motion": "Recommend approval of the DPW building warrant article at Town Meeting.",
+   "moved_by": "Ms. Bertram",
+   "seconded_by": "Mr. deBettencourt",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "ms. bertram moved to recommend approval of the article at town meeting. mr. debettencourt seconded"
+  },
+  {
+   "motion": "Support the MRPC grant application for pre-disaster mitigation funding.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo moved to support the mrpc grant application for pre-disaster mitigation funding. ms. bertram seconded on vote, motion carried, 5 in favor, 0 opposed. ",
-   "quote_taken_from_text": true
+   "quote": "mr. alonzo moved to support the mrpc grant application for pre-disaster mitigation funding. ms. bertram seconded"
   },
   {
-   "motion": "Recommend approval of the DPW building article at Town Meeting",
-   "moved_by": "Ms. Bertram",
-   "seconded_by": "Mr. deBettencourt",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "ms. bertram moved to recommend approval of the article at town meeting. mr. debettencourt seconded on vote, motion carried, 5 in favor, 0 opposed. ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business, mr. debettencourt moved to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision. Two apparent timing inconsistencies in the original (meeting opened at 7:01 PM but executive session listed as beginning at 6:00 PM); executive session section does not record a formal vote to enter. All recorded votes passed unanimously 5-0.",
- "cost_usd": 0.09883950000000001
+ "note": "OCR scan (macOS Vision) with a 2013 town clerk stamp; some words are garbled (e.g. \"Steven MI. deBettencourt\", \"Mir.\", \"producț\"). The FY2011 transfer table is OCR-jumbled: the FROM column (five Health Insurance rows and one Medicare Expense row) cannot be matched row by row to the TO amounts, so transfers are recorded as amount-to-destination pairs with the source left unassigned. No motion is recorded for approving the 7/20/10 minutes or the warrants, or for entering executive session (listed at 6:00 p.m., before the 7:01 PM opening). The upcoming-meeting schedule is printed out of date order. Documents-list heading is taken from a sentence (\"Ms. Speidel had distributed...\") rather than a formal list.",
+ "cost_usd": 0.01180662,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven mi. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven mi. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven mi. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven mi. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Steven MI. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven mi. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with david matthews, tom alonzo, paula bertram, carl \"ernie\" sund, steven mi. debettencourt and town manager kerry speidel present."
+  },
+  {
+   "name": "Alan Parker",
+   "role": "Troop 1728 (Eagle Scout project presenter)",
+   "status": "present",
+   "quote": "alan parker, troop 1728 came before the bos to present his eagle scout project request."
+  },
+  {
+   "name": "Michael Roy",
+   "role": "Applicant, Auctioneer's Permit",
+   "status": "not stated",
+   "quote": "michael roy, auctioneer's permit application: ms. speidel explained that this is a request for an"
+  },
+  {
+   "name": "Andrea Schnepf",
+   "role": "Board of Health Administrative Assistant",
+   "status": "present",
+   "quote": "andrea schnepf, board of health administrative assistant spoke and said it is the bos that determines what can be sold"
+  },
+  {
+   "name": "James Lattanzi",
+   "role": "",
+   "status": "present",
+   "quote": "james lattanzi spoke and said that he is in favor of the farmer's market and that he is the person who would like to sell"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed that, in their personal opinions, any Lunenburg farmer complying with all handling and health regulations should be able to sell at the Lunenburg Farmer's Market.",
+   "quote": "the bos were in agreement that in their personal opinions, if any lunenburg farmer wants to sell their"
+  },
+  {
+   "decision": "The Farmer's Market permit and rules and regulations were deferred to the Board's next meeting in July.",
+   "quote": "which they will take up at their next meeting in july."
+  },
+  {
+   "decision": "Board requested Town Manager's comparison data from the last five years on department line-item transfers, to see what can be done to limit expenses.",
+   "quote": "the bos would like comparison data from the last five years to see what can be done to limit expenses"
+  },
+  {
+   "decision": "Ms. Bertram requested that the Board receive a copy of the Planning Board report on the gas station property for review.",
+   "quote": "she requested that the bos receive a copy of it for review"
+  },
+  {
+   "decision": "Mr. deBettencourt requested that the gas station clean-up grant and the costs to remove the old Primary School tank be circulated to the Board.",
+   "quote": "mr. debettencourt requested that a copy of the grant which was received to clean up the gas station property"
+  },
+  {
+   "decision": "Town Manager will post information on the change in trash collection company on Black Board Connect and by town-wide telephone message.",
+   "quote": "ms. speidel will post information on the towns black board connect and via town wide telephone message"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle Scout project cost and donations",
+   "what_was_recorded": "Alan Parker reported the Eagle Scout project would cost about $1200 and that donors had offered over $600.",
+   "figures_as_printed": [
+    "$1200",
+    "$600"
+   ],
+   "quote": "the cost for this project would be approximately $1200 to which mr."
+  },
+  {
+   "topic": "FY2011 year-end budget transfers",
+   "what_was_recorded": "Transfer limit under M.G.L. Chapter 44, Section 33B was described, and transfers totalling the amounts listed were requested to cover overages in Police, Fire and Public Buildings Utilities.",
+   "figures_as_printed": [
+    "$5000",
+    "3%",
+    "$10,000.00",
+    "$2,500.00",
+    "$8,500.00"
+   ],
+   "quote": "so long as the transfer does not exceed $5000 or 3% of department budget"
+  },
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrant #2-12 was listed with two dollar amounts; no vote on warrants is recorded.",
+   "figures_as_printed": [
+    "$528,081.86",
+    "$541,113.10"
+   ],
+   "quote": "warrants: #2-12 $528,081.86 $541,113.10"
+  },
+  {
+   "topic": "Gas station clean-up grant",
+   "what_was_recorded": "A DEP grant of approximately $50-60K was approved for clean-up at the abandoned gas station property on Mass Ave.",
+   "figures_as_printed": [
+    "$50-60K"
+   ],
+   "quote": "was approved for approximately $50-60k, for clean up at the property."
+  },
+  {
+   "topic": "Old Primary School tank removal",
+   "what_was_recorded": "Costs incurred to remove the tank from the old Primary School were requested as a copy for the Board; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "a copy of the costs incurred to remove the tank from the old primary school be circulated to the bos."
+  },
+  {
+   "topic": "DPW building project shortfall",
+   "what_was_recorded": "Building Committee changes to come in on budget left the project still about $200K short; Mr. deBettencourt said he will support an increase at Town Meeting.",
+   "figures_as_printed": [
+    "$200K"
+   ],
+   "quote": "they are still approximately $200k short"
+  },
+  {
+   "topic": "State aid redistribution and 7% general government aid reduction",
+   "what_was_recorded": "Language allows redistribution of unspent State appropriations of about $65M to towns, meant to replace a 7% reduction in unrestricted general government aid; timing unknown.",
+   "figures_as_printed": [
+    "$65M",
+    "7%"
+   ],
+   "quote": "unspent state appropriations which are approximately $65m"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer to Police Lock Up, Salaries (source listed in the transfer table as Health Insurance or Medicare Expense; OCR columns do not align row by row).",
+   "amount_as_printed": "$10,000.00",
+   "outcome": "approved as submitted, 5-0 on one motion",
+   "quote": "$10,000.00 police lock up, salaries"
+  },
+  {
+   "description": "Transfer to Police/Fire Injury Leave, Salaries (source as listed in the transfer table; OCR columns do not align).",
+   "amount_as_printed": "$2,500.00",
+   "outcome": "approved as submitted, 5-0 on one motion",
+   "quote": "$2,500.00 police/fire injury leave, salaries"
+  },
+  {
+   "description": "Transfer to Fire, Salaries (source as listed in the transfer table; OCR columns do not align).",
+   "amount_as_printed": "$10,000.00",
+   "outcome": "approved as submitted, 5-0 on one motion",
+   "quote": "$10,000.00 fire, salaries"
+  },
+  {
+   "description": "Transfer to Police/Fire Medical, Expenses (source as listed in the transfer table; OCR columns do not align).",
+   "amount_as_printed": "$2,500.00",
+   "outcome": "approved as submitted, 5-0 on one motion",
+   "quote": "$2,500.00 police/fire medical, expenses"
+  },
+  {
+   "description": "Transfer to Veteran's Benefits (source as listed in the transfer table; OCR columns do not align).",
+   "amount_as_printed": "$8,500.00",
+   "outcome": "approved as submitted, 5-0 on one motion",
+   "quote": "$8,500.00 veteran's benefits"
+  },
+  {
+   "description": "Transfer to Public Buildings Utilities (source as listed in the transfer table; OCR columns do not align).",
+   "amount_as_printed": "$10,000.00",
+   "outcome": "approved as submitted, 5-0 on one motion",
+   "quote": "$10,000.00 public buildings utilities"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "James Lattanzi",
+   "stated_role": "",
+   "topic": "Farmer's Market meat sales",
+   "quote": "james lattanzi spoke and said that he is in favor of the farmer's market and that he is the person who would like to sell"
+  },
+  {
+   "speaker": "Andrea Schnepf",
+   "stated_role": "Board of Health Administrative Assistant",
+   "topic": "Who decides what sells at the Farmer's Market",
+   "quote": "andrea schnepf, board of health administrative assistant spoke and said it is the bos that determines what can be sold"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements (7:00 PM)",
+   "resolution": "no action",
+   "quote": "mr. alonzo announced that yesterday was the start of the summer band concerts at the town gazebo",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Eagle Scout project, Troop 1728 (Alan Parker)",
+   "resolution": "approved 5-0",
+   "quote": "ms. bertram motioned to approve the eagle scout project as presented by alan parker.",
+   "tags": [
+    "eagle scout",
+    "veterans memorial park"
+   ]
+  },
+  {
+   "topic": "Auctioneer's permit application, Michael Roy",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo moved to approve the auctioneer's permit application for michael roy.",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Lunenburg Farmer's Market",
+   "resolution": "no vote; BOS agreed on personal opinion; rules and permit to next meeting in July",
+   "quote": "ms. speidel explained that the bos approved last year the use of the grounds of",
+   "tags": [
+    "farmers market",
+    "board of health",
+    "food licensing"
+   ]
+  },
+  {
+   "topic": "FY2012 annual appointments",
+   "resolution": "no action",
+   "quote": "ms. speidel informed the board that there were no annual appointments ready",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "FY2011 budget adjustments",
+   "resolution": "transfers approved 5-0",
+   "quote": "ms. bertram motioned to approve the transfers as submitted by the town manager.",
+   "tags": [
+    "budget",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues (gas station on Mass Ave)",
+   "resolution": "no action; copies requested",
+   "quote": "action file issues: mr. sund requested an update on the abandoned gas station on mass ave.",
+   "tags": [
+    "gas station",
+    "hazardous waste",
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Committee reports (Mass Broadband, DPW building)",
+   "resolution": "DPW building article recommended 5-0",
+   "quote": "mr. alonzo reported that mass broadband will begin site work over the next two weeks",
+   "tags": [
+    "dpw building",
+    "town meeting",
+    "broadband"
+   ]
+  },
+  {
+   "topic": "Department updates (Town Manager; MRPC grant)",
+   "resolution": "MRPC grant support approved 5-0; other items informational",
+   "quote": "ms. speidel reported that the new trash pickup company, cassella, began pickups on july",
+   "tags": [
+    "trash collection",
+    "state aid",
+    "town website",
+    "green team"
+   ]
+  },
+  {
+   "topic": "Old business: appointments, re-appointments, resignations",
+   "resolution": "no action",
+   "quote": "mr. matthews stated that pat slattery, a member of the green task force will be stepping down",
+   "tags": [
+    "appointments",
+    "green task force",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Public comment (old business section)",
+   "resolution": "none",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "listed with statutory citations; no motion to enter recorded",
+   "quote": "m.g.l chapter 39, section 23b (3), to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:55 PM, 5-0",
+   "quote": "being no further business, mr. debettencourt moved to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY11 Year End Budget adjustments",
+   "where": "list",
+   "quote": "ms. speidel had distributed fy11 year end budget adjustments to the bos and reviewed it with them."
+  },
+  {
+   "name": "Planning Board report on gas station property (Tom Bodkin)",
+   "where": "text",
+   "quote": "tom bodkin, had put together a report which includes all the information about this property"
+  },
+  {
+   "name": "Grant received to clean up the gas station property",
+   "where": "text",
+   "quote": "a copy of the grant which was received to clean up the gas station property"
+  },
+  {
+   "name": "Warrant #2-12",
+   "where": "text",
+   "quote": "warrants: #2-12 $528,081.86 $541,113.10"
+  },
+  {
+   "name": "MMA bulletin on FY12 budget",
+   "where": "text",
+   "quote": "ms. speidel received a bulletin from mma that she will make available to the board to review at their leisure."
+  },
+  {
+   "name": "Warrant article for the DPW building",
+   "where": "text",
+   "quote": "review the warrant article which explains the significant cost increases in"
+  },
+  {
+   "name": "Farmer's Market permit and Rules and Regulations (proposed)",
+   "where": "text",
+   "quote": "creating a permit for a farmer's market and formally adopt rules and regulations"
+  },
+  {
+   "name": "DPH rules and regulations",
+   "where": "text",
+   "quote": "along with the dph rules and regulations, don't specifically prohibit the sale of meat."
+  }
+ ],
+ "tags": [
+  "farmers market",
+  "eagle scout",
+  "budget transfers",
+  "fy2011 close",
+  "dpw building",
+  "gas station cleanup",
+  "trash collection",
+  "state aid",
+  "town meeting",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. speidel had distributed fy11 year end budget adjustments to the bos"
+ },
+ "dropped_unquoted_by_field": {}
 }

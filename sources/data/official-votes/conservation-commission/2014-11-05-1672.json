@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2014-11-05",
  "docid": "1672",
@@ -12,71 +12,375 @@
  },
  "votes": [
   {
-   "motion": "Richard Bursch elected Chairman",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Elect Richard Bursch as Chairman and Jack Rabbitt as Vice Chairman.",
+   "outcome": "passed unanimous",
+   "procedural": false,
    "quote": "richard bursch was elected chairman and jack rabbitt was elected vice chairman ~ unanimous"
   },
   {
-   "motion": "Jack Rabbitt elected Vice Chairman",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "richard bursch was elected chairman and jack rabbitt was elected vice chairman ~ unanimous"
-  },
-  {
-   "motion": "Approve September 17, 2014 minutes",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes approval ~ september 17, 2014 ~ approved"
-  },
-  {
-   "motion": "Grant positive determination for Request for Determination of Applicability at 322 Townsend Harbor Road",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Issue a positive determination on the Request for Determination of Applicability filed by Larry H King for 322 Townsend Harbor Road.",
+   "outcome": "passed unanimous",
    "procedural": false,
    "quote": "positive determination ~ unanimous"
   },
   {
-   "motion": "Grant negative determination for Request for Determination of Applicability at 17 Horizon Island Road",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 3-0",
+   "motion": "Issue a negative determination on the Request for Determination of Applicability for removal of five trees at 17 Horizon Island Road (Gary/Grace Johnson).",
+   "outcome": "passed unanimous",
    "procedural": false,
    "quote": "negative 3 unanimous"
   },
   {
-   "motion": "Grant negative determination for Request for Determination of Applicability at 103 Horizon Island Road",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 3-0",
+   "motion": "Issue a negative determination on the Request for Determination of Applicability for removal of four oak trees and three trees at 103 Horizon Island Road (Alfred Gravelle).",
+   "outcome": "passed unanimous",
    "procedural": false,
    "quote": "negative 3 unanimous"
   },
   {
-   "motion": "Request applicant send letter requesting field change for 88 Horizon Island Road",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Allow a field change to be added to the already open Order of Conditions for 88 Horizon Island Road (James E Sr/Pamela K Vogt).",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "requested the jim send a letter requesting a field change to be added to his already open order of conditions. unanimous"
+   "quote": "order of conditions. unanimous"
   },
   {
-   "motion": "Send letter to Board of Selectmen recommending appointment of Brad Kennedy to Conservation Commission",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of September 17, 2014.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes approval ~ september 17, 2014 ~ approved"
+  },
+  {
+   "motion": "Send a letter to the Board of Selectmen (BoS) recommending the appointment of Brad Kennedy to the ConCom.",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "a motion was made to send a letter to the bos recommending the appointment of brad kennedy to the concom"
+   "quote": "a motion was made to send a letter to the bos recommending the appointment of brad kennedy"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly readable. No scans with unreadable votes. All votes identified with outcomes except one motion (Brad Kennedy letter) where the outcome was not recorded.",
- "cost_usd": 0.1445325
+ "note": "Text is extracted from a PDF with spacing artifacts (e.g., 'Todd Dw yer', 'Jan Car rier', 'Dumfo rd', 'Elizabeth McCo lligan', 'Carol D esbouvrie'); quotes copy the printed text, and names in the attendee and topic fields are cleaned forms. The minutes are marked APPROVED 12/3/2014. Votes are recorded only as 'unanimous' or 'Negative 3 unanimous' with no movers or seconders printed; the 'Negative 3' wording is ambiguous and is recorded as printed. The minutes give no recorded vote for adjournment, and the adjournment time is the only entry. The roster status is read as present because the header lists attendees without marking absences. The 'Passed unanimous' outcome for the 88 Horizon field change is inferred from the 'Unanimous' printed after the request. No dollar figures appear. The 'see handout' reference is the only document mentioned; the minutes have no documents list heading.",
+ "cost_usd": 0.01033072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rich Bursch",
+   "role": "Chairman (elected at this meeting)",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Matt Charpentier",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Sheila Holt",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Vice Chairman (elected at this meeting)",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Jan Carrier",
+   "role": "member",
+   "status": "present",
+   "quote": "rich bursch, tom bertram, matt charpentier, todd dw yer, sheila holt, jack rabbitt, matt marro, jan car rier"
+  },
+  {
+   "name": "Larry H King",
+   "role": "applicant, 322 Townsend Harbor Road",
+   "status": "present",
+   "quote": "larry king presented. he brought in more pictures and drawings."
+  },
+  {
+   "name": "Carol Desbouvrie",
+   "role": "applicant, 39 South Row Road",
+   "status": "not stated",
+   "quote": "filed by carol d esbouvrie (stephen sears of david e. ross, inc.)"
+  },
+  {
+   "name": "Stephen Sears",
+   "role": "representing the applicant, of David E. Ross, Inc.",
+   "status": "not stated",
+   "quote": "(stephen sears of david e. ross, inc.)"
+  },
+  {
+   "name": "Elizabeth McColligan",
+   "role": "applicant, 68 Laurel Lane",
+   "status": "not stated",
+   "quote": "filed by elizabeth mcco lligan."
+  },
+  {
+   "name": "Gary/Grace Johnson",
+   "role": "applicant, 17 Horizon Island Road (Grace presented)",
+   "status": "present",
+   "quote": "grace presented and stated that insurance company is requesting that trees be taken down as a safety precaution."
+  },
+  {
+   "name": "Alfred Gravelle",
+   "role": "applicant, 103 Horizon Island Road",
+   "status": "not stated",
+   "quote": "filed by alfred gravelle."
+  },
+  {
+   "name": "James E Sr/Pamela K Vogt",
+   "role": "applicant, 88 Horizon Island Road",
+   "status": "not stated",
+   "quote": "filed by james e sr/pamela k vogt."
+  },
+  {
+   "name": "Malcolm Parker",
+   "role": "applicant, 40 Hemlock Drive",
+   "status": "not stated",
+   "quote": "filed by malcolm parker."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 40 Hemlock Drive hearing (Malcolm Parker) was requested to be moved to 11/19 as a continuation.",
+   "quote": "requested to be moved to 11/19"
+  },
+  {
+   "decision": "The 39 South Row Road applicant was asked to come to the November 19 meeting to explain and show what was done, after the 10/15 go-ahead on hardship.",
+   "quote": "request they come into november 19 th"
+  },
+  {
+   "decision": "The 68 Laurel Lane applicant was asked to come to the November 19 meeting to explain and show what was done, after the 10/15 go-ahead for hand digging.",
+   "quote": "request they come into november 19 th"
+  },
+  {
+   "decision": "The board agreed the top three residential caretaker/custodian applicants would be scheduled for interviews the following week.",
+   "quote": "will schedule interviews next week for top three"
+  },
+  {
+   "decision": "Three DOA, one ORAD and one CoC signatures were approved (marked OK).",
+   "quote": "signatures ~ 3 doa, 1 orad, 1 coc ~ ok"
+  },
+  {
+   "decision": "Jim was asked to send a letter requesting the field change for 88 Horizon Island Road.",
+   "quote": "requested the jim send a letter requesting a field change"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Deck at Harold Harley Conservation Area",
+   "quote": "public comment ~ deck at harold harley conservation area, off townsend harbor road, almost completed, per tom."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and election of officers",
+   "resolution": "officers elected unanimously",
+   "quote": "richard bursch was elected chairman and jack rabbitt was elected vice chairman ~ unanimous",
+   "tags": [
+    "officers",
+    "election",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Public comment: Harold Harley Conservation Area deck",
+   "resolution": "reported, no action",
+   "quote": "public comment ~ deck at harold harley conservation area, off townsend harbor road, almost completed, per tom.",
+   "tags": [
+    "public comment",
+    "Harold Harley Conservation Area",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "40 Hemlock Drive (Notice of Intent, Malcolm Parker)",
+   "resolution": "continued to 11/19",
+   "quote": "requested to be moved to 11/19",
+   "tags": [
+    "hearing",
+    "Notice of Intent",
+    "patio",
+    "erosion"
+   ]
+  },
+  {
+   "topic": "322 Townsend Harbor Road (RDA, Larry H King)",
+   "resolution": "positive determination, unanimous; continued hearing to December 3",
+   "quote": "positive determination ~ unanimous",
+   "tags": [
+    "hearing",
+    "Request for Determination",
+    "seawall",
+    "dock",
+    "erosion"
+   ]
+  },
+  {
+   "topic": "39 South Row Road (RDA, Carol Desbouvrie)",
+   "resolution": "after-the-fact go-ahead noted; applicant asked to attend 11/19",
+   "quote": "granted go ahead 10/15, hardship",
+   "tags": [
+    "Request for Determination",
+    "sewage disposal system",
+    "Hickory Hills Lake"
+   ]
+  },
+  {
+   "topic": "68 Laurel Lane (RDA, Elizabeth McColligan)",
+   "resolution": "after-the-fact go-ahead noted; applicant asked to attend 11/19",
+   "quote": "granted go ahead 10/15, hand digging holes for sonar tubes only",
+   "tags": [
+    "Request for Determination",
+    "deck supports",
+    "lake"
+   ]
+  },
+  {
+   "topic": "17 Horizon Island Road (RDA, Gary/Grace Johnson)",
+   "resolution": "negative determination, unanimous",
+   "quote": "negative 3 unanimous",
+   "tags": [
+    "Request for Determination",
+    "tree removal",
+    "Hickory Hills Lake"
+   ]
+  },
+  {
+   "topic": "103 Horizon Island Road (RDA, Alfred Gravelle)",
+   "resolution": "negative determination, unanimous",
+   "quote": "negative 3 unanimous",
+   "tags": [
+    "Request for Determination",
+    "tree removal",
+    "oak trees"
+   ]
+  },
+  {
+   "topic": "88 Horizon Island Road (RDA, James E Sr/Pamela K Vogt)",
+   "resolution": "field change approved, unanimous",
+   "quote": "order of conditions. unanimous",
+   "tags": [
+    "Order of Conditions",
+    "field change",
+    "stone wall",
+    "landscaping"
+   ]
+  },
+  {
+   "topic": "Minutes approval, September 17, 2014",
+   "resolution": "approved",
+   "quote": "minutes approval ~ september 17, 2014 ~ approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business: Eagle Scout project for Daniel Dumford",
+   "resolution": "no action recorded",
+   "quote": "eagle scout project for daniel dumfo rd ~ signs, harley area, kiosk",
+   "tags": [
+    "Eagle Scout",
+    "signs",
+    "kiosk"
+   ]
+  },
+  {
+   "topic": "Unfinished business: residential caretaker/custodian applications",
+   "resolution": "interviews to be scheduled for top three",
+   "quote": "will schedule interviews next week for top three",
+   "tags": [
+    "hiring",
+    "caretaker",
+    "custodian"
+   ]
+  },
+  {
+   "topic": "Signatures",
+   "resolution": "approved",
+   "quote": "signatures ~ 3 doa, 1 orad, 1 coc ~ ok",
+   "tags": [
+    "signatures",
+    "DOA",
+    "ORAD",
+    "CoC"
+   ]
+  },
+  {
+   "topic": "Announcements: meeting schedule",
+   "resolution": "handout provided, no action",
+   "quote": "meeting schedule ~ see handout",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Commission comment: appointment of Brad Kennedy",
+   "resolution": "motion to send letter to BoS; result not stated",
+   "quote": "a motion was made to send a letter to the bos recommending the appointment of brad kennedy",
+   "tags": [
+    "appointment",
+    "Board of Selectmen",
+    "ConCom membership"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:55 PM",
+   "quote": "adjournment ~ 9:55 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Meeting schedule handout",
+   "where": "text",
+   "quote": "meeting schedule ~ see handout"
+  },
+  {
+   "name": "Pictures and drawings brought in by Larry H King (322 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "he brought in more pictures and drawings."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "hearings",
+  "requests for determination",
+  "notice of intent",
+  "orders of conditions",
+  "officers election",
+  "appointments",
+  "minutes approval",
+  "caretaker hiring",
+  "Eagle Scout project",
+  "Hickory Hills Lake"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

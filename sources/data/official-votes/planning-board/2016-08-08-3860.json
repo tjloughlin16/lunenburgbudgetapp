@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-08-08",
  "docid": "3860",
@@ -12,15 +12,277 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from July 25, 2015",
+   "motion": "Approve the minutes dated 7/25/15, as printed.",
    "moved_by": "D. McQuaid",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "all minutes signed. 7/25/15, motion, d. mcquaid, second, d. prokowiew"
+   "quote": "7/25/15, motion, d. mcquaid, second, d. prokowiew"
+  },
+  {
+   "motion": "Approve the minutes dated 7/25/16 for 1026 Northfield Road.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "G. Bittner",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "7/25/16, 1026 northfield road, motion, d. mcquaid, second, g. bittner"
+  },
+  {
+   "motion": "Approve the minutes dated 7/25/16 for Zoning Warrant Articles.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "D. Prokowiew",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "7/25/16, zoning warrant articles, motion, d. mcquaid, second, d. prokowiew"
   }
  ],
- "dropped_unquoted": 2,
- "note": "Three procedural votes to approve prior minutes. The minutes state \"All minutes signed\" indicating approval of all three sets. No other votes recorded in the minutes.",
- "cost_usd": 0.1053345
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-like with spacing artifacts (e.g. 'no ted', 'thr ee', 'M iddle'); quotes avoid those spans. The three minutes-approval motions record no outcome. The first is printed as '7/25/15'. No adjournment motion or vote is recorded. No public comment section appears in the minutes.",
+ "cost_usd": 0.00633072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, damon mcquaid, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Mike Sauvageau",
+   "role": "Building/Zoning Official",
+   "status": "not stated",
+   "quote": "discussion was held between the board and mike sauvageau, the building/zoning official"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "p. bertram noted that mrpc's unified planning work program has money available to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board endorsed the Scenic Road Decision for 1026 Northfield Road; the applicant will file it with the Registry of Deeds.",
+   "quote": "scenic road decision endorsed by board. applicant will file with registry of deeds."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Community Task Force lighting bids",
+   "what_was_recorded": "Bids were received for primary school and library lighting upgrades and a bid from DMH Electric, LLC was accepted; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "accepted a bid from dmh electric, llc, sterling, ma."
+  },
+  {
+   "topic": "Stormwater GIS application funding",
+   "what_was_recorded": "Board discussed costs of incorporating GIS for stormwater, and MRPC noted its Unified Planning Work Program has money available for a GIS application; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "p. bertram noted that mrpc's unified planning work program has money available to"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Discussion with Building/Zoning Official",
+   "resolution": "discussed, no action",
+   "quote": "discussion was held between the board and mike sauvageau, the building/zoning official",
+   "tags": [
+    "zoning enforcement",
+    "B/ZO",
+    "board authority"
+   ]
+  },
+  {
+   "topic": "Article 10, Whalom Overlay District deletion (Aug 22 STM)",
+   "resolution": "discussed, no action",
+   "quote": "there was lengthy discussion on article 10 of the august 22, 2016 special town meeting warrant.",
+   "tags": [
+    "Whalom Overlay District",
+    "spot zoning",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Site Plan Approval and enforcement questions",
+   "resolution": "discussed, no action",
+   "quote": "g. bittner wanted to understand how the new site plan approval fits in with what the board and b/zo",
+   "tags": [
+    "site plan approval",
+    "enforcement",
+    "guidebook"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "three motions made; outcome not recorded",
+   "quote": "7/25/15, motion, d. mcquaid, second, d. prokowiew",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "stormwater task force- discussed how to incorporate gis into lunenburg; costs, process, professional requirements.",
+   "tags": [
+    "stormwater",
+    "GIS",
+    "lighting bids",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "no report",
+   "quote": "development status reports: no report",
+   "tags": []
+  },
+  {
+   "topic": "Director's items: 1026 Northfield Road endorse decision",
+   "resolution": "decision endorsed by Board",
+   "quote": "scenic road decision endorsed by board.",
+   "tags": [
+    "1026 Northfield Road",
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices & communications: none",
+   "tags": []
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "discussion of board goals",
+   "tags": [
+    "Highfield Village",
+    "special town meeting",
+    "board goals"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "discussed, no action",
+   "quote": "the board needs to be prepared to begin work immediately on crafting the new bylaw.",
+   "tags": [
+    "Whalom Overlay District",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:00 PM; no motion recorded",
+   "quote": "adjournment: 10:00 pm",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 07/25/16"
+  },
+  {
+   "name": "07/25/16",
+   "where": "list",
+   "quote": "minutes 07/25/16 07/25/16, 1026 northfield road"
+  },
+  {
+   "name": "07/25/16, 1026 Northfield Road",
+   "where": "list",
+   "quote": "07/25/16, 1026 northfield road"
+  },
+  {
+   "name": "07/25/16, Zoning Warrant Articles",
+   "where": "list",
+   "quote": "07/25/16, zoning warrant articles"
+  },
+  {
+   "name": "1026 Northfield Road- Decision",
+   "where": "list",
+   "quote": "1026 northfield road- decision"
+  },
+  {
+   "name": "Article 10 of the August 22, 2016 Special Town Meeting Warrant",
+   "where": "text",
+   "quote": "there was lengthy discussion on article 10 of the august 22, 2016 special town meeting warrant."
+  },
+  {
+   "name": "Zoning Bylaw Section 4.12 (Whalom Overlay District)",
+   "where": "text",
+   "quote": "asks the citizens to vote to delete section 4.12. of the zoning bylaw; whalom overlay district."
+  },
+  {
+   "name": "B/ZO letter of September 2015 to the Land Use Director",
+   "where": "text",
+   "quote": "the b/zo had written a letter in september 2015 to the land use director"
+  },
+  {
+   "name": "B/ZO letter of June 2016",
+   "where": "text",
+   "quote": "in another letter of june 2016, he notes that the property owner"
+  },
+  {
+   "name": "Whalom Overlay District Bylaw and zoning map change",
+   "where": "text",
+   "quote": "both the whalom overlay district bylaw and the zoning map change were approved by the attorney general"
+  },
+  {
+   "name": "Highfield Village application",
+   "where": "text",
+   "quote": "vote to accept withdrawal of highfield village"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "Whalom Overlay District",
+  "site plan approval",
+  "Building/Zoning Official",
+  "Article 10 special town meeting",
+  "1026 Northfield Road",
+  "scenic road",
+  "stormwater GIS",
+  "lighting bids",
+  "minutes approval",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

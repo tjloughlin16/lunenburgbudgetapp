@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-05-17",
  "docid": "4969",
@@ -12,48 +12,426 @@
  },
  "votes": [
   {
-   "motion": "Enter into an intermunicipal agreement with the Central MA Regional Stormwater Coalition",
+   "motion": "Enter into the agreement with the Central MA Regional Stormwater Coalition.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2°°: p. luck to enter into the agreement with the central ma regional stormwater coalition discussion: mr. to",
-   "quote_taken_from_text": true
+   "quote": "to enter into the agreement with the central ma regional stormwater coalition"
   },
   {
-   "motion": "Ratify the appointment of John M. Welch III as Heavy Equipment Operator at DPW",
+   "motion": "Ratify the appointment of John Welch as heavy equipment operator at DPW.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the appointment of john welch, illas heavy equipment operator at dpw"
+  },
+  {
+   "motion": "Appoint Paul Doherty to the Zoning Board of Appeals with a term to expire June 30, 2017.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint paul doherty to zoning board of appeals with a term to expire june 30, 2017"
+  },
+  {
+   "motion": "Sign the Memorial Day resolution.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to sign the memorial day resolution"
+  },
+  {
+   "motion": "Adjourn the meeting at 8:21 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram 2'': p. luck to ratify the appointment of john welch, illas heavy equipment operator at dpw vote: all in favor"
-  },
-  {
-   "motion": "Appoint Paul Doherty to the Zoning Board of Appeals with a term expiring June 30, 2017",
-   "moved_by": "P. Bertram",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram 2\"d p. luck to appoint paul doherty to zoning board of appeals with a term to expire june 30, 2017 vote: all in favor"
-  },
-  {
-   "motion": "Sign the Memorial Day resolution",
-   "moved_by": "P. Bertram",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram to sign the memorial day resolution 2\": p. luck vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "P. Bertram",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:21 p.m. 2nd.p. luck vote: all in favor"
+   "quote": "to adjourn the meeting at 8:21 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned with macOS Vision. OCR artifacts present (2°° for 2nd, Illas for III) but votes remain clearly readable.",
- "cost_usd": 0.1147705
+ "note": "OCR text from a scanned minutes page (macOS Vision). Some words and seconder names are garbled (e.g., \"Lafluer\", \"Illas\", \"2°°\", \"2''\"); quotes copy the text as extracted. Votes are recorded only as \"All in Favor\" with no counts, so outcomes are recorded as \"passed\". The May 3 minutes approval has no motion recorded and is listed as a decision. Body is printed as \"Board of Selectmen\". The minutes contain no headed documents list; a sentence referencing documents is treated as the list heading, and the named documents are recorded as \"text\" items.",
+ "cost_usd": 0.010287420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "jamie toale, chairman; paula bertram, member; phyllis luck, member and kerry lafleur, town manager"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman and tom alonzo, clerk"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman and tom alonzo, clerk"
+  },
+  {
+   "name": "Darlene Steele",
+   "role": "Chairperson of the Lunenburg Hall of Fame",
+   "status": "present",
+   "quote": "darlene steele, 1234 mass. avenue, chairperson of the lunenburg hall of fame, presented tonight to request a permanent location"
+  },
+  {
+   "name": "Richard Brockelman",
+   "role": "resident, 56 Cross Street",
+   "status": "present",
+   "quote": "richard brockelman, 56 cross street, referred to the photos he distributed to the board."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "ms. lafleur requested land use director adam burney provide an update."
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "resident, 129 Pleasant Street",
+   "status": "present",
+   "quote": "greg bittner, 129 pleasant street, presented a document that indicated the owner of 101 pleasant street was not licensed by the state"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaine peterson elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of May 3, 2016 were approved (no motion or vote recorded in the text).",
+   "quote": "minutes of may 3, 2016 were approved."
+  },
+  {
+   "decision": "Ms. Lafleur to provide a link to the Montachusett Regional Natural Hazard Mitigation Plan for viewing; item to be placed on an early June agenda; Board did not adopt it that night.",
+   "quote": "ms. lafleur will provide a link to the document for viewing and this will be placed on an agenda in early june."
+  },
+  {
+   "decision": "Ms. Steele to tell Ms. Lafleur when the trophy cases will be moved so Ms. Lafleur can coordinate a room at the Passios Building.",
+   "quote": "ms. steele will let ms. lafleur know when they are going to move everything so she could coordinate a room."
+  },
+  {
+   "decision": "Mr. Burney to follow up with Ms. Lafleur on the 101 Pleasant Street tasks, including whether anything was sent in writing from the Conservation Commission.",
+   "quote": "mr. burney will work with ms. lafleur on the tasks."
+  },
+  {
+   "decision": "PAYT bags discussion continued to another meeting.",
+   "quote": "payt bags discussion will be continued to another meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lions Club pancake breakfast donation",
+   "what_was_recorded": "Ms. Luck announced a suggested donation for the Lions Club pancake breakfast, with a per-family cap.",
+   "figures_as_printed": [
+    "$5.00",
+    "$3.00",
+    "$20.00"
+   ],
+   "quote": "and $3.00 for children with a cap of $20.00 per family."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Accounts payable, payroll and payroll deduction warrants were signed after the May 3 minutes were approved.",
+   "figures_as_printed": [
+    "$1,249,901.85",
+    "$263,872.70",
+    "$720,191.64",
+    "$764.27",
+    "$151,193.12"
+   ],
+   "quote": "an accounts payable warrant in the amount of $1,249,901.85, an accounts payable warrant in the amount of $263,872.70"
+  },
+  {
+   "topic": "MIIA participation credits and rewards",
+   "what_was_recorded": "Ms. Lafleur reported MIIA participation credits to the Town, a 4% early-payment credit, and other estimated rewards, totaling a stated sum.",
+   "figures_as_printed": [
+    "$8,497",
+    "$7910.16",
+    "$7,262.29",
+    "$23,669.45"
+   ],
+   "quote": "the town will receive $8,497 in participation credits."
+  },
+  {
+   "topic": "Health insurance costs",
+   "what_was_recorded": "Ms. Lafleur presented information on current health insurance costs for individual and family coverage and plan costs by employee group, to be used at a Public Employee Committee meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lafleur presented some information on health insurance such as current costs for individual and family"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "topic": "Lions Club pancake breakfast and tollbooth fundraiser",
+   "quote": "ms. luck announced the lunenburg turkey hill lions club is holding a pancake breakfast on sunday"
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "Chairman",
+   "topic": "Annual Town Election polls",
+   "quote": "mr. toale announced polls will be open at t.c. passios for the annual town election on saturday from 7 a.m."
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "Chairman",
+   "topic": "Volunteer booth for boards during Uptown Stroll",
+   "quote": "mr. toale stated there will be a volunteer booth for town committees/boards set up at the historical society"
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "",
+   "topic": "Handicapped parking and two-hour limit in front of Town Hall",
+   "quote": "greg bittner suggested designating another handicapped parking spot in front of town hall"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: announcements",
+   "resolution": "no action; announcements noted",
+   "quote": "ms. luck announced the lunenburg turkey hill lions club is holding a pancake breakfast on sunday",
+   "tags": [
+    "announcements",
+    "election",
+    "events"
+   ]
+  },
+  {
+   "topic": "Appointment: Lunenburg High School Athletic Hall of Fame trophy cases",
+   "resolution": "no decision; temporary storage discussed, permanent location not settled",
+   "quote": "presented tonight to request a permanent location for their (2) 4' x 8' trophy cases",
+   "tags": [
+    "hall of fame",
+    "trophy cases",
+    "Passios Building"
+   ]
+  },
+  {
+   "topic": "Request to join Central MA Regional Stormwater Coalition (continued)",
+   "resolution": "approved",
+   "quote": "to enter into the agreement with the central ma regional stormwater coalition",
+   "tags": [
+    "stormwater",
+    "intermunicipal agreement"
+   ]
+  },
+  {
+   "topic": "Request to adopt Montachusett Regional Natural Hazard Mitigation Plan 2015 Update",
+   "resolution": "not adopted; to be placed on early June agenda",
+   "quote": "ms. lafleur will provide a link to the document for viewing and this will be placed on an agenda in early june.",
+   "tags": [
+    "hazard mitigation",
+    "MRPC",
+    "FEMA"
+   ]
+  },
+  {
+   "topic": "Ratify Town Manager appointment of John M. Welch III, heavy equipment operator, DPW",
+   "resolution": "approved",
+   "quote": "to ratify the appointment of john welch, illas heavy equipment operator at dpw",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Appointment of Paul Doherty to ZBA",
+   "resolution": "approved",
+   "quote": "to appoint paul doherty to zoning board of appeals with a term to expire june 30, 2017",
+   "tags": [
+    "appointments",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes approved; warrants signed; Memorial Day resolution signed",
+   "quote": "minutes of may 3, 2016 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "Memorial Day"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "ms. luck reported the zoning board of appeals approved peter kelly's request for a proposed addition",
+   "tags": [
+    "ZBA",
+    "stormwater task force",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Town Manager report: 101 Pleasant Street wetlands violation",
+   "resolution": "no action; staff to follow up with property owner and Conservation Commission",
+   "quote": "mr. burney reported he and conservation agent matt marro have met with ma dep",
+   "tags": [
+    "wetlands",
+    "Conservation Commission",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club request to use parking lot",
+   "resolution": "no action; suggestions made, Ms. Bertram opposed exclusive use and proposed no-parking signs",
+   "quote": "she stated she was opposed to exclusive use of the municipal parking lot for the teen center from 3 - 5 p.m.",
+   "tags": [
+    "parking",
+    "Teen Center",
+    "Town Hall"
+   ]
+  },
+  {
+   "topic": "MIIA credits",
+   "resolution": "reported; no action",
+   "quote": "the town will receive $8,497 in participation credits.",
+   "tags": [
+    "insurance",
+    "MIIA",
+    "credits"
+   ]
+  },
+  {
+   "topic": "PAYT bags",
+   "resolution": "continued to another meeting",
+   "quote": "payt bags discussion will be continued to another meeting.",
+   "tags": [
+    "PAYT",
+    "trash"
+   ]
+  },
+  {
+   "topic": "Health insurance information",
+   "resolution": "no action; presented for Public Employee Committee",
+   "quote": "ms. lafleur presented some information on health insurance such as current costs for individual and family",
+   "tags": [
+    "health insurance",
+    "employees"
+   ]
+  },
+  {
+   "topic": "Public comment: parking and Teen Center gym",
+   "resolution": "no action",
+   "quote": "greg bittner suggested designating another handicapped parking spot in front of town hall",
+   "tags": [
+    "parking",
+    "Passios gym",
+    "Teen Center"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:21 p.m.",
+   "quote": "to adjourn the meeting at 8:21 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Intermunicipal agreement with the Central MA Regional Stormwater Coalition",
+   "where": "text",
+   "quote": "mr. toale referred the board to the intermunicipal agreement."
+  },
+  {
+   "name": "Photos distributed to the Board by Richard Brockelman",
+   "where": "text",
+   "quote": "referred to the photos he distributed to the board."
+  },
+  {
+   "name": "Montachusett Regional Natural Hazard Mitigation Plan 2015 Update",
+   "where": "text",
+   "quote": "request to adopt montachusett regional natural hazard mitigation plan 2015 update"
+  },
+  {
+   "name": "Memorial Day resolution",
+   "where": "text",
+   "quote": "mr. toale presented the memorial day resolution that was discussed last week for signatures."
+  },
+  {
+   "name": "Talent bank forms",
+   "where": "text",
+   "quote": "talent bank forms shall be available to fill out."
+  },
+  {
+   "name": "Kinder Morgan 2007 existing conditions plan",
+   "where": "text",
+   "quote": "kinder morgan was able to provide a 2007 existing conditions plan detailing the elevations"
+  },
+  {
+   "name": "Conservation Commission Enforcement Order",
+   "where": "text",
+   "quote": "the conservation commission, as part of their enforcement order, has requested the 101 pleasant street"
+  },
+  {
+   "name": "Cease and desist order (101 Pleasant Street)",
+   "where": "text",
+   "quote": "the only notification they have provided to the property owner was a cease and desist order."
+  },
+  {
+   "name": "Document presented by Greg Bittner on 101 Pleasant Street owner licensing",
+   "where": "text",
+   "quote": "greg bittner, 129 pleasant street, presented a document that indicated the owner of 101 pleasant street was not licensed by the state"
+  },
+  {
+   "name": "Council on Aging letter supporting Teen Center parking lot use",
+   "where": "text",
+   "quote": "they sent a letter supporting the teen center's use of their parking lot for safety reasons"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "parking",
+  "Town Hall",
+  "Passios Building",
+  "trophy cases",
+  "stormwater",
+  "hazard mitigation",
+  "appointments",
+  "warrants",
+  "MIIA credits",
+  "health insurance",
+  "PAYT",
+  "101 Pleasant Street",
+  "wetlands",
+  "Annual Town Election"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. toale referred the board to the intermunicipal agreement"
+ },
+ "dropped_unquoted_by_field": {}
 }

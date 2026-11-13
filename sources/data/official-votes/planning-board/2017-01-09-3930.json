@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-01-09",
  "docid": "3930",
@@ -12,16 +12,212 @@
  },
  "votes": [
   {
-   "motion": "to continue the hearing to February 13th",
-   "moved_by": "Kenneth Chenis",
-   "seconded_by": "Damon McQuaid",
+   "motion": "Kenneth Chenis moved to continue the public hearing to February 13, 2017, with discussion to include a list of items.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "k. chenis, motion to continue hearing to february 13th, second, d. mcquaid, g. bittner discussion to include list of items- continued discussion with abutters to address concerns, stormwater discussion, take-out parking spaces, encourag",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "k. chenis, motion to continue hearing to february 13th, second, d. mcquaid, g. bittner discussion to include list of items-"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. One OCR typo on page 2: 'February 130' should be 'February 13th' (corrected in the actual motion).",
- "cost_usd": 0.12380949999999999
+ "note": "OCR text with several errors: the hearing is printed as opened at 7:32 PM though the posted time is 6:30 PM; \"February 130 Board meeting\" appears to be February 13; \"G. Bitter\" and \"Prokowiew\" are likely typos for Bittner and Prokowiew. The minutes print no dollar figures. Only one motion is recorded (continuance, \"All aye\"), with no count printed. Min Xu's attendance is not stated.",
+ "cost_usd": 0.0060975199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, chair, damon mcquaid, vice chair, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Robert Oliva",
+   "role": "Senior Project Manager, David E. Ross Associates, inc., representing the Applicant",
+   "status": "present",
+   "quote": "senior project manager robert oliva, david e. ross associates, inc. represented the applicant- min xu, d/b/a asian imperial."
+  },
+  {
+   "name": "Min Xu, d/b/a Asian Imperial",
+   "role": "Applicant",
+   "status": "not stated",
+   "quote": "senior project manager robert oliva, david e. ross associates, inc. represented the applicant- min xu, d/b/a asian imperial."
+  },
+  {
+   "name": "Pete Pelletier",
+   "role": "general contractor for the project",
+   "status": "present",
+   "quote": "also in attendance was pete pelletier who will be the general contractor for the project."
+  },
+  {
+   "name": "Jeff Walsh",
+   "role": "Peer Review Consultant, Graves Engineering Inc.",
+   "status": "present",
+   "quote": "peer review consultant jeff walsh, graves engineering inc., noted there is no protocol by dep to replace the two (2) foot"
+  },
+  {
+   "name": "Alan Graham",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "alan graham, electric electric avenue-supports the project. his only concern is with the noise and shielding of the lighting onto his"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road- concerned with stormwater and groundwater recharge. she opined the applicant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant to look at options for pedestrian walkway and vehicle/pedestrian conflict from the upper parking lot to the restaurant.",
+   "quote": "k. chenis is concerned with vehicles entering the site and pedestrians walking from the upper parking lot down to the restaurant.. applicant to look at options."
+  },
+  {
+   "decision": "Applicant to look at making the areas where individuals park illegally unattractive for parking; G. Bittner wants a complete proposal including parking and seating.",
+   "quote": "g. bittner would like to see a complete proposal to include parking and seating."
+  },
+  {
+   "decision": "Applicant to file a Notice of Intent with the Conservation Commission and appear before that commission for minor work within the 100 foot buffer zone.",
+   "quote": "the applicant will appear before the conservation commission as there will be some minor work within the 100 foot buffer zone."
+  },
+  {
+   "decision": "D. Prokowiew requested an elevation drawing of the building front from the applicant.",
+   "quote": "d. prokowiew would like an elevation drawing of ===page 2=== minute",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Applicant to address the lot coverage note on the dimensional requirement chart (page 3 of the site plan).",
+   "quote": "m. allison commented that the dimensional requirement chart on page 3 of the site plan does not note lot coverage. r. oliva to look at."
+  },
+  {
+   "decision": "Revised plans to add tree specifics, two bicycle spaces, a fence along the top of the wall over four feet, and a surveyor's stamp on Sheet 2.",
+   "quote": "tree specifics will be added to the revised plans."
+  },
+  {
+   "decision": "Applicant to look at the safety of the restaurant entrance in regards to patrons and vehicles, and to provide plantings between the parking lot and the abutter for screening.",
+   "quote": "the applicant will look at the safety of the restaurant entrance in regards to patrons and vehicles"
+  },
+  {
+   "decision": "Action items summarized for the applicant and Board: recharge, drainage, interior layout and use of restaurant addition, landscaping, and pedestrian access from the upper parking lot.",
+   "quote": "summarization was provided to the applicant and board as to action items- issue of recharge, drainage, interior layout and use"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Alan Graham",
+   "stated_role": "Electric Electric Avenue",
+   "topic": "Supports project; noise and lighting shielding",
+   "quote": "alan graham, electric electric avenue-supports the project. his only concern is with the noise and shielding of the lighting onto his"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "312 Townsend Harbor Road",
+   "topic": "Stormwater, groundwater recharge, handicap access",
+   "quote": "paula bertram, 312 townsend harbor road- concerned with stormwater and groundwater recharge. she opined the applicant"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Site Plan Approval, Asian Imperial, 5 and 9 Electric Avenue",
+   "resolution": "continued to February 13, 2017",
+   "quote": "the public hearing was to hear and discuss an application for site plan approval under section 8.4.",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "parking",
+    "stormwater",
+    "restaurant"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Site Plan Approval",
+   "where": "list",
+   "quote": "documents used at meeting: application for site plan approval"
+  },
+  {
+   "name": "Minutes/public hearings 2017/Asian imperial. Electric Avenue. 01.09.17",
+   "where": "list",
+   "quote": "minutes/public hearings 2017/asian imperial. electric avenue. 01.09.17"
+  },
+  {
+   "name": "David Ross Associates Inc. response letter dated January 9, 2017",
+   "where": "text",
+   "quote": "in david ross associates inc. response letter dated january 9, 2017, r. oliva responded to graves engineering inc. review"
+  },
+  {
+   "name": "Graves Engineering Inc. review letter dated January 3, 2017",
+   "where": "text",
+   "quote": "r. oliva responded to graves engineering inc. review letter dated january 3, 2017."
+  },
+  {
+   "name": "Building Commissioner letter dated January 3, 2017",
+   "where": "text",
+   "quote": "building commissioner letter dated january 3, 2017 also notes that"
+  },
+  {
+   "name": "Legal notice published in the Sentinel & Enterprise, December 26, 2016 and January 2, 2017",
+   "where": "text",
+   "quote": "the hearing opened at 7:32 pm with the reading of the legal notice published in the sentinel & enterprise december 26, 2016"
+  },
+  {
+   "name": "Site plan (dimensional requirement chart, page 3)",
+   "where": "text",
+   "quote": "the dimensional requirement chart on page 3 of the site plan does not note lot coverage"
+  },
+  {
+   "name": "Stormwater Checklist",
+   "where": "text",
+   "quote": "stormwater checklist must be stamped and signed."
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "public hearing",
+  "parking lot",
+  "stormwater",
+  "Electric Avenue",
+  "restaurant",
+  "continued"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

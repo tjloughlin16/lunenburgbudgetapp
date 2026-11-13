@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2011-01-03",
  "docid": "851",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to grant requested variances for 70 Valley Road",
+   "motion": "Grant the requested variances for 70 Valley Road: reduction of the groundwater offset from 5 feet to 4 feet and reduction of the wetlands offset to 61 feet instead of 100 feet.",
    "moved_by": "Rabbitt",
    "seconded_by": "Shea",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "after discussion and on motion by rabbitt and second by shea, the requested variances were granted. all in favor."
   },
   {
-   "motion": "to grant variances for 16 Pearl Street",
+   "motion": "Grant the variances for 16 Pearl Street to pass the Title 5 system despite the failed inspection.",
    "moved_by": "Shea",
    "seconded_by": "Rabbitt",
    "outcome": "passed",
@@ -29,6 +29,148 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0959485
+ "note": "Plain text extract of a single page pair; no vote counts are printed (only 'All in favor'), so outcomes are recorded as passed. No minutes-approval or adjournment motion is recorded; the meeting ends with 'Meeting adjourned at 8:15 pm.' without a printed motion. The 404 West Townsend and 44 South Row items appear under a heading with no recorded action. Jim Garreffi's attendance is not stated; he is cited as the agent whose draft letter is discussed.",
+ "cost_usd": 0.00402122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "David Shea",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Perry J ewell",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Troy Daniels",
+   "status": "present",
+   "quote": "present: chairman george emond, david shea, perry j ewell, jack rabbitt and troy daniels"
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "steve marsden met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Board of Health Agent",
+   "status": "not stated",
+   "quote": "as per board of health agent, jim garreffi, the title 5 inspection for this property has failed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "For 16 Pearl Street, the Board decided the most effective way to handle the failed situation was to treat the well water; the treatment has been done and water testing shows nitrate below the standard.",
+   "quote": "it was decided the most effective way to handle this situation was to treat the well water."
+  },
+  {
+   "decision": "The 2012 Board of Health budget discussion was continued to February 7, 2011.",
+   "quote": "continued to february 7, 2011"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2012 Board of Health budget",
+   "what_was_recorded": "The 2012 Board of Health budget was on the agenda for discussion and was continued to February 7, 2011; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "2012 board of health budget discussion"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports reviewed (404 West Townsend Road, 44 South Row Road)",
+   "resolution": "reviewed; no action recorded",
+   "quote": "title 5 inspection reports reviewed :",
+   "tags": [
+    "Title 5",
+    "septic inspection"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "permits signed (listed in minutes)",
+   "quote": "septic permits signed :",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "70 Valley Road variance request",
+   "resolution": "variances granted",
+   "quote": "after discussion and on motion by rabbitt and second by shea, the requested variances were granted.",
+   "tags": [
+    "variance",
+    "septic replacement",
+    "wetlands offset"
+   ]
+  },
+  {
+   "topic": "16 Pearl Street failed Title 5 system",
+   "resolution": "variances granted; well water treatment with deed notice and regular testing",
+   "quote": "as per board of health agent, jim garreffi, the title 5 inspection for this property has failed",
+   "tags": [
+    "Title 5",
+    "well water",
+    "nitrate",
+    "variance"
+   ]
+  },
+  {
+   "topic": "2012 Board of Health budget discussion",
+   "resolution": "continued to February 7, 2011",
+   "quote": "continued to february 7, 2011",
+   "tags": [
+    "budget"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 404 West Townsend Road",
+   "where": "list",
+   "quote": "404 west townsend road"
+  },
+  {
+   "name": "Title 5 inspection report, 44 South Row Road",
+   "where": "list",
+   "quote": "44 south row road"
+  },
+  {
+   "name": "Draft letter written for the Board regarding 16 Pearl Street",
+   "where": "text",
+   "quote": "see the draft of a letter written for the board"
+  }
+ ],
+ "tags": [
+  "Title 5",
+  "septic systems",
+  "variances",
+  "well water",
+  "nitrate",
+  "wetlands offset",
+  "budget",
+  "2012 budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports reviewed :"
+ },
+ "dropped_unquoted_by_field": {}
 }

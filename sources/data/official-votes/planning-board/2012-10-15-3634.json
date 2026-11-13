@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-10-15",
  "docid": "3634",
@@ -12,31 +12,242 @@
  },
  "votes": [
   {
-   "motion": "accept ANR Plan for Easterbrook Nominee Trust, 560 Goodrich Street",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Robert J. Saiia",
+   "motion": "Accept the ANR Plan for ANR-Easterbrook Nominee Trust, 560 Goodrich Street (plan endorsed by Board).",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": false,
    "quote": "ms. bilotta-simeone, motion to accept anr plan, second, mr. saiia. plan endorsed by board."
   },
   {
-   "motion": "approve minutes of September 24, 2012",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the minutes of September 24, 2012.",
+   "moved_by": "Ms. Bilotta -Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
    "quote": "ms. bilotta -simeone, motion to approve minutes of september 24, 2012, second, mr. bodkin jr., motion passed."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Thomas W. Bodkin Jr.",
-   "seconded_by": "Joanna L. Bilotta-Simeone",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Bodkin Jr.",
+   "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn, mr. bodkin jr. second, ms. bilotta-simeone, adjourned 8:27 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0902945
+ "note": "Text-only minutes, no scan. Only two recorded motions carry a result (ANR endorsement with no vote count printed; minutes approval 'Motion passed'); the adjournment is recorded as 'Adjourned 8:27 PM' with no count. Presence of Kim Chen and Kevin O'Brien is not stated. Page 2 contains only a file footer. The 'on file in Planning Office' references are passing mentions, not a printed list of documents used.",
+ "cost_usd": 0.00592632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., robert j. saiia, nathan j. lockwood"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  },
+  {
+   "name": "Kim Chen",
+   "role": "not stated (Asian Imperial signage)",
+   "status": "not stated",
+   "quote": "board gave kim chen the go-ahead to move forward."
+  },
+  {
+   "name": "Kevin O'Brien",
+   "role": "O'Brien Homes (requesting filing fee waiver)",
+   "status": "not stated",
+   "quote": "is requesting filing fees be waived for aro estates 1 through 10"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board gave Kim Chen the go-ahead to move forward on the Asian Imperial signage, which the Building Official found meets the dimensional requirements of the bylaw.",
+   "quote": "per building official, signage meets the dimensional requirements of the bylaw. board gave kim chen the go-ahead to move forward."
+  },
+  {
+   "decision": "The Planning Board will do more research regarding waiving the filing fees for Aro Estates 1 through 10.",
+   "quote": "the planning board will do more research regarding waiving of fees."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARO Estates filing fee waiver request",
+   "what_was_recorded": "Kevin O'Brien asked that filing fees be waived for Aro Estates 1 through 10 and that the original 2009 filing fees be used; the board said it would research the waiver.",
+   "figures_as_printed": [],
+   "quote": "is requesting filing fees be waived for aro estates 1 through 10 and the original submitted filing f ees from 2009 be utilized."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session",
+   "resolution": "no minutes taken",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "executive session: no minutes taken for executive session."
+  },
+  {
+   "topic": "Appointment: Asian Imperial signage",
+   "resolution": "go-ahead given, no vote recorded",
+   "tags": [
+    "signage",
+    "Asian Imperial"
+   ],
+   "quote": "appointment: asian imperial - board reviewed design for asian imperial signage."
+  },
+  {
+   "topic": "Board endorsement: ANR Easterbrook Nominee Trust, 560 Goodrich Street",
+   "resolution": "endorsed",
+   "tags": [
+    "ANR plan",
+    "endorsement"
+   ],
+   "quote": "board endorsement: anr- easterbrook nominee trust, 560 goodrich street - ms. bilotta-simeone, motion to accept anr plan"
+  },
+  {
+   "topic": "ARO Estates waiver request",
+   "resolution": "board to research fee waiver; sent out for review requested",
+   "tags": [
+    "filing fees",
+    "Aro Estates",
+    "waiver"
+   ],
+   "quote": "aro estates, waiver request - kevin o'brien, o'brien homes, is requesting filing fees be waived for aro estates 1 through 10"
+  },
+  {
+   "topic": "Approval of minutes of September 24, 2012",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. bilotta -simeone, motion to approve minutes of september 24, 2012, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, School Reconfiguration Committee)",
+   "resolution": "noted",
+   "tags": [
+    "committees",
+    "school reconfiguration"
+   ],
+   "quote": "mjtc- meeting to be held week of 10-15-12."
+  },
+  {
+   "topic": "Old business: MASS PV1 LLC appeal period",
+   "resolution": "noted",
+   "tags": [
+    "appeal period",
+    "MASS PV1 LLC"
+   ],
+   "quote": "the 21-day appeal period for mass pv1 llc will conclude october 16th."
+  },
+  {
+   "topic": "Planning Director's report: development status reports",
+   "resolution": "noted",
+   "tags": [
+    "development status",
+    "Asian Imperial",
+    "Emerald Place",
+    "Tri Town Landing"
+   ],
+   "quote": "asian imperial, 5 electric avenue- construction work continues."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "tags": [
+    "notices",
+    "ZBA special permits",
+    "building permits"
+   ],
+   "quote": "notices & communications: noted the following:"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "to be determined",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "meeting schedule: to be determined."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:27 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn, mr. bodkin jr. second, ms. bilotta-simeone, adjourned 8:27 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, Easterbrook Nominee Trust, 560 Goodrich Street",
+   "where": "text",
+   "quote": "board endorsement: anr- easterbrook nominee trust, 560 goodrich street - ms. bilotta-simeone, motion to accept anr plan"
+  },
+  {
+   "name": "Aro Estates 1 through 10 (plans sent out for review)",
+   "where": "text",
+   "quote": "mr. o'brien requested that aro estates 1 through 10 be sent out for review."
+  },
+  {
+   "name": "Asian Imperial weekly schedules (on file in Planning Office)",
+   "where": "text",
+   "quote": "construction work continues. weekly schedules on file in planning office."
+  },
+  {
+   "name": "Zoning Board of Appeals special permits for 50 Mass Ave, 429 Electric Avenue, and 201 Arbor Street (on file in Planning Office)",
+   "where": "text",
+   "quote": "zoning board of appeals special permits (on file in planning office) for 50 mass ave"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "signage",
+  "ANR plan",
+  "filing fees",
+  "Aro Estates",
+  "minutes approval",
+  "development status",
+  "committee reports",
+  "appeal period"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

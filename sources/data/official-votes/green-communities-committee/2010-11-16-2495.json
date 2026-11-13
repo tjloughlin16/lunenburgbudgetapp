@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2010-11-16",
  "docid": "2495",
@@ -12,31 +12,219 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior meeting minutes from September 14, 2010",
+   "motion": "Request adoption of the IEEC Code to satisfy criteria for becoming a Green Community (to comply with the Green Communities Act).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes were reviewed and approved for 9/14/2010 meeting.",
-   "moved_by": "",
-   "seconded_by": ""
+   "procedural": false,
+   "quote": "voted to request adopting ieec code to satisfy criteria for becoming a green community."
   },
   {
-   "motion": "Request adopting IEEC Code (2009 edition) to satisfy criteria for becoming a Green Community",
-   "outcome": "not stated",
-   "procedural": false,
-   "quote": "voted to request adopting ieec code to satisfy criteria for becoming a green community.",
+   "motion": "Evaluate and consider a vehicle acquisition plan (to comply with the Green Communities Act).",
    "moved_by": "",
-   "seconded_by": ""
-  },
-  {
-   "motion": "Evaluate and consider a vehicle acquisition plan",
-   "outcome": "not stated",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "voted to evaluate and consider a vehicle acquisition plan.",
-   "moved_by": "",
-   "seconded_by": ""
+   "quote": "voted to evaluate and consider a vehicle acquisition plan."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned document; individual vote details (mover, seconder, vote counts) not recorded in the minutes. All votes recorded as \"Voted to [action]\" without explicit outcome counts.",
- "cost_usd": 0.0875235
+ "note": "Scanned page (macOS Vision OCR), page 1 only. The 'Present:' line is garbled ('clos'), so attendance status is inferred: 'present' only for people the minutes show acting or speaking; others 'not stated'. Items 4-6 are partly garbled and unreadable in places. The two Green Communities Act votes print no mover, seconder or tally; outcome 'passed' is taken from 'Voted to'. The minutes approval and adjournment have no recorded motion, so they are not listed as votes. No dollar figures appear. The received stamp reads 'JAN 2' with an illegible year.",
+ "cost_usd": 0.00452622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "S.Marsden",
+   "status": "present",
+   "quote": "members: s.marsden, p.slattery, j. mcquaid, e. sund, s. dicampo",
+   "role": "Member"
+  },
+  {
+   "name": "P.Slattery",
+   "status": "present",
+   "quote": "p. slattery again questioned the town web page content.",
+   "role": "Member; Secretary (per signature block)"
+  },
+  {
+   "name": "J. McQuaid",
+   "status": "present",
+   "quote": "j. mcquaid can now access the web page and provide updates",
+   "role": "Member"
+  },
+  {
+   "name": "E. Sund",
+   "status": "not stated",
+   "quote": "members: s.marsden, p.slattery, j. mcquaid, e. sund, s. dicampo",
+   "role": "Member"
+  },
+  {
+   "name": "S. DiCampo",
+   "status": "not stated",
+   "quote": "members: s.marsden, p.slattery, j. mcquaid, e. sund, s. dicampo",
+   "role": "Member"
+  },
+  {
+   "name": "M. Benson",
+   "status": "present",
+   "quote": "m. benson advised of conversations with m. sauvegeau regarding latest building code revisions.",
+   "role": "Town Liaison"
+  },
+  {
+   "name": "J. Breault",
+   "status": "not stated",
+   "quote": "town liaison: m. benson, j. breault, j. londa",
+   "role": "Town Liaison"
+  },
+  {
+   "name": "J. Londa",
+   "status": "present",
+   "quote": "j. londa presented a list of questions regarding the solar project for discussion.",
+   "role": "Town Liaison"
+  },
+  {
+   "name": "M. Sauvegeau",
+   "status": "not stated",
+   "quote": "m. sauvegeau advised that the town vote to adopt the provisions of ieec building code, 2009 edition, as it is already law.",
+   "role": "not stated"
+  },
+  {
+   "name": "Patrick J. Slattery",
+   "status": "not stated",
+   "quote": "patrick j. slattery, secretary",
+   "role": "Secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the 9/14/2010 meeting were approved (no motion or tally recorded).",
+   "quote": "minutes were reviewed and approved for 9/14/2010 meeting."
+  },
+  {
+   "decision": "A future meeting is to be scheduled and the Committee advised.",
+   "quote": "future meeting to be scheduled and committee advised."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Solar RFO / Power Provider RFP solar project at former landfill",
+   "what_was_recorded": "The Committee discussed a solar RFO with a 23 year term and price and non-price proposals; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "discussed a solar rfo as it applies to the power provider rfp solar project at the former landfill"
+  },
+  {
+   "topic": "Wind study funding through MEC (WPI contact)",
+   "what_was_recorded": "Marsden reported no response from WPI on whether a student-led project could provide a validated wind study for funding through MEC; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "led project with professor certification would provide a validated wind study for funding through"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 9/14/2010 minutes",
+   "resolution": "approved",
+   "quote": "minutes were reviewed and approved for 9/14/2010 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Latest Building Code revisions and Stretch Code",
+   "resolution": "discussed; reported",
+   "quote": "m. benson advised of conversations with m. sauvegeau regarding latest building code revisions.",
+   "tags": [
+    "building code",
+    "stretch code"
+   ]
+  },
+  {
+   "topic": "Town web page content",
+   "resolution": "discussed; J. McQuaid to provide updates",
+   "quote": "p. slattery again questioned the town web page content.",
+   "tags": [
+    "web page"
+   ]
+  },
+  {
+   "topic": "Green Communities Act compliance actions",
+   "resolution": "voted two actions: request IEEC Code adoption; evaluate vehicle acquisition plan",
+   "quote": "in order to comply with the green communities act the following actions were taken",
+   "tags": [
+    "green communities",
+    "vehicle acquisition"
+   ]
+  },
+  {
+   "topic": "Solar RFO / Power Provider RFP at former landfill",
+   "resolution": "discussed",
+   "quote": "discussed a solar rfo as it applies to the power provider rfp solar project at the former landfill",
+   "tags": [
+    "solar",
+    "landfill",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Wind study via WPI and MEC funding",
+   "resolution": "no response; no action",
+   "quote": "marsden advised that no response resulted from his contact of wpi",
+   "tags": [
+    "wind study",
+    "MEC"
+   ]
+  },
+  {
+   "topic": "Questions on solar project",
+   "resolution": "presented for discussion",
+   "quote": "j. londa presented a list of questions regarding the solar project for discussion.",
+   "tags": [
+    "solar"
+   ]
+  },
+  {
+   "topic": "Future meeting scheduling",
+   "resolution": "to be scheduled",
+   "quote": "future meeting to be scheduled and committee advised.",
+   "tags": [
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:05 PM",
+   "quote": "meeting adjourned at 8:05 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "IEEC Building Code, 2009 edition",
+   "where": "text",
+   "quote": "m. sauvegeau advised that the town vote to adopt the provisions of ieec building code, 2009 edition, as it is already law."
+  },
+  {
+   "name": "Power Provider RFP (solar project at former landfill)",
+   "where": "text",
+   "quote": "discussed a solar rfo as it applies to the power provider rfp solar project at the former landfill"
+  }
+ ],
+ "tags": [
+  "green communities",
+  "building code",
+  "stretch code",
+  "solar",
+  "wind study",
+  "vehicle acquisition",
+  "web page",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

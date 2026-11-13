@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-11-09",
  "docid": "3826",
@@ -12,7 +12,23 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of 9/28/15",
+   "motion": "Seek legal counsel and fire department input before making a determination on the 238 Fire Road 16 buildable-lot request.",
+   "moved_by": "M. Allison",
+   "seconded_by": "G. Bittner",
+   "outcome": "passed 3-1, K. Chenis recused",
+   "procedural": false,
+   "quote": "motion made, m. allison, to seek legal counsel and fire department input before making a determination, second, g. bittner."
+  },
+  {
+   "motion": "Continue the Highfield Village public hearing to January 11, 2016.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "M. Allison",
+   "outcome": "passed, all aye",
+   "procedural": false,
+   "quote": "motion, k. chenis to continue the hearing to january 11, 2016, second, m. allison, all aye."
+  },
+  {
+   "motion": "Approve minutes of 9/28/15.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
@@ -20,7 +36,7 @@
    "quote": "9/28/15- motion, d. prokowiew, second, g. bittner"
   },
   {
-   "motion": "approve minutes of 9/28/15, 339 Electric Avenue",
+   "motion": "Approve minutes of 9/28/15, 339 Electric Avenue.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
@@ -28,7 +44,7 @@
    "quote": "9/28/15, 339 electric avenue- motion, d. prokowiew, second, g. bittner"
   },
   {
-   "motion": "approve minutes of 9/28/15, 274 Prospect Street",
+   "motion": "Approve minutes of 9/28/15, 274 Prospect Street.",
    "moved_by": "G. Bittner",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
@@ -36,31 +52,223 @@
    "quote": "9/28/15, 274 prospect street- motion, g. bittner, second, d. prokowiew"
   },
   {
-   "motion": "approve minutes of 10/26/15 as amended",
+   "motion": "Approve minutes of 10/26/15, as amended.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
    "procedural": true,
    "quote": "10/26/15- motion, d. prokowiew, second, g. bittner as amended"
-  },
-  {
-   "motion": "seek legal counsel and fire department input before making a determination on 238 Fire Road 16",
-   "moved_by": "M. Allison",
-   "seconded_by": "G. Bittner",
-   "outcome": "passed 3-1",
-   "procedural": false,
-   "quote": "motion made, m. allison, to seek legal counsel and fire department input before making a determination, second, g. bittner. g. bittner, aye; d. prokowiew, aye; m. allison, aye; d. mcquaid, nay"
-  },
-  {
-   "motion": "continue the Highfield Village hearing to January 11, 2016",
-   "moved_by": "K. Chenis",
-   "seconded_by": "M. Allison",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion, k. chenis to continue the hearing to january 11, 2016, second, m. allison, all aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1078905
+ "dropped_unquoted": 1,
+ "note": "Minutes are a single text extraction with no scan issues. The minutes approval motions list movers and seconders but print no result beyond 'All minutes signed', so outcomes are 'not stated'. The 238 Fire Road 16 motion is recorded as 3-1 with K. Chenis recused, per the printed individual votes. The adjournment has no printed motion, so it is not recorded as a vote. Attendee statuses come from the 'Present' line; Peter Knox, Jamie Rheault and Thomas Vitone are shown as present because they addressed the Board. The 'Documents used at meeting' list is printed as one jumbled block, so entries are split as best read.",
+ "cost_usd": 0.005955719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Peter Knox",
+   "role": "Attorney, representing property owner J&A Realty Trust",
+   "status": "present",
+   "quote": "attorney peter knox, representing"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham Associates, representing the applicant",
+   "status": "present",
+   "quote": "jamie rheault, whitman & bingham associates, representing the applicant"
+  },
+  {
+   "name": "Thomas Vitone",
+   "role": "property owner of 213 Fire Road 16",
+   "status": "present",
+   "quote": "omas vitone, property owner of 213 fire road 16"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Determination on 238 Fire Road 16 continued to December 14, 2015 at 6:35 PM.",
+   "quote": "determination continued to december 14, 6:35 pm."
+  },
+  {
+   "decision": "Land Use Director to revise the Off-Street Parking Design Standards for the next meeting.",
+   "quote": "a. burney to revise for next meeting."
+  },
+  {
+   "decision": "Board discussed possibly creating architectural design standards for each district; no action recorded.",
+   "quote": "there was board discussion of possibly creating architectural design standards for each district."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Road 16 property taxes",
+   "what_was_recorded": "A property owner told the Board that properties on Fire Road 16 pay Lunenburg taxes, with no dollar figure printed.",
+   "quote": "that the properties on fire road 16 pay lunenburg taxes",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Thomas Vitone",
+   "stated_role": "property owner of 213 Fire Road 16",
+   "topic": "Fire Road 16 taxes, seasonal homes and road maintenance",
+   "quote": "the road is maintained, e.g., snow plowing, by volunteers"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "238 Fire Road 16 buildable lot determination",
+   "resolution": "continued to December 14, 2015 after motion for counsel and fire department input",
+   "quote": "determination continued to december 14, 6:35 pm.",
+   "tags": [
+    "buildable lot",
+    "access",
+    "zoning",
+    "determination"
+   ]
+  },
+  {
+   "topic": "Public hearing: Highfield Village (cont'd)",
+   "resolution": "continued to January 11, 2016",
+   "quote": "motion, k. chenis to continue the hearing to january 11, 2016, second, m. allison, all aye.",
+   "tags": [
+    "public hearing",
+    "Highfield Village",
+    "continuation"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports noted",
+   "quote": "open space ad hoc committee- no report",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "tri town landing- interior work continuing",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Director's items: Off-Street Parking Design Standards",
+   "resolution": "Director to revise draft for next meeting",
+   "quote": "a. burney to revise for next meeting.",
+   "tags": [
+    "bylaw",
+    "parking",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action; dates listed",
+   "quote": "november 16, special town meeting, 7:00 pm, lunenburg high school",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "discussion only, no action",
+   "quote": "d. prokowiew opined that architectural design standards for building facade would be a good idea for commercial developments.",
+   "tags": [
+    "design standards",
+    "building elevations",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:35 PM (no motion printed)",
+   "quote": "adjournment: 8:35 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 9/28/15, Electric Avenue 9/28/15, Prospect Street 9/28/15, 10/26/15",
+   "where": "list",
+   "quote": "minutes 9/28/15, electric avenue 9/28/15, prospect street 9/28/15, 10/26/15"
+  },
+  {
+   "name": "Letter, Blatman, Bobrowski, Mead & Talerman LLC, dated November 4, 2015",
+   "where": "list",
+   "quote": "letter, blatman, bobrowski, mead & talerman llc, dated november 4, 2015"
+  },
+  {
+   "name": "Off-Street Parking Design Standards DRAFT 2",
+   "where": "list",
+   "quote": "off-street parking design standards draft 2"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "buildable lot",
+  "public hearing",
+  "Highfield Village",
+  "Fire Road 16",
+  "bylaw",
+  "off-street parking",
+  "minutes approval",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

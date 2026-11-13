@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-01-24",
  "docid": "5079",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "exit Executive Session and adjourn",
+   "motion": "To exit Executive Session and adjourn",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 4-0",
@@ -21,6 +21,103 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0976375
+ "note": "These are executive session minutes only; the minutes record no public comment and no dollar figures. The minutes do not say whether any matter was voted on inside the session, beyond the procedural motion to exit and adjourn.",
+ "cost_usd": 0.00291712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member;"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member;"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: jamie toale, chairman; robert ebersole, vice chairman; tom alonzo, clerk; phyllis luck, member;"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: paula bertram, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux and attorney robert bowen"
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "town manager heather lemieux and attorney robert bowen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Attorney Bowen will do further research on the Unitil suit and contact Unitil; he has also noticed an appeal as a placeholder on behalf of the Town to preserve its position.",
+   "quote": "mr. bowen will do further research and contact unitil. he has also noticed an appeal as a placeholder on behalf"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ice storm recovery damages sought from Unitil",
+   "what_was_recorded": "The Town's 2011 suit sought recovery of the cost of public services provided after the December 2008 storm, mostly tree and vegetation removal, plus damage to town property; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the cost of public services the town provided in the wake of the storm"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Town of Lunenburg v. Fitchburg Gas and Electric Light Company (Unitil) litigation",
+   "resolution": "briefed by counsel; counsel to research, contact Unitil, and notice appeal as placeholder",
+   "quote": "attorney bowen updated the board on the town of lunenburg v. fitchburg gas and electric light company",
+   "tags": [
+    "executive session",
+    "litigation",
+    "Unitil",
+    "ice storm"
+   ]
+  },
+  {
+   "topic": "Exit executive session and adjourn",
+   "resolution": "adjourned at 8:30 p.m.",
+   "quote": "the meeting adjourned at 8:30 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "executive session",
+  "litigation",
+  "Unitil",
+  "ice storm",
+  "legal",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

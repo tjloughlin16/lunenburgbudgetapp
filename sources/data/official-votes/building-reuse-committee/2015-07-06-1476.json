@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2015-07-06",
  "docid": "1476",
@@ -12,13 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the 6-15-2015 meeting minutes as submitted",
+   "motion": "Approve the 6-15-2015 minutes as submitted.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "6-15-2015 minutes approved as submitted"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Dave MacDonald",
    "outcome": "passed",
@@ -27,6 +29,165 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision scan. Two procedural votes recorded: minutes approval and meeting adjournment.",
- "cost_usd": 0.0813845
+ "note": "OCR text from a single page. Minutes approval (\"approved as submitted\") and the RFQ package approval record no motion, mover, second or count, so the minutes approval is listed as a passed procedural vote with no mover and the RFQ approval as a decision without a vote. The August meeting date reads \"August 7*\" in the OCR, likely a superscript \"th\"; it is recorded as printed. John Londa is mentioned as having submitted school building updates but is not named as attending, so he is not listed. No dollar figures appear. The public comment section reads \"None\".",
+ "cost_usd": 0.00320752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin"
+  },
+  {
+   "name": "Ron Albert",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: jamie toale, ron albert, damon mcquaid, dave macdonald, mike mackin"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: rebecca lantry, mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: rebecca lantry, mark erickson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board reviewed and approved the RFQ package for submission (no motion or vote recorded).",
+   "quote": "the board has reviewed and approved the rfq package for submission"
+  },
+  {
+   "decision": "Ron Albert and Damon McQuaid to provide their dwg files of the existing town buildings for submission by July 15th.",
+   "quote": "ron and damon will have their dwg files of the existing town buildings for submission by july 15th."
+  },
+  {
+   "decision": "Members encouraged to watch for qualified individuals to fill out talent bank forms to staff the new APD Committee.",
+   "quote": "everyone is encouraged to keep an eye open for qualified individuals to fill out talent bank forms to staff the new apd committee"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order july 06, 2015 @ 6:34pm",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements: none public comment: none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "announcements: none public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 6-15-2015 minutes",
+   "quote": "6-15-2015 minutes approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Update on RFQ process",
+   "resolution": "RFQ package reviewed and approved for submission",
+   "quote": "rfq needs to be submitted by 4pm tomorrow to make it into the august posting of the central register.",
+   "tags": [
+    "RFQ",
+    "school buildings",
+    "town buildings",
+    "Central Register"
+   ]
+  },
+  {
+   "topic": "APD Membership",
+   "resolution": "no action",
+   "quote": "everyone is encouraged to keep an eye open for qualified individuals to fill out talent bank forms to staff the new apd committee",
+   "tags": [
+    "APD Committee",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "New business and meeting schedule",
+   "resolution": "next meeting set for August 7 at 7:00AM at Town Hall",
+   "quote": "august 7* 7:00am at town hall",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:48pm",
+   "quote": "meeting adjourned @ 7:48pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "RFQ package",
+   "where": "text",
+   "quote": "the board has reviewed and approved the rfq package for submission"
+  },
+  {
+   "name": "dwg files of the existing town buildings",
+   "where": "text",
+   "quote": "ron and damon will have their dwg files of the existing town buildings for submission by july 15th."
+  }
+ ],
+ "tags": [
+  "RFQ",
+  "APD Committee",
+  "talent bank",
+  "school buildings",
+  "town buildings",
+  "building re-use",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

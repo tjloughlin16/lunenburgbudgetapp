@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2015-09-15",
  "docid": "4943",
@@ -12,55 +12,559 @@
  },
  "votes": [
   {
-   "motion": "To enter into Executive Session under Chapter 30A § 21A(9) to discuss strategy with respect to collective bargaining or litigation regarding O'Brien Homes",
+   "motion": "Enter executive session under G.L. c. 30A, § 21A(9) to discuss strategy on collective bargaining or litigation (O'Brien Homes).",
    "moved_by": "T. Alonzo",
    "seconded_by": "R. Ebersole",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2\"d. r. ebersole to enter into executive session- chapter 30a, § 21a (9), to discuss strategy with respect to collective bargaining or litigation if an open meeting may have a detrimental effect on the government's bargaining or litigating position, and the chair so declares- o'brien homes vote: mr. alonzo-aye, mr. ebersole-aye, ms. bertram-aye, mr. toale-aye"
+   "quote": "to enter into executive session- chapter 30a, § 21a (9), to discuss strategy with respect to collective bargaining or"
   },
   {
-   "motion": "To ratify the appointment of Todd Holman as Cemetery Superintendent by the Town Manager",
+   "motion": "Ratify the appointment of Todd Holman as Cemetery Superintendent by the Town Manager.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2'd: p. bertram to ratify the appointment of todd holman as cemetery superintendent by the town manager vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointment of todd holman as cemetery superintendent by the town manager"
   },
   {
-   "motion": "To enter into negotiations with Nexamp for the Net Metering Credit Opportunity and to authorize the Town Manager to do so",
+   "motion": "Enter into negotiations with Nexamp for the Net Metering Credit Opportunity and authorize the Town Manager to do so.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\"d: r. ebersole to enter into negotiations with nexamp for the net metering credit opportunity and to authorize the town manager to do so vote: all in favor"
+   "quote": "to enter into negotiations with nexamp for the net metering credit opportunity and to authorize the"
   },
   {
-   "motion": "To issue a written warning for the violations as outlined in the hearing notice to Donnelly's Tavern",
+   "motion": "Issue a written warning to Donnelly's Tavern for the violations as outlined in the hearing notice.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"°:t. alonzo to issue a written warning for the violations as outlined in the hearing notice to donnelly's tavern in vote: all in favor"
+   "quote": "to issue a written warning for the violations as outlined in the hearing notice to donnelly's tavern in"
   },
   {
-   "motion": "To approve the revised Regional 911 Emergency Communication District Agreement as presented",
+   "motion": "Approve the revised Regional 911 Emergency Communication District Agreement as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2'd: t. alonzo to approve the revised regional 911 emergency communication district agreement as presented vote: all in favor"
+   "quote": "to approve the revised regional 911 emergency communication district agreement as"
   },
   {
-   "motion": "To adjourn the meeting at 9:15 p.m.",
+   "motion": "Adjourn the meeting at 9:15 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 9:15 p.m. 2™: p. luck vote: all in favor"
+   "quote": "to adjourn the meeting at 9:15 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR minutes; all votes passed unanimously or with all in favor. No procedural votes on prior minutes approval recorded.",
- "cost_usd": 0.1094845
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR with garbled characters (e.g., 'Achitechtural', 'exisiting', 'Ms4', '2™:' for seconders); quotes copied as printed. Vote tallies for most motions are 'All in Favor' with no numeric count, so outcomes are 'passed'. Executive session roll call lists four ayes (Alonzo, Ebersole, Bertram, Toale) and does not mention Ms. Luck. Executive session minutes are separate per the printed banner; the 'O'Brien Homes' label appears after the executive session motion. Public comment appears twice; board-member remarks in public comment were not recorded as public speakers. The minutes end with a signature 'Peterson, Executive Assistant to the Town Manager'. No transfers recorded.",
+ "cost_usd": 0.010663620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chair; robert ebersole, vice chair; thomas alonzo, clerk; paula bertram, member; phyllis luck,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "member and town manager kerry lafleur. the meeting opened at 6:00 p.m."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "member and town manager kerry lafleur. the meeting opened at 6:00 p.m."
+  },
+  {
+   "name": "Joe Fiore",
+   "role": "representing Nexamp",
+   "status": "present",
+   "quote": "joe fiore of nexamp thanked the town manager and board for inviting him in this evening."
+  },
+  {
+   "name": "Jack Hebert",
+   "role": "Police Sergeant",
+   "status": "present",
+   "quote": "police sergeant jack hebert and donnelly's tavern owner john donnelly identified themselves."
+  },
+  {
+   "name": "John Donnelly",
+   "role": "owner of Donnelly's Tavern; identified himself as manager",
+   "status": "present",
+   "quote": "john donnelly identified himself as the manager. he stated he had never been before this board for violations."
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "President of the Lunenburg Snow Riders, 312 Townsend Harbor Road",
+   "status": "present",
+   "quote": "tom bertram, 312 townsend harbor road, asked for everyone to applaud the ladies involved in the fundraiser."
+  },
+  {
+   "name": "Julia Stillman",
+   "role": "not stated",
+   "status": "present",
+   "quote": "julia stillman came to thank the board for their amazing support to help them pull off the event and presented"
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "President of the Lion's Club",
+   "status": "present",
+   "quote": "lisa normandin, president of the lion's club wanted to thank marilyn talley for her"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "94 Main Street resident",
+   "status": "present",
+   "quote": "troy daniels, 94 main street, asked about the status on the animal control officer complaint."
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "129 Pleasant Street resident",
+   "status": "present",
+   "quote": "greg bittner, 129 pleasant street, had some questions regarding the community solar project proposal."
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "733 West Street resident",
+   "status": "present",
+   "quote": "david prokowiew, 733 west street, also wanted to know about the third circuit."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lafleur will work on getting a meeting scheduled with a DEP storm water coordinator on Ms4 permitting requirements.",
+   "quote": "ms. lafleur will work on getting a meeting scheduled"
+  },
+  {
+   "decision": "The 7:00 p.m. appointment was cancelled and moved to the September 22 agenda.",
+   "quote": "mr. toale announced the 7:00 p.m. appointment had to cancel; this will be moved to the september 22 agenda."
+  },
+  {
+   "decision": "The Board preferred a November Special Town Meeting on the 16th rather than the holiday week of the 23rd.",
+   "quote": "rather than the holiday week."
+  },
+  {
+   "decision": "Ms. Lafleur will present a timeline leading up to the Special Town Meeting on the 22nd; the Board will open the Special Town Meeting warrant on the 22nd.",
+   "quote": "ms. lafleur will present a timeline leading up to the special town meeting on the 22nd"
+  },
+  {
+   "decision": "Ms. Lafleur will look into whether the Water District agreement with Nexamp would have to go to Town Meeting.",
+   "quote": "ms. lafleur stated she would have to look into that."
+  },
+  {
+   "decision": "Ms. Lafleur will put the solar project information on the website the next day.",
+   "quote": "ms. lafleur stated she would put it on the website tomorrow."
+  },
+  {
+   "decision": "Ms. Lafleur will modify the Open Meetings Law workshop flyer to state attendance is strongly recommended and send it to all board members.",
+   "quote": "we will send this flyer out tomorrow to all members of"
+  },
+  {
+   "decision": "Ms. Lafleur will address Animal Control Officer services on the next week's agenda, with the Police Chief and the Animal Control Officer present.",
+   "quote": "ms. lafleur stated next week's agenda will cover aco services."
+  },
+  {
+   "decision": "Mr. Ebersole requested that the Lancaster water committee also look at the water needs of the Town of Lunenburg.",
+   "quote": "mr. ebersole requested this committee also look at the water needs of the town of lunenburg."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable Warrant",
+   "what_was_recorded": "The Board signed an Accounts Payable Warrant in the amount of $287,397.59.",
+   "figures_as_printed": [
+    "$287,397.59"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $287,397.59."
+  },
+  {
+   "topic": "Lunenburg Snow Riders RTP Trails grant",
+   "what_was_recorded": "The Snow Riders were notified they are recipients of an RTP Trails grant; over the past five years the club has received $120,000 in grant funding.",
+   "figures_as_printed": [
+    "$49,524.89",
+    "$120,000"
+   ],
+   "quote": "they are recipients of an rtp trails grant in the amount of $49,524.89."
+  },
+  {
+   "topic": "Lions Club Food Bank fundraiser",
+   "what_was_recorded": "The Lions Club believes the country fair raised over $12,000 for the Food Bank.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "they are 99% sure they made over $12,000 for the food bank."
+  },
+  {
+   "topic": "Lunenburg Water District garage and office loans",
+   "what_was_recorded": "The Water District voted to move forward with investigating loans to fund a garage and office.",
+   "figures_as_printed": [
+    "1.2 million dollar"
+   ],
+   "quote": "there was a vote to move forward with the investigation of loans to fund a 1.2 million dollar garage and office for the water district."
+  },
+  {
+   "topic": "Nexamp net metering credit savings",
+   "what_was_recorded": "Nexamp's community shared project first-year savings are projected to be over $20,000; its standard offer to residents is a 15% discount.",
+   "figures_as_printed": [
+    "over $20,000",
+    "15%",
+    "85%"
+   ],
+   "quote": "the first year of savings is projected to be over $20,000."
+  },
+  {
+   "topic": "Nexamp 100% project option",
+   "what_was_recorded": "If the Town received 100% of the project, the first year would generate $36,400 in savings.",
+   "figures_as_printed": [
+    "$36,400"
+   ],
+   "quote": "the first year would generate $36,400 in savings."
+  },
+  {
+   "topic": "Turkey Hill Middle School 10-year capital plan",
+   "what_was_recorded": "The 10-year capital plan for Turkey Hill Middle School is projected to cost close to $22 million by 2024.",
+   "figures_as_printed": [
+    "$22 million"
+   ],
+   "quote": "the cost by 2024 will be close to $22 million."
+  },
+  {
+   "topic": "Lunenburg public schools grant funding",
+   "what_was_recorded": "Lunenburg public schools received $882,000 in grant funding for FY2016, with federal grants increasing by $200,023.",
+   "figures_as_printed": [
+    "$882,000",
+    "$200,023"
+   ],
+   "quote": "the lunenburg public schools received $882,000 in grant funding for fiscal year 2016, with federal grants"
+  },
+  {
+   "topic": "School building project change order",
+   "what_was_recorded": "A school building project change order in the amount of $49,182 was reported for an added drain and related items.",
+   "figures_as_printed": [
+    "$49,182"
+   ],
+   "quote": "there was another change order in the amount of $49,182"
+  },
+  {
+   "topic": "Municipal electric aggregation rates",
+   "what_was_recorded": "New aggregation rates are 11.98 cents for the first six months, a decrease of 2.01 cents; 8.9 cents for May 1 to November 1, 2016; the current rate is 11.3 cents, a decrease of 2.4 cents.",
+   "figures_as_printed": [
+    "11.98 cents",
+    "2.01 cents",
+    "8.9 cents",
+    "11.3 cents",
+    "2.4 cents"
+   ],
+   "quote": "11.98 cents for the first six months. this is a decrease of 2.01 cents from the rate in november 2014."
+  },
+  {
+   "topic": "Municipal Purpose Loan of 2004 refunding",
+   "what_was_recorded": "Refunding the 2004 loan would give a present value savings of $113,000 over nine years: $97,000 exempt debt and $16,000 non-exempt debt; the $97,000 equals about a penny on tax bills.",
+   "figures_as_printed": [
+    "$113,000",
+    "$97,000",
+    "$16,000"
+   ],
+   "quote": "we can re-fund this with a present value savings of $113,000 over the nine remaining years."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Bertram",
+   "stated_role": "President of the Lunenburg Snow Riders, 312 Townsend Harbor Road",
+   "topic": "RTP Trails grant and wildlife viewing station ribbon cutting",
+   "quote": "he stated he is the president of the lunenburg snow riders and they were notified today that"
+  },
+  {
+   "speaker": "Julia Stillman",
+   "stated_role": "not stated",
+   "topic": "thanks to Board for fair support",
+   "quote": "julia stillman came to thank the board for their amazing support to help them pull off the event and presented"
+  },
+  {
+   "speaker": "Lisa Normandin",
+   "stated_role": "President of the Lion's Club",
+   "topic": "thanks for country fair and Food Bank fundraiser",
+   "quote": "lisa normandin, president of the lion's club wanted to thank marilyn talley for her"
+  },
+  {
+   "speaker": "Troy Daniels",
+   "stated_role": "94 Main Street resident",
+   "topic": "Animal Control Officer complaint status",
+   "quote": "troy daniels, 94 main street, asked about the status on the animal control officer complaint."
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "129 Pleasant Street resident",
+   "topic": "community solar project questions",
+   "quote": "greg bittner, 129 pleasant street, had some questions regarding the community solar project proposal."
+  },
+  {
+   "speaker": "David Prokowiew",
+   "stated_role": "733 West Street resident",
+   "topic": "Board goals, surveying residents, openness of workshops, solar info online, Special Town Meeting",
+   "quote": "david prokowiew, 733 west street, also wanted to know about the third circuit."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session entry (O'Brien Homes)",
+   "resolution": "entered executive session",
+   "quote": "to enter into executive session- chapter 30a, § 21a (9), to discuss strategy with respect to collective bargaining or",
+   "tags": [
+    "executive session",
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; country fair thanks, Water District report, Boston Post Cane",
+   "quote": "mr. toale mentioned this past weekend a country fair was held at the stillman farm which he considered a",
+   "tags": [
+    "public comment",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Appointments",
+   "resolution": "7:00 p.m. appointment cancelled; moved to September 22",
+   "quote": "mr. toale announced the 7:00 p.m. appointment had to cancel; this will be moved to the september 22 agenda.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Accounts Payable Warrant",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $287,397.59.",
+   "tags": [
+    "finance",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Storm water Ms4 permitting meeting with DEP",
+   "resolution": "Town Manager to schedule meeting",
+   "quote": "ms. lafleur will work on getting a meeting scheduled",
+   "tags": [
+    "stormwater",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Board goals workshop report",
+   "resolution": "no action; more workshops to alternate with regular meetings",
+   "quote": "mr. toale reported on the board's workshop meeting last week on goals.",
+   "tags": [
+    "goals",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Notice of Appointment - Todd Holman, Cemetery Superintendent",
+   "resolution": "ratified",
+   "quote": "to ratify the appointment of todd holman as cemetery superintendent by the town manager",
+   "tags": [
+    "appointments",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Nexamp net metering / community shared solar",
+   "resolution": "authorized negotiations with Nexamp",
+   "quote": "to enter into negotiations with nexamp for the net metering credit opportunity and to authorize the",
+   "tags": [
+    "solar",
+    "energy",
+    "net metering"
+   ]
+  },
+  {
+   "topic": "Liquor license violation hearing, Donnelly's Tavern",
+   "resolution": "written warning issued",
+   "quote": "to issue a written warning for the violations as outlined in the hearing notice to donnelly's tavern in",
+   "tags": [
+    "liquor license",
+    "hearing",
+    "police"
+   ]
+  },
+  {
+   "topic": "Nashoba Valley Regional District dispatch agreement",
+   "resolution": "approved revised agreement",
+   "quote": "to approve the revised regional 911 emergency communication district agreement as",
+   "tags": [
+    "regional dispatch",
+    "intermunicipal agreement",
+    "911"
+   ]
+  },
+  {
+   "topic": "Lunenburg Water District - Lancaster expansion; request for two Lunenburg members",
+   "resolution": "no action; discussion of committee membership",
+   "quote": "ms. lafleur reported fran mcnamara, lunenburg water district supervisor, has informed her that the",
+   "tags": [
+    "water district",
+    "Lancaster"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting date",
+   "resolution": "Board preferred November 16; timeline to follow",
+   "quote": "rather than the holiday week.",
+   "tags": [
+    "town meeting",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "planning board- ms. bertram reported the majority of the meeting focused on high field village.",
+   "tags": [
+    "committees",
+    "school",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Interviews for appointment (Architectural Preservation District Commission)",
+   "resolution": "no applicants present; Historical Commission recommendation noted",
+   "quote": "mr. toale asked if any of the applicants for the achitechtural preservation district commission were",
+   "tags": [
+    "appointments",
+    "APD"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action; electric aggregation rates, loan refunding, OML workshop",
+   "quote": "ms. lafleur announced new rates for the municipal electric aggregation program effective november 1,",
+   "tags": [
+    "electric aggregation",
+    "debt",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; ACO services, community solar questions, Board goals",
+   "quote": "troy daniels, 94 main street, asked about the status on the animal control officer complaint.",
+   "tags": [
+    "public comment",
+    "animal control",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:15 p.m.",
+   "quote": "to adjourn the meeting at 9:15 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Intermunicipal agreement (revised Regional 911 Emergency Communication District Agreement)",
+   "where": "text",
+   "quote": "this intermunicipal agreement replaces the one that was approved in 2011. state legislation for a regional dispatch district"
+  },
+  {
+   "name": "MART ridership numbers for the month of August",
+   "where": "text",
+   "quote": "ridership numbers for the month of august are in the board's packet."
+  },
+  {
+   "name": "Notice of Hearing for Donnelly's Tavern, Inc.",
+   "where": "text",
+   "quote": "mr. toale read aloud the notice of hearing for donnelly's tavern, inc."
+  },
+  {
+   "name": "Lunenburg Police Department incident report (received April 29, 2015)",
+   "where": "text",
+   "quote": "concerning an incident report filed by the"
+  },
+  {
+   "name": "Sgt. Hebert's report",
+   "where": "text",
+   "quote": "mr. donnelly stated he had read sgt. hebert's report"
+  },
+  {
+   "name": "Lunenburg Licensing Commission Regulations, Section 1/04(a)",
+   "where": "text",
+   "quote": "section 1/04(a) of the lunenburg licensing commission regulations"
+  },
+  {
+   "name": "Letter of recommendation from the Cemetery Commission",
+   "where": "text",
+   "quote": "she read aloud a letter of recommendation from the cemetery commission."
+  },
+  {
+   "name": "Nexamp savings calculations over twenty years",
+   "where": "text",
+   "quote": "mr. fiore presented a breakdown of savings calculations over the next twenty years."
+  },
+  {
+   "name": "10 year Capital Plan for Turkey Hill Middle School",
+   "where": "text",
+   "quote": "facilities director john londa presented a 10 year capital plan"
+  },
+  {
+   "name": "APD bylaw (Architectural Preservation District)",
+   "where": "text",
+   "quote": "the attorney general's office has not notified the town of approval of the apd"
+  }
+ ],
+ "tags": [
+  "select board",
+  "executive session",
+  "liquor license",
+  "solar net metering",
+  "regional dispatch",
+  "water district",
+  "special town meeting",
+  "electric aggregation",
+  "debt refunding",
+  "schools",
+  "animal control",
+  "public comment",
+  "appointments"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lafleur referred the board to the intermunicipal agreement in their packets"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

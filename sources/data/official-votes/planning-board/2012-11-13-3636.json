@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-11-13",
  "docid": "3636",
@@ -12,20 +12,157 @@
  },
  "votes": [
   {
-   "motion": "Sign letter recommending the Board of Selectmen not accept Right of First Refusal for property at 137 Leominster-Shirley Road",
+   "motion": "Sign a letter recommending the Board of Selectmen not accept the Right of First Refusal on 137 Leominster-Shirley Road.",
+   "moved_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to sign letter recommending the board of selectmen not accept right of first refusal."
+   "quote": "to sign letter recommending the board of selectmen not accept right of first refusal.",
+   "seconded_by": ""
   },
   {
-   "motion": "Endorse ANR Plans at 131, 133, 137 Leominster-Shirley Road, and 1501 Lancaster Avenue",
+   "motion": "Endorse the ANR Plan for 131, 133, 137 Leominster-Shirley Road and 1501 Lancaster Avenue.",
+   "moved_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "anr plan endorsed by roll call vote, ms. bilotta -simeone, aye; mr. saiia, aye; mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa, aye",
-   "quote_taken_from_text": true
+   "quote": "anr plan endorsed by roll call vote, ms. bilotta -simeone, aye; mr. saiia, aye; mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa, aye;",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1075965
+ "note": "Extracted text with split words and stray spaces (e.g., \"Bilott a-Simeone\", \"depa rtments\", \"19 th\"); quotes copy them as printed. No vote recorded on approving prior minutes, on the 994 Northfield acceptance, or on adjournment at 7:35 PM, so none are listed as votes. Jesse Johnson (David Ross Associates) is named only as conferring with the Board of Health, not at this meeting, so he is omitted from attendees. No public comment is recorded. The ROFR roll call has no printed mover or seconder.",
+ "cost_usd": 0.00440852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta-simeone, vice-chair"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia, mbr."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "William Gustus",
+   "role": "Applicant (Settlers Crossing Enterprise Inc.)",
+   "status": "present",
+   "quote": "plan presented by applicant (william gustus) , settlers crossing enterprise inc."
+  },
+  {
+   "name": "Michael Martorella",
+   "role": "of David Ross Associates",
+   "status": "present",
+   "quote": "board reviewed pl an with the applicant and michael martorella of david ross associates.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ANR Plan for 994 Northfield Road was accepted for review; Ms. Benson will notify reviewing departments that reviews need to be completed for a signing meeting on Monday, November 19th.",
+   "quote": "plan accepted for review. ms. benson will notify reviewing depa rtments that reviews need to be completed for a signing meeting on monday, november 19 th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Right of First Refusal, 137 Leominster-Shirley Road: purchase price",
+   "what_was_recorded": "Members asked the price of the property but said the financial details were not available, so they did not have enough information to decide.",
+   "figures_as_printed": [],
+   "quote": "members inquired as to price of property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Right of First Refusal, 137 Leominster-Shirley Road",
+   "resolution": "voted 5-0 to sign letter recommending the Board of Selectmen not accept",
+   "quote": "to sign letter recommending the board of selectmen not accept right of first refusal.",
+   "tags": [
+    "right of first refusal",
+    "Chapter 61A/61B",
+    "Leominster-Shirley Road"
+   ]
+  },
+  {
+   "topic": "Board endorsement: ANR 131, 133, 137 Leominster-Shirley Road, 1501 Lancaster Avenue",
+   "resolution": "endorsed by roll call vote 5-0",
+   "quote": "anr plan endorsed by roll call vote, ms. bilotta -simeone, aye; mr. saiia, aye; mr. bodkin jr., aye; mr. lockwood, aye; mr. bakaysa, aye;",
+   "tags": [
+    "ANR plan",
+    "Board of Health",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Appointment: ANR 994 Northfield Road",
+   "resolution": "accepted for review; signing meeting set for November 19",
+   "quote": "plan accepted for review. ms. benson will notify reviewing depa rtments that reviews need to be completed for a signing meeting on monday, november 19 th.",
+   "tags": [
+    "ANR plan",
+    "Northfield Road",
+    "golf course",
+    "land division"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan for 131, 133, 137 Leominster-Shirley Road and 1501 Lancaster Avenue (prepared by David Ross Associates), initially submitted September 24, 2012",
+   "where": "text",
+   "quote": "plan initially submitted to the planning board at its september 24, 2012 meeting."
+  },
+  {
+   "name": "ANR Plan for 994 Northfield Road (Settlers Crossing Enterprise Inc.)",
+   "where": "text",
+   "quote": "plan divides the golf course property for purposes of financing."
+  },
+  {
+   "name": "Letter to the Board of Selectmen recommending it not accept the Right of First Refusal",
+   "where": "text",
+   "quote": "to sign letter recommending the board of selectmen not accept right of first refusal."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "right of first refusal",
+  "Chapter 61A/61B land",
+  "land division",
+  "Board of Health",
+  "Northfield Road",
+  "Leominster-Shirley Road"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

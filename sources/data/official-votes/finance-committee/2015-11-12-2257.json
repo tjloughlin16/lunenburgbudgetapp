@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2015-11-12",
  "docid": "2257",
@@ -12,47 +12,307 @@
  },
  "votes": [
   {
-   "motion": "Accept the October 8 meeting minutes as corrected",
-   "moved_by": "Terri",
-   "seconded_by": "Karin",
+   "motion": "Recommend approval of article 3 as written in the warrant.",
+   "moved_by": "John Henshaw",
+   "seconded_by": "Karin Menard",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "john moved to recommend approval of article 3 as written in the warrant. karin seconded the motion."
+  },
+  {
+   "motion": "Recommend approval of article 13 as presented at the Special Town Meeting.",
+   "moved_by": "Terri Burchfield",
+   "seconded_by": "John Henshaw",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "terri moved to recommend approval of article 13 as presented at the special town meeting. john seconded the motion."
+  },
+  {
+   "motion": "Recommend approval of article 14 in the amount of $7,136.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Terri Burchfield",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "karin moved to recommend approval of article 14 in the amount of $7,136. terri seconded the motion."
+  },
+  {
+   "motion": "Accept the October 8 meeting minutes as corrected.",
+   "moved_by": "Terri Burchfield",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 5-0",
    "procedural": true,
    "quote": "terri made a motion to accept the minutes as corrected and karin seconded the motion. the committee approved the motion 5-0."
   },
   {
-   "motion": "Recommend approval of article 3 (FY16 Budget Adjustments) as written in the warrant",
-   "moved_by": "John",
-   "seconded_by": "Karin",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "john moved to recommend approval of article 3 as written in the warrant. karin seconded the motion. the motion carried-5-0"
-  },
-  {
-   "motion": "Recommend approval of article 13 (Salary Admin. Plan) as presented at the Special Town Meeting",
-   "moved_by": "Terri",
-   "seconded_by": "John",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "terri moved to recommend approval of article 13 as presented at the special town meeting. john seconded the motion. the motion carried- 5-0"
-  },
-  {
-   "motion": "Recommend approval of article 14 in the amount of $7,136 (adding funds to the Stabilization fund)",
-   "moved_by": "Karin",
-   "seconded_by": "Terri",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "karin moved to recommend approval of article 14 in the amount of $7,136. terri seconded the motion. the motion carried-5-0"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Karin",
-   "seconded_by": "Terri",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Terri Burchfield",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "karin moved to adjourn the meeting and terri seconded the motion. the board voted 5-0 in favor; the meeting adjourned at 8:00."
+   "quote": "karin moved to adjourn the meeting and terri seconded the motion. the board voted 5-0 in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text via macOS Vision. All votes clearly recorded with outcome counts.",
- "cost_usd": 0.0870915
+ "note": "Scanned text via OCR. The warrant recommendation table is scrambled, so recommendations for articles 8 to 12 and 15 are not attributed to any vote at this meeting; only the three warrant motions and two procedural motions are recorded as votes. Article 3 is described in the table as FY16 budget adjustments. Public comment was \"None\". No transfers recorded.",
+ "cost_usd": 0.007034919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, karin menard, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "BOS liaison",
+   "status": "present",
+   "quote": "also present: kerry lafleur, town manager, tom alonzo, bos liaison"
+  },
+  {
+   "name": "Cheryl Vallera",
+   "role": "Presentation by (Article 13)",
+   "status": "not stated",
+   "quote": "updating art. xv of salary admin. plan presentation by cheryl vallera."
+  },
+  {
+   "name": "Charley Hay",
+   "role": "of Tappé Assoc.",
+   "status": "not stated",
+   "quote": "the committee met with charley hay of tappé assoc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to meet on the first Thursday of December (December 3, 2015) for the Town Manager's revenue forecast, as long as it has a quorum.",
+   "quote": "the committee agreed to meet on the first thursday of december as long as the committee has a quorum."
+  },
+  {
+   "decision": "The Special Services expenditure discussion was moved to the December 10 meeting, which the chair considered the more opportune time.",
+   "quote": "the meeting on the tenth would be the more opportune time for this discussion."
+  },
+  {
+   "decision": "The school committee was invited to attend the December 10 meeting.",
+   "quote": "mark said that the school committee is welcome to attend our december 10 meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monty Tech revised assessment",
+   "what_was_recorded": "The chair reported the revised Monty Tech assessment fell to $799,478, a reduction of about $2,500.",
+   "figures_as_printed": [
+    "$799,478",
+    "$2,500"
+   ],
+   "quote": "mark said the revised assessment from monty tech went down to $799,478-"
+  },
+  {
+   "topic": "Senior Tax Work-off Abatement Program",
+   "what_was_recorded": "Qualifying seniors can work off up to $1,000 of property taxes under the program.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "senior citizens who qualify can work off up to $1,000 of their property taxes."
+  },
+  {
+   "topic": "Article 14 Stabilization fund addition",
+   "what_was_recorded": "Article 14 adds funds to the Stabilization fund to keep it at 5% of the omnibus budget; the committee recommended approval in the amount of $7,136.",
+   "figures_as_printed": [
+    "$7,136",
+    "5%"
+   ],
+   "quote": "karin moved to recommend approval of article 14 in the amount of $7,136."
+  },
+  {
+   "topic": "School building project change orders",
+   "what_was_recorded": "Change order #5 (auditorium grade change and bollards) cost $8,203 and total change orders are a little over $170,000.",
+   "figures_as_printed": [
+    "$8,203",
+    "$170,000"
+   ],
+   "quote": "these two changes cost $8,203, and change orders now total a little over $170,000."
+  },
+  {
+   "topic": "School building project contingency",
+   "what_was_recorded": "The budgeted contingency for the school building project is about $4 million.",
+   "figures_as_printed": [
+    "$4 million"
+   ],
+   "quote": "the budgeted contingency is about $4 million."
+  },
+  {
+   "topic": "School building project retainage",
+   "what_was_recorded": "Each line item carries a 5% retainage, released line item by line item on satisfactory completion.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "every line item has a 5% retainage subject to release upon satisfactory completion, and the retainage is released line item by line item."
+  },
+  {
+   "topic": "Special Services expenditure growth",
+   "what_was_recorded": "Special Services expenditures have grown about one percent annually faster than the school budget and faster than total Town revenues.",
+   "figures_as_printed": [],
+   "quote": "expenditures, over the past several years have grown faster by about one percent annually than the school department budget as a whole"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Comments (committee and public)",
+   "resolution": "no action; public comment none",
+   "quote": "mark said the revised assessment from monty tech went down to $799,478-",
+   "tags": [
+    "Monty Tech",
+    "assessment",
+    "senior tax work-off"
+   ]
+  },
+  {
+   "topic": "Review of Special Town Meeting warrant articles",
+   "resolution": "recommended approval of articles 3, 13 and 14; other articles no vote recorded",
+   "quote": "review and recommendation of articles on the november 16, 2015 fy2016 special town meeting warrant",
+   "tags": [
+    "warrant articles",
+    "Special Town Meeting",
+    "FY2016 budget"
+   ]
+  },
+  {
+   "topic": "Town Manager's report",
+   "resolution": "revenue forecast set for December 3 meeting",
+   "quote": "kerry proposed presenting the revenue forecast on thursday, december 3, 2015.",
+   "tags": [
+    "revenue forecast",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Minutes of October 8 meeting",
+   "resolution": "approved as corrected",
+   "quote": "terri made a motion to accept the minutes as corrected and karin seconded the motion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget goals and opportunities",
+   "resolution": "Special Services discussion moved to December 10",
+   "quote": "john reported that expenditures for special services",
+   "tags": [
+    "Special Services",
+    "school budget",
+    "revenue growth"
+   ]
+  },
+  {
+   "topic": "Committee updates",
+   "resolution": "reports received",
+   "quote": "the project is about 65% complete, on schedule, and on budget.",
+   "tags": [
+    "school building project",
+    "capital planning",
+    "DPW",
+    "Fire",
+    "Police",
+    "Monty Tech",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "reported; no action",
+   "quote": "pavement management plan-bos had a review of the pmp with emphasis on prioritizing funding for the plan.",
+   "tags": [
+    "pavement management",
+    "school building project retainage"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "schedule set (Nov 16, Dec 3, Dec 10)",
+   "quote": "the next three meetings will be november 16 at 7:00 -- the special town meeting",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:00 pm",
+   "quote": "karin moved to adjourn the meeting and terri seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "November 16, 2015 FY2016 Special Town Meeting Warrant",
+   "where": "text",
+   "quote": "review and recommendation of articles on the november 16, 2015 fy2016 special town meeting warrant"
+  },
+  {
+   "name": "Spreadsheet combining DPW, Police and Fire vehicle requests",
+   "where": "text",
+   "quote": "this led to a spreadsheet that combines vehicle requests from dpw, police, and fire departments that may lead to timing of vehicle requests."
+  },
+  {
+   "name": "Pavement Management Plan (PMP)",
+   "where": "text",
+   "quote": "pavement management plan-bos had a review of the pmp with emphasis on prioritizing funding for the plan."
+  },
+  {
+   "name": "Town Manager's five year revenue forecast",
+   "where": "text",
+   "quote": "the meeting on the third would be dedicated to the town manager's five year revenue forecast"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "special town meeting",
+  "warrant articles",
+  "FY2016 budget",
+  "Monty Tech",
+  "school building project",
+  "stabilization fund",
+  "Special Services",
+  "minutes",
+  "revenue forecast"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "please refer to the warrant for more specific details on each article."
+ },
+ "dropped_unquoted_by_field": {}
 }

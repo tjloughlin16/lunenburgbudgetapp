@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-06-21",
  "docid": "4972",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the limousine license for 53 Chase Road",
+   "motion": "Approve the limousine license requested for 53 Chase Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "REbersole",
    "outcome": "passed",
@@ -20,56 +20,355 @@
    "quote": "motion: p. bertram 2nd: rebersole to approve the limousine license requested for 53 chase road vote: all in favor"
   },
   {
-   "motion": "Approve the amendment to the NEXAMP agreement to move commercial construction commencement to October 31, 2016 and mechanical completion to December 31, 2016",
+   "motion": "Approve the NEXAMP agreement amendment as described (commencement by October 31, 2016; completion by December 31, 2016).",
+   "moved_by": "R.Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the amendment as described vote: all in favor"
+  },
+  {
+   "motion": "Hold the Special Town Meeting on August 8, 2016.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole 2\": p. bertram to approve the amendment as described vote: all in favor"
+   "quote": "motion: r. ebersole to hold the special town meeting on august 8, 2016"
   },
   {
-   "motion": "Hold the Special Town Meeting on August 8, 2016",
+   "motion": "Open the warrant tonight for Special Town Meeting on August 8 and close it at 5:00 p.m. on June 30, 2016.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to hold the special town meeting on august 8, 2016 ms. bertram asked why the august 8 date was more preferable than the august 29\" date. facilities director john londa reported two power purchase agreements need to be negotiated as soon as possible and construction completed by december 31$t 2\"°: p. bertram vote: all in favor"
+   "quote": "to open the warrant tonight for special town meeting on august 8 and close the warrant at 5:00 p.m. on june 30, 2016"
   },
   {
-   "motion": "Open the warrant tonight for Special Town Meeting on August 8 and close the warrant at 5:00 p.m. on June 30, 2016",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: r. ebersole 2nd: p. bertram to open the warrant tonight for special town meeting on august 8 and close the warrant at 5:00 p.m. on june 30, 2016 vote: all in favor"
-  },
-  {
-   "motion": "Change the Storm Water Task Force membership from seven to five members",
+   "motion": "Change the Storm Water Task Force membership from seven to five members.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to change the storm water task force membership from seven to five members 2'°:r. ebersole vote: all in favor"
+   "quote": "to change the storm water task force membership from seven to five members"
   },
   {
-   "motion": "Approve the appointments as presented",
+   "motion": "Approve the appointments as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the appointments as presented 2\"': p. bertram vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "to approve the appointments as presented"
   },
   {
-   "motion": "Enter into Executive Session under M.G.L. C. 30a, §21 to discuss strategy with respect to UNITIL litigation and a Land Damages Claim, and adjourn immediately following",
+   "motion": "Enter into Executive Session under M.G.L. c. 30A, §21 for the reasons listed (UNITIL - 2008 Ice Storm Matter; Land Damages Claim) and adjourn immediately following it.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to enter into executive session for the reasons listed and adjourn immediately following it vote: ms. luck-aye, mr. bertram - aye, mr. ebersole-aye, mr. toale - aye"
+   "quote": "to enter into executive session for the reasons listed and adjourn immediately following it"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-processed minutes show one informal approval (Stormwater Task Force consulting scope) without a formal motion statement, excluded per instructions.",
- "cost_usd": 0.1623795
+ "note": "OCR text from macOS Vision; ordinals and some names are garbled (e.g., \"2\\\"\" for 2nd, \"REbersole\", \"Elaim Peterson\"). The executive session vote line reads \"Mr. Bertram - aye\" where the board member is Paula Bertram, and no vote count is printed; outcome recorded as passed. The $12,000 stormwater funding was described as \"approved\" without a printed motion, so it is recorded as a decision, not a vote. Several votes print only \"All in Favor\" with no numeric count. The Executive Session minutes are separate and not included.",
+ "cost_usd": 0.00943832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; paula bertram, member; phyllis luck, member and"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "kerry lafleur, town manager"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: tom alonzo, clerk"
+  },
+  {
+   "name": "Thomas L. Crounse",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "applicant thomas l. crounse presented to the board for a limousine license in order to place one limousine at"
+  },
+  {
+   "name": "John Baker",
+   "role": "property owner",
+   "status": "present",
+   "quote": "john baker wanted to acknowledge a high school faculty member, caryn wardwell, who teaches music."
+  },
+  {
+   "name": "Joe Fiori",
+   "role": "Nexamp Business Development Manager",
+   "status": "not stated",
+   "quote": "nexamp business development manager joe fiori"
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "facilities director john londa reported two power purchase agreements need to be negotiated as soon as possible"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, land use director, stated the swtf is charged with preparing the town for the new permit"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "SWTF member",
+   "status": "present",
+   "quote": "swtf member sarah cammer stated one of the things they are struggling with is assistance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board approved the funding for the Storm Water Task Force's request for professional assistance (scope not to exceed $12,000), but wanted the scope of services defined better before it goes out.",
+   "quote": "the board approved the funding but wanted to see the scope of services defined better."
+  },
+  {
+   "decision": "It was decided to close the Special Town Meeting warrant on June 30, 2016.",
+   "quote": "it was decided to close the warrant on june 30th"
+  },
+  {
+   "decision": "Reappointment-form comments will be collated into one document for a future work session.",
+   "quote": "the comments will be collated into one document for a future work session."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Special Town Meeting cost",
+   "what_was_recorded": "Lafleur gave the cost of a town meeting as $1,500 and up, depending on warrant size; board discussed the cost of three town meetings in one budget year.",
+   "figures_as_printed": [
+    "$1,500"
+   ],
+   "quote": "ms. lafleur stated $1,500 and up, depending on the size of the warrant."
+  },
+  {
+   "topic": "Storm Water Task Force consultant request",
+   "what_was_recorded": "SWTF requested Board approval to solicit a scope of services not to exceed $12,000.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "the task force is requesting board approval to solicit for a scope of services not to exceed a cost of $12,000."
+  },
+  {
+   "topic": "Stormwater consultant hour rate",
+   "what_was_recorded": "SWTF estimated hours at $50 per hour to arrive at the $12,000 figure.",
+   "figures_as_printed": [
+    "$50",
+    "$12,000"
+   ],
+   "quote": "we estimated the number of hours at $50 per hour to come up with the $12,000 number."
+  },
+  {
+   "topic": "Stormwater funding in DPW budget",
+   "what_was_recorded": "Discussion of existing DPW budget funding for stormwater annual report filing; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lafleur stated there is funding for preparing and filing the annual report."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Board signed a school payroll warrant, a payroll deductions warrant, and an accounts payable warrant.",
+   "figures_as_printed": [
+    "$264,817.49",
+    "$35,421.43",
+    "$260,978.66"
+   ],
+   "quote": "the board signed a school payroll warrant in the amount of $264,817.49"
+  },
+  {
+   "topic": "Municipal buildings market analysis bid",
+   "what_was_recorded": "No bids were received within the dollar limit; re-bid with new noon deadline of July 18; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "there were no bids submitted on the market analysis of the municipal buildings within the dollar limit."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Baker",
+   "stated_role": "property owner",
+   "topic": "acknowledging High School music teacher Caryn Wardwell",
+   "quote": "john baker wanted to acknowledge a high school faculty member, caryn wardwell, who teaches music."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; school tour dates and committee vacancies announced",
+   "tags": [
+    "public comment",
+    "schools",
+    "vacancies"
+   ],
+   "quote": "mr. toale announced lunenburg public schools invites the public to tour the new middle/high school this"
+  },
+  {
+   "topic": "Limousine license application (Thomas L. Crounse, 53 Chase Road)",
+   "resolution": "approved",
+   "tags": [
+    "licensing",
+    "limousine"
+   ],
+   "quote": "applicant thomas l. crounse presented to the board for a limousine license in order to place one limousine at"
+  },
+  {
+   "topic": "NEXAMP agreement amendment",
+   "resolution": "approved",
+   "tags": [
+    "NEXAMP",
+    "solar",
+    "agreement amendment"
+   ],
+   "quote": "ms. lafleur reported nexamp business development manager joe fiori"
+  },
+  {
+   "topic": "Set date for Special Town Meeting and open warrant",
+   "resolution": "approved August 8 date; warrant opened, closes June 30, 2016",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ],
+   "quote": "ms. lafleur reported she had two possible dates for the special town meeting."
+  },
+  {
+   "topic": "Stormwater Task Force membership, alternate member, and MA Watershed Coalition request",
+   "resolution": "membership changed to five; funding approved, scope to be defined better",
+   "tags": [
+    "stormwater",
+    "task force",
+    "consultant"
+   ],
+   "quote": "ms. luck reported the storm water task force is a seven member board, but currently have only five members."
+  },
+  {
+   "topic": "Appointments (cont.)",
+   "resolution": "approved as presented",
+   "tags": [
+    "appointments",
+    "boards and commissions"
+   ],
+   "quote": "ms. lafleur read aloud the following appointments:"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants signed; minutes awaiting signatures",
+   "tags": [
+    "warrants",
+    "minutes",
+    "payments"
+   ],
+   "quote": "the board signed a school payroll warrant in the amount of $264,817.49"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "tags": [
+    "committee reports",
+    "MPO",
+    "TIP",
+    "bids"
+   ],
+   "quote": "ms. luck reported the school committee members have reorganized since the election and are ready to get to"
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered executive session; adjourned open session at 8:00 p.m.",
+   "tags": [
+    "executive session",
+    "litigation",
+    "land damages"
+   ],
+   "quote": "he requested a motion under m.g.l. c. 30a, §21; to discuss strategy with respect to litigation if an open"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for the APR for Lanni Orchards",
+   "where": "text",
+   "quote": "we may also have the request for the apr for lanni orchards ready for that."
+  },
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "the warrant would be opened briefly and close june 30, 2016."
+  },
+  {
+   "name": "2017-2021 Transportation Improvement Program (TIP)",
+   "where": "text",
+   "quote": "four different scenarios were presented for the 2017-2021 transportation improvement program (tip)."
+  },
+  {
+   "name": "2007 report (stormwater)",
+   "where": "text",
+   "quote": "ms. bertram stated in the 2007 report there was a recommendation to continue certain tasks."
+  },
+  {
+   "name": "New NDES permit (2017)",
+   "where": "text",
+   "quote": "on july 1, 2017, there will be the issuance of a new ndes permit."
+  },
+  {
+   "name": "PILOT project agreement with the City of Fitchburg",
+   "where": "text",
+   "quote": "the time it took to close on the pilot project agreement with the city of fitchburg."
+  },
+  {
+   "name": "NEXAMP agreement amendment",
+   "where": "text",
+   "quote": "has requested an amendment to the current agreement with them."
+  },
+  {
+   "name": "Reappointment forms",
+   "where": "text",
+   "quote": "ms. bertram stated while looking at the reappointment forms noticed some comments on the forms that should"
+  }
+ ],
+ "tags": [
+  "select board",
+  "limousine license",
+  "NEXAMP",
+  "solar",
+  "special town meeting",
+  "warrant",
+  "stormwater",
+  "consultant funding",
+  "appointments",
+  "warrants payments",
+  "MPO TIP",
+  "executive session",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

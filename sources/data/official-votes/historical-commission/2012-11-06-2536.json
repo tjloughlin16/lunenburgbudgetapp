@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-11-06",
  "docid": "2536",
@@ -12,15 +12,154 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 10/2/12 as submitted",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes from 10/2/12 approved as submitted",
+   "motion": "Approve the minutes of 10/2/12 as submitted.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes from 10/2/12 approved as submitted"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd from a scanned image (macOS Vision). Mover and seconder not identified in the minutes. Other decisions recorded (demolition delay enacted, demolition approved, photo documentation requested) but not phrased as formal motions with voting outcomes, so they are not included as votes.",
- "cost_usd": 0.0954065
+ "note": "OCR text of a single page (macOS Vision scan). No motions with mover, seconder or vote count are recorded; the minutes approval is recorded only as 'approved as submitted', so it is listed as procedural with no count. The Correspondence heading has nothing printed under it. Adjournment at 7:20pm is noted without a motion. Some OCR characters (e.g., the date '4\\\"') were not reproduced exactly; quotes avoid them.",
+ "cost_usd": 0.00343452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pat Slattery",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, amory phelps, damon mcquaid"
+  },
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "members present: pat slattery, richard mcgrath, amory phelps, damon mcquaid"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Newspaper article for November: Amory and Becky have submitted it.",
+   "quote": "amory and becky have submitted an article for november"
+  },
+  {
+   "decision": "Newspaper articles assigned: Becky for December, Damon for January, Pat for February, Richard for March.",
+   "quote": "becky to write for december"
+  },
+  {
+   "decision": "A site visit to the Jones House to view the buyers' progress is set for a tentative date of December 4.",
+   "quote": "has been set for a site visit to view the progress made by the buyers."
+  },
+  {
+   "decision": "Damon to prioritize old and endangered structures for the Town Wide Survey and distribute them to others in a working format.",
+   "quote": "damon to prioritize old and endangered structures and distribute to others in a working format."
+  },
+  {
+   "decision": "Padula House at 137 Leominster-Shirley Road: demolition delay enacted.",
+   "quote": "padula house at 137 leominster-shirley road - demolition delay enacted."
+  },
+  {
+   "decision": "Ricci House at 196 Leominster Road (formerly Chapdelaine): demolition approved.",
+   "quote": "ricci house at 196 leominster road (formerly chapdelaine) - demolition approved"
+  },
+  {
+   "decision": "The demolition delay by-law does not apply to structures classified as equipment, such as those used by PJ Keeting.",
+   "quote": "the commission decided that the by-law does not apply."
+  },
+  {
+   "decision": "Photo documentation of the structures is to be taken and submitted to the historical society before demolition.",
+   "quote": "the commission did however request that photo documentation of the structures be taken and submitted to the historical society before demolition."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Hall Project - chimney repair grant",
+   "what_was_recorded": "The town was awarded a grant from the Montachusett Society for the Preservation of Historic Buildings to aid in the cost of chimney repair.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "the town was awarded a $3000 grant to aid in the cost of chimney repair."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 10/2/12",
+   "resolution": "approved as submitted",
+   "quote": "minutes from 10/2/12 approved as submitted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Newspaper Articles",
+   "resolution": "assignments set for Nov through Mar",
+   "quote": "amory and becky have submitted an article for november",
+   "tags": [
+    "newspaper articles",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Jones House",
+   "resolution": "site visit set for December 4",
+   "quote": "has been set for a site visit to view the progress made by the buyers.",
+   "tags": [
+    "Jones House",
+    "site visit"
+   ]
+  },
+  {
+   "topic": "Town Hall Project",
+   "resolution": "grant noted",
+   "quote": "the town was awarded a $3000 grant to aid in the cost of chimney repair.",
+   "tags": [
+    "grants",
+    "chimney repair"
+   ]
+  },
+  {
+   "topic": "Town Wide Survey",
+   "resolution": "assigned to Damon",
+   "quote": "damon to prioritize old and endangered structures and distribute to others in a working format.",
+   "tags": [
+    "town wide survey"
+   ]
+  },
+  {
+   "topic": "Demolition Delay Review",
+   "resolution": "Padula House delay enacted; Ricci House demolition approved; by-law held not to apply to equipment; photo documentation requested",
+   "quote": "the commission decided that the by-law does not apply.",
+   "tags": [
+    "demolition delay",
+    "photo documentation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "newspaper articles",
+  "grants",
+  "town wide survey",
+  "Jones House",
+  "chimney repair"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

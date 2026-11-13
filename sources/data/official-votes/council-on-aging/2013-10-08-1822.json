@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-10-08",
  "docid": "1822",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the September 10, 2013 COA meeting",
+   "motion": "Approve the minutes of the September 10, 2013 COA meeting.",
    "moved_by": "Ms. Seeley",
    "seconded_by": "Ms. Brown",
    "outcome": "passed 9-0",
@@ -20,16 +20,15 @@
    "quote": "ms. seeley moved to approve the minutes of the se ptember 10, 2013 coa meeting. ms. brown seconded. on vote, motion carried, 9 in favor, 0 opposed."
   },
   {
-   "motion": "accept the 4/6/2013 Advocacy Committee minutes",
+   "motion": "Accept the 4/6/2013 Advocacy Committee minutes.",
    "moved_by": "Ms. Brown",
    "seconded_by": "Ms. Doyle",
    "outcome": "passed 9-0",
    "procedural": true,
-   "quote": "ms. brown moved to accept the 4/6/2013 advocacy com mittee minutes. ms. doyle seconded. on vote, motion carried 9 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. brown moved to accept the 4/6/2013 advocacy com mittee minutes. ms. doyle seconded. on vote, motion carried 9 in favor, 0 opposed."
   },
   {
-   "motion": "adjourn the COA meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Ms. Wass",
    "seconded_by": "Ms. Brown",
    "outcome": "passed 9-0",
@@ -38,6 +37,332 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.037846
+ "note": "The minutes are a text extraction with spacing artifacts inside some words and names (e.g., 'B rown', 'To ny', 'Se ptember', 'T own'); quotes reproduce them as printed. The header says these were approved at the 11/12/13 COA meeting. The attached Director's report and the Open Meeting Law copy are referenced but not included in the text, so no figures from them are recorded. No dollar amounts are printed. No public comment section is recorded.",
+ "cost_usd": 0.011133520000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), barbara b rown (vice-chairperson),jane doyle, joyce wass"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), barbara b rown (vice-chairperson),jane doyle, joyce wass"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), barbara b rown (vice-chairperson),jane doyle, joyce wass"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "present: mary lynn conrad, (chairperson), barbara b rown (vice-chairperson),jane doyle, joyce wass"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "deb seeley, connie o'dea, shirley bertone, to ny bertone, judy tarbell and sue doherty"
+  },
+  {
+   "name": "Connie O’Dea",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "deb seeley, connie o'dea, shirley bertone, to ny bertone, judy tarbell and sue doherty"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "deb seeley, connie o'dea, shirley bertone, to ny bertone, judy tarbell and sue doherty"
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "deb seeley, connie o'dea, shirley bertone, to ny bertone, judy tarbell and sue doherty"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "deb seeley, connie o'dea, shirley bertone, to ny bertone, judy tarbell and sue doherty"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "deb seeley, connie o'dea, shirley bertone, to ny bertone, judy tarbell and sue doherty"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "absent",
+   "quote": "excused: doreen noble (director)"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "COA board member",
+   "status": "absent",
+   "quote": "absent: whitney lacka"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Supporters of Eagle House",
+   "status": "present",
+   "quote": "guest: lloyd carlson (supporters of eagle house), & karin menard (lunenburg finance committee)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Lunenburg Finance Committee",
+   "status": "present",
+   "quote": "guest: lloyd carlson (supporters of eagle house), & karin menard (lunenburg finance committee)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Noble is to prepare a letter for the next COA meeting listing the functions and activities of the Eagle House, to pass to the Building Re-Use Committee (suggested by Ms. Seeley; no vote recorded).",
+   "quote": "ms. seeley suggested that ms. noble should prepare a letter for the next coa meeting"
+  },
+  {
+   "decision": "Boston Post Cane item tabled until the November COA meeting.",
+   "quote": "boston post cane: tabled until the november coa meeting."
+  },
+  {
+   "decision": "Ms. Noble agreed the COA Policies & Procedures need updating; a copy of the current version will be given to members for review at the next meeting.",
+   "quote": "a copy of the current coa policies & procedures will be given to coa members for review at the next meeting."
+  },
+  {
+   "decision": "Clarifications will be sought from the Town Clerk on approving or accepting subcommittee minutes.",
+   "quote": "clarifications will be sought from the town clerk regarding this issue."
+  },
+  {
+   "decision": "The School Building Committee will be added to the November COA agenda to present plans for the proposed new Middle/High School.",
+   "quote": "the school building committee will be added to the november coa agenda where they will present plans for the proposed new middle/high school."
+  },
+  {
+   "decision": "Building-use policy for Eagle House clarified: outside users after hours pay the room usage fee plus a janitorial fee for opening and closing; private entities do not get the building code or keys from the COA.",
+   "quote": "the eagle house, both rooms, can be u sed by outside agencies after hours if the person requesting it pays for the room usage"
+  },
+  {
+   "decision": "Subcommittee membership reorganized as listed in the minutes (Advocacy, Finance, Board Development, Bylaw, Director's Evaluation); discussed, no vote recorded.",
+   "quote": "coa board members discussed the reorganization of coa subcommittees to be as follows:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House room fee for older section",
+   "what_was_recorded": "Under past practice, a room fee was paid to the Town for building use of the older section, with keys picked up and returned at the Public Safety Building; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "after a room fee was paid to the t own for building use, and returned to the public safety building the same evening."
+  },
+  {
+   "topic": "Eagle House newer-section rental and janitorial fee",
+   "what_was_recorded": "Room rental for the newer section is a higher rate, and a janitorial fee is required for opening and closing; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "room rental for the newer section is a higher rate, and a janitoria l fee must also be paid"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Welcome and call to order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "ms. conrad (chairperson) opened the meeting at 10:31am."
+  },
+  {
+   "topic": "Minutes of September 10, 2013",
+   "resolution": "approved 9-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. seeley moved to approve the minutes of the se ptember 10, 2013 coa meeting."
+  },
+  {
+   "topic": "Director's Report (Finance/Informational)",
+   "resolution": "received; Director's report read by Chair",
+   "tags": [
+    "director",
+    "finance"
+   ],
+   "quote": "read a prepared report from the director to the board. (see attached)."
+  },
+  {
+   "topic": "Recreation area behind Eagle House (Bocci Court)",
+   "resolution": "no action; awaiting DPW response",
+   "tags": [
+    "eagle house",
+    "bocci court",
+    "dpw"
+   ],
+   "quote": "as of this meeting, there has been no response from mr. rodriquenz."
+  },
+  {
+   "topic": "Building Re-Use Committee",
+   "resolution": "letter requested for next meeting",
+   "tags": [
+    "eagle house",
+    "building re-use"
+   ],
+   "quote": "ms. seeley suggested that ms. noble should prepare a letter for the next coa meeting"
+  },
+  {
+   "topic": "Boston Post Cane",
+   "resolution": "tabled to November meeting",
+   "tags": [
+    "boston post cane"
+   ],
+   "quote": "boston post cane: tabled until the november coa meeting."
+  },
+  {
+   "topic": "COA Board Training 11/6/13",
+   "resolution": "reminder; no action",
+   "tags": [
+    "board training"
+   ],
+   "quote": "board members were reminded about the 11/6/13 coa board training being held at the eagle house."
+  },
+  {
+   "topic": "Eagle House building use policy",
+   "resolution": "clarified; no action",
+   "tags": [
+    "eagle house",
+    "building use",
+    "fees"
+   ],
+   "quote": "ms. doherty spoke to clarify the building use poli cy of the eagle house"
+  },
+  {
+   "topic": "COA Policies & Procedures update",
+   "resolution": "copy to be reviewed at next meeting",
+   "tags": [
+    "policies"
+   ],
+   "quote": "a copy of the current coa policies & procedures will be given to coa members for review at the next meeting."
+  },
+  {
+   "topic": "Subcommittee reports and minutes",
+   "resolution": "Advocacy Committee minutes accepted 9-0",
+   "tags": [
+    "subcommittees",
+    "advocacy"
+   ],
+   "quote": "ms. brown moved to accept the 4/6/2013 advocacy com mittee minutes."
+  },
+  {
+   "topic": "Reorganization of subcommittee membership",
+   "resolution": "membership listed; no vote recorded",
+   "tags": [
+    "subcommittees"
+   ],
+   "quote": "coa board members discussed the reorganization of coa subcommittees to be as follows:"
+  },
+  {
+   "topic": "Subcommittee minutes and agenda postings",
+   "resolution": "Open Meeting Law copy distributed; Town Clerk to clarify",
+   "tags": [
+    "open meeting law",
+    "subcommittees"
+   ],
+   "quote": "a copy of the open meeting law regarding agenda and minute postings was distributed to the board for review."
+  },
+  {
+   "topic": "New board member orientation",
+   "resolution": "discussed; no action",
+   "tags": [
+    "orientation"
+   ],
+   "quote": "it was discussed that perhaps another subcommittee should be formed to aid with this procedure."
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted; no action",
+   "tags": [
+    "correspondence",
+    "women's club"
+   ],
+   "quote": "ms. noble was unable to attend this celebration due to prior commitments."
+  },
+  {
+   "topic": "General discussion",
+   "resolution": "announcements; no action",
+   "tags": [
+    "breakfast",
+    "school building committee",
+    "conflict of interest",
+    "montachusett home care"
+   ],
+   "quote": "there will be a free breakfast at the eagle house"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9-0 at 11:45AM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned at 11:45am"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Finance/Informational Report (prepared report, attached)",
+   "where": "list",
+   "quote": "read a prepared report from the director to the board. (see attached)."
+  },
+  {
+   "name": "Open Meeting Law regarding agenda and minute postings (copy distributed to board)",
+   "where": "list",
+   "quote": "a copy of the open meeting law regarding agenda and minute postings was distributed to the board for review."
+  },
+  {
+   "name": "Email from Dave MacDonald regarding Bocci Court construction update",
+   "where": "text",
+   "quote": "mr. macdonald replied via email that this had been forwarded to the jack"
+  },
+  {
+   "name": "COA Policies & Procedures (current version)",
+   "where": "text",
+   "quote": "a copy of the current coa policies & procedures will be given to coa members for review at the next meeting."
+  },
+  {
+   "name": "Advocacy Committee minutes, 4/6/2013",
+   "where": "text",
+   "quote": "ms. brown moved to accept the 4/6/2013 advocacy com mittee minutes."
+  },
+  {
+   "name": "Note from Ms. Noble to the Women’s Club congratulating them on their 100th Anniversary",
+   "where": "text",
+   "quote": "ms. noble was unable to attend this celebration due to prior commitments."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "building use",
+  "fees",
+  "subcommittees",
+  "policies",
+  "minutes",
+  "board training",
+  "boston post cane",
+  "school building committee",
+  "bocci court"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a copy of the open meeting law regarding agenda and minute postings was distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2016-06-02",
  "docid": "3252",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Baseball games at Marshall Park temporarily halted and practice will be allowed with use of batting tunnel",
+   "motion": "Baseball games at Marshall Park temporarily halted, with practice allowed using the batting tunnel.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Bob Robuccio",
    "outcome": "passed 3-0",
@@ -20,24 +20,129 @@
    "quote": "motion made by dennis mannone / seconded by bob robuccio - baseball games temporarily halted and practice will be allowed with use of batting tunnel. passed 3-0."
   },
   {
-   "motion": "Institute a $10 per Lunenburg player per season fee for use of Wallace Park; schedule to be submitted by organization and Certificate of Insurance must be provided",
+   "motion": "Set a $10 per Lunenburg Player Fee for use of Wallace Park, with a schedule to be submitted by the organization and a Certificate of Insurance required.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Bob Robuccio",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion made by dennis mannone / seconded by bob robuccio- $10 per lunenburg player fee for use of wallace park. schedule to be submitted by organization and a certificate of insurance must be provided. passed 3-0."
+   "quote": "motion made by dennis mannone / seconded by bob robuccio- $10 per lunenburg player fee for use of wallace park."
   },
   {
-   "motion": "Adjourn at 8:45 PM",
+   "motion": "Adjourn the meeting at 8:45.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion for adjournment at 8:45 by dennis mannone / seconded by karin menard. passedrel 3",
-   "quote_taken_from_text": true
+   "quote": "motion for adjournment at 8:45 by dennis mannone / seconded by karin menard. passedrel 3-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned via macOS Vision; text quality is good. Three votes recorded, all passed with 3-0 count.",
- "cost_usd": 0.0813505
+ "note": "OCR text from a scanned page with garbling: the attendance line is split (\"DP W Director Jack\" / \"Rodriquenz.\"), the adjournment vote reads \"Passedrel 3-0\" (recorded as passed 3-0), and the letterhead is partly garbled. Member roles are not printed. No public comment section, no documents list, and no minutes-approval vote appear in the text.",
+ "cost_usd": 0.0035161199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, bob robuccio, dp w director jack"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, bob robuccio, dp w director jack"
+  },
+  {
+   "name": "Bob Robuccio",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, bob robuccio, dp w director jack"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendance: dennis mannone, karin menard, bob robuccio, dp w director jack"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack Rodriquenz to forward information on the netted barrier design and quote as it becomes available.",
+   "quote": "he will forward information as it becomes available."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park foul-ball netted barrier",
+   "what_was_recorded": "Jack Rodriquenz researched a netted barrier and reached out to a local company for a design and quote; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "jack has done some research and reached out to a local company for a design and quote to construct a netted barrier that would contain most foul balls."
+  },
+  {
+   "topic": "Wallace Park basketball court use fee",
+   "what_was_recorded": "Discussion of charging $10 per Lunenburg player per season for court use, matching the fee currently charged to Lunenburg Little League for the baseball fields; the board then passed a $10 per Lunenburg Player Fee.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "discussion was had regarding instituting a $10 per lunenburg player per season for use of the courts since that is what is currently being charged to lunenburg little league"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "1. call to order - 7:05pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Marshall Park (Chestnut Street Field) foul balls and damage to a home",
+   "resolution": "baseball games halted; practice allowed with batting tunnel",
+   "quote": "marshall park (chestnut street field) - a residential home sustained damage to two windows",
+   "tags": [
+    "Marshall Park",
+    "baseball",
+    "foul balls",
+    "safety",
+    "netting"
+   ]
+  },
+  {
+   "topic": "Wallace Courts summer basketball use",
+   "resolution": "approved $10 per Lunenburg player fee with conditions",
+   "quote": "wallace courts (unanticipated) - jack rodriquenz and subsequently dennis mannone were",
+   "tags": [
+    "Wallace Park",
+    "basketball",
+    "fees",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45",
+   "quote": "4. motion for adjournment at 8:45 by dennis mannone / seconded by karin menard.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks",
+  "baseball",
+  "basketball",
+  "Marshall Park",
+  "Wallace Park",
+  "field fees",
+  "foul balls",
+  "insurance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,525 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2014-06-17",
+ "video_id": "hQtKeqtmtWk",
+ "video_url": "https://www.youtube.com/watch?v=hQtKeqtmtWk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2014-06-17-hQtKeqtmtWk.json",
+  "sha256": "f5ab06f53237214f586a3b9b993dc1d7a8b07fde82672d6c5d6eb5e917934590",
+  "caption_lines": 79,
+  "segments": 627
+ },
+ "recording": {
+  "duration_s": 1691,
+  "duration": "0:28",
+  "spoken_chars": 20840,
+  "words_approx": 3473
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06172014-4892",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-06-17-agenda-4892.txt",
+   "path": "sources/meetings/select-board/2014-06-17-agenda-4892.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06172014-4892",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-06-17-minutes-4892.txt",
+   "path": "sources/meetings/select-board/2014-06-17-minutes-4892.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-12T18:27:13Z",
+  "cost_usd": 0.1297904
+ },
+ "minutes": {
+  "headline": "Select Board authorized the chair to sign the MSBA project scope and budget agreement and appointed an agricultural commission member.",
+  "summary": "The board voted to authorize the chair to sign the MSBA project scope and budget amendment for the new middle/high school and appointed a member to the Agricultural Commission. It scheduled a July 1 workshop and a July 8 joint session with the planning board, heard committee reports, and went into executive session on a lawsuit without returning to open session.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Miss luck",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr iol",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr tol",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Mackin",
+    "role": "chair of the school building committee"
+   },
+   {
+    "name_as_heard": "Phyllis",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Carrie",
+    "role": "staff"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "executive-session",
+   "high-school",
+   "legal",
+   "middle-school",
+   "msba",
+   "personnel",
+   "planning-and-zoning",
+   "policy"
+  ],
+  "votes": [
+   {
+    "t": 262,
+    "motion": "Authorize the chair to sign the project scope and budget amendment with the Mass School Building Authority",
+    "moved_by": "a member",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 346,
+    "motion": "Accept the town manager's recommendation and appoint Morin Dupri to the agricultural commission",
+    "moved_by": "a member",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1623,
+    "motion": "Enter executive session under 30A section 21A subsection 9 to discuss the O'Brien lawsuit, not returning to open session",
+    "moved_by": "a member",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 218,
+    "topic": "MSBA project scope and budget agreement",
+    "what_was_said": "The board authorized the chair to sign the revised project scope and budget agreement for the new middle/high school."
+   },
+   {
+    "t": 687,
+    "topic": "Payroll warrant",
+    "what_was_said": "Payroll warrant read into the record.",
+    "figures_as_heard": [
+     "$41,500"
+    ]
+   },
+   {
+    "t": 707,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "Accounts payable warrant read into the record.",
+    "figures_as_heard": [
+     "$454,900"
+    ]
+   },
+   {
+    "t": 732,
+    "topic": "Second accounts payable warrant",
+    "what_was_said": "Another accounts payable warrant read into the record.",
+    "figures_as_heard": [
+     "$394,900"
+    ]
+   },
+   {
+    "t": 1149,
+    "topic": "School lunch program deficit",
+    "what_was_said": "School committee discussed a deficit in the lunch program and a policy to get parents to pay arrears sooner.",
+    "figures_as_heard": [
+     "$9,000",
+     "$2.75 a day"
+    ]
+   },
+   {
+    "t": 1299,
+    "topic": "Stormwater maintenance costs at new school",
+    "what_was_said": "A member asked the school building committee for the maintenance plan and projected maintenance costs of the planned underground retention.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1382,
+    "topic": "Off-site signage and MSBA reimbursement",
+    "what_was_said": "Discussion of whether signage off school grounds is part of the project and reimbursable by the MSBA."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 519,
+    "decision": "The July 8 joint session with the planning board will be limited to one topic, stormwater, because it will have action items."
+   },
+   {
+    "t": 582,
+    "decision": "A workshop is set for 6:00 on July 1 covering the boot drive, financial policies and possibly IT director policies."
+   },
+   {
+    "t": 603,
+    "decision": "Board will compile town manager goals and its own goals to discuss at the next meeting."
+   },
+   {
+    "t": 437,
+    "decision": "The joint session with the planning board to fill the vacant position is planned for July 8."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 218,
+    "topic": "Pledge, announcements: Town Fair, volunteer booth, visioning session, abutters hearing",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 218,
+    "t_end": 303,
+    "topic": "Authorize chair to sign MSBA project scope and budget agreement",
+    "resolution": "voted",
+    "tags": [
+     "msba",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 303,
+    "t_end": 392,
+    "topic": "Agricultural commission appointment",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 392,
+    "t_end": 687,
+    "topic": "Agenda planning, workshop and joint session scheduling, town manager goals",
+    "resolution": "dates set",
+    "tags": [
+     "policy",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 687,
+    "t_end": 769,
+    "topic": "Warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 769,
+    "t_end": 812,
+    "topic": "Action file: planning board and park commission vacancy advertising",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 812,
+    "t_end": 1234,
+    "topic": "Committee reports: finance committee, planning board, school committee",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1234,
+    "t_end": 1466,
+    "topic": "School building committee report: TC Passios lot lines, stormwater, signage, site plan",
+    "resolution": "informational",
+    "tags": [
+     "msba",
+     "high-school"
+    ]
+   },
+   {
+    "t_start": 1466,
+    "t_end": 1556,
+    "topic": "Town manager report: liquor license notice from Lottery Commission",
+    "resolution": "informational",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1556,
+    "t_end": 1623,
+    "topic": "Final board comments, thanks to minutes clerk",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1623,
+    "t_end": 1688,
+    "topic": "Executive session on the O'Brien lawsuit and adjournment",
+    "resolution": "voted by roll call, no return to open session",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The roll call vote on executive session is partly garbled; the individual votes are only partly clear.",
+   "The vote counts on the MSBA and appointment motions were not stated beyond 'I' and 'opposed none'.",
+   "Warrant totals are hard to verify; a second accounts payable total is cut off mid-figure."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1299,
+    "kind": "liability or legal",
+    "about": "Stormwater maintenance at the new school site could be costly if not planned from the start.",
+    "who": "a member",
+    "words_as_heard": "the thing about storm Waters and drainage if you don't maintain it to fix it costs a whole lot more"
+   },
+   {
+    "t": 1257,
+    "kind": "liability or legal",
+    "about": "Lot lines for separating TC Passios from the school project need to be settled to avoid needing a variance.",
+    "who": "a member",
+    "words_as_heard": "we don't want to be finding out oh you know we're two feet short and all of a sudden we got to ask for a variance"
+   },
+   {
+    "t": 1488,
+    "kind": "condition",
+    "about": "The town can object to a liquor license application only if it notifies the state by June 30.",
+    "who": "the town manager",
+    "words_as_heard": "if anybody is interested in um the town objecting to this please let me know before June 30th"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 218,
+    "name_as_heard": "revised project scope and budget agreement with the MSBA",
+    "kind": "contract or agreement",
+    "words_as_heard": "we do have uh the revised document in the packet",
+    "shown": true
+   },
+   {
+    "t": 413,
+    "name_as_heard": "agenda planning chart",
+    "kind": "agenda",
+    "words_as_heard": "I gave you an agenda planning chart and before you",
+    "shown": true
+   },
+   {
+    "t": 856,
+    "name_as_heard": "planning board email update",
+    "kind": "letter or email",
+    "words_as_heard": "she did send me and Carrie a an email update",
+    "shown": false
+   },
+   {
+    "t": 1423,
+    "name_as_heard": "site work plan / logistics plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "the proposed site site work plan the logistics plan which I'll pass down to the board",
+    "shown": true
+   },
+   {
+    "t": 1488,
+    "name_as_heard": "letter from the Massachusetts State Lottery Commission",
+    "kind": "letter or email",
+    "words_as_heard": "you received a letter from the Massachusetts State Lottery Commission",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stormwater-maintenance-responsibility",
+    "title": "Stormwater maintenance responsibility",
+    "question": "What will maintaining the new school's stormwater system cost the town?",
+    "t": 1299,
+    "words_as_heard": "we need to know what the maintenance plan is and more importantly what the prospected maintenance costs are for that",
+    "data_in_play": [],
+    "existing": "thread:stormwater-fee"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to authorize the chair to sign the revised project scope and budget amendment with the Mass School Building Authority for the new middle/high school.",
+    "t": 262
+   },
+   {
+    "line": "The board voted to accept the town manager's recommendation and appoint a member to the Agricultural Commission.",
+    "t": 346
+   },
+   {
+    "line": "The board limited the July 8 joint session with the planning board to one topic, stormwater, because it will have action items.",
+    "t": 519
+   },
+   {
+    "line": "A workshop was set for 6:00 on July 1 on the boot drive, financial policies and possibly IT director policies.",
+    "t": 582
+   },
+   {
+    "line": "The board went into executive session on a lawsuit by roll call and did not return to open session.",
+    "t": 1623
+   }
+  ],
+  "why_it_matters": [
+   "The scope and budget agreement with the state building authority sets what the new middle/high school project can claim for reimbursement, which affects how much of its cost falls on local taxpayers.",
+   "A member asked for the maintenance plan and projected costs of the underground stormwater retention at the new school, and for whether off-site signage is reimbursable, so some operating and project costs may land on the town budget, mostly taxes."
+  ],
+  "watch_next": [
+   "July 1 workshop at 6:00 and July 8 joint session with the planning board on stormwater.",
+   "Next meeting: the board is to compile town manager goals and its own goals for discussion."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-12T18:27:24Z",
+   "cost_usd": 0.0268031
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06172014-4892",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2014-06-17-minutes-4892.txt",
+   "path": "sources/meetings/select-board/2014-06-17-minutes-4892.pdf"
+  },
+  "official_sha256": "1102e387cfb974094929968ad1b26a243036269b68213f00aa169a13734cad83",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes (the MSBA signing and the Agricultural Commission appointment) and on the July 1 workshop date and time. They differ on the payroll warrant figure, the workshop topics, the scope of the joint session, and the executive session recorded only in the official minutes.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 5,
+   "only_in_ours": 1,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "MSBA project scope and budget agreement vote",
+    "ours": "Authorize the chair to sign the project scope and budget amendment with the Mass School Building Authority — passed",
+    "official": "mr. ebersole moved for the bos to authorize the chair of the board of selectmen to sign the project scope and budget agreement with the msba.",
+    "note": "Same authorization vote; official records 4-0, ours says passed (amendment vs agreement wording is minor).",
+    "t": 262
+   },
+   {
+    "kind": "caption_error",
+    "about": "Agricultural commission appointee name",
+    "ours": "Accept the town manager's recommendation and appoint Morin Dupri to the agricultural commission — passed",
+    "official": "mr. ebersole moved to approve the town manager's recommendation to appoint maureen dupuis to the agricultural commission. mr. toale seconded. on vote, motion carried, 4 in favor, 0 opposed",
+    "official_reading": "Maureen Dupuis",
+    "note": "Same appointment vote; captions misheard the name.",
+    "t": 346
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Warrant amounts",
+    "ours": "Payroll warrant: $41,500; Accounts payable warrant: $454,900; Second accounts payable warrant: $394,900",
+    "official": "warrants: 6/16/2014 w#26p-14 $741,058.10 6/18/2014 w#67 6/17/2014 $394,692.12 w#66-14 $454,069.10",
+    "note": "Two amounts roughly match ($454,069.10, $394,692.12) but the payroll figure $41,500 differs from $741,058.10 beyond a simple digit error (possibly 741,500 misheard); check the recording and the warrant.",
+    "t": 687
+   },
+   {
+    "kind": "discrepancy",
+    "about": "School lunch deficit",
+    "ours": "School lunch program deficit: $9,000, $2.75 a day",
+    "official": "$9000 deficit in the school lunch program was discussed and how to deal with this",
+    "note": "The $9,000 deficit agrees; the $2.75 a day figure is not in the official minutes, so it is only in ours.",
+    "t": 1149
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Joint session scope",
+    "ours": "The July 8 joint session with the planning board will be limited to one topic, stormwater, because it will have action items.",
+    "official": "after discussion the board agreed to begin these discussions with the storm water item.",
+    "note": "Ours limits the session to stormwater only; official says the discussions begin with stormwater, restricted to one item. Check whether stormwater is the only topic or just the first.",
+    "t": 519
+   },
+   {
+    "kind": "discrepancy",
+    "about": "July 1 workshop topics",
+    "ours": "A workshop is set for 6:00 on July 1 covering the boot drive, financial policies and possibly IT director policies.",
+    "official": "a workshop will be set to discuss the fincom and it director sections of the bos policies and procedures for 7/1/2014 at 6pm.",
+    "note": "Date and time agree, but topics differ (boot drive and financial policies vs FinCom and IT Director sections); check the recording.",
+    "t": 582
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Goals compilation",
+    "ours": "Board will compile town manager goals and its own goals to discuss at the next meeting.",
+    "official": "mr. alonzo requested that board, with the exception of ms. luck, compile the town manager and bos",
+    "note": "Same task, but official excludes Ms. Luck; ours does not mention the exception.",
+    "t": 603
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joint session with planning board to fill vacancy July 8",
+    "ours": "The joint session with the planning board to fill the vacant position is planned for July 8.",
+    "official": "",
+    "note": "Official excerpts do not mention the July 8 date or a planning board vacancy.",
+    "t": 437
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Executive session on O'Brien Lawsuit",
+    "ours": "",
+    "official": "mr. alonzo stated that the board will be entering executive session, not to return citing",
+    "note": "Official records an executive session under 30A s.21A [9] with no return; ours has none.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Stormwater underwater retention maintenance cost",
+    "ours": "",
+    "official": "storm water, installing an underwater retention system, gathering information on maintenance cost for this",
+    "note": "School Building Committee gathering cost info; not in ours.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees present",
+    "ours": "Chair; Miss luck; Mr iol; Mr tol; Phyllis; Town manager",
+    "official": "the board of selectmen met in the joseph f. bilotta meeting room at town hall as scheduled with, chair tom alonzo, jamie toale,",
+    "note": "Alonzo, Toale, Ebersole, Luck and Speide are present in both, with names garbled in ours. Mike Mackin is in both, but ours says school building committee chair and the official says school committee chairperson.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent vice chair",
+    "ours": "",
+    "official": "absent was vice chair paula bertran",
+    "note": "Official records Paula Bertran absent; ours does not.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T18:28:35Z",
+   "cost_usd": 0.0414491
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-05-26",
  "docid": "2241",
@@ -12,47 +12,334 @@
  },
  "votes": [
   {
-   "motion": "approve FY16 salary reserve transfer requests",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Terri Burchfield",
+   "motion": "Approve the FY16 salary reserve transfer request.",
+   "moved_by": "John",
+   "seconded_by": "Terri",
    "outcome": "passed 4-0",
    "procedural": false,
    "quote": "john made a motion to approve the reserve transfer request. terri seconded the motion. the committee voted 4-0 in favor of the motion."
   },
   {
-   "motion": "accept the minutes of the March 31, 2016 meeting",
-   "moved_by": "Jay Simeone",
-   "seconded_by": "Terri Burchfield",
+   "motion": "Accept the minutes of the March 31, 2016 meeting.",
+   "moved_by": "Jay",
+   "seconded_by": "Terri",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "minutes of the march 31, 2016 meeting: jay moved to accept the minutes; terri seconded the motion, and the motion was approved by a 4-0 vote."
   },
   {
-   "motion": "accept the minutes of the April 28, 2016 meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Accept the minutes of the April 28, 2016 meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "minutes of the april 28, 2016 meeting: terri moved to accept the minutes; jay seconded the motion, and the motion was approved by a 4-0 vote."
   },
   {
-   "motion": "accept the minutes of the May 12, 2016 meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Accept the minutes of the May 12, 2016 meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "minutes of the may 12, 2016 meeting: terri moved to accept the minutes; jay seconded the motion, and the motion was approved 3-0."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "terri made a motion to adjourn and jay seconded the motion. the committee approved the motion 4-0 at 9:09."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09751950000000001
+ "note": "OCR text from macOS Vision of a scanned, multi-page set. Page numbering is inconsistent (e.g. '7 of 3'). The health insurance cost tables (pages 9-12) and the salary reserve transfer table (page 4) are garbled, so figures from those tables are read only where the text is legible; the cost comparison totals are the most reliable of these. Public comment: the minutes record 'Public: None'. Karin Menard appears only through her resignation letter and is not listed as present or absent. The Attachments list is printed in the minutes; the transfer request sheet is that list's Salary Reserve Transfer Fund Request item.",
+ "cost_usd": 0.010477620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: kerry lafleur"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sense of the committee: the bond rating agency's finding that the Town violated its debt service policy rested on a misunderstanding; the policy concerns regular debt and does not cover excluded debt.",
+   "quote": "the sense of the committee was that this determination was based on a misunderstanding of the scope of the debt service policy"
+  },
+  {
+   "decision": "Revised debt policy should be more transparent and easier to understand, and should cover both excluded and regular debt (John's offer; no vote recorded).",
+   "quote": "john offered that the new policy should cover both excluded and regular debt."
+  },
+  {
+   "decision": "Debt capacity model should include all projects on the horizon, with user-changeable variables such as cost inflation, interest rates, and loan terms.",
+   "quote": "mark advised him to include all projects on the horizon in a model along with user-changeable variables like annual cost inflation, rates of interest, term of loans."
+  },
+  {
+   "decision": "The model should let users test potential cost inflation at different rates rather than a single fixed five percent fire-vehicle rate.",
+   "quote": "the model needs to let people look at potential cost inflation at different rates."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY16 salary reserve fund balance and deposit",
+   "what_was_recorded": "The reserve fund began FY16 with a $45,000 balance, and the Town transferred $9,280.26 into it as required expenditures became clearer.",
+   "figures_as_printed": [
+    "$45,000",
+    "$9,280.26"
+   ],
+   "quote": "the reserve fund started fy16 with a $45,000 balance; the town transferred $9,280.26 in to the salary reserve fund"
+  },
+  {
+   "topic": "Projected salary reserve balance after transfers",
+   "what_was_recorded": "Mark observed that about $2,800 would remain after the transfers, which would become free cash if unspent.",
+   "figures_as_printed": [
+    "$2,800"
+   ],
+   "quote": "net after these transfers, there would be roughly $2,800 remaining in the account"
+  },
+  {
+   "topic": "FY17 reserve fund and salary reserve totals",
+   "what_was_recorded": "The FY17 budget reserve fund totals $50,000 and the FY17 salary reserve fund totals $93,996.",
+   "figures_as_printed": [
+    "$50,000",
+    "$93,996"
+   ],
+   "quote": "the reserve fund in the fy17 budget totals $50,000. the fy17 salary reserve fund totals $93,996."
+  },
+  {
+   "topic": "Cadillac tax thresholds",
+   "what_was_recorded": "The Cadillac tax would tax PPO plans above threshold costs of $10,200 for individual and $27,500 for family coverage; Nineteen enrollees are in PPO plans and the effective date has moved to FY20.",
+   "figures_as_printed": [
+    "$10,200",
+    "$27,500"
+   ],
+   "quote": "more than $10,200 for an individual plan or $27,500 for a family plan"
+  },
+  {
+   "topic": "Cafeteria benefits option",
+   "what_was_recorded": "Employees may have up to $2,500 withheld pre-tax for health care; the Town does not match it, but it is added to plan value and so subject to the Cadillac tax in PPO plans.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "allows any town employee to have up to $2,500 withheld from their paycheck on a pre-tax basis"
+  },
+  {
+   "topic": "Medicare Part B reimbursement for retirees",
+   "what_was_recorded": "The Town reimburses 75% of the Medicare Part B premium for retirees and retiree spouses, adding to Town costs; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town reimburses 75% of the medicare part b premium for retiree and retiree spouses"
+  },
+  {
+   "topic": "Employee premium share change 75/25 to 70/30",
+   "what_was_recorded": "Changing the Town/Employee split from 75%-25% to 70%-30% would save about $285,000.",
+   "figures_as_printed": [
+    "$285,000"
+   ],
+   "quote": "the town would save about $285,000"
+  },
+  {
+   "topic": "Benchmark plan savings",
+   "what_was_recorded": "Adopting a benchmark plan while keeping a 75%-25% split would result in about $100,000 savings.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "would result in about $100,000"
+  },
+  {
+   "topic": "Health plan cost comparison (May 1, 2016 enrollment)",
+   "what_was_recorded": "The cost comparison totals $4,273,466.76 at current offerings 75/25, $3,988,568.98 at 70/30 (a difference of (284,897.78), -6.67%), and $4,173,923.43 for the MIIA benchmark at 75/25 (a difference of (99,543.33), -2.33%). Table text is partly garbled in the OCR.",
+   "figures_as_printed": [
+    "$4,273,466.76",
+    "$3,988,568.98",
+    "(284,897.78)",
+    "-6.67%",
+    "$4,173,923.43",
+    "(99,543.33)",
+    "-2.33%"
+   ],
+   "quote": "total: $ 4,273,466.76"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY16 salary reserve transfer requests to meet compensation requirements (line-item amounts are on the attached Salary Reserve Transfer Fund Request sheet; no total printed in the text)",
+   "amount_as_printed": "not stated",
+   "outcome": "approved, passed 4-0",
+   "quote": "john made a motion to approve the reserve transfer request. terri seconded the motion. the committee voted 4-0 in favor of the motion."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Comments and new communications",
+   "resolution": "received; no action",
+   "tags": [
+    "resignation",
+    "talent bank"
+   ],
+   "quote": "karin menard sent mark a letter of resignation because she has been elected to the parks"
+  },
+  {
+   "topic": "Town Meeting and election results",
+   "resolution": "received; no action",
+   "tags": [
+    "debt exclusion",
+    "pavement",
+    "election"
+   ],
+   "quote": "the pavement management plan debt exclusion override passed by a vote of 181 to 127."
+  },
+  {
+   "topic": "FY16 Salary Reserve Transfer Requests",
+   "resolution": "approved 4-0",
+   "tags": [
+    "salary reserve",
+    "transfers",
+    "compensation"
+   ],
+   "quote": "this request is for the finance committee to approve transfers to meet the town's compensation"
+  },
+  {
+   "topic": "Town Manager report on town health insurance plans",
+   "resolution": "discussed; no action",
+   "tags": [
+    "health insurance",
+    "retirees",
+    "cadillac tax"
+   ],
+   "quote": "town manager report: on town health insurance plans for employees and retirees."
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved (March 31, April 28, May 12, 2016)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of the march 31, 2016 meeting: jay moved to accept the minutes"
+  },
+  {
+   "topic": "Budget goals: debt service policy",
+   "resolution": "discussed; no action",
+   "tags": [
+    "debt policy",
+    "excluded debt",
+    "rating agency"
+   ],
+   "quote": "budget goals and opportunities: debt service section of the town's financial policies"
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports received",
+   "tags": [
+    "updates",
+    "library",
+    "capital planning",
+    "school building"
+   ],
+   "quote": "8. committee and department updates:"
+  },
+  {
+   "topic": "Chair's retirement announcement",
+   "resolution": "announced; no action",
+   "tags": [
+    "chair",
+    "retirement"
+   ],
+   "quote": "mark announced that he had retired recently."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 9:09",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: terri made a motion to adjourn and jay seconded the motion."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Town Election Results-May 21, 2016",
+   "where": "list",
+   "quote": "annual town election results-may 21, 2016"
+  },
+  {
+   "name": "Salary Reserve Transfer Fund Request",
+   "where": "list",
+   "quote": "salary reserve transfer fund request"
+  },
+  {
+   "name": "Overview of the Town's Health Care Plans",
+   "where": "list",
+   "quote": "overview of the town's health care plans"
+  },
+  {
+   "name": "Debt Service section of the Town's Financial Policies",
+   "where": "text",
+   "quote": "debt service section of the town's financial policies"
+  },
+  {
+   "name": "Fire vehicle cost spreadsheet by Chief Sullivan",
+   "where": "text",
+   "quote": "that chief sullivan had included in his spreadsheet"
+  },
+  {
+   "name": "Karin Menard letter of resignation",
+   "where": "text",
+   "quote": "karin menard sent mark a letter of resignation"
+  },
+  {
+   "name": "Talent Bank form",
+   "where": "text",
+   "quote": "filled out a talent bank form and showed interest in the fin com"
+  },
+  {
+   "name": "Asphalt bid packet on the Town's web site",
+   "where": "text",
+   "quote": "the full bid packet for asphalt is on the first page of the town's web site"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "salary reserve",
+  "health insurance",
+  "debt policy",
+  "town meeting results",
+  "minutes approval",
+  "budget",
+  "retirement",
+  "resignation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (3):"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2013-03-21",
  "docid": "2940",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from February 21, 2013",
+   "motion": "Approve the minutes of the February 21, 2013 meeting as presented.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
@@ -20,47 +20,47 @@
    "quote": "on a motion by paul doherty, seconded by elizabeth murphy; the minutes were approved as presented. all were in favor."
   },
   {
-   "motion": "Approve financial report including monthly statement and accounts payable review",
+   "motion": "Accept the financial report, including review of accounts payable, and approve the financials as presented.",
    "moved_by": "Amaryllis Leet",
    "seconded_by": "Deborah A.H. Christen",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on a motion by amaryllis leet; seconded by deborah a.h. christen, financials were approved as presented."
+   "quote": "the financial report including a review of accounts payable was accepted, on a motion by amaryllis leet; seconded by deborah a.h. christen, financials were approved as presented."
   },
   {
-   "motion": "Enter into contract for accounting services with Fenton, Ewald & Associates, P.C. for January 1, 2013 through December 31, 2013",
+   "motion": "Enter into a contract for accounting services with Fenton, Ewald & Associates, P.C. for January 1, 2013 through December 31, 2013 (Resolution 201309).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed by unanimous vote",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion made by elizabeth murphy to enter into contract for accounting services. seconded, paul doherty seconded the motion, and the motion was passed by a unanimous vote."
   },
   {
-   "motion": "Authorize the Chair or Executive Director to sign CFA Amendment #1 for preservation and modernization of state-supported public housing, increasing amount from $158,000.00 to $231,011.00",
+   "motion": "Authorize the Chair or Executive Director to sign CFA Amendment #1 with DHCD in conjunction with the formula funding master CFA (Resolution 201310).",
    "moved_by": "Amaryllis Leet",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed by unanimous vote",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by amaryllis leet to authorize the signing of the cfa amendment #1 by the chair or executive director in conjunction with the formula funding master cfa (all developments) for the preservation and modernization of state-supported public housing as specified in the contract for capital improvement work plan, including any and all subsequent amendments submitted by dhcd, currently being undertaken by the lunenburg housing authority and the department of housing and community development. seconded, paul doherty seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "seconded, paul doherty seconded the motion, and the motion was passed by a unanimous vote."
   },
   {
-   "motion": "Authorize change of banking services from TD Bank to Fidelity",
+   "motion": "Authorize the change of banking services from TD Bank to Fidelity (Resolution 201311).",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Amaryllis Leet",
-   "outcome": "passed by unanimous vote",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by elizabeth murphy to authorize the change of banking services from td bank to fidelity. seconded, amaryllis leet seconded the motion and the motion was passed by a unanimous vote."
+   "quote": "amaryllis leet seconded the motion and the motion was passed by a unanimous vote."
   },
   {
-   "motion": "Replace the washing machines",
+   "motion": "Have the washing machines replaced.",
    "moved_by": "Elizabeth Murphy",
    "seconded_by": "Paul Doherty",
-   "outcome": "passed by unanimous vote",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on a motion by elizabeth murphy, seconded by paul doherty, motion passed by a unanimous vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:30 PM.",
    "moved_by": "Deborah A.H. Christen",
    "seconded_by": "Elizabeth Murphy",
    "outcome": "passed",
@@ -69,6 +69,224 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR of macOS Vision scan of 3 pages; all votes clearly recorded.",
- "cost_usd": 0.09441350000000001
+ "note": "Scan read via OCR (macOS Vision) with garbled text in places (e.g., 'Fentor wald & Associates', 'for he preservation'); the firm is named inconsistently ('Fenton & Ewald' vs 'Fenton, Ewald & Associates, P.C.'). Members Absent is blank and Sheila Lumi is listed where Also Present begins, so her attendance is not stated. Mr. Capoccia is listed as Secretary but the text calls him Executive Director. Votes are recorded only as 'unanimous' or 'All were in favor', with no tallies. Resolution 201310 heading is split by OCR. No documents list is printed.",
+ "cost_usd": 0.00764392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "elizabeth murphy, chairperson"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Member",
+   "status": "present",
+   "quote": "paul doherty, member"
+  },
+  {
+   "name": "Amaryllis Leet",
+   "role": "Member",
+   "status": "present",
+   "quote": "amaryllis leet, member"
+  },
+  {
+   "name": "Sheila Lumi",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "members absent: also present: sheila lumi, member"
+  },
+  {
+   "name": "Eugene Capoccia",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "eugene capoccia, secretary"
+  },
+  {
+   "name": "Sue Honeycut",
+   "role": "Fenton & Ewald Accountant",
+   "status": "present",
+   "quote": "sue honeycut, fenton & ewald accountant"
+  },
+  {
+   "name": "Evelyn Perez",
+   "role": "Off-Site Housing Coordinator",
+   "status": "not stated",
+   "quote": "evelyn perez, off-site housing coordinator"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "CFA Amendment #1 (formula funding master CFA, all developments)",
+   "what_was_recorded": "The original CFA award was $158,000.00; the amended award is $231,011.00, an increase of $73,011.00.",
+   "figures_as_printed": [
+    "$158,000.00",
+    "$231,011.00",
+    "$73,011.00"
+   ],
+   "quote": "the original cfa award was in the amount of $158,000.00"
+  },
+  {
+   "topic": "Financial report / utilities and maintenance costs",
+   "what_was_recorded": "Mr. Capoccia said the year started a bit in the negative, utilities seemed high, and maintenance labor was up due to snow storms; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "he noted the year started a bit in the negative. utilities seemed high."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "several tenants",
+   "stated_role": "tenants",
+   "topic": "questions and concerns on parking lot work and other matters",
+   "quote": "there were several tenants present; several questions and concerns were addressed by the board and mr. capoccia."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and approval of February 21, 2013 minutes",
+   "resolution": "minutes approved as presented",
+   "quote": "at 6:30 p.m. the chair declared the meeting opened. minutes of the february 21, 2013 meeting were presented.",
+   "tags": [
+    "minutes",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Executive Director report (parking lot paving)",
+   "resolution": "informational, no action",
+   "quote": "the executive director then presented his report. he informed sunshine paving, the low paving contractor, will be at a tenant meeting in april",
+   "tags": [
+    "paving",
+    "parking lot",
+    "tenants"
+   ]
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "accepted; approved as presented",
+   "quote": "mr. capoccia then moved to the financial report. he noted the year started a bit in the negative.",
+   "tags": [
+    "finance",
+    "budget",
+    "utilities",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Review of year-end financial statement by accountant",
+   "resolution": "reviewed; financials approved as presented",
+   "quote": "sue honeycut, accountant representative of fenton & ewald was present at the meeting and reviewed the year-end financial statement",
+   "tags": [
+    "accounting",
+    "financial statement",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Resolution 201309 - accounting services contract",
+   "resolution": "approved",
+   "quote": "motion made by elizabeth murphy to enter into contract for accounting services.",
+   "tags": [
+    "accounting",
+    "contract",
+    "Fenton & Ewald"
+   ]
+  },
+  {
+   "topic": "Resolution 201310 - CFA Amendment #1 with DHCD",
+   "resolution": "approved",
+   "quote": "motion made by amaryllis leet to authorize the signing of the cfa amendment #1 by the chair or executive director",
+   "tags": [
+    "state funding",
+    "DHCD",
+    "capital improvement",
+    "CFA"
+   ]
+  },
+  {
+   "topic": "Resolution 201311 - change of banking services",
+   "resolution": "approved",
+   "quote": "motion made by elizabeth murphy to authorize the change of banking services from td bank to fidelity.",
+   "tags": [
+    "banking",
+    "Fidelity",
+    "TD Bank"
+   ]
+  },
+  {
+   "topic": "Washing machine replacement",
+   "resolution": "approved",
+   "quote": "the board has also made a resolution to have the washing machines replaced.",
+   "tags": [
+    "maintenance",
+    "appliances"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:30 PM",
+   "quote": "the board voted to adjourn the meeting at 8:30 pm. all were in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Year-end Financial Statement",
+   "where": "list",
+   "quote": "reviewed the year-end financial statement, along with the monthly statement also."
+  },
+  {
+   "name": "Monthly financial statement",
+   "where": "list",
+   "quote": "reviewed the year-end financial statement, along with the monthly statement also."
+  },
+  {
+   "name": "Resolution 201309 - Resolution for Accounting Services",
+   "where": "list",
+   "quote": "resolution for accounting services resolution 201309"
+  },
+  {
+   "name": "Resolution 201310 - CFA Amendment #1 between the Lunenburg Housing Authority and DHCD (formula funding master CFA, all developments, Work Plan 5001)",
+   "where": "list",
+   "quote": "resolution for cfa amendment #1 between the lunenburg housing authority and the department"
+  },
+  {
+   "name": "Resolution 201311 - Resolution to Change Banking Services",
+   "where": "list",
+   "quote": "resolution to change banking services resolution 201311"
+  },
+  {
+   "name": "Contract for Capital Improvement Work Plan",
+   "where": "text",
+   "quote": "specified in the contract for capital improvement work plan, including any and all subsequent amendments submitted by dhcd"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "finance",
+  "accounting",
+  "state funding",
+  "CFA amendment",
+  "banking",
+  "maintenance",
+  "tenants",
+  "parking lot"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "sue honeycut, accountant representative of fenton & ewald was present at the meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2010-06-17",
  "docid": "2728",
@@ -12,23 +12,302 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from May 20, 2010 as amended",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "accepted",
+   "motion": "Pass the May 20, 2010 minutes as amended.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "may 20, 2010 minutes: motion made and accepted to pass minutes as amended."
   },
   {
-   "motion": "Accept May 20, 2010 executive session notes",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Accept the May 20, 2010 Executive Session Notes.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "may 20, 2010 executive session notes: motion made and passed to accept."
+   "quote": "motion made and passed to accept."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. No mover or seconder named in either vote. No motion to adjourn recorded.",
- "cost_usd": 0.0835305
+ "note": "Text is a single readable page; page 2 is blank. No vote tallies, movers or seconders are printed for any motion ('Motion made and accepted/passed'), so both votes are recorded with outcome from the wording only. Minutes refer to Director's Report and Amy's report, which are not attached. Some figures and times look garbled ('6 0p.m.', 'syste m', '3 rd'); quoted as printed.",
+ "cost_usd": 0.00553112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lisa Krowitz",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, dick mailloux, jeanne raboin, amy sadkin, len smetana, noel bodkin, kate murray"
+  },
+  {
+   "name": "John Mara",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, dick mailloux, jeanne raboin, amy sadkin, len smetana, noel bodkin, kate murray"
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, dick mailloux, jeanne raboin, amy sadkin, len smetana, noel bodkin, kate murray"
+  },
+  {
+   "name": "Jeanne Raboin",
+   "role": "Secretary, Trustees of the Lunenburg Public Library",
+   "status": "present",
+   "quote": "jeanne raboin, secretary, trustees of the lunenburg public library"
+  },
+  {
+   "name": "Amy Sadkin",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, dick mailloux, jeanne raboin, amy sadkin, len smetana, noel bodkin, kate murray"
+  },
+  {
+   "name": "Len Smetana",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, dick mailloux, jeanne raboin, amy sadkin, len smetana, noel bodkin, kate murray"
+  },
+  {
+   "name": "Noel Bodkin",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, dick mailloux, jeanne raboin, amy sadkin, len smetana, noel bodkin, kate murray"
+  },
+  {
+   "name": "Kate Murray",
+   "status": "present",
+   "quote": "attending: lisa krowitz, john mara, dick mailloux, jeanne raboin, amy sadkin, len smetana, noel bodkin, kate murray"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director's contract, as amended and accepted by Amy, is to go to Lunenburg Town Hall.",
+   "quote": "amy has accepted contract as amended. the contract will go to lunenburg town hall."
+  },
+  {
+   "decision": "Trustee meetings for FY2011 remain on the 3rd Thursday of the month at 6:30 p.m.",
+   "quote": "meetings will remain at 3 rd thursday of the month, 6:30 p.m."
+  },
+  {
+   "decision": "Trustees are required to take the online State ethics test and send the sheet to Kathy Herrick.",
+   "quote": "to be in compliance, trustees are required to take online test and then send sheet to kathy herrick."
+  },
+  {
+   "decision": "Former library hours resume July 1, 2010.",
+   "quote": "former hours to resume july 1, 2010."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Laptop request (Endowment/Friends list)",
+   "what_was_recorded": "A laptop from Gateway is listed on the Endowment/Friends request list, with software from the town at no cost.",
+   "figures_as_printed": [
+    "$599"
+   ],
+   "quote": "laptop (1): gateway for $599, software from town for free; lawn weed & feed for the year $1,200"
+  },
+  {
+   "topic": "Lawn weed and feed (Endowment/Friends request list)",
+   "what_was_recorded": "Lawn weed and feed for the year is on the Endowment/Friends request list.",
+   "figures_as_printed": [
+    "$1,200"
+   ],
+   "quote": "lawn weed & feed for the year $1,200;"
+  },
+  {
+   "topic": "Friends Book & Bake Sale proceeds",
+   "what_was_recorded": "The Friends Book & Bake Sale brought in a stated amount.",
+   "figures_as_printed": [
+    "$2042"
+   ],
+   "quote": "friends book & bake sale brought in $2042."
+  },
+  {
+   "topic": "Carpet cleaning and upholstery funding",
+   "what_was_recorded": "Friends money was set aside for carpet cleaning and upholstery, so Endowment funds will not be used for this project; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "friend's money set aside for carpet cleaning and upholstery, therefore not necessary to use endowment funds for this project."
+  },
+  {
+   "topic": "Pipe replacement from boiler room",
+   "what_was_recorded": "Simplex replaced and relocated a boiler-room pipe and DPW covered the cost; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "simplex replaced and relocated a pipe from the boiler room, dpw covered the cost."
+  },
+  {
+   "topic": "Regional net lender credit against CWMARS fees",
+   "what_was_recorded": "As a regional net lender in FY10, the library's monies from the region will be applied against CWMARS FY11 fees; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "monies from region will be applied against cwmars fy11 fees."
+  },
+  {
+   "topic": "Budget review",
+   "what_was_recorded": "Amy reviewed the budget with the Trustees; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "amy reviewed the budget with the trustees."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Deb Chapdelaine",
+   "stated_role": "",
+   "topic": "thank you note read by John",
+   "quote": "public comment: john read a thank you note from deb chapdelaine."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "noted; thank you note read",
+   "quote": "public comment: john read a thank you note from deb chapdelaine.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Letter from Jennifer Mason",
+   "resolution": "presented; no action stated",
+   "quote": "amy presented a letter from jennifer mason concerning her position at the lpl.",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "New Business: minutes, executive session notes, director's contract",
+   "resolution": "minutes approved as amended; exec session notes accepted; contract accepted as amended",
+   "quote": "may 20, 2010 minutes: motion made and accepted to pass minutes as amended.",
+   "tags": [
+    "minutes",
+    "director contract"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "noted; budget reviewed",
+   "quote": "director's report (please see amy's report for more detail)",
+   "tags": [
+    "director report",
+    "budget",
+    "facilities",
+    "technology",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Personnel posting for Junior Library Assistant",
+   "resolution": "no action stated",
+   "quote": "personnel posting for a junior library assistant; there is budget for two high-school age students",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Calendar of Trustee Meetings for FY2011",
+   "resolution": "meetings remain 3rd Thursday, 6:30 p.m.",
+   "quote": "meetings will remain at 3 rd thursday of the month, 6:30 p.m.",
+   "tags": [
+    "meeting calendar"
+   ]
+  },
+  {
+   "topic": "LPL Friends Annual Meeting",
+   "resolution": "noted; potluck July 23",
+   "quote": "lpl friends annual meeting: friday, july 23, 6 0p.m.",
+   "tags": [
+    "friends"
+   ]
+  },
+  {
+   "topic": "Endowment/Friends request list",
+   "resolution": "discussed; no action stated",
+   "quote": "endowment/friends request list: laptop (1): gateway for $599",
+   "tags": [
+    "endowment",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law",
+   "resolution": "noted",
+   "quote": "open meeting law: there will be meetings throughout the state to discuss the changes to this law.",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "State Ethics Test",
+   "resolution": "Trustees to take online test and send sheet",
+   "quote": "state ethics test: to be in compliance, trustees are required to take online test",
+   "tags": [
+    "ethics training"
+   ]
+  },
+  {
+   "topic": "Review of Director's contract and evaluation procedures",
+   "resolution": "no action stated",
+   "quote": "review of director's contract and evaluation procedures.",
+   "tags": [
+    "director contract",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Hours resumption",
+   "resolution": "former hours resume July 1, 2010",
+   "quote": "former hours to resume july 1, 2010.",
+   "tags": [
+    "hours"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director’s Report",
+   "where": "text",
+   "quote": "director's report (please see amy's report for more detail)"
+  },
+  {
+   "name": "Letter from Jennifer Mason concerning her position at the LPL",
+   "where": "text",
+   "quote": "amy presented a letter from jennifer mason concerning her position at the lpl."
+  },
+  {
+   "name": "May 20, 2010 Minutes",
+   "where": "text",
+   "quote": "may 20, 2010 minutes: motion made and accepted to pass minutes as amended."
+  },
+  {
+   "name": "May 20, 2010 Executive Session Notes",
+   "where": "text",
+   "quote": "may 20, 2010 executive session notes: motion made and passed to accept."
+  },
+  {
+   "name": "Director’s Contract",
+   "where": "text",
+   "quote": "director's contract: amy has accepted contract as amended."
+  },
+  {
+   "name": "Calendar of Trustee Meetings for FY2011",
+   "where": "text",
+   "quote": "calendar of trustee meetings for fy2011: meetings will remain at 3 rd thursday of the month"
+  },
+  {
+   "name": "Endowment/Friends Request List",
+   "where": "text",
+   "quote": "endowment/friends request list: laptop (1): gateway for $599"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "director contract",
+  "budget",
+  "endowment",
+  "friends",
+  "personnel",
+  "open meeting law",
+  "ethics training",
+  "meeting calendar",
+  "facilities",
+  "technology"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

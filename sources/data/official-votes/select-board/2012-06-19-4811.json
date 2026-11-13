@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2012-06-19",
  "docid": "4811",
@@ -12,55 +12,526 @@
  },
  "votes": [
   {
-   "motion": "Appoint Myleen Mallari acting Treasurer/Collector and Assistant Treasurer from June 19, 2012 to August 21, 2012",
+   "motion": "Appoint Myleen Mallari acting Treasurer/Collector and Assistant Treasurer from June 19, 2012 to August 21, 2012.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "mr. alonzo moved to appoint myleen mallari acting treasurer/collector and assistant treasurer during the term as noted by the town manager from june 19, 2012 to august 21, 2012. mr. debettencourt spoke in saying point of order, there has been a motion made and seconded. mr. matthews said that it was an invalid motion. mr. debettencourt spoke passionately in opposition to the decision to rescind ms. gustus's position as treasurer/collector. mr. matthews defended the decision and then stated that there is a motion on the floor and asked for a second. ms. bertram seconded. on vote, motion carried, 3 in favor, 2 opposed (debettencourt & sund)."
+   "quote": "mr. alonzo moved to appoint myleen mallari acting treasurer/collector and assistant treasurer during the term as noted by the town manager from june 19, 2012 to august 21, 2012."
   },
   {
-   "motion": "Approve easement agreement for Jones House and allow re-grading of the driveway area contingent on DPW approval",
+   "motion": "Approve the easement agreement and allow re-grading of the driveway area within the easement, contingent upon DPW approval.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "mr. alonzo move to approve the easement agreement and allow for the re-grading of the driveway area within the easement contingent upon the dpw's approval. ms. betram seconded. on vote, motion carried, 5 in favor, o opposed."
+   "quote": "mr. alonzo move to approve the easement agreement and allow for the re-grading of the driveway area within the easement contingent upon the dpw's approval."
   },
   {
-   "motion": "Ratify appointments of Licensing Authority Agents for FY2013",
+   "motion": "Ratify the FY2013 Licensing Authority Agents appointments as read.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. alonzo moved to ratify the appointments as just read of the licensing authority agents for fy2013. mr. sund seconded. on vote, motion carried, 5 in favor, o opposed."
   },
   {
-   "motion": "Ratify appointments of Reserve Officers for FY2013",
+   "motion": "Ratify the Town Manager's FY2013 Reserve Officer appointments as just read.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved to ratify the appointments of the town manager for the position of reserve officer for fy2013 as just read. mr. sund seconded. on vote, motion carried, 5 in favor 0 opposed."
+   "procedural": false,
+   "quote": "mr. alonzo moved to ratify the appointments of the town manager for the position of reserve officer for fy2013 as just read."
   },
   {
-   "motion": "Ratify appointments to position of Special Police Officer for FY2013",
+   "motion": "Ratify the FY2013 Special Police Officer appointments as read by the Town Manager.",
    "moved_by": "Mr. Alonzo",
    "seconded_by": "Mr. Sund",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "mr. alonzo moved to ratify the appointments to position of special police officer for fy2013 as read by the town manager. mr. sund seconded. on vote, motion carried, 5 in favor, o opposed."
+   "procedural": false,
+   "quote": "mr. alonzo moved to ratify the appointments to position of special police officer for fy2013 as read by the town manager."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. deBettencourt",
    "seconded_by": "Ms. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded. on vote, motion carried, 5 in favor, 0 opposed."
+   "quote": "being no further business, mr. debettencourt motioned to adjourn the meeting. ms. bertram seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of annual report pages; all votes clearly recorded with outcomes stated.",
- "cost_usd": 0.1336755
+ "note": "OCR text (macOS Vision) with recognition errors: names and some tallies are garbled (e.g., 'o opposed', 'Betram', 'deBetttencourt'). The Town Manager composite table (pages 11-12) and the narration sheet (pages 13-14) are only partly readable, so figures are not transcribed from them. The first motion to appoint Myleen Mallari was ruled invalid by the Chair, then re-seconded and voted 3-2; the re-seconded vote is recorded. No vote is recorded for minutes approval, the warrants, or the acting Police Chief appointment. Ms. Gustus's statement and the Town Manager evaluation are attached and included as text.",
+ "cost_usd": 0.01861712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Matthews",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Steven M. deBettencourt",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Carl \"Ernie\" Sund",
+   "role": "Board of Selectmen",
+   "status": "present",
+   "quote": "with david matthews, steven m. debettencourt, paula bertram, tom alonzo, carl \"ernie\" sund and town manager kerry speidel presen"
+  },
+  {
+   "name": "Kerry Speidel",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "and town manager kerry speidel presen"
+  },
+  {
+   "name": "Laura Caron Gustus",
+   "role": "Appointment applicant",
+   "status": "present",
+   "quote": "7:00 p.m. laura caron gustus: the chair began by stating that this is not an employment hearing"
+  },
+  {
+   "name": "Dan Curley",
+   "role": "Executive Director, Fitchburg Redevelopment Authority",
+   "status": "present",
+   "quote": "mr. curley, executive director, & mr. szocik, facilities manager, from the fitchburg redevelopment authority"
+  },
+  {
+   "name": "Tom Szocik",
+   "role": "Facilities Manager, Fitchburg Redevelopment Authority",
+   "status": "present",
+   "quote": "mr. curley, executive director, & mr. szocik, facilities manager, from the fitchburg redevelopment authority"
+  },
+  {
+   "name": "Toby Bakaysa",
+   "role": "Lunenburg Planning Board",
+   "status": "present",
+   "quote": "toby bakaysa from the lunenburg planning board spoke and said that he could not speak for his board"
+  },
+  {
+   "name": "Larry Marshall",
+   "role": "not stated",
+   "status": "present",
+   "quote": "larry marshall, 984 mass avenue, explained the reasoning for the re-grading was because the existing driveway is"
+  },
+  {
+   "name": "Chris Comeau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris comeau, 819 west street, said that he was thoroughly disgusted with three of the selectmen."
+  },
+  {
+   "name": "Jackie Ramondelli",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jackie ramondelli, reservoir road, said that she thought this was a lot of small town politics"
+  },
+  {
+   "name": "Bill Gustus",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bill gustus, 19 burke street, said that with respect to laura's position as chief administrative assistant"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Recording Secretary",
+   "status": "not stated",
+   "quote": "susan doherty, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOS will properly notice the Fitchburg Redevelopment Authority first right of refusal action at the July 10, 2012 BOS meeting.",
+   "quote": "the bos will properly notice this action at the july 10, 2012 bos meeting."
+  },
+  {
+   "decision": "Mr. Marshall agreed to work with the DPW Director on the re-grading so as not to interfere with the Teen Center building.",
+   "quote": "mr. marshall agreed to this request."
+  },
+  {
+   "decision": "Ms. Speidel will finish the self-evaluation that week and distribute it to the board.",
+   "quote": "ms. speidel will finish the self-evaluation this week and distribute it to the board."
+  },
+  {
+   "decision": "The review and setting of BOS goals will be taken up at a future meeting.",
+   "quote": "the review and setting of bos goals will be discussed at a future meeting."
+  },
+  {
+   "decision": "A BOS workshop is scheduled for July 17 at 6 p.m. to review the proposed changes to the BOS Policies & Procedures.",
+   "quote": "a bos workshop was scheduled for july 17\" at 6 p.m. to review the proposed changes."
+  },
+  {
+   "decision": "No action taken on the Lt. James Marino acting Police Chief appointment at this meeting; Ms. Bertram said the board cannot act on it this evening.",
+   "quote": "she does not believe the bos can take action on this appointment this evening"
+  },
+  {
+   "decision": "Ms. Bertram will send the board a link to the draft MPO program document.",
+   "quote": "she will send out a link to the draft of a document that is available to the board"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants",
+   "what_was_recorded": "Warrants were listed for approval with three dollar totals.",
+   "figures_as_printed": [
+    "$2,297,329.36",
+    "$149,809.61",
+    "$716,960.70"
+   ],
+   "quote": "6/19/12 w73-12, $2,297,329.36 6/20/12 w73-12, $149,809.61 6/21/12 w26p-12, $716,960.70"
+  },
+  {
+   "topic": "Bond costs and general liability insurance appropriation",
+   "what_was_recorded": "Ms. Gustus's written statement says bond costs are paid from the general liability insurance appropriation controlled by the Selectmen's office; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the cost of bonds required by various town officials is paid out of the towns' general liability insurance appropriation"
+  },
+  {
+   "topic": "Gustus pay and raise",
+   "what_was_recorded": "Bill Gustus said Ms. Gustus continued to be paid from a line item and was told a raise was granted in the CAA position; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "she continued to be paid out of that line item up until wednesday of last week when she was told that she did not hold a position with the"
+  },
+  {
+   "topic": "Gustus shared stipend",
+   "what_was_recorded": "Ms. Gustus's written statement mentions a shared stipend with the Town Accountant on acting CAFO occasions; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "albeit i was given a \"shared stipend with the town accountant\" on a couple of"
+  },
+  {
+   "topic": "Fitchburg land sale and tax revenue",
+   "what_was_recorded": "Fitchburg Redevelopment Authority said Lunenburg would collect tax revenue from the sale of land for an industrial park; Mr. Curley would propose city utility rates for Lunenburg-side buildings; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "lunenburg will be able to collect tax revenue for this project"
+  },
+  {
+   "topic": "Insurance credits for software",
+   "what_was_recorded": "The narration sheet says the Town Manager leveraged insurance credits to obtain software and other services; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager has leveraged insurance credits to obtain software and other services"
+  },
+  {
+   "topic": "DPW building project under budget",
+   "what_was_recorded": "The narration sheet says the DPW building and renovation project came in under budget; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the completion of the dpw building and renovation project was brought in under budget in large part due to"
+  },
+  {
+   "topic": "Override defeat",
+   "what_was_recorded": "The narration sheet refers to the defeat of the override as a set back; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the defeat of the the override while a set back is also a great opportunity to force change"
+  },
+  {
+   "topic": "Electrical permit fee for solar arrays",
+   "what_was_recorded": "A proposed electrical permit fee for solar arrays was listed on the agenda but not discussed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "2. review proposed electrical permit fee for solar arrays - not discussed."
+  },
+  {
+   "topic": "Budget preparation workload",
+   "what_was_recorded": "The narration sheet says preparing and presenting two budgets was monumental; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "while putting together one budget is a large task, preparing and presenting two is monumental."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Sund",
+   "stated_role": "",
+   "topic": "Historical tour and Revolutionary War tablets",
+   "quote": "mr. sund stated that during the past week he had the pleasure of joining the 3 grade students on a historical tour of"
+  },
+  {
+   "speaker": "Chris Comeau",
+   "stated_role": "",
+   "topic": "Gustus termination and Town Manager responsibility",
+   "quote": "chris comeau, 819 west street, said that he was thoroughly disgusted with three of the selectmen."
+  },
+  {
+   "speaker": "Jackie Ramondelli",
+   "stated_role": "",
+   "topic": "Gustus termination and small town politics",
+   "quote": "jackie ramondelli, reservoir road, said that she thought this was a lot of small town politics"
+  },
+  {
+   "speaker": "Bill Gustus",
+   "stated_role": "",
+   "topic": "Laura Gustus's CAA position, pay and hearing rights",
+   "quote": "bill gustus, 19 burke street, said that with respect to laura's position as chief administrative assistant"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; Mr. Sund remarks on historical tour",
+   "quote": "mr. sund stated that during the past week he had the pleasure of joining the 3 grade students on a historical tour of",
+   "tags": [
+    "public comment",
+    "history"
+   ]
+  },
+  {
+   "topic": "Appointments: Laura Caron Gustus",
+   "resolution": "Myleen Mallari appointed acting Treasurer/Collector 3-2 after Town Manager recommendation; public comment followed",
+   "quote": "7:00 p.m. laura caron gustus: the chair began by stating that this is not an employment hearing",
+   "tags": [
+    "treasurer/collector",
+    "personnel",
+    "bond",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Fitchburg Redevelopment Authority land waiver",
+   "resolution": "no action; first right of refusal to be noticed at July 10, 2012 meeting",
+   "quote": "ms. speidel said that the official requirement for this action is for the board to waive its first right of refusal on behalf of the town.",
+   "tags": [
+    "Fitchburg",
+    "land",
+    "industrial park",
+    "first right of refusal"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Execute Easement, Jones House",
+   "resolution": "approved 5-0, driveway re-grading contingent on DPW approval",
+   "quote": "mr. alonzo move to approve the easement agreement and allow for the re-grading of the driveway area within the easement contingent upon the dpw's approval.",
+   "tags": [
+    "easement",
+    "driveway",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Current Business 2: Electrical permit fee for solar arrays",
+   "resolution": "not discussed",
+   "quote": "2. review proposed electrical permit fee for solar arrays - not discussed.",
+   "tags": [
+    "solar",
+    "permit fee"
+   ]
+  },
+  {
+   "topic": "Town Manager's Annual Review",
+   "resolution": "presented; composite score 160; goals to future meeting",
+   "quote": "which was 160 points, which is considered commendable.",
+   "tags": [
+    "town manager evaluation",
+    "goals"
+   ]
+  },
+  {
+   "topic": "BOS Policies & Procedures",
+   "resolution": "revised policies received; workshop July 17",
+   "quote": "the board received copies of the revised bos policies & procedures and ms. bertram gave a brief explanation",
+   "tags": [
+    "policies and procedures",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "no minutes; warrants listed; no action file issues",
+   "quote": "action file issues - none",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported by school, sewer and MPO representatives",
+   "quote": "mr. debettencourt reported that the sewer commission submitted their final draft to fitchburg for their consideration and it is moving along.",
+   "tags": [
+    "school committee",
+    "sewer commission",
+    "MPO"
+   ]
+  },
+  {
+   "topic": "Department Reports",
+   "resolution": "none",
+   "quote": "7. department reports - none",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Manager Reports: acting Police Chief",
+   "resolution": "no action; appointment not on agenda, not ratified",
+   "quote": "ms. speidel put before the board a notice of appointment of lt. james marino to serve as the acting police chief",
+   "tags": [
+    "police",
+    "acting chief",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "none",
+   "quote": "old business - none appointments/re-appointments/resignations",
+   "tags": [
+    "old business"
+   ]
+  },
+  {
+   "topic": "FY2013 Annual Appointments",
+   "resolution": "ratified three lists of appointments, each 5-0",
+   "quote": "ms. speidel read into record the appointments that need to be ratified by the",
+   "tags": [
+    "licensing agents",
+    "reserve officers",
+    "special police officers",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "none",
+   "quote": "executive session - none",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Written statement of Laura Caron-Gustus, 06/19/12",
+   "where": "list",
+   "quote": "ms. gustus distributed copies of a prepared statement to the bos."
+  },
+  {
+   "name": "Fitchburg Redevelopment Authority information packets",
+   "where": "list",
+   "quote": "introduced themselves to the bos and distributed information packets to the board."
+  },
+  {
+   "name": "Town Manager Evaluation, 2012 Board Composite (attached)",
+   "where": "list",
+   "quote": "which was 160 points, which is considered commendable. (see attached)"
+  },
+  {
+   "name": "Board of Selectmen Narration Sheet",
+   "where": "list",
+   "quote": "board of selectmen narration sheet"
+  },
+  {
+   "name": "Revised BOS Policies & Procedures",
+   "where": "list",
+   "quote": "the board received copies of the revised bos policies & procedures and ms. bertram gave a brief explanation"
+  },
+  {
+   "name": "Warrants 6/19/12 W73-12, 6/20/12 W73-12, 6/21/12 W26P-12",
+   "where": "list",
+   "quote": "6/19/12 w73-12, $2,297,329.36 6/20/12 w73-12, $149,809.61 6/21/12 w26p-12, $716,960.70"
+  },
+  {
+   "name": "Letter placing Ms. Gustus on paid administrative leave",
+   "where": "text",
+   "quote": "i was given a letter, which stated that i was to remain available"
+  },
+  {
+   "name": "Town Manager email of May 30 on bonding requirement",
+   "where": "text",
+   "quote": "which was noted in an email that i received from the town manager on may 30"
+  },
+  {
+   "name": "Town Manager memo received by email January 4 (2012)",
+   "where": "text",
+   "quote": "when i received a memo via email from the town manager, which stated"
+  },
+  {
+   "name": "Insurance bond application (returned June 1)",
+   "where": "text",
+   "quote": "she correctly completed and returned the bond application on june 1"
+  },
+  {
+   "name": "Town Charter Section 4-2C",
+   "where": "text",
+   "quote": "ms. bertram said that the section being talked about is section 4-2 c and clearly says that one of the powers and duties of"
+  },
+  {
+   "name": "MGL, Chapter 41, Section 40",
+   "where": "text",
+   "quote": "according to ms. gustus, she does not agree with the bos interpretation of mgl, chapter 41, section 40."
+  },
+  {
+   "name": "MGL C 40 Section 15",
+   "where": "text",
+   "quote": "mgl c 40 section 15 states that they need the"
+  },
+  {
+   "name": "Salary Administration Plan",
+   "where": "text",
+   "quote": "there are provisions in the salary admin. plan and the charter that deal with"
+  },
+  {
+   "name": "Written opinion of the State Ethics Commission",
+   "where": "text",
+   "quote": "asked if he had the written opinion from the state ethics commission"
+  },
+  {
+   "name": "Supreme Judicial Court opinion (Justice Oliver Wendell Holmes, Jr.)",
+   "where": "text",
+   "quote": "this point is supported by an opinion of the supreme judicial court by none other than the celebrated justice oliver wendell holmes, jr."
+  },
+  {
+   "name": "Town Counsel communication regarding the Open Meeting Law",
+   "where": "text",
+   "quote": "due to the communication from town counsel regarding the open meeting law"
+  },
+  {
+   "name": "Town Manager self-evaluation",
+   "where": "text",
+   "quote": "ms. speidel will finish the self-evaluation this week and distribute it to the board."
+  },
+  {
+   "name": "Notice of appointment, Lt. James Marino as acting Police Chief",
+   "where": "text",
+   "quote": "ms. speidel put before the board a notice of appointment of lt. james marino"
+  },
+  {
+   "name": "Draft MPO program document",
+   "where": "text",
+   "quote": "she will send out a link to the draft of a document that is available to the board"
+  }
+ ],
+ "tags": [
+  "treasurer/collector appointment",
+  "bond requirement",
+  "personnel",
+  "Town Manager evaluation",
+  "Fitchburg land waiver",
+  "easement",
+  "licensing appointments",
+  "police appointments",
+  "warrants",
+  "policies and procedures",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board received copies of the revised bos policies & procedures"
+ },
+ "dropped_unquoted_by_field": {}
 }

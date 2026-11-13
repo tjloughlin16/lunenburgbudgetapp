@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-05-10",
  "docid": "3568",
@@ -12,23 +12,119 @@
  },
  "votes": [
   {
-   "motion": "To enter executive session for clarification of joint executive session with Board of Selectmen",
+   "motion": "Enter executive session for purpose of clarification of joint executive session with Board of Selectmen, not to return to general session.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chair called for executive session for purpose of clarification of joint executive session with board of selectmen and not to return to general session. roll call vote, mr. bodkin jr., aye; ms. bilotta, aye; mr. lockwood, aye; mr. bakaysa aye, mr. salia, aye."
+   "quote": "chair called for executive session for purpose of clarification of joint executive session with board of selectmen and not to return"
   },
   {
-   "motion": "To adjourn the executive session",
+   "motion": "Adjourn the executive session.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn was made by ms. bilotta and seconded by mr. lockwood. roll call vote: mir. bodkin, jr., aye; ms. bilotta, aye; mr. lockwood, aye; mr. bakaysa, aye, mr. salia, aye."
+   "quote": "motion to adjourn was made by ms. bilotta and seconded by mr. lockwood."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. This was an executive session only; no general session occurred. The board was concerned with minutes discrepancies regarding a lawsuit brought by O'Brien Homes.",
- "cost_usd": 0.1098015
+ "note": "Single-page OCR text of an executive session minutes sheet; no general session. OCR and transcription errors appear in names (\"Mir. Bodkin\", \"Mr. Salia\" for Saiia, \"Member Bodking\", \"Mr. Bodkins\"); names are recorded as printed in the roll call and header. Roll call votes are printed without a tally count, so outcomes are recorded as \"passed\". No mover is named for entering executive session. Adjournment time not printed. Benson's attendance is only shown in the letterhead and by the 'Director' references; status not stated. The Director's proposal (signed acknowledgement) was not decided.",
+ "cost_usd": 0.00328422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call vote, mr. bodkin jr., aye; ms. bilotta, aye; mr. lockwood, aye; mr. bakaysa aye, mr. salia, aye."
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "motion to adjourn was made by ms. bilotta and seconded by mr. lockwood."
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "roll call vote, mr. bodkin jr., aye; ms. bilotta, aye; mr. lockwood, aye; mr. bakaysa aye, mr. salia, aye."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "roll call vote, mr. bodkin jr., aye; ms. bilotta, aye; mr. lockwood, aye; mr. bakaysa aye, mr. salia, aye."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "motion to adjourn was made by ms. bilotta and seconded by mr. lockwood."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "not stated",
+   "quote": "marion m. benson, planning director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Planning Director will request a copy of the Board of Selectmen's minutes so the two boards' executive session minutes can be compared.",
+   "quote": "director will request copy of the board of selectmen's minutes."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Concern over Executive Session minutes of April 13, 2010 (joint with Board of Selectmen)",
+   "resolution": "Director to request Selectmen's minutes; no vote",
+   "quote": "concern over the minutes prepared by the planning director for the executive session minutes of april 13, 2010 with",
+   "tags": [
+    "executive session",
+    "minutes",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "O'Brien Homes lawsuit discussion in executive session",
+   "resolution": "discussed; no conclusions presented",
+   "quote": "the board engaged in discussion concerning the lawsuit. mr. bodkins spoke on avenues of settlement.",
+   "tags": [
+    "lawsuit",
+    "O'Brien Homes",
+    "settlement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Executive Session minutes of April 13, 2010 (Board of Selectmen joint session, prepared by the Planning Director)",
+   "where": "text",
+   "quote": "concern over the minutes prepared by the planning director for the executive session minutes of april 13, 2010 with"
+  },
+  {
+   "name": "Board of Selectmen's minutes",
+   "where": "text",
+   "quote": "director will request copy of the board of selectmen's minutes."
+  }
+ ],
+ "tags": [
+  "executive session",
+  "lawsuit",
+  "O'Brien Homes",
+  "joint meeting with Board of Selectmen",
+  "minutes",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

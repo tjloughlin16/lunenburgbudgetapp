@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-05-09",
  "docid": "3607",
@@ -12,23 +12,282 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of April 25, 2011",
+   "motion": "Motion to approve minutes (signed 4-25-11; executive 4-11-11), moved by Ms. Bilotta, seconded by Mr. Bodkin Jr.; the minutes print no result.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. bodkin jr."
+   "quote": "signed- 4-25-11, motion, ms. bilotta, second, mr. bodkin jr."
   },
   {
-   "motion": "Adjourn Regular Session, enter Executive Session, and not return to Regular Session",
+   "motion": "Motion to adjourn Regular Session, enter Executive Session, and not return to Regular Session.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion to adjourn regular session, enter executive session, and not return to regular session, ms. bilotta, second, mr. bodkin jr., all aye"
+   "quote": "motion to adjourn regular session, enter executive session, and not return to regular session, ms. bilotta, second, mr. bodkin jr., all aye, roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1316835
+ "note": "Extracted text with irregular spacing; quotes collapse spacing. The minutes-approval motion is recorded with no stated content or result. The MRPC vote (Mr. Bodkin voted nay) occurred at an MRPC meeting, not this board, so it is not recorded as a vote. No public comment section is printed. The Marsden appointment has no recorded vote.",
+ "cost_usd": 0.00616012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta, vice-chair"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia, mbr."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "absent: nathan j. lockwood"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Mr. Marsden",
+   "role": "presenter for Marsden Engineering (appointment)",
+   "status": "present",
+   "quote": "mr. marsden presented a design for a restaurant with a sushi bar with 20 seats and 15 tables."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board intends to submit Design Standards at the Fall Town Meeting, after further discussion on the lost Article 21.",
+   "quote": "further discussion will be held on the issue and the board intends to submit design standards at the fall town meeting."
+  },
+  {
+   "decision": "The meeting schedule was adjusted for a summer schedule; the May 18 and June 20 and June 27 workshops/meetings were cancelled as listed.",
+   "quote": "the following schedule was adjusted for a summer schedule"
+  },
+  {
+   "decision": "CLURPA was tabled pending further information.",
+   "quote": "clurpa- tabled pending further information"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MMA conference fees charged to Planning Department budget",
+   "what_was_recorded": "MMA fees, including late fees, will be taken out of the Planning Department budget; the budget is described as tight.",
+   "figures_as_printed": [
+    "$725.00"
+   ],
+   "quote": "the mma fees of $725.00 (with late fees) will be taken out the planning department budget."
+  },
+  {
+   "topic": "DPW Building Committee project appropriation and bids",
+   "what_was_recorded": "The project must be re-planned to meet the amount voted at Town Meeting, as the lowest bid exceeded it.",
+   "figures_as_printed": [
+    "$1.1 million"
+   ],
+   "quote": "the $1.1 million dollars voted at town meeting"
+  },
+  {
+   "topic": "DPW Building Committee lowest bid",
+   "what_was_recorded": "The lowest bid came in above the Town Meeting amount, with unexpected higher charges in the electric component.",
+   "figures_as_printed": [
+    "$1.287 million"
+   ],
+   "quote": "the lowest bid came in at $1.287 million."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: Marsden Engineering restaurant design, 332 Massachusetts Avenue",
+   "resolution": "presented; no action recorded",
+   "quote": "mr. marsden presented a design for a restaurant with a sushi bar with 20 seats and 15 tables.",
+   "tags": [
+    "restaurant",
+    "site plan",
+    "Electric Avenue",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motion recorded, no result printed",
+   "quote": "signed- 4-25-11, motion, ms. bilotta, second, mr. bodkin jr.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, MRPC Energy Advisory, DPW Building Committee, 926 Mass Ave.)",
+   "resolution": "reported; no action",
+   "quote": "ms. .bilotta reported that the committee will have to re -plan the project",
+   "tags": [
+    "MRPC",
+    "DPW building",
+    "926 Mass Ave",
+    "salaries"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force: landfill solar farm proposal",
+   "resolution": "reported; Task Force to seek Selectmen approval",
+   "quote": "the task force will seek approval from the board of selectmen.",
+   "tags": [
+    "solar",
+    "landfill",
+    "Green Community"
+   ]
+  },
+  {
+   "topic": "Lunenburg Crossing remediation report",
+   "resolution": "reported; no action",
+   "quote": "the basins were in good shape as of the may 2nd site inspection.",
+   "tags": [
+    "remediation",
+    "basins",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Development status: Emerald Place at Lake Whalom",
+   "resolution": "reported; no action",
+   "quote": "temporary certificate of occupancy was granted for 32 carous el lane pending elevator inspection",
+   "tags": [
+    "housing",
+    "occupancy",
+    "Lake Whalom"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Tri Town Landing, 37 Youngs Road",
+   "resolution": "no report",
+   "quote": "tri town landing, 37 youngs road- no report",
+   "tags": [
+    "Tri Town Landing"
+   ]
+  },
+  {
+   "topic": "MMA fees and Planning budget",
+   "resolution": "reported; fees to come from Planning budget",
+   "quote": "the mma fees of $725.00 (with late fees) will be taken out the planning department budget.",
+   "tags": [
+    "MMA",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting: lost Article 21 (Section 4.6.5)",
+   "resolution": "discussed; Board to pursue Design Standards at Fall Town Meeting",
+   "quote": "the board intends to submit design standards at the fall town meeting.",
+   "tags": [
+    "Article 21",
+    "bylaw",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "CLURPA",
+   "resolution": "tabled",
+   "quote": "clurpa- tabled pending further information",
+   "tags": [
+    "CLURPA"
+   ]
+  },
+  {
+   "topic": "Meeting schedule (summer)",
+   "resolution": "adjusted; workshops cancelled",
+   "quote": "the following schedule was adjusted for a summer schedule",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Data information folder",
+   "resolution": "reviewed",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing",
+   "tags": [
+    "data"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered; separate minutes",
+   "quote": "executive session: separate minutes",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data folder containing items of interest not on agenda",
+   "where": "list",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing"
+  },
+  {
+   "name": "Borrego Solar Systems proposal for the landfill Solar Farm (Lowell MA)",
+   "where": "text",
+   "quote": "copies of the proposal are on file in the planning office."
+  },
+  {
+   "name": "More complete meeting schedule",
+   "where": "text",
+   "quote": "a more complete schedule was discussed and will be attached to these minutes."
+  },
+  {
+   "name": "Article 21 to amend Section 4.6.5 (Annual Town Meeting)",
+   "where": "text",
+   "quote": "the loss of article 21 to amend section 4.6.5."
+  },
+  {
+   "name": "Executive session minutes (separate minutes)",
+   "where": "text",
+   "quote": "executive session: separate minutes"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "restaurant site plan",
+  "Electric Avenue",
+  "solar farm",
+  "landfill",
+  "MRPC",
+  "DPW building",
+  "Article 21",
+  "bylaw",
+  "Design Standards",
+  "summer schedule",
+  "MMA fees",
+  "CLURPA",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "data information"
+ },
+ "dropped_unquoted_by_field": {}
 }

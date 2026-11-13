@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2016-05-12",
  "docid": "1493",
@@ -12,21 +12,24 @@
  },
  "votes": [
   {
-   "motion": "approve April 28 meeting minutes with one typo corrected",
+   "motion": "Approve the April 28 minutes with one typo corrected.",
+   "moved_by": "",
    "seconded_by": "C. Hennessy",
    "outcome": "passed",
    "procedural": true,
    "quote": "chair entertained motion to approve minutes with typo corrected. second by c. hennessy. all attending voted to approve minutes."
   },
   {
-   "motion": "repeal Article 5 Section 13",
+   "motion": "Repeal Art 5 Sec 13.",
+   "moved_by": "",
    "seconded_by": "N. Gray",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion to repeal art 5 sec 13 . second by n. gray. all attending voted unanimously to repeal ."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 6:55pm.",
+   "moved_by": "Chair",
    "seconded_by": "C. Hennessy",
    "outcome": "passed",
    "procedural": true,
@@ -34,6 +37,166 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1091905
+ "note": "Header reads 'Bylaw Review Committee' and the requested board is 'By Law Committee'; recorded as given. Chair and Secretary are identified only by discussion references, not by printed titles. The minutes do not name who moved the April 28 approval or the Art. 5 Sec. 13 repeal. Votes are recorded as 'all attending voted' without a count. Jack (Director of Public Works) and Adam (Land Use Director) are referenced as consulted outside the meeting, not as attendees. No budget figures appear in the text.",
+ "cost_usd": 0.00402472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Bowen",
+   "role": "Member (Chair per minutes text, title not printed)",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Cathy Hennessy",
+   "role": "Member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Michelle Smith",
+   "role": "Member",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Member (Secretary per minutes text, title not printed)",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair recommended the committee ask Town Counsel to review the Article 5 Section 2 right-of-way question (recommendation; no vote recorded).",
+   "quote": "chair recommended the committee ask town counsel for review."
+  },
+  {
+   "decision": "Secretary to summarize all recommendations from meeting minutes held to date for submission to B.O.S.",
+   "quote": "next task is to summarize all recommendations for submission to b.o.s. from meeting minutes held to date by secretary."
+  },
+  {
+   "decision": "Chief of Police to review and revise fines within Article 9.",
+   "quote": "chief of police who will review and revise fines within article 9"
+  },
+  {
+   "decision": "Plan to share recommended changes via an Interim Report to the Board of Selectmen; next meeting set for June 9.",
+   "quote": "plan to share recommended changes via interim report to board of selectmen. next meeting will be june 9."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of April 28",
+   "resolution": "approved with one typo corrected",
+   "quote": "chair entertained motion to approve minutes with typo corrected.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Outreach letter to departments",
+   "resolution": "no action; no comments received",
+   "quote": "k. herrick stated no comments received from outreach letter requesting feedback from the various departments on the bylaws.",
+   "tags": [
+    "outreach",
+    "departments"
+   ]
+  },
+  {
+   "topic": "Art. 5 Sec. 8 and Sec. 13 signs",
+   "resolution": "Sec. 13 repealed; Sec. 8 no action",
+   "quote": "chair spoke with building inspector on art. 5 sec. 8 provision on erecting signs.",
+   "tags": [
+    "signs",
+    "zoning",
+    "repeal"
+   ]
+  },
+  {
+   "topic": "Art. 5 Sec. 2 right of way",
+   "resolution": "Chair recommended asking Town Counsel for review",
+   "quote": "article 5 section 2 question whether it addressed town right of way to extend beyond paved ways.",
+   "tags": [
+    "right of way",
+    "public works"
+   ]
+  },
+  {
+   "topic": "Article 7 permitting",
+   "resolution": "under review by Land Use Director",
+   "quote": "this has been revamped by other towns to regulate: leave permitting to board of selectmen (b.o.s.).",
+   "tags": [
+    "permitting",
+    "selectmen"
+   ]
+  },
+  {
+   "topic": "Article 9 fines",
+   "resolution": "Chief of Police to review and revise fines",
+   "quote": "chief of police who will review and revise fines within article 9",
+   "tags": [
+    "fines",
+    "police"
+   ]
+  },
+  {
+   "topic": "Article 9 Sec. 9 and 10 earth removal",
+   "resolution": "discussed; Land Use Director suggests Planning Board as permitting authority",
+   "quote": "the land use director opined that the planning board may be a more appropriate permitting authority than the b.o.s.",
+   "tags": [
+    "earth removal",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Summary for Board of Selectmen and interim report",
+   "resolution": "Secretary to summarize recommendations; interim report planned",
+   "quote": "codification will be returned soon. plan to share recommended changes via interim report to board of selectmen.",
+   "tags": [
+    "codification",
+    "interim report"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:55pm",
+   "quote": "motion to adjourn by chair at 6:55pm. second by c. hennessy. all attending voted to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Outreach letter requesting feedback from the various departments on the ByLaws",
+   "where": "text",
+   "quote": "k. herrick stated no comments received from outreach letter requesting feedback from the various departments on the bylaws."
+  }
+ ],
+ "tags": [
+  "bylaws",
+  "zoning",
+  "signs",
+  "right of way",
+  "earth removal",
+  "fines",
+  "codification",
+  "Town Counsel",
+  "Board of Selectmen"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

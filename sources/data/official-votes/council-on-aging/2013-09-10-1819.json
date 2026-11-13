@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2013-09-10",
  "docid": "1819",
@@ -12,34 +12,325 @@
  },
  "votes": [
   {
-   "motion": "approve the August 13, 2013 minutes with correction",
+   "motion": "Approve the August 13, 2013 minutes, with correction.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. Wass",
    "outcome": "passed 7-0",
    "procedural": true,
-   "quote": "ms. doyle moved to approve the august 13, 2013 minu tes, with correction. ms. wass seconded. on vote, motion carried, 7 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to approve the august 13, 2013 minu tes, with correction. ms. wass seconded. on vote, motion carried, 7 in favor, 0 opposed."
   },
   {
-   "motion": "recommend to the Board of Selectmen the appointment of Tony Bertone, Shirley Bertone, and Judith Tarbell to the Council on Aging Board",
+   "motion": "Recommend to the Board of Selectmen the appointment of Tony Bertone, Shirley Bertone, and Judith Tarbell to the Council on Aging Board.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. Seeley",
    "outcome": "passed 7-0",
    "procedural": false,
-   "quote": "ms. doyle moved to recommend to the board of select men the appointment of tony bertone, shirley bertone, and judith tarbell to the council on aging board. ms. seeley seconded. on vote, motion carried, 7 in favor, 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to recommend to the board of select men the appointment of tony bertone, shirley bertone, and judith tarbell to the council on aging"
   },
   {
-   "motion": "adjourn the COA meeting",
+   "motion": "Adjourn the COA meeting.",
    "moved_by": "Ms. Doyle",
    "seconded_by": "Ms. Lacka",
    "outcome": "passed 7-0",
    "procedural": true,
-   "quote": "ms. doyle moved to adjourn the coa meeting. ms. la cka seconded. on vote motion carried, 7 in favor 0 opposed",
-   "quote_taken_from_text": true
+   "quote": "ms. doyle moved to adjourn the coa meeting. ms. la cka seconded. on vote motion carried, 7 in favor 0 opposed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1093905
+ "note": "The minutes are marked as approved at the 10/8/13 COA meeting. Text extraction split many words (e.g., 'minu tes', 'Select men'), and quotes keep those splits as printed. The sign-off line repeats the Respectfully Submitted block four times. The attendee name 'Sue Doherty' appears in the roll and 'Susan Doherty' in the signature block; both are recorded as printed. Page 4 is empty. The Bertone guests are listed under Guest; their attendance is taken as present. Vote on the Judith Tarbell recommendation was recorded as motion carried 7-0 with Ms. Seeley seconding.",
+ "cost_usd": 0.007806519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "mary lynn conrad, (chairperson)"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "barbara b rown (vice-chairperson)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director)"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "jane doyle, joyce wass, deb seeley"
+  },
+  {
+   "name": "Whitney Lacka",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "lacka, connie o'dea, and sue doherty"
+  },
+  {
+   "name": "Connie O’Dea",
+   "role": "COA board member",
+   "status": "present",
+   "quote": "lacka, connie o'dea, and sue doherty"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Admin. Asst.",
+   "status": "present",
+   "quote": "and sue doherty (admin. asst.)"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Supporters of Eagle House",
+   "status": "present",
+   "quote": "lloyd carlson (supporters of eagle house)"
+  },
+  {
+   "name": "Tony Bertone",
+   "role": "Perspective COA Board Members",
+   "status": "present",
+   "quote": "tony bertone & shirley bertone, (perspective coa board members)"
+  },
+  {
+   "name": "Shirley Bertone",
+   "role": "Perspective COA Board Members",
+   "status": "present",
+   "quote": "tony bertone & shirley bertone, (perspective coa board members)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Noble will contact Ms. Hansel again to see what other interests she may have that would work, after a mix-up with the original meeting time and her CORI-check and supervision limits.",
+   "quote": "ms. nob le will contact ms. hansel again to see what other interests she may have that would work",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Board agreed to leave the Boston Post Cane criteria unchanged, without too much emphasis on 'active member of the community'.",
+   "quote": "they would like to leave the criteria the same without too much emphasis on"
+  },
+  {
+   "decision": "Board agreed that the Eagle House should not move into the Passios School building, per the Building Re-Use Committee request.",
+   "quote": "after d iscussion all are in agreement that this should not happen.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Ms. Doherty will contact Dave MacDonald to find out where the Bocci Court project timeline stands.",
+   "quote": "ms. doherty will contact him to see where the timeline of this project stands."
+  },
+  {
+   "decision": "Board members felt an annual Director's evaluation was not necessary but wish to incorporate Director's goals into the evaluation in some way.",
+   "quote": "board members felt it was not necessary to do an evaluation on a yearly basis but"
+  },
+  {
+   "decision": "Subcommittees set meeting dates: Director's Evaluation October 8 at 9:30AM, Advocacy October 1 at 9:30AM, Finance October 8 at 11:45AM.",
+   "quote": "subcommittees discussed setting meeting dates as follows:"
+  },
+  {
+   "decision": "If the new COA candidates are approved by the BOS, they will be placed on subcommittees at the October meeting.",
+   "quote": "if the new coa candidates are approved by the bos, they will all be placed on subcommittees at the october meeting."
+  },
+  {
+   "decision": "Agendas will be sent to the Town Clerk for posting.",
+   "quote": "agendas will be sent to the town clerk for posting."
+  },
+  {
+   "decision": "Ms. Doherty will contact the publisher, Liturgical Press, for information on viewing the COA newsletter online.",
+   "quote": "ms. doherty will contact the publisher, liturgical press, for that information."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bocci Court project funding behind Eagle House",
+   "what_was_recorded": "The Town Manager informed Ms. Noble that about $4999.00 can be encumbered to aid the Bocci Court project.",
+   "figures_as_printed": [
+    "$4999.00"
+   ],
+   "quote": "approximately $4999.00 can be encumbered to aid with this project."
+  },
+  {
+   "topic": "Breakfast program suggested donation",
+   "what_was_recorded": "A new MOC Nutrition breakfast program starting October 1, 2013 at the Eagle House has a suggested donation cost.",
+   "figures_as_printed": [
+    "$2.25 - $3.00"
+   ],
+   "quote": "the suggested donation cost will be $2.25 - $3.00."
+  },
+  {
+   "topic": "Capital Plan request for Eagle House carpets and floor tiles",
+   "what_was_recorded": "Ms. Noble will submit a Capital Plan request of approximately $10,000 for replacing carpets and floor tiles at the Eagle House.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "ms. noble will submit approximately $10,000 for replacement of carpets and floor tiles at the eagle house"
+  },
+  {
+   "topic": "Cost to tear down Passios School building",
+   "what_was_recorded": "The Building Re-Use Committee was told the cost to tear down the Passios School building would be approximately $750,000.",
+   "figures_as_printed": [
+    "$750,000"
+   ],
+   "quote": "be approximately $750,000."
+  },
+  {
+   "topic": "Funding for extra Outreach hours",
+   "what_was_recorded": "Extra Outreach hours at the Eagle House are funded through an increase in the state Formula Grant; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "an increase in the formula grant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and introductions",
+   "resolution": "opened at 10:30AM",
+   "quote": "ms. conrad (chairperson) opened the meeting at 10:30am.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of August 13, 2013",
+   "resolution": "approved with correction",
+   "quote": "ms. doyle moved to approve the august 13, 2013 minu tes, with correction.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "informational; several items noted, no action recorded",
+   "quote": "1. finance/informational report:",
+   "tags": [
+    "director",
+    "eagle house",
+    "outreach",
+    "kitchen",
+    "breakfast program",
+    "capital plan",
+    "boston post cane"
+   ]
+  },
+  {
+   "topic": "Old Business: Bocci Court, Monty Tech stairs, Building Re-Use Committee",
+   "resolution": "discussed; staff to follow up",
+   "quote": "recreation area behind eagle house: lunenburg resident dave macdonald",
+   "tags": [
+    "bocci court",
+    "monty tech",
+    "building re-use",
+    "passios school"
+   ]
+  },
+  {
+   "topic": "Recommendation of new COA board members",
+   "resolution": "recommended to Board of Selectmen",
+   "quote": "ms. doyle moved to recommend to the board of select men the appointment of tony bertone, shirley bertone, and judith tarbell to the council on aging",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Sub-committee reorganization and meeting dates",
+   "resolution": "reorganized subcommittees; meeting dates set; no vote recorded",
+   "quote": "finance: deb seely, & connie o'dea",
+   "tags": [
+    "subcommittees",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "received; no action recorded",
+   "quote": "a request from montachusett home care was read",
+   "tags": [
+    "correspondence",
+    "volunteer"
+   ]
+  },
+  {
+   "topic": "General discussion: COA newsletter online",
+   "resolution": "Ms. Doherty to contact publisher",
+   "quote": "ms. doherty will contact the publisher, liturgical press, for that information.",
+   "tags": [
+    "newsletter"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:55AM",
+   "quote": "meeting adjourned at 11:55am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request from Montachusett Home Care for a volunteer to sit on their Board of Directors",
+   "where": "list",
+   "quote": "a request from montachusett home care was read"
+  },
+  {
+   "name": "August 13, 2013 COA minutes",
+   "where": "text",
+   "quote": "ms. doyle moved to approve the august 13, 2013 minu tes, with correction."
+  },
+  {
+   "name": "Executive Office of Elder Affairs Annual report",
+   "where": "text",
+   "quote": "she will have copies available for the coa to review when finished."
+  },
+  {
+   "name": "Boston Post Cane Criteria (developed 1998)",
+   "where": "text",
+   "quote": "the boston post cane criteria was developed"
+  },
+  {
+   "name": "Capital Plan requests",
+   "where": "text",
+   "quote": "capital plan requests have been sent to all town"
+  },
+  {
+   "name": "COA newsletter (publisher Liturgical Press)",
+   "where": "text",
+   "quote": "ms. doherty will contact the publisher, liturgical press, for that information."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "Eagle House",
+  "minutes",
+  "appointments",
+  "subcommittees",
+  "director report",
+  "Boston Post Cane",
+  "bocci court",
+  "building re-use",
+  "formula grant",
+  "budget",
+  "Passios School"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2012-03-06",
  "docid": "2530",
@@ -12,19 +12,137 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from February 6, 2012 as amended",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 2/6/12 as amended.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from 2/6/12 approved as amended."
   },
   {
-   "motion": "Elect Pat Slattery as Chairman, Becky Lantry as Vice Chair, and Damon Mcluaid as Secretary",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "as vated upon this meeting of march 6, 2012, by all five members of the commission, the officers are as follows: chairman - pat slattery vice chair - becky lantry secretary - damon mcluaid"
+   "motion": "Elect the officers: Chairman Pat Slattery, Vice Chair Becky Lantry, Secretary Damon Mcluaid.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "as vated upon this meeting of march 6, 2012, by all five members of the commission, the officers are as follows:"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text with minor transcription errors (e.g., \"vated\" for \"voted\")",
- "cost_usd": 0.11296049999999999
+ "note": "OCR text from a macOS Vision scan with many errors (e.g. 'Meting ige 316/202', 'vated', 'wark', 'Tralleys', 'Amary', 'Damon Mcluaid' vs attendance 'Daman McQuaid'); quotes are copied as printed. The minutes approval and officer election are recorded without a printed mover, seconder, or tally; the officer election is recorded as 'by all five members' with no count. The adjournment at 8:00pm has no printed motion and is not recorded as a vote. The unnamed Jones House couple who 'is present' is not named, so not listed as an attendee. Correspondence heading is printed with nothing under it.",
+ "cost_usd": 0.00371132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pat Slattery",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, richard mcgrath, daman mcquaid, amory phelps"
+  },
+  {
+   "name": "Becky Lantry",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, richard mcgrath, daman mcquaid, amory phelps"
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, richard mcgrath, daman mcquaid, amory phelps"
+  },
+  {
+   "name": "Daman McQuaid",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, richard mcgrath, daman mcquaid, amory phelps"
+  },
+  {
+   "name": "Amory Phelps",
+   "status": "present",
+   "quote": "members present: pat slattery, becky lantry, richard mcgrath, daman mcquaid, amory phelps"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Damon is to contact Chris Skelly at Mass Historical about the specifics of online submission to MACRIS (Town Wide Survey).",
+   "quote": "damon to contact chris skelly at mass historical on the specifics of online submission to macris"
+  },
+  {
+   "decision": "Damon is to write the May newspaper article.",
+   "quote": "damon to write for may"
+  },
+  {
+   "decision": "The commission expressed approval of the Jones House couple's scope of work and directed them to tonight's Selectmen's meeting, where the topic is on the executive session agenda.",
+   "quote": "the commission expressed its approval of their scope of wark and directed them to"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 2/6/12",
+   "resolution": "approved as amended",
+   "quote": "minutes from 2/6/12 approved as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Wide Survey",
+   "resolution": "action assigned to Damon (contact Mass Historical re MACRIS online submission)",
+   "quote": "damon to contact chris skelly at mass historical on the specifics of online submission to macris",
+   "tags": [
+    "town wide survey",
+    "MACRIS"
+   ]
+  },
+  {
+   "topic": "Newspaper Articles",
+   "resolution": "noted; March article published, April article in progress, May article assigned to Damon",
+   "quote": "amary had her article published for march",
+   "tags": [
+    "newspaper articles",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Jones House",
+   "resolution": "approved scope of work; couple directed to Selectmen's executive session",
+   "quote": "the commission expressed its approval of their scope of wark and directed them to",
+   "tags": [
+    "Jones House",
+    "Selectmen"
+   ]
+  },
+  {
+   "topic": "Appointments (officers)",
+   "resolution": "officers appointed",
+   "quote": "as vated upon this meeting of march 6, 2012, by all five members of the commission, the officers are as follows:",
+   "tags": [
+    "officers",
+    "appointments"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Jones House proposal (scope of work)",
+   "where": "text",
+   "quote": "the couple that submitted the proposal is present."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "town wide survey",
+  "MACRIS",
+  "newspaper articles",
+  "Jones House",
+  "Selectmen",
+  "officer appointments",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-02-13",
  "docid": "3721",
@@ -12,15 +12,266 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn, second, mr. lockwood, adjourned 8:00 pm."
+   "quote": "mr. bodkin jr., motion to adjourn, second, mr. lockwood, adjourned 8:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0996025
+ "note": "Minutes are a continuation of a public hearing with no recorded roll-call tally. The only motion (adjournment) records no result, so outcome is \"not stated\". Several items are consensus or agreement without a vote and are recorded as decisions. Text extraction has broken words (for example \"Kevi n\", \"correspondenc e\"); quotes were copied from the readable text with spacing collapsed. Mr. Cleaves and Attorney Borenstein appear without first names in the minutes. No dollar figures appear in the text.",
+ "cost_usd": 0.00675102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, vice chair, thomas w. bodkin, jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, vice chair, thomas w. bodkin, jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, vice chair, thomas w. bodkin, jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: joanna l. bilotta, vice chair, thomas w. bodkin, jr., nathan j. lockwood, marion m. benson, planning director"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel, joel bard"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "applicant/developer, O’Brien Homes Inc.",
+   "status": "present",
+   "quote": "mr. o'brien discussed park/playground space."
+  },
+  {
+   "name": "Mr. Cleaves",
+   "role": "Whitman & Bingham Associates, representing the applicant",
+   "status": "present",
+   "quote": "also represented by mr. cleaves, whitman & bingham associates and attorney borenstein, johnson and borenstein."
+  },
+  {
+   "name": "Attorney Borenstein",
+   "role": "Johnson and Borenstein, representing the applicant",
+   "status": "present",
+   "quote": "also represented by mr. cleaves, whitman & bingham associates and attorney borenstein, johnson and borenstein."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road - concerned with watershed in area, particularly mulpus brook."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to continue the Aro Estates hearing to February 27, 2013, 6:30 PM, at Town Hall.",
+   "quote": "board consensus was to continue hearing to february 27, 2013, 6:30 pm, town hall."
+  },
+  {
+   "decision": "Applicant and Board agreed that the Board's deadline for final action on Aro Estates 1 – 10 is April 23, 2013; applicant to put it in writing and file with the Town Clerk.",
+   "quote": "applicant and board agreed that the board's deadline for final action on aro estates 1 - 10 will be april 23, 2013."
+  },
+  {
+   "decision": "Correspondence to continue between Attorney Bard and Attorneys Johnson and Borenstein to reach agreement on a submittal date.",
+   "quote": "correspondence will continue between attorney bard and attorneys johnson and borenstein to reach an agreement."
+  },
+  {
+   "decision": "Attorney Bard to analyze how a playground easement would affect lot square footage.",
+   "quote": "attorney bard will have t o analyze.",
+   "quote_taken_from_text": true
+  },
+  {
+   "decision": "Attorney Borenstein suggested he and Attorney Bard exchange positions on the issues before the next continuation.",
+   "quote": "attorney borenstein suggested he and attorney bard exchange their positions on the issues prior to the next continuation so they come prepared for discussion."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "",
+   "topic": "watershed and blasting concerns near Mulpus Brook",
+   "quote": "paula bertram, 312 townsend harbor road - concerned with watershed in area, particularly mulpus brook."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Hearing continuation opening and schedule",
+   "resolution": "opened; continued to February 27, 2013",
+   "quote": "board consensus was to continue hearing to february 27, 2013, 6:30 pm, town hall.",
+   "tags": [
+    "hearing",
+    "continuation"
+   ]
+  },
+  {
+   "topic": "Submittal and decision dates",
+   "resolution": "no action; correspondence to continue, end-April decision date discussed",
+   "quote": "an actual submittal date has not been agreed upon.",
+   "tags": [
+    "schedule",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Applicant's documents and waiver requests",
+   "resolution": "presented; waivers discussed, Board feedback sought",
+   "quote": "mr. cleaves presented three documents to the board",
+   "tags": [
+    "waivers",
+    "traffic",
+    "sequencing"
+   ]
+  },
+  {
+   "topic": "Park, playground and access easements",
+   "resolution": "discussed; Attorney Bard to analyze",
+   "quote": "five parks are proposed throughout the ten subdivisions.",
+   "tags": [
+    "parks",
+    "easements",
+    "conservation land"
+   ]
+  },
+  {
+   "topic": "Stone wall and possible adverse possession",
+   "resolution": "discussed; applicant says it is his property",
+   "quote": "mr. o'brien felt that has nothing to do with the review as the stone wall is his property.",
+   "tags": [
+    "abutter",
+    "property line"
+   ]
+  },
+  {
+   "topic": "Public comment on watershed and blasting",
+   "resolution": "comment received",
+   "quote": "paula bertram, 312 townsend harbor road - concerned with watershed in area, particularly mulpus brook.",
+   "tags": [
+    "watershed",
+    "blasting",
+    "water table"
+   ]
+  },
+  {
+   "topic": "Zoning freeze and legal questions",
+   "resolution": "discussed; counsels to exchange positions before next continuation",
+   "quote": "attorney bard went on to note that the filing is a factual question, but the zoning issue is a legal question.",
+   "tags": [
+    "zoning freeze",
+    "bylaw",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Waiver review and reviewing engineer",
+   "resolution": "discussed; engineer to recommend on waivers",
+   "quote": "ms. benson noted that the reviewing engineer will also make his recommendations as to the waivers to the board.",
+   "tags": [
+    "waivers",
+    "engineer review"
+   ]
+  },
+  {
+   "topic": "Drainage information and review time",
+   "resolution": "continued; drainage information still awaited",
+   "quote": "concerned about adequate review time for the reviewing engineer.",
+   "tags": [
+    "drainage",
+    "review time"
+   ]
+  },
+  {
+   "topic": "Final action deadline",
+   "resolution": "deadline set for April 23, 2013",
+   "quote": "applicant and board agreed that the board's deadline for final action on aro estates 1 - 10 will be april 23, 2013.",
+   "tags": [
+    "deadline"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:00 PM",
+   "quote": "mr. bodkin jr., motion to adjourn, second, mr. lockwood, adjourned 8:00 pm.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Whitman & Bingham Associates correspondence dated February 13, 2013 (individual waiver requests for each subdivision)",
+   "where": "list",
+   "quote": "noting individual waiver requests for each subdivision"
+  },
+  {
+   "name": "Traffic impact update from Abend Associates dated February 11, 2013",
+   "where": "list",
+   "quote": "2) traffic impact update from abend associates dated february 11, 2013."
+  },
+  {
+   "name": "Whitman & Bingham Associates memo dated February 13, 2013 (sequencing of proposed subdivisions)",
+   "where": "list",
+   "quote": "3) whitman & bingham associates memo dated february 13, 2013, stating sequencing of the proposed subdivisions."
+  },
+  {
+   "name": "Aro Estates subdivision applications 1 – 10",
+   "where": "text",
+   "quote": "to hear and discuss applications for ten subdivisions totaling 135 lots."
+  },
+  {
+   "name": "Zoning Bylaw Section 5.6",
+   "where": "text",
+   "quote": "if the board denies the application as a proposal attempting to circumvent zoning bylaw section 5.6."
+  },
+  {
+   "name": "Written deadline extension for Aro Estates 1 – 10, to be filed with the Town Clerk",
+   "where": "text",
+   "quote": "mr. o'brien put same in writing and this will be filed with the town clerk."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "Aro Estates",
+  "Howard Street",
+  "public hearing continuation",
+  "waivers",
+  "zoning freeze",
+  "drainage",
+  "traffic",
+  "watershed",
+  "adverse possession",
+  "legal"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. cleaves presented three documents to the board"
+ },
+ "dropped_unquoted_by_field": {}
 }

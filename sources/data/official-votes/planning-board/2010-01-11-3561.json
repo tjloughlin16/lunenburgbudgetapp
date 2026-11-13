@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-01-11",
  "docid": "3561",
@@ -12,39 +12,202 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session for litigation discussion and return to general session",
+   "motion": "Go into executive session for discussion of ongoing litigation and return to general session.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. bodkin jr., roll c all vote, mr. bakaysa, aye, ms. bilotta, aye, mr. bodkin jr., aye, mr. saiia, aye, mr. lockwood, aye."
+   "quote": "chair requested motion to go into executive session for the purpose of discussion of on-going litigation and return to gen eral session"
   },
   {
-   "motion": "Approve minutes from December 14, 2009",
+   "motion": "Approve the minutes of 12/14/09.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. saiia, motion passed."
+   "quote": "approved 12/14/09, motion, ms. bilotta, second, mr. saiia, motion passed."
   },
   {
-   "motion": "Approve Executive minutes from December 14, 2009",
+   "motion": "Approve the executive session minutes of 12/14/09.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. saiia, motion passed."
+   "quote": "approved executive 12/14/09 , motion, ms. bilotta, second, mr. saiia, motion passed."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Approve the minutes of 12/29/09.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion, mr. saiia, second, mr. bodkin j r., motion passed."
+  },
+  {
+   "motion": "Adjourn the meeting at 9:00 PM.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, mr. bodkin jr., second, mr. saiia, motion passed."
+   "quote": "adjournment: 9:00 pm, motion, mr. bodkin jr., second, mr. saiia, motion passed."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Top of page has Unicode escape sequences from OCR processing (U+0075, U+0041, etc.) but the actual minutes text below is readable. One scanning artifact noted: \"Roll C all\" should be \"Roll Call\" (space in the middle of the word).",
- "cost_usd": 0.1295715
+ "dropped_unquoted": 0,
+ "note": "Text extract, not a scan. Spacing artifacts in the extract (e.g., 'B odkin', 'Mar ion', 'gen eral') are copied as printed in quotes; names are cleaned in the name field. Roles are printed only for Benson; other members have no printed role. The minutes record no result word for the executive session motion; the 5-0 count is from the roll call. Executive session minutes are separate and not included. No public comment, dollar figures or transfers are recorded.",
+ "cost_usd": 0.005814519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. b odkin jr., robert j. saiia"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. b odkin jr., robert j. saiia"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "",
+   "status": "present",
+   "quote": "emerick r. bakaysa, joanna l. bilotta, thomas w. b odkin jr., robert j. saiia"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "robert j. saiia, nathan j. lockwood, mar ion m. benson, planning director"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "robert j. saiia, nathan j. lockwood, mar ion m. benson, planning director"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "robert j. saiia, nathan j. lockwood, mar ion m. benson, planning director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes not initialed by board members will go to the 1/25/10 meeting for initialing.",
+   "quote": "minutes will go to 1/25/ 10 meeting for initialing."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: litigation, O'Brien Homes",
+   "resolution": "entered executive session; see separate minutes",
+   "tags": [
+    "litigation",
+    "executive session"
+   ],
+   "quote": "executive session: litigation, o'brien homes- see separate minutes."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 12/14/09, 12/14/09 executive, and 12/29/09 minutes; initialing deferred to 1/25/10",
+   "tags": [
+    "minutes approval"
+   ],
+   "quote": "approved 12/14/09, motion, ms. bilotta, second, mr. saiia, motion passed."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Capital Planning Committee interviewing departments on Form B's",
+   "tags": [
+    "capital planning"
+   ],
+   "quote": "director reported that committee was interviewing town departments regarding their form b's."
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "no action; Green Community Task Force meeting 1/12/2010; SMEs status request to Board of Selectmen",
+   "tags": [
+    "green community",
+    "peer review"
+   ],
+   "quote": "consultant, per grant, will pre sent to task force."
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "no action; Emerald Place, Stone Farm, Tri Town Landing updates",
+   "tags": [
+    "development",
+    "fire lane"
+   ],
+   "quote": "emerald place at lake whalom- work is moving rapidly on the site."
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action; referred to reports above",
+   "tags": [
+    "unfinished business"
+   ],
+   "quote": "see above planning director's reports and developme nt status reports."
+  },
+  {
+   "topic": "Data information",
+   "resolution": "presented Massachusetts Taxpayer Foundation material; noted open meeting item",
+   "tags": [
+    "open meeting",
+    "data"
+   ],
+   "quote": "presented massachusetts taxpayer foundation and also noted open meeting by attorney dan hill."
+  },
+  {
+   "topic": "Executive session if required",
+   "resolution": "see separate minutes",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "executive session if required: see separate minutes"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 9:00 pm, motion, mr. bodkin jr., second, mr. saiia, motion passed."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Massachusetts Taxpayer Foundation (presentation)",
+   "where": "text",
+   "quote": "presented massachusetts taxpayer foundation and also noted open meeting by attorney dan hill."
+  },
+  {
+   "name": "Form B's (town department capital forms)",
+   "where": "text",
+   "quote": "director reported that committee was interviewing town departments regarding their form b's."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development status",
+  "litigation",
+  "executive session",
+  "minutes approval",
+  "green community",
+  "capital planning",
+  "fire lane",
+  "open meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

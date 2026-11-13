@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2011-04-25",
  "docid": "3603",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from April 11, 2011",
+   "motion": "Approve (sign) the minutes of 4-11-11.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "signed- 4-11-11, motion, mr. saiia, second, mr. bodkin jr.,"
+   "quote": "signed- 4-11-11, motion, mr. saiia, second, mr. bodkin jr., executive"
   },
   {
-   "motion": "Approve the executive session minutes from March 28, 2011",
+   "motion": "Approve the executive session minutes of 3-28-11.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "executive 3 -28-11, motion , mr. saiia, second, mr. bodkin jr.,"
+   "quote": "executive 3 -28-11, motion , mr. saiia, second, mr. bodkin jr."
   },
   {
-   "motion": "Approve the Zoning Articles Public Hearing minutes from April 11, 2011",
+   "motion": "Approve the minutes of the Zoning Articles Public Hearing of 4-11-11.",
    "moved_by": "Mr. Saiia",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "not stated",
@@ -36,15 +36,296 @@
    "quote": "zoning articles public hearing 4-11-11, motion, mr. saiia, second, mr. bodkin jr."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:30 PM.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, mr. lockwood, second, mr. saiia, all aye, adjourned 9:30 pm"
+   "quote": "motion, mr. lockwood, second, mr. saiia, all aye, adjourned 9:30 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.12057949999999999
+ "note": "Text is a plain extraction with broken word spacing (e.g. 'Rober t', 'th e', 'ther e'); quotes were copied as printed with whitespace collapsed. No vote counts are printed; the three minutes-approval motions and the adjournment have no tally beyond 'all aye' for adjournment. The Data folder item is a sentence, not a headed list; documents_list is marked printed on that basis.",
+ "cost_usd": 0.007105019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "emerick r. bakaysa, chair"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta, vice-chair"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "robert j. saiia, mbr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Jessie Johnson",
+   "role": "from David E. Ross Associates",
+   "status": "present",
+   "quote": "jessie johnson from david e. ross associates presented the site"
+  },
+  {
+   "name": "Gary Crossen",
+   "status": "present",
+   "quote": "gary crossen, jack sullivan, and jay hoag"
+  },
+  {
+   "name": "Jack Sullivan",
+   "status": "present",
+   "quote": "gary crossen, jack sullivan, and jay hoag"
+  },
+  {
+   "name": "Jay Hoag",
+   "status": "present",
+   "quote": "gary crossen, jack sullivan, and jay hoag"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "Designing Engineer, Whitman & Bingham",
+   "status": "present",
+   "quote": "designing engineer anthony cleaves from whitman & bingham"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "citizen, spoke on proposed bylaw",
+   "status": "present",
+   "quote": "mr. david rodgers spoke on several issues"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board determined, verified with Town Counsel, that no public hearing is needed for the Emerald Place villa design change because neither infrastructure nor unit number changes.",
+   "quote": "is no reason to hold a public hearing."
+  },
+  {
+   "decision": "Mr. Bodkin Jr. will arrange a site visit with Mr. Hoag for the Emerald Place design change.",
+   "quote": "he will make arrangements with mr. hoag."
+  },
+  {
+   "decision": "CLURPA item tabled.",
+   "quote": "clurpa- tabled meeting schedule: april 2011-"
+  },
+  {
+   "decision": "The 4-27-11 Master Planning Workshop was cancelled, with cancellation to be posted in the morning.",
+   "quote": "4-27-11, master planning workshop - cancelled - will post cancellation in am."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW Building Committee bids",
+   "what_was_recorded": "General bids for the DPW building came in over the $1.1 million awarded at Town Meeting, and the committee must review the plan for cuts or return to Town Meeting for more funding.",
+   "figures_as_printed": [
+    "$ 1.287 million",
+    "$1.1 million"
+   ],
+   "quote": "general bids came in at $ 1.287 million ."
+  },
+  {
+   "topic": "DPW Building Committee bids over appropriation",
+   "what_was_recorded": "The bid total is over the amount awarded at Town Meeting.",
+   "figures_as_printed": [
+    "$1.1 million"
+   ],
+   "quote": "is over the $1.1 million awarded at town meeting."
+  },
+  {
+   "topic": "Summer Street Alternative Analysis funding",
+   "what_was_recorded": "The Alternative Analysis is funded by a Town Meeting appropriation; the MRPC project is funded through a grant. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the alternative analysis funded by town meeting through an appropriation"
+  },
+  {
+   "topic": "Legal expenses",
+   "what_was_recorded": "The breakdown of legal expenses has not yet been received from Town Counsel. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the breakdown of legal expenses has not yet been received from town counsel."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. David Rodgers",
+   "stated_role": "",
+   "topic": "proposed bylaw Section 4.6.5 Design Standards",
+   "quote": "mr. david rodgers spoke on several issues with the propose d bylaw."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointments: PSG Realty 393-435, LLC, 151 Leominster-Shirley Road",
+   "resolution": "presented site layout plan; Tech meeting set for May 11, 2011",
+   "quote": "a tech meeting will be held on may 11, 2011."
+  },
+  {
+   "topic": "Appointments: Emerald Place at Lake Whalom",
+   "resolution": "villa design presented; no public hearing needed; site visit to be arranged",
+   "quote": "is no reason to hold a public hearing."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "motions recorded for signing of 4-11-11, 3-28-11 executive and 4-11-11 zoning hearing minutes; no result printed",
+   "quote": "signed- 4-11-11, motion, mr. saiia, second, mr. bodkin jr., executive"
+  },
+  {
+   "topic": "Committee reports (MJTC, MRPC, DPW Building Committee, Capital Planning Committee)",
+   "resolution": "reported; no action",
+   "quote": "dpw building commit tee- ms. bilotta reported th e general bids came in at $ 1.287 million ."
+  },
+  {
+   "topic": "Planning Director's reports/new business (332 and 925 Massachusetts Avenue)",
+   "resolution": "reported; no action",
+   "quote": "director noted that a new plan for siting asian imperial garden will be submitted shortly"
+  },
+  {
+   "topic": "Summer Street",
+   "resolution": "reported; no action",
+   "quote": "th e alternative analysis project will get under way after town meeting.",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Green Community Task Force",
+   "resolution": "reported; no action",
+   "quote": "director noted solar panels are being placed on the middle school."
+  },
+  {
+   "topic": "Development status reports (Emerald Place, Tri Town Landing)",
+   "resolution": "reported; no action",
+   "quote": "representative benson will need these figures as they relate to chapter 40s."
+  },
+  {
+   "topic": "Lunenburg Estates, 1229 Massachusetts Avenue (40B)",
+   "resolution": "reported extended approval through September 20, 2011",
+   "quote": "the extended approval for this 40b project will run through september 20, 2011."
+  },
+  {
+   "topic": "Annual Town Meeting Section 4.6.5 Design Standards",
+   "resolution": "Board opened for citizen comment; discussion; fencing item 4.6.5.2.n) deleted from proposed bylaw",
+   "quote": "the discus sion concerned fencing 4.6.5.2.n) 3 . resulted in deleting it from the proposed bylaw .",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "CLURPA",
+   "resolution": "tabled",
+   "quote": "clurpa- tabled meeting schedule: april 2011-"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "reviewed; 4-27-11 workshop cancelled",
+   "quote": "4-27-11, master planning workshop - cancelled - will post cancellation in am."
+  },
+  {
+   "topic": "Data information folder",
+   "resolution": "reviewed",
+   "quote": "consisting of various data information - reviewed"
+  },
+  {
+   "topic": "Member information and issues",
+   "resolution": "Director noted Take Back Day memo and that legal expense breakdown not yet received; no action",
+   "quote": "director noted the breakdown of legal expenses has not yet been received from town counsel."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:30 PM",
+   "quote": "motion, mr. lockwood, second, mr. saiia, all aye, adjourned 9:30 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data folder containing items of interest not on agenda",
+   "where": "list",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing"
+  },
+  {
+   "name": "Site layout plan (Powell Stone & Gravel, 151 Leominster Shirley Road)",
+   "where": "text",
+   "quote": "presented the site layout plan to the planning board"
+  },
+  {
+   "name": "Development Plan Review (PSG Realty 393-435, LLC)",
+   "where": "text",
+   "quote": "a development plan review has been submitted."
+  },
+  {
+   "name": "ANR Plan approved 2009",
+   "where": "text",
+   "quote": "an anr plan was approved in 2009 for this lot"
+  },
+  {
+   "name": "Mr. Caselden's report",
+   "where": "text",
+   "quote": "director presented mr. caselden's r eport noting the age and count of school children"
+  },
+  {
+   "name": "Alternative Analysis (Summer Street)",
+   "where": "text",
+   "quote": "the alternative analysis funded by town meeting through an appropriation"
+  },
+  {
+   "name": "Bid Documents for the Solar Field at the landfill",
+   "where": "text",
+   "quote": "list of companies requesting bid documents for the solar field at the landfill"
+  },
+  {
+   "name": "Memo on Take Back Day for discarded medications",
+   "where": "text",
+   "quote": "director noted the memo on take back day for discarded medications"
+  },
+  {
+   "name": "Human Resource study for MRPC",
+   "where": "text",
+   "quote": "mr. bodkin jr. reported on the human resource study for mrpc"
+  },
+  {
+   "name": "Proposed bylaw, Section 4.6.5 Design Standards",
+   "where": "text",
+   "quote": "section 4.6.5., design standards"
+  }
+ ],
+ "tags": [
+  "site plan review",
+  "Emerald Place",
+  "Powell Stone & Gravel",
+  "40B",
+  "design standards bylaw",
+  "Town Meeting",
+  "DPW building",
+  "bids",
+  "Summer Street",
+  "solar",
+  "legal expenses",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "data information"
+ },
+ "dropped_unquoted_by_field": {}
 }

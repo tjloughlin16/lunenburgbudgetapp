@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2015-06-02",
  "docid": "693",
@@ -12,23 +12,221 @@
  },
  "votes": [
   {
-   "motion": "Lou continue to serve as Chairman of the Board",
-   "moved_by": "Matt",
-   "seconded_by": "Rich",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "matt motioned that lou continue to serve as chairman of the board and was seconded by rich."
-  },
-  {
-   "motion": "Elevate the valuation factor for preliminary billing to approximately 102.5 percent",
+   "motion": "Matt moved that Lou continue to serve as Chairman of the Board.",
    "moved_by": "Matt",
    "seconded_by": "Rich",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "matt motioned to elevate the valuation factor for the preliminary billing contingent on the possibility of this adjustment within the munis process system. rich seconded the motion."
+   "quote": "matt motioned that lou continue to serve as chairman of the board and was seconded by rich."
+  },
+  {
+   "motion": "Matt moved to elevate the valuation factor for the preliminary billing, contingent on the possibility of this adjustment within the Munis process system.",
+   "moved_by": "Matt",
+   "seconded_by": "Rich",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "matt motioned to elevate the valuation factor for the preliminary billing contingent on the possibility of this adjustment within the munis process system."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction via macOS Vision. Text quality issues on page 1 regarding Social Security benefits statement do not affect vote records.",
- "cost_usd": 0.1177785
+ "note": "The minutes header says the meeting was held June 5, 2015, but the meeting date supplied is 2015-06-02; recorded as supplied. OCR text is garbled in places (the Social Security sentence, the 'bowfits' line, the quarter reference '21°', and the page 3 deferral figures), so figures from those passages are as legible only. Neither motion records a result, and no vote is recorded for the approvals, the supplemental bills, or adjournment. Pages 2-3 are the attached FY16 exemption and deferral guideline; their dollar figures are recorded under the guideline budget item. No public comment is recorded.",
+ "cost_usd": 0.00622482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco; board member, matt papini, sr., newly elected member, richard h. letarte, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Matt Papini, Sr.",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco; board member, matt papini, sr., newly elected member, richard h. letarte, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Richard H. Letarte",
+   "role": "Newly Elected Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco; board member, matt papini, sr., newly elected member, richard h. letarte, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman, louis franco; board member, matt papini, sr., newly elected member, richard h. letarte, regional assessor, harald scheid and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "present: chairman, louis franco; board member, matt papini, sr., newly elected member, richard h. letarte, regional assessor, harald scheid and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and the May 5, 2015 minutes (no motion or vote count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and may 5, 2015 minutes."
+  },
+  {
+   "decision": "The Board approved the 11 supplemental billing bills, to be committed on June 15, 2015 (no motion or vote count recorded).",
+   "quote": "the board approved these bills and they will be committed on june 15, 2015."
+  },
+  {
+   "decision": "Louise Paquette to consult with Munis about setting back the billing system so the valuation factor can be adjusted before continuing.",
+   "quote": "louise stated that she would consult with munis in regards to setting back the billing system"
+  },
+  {
+   "decision": "Louise to forward a copy of the FY16 eligibility guideline to the Senior Center.",
+   "quote": "louise will be forwarding a copy of this guideline to the senior center."
+  },
+  {
+   "decision": "George Bourgault, Associate Assessor, to report on valuations and ratio statistics at the next meeting.",
+   "quote": "george bourgault, associate assessor will report on valuations and ratio statistics at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental billing for newly occupied properties",
+   "what_was_recorded": "The Board reviewed 11 newly permitted properties with a total to be committed of $9,433.09.",
+   "figures_as_printed": [
+    "$9,433.09"
+   ],
+   "quote": "the total to be committed is $9,433.09."
+  },
+  {
+   "topic": "FY16 preliminary tax calculation / valuation factor",
+   "what_was_recorded": "The estimated tax percentage is typically 50.00 percent; due to New Growth Harald suggested raising the valuation factor by 2½ or more, approx. 102.5%.",
+   "figures_as_printed": [
+    "50.00 percent",
+    "2½ or more",
+    "approx. 102.5%"
+   ],
+   "quote": "the percentage in calculating the estimated tax amount is typically 50.00 percent"
+  },
+  {
+   "topic": "High School/Middle School construction on FY16 tax bills",
+   "what_was_recorded": "The 1st and 2nd quarter tax bills were to include an additional amount for construction of the new High School/Middle School project, offsetting the impact on the 3rd and 4th quarter bills; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "should include an additional amount for the construction of the new high school/middle school project"
+  },
+  {
+   "topic": "FY16 property tax exemptions and deferrals guideline",
+   "what_was_recorded": "The guideline sets out exemption amounts, income and asset limits, and tax deferral interest rates for FY16.",
+   "figures_as_printed": [
+    "$750.00",
+    "$307.00",
+    "$400.00",
+    "$1,000.00",
+    "$500.00",
+    "$29,200.00",
+    "$36,700.00",
+    "$48,800.00",
+    "$67,300.00",
+    "$61,000.00",
+    "$20,000",
+    "4%",
+    "8%",
+    "16%"
+   ],
+   "quote": "exemption amount: $750.00"
+  },
+  {
+   "topic": "Statutory exemption Social Security adjustment",
+   "what_was_recorded": "Harald reported that FY16 Social Security benefits were adjusted by 17% above the FY15 amount; the sentence is garbled in the scan.",
+   "figures_as_printed": [
+    "17%"
+   ],
+   "quote": "he reported that for fy16 social security bowfits were adjusted ed 17% 5 this is in amount deducted"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll and May 5, 2015 minutes",
+   "resolution": "approved (no motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and may 5, 2015 minutes.",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reorganization and Chairman",
+   "resolution": "Chairman continued; motion result not stated",
+   "quote": "lou thanked the board members for their support and agreed to continue serving in this capacity.",
+   "tags": [
+    "reorganization",
+    "chairman"
+   ]
+  },
+  {
+   "topic": "FY16 preliminary billing and valuation factor",
+   "resolution": "motion to raise valuation factor made; result not stated; Louise to consult Munis",
+   "quote": "harald spoke on the process of the fy16 preliminary billing and explained",
+   "tags": [
+    "FY16 billing",
+    "valuation factor",
+    "Munis",
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Supplemental billing for new construction",
+   "resolution": "approved; to be committed June 15, 2015",
+   "quote": "harald explained new construction in regards to supplemental billing.",
+   "tags": [
+    "supplemental billing",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Statutory exemptions and eligibility requirements",
+   "resolution": "guideline handed out; copy to Senior Center",
+   "quote": "harald spoke on the statutory exemption and the eligibility requirements.",
+   "tags": [
+    "exemptions",
+    "deferrals",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Valuation interim work and ratio statistics",
+   "resolution": "deferred to next meeting (George Bourgault to report)",
+   "quote": "harald reported that valuation interim work is underway and george bourgault, associate assessor will report on valuations and ratio statistics at the next meeting.",
+   "tags": [
+    "valuation",
+    "ratio statistics"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY16 Eligibility Requirements for Property Tax Exemptions & Deferrals Available To Qualifying Residents",
+   "where": "list",
+   "quote": "louise handed out the guideline report, fy16 eligibility requirements for property tax exemptions & deferrals"
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "FY16 tax billing",
+  "preliminary billing",
+  "valuation factor",
+  "supplemental billing",
+  "statutory exemptions",
+  "tax deferrals",
+  "reorganization",
+  "Munis",
+  "High School/Middle School project",
+  "new growth"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "louise handed out the guideline report"
+ },
+ "dropped_unquoted_by_field": {}
 }

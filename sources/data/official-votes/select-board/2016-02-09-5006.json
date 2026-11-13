@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-02-09",
  "docid": "5006",
@@ -12,15 +12,297 @@
  },
  "votes": [
   {
-   "motion": "Appoint Nancy Forest to the Senior Taxation Work Off Committee",
+   "motion": "To appoint Nancy Forest to the Senior Taxation Work Off Committee.",
    "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint nancy forest to the senior taxation work off committee. 2\"d: p. bertram vote: all in favor"
+  },
+  {
+   "motion": "To adjourn the meeting at 7:26 p.m.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r.ebersole to appoint nancy forest to the senior taxation work off committee. 2\"d: p. bertram vote: all in favor"
+   "quote": "to adjourn the meeting at 7:26 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1209765
+ "dropped_unquoted": 0,
+ "note": "Text is macOS Vision OCR of a scanned page set; some names and ordinals are OCR output as printed (e.g., 'Kobert Ebersole', 'R.Ebersole', '2\"d', '2^.'). The adjournment seconder is read from '2^. P. Bertram'. Votes recorded: appointment (All in Favor) and adjournment (All in Favor); no votes are printed for the license, warrants, or storm water discussion. Public comment section contains board-member announcements only; no outside speakers are recorded. Nancy Forest is the appointment subject and is not recorded as attending.",
+ "cost_usd": 0.006515819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; kobert ebersole, vice chairman; tom alonzo, clerk"
+  },
+  {
+   "name": "Kobert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; kobert ebersole, vice chairman; tom alonzo, clerk"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "jamie toale, chairman; kobert ebersole, vice chairman; tom alonzo, clerk"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member; Storm Water Task Force Chair (as printed in item 2)",
+   "status": "present",
+   "quote": "paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Kerry Lafleur",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "paula bertram, member, phyllis luck, member and kerry lafleur, town manager."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, claire m peterson elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The amended Class II Auto Dealer license was signed by the board; no motion was taken because it is a spelling correction for the owners' names.",
+   "quote": "no motion is required as it is a spelling correction for the owners' names. the board signed the amended license."
+  },
+  {
+   "decision": "Board agreed (Alonzo, with Toale agreeing) that the Storm Water Task Force would submit recommendations to the Board, which would appropriate the storm water funds.",
+   "quote": "they would appropriate the funds because the task force is an appointed committee"
+  },
+  {
+   "decision": "Ms. Bertram suggested bringing a plan back to the Board for approval before spending; no formal decision recorded.",
+   "quote": "thought it made sense to bring back a plan to the board for approval"
+  },
+  {
+   "decision": "Board signed the Accounts Payable and Payroll Deductions warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $587,073.33 and a payroll deductions"
+  },
+  {
+   "decision": "Town Manager to have Ms. Peterson follow up on whether the Bylaws Review Committee has met.",
+   "quote": "she will have ms. peterson follow up."
+  },
+  {
+   "decision": "Town Manager requested Board signatures on the Chapter 70 resolution to send to the Representative and Senator.",
+   "quote": "she requested signatures on the resolution in order to send it our representative and senator."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Storm water line item (FY16)",
+   "what_was_recorded": "A $40,000 FY16 DPW line item for storm water projects, with no specific projects in mind when established; available for the Storm Water Task Force.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "ms. lafleur reported there is a line item in the f2016 budget for $40,000 for storm water projects."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Board signed an Accounts Payable warrant and a Payroll Deductions Warrant.",
+   "figures_as_printed": [
+    "$587,073.33",
+    "$434,899.43"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $587,073.33 and a payroll deductions"
+  },
+  {
+   "topic": "Verizon cell tower lease at school property",
+   "what_was_recorded": "Cell tower replacement; Verizon won the bid and it is anticipated to generate $30,000 plus 3% additional per year.",
+   "figures_as_printed": [
+    "$30,000",
+    "3%"
+   ],
+   "quote": "it is anticipated to generate $30,000 plus 3% additional per year."
+  },
+  {
+   "topic": "Lions Club playground donation, Turkey Hill Middle School",
+   "what_was_recorded": "Lions Club presented a check to the School Committee for the new playground; around $3000 left to raise.",
+   "figures_as_printed": [
+    "$36,000",
+    "$3000"
+   ],
+   "quote": "the lions club of lunenburg presented a check for $36,000 to the school committee for the new playground at turkey hill middle school."
+  },
+  {
+   "topic": "Powell Stone & Gravel donation for outdoor classroom",
+   "what_was_recorded": "School Committee accepted donated materials for the outdoor classroom, totaling around $40,000.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "the school committee also accepted the donation from powell stone & gravel for the materials for the outdoor classroom, totaling around $40,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "Historical Society open hours announcement",
+   "quote": "mr. alonzo announced the lunenburg historical society, located at 10 school street, will be open saturday,"
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "",
+   "topic": "Lunenburg Water District meeting notice",
+   "quote": "mr. ebersole noted the lunenburg water district is meeting tomorrow."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lions Club Pancake Breakfast cancelled",
+   "quote": "ms. luck reported the lions club pancake breakfast was cancelled this week due to impending bad weather."
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Voter registration deadline and Memorial Day Committee call",
+   "quote": "mr. toale announced the last day to register to vote in the march 15 presidential primary and the special state"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (board announcements)",
+   "resolution": "no action",
+   "quote": "mr. toale announced the board is seeking people to join the memorial day committee",
+   "tags": [
+    "announcements",
+    "elections",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Amend Class II Auto Dealer license",
+   "resolution": "signed amended license, no motion",
+   "quote": "ms. lafleur stated this license was approved in december 2015 and no motion is required as it is a spelling correction for the owners' names.",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Storm water task force use of FY16 $40,000 appropriation",
+   "resolution": "discussed; board clarified process; no vote",
+   "quote": "ms. lafleur reported there is a line item in the f2016 budget for $40,000 for storm water projects.",
+   "tags": [
+    "storm water",
+    "DPW",
+    "budget",
+    "task force"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants signed; bylaws committee follow-up",
+   "quote": "the board signed an accounts payable warrant in the amount of $587,073.33 and a payroll deductions",
+   "tags": [
+    "warrants",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports received, no action",
+   "quote": "ms. luck reported the storm water task force and the zba are meeting tomorrow.",
+   "tags": [
+    "school committee",
+    "ZBA",
+    "cable",
+    "finance committee",
+    "sewer",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "Chapter 70 resolution signatures requested",
+   "quote": "ms. lafleur wanted to thank the dpw staff who did another excellent job of keeping the roads clear.",
+   "tags": [
+    "FY2017 budget",
+    "Chapter 70",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Appointment: Nancy Forest to Senior Taxation Work Off Committee",
+   "resolution": "appointed",
+   "quote": "mr. toale presented a request to appoint nancy forest to the senior taxation work off committee.",
+   "tags": [
+    "appointments",
+    "senior tax work off"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:26 p.m.",
+   "quote": "to adjourn the meeting at 7:26 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual MS4 report filed by the DPW Director",
+   "where": "text",
+   "quote": "she also looked at the annual ms4 report that the dpw director files."
+  },
+  {
+   "name": "Chapter 70 resolution",
+   "where": "text",
+   "quote": "at last week's finance committee meeting the chapter 70 resolution was discussed."
+  },
+  {
+   "name": "Fiscal 2017 Budget presentation",
+   "where": "text",
+   "quote": "the fiscal 2017 budget presentation will be at the finance committee this thursday"
+  },
+  {
+   "name": "Chapter 70 funding presentation by Marc Abrahams",
+   "where": "text",
+   "quote": "finance committee met on thursday for a presentation on chapter 70 funding by marc abrahams."
+  },
+  {
+   "name": "Accounts Payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $587,073.33"
+  },
+  {
+   "name": "Amended Class II Auto Dealer license",
+   "where": "text",
+   "quote": "the board signed the amended license."
+  }
+ ],
+ "tags": [
+  "select board",
+  "storm water",
+  "FY16 budget",
+  "FY17 budget",
+  "appointments",
+  "school funding",
+  "chapter 70",
+  "warrants",
+  "licensing",
+  "committee reports",
+  "public announcements"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

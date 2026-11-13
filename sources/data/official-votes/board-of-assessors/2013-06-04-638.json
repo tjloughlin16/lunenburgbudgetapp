@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2013-06-04",
  "docid": "638",
@@ -12,31 +12,224 @@
  },
  "votes": [
   {
-   "motion": "Support the Community Software Consortium CAMA condo redesign project costing approximately $17,200",
+   "motion": "Support the CSC condo redesign project (approx. $17,200), with Louis signing the ballot.",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
    "quote": "the board voted unanimously to support the project and louis signed the ballot."
   },
   {
-   "motion": "Accept the language for item (p) of the RFP regarding associate assessor services",
+   "motion": "Accept the 'language' for item (p) of the RFP scope of services (associate assessor assigned to Lunenburg).",
    "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
-   "quote": "unanimously voted to accept the \"language\" for item (p): provide the services of an associate assessor"
+   "quote": "the board reviewed the scope of services and was satisfied and unanimously voted to accept the \"language\" for item (p)"
   },
   {
-   "motion": "Accept the RFP",
+   "motion": "Accept the RFP, to be submitted to Kerry for review and approval.",
    "outcome": "passed",
-   "moved_by": "",
-   "seconded_by": "",
    "procedural": false,
    "quote": "after discussion, the board voted to accept the rfp and it will be submitted to kerry for review and approval."
+  },
+  {
+   "motion": "Meet on Tuesday, July 2 at 6 pm.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "board voted to meet on tuesday, july 2"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-extracted text with minor artifacts (e.g., \"May i eviewed\" → May items reviewed); readable overall.",
- "cost_usd": 0.1403455
+ "dropped_unquoted": 0,
+ "note": "Single-page OCR text with garbling: the opening approval sentence reads 'May i eviewed and approved', and the signature block is corrupted ('Laure', 'Jag', 'mette'). Quotes were taken from the OCR text as printed. The minutes do not record a vote approving prior minutes, and the adjournment at 6:40 pm has no motion. The RRG extension ('This was approved') has no motion or count, so it is recorded as a decision. The July 2 meeting vote has no mover or count. Papini's role is not separately labelled; he appears in the group heading. Harald's title is taken from the list order ('Regional Assessor'). No documents list is printed. The attorney in Springfield and the Town Manager are not named as attendees.",
+ "cost_usd": 0.00621082,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis J. Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board members, christopher comeau,"
+  },
+  {
+   "name": "Christopher Comeau",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: chairman, louis j. franco, board members, christopher comeau,"
+  },
+  {
+   "name": "Matthew J. Papini, Sr.",
+   "role": "Board Members (as printed in group heading; the minutes do not separately label him)",
+   "status": "present",
+   "quote": "matthew j. papini, sr., regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "matthew j. papini, sr., regional assessor, harald scheid, and louise paquette, administrative assistant."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assistant",
+   "status": "present",
+   "quote": "matthew j. papini, sr., regional assessor, harald scheid, and louise paquette, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board reviewed and approved current expense vouchers, abatements, warrants, and payroll (no separate motion or count recorded).",
+   "quote": "eviewed and approved current expense vouchers, abatements, warrants, and payroll."
+  },
+  {
+   "decision": "A one-month extension on the RRG contract, requested by Harald from the Town Manager, was approved (no motion or count recorded).",
+   "quote": "requesting that rrg be given a one month extension on the contract. this was approved"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CSC General Membership Dues",
+   "what_was_recorded": "Louise reported the General Membership Dues will increase for fiscal year 2014.",
+   "figures_as_printed": [
+    "$100.00"
+   ],
+   "quote": "louise reported that the general membership dues will increase by $100.00 for fiscal year 2014."
+  },
+  {
+   "topic": "CSC condo redesign project",
+   "what_was_recorded": "Harald said the condo redesign project cost is about $17,200, paid from funds already available in the membership's budget; the ballot only releases the funds.",
+   "figures_as_printed": [
+    "$17,200"
+   ],
+   "quote": "harald explained that the project cost is approx. $17,200 and the monies are available within the"
+  },
+  {
+   "topic": "FY14 preliminary real estate billing",
+   "what_was_recorded": "Louise gave a brief update on the FY14 preliminary real estate billing; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "louise gave a brief update regarding the fy14 preliminary real estate billing."
+  },
+  {
+   "topic": "Routine approvals of vouchers, abatements, warrants and payroll",
+   "what_was_recorded": "The Board reviewed and approved current expense vouchers, abatements, warrants, and payroll; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "eviewed and approved current expense vouchers, abatements, warrants, and payroll."
+  },
+  {
+   "topic": "RFP staffing scope - relief administrative clerk",
+   "what_was_recorded": "Harald added a scope item for a relief administrative clerk, with the per diem to be quoted in the non-price proposal; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "provide the assistance of a relief administrative clerk (per diem to be quoted in the non-price proposal"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals (vouchers, abatements, warrants, payroll)",
+   "resolution": "approved",
+   "quote": "eviewed and approved current expense vouchers, abatements, warrants, and payroll.",
+   "tags": [
+    "approvals",
+    "vouchers",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "FY14 preliminary real estate billing",
+   "resolution": "informational update, no action",
+   "quote": "louise gave a brief update regarding the fy14 preliminary real estate billing.",
+   "tags": [
+    "billing",
+    "FY14"
+   ]
+  },
+  {
+   "topic": "Community Software Consortium membership and condo valuation project",
+   "resolution": "Board supported project; Louis signed ballot",
+   "quote": "the board voted unanimously to support the project and louis signed the ballot.",
+   "tags": [
+    "CSC",
+    "CAMA",
+    "condo valuation"
+   ]
+  },
+  {
+   "topic": "RRG contract extension",
+   "resolution": "approved one-month extension",
+   "quote": "requesting that rrg be given a one month extension on the contract. this was approved",
+   "tags": [
+    "RRG",
+    "contract"
+   ]
+  },
+  {
+   "topic": "RFP scope of services for assessing services",
+   "resolution": "scope language accepted; RFP accepted and sent to Kerry for review",
+   "quote": "after discussion, the board voted to accept the rfp and it will be submitted to kerry for review and approval.",
+   "tags": [
+    "RFP",
+    "scope of services",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "New England Forestry Foundation charitable exemption case",
+   "resolution": "informational; Harald responded to attorney supporting ATB decision",
+   "quote": "harald reported that he has responded to the attorney in support of the atb's decision.",
+   "tags": [
+    "tax exemption",
+    "court case",
+    "NEFF"
+   ]
+  },
+  {
+   "topic": "Next meeting date and adjournment",
+   "resolution": "next meeting set for Tuesday, July 2 at 6 pm; adjourned 6:40 pm",
+   "quote": "board voted to meet on tuesday, july 2",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from an attorney in Springfield regarding the NEFF charitable exemption case",
+   "where": "text",
+   "quote": "harald spoke to the board regarding a letter sent to the office from an attorney in springfield."
+  },
+  {
+   "name": "CSC ballot (release of funds for condo redesign)",
+   "where": "text",
+   "quote": "the ballot merely is for the approved release of those funds."
+  },
+  {
+   "name": "Scope of services (RFP)",
+   "where": "text",
+   "quote": "the board reviewed the scope of services and was satisfied"
+  },
+  {
+   "name": "RFP",
+   "where": "text",
+   "quote": "after discussion, the board voted to accept the rfp"
+  },
+  {
+   "name": "Non-price proposal (relief administrative clerk per diem)",
+   "where": "text",
+   "quote": "provide the assistance of a relief administrative clerk (per diem to be quoted in the non-price proposal"
+  }
+ ],
+ "tags": [
+  "assessors",
+  "community software consortium",
+  "condo valuation",
+  "RRG contract",
+  "RFP staffing scope",
+  "tax exemption case",
+  "FY14 billing",
+  "meeting schedule",
+  "approvals"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-03-22",
  "docid": "3565",
@@ -12,41 +12,313 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from March 8, 2010",
+   "motion": "Approve the minutes signed 3/8/10.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, ms. bilotta, second, mr. bodkin jr., motion passed"
+   "quote": "minutes - approval: signed 3/8/10, motion, ms. bilotta, second, mr. bod kin jr., motion passed."
   },
   {
-   "motion": "Approve the Frontage definition for May 2010 Annual Town Meeting",
+   "motion": "Approve the Frontage definition for the May 2010 Annual Town Meeting.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion to approve, ms. bilotta, second, mr. bodkin jr., motion passed"
+   "quote": "motion to approve, ms. bilotta, second, mr. bodkin jr., motion passed."
   },
   {
-   "motion": "Approve the map change required by the Department of Environmental Protection (DEP)",
+   "motion": "Approve the correction to § 4.2.1.1.b) for the May 2010 Annual Town Meeting.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion to approve the map change required by the de partment of environmental protection (dep), motion, ms. bilotta, second, mr. bodkin jr., motion passe",
-   "quote_taken_from_text": true
+   "quote": "motion to approve c orrection to § 4.2.1.1.b), ms. bilotta, second, mr. bodkin jr., motion passed,"
   },
   {
-   "motion": "Enter Executive Session at 9:20 PM, not to return to Regular Session",
+   "motion": "Approve the map change required by the Department of Environmental Protection (DEP) for the May 2010 Annual Town Meeting.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion to approve the map change required by the de partment of environmental protection (dep)"
+  },
+  {
+   "motion": "Enter Executive Session at 9:20 PM, not to return to Regular Session.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to enter executive session at 9:20 pm, not t o return to regular session, ms. bilotta, second, m r. bodkin jr., roll call vote, mr. bakaysa, aye; ms. b ilotta, aye; mr. bodkin jr., aye; mr. lockwood, ",
-   "quote_taken_from_text": true
+   "quote": "motion to enter executive session at 9:20 pm, not t o return to regular session, ms. bilotta"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All votes recorded. The March 8, 2010 minutes were marked as signed prior to the vote to approve them. The fourth vote records \"Motion\" twice in the text, as it appears in the original.",
- "cost_usd": 0.1021185
+ "dropped_unquoted": 0,
+ "note": "The text is a garbled extraction: many words are split (e.g. 'Till otson', 'Bod kin'), page-header font codes appear, and line breaks fall mid-sentence. Quotes copy the printed spacing and collapse line breaks to single spaces. Votes are readable. The executive session roll call lists four ayes but the minutes print no tally, so its outcome is recorded as 'passed'. The minutes list no dollar figures and no public comment section. Applicant, engineer and counsel appearances are recorded as attendees, not public comment. Motion objects for the Frontage, correction and DEP map votes are inferred from the surrounding text.",
+ "cost_usd": 0.010528820000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Planning Board Chair",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Board member",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Board member",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Board member",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "roll call: emerick r. bakaysa, joanna l. bilotta, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "absent: robert j. saiia"
+  },
+  {
+   "name": "Dianne C. Tillotson",
+   "role": "Applicant's Attorney, representing the applicant",
+   "status": "present",
+   "quote": "attorney tillotson introduced the plan"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "Applicant, representing the applicant",
+   "status": "present",
+   "quote": "applicant, kevin o'brien, kevin o'brien jr. and mark lenfest"
+  },
+  {
+   "name": "Kevin O’Brien Jr.",
+   "role": "Applicant, representing the applicant",
+   "status": "present",
+   "quote": "applicant, kevin o'brien, kevin o'brien jr. and mark lenfest"
+  },
+  {
+   "name": "Mark Lenfest",
+   "role": "Applicant, representing the applicant",
+   "status": "present",
+   "quote": "applicant, kevin o'brien, kevin o'brien jr. and mark lenfest"
+  },
+  {
+   "name": "Brian Milisci",
+   "role": "Designing Engineer, Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "designing engineer mr. milisci explained each phase"
+  },
+  {
+   "name": "Brian Winner",
+   "role": "Town Counsel, Kopelman and Paige",
+   "status": "present",
+   "quote": "town counsel, brian winner, kopelman and paige"
+  },
+  {
+   "name": "David Ross",
+   "role": "Peer Reviewing Engineer, David E. Ross Associates",
+   "status": "present",
+   "quote": "peer reviewing engineer, david ross, david e. ross associates"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed to keep an open mind on the Aro Estates project, hold a workshop meeting with its Attorney and Reviewing Engineer, and return a comment within thirty days.",
+   "quote": "will have a wo rkshop meeting with their attorney and reviewing engineer"
+  },
+  {
+   "decision": "The Planning Director will attend the Energy Advisory Committee meeting (MRPC).",
+   "quote": "mrpc- no report. director will attend energy advisory co mmittee meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Staff furlough salary deduction",
+   "what_was_recorded": "Board members were informed of required staff furlough dates starting April 18, and employees have options for how the salary deduction is made; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "employees have options of the methodology of salary deduction."
+  },
+  {
+   "topic": "Density Bonus Payment Application",
+   "what_was_recorded": "The density bonus payment application was submitted to DHCD, which said the application looks good; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "density bonus payment ap plication has been submitted to the department of h ousing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (signed 3/8/10)",
+   "quote": "minutes - approval: signed 3/8/10, motion, ms. bilotta",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Capital Planning Committee report on Town Meeting warrant",
+   "quote": "capital planning committee- plan is on the town meeting warrant.",
+   "tags": [
+    "committees",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "approved Frontage definition, correction to § 4.2.1.1.b) and DEP map change; Green Community and other items discussed",
+   "quote": "green community task force- director reported that the task force is struggling",
+   "tags": [
+    "town meeting",
+    "zoning bylaw",
+    "green community",
+    "density bonus"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "no action; reports on file in Planning Office",
+   "quote": "emerald place at lake whalom- director gave status report",
+   "tags": [
+    "development"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action; referred to Planning Director's reports and development status reports",
+   "quote": "see above planning director's reports",
+   "tags": [
+    "unfinished business"
+   ]
+  },
+  {
+   "topic": "Data information and general discussion",
+   "resolution": "no action; data distributed to Board members",
+   "quote": "director distributed the following data to board",
+   "tags": [
+    "zoning bylaw",
+    "master plan",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Appointment: Aro Estates subdivision",
+   "resolution": "continued; Board to hold workshop and return comment within thirty days",
+   "quote": "appointment: 7:30 pm, aro estates-",
+   "tags": [
+    "subdivision",
+    "aro estates",
+    "howard street"
+   ]
+  },
+  {
+   "topic": "Adjournment to Executive Session",
+   "resolution": "entered Executive Session at 9:20 PM, not to return to Regular Session",
+   "quote": "adjournment: motion to enter executive session at 9:20 pm, not t o return to regular session",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Master Plan FY Updates- Status Reports to 1993, 2001, 2005 and 2008 Town Meetings",
+   "where": "list",
+   "quote": "master plan fy updates- status reports to 1993, 2001"
+  },
+  {
+   "name": "Master Plan Element 7 and Master Plan Element 9",
+   "where": "list",
+   "quote": "master plan element 7, and master plan element 9."
+  },
+  {
+   "name": "Envision 2007 Report (prepared by Envision Group)",
+   "where": "list",
+   "quote": "envision 2007 report- report prepared by envision group"
+  },
+  {
+   "name": "Past Zoning Changes (chronological order, separated from all Town Meeting changes to the Zoning Bylaw)",
+   "where": "list",
+   "quote": "past zoning changes- chronological order of past zoning changes"
+  },
+  {
+   "name": "Active and Passive Recreation Sites and Activities 2010",
+   "where": "list",
+   "quote": "active and passive recreation sites and activities 2010- a listing"
+  },
+  {
+   "name": "Report for the Department of Public Works (DPW) proposed building",
+   "where": "text",
+   "quote": "copy of the r eport for the department of public works (dpw) proposed building"
+  },
+  {
+   "name": "Memorandum from the DPW Director on the repair to Robbs Hill Road",
+   "where": "text",
+   "quote": "director read the memorandum from the department of public works (dpw) director on the repair to robbs"
+  },
+  {
+   "name": "Density Bonus Payment Application",
+   "where": "text",
+   "quote": "density bonus payment ap plication has been submitted to the department of h ousing"
+  },
+  {
+   "name": "Commonwealth Capital submission (102 points)",
+   "where": "text",
+   "quote": "commonwealth capital has bee n submitted with 102 points."
+  },
+  {
+   "name": "Emerald Place at Lake Whalom status report",
+   "where": "text",
+   "quote": "emerald place at lake whalom- director gave status report"
+  },
+  {
+   "name": "Stone Farm status report",
+   "where": "text",
+   "quote": "stone farm- director gave status report"
+  },
+  {
+   "name": "Tri Town Landing status report",
+   "where": "text",
+   "quote": "tri town landing- director gave status report"
+  },
+  {
+   "name": "Aro Estates subdivision plan (nine phases, 189 acres)",
+   "where": "text",
+   "quote": "attorney tillotson introduced the plan"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "aro estates",
+  "subdivision",
+  "town meeting 2010",
+  "frontage definition",
+  "zoning bylaw",
+  "green community",
+  "density bonus",
+  "staff furlough",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "director distributed the following data to board"
+ },
+ "dropped_unquoted_by_field": {}
 }

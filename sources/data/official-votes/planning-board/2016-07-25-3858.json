@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2016-07-25",
  "docid": "3858",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve enlarging the existing driveway at 1026 Northfield Road",
+   "motion": "Approve enlarging the existing driveway at 1026 Northfield Road.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
@@ -21,6 +21,100 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0867145
+ "note": "The minutes record the vote as 'all aye' with no numeric count, so outcome is recorded as 'passed'. No motion to open or close the hearing is recorded. No dollar figures appear in the text.",
+ "cost_usd": 0.00300102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board clerk g. bittner opened the hearing with the reading of the statutory notice"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, damon mcquaid, gregory bittner, kenneth chenis, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Ronald Smith",
+   "role": "owner/applicant",
+   "status": "present",
+   "quote": "the owner/applicant, ronald smith noted"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A written decision will be prepared for Board endorsement on the 1026 Northfield Road driveway request.",
+   "quote": "decision will be prepared for board endorsement."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: driveway enlargement at 1026 Northfield Road (Ch. 40 s.15C scenic road; Ch. 87 s.3 shade trees)",
+   "resolution": "approved; decision to be prepared for endorsement",
+   "quote": "board clerk g. bittner opened the hearing with the reading of the statutory notice",
+   "tags": [
+    "public hearing",
+    "driveway",
+    "scenic road",
+    "shade trees",
+    "Northfield Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for 1026 Northfield Road under Ch. 40, Section 15",
+   "where": "list",
+   "quote": "application for 1026 northfield road under ch. 40, section 15"
+  },
+  {
+   "name": "Photographs annotating smaller trees to be removed to relocate the drive",
+   "where": "text",
+   "quote": "photographs were presented annotating smaller trees that he wishes to remove"
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "driveway",
+  "scenic road",
+  "shade trees",
+  "Northfield Road",
+  "zoning"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

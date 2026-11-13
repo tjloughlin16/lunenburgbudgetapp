@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2012-04-23",
  "docid": "3655",
@@ -12,40 +12,342 @@
  },
  "votes": [
   {
-   "motion": "Approve prior minutes from 4-9-12",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve (sign) the minutes of 4-9-12 New England Farms Information Meeting and 4-9-12 Town Meeting Zoning Article Public Hearing.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ms. bilotta-simeone, motion to sign 4 -9-12, 4-9-12 new england farms information meeting , and 4- 9-12 town meeting zoning article public hearing, second, mr. bodkin jr., motion passed",
-   "quote_taken_from_text": true
+   "quote": "motion to sign 4 -9-12, 4-9-12 new england farms information meeting"
   },
   {
-   "motion": "Approve Findings for New England Farms Development Plan Review as read",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
-   "outcome": "passed 4-0",
+   "motion": "Approve the New England Farms Development Plan Review Findings as read.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion, ms. bilotta -simeone to approve findings as read, second, mr. bodkin jr., roll call vote, mr. saiia, aye; mr. bodkin jr., aye; ms. bilotta-simeone, aye; mr. bakaysa, aye."
+   "quote": "motion, ms. bilotta -simeone to approve findings as read, second, mr. bodkin jr., roll call vote"
   },
   {
-   "motion": "Approve Directives for New England Farms Development Plan Review as read",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Approve the New England Farms Development Plan Review Directives as read.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "motion, ms. bilotta-simeone to approve directives as read, second, mr. bodkin jr., roll call vo te, mr. saiia, nay; mr. bodkin jr., aye; ms. bilotta-simeone, aye; mr. bakaysa, aye."
+   "quote": "motion, ms. bilotta-simeone to approve directives as read, second, mr. bodkin jr., roll call vo te"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Joanna L. Bilotta-Simeone",
-   "seconded_by": "Thomas W. Bodkin Jr.",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Ms. Bilotta-Simeone",
+   "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr., motion passed. adjourned 9:15 pm."
+   "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr., motion passed."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0967725
+ "note": "Text is machine-extracted with broken spacing; quotes were chosen to avoid split words. Findings and Directives votes were roll calls with no printed count for Findings (recorded as passed); Directives recorded 3-1 from the printed roll call (Saiia nay). Minutes list no dollar figures; the only money item is a 25% share. Attachments (Monitoring and Construction Procedures, Weekly Progress Notification Form, drainage review) are referenced as attached but no documents list is printed. Footer reads 'Minutes/2012/04.09.12', which differs from the 4-23-12 meeting date; the meeting date is taken from the heading.",
+ "cost_usd": 0.00891852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mr. bakaysa noted that directives will note additional landscaping may be required for an as built submittal."
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "motion, ms. bilotta-simeone to approve directives as read, second, mr. bodkin jr., roll call vo te"
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin jr., robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "thomas w. bodkin jr., robert j. saiia, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "absent",
+   "quote": "nathan j. lockwood, mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "Reviewing Engineer, David E. Ross Associates",
+   "status": "present",
+   "quote": "mr. johnson noted continuous mounding may affect drainage and require review."
+  },
+  {
+   "name": "Cal Goldsmith",
+   "role": "Designing Engineer, Goldsmith, Prest & Ringwall, Inc., representing EPG Solar",
+   "status": "present",
+   "quote": "designing engineer, cal goldsmith, of goldsmith, prest & ringwall, inc."
+  },
+  {
+   "name": "Mr. Prokowiew",
+   "role": "resident, 733 West Street",
+   "status": "present",
+   "quote": "both mr. prokowiew, 733 west street"
+  },
+  {
+   "name": "Mr. Elder",
+   "role": "resident, 225 Pleasant Street",
+   "status": "present",
+   "quote": "and mr. elder, 225 pleasant street noted that"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Development Plan Review signed by the Planning Board; Directives not signed by Mr. Saiia due to his nay vote.",
+   "quote": "development plan review signed by planning board. directives not signed by mr. saiia due to his nay vote."
+  },
+  {
+   "decision": "A letter will be sent to the barber shop owner in the Town Center noting the owner can apply to the Building/Zoning Official for signage approval.",
+   "quote": "a letter will be sent noting that the owner can apply to the building/zoning official for signage approval"
+  },
+  {
+   "decision": "The applicant (EPG Solar) is to return to the May 14 Planning Board meeting with a revised landscaping plan; the Board asked for mounding at various heights, low planting in front, climbing plants on the fence, and ground-view rendering illustrations.",
+   "quote": "applicant to return to the may 14th planning board meeting with a revised landscaping plan."
+  },
+  {
+   "decision": "The Board does not want a continuous straight line of screening; the applicant is to consider mounding with various heights.",
+   "quote": "the applicant is to consider mounding to provide various heights of screening"
+  },
+  {
+   "decision": "The revised screening plan must go before the Conservation Commission to ensure it is not in violation of the Order of Conditions.",
+   "quote": "the revised plan will have to go before the conservation commission to ensure it is not in violation of the order of conditions."
+  },
+  {
+   "decision": "The Board asked for climbing plants along the fence for camouflage.",
+   "quote": "the board would like to see climbing plants along the fence for camouflage."
+  },
+  {
+   "decision": "Planning Board will request the Zoning Board of Appeals include site cleanup language in its approval if the site goes vacant.",
+   "quote": "will request zoning board of appeals include in their approval."
+  },
+  {
+   "decision": "Ms. Benson to pursue access to municipal e-mail for Board members.",
+   "quote": "ms. benson to pursue."
+  },
+  {
+   "decision": "Board and citizens to attempt to meld the solar bylaw and citizens' petition bylaw into one before the April 30 public hearing, to withdraw the citizen bylaw on the Town Meeting floor.",
+   "quote": "mr. bakaysa is concerned that if going into town meeting with both bylaws, citizens will"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer Street reconstruction design fee (Town Meeting Article 21)",
+   "what_was_recorded": "Planning Director noted Article 21 on the Town Meeting Warrant to fund Lunenburg's share of the design fee for the Summer Street reconstruction; if passed, design moves forward.",
+   "figures_as_printed": [
+    "25%"
+   ],
+   "quote": "the 25% design fee for the reconstruction of summer street."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Prokowiew",
+   "stated_role": "733 West Street",
+   "topic": "berming and neighborhood drainage",
+   "quote": "both mr. prokowiew, 733 west street"
+  },
+  {
+   "speaker": "Mr. Elder",
+   "stated_role": "225 Pleasant Street",
+   "topic": "berming and neighborhood drainage",
+   "quote": "and mr. elder, 225 pleasant street noted that"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (4-9-12 meetings)",
+   "resolution": "approved and signed",
+   "quote": "motion to sign 4 -9-12, 4-9-12 new england farms information meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New England Farms Development Plan Review: findings and directives",
+   "resolution": "findings approved; directives approved 3-1 (Saiia nay)",
+   "quote": "motion, ms. bilotta -simeone to approve findings as read, second, mr. bodkin jr., roll call vote",
+   "tags": [
+    "development plan review",
+    "gas station",
+    "zoning",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Barber shop signage in Town Center",
+   "resolution": "letter to be sent to owner",
+   "quote": "a letter will be sent noting that the owner can apply to the building/zoning official for signage approval",
+   "tags": [
+    "signage",
+    "town center"
+   ]
+  },
+  {
+   "topic": "Report on screening and landscaping, EPG Solar",
+   "resolution": "continued to May 14 for revised landscaping plan",
+   "quote": "applicant to return to the may 14th planning board meeting with a revised landscaping plan.",
+   "tags": [
+    "solar",
+    "landscaping",
+    "screening",
+    "fencing"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "notices from the conservation commission and zoning board of appeals were noted.",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports and new business",
+   "resolution": "noted Article 21 and MRPC LID roundtable",
+   "quote": "noted article 21 on the town meeting warrant",
+   "tags": [
+    "town meeting",
+    "summer street",
+    "low impact development"
+   ]
+  },
+  {
+   "topic": "Old business: May 5 Town Meeting solar and citizen petition bylaws",
+   "resolution": "discussed; Board to meld the two bylaws before April 30 hearing",
+   "quote": "mr. bakaysa is concerned that if going into town meeting with both bylaws, citizens will",
+   "tags": [
+    "bylaw",
+    "solar",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "noted",
+   "quote": "tri town landing, youngs road- work continues on resolving water situation.",
+   "tags": [
+    "development status"
+   ]
+  },
+  {
+   "topic": "Member issues",
+   "resolution": "Ms. Benson to pursue municipal e-mail access",
+   "quote": "ms. benson to pursue.",
+   "tags": [
+    "administration"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "may 14- planning board meeting, town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:15 PM",
+   "quote": "motion, ms. bilotta-simeone, second, mr. bodkin jr., motion passed.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Development Plan Review application, dated January 20, 2012 (SMD Development LLC)",
+   "where": "text",
+   "quote": "dated january 20, 2012 was submitted to"
+  },
+  {
+   "name": "Site Plan, Project #303011 (prepared by MHF Design Consultants, Inc.)",
+   "where": "text",
+   "quote": "the applicant shall follow site plan, project #303011 and adhere to"
+  },
+  {
+   "name": "Lunenburg Planning Board Monitoring and Construction Procedures",
+   "where": "text",
+   "quote": "adhere to the lunenburg planning board monitoring and construction procedures as attached."
+  },
+  {
+   "name": "Sign Plan dated 03-05-12",
+   "where": "text",
+   "quote": "sign plan dated 03 -05-12 is acceptable"
+  },
+  {
+   "name": "Building/Zoning Official letter dated March 19, 2012",
+   "where": "text",
+   "quote": "in letter dated march 19, 2012"
+  },
+  {
+   "name": "Drainage analysis review by Jesse Johnson, March 8, 2012 (attached)",
+   "where": "text",
+   "quote": "as a result of march 8, 2012 drainage analysis review by jesse johnson (attached)"
+  },
+  {
+   "name": "Order of Conditions issued by the Conservation Commission",
+   "where": "text",
+   "quote": "the applicant shall follow the order of conditions issued by the conservation commission."
+  },
+  {
+   "name": "MRPC Traffic Count Request",
+   "where": "text",
+   "quote": "if the mrpc traffic count request notes changes in the traffic pattern"
+  },
+  {
+   "name": "Weekly Progress Notification Form (attached)",
+   "where": "text",
+   "quote": "fill out the weekly progress notification form (attached) on a weekly basis"
+  },
+  {
+   "name": "Public Information Meeting minutes (on file in the Planning Office)",
+   "where": "text",
+   "quote": "the lunenburg planning board finds the public information meeting minutes are on file in the planning office."
+  },
+  {
+   "name": "Town Meeting Warrant Article 21 (Summer Street design fee)",
+   "where": "text",
+   "quote": "noted article 21 on the town meeting warrant"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "development plan review",
+  "gas station",
+  "solar",
+  "EPG Solar",
+  "landscaping",
+  "screening",
+  "signage",
+  "zoning",
+  "town meeting",
+  "bylaw"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

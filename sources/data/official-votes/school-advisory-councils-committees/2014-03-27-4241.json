@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2014-03-27",
  "docid": "4241",
@@ -12,7 +12,15 @@
  },
  "votes": [
   {
-   "motion": "adjourn",
+   "motion": "Approve the minutes of the previous meeting (3/13/14).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the minutes of the previous meeting (3/13/14) were approved."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mike Mackin",
    "seconded_by": "Elizabeth Rawlinson",
    "outcome": "passed",
@@ -21,6 +29,167 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The minutes mention \"The minutes of the previous meeting (3/13/14) were approved\" but do not record who moved approval, who seconded it, or use explicit vote language (voted/unanimously approved/so voted), so this is not included per the rule requiring vote language in the minutes.",
- "cost_usd": 0.0904775
+ "note": "Text extracted from a scanned or OCR'd page; some words are split (e.g., \"diver sity\", \"pre sent\"). The header names the \"Advisory Committee for Acceptance and Diversity\" while the board supplied is \"School Advisory Councils Committees\". The chair is printed as \"Charlene Stevens\" in the call to order and \"Charlene Stephens\" in the attendance list; I kept the attendance spelling. The minutes give no vote tally for either motion; the minutes approval is recorded as \"were approved\" with no mover or count, and the adjournment has no printed tally. No public comment section is printed. No documents list or exhibits are printed.",
+ "cost_usd": 0.0035035199999999996,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Berthiaume",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "gregory berthiaume school committee present"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "michael mackin school committee present"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Board of Selectmen",
+   "status": "absent",
+   "quote": "robert ebersole board of selectmen not present"
+  },
+  {
+   "name": "Charlene Stephens",
+   "role": "Community-at-large; called the meeting to order as Chair (printed as \"Charlene Stevens, Chair\")",
+   "status": "present",
+   "quote": "charlene stephens community-at-large present"
+  },
+  {
+   "name": "Richard Beardmore",
+   "role": "Community-at-large alternate",
+   "status": "present",
+   "quote": "richard beardmore community-at-large alternate pre sent"
+  },
+  {
+   "name": "Nicole Hennessy",
+   "role": "Student Representative",
+   "status": "absent",
+   "quote": "nicole hennessy student representative not present"
+  },
+  {
+   "name": "Casey Voyer",
+   "role": "Student Representative",
+   "status": "absent",
+   "quote": "casey voyer student representative not present"
+  },
+  {
+   "name": "Elizabeth Rawlinson",
+   "role": "Parent",
+   "status": "present",
+   "quote": "elizabeth rawlinson parent present"
+  },
+  {
+   "name": "Darruenee Vann",
+   "role": "Parent",
+   "status": "absent",
+   "quote": "darruenee vann parent not present"
+  },
+  {
+   "name": "Paul Bertrand",
+   "role": "Parent Alternate",
+   "status": "absent",
+   "quote": "paul bertrand parent alternate not present"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "also present, loxi calmes, superintendent of schools and john chetro-szivos."
+  },
+  {
+   "name": "John Chetro-Szivos",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present, loxi calmes, superintendent of schools and john chetro-szivos."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Additional work on the recommendations and the out brief will take place over the next few meetings.",
+   "quote": "additional work on recommendations and out briefing will need to take place over the next few meetings."
+  },
+  {
+   "decision": "Interviews for the FSU data collection will use circular questions, with an additional student focus group possibly in the fall because spring participants are all parents.",
+   "quote": "the interviews will take place using circular questions. an additional focus group of students may be interviewed in the fall (spring participants are all parents)."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Recommendation 2: budget for diversity efforts",
+   "what_was_recorded": "The committee's recommendation calls for developing a budget for diversity efforts, with a focus on grants to fund it; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "2) develop a budget for diversity efforts; focus on grants to fund this budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of meeting minutes",
+   "resolution": "approved (minutes of 3/13/14)",
+   "quote": "the minutes of the previous meeting (3/13/14) were approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "FSU data collection and analysis process",
+   "resolution": "discussed; no action recorded",
+   "quote": "dr. chetro-szivos discussed the fsu data collection and analysis process.",
+   "tags": [
+    "FSU",
+    "data collection",
+    "interviews",
+    "report card"
+   ]
+  },
+  {
+   "topic": "Discussion of Recommendations",
+   "resolution": "continued to next meetings",
+   "quote": "additional work on recommendations and out briefing will need to take place over the next few meetings.",
+   "tags": [
+    "recommendations",
+    "standing committee",
+    "budget",
+    "out brief"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for Thursday, April 10",
+   "quote": "the next meeting will be thursday, april 10 th .",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45pm",
+   "quote": "motion to adjourn by mike mackin, seconded by elizabeth rawlinson. the meeting adjourned at 8:45pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "diversity",
+  "advisory committee",
+  "FSU assessment",
+  "interviews",
+  "recommendations",
+  "school committee",
+  "parents",
+  "students"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2016-04-28",
  "docid": "1492",
@@ -12,71 +12,242 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from March 10th",
-   "outcome": "passed",
-   "moved_by": "",
+   "motion": "Approve the minutes of March 10th.",
    "seconded_by": "Ms. Hennessy",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chair entertained motion to approve minutes. seconded by ms. hennessy. all attending voted to approve minutes."
+   "quote": "minutes from march 10th- chair entertained motion to approve minutes. seconded by ms. hennessy. all attending voted to approve minutes."
   },
   {
-   "motion": "approve amended minutes from March 31st",
-   "outcome": "passed",
-   "moved_by": "",
+   "motion": "Approve the amended minutes of March 31st (remove \"infer\").",
    "seconded_by": "Ms. Hennessy",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chair entertained motion to approve amended minutes. seconded by ms. hennessy. all attending voted to approve minutes."
+   "quote": "minutes from march 31st - amend minutes remove \"infer\". chair entertained motion to approve amended minutes. seconded by ms. hennessy."
   },
   {
-   "motion": "approve amended minutes from April 14th",
-   "outcome": "passed",
-   "moved_by": "",
+   "motion": "Approve the amended minutes of April 14 (Section f, amend Article VI).",
    "seconded_by": "Ms. Hennessy",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chair entertained motion to approve amended minutes. seconded by ms. hennessy. all attending voted to approve minutes."
+   "quote": "minutes from april 14* - section f-amend article vi. chair entertained motion to approve amended minutes. seconded by ms. hennessy."
   },
   {
-   "motion": "repeal Section 3 to match Section 6",
-   "outcome": "passed",
+   "motion": "Repeal Section 3 to match Section 6.",
    "moved_by": "C. Hennessy",
    "seconded_by": "N. Gray",
+   "outcome": "passed",
    "procedural": false,
    "quote": "chair entertained motion to repeal section 3 to match section 6. so moved by c. hennessy and seconded by n. gray. all voted in favor."
   },
   {
-   "motion": "repeal Article 12 Sections 1-3",
-   "outcome": "passed",
-   "moved_by": "",
+   "motion": "Repeal Article 12 Sections 1-3, which conflict with the Town Charter.",
+   "moved_by": "Chair",
    "seconded_by": "C. Hennessy",
+   "outcome": "passed",
    "procedural": false,
    "quote": "chair moved to repeal as it conflicts with town charter. seconded by c. hennessy. all attending voted to repeal sections 1-3."
   },
   {
-   "motion": "repeal Article 22",
-   "outcome": "passed",
-   "moved_by": "",
+   "motion": "Repeal Article 22, which is contained in Town Charter section 3-6 (a) and 3-6 (b).",
+   "moved_by": "Chair",
    "seconded_by": "C. Hennessy",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "chair moved to repeal as it conflicts with town charter. seconded by c. hennessy. all attending voted to repeal"
+   "quote": "article 22-is contained in town charter section 3 - 6 (a) and 3 - 6 (b). chair moved to repeal as it conflicts with town charter. seconded by c. hennessy. all attending voted to repeal"
   },
   {
-   "motion": "repeal Article 26",
-   "outcome": "passed",
-   "moved_by": "",
+   "motion": "Repeal Article 26, which is contained in Town Charter section 3-14.",
+   "moved_by": "Chair",
    "seconded_by": "C. Hennessy",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "chair moved to repeal as it conflicts with town charter. seconded by c. hennessy. all attending voted to repeal"
+   "quote": "article 26- is contained in town charter section 3-14. chair moved to repeal as it conflicts with town charter. seconded by c. hennessy. all attending voted to repeal"
   },
   {
-   "motion": "adjourn",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 7:30pm.",
    "moved_by": "K. Herrick",
-   "seconded_by": "",
+   "seconded_by": "Vice Chair",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by k. herrick at 7:30pm. second by vice chair. all attending voted to adjourn."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision; all votes are legible and recorded with clear outcomes.",
- "cost_usd": 0.1502275
+ "note": "Text is macOS Vision OCR with some errors (e.g., \\\"6рm\\\", \\\"forannabis\\\", \\\"April 14*\\\"). Chair and Vice Chair are not named; the Town Manager and Chief of Police are mentioned but not recorded as attending. Mover is not printed for the three minutes approvals. No dollar figures appear. Articles 31 and 32 are listed as new additions (cannabis, Architectural Preservation) with no recorded action.",
+ "cost_usd": 0.0061717199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rob Bowen",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Nancy Gray",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Cathy Hennessy",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Michelle Smith",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  },
+  {
+   "name": "Kathy Herrick",
+   "status": "present",
+   "quote": "attending: rob bowen, nancy gray, cathy hennessy, michelle smith, kathy herrick"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair will contact a department for feedback on Article 16 (zoning enforcement).",
+   "quote": "d. article 16-zoning enforcement. chair will contact department for feedback."
+  },
+  {
+   "decision": "Article 10 Section 3 fine amounts remain under review by the Chief of Police, pending feedback.",
+   "quote": "a. article 10 section 3 fine amounts are under review by the chief of police."
+  },
+  {
+   "decision": "Article 12 Section 4 requires further study.",
+   "quote": "c. article 12 section 4-requires further study."
+  },
+  {
+   "decision": "No changes recommended for Articles 17-18.",
+   "quote": "e. article 17-18 not recommending changes."
+  },
+  {
+   "decision": "No changes recommended for Article 20.",
+   "quote": "g. article 20-not recommending changes."
+  },
+  {
+   "decision": "Article 21 to be addressed at the May 2016 Town Meeting.",
+   "quote": "h. article 21-will be addressed at may 2016 town meeting"
+  },
+  {
+   "decision": "No changes recommended for Articles 23-25.",
+   "quote": "j. articles 23-25-not recommending changes"
+  },
+  {
+   "decision": "No changes recommended at this time for Article 28.",
+   "quote": "m. article 28-not recommending changes at this time."
+  },
+  {
+   "decision": "Codification to be returned soon, and recommended changes to be shared via Interim Report to the Board of Selectmen.",
+   "quote": "codification will be returned soon. plan to share recommended changes via interim report to board of selectmen."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:10pm",
+   "quote": "call to order: meeting called to order 6:10pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (March 10, March 31, April 14)",
+   "resolution": "approved, with amendments to the March 31 and April 14 minutes",
+   "quote": "minutes from march 10th- chair entertained motion to approve minutes. seconded by ms. hennessy.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Letters to departments for feedback",
+   "resolution": "no action; no response received",
+   "quote": "chair advised the committee that no response was received from letters to all departments for feedback.",
+   "tags": [
+    "departments",
+    "feedback"
+   ]
+  },
+  {
+   "topic": "Town Manager request to amend Section 3",
+   "resolution": "Section 3 repealed to match Section 6",
+   "quote": "chair advised that the town manager expressed interest in amending section 3 \"to remove 2/3 vote",
+   "tags": [
+    "repeal",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Review of bylaws and charter",
+   "resolution": "repeals of Article 12 Sections 1-3, Article 22 and Article 26; other articles no change, under study, or deferred",
+   "quote": "review of bylaws & charter.",
+   "tags": [
+    "bylaw review",
+    "town charter",
+    "repeal",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Next steps",
+   "resolution": "no action; codification to be returned, changes to go to Board of Selectmen by Interim Report",
+   "quote": "discussion on next steps. codification will be returned soon.",
+   "tags": [
+    "next steps",
+    "interim report"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30pm",
+   "quote": "motion to adjourn by k. herrick at 7:30pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letters to all departments",
+   "where": "text",
+   "quote": "chair advised the committee that no response was received from letters to all departments for feedback."
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "article 12 sections 1,2 are now covered by the town charter."
+  },
+  {
+   "name": "Interim Report to Board of Selectmen",
+   "where": "text",
+   "quote": "plan to share recommended changes via interim report to board of selectmen."
+  }
+ ],
+ "tags": [
+  "bylaw review",
+  "town charter",
+  "bylaw repeal",
+  "minutes approval",
+  "zoning",
+  "cannabis",
+  "architectural preservation",
+  "Board of Selectmen"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

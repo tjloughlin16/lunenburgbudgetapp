@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-09-28",
  "docid": "3824",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve site layout and work, exclusive of any signage, with conditions",
+   "motion": "Approve site layout and work for 339 Electric Avenue, exclusive of any signage, with the listed conditions.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
    "outcome": "not stated",
@@ -20,47 +20,263 @@
    "quote": "motion, d. prokowiew, second, m. allison, to approve site layout and work, exclusive of any signage with conditions as noted:"
   },
   {
-   "motion": "Approve minutes of 9/14/15",
+   "motion": "Approve minutes of 9/14/15.",
    "moved_by": "M. Allison",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, m. allison, second, d. prokowiew"
+   "quote": "9/14/15, motion, m. allison, second, d. prokowiew"
   },
   {
-   "motion": "Accept 9/14/15 339 Electric Avenue Hearing minutes with amendment noted by G. Bittner",
+   "motion": "Approve minutes of the 9/14/15 339 Electric Avenue hearing, with an amendment noted by G. Bittner.",
    "moved_by": "M. Allison",
    "seconded_by": "D. Prokowiew",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, m. allison, second, d. prokowiew to accept with amendment noted by g. bittner."
+   "quote": "9/14/15, 339 electric avenue hearing, motion, m. allison, second, d. prokowiew to accept with amendment noted by g. bittner."
   },
   {
-   "motion": "Approve 9/14/15 Highfield Village Hearing minutes",
+   "motion": "Approve minutes of the 9/14/15 Highfield Village hearing.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, m. allison, second, g. bittner"
+   "quote": "9/14/15, highfield village hearing, motion, m. allison, second, g. bittner"
   },
   {
-   "motion": "Approve 9/15/15 minutes",
+   "motion": "Approve minutes of 9/15/15.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, m. allison, second, g. bittner"
+   "quote": "9/15/15, motion, m. allison, second, g. bittner"
   },
   {
-   "motion": "Approve 9/15/15 Executive Session minutes",
+   "motion": "Approve minutes of the 9/15/15 executive session.",
    "moved_by": "M. Allison",
    "seconded_by": "G. Bittner",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, m. allison, second, g. bittner"
+   "quote": "9/15/15, executive session, motion, m. allison, second, g. bittner"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1341665
+ "note": "The minutes record motions but no vote tallies or results for any motion, so every vote's outcome is 'not stated'. The 339 Electric Avenue and 274 Prospect Street hearings are covered by separate minutes not included in this text. The minutes print no dollar figures. No public comment is recorded. The Stormwater Task Force item is a nomination with no recorded vote. The adjournment has no recorded motion.",
+ "cost_usd": 0.00649632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: damon mcquaid, matthew allison, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to wait until the May annual town meeting for submission of the site plan approval bylaw.",
+   "quote": "board consensus was to wait until may annual town meeting for submission of site plan approval bylaw."
+  },
+  {
+   "decision": "Off-Street Parking Design Standards tabled; board members to review and send any comments to A. Burney.",
+   "quote": "off street parking design standards tabled. board to review and send any comments to a. burney."
+  },
+  {
+   "decision": "Board to tentatively plan on meeting November 23.",
+   "quote": "november 23- board to tentatively plan on meeting this date."
+  },
+  {
+   "decision": "M. Allison nominated by D. Prokowiew (seconded by D. McQuaid) for the Board of Selectmen's Stormwater Task Force; M. Allison accepted. No vote recorded.",
+   "quote": "d. prokowiew nominated m. allison, d. mcquaid seconded, m. allison accepted."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Information meeting: 339 Electric Avenue",
+   "resolution": "site layout and work approved with conditions (motion recorded, result not stated); separate minutes",
+   "quote": "motion, d. prokowiew, second, m. allison, to approve site layout and work, exclusive of any signage with conditions as noted:",
+   "tags": [
+    "site plan",
+    "conditions",
+    "339 Electric Avenue"
+   ]
+  },
+  {
+   "topic": "Public hearing: 274 Prospect Street",
+   "resolution": "see separate minutes; continued to October 26",
+   "quote": "274 prospect street - see separate minutes.",
+   "tags": [
+    "public hearing",
+    "274 Prospect Street",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes of 9/14/15 and 9/15/15 approved (results not stated); all minutes signed",
+   "quote": "minutes approval: all minutes signed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; Building Reuse Committee hired Tappe Associates; Green Community Task Force meeting cancelled for lack of quorum",
+   "quote": "building reuse committee- architectural firm tappe associates hired for town building study.",
+   "tags": [
+    "committees",
+    "building study",
+    "Open Space"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "reported; no action",
+   "quote": "definitive subdivision, 50 elmwood road- finishing lot 5. doing predevelopment grading on two other lots.",
+   "tags": [
+    "subdivision",
+    "Tri Town Landing",
+    "status"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "site plan bylaw deferred to May town meeting; parking standards tabled; Stormwater Task Force nomination of M. Allison",
+   "quote": "special town meeting- special town meeting scheduled for november 16, 2015.",
+   "tags": [
+    "special town meeting",
+    "bylaws",
+    "site plan approval",
+    "parking standards",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Notices & communications",
+   "resolution": "noted",
+   "quote": "notices & communications: noted",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "October 12 no meeting; October 26 and November 9 hearing continuations; November 23 tentative",
+   "quote": "october 12 - no meeting, columbus day",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "noted Open Meeting Law workshop by Town Counsel on September 30",
+   "quote": "town counsel presenting open meeting law workshop at the senior center on wednesday, september 30th.",
+   "tags": [
+    "open meeting law",
+    "training"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:05 PM (no motion recorded)",
+   "quote": "adjournment: 10:05 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "9/14/15, 339 Electric Avenue Hearing (minutes)",
+   "where": "list",
+   "quote": "9/14/15, 339 electric avenue hearing"
+  },
+  {
+   "name": "9/14/15, Highfield Village Hearing (minutes)",
+   "where": "list",
+   "quote": "9/14/15, highfield village hearing"
+  },
+  {
+   "name": "9/15/15, Executive Session (minutes)",
+   "where": "list",
+   "quote": "9/15/15, executive session"
+  },
+  {
+   "name": "Site Plan Approval, Draft 4",
+   "where": "list",
+   "quote": "site plan approval, draft 4"
+  },
+  {
+   "name": "Off-Street Parking Design Standards, Draft",
+   "where": "list",
+   "quote": "off-street parking design standards, draft"
+  },
+  {
+   "name": "Approved Plan, Job # 091058, dated August 2015, amended to September 25, 2015",
+   "where": "text",
+   "quote": "applicant build to the approved plan- job # 091058, dated august 2015, amended to september 25, 2015."
+  },
+  {
+   "name": "Peer reviewer draft review letter dated September 8, 2015 (Graves Engineering Inc.)",
+   "where": "text",
+   "quote": "peer reviewer je ffrey walsh, graves engineering inc., will formalize his"
+  },
+  {
+   "name": "Special Town Meeting warrant (closing October 5, 2015)",
+   "where": "text",
+   "quote": "the warrant closes october 5, 2015."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan review",
+  "339 Electric Avenue",
+  "274 Prospect Street",
+  "subdivision",
+  "bylaws",
+  "special town meeting",
+  "stormwater task force",
+  "committee reports",
+  "open meeting law",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

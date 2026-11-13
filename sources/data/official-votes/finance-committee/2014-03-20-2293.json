@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2014-03-20",
  "docid": "2293",
@@ -12,15 +12,158 @@
  },
  "votes": [
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "TB",
    "seconded_by": "KM",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "tb motioned to adjourn. km seconded, meeting adjourned at 8:50 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. TB = Terri Burchfield (present, Secretary); KM = Karin Menard (present). No vote count recorded for the adjournment motion, but it carried (meeting adjourned).",
- "cost_usd": 0.09750249999999999
+ "note": "OCR text of a short minutes page. Numbering jumps from item 2 to item 4; no item 3 appears, so part of the agenda may be missing. The Montachusett section has no numbered heading and no figures or discussion recorded. Only one motion appears (adjournment), with no vote count printed, so its outcome is recorded as not stated. No public comment, documents list, or transfers appear in the text.",
+ "cost_usd": 0.00260772,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "j. smith, m. erickson"
+  },
+  {
+   "name": "Brian Laffond",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Jason Smith",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "j. smith, m. erickson"
+  },
+  {
+   "name": "Steven Raboin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "j. henshaw, t. burchfield, b. laffond, s. raboin, k. menard"
+  },
+  {
+   "name": "Superintendent Calmes",
+   "role": "Superintendent, Lunenburg Public Schools",
+   "status": "present",
+   "quote": "superintendent calmes presented the school department budget."
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "Lunenburg's representative to the School Committee",
+   "status": "present",
+   "quote": "barbara reynolds, lunenburg's representative to the school committee, introduced superintendent steven sharek"
+  },
+  {
+   "name": "Steven Sharek",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "introduced superintendent steven sharek and the business manager tammy lajoie to review the budget."
+  },
+  {
+   "name": "Tammy Lajoie",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "introduced superintendent steven sharek and the business manager tammy lajoie to review the budget."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Public Schools budget gap",
+   "what_was_recorded": "Superintendent Calmes presented the school department budget, and as of that presentation there was a gap between the School Committee and Town Manager budget recommendations.",
+   "quote": "as of this presentation, there is a $670,000 gap between the school committee and town manager budget recommendations.",
+   "figures_as_printed": [
+    "$670,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "meeting called to order at 7:00 pm. the meeting is televised and available through local cable",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Lunenburg Public Schools budget presentation",
+   "resolution": "presented, no action recorded",
+   "quote": "superintendent calmes presented the school department budget. as of this presentation, there is a $670,000 gap",
+   "tags": [
+    "school budget",
+    "budget gap"
+   ]
+  },
+  {
+   "topic": "Montachusett Regional Vocational Technical High School budget presentation",
+   "resolution": "presented, no action recorded",
+   "quote": "barbara reynolds, lunenburg's representative to the school committee, introduced superintendent steven sharek",
+   "tags": [
+    "regional vocational school",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "no action",
+   "quote": "next thursday we will hear from the sewer commission, and have the public hearing on the budget.",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50 pm",
+   "quote": "tb motioned to adjourn. km seconded, meeting adjourned at 8:50 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "Finance Committee",
+  "school budget",
+  "budget gap",
+  "regional vocational school",
+  "Montachusett",
+  "public hearing",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

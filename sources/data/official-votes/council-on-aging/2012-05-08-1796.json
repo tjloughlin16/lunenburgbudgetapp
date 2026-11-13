@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2012-05-08",
  "docid": "1796",
@@ -12,55 +12,330 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the April 10, 2012 meeting",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of the meeting of April 10, 2012.",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to approve the minutes of the meeting of april 10, 2012. all approved, motion carried."
   },
   {
-   "motion": "Accept the Board development sub-committee minutes of April 26, 2012",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Accept the Board development sub-committee minutes of April 26, 2012.",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made and seconded to accept the board development sub-committee minutes of april 26, 2012. all approved, motion carried."
   },
   {
-   "motion": "Drop Article IV of the by-laws",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "article iv-voted to drop"
-  },
-  {
-   "motion": "Drop Article V of the by-laws",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "article v voted to drop"
-  },
-  {
-   "motion": "Accept changes to Article VIII of the by-laws",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "article viii accepted change in wording in bold print, other part deleted."
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Adjourn the meeting.",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion was made and seconded to adjourn the meeting. all approved, motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1036955
+ "note": "Text is an extracted, approved-minutes version (header: 'Minutes Approved at the 6/12/12 COA Meeting'). The by-law article results (Articles IV, V, VIII) are reported as committee vote results with no motion text, so they are not recorded as board votes. The officer slate was presented with no vote recorded. No public comment section is printed.",
+ "cost_usd": 0.0069132199999999994,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: peter lincoln, (chairperson)"
+  },
+  {
+   "name": "Mary Lynn Conrad",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "present: peter lincoln, (chairperson), mary lynn conrad, (vice-chairperson)"
+  },
+  {
+   "name": "Doreen Noble",
+   "role": "Director",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle,"
+  },
+  {
+   "name": "Jane Doyle",
+   "role": "",
+   "status": "present",
+   "quote": "doreen noble (director), jane doyle,"
+  },
+  {
+   "name": "Jim Hays",
+   "role": "",
+   "status": "present",
+   "quote": "jim hays, deb seeley, fred crellin, joyce wass"
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "",
+   "status": "present",
+   "quote": "jim hays, deb seeley, fred crellin, joyce wass"
+  },
+  {
+   "name": "Fred Crellin",
+   "role": "",
+   "status": "present",
+   "quote": "jim hays, deb seeley, fred crellin, joyce wass"
+  },
+  {
+   "name": "Joyce Wass",
+   "role": "Chairperson of the Board Development Committee",
+   "status": "present",
+   "quote": "jim hays, deb seeley, fred crellin, joyce wass"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: barbara brown, sis montuori, and sue doherty"
+  },
+  {
+   "name": "Sis Montuori",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: barbara brown, sis montuori, and sue doherty"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "",
+   "status": "absent",
+   "quote": "excused: barbara brown, sis montuori, and sue doherty"
+  },
+  {
+   "name": "Lloyd Carlson",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: lloyd carlson, john male"
+  },
+  {
+   "name": "John Male",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: lloyd carlson, john male"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The question on the parameters of COA and Friends of Eagle House was tabled to the next COA meeting, and the Director will include it in the Director's Report at the June meeting.",
+   "quote": "doreen said since this was not on the agenda, the question will be tabled until the next coa meeting."
+  },
+  {
+   "decision": "Sue Doherty will be in charge of Meals on Wheels and the Director will do in-house meals, since staff is bare bones in case of illness.",
+   "quote": "since the staff is bare bones in case of illness sue doherty will be in charge of meals on wheels and doreen will do in-house meals."
+  },
+  {
+   "decision": "If the override does not pass, one food service staff member will take the training; if so, the Director will take it on June 6.",
+   "quote": "if so doreen will take it on june 6."
+  },
+  {
+   "decision": "Director's evaluation: the sub-committee will compile the evaluation results, the COA will vote on the compiled score later, and a sub-committee meeting was requested for May 25.",
+   "quote": "she requested a meeting of this sub-committee on may 25."
+  },
+  {
+   "decision": "Jim Hays was told to request the term-limit waiver at the next meeting.",
+   "quote": "he was told to request the waiver at the next meeting."
+  },
+  {
+   "decision": "The board was asked to come up with a date and plan for the 45th Anniversary celebration next fall.",
+   "quote": "he asked us to come up with a date and plan for a celebration next fall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY13 COA budget and override impact",
+   "what_was_recorded": "The FY13 budget is in a holding pattern; if the override passes it will be restored, with 5 added custodian hours and 1 or 2 added kitchen hours, and the impact on 2,300 people is stated as a dollar figure.",
+   "figures_as_printed": [
+    "$14,000"
+   ],
+   "quote": "the impact on 2,300 people is $14,000."
+  },
+  {
+   "topic": "Formula Grant",
+   "what_was_recorded": "Work on the Formula Grant is delayed depending on the override vote; the amount per person is fluid until the government decides, and there is no penalty for being late. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "there is no penalty for being late."
+  },
+  {
+   "topic": "Food service training",
+   "what_was_recorded": "Training for a food service staff member depends on whether there is money for one or more people; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "if there is enough money chris mccarthy will take it in july or august."
+  },
+  {
+   "topic": "Financial report",
+   "what_was_recorded": "The Financial Report was presented to the board; no figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "the financial report was presented to the coa board."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and welcome",
+   "resolution": "no action",
+   "quote": "pete lincoln welcomed mr. carlson and mr. male and called the meeting to order at 9:34 a.m.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Friends of Eagle House question",
+   "resolution": "tabled to next meeting",
+   "quote": "doreen said since this was not on the agenda, the question will be tabled until the next coa meeting.",
+   "tags": [
+    "Friends of Eagle House",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Minutes of April 10, 2012",
+   "resolution": "approved",
+   "quote": "a motion was made and seconded to approve the minutes of the meeting of april 10, 2012. all approved, motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "quote": "doreen reported that she is still attending the mass. municipal association supervisory leadership development course",
+   "tags": [
+    "staffing",
+    "training",
+    "Meals on Wheels"
+   ]
+  },
+  {
+   "topic": "Finance/Informational Report",
+   "resolution": "presented, no action",
+   "quote": "the financial report was presented to the coa board.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Old Business: Parking Lot",
+   "resolution": "no action",
+   "quote": "lloyd carlson reported that we're still waiting for dan proctor to clean up the backyard, now that the mound has been removed.",
+   "tags": [
+    "property"
+   ]
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "sub-committee to compile; meeting requested May 25",
+   "quote": "deb seeley collected the evaluations from the coa members",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "FY13 COA Budget",
+   "resolution": "no action; in holding pattern pending override",
+   "quote": "the fy13 budget is in a holding pattern.",
+   "tags": [
+    "FY13 budget",
+    "override"
+   ]
+  },
+  {
+   "topic": "Reminder of minutes and agenda emails",
+   "resolution": "no action",
+   "quote": "the members were reminded that all sub-committee reports are due to sue by june 12.",
+   "tags": [
+    "minutes",
+    "reminders"
+   ]
+  },
+  {
+   "topic": "Slate of officers for FY13",
+   "resolution": "slate presented; no vote recorded",
+   "quote": "joyce wass chairperson of the board development committee presented the slate of officers",
+   "tags": [
+    "officers",
+    "term limits",
+    "membership"
+   ]
+  },
+  {
+   "topic": "New Business: 45th Anniversary of the COA",
+   "resolution": "board asked to plan celebration for next fall",
+   "quote": "pete reminded us about the 45th anniversary of the coa.",
+   "tags": [
+    "anniversary"
+   ]
+  },
+  {
+   "topic": "Sub-committee reports: Board development and By-law Committee",
+   "resolution": "Board development minutes accepted; by-law changes reported",
+   "quote": "fred crellin presented changes discussed by the by-law committee.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "quote": "doreen read a letter from mcoa concerning a meeting at holy cross on june 6",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "General discussion",
+   "resolution": "no action",
+   "quote": "doreen reported the student council prom will be may 22, at 4:00 pm",
+   "tags": [
+    "events"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from MCOA concerning a meeting at Holy Cross on June 6",
+   "where": "text",
+   "quote": "doreen read a letter from mcoa concerning a meeting at holy cross on june 6"
+  },
+  {
+   "name": "Financial Report",
+   "where": "text",
+   "quote": "the financial report was presented to the coa board."
+  },
+  {
+   "name": "Board development sub-committee minutes of April 26, 2012",
+   "where": "text",
+   "quote": "a motion was made and seconded to accept the board development sub-committee minutes of april 26, 2012."
+  },
+  {
+   "name": "Minutes of the meeting of April 10, 2012",
+   "where": "text",
+   "quote": "a motion was made and seconded to approve the minutes of the meeting of april 10, 2012."
+  },
+  {
+   "name": "Director's evaluation forms",
+   "where": "text",
+   "quote": "deb seeley collected the evaluations from the coa members"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "FY13 budget",
+  "override",
+  "staffing",
+  "director evaluation",
+  "officers",
+  "term limits",
+  "by-laws",
+  "Meals on Wheels",
+  "45th anniversary",
+  "Friends of Eagle House"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

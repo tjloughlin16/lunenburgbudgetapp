@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2012-09-20",
  "docid": "2331",
@@ -12,22 +12,23 @@
  },
  "votes": [
   {
-   "motion": "to table the matter until the meeting on Tuesday 9/25/2012",
+   "motion": "Table the Article 4 matter until the 9/25/2012 meeting for a vote.",
    "moved_by": "T.B.",
-   "outcome": "passed 5-0-1",
+   "seconded_by": "",
+   "outcome": "passed 5-0-1 (5 yes, 1 abstained)",
    "procedural": false,
    "quote": "t.b. made a motion that we table the matter until our meeting on tuesday 9/25/2012 for a vote. 5 yes-1 abstained. motion carried."
   },
   {
-   "motion": "to approve the minutes of 9/13/2012",
-   "moved_by": "S.G.",
+   "motion": "Approve the minutes of the 9/13/2012 meeting.",
+   "moved_by": "S.G",
    "seconded_by": "S.R.",
    "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "minutes of our last meeting dated 9/13/2012 were presented for approval. s.g motioned for approval. s.r. seconded. 6-0 approved."
+   "quote": "s.g motioned for approval. s.r. seconded. 6-0 approved."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "S.G.",
    "seconded_by": "S.R.",
    "outcome": "passed",
@@ -35,7 +36,285 @@
    "quote": "motion to adjourn by s.g., seconded by s.r. adjourned at 8:15pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Text is OCR from scanned PDF (macOS Vision). One motion recorded but not voted: J.M. moved to not support article 4, with no second stated; tabled without vote.",
- "cost_usd": 0.1077695
+ "dropped_unquoted": 6,
+ "note": "OCR text (macOS Vision) of typed minutes; some words may be misread and a trailing OCR fragment (\"n...s.rn\") is present. The \"Present:\" line lists six members; Brian Laffond is in the header but not in the present list, so not recorded as attending. Speakers in the hearing are often unnamed (roles only). A motion by J.M. to not support Article 4 had no second and no vote is recorded, so it is not listed as a vote. Only three votes are recorded; the 9/25/2012 outcome of the tabled items is not in this text.",
+ "cost_usd": 0.00782982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "D. Passios",
+   "status": "present",
+   "quote": "d. passios came forward to ask a question."
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "the town manager was called upon to bring clarity to a 123 thousand dollar increase in our state aid figure"
+  },
+  {
+   "name": "Town Accountant",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "the town accountant answered that those cost had been covered by unexpended funds."
+  },
+  {
+   "name": "chair of the BOS",
+   "role": "chair of the BOS",
+   "status": "present",
+   "quote": "articles 1-3 were presented by the chair of the bos."
+  },
+  {
+   "name": "One member of the library board",
+   "role": "member of the library board",
+   "status": "present",
+   "quote": "one member of the library board presented the article and explained the reasons they were going to need to apply for a waiver for state aid."
+  },
+  {
+   "name": "A trustee of the library",
+   "role": "trustee of the library",
+   "status": "present",
+   "quote": "a trustee of the library stepped forward to state that they would need to receive an additional $35,598.00 in funding"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "M.E. recommended tabling Articles 1-3 for a decision at the 9/25/2012 meeting (no vote recorded).",
+   "quote": "m.e. recommended that we table all of the first three articles for a decision until our meeting on tuesday 9/25/2012."
+  },
+  {
+   "decision": "Article 5 of the Special Town Meeting Warrant was determined to have no financial impact on the town, with the Town Manager agreeing.",
+   "quote": "it was determined that article 5 on the special town meeting warrant did not present any financial impact to the town. town manager agreed."
+  },
+  {
+   "decision": "Future agenda: joint meeting with the BOS at Lunenburg High School on 9/25/2012 at 6PM, followed by a FINCOM meeting at 6:30PM.",
+   "quote": "future agenda: meeting at lunenburg high school on 9/25/2012 @6pm with the bos, followed by a fincom meeting"
+  },
+  {
+   "decision": "Sewer cost numbers requested by J.M. are expected from the Town Manager at the 10/11/2012 meeting.",
+   "quote": "we are also to expect numbers pertaining to the sewer costs to the town as requested by j.m. from the town manager at our meeting on 10/11/2012."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library state aid cut and waiver threshold (Article 4)",
+   "what_was_recorded": "Library presenters said their cut was more than 10% and disproportional, which would require a waiver application for state aid; they said they did not have the figure needed to reach under a 10% cut.",
+   "figures_as_printed": [
+    "10%",
+    "10 percent"
+   ],
+   "quote": "because it was more than 10% and because it was disproportional to previous year decreases, they would have to complete a calculation spreadsheet"
+  },
+  {
+   "topic": "State aid increase above forecast",
+   "what_was_recorded": "The Town Manager was asked to explain a 123 thousand dollar increase in state aid above the original forecast, and she resisted committing those funds to any project.",
+   "figures_as_printed": [
+    "123 thousand dollar"
+   ],
+   "quote": "the town manager was called upon to bring clarity to a 123 thousand dollar increase in our state aid figure"
+  },
+  {
+   "topic": "Additional library funding requested",
+   "what_was_recorded": "A library trustee said the library would need an additional amount in funding under the warrant article to avoid seeking a waiver.",
+   "figures_as_printed": [
+    "$35,598.00"
+   ],
+   "quote": "a trustee of the library stepped forward to state that they would need to receive an additional $35,598.00 in funding"
+  },
+  {
+   "topic": "Potential financial impact of Articles 1-3",
+   "what_was_recorded": "The BOS chair said the potential financial impact to the town lies between the printed amounts over 20 years.",
+   "figures_as_printed": [
+    "140-180 thousand dollars",
+    "3.6-8.4 million"
+   ],
+   "quote": "the potential financial impact for the town lies somewhere between 140-180 thousand dollars or approximately 3.6-8.4 million over the next 20 years."
+  },
+  {
+   "topic": "Prior tuition assessment overages",
+   "what_was_recorded": "Town Manager cited the last five years of tuition assessments and variances; the Town Accountant said past overages were covered by unexpended funds.",
+   "figures_as_printed": [],
+   "quote": "the town accountant answered that those cost had been covered by unexpended funds."
+  },
+  {
+   "topic": "PILOT forfeiture of tax revenues",
+   "what_was_recorded": "Asked whether tax revenues would be lost under the PILOT proposals, the answer was yes, subject to negotiation under the net metering agreements.",
+   "figures_as_printed": [],
+   "quote": "the answer was yes, there would be a forfeiture of tax revenues under the pilots"
+  },
+  {
+   "topic": "State cherry sheets removal",
+   "what_was_recorded": "A member asked whether property might be removed from the state cherry sheets and money lost; the chair of the BOS said property valuations were minimal compared with the potential income.",
+   "figures_as_printed": [],
+   "quote": "was going to be subject to removal from the state cherry sheets and if we would be losing out on any monies in that regard."
+  },
+  {
+   "topic": "Funds used for school electronic equipment later sold",
+   "what_was_recorded": "A public speaker asked whether capital funds bought electronic equipment the school later sold, noting sale proceeds cannot fund operations.",
+   "figures_as_printed": [],
+   "quote": "the question was regarding where funds came from to purchase electronic equipment that was subsequently sold by"
+  },
+  {
+   "topic": "Sewer costs to the town",
+   "what_was_recorded": "Numbers on sewer costs to the town were expected from the Town Manager at the 10/11/2012 meeting.",
+   "figures_as_printed": [],
+   "quote": "we are also to expect numbers pertaining to the sewer costs to the town as requested by j.m. from the town manager"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "One member of the library board",
+   "stated_role": "member of the library board",
+   "topic": "Article 4 library state aid waiver",
+   "quote": "one member of the library board presented the article and explained the reasons they were going to need to apply for a waiver for state aid."
+  },
+  {
+   "speaker": "A member of the community",
+   "stated_role": "",
+   "topic": "Prior overage funding source",
+   "quote": "a member of the community rose to ask where the money had come from previously to cover those overages."
+  },
+  {
+   "speaker": "A trustee of the library",
+   "stated_role": "trustee of the library",
+   "topic": "Library funding need for Article 4",
+   "quote": "a trustee of the library stepped forward to state that they would need to receive an additional $35,598.00 in funding"
+  },
+  {
+   "speaker": "D. Passios",
+   "stated_role": "",
+   "topic": "Funds used for school electronic equipment",
+   "quote": "d. passios came forward to ask a question."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Warrant Article 4 (library state aid)",
+   "resolution": "tabled to 9/25/2012 (5 yes-1 abstained)",
+   "quote": "article 4 was presented for discussion and several members of the community spoke on behalf of the library in support of the",
+   "tags": [
+    "warrant article",
+    "library",
+    "state aid",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public hearing: Warrant Articles 1-3 (BOS, PILOT, net metering)",
+   "resolution": "tabled to 9/25/2012 on M.E. recommendation",
+   "quote": "m.e. recommended that we table all of the first three articles for a decision until our meeting on tuesday 9/25/2012.",
+   "tags": [
+    "PILOT",
+    "net metering",
+    "warrant article",
+    "land"
+   ]
+  },
+  {
+   "topic": "Warrant Article 5 financial impact",
+   "resolution": "determined no financial impact; no action",
+   "quote": "it was determined that article 5 on the special town meeting warrant did not present any financial impact to the town.",
+   "tags": [
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Public hearing closed",
+   "resolution": "closed at 8:05 PM",
+   "quote": "the public hearing was closed at 8:05 pm. the balance of the fincom meeting continued.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public comment: school electronic equipment sale funds",
+   "resolution": "answered by chair; no action",
+   "quote": "d. passios came forward to ask a question.",
+   "tags": [
+    "public comment",
+    "school",
+    "capital funds"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted; materials available",
+   "quote": "7. communications: financial briefs from power and sullivan were available if anyone wanted to read over them.",
+   "tags": [
+    "communications",
+    "financial briefs"
+   ]
+  },
+  {
+   "topic": "Approval of 9/13/2012 minutes",
+   "resolution": "approved 6-0",
+   "quote": "s.g motioned for approval. s.r. seconded. 6-0 approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Budget opportunities",
+   "resolution": "none",
+   "quote": "9. budget opportunities: none.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Future agenda",
+   "resolution": "joint BOS meeting set for 9/25/2012; sewer numbers expected 10/11/2012",
+   "quote": "future agenda: meeting at lunenburg high school on 9/25/2012 @6pm with the bos, followed by a fincom meeting",
+   "tags": [
+    "schedule",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15PM",
+   "quote": "motion to adjourn by s.g., seconded by s.r. adjourned at 8:15pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Briefs from Power and Sullivan",
+   "where": "list",
+   "quote": "financial briefs from power and sullivan were available if anyone wanted to read over them."
+  },
+  {
+   "name": "Announcement of the Annual Association of Town Finance Committees meeting",
+   "where": "list",
+   "quote": "also received was an announcement of the annual association of town finance committees meeting."
+  },
+  {
+   "name": "Special Town Meeting Warrant",
+   "where": "text",
+   "quote": "to see if there was a motion for a recommendation regarding article 4 of the special town meeting warrant"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "public hearing",
+  "warrant articles",
+  "library",
+  "state aid",
+  "PILOT",
+  "net metering",
+  "sewer",
+  "school equipment",
+  "Special Town Meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "communications: financial briefs from power and sullivan were available"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 6
+ }
 }

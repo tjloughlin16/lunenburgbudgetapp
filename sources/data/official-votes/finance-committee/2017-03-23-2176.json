@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-03-23",
  "docid": "2176",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "recommend approval of Article 3 (Storm Water Task Force Revolving Fund) to the ATM",
+   "motion": "Recommend approval by the ATM of a FY18 warrant article in the table (row not matched to article number; motion as printed).",
    "moved_by": "Mark",
    "seconded_by": "John",
    "outcome": "passed 6-0",
@@ -20,7 +20,7 @@
    "quote": "mark moved to recommend approval by the atm, john seconded the motion. the committee approved the motion 6-0."
   },
   {
-   "motion": "recommend approval of Article 7 (Amending PACC FY17 budget) to the ATM",
+   "motion": "Recommend ATM approval of a FY18 warrant article in the table (row not matched to article number).",
    "moved_by": "John",
    "seconded_by": "Mark",
    "outcome": "passed 6-0",
@@ -28,7 +28,7 @@
    "quote": "john moved to recommend atm approval, mark seconded the motion. the committee approved the motion 6-0."
   },
   {
-   "motion": "recommend increasing the fund by $84,523 and recommend approval of Article 9 to the ATM",
+   "motion": "Recommend increasing a fund by $84,523 and recommend approval by the ATM.",
    "moved_by": "Mark",
    "seconded_by": "John",
    "outcome": "passed 6-0",
@@ -36,7 +36,7 @@
    "quote": "mark moved to recommend increasing the fund by $84,523 and to recommend approval by the atm, john seconded the motion. the committee approved the motion 6-0."
   },
   {
-   "motion": "recommend increasing the fund by $100,000 and recommend approval of Article 10 to the ATM",
+   "motion": "Recommend increasing a fund by $100,000 and recommend approval by the ATM.",
    "moved_by": "John",
    "seconded_by": "Mark",
    "outcome": "passed 6-0",
@@ -44,7 +44,7 @@
    "quote": "john moved to recommend increasing the fund by $100,000 and to recommend approval by the atm, mark seconded the motion. the committee approved the motion 6-0."
   },
   {
-   "motion": "recommend increasing the fund by $162,800 and recommend approval of Article 20 to the ATM",
+   "motion": "Recommend increasing a fund by $162,800 and recommend approval by the ATM.",
    "moved_by": "John",
    "seconded_by": "Mark",
    "outcome": "passed 6-0",
@@ -52,7 +52,7 @@
    "quote": "john moved to recommend increasing the fund by $162,800 and to recommend approval by the atm, mark seconded the motion. the committee approved the motion 6-0."
   },
   {
-   "motion": "recommend approval of Article 21 (Public Educational Governmental Committee) to the ATM",
+   "motion": "Recommend ATM approval of a FY18 warrant article in the table (row not matched to article number).",
    "moved_by": "John",
    "seconded_by": "Cindy",
    "outcome": "passed 6-0",
@@ -60,7 +60,15 @@
    "quote": "john moved to recommend atm approval, cindy seconded the motion. the committee approved the motion 6-0."
   },
   {
-   "motion": "recommend approval of Article 24 (rescind Lane property borrowing authorization) to the ATM",
+   "motion": "Recommend approval by the ATM of a FY18 warrant article in the table (row not matched to article number).",
+   "moved_by": "John",
+   "seconded_by": "Mark",
+   "outcome": "passed 6-0",
+   "procedural": false,
+   "quote": "john moved to recommend approval by the atm, mark seconded the motion. the committee approved the motion 6-0."
+  },
+  {
+   "motion": "Recommend approval by the ATM of a FY18 warrant article in the table (row not matched to article number).",
    "moved_by": "Mark",
    "seconded_by": "John",
    "outcome": "passed 6-0",
@@ -68,24 +76,341 @@
    "quote": "mark moved to recommend approval by the atm, john seconded the motion. the committee approved the motion 6-0."
   },
   {
-   "motion": "recommend approval of Article 34 (municipal charges lien) to the ATM",
-   "moved_by": "Mark",
-   "seconded_by": "John",
-   "outcome": "passed 6-0",
-   "procedural": false,
-   "quote": "mark moved to recommend approval by the atm, john seconded the motion. the committee approved the motion 6-0."
-  },
-  {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mark",
    "seconded_by": "Hannah",
-   "outcome": "passed 6-0",
+   "outcome": "passed 6-O (printed as 6-O at 8:40 pm)",
    "procedural": true,
-   "quote": "mark moved to adjourn. hannah seconded the motion. the committee approved the motion 6- ",
-   "quote_taken_from_text": true
+   "quote": "mark moved to adjourn. hannah seconded the motion. the committee approved the motion"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted text from macOS Vision. All votes recorded. The meeting had six members present out of seven (Jay Simeone absent), and all votes passed unanimously 6-0.",
- "cost_usd": 0.1032825
+ "note": "Draft minutes (submitted April 5, 2017; received and filed April 10, 2017). OCR of page 1 is garbled around the Chief Marino and 'b.' lines, and the warrant table's columns do not align cleanly with article numbers, so table motions are recorded without article numbers. The adjournment result is printed as '6-O' (letter O, likely 6-0); the adjournment quote stops before the count for that reason. Quotes that span line breaks are collapsed to single spaces.",
+ "cost_usd": 0.011473720000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, hannah anderson, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, hannah anderson, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "jay simeone heather lemieux-town manager, karen brochu-manager, town finance."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member (took the minutes)",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, hannah anderson, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, hannah anderson, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, hannah anderson, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, hannah anderson, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux-town manager, karen brochu-manager, town finance."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Manager, Town Finance",
+   "status": "present",
+   "quote": "heather lemieux-town manager, karen brochu-manager, town finance."
+  },
+  {
+   "name": "Barbara Reynolds",
+   "role": "the Town's Monty Tech liaison",
+   "status": "not stated",
+   "quote": "barbara reynolds, the town's monty tech liaison, stated that monty tech's assessment for school year"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief marino stated that if the town approves his request for an additional officer"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "dave passios suggested we look at grants for things like protective gear for police officers which"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "katie adams supports the prospective funding of an additional police officer perhaps serving as a"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John will include the debt service discussion points in the next iteration of the Debt Service Policy draft.",
+   "quote": "john will include this in the next iteration."
+  },
+  {
+   "decision": "Committee awaits information on the amount of the revolving funds before making a recommendation (Art. 2).",
+   "quote": "await information on the amount of the revolving funds before recommendation."
+  },
+  {
+   "decision": "The plumbing inspector article will be amended; committee awaits the final version before recommending.",
+   "quote": "the article will be amended to include the plumbing inspector so the committee awaits the final version before making a recommendation."
+  },
+  {
+   "decision": "Committee will make recommendations on several articles when final amounts are settled.",
+   "quote": "committee will make a recommendation when final amount is settled."
+  },
+  {
+   "decision": "Committee will wait until the ATM to see whether the PACC FY17 budget needs amending.",
+   "quote": "committee will wait until the atm to see if it is necessary to amend the budget."
+  },
+  {
+   "decision": "Committee awaits more information and a spreadsheet analysis from Karen Brochu before recommending on the article in question.",
+   "quote": "the committee awaits more information from and a spreadsheet analysis from karen brochu before making a recommendation."
+  },
+  {
+   "decision": "Committee will await further information before recommending on the articles contingent on the Building Re-use Committee RFQ results.",
+   "quote": "the committee will await further information before making recommendation."
+  },
+  {
+   "decision": "Next meeting set for April 6, 2017.",
+   "quote": "9. next meeting: april 6, 2017"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Debt service costs and future borrowing",
+   "what_was_recorded": "John described his handout on current debt service costs and future projects that may need borrowing; projected debt service will inform the Town's debt limit.",
+   "quote": "john described his handout on current debt service costs and list of several future projects that"
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "Monty Tech's assessment for 2017-2018 decreased by $20,099 (-2.4%) while Lunenburg enrollment rose from 91 to 92 students.",
+   "quote": "monty tech's assessment for school year 2017-2018 decreased by $20,099 or -2.4%"
+  },
+  {
+   "topic": "Additional police officer / school resource officer funding",
+   "what_was_recorded": "Discussion of prospective funding for an additional police officer and the chief's request; no figure printed.",
+   "quote": "katie adams supports the prospective funding of an additional police officer perhaps serving as a"
+  },
+  {
+   "topic": "Police protective gear and grants",
+   "what_was_recorded": "Chief stated he needs additional protective gear; a suggestion was made to look at grants for such gear; no figure printed.",
+   "quote": "dave passios suggested we look at grants for things like protective gear for police officers which"
+  },
+  {
+   "topic": "Cemetery plot sale appropriation (Art. 22)",
+   "what_was_recorded": "Warrant article to appropriate money from the sale of cemetery plots for the cemetery.",
+   "quote": "authorization to appropriate $84,200 from the sale of cemetery plots for the cemetery."
+  },
+  {
+   "topic": "Fund increase recommended (table row)",
+   "what_was_recorded": "Committee recommended increasing a fund by $84,523 (row not matched to article number).",
+   "quote": "mark moved to recommend increasing the fund by $84,523 and to recommend approval by the atm"
+  },
+  {
+   "topic": "Fund increase recommended (table row)",
+   "what_was_recorded": "Committee recommended increasing a fund by $100,000 (row not matched to article number).",
+   "quote": "john moved to recommend increasing the fund by $100,000 and to recommend approval by the atm"
+  },
+  {
+   "topic": "Fund increase recommended (table row)",
+   "what_was_recorded": "Committee recommended increasing a fund by $162,800 (row not matched to article number).",
+   "quote": "john moved to recommend increasing the fund by $162,800 and to recommend approval by the atm"
+  },
+  {
+   "topic": "Rescinding Lane property borrowing (Art. 25)",
+   "what_was_recorded": "Warrant article to rescind a $223,915 borrowing authorization for the purchase of the Lane property; committee awaits further information.",
+   "quote": "rescinding the $223,915 borrowing authorization"
+  },
+  {
+   "topic": "Historical and forecast Town budgets for debt decision",
+   "what_was_recorded": "Mark said providing historical actual Town budgets and forecasted budgets would give context for the debt limit; no figure printed.",
+   "quote": "mark said that providing historical actual town budgets as well as forecasted budgets would"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Barbara Reynolds",
+   "stated_role": "the Town's Monty Tech liaison",
+   "topic": "Monty Tech assessment decrease",
+   "quote": "barbara reynolds, the town's monty tech liaison, stated that monty tech's assessment for school year"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "not stated",
+   "topic": "Grants for police protective gear",
+   "quote": "dave passios suggested we look at grants for things like protective gear for police officers which"
+  },
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "not stated",
+   "topic": "Support for additional police officer",
+   "quote": "katie adams supports the prospective funding of an additional police officer perhaps serving as a"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and committee/public comments",
+   "resolution": "discussed; John to revise debt service draft",
+   "quote": "terri called the meeting to order at 7:00 pm.",
+   "tags": [
+    "debt service",
+    "zoning",
+    "police",
+    "Monty Tech"
+   ]
+  },
+  {
+   "topic": "FY18 warrant articles with financial effects",
+   "resolution": "recommendations voted on several articles; others awaiting information",
+   "quote": "committee review and discussion of the articles in the fy18 warrant with financial effects.",
+   "tags": [
+    "FY18 warrant",
+    "revolving funds",
+    "stabilization",
+    "OPEB",
+    "sewer",
+    "water",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Budget Goals and Opportunities",
+   "resolution": "no discussion",
+   "quote": "4. budget goals and opportunities: no discussion at this meeting.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Review Minutes",
+   "resolution": "none",
+   "quote": "5. review minutes: none.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Financial Officer's Report",
+   "resolution": "none",
+   "quote": "6. town financial officer's report: none",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Committee and Department Updates",
+   "resolution": "no updates",
+   "quote": "7. committee and department updates: no updates at this time.",
+   "tags": [
+    "departments"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "listed; no action recorded",
+   "quote": "sale of surplus property-see warrant articles 26-30 above.",
+   "tags": [
+    "pavement",
+    "contracts",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for April 6, 2017",
+   "quote": "9. next meeting: april 6, 2017",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:40 pm",
+   "quote": "10. adjournment: mark moved to adjourn. hannah seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft FY18 Annual Town Meeting Warrant, March 2017",
+   "where": "list",
+   "quote": "attachments (1): draft fy18 annual town meeting warrant, march 2017."
+  },
+  {
+   "name": "John Henshaw handout on current debt service costs and list of future projects",
+   "where": "text",
+   "quote": "john described his handout on current debt service costs and list of several future projects that"
+  },
+  {
+   "name": "Debt Service Policy Draft",
+   "where": "text",
+   "quote": "debt service policy draft:"
+  },
+  {
+   "name": "Spreadsheet analysis from Karen Brochu",
+   "where": "text",
+   "quote": "the committee awaits more information from and a spreadsheet analysis from karen brochu before making a recommendation."
+  },
+  {
+   "name": "Town's Financial Policy",
+   "where": "text",
+   "quote": "authorization to fund the fy18 stabilization fund per the town's financial policy."
+  },
+  {
+   "name": "RFQs requested by the Building Re-use Committee",
+   "where": "text",
+   "quote": "these warrant articles are contingent on the results of the rfqs requested by the building"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "FY18 warrant",
+  "Annual Town Meeting",
+  "debt service policy",
+  "police staffing",
+  "Monty Tech assessment",
+  "revolving funds",
+  "cemetery",
+  "stabilization",
+  "sewer and water enterprise",
+  "Lane property",
+  "solar array",
+  "draft minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (1):"
+ },
+ "dropped_unquoted_by_field": {}
 }

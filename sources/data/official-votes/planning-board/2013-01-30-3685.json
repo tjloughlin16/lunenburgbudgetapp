@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-01-30",
  "docid": "3685",
@@ -12,24 +12,289 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing to February 13, 2013",
+   "motion": "Continue the Public Hearing to February 13, 2013.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion to continue the public hearing to february 13, 2013, mr. bodkin jr., second, ms. bilotta -simeone. roll call vote , mr. lockwood, aye; mr. bodkin jr., aye; ms. bilotta-simeone, aye; mr. bakaysa, ay",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "motion to continue the public hearing to february 13, 2013, mr. bodkin jr., second"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Bilotta-Simeone",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn, ms. bilotta-simeone second, mr. bodkin jr. adjourned 9:40 pm"
+   "quote": "motion to adjourn, ms. bilotta-simeone second, mr. bodkin jr."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded: one to continue the public hearing (passed 4-0 on roll call) and one to adjourn (passed, indicated by meeting adjournment at 9:40 PM).",
- "cost_usd": 0.1243025
+ "note": "Text extraction, not a scan. Odd spacing and split words in the source (e.g. 'Dan Bracke tt', 'Bi ngham', 'Definiti ve') were kept as printed where quoted; the name Dan Brackett is normalized from the split form. Only two votes are recorded (continuance, 4-0 roll call; adjournment, no count). No dollar figures are printed in the minutes. The adjournment outcome is recorded as 'passed' because the minutes state 'Adjourned 9:40 PM' without a tally. The 'Present' list gives Joanna L. Bilotta; later text calls her Ms. Bilotta-Simeone.",
+ "cost_usd": 0.00924082,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., nathan j. lockwood"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "joanna l. bilotta, vice chair,"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., nathan j. lockwood"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., nathan j. lockwood"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "marion m. benson, planning director"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "town counsel, joel bard"
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "representing the applicant/developer (O’Brien Homes, Inc.)",
+   "status": "present",
+   "quote": "kevin o'brien, o'brien homes, inc."
+  },
+  {
+   "name": "Mark Johnson",
+   "role": "Attorney, representing the applicant",
+   "status": "present",
+   "quote": "attorney mark johnson, 12 chestnut street,"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "project engineer, Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "wesley flis, whitman & bingham associates, project engineer,"
+  },
+  {
+   "name": "Brian Milisci",
+   "role": "Principal, Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "brian milisci, principal,"
+  },
+  {
+   "name": "Jesse Johnson",
+   "role": "Reviewing Engineer for the Town (David Ross Associates)",
+   "status": "present",
+   "quote": "reviewing engineer for the town was jesse"
+  },
+  {
+   "name": "Dave Finch",
+   "role": "Opponents (per minutes heading), 537 Howard Street",
+   "status": "present",
+   "quote": "dave finch, 537 howard street"
+  },
+  {
+   "name": "Rennie Shattuck",
+   "role": "Opponents (per minutes heading), 396 Howard Street; abuts Subdivision 1",
+   "status": "present",
+   "quote": "rennie shattuck, 396 howard street"
+  },
+  {
+   "name": "Gary Lahti",
+   "role": "Opponents (per minutes heading), 440 Howard Street; abuts Subdivision 2",
+   "status": "present",
+   "quote": "gary lahti, 440 howard street"
+  },
+  {
+   "name": "Dan Brackett",
+   "role": "Opponents (per minutes heading), 815 New West Townsend Road; abuts 4 and 3",
+   "status": "present",
+   "quote": "815 new west townsend road - abuts 4 and 3."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Individual findings and directives will be done for each of the ten Aro Estates subdivisions.",
+   "quote": "mr. bakaysa noted individual findings and directives will be done for each subdivision."
+  },
+  {
+   "decision": "Ms. Benson requested that Whitman & Bingham Associates provide the Planning Office with a plan depicting the ten subdivisions, the number of lots in each, and the acreage of each.",
+   "quote": "whitman & bingham associates provide the planning office with a plan depicting"
+  },
+  {
+   "decision": "Attorney Bard requested that Mr. O'Brien, through Attorney Johnson, send a letter to the Town Clerk granting a Board extension to a date to be set.",
+   "quote": "he is requesting a letter from mr. o'brien, through attorney johnson, to the town clerk granting board extension"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Planning review fees",
+   "what_was_recorded": "Ms. Benson noted a breakdown of review fees; the minutes print no dollar figure.",
+   "quote": "ms. benson noted breakdown of review fees."
+  },
+  {
+   "topic": "Payment of Ross invoices",
+   "what_was_recorded": "Mr. O’Brien gave verbal approval for payment of the two current Ross invoices; no amounts are printed.",
+   "quote": "mr. o'brien gave verbal approval for payment of the two current ross invoices."
+  },
+  {
+   "topic": "Bond for each subdivision",
+   "what_was_recorded": "Town Counsel noted the Board could require a bond for each subdivision, usable to convert a temporary road to permanent if not completed; no amount is printed.",
+   "quote": "attorney bard noted that the boar d could require a bond",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Finch",
+   "stated_role": "Opponents",
+   "topic": "lot frontage, number of houses, water",
+   "quote": "dave finch, 537 howard street- questions regarding lot frontage."
+  },
+  {
+   "speaker": "Rennie Shattuck",
+   "stated_role": "Opponents; abuts Subdivision 1",
+   "topic": "groundwater runoff, conservation land",
+   "quote": "rennie shattuck, 396 howard street - abuts subdivision 1."
+  },
+  {
+   "speaker": "Gary Lahti",
+   "stated_role": "Opponents; abuts Subdivision 2",
+   "topic": "drainage concerns",
+   "quote": "gary lahti, 440 howard street- abuts subdivision 2. concerns with drainage."
+  },
+  {
+   "speaker": "Dan Brackett",
+   "stated_role": "Opponents; abuts 4 and 3",
+   "topic": "ten subdivisions versus individual review, temporary roads",
+   "quote": "815 new west townsend road - abuts 4 and 3."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening of ten consecutive public hearings, Aro Estates",
+   "resolution": "opened; continued",
+   "quote": "chair opened the ten consecutive public hearings with the reading of the legal notice"
+  },
+  {
+   "topic": "Applicant presentation, Aro Estates 1-10",
+   "resolution": "presented; no action",
+   "quote": "mr. flis made presentation for mr. o'brien."
+  },
+  {
+   "topic": "Town engineer peer review (drainage, waivers, wetlands)",
+   "resolution": "review comments recorded; no action",
+   "quote": "reviewing engineer for the town was jesse"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard from opponents; no proponents",
+   "quote": "opened to public comment-"
+  },
+  {
+   "topic": "Town Counsel opinion and Board decision deadline (135 days)",
+   "resolution": "discussed; applicant to provide target date",
+   "quote": "attorney bard suggests late april."
+  },
+  {
+   "topic": "Review status, missing items and fees",
+   "resolution": "discussed; no action",
+   "quote": "mr. bakaysa asked j. johnson if he had all he needed at this time"
+  },
+  {
+   "topic": "Continuance of hearing",
+   "resolution": "continued to February 13, 2013",
+   "quote": "motion to continue the public hearing to february 13, 2013, mr. bodkin jr., second"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:40 PM",
+   "quote": "motion to adjourn, ms. bilotta-simeone second, mr. bodkin jr."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter dated January 24, 2013, David E. Ross Associates Inc., re Definitive Subdivision Plan, Aro Estates 1-10, Howard Street, Lunenburg",
+   "where": "list",
+   "quote": "letter dated january 24, 2013, david e. ross associates inc."
+  },
+  {
+   "name": "Letter dated January 30,2013, Whitman & Bingham Associates, re Aro Estates 1-10, Definitive Subdivision Review, Howard Street, Lunenburg, MA",
+   "where": "list",
+   "quote": "letter dated january 30,2013, whitman & bingham associates"
+  },
+  {
+   "name": "Legal notice advertised in the Sentinel & Enterprise (January 16 and January 23, 2013)",
+   "where": "text",
+   "quote": "reading of the legal notice advertised in the sentinel & enterprise"
+  },
+  {
+   "name": "Drainage calculations for the ten subdivisions (submitted January 2, 2013)",
+   "where": "text",
+   "quote": "drainage calculations were submitted as a complete set for the ten subdivisions"
+  },
+  {
+   "name": "Drainage analysis dated December 21, 2012",
+   "where": "text",
+   "quote": "j. johnson noted drainage analysis dated december 21, 2012."
+  },
+  {
+   "name": "Traffic Impact Assessment from 2008 (being updated)",
+   "where": "text",
+   "quote": "traffic impact assessment from 2008 being updated as there are now two egress points instead of three."
+  },
+  {
+   "name": "David Ross Associates letter dated October 22 (J. Johnson's October 22 letter)",
+   "where": "text",
+   "quote": "october 22 nd letter which stated"
+  },
+  {
+   "name": "Whitman & Bingham Associates response letter dated December 7",
+   "where": "text",
+   "quote": "go through whitman & bingham associates december 7 th response letter"
+  },
+  {
+   "name": "Plans dated April 2012",
+   "where": "text",
+   "quote": "plans are dated april 2012"
+  },
+  {
+   "name": "Zoning Bylaw (sections 5.6, 6.4.3.10, 4.5.1)",
+   "where": "text",
+   "quote": "satisfies 5.6. of the zoning bylaw."
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "subdivision",
+  "Aro Estates",
+  "Howard Street",
+  "drainage",
+  "groundwater",
+  "peer review",
+  "zoning bylaw",
+  "deadline",
+  "wells and septic",
+  "continuance",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments"
+ },
+ "dropped_unquoted_by_field": {}
 }

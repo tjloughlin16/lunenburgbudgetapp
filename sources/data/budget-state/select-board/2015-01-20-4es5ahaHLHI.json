@@ -1,0 +1,76 @@
+{
+ "board": "Selectmen Meeting",
+ "board_slug": "select-board",
+ "meeting_date": "2015-01-20",
+ "source": {
+  "sha256": "9542a17245f3216595dcc381a663d15d23065466d3ff827a791f832a16fa4a36",
+  "transcript": "sources/data/youtube-transcripts/select-board/2015-01-20-4es5ahaHLHI.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2016,
+    "kind": "other",
+    "scope": "town",
+    "statement": "The town manager said the first FY16 budget will come in below the target budget.",
+    "status": "announced",
+    "t": 6750,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "265 000",
+    "fiscal_year": 2016,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Free cash planned for capital in the forecast likely won't be available at that level.",
+    "status": "announced",
+    "t": 6730,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2016,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "No state aid increase expected; level funding or a slight reduction may be assumed.",
+    "status": "announced",
+    "t": 6791,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "nine percent",
+    "fiscal_year": 2016,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "The proposed school budget includes all recommended personnel additions for an overall increase said to be nine percent.",
+    "status": "proposed",
+    "t": 6255,
+    "who": "a member relaying the superintendent's memo"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "state aid",
+    "condition": null,
+    "fiscal_year": 2016,
+    "prediction": "State aid cuts from the state deficit may hit FY16.",
+    "scope": "town",
+    "t": 6504,
+    "who": "the town manager"
+   }
+  ]
+ },
+ "video_id": "4es5ahaHLHI",
+ "video_url": "https://www.youtube.com/watch?v=4es5ahaHLHI",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-12T18:02:01Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

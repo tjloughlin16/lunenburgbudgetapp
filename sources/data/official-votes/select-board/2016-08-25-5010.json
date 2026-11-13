@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2016-08-25",
  "docid": "5010",
@@ -12,23 +12,93 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to consider or interview applicants for employment and adjourn immediately afterwards",
+   "motion": "To enter executive session under M.G.L. c. 30A, §21 to consider or interview applicants (Interim Town Manager applications review) and adjourn immediately afterwards.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2°°: p. bertram to enter executive session and adjourn immediately afterwards vote: mr. alonzo- aye, ms. bertram - aye, mr. toale- aye"
+   "quote": "motion: t. alonzo 2°°: p. bertram to enter executive session and adjourn immediately afterwards"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 9:00 p.m.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion:t. alonzo to adjourn the meeting at 9:00 p.m. 2\"d.p. bertram vote: mr. alonzo-aye, ms. bertram - aye, mr. toale-aye"
+   "quote": "motion:t. alonzo to adjourn the meeting at 9:00 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes; both votes recorded with clear outcomes.",
- "cost_usd": 0.096927
+ "note": "OCR scan (macOS Vision) of a short minutes page. Meeting date 2016-08-25 is not printed in the extracted text; it is taken from the request. Vote tallies are roll calls (three ayes each), not printed counts, so outcomes are recorded as \"passed\". The second's name in the first motion is OCR-garbled (\"2°°\"), read as P. Bertram from the printed name. The minutes name the body as a subcommittee (preliminary screening) though the request labels it Select Board. No public comment, budget figures, transfers, or document list appear in the text.",
+ "cost_usd": 0.00269132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Subcommittee member (presided; called meeting to order)",
+   "status": "present",
+   "quote": "subcommittee members: jamie toale, tom alonzo, paula bertram"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Subcommittee member",
+   "status": "present",
+   "quote": "subcommittee members: jamie toale, tom alonzo, paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Subcommittee member",
+   "status": "present",
+   "quote": "subcommittee members: jamie toale, tom alonzo, paula bertram"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "applicant (interviewee)",
+   "status": "present",
+   "quote": "the board interviewed adam burney at 6:00 p.m. and stephen delaney at 7:00 p.m."
+  },
+  {
+   "name": "Stephen Delaney",
+   "role": "applicant (interviewee)",
+   "status": "present",
+   "quote": "the board interviewed adam burney at 6:00 p.m. and stephen delaney at 7:00 p.m."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Interim Town Manager applicant interviews",
+   "resolution": "interviews held in executive session; members discussed interviews afterwards, no action recorded",
+   "quote": "the board interviewed adam burney at 6:00 p.m. and stephen delaney at 7:00 p.m."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 p.m.",
+   "quote": "to adjourn the meeting at 9:00 p.m."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "executive session",
+  "Interim Town Manager",
+  "hiring",
+  "applicant interviews",
+  "preliminary screening subcommittee",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

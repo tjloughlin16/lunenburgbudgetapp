@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2013-01-17",
  "docid": "3683",
@@ -12,24 +12,124 @@
  },
  "votes": [
   {
-   "motion": "send a letter to the Board of Selectmen recommending purchase of property",
+   "motion": "Send a letter to the Board of Selectmen recommending purchase of the Aro property (Ch. 61A, Howard Street).",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Ms. Bilotta-Simeone",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "mr. lockwood made motion to send a letter to the board of selectmen recommending purchase of property, second, ms. bilotta- simeone. mr. bakaysa felt the zoning bylaws w ould hold fast and that the area will be develop ed u nder the rules and regulations governing the subdivision of land. final board consensus was in support of giving the citizens the opportunity to vote as to whether or not to purchase the property. a letter will be provided to the board of selectmen and the town manager stating that the planning board recommends the town acquire the property due to the financial impact on the town for developing in that area of town and the impact on town services and infrastructure. roll call vote , mr. lockwood, ay e; mr. bodkin jr., aye; ms. bilotta -simeone, aye; mr. bakays",
-   "quote_taken_from_text": true
+   "quote": "mr. lockwood made motion to send a letter to the board of selectmen recommending purchase of property"
   },
   {
-   "motion": "adjourn Regular Session and enter into Executive Session not to return to Regular",
+   "motion": "Adjourn Regular Session and enter Executive Session, not to return to Regular Session.",
    "moved_by": "Mr. Bodkin Jr.",
    "seconded_by": "Mr. Lockwood",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn regular session and enter into executive session not to return to regular, mr. bodkin jr., second, mr. lockwood."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are complete. Two votes recorded: one substantive recommendation to purchase property (4-0), and one procedural motion to adjourn and enter Executive Session.",
- "cost_usd": 0.1229095
+ "note": "Text is a plain-text extraction with garbled word breaks (e.g. 'r equested', 'Subdivi sion', 'Ay e'); quotes were chosen where wording extracted cleanly. The Rules and Regulations Governing the Subdivision of Land and Zoning Bylaws are mentioned but their passages were too garbled to quote verbatim, so they are omitted. The minutes record an adjournment at 6:35 PM with no vote on it. The adjournment motion has no recorded result, so outcome is 'not stated'. No documents list is printed.",
+ "cost_usd": 0.0043655199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, joanna l. bilotta-simeone, thomas w. bodkin jr., nathan j. lockwood, marion m. benson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus was in support of giving the citizens the opportunity to vote on whether or not to purchase the Aro property.",
+   "quote": "final board consensus was in support of giving the citizens the opportunity to vote as to whether or not to purchase the property."
+  },
+  {
+   "decision": "A letter is to go to the Board of Selectmen and the Town Manager stating the Planning Board recommends the Town acquire the property, citing financial impact of development and impact on Town services and infrastructure.",
+   "quote": "a letter will be provided to the board of selectmen and the town manager stating that the planning board recommends the town acquire the property"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Aro property acquisition: financial impact of development",
+   "what_was_recorded": "The letter recommending purchase cites the financial impact on the Town of developing the area; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "stating that the planning board recommends the town acquire the property due to the financial impact on the town for developing in that area of town"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Aro Property Right of First Refusal, Ch. 61A, Howard Street",
+   "resolution": "recommended Town purchase; letter to Board of Selectmen (passed 4-0)",
+   "quote": "aro property right of first refusal, ch. 61a, howard street -",
+   "tags": [
+    "right of first refusal",
+    "Chapter 61A",
+    "open space",
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "entered executive session; see separate minutes",
+   "quote": "executive session- see separate minutes.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Master Plan",
+   "where": "text",
+   "quote": "would reinforce the master plan."
+  },
+  {
+   "name": "Letter to the Board of Selectmen and Town Manager recommending acquisition",
+   "where": "text",
+   "quote": "a letter will be provided to the board of selectmen and the town manager stating that the planning board recommends the town acquire the property"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "land acquisition",
+  "Chapter 61A",
+  "right of first refusal",
+  "Howard Street",
+  "open space",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

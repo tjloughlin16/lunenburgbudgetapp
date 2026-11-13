@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2015-09-14",
  "docid": "3821",
@@ -12,15 +12,148 @@
  },
  "votes": [
   {
-   "motion": "Continue the Information Meeting to September 28, 2015, 6:35 PM, Town Hall",
+   "motion": "Continue the Information Meeting to September 28, 2015, 6:35 PM, at Town Hall.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "motion to continue information meeting to september 28, 2015, 6:35 pm, town hall, m. allison, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Information meeting minutes; one procedural vote recorded (continuation of hearing). No votes on waivers or approval are recorded — the minutes document an information meeting and presentation only.",
- "cost_usd": 0.0812395
+ "note": "The minutes record one vote, the motion to continue the meeting; no votes on the site plan or the waiver requests. The page 2 header reads \"Public Hearing\" while the meeting is titled \"Information Meeting\". The minutes end with \"Recessed 7:35 PM\" and no adjournment is recorded. Dollar figures: none printed. Jeffrey Walsh is listed as unable to attend, so status is absent.",
+ "cost_usd": 0.005420319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Board member",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, kenneth chenis, gregory bittner, david prokowiew, adam r. burney"
+  },
+  {
+   "name": "Nicholas Pauling",
+   "role": "project engineer, Goldsmith, Prest & Ringwall, Inc.",
+   "status": "present",
+   "quote": "presentation by project engineer nicholas pauling, goldsmith, prest & ringwall, inc."
+  },
+  {
+   "name": "Kelly Pearson",
+   "role": "represented the applicant, 3 39 Electric Avenue Corp.",
+   "status": "not stated",
+   "quote": "applicant is 3 39 electric avenue corp., represented by kelly pearson."
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Reviewing engineer, Graves Engineering, Inc.",
+   "status": "absent",
+   "quote": "reviewing engineer jeffrey walsh, graves engineering, inc. was unable to attend the meeting"
+  },
+  {
+   "name": "Jill Normandin",
+   "role": "Central Mass Motorcycles, 321 Electric Avenue",
+   "status": "present",
+   "quote": "jill normandin, central mass motorcycles, 321 electric avenue"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The applicant is to request a waiver from the Protective Bylaw requirement that parking be to the rear or side of the building(s), Section 4.6.5.2.j).",
+   "quote": "applicant to request a waiver."
+  },
+  {
+   "decision": "D. McQuaid suggested an eight-foot solid fence for the benefit of the abutters, and the applicant was amenable to it.",
+   "quote": "for the benefit of the abutters"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Jill Normandin",
+   "stated_role": "Central Mass Motorcycles, 321 Electric Avenue",
+   "topic": "pet waste disposal and noise concerns",
+   "quote": "concerned with pet waste disposal and noise"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Site plan review, pet service facility, 339 Electric Avenue (Information Meeting)",
+   "resolution": "continued to September 28, 2015",
+   "quote": "the information meeting was to hear and discuss a site plan review under section 8.4."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Façade schematic (distributed by N. Pauling)",
+   "where": "list",
+   "quote": "n. paul ing distributed a façade schematic to the board.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Graves Engineering, Inc. review letter, Jeffrey Walsh, August 31, 2015",
+   "where": "list",
+   "quote": "his august 31, 2015 review letter was previously provided to the board"
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 8.4 (site plan review)",
+   "where": "text",
+   "quote": "site plan review under section 8.4."
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 4.6.5.2",
+   "where": "text",
+   "quote": "as noted in protective bylaw"
+  },
+  {
+   "name": "Regulations of the Planning Board of the Town of Lunenburg Governing the Design, Construction, and Maintenance of Off Street Parking and Loading Areas",
+   "where": "text",
+   "quote": "regulations of the planning board of the town of lunenburg"
+  }
+ ],
+ "tags": [
+  "site plan review",
+  "pet service facility",
+  "339 Electric Avenue",
+  "parking waivers",
+  "abutter concerns",
+  "continued",
+  "information meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "n. paul ing distributed a façade schematic"
+ },
+ "dropped_unquoted_by_field": {}
 }

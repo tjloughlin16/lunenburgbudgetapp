@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2014-11-04",
  "docid": "2562",
@@ -12,25 +12,226 @@
  },
  "votes": [
   {
-   "motion": "approve the October 7, 2014 minutes",
-   "outcome": "approved",
+   "motion": "Approve the October 7, 2014 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "october 7, 2014 minutes were approved."
   },
   {
-   "motion": "approve the demolition delay request for 713 Rear Reservoir Road",
-   "outcome": "failed",
-   "procedural": false,
-   "quote": "the commission voted the demolition delay request did not quality."
-  },
-  {
-   "motion": "approve the December 2, 2014 minutes",
-   "outcome": "approved",
+   "motion": "Approve the December 2, 2014 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "december 2, 2014 minutes were approved."
+  },
+  {
+   "motion": "Find that the demolition delay request for 713 Rear Reservoir Road does not qualify.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the commission voted the demolition delay request did not quality."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes (macOS Vision). December 2, 2014 minutes approval appears anomalous—this meeting is dated November 4, 2014, and the next meeting is scheduled for December 2, 2014. Likely OCR error or transcription error in original minutes. Vote 2 outcome inferred from \"did not quality\" as motion failure.",
- "cost_usd": 0.11972150000000001
+ "note": "Text is OCR of a scanned page (macOS Vision); names such as 'Becky tantry' may be OCR errors. No mover, seconder, or vote count is printed for any motion; the two minutes approvals and the demolition delay determination are recorded as passed based on the wording only. The minutes approve 'December 2, 2014 minutes' at a November 4 meeting, which looks like an error (the next meeting is listed as December 2). Roles for most attendees are not printed. No dollar figures appear. Adjournment is recorded without a motion, so it is not treated as a vote.",
+ "cost_usd": 0.005312419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Becky tantry",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky tantry, amory phelps, lois lewis. cullen dwyer was in attendance."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky tantry, amory phelps, lois lewis. cullen dwyer was in attendance."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky tantry, amory phelps, lois lewis. cullen dwyer was in attendance."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "becky tantry, amory phelps, lois lewis. cullen dwyer was in attendance."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "members absent: richard mcgrath."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, the land use director, attended the meeting to discuss the proposed village center district by law"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Becky to send a letter to Freedom's Way Heritage Area requesting information about the program for the area's hidden treasures public program May 16 and 17, 2015.",
+   "quote": "becky to send letter to freedom's way heritage area for information about the program"
+  },
+  {
+   "decision": "Becky to submit a letter to the Planning Board, as requested by the Board, supporting designation of Northfield Road and Flat Hill Road as scenic roads consistent with the 1833 Cyrus Kilburn map.",
+   "quote": "becky to submit letter to the planning board, as so requested by the board, for the designation of northfield road and flat hill road as scenic roads"
+  },
+  {
+   "decision": "Becky to write a letter to town manager Kerry Speidel recommending Cullen Dwyer for membership on the Historical Commission.",
+   "quote": "becky to write a letter to kerry speidel, the town manager, to recommend cullen dwyer for membership on the historical commission."
+  },
+  {
+   "decision": "Assigned Lunenburg Ledger 'Historically Speaking' articles: Richard for November, Becky for December, Cullen for January, Amory for February, Lois for March.",
+   "quote": "richard to write for november becky to write for december"
+  },
+  {
+   "decision": "Becky and Amory to attend the Historic Preservation Conference on November 7, 2014.",
+   "quote": "becky and amory to attend the historic preservation conference november 7, 2014."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "meeting called to order at 6:35 p.m."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved October 7 and December 2, 2014 minutes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "october 7, 2014 minutes were approved."
+  },
+  {
+   "topic": "Correspondence: Planning Board scenic road request",
+   "resolution": "received; letter assigned to Becky",
+   "tags": [
+    "scenic roads",
+    "correspondence"
+   ],
+   "quote": "received a request from the lunenburg planning board asking for input regarding the classification of northfield road and flat hill road as scenic roads."
+  },
+  {
+   "topic": "Correspondence: Historic Preservation Conference notice",
+   "resolution": "received",
+   "tags": [
+    "conference",
+    "correspondence"
+   ],
+   "quote": "received notice for the historic preservation conference at the university of"
+  },
+  {
+   "topic": "Demolition delay request, 713 Rear Reservoir Road",
+   "resolution": "determined not to qualify",
+   "tags": [
+    "demolition delay"
+   ],
+   "quote": "the commission voted the demolition delay request did not quality."
+  },
+  {
+   "topic": "Proposed Village Center District bylaw and Architectural Preservation District",
+   "resolution": "discussed with Land Use Director",
+   "tags": [
+    "village center district",
+    "architectural preservation district",
+    "bylaw"
+   ],
+   "quote": "adam burney, the land use director, attended the meeting to discuss the proposed village center district by law"
+  },
+  {
+   "topic": "Electronic availability of Damon McQuaid town survey",
+   "resolution": "discussed",
+   "tags": [
+    "survey",
+    "Massachusetts Historical Society"
+   ],
+   "quote": "discussion of making available electronically damon mcquaid's town survey, (cd), to the massachusetts historical society."
+  },
+  {
+   "topic": "Letters, newspaper articles and conference assignments",
+   "resolution": "assigned",
+   "tags": [
+    "letters",
+    "newspaper articles",
+    "conference",
+    "membership"
+   ],
+   "quote": "becky to write a letter to kerry speidel, the town manager, to recommend cullen dwyer for membership on the historical commission."
+  },
+  {
+   "topic": "Meeting adjournment",
+   "resolution": "adjourned at 8:50 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 8:50 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Planning Board request on classifying Northfield Road and Flat Hill Road as scenic roads",
+   "where": "text",
+   "quote": "received a request from the lunenburg planning board asking for input regarding the classification of northfield road and flat hill road as scenic roads."
+  },
+  {
+   "name": "1833 map (Cyrus Kilburn)",
+   "where": "text",
+   "quote": "(cyrus kilburn, 1833 map)"
+  },
+  {
+   "name": "Notice for the Historic Preservation Conference, University of Massachusetts, Amherst, November 7, 2014",
+   "where": "text",
+   "quote": "received notice for the historic preservation conference at the university of"
+  },
+  {
+   "name": "Damon McQuaid town survey (CD)",
+   "where": "text",
+   "quote": "discussion of making available electronically damon mcquaid's town survey, (cd), to the massachusetts historical society."
+  },
+  {
+   "name": "Proposed Village Center District By law",
+   "where": "text",
+   "quote": "adam burney, the land use director, attended the meeting to discuss the proposed village center district by law"
+  },
+  {
+   "name": "Lunenburg Ledger newspaper articles, Historically Speaking",
+   "where": "text",
+   "quote": "lunenburg ledger newspaper articles, historically speaking."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "demolition delay",
+  "scenic roads",
+  "village center district",
+  "architectural preservation district",
+  "historic preservation conference",
+  "newspaper articles",
+  "membership",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

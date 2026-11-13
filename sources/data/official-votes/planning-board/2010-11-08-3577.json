@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2010-11-08",
  "docid": "3577",
@@ -12,23 +12,322 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of October 25, 2010",
+   "motion": "Motion on minutes approval (minutes signed 10-25-10); the minutes do not state what was moved.",
    "moved_by": "Mr. Lockwood",
    "seconded_by": "Mr. Saiia",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion, mr. lockwood, second, mr. saiia"
+   "quote": "minutes - approval: signed 10-25-10, motion, mr. lockwood, second, mr. saiia."
   },
   {
-   "motion": "Hold one meeting in December on December 13, 2010",
+   "motion": "Approve the land division at 325 Sunny Hill Road based on the corrected copy.",
+   "moved_by": "Ms. Bilotta",
+   "seconded_by": "Mr. Saiia",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "motion, ms. bilotta , second, mr. saiia to approve the land division based on the corrected copy. motion passed 4-0."
+  },
+  {
+   "motion": "Hold one Planning Board meeting in December, on December 13th.",
    "moved_by": "Ms. Bilotta",
    "seconded_by": "Mr. Bodkin Jr.",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion made, ms. bilotta, second, mr. bodkin jr., motion passed."
+  },
+  {
+   "motion": "Go into Executive Session to discuss the Executive Minutes of 10-25-10, not to return to general session.",
+   "moved_by": "Mr. Lockwood",
+   "seconded_by": "Mr. Bodkin Jr.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "mr. lockwood, second, mr. bodkin jr., motion passed, roll call vote, ms. bilotta, aye; mr. lockwood, aye; mr. saiia, aye; mr. bodkin jr., aye."
+  },
+  {
+   "motion": "Adjourn the Executive Session at 8:10 PM.",
+   "moved_by": "Mr. Bodkin Jr.",
+   "seconded_by": "Mr. Lockwood",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion to adjour n executive session 8:10 pm , mr. bodkin jr., second, mr. lockwood."
   }
  ],
- "dropped_unquoted": 3,
- "note": "Extracted text is clean and readable. Five votes recorded.",
- "cost_usd": 0.1106105
+ "dropped_unquoted": 0,
+ "note": "Text is a clean extraction, not a scan. Two motions record no result: the minutes-approval motion (its subject is not stated, only the date 10-25-10) and the motion to adjourn executive session (mover and second as printed). Bakaysa was absent and Bilotta acted as Chair. No public comment section is printed. The data folder was presented but not itemized.",
+ "cost_usd": 0.009776820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "status": "absent",
+   "quote": "absent: emerick r. bakaysa",
+   "role": "Chair"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "status": "present",
+   "quote": "vice chair joanna l. bilotta (acting as chair)",
+   "role": "Vice-Chair (acting as Chair)"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "status": "present",
+   "quote": "robert j. saiia, mbr.",
+   "role": "Mbr."
+  },
+  {
+   "name": "Thomas W. Bodkin Jr.",
+   "status": "present",
+   "quote": "thomas w. bodkin, jr., clk.",
+   "role": "Clk."
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "status": "present",
+   "quote": "nathan j. lockwood, mbr.",
+   "role": "Mbr."
+  },
+  {
+   "name": "Marion M. Benson",
+   "status": "present",
+   "quote": "marion m. benson, planning director",
+   "role": "Planning Director"
+  },
+  {
+   "name": "Camille LeBlanc, J.",
+   "status": "not stated",
+   "quote": "owner/applicant - camille leblanc, j., engineer - ed bouche r",
+   "role": "Owner/Applicant"
+  },
+  {
+   "name": "Ed Bouche r",
+   "status": "not stated",
+   "quote": "owner/applicant - camille leblanc, j., engineer - ed bouche r",
+   "role": "Engineer"
+  },
+  {
+   "name": "Helene Karl",
+   "status": "not stated",
+   "quote": "an architect has been hired ; helene karl from groton.",
+   "role": "architect"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus that the 325 Sunny Hill Road plan needed a fully corrected copy before members would sign it.",
+   "quote": "board's consensus was they needed a fully correct ed copy to sign."
+  },
+  {
+   "decision": "Consensus to hold an executive session on the Executive Minutes later in the meeting, with those minutes signed following it.",
+   "quote": "request granted from consensus to hold an executive session concerning these minutes later in the meeting."
+  },
+  {
+   "decision": "Planning Director to seek the corrected copy and notify members once it is available in the office for signing.",
+   "quote": "director will seek corrected copy and once received, will notify members corrected plan available in office for signing."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police cruiser purchase (Crown Victoria) on the November Town Meeting warrant",
+   "what_was_recorded": "The Police Department's warrant article to buy three Crown Vics before the packages are discontinued has a cost stated with accessories; the Capital Planning Committee supports it.",
+   "figures_as_printed": [
+    "$105,000.00"
+   ],
+   "quote": "the cost is $105,000.00 with a ccessories."
+  },
+  {
+   "topic": "Technology purchases from unspent prior-Director funds",
+   "what_was_recorded": "The Technology Director is buying technology from funds left unspent by the previous Technology Director; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "technology director is purchasing from funds unspent by previous technology director"
+  },
+  {
+   "topic": "MRPC Energy Advisory Committee grant",
+   "what_was_recorded": "The Director reported a new grant for further work on the project; committee work will count as in-kind payment. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "director reported on new grant for further work on project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (10-25-10)",
+   "resolution": "held in executive session; executive minutes signed after",
+   "quote": "executive minutes 10-25-10 signed following executive session.",
+   "tags": [
+    "minutes",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Project plan signatures: 325 Sunny Hill Road",
+   "resolution": "land division approved 4-0 on a corrected copy; Director to get corrected copy",
+   "quote": "director will seek corrected copy and once received, will notify members corrected plan available in office for signing.",
+   "tags": [
+    "land division",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Appointment: ANR, 1070 Northfield Road",
+   "resolution": "plan accepted for review",
+   "quote": "plan is for lots 1 and 2 and is subsequent to previous division",
+   "tags": [
+    "ANR",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "the next meeting will be the interview with the school's request s on november 18th.",
+   "tags": [
+    "committees",
+    "capital planning",
+    "DPW building",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Planning Director's reports / new business: First Evangelical Congregational Church",
+   "resolution": "discussed; applicant seeking basic approval with conditions",
+   "quote": "applicant is seeking a basic approval , with conditions to be added , so they can seek funding as approved by their parishioners.",
+   "tags": [
+    "development review",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Open Space and Green Community reports",
+   "resolution": "reported; no action",
+   "quote": "open space plan until 2014.",
+   "tags": [
+    "open space",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Development status reports",
+   "resolution": "reported; no action",
+   "quote": "whalom storage- inquiries were made to the office concerning this project from a bank assessor.",
+   "tags": [
+    "Emerald Place",
+    "Tri Town Landing",
+    "Whalom Storage"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action; referred to reports above",
+   "quote": "see above planning director's reports and development status reports",
+   "tags": [
+    "unfinished business"
+   ]
+  },
+  {
+   "topic": "Master planning",
+   "resolution": "reminder only",
+   "quote": "master planning: 11-22-10 workshop reminder",
+   "tags": [
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Data information and general discussion",
+   "resolution": "data folder presented for members to view",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing",
+   "tags": [
+    "data"
+   ]
+  },
+  {
+   "topic": "Member information and issues",
+   "resolution": "December 13 meeting set by motion; December 3 Christmas gathering proposed",
+   "quote": "motion made, ms. bilotta, second, mr. bodkin jr., motion passed.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "entered by roll call to discuss the Executive Minutes of 10-25-10",
+   "quote": "vice chair called for vote to go into executive session at 8:00 pm to discuss executive.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "executive session adjourned at 8:10 PM",
+   "quote": "motion to adjour n executive session 8:10 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Reviewing Engineer's preliminary report (First Evangelical Congregational Church)",
+   "where": "text",
+   "quote": "di rector noted the reviewing engineer 's preliminary report.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "First Evangelical Congregational Church plans (available in Planning Office)",
+   "where": "text",
+   "quote": "plans are available for review in the planning office."
+  },
+  {
+   "name": "Fully corrected copy of the land division plan, 325 Sunny Hill Road",
+   "where": "text",
+   "quote": "board's consensus was they needed a fully correct ed copy to sign."
+  },
+  {
+   "name": "ANR plan, 1070 Northfield Road (Lots 1 and 2)",
+   "where": "text",
+   "quote": "plan is for lots 1 and 2 and is subsequent to previous division"
+  },
+  {
+   "name": "Article on the November Town Meeting warrant to purchase three Crown Vics",
+   "where": "text",
+   "quote": "the department has an article on the warrant for the november town meeting to purchase three crown vics"
+  },
+  {
+   "name": "State-approved Open Space Plan (until 2014)",
+   "where": "text",
+   "quote": "open space plan until 2014."
+  },
+  {
+   "name": "Executive Minutes of 10-25-10",
+   "where": "text",
+   "quote": "executive minutes 10-25-10 signed following executive session."
+  },
+  {
+   "name": "Data folder of items of interest not on agenda",
+   "where": "text",
+   "quote": "data folder containing items of interest not on agenda presented to members for viewing"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "ANR",
+  "land division",
+  "development review",
+  "committee reports",
+  "executive session",
+  "master plan",
+  "open space",
+  "police cruisers",
+  "technology funds",
+  "energy grant",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

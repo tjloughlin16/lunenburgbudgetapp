@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "building-reuse-committee",
  "meeting_date": "2013-11-04",
  "docid": "1456",
@@ -12,21 +12,258 @@
  },
  "votes": [
   {
-   "motion": "Appoint Ms. Seeley to take minutes",
+   "motion": "Appoint Ms. Seeley to temporarily take the minutes for the committee.",
    "moved_by": "Mr. MacDonald",
    "seconded_by": "Mr. McQuaid",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. macdonald made a motion to appoint ms. seeley, mr. mcquaid second, passed unanimously."
-  },
-  {
-   "motion": "Approve minutes from meetings on July 7, June 18, and June 2",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes were approved and signed for meetings on july 7, june 18 and june 2."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision, readable. Date discrepancy: metadata says 2013-11-04, but minutes clearly state \"Monday, November 3, 2014\".",
- "cost_usd": 0.1131575
+ "note": "Date mismatch: the caller gave the meeting date as 2013-11-04, but the minutes print 'Monday, November 3, 2014' and carry a 'DEC 30 2014' stamp; recorded as printed. Text is OCR with garbled passages (e.g., 'liason', 'Feasibilty', 'shoukle feldeD istheILED'), so some quotes keep OCR spelling. Only one vote is recorded (unanimous, no tally); no adjournment motion is recorded (the minutes say 'The meeting adjourned at 8:00 p.m.'). Minutes approval is recorded without a motion, so it is listed as a decision. Dollar figures are not printed anywhere in the text.",
+ "cost_usd": 0.010491670000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman toale asked that a member be temporarily assigned to take minutes due to the heavy meeting schedule and workload damon is currently managing."
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, dave macdonald, mark erickson, deb seeley, rebecca lantry, dave matthews and damon mcquaid."
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, dave macdonald, mark erickson, deb seeley, rebecca lantry, dave matthews and damon mcquaid."
+  },
+  {
+   "name": "Deb Seeley",
+   "role": "committee member; temporarily assigned to take minutes",
+   "status": "present",
+   "quote": "ms. seeley volunteered, mr. macdonald made a motion to appoint ms. seeley, mr. mcquaid second, passed unanimously."
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, dave macdonald, mark erickson, deb seeley, rebecca lantry, dave matthews and damon mcquaid."
+  },
+  {
+   "name": "Dave Matthews",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, dave macdonald, mark erickson, deb seeley, rebecca lantry, dave matthews and damon mcquaid."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present were committee members jamie toale, dave macdonald, mark erickson, deb seeley, rebecca lantry, dave matthews and damon mcquaid."
+  },
+  {
+   "name": "John Londa",
+   "role": "advisor",
+   "status": "present",
+   "quote": "also present was advisor, john londa."
+  },
+  {
+   "name": "Matthew Alison",
+   "role": "Planning Board liason to the Agricultural Commission",
+   "status": "present",
+   "quote": "matthew alison, planning board liason to the agricultural commission, was recognized and asked the building re-use committee to consider a public market"
+  },
+  {
+   "name": "Jack Rodiquenz",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "jack rodiquenz, dpw director, was on the agenda to discuss ideas on the tcp but did not attend."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Seeley will coordinate agendas and minutes with the Chair.",
+   "quote": "ms. seeley will coordinate agendas and minutes with the chair."
+  },
+  {
+   "decision": "Minutes of July 7, June 18 and June 2 were approved and signed (no motion recorded); March 3 minutes require the signature of Mr. Mackin.",
+   "quote": "minutes were approved and signed for meetings on july 7, june 18 and june 2."
+  },
+  {
+   "decision": "The Public Market plan will be placed on a future committee agenda once complete; Mr. Alison and the Agricultural Commission were suggested to prepare a business plan.",
+   "quote": "mr. toale said the plan would be included in a future building re-use committee agenda when the plan is complete."
+  },
+  {
+   "decision": "The committee will take no action or further discussion on the T.C. Passios School and Brooks House until the School Committee and Planning Board determine their status; Mr. Erickson will give updates as liaison.",
+   "quote": "the building re-use committee will take no action or have further discussion on these buildings until the status is determined by the school committee and planning board."
+  },
+  {
+   "decision": "The committee asked that two FY16 Capital Plan line items be requested: painting of the Town Hall facade (Mr. Toale to contact Mr. Rodiquenz for estimates) and funding for a Feasibility Study for Town Hall Renovation (Mr. MacDonald to prepare estimated cost).",
+   "quote": "the committee asked that 2 line items be requested: 1. painting of the town hall building facade (mr. toale will contact mr. rodiquenz for estimates)"
+  },
+  {
+   "decision": "Ms. Lantry will research Federal or State grant opportunities for the Town Hall renovation.",
+   "quote": "ms. lantry will research grant opportunities."
+  },
+  {
+   "decision": "Committee meetings will remain on the 1st and 3rd Monday of the month at 6:30 p.m. at Town Hall or as needed; the next meeting is Monday, December 1st at 6:30 p.m.",
+   "quote": "mr. toale said that the committee meetings would remain on the 1° and 35d monday of the month at 6:30 p.m at town hall or as needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Building annual maintenance and utility costs",
+   "what_was_recorded": "Mr. Toale noted the Annual Maintenance and Utility Costs of the buildings need to be updated to the latest projections in the FY plans; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. toale noted that the information on annual maintenance and utility costs of the building need to be updated for the most current projections"
+  },
+  {
+   "topic": "Building cost/revenue assumptions",
+   "what_was_recorded": "Mr. Toale and Mr. Erickson have developed cost/revenue assumptions for the various buildings, to be adjusted as discussions continue; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. toale updated the committee on the work he and mr. erickson have done to develop cost/revenue assumptions on the various buildings"
+  },
+  {
+   "topic": "FY16 Capital Plan request: Town Hall facade painting",
+   "what_was_recorded": "The committee asked that painting of the Town Hall facade be requested as an FY16 Capital Plan line item; no cost figure printed.",
+   "figures_as_printed": [],
+   "quote": "painting of the town hall building facade (mr. toale will contact mr. rodiquenz for estimates)"
+  },
+  {
+   "topic": "FY16 Capital Plan request: Town Hall renovation feasibility study",
+   "what_was_recorded": "The committee asked that funding for a feasibility study for Town Hall renovation be requested as an FY16 Capital Plan line item; no cost figure printed.",
+   "figures_as_printed": [],
+   "quote": "funding for a feasibilty study for town hall renovation (mr. macdonald will prepared estimated cost)"
+  },
+  {
+   "topic": "Grant funding for Town Hall renovation",
+   "what_was_recorded": "The committee discussed potential Federal or State grant funding for the Town Hall renovation given its historic significance; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the committee also discussed the potential for federal or state grant funding for the town hall renovation due to it's historic significance."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Matthew Alison",
+   "stated_role": "Planning Board liason to the Agricultural Commission",
+   "topic": "Public Market as re-use of a town-owned building",
+   "quote": "matthew alison, planning board liason to the agricultural commission, was recognized and asked the building re-use committee to consider a public market as a potential re-use of a town-owned building."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: minute-taker assignment",
+   "resolution": "approved; Ms. Seeley appointed to take minutes",
+   "quote": "mr. macdonald made a motion to appoint ms. seeley, mr. mcquaid second, passed unanimously.",
+   "tags": [
+    "governance",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comment: Public Market proposal",
+   "resolution": "referred; business plan to come back to agenda",
+   "quote": "asked the building re-use committee to consider a public market as a potential re-use of a town-owned building.",
+   "tags": [
+    "public market",
+    "town-owned building",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (prior meetings); no motion recorded",
+   "quote": "minutes were approved and signed for meetings on july 7, june 18 and june 2.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current Business: Village Zoning By-Law, school buildings, cost assumptions, FY16 Capital Plan, grants",
+   "resolution": "update; no action on school buildings; capital line items requested; grant research assigned",
+   "quote": "mr. mcquaid gave an update on the development of a village zoning by-law.",
+   "tags": [
+    "zoning",
+    "demolition delay",
+    "T.C. Passios School",
+    "Brooks House",
+    "capital plan",
+    "Town Hall",
+    "grants",
+    "cost assumptions"
+   ]
+  },
+  {
+   "topic": "Old Business",
+   "resolution": "none",
+   "quote": "old business: - none meeting schedule:",
+   "tags": [
+    "none"
+   ]
+  },
+  {
+   "topic": "Meeting Schedule",
+   "resolution": "meeting dates confirmed",
+   "quote": "mr. toale said that the committee meetings would remain on the 1° and 35d monday of the month at 6:30 p.m at town hall or as needed.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board Comment and Public Comment (closing)",
+   "resolution": "none",
+   "quote": "board comment: - none public comment: - none",
+   "tags": [
+    "comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY16 Capital Plan",
+   "where": "text",
+   "quote": "fy16 capital plan which is due on december 19th"
+  },
+  {
+   "name": "Village Zoning By-Law (draft)",
+   "where": "text",
+   "quote": "mr. mcquaid gave an update on the development of a village zoning by-law."
+  },
+  {
+   "name": "Demolition Delay By-Law",
+   "where": "text",
+   "quote": "the current demolition delay by-law and other areas of the draft"
+  },
+  {
+   "name": "MGL Ch. 40, Sec. 10",
+   "where": "text",
+   "quote": "he cited mgl ch. 40, sec. 10 and noted that such a use would be in"
+  }
+ ],
+ "tags": [
+  "Town Hall renovation",
+  "building reuse",
+  "public market",
+  "village zoning by-law",
+  "demolition delay",
+  "T.C. Passios School",
+  "Brooks House",
+  "FY16 capital plan",
+  "grants",
+  "meeting schedule",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

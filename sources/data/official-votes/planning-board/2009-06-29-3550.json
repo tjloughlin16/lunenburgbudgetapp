@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2009-06-29",
  "docid": "3550",
@@ -12,15 +12,240 @@
  },
  "votes": [
   {
-   "motion": "approve Findings and Directives with corrections for the development plan modification",
-   "moved_by": "Robert J. Saiia",
-   "seconded_by": "Thomas W. Bodkin, Jr.",
-   "outcome": "passed 4-0",
+   "motion": "Approve the Findings and Directives with corrections for the Tri Town Landing modification.",
+   "moved_by": "Mr. Saiia",
+   "seconded_by": "Mr. Bodkin",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mr. bakaysa asked for a motion to approve findings and directives with corrections. motion, mr. saiia , second, mr. bodkin, all aye."
+   "quote": "motion, mr. saiia , second, mr. bodkin, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. Board members present and voting: Emerick R. Bakaysa (Chair), James A. Halloran, Robert J. Saiia, Thomas W. Bodkin, Jr. (Joanna L. Bilotta absent; Marion M. Benson was Planning Director, not a voting member).",
- "cost_usd": 0.1067905
+ "note": "Text is an extraction with broken words and stray spaces; quotes are copied with spacing collapsed where the source has double spaces. One motion recorded, with \"all aye\" and no numeric count. The opening and closing of the hearing are not voted. No dollar figures appear in the minutes. No documents list is printed; documents are named only in the text.",
+ "cost_usd": 0.00903492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia"
+  },
+  {
+   "name": "James A. Hallo ran",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia"
+  },
+  {
+   "name": "Robert J. Saiia",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia"
+  },
+  {
+   "name": "Thomas W. Bodkin, Jr.",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "present",
+   "quote": "present: emerick r. bakaysa, chair, james a. hallo ran, robert j. saiia"
+  },
+  {
+   "name": "Joanna L. Bilotta",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "absent: joanna l. bilotta"
+  },
+  {
+   "name": "William Hannigan",
+   "role": "representing the applicant (Hannigan Engineering, Leominster, MA)",
+   "status": "present",
+   "quote": "were represented by william hannigan"
+  },
+  {
+   "name": "Chris Davies",
+   "role": "Great Bridge Properties",
+   "status": "present",
+   "quote": "chris davies, great bridge properties"
+  },
+  {
+   "name": "William Caselden",
+   "role": "Great Bridge Properties",
+   "status": "present",
+   "quote": "chris davies, great bridge properties, william c aselden"
+  },
+  {
+   "name": "Mark Bobrowski",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "and attorney mark bobrowski."
+  },
+  {
+   "name": "Steven Marsden",
+   "role": "Reviewing Engineer",
+   "status": "present",
+   "quote": "reviewing engineer steven marsden noted"
+  },
+  {
+   "name": "Joan Morin",
+   "role": "public, 48 Youngs Road",
+   "status": "present",
+   "quote": "joan morin, 48 youngs road"
+  },
+  {
+   "name": "Steve deBettencourt",
+   "role": "public, 200 Pleasant Street",
+   "status": "present",
+   "quote": "steve debettencourt, 200 pleasant street"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dates in the Directives are to be changed to the revision date of June 24, 2009, received in Planning Office June 25, 2009.",
+   "quote": "dates to be changed."
+  },
+  {
+   "decision": "The sentence in Finding 6 about a Notice of Project Change is to be deleted, since the NPC is not needed.",
+   "quote": "sentence will be deleted."
+  },
+  {
+   "decision": "Cross easement, operating agreement and maintenance agreement are a prerequisite to occupancy.",
+   "quote": "ms. benson noted yes."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Applicant funding timing",
+   "what_was_recorded": "Applicant hopes for funding by FY 2010 for a late-summer ground-breaking, and will seek funding for Phase 2 once Phase 1 is underway.",
+   "figures_as_printed": [
+    "FY 2010"
+   ],
+   "quote": "applicant hopes for funding by fy 2010"
+  },
+  {
+   "topic": "Affordability and financing income limits",
+   "what_was_recorded": "Affordable rent level reduced from 80% to 60% of median area income; the financing program's income cap is stricter than the 40R statute.",
+   "figures_as_printed": [
+    "80%",
+    "60%"
+   ],
+   "quote": "mr. castleden noted program applicant trying to use to fund project is 60% of median area income"
+  },
+  {
+   "topic": "Financing uncertainty",
+   "what_was_recorded": "Board was told financing going forward is hard to predict; the financing cap does not change the underlying 40R status.",
+   "figures_as_printed": [],
+   "quote": "financing would have a stricter income cap than the 40r statute"
+  },
+  {
+   "topic": "Summer Street improvements funding",
+   "what_was_recorded": "DPW Director is looking into funding for Summer Street improvements.",
+   "figures_as_printed": [],
+   "quote": "is looking into funding for summer street"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joan Morin",
+   "stated_role": "48 Youngs Road",
+   "topic": "affordability, Section 8, and 40R status",
+   "quote": "joan morin, 48 youngs road"
+  },
+  {
+   "speaker": "Steve deBettencourt",
+   "stated_role": "200 Pleasant Street",
+   "topic": "building height, school bus stop, sewer easement",
+   "quote": "steve debettencourt, 200 pleasant street"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: Tri Town Landing 40R modification (204-unit Development Plan Review, 37 Youngs Road)",
+   "resolution": "hearing held; Findings and Directives approved with corrections; hearing closed 8:50 PM",
+   "quote": "chair opened the public hearing with the reading of the legal advertisement",
+   "tags": [
+    "40R",
+    "public hearing",
+    "modification",
+    "housing",
+    "Youngs Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Modification Plan, dated September 28, 2006, revised through May 28, 2009 (received in Planning Office June 2, 2009)",
+   "where": "text",
+   "quote": "modification plan, dated september 28, 2006"
+  },
+  {
+   "name": "Plan revision dated June 24, 2009, received in Planning Office June 25, 2009",
+   "where": "text",
+   "quote": "mr. hannigan noted revision date of june 24, 2009, and received in planning office june 25, 2009"
+  },
+  {
+   "name": "Letter dated December 10, 2008 from Fitchburg Waste Water Treatment Facilities Commission",
+   "where": "text",
+   "quote": "a letter dated december 10, 2008"
+  },
+  {
+   "name": "Revised Drainage Analysis and Report",
+   "where": "text",
+   "quote": "finds drainage has been modified due to changes in the building orientation."
+  },
+  {
+   "name": "Red-line drawing enclosed with the modification request",
+   "where": "text",
+   "quote": "was enclosed with the request."
+  },
+  {
+   "name": "Approval received and filed with the Lunenburg Town Clerk January 31, 2007",
+   "where": "text",
+   "quote": "received and filed with the lunenburg town clerk january 31, 2007"
+  },
+  {
+   "name": "Order of Conditions signed January 21, 2007",
+   "where": "text",
+   "quote": "an order of conditions was signed on january 21, 2007"
+  },
+  {
+   "name": "Legal advertisement published in the Sentinel and Enterprise on June 15 and June 22, 2009",
+   "where": "text",
+   "quote": "the legal advertisement published in the sentinel and enterprise on june 15"
+  },
+  {
+   "name": "Parking layout plan on file in Planning Office",
+   "where": "text",
+   "quote": "see plan on file in planning office"
+  },
+  {
+   "name": "Audio recording of the hearing on file in Planning Office",
+   "where": "text",
+   "quote": "audio recording on file in planning office."
+  }
+ ],
+ "tags": [
+  "40R",
+  "Tri Town Landing",
+  "public hearing",
+  "housing",
+  "modification",
+  "Youngs Road",
+  "water",
+  "sewer",
+  "bridge",
+  "affordability"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

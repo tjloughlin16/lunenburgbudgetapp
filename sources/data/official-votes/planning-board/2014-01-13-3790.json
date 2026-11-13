@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2014-01-13",
  "docid": "3790",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "endorse the ANR Plan for 136/150 Sunset Lane",
+   "motion": "Endorse the ANR Plan for Sign 136/150 Sunset Lane.",
    "moved_by": "D. McQuaid",
    "seconded_by": "N. Lockwood",
    "outcome": "passed 3-1-1",
    "procedural": false,
-   "quote": "d. mcquaid made motion to endorse the anr plan, n. lockwood, second, roll call vote- m. allison, abstain; e. bakaysa, nay; d. mcquaid, aye; n. lockwood, aye; j. bilotta -simeone, aye. plan endorsed."
+   "quote": "d. mcquaid made motion to endorse the anr plan, n. lockwood, second, roll call vote- m. allison, abstain; e. bakaysa, nay;"
   },
   {
-   "motion": "approve the minutes of December 9, 2013",
+   "motion": "Approve the minutes of 12-09-13.",
    "moved_by": "M. Allison",
    "seconded_by": "E. Bakaysa",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve 12-09-13, m. allison, second, e. bakaysa, minutes approved."
+   "quote": "minutes approval: motion to approve 12-09-13, m. allison, second, e. bakaysa, minutes approved."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "E. Bakaysa",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -37,6 +37,290 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1140465
+ "note": "Text extraction, not a scan; all votes are readable. The 40 Elmwood-style public hearing is held under separate minutes that are not in this text, so no vote on that matter is recorded here. The 136/150 Sunset Lane vote is printed as a roll call (3 aye, 1 nay, 1 abstain), recorded as passed 3-1-1 with the minutes stating 'Plan endorsed.' The minutes print no dollar figures. Marion M. Benson is listed as absent yet is also recorded giving the Capital Planning Committee and Green Community Task Force reports; this is an inconsistency in the minutes. The Highfield Village and Force Corporation items carry no motions.",
+ "cost_usd": 0.006744419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna L. Bilotta-Simeone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Nathan J. Lockwood",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Emerick R. Bakaysa",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: joanna l. bilotta-simeone, emerick r. bakaysa, nathan j. lockwood, damon mcquaid, matthew allison"
+  },
+  {
+   "name": "Marion M. Benson",
+   "role": "Planning Director",
+   "status": "absent",
+   "quote": "absent: marion m. benson"
+  },
+  {
+   "name": "J. Johnson",
+   "role": "of David Ross Associates",
+   "status": "present",
+   "quote": "j. johnson of david ross associates reminded the board that when it endorses an anr plan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board wants legal review regarding the APR before moving forward with the 145 Page Street ANR.",
+   "quote": "board wants legal review regarding apr before moving forward with anr."
+  },
+  {
+   "decision": "The 145 Page Street and 40 Page Street ANR plans are to be distributed to appropriate departments for review.",
+   "quote": "lot 1 will be 5 acres; lot 2 - 5.5. plan will be distributed to appropriate departments for review."
+  },
+  {
+   "decision": "Board expects the Highfield Village applicant to appear at the next Board meeting with an update.",
+   "quote": "board expects applicant to appear at the next board meeting with an update."
+  },
+  {
+   "decision": "Fire and Police Chiefs will be invited to the January 27 Board meeting for the marijuana zoning discussion.",
+   "quote": "they will be invited to the january 27 th board meeting."
+  },
+  {
+   "decision": "Board felt the Board of Selectmen should be included in the crafting of the marijuana Bylaw.",
+   "quote": "board felt that the board of selectmen should be included in the crafting of the bylaw."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School building override and tax rate",
+   "what_was_recorded": "D. McQuaid noted the tax-rate increase the school override will create, and the Board must work to attract businesses to Town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "d. mcquaid noted the increase the override will create in the town's tax rate"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening remarks on School Building Committee vote",
+   "resolution": "no action; congratulations noted",
+   "tags": [
+    "school override",
+    "special town meeting"
+   ],
+   "quote": "congratulating the school building committee on its hard work in getting the vote to pass at special town meeting"
+  },
+  {
+   "topic": "Public hearing: 50 Elmwood Road Subdivision",
+   "resolution": "see separate minutes",
+   "tags": [
+    "subdivision",
+    "public hearing"
+   ],
+   "quote": "public hearing: 50 elmwood road subdivision application- see separate minutes."
+  },
+  {
+   "topic": "ANR: 145 Page Street (Katkin Family Revocable Trust)",
+   "resolution": "legal review requested before proceeding",
+   "tags": [
+    "ANR",
+    "agricultural preservation restriction"
+   ],
+   "quote": "board wants legal review regarding apr before moving forward with anr."
+  },
+  {
+   "topic": "ANR: 40 Page Street (Jeffrey Stone)",
+   "resolution": "sent to departments for review",
+   "tags": [
+    "ANR"
+   ],
+   "quote": "40 page street, jeffrey stone - plan submitted for review."
+  },
+  {
+   "topic": "ANR: Sign 136/150 Sunset Lane",
+   "resolution": "endorsed (roll call 3-1-1)",
+   "tags": [
+    "ANR",
+    "frontage",
+    "nonconforming lot"
+   ],
+   "quote": "sign 136/150 sunset lane- e. bakaysa noted that this is already a nonconforming lot"
+  },
+  {
+   "topic": "Minutes approval 12-09-13",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: motion to approve 12-09-13, m. allison, second, e. bakaysa, minutes approved."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "tags": [
+    "committees",
+    "capital planning",
+    "green community"
+   ],
+   "quote": "capital planning committee, m. benson- board members viewed committee prioritization."
+  },
+  {
+   "topic": "Planning Director reports and development status",
+   "resolution": "noted; Highfield Village applicant to appear next meeting; Force Corporation continued to January 27, 2014",
+   "tags": [
+    "development status",
+    "Highfield Village",
+    "Force Corporation"
+   ],
+   "quote": "highfield village- current extension expires january 31, 2014."
+  },
+  {
+   "topic": "Action file",
+   "resolution": "noted; no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "conservation commission- notices and agenda noted."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "january 27, 2014, 6:30 pm, ritter memorial building"
+  },
+  {
+   "topic": "Zoning: marijuana dispensary",
+   "resolution": "discussed; Board to prepare a warrant article for Annual Town Meeting; no vote",
+   "tags": [
+    "zoning",
+    "marijuana",
+    "annual town meeting",
+    "bylaw"
+   ],
+   "quote": "zoning- marijuana dispensary- noted that the moratorium warrant article did not pass at stm."
+  },
+  {
+   "topic": "Town social media policy",
+   "resolution": "discussed; update requested",
+   "tags": [
+    "social media policy"
+   ],
+   "quote": "town social media policy- n. lockwood looking for an update"
+  },
+  {
+   "topic": "Bylaw presentation process for Town Meetings",
+   "resolution": "discussed",
+   "tags": [
+    "bylaw",
+    "town meeting process"
+   ],
+   "quote": "bylaw presentation process for town meetings - n. lockwood wanted to go through the process of creating a bylaw"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:40 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion to adjourn, e. bakaysa, second, d. mcquaid, adjourned 8:40 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "50 Elmwood Road Subdivision Application",
+   "where": "list",
+   "quote": "50 elmwood road subdivision application minutes 12-09-13 145 page street anr"
+  },
+  {
+   "name": "Minutes 12-09-13",
+   "where": "list",
+   "quote": "50 elmwood road subdivision application minutes 12-09-13 145 page street anr"
+  },
+  {
+   "name": "145 Page Street ANR",
+   "where": "list",
+   "quote": "minutes 12-09-13 145 page street anr 40 page street anr 136/150 sunset lane anr"
+  },
+  {
+   "name": "40 Page Street ANR",
+   "where": "list",
+   "quote": "145 page street anr 40 page street anr 136/150 sunset lane anr"
+  },
+  {
+   "name": "136/150 Sunset Lane ANR",
+   "where": "list",
+   "quote": "40 page street anr 136/150 sunset lane anr highfield village extension"
+  },
+  {
+   "name": "Highfield Village Extension",
+   "where": "list",
+   "quote": "136/150 sunset lane anr highfield village extension whites woods progress report"
+  },
+  {
+   "name": "Whites Woods Progress Report",
+   "where": "list",
+   "quote": "highfield village extension whites woods progress report solar progress reports"
+  },
+  {
+   "name": "Solar Progress Reports",
+   "where": "list",
+   "quote": "whites woods progress report solar progress reports conservation commission notices and agenda"
+  },
+  {
+   "name": "Conservation Commission Notices and Agenda",
+   "where": "list",
+   "quote": "solar progress reports conservation commission notices and agenda marijuana information packets"
+  },
+  {
+   "name": "Marijuana Information Packets",
+   "where": "list",
+   "quote": "conservation commission notices and agenda marijuana information packets"
+  },
+  {
+   "name": "Committee Prioritization",
+   "where": "text",
+   "quote": "board members viewed committee prioritization."
+  },
+  {
+   "name": "project PDF from the applicant (Highfield Village)",
+   "where": "text",
+   "quote": "m. allison noted he only received a portion of the project pdf from the applicant."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR",
+  "subdivision",
+  "zoning",
+  "marijuana",
+  "school override",
+  "town meeting",
+  "minutes",
+  "Highfield Village",
+  "solar"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2016-06-09",
  "docid": "2242",
@@ -12,23 +12,245 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the May 26, 2016 meeting",
-   "moved_by": "Terri Burchfield",
-   "seconded_by": "Jay Simeone",
+   "motion": "Accept the minutes of the May 26, 2016 meeting.",
+   "moved_by": "Terri",
+   "seconded_by": "Jay",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "terri moved to accept the minutes; jay seconded the motion, and the motion was approved by a 4-0 vote."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jay Simeone",
-   "seconded_by": "Terri Burchfield",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Jay",
+   "seconded_by": "Terri",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "jay moved and terri seconded a motion to adjourn. the committee approved the motion 4-0 at 8:35."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of Finance Committee minutes from 06/09/2016. Two votes recorded: approval of prior minutes and adjournment.",
- "cost_usd": 0.0818145
+ "note": "OCR text from a scanned/converted document; page numbering reads '1 of?'. Minor spelling variants appear ('Hanna' once for Hannah Anderson; 'Karin M.' in the department table). Kerry (named in the Town Manager's Report, role not printed beyond that heading) did not attend and is not recorded as a participant. No public comment was recorded ('Public: None'). No documents list heading is printed; the sources sentence in item 4b is treated as the documents-used statement.",
+ "cost_usd": 0.005751719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mark Erickson",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: mark erickson, terri burchfield, jay simeone, john henshaw"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Director of Municipal Finance",
+   "status": "present",
+   "quote": "also present: karen brochu, director of municipal finance"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "welcomed hannah anderson who is sitting in on the meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mark will write a letter to the editor of The Lunenburg Ledger describing the Finance Committee and its role, noting three current vacancies on the committee.",
+   "quote": "mark will write a letter to the editor of the lunenburg ledger describing the finance committee and its role in the town"
+  },
+  {
+   "decision": "The debt policy revision will include a separate policy on excluded debt, apart from the policy on regular debt.",
+   "quote": "the revision to the debt policy will include a policy on excluded debt as well as, but separate from, the policy on regular debt"
+  },
+  {
+   "decision": "Next step: update the debt service data by listing all Capital Improvement Projects over $300,000 in the capital improvement plan, plus potential debt-exclusion override candidates.",
+   "quote": "update the debt service data by listing all capital improvement projects over $300,000 in the capital improvement plan"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Debt service costs and excluded debt",
+   "what_was_recorded": "Total debt service costs rose because of high excludable debt assumed to finance the new Jr.-Sr. High School, which led the bond rating agency to find the Town exceeded its own debt service limits.",
+   "quote": "total debt service costs increased as a result of the high value of excludable debt the town assumed",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital Improvement Projects threshold for debt data",
+   "what_was_recorded": "Committee set a $300,000 threshold for listing capital projects in the debt service data update.",
+   "quote": "listing all capital improvement projects over $300,000 in the capital improvement plan",
+   "figures_as_printed": [
+    "$300,000"
+   ]
+  },
+  {
+   "topic": "Chapter 70 funding and Schedule 19",
+   "what_was_recorded": "Schedule 19 showed the school share of the Town budget and that net school spending was met, a factor in Chapter 70 funding; no dollar figure printed.",
+   "quote": "which is a factor in the amount of chapter 70 funding the town receives.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Public Access Cable Committee unspent balance",
+   "what_was_recorded": "The PACC's unspent balance is about $300,000; revenues were a bit higher than the prior year.",
+   "quote": "the unspent balance is about $300,000.",
+   "figures_as_printed": [
+    "$300,000"
+   ]
+  },
+  {
+   "topic": "School building project change orders",
+   "what_was_recorded": "School Building Committee approved change orders of $31,842 for supplemental heating and other work.",
+   "quote": "the committee approved change orders of $31,842 for supplemental heating, additional electrical",
+   "figures_as_printed": [
+    "$31,842"
+   ]
+  },
+  {
+   "topic": "School building project total change orders and contingency",
+   "what_was_recorded": "Change orders total $1,002,162; most of the unspent contingency, a bit under $3,000,000, will be applied to the balance the Town owes on the project.",
+   "quote": "change orders total $1,002,162 and most of the unspent contingency-a bit under $3,000,000--will be applied to the balance the town owes on the project.",
+   "figures_as_printed": [
+    "$1,002,162",
+    "$3,000,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and welcome",
+   "resolution": "no action; guest welcomed",
+   "quote": "mark called the finance committee meeting to order at 7:00 pm and welcomed hannah anderson who is",
+   "tags": [
+    "call to order",
+    "welcome",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Comments and new communications",
+   "resolution": "noted",
+   "quote": "mark gave a brief overview of the role of the committee and the roles committee members have.",
+   "tags": [
+    "committee role",
+    "planning board",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Town Manager's Report",
+   "resolution": "received; no action",
+   "quote": "mark said kerry had sent out schedule 19 which shows the percent of town budget that went to the school",
+   "tags": [
+    "Schedule 19",
+    "Chapter 70",
+    "net school spending"
+   ]
+  },
+  {
+   "topic": "Revision of the Town's Policy on Debt Service Costs",
+   "resolution": "discussed; next steps set",
+   "quote": "there is a disconnect between the town's policy on the amount of regular debt service cost the town",
+   "tags": [
+    "debt policy",
+    "excluded debt",
+    "bond rating"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved 4-0",
+   "quote": "minutes of the may 26, 2016 meeting: terri moved to accept the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and Department Updates",
+   "resolution": "reports received",
+   "quote": "this year the pacc has invested in replacing and upgrading equipment.",
+   "tags": [
+    "public access cable",
+    "capital planning",
+    "school building project"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled July 14, 2016",
+   "quote": "next meeting: thursday, july 14th, at 7:00 pm at the town hall.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:35 pm, 4-0",
+   "quote": "jay moved and terri seconded a motion to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Town Reports",
+   "where": "list",
+   "quote": "the sources john used for historic and future debt service costs were annual town reports"
+  },
+  {
+   "name": "Spreadsheet on debt service costs",
+   "where": "list",
+   "quote": "a spreadsheet on debt service costs which did not include the most recent changes"
+  },
+  {
+   "name": "Schedule 19",
+   "where": "text",
+   "quote": "kerry had sent out schedule 19 which shows the percent of town budget that went to the school"
+  },
+  {
+   "name": "Talent Bank Form (Hannah Anderson)",
+   "where": "text",
+   "quote": "hannah had completed a talent bank form and indicated an interest in joining the committee."
+  },
+  {
+   "name": "Revision of the Town's Policy on Debt Service Costs",
+   "where": "text",
+   "quote": "revision of the town's policy on debt service costs"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "debt policy",
+  "excluded debt",
+  "capital improvement plan",
+  "school building project",
+  "public access cable",
+  "committee vacancies",
+  "minutes approval",
+  "Chapter 70"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the sources john used for historic and future debt service costs were"
+ },
+ "dropped_unquoted_by_field": {}
 }
